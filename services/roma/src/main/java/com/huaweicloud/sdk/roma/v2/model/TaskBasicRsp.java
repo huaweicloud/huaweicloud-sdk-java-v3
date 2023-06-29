@@ -70,22 +70,15 @@ public class TaskBasicRsp {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class TaskBasicRsp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -548,29 +534,27 @@ public class TaskBasicRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBasicRsp taskBasicRsp = (TaskBasicRsp) o;
-        return Objects.equals(this.taskId, taskBasicRsp.taskId) && Objects.equals(this.taskName, taskBasicRsp.taskName)
-            && Objects.equals(this.taskType, taskBasicRsp.taskType) && Objects.equals(this.status, taskBasicRsp.status)
-            && Objects.equals(this.projectId, taskBasicRsp.projectId)
-            && Objects.equals(this.sourceDatasourceId, taskBasicRsp.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, taskBasicRsp.targetDatasourceId)
-            && Objects.equals(this.sourceDatasourceName, taskBasicRsp.sourceDatasourceName)
-            && Objects.equals(this.targetDatasourceName, taskBasicRsp.targetDatasourceName)
-            && Objects.equals(this.sourceAppId, taskBasicRsp.sourceAppId)
-            && Objects.equals(this.targetAppId, taskBasicRsp.targetAppId)
-            && Objects.equals(this.sourceAppName, taskBasicRsp.sourceAppName)
-            && Objects.equals(this.targetAppName, taskBasicRsp.targetAppName)
-            && Objects.equals(this.createdDate, taskBasicRsp.createdDate)
-            && Objects.equals(this.lastModifiedDate, taskBasicRsp.lastModifiedDate)
-            && Objects.equals(this.description, taskBasicRsp.description)
-            && Objects.equals(this.taskTag, taskBasicRsp.taskTag);
+        TaskBasicRsp that = (TaskBasicRsp) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.sourceDatasourceName, that.sourceDatasourceName)
+            && Objects.equals(this.targetDatasourceName, that.targetDatasourceName)
+            && Objects.equals(this.sourceAppId, that.sourceAppId) && Objects.equals(this.targetAppId, that.targetAppId)
+            && Objects.equals(this.sourceAppName, that.sourceAppName)
+            && Objects.equals(this.targetAppName, that.targetAppName)
+            && Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.lastModifiedDate, that.lastModifiedDate)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.taskTag, that.taskTag);
     }
 
     @Override

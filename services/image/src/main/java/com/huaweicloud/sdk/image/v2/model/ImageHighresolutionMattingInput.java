@@ -74,16 +74,15 @@ public class ImageHighresolutionMattingInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageHighresolutionMattingInput imageHighresolutionMattingInput = (ImageHighresolutionMattingInput) o;
-        return Objects.equals(this.type, imageHighresolutionMattingInput.type)
-            && Objects.equals(this.data, imageHighresolutionMattingInput.data);
+        ImageHighresolutionMattingInput that = (ImageHighresolutionMattingInput) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.data, that.data);
     }
 
     @Override

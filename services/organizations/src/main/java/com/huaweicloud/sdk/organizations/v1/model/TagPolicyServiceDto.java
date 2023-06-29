@@ -96,17 +96,17 @@ public class TagPolicyServiceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagPolicyServiceDto tagPolicyServiceDto = (TagPolicyServiceDto) o;
-        return Objects.equals(this.serviceName, tagPolicyServiceDto.serviceName)
-            && Objects.equals(this.resourceTypes, tagPolicyServiceDto.resourceTypes)
-            && Objects.equals(this.supportAll, tagPolicyServiceDto.supportAll);
+        TagPolicyServiceDto that = (TagPolicyServiceDto) obj;
+        return Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.resourceTypes, that.resourceTypes)
+            && Objects.equals(this.supportAll, that.supportAll);
     }
 
     @Override

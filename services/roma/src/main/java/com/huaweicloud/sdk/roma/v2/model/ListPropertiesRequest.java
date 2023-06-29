@@ -149,20 +149,17 @@ public class ListPropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPropertiesRequest listPropertiesRequest = (ListPropertiesRequest) o;
-        return Objects.equals(this.instanceId, listPropertiesRequest.instanceId)
-            && Objects.equals(this.serviceId, listPropertiesRequest.serviceId)
-            && Objects.equals(this.limit, listPropertiesRequest.limit)
-            && Objects.equals(this.propertyId, listPropertiesRequest.propertyId)
-            && Objects.equals(this.propertyName, listPropertiesRequest.propertyName)
-            && Objects.equals(this.offset, listPropertiesRequest.offset);
+        ListPropertiesRequest that = (ListPropertiesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.propertyId, that.propertyId)
+            && Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

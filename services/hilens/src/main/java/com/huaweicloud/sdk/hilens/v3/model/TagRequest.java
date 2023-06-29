@@ -55,15 +55,15 @@ public class TagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagRequest tagRequest = (TagRequest) o;
-        return Objects.equals(this.key, tagRequest.key) && Objects.equals(this.value, tagRequest.value);
+        TagRequest that = (TagRequest) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

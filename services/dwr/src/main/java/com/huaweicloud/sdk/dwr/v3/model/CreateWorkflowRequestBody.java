@@ -78,22 +78,15 @@ public class CreateWorkflowRequestBody {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -300,21 +293,18 @@ public class CreateWorkflowRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWorkflowRequestBody createWorkflowRequestBody = (CreateWorkflowRequestBody) o;
-        return Objects.equals(this.states, createWorkflowRequestBody.states)
-            && Objects.equals(this.inputs, createWorkflowRequestBody.inputs)
-            && Objects.equals(this.description, createWorkflowRequestBody.description)
-            && Objects.equals(this.mode, createWorkflowRequestBody.mode)
-            && Objects.equals(this.expressConfig, createWorkflowRequestBody.expressConfig)
-            && Objects.equals(this.funcVpc, createWorkflowRequestBody.funcVpc)
-            && Objects.equals(this.agency, createWorkflowRequestBody.agency);
+        CreateWorkflowRequestBody that = (CreateWorkflowRequestBody) obj;
+        return Objects.equals(this.states, that.states) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.expressConfig, that.expressConfig) && Objects.equals(this.funcVpc, that.funcVpc)
+            && Objects.equals(this.agency, that.agency);
     }
 
     @Override

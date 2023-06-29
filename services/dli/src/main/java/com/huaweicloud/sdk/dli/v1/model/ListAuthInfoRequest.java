@@ -77,17 +77,16 @@ public class ListAuthInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthInfoRequest listAuthInfoRequest = (ListAuthInfoRequest) o;
-        return Objects.equals(this.authInfoName, listAuthInfoRequest.authInfoName)
-            && Objects.equals(this.offset, listAuthInfoRequest.offset)
-            && Objects.equals(this.limit, listAuthInfoRequest.limit);
+        ListAuthInfoRequest that = (ListAuthInfoRequest) obj;
+        return Objects.equals(this.authInfoName, that.authInfoName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

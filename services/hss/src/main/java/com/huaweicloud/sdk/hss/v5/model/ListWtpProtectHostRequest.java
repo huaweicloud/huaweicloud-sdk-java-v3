@@ -279,26 +279,22 @@ public class ListWtpProtectHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWtpProtectHostRequest listWtpProtectHostRequest = (ListWtpProtectHostRequest) o;
-        return Objects.equals(this.region, listWtpProtectHostRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listWtpProtectHostRequest.enterpriseProjectId)
-            && Objects.equals(this.hostName, listWtpProtectHostRequest.hostName)
-            && Objects.equals(this.hostId, listWtpProtectHostRequest.hostId)
-            && Objects.equals(this.publicIp, listWtpProtectHostRequest.publicIp)
-            && Objects.equals(this.privateIp, listWtpProtectHostRequest.privateIp)
-            && Objects.equals(this.groupName, listWtpProtectHostRequest.groupName)
-            && Objects.equals(this.osType, listWtpProtectHostRequest.osType)
-            && Objects.equals(this.protectStatus, listWtpProtectHostRequest.protectStatus)
-            && Objects.equals(this.agentStatus, listWtpProtectHostRequest.agentStatus)
-            && Objects.equals(this.limit, listWtpProtectHostRequest.limit)
-            && Objects.equals(this.offset, listWtpProtectHostRequest.offset);
+        ListWtpProtectHostRequest that = (ListWtpProtectHostRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.agentStatus, that.agentStatus) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

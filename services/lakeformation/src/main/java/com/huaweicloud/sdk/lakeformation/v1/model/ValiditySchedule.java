@@ -118,18 +118,16 @@ public class ValiditySchedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValiditySchedule validitySchedule = (ValiditySchedule) o;
-        return Objects.equals(this.endTime, validitySchedule.endTime)
-            && Objects.equals(this.recurrences, validitySchedule.recurrences)
-            && Objects.equals(this.startTime, validitySchedule.startTime)
-            && Objects.equals(this.timeZone, validitySchedule.timeZone);
+        ValiditySchedule that = (ValiditySchedule) obj;
+        return Objects.equals(this.endTime, that.endTime) && Objects.equals(this.recurrences, that.recurrences)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

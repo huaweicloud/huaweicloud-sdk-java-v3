@@ -1,78 +1,67 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.DedicatedResourceCapacity;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 专属资源池信息。
  */
-public class DedicatedResource  {
-
+public class DedicatedResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
 
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_name")
-    
+    @JsonProperty(value = "engine_name")
 
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="architecture")
-    
+    @JsonProperty(value = "architecture")
 
     private String architecture;
+
     /**
      * 专属资源池状态
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum NORMAL for value: "NORMAL"
          */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
-        
+
         /**
          * Enum BUILDING for value: "BUILDING"
          */
         public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
-        
+
         /**
          * Enum EXTENDING for value: "EXTENDING"
          */
         public static final StatusEnum EXTENDING = new StatusEnum("EXTENDING");
-        
+
         /**
          * Enum DELETED for value: "DELETED"
          */
         public static final StatusEnum DELETED = new StatusEnum("DELETED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,25 +92,18 @@ public class DedicatedResource  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -139,29 +121,24 @@ public class DedicatedResource  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="capacity")
-    
+    @JsonProperty(value = "capacity")
 
     private DedicatedResourceCapacity capacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private List<String> availabilityZone = null;
-    
+
     public DedicatedResource withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池ID。
@@ -175,15 +152,10 @@ public class DedicatedResource  {
         this.id = id;
     }
 
-    
-
     public DedicatedResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池名称
@@ -197,15 +169,10 @@ public class DedicatedResource  {
         this.resourceName = resourceName;
     }
 
-    
-
     public DedicatedResource withEngineName(String engineName) {
         this.engineName = engineName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库引擎名称
@@ -219,15 +186,10 @@ public class DedicatedResource  {
         this.engineName = engineName;
     }
 
-    
-
     public DedicatedResource withArchitecture(String architecture) {
         this.architecture = architecture;
         return this;
     }
-
-    
-
 
     /**
      * CPU架构
@@ -241,15 +203,10 @@ public class DedicatedResource  {
         this.architecture = architecture;
     }
 
-    
-
     public DedicatedResource withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池状态
@@ -263,22 +220,19 @@ public class DedicatedResource  {
         this.status = status;
     }
 
-    
-
     public DedicatedResource withCapacity(DedicatedResourceCapacity capacity) {
         this.capacity = capacity;
         return this;
     }
 
     public DedicatedResource withCapacity(Consumer<DedicatedResourceCapacity> capacitySetter) {
-        if(this.capacity == null ){
+        if (this.capacity == null) {
             this.capacity = new DedicatedResourceCapacity();
             capacitySetter.accept(this.capacity);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get capacity
@@ -292,16 +246,13 @@ public class DedicatedResource  {
         this.capacity = capacity;
     }
 
-    
-
     public DedicatedResource withAvailabilityZone(List<String> availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
     public DedicatedResource addAvailabilityZoneItem(String availabilityZoneItem) {
-        if(this.availabilityZone == null) {
+        if (this.availabilityZone == null) {
             this.availabilityZone = new ArrayList<>();
         }
         this.availabilityZone.add(availabilityZoneItem);
@@ -309,7 +260,7 @@ public class DedicatedResource  {
     }
 
     public DedicatedResource withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
-        if(this.availabilityZone == null) {
+        if (this.availabilityZone == null) {
             this.availabilityZone = new ArrayList<>();
         }
         availabilityZoneSetter.accept(this.availabilityZone);
@@ -328,29 +279,26 @@ public class DedicatedResource  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DedicatedResource dedicatedResource = (DedicatedResource) o;
-        return Objects.equals(this.id, dedicatedResource.id) &&
-            Objects.equals(this.resourceName, dedicatedResource.resourceName) &&
-            Objects.equals(this.engineName, dedicatedResource.engineName) &&
-            Objects.equals(this.architecture, dedicatedResource.architecture) &&
-            Objects.equals(this.status, dedicatedResource.status) &&
-            Objects.equals(this.capacity, dedicatedResource.capacity) &&
-            Objects.equals(this.availabilityZone, dedicatedResource.availabilityZone);
+        DedicatedResource that = (DedicatedResource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.engineName, that.engineName) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, resourceName, engineName, architecture, status, capacity, availabilityZone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -365,6 +313,7 @@ public class DedicatedResource  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -375,8 +324,5 @@ public class DedicatedResource  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

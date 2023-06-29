@@ -99,18 +99,17 @@ public class ShowTopicStatusRespQueues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopicStatusRespQueues showTopicStatusRespQueues = (ShowTopicStatusRespQueues) o;
-        return Objects.equals(this.id, showTopicStatusRespQueues.id)
-            && Objects.equals(this.minOffset, showTopicStatusRespQueues.minOffset)
-            && Objects.equals(this.maxOffset, showTopicStatusRespQueues.maxOffset)
-            && Objects.equals(this.lastMessageTime, showTopicStatusRespQueues.lastMessageTime);
+        ShowTopicStatusRespQueues that = (ShowTopicStatusRespQueues) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.minOffset, that.minOffset)
+            && Objects.equals(this.maxOffset, that.maxOffset)
+            && Objects.equals(this.lastMessageTime, that.lastMessageTime);
     }
 
     @Override

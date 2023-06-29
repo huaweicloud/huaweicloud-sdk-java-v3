@@ -144,20 +144,17 @@ public class CreateProjectV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectV4Response createProjectV4Response = (CreateProjectV4Response) o;
-        return Objects.equals(this.projectNumId, createProjectV4Response.projectNumId)
-            && Objects.equals(this.projectId, createProjectV4Response.projectId)
-            && Objects.equals(this.projectName, createProjectV4Response.projectName)
-            && Objects.equals(this.description, createProjectV4Response.description)
-            && Objects.equals(this.projectType, createProjectV4Response.projectType)
-            && Objects.equals(this.userNumId, createProjectV4Response.userNumId);
+        CreateProjectV4Response that = (CreateProjectV4Response) obj;
+        return Objects.equals(this.projectNumId, that.projectNumId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectType, that.projectType) && Objects.equals(this.userNumId, that.userNumId);
     }
 
     @Override

@@ -114,16 +114,16 @@ public class MotionItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MotionItem motionItem = (MotionItem) o;
-        return Objects.equals(this.timestamp, motionItem.timestamp) && Objects.equals(this.root, motionItem.root)
-            && Objects.equals(this.joints, motionItem.joints);
+        MotionItem that = (MotionItem) obj;
+        return Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.root, that.root)
+            && Objects.equals(this.joints, that.joints);
     }
 
     @Override

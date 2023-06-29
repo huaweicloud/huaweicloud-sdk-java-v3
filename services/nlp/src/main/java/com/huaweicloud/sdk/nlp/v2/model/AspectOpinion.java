@@ -1,62 +1,50 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 属性观点列表
  */
-public class AspectOpinion  {
-
+public class AspectOpinion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_category")
-    
+    @JsonProperty(value = "aspect_category")
 
     private String aspectCategory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_term")
-    
+    @JsonProperty(value = "aspect_term")
 
     private String aspectTerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="opinion_term")
-    
+    @JsonProperty(value = "opinion_term")
 
     private String opinionTerm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="span")
-    
+    @JsonProperty(value = "span")
+
     private List<Integer> span = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
 
     private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
 
     private String tag;
 
@@ -64,9 +52,6 @@ public class AspectOpinion  {
         this.aspectCategory = aspectCategory;
         return this;
     }
-
-    
-
 
     /**
      * 属性类别 手机领域：['整体','性价比', '赠品','分期', '配件', '活动', '品牌', '物流派送', '包装', '游戏性能', '系统性能', '芯片', '屏幕', '电池', '自拍', '拍照', '音质', '散热', '防水', '信号', '解锁', '外形设计', '握持手感', '质感', '颜色', '内存/容量', '客服/售后', '其他']
@@ -80,15 +65,10 @@ public class AspectOpinion  {
         this.aspectCategory = aspectCategory;
     }
 
-    
-
     public AspectOpinion withAspectTerm(String aspectTerm) {
         this.aspectTerm = aspectTerm;
         return this;
     }
-
-    
-
 
     /**
      * 属性词，与对应的描述词至少出现其中之一，可能为null。
@@ -102,15 +82,10 @@ public class AspectOpinion  {
         this.aspectTerm = aspectTerm;
     }
 
-    
-
     public AspectOpinion withOpinionTerm(String opinionTerm) {
         this.opinionTerm = opinionTerm;
         return this;
     }
-
-    
-
 
     /**
      * 描述词，与对应的属性词至少出现其中之一，可能为null。
@@ -124,16 +99,13 @@ public class AspectOpinion  {
         this.opinionTerm = opinionTerm;
     }
 
-    
-
     public AspectOpinion withSpan(List<Integer> span) {
         this.span = span;
         return this;
     }
 
-    
     public AspectOpinion addSpanItem(Integer spanItem) {
-        if(this.span == null) {
+        if (this.span == null) {
             this.span = new ArrayList<>();
         }
         this.span.add(spanItem);
@@ -141,7 +113,7 @@ public class AspectOpinion  {
     }
 
     public AspectOpinion withSpan(Consumer<List<Integer>> spanSetter) {
-        if(this.span == null) {
+        if (this.span == null) {
             this.span = new ArrayList<>();
         }
         spanSetter.accept(this.span);
@@ -160,15 +132,10 @@ public class AspectOpinion  {
         this.span = span;
     }
 
-    
-
     public AspectOpinion withLabel(Integer label) {
         this.label = label;
         return this;
     }
-
-    
-
 
     /**
      * 情感标签，0：负向，1：正向
@@ -182,15 +149,10 @@ public class AspectOpinion  {
         this.label = label;
     }
 
-    
-
     public AspectOpinion withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 情感标签置信度
@@ -204,15 +166,10 @@ public class AspectOpinion  {
         this.confidence = confidence;
     }
 
-    
-
     public AspectOpinion withTag(String tag) {
         this.tag = tag;
         return this;
     }
-
-    
-
 
     /**
      * 属性-描述词片段所对应的标签。若分类为'其他'，则不给出标签，返回null。
@@ -226,29 +183,26 @@ public class AspectOpinion  {
         this.tag = tag;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AspectOpinion aspectOpinion = (AspectOpinion) o;
-        return Objects.equals(this.aspectCategory, aspectOpinion.aspectCategory) &&
-            Objects.equals(this.aspectTerm, aspectOpinion.aspectTerm) &&
-            Objects.equals(this.opinionTerm, aspectOpinion.opinionTerm) &&
-            Objects.equals(this.span, aspectOpinion.span) &&
-            Objects.equals(this.label, aspectOpinion.label) &&
-            Objects.equals(this.confidence, aspectOpinion.confidence) &&
-            Objects.equals(this.tag, aspectOpinion.tag);
+        AspectOpinion that = (AspectOpinion) obj;
+        return Objects.equals(this.aspectCategory, that.aspectCategory)
+            && Objects.equals(this.aspectTerm, that.aspectTerm) && Objects.equals(this.opinionTerm, that.opinionTerm)
+            && Objects.equals(this.span, that.span) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.tag, that.tag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(aspectCategory, aspectTerm, opinionTerm, span, label, confidence, tag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -263,6 +217,7 @@ public class AspectOpinion  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -273,8 +228,5 @@ public class AspectOpinion  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

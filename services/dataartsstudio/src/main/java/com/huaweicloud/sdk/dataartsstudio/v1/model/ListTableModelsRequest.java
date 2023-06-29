@@ -107,22 +107,15 @@ public class ListTableModelsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -201,22 +194,15 @@ public class ListTableModelsRequest {
             if (value == null) {
                 return null;
             }
-            SyncStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SyncStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncStatusEnum(value));
         }
 
         public static SyncStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SyncStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,22 +299,15 @@ public class ListTableModelsRequest {
             if (value == null) {
                 return null;
             }
-            SyncKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SyncKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncKeyEnum(value));
         }
 
         public static SyncKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SyncKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -619,27 +598,21 @@ public class ListTableModelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableModelsRequest listTableModelsRequest = (ListTableModelsRequest) o;
-        return Objects.equals(this.workspace, listTableModelsRequest.workspace)
-            && Objects.equals(this.name, listTableModelsRequest.name)
-            && Objects.equals(this.createBy, listTableModelsRequest.createBy)
-            && Objects.equals(this.approver, listTableModelsRequest.approver)
-            && Objects.equals(this.status, listTableModelsRequest.status)
-            && Objects.equals(this.syncStatus, listTableModelsRequest.syncStatus)
-            && Objects.equals(this.syncKey, listTableModelsRequest.syncKey)
-            && Objects.equals(this.beginTime, listTableModelsRequest.beginTime)
-            && Objects.equals(this.endTime, listTableModelsRequest.endTime)
-            && Objects.equals(this.limit, listTableModelsRequest.limit)
-            && Objects.equals(this.offset, listTableModelsRequest.offset)
-            && Objects.equals(this.modelId, listTableModelsRequest.modelId)
-            && Objects.equals(this.bizCatalogId, listTableModelsRequest.bizCatalogId);
+        ListTableModelsRequest that = (ListTableModelsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.syncStatus, that.syncStatus)
+            && Objects.equals(this.syncKey, that.syncKey) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.bizCatalogId, that.bizCatalogId);
     }
 
     @Override

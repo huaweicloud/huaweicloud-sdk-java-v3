@@ -178,20 +178,18 @@ public class CheckpointParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointParam checkpointParam = (CheckpointParam) o;
-        return Objects.equals(this.autoTrigger, checkpointParam.autoTrigger)
-            && Objects.equals(this.description, checkpointParam.description)
-            && Objects.equals(this.incremental, checkpointParam.incremental)
-            && Objects.equals(this.name, checkpointParam.name)
-            && Objects.equals(this.resources, checkpointParam.resources)
-            && Objects.equals(this.resourceDetails, checkpointParam.resourceDetails);
+        CheckpointParam that = (CheckpointParam) obj;
+        return Objects.equals(this.autoTrigger, that.autoTrigger) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.incremental, that.incremental) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.resourceDetails, that.resourceDetails);
     }
 
     @Override

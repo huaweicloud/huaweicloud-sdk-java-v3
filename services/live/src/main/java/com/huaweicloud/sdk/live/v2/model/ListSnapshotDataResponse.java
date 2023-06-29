@@ -101,17 +101,16 @@ public class ListSnapshotDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotDataResponse listSnapshotDataResponse = (ListSnapshotDataResponse) o;
-        return Objects.equals(this.snapshotList, listSnapshotDataResponse.snapshotList)
-            && Objects.equals(this.total, listSnapshotDataResponse.total)
-            && Objects.equals(this.xRequestId, listSnapshotDataResponse.xRequestId);
+        ListSnapshotDataResponse that = (ListSnapshotDataResponse) obj;
+        return Objects.equals(this.snapshotList, that.snapshotList) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

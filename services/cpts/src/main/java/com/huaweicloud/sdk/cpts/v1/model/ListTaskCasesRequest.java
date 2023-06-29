@@ -59,16 +59,15 @@ public class ListTaskCasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskCasesRequest listTaskCasesRequest = (ListTaskCasesRequest) o;
-        return Objects.equals(this.testSuitId, listTaskCasesRequest.testSuitId)
-            && Objects.equals(this.taskId, listTaskCasesRequest.taskId);
+        ListTaskCasesRequest that = (ListTaskCasesRequest) obj;
+        return Objects.equals(this.testSuitId, that.testSuitId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

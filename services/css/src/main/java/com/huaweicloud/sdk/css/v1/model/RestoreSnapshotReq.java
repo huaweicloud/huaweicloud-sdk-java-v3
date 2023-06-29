@@ -99,18 +99,17 @@ public class RestoreSnapshotReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreSnapshotReq restoreSnapshotReq = (RestoreSnapshotReq) o;
-        return Objects.equals(this.targetCluster, restoreSnapshotReq.targetCluster)
-            && Objects.equals(this.indices, restoreSnapshotReq.indices)
-            && Objects.equals(this.renamePattern, restoreSnapshotReq.renamePattern)
-            && Objects.equals(this.renameReplacement, restoreSnapshotReq.renameReplacement);
+        RestoreSnapshotReq that = (RestoreSnapshotReq) obj;
+        return Objects.equals(this.targetCluster, that.targetCluster) && Objects.equals(this.indices, that.indices)
+            && Objects.equals(this.renamePattern, that.renamePattern)
+            && Objects.equals(this.renameReplacement, that.renameReplacement);
     }
 
     @Override

@@ -143,20 +143,19 @@ public class QueryCompareResultReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCompareResultReq queryCompareResultReq = (QueryCompareResultReq) o;
-        return Objects.equals(this.jobId, queryCompareResultReq.jobId)
-            && Objects.equals(this.objectLevelCompareId, queryCompareResultReq.objectLevelCompareId)
-            && Objects.equals(this.lineCompareId, queryCompareResultReq.lineCompareId)
-            && Objects.equals(this.contentCompareId, queryCompareResultReq.contentCompareId)
-            && Objects.equals(this.currentPage, queryCompareResultReq.currentPage)
-            && Objects.equals(this.perPage, queryCompareResultReq.perPage);
+        QueryCompareResultReq that = (QueryCompareResultReq) obj;
+        return Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.objectLevelCompareId, that.objectLevelCompareId)
+            && Objects.equals(this.lineCompareId, that.lineCompareId)
+            && Objects.equals(this.contentCompareId, that.contentCompareId)
+            && Objects.equals(this.currentPage, that.currentPage) && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

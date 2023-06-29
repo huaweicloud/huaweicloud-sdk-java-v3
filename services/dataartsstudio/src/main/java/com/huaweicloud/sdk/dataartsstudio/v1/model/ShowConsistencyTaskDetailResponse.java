@@ -406,31 +406,27 @@ public class ShowConsistencyTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsistencyTaskDetailResponse showConsistencyTaskDetailResponse = (ShowConsistencyTaskDetailResponse) o;
-        return Objects.equals(this.id, showConsistencyTaskDetailResponse.id)
-            && Objects.equals(this.name, showConsistencyTaskDetailResponse.name)
-            && Objects.equals(this.description, showConsistencyTaskDetailResponse.description)
-            && Objects.equals(this.categoryId, showConsistencyTaskDetailResponse.categoryId)
-            && Objects.equals(this.level, showConsistencyTaskDetailResponse.level)
-            && Objects.equals(this.alarmCondition, showConsistencyTaskDetailResponse.alarmCondition)
-            && Objects.equals(this.alarmNotify, showConsistencyTaskDetailResponse.alarmNotify)
-            && Objects.equals(this.alarmNotifyType, showConsistencyTaskDetailResponse.alarmNotifyType)
-            && Objects.equals(this.alarmNotifyTopic, showConsistencyTaskDetailResponse.alarmNotifyTopic)
-            && Objects.equals(this.scheduleType, showConsistencyTaskDetailResponse.scheduleType)
-            && Objects.equals(this.schedulePeriod, showConsistencyTaskDetailResponse.schedulePeriod)
-            && Objects.equals(this.scheduleInterval, showConsistencyTaskDetailResponse.scheduleInterval)
-            && Objects.equals(this.scheduleStartTime, showConsistencyTaskDetailResponse.scheduleStartTime)
-            && Objects.equals(this.scheduleEndTime, showConsistencyTaskDetailResponse.scheduleEndTime)
-            && Objects.equals(this.createTime, showConsistencyTaskDetailResponse.createTime)
-            && Objects.equals(this.lastRunTime, showConsistencyTaskDetailResponse.lastRunTime)
-            && Objects.equals(this.subRules, showConsistencyTaskDetailResponse.subRules);
+        ShowConsistencyTaskDetailResponse that = (ShowConsistencyTaskDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.alarmCondition, that.alarmCondition)
+            && Objects.equals(this.alarmNotify, that.alarmNotify)
+            && Objects.equals(this.alarmNotifyType, that.alarmNotifyType)
+            && Objects.equals(this.alarmNotifyTopic, that.alarmNotifyTopic)
+            && Objects.equals(this.scheduleType, that.scheduleType)
+            && Objects.equals(this.schedulePeriod, that.schedulePeriod)
+            && Objects.equals(this.scheduleInterval, that.scheduleInterval)
+            && Objects.equals(this.scheduleStartTime, that.scheduleStartTime)
+            && Objects.equals(this.scheduleEndTime, that.scheduleEndTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.subRules, that.subRules);
     }
 
     @Override

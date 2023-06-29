@@ -189,21 +189,19 @@ public class ListRenewRateOnPeriodResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRenewRateOnPeriodResponse listRenewRateOnPeriodResponse = (ListRenewRateOnPeriodResponse) o;
-        return Objects.equals(this.currency, listRenewRateOnPeriodResponse.currency)
-            && Objects.equals(this.renewInquiryResults, listRenewRateOnPeriodResponse.renewInquiryResults)
-            && Objects.equals(this.officialWebsiteRatingResult,
-                listRenewRateOnPeriodResponse.officialWebsiteRatingResult)
-            && Objects.equals(this.optionalDiscountRatingResults,
-                listRenewRateOnPeriodResponse.optionalDiscountRatingResults)
-            && Objects.equals(this.failResourceInfos, listRenewRateOnPeriodResponse.failResourceInfos);
+        ListRenewRateOnPeriodResponse that = (ListRenewRateOnPeriodResponse) obj;
+        return Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.renewInquiryResults, that.renewInquiryResults)
+            && Objects.equals(this.officialWebsiteRatingResult, that.officialWebsiteRatingResult)
+            && Objects.equals(this.optionalDiscountRatingResults, that.optionalDiscountRatingResults)
+            && Objects.equals(this.failResourceInfos, that.failResourceInfos);
     }
 
     @Override

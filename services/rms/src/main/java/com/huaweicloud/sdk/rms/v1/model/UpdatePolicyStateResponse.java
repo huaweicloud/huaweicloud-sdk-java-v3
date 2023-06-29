@@ -276,26 +276,24 @@ public class UpdatePolicyStateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyStateResponse updatePolicyStateResponse = (UpdatePolicyStateResponse) o;
-        return Objects.equals(this.domainId, updatePolicyStateResponse.domainId)
-            && Objects.equals(this.regionId, updatePolicyStateResponse.regionId)
-            && Objects.equals(this.resourceId, updatePolicyStateResponse.resourceId)
-            && Objects.equals(this.resourceName, updatePolicyStateResponse.resourceName)
-            && Objects.equals(this.resourceProvider, updatePolicyStateResponse.resourceProvider)
-            && Objects.equals(this.resourceType, updatePolicyStateResponse.resourceType)
-            && Objects.equals(this.triggerType, updatePolicyStateResponse.triggerType)
-            && Objects.equals(this.complianceState, updatePolicyStateResponse.complianceState)
-            && Objects.equals(this.policyAssignmentId, updatePolicyStateResponse.policyAssignmentId)
-            && Objects.equals(this.policyAssignmentName, updatePolicyStateResponse.policyAssignmentName)
-            && Objects.equals(this.policyDefinitionId, updatePolicyStateResponse.policyDefinitionId)
-            && Objects.equals(this.evaluationTime, updatePolicyStateResponse.evaluationTime);
+        UpdatePolicyStateResponse that = (UpdatePolicyStateResponse) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.evaluationTime, that.evaluationTime);
     }
 
     @Override

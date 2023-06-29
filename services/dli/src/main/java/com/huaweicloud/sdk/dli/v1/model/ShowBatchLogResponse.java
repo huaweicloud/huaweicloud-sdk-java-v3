@@ -119,17 +119,16 @@ public class ShowBatchLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchLogResponse showBatchLogResponse = (ShowBatchLogResponse) o;
-        return Objects.equals(this.id, showBatchLogResponse.id) && Objects.equals(this.from, showBatchLogResponse.from)
-            && Objects.equals(this.total, showBatchLogResponse.total)
-            && Objects.equals(this.log, showBatchLogResponse.log);
+        ShowBatchLogResponse that = (ShowBatchLogResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.log, that.log);
     }
 
     @Override

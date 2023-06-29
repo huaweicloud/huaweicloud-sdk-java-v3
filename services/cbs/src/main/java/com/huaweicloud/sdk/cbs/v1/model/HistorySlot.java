@@ -1,39 +1,30 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.HistorySlotWord;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class HistorySlot  {
-
+public class HistorySlot {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_name")
-    
+    @JsonProperty(value = "slot_name")
 
     private String slotName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_values")
-    
+    @JsonProperty(value = "slot_values")
+
     private List<HistorySlotWord> slotValues = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_identification")
-    
+    @JsonProperty(value = "slot_identification")
 
     private String slotIdentification;
 
@@ -41,9 +32,6 @@ public class HistorySlot  {
         this.slotName = slotName;
         return this;
     }
-
-    
-
 
     /**
      * 槽位名称。
@@ -57,16 +45,13 @@ public class HistorySlot  {
         this.slotName = slotName;
     }
 
-    
-
     public HistorySlot withSlotValues(List<HistorySlotWord> slotValues) {
         this.slotValues = slotValues;
         return this;
     }
 
-    
     public HistorySlot addSlotValuesItem(HistorySlotWord slotValuesItem) {
-        if(this.slotValues == null) {
+        if (this.slotValues == null) {
             this.slotValues = new ArrayList<>();
         }
         this.slotValues.add(slotValuesItem);
@@ -74,7 +59,7 @@ public class HistorySlot  {
     }
 
     public HistorySlot withSlotValues(Consumer<List<HistorySlotWord>> slotValuesSetter) {
-        if(this.slotValues == null) {
+        if (this.slotValues == null) {
             this.slotValues = new ArrayList<>();
         }
         slotValuesSetter.accept(this.slotValues);
@@ -93,15 +78,10 @@ public class HistorySlot  {
         this.slotValues = slotValues;
     }
 
-    
-
     public HistorySlot withSlotIdentification(String slotIdentification) {
         this.slotIdentification = slotIdentification;
         return this;
     }
-
-    
-
 
     /**
      * 用户设置的槽位标识。
@@ -115,25 +95,24 @@ public class HistorySlot  {
         this.slotIdentification = slotIdentification;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistorySlot historySlot = (HistorySlot) o;
-        return Objects.equals(this.slotName, historySlot.slotName) &&
-            Objects.equals(this.slotValues, historySlot.slotValues) &&
-            Objects.equals(this.slotIdentification, historySlot.slotIdentification);
+        HistorySlot that = (HistorySlot) obj;
+        return Objects.equals(this.slotName, that.slotName) && Objects.equals(this.slotValues, that.slotValues)
+            && Objects.equals(this.slotIdentification, that.slotIdentification);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(slotName, slotValues, slotIdentification);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,6 +123,7 @@ public class HistorySlot  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -154,8 +134,5 @@ public class HistorySlot  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -96,17 +96,16 @@ public class GrantDataPermissionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GrantDataPermissionReq grantDataPermissionReq = (GrantDataPermissionReq) o;
-        return Objects.equals(this.userName, grantDataPermissionReq.userName)
-            && Objects.equals(this.action, grantDataPermissionReq.action)
-            && Objects.equals(this.privileges, grantDataPermissionReq.privileges);
+        GrantDataPermissionReq that = (GrantDataPermissionReq) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

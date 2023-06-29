@@ -77,16 +77,16 @@ public class RecordControlInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordControlInfo recordControlInfo = (RecordControlInfo) o;
-        return Objects.equals(this.publishDomain, recordControlInfo.publishDomain)
-            && Objects.equals(this.app, recordControlInfo.app) && Objects.equals(this.stream, recordControlInfo.stream);
+        RecordControlInfo that = (RecordControlInfo) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream);
     }
 
     @Override

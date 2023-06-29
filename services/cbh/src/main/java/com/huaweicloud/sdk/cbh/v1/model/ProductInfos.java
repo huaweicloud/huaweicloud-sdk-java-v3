@@ -99,18 +99,18 @@ public class ProductInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductInfos productInfos = (ProductInfos) o;
-        return Objects.equals(this.productId, productInfos.productId)
-            && Objects.equals(this.cloudServiceType, productInfos.cloudServiceType)
-            && Objects.equals(this.resourceType, productInfos.resourceType)
-            && Objects.equals(this.resourceSpecCode, productInfos.resourceSpecCode);
+        ProductInfos that = (ProductInfos) obj;
+        return Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override

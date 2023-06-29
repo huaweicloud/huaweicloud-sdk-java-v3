@@ -70,22 +70,15 @@ public class DetachServerVolumeRequest {
             if (value == null) {
                 return null;
             }
-            DeleteFlagEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeleteFlagEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeleteFlagEnum(value));
         }
 
         public static DeleteFlagEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeleteFlagEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class DetachServerVolumeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetachServerVolumeRequest detachServerVolumeRequest = (DetachServerVolumeRequest) o;
-        return Objects.equals(this.serverId, detachServerVolumeRequest.serverId)
-            && Objects.equals(this.volumeId, detachServerVolumeRequest.volumeId)
-            && Objects.equals(this.deleteFlag, detachServerVolumeRequest.deleteFlag);
+        DetachServerVolumeRequest that = (DetachServerVolumeRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.deleteFlag, that.deleteFlag);
     }
 
     @Override

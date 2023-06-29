@@ -99,18 +99,17 @@ public class StorageGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageGroup storageGroup = (StorageGroup) o;
-        return Objects.equals(this.name, storageGroup.name)
-            && Objects.equals(this.description, storageGroup.description)
-            && Objects.equals(this.warmDataRetentionPolicy, storageGroup.warmDataRetentionPolicy)
-            && Objects.equals(this.coldDataRetentionPolicy, storageGroup.coldDataRetentionPolicy);
+        StorageGroup that = (StorageGroup) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.warmDataRetentionPolicy, that.warmDataRetentionPolicy)
+            && Objects.equals(this.coldDataRetentionPolicy, that.coldDataRetentionPolicy);
     }
 
     @Override

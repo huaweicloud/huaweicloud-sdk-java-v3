@@ -99,18 +99,17 @@ public class UpgradeAddonConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeAddonConfig upgradeAddonConfig = (UpgradeAddonConfig) o;
-        return Objects.equals(this.addonTemplateName, upgradeAddonConfig.addonTemplateName)
-            && Objects.equals(this.operation, upgradeAddonConfig.operation)
-            && Objects.equals(this.version, upgradeAddonConfig.version)
-            && Objects.equals(this.values, upgradeAddonConfig.values);
+        UpgradeAddonConfig that = (UpgradeAddonConfig) obj;
+        return Objects.equals(this.addonTemplateName, that.addonTemplateName)
+            && Objects.equals(this.operation, that.operation) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

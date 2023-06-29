@@ -115,17 +115,16 @@ public class ListRecordSetsByZoneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordSetsByZoneResponse listRecordSetsByZoneResponse = (ListRecordSetsByZoneResponse) o;
-        return Objects.equals(this.links, listRecordSetsByZoneResponse.links)
-            && Objects.equals(this.recordsets, listRecordSetsByZoneResponse.recordsets)
-            && Objects.equals(this.metadata, listRecordSetsByZoneResponse.metadata);
+        ListRecordSetsByZoneResponse that = (ListRecordSetsByZoneResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.recordsets, that.recordsets)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

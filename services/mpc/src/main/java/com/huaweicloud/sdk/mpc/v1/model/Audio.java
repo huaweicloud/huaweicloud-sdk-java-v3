@@ -66,22 +66,15 @@ public class Audio {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OutputPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OutputPolicyEnum(value));
         }
 
         public static OutputPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,17 +210,17 @@ public class Audio {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Audio audio = (Audio) o;
-        return Objects.equals(this.outputPolicy, audio.outputPolicy) && Objects.equals(this.codec, audio.codec)
-            && Objects.equals(this.sampleRate, audio.sampleRate) && Objects.equals(this.bitrate, audio.bitrate)
-            && Objects.equals(this.channels, audio.channels);
+        Audio that = (Audio) obj;
+        return Objects.equals(this.outputPolicy, that.outputPolicy) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.sampleRate, that.sampleRate) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.channels, that.channels);
     }
 
     @Override

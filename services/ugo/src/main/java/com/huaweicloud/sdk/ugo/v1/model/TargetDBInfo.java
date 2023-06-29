@@ -99,18 +99,16 @@ public class TargetDBInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetDBInfo targetDBInfo = (TargetDBInfo) o;
-        return Objects.equals(this.userName, targetDBInfo.userName)
-            && Objects.equals(this.password, targetDBInfo.password)
-            && Objects.equals(this.serviceName, targetDBInfo.serviceName)
-            && Objects.equals(this.instanceId, targetDBInfo.instanceId);
+        TargetDBInfo that = (TargetDBInfo) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

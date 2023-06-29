@@ -55,15 +55,15 @@ public class ClusterEndpoints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterEndpoints clusterEndpoints = (ClusterEndpoints) o;
-        return Objects.equals(this.url, clusterEndpoints.url) && Objects.equals(this.type, clusterEndpoints.type);
+        ClusterEndpoints that = (ClusterEndpoints) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.type, that.type);
     }
 
     @Override

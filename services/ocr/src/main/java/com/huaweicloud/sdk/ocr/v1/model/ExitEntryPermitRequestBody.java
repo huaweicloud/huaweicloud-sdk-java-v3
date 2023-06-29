@@ -99,18 +99,17 @@ public class ExitEntryPermitRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExitEntryPermitRequestBody exitEntryPermitRequestBody = (ExitEntryPermitRequestBody) o;
-        return Objects.equals(this.image, exitEntryPermitRequestBody.image)
-            && Objects.equals(this.url, exitEntryPermitRequestBody.url)
-            && Objects.equals(this.returnPortraitImage, exitEntryPermitRequestBody.returnPortraitImage)
-            && Objects.equals(this.returnPortraitLocation, exitEntryPermitRequestBody.returnPortraitLocation);
+        ExitEntryPermitRequestBody that = (ExitEntryPermitRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
+            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation);
     }
 
     @Override

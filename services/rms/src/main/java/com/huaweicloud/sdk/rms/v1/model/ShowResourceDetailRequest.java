@@ -33,15 +33,15 @@ public class ShowResourceDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceDetailRequest showResourceDetailRequest = (ShowResourceDetailRequest) o;
-        return Objects.equals(this.resourceId, showResourceDetailRequest.resourceId);
+        ShowResourceDetailRequest that = (ShowResourceDetailRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

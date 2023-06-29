@@ -65,16 +65,16 @@ public class RedirectPoolsExtendConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedirectPoolsExtendConfig redirectPoolsExtendConfig = (RedirectPoolsExtendConfig) o;
-        return Objects.equals(this.rewriteUrlEnable, redirectPoolsExtendConfig.rewriteUrlEnable)
-            && Objects.equals(this.rewriteUrlConfig, redirectPoolsExtendConfig.rewriteUrlConfig);
+        RedirectPoolsExtendConfig that = (RedirectPoolsExtendConfig) obj;
+        return Objects.equals(this.rewriteUrlEnable, that.rewriteUrlEnable)
+            && Objects.equals(this.rewriteUrlConfig, that.rewriteUrlConfig);
     }
 
     @Override

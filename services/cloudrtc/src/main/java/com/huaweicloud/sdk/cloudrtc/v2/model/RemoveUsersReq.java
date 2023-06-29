@@ -52,15 +52,15 @@ public class RemoveUsersReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveUsersReq removeUsersReq = (RemoveUsersReq) o;
-        return Objects.equals(this.userIds, removeUsersReq.userIds);
+        RemoveUsersReq that = (RemoveUsersReq) obj;
+        return Objects.equals(this.userIds, that.userIds);
     }
 
     @Override

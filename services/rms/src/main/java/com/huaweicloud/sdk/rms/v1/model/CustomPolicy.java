@@ -60,22 +60,15 @@ public class CustomPolicy {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,17 +163,16 @@ public class CustomPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomPolicy customPolicy = (CustomPolicy) o;
-        return Objects.equals(this.functionUrn, customPolicy.functionUrn)
-            && Objects.equals(this.authType, customPolicy.authType)
-            && Objects.equals(this.authValue, customPolicy.authValue);
+        CustomPolicy that = (CustomPolicy) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.authValue, that.authValue);
     }
 
     @Override

@@ -110,22 +110,15 @@ public class ModUserDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -381,22 +374,21 @@ public class ModUserDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModUserDTO modUserDTO = (ModUserDTO) o;
-        return Objects.equals(this.name, modUserDTO.name) && Objects.equals(this.englishName, modUserDTO.englishName)
-            && Objects.equals(this.phone, modUserDTO.phone) && Objects.equals(this.country, modUserDTO.country)
-            && Objects.equals(this.email, modUserDTO.email) && Objects.equals(this.vmrId, modUserDTO.vmrId)
-            && Objects.equals(this.deptCode, modUserDTO.deptCode)
-            && Objects.equals(this.signature, modUserDTO.signature) && Objects.equals(this.title, modUserDTO.title)
-            && Objects.equals(this.desc, modUserDTO.desc) && Objects.equals(this.status, modUserDTO.status)
-            && Objects.equals(this.sortLevel, modUserDTO.sortLevel)
-            && Objects.equals(this.hidePhone, modUserDTO.hidePhone);
+        ModUserDTO that = (ModUserDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.signature, that.signature)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.hidePhone, that.hidePhone);
     }
 
     @Override

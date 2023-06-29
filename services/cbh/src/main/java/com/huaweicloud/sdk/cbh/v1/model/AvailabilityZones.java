@@ -121,19 +121,17 @@ public class AvailabilityZones {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailabilityZones availabilityZones = (AvailabilityZones) o;
-        return Objects.equals(this.id, availabilityZones.id)
-            && Objects.equals(this.displayName, availabilityZones.displayName)
-            && Objects.equals(this.regionId, availabilityZones.regionId)
-            && Objects.equals(this.status, availabilityZones.status)
-            && Objects.equals(this.type, availabilityZones.type);
+        AvailabilityZones that = (AvailabilityZones) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

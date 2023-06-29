@@ -97,17 +97,16 @@ public class AddFacesByBase64Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesByBase64Response addFacesByBase64Response = (AddFacesByBase64Response) o;
-        return Objects.equals(this.faceSetId, addFacesByBase64Response.faceSetId)
-            && Objects.equals(this.faceSetName, addFacesByBase64Response.faceSetName)
-            && Objects.equals(this.faces, addFacesByBase64Response.faces);
+        AddFacesByBase64Response that = (AddFacesByBase64Response) obj;
+        return Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.faces, that.faces);
     }
 
     @Override

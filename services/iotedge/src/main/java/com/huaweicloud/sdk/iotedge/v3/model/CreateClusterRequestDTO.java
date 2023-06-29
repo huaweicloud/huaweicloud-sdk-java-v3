@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v3.model.ClusterNodeConfig;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateClusterRequestDTO
  */
-public class CreateClusterRequestDTO  {
-
+public class CreateClusterRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_node_config")
-    
+    @JsonProperty(value = "cluster_node_config")
 
     private ClusterNodeConfig clusterNodeConfig;
 
@@ -40,9 +30,6 @@ public class CreateClusterRequestDTO  {
         this.clusterName = clusterName;
         return this;
     }
-
-    
-
 
     /**
      * 集群名称
@@ -56,15 +43,10 @@ public class CreateClusterRequestDTO  {
         this.clusterName = clusterName;
     }
 
-    
-
     public CreateClusterRequestDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 集群描述
@@ -78,22 +60,19 @@ public class CreateClusterRequestDTO  {
         this.description = description;
     }
 
-    
-
     public CreateClusterRequestDTO withClusterNodeConfig(ClusterNodeConfig clusterNodeConfig) {
         this.clusterNodeConfig = clusterNodeConfig;
         return this;
     }
 
     public CreateClusterRequestDTO withClusterNodeConfig(Consumer<ClusterNodeConfig> clusterNodeConfigSetter) {
-        if(this.clusterNodeConfig == null ){
+        if (this.clusterNodeConfig == null) {
             this.clusterNodeConfig = new ClusterNodeConfig();
             clusterNodeConfigSetter.accept(this.clusterNodeConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get clusterNodeConfig
@@ -107,25 +86,24 @@ public class CreateClusterRequestDTO  {
         this.clusterNodeConfig = clusterNodeConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterRequestDTO createClusterRequestDTO = (CreateClusterRequestDTO) o;
-        return Objects.equals(this.clusterName, createClusterRequestDTO.clusterName) &&
-            Objects.equals(this.description, createClusterRequestDTO.description) &&
-            Objects.equals(this.clusterNodeConfig, createClusterRequestDTO.clusterNodeConfig);
+        CreateClusterRequestDTO that = (CreateClusterRequestDTO) obj;
+        return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.clusterNodeConfig, that.clusterNodeConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterName, description, clusterNodeConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +114,7 @@ public class CreateClusterRequestDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +125,5 @@ public class CreateClusterRequestDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

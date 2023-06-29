@@ -65,16 +65,15 @@ public class CreateCustomfieldsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomfieldsRequest createCustomfieldsRequest = (CreateCustomfieldsRequest) o;
-        return Objects.equals(this.projectId, createCustomfieldsRequest.projectId)
-            && Objects.equals(this.body, createCustomfieldsRequest.body);
+        CreateCustomfieldsRequest that = (CreateCustomfieldsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

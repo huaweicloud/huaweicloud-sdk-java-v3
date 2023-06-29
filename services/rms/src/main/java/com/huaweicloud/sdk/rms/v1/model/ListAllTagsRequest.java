@@ -79,17 +79,16 @@ public class ListAllTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllTagsRequest listAllTagsRequest = (ListAllTagsRequest) o;
-        return Objects.equals(this.key, listAllTagsRequest.key)
-            && Objects.equals(this.marker, listAllTagsRequest.marker)
-            && Objects.equals(this.limit, listAllTagsRequest.limit);
+        ListAllTagsRequest that = (ListAllTagsRequest) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

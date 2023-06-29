@@ -96,17 +96,16 @@ public class InstanceActionParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceActionParameters instanceActionParameters = (InstanceActionParameters) o;
-        return Objects.equals(this.replica, instanceActionParameters.replica)
-            && Objects.equals(this.hosts, instanceActionParameters.hosts)
-            && Objects.equals(this.version, instanceActionParameters.version);
+        InstanceActionParameters that = (InstanceActionParameters) obj;
+        return Objects.equals(this.replica, that.replica) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

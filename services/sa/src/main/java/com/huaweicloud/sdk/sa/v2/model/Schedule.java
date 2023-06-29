@@ -71,22 +71,15 @@ public class Schedule {
             if (value == null) {
                 return null;
             }
-            FrequencyUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FrequencyUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FrequencyUnitEnum(value));
         }
 
         public static FrequencyUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FrequencyUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class Schedule {
             if (value == null) {
                 return null;
             }
-            PeriodUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodUnitEnum(value));
         }
 
         public static PeriodUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,20 +308,20 @@ public class Schedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Schedule schedule = (Schedule) o;
-        return Objects.equals(this.frequencyInterval, schedule.frequencyInterval)
-            && Objects.equals(this.frequencyUnit, schedule.frequencyUnit)
-            && Objects.equals(this.periodInterval, schedule.periodInterval)
-            && Objects.equals(this.periodUnit, schedule.periodUnit)
-            && Objects.equals(this.delayInterval, schedule.delayInterval)
-            && Objects.equals(this.overtimeInterval, schedule.overtimeInterval);
+        Schedule that = (Schedule) obj;
+        return Objects.equals(this.frequencyInterval, that.frequencyInterval)
+            && Objects.equals(this.frequencyUnit, that.frequencyUnit)
+            && Objects.equals(this.periodInterval, that.periodInterval)
+            && Objects.equals(this.periodUnit, that.periodUnit)
+            && Objects.equals(this.delayInterval, that.delayInterval)
+            && Objects.equals(this.overtimeInterval, that.overtimeInterval);
     }
 
     @Override

@@ -143,17 +143,17 @@ public class QuotaResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaResource quotaResource = (QuotaResource) o;
-        return Objects.equals(this.used, quotaResource.used) && Objects.equals(this.min, quotaResource.min)
-            && Objects.equals(this.max, quotaResource.max) && Objects.equals(this.quota, quotaResource.quota)
-            && Objects.equals(this.projectId, quotaResource.projectId) && Objects.equals(this.type, quotaResource.type);
+        QuotaResource that = (QuotaResource) obj;
+        return Objects.equals(this.used, that.used) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.type, that.type);
     }
 
     @Override

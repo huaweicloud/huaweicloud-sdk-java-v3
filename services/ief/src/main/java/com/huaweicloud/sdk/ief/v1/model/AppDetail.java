@@ -140,17 +140,17 @@ public class AppDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppDetail appDetail = (AppDetail) o;
-        return Objects.equals(this.name, appDetail.name) && Objects.equals(this.alias, appDetail.alias)
-            && Objects.equals(this.description, appDetail.description)
-            && Objects.equals(this.iconUrl, appDetail.iconUrl) && Objects.equals(this.tags, appDetail.tags);
+        AppDetail that = (AppDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.iconUrl, that.iconUrl)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

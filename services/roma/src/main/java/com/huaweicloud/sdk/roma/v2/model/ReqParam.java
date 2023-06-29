@@ -65,22 +65,15 @@ public class ReqParam {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class ReqParam {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocationEnum(value));
         }
 
         public static LocationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,22 +231,15 @@ public class ReqParam {
             if (value == null) {
                 return null;
             }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequiredEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequiredEnum(value));
         }
 
         public static RequiredEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -327,22 +306,15 @@ public class ReqParam {
             if (value == null) {
                 return null;
             }
-            ValidEnableEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ValidEnableEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ValidEnableEnum(value));
         }
 
         public static ValidEnableEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ValidEnableEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -449,22 +421,15 @@ public class ReqParam {
             if (value == null) {
                 return null;
             }
-            PassThroughEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PassThroughEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PassThroughEnum(value));
         }
 
         public static PassThroughEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PassThroughEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -781,25 +746,23 @@ public class ReqParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReqParam reqParam = (ReqParam) o;
-        return Objects.equals(this.name, reqParam.name) && Objects.equals(this.type, reqParam.type)
-            && Objects.equals(this.location, reqParam.location)
-            && Objects.equals(this.defaultValue, reqParam.defaultValue)
-            && Objects.equals(this.sampleValue, reqParam.sampleValue)
-            && Objects.equals(this.required, reqParam.required)
-            && Objects.equals(this.validEnable, reqParam.validEnable) && Objects.equals(this.remark, reqParam.remark)
-            && Objects.equals(this.enumerations, reqParam.enumerations) && Objects.equals(this.minNum, reqParam.minNum)
-            && Objects.equals(this.maxNum, reqParam.maxNum) && Objects.equals(this.minSize, reqParam.minSize)
-            && Objects.equals(this.maxSize, reqParam.maxSize) && Objects.equals(this.regular, reqParam.regular)
-            && Objects.equals(this.jsonSchema, reqParam.jsonSchema)
-            && Objects.equals(this.passThrough, reqParam.passThrough) && Objects.equals(this.id, reqParam.id);
+        ReqParam that = (ReqParam) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.sampleValue, that.sampleValue) && Objects.equals(this.required, that.required)
+            && Objects.equals(this.validEnable, that.validEnable) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.enumerations, that.enumerations) && Objects.equals(this.minNum, that.minNum)
+            && Objects.equals(this.maxNum, that.maxNum) && Objects.equals(this.minSize, that.minSize)
+            && Objects.equals(this.maxSize, that.maxSize) && Objects.equals(this.regular, that.regular)
+            && Objects.equals(this.jsonSchema, that.jsonSchema) && Objects.equals(this.passThrough, that.passThrough)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

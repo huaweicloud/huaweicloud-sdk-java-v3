@@ -97,17 +97,16 @@ public class ChangePublicipToPeriodResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePublicipToPeriodResponse changePublicipToPeriodResponse = (ChangePublicipToPeriodResponse) o;
-        return Objects.equals(this.publicipIds, changePublicipToPeriodResponse.publicipIds)
-            && Objects.equals(this.orderId, changePublicipToPeriodResponse.orderId)
-            && Objects.equals(this.requestId, changePublicipToPeriodResponse.requestId);
+        ChangePublicipToPeriodResponse that = (ChangePublicipToPeriodResponse) obj;
+        return Objects.equals(this.publicipIds, that.publicipIds) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class SubJobEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubJobEntities subJobEntities = (SubJobEntities) o;
-        return Objects.equals(this.imageId, subJobEntities.imageId)
-            && Objects.equals(this.imageName, subJobEntities.imageName);
+        SubJobEntities that = (SubJobEntities) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName);
     }
 
     @Override

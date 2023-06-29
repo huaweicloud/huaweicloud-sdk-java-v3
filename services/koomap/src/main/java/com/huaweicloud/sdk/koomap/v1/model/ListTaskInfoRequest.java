@@ -169,21 +169,19 @@ public class ListTaskInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskInfoRequest listTaskInfoRequest = (ListTaskInfoRequest) o;
-        return Objects.equals(this.taskName, listTaskInfoRequest.taskName)
-            && Objects.equals(this.workspaceId, listTaskInfoRequest.workspaceId)
-            && Objects.equals(this.taskStatus, listTaskInfoRequest.taskStatus)
-            && Objects.equals(this.createTimeStart, listTaskInfoRequest.createTimeStart)
-            && Objects.equals(this.createTimeEnd, listTaskInfoRequest.createTimeEnd)
-            && Objects.equals(this.offset, listTaskInfoRequest.offset)
-            && Objects.equals(this.limit, listTaskInfoRequest.limit);
+        ListTaskInfoRequest that = (ListTaskInfoRequest) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.createTimeStart, that.createTimeStart)
+            && Objects.equals(this.createTimeEnd, that.createTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class BssParam {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class BssParam {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -280,19 +266,17 @@ public class BssParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BssParam bssParam = (BssParam) o;
-        return Objects.equals(this.isAutoRenew, bssParam.isAutoRenew)
-            && Objects.equals(this.chargingMode, bssParam.chargingMode)
-            && Objects.equals(this.isAutoPay, bssParam.isAutoPay)
-            && Objects.equals(this.periodType, bssParam.periodType)
-            && Objects.equals(this.periodNum, bssParam.periodNum);
+        BssParam that = (BssParam) obj;
+        return Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override

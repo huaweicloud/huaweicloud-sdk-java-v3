@@ -107,16 +107,16 @@ public class Subtitle {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Subtitle subtitle = (Subtitle) o;
-        return Objects.equals(this.input, subtitle.input) && Objects.equals(this.inputs, subtitle.inputs)
-            && Objects.equals(this.subtitleType, subtitle.subtitleType);
+        Subtitle that = (Subtitle) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.subtitleType, that.subtitleType);
     }
 
     @Override

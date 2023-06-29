@@ -1,45 +1,35 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.SlotValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CurrentSlot  {
-
+public class CurrentSlot {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_id")
-    
+    @JsonProperty(value = "slot_id")
 
     private String slotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_name")
-    
+    @JsonProperty(value = "slot_name")
 
     private String slotName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_values")
-    
+    @JsonProperty(value = "slot_values")
+
     private List<SlotValue> slotValues = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slot_identification")
-    
+    @JsonProperty(value = "slot_identification")
 
     private String slotIdentification;
 
@@ -47,9 +37,6 @@ public class CurrentSlot  {
         this.slotId = slotId;
         return this;
     }
-
-    
-
 
     /**
      * 槽位ID。
@@ -63,15 +50,10 @@ public class CurrentSlot  {
         this.slotId = slotId;
     }
 
-    
-
     public CurrentSlot withSlotName(String slotName) {
         this.slotName = slotName;
         return this;
     }
-
-    
-
 
     /**
      * 槽位名称。
@@ -85,16 +67,13 @@ public class CurrentSlot  {
         this.slotName = slotName;
     }
 
-    
-
     public CurrentSlot withSlotValues(List<SlotValue> slotValues) {
         this.slotValues = slotValues;
         return this;
     }
 
-    
     public CurrentSlot addSlotValuesItem(SlotValue slotValuesItem) {
-        if(this.slotValues == null) {
+        if (this.slotValues == null) {
             this.slotValues = new ArrayList<>();
         }
         this.slotValues.add(slotValuesItem);
@@ -102,7 +81,7 @@ public class CurrentSlot  {
     }
 
     public CurrentSlot withSlotValues(Consumer<List<SlotValue>> slotValuesSetter) {
-        if(this.slotValues == null) {
+        if (this.slotValues == null) {
             this.slotValues = new ArrayList<>();
         }
         slotValuesSetter.accept(this.slotValues);
@@ -121,15 +100,10 @@ public class CurrentSlot  {
         this.slotValues = slotValues;
     }
 
-    
-
     public CurrentSlot withSlotIdentification(String slotIdentification) {
         this.slotIdentification = slotIdentification;
         return this;
     }
-
-    
-
 
     /**
      * 槽位标识。
@@ -143,26 +117,25 @@ public class CurrentSlot  {
         this.slotIdentification = slotIdentification;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CurrentSlot currentSlot = (CurrentSlot) o;
-        return Objects.equals(this.slotId, currentSlot.slotId) &&
-            Objects.equals(this.slotName, currentSlot.slotName) &&
-            Objects.equals(this.slotValues, currentSlot.slotValues) &&
-            Objects.equals(this.slotIdentification, currentSlot.slotIdentification);
+        CurrentSlot that = (CurrentSlot) obj;
+        return Objects.equals(this.slotId, that.slotId) && Objects.equals(this.slotName, that.slotName)
+            && Objects.equals(this.slotValues, that.slotValues)
+            && Objects.equals(this.slotIdentification, that.slotIdentification);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(slotId, slotName, slotValues, slotIdentification);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +147,7 @@ public class CurrentSlot  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +158,5 @@ public class CurrentSlot  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -96,17 +96,16 @@ public class GeneralTableResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTableResult generalTableResult = (GeneralTableResult) o;
-        return Objects.equals(this.wordsRegionCount, generalTableResult.wordsRegionCount)
-            && Objects.equals(this.wordsRegionList, generalTableResult.wordsRegionList)
-            && Objects.equals(this.excel, generalTableResult.excel);
+        GeneralTableResult that = (GeneralTableResult) obj;
+        return Objects.equals(this.wordsRegionCount, that.wordsRegionCount)
+            && Objects.equals(this.wordsRegionList, that.wordsRegionList) && Objects.equals(this.excel, that.excel);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class FlinkTemplateList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlinkTemplateList flinkTemplateList = (FlinkTemplateList) o;
-        return Objects.equals(this.totalCount, flinkTemplateList.totalCount)
-            && Objects.equals(this.templates, flinkTemplateList.templates);
+        FlinkTemplateList that = (FlinkTemplateList) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

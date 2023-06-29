@@ -99,18 +99,16 @@ public class ExerciseCodeResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseCodeResource exerciseCodeResource = (ExerciseCodeResource) o;
-        return Objects.equals(this.id, exerciseCodeResource.id)
-            && Objects.equals(this.polymericResourceId, exerciseCodeResource.polymericResourceId)
-            && Objects.equals(this.content, exerciseCodeResource.content)
-            && Objects.equals(this.codeAnswer, exerciseCodeResource.codeAnswer);
+        ExerciseCodeResource that = (ExerciseCodeResource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.polymericResourceId, that.polymericResourceId)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.codeAnswer, that.codeAnswer);
     }
 
     @Override

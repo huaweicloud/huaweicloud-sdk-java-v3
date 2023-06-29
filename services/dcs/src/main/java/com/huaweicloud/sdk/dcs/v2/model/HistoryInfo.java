@@ -99,16 +99,16 @@ public class HistoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryInfo historyInfo = (HistoryInfo) o;
-        return Objects.equals(this.historyId, historyInfo.historyId) && Objects.equals(this.type, historyInfo.type)
-            && Objects.equals(this.createdAt, historyInfo.createdAt) && Objects.equals(this.status, historyInfo.status);
+        HistoryInfo that = (HistoryInfo) obj;
+        return Objects.equals(this.historyId, that.historyId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.status, that.status);
     }
 
     @Override

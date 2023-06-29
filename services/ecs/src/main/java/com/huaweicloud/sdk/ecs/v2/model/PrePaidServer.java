@@ -656,34 +656,28 @@ public class PrePaidServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServer prePaidServer = (PrePaidServer) o;
-        return Objects.equals(this.autoTerminateTime, prePaidServer.autoTerminateTime)
-            && Objects.equals(this.imageRef, prePaidServer.imageRef)
-            && Objects.equals(this.flavorRef, prePaidServer.flavorRef) && Objects.equals(this.name, prePaidServer.name)
-            && Objects.equals(this.userData, prePaidServer.userData)
-            && Objects.equals(this.adminPass, prePaidServer.adminPass)
-            && Objects.equals(this.keyName, prePaidServer.keyName) && Objects.equals(this.vpcid, prePaidServer.vpcid)
-            && Objects.equals(this.nics, prePaidServer.nics) && Objects.equals(this.publicip, prePaidServer.publicip)
-            && Objects.equals(this.count, prePaidServer.count)
-            && Objects.equals(this.isAutoRename, prePaidServer.isAutoRename)
-            && Objects.equals(this.rootVolume, prePaidServer.rootVolume)
-            && Objects.equals(this.dataVolumes, prePaidServer.dataVolumes)
-            && Objects.equals(this.securityGroups, prePaidServer.securityGroups)
-            && Objects.equals(this.availabilityZone, prePaidServer.availabilityZone)
-            && Objects.equals(this.batchCreateInMultiAz, prePaidServer.batchCreateInMultiAz)
-            && Objects.equals(this.extendparam, prePaidServer.extendparam)
-            && Objects.equals(this.metadata, prePaidServer.metadata)
-            && Objects.equals(this.osSchedulerHints, prePaidServer.osSchedulerHints)
-            && Objects.equals(this.tags, prePaidServer.tags)
-            && Objects.equals(this.serverTags, prePaidServer.serverTags)
-            && Objects.equals(this.description, prePaidServer.description);
+        PrePaidServer that = (PrePaidServer) obj;
+        return Objects.equals(this.autoTerminateTime, that.autoTerminateTime)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.adminPass, that.adminPass) && Objects.equals(this.keyName, that.keyName)
+            && Objects.equals(this.vpcid, that.vpcid) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.publicip, that.publicip) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.isAutoRename, that.isAutoRename) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.batchCreateInMultiAz, that.batchCreateInMultiAz)
+            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.description, that.description);
     }
 
     @Override

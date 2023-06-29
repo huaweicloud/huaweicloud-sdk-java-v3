@@ -101,19 +101,16 @@ public class ListLiveDataApiTestHistoryV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataApiTestHistoryV2Request listLiveDataApiTestHistoryV2Request =
-            (ListLiveDataApiTestHistoryV2Request) o;
-        return Objects.equals(this.instanceId, listLiveDataApiTestHistoryV2Request.instanceId)
-            && Objects.equals(this.ldApiId, listLiveDataApiTestHistoryV2Request.ldApiId)
-            && Objects.equals(this.offset, listLiveDataApiTestHistoryV2Request.offset)
-            && Objects.equals(this.limit, listLiveDataApiTestHistoryV2Request.limit);
+        ListLiveDataApiTestHistoryV2Request that = (ListLiveDataApiTestHistoryV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

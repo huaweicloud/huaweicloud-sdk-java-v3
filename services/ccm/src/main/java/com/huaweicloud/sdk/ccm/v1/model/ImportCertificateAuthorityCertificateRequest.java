@@ -67,17 +67,15 @@ public class ImportCertificateAuthorityCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportCertificateAuthorityCertificateRequest importCertificateAuthorityCertificateRequest =
-            (ImportCertificateAuthorityCertificateRequest) o;
-        return Objects.equals(this.caId, importCertificateAuthorityCertificateRequest.caId)
-            && Objects.equals(this.body, importCertificateAuthorityCertificateRequest.body);
+        ImportCertificateAuthorityCertificateRequest that = (ImportCertificateAuthorityCertificateRequest) obj;
+        return Objects.equals(this.caId, that.caId) && Objects.equals(this.body, that.body);
     }
 
     @Override

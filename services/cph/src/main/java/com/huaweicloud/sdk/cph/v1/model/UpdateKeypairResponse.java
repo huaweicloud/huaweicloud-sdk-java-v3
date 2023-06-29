@@ -75,16 +75,15 @@ public class UpdateKeypairResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeypairResponse updateKeypairResponse = (UpdateKeypairResponse) o;
-        return Objects.equals(this.requestId, updateKeypairResponse.requestId)
-            && Objects.equals(this.jobs, updateKeypairResponse.jobs);
+        UpdateKeypairResponse that = (UpdateKeypairResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

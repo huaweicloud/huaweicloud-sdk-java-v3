@@ -171,20 +171,18 @@ public class InfluxDBForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InfluxDBForwarding influxDBForwarding = (InfluxDBForwarding) o;
-        return Objects.equals(this.address, influxDBForwarding.address)
-            && Objects.equals(this.dbName, influxDBForwarding.dbName)
-            && Objects.equals(this.username, influxDBForwarding.username)
-            && Objects.equals(this.password, influxDBForwarding.password)
-            && Objects.equals(this.measurement, influxDBForwarding.measurement)
-            && Objects.equals(this.columnMappings, influxDBForwarding.columnMappings);
+        InfluxDBForwarding that = (InfluxDBForwarding) obj;
+        return Objects.equals(this.address, that.address) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.measurement, that.measurement)
+            && Objects.equals(this.columnMappings, that.columnMappings);
     }
 
     @Override

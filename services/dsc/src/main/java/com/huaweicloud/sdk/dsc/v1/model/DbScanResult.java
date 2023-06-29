@@ -74,16 +74,15 @@ public class DbScanResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbScanResult dbScanResult = (DbScanResult) o;
-        return Objects.equals(this.total, dbScanResult.total)
-            && Objects.equals(this.dbScanResults, dbScanResult.dbScanResults);
+        DbScanResult that = (DbScanResult) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.dbScanResults, that.dbScanResults);
     }
 
     @Override

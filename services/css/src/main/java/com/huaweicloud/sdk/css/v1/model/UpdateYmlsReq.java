@@ -43,15 +43,15 @@ public class UpdateYmlsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateYmlsReq updateYmlsReq = (UpdateYmlsReq) o;
-        return Objects.equals(this.edit, updateYmlsReq.edit);
+        UpdateYmlsReq that = (UpdateYmlsReq) obj;
+        return Objects.equals(this.edit, that.edit);
     }
 
     @Override

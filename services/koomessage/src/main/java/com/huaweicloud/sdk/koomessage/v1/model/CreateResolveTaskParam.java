@@ -158,19 +158,18 @@ public class CreateResolveTaskParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResolveTaskParam createResolveTaskParam = (CreateResolveTaskParam) o;
-        return Objects.equals(this.custFlag, createResolveTaskParam.custFlag)
-            && Objects.equals(this.dyncParams, createResolveTaskParam.dyncParams)
-            && Objects.equals(this.customUrl, createResolveTaskParam.customUrl)
-            && Objects.equals(this.customShortCode, createResolveTaskParam.customShortCode)
-            && Objects.equals(this.smsParams, createResolveTaskParam.smsParams);
+        CreateResolveTaskParam that = (CreateResolveTaskParam) obj;
+        return Objects.equals(this.custFlag, that.custFlag) && Objects.equals(this.dyncParams, that.dyncParams)
+            && Objects.equals(this.customUrl, that.customUrl)
+            && Objects.equals(this.customShortCode, that.customShortCode)
+            && Objects.equals(this.smsParams, that.smsParams);
     }
 
     @Override

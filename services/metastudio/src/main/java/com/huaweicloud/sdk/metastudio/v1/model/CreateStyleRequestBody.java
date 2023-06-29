@@ -89,22 +89,15 @@ public class CreateStyleRequestBody {
             if (value == null) {
                 return null;
             }
-            SexEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SexEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SexEnum(value));
         }
 
         public static SexEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SexEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -319,22 +312,18 @@ public class CreateStyleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStyleRequestBody createStyleRequestBody = (CreateStyleRequestBody) o;
-        return Objects.equals(this.name, createStyleRequestBody.name)
-            && Objects.equals(this.description, createStyleRequestBody.description)
-            && Objects.equals(this.projectId, createStyleRequestBody.projectId)
-            && Objects.equals(this.status, createStyleRequestBody.status)
-            && Objects.equals(this.sex, createStyleRequestBody.sex)
-            && Objects.equals(this.tags, createStyleRequestBody.tags)
-            && Objects.equals(this.styleAssets, createStyleRequestBody.styleAssets)
-            && Objects.equals(this.extraMeta, createStyleRequestBody.extraMeta);
+        CreateStyleRequestBody that = (CreateStyleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.styleAssets, that.styleAssets) && Objects.equals(this.extraMeta, that.extraMeta);
     }
 
     @Override

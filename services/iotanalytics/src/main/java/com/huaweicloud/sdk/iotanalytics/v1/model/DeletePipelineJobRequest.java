@@ -33,15 +33,15 @@ public class DeletePipelineJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePipelineJobRequest deletePipelineJobRequest = (DeletePipelineJobRequest) o;
-        return Objects.equals(this.pipelineId, deletePipelineJobRequest.pipelineId);
+        DeletePipelineJobRequest that = (DeletePipelineJobRequest) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId);
     }
 
     @Override

@@ -1,44 +1,34 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * This is a auto create Body Object
  */
-public class PostMultiGrainedSegmentReq  {
-
+public class PostMultiGrainedSegmentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
+
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +56,18 @@ public class PostMultiGrainedSegmentReq  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,31 +85,29 @@ public class PostMultiGrainedSegmentReq  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
+
     /**
      * 分词粒度，1为最细粒度，2为最粗粒度，其它情况默认返回全部粒度分词树结果。
      */
     public static final class GranularityEnum {
 
-        
         /**
          * Enum NUMBER_1 for value: 1
          */
         public static final GranularityEnum NUMBER_1 = new GranularityEnum(1);
-        
+
         /**
          * Enum NUMBER_2 for value: 2
          */
         public static final GranularityEnum NUMBER_2 = new GranularityEnum(2);
-        
+
         /**
          * Enum NUMBER_0 for value: 0
          */
         public static final GranularityEnum NUMBER_0 = new GranularityEnum(0);
-        
 
         private static final Map<Integer, GranularityEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,25 +137,18 @@ public class PostMultiGrainedSegmentReq  {
 
         @JsonCreator
         public static GranularityEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            GranularityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GranularityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GranularityEnum(value));
         }
 
         public static GranularityEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            GranularityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -192,8 +166,7 @@ public class PostMultiGrainedSegmentReq  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="granularity")
-    
+    @JsonProperty(value = "granularity")
 
     private GranularityEnum granularity;
 
@@ -201,9 +174,6 @@ public class PostMultiGrainedSegmentReq  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分词文本，长度为1~64，文本编码为UTF-8。
@@ -217,15 +187,10 @@ public class PostMultiGrainedSegmentReq  {
         this.text = text;
     }
 
-    
-
     public PostMultiGrainedSegmentReq withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -239,15 +204,10 @@ public class PostMultiGrainedSegmentReq  {
         this.lang = lang;
     }
 
-    
-
     public PostMultiGrainedSegmentReq withGranularity(GranularityEnum granularity) {
         this.granularity = granularity;
         return this;
     }
-
-    
-
 
     /**
      * 分词粒度，1为最细粒度，2为最粗粒度，其它情况默认返回全部粒度分词树结果。
@@ -261,25 +221,24 @@ public class PostMultiGrainedSegmentReq  {
         this.granularity = granularity;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostMultiGrainedSegmentReq postMultiGrainedSegmentReq = (PostMultiGrainedSegmentReq) o;
-        return Objects.equals(this.text, postMultiGrainedSegmentReq.text) &&
-            Objects.equals(this.lang, postMultiGrainedSegmentReq.lang) &&
-            Objects.equals(this.granularity, postMultiGrainedSegmentReq.granularity);
+        PostMultiGrainedSegmentReq that = (PostMultiGrainedSegmentReq) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.lang, that.lang)
+            && Objects.equals(this.granularity, that.granularity);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, lang, granularity);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -290,6 +249,7 @@ public class PostMultiGrainedSegmentReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -300,8 +260,5 @@ public class PostMultiGrainedSegmentReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -252,24 +252,20 @@ public class CreateLogDumpObsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogDumpObsRequestBody createLogDumpObsRequestBody = (CreateLogDumpObsRequestBody) o;
-        return Objects.equals(this.logGroupId, createLogDumpObsRequestBody.logGroupId)
-            && Objects.equals(this.logStreamIds, createLogDumpObsRequestBody.logStreamIds)
-            && Objects.equals(this.obsBucketName, createLogDumpObsRequestBody.obsBucketName)
-            && Objects.equals(this.type, createLogDumpObsRequestBody.type)
-            && Objects.equals(this.storageFormat, createLogDumpObsRequestBody.storageFormat)
-            && Objects.equals(this.switchOn, createLogDumpObsRequestBody.switchOn)
-            && Objects.equals(this.prefixName, createLogDumpObsRequestBody.prefixName)
-            && Objects.equals(this.dirPrefixName, createLogDumpObsRequestBody.dirPrefixName)
-            && Objects.equals(this.period, createLogDumpObsRequestBody.period)
-            && Objects.equals(this.periodUnit, createLogDumpObsRequestBody.periodUnit);
+        CreateLogDumpObsRequestBody that = (CreateLogDumpObsRequestBody) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamIds, that.logStreamIds)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.storageFormat, that.storageFormat) && Objects.equals(this.switchOn, that.switchOn)
+            && Objects.equals(this.prefixName, that.prefixName)
+            && Objects.equals(this.dirPrefixName, that.dirPrefixName) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.periodUnit, that.periodUnit);
     }
 
     @Override

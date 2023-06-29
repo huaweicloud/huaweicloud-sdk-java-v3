@@ -29,8 +29,8 @@ public class EventMetadataRelation {
     private List<String> value = null;
 
     /**
-    * 该条件与其他条件的组合方式
-    */
+     * 该条件与其他条件的组合方式
+     */
     public static final class RelationEnum {
 
         /**
@@ -79,22 +79,15 @@ public class EventMetadataRelation {
             if (value == null) {
                 return null;
             }
-            RelationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationEnum(value));
         }
 
         public static RelationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RelationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,17 +177,16 @@ public class EventMetadataRelation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventMetadataRelation eventMetadataRelation = (EventMetadataRelation) o;
-        return Objects.equals(this.key, eventMetadataRelation.key)
-            && Objects.equals(this.value, eventMetadataRelation.value)
-            && Objects.equals(this.relation, eventMetadataRelation.relation);
+        EventMetadataRelation that = (EventMetadataRelation) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.relation, that.relation);
     }
 
     @Override

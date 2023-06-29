@@ -260,22 +260,22 @@ public class BrokenList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BrokenList brokenList = (BrokenList) o;
-        return Objects.equals(this.brandBrokens, brokenList.brandBrokens)
-            && Objects.equals(this.commonTimestamps, brokenList.commonTimestamps)
-            && Objects.equals(this.performanceLoad, brokenList.performanceLoad)
-            && Objects.equals(this.respcodeBrokens, brokenList.respcodeBrokens)
-            && Objects.equals(this.rtmpBrokens, brokenList.rtmpBrokens)
-            && Objects.equals(this.streamingErrorBrokens, brokenList.streamingErrorBrokens)
-            && Objects.equals(this.tpsBrokens, brokenList.tpsBrokens)
-            && Objects.equals(this.vusersBrokens, brokenList.vusersBrokens);
+        BrokenList that = (BrokenList) obj;
+        return Objects.equals(this.brandBrokens, that.brandBrokens)
+            && Objects.equals(this.commonTimestamps, that.commonTimestamps)
+            && Objects.equals(this.performanceLoad, that.performanceLoad)
+            && Objects.equals(this.respcodeBrokens, that.respcodeBrokens)
+            && Objects.equals(this.rtmpBrokens, that.rtmpBrokens)
+            && Objects.equals(this.streamingErrorBrokens, that.streamingErrorBrokens)
+            && Objects.equals(this.tpsBrokens, that.tpsBrokens)
+            && Objects.equals(this.vusersBrokens, that.vusersBrokens);
     }
 
     @Override

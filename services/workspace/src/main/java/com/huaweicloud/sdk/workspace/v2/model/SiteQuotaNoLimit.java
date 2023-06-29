@@ -74,16 +74,15 @@ public class SiteQuotaNoLimit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SiteQuotaNoLimit siteQuotaNoLimit = (SiteQuotaNoLimit) o;
-        return Objects.equals(this.resources, siteQuotaNoLimit.resources)
-            && Objects.equals(this.siteId, siteQuotaNoLimit.siteId);
+        SiteQuotaNoLimit that = (SiteQuotaNoLimit) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.siteId, that.siteId);
     }
 
     @Override

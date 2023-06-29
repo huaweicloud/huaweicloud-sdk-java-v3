@@ -552,38 +552,29 @@ public class ShowSignatureResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSignatureResponse showSignatureResponse = (ShowSignatureResponse) o;
-        return Objects.equals(this.id, showSignatureResponse.id)
-            && Objects.equals(this.createTime, showSignatureResponse.createTime)
-            && Objects.equals(this.updateTime, showSignatureResponse.updateTime)
-            && Objects.equals(this.customerId, showSignatureResponse.customerId)
-            && Objects.equals(this.tenant, showSignatureResponse.tenant)
-            && Objects.equals(this.signatureName, showSignatureResponse.signatureName)
-            && Objects.equals(this.signatureId, showSignatureResponse.signatureId)
-            && Objects.equals(this.signatureType, showSignatureResponse.signatureType)
-            && Objects.equals(this.appName, showSignatureResponse.appName)
-            && Objects.equals(this.applyDesc, showSignatureResponse.applyDesc)
-            && Objects.equals(this.channelNum, showSignatureResponse.channelNum)
-            && Objects.equals(this.reviewDesc, showSignatureResponse.reviewDesc)
-            && Objects.equals(this.fileId, showSignatureResponse.fileId)
-            && Objects.equals(this.status, showSignatureResponse.status)
-            && Objects.equals(this.site, showSignatureResponse.site)
-            && Objects.equals(this.signatureSource, showSignatureResponse.signatureSource)
-            && Objects.equals(this.isInvolvedThird, showSignatureResponse.isInvolvedThird)
-            && Objects.equals(this.powerAttorneyFileId, showSignatureResponse.powerAttorneyFileId)
-            && Objects.equals(this.urgeStatus, showSignatureResponse.urgeStatus)
-            && Objects.equals(this.urgeTime, showSignatureResponse.urgeTime)
-            && Objects.equals(this.urgeDesc, showSignatureResponse.urgeDesc)
-            && Objects.equals(this.appKey, showSignatureResponse.appKey)
-            && Objects.equals(this.sourceTitleContent, showSignatureResponse.sourceTitleContent)
-            && Objects.equals(this.signatureUsage, showSignatureResponse.signatureUsage);
+        ShowSignatureResponse that = (ShowSignatureResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.tenant, that.tenant) && Objects.equals(this.signatureName, that.signatureName)
+            && Objects.equals(this.signatureId, that.signatureId)
+            && Objects.equals(this.signatureType, that.signatureType) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.applyDesc, that.applyDesc) && Objects.equals(this.channelNum, that.channelNum)
+            && Objects.equals(this.reviewDesc, that.reviewDesc) && Objects.equals(this.fileId, that.fileId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.site, that.site)
+            && Objects.equals(this.signatureSource, that.signatureSource)
+            && Objects.equals(this.isInvolvedThird, that.isInvolvedThird)
+            && Objects.equals(this.powerAttorneyFileId, that.powerAttorneyFileId)
+            && Objects.equals(this.urgeStatus, that.urgeStatus) && Objects.equals(this.urgeTime, that.urgeTime)
+            && Objects.equals(this.urgeDesc, that.urgeDesc) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.sourceTitleContent, that.sourceTitleContent)
+            && Objects.equals(this.signatureUsage, that.signatureUsage);
     }
 
     @Override

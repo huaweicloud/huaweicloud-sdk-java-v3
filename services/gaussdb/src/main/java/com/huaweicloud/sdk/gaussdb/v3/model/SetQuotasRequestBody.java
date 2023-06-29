@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.SetQuota;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SetQuotasRequestBody
  */
-public class SetQuotasRequestBody  {
-
+public class SetQuotasRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota_list")
-    
+    @JsonProperty(value = "quota_list")
+
     private List<SetQuota> quotaList = null;
-    
+
     public SetQuotasRequestBody withQuotaList(List<SetQuota> quotaList) {
         this.quotaList = quotaList;
         return this;
     }
 
-    
     public SetQuotasRequestBody addQuotaListItem(SetQuota quotaListItem) {
-        if(this.quotaList == null) {
+        if (this.quotaList == null) {
             this.quotaList = new ArrayList<>();
         }
         this.quotaList.add(quotaListItem);
@@ -40,7 +32,7 @@ public class SetQuotasRequestBody  {
     }
 
     public SetQuotasRequestBody withQuotaList(Consumer<List<SetQuota>> quotaListSetter) {
-        if(this.quotaList == null) {
+        if (this.quotaList == null) {
             this.quotaList = new ArrayList<>();
         }
         quotaListSetter.accept(this.quotaList);
@@ -59,23 +51,23 @@ public class SetQuotasRequestBody  {
         this.quotaList = quotaList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetQuotasRequestBody setQuotasRequestBody = (SetQuotasRequestBody) o;
-        return Objects.equals(this.quotaList, setQuotasRequestBody.quotaList);
+        SetQuotasRequestBody that = (SetQuotasRequestBody) obj;
+        return Objects.equals(this.quotaList, that.quotaList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotaList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class SetQuotasRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class SetQuotasRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

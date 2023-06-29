@@ -104,22 +104,15 @@ public class ShowEventStreamingResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,25 +380,20 @@ public class ShowEventStreamingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventStreamingResponse showEventStreamingResponse = (ShowEventStreamingResponse) o;
-        return Objects.equals(this.name, showEventStreamingResponse.name)
-            && Objects.equals(this.description, showEventStreamingResponse.description)
-            && Objects.equals(this.source, showEventStreamingResponse.source)
-            && Objects.equals(this.sink, showEventStreamingResponse.sink)
-            && Objects.equals(this.ruleConfig, showEventStreamingResponse.ruleConfig)
-            && Objects.equals(this.option, showEventStreamingResponse.option)
-            && Objects.equals(this.status, showEventStreamingResponse.status)
-            && Objects.equals(this.streamingId, showEventStreamingResponse.streamingId)
-            && Objects.equals(this.createdTime, showEventStreamingResponse.createdTime)
-            && Objects.equals(this.updatedTime, showEventStreamingResponse.updatedTime)
-            && Objects.equals(this.xRequestId, showEventStreamingResponse.xRequestId);
+        ShowEventStreamingResponse that = (ShowEventStreamingResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.sink, that.sink)
+            && Objects.equals(this.ruleConfig, that.ruleConfig) && Objects.equals(this.option, that.option)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.streamingId, that.streamingId)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

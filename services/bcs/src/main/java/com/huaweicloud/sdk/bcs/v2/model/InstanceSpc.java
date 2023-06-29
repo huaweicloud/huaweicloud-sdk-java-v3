@@ -77,17 +77,17 @@ public class InstanceSpc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceSpc instanceSpc = (InstanceSpc) o;
-        return Objects.equals(this.orgPeerMaxNum, instanceSpc.orgPeerMaxNum)
-            && Objects.equals(this.ordererMaxNum, instanceSpc.ordererMaxNum)
-            && Objects.equals(this.memberMaxNum, instanceSpc.memberMaxNum);
+        InstanceSpc that = (InstanceSpc) obj;
+        return Objects.equals(this.orgPeerMaxNum, that.orgPeerMaxNum)
+            && Objects.equals(this.ordererMaxNum, that.ordererMaxNum)
+            && Objects.equals(this.memberMaxNum, that.memberMaxNum);
     }
 
     @Override

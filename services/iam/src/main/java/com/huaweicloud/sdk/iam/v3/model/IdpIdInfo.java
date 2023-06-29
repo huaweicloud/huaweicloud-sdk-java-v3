@@ -33,15 +33,15 @@ public class IdpIdInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdpIdInfo idpIdInfo = (IdpIdInfo) o;
-        return Objects.equals(this.id, idpIdInfo.id);
+        IdpIdInfo that = (IdpIdInfo) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

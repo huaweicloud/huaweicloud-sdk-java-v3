@@ -147,20 +147,18 @@ public class ListLakeFormationInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLakeFormationInstancesRequest listLakeFormationInstancesRequest = (ListLakeFormationInstancesRequest) o;
-        return Objects.equals(this.inRecycleBin, listLakeFormationInstancesRequest.inRecycleBin)
-            && Objects.equals(this.offset, listLakeFormationInstancesRequest.offset)
-            && Objects.equals(this.limit, listLakeFormationInstancesRequest.limit)
-            && Objects.equals(this.name, listLakeFormationInstancesRequest.name)
-            && Objects.equals(this.enterpriseProjectId, listLakeFormationInstancesRequest.enterpriseProjectId)
-            && Objects.equals(this.tags, listLakeFormationInstancesRequest.tags);
+        ListLakeFormationInstancesRequest that = (ListLakeFormationInstancesRequest) obj;
+        return Objects.equals(this.inRecycleBin, that.inRecycleBin) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

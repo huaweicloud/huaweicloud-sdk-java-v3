@@ -88,19 +88,16 @@ public class UpdateElasticResourcePoolQueueInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateElasticResourcePoolQueueInfoRequest updateElasticResourcePoolQueueInfoRequest =
-            (UpdateElasticResourcePoolQueueInfoRequest) o;
-        return Objects.equals(this.elasticResourcePoolName,
-            updateElasticResourcePoolQueueInfoRequest.elasticResourcePoolName)
-            && Objects.equals(this.queueName, updateElasticResourcePoolQueueInfoRequest.queueName)
-            && Objects.equals(this.body, updateElasticResourcePoolQueueInfoRequest.body);
+        UpdateElasticResourcePoolQueueInfoRequest that = (UpdateElasticResourcePoolQueueInfoRequest) obj;
+        return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.body, that.body);
     }
 
     @Override

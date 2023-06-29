@@ -75,16 +75,15 @@ public class ListObsBucketObjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListObsBucketObjectResponse listObsBucketObjectResponse = (ListObsBucketObjectResponse) o;
-        return Objects.equals(this.count, listObsBucketObjectResponse.count)
-            && Objects.equals(this.objects, listObsBucketObjectResponse.objects);
+        ListObsBucketObjectResponse that = (ListObsBucketObjectResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.objects, that.objects);
     }
 
     @Override

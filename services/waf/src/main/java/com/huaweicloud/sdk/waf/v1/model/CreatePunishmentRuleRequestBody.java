@@ -84,22 +84,15 @@ public class CreatePunishmentRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,17 +176,16 @@ public class CreatePunishmentRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePunishmentRuleRequestBody createPunishmentRuleRequestBody = (CreatePunishmentRuleRequestBody) o;
-        return Objects.equals(this.category, createPunishmentRuleRequestBody.category)
-            && Objects.equals(this.blockTime, createPunishmentRuleRequestBody.blockTime)
-            && Objects.equals(this.description, createPunishmentRuleRequestBody.description);
+        CreatePunishmentRuleRequestBody that = (CreatePunishmentRuleRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.blockTime, that.blockTime)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

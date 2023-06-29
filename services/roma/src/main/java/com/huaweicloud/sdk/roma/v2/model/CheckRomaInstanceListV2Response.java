@@ -102,17 +102,16 @@ public class CheckRomaInstanceListV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRomaInstanceListV2Response checkRomaInstanceListV2Response = (CheckRomaInstanceListV2Response) o;
-        return Objects.equals(this.total, checkRomaInstanceListV2Response.total)
-            && Objects.equals(this.size, checkRomaInstanceListV2Response.size)
-            && Objects.equals(this.instances, checkRomaInstanceListV2Response.instances);
+        CheckRomaInstanceListV2Response that = (CheckRomaInstanceListV2Response) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

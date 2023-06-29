@@ -145,20 +145,17 @@ public class ColumnsList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnsList columnsList = (ColumnsList) o;
-        return Objects.equals(this.comment, columnsList.comment)
-            && Objects.equals(this.columnName, columnsList.columnName)
-            && Objects.equals(this.columnType, columnsList.columnType)
-            && Objects.equals(this.seqNumber, columnsList.seqNumber)
-            && Objects.equals(this.primary, columnsList.primary)
-            && Objects.equals(this.partitionCol, columnsList.partitionCol);
+        ColumnsList that = (ColumnsList) obj;
+        return Objects.equals(this.comment, that.comment) && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.columnType, that.columnType) && Objects.equals(this.seqNumber, that.seqNumber)
+            && Objects.equals(this.primary, that.primary) && Objects.equals(this.partitionCol, that.partitionCol);
     }
 
     @Override

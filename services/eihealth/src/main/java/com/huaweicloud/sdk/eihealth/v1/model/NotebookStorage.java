@@ -55,16 +55,15 @@ public class NotebookStorage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotebookStorage notebookStorage = (NotebookStorage) o;
-        return Objects.equals(this.path, notebookStorage.path)
-            && Objects.equals(this.mountPath, notebookStorage.mountPath);
+        NotebookStorage that = (NotebookStorage) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.mountPath, that.mountPath);
     }
 
     @Override

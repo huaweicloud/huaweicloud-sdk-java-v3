@@ -165,21 +165,18 @@ public class SubscriptionSourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionSourceInfo subscriptionSourceInfo = (SubscriptionSourceInfo) o;
-        return Objects.equals(this.id, subscriptionSourceInfo.id)
-            && Objects.equals(this.name, subscriptionSourceInfo.name)
-            && Objects.equals(this.providerType, subscriptionSourceInfo.providerType)
-            && Objects.equals(this.detail, subscriptionSourceInfo.detail)
-            && Objects.equals(this.filter, subscriptionSourceInfo.filter)
-            && Objects.equals(this.createdTime, subscriptionSourceInfo.createdTime)
-            && Objects.equals(this.updatedTime, subscriptionSourceInfo.updatedTime);
+        SubscriptionSourceInfo that = (SubscriptionSourceInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

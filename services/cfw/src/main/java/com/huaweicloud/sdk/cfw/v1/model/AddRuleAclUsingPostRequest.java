@@ -87,17 +87,16 @@ public class AddRuleAclUsingPostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRuleAclUsingPostRequest addRuleAclUsingPostRequest = (AddRuleAclUsingPostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, addRuleAclUsingPostRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, addRuleAclUsingPostRequest.fwInstanceId)
-            && Objects.equals(this.body, addRuleAclUsingPostRequest.body);
+        AddRuleAclUsingPostRequest that = (AddRuleAclUsingPostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

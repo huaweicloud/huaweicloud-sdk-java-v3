@@ -77,17 +77,16 @@ public class NovaListKeypairsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaListKeypairsRequest novaListKeypairsRequest = (NovaListKeypairsRequest) o;
-        return Objects.equals(this.limit, novaListKeypairsRequest.limit)
-            && Objects.equals(this.marker, novaListKeypairsRequest.marker)
-            && Objects.equals(this.openStackAPIVersion, novaListKeypairsRequest.openStackAPIVersion);
+        NovaListKeypairsRequest that = (NovaListKeypairsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.openStackAPIVersion, that.openStackAPIVersion);
     }
 
     @Override

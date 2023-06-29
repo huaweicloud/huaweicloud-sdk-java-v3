@@ -296,26 +296,22 @@ public class ShowDatasourceConnectionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatasourceConnectionResponse showDatasourceConnectionResponse = (ShowDatasourceConnectionResponse) o;
-        return Objects.equals(this.isSuccess, showDatasourceConnectionResponse.isSuccess)
-            && Objects.equals(this.message, showDatasourceConnectionResponse.message)
-            && Objects.equals(this.connectionId, showDatasourceConnectionResponse.connectionId)
-            && Objects.equals(this.destination, showDatasourceConnectionResponse.destination)
-            && Objects.equals(this.state, showDatasourceConnectionResponse.state)
-            && Objects.equals(this.process, showDatasourceConnectionResponse.process)
-            && Objects.equals(this.name, showDatasourceConnectionResponse.name)
-            && Objects.equals(this.connectionUrl, showDatasourceConnectionResponse.connectionUrl)
-            && Objects.equals(this.clusterName, showDatasourceConnectionResponse.clusterName)
-            && Objects.equals(this.service, showDatasourceConnectionResponse.service)
-            && Objects.equals(this.createTime, showDatasourceConnectionResponse.createTime)
-            && Objects.equals(this.availableQueueInfo, showDatasourceConnectionResponse.availableQueueInfo);
+        ShowDatasourceConnectionResponse that = (ShowDatasourceConnectionResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.connectionId, that.connectionId)
+            && Objects.equals(this.destination, that.destination) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.process, that.process) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.connectionUrl, that.connectionUrl)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.availableQueueInfo, that.availableQueueInfo);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class ResponseInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponseInfoResp responseInfoResp = (ResponseInfoResp) o;
-        return Objects.equals(this.status, responseInfoResp.status) && Objects.equals(this.body, responseInfoResp.body)
-            && Objects.equals(this._default, responseInfoResp._default);
+        ResponseInfoResp that = (ResponseInfoResp) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.body, that.body)
+            && Objects.equals(this._default, that._default);
     }
 
     @Override

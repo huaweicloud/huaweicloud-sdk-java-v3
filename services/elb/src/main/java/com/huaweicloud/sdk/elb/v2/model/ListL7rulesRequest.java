@@ -276,25 +276,21 @@ public class ListL7rulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListL7rulesRequest listL7rulesRequest = (ListL7rulesRequest) o;
-        return Objects.equals(this.limit, listL7rulesRequest.limit)
-            && Objects.equals(this.marker, listL7rulesRequest.marker)
-            && Objects.equals(this.pageReverse, listL7rulesRequest.pageReverse)
-            && Objects.equals(this.l7policyId, listL7rulesRequest.l7policyId)
-            && Objects.equals(this.id, listL7rulesRequest.id)
-            && Objects.equals(this.adminStateUp, listL7rulesRequest.adminStateUp)
-            && Objects.equals(this.type, listL7rulesRequest.type)
-            && Objects.equals(this.compareType, listL7rulesRequest.compareType)
-            && Objects.equals(this.invert, listL7rulesRequest.invert)
-            && Objects.equals(this.key, listL7rulesRequest.key) && Objects.equals(this.value, listL7rulesRequest.value)
-            && Objects.equals(this.provisioningStatus, listL7rulesRequest.provisioningStatus);
+        ListL7rulesRequest that = (ListL7rulesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.l7policyId, that.l7policyId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.compareType, that.compareType)
+            && Objects.equals(this.invert, that.invert) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.value, that.value)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus);
     }
 
     @Override

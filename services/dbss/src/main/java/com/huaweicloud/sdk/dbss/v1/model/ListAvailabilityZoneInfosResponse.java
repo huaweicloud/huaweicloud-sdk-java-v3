@@ -1,41 +1,31 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.AzInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListAvailabilityZoneInfosResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azs")
-    
+    @JsonProperty(value = "azs")
+
     private List<AzInfo> azs = null;
-    
+
     public ListAvailabilityZoneInfosResponse withAzs(List<AzInfo> azs) {
         this.azs = azs;
         return this;
     }
 
-    
     public ListAvailabilityZoneInfosResponse addAzsItem(AzInfo azsItem) {
-        if(this.azs == null) {
+        if (this.azs == null) {
             this.azs = new ArrayList<>();
         }
         this.azs.add(azsItem);
@@ -43,7 +33,7 @@ public class ListAvailabilityZoneInfosResponse extends SdkResponse {
     }
 
     public ListAvailabilityZoneInfosResponse withAzs(Consumer<List<AzInfo>> azsSetter) {
-        if(this.azs == null) {
+        if (this.azs == null) {
             this.azs = new ArrayList<>();
         }
         azsSetter.accept(this.azs);
@@ -62,23 +52,23 @@ public class ListAvailabilityZoneInfosResponse extends SdkResponse {
         this.azs = azs;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailabilityZoneInfosResponse listAvailabilityZoneInfosResponse = (ListAvailabilityZoneInfosResponse) o;
-        return Objects.equals(this.azs, listAvailabilityZoneInfosResponse.azs);
+        ListAvailabilityZoneInfosResponse that = (ListAvailabilityZoneInfosResponse) obj;
+        return Objects.equals(this.azs, that.azs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(azs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,6 +77,7 @@ public class ListAvailabilityZoneInfosResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -97,8 +88,5 @@ public class ListAvailabilityZoneInfosResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,74 +1,60 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.CurrentSlot;
-import com.huaweicloud.sdk.cbs.v1.model.HistorySlot;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Frame  {
-
+public class Frame {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="intention")
-    
+    @JsonProperty(value = "intention")
 
     private String intention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Double confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_slots")
-    
+    @JsonProperty(value = "current_slots")
+
     private List<CurrentSlot> currentSlots = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="history_slots")
-    
+    @JsonProperty(value = "history_slots")
+
     private List<HistorySlot> historySlots = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reply")
-    
+    @JsonProperty(value = "reply")
 
     private String reply;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_complete")
-    
+    @JsonProperty(value = "task_complete")
 
     private Boolean taskComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flow_complete")
-    
+    @JsonProperty(value = "flow_complete")
 
     private Boolean flowComplete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="candidate_words")
-    
+    @JsonProperty(value = "candidate_words")
+
     private List<String> candidateWords = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="intention_alias")
-    
+    @JsonProperty(value = "intention_alias")
 
     private String intentionAlias;
 
@@ -76,9 +62,6 @@ public class Frame  {
         this.intention = intention;
         return this;
     }
-
-    
-
 
     /**
      * 意图
@@ -92,15 +75,10 @@ public class Frame  {
         this.intention = intention;
     }
 
-    
-
     public Frame withConfidence(Double confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 命中意图置信度。
@@ -114,16 +92,13 @@ public class Frame  {
         this.confidence = confidence;
     }
 
-    
-
     public Frame withCurrentSlots(List<CurrentSlot> currentSlots) {
         this.currentSlots = currentSlots;
         return this;
     }
 
-    
     public Frame addCurrentSlotsItem(CurrentSlot currentSlotsItem) {
-        if(this.currentSlots == null) {
+        if (this.currentSlots == null) {
             this.currentSlots = new ArrayList<>();
         }
         this.currentSlots.add(currentSlotsItem);
@@ -131,7 +106,7 @@ public class Frame  {
     }
 
     public Frame withCurrentSlots(Consumer<List<CurrentSlot>> currentSlotsSetter) {
-        if(this.currentSlots == null) {
+        if (this.currentSlots == null) {
             this.currentSlots = new ArrayList<>();
         }
         currentSlotsSetter.accept(this.currentSlots);
@@ -150,16 +125,13 @@ public class Frame  {
         this.currentSlots = currentSlots;
     }
 
-    
-
     public Frame withHistorySlots(List<HistorySlot> historySlots) {
         this.historySlots = historySlots;
         return this;
     }
 
-    
     public Frame addHistorySlotsItem(HistorySlot historySlotsItem) {
-        if(this.historySlots == null) {
+        if (this.historySlots == null) {
             this.historySlots = new ArrayList<>();
         }
         this.historySlots.add(historySlotsItem);
@@ -167,7 +139,7 @@ public class Frame  {
     }
 
     public Frame withHistorySlots(Consumer<List<HistorySlot>> historySlotsSetter) {
-        if(this.historySlots == null) {
+        if (this.historySlots == null) {
             this.historySlots = new ArrayList<>();
         }
         historySlotsSetter.accept(this.historySlots);
@@ -186,15 +158,10 @@ public class Frame  {
         this.historySlots = historySlots;
     }
 
-    
-
     public Frame withReply(String reply) {
         this.reply = reply;
         return this;
     }
-
-    
-
 
     /**
      * 机器人回复。
@@ -208,15 +175,10 @@ public class Frame  {
         this.reply = reply;
     }
 
-    
-
     public Frame withTaskComplete(Boolean taskComplete) {
         this.taskComplete = taskComplete;
         return this;
     }
-
-    
-
 
     /**
      * 任务是否完成。
@@ -230,15 +192,10 @@ public class Frame  {
         this.taskComplete = taskComplete;
     }
 
-    
-
     public Frame withFlowComplete(Boolean flowComplete) {
         this.flowComplete = flowComplete;
         return this;
     }
-
-    
-
 
     /**
      * 对话流程是否完成。
@@ -252,16 +209,13 @@ public class Frame  {
         this.flowComplete = flowComplete;
     }
 
-    
-
     public Frame withCandidateWords(List<String> candidateWords) {
         this.candidateWords = candidateWords;
         return this;
     }
 
-    
     public Frame addCandidateWordsItem(String candidateWordsItem) {
-        if(this.candidateWords == null) {
+        if (this.candidateWords == null) {
             this.candidateWords = new ArrayList<>();
         }
         this.candidateWords.add(candidateWordsItem);
@@ -269,7 +223,7 @@ public class Frame  {
     }
 
     public Frame withCandidateWords(Consumer<List<String>> candidateWordsSetter) {
-        if(this.candidateWords == null) {
+        if (this.candidateWords == null) {
             this.candidateWords = new ArrayList<>();
         }
         candidateWordsSetter.accept(this.candidateWords);
@@ -288,15 +242,10 @@ public class Frame  {
         this.candidateWords = candidateWords;
     }
 
-    
-
     public Frame withIntentionAlias(String intentionAlias) {
         this.intentionAlias = intentionAlias;
         return this;
     }
-
-    
-
 
     /**
      * 意图名称
@@ -310,31 +259,37 @@ public class Frame  {
         this.intentionAlias = intentionAlias;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Frame frame = (Frame) o;
-        return Objects.equals(this.intention, frame.intention) &&
-            Objects.equals(this.confidence, frame.confidence) &&
-            Objects.equals(this.currentSlots, frame.currentSlots) &&
-            Objects.equals(this.historySlots, frame.historySlots) &&
-            Objects.equals(this.reply, frame.reply) &&
-            Objects.equals(this.taskComplete, frame.taskComplete) &&
-            Objects.equals(this.flowComplete, frame.flowComplete) &&
-            Objects.equals(this.candidateWords, frame.candidateWords) &&
-            Objects.equals(this.intentionAlias, frame.intentionAlias);
+        Frame that = (Frame) obj;
+        return Objects.equals(this.intention, that.intention) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.currentSlots, that.currentSlots)
+            && Objects.equals(this.historySlots, that.historySlots) && Objects.equals(this.reply, that.reply)
+            && Objects.equals(this.taskComplete, that.taskComplete)
+            && Objects.equals(this.flowComplete, that.flowComplete)
+            && Objects.equals(this.candidateWords, that.candidateWords)
+            && Objects.equals(this.intentionAlias, that.intentionAlias);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(intention, confidence, currentSlots, historySlots, reply, taskComplete, flowComplete, candidateWords, intentionAlias);
+        return Objects.hash(intention,
+            confidence,
+            currentSlots,
+            historySlots,
+            reply,
+            taskComplete,
+            flowComplete,
+            candidateWords,
+            intentionAlias);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -351,6 +306,7 @@ public class Frame  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -361,8 +317,5 @@ public class Frame  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

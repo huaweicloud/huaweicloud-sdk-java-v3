@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowGaussMySqlEngineVersionRequest  {
-
+public class ShowGaussMySqlEngineVersionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database_name")
-    
+    @JsonProperty(value = "database_name")
 
     private String databaseName;
 
@@ -35,15 +25,12 @@ public class ShowGaussMySqlEngineVersionRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,15 +39,10 @@ public class ShowGaussMySqlEngineVersionRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowGaussMySqlEngineVersionRequest withDatabaseName(String databaseName) {
         this.databaseName = databaseName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库引擎。支持的引擎如下，不区分大小写：gaussdb-mysql。
@@ -74,24 +56,23 @@ public class ShowGaussMySqlEngineVersionRequest  {
         this.databaseName = databaseName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlEngineVersionRequest showGaussMySqlEngineVersionRequest = (ShowGaussMySqlEngineVersionRequest) o;
-        return Objects.equals(this.xLanguage, showGaussMySqlEngineVersionRequest.xLanguage) &&
-            Objects.equals(this.databaseName, showGaussMySqlEngineVersionRequest.databaseName);
+        ShowGaussMySqlEngineVersionRequest that = (ShowGaussMySqlEngineVersionRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.databaseName, that.databaseName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, databaseName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +82,7 @@ public class ShowGaussMySqlEngineVersionRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +93,5 @@ public class ShowGaussMySqlEngineVersionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -33,15 +33,15 @@ public class ExceptedMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExceptedMetadata exceptedMetadata = (ExceptedMetadata) o;
-        return Objects.equals(this.type, exceptedMetadata.type);
+        ExceptedMetadata that = (ExceptedMetadata) obj;
+        return Objects.equals(this.type, that.type);
     }
 
     @Override

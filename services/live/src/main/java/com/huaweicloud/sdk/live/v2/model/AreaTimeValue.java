@@ -74,15 +74,15 @@ public class AreaTimeValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AreaTimeValue areaTimeValue = (AreaTimeValue) o;
-        return Objects.equals(this.name, areaTimeValue.name) && Objects.equals(this.data, areaTimeValue.data);
+        AreaTimeValue that = (AreaTimeValue) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.data, that.data);
     }
 
     @Override

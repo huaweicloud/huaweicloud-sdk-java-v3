@@ -187,22 +187,18 @@ public class DemandStatisticResponseV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemandStatisticResponseV4 demandStatisticResponseV4 = (DemandStatisticResponseV4) o;
-        return Objects.equals(this.closedNum, demandStatisticResponseV4.closedNum)
-            && Objects.equals(this.module, demandStatisticResponseV4.module)
-            && Objects.equals(this.newNum, demandStatisticResponseV4.newNum)
-            && Objects.equals(this.processNum, demandStatisticResponseV4.processNum)
-            && Objects.equals(this.rejectedNum, demandStatisticResponseV4.rejectedNum)
-            && Objects.equals(this.solvedNum, demandStatisticResponseV4.solvedNum)
-            && Objects.equals(this.testNum, demandStatisticResponseV4.testNum)
-            && Objects.equals(this.total, demandStatisticResponseV4.total);
+        DemandStatisticResponseV4 that = (DemandStatisticResponseV4) obj;
+        return Objects.equals(this.closedNum, that.closedNum) && Objects.equals(this.module, that.module)
+            && Objects.equals(this.newNum, that.newNum) && Objects.equals(this.processNum, that.processNum)
+            && Objects.equals(this.rejectedNum, that.rejectedNum) && Objects.equals(this.solvedNum, that.solvedNum)
+            && Objects.equals(this.testNum, that.testNum) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -435,32 +435,26 @@ public class MyanmarIdcardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MyanmarIdcardResult myanmarIdcardResult = (MyanmarIdcardResult) o;
-        return Objects.equals(this.side, myanmarIdcardResult.side)
-            && Objects.equals(this.propertyClass, myanmarIdcardResult.propertyClass)
-            && Objects.equals(this.nrcId, myanmarIdcardResult.nrcId)
-            && Objects.equals(this.issueDate, myanmarIdcardResult.issueDate)
-            && Objects.equals(this.name, myanmarIdcardResult.name)
-            && Objects.equals(this.fatherName, myanmarIdcardResult.fatherName)
-            && Objects.equals(this.birth, myanmarIdcardResult.birth)
-            && Objects.equals(this.bloodlinesReligion, myanmarIdcardResult.bloodlinesReligion)
-            && Objects.equals(this.height, myanmarIdcardResult.height)
-            && Objects.equals(this.bloodGroup, myanmarIdcardResult.bloodGroup)
-            && Objects.equals(this.cardId, myanmarIdcardResult.cardId)
-            && Objects.equals(this.nrcIdBack, myanmarIdcardResult.nrcIdBack)
-            && Objects.equals(this.profession, myanmarIdcardResult.profession)
-            && Objects.equals(this.address, myanmarIdcardResult.address)
-            && Objects.equals(this.confidence, myanmarIdcardResult.confidence)
-            && Objects.equals(this.portraitImage, myanmarIdcardResult.portraitImage)
-            && Objects.equals(this.portraitLocation, myanmarIdcardResult.portraitLocation)
-            && Objects.equals(this.idcardType, myanmarIdcardResult.idcardType);
+        MyanmarIdcardResult that = (MyanmarIdcardResult) obj;
+        return Objects.equals(this.side, that.side) && Objects.equals(this.propertyClass, that.propertyClass)
+            && Objects.equals(this.nrcId, that.nrcId) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fatherName, that.fatherName)
+            && Objects.equals(this.birth, that.birth)
+            && Objects.equals(this.bloodlinesReligion, that.bloodlinesReligion)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bloodGroup, that.bloodGroup)
+            && Objects.equals(this.cardId, that.cardId) && Objects.equals(this.nrcIdBack, that.nrcIdBack)
+            && Objects.equals(this.profession, that.profession) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.portraitLocation, that.portraitLocation)
+            && Objects.equals(this.idcardType, that.idcardType);
     }
 
     @Override

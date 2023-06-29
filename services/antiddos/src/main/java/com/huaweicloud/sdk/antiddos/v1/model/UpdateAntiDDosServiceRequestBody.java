@@ -121,19 +121,19 @@ public class UpdateAntiDDosServiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAntiDDosServiceRequestBody updateAntiDDosServiceRequestBody = (UpdateAntiDDosServiceRequestBody) o;
-        return Objects.equals(this.appTypeId, updateAntiDDosServiceRequestBody.appTypeId)
-            && Objects.equals(this.cleaningAccessPosId, updateAntiDDosServiceRequestBody.cleaningAccessPosId)
-            && Objects.equals(this.enableL7, updateAntiDDosServiceRequestBody.enableL7)
-            && Objects.equals(this.httpRequestPosId, updateAntiDDosServiceRequestBody.httpRequestPosId)
-            && Objects.equals(this.trafficPosId, updateAntiDDosServiceRequestBody.trafficPosId);
+        UpdateAntiDDosServiceRequestBody that = (UpdateAntiDDosServiceRequestBody) obj;
+        return Objects.equals(this.appTypeId, that.appTypeId)
+            && Objects.equals(this.cleaningAccessPosId, that.cleaningAccessPosId)
+            && Objects.equals(this.enableL7, that.enableL7)
+            && Objects.equals(this.httpRequestPosId, that.httpRequestPosId)
+            && Objects.equals(this.trafficPosId, that.trafficPosId);
     }
 
     @Override

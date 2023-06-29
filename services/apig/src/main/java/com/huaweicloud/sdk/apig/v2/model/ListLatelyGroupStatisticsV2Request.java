@@ -55,16 +55,15 @@ public class ListLatelyGroupStatisticsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLatelyGroupStatisticsV2Request listLatelyGroupStatisticsV2Request = (ListLatelyGroupStatisticsV2Request) o;
-        return Objects.equals(this.instanceId, listLatelyGroupStatisticsV2Request.instanceId)
-            && Objects.equals(this.groupId, listLatelyGroupStatisticsV2Request.groupId);
+        ListLatelyGroupStatisticsV2Request that = (ListLatelyGroupStatisticsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

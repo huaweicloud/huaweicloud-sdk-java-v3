@@ -33,15 +33,15 @@ public class ClusterMetadataForUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterMetadataForUpdate clusterMetadataForUpdate = (ClusterMetadataForUpdate) o;
-        return Objects.equals(this.alias, clusterMetadataForUpdate.alias);
+        ClusterMetadataForUpdate that = (ClusterMetadataForUpdate) obj;
+        return Objects.equals(this.alias, that.alias);
     }
 
     @Override

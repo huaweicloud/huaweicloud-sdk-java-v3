@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.ResourceInstanceTagRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class CountResourceInstanceByTagRequest  {
-
+public class CountResourceInstanceByTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
 
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ResourceInstanceTagRequest body;
 
@@ -35,9 +25,6 @@ public class CountResourceInstanceByTagRequest  {
         this.resourceType = resourceType;
         return this;
     }
-
-    
-
 
     /**
      * 资源类型。审计：auditInstance
@@ -51,22 +38,19 @@ public class CountResourceInstanceByTagRequest  {
         this.resourceType = resourceType;
     }
 
-    
-
     public CountResourceInstanceByTagRequest withBody(ResourceInstanceTagRequest body) {
         this.body = body;
         return this;
     }
 
     public CountResourceInstanceByTagRequest withBody(Consumer<ResourceInstanceTagRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ResourceInstanceTagRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class CountResourceInstanceByTagRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountResourceInstanceByTagRequest countResourceInstanceByTagRequest = (CountResourceInstanceByTagRequest) o;
-        return Objects.equals(this.resourceType, countResourceInstanceByTagRequest.resourceType) &&
-            Objects.equals(this.body, countResourceInstanceByTagRequest.body);
+        CountResourceInstanceByTagRequest that = (CountResourceInstanceByTagRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceType, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class CountResourceInstanceByTagRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class CountResourceInstanceByTagRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

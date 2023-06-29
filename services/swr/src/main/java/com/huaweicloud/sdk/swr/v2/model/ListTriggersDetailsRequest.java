@@ -55,16 +55,15 @@ public class ListTriggersDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTriggersDetailsRequest listTriggersDetailsRequest = (ListTriggersDetailsRequest) o;
-        return Objects.equals(this.namespace, listTriggersDetailsRequest.namespace)
-            && Objects.equals(this.repository, listTriggersDetailsRequest.repository);
+        ListTriggersDetailsRequest that = (ListTriggersDetailsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class CreateClusterDatastoreBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterDatastoreBody createClusterDatastoreBody = (CreateClusterDatastoreBody) o;
-        return Objects.equals(this.version, createClusterDatastoreBody.version)
-            && Objects.equals(this.type, createClusterDatastoreBody.type);
+        CreateClusterDatastoreBody that = (CreateClusterDatastoreBody) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.type, that.type);
     }
 
     @Override

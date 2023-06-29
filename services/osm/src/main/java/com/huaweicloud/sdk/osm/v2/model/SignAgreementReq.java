@@ -33,15 +33,15 @@ public class SignAgreementReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SignAgreementReq signAgreementReq = (SignAgreementReq) o;
-        return Objects.equals(this.relationId, signAgreementReq.relationId);
+        SignAgreementReq that = (SignAgreementReq) obj;
+        return Objects.equals(this.relationId, that.relationId);
     }
 
     @Override

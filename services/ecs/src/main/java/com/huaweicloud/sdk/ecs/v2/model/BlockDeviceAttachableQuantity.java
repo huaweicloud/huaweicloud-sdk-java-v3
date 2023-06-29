@@ -77,17 +77,16 @@ public class BlockDeviceAttachableQuantity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BlockDeviceAttachableQuantity blockDeviceAttachableQuantity = (BlockDeviceAttachableQuantity) o;
-        return Objects.equals(this.freeScsi, blockDeviceAttachableQuantity.freeScsi)
-            && Objects.equals(this.freeBlk, blockDeviceAttachableQuantity.freeBlk)
-            && Objects.equals(this.freeDisk, blockDeviceAttachableQuantity.freeDisk);
+        BlockDeviceAttachableQuantity that = (BlockDeviceAttachableQuantity) obj;
+        return Objects.equals(this.freeScsi, that.freeScsi) && Objects.equals(this.freeBlk, that.freeBlk)
+            && Objects.equals(this.freeDisk, that.freeDisk);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class PutEventsRespEvents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutEventsRespEvents putEventsRespEvents = (PutEventsRespEvents) o;
-        return Objects.equals(this.errorCode, putEventsRespEvents.errorCode)
-            && Objects.equals(this.errorMsg, putEventsRespEvents.errorMsg)
-            && Objects.equals(this.eventId, putEventsRespEvents.eventId);
+        PutEventsRespEvents that = (PutEventsRespEvents) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.eventId, that.eventId);
     }
 
     @Override

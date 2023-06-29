@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlProxyNodes
  */
-public class MysqlProxyNodes  {
-
+public class MysqlProxyNodes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
 
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_code")
-    
+    @JsonProperty(value = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frozen_flag")
-    
+    @JsonProperty(value = "frozen_flag")
 
     private Integer frozenFlag;
 
@@ -57,9 +44,6 @@ public class MysqlProxyNodes  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点ID。
@@ -73,15 +57,10 @@ public class MysqlProxyNodes  {
         this.id = id;
     }
 
-    
-
     public MysqlProxyNodes withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点状态。  取值范围： - ACTIVE，表示节点正常 - ABNORMAL，表示节点异常 - FAILED，表示节点失败 - DELETED，表示节点已删除
@@ -95,15 +74,10 @@ public class MysqlProxyNodes  {
         this.status = status;
     }
 
-    
-
     public MysqlProxyNodes withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点名称。
@@ -117,15 +91,10 @@ public class MysqlProxyNodes  {
         this.name = name;
     }
 
-    
-
     public MysqlProxyNodes withRole(String role) {
         this.role = role;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点角色：master和slave。
@@ -139,15 +108,10 @@ public class MysqlProxyNodes  {
         this.role = role;
     }
 
-    
-
     public MysqlProxyNodes withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区。
@@ -161,15 +125,10 @@ public class MysqlProxyNodes  {
         this.azCode = azCode;
     }
 
-    
-
     public MysqlProxyNodes withFrozenFlag(Integer frozenFlag) {
         this.frozenFlag = frozenFlag;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点是否被冻结。  取值范围： - 0-未冻结 - 1-冻结 - 2-冻结删除
@@ -183,28 +142,25 @@ public class MysqlProxyNodes  {
         this.frozenFlag = frozenFlag;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlProxyNodes mysqlProxyNodes = (MysqlProxyNodes) o;
-        return Objects.equals(this.id, mysqlProxyNodes.id) &&
-            Objects.equals(this.status, mysqlProxyNodes.status) &&
-            Objects.equals(this.name, mysqlProxyNodes.name) &&
-            Objects.equals(this.role, mysqlProxyNodes.role) &&
-            Objects.equals(this.azCode, mysqlProxyNodes.azCode) &&
-            Objects.equals(this.frozenFlag, mysqlProxyNodes.frozenFlag);
+        MysqlProxyNodes that = (MysqlProxyNodes) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.azCode, that.azCode) && Objects.equals(this.frozenFlag, that.frozenFlag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, status, name, role, azCode, frozenFlag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,6 +174,7 @@ public class MysqlProxyNodes  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -228,8 +185,5 @@ public class MysqlProxyNodes  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

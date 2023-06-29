@@ -209,21 +209,19 @@ public class CreateTranscodeTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTranscodeTemplate createTranscodeTemplate = (CreateTranscodeTemplate) o;
-        return Objects.equals(this.name, createTranscodeTemplate.name)
-            && Objects.equals(this.isDefault, createTranscodeTemplate.isDefault)
-            && Objects.equals(this.isAutoEncrypt, createTranscodeTemplate.isAutoEncrypt)
-            && Objects.equals(this.qualityInfoList, createTranscodeTemplate.qualityInfoList)
-            && Objects.equals(this.common, createTranscodeTemplate.common)
-            && Objects.equals(this.watermarkTemplateIds, createTranscodeTemplate.watermarkTemplateIds)
-            && Objects.equals(this.description, createTranscodeTemplate.description);
+        CreateTranscodeTemplate that = (CreateTranscodeTemplate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.isAutoEncrypt, that.isAutoEncrypt)
+            && Objects.equals(this.qualityInfoList, that.qualityInfoList) && Objects.equals(this.common, that.common)
+            && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

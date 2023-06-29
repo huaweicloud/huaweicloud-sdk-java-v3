@@ -55,15 +55,15 @@ public class MetricsDimension {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricsDimension metricsDimension = (MetricsDimension) o;
-        return Objects.equals(this.name, metricsDimension.name) && Objects.equals(this.value, metricsDimension.value);
+        MetricsDimension that = (MetricsDimension) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -105,17 +105,16 @@ public class ListTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagsRequest listTagsRequest = (ListTagsRequest) o;
-        return Objects.equals(this.tagName, listTagsRequest.tagName)
-            && Objects.equals(this.limit, listTagsRequest.limit) && Objects.equals(this.offset, listTagsRequest.offset)
-            && Objects.equals(this.status, listTagsRequest.status);
+        ListTagsRequest that = (ListTagsRequest) obj;
+        return Objects.equals(this.tagName, that.tagName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status);
     }
 
     @Override

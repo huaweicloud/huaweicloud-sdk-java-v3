@@ -89,22 +89,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +249,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
         }
 
         public static EngineTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -351,22 +330,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -449,22 +421,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -502,8 +467,8 @@ public class ModifyJobReq {
     private List<ResourceTag> tags = null;
 
     /**
-    * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
-    */
+     * 迁移类型，migration-实时迁移,sync-实时同步,cloudDataGuard-实时灾备
+     */
     public static final class DbUseTypeEnum {
 
         /**
@@ -552,22 +517,15 @@ public class ModifyJobReq {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbUseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbUseTypeEnum(value));
         }
 
         public static DbUseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -944,31 +902,24 @@ public class ModifyJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyJobReq modifyJobReq = (ModifyJobReq) o;
-        return Objects.equals(this.jobId, modifyJobReq.jobId)
-            && Objects.equals(this.description, modifyJobReq.description)
-            && Objects.equals(this.name, modifyJobReq.name)
-            && Objects.equals(this.alarmNotify, modifyJobReq.alarmNotify)
-            && Objects.equals(this.taskType, modifyJobReq.taskType)
-            && Objects.equals(this.sourceEndpoint, modifyJobReq.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, modifyJobReq.targetEndpoint)
-            && Objects.equals(this.nodeType, modifyJobReq.nodeType)
-            && Objects.equals(this.engineType, modifyJobReq.engineType)
-            && Objects.equals(this.netType, modifyJobReq.netType)
-            && Objects.equals(this.storeDbInfo, modifyJobReq.storeDbInfo)
-            && Objects.equals(this.isRecreate, modifyJobReq.isRecreate)
-            && Objects.equals(this.jobDirection, modifyJobReq.jobDirection)
-            && Objects.equals(this.isTargetReadonly, modifyJobReq.isTargetReadonly)
-            && Objects.equals(this.replaceDefiner, modifyJobReq.replaceDefiner)
-            && Objects.equals(this.tags, modifyJobReq.tags) && Objects.equals(this.dbUseType, modifyJobReq.dbUseType)
-            && Objects.equals(this.productId, modifyJobReq.productId);
+        ModifyJobReq that = (ModifyJobReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.alarmNotify, that.alarmNotify)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.engineType, that.engineType) && Objects.equals(this.netType, that.netType)
+            && Objects.equals(this.storeDbInfo, that.storeDbInfo) && Objects.equals(this.isRecreate, that.isRecreate)
+            && Objects.equals(this.jobDirection, that.jobDirection)
+            && Objects.equals(this.isTargetReadonly, that.isTargetReadonly)
+            && Objects.equals(this.replaceDefiner, that.replaceDefiner) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.dbUseType, that.dbUseType) && Objects.equals(this.productId, that.productId);
     }
 
     @Override

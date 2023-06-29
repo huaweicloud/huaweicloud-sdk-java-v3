@@ -136,17 +136,16 @@ public class SubAudioFile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubAudioFile subAudioFile = (SubAudioFile) o;
-        return Objects.equals(this.tracksInfo, subAudioFile.tracksInfo)
-            && Objects.equals(this.input, subAudioFile.input) && Objects.equals(this.output, subAudioFile.output)
-            && Objects.equals(this.outputFilename, subAudioFile.outputFilename);
+        SubAudioFile that = (SubAudioFile) obj;
+        return Objects.equals(this.tracksInfo, that.tracksInfo) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.outputFilename, that.outputFilename);
     }
 
     @Override

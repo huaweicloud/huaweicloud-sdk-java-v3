@@ -101,17 +101,16 @@ public class UploadProductResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadProductResponse uploadProductResponse = (UploadProductResponse) o;
-        return Objects.equals(this.succNum, uploadProductResponse.succNum)
-            && Objects.equals(this.failNum, uploadProductResponse.failNum)
-            && Objects.equals(this.failObjectsIds, uploadProductResponse.failObjectsIds);
+        UploadProductResponse that = (UploadProductResponse) obj;
+        return Objects.equals(this.succNum, that.succNum) && Objects.equals(this.failNum, that.failNum)
+            && Objects.equals(this.failObjectsIds, that.failObjectsIds);
     }
 
     @Override

@@ -119,18 +119,16 @@ public class ListPipleineBuildResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipleineBuildResultResponse listPipleineBuildResultResponse = (ListPipleineBuildResultResponse) o;
-        return Objects.equals(this.offset, listPipleineBuildResultResponse.offset)
-            && Objects.equals(this.limit, listPipleineBuildResultResponse.limit)
-            && Objects.equals(this.total, listPipleineBuildResultResponse.total)
-            && Objects.equals(this.buildResults, listPipleineBuildResultResponse.buildResults);
+        ListPipleineBuildResultResponse that = (ListPipleineBuildResultResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.buildResults, that.buildResults);
     }
 
     @Override

@@ -467,33 +467,24 @@ public class SetRecordSetsStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRecordSetsStatusResponse setRecordSetsStatusResponse = (SetRecordSetsStatusResponse) o;
-        return Objects.equals(this.id, setRecordSetsStatusResponse.id)
-            && Objects.equals(this.name, setRecordSetsStatusResponse.name)
-            && Objects.equals(this.description, setRecordSetsStatusResponse.description)
-            && Objects.equals(this.zoneId, setRecordSetsStatusResponse.zoneId)
-            && Objects.equals(this.zoneName, setRecordSetsStatusResponse.zoneName)
-            && Objects.equals(this.type, setRecordSetsStatusResponse.type)
-            && Objects.equals(this.ttl, setRecordSetsStatusResponse.ttl)
-            && Objects.equals(this.records, setRecordSetsStatusResponse.records)
-            && Objects.equals(this.createdAt, setRecordSetsStatusResponse.createdAt)
-            && Objects.equals(this.updatedAt, setRecordSetsStatusResponse.updatedAt)
-            && Objects.equals(this.status, setRecordSetsStatusResponse.status)
-            && Objects.equals(this._default, setRecordSetsStatusResponse._default)
-            && Objects.equals(this.projectId, setRecordSetsStatusResponse.projectId)
-            && Objects.equals(this.links, setRecordSetsStatusResponse.links)
-            && Objects.equals(this.line, setRecordSetsStatusResponse.line)
-            && Objects.equals(this.weight, setRecordSetsStatusResponse.weight)
-            && Objects.equals(this.healthCheckId, setRecordSetsStatusResponse.healthCheckId)
-            && Objects.equals(this.aliasTarget, setRecordSetsStatusResponse.aliasTarget)
-            && Objects.equals(this.bundle, setRecordSetsStatusResponse.bundle);
+        SetRecordSetsStatusResponse that = (SetRecordSetsStatusResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget) && Objects.equals(this.bundle, that.bundle);
     }
 
     @Override

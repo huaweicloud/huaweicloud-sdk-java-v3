@@ -342,29 +342,24 @@ public class ShowMeetingFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMeetingFileResponse showMeetingFileResponse = (ShowMeetingFileResponse) o;
-        return Objects.equals(this.fileCode, showMeetingFileResponse.fileCode)
-            && Objects.equals(this.topic, showMeetingFileResponse.topic)
-            && Objects.equals(this.fileId, showMeetingFileResponse.fileId)
-            && Objects.equals(this.fileName, showMeetingFileResponse.fileName)
-            && Objects.equals(this.fileSize, showMeetingFileResponse.fileSize)
-            && Objects.equals(this.thumbnailFileId, showMeetingFileResponse.thumbnailFileId)
-            && Objects.equals(this.thumbnailFileName, showMeetingFileResponse.thumbnailFileName)
-            && Objects.equals(this.thumbnailFileSize, showMeetingFileResponse.thumbnailFileSize)
-            && Objects.equals(this.pdfFileId, showMeetingFileResponse.pdfFileId)
-            && Objects.equals(this.pdfFileName, showMeetingFileResponse.pdfFileName)
-            && Objects.equals(this.pdfFileSize, showMeetingFileResponse.pdfFileSize)
-            && Objects.equals(this.fileUrl, showMeetingFileResponse.fileUrl)
-            && Objects.equals(this.thumbnailUrl, showMeetingFileResponse.thumbnailUrl)
-            && Objects.equals(this.pdfUrl, showMeetingFileResponse.pdfUrl)
-            && Objects.equals(this.creationTimestamp, showMeetingFileResponse.creationTimestamp);
+        ShowMeetingFileResponse that = (ShowMeetingFileResponse) obj;
+        return Objects.equals(this.fileCode, that.fileCode) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.thumbnailFileId, that.thumbnailFileId)
+            && Objects.equals(this.thumbnailFileName, that.thumbnailFileName)
+            && Objects.equals(this.thumbnailFileSize, that.thumbnailFileSize)
+            && Objects.equals(this.pdfFileId, that.pdfFileId) && Objects.equals(this.pdfFileName, that.pdfFileName)
+            && Objects.equals(this.pdfFileSize, that.pdfFileSize) && Objects.equals(this.fileUrl, that.fileUrl)
+            && Objects.equals(this.thumbnailUrl, that.thumbnailUrl) && Objects.equals(this.pdfUrl, that.pdfUrl)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override

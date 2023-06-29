@@ -33,15 +33,15 @@ public class AssetExportRequestTasks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetExportRequestTasks assetExportRequestTasks = (AssetExportRequestTasks) o;
-        return Objects.equals(this.id, assetExportRequestTasks.id);
+        AssetExportRequestTasks that = (AssetExportRequestTasks) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

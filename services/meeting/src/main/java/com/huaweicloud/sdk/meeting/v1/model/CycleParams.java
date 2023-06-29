@@ -164,18 +164,17 @@ public class CycleParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CycleParams cycleParams = (CycleParams) o;
-        return Objects.equals(this.startDate, cycleParams.startDate)
-            && Objects.equals(this.endDate, cycleParams.endDate) && Objects.equals(this.cycle, cycleParams.cycle)
-            && Objects.equals(this.interval, cycleParams.interval) && Objects.equals(this.point, cycleParams.point)
-            && Objects.equals(this.preRemindDays, cycleParams.preRemindDays);
+        CycleParams that = (CycleParams) obj;
+        return Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.cycle, that.cycle) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.point, that.point) && Objects.equals(this.preRemindDays, that.preRemindDays);
     }
 
     @Override

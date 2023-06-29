@@ -118,16 +118,16 @@ public class Catalog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Catalog catalog = (Catalog) o;
-        return Objects.equals(this.endpoints, catalog.endpoints) && Objects.equals(this.id, catalog.id)
-            && Objects.equals(this.name, catalog.name) && Objects.equals(this.type, catalog.type);
+        Catalog that = (Catalog) obj;
+        return Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type);
     }
 
     @Override

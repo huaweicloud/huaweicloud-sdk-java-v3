@@ -73,22 +73,15 @@ public class BatchUpdateMembersRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class BatchUpdateMembersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateMembersRequestBody batchUpdateMembersRequestBody = (BatchUpdateMembersRequestBody) o;
-        return Objects.equals(this.images, batchUpdateMembersRequestBody.images)
-            && Objects.equals(this.projectId, batchUpdateMembersRequestBody.projectId)
-            && Objects.equals(this.status, batchUpdateMembersRequestBody.status)
-            && Objects.equals(this.vaultId, batchUpdateMembersRequestBody.vaultId);
+        BatchUpdateMembersRequestBody that = (BatchUpdateMembersRequestBody) obj;
+        return Objects.equals(this.images, that.images) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

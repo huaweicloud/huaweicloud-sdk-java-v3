@@ -55,16 +55,15 @@ public class CreateRedislogDownloadLinkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRedislogDownloadLinkRequest createRedislogDownloadLinkRequest = (CreateRedislogDownloadLinkRequest) o;
-        return Objects.equals(this.instanceId, createRedislogDownloadLinkRequest.instanceId)
-            && Objects.equals(this.id, createRedislogDownloadLinkRequest.id);
+        CreateRedislogDownloadLinkRequest that = (CreateRedislogDownloadLinkRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.id, that.id);
     }
 
     @Override

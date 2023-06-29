@@ -99,18 +99,16 @@ public class ListAssociatedWikisRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssociatedWikisRequest listAssociatedWikisRequest = (ListAssociatedWikisRequest) o;
-        return Objects.equals(this.projectId, listAssociatedWikisRequest.projectId)
-            && Objects.equals(this.issueId, listAssociatedWikisRequest.issueId)
-            && Objects.equals(this.limit, listAssociatedWikisRequest.limit)
-            && Objects.equals(this.offset, listAssociatedWikisRequest.offset);
+        ListAssociatedWikisRequest that = (ListAssociatedWikisRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

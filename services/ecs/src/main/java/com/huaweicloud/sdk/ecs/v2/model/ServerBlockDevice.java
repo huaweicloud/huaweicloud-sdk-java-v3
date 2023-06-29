@@ -187,21 +187,18 @@ public class ServerBlockDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerBlockDevice serverBlockDevice = (ServerBlockDevice) o;
-        return Objects.equals(this.bootIndex, serverBlockDevice.bootIndex)
-            && Objects.equals(this.pciAddress, serverBlockDevice.pciAddress)
-            && Objects.equals(this.volumeId, serverBlockDevice.volumeId)
-            && Objects.equals(this.device, serverBlockDevice.device)
-            && Objects.equals(this.serverId, serverBlockDevice.serverId)
-            && Objects.equals(this.id, serverBlockDevice.id) && Objects.equals(this.size, serverBlockDevice.size)
-            && Objects.equals(this.bus, serverBlockDevice.bus);
+        ServerBlockDevice that = (ServerBlockDevice) obj;
+        return Objects.equals(this.bootIndex, that.bootIndex) && Objects.equals(this.pciAddress, that.pciAddress)
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.device, that.device)
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.bus, that.bus);
     }
 
     @Override

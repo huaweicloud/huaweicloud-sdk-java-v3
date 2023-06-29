@@ -276,26 +276,20 @@ public class CreateDependencyVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDependencyVersionResponse createDependencyVersionResponse = (CreateDependencyVersionResponse) o;
-        return Objects.equals(this.id, createDependencyVersionResponse.id)
-            && Objects.equals(this.owner, createDependencyVersionResponse.owner)
-            && Objects.equals(this.link, createDependencyVersionResponse.link)
-            && Objects.equals(this.runtime, createDependencyVersionResponse.runtime)
-            && Objects.equals(this.etag, createDependencyVersionResponse.etag)
-            && Objects.equals(this.size, createDependencyVersionResponse.size)
-            && Objects.equals(this.name, createDependencyVersionResponse.name)
-            && Objects.equals(this.description, createDependencyVersionResponse.description)
-            && Objects.equals(this.fileName, createDependencyVersionResponse.fileName)
-            && Objects.equals(this.version, createDependencyVersionResponse.version)
-            && Objects.equals(this.depId, createDependencyVersionResponse.depId)
-            && Objects.equals(this.lastModified, createDependencyVersionResponse.lastModified);
+        CreateDependencyVersionResponse that = (CreateDependencyVersionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.depId, that.depId) && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override

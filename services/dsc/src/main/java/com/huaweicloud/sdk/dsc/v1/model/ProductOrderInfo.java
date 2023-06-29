@@ -3,8 +3,6 @@ package com.huaweicloud.sdk.dsc.v1.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -36,7 +34,7 @@ public class ProductOrderInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "productInfo")
 
-    private List<ProductInfoBean> productInfo = null;
+    private ProductInfo productInfo;
 
     public ProductOrderInfo withTenantId(String tenantId) {
         this.tenantId = tenantId;
@@ -106,53 +104,44 @@ public class ProductOrderInfo {
         this.resourceId = resourceId;
     }
 
-    public ProductOrderInfo withProductInfo(List<ProductInfoBean> productInfo) {
+    public ProductOrderInfo withProductInfo(ProductInfo productInfo) {
         this.productInfo = productInfo;
         return this;
     }
 
-    public ProductOrderInfo addProductInfoItem(ProductInfoBean productInfoItem) {
+    public ProductOrderInfo withProductInfo(Consumer<ProductInfo> productInfoSetter) {
         if (this.productInfo == null) {
-            this.productInfo = new ArrayList<>();
+            this.productInfo = new ProductInfo();
+            productInfoSetter.accept(this.productInfo);
         }
-        this.productInfo.add(productInfoItem);
-        return this;
-    }
 
-    public ProductOrderInfo withProductInfo(Consumer<List<ProductInfoBean>> productInfoSetter) {
-        if (this.productInfo == null) {
-            this.productInfo = new ArrayList<>();
-        }
-        productInfoSetter.accept(this.productInfo);
         return this;
     }
 
     /**
-     * 产品信息
+     * Get productInfo
      * @return productInfo
      */
-    public List<ProductInfoBean> getProductInfo() {
+    public ProductInfo getProductInfo() {
         return productInfo;
     }
 
-    public void setProductInfo(List<ProductInfoBean> productInfo) {
+    public void setProductInfo(ProductInfo productInfo) {
         this.productInfo = productInfo;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductOrderInfo productOrderInfo = (ProductOrderInfo) o;
-        return Objects.equals(this.tenantId, productOrderInfo.tenantId)
-            && Objects.equals(this.periodType, productOrderInfo.periodType)
-            && Objects.equals(this.periodNum, productOrderInfo.periodNum)
-            && Objects.equals(this.resourceId, productOrderInfo.resourceId)
-            && Objects.equals(this.productInfo, productOrderInfo.productInfo);
+        ProductOrderInfo that = (ProductOrderInfo) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.productInfo, that.productInfo);
     }
 
     @Override

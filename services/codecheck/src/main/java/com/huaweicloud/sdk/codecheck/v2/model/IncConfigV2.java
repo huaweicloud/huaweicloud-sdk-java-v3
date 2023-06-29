@@ -165,20 +165,19 @@ public class IncConfigV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncConfigV2 incConfigV2 = (IncConfigV2) o;
-        return Objects.equals(this.parentTaskId, incConfigV2.parentTaskId)
-            && Objects.equals(this.gitSourceBranch, incConfigV2.gitSourceBranch)
-            && Objects.equals(this.gitTargetBranch, incConfigV2.gitTargetBranch)
-            && Objects.equals(this.mergeId, incConfigV2.mergeId)
-            && Objects.equals(this.eventType, incConfigV2.eventType) && Objects.equals(this.action, incConfigV2.action)
-            && Objects.equals(this.title, incConfigV2.title);
+        IncConfigV2 that = (IncConfigV2) obj;
+        return Objects.equals(this.parentTaskId, that.parentTaskId)
+            && Objects.equals(this.gitSourceBranch, that.gitSourceBranch)
+            && Objects.equals(this.gitTargetBranch, that.gitTargetBranch) && Objects.equals(this.mergeId, that.mergeId)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.title, that.title);
     }
 
     @Override

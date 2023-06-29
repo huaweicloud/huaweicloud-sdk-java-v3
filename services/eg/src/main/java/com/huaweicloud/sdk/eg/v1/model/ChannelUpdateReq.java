@@ -33,15 +33,15 @@ public class ChannelUpdateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelUpdateReq channelUpdateReq = (ChannelUpdateReq) o;
-        return Objects.equals(this.description, channelUpdateReq.description);
+        ChannelUpdateReq that = (ChannelUpdateReq) obj;
+        return Objects.equals(this.description, that.description);
     }
 
     @Override

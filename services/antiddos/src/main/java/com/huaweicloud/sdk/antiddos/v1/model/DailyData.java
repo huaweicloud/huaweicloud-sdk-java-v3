@@ -165,18 +165,18 @@ public class DailyData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DailyData dailyData = (DailyData) o;
-        return Objects.equals(this.periodStart, dailyData.periodStart) && Objects.equals(this.bpsIn, dailyData.bpsIn)
-            && Objects.equals(this.bpsAttack, dailyData.bpsAttack) && Objects.equals(this.totalBps, dailyData.totalBps)
-            && Objects.equals(this.ppsIn, dailyData.ppsIn) && Objects.equals(this.ppsAttack, dailyData.ppsAttack)
-            && Objects.equals(this.totalPps, dailyData.totalPps);
+        DailyData that = (DailyData) obj;
+        return Objects.equals(this.periodStart, that.periodStart) && Objects.equals(this.bpsIn, that.bpsIn)
+            && Objects.equals(this.bpsAttack, that.bpsAttack) && Objects.equals(this.totalBps, that.totalBps)
+            && Objects.equals(this.ppsIn, that.ppsIn) && Objects.equals(this.ppsAttack, that.ppsAttack)
+            && Objects.equals(this.totalPps, that.totalPps);
     }
 
     @Override

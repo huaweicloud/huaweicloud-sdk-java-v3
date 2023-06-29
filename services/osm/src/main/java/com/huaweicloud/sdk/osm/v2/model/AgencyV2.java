@@ -165,20 +165,19 @@ public class AgencyV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyV2 agencyV2 = (AgencyV2) o;
-        return Objects.equals(this.id, agencyV2.id) && Objects.equals(this.name, agencyV2.name)
-            && Objects.equals(this.duration, agencyV2.duration)
-            && Objects.equals(this.trustDomainName, agencyV2.trustDomainName)
-            && Objects.equals(this.trustDomainId, agencyV2.trustDomainId)
-            && Objects.equals(this.createTime, agencyV2.createTime)
-            && Objects.equals(this.expireTime, agencyV2.expireTime);
+        AgencyV2 that = (AgencyV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.trustDomainName, that.trustDomainName)
+            && Objects.equals(this.trustDomainId, that.trustDomainId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

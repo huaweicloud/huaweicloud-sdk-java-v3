@@ -363,29 +363,24 @@ public class RecycleInstsanceV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecycleInstsanceV3 recycleInstsanceV3 = (RecycleInstsanceV3) o;
-        return Objects.equals(this.id, recycleInstsanceV3.id) && Objects.equals(this.name, recycleInstsanceV3.name)
-            && Objects.equals(this.haMode, recycleInstsanceV3.haMode)
-            && Objects.equals(this.engineName, recycleInstsanceV3.engineName)
-            && Objects.equals(this.engineVersion, recycleInstsanceV3.engineVersion)
-            && Objects.equals(this.payModel, recycleInstsanceV3.payModel)
-            && Objects.equals(this.createdAt, recycleInstsanceV3.createdAt)
-            && Objects.equals(this.deletedAt, recycleInstsanceV3.deletedAt)
-            && Objects.equals(this.volumeType, recycleInstsanceV3.volumeType)
-            && Objects.equals(this.volumeSize, recycleInstsanceV3.volumeSize)
-            && Objects.equals(this.dataVip, recycleInstsanceV3.dataVip)
-            && Objects.equals(this.dataVipV6, recycleInstsanceV3.dataVipV6)
-            && Objects.equals(this.enterpriseProjectId, recycleInstsanceV3.enterpriseProjectId)
-            && Objects.equals(this.retainedUntil, recycleInstsanceV3.retainedUntil)
-            && Objects.equals(this.recycleBackupId, recycleInstsanceV3.recycleBackupId)
-            && Objects.equals(this.recycleStatus, recycleInstsanceV3.recycleStatus);
+        RecycleInstsanceV3 that = (RecycleInstsanceV3) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.payModel, that.payModel)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.deletedAt, that.deletedAt)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.volumeSize, that.volumeSize)
+            && Objects.equals(this.dataVip, that.dataVip) && Objects.equals(this.dataVipV6, that.dataVipV6)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.retainedUntil, that.retainedUntil)
+            && Objects.equals(this.recycleBackupId, that.recycleBackupId)
+            && Objects.equals(this.recycleStatus, that.recycleStatus);
     }
 
     @Override

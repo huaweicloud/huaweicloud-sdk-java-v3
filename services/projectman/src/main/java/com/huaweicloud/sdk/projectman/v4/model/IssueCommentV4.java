@@ -131,18 +131,17 @@ public class IssueCommentV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueCommentV4 issueCommentV4 = (IssueCommentV4) o;
-        return Objects.equals(this.comment, issueCommentV4.comment) && Objects.equals(this.id, issueCommentV4.id)
-            && Objects.equals(this.createdTime, issueCommentV4.createdTime)
-            && Objects.equals(this.timestamp, issueCommentV4.timestamp)
-            && Objects.equals(this.user, issueCommentV4.user);
+        IssueCommentV4 that = (IssueCommentV4) obj;
+        return Objects.equals(this.comment, that.comment) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.user, that.user);
     }
 
     @Override

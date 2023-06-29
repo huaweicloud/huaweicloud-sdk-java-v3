@@ -84,16 +84,15 @@ public class ListCustomLineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomLineResponse listCustomLineResponse = (ListCustomLineResponse) o;
-        return Objects.equals(this.lines, listCustomLineResponse.lines)
-            && Objects.equals(this.metadata, listCustomLineResponse.metadata);
+        ListCustomLineResponse that = (ListCustomLineResponse) obj;
+        return Objects.equals(this.lines, that.lines) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

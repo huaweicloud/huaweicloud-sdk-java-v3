@@ -84,16 +84,15 @@ public class KeystoneListProtocolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListProtocolsResponse keystoneListProtocolsResponse = (KeystoneListProtocolsResponse) o;
-        return Objects.equals(this.links, keystoneListProtocolsResponse.links)
-            && Objects.equals(this.protocols, keystoneListProtocolsResponse.protocols);
+        KeystoneListProtocolsResponse that = (KeystoneListProtocolsResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.protocols, that.protocols);
     }
 
     @Override

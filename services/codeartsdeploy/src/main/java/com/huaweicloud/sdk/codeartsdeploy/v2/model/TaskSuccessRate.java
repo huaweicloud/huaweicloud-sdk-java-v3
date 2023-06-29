@@ -121,19 +121,17 @@ public class TaskSuccessRate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskSuccessRate taskSuccessRate = (TaskSuccessRate) o;
-        return Objects.equals(this.taskId, taskSuccessRate.taskId)
-            && Objects.equals(this.taskName, taskSuccessRate.taskName)
-            && Objects.equals(this.successRate, taskSuccessRate.successRate)
-            && Objects.equals(this.recordCount, taskSuccessRate.recordCount)
-            && Objects.equals(this.successRecordCount, taskSuccessRate.successRecordCount);
+        TaskSuccessRate that = (TaskSuccessRate) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.successRate, that.successRate) && Objects.equals(this.recordCount, that.recordCount)
+            && Objects.equals(this.successRecordCount, that.successRecordCount);
     }
 
     @Override

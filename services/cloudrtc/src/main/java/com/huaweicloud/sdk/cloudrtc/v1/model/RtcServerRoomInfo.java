@@ -75,22 +75,15 @@ public class RtcServerRoomInfo {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -249,20 +242,18 @@ public class RtcServerRoomInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtcServerRoomInfo rtcServerRoomInfo = (RtcServerRoomInfo) o;
-        return Objects.equals(this.domain, rtcServerRoomInfo.domain) && Objects.equals(this.app, rtcServerRoomInfo.app)
-            && Objects.equals(this.roomId, rtcServerRoomInfo.roomId)
-            && Objects.equals(this.state, rtcServerRoomInfo.state)
-            && Objects.equals(this.duration, rtcServerRoomInfo.duration)
-            && Objects.equals(this.startTime, rtcServerRoomInfo.startTime)
-            && Objects.equals(this.endTime, rtcServerRoomInfo.endTime);
+        RtcServerRoomInfo that = (RtcServerRoomInfo) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

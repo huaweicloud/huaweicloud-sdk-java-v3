@@ -267,22 +267,15 @@ public class RespInstanceBase {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -541,22 +534,15 @@ public class RespInstanceBase {
             if (value == null) {
                 return null;
             }
-            InstanceStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceStatusEnum(value));
         }
 
         public static InstanceStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            InstanceStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -664,22 +650,15 @@ public class RespInstanceBase {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -761,22 +740,15 @@ public class RespInstanceBase {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1008,25 +980,21 @@ public class RespInstanceBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespInstanceBase respInstanceBase = (RespInstanceBase) o;
-        return Objects.equals(this.id, respInstanceBase.id)
-            && Objects.equals(this.projectId, respInstanceBase.projectId)
-            && Objects.equals(this.instanceName, respInstanceBase.instanceName)
-            && Objects.equals(this.status, respInstanceBase.status)
-            && Objects.equals(this.instanceStatus, respInstanceBase.instanceStatus)
-            && Objects.equals(this.type, respInstanceBase.type) && Objects.equals(this.spec, respInstanceBase.spec)
-            && Objects.equals(this.createTime, respInstanceBase.createTime)
-            && Objects.equals(this.enterpriseProjectId, respInstanceBase.enterpriseProjectId)
-            && Objects.equals(this.eipAddress, respInstanceBase.eipAddress)
-            && Objects.equals(this.chargingMode, respInstanceBase.chargingMode)
-            && Objects.equals(this.cbcMetadata, respInstanceBase.cbcMetadata);
+        RespInstanceBase that = (RespInstanceBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.instanceStatus, that.instanceStatus) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.cbcMetadata, that.cbcMetadata);
     }
 
     @Override

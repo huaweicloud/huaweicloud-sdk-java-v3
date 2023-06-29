@@ -90,22 +90,15 @@ public class ListMetricsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,21 +264,18 @@ public class ListMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricsRequest listMetricsRequest = (ListMetricsRequest) o;
-        return Objects.equals(this.dim0, listMetricsRequest.dim0) && Objects.equals(this.dim1, listMetricsRequest.dim1)
-            && Objects.equals(this.dim2, listMetricsRequest.dim2)
-            && Objects.equals(this.limit, listMetricsRequest.limit)
-            && Objects.equals(this.metricName, listMetricsRequest.metricName)
-            && Objects.equals(this.namespace, listMetricsRequest.namespace)
-            && Objects.equals(this.order, listMetricsRequest.order)
-            && Objects.equals(this.start, listMetricsRequest.start);
+        ListMetricsRequest that = (ListMetricsRequest) obj;
+        return Objects.equals(this.dim0, that.dim0) && Objects.equals(this.dim1, that.dim1)
+            && Objects.equals(this.dim2, that.dim2) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.start, that.start);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class RestMuteReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestMuteReqBody restMuteReqBody = (RestMuteReqBody) o;
-        return Objects.equals(this.isMute, restMuteReqBody.isMute)
-            && Objects.equals(this.allowUnmuteByOneself, restMuteReqBody.allowUnmuteByOneself);
+        RestMuteReqBody that = (RestMuteReqBody) obj;
+        return Objects.equals(this.isMute, that.isMute)
+            && Objects.equals(this.allowUnmuteByOneself, that.allowUnmuteByOneself);
     }
 
     @Override

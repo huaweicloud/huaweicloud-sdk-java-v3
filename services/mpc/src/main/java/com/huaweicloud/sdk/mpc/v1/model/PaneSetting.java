@@ -121,17 +121,17 @@ public class PaneSetting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PaneSetting paneSetting = (PaneSetting) o;
-        return Objects.equals(this.paneId, paneSetting.paneId) && Objects.equals(this.x, paneSetting.x)
-            && Objects.equals(this.y, paneSetting.y) && Objects.equals(this.width, paneSetting.width)
-            && Objects.equals(this.height, paneSetting.height);
+        PaneSetting that = (PaneSetting) obj;
+        return Objects.equals(this.paneId, that.paneId) && Objects.equals(this.x, that.x)
+            && Objects.equals(this.y, that.y) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height);
     }
 
     @Override

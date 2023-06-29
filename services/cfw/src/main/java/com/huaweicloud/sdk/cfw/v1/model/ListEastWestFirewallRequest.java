@@ -99,18 +99,17 @@ public class ListEastWestFirewallRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEastWestFirewallRequest listEastWestFirewallRequest = (ListEastWestFirewallRequest) o;
-        return Objects.equals(this.limit, listEastWestFirewallRequest.limit)
-            && Objects.equals(this.offset, listEastWestFirewallRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listEastWestFirewallRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listEastWestFirewallRequest.fwInstanceId);
+        ListEastWestFirewallRequest that = (ListEastWestFirewallRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

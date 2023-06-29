@@ -88,17 +88,16 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRestoreInstanceResponse createRestoreInstanceResponse = (CreateRestoreInstanceResponse) o;
-        return Objects.equals(this.instance, createRestoreInstanceResponse.instance)
-            && Objects.equals(this.jobId, createRestoreInstanceResponse.jobId)
-            && Objects.equals(this.orderId, createRestoreInstanceResponse.orderId);
+        CreateRestoreInstanceResponse that = (CreateRestoreInstanceResponse) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

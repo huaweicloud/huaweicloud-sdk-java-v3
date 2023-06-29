@@ -89,17 +89,16 @@ public class AddMaterialRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddMaterialRequest addMaterialRequest = (AddMaterialRequest) o;
-        return Objects.equals(this.xRequestId, addMaterialRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addMaterialRequest.acceptLanguage)
-            && Objects.equals(this.body, addMaterialRequest.body);
+        AddMaterialRequest that = (AddMaterialRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

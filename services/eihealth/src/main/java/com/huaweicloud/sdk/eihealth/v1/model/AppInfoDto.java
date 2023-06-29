@@ -380,26 +380,23 @@ public class AppInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppInfoDto appInfoDto = (AppInfoDto) o;
-        return Objects.equals(this.appId, appInfoDto.appId) && Objects.equals(this.appName, appInfoDto.appName)
-            && Objects.equals(this.appVersion, appInfoDto.appVersion)
-            && Objects.equals(this.appSrcProjectName, appInfoDto.appSrcProjectName)
-            && Objects.equals(this.appLabels, appInfoDto.appLabels)
-            && Objects.equals(this.appSummary, appInfoDto.appSummary)
-            && Objects.equals(this.appDescription, appInfoDto.appDescription)
-            && Objects.equals(this.appImage, appInfoDto.appImage)
-            && Objects.equals(this.appCommands, appInfoDto.appCommands)
-            && Objects.equals(this.appInputParameters, appInfoDto.appInputParameters)
-            && Objects.equals(this.appOutputParameters, appInfoDto.appOutputParameters)
-            && Objects.equals(this.appNodeLabels, appInfoDto.appNodeLabels)
-            && Objects.equals(this.appIcon, appInfoDto.appIcon);
+        AppInfoDto that = (AppInfoDto) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.appSrcProjectName, that.appSrcProjectName)
+            && Objects.equals(this.appLabels, that.appLabels) && Objects.equals(this.appSummary, that.appSummary)
+            && Objects.equals(this.appDescription, that.appDescription) && Objects.equals(this.appImage, that.appImage)
+            && Objects.equals(this.appCommands, that.appCommands)
+            && Objects.equals(this.appInputParameters, that.appInputParameters)
+            && Objects.equals(this.appOutputParameters, that.appOutputParameters)
+            && Objects.equals(this.appNodeLabels, that.appNodeLabels) && Objects.equals(this.appIcon, that.appIcon);
     }
 
     @Override

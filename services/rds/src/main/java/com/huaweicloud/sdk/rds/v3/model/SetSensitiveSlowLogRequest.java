@@ -79,17 +79,16 @@ public class SetSensitiveSlowLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetSensitiveSlowLogRequest setSensitiveSlowLogRequest = (SetSensitiveSlowLogRequest) o;
-        return Objects.equals(this.xLanguage, setSensitiveSlowLogRequest.xLanguage)
-            && Objects.equals(this.instanceId, setSensitiveSlowLogRequest.instanceId)
-            && Objects.equals(this.status, setSensitiveSlowLogRequest.status);
+        SetSensitiveSlowLogRequest that = (SetSensitiveSlowLogRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

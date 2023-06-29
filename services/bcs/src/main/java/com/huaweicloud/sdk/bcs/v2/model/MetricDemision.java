@@ -96,17 +96,16 @@ public class MetricDemision {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDemision metricDemision = (MetricDemision) o;
-        return Objects.equals(this.namespace, metricDemision.namespace)
-            && Objects.equals(this.metricName, metricDemision.metricName)
-            && Objects.equals(this.dimensions, metricDemision.dimensions);
+        MetricDemision that = (MetricDemision) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

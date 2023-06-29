@@ -33,15 +33,15 @@ public class DeleteCertificateV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCertificateV2Request deleteCertificateV2Request = (DeleteCertificateV2Request) o;
-        return Objects.equals(this.certificateId, deleteCertificateV2Request.certificateId);
+        DeleteCertificateV2Request that = (DeleteCertificateV2Request) obj;
+        return Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override

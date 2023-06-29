@@ -74,16 +74,15 @@ public class AddPipelineJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddPipelineJobRequest addPipelineJobRequest = (AddPipelineJobRequest) o;
-        return Objects.equals(this.check, addPipelineJobRequest.check)
-            && Objects.equals(this.body, addPipelineJobRequest.body);
+        AddPipelineJobRequest that = (AddPipelineJobRequest) obj;
+        return Objects.equals(this.check, that.check) && Objects.equals(this.body, that.body);
     }
 
     @Override

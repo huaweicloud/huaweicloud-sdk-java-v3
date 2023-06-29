@@ -65,16 +65,15 @@ public class BatchDeleteIpListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteIpListRequest batchDeleteIpListRequest = (BatchDeleteIpListRequest) o;
-        return Objects.equals(this.ipgroupId, batchDeleteIpListRequest.ipgroupId)
-            && Objects.equals(this.body, batchDeleteIpListRequest.body);
+        BatchDeleteIpListRequest that = (BatchDeleteIpListRequest) obj;
+        return Objects.equals(this.ipgroupId, that.ipgroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

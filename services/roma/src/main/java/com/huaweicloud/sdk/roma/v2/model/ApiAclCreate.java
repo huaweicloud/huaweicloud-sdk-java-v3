@@ -99,17 +99,16 @@ public class ApiAclCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAclCreate apiAclCreate = (ApiAclCreate) o;
-        return Objects.equals(this.aclName, apiAclCreate.aclName) && Objects.equals(this.aclType, apiAclCreate.aclType)
-            && Objects.equals(this.aclValue, apiAclCreate.aclValue)
-            && Objects.equals(this.entityType, apiAclCreate.entityType);
+        ApiAclCreate that = (ApiAclCreate) obj;
+        return Objects.equals(this.aclName, that.aclName) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.aclValue, that.aclValue) && Objects.equals(this.entityType, that.entityType);
     }
 
     @Override

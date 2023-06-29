@@ -1,18 +1,9 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.BaseTemplateVersion;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -20,28 +11,23 @@ import java.util.Objects;
  */
 public class ShowTemplateVersionMetadataResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_name")
-    
+    @JsonProperty(value = "template_name")
 
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_description")
-    
+    @JsonProperty(value = "version_description")
 
     private String versionDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
@@ -49,9 +35,6 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         this.templateId = templateId;
         return this;
     }
-
-    
-
 
     /**
      * 模板的唯一ID，由模板服务随机生成
@@ -65,15 +48,10 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         this.templateId = templateId;
     }
 
-    
-
     public ShowTemplateVersionMetadataResponse withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
     }
-
-    
-
 
     /**
      * 用户希望创建的模板名称
@@ -87,15 +65,10 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         this.templateName = templateName;
     }
 
-    
-
     public ShowTemplateVersionMetadataResponse withVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
         return this;
     }
-
-    
-
 
     /**
      * 模板版本的描述。可用于客户识别自己的模板版本
@@ -109,15 +82,10 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         this.versionDescription = versionDescription;
     }
 
-    
-
     public ShowTemplateVersionMetadataResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 版本创建时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
@@ -131,26 +99,25 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateVersionMetadataResponse showTemplateVersionMetadataResponse = (ShowTemplateVersionMetadataResponse) o;
-        return Objects.equals(this.templateId, showTemplateVersionMetadataResponse.templateId) &&
-            Objects.equals(this.templateName, showTemplateVersionMetadataResponse.templateName) &&
-            Objects.equals(this.versionDescription, showTemplateVersionMetadataResponse.versionDescription) &&
-            Objects.equals(this.createTime, showTemplateVersionMetadataResponse.createTime);
+        ShowTemplateVersionMetadataResponse that = (ShowTemplateVersionMetadataResponse) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.versionDescription, that.versionDescription)
+            && Objects.equals(this.createTime, that.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, templateName, versionDescription, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -162,6 +129,7 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -172,8 +140,5 @@ public class ShowTemplateVersionMetadataResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

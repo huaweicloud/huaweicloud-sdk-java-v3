@@ -84,16 +84,15 @@ public class ListSecretsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecretsResponse listSecretsResponse = (ListSecretsResponse) o;
-        return Objects.equals(this.secrets, listSecretsResponse.secrets)
-            && Objects.equals(this.pageInfo, listSecretsResponse.pageInfo);
+        ListSecretsResponse that = (ListSecretsResponse) obj;
+        return Objects.equals(this.secrets, that.secrets) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

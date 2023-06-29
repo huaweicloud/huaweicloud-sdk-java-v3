@@ -33,16 +33,15 @@ public class ListNumberOfInstancesInDifferentStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNumberOfInstancesInDifferentStatusRequest listNumberOfInstancesInDifferentStatusRequest =
-            (ListNumberOfInstancesInDifferentStatusRequest) o;
-        return Objects.equals(this.includeFailure, listNumberOfInstancesInDifferentStatusRequest.includeFailure);
+        ListNumberOfInstancesInDifferentStatusRequest that = (ListNumberOfInstancesInDifferentStatusRequest) obj;
+        return Objects.equals(this.includeFailure, that.includeFailure);
     }
 
     @Override

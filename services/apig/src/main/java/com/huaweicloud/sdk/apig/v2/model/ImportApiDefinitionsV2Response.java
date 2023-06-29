@@ -182,19 +182,17 @@ public class ImportApiDefinitionsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportApiDefinitionsV2Response importApiDefinitionsV2Response = (ImportApiDefinitionsV2Response) o;
-        return Objects.equals(this.success, importApiDefinitionsV2Response.success)
-            && Objects.equals(this.failure, importApiDefinitionsV2Response.failure)
-            && Objects.equals(this.swagger, importApiDefinitionsV2Response.swagger)
-            && Objects.equals(this.groupId, importApiDefinitionsV2Response.groupId)
-            && Objects.equals(this.ignore, importApiDefinitionsV2Response.ignore);
+        ImportApiDefinitionsV2Response that = (ImportApiDefinitionsV2Response) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.failure, that.failure)
+            && Objects.equals(this.swagger, that.swagger) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.ignore, that.ignore);
     }
 
     @Override

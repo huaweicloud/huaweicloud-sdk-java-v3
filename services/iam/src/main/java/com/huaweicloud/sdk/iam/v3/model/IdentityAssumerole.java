@@ -133,19 +133,18 @@ public class IdentityAssumerole {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdentityAssumerole identityAssumerole = (IdentityAssumerole) o;
-        return Objects.equals(this.agencyName, identityAssumerole.agencyName)
-            && Objects.equals(this.domainId, identityAssumerole.domainId)
-            && Objects.equals(this.domainName, identityAssumerole.domainName)
-            && Objects.equals(this.durationSeconds, identityAssumerole.durationSeconds)
-            && Objects.equals(this.sessionUser, identityAssumerole.sessionUser);
+        IdentityAssumerole that = (IdentityAssumerole) obj;
+        return Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.durationSeconds, that.durationSeconds)
+            && Objects.equals(this.sessionUser, that.sessionUser);
     }
 
     @Override

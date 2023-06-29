@@ -44,16 +44,15 @@ public class UpdateDomainPasswordPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainPasswordPolicyRequestBody updateDomainPasswordPolicyRequestBody =
-            (UpdateDomainPasswordPolicyRequestBody) o;
-        return Objects.equals(this.passwordPolicy, updateDomainPasswordPolicyRequestBody.passwordPolicy);
+        UpdateDomainPasswordPolicyRequestBody that = (UpdateDomainPasswordPolicyRequestBody) obj;
+        return Objects.equals(this.passwordPolicy, that.passwordPolicy);
     }
 
     @Override

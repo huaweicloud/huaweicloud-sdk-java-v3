@@ -355,28 +355,23 @@ public class ShowBatchJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchJobResponse showBatchJobResponse = (ShowBatchJobResponse) o;
-        return Objects.equals(this.jobId, showBatchJobResponse.jobId)
-            && Objects.equals(this.jobName, showBatchJobResponse.jobName)
-            && Objects.equals(this.jobType, showBatchJobResponse.jobType)
-            && Objects.equals(this.description, showBatchJobResponse.description)
-            && Objects.equals(this.createdAt, showBatchJobResponse.createdAt)
-            && Objects.equals(this.status, showBatchJobResponse.status)
-            && Objects.equals(this.taskTotalCount, showBatchJobResponse.taskTotalCount)
-            && Objects.equals(this.taskFailedCount, showBatchJobResponse.taskFailedCount)
-            && Objects.equals(this.taskSuccessCount, showBatchJobResponse.taskSuccessCount)
-            && Objects.equals(this.targetType, showBatchJobResponse.targetType)
-            && Objects.equals(this.taskData, showBatchJobResponse.taskData)
-            && Objects.equals(this.tasks, showBatchJobResponse.tasks)
-            && Objects.equals(this.targets, showBatchJobResponse.targets)
-            && Objects.equals(this.statusLastUpdatedAt, showBatchJobResponse.statusLastUpdatedAt);
+        ShowBatchJobResponse that = (ShowBatchJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskTotalCount, that.taskTotalCount)
+            && Objects.equals(this.taskFailedCount, that.taskFailedCount)
+            && Objects.equals(this.taskSuccessCount, that.taskSuccessCount)
+            && Objects.equals(this.targetType, that.targetType) && Objects.equals(this.taskData, that.taskData)
+            && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.statusLastUpdatedAt, that.statusLastUpdatedAt);
     }
 
     @Override

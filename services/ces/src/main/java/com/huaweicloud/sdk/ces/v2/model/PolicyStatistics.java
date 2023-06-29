@@ -57,16 +57,15 @@ public class PolicyStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyStatistics policyStatistics = (PolicyStatistics) o;
-        return Objects.equals(this.namespace, policyStatistics.namespace)
-            && Objects.equals(this.policyNum, policyStatistics.policyNum);
+        PolicyStatistics that = (PolicyStatistics) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.policyNum, that.policyNum);
     }
 
     @Override

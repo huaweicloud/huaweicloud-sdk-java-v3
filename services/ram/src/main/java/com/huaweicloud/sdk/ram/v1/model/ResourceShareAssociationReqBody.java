@@ -90,16 +90,15 @@ public class ResourceShareAssociationReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceShareAssociationReqBody resourceShareAssociationReqBody = (ResourceShareAssociationReqBody) o;
-        return Objects.equals(this.principals, resourceShareAssociationReqBody.principals)
-            && Objects.equals(this.resourceUrns, resourceShareAssociationReqBody.resourceUrns);
+        ResourceShareAssociationReqBody that = (ResourceShareAssociationReqBody) obj;
+        return Objects.equals(this.principals, that.principals) && Objects.equals(this.resourceUrns, that.resourceUrns);
     }
 
     @Override

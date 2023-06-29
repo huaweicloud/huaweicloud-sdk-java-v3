@@ -72,22 +72,15 @@ public class ListTagResourcesRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,18 +188,16 @@ public class ListTagResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagResourcesRequest listTagResourcesRequest = (ListTagResourcesRequest) o;
-        return Objects.equals(this.resourceType, listTagResourcesRequest.resourceType)
-            && Objects.equals(this.resourceId, listTagResourcesRequest.resourceId)
-            && Objects.equals(this.limit, listTagResourcesRequest.limit)
-            && Objects.equals(this.marker, listTagResourcesRequest.marker);
+        ListTagResourcesRequest that = (ListTagResourcesRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

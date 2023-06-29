@@ -123,19 +123,17 @@ public class ListRolesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRolesRequest listRolesRequest = (ListRolesRequest) o;
-        return Objects.equals(this.instanceId, listRolesRequest.instanceId)
-            && Objects.equals(this.rolePattern, listRolesRequest.rolePattern)
-            && Objects.equals(this.limit, listRolesRequest.limit)
-            && Objects.equals(this.marker, listRolesRequest.marker)
-            && Objects.equals(this.reversePage, listRolesRequest.reversePage);
+        ListRolesRequest that = (ListRolesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.rolePattern, that.rolePattern)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

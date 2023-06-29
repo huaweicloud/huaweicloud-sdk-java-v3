@@ -99,18 +99,16 @@ public class AclBatchResultFailureResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclBatchResultFailureResp aclBatchResultFailureResp = (AclBatchResultFailureResp) o;
-        return Objects.equals(this.aclId, aclBatchResultFailureResp.aclId)
-            && Objects.equals(this.aclName, aclBatchResultFailureResp.aclName)
-            && Objects.equals(this.errorCode, aclBatchResultFailureResp.errorCode)
-            && Objects.equals(this.errorMsg, aclBatchResultFailureResp.errorMsg);
+        AclBatchResultFailureResp that = (AclBatchResultFailureResp) obj;
+        return Objects.equals(this.aclId, that.aclId) && Objects.equals(this.aclName, that.aclName)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

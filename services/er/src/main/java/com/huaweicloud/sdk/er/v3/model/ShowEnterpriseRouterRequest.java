@@ -33,15 +33,15 @@ public class ShowEnterpriseRouterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnterpriseRouterRequest showEnterpriseRouterRequest = (ShowEnterpriseRouterRequest) o;
-        return Objects.equals(this.erId, showEnterpriseRouterRequest.erId);
+        ShowEnterpriseRouterRequest that = (ShowEnterpriseRouterRequest) obj;
+        return Objects.equals(this.erId, that.erId);
     }
 
     @Override

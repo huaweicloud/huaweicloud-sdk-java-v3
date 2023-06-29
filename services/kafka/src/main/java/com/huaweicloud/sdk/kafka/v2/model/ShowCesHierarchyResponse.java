@@ -205,19 +205,17 @@ public class ShowCesHierarchyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCesHierarchyResponse showCesHierarchyResponse = (ShowCesHierarchyResponse) o;
-        return Objects.equals(this.dimensions, showCesHierarchyResponse.dimensions)
-            && Objects.equals(this.instanceIds, showCesHierarchyResponse.instanceIds)
-            && Objects.equals(this.nodes, showCesHierarchyResponse.nodes)
-            && Objects.equals(this.queues, showCesHierarchyResponse.queues)
-            && Objects.equals(this.groups, showCesHierarchyResponse.groups);
+        ShowCesHierarchyResponse that = (ShowCesHierarchyResponse) obj;
+        return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.instanceIds, that.instanceIds)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.groups, that.groups);
     }
 
     @Override

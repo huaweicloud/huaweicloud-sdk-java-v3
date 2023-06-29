@@ -191,22 +191,20 @@ public class ListPartnerAdjustRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerAdjustRecordsRequest listPartnerAdjustRecordsRequest = (ListPartnerAdjustRecordsRequest) o;
-        return Objects.equals(this.customerId, listPartnerAdjustRecordsRequest.customerId)
-            && Objects.equals(this.operationType, listPartnerAdjustRecordsRequest.operationType)
-            && Objects.equals(this.operationTimeBegin, listPartnerAdjustRecordsRequest.operationTimeBegin)
-            && Objects.equals(this.operationTimeEnd, listPartnerAdjustRecordsRequest.operationTimeEnd)
-            && Objects.equals(this.transId, listPartnerAdjustRecordsRequest.transId)
-            && Objects.equals(this.offset, listPartnerAdjustRecordsRequest.offset)
-            && Objects.equals(this.limit, listPartnerAdjustRecordsRequest.limit)
-            && Objects.equals(this.indirectPartnerId, listPartnerAdjustRecordsRequest.indirectPartnerId);
+        ListPartnerAdjustRecordsRequest that = (ListPartnerAdjustRecordsRequest) obj;
+        return Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.operationTimeBegin, that.operationTimeBegin)
+            && Objects.equals(this.operationTimeEnd, that.operationTimeEnd)
+            && Objects.equals(this.transId, that.transId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

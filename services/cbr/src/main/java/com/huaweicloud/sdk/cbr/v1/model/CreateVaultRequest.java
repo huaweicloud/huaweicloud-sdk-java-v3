@@ -43,15 +43,15 @@ public class CreateVaultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVaultRequest createVaultRequest = (CreateVaultRequest) o;
-        return Objects.equals(this.body, createVaultRequest.body);
+        CreateVaultRequest that = (CreateVaultRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

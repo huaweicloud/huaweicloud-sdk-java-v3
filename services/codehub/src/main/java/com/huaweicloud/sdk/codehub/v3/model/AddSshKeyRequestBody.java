@@ -55,16 +55,15 @@ public class AddSshKeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddSshKeyRequestBody addSshKeyRequestBody = (AddSshKeyRequestBody) o;
-        return Objects.equals(this.key, addSshKeyRequestBody.key)
-            && Objects.equals(this.title, addSshKeyRequestBody.title);
+        AddSshKeyRequestBody that = (AddSshKeyRequestBody) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.title, that.title);
     }
 
     @Override

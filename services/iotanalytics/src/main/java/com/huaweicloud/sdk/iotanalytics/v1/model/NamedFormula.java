@@ -55,15 +55,15 @@ public class NamedFormula {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NamedFormula namedFormula = (NamedFormula) o;
-        return Objects.equals(this.name, namedFormula.name) && Objects.equals(this.formula, namedFormula.formula);
+        NamedFormula that = (NamedFormula) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.formula, that.formula);
     }
 
     @Override

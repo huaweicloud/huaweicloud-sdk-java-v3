@@ -143,19 +143,17 @@ public class ListTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.startTime, listTasksRequest.startTime)
-            && Objects.equals(this.endTime, listTasksRequest.endTime)
-            && Objects.equals(this.status, listTasksRequest.status) && Objects.equals(this.name, listTasksRequest.name)
-            && Objects.equals(this.offset, listTasksRequest.offset)
-            && Objects.equals(this.limit, listTasksRequest.limit);
+        ListTasksRequest that = (ListTasksRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

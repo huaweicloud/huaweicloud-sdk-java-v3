@@ -65,16 +65,16 @@ public class DeleteProtectedInstanceNicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProtectedInstanceNicRequest deleteProtectedInstanceNicRequest = (DeleteProtectedInstanceNicRequest) o;
-        return Objects.equals(this.protectedInstanceId, deleteProtectedInstanceNicRequest.protectedInstanceId)
-            && Objects.equals(this.body, deleteProtectedInstanceNicRequest.body);
+        DeleteProtectedInstanceNicRequest that = (DeleteProtectedInstanceNicRequest) obj;
+        return Objects.equals(this.protectedInstanceId, that.protectedInstanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

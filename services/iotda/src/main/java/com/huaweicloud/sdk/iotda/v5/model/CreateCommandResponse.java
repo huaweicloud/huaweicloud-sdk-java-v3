@@ -21,6 +21,16 @@ public class CreateCommandResponse extends SdkResponse {
 
     private Object response;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_code")
+
+    private String errorCode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "error_msg")
+
+    private Object errorMsg;
+
     public CreateCommandResponse withCommandId(String commandId) {
         this.commandId = commandId;
         return this;
@@ -55,22 +65,56 @@ public class CreateCommandResponse extends SdkResponse {
         this.response = response;
     }
 
+    public CreateCommandResponse withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
+     * 命令下发异常错误码。
+     * @return errorCode
+     */
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    public CreateCommandResponse withErrorMsg(Object errorMsg) {
+        this.errorMsg = errorMsg;
+        return this;
+    }
+
+    /**
+     * 命令下发异常错误信息。
+     * @return errorMsg
+     */
+    public Object getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(Object errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommandResponse createCommandResponse = (CreateCommandResponse) o;
-        return Objects.equals(this.commandId, createCommandResponse.commandId)
-            && Objects.equals(this.response, createCommandResponse.response);
+        CreateCommandResponse that = (CreateCommandResponse) obj;
+        return Objects.equals(this.commandId, that.commandId) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(commandId, response);
+        return Objects.hash(commandId, response, errorCode, errorMsg);
     }
 
     @Override
@@ -79,6 +123,8 @@ public class CreateCommandResponse extends SdkResponse {
         sb.append("class CreateCommandResponse {\n");
         sb.append("    commandId: ").append(toIndentedString(commandId)).append("\n");
         sb.append("    response: ").append(toIndentedString(response)).append("\n");
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMsg: ").append(toIndentedString(errorMsg)).append("\n");
         sb.append("}");
         return sb.toString();
     }

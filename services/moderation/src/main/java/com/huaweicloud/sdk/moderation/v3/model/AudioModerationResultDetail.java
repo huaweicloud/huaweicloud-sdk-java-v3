@@ -68,22 +68,15 @@ public class AudioModerationResultDetail {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuggestionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuggestionEnum(value));
         }
 
         public static SuggestionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,20 +237,17 @@ public class AudioModerationResultDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioModerationResultDetail audioModerationResultDetail = (AudioModerationResultDetail) o;
-        return Objects.equals(this.startTime, audioModerationResultDetail.startTime)
-            && Objects.equals(this.suggestion, audioModerationResultDetail.suggestion)
-            && Objects.equals(this.endTime, audioModerationResultDetail.endTime)
-            && Objects.equals(this.label, audioModerationResultDetail.label)
-            && Objects.equals(this.audioText, audioModerationResultDetail.audioText)
-            && Objects.equals(this.segments, audioModerationResultDetail.segments);
+        AudioModerationResultDetail that = (AudioModerationResultDetail) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.audioText, that.audioText) && Objects.equals(this.segments, that.segments);
     }
 
     @Override

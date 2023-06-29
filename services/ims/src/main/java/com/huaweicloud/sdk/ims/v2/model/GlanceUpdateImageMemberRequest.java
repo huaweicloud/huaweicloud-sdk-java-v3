@@ -87,17 +87,16 @@ public class GlanceUpdateImageMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceUpdateImageMemberRequest glanceUpdateImageMemberRequest = (GlanceUpdateImageMemberRequest) o;
-        return Objects.equals(this.imageId, glanceUpdateImageMemberRequest.imageId)
-            && Objects.equals(this.memberId, glanceUpdateImageMemberRequest.memberId)
-            && Objects.equals(this.body, glanceUpdateImageMemberRequest.body);
+        GlanceUpdateImageMemberRequest that = (GlanceUpdateImageMemberRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.memberId, that.memberId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

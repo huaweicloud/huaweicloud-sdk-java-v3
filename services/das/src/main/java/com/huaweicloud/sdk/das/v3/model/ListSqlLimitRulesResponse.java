@@ -75,16 +75,16 @@ public class ListSqlLimitRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSqlLimitRulesResponse listSqlLimitRulesResponse = (ListSqlLimitRulesResponse) o;
-        return Objects.equals(this.sqlLimitRules, listSqlLimitRulesResponse.sqlLimitRules)
-            && Objects.equals(this.totalCount, listSqlLimitRulesResponse.totalCount);
+        ListSqlLimitRulesResponse that = (ListSqlLimitRulesResponse) obj;
+        return Objects.equals(this.sqlLimitRules, that.sqlLimitRules)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

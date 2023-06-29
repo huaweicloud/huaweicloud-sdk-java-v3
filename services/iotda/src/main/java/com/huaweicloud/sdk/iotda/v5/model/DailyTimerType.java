@@ -55,16 +55,15 @@ public class DailyTimerType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DailyTimerType dailyTimerType = (DailyTimerType) o;
-        return Objects.equals(this.time, dailyTimerType.time)
-            && Objects.equals(this.daysOfWeek, dailyTimerType.daysOfWeek);
+        DailyTimerType that = (DailyTimerType) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.daysOfWeek, that.daysOfWeek);
     }
 
     @Override

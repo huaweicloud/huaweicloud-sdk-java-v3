@@ -184,18 +184,17 @@ public class RawRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RawRequest rawRequest = (RawRequest) o;
-        return Objects.equals(this.timeSpan, rawRequest.timeSpan) && Objects.equals(this.tags, rawRequest.tags)
-            && Objects.equals(this.propertyFilter, rawRequest.propertyFilter)
-            && Objects.equals(this.propertyNames, rawRequest.propertyNames)
-            && Objects.equals(this.limit, rawRequest.limit);
+        RawRequest that = (RawRequest) obj;
+        return Objects.equals(this.timeSpan, that.timeSpan) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.propertyFilter, that.propertyFilter)
+            && Objects.equals(this.propertyNames, that.propertyNames) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -111,18 +111,18 @@ public class HandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandRequest handRequest = (HandRequest) o;
-        return Objects.equals(this.conferenceID, handRequest.conferenceID)
-            && Objects.equals(this.participantID, handRequest.participantID)
-            && Objects.equals(this.xConferenceAuthorization, handRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, handRequest.body);
+        HandRequest that = (HandRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

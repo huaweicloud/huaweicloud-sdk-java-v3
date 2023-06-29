@@ -372,26 +372,22 @@ public class RuleResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleResponse ruleResponse = (RuleResponse) o;
-        return Objects.equals(this.createdAt, ruleResponse.createdAt)
-            && Objects.equals(this.description, ruleResponse.description)
-            && Objects.equals(this.failMessages, ruleResponse.failMessages) && Objects.equals(this.id, ruleResponse.id)
-            && Objects.equals(this.iefInstanceId, ruleResponse.iefInstanceId)
-            && Objects.equals(this.inUsing, ruleResponse.inUsing) && Objects.equals(this.name, ruleResponse.name)
-            && Objects.equals(this.projectId, ruleResponse.projectId)
-            && Objects.equals(this.source, ruleResponse.source)
-            && Objects.equals(this.sourceResource, ruleResponse.sourceResource)
-            && Objects.equals(this.target, ruleResponse.target)
-            && Objects.equals(this.targetResource, ruleResponse.targetResource)
-            && Objects.equals(this.updatedAt, ruleResponse.updatedAt)
-            && Objects.equals(this.successMessages, ruleResponse.successMessages);
+        RuleResponse that = (RuleResponse) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.failMessages, that.failMessages) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.inUsing, that.inUsing)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.sourceResource, that.sourceResource)
+            && Objects.equals(this.target, that.target) && Objects.equals(this.targetResource, that.targetResource)
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.successMessages, that.successMessages);
     }
 
     @Override

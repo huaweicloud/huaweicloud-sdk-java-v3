@@ -94,22 +94,15 @@ public class BackupExtendInfo {
             if (value == null) {
                 return null;
             }
-            SupportedRestoreModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportedRestoreModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportedRestoreModeEnum(value));
         }
 
         public static SupportedRestoreModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportedRestoreModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -338,24 +331,21 @@ public class BackupExtendInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupExtendInfo backupExtendInfo = (BackupExtendInfo) o;
-        return Objects.equals(this.autoTrigger, backupExtendInfo.autoTrigger)
-            && Objects.equals(this.bootable, backupExtendInfo.bootable)
-            && Objects.equals(this.incremental, backupExtendInfo.incremental)
-            && Objects.equals(this.snapshotId, backupExtendInfo.snapshotId)
-            && Objects.equals(this.supportLld, backupExtendInfo.supportLld)
-            && Objects.equals(this.supportedRestoreMode, backupExtendInfo.supportedRestoreMode)
-            && Objects.equals(this.osImagesData, backupExtendInfo.osImagesData)
-            && Objects.equals(this.containSystemDisk, backupExtendInfo.containSystemDisk)
-            && Objects.equals(this.encrypted, backupExtendInfo.encrypted)
-            && Objects.equals(this.systemDisk, backupExtendInfo.systemDisk);
+        BackupExtendInfo that = (BackupExtendInfo) obj;
+        return Objects.equals(this.autoTrigger, that.autoTrigger) && Objects.equals(this.bootable, that.bootable)
+            && Objects.equals(this.incremental, that.incremental) && Objects.equals(this.snapshotId, that.snapshotId)
+            && Objects.equals(this.supportLld, that.supportLld)
+            && Objects.equals(this.supportedRestoreMode, that.supportedRestoreMode)
+            && Objects.equals(this.osImagesData, that.osImagesData)
+            && Objects.equals(this.containSystemDisk, that.containSystemDisk)
+            && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.systemDisk, that.systemDisk);
     }
 
     @Override

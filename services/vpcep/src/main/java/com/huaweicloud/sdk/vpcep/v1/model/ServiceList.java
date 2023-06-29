@@ -99,22 +99,15 @@ public class ServiceList {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,22 +180,15 @@ public class ServiceList {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,22 +308,15 @@ public class ServiceList {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TcpProxyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
         }
 
         public static TcpProxyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -768,30 +747,26 @@ public class ServiceList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceList serviceList = (ServiceList) o;
-        return Objects.equals(this.id, serviceList.id) && Objects.equals(this.portId, serviceList.portId)
-            && Objects.equals(this.serviceName, serviceList.serviceName)
-            && Objects.equals(this.serverType, serviceList.serverType) && Objects.equals(this.vpcId, serviceList.vpcId)
-            && Objects.equals(this.approvalEnabled, serviceList.approvalEnabled)
-            && Objects.equals(this.status, serviceList.status)
-            && Objects.equals(this.serviceType, serviceList.serviceType)
-            && Objects.equals(this.createdAt, serviceList.createdAt)
-            && Objects.equals(this.updatedAt, serviceList.updatedAt)
-            && Objects.equals(this.projectId, serviceList.projectId)
-            && Objects.equals(this.domainId, serviceList.domainId) && Objects.equals(this.ports, serviceList.ports)
-            && Objects.equals(this.tags, serviceList.tags)
-            && Objects.equals(this.connectionCount, serviceList.connectionCount)
-            && Objects.equals(this.tcpProxy, serviceList.tcpProxy) && Objects.equals(this.error, serviceList.error)
-            && Objects.equals(this.description, serviceList.description)
-            && Objects.equals(this.publicBorderGroup, serviceList.publicBorderGroup)
-            && Objects.equals(this.enablePolicy, serviceList.enablePolicy);
+        ServiceList that = (ServiceList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serverType, that.serverType)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.approvalEnabled, that.approvalEnabled)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.connectionCount, that.connectionCount)
+            && Objects.equals(this.tcpProxy, that.tcpProxy) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
 
     @Override

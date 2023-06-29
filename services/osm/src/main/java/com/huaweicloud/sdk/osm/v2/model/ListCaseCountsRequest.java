@@ -109,18 +109,16 @@ public class ListCaseCountsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseCountsRequest listCaseCountsRequest = (ListCaseCountsRequest) o;
-        return Objects.equals(this.status, listCaseCountsRequest.status)
-            && Objects.equals(this.xSite, listCaseCountsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseCountsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseCountsRequest.xTimeZone);
+        ListCaseCountsRequest that = (ListCaseCountsRequest) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

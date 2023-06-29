@@ -87,16 +87,16 @@ public class AgencyTokenProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyTokenProject agencyTokenProject = (AgencyTokenProject) o;
-        return Objects.equals(this.name, agencyTokenProject.name) && Objects.equals(this.id, agencyTokenProject.id)
-            && Objects.equals(this.domain, agencyTokenProject.domain);
+        AgencyTokenProject that = (AgencyTokenProject) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override

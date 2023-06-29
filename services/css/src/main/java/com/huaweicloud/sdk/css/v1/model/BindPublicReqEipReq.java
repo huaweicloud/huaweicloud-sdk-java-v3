@@ -65,16 +65,15 @@ public class BindPublicReqEipReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindPublicReqEipReq bindPublicReqEipReq = (BindPublicReqEipReq) o;
-        return Objects.equals(this.bandWidth, bindPublicReqEipReq.bandWidth)
-            && Objects.equals(this.isAutoPay, bindPublicReqEipReq.isAutoPay);
+        BindPublicReqEipReq that = (BindPublicReqEipReq) obj;
+        return Objects.equals(this.bandWidth, that.bandWidth) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

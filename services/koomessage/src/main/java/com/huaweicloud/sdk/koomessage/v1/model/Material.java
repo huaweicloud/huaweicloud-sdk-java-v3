@@ -241,23 +241,20 @@ public class Material {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Material material = (Material) o;
-        return Objects.equals(this.id, material.id) && Objects.equals(this.createdAt, material.createdAt)
-            && Objects.equals(this.resourceType, material.resourceType)
-            && Objects.equals(this.fileName, material.fileName)
-            && Objects.equals(this.aimResourceId, material.aimResourceId)
-            && Objects.equals(this.obsObjectKey, material.obsObjectKey)
-            && Objects.equals(this.obsFileUrl, material.obsFileUrl)
-            && Objects.equals(this.imageRate, material.imageRate)
-            && Objects.equals(this.description, material.description)
-            && Objects.equals(this.thumbnail, material.thumbnail);
+        Material that = (Material) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.aimResourceId, that.aimResourceId)
+            && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.obsFileUrl, that.obsFileUrl)
+            && Objects.equals(this.imageRate, that.imageRate) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.thumbnail, that.thumbnail);
     }
 
     @Override

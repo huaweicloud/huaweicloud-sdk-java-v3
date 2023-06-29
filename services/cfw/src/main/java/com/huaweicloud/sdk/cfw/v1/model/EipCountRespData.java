@@ -79,17 +79,16 @@ public class EipCountRespData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipCountRespData eipCountRespData = (EipCountRespData) o;
-        return Objects.equals(this.objectId, eipCountRespData.objectId)
-            && Objects.equals(this.eipTotal, eipCountRespData.eipTotal)
-            && Objects.equals(this.eipProtected, eipCountRespData.eipProtected);
+        EipCountRespData that = (EipCountRespData) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.eipTotal, that.eipTotal)
+            && Objects.equals(this.eipProtected, that.eipProtected);
     }
 
     @Override

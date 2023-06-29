@@ -187,20 +187,18 @@ public class AppComponentDao {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppComponentDao appComponentDao = (AppComponentDao) o;
-        return Objects.equals(this.taskId, appComponentDao.taskId) && Objects.equals(this.appId, appComponentDao.appId)
-            && Objects.equals(this.appName, appComponentDao.appName)
-            && Objects.equals(this.compId, appComponentDao.compId)
-            && Objects.equals(this.compName, appComponentDao.compName)
-            && Objects.equals(this.domainId, appComponentDao.domainId)
-            && Objects.equals(this.region, appComponentDao.region) && Objects.equals(this.state, appComponentDao.state);
+        AppComponentDao that = (AppComponentDao) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.compId, that.compId)
+            && Objects.equals(this.compName, that.compName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.state, that.state);
     }
 
     @Override

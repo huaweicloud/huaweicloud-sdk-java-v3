@@ -33,15 +33,15 @@ public class ImageSuperResolutionResponseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageSuperResolutionResponseResult imageSuperResolutionResponseResult = (ImageSuperResolutionResponseResult) o;
-        return Objects.equals(this.resultBase64, imageSuperResolutionResponseResult.resultBase64);
+        ImageSuperResolutionResponseResult that = (ImageSuperResolutionResponseResult) obj;
+        return Objects.equals(this.resultBase64, that.resultBase64);
     }
 
     @Override

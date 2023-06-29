@@ -97,17 +97,16 @@ public class ListInstancesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesV2Response listInstancesV2Response = (ListInstancesV2Response) o;
-        return Objects.equals(this.size, listInstancesV2Response.size)
-            && Objects.equals(this.total, listInstancesV2Response.total)
-            && Objects.equals(this.instances, listInstancesV2Response.instances);
+        ListInstancesV2Response that = (ListInstancesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

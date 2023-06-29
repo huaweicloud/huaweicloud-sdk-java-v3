@@ -96,17 +96,16 @@ public class CheckImageDataDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckImageDataDto checkImageDataDto = (CheckImageDataDto) o;
-        return Objects.equals(this.dataIds, checkImageDataDto.dataIds)
-            && Objects.equals(this.productionLevel, checkImageDataDto.productionLevel)
-            && Objects.equals(this.taskName, checkImageDataDto.taskName);
+        CheckImageDataDto that = (CheckImageDataDto) obj;
+        return Objects.equals(this.dataIds, that.dataIds) && Objects.equals(this.productionLevel, that.productionLevel)
+            && Objects.equals(this.taskName, that.taskName);
     }
 
     @Override

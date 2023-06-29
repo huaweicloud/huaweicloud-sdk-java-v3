@@ -33,15 +33,15 @@ public class ShowTopologyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopologyRequest showTopologyRequest = (ShowTopologyRequest) o;
-        return Objects.equals(this.traceId, showTopologyRequest.traceId);
+        ShowTopologyRequest that = (ShowTopologyRequest) obj;
+        return Objects.equals(this.traceId, that.traceId);
     }
 
     @Override

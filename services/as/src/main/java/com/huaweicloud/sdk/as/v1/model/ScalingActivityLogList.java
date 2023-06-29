@@ -67,22 +67,15 @@ public class ScalingActivityLogList {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -342,25 +335,23 @@ public class ScalingActivityLogList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingActivityLogList scalingActivityLogList = (ScalingActivityLogList) o;
-        return Objects.equals(this.status, scalingActivityLogList.status)
-            && Objects.equals(this.startTime, scalingActivityLogList.startTime)
-            && Objects.equals(this.endTime, scalingActivityLogList.endTime)
-            && Objects.equals(this.id, scalingActivityLogList.id)
-            && Objects.equals(this.instanceRemovedList, scalingActivityLogList.instanceRemovedList)
-            && Objects.equals(this.instanceDeletedList, scalingActivityLogList.instanceDeletedList)
-            && Objects.equals(this.instanceAddedList, scalingActivityLogList.instanceAddedList)
-            && Objects.equals(this.scalingValue, scalingActivityLogList.scalingValue)
-            && Objects.equals(this.description, scalingActivityLogList.description)
-            && Objects.equals(this.instanceValue, scalingActivityLogList.instanceValue)
-            && Objects.equals(this.desireValue, scalingActivityLogList.desireValue);
+        ScalingActivityLogList that = (ScalingActivityLogList) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.instanceRemovedList, that.instanceRemovedList)
+            && Objects.equals(this.instanceDeletedList, that.instanceDeletedList)
+            && Objects.equals(this.instanceAddedList, that.instanceAddedList)
+            && Objects.equals(this.scalingValue, that.scalingValue)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceValue, that.instanceValue)
+            && Objects.equals(this.desireValue, that.desireValue);
     }
 
     @Override

@@ -307,27 +307,25 @@ public class EvaluationProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EvaluationProject evaluationProject = (EvaluationProject) o;
-        return Objects.equals(this.evaluationProjectId, evaluationProject.evaluationProjectId)
-            && Objects.equals(this.evaluationProjectName, evaluationProject.evaluationProjectName)
-            && Objects.equals(this.evaluationProjectStatus, evaluationProject.evaluationProjectStatus)
-            && Objects.equals(this.projectStatusDetail, evaluationProject.projectStatusDetail)
-            && Objects.equals(this.sourceDbType, evaluationProject.sourceDbType)
-            && Objects.equals(this.sourceDbVersion, evaluationProject.sourceDbVersion)
-            && Objects.equals(this.targetDbType, evaluationProject.targetDbType)
-            && Objects.equals(this.targetDbVersion, evaluationProject.targetDbVersion)
-            && Objects.equals(this.collectSize, evaluationProject.collectSize)
-            && Objects.equals(this.resourceId, evaluationProject.resourceId)
-            && Objects.equals(this.createdTime, evaluationProject.createdTime)
-            && Objects.equals(this.updatedTime, evaluationProject.updatedTime)
-            && Objects.equals(this.errorReason, evaluationProject.errorReason);
+        EvaluationProject that = (EvaluationProject) obj;
+        return Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.evaluationProjectStatus, that.evaluationProjectStatus)
+            && Objects.equals(this.projectStatusDetail, that.projectStatusDetail)
+            && Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.sourceDbVersion, that.sourceDbVersion)
+            && Objects.equals(this.targetDbType, that.targetDbType)
+            && Objects.equals(this.targetDbVersion, that.targetDbVersion)
+            && Objects.equals(this.collectSize, that.collectSize) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.errorReason, that.errorReason);
     }
 
     @Override

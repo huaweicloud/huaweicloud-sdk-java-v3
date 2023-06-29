@@ -74,16 +74,15 @@ public class BatchQueryParamReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchQueryParamReq batchQueryParamReq = (BatchQueryParamReq) o;
-        return Objects.equals(this.jobs, batchQueryParamReq.jobs)
-            && Objects.equals(this.refresh, batchQueryParamReq.refresh);
+        BatchQueryParamReq that = (BatchQueryParamReq) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.refresh, that.refresh);
     }
 
     @Override

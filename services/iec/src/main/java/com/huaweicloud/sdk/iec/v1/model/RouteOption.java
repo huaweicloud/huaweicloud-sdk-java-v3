@@ -60,22 +60,15 @@ public class RouteOption {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,17 +174,16 @@ public class RouteOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteOption routeOption = (RouteOption) o;
-        return Objects.equals(this.type, routeOption.type) && Objects.equals(this.destination, routeOption.destination)
-            && Objects.equals(this.nexthop, routeOption.nexthop)
-            && Objects.equals(this.description, routeOption.description);
+        RouteOption that = (RouteOption) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.description, that.description);
     }
 
     @Override

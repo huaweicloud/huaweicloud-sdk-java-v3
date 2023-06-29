@@ -194,23 +194,19 @@ public class ShowRepositoryStatisticalDataV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryStatisticalDataV2Response showRepositoryStatisticalDataV2Response =
-            (ShowRepositoryStatisticalDataV2Response) o;
-        return Objects.equals(this.name, showRepositoryStatisticalDataV2Response.name)
-            && Objects.equals(this.commitNumber, showRepositoryStatisticalDataV2Response.commitNumber)
-            && Objects.equals(this.gitRepoCap, showRepositoryStatisticalDataV2Response.gitRepoCap)
-            && Objects.equals(this.lastCommitTime, showRepositoryStatisticalDataV2Response.lastCommitTime)
-            && Objects.equals(this.codeLines, showRepositoryStatisticalDataV2Response.codeLines)
-            && Objects.equals(this.branchNumber, showRepositoryStatisticalDataV2Response.branchNumber)
-            && Objects.equals(this.detailUrl, showRepositoryStatisticalDataV2Response.detailUrl)
-            && Objects.equals(this.downloadUrl, showRepositoryStatisticalDataV2Response.downloadUrl);
+        ShowRepositoryStatisticalDataV2Response that = (ShowRepositoryStatisticalDataV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.commitNumber, that.commitNumber)
+            && Objects.equals(this.gitRepoCap, that.gitRepoCap)
+            && Objects.equals(this.lastCommitTime, that.lastCommitTime)
+            && Objects.equals(this.codeLines, that.codeLines) && Objects.equals(this.branchNumber, that.branchNumber)
+            && Objects.equals(this.detailUrl, that.detailUrl) && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

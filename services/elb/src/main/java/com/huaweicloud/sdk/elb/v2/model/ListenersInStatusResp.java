@@ -178,20 +178,18 @@ public class ListenersInStatusResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListenersInStatusResp listenersInStatusResp = (ListenersInStatusResp) o;
-        return Objects.equals(this.id, listenersInStatusResp.id)
-            && Objects.equals(this.name, listenersInStatusResp.name)
-            && Objects.equals(this.pools, listenersInStatusResp.pools)
-            && Objects.equals(this.l7policies, listenersInStatusResp.l7policies)
-            && Objects.equals(this.operatingStatus, listenersInStatusResp.operatingStatus)
-            && Objects.equals(this.provisioningStatus, listenersInStatusResp.provisioningStatus);
+        ListenersInStatusResp that = (ListenersInStatusResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.pools, that.pools) && Objects.equals(this.l7policies, that.l7policies)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus);
     }
 
     @Override

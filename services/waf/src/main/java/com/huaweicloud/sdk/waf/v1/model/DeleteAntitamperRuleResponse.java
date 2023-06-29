@@ -100,18 +100,16 @@ public class DeleteAntitamperRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAntitamperRuleResponse deleteAntitamperRuleResponse = (DeleteAntitamperRuleResponse) o;
-        return Objects.equals(this.id, deleteAntitamperRuleResponse.id)
-            && Objects.equals(this.policyid, deleteAntitamperRuleResponse.policyid)
-            && Objects.equals(this.url, deleteAntitamperRuleResponse.url)
-            && Objects.equals(this.timestamp, deleteAntitamperRuleResponse.timestamp);
+        DeleteAntitamperRuleResponse that = (DeleteAntitamperRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

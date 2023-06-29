@@ -1,213 +1,172 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastoreWithKernelVersion;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceChargeInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlTags;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MysqlInstanceInfoDetail
  */
-public class MysqlInstanceInfoDetail  {
-
+public class MysqlInstanceInfoDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias")
-    
+    @JsonProperty(value = "alias")
 
     private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private MysqlInstanceChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_count")
-    
+    @JsonProperty(value = "node_count")
 
     private Integer nodeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private MysqlDatastoreWithKernelVersion datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_used_space")
-    
+    @JsonProperty(value = "backup_used_space")
 
     private Double backupUsedSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_write_ips")
-    
+    @JsonProperty(value = "private_write_ips")
+
     private List<String> privateWriteIps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ips")
-    
+    @JsonProperty(value = "public_ips")
 
     private String publicIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_name")
-    
+    @JsonProperty(value = "db_user_name")
 
     private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_id")
-    
+    @JsonProperty(value = "configuration_id")
 
     private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
 
     private MysqlBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<MysqlInstanceNodeInfo> nodes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_mode")
-    
+    @JsonProperty(value = "az_mode")
 
     private String azMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_az_code")
-    
+    @JsonProperty(value = "master_az_code")
 
     private String masterAzCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintenance_window")
-    
+    @JsonProperty(value = "maintenance_window")
 
     private String maintenanceWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<MysqlTags> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_resource_id")
-    
+    @JsonProperty(value = "dedicated_resource_id")
 
     private String dedicatedResourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxies")
-    
+    @JsonProperty(value = "proxies")
+
     private List<MysqlProxyInfo> proxies = null;
-    
+
     public MysqlInstanceInfoDetail withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -221,15 +180,10 @@ public class MysqlInstanceInfoDetail  {
         this.id = id;
     }
 
-    
-
     public MysqlInstanceInfoDetail withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 创建的实例名称。
@@ -243,15 +197,10 @@ public class MysqlInstanceInfoDetail  {
         this.name = name;
     }
 
-    
-
     public MysqlInstanceInfoDetail withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 租户在某一region下的project ID。
@@ -265,15 +214,10 @@ public class MysqlInstanceInfoDetail  {
         this.projectId = projectId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。  取值： - 值为“BUILD”，表示实例正在创建。 - 值为“ACTIVE”，表示实例正常。 - 值为“FAILED”，表示实例创建失败。 - 值为“FROZEN”，表示实例冻结。 - 值为“MODIFYING”，表示实例正在扩容。 - 值为“REBOOTING”，表示实例正在重启。 - 值为“RESTORING”，表示实例正在恢复。 - 值为“SWITCHOVER”，表示实例正在主备切换。 - 值为“MIGRATING”，表示实例正在迁移。 - 值为“BACKING UP”，表示实例正在进行备份。 - 值为“MODIFYING DATABASE PORT”，表示实例正在修改数据库端口。 - 值为“STORAGE FULL”，表示实例磁盘空间满。
@@ -287,15 +231,10 @@ public class MysqlInstanceInfoDetail  {
         this.status = status;
     }
 
-    
-
     public MysqlInstanceInfoDetail withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口号。
@@ -309,15 +248,10 @@ public class MysqlInstanceInfoDetail  {
         this.port = port;
     }
 
-    
-
     public MysqlInstanceInfoDetail withAlias(String alias) {
         this.alias = alias;
         return this;
     }
-
-    
-
 
     /**
      * 实例备注
@@ -331,15 +265,10 @@ public class MysqlInstanceInfoDetail  {
         this.alias = alias;
     }
 
-    
-
     public MysqlInstanceInfoDetail withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 实例类型，取值为“Cluster”。
@@ -353,22 +282,19 @@ public class MysqlInstanceInfoDetail  {
         this.type = type;
     }
 
-    
-
     public MysqlInstanceInfoDetail withChargeInfo(MysqlInstanceChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public MysqlInstanceInfoDetail withChargeInfo(Consumer<MysqlInstanceChargeInfo> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new MysqlInstanceChargeInfo();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -382,15 +308,10 @@ public class MysqlInstanceInfoDetail  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     public MysqlInstanceInfoDetail withNodeCount(Integer nodeCount) {
         this.nodeCount = nodeCount;
         return this;
     }
-
-    
-
 
     /**
      * 节点个数。
@@ -404,22 +325,19 @@ public class MysqlInstanceInfoDetail  {
         this.nodeCount = nodeCount;
     }
 
-    
-
     public MysqlInstanceInfoDetail withDatastore(MysqlDatastoreWithKernelVersion datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public MysqlInstanceInfoDetail withDatastore(Consumer<MysqlDatastoreWithKernelVersion> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new MysqlDatastoreWithKernelVersion();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -433,15 +351,10 @@ public class MysqlInstanceInfoDetail  {
         this.datastore = datastore;
     }
 
-    
-
     public MysqlInstanceInfoDetail withBackupUsedSpace(Double backupUsedSpace) {
         this.backupUsedSpace = backupUsedSpace;
         return this;
     }
-
-    
-
 
     /**
      * 备份空间使用大小，单位为GB。
@@ -455,15 +368,10 @@ public class MysqlInstanceInfoDetail  {
         this.backupUsedSpace = backupUsedSpace;
     }
 
-    
-
     public MysqlInstanceInfoDetail withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -477,15 +385,10 @@ public class MysqlInstanceInfoDetail  {
         this.created = created;
     }
 
-    
-
     public MysqlInstanceInfoDetail withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式与\"created\"字段对应格式完全相同。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -499,16 +402,13 @@ public class MysqlInstanceInfoDetail  {
         this.updated = updated;
     }
 
-    
-
     public MysqlInstanceInfoDetail withPrivateWriteIps(List<String> privateWriteIps) {
         this.privateWriteIps = privateWriteIps;
         return this;
     }
 
-    
     public MysqlInstanceInfoDetail addPrivateWriteIpsItem(String privateWriteIpsItem) {
-        if(this.privateWriteIps == null) {
+        if (this.privateWriteIps == null) {
             this.privateWriteIps = new ArrayList<>();
         }
         this.privateWriteIps.add(privateWriteIpsItem);
@@ -516,7 +416,7 @@ public class MysqlInstanceInfoDetail  {
     }
 
     public MysqlInstanceInfoDetail withPrivateWriteIps(Consumer<List<String>> privateWriteIpsSetter) {
-        if(this.privateWriteIps == null) {
+        if (this.privateWriteIps == null) {
             this.privateWriteIps = new ArrayList<>();
         }
         privateWriteIpsSetter.accept(this.privateWriteIps);
@@ -535,15 +435,10 @@ public class MysqlInstanceInfoDetail  {
         this.privateWriteIps = privateWriteIps;
     }
 
-    
-
     public MysqlInstanceInfoDetail withPublicIps(String publicIps) {
         this.publicIps = publicIps;
         return this;
     }
-
-    
-
 
     /**
      * 实例的公网IP。
@@ -557,15 +452,10 @@ public class MysqlInstanceInfoDetail  {
         this.publicIps = publicIps;
     }
 
-    
-
     public MysqlInstanceInfoDetail withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
         return this;
     }
-
-    
-
 
     /**
      * 默认用户名。
@@ -579,15 +469,10 @@ public class MysqlInstanceInfoDetail  {
         this.dbUserName = dbUserName;
     }
 
-    
-
     public MysqlInstanceInfoDetail withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -601,15 +486,10 @@ public class MysqlInstanceInfoDetail  {
         this.vpcId = vpcId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息。
@@ -623,15 +503,10 @@ public class MysqlInstanceInfoDetail  {
         this.subnetId = subnetId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -645,15 +520,10 @@ public class MysqlInstanceInfoDetail  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
     }
-
-    
-
 
     /**
      * 实例创建的模板ID，或者应用到实例的最新参数组模板ID。
@@ -667,22 +537,19 @@ public class MysqlInstanceInfoDetail  {
         this.configurationId = configurationId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withBackupStrategy(MysqlBackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
     public MysqlInstanceInfoDetail withBackupStrategy(Consumer<MysqlBackupStrategy> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+        if (this.backupStrategy == null) {
             this.backupStrategy = new MysqlBackupStrategy();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupStrategy
@@ -696,16 +563,13 @@ public class MysqlInstanceInfoDetail  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public MysqlInstanceInfoDetail withNodes(List<MysqlInstanceNodeInfo> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public MysqlInstanceInfoDetail addNodesItem(MysqlInstanceNodeInfo nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -713,7 +577,7 @@ public class MysqlInstanceInfoDetail  {
     }
 
     public MysqlInstanceInfoDetail withNodes(Consumer<List<MysqlInstanceNodeInfo>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -732,15 +596,10 @@ public class MysqlInstanceInfoDetail  {
         this.nodes = nodes;
     }
 
-    
-
     public MysqlInstanceInfoDetail withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。
@@ -754,15 +613,10 @@ public class MysqlInstanceInfoDetail  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
-
-    
-
 
     /**
      * 时区。
@@ -776,15 +630,10 @@ public class MysqlInstanceInfoDetail  {
         this.timeZone = timeZone;
     }
 
-    
-
     public MysqlInstanceInfoDetail withAzMode(String azMode) {
         this.azMode = azMode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区模式，单可用区single或多可用区multi。
@@ -798,15 +647,10 @@ public class MysqlInstanceInfoDetail  {
         this.azMode = azMode;
     }
 
-    
-
     public MysqlInstanceInfoDetail withMasterAzCode(String masterAzCode) {
         this.masterAzCode = masterAzCode;
         return this;
     }
-
-    
-
 
     /**
      * 主可用区。
@@ -820,15 +664,10 @@ public class MysqlInstanceInfoDetail  {
         this.masterAzCode = masterAzCode;
     }
 
-    
-
     public MysqlInstanceInfoDetail withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
     }
-
-    
-
 
     /**
      * 可维护时间窗，为UTC时间。
@@ -842,16 +681,13 @@ public class MysqlInstanceInfoDetail  {
         this.maintenanceWindow = maintenanceWindow;
     }
 
-    
-
     public MysqlInstanceInfoDetail withTags(List<MysqlTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public MysqlInstanceInfoDetail addTagsItem(MysqlTags tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -859,7 +695,7 @@ public class MysqlInstanceInfoDetail  {
     }
 
     public MysqlInstanceInfoDetail withTags(Consumer<List<MysqlTags>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -878,15 +714,10 @@ public class MysqlInstanceInfoDetail  {
         this.tags = tags;
     }
 
-    
-
     public MysqlInstanceInfoDetail withDedicatedResourceId(String dedicatedResourceId) {
         this.dedicatedResourceId = dedicatedResourceId;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池ID，只有数据库实例属于专属资源池才会返回该参数。
@@ -900,16 +731,13 @@ public class MysqlInstanceInfoDetail  {
         this.dedicatedResourceId = dedicatedResourceId;
     }
 
-    
-
     public MysqlInstanceInfoDetail withProxies(List<MysqlProxyInfo> proxies) {
         this.proxies = proxies;
         return this;
     }
 
-    
     public MysqlInstanceInfoDetail addProxiesItem(MysqlProxyInfo proxiesItem) {
-        if(this.proxies == null) {
+        if (this.proxies == null) {
             this.proxies = new ArrayList<>();
         }
         this.proxies.add(proxiesItem);
@@ -917,7 +745,7 @@ public class MysqlInstanceInfoDetail  {
     }
 
     public MysqlInstanceInfoDetail withProxies(Consumer<List<MysqlProxyInfo>> proxiesSetter) {
-        if(this.proxies == null) {
+        if (this.proxies == null) {
             this.proxies = new ArrayList<>();
         }
         proxiesSetter.accept(this.proxies);
@@ -936,52 +764,69 @@ public class MysqlInstanceInfoDetail  {
         this.proxies = proxies;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlInstanceInfoDetail mysqlInstanceInfoDetail = (MysqlInstanceInfoDetail) o;
-        return Objects.equals(this.id, mysqlInstanceInfoDetail.id) &&
-            Objects.equals(this.name, mysqlInstanceInfoDetail.name) &&
-            Objects.equals(this.projectId, mysqlInstanceInfoDetail.projectId) &&
-            Objects.equals(this.status, mysqlInstanceInfoDetail.status) &&
-            Objects.equals(this.port, mysqlInstanceInfoDetail.port) &&
-            Objects.equals(this.alias, mysqlInstanceInfoDetail.alias) &&
-            Objects.equals(this.type, mysqlInstanceInfoDetail.type) &&
-            Objects.equals(this.chargeInfo, mysqlInstanceInfoDetail.chargeInfo) &&
-            Objects.equals(this.nodeCount, mysqlInstanceInfoDetail.nodeCount) &&
-            Objects.equals(this.datastore, mysqlInstanceInfoDetail.datastore) &&
-            Objects.equals(this.backupUsedSpace, mysqlInstanceInfoDetail.backupUsedSpace) &&
-            Objects.equals(this.created, mysqlInstanceInfoDetail.created) &&
-            Objects.equals(this.updated, mysqlInstanceInfoDetail.updated) &&
-            Objects.equals(this.privateWriteIps, mysqlInstanceInfoDetail.privateWriteIps) &&
-            Objects.equals(this.publicIps, mysqlInstanceInfoDetail.publicIps) &&
-            Objects.equals(this.dbUserName, mysqlInstanceInfoDetail.dbUserName) &&
-            Objects.equals(this.vpcId, mysqlInstanceInfoDetail.vpcId) &&
-            Objects.equals(this.subnetId, mysqlInstanceInfoDetail.subnetId) &&
-            Objects.equals(this.securityGroupId, mysqlInstanceInfoDetail.securityGroupId) &&
-            Objects.equals(this.configurationId, mysqlInstanceInfoDetail.configurationId) &&
-            Objects.equals(this.backupStrategy, mysqlInstanceInfoDetail.backupStrategy) &&
-            Objects.equals(this.nodes, mysqlInstanceInfoDetail.nodes) &&
-            Objects.equals(this.enterpriseProjectId, mysqlInstanceInfoDetail.enterpriseProjectId) &&
-            Objects.equals(this.timeZone, mysqlInstanceInfoDetail.timeZone) &&
-            Objects.equals(this.azMode, mysqlInstanceInfoDetail.azMode) &&
-            Objects.equals(this.masterAzCode, mysqlInstanceInfoDetail.masterAzCode) &&
-            Objects.equals(this.maintenanceWindow, mysqlInstanceInfoDetail.maintenanceWindow) &&
-            Objects.equals(this.tags, mysqlInstanceInfoDetail.tags) &&
-            Objects.equals(this.dedicatedResourceId, mysqlInstanceInfoDetail.dedicatedResourceId) &&
-            Objects.equals(this.proxies, mysqlInstanceInfoDetail.proxies);
+        MysqlInstanceInfoDetail that = (MysqlInstanceInfoDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.chargeInfo, that.chargeInfo)
+            && Objects.equals(this.nodeCount, that.nodeCount) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.backupUsedSpace, that.backupUsedSpace) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.privateWriteIps, that.privateWriteIps)
+            && Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.dbUserName, that.dbUserName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.azMode, that.azMode)
+            && Objects.equals(this.masterAzCode, that.masterAzCode)
+            && Objects.equals(this.maintenanceWindow, that.maintenanceWindow) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
+            && Objects.equals(this.proxies, that.proxies);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, projectId, status, port, alias, type, chargeInfo, nodeCount, datastore, backupUsedSpace, created, updated, privateWriteIps, publicIps, dbUserName, vpcId, subnetId, securityGroupId, configurationId, backupStrategy, nodes, enterpriseProjectId, timeZone, azMode, masterAzCode, maintenanceWindow, tags, dedicatedResourceId, proxies);
+        return Objects.hash(id,
+            name,
+            projectId,
+            status,
+            port,
+            alias,
+            type,
+            chargeInfo,
+            nodeCount,
+            datastore,
+            backupUsedSpace,
+            created,
+            updated,
+            privateWriteIps,
+            publicIps,
+            dbUserName,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            configurationId,
+            backupStrategy,
+            nodes,
+            enterpriseProjectId,
+            timeZone,
+            azMode,
+            masterAzCode,
+            maintenanceWindow,
+            tags,
+            dedicatedResourceId,
+            proxies);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1019,6 +864,7 @@ public class MysqlInstanceInfoDetail  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1029,8 +875,5 @@ public class MysqlInstanceInfoDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

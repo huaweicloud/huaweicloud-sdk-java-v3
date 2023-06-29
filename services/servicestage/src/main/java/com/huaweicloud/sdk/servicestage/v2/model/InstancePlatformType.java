@@ -52,22 +52,15 @@ public class InstancePlatformType {
         if (value == null) {
             return null;
         }
-        InstancePlatformType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new InstancePlatformType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstancePlatformType(value));
     }
 
     public static InstancePlatformType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        InstancePlatformType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

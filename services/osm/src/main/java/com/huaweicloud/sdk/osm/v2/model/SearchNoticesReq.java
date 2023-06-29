@@ -57,16 +57,15 @@ public class SearchNoticesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchNoticesReq searchNoticesReq = (SearchNoticesReq) o;
-        return Objects.equals(this.top, searchNoticesReq.top)
-            && Objects.equals(this.productTypeId, searchNoticesReq.productTypeId);
+        SearchNoticesReq that = (SearchNoticesReq) obj;
+        return Objects.equals(this.top, that.top) && Objects.equals(this.productTypeId, that.productTypeId);
     }
 
     @Override

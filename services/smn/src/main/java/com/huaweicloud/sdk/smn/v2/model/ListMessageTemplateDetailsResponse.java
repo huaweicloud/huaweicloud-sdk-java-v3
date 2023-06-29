@@ -207,22 +207,19 @@ public class ListMessageTemplateDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTemplateDetailsResponse listMessageTemplateDetailsResponse = (ListMessageTemplateDetailsResponse) o;
-        return Objects.equals(this.messageTemplateId, listMessageTemplateDetailsResponse.messageTemplateId)
-            && Objects.equals(this.messageTemplateName, listMessageTemplateDetailsResponse.messageTemplateName)
-            && Objects.equals(this.protocol, listMessageTemplateDetailsResponse.protocol)
-            && Objects.equals(this.tagNames, listMessageTemplateDetailsResponse.tagNames)
-            && Objects.equals(this.createTime, listMessageTemplateDetailsResponse.createTime)
-            && Objects.equals(this.updateTime, listMessageTemplateDetailsResponse.updateTime)
-            && Objects.equals(this.content, listMessageTemplateDetailsResponse.content)
-            && Objects.equals(this.requestId, listMessageTemplateDetailsResponse.requestId);
+        ListMessageTemplateDetailsResponse that = (ListMessageTemplateDetailsResponse) obj;
+        return Objects.equals(this.messageTemplateId, that.messageTemplateId)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.tagNames, that.tagNames)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

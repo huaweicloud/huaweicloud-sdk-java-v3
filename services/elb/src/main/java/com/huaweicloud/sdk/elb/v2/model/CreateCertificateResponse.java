@@ -86,22 +86,15 @@ public class CreateCertificateResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -358,26 +351,20 @@ public class CreateCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateResponse createCertificateResponse = (CreateCertificateResponse) o;
-        return Objects.equals(this.id, createCertificateResponse.id)
-            && Objects.equals(this.tenantId, createCertificateResponse.tenantId)
-            && Objects.equals(this.adminStateUp, createCertificateResponse.adminStateUp)
-            && Objects.equals(this.name, createCertificateResponse.name)
-            && Objects.equals(this.description, createCertificateResponse.description)
-            && Objects.equals(this.type, createCertificateResponse.type)
-            && Objects.equals(this.domain, createCertificateResponse.domain)
-            && Objects.equals(this.privateKey, createCertificateResponse.privateKey)
-            && Objects.equals(this.certificate, createCertificateResponse.certificate)
-            && Objects.equals(this.expireTime, createCertificateResponse.expireTime)
-            && Objects.equals(this.createTime, createCertificateResponse.createTime)
-            && Objects.equals(this.updateTime, createCertificateResponse.updateTime);
+        CreateCertificateResponse that = (CreateCertificateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

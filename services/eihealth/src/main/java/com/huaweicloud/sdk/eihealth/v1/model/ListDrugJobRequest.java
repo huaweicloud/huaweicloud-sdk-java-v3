@@ -382,28 +382,24 @@ public class ListDrugJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDrugJobRequest listDrugJobRequest = (ListDrugJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, listDrugJobRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listDrugJobRequest.limit)
-            && Objects.equals(this.offset, listDrugJobRequest.offset)
-            && Objects.equals(this.sortDir, listDrugJobRequest.sortDir)
-            && Objects.equals(this.sortKey, listDrugJobRequest.sortKey)
-            && Objects.equals(this.jobName, listDrugJobRequest.jobName)
-            && Objects.equals(this.labels, listDrugJobRequest.labels)
-            && Objects.equals(this.statusList, listDrugJobRequest.statusList)
-            && Objects.equals(this.typeList, listDrugJobRequest.typeList)
-            && Objects.equals(this.createStartTime, listDrugJobRequest.createStartTime)
-            && Objects.equals(this.createEndTime, listDrugJobRequest.createEndTime)
-            && Objects.equals(this.finishStartTime, listDrugJobRequest.finishStartTime)
-            && Objects.equals(this.finishEndTime, listDrugJobRequest.finishEndTime)
-            && Objects.equals(this.totalTimeRange, listDrugJobRequest.totalTimeRange);
+        ListDrugJobRequest that = (ListDrugJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.statusList, that.statusList)
+            && Objects.equals(this.typeList, that.typeList)
+            && Objects.equals(this.createStartTime, that.createStartTime)
+            && Objects.equals(this.createEndTime, that.createEndTime)
+            && Objects.equals(this.finishStartTime, that.finishStartTime)
+            && Objects.equals(this.finishEndTime, that.finishEndTime)
+            && Objects.equals(this.totalTimeRange, that.totalTimeRange);
     }
 
     @Override

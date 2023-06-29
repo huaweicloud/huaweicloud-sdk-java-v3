@@ -143,20 +143,17 @@ public class UpgradeHistory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeHistory upgradeHistory = (UpgradeHistory) o;
-        return Objects.equals(this.id, upgradeHistory.id)
-            && Objects.equals(this.fromVersion, upgradeHistory.fromVersion)
-            && Objects.equals(this.toVersion, upgradeHistory.toVersion)
-            && Objects.equals(this.upgradeTime, upgradeHistory.upgradeTime)
-            && Objects.equals(this.result, upgradeHistory.result)
-            && Objects.equals(this.durTime, upgradeHistory.durTime);
+        UpgradeHistory that = (UpgradeHistory) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.fromVersion, that.fromVersion)
+            && Objects.equals(this.toVersion, that.toVersion) && Objects.equals(this.upgradeTime, that.upgradeTime)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.durTime, that.durTime);
     }
 
     @Override

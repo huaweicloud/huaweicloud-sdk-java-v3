@@ -55,15 +55,15 @@ public class EnvCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvCreate envCreate = (EnvCreate) o;
-        return Objects.equals(this.name, envCreate.name) && Objects.equals(this.remark, envCreate.remark);
+        EnvCreate that = (EnvCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark);
     }
 
     @Override

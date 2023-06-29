@@ -330,24 +330,19 @@ public class QueryResourceInstanceTagsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryResourceInstanceTagsBody queryResourceInstanceTagsBody = (QueryResourceInstanceTagsBody) o;
-        return Objects.equals(this.tags, queryResourceInstanceTagsBody.tags)
-            && Objects.equals(this.tagsAny, queryResourceInstanceTagsBody.tagsAny)
-            && Objects.equals(this.notTags, queryResourceInstanceTagsBody.notTags)
-            && Objects.equals(this.notTagsAny, queryResourceInstanceTagsBody.notTagsAny)
-            && Objects.equals(this.sysTags, queryResourceInstanceTagsBody.sysTags)
-            && Objects.equals(this.limit, queryResourceInstanceTagsBody.limit)
-            && Objects.equals(this.offset, queryResourceInstanceTagsBody.offset)
-            && Objects.equals(this.action, queryResourceInstanceTagsBody.action)
-            && Objects.equals(this.matches, queryResourceInstanceTagsBody.matches)
-            && Objects.equals(this.withoutAnyTag, queryResourceInstanceTagsBody.withoutAnyTag);
+        QueryResourceInstanceTagsBody that = (QueryResourceInstanceTagsBody) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.tagsAny, that.tagsAny)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.notTagsAny, that.notTagsAny)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.matches, that.matches) && Objects.equals(this.withoutAnyTag, that.withoutAnyTag);
     }
 
     @Override

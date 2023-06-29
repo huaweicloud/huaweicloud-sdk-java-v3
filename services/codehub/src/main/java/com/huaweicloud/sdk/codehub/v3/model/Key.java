@@ -121,17 +121,17 @@ public class Key {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Key key = (Key) o;
-        return Objects.equals(this.canPush, key.canPush) && Objects.equals(this.createdAt, key.createdAt)
-            && Objects.equals(this.key, key.key) && Objects.equals(this.keyId, key.keyId)
-            && Objects.equals(this.keyTitle, key.keyTitle);
+        Key that = (Key) obj;
+        return Objects.equals(this.canPush, that.canPush) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.keyId, that.keyId)
+            && Objects.equals(this.keyTitle, that.keyTitle);
     }
 
     @Override

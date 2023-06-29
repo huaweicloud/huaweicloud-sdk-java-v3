@@ -118,17 +118,17 @@ public class RespDeh {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespDeh respDeh = (RespDeh) o;
-        return Objects.equals(this.resourceId, respDeh.resourceId)
-            && Objects.equals(this.resouceDetail, respDeh.resouceDetail) && Objects.equals(this.tags, respDeh.tags)
-            && Objects.equals(this.resourceName, respDeh.resourceName);
+        RespDeh that = (RespDeh) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resouceDetail, that.resouceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override

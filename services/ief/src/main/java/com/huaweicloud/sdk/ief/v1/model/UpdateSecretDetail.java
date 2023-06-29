@@ -74,16 +74,15 @@ public class UpdateSecretDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecretDetail updateSecretDetail = (UpdateSecretDetail) o;
-        return Objects.equals(this.description, updateSecretDetail.description)
-            && Objects.equals(this.secrets, updateSecretDetail.secrets);
+        UpdateSecretDetail that = (UpdateSecretDetail) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.secrets, that.secrets);
     }
 
     @Override

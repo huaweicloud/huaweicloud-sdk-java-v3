@@ -77,17 +77,16 @@ public class DiskAutoExpansionPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskAutoExpansionPolicy diskAutoExpansionPolicy = (DiskAutoExpansionPolicy) o;
-        return Objects.equals(this.threshold, diskAutoExpansionPolicy.threshold)
-            && Objects.equals(this.step, diskAutoExpansionPolicy.step)
-            && Objects.equals(this.size, diskAutoExpansionPolicy.size);
+        DiskAutoExpansionPolicy that = (DiskAutoExpansionPolicy) obj;
+        return Objects.equals(this.threshold, that.threshold) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

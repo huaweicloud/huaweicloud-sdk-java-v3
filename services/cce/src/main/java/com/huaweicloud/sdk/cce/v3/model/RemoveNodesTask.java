@@ -118,17 +118,16 @@ public class RemoveNodesTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveNodesTask removeNodesTask = (RemoveNodesTask) o;
-        return Objects.equals(this.apiVersion, removeNodesTask.apiVersion)
-            && Objects.equals(this.kind, removeNodesTask.kind) && Objects.equals(this.spec, removeNodesTask.spec)
-            && Objects.equals(this.status, removeNodesTask.status);
+        RemoveNodesTask that = (RemoveNodesTask) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class PrePaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class PrePaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,22 +220,15 @@ public class PrePaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoRenewEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
         }
 
         public static IsAutoRenewEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -316,22 +295,15 @@ public class PrePaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoPayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoPayEnum(value));
         }
 
         public static IsAutoPayEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -422,22 +394,15 @@ public class PrePaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InterruptionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InterruptionPolicyEnum(value));
         }
 
         public static InterruptionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -705,28 +670,24 @@ public class PrePaidServerExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerExtendParam prePaidServerExtendParam = (PrePaidServerExtendParam) o;
-        return Objects.equals(this.chargingMode, prePaidServerExtendParam.chargingMode)
-            && Objects.equals(this.regionID, prePaidServerExtendParam.regionID)
-            && Objects.equals(this.periodType, prePaidServerExtendParam.periodType)
-            && Objects.equals(this.periodNum, prePaidServerExtendParam.periodNum)
-            && Objects.equals(this.isAutoRenew, prePaidServerExtendParam.isAutoRenew)
-            && Objects.equals(this.isAutoPay, prePaidServerExtendParam.isAutoPay)
-            && Objects.equals(this.enterpriseProjectId, prePaidServerExtendParam.enterpriseProjectId)
-            && Objects.equals(this.supportAutoRecovery, prePaidServerExtendParam.supportAutoRecovery)
-            && Objects.equals(this.marketType, prePaidServerExtendParam.marketType)
-            && Objects.equals(this.spotPrice, prePaidServerExtendParam.spotPrice)
-            && Objects.equals(this.diskPrior, prePaidServerExtendParam.diskPrior)
-            && Objects.equals(this.spotDurationHours, prePaidServerExtendParam.spotDurationHours)
-            && Objects.equals(this.interruptionPolicy, prePaidServerExtendParam.interruptionPolicy)
-            && Objects.equals(this.spotDurationCount, prePaidServerExtendParam.spotDurationCount);
+        PrePaidServerExtendParam that = (PrePaidServerExtendParam) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.regionID, that.regionID)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.supportAutoRecovery, that.supportAutoRecovery)
+            && Objects.equals(this.marketType, that.marketType) && Objects.equals(this.spotPrice, that.spotPrice)
+            && Objects.equals(this.diskPrior, that.diskPrior)
+            && Objects.equals(this.spotDurationHours, that.spotDurationHours)
+            && Objects.equals(this.interruptionPolicy, that.interruptionPolicy)
+            && Objects.equals(this.spotDurationCount, that.spotDurationCount);
     }
 
     @Override

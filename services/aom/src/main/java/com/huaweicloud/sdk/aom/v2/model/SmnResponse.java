@@ -1,57 +1,45 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.SmnInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SMN返回的发送结果信息
  */
-public class SmnResponse  {
-
+public class SmnResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sent_time")
-    
+    @JsonProperty(value = "sent_time")
 
     private Long sentTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_notified_history")
-    
+    @JsonProperty(value = "smn_notified_history")
+
     private List<SmnInfo> smnNotifiedHistory = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_request_id")
-    
+    @JsonProperty(value = "smn_request_id")
 
     private String smnRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_response_body")
-    
+    @JsonProperty(value = "smn_response_body")
 
     private String smnResponseBody;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_response_code")
-    
+    @JsonProperty(value = "smn_response_code")
 
     private String smnResponseCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_topic")
-    
+    @JsonProperty(value = "smn_topic")
 
     private String smnTopic;
 
@@ -59,9 +47,6 @@ public class SmnResponse  {
         this.sentTime = sentTime;
         return this;
     }
-
-    
-
 
     /**
      * 发送时间。
@@ -77,16 +62,13 @@ public class SmnResponse  {
         this.sentTime = sentTime;
     }
 
-    
-
     public SmnResponse withSmnNotifiedHistory(List<SmnInfo> smnNotifiedHistory) {
         this.smnNotifiedHistory = smnNotifiedHistory;
         return this;
     }
 
-    
     public SmnResponse addSmnNotifiedHistoryItem(SmnInfo smnNotifiedHistoryItem) {
-        if(this.smnNotifiedHistory == null) {
+        if (this.smnNotifiedHistory == null) {
             this.smnNotifiedHistory = new ArrayList<>();
         }
         this.smnNotifiedHistory.add(smnNotifiedHistoryItem);
@@ -94,7 +76,7 @@ public class SmnResponse  {
     }
 
     public SmnResponse withSmnNotifiedHistory(Consumer<List<SmnInfo>> smnNotifiedHistorySetter) {
-        if(this.smnNotifiedHistory == null) {
+        if (this.smnNotifiedHistory == null) {
             this.smnNotifiedHistory = new ArrayList<>();
         }
         smnNotifiedHistorySetter.accept(this.smnNotifiedHistory);
@@ -113,15 +95,10 @@ public class SmnResponse  {
         this.smnNotifiedHistory = smnNotifiedHistory;
     }
 
-    
-
     public SmnResponse withSmnRequestId(String smnRequestId) {
         this.smnRequestId = smnRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 请求smn服务的请求id。
@@ -135,15 +112,10 @@ public class SmnResponse  {
         this.smnRequestId = smnRequestId;
     }
 
-    
-
     public SmnResponse withSmnResponseBody(String smnResponseBody) {
         this.smnResponseBody = smnResponseBody;
         return this;
     }
-
-    
-
 
     /**
      * 调用smn服务返回的信息。
@@ -157,15 +129,10 @@ public class SmnResponse  {
         this.smnResponseBody = smnResponseBody;
     }
 
-    
-
     public SmnResponse withSmnResponseCode(String smnResponseCode) {
         this.smnResponseCode = smnResponseCode;
         return this;
     }
-
-    
-
 
     /**
      * 调用smn服务返回的http状态码。
@@ -179,15 +146,10 @@ public class SmnResponse  {
         this.smnResponseCode = smnResponseCode;
     }
 
-    
-
     public SmnResponse withSmnTopic(String smnTopic) {
         this.smnTopic = smnTopic;
         return this;
     }
-
-    
-
 
     /**
      * smn的主题。
@@ -201,28 +163,28 @@ public class SmnResponse  {
         this.smnTopic = smnTopic;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmnResponse smnResponse = (SmnResponse) o;
-        return Objects.equals(this.sentTime, smnResponse.sentTime) &&
-            Objects.equals(this.smnNotifiedHistory, smnResponse.smnNotifiedHistory) &&
-            Objects.equals(this.smnRequestId, smnResponse.smnRequestId) &&
-            Objects.equals(this.smnResponseBody, smnResponse.smnResponseBody) &&
-            Objects.equals(this.smnResponseCode, smnResponse.smnResponseCode) &&
-            Objects.equals(this.smnTopic, smnResponse.smnTopic);
+        SmnResponse that = (SmnResponse) obj;
+        return Objects.equals(this.sentTime, that.sentTime)
+            && Objects.equals(this.smnNotifiedHistory, that.smnNotifiedHistory)
+            && Objects.equals(this.smnRequestId, that.smnRequestId)
+            && Objects.equals(this.smnResponseBody, that.smnResponseBody)
+            && Objects.equals(this.smnResponseCode, that.smnResponseCode)
+            && Objects.equals(this.smnTopic, that.smnTopic);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sentTime, smnNotifiedHistory, smnRequestId, smnResponseBody, smnResponseCode, smnTopic);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -236,6 +198,7 @@ public class SmnResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -246,8 +209,5 @@ public class SmnResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

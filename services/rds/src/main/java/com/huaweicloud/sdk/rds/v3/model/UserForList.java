@@ -33,15 +33,15 @@ public class UserForList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserForList userForList = (UserForList) o;
-        return Objects.equals(this.name, userForList.name);
+        UserForList that = (UserForList) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

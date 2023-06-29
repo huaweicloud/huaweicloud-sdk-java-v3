@@ -77,18 +77,16 @@ public class AssociateSecurityLevelToEntitieRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateSecurityLevelToEntitieRequest associateSecurityLevelToEntitieRequest =
-            (AssociateSecurityLevelToEntitieRequest) o;
-        return Objects.equals(this.workspace, associateSecurityLevelToEntitieRequest.workspace)
-            && Objects.equals(this.guid, associateSecurityLevelToEntitieRequest.guid)
-            && Objects.equals(this.securityLevel, associateSecurityLevelToEntitieRequest.securityLevel);
+        AssociateSecurityLevelToEntitieRequest that = (AssociateSecurityLevelToEntitieRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.securityLevel, that.securityLevel);
     }
 
     @Override

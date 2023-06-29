@@ -65,22 +65,15 @@ public class UpdatePublicipOption {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class UpdatePublicipOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicipOption updatePublicipOption = (UpdatePublicipOption) o;
-        return Objects.equals(this.portId, updatePublicipOption.portId)
-            && Objects.equals(this.ipVersion, updatePublicipOption.ipVersion)
-            && Objects.equals(this.alias, updatePublicipOption.alias);
+        UpdatePublicipOption that = (UpdatePublicipOption) obj;
+        return Objects.equals(this.portId, that.portId) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.alias, that.alias);
     }
 
     @Override

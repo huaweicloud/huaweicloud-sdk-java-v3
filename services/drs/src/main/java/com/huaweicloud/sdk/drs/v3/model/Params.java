@@ -60,22 +60,15 @@ public class Params {
             if (value == null) {
                 return null;
             }
-            CompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareResultEnum(value));
         }
 
         public static CompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class Params {
             if (value == null) {
                 return null;
             }
-            GroupEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GroupEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GroupEnum(value));
         }
 
         public static GroupEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GroupEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,22 +220,15 @@ public class Params {
             if (value == null) {
                 return null;
             }
-            NeedRestartEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NeedRestartEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NeedRestartEnum(value));
         }
 
         public static NeedRestartEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NeedRestartEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -467,21 +446,19 @@ public class Params {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Params params = (Params) o;
-        return Objects.equals(this.compareResult, params.compareResult)
-            && Objects.equals(this.dataType, params.dataType) && Objects.equals(this.group, params.group)
-            && Objects.equals(this.key, params.key) && Objects.equals(this.needRestart, params.needRestart)
-            && Objects.equals(this.sourceValue, params.sourceValue)
-            && Objects.equals(this.targetValue, params.targetValue)
-            && Objects.equals(this.valueRange, params.valueRange) && Objects.equals(this.errorCode, params.errorCode)
-            && Objects.equals(this.errorMessage, params.errorMessage);
+        Params that = (Params) obj;
+        return Objects.equals(this.compareResult, that.compareResult) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.needRestart, that.needRestart) && Objects.equals(this.sourceValue, that.sourceValue)
+            && Objects.equals(this.targetValue, that.targetValue) && Objects.equals(this.valueRange, that.valueRange)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

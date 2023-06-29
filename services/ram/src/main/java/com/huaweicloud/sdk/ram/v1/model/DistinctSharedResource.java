@@ -78,17 +78,16 @@ public class DistinctSharedResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DistinctSharedResource distinctSharedResource = (DistinctSharedResource) o;
-        return Objects.equals(this.resourceUrn, distinctSharedResource.resourceUrn)
-            && Objects.equals(this.resourceType, distinctSharedResource.resourceType)
-            && Objects.equals(this.updatedAt, distinctSharedResource.updatedAt);
+        DistinctSharedResource that = (DistinctSharedResource) obj;
+        return Objects.equals(this.resourceUrn, that.resourceUrn)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

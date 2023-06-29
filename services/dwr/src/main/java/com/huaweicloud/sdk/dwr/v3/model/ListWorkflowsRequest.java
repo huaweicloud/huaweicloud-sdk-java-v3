@@ -81,17 +81,16 @@ public class ListWorkflowsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowsRequest listWorkflowsRequest = (ListWorkflowsRequest) o;
-        return Objects.equals(this.prefix, listWorkflowsRequest.prefix)
-            && Objects.equals(this.offset, listWorkflowsRequest.offset)
-            && Objects.equals(this.limit, listWorkflowsRequest.limit);
+        ListWorkflowsRequest that = (ListWorkflowsRequest) obj;
+        return Objects.equals(this.prefix, that.prefix) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

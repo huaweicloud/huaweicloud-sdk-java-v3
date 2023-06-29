@@ -100,18 +100,16 @@ public class ShowUpgradeProgressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpgradeProgressResponse showUpgradeProgressResponse = (ShowUpgradeProgressResponse) o;
-        return Objects.equals(this.version, showUpgradeProgressResponse.version)
-            && Objects.equals(this.status, showUpgradeProgressResponse.status)
-            && Objects.equals(this.progress, showUpgradeProgressResponse.progress)
-            && Objects.equals(this.cause, showUpgradeProgressResponse.cause);
+        ShowUpgradeProgressResponse that = (ShowUpgradeProgressResponse) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.cause, that.cause);
     }
 
     @Override

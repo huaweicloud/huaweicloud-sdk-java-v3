@@ -174,19 +174,17 @@ public class AggregateModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateModel aggregateModel = (AggregateModel) o;
-        return Objects.equals(this.inputs, aggregateModel.inputs)
-            && Objects.equals(this.expression, aggregateModel.expression)
-            && Objects.equals(this.schedule, aggregateModel.schedule)
-            && Objects.equals(this.outputProperty, aggregateModel.outputProperty)
-            && Objects.equals(this.outputs, aggregateModel.outputs);
+        AggregateModel that = (AggregateModel) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.outputProperty, that.outputProperty)
+            && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

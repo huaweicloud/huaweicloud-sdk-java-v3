@@ -1,85 +1,67 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * FileStatusV2
  */
-public class FileStatusV2  {
-
+public class FileStatusV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path_suffix")
-    
+    @JsonProperty(value = "path_suffix")
 
     private String pathSuffix;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group")
-    
+    @JsonProperty(value = "group")
 
     private String group;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="permission")
-    
+    @JsonProperty(value = "permission")
 
     private String permission;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
 
     private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="block_size")
-    
+    @JsonProperty(value = "block_size")
 
     private Integer blockSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="length")
-    
+    @JsonProperty(value = "length")
 
     private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="children_num")
-    
+    @JsonProperty(value = "children_num")
 
     private Integer childrenNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_time")
-    
+    @JsonProperty(value = "access_time")
 
     private Long accessTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modification_time")
-    
+    @JsonProperty(value = "modification_time")
 
     private Long modificationTime;
 
@@ -87,9 +69,6 @@ public class FileStatusV2  {
         this.pathSuffix = pathSuffix;
         return this;
     }
-
-    
-
 
     /**
      * 文件在当前目录下的后缀，如获取“/tmp”目录，下面的“/tmp/test”文件，此处path_suffix内容为“test”。
@@ -103,15 +82,10 @@ public class FileStatusV2  {
         this.pathSuffix = pathSuffix;
     }
 
-    
-
     public FileStatusV2 withOwner(String owner) {
         this.owner = owner;
         return this;
     }
-
-    
-
 
     /**
      * 文件拥有者。
@@ -125,15 +99,10 @@ public class FileStatusV2  {
         this.owner = owner;
     }
 
-    
-
     public FileStatusV2 withGroup(String group) {
         this.group = group;
         return this;
     }
-
-    
-
 
     /**
      * 文件属组。
@@ -147,15 +116,10 @@ public class FileStatusV2  {
         this.group = group;
     }
 
-    
-
     public FileStatusV2 withPermission(String permission) {
         this.permission = permission;
         return this;
     }
-
-    
-
 
     /**
      * 权限信息。
@@ -169,15 +133,10 @@ public class FileStatusV2  {
         this.permission = permission;
     }
 
-    
-
     public FileStatusV2 withReplication(Integer replication) {
         this.replication = replication;
         return this;
     }
-
-    
-
 
     /**
      * 副本数。
@@ -191,15 +150,10 @@ public class FileStatusV2  {
         this.replication = replication;
     }
 
-    
-
     public FileStatusV2 withBlockSize(Integer blockSize) {
         this.blockSize = blockSize;
         return this;
     }
-
-    
-
 
     /**
      * 块大小。
@@ -213,15 +167,10 @@ public class FileStatusV2  {
         this.blockSize = blockSize;
     }
 
-    
-
     public FileStatusV2 withLength(Integer length) {
         this.length = length;
         return this;
     }
-
-    
-
 
     /**
      * 文件长度。
@@ -235,15 +184,10 @@ public class FileStatusV2  {
         this.length = length;
     }
 
-    
-
     public FileStatusV2 withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 文件类型： - FILE：文件 - DIRECTORY：目录
@@ -257,15 +201,10 @@ public class FileStatusV2  {
         this.type = type;
     }
 
-    
-
     public FileStatusV2 withChildrenNum(Integer childrenNum) {
         this.childrenNum = childrenNum;
         return this;
     }
-
-    
-
 
     /**
      * 该目录下的文件条目数。
@@ -279,15 +218,10 @@ public class FileStatusV2  {
         this.childrenNum = childrenNum;
     }
 
-    
-
     public FileStatusV2 withAccessTime(Long accessTime) {
         this.accessTime = accessTime;
         return this;
     }
-
-    
-
 
     /**
      * 文件访问时间。
@@ -301,15 +235,10 @@ public class FileStatusV2  {
         this.accessTime = accessTime;
     }
 
-    
-
     public FileStatusV2 withModificationTime(Long modificationTime) {
         this.modificationTime = modificationTime;
         return this;
     }
-
-    
-
 
     /**
      * 文件修改时间。
@@ -323,33 +252,38 @@ public class FileStatusV2  {
         this.modificationTime = modificationTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileStatusV2 fileStatusV2 = (FileStatusV2) o;
-        return Objects.equals(this.pathSuffix, fileStatusV2.pathSuffix) &&
-            Objects.equals(this.owner, fileStatusV2.owner) &&
-            Objects.equals(this.group, fileStatusV2.group) &&
-            Objects.equals(this.permission, fileStatusV2.permission) &&
-            Objects.equals(this.replication, fileStatusV2.replication) &&
-            Objects.equals(this.blockSize, fileStatusV2.blockSize) &&
-            Objects.equals(this.length, fileStatusV2.length) &&
-            Objects.equals(this.type, fileStatusV2.type) &&
-            Objects.equals(this.childrenNum, fileStatusV2.childrenNum) &&
-            Objects.equals(this.accessTime, fileStatusV2.accessTime) &&
-            Objects.equals(this.modificationTime, fileStatusV2.modificationTime);
+        FileStatusV2 that = (FileStatusV2) obj;
+        return Objects.equals(this.pathSuffix, that.pathSuffix) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.blockSize, that.blockSize)
+            && Objects.equals(this.length, that.length) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.childrenNum, that.childrenNum) && Objects.equals(this.accessTime, that.accessTime)
+            && Objects.equals(this.modificationTime, that.modificationTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(pathSuffix, owner, group, permission, replication, blockSize, length, type, childrenNum, accessTime, modificationTime);
+        return Objects.hash(pathSuffix,
+            owner,
+            group,
+            permission,
+            replication,
+            blockSize,
+            length,
+            type,
+            childrenNum,
+            accessTime,
+            modificationTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,6 +302,7 @@ public class FileStatusV2  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -378,8 +313,5 @@ public class FileStatusV2  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

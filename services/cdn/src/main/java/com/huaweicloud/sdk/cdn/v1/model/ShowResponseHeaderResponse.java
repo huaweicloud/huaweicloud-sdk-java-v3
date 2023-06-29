@@ -44,15 +44,15 @@ public class ShowResponseHeaderResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResponseHeaderResponse showResponseHeaderResponse = (ShowResponseHeaderResponse) o;
-        return Objects.equals(this.headers, showResponseHeaderResponse.headers);
+        ShowResponseHeaderResponse that = (ShowResponseHeaderResponse) obj;
+        return Objects.equals(this.headers, that.headers);
     }
 
     @Override

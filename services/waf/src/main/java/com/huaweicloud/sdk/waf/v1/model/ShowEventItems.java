@@ -473,30 +473,26 @@ public class ShowEventItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventItems showEventItems = (ShowEventItems) o;
-        return Objects.equals(this.time, showEventItems.time) && Objects.equals(this.policyid, showEventItems.policyid)
-            && Objects.equals(this.sip, showEventItems.sip) && Objects.equals(this.host, showEventItems.host)
-            && Objects.equals(this.url, showEventItems.url) && Objects.equals(this.attack, showEventItems.attack)
-            && Objects.equals(this.rule, showEventItems.rule) && Objects.equals(this.action, showEventItems.action)
-            && Objects.equals(this.cookie, showEventItems.cookie)
-            && Objects.equals(this.headers, showEventItems.headers)
-            && Objects.equals(this.hostId, showEventItems.hostId) && Objects.equals(this.id, showEventItems.id)
-            && Objects.equals(this.payload, showEventItems.payload)
-            && Objects.equals(this.payloadLocation, showEventItems.payloadLocation)
-            && Objects.equals(this.region, showEventItems.region)
-            && Objects.equals(this.processTime, showEventItems.processTime)
-            && Objects.equals(this.requestLine, showEventItems.requestLine)
-            && Objects.equals(this.responseSize, showEventItems.responseSize)
-            && Objects.equals(this.responseTime, showEventItems.responseTime)
-            && Objects.equals(this.status, showEventItems.status)
-            && Objects.equals(this.requestBody, showEventItems.requestBody);
+        ShowEventItems that = (ShowEventItems) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.sip, that.sip) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.attack, that.attack)
+            && Objects.equals(this.rule, that.rule) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.cookie, that.cookie) && Objects.equals(this.headers, that.headers)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.payload, that.payload) && Objects.equals(this.payloadLocation, that.payloadLocation)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.processTime, that.processTime)
+            && Objects.equals(this.requestLine, that.requestLine)
+            && Objects.equals(this.responseSize, that.responseSize)
+            && Objects.equals(this.responseTime, that.responseTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.requestBody, that.requestBody);
     }
 
     @Override

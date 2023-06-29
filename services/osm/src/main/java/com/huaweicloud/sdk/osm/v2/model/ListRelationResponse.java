@@ -53,15 +53,15 @@ public class ListRelationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationResponse listRelationResponse = (ListRelationResponse) o;
-        return Objects.equals(this.caseRelationList, listRelationResponse.caseRelationList);
+        ListRelationResponse that = (ListRelationResponse) obj;
+        return Objects.equals(this.caseRelationList, that.caseRelationList);
     }
 
     @Override

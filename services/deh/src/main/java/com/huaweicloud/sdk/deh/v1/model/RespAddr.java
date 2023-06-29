@@ -99,17 +99,17 @@ public class RespAddr {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespAddr respAddr = (RespAddr) o;
-        return Objects.equals(this.addr, respAddr.addr) && Objects.equals(this.version, respAddr.version)
-            && Objects.equals(this.osEXTIPSType, respAddr.osEXTIPSType)
-            && Objects.equals(this.osEXTIPSMACMacAddr, respAddr.osEXTIPSMACMacAddr);
+        RespAddr that = (RespAddr) obj;
+        return Objects.equals(this.addr, that.addr) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType)
+            && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr);
     }
 
     @Override

@@ -1,47 +1,39 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 秒级监控修改请求
  */
-public class TaurusModifyInstanceMonitorRequestBody  {
-
+public class TaurusModifyInstanceMonitorRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="monitor_switch")
-    
+    @JsonProperty(value = "monitor_switch")
 
     private Boolean monitorSwitch;
+
     /**
      * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。取值：  - 1：采集周期为1s。 - 5：采集周期为5s。
      */
     public static final class PeriodEnum {
 
-        
         /**
          * Enum NUMBER_1 for value: 1
          */
         public static final PeriodEnum NUMBER_1 = new PeriodEnum(1);
-        
+
         /**
          * Enum NUMBER_5 for value: 5
          */
         public static final PeriodEnum NUMBER_5 = new PeriodEnum(5);
-        
 
         private static final Map<Integer, PeriodEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,25 +62,18 @@ public class TaurusModifyInstanceMonitorRequestBody  {
 
         @JsonCreator
         public static PeriodEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -106,8 +91,7 @@ public class TaurusModifyInstanceMonitorRequestBody  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private PeriodEnum period;
 
@@ -115,9 +99,6 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         this.monitorSwitch = monitorSwitch;
         return this;
     }
-
-    
-
 
     /**
      * 实例秒级监控开关。  - true：开启 - false：关闭
@@ -131,15 +112,10 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         this.monitorSwitch = monitorSwitch;
     }
 
-    
-
     public TaurusModifyInstanceMonitorRequestBody withPeriod(PeriodEnum period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 采集周期，仅在monitor_switch为true时生效。默认为5s。monitor_switch为false时，不传该参数。取值：  - 1：采集周期为1s。 - 5：采集周期为5s。
@@ -153,24 +129,23 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         this.period = period;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaurusModifyInstanceMonitorRequestBody taurusModifyInstanceMonitorRequestBody = (TaurusModifyInstanceMonitorRequestBody) o;
-        return Objects.equals(this.monitorSwitch, taurusModifyInstanceMonitorRequestBody.monitorSwitch) &&
-            Objects.equals(this.period, taurusModifyInstanceMonitorRequestBody.period);
+        TaurusModifyInstanceMonitorRequestBody that = (TaurusModifyInstanceMonitorRequestBody) obj;
+        return Objects.equals(this.monitorSwitch, that.monitorSwitch) && Objects.equals(this.period, that.period);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(monitorSwitch, period);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,6 +155,7 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -190,8 +166,5 @@ public class TaurusModifyInstanceMonitorRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

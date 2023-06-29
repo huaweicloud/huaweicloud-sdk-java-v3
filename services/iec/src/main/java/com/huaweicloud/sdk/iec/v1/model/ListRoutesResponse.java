@@ -53,15 +53,15 @@ public class ListRoutesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutesResponse listRoutesResponse = (ListRoutesResponse) o;
-        return Objects.equals(this.routes, listRoutesResponse.routes);
+        ListRoutesResponse that = (ListRoutesResponse) obj;
+        return Objects.equals(this.routes, that.routes);
     }
 
     @Override

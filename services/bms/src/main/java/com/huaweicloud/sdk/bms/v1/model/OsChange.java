@@ -131,17 +131,17 @@ public class OsChange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsChange osChange = (OsChange) o;
-        return Objects.equals(this.adminpass, osChange.adminpass) && Objects.equals(this.keyname, osChange.keyname)
-            && Objects.equals(this.userid, osChange.userid) && Objects.equals(this.imageid, osChange.imageid)
-            && Objects.equals(this.metadata, osChange.metadata);
+        OsChange that = (OsChange) obj;
+        return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
+            && Objects.equals(this.userid, that.userid) && Objects.equals(this.imageid, that.imageid)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

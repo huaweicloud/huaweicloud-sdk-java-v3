@@ -81,17 +81,16 @@ public class ListAlarmRuleResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmRuleResourcesRequest listAlarmRuleResourcesRequest = (ListAlarmRuleResourcesRequest) o;
-        return Objects.equals(this.alarmId, listAlarmRuleResourcesRequest.alarmId)
-            && Objects.equals(this.offset, listAlarmRuleResourcesRequest.offset)
-            && Objects.equals(this.limit, listAlarmRuleResourcesRequest.limit);
+        ListAlarmRuleResourcesRequest that = (ListAlarmRuleResourcesRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

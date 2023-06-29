@@ -106,17 +106,16 @@ public class ListSecurityGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityGroupsResponse listSecurityGroupsResponse = (ListSecurityGroupsResponse) o;
-        return Objects.equals(this.securityGroups, listSecurityGroupsResponse.securityGroups)
-            && Objects.equals(this.requestId, listSecurityGroupsResponse.requestId)
-            && Objects.equals(this.pageInfo, listSecurityGroupsResponse.pageInfo);
+        ListSecurityGroupsResponse that = (ListSecurityGroupsResponse) obj;
+        return Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

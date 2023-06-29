@@ -179,18 +179,18 @@ public class Metadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metadata metadata = (Metadata) o;
-        return Objects.equals(this.uid, metadata.uid) && Objects.equals(this.name, metadata.name)
-            && Objects.equals(this.labels, metadata.labels) && Objects.equals(this.annotations, metadata.annotations)
-            && Objects.equals(this.updateTimestamp, metadata.updateTimestamp)
-            && Objects.equals(this.creationTimestamp, metadata.creationTimestamp);
+        Metadata that = (Metadata) obj;
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override

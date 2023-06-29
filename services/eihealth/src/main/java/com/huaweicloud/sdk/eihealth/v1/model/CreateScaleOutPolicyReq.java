@@ -311,27 +311,25 @@ public class CreateScaleOutPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScaleOutPolicyReq createScaleOutPolicyReq = (CreateScaleOutPolicyReq) o;
-        return Objects.equals(this.name, createScaleOutPolicyReq.name)
-            && Objects.equals(this.availabilityZone, createScaleOutPolicyReq.availabilityZone)
-            && Objects.equals(this.specCode, createScaleOutPolicyReq.specCode)
-            && Objects.equals(this.maxNodes, createScaleOutPolicyReq.maxNodes)
-            && Objects.equals(this.minNodes, createScaleOutPolicyReq.minNodes)
-            && Objects.equals(this.dataDiskSpecCode, createScaleOutPolicyReq.dataDiskSpecCode)
-            && Objects.equals(this.dataDiskSize, createScaleOutPolicyReq.dataDiskSize)
-            && Objects.equals(this.cpuRuleEnable, createScaleOutPolicyReq.cpuRuleEnable)
-            && Objects.equals(this.cpuPercent, createScaleOutPolicyReq.cpuPercent)
-            && Objects.equals(this.addNodesForCpuRule, createScaleOutPolicyReq.addNodesForCpuRule)
-            && Objects.equals(this.memRuleEnable, createScaleOutPolicyReq.memRuleEnable)
-            && Objects.equals(this.memPercent, createScaleOutPolicyReq.memPercent)
-            && Objects.equals(this.addNodesForMemRule, createScaleOutPolicyReq.addNodesForMemRule);
+        CreateScaleOutPolicyReq that = (CreateScaleOutPolicyReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.maxNodes, that.maxNodes)
+            && Objects.equals(this.minNodes, that.minNodes)
+            && Objects.equals(this.dataDiskSpecCode, that.dataDiskSpecCode)
+            && Objects.equals(this.dataDiskSize, that.dataDiskSize)
+            && Objects.equals(this.cpuRuleEnable, that.cpuRuleEnable)
+            && Objects.equals(this.cpuPercent, that.cpuPercent)
+            && Objects.equals(this.addNodesForCpuRule, that.addNodesForCpuRule)
+            && Objects.equals(this.memRuleEnable, that.memRuleEnable)
+            && Objects.equals(this.memPercent, that.memPercent)
+            && Objects.equals(this.addNodesForMemRule, that.addNodesForMemRule);
     }
 
     @Override

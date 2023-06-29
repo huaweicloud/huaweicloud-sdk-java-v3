@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.gaussdb.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.gaussdb.v3.model.*;
 
 public class GaussDBClient {
+
     protected HcClient hcClient;
 
     public GaussDBClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class GaussDBClient {
     public static ClientBuilder<GaussDBClient> newBuilder() {
         return new ClientBuilder<>(GaussDBClient::new);
     }
-
 
     /**
      * 授予数据库用户数据库权限
@@ -41,8 +41,10 @@ public class GaussDBClient {
      * @param AddDatabasePermissionRequest 请求对象
      * @return SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>
      */
-    public SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermissionInvoker(AddDatabasePermissionRequest request) {
-        return new SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>(request, GaussDBMeta.addDatabasePermission, hcClient);
+    public SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse> addDatabasePermissionInvoker(
+        AddDatabasePermissionRequest request) {
+        return new SyncInvoker<AddDatabasePermissionRequest, AddDatabasePermissionResponse>(request,
+            GaussDBMeta.addDatabasePermission, hcClient);
     }
 
     /**
@@ -69,8 +71,10 @@ public class GaussDBClient {
      * @param BatchTagActionRequest 请求对象
      * @return SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>
      */
-    public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(BatchTagActionRequest request) {
-        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, GaussDBMeta.batchTagAction, hcClient);
+    public SyncInvoker<BatchTagActionRequest, BatchTagActionResponse> batchTagActionInvoker(
+        BatchTagActionRequest request) {
+        return new SyncInvoker<BatchTagActionRequest, BatchTagActionResponse>(request, GaussDBMeta.batchTagAction,
+            hcClient);
     }
 
     /**
@@ -97,8 +101,10 @@ public class GaussDBClient {
      * @param CancelGaussMySqlInstanceEipRequest 请求对象
      * @return SyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>
      */
-    public SyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipInvoker(CancelGaussMySqlInstanceEipRequest request) {
-        return new SyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>(request, GaussDBMeta.cancelGaussMySqlInstanceEip, hcClient);
+    public SyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse> cancelGaussMySqlInstanceEipInvoker(
+        CancelGaussMySqlInstanceEipRequest request) {
+        return new SyncInvoker<CancelGaussMySqlInstanceEipRequest, CancelGaussMySqlInstanceEipResponse>(request,
+            GaussDBMeta.cancelGaussMySqlInstanceEip, hcClient);
     }
 
     /**
@@ -125,8 +131,10 @@ public class GaussDBClient {
      * @param CancelScheduleTaskRequest 请求对象
      * @return SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>
      */
-    public SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskInvoker(CancelScheduleTaskRequest request) {
-        return new SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>(request, GaussDBMeta.cancelScheduleTask, hcClient);
+    public SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse> cancelScheduleTaskInvoker(
+        CancelScheduleTaskRequest request) {
+        return new SyncInvoker<CancelScheduleTaskRequest, CancelScheduleTaskResponse>(request,
+            GaussDBMeta.cancelScheduleTask, hcClient);
     }
 
     /**
@@ -139,7 +147,8 @@ public class GaussDBClient {
      * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return ChangeGaussMySqlInstanceSpecificationResponse
      */
-    public ChangeGaussMySqlInstanceSpecificationResponse changeGaussMySqlInstanceSpecification(ChangeGaussMySqlInstanceSpecificationRequest request) {
+    public ChangeGaussMySqlInstanceSpecificationResponse changeGaussMySqlInstanceSpecification(
+        ChangeGaussMySqlInstanceSpecificationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.changeGaussMySqlInstanceSpecification);
     }
 
@@ -153,8 +162,10 @@ public class GaussDBClient {
      * @param ChangeGaussMySqlInstanceSpecificationRequest 请求对象
      * @return SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>
      */
-    public SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecificationInvoker(ChangeGaussMySqlInstanceSpecificationRequest request) {
-        return new SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>(request, GaussDBMeta.changeGaussMySqlInstanceSpecification, hcClient);
+    public SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse> changeGaussMySqlInstanceSpecificationInvoker(
+        ChangeGaussMySqlInstanceSpecificationRequest request) {
+        return new SyncInvoker<ChangeGaussMySqlInstanceSpecificationRequest, ChangeGaussMySqlInstanceSpecificationResponse>(
+            request, GaussDBMeta.changeGaussMySqlInstanceSpecification, hcClient);
     }
 
     /**
@@ -167,7 +178,8 @@ public class GaussDBClient {
      * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
      * @return ChangeGaussMySqlProxySpecificationResponse
      */
-    public ChangeGaussMySqlProxySpecificationResponse changeGaussMySqlProxySpecification(ChangeGaussMySqlProxySpecificationRequest request) {
+    public ChangeGaussMySqlProxySpecificationResponse changeGaussMySqlProxySpecification(
+        ChangeGaussMySqlProxySpecificationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.changeGaussMySqlProxySpecification);
     }
 
@@ -181,8 +193,10 @@ public class GaussDBClient {
      * @param ChangeGaussMySqlProxySpecificationRequest 请求对象
      * @return SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>
      */
-    public SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationInvoker(ChangeGaussMySqlProxySpecificationRequest request) {
-        return new SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>(request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
+    public SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse> changeGaussMySqlProxySpecificationInvoker(
+        ChangeGaussMySqlProxySpecificationRequest request) {
+        return new SyncInvoker<ChangeGaussMySqlProxySpecificationRequest, ChangeGaussMySqlProxySpecificationResponse>(
+            request, GaussDBMeta.changeGaussMySqlProxySpecification, hcClient);
     }
 
     /**
@@ -209,8 +223,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlBackupRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>
      */
-    public SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackupInvoker(CreateGaussMySqlBackupRequest request) {
-        return new SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>(request, GaussDBMeta.createGaussMySqlBackup, hcClient);
+    public SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse> createGaussMySqlBackupInvoker(
+        CreateGaussMySqlBackupRequest request) {
+        return new SyncInvoker<CreateGaussMySqlBackupRequest, CreateGaussMySqlBackupResponse>(request,
+            GaussDBMeta.createGaussMySqlBackup, hcClient);
     }
 
     /**
@@ -223,7 +239,8 @@ public class GaussDBClient {
      * @param CreateGaussMySqlConfigurationRequest 请求对象
      * @return CreateGaussMySqlConfigurationResponse
      */
-    public CreateGaussMySqlConfigurationResponse createGaussMySqlConfiguration(CreateGaussMySqlConfigurationRequest request) {
+    public CreateGaussMySqlConfigurationResponse createGaussMySqlConfiguration(
+        CreateGaussMySqlConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlConfiguration);
     }
 
@@ -237,8 +254,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlConfigurationRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>
      */
-    public SyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationInvoker(CreateGaussMySqlConfigurationRequest request) {
-        return new SyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>(request, GaussDBMeta.createGaussMySqlConfiguration, hcClient);
+    public SyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse> createGaussMySqlConfigurationInvoker(
+        CreateGaussMySqlConfigurationRequest request) {
+        return new SyncInvoker<CreateGaussMySqlConfigurationRequest, CreateGaussMySqlConfigurationResponse>(request,
+            GaussDBMeta.createGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -265,8 +284,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlDatabaseRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>
      */
-    public SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabaseInvoker(CreateGaussMySqlDatabaseRequest request) {
-        return new SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>(request, GaussDBMeta.createGaussMySqlDatabase, hcClient);
+    public SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse> createGaussMySqlDatabaseInvoker(
+        CreateGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<CreateGaussMySqlDatabaseRequest, CreateGaussMySqlDatabaseResponse>(request,
+            GaussDBMeta.createGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -279,7 +300,8 @@ public class GaussDBClient {
      * @param CreateGaussMySqlDatabaseUserRequest 请求对象
      * @return CreateGaussMySqlDatabaseUserResponse
      */
-    public CreateGaussMySqlDatabaseUserResponse createGaussMySqlDatabaseUser(CreateGaussMySqlDatabaseUserRequest request) {
+    public CreateGaussMySqlDatabaseUserResponse createGaussMySqlDatabaseUser(
+        CreateGaussMySqlDatabaseUserRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlDatabaseUser);
     }
 
@@ -293,8 +315,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlDatabaseUserRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>
      */
-    public SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUserInvoker(CreateGaussMySqlDatabaseUserRequest request) {
-        return new SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.createGaussMySqlDatabaseUser, hcClient);
+    public SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse> createGaussMySqlDatabaseUserInvoker(
+        CreateGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<CreateGaussMySqlDatabaseUserRequest, CreateGaussMySqlDatabaseUserResponse>(request,
+            GaussDBMeta.createGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -321,8 +345,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlInstanceRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>
      */
-    public SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstanceInvoker(CreateGaussMySqlInstanceRequest request) {
-        return new SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>(request, GaussDBMeta.createGaussMySqlInstance, hcClient);
+    public SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse> createGaussMySqlInstanceInvoker(
+        CreateGaussMySqlInstanceRequest request) {
+        return new SyncInvoker<CreateGaussMySqlInstanceRequest, CreateGaussMySqlInstanceResponse>(request,
+            GaussDBMeta.createGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -349,8 +375,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>
      */
-    public SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> createGaussMySqlProxyInvoker(CreateGaussMySqlProxyRequest request) {
-        return new SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>(request, GaussDBMeta.createGaussMySqlProxy, hcClient);
+    public SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse> createGaussMySqlProxyInvoker(
+        CreateGaussMySqlProxyRequest request) {
+        return new SyncInvoker<CreateGaussMySqlProxyRequest, CreateGaussMySqlProxyResponse>(request,
+            GaussDBMeta.createGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -363,7 +391,8 @@ public class GaussDBClient {
      * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return CreateGaussMySqlReadonlyNodeResponse
      */
-    public CreateGaussMySqlReadonlyNodeResponse createGaussMySqlReadonlyNode(CreateGaussMySqlReadonlyNodeRequest request) {
+    public CreateGaussMySqlReadonlyNodeResponse createGaussMySqlReadonlyNode(
+        CreateGaussMySqlReadonlyNodeRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.createGaussMySqlReadonlyNode);
     }
 
@@ -377,8 +406,10 @@ public class GaussDBClient {
      * @param CreateGaussMySqlReadonlyNodeRequest 请求对象
      * @return SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>
      */
-    public SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeInvoker(CreateGaussMySqlReadonlyNodeRequest request) {
-        return new SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request, GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
+    public SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse> createGaussMySqlReadonlyNodeInvoker(
+        CreateGaussMySqlReadonlyNodeRequest request) {
+        return new SyncInvoker<CreateGaussMySqlReadonlyNodeRequest, CreateGaussMySqlReadonlyNodeResponse>(request,
+            GaussDBMeta.createGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
@@ -405,8 +436,10 @@ public class GaussDBClient {
      * @param DeleteDatabasePermissionRequest 请求对象
      * @return SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>
      */
-    public SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermissionInvoker(DeleteDatabasePermissionRequest request) {
-        return new SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>(request, GaussDBMeta.deleteDatabasePermission, hcClient);
+    public SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse> deleteDatabasePermissionInvoker(
+        DeleteDatabasePermissionRequest request) {
+        return new SyncInvoker<DeleteDatabasePermissionRequest, DeleteDatabasePermissionResponse>(request,
+            GaussDBMeta.deleteDatabasePermission, hcClient);
     }
 
     /**
@@ -433,8 +466,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlBackupRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupInvoker(DeleteGaussMySqlBackupRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>(request, GaussDBMeta.deleteGaussMySqlBackup, hcClient);
+    public SyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse> deleteGaussMySqlBackupInvoker(
+        DeleteGaussMySqlBackupRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlBackupRequest, DeleteGaussMySqlBackupResponse>(request,
+            GaussDBMeta.deleteGaussMySqlBackup, hcClient);
     }
 
     /**
@@ -447,7 +482,8 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlConfigurationRequest 请求对象
      * @return DeleteGaussMySqlConfigurationResponse
      */
-    public DeleteGaussMySqlConfigurationResponse deleteGaussMySqlConfiguration(DeleteGaussMySqlConfigurationRequest request) {
+    public DeleteGaussMySqlConfigurationResponse deleteGaussMySqlConfiguration(
+        DeleteGaussMySqlConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlConfiguration);
     }
 
@@ -461,8 +497,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationInvoker(DeleteGaussMySqlConfigurationRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>(request, GaussDBMeta.deleteGaussMySqlConfiguration, hcClient);
+    public SyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse> deleteGaussMySqlConfigurationInvoker(
+        DeleteGaussMySqlConfigurationRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlConfigurationRequest, DeleteGaussMySqlConfigurationResponse>(request,
+            GaussDBMeta.deleteGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -489,8 +527,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlDatabaseRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabaseInvoker(DeleteGaussMySqlDatabaseRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>(request, GaussDBMeta.deleteGaussMySqlDatabase, hcClient);
+    public SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse> deleteGaussMySqlDatabaseInvoker(
+        DeleteGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlDatabaseRequest, DeleteGaussMySqlDatabaseResponse>(request,
+            GaussDBMeta.deleteGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -503,7 +543,8 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
      * @return DeleteGaussMySqlDatabaseUserResponse
      */
-    public DeleteGaussMySqlDatabaseUserResponse deleteGaussMySqlDatabaseUser(DeleteGaussMySqlDatabaseUserRequest request) {
+    public DeleteGaussMySqlDatabaseUserResponse deleteGaussMySqlDatabaseUser(
+        DeleteGaussMySqlDatabaseUserRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlDatabaseUser);
     }
 
@@ -517,8 +558,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlDatabaseUserRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUserInvoker(DeleteGaussMySqlDatabaseUserRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.deleteGaussMySqlDatabaseUser, hcClient);
+    public SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse> deleteGaussMySqlDatabaseUserInvoker(
+        DeleteGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlDatabaseUserRequest, DeleteGaussMySqlDatabaseUserResponse>(request,
+            GaussDBMeta.deleteGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -545,8 +588,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlInstanceRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstanceInvoker(DeleteGaussMySqlInstanceRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>(request, GaussDBMeta.deleteGaussMySqlInstance, hcClient);
+    public SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse> deleteGaussMySqlInstanceInvoker(
+        DeleteGaussMySqlInstanceRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlInstanceRequest, DeleteGaussMySqlInstanceResponse>(request,
+            GaussDBMeta.deleteGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -573,8 +618,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxyInvoker(DeleteGaussMySqlProxyRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>(request, GaussDBMeta.deleteGaussMySqlProxy, hcClient);
+    public SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse> deleteGaussMySqlProxyInvoker(
+        DeleteGaussMySqlProxyRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlProxyRequest, DeleteGaussMySqlProxyResponse>(request,
+            GaussDBMeta.deleteGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -587,7 +634,8 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return DeleteGaussMySqlReadonlyNodeResponse
      */
-    public DeleteGaussMySqlReadonlyNodeResponse deleteGaussMySqlReadonlyNode(DeleteGaussMySqlReadonlyNodeRequest request) {
+    public DeleteGaussMySqlReadonlyNodeResponse deleteGaussMySqlReadonlyNode(
+        DeleteGaussMySqlReadonlyNodeRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.deleteGaussMySqlReadonlyNode);
     }
 
@@ -601,8 +649,10 @@ public class GaussDBClient {
      * @param DeleteGaussMySqlReadonlyNodeRequest 请求对象
      * @return SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>
      */
-    public SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNodeInvoker(DeleteGaussMySqlReadonlyNodeRequest request) {
-        return new SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>(request, GaussDBMeta.deleteGaussMySqlReadonlyNode, hcClient);
+    public SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse> deleteGaussMySqlReadonlyNodeInvoker(
+        DeleteGaussMySqlReadonlyNodeRequest request) {
+        return new SyncInvoker<DeleteGaussMySqlReadonlyNodeRequest, DeleteGaussMySqlReadonlyNodeResponse>(request,
+            GaussDBMeta.deleteGaussMySqlReadonlyNode, hcClient);
     }
 
     /**
@@ -629,8 +679,10 @@ public class GaussDBClient {
      * @param DeleteTaskRecordRequest 请求对象
      * @return SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>
      */
-    public SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecordInvoker(DeleteTaskRecordRequest request) {
-        return new SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>(request, GaussDBMeta.deleteTaskRecord, hcClient);
+    public SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse> deleteTaskRecordInvoker(
+        DeleteTaskRecordRequest request) {
+        return new SyncInvoker<DeleteTaskRecordRequest, DeleteTaskRecordResponse>(request, GaussDBMeta.deleteTaskRecord,
+            hcClient);
     }
 
     /**
@@ -643,7 +695,8 @@ public class GaussDBClient {
      * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return ExpandGaussMySqlInstanceVolumeResponse
      */
-    public ExpandGaussMySqlInstanceVolumeResponse expandGaussMySqlInstanceVolume(ExpandGaussMySqlInstanceVolumeRequest request) {
+    public ExpandGaussMySqlInstanceVolumeResponse expandGaussMySqlInstanceVolume(
+        ExpandGaussMySqlInstanceVolumeRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.expandGaussMySqlInstanceVolume);
     }
 
@@ -657,8 +710,10 @@ public class GaussDBClient {
      * @param ExpandGaussMySqlInstanceVolumeRequest 请求对象
      * @return SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>
      */
-    public SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolumeInvoker(ExpandGaussMySqlInstanceVolumeRequest request) {
-        return new SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>(request, GaussDBMeta.expandGaussMySqlInstanceVolume, hcClient);
+    public SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse> expandGaussMySqlInstanceVolumeInvoker(
+        ExpandGaussMySqlInstanceVolumeRequest request) {
+        return new SyncInvoker<ExpandGaussMySqlInstanceVolumeRequest, ExpandGaussMySqlInstanceVolumeResponse>(request,
+            GaussDBMeta.expandGaussMySqlInstanceVolume, hcClient);
     }
 
     /**
@@ -687,8 +742,10 @@ public class GaussDBClient {
      * @param ExpandGaussMySqlProxyRequest 请求对象
      * @return SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>
      */
-    public SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyInvoker(ExpandGaussMySqlProxyRequest request) {
-        return new SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>(request, GaussDBMeta.expandGaussMySqlProxy, hcClient);
+    public SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse> expandGaussMySqlProxyInvoker(
+        ExpandGaussMySqlProxyRequest request) {
+        return new SyncInvoker<ExpandGaussMySqlProxyRequest, ExpandGaussMySqlProxyResponse>(request,
+            GaussDBMeta.expandGaussMySqlProxy, hcClient);
     }
 
     /**
@@ -701,7 +758,8 @@ public class GaussDBClient {
      * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
      * @return InvokeGaussMySqlInstanceSwitchOverResponse
      */
-    public InvokeGaussMySqlInstanceSwitchOverResponse invokeGaussMySqlInstanceSwitchOver(InvokeGaussMySqlInstanceSwitchOverRequest request) {
+    public InvokeGaussMySqlInstanceSwitchOverResponse invokeGaussMySqlInstanceSwitchOver(
+        InvokeGaussMySqlInstanceSwitchOverRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver);
     }
 
@@ -715,8 +773,10 @@ public class GaussDBClient {
      * @param InvokeGaussMySqlInstanceSwitchOverRequest 请求对象
      * @return SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>
      */
-    public SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverInvoker(InvokeGaussMySqlInstanceSwitchOverRequest request) {
-        return new SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
+    public SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse> invokeGaussMySqlInstanceSwitchOverInvoker(
+        InvokeGaussMySqlInstanceSwitchOverRequest request) {
+        return new SyncInvoker<InvokeGaussMySqlInstanceSwitchOverRequest, InvokeGaussMySqlInstanceSwitchOverResponse>(
+            request, GaussDBMeta.invokeGaussMySqlInstanceSwitchOver, hcClient);
     }
 
     /**
@@ -729,7 +789,8 @@ public class GaussDBClient {
      * @param ListGaussMySqlConfigurationsRequest 请求对象
      * @return ListGaussMySqlConfigurationsResponse
      */
-    public ListGaussMySqlConfigurationsResponse listGaussMySqlConfigurations(ListGaussMySqlConfigurationsRequest request) {
+    public ListGaussMySqlConfigurationsResponse listGaussMySqlConfigurations(
+        ListGaussMySqlConfigurationsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlConfigurations);
     }
 
@@ -743,8 +804,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlConfigurationsRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>
      */
-    public SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurationsInvoker(ListGaussMySqlConfigurationsRequest request) {
-        return new SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>(request, GaussDBMeta.listGaussMySqlConfigurations, hcClient);
+    public SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse> listGaussMySqlConfigurationsInvoker(
+        ListGaussMySqlConfigurationsRequest request) {
+        return new SyncInvoker<ListGaussMySqlConfigurationsRequest, ListGaussMySqlConfigurationsResponse>(request,
+            GaussDBMeta.listGaussMySqlConfigurations, hcClient);
     }
 
     /**
@@ -771,8 +834,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlDatabaseRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>
      */
-    public SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabaseInvoker(ListGaussMySqlDatabaseRequest request) {
-        return new SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>(request, GaussDBMeta.listGaussMySqlDatabase, hcClient);
+    public SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse> listGaussMySqlDatabaseInvoker(
+        ListGaussMySqlDatabaseRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseRequest, ListGaussMySqlDatabaseResponse>(request,
+            GaussDBMeta.listGaussMySqlDatabase, hcClient);
     }
 
     /**
@@ -785,7 +850,8 @@ public class GaussDBClient {
      * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
      * @return ListGaussMySqlDatabaseCharsetsResponse
      */
-    public ListGaussMySqlDatabaseCharsetsResponse listGaussMySqlDatabaseCharsets(ListGaussMySqlDatabaseCharsetsRequest request) {
+    public ListGaussMySqlDatabaseCharsetsResponse listGaussMySqlDatabaseCharsets(
+        ListGaussMySqlDatabaseCharsetsRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDatabaseCharsets);
     }
 
@@ -799,8 +865,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlDatabaseCharsetsRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>
      */
-    public SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsetsInvoker(ListGaussMySqlDatabaseCharsetsRequest request) {
-        return new SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>(request, GaussDBMeta.listGaussMySqlDatabaseCharsets, hcClient);
+    public SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse> listGaussMySqlDatabaseCharsetsInvoker(
+        ListGaussMySqlDatabaseCharsetsRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseCharsetsRequest, ListGaussMySqlDatabaseCharsetsResponse>(request,
+            GaussDBMeta.listGaussMySqlDatabaseCharsets, hcClient);
     }
 
     /**
@@ -827,8 +895,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlDatabaseUserRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>
      */
-    public SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUserInvoker(ListGaussMySqlDatabaseUserRequest request) {
-        return new SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>(request, GaussDBMeta.listGaussMySqlDatabaseUser, hcClient);
+    public SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse> listGaussMySqlDatabaseUserInvoker(
+        ListGaussMySqlDatabaseUserRequest request) {
+        return new SyncInvoker<ListGaussMySqlDatabaseUserRequest, ListGaussMySqlDatabaseUserResponse>(request,
+            GaussDBMeta.listGaussMySqlDatabaseUser, hcClient);
     }
 
     /**
@@ -841,7 +911,8 @@ public class GaussDBClient {
      * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return ListGaussMySqlDedicatedResourcesResponse
      */
-    public ListGaussMySqlDedicatedResourcesResponse listGaussMySqlDedicatedResources(ListGaussMySqlDedicatedResourcesRequest request) {
+    public ListGaussMySqlDedicatedResourcesResponse listGaussMySqlDedicatedResources(
+        ListGaussMySqlDedicatedResourcesRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlDedicatedResources);
     }
 
@@ -855,8 +926,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlDedicatedResourcesRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>
      */
-    public SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResourcesInvoker(ListGaussMySqlDedicatedResourcesRequest request) {
-        return new SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>(request, GaussDBMeta.listGaussMySqlDedicatedResources, hcClient);
+    public SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse> listGaussMySqlDedicatedResourcesInvoker(
+        ListGaussMySqlDedicatedResourcesRequest request) {
+        return new SyncInvoker<ListGaussMySqlDedicatedResourcesRequest, ListGaussMySqlDedicatedResourcesResponse>(
+            request, GaussDBMeta.listGaussMySqlDedicatedResources, hcClient);
     }
 
     /**
@@ -869,7 +942,8 @@ public class GaussDBClient {
      * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return ListGaussMySqlInstanceDetailInfoResponse
      */
-    public ListGaussMySqlInstanceDetailInfoResponse listGaussMySqlInstanceDetailInfo(ListGaussMySqlInstanceDetailInfoRequest request) {
+    public ListGaussMySqlInstanceDetailInfoResponse listGaussMySqlInstanceDetailInfo(
+        ListGaussMySqlInstanceDetailInfoRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo);
     }
 
@@ -883,8 +957,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlInstanceDetailInfoRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>
      */
-    public SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoInvoker(ListGaussMySqlInstanceDetailInfoRequest request) {
-        return new SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>(request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
+    public SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse> listGaussMySqlInstanceDetailInfoInvoker(
+        ListGaussMySqlInstanceDetailInfoRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstanceDetailInfoRequest, ListGaussMySqlInstanceDetailInfoResponse>(
+            request, GaussDBMeta.listGaussMySqlInstanceDetailInfo, hcClient);
     }
 
     /**
@@ -911,8 +987,10 @@ public class GaussDBClient {
      * @param ListGaussMySqlInstancesRequest 请求对象
      * @return SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>
      */
-    public SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesInvoker(ListGaussMySqlInstancesRequest request) {
-        return new SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request, GaussDBMeta.listGaussMySqlInstances, hcClient);
+    public SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse> listGaussMySqlInstancesInvoker(
+        ListGaussMySqlInstancesRequest request) {
+        return new SyncInvoker<ListGaussMySqlInstancesRequest, ListGaussMySqlInstancesResponse>(request,
+            GaussDBMeta.listGaussMySqlInstances, hcClient);
     }
 
     /**
@@ -939,8 +1017,10 @@ public class GaussDBClient {
      * @param ListImmediateJobsRequest 请求对象
      * @return SyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>
      */
-    public SyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse> listImmediateJobsInvoker(ListImmediateJobsRequest request) {
-        return new SyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>(request, GaussDBMeta.listImmediateJobs, hcClient);
+    public SyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse> listImmediateJobsInvoker(
+        ListImmediateJobsRequest request) {
+        return new SyncInvoker<ListImmediateJobsRequest, ListImmediateJobsResponse>(request,
+            GaussDBMeta.listImmediateJobs, hcClient);
     }
 
     /**
@@ -967,8 +1047,10 @@ public class GaussDBClient {
      * @param ListInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
-    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(ListInstanceTagsRequest request) {
-        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, GaussDBMeta.listInstanceTags, hcClient);
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
+        ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, GaussDBMeta.listInstanceTags,
+            hcClient);
     }
 
     /**
@@ -995,8 +1077,10 @@ public class GaussDBClient {
      * @param ListLtsErrorLogDetailsRequest 请求对象
      * @return SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>
      */
-    public SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetailsInvoker(ListLtsErrorLogDetailsRequest request) {
-        return new SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>(request, GaussDBMeta.listLtsErrorLogDetails, hcClient);
+    public SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse> listLtsErrorLogDetailsInvoker(
+        ListLtsErrorLogDetailsRequest request) {
+        return new SyncInvoker<ListLtsErrorLogDetailsRequest, ListLtsErrorLogDetailsResponse>(request,
+            GaussDBMeta.listLtsErrorLogDetails, hcClient);
     }
 
     /**
@@ -1023,8 +1107,10 @@ public class GaussDBClient {
      * @param ListLtsSlowlogDetailsRequest 请求对象
      * @return SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>
      */
-    public SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> listLtsSlowlogDetailsInvoker(ListLtsSlowlogDetailsRequest request) {
-        return new SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>(request, GaussDBMeta.listLtsSlowlogDetails, hcClient);
+    public SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse> listLtsSlowlogDetailsInvoker(
+        ListLtsSlowlogDetailsRequest request) {
+        return new SyncInvoker<ListLtsSlowlogDetailsRequest, ListLtsSlowlogDetailsResponse>(request,
+            GaussDBMeta.listLtsSlowlogDetails, hcClient);
     }
 
     /**
@@ -1051,8 +1137,10 @@ public class GaussDBClient {
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
-    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags, hcClient);
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
+        ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBMeta.listProjectTags,
+            hcClient);
     }
 
     /**
@@ -1079,8 +1167,10 @@ public class GaussDBClient {
      * @param ListScheduleJobsRequest 请求对象
      * @return SyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>
      */
-    public SyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse> listScheduleJobsInvoker(ListScheduleJobsRequest request) {
-        return new SyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>(request, GaussDBMeta.listScheduleJobs, hcClient);
+    public SyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse> listScheduleJobsInvoker(
+        ListScheduleJobsRequest request) {
+        return new SyncInvoker<ListScheduleJobsRequest, ListScheduleJobsResponse>(request, GaussDBMeta.listScheduleJobs,
+            hcClient);
     }
 
     /**
@@ -1093,7 +1183,8 @@ public class GaussDBClient {
      * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
      * @return ResetGaussMySqlDatabasePasswordResponse
      */
-    public ResetGaussMySqlDatabasePasswordResponse resetGaussMySqlDatabasePassword(ResetGaussMySqlDatabasePasswordRequest request) {
+    public ResetGaussMySqlDatabasePasswordResponse resetGaussMySqlDatabasePassword(
+        ResetGaussMySqlDatabasePasswordRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.resetGaussMySqlDatabasePassword);
     }
 
@@ -1107,8 +1198,10 @@ public class GaussDBClient {
      * @param ResetGaussMySqlDatabasePasswordRequest 请求对象
      * @return SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>
      */
-    public SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePasswordInvoker(ResetGaussMySqlDatabasePasswordRequest request) {
-        return new SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>(request, GaussDBMeta.resetGaussMySqlDatabasePassword, hcClient);
+    public SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse> resetGaussMySqlDatabasePasswordInvoker(
+        ResetGaussMySqlDatabasePasswordRequest request) {
+        return new SyncInvoker<ResetGaussMySqlDatabasePasswordRequest, ResetGaussMySqlDatabasePasswordResponse>(request,
+            GaussDBMeta.resetGaussMySqlDatabasePassword, hcClient);
     }
 
     /**
@@ -1135,8 +1228,10 @@ public class GaussDBClient {
      * @param ResetGaussMySqlPasswordRequest 请求对象
      * @return SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>
      */
-    public SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordInvoker(ResetGaussMySqlPasswordRequest request) {
-        return new SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>(request, GaussDBMeta.resetGaussMySqlPassword, hcClient);
+    public SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse> resetGaussMySqlPasswordInvoker(
+        ResetGaussMySqlPasswordRequest request) {
+        return new SyncInvoker<ResetGaussMySqlPasswordRequest, ResetGaussMySqlPasswordResponse>(request,
+            GaussDBMeta.resetGaussMySqlPassword, hcClient);
     }
 
     /**
@@ -1163,8 +1258,10 @@ public class GaussDBClient {
      * @param RestartGaussMySqlInstanceRequest 请求对象
      * @return SyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>
      */
-    public SyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceInvoker(RestartGaussMySqlInstanceRequest request) {
-        return new SyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>(request, GaussDBMeta.restartGaussMySqlInstance, hcClient);
+    public SyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse> restartGaussMySqlInstanceInvoker(
+        RestartGaussMySqlInstanceRequest request) {
+        return new SyncInvoker<RestartGaussMySqlInstanceRequest, RestartGaussMySqlInstanceResponse>(request,
+            GaussDBMeta.restartGaussMySqlInstance, hcClient);
     }
 
     /**
@@ -1191,8 +1288,10 @@ public class GaussDBClient {
      * @param RestartGaussMySqlNodeRequest 请求对象
      * @return SyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>
      */
-    public SyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> restartGaussMySqlNodeInvoker(RestartGaussMySqlNodeRequest request) {
-        return new SyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>(request, GaussDBMeta.restartGaussMySqlNode, hcClient);
+    public SyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse> restartGaussMySqlNodeInvoker(
+        RestartGaussMySqlNodeRequest request) {
+        return new SyncInvoker<RestartGaussMySqlNodeRequest, RestartGaussMySqlNodeResponse>(request,
+            GaussDBMeta.restartGaussMySqlNode, hcClient);
     }
 
     /**
@@ -1219,8 +1318,10 @@ public class GaussDBClient {
      * @param RestoreOldInstanceRequest 请求对象
      * @return SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>
      */
-    public SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstanceInvoker(RestoreOldInstanceRequest request) {
-        return new SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>(request, GaussDBMeta.restoreOldInstance, hcClient);
+    public SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse> restoreOldInstanceInvoker(
+        RestoreOldInstanceRequest request) {
+        return new SyncInvoker<RestoreOldInstanceRequest, RestoreOldInstanceResponse>(request,
+            GaussDBMeta.restoreOldInstance, hcClient);
     }
 
     /**
@@ -1247,8 +1348,10 @@ public class GaussDBClient {
      * @param SetGaussMySqlProxyWeightRequest 请求对象
      * @return SyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>
      */
-    public SyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightInvoker(SetGaussMySqlProxyWeightRequest request) {
-        return new SyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>(request, GaussDBMeta.setGaussMySqlProxyWeight, hcClient);
+    public SyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse> setGaussMySqlProxyWeightInvoker(
+        SetGaussMySqlProxyWeightRequest request) {
+        return new SyncInvoker<SetGaussMySqlProxyWeightRequest, SetGaussMySqlProxyWeightResponse>(request,
+            GaussDBMeta.setGaussMySqlProxyWeight, hcClient);
     }
 
     /**
@@ -1275,8 +1378,10 @@ public class GaussDBClient {
      * @param SetGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>
      */
-    public SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotasInvoker(SetGaussMySqlQuotasRequest request) {
-        return new SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>(request, GaussDBMeta.setGaussMySqlQuotas, hcClient);
+    public SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse> setGaussMySqlQuotasInvoker(
+        SetGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<SetGaussMySqlQuotasRequest, SetGaussMySqlQuotasResponse>(request,
+            GaussDBMeta.setGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -1331,8 +1436,10 @@ public class GaussDBClient {
      * @param ShowBackupRestoreTimeRequest 请求对象
      * @return SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>
      */
-    public SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTimeInvoker(ShowBackupRestoreTimeRequest request) {
-        return new SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>(request, GaussDBMeta.showBackupRestoreTime, hcClient);
+    public SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse> showBackupRestoreTimeInvoker(
+        ShowBackupRestoreTimeRequest request) {
+        return new SyncInvoker<ShowBackupRestoreTimeRequest, ShowBackupRestoreTimeResponse>(request,
+            GaussDBMeta.showBackupRestoreTime, hcClient);
     }
 
     /**
@@ -1359,8 +1466,10 @@ public class GaussDBClient {
      * @param ShowDedicatedResourceInfoRequest 请求对象
      * @return SyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>
      */
-    public SyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoInvoker(ShowDedicatedResourceInfoRequest request) {
-        return new SyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>(request, GaussDBMeta.showDedicatedResourceInfo, hcClient);
+    public SyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse> showDedicatedResourceInfoInvoker(
+        ShowDedicatedResourceInfoRequest request) {
+        return new SyncInvoker<ShowDedicatedResourceInfoRequest, ShowDedicatedResourceInfoResponse>(request,
+            GaussDBMeta.showDedicatedResourceInfo, hcClient);
     }
 
     /**
@@ -1387,8 +1496,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlBackupListRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>
      */
-    public SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupListInvoker(ShowGaussMySqlBackupListRequest request) {
-        return new SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>(request, GaussDBMeta.showGaussMySqlBackupList, hcClient);
+    public SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse> showGaussMySqlBackupListInvoker(
+        ShowGaussMySqlBackupListRequest request) {
+        return new SyncInvoker<ShowGaussMySqlBackupListRequest, ShowGaussMySqlBackupListResponse>(request,
+            GaussDBMeta.showGaussMySqlBackupList, hcClient);
     }
 
     /**
@@ -1415,8 +1526,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>
      */
-    public SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyInvoker(ShowGaussMySqlBackupPolicyRequest request) {
-        return new SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>(request, GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
+    public SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse> showGaussMySqlBackupPolicyInvoker(
+        ShowGaussMySqlBackupPolicyRequest request) {
+        return new SyncInvoker<ShowGaussMySqlBackupPolicyRequest, ShowGaussMySqlBackupPolicyResponse>(request,
+            GaussDBMeta.showGaussMySqlBackupPolicy, hcClient);
     }
 
     /**
@@ -1443,8 +1556,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlConfigurationRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>
      */
-    public SyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationInvoker(ShowGaussMySqlConfigurationRequest request) {
-        return new SyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>(request, GaussDBMeta.showGaussMySqlConfiguration, hcClient);
+    public SyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse> showGaussMySqlConfigurationInvoker(
+        ShowGaussMySqlConfigurationRequest request) {
+        return new SyncInvoker<ShowGaussMySqlConfigurationRequest, ShowGaussMySqlConfigurationResponse>(request,
+            GaussDBMeta.showGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -1471,8 +1586,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlEngineVersionRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>
      */
-    public SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersionInvoker(ShowGaussMySqlEngineVersionRequest request) {
-        return new SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>(request, GaussDBMeta.showGaussMySqlEngineVersion, hcClient);
+    public SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse> showGaussMySqlEngineVersionInvoker(
+        ShowGaussMySqlEngineVersionRequest request) {
+        return new SyncInvoker<ShowGaussMySqlEngineVersionRequest, ShowGaussMySqlEngineVersionResponse>(request,
+            GaussDBMeta.showGaussMySqlEngineVersion, hcClient);
     }
 
     /**
@@ -1499,8 +1616,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlFlavorsRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>
      */
-    public SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavorsInvoker(ShowGaussMySqlFlavorsRequest request) {
-        return new SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>(request, GaussDBMeta.showGaussMySqlFlavors, hcClient);
+    public SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse> showGaussMySqlFlavorsInvoker(
+        ShowGaussMySqlFlavorsRequest request) {
+        return new SyncInvoker<ShowGaussMySqlFlavorsRequest, ShowGaussMySqlFlavorsResponse>(request,
+            GaussDBMeta.showGaussMySqlFlavors, hcClient);
     }
 
     /**
@@ -1527,8 +1646,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlInstanceInfoRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>
      */
-    public SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoInvoker(ShowGaussMySqlInstanceInfoRequest request) {
-        return new SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>(request, GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);
+    public SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse> showGaussMySqlInstanceInfoInvoker(
+        ShowGaussMySqlInstanceInfoRequest request) {
+        return new SyncInvoker<ShowGaussMySqlInstanceInfoRequest, ShowGaussMySqlInstanceInfoResponse>(request,
+            GaussDBMeta.showGaussMySqlInstanceInfo, hcClient);
     }
 
     /**
@@ -1555,8 +1676,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlJobInfoRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>
      */
-    public SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfoInvoker(ShowGaussMySqlJobInfoRequest request) {
-        return new SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>(request, GaussDBMeta.showGaussMySqlJobInfo, hcClient);
+    public SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse> showGaussMySqlJobInfoInvoker(
+        ShowGaussMySqlJobInfoRequest request) {
+        return new SyncInvoker<ShowGaussMySqlJobInfoRequest, ShowGaussMySqlJobInfoResponse>(request,
+            GaussDBMeta.showGaussMySqlJobInfo, hcClient);
     }
 
     /**
@@ -1583,8 +1706,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlProjectQuotasRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>
      */
-    public SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotasInvoker(ShowGaussMySqlProjectQuotasRequest request) {
-        return new SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>(request, GaussDBMeta.showGaussMySqlProjectQuotas, hcClient);
+    public SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse> showGaussMySqlProjectQuotasInvoker(
+        ShowGaussMySqlProjectQuotasRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProjectQuotasRequest, ShowGaussMySqlProjectQuotasResponse>(request,
+            GaussDBMeta.showGaussMySqlProjectQuotas, hcClient);
     }
 
     /**
@@ -1611,8 +1736,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlProxyFlavorsRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>
      */
-    public SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavorsInvoker(ShowGaussMySqlProxyFlavorsRequest request) {
-        return new SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>(request, GaussDBMeta.showGaussMySqlProxyFlavors, hcClient);
+    public SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse> showGaussMySqlProxyFlavorsInvoker(
+        ShowGaussMySqlProxyFlavorsRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProxyFlavorsRequest, ShowGaussMySqlProxyFlavorsResponse>(request,
+            GaussDBMeta.showGaussMySqlProxyFlavors, hcClient);
     }
 
     /**
@@ -1639,8 +1766,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlProxyListRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>
      */
-    public SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyListInvoker(ShowGaussMySqlProxyListRequest request) {
-        return new SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>(request, GaussDBMeta.showGaussMySqlProxyList, hcClient);
+    public SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse> showGaussMySqlProxyListInvoker(
+        ShowGaussMySqlProxyListRequest request) {
+        return new SyncInvoker<ShowGaussMySqlProxyListRequest, ShowGaussMySqlProxyListResponse>(request,
+            GaussDBMeta.showGaussMySqlProxyList, hcClient);
     }
 
     /**
@@ -1667,8 +1796,10 @@ public class GaussDBClient {
      * @param ShowGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>
      */
-    public SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasInvoker(ShowGaussMySqlQuotasRequest request) {
-        return new SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>(request, GaussDBMeta.showGaussMySqlQuotas, hcClient);
+    public SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse> showGaussMySqlQuotasInvoker(
+        ShowGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<ShowGaussMySqlQuotasRequest, ShowGaussMySqlQuotasResponse>(request,
+            GaussDBMeta.showGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -1695,8 +1826,10 @@ public class GaussDBClient {
      * @param ShowInstanceMonitorExtendRequest 请求对象
      * @return SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>
      */
-    public SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendInvoker(ShowInstanceMonitorExtendRequest request) {
-        return new SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request, GaussDBMeta.showInstanceMonitorExtend, hcClient);
+    public SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse> showInstanceMonitorExtendInvoker(
+        ShowInstanceMonitorExtendRequest request) {
+        return new SyncInvoker<ShowInstanceMonitorExtendRequest, ShowInstanceMonitorExtendResponse>(request,
+            GaussDBMeta.showInstanceMonitorExtend, hcClient);
     }
 
     /**
@@ -1709,7 +1842,8 @@ public class GaussDBClient {
      * @param SwitchGaussMySqlConfigurationRequest 请求对象
      * @return SwitchGaussMySqlConfigurationResponse
      */
-    public SwitchGaussMySqlConfigurationResponse switchGaussMySqlConfiguration(SwitchGaussMySqlConfigurationRequest request) {
+    public SwitchGaussMySqlConfigurationResponse switchGaussMySqlConfiguration(
+        SwitchGaussMySqlConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.switchGaussMySqlConfiguration);
     }
 
@@ -1723,8 +1857,10 @@ public class GaussDBClient {
      * @param SwitchGaussMySqlConfigurationRequest 请求对象
      * @return SyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>
      */
-    public SyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationInvoker(SwitchGaussMySqlConfigurationRequest request) {
-        return new SyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>(request, GaussDBMeta.switchGaussMySqlConfiguration, hcClient);
+    public SyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse> switchGaussMySqlConfigurationInvoker(
+        SwitchGaussMySqlConfigurationRequest request) {
+        return new SyncInvoker<SwitchGaussMySqlConfigurationRequest, SwitchGaussMySqlConfigurationResponse>(request,
+            GaussDBMeta.switchGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -1751,8 +1887,10 @@ public class GaussDBClient {
      * @param SwitchGaussMySqlInstanceSslRequest 请求对象
      * @return SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>
      */
-    public SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslInvoker(SwitchGaussMySqlInstanceSslRequest request) {
-        return new SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>(request, GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
+    public SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse> switchGaussMySqlInstanceSslInvoker(
+        SwitchGaussMySqlInstanceSslRequest request) {
+        return new SyncInvoker<SwitchGaussMySqlInstanceSslRequest, SwitchGaussMySqlInstanceSslResponse>(request,
+            GaussDBMeta.switchGaussMySqlInstanceSsl, hcClient);
     }
 
     /**
@@ -1779,8 +1917,10 @@ public class GaussDBClient {
      * @param UpdateAuditLogRequest 请求对象
      * @return SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>
      */
-    public SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLogInvoker(UpdateAuditLogRequest request) {
-        return new SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>(request, GaussDBMeta.updateAuditLog, hcClient);
+    public SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse> updateAuditLogInvoker(
+        UpdateAuditLogRequest request) {
+        return new SyncInvoker<UpdateAuditLogRequest, UpdateAuditLogResponse>(request, GaussDBMeta.updateAuditLog,
+            hcClient);
     }
 
     /**
@@ -1793,7 +1933,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return UpdateGaussMySqlBackupPolicyResponse
      */
-    public UpdateGaussMySqlBackupPolicyResponse updateGaussMySqlBackupPolicy(UpdateGaussMySqlBackupPolicyRequest request) {
+    public UpdateGaussMySqlBackupPolicyResponse updateGaussMySqlBackupPolicy(
+        UpdateGaussMySqlBackupPolicyRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlBackupPolicy);
     }
 
@@ -1807,8 +1948,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlBackupPolicyRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicyInvoker(UpdateGaussMySqlBackupPolicyRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>(request, GaussDBMeta.updateGaussMySqlBackupPolicy, hcClient);
+    public SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse> updateGaussMySqlBackupPolicyInvoker(
+        UpdateGaussMySqlBackupPolicyRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlBackupPolicyRequest, UpdateGaussMySqlBackupPolicyResponse>(request,
+            GaussDBMeta.updateGaussMySqlBackupPolicy, hcClient);
     }
 
     /**
@@ -1821,7 +1964,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlConfigurationRequest 请求对象
      * @return UpdateGaussMySqlConfigurationResponse
      */
-    public UpdateGaussMySqlConfigurationResponse updateGaussMySqlConfiguration(UpdateGaussMySqlConfigurationRequest request) {
+    public UpdateGaussMySqlConfigurationResponse updateGaussMySqlConfiguration(
+        UpdateGaussMySqlConfigurationRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlConfiguration);
     }
 
@@ -1835,8 +1979,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationInvoker(UpdateGaussMySqlConfigurationRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>(request, GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
+    public SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse> updateGaussMySqlConfigurationInvoker(
+        UpdateGaussMySqlConfigurationRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlConfigurationRequest, UpdateGaussMySqlConfigurationResponse>(request,
+            GaussDBMeta.updateGaussMySqlConfiguration, hcClient);
     }
 
     /**
@@ -1849,7 +1995,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
      * @return UpdateGaussMySqlDatabaseCommentResponse
      */
-    public UpdateGaussMySqlDatabaseCommentResponse updateGaussMySqlDatabaseComment(UpdateGaussMySqlDatabaseCommentRequest request) {
+    public UpdateGaussMySqlDatabaseCommentResponse updateGaussMySqlDatabaseComment(
+        UpdateGaussMySqlDatabaseCommentRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlDatabaseComment);
     }
 
@@ -1863,8 +2010,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlDatabaseCommentRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseCommentInvoker(UpdateGaussMySqlDatabaseCommentRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>(request, GaussDBMeta.updateGaussMySqlDatabaseComment, hcClient);
+    public SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse> updateGaussMySqlDatabaseCommentInvoker(
+        UpdateGaussMySqlDatabaseCommentRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlDatabaseCommentRequest, UpdateGaussMySqlDatabaseCommentResponse>(request,
+            GaussDBMeta.updateGaussMySqlDatabaseComment, hcClient);
     }
 
     /**
@@ -1877,7 +2026,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
      * @return UpdateGaussMySqlDatabaseUserCommentResponse
      */
-    public UpdateGaussMySqlDatabaseUserCommentResponse updateGaussMySqlDatabaseUserComment(UpdateGaussMySqlDatabaseUserCommentRequest request) {
+    public UpdateGaussMySqlDatabaseUserCommentResponse updateGaussMySqlDatabaseUserComment(
+        UpdateGaussMySqlDatabaseUserCommentRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlDatabaseUserComment);
     }
 
@@ -1891,8 +2041,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlDatabaseUserCommentRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserCommentInvoker(UpdateGaussMySqlDatabaseUserCommentRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>(request, GaussDBMeta.updateGaussMySqlDatabaseUserComment, hcClient);
+    public SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse> updateGaussMySqlDatabaseUserCommentInvoker(
+        UpdateGaussMySqlDatabaseUserCommentRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlDatabaseUserCommentRequest, UpdateGaussMySqlDatabaseUserCommentResponse>(
+            request, GaussDBMeta.updateGaussMySqlDatabaseUserComment, hcClient);
     }
 
     /**
@@ -1905,7 +2057,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
      * @return UpdateGaussMySqlInstanceAliasResponse
      */
-    public UpdateGaussMySqlInstanceAliasResponse updateGaussMySqlInstanceAlias(UpdateGaussMySqlInstanceAliasRequest request) {
+    public UpdateGaussMySqlInstanceAliasResponse updateGaussMySqlInstanceAlias(
+        UpdateGaussMySqlInstanceAliasRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceAlias);
     }
 
@@ -1919,8 +2072,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceAliasRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasInvoker(UpdateGaussMySqlInstanceAliasRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>(request, GaussDBMeta.updateGaussMySqlInstanceAlias, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse> updateGaussMySqlInstanceAliasInvoker(
+        UpdateGaussMySqlInstanceAliasRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceAliasRequest, UpdateGaussMySqlInstanceAliasResponse>(request,
+            GaussDBMeta.updateGaussMySqlInstanceAlias, hcClient);
     }
 
     /**
@@ -1947,8 +2102,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceEipRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipInvoker(UpdateGaussMySqlInstanceEipRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>(request, GaussDBMeta.updateGaussMySqlInstanceEip, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse> updateGaussMySqlInstanceEipInvoker(
+        UpdateGaussMySqlInstanceEipRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceEipRequest, UpdateGaussMySqlInstanceEipResponse>(request,
+            GaussDBMeta.updateGaussMySqlInstanceEip, hcClient);
     }
 
     /**
@@ -1961,7 +2118,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
      * @return UpdateGaussMySqlInstanceInternalIpResponse
      */
-    public UpdateGaussMySqlInstanceInternalIpResponse updateGaussMySqlInstanceInternalIp(UpdateGaussMySqlInstanceInternalIpRequest request) {
+    public UpdateGaussMySqlInstanceInternalIpResponse updateGaussMySqlInstanceInternalIp(
+        UpdateGaussMySqlInstanceInternalIpRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceInternalIp);
     }
 
@@ -1975,8 +2133,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceInternalIpRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpInvoker(UpdateGaussMySqlInstanceInternalIpRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>(request, GaussDBMeta.updateGaussMySqlInstanceInternalIp, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse> updateGaussMySqlInstanceInternalIpInvoker(
+        UpdateGaussMySqlInstanceInternalIpRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceInternalIpRequest, UpdateGaussMySqlInstanceInternalIpResponse>(
+            request, GaussDBMeta.updateGaussMySqlInstanceInternalIp, hcClient);
     }
 
     /**
@@ -1989,7 +2149,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return UpdateGaussMySqlInstanceNameResponse
      */
-    public UpdateGaussMySqlInstanceNameResponse updateGaussMySqlInstanceName(UpdateGaussMySqlInstanceNameRequest request) {
+    public UpdateGaussMySqlInstanceNameResponse updateGaussMySqlInstanceName(
+        UpdateGaussMySqlInstanceNameRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceName);
     }
 
@@ -2003,8 +2164,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceNameRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameInvoker(UpdateGaussMySqlInstanceNameRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>(request, GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse> updateGaussMySqlInstanceNameInvoker(
+        UpdateGaussMySqlInstanceNameRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceNameRequest, UpdateGaussMySqlInstanceNameResponse>(request,
+            GaussDBMeta.updateGaussMySqlInstanceName, hcClient);
     }
 
     /**
@@ -2017,7 +2180,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
      * @return UpdateGaussMySqlInstanceOpsWindowResponse
      */
-    public UpdateGaussMySqlInstanceOpsWindowResponse updateGaussMySqlInstanceOpsWindow(UpdateGaussMySqlInstanceOpsWindowRequest request) {
+    public UpdateGaussMySqlInstanceOpsWindowResponse updateGaussMySqlInstanceOpsWindow(
+        UpdateGaussMySqlInstanceOpsWindowRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow);
     }
 
@@ -2031,8 +2195,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceOpsWindowRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowInvoker(UpdateGaussMySqlInstanceOpsWindowRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>(request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse> updateGaussMySqlInstanceOpsWindowInvoker(
+        UpdateGaussMySqlInstanceOpsWindowRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceOpsWindowRequest, UpdateGaussMySqlInstanceOpsWindowResponse>(
+            request, GaussDBMeta.updateGaussMySqlInstanceOpsWindow, hcClient);
     }
 
     /**
@@ -2045,7 +2211,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstancePortRequest 请求对象
      * @return UpdateGaussMySqlInstancePortResponse
      */
-    public UpdateGaussMySqlInstancePortResponse updateGaussMySqlInstancePort(UpdateGaussMySqlInstancePortRequest request) {
+    public UpdateGaussMySqlInstancePortResponse updateGaussMySqlInstancePort(
+        UpdateGaussMySqlInstancePortRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstancePort);
     }
 
@@ -2059,8 +2226,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstancePortRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortInvoker(UpdateGaussMySqlInstancePortRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>(request, GaussDBMeta.updateGaussMySqlInstancePort, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse> updateGaussMySqlInstancePortInvoker(
+        UpdateGaussMySqlInstancePortRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstancePortRequest, UpdateGaussMySqlInstancePortResponse>(request,
+            GaussDBMeta.updateGaussMySqlInstancePort, hcClient);
     }
 
     /**
@@ -2073,7 +2242,8 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
      * @return UpdateGaussMySqlInstanceSecurityGroupResponse
      */
-    public UpdateGaussMySqlInstanceSecurityGroupResponse updateGaussMySqlInstanceSecurityGroup(UpdateGaussMySqlInstanceSecurityGroupRequest request) {
+    public UpdateGaussMySqlInstanceSecurityGroupResponse updateGaussMySqlInstanceSecurityGroup(
+        UpdateGaussMySqlInstanceSecurityGroupRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup);
     }
 
@@ -2087,8 +2257,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlInstanceSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupInvoker(UpdateGaussMySqlInstanceSecurityGroupRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>(request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup, hcClient);
+    public SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse> updateGaussMySqlInstanceSecurityGroupInvoker(
+        UpdateGaussMySqlInstanceSecurityGroupRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlInstanceSecurityGroupRequest, UpdateGaussMySqlInstanceSecurityGroupResponse>(
+            request, GaussDBMeta.updateGaussMySqlInstanceSecurityGroup, hcClient);
     }
 
     /**
@@ -2115,8 +2287,10 @@ public class GaussDBClient {
      * @param UpdateGaussMySqlQuotasRequest 请求对象
      * @return SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>
      */
-    public SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasInvoker(UpdateGaussMySqlQuotasRequest request) {
-        return new SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request, GaussDBMeta.updateGaussMySqlQuotas, hcClient);
+    public SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse> updateGaussMySqlQuotasInvoker(
+        UpdateGaussMySqlQuotasRequest request) {
+        return new SyncInvoker<UpdateGaussMySqlQuotasRequest, UpdateGaussMySqlQuotasResponse>(request,
+            GaussDBMeta.updateGaussMySqlQuotas, hcClient);
     }
 
     /**
@@ -2143,8 +2317,10 @@ public class GaussDBClient {
      * @param UpdateInstanceMonitorRequest 请求对象
      * @return SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>
      */
-    public SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorInvoker(UpdateInstanceMonitorRequest request) {
-        return new SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request, GaussDBMeta.updateInstanceMonitor, hcClient);
+    public SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse> updateInstanceMonitorInvoker(
+        UpdateInstanceMonitorRequest request) {
+        return new SyncInvoker<UpdateInstanceMonitorRequest, UpdateInstanceMonitorResponse>(request,
+            GaussDBMeta.updateInstanceMonitor, hcClient);
     }
 
     /**
@@ -2157,7 +2333,8 @@ public class GaussDBClient {
      * @param UpdateProxyConnectionPoolTypeRequest 请求对象
      * @return UpdateProxyConnectionPoolTypeResponse
      */
-    public UpdateProxyConnectionPoolTypeResponse updateProxyConnectionPoolType(UpdateProxyConnectionPoolTypeRequest request) {
+    public UpdateProxyConnectionPoolTypeResponse updateProxyConnectionPoolType(
+        UpdateProxyConnectionPoolTypeRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateProxyConnectionPoolType);
     }
 
@@ -2171,8 +2348,10 @@ public class GaussDBClient {
      * @param UpdateProxyConnectionPoolTypeRequest 请求对象
      * @return SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>
      */
-    public SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeInvoker(UpdateProxyConnectionPoolTypeRequest request) {
-        return new SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request, GaussDBMeta.updateProxyConnectionPoolType, hcClient);
+    public SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse> updateProxyConnectionPoolTypeInvoker(
+        UpdateProxyConnectionPoolTypeRequest request) {
+        return new SyncInvoker<UpdateProxyConnectionPoolTypeRequest, UpdateProxyConnectionPoolTypeResponse>(request,
+            GaussDBMeta.updateProxyConnectionPoolType, hcClient);
     }
 
     /**
@@ -2185,7 +2364,8 @@ public class GaussDBClient {
      * @param UpdateProxySessionConsistenceRequest 请求对象
      * @return UpdateProxySessionConsistenceResponse
      */
-    public UpdateProxySessionConsistenceResponse updateProxySessionConsistence(UpdateProxySessionConsistenceRequest request) {
+    public UpdateProxySessionConsistenceResponse updateProxySessionConsistence(
+        UpdateProxySessionConsistenceRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateProxySessionConsistence);
     }
 
@@ -2199,8 +2379,10 @@ public class GaussDBClient {
      * @param UpdateProxySessionConsistenceRequest 请求对象
      * @return SyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>
      */
-    public SyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceInvoker(UpdateProxySessionConsistenceRequest request) {
-        return new SyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>(request, GaussDBMeta.updateProxySessionConsistence, hcClient);
+    public SyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse> updateProxySessionConsistenceInvoker(
+        UpdateProxySessionConsistenceRequest request) {
+        return new SyncInvoker<UpdateProxySessionConsistenceRequest, UpdateProxySessionConsistenceResponse>(request,
+            GaussDBMeta.updateProxySessionConsistence, hcClient);
     }
 
     /**
@@ -2213,7 +2395,8 @@ public class GaussDBClient {
      * @param UpdateTransactionSplitStatusRequest 请求对象
      * @return UpdateTransactionSplitStatusResponse
      */
-    public UpdateTransactionSplitStatusResponse updateTransactionSplitStatus(UpdateTransactionSplitStatusRequest request) {
+    public UpdateTransactionSplitStatusResponse updateTransactionSplitStatus(
+        UpdateTransactionSplitStatusRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.updateTransactionSplitStatus);
     }
 
@@ -2227,8 +2410,10 @@ public class GaussDBClient {
      * @param UpdateTransactionSplitStatusRequest 请求对象
      * @return SyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>
      */
-    public SyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusInvoker(UpdateTransactionSplitStatusRequest request) {
-        return new SyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>(request, GaussDBMeta.updateTransactionSplitStatus, hcClient);
+    public SyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse> updateTransactionSplitStatusInvoker(
+        UpdateTransactionSplitStatusRequest request) {
+        return new SyncInvoker<UpdateTransactionSplitStatusRequest, UpdateTransactionSplitStatusResponse>(request,
+            GaussDBMeta.updateTransactionSplitStatus, hcClient);
     }
 
     /**
@@ -2241,7 +2426,8 @@ public class GaussDBClient {
      * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
      * @return UpgradeGaussMySqlInstanceDatabaseResponse
      */
-    public UpgradeGaussMySqlInstanceDatabaseResponse upgradeGaussMySqlInstanceDatabase(UpgradeGaussMySqlInstanceDatabaseRequest request) {
+    public UpgradeGaussMySqlInstanceDatabaseResponse upgradeGaussMySqlInstanceDatabase(
+        UpgradeGaussMySqlInstanceDatabaseRequest request) {
         return hcClient.syncInvokeHttp(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase);
     }
 
@@ -2255,8 +2441,10 @@ public class GaussDBClient {
      * @param UpgradeGaussMySqlInstanceDatabaseRequest 请求对象
      * @return SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>
      */
-    public SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseInvoker(UpgradeGaussMySqlInstanceDatabaseRequest request) {
-        return new SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>(request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
+    public SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse> upgradeGaussMySqlInstanceDatabaseInvoker(
+        UpgradeGaussMySqlInstanceDatabaseRequest request) {
+        return new SyncInvoker<UpgradeGaussMySqlInstanceDatabaseRequest, UpgradeGaussMySqlInstanceDatabaseResponse>(
+            request, GaussDBMeta.upgradeGaussMySqlInstanceDatabase, hcClient);
     }
 
     /**
@@ -2283,8 +2471,10 @@ public class GaussDBClient {
      * @param DeleteSqlFilterRuleRequest 请求对象
      * @return SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>
      */
-    public SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleInvoker(DeleteSqlFilterRuleRequest request) {
-        return new SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>(request, GaussDBMeta.deleteSqlFilterRule, hcClient);
+    public SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse> deleteSqlFilterRuleInvoker(
+        DeleteSqlFilterRuleRequest request) {
+        return new SyncInvoker<DeleteSqlFilterRuleRequest, DeleteSqlFilterRuleResponse>(request,
+            GaussDBMeta.deleteSqlFilterRule, hcClient);
     }
 
     /**
@@ -2311,8 +2501,10 @@ public class GaussDBClient {
      * @param SetSqlFilterRuleRequest 请求对象
      * @return SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>
      */
-    public SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleInvoker(SetSqlFilterRuleRequest request) {
-        return new SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>(request, GaussDBMeta.setSqlFilterRule, hcClient);
+    public SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse> setSqlFilterRuleInvoker(
+        SetSqlFilterRuleRequest request) {
+        return new SyncInvoker<SetSqlFilterRuleRequest, SetSqlFilterRuleResponse>(request, GaussDBMeta.setSqlFilterRule,
+            hcClient);
     }
 
     /**
@@ -2339,8 +2531,10 @@ public class GaussDBClient {
      * @param ShowSqlFilterControlRequest 请求对象
      * @return SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>
      */
-    public SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlInvoker(ShowSqlFilterControlRequest request) {
-        return new SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>(request, GaussDBMeta.showSqlFilterControl, hcClient);
+    public SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse> showSqlFilterControlInvoker(
+        ShowSqlFilterControlRequest request) {
+        return new SyncInvoker<ShowSqlFilterControlRequest, ShowSqlFilterControlResponse>(request,
+            GaussDBMeta.showSqlFilterControl, hcClient);
     }
 
     /**
@@ -2367,8 +2561,10 @@ public class GaussDBClient {
      * @param ShowSqlFilterRuleRequest 请求对象
      * @return SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>
      */
-    public SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleInvoker(ShowSqlFilterRuleRequest request) {
-        return new SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>(request, GaussDBMeta.showSqlFilterRule, hcClient);
+    public SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse> showSqlFilterRuleInvoker(
+        ShowSqlFilterRuleRequest request) {
+        return new SyncInvoker<ShowSqlFilterRuleRequest, ShowSqlFilterRuleResponse>(request,
+            GaussDBMeta.showSqlFilterRule, hcClient);
     }
 
     /**
@@ -2395,8 +2591,10 @@ public class GaussDBClient {
      * @param UpdateSqlFilterControlRequest 请求对象
      * @return SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>
      */
-    public SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlInvoker(UpdateSqlFilterControlRequest request) {
-        return new SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>(request, GaussDBMeta.updateSqlFilterControl, hcClient);
+    public SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse> updateSqlFilterControlInvoker(
+        UpdateSqlFilterControlRequest request) {
+        return new SyncInvoker<UpdateSqlFilterControlRequest, UpdateSqlFilterControlResponse>(request,
+            GaussDBMeta.updateSqlFilterControl, hcClient);
     }
 
 }

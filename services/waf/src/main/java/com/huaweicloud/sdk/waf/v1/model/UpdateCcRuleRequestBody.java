@@ -118,22 +118,15 @@ public class UpdateCcRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TagTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
         }
 
         public static TagTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -490,29 +483,23 @@ public class UpdateCcRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCcRuleRequestBody updateCcRuleRequestBody = (UpdateCcRuleRequestBody) o;
-        return Objects.equals(this.name, updateCcRuleRequestBody.name)
-            && Objects.equals(this.mode, updateCcRuleRequestBody.mode)
-            && Objects.equals(this.url, updateCcRuleRequestBody.url)
-            && Objects.equals(this.conditions, updateCcRuleRequestBody.conditions)
-            && Objects.equals(this.action, updateCcRuleRequestBody.action)
-            && Objects.equals(this.tagType, updateCcRuleRequestBody.tagType)
-            && Objects.equals(this.tagIndex, updateCcRuleRequestBody.tagIndex)
-            && Objects.equals(this.tagCondition, updateCcRuleRequestBody.tagCondition)
-            && Objects.equals(this.limitNum, updateCcRuleRequestBody.limitNum)
-            && Objects.equals(this.limitPeriod, updateCcRuleRequestBody.limitPeriod)
-            && Objects.equals(this.unlockNum, updateCcRuleRequestBody.unlockNum)
-            && Objects.equals(this.lockTime, updateCcRuleRequestBody.lockTime)
-            && Objects.equals(this.domainAggregation, updateCcRuleRequestBody.domainAggregation)
-            && Objects.equals(this.regionAggregation, updateCcRuleRequestBody.regionAggregation)
-            && Objects.equals(this.description, updateCcRuleRequestBody.description);
+        UpdateCcRuleRequestBody that = (UpdateCcRuleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.tagType, that.tagType)
+            && Objects.equals(this.tagIndex, that.tagIndex) && Objects.equals(this.tagCondition, that.tagCondition)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.limitPeriod, that.limitPeriod)
+            && Objects.equals(this.unlockNum, that.unlockNum) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.domainAggregation, that.domainAggregation)
+            && Objects.equals(this.regionAggregation, that.regionAggregation)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

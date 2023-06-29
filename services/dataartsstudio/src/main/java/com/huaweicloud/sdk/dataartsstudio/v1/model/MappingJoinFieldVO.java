@@ -99,18 +99,16 @@ public class MappingJoinFieldVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MappingJoinFieldVO mappingJoinFieldVO = (MappingJoinFieldVO) o;
-        return Objects.equals(this.field1Id, mappingJoinFieldVO.field1Id)
-            && Objects.equals(this.field2Id, mappingJoinFieldVO.field2Id)
-            && Objects.equals(this.field1Name, mappingJoinFieldVO.field1Name)
-            && Objects.equals(this.field2Name, mappingJoinFieldVO.field2Name);
+        MappingJoinFieldVO that = (MappingJoinFieldVO) obj;
+        return Objects.equals(this.field1Id, that.field1Id) && Objects.equals(this.field2Id, that.field2Id)
+            && Objects.equals(this.field1Name, that.field1Name) && Objects.equals(this.field2Name, that.field2Name);
     }
 
     @Override

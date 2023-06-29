@@ -99,18 +99,16 @@ public class ListStatusStatisticRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatusStatisticRequest listStatusStatisticRequest = (ListStatusStatisticRequest) o;
-        return Objects.equals(this.projectId, listStatusStatisticRequest.projectId)
-            && Objects.equals(this.iterationId, listStatusStatisticRequest.iterationId)
-            && Objects.equals(this.trackerId, listStatusStatisticRequest.trackerId)
-            && Objects.equals(this.statusId, listStatusStatisticRequest.statusId);
+        ListStatusStatisticRequest that = (ListStatusStatisticRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.iterationId, that.iterationId)
+            && Objects.equals(this.trackerId, that.trackerId) && Objects.equals(this.statusId, that.statusId);
     }
 
     @Override

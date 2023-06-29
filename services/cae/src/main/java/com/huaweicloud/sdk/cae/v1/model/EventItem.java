@@ -71,22 +71,15 @@ public class EventItem {
             if (value == null) {
                 return null;
             }
-            InvolvedObjectEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InvolvedObjectEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvolvedObjectEnum(value));
         }
 
         public static InvolvedObjectEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InvolvedObjectEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,22 +161,15 @@ public class EventItem {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -330,19 +316,18 @@ public class EventItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventItem eventItem = (EventItem) o;
-        return Objects.equals(this.name, eventItem.name)
-            && Objects.equals(this.involvedObject, eventItem.involvedObject)
-            && Objects.equals(this.message, eventItem.message) && Objects.equals(this.createdAt, eventItem.createdAt)
-            && Objects.equals(this.updatedAt, eventItem.updatedAt) && Objects.equals(this.status, eventItem.status)
-            && Objects.equals(this.count, eventItem.count);
+        EventItem that = (EventItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.involvedObject, that.involvedObject)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

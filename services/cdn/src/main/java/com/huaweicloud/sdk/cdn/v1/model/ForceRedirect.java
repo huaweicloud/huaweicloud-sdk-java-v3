@@ -55,16 +55,15 @@ public class ForceRedirect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForceRedirect forceRedirect = (ForceRedirect) o;
-        return Objects.equals(this._switch, forceRedirect._switch)
-            && Objects.equals(this.redirectType, forceRedirect.redirectType);
+        ForceRedirect that = (ForceRedirect) obj;
+        return Objects.equals(this._switch, that._switch) && Objects.equals(this.redirectType, that.redirectType);
     }
 
     @Override

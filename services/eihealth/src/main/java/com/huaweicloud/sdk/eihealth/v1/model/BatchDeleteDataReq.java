@@ -52,15 +52,15 @@ public class BatchDeleteDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteDataReq batchDeleteDataReq = (BatchDeleteDataReq) o;
-        return Objects.equals(this.paths, batchDeleteDataReq.paths);
+        BatchDeleteDataReq that = (BatchDeleteDataReq) obj;
+        return Objects.equals(this.paths, that.paths);
     }
 
     @Override

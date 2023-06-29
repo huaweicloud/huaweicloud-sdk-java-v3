@@ -77,17 +77,16 @@ public class ListWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowRequest listWorkflowRequest = (ListWorkflowRequest) o;
-        return Objects.equals(this.eihealthProjectId, listWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.name, listWorkflowRequest.name)
-            && Objects.equals(this.version, listWorkflowRequest.version);
+        ListWorkflowRequest that = (ListWorkflowRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

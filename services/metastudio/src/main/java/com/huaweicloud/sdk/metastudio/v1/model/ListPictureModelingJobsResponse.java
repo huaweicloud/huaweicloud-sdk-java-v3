@@ -78,16 +78,16 @@ public class ListPictureModelingJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPictureModelingJobsResponse listPictureModelingJobsResponse = (ListPictureModelingJobsResponse) o;
-        return Objects.equals(this.count, listPictureModelingJobsResponse.count)
-            && Objects.equals(this.pictureModelingJobs, listPictureModelingJobsResponse.pictureModelingJobs);
+        ListPictureModelingJobsResponse that = (ListPictureModelingJobsResponse) obj;
+        return Objects.equals(this.count, that.count)
+            && Objects.equals(this.pictureModelingJobs, that.pictureModelingJobs);
     }
 
     @Override

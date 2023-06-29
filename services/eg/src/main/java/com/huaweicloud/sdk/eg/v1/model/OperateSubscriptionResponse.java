@@ -99,17 +99,16 @@ public class OperateSubscriptionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateSubscriptionResponse operateSubscriptionResponse = (OperateSubscriptionResponse) o;
-        return Objects.equals(this.failedCount, operateSubscriptionResponse.failedCount)
-            && Objects.equals(this.events, operateSubscriptionResponse.events)
-            && Objects.equals(this.xRequestId, operateSubscriptionResponse.xRequestId);
+        OperateSubscriptionResponse that = (OperateSubscriptionResponse) obj;
+        return Objects.equals(this.failedCount, that.failedCount) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

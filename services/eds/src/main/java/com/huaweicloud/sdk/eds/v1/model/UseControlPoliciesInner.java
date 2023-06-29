@@ -117,22 +117,15 @@ public class UseControlPoliciesInner {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -368,21 +361,18 @@ public class UseControlPoliciesInner {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UseControlPoliciesInner useControlPoliciesInner = (UseControlPoliciesInner) o;
-        return Objects.equals(this.action, useControlPoliciesInner.action)
-            && Objects.equals(this.when, useControlPoliciesInner.when)
-            && Objects.equals(this.howMany, useControlPoliciesInner.howMany)
-            && Objects.equals(this.where, useControlPoliciesInner.where)
-            && Objects.equals(this.who, useControlPoliciesInner.who)
-            && Objects.equals(this.application, useControlPoliciesInner.application)
-            && Objects.equals(this.additionalAttributes, useControlPoliciesInner.additionalAttributes);
+        UseControlPoliciesInner that = (UseControlPoliciesInner) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.when, that.when)
+            && Objects.equals(this.howMany, that.howMany) && Objects.equals(this.where, that.where)
+            && Objects.equals(this.who, that.who) && Objects.equals(this.application, that.application)
+            && Objects.equals(this.additionalAttributes, that.additionalAttributes);
     }
 
     @Override

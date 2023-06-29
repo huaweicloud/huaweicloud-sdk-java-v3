@@ -55,17 +55,16 @@ public class DeleteCloudWafPostPaidResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCloudWafPostPaidResourceRequest deleteCloudWafPostPaidResourceRequest =
-            (DeleteCloudWafPostPaidResourceRequest) o;
-        return Objects.equals(this.region, deleteCloudWafPostPaidResourceRequest.region)
-            && Objects.equals(this.enterpriseProjectId, deleteCloudWafPostPaidResourceRequest.enterpriseProjectId);
+        DeleteCloudWafPostPaidResourceRequest that = (DeleteCloudWafPostPaidResourceRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

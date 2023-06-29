@@ -55,16 +55,15 @@ public class SimpleProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleProject simpleProject = (SimpleProject) o;
-        return Objects.equals(this.projectName, simpleProject.projectName)
-            && Objects.equals(this.projectId, simpleProject.projectId);
+        SimpleProject that = (SimpleProject) obj;
+        return Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

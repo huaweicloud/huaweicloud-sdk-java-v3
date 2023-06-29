@@ -56,16 +56,15 @@ public class ListAppQuantitiesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuantitiesV2Response listAppQuantitiesV2Response = (ListAppQuantitiesV2Response) o;
-        return Objects.equals(this.authedNums, listAppQuantitiesV2Response.authedNums)
-            && Objects.equals(this.unauthedNums, listAppQuantitiesV2Response.unauthedNums);
+        ListAppQuantitiesV2Response that = (ListAppQuantitiesV2Response) obj;
+        return Objects.equals(this.authedNums, that.authedNums) && Objects.equals(this.unauthedNums, that.unauthedNums);
     }
 
     @Override

@@ -122,18 +122,16 @@ public class InvokeFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InvokeFunctionRequest invokeFunctionRequest = (InvokeFunctionRequest) o;
-        return Objects.equals(this.functionUrn, invokeFunctionRequest.functionUrn)
-            && Objects.equals(this.xCffLogType, invokeFunctionRequest.xCffLogType)
-            && Objects.equals(this.xCFFRequestVersion, invokeFunctionRequest.xCFFRequestVersion)
-            && Objects.equals(this.body, invokeFunctionRequest.body);
+        InvokeFunctionRequest that = (InvokeFunctionRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.xCffLogType, that.xCffLogType)
+            && Objects.equals(this.xCFFRequestVersion, that.xCFFRequestVersion) && Objects.equals(this.body, that.body);
     }
 
     @Override

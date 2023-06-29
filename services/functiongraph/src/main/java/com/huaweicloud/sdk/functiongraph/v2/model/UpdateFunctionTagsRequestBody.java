@@ -113,17 +113,16 @@ public class UpdateFunctionTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionTagsRequestBody updateFunctionTagsRequestBody = (UpdateFunctionTagsRequestBody) o;
-        return Objects.equals(this.action, updateFunctionTagsRequestBody.action)
-            && Objects.equals(this.tags, updateFunctionTagsRequestBody.tags)
-            && Objects.equals(this.sysTags, updateFunctionTagsRequestBody.sysTags);
+        UpdateFunctionTagsRequestBody that = (UpdateFunctionTagsRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

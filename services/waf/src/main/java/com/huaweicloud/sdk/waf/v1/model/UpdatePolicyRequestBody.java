@@ -327,24 +327,20 @@ public class UpdatePolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyRequestBody updatePolicyRequestBody = (UpdatePolicyRequestBody) o;
-        return Objects.equals(this.name, updatePolicyRequestBody.name)
-            && Objects.equals(this.level, updatePolicyRequestBody.level)
-            && Objects.equals(this.fullDetection, updatePolicyRequestBody.fullDetection)
-            && Objects.equals(this.robotAction, updatePolicyRequestBody.robotAction)
-            && Objects.equals(this.action, updatePolicyRequestBody.action)
-            && Objects.equals(this.options, updatePolicyRequestBody.options)
-            && Objects.equals(this.modulexOptions, updatePolicyRequestBody.modulexOptions)
-            && Objects.equals(this.hosts, updatePolicyRequestBody.hosts)
-            && Objects.equals(this.bindHost, updatePolicyRequestBody.bindHost)
-            && Objects.equals(this.extend, updatePolicyRequestBody.extend);
+        UpdatePolicyRequestBody that = (UpdatePolicyRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.fullDetection, that.fullDetection)
+            && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
+            && Objects.equals(this.extend, that.extend);
     }
 
     @Override

@@ -1,55 +1,44 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListTasksRequest  {
-
+public class ListTasksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
+
     /**
      * 任务状态。
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum RUNNING for value: "Running"
          */
         public static final StatusEnum RUNNING = new StatusEnum("Running");
-        
+
         /**
          * Enum COMPLETED for value: "Completed"
          */
         public static final StatusEnum COMPLETED = new StatusEnum("Completed");
-        
+
         /**
          * Enum FAILED for value: "Failed"
          */
         public static final StatusEnum FAILED = new StatusEnum("Failed");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -79,25 +68,18 @@ public class ListTasksRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,66 +97,66 @@ public class ListTasksRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
+
     /**
      * 任务名称。
      */
     public static final class NameEnum {
 
-        
         /**
          * Enum CREATEGAUSSDBV5INSTANCE for value: "CreateGaussDBV5Instance"
          */
         public static final NameEnum CREATEGAUSSDBV5INSTANCE = new NameEnum("CreateGaussDBV5Instance");
-        
+
         /**
          * Enum BACKUPSNAPSHOTGAUSSDBV5ININSTANCE for value: "BackupSnapshotGaussDBV5InInstance"
          */
-        public static final NameEnum BACKUPSNAPSHOTGAUSSDBV5ININSTANCE = new NameEnum("BackupSnapshotGaussDBV5InInstance");
-        
+        public static final NameEnum BACKUPSNAPSHOTGAUSSDBV5ININSTANCE =
+            new NameEnum("BackupSnapshotGaussDBV5InInstance");
+
         /**
          * Enum CLONEGAUSSDBV5NEWINSTANCE for value: "CloneGaussDBV5NewInstance"
          */
         public static final NameEnum CLONEGAUSSDBV5NEWINSTANCE = new NameEnum("CloneGaussDBV5NewInstance");
-        
+
         /**
          * Enum RESTOREGAUSSDBV5ININSTANCE for value: "RestoreGaussDBV5InInstance"
          */
         public static final NameEnum RESTOREGAUSSDBV5ININSTANCE = new NameEnum("RestoreGaussDBV5InInstance");
-        
+
         /**
          * Enum RESTOREGAUSSDBV5ININSTANCETOEXISTEDINST for value: "RestoreGaussDBV5InInstanceToExistedInst"
          */
-        public static final NameEnum RESTOREGAUSSDBV5ININSTANCETOEXISTEDINST = new NameEnum("RestoreGaussDBV5InInstanceToExistedInst");
-        
+        public static final NameEnum RESTOREGAUSSDBV5ININSTANCETOEXISTEDINST =
+            new NameEnum("RestoreGaussDBV5InInstanceToExistedInst");
+
         /**
          * Enum DELETEGAUSSDBV5INSTANCE for value: "DeleteGaussDBV5Instance"
          */
         public static final NameEnum DELETEGAUSSDBV5INSTANCE = new NameEnum("DeleteGaussDBV5Instance");
-        
+
         /**
          * Enum ENLARGEGAUSSDBV5VOLUME for value: "EnlargeGaussDBV5Volume"
          */
         public static final NameEnum ENLARGEGAUSSDBV5VOLUME = new NameEnum("EnlargeGaussDBV5Volume");
-        
+
         /**
          * Enum RESIZEGAUSSDBV5FLAVOR for value: "ResizeGaussDBV5Flavor"
          */
         public static final NameEnum RESIZEGAUSSDBV5FLAVOR = new NameEnum("ResizeGaussDBV5Flavor");
-        
+
         /**
          * Enum GAUSSDBV5EXPANDCLUSTERCN for value: "GaussDBV5ExpandClusterCN"
          */
         public static final NameEnum GAUSSDBV5EXPANDCLUSTERCN = new NameEnum("GaussDBV5ExpandClusterCN");
-        
+
         /**
          * Enum GAUSSDBV5EXPANDCLUSTERDN for value: "GaussDBV5ExpandClusterDN"
          */
         public static final NameEnum GAUSSDBV5EXPANDCLUSTERDN = new NameEnum("GaussDBV5ExpandClusterDN");
-        
 
         private static final Map<String, NameEnum> STATIC_FIELDS = createStaticFields();
 
@@ -211,25 +193,18 @@ public class ListTasksRequest  {
 
         @JsonCreator
         public static NameEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NameEnum(value));
         }
 
         public static NameEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,32 +222,27 @@ public class ListTasksRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private NameEnum name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -281,15 +251,12 @@ public class ListTasksRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -298,15 +265,10 @@ public class ListTasksRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListTasksRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态。
@@ -320,15 +282,10 @@ public class ListTasksRequest  {
         this.status = status;
     }
 
-    
-
     public ListTasksRequest withName(NameEnum name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。
@@ -342,15 +299,10 @@ public class ListTasksRequest  {
         this.name = name;
     }
 
-    
-
     public ListTasksRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 开始时间。
@@ -364,15 +316,10 @@ public class ListTasksRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListTasksRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 结束时间。
@@ -386,15 +333,10 @@ public class ListTasksRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListTasksRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -408,15 +350,10 @@ public class ListTasksRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListTasksRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100
@@ -430,29 +367,26 @@ public class ListTasksRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.xLanguage, listTasksRequest.xLanguage) &&
-            Objects.equals(this.status, listTasksRequest.status) &&
-            Objects.equals(this.name, listTasksRequest.name) &&
-            Objects.equals(this.startTime, listTasksRequest.startTime) &&
-            Objects.equals(this.endTime, listTasksRequest.endTime) &&
-            Objects.equals(this.offset, listTasksRequest.offset) &&
-            Objects.equals(this.limit, listTasksRequest.limit);
+        ListTasksRequest that = (ListTasksRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, status, name, startTime, endTime, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -467,6 +401,7 @@ public class ListTasksRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -477,8 +412,5 @@ public class ListTasksRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

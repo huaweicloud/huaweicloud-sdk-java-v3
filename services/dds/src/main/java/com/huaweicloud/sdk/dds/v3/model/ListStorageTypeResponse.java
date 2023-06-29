@@ -91,16 +91,15 @@ public class ListStorageTypeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStorageTypeResponse listStorageTypeResponse = (ListStorageTypeResponse) o;
-        return Objects.equals(this.storageType, listStorageTypeResponse.storageType)
-            && Objects.equals(this.dssPoolInfo, listStorageTypeResponse.dssPoolInfo);
+        ListStorageTypeResponse that = (ListStorageTypeResponse) obj;
+        return Objects.equals(this.storageType, that.storageType) && Objects.equals(this.dssPoolInfo, that.dssPoolInfo);
     }
 
     @Override

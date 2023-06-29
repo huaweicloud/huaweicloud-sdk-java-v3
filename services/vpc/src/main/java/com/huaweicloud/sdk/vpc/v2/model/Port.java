@@ -112,22 +112,15 @@ public class Port {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceOwnerEnum(value));
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,22 +198,15 @@ public class Port {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -766,29 +752,29 @@ public class Port {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Port port = (Port) o;
-        return Objects.equals(this.id, port.id) && Objects.equals(this.name, port.name)
-            && Objects.equals(this.networkId, port.networkId) && Objects.equals(this.adminStateUp, port.adminStateUp)
-            && Objects.equals(this.macAddress, port.macAddress) && Objects.equals(this.fixedIps, port.fixedIps)
-            && Objects.equals(this.deviceId, port.deviceId) && Objects.equals(this.deviceOwner, port.deviceOwner)
-            && Objects.equals(this.tenantId, port.tenantId) && Objects.equals(this.status, port.status)
-            && Objects.equals(this.securityGroups, port.securityGroups)
-            && Objects.equals(this.allowedAddressPairs, port.allowedAddressPairs)
-            && Objects.equals(this.extraDhcpOpts, port.extraDhcpOpts)
-            && Objects.equals(this.bindingVnicType, port.bindingVnicType)
-            && Objects.equals(this.dnsAssignment, port.dnsAssignment) && Objects.equals(this.dnsName, port.dnsName)
-            && Objects.equals(this.bindingVifDetails, port.bindingVifDetails)
-            && Objects.equals(this.bindingProfile, port.bindingProfile)
-            && Objects.equals(this.instanceId, port.instanceId) && Objects.equals(this.instanceType, port.instanceType)
-            && Objects.equals(this.portSecurityEnabled, port.portSecurityEnabled)
-            && Objects.equals(this.zoneId, port.zoneId);
+        Port that = (Port) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.macAddress, that.macAddress) && Objects.equals(this.fixedIps, that.fixedIps)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts)
+            && Objects.equals(this.bindingVnicType, that.bindingVnicType)
+            && Objects.equals(this.dnsAssignment, that.dnsAssignment) && Objects.equals(this.dnsName, that.dnsName)
+            && Objects.equals(this.bindingVifDetails, that.bindingVifDetails)
+            && Objects.equals(this.bindingProfile, that.bindingProfile)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.portSecurityEnabled, that.portSecurityEnabled)
+            && Objects.equals(this.zoneId, that.zoneId);
     }
 
     @Override

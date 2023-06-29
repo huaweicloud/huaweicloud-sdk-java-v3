@@ -99,18 +99,16 @@ public class DisassociateCertificateV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateCertificateV2Request disassociateCertificateV2Request = (DisassociateCertificateV2Request) o;
-        return Objects.equals(this.instanceId, disassociateCertificateV2Request.instanceId)
-            && Objects.equals(this.groupId, disassociateCertificateV2Request.groupId)
-            && Objects.equals(this.domainId, disassociateCertificateV2Request.domainId)
-            && Objects.equals(this.certificateId, disassociateCertificateV2Request.certificateId);
+        DisassociateCertificateV2Request that = (DisassociateCertificateV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override

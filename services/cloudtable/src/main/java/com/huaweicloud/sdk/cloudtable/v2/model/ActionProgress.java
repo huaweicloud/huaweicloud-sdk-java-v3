@@ -121,19 +121,17 @@ public class ActionProgress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionProgress actionProgress = (ActionProgress) o;
-        return Objects.equals(this.creating, actionProgress.creating)
-            && Objects.equals(this.growing, actionProgress.growing)
-            && Objects.equals(this.restoring, actionProgress.restoring)
-            && Objects.equals(this.snapshotting, actionProgress.snapshotting)
-            && Objects.equals(this.repairing, actionProgress.repairing);
+        ActionProgress that = (ActionProgress) obj;
+        return Objects.equals(this.creating, that.creating) && Objects.equals(this.growing, that.growing)
+            && Objects.equals(this.restoring, that.restoring) && Objects.equals(this.snapshotting, that.snapshotting)
+            && Objects.equals(this.repairing, that.repairing);
     }
 
     @Override

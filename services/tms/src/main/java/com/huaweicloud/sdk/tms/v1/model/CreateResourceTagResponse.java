@@ -53,15 +53,15 @@ public class CreateResourceTagResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResourceTagResponse createResourceTagResponse = (CreateResourceTagResponse) o;
-        return Objects.equals(this.failedResources, createResourceTagResponse.failedResources);
+        CreateResourceTagResponse that = (CreateResourceTagResponse) obj;
+        return Objects.equals(this.failedResources, that.failedResources);
     }
 
     @Override

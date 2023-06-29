@@ -107,18 +107,17 @@ public class ListProductCategoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductCategoriesRequest listProductCategoriesRequest = (ListProductCategoriesRequest) o;
-        return Objects.equals(this.productCategoryName, listProductCategoriesRequest.productCategoryName)
-            && Objects.equals(this.xSite, listProductCategoriesRequest.xSite)
-            && Objects.equals(this.xLanguage, listProductCategoriesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listProductCategoriesRequest.xTimeZone);
+        ListProductCategoriesRequest that = (ListProductCategoriesRequest) obj;
+        return Objects.equals(this.productCategoryName, that.productCategoryName)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

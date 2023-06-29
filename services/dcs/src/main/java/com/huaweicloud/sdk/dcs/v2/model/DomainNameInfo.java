@@ -118,18 +118,17 @@ public class DomainNameInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainNameInfo domainNameInfo = (DomainNameInfo) o;
-        return Objects.equals(this.supportPublicResolve, domainNameInfo.supportPublicResolve)
-            && Objects.equals(this.isLatestRules, domainNameInfo.isLatestRules)
-            && Objects.equals(this.zoneName, domainNameInfo.zoneName)
-            && Objects.equals(this.historyDomainNames, domainNameInfo.historyDomainNames);
+        DomainNameInfo that = (DomainNameInfo) obj;
+        return Objects.equals(this.supportPublicResolve, that.supportPublicResolve)
+            && Objects.equals(this.isLatestRules, that.isLatestRules) && Objects.equals(this.zoneName, that.zoneName)
+            && Objects.equals(this.historyDomainNames, that.historyDomainNames);
     }
 
     @Override

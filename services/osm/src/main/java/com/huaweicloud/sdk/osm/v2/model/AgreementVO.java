@@ -145,18 +145,18 @@ public class AgreementVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgreementVO agreementVO = (AgreementVO) o;
-        return Objects.equals(this.id, agreementVO.id) && Objects.equals(this.agreementName, agreementVO.agreementName)
-            && Objects.equals(this.agreementType, agreementVO.agreementType)
-            && Objects.equals(this.agreementTypeName, agreementVO.agreementTypeName)
-            && Objects.equals(this.content, agreementVO.content) && Objects.equals(this.version, agreementVO.version);
+        AgreementVO that = (AgreementVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.agreementName, that.agreementName)
+            && Objects.equals(this.agreementType, that.agreementType)
+            && Objects.equals(this.agreementTypeName, that.agreementTypeName)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.version, that.version);
     }
 
     @Override

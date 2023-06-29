@@ -33,15 +33,15 @@ public class UpdateHostProtectStatusRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostProtectStatusRequestBody updateHostProtectStatusRequestBody = (UpdateHostProtectStatusRequestBody) o;
-        return Objects.equals(this.protectStatus, updateHostProtectStatusRequestBody.protectStatus);
+        UpdateHostProtectStatusRequestBody that = (UpdateHostProtectStatusRequestBody) obj;
+        return Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

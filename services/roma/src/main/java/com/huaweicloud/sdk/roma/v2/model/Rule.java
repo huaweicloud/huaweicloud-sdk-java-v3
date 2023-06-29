@@ -93,22 +93,15 @@ public class Rule {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class Rule {
             if (value == null) {
                 return null;
             }
-            DataParsingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataParsingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataParsingStatusEnum(value));
         }
 
         public static DataParsingStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DataParsingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -547,24 +533,24 @@ public class Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rule rule = (Rule) o;
-        return Objects.equals(this.permissions, rule.permissions) && Objects.equals(this.ruleId, rule.ruleId)
-            && Objects.equals(this.name, rule.name) && Objects.equals(this.appId, rule.appId)
-            && Objects.equals(this.appName, rule.appName) && Objects.equals(this.description, rule.description)
-            && Objects.equals(this.status, rule.status)
-            && Objects.equals(this.dataParsingStatus, rule.dataParsingStatus)
-            && Objects.equals(this.sqlField, rule.sqlField) && Objects.equals(this.sqlWhere, rule.sqlWhere)
-            && Objects.equals(this.ruleExpress, rule.ruleExpress) && Objects.equals(this.createdUser, rule.createdUser)
-            && Objects.equals(this.lastUpdatedUser, rule.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, rule.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, rule.lastUpdatedDatetime);
+        Rule that = (Rule) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dataParsingStatus, that.dataParsingStatus)
+            && Objects.equals(this.sqlField, that.sqlField) && Objects.equals(this.sqlWhere, that.sqlWhere)
+            && Objects.equals(this.ruleExpress, that.ruleExpress) && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime);
     }
 
     @Override

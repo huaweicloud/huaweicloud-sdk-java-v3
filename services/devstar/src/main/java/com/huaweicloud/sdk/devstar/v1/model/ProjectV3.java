@@ -143,19 +143,18 @@ public class ProjectV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectV3 projectV3 = (ProjectV3) o;
-        return Objects.equals(this.projectId, projectV3.projectId) && Objects.equals(this.name, projectV3.name)
-            && Objects.equals(this.regionId, projectV3.regionId)
-            && Objects.equals(this.regionName, projectV3.regionName)
-            && Objects.equals(this.managementPermission, projectV3.managementPermission)
-            && Objects.equals(this.isStock, projectV3.isStock);
+        ProjectV3 that = (ProjectV3) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.managementPermission, that.managementPermission)
+            && Objects.equals(this.isStock, that.isStock);
     }
 
     @Override

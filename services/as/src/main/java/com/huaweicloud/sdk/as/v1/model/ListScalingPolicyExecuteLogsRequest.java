@@ -70,22 +70,15 @@ public class ListScalingPolicyExecuteLogsRequest {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingResourceTypeEnum(value));
         }
 
         public static ScalingResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,22 +162,15 @@ public class ListScalingPolicyExecuteLogsRequest {
             if (value == null) {
                 return null;
             }
-            ExecuteTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecuteTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecuteTypeEnum(value));
         }
 
         public static ExecuteTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecuteTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -381,24 +367,20 @@ public class ListScalingPolicyExecuteLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingPolicyExecuteLogsRequest listScalingPolicyExecuteLogsRequest =
-            (ListScalingPolicyExecuteLogsRequest) o;
-        return Objects.equals(this.scalingPolicyId, listScalingPolicyExecuteLogsRequest.scalingPolicyId)
-            && Objects.equals(this.logId, listScalingPolicyExecuteLogsRequest.logId)
-            && Objects.equals(this.scalingResourceType, listScalingPolicyExecuteLogsRequest.scalingResourceType)
-            && Objects.equals(this.scalingResourceId, listScalingPolicyExecuteLogsRequest.scalingResourceId)
-            && Objects.equals(this.executeType, listScalingPolicyExecuteLogsRequest.executeType)
-            && Objects.equals(this.startTime, listScalingPolicyExecuteLogsRequest.startTime)
-            && Objects.equals(this.endTime, listScalingPolicyExecuteLogsRequest.endTime)
-            && Objects.equals(this.startNumber, listScalingPolicyExecuteLogsRequest.startNumber)
-            && Objects.equals(this.limit, listScalingPolicyExecuteLogsRequest.limit);
+        ListScalingPolicyExecuteLogsRequest that = (ListScalingPolicyExecuteLogsRequest) obj;
+        return Objects.equals(this.scalingPolicyId, that.scalingPolicyId) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.scalingResourceType, that.scalingResourceType)
+            && Objects.equals(this.scalingResourceId, that.scalingResourceId)
+            && Objects.equals(this.executeType, that.executeType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.startNumber, that.startNumber)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

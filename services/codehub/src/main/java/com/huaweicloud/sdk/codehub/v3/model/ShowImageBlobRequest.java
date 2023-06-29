@@ -77,17 +77,16 @@ public class ShowImageBlobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageBlobRequest showImageBlobRequest = (ShowImageBlobRequest) o;
-        return Objects.equals(this.repositoryUuid, showImageBlobRequest.repositoryUuid)
-            && Objects.equals(this.branchName, showImageBlobRequest.branchName)
-            && Objects.equals(this.path, showImageBlobRequest.path);
+        ShowImageBlobRequest that = (ShowImageBlobRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid)
+            && Objects.equals(this.branchName, that.branchName) && Objects.equals(this.path, that.path);
     }
 
     @Override

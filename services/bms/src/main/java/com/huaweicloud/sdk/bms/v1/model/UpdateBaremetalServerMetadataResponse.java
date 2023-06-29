@@ -53,16 +53,15 @@ public class UpdateBaremetalServerMetadataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBaremetalServerMetadataResponse updateBaremetalServerMetadataResponse =
-            (UpdateBaremetalServerMetadataResponse) o;
-        return Objects.equals(this.metadata, updateBaremetalServerMetadataResponse.metadata);
+        UpdateBaremetalServerMetadataResponse that = (UpdateBaremetalServerMetadataResponse) obj;
+        return Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

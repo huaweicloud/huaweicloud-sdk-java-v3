@@ -97,22 +97,15 @@ public class PrivacyResponseBody {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,22 +274,18 @@ public class PrivacyResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivacyResponseBody privacyResponseBody = (PrivacyResponseBody) o;
-        return Objects.equals(this.id, privacyResponseBody.id)
-            && Objects.equals(this.policyid, privacyResponseBody.policyid)
-            && Objects.equals(this.timestamp, privacyResponseBody.timestamp)
-            && Objects.equals(this.status, privacyResponseBody.status)
-            && Objects.equals(this.url, privacyResponseBody.url)
-            && Objects.equals(this.category, privacyResponseBody.category)
-            && Objects.equals(this.index, privacyResponseBody.index)
-            && Objects.equals(this.description, privacyResponseBody.description);
+        PrivacyResponseBody that = (PrivacyResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.description, that.description);
     }
 
     @Override

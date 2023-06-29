@@ -231,24 +231,19 @@ public class AuthorizationVI {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizationVI authorizationVI = (AuthorizationVI) o;
-        return Objects.equals(this.name, authorizationVI.name)
-            && Objects.equals(this.repoType, authorizationVI.repoType)
-            && Objects.equals(this.repoHost, authorizationVI.repoHost)
-            && Objects.equals(this.repoHome, authorizationVI.repoHome)
-            && Objects.equals(this.repoUser, authorizationVI.repoUser)
-            && Objects.equals(this.avartar, authorizationVI.avartar)
-            && Objects.equals(this.tokenType, authorizationVI.tokenType)
-            && Objects.equals(this.createTime, authorizationVI.createTime)
-            && Objects.equals(this.updateTime, authorizationVI.updateTime)
-            && Objects.equals(this.status, authorizationVI.status);
+        AuthorizationVI that = (AuthorizationVI) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.repoType, that.repoType)
+            && Objects.equals(this.repoHost, that.repoHost) && Objects.equals(this.repoHome, that.repoHome)
+            && Objects.equals(this.repoUser, that.repoUser) && Objects.equals(this.avartar, that.avartar)
+            && Objects.equals(this.tokenType, that.tokenType) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

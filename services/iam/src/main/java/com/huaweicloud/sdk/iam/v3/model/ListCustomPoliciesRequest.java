@@ -55,16 +55,15 @@ public class ListCustomPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomPoliciesRequest listCustomPoliciesRequest = (ListCustomPoliciesRequest) o;
-        return Objects.equals(this.page, listCustomPoliciesRequest.page)
-            && Objects.equals(this.perPage, listCustomPoliciesRequest.perPage);
+        ListCustomPoliciesRequest that = (ListCustomPoliciesRequest) obj;
+        return Objects.equals(this.page, that.page) && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

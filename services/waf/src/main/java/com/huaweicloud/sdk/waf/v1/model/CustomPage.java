@@ -77,17 +77,16 @@ public class CustomPage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomPage customPage = (CustomPage) o;
-        return Objects.equals(this.statusCode, customPage.statusCode)
-            && Objects.equals(this.contentType, customPage.contentType)
-            && Objects.equals(this.content, customPage.content);
+        CustomPage that = (CustomPage) obj;
+        return Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override

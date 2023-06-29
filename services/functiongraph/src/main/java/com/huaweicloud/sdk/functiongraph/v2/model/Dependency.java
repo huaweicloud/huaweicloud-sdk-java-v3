@@ -111,6 +111,11 @@ public class Dependency {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -135,6 +140,7 @@ public class Dependency {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -160,22 +166,15 @@ public class Dependency {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,19 +358,18 @@ public class Dependency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Dependency dependency = (Dependency) o;
-        return Objects.equals(this.owner, dependency.owner) && Objects.equals(this.link, dependency.link)
-            && Objects.equals(this.runtime, dependency.runtime) && Objects.equals(this.etag, dependency.etag)
-            && Objects.equals(this.size, dependency.size) && Objects.equals(this.name, dependency.name)
-            && Objects.equals(this.description, dependency.description)
-            && Objects.equals(this.fileName, dependency.fileName);
+        Dependency that = (Dependency) obj;
+        return Objects.equals(this.owner, that.owner) && Objects.equals(this.link, that.link)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.etag, that.etag)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

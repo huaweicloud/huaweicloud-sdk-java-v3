@@ -90,16 +90,16 @@ public class QosCpuInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosCpuInfo qosCpuInfo = (QosCpuInfo) o;
-        return Objects.equals(this.clientCpuMax, qosCpuInfo.clientCpuMax)
-            && Objects.equals(this.systemCpuMax, qosCpuInfo.systemCpuMax);
+        QosCpuInfo that = (QosCpuInfo) obj;
+        return Objects.equals(this.clientCpuMax, that.clientCpuMax)
+            && Objects.equals(this.systemCpuMax, that.systemCpuMax);
     }
 
     @Override

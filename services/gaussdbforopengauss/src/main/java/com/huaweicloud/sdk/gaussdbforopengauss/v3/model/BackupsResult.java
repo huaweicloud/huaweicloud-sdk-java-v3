@@ -1,79 +1,65 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussDatastoreResult;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * BackupsResult
  */
-public class BackupsResult  {
-
+public class BackupsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
+
     /**
      * 备份状态
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum BUILDING_ for value: "BUILDING：备份中。"
          */
         public static final StatusEnum BUILDING_ = new StatusEnum("BUILDING：备份中。");
-        
+
         /**
          * Enum COMPLETED_ for value: "COMPLETED：备份完成。"
          */
         public static final StatusEnum COMPLETED_ = new StatusEnum("COMPLETED：备份完成。");
-        
+
         /**
          * Enum FAILED_ for value: "FAILED：备份失败。。"
          */
         public static final StatusEnum FAILED_ = new StatusEnum("FAILED：备份失败。。");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -103,25 +89,18 @@ public class BackupsResult  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -139,32 +118,29 @@ public class BackupsResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Double size;
+
     /**
      * 备份类型
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum AUTO_ for value: "auto：自动全量备份。"
          */
         public static final TypeEnum AUTO_ = new TypeEnum("auto：自动全量备份。");
-        
+
         /**
          * Enum MANUAL_ for value: "manual：手动全量备份。"
          */
         public static final TypeEnum MANUAL_ = new TypeEnum("manual：手动全量备份。");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -193,25 +169,18 @@ public class BackupsResult  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,20 +198,17 @@ public class BackupsResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private OpenGaussDatastoreResult datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
@@ -250,9 +216,6 @@ public class BackupsResult  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -266,15 +229,10 @@ public class BackupsResult  {
         this.id = id;
     }
 
-    
-
     public BackupsResult withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 备份名称。
@@ -288,15 +246,10 @@ public class BackupsResult  {
         this.name = name;
     }
 
-    
-
     public BackupsResult withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 备份文件描述信息。
@@ -310,15 +263,10 @@ public class BackupsResult  {
         this.description = description;
     }
 
-    
-
     public BackupsResult withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份开始时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -332,15 +280,10 @@ public class BackupsResult  {
         this.beginTime = beginTime;
     }
 
-    
-
     public BackupsResult withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -354,15 +297,10 @@ public class BackupsResult  {
         this.endTime = endTime;
     }
 
-    
-
     public BackupsResult withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 备份状态
@@ -376,15 +314,10 @@ public class BackupsResult  {
         this.status = status;
     }
 
-    
-
     public BackupsResult withSize(Double size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 备份大小(单位：MB)
@@ -398,15 +331,10 @@ public class BackupsResult  {
         this.size = size;
     }
 
-    
-
     public BackupsResult withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 备份类型
@@ -420,22 +348,19 @@ public class BackupsResult  {
         this.type = type;
     }
 
-    
-
     public BackupsResult withDatastore(OpenGaussDatastoreResult datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public BackupsResult withDatastore(Consumer<OpenGaussDatastoreResult> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new OpenGaussDatastoreResult();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -449,15 +374,10 @@ public class BackupsResult  {
         this.datastore = datastore;
     }
 
-    
-
     public BackupsResult withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -471,32 +391,27 @@ public class BackupsResult  {
         this.instanceId = instanceId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupsResult backupsResult = (BackupsResult) o;
-        return Objects.equals(this.id, backupsResult.id) &&
-            Objects.equals(this.name, backupsResult.name) &&
-            Objects.equals(this.description, backupsResult.description) &&
-            Objects.equals(this.beginTime, backupsResult.beginTime) &&
-            Objects.equals(this.endTime, backupsResult.endTime) &&
-            Objects.equals(this.status, backupsResult.status) &&
-            Objects.equals(this.size, backupsResult.size) &&
-            Objects.equals(this.type, backupsResult.type) &&
-            Objects.equals(this.datastore, backupsResult.datastore) &&
-            Objects.equals(this.instanceId, backupsResult.instanceId);
+        BackupsResult that = (BackupsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instanceId, that.instanceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, beginTime, endTime, status, size, type, datastore, instanceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -514,6 +429,7 @@ public class BackupsResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -524,8 +440,5 @@ public class BackupsResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

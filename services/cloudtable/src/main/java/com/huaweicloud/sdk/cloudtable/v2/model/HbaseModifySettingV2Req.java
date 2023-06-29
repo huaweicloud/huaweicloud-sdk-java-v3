@@ -75,16 +75,16 @@ public class HbaseModifySettingV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HbaseModifySettingV2Req hbaseModifySettingV2Req = (HbaseModifySettingV2Req) o;
-        return Objects.equals(this.isReboot, hbaseModifySettingV2Req.isReboot)
-            && Objects.equals(this.hbaseModifySettings, hbaseModifySettingV2Req.hbaseModifySettings);
+        HbaseModifySettingV2Req that = (HbaseModifySettingV2Req) obj;
+        return Objects.equals(this.isReboot, that.isReboot)
+            && Objects.equals(this.hbaseModifySettings, that.hbaseModifySettings);
     }
 
     @Override

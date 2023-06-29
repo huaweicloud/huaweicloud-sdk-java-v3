@@ -65,16 +65,15 @@ public class AddForwardingConfigsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddForwardingConfigsRequest addForwardingConfigsRequest = (AddForwardingConfigsRequest) o;
-        return Objects.equals(this.instanceId, addForwardingConfigsRequest.instanceId)
-            && Objects.equals(this.body, addForwardingConfigsRequest.body);
+        AddForwardingConfigsRequest that = (AddForwardingConfigsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

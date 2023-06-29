@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ApplyConfigurationRequestBody
  */
-public class ApplyConfigurationRequestBody  {
-
+public class ApplyConfigurationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_ids")
-    
+    @JsonProperty(value = "instance_ids")
+
     private List<String> instanceIds = null;
-    
+
     public ApplyConfigurationRequestBody withInstanceIds(List<String> instanceIds) {
         this.instanceIds = instanceIds;
         return this;
     }
 
-    
     public ApplyConfigurationRequestBody addInstanceIdsItem(String instanceIdsItem) {
-        if(this.instanceIds == null) {
+        if (this.instanceIds == null) {
             this.instanceIds = new ArrayList<>();
         }
         this.instanceIds.add(instanceIdsItem);
@@ -39,7 +32,7 @@ public class ApplyConfigurationRequestBody  {
     }
 
     public ApplyConfigurationRequestBody withInstanceIds(Consumer<List<String>> instanceIdsSetter) {
-        if(this.instanceIds == null) {
+        if (this.instanceIds == null) {
             this.instanceIds = new ArrayList<>();
         }
         instanceIdsSetter.accept(this.instanceIds);
@@ -58,23 +51,23 @@ public class ApplyConfigurationRequestBody  {
         this.instanceIds = instanceIds;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyConfigurationRequestBody applyConfigurationRequestBody = (ApplyConfigurationRequestBody) o;
-        return Objects.equals(this.instanceIds, applyConfigurationRequestBody.instanceIds);
+        ApplyConfigurationRequestBody that = (ApplyConfigurationRequestBody) obj;
+        return Objects.equals(this.instanceIds, that.instanceIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class ApplyConfigurationRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class ApplyConfigurationRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

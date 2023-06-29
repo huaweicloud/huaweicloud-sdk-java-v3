@@ -101,18 +101,16 @@ public class DeleteHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHookRequest deleteHookRequest = (DeleteHookRequest) o;
-        return Objects.equals(this.xRepoAuth, deleteHookRequest.xRepoAuth)
-            && Objects.equals(this.namespace, deleteHookRequest.namespace)
-            && Objects.equals(this.project, deleteHookRequest.project)
-            && Objects.equals(this.hookId, deleteHookRequest.hookId);
+        DeleteHookRequest that = (DeleteHookRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.hookId, that.hookId);
     }
 
     @Override

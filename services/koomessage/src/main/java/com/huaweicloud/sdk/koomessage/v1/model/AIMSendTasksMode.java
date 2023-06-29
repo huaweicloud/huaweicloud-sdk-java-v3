@@ -313,26 +313,22 @@ public class AIMSendTasksMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMSendTasksMode aiMSendTasksMode = (AIMSendTasksMode) o;
-        return Objects.equals(this.taskName, aiMSendTasksMode.taskName)
-            && Objects.equals(this.smsChannel, aiMSendTasksMode.smsChannel)
-            && Objects.equals(this.resolveTask, aiMSendTasksMode.resolveTask)
-            && Objects.equals(this.taskId, aiMSendTasksMode.taskId)
-            && Objects.equals(this.taskState, aiMSendTasksMode.taskState)
-            && Objects.equals(this.creationTime, aiMSendTasksMode.creationTime)
-            && Objects.equals(this.submissionCount, aiMSendTasksMode.submissionCount)
-            && Objects.equals(this.sendCount, aiMSendTasksMode.sendCount)
-            && Objects.equals(this.resolveCount, aiMSendTasksMode.resolveCount)
-            && Objects.equals(this.supportResolveCount, aiMSendTasksMode.supportResolveCount)
-            && Objects.equals(this.failedShortChains, aiMSendTasksMode.failedShortChains)
-            && Objects.equals(this.successNumber, aiMSendTasksMode.successNumber);
+        AIMSendTasksMode that = (AIMSendTasksMode) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.smsChannel, that.smsChannel)
+            && Objects.equals(this.resolveTask, that.resolveTask) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskState, that.taskState) && Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.submissionCount, that.submissionCount)
+            && Objects.equals(this.sendCount, that.sendCount) && Objects.equals(this.resolveCount, that.resolveCount)
+            && Objects.equals(this.supportResolveCount, that.supportResolveCount)
+            && Objects.equals(this.failedShortChains, that.failedShortChains)
+            && Objects.equals(this.successNumber, that.successNumber);
     }
 
     @Override

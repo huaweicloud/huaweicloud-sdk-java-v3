@@ -43,15 +43,15 @@ public class BatchDeleteAlarmTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteAlarmTemplatesRequest batchDeleteAlarmTemplatesRequest = (BatchDeleteAlarmTemplatesRequest) o;
-        return Objects.equals(this.body, batchDeleteAlarmTemplatesRequest.body);
+        BatchDeleteAlarmTemplatesRequest that = (BatchDeleteAlarmTemplatesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

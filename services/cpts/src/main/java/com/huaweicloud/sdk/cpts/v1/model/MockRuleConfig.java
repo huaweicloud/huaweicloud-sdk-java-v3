@@ -211,21 +211,20 @@ public class MockRuleConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MockRuleConfig mockRuleConfig = (MockRuleConfig) o;
-        return Objects.equals(this.serviceType, mockRuleConfig.serviceType)
-            && Objects.equals(this.requestUrl, mockRuleConfig.requestUrl)
-            && Objects.equals(this.requestMethod, mockRuleConfig.requestMethod)
-            && Objects.equals(this.redirectUrl, mockRuleConfig.redirectUrl)
-            && Objects.equals(this.mockStrategy, mockRuleConfig.mockStrategy)
-            && Objects.equals(this.enable, mockRuleConfig.enable) && Objects.equals(this.name, mockRuleConfig.name)
-            && Objects.equals(this.projectId, mockRuleConfig.projectId) && Objects.equals(this.id, mockRuleConfig.id);
+        MockRuleConfig that = (MockRuleConfig) obj;
+        return Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.requestUrl, that.requestUrl)
+            && Objects.equals(this.requestMethod, that.requestMethod)
+            && Objects.equals(this.redirectUrl, that.redirectUrl)
+            && Objects.equals(this.mockStrategy, that.mockStrategy) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

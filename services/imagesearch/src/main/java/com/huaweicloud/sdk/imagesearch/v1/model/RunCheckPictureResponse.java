@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,10 +11,8 @@ import java.util.Objects;
  */
 public class RunCheckPictureResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exist")
-    
+    @JsonProperty(value = "exist")
 
     private String exist;
 
@@ -30,9 +20,6 @@ public class RunCheckPictureResponse extends SdkResponse {
         this.exist = exist;
         return this;
     }
-
-    
-
 
     /**
      * 调用成功时表示调用结果。  调用失败时无此字段。  - true表示图像索引库中存在查询的图片。  - false表示图像索引库中不存在查询的图片。 
@@ -46,23 +33,23 @@ public class RunCheckPictureResponse extends SdkResponse {
         this.exist = exist;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunCheckPictureResponse runCheckPictureResponse = (RunCheckPictureResponse) o;
-        return Objects.equals(this.exist, runCheckPictureResponse.exist);
+        RunCheckPictureResponse that = (RunCheckPictureResponse) obj;
+        return Objects.equals(this.exist, that.exist);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(exist);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,6 +58,7 @@ public class RunCheckPictureResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class RunCheckPictureResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -140,17 +140,17 @@ public class AnswerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnswerInfo answerInfo = (AnswerInfo) o;
-        return Objects.equals(this.answer, answerInfo.answer) && Objects.equals(this.link, answerInfo.link)
-            && Objects.equals(this.question, answerInfo.question) && Objects.equals(this.qaPairId, answerInfo.qaPairId)
-            && Objects.equals(this.relevanceDetails, answerInfo.relevanceDetails);
+        AnswerInfo that = (AnswerInfo) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.link, that.link)
+            && Objects.equals(this.question, that.question) && Objects.equals(this.qaPairId, that.qaPairId)
+            && Objects.equals(this.relevanceDetails, that.relevanceDetails);
     }
 
     @Override

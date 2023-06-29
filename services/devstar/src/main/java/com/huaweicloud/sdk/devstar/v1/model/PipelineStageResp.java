@@ -77,17 +77,16 @@ public class PipelineStageResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineStageResp pipelineStageResp = (PipelineStageResp) o;
-        return Objects.equals(this.displayName, pipelineStageResp.displayName)
-            && Objects.equals(this.status, pipelineStageResp.status)
-            && Objects.equals(this.result, pipelineStageResp.result);
+        PipelineStageResp that = (PipelineStageResp) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

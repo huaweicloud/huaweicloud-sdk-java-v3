@@ -139,19 +139,17 @@ public class CreateScoresRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScoresRequest createScoresRequest = (CreateScoresRequest) o;
-        return Objects.equals(this.caseId, createScoresRequest.caseId)
-            && Objects.equals(this.xSite, createScoresRequest.xSite)
-            && Objects.equals(this.xLanguage, createScoresRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, createScoresRequest.xTimeZone)
-            && Objects.equals(this.body, createScoresRequest.body);
+        CreateScoresRequest that = (CreateScoresRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

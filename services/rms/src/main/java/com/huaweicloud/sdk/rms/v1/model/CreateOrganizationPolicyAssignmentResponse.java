@@ -310,30 +310,22 @@ public class CreateOrganizationPolicyAssignmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrganizationPolicyAssignmentResponse createOrganizationPolicyAssignmentResponse =
-            (CreateOrganizationPolicyAssignmentResponse) o;
-        return Objects.equals(this.ownerId, createOrganizationPolicyAssignmentResponse.ownerId)
-            && Objects.equals(this.organizationId, createOrganizationPolicyAssignmentResponse.organizationId)
-            && Objects.equals(this.organizationPolicyAssignmentUrn,
-                createOrganizationPolicyAssignmentResponse.organizationPolicyAssignmentUrn)
-            && Objects.equals(this.organizationPolicyAssignmentId,
-                createOrganizationPolicyAssignmentResponse.organizationPolicyAssignmentId)
-            && Objects.equals(this.organizationPolicyAssignmentName,
-                createOrganizationPolicyAssignmentResponse.organizationPolicyAssignmentName)
-            && Objects.equals(this.description, createOrganizationPolicyAssignmentResponse.description)
-            && Objects.equals(this.period, createOrganizationPolicyAssignmentResponse.period)
-            && Objects.equals(this.policyFilter, createOrganizationPolicyAssignmentResponse.policyFilter)
-            && Objects.equals(this.parameters, createOrganizationPolicyAssignmentResponse.parameters)
-            && Objects.equals(this.policyDefinitionId, createOrganizationPolicyAssignmentResponse.policyDefinitionId)
-            && Objects.equals(this.createdAt, createOrganizationPolicyAssignmentResponse.createdAt)
-            && Objects.equals(this.updatedAt, createOrganizationPolicyAssignmentResponse.updatedAt);
+        CreateOrganizationPolicyAssignmentResponse that = (CreateOrganizationPolicyAssignmentResponse) obj;
+        return Objects.equals(this.ownerId, that.ownerId) && Objects.equals(this.organizationId, that.organizationId)
+            && Objects.equals(this.organizationPolicyAssignmentUrn, that.organizationPolicyAssignmentUrn)
+            && Objects.equals(this.organizationPolicyAssignmentId, that.organizationPolicyAssignmentId)
+            && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.policyFilter, that.policyFilter) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

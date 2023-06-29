@@ -87,17 +87,16 @@ public class UpdateProjectModuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectModuleRequestBody updateProjectModuleRequestBody = (UpdateProjectModuleRequestBody) o;
-        return Objects.equals(this.description, updateProjectModuleRequestBody.description)
-            && Objects.equals(this.moduleName, updateProjectModuleRequestBody.moduleName)
-            && Objects.equals(this.owner, updateProjectModuleRequestBody.owner);
+        UpdateProjectModuleRequestBody that = (UpdateProjectModuleRequestBody) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.owner, that.owner);
     }
 
     @Override

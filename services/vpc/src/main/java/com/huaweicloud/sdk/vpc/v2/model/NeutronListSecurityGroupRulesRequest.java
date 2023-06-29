@@ -297,28 +297,23 @@ public class NeutronListSecurityGroupRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListSecurityGroupRulesRequest neutronListSecurityGroupRulesRequest =
-            (NeutronListSecurityGroupRulesRequest) o;
-        return Objects.equals(this.limit, neutronListSecurityGroupRulesRequest.limit)
-            && Objects.equals(this.marker, neutronListSecurityGroupRulesRequest.marker)
-            && Objects.equals(this.id, neutronListSecurityGroupRulesRequest.id)
-            && Objects.equals(this.direction, neutronListSecurityGroupRulesRequest.direction)
-            && Objects.equals(this.protocol, neutronListSecurityGroupRulesRequest.protocol)
-            && Objects.equals(this.ethertype, neutronListSecurityGroupRulesRequest.ethertype)
-            && Objects.equals(this.description, neutronListSecurityGroupRulesRequest.description)
-            && Objects.equals(this.remoteIpPrefix, neutronListSecurityGroupRulesRequest.remoteIpPrefix)
-            && Objects.equals(this.remoteGroupId, neutronListSecurityGroupRulesRequest.remoteGroupId)
-            && Objects.equals(this.securityGroupId, neutronListSecurityGroupRulesRequest.securityGroupId)
-            && Objects.equals(this.portRangeMax, neutronListSecurityGroupRulesRequest.portRangeMax)
-            && Objects.equals(this.portRangeMin, neutronListSecurityGroupRulesRequest.portRangeMin)
-            && Objects.equals(this.tenantId, neutronListSecurityGroupRulesRequest.tenantId);
+        NeutronListSecurityGroupRulesRequest that = (NeutronListSecurityGroupRulesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.ethertype, that.ethertype)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.portRangeMax, that.portRangeMax)
+            && Objects.equals(this.portRangeMin, that.portRangeMin) && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

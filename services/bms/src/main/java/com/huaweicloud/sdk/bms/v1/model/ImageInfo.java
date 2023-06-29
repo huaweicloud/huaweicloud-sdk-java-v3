@@ -80,22 +80,15 @@ public class ImageInfo {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,16 +202,16 @@ public class ImageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageInfo imageInfo = (ImageInfo) o;
-        return Objects.equals(this.id, imageInfo.id) && Objects.equals(this.name, imageInfo.name)
-            && Objects.equals(this.osType, imageInfo.osType) && Objects.equals(this.links, imageInfo.links);
+        ImageInfo that = (ImageInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.links, that.links);
     }
 
     @Override

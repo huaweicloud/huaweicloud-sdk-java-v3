@@ -145,20 +145,17 @@ public class ShowCdnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCdnStatisticsRequest showCdnStatisticsRequest = (ShowCdnStatisticsRequest) o;
-        return Objects.equals(this.xSdkDate, showCdnStatisticsRequest.xSdkDate)
-            && Objects.equals(this.startTime, showCdnStatisticsRequest.startTime)
-            && Objects.equals(this.endTime, showCdnStatisticsRequest.endTime)
-            && Objects.equals(this.statType, showCdnStatisticsRequest.statType)
-            && Objects.equals(this.domain, showCdnStatisticsRequest.domain)
-            && Objects.equals(this.interval, showCdnStatisticsRequest.interval);
+        ShowCdnStatisticsRequest that = (ShowCdnStatisticsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.statType, that.statType)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.interval, that.interval);
     }
 
     @Override

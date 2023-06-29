@@ -364,27 +364,23 @@ public class PortalModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortalModel portalModel = (PortalModel) o;
-        return Objects.equals(this.portalId, portalModel.portalId)
-            && Objects.equals(this.companyId, portalModel.companyId)
-            && Objects.equals(this.companyName, portalModel.companyName)
-            && Objects.equals(this.pubId, portalModel.pubId) && Objects.equals(this.pubName, portalModel.pubName)
-            && Objects.equals(this.backgroundImg, portalModel.backgroundImg)
-            && Objects.equals(this.backgroundImgUrl, portalModel.backgroundImgUrl)
-            && Objects.equals(this.summary, portalModel.summary) && Objects.equals(this.tels, portalModel.tels)
-            && Objects.equals(this.fastapps, portalModel.fastapps) && Objects.equals(this.state, portalModel.state)
-            && Objects.equals(this.approveState, portalModel.approveState)
-            && Objects.equals(this.onlineTime, portalModel.onlineTime)
-            && Objects.equals(this.creator, portalModel.creator)
-            && Objects.equals(this.createTime, portalModel.createTime)
-            && Objects.equals(this.changeReason, portalModel.changeReason);
+        PortalModel that = (PortalModel) obj;
+        return Objects.equals(this.portalId, that.portalId) && Objects.equals(this.companyId, that.companyId)
+            && Objects.equals(this.companyName, that.companyName) && Objects.equals(this.pubId, that.pubId)
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.backgroundImg, that.backgroundImg)
+            && Objects.equals(this.backgroundImgUrl, that.backgroundImgUrl)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.tels, that.tels)
+            && Objects.equals(this.fastapps, that.fastapps) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.approveState, that.approveState) && Objects.equals(this.onlineTime, that.onlineTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.changeReason, that.changeReason);
     }
 
     @Override

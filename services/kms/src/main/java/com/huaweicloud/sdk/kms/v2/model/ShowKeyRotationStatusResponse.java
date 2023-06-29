@@ -104,18 +104,18 @@ public class ShowKeyRotationStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowKeyRotationStatusResponse showKeyRotationStatusResponse = (ShowKeyRotationStatusResponse) o;
-        return Objects.equals(this.keyRotationEnabled, showKeyRotationStatusResponse.keyRotationEnabled)
-            && Objects.equals(this.rotationInterval, showKeyRotationStatusResponse.rotationInterval)
-            && Objects.equals(this.lastRotationTime, showKeyRotationStatusResponse.lastRotationTime)
-            && Objects.equals(this.numberOfRotations, showKeyRotationStatusResponse.numberOfRotations);
+        ShowKeyRotationStatusResponse that = (ShowKeyRotationStatusResponse) obj;
+        return Objects.equals(this.keyRotationEnabled, that.keyRotationEnabled)
+            && Objects.equals(this.rotationInterval, that.rotationInterval)
+            && Objects.equals(this.lastRotationTime, that.lastRotationTime)
+            && Objects.equals(this.numberOfRotations, that.numberOfRotations);
     }
 
     @Override

@@ -289,26 +289,21 @@ public class ListHasVerifiedContactsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHasVerifiedContactsRequest listHasVerifiedContactsRequest = (ListHasVerifiedContactsRequest) o;
-        return Objects.equals(this.contactWay, listHasVerifiedContactsRequest.contactWay)
-            && Objects.equals(this.customerId, listHasVerifiedContactsRequest.customerId)
-            && Objects.equals(this.subCustomerId, listHasVerifiedContactsRequest.subCustomerId)
-            && Objects.equals(this.expiredTime, listHasVerifiedContactsRequest.expiredTime)
-            && Objects.equals(this.verifiedId, listHasVerifiedContactsRequest.verifiedId)
-            && Objects.equals(this.contactValue, listHasVerifiedContactsRequest.contactValue)
-            && Objects.equals(this.areaCode, listHasVerifiedContactsRequest.areaCode)
-            && Objects.equals(this.offset, listHasVerifiedContactsRequest.offset)
-            && Objects.equals(this.limit, listHasVerifiedContactsRequest.limit)
-            && Objects.equals(this.xSite, listHasVerifiedContactsRequest.xSite)
-            && Objects.equals(this.xLanguage, listHasVerifiedContactsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listHasVerifiedContactsRequest.xTimeZone);
+        ListHasVerifiedContactsRequest that = (ListHasVerifiedContactsRequest) obj;
+        return Objects.equals(this.contactWay, that.contactWay) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.subCustomerId, that.subCustomerId)
+            && Objects.equals(this.expiredTime, that.expiredTime) && Objects.equals(this.verifiedId, that.verifiedId)
+            && Objects.equals(this.contactValue, that.contactValue) && Objects.equals(this.areaCode, that.areaCode)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -52,16 +52,15 @@ public class BatchImportCloudPhoneDataRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchImportCloudPhoneDataRequestBody batchImportCloudPhoneDataRequestBody =
-            (BatchImportCloudPhoneDataRequestBody) o;
-        return Objects.equals(this.restoreInfos, batchImportCloudPhoneDataRequestBody.restoreInfos);
+        BatchImportCloudPhoneDataRequestBody that = (BatchImportCloudPhoneDataRequestBody) obj;
+        return Objects.equals(this.restoreInfos, that.restoreInfos);
     }
 
     @Override

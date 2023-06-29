@@ -121,18 +121,17 @@ public class OsVersionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsVersionInfo osVersionInfo = (OsVersionInfo) o;
-        return Objects.equals(this.platform, osVersionInfo.platform)
-            && Objects.equals(this.osVersionKey, osVersionInfo.osVersionKey)
-            && Objects.equals(this.osVersion, osVersionInfo.osVersion)
-            && Objects.equals(this.osBit, osVersionInfo.osBit) && Objects.equals(this.osType, osVersionInfo.osType);
+        OsVersionInfo that = (OsVersionInfo) obj;
+        return Objects.equals(this.platform, that.platform) && Objects.equals(this.osVersionKey, that.osVersionKey)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.osBit, that.osBit)
+            && Objects.equals(this.osType, that.osType);
     }
 
     @Override

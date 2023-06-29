@@ -52,15 +52,15 @@ public class RestartInstanceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartInstanceRsp restartInstanceRsp = (RestartInstanceRsp) o;
-        return Objects.equals(this.jobId, restartInstanceRsp.jobId);
+        RestartInstanceRsp that = (RestartInstanceRsp) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

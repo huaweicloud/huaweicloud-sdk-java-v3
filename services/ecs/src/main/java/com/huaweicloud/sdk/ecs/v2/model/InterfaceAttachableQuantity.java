@@ -33,15 +33,15 @@ public class InterfaceAttachableQuantity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterfaceAttachableQuantity interfaceAttachableQuantity = (InterfaceAttachableQuantity) o;
-        return Objects.equals(this.freeNic, interfaceAttachableQuantity.freeNic);
+        InterfaceAttachableQuantity that = (InterfaceAttachableQuantity) obj;
+        return Objects.equals(this.freeNic, that.freeNic);
     }
 
     @Override

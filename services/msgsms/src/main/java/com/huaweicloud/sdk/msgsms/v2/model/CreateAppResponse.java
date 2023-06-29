@@ -100,17 +100,16 @@ public class CreateAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppResponse createAppResponse = (CreateAppResponse) o;
-        return Objects.equals(this.appKey, createAppResponse.appKey)
-            && Objects.equals(this.appName, createAppResponse.appName) && Objects.equals(this.id, createAppResponse.id)
-            && Objects.equals(this.appSecret, createAppResponse.appSecret);
+        CreateAppResponse that = (CreateAppResponse) obj;
+        return Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.appSecret, that.appSecret);
     }
 
     @Override

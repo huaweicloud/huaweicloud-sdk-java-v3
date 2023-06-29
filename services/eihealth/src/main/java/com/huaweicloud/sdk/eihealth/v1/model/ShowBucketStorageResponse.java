@@ -34,15 +34,15 @@ public class ShowBucketStorageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBucketStorageResponse showBucketStorageResponse = (ShowBucketStorageResponse) o;
-        return Objects.equals(this.size, showBucketStorageResponse.size);
+        ShowBucketStorageResponse that = (ShowBucketStorageResponse) obj;
+        return Objects.equals(this.size, that.size);
     }
 
     @Override

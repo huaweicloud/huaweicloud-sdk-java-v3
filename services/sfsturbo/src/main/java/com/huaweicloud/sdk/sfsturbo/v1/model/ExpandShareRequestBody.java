@@ -43,15 +43,15 @@ public class ExpandShareRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandShareRequestBody expandShareRequestBody = (ExpandShareRequestBody) o;
-        return Objects.equals(this.extend, expandShareRequestBody.extend);
+        ExpandShareRequestBody that = (ExpandShareRequestBody) obj;
+        return Objects.equals(this.extend, that.extend);
     }
 
     @Override

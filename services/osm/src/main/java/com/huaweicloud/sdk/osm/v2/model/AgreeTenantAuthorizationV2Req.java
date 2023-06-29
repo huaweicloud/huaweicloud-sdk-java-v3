@@ -145,19 +145,18 @@ public class AgreeTenantAuthorizationV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgreeTenantAuthorizationV2Req agreeTenantAuthorizationV2Req = (AgreeTenantAuthorizationV2Req) o;
-        return Objects.equals(this.authDetailList, agreeTenantAuthorizationV2Req.authDetailList)
-            && Objects.equals(this.authEffectiveTime, agreeTenantAuthorizationV2Req.authEffectiveTime)
-            && Objects.equals(this.authExpireTime, agreeTenantAuthorizationV2Req.authExpireTime)
-            && Objects.equals(this.groupId, agreeTenantAuthorizationV2Req.groupId)
-            && Objects.equals(this.agencyId, agreeTenantAuthorizationV2Req.agencyId);
+        AgreeTenantAuthorizationV2Req that = (AgreeTenantAuthorizationV2Req) obj;
+        return Objects.equals(this.authDetailList, that.authDetailList)
+            && Objects.equals(this.authEffectiveTime, that.authEffectiveTime)
+            && Objects.equals(this.authExpireTime, that.authExpireTime) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.agencyId, that.agencyId);
     }
 
     @Override

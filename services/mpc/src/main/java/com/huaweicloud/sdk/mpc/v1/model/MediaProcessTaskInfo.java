@@ -224,22 +224,18 @@ public class MediaProcessTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MediaProcessTaskInfo mediaProcessTaskInfo = (MediaProcessTaskInfo) o;
-        return Objects.equals(this.taskId, mediaProcessTaskInfo.taskId)
-            && Objects.equals(this.status, mediaProcessTaskInfo.status)
-            && Objects.equals(this.createTime, mediaProcessTaskInfo.createTime)
-            && Objects.equals(this.endTime, mediaProcessTaskInfo.endTime)
-            && Objects.equals(this.output, mediaProcessTaskInfo.output)
-            && Objects.equals(this.description, mediaProcessTaskInfo.description)
-            && Objects.equals(this.outputFileName, mediaProcessTaskInfo.outputFileName)
-            && Objects.equals(this.input, mediaProcessTaskInfo.input);
+        MediaProcessTaskInfo that = (MediaProcessTaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.outputFileName, that.outputFileName) && Objects.equals(this.input, that.input);
     }
 
     @Override

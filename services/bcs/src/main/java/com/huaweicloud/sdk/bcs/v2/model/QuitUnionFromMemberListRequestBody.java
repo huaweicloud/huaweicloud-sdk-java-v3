@@ -187,22 +187,22 @@ public class QuitUnionFromMemberListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuitUnionFromMemberListRequestBody quitUnionFromMemberListRequestBody = (QuitUnionFromMemberListRequestBody) o;
-        return Objects.equals(this.inviterBcsid, quitUnionFromMemberListRequestBody.inviterBcsid)
-            && Objects.equals(this.inviterProjectid, quitUnionFromMemberListRequestBody.inviterProjectid)
-            && Objects.equals(this.inviterDomainid, quitUnionFromMemberListRequestBody.inviterDomainid)
-            && Objects.equals(this.inviterUsername, quitUnionFromMemberListRequestBody.inviterUsername)
-            && Objects.equals(this.channelName, quitUnionFromMemberListRequestBody.channelName)
-            && Objects.equals(this.inviteeBcsid, quitUnionFromMemberListRequestBody.inviteeBcsid)
-            && Objects.equals(this.inviteeProjectid, quitUnionFromMemberListRequestBody.inviteeProjectid)
-            && Objects.equals(this.inviteeDomainid, quitUnionFromMemberListRequestBody.inviteeDomainid);
+        QuitUnionFromMemberListRequestBody that = (QuitUnionFromMemberListRequestBody) obj;
+        return Objects.equals(this.inviterBcsid, that.inviterBcsid)
+            && Objects.equals(this.inviterProjectid, that.inviterProjectid)
+            && Objects.equals(this.inviterDomainid, that.inviterDomainid)
+            && Objects.equals(this.inviterUsername, that.inviterUsername)
+            && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.inviteeBcsid, that.inviteeBcsid)
+            && Objects.equals(this.inviteeProjectid, that.inviteeProjectid)
+            && Objects.equals(this.inviteeDomainid, that.inviteeDomainid);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class CreateFlinkJarResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlinkJarResponse createFlinkJarResponse = (CreateFlinkJarResponse) o;
-        return Objects.equals(this.isSuccess, createFlinkJarResponse.isSuccess)
-            && Objects.equals(this.message, createFlinkJarResponse.message)
-            && Objects.equals(this.job, createFlinkJarResponse.job);
+        CreateFlinkJarResponse that = (CreateFlinkJarResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.job, that.job);
     }
 
     @Override

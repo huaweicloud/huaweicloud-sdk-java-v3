@@ -185,21 +185,18 @@ public class UpdateLineGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLineGroupsResponse updateLineGroupsResponse = (UpdateLineGroupsResponse) o;
-        return Objects.equals(this.name, updateLineGroupsResponse.name)
-            && Objects.equals(this.lines, updateLineGroupsResponse.lines)
-            && Objects.equals(this.status, updateLineGroupsResponse.status)
-            && Objects.equals(this.description, updateLineGroupsResponse.description)
-            && Objects.equals(this.lineId, updateLineGroupsResponse.lineId)
-            && Objects.equals(this.createdAt, updateLineGroupsResponse.createdAt)
-            && Objects.equals(this.updatedAt, updateLineGroupsResponse.updatedAt);
+        UpdateLineGroupsResponse that = (UpdateLineGroupsResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.lines, that.lines)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

@@ -66,17 +66,15 @@ public class KeystoneUpdateIdentityProviderRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateIdentityProviderRequest keystoneUpdateIdentityProviderRequest =
-            (KeystoneUpdateIdentityProviderRequest) o;
-        return Objects.equals(this.id, keystoneUpdateIdentityProviderRequest.id)
-            && Objects.equals(this.body, keystoneUpdateIdentityProviderRequest.body);
+        KeystoneUpdateIdentityProviderRequest that = (KeystoneUpdateIdentityProviderRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.body, that.body);
     }
 
     @Override

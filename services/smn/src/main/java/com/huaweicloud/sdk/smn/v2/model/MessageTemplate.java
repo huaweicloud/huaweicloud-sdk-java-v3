@@ -162,20 +162,18 @@ public class MessageTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MessageTemplate messageTemplate = (MessageTemplate) o;
-        return Objects.equals(this.messageTemplateId, messageTemplate.messageTemplateId)
-            && Objects.equals(this.messageTemplateName, messageTemplate.messageTemplateName)
-            && Objects.equals(this.protocol, messageTemplate.protocol)
-            && Objects.equals(this.tagNames, messageTemplate.tagNames)
-            && Objects.equals(this.createTime, messageTemplate.createTime)
-            && Objects.equals(this.updateTime, messageTemplate.updateTime);
+        MessageTemplate that = (MessageTemplate) obj;
+        return Objects.equals(this.messageTemplateId, that.messageTemplateId)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.tagNames, that.tagNames)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

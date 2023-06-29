@@ -87,18 +87,16 @@ public class SearchResourceShareAssociationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResourceShareAssociationsResponse searchResourceShareAssociationsResponse =
-            (SearchResourceShareAssociationsResponse) o;
-        return Objects.equals(this.resourceShareAssociations,
-            searchResourceShareAssociationsResponse.resourceShareAssociations)
-            && Objects.equals(this.pageInfo, searchResourceShareAssociationsResponse.pageInfo);
+        SearchResourceShareAssociationsResponse that = (SearchResourceShareAssociationsResponse) obj;
+        return Objects.equals(this.resourceShareAssociations, that.resourceShareAssociations)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

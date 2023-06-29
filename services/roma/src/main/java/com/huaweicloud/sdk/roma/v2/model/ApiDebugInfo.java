@@ -28,8 +28,8 @@ public class ApiDebugInfo {
     private Map<String, List<String>> header = null;
 
     /**
-    * API的请求方法
-    */
+     * API的请求方法
+     */
     public static final class MethodEnum {
 
         /**
@@ -102,22 +102,15 @@ public class ApiDebugInfo {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -399,20 +392,20 @@ public class ApiDebugInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiDebugInfo apiDebugInfo = (ApiDebugInfo) o;
-        return Objects.equals(this.body, apiDebugInfo.body) && Objects.equals(this.header, apiDebugInfo.header)
-            && Objects.equals(this.method, apiDebugInfo.method) && Objects.equals(this.mode, apiDebugInfo.mode)
-            && Objects.equals(this.path, apiDebugInfo.path) && Objects.equals(this.query, apiDebugInfo.query)
-            && Objects.equals(this.scheme, apiDebugInfo.scheme) && Objects.equals(this.appKey, apiDebugInfo.appKey)
-            && Objects.equals(this.appSecret, apiDebugInfo.appSecret)
-            && Objects.equals(this.domain, apiDebugInfo.domain) && Objects.equals(this.stage, apiDebugInfo.stage);
+        ApiDebugInfo that = (ApiDebugInfo) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.header, that.header)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.scheme, that.scheme) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.appSecret, that.appSecret) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.stage, that.stage);
     }
 
     @Override

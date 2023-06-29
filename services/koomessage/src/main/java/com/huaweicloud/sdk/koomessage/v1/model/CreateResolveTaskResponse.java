@@ -245,23 +245,19 @@ public class CreateResolveTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResolveTaskResponse createResolveTaskResponse = (CreateResolveTaskResponse) o;
-        return Objects.equals(this.taskId, createResolveTaskResponse.taskId)
-            && Objects.equals(this.tplId, createResolveTaskResponse.tplId)
-            && Objects.equals(this.smsSigns, createResolveTaskResponse.smsSigns)
-            && Objects.equals(this.resolvingTimes, createResolveTaskResponse.resolvingTimes)
-            && Objects.equals(this.resolvedTimes, createResolveTaskResponse.resolvedTimes)
-            && Objects.equals(this.aimCodeType, createResolveTaskResponse.aimCodeType)
-            && Objects.equals(this.domain, createResolveTaskResponse.domain)
-            && Objects.equals(this.expirationTime, createResolveTaskResponse.expirationTime)
-            && Objects.equals(this.params, createResolveTaskResponse.params);
+        CreateResolveTaskResponse that = (CreateResolveTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.smsSigns, that.smsSigns) && Objects.equals(this.resolvingTimes, that.resolvingTimes)
+            && Objects.equals(this.resolvedTimes, that.resolvedTimes)
+            && Objects.equals(this.aimCodeType, that.aimCodeType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
     }
 
     @Override

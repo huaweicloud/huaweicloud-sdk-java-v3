@@ -33,15 +33,15 @@ public class ShowGetLogSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGetLogSettingRequest showGetLogSettingRequest = (ShowGetLogSettingRequest) o;
-        return Objects.equals(this.clusterId, showGetLogSettingRequest.clusterId);
+        ShowGetLogSettingRequest that = (ShowGetLogSettingRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

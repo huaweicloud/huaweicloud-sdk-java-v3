@@ -46,7 +46,7 @@ import java.util.function.Supplier;
  *
  * @author HuaweiCloud_SDK
  */
-public class RetryRecord<ResT> {
+public class RetryRecord<S> {
     private final ThreadFactory namedFactory = initNamedThreadFactory();
 
     /**
@@ -58,13 +58,13 @@ public class RetryRecord<ResT> {
      * A CompletableFuture used to chain all results of the work supplier.
      * Once the result of the work is done, this future will be returned.
      */
-    CompletableFuture<ResT> future;
+    CompletableFuture<S> future;
 
     /**
      * Actual supplier needs to be retried.
      * Whether the request should be retried depends on the result of the work.
      */
-    Supplier<CompletableFuture<ResT>> workSupplier;
+    Supplier<CompletableFuture<S>> workSupplier;
 
     /**
      * The times has been retried.
@@ -77,11 +77,11 @@ public class RetryRecord<ResT> {
 
     int retryTimes;
 
-    BiFunction<ResT, SdkException, Boolean> func;
+    BiFunction<S, SdkException, Boolean> func;
 
     BackoffStrategy backoffStrategy;
 
-    public RetryRecord(int retryTimes, BiFunction<ResT, SdkException, Boolean> func,
+    public RetryRecord(int retryTimes, BiFunction<S, SdkException, Boolean> func,
         BackoffStrategy backoffStrategy) {
         this.retryTimes = retryTimes;
         this.func = func;
@@ -109,7 +109,7 @@ public class RetryRecord<ResT> {
             shouldRetry = Objects.nonNull(func) && func.apply(resp, currException);
             if (shouldRetry && currRetriesAttempted <= retryTimes) {
                 int statusCode = getStatusCodeFromResult(resp, currException);
-                RetryContext<ResT> context = buildContext(resp, currException, statusCode, currRetriesAttempted);
+                RetryContext<S> context = buildContext(resp, currException, statusCode, currRetriesAttempted);
                 long delayBeforeNextRetry = backoffStrategy.computeDelayBeforeNextRetry(context);
                 printRetryLog(currRetriesAttempted, delayBeforeNextRetry);
                 reschedule(executor, delayBeforeNextRetry);
@@ -193,8 +193,8 @@ public class RetryRecord<ResT> {
      * @return context
      */
     @SuppressWarnings("unchecked")
-    RetryContext<ResT> buildContext(ResT resT, SdkException e, int statusCode, int retriesAttempted) {
-        return (RetryContext<ResT>) RetryContext.builder()
+    RetryContext<S> buildContext(S resT, SdkException e, int statusCode, int retriesAttempted) {
+        return (RetryContext<S>) RetryContext.builder()
             .withLastResponse(resT)
             .withLastException(e)
             .withStatusCode(statusCode)
@@ -211,7 +211,7 @@ public class RetryRecord<ResT> {
      * @param e sdk exception
      * @return the value of status code
      */
-    public int getStatusCodeFromResult(ResT resT, SdkException e) {
+    public int getStatusCodeFromResult(S resT, SdkException e) {
         int statusCode = 0;
         if (resT instanceof SdkResponse) {
             statusCode = ((SdkResponse) resT).getHttpStatusCode();
@@ -222,19 +222,19 @@ public class RetryRecord<ResT> {
         return statusCode;
     }
 
-    public CompletableFuture<ResT> getFuture() {
+    public CompletableFuture<S> getFuture() {
         return future;
     }
 
-    public void setFuture(CompletableFuture<ResT> future) {
+    public void setFuture(CompletableFuture<S> future) {
         this.future = future;
     }
 
-    public Supplier<CompletableFuture<ResT>> getWorkSupplier() {
+    public Supplier<CompletableFuture<S>> getWorkSupplier() {
         return workSupplier;
     }
 
-    public void setWorkSupplier(Supplier<CompletableFuture<ResT>> workSupplier) {
+    public void setWorkSupplier(Supplier<CompletableFuture<S>> workSupplier) {
         this.workSupplier = workSupplier;
     }
 

@@ -74,15 +74,15 @@ public class IpsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpsItem ipsItem = (IpsItem) o;
-        return Objects.equals(this.ips, ipsItem.ips) && Objects.equals(this.updateTime, ipsItem.updateTime);
+        IpsItem that = (IpsItem) obj;
+        return Objects.equals(this.ips, that.ips) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

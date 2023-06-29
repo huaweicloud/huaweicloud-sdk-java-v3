@@ -55,15 +55,15 @@ public class Scm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Scm scm = (Scm) o;
-        return Objects.equals(this.buildTag, scm.buildTag) && Objects.equals(this.buildCommitId, scm.buildCommitId);
+        Scm that = (Scm) obj;
+        return Objects.equals(this.buildTag, that.buildTag) && Objects.equals(this.buildCommitId, that.buildCommitId);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class TriggerQpsDict {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TriggerQpsDict triggerQpsDict = (TriggerQpsDict) o;
-        return Objects.equals(this.httpRequestPosId, triggerQpsDict.httpRequestPosId)
-            && Objects.equals(this.httpPacketPerSecond, triggerQpsDict.httpPacketPerSecond);
+        TriggerQpsDict that = (TriggerQpsDict) obj;
+        return Objects.equals(this.httpRequestPosId, that.httpRequestPosId)
+            && Objects.equals(this.httpPacketPerSecond, that.httpPacketPerSecond);
     }
 
     @Override

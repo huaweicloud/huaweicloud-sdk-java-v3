@@ -274,22 +274,21 @@ public class TokenInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TokenInfo tokenInfo = (TokenInfo) o;
-        return Objects.equals(this.token, tokenInfo.token) && Objects.equals(this.tmpWsToken, tokenInfo.tmpWsToken)
-            && Objects.equals(this.wsURL, tokenInfo.wsURL) && Objects.equals(this.role, tokenInfo.role)
-            && Objects.equals(this.expireTime, tokenInfo.expireTime) && Objects.equals(this.userID, tokenInfo.userID)
-            && Objects.equals(this.orgID, tokenInfo.orgID)
-            && Objects.equals(this.participantID, tokenInfo.participantID)
-            && Objects.equals(this.confTokenExpireTime, tokenInfo.confTokenExpireTime)
-            && Objects.equals(this.vmrCurrentConfID, tokenInfo.vmrCurrentConfID)
-            && Objects.equals(this.supportNotifyType, tokenInfo.supportNotifyType);
+        TokenInfo that = (TokenInfo) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.tmpWsToken, that.tmpWsToken)
+            && Objects.equals(this.wsURL, that.wsURL) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.userID, that.userID)
+            && Objects.equals(this.orgID, that.orgID) && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.confTokenExpireTime, that.confTokenExpireTime)
+            && Objects.equals(this.vmrCurrentConfID, that.vmrCurrentConfID)
+            && Objects.equals(this.supportNotifyType, that.supportNotifyType);
     }
 
     @Override

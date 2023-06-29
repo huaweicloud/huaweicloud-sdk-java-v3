@@ -153,20 +153,18 @@ public class CreateProjectRepoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectRepoRequest createProjectRepoRequest = (CreateProjectRepoRequest) o;
-        return Objects.equals(this.importMembers, createProjectRepoRequest.importMembers)
-            && Objects.equals(this.projectName, createProjectRepoRequest.projectName)
-            && Objects.equals(this.repoName, createProjectRepoRequest.repoName)
-            && Objects.equals(this.type, createProjectRepoRequest.type)
-            && Objects.equals(this.visibilityLevel, createProjectRepoRequest.visibilityLevel)
-            && Objects.equals(this.externalProjectInfo, createProjectRepoRequest.externalProjectInfo);
+        CreateProjectRepoRequest that = (CreateProjectRepoRequest) obj;
+        return Objects.equals(this.importMembers, that.importMembers)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.repoName, that.repoName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.visibilityLevel, that.visibilityLevel)
+            && Objects.equals(this.externalProjectInfo, that.externalProjectInfo);
     }
 
     @Override

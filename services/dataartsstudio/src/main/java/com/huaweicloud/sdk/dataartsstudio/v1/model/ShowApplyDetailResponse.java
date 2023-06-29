@@ -101,22 +101,15 @@ public class ShowApplyDetailResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ApiApplyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiApplyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiApplyStatusEnum(value));
         }
 
         public static ApiApplyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiApplyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,22 +220,15 @@ public class ShowApplyDetailResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ApiApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiApplyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiApplyTypeEnum(value));
         }
 
         public static ApiApplyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -536,27 +522,21 @@ public class ShowApplyDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplyDetailResponse showApplyDetailResponse = (ShowApplyDetailResponse) o;
-        return Objects.equals(this.id, showApplyDetailResponse.id)
-            && Objects.equals(this.apiApplyStatus, showApplyDetailResponse.apiApplyStatus)
-            && Objects.equals(this.apiApplyType, showApplyDetailResponse.apiApplyType)
-            && Objects.equals(this.apiId, showApplyDetailResponse.apiId)
-            && Objects.equals(this.apiName, showApplyDetailResponse.apiName)
-            && Objects.equals(this.apiUsingTime, showApplyDetailResponse.apiUsingTime)
-            && Objects.equals(this.appId, showApplyDetailResponse.appId)
-            && Objects.equals(this.appName, showApplyDetailResponse.appName)
-            && Objects.equals(this.applyTime, showApplyDetailResponse.applyTime)
-            && Objects.equals(this.approvalTime, showApplyDetailResponse.approvalTime)
-            && Objects.equals(this.approverName, showApplyDetailResponse.approverName)
-            && Objects.equals(this.comment, showApplyDetailResponse.comment)
-            && Objects.equals(this.userName, showApplyDetailResponse.userName);
+        ShowApplyDetailResponse that = (ShowApplyDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.apiApplyStatus, that.apiApplyStatus)
+            && Objects.equals(this.apiApplyType, that.apiApplyType) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.apiUsingTime, that.apiUsingTime)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.approvalTime, that.approvalTime)
+            && Objects.equals(this.approverName, that.approverName) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

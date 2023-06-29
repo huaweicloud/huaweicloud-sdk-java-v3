@@ -77,16 +77,16 @@ public class EnvironmentModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentModify environmentModify = (EnvironmentModify) o;
-        return Objects.equals(this.name, environmentModify.name) && Objects.equals(this.alias, environmentModify.alias)
-            && Objects.equals(this.description, environmentModify.description);
+        EnvironmentModify that = (EnvironmentModify) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

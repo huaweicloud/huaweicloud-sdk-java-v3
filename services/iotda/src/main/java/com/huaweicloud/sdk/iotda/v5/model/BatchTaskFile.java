@@ -77,17 +77,16 @@ public class BatchTaskFile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchTaskFile batchTaskFile = (BatchTaskFile) o;
-        return Objects.equals(this.fileId, batchTaskFile.fileId)
-            && Objects.equals(this.fileName, batchTaskFile.fileName)
-            && Objects.equals(this.uploadTime, batchTaskFile.uploadTime);
+        BatchTaskFile that = (BatchTaskFile) obj;
+        return Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.uploadTime, that.uploadTime);
     }
 
     @Override

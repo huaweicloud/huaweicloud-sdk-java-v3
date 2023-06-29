@@ -68,22 +68,15 @@ public class ApiPolicyFunctionCreate {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InvocationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvocationTypeEnum(value));
         }
 
         public static InvocationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,22 +158,15 @@ public class ApiPolicyFunctionCreate {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -426,24 +412,20 @@ public class ApiPolicyFunctionCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyFunctionCreate apiPolicyFunctionCreate = (ApiPolicyFunctionCreate) o;
-        return Objects.equals(this.functionUrn, apiPolicyFunctionCreate.functionUrn)
-            && Objects.equals(this.invocationType, apiPolicyFunctionCreate.invocationType)
-            && Objects.equals(this.timeout, apiPolicyFunctionCreate.timeout)
-            && Objects.equals(this.version, apiPolicyFunctionCreate.version)
-            && Objects.equals(this.aliasUrn, apiPolicyFunctionCreate.aliasUrn)
-            && Objects.equals(this.effectMode, apiPolicyFunctionCreate.effectMode)
-            && Objects.equals(this.name, apiPolicyFunctionCreate.name)
-            && Objects.equals(this.backendParams, apiPolicyFunctionCreate.backendParams)
-            && Objects.equals(this.conditions, apiPolicyFunctionCreate.conditions)
-            && Objects.equals(this.authorizerId, apiPolicyFunctionCreate.authorizerId);
+        ApiPolicyFunctionCreate that = (ApiPolicyFunctionCreate) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn)
+            && Objects.equals(this.invocationType, that.invocationType) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.aliasUrn, that.aliasUrn)
+            && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

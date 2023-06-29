@@ -100,18 +100,16 @@ public class DebugApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugApiV2Response debugApiV2Response = (DebugApiV2Response) o;
-        return Objects.equals(this.request, debugApiV2Response.request)
-            && Objects.equals(this.response, debugApiV2Response.response)
-            && Objects.equals(this.latency, debugApiV2Response.latency)
-            && Objects.equals(this.log, debugApiV2Response.log);
+        DebugApiV2Response that = (DebugApiV2Response) obj;
+        return Objects.equals(this.request, that.request) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.latency, that.latency) && Objects.equals(this.log, that.log);
     }
 
     @Override

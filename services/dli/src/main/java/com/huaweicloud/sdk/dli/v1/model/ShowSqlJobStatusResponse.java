@@ -112,22 +112,15 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -549,33 +542,24 @@ public class ShowSqlJobStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlJobStatusResponse showSqlJobStatusResponse = (ShowSqlJobStatusResponse) o;
-        return Objects.equals(this.jobId, showSqlJobStatusResponse.jobId)
-            && Objects.equals(this.jobType, showSqlJobStatusResponse.jobType)
-            && Objects.equals(this.queueName, showSqlJobStatusResponse.queueName)
-            && Objects.equals(this.owner, showSqlJobStatusResponse.owner)
-            && Objects.equals(this.startTime, showSqlJobStatusResponse.startTime)
-            && Objects.equals(this.duration, showSqlJobStatusResponse.duration)
-            && Objects.equals(this.status, showSqlJobStatusResponse.status)
-            && Objects.equals(this.inputRowCount, showSqlJobStatusResponse.inputRowCount)
-            && Objects.equals(this.badRowCount, showSqlJobStatusResponse.badRowCount)
-            && Objects.equals(this.inputSize, showSqlJobStatusResponse.inputSize)
-            && Objects.equals(this.resultCount, showSqlJobStatusResponse.resultCount)
-            && Objects.equals(this.databaseName, showSqlJobStatusResponse.databaseName)
-            && Objects.equals(this.tableName, showSqlJobStatusResponse.tableName)
-            && Objects.equals(this.detail, showSqlJobStatusResponse.detail)
-            && Objects.equals(this.statement, showSqlJobStatusResponse.statement)
-            && Objects.equals(this.isSuccess, showSqlJobStatusResponse.isSuccess)
-            && Objects.equals(this.message, showSqlJobStatusResponse.message)
-            && Objects.equals(this.jobMode, showSqlJobStatusResponse.jobMode)
-            && Objects.equals(this.tags, showSqlJobStatusResponse.tags);
+        ShowSqlJobStatusResponse that = (ShowSqlJobStatusResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.inputRowCount, that.inputRowCount)
+            && Objects.equals(this.badRowCount, that.badRowCount) && Objects.equals(this.inputSize, that.inputSize)
+            && Objects.equals(this.resultCount, that.resultCount)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.statement, that.statement)
+            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobMode, that.jobMode) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

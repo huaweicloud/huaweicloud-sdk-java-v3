@@ -272,22 +272,18 @@ public class ListSecurityPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityPoliciesRequest listSecurityPoliciesRequest = (ListSecurityPoliciesRequest) o;
-        return Objects.equals(this.marker, listSecurityPoliciesRequest.marker)
-            && Objects.equals(this.limit, listSecurityPoliciesRequest.limit)
-            && Objects.equals(this.pageReverse, listSecurityPoliciesRequest.pageReverse)
-            && Objects.equals(this.id, listSecurityPoliciesRequest.id)
-            && Objects.equals(this.name, listSecurityPoliciesRequest.name)
-            && Objects.equals(this.description, listSecurityPoliciesRequest.description)
-            && Objects.equals(this.protocols, listSecurityPoliciesRequest.protocols)
-            && Objects.equals(this.ciphers, listSecurityPoliciesRequest.ciphers);
+        ListSecurityPoliciesRequest that = (ListSecurityPoliciesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocols, that.protocols) && Objects.equals(this.ciphers, that.ciphers);
     }
 
     @Override

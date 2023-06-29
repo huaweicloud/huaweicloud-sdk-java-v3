@@ -33,15 +33,15 @@ public class DeletePostalRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePostalRequest deletePostalRequest = (DeletePostalRequest) o;
-        return Objects.equals(this.addressId, deletePostalRequest.addressId);
+        DeletePostalRequest that = (DeletePostalRequest) obj;
+        return Objects.equals(this.addressId, that.addressId);
     }
 
     @Override

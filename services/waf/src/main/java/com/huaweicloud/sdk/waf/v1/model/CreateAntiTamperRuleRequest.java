@@ -87,17 +87,16 @@ public class CreateAntiTamperRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAntiTamperRuleRequest createAntiTamperRuleRequest = (CreateAntiTamperRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createAntiTamperRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, createAntiTamperRuleRequest.policyId)
-            && Objects.equals(this.body, createAntiTamperRuleRequest.body);
+        CreateAntiTamperRuleRequest that = (CreateAntiTamperRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * RuleRiskResponseRules
  */
-public class RuleRiskResponseRules  {
-
+public class RuleRiskResponseRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="feature")
-    
+    @JsonProperty(value = "feature")
 
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rank")
-    
+    @JsonProperty(value = "rank")
 
     private Integer rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="risk_level")
-    
+    @JsonProperty(value = "risk_level")
 
     private String riskLevel;
 
@@ -63,9 +49,6 @@ public class RuleRiskResponseRules  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则ID
@@ -79,15 +62,10 @@ public class RuleRiskResponseRules  {
         this.id = id;
     }
 
-    
-
     public RuleRiskResponseRules withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则名称
@@ -101,15 +79,10 @@ public class RuleRiskResponseRules  {
         this.name = name;
     }
 
-    
-
     public RuleRiskResponseRules withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 风险类型
@@ -123,15 +96,10 @@ public class RuleRiskResponseRules  {
         this.type = type;
     }
 
-    
-
     public RuleRiskResponseRules withFeature(String feature) {
         this.feature = feature;
         return this;
     }
-
-    
-
 
     /**
      * 风险特征
@@ -145,15 +113,10 @@ public class RuleRiskResponseRules  {
         this.feature = feature;
     }
 
-    
-
     public RuleRiskResponseRules withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则状态
@@ -167,15 +130,10 @@ public class RuleRiskResponseRules  {
         this.status = status;
     }
 
-    
-
     public RuleRiskResponseRules withRank(Integer rank) {
         this.rank = rank;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则优先级
@@ -189,15 +147,10 @@ public class RuleRiskResponseRules  {
         this.rank = rank;
     }
 
-    
-
     public RuleRiskResponseRules withRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
         return this;
     }
-
-    
-
 
     /**
      * 风险级别
@@ -211,29 +164,26 @@ public class RuleRiskResponseRules  {
         this.riskLevel = riskLevel;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleRiskResponseRules ruleRiskResponseRules = (RuleRiskResponseRules) o;
-        return Objects.equals(this.id, ruleRiskResponseRules.id) &&
-            Objects.equals(this.name, ruleRiskResponseRules.name) &&
-            Objects.equals(this.type, ruleRiskResponseRules.type) &&
-            Objects.equals(this.feature, ruleRiskResponseRules.feature) &&
-            Objects.equals(this.status, ruleRiskResponseRules.status) &&
-            Objects.equals(this.rank, ruleRiskResponseRules.rank) &&
-            Objects.equals(this.riskLevel, ruleRiskResponseRules.riskLevel);
+        RuleRiskResponseRules that = (RuleRiskResponseRules) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.rank, that.rank)
+            && Objects.equals(this.riskLevel, that.riskLevel);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, type, feature, status, rank, riskLevel);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class RuleRiskResponseRules  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class RuleRiskResponseRules  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

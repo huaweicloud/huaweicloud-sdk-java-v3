@@ -207,22 +207,18 @@ public class CreateAnticrawlerRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAnticrawlerRuleResponse createAnticrawlerRuleResponse = (CreateAnticrawlerRuleResponse) o;
-        return Objects.equals(this.id, createAnticrawlerRuleResponse.id)
-            && Objects.equals(this.policyid, createAnticrawlerRuleResponse.policyid)
-            && Objects.equals(this.conditions, createAnticrawlerRuleResponse.conditions)
-            && Objects.equals(this.name, createAnticrawlerRuleResponse.name)
-            && Objects.equals(this.type, createAnticrawlerRuleResponse.type)
-            && Objects.equals(this.timestamp, createAnticrawlerRuleResponse.timestamp)
-            && Objects.equals(this.status, createAnticrawlerRuleResponse.status)
-            && Objects.equals(this.priority, createAnticrawlerRuleResponse.priority);
+        CreateAnticrawlerRuleResponse that = (CreateAnticrawlerRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

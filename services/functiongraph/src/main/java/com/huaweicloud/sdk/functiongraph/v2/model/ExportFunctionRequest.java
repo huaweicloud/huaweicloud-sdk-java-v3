@@ -99,18 +99,16 @@ public class ExportFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportFunctionRequest exportFunctionRequest = (ExportFunctionRequest) o;
-        return Objects.equals(this.functionUrn, exportFunctionRequest.functionUrn)
-            && Objects.equals(this.config, exportFunctionRequest.config)
-            && Objects.equals(this.code, exportFunctionRequest.code)
-            && Objects.equals(this.type, exportFunctionRequest.type);
+        ExportFunctionRequest that = (ExportFunctionRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.type, that.type);
     }
 
     @Override

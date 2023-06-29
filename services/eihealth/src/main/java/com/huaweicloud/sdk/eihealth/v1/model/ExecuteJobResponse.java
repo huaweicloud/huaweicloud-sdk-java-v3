@@ -106,17 +106,16 @@ public class ExecuteJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteJobResponse executeJobResponse = (ExecuteJobResponse) o;
-        return Objects.equals(this.id, executeJobResponse.id)
-            && Objects.equals(this.appInfos, executeJobResponse.appInfos)
-            && Objects.equals(this.jobInfo, executeJobResponse.jobInfo);
+        ExecuteJobResponse that = (ExecuteJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.appInfos, that.appInfos)
+            && Objects.equals(this.jobInfo, that.jobInfo);
     }
 
     @Override

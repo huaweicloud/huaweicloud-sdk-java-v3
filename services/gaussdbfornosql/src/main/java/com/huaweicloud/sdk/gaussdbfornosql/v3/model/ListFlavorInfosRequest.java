@@ -77,17 +77,16 @@ public class ListFlavorInfosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorInfosRequest listFlavorInfosRequest = (ListFlavorInfosRequest) o;
-        return Objects.equals(this.engineName, listFlavorInfosRequest.engineName)
-            && Objects.equals(this.offset, listFlavorInfosRequest.offset)
-            && Objects.equals(this.limit, listFlavorInfosRequest.limit);
+        ListFlavorInfosRequest that = (ListFlavorInfosRequest) obj;
+        return Objects.equals(this.engineName, that.engineName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

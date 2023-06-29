@@ -77,16 +77,16 @@ public class DeleteTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTagRequest deleteTagRequest = (DeleteTagRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteTagRequest.eihealthProjectId)
-            && Objects.equals(this.imageId, deleteTagRequest.imageId) && Objects.equals(this.tag, deleteTagRequest.tag);
+        DeleteTagRequest that = (DeleteTagRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

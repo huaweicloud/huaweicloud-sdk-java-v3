@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ReplicationReq
  */
-public class ReplicationReq  {
-
+public class ReplicationReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
 
     private String replication;
 
@@ -27,9 +19,6 @@ public class ReplicationReq  {
         this.replication = replication;
         return this;
     }
-
-    
-
 
     /**
      * 新扩副本数量。
@@ -43,23 +32,23 @@ public class ReplicationReq  {
         this.replication = replication;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplicationReq replicationReq = (ReplicationReq) o;
-        return Objects.equals(this.replication, replicationReq.replication);
+        ReplicationReq that = (ReplicationReq) obj;
+        return Objects.equals(this.replication, that.replication);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(replication);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ReplicationReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ReplicationReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

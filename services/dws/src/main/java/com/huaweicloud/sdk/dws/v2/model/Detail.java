@@ -77,16 +77,16 @@ public class Detail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Detail detail = (Detail) o;
-        return Objects.equals(this.type, detail.type) && Objects.equals(this.value, detail.value)
-            && Objects.equals(this.unit, detail.unit);
+        Detail that = (Detail) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override

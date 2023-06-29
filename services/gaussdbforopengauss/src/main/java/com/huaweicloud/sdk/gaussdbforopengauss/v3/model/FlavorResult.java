@@ -1,69 +1,57 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 规格信息。
  */
-public class FlavorResult  {
-
+public class FlavorResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
 
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_status")
-    
+    @JsonProperty(value = "az_status")
+
     private Map<String, String> azStatus = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
+
     private List<String> availabilityZone = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_type")
-    
+    @JsonProperty(value = "group_type")
 
     private String groupType;
 
@@ -71,9 +59,6 @@ public class FlavorResult  {
         this.vcpus = vcpus;
         return this;
     }
-
-    
-
 
     /**
      * CPU个数。
@@ -87,15 +72,10 @@ public class FlavorResult  {
         this.vcpus = vcpus;
     }
 
-    
-
     public FlavorResult withRam(String ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存大小，单位为GB。
@@ -109,15 +89,10 @@ public class FlavorResult  {
         this.ram = ram;
     }
 
-    
-
     public FlavorResult withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
-
-    
-
 
     /**
      * 资源规格编码。例如：gaussdb.opengauss.ee.dn.m6.4xlarge.8.in。
@@ -131,17 +106,13 @@ public class FlavorResult  {
         this.specCode = specCode;
     }
 
-    
-
     public FlavorResult withAzStatus(Map<String, String> azStatus) {
         this.azStatus = azStatus;
         return this;
     }
 
-    
-
     public FlavorResult putAzStatusItem(String key, String azStatusItem) {
-        if(this.azStatus == null) {
+        if (this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         this.azStatus.put(key, azStatusItem);
@@ -149,12 +120,13 @@ public class FlavorResult  {
     }
 
     public FlavorResult withAzStatus(Consumer<Map<String, String>> azStatusSetter) {
-        if(this.azStatus == null) {
+        if (this.azStatus == null) {
             this.azStatus = new HashMap<>();
         }
         azStatusSetter.accept(this.azStatus);
         return this;
     }
+
     /**
      * 其中key是可用区编号，value是规格所在az的状态，包含以下状态： - normal，在售。 - unsupported，暂不支持该规格。 - sellout，售罄。
      * @return azStatus
@@ -167,16 +139,13 @@ public class FlavorResult  {
         this.azStatus = azStatus;
     }
 
-    
-
     public FlavorResult withAvailabilityZone(List<String> availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
 
-    
     public FlavorResult addAvailabilityZoneItem(String availabilityZoneItem) {
-        if(this.availabilityZone == null) {
+        if (this.availabilityZone == null) {
             this.availabilityZone = new ArrayList<>();
         }
         this.availabilityZone.add(availabilityZoneItem);
@@ -184,7 +153,7 @@ public class FlavorResult  {
     }
 
     public FlavorResult withAvailabilityZone(Consumer<List<String>> availabilityZoneSetter) {
-        if(this.availabilityZone == null) {
+        if (this.availabilityZone == null) {
             this.availabilityZone = new ArrayList<>();
         }
         availabilityZoneSetter.accept(this.availabilityZone);
@@ -203,15 +172,10 @@ public class FlavorResult  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public FlavorResult withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 数组形式版本号
@@ -225,15 +189,10 @@ public class FlavorResult  {
         this.version = version;
     }
 
-    
-
     public FlavorResult withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数组库引擎版本
@@ -247,15 +206,10 @@ public class FlavorResult  {
         this.name = name;
     }
 
-    
-
     public FlavorResult withGroupType(String groupType) {
         this.groupType = groupType;
         return this;
     }
-
-    
-
 
     /**
      * 性能规格，包含以下状态： - normal：通用增强型。 - normal2：通用增强Ⅱ型。 - armFlavors：鲲鹏通用增强型。 - dedicicatenormal ：x86独享型。 - armlocalssd：鲲鹏通用型。 - normallocalssd：x86通用型。 - general：通用型。 - dedicated：独享型，仅云盘SSD支持。 - rapid：独享型，仅极速型SSD支持。
@@ -269,30 +223,27 @@ public class FlavorResult  {
         this.groupType = groupType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorResult flavorResult = (FlavorResult) o;
-        return Objects.equals(this.vcpus, flavorResult.vcpus) &&
-            Objects.equals(this.ram, flavorResult.ram) &&
-            Objects.equals(this.specCode, flavorResult.specCode) &&
-            Objects.equals(this.azStatus, flavorResult.azStatus) &&
-            Objects.equals(this.availabilityZone, flavorResult.availabilityZone) &&
-            Objects.equals(this.version, flavorResult.version) &&
-            Objects.equals(this.name, flavorResult.name) &&
-            Objects.equals(this.groupType, flavorResult.groupType);
+        FlavorResult that = (FlavorResult) obj;
+        return Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.groupType, that.groupType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vcpus, ram, specCode, azStatus, availabilityZone, version, name, groupType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,6 +259,7 @@ public class FlavorResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -318,8 +270,5 @@ public class FlavorResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

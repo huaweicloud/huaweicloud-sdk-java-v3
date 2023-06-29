@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteBackup2Request  {
-
+public class DeleteBackup2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 
@@ -34,9 +24,6 @@ public class DeleteBackup2Request  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -50,15 +37,10 @@ public class DeleteBackup2Request  {
         this.graphId = graphId;
     }
 
-    
-
     public DeleteBackup2Request withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 图备份ID。
@@ -72,24 +54,23 @@ public class DeleteBackup2Request  {
         this.backupId = backupId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBackup2Request deleteBackup2Request = (DeleteBackup2Request) o;
-        return Objects.equals(this.graphId, deleteBackup2Request.graphId) &&
-            Objects.equals(this.backupId, deleteBackup2Request.backupId);
+        DeleteBackup2Request that = (DeleteBackup2Request) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.backupId, that.backupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, backupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteBackup2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteBackup2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

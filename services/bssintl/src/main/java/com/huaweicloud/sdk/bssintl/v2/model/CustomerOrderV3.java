@@ -373,30 +373,25 @@ public class CustomerOrderV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerOrderV3 customerOrderV3 = (CustomerOrderV3) o;
-        return Objects.equals(this.orderId, customerOrderV3.orderId)
-            && Objects.equals(this.customerId, customerOrderV3.customerId)
-            && Objects.equals(this.serviceTypeCode, customerOrderV3.serviceTypeCode)
-            && Objects.equals(this.serviceTypeName, customerOrderV3.serviceTypeName)
-            && Objects.equals(this.sourceType, customerOrderV3.sourceType)
-            && Objects.equals(this.status, customerOrderV3.status)
-            && Objects.equals(this.orderType, customerOrderV3.orderType)
-            && Objects.equals(this.amountAfterDiscount, customerOrderV3.amountAfterDiscount)
-            && Objects.equals(this.officialAmount, customerOrderV3.officialAmount)
-            && Objects.equals(this.measureId, customerOrderV3.measureId)
-            && Objects.equals(this.createTime, customerOrderV3.createTime)
-            && Objects.equals(this.paymentTime, customerOrderV3.paymentTime)
-            && Objects.equals(this.currency, customerOrderV3.currency)
-            && Objects.equals(this.contractId, customerOrderV3.contractId)
-            && Objects.equals(this.amountInfo, customerOrderV3.amountInfo)
-            && Objects.equals(this.userName, customerOrderV3.userName);
+        CustomerOrderV3 that = (CustomerOrderV3) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.orderType, that.orderType)
+            && Objects.equals(this.amountAfterDiscount, that.amountAfterDiscount)
+            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.paymentTime, that.paymentTime) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.contractId, that.contractId) && Objects.equals(this.amountInfo, that.amountInfo)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

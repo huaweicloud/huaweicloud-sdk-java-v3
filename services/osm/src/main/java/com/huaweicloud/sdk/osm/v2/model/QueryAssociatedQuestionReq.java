@@ -98,17 +98,16 @@ public class QueryAssociatedQuestionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAssociatedQuestionReq queryAssociatedQuestionReq = (QueryAssociatedQuestionReq) o;
-        return Objects.equals(this.question, queryAssociatedQuestionReq.question)
-            && Objects.equals(this.top, queryAssociatedQuestionReq.top)
-            && Objects.equals(this.domains, queryAssociatedQuestionReq.domains);
+        QueryAssociatedQuestionReq that = (QueryAssociatedQuestionReq) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.top, that.top)
+            && Objects.equals(this.domains, that.domains);
     }
 
     @Override

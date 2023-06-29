@@ -55,16 +55,15 @@ public class FlowUsageVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlowUsageVo flowUsageVo = (FlowUsageVo) o;
-        return Objects.equals(this.billingCycle, flowUsageVo.billingCycle)
-            && Objects.equals(this.flowUsed, flowUsageVo.flowUsed);
+        FlowUsageVo that = (FlowUsageVo) obj;
+        return Objects.equals(this.billingCycle, that.billingCycle) && Objects.equals(this.flowUsed, that.flowUsed);
     }
 
     @Override

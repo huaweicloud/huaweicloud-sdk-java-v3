@@ -55,16 +55,15 @@ public class ReduceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReduceRequest reduceRequest = (ReduceRequest) o;
-        return Objects.equals(this.nodeNumber, reduceRequest.nodeNumber)
-            && Objects.equals(this.groupId, reduceRequest.groupId);
+        ReduceRequest that = (ReduceRequest) obj;
+        return Objects.equals(this.nodeNumber, that.nodeNumber) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

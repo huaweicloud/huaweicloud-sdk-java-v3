@@ -1,60 +1,44 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ReplyRatesIntervals;
-import com.huaweicloud.sdk.cbs.v1.model.ReplyRatesTotal;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CollectReplyRatesResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interval")
-    
+    @JsonProperty(value = "interval")
 
     private String interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private ReplyRatesTotal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="intervals")
-    
+    @JsonProperty(value = "intervals")
 
     private ReplyRatesIntervals intervals;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startutc")
-    
+    @JsonProperty(value = "startutc")
 
     private Long startutc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endutc")
-    
+    @JsonProperty(value = "endutc")
 
     private Long endutc;
 
@@ -62,9 +46,6 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.interval = interval;
         return this;
     }
-
-    
-
 
     /**
      * 统计周期目前支持year、month、week、day。 调用失败时无此字段。
@@ -78,15 +59,10 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.interval = interval;
     }
 
-    
-
     public CollectReplyRatesResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
-
-    
-
 
     /**
      * 所在时区，例如：中国东八区为\"+08:00\"；美国西五区为\"-05:00\";默认为\"UTC\"。 调用失败时无此字段。
@@ -100,22 +76,19 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.timeZone = timeZone;
     }
 
-    
-
     public CollectReplyRatesResponse withTotal(ReplyRatesTotal total) {
         this.total = total;
         return this;
     }
 
     public CollectReplyRatesResponse withTotal(Consumer<ReplyRatesTotal> totalSetter) {
-        if(this.total == null ){
+        if (this.total == null) {
             this.total = new ReplyRatesTotal();
             totalSetter.accept(this.total);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get total
@@ -129,22 +102,19 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public CollectReplyRatesResponse withIntervals(ReplyRatesIntervals intervals) {
         this.intervals = intervals;
         return this;
     }
 
     public CollectReplyRatesResponse withIntervals(Consumer<ReplyRatesIntervals> intervalsSetter) {
-        if(this.intervals == null ){
+        if (this.intervals == null) {
             this.intervals = new ReplyRatesIntervals();
             intervalsSetter.accept(this.intervals);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get intervals
@@ -158,15 +128,10 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.intervals = intervals;
     }
 
-    
-
     public CollectReplyRatesResponse withStartutc(Long startutc) {
         this.startutc = startutc;
         return this;
     }
-
-    
-
 
     /**
      * 统计开始的utc时间。
@@ -180,15 +145,10 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.startutc = startutc;
     }
 
-    
-
     public CollectReplyRatesResponse withEndutc(Long endutc) {
         this.endutc = endutc;
         return this;
     }
-
-    
-
 
     /**
      * 统计结束的utc时间。
@@ -202,28 +162,25 @@ public class CollectReplyRatesResponse extends SdkResponse {
         this.endutc = endutc;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectReplyRatesResponse collectReplyRatesResponse = (CollectReplyRatesResponse) o;
-        return Objects.equals(this.interval, collectReplyRatesResponse.interval) &&
-            Objects.equals(this.timeZone, collectReplyRatesResponse.timeZone) &&
-            Objects.equals(this.total, collectReplyRatesResponse.total) &&
-            Objects.equals(this.intervals, collectReplyRatesResponse.intervals) &&
-            Objects.equals(this.startutc, collectReplyRatesResponse.startutc) &&
-            Objects.equals(this.endutc, collectReplyRatesResponse.endutc);
+        CollectReplyRatesResponse that = (CollectReplyRatesResponse) obj;
+        return Objects.equals(this.interval, that.interval) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.intervals, that.intervals)
+            && Objects.equals(this.startutc, that.startutc) && Objects.equals(this.endutc, that.endutc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(interval, timeZone, total, intervals, startutc, endutc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -237,6 +194,7 @@ public class CollectReplyRatesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -247,8 +205,5 @@ public class CollectReplyRatesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

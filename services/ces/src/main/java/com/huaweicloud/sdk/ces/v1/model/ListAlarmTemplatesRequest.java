@@ -121,19 +121,17 @@ public class ListAlarmTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmTemplatesRequest listAlarmTemplatesRequest = (ListAlarmTemplatesRequest) o;
-        return Objects.equals(this.alarmTemplateId, listAlarmTemplatesRequest.alarmTemplateId)
-            && Objects.equals(this.namespace, listAlarmTemplatesRequest.namespace)
-            && Objects.equals(this.dname, listAlarmTemplatesRequest.dname)
-            && Objects.equals(this.start, listAlarmTemplatesRequest.start)
-            && Objects.equals(this.limit, listAlarmTemplatesRequest.limit);
+        ListAlarmTemplatesRequest that = (ListAlarmTemplatesRequest) obj;
+        return Objects.equals(this.alarmTemplateId, that.alarmTemplateId)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dname, that.dname)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

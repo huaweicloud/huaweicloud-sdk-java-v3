@@ -34,15 +34,15 @@ public class StopDatabaseProxyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopDatabaseProxyResponse stopDatabaseProxyResponse = (StopDatabaseProxyResponse) o;
-        return Objects.equals(this.workflowId, stopDatabaseProxyResponse.workflowId);
+        StopDatabaseProxyResponse that = (StopDatabaseProxyResponse) obj;
+        return Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

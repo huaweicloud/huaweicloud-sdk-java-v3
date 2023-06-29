@@ -165,20 +165,19 @@ public class ParamGroupInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamGroupInfoResult paramGroupInfoResult = (ParamGroupInfoResult) o;
-        return Objects.equals(this.id, paramGroupInfoResult.id) && Objects.equals(this.name, paramGroupInfoResult.name)
-            && Objects.equals(this.description, paramGroupInfoResult.description)
-            && Objects.equals(this.datastoreVersion, paramGroupInfoResult.datastoreVersion)
-            && Objects.equals(this.datastoreName, paramGroupInfoResult.datastoreName)
-            && Objects.equals(this.created, paramGroupInfoResult.created)
-            && Objects.equals(this.updated, paramGroupInfoResult.updated);
+        ParamGroupInfoResult that = (ParamGroupInfoResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated);
     }
 
     @Override

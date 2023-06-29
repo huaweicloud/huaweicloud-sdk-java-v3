@@ -80,22 +80,15 @@ public class MicroserviceImportApiResp {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchModeEnum(value));
         }
 
         public static MatchModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,19 +196,17 @@ public class MicroserviceImportApiResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroserviceImportApiResp microserviceImportApiResp = (MicroserviceImportApiResp) o;
-        return Objects.equals(this.name, microserviceImportApiResp.name)
-            && Objects.equals(this.reqUri, microserviceImportApiResp.reqUri)
-            && Objects.equals(this.reqMethod, microserviceImportApiResp.reqMethod)
-            && Objects.equals(this.id, microserviceImportApiResp.id)
-            && Objects.equals(this.matchMode, microserviceImportApiResp.matchMode);
+        MicroserviceImportApiResp that = (MicroserviceImportApiResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.matchMode, that.matchMode);
     }
 
     @Override

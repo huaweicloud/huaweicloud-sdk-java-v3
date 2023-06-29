@@ -33,15 +33,15 @@ public class DeleteLoadbalancerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLoadbalancerRequest deleteLoadbalancerRequest = (DeleteLoadbalancerRequest) o;
-        return Objects.equals(this.loadbalancerId, deleteLoadbalancerRequest.loadbalancerId);
+        DeleteLoadbalancerRequest that = (DeleteLoadbalancerRequest) obj;
+        return Objects.equals(this.loadbalancerId, that.loadbalancerId);
     }
 
     @Override

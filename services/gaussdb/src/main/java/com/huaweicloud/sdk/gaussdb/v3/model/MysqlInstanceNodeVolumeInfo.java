@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 存储盘信息。
  */
-public class MysqlInstanceNodeVolumeInfo  {
-
+public class MysqlInstanceNodeVolumeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
 
     private String used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Long size;
 
@@ -39,9 +29,6 @@ public class MysqlInstanceNodeVolumeInfo  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘类型。
@@ -55,15 +42,10 @@ public class MysqlInstanceNodeVolumeInfo  {
         this.type = type;
     }
 
-    
-
     public MysqlInstanceNodeVolumeInfo withUsed(String used) {
         this.used = used;
         return this;
     }
-
-    
-
 
     /**
      * 已使用磁盘大小，单位GB。
@@ -77,15 +59,10 @@ public class MysqlInstanceNodeVolumeInfo  {
         this.used = used;
     }
 
-    
-
     public MysqlInstanceNodeVolumeInfo withSize(Long size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 包周期购买的存储空间大小，单位GB。
@@ -99,25 +76,24 @@ public class MysqlInstanceNodeVolumeInfo  {
         this.size = size;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlInstanceNodeVolumeInfo mysqlInstanceNodeVolumeInfo = (MysqlInstanceNodeVolumeInfo) o;
-        return Objects.equals(this.type, mysqlInstanceNodeVolumeInfo.type) &&
-            Objects.equals(this.used, mysqlInstanceNodeVolumeInfo.used) &&
-            Objects.equals(this.size, mysqlInstanceNodeVolumeInfo.size);
+        MysqlInstanceNodeVolumeInfo that = (MysqlInstanceNodeVolumeInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.size, that.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class MysqlInstanceNodeVolumeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class MysqlInstanceNodeVolumeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -93,22 +93,15 @@ public class QueryInstanceBackupResponseBodyBackups {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class QueryInstanceBackupResponseBodyBackups {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -430,26 +416,20 @@ public class QueryInstanceBackupResponseBodyBackups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryInstanceBackupResponseBodyBackups queryInstanceBackupResponseBodyBackups =
-            (QueryInstanceBackupResponseBodyBackups) o;
-        return Objects.equals(this.id, queryInstanceBackupResponseBodyBackups.id)
-            && Objects.equals(this.name, queryInstanceBackupResponseBodyBackups.name)
-            && Objects.equals(this.description, queryInstanceBackupResponseBodyBackups.description)
-            && Objects.equals(this.beginTime, queryInstanceBackupResponseBodyBackups.beginTime)
-            && Objects.equals(this.endTime, queryInstanceBackupResponseBodyBackups.endTime)
-            && Objects.equals(this.status, queryInstanceBackupResponseBodyBackups.status)
-            && Objects.equals(this.size, queryInstanceBackupResponseBodyBackups.size)
-            && Objects.equals(this.type, queryInstanceBackupResponseBodyBackups.type)
-            && Objects.equals(this.instanceId, queryInstanceBackupResponseBodyBackups.instanceId)
-            && Objects.equals(this.instanceName, queryInstanceBackupResponseBodyBackups.instanceName)
-            && Objects.equals(this.datastore, queryInstanceBackupResponseBodyBackups.datastore);
+        QueryInstanceBackupResponseBodyBackups that = (QueryInstanceBackupResponseBodyBackups) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.datastore, that.datastore);
     }
 
     @Override

@@ -127,16 +127,16 @@ public class QosInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosInfo qosInfo = (QosInfo) o;
-        return Objects.equals(this.type, qosInfo.type) && Objects.equals(this.send, qosInfo.send)
-            && Objects.equals(this.receive, qosInfo.receive) && Objects.equals(this.cpu, qosInfo.cpu);
+        QosInfo that = (QosInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.send, that.send)
+            && Objects.equals(this.receive, that.receive) && Objects.equals(this.cpu, that.cpu);
     }
 
     @Override

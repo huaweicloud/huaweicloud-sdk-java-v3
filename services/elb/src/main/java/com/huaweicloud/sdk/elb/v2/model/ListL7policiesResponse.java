@@ -53,15 +53,15 @@ public class ListL7policiesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListL7policiesResponse listL7policiesResponse = (ListL7policiesResponse) o;
-        return Objects.equals(this.l7policies, listL7policiesResponse.l7policies);
+        ListL7policiesResponse that = (ListL7policiesResponse) obj;
+        return Objects.equals(this.l7policies, that.l7policies);
     }
 
     @Override

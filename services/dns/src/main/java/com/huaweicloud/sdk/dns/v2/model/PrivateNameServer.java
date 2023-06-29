@@ -55,16 +55,15 @@ public class PrivateNameServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivateNameServer privateNameServer = (PrivateNameServer) o;
-        return Objects.equals(this.priority, privateNameServer.priority)
-            && Objects.equals(this.address, privateNameServer.address);
+        PrivateNameServer that = (PrivateNameServer) obj;
+        return Objects.equals(this.priority, that.priority) && Objects.equals(this.address, that.address);
     }
 
     @Override

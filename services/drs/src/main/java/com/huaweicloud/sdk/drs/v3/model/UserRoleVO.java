@@ -162,19 +162,17 @@ public class UserRoleVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserRoleVO userRoleVO = (UserRoleVO) o;
-        return Objects.equals(this.role, userRoleVO.role) && Objects.equals(this.comment, userRoleVO.comment)
-            && Objects.equals(this.isTransfer, userRoleVO.isTransfer)
-            && Objects.equals(this.privileges, userRoleVO.privileges)
-            && Objects.equals(this.inheritsRoles, userRoleVO.inheritsRoles)
-            && Objects.equals(this.selected, userRoleVO.selected);
+        UserRoleVO that = (UserRoleVO) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.isTransfer, that.isTransfer) && Objects.equals(this.privileges, that.privileges)
+            && Objects.equals(this.inheritsRoles, that.inheritsRoles) && Objects.equals(this.selected, that.selected);
     }
 
     @Override

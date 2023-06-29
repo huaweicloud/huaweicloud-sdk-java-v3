@@ -248,23 +248,20 @@ public class UpdatePubInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePubInfoRequestBody updatePubInfoRequestBody = (UpdatePubInfoRequestBody) o;
-        return Objects.equals(this.changeReason, updatePubInfoRequestBody.changeReason)
-            && Objects.equals(this.logoImg, updatePubInfoRequestBody.logoImg)
-            && Objects.equals(this.authorizationFiles, updatePubInfoRequestBody.authorizationFiles)
-            && Objects.equals(this.pubName, updatePubInfoRequestBody.pubName)
-            && Objects.equals(this.pubAbstract, updatePubInfoRequestBody.pubAbstract)
-            && Objects.equals(this.pubRemark, updatePubInfoRequestBody.pubRemark)
-            && Objects.equals(this.autoGetPort, updatePubInfoRequestBody.autoGetPort)
-            && Objects.equals(this.signsForAutoGetPort, updatePubInfoRequestBody.signsForAutoGetPort)
-            && Objects.equals(this.industry, updatePubInfoRequestBody.industry);
+        UpdatePubInfoRequestBody that = (UpdatePubInfoRequestBody) obj;
+        return Objects.equals(this.changeReason, that.changeReason) && Objects.equals(this.logoImg, that.logoImg)
+            && Objects.equals(this.authorizationFiles, that.authorizationFiles)
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.pubAbstract, that.pubAbstract)
+            && Objects.equals(this.pubRemark, that.pubRemark) && Objects.equals(this.autoGetPort, that.autoGetPort)
+            && Objects.equals(this.signsForAutoGetPort, that.signsForAutoGetPort)
+            && Objects.equals(this.industry, that.industry);
     }
 
     @Override

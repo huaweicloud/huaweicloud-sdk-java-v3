@@ -319,28 +319,27 @@ public class StatisticParticipateDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticParticipateDataItem statisticParticipateDataItem = (StatisticParticipateDataItem) o;
-        return Objects.equals(this.time, statisticParticipateDataItem.time)
-            && Objects.equals(this.confUserName, statisticParticipateDataItem.confUserName)
-            && Objects.equals(this.confUserAccount, statisticParticipateDataItem.confUserAccount)
-            && Objects.equals(this.confUserDeptName, statisticParticipateDataItem.confUserDeptName)
-            && Objects.equals(this.confUserCount, statisticParticipateDataItem.confUserCount)
-            && Objects.equals(this.confUserDuration, statisticParticipateDataItem.confUserDuration)
-            && Objects.equals(this.confHardTerminalName, statisticParticipateDataItem.confHardTerminalName)
-            && Objects.equals(this.confHardTerminalModel, statisticParticipateDataItem.confHardTerminalModel)
-            && Objects.equals(this.confHardTerminalUserId, statisticParticipateDataItem.confHardTerminalUserId)
-            && Objects.equals(this.confHardTerminalCount, statisticParticipateDataItem.confHardTerminalCount)
-            && Objects.equals(this.confHardTerminalDuration, statisticParticipateDataItem.confHardTerminalDuration)
-            && Objects.equals(this.deviceType, statisticParticipateDataItem.deviceType)
-            && Objects.equals(this.deviceVersion, statisticParticipateDataItem.deviceVersion)
-            && Objects.equals(this.deviceAttendanceCount, statisticParticipateDataItem.deviceAttendanceCount);
+        StatisticParticipateDataItem that = (StatisticParticipateDataItem) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.confUserName, that.confUserName)
+            && Objects.equals(this.confUserAccount, that.confUserAccount)
+            && Objects.equals(this.confUserDeptName, that.confUserDeptName)
+            && Objects.equals(this.confUserCount, that.confUserCount)
+            && Objects.equals(this.confUserDuration, that.confUserDuration)
+            && Objects.equals(this.confHardTerminalName, that.confHardTerminalName)
+            && Objects.equals(this.confHardTerminalModel, that.confHardTerminalModel)
+            && Objects.equals(this.confHardTerminalUserId, that.confHardTerminalUserId)
+            && Objects.equals(this.confHardTerminalCount, that.confHardTerminalCount)
+            && Objects.equals(this.confHardTerminalDuration, that.confHardTerminalDuration)
+            && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.deviceVersion, that.deviceVersion)
+            && Objects.equals(this.deviceAttendanceCount, that.deviceAttendanceCount);
     }
 
     @Override

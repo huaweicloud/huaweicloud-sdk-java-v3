@@ -96,17 +96,16 @@ public class ResizeDesktopReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeDesktopReq resizeDesktopReq = (ResizeDesktopReq) o;
-        return Objects.equals(this.desktops, resizeDesktopReq.desktops)
-            && Objects.equals(this.productId, resizeDesktopReq.productId)
-            && Objects.equals(this.mode, resizeDesktopReq.mode);
+        ResizeDesktopReq that = (ResizeDesktopReq) obj;
+        return Objects.equals(this.desktops, that.desktops) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override

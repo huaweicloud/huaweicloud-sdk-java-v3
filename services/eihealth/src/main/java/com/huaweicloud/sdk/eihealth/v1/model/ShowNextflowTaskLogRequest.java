@@ -77,17 +77,16 @@ public class ShowNextflowTaskLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowTaskLogRequest showNextflowTaskLogRequest = (ShowNextflowTaskLogRequest) o;
-        return Objects.equals(this.eihealthProjectId, showNextflowTaskLogRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showNextflowTaskLogRequest.jobId)
-            && Objects.equals(this.taskId, showNextflowTaskLogRequest.taskId);
+        ShowNextflowTaskLogRequest that = (ShowNextflowTaskLogRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

@@ -181,20 +181,17 @@ public class ShowHistoryDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHistoryDetailsResponse showHistoryDetailsResponse = (ShowHistoryDetailsResponse) o;
-        return Objects.equals(this.jobName, showHistoryDetailsResponse.jobName)
-            && Objects.equals(this.buildNumber, showHistoryDetailsResponse.buildNumber)
-            && Objects.equals(this.projectId, showHistoryDetailsResponse.projectId)
-            && Objects.equals(this.projectName, showHistoryDetailsResponse.projectName)
-            && Objects.equals(this.parameters, showHistoryDetailsResponse.parameters)
-            && Objects.equals(this.buildSteps, showHistoryDetailsResponse.buildSteps);
+        ShowHistoryDetailsResponse that = (ShowHistoryDetailsResponse) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.buildNumber, that.buildNumber)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.buildSteps, that.buildSteps);
     }
 
     @Override

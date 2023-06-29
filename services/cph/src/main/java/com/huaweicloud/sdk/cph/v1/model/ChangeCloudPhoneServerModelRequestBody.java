@@ -111,19 +111,18 @@ public class ChangeCloudPhoneServerModelRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeCloudPhoneServerModelRequestBody changeCloudPhoneServerModelRequestBody =
-            (ChangeCloudPhoneServerModelRequestBody) o;
-        return Objects.equals(this.serverId, changeCloudPhoneServerModelRequestBody.serverId)
-            && Objects.equals(this.serverModelName, changeCloudPhoneServerModelRequestBody.serverModelName)
-            && Objects.equals(this.phoneModelName, changeCloudPhoneServerModelRequestBody.phoneModelName)
-            && Objects.equals(this.extendParam, changeCloudPhoneServerModelRequestBody.extendParam);
+        ChangeCloudPhoneServerModelRequestBody that = (ChangeCloudPhoneServerModelRequestBody) obj;
+        return Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName)
+            && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override

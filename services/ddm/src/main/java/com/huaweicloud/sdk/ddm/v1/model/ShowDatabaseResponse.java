@@ -44,15 +44,15 @@ public class ShowDatabaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseResponse showDatabaseResponse = (ShowDatabaseResponse) o;
-        return Objects.equals(this.database, showDatabaseResponse.database);
+        ShowDatabaseResponse that = (ShowDatabaseResponse) obj;
+        return Objects.equals(this.database, that.database);
     }
 
     @Override

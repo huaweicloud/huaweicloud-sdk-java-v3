@@ -1,121 +1,97 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 图备份
  */
-public class Backup  {
-
+public class Backup {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backupMethod")
-    
+    @JsonProperty(value = "backupMethod")
 
     private String backupMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphId")
-    
+    @JsonProperty(value = "graphId")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphName")
-    
+    @JsonProperty(value = "graphName")
 
     private String graphName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphStatus")
-    
+    @JsonProperty(value = "graphStatus")
 
     private String graphStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphSizeTypeIndex")
-    
+    @JsonProperty(value = "graphSizeTypeIndex")
 
     private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataStoreVersion")
-    
+    @JsonProperty(value = "dataStoreVersion")
 
     private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTimestamp")
-    
+    @JsonProperty(value = "startTimestamp")
 
     private Long startTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startTime")
-    
+    @JsonProperty(value = "startTime")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTimestamp")
-    
+    @JsonProperty(value = "endTimestamp")
 
     private Long endTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
 
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
@@ -123,9 +99,6 @@ public class Backup  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -139,15 +112,10 @@ public class Backup  {
         this.id = id;
     }
 
-    
-
     public Backup withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 备份名称。
@@ -161,15 +129,10 @@ public class Backup  {
         this.name = name;
     }
 
-    
-
     public Backup withBackupMethod(String backupMethod) {
         this.backupMethod = backupMethod;
         return this;
     }
-
-    
-
 
     /**
      * 备份方法，取值为auto或manual。
@@ -183,15 +146,10 @@ public class Backup  {
         this.backupMethod = backupMethod;
     }
 
-    
-
     public Backup withGraphId(String graphId) {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图ID。
@@ -205,15 +163,10 @@ public class Backup  {
         this.graphId = graphId;
     }
 
-    
-
     public Backup withGraphName(String graphName) {
         this.graphName = graphName;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图Name。
@@ -227,15 +180,10 @@ public class Backup  {
         this.graphName = graphName;
     }
 
-    
-
     public Backup withGraphStatus(String graphStatus) {
         this.graphStatus = graphStatus;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图状态。
@@ -249,15 +197,10 @@ public class Backup  {
         this.graphStatus = graphStatus;
     }
 
-    
-
     public Backup withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图规格。
@@ -271,15 +214,10 @@ public class Backup  {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 
-    
-
     public Backup withDataStoreVersion(String dataStoreVersion) {
         this.dataStoreVersion = dataStoreVersion;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图版本。
@@ -293,15 +231,10 @@ public class Backup  {
         this.dataStoreVersion = dataStoreVersion;
     }
 
-    
-
     public Backup withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图CPU架构。
@@ -315,15 +248,10 @@ public class Backup  {
         this.arch = arch;
     }
 
-    
-
     public Backup withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 备份状态。  - backing_up：备份中 - success：备份成功 - failed：备份失败
@@ -337,15 +265,10 @@ public class Backup  {
         this.status = status;
     }
 
-    
-
     public Backup withStartTimestamp(Long startTimestamp) {
         this.startTimestamp = startTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 备份开始时间戳。
@@ -359,15 +282,10 @@ public class Backup  {
         this.startTimestamp = startTimestamp;
     }
 
-    
-
     public Backup withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份时间。
@@ -381,15 +299,10 @@ public class Backup  {
         this.startTime = startTime;
     }
 
-    
-
     public Backup withEndTimestamp(Long endTimestamp) {
         this.endTimestamp = endTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 备份结束时间戳。
@@ -403,15 +316,10 @@ public class Backup  {
         this.endTimestamp = endTimestamp;
     }
 
-    
-
     public Backup withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份时间。
@@ -425,15 +333,10 @@ public class Backup  {
         this.endTime = endTime;
     }
 
-    
-
     public Backup withSize(Long size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 备份文件大小，单位为MB。
@@ -447,15 +350,10 @@ public class Backup  {
         this.size = size;
     }
 
-    
-
     public Backup withDuration(Long duration) {
         this.duration = duration;
         return this;
     }
-
-    
-
 
     /**
      * 备份时间，单位为秒。
@@ -469,15 +367,10 @@ public class Backup  {
         this.duration = duration;
     }
 
-    
-
     public Backup withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 是否加密。true表示加密，默认值为\"false\"，不加密。
@@ -491,39 +384,47 @@ public class Backup  {
         this.encrypted = encrypted;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Backup backup = (Backup) o;
-        return Objects.equals(this.id, backup.id) &&
-            Objects.equals(this.name, backup.name) &&
-            Objects.equals(this.backupMethod, backup.backupMethod) &&
-            Objects.equals(this.graphId, backup.graphId) &&
-            Objects.equals(this.graphName, backup.graphName) &&
-            Objects.equals(this.graphStatus, backup.graphStatus) &&
-            Objects.equals(this.graphSizeTypeIndex, backup.graphSizeTypeIndex) &&
-            Objects.equals(this.dataStoreVersion, backup.dataStoreVersion) &&
-            Objects.equals(this.arch, backup.arch) &&
-            Objects.equals(this.status, backup.status) &&
-            Objects.equals(this.startTimestamp, backup.startTimestamp) &&
-            Objects.equals(this.startTime, backup.startTime) &&
-            Objects.equals(this.endTimestamp, backup.endTimestamp) &&
-            Objects.equals(this.endTime, backup.endTime) &&
-            Objects.equals(this.size, backup.size) &&
-            Objects.equals(this.duration, backup.duration) &&
-            Objects.equals(this.encrypted, backup.encrypted);
+        Backup that = (Backup) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backupMethod, that.backupMethod) && Objects.equals(this.graphId, that.graphId)
+            && Objects.equals(this.graphName, that.graphName) && Objects.equals(this.graphStatus, that.graphStatus)
+            && Objects.equals(this.graphSizeTypeIndex, that.graphSizeTypeIndex)
+            && Objects.equals(this.dataStoreVersion, that.dataStoreVersion) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTimestamp, that.startTimestamp)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTimestamp, that.endTimestamp)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.encrypted, that.encrypted);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, backupMethod, graphId, graphName, graphStatus, graphSizeTypeIndex, dataStoreVersion, arch, status, startTimestamp, startTime, endTimestamp, endTime, size, duration, encrypted);
+        return Objects.hash(id,
+            name,
+            backupMethod,
+            graphId,
+            graphName,
+            graphStatus,
+            graphSizeTypeIndex,
+            dataStoreVersion,
+            arch,
+            status,
+            startTimestamp,
+            startTime,
+            endTimestamp,
+            endTime,
+            size,
+            duration,
+            encrypted);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,6 +449,7 @@ public class Backup  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -558,8 +460,5 @@ public class Backup  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,17 +77,16 @@ public class QuotaDetailVolumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailVolumes quotaDetailVolumes = (QuotaDetailVolumes) o;
-        return Objects.equals(this.inUse, quotaDetailVolumes.inUse)
-            && Objects.equals(this.limit, quotaDetailVolumes.limit)
-            && Objects.equals(this.reserved, quotaDetailVolumes.reserved);
+        QuotaDetailVolumes that = (QuotaDetailVolumes) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

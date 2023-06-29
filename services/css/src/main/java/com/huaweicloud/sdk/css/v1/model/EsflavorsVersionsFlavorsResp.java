@@ -165,21 +165,18 @@ public class EsflavorsVersionsFlavorsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EsflavorsVersionsFlavorsResp esflavorsVersionsFlavorsResp = (EsflavorsVersionsFlavorsResp) o;
-        return Objects.equals(this.cpu, esflavorsVersionsFlavorsResp.cpu)
-            && Objects.equals(this.ram, esflavorsVersionsFlavorsResp.ram)
-            && Objects.equals(this.name, esflavorsVersionsFlavorsResp.name)
-            && Objects.equals(this.region, esflavorsVersionsFlavorsResp.region)
-            && Objects.equals(this.diskrange, esflavorsVersionsFlavorsResp.diskrange)
-            && Objects.equals(this.availableAZ, esflavorsVersionsFlavorsResp.availableAZ)
-            && Objects.equals(this.flavorId, esflavorsVersionsFlavorsResp.flavorId);
+        EsflavorsVersionsFlavorsResp that = (EsflavorsVersionsFlavorsResp) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.diskrange, that.diskrange) && Objects.equals(this.availableAZ, that.availableAZ)
+            && Objects.equals(this.flavorId, that.flavorId);
     }
 
     @Override

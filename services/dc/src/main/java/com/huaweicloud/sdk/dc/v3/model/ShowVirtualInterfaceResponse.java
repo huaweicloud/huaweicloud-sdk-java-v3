@@ -66,16 +66,16 @@ public class ShowVirtualInterfaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVirtualInterfaceResponse showVirtualInterfaceResponse = (ShowVirtualInterfaceResponse) o;
-        return Objects.equals(this.requestId, showVirtualInterfaceResponse.requestId)
-            && Objects.equals(this.virtualInterface, showVirtualInterfaceResponse.virtualInterface);
+        ShowVirtualInterfaceResponse that = (ShowVirtualInterfaceResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.virtualInterface, that.virtualInterface);
     }
 
     @Override

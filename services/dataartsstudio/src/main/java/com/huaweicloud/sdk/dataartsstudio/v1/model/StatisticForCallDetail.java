@@ -165,21 +165,18 @@ public class StatisticForCallDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticForCallDetail statisticForCallDetail = (StatisticForCallDetail) o;
-        return Objects.equals(this.id, statisticForCallDetail.id)
-            && Objects.equals(this.name, statisticForCallDetail.name)
-            && Objects.equals(this.callNum, statisticForCallDetail.callNum)
-            && Objects.equals(this.successNum, statisticForCallDetail.successNum)
-            && Objects.equals(this.failNum, statisticForCallDetail.failNum)
-            && Objects.equals(this.legalNum, statisticForCallDetail.legalNum)
-            && Objects.equals(this.illegalNum, statisticForCallDetail.illegalNum);
+        StatisticForCallDetail that = (StatisticForCallDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.callNum, that.callNum) && Objects.equals(this.successNum, that.successNum)
+            && Objects.equals(this.failNum, that.failNum) && Objects.equals(this.legalNum, that.legalNum)
+            && Objects.equals(this.illegalNum, that.illegalNum);
     }
 
     @Override

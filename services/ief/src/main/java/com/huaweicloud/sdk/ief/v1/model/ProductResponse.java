@@ -312,24 +312,20 @@ public class ProductResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductResponse productResponse = (ProductResponse) o;
-        return Objects.equals(this.id, productResponse.id) && Objects.equals(this.name, productResponse.name)
-            && Objects.equals(this.description, productResponse.description)
-            && Objects.equals(this.attributes, productResponse.attributes)
-            && Objects.equals(this.projectId, productResponse.projectId)
-            && Objects.equals(this.createdAt, productResponse.createdAt)
-            && Objects.equals(this.tags, productResponse.tags)
-            && Objects.equals(this.privateKey, productResponse.privateKey)
-            && Objects.equals(this.certificate, productResponse.certificate)
-            && Objects.equals(this.ca, productResponse.ca) && Objects.equals(this._package, productResponse._package)
-            && Objects.equals(this.identifier, productResponse.identifier);
+        ProductResponse that = (ProductResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.ca, that.ca)
+            && Objects.equals(this._package, that._package) && Objects.equals(this.identifier, that.identifier);
     }
 
     @Override

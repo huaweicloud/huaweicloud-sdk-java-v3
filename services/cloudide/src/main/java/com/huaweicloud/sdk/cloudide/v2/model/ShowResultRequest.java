@@ -33,15 +33,15 @@ public class ShowResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResultRequest showResultRequest = (ShowResultRequest) o;
-        return Objects.equals(this.requestId, showResultRequest.requestId);
+        ShowResultRequest that = (ShowResultRequest) obj;
+        return Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

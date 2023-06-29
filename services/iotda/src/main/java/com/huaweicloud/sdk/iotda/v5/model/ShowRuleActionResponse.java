@@ -132,19 +132,17 @@ public class ShowRuleActionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRuleActionResponse showRuleActionResponse = (ShowRuleActionResponse) o;
-        return Objects.equals(this.actionId, showRuleActionResponse.actionId)
-            && Objects.equals(this.ruleId, showRuleActionResponse.ruleId)
-            && Objects.equals(this.appId, showRuleActionResponse.appId)
-            && Objects.equals(this.channel, showRuleActionResponse.channel)
-            && Objects.equals(this.channelDetail, showRuleActionResponse.channelDetail);
+        ShowRuleActionResponse that = (ShowRuleActionResponse) obj;
+        return Objects.equals(this.actionId, that.actionId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.channel, that.channel)
+            && Objects.equals(this.channelDetail, that.channelDetail);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateMessageTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMessageTemplateRequest updateMessageTemplateRequest = (UpdateMessageTemplateRequest) o;
-        return Objects.equals(this.messageTemplateId, updateMessageTemplateRequest.messageTemplateId)
-            && Objects.equals(this.body, updateMessageTemplateRequest.body);
+        UpdateMessageTemplateRequest that = (UpdateMessageTemplateRequest) obj;
+        return Objects.equals(this.messageTemplateId, that.messageTemplateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

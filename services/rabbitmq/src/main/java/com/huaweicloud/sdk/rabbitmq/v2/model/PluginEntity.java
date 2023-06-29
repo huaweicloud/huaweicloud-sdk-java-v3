@@ -99,16 +99,16 @@ public class PluginEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginEntity pluginEntity = (PluginEntity) o;
-        return Objects.equals(this.running, pluginEntity.running) && Objects.equals(this.enable, pluginEntity.enable)
-            && Objects.equals(this.name, pluginEntity.name) && Objects.equals(this.version, pluginEntity.version);
+        PluginEntity that = (PluginEntity) obj;
+        return Objects.equals(this.running, that.running) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version);
     }
 
     @Override

@@ -118,16 +118,16 @@ public class QosQualityData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosQualityData qosQualityData = (QosQualityData) o;
-        return Objects.equals(this.uid, qosQualityData.uid) && Objects.equals(this.peerid, qosQualityData.peerid)
-            && Objects.equals(this.mid, qosQualityData.mid) && Objects.equals(this.data, qosQualityData.data);
+        QosQualityData that = (QosQualityData) obj;
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.peerid, that.peerid)
+            && Objects.equals(this.mid, that.mid) && Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -89,17 +89,16 @@ public class SetBinlogClearPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBinlogClearPolicyRequest setBinlogClearPolicyRequest = (SetBinlogClearPolicyRequest) o;
-        return Objects.equals(this.xLanguage, setBinlogClearPolicyRequest.xLanguage)
-            && Objects.equals(this.instanceId, setBinlogClearPolicyRequest.instanceId)
-            && Objects.equals(this.body, setBinlogClearPolicyRequest.body);
+        SetBinlogClearPolicyRequest that = (SetBinlogClearPolicyRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

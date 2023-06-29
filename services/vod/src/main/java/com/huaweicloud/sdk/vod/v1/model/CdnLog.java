@@ -143,17 +143,17 @@ public class CdnLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdnLog cdnLog = (CdnLog) o;
-        return Objects.equals(this.domainName, cdnLog.domainName) && Objects.equals(this.startTime, cdnLog.startTime)
-            && Objects.equals(this.endTime, cdnLog.endTime) && Objects.equals(this.name, cdnLog.name)
-            && Objects.equals(this.size, cdnLog.size) && Objects.equals(this.link, cdnLog.link);
+        CdnLog that = (CdnLog) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.link, that.link);
     }
 
     @Override

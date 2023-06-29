@@ -128,18 +128,16 @@ public class ShowUserRepositoryAuthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserRepositoryAuthResponse showUserRepositoryAuthResponse = (ShowUserRepositoryAuthResponse) o;
-        return Objects.equals(this.id, showUserRepositoryAuthResponse.id)
-            && Objects.equals(this.name, showUserRepositoryAuthResponse.name)
-            && Objects.equals(this.selfAuth, showUserRepositoryAuthResponse.selfAuth)
-            && Objects.equals(this.othersAuths, showUserRepositoryAuthResponse.othersAuths);
+        ShowUserRepositoryAuthResponse that = (ShowUserRepositoryAuthResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.selfAuth, that.selfAuth) && Objects.equals(this.othersAuths, that.othersAuths);
     }
 
     @Override

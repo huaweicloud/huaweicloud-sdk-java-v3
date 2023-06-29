@@ -187,21 +187,18 @@ public class SchedulerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchedulerInfo schedulerInfo = (SchedulerInfo) o;
-        return Objects.equals(this.cronExpression, schedulerInfo.cronExpression)
-            && Objects.equals(this.endTime, schedulerInfo.endTime)
-            && Objects.equals(this.maxTimeOut, schedulerInfo.maxTimeOut)
-            && Objects.equals(this.interval, schedulerInfo.interval)
-            && Objects.equals(this.scheduleType, schedulerInfo.scheduleType)
-            && Objects.equals(this.startTime, schedulerInfo.startTime)
-            && Objects.equals(this.jobId, schedulerInfo.jobId) && Objects.equals(this.enabled, schedulerInfo.enabled);
+        SchedulerInfo that = (SchedulerInfo) obj;
+        return Objects.equals(this.cronExpression, that.cronExpression) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.maxTimeOut, that.maxTimeOut) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.scheduleType, that.scheduleType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

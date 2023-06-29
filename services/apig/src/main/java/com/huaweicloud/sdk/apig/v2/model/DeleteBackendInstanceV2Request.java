@@ -77,17 +77,16 @@ public class DeleteBackendInstanceV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBackendInstanceV2Request deleteBackendInstanceV2Request = (DeleteBackendInstanceV2Request) o;
-        return Objects.equals(this.instanceId, deleteBackendInstanceV2Request.instanceId)
-            && Objects.equals(this.vpcChannelId, deleteBackendInstanceV2Request.vpcChannelId)
-            && Objects.equals(this.memberId, deleteBackendInstanceV2Request.memberId);
+        DeleteBackendInstanceV2Request that = (DeleteBackendInstanceV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.memberId, that.memberId);
     }
 
     @Override

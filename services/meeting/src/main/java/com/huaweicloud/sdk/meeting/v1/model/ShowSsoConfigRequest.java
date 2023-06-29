@@ -57,16 +57,16 @@ public class ShowSsoConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSsoConfigRequest showSsoConfigRequest = (ShowSsoConfigRequest) o;
-        return Objects.equals(this.xRequestId, showSsoConfigRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showSsoConfigRequest.acceptLanguage);
+        ShowSsoConfigRequest that = (ShowSsoConfigRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage);
     }
 
     @Override

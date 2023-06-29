@@ -79,22 +79,15 @@ public class ShowEngineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,22 +234,15 @@ public class ShowEngineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -380,22 +366,16 @@ public class ShowEngineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EngineAdditionalActionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineAdditionalActionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new EngineAdditionalActionsEnum(value));
         }
 
         public static EngineAdditionalActionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineAdditionalActionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -418,8 +398,8 @@ public class ShowEngineResponse extends SdkResponse {
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
-    * 微服务引擎专享版应用部署类型
-    */
+     * 微服务引擎专享版应用部署类型
+     */
     public static final class SpecTypeEnum {
 
         /**
@@ -468,22 +448,15 @@ public class ShowEngineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecTypeEnum(value));
         }
 
         public static SpecTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -550,22 +523,15 @@ public class ShowEngineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1049,36 +1015,28 @@ public class ShowEngineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEngineResponse showEngineResponse = (ShowEngineResponse) o;
-        return Objects.equals(this.id, showEngineResponse.id) && Objects.equals(this.name, showEngineResponse.name)
-            && Objects.equals(this.description, showEngineResponse.description)
-            && Objects.equals(this.authType, showEngineResponse.authType)
-            && Objects.equals(this.flavor, showEngineResponse.flavor)
-            && Objects.equals(this.payment, showEngineResponse.payment)
-            && Objects.equals(this.version, showEngineResponse.version)
-            && Objects.equals(this.latestVersion, showEngineResponse.latestVersion)
-            && Objects.equals(this.status, showEngineResponse.status)
-            && Objects.equals(this.beDefault, showEngineResponse.beDefault)
-            && Objects.equals(this.createUser, showEngineResponse.createUser)
-            && Objects.equals(this.createTime, showEngineResponse.createTime)
-            && Objects.equals(this.cceSpec, showEngineResponse.cceSpec)
-            && Objects.equals(this.externalEntrypoint, showEngineResponse.externalEntrypoint)
-            && Objects.equals(this.reference, showEngineResponse.reference)
-            && Objects.equals(this.latestJobId, showEngineResponse.latestJobId)
-            && Objects.equals(this.enterpriseProjectId, showEngineResponse.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, showEngineResponse.enterpriseProjectName)
-            && Objects.equals(this.engineAdditionalActions, showEngineResponse.engineAdditionalActions)
-            && Objects.equals(this.specType, showEngineResponse.specType)
-            && Objects.equals(this.type, showEngineResponse.type)
-            && Objects.equals(this.projectId, showEngineResponse.projectId)
-            && Objects.equals(this.vmIds, showEngineResponse.vmIds);
+        ShowEngineResponse that = (ShowEngineResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.payment, that.payment)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.latestVersion, that.latestVersion)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beDefault, that.beDefault)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.cceSpec, that.cceSpec)
+            && Objects.equals(this.externalEntrypoint, that.externalEntrypoint)
+            && Objects.equals(this.reference, that.reference) && Objects.equals(this.latestJobId, that.latestJobId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.engineAdditionalActions, that.engineAdditionalActions)
+            && Objects.equals(this.specType, that.specType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.vmIds, that.vmIds);
     }
 
     @Override

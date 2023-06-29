@@ -121,19 +121,17 @@ public class ShowTaskInstanceEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInstanceEventsRequest showTaskInstanceEventsRequest = (ShowTaskInstanceEventsRequest) o;
-        return Objects.equals(this.eihealthProjectId, showTaskInstanceEventsRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showTaskInstanceEventsRequest.jobId)
-            && Objects.equals(this.taskName, showTaskInstanceEventsRequest.taskName)
-            && Objects.equals(this.taskIndex, showTaskInstanceEventsRequest.taskIndex)
-            && Objects.equals(this.instanceName, showTaskInstanceEventsRequest.instanceName);
+        ShowTaskInstanceEventsRequest that = (ShowTaskInstanceEventsRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskIndex, that.taskIndex)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class UpdateEndpointServiceNameMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointServiceNameMode updateEndpointServiceNameMode = (UpdateEndpointServiceNameMode) o;
-        return Objects.equals(this.endpointServiceName, updateEndpointServiceNameMode.endpointServiceName);
+        UpdateEndpointServiceNameMode that = (UpdateEndpointServiceNameMode) obj;
+        return Objects.equals(this.endpointServiceName, that.endpointServiceName);
     }
 
     @Override

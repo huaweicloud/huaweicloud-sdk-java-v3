@@ -229,21 +229,20 @@ public class CommitRepoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitRepoV2 commitRepoV2 = (CommitRepoV2) o;
-        return Objects.equals(this.id, commitRepoV2.id) && Objects.equals(this.shortId, commitRepoV2.shortId)
-            && Objects.equals(this.createdAt, commitRepoV2.createdAt) && Objects.equals(this.title, commitRepoV2.title)
-            && Objects.equals(this.parentIds, commitRepoV2.parentIds)
-            && Objects.equals(this.message, commitRepoV2.message)
-            && Objects.equals(this.authorName, commitRepoV2.authorName)
-            && Objects.equals(this.committerName, commitRepoV2.committerName)
-            && Objects.equals(this.committedDate, commitRepoV2.committedDate);
+        CommitRepoV2 that = (CommitRepoV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.shortId, that.shortId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.parentIds, that.parentIds) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.authorName, that.authorName)
+            && Objects.equals(this.committerName, that.committerName)
+            && Objects.equals(this.committedDate, that.committedDate);
     }
 
     @Override

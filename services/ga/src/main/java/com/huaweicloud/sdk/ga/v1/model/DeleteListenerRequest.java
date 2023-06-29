@@ -33,15 +33,15 @@ public class DeleteListenerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteListenerRequest deleteListenerRequest = (DeleteListenerRequest) o;
-        return Objects.equals(this.listenerId, deleteListenerRequest.listenerId);
+        DeleteListenerRequest that = (DeleteListenerRequest) obj;
+        return Objects.equals(this.listenerId, that.listenerId);
     }
 
     @Override

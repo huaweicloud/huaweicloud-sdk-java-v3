@@ -124,19 +124,17 @@ public class ListStreamForbiddenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStreamForbiddenRequest listStreamForbiddenRequest = (ListStreamForbiddenRequest) o;
-        return Objects.equals(this.domain, listStreamForbiddenRequest.domain)
-            && Objects.equals(this.appName, listStreamForbiddenRequest.appName)
-            && Objects.equals(this.streamName, listStreamForbiddenRequest.streamName)
-            && Objects.equals(this.page, listStreamForbiddenRequest.page)
-            && Objects.equals(this.size, listStreamForbiddenRequest.size);
+        ListStreamForbiddenRequest that = (ListStreamForbiddenRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.streamName, that.streamName) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

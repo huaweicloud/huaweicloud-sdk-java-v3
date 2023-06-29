@@ -86,22 +86,15 @@ public class CreatePrivateDnatOption {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +268,20 @@ public class CreatePrivateDnatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateDnatOption createPrivateDnatOption = (CreatePrivateDnatOption) o;
-        return Objects.equals(this.description, createPrivateDnatOption.description)
-            && Objects.equals(this.transitIpId, createPrivateDnatOption.transitIpId)
-            && Objects.equals(this.networkInterfaceId, createPrivateDnatOption.networkInterfaceId)
-            && Objects.equals(this.gatewayId, createPrivateDnatOption.gatewayId)
-            && Objects.equals(this.protocol, createPrivateDnatOption.protocol)
-            && Objects.equals(this.privateIpAddress, createPrivateDnatOption.privateIpAddress)
-            && Objects.equals(this.internalServicePort, createPrivateDnatOption.internalServicePort)
-            && Objects.equals(this.transitServicePort, createPrivateDnatOption.transitServicePort);
+        CreatePrivateDnatOption that = (CreatePrivateDnatOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.transitServicePort, that.transitServicePort);
     }
 
     @Override

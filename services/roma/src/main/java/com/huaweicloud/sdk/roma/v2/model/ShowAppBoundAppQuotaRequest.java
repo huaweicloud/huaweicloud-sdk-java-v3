@@ -55,16 +55,15 @@ public class ShowAppBoundAppQuotaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppBoundAppQuotaRequest showAppBoundAppQuotaRequest = (ShowAppBoundAppQuotaRequest) o;
-        return Objects.equals(this.instanceId, showAppBoundAppQuotaRequest.instanceId)
-            && Objects.equals(this.appId, showAppBoundAppQuotaRequest.appId);
+        ShowAppBoundAppQuotaRequest that = (ShowAppBoundAppQuotaRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

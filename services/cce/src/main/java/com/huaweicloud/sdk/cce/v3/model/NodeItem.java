@@ -33,15 +33,15 @@ public class NodeItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeItem nodeItem = (NodeItem) o;
-        return Objects.equals(this.uid, nodeItem.uid);
+        NodeItem that = (NodeItem) obj;
+        return Objects.equals(this.uid, that.uid);
     }
 
     @Override

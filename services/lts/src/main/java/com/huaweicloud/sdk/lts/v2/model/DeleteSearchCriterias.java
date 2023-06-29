@@ -55,16 +55,15 @@ public class DeleteSearchCriterias {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSearchCriterias deleteSearchCriterias = (DeleteSearchCriterias) o;
-        return Objects.equals(this.epsId, deleteSearchCriterias.epsId)
-            && Objects.equals(this.id, deleteSearchCriterias.id);
+        DeleteSearchCriterias that = (DeleteSearchCriterias) obj;
+        return Objects.equals(this.epsId, that.epsId) && Objects.equals(this.id, that.id);
     }
 
     @Override

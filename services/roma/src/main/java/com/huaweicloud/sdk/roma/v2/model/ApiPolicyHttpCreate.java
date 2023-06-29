@@ -68,22 +68,15 @@ public class ApiPolicyHttpCreate {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,22 +179,15 @@ public class ApiPolicyHttpCreate {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,22 +274,15 @@ public class ApiPolicyHttpCreate {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -395,22 +374,15 @@ public class ApiPolicyHttpCreate {
             if (value == null) {
                 return null;
             }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VpcChannelStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VpcChannelStatusEnum(value));
         }
 
         public static VpcChannelStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -713,28 +685,22 @@ public class ApiPolicyHttpCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyHttpCreate apiPolicyHttpCreate = (ApiPolicyHttpCreate) o;
-        return Objects.equals(this.urlDomain, apiPolicyHttpCreate.urlDomain)
-            && Objects.equals(this.reqProtocol, apiPolicyHttpCreate.reqProtocol)
-            && Objects.equals(this.reqMethod, apiPolicyHttpCreate.reqMethod)
-            && Objects.equals(this.reqUri, apiPolicyHttpCreate.reqUri)
-            && Objects.equals(this.timeout, apiPolicyHttpCreate.timeout)
-            && Objects.equals(this.enableClientSsl, apiPolicyHttpCreate.enableClientSsl)
-            && Objects.equals(this.retryCount, apiPolicyHttpCreate.retryCount)
-            && Objects.equals(this.effectMode, apiPolicyHttpCreate.effectMode)
-            && Objects.equals(this.name, apiPolicyHttpCreate.name)
-            && Objects.equals(this.backendParams, apiPolicyHttpCreate.backendParams)
-            && Objects.equals(this.conditions, apiPolicyHttpCreate.conditions)
-            && Objects.equals(this.authorizerId, apiPolicyHttpCreate.authorizerId)
-            && Objects.equals(this.vpcChannelInfo, apiPolicyHttpCreate.vpcChannelInfo)
-            && Objects.equals(this.vpcChannelStatus, apiPolicyHttpCreate.vpcChannelStatus);
+        ApiPolicyHttpCreate that = (ApiPolicyHttpCreate) obj;
+        return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.enableClientSsl, that.enableClientSsl)
+            && Objects.equals(this.retryCount, that.retryCount) && Objects.equals(this.effectMode, that.effectMode)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.vpcChannelInfo, that.vpcChannelInfo)
+            && Objects.equals(this.vpcChannelStatus, that.vpcChannelStatus);
     }
 
     @Override

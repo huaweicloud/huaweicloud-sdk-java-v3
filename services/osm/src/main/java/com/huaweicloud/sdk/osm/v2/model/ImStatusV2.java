@@ -57,15 +57,15 @@ public class ImStatusV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImStatusV2 imStatusV2 = (ImStatusV2) o;
-        return Objects.equals(this.status, imStatusV2.status) && Objects.equals(this.incidentId, imStatusV2.incidentId);
+        ImStatusV2 that = (ImStatusV2) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.incidentId, that.incidentId);
     }
 
     @Override

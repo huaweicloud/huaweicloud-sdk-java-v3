@@ -33,15 +33,15 @@ public class ShowPublicTemplateInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicTemplateInfoRequest showPublicTemplateInfoRequest = (ShowPublicTemplateInfoRequest) o;
-        return Objects.equals(this.templateName, showPublicTemplateInfoRequest.templateName);
+        ShowPublicTemplateInfoRequest that = (ShowPublicTemplateInfoRequest) obj;
+        return Objects.equals(this.templateName, that.templateName);
     }
 
     @Override

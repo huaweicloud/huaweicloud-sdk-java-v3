@@ -1,16 +1,11 @@
 package com.huaweicloud.sdk.servicestage.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -33,11 +28,6 @@ public class ComponentModify {
     @JsonProperty(value = "labels")
 
     private List<Label> labels = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pod_labels")
-
-    private List<Label> podLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_stack")
@@ -125,11 +115,6 @@ public class ComponentModify {
     private Mesher mesher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_sermant_injection")
-
-    private Boolean enableSermantInjection;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jvm_opts")
 
     private String jvmOpts;
@@ -168,197 +153,6 @@ public class ComponentModify {
     @JsonProperty(value = "readiness_probe")
 
     private ComponentProbe readinessProbe;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_aliases")
-
-    private List<HostAlias> hostAliases = null;
-
-    /**
-    * Gets or Sets dnsPolicy
-    */
-    public static final class DnsPolicyEnum {
-
-        /**
-         * Enum DEFAULT for value: "Default"
-         */
-        public static final DnsPolicyEnum DEFAULT = new DnsPolicyEnum("Default");
-
-        /**
-         * Enum CLUSTERFIRST for value: "ClusterFirst"
-         */
-        public static final DnsPolicyEnum CLUSTERFIRST = new DnsPolicyEnum("ClusterFirst");
-
-        /**
-         * Enum CLUSTERFIRSTWITHHOSTNET for value: "ClusterFirstWithHostNet"
-         */
-        public static final DnsPolicyEnum CLUSTERFIRSTWITHHOSTNET = new DnsPolicyEnum("ClusterFirstWithHostNet");
-
-        /**
-         * Enum NONE for value: "None"
-         */
-        public static final DnsPolicyEnum NONE = new DnsPolicyEnum("None");
-
-        private static final Map<String, DnsPolicyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DnsPolicyEnum> createStaticFields() {
-            Map<String, DnsPolicyEnum> map = new HashMap<>();
-            map.put("Default", DEFAULT);
-            map.put("ClusterFirst", CLUSTERFIRST);
-            map.put("ClusterFirstWithHostNet", CLUSTERFIRSTWITHHOSTNET);
-            map.put("None", NONE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DnsPolicyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DnsPolicyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            DnsPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DnsPolicyEnum(value);
-            }
-            return result;
-        }
-
-        public static DnsPolicyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            DnsPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DnsPolicyEnum) {
-                return this.value.equals(((DnsPolicyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_policy")
-
-    private DnsPolicyEnum dnsPolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_config")
-
-    private DnsConfig dnsConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "security_context")
-
-    private SecurityContext securityContext;
-
-    /**
-     * Gets or Sets workloadKind
-     */
-    public static final class WorkloadKindEnum {
-
-        /**
-         * Enum DEPLOYMENT for value: "deployment"
-         */
-        public static final WorkloadKindEnum DEPLOYMENT = new WorkloadKindEnum("deployment");
-
-        /**
-         * Enum STATEFULSET for value: "statefulset"
-         */
-        public static final WorkloadKindEnum STATEFULSET = new WorkloadKindEnum("statefulset");
-
-        private static final Map<String, WorkloadKindEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, WorkloadKindEnum> createStaticFields() {
-            Map<String, WorkloadKindEnum> map = new HashMap<>();
-            map.put("deployment", DEPLOYMENT);
-            map.put("statefulset", STATEFULSET);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        WorkloadKindEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static WorkloadKindEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            WorkloadKindEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkloadKindEnum(value);
-            }
-            return result;
-        }
-
-        public static WorkloadKindEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            WorkloadKindEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof WorkloadKindEnum) {
-                return this.value.equals(((WorkloadKindEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workload_kind")
-
-    private WorkloadKindEnum workloadKind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "refer_resources")
@@ -430,39 +224,6 @@ public class ComponentModify {
 
     public void setLabels(List<Label> labels) {
         this.labels = labels;
-    }
-
-    public ComponentModify withPodLabels(List<Label> podLabels) {
-        this.podLabels = podLabels;
-        return this;
-    }
-
-    public ComponentModify addPodLabelsItem(Label podLabelsItem) {
-        if (this.podLabels == null) {
-            this.podLabels = new ArrayList<>();
-        }
-        this.podLabels.add(podLabelsItem);
-        return this;
-    }
-
-    public ComponentModify withPodLabels(Consumer<List<Label>> podLabelsSetter) {
-        if (this.podLabels == null) {
-            this.podLabels = new ArrayList<>();
-        }
-        podLabelsSetter.accept(this.podLabels);
-        return this;
-    }
-
-    /**
-     * Get podLabels
-     * @return podLabels
-     */
-    public List<Label> getPodLabels() {
-        return podLabels;
-    }
-
-    public void setPodLabels(List<Label> podLabels) {
-        this.podLabels = podLabels;
     }
 
     public ComponentModify withRuntimeStack(RuntimeStack runtimeStack) {
@@ -858,23 +619,6 @@ public class ComponentModify {
         this.mesher = mesher;
     }
 
-    public ComponentModify withEnableSermantInjection(Boolean enableSermantInjection) {
-        this.enableSermantInjection = enableSermantInjection;
-        return this;
-    }
-
-    /**
-     * Get enableSermantInjection
-     * @return enableSermantInjection
-     */
-    public Boolean getEnableSermantInjection() {
-        return enableSermantInjection;
-    }
-
-    public void setEnableSermantInjection(Boolean enableSermantInjection) {
-        this.enableSermantInjection = enableSermantInjection;
-    }
-
     public ComponentModify withJvmOpts(String jvmOpts) {
         this.jvmOpts = jvmOpts;
         return this;
@@ -1081,125 +825,6 @@ public class ComponentModify {
         this.readinessProbe = readinessProbe;
     }
 
-    public ComponentModify withHostAliases(List<HostAlias> hostAliases) {
-        this.hostAliases = hostAliases;
-        return this;
-    }
-
-    public ComponentModify addHostAliasesItem(HostAlias hostAliasesItem) {
-        if (this.hostAliases == null) {
-            this.hostAliases = new ArrayList<>();
-        }
-        this.hostAliases.add(hostAliasesItem);
-        return this;
-    }
-
-    public ComponentModify withHostAliases(Consumer<List<HostAlias>> hostAliasesSetter) {
-        if (this.hostAliases == null) {
-            this.hostAliases = new ArrayList<>();
-        }
-        hostAliasesSetter.accept(this.hostAliases);
-        return this;
-    }
-
-    /**
-     * Get hostAliases
-     * @return hostAliases
-     */
-    public List<HostAlias> getHostAliases() {
-        return hostAliases;
-    }
-
-    public void setHostAliases(List<HostAlias> hostAliases) {
-        this.hostAliases = hostAliases;
-    }
-
-    public ComponentModify withDnsPolicy(DnsPolicyEnum dnsPolicy) {
-        this.dnsPolicy = dnsPolicy;
-        return this;
-    }
-
-    /**
-     * Get dnsPolicy
-     * @return dnsPolicy
-     */
-    public DnsPolicyEnum getDnsPolicy() {
-        return dnsPolicy;
-    }
-
-    public void setDnsPolicy(DnsPolicyEnum dnsPolicy) {
-        this.dnsPolicy = dnsPolicy;
-    }
-
-    public ComponentModify withDnsConfig(DnsConfig dnsConfig) {
-        this.dnsConfig = dnsConfig;
-        return this;
-    }
-
-    public ComponentModify withDnsConfig(Consumer<DnsConfig> dnsConfigSetter) {
-        if (this.dnsConfig == null) {
-            this.dnsConfig = new DnsConfig();
-            dnsConfigSetter.accept(this.dnsConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dnsConfig
-     * @return dnsConfig
-     */
-    public DnsConfig getDnsConfig() {
-        return dnsConfig;
-    }
-
-    public void setDnsConfig(DnsConfig dnsConfig) {
-        this.dnsConfig = dnsConfig;
-    }
-
-    public ComponentModify withSecurityContext(SecurityContext securityContext) {
-        this.securityContext = securityContext;
-        return this;
-    }
-
-    public ComponentModify withSecurityContext(Consumer<SecurityContext> securityContextSetter) {
-        if (this.securityContext == null) {
-            this.securityContext = new SecurityContext();
-            securityContextSetter.accept(this.securityContext);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get securityContext
-     * @return securityContext
-     */
-    public SecurityContext getSecurityContext() {
-        return securityContext;
-    }
-
-    public void setSecurityContext(SecurityContext securityContext) {
-        this.securityContext = securityContext;
-    }
-
-    public ComponentModify withWorkloadKind(WorkloadKindEnum workloadKind) {
-        this.workloadKind = workloadKind;
-        return this;
-    }
-
-    /**
-     * Get workloadKind
-     * @return workloadKind
-     */
-    public WorkloadKindEnum getWorkloadKind() {
-        return workloadKind;
-    }
-
-    public void setWorkloadKind(WorkloadKindEnum workloadKind) {
-        this.workloadKind = workloadKind;
-    }
-
     public ComponentModify withReferResources(List<ReferResourceCreate> referResources) {
         this.referResources = referResources;
         return this;
@@ -1234,48 +859,31 @@ public class ComponentModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentModify componentModify = (ComponentModify) o;
-        return Objects.equals(this.name, componentModify.name)
-            && Objects.equals(this.description, componentModify.description)
-            && Objects.equals(this.labels, componentModify.labels)
-            && Objects.equals(this.podLabels, componentModify.podLabels)
-            && Objects.equals(this.runtimeStack, componentModify.runtimeStack)
-            && Objects.equals(this.source, componentModify.source) && Objects.equals(this.build, componentModify.build)
-            && Objects.equals(this.limitCpu, componentModify.limitCpu)
-            && Objects.equals(this.limitMemory, componentModify.limitMemory)
-            && Objects.equals(this.requestCpu, componentModify.requestCpu)
-            && Objects.equals(this.requestMemory, componentModify.requestMemory)
-            && Objects.equals(this.replica, componentModify.replica)
-            && Objects.equals(this.version, componentModify.version) && Objects.equals(this.envs, componentModify.envs)
-            && Objects.equals(this.storages, componentModify.storages)
-            && Objects.equals(this.deployStrategy, componentModify.deployStrategy)
-            && Objects.equals(this.command, componentModify.command)
-            && Objects.equals(this.postStart, componentModify.postStart)
-            && Objects.equals(this.preStop, componentModify.preStop)
-            && Objects.equals(this.timezone, componentModify.timezone)
-            && Objects.equals(this.mesher, componentModify.mesher)
-            && Objects.equals(this.enableSermantInjection, componentModify.enableSermantInjection)
-            && Objects.equals(this.jvmOpts, componentModify.jvmOpts)
-            && Objects.equals(this.tomcatOpts, componentModify.tomcatOpts)
-            && Objects.equals(this.logs, componentModify.logs)
-            && Objects.equals(this.customMetric, componentModify.customMetric)
-            && Objects.equals(this.affinity, componentModify.affinity)
-            && Objects.equals(this.antiAffinity, componentModify.antiAffinity)
-            && Objects.equals(this.livenessProbe, componentModify.livenessProbe)
-            && Objects.equals(this.readinessProbe, componentModify.readinessProbe)
-            && Objects.equals(this.hostAliases, componentModify.hostAliases)
-            && Objects.equals(this.dnsPolicy, componentModify.dnsPolicy)
-            && Objects.equals(this.dnsConfig, componentModify.dnsConfig)
-            && Objects.equals(this.securityContext, componentModify.securityContext)
-            && Objects.equals(this.workloadKind, componentModify.workloadKind)
-            && Objects.equals(this.referResources, componentModify.referResources);
+        ComponentModify that = (ComponentModify) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.runtimeStack, that.runtimeStack)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.build, that.build)
+            && Objects.equals(this.limitCpu, that.limitCpu) && Objects.equals(this.limitMemory, that.limitMemory)
+            && Objects.equals(this.requestCpu, that.requestCpu)
+            && Objects.equals(this.requestMemory, that.requestMemory) && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.envs, that.envs)
+            && Objects.equals(this.storages, that.storages) && Objects.equals(this.deployStrategy, that.deployStrategy)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.postStart, that.postStart)
+            && Objects.equals(this.preStop, that.preStop) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.mesher, that.mesher) && Objects.equals(this.jvmOpts, that.jvmOpts)
+            && Objects.equals(this.tomcatOpts, that.tomcatOpts) && Objects.equals(this.logs, that.logs)
+            && Objects.equals(this.customMetric, that.customMetric) && Objects.equals(this.affinity, that.affinity)
+            && Objects.equals(this.antiAffinity, that.antiAffinity)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.referResources, that.referResources);
     }
 
     @Override
@@ -1283,7 +891,6 @@ public class ComponentModify {
         return Objects.hash(name,
             description,
             labels,
-            podLabels,
             runtimeStack,
             source,
             build,
@@ -1301,7 +908,6 @@ public class ComponentModify {
             preStop,
             timezone,
             mesher,
-            enableSermantInjection,
             jvmOpts,
             tomcatOpts,
             logs,
@@ -1310,11 +916,6 @@ public class ComponentModify {
             antiAffinity,
             livenessProbe,
             readinessProbe,
-            hostAliases,
-            dnsPolicy,
-            dnsConfig,
-            securityContext,
-            workloadKind,
             referResources);
     }
 
@@ -1325,7 +926,6 @@ public class ComponentModify {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    podLabels: ").append(toIndentedString(podLabels)).append("\n");
         sb.append("    runtimeStack: ").append(toIndentedString(runtimeStack)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    build: ").append(toIndentedString(build)).append("\n");
@@ -1343,7 +943,6 @@ public class ComponentModify {
         sb.append("    preStop: ").append(toIndentedString(preStop)).append("\n");
         sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
         sb.append("    mesher: ").append(toIndentedString(mesher)).append("\n");
-        sb.append("    enableSermantInjection: ").append(toIndentedString(enableSermantInjection)).append("\n");
         sb.append("    jvmOpts: ").append(toIndentedString(jvmOpts)).append("\n");
         sb.append("    tomcatOpts: ").append(toIndentedString(tomcatOpts)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");
@@ -1352,11 +951,6 @@ public class ComponentModify {
         sb.append("    antiAffinity: ").append(toIndentedString(antiAffinity)).append("\n");
         sb.append("    livenessProbe: ").append(toIndentedString(livenessProbe)).append("\n");
         sb.append("    readinessProbe: ").append(toIndentedString(readinessProbe)).append("\n");
-        sb.append("    hostAliases: ").append(toIndentedString(hostAliases)).append("\n");
-        sb.append("    dnsPolicy: ").append(toIndentedString(dnsPolicy)).append("\n");
-        sb.append("    dnsConfig: ").append(toIndentedString(dnsConfig)).append("\n");
-        sb.append("    securityContext: ").append(toIndentedString(securityContext)).append("\n");
-        sb.append("    workloadKind: ").append(toIndentedString(workloadKind)).append("\n");
         sb.append("    referResources: ").append(toIndentedString(referResources)).append("\n");
         sb.append("}");
         return sb.toString();

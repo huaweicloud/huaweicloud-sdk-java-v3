@@ -119,18 +119,16 @@ public class GlanceListImagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceListImagesResponse glanceListImagesResponse = (GlanceListImagesResponse) o;
-        return Objects.equals(this.first, glanceListImagesResponse.first)
-            && Objects.equals(this.images, glanceListImagesResponse.images)
-            && Objects.equals(this.schema, glanceListImagesResponse.schema)
-            && Objects.equals(this.next, glanceListImagesResponse.next);
+        GlanceListImagesResponse that = (GlanceListImagesResponse) obj;
+        return Objects.equals(this.first, that.first) && Objects.equals(this.images, that.images)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.next, that.next);
     }
 
     @Override

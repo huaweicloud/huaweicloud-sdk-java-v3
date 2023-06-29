@@ -83,22 +83,15 @@ public class Server {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,22 +163,15 @@ public class Server {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FirmwareEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FirmwareEnum(value));
         }
 
         public static FirmwareEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,22 +298,15 @@ public class Server {
             if (value == null) {
                 return null;
             }
-            BootLoaderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BootLoaderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BootLoaderEnum(value));
         }
 
         public static BootLoaderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BootLoaderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -802,28 +781,27 @@ public class Server {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Server server = (Server) o;
-        return Objects.equals(this.id, server.id) && Objects.equals(this.ip, server.ip)
-            && Objects.equals(this.name, server.name) && Objects.equals(this.hostname, server.hostname)
-            && Objects.equals(this.osType, server.osType) && Objects.equals(this.osVersion, server.osVersion)
-            && Objects.equals(this.firmware, server.firmware) && Objects.equals(this.cpuQuantity, server.cpuQuantity)
-            && Objects.equals(this.memory, server.memory) && Objects.equals(this.disks, server.disks)
-            && Objects.equals(this.btrfsList, server.btrfsList) && Objects.equals(this.networks, server.networks)
-            && Objects.equals(this.domainId, server.domainId) && Objects.equals(this.hasRsync, server.hasRsync)
-            && Objects.equals(this.paravirtualization, server.paravirtualization)
-            && Objects.equals(this.rawDevices, server.rawDevices)
-            && Objects.equals(this.driverFiles, server.driverFiles)
-            && Objects.equals(this.systemServices, server.systemServices)
-            && Objects.equals(this.accountRights, server.accountRights)
-            && Objects.equals(this.bootLoader, server.bootLoader) && Objects.equals(this.systemDir, server.systemDir)
-            && Objects.equals(this.volumeGroups, server.volumeGroups);
+        Server that = (Server) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
+            && Objects.equals(this.btrfsList, that.btrfsList) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.hasRsync, that.hasRsync)
+            && Objects.equals(this.paravirtualization, that.paravirtualization)
+            && Objects.equals(this.rawDevices, that.rawDevices) && Objects.equals(this.driverFiles, that.driverFiles)
+            && Objects.equals(this.systemServices, that.systemServices)
+            && Objects.equals(this.accountRights, that.accountRights)
+            && Objects.equals(this.bootLoader, that.bootLoader) && Objects.equals(this.systemDir, that.systemDir)
+            && Objects.equals(this.volumeGroups, that.volumeGroups);
     }
 
     @Override

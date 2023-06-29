@@ -52,16 +52,15 @@ public class BatchDeleteResourceGroupsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteResourceGroupsRequestBody batchDeleteResourceGroupsRequestBody =
-            (BatchDeleteResourceGroupsRequestBody) o;
-        return Objects.equals(this.groupIds, batchDeleteResourceGroupsRequestBody.groupIds);
+        BatchDeleteResourceGroupsRequestBody that = (BatchDeleteResourceGroupsRequestBody) obj;
+        return Objects.equals(this.groupIds, that.groupIds);
     }
 
     @Override

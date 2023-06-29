@@ -55,16 +55,15 @@ public class TaskInstanceSpecConResRequestRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceSpecConResRequestRsp taskInstanceSpecConResRequestRsp = (TaskInstanceSpecConResRequestRsp) o;
-        return Objects.equals(this.cpu, taskInstanceSpecConResRequestRsp.cpu)
-            && Objects.equals(this.memory, taskInstanceSpecConResRequestRsp.memory);
+        TaskInstanceSpecConResRequestRsp that = (TaskInstanceSpecConResRequestRsp) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory);
     }
 
     @Override

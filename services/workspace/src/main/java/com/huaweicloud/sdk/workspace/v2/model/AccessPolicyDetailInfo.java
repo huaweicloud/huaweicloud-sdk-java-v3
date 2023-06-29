@@ -54,22 +54,15 @@ public class AccessPolicyDetailInfo {
             if (value == null) {
                 return null;
             }
-            PolicyNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PolicyNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyNameEnum(value));
         }
 
         public static PolicyNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PolicyNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -130,22 +123,15 @@ public class AccessPolicyDetailInfo {
             if (value == null) {
                 return null;
             }
-            BlacklistTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BlacklistTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BlacklistTypeEnum(value));
         }
 
         public static BlacklistTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BlacklistTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -246,18 +232,17 @@ public class AccessPolicyDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessPolicyDetailInfo accessPolicyDetailInfo = (AccessPolicyDetailInfo) o;
-        return Objects.equals(this.policyName, accessPolicyDetailInfo.policyName)
-            && Objects.equals(this.blacklistType, accessPolicyDetailInfo.blacklistType)
-            && Objects.equals(this.policyId, accessPolicyDetailInfo.policyId)
-            && Objects.equals(this.createTime, accessPolicyDetailInfo.createTime);
+        AccessPolicyDetailInfo that = (AccessPolicyDetailInfo) obj;
+        return Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.blacklistType, that.blacklistType) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

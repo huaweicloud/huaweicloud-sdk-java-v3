@@ -405,31 +405,23 @@ public class ShowPipelineTemplateDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineTemplateDetailResponse showPipelineTemplateDetailResponse = (ShowPipelineTemplateDetailResponse) o;
-        return Objects.equals(this.id, showPipelineTemplateDetailResponse.id)
-            && Objects.equals(this.name, showPipelineTemplateDetailResponse.name)
-            && Objects.equals(this.icon, showPipelineTemplateDetailResponse.icon)
-            && Objects.equals(this.manifestVersion, showPipelineTemplateDetailResponse.manifestVersion)
-            && Objects.equals(this.language, showPipelineTemplateDetailResponse.language)
-            && Objects.equals(this.description, showPipelineTemplateDetailResponse.description)
-            && Objects.equals(this.isSystem, showPipelineTemplateDetailResponse.isSystem)
-            && Objects.equals(this.region, showPipelineTemplateDetailResponse.region)
-            && Objects.equals(this.domainId, showPipelineTemplateDetailResponse.domainId)
-            && Objects.equals(this.variables, showPipelineTemplateDetailResponse.variables)
-            && Objects.equals(this.creatorId, showPipelineTemplateDetailResponse.creatorId)
-            && Objects.equals(this.updaterId, showPipelineTemplateDetailResponse.updaterId)
-            && Objects.equals(this.createTime, showPipelineTemplateDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showPipelineTemplateDetailResponse.updateTime)
-            && Objects.equals(this.isCollect, showPipelineTemplateDetailResponse.isCollect)
-            && Objects.equals(this.isShowSource, showPipelineTemplateDetailResponse.isShowSource)
-            && Objects.equals(this.definition, showPipelineTemplateDetailResponse.definition);
+        ShowPipelineTemplateDetailResponse that = (ShowPipelineTemplateDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.icon, that.icon) && Objects.equals(this.manifestVersion, that.manifestVersion)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isSystem, that.isSystem) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.variables, that.variables)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.updaterId, that.updaterId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.isCollect, that.isCollect) && Objects.equals(this.isShowSource, that.isShowSource)
+            && Objects.equals(this.definition, that.definition);
     }
 
     @Override

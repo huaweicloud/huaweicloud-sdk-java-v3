@@ -118,18 +118,17 @@ public class CreatTransitIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatTransitIpOption creatTransitIpOption = (CreatTransitIpOption) o;
-        return Objects.equals(this.virsubnetId, creatTransitIpOption.virsubnetId)
-            && Objects.equals(this.ipAddress, creatTransitIpOption.ipAddress)
-            && Objects.equals(this.enterpriseProjectId, creatTransitIpOption.enterpriseProjectId)
-            && Objects.equals(this.tags, creatTransitIpOption.tags);
+        CreatTransitIpOption that = (CreatTransitIpOption) obj;
+        return Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

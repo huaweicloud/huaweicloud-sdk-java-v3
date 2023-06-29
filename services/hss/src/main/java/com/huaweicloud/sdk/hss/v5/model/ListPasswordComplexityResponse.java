@@ -77,16 +77,15 @@ public class ListPasswordComplexityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPasswordComplexityResponse listPasswordComplexityResponse = (ListPasswordComplexityResponse) o;
-        return Objects.equals(this.totalNum, listPasswordComplexityResponse.totalNum)
-            && Objects.equals(this.dataList, listPasswordComplexityResponse.dataList);
+        ListPasswordComplexityResponse that = (ListPasswordComplexityResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

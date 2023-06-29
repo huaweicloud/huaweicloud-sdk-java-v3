@@ -122,19 +122,17 @@ public class ShowMessageEmailConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessageEmailConfigResponse showMessageEmailConfigResponse = (ShowMessageEmailConfigResponse) o;
-        return Objects.equals(this.server, showMessageEmailConfigResponse.server)
-            && Objects.equals(this.subjectPrefix, showMessageEmailConfigResponse.subjectPrefix)
-            && Objects.equals(this.userName, showMessageEmailConfigResponse.userName)
-            && Objects.equals(this.email, showMessageEmailConfigResponse.email)
-            && Objects.equals(this.language, showMessageEmailConfigResponse.language);
+        ShowMessageEmailConfigResponse that = (ShowMessageEmailConfigResponse) obj;
+        return Objects.equals(this.server, that.server) && Objects.equals(this.subjectPrefix, that.subjectPrefix)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class UpdateAlertConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlertConfigRequestBody updateAlertConfigRequestBody = (UpdateAlertConfigRequestBody) o;
-        return Objects.equals(this.displayName, updateAlertConfigRequestBody.displayName)
-            && Objects.equals(this.topicUrn, updateAlertConfigRequestBody.topicUrn)
-            && Objects.equals(this.warnConfig, updateAlertConfigRequestBody.warnConfig);
+        UpdateAlertConfigRequestBody that = (UpdateAlertConfigRequestBody) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.warnConfig, that.warnConfig);
     }
 
     @Override

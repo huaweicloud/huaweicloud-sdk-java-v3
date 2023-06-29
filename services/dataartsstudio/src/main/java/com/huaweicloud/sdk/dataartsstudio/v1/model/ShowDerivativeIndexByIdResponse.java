@@ -34,15 +34,15 @@ public class ShowDerivativeIndexByIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDerivativeIndexByIdResponse showDerivativeIndexByIdResponse = (ShowDerivativeIndexByIdResponse) o;
-        return Objects.equals(this.data, showDerivativeIndexByIdResponse.data);
+        ShowDerivativeIndexByIdResponse that = (ShowDerivativeIndexByIdResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

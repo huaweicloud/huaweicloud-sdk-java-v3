@@ -77,16 +77,16 @@ public class Hook {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Hook hook = (Hook) o;
-        return Objects.equals(this.id, hook.id) && Objects.equals(this.type, hook.type)
-            && Objects.equals(this.callbackUrl, hook.callbackUrl);
+        Hook that = (Hook) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.callbackUrl, that.callbackUrl);
     }
 
     @Override

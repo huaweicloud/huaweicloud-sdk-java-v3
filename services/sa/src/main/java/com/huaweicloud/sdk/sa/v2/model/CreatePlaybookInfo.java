@@ -187,22 +187,18 @@ public class CreatePlaybookInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookInfo createPlaybookInfo = (CreatePlaybookInfo) o;
-        return Objects.equals(this.name, createPlaybookInfo.name)
-            && Objects.equals(this.description, createPlaybookInfo.description)
-            && Objects.equals(this.workspaceId, createPlaybookInfo.workspaceId)
-            && Objects.equals(this.approveRole, createPlaybookInfo.approveRole)
-            && Objects.equals(this.userRole, createPlaybookInfo.userRole)
-            && Objects.equals(this.editRole, createPlaybookInfo.editRole)
-            && Objects.equals(this.ownerId, createPlaybookInfo.ownerId)
-            && Objects.equals(this.enabled, createPlaybookInfo.enabled);
+        CreatePlaybookInfo that = (CreatePlaybookInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.approveRole, that.approveRole)
+            && Objects.equals(this.userRole, that.userRole) && Objects.equals(this.editRole, that.editRole)
+            && Objects.equals(this.ownerId, that.ownerId) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

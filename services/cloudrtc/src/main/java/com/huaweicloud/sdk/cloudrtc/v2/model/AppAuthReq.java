@@ -57,15 +57,15 @@ public class AppAuthReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppAuthReq appAuthReq = (AppAuthReq) o;
-        return Objects.equals(this.enable, appAuthReq.enable) && Objects.equals(this.expire, appAuthReq.expire);
+        AppAuthReq that = (AppAuthReq) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.expire, that.expire);
     }
 
     @Override

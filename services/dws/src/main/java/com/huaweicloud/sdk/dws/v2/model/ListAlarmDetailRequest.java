@@ -77,17 +77,16 @@ public class ListAlarmDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmDetailRequest listAlarmDetailRequest = (ListAlarmDetailRequest) o;
-        return Objects.equals(this.timeZone, listAlarmDetailRequest.timeZone)
-            && Objects.equals(this.offset, listAlarmDetailRequest.offset)
-            && Objects.equals(this.limit, listAlarmDetailRequest.limit);
+        ListAlarmDetailRequest that = (ListAlarmDetailRequest) obj;
+        return Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

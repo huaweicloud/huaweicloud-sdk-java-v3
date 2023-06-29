@@ -91,22 +91,15 @@ public class NodesInfoResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class NodesInfoResp {
             if (value == null) {
                 return null;
             }
-            NodeRoleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeRoleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeRoleEnum(value));
         }
 
         public static NodeRoleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeRoleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +252,15 @@ public class NodesInfoResp {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -642,29 +621,23 @@ public class NodesInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodesInfoResp nodesInfoResp = (NodesInfoResp) o;
-        return Objects.equals(this.logicalNodeId, nodesInfoResp.logicalNodeId)
-            && Objects.equals(this.name, nodesInfoResp.name) && Objects.equals(this.status, nodesInfoResp.status)
-            && Objects.equals(this.azCode, nodesInfoResp.azCode)
-            && Objects.equals(this.nodeRole, nodesInfoResp.nodeRole)
-            && Objects.equals(this.nodeType, nodesInfoResp.nodeType)
-            && Objects.equals(this.nodeIp, nodesInfoResp.nodeIp)
-            && Objects.equals(this.nodePort, nodesInfoResp.nodePort)
-            && Objects.equals(this.nodeId, nodesInfoResp.nodeId)
-            && Objects.equals(this.priorityWeight, nodesInfoResp.priorityWeight)
-            && Objects.equals(this.isAccess, nodesInfoResp.isAccess)
-            && Objects.equals(this.groupId, nodesInfoResp.groupId)
-            && Objects.equals(this.groupName, nodesInfoResp.groupName)
-            && Objects.equals(this.isRemoveIp, nodesInfoResp.isRemoveIp)
-            && Objects.equals(this.replicationId, nodesInfoResp.replicationId)
-            && Objects.equals(this.dimensions, nodesInfoResp.dimensions);
+        NodesInfoResp that = (NodesInfoResp) obj;
+        return Objects.equals(this.logicalNodeId, that.logicalNodeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.nodeRole, that.nodeRole) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.nodeIp, that.nodeIp) && Objects.equals(this.nodePort, that.nodePort)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.priorityWeight, that.priorityWeight)
+            && Objects.equals(this.isAccess, that.isAccess) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.isRemoveIp, that.isRemoveIp)
+            && Objects.equals(this.replicationId, that.replicationId)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class CreateTransferRequestBodyLogTransferInfo {
             if (value == null) {
                 return null;
             }
-            LogTransferModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTransferModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTransferModeEnum(value));
         }
 
         public static LogTransferModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTransferModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class CreateTransferRequestBodyLogTransferInfo {
             if (value == null) {
                 return null;
             }
-            LogStorageFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogStorageFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogStorageFormatEnum(value));
         }
 
         public static LogStorageFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogStorageFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -236,22 +222,15 @@ public class CreateTransferRequestBodyLogTransferInfo {
             if (value == null) {
                 return null;
             }
-            LogTransferStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTransferStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTransferStatusEnum(value));
         }
 
         public static LogTransferStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTransferStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -407,21 +386,20 @@ public class CreateTransferRequestBodyLogTransferInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransferRequestBodyLogTransferInfo createTransferRequestBodyLogTransferInfo =
-            (CreateTransferRequestBodyLogTransferInfo) o;
-        return Objects.equals(this.logTransferType, createTransferRequestBodyLogTransferInfo.logTransferType)
-            && Objects.equals(this.logTransferMode, createTransferRequestBodyLogTransferInfo.logTransferMode)
-            && Objects.equals(this.logStorageFormat, createTransferRequestBodyLogTransferInfo.logStorageFormat)
-            && Objects.equals(this.logTransferStatus, createTransferRequestBodyLogTransferInfo.logTransferStatus)
-            && Objects.equals(this.logAgencyTransfer, createTransferRequestBodyLogTransferInfo.logAgencyTransfer)
-            && Objects.equals(this.logTransferDetail, createTransferRequestBodyLogTransferInfo.logTransferDetail);
+        CreateTransferRequestBodyLogTransferInfo that = (CreateTransferRequestBodyLogTransferInfo) obj;
+        return Objects.equals(this.logTransferType, that.logTransferType)
+            && Objects.equals(this.logTransferMode, that.logTransferMode)
+            && Objects.equals(this.logStorageFormat, that.logStorageFormat)
+            && Objects.equals(this.logTransferStatus, that.logTransferStatus)
+            && Objects.equals(this.logAgencyTransfer, that.logAgencyTransfer)
+            && Objects.equals(this.logTransferDetail, that.logTransferDetail);
     }
 
     @Override

@@ -119,19 +119,16 @@ public class SearchAttendanceRecordsOfHisMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchAttendanceRecordsOfHisMeetingResponse searchAttendanceRecordsOfHisMeetingResponse =
-            (SearchAttendanceRecordsOfHisMeetingResponse) o;
-        return Objects.equals(this.offset, searchAttendanceRecordsOfHisMeetingResponse.offset)
-            && Objects.equals(this.limit, searchAttendanceRecordsOfHisMeetingResponse.limit)
-            && Objects.equals(this.count, searchAttendanceRecordsOfHisMeetingResponse.count)
-            && Objects.equals(this.data, searchAttendanceRecordsOfHisMeetingResponse.data);
+        SearchAttendanceRecordsOfHisMeetingResponse that = (SearchAttendanceRecordsOfHisMeetingResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.data, that.data);
     }
 
     @Override

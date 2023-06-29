@@ -393,28 +393,24 @@ public class TableMappingVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableMappingVO tableMappingVO = (TableMappingVO) o;
-        return Objects.equals(this.id, tableMappingVO.id) && Objects.equals(this.name, tableMappingVO.name)
-            && Objects.equals(this.description, tableMappingVO.description)
-            && Objects.equals(this.targetTableId, tableMappingVO.targetTableId)
-            && Objects.equals(this.srcModelId, tableMappingVO.srcModelId)
-            && Objects.equals(this.srcModelName, tableMappingVO.srcModelName)
-            && Objects.equals(this.viewText, tableMappingVO.viewText)
-            && Objects.equals(this.targetTableName, tableMappingVO.targetTableName)
-            && Objects.equals(this.details, tableMappingVO.details)
-            && Objects.equals(this.sourceTables, tableMappingVO.sourceTables)
-            && Objects.equals(this.sourceFields, tableMappingVO.sourceFields)
-            && Objects.equals(this.createTime, tableMappingVO.createTime)
-            && Objects.equals(this.updateTime, tableMappingVO.updateTime)
-            && Objects.equals(this.createBy, tableMappingVO.createBy)
-            && Objects.equals(this.updateBy, tableMappingVO.updateBy);
+        TableMappingVO that = (TableMappingVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.targetTableId, that.targetTableId)
+            && Objects.equals(this.srcModelId, that.srcModelId) && Objects.equals(this.srcModelName, that.srcModelName)
+            && Objects.equals(this.viewText, that.viewText)
+            && Objects.equals(this.targetTableName, that.targetTableName) && Objects.equals(this.details, that.details)
+            && Objects.equals(this.sourceTables, that.sourceTables)
+            && Objects.equals(this.sourceFields, that.sourceFields) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy);
     }
 
     @Override

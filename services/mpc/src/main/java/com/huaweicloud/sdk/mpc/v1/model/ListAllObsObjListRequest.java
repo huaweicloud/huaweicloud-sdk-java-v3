@@ -77,17 +77,16 @@ public class ListAllObsObjListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllObsObjListRequest listAllObsObjListRequest = (ListAllObsObjListRequest) o;
-        return Objects.equals(this.bucket, listAllObsObjListRequest.bucket)
-            && Objects.equals(this.prefix, listAllObsObjListRequest.prefix)
-            && Objects.equals(this.type, listAllObsObjListRequest.type);
+        ListAllObsObjListRequest that = (ListAllObsObjListRequest) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

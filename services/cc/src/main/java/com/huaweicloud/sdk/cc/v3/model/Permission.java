@@ -276,24 +276,21 @@ public class Permission {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Permission permission = (Permission) o;
-        return Objects.equals(this.id, permission.id) && Objects.equals(this.name, permission.name)
-            && Objects.equals(this.description, permission.description)
-            && Objects.equals(this.status, permission.status) && Objects.equals(this.createdAt, permission.createdAt)
-            && Objects.equals(this.domainId, permission.domainId)
-            && Objects.equals(this.cloudConnectionId, permission.cloudConnectionId)
-            && Objects.equals(this.instanceId, permission.instanceId)
-            && Objects.equals(this.instanceType, permission.instanceType)
-            && Objects.equals(this.instanceDomainId, permission.instanceDomainId)
-            && Objects.equals(this.regionId, permission.regionId)
-            && Objects.equals(this.projectId, permission.projectId);
+        Permission that = (Permission) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.instanceDomainId, that.instanceDomainId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

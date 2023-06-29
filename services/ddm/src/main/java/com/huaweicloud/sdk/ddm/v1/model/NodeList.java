@@ -99,16 +99,16 @@ public class NodeList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeList nodeList = (NodeList) o;
-        return Objects.equals(this.port, nodeList.port) && Objects.equals(this.status, nodeList.status)
-            && Objects.equals(this.nodeId, nodeList.nodeId) && Objects.equals(this.ip, nodeList.ip);
+        NodeList that = (NodeList) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

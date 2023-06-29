@@ -125,19 +125,17 @@ public class ListBackPoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackPoolsRequest listBackPoolsRequest = (ListBackPoolsRequest) o;
-        return Objects.equals(this.poolName, listBackPoolsRequest.poolName)
-            && Objects.equals(this.limit, listBackPoolsRequest.limit)
-            && Objects.equals(this.offset, listBackPoolsRequest.offset)
-            && Objects.equals(this.billingCycle, listBackPoolsRequest.billingCycle)
-            && Objects.equals(this.allBillingCycle, listBackPoolsRequest.allBillingCycle);
+        ListBackPoolsRequest that = (ListBackPoolsRequest) obj;
+        return Objects.equals(this.poolName, that.poolName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.billingCycle, that.billingCycle)
+            && Objects.equals(this.allBillingCycle, that.allBillingCycle);
     }
 
     @Override

@@ -74,16 +74,16 @@ public class UpdateSubNetworkInterfaceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubNetworkInterfaceOption updateSubNetworkInterfaceOption = (UpdateSubNetworkInterfaceOption) o;
-        return Objects.equals(this.description, updateSubNetworkInterfaceOption.description)
-            && Objects.equals(this.securityGroups, updateSubNetworkInterfaceOption.securityGroups);
+        UpdateSubNetworkInterfaceOption that = (UpdateSubNetworkInterfaceOption) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.securityGroups, that.securityGroups);
     }
 
     @Override

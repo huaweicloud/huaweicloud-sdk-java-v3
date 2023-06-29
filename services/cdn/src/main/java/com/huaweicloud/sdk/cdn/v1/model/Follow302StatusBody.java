@@ -65,22 +65,15 @@ public class Follow302StatusBody {
             if (value == null) {
                 return null;
             }
-            FollowStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FollowStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FollowStatusEnum(value));
         }
 
         public static FollowStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FollowStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class Follow302StatusBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Follow302StatusBody follow302StatusBody = (Follow302StatusBody) o;
-        return Objects.equals(this.domainId, follow302StatusBody.domainId)
-            && Objects.equals(this.followStatus, follow302StatusBody.followStatus);
+        Follow302StatusBody that = (Follow302StatusBody) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.followStatus, that.followStatus);
     }
 
     @Override

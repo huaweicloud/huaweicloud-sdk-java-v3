@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.JobExecution;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 作业配置。
  */
-public class StepConfig  {
-
+public class StepConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_execution")
-    
+    @JsonProperty(value = "job_execution")
 
     private JobExecution jobExecution;
 
@@ -30,14 +22,13 @@ public class StepConfig  {
     }
 
     public StepConfig withJobExecution(Consumer<JobExecution> jobExecutionSetter) {
-        if(this.jobExecution == null ){
+        if (this.jobExecution == null) {
             this.jobExecution = new JobExecution();
             jobExecutionSetter.accept(this.jobExecution);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get jobExecution
@@ -51,23 +42,23 @@ public class StepConfig  {
         this.jobExecution = jobExecution;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StepConfig stepConfig = (StepConfig) o;
-        return Objects.equals(this.jobExecution, stepConfig.jobExecution);
+        StepConfig that = (StepConfig) obj;
+        return Objects.equals(this.jobExecution, that.jobExecution);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobExecution);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class StepConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class StepConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

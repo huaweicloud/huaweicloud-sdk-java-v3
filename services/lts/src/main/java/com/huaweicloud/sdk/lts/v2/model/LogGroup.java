@@ -144,18 +144,17 @@ public class LogGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogGroup logGroup = (LogGroup) o;
-        return Objects.equals(this.creationTime, logGroup.creationTime)
-            && Objects.equals(this.logGroupName, logGroup.logGroupName)
-            && Objects.equals(this.logGroupId, logGroup.logGroupId)
-            && Objects.equals(this.ttlInDays, logGroup.ttlInDays) && Objects.equals(this.tag, logGroup.tag);
+        LogGroup that = (LogGroup) obj;
+        return Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.logGroupName, that.logGroupName) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.ttlInDays, that.ttlInDays) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

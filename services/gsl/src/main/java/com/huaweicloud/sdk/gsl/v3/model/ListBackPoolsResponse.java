@@ -119,18 +119,16 @@ public class ListBackPoolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackPoolsResponse listBackPoolsResponse = (ListBackPoolsResponse) o;
-        return Objects.equals(this.limit, listBackPoolsResponse.limit)
-            && Objects.equals(this.offset, listBackPoolsResponse.offset)
-            && Objects.equals(this.count, listBackPoolsResponse.count)
-            && Objects.equals(this.pools, listBackPoolsResponse.pools);
+        ListBackPoolsResponse that = (ListBackPoolsResponse) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.pools, that.pools);
     }
 
     @Override

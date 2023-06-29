@@ -65,16 +65,15 @@ public class BatchAssociateDomainsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAssociateDomainsV2Request batchAssociateDomainsV2Request = (BatchAssociateDomainsV2Request) o;
-        return Objects.equals(this.certificateId, batchAssociateDomainsV2Request.certificateId)
-            && Objects.equals(this.body, batchAssociateDomainsV2Request.body);
+        BatchAssociateDomainsV2Request that = (BatchAssociateDomainsV2Request) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

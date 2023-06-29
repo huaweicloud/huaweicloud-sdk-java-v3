@@ -52,15 +52,15 @@ public class StopCloudPhoneRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopCloudPhoneRequestBody stopCloudPhoneRequestBody = (StopCloudPhoneRequestBody) o;
-        return Objects.equals(this.phoneIds, stopCloudPhoneRequestBody.phoneIds);
+        StopCloudPhoneRequestBody that = (StopCloudPhoneRequestBody) obj;
+        return Objects.equals(this.phoneIds, that.phoneIds);
     }
 
     @Override

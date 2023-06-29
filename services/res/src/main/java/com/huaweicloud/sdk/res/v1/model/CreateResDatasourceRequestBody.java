@@ -96,17 +96,16 @@ public class CreateResDatasourceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResDatasourceRequestBody createResDatasourceRequestBody = (CreateResDatasourceRequestBody) o;
-        return Objects.equals(this.datasourceName, createResDatasourceRequestBody.datasourceName)
-            && Objects.equals(this.specsConfig, createResDatasourceRequestBody.specsConfig)
-            && Objects.equals(this.dataConfig, createResDatasourceRequestBody.dataConfig);
+        CreateResDatasourceRequestBody that = (CreateResDatasourceRequestBody) obj;
+        return Objects.equals(this.datasourceName, that.datasourceName)
+            && Objects.equals(this.specsConfig, that.specsConfig) && Objects.equals(this.dataConfig, that.dataConfig);
     }
 
     @Override

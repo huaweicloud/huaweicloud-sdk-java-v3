@@ -282,24 +282,21 @@ public class CreateEndpointRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointRequestBody createEndpointRequestBody = (CreateEndpointRequestBody) o;
-        return Objects.equals(this.subnetId, createEndpointRequestBody.subnetId)
-            && Objects.equals(this.endpointServiceId, createEndpointRequestBody.endpointServiceId)
-            && Objects.equals(this.vpcId, createEndpointRequestBody.vpcId)
-            && Objects.equals(this.enableDns, createEndpointRequestBody.enableDns)
-            && Objects.equals(this.tags, createEndpointRequestBody.tags)
-            && Objects.equals(this.routetables, createEndpointRequestBody.routetables)
-            && Objects.equals(this.portIp, createEndpointRequestBody.portIp)
-            && Objects.equals(this.whitelist, createEndpointRequestBody.whitelist)
-            && Objects.equals(this.enableWhitelist, createEndpointRequestBody.enableWhitelist)
-            && Objects.equals(this.description, createEndpointRequestBody.description);
+        CreateEndpointRequestBody that = (CreateEndpointRequestBody) obj;
+        return Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.endpointServiceId, that.endpointServiceId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enableDns, that.enableDns) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.routetables, that.routetables) && Objects.equals(this.portIp, that.portIp)
+            && Objects.equals(this.whitelist, that.whitelist)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

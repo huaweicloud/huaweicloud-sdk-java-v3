@@ -85,22 +85,15 @@ public class UrlDomain {
             if (value == null) {
                 return null;
             }
-            MinSslVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MinSslVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MinSslVersionEnum(value));
         }
 
         public static MinSslVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MinSslVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,18 +218,17 @@ public class UrlDomain {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlDomain urlDomain = (UrlDomain) o;
-        return Objects.equals(this.id, urlDomain.id) && Objects.equals(this.domain, urlDomain.domain)
-            && Objects.equals(this.cnameStatus, urlDomain.cnameStatus) && Objects.equals(this.sslId, urlDomain.sslId)
-            && Objects.equals(this.sslName, urlDomain.sslName)
-            && Objects.equals(this.minSslVersion, urlDomain.minSslVersion);
+        UrlDomain that = (UrlDomain) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.cnameStatus, that.cnameStatus) && Objects.equals(this.sslId, that.sslId)
+            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.minSslVersion, that.minSslVersion);
     }
 
     @Override

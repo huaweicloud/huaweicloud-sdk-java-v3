@@ -90,17 +90,16 @@ public class ShowAutoRecordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoRecordResponse showAutoRecordResponse = (ShowAutoRecordResponse) o;
-        return Objects.equals(this.appId, showAutoRecordResponse.appId)
-            && Objects.equals(this.autoRecordMode, showAutoRecordResponse.autoRecordMode)
-            && Objects.equals(this.xRequestId, showAutoRecordResponse.xRequestId);
+        ShowAutoRecordResponse that = (ShowAutoRecordResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.autoRecordMode, that.autoRecordMode)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

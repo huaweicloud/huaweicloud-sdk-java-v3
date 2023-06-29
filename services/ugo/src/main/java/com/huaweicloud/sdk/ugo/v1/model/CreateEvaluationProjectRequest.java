@@ -43,15 +43,15 @@ public class CreateEvaluationProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEvaluationProjectRequest createEvaluationProjectRequest = (CreateEvaluationProjectRequest) o;
-        return Objects.equals(this.body, createEvaluationProjectRequest.body);
+        CreateEvaluationProjectRequest that = (CreateEvaluationProjectRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

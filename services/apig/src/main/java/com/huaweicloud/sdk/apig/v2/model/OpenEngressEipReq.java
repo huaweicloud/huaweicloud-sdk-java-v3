@@ -65,22 +65,15 @@ public class OpenEngressEipReq {
             if (value == null) {
                 return null;
             }
-            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthChargingModeEnum(value));
         }
 
         public static BandwidthChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,16 @@ public class OpenEngressEipReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenEngressEipReq openEngressEipReq = (OpenEngressEipReq) o;
-        return Objects.equals(this.bandwidthSize, openEngressEipReq.bandwidthSize)
-            && Objects.equals(this.bandwidthChargingMode, openEngressEipReq.bandwidthChargingMode);
+        OpenEngressEipReq that = (OpenEngressEipReq) obj;
+        return Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.bandwidthChargingMode, that.bandwidthChargingMode);
     }
 
     @Override

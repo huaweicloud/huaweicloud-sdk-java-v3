@@ -140,19 +140,19 @@ public class CountPreoccupyIpNumRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountPreoccupyIpNumRequest countPreoccupyIpNumRequest = (CountPreoccupyIpNumRequest) o;
-        return Objects.equals(this.l7FlavorId, countPreoccupyIpNumRequest.l7FlavorId)
-            && Objects.equals(this.ipTargetEnable, countPreoccupyIpNumRequest.ipTargetEnable)
-            && Objects.equals(this.ipVersion, countPreoccupyIpNumRequest.ipVersion)
-            && Objects.equals(this.loadbalancerId, countPreoccupyIpNumRequest.loadbalancerId)
-            && Objects.equals(this.availabilityZoneId, countPreoccupyIpNumRequest.availabilityZoneId);
+        CountPreoccupyIpNumRequest that = (CountPreoccupyIpNumRequest) obj;
+        return Objects.equals(this.l7FlavorId, that.l7FlavorId)
+            && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
+            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId);
     }
 
     @Override

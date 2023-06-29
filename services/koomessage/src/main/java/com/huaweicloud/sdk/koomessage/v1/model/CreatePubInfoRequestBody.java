@@ -105,17 +105,17 @@ public class CreatePubInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePubInfoRequestBody createPubInfoRequestBody = (CreatePubInfoRequestBody) o;
-        return Objects.equals(this.pubRequestBody, createPubInfoRequestBody.pubRequestBody)
-            && Objects.equals(this.portalRequestBody, createPubInfoRequestBody.portalRequestBody)
-            && Objects.equals(this.menuRequestBody, createPubInfoRequestBody.menuRequestBody);
+        CreatePubInfoRequestBody that = (CreatePubInfoRequestBody) obj;
+        return Objects.equals(this.pubRequestBody, that.pubRequestBody)
+            && Objects.equals(this.portalRequestBody, that.portalRequestBody)
+            && Objects.equals(this.menuRequestBody, that.menuRequestBody);
     }
 
     @Override

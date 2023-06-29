@@ -135,18 +135,17 @@ public class ShowSyncPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSyncPolicyResponse showSyncPolicyResponse = (ShowSyncPolicyResponse) o;
-        return Objects.equals(this.policyVersion, showSyncPolicyResponse.policyVersion)
-            && Objects.equals(this.policyUpdateTime, showSyncPolicyResponse.policyUpdateTime)
-            && Objects.equals(this.policies, showSyncPolicyResponse.policies)
-            && Objects.equals(this.policyDeltas, showSyncPolicyResponse.policyDeltas);
+        ShowSyncPolicyResponse that = (ShowSyncPolicyResponse) obj;
+        return Objects.equals(this.policyVersion, that.policyVersion)
+            && Objects.equals(this.policyUpdateTime, that.policyUpdateTime)
+            && Objects.equals(this.policies, that.policies) && Objects.equals(this.policyDeltas, that.policyDeltas);
     }
 
     @Override

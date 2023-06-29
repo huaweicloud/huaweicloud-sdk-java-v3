@@ -184,21 +184,19 @@ public class DiskusageEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskusageEntity diskusageEntity = (DiskusageEntity) o;
-        return Objects.equals(this.brokerName, diskusageEntity.brokerName)
-            && Objects.equals(this.dataDiskSize, diskusageEntity.dataDiskSize)
-            && Objects.equals(this.dataDiskUse, diskusageEntity.dataDiskUse)
-            && Objects.equals(this.dataDiskFree, diskusageEntity.dataDiskFree)
-            && Objects.equals(this.dataDiskUsePercentage, diskusageEntity.dataDiskUsePercentage)
-            && Objects.equals(this.status, diskusageEntity.status)
-            && Objects.equals(this.topicList, diskusageEntity.topicList);
+        DiskusageEntity that = (DiskusageEntity) obj;
+        return Objects.equals(this.brokerName, that.brokerName) && Objects.equals(this.dataDiskSize, that.dataDiskSize)
+            && Objects.equals(this.dataDiskUse, that.dataDiskUse)
+            && Objects.equals(this.dataDiskFree, that.dataDiskFree)
+            && Objects.equals(this.dataDiskUsePercentage, that.dataDiskUsePercentage)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.topicList, that.topicList);
     }
 
     @Override

@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * result字段数据结构说明
  */
-public class ClassificationResult  {
-
+public class ClassificationResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
 
     private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Float confidence;
 
@@ -39,9 +29,6 @@ public class ClassificationResult  {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 待分析文本。
@@ -55,15 +42,10 @@ public class ClassificationResult  {
         this.content = content;
     }
 
-    
-
     public ClassificationResult withLabel(Integer label) {
         this.label = label;
         return this;
     }
-
-    
-
 
     /**
      * 分类标签。 1：广告 0：非广告
@@ -77,15 +59,10 @@ public class ClassificationResult  {
         this.label = label;
     }
 
-    
-
     public ClassificationResult withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 标签label的置信度。
@@ -99,25 +76,24 @@ public class ClassificationResult  {
         this.confidence = confidence;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClassificationResult classificationResult = (ClassificationResult) o;
-        return Objects.equals(this.content, classificationResult.content) &&
-            Objects.equals(this.label, classificationResult.label) &&
-            Objects.equals(this.confidence, classificationResult.confidence);
+        ClassificationResult that = (ClassificationResult) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.confidence, that.confidence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, label, confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ClassificationResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ClassificationResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

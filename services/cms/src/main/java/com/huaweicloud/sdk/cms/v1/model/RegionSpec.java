@@ -109,18 +109,18 @@ public class RegionSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegionSpec regionSpec = (RegionSpec) o;
-        return Objects.equals(this.regionId, regionSpec.regionId)
-            && Objects.equals(this.expectTargetCapacity, regionSpec.expectTargetCapacity)
-            && Objects.equals(this.expectStableCapacity, regionSpec.expectStableCapacity)
-            && Objects.equals(this.launchTemplateConfig, regionSpec.launchTemplateConfig);
+        RegionSpec that = (RegionSpec) obj;
+        return Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.expectTargetCapacity, that.expectTargetCapacity)
+            && Objects.equals(this.expectStableCapacity, that.expectStableCapacity)
+            && Objects.equals(this.launchTemplateConfig, that.launchTemplateConfig);
     }
 
     @Override

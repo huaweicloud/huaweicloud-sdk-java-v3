@@ -96,16 +96,16 @@ public class VideoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoResult videoResult = (VideoResult) o;
-        return Objects.equals(this.alive, videoResult.alive) && Objects.equals(this.actions, videoResult.actions)
-            && Objects.equals(this.picture, videoResult.picture);
+        VideoResult that = (VideoResult) obj;
+        return Objects.equals(this.alive, that.alive) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.picture, that.picture);
     }
 
     @Override

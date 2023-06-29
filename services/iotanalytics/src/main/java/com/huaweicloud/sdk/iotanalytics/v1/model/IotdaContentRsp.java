@@ -74,16 +74,15 @@ public class IotdaContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IotdaContentRsp iotdaContentRsp = (IotdaContentRsp) o;
-        return Objects.equals(this.iotdaInstanceId, iotdaContentRsp.iotdaInstanceId)
-            && Objects.equals(this.rules, iotdaContentRsp.rules);
+        IotdaContentRsp that = (IotdaContentRsp) obj;
+        return Objects.equals(this.iotdaInstanceId, that.iotdaInstanceId) && Objects.equals(this.rules, that.rules);
     }
 
     @Override

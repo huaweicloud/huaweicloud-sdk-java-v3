@@ -122,22 +122,15 @@ public class SrcNodeResp {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CloudTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloudTypeEnum(value));
         }
 
         public static CloudTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,18 +300,17 @@ public class SrcNodeResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SrcNodeResp srcNodeResp = (SrcNodeResp) o;
-        return Objects.equals(this.bucket, srcNodeResp.bucket) && Objects.equals(this.cloudType, srcNodeResp.cloudType)
-            && Objects.equals(this.region, srcNodeResp.region) && Objects.equals(this.appId, srcNodeResp.appId)
-            && Objects.equals(this.objectKey, srcNodeResp.objectKey)
-            && Objects.equals(this.listFile, srcNodeResp.listFile);
+        SrcNodeResp that = (SrcNodeResp) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.cloudType, that.cloudType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.listFile, that.listFile);
     }
 
     @Override

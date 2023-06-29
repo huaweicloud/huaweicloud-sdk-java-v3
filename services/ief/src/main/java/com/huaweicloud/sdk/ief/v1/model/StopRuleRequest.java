@@ -55,16 +55,15 @@ public class StopRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopRuleRequest stopRuleRequest = (StopRuleRequest) o;
-        return Objects.equals(this.iefInstanceId, stopRuleRequest.iefInstanceId)
-            && Objects.equals(this.ruleId, stopRuleRequest.ruleId);
+        StopRuleRequest that = (StopRuleRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

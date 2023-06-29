@@ -77,22 +77,15 @@ public class Traces {
             if (value == null) {
                 return null;
             }
-            TraceRatingEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TraceRatingEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TraceRatingEnum(value));
         }
 
         public static TraceRatingEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TraceRatingEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -575,26 +568,25 @@ public class Traces {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Traces traces = (Traces) o;
-        return Objects.equals(this.resourceId, traces.resourceId) && Objects.equals(this.traceName, traces.traceName)
-            && Objects.equals(this.traceRating, traces.traceRating) && Objects.equals(this.traceType, traces.traceType)
-            && Objects.equals(this.request, traces.request) && Objects.equals(this.response, traces.response)
-            && Objects.equals(this.code, traces.code) && Objects.equals(this.apiVersion, traces.apiVersion)
-            && Objects.equals(this.message, traces.message) && Objects.equals(this.recordTime, traces.recordTime)
-            && Objects.equals(this.traceId, traces.traceId) && Objects.equals(this.time, traces.time)
-            && Objects.equals(this.user, traces.user) && Objects.equals(this.serviceType, traces.serviceType)
-            && Objects.equals(this.resourceType, traces.resourceType) && Objects.equals(this.sourceIp, traces.sourceIp)
-            && Objects.equals(this.resourceName, traces.resourceName)
-            && Objects.equals(this.requestId, traces.requestId)
-            && Objects.equals(this.locationInfo, traces.locationInfo) && Objects.equals(this.endpoint, traces.endpoint)
-            && Objects.equals(this.resourceUrl, traces.resourceUrl);
+        Traces that = (Traces) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.traceName, that.traceName)
+            && Objects.equals(this.traceRating, that.traceRating) && Objects.equals(this.traceType, that.traceType)
+            && Objects.equals(this.request, that.request) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.recordTime, that.recordTime)
+            && Objects.equals(this.traceId, that.traceId) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sourceIp, that.sourceIp)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.locationInfo, that.locationInfo) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.resourceUrl, that.resourceUrl);
     }
 
     @Override

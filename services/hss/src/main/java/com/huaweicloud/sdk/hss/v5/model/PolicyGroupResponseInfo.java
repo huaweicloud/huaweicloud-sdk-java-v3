@@ -189,22 +189,19 @@ public class PolicyGroupResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyGroupResponseInfo policyGroupResponseInfo = (PolicyGroupResponseInfo) o;
-        return Objects.equals(this.groupName, policyGroupResponseInfo.groupName)
-            && Objects.equals(this.groupId, policyGroupResponseInfo.groupId)
-            && Objects.equals(this.description, policyGroupResponseInfo.description)
-            && Objects.equals(this.deletable, policyGroupResponseInfo.deletable)
-            && Objects.equals(this.hostNum, policyGroupResponseInfo.hostNum)
-            && Objects.equals(this.defaultGroup, policyGroupResponseInfo.defaultGroup)
-            && Objects.equals(this.supportOs, policyGroupResponseInfo.supportOs)
-            && Objects.equals(this.supportVersion, policyGroupResponseInfo.supportVersion);
+        PolicyGroupResponseInfo that = (PolicyGroupResponseInfo) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.deletable, that.deletable)
+            && Objects.equals(this.hostNum, that.hostNum) && Objects.equals(this.defaultGroup, that.defaultGroup)
+            && Objects.equals(this.supportOs, that.supportOs)
+            && Objects.equals(this.supportVersion, that.supportVersion);
     }
 
     @Override

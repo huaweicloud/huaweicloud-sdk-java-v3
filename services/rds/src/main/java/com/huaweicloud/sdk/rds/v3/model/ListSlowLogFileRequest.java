@@ -101,18 +101,16 @@ public class ListSlowLogFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSlowLogFileRequest listSlowLogFileRequest = (ListSlowLogFileRequest) o;
-        return Objects.equals(this.xLanguage, listSlowLogFileRequest.xLanguage)
-            && Objects.equals(this.instanceId, listSlowLogFileRequest.instanceId)
-            && Objects.equals(this.offset, listSlowLogFileRequest.offset)
-            && Objects.equals(this.limit, listSlowLogFileRequest.limit);
+        ListSlowLogFileRequest that = (ListSlowLogFileRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

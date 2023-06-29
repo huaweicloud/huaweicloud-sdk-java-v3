@@ -65,16 +65,15 @@ public class SwitchToMasterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchToMasterRequest switchToMasterRequest = (SwitchToMasterRequest) o;
-        return Objects.equals(this.instanceId, switchToMasterRequest.instanceId)
-            && Objects.equals(this.body, switchToMasterRequest.body);
+        SwitchToMasterRequest that = (SwitchToMasterRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

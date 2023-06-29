@@ -121,17 +121,17 @@ public class ResourceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceDto resourceDto = (ResourceDto) o;
-        return Objects.equals(this.cpuType, resourceDto.cpuType) && Objects.equals(this.cpu, resourceDto.cpu)
-            && Objects.equals(this.memory, resourceDto.memory) && Objects.equals(this.gpuType, resourceDto.gpuType)
-            && Objects.equals(this.gpu, resourceDto.gpu);
+        ResourceDto that = (ResourceDto) obj;
+        return Objects.equals(this.cpuType, that.cpuType) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.gpu, that.gpu);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowDeviceTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceTemplateResponse showDeviceTemplateResponse = (ShowDeviceTemplateResponse) o;
-        return Objects.equals(this.deviceTemplate, showDeviceTemplateResponse.deviceTemplate);
+        ShowDeviceTemplateResponse that = (ShowDeviceTemplateResponse) obj;
+        return Objects.equals(this.deviceTemplate, that.deviceTemplate);
     }
 
     @Override

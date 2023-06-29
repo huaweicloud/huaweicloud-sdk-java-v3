@@ -94,22 +94,15 @@ public class CreateEndpointServiceRequestBody {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServerTypeEnum(value));
         }
 
         public static ServerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,8 +130,8 @@ public class CreateEndpointServiceRequestBody {
     private List<PortList> ports = null;
 
     /**
-    * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
-    */
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     */
     public static final class TcpProxyEnum {
 
         /**
@@ -199,22 +192,15 @@ public class CreateEndpointServiceRequestBody {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TcpProxyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
         }
 
         public static TcpProxyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -257,7 +243,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： ● LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”。 ● VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 ● VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： ● 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 ● VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
+     * 标识终端节点服务后端资源的ID， 格式为通用唯一识别码（Universally Unique Identifier，下文简称UUID）。 取值为： - LB类型：负载均衡器内网IP对应的端口ID。 详细内容请参考《弹性负载均衡API参考》中的“查询负载均衡详情”。 - VM类型：弹性云服务器IP地址对应的网卡ID。 详细内容请参考《弹性云服务器API参考》中的“查询云服务器网卡信息”， 详见响应消息中的“port_id”字段。 - VIP类型：虚拟IP所在虚拟机的网卡ID（VIP类型业务已不支持，该取值类型已废弃） 说明： - 创建终端节点服务时，VPC的子网网段不能与198.19.128.0/17重叠。 - VPC路由表中自定义路由的目的地址不能与198.19.128.0/17重叠。
      * @return portId
      */
     public String getPortId() {
@@ -274,7 +260,7 @@ public class CreateEndpointServiceRequestBody {
     }
 
     /**
-     * 终端节点服务的名称，长度不大于16，允许传入大小写字母、数字、下划线、中划线。 ● 传入为空，存入值为regionName+.+serviceId ● 传入不为空并校验通过，存入值为regionName+.+serviceName+.+serviceId
+     * 终端节点服务的名称，长度不大于16，允许传入大小写字母、数字、下划线、中划线。 - 传入为空，存入值为regionName+.+serviceId - 传入不为空并校验通过，存入值为regionName+.+serviceName+.+serviceId
      * @return serviceName
      */
     public String getServiceName() {
@@ -471,25 +457,20 @@ public class CreateEndpointServiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointServiceRequestBody createEndpointServiceRequestBody = (CreateEndpointServiceRequestBody) o;
-        return Objects.equals(this.portId, createEndpointServiceRequestBody.portId)
-            && Objects.equals(this.serviceName, createEndpointServiceRequestBody.serviceName)
-            && Objects.equals(this.vpcId, createEndpointServiceRequestBody.vpcId)
-            && Objects.equals(this.approvalEnabled, createEndpointServiceRequestBody.approvalEnabled)
-            && Objects.equals(this.serviceType, createEndpointServiceRequestBody.serviceType)
-            && Objects.equals(this.serverType, createEndpointServiceRequestBody.serverType)
-            && Objects.equals(this.ports, createEndpointServiceRequestBody.ports)
-            && Objects.equals(this.tcpProxy, createEndpointServiceRequestBody.tcpProxy)
-            && Objects.equals(this.tags, createEndpointServiceRequestBody.tags)
-            && Objects.equals(this.description, createEndpointServiceRequestBody.description)
-            && Objects.equals(this.enablePolicy, createEndpointServiceRequestBody.enablePolicy);
+        CreateEndpointServiceRequestBody that = (CreateEndpointServiceRequestBody) obj;
+        return Objects.equals(this.portId, that.portId) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.approvalEnabled, that.approvalEnabled)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.serverType, that.serverType)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
 
     @Override

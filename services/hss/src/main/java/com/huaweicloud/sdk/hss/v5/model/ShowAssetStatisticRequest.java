@@ -55,16 +55,16 @@ public class ShowAssetStatisticRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetStatisticRequest showAssetStatisticRequest = (ShowAssetStatisticRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showAssetStatisticRequest.enterpriseProjectId)
-            && Objects.equals(this.hostId, showAssetStatisticRequest.hostId);
+        ShowAssetStatisticRequest that = (ShowAssetStatisticRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

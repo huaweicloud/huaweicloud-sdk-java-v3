@@ -167,23 +167,21 @@ public class PasswordPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PasswordPolicyOption passwordPolicyOption = (PasswordPolicyOption) o;
-        return Objects.equals(this.maximumConsecutiveIdenticalChars,
-            passwordPolicyOption.maximumConsecutiveIdenticalChars)
-            && Objects.equals(this.minimumPasswordAge, passwordPolicyOption.minimumPasswordAge)
-            && Objects.equals(this.minimumPasswordLength, passwordPolicyOption.minimumPasswordLength)
-            && Objects.equals(this.numberOfRecentPasswordsDisallowed,
-                passwordPolicyOption.numberOfRecentPasswordsDisallowed)
-            && Objects.equals(this.passwordNotUsernameOrInvert, passwordPolicyOption.passwordNotUsernameOrInvert)
-            && Objects.equals(this.passwordValidityPeriod, passwordPolicyOption.passwordValidityPeriod)
-            && Objects.equals(this.passwordCharCombination, passwordPolicyOption.passwordCharCombination);
+        PasswordPolicyOption that = (PasswordPolicyOption) obj;
+        return Objects.equals(this.maximumConsecutiveIdenticalChars, that.maximumConsecutiveIdenticalChars)
+            && Objects.equals(this.minimumPasswordAge, that.minimumPasswordAge)
+            && Objects.equals(this.minimumPasswordLength, that.minimumPasswordLength)
+            && Objects.equals(this.numberOfRecentPasswordsDisallowed, that.numberOfRecentPasswordsDisallowed)
+            && Objects.equals(this.passwordNotUsernameOrInvert, that.passwordNotUsernameOrInvert)
+            && Objects.equals(this.passwordValidityPeriod, that.passwordValidityPeriod)
+            && Objects.equals(this.passwordCharCombination, that.passwordCharCombination);
     }
 
     @Override

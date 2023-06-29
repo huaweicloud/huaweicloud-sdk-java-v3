@@ -96,17 +96,16 @@ public class PolicyResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyResource policyResource = (PolicyResource) o;
-        return Objects.equals(this.isExcludes, policyResource.isExcludes)
-            && Objects.equals(this.isRecursive, policyResource.isRecursive)
-            && Objects.equals(this.values, policyResource.values);
+        PolicyResource that = (PolicyResource) obj;
+        return Objects.equals(this.isExcludes, that.isExcludes) && Objects.equals(this.isRecursive, that.isRecursive)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

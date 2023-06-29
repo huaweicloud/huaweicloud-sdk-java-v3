@@ -109,18 +109,17 @@ public class UpdateCustomRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomRuleRequest updateCustomRuleRequest = (UpdateCustomRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateCustomRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateCustomRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateCustomRuleRequest.ruleId)
-            && Objects.equals(this.body, updateCustomRuleRequest.body);
+        UpdateCustomRuleRequest that = (UpdateCustomRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

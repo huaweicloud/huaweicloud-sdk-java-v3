@@ -65,16 +65,16 @@ public class UpdateSubNetworkInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubNetworkInterfaceRequest updateSubNetworkInterfaceRequest = (UpdateSubNetworkInterfaceRequest) o;
-        return Objects.equals(this.subNetworkInterfaceId, updateSubNetworkInterfaceRequest.subNetworkInterfaceId)
-            && Objects.equals(this.body, updateSubNetworkInterfaceRequest.body);
+        UpdateSubNetworkInterfaceRequest that = (UpdateSubNetworkInterfaceRequest) obj;
+        return Objects.equals(this.subNetworkInterfaceId, that.subNetworkInterfaceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

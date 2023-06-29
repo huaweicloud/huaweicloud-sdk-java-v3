@@ -34,15 +34,15 @@ public class CreateWebSocketTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWebSocketTokenResponse createWebSocketTokenResponse = (CreateWebSocketTokenResponse) o;
-        return Objects.equals(this.webSocketToken, createWebSocketTokenResponse.webSocketToken);
+        CreateWebSocketTokenResponse that = (CreateWebSocketTokenResponse) obj;
+        return Objects.equals(this.webSocketToken, that.webSocketToken);
     }
 
     @Override

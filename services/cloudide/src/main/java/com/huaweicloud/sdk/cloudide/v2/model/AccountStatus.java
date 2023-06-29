@@ -99,18 +99,17 @@ public class AccountStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccountStatus accountStatus = (AccountStatus) o;
-        return Objects.equals(this.curOrgCreateRole, accountStatus.curOrgCreateRole)
-            && Objects.equals(this.curOrgOpen, accountStatus.curOrgOpen)
-            && Objects.equals(this.hasFreeTrial, accountStatus.hasFreeTrial)
-            && Objects.equals(this.showManage, accountStatus.showManage);
+        AccountStatus that = (AccountStatus) obj;
+        return Objects.equals(this.curOrgCreateRole, that.curOrgCreateRole)
+            && Objects.equals(this.curOrgOpen, that.curOrgOpen) && Objects.equals(this.hasFreeTrial, that.hasFreeTrial)
+            && Objects.equals(this.showManage, that.showManage);
     }
 
     @Override

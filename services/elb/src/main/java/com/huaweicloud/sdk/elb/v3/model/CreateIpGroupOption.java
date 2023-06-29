@@ -140,19 +140,17 @@ public class CreateIpGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIpGroupOption createIpGroupOption = (CreateIpGroupOption) o;
-        return Objects.equals(this.projectId, createIpGroupOption.projectId)
-            && Objects.equals(this.description, createIpGroupOption.description)
-            && Objects.equals(this.name, createIpGroupOption.name)
-            && Objects.equals(this.ipList, createIpGroupOption.ipList)
-            && Objects.equals(this.enterpriseProjectId, createIpGroupOption.enterpriseProjectId);
+        CreateIpGroupOption that = (CreateIpGroupOption) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.ipList, that.ipList)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

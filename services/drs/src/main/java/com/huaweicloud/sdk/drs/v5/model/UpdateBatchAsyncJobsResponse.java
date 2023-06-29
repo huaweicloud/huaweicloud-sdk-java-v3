@@ -53,15 +53,15 @@ public class UpdateBatchAsyncJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBatchAsyncJobsResponse updateBatchAsyncJobsResponse = (UpdateBatchAsyncJobsResponse) o;
-        return Objects.equals(this.jobs, updateBatchAsyncJobsResponse.jobs);
+        UpdateBatchAsyncJobsResponse that = (UpdateBatchAsyncJobsResponse) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

@@ -254,19 +254,19 @@ public class Network {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Network network = (Network) o;
-        return Objects.equals(this.direction, network.direction) && Objects.equals(this.protocol, network.protocol)
-            && Objects.equals(this.srcIp, network.srcIp) && Objects.equals(this.srcPort, network.srcPort)
-            && Objects.equals(this.srcDomain, network.srcDomain) && Objects.equals(this.srcGeo, network.srcGeo)
-            && Objects.equals(this.destIp, network.destIp) && Objects.equals(this.destPort, network.destPort)
-            && Objects.equals(this.destDomain, network.destDomain) && Objects.equals(this.destGeo, network.destGeo);
+        Network that = (Network) obj;
+        return Objects.equals(this.direction, that.direction) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.srcDomain, that.srcDomain) && Objects.equals(this.srcGeo, that.srcGeo)
+            && Objects.equals(this.destIp, that.destIp) && Objects.equals(this.destPort, that.destPort)
+            && Objects.equals(this.destDomain, that.destDomain) && Objects.equals(this.destGeo, that.destGeo);
     }
 
     @Override

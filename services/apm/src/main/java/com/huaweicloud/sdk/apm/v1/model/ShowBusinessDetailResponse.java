@@ -321,28 +321,21 @@ public class ShowBusinessDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBusinessDetailResponse showBusinessDetailResponse = (ShowBusinessDetailResponse) o;
-        return Objects.equals(this.id, showBusinessDetailResponse.id)
-            && Objects.equals(this.gmtCreate, showBusinessDetailResponse.gmtCreate)
-            && Objects.equals(this.gmtModify, showBusinessDetailResponse.gmtModify)
-            && Objects.equals(this._default, showBusinessDetailResponse._default)
-            && Objects.equals(this.displayName, showBusinessDetailResponse.displayName)
-            && Objects.equals(this.name, showBusinessDetailResponse.name)
-            && Objects.equals(this.isDefault, showBusinessDetailResponse.isDefault)
-            && Objects.equals(this.innerDomainId, showBusinessDetailResponse.innerDomainId)
-            && Objects.equals(this.epsId, showBusinessDetailResponse.epsId)
-            && Objects.equals(this.creatorId, showBusinessDetailResponse.creatorId)
-            && Objects.equals(this.descp, showBusinessDetailResponse.descp)
-            && Objects.equals(this.createTime, showBusinessDetailResponse.createTime)
-            && Objects.equals(this.modifyTime, showBusinessDetailResponse.modifyTime)
-            && Objects.equals(this.creatorName, showBusinessDetailResponse.creatorName);
+        ShowBusinessDetailResponse that = (ShowBusinessDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.innerDomainId, that.innerDomainId)
+            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.descp, that.descp) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.modifyTime, that.modifyTime) && Objects.equals(this.creatorName, that.creatorName);
     }
 
     @Override

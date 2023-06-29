@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.MetricAPIQueryItemParam;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ListMetricItemsRequest  {
-
+public class ListMetricItemsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start")
-    
+    @JsonProperty(value = "start")
 
     private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private MetricAPIQueryItemParam body;
 
@@ -47,9 +35,6 @@ public class ListMetricItemsRequest  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 指标查询方式。
@@ -63,15 +48,10 @@ public class ListMetricItemsRequest  {
         this.type = type;
     }
 
-    
-
     public ListMetricItemsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 用于限制本次返回的结果数据条数。 取值范围(0,1000]，默认值为1000。
@@ -85,15 +65,10 @@ public class ListMetricItemsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListMetricItemsRequest withStart(String start) {
         this.start = start;
         return this;
     }
-
-    
-
 
     /**
      * 分页查询起始位置，为非负整数。
@@ -107,22 +82,19 @@ public class ListMetricItemsRequest  {
         this.start = start;
     }
 
-    
-
     public ListMetricItemsRequest withBody(MetricAPIQueryItemParam body) {
         this.body = body;
         return this;
     }
 
     public ListMetricItemsRequest withBody(Consumer<MetricAPIQueryItemParam> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new MetricAPIQueryItemParam();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -136,26 +108,24 @@ public class ListMetricItemsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricItemsRequest listMetricItemsRequest = (ListMetricItemsRequest) o;
-        return Objects.equals(this.type, listMetricItemsRequest.type) &&
-            Objects.equals(this.limit, listMetricItemsRequest.limit) &&
-            Objects.equals(this.start, listMetricItemsRequest.start) &&
-            Objects.equals(this.body, listMetricItemsRequest.body);
+        ListMetricItemsRequest that = (ListMetricItemsRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, limit, start, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,6 +137,7 @@ public class ListMetricItemsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -177,8 +148,5 @@ public class ListMetricItemsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

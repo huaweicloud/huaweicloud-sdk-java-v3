@@ -60,22 +60,15 @@ public class PremiumWafServer {
             if (value == null) {
                 return null;
             }
-            FrontProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FrontProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FrontProtocolEnum(value));
         }
 
         public static FrontProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FrontProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class PremiumWafServer {
             if (value == null) {
                 return null;
             }
-            BackProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackProtocolEnum(value));
         }
 
         public static BackProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -239,22 +225,15 @@ public class PremiumWafServer {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -401,20 +380,18 @@ public class PremiumWafServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PremiumWafServer premiumWafServer = (PremiumWafServer) o;
-        return Objects.equals(this.frontProtocol, premiumWafServer.frontProtocol)
-            && Objects.equals(this.backProtocol, premiumWafServer.backProtocol)
-            && Objects.equals(this.weight, premiumWafServer.weight)
-            && Objects.equals(this.address, premiumWafServer.address)
-            && Objects.equals(this.port, premiumWafServer.port) && Objects.equals(this.type, premiumWafServer.type)
-            && Objects.equals(this.vpcId, premiumWafServer.vpcId);
+        PremiumWafServer that = (PremiumWafServer) obj;
+        return Objects.equals(this.frontProtocol, that.frontProtocol)
+            && Objects.equals(this.backProtocol, that.backProtocol) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

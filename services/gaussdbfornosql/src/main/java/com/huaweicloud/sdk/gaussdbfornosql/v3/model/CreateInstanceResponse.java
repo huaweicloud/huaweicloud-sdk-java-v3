@@ -476,33 +476,25 @@ public class CreateInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceResponse createInstanceResponse = (CreateInstanceResponse) o;
-        return Objects.equals(this.id, createInstanceResponse.id)
-            && Objects.equals(this.datastore, createInstanceResponse.datastore)
-            && Objects.equals(this.name, createInstanceResponse.name)
-            && Objects.equals(this.created, createInstanceResponse.created)
-            && Objects.equals(this.status, createInstanceResponse.status)
-            && Objects.equals(this.region, createInstanceResponse.region)
-            && Objects.equals(this.availabilityZone, createInstanceResponse.availabilityZone)
-            && Objects.equals(this.vpcId, createInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, createInstanceResponse.subnetId)
-            && Objects.equals(this.securityGroupId, createInstanceResponse.securityGroupId)
-            && Objects.equals(this.mode, createInstanceResponse.mode)
-            && Objects.equals(this.flavor, createInstanceResponse.flavor)
-            && Objects.equals(this.backupStrategy, createInstanceResponse.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, createInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.dedicatedResourceId, createInstanceResponse.dedicatedResourceId)
-            && Objects.equals(this.sslOption, createInstanceResponse.sslOption)
-            && Objects.equals(this.jobId, createInstanceResponse.jobId)
-            && Objects.equals(this.orderId, createInstanceResponse.orderId)
-            && Objects.equals(this.chargeInfo, createInstanceResponse.chargeInfo);
+        CreateInstanceResponse that = (CreateInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
+            && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.chargeInfo, that.chargeInfo);
     }
 
     @Override

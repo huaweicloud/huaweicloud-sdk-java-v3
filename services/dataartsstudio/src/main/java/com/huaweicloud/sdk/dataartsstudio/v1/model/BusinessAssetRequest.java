@@ -90,22 +90,15 @@ public class BusinessAssetRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,18 @@ public class BusinessAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessAssetRequest businessAssetRequest = (BusinessAssetRequest) o;
-        return Objects.equals(this.searchAllAttributes, businessAssetRequest.searchAllAttributes)
-            && Objects.equals(this.tags, businessAssetRequest.tags)
-            && Objects.equals(this.limit, businessAssetRequest.limit)
-            && Objects.equals(this.offset, businessAssetRequest.offset)
-            && Objects.equals(this.guid, businessAssetRequest.guid)
-            && Objects.equals(this.query, businessAssetRequest.query)
-            && Objects.equals(this.type, businessAssetRequest.type);
+        BusinessAssetRequest that = (BusinessAssetRequest) obj;
+        return Objects.equals(this.searchAllAttributes, that.searchAllAttributes)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.type, that.type);
     }
 
     @Override

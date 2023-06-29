@@ -83,16 +83,16 @@ public class ResExecConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResExecConfig resExecConfig = (ResExecConfig) o;
-        return Objects.equals(this.sparkCalcSpec, resExecConfig.sparkCalcSpec)
-            && Objects.equals(this.sparkOptionConfs, resExecConfig.sparkOptionConfs);
+        ResExecConfig that = (ResExecConfig) obj;
+        return Objects.equals(this.sparkCalcSpec, that.sparkCalcSpec)
+            && Objects.equals(this.sparkOptionConfs, that.sparkOptionConfs);
     }
 
     @Override

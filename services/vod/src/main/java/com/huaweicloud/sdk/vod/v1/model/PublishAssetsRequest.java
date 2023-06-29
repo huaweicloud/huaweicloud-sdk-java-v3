@@ -67,16 +67,15 @@ public class PublishAssetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAssetsRequest publishAssetsRequest = (PublishAssetsRequest) o;
-        return Objects.equals(this.xSdkDate, publishAssetsRequest.xSdkDate)
-            && Objects.equals(this.body, publishAssetsRequest.body);
+        PublishAssetsRequest that = (PublishAssetsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.body, that.body);
     }
 
     @Override

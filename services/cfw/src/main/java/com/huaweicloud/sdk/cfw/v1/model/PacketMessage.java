@@ -96,16 +96,16 @@ public class PacketMessage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PacketMessage packetMessage = (PacketMessage) o;
-        return Objects.equals(this.hexIndex, packetMessage.hexIndex) && Objects.equals(this.hexs, packetMessage.hexs)
-            && Objects.equals(this.utf8String, packetMessage.utf8String);
+        PacketMessage that = (PacketMessage) obj;
+        return Objects.equals(this.hexIndex, that.hexIndex) && Objects.equals(this.hexs, that.hexs)
+            && Objects.equals(this.utf8String, that.utf8String);
     }
 
     @Override

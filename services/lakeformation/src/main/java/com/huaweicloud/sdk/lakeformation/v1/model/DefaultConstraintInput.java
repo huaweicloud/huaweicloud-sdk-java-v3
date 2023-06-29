@@ -143,20 +143,20 @@ public class DefaultConstraintInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefaultConstraintInput defaultConstraintInput = (DefaultConstraintInput) o;
-        return Objects.equals(this.columnName, defaultConstraintInput.columnName)
-            && Objects.equals(this.constraintName, defaultConstraintInput.constraintName)
-            && Objects.equals(this.defaultValue, defaultConstraintInput.defaultValue)
-            && Objects.equals(this.enableConstraint, defaultConstraintInput.enableConstraint)
-            && Objects.equals(this.relyConstraint, defaultConstraintInput.relyConstraint)
-            && Objects.equals(this.validateConstraint, defaultConstraintInput.validateConstraint);
+        DefaultConstraintInput that = (DefaultConstraintInput) obj;
+        return Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

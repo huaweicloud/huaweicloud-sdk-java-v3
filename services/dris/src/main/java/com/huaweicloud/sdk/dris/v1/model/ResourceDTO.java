@@ -74,15 +74,15 @@ public class ResourceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceDTO resourceDTO = (ResourceDTO) o;
-        return Objects.equals(this.limits, resourceDTO.limits) && Objects.equals(this.requests, resourceDTO.requests);
+        ResourceDTO that = (ResourceDTO) obj;
+        return Objects.equals(this.limits, that.limits) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

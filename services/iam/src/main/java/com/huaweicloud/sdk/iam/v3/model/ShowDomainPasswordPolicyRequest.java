@@ -33,15 +33,15 @@ public class ShowDomainPasswordPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainPasswordPolicyRequest showDomainPasswordPolicyRequest = (ShowDomainPasswordPolicyRequest) o;
-        return Objects.equals(this.domainId, showDomainPasswordPolicyRequest.domainId);
+        ShowDomainPasswordPolicyRequest that = (ShowDomainPasswordPolicyRequest) obj;
+        return Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

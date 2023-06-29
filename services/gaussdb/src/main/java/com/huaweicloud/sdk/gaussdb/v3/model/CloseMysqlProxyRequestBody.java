@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CloseMysqlProxyRequestBody
  */
-public class CloseMysqlProxyRequestBody  {
-
+public class CloseMysqlProxyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy_ids")
-    
+    @JsonProperty(value = "proxy_ids")
+
     private List<String> proxyIds = null;
-    
+
     public CloseMysqlProxyRequestBody withProxyIds(List<String> proxyIds) {
         this.proxyIds = proxyIds;
         return this;
     }
 
-    
     public CloseMysqlProxyRequestBody addProxyIdsItem(String proxyIdsItem) {
-        if(this.proxyIds == null) {
+        if (this.proxyIds == null) {
             this.proxyIds = new ArrayList<>();
         }
         this.proxyIds.add(proxyIdsItem);
@@ -39,7 +32,7 @@ public class CloseMysqlProxyRequestBody  {
     }
 
     public CloseMysqlProxyRequestBody withProxyIds(Consumer<List<String>> proxyIdsSetter) {
-        if(this.proxyIds == null) {
+        if (this.proxyIds == null) {
             this.proxyIds = new ArrayList<>();
         }
         proxyIdsSetter.accept(this.proxyIds);
@@ -58,23 +51,23 @@ public class CloseMysqlProxyRequestBody  {
         this.proxyIds = proxyIds;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloseMysqlProxyRequestBody closeMysqlProxyRequestBody = (CloseMysqlProxyRequestBody) o;
-        return Objects.equals(this.proxyIds, closeMysqlProxyRequestBody.proxyIds);
+        CloseMysqlProxyRequestBody that = (CloseMysqlProxyRequestBody) obj;
+        return Objects.equals(this.proxyIds, that.proxyIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(proxyIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class CloseMysqlProxyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class CloseMysqlProxyRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

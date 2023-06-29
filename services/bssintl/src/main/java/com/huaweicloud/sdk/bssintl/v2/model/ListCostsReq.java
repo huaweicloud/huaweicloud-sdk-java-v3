@@ -213,20 +213,18 @@ public class ListCostsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCostsReq listCostsReq = (ListCostsReq) o;
-        return Objects.equals(this.timeCondition, listCostsReq.timeCondition)
-            && Objects.equals(this.groupby, listCostsReq.groupby)
-            && Objects.equals(this.costType, listCostsReq.costType)
-            && Objects.equals(this.amountType, listCostsReq.amountType)
-            && Objects.equals(this.offset, listCostsReq.offset) && Objects.equals(this.limit, listCostsReq.limit)
-            && Objects.equals(this.filters, listCostsReq.filters);
+        ListCostsReq that = (ListCostsReq) obj;
+        return Objects.equals(this.timeCondition, that.timeCondition) && Objects.equals(this.groupby, that.groupby)
+            && Objects.equals(this.costType, that.costType) && Objects.equals(this.amountType, that.amountType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.filters, that.filters);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class AlterRoleInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlterRoleInput alterRoleInput = (AlterRoleInput) o;
-        return Objects.equals(this.description, alterRoleInput.description)
-            && Objects.equals(this.roleName, alterRoleInput.roleName);
+        AlterRoleInput that = (AlterRoleInput) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.roleName, that.roleName);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class AudioModerationResultResult {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuggestionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuggestionEnum(value));
         }
 
         public static SuggestionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,17 +177,16 @@ public class AudioModerationResultResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioModerationResultResult audioModerationResultResult = (AudioModerationResultResult) o;
-        return Objects.equals(this.suggestion, audioModerationResultResult.suggestion)
-            && Objects.equals(this.details, audioModerationResultResult.details)
-            && Objects.equals(this.audioText, audioModerationResultResult.audioText);
+        AudioModerationResultResult that = (AudioModerationResultResult) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.details, that.details)
+            && Objects.equals(this.audioText, that.audioText);
     }
 
     @Override

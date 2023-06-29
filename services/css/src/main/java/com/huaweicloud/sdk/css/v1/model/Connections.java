@@ -165,20 +165,19 @@ public class Connections {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Connections connections = (Connections) o;
-        return Objects.equals(this.id, connections.id) && Objects.equals(this.status, connections.status)
-            && Objects.equals(this.maxSession, connections.maxSession)
-            && Objects.equals(this.specificationName, connections.specificationName)
-            && Objects.equals(this.createdAt, connections.createdAt)
-            && Objects.equals(this.updateAt, connections.updateAt)
-            && Objects.equals(this.domainId, connections.domainId);
+        Connections that = (Connections) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.maxSession, that.maxSession)
+            && Objects.equals(this.specificationName, that.specificationName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

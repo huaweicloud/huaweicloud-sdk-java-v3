@@ -65,22 +65,15 @@ public class ListApicGroupsRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class ListApicGroupsRequest {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApigTypeEnum(value));
         }
 
         public static ApigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,20 +288,17 @@ public class ListApicGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApicGroupsRequest listApicGroupsRequest = (ListApicGroupsRequest) o;
-        return Objects.equals(this.workspace, listApicGroupsRequest.workspace)
-            && Objects.equals(this.dlmType, listApicGroupsRequest.dlmType)
-            && Objects.equals(this.apigInstanceId, listApicGroupsRequest.apigInstanceId)
-            && Objects.equals(this.apigType, listApicGroupsRequest.apigType)
-            && Objects.equals(this.limit, listApicGroupsRequest.limit)
-            && Objects.equals(this.offset, listApicGroupsRequest.offset);
+        ListApicGroupsRequest that = (ListApicGroupsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.apigInstanceId, that.apigInstanceId) && Objects.equals(this.apigType, that.apigType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

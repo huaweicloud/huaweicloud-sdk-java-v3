@@ -65,16 +65,15 @@ public class UpdateSecurityPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecurityPolicyRequest updateSecurityPolicyRequest = (UpdateSecurityPolicyRequest) o;
-        return Objects.equals(this.securityPolicyId, updateSecurityPolicyRequest.securityPolicyId)
-            && Objects.equals(this.body, updateSecurityPolicyRequest.body);
+        UpdateSecurityPolicyRequest that = (UpdateSecurityPolicyRequest) obj;
+        return Objects.equals(this.securityPolicyId, that.securityPolicyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

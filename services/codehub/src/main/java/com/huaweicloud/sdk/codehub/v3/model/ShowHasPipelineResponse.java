@@ -88,17 +88,16 @@ public class ShowHasPipelineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHasPipelineResponse showHasPipelineResponse = (ShowHasPipelineResponse) o;
-        return Objects.equals(this.error, showHasPipelineResponse.error)
-            && Objects.equals(this.result, showHasPipelineResponse.result)
-            && Objects.equals(this.status, showHasPipelineResponse.status);
+        ShowHasPipelineResponse that = (ShowHasPipelineResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

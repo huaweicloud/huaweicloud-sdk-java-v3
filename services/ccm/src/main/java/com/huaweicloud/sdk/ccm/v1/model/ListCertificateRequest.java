@@ -146,20 +146,17 @@ public class ListCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificateRequest listCertificateRequest = (ListCertificateRequest) o;
-        return Objects.equals(this.limit, listCertificateRequest.limit)
-            && Objects.equals(this.name, listCertificateRequest.name)
-            && Objects.equals(this.offset, listCertificateRequest.offset)
-            && Objects.equals(this.status, listCertificateRequest.status)
-            && Objects.equals(this.sortKey, listCertificateRequest.sortKey)
-            && Objects.equals(this.sortDir, listCertificateRequest.sortDir);
+        ListCertificateRequest that = (ListCertificateRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

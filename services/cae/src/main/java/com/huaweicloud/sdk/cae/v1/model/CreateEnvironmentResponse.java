@@ -88,17 +88,16 @@ public class CreateEnvironmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnvironmentResponse createEnvironmentResponse = (CreateEnvironmentResponse) o;
-        return Objects.equals(this.apiVersion, createEnvironmentResponse.apiVersion)
-            && Objects.equals(this.kind, createEnvironmentResponse.kind)
-            && Objects.equals(this.metadata, createEnvironmentResponse.metadata);
+        CreateEnvironmentResponse that = (CreateEnvironmentResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

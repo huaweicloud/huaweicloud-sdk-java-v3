@@ -341,26 +341,22 @@ public class EdgeGroupCert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeGroupCert edgeGroupCert = (EdgeGroupCert) o;
-        return Objects.equals(this.id, edgeGroupCert.id) && Objects.equals(this.name, edgeGroupCert.name)
-            && Objects.equals(this.description, edgeGroupCert.description)
-            && Objects.equals(this.createdAt, edgeGroupCert.createdAt)
-            && Objects.equals(this.updatedAt, edgeGroupCert.updatedAt)
-            && Objects.equals(this.groupId, edgeGroupCert.groupId)
-            && Objects.equals(this.isDeleted, edgeGroupCert.isDeleted)
-            && Objects.equals(this.projectId, edgeGroupCert.projectId) && Objects.equals(this.type, edgeGroupCert.type)
-            && Objects.equals(this.serialNum, edgeGroupCert.serialNum) && Objects.equals(this.ca, edgeGroupCert.ca)
-            && Objects.equals(this.certificate, edgeGroupCert.certificate)
-            && Objects.equals(this.privateKey, edgeGroupCert.privateKey)
-            && Objects.equals(this._package, edgeGroupCert._package)
-            && Objects.equals(this.certRemainingValidTime, edgeGroupCert.certRemainingValidTime);
+        EdgeGroupCert that = (EdgeGroupCert) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.isDeleted, that.isDeleted) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.serialNum, that.serialNum)
+            && Objects.equals(this.ca, that.ca) && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.certRemainingValidTime, that.certRemainingValidTime);
     }
 
     @Override

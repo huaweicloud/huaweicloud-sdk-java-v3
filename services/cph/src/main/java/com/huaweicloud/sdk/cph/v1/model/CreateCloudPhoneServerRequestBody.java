@@ -294,25 +294,21 @@ public class CreateCloudPhoneServerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudPhoneServerRequestBody createCloudPhoneServerRequestBody = (CreateCloudPhoneServerRequestBody) o;
-        return Objects.equals(this.serverName, createCloudPhoneServerRequestBody.serverName)
-            && Objects.equals(this.serverModelName, createCloudPhoneServerRequestBody.serverModelName)
-            && Objects.equals(this.phoneModelName, createCloudPhoneServerRequestBody.phoneModelName)
-            && Objects.equals(this.imageId, createCloudPhoneServerRequestBody.imageId)
-            && Objects.equals(this.count, createCloudPhoneServerRequestBody.count)
-            && Objects.equals(this.keypairName, createCloudPhoneServerRequestBody.keypairName)
-            && Objects.equals(this.ports, createCloudPhoneServerRequestBody.ports)
-            && Objects.equals(this.bandWidth, createCloudPhoneServerRequestBody.bandWidth)
-            && Objects.equals(this.extendParam, createCloudPhoneServerRequestBody.extendParam)
-            && Objects.equals(this.vncEnable, createCloudPhoneServerRequestBody.vncEnable)
-            && Objects.equals(this.subnetCidr, createCloudPhoneServerRequestBody.subnetCidr);
+        CreateCloudPhoneServerRequestBody that = (CreateCloudPhoneServerRequestBody) obj;
+        return Objects.equals(this.serverName, that.serverName)
+            && Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.keypairName, that.keypairName)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.bandWidth, that.bandWidth)
+            && Objects.equals(this.extendParam, that.extendParam) && Objects.equals(this.vncEnable, that.vncEnable)
+            && Objects.equals(this.subnetCidr, that.subnetCidr);
     }
 
     @Override

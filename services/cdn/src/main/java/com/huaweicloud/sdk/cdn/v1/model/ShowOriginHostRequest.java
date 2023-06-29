@@ -55,16 +55,16 @@ public class ShowOriginHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOriginHostRequest showOriginHostRequest = (ShowOriginHostRequest) o;
-        return Objects.equals(this.domainId, showOriginHostRequest.domainId)
-            && Objects.equals(this.enterpriseProjectId, showOriginHostRequest.enterpriseProjectId);
+        ShowOriginHostRequest that = (ShowOriginHostRequest) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -869,51 +869,39 @@ public class InstanceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceDetail instanceDetail = (InstanceDetail) o;
-        return Objects.equals(this.publicip, instanceDetail.publicip)
-            && Objects.equals(this.expTime, instanceDetail.expTime)
-            && Objects.equals(this.startTime, instanceDetail.startTime)
-            && Objects.equals(this.endTime, instanceDetail.endTime)
-            && Objects.equals(this.releaseTime, instanceDetail.releaseTime)
-            && Objects.equals(this.name, instanceDetail.name)
-            && Objects.equals(this.instanceId, instanceDetail.instanceId)
-            && Objects.equals(this.privateIp, instanceDetail.privateIp)
-            && Objects.equals(this.taskStatus, instanceDetail.taskStatus)
-            && Objects.equals(this.status, instanceDetail.status)
-            && Objects.equals(this.created, instanceDetail.created)
-            && Objects.equals(this.region, instanceDetail.region) && Objects.equals(this.zone, instanceDetail.zone)
-            && Objects.equals(this.availabilityZoneDisplay, instanceDetail.availabilityZoneDisplay)
-            && Objects.equals(this.vpcId, instanceDetail.vpcId)
-            && Objects.equals(this.subnetId, instanceDetail.subnetId)
-            && Objects.equals(this.securityGroupId, instanceDetail.securityGroupId)
-            && Objects.equals(this.specification, instanceDetail.specification)
-            && Objects.equals(this.update, instanceDetail.update)
-            && Objects.equals(this.createinstanceStatus, instanceDetail.createinstanceStatus)
-            && Objects.equals(this.failReason, instanceDetail.failReason)
-            && Objects.equals(this.instanceKey, instanceDetail.instanceKey)
-            && Objects.equals(this.orderId, instanceDetail.orderId)
-            && Objects.equals(this.periodNum, instanceDetail.periodNum)
-            && Objects.equals(this.resourceId, instanceDetail.resourceId)
-            && Objects.equals(this.bastionType, instanceDetail.bastionType)
-            && Objects.equals(this.alterPermit, instanceDetail.alterPermit)
-            && Objects.equals(this.publicId, instanceDetail.publicId)
-            && Objects.equals(this.bastionVersion, instanceDetail.bastionVersion)
-            && Objects.equals(this.newBastionVersion, instanceDetail.newBastionVersion)
-            && Objects.equals(this.instanceStatus, instanceDetail.instanceStatus)
-            && Objects.equals(this.instanceDescription, instanceDetail.instanceDescription)
-            && Objects.equals(this.slaveZone, instanceDetail.slaveZone)
-            && Objects.equals(this.enterpriseProjectId, instanceDetail.enterpriseProjectId)
-            && Objects.equals(this.instanceType, instanceDetail.instanceType)
-            && Objects.equals(this.haId, instanceDetail.haId)
-            && Objects.equals(this.slaveZoneDisplay, instanceDetail.slaveZoneDisplay)
-            && Objects.equals(this.webPort, instanceDetail.webPort) && Objects.equals(this.vip, instanceDetail.vip);
+        InstanceDetail that = (InstanceDetail) obj;
+        return Objects.equals(this.publicip, that.publicip) && Objects.equals(this.expTime, that.expTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.releaseTime, that.releaseTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.zone, that.zone)
+            && Objects.equals(this.availabilityZoneDisplay, that.availabilityZoneDisplay)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.update, that.update)
+            && Objects.equals(this.createinstanceStatus, that.createinstanceStatus)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.instanceKey, that.instanceKey)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.bastionType, that.bastionType)
+            && Objects.equals(this.alterPermit, that.alterPermit) && Objects.equals(this.publicId, that.publicId)
+            && Objects.equals(this.bastionVersion, that.bastionVersion)
+            && Objects.equals(this.newBastionVersion, that.newBastionVersion)
+            && Objects.equals(this.instanceStatus, that.instanceStatus)
+            && Objects.equals(this.instanceDescription, that.instanceDescription)
+            && Objects.equals(this.slaveZone, that.slaveZone)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.haId, that.haId)
+            && Objects.equals(this.slaveZoneDisplay, that.slaveZoneDisplay)
+            && Objects.equals(this.webPort, that.webPort) && Objects.equals(this.vip, that.vip);
     }
 
     @Override

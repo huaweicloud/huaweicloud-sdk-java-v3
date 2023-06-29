@@ -65,16 +65,15 @@ public class UpdateBigkeyAutoscanConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBigkeyAutoscanConfigRequest updateBigkeyAutoscanConfigRequest = (UpdateBigkeyAutoscanConfigRequest) o;
-        return Objects.equals(this.instanceId, updateBigkeyAutoscanConfigRequest.instanceId)
-            && Objects.equals(this.body, updateBigkeyAutoscanConfigRequest.body);
+        UpdateBigkeyAutoscanConfigRequest that = (UpdateBigkeyAutoscanConfigRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

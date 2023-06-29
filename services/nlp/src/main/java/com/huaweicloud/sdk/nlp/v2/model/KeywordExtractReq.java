@@ -1,48 +1,39 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * This is a auto create Body Object
  */
-public class KeywordExtractReq  {
-
+public class KeywordExtractReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
+
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,25 +61,18 @@ public class KeywordExtractReq  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -106,8 +90,7 @@ public class KeywordExtractReq  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
 
@@ -115,9 +98,6 @@ public class KeywordExtractReq  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分析文本，长度为1~512，文本编码为UTF-8。
@@ -131,15 +111,10 @@ public class KeywordExtractReq  {
         this.text = text;
     }
 
-    
-
     public KeywordExtractReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 返回关键词的最大数量，默认为5。
@@ -153,15 +128,10 @@ public class KeywordExtractReq  {
         this.limit = limit;
     }
 
-    
-
     public KeywordExtractReq withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -175,25 +145,24 @@ public class KeywordExtractReq  {
         this.lang = lang;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeywordExtractReq keywordExtractReq = (KeywordExtractReq) o;
-        return Objects.equals(this.text, keywordExtractReq.text) &&
-            Objects.equals(this.limit, keywordExtractReq.limit) &&
-            Objects.equals(this.lang, keywordExtractReq.lang);
+        KeywordExtractReq that = (KeywordExtractReq) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.lang, that.lang);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, limit, lang);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -204,6 +173,7 @@ public class KeywordExtractReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -214,8 +184,5 @@ public class KeywordExtractReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

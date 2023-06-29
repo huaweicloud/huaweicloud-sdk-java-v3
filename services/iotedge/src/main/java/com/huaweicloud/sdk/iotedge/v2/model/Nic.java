@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 网络网卡信息
  */
-public class Nic  {
-
+public class Nic {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eth")
-    
+    @JsonProperty(value = "eth")
 
     private String eth;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
 
     private String ip;
 
@@ -33,9 +24,6 @@ public class Nic  {
         this.eth = eth;
         return this;
     }
-
-    
-
 
     /**
      * 网卡信息，如eth0,eth1
@@ -49,15 +37,10 @@ public class Nic  {
         this.eth = eth;
     }
 
-    
-
     public Nic withIp(String ip) {
         this.ip = ip;
         return this;
     }
-
-    
-
 
     /**
      * 网卡ip
@@ -71,24 +54,23 @@ public class Nic  {
         this.ip = ip;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nic nic = (Nic) o;
-        return Objects.equals(this.eth, nic.eth) &&
-            Objects.equals(this.ip, nic.ip);
+        Nic that = (Nic) obj;
+        return Objects.equals(this.eth, that.eth) && Objects.equals(this.ip, that.ip);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eth, ip);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class Nic  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class Nic  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

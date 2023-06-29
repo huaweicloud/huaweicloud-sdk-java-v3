@@ -78,17 +78,17 @@ public class CreateNewBlockchainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNewBlockchainResponse createNewBlockchainResponse = (CreateNewBlockchainResponse) o;
-        return Objects.equals(this.blockchainId, createNewBlockchainResponse.blockchainId)
-            && Objects.equals(this.blockchainName, createNewBlockchainResponse.blockchainName)
-            && Objects.equals(this.operationId, createNewBlockchainResponse.operationId);
+        CreateNewBlockchainResponse that = (CreateNewBlockchainResponse) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId)
+            && Objects.equals(this.blockchainName, that.blockchainName)
+            && Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

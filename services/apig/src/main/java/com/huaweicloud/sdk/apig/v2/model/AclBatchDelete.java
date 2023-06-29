@@ -52,15 +52,15 @@ public class AclBatchDelete {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclBatchDelete aclBatchDelete = (AclBatchDelete) o;
-        return Objects.equals(this.acls, aclBatchDelete.acls);
+        AclBatchDelete that = (AclBatchDelete) obj;
+        return Objects.equals(this.acls, that.acls);
     }
 
     @Override

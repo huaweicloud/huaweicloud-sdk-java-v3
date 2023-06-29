@@ -77,16 +77,15 @@ public class ListBusinessRisksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBusinessRisksResponse listBusinessRisksResponse = (ListBusinessRisksResponse) o;
-        return Objects.equals(this.total, listBusinessRisksResponse.total)
-            && Objects.equals(this.data, listBusinessRisksResponse.data);
+        ListBusinessRisksResponse that = (ListBusinessRisksResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override

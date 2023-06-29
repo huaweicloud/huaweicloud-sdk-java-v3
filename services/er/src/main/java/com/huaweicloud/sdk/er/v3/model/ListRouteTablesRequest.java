@@ -96,22 +96,15 @@ public class ListRouteTablesRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,8 +142,8 @@ public class ListRouteTablesRequest {
     private List<String> sortKey = null;
 
     /**
-    * Gets or Sets sortDir
-    */
+     * Gets or Sets sortDir
+     */
     public static final class SortDirEnum {
 
         /**
@@ -193,22 +186,15 @@ public class ListRouteTablesRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -417,22 +403,19 @@ public class ListRouteTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRouteTablesRequest listRouteTablesRequest = (ListRouteTablesRequest) o;
-        return Objects.equals(this.erId, listRouteTablesRequest.erId)
-            && Objects.equals(this.limit, listRouteTablesRequest.limit)
-            && Objects.equals(this.marker, listRouteTablesRequest.marker)
-            && Objects.equals(this.state, listRouteTablesRequest.state)
-            && Objects.equals(this.isDefaultPropagationTable, listRouteTablesRequest.isDefaultPropagationTable)
-            && Objects.equals(this.isDefaultAssociationTable, listRouteTablesRequest.isDefaultAssociationTable)
-            && Objects.equals(this.sortKey, listRouteTablesRequest.sortKey)
-            && Objects.equals(this.sortDir, listRouteTablesRequest.sortDir);
+        ListRouteTablesRequest that = (ListRouteTablesRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.isDefaultPropagationTable, that.isDefaultPropagationTable)
+            && Objects.equals(this.isDefaultAssociationTable, that.isDefaultAssociationTable)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

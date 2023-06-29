@@ -76,22 +76,15 @@ public class ShowQaPairsRequest {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SearchTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SearchTypeEnum(value));
         }
 
         public static SearchTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,19 +212,17 @@ public class ShowQaPairsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQaPairsRequest showQaPairsRequest = (ShowQaPairsRequest) o;
-        return Objects.equals(this.xServiceKey, showQaPairsRequest.xServiceKey)
-            && Objects.equals(this.xSite, showQaPairsRequest.xSite)
-            && Objects.equals(this.xLanguage, showQaPairsRequest.xLanguage)
-            && Objects.equals(this.searchType, showQaPairsRequest.searchType)
-            && Objects.equals(this.body, showQaPairsRequest.body);
+        ShowQaPairsRequest that = (ShowQaPairsRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.searchType, that.searchType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

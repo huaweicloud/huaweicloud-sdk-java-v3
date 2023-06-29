@@ -111,18 +111,16 @@ public class CreateRequestPropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestPropertyRequest createRequestPropertyRequest = (CreateRequestPropertyRequest) o;
-        return Objects.equals(this.instanceId, createRequestPropertyRequest.instanceId)
-            && Objects.equals(this.serviceId, createRequestPropertyRequest.serviceId)
-            && Objects.equals(this.commandId, createRequestPropertyRequest.commandId)
-            && Objects.equals(this.body, createRequestPropertyRequest.body);
+        CreateRequestPropertyRequest that = (CreateRequestPropertyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -341,29 +341,29 @@ public class ForeignKey {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForeignKey foreignKey = (ForeignKey) o;
-        return Objects.equals(this.catalogName, foreignKey.catalogName)
-            && Objects.equals(this.parentKeyDatabaseName, foreignKey.parentKeyDatabaseName)
-            && Objects.equals(this.parentKeyTableName, foreignKey.parentKeyTableName)
-            && Objects.equals(this.parentKeyColumnName, foreignKey.parentKeyColumnName)
-            && Objects.equals(this.parentKeyName, foreignKey.parentKeyName)
-            && Objects.equals(this.foreignKeyDatabaseName, foreignKey.foreignKeyDatabaseName)
-            && Objects.equals(this.foreignKeyTableName, foreignKey.foreignKeyTableName)
-            && Objects.equals(this.foreignKeyColumnName, foreignKey.foreignKeyColumnName)
-            && Objects.equals(this.foreignKeyName, foreignKey.foreignKeyName)
-            && Objects.equals(this.deleteRule, foreignKey.deleteRule)
-            && Objects.equals(this.enableConstraint, foreignKey.enableConstraint)
-            && Objects.equals(this.keySequence, foreignKey.keySequence)
-            && Objects.equals(this.relyConstraint, foreignKey.relyConstraint)
-            && Objects.equals(this.updateRule, foreignKey.updateRule)
-            && Objects.equals(this.validateConstraint, foreignKey.validateConstraint);
+        ForeignKey that = (ForeignKey) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.parentKeyDatabaseName, that.parentKeyDatabaseName)
+            && Objects.equals(this.parentKeyTableName, that.parentKeyTableName)
+            && Objects.equals(this.parentKeyColumnName, that.parentKeyColumnName)
+            && Objects.equals(this.parentKeyName, that.parentKeyName)
+            && Objects.equals(this.foreignKeyDatabaseName, that.foreignKeyDatabaseName)
+            && Objects.equals(this.foreignKeyTableName, that.foreignKeyTableName)
+            && Objects.equals(this.foreignKeyColumnName, that.foreignKeyColumnName)
+            && Objects.equals(this.foreignKeyName, that.foreignKeyName)
+            && Objects.equals(this.deleteRule, that.deleteRule)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.updateRule, that.updateRule)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

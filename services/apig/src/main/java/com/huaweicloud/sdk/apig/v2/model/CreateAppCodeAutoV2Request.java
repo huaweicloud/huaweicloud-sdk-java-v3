@@ -55,16 +55,15 @@ public class CreateAppCodeAutoV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppCodeAutoV2Request createAppCodeAutoV2Request = (CreateAppCodeAutoV2Request) o;
-        return Objects.equals(this.instanceId, createAppCodeAutoV2Request.instanceId)
-            && Objects.equals(this.appId, createAppCodeAutoV2Request.appId);
+        CreateAppCodeAutoV2Request that = (CreateAppCodeAutoV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

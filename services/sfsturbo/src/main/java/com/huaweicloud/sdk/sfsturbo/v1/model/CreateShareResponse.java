@@ -78,16 +78,16 @@ public class CreateShareResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateShareResponse createShareResponse = (CreateShareResponse) o;
-        return Objects.equals(this.id, createShareResponse.id) && Objects.equals(this.name, createShareResponse.name)
-            && Objects.equals(this.status, createShareResponse.status);
+        CreateShareResponse that = (CreateShareResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

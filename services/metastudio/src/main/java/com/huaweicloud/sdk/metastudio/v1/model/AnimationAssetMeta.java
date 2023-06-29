@@ -81,22 +81,16 @@ public class AnimationAssetMeta {
             if (value == null) {
                 return null;
             }
-            AnimationInsertRestrictionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AnimationInsertRestrictionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new AnimationInsertRestrictionEnum(value));
         }
 
         public static AnimationInsertRestrictionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AnimationInsertRestrictionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,19 +203,17 @@ public class AnimationAssetMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnimationAssetMeta animationAssetMeta = (AnimationAssetMeta) o;
-        return Objects.equals(this.styleId, animationAssetMeta.styleId)
-            && Objects.equals(this.duration, animationAssetMeta.duration)
-            && Objects.equals(this.autoAnalysis, animationAssetMeta.autoAnalysis)
-            && Objects.equals(this.voiceDelay, animationAssetMeta.voiceDelay)
-            && Objects.equals(this.animationInsertRestriction, animationAssetMeta.animationInsertRestriction);
+        AnimationAssetMeta that = (AnimationAssetMeta) obj;
+        return Objects.equals(this.styleId, that.styleId) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.autoAnalysis, that.autoAnalysis) && Objects.equals(this.voiceDelay, that.voiceDelay)
+            && Objects.equals(this.animationInsertRestriction, that.animationInsertRestriction);
     }
 
     @Override

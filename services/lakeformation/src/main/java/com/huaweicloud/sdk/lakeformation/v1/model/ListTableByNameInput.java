@@ -52,15 +52,15 @@ public class ListTableByNameInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableByNameInput listTableByNameInput = (ListTableByNameInput) o;
-        return Objects.equals(this.tableNames, listTableByNameInput.tableNames);
+        ListTableByNameInput that = (ListTableByNameInput) obj;
+        return Objects.equals(this.tableNames, that.tableNames);
     }
 
     @Override

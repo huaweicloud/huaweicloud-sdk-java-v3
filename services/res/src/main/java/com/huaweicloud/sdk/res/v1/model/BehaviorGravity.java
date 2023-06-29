@@ -79,17 +79,16 @@ public class BehaviorGravity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BehaviorGravity behaviorGravity = (BehaviorGravity) o;
-        return Objects.equals(this.weakenFactor, behaviorGravity.weakenFactor)
-            && Objects.equals(this.viewType, behaviorGravity.viewType)
-            && Objects.equals(this.algoType, behaviorGravity.algoType);
+        BehaviorGravity that = (BehaviorGravity) obj;
+        return Objects.equals(this.weakenFactor, that.weakenFactor) && Objects.equals(this.viewType, that.viewType)
+            && Objects.equals(this.algoType, that.algoType);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreateApproverResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApproverResponse createApproverResponse = (CreateApproverResponse) o;
-        return Objects.equals(this.data, createApproverResponse.data);
+        CreateApproverResponse that = (CreateApproverResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

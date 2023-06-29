@@ -77,16 +77,16 @@ public class DatastoreItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatastoreItem datastoreItem = (DatastoreItem) o;
-        return Objects.equals(this.type, datastoreItem.type) && Objects.equals(this.version, datastoreItem.version)
-            && Objects.equals(this.patchAvailable, datastoreItem.patchAvailable);
+        DatastoreItem that = (DatastoreItem) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.patchAvailable, that.patchAvailable);
     }
 
     @Override

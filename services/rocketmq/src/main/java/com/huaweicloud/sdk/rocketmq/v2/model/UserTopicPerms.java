@@ -77,22 +77,15 @@ public class UserTopicPerms {
             if (value == null) {
                 return null;
             }
-            PermEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermEnum(value));
         }
 
         public static PermEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,15 +142,15 @@ public class UserTopicPerms {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserTopicPerms userTopicPerms = (UserTopicPerms) o;
-        return Objects.equals(this.name, userTopicPerms.name) && Objects.equals(this.perm, userTopicPerms.perm);
+        UserTopicPerms that = (UserTopicPerms) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.perm, that.perm);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ListVerificationProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVerificationProgressRequest listVerificationProgressRequest = (ListVerificationProgressRequest) o;
-        return Objects.equals(this.migrationProjectId, listVerificationProgressRequest.migrationProjectId);
+        ListVerificationProgressRequest that = (ListVerificationProgressRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId);
     }
 
     @Override

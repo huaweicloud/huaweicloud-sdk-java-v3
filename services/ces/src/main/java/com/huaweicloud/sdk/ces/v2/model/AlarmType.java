@@ -76,22 +76,15 @@ public class AlarmType {
         if (value == null) {
             return null;
         }
-        AlarmType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new AlarmType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmType(value));
     }
 
     public static AlarmType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        AlarmType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

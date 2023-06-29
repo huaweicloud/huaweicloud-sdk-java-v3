@@ -77,16 +77,16 @@ public class EventDataInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventDataInfo eventDataInfo = (EventDataInfo) o;
-        return Objects.equals(this.type, eventDataInfo.type) && Objects.equals(this.timestamp, eventDataInfo.timestamp)
-            && Objects.equals(this.value, eventDataInfo.value);
+        EventDataInfo that = (EventDataInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

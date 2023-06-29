@@ -169,21 +169,18 @@ public class ListRtcAbnormalEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcAbnormalEventsRequest listRtcAbnormalEventsRequest = (ListRtcAbnormalEventsRequest) o;
-        return Objects.equals(this.app, listRtcAbnormalEventsRequest.app)
-            && Objects.equals(this.roomId, listRtcAbnormalEventsRequest.roomId)
-            && Objects.equals(this.uid, listRtcAbnormalEventsRequest.uid)
-            && Objects.equals(this.startTime, listRtcAbnormalEventsRequest.startTime)
-            && Objects.equals(this.endTime, listRtcAbnormalEventsRequest.endTime)
-            && Objects.equals(this.limit, listRtcAbnormalEventsRequest.limit)
-            && Objects.equals(this.offset, listRtcAbnormalEventsRequest.offset);
+        ListRtcAbnormalEventsRequest that = (ListRtcAbnormalEventsRequest) obj;
+        return Objects.equals(this.app, that.app) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.uid, that.uid) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteBigkeyScanTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBigkeyScanTaskRequest deleteBigkeyScanTaskRequest = (DeleteBigkeyScanTaskRequest) o;
-        return Objects.equals(this.instanceId, deleteBigkeyScanTaskRequest.instanceId)
-            && Objects.equals(this.bigkeyId, deleteBigkeyScanTaskRequest.bigkeyId);
+        DeleteBigkeyScanTaskRequest that = (DeleteBigkeyScanTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.bigkeyId, that.bigkeyId);
     }
 
     @Override

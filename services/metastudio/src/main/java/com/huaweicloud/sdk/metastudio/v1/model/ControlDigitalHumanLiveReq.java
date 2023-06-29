@@ -84,22 +84,15 @@ public class ControlDigitalHumanLiveReq {
             if (value == null) {
                 return null;
             }
-            CommandEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CommandEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CommandEnum(value));
         }
 
         public static CommandEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CommandEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -161,16 +154,15 @@ public class ControlDigitalHumanLiveReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ControlDigitalHumanLiveReq controlDigitalHumanLiveReq = (ControlDigitalHumanLiveReq) o;
-        return Objects.equals(this.command, controlDigitalHumanLiveReq.command)
-            && Objects.equals(this.params, controlDigitalHumanLiveReq.params);
+        ControlDigitalHumanLiveReq that = (ControlDigitalHumanLiveReq) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.params, that.params);
     }
 
     @Override

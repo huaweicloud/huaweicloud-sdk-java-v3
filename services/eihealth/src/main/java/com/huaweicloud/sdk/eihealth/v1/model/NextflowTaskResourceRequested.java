@@ -143,20 +143,17 @@ public class NextflowTaskResourceRequested {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowTaskResourceRequested nextflowTaskResourceRequested = (NextflowTaskResourceRequested) o;
-        return Objects.equals(this.container, nextflowTaskResourceRequested.container)
-            && Objects.equals(this.queue, nextflowTaskResourceRequested.queue)
-            && Objects.equals(this.cpus, nextflowTaskResourceRequested.cpus)
-            && Objects.equals(this.memory, nextflowTaskResourceRequested.memory)
-            && Objects.equals(this.disk, nextflowTaskResourceRequested.disk)
-            && Objects.equals(this.time, nextflowTaskResourceRequested.time);
+        NextflowTaskResourceRequested that = (NextflowTaskResourceRequested) obj;
+        return Objects.equals(this.container, that.container) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.cpus, that.cpus) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.time, that.time);
     }
 
     @Override

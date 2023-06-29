@@ -253,25 +253,21 @@ public class BusinessLicenseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessLicenseResult businessLicenseResult = (BusinessLicenseResult) o;
-        return Objects.equals(this.registrationNumber, businessLicenseResult.registrationNumber)
-            && Objects.equals(this.name, businessLicenseResult.name)
-            && Objects.equals(this.type, businessLicenseResult.type)
-            && Objects.equals(this.address, businessLicenseResult.address)
-            && Objects.equals(this.legalRepresentative, businessLicenseResult.legalRepresentative)
-            && Objects.equals(this.registeredCapital, businessLicenseResult.registeredCapital)
-            && Objects.equals(this.foundDate, businessLicenseResult.foundDate)
-            && Objects.equals(this.businessTerm, businessLicenseResult.businessTerm)
-            && Objects.equals(this.businessScope, businessLicenseResult.businessScope)
-            && Objects.equals(this.issueDate, businessLicenseResult.issueDate)
-            && Objects.equals(this.confidence, businessLicenseResult.confidence);
+        BusinessLicenseResult that = (BusinessLicenseResult) obj;
+        return Objects.equals(this.registrationNumber, that.registrationNumber) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.legalRepresentative, that.legalRepresentative)
+            && Objects.equals(this.registeredCapital, that.registeredCapital)
+            && Objects.equals(this.foundDate, that.foundDate) && Objects.equals(this.businessTerm, that.businessTerm)
+            && Objects.equals(this.businessScope, that.businessScope) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

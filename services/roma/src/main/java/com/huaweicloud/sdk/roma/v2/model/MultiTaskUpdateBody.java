@@ -79,22 +79,15 @@ public class MultiTaskUpdateBody {
             if (value == null) {
                 return null;
             }
-            OperationTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypesEnum(value));
         }
 
         public static OperationTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -206,18 +199,17 @@ public class MultiTaskUpdateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskUpdateBody multiTaskUpdateBody = (MultiTaskUpdateBody) o;
-        return Objects.equals(this.description, multiTaskUpdateBody.description)
-            && Objects.equals(this.taskTag, multiTaskUpdateBody.taskTag)
-            && Objects.equals(this.operationTypes, multiTaskUpdateBody.operationTypes)
-            && Objects.equals(this.repullingSnapshot, multiTaskUpdateBody.repullingSnapshot);
+        MultiTaskUpdateBody that = (MultiTaskUpdateBody) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.taskTag, that.taskTag)
+            && Objects.equals(this.operationTypes, that.operationTypes)
+            && Objects.equals(this.repullingSnapshot, that.repullingSnapshot);
     }
 
     @Override

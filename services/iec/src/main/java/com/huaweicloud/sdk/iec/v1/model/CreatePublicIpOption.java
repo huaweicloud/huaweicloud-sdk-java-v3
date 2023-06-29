@@ -77,17 +77,16 @@ public class CreatePublicIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePublicIpOption createPublicIpOption = (CreatePublicIpOption) o;
-        return Objects.equals(this.siteId, createPublicIpOption.siteId)
-            && Objects.equals(this.ipVersion, createPublicIpOption.ipVersion)
-            && Objects.equals(this.type, createPublicIpOption.type);
+        CreatePublicIpOption that = (CreatePublicIpOption) obj;
+        return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

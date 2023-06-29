@@ -55,15 +55,15 @@ public class LVMConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LVMConfig lvMConfig = (LVMConfig) o;
-        return Objects.equals(this.lvType, lvMConfig.lvType) && Objects.equals(this.path, lvMConfig.path);
+        LVMConfig that = (LVMConfig) obj;
+        return Objects.equals(this.lvType, that.lvType) && Objects.equals(this.path, that.path);
     }
 
     @Override

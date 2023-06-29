@@ -65,16 +65,15 @@ public class CreateNextflowWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNextflowWorkflowRequest createNextflowWorkflowRequest = (CreateNextflowWorkflowRequest) o;
-        return Objects.equals(this.eihealthProjectId, createNextflowWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.body, createNextflowWorkflowRequest.body);
+        CreateNextflowWorkflowRequest that = (CreateNextflowWorkflowRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

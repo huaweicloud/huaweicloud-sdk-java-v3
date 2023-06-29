@@ -162,20 +162,20 @@ public class DeliverItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeliverItem deliverItem = (DeliverItem) o;
-        return Objects.equals(this.subscriptionId, deliverItem.subscriptionId)
-            && Objects.equals(this.subscriptionName, deliverItem.subscriptionName)
-            && Objects.equals(this.successCounts, deliverItem.successCounts)
-            && Objects.equals(this.failCounts, deliverItem.failCounts)
-            && Objects.equals(this.allDeliverTimes, deliverItem.allDeliverTimes)
-            && Objects.equals(this.deliverTargetList, deliverItem.deliverTargetList);
+        DeliverItem that = (DeliverItem) obj;
+        return Objects.equals(this.subscriptionId, that.subscriptionId)
+            && Objects.equals(this.subscriptionName, that.subscriptionName)
+            && Objects.equals(this.successCounts, that.successCounts)
+            && Objects.equals(this.failCounts, that.failCounts)
+            && Objects.equals(this.allDeliverTimes, that.allDeliverTimes)
+            && Objects.equals(this.deliverTargetList, that.deliverTargetList);
     }
 
     @Override

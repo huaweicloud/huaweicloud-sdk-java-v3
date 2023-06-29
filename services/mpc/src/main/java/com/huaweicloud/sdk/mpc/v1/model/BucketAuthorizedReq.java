@@ -65,22 +65,15 @@ public class BucketAuthorizedReq {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationEnum(value));
         }
 
         public static OperationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class BucketAuthorizedReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BucketAuthorizedReq bucketAuthorizedReq = (BucketAuthorizedReq) o;
-        return Objects.equals(this.bucket, bucketAuthorizedReq.bucket)
-            && Objects.equals(this.operation, bucketAuthorizedReq.operation);
+        BucketAuthorizedReq that = (BucketAuthorizedReq) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.operation, that.operation);
     }
 
     @Override

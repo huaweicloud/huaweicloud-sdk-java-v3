@@ -77,17 +77,16 @@ public class UpdateResourceOwner {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResourceOwner updateResourceOwner = (UpdateResourceOwner) o;
-        return Objects.equals(this.newOwner, updateResourceOwner.newOwner)
-            && Objects.equals(this.groupName, updateResourceOwner.groupName)
-            && Objects.equals(this.resourceName, updateResourceOwner.resourceName);
+        UpdateResourceOwner that = (UpdateResourceOwner) obj;
+        return Objects.equals(this.newOwner, that.newOwner) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override

@@ -167,21 +167,18 @@ public class AlarmTemplateCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmTemplateCondition alarmTemplateCondition = (AlarmTemplateCondition) o;
-        return Objects.equals(this.comparisonOperator, alarmTemplateCondition.comparisonOperator)
-            && Objects.equals(this.count, alarmTemplateCondition.count)
-            && Objects.equals(this.filter, alarmTemplateCondition.filter)
-            && Objects.equals(this.period, alarmTemplateCondition.period)
-            && Objects.equals(this.unit, alarmTemplateCondition.unit)
-            && Objects.equals(this.value, alarmTemplateCondition.value)
-            && Objects.equals(this.suppressDuration, alarmTemplateCondition.suppressDuration);
+        AlarmTemplateCondition that = (AlarmTemplateCondition) obj;
+        return Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.suppressDuration, that.suppressDuration);
     }
 
     @Override

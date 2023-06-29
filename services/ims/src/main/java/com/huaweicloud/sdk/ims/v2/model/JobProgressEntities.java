@@ -200,21 +200,19 @@ public class JobProgressEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobProgressEntities jobProgressEntities = (JobProgressEntities) o;
-        return Objects.equals(this.imageId, jobProgressEntities.imageId)
-            && Objects.equals(this.currentTask, jobProgressEntities.currentTask)
-            && Objects.equals(this.imageName, jobProgressEntities.imageName)
-            && Objects.equals(this.processPercent, jobProgressEntities.processPercent)
-            && Objects.equals(this.subJobId, jobProgressEntities.subJobId)
-            && Objects.equals(this.subJobsResult, jobProgressEntities.subJobsResult)
-            && Objects.equals(this.subJobsList, jobProgressEntities.subJobsList);
+        JobProgressEntities that = (JobProgressEntities) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.currentTask, that.currentTask)
+            && Objects.equals(this.imageName, that.imageName)
+            && Objects.equals(this.processPercent, that.processPercent) && Objects.equals(this.subJobId, that.subJobId)
+            && Objects.equals(this.subJobsResult, that.subJobsResult)
+            && Objects.equals(this.subJobsList, that.subJobsList);
     }
 
     @Override

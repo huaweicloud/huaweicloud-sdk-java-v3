@@ -119,18 +119,16 @@ public class ShowEnhancedPrivilegeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnhancedPrivilegeResponse showEnhancedPrivilegeResponse = (ShowEnhancedPrivilegeResponse) o;
-        return Objects.equals(this.isSuccess, showEnhancedPrivilegeResponse.isSuccess)
-            && Objects.equals(this.message, showEnhancedPrivilegeResponse.message)
-            && Objects.equals(this.connectionId, showEnhancedPrivilegeResponse.connectionId)
-            && Objects.equals(this.privileges, showEnhancedPrivilegeResponse.privileges);
+        ShowEnhancedPrivilegeResponse that = (ShowEnhancedPrivilegeResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

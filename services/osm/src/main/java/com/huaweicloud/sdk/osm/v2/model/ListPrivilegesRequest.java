@@ -107,18 +107,16 @@ public class ListPrivilegesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivilegesRequest listPrivilegesRequest = (ListPrivilegesRequest) o;
-        return Objects.equals(this.privilege, listPrivilegesRequest.privilege)
-            && Objects.equals(this.xSite, listPrivilegesRequest.xSite)
-            && Objects.equals(this.xLanguage, listPrivilegesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listPrivilegesRequest.xTimeZone);
+        ListPrivilegesRequest that = (ListPrivilegesRequest) obj;
+        return Objects.equals(this.privilege, that.privilege) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

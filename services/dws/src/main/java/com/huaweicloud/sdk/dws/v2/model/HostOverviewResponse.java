@@ -561,39 +561,27 @@ public class HostOverviewResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostOverviewResponse hostOverviewResponse = (HostOverviewResponse) o;
-        return Objects.equals(this.instanceName, hostOverviewResponse.instanceName)
-            && Objects.equals(this.hostName, hostOverviewResponse.hostName)
-            && Objects.equals(this.hostStat, hostOverviewResponse.hostStat)
-            && Objects.equals(this.workIp, hostOverviewResponse.workIp)
-            && Objects.equals(this.memFree, hostOverviewResponse.memFree)
-            && Objects.equals(this.memTotal, hostOverviewResponse.memTotal)
-            && Objects.equals(this.memUsage, hostOverviewResponse.memUsage)
-            && Objects.equals(this.memCached, hostOverviewResponse.memCached)
-            && Objects.equals(this.memBuffer, hostOverviewResponse.memBuffer)
-            && Objects.equals(this.swapFree, hostOverviewResponse.swapFree)
-            && Objects.equals(this.swapTotal, hostOverviewResponse.swapTotal)
-            && Objects.equals(this.cpuUsage, hostOverviewResponse.cpuUsage)
-            && Objects.equals(this.cpuUsageSys, hostOverviewResponse.cpuUsageSys)
-            && Objects.equals(this.cpuUsageUsr, hostOverviewResponse.cpuUsageUsr)
-            && Objects.equals(this.cpuIdle, hostOverviewResponse.cpuIdle)
-            && Objects.equals(this.cpuIowait, hostOverviewResponse.cpuIowait)
-            && Objects.equals(this.diskUsageAvg, hostOverviewResponse.diskUsageAvg)
-            && Objects.equals(this.diskTotal, hostOverviewResponse.diskTotal)
-            && Objects.equals(this.diskUsed, hostOverviewResponse.diskUsed)
-            && Objects.equals(this.diskAvailable, hostOverviewResponse.diskAvailable)
-            && Objects.equals(this.diskIo, hostOverviewResponse.diskIo)
-            && Objects.equals(this.diskIoRead, hostOverviewResponse.diskIoRead)
-            && Objects.equals(this.diskIoWrite, hostOverviewResponse.diskIoWrite)
-            && Objects.equals(this.tcpResendRate, hostOverviewResponse.tcpResendRate)
-            && Objects.equals(this.netIo, hostOverviewResponse.netIo);
+        HostOverviewResponse that = (HostOverviewResponse) obj;
+        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostStat, that.hostStat) && Objects.equals(this.workIp, that.workIp)
+            && Objects.equals(this.memFree, that.memFree) && Objects.equals(this.memTotal, that.memTotal)
+            && Objects.equals(this.memUsage, that.memUsage) && Objects.equals(this.memCached, that.memCached)
+            && Objects.equals(this.memBuffer, that.memBuffer) && Objects.equals(this.swapFree, that.swapFree)
+            && Objects.equals(this.swapTotal, that.swapTotal) && Objects.equals(this.cpuUsage, that.cpuUsage)
+            && Objects.equals(this.cpuUsageSys, that.cpuUsageSys) && Objects.equals(this.cpuUsageUsr, that.cpuUsageUsr)
+            && Objects.equals(this.cpuIdle, that.cpuIdle) && Objects.equals(this.cpuIowait, that.cpuIowait)
+            && Objects.equals(this.diskUsageAvg, that.diskUsageAvg) && Objects.equals(this.diskTotal, that.diskTotal)
+            && Objects.equals(this.diskUsed, that.diskUsed) && Objects.equals(this.diskAvailable, that.diskAvailable)
+            && Objects.equals(this.diskIo, that.diskIo) && Objects.equals(this.diskIoRead, that.diskIoRead)
+            && Objects.equals(this.diskIoWrite, that.diskIoWrite)
+            && Objects.equals(this.tcpResendRate, that.tcpResendRate) && Objects.equals(this.netIo, that.netIo);
     }
 
     @Override

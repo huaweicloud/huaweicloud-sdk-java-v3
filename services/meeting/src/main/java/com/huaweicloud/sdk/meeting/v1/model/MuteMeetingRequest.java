@@ -89,17 +89,17 @@ public class MuteMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MuteMeetingRequest muteMeetingRequest = (MuteMeetingRequest) o;
-        return Objects.equals(this.conferenceID, muteMeetingRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, muteMeetingRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, muteMeetingRequest.body);
+        MuteMeetingRequest that = (MuteMeetingRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

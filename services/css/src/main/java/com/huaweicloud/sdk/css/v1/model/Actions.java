@@ -165,18 +165,18 @@ public class Actions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Actions actions = (Actions) o;
-        return Objects.equals(this.id, actions.id) && Objects.equals(this.actionType, actions.actionType)
-            && Objects.equals(this.confContent, actions.confContent) && Objects.equals(this.status, actions.status)
-            && Objects.equals(this.updateAt, actions.updateAt) && Objects.equals(this.errorMsg, actions.errorMsg)
-            && Objects.equals(this.message, actions.message);
+        Actions that = (Actions) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

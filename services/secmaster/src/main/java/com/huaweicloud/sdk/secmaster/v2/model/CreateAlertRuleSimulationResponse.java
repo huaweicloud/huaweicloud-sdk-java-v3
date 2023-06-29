@@ -82,17 +82,16 @@ public class CreateAlertRuleSimulationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertRuleSimulationResponse createAlertRuleSimulationResponse = (CreateAlertRuleSimulationResponse) o;
-        return Objects.equals(this.alertCount, createAlertRuleSimulationResponse.alertCount)
-            && Objects.equals(this.severity, createAlertRuleSimulationResponse.severity)
-            && Objects.equals(this.xRequestId, createAlertRuleSimulationResponse.xRequestId);
+        CreateAlertRuleSimulationResponse that = (CreateAlertRuleSimulationResponse) obj;
+        return Objects.equals(this.alertCount, that.alertCount) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

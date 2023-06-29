@@ -33,15 +33,15 @@ public class DeletefavoriteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletefavoriteRequest deletefavoriteRequest = (DeletefavoriteRequest) o;
-        return Objects.equals(this.favResId, deletefavoriteRequest.favResId);
+        DeletefavoriteRequest that = (DeletefavoriteRequest) obj;
+        return Objects.equals(this.favResId, that.favResId);
     }
 
     @Override

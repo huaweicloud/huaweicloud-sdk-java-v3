@@ -112,17 +112,16 @@ public class ListIssueCustomFieldsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueCustomFieldsRequestBody listIssueCustomFieldsRequestBody = (ListIssueCustomFieldsRequestBody) o;
-        return Objects.equals(this.customFields, listIssueCustomFieldsRequestBody.customFields)
-            && Objects.equals(this.names, listIssueCustomFieldsRequestBody.names)
-            && Objects.equals(this.includedNotInUse, listIssueCustomFieldsRequestBody.includedNotInUse);
+        ListIssueCustomFieldsRequestBody that = (ListIssueCustomFieldsRequestBody) obj;
+        return Objects.equals(this.customFields, that.customFields) && Objects.equals(this.names, that.names)
+            && Objects.equals(this.includedNotInUse, that.includedNotInUse);
     }
 
     @Override

@@ -488,32 +488,30 @@ public class SubJobDatas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubJobDatas subJobDatas = (SubJobDatas) o;
-        return Objects.equals(this.id, subJobDatas.id) && Objects.equals(this.name, subJobDatas.name)
-            && Objects.equals(this.description, subJobDatas.description)
-            && Objects.equals(this.submissionTime, subJobDatas.submissionTime)
-            && Objects.equals(this.completionTime, subJobDatas.completionTime)
-            && Objects.equals(this.stageIds, subJobDatas.stageIds)
-            && Objects.equals(this.jobGroup, subJobDatas.jobGroup) && Objects.equals(this.status, subJobDatas.status)
-            && Objects.equals(this.numTasks, subJobDatas.numTasks)
-            && Objects.equals(this.numActiveTasks, subJobDatas.numActiveTasks)
-            && Objects.equals(this.numCompletedTasks, subJobDatas.numCompletedTasks)
-            && Objects.equals(this.numSkippedTasks, subJobDatas.numSkippedTasks)
-            && Objects.equals(this.numFailedTasks, subJobDatas.numFailedTasks)
-            && Objects.equals(this.numKilledTasks, subJobDatas.numKilledTasks)
-            && Objects.equals(this.numCompletedIndices, subJobDatas.numCompletedIndices)
-            && Objects.equals(this.numActiveStages, subJobDatas.numActiveStages)
-            && Objects.equals(this.numCompletedStages, subJobDatas.numCompletedStages)
-            && Objects.equals(this.numSkippedStages, subJobDatas.numSkippedStages)
-            && Objects.equals(this.numFailedStages, subJobDatas.numFailedStages)
-            && Objects.equals(this.killedTasksSummary, subJobDatas.killedTasksSummary);
+        SubJobDatas that = (SubJobDatas) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.submissionTime, that.submissionTime)
+            && Objects.equals(this.completionTime, that.completionTime) && Objects.equals(this.stageIds, that.stageIds)
+            && Objects.equals(this.jobGroup, that.jobGroup) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.numTasks, that.numTasks) && Objects.equals(this.numActiveTasks, that.numActiveTasks)
+            && Objects.equals(this.numCompletedTasks, that.numCompletedTasks)
+            && Objects.equals(this.numSkippedTasks, that.numSkippedTasks)
+            && Objects.equals(this.numFailedTasks, that.numFailedTasks)
+            && Objects.equals(this.numKilledTasks, that.numKilledTasks)
+            && Objects.equals(this.numCompletedIndices, that.numCompletedIndices)
+            && Objects.equals(this.numActiveStages, that.numActiveStages)
+            && Objects.equals(this.numCompletedStages, that.numCompletedStages)
+            && Objects.equals(this.numSkippedStages, that.numSkippedStages)
+            && Objects.equals(this.numFailedStages, that.numFailedStages)
+            && Objects.equals(this.killedTasksSummary, that.killedTasksSummary);
     }
 
     @Override

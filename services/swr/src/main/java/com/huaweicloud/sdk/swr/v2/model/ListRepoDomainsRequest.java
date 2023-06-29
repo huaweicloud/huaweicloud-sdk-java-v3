@@ -55,16 +55,15 @@ public class ListRepoDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRepoDomainsRequest listRepoDomainsRequest = (ListRepoDomainsRequest) o;
-        return Objects.equals(this.namespace, listRepoDomainsRequest.namespace)
-            && Objects.equals(this.repository, listRepoDomainsRequest.repository);
+        ListRepoDomainsRequest that = (ListRepoDomainsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository);
     }
 
     @Override

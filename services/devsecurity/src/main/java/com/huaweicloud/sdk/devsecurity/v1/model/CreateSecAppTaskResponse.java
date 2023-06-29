@@ -61,22 +61,15 @@ public class CreateSecAppTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InfoCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InfoCodeEnum(value));
         }
 
         public static InfoCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class CreateSecAppTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskStatusEnum(value));
         }
 
         public static TaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -283,18 +269,17 @@ public class CreateSecAppTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecAppTaskResponse createSecAppTaskResponse = (CreateSecAppTaskResponse) o;
-        return Objects.equals(this.infoCode, createSecAppTaskResponse.infoCode)
-            && Objects.equals(this.infoDescription, createSecAppTaskResponse.infoDescription)
-            && Objects.equals(this.taskId, createSecAppTaskResponse.taskId)
-            && Objects.equals(this.taskStatus, createSecAppTaskResponse.taskStatus);
+        CreateSecAppTaskResponse that = (CreateSecAppTaskResponse) obj;
+        return Objects.equals(this.infoCode, that.infoCode)
+            && Objects.equals(this.infoDescription, that.infoDescription) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskStatus, that.taskStatus);
     }
 
     @Override

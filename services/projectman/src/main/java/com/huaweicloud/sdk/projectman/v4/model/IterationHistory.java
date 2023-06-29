@@ -171,20 +171,17 @@ public class IterationHistory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IterationHistory iterationHistory = (IterationHistory) o;
-        return Objects.equals(this.iterationId, iterationHistory.iterationId)
-            && Objects.equals(this.projectId, iterationHistory.projectId)
-            && Objects.equals(this.operator, iterationHistory.operator)
-            && Objects.equals(this.operate, iterationHistory.operate)
-            && Objects.equals(this.operateTime, iterationHistory.operateTime)
-            && Objects.equals(this.details, iterationHistory.details);
+        IterationHistory that = (IterationHistory) obj;
+        return Objects.equals(this.iterationId, that.iterationId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.operate, that.operate)
+            && Objects.equals(this.operateTime, that.operateTime) && Objects.equals(this.details, that.details);
     }
 
     @Override

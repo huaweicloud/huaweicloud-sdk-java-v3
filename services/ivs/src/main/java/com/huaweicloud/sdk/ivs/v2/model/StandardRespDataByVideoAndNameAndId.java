@@ -131,20 +131,18 @@ public class StandardRespDataByVideoAndNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandardRespDataByVideoAndNameAndId standardRespDataByVideoAndNameAndId =
-            (StandardRespDataByVideoAndNameAndId) o;
-        return Objects.equals(this.verificationResult, standardRespDataByVideoAndNameAndId.verificationResult)
-            && Objects.equals(this.verificationMessage, standardRespDataByVideoAndNameAndId.verificationMessage)
-            && Objects.equals(this.verificationCode, standardRespDataByVideoAndNameAndId.verificationCode)
-            && Objects.equals(this.similarity, standardRespDataByVideoAndNameAndId.similarity)
-            && Objects.equals(this.videoResult, standardRespDataByVideoAndNameAndId.videoResult);
+        StandardRespDataByVideoAndNameAndId that = (StandardRespDataByVideoAndNameAndId) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.similarity, that.similarity) && Objects.equals(this.videoResult, that.videoResult);
     }
 
     @Override

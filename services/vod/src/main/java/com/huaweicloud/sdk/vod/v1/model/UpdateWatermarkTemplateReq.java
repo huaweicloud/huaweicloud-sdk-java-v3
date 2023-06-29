@@ -92,22 +92,15 @@ public class UpdateWatermarkTemplateReq {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,22 +177,15 @@ public class UpdateWatermarkTemplateReq {
             if (value == null) {
                 return null;
             }
-            WatermarkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WatermarkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WatermarkTypeEnum(value));
         }
 
         public static WatermarkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WatermarkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -272,22 +258,15 @@ public class UpdateWatermarkTemplateReq {
             if (value == null) {
                 return null;
             }
-            ImageProcessEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImageProcessEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageProcessEnum(value));
         }
 
         public static ImageProcessEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImageProcessEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -507,25 +486,21 @@ public class UpdateWatermarkTemplateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWatermarkTemplateReq updateWatermarkTemplateReq = (UpdateWatermarkTemplateReq) o;
-        return Objects.equals(this.id, updateWatermarkTemplateReq.id)
-            && Objects.equals(this.name, updateWatermarkTemplateReq.name)
-            && Objects.equals(this.dx, updateWatermarkTemplateReq.dx)
-            && Objects.equals(this.dy, updateWatermarkTemplateReq.dy)
-            && Objects.equals(this.position, updateWatermarkTemplateReq.position)
-            && Objects.equals(this.width, updateWatermarkTemplateReq.width)
-            && Objects.equals(this.height, updateWatermarkTemplateReq.height)
-            && Objects.equals(this.watermarkType, updateWatermarkTemplateReq.watermarkType)
-            && Objects.equals(this.imageProcess, updateWatermarkTemplateReq.imageProcess)
-            && Objects.equals(this.timelineStart, updateWatermarkTemplateReq.timelineStart)
-            && Objects.equals(this.timelineDuration, updateWatermarkTemplateReq.timelineDuration);
+        UpdateWatermarkTemplateReq that = (UpdateWatermarkTemplateReq) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.watermarkType, that.watermarkType)
+            && Objects.equals(this.imageProcess, that.imageProcess)
+            && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration);
     }
 
     @Override

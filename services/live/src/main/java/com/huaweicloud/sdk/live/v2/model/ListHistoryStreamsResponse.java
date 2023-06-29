@@ -101,17 +101,16 @@ public class ListHistoryStreamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryStreamsResponse listHistoryStreamsResponse = (ListHistoryStreamsResponse) o;
-        return Objects.equals(this.historyStreamList, listHistoryStreamsResponse.historyStreamList)
-            && Objects.equals(this.total, listHistoryStreamsResponse.total)
-            && Objects.equals(this.xRequestId, listHistoryStreamsResponse.xRequestId);
+        ListHistoryStreamsResponse that = (ListHistoryStreamsResponse) obj;
+        return Objects.equals(this.historyStreamList, that.historyStreamList) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

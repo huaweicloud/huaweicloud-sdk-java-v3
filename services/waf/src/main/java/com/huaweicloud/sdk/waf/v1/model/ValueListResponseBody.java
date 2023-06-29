@@ -121,22 +121,15 @@ public class ValueListResponseBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -314,21 +307,18 @@ public class ValueListResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueListResponseBody valueListResponseBody = (ValueListResponseBody) o;
-        return Objects.equals(this.id, valueListResponseBody.id)
-            && Objects.equals(this.name, valueListResponseBody.name)
-            && Objects.equals(this.type, valueListResponseBody.type)
-            && Objects.equals(this.timestamp, valueListResponseBody.timestamp)
-            && Objects.equals(this.values, valueListResponseBody.values)
-            && Objects.equals(this.producer, valueListResponseBody.producer)
-            && Objects.equals(this.description, valueListResponseBody.description);
+        ValueListResponseBody that = (ValueListResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.producer, that.producer)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

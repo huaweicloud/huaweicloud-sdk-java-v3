@@ -65,16 +65,15 @@ public class CreateFunctionVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionVersionRequest createFunctionVersionRequest = (CreateFunctionVersionRequest) o;
-        return Objects.equals(this.functionUrn, createFunctionVersionRequest.functionUrn)
-            && Objects.equals(this.body, createFunctionVersionRequest.body);
+        CreateFunctionVersionRequest that = (CreateFunctionVersionRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

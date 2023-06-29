@@ -121,19 +121,17 @@ public class AlarmStatisticResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmStatisticResponse alarmStatisticResponse = (AlarmStatisticResponse) o;
-        return Objects.equals(this.date, alarmStatisticResponse.date)
-            && Objects.equals(this.urgent, alarmStatisticResponse.urgent)
-            && Objects.equals(this.important, alarmStatisticResponse.important)
-            && Objects.equals(this.minor, alarmStatisticResponse.minor)
-            && Objects.equals(this.prompt, alarmStatisticResponse.prompt);
+        AlarmStatisticResponse that = (AlarmStatisticResponse) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.urgent, that.urgent)
+            && Objects.equals(this.important, that.important) && Objects.equals(this.minor, that.minor)
+            && Objects.equals(this.prompt, that.prompt);
     }
 
     @Override

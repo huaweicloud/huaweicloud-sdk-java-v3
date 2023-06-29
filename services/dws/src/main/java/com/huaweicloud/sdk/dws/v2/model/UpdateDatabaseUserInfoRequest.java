@@ -87,17 +87,16 @@ public class UpdateDatabaseUserInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseUserInfoRequest updateDatabaseUserInfoRequest = (UpdateDatabaseUserInfoRequest) o;
-        return Objects.equals(this.clusterId, updateDatabaseUserInfoRequest.clusterId)
-            && Objects.equals(this.name, updateDatabaseUserInfoRequest.name)
-            && Objects.equals(this.body, updateDatabaseUserInfoRequest.body);
+        UpdateDatabaseUserInfoRequest that = (UpdateDatabaseUserInfoRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class CreateSecurityGroupRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecurityGroupRuleRequestBody createSecurityGroupRuleRequestBody = (CreateSecurityGroupRuleRequestBody) o;
-        return Objects.equals(this.securityGroupRule, createSecurityGroupRuleRequestBody.securityGroupRule);
+        CreateSecurityGroupRuleRequestBody that = (CreateSecurityGroupRuleRequestBody) obj;
+        return Objects.equals(this.securityGroupRule, that.securityGroupRule);
     }
 
     @Override

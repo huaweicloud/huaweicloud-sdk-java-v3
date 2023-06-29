@@ -147,20 +147,18 @@ public class ListVulnerabilitiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVulnerabilitiesRequest listVulnerabilitiesRequest = (ListVulnerabilitiesRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listVulnerabilitiesRequest.enterpriseProjectId)
-            && Objects.equals(this.type, listVulnerabilitiesRequest.type)
-            && Objects.equals(this.vulId, listVulnerabilitiesRequest.vulId)
-            && Objects.equals(this.vulName, listVulnerabilitiesRequest.vulName)
-            && Objects.equals(this.limit, listVulnerabilitiesRequest.limit)
-            && Objects.equals(this.offset, listVulnerabilitiesRequest.offset);
+        ListVulnerabilitiesRequest that = (ListVulnerabilitiesRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.vulId, that.vulId)
+            && Objects.equals(this.vulName, that.vulName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

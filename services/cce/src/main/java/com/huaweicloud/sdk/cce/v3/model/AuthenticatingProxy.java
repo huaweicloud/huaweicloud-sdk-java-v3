@@ -77,16 +77,16 @@ public class AuthenticatingProxy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthenticatingProxy authenticatingProxy = (AuthenticatingProxy) o;
-        return Objects.equals(this.ca, authenticatingProxy.ca) && Objects.equals(this.cert, authenticatingProxy.cert)
-            && Objects.equals(this.privateKey, authenticatingProxy.privateKey);
+        AuthenticatingProxy that = (AuthenticatingProxy) obj;
+        return Objects.equals(this.ca, that.ca) && Objects.equals(this.cert, that.cert)
+            && Objects.equals(this.privateKey, that.privateKey);
     }
 
     @Override

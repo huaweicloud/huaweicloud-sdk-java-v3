@@ -163,20 +163,19 @@ public class SearchAgentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchAgentResponse searchAgentResponse = (SearchAgentResponse) o;
-        return Objects.equals(this.totalPage, searchAgentResponse.totalPage)
-            && Objects.equals(this.totalCount, searchAgentResponse.totalCount)
-            && Objects.equals(this.onlineCount, searchAgentResponse.onlineCount)
-            && Objects.equals(this.offlineCount, searchAgentResponse.offlineCount)
-            && Objects.equals(this.disableCount, searchAgentResponse.disableCount)
-            && Objects.equals(this.agentInfoList, searchAgentResponse.agentInfoList);
+        SearchAgentResponse that = (SearchAgentResponse) obj;
+        return Objects.equals(this.totalPage, that.totalPage) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.onlineCount, that.onlineCount)
+            && Objects.equals(this.offlineCount, that.offlineCount)
+            && Objects.equals(this.disableCount, that.disableCount)
+            && Objects.equals(this.agentInfoList, that.agentInfoList);
     }
 
     @Override

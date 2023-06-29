@@ -293,24 +293,21 @@ public class InstanceCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceCreate instanceCreate = (InstanceCreate) o;
-        return Objects.equals(this.name, instanceCreate.name)
-            && Objects.equals(this.environmentId, instanceCreate.environmentId)
-            && Objects.equals(this.flavorId, instanceCreate.flavorId)
-            && Objects.equals(this.replica, instanceCreate.replica)
-            && Objects.equals(this.artifacts, instanceCreate.artifacts)
-            && Objects.equals(this.version, instanceCreate.version)
-            && Objects.equals(this._configuration, instanceCreate._configuration)
-            && Objects.equals(this.description, instanceCreate.description)
-            && Objects.equals(this.externalAccesses, instanceCreate.externalAccesses)
-            && Objects.equals(this.referResources, instanceCreate.referResources);
+        InstanceCreate that = (InstanceCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.artifacts, that.artifacts) && Objects.equals(this.version, that.version)
+            && Objects.equals(this._configuration, that._configuration)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.externalAccesses, that.externalAccesses)
+            && Objects.equals(this.referResources, that.referResources);
     }
 
     @Override

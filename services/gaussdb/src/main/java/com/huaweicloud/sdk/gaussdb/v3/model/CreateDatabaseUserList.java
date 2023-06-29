@@ -1,60 +1,47 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.CreateDatabaseList;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库用户列表，列表最大长度为50。
  */
-public class CreateDatabaseUserList  {
-
+public class CreateDatabaseUserList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hosts")
-    
+    @JsonProperty(value = "hosts")
+
     private List<String> hosts = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="databases")
-    
+    @JsonProperty(value = "databases")
+
     private List<CreateDatabaseList> databases = null;
-    
+
     public CreateDatabaseUserList withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户名称，数据库用户名称在1到32个字符之间，由字母、数字、下划线组成，不能包含其他特殊字符。
@@ -68,15 +55,10 @@ public class CreateDatabaseUserList  {
         this.name = name;
     }
 
-    
-
     public CreateDatabaseUserList withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 数据库备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。  该字段只针对新版本的实例生效，必须大于等于指定的内核版本-2.0.13.0，如果不符合内核版本要求，参考升级内核版本升级至最新。
@@ -90,15 +72,10 @@ public class CreateDatabaseUserList  {
         this.comment = comment;
     }
 
-    
-
     public CreateDatabaseUserList withPassword(String password) {
         this.password = password;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户密码，不能同用户名称相同，非空，至少包含以下字符中的三种：大写字母、小写字母、数字和特殊符号~!@#$%^*-_=+?,()&组成，长度8~32个字符。  建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
@@ -112,16 +89,13 @@ public class CreateDatabaseUserList  {
         this.password = password;
     }
 
-    
-
     public CreateDatabaseUserList withHosts(List<String> hosts) {
         this.hosts = hosts;
         return this;
     }
 
-    
     public CreateDatabaseUserList addHostsItem(String hostsItem) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         this.hosts.add(hostsItem);
@@ -129,7 +103,7 @@ public class CreateDatabaseUserList  {
     }
 
     public CreateDatabaseUserList withHosts(Consumer<List<String>> hostsSetter) {
-        if(this.hosts == null) {
+        if (this.hosts == null) {
             this.hosts = new ArrayList<>();
         }
         hostsSetter.accept(this.hosts);
@@ -148,16 +122,13 @@ public class CreateDatabaseUserList  {
         this.hosts = hosts;
     }
 
-    
-
     public CreateDatabaseUserList withDatabases(List<CreateDatabaseList> databases) {
         this.databases = databases;
         return this;
     }
 
-    
     public CreateDatabaseUserList addDatabasesItem(CreateDatabaseList databasesItem) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         this.databases.add(databasesItem);
@@ -165,7 +136,7 @@ public class CreateDatabaseUserList  {
     }
 
     public CreateDatabaseUserList withDatabases(Consumer<List<CreateDatabaseList>> databasesSetter) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);
@@ -184,27 +155,25 @@ public class CreateDatabaseUserList  {
         this.databases = databases;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseUserList createDatabaseUserList = (CreateDatabaseUserList) o;
-        return Objects.equals(this.name, createDatabaseUserList.name) &&
-            Objects.equals(this.comment, createDatabaseUserList.comment) &&
-            Objects.equals(this.password, createDatabaseUserList.password) &&
-            Objects.equals(this.hosts, createDatabaseUserList.hosts) &&
-            Objects.equals(this.databases, createDatabaseUserList.databases);
+        CreateDatabaseUserList that = (CreateDatabaseUserList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.databases, that.databases);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, comment, password, hosts, databases);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -217,6 +186,7 @@ public class CreateDatabaseUserList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -227,8 +197,5 @@ public class CreateDatabaseUserList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -162,20 +162,18 @@ public class BusinessTopoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessTopoRequest businessTopoRequest = (BusinessTopoRequest) o;
-        return Objects.equals(this.targetBusinessId, businessTopoRequest.targetBusinessId)
-            && Objects.equals(this.envTagList, businessTopoRequest.envTagList)
-            && Objects.equals(this.direction, businessTopoRequest.direction)
-            && Objects.equals(this.endTime, businessTopoRequest.endTime)
-            && Objects.equals(this.startTime, businessTopoRequest.startTime)
-            && Objects.equals(this.filterUser, businessTopoRequest.filterUser);
+        BusinessTopoRequest that = (BusinessTopoRequest) obj;
+        return Objects.equals(this.targetBusinessId, that.targetBusinessId)
+            && Objects.equals(this.envTagList, that.envTagList) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.filterUser, that.filterUser);
     }
 
     @Override

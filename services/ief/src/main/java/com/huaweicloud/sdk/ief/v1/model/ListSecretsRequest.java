@@ -121,19 +121,17 @@ public class ListSecretsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecretsRequest listSecretsRequest = (ListSecretsRequest) o;
-        return Objects.equals(this.iefInstanceId, listSecretsRequest.iefInstanceId)
-            && Objects.equals(this.name, listSecretsRequest.name)
-            && Objects.equals(this.limit, listSecretsRequest.limit)
-            && Objects.equals(this.offset, listSecretsRequest.offset)
-            && Objects.equals(this.sort, listSecretsRequest.sort);
+        ListSecretsRequest that = (ListSecretsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override

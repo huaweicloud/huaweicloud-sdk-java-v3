@@ -143,18 +143,18 @@ public class InstanceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceInfo instanceInfo = (InstanceInfo) o;
-        return Objects.equals(this.name, instanceInfo.name) && Objects.equals(this.id, instanceInfo.id)
-            && Objects.equals(this.availabilityZoneId, instanceInfo.availabilityZoneId)
-            && Objects.equals(this.flavorId, instanceInfo.flavorId) && Objects.equals(this.status, instanceInfo.status)
-            && Objects.equals(this.sellMode, instanceInfo.sellMode);
+        InstanceInfo that = (InstanceInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sellMode, that.sellMode);
     }
 
     @Override

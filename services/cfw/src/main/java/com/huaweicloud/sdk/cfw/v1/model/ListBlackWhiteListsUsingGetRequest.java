@@ -65,22 +65,15 @@ public class ListBlackWhiteListsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            ListTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ListTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ListTypeEnum(value));
         }
 
         public static ListTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ListTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class ListBlackWhiteListsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
         }
 
         public static AddressTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,23 +360,20 @@ public class ListBlackWhiteListsUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBlackWhiteListsUsingGetRequest listBlackWhiteListsUsingGetRequest = (ListBlackWhiteListsUsingGetRequest) o;
-        return Objects.equals(this.objectId, listBlackWhiteListsUsingGetRequest.objectId)
-            && Objects.equals(this.listType, listBlackWhiteListsUsingGetRequest.listType)
-            && Objects.equals(this.addressType, listBlackWhiteListsUsingGetRequest.addressType)
-            && Objects.equals(this.address, listBlackWhiteListsUsingGetRequest.address)
-            && Objects.equals(this.port, listBlackWhiteListsUsingGetRequest.port)
-            && Objects.equals(this.limit, listBlackWhiteListsUsingGetRequest.limit)
-            && Objects.equals(this.offset, listBlackWhiteListsUsingGetRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listBlackWhiteListsUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listBlackWhiteListsUsingGetRequest.fwInstanceId);
+        ListBlackWhiteListsUsingGetRequest that = (ListBlackWhiteListsUsingGetRequest) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.listType, that.listType)
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

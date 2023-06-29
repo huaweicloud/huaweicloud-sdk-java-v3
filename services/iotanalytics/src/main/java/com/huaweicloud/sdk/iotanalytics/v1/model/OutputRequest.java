@@ -77,17 +77,17 @@ public class OutputRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputRequest outputRequest = (OutputRequest) o;
-        return Objects.equals(this.name, outputRequest.name)
-            && Objects.equals(this.outputStaticAssetId, outputRequest.outputStaticAssetId)
-            && Objects.equals(this.outputDynamicAssetId, outputRequest.outputDynamicAssetId);
+        OutputRequest that = (OutputRequest) obj;
+        return Objects.equals(this.name, that.name)
+            && Objects.equals(this.outputStaticAssetId, that.outputStaticAssetId)
+            && Objects.equals(this.outputDynamicAssetId, that.outputDynamicAssetId);
     }
 
     @Override

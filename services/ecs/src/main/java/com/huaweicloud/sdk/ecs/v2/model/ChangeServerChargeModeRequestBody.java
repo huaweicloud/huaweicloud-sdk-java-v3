@@ -128,18 +128,16 @@ public class ChangeServerChargeModeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeServerChargeModeRequestBody changeServerChargeModeRequestBody = (ChangeServerChargeModeRequestBody) o;
-        return Objects.equals(this.serverIds, changeServerChargeModeRequestBody.serverIds)
-            && Objects.equals(this.chargeMode, changeServerChargeModeRequestBody.chargeMode)
-            && Objects.equals(this.prepaidOptions, changeServerChargeModeRequestBody.prepaidOptions)
-            && Objects.equals(this.dryRun, changeServerChargeModeRequestBody.dryRun);
+        ChangeServerChargeModeRequestBody that = (ChangeServerChargeModeRequestBody) obj;
+        return Objects.equals(this.serverIds, that.serverIds) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions) && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override

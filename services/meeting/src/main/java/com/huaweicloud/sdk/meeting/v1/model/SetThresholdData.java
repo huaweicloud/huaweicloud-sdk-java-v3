@@ -59,16 +59,15 @@ public class SetThresholdData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetThresholdData setThresholdData = (SetThresholdData) o;
-        return Objects.equals(this.receiving, setThresholdData.receiving)
-            && Objects.equals(this.sending, setThresholdData.sending);
+        SetThresholdData that = (SetThresholdData) obj;
+        return Objects.equals(this.receiving, that.receiving) && Objects.equals(this.sending, that.sending);
     }
 
     @Override

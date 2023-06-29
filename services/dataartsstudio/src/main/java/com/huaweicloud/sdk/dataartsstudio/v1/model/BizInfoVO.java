@@ -55,15 +55,15 @@ public class BizInfoVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BizInfoVO bizInfoVO = (BizInfoVO) o;
-        return Objects.equals(this.bizId, bizInfoVO.bizId) && Objects.equals(this.bizType, bizInfoVO.bizType);
+        BizInfoVO that = (BizInfoVO) obj;
+        return Objects.equals(this.bizId, that.bizId) && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override

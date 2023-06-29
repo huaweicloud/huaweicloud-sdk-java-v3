@@ -77,16 +77,16 @@ public class RewriteUrlConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RewriteUrlConfig rewriteUrlConfig = (RewriteUrlConfig) o;
-        return Objects.equals(this.host, rewriteUrlConfig.host) && Objects.equals(this.path, rewriteUrlConfig.path)
-            && Objects.equals(this.query, rewriteUrlConfig.query);
+        RewriteUrlConfig that = (RewriteUrlConfig) obj;
+        return Objects.equals(this.host, that.host) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.query, that.query);
     }
 
     @Override

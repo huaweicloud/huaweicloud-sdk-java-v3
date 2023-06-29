@@ -76,16 +76,15 @@ public class ShowAllInstancesBackupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllInstancesBackupsResponse showAllInstancesBackupsResponse = (ShowAllInstancesBackupsResponse) o;
-        return Objects.equals(this.totalCount, showAllInstancesBackupsResponse.totalCount)
-            && Objects.equals(this.backups, showAllInstancesBackupsResponse.backups);
+        ShowAllInstancesBackupsResponse that = (ShowAllInstancesBackupsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.backups, that.backups);
     }
 
     @Override

@@ -78,22 +78,15 @@ public class DeployStrategyGrayReleaseRules {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class DeployStrategyGrayReleaseRules {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
         }
 
         public static ConditionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -282,18 +268,16 @@ public class DeployStrategyGrayReleaseRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeployStrategyGrayReleaseRules deployStrategyGrayReleaseRules = (DeployStrategyGrayReleaseRules) o;
-        return Objects.equals(this.type, deployStrategyGrayReleaseRules.type)
-            && Objects.equals(this.key, deployStrategyGrayReleaseRules.key)
-            && Objects.equals(this.value, deployStrategyGrayReleaseRules.value)
-            && Objects.equals(this.condition, deployStrategyGrayReleaseRules.condition);
+        DeployStrategyGrayReleaseRules that = (DeployStrategyGrayReleaseRules) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.condition, that.condition);
     }
 
     @Override

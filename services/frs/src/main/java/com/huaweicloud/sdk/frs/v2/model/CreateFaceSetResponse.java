@@ -44,15 +44,15 @@ public class CreateFaceSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFaceSetResponse createFaceSetResponse = (CreateFaceSetResponse) o;
-        return Objects.equals(this.faceSetInfo, createFaceSetResponse.faceSetInfo);
+        CreateFaceSetResponse that = (CreateFaceSetResponse) obj;
+        return Objects.equals(this.faceSetInfo, that.faceSetInfo);
     }
 
     @Override

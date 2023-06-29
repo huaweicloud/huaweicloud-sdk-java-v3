@@ -97,22 +97,15 @@ public class ListEndpointsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -239,20 +232,17 @@ public class ListEndpointsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointsRequest listEndpointsRequest = (ListEndpointsRequest) o;
-        return Objects.equals(this.endpointGroupId, listEndpointsRequest.endpointGroupId)
-            && Objects.equals(this.limit, listEndpointsRequest.limit)
-            && Objects.equals(this.marker, listEndpointsRequest.marker)
-            && Objects.equals(this.pageReverse, listEndpointsRequest.pageReverse)
-            && Objects.equals(this.id, listEndpointsRequest.id)
-            && Objects.equals(this.status, listEndpointsRequest.status);
+        ListEndpointsRequest that = (ListEndpointsRequest) obj;
+        return Objects.equals(this.endpointGroupId, that.endpointGroupId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
     }
 
     @Override

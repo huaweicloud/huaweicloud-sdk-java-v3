@@ -65,16 +65,15 @@ public class UpdateMigprojectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMigprojectRequest updateMigprojectRequest = (UpdateMigprojectRequest) o;
-        return Objects.equals(this.migProjectId, updateMigprojectRequest.migProjectId)
-            && Objects.equals(this.body, updateMigprojectRequest.body);
+        UpdateMigprojectRequest that = (UpdateMigprojectRequest) obj;
+        return Objects.equals(this.migProjectId, that.migProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

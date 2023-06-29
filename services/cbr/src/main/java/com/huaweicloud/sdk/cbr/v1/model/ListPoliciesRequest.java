@@ -60,22 +60,15 @@ public class ListPoliciesRequest {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypeEnum(value));
         }
 
         public static OperationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class ListPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPoliciesRequest listPoliciesRequest = (ListPoliciesRequest) o;
-        return Objects.equals(this.operationType, listPoliciesRequest.operationType)
-            && Objects.equals(this.vaultId, listPoliciesRequest.vaultId);
+        ListPoliciesRequest that = (ListPoliciesRequest) obj;
+        return Objects.equals(this.operationType, that.operationType) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

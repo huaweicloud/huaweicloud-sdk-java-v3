@@ -77,17 +77,16 @@ public class CreateRoutetableOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRoutetableOption createRoutetableOption = (CreateRoutetableOption) o;
-        return Objects.equals(this.name, createRoutetableOption.name)
-            && Objects.equals(this.vpcId, createRoutetableOption.vpcId)
-            && Objects.equals(this.description, createRoutetableOption.description);
+        CreateRoutetableOption that = (CreateRoutetableOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

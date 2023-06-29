@@ -185,21 +185,18 @@ public class ShowValueListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowValueListResponse showValueListResponse = (ShowValueListResponse) o;
-        return Objects.equals(this.id, showValueListResponse.id)
-            && Objects.equals(this.name, showValueListResponse.name)
-            && Objects.equals(this.type, showValueListResponse.type)
-            && Objects.equals(this.description, showValueListResponse.description)
-            && Objects.equals(this.values, showValueListResponse.values)
-            && Objects.equals(this.producer, showValueListResponse.producer)
-            && Objects.equals(this.timestamp, showValueListResponse.timestamp);
+        ShowValueListResponse that = (ShowValueListResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.producer, that.producer)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

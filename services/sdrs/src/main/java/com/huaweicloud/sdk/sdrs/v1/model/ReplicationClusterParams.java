@@ -33,15 +33,15 @@ public class ReplicationClusterParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplicationClusterParams replicationClusterParams = (ReplicationClusterParams) o;
-        return Objects.equals(this.availabilityZone, replicationClusterParams.availabilityZone);
+        ReplicationClusterParams that = (ReplicationClusterParams) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class UnfreezePubRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnfreezePubRequestBody unfreezePubRequestBody = (UnfreezePubRequestBody) o;
-        return Objects.equals(this.changeReason, unfreezePubRequestBody.changeReason);
+        UnfreezePubRequestBody that = (UnfreezePubRequestBody) obj;
+        return Objects.equals(this.changeReason, that.changeReason);
     }
 
     @Override

@@ -40,7 +40,7 @@ public class DelOtpDevicesReq {
     }
 
     /**
-     * 待解绑的otp配置id数组
+     * 待解绑的otp配置id数组。
      * @return otpIds
      */
     public List<String> getOtpIds() {
@@ -52,15 +52,15 @@ public class DelOtpDevicesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DelOtpDevicesReq delOtpDevicesReq = (DelOtpDevicesReq) o;
-        return Objects.equals(this.otpIds, delOtpDevicesReq.otpIds);
+        DelOtpDevicesReq that = (DelOtpDevicesReq) obj;
+        return Objects.equals(this.otpIds, that.otpIds);
     }
 
     @Override

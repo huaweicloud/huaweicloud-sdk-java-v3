@@ -78,17 +78,15 @@ public class ListTerminalsBindingDesktopsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTerminalsBindingDesktopsResponse listTerminalsBindingDesktopsResponse =
-            (ListTerminalsBindingDesktopsResponse) o;
-        return Objects.equals(this.bindList, listTerminalsBindingDesktopsResponse.bindList)
-            && Objects.equals(this.totalNum, listTerminalsBindingDesktopsResponse.totalNum);
+        ListTerminalsBindingDesktopsResponse that = (ListTerminalsBindingDesktopsResponse) obj;
+        return Objects.equals(this.bindList, that.bindList) && Objects.equals(this.totalNum, that.totalNum);
     }
 
     @Override

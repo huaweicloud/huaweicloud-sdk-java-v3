@@ -53,15 +53,15 @@ public class UpdateAccessPolicyObjectsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAccessPolicyObjectsReq updateAccessPolicyObjectsReq = (UpdateAccessPolicyObjectsReq) o;
-        return Objects.equals(this.policyObjectsList, updateAccessPolicyObjectsReq.policyObjectsList);
+        UpdateAccessPolicyObjectsReq that = (UpdateAccessPolicyObjectsReq) obj;
+        return Objects.equals(this.policyObjectsList, that.policyObjectsList);
     }
 
     @Override

@@ -100,17 +100,16 @@ public class ListRenewRateOnPeriodReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRenewRateOnPeriodReq listRenewRateOnPeriodReq = (ListRenewRateOnPeriodReq) o;
-        return Objects.equals(this.resourceIds, listRenewRateOnPeriodReq.resourceIds)
-            && Objects.equals(this.periodType, listRenewRateOnPeriodReq.periodType)
-            && Objects.equals(this.periodNum, listRenewRateOnPeriodReq.periodNum);
+        ListRenewRateOnPeriodReq that = (ListRenewRateOnPeriodReq) obj;
+        return Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override

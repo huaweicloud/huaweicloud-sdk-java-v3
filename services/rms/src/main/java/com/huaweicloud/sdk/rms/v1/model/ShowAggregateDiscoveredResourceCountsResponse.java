@@ -101,20 +101,17 @@ public class ShowAggregateDiscoveredResourceCountsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregateDiscoveredResourceCountsResponse showAggregateDiscoveredResourceCountsResponse =
-            (ShowAggregateDiscoveredResourceCountsResponse) o;
-        return Objects.equals(this.groupByKey, showAggregateDiscoveredResourceCountsResponse.groupByKey)
-            && Objects.equals(this.groupedResourceCounts,
-                showAggregateDiscoveredResourceCountsResponse.groupedResourceCounts)
-            && Objects.equals(this.totalDiscoveredResources,
-                showAggregateDiscoveredResourceCountsResponse.totalDiscoveredResources);
+        ShowAggregateDiscoveredResourceCountsResponse that = (ShowAggregateDiscoveredResourceCountsResponse) obj;
+        return Objects.equals(this.groupByKey, that.groupByKey)
+            && Objects.equals(this.groupedResourceCounts, that.groupedResourceCounts)
+            && Objects.equals(this.totalDiscoveredResources, that.totalDiscoveredResources);
     }
 
     @Override

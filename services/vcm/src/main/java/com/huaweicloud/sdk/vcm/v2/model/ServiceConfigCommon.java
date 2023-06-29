@@ -143,20 +143,18 @@ public class ServiceConfigCommon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceConfigCommon serviceConfigCommon = (ServiceConfigCommon) o;
-        return Objects.equals(this.frameInterval, serviceConfigCommon.frameInterval)
-            && Objects.equals(this.categories, serviceConfigCommon.categories)
-            && Objects.equals(this.textCategories, serviceConfigCommon.textCategories)
-            && Objects.equals(this.useSis, serviceConfigCommon.useSis)
-            && Objects.equals(this.useOcr, serviceConfigCommon.useOcr)
-            && Objects.equals(this.upload, serviceConfigCommon.upload);
+        ServiceConfigCommon that = (ServiceConfigCommon) obj;
+        return Objects.equals(this.frameInterval, that.frameInterval)
+            && Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.textCategories, that.textCategories) && Objects.equals(this.useSis, that.useSis)
+            && Objects.equals(this.useOcr, that.useOcr) && Objects.equals(this.upload, that.upload);
     }
 
     @Override

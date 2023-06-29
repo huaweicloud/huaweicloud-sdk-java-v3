@@ -55,16 +55,16 @@ public class DeleteStudyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteStudyRequest deleteStudyRequest = (DeleteStudyRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteStudyRequest.eihealthProjectId)
-            && Objects.equals(this.studyId, deleteStudyRequest.studyId);
+        DeleteStudyRequest that = (DeleteStudyRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.studyId, that.studyId);
     }
 
     @Override

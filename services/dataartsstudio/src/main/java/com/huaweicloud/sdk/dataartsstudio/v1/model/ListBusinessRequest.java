@@ -78,17 +78,16 @@ public class ListBusinessRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBusinessRequest listBusinessRequest = (ListBusinessRequest) o;
-        return Objects.equals(this.workspace, listBusinessRequest.workspace)
-            && Objects.equals(this.limit, listBusinessRequest.limit)
-            && Objects.equals(this.offset, listBusinessRequest.offset);
+        ListBusinessRequest that = (ListBusinessRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

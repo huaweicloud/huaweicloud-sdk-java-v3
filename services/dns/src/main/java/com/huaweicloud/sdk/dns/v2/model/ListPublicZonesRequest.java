@@ -209,23 +209,19 @@ public class ListPublicZonesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicZonesRequest listPublicZonesRequest = (ListPublicZonesRequest) o;
-        return Objects.equals(this.type, listPublicZonesRequest.type)
-            && Objects.equals(this.limit, listPublicZonesRequest.limit)
-            && Objects.equals(this.marker, listPublicZonesRequest.marker)
-            && Objects.equals(this.offset, listPublicZonesRequest.offset)
-            && Objects.equals(this.tags, listPublicZonesRequest.tags)
-            && Objects.equals(this.name, listPublicZonesRequest.name)
-            && Objects.equals(this.status, listPublicZonesRequest.status)
-            && Objects.equals(this.searchMode, listPublicZonesRequest.searchMode)
-            && Objects.equals(this.enterpriseProjectId, listPublicZonesRequest.enterpriseProjectId);
+        ListPublicZonesRequest that = (ListPublicZonesRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.searchMode, that.searchMode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

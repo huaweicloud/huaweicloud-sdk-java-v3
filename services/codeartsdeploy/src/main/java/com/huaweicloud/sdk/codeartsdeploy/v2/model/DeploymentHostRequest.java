@@ -197,22 +197,19 @@ public class DeploymentHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentHostRequest deploymentHostRequest = (DeploymentHostRequest) o;
-        return Objects.equals(this.hostName, deploymentHostRequest.hostName)
-            && Objects.equals(this.ip, deploymentHostRequest.ip)
-            && Objects.equals(this.port, deploymentHostRequest.port)
-            && Objects.equals(this.asProxy, deploymentHostRequest.asProxy)
-            && Objects.equals(this.proxyHostId, deploymentHostRequest.proxyHostId)
-            && Objects.equals(this.authorization, deploymentHostRequest.authorization)
-            && Objects.equals(this.installIcagent, deploymentHostRequest.installIcagent)
-            && Objects.equals(this.sync, deploymentHostRequest.sync);
+        DeploymentHostRequest that = (DeploymentHostRequest) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.asProxy, that.asProxy)
+            && Objects.equals(this.proxyHostId, that.proxyHostId)
+            && Objects.equals(this.authorization, that.authorization)
+            && Objects.equals(this.installIcagent, that.installIcagent) && Objects.equals(this.sync, that.sync);
     }
 
     @Override

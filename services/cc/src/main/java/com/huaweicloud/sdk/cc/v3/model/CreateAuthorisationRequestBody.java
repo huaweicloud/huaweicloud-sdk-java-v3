@@ -43,15 +43,15 @@ public class CreateAuthorisationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthorisationRequestBody createAuthorisationRequestBody = (CreateAuthorisationRequestBody) o;
-        return Objects.equals(this.authorisation, createAuthorisationRequestBody.authorisation);
+        CreateAuthorisationRequestBody that = (CreateAuthorisationRequestBody) obj;
+        return Objects.equals(this.authorisation, that.authorisation);
     }
 
     @Override

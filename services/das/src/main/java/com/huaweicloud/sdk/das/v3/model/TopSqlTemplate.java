@@ -341,29 +341,26 @@ public class TopSqlTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopSqlTemplate topSqlTemplate = (TopSqlTemplate) o;
-        return Objects.equals(this.sqlTemplate, topSqlTemplate.sqlTemplate)
-            && Objects.equals(this.sqlSampleString, topSqlTemplate.sqlSampleString)
-            && Objects.equals(this.sqlType, topSqlTemplate.sqlType)
-            && Objects.equals(this.dbName, topSqlTemplate.dbName)
-            && Objects.equals(this.executeNum, topSqlTemplate.executeNum)
-            && Objects.equals(this.totalCost, topSqlTemplate.totalCost)
-            && Objects.equals(this.avgCost, topSqlTemplate.avgCost)
-            && Objects.equals(this.avgRowsSent, topSqlTemplate.avgRowsSent)
-            && Objects.equals(this.avgRowsAffected, topSqlTemplate.avgRowsAffected)
-            && Objects.equals(this.avgLockTime, topSqlTemplate.avgLockTime)
-            && Objects.equals(this.totalRowsExamined, topSqlTemplate.totalRowsExamined)
-            && Objects.equals(this.avgRowsExamined, topSqlTemplate.avgRowsExamined)
-            && Objects.equals(this.totalCostRatio, topSqlTemplate.totalCostRatio)
-            && Objects.equals(this.totalExaminedRatio, topSqlTemplate.totalExaminedRatio)
-            && Objects.equals(this.executeNumRatio, topSqlTemplate.executeNumRatio);
+        TopSqlTemplate that = (TopSqlTemplate) obj;
+        return Objects.equals(this.sqlTemplate, that.sqlTemplate)
+            && Objects.equals(this.sqlSampleString, that.sqlSampleString) && Objects.equals(this.sqlType, that.sqlType)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.executeNum, that.executeNum)
+            && Objects.equals(this.totalCost, that.totalCost) && Objects.equals(this.avgCost, that.avgCost)
+            && Objects.equals(this.avgRowsSent, that.avgRowsSent)
+            && Objects.equals(this.avgRowsAffected, that.avgRowsAffected)
+            && Objects.equals(this.avgLockTime, that.avgLockTime)
+            && Objects.equals(this.totalRowsExamined, that.totalRowsExamined)
+            && Objects.equals(this.avgRowsExamined, that.avgRowsExamined)
+            && Objects.equals(this.totalCostRatio, that.totalCostRatio)
+            && Objects.equals(this.totalExaminedRatio, that.totalExaminedRatio)
+            && Objects.equals(this.executeNumRatio, that.executeNumRatio);
     }
 
     @Override

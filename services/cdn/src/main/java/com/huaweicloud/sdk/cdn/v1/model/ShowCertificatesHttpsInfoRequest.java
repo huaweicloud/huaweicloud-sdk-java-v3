@@ -121,19 +121,17 @@ public class ShowCertificatesHttpsInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificatesHttpsInfoRequest showCertificatesHttpsInfoRequest = (ShowCertificatesHttpsInfoRequest) o;
-        return Objects.equals(this.pageSize, showCertificatesHttpsInfoRequest.pageSize)
-            && Objects.equals(this.pageNumber, showCertificatesHttpsInfoRequest.pageNumber)
-            && Objects.equals(this.domainName, showCertificatesHttpsInfoRequest.domainName)
-            && Objects.equals(this.userDomainId, showCertificatesHttpsInfoRequest.userDomainId)
-            && Objects.equals(this.enterpriseProjectId, showCertificatesHttpsInfoRequest.enterpriseProjectId);
+        ShowCertificatesHttpsInfoRequest that = (ShowCertificatesHttpsInfoRequest) obj;
+        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNumber, that.pageNumber)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.userDomainId, that.userDomainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

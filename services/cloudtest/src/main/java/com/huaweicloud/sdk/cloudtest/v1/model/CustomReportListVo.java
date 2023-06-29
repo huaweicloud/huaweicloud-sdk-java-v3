@@ -193,20 +193,19 @@ public class CustomReportListVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomReportListVo customReportListVo = (CustomReportListVo) o;
-        return Objects.equals(this.id, customReportListVo.id) && Objects.equals(this.name, customReportListVo.name)
-            && Objects.equals(this.filter, customReportListVo.filter)
-            && Objects.equals(this.workpieceType, customReportListVo.workpieceType)
-            && Objects.equals(this.analysisDimension, customReportListVo.analysisDimension)
-            && Objects.equals(this.compareDimension, customReportListVo.compareDimension)
-            && Objects.equals(this.chartData, customReportListVo.chartData);
+        CustomReportListVo that = (CustomReportListVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.workpieceType, that.workpieceType)
+            && Objects.equals(this.analysisDimension, that.analysisDimension)
+            && Objects.equals(this.compareDimension, that.compareDimension)
+            && Objects.equals(this.chartData, that.chartData);
     }
 
     @Override

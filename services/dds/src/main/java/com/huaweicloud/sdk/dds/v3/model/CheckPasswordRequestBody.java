@@ -77,17 +77,16 @@ public class CheckPasswordRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckPasswordRequestBody checkPasswordRequestBody = (CheckPasswordRequestBody) o;
-        return Objects.equals(this.userPwd, checkPasswordRequestBody.userPwd)
-            && Objects.equals(this.userName, checkPasswordRequestBody.userName)
-            && Objects.equals(this.dbName, checkPasswordRequestBody.dbName);
+        CheckPasswordRequestBody that = (CheckPasswordRequestBody) obj;
+        return Objects.equals(this.userPwd, that.userPwd) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.dbName, that.dbName);
     }
 
     @Override

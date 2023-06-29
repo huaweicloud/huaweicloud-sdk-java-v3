@@ -43,15 +43,15 @@ public class CinderCreateVolumeTransferRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CinderCreateVolumeTransferRequest cinderCreateVolumeTransferRequest = (CinderCreateVolumeTransferRequest) o;
-        return Objects.equals(this.body, cinderCreateVolumeTransferRequest.body);
+        CinderCreateVolumeTransferRequest that = (CinderCreateVolumeTransferRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

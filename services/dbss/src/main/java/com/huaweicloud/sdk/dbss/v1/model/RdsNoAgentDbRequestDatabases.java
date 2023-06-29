@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * RdsNoAgentDbRequestDatabases
  */
-public class RdsNoAgentDbRequestDatabases  {
-
+public class RdsNoAgentDbRequestDatabases {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
 
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_id")
-    
+    @JsonProperty(value = "enterprise_id")
 
     private String enterpriseId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_name")
-    
+    @JsonProperty(value = "enterprise_name")
 
     private String enterpriseName;
 
@@ -81,9 +64,6 @@ public class RdsNoAgentDbRequestDatabases  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 数据库ID
@@ -97,15 +77,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.id = id;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称
@@ -119,15 +94,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.dbName = dbName;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 数据库状态
@@ -141,15 +111,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.status = status;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口
@@ -163,15 +128,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.port = port;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withIp(String ip) {
         this.ip = ip;
         return this;
     }
-
-    
-
 
     /**
      * 数据库IP
@@ -185,15 +145,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.ip = ip;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库实例名称
@@ -207,15 +162,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.instanceName = instanceName;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本
@@ -229,15 +179,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.version = version;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 数据库类型
@@ -251,15 +196,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.type = type;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withEnterpriseId(String enterpriseId) {
         this.enterpriseId = enterpriseId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID
@@ -273,15 +213,10 @@ public class RdsNoAgentDbRequestDatabases  {
         this.enterpriseId = enterpriseId;
     }
 
-    
-
     public RdsNoAgentDbRequestDatabases withEnterpriseName(String enterpriseName) {
         this.enterpriseName = enterpriseName;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目名称
@@ -295,32 +230,28 @@ public class RdsNoAgentDbRequestDatabases  {
         this.enterpriseName = enterpriseName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RdsNoAgentDbRequestDatabases rdsNoAgentDbRequestDatabases = (RdsNoAgentDbRequestDatabases) o;
-        return Objects.equals(this.id, rdsNoAgentDbRequestDatabases.id) &&
-            Objects.equals(this.dbName, rdsNoAgentDbRequestDatabases.dbName) &&
-            Objects.equals(this.status, rdsNoAgentDbRequestDatabases.status) &&
-            Objects.equals(this.port, rdsNoAgentDbRequestDatabases.port) &&
-            Objects.equals(this.ip, rdsNoAgentDbRequestDatabases.ip) &&
-            Objects.equals(this.instanceName, rdsNoAgentDbRequestDatabases.instanceName) &&
-            Objects.equals(this.version, rdsNoAgentDbRequestDatabases.version) &&
-            Objects.equals(this.type, rdsNoAgentDbRequestDatabases.type) &&
-            Objects.equals(this.enterpriseId, rdsNoAgentDbRequestDatabases.enterpriseId) &&
-            Objects.equals(this.enterpriseName, rdsNoAgentDbRequestDatabases.enterpriseName);
+        RdsNoAgentDbRequestDatabases that = (RdsNoAgentDbRequestDatabases) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.enterpriseName, that.enterpriseName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, dbName, status, port, ip, instanceName, version, type, enterpriseId, enterpriseName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,6 +269,7 @@ public class RdsNoAgentDbRequestDatabases  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -348,8 +280,5 @@ public class RdsNoAgentDbRequestDatabases  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

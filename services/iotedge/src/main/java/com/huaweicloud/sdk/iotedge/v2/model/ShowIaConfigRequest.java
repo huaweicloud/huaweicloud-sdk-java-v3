@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowIaConfigRequest  {
-
+public class ShowIaConfigRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ia_id")
-    
+    @JsonProperty(value = "ia_id")
 
     private String iaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_id")
-    
+    @JsonProperty(value = "config_id")
 
     private String configId;
 
@@ -40,9 +29,6 @@ public class ShowIaConfigRequest  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -56,15 +42,10 @@ public class ShowIaConfigRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public ShowIaConfigRequest withIaId(String iaId) {
         this.iaId = iaId;
         return this;
     }
-
-    
-
 
     /**
      * 边侧第三方应用的模块ID
@@ -78,15 +59,10 @@ public class ShowIaConfigRequest  {
         this.iaId = iaId;
     }
 
-    
-
     public ShowIaConfigRequest withConfigId(String configId) {
         this.configId = configId;
         return this;
     }
-
-    
-
 
     /**
      * 配置ID
@@ -100,25 +76,24 @@ public class ShowIaConfigRequest  {
         this.configId = configId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIaConfigRequest showIaConfigRequest = (ShowIaConfigRequest) o;
-        return Objects.equals(this.nodeId, showIaConfigRequest.nodeId) &&
-            Objects.equals(this.iaId, showIaConfigRequest.iaId) &&
-            Objects.equals(this.configId, showIaConfigRequest.configId);
+        ShowIaConfigRequest that = (ShowIaConfigRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iaId, that.iaId)
+            && Objects.equals(this.configId, that.configId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, iaId, configId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ShowIaConfigRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ShowIaConfigRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

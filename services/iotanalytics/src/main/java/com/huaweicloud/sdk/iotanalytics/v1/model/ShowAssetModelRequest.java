@@ -33,15 +33,15 @@ public class ShowAssetModelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetModelRequest showAssetModelRequest = (ShowAssetModelRequest) o;
-        return Objects.equals(this.modelId, showAssetModelRequest.modelId);
+        ShowAssetModelRequest that = (ShowAssetModelRequest) obj;
+        return Objects.equals(this.modelId, that.modelId);
     }
 
     @Override

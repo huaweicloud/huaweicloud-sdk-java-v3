@@ -165,20 +165,18 @@ public class RealTimeParticipant {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RealTimeParticipant realTimeParticipant = (RealTimeParticipant) o;
-        return Objects.equals(this.pid, realTimeParticipant.pid) && Objects.equals(this.name, realTimeParticipant.name)
-            && Objects.equals(this.phone, realTimeParticipant.phone)
-            && Objects.equals(this.state, realTimeParticipant.state)
-            && Objects.equals(this.video, realTimeParticipant.video)
-            && Objects.equals(this.mute, realTimeParticipant.mute)
-            && Objects.equals(this.hand, realTimeParticipant.hand);
+        RealTimeParticipant that = (RealTimeParticipant) obj;
+        return Objects.equals(this.pid, that.pid) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.video, that.video) && Objects.equals(this.mute, that.mute)
+            && Objects.equals(this.hand, that.hand);
     }
 
     @Override

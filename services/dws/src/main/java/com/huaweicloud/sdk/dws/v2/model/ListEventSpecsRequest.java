@@ -165,21 +165,18 @@ public class ListEventSpecsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventSpecsRequest listEventSpecsRequest = (ListEventSpecsRequest) o;
-        return Objects.equals(this.specName, listEventSpecsRequest.specName)
-            && Objects.equals(this.category, listEventSpecsRequest.category)
-            && Objects.equals(this.severity, listEventSpecsRequest.severity)
-            && Objects.equals(this.sourceType, listEventSpecsRequest.sourceType)
-            && Objects.equals(this.tag, listEventSpecsRequest.tag)
-            && Objects.equals(this.offset, listEventSpecsRequest.offset)
-            && Objects.equals(this.limit, listEventSpecsRequest.limit);
+        ListEventSpecsRequest that = (ListEventSpecsRequest) obj;
+        return Objects.equals(this.specName, that.specName) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

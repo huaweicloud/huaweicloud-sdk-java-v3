@@ -99,18 +99,16 @@ public class TaskBeanFacade {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBeanFacade taskBeanFacade = (TaskBeanFacade) o;
-        return Objects.equals(this.taskId, taskBeanFacade.taskId)
-            && Objects.equals(this.taskName, taskBeanFacade.taskName)
-            && Objects.equals(this.errorCode, taskBeanFacade.errorCode)
-            && Objects.equals(this.errorMsg, taskBeanFacade.errorMsg);
+        TaskBeanFacade that = (TaskBeanFacade) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

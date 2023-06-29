@@ -143,20 +143,17 @@ public class QueryCorpGroupDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCorpGroupDTO queryCorpGroupDTO = (QueryCorpGroupDTO) o;
-        return Objects.equals(this.groupId, queryCorpGroupDTO.groupId)
-            && Objects.equals(this.groupName, queryCorpGroupDTO.groupName)
-            && Objects.equals(this.groupType, queryCorpGroupDTO.groupType)
-            && Objects.equals(this.remarks, queryCorpGroupDTO.remarks)
-            && Objects.equals(this.regionId, queryCorpGroupDTO.regionId)
-            && Objects.equals(this.status, queryCorpGroupDTO.status);
+        QueryCorpGroupDTO that = (QueryCorpGroupDTO) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.remarks, that.remarks)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.status, that.status);
     }
 
     @Override

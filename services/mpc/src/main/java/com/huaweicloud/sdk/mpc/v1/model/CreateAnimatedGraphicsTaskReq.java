@@ -127,18 +127,16 @@ public class CreateAnimatedGraphicsTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAnimatedGraphicsTaskReq createAnimatedGraphicsTaskReq = (CreateAnimatedGraphicsTaskReq) o;
-        return Objects.equals(this.input, createAnimatedGraphicsTaskReq.input)
-            && Objects.equals(this.output, createAnimatedGraphicsTaskReq.output)
-            && Objects.equals(this.userData, createAnimatedGraphicsTaskReq.userData)
-            && Objects.equals(this.outputParam, createAnimatedGraphicsTaskReq.outputParam);
+        CreateAnimatedGraphicsTaskReq that = (CreateAnimatedGraphicsTaskReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.outputParam, that.outputParam);
     }
 
     @Override

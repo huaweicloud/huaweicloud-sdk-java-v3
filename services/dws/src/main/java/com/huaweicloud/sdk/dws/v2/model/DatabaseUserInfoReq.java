@@ -275,26 +275,20 @@ public class DatabaseUserInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseUserInfoReq databaseUserInfoReq = (DatabaseUserInfoReq) o;
-        return Objects.equals(this.login, databaseUserInfoReq.login)
-            && Objects.equals(this.createrole, databaseUserInfoReq.createrole)
-            && Objects.equals(this.createdb, databaseUserInfoReq.createdb)
-            && Objects.equals(this.systemadmin, databaseUserInfoReq.systemadmin)
-            && Objects.equals(this.auditadmin, databaseUserInfoReq.auditadmin)
-            && Objects.equals(this.inherit, databaseUserInfoReq.inherit)
-            && Objects.equals(this.useft, databaseUserInfoReq.useft)
-            && Objects.equals(this.connLimit, databaseUserInfoReq.connLimit)
-            && Objects.equals(this.replication, databaseUserInfoReq.replication)
-            && Objects.equals(this.validBegin, databaseUserInfoReq.validBegin)
-            && Objects.equals(this.validUntil, databaseUserInfoReq.validUntil)
-            && Objects.equals(this.lock, databaseUserInfoReq.lock);
+        DatabaseUserInfoReq that = (DatabaseUserInfoReq) obj;
+        return Objects.equals(this.login, that.login) && Objects.equals(this.createrole, that.createrole)
+            && Objects.equals(this.createdb, that.createdb) && Objects.equals(this.systemadmin, that.systemadmin)
+            && Objects.equals(this.auditadmin, that.auditadmin) && Objects.equals(this.inherit, that.inherit)
+            && Objects.equals(this.useft, that.useft) && Objects.equals(this.connLimit, that.connLimit)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.validBegin, that.validBegin)
+            && Objects.equals(this.validUntil, that.validUntil) && Objects.equals(this.lock, that.lock);
     }
 
     @Override

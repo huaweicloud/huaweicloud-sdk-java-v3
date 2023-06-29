@@ -99,18 +99,17 @@ public class DiskusageTopicEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskusageTopicEntity diskusageTopicEntity = (DiskusageTopicEntity) o;
-        return Objects.equals(this.size, diskusageTopicEntity.size)
-            && Objects.equals(this.topicName, diskusageTopicEntity.topicName)
-            && Objects.equals(this.topicPartition, diskusageTopicEntity.topicPartition)
-            && Objects.equals(this.percentage, diskusageTopicEntity.percentage);
+        DiskusageTopicEntity that = (DiskusageTopicEntity) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.topicPartition, that.topicPartition)
+            && Objects.equals(this.percentage, that.percentage);
     }
 
     @Override

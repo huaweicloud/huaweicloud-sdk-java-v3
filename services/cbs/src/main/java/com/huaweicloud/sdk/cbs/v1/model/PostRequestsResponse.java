@@ -1,49 +1,36 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Answers;
-import com.huaweicloud.sdk.cbs.v1.model.OldExtends;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class PostRequestsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
 
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="question")
-    
+    @JsonProperty(value = "question")
 
     private String question;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answers")
-    
+    @JsonProperty(value = "answers")
+
     private List<Answers> answers = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extends")
-    
+    @JsonProperty(value = "extends")
 
     private OldExtends _extends;
 
@@ -51,9 +38,6 @@ public class PostRequestsResponse extends SdkResponse {
         this.requestId = requestId;
         return this;
     }
-
-    
-
 
     /**
      * 请求ID。  调用失败时无此字段。
@@ -67,15 +51,10 @@ public class PostRequestsResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public PostRequestsResponse withQuestion(String question) {
         this.question = question;
         return this;
     }
-
-    
-
 
     /**
      * 问题。  调用失败时无此字段。
@@ -89,16 +68,13 @@ public class PostRequestsResponse extends SdkResponse {
         this.question = question;
     }
 
-    
-
     public PostRequestsResponse withAnswers(List<Answers> answers) {
         this.answers = answers;
         return this;
     }
 
-    
     public PostRequestsResponse addAnswersItem(Answers answersItem) {
-        if(this.answers == null) {
+        if (this.answers == null) {
             this.answers = new ArrayList<>();
         }
         this.answers.add(answersItem);
@@ -106,7 +82,7 @@ public class PostRequestsResponse extends SdkResponse {
     }
 
     public PostRequestsResponse withAnswers(Consumer<List<Answers>> answersSetter) {
-        if(this.answers == null) {
+        if (this.answers == null) {
             this.answers = new ArrayList<>();
         }
         answersSetter.accept(this.answers);
@@ -125,22 +101,19 @@ public class PostRequestsResponse extends SdkResponse {
         this.answers = answers;
     }
 
-    
-
     public PostRequestsResponse withExtends(OldExtends _extends) {
         this._extends = _extends;
         return this;
     }
 
     public PostRequestsResponse withExtends(Consumer<OldExtends> _extendsSetter) {
-        if(this._extends == null ){
+        if (this._extends == null) {
             this._extends = new OldExtends();
             _extendsSetter.accept(this._extends);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get _extends
@@ -154,26 +127,24 @@ public class PostRequestsResponse extends SdkResponse {
         this._extends = _extends;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostRequestsResponse postRequestsResponse = (PostRequestsResponse) o;
-        return Objects.equals(this.requestId, postRequestsResponse.requestId) &&
-            Objects.equals(this.question, postRequestsResponse.question) &&
-            Objects.equals(this.answers, postRequestsResponse.answers) &&
-            Objects.equals(this._extends, postRequestsResponse._extends);
+        PostRequestsResponse that = (PostRequestsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.question, that.question)
+            && Objects.equals(this.answers, that.answers) && Objects.equals(this._extends, that._extends);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, question, answers, _extends);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -185,6 +156,7 @@ public class PostRequestsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -195,8 +167,5 @@ public class PostRequestsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

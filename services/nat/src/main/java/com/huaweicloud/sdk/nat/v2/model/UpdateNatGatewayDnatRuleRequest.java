@@ -65,16 +65,15 @@ public class UpdateNatGatewayDnatRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewayDnatRuleRequest updateNatGatewayDnatRuleRequest = (UpdateNatGatewayDnatRuleRequest) o;
-        return Objects.equals(this.dnatRuleId, updateNatGatewayDnatRuleRequest.dnatRuleId)
-            && Objects.equals(this.body, updateNatGatewayDnatRuleRequest.body);
+        UpdateNatGatewayDnatRuleRequest that = (UpdateNatGatewayDnatRuleRequest) obj;
+        return Objects.equals(this.dnatRuleId, that.dnatRuleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

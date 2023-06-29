@@ -118,17 +118,16 @@ public class SearchResultItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResultItem searchResultItem = (SearchResultItem) o;
-        return Objects.equals(this.smiles, searchResultItem.smiles)
-            && Objects.equals(this.source, searchResultItem.source)
-            && Objects.equals(this.score, searchResultItem.score) && Objects.equals(this.props, searchResultItem.props);
+        SearchResultItem that = (SearchResultItem) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.props, that.props);
     }
 
     @Override

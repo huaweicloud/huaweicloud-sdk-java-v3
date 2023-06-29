@@ -154,20 +154,17 @@ public class ShowJudgementDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJudgementDetailResponse showJudgementDetailResponse = (ShowJudgementDetailResponse) o;
-        return Objects.equals(this.taskStatus, showJudgementDetailResponse.taskStatus)
-            && Objects.equals(this.status, showJudgementDetailResponse.status)
-            && Objects.equals(this.judgementId, showJudgementDetailResponse.judgementId)
-            && Objects.equals(this.startTime, showJudgementDetailResponse.startTime)
-            && Objects.equals(this.endTime, showJudgementDetailResponse.endTime)
-            && Objects.equals(this.result, showJudgementDetailResponse.result);
+        ShowJudgementDetailResponse that = (ShowJudgementDetailResponse) obj;
+        return Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.judgementId, that.judgementId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.result, that.result);
     }
 
     @Override

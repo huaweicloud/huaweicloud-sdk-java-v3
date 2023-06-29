@@ -97,17 +97,16 @@ public class ListRetentionHistoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRetentionHistoriesResponse listRetentionHistoriesResponse = (ListRetentionHistoriesResponse) o;
-        return Objects.equals(this.retentionLog, listRetentionHistoriesResponse.retentionLog)
-            && Objects.equals(this.total, listRetentionHistoriesResponse.total)
-            && Objects.equals(this.contentRange, listRetentionHistoriesResponse.contentRange);
+        ListRetentionHistoriesResponse that = (ListRetentionHistoriesResponse) obj;
+        return Objects.equals(this.retentionLog, that.retentionLog) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.contentRange, that.contentRange);
     }
 
     @Override

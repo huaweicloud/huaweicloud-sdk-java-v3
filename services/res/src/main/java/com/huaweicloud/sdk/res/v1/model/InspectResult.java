@@ -99,17 +99,16 @@ public class InspectResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InspectResult inspectResult = (InspectResult) o;
-        return Objects.equals(this.type, inspectResult.type) && Objects.equals(this.countNum, inspectResult.countNum)
-            && Objects.equals(this.multiplicity, inspectResult.multiplicity)
-            && Objects.equals(this.legalRate, inspectResult.legalRate);
+        InspectResult that = (InspectResult) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.countNum, that.countNum)
+            && Objects.equals(this.multiplicity, that.multiplicity) && Objects.equals(this.legalRate, that.legalRate);
     }
 
     @Override

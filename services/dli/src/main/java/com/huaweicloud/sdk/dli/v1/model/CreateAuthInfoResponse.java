@@ -56,16 +56,15 @@ public class CreateAuthInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthInfoResponse createAuthInfoResponse = (CreateAuthInfoResponse) o;
-        return Objects.equals(this.isSuccess, createAuthInfoResponse.isSuccess)
-            && Objects.equals(this.message, createAuthInfoResponse.message);
+        CreateAuthInfoResponse that = (CreateAuthInfoResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class QuotaDetailSnapshotsSATA {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailSnapshotsSATA quotaDetailSnapshotsSATA = (QuotaDetailSnapshotsSATA) o;
-        return Objects.equals(this.inUse, quotaDetailSnapshotsSATA.inUse)
-            && Objects.equals(this.limit, quotaDetailSnapshotsSATA.limit)
-            && Objects.equals(this.reserved, quotaDetailSnapshotsSATA.reserved);
+        QuotaDetailSnapshotsSATA that = (QuotaDetailSnapshotsSATA) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

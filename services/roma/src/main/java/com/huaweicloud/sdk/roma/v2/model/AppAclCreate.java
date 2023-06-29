@@ -74,16 +74,15 @@ public class AppAclCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppAclCreate appAclCreate = (AppAclCreate) o;
-        return Objects.equals(this.appAclType, appAclCreate.appAclType)
-            && Objects.equals(this.appAclValues, appAclCreate.appAclValues);
+        AppAclCreate that = (AppAclCreate) obj;
+        return Objects.equals(this.appAclType, that.appAclType) && Objects.equals(this.appAclValues, that.appAclValues);
     }
 
     @Override

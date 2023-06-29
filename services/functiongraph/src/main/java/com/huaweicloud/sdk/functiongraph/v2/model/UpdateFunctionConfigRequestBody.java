@@ -107,6 +107,11 @@ public class UpdateFunctionConfigRequestBody {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -131,6 +136,7 @@ public class UpdateFunctionConfigRequestBody {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -156,22 +162,15 @@ public class UpdateFunctionConfigRequestBody {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -855,42 +854,36 @@ public class UpdateFunctionConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionConfigRequestBody updateFunctionConfigRequestBody = (UpdateFunctionConfigRequestBody) o;
-        return Objects.equals(this.funcName, updateFunctionConfigRequestBody.funcName)
-            && Objects.equals(this.runtime, updateFunctionConfigRequestBody.runtime)
-            && Objects.equals(this.timeout, updateFunctionConfigRequestBody.timeout)
-            && Objects.equals(this.handler, updateFunctionConfigRequestBody.handler)
-            && Objects.equals(this.memorySize, updateFunctionConfigRequestBody.memorySize)
-            && Objects.equals(this.gpuMemory, updateFunctionConfigRequestBody.gpuMemory)
-            && Objects.equals(this.userData, updateFunctionConfigRequestBody.userData)
-            && Objects.equals(this.encryptedUserData, updateFunctionConfigRequestBody.encryptedUserData)
-            && Objects.equals(this.xrole, updateFunctionConfigRequestBody.xrole)
-            && Objects.equals(this.appXrole, updateFunctionConfigRequestBody.appXrole)
-            && Objects.equals(this.description, updateFunctionConfigRequestBody.description)
-            && Objects.equals(this.funcVpc, updateFunctionConfigRequestBody.funcVpc)
-            && Objects.equals(this.mountConfig, updateFunctionConfigRequestBody.mountConfig)
-            && Objects.equals(this.strategyConfig, updateFunctionConfigRequestBody.strategyConfig)
-            && Objects.equals(this.customImage, updateFunctionConfigRequestBody.customImage)
-            && Objects.equals(this.extendConfig, updateFunctionConfigRequestBody.extendConfig)
-            && Objects.equals(this.initializerHandler, updateFunctionConfigRequestBody.initializerHandler)
-            && Objects.equals(this.initializerTimeout, updateFunctionConfigRequestBody.initializerTimeout)
-            && Objects.equals(this.ephemeralStorage, updateFunctionConfigRequestBody.ephemeralStorage)
-            && Objects.equals(this.enterpriseProjectId, updateFunctionConfigRequestBody.enterpriseProjectId)
-            && Objects.equals(this.logConfig, updateFunctionConfigRequestBody.logConfig)
-            && Objects.equals(this.networkController, updateFunctionConfigRequestBody.networkController)
-            && Objects.equals(this.isStatefulFunction, updateFunctionConfigRequestBody.isStatefulFunction)
-            && Objects.equals(this.enableDynamicMemory, updateFunctionConfigRequestBody.enableDynamicMemory)
-            && Objects.equals(this.enableAuthInHeader, updateFunctionConfigRequestBody.enableAuthInHeader)
-            && Objects.equals(this.domainNames, updateFunctionConfigRequestBody.domainNames)
-            && Objects.equals(this.restoreHookHandler, updateFunctionConfigRequestBody.restoreHookHandler)
-            && Objects.equals(this.restoreHookTimeout, updateFunctionConfigRequestBody.restoreHookTimeout);
+        UpdateFunctionConfigRequestBody that = (UpdateFunctionConfigRequestBody) obj;
+        return Objects.equals(this.funcName, that.funcName) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.memorySize, that.memorySize) && Objects.equals(this.gpuMemory, that.gpuMemory)
+            && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.mountConfig, that.mountConfig)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.customImage, that.customImage)
+            && Objects.equals(this.extendConfig, that.extendConfig)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.ephemeralStorage, that.ephemeralStorage)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.logConfig, that.logConfig)
+            && Objects.equals(this.networkController, that.networkController)
+            && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
+            && Objects.equals(this.domainNames, that.domainNames)
+            && Objects.equals(this.restoreHookHandler, that.restoreHookHandler)
+            && Objects.equals(this.restoreHookTimeout, that.restoreHookTimeout);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class UpdateWorkSpaceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkSpaceDto updateWorkSpaceDto = (UpdateWorkSpaceDto) o;
-        return Objects.equals(this.workspaceName, updateWorkSpaceDto.workspaceName)
-            && Objects.equals(this.workspaceDescription, updateWorkSpaceDto.workspaceDescription)
-            && Objects.equals(this.star, updateWorkSpaceDto.star);
+        UpdateWorkSpaceDto that = (UpdateWorkSpaceDto) obj;
+        return Objects.equals(this.workspaceName, that.workspaceName)
+            && Objects.equals(this.workspaceDescription, that.workspaceDescription)
+            && Objects.equals(this.star, that.star);
     }
 
     @Override

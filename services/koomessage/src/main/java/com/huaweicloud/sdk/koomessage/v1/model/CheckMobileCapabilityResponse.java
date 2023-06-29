@@ -113,17 +113,17 @@ public class CheckMobileCapabilityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMobileCapabilityResponse checkMobileCapabilityResponse = (CheckMobileCapabilityResponse) o;
-        return Objects.equals(this.supportedMobiles, checkMobileCapabilityResponse.supportedMobiles)
-            && Objects.equals(this.unsupportedMobiles, checkMobileCapabilityResponse.unsupportedMobiles)
-            && Objects.equals(this.tplId, checkMobileCapabilityResponse.tplId);
+        CheckMobileCapabilityResponse that = (CheckMobileCapabilityResponse) obj;
+        return Objects.equals(this.supportedMobiles, that.supportedMobiles)
+            && Objects.equals(this.unsupportedMobiles, that.unsupportedMobiles)
+            && Objects.equals(this.tplId, that.tplId);
     }
 
     @Override

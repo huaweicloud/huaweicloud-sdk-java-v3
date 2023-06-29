@@ -260,25 +260,23 @@ public class CreateGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGroupResponse createGroupResponse = (CreateGroupResponse) o;
-        return Objects.equals(this.groupId, createGroupResponse.groupId)
-            && Objects.equals(this.name, createGroupResponse.name)
-            && Objects.equals(this.description, createGroupResponse.description)
-            && Objects.equals(this.warmDataUsage, createGroupResponse.warmDataUsage)
-            && Objects.equals(this.dataStoreCount, createGroupResponse.dataStoreCount)
-            && Objects.equals(this.coldDataUsage, createGroupResponse.coldDataUsage)
-            && Objects.equals(this.warmDataRetentionPolicy, createGroupResponse.warmDataRetentionPolicy)
-            && Objects.equals(this.coldDataRetentionPolicy, createGroupResponse.coldDataRetentionPolicy)
-            && Objects.equals(this.createdTime, createGroupResponse.createdTime)
-            && Objects.equals(this.modifiedTime, createGroupResponse.modifiedTime)
-            && Objects.equals(this.type, createGroupResponse.type);
+        CreateGroupResponse that = (CreateGroupResponse) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.warmDataUsage, that.warmDataUsage)
+            && Objects.equals(this.dataStoreCount, that.dataStoreCount)
+            && Objects.equals(this.coldDataUsage, that.coldDataUsage)
+            && Objects.equals(this.warmDataRetentionPolicy, that.warmDataRetentionPolicy)
+            && Objects.equals(this.coldDataRetentionPolicy, that.coldDataRetentionPolicy)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.type, that.type);
     }
 
     @Override

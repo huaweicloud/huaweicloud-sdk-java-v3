@@ -213,23 +213,19 @@ public class ListPlaybooksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybooksRequest listPlaybooksRequest = (ListPlaybooksRequest) o;
-        return Objects.equals(this.workspaceId, listPlaybooksRequest.workspaceId)
-            && Objects.equals(this.searchTxt, listPlaybooksRequest.searchTxt)
-            && Objects.equals(this.componentId, listPlaybooksRequest.componentId)
-            && Objects.equals(this.enabled, listPlaybooksRequest.enabled)
-            && Objects.equals(this.offset, listPlaybooksRequest.offset)
-            && Objects.equals(this.limit, listPlaybooksRequest.limit)
-            && Objects.equals(this.description, listPlaybooksRequest.description)
-            && Objects.equals(this.dataclassName, listPlaybooksRequest.dataclassName)
-            && Objects.equals(this.name, listPlaybooksRequest.name);
+        ListPlaybooksRequest that = (ListPlaybooksRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.searchTxt, that.searchTxt)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.dataclassName, that.dataclassName) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class ListProductsRespHourly {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRespHourly listProductsRespHourly = (ListProductsRespHourly) o;
-        return Objects.equals(this.name, listProductsRespHourly.name)
-            && Objects.equals(this.version, listProductsRespHourly.version)
-            && Objects.equals(this.values, listProductsRespHourly.values);
+        ListProductsRespHourly that = (ListProductsRespHourly) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

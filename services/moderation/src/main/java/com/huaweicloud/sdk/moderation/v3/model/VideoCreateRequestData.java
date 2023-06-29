@@ -55,16 +55,15 @@ public class VideoCreateRequestData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoCreateRequestData videoCreateRequestData = (VideoCreateRequestData) o;
-        return Objects.equals(this.url, videoCreateRequestData.url)
-            && Objects.equals(this.frameInterval, videoCreateRequestData.frameInterval);
+        VideoCreateRequestData that = (VideoCreateRequestData) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.frameInterval, that.frameInterval);
     }
 
     @Override

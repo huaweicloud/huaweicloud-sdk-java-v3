@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.CertificateLocalPathDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 边缘节点设备认证方式信息。
  */
-public class DeviceAuthInfoDTO  {
-
+public class DeviceAuthInfoDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
 
     private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fingerprint")
-    
+    @JsonProperty(value = "fingerprint")
 
     private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="local_path")
-    
+    @JsonProperty(value = "local_path")
 
     private CertificateLocalPathDTO localPath;
 
@@ -40,9 +30,6 @@ public class DeviceAuthInfoDTO  {
         this.authType = authType;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点认证方式，不填默认为密钥认证接入方式(SECRET)。
@@ -56,15 +43,10 @@ public class DeviceAuthInfoDTO  {
         this.authType = authType;
     }
 
-    
-
     public DeviceAuthInfoDTO withFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
         return this;
     }
-
-    
-
 
     /**
      * 证书指纹，认证类型使用证书认证接入(CERTIFICATES)需填写该字段。
@@ -78,22 +60,19 @@ public class DeviceAuthInfoDTO  {
         this.fingerprint = fingerprint;
     }
 
-    
-
     public DeviceAuthInfoDTO withLocalPath(CertificateLocalPathDTO localPath) {
         this.localPath = localPath;
         return this;
     }
 
     public DeviceAuthInfoDTO withLocalPath(Consumer<CertificateLocalPathDTO> localPathSetter) {
-        if(this.localPath == null ){
+        if (this.localPath == null) {
             this.localPath = new CertificateLocalPathDTO();
             localPathSetter.accept(this.localPath);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get localPath
@@ -107,25 +86,24 @@ public class DeviceAuthInfoDTO  {
         this.localPath = localPath;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceAuthInfoDTO deviceAuthInfoDTO = (DeviceAuthInfoDTO) o;
-        return Objects.equals(this.authType, deviceAuthInfoDTO.authType) &&
-            Objects.equals(this.fingerprint, deviceAuthInfoDTO.fingerprint) &&
-            Objects.equals(this.localPath, deviceAuthInfoDTO.localPath);
+        DeviceAuthInfoDTO that = (DeviceAuthInfoDTO) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.localPath, that.localPath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authType, fingerprint, localPath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +114,7 @@ public class DeviceAuthInfoDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +125,5 @@ public class DeviceAuthInfoDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

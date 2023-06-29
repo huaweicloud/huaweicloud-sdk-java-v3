@@ -77,17 +77,16 @@ public class ShowResJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResJobRequest showResJobRequest = (ShowResJobRequest) o;
-        return Objects.equals(this.workspaceId, showResJobRequest.workspaceId)
-            && Objects.equals(this.resourceId, showResJobRequest.resourceId)
-            && Objects.equals(this.category, showResJobRequest.category);
+        ShowResJobRequest that = (ShowResJobRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override

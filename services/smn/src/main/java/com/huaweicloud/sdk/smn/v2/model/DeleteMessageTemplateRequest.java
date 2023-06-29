@@ -33,15 +33,15 @@ public class DeleteMessageTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMessageTemplateRequest deleteMessageTemplateRequest = (DeleteMessageTemplateRequest) o;
-        return Objects.equals(this.messageTemplateId, deleteMessageTemplateRequest.messageTemplateId);
+        DeleteMessageTemplateRequest that = (DeleteMessageTemplateRequest) obj;
+        return Objects.equals(this.messageTemplateId, that.messageTemplateId);
     }
 
     @Override

@@ -254,24 +254,19 @@ public class ListAimTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplatesRequest listAimTemplatesRequest = (ListAimTemplatesRequest) o;
-        return Objects.equals(this.tplId, listAimTemplatesRequest.tplId)
-            && Objects.equals(this.tplName, listAimTemplatesRequest.tplName)
-            && Objects.equals(this.tplType, listAimTemplatesRequest.tplType)
-            && Objects.equals(this.factoryType, listAimTemplatesRequest.factoryType)
-            && Objects.equals(this.hasParam, listAimTemplatesRequest.hasParam)
-            && Objects.equals(this.beginTime, listAimTemplatesRequest.beginTime)
-            && Objects.equals(this.endTime, listAimTemplatesRequest.endTime)
-            && Objects.equals(this.isOnlyStatus, listAimTemplatesRequest.isOnlyStatus)
-            && Objects.equals(this.offset, listAimTemplatesRequest.offset)
-            && Objects.equals(this.limit, listAimTemplatesRequest.limit);
+        ListAimTemplatesRequest that = (ListAimTemplatesRequest) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.tplType, that.tplType) && Objects.equals(this.factoryType, that.factoryType)
+            && Objects.equals(this.hasParam, that.hasParam) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.isOnlyStatus, that.isOnlyStatus)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SMN信息
  */
-public class SmnInfo  {
-
+public class SmnInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_notified_content")
-    
+    @JsonProperty(value = "smn_notified_content")
 
     private String smnNotifiedContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_subscription_status")
-    
+    @JsonProperty(value = "smn_subscription_status")
 
     private String smnSubscriptionStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_subscription_type")
-    
+    @JsonProperty(value = "smn_subscription_type")
 
     private String smnSubscriptionType;
 
@@ -39,9 +29,6 @@ public class SmnInfo  {
         this.smnNotifiedContent = smnNotifiedContent;
         return this;
     }
-
-    
-
 
     /**
      * smn发送消息的内容
@@ -55,15 +42,10 @@ public class SmnInfo  {
         this.smnNotifiedContent = smnNotifiedContent;
     }
 
-    
-
     public SmnInfo withSmnSubscriptionStatus(String smnSubscriptionStatus) {
         this.smnSubscriptionStatus = smnSubscriptionStatus;
         return this;
     }
-
-    
-
 
     /**
      * smn的订阅的状态
@@ -77,15 +59,10 @@ public class SmnInfo  {
         this.smnSubscriptionStatus = smnSubscriptionStatus;
     }
 
-    
-
     public SmnInfo withSmnSubscriptionType(String smnSubscriptionType) {
         this.smnSubscriptionType = smnSubscriptionType;
         return this;
     }
-
-    
-
 
     /**
      * smn的订阅类型
@@ -99,25 +76,25 @@ public class SmnInfo  {
         this.smnSubscriptionType = smnSubscriptionType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmnInfo smnInfo = (SmnInfo) o;
-        return Objects.equals(this.smnNotifiedContent, smnInfo.smnNotifiedContent) &&
-            Objects.equals(this.smnSubscriptionStatus, smnInfo.smnSubscriptionStatus) &&
-            Objects.equals(this.smnSubscriptionType, smnInfo.smnSubscriptionType);
+        SmnInfo that = (SmnInfo) obj;
+        return Objects.equals(this.smnNotifiedContent, that.smnNotifiedContent)
+            && Objects.equals(this.smnSubscriptionStatus, that.smnSubscriptionStatus)
+            && Objects.equals(this.smnSubscriptionType, that.smnSubscriptionType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(smnNotifiedContent, smnSubscriptionStatus, smnSubscriptionType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +105,7 @@ public class SmnInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +116,5 @@ public class SmnInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

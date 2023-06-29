@@ -33,15 +33,15 @@ public class CreateTopicResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicResp createTopicResp = (CreateTopicResp) o;
-        return Objects.equals(this.id, createTopicResp.id);
+        CreateTopicResp that = (CreateTopicResp) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListIamGroupUsersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIamGroupUsersResponse listIamGroupUsersResponse = (ListIamGroupUsersResponse) o;
-        return Objects.equals(this.groups, listIamGroupUsersResponse.groups)
-            && Objects.equals(this.count, listIamGroupUsersResponse.count);
+        ListIamGroupUsersResponse that = (ListIamGroupUsersResponse) obj;
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.count, that.count);
     }
 
     @Override

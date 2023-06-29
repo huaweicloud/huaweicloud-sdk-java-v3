@@ -77,17 +77,16 @@ public class AsyncCommitJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncCommitJobResp asyncCommitJobResp = (AsyncCommitJobResp) o;
-        return Objects.equals(this.asyncJobId, asyncCommitJobResp.asyncJobId)
-            && Objects.equals(this.status, asyncCommitJobResp.status)
-            && Objects.equals(this.msg, asyncCommitJobResp.msg);
+        AsyncCommitJobResp that = (AsyncCommitJobResp) obj;
+        return Objects.equals(this.asyncJobId, that.asyncJobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.msg, that.msg);
     }
 
     @Override

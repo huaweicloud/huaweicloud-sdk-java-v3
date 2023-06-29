@@ -143,20 +143,18 @@ public class RecordJobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordJobInfo recordJobInfo = (RecordJobInfo) o;
-        return Objects.equals(this.deployType, recordJobInfo.deployType)
-            && Objects.equals(this.sourceUrl, recordJobInfo.sourceUrl)
-            && Objects.equals(this.firstBatchWeight, recordJobInfo.firstBatchWeight)
-            && Objects.equals(this.firstBatchReplica, recordJobInfo.firstBatchReplica)
-            && Objects.equals(this.replica, recordJobInfo.replica)
-            && Objects.equals(this.remainingBatch, recordJobInfo.remainingBatch);
+        RecordJobInfo that = (RecordJobInfo) obj;
+        return Objects.equals(this.deployType, that.deployType) && Objects.equals(this.sourceUrl, that.sourceUrl)
+            && Objects.equals(this.firstBatchWeight, that.firstBatchWeight)
+            && Objects.equals(this.firstBatchReplica, that.firstBatchReplica)
+            && Objects.equals(this.replica, that.replica) && Objects.equals(this.remainingBatch, that.remainingBatch);
     }
 
     @Override

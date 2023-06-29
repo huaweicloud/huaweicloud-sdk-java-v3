@@ -55,16 +55,15 @@ public class ServerAppInfoCreatedUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerAppInfoCreatedUser serverAppInfoCreatedUser = (ServerAppInfoCreatedUser) o;
-        return Objects.equals(this.userId, serverAppInfoCreatedUser.userId)
-            && Objects.equals(this.userName, serverAppInfoCreatedUser.userName);
+        ServerAppInfoCreatedUser that = (ServerAppInfoCreatedUser) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

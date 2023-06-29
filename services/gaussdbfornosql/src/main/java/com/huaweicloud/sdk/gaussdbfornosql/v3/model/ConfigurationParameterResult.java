@@ -165,21 +165,18 @@ public class ConfigurationParameterResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationParameterResult configurationParameterResult = (ConfigurationParameterResult) o;
-        return Objects.equals(this.name, configurationParameterResult.name)
-            && Objects.equals(this.value, configurationParameterResult.value)
-            && Objects.equals(this.restartRequired, configurationParameterResult.restartRequired)
-            && Objects.equals(this.readonly, configurationParameterResult.readonly)
-            && Objects.equals(this.valueRange, configurationParameterResult.valueRange)
-            && Objects.equals(this.type, configurationParameterResult.type)
-            && Objects.equals(this.description, configurationParameterResult.description);
+        ConfigurationParameterResult that = (ConfigurationParameterResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.restartRequired, that.restartRequired)
+            && Objects.equals(this.readonly, that.readonly) && Objects.equals(this.valueRange, that.valueRange)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description);
     }
 
     @Override

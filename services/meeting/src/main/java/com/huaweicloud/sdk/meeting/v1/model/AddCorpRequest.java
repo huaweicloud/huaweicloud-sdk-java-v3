@@ -89,17 +89,16 @@ public class AddCorpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCorpRequest addCorpRequest = (AddCorpRequest) o;
-        return Objects.equals(this.xRequestId, addCorpRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addCorpRequest.acceptLanguage)
-            && Objects.equals(this.body, addCorpRequest.body);
+        AddCorpRequest that = (AddCorpRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

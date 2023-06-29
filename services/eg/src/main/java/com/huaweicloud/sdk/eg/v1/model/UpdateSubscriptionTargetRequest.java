@@ -87,17 +87,16 @@ public class UpdateSubscriptionTargetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubscriptionTargetRequest updateSubscriptionTargetRequest = (UpdateSubscriptionTargetRequest) o;
-        return Objects.equals(this.subscriptionId, updateSubscriptionTargetRequest.subscriptionId)
-            && Objects.equals(this.targetId, updateSubscriptionTargetRequest.targetId)
-            && Objects.equals(this.body, updateSubscriptionTargetRequest.body);
+        UpdateSubscriptionTargetRequest that = (UpdateSubscriptionTargetRequest) obj;
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

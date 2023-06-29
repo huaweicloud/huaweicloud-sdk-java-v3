@@ -143,20 +143,17 @@ public class UpdateTestCaseResultBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTestCaseResultBean updateTestCaseResultBean = (UpdateTestCaseResultBean) o;
-        return Objects.equals(this.testcaseId, updateTestCaseResultBean.testcaseId)
-            && Objects.equals(this.executeId, updateTestCaseResultBean.executeId)
-            && Objects.equals(this.resultId, updateTestCaseResultBean.resultId)
-            && Objects.equals(this.endTime, updateTestCaseResultBean.endTime)
-            && Objects.equals(this.duration, updateTestCaseResultBean.duration)
-            && Objects.equals(this.description, updateTestCaseResultBean.description);
+        UpdateTestCaseResultBean that = (UpdateTestCaseResultBean) obj;
+        return Objects.equals(this.testcaseId, that.testcaseId) && Objects.equals(this.executeId, that.executeId)
+            && Objects.equals(this.resultId, that.resultId) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.description, that.description);
     }
 
     @Override

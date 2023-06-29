@@ -63,22 +63,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            Gauss100VersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Gauss100VersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Gauss100VersionEnum(value));
         }
 
         public static Gauss100VersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Gauss100VersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,22 +174,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +249,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            CdcModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CdcModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CdcModeEnum(value));
         }
 
         public static CdcModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CdcModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -355,22 +334,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            FtpConnectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FtpConnectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FtpConnectModeEnum(value));
         }
 
         public static FtpConnectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FtpConnectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -437,22 +409,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            FtpProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FtpProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FtpProtocolEnum(value));
         }
 
         public static FtpProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FtpProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -567,22 +532,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            ApiMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiMethodEnum(value));
         }
 
         public static ApiMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -649,22 +607,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            AuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthMethodEnum(value));
         }
 
         public static AuthMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1004,22 +955,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            EncodingEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EncodingEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EncodingEnum(value));
         }
 
         public static EncodingEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EncodingEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1101,22 +1045,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            TrustStoreFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrustStoreFileTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrustStoreFileTypeEnum(value));
         }
 
         public static TrustStoreFileTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrustStoreFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1183,22 +1120,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            SslAuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SslAuthMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SslAuthMethodEnum(value));
         }
 
         public static SslAuthMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SslAuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1270,22 +1200,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            KeyStoreFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeyStoreFileTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeyStoreFileTypeEnum(value));
         }
 
         public static KeyStoreFileTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeyStoreFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1361,22 +1284,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            DisDataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DisDataTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DisDataTypeEnum(value));
         }
 
         public static DisDataTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DisDataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1443,22 +1359,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            DisSettingTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DisSettingTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DisSettingTypeEnum(value));
         }
 
         public static DisSettingTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DisSettingTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1540,22 +1449,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            Hl7PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Hl7PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Hl7PositionEnum(value));
         }
 
         public static Hl7PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Hl7PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1632,22 +1534,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            LdapSecurityAuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LdapSecurityAuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LdapSecurityAuthTypeEnum(value));
         }
 
         public static LdapSecurityAuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LdapSecurityAuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1713,22 +1608,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            RabbitmqSslProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RabbitmqSslProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RabbitmqSslProtocolEnum(value));
         }
 
         public static RabbitmqSslProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RabbitmqSslProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1805,22 +1693,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            SnmpNetworkProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SnmpNetworkProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SnmpNetworkProtocolEnum(value));
         }
 
         public static SnmpNetworkProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SnmpNetworkProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1893,22 +1774,15 @@ public class Content {
             if (value == null) {
                 return null;
             }
-            SnmpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SnmpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SnmpVersionEnum(value));
         }
 
         public static SnmpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            SnmpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -3154,70 +3028,65 @@ public class Content {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Content content = (Content) o;
-        return Objects.equals(this.gauss100Version, content.gauss100Version) && Objects.equals(this.host, content.host)
-            && Objects.equals(this.port, content.port) && Objects.equals(this.databaseName, content.databaseName)
-            && Objects.equals(this.redisDatabase, content.redisDatabase)
-            && Objects.equals(this.userName, content.userName) && Objects.equals(this.password, content.password)
-            && Objects.equals(this.mode, content.mode) && Objects.equals(this.cdcMode, content.cdcMode)
-            && Objects.equals(this.multiOracleAddress, content.multiOracleAddress)
-            && Objects.equals(this.oracleServiceName, content.oracleServiceName)
-            && Objects.equals(this.ftpConnectMode, content.ftpConnectMode)
-            && Objects.equals(this.ftpProtocol, content.ftpProtocol) && Objects.equals(this.address, content.address)
-            && Objects.equals(this.ak, content.ak) && Objects.equals(this.sk, content.sk)
-            && Objects.equals(this.bucketName, content.bucketName) && Objects.equals(this.https, content.https)
-            && Objects.equals(this.url, content.url) && Objects.equals(this.apiMethod, content.apiMethod)
-            && Objects.equals(this.authMethod, content.authMethod)
-            && Objects.equals(this.apiAuthDetail, content.apiAuthDetail) && Objects.equals(this.broker, content.broker)
-            && Objects.equals(this.ssl, content.ssl) && Objects.equals(this.sslEnable, content.sslEnable)
-            && Objects.equals(this.sslUsername, content.sslUsername)
-            && Objects.equals(this.sslPassword, content.sslPassword)
-            && Objects.equals(this.mongodbAuthSource, content.mongodbAuthSource)
-            && Objects.equals(this.mongodbClusterEnable, content.mongodbClusterEnable)
-            && Objects.equals(this.mongodbReplicaSet, content.mongodbReplicaSet)
-            && Objects.equals(this.encoding, content.encoding)
-            && Objects.equals(this.mysqlTimeout, content.mysqlTimeout)
-            && Objects.equals(this.trustStorePassword, content.trustStorePassword)
-            && Objects.equals(this.trustStore, content.trustStore)
-            && Objects.equals(this.trustStoreFileType, content.trustStoreFileType)
-            && Objects.equals(this.sslAuthMethod, content.sslAuthMethod)
-            && Objects.equals(this.keyStore, content.keyStore)
-            && Objects.equals(this.keyStoreFileType, content.keyStoreFileType)
-            && Objects.equals(this.keyStorePassword, content.keyStorePassword)
-            && Objects.equals(this.keyStoreKeyPassword, content.keyStoreKeyPassword)
-            && Objects.equals(this.disTunnelName, content.disTunnelName)
-            && Objects.equals(this.disDataType, content.disDataType)
-            && Objects.equals(this.disSettingType, content.disSettingType)
-            && Objects.equals(this.disEndpoint, content.disEndpoint)
-            && Objects.equals(this.disRegion, content.disRegion)
-            && Objects.equals(this.disSourceProjectId, content.disSourceProjectId)
-            && Objects.equals(this.hl7Position, content.hl7Position)
-            && Objects.equals(this.hl7WhitelistEnable, content.hl7WhitelistEnable)
-            && Objects.equals(this.hl7Whitelist, content.hl7Whitelist)
-            && Objects.equals(this.ldapSecurityAuthType, content.ldapSecurityAuthType)
-            && Objects.equals(this.rabbitmqVirtualHost, content.rabbitmqVirtualHost)
-            && Objects.equals(this.rabbitmqSslProtocol, content.rabbitmqSslProtocol)
-            && Objects.equals(this.sapClient, content.sapClient) && Objects.equals(this.sapSysnr, content.sapSysnr)
-            && Objects.equals(this.snmpNetworkProtocol, content.snmpNetworkProtocol)
-            && Objects.equals(this.snmpVersion, content.snmpVersion)
-            && Objects.equals(this.snmpCommunity, content.snmpCommunity)
-            && Objects.equals(this.ibmmqCcsId, content.ibmmqCcsId)
-            && Objects.equals(this.ibmmqQueueManager, content.ibmmqQueueManager)
-            && Objects.equals(this.ibmmqChannel, content.ibmmqChannel)
-            && Objects.equals(this.ibmmqCipherSuite, content.ibmmqCipherSuite)
-            && Objects.equals(this.hdfsPath, content.hdfsPath)
-            && Objects.equals(this.principalName, content.principalName)
-            && Objects.equals(this.configFileName, content.configFileName)
-            && Objects.equals(this.configFileContent, content.configFileContent)
-            && Objects.equals(this.connectionInstanceId, content.connectionInstanceId)
-            && Objects.equals(this.connectorParams, content.connectorParams);
+        Content that = (Content) obj;
+        return Objects.equals(this.gauss100Version, that.gauss100Version) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.redisDatabase, that.redisDatabase) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.cdcMode, that.cdcMode)
+            && Objects.equals(this.multiOracleAddress, that.multiOracleAddress)
+            && Objects.equals(this.oracleServiceName, that.oracleServiceName)
+            && Objects.equals(this.ftpConnectMode, that.ftpConnectMode)
+            && Objects.equals(this.ftpProtocol, that.ftpProtocol) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.https, that.https)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.apiMethod, that.apiMethod)
+            && Objects.equals(this.authMethod, that.authMethod)
+            && Objects.equals(this.apiAuthDetail, that.apiAuthDetail) && Objects.equals(this.broker, that.broker)
+            && Objects.equals(this.ssl, that.ssl) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.sslUsername, that.sslUsername) && Objects.equals(this.sslPassword, that.sslPassword)
+            && Objects.equals(this.mongodbAuthSource, that.mongodbAuthSource)
+            && Objects.equals(this.mongodbClusterEnable, that.mongodbClusterEnable)
+            && Objects.equals(this.mongodbReplicaSet, that.mongodbReplicaSet)
+            && Objects.equals(this.encoding, that.encoding) && Objects.equals(this.mysqlTimeout, that.mysqlTimeout)
+            && Objects.equals(this.trustStorePassword, that.trustStorePassword)
+            && Objects.equals(this.trustStore, that.trustStore)
+            && Objects.equals(this.trustStoreFileType, that.trustStoreFileType)
+            && Objects.equals(this.sslAuthMethod, that.sslAuthMethod) && Objects.equals(this.keyStore, that.keyStore)
+            && Objects.equals(this.keyStoreFileType, that.keyStoreFileType)
+            && Objects.equals(this.keyStorePassword, that.keyStorePassword)
+            && Objects.equals(this.keyStoreKeyPassword, that.keyStoreKeyPassword)
+            && Objects.equals(this.disTunnelName, that.disTunnelName)
+            && Objects.equals(this.disDataType, that.disDataType)
+            && Objects.equals(this.disSettingType, that.disSettingType)
+            && Objects.equals(this.disEndpoint, that.disEndpoint) && Objects.equals(this.disRegion, that.disRegion)
+            && Objects.equals(this.disSourceProjectId, that.disSourceProjectId)
+            && Objects.equals(this.hl7Position, that.hl7Position)
+            && Objects.equals(this.hl7WhitelistEnable, that.hl7WhitelistEnable)
+            && Objects.equals(this.hl7Whitelist, that.hl7Whitelist)
+            && Objects.equals(this.ldapSecurityAuthType, that.ldapSecurityAuthType)
+            && Objects.equals(this.rabbitmqVirtualHost, that.rabbitmqVirtualHost)
+            && Objects.equals(this.rabbitmqSslProtocol, that.rabbitmqSslProtocol)
+            && Objects.equals(this.sapClient, that.sapClient) && Objects.equals(this.sapSysnr, that.sapSysnr)
+            && Objects.equals(this.snmpNetworkProtocol, that.snmpNetworkProtocol)
+            && Objects.equals(this.snmpVersion, that.snmpVersion)
+            && Objects.equals(this.snmpCommunity, that.snmpCommunity)
+            && Objects.equals(this.ibmmqCcsId, that.ibmmqCcsId)
+            && Objects.equals(this.ibmmqQueueManager, that.ibmmqQueueManager)
+            && Objects.equals(this.ibmmqChannel, that.ibmmqChannel)
+            && Objects.equals(this.ibmmqCipherSuite, that.ibmmqCipherSuite)
+            && Objects.equals(this.hdfsPath, that.hdfsPath) && Objects.equals(this.principalName, that.principalName)
+            && Objects.equals(this.configFileName, that.configFileName)
+            && Objects.equals(this.configFileContent, that.configFileContent)
+            && Objects.equals(this.connectionInstanceId, that.connectionInstanceId)
+            && Objects.equals(this.connectorParams, that.connectorParams);
     }
 
     @Override

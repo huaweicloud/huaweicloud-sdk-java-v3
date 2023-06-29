@@ -65,16 +65,15 @@ public class UpdateAlterKibanaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlterKibanaRequest updateAlterKibanaRequest = (UpdateAlterKibanaRequest) o;
-        return Objects.equals(this.clusterId, updateAlterKibanaRequest.clusterId)
-            && Objects.equals(this.body, updateAlterKibanaRequest.body);
+        UpdateAlterKibanaRequest that = (UpdateAlterKibanaRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

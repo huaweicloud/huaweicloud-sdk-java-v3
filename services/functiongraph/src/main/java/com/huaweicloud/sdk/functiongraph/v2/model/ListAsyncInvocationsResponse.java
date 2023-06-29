@@ -54,15 +54,15 @@ public class ListAsyncInvocationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAsyncInvocationsResponse listAsyncInvocationsResponse = (ListAsyncInvocationsResponse) o;
-        return Objects.equals(this.invocations, listAsyncInvocationsResponse.invocations);
+        ListAsyncInvocationsResponse that = (ListAsyncInvocationsResponse) obj;
+        return Objects.equals(this.invocations, that.invocations);
     }
 
     @Override

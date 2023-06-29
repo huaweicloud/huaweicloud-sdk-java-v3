@@ -97,17 +97,16 @@ public class ListPluginAttachableApisResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPluginAttachableApisResponse listPluginAttachableApisResponse = (ListPluginAttachableApisResponse) o;
-        return Objects.equals(this.size, listPluginAttachableApisResponse.size)
-            && Objects.equals(this.total, listPluginAttachableApisResponse.total)
-            && Objects.equals(this.apis, listPluginAttachableApisResponse.apis);
+        ListPluginAttachableApisResponse that = (ListPluginAttachableApisResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apis, that.apis);
     }
 
     @Override

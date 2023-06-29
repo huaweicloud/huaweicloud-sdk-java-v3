@@ -99,18 +99,18 @@ public class InnodbLockWaits {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InnodbLockWaits innodbLockWaits = (InnodbLockWaits) o;
-        return Objects.equals(this.requestingTrxId, innodbLockWaits.requestingTrxId)
-            && Objects.equals(this.requestedLockId, innodbLockWaits.requestedLockId)
-            && Objects.equals(this.blockingTrxId, innodbLockWaits.blockingTrxId)
-            && Objects.equals(this.blockingLockId, innodbLockWaits.blockingLockId);
+        InnodbLockWaits that = (InnodbLockWaits) obj;
+        return Objects.equals(this.requestingTrxId, that.requestingTrxId)
+            && Objects.equals(this.requestedLockId, that.requestedLockId)
+            && Objects.equals(this.blockingTrxId, that.blockingTrxId)
+            && Objects.equals(this.blockingLockId, that.blockingLockId);
     }
 
     @Override

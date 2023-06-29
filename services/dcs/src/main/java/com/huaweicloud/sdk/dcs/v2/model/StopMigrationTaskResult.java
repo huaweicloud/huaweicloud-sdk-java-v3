@@ -60,22 +60,15 @@ public class StopMigrationTaskResult {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class StopMigrationTaskResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopMigrationTaskResult stopMigrationTaskResult = (StopMigrationTaskResult) o;
-        return Objects.equals(this.result, stopMigrationTaskResult.result)
-            && Objects.equals(this.taskId, stopMigrationTaskResult.taskId);
+        StopMigrationTaskResult that = (StopMigrationTaskResult) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

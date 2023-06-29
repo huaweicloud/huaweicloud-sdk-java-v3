@@ -65,16 +65,15 @@ public class CreateLoadbalancerTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadbalancerTagsRequest createLoadbalancerTagsRequest = (CreateLoadbalancerTagsRequest) o;
-        return Objects.equals(this.loadbalancerId, createLoadbalancerTagsRequest.loadbalancerId)
-            && Objects.equals(this.body, createLoadbalancerTagsRequest.body);
+        CreateLoadbalancerTagsRequest that = (CreateLoadbalancerTagsRequest) obj;
+        return Objects.equals(this.loadbalancerId, that.loadbalancerId) && Objects.equals(this.body, that.body);
     }
 
     @Override

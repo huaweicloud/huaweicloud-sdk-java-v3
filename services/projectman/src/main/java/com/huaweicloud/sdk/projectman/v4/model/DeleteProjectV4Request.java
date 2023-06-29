@@ -33,15 +33,15 @@ public class DeleteProjectV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProjectV4Request deleteProjectV4Request = (DeleteProjectV4Request) o;
-        return Objects.equals(this.projectId, deleteProjectV4Request.projectId);
+        DeleteProjectV4Request that = (DeleteProjectV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

@@ -123,19 +123,17 @@ public class ListDomainLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainLogsRequest listDomainLogsRequest = (ListDomainLogsRequest) o;
-        return Objects.equals(this.xSdkDate, listDomainLogsRequest.xSdkDate)
-            && Objects.equals(this.domainName, listDomainLogsRequest.domainName)
-            && Objects.equals(this.queryDate, listDomainLogsRequest.queryDate)
-            && Objects.equals(this.pageSize, listDomainLogsRequest.pageSize)
-            && Objects.equals(this.pageNumber, listDomainLogsRequest.pageNumber);
+        ListDomainLogsRequest that = (ListDomainLogsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.queryDate, that.queryDate) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.pageNumber, that.pageNumber);
     }
 
     @Override

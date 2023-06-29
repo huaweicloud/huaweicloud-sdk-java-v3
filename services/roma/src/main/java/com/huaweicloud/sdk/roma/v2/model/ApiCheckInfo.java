@@ -101,22 +101,15 @@ public class ApiCheckInfo {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class ApiCheckInfo {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchModeEnum(value));
         }
 
         public static MatchModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,19 +346,18 @@ public class ApiCheckInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiCheckInfo apiCheckInfo = (ApiCheckInfo) o;
-        return Objects.equals(this.name, apiCheckInfo.name) && Objects.equals(this.reqMethod, apiCheckInfo.reqMethod)
-            && Objects.equals(this.reqUri, apiCheckInfo.reqUri)
-            && Objects.equals(this.matchMode, apiCheckInfo.matchMode)
-            && Objects.equals(this.groupId, apiCheckInfo.groupId)
-            && Objects.equals(this.romaAppId, apiCheckInfo.romaAppId) && Objects.equals(this.apiId, apiCheckInfo.apiId);
+        ApiCheckInfo that = (ApiCheckInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.reqMethod, that.reqMethod)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.matchMode, that.matchMode)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.apiId, that.apiId);
     }
 
     @Override

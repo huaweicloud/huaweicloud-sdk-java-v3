@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 语音合成配置 - 目前可用tts资源尚未确定，校验待定，测试可以先不测后端接口校验
  */
-public class TtsConfig  {
-
+public class TtsConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property")
-    
+    @JsonProperty(value = "property")
 
     private String property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="speed")
-    
+    @JsonProperty(value = "speed")
 
     private Integer speed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
 
     private Integer volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay")
-    
+    @JsonProperty(value = "delay")
 
     private Float delay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pitch")
-    
+    @JsonProperty(value = "pitch")
 
     private String pitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audio_format")
-    
+    @JsonProperty(value = "audio_format")
 
     private String audioFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample_rate")
-    
+    @JsonProperty(value = "sample_rate")
 
     private String sampleRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tts_source")
-    
+    @JsonProperty(value = "tts_source")
 
     private Integer ttsSource;
 
@@ -69,9 +54,6 @@ public class TtsConfig  {
         this.property = property;
         return this;
     }
-
-    
-
 
     /**
      * 用于设置音色
@@ -85,15 +67,10 @@ public class TtsConfig  {
         this.property = property;
     }
 
-    
-
     public TtsConfig withSpeed(Integer speed) {
         this.speed = speed;
         return this;
     }
-
-    
-
 
     /**
      * 用户设置音速
@@ -107,15 +84,10 @@ public class TtsConfig  {
         this.speed = speed;
     }
 
-    
-
     public TtsConfig withVolume(Integer volume) {
         this.volume = volume;
         return this;
     }
-
-    
-
 
     /**
      * 用于设置音量
@@ -129,15 +101,10 @@ public class TtsConfig  {
         this.volume = volume;
     }
 
-    
-
     public TtsConfig withDelay(Float delay) {
         this.delay = delay;
         return this;
     }
-
-    
-
 
     /**
      * 段首停顿时间。 范围：0~60； 单位：秒 默认：0
@@ -151,15 +118,10 @@ public class TtsConfig  {
         this.delay = delay;
     }
 
-    
-
     public TtsConfig withPitch(String pitch) {
         this.pitch = pitch;
         return this;
     }
-
-    
-
 
     /**
      * 音高。 取值范围： -500~500 默认值：0
@@ -173,15 +135,10 @@ public class TtsConfig  {
         this.pitch = pitch;
     }
 
-    
-
     public TtsConfig withAudioFormat(String audioFormat) {
         this.audioFormat = audioFormat;
         return this;
     }
-
-    
-
 
     /**
      * 语音格式头：wav、mp3、pcm 默认：wav
@@ -195,15 +152,10 @@ public class TtsConfig  {
         this.audioFormat = audioFormat;
     }
 
-    
-
     public TtsConfig withSampleRate(String sampleRate) {
         this.sampleRate = sampleRate;
         return this;
     }
-
-    
-
 
     /**
      * 采样率：16000、8000 默认：8000
@@ -217,15 +169,10 @@ public class TtsConfig  {
         this.sampleRate = sampleRate;
     }
 
-    
-
     public TtsConfig withTtsSource(Integer ttsSource) {
         this.ttsSource = ttsSource;
         return this;
     }
-
-    
-
 
     /**
      * tts来源： 0：huawei 1：ali 2：用户克隆声音 默认：0
@@ -239,30 +186,26 @@ public class TtsConfig  {
         this.ttsSource = ttsSource;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TtsConfig ttsConfig = (TtsConfig) o;
-        return Objects.equals(this.property, ttsConfig.property) &&
-            Objects.equals(this.speed, ttsConfig.speed) &&
-            Objects.equals(this.volume, ttsConfig.volume) &&
-            Objects.equals(this.delay, ttsConfig.delay) &&
-            Objects.equals(this.pitch, ttsConfig.pitch) &&
-            Objects.equals(this.audioFormat, ttsConfig.audioFormat) &&
-            Objects.equals(this.sampleRate, ttsConfig.sampleRate) &&
-            Objects.equals(this.ttsSource, ttsConfig.ttsSource);
+        TtsConfig that = (TtsConfig) obj;
+        return Objects.equals(this.property, that.property) && Objects.equals(this.speed, that.speed)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.pitch, that.pitch) && Objects.equals(this.audioFormat, that.audioFormat)
+            && Objects.equals(this.sampleRate, that.sampleRate) && Objects.equals(this.ttsSource, that.ttsSource);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(property, speed, volume, delay, pitch, audioFormat, sampleRate, ttsSource);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +221,7 @@ public class TtsConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +232,5 @@ public class TtsConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

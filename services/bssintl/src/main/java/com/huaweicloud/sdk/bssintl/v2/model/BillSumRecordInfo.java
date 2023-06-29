@@ -354,28 +354,24 @@ public class BillSumRecordInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BillSumRecordInfo billSumRecordInfo = (BillSumRecordInfo) o;
-        return Objects.equals(this.customerId, billSumRecordInfo.customerId)
-            && Objects.equals(this.resourceTypeCode, billSumRecordInfo.resourceTypeCode)
-            && Objects.equals(this.regionCode, billSumRecordInfo.regionCode)
-            && Objects.equals(this.cloudServiceTypeCode, billSumRecordInfo.cloudServiceTypeCode)
-            && Objects.equals(this.consumeTime, billSumRecordInfo.consumeTime)
-            && Objects.equals(this.payMethod, billSumRecordInfo.payMethod)
-            && Objects.equals(this.consumeAmount, billSumRecordInfo.consumeAmount)
-            && Objects.equals(this.debt, billSumRecordInfo.debt)
-            && Objects.equals(this.discount, billSumRecordInfo.discount)
-            && Objects.equals(this.measureId, billSumRecordInfo.measureId)
-            && Objects.equals(this.billType, billSumRecordInfo.billType)
-            && Objects.equals(this.accountDetails, billSumRecordInfo.accountDetails)
-            && Objects.equals(this.discountDetailInfos, billSumRecordInfo.discountDetailInfos)
-            && Objects.equals(this.enterpriseProjectId, billSumRecordInfo.enterpriseProjectId);
+        BillSumRecordInfo that = (BillSumRecordInfo) obj;
+        return Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.cloudServiceTypeCode, that.cloudServiceTypeCode)
+            && Objects.equals(this.consumeTime, that.consumeTime) && Objects.equals(this.payMethod, that.payMethod)
+            && Objects.equals(this.consumeAmount, that.consumeAmount) && Objects.equals(this.debt, that.debt)
+            && Objects.equals(this.discount, that.discount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.accountDetails, that.accountDetails)
+            && Objects.equals(this.discountDetailInfos, that.discountDetailInfos)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListConfigHistoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigHistoriesResponse listConfigHistoriesResponse = (ListConfigHistoriesResponse) o;
-        return Objects.equals(this.historyNum, listConfigHistoriesResponse.historyNum)
-            && Objects.equals(this.histories, listConfigHistoriesResponse.histories);
+        ListConfigHistoriesResponse that = (ListConfigHistoriesResponse) obj;
+        return Objects.equals(this.historyNum, that.historyNum) && Objects.equals(this.histories, that.histories);
     }
 
     @Override

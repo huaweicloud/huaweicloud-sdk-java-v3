@@ -150,22 +150,15 @@ public class UpdateHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsEnum(value));
         }
 
         public static TlsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -250,22 +243,15 @@ public class UpdateHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CipherEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherEnum(value));
         }
 
         public static CipherEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -363,22 +349,15 @@ public class UpdateHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LbAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LbAlgorithmEnum(value));
         }
 
         public static LbAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1072,45 +1051,34 @@ public class UpdateHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostResponse updateHostResponse = (UpdateHostResponse) o;
-        return Objects.equals(this.id, updateHostResponse.id)
-            && Objects.equals(this.hostname, updateHostResponse.hostname)
-            && Objects.equals(this.policyid, updateHostResponse.policyid)
-            && Objects.equals(this.domainid, updateHostResponse.domainid)
-            && Objects.equals(this.projectid, updateHostResponse.projectid)
-            && Objects.equals(this.enterpriseProjectId, updateHostResponse.enterpriseProjectId)
-            && Objects.equals(this.protocol, updateHostResponse.protocol)
-            && Objects.equals(this.server, updateHostResponse.server)
-            && Objects.equals(this.proxy, updateHostResponse.proxy)
-            && Objects.equals(this.protectStatus, updateHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, updateHostResponse.accessStatus)
-            && Objects.equals(this.accessCode, updateHostResponse.accessCode)
-            && Objects.equals(this.locked, updateHostResponse.locked)
-            && Objects.equals(this.timestamp, updateHostResponse.timestamp)
-            && Objects.equals(this.certificateid, updateHostResponse.certificateid)
-            && Objects.equals(this.certificatename, updateHostResponse.certificatename)
-            && Objects.equals(this.tls, updateHostResponse.tls)
-            && Objects.equals(this.cipher, updateHostResponse.cipher)
-            && Objects.equals(this.blockPage, updateHostResponse.blockPage)
-            && Objects.equals(this.extend, updateHostResponse.extend)
-            && Objects.equals(this.webTag, updateHostResponse.webTag)
-            && Objects.equals(this.trafficMark, updateHostResponse.trafficMark)
-            && Objects.equals(this.circuitBreaker, updateHostResponse.circuitBreaker)
-            && Objects.equals(this.lbAlgorithm, updateHostResponse.lbAlgorithm)
-            && Objects.equals(this.timeoutConfig, updateHostResponse.timeoutConfig)
-            && Objects.equals(this.flag, updateHostResponse.flag)
-            && Objects.equals(this.description, updateHostResponse.description)
-            && Objects.equals(this.http2Enable, updateHostResponse.http2Enable)
-            && Objects.equals(this.exclusiveIp, updateHostResponse.exclusiveIp)
-            && Objects.equals(this.accessProgress, updateHostResponse.accessProgress)
-            && Objects.equals(this.forwardHeaderMap, updateHostResponse.forwardHeaderMap);
+        UpdateHostResponse that = (UpdateHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.domainid, that.domainid)
+            && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.tls, that.tls)
+            && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.trafficMark, that.trafficMark)
+            && Objects.equals(this.circuitBreaker, that.circuitBreaker)
+            && Objects.equals(this.lbAlgorithm, that.lbAlgorithm)
+            && Objects.equals(this.timeoutConfig, that.timeoutConfig) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.exclusiveIp, that.exclusiveIp)
+            && Objects.equals(this.accessProgress, that.accessProgress)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

@@ -83,22 +83,15 @@ public class CreateConnectionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -407,27 +400,21 @@ public class CreateConnectionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConnectionResponse createConnectionResponse = (CreateConnectionResponse) o;
-        return Objects.equals(this.id, createConnectionResponse.id)
-            && Objects.equals(this.name, createConnectionResponse.name)
-            && Objects.equals(this.description, createConnectionResponse.description)
-            && Objects.equals(this.status, createConnectionResponse.status)
-            && Objects.equals(this.vpcId, createConnectionResponse.vpcId)
-            && Objects.equals(this.subnetId, createConnectionResponse.subnetId)
-            && Objects.equals(this.agency, createConnectionResponse.agency)
-            && Objects.equals(this.flavor, createConnectionResponse.flavor)
-            && Objects.equals(this.type, createConnectionResponse.type)
-            && Objects.equals(this.kafkaDetail, createConnectionResponse.kafkaDetail)
-            && Objects.equals(this.createdTime, createConnectionResponse.createdTime)
-            && Objects.equals(this.updatedTime, createConnectionResponse.updatedTime)
-            && Objects.equals(this.xRequestId, createConnectionResponse.xRequestId);
+        CreateConnectionResponse that = (CreateConnectionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.agency, that.agency) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.kafkaDetail, that.kafkaDetail)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

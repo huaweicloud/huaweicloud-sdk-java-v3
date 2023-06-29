@@ -65,15 +65,15 @@ public class NodeEIPSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeEIPSpec nodeEIPSpec = (NodeEIPSpec) o;
-        return Objects.equals(this.iptype, nodeEIPSpec.iptype) && Objects.equals(this.bandwidth, nodeEIPSpec.bandwidth);
+        NodeEIPSpec that = (NodeEIPSpec) obj;
+        return Objects.equals(this.iptype, that.iptype) && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

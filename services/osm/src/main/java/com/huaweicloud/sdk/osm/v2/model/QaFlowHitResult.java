@@ -127,18 +127,17 @@ public class QaFlowHitResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaFlowHitResult qaFlowHitResult = (QaFlowHitResult) o;
-        return Objects.equals(this.sessionId, qaFlowHitResult.sessionId)
-            && Objects.equals(this.currentNode, qaFlowHitResult.currentNode)
-            && Objects.equals(this.candidateNodes, qaFlowHitResult.candidateNodes)
-            && Objects.equals(this.isCompleted, qaFlowHitResult.isCompleted);
+        QaFlowHitResult that = (QaFlowHitResult) obj;
+        return Objects.equals(this.sessionId, that.sessionId) && Objects.equals(this.currentNode, that.currentNode)
+            && Objects.equals(this.candidateNodes, that.candidateNodes)
+            && Objects.equals(this.isCompleted, that.isCompleted);
     }
 
     @Override

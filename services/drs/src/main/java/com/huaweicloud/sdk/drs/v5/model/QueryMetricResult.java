@@ -342,29 +342,27 @@ public class QueryMetricResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryMetricResult queryMetricResult = (QueryMetricResult) o;
-        return Objects.equals(this.jobId, queryMetricResult.jobId)
-            && Objects.equals(this.nodeId, queryMetricResult.nodeId)
-            && Objects.equals(this.timeStamp, queryMetricResult.timeStamp)
-            && Objects.equals(this.cpuUtil, queryMetricResult.cpuUtil)
-            && Objects.equals(this.memUtil, queryMetricResult.memUtil)
-            && Objects.equals(this.networkIncomingBytesRate, queryMetricResult.networkIncomingBytesRate)
-            && Objects.equals(this.networkOutgoingBytesRate, queryMetricResult.networkOutgoingBytesRate)
-            && Objects.equals(this.diskReadBytesRate, queryMetricResult.diskReadBytesRate)
-            && Objects.equals(this.diskWriteBytesRate, queryMetricResult.diskWriteBytesRate)
-            && Objects.equals(this.applyRowsRate, queryMetricResult.applyRowsRate)
-            && Objects.equals(this.applyTransactionsRate, queryMetricResult.applyTransactionsRate)
-            && Objects.equals(this.applyDdlRate, queryMetricResult.applyDdlRate)
-            && Objects.equals(this.applyAverageExecuteTime, queryMetricResult.applyAverageExecuteTime)
-            && Objects.equals(this.applyAverageCommitTime, queryMetricResult.applyAverageCommitTime)
-            && Objects.equals(this.applyCurrentState, queryMetricResult.applyCurrentState);
+        QueryMetricResult that = (QueryMetricResult) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.timeStamp, that.timeStamp) && Objects.equals(this.cpuUtil, that.cpuUtil)
+            && Objects.equals(this.memUtil, that.memUtil)
+            && Objects.equals(this.networkIncomingBytesRate, that.networkIncomingBytesRate)
+            && Objects.equals(this.networkOutgoingBytesRate, that.networkOutgoingBytesRate)
+            && Objects.equals(this.diskReadBytesRate, that.diskReadBytesRate)
+            && Objects.equals(this.diskWriteBytesRate, that.diskWriteBytesRate)
+            && Objects.equals(this.applyRowsRate, that.applyRowsRate)
+            && Objects.equals(this.applyTransactionsRate, that.applyTransactionsRate)
+            && Objects.equals(this.applyDdlRate, that.applyDdlRate)
+            && Objects.equals(this.applyAverageExecuteTime, that.applyAverageExecuteTime)
+            && Objects.equals(this.applyAverageCommitTime, that.applyAverageCommitTime)
+            && Objects.equals(this.applyCurrentState, that.applyCurrentState);
     }
 
     @Override

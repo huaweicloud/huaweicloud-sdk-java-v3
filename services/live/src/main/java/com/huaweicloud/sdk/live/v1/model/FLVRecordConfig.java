@@ -81,17 +81,17 @@ public class FLVRecordConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FLVRecordConfig flVRecordConfig = (FLVRecordConfig) o;
-        return Objects.equals(this.recordCycle, flVRecordConfig.recordCycle)
-            && Objects.equals(this.recordPrefix, flVRecordConfig.recordPrefix)
-            && Objects.equals(this.recordMaxDurationToMergeFile, flVRecordConfig.recordMaxDurationToMergeFile);
+        FLVRecordConfig that = (FLVRecordConfig) obj;
+        return Objects.equals(this.recordCycle, that.recordCycle)
+            && Objects.equals(this.recordPrefix, that.recordPrefix)
+            && Objects.equals(this.recordMaxDurationToMergeFile, that.recordMaxDurationToMergeFile);
     }
 
     @Override

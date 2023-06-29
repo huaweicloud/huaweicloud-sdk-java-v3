@@ -220,21 +220,20 @@ public class ListPermissionCheckResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPermissionCheckResultResponse listPermissionCheckResultResponse = (ListPermissionCheckResultResponse) o;
-        return Objects.equals(this.totalCount, listPermissionCheckResultResponse.totalCount)
-            && Objects.equals(this.passedPermissionItems, listPermissionCheckResultResponse.passedPermissionItems)
-            && Objects.equals(this.alarmPermissionItems, listPermissionCheckResultResponse.alarmPermissionItems)
-            && Objects.equals(this.failedPermissionItems, listPermissionCheckResultResponse.failedPermissionItems)
-            && Objects.equals(this.passedCount, listPermissionCheckResultResponse.passedCount)
-            && Objects.equals(this.alarmCount, listPermissionCheckResultResponse.alarmCount)
-            && Objects.equals(this.failedCount, listPermissionCheckResultResponse.failedCount);
+        ListPermissionCheckResultResponse that = (ListPermissionCheckResultResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.passedPermissionItems, that.passedPermissionItems)
+            && Objects.equals(this.alarmPermissionItems, that.alarmPermissionItems)
+            && Objects.equals(this.failedPermissionItems, that.failedPermissionItems)
+            && Objects.equals(this.passedCount, that.passedCount) && Objects.equals(this.alarmCount, that.alarmCount)
+            && Objects.equals(this.failedCount, that.failedCount);
     }
 
     @Override

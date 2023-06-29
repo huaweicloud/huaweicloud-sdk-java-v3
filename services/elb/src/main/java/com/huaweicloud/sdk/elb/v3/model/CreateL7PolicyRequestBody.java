@@ -43,15 +43,15 @@ public class CreateL7PolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateL7PolicyRequestBody createL7PolicyRequestBody = (CreateL7PolicyRequestBody) o;
-        return Objects.equals(this.l7policy, createL7PolicyRequestBody.l7policy);
+        CreateL7PolicyRequestBody that = (CreateL7PolicyRequestBody) obj;
+        return Objects.equals(this.l7policy, that.l7policy);
     }
 
     @Override

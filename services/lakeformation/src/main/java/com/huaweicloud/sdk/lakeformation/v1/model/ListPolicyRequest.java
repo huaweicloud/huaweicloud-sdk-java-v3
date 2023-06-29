@@ -101,18 +101,16 @@ public class ListPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyRequest listPolicyRequest = (ListPolicyRequest) o;
-        return Objects.equals(this.instanceId, listPolicyRequest.instanceId)
-            && Objects.equals(this.limit, listPolicyRequest.limit)
-            && Objects.equals(this.marker, listPolicyRequest.marker)
-            && Objects.equals(this.reversePage, listPolicyRequest.reversePage);
+        ListPolicyRequest that = (ListPolicyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

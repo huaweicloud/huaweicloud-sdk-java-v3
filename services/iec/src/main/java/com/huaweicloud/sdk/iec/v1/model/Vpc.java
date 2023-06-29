@@ -121,17 +121,17 @@ public class Vpc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Vpc vpc = (Vpc) o;
-        return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
-            && Objects.equals(this.cidr, vpc.cidr) && Objects.equals(this.mode, vpc.mode)
-            && Objects.equals(this.subnetNum, vpc.subnetNum);
+        Vpc that = (Vpc) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.subnetNum, that.subnetNum);
     }
 
     @Override

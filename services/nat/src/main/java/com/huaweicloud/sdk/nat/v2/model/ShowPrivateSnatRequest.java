@@ -33,15 +33,15 @@ public class ShowPrivateSnatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateSnatRequest showPrivateSnatRequest = (ShowPrivateSnatRequest) o;
-        return Objects.equals(this.snatRuleId, showPrivateSnatRequest.snatRuleId);
+        ShowPrivateSnatRequest that = (ShowPrivateSnatRequest) obj;
+        return Objects.equals(this.snatRuleId, that.snatRuleId);
     }
 
     @Override

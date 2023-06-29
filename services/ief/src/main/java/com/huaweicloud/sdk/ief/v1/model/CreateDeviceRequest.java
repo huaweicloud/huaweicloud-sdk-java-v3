@@ -65,16 +65,15 @@ public class CreateDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeviceRequest createDeviceRequest = (CreateDeviceRequest) o;
-        return Objects.equals(this.iefInstanceId, createDeviceRequest.iefInstanceId)
-            && Objects.equals(this.body, createDeviceRequest.body);
+        CreateDeviceRequest that = (CreateDeviceRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

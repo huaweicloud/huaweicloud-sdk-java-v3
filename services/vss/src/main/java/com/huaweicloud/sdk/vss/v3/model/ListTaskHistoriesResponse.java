@@ -30,7 +30,7 @@ public class ListTaskHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 历史扫描任务总数
+     * 网站历史扫描任务总数
      * minimum: 0
      * maximum: 100000
      * @return total
@@ -65,7 +65,7 @@ public class ListTaskHistoriesResponse extends SdkResponse {
     }
 
     /**
-     * 历史扫描任务列表
+     * 网站历史扫描任务列表
      * @return data
      */
     public List<ShowTasksResponseBody> getData() {
@@ -77,16 +77,15 @@ public class ListTaskHistoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskHistoriesResponse listTaskHistoriesResponse = (ListTaskHistoriesResponse) o;
-        return Objects.equals(this.total, listTaskHistoriesResponse.total)
-            && Objects.equals(this.data, listTaskHistoriesResponse.data);
+        ListTaskHistoriesResponse that = (ListTaskHistoriesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override

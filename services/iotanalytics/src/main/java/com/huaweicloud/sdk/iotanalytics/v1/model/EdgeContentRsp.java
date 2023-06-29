@@ -74,16 +74,15 @@ public class EdgeContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeContentRsp edgeContentRsp = (EdgeContentRsp) o;
-        return Objects.equals(this.iotdaInstanceId, edgeContentRsp.iotdaInstanceId)
-            && Objects.equals(this.rules, edgeContentRsp.rules);
+        EdgeContentRsp that = (EdgeContentRsp) obj;
+        return Objects.equals(this.iotdaInstanceId, that.iotdaInstanceId) && Objects.equals(this.rules, that.rules);
     }
 
     @Override

@@ -89,17 +89,17 @@ public class SetHostViewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetHostViewRequest setHostViewRequest = (SetHostViewRequest) o;
-        return Objects.equals(this.conferenceID, setHostViewRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, setHostViewRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, setHostViewRequest.body);
+        SetHostViewRequest that = (SetHostViewRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

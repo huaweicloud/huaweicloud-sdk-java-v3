@@ -350,28 +350,23 @@ public class ListNextflowJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNextflowJobRequest listNextflowJobRequest = (ListNextflowJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, listNextflowJobRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listNextflowJobRequest.limit)
-            && Objects.equals(this.offset, listNextflowJobRequest.offset)
-            && Objects.equals(this.sortDir, listNextflowJobRequest.sortDir)
-            && Objects.equals(this.sortKey, listNextflowJobRequest.sortKey)
-            && Objects.equals(this.jobName, listNextflowJobRequest.jobName)
-            && Objects.equals(this.labels, listNextflowJobRequest.labels)
-            && Objects.equals(this.status, listNextflowJobRequest.status)
-            && Objects.equals(this.workflowName, listNextflowJobRequest.workflowName)
-            && Objects.equals(this.userName, listNextflowJobRequest.userName)
-            && Objects.equals(this.createStartTime, listNextflowJobRequest.createStartTime)
-            && Objects.equals(this.createEndTime, listNextflowJobRequest.createEndTime)
-            && Objects.equals(this.finishStartTime, listNextflowJobRequest.finishStartTime)
-            && Objects.equals(this.finishEndTime, listNextflowJobRequest.finishEndTime);
+        ListNextflowJobRequest that = (ListNextflowJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.createStartTime, that.createStartTime)
+            && Objects.equals(this.createEndTime, that.createEndTime)
+            && Objects.equals(this.finishStartTime, that.finishStartTime)
+            && Objects.equals(this.finishEndTime, that.finishEndTime);
     }
 
     @Override

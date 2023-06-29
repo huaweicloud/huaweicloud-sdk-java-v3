@@ -149,19 +149,17 @@ public class BatchAddServerNicOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddServerNicOption batchAddServerNicOption = (BatchAddServerNicOption) o;
-        return Objects.equals(this.subnetId, batchAddServerNicOption.subnetId)
-            && Objects.equals(this.securityGroups, batchAddServerNicOption.securityGroups)
-            && Objects.equals(this.ipAddress, batchAddServerNicOption.ipAddress)
-            && Objects.equals(this.ipv6Enable, batchAddServerNicOption.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, batchAddServerNicOption.ipv6Bandwidth);
+        BatchAddServerNicOption that = (BatchAddServerNicOption) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth);
     }
 
     @Override

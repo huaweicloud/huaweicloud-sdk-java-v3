@@ -77,17 +77,16 @@ public class DeleteAntitamperRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAntitamperRuleRequest deleteAntitamperRuleRequest = (DeleteAntitamperRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteAntitamperRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, deleteAntitamperRuleRequest.policyId)
-            && Objects.equals(this.ruleId, deleteAntitamperRuleRequest.ruleId);
+        DeleteAntitamperRuleRequest that = (DeleteAntitamperRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

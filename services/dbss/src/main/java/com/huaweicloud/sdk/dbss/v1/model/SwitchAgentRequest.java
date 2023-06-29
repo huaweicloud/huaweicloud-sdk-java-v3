@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.AgentSwitchRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class SwitchAgentRequest  {
-
+public class SwitchAgentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private AgentSwitchRequest body;
 
@@ -35,9 +25,6 @@ public class SwitchAgentRequest  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID
@@ -51,22 +38,19 @@ public class SwitchAgentRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public SwitchAgentRequest withBody(AgentSwitchRequest body) {
         this.body = body;
         return this;
     }
 
     public SwitchAgentRequest withBody(Consumer<AgentSwitchRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AgentSwitchRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class SwitchAgentRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchAgentRequest switchAgentRequest = (SwitchAgentRequest) o;
-        return Objects.equals(this.instanceId, switchAgentRequest.instanceId) &&
-            Objects.equals(this.body, switchAgentRequest.body);
+        SwitchAgentRequest that = (SwitchAgentRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class SwitchAgentRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class SwitchAgentRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -121,17 +121,17 @@ public class CronConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CronConfig cronConfig = (CronConfig) o;
-        return Objects.equals(this.name, cronConfig.name) && Objects.equals(this.cron, cronConfig.cron)
-            && Objects.equals(this.count, cronConfig.count) && Objects.equals(this.startTime, cronConfig.startTime)
-            && Objects.equals(this.expiredTime, cronConfig.expiredTime);
+        CronConfig that = (CronConfig) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.cron, that.cron)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.expiredTime, that.expiredTime);
     }
 
     @Override

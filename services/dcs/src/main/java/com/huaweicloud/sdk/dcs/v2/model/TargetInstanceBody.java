@@ -77,16 +77,16 @@ public class TargetInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetInstanceBody targetInstanceBody = (TargetInstanceBody) o;
-        return Objects.equals(this.id, targetInstanceBody.id) && Objects.equals(this.name, targetInstanceBody.name)
-            && Objects.equals(this.password, targetInstanceBody.password);
+        TargetInstanceBody that = (TargetInstanceBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

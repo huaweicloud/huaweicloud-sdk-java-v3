@@ -118,17 +118,16 @@ public class RedisDbUserInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedisDbUserInfo redisDbUserInfo = (RedisDbUserInfo) o;
-        return Objects.equals(this.name, redisDbUserInfo.name) && Objects.equals(this.type, redisDbUserInfo.type)
-            && Objects.equals(this.privilege, redisDbUserInfo.privilege)
-            && Objects.equals(this.databases, redisDbUserInfo.databases);
+        RedisDbUserInfo that = (RedisDbUserInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.privilege, that.privilege) && Objects.equals(this.databases, that.databases);
     }
 
     @Override

@@ -66,15 +66,15 @@ public class AddNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddNode addNode = (AddNode) o;
-        return Objects.equals(this.serverID, addNode.serverID) && Objects.equals(this.spec, addNode.spec);
+        AddNode that = (AddNode) obj;
+        return Objects.equals(this.serverID, that.serverID) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

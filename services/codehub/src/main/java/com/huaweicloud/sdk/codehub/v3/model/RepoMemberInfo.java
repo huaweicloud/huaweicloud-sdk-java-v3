@@ -121,17 +121,17 @@ public class RepoMemberInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoMemberInfo repoMemberInfo = (RepoMemberInfo) o;
-        return Objects.equals(this.domainId, repoMemberInfo.domainId)
-            && Objects.equals(this.domainName, repoMemberInfo.domainName) && Objects.equals(this.id, repoMemberInfo.id)
-            && Objects.equals(this.name, repoMemberInfo.name) && Objects.equals(this.role, repoMemberInfo.role);
+        RepoMemberInfo that = (RepoMemberInfo) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.role, that.role);
     }
 
     @Override

@@ -96,17 +96,17 @@ public class LineCompareResultDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineCompareResultDetails lineCompareResultDetails = (LineCompareResultDetails) o;
-        return Objects.equals(this.sourceDbName, lineCompareResultDetails.sourceDbName)
-            && Objects.equals(this.lineCompareDetail, lineCompareResultDetails.lineCompareDetail)
-            && Objects.equals(this.lineCompareDetailCount, lineCompareResultDetails.lineCompareDetailCount);
+        LineCompareResultDetails that = (LineCompareResultDetails) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.lineCompareDetail, that.lineCompareDetail)
+            && Objects.equals(this.lineCompareDetailCount, that.lineCompareDetailCount);
     }
 
     @Override

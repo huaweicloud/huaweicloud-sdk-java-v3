@@ -118,17 +118,17 @@ public class AppFilterDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppFilterDto appFilterDto = (AppFilterDto) o;
-        return Objects.equals(this.appId, appFilterDto.appId) && Objects.equals(this.appName, appFilterDto.appName)
-            && Objects.equals(this.appVersion, appFilterDto.appVersion)
-            && Objects.equals(this.appNodeLabels, appFilterDto.appNodeLabels);
+        AppFilterDto that = (AppFilterDto) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.appNodeLabels, that.appNodeLabels);
     }
 
     @Override

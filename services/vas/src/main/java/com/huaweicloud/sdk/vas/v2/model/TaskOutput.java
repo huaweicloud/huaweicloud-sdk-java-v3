@@ -167,17 +167,17 @@ public class TaskOutput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutput taskOutput = (TaskOutput) o;
-        return Objects.equals(this.obs, taskOutput.obs) && Objects.equals(this.dis, taskOutput.dis)
-            && Objects.equals(this.webhook, taskOutput.webhook) && Objects.equals(this.hosting, taskOutput.hosting)
-            && Objects.equals(this.localpath, taskOutput.localpath);
+        TaskOutput that = (TaskOutput) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.dis, that.dis)
+            && Objects.equals(this.webhook, that.webhook) && Objects.equals(this.hosting, that.hosting)
+            && Objects.equals(this.localpath, that.localpath);
     }
 
     @Override

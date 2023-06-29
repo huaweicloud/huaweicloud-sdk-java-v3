@@ -33,15 +33,15 @@ public class ApiPolicyMockBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyMockBase apiPolicyMockBase = (ApiPolicyMockBase) o;
-        return Objects.equals(this.resultContent, apiPolicyMockBase.resultContent);
+        ApiPolicyMockBase that = (ApiPolicyMockBase) obj;
+        return Objects.equals(this.resultContent, that.resultContent);
     }
 
     @Override

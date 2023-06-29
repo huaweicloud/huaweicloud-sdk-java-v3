@@ -44,15 +44,15 @@ public class UpdatePublicIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicIpResponse updatePublicIpResponse = (UpdatePublicIpResponse) o;
-        return Objects.equals(this.publicip, updatePublicIpResponse.publicip);
+        UpdatePublicIpResponse that = (UpdatePublicIpResponse) obj;
+        return Objects.equals(this.publicip, that.publicip);
     }
 
     @Override

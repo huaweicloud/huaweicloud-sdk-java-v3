@@ -333,27 +333,23 @@ public class CreateEnvironmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnvironmentResponse createEnvironmentResponse = (CreateEnvironmentResponse) o;
-        return Objects.equals(this.id, createEnvironmentResponse.id)
-            && Objects.equals(this.name, createEnvironmentResponse.name)
-            && Objects.equals(this.alias, createEnvironmentResponse.alias)
-            && Objects.equals(this.description, createEnvironmentResponse.description)
-            && Objects.equals(this.projectId, createEnvironmentResponse.projectId)
-            && Objects.equals(this.enterpriseProjectId, createEnvironmentResponse.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, createEnvironmentResponse.chargeMode)
-            && Objects.equals(this.vpcId, createEnvironmentResponse.vpcId)
-            && Objects.equals(this.baseResources, createEnvironmentResponse.baseResources)
-            && Objects.equals(this.optionalResources, createEnvironmentResponse.optionalResources)
-            && Objects.equals(this.creator, createEnvironmentResponse.creator)
-            && Objects.equals(this.createTime, createEnvironmentResponse.createTime)
-            && Objects.equals(this.updateTime, createEnvironmentResponse.updateTime);
+        CreateEnvironmentResponse that = (CreateEnvironmentResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.baseResources, that.baseResources)
+            && Objects.equals(this.optionalResources, that.optionalResources)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -197,21 +197,20 @@ public class ShowSinkTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSinkTaskDetailResponse showSinkTaskDetailResponse = (ShowSinkTaskDetailResponse) o;
-        return Objects.equals(this.taskName, showSinkTaskDetailResponse.taskName)
-            && Objects.equals(this.destinationType, showSinkTaskDetailResponse.destinationType)
-            && Objects.equals(this.createTime, showSinkTaskDetailResponse.createTime)
-            && Objects.equals(this.status, showSinkTaskDetailResponse.status)
-            && Objects.equals(this.topics, showSinkTaskDetailResponse.topics)
-            && Objects.equals(this.obsDestinationDescriptor, showSinkTaskDetailResponse.obsDestinationDescriptor)
-            && Objects.equals(this.topicsInfo, showSinkTaskDetailResponse.topicsInfo);
+        ShowSinkTaskDetailResponse that = (ShowSinkTaskDetailResponse) obj;
+        return Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.destinationType, that.destinationType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.topics, that.topics)
+            && Objects.equals(this.obsDestinationDescriptor, that.obsDestinationDescriptor)
+            && Objects.equals(this.topicsInfo, that.topicsInfo);
     }
 
     @Override

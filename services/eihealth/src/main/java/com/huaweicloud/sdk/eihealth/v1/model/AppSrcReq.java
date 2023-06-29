@@ -77,17 +77,17 @@ public class AppSrcReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppSrcReq appSrcReq = (AppSrcReq) o;
-        return Objects.equals(this.destinationAppName, appSrcReq.destinationAppName)
-            && Objects.equals(this.destinationAppVersion, appSrcReq.destinationAppVersion)
-            && Objects.equals(this.sourceAppId, appSrcReq.sourceAppId);
+        AppSrcReq that = (AppSrcReq) obj;
+        return Objects.equals(this.destinationAppName, that.destinationAppName)
+            && Objects.equals(this.destinationAppVersion, that.destinationAppVersion)
+            && Objects.equals(this.sourceAppId, that.sourceAppId);
     }
 
     @Override

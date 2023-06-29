@@ -33,15 +33,15 @@ public class ShowServerGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerGroupRequest showServerGroupRequest = (ShowServerGroupRequest) o;
-        return Objects.equals(this.serverGroupId, showServerGroupRequest.serverGroupId);
+        ShowServerGroupRequest that = (ShowServerGroupRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId);
     }
 
     @Override

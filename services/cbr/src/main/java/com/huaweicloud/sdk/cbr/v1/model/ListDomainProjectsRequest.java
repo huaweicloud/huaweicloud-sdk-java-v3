@@ -33,15 +33,15 @@ public class ListDomainProjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainProjectsRequest listDomainProjectsRequest = (ListDomainProjectsRequest) o;
-        return Objects.equals(this.domainName, listDomainProjectsRequest.domainName);
+        ListDomainProjectsRequest that = (ListDomainProjectsRequest) obj;
+        return Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

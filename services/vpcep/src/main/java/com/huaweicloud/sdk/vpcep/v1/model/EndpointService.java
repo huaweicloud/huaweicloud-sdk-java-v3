@@ -75,22 +75,15 @@ public class EndpointService {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,20 +240,18 @@ public class EndpointService {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointService endpointService = (EndpointService) o;
-        return Objects.equals(this.id, endpointService.id) && Objects.equals(this.owner, endpointService.owner)
-            && Objects.equals(this.serviceName, endpointService.serviceName)
-            && Objects.equals(this.serviceType, endpointService.serviceType)
-            && Objects.equals(this.createdAt, endpointService.createdAt)
-            && Objects.equals(this.isCharge, endpointService.isCharge)
-            && Objects.equals(this.enablePolicy, endpointService.enablePolicy);
+        EndpointService that = (EndpointService) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.isCharge, that.isCharge)
+            && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
 
     @Override

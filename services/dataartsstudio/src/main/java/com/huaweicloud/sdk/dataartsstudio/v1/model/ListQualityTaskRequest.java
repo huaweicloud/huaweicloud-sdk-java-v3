@@ -94,22 +94,15 @@ public class ListQualityTaskRequest {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScheduleStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheduleStatusEnum(value));
         }
 
         public static ScheduleStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -318,23 +311,19 @@ public class ListQualityTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQualityTaskRequest listQualityTaskRequest = (ListQualityTaskRequest) o;
-        return Objects.equals(this.categoryId, listQualityTaskRequest.categoryId)
-            && Objects.equals(this.name, listQualityTaskRequest.name)
-            && Objects.equals(this.scheduleStatus, listQualityTaskRequest.scheduleStatus)
-            && Objects.equals(this.startTime, listQualityTaskRequest.startTime)
-            && Objects.equals(this.endTime, listQualityTaskRequest.endTime)
-            && Objects.equals(this.creator, listQualityTaskRequest.creator)
-            && Objects.equals(this.limit, listQualityTaskRequest.limit)
-            && Objects.equals(this.offset, listQualityTaskRequest.offset)
-            && Objects.equals(this.workspace, listQualityTaskRequest.workspace);
+        ListQualityTaskRequest that = (ListQualityTaskRequest) obj;
+        return Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

@@ -82,17 +82,16 @@ public class DeleteAlertRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAlertRuleResponse deleteAlertRuleResponse = (DeleteAlertRuleResponse) o;
-        return Objects.equals(this.ruleId, deleteAlertRuleResponse.ruleId)
-            && Objects.equals(this.deleteTime, deleteAlertRuleResponse.deleteTime)
-            && Objects.equals(this.xRequestId, deleteAlertRuleResponse.xRequestId);
+        DeleteAlertRuleResponse that = (DeleteAlertRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.deleteTime, that.deleteTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

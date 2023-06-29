@@ -57,16 +57,15 @@ public class ProcessStatisticResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProcessStatisticResponseInfo processStatisticResponseInfo = (ProcessStatisticResponseInfo) o;
-        return Objects.equals(this.path, processStatisticResponseInfo.path)
-            && Objects.equals(this.num, processStatisticResponseInfo.num);
+        ProcessStatisticResponseInfo that = (ProcessStatisticResponseInfo) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.num, that.num);
     }
 
     @Override

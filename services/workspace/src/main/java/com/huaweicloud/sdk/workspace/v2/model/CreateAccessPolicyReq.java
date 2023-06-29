@@ -83,16 +83,16 @@ public class CreateAccessPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAccessPolicyReq createAccessPolicyReq = (CreateAccessPolicyReq) o;
-        return Objects.equals(this.policy, createAccessPolicyReq.policy)
-            && Objects.equals(this.policyObjectsList, createAccessPolicyReq.policyObjectsList);
+        CreateAccessPolicyReq that = (CreateAccessPolicyReq) obj;
+        return Objects.equals(this.policy, that.policy)
+            && Objects.equals(this.policyObjectsList, that.policyObjectsList);
     }
 
     @Override

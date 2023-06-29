@@ -97,18 +97,16 @@ public class ListCustomerselfResourceRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerselfResourceRecordsResponse listCustomerselfResourceRecordsResponse =
-            (ListCustomerselfResourceRecordsResponse) o;
-        return Objects.equals(this.feeRecords, listCustomerselfResourceRecordsResponse.feeRecords)
-            && Objects.equals(this.totalCount, listCustomerselfResourceRecordsResponse.totalCount)
-            && Objects.equals(this.currency, listCustomerselfResourceRecordsResponse.currency);
+        ListCustomerselfResourceRecordsResponse that = (ListCustomerselfResourceRecordsResponse) obj;
+        return Objects.equals(this.feeRecords, that.feeRecords) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.currency, that.currency);
     }
 
     @Override

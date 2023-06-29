@@ -77,16 +77,15 @@ public class ListErrorServersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListErrorServersResponse listErrorServersResponse = (ListErrorServersResponse) o;
-        return Objects.equals(this.count, listErrorServersResponse.count)
-            && Objects.equals(this.migrationErrors, listErrorServersResponse.migrationErrors);
+        ListErrorServersResponse that = (ListErrorServersResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.migrationErrors, that.migrationErrors);
     }
 
     @Override

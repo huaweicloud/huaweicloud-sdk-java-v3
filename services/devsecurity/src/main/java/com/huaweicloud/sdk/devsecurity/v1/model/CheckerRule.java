@@ -165,21 +165,20 @@ public class CheckerRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckerRule checkerRule = (CheckerRule) o;
-        return Objects.equals(this.checkerRule, checkerRule.checkerRule)
-            && Objects.equals(this.checkerEntry, checkerRule.checkerEntry)
-            && Objects.equals(this.checkerResult, checkerRule.checkerResult)
-            && Objects.equals(this.checkerStack, checkerRule.checkerStack)
-            && Objects.equals(this.privacyPolicyEvidences, checkerRule.privacyPolicyEvidences)
-            && Objects.equals(this.pass, checkerRule.pass)
-            && Objects.equals(this.rectifySuggestion, checkerRule.rectifySuggestion);
+        CheckerRule that = (CheckerRule) obj;
+        return Objects.equals(this.checkerRule, that.checkerRule)
+            && Objects.equals(this.checkerEntry, that.checkerEntry)
+            && Objects.equals(this.checkerResult, that.checkerResult)
+            && Objects.equals(this.checkerStack, that.checkerStack)
+            && Objects.equals(this.privacyPolicyEvidences, that.privacyPolicyEvidences)
+            && Objects.equals(this.pass, that.pass) && Objects.equals(this.rectifySuggestion, that.rectifySuggestion);
     }
 
     @Override

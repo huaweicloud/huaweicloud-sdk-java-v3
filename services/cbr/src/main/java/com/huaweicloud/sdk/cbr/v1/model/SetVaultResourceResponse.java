@@ -53,15 +53,15 @@ public class SetVaultResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetVaultResourceResponse setVaultResourceResponse = (SetVaultResourceResponse) o;
-        return Objects.equals(this.setResourceIds, setVaultResourceResponse.setResourceIds);
+        SetVaultResourceResponse that = (SetVaultResourceResponse) obj;
+        return Objects.equals(this.setResourceIds, that.setResourceIds);
     }
 
     @Override

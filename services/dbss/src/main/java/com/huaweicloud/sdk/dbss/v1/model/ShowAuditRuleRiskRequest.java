@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowAuditRuleRiskRequest  {
-
+public class ShowAuditRuleRiskRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="risk_id")
-    
+    @JsonProperty(value = "risk_id")
 
     private String riskId;
 
@@ -34,9 +24,6 @@ public class ShowAuditRuleRiskRequest  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID
@@ -50,15 +37,10 @@ public class ShowAuditRuleRiskRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowAuditRuleRiskRequest withRiskId(String riskId) {
         this.riskId = riskId;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则ID
@@ -72,24 +54,23 @@ public class ShowAuditRuleRiskRequest  {
         this.riskId = riskId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditRuleRiskRequest showAuditRuleRiskRequest = (ShowAuditRuleRiskRequest) o;
-        return Objects.equals(this.instanceId, showAuditRuleRiskRequest.instanceId) &&
-            Objects.equals(this.riskId, showAuditRuleRiskRequest.riskId);
+        ShowAuditRuleRiskRequest that = (ShowAuditRuleRiskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.riskId, that.riskId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, riskId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class ShowAuditRuleRiskRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class ShowAuditRuleRiskRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

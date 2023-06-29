@@ -448,33 +448,25 @@ public class CouponInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CouponInfoV2 couponInfoV2 = (CouponInfoV2) o;
-        return Objects.equals(this.couponId, couponInfoV2.couponId)
-            && Objects.equals(this.couponCode, couponInfoV2.couponCode)
-            && Objects.equals(this.status, couponInfoV2.status)
-            && Objects.equals(this.couponType, couponInfoV2.couponType)
-            && Objects.equals(this.measureId, couponInfoV2.measureId)
-            && Objects.equals(this.faceValue, couponInfoV2.faceValue)
-            && Objects.equals(this.effectiveTime, couponInfoV2.effectiveTime)
-            && Objects.equals(this.expireTime, couponInfoV2.expireTime)
-            && Objects.equals(this.planName, couponInfoV2.planName)
-            && Objects.equals(this.planDesc, couponInfoV2.planDesc)
-            && Objects.equals(this.useLimits, couponInfoV2.useLimits)
-            && Objects.equals(this.activeTime, couponInfoV2.activeTime)
-            && Objects.equals(this.lastUsedTime, couponInfoV2.lastUsedTime)
-            && Objects.equals(this.createTime, couponInfoV2.createTime)
-            && Objects.equals(this.couponVersion, couponInfoV2.couponVersion)
-            && Objects.equals(this.balance, couponInfoV2.balance)
-            && Objects.equals(this.usedByOrderId, couponInfoV2.usedByOrderId)
-            && Objects.equals(this.couponUsage, couponInfoV2.couponUsage)
-            && Objects.equals(this.couponGroup, couponInfoV2.couponGroup);
+        CouponInfoV2 that = (CouponInfoV2) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.couponCode, that.couponCode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.couponType, that.couponType)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.faceValue, that.faceValue)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.planName, that.planName)
+            && Objects.equals(this.planDesc, that.planDesc) && Objects.equals(this.useLimits, that.useLimits)
+            && Objects.equals(this.activeTime, that.activeTime) && Objects.equals(this.lastUsedTime, that.lastUsedTime)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.couponVersion, that.couponVersion) && Objects.equals(this.balance, that.balance)
+            && Objects.equals(this.usedByOrderId, that.usedByOrderId)
+            && Objects.equals(this.couponUsage, that.couponUsage) && Objects.equals(this.couponGroup, that.couponGroup);
     }
 
     @Override

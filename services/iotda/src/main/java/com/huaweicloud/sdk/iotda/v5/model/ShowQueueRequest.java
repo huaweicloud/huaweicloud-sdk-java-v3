@@ -55,16 +55,15 @@ public class ShowQueueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQueueRequest showQueueRequest = (ShowQueueRequest) o;
-        return Objects.equals(this.instanceId, showQueueRequest.instanceId)
-            && Objects.equals(this.queueId, showQueueRequest.queueId);
+        ShowQueueRequest that = (ShowQueueRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.queueId, that.queueId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ListProjectTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectTemplatesRequest listProjectTemplatesRequest = (ListProjectTemplatesRequest) o;
-        return Objects.equals(this.arch, listProjectTemplatesRequest.arch)
-            && Objects.equals(this.stackId, listProjectTemplatesRequest.stackId);
+        ListProjectTemplatesRequest that = (ListProjectTemplatesRequest) obj;
+        return Objects.equals(this.arch, that.arch) && Objects.equals(this.stackId, that.stackId);
     }
 
     @Override

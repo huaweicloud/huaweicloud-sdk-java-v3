@@ -34,15 +34,15 @@ public class ShowDeploymentCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentCodeResponse showDeploymentCodeResponse = (ShowDeploymentCodeResponse) o;
-        return Objects.equals(this.cmd, showDeploymentCodeResponse.cmd);
+        ShowDeploymentCodeResponse that = (ShowDeploymentCodeResponse) obj;
+        return Objects.equals(this.cmd, that.cmd);
     }
 
     @Override

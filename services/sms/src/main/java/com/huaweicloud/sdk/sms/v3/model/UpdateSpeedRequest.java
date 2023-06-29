@@ -65,16 +65,15 @@ public class UpdateSpeedRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSpeedRequest updateSpeedRequest = (UpdateSpeedRequest) o;
-        return Objects.equals(this.taskId, updateSpeedRequest.taskId)
-            && Objects.equals(this.body, updateSpeedRequest.body);
+        UpdateSpeedRequest that = (UpdateSpeedRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.body, that.body);
     }
 
     @Override

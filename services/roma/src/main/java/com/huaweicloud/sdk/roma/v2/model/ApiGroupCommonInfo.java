@@ -68,22 +68,15 @@ public class ApiGroupCommonInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -283,21 +276,18 @@ public class ApiGroupCommonInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiGroupCommonInfo apiGroupCommonInfo = (ApiGroupCommonInfo) o;
-        return Objects.equals(this.id, apiGroupCommonInfo.id) && Objects.equals(this.name, apiGroupCommonInfo.name)
-            && Objects.equals(this.status, apiGroupCommonInfo.status)
-            && Objects.equals(this.slDomain, apiGroupCommonInfo.slDomain)
-            && Objects.equals(this.registerTime, apiGroupCommonInfo.registerTime)
-            && Objects.equals(this.updateTime, apiGroupCommonInfo.updateTime)
-            && Objects.equals(this.onSellStatus, apiGroupCommonInfo.onSellStatus)
-            && Objects.equals(this.urlDomains, apiGroupCommonInfo.urlDomains);
+        ApiGroupCommonInfo that = (ApiGroupCommonInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.slDomain, that.slDomain)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains);
     }
 
     @Override

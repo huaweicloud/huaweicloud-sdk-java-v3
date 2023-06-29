@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateInstancePeriodRequestProductInfos
  */
-public class CreateInstancePeriodRequestProductInfos  {
-
+public class CreateInstancePeriodRequestProductInfos {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type")
-    
+    @JsonProperty(value = "cloud_service_type")
 
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_type")
-    
+    @JsonProperty(value = "resource_type")
 
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_spec_code")
-    
+    @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_spec_desc")
-    
+    @JsonProperty(value = "product_spec_desc")
 
     private String productSpecDesc;
 
@@ -51,9 +39,6 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.productId = productId;
         return this;
     }
-
-    
-
 
     /**
      * 产品ID
@@ -67,15 +52,10 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.productId = productId;
     }
 
-    
-
     public CreateInstancePeriodRequestProductInfos withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
     }
-
-    
-
 
     /**
      * 服务类型： 默认hws.service.type.dbss
@@ -89,15 +69,10 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.cloudServiceType = cloudServiceType;
     }
 
-    
-
     public CreateInstancePeriodRequestProductInfos withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
-
-    
-
 
     /**
      * 资源类型: 默认hws.resource.type.dbss
@@ -111,15 +86,10 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.resourceType = resourceType;
     }
 
-    
-
     public CreateInstancePeriodRequestProductInfos withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
-
-    
-
 
     /**
      * 资源规格： dbss.bypassaudit.low、dbss.bypassaudit.medium、dbss.bypassaudit.high
@@ -133,15 +103,10 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
-    
-
     public CreateInstancePeriodRequestProductInfos withProductSpecDesc(String productSpecDesc) {
         this.productSpecDesc = productSpecDesc;
         return this;
     }
-
-    
-
 
     /**
      * 产品规格描述
@@ -155,27 +120,27 @@ public class CreateInstancePeriodRequestProductInfos  {
         this.productSpecDesc = productSpecDesc;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstancePeriodRequestProductInfos createInstancePeriodRequestProductInfos = (CreateInstancePeriodRequestProductInfos) o;
-        return Objects.equals(this.productId, createInstancePeriodRequestProductInfos.productId) &&
-            Objects.equals(this.cloudServiceType, createInstancePeriodRequestProductInfos.cloudServiceType) &&
-            Objects.equals(this.resourceType, createInstancePeriodRequestProductInfos.resourceType) &&
-            Objects.equals(this.resourceSpecCode, createInstancePeriodRequestProductInfos.resourceSpecCode) &&
-            Objects.equals(this.productSpecDesc, createInstancePeriodRequestProductInfos.productSpecDesc);
+        CreateInstancePeriodRequestProductInfos that = (CreateInstancePeriodRequestProductInfos) obj;
+        return Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(productId, cloudServiceType, resourceType, resourceSpecCode, productSpecDesc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +153,7 @@ public class CreateInstancePeriodRequestProductInfos  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +164,5 @@ public class CreateInstancePeriodRequestProductInfos  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

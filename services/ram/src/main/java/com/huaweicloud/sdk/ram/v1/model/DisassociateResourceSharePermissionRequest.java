@@ -65,17 +65,15 @@ public class DisassociateResourceSharePermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateResourceSharePermissionRequest disassociateResourceSharePermissionRequest =
-            (DisassociateResourceSharePermissionRequest) o;
-        return Objects.equals(this.resourceShareId, disassociateResourceSharePermissionRequest.resourceShareId)
-            && Objects.equals(this.body, disassociateResourceSharePermissionRequest.body);
+        DisassociateResourceSharePermissionRequest that = (DisassociateResourceSharePermissionRequest) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

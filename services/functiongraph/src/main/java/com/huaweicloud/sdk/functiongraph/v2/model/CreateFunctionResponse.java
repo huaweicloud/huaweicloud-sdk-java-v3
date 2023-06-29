@@ -136,6 +136,11 @@ public class CreateFunctionResponse extends SdkResponse {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -160,6 +165,7 @@ public class CreateFunctionResponse extends SdkResponse {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -185,22 +191,15 @@ public class CreateFunctionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,22 +303,15 @@ public class CreateFunctionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1181,52 +1173,39 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionResponse createFunctionResponse = (CreateFunctionResponse) o;
-        return Objects.equals(this.funcUrn, createFunctionResponse.funcUrn)
-            && Objects.equals(this.funcName, createFunctionResponse.funcName)
-            && Objects.equals(this.domainId, createFunctionResponse.domainId)
-            && Objects.equals(this.namespace, createFunctionResponse.namespace)
-            && Objects.equals(this.projectName, createFunctionResponse.projectName)
-            && Objects.equals(this._package, createFunctionResponse._package)
-            && Objects.equals(this.runtime, createFunctionResponse.runtime)
-            && Objects.equals(this.timeout, createFunctionResponse.timeout)
-            && Objects.equals(this.handler, createFunctionResponse.handler)
-            && Objects.equals(this.memorySize, createFunctionResponse.memorySize)
-            && Objects.equals(this.gpuMemory, createFunctionResponse.gpuMemory)
-            && Objects.equals(this.cpu, createFunctionResponse.cpu)
-            && Objects.equals(this.codeType, createFunctionResponse.codeType)
-            && Objects.equals(this.codeUrl, createFunctionResponse.codeUrl)
-            && Objects.equals(this.codeFilename, createFunctionResponse.codeFilename)
-            && Objects.equals(this.codeSize, createFunctionResponse.codeSize)
-            && Objects.equals(this.userData, createFunctionResponse.userData)
-            && Objects.equals(this.encryptedUserData, createFunctionResponse.encryptedUserData)
-            && Objects.equals(this.digest, createFunctionResponse.digest)
-            && Objects.equals(this.version, createFunctionResponse.version)
-            && Objects.equals(this.imageName, createFunctionResponse.imageName)
-            && Objects.equals(this.xrole, createFunctionResponse.xrole)
-            && Objects.equals(this.appXrole, createFunctionResponse.appXrole)
-            && Objects.equals(this.description, createFunctionResponse.description)
-            && Objects.equals(this.lastModified, createFunctionResponse.lastModified)
-            && Objects.equals(this.funcVpc, createFunctionResponse.funcVpc)
-            && Objects.equals(this.mountConfig, createFunctionResponse.mountConfig)
-            && Objects.equals(this.dependList, createFunctionResponse.dependList)
-            && Objects.equals(this.dependVersionList, createFunctionResponse.dependVersionList)
-            && Objects.equals(this.strategyConfig, createFunctionResponse.strategyConfig)
-            && Objects.equals(this.extendConfig, createFunctionResponse.extendConfig)
-            && Objects.equals(this.initializerHandler, createFunctionResponse.initializerHandler)
-            && Objects.equals(this.initializerTimeout, createFunctionResponse.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, createFunctionResponse.enterpriseProjectId)
-            && Objects.equals(this.enableDynamicMemory, createFunctionResponse.enableDynamicMemory)
-            && Objects.equals(this.isStatefulFunction, createFunctionResponse.isStatefulFunction)
-            && Objects.equals(this.enableAuthInHeader, createFunctionResponse.enableAuthInHeader)
-            && Objects.equals(this.customImage, createFunctionResponse.customImage);
+        CreateFunctionResponse that = (CreateFunctionResponse) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
+            && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData)
+            && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.funcVpc, that.funcVpc)
+            && Objects.equals(this.mountConfig, that.mountConfig) && Objects.equals(this.dependList, that.dependList)
+            && Objects.equals(this.dependVersionList, that.dependVersionList)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.extendConfig, that.extendConfig)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
+            && Objects.equals(this.customImage, that.customImage);
     }
 
     @Override

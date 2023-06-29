@@ -188,22 +188,15 @@ public class CreateLoadBalancerOption {
             if (value == null) {
                 return null;
             }
-            WafFailureActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WafFailureActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WafFailureActionEnum(value));
         }
 
         public static WafFailureActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WafFailureActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,22 +263,15 @@ public class CreateLoadBalancerOption {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -889,42 +875,36 @@ public class CreateLoadBalancerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadBalancerOption createLoadBalancerOption = (CreateLoadBalancerOption) o;
-        return Objects.equals(this.id, createLoadBalancerOption.id)
-            && Objects.equals(this.projectId, createLoadBalancerOption.projectId)
-            && Objects.equals(this.name, createLoadBalancerOption.name)
-            && Objects.equals(this.description, createLoadBalancerOption.description)
-            && Objects.equals(this.vipAddress, createLoadBalancerOption.vipAddress)
-            && Objects.equals(this.vipSubnetCidrId, createLoadBalancerOption.vipSubnetCidrId)
-            && Objects.equals(this.ipv6VipVirsubnetId, createLoadBalancerOption.ipv6VipVirsubnetId)
-            && Objects.equals(this.provider, createLoadBalancerOption.provider)
-            && Objects.equals(this.l4FlavorId, createLoadBalancerOption.l4FlavorId)
-            && Objects.equals(this.l7FlavorId, createLoadBalancerOption.l7FlavorId)
-            && Objects.equals(this.guaranteed, createLoadBalancerOption.guaranteed)
-            && Objects.equals(this.vpcId, createLoadBalancerOption.vpcId)
-            && Objects.equals(this.availabilityZoneList, createLoadBalancerOption.availabilityZoneList)
-            && Objects.equals(this.enterpriseProjectId, createLoadBalancerOption.enterpriseProjectId)
-            && Objects.equals(this.tags, createLoadBalancerOption.tags)
-            && Objects.equals(this.adminStateUp, createLoadBalancerOption.adminStateUp)
-            && Objects.equals(this.billingInfo, createLoadBalancerOption.billingInfo)
-            && Objects.equals(this.ipv6Bandwidth, createLoadBalancerOption.ipv6Bandwidth)
-            && Objects.equals(this.publicipIds, createLoadBalancerOption.publicipIds)
-            && Objects.equals(this.publicip, createLoadBalancerOption.publicip)
-            && Objects.equals(this.elbVirsubnetIds, createLoadBalancerOption.elbVirsubnetIds)
-            && Objects.equals(this.ipTargetEnable, createLoadBalancerOption.ipTargetEnable)
-            && Objects.equals(this.deletionProtectionEnable, createLoadBalancerOption.deletionProtectionEnable)
-            && Objects.equals(this.prepaidOptions, createLoadBalancerOption.prepaidOptions)
-            && Objects.equals(this.autoscaling, createLoadBalancerOption.autoscaling)
-            && Objects.equals(this.wafFailureAction, createLoadBalancerOption.wafFailureAction)
-            && Objects.equals(this.protectionStatus, createLoadBalancerOption.protectionStatus)
-            && Objects.equals(this.protectionReason, createLoadBalancerOption.protectionReason);
+        CreateLoadBalancerOption that = (CreateLoadBalancerOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vipAddress, that.vipAddress)
+            && Objects.equals(this.vipSubnetCidrId, that.vipSubnetCidrId)
+            && Objects.equals(this.ipv6VipVirsubnetId, that.ipv6VipVirsubnetId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.l4FlavorId, that.l4FlavorId)
+            && Objects.equals(this.l7FlavorId, that.l7FlavorId) && Objects.equals(this.guaranteed, that.guaranteed)
+            && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.availabilityZoneList, that.availabilityZoneList)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.billingInfo, that.billingInfo)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.publicipIds, that.publicipIds) && Objects.equals(this.publicip, that.publicip)
+            && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds)
+            && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
+            && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions)
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.wafFailureAction, that.wafFailureAction)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override

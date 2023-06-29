@@ -495,36 +495,30 @@ public class OpenWebinarBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenWebinarBaseInfo openWebinarBaseInfo = (OpenWebinarBaseInfo) o;
-        return Objects.equals(this.conferenceId, openWebinarBaseInfo.conferenceId)
-            && Objects.equals(this.corpId, openWebinarBaseInfo.corpId)
-            && Objects.equals(this.subject, openWebinarBaseInfo.subject)
-            && Objects.equals(this.description, openWebinarBaseInfo.description)
-            && Objects.equals(this.startTime, openWebinarBaseInfo.startTime)
-            && Objects.equals(this.duration, openWebinarBaseInfo.duration)
-            && Objects.equals(this.timeZoneId, openWebinarBaseInfo.timeZoneId)
-            && Objects.equals(this.state, openWebinarBaseInfo.state)
-            && Objects.equals(this.scheduserId, openWebinarBaseInfo.scheduserId)
-            && Objects.equals(this.deptName, openWebinarBaseInfo.deptName)
-            && Objects.equals(this.scheduserName, openWebinarBaseInfo.scheduserName)
-            && Objects.equals(this.vmrPkgName, openWebinarBaseInfo.vmrPkgName)
-            && Objects.equals(this.callRestriction, openWebinarBaseInfo.callRestriction)
-            && Objects.equals(this.scope, openWebinarBaseInfo.scope)
-            && Objects.equals(this.audienceScope, openWebinarBaseInfo.audienceScope)
-            && Objects.equals(this.chairJoinUri, openWebinarBaseInfo.chairJoinUri)
-            && Objects.equals(this.chairPasswd, openWebinarBaseInfo.chairPasswd)
-            && Objects.equals(this.guestJoinUri, openWebinarBaseInfo.guestJoinUri)
-            && Objects.equals(this.guestPasswd, openWebinarBaseInfo.guestPasswd)
-            && Objects.equals(this.audienceJoinUri, openWebinarBaseInfo.audienceJoinUri)
-            && Objects.equals(this.audiencePasswd, openWebinarBaseInfo.audiencePasswd)
-            && Objects.equals(this.enableRecording, openWebinarBaseInfo.enableRecording);
+        OpenWebinarBaseInfo that = (OpenWebinarBaseInfo) obj;
+        return Objects.equals(this.conferenceId, that.conferenceId) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.timeZoneId, that.timeZoneId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.scheduserId, that.scheduserId) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.vmrPkgName, that.vmrPkgName)
+            && Objects.equals(this.callRestriction, that.callRestriction) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.audienceScope, that.audienceScope)
+            && Objects.equals(this.chairJoinUri, that.chairJoinUri)
+            && Objects.equals(this.chairPasswd, that.chairPasswd)
+            && Objects.equals(this.guestJoinUri, that.guestJoinUri)
+            && Objects.equals(this.guestPasswd, that.guestPasswd)
+            && Objects.equals(this.audienceJoinUri, that.audienceJoinUri)
+            && Objects.equals(this.audiencePasswd, that.audiencePasswd)
+            && Objects.equals(this.enableRecording, that.enableRecording);
     }
 
     @Override

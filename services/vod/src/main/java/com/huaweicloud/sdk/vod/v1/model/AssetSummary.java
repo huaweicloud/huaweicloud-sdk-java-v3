@@ -126,22 +126,15 @@ public class AssetSummary {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStatusEnum(value));
         }
 
         public static AssetStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,22 +219,15 @@ public class AssetSummary {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TranscodeStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TranscodeStatusEnum(value));
         }
 
         public static TranscodeStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,22 +306,15 @@ public class AssetSummary {
             if (value == null) {
                 return null;
             }
-            ThumbnailStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ThumbnailStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ThumbnailStatusEnum(value));
         }
 
         public static ThumbnailStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ThumbnailStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -426,22 +405,15 @@ public class AssetSummary {
             if (value == null) {
                 return null;
             }
-            ReviewStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReviewStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReviewStatusEnum(value));
         }
 
         public static ReviewStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReviewStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -745,26 +717,23 @@ public class AssetSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetSummary assetSummary = (AssetSummary) o;
-        return Objects.equals(this.assetId, assetSummary.assetId) && Objects.equals(this.title, assetSummary.title)
-            && Objects.equals(this.description, assetSummary.description)
-            && Objects.equals(this.duration, assetSummary.duration) && Objects.equals(this.size, assetSummary.size)
-            && Objects.equals(this.originalUrl, assetSummary.originalUrl)
-            && Objects.equals(this.category, assetSummary.category) && Objects.equals(this.covers, assetSummary.covers)
-            && Objects.equals(this.createTime, assetSummary.createTime)
-            && Objects.equals(this.assetStatus, assetSummary.assetStatus)
-            && Objects.equals(this.transcodeStatus, assetSummary.transcodeStatus)
-            && Objects.equals(this.thumbnailStatus, assetSummary.thumbnailStatus)
-            && Objects.equals(this.reviewStatus, assetSummary.reviewStatus)
-            && Objects.equals(this.execDesc, assetSummary.execDesc)
-            && Objects.equals(this.mediaType, assetSummary.mediaType);
+        AssetSummary that = (AssetSummary) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.originalUrl, that.originalUrl)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.covers, that.covers)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.assetStatus, that.assetStatus)
+            && Objects.equals(this.transcodeStatus, that.transcodeStatus)
+            && Objects.equals(this.thumbnailStatus, that.thumbnailStatus)
+            && Objects.equals(this.reviewStatus, that.reviewStatus) && Objects.equals(this.execDesc, that.execDesc)
+            && Objects.equals(this.mediaType, that.mediaType);
     }
 
     @Override

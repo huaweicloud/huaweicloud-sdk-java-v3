@@ -253,25 +253,20 @@ public class CreateRepoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRepoRequest createRepoRequest = (CreateRepoRequest) o;
-        return Objects.equals(this.importMembers, createRepoRequest.importMembers)
-            && Objects.equals(this.name, createRepoRequest.name)
-            && Objects.equals(this.projectUuid, createRepoRequest.projectUuid)
-            && Objects.equals(this.templateId, createRepoRequest.templateId)
-            && Objects.equals(this.visibilityLevel, createRepoRequest.visibilityLevel)
-            && Objects.equals(this.importUrl, createRepoRequest.importUrl)
-            && Objects.equals(this.description, createRepoRequest.description)
-            && Objects.equals(this.gitignoreId, createRepoRequest.gitignoreId)
-            && Objects.equals(this.licenseId, createRepoRequest.licenseId)
-            && Objects.equals(this.enableReadme, createRepoRequest.enableReadme)
-            && Objects.equals(this.caller, createRepoRequest.caller);
+        CreateRepoRequest that = (CreateRepoRequest) obj;
+        return Objects.equals(this.importMembers, that.importMembers) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.visibilityLevel, that.visibilityLevel)
+            && Objects.equals(this.importUrl, that.importUrl) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.gitignoreId, that.gitignoreId) && Objects.equals(this.licenseId, that.licenseId)
+            && Objects.equals(this.enableReadme, that.enableReadme) && Objects.equals(this.caller, that.caller);
     }
 
     @Override

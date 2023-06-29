@@ -122,20 +122,17 @@ public class ShowDetailsOfEnvironmentVariableV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfEnvironmentVariableV2Response showDetailsOfEnvironmentVariableV2Response =
-            (ShowDetailsOfEnvironmentVariableV2Response) o;
-        return Objects.equals(this.variableValue, showDetailsOfEnvironmentVariableV2Response.variableValue)
-            && Objects.equals(this.envId, showDetailsOfEnvironmentVariableV2Response.envId)
-            && Objects.equals(this.groupId, showDetailsOfEnvironmentVariableV2Response.groupId)
-            && Objects.equals(this.variableName, showDetailsOfEnvironmentVariableV2Response.variableName)
-            && Objects.equals(this.id, showDetailsOfEnvironmentVariableV2Response.id);
+        ShowDetailsOfEnvironmentVariableV2Response that = (ShowDetailsOfEnvironmentVariableV2Response) obj;
+        return Objects.equals(this.variableValue, that.variableValue) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.variableName, that.variableName)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

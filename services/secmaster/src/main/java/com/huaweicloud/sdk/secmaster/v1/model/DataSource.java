@@ -167,20 +167,18 @@ public class DataSource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSource dataSource = (DataSource) o;
-        return Objects.equals(this.type, dataSource.type) && Objects.equals(this.domainId, dataSource.domainId)
-            && Objects.equals(this.projectId, dataSource.projectId)
-            && Objects.equals(this.regionId, dataSource.regionId)
-            && Objects.equals(this.companyName, dataSource.companyName)
-            && Objects.equals(this.productName, dataSource.productName)
-            && Objects.equals(this.productFeature, dataSource.productFeature);
+        DataSource that = (DataSource) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.companyName, that.companyName) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.productFeature, that.productFeature);
     }
 
     @Override

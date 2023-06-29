@@ -282,24 +282,19 @@ public class GetDatabaseResponseBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDatabaseResponseBean getDatabaseResponseBean = (GetDatabaseResponseBean) o;
-        return Objects.equals(this.name, getDatabaseResponseBean.name)
-            && Objects.equals(this.created, getDatabaseResponseBean.created)
-            && Objects.equals(this.status, getDatabaseResponseBean.status)
-            && Objects.equals(this.updated, getDatabaseResponseBean.updated)
-            && Objects.equals(this.databases, getDatabaseResponseBean.databases)
-            && Objects.equals(this.shardMode, getDatabaseResponseBean.shardMode)
-            && Objects.equals(this.shardNumber, getDatabaseResponseBean.shardNumber)
-            && Objects.equals(this.shardUnit, getDatabaseResponseBean.shardUnit)
-            && Objects.equals(this.dataVips, getDatabaseResponseBean.dataVips)
-            && Objects.equals(this.usedRds, getDatabaseResponseBean.usedRds);
+        GetDatabaseResponseBean that = (GetDatabaseResponseBean) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.databases, that.databases) && Objects.equals(this.shardMode, that.shardMode)
+            && Objects.equals(this.shardNumber, that.shardNumber) && Objects.equals(this.shardUnit, that.shardUnit)
+            && Objects.equals(this.dataVips, that.dataVips) && Objects.equals(this.usedRds, that.usedRds);
     }
 
     @Override

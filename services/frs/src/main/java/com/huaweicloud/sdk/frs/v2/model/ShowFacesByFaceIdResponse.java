@@ -97,17 +97,16 @@ public class ShowFacesByFaceIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFacesByFaceIdResponse showFacesByFaceIdResponse = (ShowFacesByFaceIdResponse) o;
-        return Objects.equals(this.faceSetId, showFacesByFaceIdResponse.faceSetId)
-            && Objects.equals(this.faceSetName, showFacesByFaceIdResponse.faceSetName)
-            && Objects.equals(this.faces, showFacesByFaceIdResponse.faces);
+        ShowFacesByFaceIdResponse that = (ShowFacesByFaceIdResponse) obj;
+        return Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.faces, that.faces);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class ListIpGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpGroupRequest listIpGroupRequest = (ListIpGroupRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listIpGroupRequest.enterpriseProjectId)
-            && Objects.equals(this.page, listIpGroupRequest.page)
-            && Objects.equals(this.pagesize, listIpGroupRequest.pagesize)
-            && Objects.equals(this.name, listIpGroupRequest.name) && Objects.equals(this.ip, listIpGroupRequest.ip);
+        ListIpGroupRequest that = (ListIpGroupRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

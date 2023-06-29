@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.GaussMySqlDatabaseInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库信息。
  */
-public class ListGaussMysqlDatabaseInfo  {
-
+public class ListGaussMysqlDatabaseInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charset")
-    
+    @JsonProperty(value = "charset")
 
     private String charset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<GaussMySqlDatabaseInfo> users = null;
-    
+
     public ListGaussMysqlDatabaseInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。
@@ -63,15 +50,10 @@ public class ListGaussMysqlDatabaseInfo  {
         this.name = name;
     }
 
-    
-
     public ListGaussMysqlDatabaseInfo withCharset(String charset) {
         this.charset = charset;
         return this;
     }
-
-    
-
 
     /**
      * 数据库使用的字符集，如utf8mb4、gbk等。
@@ -85,15 +67,10 @@ public class ListGaussMysqlDatabaseInfo  {
         this.charset = charset;
     }
 
-    
-
     public ListGaussMysqlDatabaseInfo withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 数据库备注。
@@ -107,16 +84,13 @@ public class ListGaussMysqlDatabaseInfo  {
         this.comment = comment;
     }
 
-    
-
     public ListGaussMysqlDatabaseInfo withUsers(List<GaussMySqlDatabaseInfo> users) {
         this.users = users;
         return this;
     }
 
-    
     public ListGaussMysqlDatabaseInfo addUsersItem(GaussMySqlDatabaseInfo usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -124,7 +98,7 @@ public class ListGaussMysqlDatabaseInfo  {
     }
 
     public ListGaussMysqlDatabaseInfo withUsers(Consumer<List<GaussMySqlDatabaseInfo>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
@@ -143,26 +117,24 @@ public class ListGaussMysqlDatabaseInfo  {
         this.users = users;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGaussMysqlDatabaseInfo listGaussMysqlDatabaseInfo = (ListGaussMysqlDatabaseInfo) o;
-        return Objects.equals(this.name, listGaussMysqlDatabaseInfo.name) &&
-            Objects.equals(this.charset, listGaussMysqlDatabaseInfo.charset) &&
-            Objects.equals(this.comment, listGaussMysqlDatabaseInfo.comment) &&
-            Objects.equals(this.users, listGaussMysqlDatabaseInfo.users);
+        ListGaussMysqlDatabaseInfo that = (ListGaussMysqlDatabaseInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.charset, that.charset)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.users, that.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, charset, comment, users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +146,7 @@ public class ListGaussMysqlDatabaseInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +157,5 @@ public class ListGaussMysqlDatabaseInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

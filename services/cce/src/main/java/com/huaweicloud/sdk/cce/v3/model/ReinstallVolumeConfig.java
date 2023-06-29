@@ -65,16 +65,15 @@ public class ReinstallVolumeConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallVolumeConfig reinstallVolumeConfig = (ReinstallVolumeConfig) o;
-        return Objects.equals(this.lvmConfig, reinstallVolumeConfig.lvmConfig)
-            && Objects.equals(this.storage, reinstallVolumeConfig.storage);
+        ReinstallVolumeConfig that = (ReinstallVolumeConfig) obj;
+        return Objects.equals(this.lvmConfig, that.lvmConfig) && Objects.equals(this.storage, that.storage);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class CreateReplicationRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateReplicationRequestParams createReplicationRequestParams = (CreateReplicationRequestParams) o;
-        return Objects.equals(this.serverGroupId, createReplicationRequestParams.serverGroupId)
-            && Objects.equals(this.volumeId, createReplicationRequestParams.volumeId)
-            && Objects.equals(this.name, createReplicationRequestParams.name)
-            && Objects.equals(this.description, createReplicationRequestParams.description)
-            && Objects.equals(this.clusterId, createReplicationRequestParams.clusterId);
+        CreateReplicationRequestParams that = (CreateReplicationRequestParams) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

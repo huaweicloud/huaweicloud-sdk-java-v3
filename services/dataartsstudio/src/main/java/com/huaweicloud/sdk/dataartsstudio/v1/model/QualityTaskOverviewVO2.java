@@ -209,23 +209,21 @@ public class QualityTaskOverviewVO2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityTaskOverviewVO2 qualityTaskOverviewVO2 = (QualityTaskOverviewVO2) o;
-        return Objects.equals(this.id, qualityTaskOverviewVO2.id)
-            && Objects.equals(this.name, qualityTaskOverviewVO2.name)
-            && Objects.equals(this.categoryId, qualityTaskOverviewVO2.categoryId)
-            && Objects.equals(this.scheduleStatus, qualityTaskOverviewVO2.scheduleStatus)
-            && Objects.equals(this.schedulePeriod, qualityTaskOverviewVO2.schedulePeriod)
-            && Objects.equals(this.scheduleInterval, qualityTaskOverviewVO2.scheduleInterval)
-            && Objects.equals(this.createTime, qualityTaskOverviewVO2.createTime)
-            && Objects.equals(this.lastRunTime, qualityTaskOverviewVO2.lastRunTime)
-            && Objects.equals(this.creator, qualityTaskOverviewVO2.creator);
+        QualityTaskOverviewVO2 that = (QualityTaskOverviewVO2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus)
+            && Objects.equals(this.schedulePeriod, that.schedulePeriod)
+            && Objects.equals(this.scheduleInterval, that.scheduleInterval)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.creator, that.creator);
     }
 
     @Override

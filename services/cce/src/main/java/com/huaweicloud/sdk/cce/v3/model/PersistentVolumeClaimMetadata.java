@@ -55,16 +55,15 @@ public class PersistentVolumeClaimMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PersistentVolumeClaimMetadata persistentVolumeClaimMetadata = (PersistentVolumeClaimMetadata) o;
-        return Objects.equals(this.name, persistentVolumeClaimMetadata.name)
-            && Objects.equals(this.labels, persistentVolumeClaimMetadata.labels);
+        PersistentVolumeClaimMetadata that = (PersistentVolumeClaimMetadata) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

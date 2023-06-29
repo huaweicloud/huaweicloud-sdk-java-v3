@@ -99,16 +99,16 @@ public class Failure {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Failure failure = (Failure) o;
-        return Objects.equals(this.path, failure.path) && Objects.equals(this.errorMsg, failure.errorMsg)
-            && Objects.equals(this.method, failure.method) && Objects.equals(this.errorCode, failure.errorCode);
+        Failure that = (Failure) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

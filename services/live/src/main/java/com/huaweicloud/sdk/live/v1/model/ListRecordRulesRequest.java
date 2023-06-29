@@ -87,22 +87,15 @@ public class ListRecordRulesRequest {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordTypeEnum(value));
         }
 
         public static RecordTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,20 +234,17 @@ public class ListRecordRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordRulesRequest listRecordRulesRequest = (ListRecordRulesRequest) o;
-        return Objects.equals(this.publishDomain, listRecordRulesRequest.publishDomain)
-            && Objects.equals(this.app, listRecordRulesRequest.app)
-            && Objects.equals(this.stream, listRecordRulesRequest.stream)
-            && Objects.equals(this.recordType, listRecordRulesRequest.recordType)
-            && Objects.equals(this.offset, listRecordRulesRequest.offset)
-            && Objects.equals(this.limit, listRecordRulesRequest.limit);
+        ListRecordRulesRequest that = (ListRecordRulesRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -100,16 +100,16 @@ public class SetBucketNotificationRequestBody extends SdkXmlBody<SetBucketNotifi
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBucketNotificationRequestBody setBucketNotificationRequestBody = (SetBucketNotificationRequestBody) o;
-        return Objects.equals(this.topicConfiguration, setBucketNotificationRequestBody.topicConfiguration) && Objects
-            .equals(this.functionStageConfiguration, setBucketNotificationRequestBody.functionStageConfiguration);
+        SetBucketNotificationRequestBody that = (SetBucketNotificationRequestBody) obj;
+        return Objects.equals(this.topicConfiguration, that.topicConfiguration)
+            && Objects.equals(this.functionStageConfiguration, that.functionStageConfiguration);
     }
 
     @Override

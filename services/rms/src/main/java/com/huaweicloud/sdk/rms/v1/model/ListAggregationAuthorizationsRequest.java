@@ -79,18 +79,16 @@ public class ListAggregationAuthorizationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAggregationAuthorizationsRequest listAggregationAuthorizationsRequest =
-            (ListAggregationAuthorizationsRequest) o;
-        return Objects.equals(this.accountId, listAggregationAuthorizationsRequest.accountId)
-            && Objects.equals(this.limit, listAggregationAuthorizationsRequest.limit)
-            && Objects.equals(this.marker, listAggregationAuthorizationsRequest.marker);
+        ListAggregationAuthorizationsRequest that = (ListAggregationAuthorizationsRequest) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

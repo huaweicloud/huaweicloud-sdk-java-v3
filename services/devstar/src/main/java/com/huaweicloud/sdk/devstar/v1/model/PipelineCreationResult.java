@@ -89,22 +89,15 @@ public class PipelineCreationResult {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,18 +202,16 @@ public class PipelineCreationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineCreationResult pipelineCreationResult = (PipelineCreationResult) o;
-        return Objects.equals(this.pipeline, pipelineCreationResult.pipeline)
-            && Objects.equals(this.taskId, pipelineCreationResult.taskId)
-            && Objects.equals(this.status, pipelineCreationResult.status)
-            && Objects.equals(this.failureReason, pipelineCreationResult.failureReason);
+        PipelineCreationResult that = (PipelineCreationResult) obj;
+        return Objects.equals(this.pipeline, that.pipeline) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failureReason, that.failureReason);
     }
 
     @Override

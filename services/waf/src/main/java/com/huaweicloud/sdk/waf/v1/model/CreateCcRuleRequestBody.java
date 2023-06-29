@@ -113,22 +113,15 @@ public class CreateCcRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TagTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
         }
 
         public static TagTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -468,28 +461,23 @@ public class CreateCcRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCcRuleRequestBody createCcRuleRequestBody = (CreateCcRuleRequestBody) o;
-        return Objects.equals(this.name, createCcRuleRequestBody.name)
-            && Objects.equals(this.mode, createCcRuleRequestBody.mode)
-            && Objects.equals(this.conditions, createCcRuleRequestBody.conditions)
-            && Objects.equals(this.action, createCcRuleRequestBody.action)
-            && Objects.equals(this.tagType, createCcRuleRequestBody.tagType)
-            && Objects.equals(this.tagIndex, createCcRuleRequestBody.tagIndex)
-            && Objects.equals(this.tagCondition, createCcRuleRequestBody.tagCondition)
-            && Objects.equals(this.limitNum, createCcRuleRequestBody.limitNum)
-            && Objects.equals(this.limitPeriod, createCcRuleRequestBody.limitPeriod)
-            && Objects.equals(this.unlockNum, createCcRuleRequestBody.unlockNum)
-            && Objects.equals(this.lockTime, createCcRuleRequestBody.lockTime)
-            && Objects.equals(this.domainAggregation, createCcRuleRequestBody.domainAggregation)
-            && Objects.equals(this.regionAggregation, createCcRuleRequestBody.regionAggregation)
-            && Objects.equals(this.description, createCcRuleRequestBody.description);
+        CreateCcRuleRequestBody that = (CreateCcRuleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.tagType, that.tagType) && Objects.equals(this.tagIndex, that.tagIndex)
+            && Objects.equals(this.tagCondition, that.tagCondition) && Objects.equals(this.limitNum, that.limitNum)
+            && Objects.equals(this.limitPeriod, that.limitPeriod) && Objects.equals(this.unlockNum, that.unlockNum)
+            && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.domainAggregation, that.domainAggregation)
+            && Objects.equals(this.regionAggregation, that.regionAggregation)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

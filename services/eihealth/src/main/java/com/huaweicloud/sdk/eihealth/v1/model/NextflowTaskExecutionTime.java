@@ -121,19 +121,17 @@ public class NextflowTaskExecutionTime {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowTaskExecutionTime nextflowTaskExecutionTime = (NextflowTaskExecutionTime) o;
-        return Objects.equals(this.submit, nextflowTaskExecutionTime.submit)
-            && Objects.equals(this.start, nextflowTaskExecutionTime.start)
-            && Objects.equals(this.complete, nextflowTaskExecutionTime.complete)
-            && Objects.equals(this.duration, nextflowTaskExecutionTime.duration)
-            && Objects.equals(this.realtime, nextflowTaskExecutionTime.realtime);
+        NextflowTaskExecutionTime that = (NextflowTaskExecutionTime) obj;
+        return Objects.equals(this.submit, that.submit) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.complete, that.complete) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.realtime, that.realtime);
     }
 
     @Override

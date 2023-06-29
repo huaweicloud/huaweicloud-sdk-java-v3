@@ -81,17 +81,17 @@ public class MP4RecordConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MP4RecordConfig mp4RecordConfig = (MP4RecordConfig) o;
-        return Objects.equals(this.recordCycle, mp4RecordConfig.recordCycle)
-            && Objects.equals(this.recordPrefix, mp4RecordConfig.recordPrefix)
-            && Objects.equals(this.recordMaxDurationToMergeFile, mp4RecordConfig.recordMaxDurationToMergeFile);
+        MP4RecordConfig that = (MP4RecordConfig) obj;
+        return Objects.equals(this.recordCycle, that.recordCycle)
+            && Objects.equals(this.recordPrefix, that.recordPrefix)
+            && Objects.equals(this.recordMaxDurationToMergeFile, that.recordMaxDurationToMergeFile);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateWorkSpaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkSpaceRequest updateWorkSpaceRequest = (UpdateWorkSpaceRequest) o;
-        return Objects.equals(this.workspaceId, updateWorkSpaceRequest.workspaceId)
-            && Objects.equals(this.body, updateWorkSpaceRequest.body);
+        UpdateWorkSpaceRequest that = (UpdateWorkSpaceRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

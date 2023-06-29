@@ -188,22 +188,21 @@ public class ResourceShareAssociation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceShareAssociation resourceShareAssociation = (ResourceShareAssociation) o;
-        return Objects.equals(this.associatedEntity, resourceShareAssociation.associatedEntity)
-            && Objects.equals(this.associationType, resourceShareAssociation.associationType)
-            && Objects.equals(this.createdAt, resourceShareAssociation.createdAt)
-            && Objects.equals(this.updatedAt, resourceShareAssociation.updatedAt)
-            && Objects.equals(this.external, resourceShareAssociation.external)
-            && Objects.equals(this.resourceShareId, resourceShareAssociation.resourceShareId)
-            && Objects.equals(this.resourceShareName, resourceShareAssociation.resourceShareName)
-            && Objects.equals(this.status, resourceShareAssociation.status);
+        ResourceShareAssociation that = (ResourceShareAssociation) obj;
+        return Objects.equals(this.associatedEntity, that.associatedEntity)
+            && Objects.equals(this.associationType, that.associationType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.external, that.external)
+            && Objects.equals(this.resourceShareId, that.resourceShareId)
+            && Objects.equals(this.resourceShareName, that.resourceShareName)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

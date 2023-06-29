@@ -180,19 +180,17 @@ public class CreateFeedbackV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFeedbackV2Req createFeedbackV2Req = (CreateFeedbackV2Req) o;
-        return Objects.equals(this.type, createFeedbackV2Req.type)
-            && Objects.equals(this.title, createFeedbackV2Req.title)
-            && Objects.equals(this.content, createFeedbackV2Req.content)
-            && Objects.equals(this.files, createFeedbackV2Req.files) && Objects.equals(this.ip, createFeedbackV2Req.ip)
-            && Objects.equals(this.contacts, createFeedbackV2Req.contacts);
+        CreateFeedbackV2Req that = (CreateFeedbackV2Req) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.files, that.files)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.contacts, that.contacts);
     }
 
     @Override

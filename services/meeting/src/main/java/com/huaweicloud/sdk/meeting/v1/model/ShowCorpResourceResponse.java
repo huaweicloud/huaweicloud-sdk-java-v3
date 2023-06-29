@@ -539,33 +539,29 @@ public class ShowCorpResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpResourceResponse showCorpResourceResponse = (ShowCorpResourceResponse) o;
-        return Objects.equals(this.te1080pHardCount, showCorpResourceResponse.te1080pHardCount)
-            && Objects.equals(this.te720pHardCount, showCorpResourceResponse.te720pHardCount)
-            && Objects.equals(this.teSoftCount, showCorpResourceResponse.teSoftCount)
-            && Objects.equals(this.roomCount, showCorpResourceResponse.roomCount)
-            && Objects.equals(this.recordCapability, showCorpResourceResponse.recordCapability)
-            && Objects.equals(this.confCallCount, showCorpResourceResponse.confCallCount)
-            && Objects.equals(this.liveCount, showCorpResourceResponse.liveCount)
-            && Objects.equals(this.thirdPartyHardCount, showCorpResourceResponse.thirdPartyHardCount)
-            && Objects.equals(this.hwVisionCount, showCorpResourceResponse.hwVisionCount)
-            && Objects.equals(this.ideaHubCount, showCorpResourceResponse.ideaHubCount)
-            && Objects.equals(this.vmr, showCorpResourceResponse.vmr)
-            && Objects.equals(this.enablePstn, showCorpResourceResponse.enablePstn)
-            && Objects.equals(this.enableSMS, showCorpResourceResponse.enableSMS)
-            && Objects.equals(this.enableHybridCloud, showCorpResourceResponse.enableHybridCloud)
-            && Objects.equals(this.enableCloudDisk, showCorpResourceResponse.enableCloudDisk)
-            && Objects.equals(this.enableUc, showCorpResourceResponse.enableUc)
-            && Objects.equals(this.enableAiMinutes, showCorpResourceResponse.enableAiMinutes)
-            && Objects.equals(this.singleConfCallCount, showCorpResourceResponse.singleConfCallCount)
-            && Objects.equals(this.confLength, showCorpResourceResponse.confLength);
+        ShowCorpResourceResponse that = (ShowCorpResourceResponse) obj;
+        return Objects.equals(this.te1080pHardCount, that.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, that.te720pHardCount)
+            && Objects.equals(this.teSoftCount, that.teSoftCount) && Objects.equals(this.roomCount, that.roomCount)
+            && Objects.equals(this.recordCapability, that.recordCapability)
+            && Objects.equals(this.confCallCount, that.confCallCount) && Objects.equals(this.liveCount, that.liveCount)
+            && Objects.equals(this.thirdPartyHardCount, that.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, that.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, that.ideaHubCount) && Objects.equals(this.vmr, that.vmr)
+            && Objects.equals(this.enablePstn, that.enablePstn) && Objects.equals(this.enableSMS, that.enableSMS)
+            && Objects.equals(this.enableHybridCloud, that.enableHybridCloud)
+            && Objects.equals(this.enableCloudDisk, that.enableCloudDisk)
+            && Objects.equals(this.enableUc, that.enableUc)
+            && Objects.equals(this.enableAiMinutes, that.enableAiMinutes)
+            && Objects.equals(this.singleConfCallCount, that.singleConfCallCount)
+            && Objects.equals(this.confLength, that.confLength);
     }
 
     @Override

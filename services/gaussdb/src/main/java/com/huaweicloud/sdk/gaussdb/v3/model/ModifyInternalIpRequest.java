@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ModifyInternalIpRequest
  */
-public class ModifyInternalIpRequest  {
-
+public class ModifyInternalIpRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internal_ip")
-    
+    @JsonProperty(value = "internal_ip")
 
     private String internalIp;
 
@@ -27,9 +19,6 @@ public class ModifyInternalIpRequest  {
         this.internalIp = internalIp;
         return this;
     }
-
-    
-
 
     /**
      * 内网IP。
@@ -43,23 +32,23 @@ public class ModifyInternalIpRequest  {
         this.internalIp = internalIp;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyInternalIpRequest modifyInternalIpRequest = (ModifyInternalIpRequest) o;
-        return Objects.equals(this.internalIp, modifyInternalIpRequest.internalIp);
+        ModifyInternalIpRequest that = (ModifyInternalIpRequest) obj;
+        return Objects.equals(this.internalIp, that.internalIp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(internalIp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ModifyInternalIpRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ModifyInternalIpRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

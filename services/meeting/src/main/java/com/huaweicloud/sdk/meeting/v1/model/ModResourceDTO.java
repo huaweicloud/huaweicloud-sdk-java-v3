@@ -100,17 +100,16 @@ public class ModResourceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModResourceDTO modResourceDTO = (ModResourceDTO) o;
-        return Objects.equals(this.id, modResourceDTO.id) && Objects.equals(this.type, modResourceDTO.type)
-            && Objects.equals(this.expireDate, modResourceDTO.expireDate)
-            && Objects.equals(this.isDisabled, modResourceDTO.isDisabled);
+        ModResourceDTO that = (ModResourceDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.expireDate, that.expireDate) && Objects.equals(this.isDisabled, that.isDisabled);
     }
 
     @Override

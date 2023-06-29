@@ -216,21 +216,19 @@ public class JobEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobEntities jobEntities = (JobEntities) o;
-        return Objects.equals(this.imageId, jobEntities.imageId)
-            && Objects.equals(this.currentTask, jobEntities.currentTask)
-            && Objects.equals(this.imageName, jobEntities.imageName)
-            && Objects.equals(this.processPercent, jobEntities.processPercent)
-            && Objects.equals(this.results, jobEntities.results)
-            && Objects.equals(this.subJobsResult, jobEntities.subJobsResult)
-            && Objects.equals(this.subJobsList, jobEntities.subJobsList);
+        JobEntities that = (JobEntities) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.currentTask, that.currentTask)
+            && Objects.equals(this.imageName, that.imageName)
+            && Objects.equals(this.processPercent, that.processPercent) && Objects.equals(this.results, that.results)
+            && Objects.equals(this.subJobsResult, that.subJobsResult)
+            && Objects.equals(this.subJobsList, that.subJobsList);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class CreateVpcRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcRequestBody createVpcRequestBody = (CreateVpcRequestBody) o;
-        return Objects.equals(this.dryRun, createVpcRequestBody.dryRun)
-            && Objects.equals(this.vpc, createVpcRequestBody.vpc);
+        CreateVpcRequestBody that = (CreateVpcRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.vpc, that.vpc);
     }
 
     @Override

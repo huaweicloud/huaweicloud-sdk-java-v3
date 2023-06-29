@@ -77,16 +77,16 @@ public class ExtendAuthorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendAuthorInfo extendAuthorInfo = (ExtendAuthorInfo) o;
-        return Objects.equals(this.id, extendAuthorInfo.id) && Objects.equals(this.name, extendAuthorInfo.name)
-            && Objects.equals(this.time, extendAuthorInfo.time);
+        ExtendAuthorInfo that = (ExtendAuthorInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override

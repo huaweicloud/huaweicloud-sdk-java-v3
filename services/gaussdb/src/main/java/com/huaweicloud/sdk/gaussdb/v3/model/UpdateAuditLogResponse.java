@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,10 +11,8 @@ import java.util.Objects;
  */
 public class UpdateAuditLogResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
 
     private String result;
 
@@ -30,9 +20,6 @@ public class UpdateAuditLogResponse extends SdkResponse {
         this.result = result;
         return this;
     }
-
-    
-
 
     /**
      * 开启/关闭全量SQL操作结果。
@@ -46,23 +33,23 @@ public class UpdateAuditLogResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuditLogResponse updateAuditLogResponse = (UpdateAuditLogResponse) o;
-        return Objects.equals(this.result, updateAuditLogResponse.result);
+        UpdateAuditLogResponse that = (UpdateAuditLogResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,6 +58,7 @@ public class UpdateAuditLogResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class UpdateAuditLogResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -90,17 +90,16 @@ public class ShowRecordCallbackResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordCallbackResponse showRecordCallbackResponse = (ShowRecordCallbackResponse) o;
-        return Objects.equals(this.appId, showRecordCallbackResponse.appId)
-            && Objects.equals(this.recordCallback, showRecordCallbackResponse.recordCallback)
-            && Objects.equals(this.xRequestId, showRecordCallbackResponse.xRequestId);
+        ShowRecordCallbackResponse that = (ShowRecordCallbackResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.recordCallback, that.recordCallback)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -86,22 +86,15 @@ public class PipelineBasic {
             if (value == null) {
                 return null;
             }
-            LastRunningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LastRunningStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LastRunningStatusEnum(value));
         }
 
         public static LastRunningStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LastRunningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,17 +202,17 @@ public class PipelineBasic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineBasic pipelineBasic = (PipelineBasic) o;
-        return Objects.equals(this.uuid, pipelineBasic.uuid) && Objects.equals(this.id, pipelineBasic.id)
-            && Objects.equals(this.name, pipelineBasic.name) && Objects.equals(this.url, pipelineBasic.url)
-            && Objects.equals(this.lastRunningStatus, pipelineBasic.lastRunningStatus);
+        PipelineBasic that = (PipelineBasic) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.lastRunningStatus, that.lastRunningStatus);
     }
 
     @Override

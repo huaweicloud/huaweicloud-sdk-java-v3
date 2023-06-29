@@ -66,22 +66,15 @@ public class ExpressConfig {
             if (value == null) {
                 return null;
             }
-            LogLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogLevelEnum(value));
         }
 
         public static LogLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -143,16 +136,16 @@ public class ExpressConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpressConfig expressConfig = (ExpressConfig) o;
-        return Objects.equals(this.logLevel, expressConfig.logLevel)
-            && Objects.equals(this.supportAnonymous, expressConfig.supportAnonymous);
+        ExpressConfig that = (ExpressConfig) obj;
+        return Objects.equals(this.logLevel, that.logLevel)
+            && Objects.equals(this.supportAnonymous, that.supportAnonymous);
     }
 
     @Override

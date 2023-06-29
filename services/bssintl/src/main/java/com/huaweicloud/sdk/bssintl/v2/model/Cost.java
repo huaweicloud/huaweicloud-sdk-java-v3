@@ -99,17 +99,17 @@ public class Cost {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Cost cost = (Cost) o;
-        return Objects.equals(this.timeDimensionValue, cost.timeDimensionValue)
-            && Objects.equals(this.timeMeasureId, cost.timeMeasureId) && Objects.equals(this.amount, cost.amount)
-            && Objects.equals(this.officialAmount, cost.officialAmount);
+        Cost that = (Cost) obj;
+        return Objects.equals(this.timeDimensionValue, that.timeDimensionValue)
+            && Objects.equals(this.timeMeasureId, that.timeMeasureId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.officialAmount, that.officialAmount);
     }
 
     @Override

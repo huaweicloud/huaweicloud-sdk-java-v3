@@ -1,48 +1,39 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAvailableZonesRequest  {
-
+public class ListAvailableZonesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_id")
-    
+    @JsonProperty(value = "region_id")
 
     private String regionId;
+
     /**
      * 可用区范围
      */
     public static final class ScopeEnum {
 
-        
         /**
          * Enum CENTER for value: "Center"
          */
         public static final ScopeEnum CENTER = new ScopeEnum("Center");
-        
+
         /**
          * Enum EDGE for value: "Edge"
          */
         public static final ScopeEnum EDGE = new ScopeEnum("Edge");
-        
 
         private static final Map<String, ScopeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,25 +62,18 @@ public class ListAvailableZonesRequest  {
 
         @JsonCreator
         public static ScopeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -107,8 +91,7 @@ public class ListAvailableZonesRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
 
     private ScopeEnum scope;
 
@@ -116,9 +99,6 @@ public class ListAvailableZonesRequest  {
         this.regionId = regionId;
         return this;
     }
-
-    
-
 
     /**
      * 区域id，例如cn-north-4
@@ -132,15 +112,10 @@ public class ListAvailableZonesRequest  {
         this.regionId = regionId;
     }
 
-    
-
     public ListAvailableZonesRequest withScope(ScopeEnum scope) {
         this.scope = scope;
         return this;
     }
-
-    
-
 
     /**
      * 可用区范围
@@ -154,24 +129,23 @@ public class ListAvailableZonesRequest  {
         this.scope = scope;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableZonesRequest listAvailableZonesRequest = (ListAvailableZonesRequest) o;
-        return Objects.equals(this.regionId, listAvailableZonesRequest.regionId) &&
-            Objects.equals(this.scope, listAvailableZonesRequest.scope);
+        ListAvailableZonesRequest that = (ListAvailableZonesRequest) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.scope, that.scope);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(regionId, scope);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -181,6 +155,7 @@ public class ListAvailableZonesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -191,8 +166,5 @@ public class ListAvailableZonesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -68,22 +68,15 @@ public class CreateDatabaseDetail {
             if (value == null) {
                 return null;
             }
-            ShardModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShardModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShardModeEnum(value));
         }
 
         public static ShardModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShardModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,19 +217,17 @@ public class CreateDatabaseDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseDetail createDatabaseDetail = (CreateDatabaseDetail) o;
-        return Objects.equals(this.name, createDatabaseDetail.name)
-            && Objects.equals(this.shardMode, createDatabaseDetail.shardMode)
-            && Objects.equals(this.shardNumber, createDatabaseDetail.shardNumber)
-            && Objects.equals(this.shardUnit, createDatabaseDetail.shardUnit)
-            && Objects.equals(this.usedRds, createDatabaseDetail.usedRds);
+        CreateDatabaseDetail that = (CreateDatabaseDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.shardMode, that.shardMode)
+            && Objects.equals(this.shardNumber, that.shardNumber) && Objects.equals(this.shardUnit, that.shardUnit)
+            && Objects.equals(this.usedRds, that.usedRds);
     }
 
     @Override

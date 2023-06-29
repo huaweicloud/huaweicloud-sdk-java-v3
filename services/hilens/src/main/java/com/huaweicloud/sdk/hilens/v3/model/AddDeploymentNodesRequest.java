@@ -87,17 +87,16 @@ public class AddDeploymentNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeploymentNodesRequest addDeploymentNodesRequest = (AddDeploymentNodesRequest) o;
-        return Objects.equals(this.deploymentId, addDeploymentNodesRequest.deploymentId)
-            && Objects.equals(this.provider, addDeploymentNodesRequest.provider)
-            && Objects.equals(this.body, addDeploymentNodesRequest.body);
+        AddDeploymentNodesRequest that = (AddDeploymentNodesRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

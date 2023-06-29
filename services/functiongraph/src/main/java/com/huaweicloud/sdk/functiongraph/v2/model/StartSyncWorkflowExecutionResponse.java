@@ -75,22 +75,15 @@ public class StartSyncWorkflowExecutionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -251,20 +244,17 @@ public class StartSyncWorkflowExecutionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartSyncWorkflowExecutionResponse startSyncWorkflowExecutionResponse = (StartSyncWorkflowExecutionResponse) o;
-        return Objects.equals(this.executionId, startSyncWorkflowExecutionResponse.executionId)
-            && Objects.equals(this.status, startSyncWorkflowExecutionResponse.status)
-            && Objects.equals(this.output, startSyncWorkflowExecutionResponse.output)
-            && Objects.equals(this.errors, startSyncWorkflowExecutionResponse.errors)
-            && Objects.equals(this.beginTime, startSyncWorkflowExecutionResponse.beginTime)
-            && Objects.equals(this.endTime, startSyncWorkflowExecutionResponse.endTime);
+        StartSyncWorkflowExecutionResponse that = (StartSyncWorkflowExecutionResponse) obj;
+        return Objects.equals(this.executionId, that.executionId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.errors, that.errors)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

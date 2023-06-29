@@ -83,22 +83,15 @@ public class ListAlertRuleTemplatesRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ListAlertRuleTemplatesRequest {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -343,20 +329,17 @@ public class ListAlertRuleTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertRuleTemplatesRequest listAlertRuleTemplatesRequest = (ListAlertRuleTemplatesRequest) o;
-        return Objects.equals(this.workspaceId, listAlertRuleTemplatesRequest.workspaceId)
-            && Objects.equals(this.offset, listAlertRuleTemplatesRequest.offset)
-            && Objects.equals(this.limit, listAlertRuleTemplatesRequest.limit)
-            && Objects.equals(this.sortKey, listAlertRuleTemplatesRequest.sortKey)
-            && Objects.equals(this.sortDir, listAlertRuleTemplatesRequest.sortDir)
-            && Objects.equals(this.severity, listAlertRuleTemplatesRequest.severity);
+        ListAlertRuleTemplatesRequest that = (ListAlertRuleTemplatesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.severity, that.severity);
     }
 
     @Override

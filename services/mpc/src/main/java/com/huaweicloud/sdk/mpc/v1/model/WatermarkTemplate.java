@@ -100,22 +100,15 @@ public class WatermarkTemplate {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BaseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BaseEnum(value));
         }
 
         public static BaseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,25 +352,21 @@ public class WatermarkTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WatermarkTemplate watermarkTemplate = (WatermarkTemplate) o;
-        return Objects.equals(this.dx, watermarkTemplate.dx) && Objects.equals(this.dy, watermarkTemplate.dy)
-            && Objects.equals(this.referpos, watermarkTemplate.referpos)
-            && Objects.equals(this.timelineStart, watermarkTemplate.timelineStart)
-            && Objects.equals(this.timelineDuration, watermarkTemplate.timelineDuration)
-            && Objects.equals(this.imageProcess, watermarkTemplate.imageProcess)
-            && Objects.equals(this.width, watermarkTemplate.width)
-            && Objects.equals(this.height, watermarkTemplate.height)
-            && Objects.equals(this.base, watermarkTemplate.base)
-            && Objects.equals(this.templateId, watermarkTemplate.templateId)
-            && Objects.equals(this.templateName, watermarkTemplate.templateName)
-            && Objects.equals(this.type, watermarkTemplate.type);
+        WatermarkTemplate that = (WatermarkTemplate) obj;
+        return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration)
+            && Objects.equals(this.imageProcess, that.imageProcess) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.base, that.base)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

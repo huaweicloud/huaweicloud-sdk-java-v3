@@ -52,15 +52,15 @@ public class DeleteSqlTemplatesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSqlTemplatesRequestBody deleteSqlTemplatesRequestBody = (DeleteSqlTemplatesRequestBody) o;
-        return Objects.equals(this.sqlIds, deleteSqlTemplatesRequestBody.sqlIds);
+        DeleteSqlTemplatesRequestBody that = (DeleteSqlTemplatesRequestBody) obj;
+        return Objects.equals(this.sqlIds, that.sqlIds);
     }
 
     @Override

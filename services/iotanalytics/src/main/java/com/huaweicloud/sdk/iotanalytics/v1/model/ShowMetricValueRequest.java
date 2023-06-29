@@ -65,16 +65,15 @@ public class ShowMetricValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetricValueRequest showMetricValueRequest = (ShowMetricValueRequest) o;
-        return Objects.equals(this.assetId, showMetricValueRequest.assetId)
-            && Objects.equals(this.body, showMetricValueRequest.body);
+        ShowMetricValueRequest that = (ShowMetricValueRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.body, that.body);
     }
 
     @Override

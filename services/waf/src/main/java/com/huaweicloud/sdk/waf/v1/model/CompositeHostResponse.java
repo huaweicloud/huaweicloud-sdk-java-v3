@@ -452,32 +452,25 @@ public class CompositeHostResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompositeHostResponse compositeHostResponse = (CompositeHostResponse) o;
-        return Objects.equals(this.id, compositeHostResponse.id)
-            && Objects.equals(this.hostid, compositeHostResponse.hostid)
-            && Objects.equals(this.hostname, compositeHostResponse.hostname)
-            && Objects.equals(this.policyid, compositeHostResponse.policyid)
-            && Objects.equals(this.accessCode, compositeHostResponse.accessCode)
-            && Objects.equals(this.protectStatus, compositeHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, compositeHostResponse.accessStatus)
-            && Objects.equals(this.proxy, compositeHostResponse.proxy)
-            && Objects.equals(this.timestamp, compositeHostResponse.timestamp)
-            && Objects.equals(this.paidType, compositeHostResponse.paidType)
-            && Objects.equals(this.flag, compositeHostResponse.flag)
-            && Objects.equals(this.wafType, compositeHostResponse.wafType)
-            && Objects.equals(this.webTag, compositeHostResponse.webTag)
-            && Objects.equals(this.accessProgress, compositeHostResponse.accessProgress)
-            && Objects.equals(this.premiumWafInstances, compositeHostResponse.premiumWafInstances)
-            && Objects.equals(this.description, compositeHostResponse.description)
-            && Objects.equals(this.exclusiveIp, compositeHostResponse.exclusiveIp)
-            && Objects.equals(this.region, compositeHostResponse.region);
+        CompositeHostResponse that = (CompositeHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.proxy, that.proxy)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.paidType, that.paidType)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.wafType, that.wafType)
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.accessProgress, that.accessProgress)
+            && Objects.equals(this.premiumWafInstances, that.premiumWafInstances)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.exclusiveIp, that.exclusiveIp)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override

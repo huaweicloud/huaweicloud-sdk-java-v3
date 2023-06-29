@@ -165,19 +165,19 @@ public class LimitInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LimitInfoV2 limitInfoV2 = (LimitInfoV2) o;
-        return Objects.equals(this.useLimitiInfoId, limitInfoV2.useLimitiInfoId)
-            && Objects.equals(this.limitKey, limitInfoV2.limitKey) && Objects.equals(this.value1, limitInfoV2.value1)
-            && Objects.equals(this.value2, limitInfoV2.value2) && Objects.equals(this.valueUnit, limitInfoV2.valueUnit)
-            && Objects.equals(this.limitType, limitInfoV2.limitType)
-            && Objects.equals(this.promotionPlanId, limitInfoV2.promotionPlanId);
+        LimitInfoV2 that = (LimitInfoV2) obj;
+        return Objects.equals(this.useLimitiInfoId, that.useLimitiInfoId)
+            && Objects.equals(this.limitKey, that.limitKey) && Objects.equals(this.value1, that.value1)
+            && Objects.equals(this.value2, that.value2) && Objects.equals(this.valueUnit, that.valueUnit)
+            && Objects.equals(this.limitType, that.limitType)
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId);
     }
 
     @Override

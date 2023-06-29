@@ -56,16 +56,15 @@ public class ResetDeviceSecretResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetDeviceSecretResponse resetDeviceSecretResponse = (ResetDeviceSecretResponse) o;
-        return Objects.equals(this.deviceId, resetDeviceSecretResponse.deviceId)
-            && Objects.equals(this.secret, resetDeviceSecretResponse.secret);
+        ResetDeviceSecretResponse that = (ResetDeviceSecretResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.secret, that.secret);
     }
 
     @Override

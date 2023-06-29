@@ -109,18 +109,16 @@ public class Single2HaObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Single2HaObject single2HaObject = (Single2HaObject) o;
-        return Objects.equals(this.azCodeNewNode, single2HaObject.azCodeNewNode)
-            && Objects.equals(this.dsspoolId, single2HaObject.dsspoolId)
-            && Objects.equals(this.isAutoPay, single2HaObject.isAutoPay)
-            && Objects.equals(this.adDomainInfo, single2HaObject.adDomainInfo);
+        Single2HaObject that = (Single2HaObject) obj;
+        return Objects.equals(this.azCodeNewNode, that.azCodeNewNode) && Objects.equals(this.dsspoolId, that.dsspoolId)
+            && Objects.equals(this.isAutoPay, that.isAutoPay) && Objects.equals(this.adDomainInfo, that.adDomainInfo);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class CustomTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomTemplateRequestBody customTemplateRequestBody = (CustomTemplateRequestBody) o;
-        return Objects.equals(this.image, customTemplateRequestBody.image)
-            && Objects.equals(this.url, customTemplateRequestBody.url)
-            && Objects.equals(this.templateId, customTemplateRequestBody.templateId)
-            && Objects.equals(this.classifierId, customTemplateRequestBody.classifierId)
-            && Objects.equals(this.classifierMode, customTemplateRequestBody.classifierMode);
+        CustomTemplateRequestBody that = (CustomTemplateRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.classifierId, that.classifierId)
+            && Objects.equals(this.classifierMode, that.classifierMode);
     }
 
     @Override

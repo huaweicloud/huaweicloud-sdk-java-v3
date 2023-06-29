@@ -284,24 +284,20 @@ public class EndpointGroupDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointGroupDetail endpointGroupDetail = (EndpointGroupDetail) o;
-        return Objects.equals(this.id, endpointGroupDetail.id) && Objects.equals(this.name, endpointGroupDetail.name)
-            && Objects.equals(this.description, endpointGroupDetail.description)
-            && Objects.equals(this.status, endpointGroupDetail.status)
-            && Objects.equals(this.trafficDialPercentage, endpointGroupDetail.trafficDialPercentage)
-            && Objects.equals(this.regionId, endpointGroupDetail.regionId)
-            && Objects.equals(this.listeners, endpointGroupDetail.listeners)
-            && Objects.equals(this.createdAt, endpointGroupDetail.createdAt)
-            && Objects.equals(this.updatedAt, endpointGroupDetail.updatedAt)
-            && Objects.equals(this.domainId, endpointGroupDetail.domainId)
-            && Objects.equals(this.frozenInfo, endpointGroupDetail.frozenInfo);
+        EndpointGroupDetail that = (EndpointGroupDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.trafficDialPercentage, that.trafficDialPercentage)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.frozenInfo, that.frozenInfo);
     }
 
     @Override

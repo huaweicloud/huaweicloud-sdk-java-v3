@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,34 +11,28 @@ import java.util.Objects;
  */
 public class CreateAppVersionResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
 
     private Object values;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -54,9 +40,6 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用模板ID
@@ -70,15 +53,10 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public CreateAppVersionResponse withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -92,15 +70,10 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public CreateAppVersionResponse withValues(Object values) {
         this.values = values;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本配置
@@ -114,15 +87,10 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.values = values;
     }
 
-    
-
     public CreateAppVersionResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -136,15 +104,10 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateAppVersionResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -158,27 +121,25 @@ public class CreateAppVersionResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppVersionResponse createAppVersionResponse = (CreateAppVersionResponse) o;
-        return Objects.equals(this.appId, createAppVersionResponse.appId) &&
-            Objects.equals(this.version, createAppVersionResponse.version) &&
-            Objects.equals(this.values, createAppVersionResponse.values) &&
-            Objects.equals(this.createTime, createAppVersionResponse.createTime) &&
-            Objects.equals(this.updateTime, createAppVersionResponse.updateTime);
+        CreateAppVersionResponse that = (CreateAppVersionResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, version, values, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,6 +152,7 @@ public class CreateAppVersionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -201,8 +163,5 @@ public class CreateAppVersionResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

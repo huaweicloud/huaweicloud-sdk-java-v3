@@ -55,15 +55,15 @@ public class ServerTagMatch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerTagMatch serverTagMatch = (ServerTagMatch) o;
-        return Objects.equals(this.key, serverTagMatch.key) && Objects.equals(this.value, serverTagMatch.value);
+        ServerTagMatch that = (ServerTagMatch) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

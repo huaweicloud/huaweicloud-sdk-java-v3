@@ -78,17 +78,16 @@ public class CreateResJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResJobsResponse createResJobsResponse = (CreateResJobsResponse) o;
-        return Objects.equals(this.isSuccess, createResJobsResponse.isSuccess)
-            && Objects.equals(this.message, createResJobsResponse.message)
-            && Objects.equals(this.errorCode, createResJobsResponse.errorCode);
+        CreateResJobsResponse that = (CreateResJobsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

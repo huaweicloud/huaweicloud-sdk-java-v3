@@ -35,15 +35,15 @@ public class RestVideoBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestVideoBody restVideoBody = (RestVideoBody) o;
-        return Objects.equals(this.status, restVideoBody.status);
+        RestVideoBody that = (RestVideoBody) obj;
+        return Objects.equals(this.status, that.status);
     }
 
     @Override

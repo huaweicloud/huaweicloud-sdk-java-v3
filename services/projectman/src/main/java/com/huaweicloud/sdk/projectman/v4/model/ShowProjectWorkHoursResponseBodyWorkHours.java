@@ -341,31 +341,24 @@ public class ShowProjectWorkHoursResponseBodyWorkHours {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectWorkHoursResponseBodyWorkHours showProjectWorkHoursResponseBodyWorkHours =
-            (ShowProjectWorkHoursResponseBodyWorkHours) o;
-        return Objects.equals(this.projectName, showProjectWorkHoursResponseBodyWorkHours.projectName)
-            && Objects.equals(this.nickName, showProjectWorkHoursResponseBodyWorkHours.nickName)
-            && Objects.equals(this.userId, showProjectWorkHoursResponseBodyWorkHours.userId)
-            && Objects.equals(this.userName, showProjectWorkHoursResponseBodyWorkHours.userName)
-            && Objects.equals(this.workDate, showProjectWorkHoursResponseBodyWorkHours.workDate)
-            && Objects.equals(this.workHoursNum, showProjectWorkHoursResponseBodyWorkHours.workHoursNum)
-            && Objects.equals(this.summary, showProjectWorkHoursResponseBodyWorkHours.summary)
-            && Objects.equals(this.workHoursTypeName, showProjectWorkHoursResponseBodyWorkHours.workHoursTypeName)
-            && Objects.equals(this.issueId, showProjectWorkHoursResponseBodyWorkHours.issueId)
-            && Objects.equals(this.issueType, showProjectWorkHoursResponseBodyWorkHours.issueType)
-            && Objects.equals(this.subject, showProjectWorkHoursResponseBodyWorkHours.subject)
-            && Objects.equals(this.createdTime, showProjectWorkHoursResponseBodyWorkHours.createdTime)
-            && Objects.equals(this.closedTime, showProjectWorkHoursResponseBodyWorkHours.closedTime)
-            && Objects.equals(this.workHoursCreatedTime, showProjectWorkHoursResponseBodyWorkHours.workHoursCreatedTime)
-            && Objects.equals(this.workHoursUpdatedTime,
-                showProjectWorkHoursResponseBodyWorkHours.workHoursUpdatedTime);
+        ShowProjectWorkHoursResponseBodyWorkHours that = (ShowProjectWorkHoursResponseBodyWorkHours) obj;
+        return Objects.equals(this.projectName, that.projectName) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.workDate, that.workDate) && Objects.equals(this.workHoursNum, that.workHoursNum)
+            && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.workHoursTypeName, that.workHoursTypeName)
+            && Objects.equals(this.issueId, that.issueId) && Objects.equals(this.issueType, that.issueType)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.closedTime, that.closedTime)
+            && Objects.equals(this.workHoursCreatedTime, that.workHoursCreatedTime)
+            && Objects.equals(this.workHoursUpdatedTime, that.workHoursUpdatedTime);
     }
 
     @Override

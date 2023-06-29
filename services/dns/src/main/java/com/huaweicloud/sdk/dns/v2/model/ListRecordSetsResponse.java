@@ -115,17 +115,16 @@ public class ListRecordSetsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordSetsResponse listRecordSetsResponse = (ListRecordSetsResponse) o;
-        return Objects.equals(this.links, listRecordSetsResponse.links)
-            && Objects.equals(this.recordsets, listRecordSetsResponse.recordsets)
-            && Objects.equals(this.metadata, listRecordSetsResponse.metadata);
+        ListRecordSetsResponse that = (ListRecordSetsResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.recordsets, that.recordsets)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

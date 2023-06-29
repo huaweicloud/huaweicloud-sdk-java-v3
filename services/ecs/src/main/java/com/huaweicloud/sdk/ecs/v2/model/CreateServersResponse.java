@@ -97,17 +97,16 @@ public class CreateServersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServersResponse createServersResponse = (CreateServersResponse) o;
-        return Objects.equals(this.jobId, createServersResponse.jobId)
-            && Objects.equals(this.orderId, createServersResponse.orderId)
-            && Objects.equals(this.serverIds, createServersResponse.serverIds);
+        CreateServersResponse that = (CreateServersResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

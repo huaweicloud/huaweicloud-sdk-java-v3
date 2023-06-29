@@ -294,24 +294,22 @@ public class EngineFlavorData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineFlavorData engineFlavorData = (EngineFlavorData) o;
-        return Objects.equals(this.vcpus, engineFlavorData.vcpus) && Objects.equals(this.ram, engineFlavorData.ram)
-            && Objects.equals(this.specCode, engineFlavorData.specCode)
-            && Objects.equals(this.isIpv6Supported, engineFlavorData.isIpv6Supported)
-            && Objects.equals(this.typeCode, engineFlavorData.typeCode)
-            && Objects.equals(this.azStatus, engineFlavorData.azStatus)
-            && Objects.equals(this.groupType, engineFlavorData.groupType)
-            && Objects.equals(this.maxConnection, engineFlavorData.maxConnection)
-            && Objects.equals(this.tps, engineFlavorData.tps) && Objects.equals(this.qps, engineFlavorData.qps)
-            && Objects.equals(this.minVolumeSize, engineFlavorData.minVolumeSize)
-            && Objects.equals(this.maxVolumeSize, engineFlavorData.maxVolumeSize);
+        EngineFlavorData that = (EngineFlavorData) obj;
+        return Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.isIpv6Supported, that.isIpv6Supported)
+            && Objects.equals(this.typeCode, that.typeCode) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.maxConnection, that.maxConnection)
+            && Objects.equals(this.tps, that.tps) && Objects.equals(this.qps, that.qps)
+            && Objects.equals(this.minVolumeSize, that.minVolumeSize)
+            && Objects.equals(this.maxVolumeSize, that.maxVolumeSize);
     }
 
     @Override

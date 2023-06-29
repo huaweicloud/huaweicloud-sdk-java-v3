@@ -81,16 +81,16 @@ public class Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rule rule = (Rule) o;
-        return Objects.equals(this.tableName, rule.tableName) && Objects.equals(this.ruleRatio, rule.ruleRatio)
-            && Objects.equals(this.priority, rule.priority);
+        Rule that = (Rule) obj;
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.ruleRatio, that.ruleRatio)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override

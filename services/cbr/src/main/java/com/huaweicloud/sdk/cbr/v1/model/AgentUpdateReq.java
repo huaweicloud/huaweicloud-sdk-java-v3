@@ -43,15 +43,15 @@ public class AgentUpdateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentUpdateReq agentUpdateReq = (AgentUpdateReq) o;
-        return Objects.equals(this.agent, agentUpdateReq.agent);
+        AgentUpdateReq that = (AgentUpdateReq) obj;
+        return Objects.equals(this.agent, that.agent);
     }
 
     @Override

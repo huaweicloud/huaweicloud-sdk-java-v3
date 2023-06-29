@@ -233,22 +233,19 @@ public class CreateBatchTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBatchTask createBatchTask = (CreateBatchTask) o;
-        return Objects.equals(this.appId, createBatchTask.appId)
-            && Objects.equals(this.taskName, createBatchTask.taskName)
-            && Objects.equals(this.taskType, createBatchTask.taskType)
-            && Objects.equals(this.targets, createBatchTask.targets)
-            && Objects.equals(this.targetsFilter, createBatchTask.targetsFilter)
-            && Objects.equals(this.document, createBatchTask.document)
-            && Objects.equals(this.taskPolicy, createBatchTask.taskPolicy)
-            && Objects.equals(this.documentSource, createBatchTask.documentSource);
+        CreateBatchTask that = (CreateBatchTask) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.targetsFilter, that.targetsFilter) && Objects.equals(this.document, that.document)
+            && Objects.equals(this.taskPolicy, that.taskPolicy)
+            && Objects.equals(this.documentSource, that.documentSource);
     }
 
     @Override

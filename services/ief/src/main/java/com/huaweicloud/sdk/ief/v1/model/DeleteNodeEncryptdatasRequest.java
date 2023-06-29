@@ -77,17 +77,16 @@ public class DeleteNodeEncryptdatasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNodeEncryptdatasRequest deleteNodeEncryptdatasRequest = (DeleteNodeEncryptdatasRequest) o;
-        return Objects.equals(this.nodeId, deleteNodeEncryptdatasRequest.nodeId)
-            && Objects.equals(this.encryptdataId, deleteNodeEncryptdatasRequest.encryptdataId)
-            && Objects.equals(this.iefInstanceId, deleteNodeEncryptdatasRequest.iefInstanceId);
+        DeleteNodeEncryptdatasRequest that = (DeleteNodeEncryptdatasRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.encryptdataId, that.encryptdataId)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class ListOrderIncidentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrderIncidentResponse listOrderIncidentResponse = (ListOrderIncidentResponse) o;
-        return Objects.equals(this.totalCount, listOrderIncidentResponse.totalCount)
-            && Objects.equals(this.incidentInfoList, listOrderIncidentResponse.incidentInfoList);
+        ListOrderIncidentResponse that = (ListOrderIncidentResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.incidentInfoList, that.incidentInfoList);
     }
 
     @Override

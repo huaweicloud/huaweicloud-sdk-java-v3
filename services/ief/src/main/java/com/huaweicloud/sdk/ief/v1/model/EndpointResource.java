@@ -33,15 +33,15 @@ public class EndpointResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointResource endpointResource = (EndpointResource) o;
-        return Objects.equals(this.resource, endpointResource.resource);
+        EndpointResource that = (EndpointResource) obj;
+        return Objects.equals(this.resource, that.resource);
     }
 
     @Override

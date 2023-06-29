@@ -87,17 +87,16 @@ public class EnableDisableEdgeNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableDisableEdgeNodesRequest enableDisableEdgeNodesRequest = (EnableDisableEdgeNodesRequest) o;
-        return Objects.equals(this.nodeId, enableDisableEdgeNodesRequest.nodeId)
-            && Objects.equals(this.iefInstanceId, enableDisableEdgeNodesRequest.iefInstanceId)
-            && Objects.equals(this.body, enableDisableEdgeNodesRequest.body);
+        EnableDisableEdgeNodesRequest that = (EnableDisableEdgeNodesRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

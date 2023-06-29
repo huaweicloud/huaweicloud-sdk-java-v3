@@ -77,17 +77,16 @@ public class DeleteV2XEdgeAppByEdgeAppIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteV2XEdgeAppByEdgeAppIdRequest deleteV2XEdgeAppByEdgeAppIdRequest = (DeleteV2XEdgeAppByEdgeAppIdRequest) o;
-        return Objects.equals(this.edgeAppId, deleteV2XEdgeAppByEdgeAppIdRequest.edgeAppId)
-            && Objects.equals(this.instanceId, deleteV2XEdgeAppByEdgeAppIdRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, deleteV2XEdgeAppByEdgeAppIdRequest.v2xEdgeId);
+        DeleteV2XEdgeAppByEdgeAppIdRequest that = (DeleteV2XEdgeAppByEdgeAppIdRequest) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.v2xEdgeId, that.v2xEdgeId);
     }
 
     @Override

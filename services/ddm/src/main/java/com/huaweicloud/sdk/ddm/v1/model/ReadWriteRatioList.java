@@ -143,20 +143,18 @@ public class ReadWriteRatioList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReadWriteRatioList readWriteRatioList = (ReadWriteRatioList) o;
-        return Objects.equals(this.schema, readWriteRatioList.schema)
-            && Objects.equals(this.table, readWriteRatioList.table)
-            && Objects.equals(this.readCount, readWriteRatioList.readCount)
-            && Objects.equals(this.writeCount, readWriteRatioList.writeCount)
-            && Objects.equals(this.relationTables, readWriteRatioList.relationTables)
-            && Objects.equals(this.lastUpdated, readWriteRatioList.lastUpdated);
+        ReadWriteRatioList that = (ReadWriteRatioList) obj;
+        return Objects.equals(this.schema, that.schema) && Objects.equals(this.table, that.table)
+            && Objects.equals(this.readCount, that.readCount) && Objects.equals(this.writeCount, that.writeCount)
+            && Objects.equals(this.relationTables, that.relationTables)
+            && Objects.equals(this.lastUpdated, that.lastUpdated);
     }
 
     @Override

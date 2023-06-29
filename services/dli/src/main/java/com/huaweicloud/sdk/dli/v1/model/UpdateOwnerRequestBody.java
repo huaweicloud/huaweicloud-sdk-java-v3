@@ -33,15 +33,15 @@ public class UpdateOwnerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateOwnerRequestBody updateOwnerRequestBody = (UpdateOwnerRequestBody) o;
-        return Objects.equals(this.newOwner, updateOwnerRequestBody.newOwner);
+        UpdateOwnerRequestBody that = (UpdateOwnerRequestBody) obj;
+        return Objects.equals(this.newOwner, that.newOwner);
     }
 
     @Override

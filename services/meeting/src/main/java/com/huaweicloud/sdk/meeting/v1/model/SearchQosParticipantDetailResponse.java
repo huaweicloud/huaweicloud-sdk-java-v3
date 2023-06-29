@@ -75,16 +75,15 @@ public class SearchQosParticipantDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQosParticipantDetailResponse searchQosParticipantDetailResponse = (SearchQosParticipantDetailResponse) o;
-        return Objects.equals(this.user, searchQosParticipantDetailResponse.user)
-            && Objects.equals(this.qos, searchQosParticipantDetailResponse.qos);
+        SearchQosParticipantDetailResponse that = (SearchQosParticipantDetailResponse) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.qos, that.qos);
     }
 
     @Override

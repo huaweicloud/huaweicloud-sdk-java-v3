@@ -87,17 +87,16 @@ public class UpdateRecordSetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordSetsRequest updateRecordSetsRequest = (UpdateRecordSetsRequest) o;
-        return Objects.equals(this.zoneId, updateRecordSetsRequest.zoneId)
-            && Objects.equals(this.recordsetId, updateRecordSetsRequest.recordsetId)
-            && Objects.equals(this.body, updateRecordSetsRequest.body);
+        UpdateRecordSetsRequest that = (UpdateRecordSetsRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.recordsetId, that.recordsetId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

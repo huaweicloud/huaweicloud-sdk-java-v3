@@ -117,22 +117,15 @@ public class Shares {
             if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PayModelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PayModelEnum(value));
         }
 
         public static PayModelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -566,27 +559,26 @@ public class Shares {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Shares shares = (Shares) o;
-        return Objects.equals(this.actionProgress, shares.actionProgress)
-            && Objects.equals(this.version, shares.version) && Objects.equals(this.availCapacity, shares.availCapacity)
-            && Objects.equals(this.availabilityZone, shares.availabilityZone)
-            && Objects.equals(this.azName, shares.azName) && Objects.equals(this.createdAt, shares.createdAt)
-            && Objects.equals(this.cryptKeyId, shares.cryptKeyId) && Objects.equals(this.expandType, shares.expandType)
-            && Objects.equals(this.exportLocation, shares.exportLocation) && Objects.equals(this.id, shares.id)
-            && Objects.equals(this.name, shares.name) && Objects.equals(this.payModel, shares.payModel)
-            && Objects.equals(this.region, shares.region)
-            && Objects.equals(this.securityGroupId, shares.securityGroupId)
-            && Objects.equals(this.shareProto, shares.shareProto) && Objects.equals(this.shareType, shares.shareType)
-            && Objects.equals(this.size, shares.size) && Objects.equals(this.status, shares.status)
-            && Objects.equals(this.subStatus, shares.subStatus) && Objects.equals(this.subnetId, shares.subnetId)
-            && Objects.equals(this.vpcId, shares.vpcId);
+        Shares that = (Shares) obj;
+        return Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.availCapacity, that.availCapacity)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.azName, that.azName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.cryptKeyId, that.cryptKeyId)
+            && Objects.equals(this.expandType, that.expandType)
+            && Objects.equals(this.exportLocation, that.exportLocation) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.payModel, that.payModel)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.shareProto, that.shareProto) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

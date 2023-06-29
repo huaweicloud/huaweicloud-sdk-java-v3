@@ -77,16 +77,15 @@ public class ListUsersOfStreamResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsersOfStreamResponse listUsersOfStreamResponse = (ListUsersOfStreamResponse) o;
-        return Objects.equals(this.dataList, listUsersOfStreamResponse.dataList)
-            && Objects.equals(this.xRequestId, listUsersOfStreamResponse.xRequestId);
+        ListUsersOfStreamResponse that = (ListUsersOfStreamResponse) obj;
+        return Objects.equals(this.dataList, that.dataList) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

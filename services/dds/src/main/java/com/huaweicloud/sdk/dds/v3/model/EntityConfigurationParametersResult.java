@@ -165,22 +165,19 @@ public class EntityConfigurationParametersResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntityConfigurationParametersResult entityConfigurationParametersResult =
-            (EntityConfigurationParametersResult) o;
-        return Objects.equals(this.name, entityConfigurationParametersResult.name)
-            && Objects.equals(this.value, entityConfigurationParametersResult.value)
-            && Objects.equals(this.valueRange, entityConfigurationParametersResult.valueRange)
-            && Objects.equals(this.restartRequired, entityConfigurationParametersResult.restartRequired)
-            && Objects.equals(this.readonly, entityConfigurationParametersResult.readonly)
-            && Objects.equals(this.type, entityConfigurationParametersResult.type)
-            && Objects.equals(this.description, entityConfigurationParametersResult.description);
+        EntityConfigurationParametersResult that = (EntityConfigurationParametersResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.valueRange, that.valueRange)
+            && Objects.equals(this.restartRequired, that.restartRequired)
+            && Objects.equals(this.readonly, that.readonly) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

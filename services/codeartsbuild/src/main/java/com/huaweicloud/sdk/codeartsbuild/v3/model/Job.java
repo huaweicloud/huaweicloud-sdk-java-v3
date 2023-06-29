@@ -386,24 +386,24 @@ public class Job {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Job job = (Job) o;
-        return Objects.equals(this.id, job.id) && Objects.equals(this.jobName, job.jobName)
-            && Objects.equals(this.jobCreator, job.jobCreator) && Objects.equals(this.userName, job.userName)
-            && Objects.equals(this.lastBuildTime, job.lastBuildTime)
-            && Objects.equals(this.healthScore, job.healthScore) && Objects.equals(this.sourceCode, job.sourceCode)
-            && Objects.equals(this.lastBuildStatus, job.lastBuildStatus)
-            && Objects.equals(this.isFinished, job.isFinished) && Objects.equals(this.disabled, job.disabled)
-            && Objects.equals(this.favorite, job.favorite) && Objects.equals(this.isModify, job.isModify)
-            && Objects.equals(this.isDelete, job.isDelete) && Objects.equals(this.isExecute, job.isExecute)
-            && Objects.equals(this.isCopy, job.isCopy) && Objects.equals(this.isForbidden, job.isForbidden)
-            && Objects.equals(this.isView, job.isView);
+        Job that = (Job) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobCreator, that.jobCreator) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.lastBuildTime, that.lastBuildTime)
+            && Objects.equals(this.healthScore, that.healthScore) && Objects.equals(this.sourceCode, that.sourceCode)
+            && Objects.equals(this.lastBuildStatus, that.lastBuildStatus)
+            && Objects.equals(this.isFinished, that.isFinished) && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.favorite, that.favorite) && Objects.equals(this.isModify, that.isModify)
+            && Objects.equals(this.isDelete, that.isDelete) && Objects.equals(this.isExecute, that.isExecute)
+            && Objects.equals(this.isCopy, that.isCopy) && Objects.equals(this.isForbidden, that.isForbidden)
+            && Objects.equals(this.isView, that.isView);
     }
 
     @Override

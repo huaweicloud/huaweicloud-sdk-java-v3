@@ -121,19 +121,18 @@ public class DdosConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DdosConfig ddosConfig = (DdosConfig) o;
-        return Objects.equals(this.enableL7, ddosConfig.enableL7)
-            && Objects.equals(this.trafficPosId, ddosConfig.trafficPosId)
-            && Objects.equals(this.httpRequestPosId, ddosConfig.httpRequestPosId)
-            && Objects.equals(this.cleaningAccessPosId, ddosConfig.cleaningAccessPosId)
-            && Objects.equals(this.appTypeId, ddosConfig.appTypeId);
+        DdosConfig that = (DdosConfig) obj;
+        return Objects.equals(this.enableL7, that.enableL7) && Objects.equals(this.trafficPosId, that.trafficPosId)
+            && Objects.equals(this.httpRequestPosId, that.httpRequestPosId)
+            && Objects.equals(this.cleaningAccessPosId, that.cleaningAccessPosId)
+            && Objects.equals(this.appTypeId, that.appTypeId);
     }
 
     @Override

@@ -131,19 +131,17 @@ public class SetTableColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetTableColumnStatisticsRequest setTableColumnStatisticsRequest = (SetTableColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, setTableColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, setTableColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, setTableColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, setTableColumnStatisticsRequest.tableName)
-            && Objects.equals(this.body, setTableColumnStatisticsRequest.body);
+        SetTableColumnStatisticsRequest that = (SetTableColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

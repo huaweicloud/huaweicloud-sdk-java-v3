@@ -241,23 +241,19 @@ public class CommitRecordDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitRecordDetail commitRecordDetail = (CommitRecordDetail) o;
-        return Objects.equals(this.repositoryId, commitRecordDetail.repositoryId)
-            && Objects.equals(this.branchName, commitRecordDetail.branchName)
-            && Objects.equals(this.commitId, commitRecordDetail.commitId)
-            && Objects.equals(this.commitShortId, commitRecordDetail.commitShortId)
-            && Objects.equals(this.commitMsg, commitRecordDetail.commitMsg)
-            && Objects.equals(this.commitUrl, commitRecordDetail.commitUrl)
-            && Objects.equals(this.user, commitRecordDetail.user) && Objects.equals(this.type, commitRecordDetail.type)
-            && Objects.equals(this.createDate, commitRecordDetail.createDate)
-            && Objects.equals(this.updateDate, commitRecordDetail.updateDate);
+        CommitRecordDetail that = (CommitRecordDetail) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.branchName, that.branchName)
+            && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.commitShortId, that.commitShortId)
+            && Objects.equals(this.commitMsg, that.commitMsg) && Objects.equals(this.commitUrl, that.commitUrl)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createDate, that.createDate) && Objects.equals(this.updateDate, that.updateDate);
     }
 
     @Override

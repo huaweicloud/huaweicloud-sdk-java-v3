@@ -54,16 +54,15 @@ public class IvsStandardByVideoAndNameAndIdRequestBodyData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IvsStandardByVideoAndNameAndIdRequestBodyData ivsStandardByVideoAndNameAndIdRequestBodyData =
-            (IvsStandardByVideoAndNameAndIdRequestBodyData) o;
-        return Objects.equals(this.reqData, ivsStandardByVideoAndNameAndIdRequestBodyData.reqData);
+        IvsStandardByVideoAndNameAndIdRequestBodyData that = (IvsStandardByVideoAndNameAndIdRequestBodyData) obj;
+        return Objects.equals(this.reqData, that.reqData);
     }
 
     @Override

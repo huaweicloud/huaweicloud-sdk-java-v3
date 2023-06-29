@@ -275,24 +275,20 @@ public class UnbindApiForAcl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnbindApiForAcl unbindApiForAcl = (UnbindApiForAcl) o;
-        return Objects.equals(this.id, unbindApiForAcl.id) && Objects.equals(this.name, unbindApiForAcl.name)
-            && Objects.equals(this.groupId, unbindApiForAcl.groupId)
-            && Objects.equals(this.groupName, unbindApiForAcl.groupName)
-            && Objects.equals(this.type, unbindApiForAcl.type) && Objects.equals(this.remark, unbindApiForAcl.remark)
-            && Objects.equals(this.runEnvName, unbindApiForAcl.runEnvName)
-            && Objects.equals(this.runEnvId, unbindApiForAcl.runEnvId)
-            && Objects.equals(this.publishId, unbindApiForAcl.publishId)
-            && Objects.equals(this.aclName, unbindApiForAcl.aclName)
-            && Objects.equals(this.reqUri, unbindApiForAcl.reqUri)
-            && Objects.equals(this.authType, unbindApiForAcl.authType);
+        UnbindApiForAcl that = (UnbindApiForAcl) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.runEnvName, that.runEnvName) && Objects.equals(this.runEnvId, that.runEnvId)
+            && Objects.equals(this.publishId, that.publishId) && Objects.equals(this.aclName, that.aclName)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.authType, that.authType);
     }
 
     @Override

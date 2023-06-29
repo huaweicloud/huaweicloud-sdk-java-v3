@@ -143,20 +143,19 @@ public class ListTracedEventsRespResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTracedEventsRespResult listTracedEventsRespResult = (ListTracedEventsRespResult) o;
-        return Objects.equals(this.subscriptionName, listTracedEventsRespResult.subscriptionName)
-            && Objects.equals(this.sourceName, listTracedEventsRespResult.sourceName)
-            && Objects.equals(this.sourceProvider, listTracedEventsRespResult.sourceProvider)
-            && Objects.equals(this.eventType, listTracedEventsRespResult.eventType)
-            && Objects.equals(this.eventId, listTracedEventsRespResult.eventId)
-            && Objects.equals(this.eventReceivedTime, listTracedEventsRespResult.eventReceivedTime);
+        ListTracedEventsRespResult that = (ListTracedEventsRespResult) obj;
+        return Objects.equals(this.subscriptionName, that.subscriptionName)
+            && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.sourceProvider, that.sourceProvider)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.eventReceivedTime, that.eventReceivedTime);
     }
 
     @Override

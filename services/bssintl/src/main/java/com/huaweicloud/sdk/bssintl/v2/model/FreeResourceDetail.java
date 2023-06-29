@@ -232,24 +232,22 @@ public class FreeResourceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreeResourceDetail freeResourceDetail = (FreeResourceDetail) o;
-        return Objects.equals(this.freeResourceId, freeResourceDetail.freeResourceId)
-            && Objects.equals(this.freeResourceTypeName, freeResourceDetail.freeResourceTypeName)
-            && Objects.equals(this.quotaReuseCycle, freeResourceDetail.quotaReuseCycle)
-            && Objects.equals(this.quotaReuseCycleType, freeResourceDetail.quotaReuseCycleType)
-            && Objects.equals(this.usageTypeName, freeResourceDetail.usageTypeName)
-            && Objects.equals(this.startTime, freeResourceDetail.startTime)
-            && Objects.equals(this.endTime, freeResourceDetail.endTime)
-            && Objects.equals(this.amount, freeResourceDetail.amount)
-            && Objects.equals(this.originalAmount, freeResourceDetail.originalAmount)
-            && Objects.equals(this.measureId, freeResourceDetail.measureId);
+        FreeResourceDetail that = (FreeResourceDetail) obj;
+        return Objects.equals(this.freeResourceId, that.freeResourceId)
+            && Objects.equals(this.freeResourceTypeName, that.freeResourceTypeName)
+            && Objects.equals(this.quotaReuseCycle, that.quotaReuseCycle)
+            && Objects.equals(this.quotaReuseCycleType, that.quotaReuseCycleType)
+            && Objects.equals(this.usageTypeName, that.usageTypeName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.originalAmount, that.originalAmount)
+            && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override

@@ -66,16 +66,15 @@ public class CreatePrivateDnatResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateDnatResponse createPrivateDnatResponse = (CreatePrivateDnatResponse) o;
-        return Objects.equals(this.dnatRule, createPrivateDnatResponse.dnatRule)
-            && Objects.equals(this.requestId, createPrivateDnatResponse.requestId);
+        CreatePrivateDnatResponse that = (CreatePrivateDnatResponse) obj;
+        return Objects.equals(this.dnatRule, that.dnatRule) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

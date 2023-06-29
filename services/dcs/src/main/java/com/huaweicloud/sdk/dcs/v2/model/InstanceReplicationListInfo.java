@@ -88,22 +88,15 @@ public class InstanceReplicationListInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -289,22 +282,20 @@ public class InstanceReplicationListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceReplicationListInfo instanceReplicationListInfo = (InstanceReplicationListInfo) o;
-        return Objects.equals(this.replicationRole, instanceReplicationListInfo.replicationRole)
-            && Objects.equals(this.replicationIp, instanceReplicationListInfo.replicationIp)
-            && Objects.equals(this.isReplication, instanceReplicationListInfo.isReplication)
-            && Objects.equals(this.replicationId, instanceReplicationListInfo.replicationId)
-            && Objects.equals(this.nodeId, instanceReplicationListInfo.nodeId)
-            && Objects.equals(this.status, instanceReplicationListInfo.status)
-            && Objects.equals(this.azCode, instanceReplicationListInfo.azCode)
-            && Objects.equals(this.dimensions, instanceReplicationListInfo.dimensions);
+        InstanceReplicationListInfo that = (InstanceReplicationListInfo) obj;
+        return Objects.equals(this.replicationRole, that.replicationRole)
+            && Objects.equals(this.replicationIp, that.replicationIp)
+            && Objects.equals(this.isReplication, that.isReplication)
+            && Objects.equals(this.replicationId, that.replicationId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

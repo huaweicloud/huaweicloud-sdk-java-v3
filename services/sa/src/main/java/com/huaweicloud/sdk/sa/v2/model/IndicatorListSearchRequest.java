@@ -210,22 +210,18 @@ public class IndicatorListSearchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorListSearchRequest indicatorListSearchRequest = (IndicatorListSearchRequest) o;
-        return Objects.equals(this.ids, indicatorListSearchRequest.ids)
-            && Objects.equals(this.name, indicatorListSearchRequest.name)
-            && Objects.equals(this.type, indicatorListSearchRequest.type)
-            && Objects.equals(this.dataclassId, indicatorListSearchRequest.dataclassId)
-            && Objects.equals(this.condition, indicatorListSearchRequest.condition)
-            && Objects.equals(this.offset, indicatorListSearchRequest.offset)
-            && Objects.equals(this.limit, indicatorListSearchRequest.limit)
-            && Objects.equals(this.sortBy, indicatorListSearchRequest.sortBy);
+        IndicatorListSearchRequest that = (IndicatorListSearchRequest) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortBy, that.sortBy);
     }
 
     @Override

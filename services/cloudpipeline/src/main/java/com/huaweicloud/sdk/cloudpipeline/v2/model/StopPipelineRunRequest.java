@@ -77,17 +77,16 @@ public class StopPipelineRunRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopPipelineRunRequest stopPipelineRunRequest = (StopPipelineRunRequest) o;
-        return Objects.equals(this.projectId, stopPipelineRunRequest.projectId)
-            && Objects.equals(this.pipelineId, stopPipelineRunRequest.pipelineId)
-            && Objects.equals(this.pipelineRunId, stopPipelineRunRequest.pipelineRunId);
+        StopPipelineRunRequest that = (StopPipelineRunRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId);
     }
 
     @Override

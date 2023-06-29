@@ -121,19 +121,17 @@ public class RetrieveEnterpriseMultiAccountReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetrieveEnterpriseMultiAccountReq retrieveEnterpriseMultiAccountReq = (RetrieveEnterpriseMultiAccountReq) o;
-        return Objects.equals(this.customerId, retrieveEnterpriseMultiAccountReq.customerId)
-            && Objects.equals(this.amount, retrieveEnterpriseMultiAccountReq.amount)
-            && Objects.equals(this.transId, retrieveEnterpriseMultiAccountReq.transId)
-            && Objects.equals(this.balanceType, retrieveEnterpriseMultiAccountReq.balanceType)
-            && Objects.equals(this.expireTime, retrieveEnterpriseMultiAccountReq.expireTime);
+        RetrieveEnterpriseMultiAccountReq that = (RetrieveEnterpriseMultiAccountReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.transId, that.transId) && Objects.equals(this.balanceType, that.balanceType)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

@@ -201,21 +201,18 @@ public class CreateAssetModelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAssetModelResponse createAssetModelResponse = (CreateAssetModelResponse) o;
-        return Objects.equals(this.assetModelId, createAssetModelResponse.assetModelId)
-            && Objects.equals(this.name, createAssetModelResponse.name)
-            && Objects.equals(this.displayName, createAssetModelResponse.displayName)
-            && Objects.equals(this.properties, createAssetModelResponse.properties)
-            && Objects.equals(this.analyses, createAssetModelResponse.analyses)
-            && Objects.equals(this.createdTime, createAssetModelResponse.createdTime)
-            && Objects.equals(this.modifiedTime, createAssetModelResponse.modifiedTime);
+        CreateAssetModelResponse that = (CreateAssetModelResponse) obj;
+        return Objects.equals(this.assetModelId, that.assetModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.analyses, that.analyses) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime);
     }
 
     @Override

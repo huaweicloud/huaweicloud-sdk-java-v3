@@ -113,18 +113,16 @@ public class CreateAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppRequest createAppRequest = (CreateAppRequest) o;
-        return Objects.equals(this.authorization, createAppRequest.authorization)
-            && Objects.equals(this.xSdkDate, createAppRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createAppRequest.xProjectId)
-            && Objects.equals(this.body, createAppRequest.body);
+        CreateAppRequest that = (CreateAppRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

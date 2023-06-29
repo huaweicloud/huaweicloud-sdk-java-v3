@@ -65,16 +65,15 @@ public class AddTagV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTagV2Request addTagV2Request = (AddTagV2Request) o;
-        return Objects.equals(this.repositoryId, addTagV2Request.repositoryId)
-            && Objects.equals(this.body, addTagV2Request.body);
+        AddTagV2Request that = (AddTagV2Request) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.body, that.body);
     }
 
     @Override

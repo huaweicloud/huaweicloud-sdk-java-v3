@@ -75,22 +75,15 @@ public class ListSlowlogRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class ListSlowlogRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,21 +310,18 @@ public class ListSlowlogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSlowlogRequest listSlowlogRequest = (ListSlowlogRequest) o;
-        return Objects.equals(this.instanceId, listSlowlogRequest.instanceId)
-            && Objects.equals(this.offset, listSlowlogRequest.offset)
-            && Objects.equals(this.limit, listSlowlogRequest.limit)
-            && Objects.equals(this.sortKey, listSlowlogRequest.sortKey)
-            && Objects.equals(this.sortDir, listSlowlogRequest.sortDir)
-            && Objects.equals(this.startTime, listSlowlogRequest.startTime)
-            && Objects.equals(this.endTime, listSlowlogRequest.endTime);
+        ListSlowlogRequest that = (ListSlowlogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

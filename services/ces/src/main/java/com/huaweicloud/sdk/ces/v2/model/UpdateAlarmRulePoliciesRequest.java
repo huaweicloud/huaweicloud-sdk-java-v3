@@ -65,16 +65,15 @@ public class UpdateAlarmRulePoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlarmRulePoliciesRequest updateAlarmRulePoliciesRequest = (UpdateAlarmRulePoliciesRequest) o;
-        return Objects.equals(this.alarmId, updateAlarmRulePoliciesRequest.alarmId)
-            && Objects.equals(this.body, updateAlarmRulePoliciesRequest.body);
+        UpdateAlarmRulePoliciesRequest that = (UpdateAlarmRulePoliciesRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.body, that.body);
     }
 
     @Override

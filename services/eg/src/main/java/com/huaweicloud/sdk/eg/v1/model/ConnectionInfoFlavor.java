@@ -65,22 +65,15 @@ public class ConnectionInfoFlavor {
             if (value == null) {
                 return null;
             }
-            ConcurrencyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConcurrencyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConcurrencyTypeEnum(value));
         }
 
         public static ConcurrencyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConcurrencyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class ConnectionInfoFlavor {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthTypeEnum(value));
         }
 
         public static BandwidthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -258,18 +244,17 @@ public class ConnectionInfoFlavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConnectionInfoFlavor connectionInfoFlavor = (ConnectionInfoFlavor) o;
-        return Objects.equals(this.name, connectionInfoFlavor.name)
-            && Objects.equals(this.concurrencyType, connectionInfoFlavor.concurrencyType)
-            && Objects.equals(this.concurrency, connectionInfoFlavor.concurrency)
-            && Objects.equals(this.bandwidthType, connectionInfoFlavor.bandwidthType);
+        ConnectionInfoFlavor that = (ConnectionInfoFlavor) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.concurrencyType, that.concurrencyType)
+            && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.bandwidthType, that.bandwidthType);
     }
 
     @Override

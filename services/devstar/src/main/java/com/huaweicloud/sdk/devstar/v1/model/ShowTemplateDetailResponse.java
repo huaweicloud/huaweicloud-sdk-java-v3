@@ -335,27 +335,22 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateDetailResponse showTemplateDetailResponse = (ShowTemplateDetailResponse) o;
-        return Objects.equals(this.id, showTemplateDetailResponse.id)
-            && Objects.equals(this.title, showTemplateDetailResponse.title)
-            && Objects.equals(this.description, showTemplateDetailResponse.description)
-            && Objects.equals(this.regionId, showTemplateDetailResponse.regionId)
-            && Objects.equals(this.repostoryId, showTemplateDetailResponse.repostoryId)
-            && Objects.equals(this.codeUrl, showTemplateDetailResponse.codeUrl)
-            && Objects.equals(this.sshUrl, showTemplateDetailResponse.sshUrl)
-            && Objects.equals(this.projectUuid, showTemplateDetailResponse.projectUuid)
-            && Objects.equals(this.status, showTemplateDetailResponse.status)
-            && Objects.equals(this.properties, showTemplateDetailResponse.properties)
-            && Objects.equals(this.dependencies, showTemplateDetailResponse.dependencies)
-            && Objects.equals(this.dependencyType, showTemplateDetailResponse.dependencyType)
-            && Objects.equals(this.deployment, showTemplateDetailResponse.deployment);
+        ShowTemplateDetailResponse that = (ShowTemplateDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.repostoryId, that.repostoryId) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.sshUrl, that.sshUrl) && Objects.equals(this.projectUuid, that.projectUuid)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.dependencyType, that.dependencyType)
+            && Objects.equals(this.deployment, that.deployment);
     }
 
     @Override

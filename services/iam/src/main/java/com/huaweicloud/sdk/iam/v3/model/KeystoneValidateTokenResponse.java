@@ -68,16 +68,15 @@ public class KeystoneValidateTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneValidateTokenResponse keystoneValidateTokenResponse = (KeystoneValidateTokenResponse) o;
-        return Objects.equals(this.token, keystoneValidateTokenResponse.token)
-            && Objects.equals(this.xSubjectToken, keystoneValidateTokenResponse.xSubjectToken);
+        KeystoneValidateTokenResponse that = (KeystoneValidateTokenResponse) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.xSubjectToken, that.xSubjectToken);
     }
 
     @Override

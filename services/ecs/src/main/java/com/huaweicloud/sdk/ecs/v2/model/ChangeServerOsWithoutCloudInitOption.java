@@ -154,21 +154,17 @@ public class ChangeServerOsWithoutCloudInitOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeServerOsWithoutCloudInitOption changeServerOsWithoutCloudInitOption =
-            (ChangeServerOsWithoutCloudInitOption) o;
-        return Objects.equals(this.adminpass, changeServerOsWithoutCloudInitOption.adminpass)
-            && Objects.equals(this.keyname, changeServerOsWithoutCloudInitOption.keyname)
-            && Objects.equals(this.userid, changeServerOsWithoutCloudInitOption.userid)
-            && Objects.equals(this.imageid, changeServerOsWithoutCloudInitOption.imageid)
-            && Objects.equals(this.mode, changeServerOsWithoutCloudInitOption.mode)
-            && Objects.equals(this.metadata, changeServerOsWithoutCloudInitOption.metadata);
+        ChangeServerOsWithoutCloudInitOption that = (ChangeServerOsWithoutCloudInitOption) obj;
+        return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
+            && Objects.equals(this.userid, that.userid) && Objects.equals(this.imageid, that.imageid)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

@@ -121,19 +121,19 @@ public class FirmwareUpdateRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FirmwareUpdateRecord firmwareUpdateRecord = (FirmwareUpdateRecord) o;
-        return Objects.equals(this.firmwareName, firmwareUpdateRecord.firmwareName)
-            && Objects.equals(this.firmwareVersion, firmwareUpdateRecord.firmwareVersion)
-            && Objects.equals(this.firmwareSize, firmwareUpdateRecord.firmwareSize)
-            && Objects.equals(this.firmwareUpgradeTime, firmwareUpdateRecord.firmwareUpgradeTime)
-            && Objects.equals(this.status, firmwareUpdateRecord.status);
+        FirmwareUpdateRecord that = (FirmwareUpdateRecord) obj;
+        return Objects.equals(this.firmwareName, that.firmwareName)
+            && Objects.equals(this.firmwareVersion, that.firmwareVersion)
+            && Objects.equals(this.firmwareSize, that.firmwareSize)
+            && Objects.equals(this.firmwareUpgradeTime, that.firmwareUpgradeTime)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

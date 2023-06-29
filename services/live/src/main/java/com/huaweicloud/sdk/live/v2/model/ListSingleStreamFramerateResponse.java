@@ -78,16 +78,16 @@ public class ListSingleStreamFramerateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSingleStreamFramerateResponse listSingleStreamFramerateResponse = (ListSingleStreamFramerateResponse) o;
-        return Objects.equals(this.framerateInfoList, listSingleStreamFramerateResponse.framerateInfoList)
-            && Objects.equals(this.xRequestId, listSingleStreamFramerateResponse.xRequestId);
+        ListSingleStreamFramerateResponse that = (ListSingleStreamFramerateResponse) obj;
+        return Objects.equals(this.framerateInfoList, that.framerateInfoList)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

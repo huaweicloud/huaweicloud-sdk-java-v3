@@ -87,17 +87,16 @@ public class UpdateEncryptdatasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEncryptdatasRequest updateEncryptdatasRequest = (UpdateEncryptdatasRequest) o;
-        return Objects.equals(this.encryptdataId, updateEncryptdatasRequest.encryptdataId)
-            && Objects.equals(this.iefInstanceId, updateEncryptdatasRequest.iefInstanceId)
-            && Objects.equals(this.body, updateEncryptdatasRequest.body);
+        UpdateEncryptdatasRequest that = (UpdateEncryptdatasRequest) obj;
+        return Objects.equals(this.encryptdataId, that.encryptdataId)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

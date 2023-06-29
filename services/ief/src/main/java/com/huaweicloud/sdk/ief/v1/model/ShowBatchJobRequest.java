@@ -55,16 +55,15 @@ public class ShowBatchJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchJobRequest showBatchJobRequest = (ShowBatchJobRequest) o;
-        return Objects.equals(this.jobId, showBatchJobRequest.jobId)
-            && Objects.equals(this.iefInstanceId, showBatchJobRequest.iefInstanceId);
+        ShowBatchJobRequest that = (ShowBatchJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

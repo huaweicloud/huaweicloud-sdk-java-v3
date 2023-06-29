@@ -103,18 +103,17 @@ public class ShowUserDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserDetailRequest showUserDetailRequest = (ShowUserDetailRequest) o;
-        return Objects.equals(this.xRequestId, showUserDetailRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showUserDetailRequest.acceptLanguage)
-            && Objects.equals(this.account, showUserDetailRequest.account)
-            && Objects.equals(this.accountType, showUserDetailRequest.accountType);
+        ShowUserDetailRequest that = (ShowUserDetailRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType);
     }
 
     @Override

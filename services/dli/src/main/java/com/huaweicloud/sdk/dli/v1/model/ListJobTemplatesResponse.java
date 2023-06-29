@@ -119,18 +119,16 @@ public class ListJobTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobTemplatesResponse listJobTemplatesResponse = (ListJobTemplatesResponse) o;
-        return Objects.equals(this.isSuccess, listJobTemplatesResponse.isSuccess)
-            && Objects.equals(this.message, listJobTemplatesResponse.message)
-            && Objects.equals(this.count, listJobTemplatesResponse.count)
-            && Objects.equals(this.templates, listJobTemplatesResponse.templates);
+        ListJobTemplatesResponse that = (ListJobTemplatesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

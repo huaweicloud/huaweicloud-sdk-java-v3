@@ -156,19 +156,18 @@ public class ListProductsRespIo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRespIo listProductsRespIo = (ListProductsRespIo) o;
-        return Objects.equals(this.ioType, listProductsRespIo.ioType)
-            && Objects.equals(this.storageSpecCode, listProductsRespIo.storageSpecCode)
-            && Objects.equals(this.availableZones, listProductsRespIo.availableZones)
-            && Objects.equals(this.unavailableZones, listProductsRespIo.unavailableZones)
-            && Objects.equals(this.volumeType, listProductsRespIo.volumeType);
+        ListProductsRespIo that = (ListProductsRespIo) obj;
+        return Objects.equals(this.ioType, that.ioType) && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.unavailableZones, that.unavailableZones)
+            && Objects.equals(this.volumeType, that.volumeType);
     }
 
     @Override

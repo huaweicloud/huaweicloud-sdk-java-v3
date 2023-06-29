@@ -33,15 +33,15 @@ public class ListCaTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaTagsRequest listCaTagsRequest = (ListCaTagsRequest) o;
-        return Objects.equals(this.caId, listCaTagsRequest.caId);
+        ListCaTagsRequest that = (ListCaTagsRequest) obj;
+        return Objects.equals(this.caId, that.caId);
     }
 
     @Override

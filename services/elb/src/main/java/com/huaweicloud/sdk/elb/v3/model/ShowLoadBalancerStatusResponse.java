@@ -66,16 +66,15 @@ public class ShowLoadBalancerStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLoadBalancerStatusResponse showLoadBalancerStatusResponse = (ShowLoadBalancerStatusResponse) o;
-        return Objects.equals(this.statuses, showLoadBalancerStatusResponse.statuses)
-            && Objects.equals(this.requestId, showLoadBalancerStatusResponse.requestId);
+        ShowLoadBalancerStatusResponse that = (ShowLoadBalancerStatusResponse) obj;
+        return Objects.equals(this.statuses, that.statuses) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

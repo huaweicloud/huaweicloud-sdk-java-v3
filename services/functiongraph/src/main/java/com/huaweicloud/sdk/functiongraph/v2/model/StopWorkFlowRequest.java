@@ -55,16 +55,15 @@ public class StopWorkFlowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopWorkFlowRequest stopWorkFlowRequest = (StopWorkFlowRequest) o;
-        return Objects.equals(this.workflowId, stopWorkFlowRequest.workflowId)
-            && Objects.equals(this.executionId, stopWorkFlowRequest.executionId);
+        StopWorkFlowRequest that = (StopWorkFlowRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId);
     }
 
     @Override

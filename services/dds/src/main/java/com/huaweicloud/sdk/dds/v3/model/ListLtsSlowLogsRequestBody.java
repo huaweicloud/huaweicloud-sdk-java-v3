@@ -113,22 +113,15 @@ public class ListLtsSlowLogsRequestBody {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateTypeEnum(value));
         }
 
         public static OperateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -416,25 +409,21 @@ public class ListLtsSlowLogsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLtsSlowLogsRequestBody listLtsSlowLogsRequestBody = (ListLtsSlowLogsRequestBody) o;
-        return Objects.equals(this.startTime, listLtsSlowLogsRequestBody.startTime)
-            && Objects.equals(this.endTime, listLtsSlowLogsRequestBody.endTime)
-            && Objects.equals(this.limit, listLtsSlowLogsRequestBody.limit)
-            && Objects.equals(this.lineNum, listLtsSlowLogsRequestBody.lineNum)
-            && Objects.equals(this.operateType, listLtsSlowLogsRequestBody.operateType)
-            && Objects.equals(this.nodeId, listLtsSlowLogsRequestBody.nodeId)
-            && Objects.equals(this.keywords, listLtsSlowLogsRequestBody.keywords)
-            && Objects.equals(this.databaseKeywords, listLtsSlowLogsRequestBody.databaseKeywords)
-            && Objects.equals(this.collectionKeywords, listLtsSlowLogsRequestBody.collectionKeywords)
-            && Objects.equals(this.maxCostTime, listLtsSlowLogsRequestBody.maxCostTime)
-            && Objects.equals(this.minCostTime, listLtsSlowLogsRequestBody.minCostTime);
+        ListLtsSlowLogsRequestBody that = (ListLtsSlowLogsRequestBody) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.operateType, that.operateType) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.keywords, that.keywords)
+            && Objects.equals(this.databaseKeywords, that.databaseKeywords)
+            && Objects.equals(this.collectionKeywords, that.collectionKeywords)
+            && Objects.equals(this.maxCostTime, that.maxCostTime) && Objects.equals(this.minCostTime, that.minCostTime);
     }
 
     @Override

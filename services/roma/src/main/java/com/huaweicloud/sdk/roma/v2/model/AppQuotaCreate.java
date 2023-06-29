@@ -82,22 +82,15 @@ public class AppQuotaCreate {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,20 +230,17 @@ public class AppQuotaCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppQuotaCreate appQuotaCreate = (AppQuotaCreate) o;
-        return Objects.equals(this.name, appQuotaCreate.name)
-            && Objects.equals(this.callLimits, appQuotaCreate.callLimits)
-            && Objects.equals(this.timeUnit, appQuotaCreate.timeUnit)
-            && Objects.equals(this.timeInterval, appQuotaCreate.timeInterval)
-            && Objects.equals(this.resetTime, appQuotaCreate.resetTime)
-            && Objects.equals(this.remark, appQuotaCreate.remark);
+        AppQuotaCreate that = (AppQuotaCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.callLimits, that.callLimits)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.resetTime, that.resetTime) && Objects.equals(this.remark, that.remark);
     }
 
     @Override

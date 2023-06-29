@@ -33,15 +33,15 @@ public class ApigRole {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigRole apigRole = (ApigRole) o;
-        return Objects.equals(this.roleId, apigRole.roleId);
+        ApigRole that = (ApigRole) obj;
+        return Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

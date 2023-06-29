@@ -143,21 +143,17 @@ public class GetProjectInfoV4ResultProjectCreator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetProjectInfoV4ResultProjectCreator getProjectInfoV4ResultProjectCreator =
-            (GetProjectInfoV4ResultProjectCreator) o;
-        return Objects.equals(this.userNumId, getProjectInfoV4ResultProjectCreator.userNumId)
-            && Objects.equals(this.userId, getProjectInfoV4ResultProjectCreator.userId)
-            && Objects.equals(this.userName, getProjectInfoV4ResultProjectCreator.userName)
-            && Objects.equals(this.domainId, getProjectInfoV4ResultProjectCreator.domainId)
-            && Objects.equals(this.domainName, getProjectInfoV4ResultProjectCreator.domainName)
-            && Objects.equals(this.nickName, getProjectInfoV4ResultProjectCreator.nickName);
+        GetProjectInfoV4ResultProjectCreator that = (GetProjectInfoV4ResultProjectCreator) obj;
+        return Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

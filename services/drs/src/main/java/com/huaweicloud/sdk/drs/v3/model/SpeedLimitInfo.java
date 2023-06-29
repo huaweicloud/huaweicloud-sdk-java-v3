@@ -99,16 +99,16 @@ public class SpeedLimitInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpeedLimitInfo speedLimitInfo = (SpeedLimitInfo) o;
-        return Objects.equals(this.begin, speedLimitInfo.begin) && Objects.equals(this.end, speedLimitInfo.end)
-            && Objects.equals(this.speed, speedLimitInfo.speed) && Objects.equals(this.isUtc, speedLimitInfo.isUtc);
+        SpeedLimitInfo that = (SpeedLimitInfo) obj;
+        return Objects.equals(this.begin, that.begin) && Objects.equals(this.end, that.end)
+            && Objects.equals(this.speed, that.speed) && Objects.equals(this.isUtc, that.isUtc);
     }
 
     @Override

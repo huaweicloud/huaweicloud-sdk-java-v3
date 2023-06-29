@@ -106,17 +106,16 @@ public class ListL7RulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListL7RulesResponse listL7RulesResponse = (ListL7RulesResponse) o;
-        return Objects.equals(this.requestId, listL7RulesResponse.requestId)
-            && Objects.equals(this.pageInfo, listL7RulesResponse.pageInfo)
-            && Objects.equals(this.rules, listL7RulesResponse.rules);
+        ListL7RulesResponse that = (ListL7RulesResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

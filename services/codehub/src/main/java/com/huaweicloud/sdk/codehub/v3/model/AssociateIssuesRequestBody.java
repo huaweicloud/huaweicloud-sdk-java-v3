@@ -118,18 +118,16 @@ public class AssociateIssuesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateIssuesRequestBody associateIssuesRequestBody = (AssociateIssuesRequestBody) o;
-        return Objects.equals(this.branch, associateIssuesRequestBody.branch)
-            && Objects.equals(this.projectId, associateIssuesRequestBody.projectId)
-            && Objects.equals(this.relatedId, associateIssuesRequestBody.relatedId)
-            && Objects.equals(this.repoId, associateIssuesRequestBody.repoId);
+        AssociateIssuesRequestBody that = (AssociateIssuesRequestBody) obj;
+        return Objects.equals(this.branch, that.branch) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.relatedId, that.relatedId) && Objects.equals(this.repoId, that.repoId);
     }
 
     @Override

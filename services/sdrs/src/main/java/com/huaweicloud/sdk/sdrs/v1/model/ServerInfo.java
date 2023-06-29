@@ -55,16 +55,15 @@ public class ServerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerInfo serverInfo = (ServerInfo) o;
-        return Objects.equals(this.serverId, serverInfo.serverId)
-            && Objects.equals(this.flavorRef, serverInfo.flavorRef);
+        ServerInfo that = (ServerInfo) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.flavorRef, that.flavorRef);
     }
 
     @Override

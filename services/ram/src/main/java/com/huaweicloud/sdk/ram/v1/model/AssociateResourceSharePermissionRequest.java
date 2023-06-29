@@ -65,17 +65,15 @@ public class AssociateResourceSharePermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateResourceSharePermissionRequest associateResourceSharePermissionRequest =
-            (AssociateResourceSharePermissionRequest) o;
-        return Objects.equals(this.resourceShareId, associateResourceSharePermissionRequest.resourceShareId)
-            && Objects.equals(this.body, associateResourceSharePermissionRequest.body);
+        AssociateResourceSharePermissionRequest that = (AssociateResourceSharePermissionRequest) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

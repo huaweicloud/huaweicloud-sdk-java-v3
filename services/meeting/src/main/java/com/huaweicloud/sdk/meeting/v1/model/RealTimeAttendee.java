@@ -143,19 +143,17 @@ public class RealTimeAttendee {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RealTimeAttendee realTimeAttendee = (RealTimeAttendee) o;
-        return Objects.equals(this.accountID, realTimeAttendee.accountID)
-            && Objects.equals(this.userUUID, realTimeAttendee.userUUID)
-            && Objects.equals(this.name, realTimeAttendee.name) && Objects.equals(this.phone, realTimeAttendee.phone)
-            && Objects.equals(this.phoneLeft, realTimeAttendee.phoneLeft)
-            && Objects.equals(this.phoneRight, realTimeAttendee.phoneRight);
+        RealTimeAttendee that = (RealTimeAttendee) obj;
+        return Objects.equals(this.accountID, that.accountID) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.phoneLeft, that.phoneLeft) && Objects.equals(this.phoneRight, that.phoneRight);
     }
 
     @Override

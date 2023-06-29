@@ -33,15 +33,15 @@ public class UpdatePhoneNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePhoneNameRequestBody updatePhoneNameRequestBody = (UpdatePhoneNameRequestBody) o;
-        return Objects.equals(this.phoneName, updatePhoneNameRequestBody.phoneName);
+        UpdatePhoneNameRequestBody that = (UpdatePhoneNameRequestBody) obj;
+        return Objects.equals(this.phoneName, that.phoneName);
     }
 
     @Override

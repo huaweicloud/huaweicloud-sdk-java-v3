@@ -43,15 +43,15 @@ public class KeystoneUpdateProtocolRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateProtocolRequestBody keystoneUpdateProtocolRequestBody = (KeystoneUpdateProtocolRequestBody) o;
-        return Objects.equals(this.protocol, keystoneUpdateProtocolRequestBody.protocol);
+        KeystoneUpdateProtocolRequestBody that = (KeystoneUpdateProtocolRequestBody) obj;
+        return Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

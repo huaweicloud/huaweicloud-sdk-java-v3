@@ -77,17 +77,16 @@ public class DeleteGeoipRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGeoipRuleRequest deleteGeoipRuleRequest = (DeleteGeoipRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteGeoipRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, deleteGeoipRuleRequest.policyId)
-            && Objects.equals(this.ruleId, deleteGeoipRuleRequest.ruleId);
+        DeleteGeoipRuleRequest that = (DeleteGeoipRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

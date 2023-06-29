@@ -33,15 +33,15 @@ public class DeleteAssetNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAssetNewRequest deleteAssetNewRequest = (DeleteAssetNewRequest) o;
-        return Objects.equals(this.assetId, deleteAssetNewRequest.assetId);
+        DeleteAssetNewRequest that = (DeleteAssetNewRequest) obj;
+        return Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

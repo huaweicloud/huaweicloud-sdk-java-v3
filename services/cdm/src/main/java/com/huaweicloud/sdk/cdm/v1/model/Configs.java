@@ -118,16 +118,16 @@ public class Configs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Configs configs = (Configs) o;
-        return Objects.equals(this.inputs, configs.inputs) && Objects.equals(this.name, configs.name)
-            && Objects.equals(this.id, configs.id) && Objects.equals(this.type, configs.type);
+        Configs that = (Configs) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type);
     }
 
     @Override

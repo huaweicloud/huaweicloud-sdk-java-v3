@@ -149,19 +149,17 @@ public class ImageMediaTaggingDetItemBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMediaTaggingDetItemBody imageMediaTaggingDetItemBody = (ImageMediaTaggingDetItemBody) o;
-        return Objects.equals(this.confidence, imageMediaTaggingDetItemBody.confidence)
-            && Objects.equals(this.type, imageMediaTaggingDetItemBody.type)
-            && Objects.equals(this.tag, imageMediaTaggingDetItemBody.tag)
-            && Objects.equals(this.i18nTag, imageMediaTaggingDetItemBody.i18nTag)
-            && Objects.equals(this.instances, imageMediaTaggingDetItemBody.instances);
+        ImageMediaTaggingDetItemBody that = (ImageMediaTaggingDetItemBody) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.i18nTag, that.i18nTag)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

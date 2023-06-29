@@ -461,33 +461,28 @@ public class Submission {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Submission submission = (Submission) o;
-        return Objects.equals(this.isIncrementing, submission.isIncrementing)
-            && Objects.equals(this.jobName, submission.jobName) && Objects.equals(this.counters, submission.counters)
-            && Objects.equals(this.isStopingIncrement, submission.isStopingIncrement)
-            && Objects.equals(this.isExecuteAuto, submission.isExecuteAuto)
-            && Objects.equals(this.lastUpdateDate, submission.lastUpdateDate)
-            && Objects.equals(this.lastUdpateUser, submission.lastUdpateUser)
-            && Objects.equals(this.isDeleteJob, submission.isDeleteJob)
-            && Objects.equals(this.creationUser, submission.creationUser)
-            && Objects.equals(this.creationDate, submission.creationDate)
-            && Objects.equals(this.externalId, submission.externalId)
-            && Objects.equals(this.progress, submission.progress)
-            && Objects.equals(this.submissionId, submission.submissionId)
-            && Objects.equals(this.deleteRows, submission.deleteRows)
-            && Objects.equals(this.updateRows, submission.updateRows)
-            && Objects.equals(this.writeRows, submission.writeRows)
-            && Objects.equals(this.executeDate, submission.executeDate)
-            && Objects.equals(this.status, submission.status)
-            && Objects.equals(this.errorDetails, submission.errorDetails)
-            && Objects.equals(this.errorSummary, submission.errorSummary);
+        Submission that = (Submission) obj;
+        return Objects.equals(this.isIncrementing, that.isIncrementing) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.counters, that.counters)
+            && Objects.equals(this.isStopingIncrement, that.isStopingIncrement)
+            && Objects.equals(this.isExecuteAuto, that.isExecuteAuto)
+            && Objects.equals(this.lastUpdateDate, that.lastUpdateDate)
+            && Objects.equals(this.lastUdpateUser, that.lastUdpateUser)
+            && Objects.equals(this.isDeleteJob, that.isDeleteJob)
+            && Objects.equals(this.creationUser, that.creationUser)
+            && Objects.equals(this.creationDate, that.creationDate) && Objects.equals(this.externalId, that.externalId)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.submissionId, that.submissionId)
+            && Objects.equals(this.deleteRows, that.deleteRows) && Objects.equals(this.updateRows, that.updateRows)
+            && Objects.equals(this.writeRows, that.writeRows) && Objects.equals(this.executeDate, that.executeDate)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorDetails, that.errorDetails)
+            && Objects.equals(this.errorSummary, that.errorSummary);
     }
 
     @Override

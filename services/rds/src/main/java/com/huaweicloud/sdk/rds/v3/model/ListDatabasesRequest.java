@@ -101,18 +101,16 @@ public class ListDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabasesRequest listDatabasesRequest = (ListDatabasesRequest) o;
-        return Objects.equals(this.xLanguage, listDatabasesRequest.xLanguage)
-            && Objects.equals(this.instanceId, listDatabasesRequest.instanceId)
-            && Objects.equals(this.page, listDatabasesRequest.page)
-            && Objects.equals(this.limit, listDatabasesRequest.limit);
+        ListDatabasesRequest that = (ListDatabasesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

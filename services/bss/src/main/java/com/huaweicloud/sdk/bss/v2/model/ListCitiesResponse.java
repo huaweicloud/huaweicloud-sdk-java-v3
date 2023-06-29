@@ -77,16 +77,15 @@ public class ListCitiesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCitiesResponse listCitiesResponse = (ListCitiesResponse) o;
-        return Objects.equals(this.count, listCitiesResponse.count)
-            && Objects.equals(this.cities, listCitiesResponse.cities);
+        ListCitiesResponse that = (ListCitiesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.cities, that.cities);
     }
 
     @Override

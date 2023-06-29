@@ -84,16 +84,15 @@ public class ListRolesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRolesResponse listRolesResponse = (ListRolesResponse) o;
-        return Objects.equals(this.roles, listRolesResponse.roles)
-            && Objects.equals(this.pageInfo, listRolesResponse.pageInfo);
+        ListRolesResponse that = (ListRolesResponse) obj;
+        return Objects.equals(this.roles, that.roles) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

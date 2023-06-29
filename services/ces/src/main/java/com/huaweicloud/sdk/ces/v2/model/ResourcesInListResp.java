@@ -96,17 +96,17 @@ public class ResourcesInListResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcesInListResp resourcesInListResp = (ResourcesInListResp) o;
-        return Objects.equals(this.resourceGroupId, resourcesInListResp.resourceGroupId)
-            && Objects.equals(this.resourceGroupName, resourcesInListResp.resourceGroupName)
-            && Objects.equals(this.dimensions, resourcesInListResp.dimensions);
+        ResourcesInListResp that = (ResourcesInListResp) obj;
+        return Objects.equals(this.resourceGroupId, that.resourceGroupId)
+            && Objects.equals(this.resourceGroupName, that.resourceGroupName)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

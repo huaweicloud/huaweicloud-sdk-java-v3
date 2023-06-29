@@ -121,19 +121,17 @@ public class StartTaskGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartTaskGroupReq startTaskGroupReq = (StartTaskGroupReq) o;
-        return Objects.equals(this.srcAk, startTaskGroupReq.srcAk)
-            && Objects.equals(this.srcSk, startTaskGroupReq.srcSk)
-            && Objects.equals(this.dstAk, startTaskGroupReq.dstAk)
-            && Objects.equals(this.dstSk, startTaskGroupReq.dstSk)
-            && Objects.equals(this.sourceCdnAuthenticationKey, startTaskGroupReq.sourceCdnAuthenticationKey);
+        StartTaskGroupReq that = (StartTaskGroupReq) obj;
+        return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.dstAk, that.dstAk) && Objects.equals(this.dstSk, that.dstSk)
+            && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey);
     }
 
     @Override

@@ -78,17 +78,16 @@ public class UpdateBlackWhiteListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBlackWhiteListResponse updateBlackWhiteListResponse = (UpdateBlackWhiteListResponse) o;
-        return Objects.equals(this.code, updateBlackWhiteListResponse.code)
-            && Objects.equals(this.result, updateBlackWhiteListResponse.result)
-            && Objects.equals(this.data, updateBlackWhiteListResponse.data);
+        UpdateBlackWhiteListResponse that = (UpdateBlackWhiteListResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

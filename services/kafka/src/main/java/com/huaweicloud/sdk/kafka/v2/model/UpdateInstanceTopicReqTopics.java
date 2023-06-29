@@ -121,19 +121,18 @@ public class UpdateInstanceTopicReqTopics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceTopicReqTopics updateInstanceTopicReqTopics = (UpdateInstanceTopicReqTopics) o;
-        return Objects.equals(this.id, updateInstanceTopicReqTopics.id)
-            && Objects.equals(this.retentionTime, updateInstanceTopicReqTopics.retentionTime)
-            && Objects.equals(this.syncReplication, updateInstanceTopicReqTopics.syncReplication)
-            && Objects.equals(this.syncMessageFlush, updateInstanceTopicReqTopics.syncMessageFlush)
-            && Objects.equals(this.newPartitionNumbers, updateInstanceTopicReqTopics.newPartitionNumbers);
+        UpdateInstanceTopicReqTopics that = (UpdateInstanceTopicReqTopics) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.retentionTime, that.retentionTime)
+            && Objects.equals(this.syncReplication, that.syncReplication)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.newPartitionNumbers, that.newPartitionNumbers);
     }
 
     @Override

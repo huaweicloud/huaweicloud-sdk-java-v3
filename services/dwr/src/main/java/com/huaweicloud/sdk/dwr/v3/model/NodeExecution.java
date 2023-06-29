@@ -169,20 +169,18 @@ public class NodeExecution {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeExecution nodeExecution = (NodeExecution) o;
-        return Objects.equals(this.status, nodeExecution.status) && Objects.equals(this.input, nodeExecution.input)
-            && Objects.equals(this.output, nodeExecution.output)
-            && Objects.equals(this.beginTime, nodeExecution.beginTime)
-            && Objects.equals(this.endTime, nodeExecution.endTime)
-            && Objects.equals(this.errorMessage, nodeExecution.errorMessage)
-            && Objects.equals(this.requestId, nodeExecution.requestId);
+        NodeExecution that = (NodeExecution) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

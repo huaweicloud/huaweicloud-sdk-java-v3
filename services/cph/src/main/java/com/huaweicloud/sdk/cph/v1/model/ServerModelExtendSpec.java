@@ -191,22 +191,18 @@ public class ServerModelExtendSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerModelExtendSpec serverModelExtendSpec = (ServerModelExtendSpec) o;
-        return Objects.equals(this.cpu, serverModelExtendSpec.cpu)
-            && Objects.equals(this.memory, serverModelExtendSpec.memory)
-            && Objects.equals(this.disk, serverModelExtendSpec.disk)
-            && Objects.equals(this.networkInterface, serverModelExtendSpec.networkInterface)
-            && Objects.equals(this.gpu, serverModelExtendSpec.gpu)
-            && Objects.equals(this.bmsFlavor, serverModelExtendSpec.bmsFlavor)
-            && Objects.equals(this.gpuCount, serverModelExtendSpec.gpuCount)
-            && Objects.equals(this.numaCount, serverModelExtendSpec.numaCount);
+        ServerModelExtendSpec that = (ServerModelExtendSpec) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.networkInterface, that.networkInterface)
+            && Objects.equals(this.gpu, that.gpu) && Objects.equals(this.bmsFlavor, that.bmsFlavor)
+            && Objects.equals(this.gpuCount, that.gpuCount) && Objects.equals(this.numaCount, that.numaCount);
     }
 
     @Override

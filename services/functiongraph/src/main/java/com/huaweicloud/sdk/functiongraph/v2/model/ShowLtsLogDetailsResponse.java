@@ -100,18 +100,16 @@ public class ShowLtsLogDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLtsLogDetailsResponse showLtsLogDetailsResponse = (ShowLtsLogDetailsResponse) o;
-        return Objects.equals(this.groupName, showLtsLogDetailsResponse.groupName)
-            && Objects.equals(this.groupId, showLtsLogDetailsResponse.groupId)
-            && Objects.equals(this.streamId, showLtsLogDetailsResponse.streamId)
-            && Objects.equals(this.streamName, showLtsLogDetailsResponse.streamName);
+        ShowLtsLogDetailsResponse that = (ShowLtsLogDetailsResponse) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.streamId, that.streamId) && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override

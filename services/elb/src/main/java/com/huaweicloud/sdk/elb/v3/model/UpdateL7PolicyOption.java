@@ -282,24 +282,22 @@ public class UpdateL7PolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7PolicyOption updateL7PolicyOption = (UpdateL7PolicyOption) o;
-        return Objects.equals(this.adminStateUp, updateL7PolicyOption.adminStateUp)
-            && Objects.equals(this.description, updateL7PolicyOption.description)
-            && Objects.equals(this.name, updateL7PolicyOption.name)
-            && Objects.equals(this.redirectListenerId, updateL7PolicyOption.redirectListenerId)
-            && Objects.equals(this.redirectPoolId, updateL7PolicyOption.redirectPoolId)
-            && Objects.equals(this.redirectUrlConfig, updateL7PolicyOption.redirectUrlConfig)
-            && Objects.equals(this.fixedResponseConfig, updateL7PolicyOption.fixedResponseConfig)
-            && Objects.equals(this.redirectPoolsExtendConfig, updateL7PolicyOption.redirectPoolsExtendConfig)
-            && Objects.equals(this.rules, updateL7PolicyOption.rules)
-            && Objects.equals(this.priority, updateL7PolicyOption.priority);
+        UpdateL7PolicyOption that = (UpdateL7PolicyOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectPoolId, that.redirectPoolId)
+            && Objects.equals(this.redirectUrlConfig, that.redirectUrlConfig)
+            && Objects.equals(this.fixedResponseConfig, that.fixedResponseConfig)
+            && Objects.equals(this.redirectPoolsExtendConfig, that.redirectPoolsExtendConfig)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

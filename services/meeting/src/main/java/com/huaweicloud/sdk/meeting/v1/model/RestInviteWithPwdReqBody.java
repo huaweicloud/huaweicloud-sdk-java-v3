@@ -143,20 +143,18 @@ public class RestInviteWithPwdReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestInviteWithPwdReqBody restInviteWithPwdReqBody = (RestInviteWithPwdReqBody) o;
-        return Objects.equals(this.callNum, restInviteWithPwdReqBody.callNum)
-            && Objects.equals(this.orgID, restInviteWithPwdReqBody.orgID)
-            && Objects.equals(this.confID, restInviteWithPwdReqBody.confID)
-            && Objects.equals(this.pwd, restInviteWithPwdReqBody.pwd)
-            && Objects.equals(this.numBelongsType, restInviteWithPwdReqBody.numBelongsType)
-            && Objects.equals(this.isNotOverlayPidName, restInviteWithPwdReqBody.isNotOverlayPidName);
+        RestInviteWithPwdReqBody that = (RestInviteWithPwdReqBody) obj;
+        return Objects.equals(this.callNum, that.callNum) && Objects.equals(this.orgID, that.orgID)
+            && Objects.equals(this.confID, that.confID) && Objects.equals(this.pwd, that.pwd)
+            && Objects.equals(this.numBelongsType, that.numBelongsType)
+            && Objects.equals(this.isNotOverlayPidName, that.isNotOverlayPidName);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class TaskBasicRequestBody {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,18 @@ public class TaskBasicRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBasicRequestBody taskBasicRequestBody = (TaskBasicRequestBody) o;
-        return Objects.equals(this.taskName, taskBasicRequestBody.taskName)
-            && Objects.equals(this.taskType, taskBasicRequestBody.taskType)
-            && Objects.equals(this.sourceDatasourceId, taskBasicRequestBody.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, taskBasicRequestBody.targetDatasourceId)
-            && Objects.equals(this.description, taskBasicRequestBody.description)
-            && Objects.equals(this.taskTag, taskBasicRequestBody.taskTag);
+        TaskBasicRequestBody that = (TaskBasicRequestBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.taskTag, that.taskTag);
     }
 
     @Override

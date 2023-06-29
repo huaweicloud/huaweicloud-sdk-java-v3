@@ -121,19 +121,17 @@ public class EnvTopoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvTopoRequest envTopoRequest = (EnvTopoRequest) o;
-        return Objects.equals(this.targetEnvId, envTopoRequest.targetEnvId)
-            && Objects.equals(this.direction, envTopoRequest.direction)
-            && Objects.equals(this.endTime, envTopoRequest.endTime)
-            && Objects.equals(this.startTime, envTopoRequest.startTime)
-            && Objects.equals(this.filterUser, envTopoRequest.filterUser);
+        EnvTopoRequest that = (EnvTopoRequest) obj;
+        return Objects.equals(this.targetEnvId, that.targetEnvId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.filterUser, that.filterUser);
     }
 
     @Override

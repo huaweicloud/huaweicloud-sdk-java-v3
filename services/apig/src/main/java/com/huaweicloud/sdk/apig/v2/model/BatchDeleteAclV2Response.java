@@ -75,16 +75,15 @@ public class BatchDeleteAclV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteAclV2Response batchDeleteAclV2Response = (BatchDeleteAclV2Response) o;
-        return Objects.equals(this.successCount, batchDeleteAclV2Response.successCount)
-            && Objects.equals(this.failure, batchDeleteAclV2Response.failure);
+        BatchDeleteAclV2Response that = (BatchDeleteAclV2Response) obj;
+        return Objects.equals(this.successCount, that.successCount) && Objects.equals(this.failure, that.failure);
     }
 
     @Override

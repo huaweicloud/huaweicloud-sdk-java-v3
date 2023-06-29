@@ -55,15 +55,15 @@ public class NodeTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTag nodeTag = (NodeTag) o;
-        return Objects.equals(this.key, nodeTag.key) && Objects.equals(this.value, nodeTag.value);
+        NodeTag that = (NodeTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

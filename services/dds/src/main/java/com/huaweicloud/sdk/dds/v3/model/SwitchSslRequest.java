@@ -65,16 +65,15 @@ public class SwitchSslRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchSslRequest switchSslRequest = (SwitchSslRequest) o;
-        return Objects.equals(this.instanceId, switchSslRequest.instanceId)
-            && Objects.equals(this.body, switchSslRequest.body);
+        SwitchSslRequest that = (SwitchSslRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

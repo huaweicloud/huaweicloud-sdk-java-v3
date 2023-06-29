@@ -61,22 +61,15 @@ public class CreateTrackerRequestBody {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrackerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrackerTypeEnum(value));
         }
 
         public static TrackerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,23 +281,19 @@ public class CreateTrackerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTrackerRequestBody createTrackerRequestBody = (CreateTrackerRequestBody) o;
-        return Objects.equals(this.trackerType, createTrackerRequestBody.trackerType)
-            && Objects.equals(this.trackerName, createTrackerRequestBody.trackerName)
-            && Objects.equals(this.isLtsEnabled, createTrackerRequestBody.isLtsEnabled)
-            && Objects.equals(this.obsInfo, createTrackerRequestBody.obsInfo)
-            && Objects.equals(this.isSupportTraceFilesEncryption,
-                createTrackerRequestBody.isSupportTraceFilesEncryption)
-            && Objects.equals(this.kmsId, createTrackerRequestBody.kmsId)
-            && Objects.equals(this.isSupportValidate, createTrackerRequestBody.isSupportValidate)
-            && Objects.equals(this.dataBucket, createTrackerRequestBody.dataBucket);
+        CreateTrackerRequestBody that = (CreateTrackerRequestBody) obj;
+        return Objects.equals(this.trackerType, that.trackerType) && Objects.equals(this.trackerName, that.trackerName)
+            && Objects.equals(this.isLtsEnabled, that.isLtsEnabled) && Objects.equals(this.obsInfo, that.obsInfo)
+            && Objects.equals(this.isSupportTraceFilesEncryption, that.isSupportTraceFilesEncryption)
+            && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.isSupportValidate, that.isSupportValidate)
+            && Objects.equals(this.dataBucket, that.dataBucket);
     }
 
     @Override

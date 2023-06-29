@@ -107,18 +107,16 @@ public class DeleteAccessoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAccessoriesRequest deleteAccessoriesRequest = (DeleteAccessoriesRequest) o;
-        return Objects.equals(this.accessoryId, deleteAccessoriesRequest.accessoryId)
-            && Objects.equals(this.xSite, deleteAccessoriesRequest.xSite)
-            && Objects.equals(this.xLanguage, deleteAccessoriesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, deleteAccessoriesRequest.xTimeZone);
+        DeleteAccessoriesRequest that = (DeleteAccessoriesRequest) obj;
+        return Objects.equals(this.accessoryId, that.accessoryId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class Notification {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Notification notification = (Notification) o;
-        return Objects.equals(this.type, notification.type)
-            && Objects.equals(this.notificationList, notification.notificationList);
+        Notification that = (Notification) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.notificationList, that.notificationList);
     }
 
     @Override

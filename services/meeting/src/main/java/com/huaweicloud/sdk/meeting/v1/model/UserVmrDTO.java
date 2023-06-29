@@ -106,22 +106,15 @@ public class UserVmrDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,21 +290,19 @@ public class UserVmrDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserVmrDTO userVmrDTO = (UserVmrDTO) o;
-        return Objects.equals(this.id, userVmrDTO.id) && Objects.equals(this.vmrId, userVmrDTO.vmrId)
-            && Objects.equals(this.vmrName, userVmrDTO.vmrName) && Objects.equals(this.vmrMode, userVmrDTO.vmrMode)
-            && Objects.equals(this.vmrPkgId, userVmrDTO.vmrPkgId)
-            && Objects.equals(this.vmrPkgName, userVmrDTO.vmrPkgName)
-            && Objects.equals(this.vmrPkgParties, userVmrDTO.vmrPkgParties)
-            && Objects.equals(this.vmrPkgLength, userVmrDTO.vmrPkgLength)
-            && Objects.equals(this.status, userVmrDTO.status);
+        UserVmrDTO that = (UserVmrDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.vmrName, that.vmrName) && Objects.equals(this.vmrMode, that.vmrMode)
+            && Objects.equals(this.vmrPkgId, that.vmrPkgId) && Objects.equals(this.vmrPkgName, that.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, that.vmrPkgParties)
+            && Objects.equals(this.vmrPkgLength, that.vmrPkgLength) && Objects.equals(this.status, that.status);
     }
 
     @Override

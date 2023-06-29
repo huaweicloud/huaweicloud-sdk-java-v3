@@ -55,15 +55,15 @@ public class LoginTokenDomain {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginTokenDomain loginTokenDomain = (LoginTokenDomain) o;
-        return Objects.equals(this.name, loginTokenDomain.name) && Objects.equals(this.id, loginTokenDomain.id);
+        LoginTokenDomain that = (LoginTokenDomain) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override

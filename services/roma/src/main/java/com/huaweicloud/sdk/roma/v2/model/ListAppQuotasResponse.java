@@ -97,17 +97,16 @@ public class ListAppQuotasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuotasResponse listAppQuotasResponse = (ListAppQuotasResponse) o;
-        return Objects.equals(this.size, listAppQuotasResponse.size)
-            && Objects.equals(this.total, listAppQuotasResponse.total)
-            && Objects.equals(this.quotas, listAppQuotasResponse.quotas);
+        ListAppQuotasResponse that = (ListAppQuotasResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

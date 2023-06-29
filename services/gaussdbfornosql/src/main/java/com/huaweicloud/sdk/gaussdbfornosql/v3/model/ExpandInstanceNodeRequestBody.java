@@ -77,17 +77,16 @@ public class ExpandInstanceNodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandInstanceNodeRequestBody expandInstanceNodeRequestBody = (ExpandInstanceNodeRequestBody) o;
-        return Objects.equals(this.num, expandInstanceNodeRequestBody.num)
-            && Objects.equals(this.subnetId, expandInstanceNodeRequestBody.subnetId)
-            && Objects.equals(this.isAutoPay, expandInstanceNodeRequestBody.isAutoPay);
+        ExpandInstanceNodeRequestBody that = (ExpandInstanceNodeRequestBody) obj;
+        return Objects.equals(this.num, that.num) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

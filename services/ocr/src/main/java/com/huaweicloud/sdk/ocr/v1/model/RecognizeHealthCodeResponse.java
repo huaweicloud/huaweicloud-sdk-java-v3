@@ -44,15 +44,15 @@ public class RecognizeHealthCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeHealthCodeResponse recognizeHealthCodeResponse = (RecognizeHealthCodeResponse) o;
-        return Objects.equals(this.result, recognizeHealthCodeResponse.result);
+        RecognizeHealthCodeResponse that = (RecognizeHealthCodeResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

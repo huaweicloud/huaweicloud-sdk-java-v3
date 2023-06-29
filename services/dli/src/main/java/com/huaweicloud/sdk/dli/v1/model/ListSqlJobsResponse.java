@@ -119,18 +119,16 @@ public class ListSqlJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSqlJobsResponse listSqlJobsResponse = (ListSqlJobsResponse) o;
-        return Objects.equals(this.isSuccess, listSqlJobsResponse.isSuccess)
-            && Objects.equals(this.message, listSqlJobsResponse.message)
-            && Objects.equals(this.jobCount, listSqlJobsResponse.jobCount)
-            && Objects.equals(this.jobs, listSqlJobsResponse.jobs);
+        ListSqlJobsResponse that = (ListSqlJobsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobCount, that.jobCount) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

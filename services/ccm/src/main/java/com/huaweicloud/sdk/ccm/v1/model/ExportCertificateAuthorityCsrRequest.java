@@ -33,16 +33,15 @@ public class ExportCertificateAuthorityCsrRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportCertificateAuthorityCsrRequest exportCertificateAuthorityCsrRequest =
-            (ExportCertificateAuthorityCsrRequest) o;
-        return Objects.equals(this.caId, exportCertificateAuthorityCsrRequest.caId);
+        ExportCertificateAuthorityCsrRequest that = (ExportCertificateAuthorityCsrRequest) obj;
+        return Objects.equals(this.caId, that.caId);
     }
 
     @Override

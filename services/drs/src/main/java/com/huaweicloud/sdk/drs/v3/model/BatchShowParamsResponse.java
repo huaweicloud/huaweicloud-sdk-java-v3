@@ -75,16 +75,15 @@ public class BatchShowParamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowParamsResponse batchShowParamsResponse = (BatchShowParamsResponse) o;
-        return Objects.equals(this.paramsList, batchShowParamsResponse.paramsList)
-            && Objects.equals(this.count, batchShowParamsResponse.count);
+        BatchShowParamsResponse that = (BatchShowParamsResponse) obj;
+        return Objects.equals(this.paramsList, that.paramsList) && Objects.equals(this.count, that.count);
     }
 
     @Override

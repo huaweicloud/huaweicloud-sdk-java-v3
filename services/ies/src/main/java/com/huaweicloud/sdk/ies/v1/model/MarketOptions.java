@@ -65,16 +65,16 @@ public class MarketOptions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MarketOptions marketOptions = (MarketOptions) o;
-        return Objects.equals(this.chargeMode, marketOptions.chargeMode)
-            && Objects.equals(this.prepaidOptions, marketOptions.prepaidOptions);
+        MarketOptions that = (MarketOptions) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override

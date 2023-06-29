@@ -408,32 +408,26 @@ public class ThreatIntelProperties {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThreatIntelProperties threatIntelProperties = (ThreatIntelProperties) o;
-        return Objects.equals(this.fileMd5, threatIntelProperties.fileMd5)
-            && Objects.equals(this.fileSha1, threatIntelProperties.fileSha1)
-            && Objects.equals(this.fileSha256, threatIntelProperties.fileSha256)
-            && Objects.equals(this.fileName, threatIntelProperties.fileName)
-            && Objects.equals(this.createTime, threatIntelProperties.createTime)
-            && Objects.equals(this.fileClass, threatIntelProperties.fileClass)
-            && Objects.equals(this.fileFamily, threatIntelProperties.fileFamily)
-            && Objects.equals(this.fileMaltype, threatIntelProperties.fileMaltype)
-            && Objects.equals(this.ipResolvesToRefs, threatIntelProperties.ipResolvesToRefs)
-            && Objects.equals(this.belongsToRefs, threatIntelProperties.belongsToRefs)
-            && Objects.equals(this.ipLocation, threatIntelProperties.ipLocation)
-            && Objects.equals(this.domainFamily, threatIntelProperties.domainFamily)
-            && Objects.equals(this.domainResolvesToRefs, threatIntelProperties.domainResolvesToRefs)
-            && Objects.equals(this.domainDnsType, threatIntelProperties.domainDnsType)
-            && Objects.equals(this.urlHost, threatIntelProperties.urlHost)
-            && Objects.equals(this.urlResolvesToRefs, threatIntelProperties.urlResolvesToRefs)
-            && Objects.equals(this.displayName, threatIntelProperties.displayName)
-            && Objects.equals(this.urlBelongsToRef, threatIntelProperties.urlBelongsToRef);
+        ThreatIntelProperties that = (ThreatIntelProperties) obj;
+        return Objects.equals(this.fileMd5, that.fileMd5) && Objects.equals(this.fileSha1, that.fileSha1)
+            && Objects.equals(this.fileSha256, that.fileSha256) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileClass, that.fileClass)
+            && Objects.equals(this.fileFamily, that.fileFamily) && Objects.equals(this.fileMaltype, that.fileMaltype)
+            && Objects.equals(this.ipResolvesToRefs, that.ipResolvesToRefs)
+            && Objects.equals(this.belongsToRefs, that.belongsToRefs)
+            && Objects.equals(this.ipLocation, that.ipLocation) && Objects.equals(this.domainFamily, that.domainFamily)
+            && Objects.equals(this.domainResolvesToRefs, that.domainResolvesToRefs)
+            && Objects.equals(this.domainDnsType, that.domainDnsType) && Objects.equals(this.urlHost, that.urlHost)
+            && Objects.equals(this.urlResolvesToRefs, that.urlResolvesToRefs)
+            && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.urlBelongsToRef, that.urlBelongsToRef);
     }
 
     @Override

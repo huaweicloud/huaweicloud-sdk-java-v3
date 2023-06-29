@@ -52,15 +52,15 @@ public class ApplyConfigurationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyConfigurationRequestBody applyConfigurationRequestBody = (ApplyConfigurationRequestBody) o;
-        return Objects.equals(this.instanceIds, applyConfigurationRequestBody.instanceIds);
+        ApplyConfigurationRequestBody that = (ApplyConfigurationRequestBody) obj;
+        return Objects.equals(this.instanceIds, that.instanceIds);
     }
 
     @Override

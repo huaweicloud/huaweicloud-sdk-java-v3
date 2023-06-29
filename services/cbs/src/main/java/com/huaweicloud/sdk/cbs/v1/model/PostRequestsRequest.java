@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.PostOldRequestsReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class PostRequestsRequest  {
-
+public class PostRequestsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private PostOldRequestsReq body;
 
@@ -35,9 +25,6 @@ public class PostRequestsRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * qabot编号，UUID格式，如：303a0a00-c88a-43e3-aa2f-d5b8b9832b02。
@@ -51,22 +38,19 @@ public class PostRequestsRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public PostRequestsRequest withBody(PostOldRequestsReq body) {
         this.body = body;
         return this;
     }
 
     public PostRequestsRequest withBody(Consumer<PostOldRequestsReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PostOldRequestsReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class PostRequestsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostRequestsRequest postRequestsRequest = (PostRequestsRequest) o;
-        return Objects.equals(this.qabotId, postRequestsRequest.qabotId) &&
-            Objects.equals(this.body, postRequestsRequest.body);
+        PostRequestsRequest that = (PostRequestsRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class PostRequestsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class PostRequestsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

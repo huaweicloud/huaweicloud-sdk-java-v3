@@ -85,22 +85,15 @@ public class ExportOpenApiReq {
             if (value == null) {
                 return null;
             }
-            DefineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefineEnum(value));
         }
 
         public static DefineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,15 @@ public class ExportOpenApiReq {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -339,19 +325,17 @@ public class ExportOpenApiReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportOpenApiReq exportOpenApiReq = (ExportOpenApiReq) o;
-        return Objects.equals(this.envId, exportOpenApiReq.envId)
-            && Objects.equals(this.groupId, exportOpenApiReq.groupId)
-            && Objects.equals(this.define, exportOpenApiReq.define) && Objects.equals(this.type, exportOpenApiReq.type)
-            && Objects.equals(this.version, exportOpenApiReq.version)
-            && Objects.equals(this.apis, exportOpenApiReq.apis);
+        ExportOpenApiReq that = (ExportOpenApiReq) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.define, that.define) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.apis, that.apis);
     }
 
     @Override

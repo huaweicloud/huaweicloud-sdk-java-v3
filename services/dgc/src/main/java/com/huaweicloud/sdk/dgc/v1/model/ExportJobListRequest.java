@@ -65,16 +65,15 @@ public class ExportJobListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportJobListRequest exportJobListRequest = (ExportJobListRequest) o;
-        return Objects.equals(this.workspace, exportJobListRequest.workspace)
-            && Objects.equals(this.body, exportJobListRequest.body);
+        ExportJobListRequest that = (ExportJobListRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

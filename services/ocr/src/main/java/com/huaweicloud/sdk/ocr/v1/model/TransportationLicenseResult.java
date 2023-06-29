@@ -297,27 +297,25 @@ public class TransportationLicenseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransportationLicenseResult transportationLicenseResult = (TransportationLicenseResult) o;
-        return Objects.equals(this.ownerName, transportationLicenseResult.ownerName)
-            && Objects.equals(this.licenseNumber, transportationLicenseResult.licenseNumber)
-            && Objects.equals(this.vehicleNumber, transportationLicenseResult.vehicleNumber)
-            && Objects.equals(this.vehicleType, transportationLicenseResult.vehicleType)
-            && Objects.equals(this.maximumCapacity, transportationLicenseResult.maximumCapacity)
-            && Objects.equals(this.vehicleSize, transportationLicenseResult.vehicleSize)
-            && Objects.equals(this.issuingAuthority, transportationLicenseResult.issuingAuthority)
-            && Objects.equals(this.issueDate, transportationLicenseResult.issueDate)
-            && Objects.equals(this.ownerAddress, transportationLicenseResult.ownerAddress)
-            && Objects.equals(this.economicType, transportationLicenseResult.economicType)
-            && Objects.equals(this.businessCertificate, transportationLicenseResult.businessCertificate)
-            && Objects.equals(this.businessScope, transportationLicenseResult.businessScope)
-            && Objects.equals(this.confidence, transportationLicenseResult.confidence);
+        TransportationLicenseResult that = (TransportationLicenseResult) obj;
+        return Objects.equals(this.ownerName, that.ownerName) && Objects.equals(this.licenseNumber, that.licenseNumber)
+            && Objects.equals(this.vehicleNumber, that.vehicleNumber)
+            && Objects.equals(this.vehicleType, that.vehicleType)
+            && Objects.equals(this.maximumCapacity, that.maximumCapacity)
+            && Objects.equals(this.vehicleSize, that.vehicleSize)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.ownerAddress, that.ownerAddress)
+            && Objects.equals(this.economicType, that.economicType)
+            && Objects.equals(this.businessCertificate, that.businessCertificate)
+            && Objects.equals(this.businessScope, that.businessScope)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

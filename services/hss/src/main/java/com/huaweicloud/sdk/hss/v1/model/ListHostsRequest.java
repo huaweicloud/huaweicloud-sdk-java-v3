@@ -279,26 +279,21 @@ public class ListHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostsRequest listHostsRequest = (ListHostsRequest) o;
-        return Objects.equals(this.version, listHostsRequest.version)
-            && Objects.equals(this.agentStatus, listHostsRequest.agentStatus)
-            && Objects.equals(this.hostStatus, listHostsRequest.hostStatus)
-            && Objects.equals(this.protectStatus, listHostsRequest.protectStatus)
-            && Objects.equals(this.detectResult, listHostsRequest.detectResult)
-            && Objects.equals(this.hostName, listHostsRequest.hostName)
-            && Objects.equals(this.hostIp, listHostsRequest.hostIp)
-            && Objects.equals(this.publicIp, listHostsRequest.publicIp)
-            && Objects.equals(this.osType, listHostsRequest.osType)
-            && Objects.equals(this.chargingMode, listHostsRequest.chargingMode)
-            && Objects.equals(this.limit, listHostsRequest.limit)
-            && Objects.equals(this.offset, listHostsRequest.offset);
+        ListHostsRequest that = (ListHostsRequest) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.detectResult, that.detectResult) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

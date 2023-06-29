@@ -77,17 +77,17 @@ public class ConfirmTargetDBReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmTargetDBReq confirmTargetDBReq = (ConfirmTargetDBReq) o;
-        return Objects.equals(this.evaluationProjectId, confirmTargetDBReq.evaluationProjectId)
-            && Objects.equals(this.targetDbType, confirmTargetDBReq.targetDbType)
-            && Objects.equals(this.targetDbVersion, confirmTargetDBReq.targetDbVersion);
+        ConfirmTargetDBReq that = (ConfirmTargetDBReq) obj;
+        return Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.targetDbType, that.targetDbType)
+            && Objects.equals(this.targetDbVersion, that.targetDbVersion);
     }
 
     @Override

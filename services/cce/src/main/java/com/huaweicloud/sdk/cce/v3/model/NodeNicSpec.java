@@ -83,16 +83,15 @@ public class NodeNicSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeNicSpec nodeNicSpec = (NodeNicSpec) o;
-        return Objects.equals(this.primaryNic, nodeNicSpec.primaryNic)
-            && Objects.equals(this.extNics, nodeNicSpec.extNics);
+        NodeNicSpec that = (NodeNicSpec) obj;
+        return Objects.equals(this.primaryNic, that.primaryNic) && Objects.equals(this.extNics, that.extNics);
     }
 
     @Override

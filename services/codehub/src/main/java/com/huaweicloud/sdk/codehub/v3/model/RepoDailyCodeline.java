@@ -77,17 +77,16 @@ public class RepoDailyCodeline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoDailyCodeline repoDailyCodeline = (RepoDailyCodeline) o;
-        return Objects.equals(this.additions, repoDailyCodeline.additions)
-            && Objects.equals(this.date, repoDailyCodeline.date)
-            && Objects.equals(this.deletions, repoDailyCodeline.deletions);
+        RepoDailyCodeline that = (RepoDailyCodeline) obj;
+        return Objects.equals(this.additions, that.additions) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.deletions, that.deletions);
     }
 
     @Override

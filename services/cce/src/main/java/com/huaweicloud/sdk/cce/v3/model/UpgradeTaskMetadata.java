@@ -77,17 +77,16 @@ public class UpgradeTaskMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeTaskMetadata upgradeTaskMetadata = (UpgradeTaskMetadata) o;
-        return Objects.equals(this.uid, upgradeTaskMetadata.uid)
-            && Objects.equals(this.creationTimestamp, upgradeTaskMetadata.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, upgradeTaskMetadata.updateTimestamp);
+        UpgradeTaskMetadata that = (UpgradeTaskMetadata) obj;
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
     }
 
     @Override

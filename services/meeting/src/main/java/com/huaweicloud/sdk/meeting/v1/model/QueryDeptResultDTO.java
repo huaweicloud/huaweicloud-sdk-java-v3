@@ -316,27 +316,23 @@ public class QueryDeptResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDeptResultDTO queryDeptResultDTO = (QueryDeptResultDTO) o;
-        return Objects.equals(this.deptCode, queryDeptResultDTO.deptCode)
-            && Objects.equals(this.deptLevel, queryDeptResultDTO.deptLevel)
-            && Objects.equals(this.deptName, queryDeptResultDTO.deptName)
-            && Objects.equals(this.deptNamePath, queryDeptResultDTO.deptNamePath)
-            && Objects.equals(this.isLeafNode, queryDeptResultDTO.isLeafNode)
-            && Objects.equals(this.parentDeptCode, queryDeptResultDTO.parentDeptCode)
-            && Objects.equals(this.deptCodePath, queryDeptResultDTO.deptCodePath)
-            && Objects.equals(this.note, queryDeptResultDTO.note)
-            && Objects.equals(this.corpId, queryDeptResultDTO.corpId)
-            && Objects.equals(this.inPermission, queryDeptResultDTO.inPermission)
-            && Objects.equals(this.outPermission, queryDeptResultDTO.outPermission)
-            && Objects.equals(this.designatedOutDeptCodes, queryDeptResultDTO.designatedOutDeptCodes)
-            && Objects.equals(this.sortLevel, queryDeptResultDTO.sortLevel);
+        QueryDeptResultDTO that = (QueryDeptResultDTO) obj;
+        return Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.deptLevel, that.deptLevel)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.isLeafNode, that.isLeafNode)
+            && Objects.equals(this.parentDeptCode, that.parentDeptCode)
+            && Objects.equals(this.deptCodePath, that.deptCodePath) && Objects.equals(this.note, that.note)
+            && Objects.equals(this.corpId, that.corpId) && Objects.equals(this.inPermission, that.inPermission)
+            && Objects.equals(this.outPermission, that.outPermission)
+            && Objects.equals(this.designatedOutDeptCodes, that.designatedOutDeptCodes)
+            && Objects.equals(this.sortLevel, that.sortLevel);
     }
 
     @Override

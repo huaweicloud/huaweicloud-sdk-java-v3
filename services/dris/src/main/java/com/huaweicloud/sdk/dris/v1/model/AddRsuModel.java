@@ -77,17 +77,16 @@ public class AddRsuModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRsuModel addRsuModel = (AddRsuModel) o;
-        return Objects.equals(this.name, addRsuModel.name)
-            && Objects.equals(this.manufacturerName, addRsuModel.manufacturerName)
-            && Objects.equals(this.description, addRsuModel.description);
+        AddRsuModel that = (AddRsuModel) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

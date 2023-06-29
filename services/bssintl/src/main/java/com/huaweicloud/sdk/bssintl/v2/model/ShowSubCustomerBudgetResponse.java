@@ -100,18 +100,16 @@ public class ShowSubCustomerBudgetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubCustomerBudgetResponse showSubCustomerBudgetResponse = (ShowSubCustomerBudgetResponse) o;
-        return Objects.equals(this.budgetAmount, showSubCustomerBudgetResponse.budgetAmount)
-            && Objects.equals(this.usedAmount, showSubCustomerBudgetResponse.usedAmount)
-            && Objects.equals(this.measureId, showSubCustomerBudgetResponse.measureId)
-            && Objects.equals(this.currency, showSubCustomerBudgetResponse.currency);
+        ShowSubCustomerBudgetResponse that = (ShowSubCustomerBudgetResponse) obj;
+        return Objects.equals(this.budgetAmount, that.budgetAmount) && Objects.equals(this.usedAmount, that.usedAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.currency, that.currency);
     }
 
     @Override

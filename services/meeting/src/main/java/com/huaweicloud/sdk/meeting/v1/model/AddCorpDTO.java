@@ -167,18 +167,17 @@ public class AddCorpDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCorpDTO addCorpDTO = (AddCorpDTO) o;
-        return Objects.equals(this.basicInfo, addCorpDTO.basicInfo)
-            && Objects.equals(this.adminInfo, addCorpDTO.adminInfo) && Objects.equals(this.resInfo, addCorpDTO.resInfo)
-            && Objects.equals(this.groupId, addCorpDTO.groupId)
-            && Objects.equals(this.propertyInfo, addCorpDTO.propertyInfo);
+        AddCorpDTO that = (AddCorpDTO) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.adminInfo, that.adminInfo)
+            && Objects.equals(this.resInfo, that.resInfo) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.propertyInfo, that.propertyInfo);
     }
 
     @Override

@@ -111,22 +111,15 @@ public class ChangeBaremetalNameResponsesServers {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,8 +202,8 @@ public class ChangeBaremetalNameResponsesServers {
     private List<Links> links = null;
 
     /**
-    * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
-    */
+     * 扩展属性，磁盘配置方式，取值为如下两种：MANUAL：API使用镜像中的分区方案和文件系统创建裸金属服务器。如果目标flavor磁盘较大，则API不会对剩余磁盘空间进行分区。AUTO：API使用与目标flavor磁盘大小相同的单个分区创建裸金属服务器，API会自动调整文件系统以适应整个分区。
+     */
     public static final class OsDCFDiskConfigEnum {
 
         /**
@@ -253,22 +246,15 @@ public class ChangeBaremetalNameResponsesServers {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsDCFDiskConfigEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsDCFDiskConfigEnum(value));
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -397,22 +383,15 @@ public class ChangeBaremetalNameResponsesServers {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSTaskStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSTaskStateEnum(value));
         }
 
         public static OsEXTSTSTaskStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -485,22 +464,15 @@ public class ChangeBaremetalNameResponsesServers {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSVmStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSVmStateEnum(value));
         }
 
         public static OsEXTSTSVmStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -624,22 +596,15 @@ public class ChangeBaremetalNameResponsesServers {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostStatusEnum(value));
         }
 
         public static HostStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1626,65 +1591,48 @@ public class ChangeBaremetalNameResponsesServers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeBaremetalNameResponsesServers changeBaremetalNameResponsesServers =
-            (ChangeBaremetalNameResponsesServers) o;
-        return Objects.equals(this.name, changeBaremetalNameResponsesServers.name)
-            && Objects.equals(this.id, changeBaremetalNameResponsesServers.id)
-            && Objects.equals(this.status, changeBaremetalNameResponsesServers.status)
-            && Objects.equals(this.created, changeBaremetalNameResponsesServers.created)
-            && Objects.equals(this.updated, changeBaremetalNameResponsesServers.updated)
-            && Objects.equals(this.flavor, changeBaremetalNameResponsesServers.flavor)
-            && Objects.equals(this.image, changeBaremetalNameResponsesServers.image)
-            && Objects.equals(this.tenantId, changeBaremetalNameResponsesServers.tenantId)
-            && Objects.equals(this.keyName, changeBaremetalNameResponsesServers.keyName)
-            && Objects.equals(this.userId, changeBaremetalNameResponsesServers.userId)
-            && Objects.equals(this.metadata, changeBaremetalNameResponsesServers.metadata)
-            && Objects.equals(this.hostId, changeBaremetalNameResponsesServers.hostId)
-            && Objects.equals(this.addresses, changeBaremetalNameResponsesServers.addresses)
-            && Objects.equals(this.securityGroups, changeBaremetalNameResponsesServers.securityGroups)
-            && Objects.equals(this.links, changeBaremetalNameResponsesServers.links)
-            && Objects.equals(this.osDCFDiskConfig, changeBaremetalNameResponsesServers.osDCFDiskConfig)
-            && Objects.equals(this.osEXTAZAvailabilityZone, changeBaremetalNameResponsesServers.osEXTAZAvailabilityZone)
-            && Objects.equals(this.osEXTSRVATTRHost, changeBaremetalNameResponsesServers.osEXTSRVATTRHost)
-            && Objects.equals(this.osEXTSRVATTRHypervisorHostname,
-                changeBaremetalNameResponsesServers.osEXTSRVATTRHypervisorHostname)
-            && Objects.equals(this.osEXTSRVATTRInstanceName,
-                changeBaremetalNameResponsesServers.osEXTSRVATTRInstanceName)
-            && Objects.equals(this.osEXTSTSPowerState, changeBaremetalNameResponsesServers.osEXTSTSPowerState)
-            && Objects.equals(this.osEXTSTSTaskState, changeBaremetalNameResponsesServers.osEXTSTSTaskState)
-            && Objects.equals(this.osEXTSTSVmState, changeBaremetalNameResponsesServers.osEXTSTSVmState)
-            && Objects.equals(this.osSRVUSGLaunchedAt, changeBaremetalNameResponsesServers.osSRVUSGLaunchedAt)
-            && Objects.equals(this.osSRVUSGTerminatedAt, changeBaremetalNameResponsesServers.osSRVUSGTerminatedAt)
-            && Objects.equals(this.osExtendedVolumesVolumesAttached,
-                changeBaremetalNameResponsesServers.osExtendedVolumesVolumesAttached)
-            && Objects.equals(this.accessIPv4, changeBaremetalNameResponsesServers.accessIPv4)
-            && Objects.equals(this.accessIPv6, changeBaremetalNameResponsesServers.accessIPv6)
-            && Objects.equals(this.fault, changeBaremetalNameResponsesServers.fault)
-            && Objects.equals(this.configDrive, changeBaremetalNameResponsesServers.configDrive)
-            && Objects.equals(this.progress, changeBaremetalNameResponsesServers.progress)
-            && Objects.equals(this.description, changeBaremetalNameResponsesServers.description)
-            && Objects.equals(this.hostStatus, changeBaremetalNameResponsesServers.hostStatus)
-            && Objects.equals(this.osEXTSRVATTRHostname, changeBaremetalNameResponsesServers.osEXTSRVATTRHostname)
-            && Objects.equals(this.osEXTSRVATTRReservationId,
-                changeBaremetalNameResponsesServers.osEXTSRVATTRReservationId)
-            && Objects.equals(this.osEXTSRVATTRLaunchIndex, changeBaremetalNameResponsesServers.osEXTSRVATTRLaunchIndex)
-            && Objects.equals(this.osEXTSRVATTRKernelId, changeBaremetalNameResponsesServers.osEXTSRVATTRKernelId)
-            && Objects.equals(this.osEXTSRVATTRRamdiskId, changeBaremetalNameResponsesServers.osEXTSRVATTRRamdiskId)
-            && Objects.equals(this.osEXTSRVATTRRootDeviceName,
-                changeBaremetalNameResponsesServers.osEXTSRVATTRRootDeviceName)
-            && Objects.equals(this.osEXTSRVATTRUserData, changeBaremetalNameResponsesServers.osEXTSRVATTRUserData)
-            && Objects.equals(this.locked, changeBaremetalNameResponsesServers.locked)
-            && Objects.equals(this.tags, changeBaremetalNameResponsesServers.tags)
-            && Objects.equals(this.sysTags, changeBaremetalNameResponsesServers.sysTags)
-            && Objects.equals(this.enterpriseProjectId, changeBaremetalNameResponsesServers.enterpriseProjectId)
-            && Objects.equals(this.osSchedulerHints, changeBaremetalNameResponsesServers.osSchedulerHints);
+        ChangeBaremetalNameResponsesServers that = (ChangeBaremetalNameResponsesServers) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.osEXTAZAvailabilityZone, that.osEXTAZAvailabilityZone)
+            && Objects.equals(this.osEXTSRVATTRHost, that.osEXTSRVATTRHost)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, that.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.osEXTSRVATTRInstanceName, that.osEXTSRVATTRInstanceName)
+            && Objects.equals(this.osEXTSTSPowerState, that.osEXTSTSPowerState)
+            && Objects.equals(this.osEXTSTSTaskState, that.osEXTSTSTaskState)
+            && Objects.equals(this.osEXTSTSVmState, that.osEXTSTSVmState)
+            && Objects.equals(this.osSRVUSGLaunchedAt, that.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, that.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached, that.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.accessIPv4, that.accessIPv4) && Objects.equals(this.accessIPv6, that.accessIPv6)
+            && Objects.equals(this.fault, that.fault) && Objects.equals(this.configDrive, that.configDrive)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRReservationId, that.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, that.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRKernelId, that.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, that.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName, that.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRUserData, that.osEXTSRVATTRUserData)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints);
     }
 
     @Override

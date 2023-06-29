@@ -33,15 +33,15 @@ public class Parameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Parameter parameter = (Parameter) o;
-        return Objects.equals(this.format, parameter.format);
+        Parameter that = (Parameter) obj;
+        return Objects.equals(this.format, that.format);
     }
 
     @Override

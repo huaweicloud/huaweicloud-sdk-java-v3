@@ -1018,50 +1018,38 @@ public class ListAlertRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertRsp listAlertRsp = (ListAlertRsp) o;
-        return Objects.equals(this.version, listAlertRsp.version)
-            && Objects.equals(this.environment, listAlertRsp.environment)
-            && Objects.equals(this.datasource, listAlertRsp.datasource)
-            && Objects.equals(this.firstObservedTime, listAlertRsp.firstObservedTime)
-            && Objects.equals(this.lastObservedTime, listAlertRsp.lastObservedTime)
-            && Objects.equals(this.createTime, listAlertRsp.createTime)
-            && Objects.equals(this.arriveTime, listAlertRsp.arriveTime)
-            && Objects.equals(this.title, listAlertRsp.title)
-            && Objects.equals(this.description, listAlertRsp.description)
-            && Objects.equals(this.sourceUrl, listAlertRsp.sourceUrl) && Objects.equals(this.count, listAlertRsp.count)
-            && Objects.equals(this.confidence, listAlertRsp.confidence)
-            && Objects.equals(this.serverity, listAlertRsp.serverity)
-            && Objects.equals(this.criticality, listAlertRsp.criticality)
-            && Objects.equals(this.alertType, listAlertRsp.alertType)
-            && Objects.equals(this.networkList, listAlertRsp.networkList)
-            && Objects.equals(this.resourceList, listAlertRsp.resourceList)
-            && Objects.equals(this.remediation, listAlertRsp.remediation)
-            && Objects.equals(this.verificationState, listAlertRsp.verificationState)
-            && Objects.equals(this.handleStatus, listAlertRsp.handleStatus)
-            && Objects.equals(this.sla, listAlertRsp.sla) && Objects.equals(this.updateTime, listAlertRsp.updateTime)
-            && Objects.equals(this.closeTime, listAlertRsp.closeTime)
-            && Objects.equals(this.chopPhase, listAlertRsp.chopPhase)
-            && Objects.equals(this.ipdrrPhase, listAlertRsp.ipdrrPhase)
-            && Objects.equals(this.ppdrPhase, listAlertRsp.ppdrPhase)
-            && Objects.equals(this.simulation, listAlertRsp.simulation)
-            && Objects.equals(this.actor, listAlertRsp.actor) && Objects.equals(this.owner, listAlertRsp.owner)
-            && Objects.equals(this.cteator, listAlertRsp.cteator)
-            && Objects.equals(this.closeReason, listAlertRsp.closeReason)
-            && Objects.equals(this.closeComment, listAlertRsp.closeComment)
-            && Objects.equals(this.malware, listAlertRsp.malware)
-            && Objects.equals(this.systemInfo, listAlertRsp.systemInfo)
-            && Objects.equals(this.process, listAlertRsp.process)
-            && Objects.equals(this.userInfo, listAlertRsp.userInfo)
-            && Objects.equals(this.fileInfo, listAlertRsp.fileInfo)
-            && Objects.equals(this.systemAlertTable, listAlertRsp.systemAlertTable)
-            && Objects.equals(this.id, listAlertRsp.id) && Objects.equals(this.workspaceId, listAlertRsp.workspaceId);
+        ListAlertRsp that = (ListAlertRsp) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
+            && Objects.equals(this.datasource, that.datasource)
+            && Objects.equals(this.firstObservedTime, that.firstObservedTime)
+            && Objects.equals(this.lastObservedTime, that.lastObservedTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.serverity, that.serverity)
+            && Objects.equals(this.criticality, that.criticality) && Objects.equals(this.alertType, that.alertType)
+            && Objects.equals(this.networkList, that.networkList)
+            && Objects.equals(this.resourceList, that.resourceList)
+            && Objects.equals(this.remediation, that.remediation)
+            && Objects.equals(this.verificationState, that.verificationState)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.sla, that.sla)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.closeTime, that.closeTime)
+            && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
+            && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
+            && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
+            && Objects.equals(this.systemAlertTable, that.systemAlertTable) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

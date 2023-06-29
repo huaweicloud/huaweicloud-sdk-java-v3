@@ -54,15 +54,15 @@ public class ValidateConsumedMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateConsumedMessageResponse validateConsumedMessageResponse = (ValidateConsumedMessageResponse) o;
-        return Objects.equals(this.resendResults, validateConsumedMessageResponse.resendResults);
+        ValidateConsumedMessageResponse that = (ValidateConsumedMessageResponse) obj;
+        return Objects.equals(this.resendResults, that.resendResults);
     }
 
     @Override

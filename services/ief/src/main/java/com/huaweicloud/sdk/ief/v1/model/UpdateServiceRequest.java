@@ -87,17 +87,16 @@ public class UpdateServiceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServiceRequest updateServiceRequest = (UpdateServiceRequest) o;
-        return Objects.equals(this.serviceId, updateServiceRequest.serviceId)
-            && Objects.equals(this.iefInstanceId, updateServiceRequest.iefInstanceId)
-            && Objects.equals(this.body, updateServiceRequest.body);
+        UpdateServiceRequest that = (UpdateServiceRequest) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

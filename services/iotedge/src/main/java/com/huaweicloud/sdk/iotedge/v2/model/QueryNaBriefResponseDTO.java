@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 创建及查询北向NA返回结构体（简洁版）
  */
-public class QueryNaBriefResponseDTO  {
-
+public class QueryNaBriefResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="na_id")
-    
+    @JsonProperty(value = "na_id")
 
     private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint")
-    
+    @JsonProperty(value = "endpoint")
 
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -57,9 +44,6 @@ public class QueryNaBriefResponseDTO  {
         this.naId = naId;
         return this;
     }
-
-    
-
 
     /**
      * NA系统ID，提供给其他系统访问的唯一标识
@@ -73,15 +57,10 @@ public class QueryNaBriefResponseDTO  {
         this.naId = naId;
     }
 
-    
-
     public QueryNaBriefResponseDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * NA系统名称
@@ -95,15 +74,10 @@ public class QueryNaBriefResponseDTO  {
         this.name = name;
     }
 
-    
-
     public QueryNaBriefResponseDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 北向NA系统描述
@@ -117,15 +91,10 @@ public class QueryNaBriefResponseDTO  {
         this.description = description;
     }
 
-    
-
     public QueryNaBriefResponseDTO withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
     }
-
-    
-
 
     /**
      * 访问URL地址
@@ -139,15 +108,10 @@ public class QueryNaBriefResponseDTO  {
         this.endpoint = endpoint;
     }
 
-    
-
     public QueryNaBriefResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -161,15 +125,10 @@ public class QueryNaBriefResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryNaBriefResponseDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -183,28 +142,25 @@ public class QueryNaBriefResponseDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryNaBriefResponseDTO queryNaBriefResponseDTO = (QueryNaBriefResponseDTO) o;
-        return Objects.equals(this.naId, queryNaBriefResponseDTO.naId) &&
-            Objects.equals(this.name, queryNaBriefResponseDTO.name) &&
-            Objects.equals(this.description, queryNaBriefResponseDTO.description) &&
-            Objects.equals(this.endpoint, queryNaBriefResponseDTO.endpoint) &&
-            Objects.equals(this.createTime, queryNaBriefResponseDTO.createTime) &&
-            Objects.equals(this.updateTime, queryNaBriefResponseDTO.updateTime);
+        QueryNaBriefResponseDTO that = (QueryNaBriefResponseDTO) obj;
+        return Objects.equals(this.naId, that.naId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(naId, name, description, endpoint, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,6 +174,7 @@ public class QueryNaBriefResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -228,8 +185,5 @@ public class QueryNaBriefResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

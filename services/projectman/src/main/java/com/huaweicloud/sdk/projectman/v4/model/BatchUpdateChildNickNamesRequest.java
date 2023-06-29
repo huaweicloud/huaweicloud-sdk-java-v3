@@ -43,15 +43,15 @@ public class BatchUpdateChildNickNamesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateChildNickNamesRequest batchUpdateChildNickNamesRequest = (BatchUpdateChildNickNamesRequest) o;
-        return Objects.equals(this.body, batchUpdateChildNickNamesRequest.body);
+        BatchUpdateChildNickNamesRequest that = (BatchUpdateChildNickNamesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

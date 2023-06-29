@@ -125,19 +125,18 @@ public class NodePoolNodeAutoscaling {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolNodeAutoscaling nodePoolNodeAutoscaling = (NodePoolNodeAutoscaling) o;
-        return Objects.equals(this.enable, nodePoolNodeAutoscaling.enable)
-            && Objects.equals(this.minNodeCount, nodePoolNodeAutoscaling.minNodeCount)
-            && Objects.equals(this.maxNodeCount, nodePoolNodeAutoscaling.maxNodeCount)
-            && Objects.equals(this.scaleDownCooldownTime, nodePoolNodeAutoscaling.scaleDownCooldownTime)
-            && Objects.equals(this.priority, nodePoolNodeAutoscaling.priority);
+        NodePoolNodeAutoscaling that = (NodePoolNodeAutoscaling) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.minNodeCount, that.minNodeCount)
+            && Objects.equals(this.maxNodeCount, that.maxNodeCount)
+            && Objects.equals(this.scaleDownCooldownTime, that.scaleDownCooldownTime)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override

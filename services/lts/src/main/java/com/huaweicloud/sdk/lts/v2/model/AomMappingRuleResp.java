@@ -109,18 +109,16 @@ public class AomMappingRuleResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AomMappingRuleResp aomMappingRuleResp = (AomMappingRuleResp) o;
-        return Objects.equals(this.projectId, aomMappingRuleResp.projectId)
-            && Objects.equals(this.ruleName, aomMappingRuleResp.ruleName)
-            && Objects.equals(this.ruleId, aomMappingRuleResp.ruleId)
-            && Objects.equals(this.ruleInfo, aomMappingRuleResp.ruleInfo);
+        AomMappingRuleResp that = (AomMappingRuleResp) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleInfo, that.ruleInfo);
     }
 
     @Override

@@ -136,18 +136,18 @@ public class UpdateAccessConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAccessConfigRequestBody updateAccessConfigRequestBody = (UpdateAccessConfigRequestBody) o;
-        return Objects.equals(this.accessConfigId, updateAccessConfigRequestBody.accessConfigId)
-            && Objects.equals(this.accessConfigDetail, updateAccessConfigRequestBody.accessConfigDetail)
-            && Objects.equals(this.hostGroupInfo, updateAccessConfigRequestBody.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, updateAccessConfigRequestBody.accessConfigTag);
+        UpdateAccessConfigRequestBody that = (UpdateAccessConfigRequestBody) obj;
+        return Objects.equals(this.accessConfigId, that.accessConfigId)
+            && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
+            && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
     }
 
     @Override

@@ -187,22 +187,19 @@ public class CertificatesRspDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificatesRspDTO certificatesRspDTO = (CertificatesRspDTO) o;
-        return Objects.equals(this.certificateId, certificatesRspDTO.certificateId)
-            && Objects.equals(this.cnName, certificatesRspDTO.cnName)
-            && Objects.equals(this.owner, certificatesRspDTO.owner)
-            && Objects.equals(this.status, certificatesRspDTO.status)
-            && Objects.equals(this.verifyCode, certificatesRspDTO.verifyCode)
-            && Objects.equals(this.createDate, certificatesRspDTO.createDate)
-            && Objects.equals(this.effectiveDate, certificatesRspDTO.effectiveDate)
-            && Objects.equals(this.expiryDate, certificatesRspDTO.expiryDate);
+        CertificatesRspDTO that = (CertificatesRspDTO) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.cnName, that.cnName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.effectiveDate, that.effectiveDate)
+            && Objects.equals(this.expiryDate, that.expiryDate);
     }
 
     @Override

@@ -177,18 +177,17 @@ public class SourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceInfo sourceInfo = (SourceInfo) o;
-        return Objects.equals(this.duration, sourceInfo.duration)
-            && Objects.equals(this.durationMs, sourceInfo.durationMs) && Objects.equals(this.format, sourceInfo.format)
-            && Objects.equals(this.size, sourceInfo.size) && Objects.equals(this.videoInfo, sourceInfo.videoInfo)
-            && Objects.equals(this.audioInfo, sourceInfo.audioInfo);
+        SourceInfo that = (SourceInfo) obj;
+        return Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.videoInfo, that.videoInfo) && Objects.equals(this.audioInfo, that.audioInfo);
     }
 
     @Override

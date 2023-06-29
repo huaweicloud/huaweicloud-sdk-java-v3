@@ -97,17 +97,16 @@ public class ListTwoTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTwoTemplatesResponse listTwoTemplatesResponse = (ListTwoTemplatesResponse) o;
-        return Objects.equals(this.error, listTwoTemplatesResponse.error)
-            && Objects.equals(this.result, listTwoTemplatesResponse.result)
-            && Objects.equals(this.status, listTwoTemplatesResponse.status);
+        ListTwoTemplatesResponse that = (ListTwoTemplatesResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class UpdateSqlTemplatesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSqlTemplatesRequestBody updateSqlTemplatesRequestBody = (UpdateSqlTemplatesRequestBody) o;
-        return Objects.equals(this.sql, updateSqlTemplatesRequestBody.sql)
-            && Objects.equals(this.sqlName, updateSqlTemplatesRequestBody.sqlName)
-            && Objects.equals(this.description, updateSqlTemplatesRequestBody.description)
-            && Objects.equals(this.group, updateSqlTemplatesRequestBody.group);
+        UpdateSqlTemplatesRequestBody that = (UpdateSqlTemplatesRequestBody) obj;
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlName, that.sqlName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.group, that.group);
     }
 
     @Override

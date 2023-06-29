@@ -63,22 +63,15 @@ public class UpdateTriggerRequestBody {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerStatusEnum(value));
         }
 
         public static TriggerStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,15 @@ public class UpdateTriggerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTriggerRequestBody updateTriggerRequestBody = (UpdateTriggerRequestBody) o;
-        return Objects.equals(this.triggerStatus, updateTriggerRequestBody.triggerStatus)
-            && Objects.equals(this.eventData, updateTriggerRequestBody.eventData);
+        UpdateTriggerRequestBody that = (UpdateTriggerRequestBody) obj;
+        return Objects.equals(this.triggerStatus, that.triggerStatus) && Objects.equals(this.eventData, that.eventData);
     }
 
     @Override

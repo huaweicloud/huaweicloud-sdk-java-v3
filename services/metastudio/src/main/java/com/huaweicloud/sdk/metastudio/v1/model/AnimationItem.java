@@ -57,16 +57,16 @@ public class AnimationItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnimationItem animationItem = (AnimationItem) o;
-        return Objects.equals(this.animationAssetId, animationItem.animationAssetId)
-            && Objects.equals(this.timestamp, animationItem.timestamp);
+        AnimationItem that = (AnimationItem) obj;
+        return Objects.equals(this.animationAssetId, that.animationAssetId)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

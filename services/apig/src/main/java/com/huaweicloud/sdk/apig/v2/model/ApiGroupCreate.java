@@ -99,17 +99,16 @@ public class ApiGroupCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiGroupCreate apiGroupCreate = (ApiGroupCreate) o;
-        return Objects.equals(this.name, apiGroupCreate.name) && Objects.equals(this.remark, apiGroupCreate.remark)
-            && Objects.equals(this.romaAppId, apiGroupCreate.romaAppId)
-            && Objects.equals(this.version, apiGroupCreate.version);
+        ApiGroupCreate that = (ApiGroupCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.version, that.version);
     }
 
     @Override

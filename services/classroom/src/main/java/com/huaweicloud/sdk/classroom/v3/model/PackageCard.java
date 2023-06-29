@@ -165,19 +165,18 @@ public class PackageCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackageCard packageCard = (PackageCard) o;
-        return Objects.equals(this.id, packageCard.id) && Objects.equals(this.name, packageCard.name)
-            && Objects.equals(this.tagName, packageCard.tagName) && Objects.equals(this.school, packageCard.school)
-            && Objects.equals(this.teacherName, packageCard.teacherName)
-            && Objects.equals(this.orderCount, packageCard.orderCount)
-            && Objects.equals(this.imageUrl, packageCard.imageUrl);
+        PackageCard that = (PackageCard) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tagName, that.tagName) && Objects.equals(this.school, that.school)
+            && Objects.equals(this.teacherName, that.teacherName) && Objects.equals(this.orderCount, that.orderCount)
+            && Objects.equals(this.imageUrl, that.imageUrl);
     }
 
     @Override

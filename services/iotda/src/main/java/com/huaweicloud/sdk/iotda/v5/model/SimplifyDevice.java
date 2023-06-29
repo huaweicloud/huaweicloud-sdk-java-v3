@@ -99,18 +99,16 @@ public class SimplifyDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimplifyDevice simplifyDevice = (SimplifyDevice) o;
-        return Objects.equals(this.deviceId, simplifyDevice.deviceId)
-            && Objects.equals(this.nodeId, simplifyDevice.nodeId)
-            && Objects.equals(this.deviceName, simplifyDevice.deviceName)
-            && Objects.equals(this.productId, simplifyDevice.productId);
+        SimplifyDevice that = (SimplifyDevice) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.productId, that.productId);
     }
 
     @Override

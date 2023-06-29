@@ -78,17 +78,16 @@ public class CreateInstanceV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceV2Response createInstanceV2Response = (CreateInstanceV2Response) o;
-        return Objects.equals(this.instanceId, createInstanceV2Response.instanceId)
-            && Objects.equals(this.message, createInstanceV2Response.message)
-            && Objects.equals(this.jobId, createInstanceV2Response.jobId);
+        CreateInstanceV2Response that = (CreateInstanceV2Response) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

@@ -65,15 +65,15 @@ public class AddFavoriteReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFavoriteReq addFavoriteReq = (AddFavoriteReq) o;
-        return Objects.equals(this.name, addFavoriteReq.name) && Objects.equals(this.template, addFavoriteReq.template);
+        AddFavoriteReq that = (AddFavoriteReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.template, that.template);
     }
 
     @Override

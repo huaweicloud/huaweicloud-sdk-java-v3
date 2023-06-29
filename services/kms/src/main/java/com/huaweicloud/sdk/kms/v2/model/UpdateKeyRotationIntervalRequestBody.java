@@ -79,18 +79,16 @@ public class UpdateKeyRotationIntervalRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeyRotationIntervalRequestBody updateKeyRotationIntervalRequestBody =
-            (UpdateKeyRotationIntervalRequestBody) o;
-        return Objects.equals(this.keyId, updateKeyRotationIntervalRequestBody.keyId)
-            && Objects.equals(this.rotationInterval, updateKeyRotationIntervalRequestBody.rotationInterval)
-            && Objects.equals(this.sequence, updateKeyRotationIntervalRequestBody.sequence);
+        UpdateKeyRotationIntervalRequestBody that = (UpdateKeyRotationIntervalRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.rotationInterval, that.rotationInterval)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

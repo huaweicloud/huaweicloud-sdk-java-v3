@@ -1,85 +1,67 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * TaskDetailInfo
  */
-public class TaskDetailInfo  {
-
+public class TaskDetailInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_status")
-    
+    @JsonProperty(value = "instance_status")
 
     private String instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process")
-    
+    @JsonProperty(value = "process")
 
     private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_time")
-    
+    @JsonProperty(value = "created_time")
 
     private String createdTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ended_time")
-    
+    @JsonProperty(value = "ended_time")
 
     private String endedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
 
     private String failReason;
 
@@ -87,9 +69,6 @@ public class TaskDetailInfo  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -103,15 +82,10 @@ public class TaskDetailInfo  {
         this.instanceId = instanceId;
     }
 
-    
-
     public TaskDetailInfo withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。
@@ -125,15 +99,10 @@ public class TaskDetailInfo  {
         this.instanceName = instanceName;
     }
 
-    
-
     public TaskDetailInfo withInstanceStatus(String instanceStatus) {
         this.instanceStatus = instanceStatus;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。 取值： - 值为“createfail”，表示实例创建失败。 - 值为“creating”，表示实例创建中。 - 值为“normal”，表示实例正常。 - 值为“abnormal”，表示实例异常。 - 值为“deleted”，表示实例已删除。
@@ -147,15 +116,10 @@ public class TaskDetailInfo  {
         this.instanceStatus = instanceStatus;
     }
 
-    
-
     public TaskDetailInfo withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -169,15 +133,10 @@ public class TaskDetailInfo  {
         this.jobId = jobId;
     }
 
-    
-
     public TaskDetailInfo withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 订单ID。
@@ -191,15 +150,10 @@ public class TaskDetailInfo  {
         this.orderId = orderId;
     }
 
-    
-
     public TaskDetailInfo withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。取值有：    - \"CreateGaussDBforMySQLInstance\"表示创建实例。    - \"RestoreGaussDBforMySQLNewInstance\"表示恢复新实例。    - \"AddGaussDBforMySQLNodes\"表示添加节点。    - \"DeleteGaussDBforMySQLNode\"表示删除节点。    - \"RebootGaussDBforMySQLInstance\"表示重启实例。    - \"ModifyGaussDBforMySQLPort\"表示修改实例端口。    - \"ModifyGaussDBforMySQLSecurityGroup\"表示修改实例安全组。    - \"ResizeGaussDBforMySQLFlavor\"表示实例规格变更。    - \"SwitchoverGaussDBforMySQLMasterNode\"表示只读升主。    - \"GaussDBforMySQLBindEIP\"表示绑定弹性公网IP。    - \"GaussDBforMySQLUnbindEIP\"表示解绑弹性公网IP。    - \"RenameGaussDBforMySQLInstance\"表示修改实例名称。    - \"DeleteGaussDBforMySQLInstance\"表示删除实例集群。    - \"UpgradeGaussDBforMySQLDatabaseVersion\"表示版本升级。    - \"EnlargeGaussDBforMySQLProxy\"表示实例的数据库代理节点扩容。    - \"OpenGaussDBforMySQLProxy\"表示开启实例的数据库代理。    - \"CloseGaussDBforMySQLProxy\"表示关闭实例的数据库代理。    - \"GaussdbforMySQLModifyProxyIp\"表示修改数据库代理ip。    - \"ScaleGaussDBforMySQLProxy\"表示实例的数据库代理节点规格变更。    - \"GaussDBforMySQLModifyInstanceMetricExtend\"表示实例秒级监控。    - \"GaussDBforMySQLModifyInstanceDataVip\"表示修改实例数据Vip。    - \"GaussDBforMySQLSwitchSSL\"表示切换实例SSL开关。    - \"GaussDBforMySQLModifyProxyConsist\"表示修改代理一致性。    - \"GaussDBforMySQLModifyProxyWeight\"表示修改代理权重。
@@ -213,15 +167,10 @@ public class TaskDetailInfo  {
         this.jobName = jobName;
     }
 
-    
-
     public TaskDetailInfo withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行状态。 取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
@@ -235,15 +184,10 @@ public class TaskDetailInfo  {
         this.status = status;
     }
 
-    
-
     public TaskDetailInfo withProcess(String process) {
         this.process = process;
         return this;
     }
-
-    
-
 
     /**
      * 任务进度。
@@ -257,15 +201,10 @@ public class TaskDetailInfo  {
         this.process = process;
     }
 
-    
-
     public TaskDetailInfo withCreatedTime(String createdTime) {
         this.createdTime = createdTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务创建时间。格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -279,15 +218,10 @@ public class TaskDetailInfo  {
         this.createdTime = createdTime;
     }
 
-    
-
     public TaskDetailInfo withEndedTime(String endedTime) {
         this.endedTime = endedTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务结束时间。格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -301,15 +235,10 @@ public class TaskDetailInfo  {
         this.endedTime = endedTime;
     }
 
-    
-
     public TaskDetailInfo withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
-
-    
-
 
     /**
      * 任务失败原因。
@@ -323,33 +252,38 @@ public class TaskDetailInfo  {
         this.failReason = failReason;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDetailInfo taskDetailInfo = (TaskDetailInfo) o;
-        return Objects.equals(this.instanceId, taskDetailInfo.instanceId) &&
-            Objects.equals(this.instanceName, taskDetailInfo.instanceName) &&
-            Objects.equals(this.instanceStatus, taskDetailInfo.instanceStatus) &&
-            Objects.equals(this.jobId, taskDetailInfo.jobId) &&
-            Objects.equals(this.orderId, taskDetailInfo.orderId) &&
-            Objects.equals(this.jobName, taskDetailInfo.jobName) &&
-            Objects.equals(this.status, taskDetailInfo.status) &&
-            Objects.equals(this.process, taskDetailInfo.process) &&
-            Objects.equals(this.createdTime, taskDetailInfo.createdTime) &&
-            Objects.equals(this.endedTime, taskDetailInfo.endedTime) &&
-            Objects.equals(this.failReason, taskDetailInfo.failReason);
+        TaskDetailInfo that = (TaskDetailInfo) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceStatus, that.instanceStatus) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.endedTime, that.endedTime)
+            && Objects.equals(this.failReason, that.failReason);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(instanceId, instanceName, instanceStatus, jobId, orderId, jobName, status, process, createdTime, endedTime, failReason);
+        return Objects.hash(instanceId,
+            instanceName,
+            instanceStatus,
+            jobId,
+            orderId,
+            jobName,
+            status,
+            process,
+            createdTime,
+            endedTime,
+            failReason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,6 +302,7 @@ public class TaskDetailInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -378,8 +313,5 @@ public class TaskDetailInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

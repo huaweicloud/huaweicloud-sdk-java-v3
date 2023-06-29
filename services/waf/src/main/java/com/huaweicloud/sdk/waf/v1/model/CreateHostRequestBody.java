@@ -114,22 +114,15 @@ public class CreateHostRequestBody {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LbAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LbAlgorithmEnum(value));
         }
 
         public static LbAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -398,26 +391,21 @@ public class CreateHostRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHostRequestBody createHostRequestBody = (CreateHostRequestBody) o;
-        return Objects.equals(this.hostname, createHostRequestBody.hostname)
-            && Objects.equals(this.policyid, createHostRequestBody.policyid)
-            && Objects.equals(this.server, createHostRequestBody.server)
-            && Objects.equals(this.certificateid, createHostRequestBody.certificateid)
-            && Objects.equals(this.certificatename, createHostRequestBody.certificatename)
-            && Objects.equals(this.webTag, createHostRequestBody.webTag)
-            && Objects.equals(this.exclusiveIp, createHostRequestBody.exclusiveIp)
-            && Objects.equals(this.paidType, createHostRequestBody.paidType)
-            && Objects.equals(this.proxy, createHostRequestBody.proxy)
-            && Objects.equals(this.lbAlgorithm, createHostRequestBody.lbAlgorithm)
-            && Objects.equals(this.description, createHostRequestBody.description)
-            && Objects.equals(this.forwardHeaderMap, createHostRequestBody.forwardHeaderMap);
+        CreateHostRequestBody that = (CreateHostRequestBody) obj;
+        return Objects.equals(this.hostname, that.hostname) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.server, that.server) && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.lbAlgorithm, that.lbAlgorithm)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

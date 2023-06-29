@@ -228,23 +228,20 @@ public class CreatePrepaidCloudWafRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrepaidCloudWafRequestBody createPrepaidCloudWafRequestBody = (CreatePrepaidCloudWafRequestBody) o;
-        return Objects.equals(this.projectId, createPrepaidCloudWafRequestBody.projectId)
-            && Objects.equals(this.isAutoPay, createPrepaidCloudWafRequestBody.isAutoPay)
-            && Objects.equals(this.isAutoRenew, createPrepaidCloudWafRequestBody.isAutoRenew)
-            && Objects.equals(this.regionId, createPrepaidCloudWafRequestBody.regionId)
-            && Objects.equals(this.wafProductInfo, createPrepaidCloudWafRequestBody.wafProductInfo)
-            && Objects.equals(this.domainExpackProductInfo, createPrepaidCloudWafRequestBody.domainExpackProductInfo)
-            && Objects.equals(this.bandwidthExpackProductInfo,
-                createPrepaidCloudWafRequestBody.bandwidthExpackProductInfo)
-            && Objects.equals(this.ruleExpackProductInfo, createPrepaidCloudWafRequestBody.ruleExpackProductInfo);
+        CreatePrepaidCloudWafRequestBody that = (CreatePrepaidCloudWafRequestBody) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.wafProductInfo, that.wafProductInfo)
+            && Objects.equals(this.domainExpackProductInfo, that.domainExpackProductInfo)
+            && Objects.equals(this.bandwidthExpackProductInfo, that.bandwidthExpackProductInfo)
+            && Objects.equals(this.ruleExpackProductInfo, that.ruleExpackProductInfo);
     }
 
     @Override

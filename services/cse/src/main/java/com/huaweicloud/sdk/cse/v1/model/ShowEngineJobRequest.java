@@ -79,17 +79,16 @@ public class ShowEngineJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEngineJobRequest showEngineJobRequest = (ShowEngineJobRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, showEngineJobRequest.xEnterpriseProjectID)
-            && Objects.equals(this.engineId, showEngineJobRequest.engineId)
-            && Objects.equals(this.jobId, showEngineJobRequest.jobId);
+        ShowEngineJobRequest that = (ShowEngineJobRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.engineId, that.engineId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

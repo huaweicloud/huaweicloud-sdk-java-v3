@@ -56,16 +56,15 @@ public class ValidateDictionaryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateDictionaryResponse validateDictionaryResponse = (ValidateDictionaryResponse) o;
-        return Objects.equals(this.name, validateDictionaryResponse.name)
-            && Objects.equals(this.code, validateDictionaryResponse.code);
+        ValidateDictionaryResponse that = (ValidateDictionaryResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.code, that.code);
     }
 
     @Override

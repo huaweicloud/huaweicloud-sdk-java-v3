@@ -87,17 +87,17 @@ public class SetRaspSwitchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRaspSwitchRequest setRaspSwitchRequest = (SetRaspSwitchRequest) o;
-        return Objects.equals(this.region, setRaspSwitchRequest.region)
-            && Objects.equals(this.enterpriseProjectId, setRaspSwitchRequest.enterpriseProjectId)
-            && Objects.equals(this.body, setRaspSwitchRequest.body);
+        SetRaspSwitchRequest that = (SetRaspSwitchRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

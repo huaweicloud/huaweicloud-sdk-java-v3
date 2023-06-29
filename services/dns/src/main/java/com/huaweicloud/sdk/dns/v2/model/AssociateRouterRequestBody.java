@@ -43,15 +43,15 @@ public class AssociateRouterRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateRouterRequestBody associateRouterRequestBody = (AssociateRouterRequestBody) o;
-        return Objects.equals(this.router, associateRouterRequestBody.router);
+        AssociateRouterRequestBody that = (AssociateRouterRequestBody) obj;
+        return Objects.equals(this.router, that.router);
     }
 
     @Override

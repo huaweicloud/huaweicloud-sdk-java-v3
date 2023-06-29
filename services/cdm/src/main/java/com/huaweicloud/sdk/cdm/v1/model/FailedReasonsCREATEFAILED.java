@@ -55,16 +55,15 @@ public class FailedReasonsCREATEFAILED {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailedReasonsCREATEFAILED failedReasonsCREATEFAILED = (FailedReasonsCREATEFAILED) o;
-        return Objects.equals(this.errorCode, failedReasonsCREATEFAILED.errorCode)
-            && Objects.equals(this.errorMsg, failedReasonsCREATEFAILED.errorMsg);
+        FailedReasonsCREATEFAILED that = (FailedReasonsCREATEFAILED) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

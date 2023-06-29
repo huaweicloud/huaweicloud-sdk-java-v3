@@ -454,25 +454,21 @@ public class BusinessCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessCardResult businessCardResult = (BusinessCardResult) o;
-        return Objects.equals(this.name, businessCardResult.name)
-            && Objects.equals(this.title, businessCardResult.title)
-            && Objects.equals(this.company, businessCardResult.company)
-            && Objects.equals(this.department, businessCardResult.department)
-            && Objects.equals(this.phone, businessCardResult.phone)
-            && Objects.equals(this.address, businessCardResult.address)
-            && Objects.equals(this.email, businessCardResult.email) && Objects.equals(this.fax, businessCardResult.fax)
-            && Objects.equals(this.postcode, businessCardResult.postcode)
-            && Objects.equals(this.website, businessCardResult.website)
-            && Objects.equals(this.extraInfoList, businessCardResult.extraInfoList)
-            && Objects.equals(this.adjustedImage, businessCardResult.adjustedImage);
+        BusinessCardResult that = (BusinessCardResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.company, that.company) && Objects.equals(this.department, that.department)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.fax, that.fax)
+            && Objects.equals(this.postcode, that.postcode) && Objects.equals(this.website, that.website)
+            && Objects.equals(this.extraInfoList, that.extraInfoList)
+            && Objects.equals(this.adjustedImage, that.adjustedImage);
     }
 
     @Override

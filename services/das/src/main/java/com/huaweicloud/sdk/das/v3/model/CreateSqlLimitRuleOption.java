@@ -66,22 +66,15 @@ public class CreateSqlLimitRuleOption {
             if (value == null) {
                 return null;
             }
-            SqlTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlTypeEnum(value));
         }
 
         public static SqlTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,17 +158,16 @@ public class CreateSqlLimitRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlLimitRuleOption createSqlLimitRuleOption = (CreateSqlLimitRuleOption) o;
-        return Objects.equals(this.sqlType, createSqlLimitRuleOption.sqlType)
-            && Objects.equals(this.maxConcurrency, createSqlLimitRuleOption.maxConcurrency)
-            && Objects.equals(this.pattern, createSqlLimitRuleOption.pattern);
+        CreateSqlLimitRuleOption that = (CreateSqlLimitRuleOption) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.maxConcurrency, that.maxConcurrency)
+            && Objects.equals(this.pattern, that.pattern);
     }
 
     @Override

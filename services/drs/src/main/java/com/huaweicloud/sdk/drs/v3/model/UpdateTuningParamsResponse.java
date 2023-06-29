@@ -189,19 +189,17 @@ public class UpdateTuningParamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTuningParamsResponse updateTuningParamsResponse = (UpdateTuningParamsResponse) o;
-        return Objects.equals(this.fullSync, updateTuningParamsResponse.fullSync)
-            && Objects.equals(this.increCapture, updateTuningParamsResponse.increCapture)
-            && Objects.equals(this.increApply, updateTuningParamsResponse.increApply)
-            && Objects.equals(this.increRelay, updateTuningParamsResponse.increRelay)
-            && Objects.equals(this.modifyResult, updateTuningParamsResponse.modifyResult);
+        UpdateTuningParamsResponse that = (UpdateTuningParamsResponse) obj;
+        return Objects.equals(this.fullSync, that.fullSync) && Objects.equals(this.increCapture, that.increCapture)
+            && Objects.equals(this.increApply, that.increApply) && Objects.equals(this.increRelay, that.increRelay)
+            && Objects.equals(this.modifyResult, that.modifyResult);
     }
 
     @Override

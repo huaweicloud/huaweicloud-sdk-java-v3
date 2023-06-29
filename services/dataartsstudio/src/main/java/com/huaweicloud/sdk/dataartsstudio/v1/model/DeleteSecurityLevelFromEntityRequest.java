@@ -55,17 +55,15 @@ public class DeleteSecurityLevelFromEntityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSecurityLevelFromEntityRequest deleteSecurityLevelFromEntityRequest =
-            (DeleteSecurityLevelFromEntityRequest) o;
-        return Objects.equals(this.workspace, deleteSecurityLevelFromEntityRequest.workspace)
-            && Objects.equals(this.guid, deleteSecurityLevelFromEntityRequest.guid);
+        DeleteSecurityLevelFromEntityRequest that = (DeleteSecurityLevelFromEntityRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.guid, that.guid);
     }
 
     @Override

@@ -143,26 +143,21 @@ public class CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer createTransferResponseBodyLogTransferInfoLogAgencyTransfer =
-            (CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer) o;
-        return Objects.equals(this.agencyDomainId,
-            createTransferResponseBodyLogTransferInfoLogAgencyTransfer.agencyDomainId)
-            && Objects.equals(this.agencyDomainName,
-                createTransferResponseBodyLogTransferInfoLogAgencyTransfer.agencyDomainName)
-            && Objects.equals(this.agencyName, createTransferResponseBodyLogTransferInfoLogAgencyTransfer.agencyName)
-            && Objects.equals(this.agencyProjectId,
-                createTransferResponseBodyLogTransferInfoLogAgencyTransfer.agencyProjectId)
-            && Objects.equals(this.beAgencyDomainId,
-                createTransferResponseBodyLogTransferInfoLogAgencyTransfer.beAgencyDomainId)
-            && Objects.equals(this.beAgencyProjectId,
-                createTransferResponseBodyLogTransferInfoLogAgencyTransfer.beAgencyProjectId);
+        CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer that =
+            (CreateTransferResponseBodyLogTransferInfoLogAgencyTransfer) obj;
+        return Objects.equals(this.agencyDomainId, that.agencyDomainId)
+            && Objects.equals(this.agencyDomainName, that.agencyDomainName)
+            && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.agencyProjectId, that.agencyProjectId)
+            && Objects.equals(this.beAgencyDomainId, that.beAgencyDomainId)
+            && Objects.equals(this.beAgencyProjectId, that.beAgencyProjectId);
     }
 
     @Override

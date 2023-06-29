@@ -79,22 +79,15 @@ public class ShowSumTableResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableDirectionEnum(value));
         }
 
         public static TableDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -289,22 +282,20 @@ public class ShowSumTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSumTableResponse showSumTableResponse = (ShowSumTableResponse) o;
-        return Objects.equals(this.resultId, showSumTableResponse.resultId)
-            && Objects.equals(this.rowList, showSumTableResponse.rowList)
-            && Objects.equals(this.latestDataTime, showSumTableResponse.latestDataTime)
-            && Objects.equals(this.tableDirection, showSumTableResponse.tableDirection)
-            && Objects.equals(this.realStartTime, showSumTableResponse.realStartTime)
-            && Objects.equals(this.realEndTime, showSumTableResponse.realEndTime)
-            && Objects.equals(this.noticeMsg, showSumTableResponse.noticeMsg)
-            && Objects.equals(this.totalCount, showSumTableResponse.totalCount);
+        ShowSumTableResponse that = (ShowSumTableResponse) obj;
+        return Objects.equals(this.resultId, that.resultId) && Objects.equals(this.rowList, that.rowList)
+            && Objects.equals(this.latestDataTime, that.latestDataTime)
+            && Objects.equals(this.tableDirection, that.tableDirection)
+            && Objects.equals(this.realStartTime, that.realStartTime)
+            && Objects.equals(this.realEndTime, that.realEndTime) && Objects.equals(this.noticeMsg, that.noticeMsg)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

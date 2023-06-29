@@ -91,22 +91,15 @@ public class SubTaskStatus {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,19 +224,17 @@ public class SubTaskStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubTaskStatus subTaskStatus = (SubTaskStatus) o;
-        return Objects.equals(this.id, subTaskStatus.id) && Objects.equals(this.name, subTaskStatus.name)
-            && Objects.equals(this.startTime, subTaskStatus.startTime)
-            && Objects.equals(this.endTime, subTaskStatus.endTime)
-            && Objects.equals(this.lastUpdate, subTaskStatus.lastUpdate)
-            && Objects.equals(this.status, subTaskStatus.status);
+        SubTaskStatus that = (SubTaskStatus) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.lastUpdate, that.lastUpdate) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class ShowTestCaseDetailV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTestCaseDetailV2Request showTestCaseDetailV2Request = (ShowTestCaseDetailV2Request) o;
-        return Objects.equals(this.projectId, showTestCaseDetailV2Request.projectId)
-            && Objects.equals(this.testcaseNumber, showTestCaseDetailV2Request.testcaseNumber);
+        ShowTestCaseDetailV2Request that = (ShowTestCaseDetailV2Request) obj;
+        return Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.testcaseNumber, that.testcaseNumber);
     }
 
     @Override

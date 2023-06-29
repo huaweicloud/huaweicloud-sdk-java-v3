@@ -1,44 +1,35 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.EventList;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class PushEventsRequest  {
-
+public class PushEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-enterprise-prject-id")
-    
+    @JsonProperty(value = "x-enterprise-prject-id")
 
     private String xEnterprisePrjectId;
+
     /**
      * 接口请求动作。action=clear代表清除告警，不传或者传其他值默认为上报动作。
      */
     public static final class ActionEnum {
 
-        
         /**
          * Enum CLEAR for value: "clear"
          */
         public static final ActionEnum CLEAR = new ActionEnum("clear");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +57,18 @@ public class PushEventsRequest  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,14 +86,12 @@ public class PushEventsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private EventList body;
 
@@ -118,15 +100,12 @@ public class PushEventsRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 告警所属的企业项目id。
      * @return xEnterprisePrjectId
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x-enterprise-prject-id")
+    @JsonProperty(value = "x-enterprise-prject-id")
     public String getXEnterprisePrjectId() {
         return xEnterprisePrjectId;
     }
@@ -135,15 +114,10 @@ public class PushEventsRequest  {
         this.xEnterprisePrjectId = xEnterprisePrjectId;
     }
 
-    
-
     public PushEventsRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 接口请求动作。action=clear代表清除告警，不传或者传其他值默认为上报动作。
@@ -157,22 +131,19 @@ public class PushEventsRequest  {
         this.action = action;
     }
 
-    
-
     public PushEventsRequest withBody(EventList body) {
         this.body = body;
         return this;
     }
 
     public PushEventsRequest withBody(Consumer<EventList> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EventList();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -186,25 +157,24 @@ public class PushEventsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushEventsRequest pushEventsRequest = (PushEventsRequest) o;
-        return Objects.equals(this.xEnterprisePrjectId, pushEventsRequest.xEnterprisePrjectId) &&
-            Objects.equals(this.action, pushEventsRequest.action) &&
-            Objects.equals(this.body, pushEventsRequest.body);
+        PushEventsRequest that = (PushEventsRequest) obj;
+        return Objects.equals(this.xEnterprisePrjectId, that.xEnterprisePrjectId)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xEnterprisePrjectId, action, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -215,6 +185,7 @@ public class PushEventsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -225,8 +196,5 @@ public class PushEventsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

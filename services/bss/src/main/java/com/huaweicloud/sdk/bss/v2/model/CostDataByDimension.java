@@ -134,18 +134,17 @@ public class CostDataByDimension {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CostDataByDimension costDataByDimension = (CostDataByDimension) o;
-        return Objects.equals(this.dimensions, costDataByDimension.dimensions)
-            && Objects.equals(this.costs, costDataByDimension.costs)
-            && Objects.equals(this.amountByCosts, costDataByDimension.amountByCosts)
-            && Objects.equals(this.officialAmountByCosts, costDataByDimension.officialAmountByCosts);
+        CostDataByDimension that = (CostDataByDimension) obj;
+        return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.costs, that.costs)
+            && Objects.equals(this.amountByCosts, that.amountByCosts)
+            && Objects.equals(this.officialAmountByCosts, that.officialAmountByCosts);
     }
 
     @Override

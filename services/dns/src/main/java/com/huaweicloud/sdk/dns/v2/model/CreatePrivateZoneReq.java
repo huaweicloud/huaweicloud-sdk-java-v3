@@ -237,23 +237,19 @@ public class CreatePrivateZoneReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateZoneReq createPrivateZoneReq = (CreatePrivateZoneReq) o;
-        return Objects.equals(this.name, createPrivateZoneReq.name)
-            && Objects.equals(this.description, createPrivateZoneReq.description)
-            && Objects.equals(this.zoneType, createPrivateZoneReq.zoneType)
-            && Objects.equals(this.email, createPrivateZoneReq.email)
-            && Objects.equals(this.ttl, createPrivateZoneReq.ttl)
-            && Objects.equals(this.router, createPrivateZoneReq.router)
-            && Objects.equals(this.proxyPattern, createPrivateZoneReq.proxyPattern)
-            && Objects.equals(this.tags, createPrivateZoneReq.tags)
-            && Objects.equals(this.enterpriseProjectId, createPrivateZoneReq.enterpriseProjectId);
+        CreatePrivateZoneReq that = (CreatePrivateZoneReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.router, that.router)
+            && Objects.equals(this.proxyPattern, that.proxyPattern) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

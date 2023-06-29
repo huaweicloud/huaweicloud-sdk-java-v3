@@ -83,16 +83,15 @@ public class NodeUpdateByDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeUpdateByDevice nodeUpdateByDevice = (NodeUpdateByDevice) o;
-        return Objects.equals(this.added, nodeUpdateByDevice.added)
-            && Objects.equals(this.removed, nodeUpdateByDevice.removed);
+        NodeUpdateByDevice that = (NodeUpdateByDevice) obj;
+        return Objects.equals(this.added, that.added) && Objects.equals(this.removed, that.removed);
     }
 
     @Override

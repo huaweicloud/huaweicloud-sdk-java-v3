@@ -99,19 +99,16 @@ public class ImageDetectionResultDetailFaceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionResultDetailFaceDetail imageDetectionResultDetailFaceDetail =
-            (ImageDetectionResultDetailFaceDetail) o;
-        return Objects.equals(this.h, imageDetectionResultDetailFaceDetail.h)
-            && Objects.equals(this.w, imageDetectionResultDetailFaceDetail.w)
-            && Objects.equals(this.x, imageDetectionResultDetailFaceDetail.x)
-            && Objects.equals(this.y, imageDetectionResultDetailFaceDetail.y);
+        ImageDetectionResultDetailFaceDetail that = (ImageDetectionResultDetailFaceDetail) obj;
+        return Objects.equals(this.h, that.h) && Objects.equals(this.w, that.w) && Objects.equals(this.x, that.x)
+            && Objects.equals(this.y, that.y);
     }
 
     @Override

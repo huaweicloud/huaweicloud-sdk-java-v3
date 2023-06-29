@@ -92,16 +92,16 @@ public class SceneAssetMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SceneAssetMeta sceneAssetMeta = (SceneAssetMeta) o;
-        return Objects.equals(this.components, sceneAssetMeta.components)
-            && Objects.equals(this.defaultConfigs, sceneAssetMeta.defaultConfigs);
+        SceneAssetMeta that = (SceneAssetMeta) obj;
+        return Objects.equals(this.components, that.components)
+            && Objects.equals(this.defaultConfigs, that.defaultConfigs);
     }
 
     @Override

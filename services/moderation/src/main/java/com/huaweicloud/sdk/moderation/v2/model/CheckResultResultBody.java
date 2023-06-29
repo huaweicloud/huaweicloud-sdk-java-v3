@@ -140,19 +140,17 @@ public class CheckResultResultBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckResultResultBody checkResultResultBody = (CheckResultResultBody) o;
-        return Objects.equals(this.jobId, checkResultResultBody.jobId)
-            && Objects.equals(this.status, checkResultResultBody.status)
-            && Objects.equals(this.createTime, checkResultResultBody.createTime)
-            && Objects.equals(this.updateTime, checkResultResultBody.updateTime)
-            && Objects.equals(this.items, checkResultResultBody.items);
+        CheckResultResultBody that = (CheckResultResultBody) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

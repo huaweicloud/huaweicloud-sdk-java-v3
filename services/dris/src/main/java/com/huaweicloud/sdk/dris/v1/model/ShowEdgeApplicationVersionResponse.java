@@ -95,22 +95,15 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,25 +380,21 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeApplicationVersionResponse showEdgeApplicationVersionResponse = (ShowEdgeApplicationVersionResponse) o;
-        return Objects.equals(this.edgeAppId, showEdgeApplicationVersionResponse.edgeAppId)
-            && Objects.equals(this.version, showEdgeApplicationVersionResponse.version)
-            && Objects.equals(this.description, showEdgeApplicationVersionResponse.description)
-            && Objects.equals(this.createdTime, showEdgeApplicationVersionResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, showEdgeApplicationVersionResponse.lastModifiedTime)
-            && Objects.equals(this.state, showEdgeApplicationVersionResponse.state)
-            && Objects.equals(this.command, showEdgeApplicationVersionResponse.command)
-            && Objects.equals(this.args, showEdgeApplicationVersionResponse.args)
-            && Objects.equals(this.containerSettings, showEdgeApplicationVersionResponse.containerSettings)
-            && Objects.equals(this.publishTime, showEdgeApplicationVersionResponse.publishTime)
-            && Objects.equals(this.offShelfTime, showEdgeApplicationVersionResponse.offShelfTime);
+        ShowEdgeApplicationVersionResponse that = (ShowEdgeApplicationVersionResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.offShelfTime, that.offShelfTime);
     }
 
     @Override

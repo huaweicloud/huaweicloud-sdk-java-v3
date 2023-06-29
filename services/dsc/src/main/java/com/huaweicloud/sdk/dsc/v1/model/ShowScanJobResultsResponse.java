@@ -172,20 +172,18 @@ public class ShowScanJobResultsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScanJobResultsResponse showScanJobResultsResponse = (ShowScanJobResultsResponse) o;
-        return Objects.equals(this.jobId, showScanJobResultsResponse.jobId)
-            && Objects.equals(this.jobName, showScanJobResultsResponse.jobName)
-            && Objects.equals(this.type, showScanJobResultsResponse.type)
-            && Objects.equals(this.dbScanResult, showScanJobResultsResponse.dbScanResult)
-            && Objects.equals(this.obsScanResult, showScanJobResultsResponse.obsScanResult)
-            && Objects.equals(this.esScanResult, showScanJobResultsResponse.esScanResult);
+        ShowScanJobResultsResponse that = (ShowScanJobResultsResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.dbScanResult, that.dbScanResult)
+            && Objects.equals(this.obsScanResult, that.obsScanResult)
+            && Objects.equals(this.esScanResult, that.esScanResult);
     }
 
     @Override

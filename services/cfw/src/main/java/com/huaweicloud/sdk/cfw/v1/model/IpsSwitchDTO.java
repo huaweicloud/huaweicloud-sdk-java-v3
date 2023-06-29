@@ -65,22 +65,15 @@ public class IpsSwitchDTO {
             if (value == null) {
                 return null;
             }
-            IpsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpsTypeEnum(value));
         }
 
         public static IpsTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,16 +152,16 @@ public class IpsSwitchDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpsSwitchDTO ipsSwitchDTO = (IpsSwitchDTO) o;
-        return Objects.equals(this.objectId, ipsSwitchDTO.objectId)
-            && Objects.equals(this.ipsType, ipsSwitchDTO.ipsType) && Objects.equals(this.status, ipsSwitchDTO.status);
+        IpsSwitchDTO that = (IpsSwitchDTO) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.ipsType, that.ipsType)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

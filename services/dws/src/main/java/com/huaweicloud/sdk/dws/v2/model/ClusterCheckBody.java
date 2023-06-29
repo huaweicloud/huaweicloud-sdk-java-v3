@@ -513,33 +513,26 @@ public class ClusterCheckBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterCheckBody clusterCheckBody = (ClusterCheckBody) o;
-        return Objects.equals(this.enterpriseProjectId, clusterCheckBody.enterpriseProjectId)
-            && Objects.equals(this.flavor, clusterCheckBody.flavor)
-            && Objects.equals(this.availabilityZones, clusterCheckBody.availabilityZones)
-            && Objects.equals(this.numNode, clusterCheckBody.numNode)
-            && Objects.equals(this.securityGroupId, clusterCheckBody.securityGroupId)
-            && Objects.equals(this.datastoreVersion, clusterCheckBody.datastoreVersion)
-            && Objects.equals(this.vpcId, clusterCheckBody.vpcId)
-            && Objects.equals(this.subnetId, clusterCheckBody.subnetId)
-            && Objects.equals(this.publicIp, clusterCheckBody.publicIp)
-            && Objects.equals(this.crossSpecRestore, clusterCheckBody.crossSpecRestore)
-            && Objects.equals(this.volume, clusterCheckBody.volume)
-            && Objects.equals(this.oldClusterHostname, clusterCheckBody.oldClusterHostname)
-            && Objects.equals(this.restorePoint, clusterCheckBody.restorePoint)
-            && Objects.equals(this.tagList, clusterCheckBody.tagList)
-            && Objects.equals(this.dssPoolId, clusterCheckBody.dssPoolId)
-            && Objects.equals(this.dbPort, clusterCheckBody.dbPort)
-            && Objects.equals(this.dbPassword, clusterCheckBody.dbPassword)
-            && Objects.equals(this.dbName, clusterCheckBody.dbName)
-            && Objects.equals(this.numCn, clusterCheckBody.numCn) && Objects.equals(this.name, clusterCheckBody.name);
+        ClusterCheckBody that = (ClusterCheckBody) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.availabilityZones, that.availabilityZones)
+            && Objects.equals(this.numNode, that.numNode) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.crossSpecRestore, that.crossSpecRestore) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.oldClusterHostname, that.oldClusterHostname)
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.tagList, that.tagList)
+            && Objects.equals(this.dssPoolId, that.dssPoolId) && Objects.equals(this.dbPort, that.dbPort)
+            && Objects.equals(this.dbPassword, that.dbPassword) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.numCn, that.numCn) && Objects.equals(this.name, that.name);
     }
 
     @Override

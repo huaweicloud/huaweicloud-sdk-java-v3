@@ -77,17 +77,16 @@ public class CreateManualBackupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateManualBackupOption createManualBackupOption = (CreateManualBackupOption) o;
-        return Objects.equals(this.instanceId, createManualBackupOption.instanceId)
-            && Objects.equals(this.name, createManualBackupOption.name)
-            && Objects.equals(this.description, createManualBackupOption.description);
+        CreateManualBackupOption that = (CreateManualBackupOption) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

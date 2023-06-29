@@ -83,22 +83,15 @@ public class SearchDistinctSharedPrincipalsReqBody {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceOwnerEnum(value));
         }
 
         public static ResourceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,20 +217,17 @@ public class SearchDistinctSharedPrincipalsReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDistinctSharedPrincipalsReqBody searchDistinctSharedPrincipalsReqBody =
-            (SearchDistinctSharedPrincipalsReqBody) o;
-        return Objects.equals(this.limit, searchDistinctSharedPrincipalsReqBody.limit)
-            && Objects.equals(this.marker, searchDistinctSharedPrincipalsReqBody.marker)
-            && Objects.equals(this.principals, searchDistinctSharedPrincipalsReqBody.principals)
-            && Objects.equals(this.resourceUrn, searchDistinctSharedPrincipalsReqBody.resourceUrn)
-            && Objects.equals(this.resourceOwner, searchDistinctSharedPrincipalsReqBody.resourceOwner);
+        SearchDistinctSharedPrincipalsReqBody that = (SearchDistinctSharedPrincipalsReqBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.principals, that.principals) && Objects.equals(this.resourceUrn, that.resourceUrn)
+            && Objects.equals(this.resourceOwner, that.resourceOwner);
     }
 
     @Override

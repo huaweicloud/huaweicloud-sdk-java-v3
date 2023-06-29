@@ -55,16 +55,15 @@ public class Condition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Condition condition = (Condition) o;
-        return Objects.equals(this.preNodeName, condition.preNodeName)
-            && Objects.equals(this.expression, condition.expression);
+        Condition that = (Condition) obj;
+        return Objects.equals(this.preNodeName, that.preNodeName) && Objects.equals(this.expression, that.expression);
     }
 
     @Override

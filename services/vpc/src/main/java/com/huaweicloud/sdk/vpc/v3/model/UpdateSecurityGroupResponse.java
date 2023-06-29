@@ -66,16 +66,15 @@ public class UpdateSecurityGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecurityGroupResponse updateSecurityGroupResponse = (UpdateSecurityGroupResponse) o;
-        return Objects.equals(this.requestId, updateSecurityGroupResponse.requestId)
-            && Objects.equals(this.securityGroup, updateSecurityGroupResponse.securityGroup);
+        UpdateSecurityGroupResponse that = (UpdateSecurityGroupResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.securityGroup, that.securityGroup);
     }
 
     @Override

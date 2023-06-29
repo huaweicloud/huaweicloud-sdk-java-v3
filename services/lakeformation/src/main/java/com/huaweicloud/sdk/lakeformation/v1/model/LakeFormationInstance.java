@@ -210,23 +210,20 @@ public class LakeFormationInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LakeFormationInstance lakeFormationInstance = (LakeFormationInstance) o;
-        return Objects.equals(this.instanceId, lakeFormationInstance.instanceId)
-            && Objects.equals(this.name, lakeFormationInstance.name)
-            && Objects.equals(this.description, lakeFormationInstance.description)
-            && Objects.equals(this.enterpriseProjectId, lakeFormationInstance.enterpriseProjectId)
-            && Objects.equals(this.shared, lakeFormationInstance.shared)
-            && Objects.equals(this.createTime, lakeFormationInstance.createTime)
-            && Objects.equals(this.updateTime, lakeFormationInstance.updateTime)
-            && Objects.equals(this.status, lakeFormationInstance.status)
-            && Objects.equals(this.inRecycleBin, lakeFormationInstance.inRecycleBin);
+        LakeFormationInstance that = (LakeFormationInstance) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.shared, that.shared) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.inRecycleBin, that.inRecycleBin);
     }
 
     @Override

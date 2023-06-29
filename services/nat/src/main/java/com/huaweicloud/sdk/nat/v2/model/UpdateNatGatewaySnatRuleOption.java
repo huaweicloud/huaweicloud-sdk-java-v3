@@ -77,17 +77,17 @@ public class UpdateNatGatewaySnatRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewaySnatRuleOption updateNatGatewaySnatRuleOption = (UpdateNatGatewaySnatRuleOption) o;
-        return Objects.equals(this.natGatewayId, updateNatGatewaySnatRuleOption.natGatewayId)
-            && Objects.equals(this.publicIpAddress, updateNatGatewaySnatRuleOption.publicIpAddress)
-            && Objects.equals(this.description, updateNatGatewaySnatRuleOption.description);
+        UpdateNatGatewaySnatRuleOption that = (UpdateNatGatewaySnatRuleOption) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId)
+            && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

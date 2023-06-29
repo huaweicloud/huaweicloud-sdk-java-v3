@@ -33,16 +33,15 @@ public class NeutronRemoveFirewallRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronRemoveFirewallRuleRequestBody neutronRemoveFirewallRuleRequestBody =
-            (NeutronRemoveFirewallRuleRequestBody) o;
-        return Objects.equals(this.firewallRuleId, neutronRemoveFirewallRuleRequestBody.firewallRuleId);
+        NeutronRemoveFirewallRuleRequestBody that = (NeutronRemoveFirewallRuleRequestBody) obj;
+        return Objects.equals(this.firewallRuleId, that.firewallRuleId);
     }
 
     @Override

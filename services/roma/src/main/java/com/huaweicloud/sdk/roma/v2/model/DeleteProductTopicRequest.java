@@ -81,17 +81,16 @@ public class DeleteProductTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProductTopicRequest deleteProductTopicRequest = (DeleteProductTopicRequest) o;
-        return Objects.equals(this.instanceId, deleteProductTopicRequest.instanceId)
-            && Objects.equals(this.productId, deleteProductTopicRequest.productId)
-            && Objects.equals(this.topicId, deleteProductTopicRequest.topicId);
+        DeleteProductTopicRequest that = (DeleteProductTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.topicId, that.topicId);
     }
 
     @Override

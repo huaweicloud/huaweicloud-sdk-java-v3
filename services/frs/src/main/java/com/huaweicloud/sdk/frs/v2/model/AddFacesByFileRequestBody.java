@@ -140,18 +140,17 @@ public class AddFacesByFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesByFileRequestBody addFacesByFileRequestBody = (AddFacesByFileRequestBody) o;
-        return Objects.equals(this.imageFile, addFacesByFileRequestBody.imageFile)
-            && Objects.equals(this.externalImageId, addFacesByFileRequestBody.externalImageId)
-            && Objects.equals(this.externalFields, addFacesByFileRequestBody.externalFields)
-            && Objects.equals(this.single, addFacesByFileRequestBody.single);
+        AddFacesByFileRequestBody that = (AddFacesByFileRequestBody) obj;
+        return Objects.equals(this.imageFile, that.imageFile)
+            && Objects.equals(this.externalImageId, that.externalImageId)
+            && Objects.equals(this.externalFields, that.externalFields) && Objects.equals(this.single, that.single);
     }
 
     @Override

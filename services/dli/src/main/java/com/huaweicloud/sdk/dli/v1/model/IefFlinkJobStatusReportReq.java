@@ -96,17 +96,16 @@ public class IefFlinkJobStatusReportReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IefFlinkJobStatusReportReq iefFlinkJobStatusReportReq = (IefFlinkJobStatusReportReq) o;
-        return Objects.equals(this.jobs, iefFlinkJobStatusReportReq.jobs)
-            && Objects.equals(this.messageId, iefFlinkJobStatusReportReq.messageId)
-            && Objects.equals(this.msgConfirmTopic, iefFlinkJobStatusReportReq.msgConfirmTopic);
+        IefFlinkJobStatusReportReq that = (IefFlinkJobStatusReportReq) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.msgConfirmTopic, that.msgConfirmTopic);
     }
 
     @Override

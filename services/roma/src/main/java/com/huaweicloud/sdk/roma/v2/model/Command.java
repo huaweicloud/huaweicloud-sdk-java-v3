@@ -103,17 +103,16 @@ public class Command {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Command command = (Command) o;
-        return Objects.equals(this.serviceId, command.serviceId) && Objects.equals(this.commandId, command.commandId)
-            && Objects.equals(this.commandName, command.commandName)
-            && Objects.equals(this.description, command.description);
+        Command that = (Command) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.commandName, that.commandName) && Objects.equals(this.description, that.description);
     }
 
     @Override

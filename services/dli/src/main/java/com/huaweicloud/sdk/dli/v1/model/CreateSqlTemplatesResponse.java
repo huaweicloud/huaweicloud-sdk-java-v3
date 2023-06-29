@@ -100,18 +100,16 @@ public class CreateSqlTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlTemplatesResponse createSqlTemplatesResponse = (CreateSqlTemplatesResponse) o;
-        return Objects.equals(this.isSuccess, createSqlTemplatesResponse.isSuccess)
-            && Objects.equals(this.message, createSqlTemplatesResponse.message)
-            && Objects.equals(this.sqlId, createSqlTemplatesResponse.sqlId)
-            && Objects.equals(this.group, createSqlTemplatesResponse.group);
+        CreateSqlTemplatesResponse that = (CreateSqlTemplatesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.sqlId, that.sqlId) && Objects.equals(this.group, that.group);
     }
 
     @Override

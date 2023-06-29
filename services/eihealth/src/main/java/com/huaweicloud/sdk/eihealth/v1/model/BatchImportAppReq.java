@@ -74,16 +74,16 @@ public class BatchImportAppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchImportAppReq batchImportAppReq = (BatchImportAppReq) o;
-        return Objects.equals(this.sourceProjectId, batchImportAppReq.sourceProjectId)
-            && Objects.equals(this.importApps, batchImportAppReq.importApps);
+        BatchImportAppReq that = (BatchImportAppReq) obj;
+        return Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.importApps, that.importApps);
     }
 
     @Override

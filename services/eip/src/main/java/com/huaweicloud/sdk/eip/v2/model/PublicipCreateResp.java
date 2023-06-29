@@ -147,22 +147,15 @@ public class PublicipCreateResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,22 +237,15 @@ public class PublicipCreateResp {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -479,25 +465,22 @@ public class PublicipCreateResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicipCreateResp publicipCreateResp = (PublicipCreateResp) o;
-        return Objects.equals(this.bandwidthSize, publicipCreateResp.bandwidthSize)
-            && Objects.equals(this.createTime, publicipCreateResp.createTime)
-            && Objects.equals(this.id, publicipCreateResp.id)
-            && Objects.equals(this.publicIpAddress, publicipCreateResp.publicIpAddress)
-            && Objects.equals(this.status, publicipCreateResp.status)
-            && Objects.equals(this.tenantId, publicipCreateResp.tenantId)
-            && Objects.equals(this.type, publicipCreateResp.type)
-            && Objects.equals(this.publicIpv6Address, publicipCreateResp.publicIpv6Address)
-            && Objects.equals(this.ipVersion, publicipCreateResp.ipVersion)
-            && Objects.equals(this.enterpriseProjectId, publicipCreateResp.enterpriseProjectId)
-            && Objects.equals(this.alias, publicipCreateResp.alias);
+        PublicipCreateResp that = (PublicipCreateResp) obj;
+        return Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.publicIpAddress, that.publicIpAddress) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.publicIpv6Address, that.publicIpv6Address)
+            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.alias, that.alias);
     }
 
     @Override

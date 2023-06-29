@@ -55,16 +55,15 @@ public class MixUserBackgroundImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MixUserBackgroundImage mixUserBackgroundImage = (MixUserBackgroundImage) o;
-        return Objects.equals(this.userId, mixUserBackgroundImage.userId)
-            && Objects.equals(this.imageUri, mixUserBackgroundImage.imageUri);
+        MixUserBackgroundImage that = (MixUserBackgroundImage) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.imageUri, that.imageUri);
     }
 
     @Override

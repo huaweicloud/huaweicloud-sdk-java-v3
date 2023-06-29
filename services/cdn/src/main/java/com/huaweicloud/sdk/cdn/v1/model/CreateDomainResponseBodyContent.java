@@ -435,32 +435,27 @@ public class CreateDomainResponseBodyContent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDomainResponseBodyContent createDomainResponseBodyContent = (CreateDomainResponseBodyContent) o;
-        return Objects.equals(this.id, createDomainResponseBodyContent.id)
-            && Objects.equals(this.domainName, createDomainResponseBodyContent.domainName)
-            && Objects.equals(this.businessType, createDomainResponseBodyContent.businessType)
-            && Objects.equals(this.serviceArea, createDomainResponseBodyContent.serviceArea)
-            && Objects.equals(this.userDomainId, createDomainResponseBodyContent.userDomainId)
-            && Objects.equals(this.domainStatus, createDomainResponseBodyContent.domainStatus)
-            && Objects.equals(this.cname, createDomainResponseBodyContent.cname)
-            && Objects.equals(this.sources, createDomainResponseBodyContent.sources)
-            && Objects.equals(this.domainOriginHost, createDomainResponseBodyContent.domainOriginHost)
-            && Objects.equals(this.httpsStatus, createDomainResponseBodyContent.httpsStatus)
-            && Objects.equals(this.createTime, createDomainResponseBodyContent.createTime)
-            && Objects.equals(this.modifyTime, createDomainResponseBodyContent.modifyTime)
-            && Objects.equals(this.disabled, createDomainResponseBodyContent.disabled)
-            && Objects.equals(this.locked, createDomainResponseBodyContent.locked)
-            && Objects.equals(this.rangeStatus, createDomainResponseBodyContent.rangeStatus)
-            && Objects.equals(this.followStatus, createDomainResponseBodyContent.followStatus)
-            && Objects.equals(this.originStatus, createDomainResponseBodyContent.originStatus)
-            && Objects.equals(this.autoRefreshPreheat, createDomainResponseBodyContent.autoRefreshPreheat);
+        CreateDomainResponseBodyContent that = (CreateDomainResponseBodyContent) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.userDomainId, that.userDomainId)
+            && Objects.equals(this.domainStatus, that.domainStatus) && Objects.equals(this.cname, that.cname)
+            && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.domainOriginHost, that.domainOriginHost)
+            && Objects.equals(this.httpsStatus, that.httpsStatus) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.modifyTime, that.modifyTime) && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.rangeStatus, that.rangeStatus)
+            && Objects.equals(this.followStatus, that.followStatus)
+            && Objects.equals(this.originStatus, that.originStatus)
+            && Objects.equals(this.autoRefreshPreheat, that.autoRefreshPreheat);
     }
 
     @Override

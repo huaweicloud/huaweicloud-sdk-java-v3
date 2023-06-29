@@ -121,19 +121,17 @@ public class DeleteTableColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTableColumnStatisticsRequest deleteTableColumnStatisticsRequest = (DeleteTableColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, deleteTableColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, deleteTableColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, deleteTableColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, deleteTableColumnStatisticsRequest.tableName)
-            && Objects.equals(this.columnName, deleteTableColumnStatisticsRequest.columnName);
+        DeleteTableColumnStatisticsRequest that = (DeleteTableColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnName, that.columnName);
     }
 
     @Override

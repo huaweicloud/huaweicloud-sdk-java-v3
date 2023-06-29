@@ -105,22 +105,15 @@ public class DiagnosisItem {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NameEnum(value));
         }
 
         public static NameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,8 +151,8 @@ public class DiagnosisItem {
     private List<ConclusionItem> adviceIds = null;
 
     /**
-    * 诊断结果
-    */
+     * 诊断结果
+     */
     public static final class ResultEnum {
 
         /**
@@ -208,22 +201,15 @@ public class DiagnosisItem {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -379,18 +365,17 @@ public class DiagnosisItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiagnosisItem diagnosisItem = (DiagnosisItem) o;
-        return Objects.equals(this.name, diagnosisItem.name) && Objects.equals(this.causeIds, diagnosisItem.causeIds)
-            && Objects.equals(this.impactIds, diagnosisItem.impactIds)
-            && Objects.equals(this.adviceIds, diagnosisItem.adviceIds)
-            && Objects.equals(this.result, diagnosisItem.result);
+        DiagnosisItem that = (DiagnosisItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.causeIds, that.causeIds)
+            && Objects.equals(this.impactIds, that.impactIds) && Objects.equals(this.adviceIds, that.adviceIds)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

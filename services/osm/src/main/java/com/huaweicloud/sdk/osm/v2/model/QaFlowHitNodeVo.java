@@ -87,22 +87,15 @@ public class QaFlowHitNodeVo {
             if (value == null) {
                 return null;
             }
-            AnswerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AnswerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AnswerTypeEnum(value));
         }
 
         public static AnswerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AnswerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,17 +186,16 @@ public class QaFlowHitNodeVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaFlowHitNodeVo qaFlowHitNodeVo = (QaFlowHitNodeVo) o;
-        return Objects.equals(this.id, qaFlowHitNodeVo.id) && Objects.equals(this.name, qaFlowHitNodeVo.name)
-            && Objects.equals(this.content, qaFlowHitNodeVo.content)
-            && Objects.equals(this.answerType, qaFlowHitNodeVo.answerType);
+        QaFlowHitNodeVo that = (QaFlowHitNodeVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.answerType, that.answerType);
     }
 
     @Override

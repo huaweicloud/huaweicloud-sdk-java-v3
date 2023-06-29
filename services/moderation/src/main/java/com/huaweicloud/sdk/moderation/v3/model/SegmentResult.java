@@ -55,16 +55,15 @@ public class SegmentResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SegmentResult segmentResult = (SegmentResult) o;
-        return Objects.equals(this.segment, segmentResult.segment)
-            && Objects.equals(this.glossaryName, segmentResult.glossaryName);
+        SegmentResult that = (SegmentResult) obj;
+        return Objects.equals(this.segment, that.segment) && Objects.equals(this.glossaryName, that.glossaryName);
     }
 
     @Override

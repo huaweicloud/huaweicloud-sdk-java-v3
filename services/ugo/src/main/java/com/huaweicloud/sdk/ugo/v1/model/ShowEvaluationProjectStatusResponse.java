@@ -90,22 +90,16 @@ public class ShowEvaluationProjectStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EvaluationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EvaluationProjectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new EvaluationProjectStatusEnum(value));
         }
 
         public static EvaluationProjectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EvaluationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -300,23 +294,22 @@ public class ShowEvaluationProjectStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEvaluationProjectStatusResponse showEvaluationProjectStatusResponse =
-            (ShowEvaluationProjectStatusResponse) o;
-        return Objects.equals(this.evaluationProjectId, showEvaluationProjectStatusResponse.evaluationProjectId)
-            && Objects.equals(this.evaluationProjectName, showEvaluationProjectStatusResponse.evaluationProjectName)
-            && Objects.equals(this.evaluationProjectStatus, showEvaluationProjectStatusResponse.evaluationProjectStatus)
-            && Objects.equals(this.projectStatusDetail, showEvaluationProjectStatusResponse.projectStatusDetail)
-            && Objects.equals(this.sourceDbType, showEvaluationProjectStatusResponse.sourceDbType)
-            && Objects.equals(this.sourceDbVersion, showEvaluationProjectStatusResponse.sourceDbVersion)
-            && Objects.equals(this.targetDbType, showEvaluationProjectStatusResponse.targetDbType)
-            && Objects.equals(this.targetDbVersion, showEvaluationProjectStatusResponse.targetDbVersion);
+        ShowEvaluationProjectStatusResponse that = (ShowEvaluationProjectStatusResponse) obj;
+        return Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.evaluationProjectStatus, that.evaluationProjectStatus)
+            && Objects.equals(this.projectStatusDetail, that.projectStatusDetail)
+            && Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.sourceDbVersion, that.sourceDbVersion)
+            && Objects.equals(this.targetDbType, that.targetDbType)
+            && Objects.equals(this.targetDbVersion, that.targetDbVersion);
     }
 
     @Override

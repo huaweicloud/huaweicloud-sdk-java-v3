@@ -307,26 +307,22 @@ public class ObsBucketInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsBucketInfo obsBucketInfo = (ObsBucketInfo) o;
-        return Objects.equals(this.responseHeaders, obsBucketInfo.responseHeaders)
-            && Objects.equals(this.originalHeaders, obsBucketInfo.originalHeaders)
-            && Objects.equals(this.statusCode, obsBucketInfo.statusCode)
-            && Objects.equals(this.bucketName, obsBucketInfo.bucketName)
-            && Objects.equals(this.owner, obsBucketInfo.owner)
-            && Objects.equals(this.creationDate, obsBucketInfo.creationDate)
-            && Objects.equals(this.location, obsBucketInfo.location)
-            && Objects.equals(this.storageClass, obsBucketInfo.storageClass)
-            && Objects.equals(this.metadata, obsBucketInfo.metadata) && Objects.equals(this.acl, obsBucketInfo.acl)
-            && Objects.equals(this.bucketStorageClass, obsBucketInfo.bucketStorageClass)
-            && Objects.equals(this.bucketType, obsBucketInfo.bucketType)
-            && Objects.equals(this.requestId, obsBucketInfo.requestId);
+        ObsBucketInfo that = (ObsBucketInfo) obj;
+        return Objects.equals(this.responseHeaders, that.responseHeaders)
+            && Objects.equals(this.originalHeaders, that.originalHeaders)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.creationDate, that.creationDate)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.storageClass, that.storageClass)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.acl, that.acl)
+            && Objects.equals(this.bucketStorageClass, that.bucketStorageClass)
+            && Objects.equals(this.bucketType, that.bucketType) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

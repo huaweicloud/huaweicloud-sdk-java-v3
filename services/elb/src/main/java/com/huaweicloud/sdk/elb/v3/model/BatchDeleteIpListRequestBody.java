@@ -43,15 +43,15 @@ public class BatchDeleteIpListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteIpListRequestBody batchDeleteIpListRequestBody = (BatchDeleteIpListRequestBody) o;
-        return Objects.equals(this.ipgroup, batchDeleteIpListRequestBody.ipgroup);
+        BatchDeleteIpListRequestBody that = (BatchDeleteIpListRequestBody) obj;
+        return Objects.equals(this.ipgroup, that.ipgroup);
     }
 
     @Override

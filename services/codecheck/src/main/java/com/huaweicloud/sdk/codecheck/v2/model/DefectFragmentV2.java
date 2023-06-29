@@ -99,18 +99,16 @@ public class DefectFragmentV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefectFragmentV2 defectFragmentV2 = (DefectFragmentV2) o;
-        return Objects.equals(this.lineNum, defectFragmentV2.lineNum)
-            && Objects.equals(this.lineContent, defectFragmentV2.lineContent)
-            && Objects.equals(this.startOffset, defectFragmentV2.startOffset)
-            && Objects.equals(this.endOffset, defectFragmentV2.endOffset);
+        DefectFragmentV2 that = (DefectFragmentV2) obj;
+        return Objects.equals(this.lineNum, that.lineNum) && Objects.equals(this.lineContent, that.lineContent)
+            && Objects.equals(this.startOffset, that.startOffset) && Objects.equals(this.endOffset, that.endOffset);
     }
 
     @Override

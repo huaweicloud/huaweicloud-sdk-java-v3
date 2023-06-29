@@ -75,22 +75,16 @@ public class AppCallbackUrl {
             if (value == null) {
                 return null;
             }
-            NotifyEventSubscriptionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotifyEventSubscriptionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new NotifyEventSubscriptionEnum(value));
         }
 
         public static NotifyEventSubscriptionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotifyEventSubscriptionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,17 +197,17 @@ public class AppCallbackUrl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppCallbackUrl appCallbackUrl = (AppCallbackUrl) o;
-        return Objects.equals(this.url, appCallbackUrl.url) && Objects.equals(this.authKey, appCallbackUrl.authKey)
-            && Objects.equals(this.notifyEventSubscription, appCallbackUrl.notifyEventSubscription)
-            && Objects.equals(this.updateTime, appCallbackUrl.updateTime);
+        AppCallbackUrl that = (AppCallbackUrl) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.authKey, that.authKey)
+            && Objects.equals(this.notifyEventSubscription, that.notifyEventSubscription)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

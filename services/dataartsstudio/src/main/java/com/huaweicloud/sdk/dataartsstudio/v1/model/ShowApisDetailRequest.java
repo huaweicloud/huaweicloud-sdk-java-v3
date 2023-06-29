@@ -65,22 +65,15 @@ public class ShowApisDetailRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class ShowApisDetailRequest {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,21 +310,18 @@ public class ShowApisDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApisDetailRequest showApisDetailRequest = (ShowApisDetailRequest) o;
-        return Objects.equals(this.workspace, showApisDetailRequest.workspace)
-            && Objects.equals(this.dlmType, showApisDetailRequest.dlmType)
-            && Objects.equals(this.apiId, showApisDetailRequest.apiId)
-            && Objects.equals(this.instanceId, showApisDetailRequest.instanceId)
-            && Objects.equals(this.startTime, showApisDetailRequest.startTime)
-            && Objects.equals(this.endTime, showApisDetailRequest.endTime)
-            && Objects.equals(this.timeUnit, showApisDetailRequest.timeUnit);
+        ShowApisDetailRequest that = (ShowApisDetailRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.timeUnit, that.timeUnit);
     }
 
     @Override

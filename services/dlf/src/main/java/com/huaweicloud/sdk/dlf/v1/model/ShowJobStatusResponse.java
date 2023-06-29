@@ -87,22 +87,15 @@ public class ShowJobStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,20 +256,17 @@ public class ShowJobStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobStatusResponse showJobStatusResponse = (ShowJobStatusResponse) o;
-        return Objects.equals(this.name, showJobStatusResponse.name)
-            && Objects.equals(this.status, showJobStatusResponse.status)
-            && Objects.equals(this.starttime, showJobStatusResponse.starttime)
-            && Objects.equals(this.endTime, showJobStatusResponse.endTime)
-            && Objects.equals(this.lastUpdateTime, showJobStatusResponse.lastUpdateTime)
-            && Objects.equals(this.nodes, showJobStatusResponse.nodes);
+        ShowJobStatusResponse that = (ShowJobStatusResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.starttime, that.starttime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

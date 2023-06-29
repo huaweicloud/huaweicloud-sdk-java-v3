@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class HotQuestionCount  {
-
+public class HotQuestionCount {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qa_pair_id")
-    
+    @JsonProperty(value = "qa_pair_id")
 
     private String qaPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="st_question")
-    
+    @JsonProperty(value = "st_question")
 
     private String stQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private String domain;
 
@@ -39,9 +29,6 @@ public class HotQuestionCount  {
         this.qaPairId = qaPairId;
         return this;
     }
-
-    
-
 
     /**
      * 问答对ID。
@@ -55,15 +42,10 @@ public class HotQuestionCount  {
         this.qaPairId = qaPairId;
     }
 
-    
-
     public HotQuestionCount withStQuestion(String stQuestion) {
         this.stQuestion = stQuestion;
         return this;
     }
-
-    
-
 
     /**
      * 标准问题。
@@ -77,15 +59,10 @@ public class HotQuestionCount  {
         this.stQuestion = stQuestion;
     }
 
-    
-
     public HotQuestionCount withDomain(String domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 标准问题所属领域。
@@ -99,25 +76,24 @@ public class HotQuestionCount  {
         this.domain = domain;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HotQuestionCount hotQuestionCount = (HotQuestionCount) o;
-        return Objects.equals(this.qaPairId, hotQuestionCount.qaPairId) &&
-            Objects.equals(this.stQuestion, hotQuestionCount.stQuestion) &&
-            Objects.equals(this.domain, hotQuestionCount.domain);
+        HotQuestionCount that = (HotQuestionCount) obj;
+        return Objects.equals(this.qaPairId, that.qaPairId) && Objects.equals(this.stQuestion, that.stQuestion)
+            && Objects.equals(this.domain, that.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qaPairId, stQuestion, domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class HotQuestionCount  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class HotQuestionCount  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

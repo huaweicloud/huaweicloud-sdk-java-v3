@@ -84,16 +84,16 @@ public class ModelFlow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModelFlow modelFlow = (ModelFlow) o;
-        return Objects.equals(this.vehicleClass, modelFlow.vehicleClass) && Objects.equals(this.flow, modelFlow.flow)
-            && Objects.equals(this.averageSpeed, modelFlow.averageSpeed);
+        ModelFlow that = (ModelFlow) obj;
+        return Objects.equals(this.vehicleClass, that.vehicleClass) && Objects.equals(this.flow, that.flow)
+            && Objects.equals(this.averageSpeed, that.averageSpeed);
     }
 
     @Override

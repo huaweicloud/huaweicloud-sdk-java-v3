@@ -63,22 +63,15 @@ public class Filter {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
         }
 
         public static ConditionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,16 +171,16 @@ public class Filter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Filter filter = (Filter) o;
-        return Objects.equals(this.condition, filter.condition)
-            && Objects.equals(this.isSupportFilter, filter.isSupportFilter) && Objects.equals(this.rule, filter.rule);
+        Filter that = (Filter) obj;
+        return Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.isSupportFilter, that.isSupportFilter) && Objects.equals(this.rule, that.rule);
     }
 
     @Override

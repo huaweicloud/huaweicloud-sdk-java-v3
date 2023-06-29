@@ -122,18 +122,16 @@ public class ListOpLogsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOpLogsResponse listOpLogsResponse = (ListOpLogsResponse) o;
-        return Objects.equals(this.operationLogs, listOpLogsResponse.operationLogs)
-            && Objects.equals(this.count, listOpLogsResponse.count)
-            && Objects.equals(this.limit, listOpLogsResponse.limit)
-            && Objects.equals(this.offset, listOpLogsResponse.offset);
+        ListOpLogsResponse that = (ListOpLogsResponse) obj;
+        return Objects.equals(this.operationLogs, that.operationLogs) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

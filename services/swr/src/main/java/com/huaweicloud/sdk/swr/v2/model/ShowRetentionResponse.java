@@ -119,18 +119,16 @@ public class ShowRetentionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRetentionResponse showRetentionResponse = (ShowRetentionResponse) o;
-        return Objects.equals(this.algorithm, showRetentionResponse.algorithm)
-            && Objects.equals(this.id, showRetentionResponse.id)
-            && Objects.equals(this.rules, showRetentionResponse.rules)
-            && Objects.equals(this.scope, showRetentionResponse.scope);
+        ShowRetentionResponse that = (ShowRetentionResponse) obj;
+        return Objects.equals(this.algorithm, that.algorithm) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

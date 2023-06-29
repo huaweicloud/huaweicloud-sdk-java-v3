@@ -24,8 +24,8 @@ public class CreateTagsOption {
     private List<TagsSingleValue> tags = null;
 
     /**
-    * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
-    */
+     * 操作标识（区分大小写）：delete：删除。create：创建。若已经存在相同的key值则会覆盖对应的value值。
+     */
     public static final class ActionEnum {
 
         /**
@@ -62,22 +62,15 @@ public class CreateTagsOption {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,15 +143,15 @@ public class CreateTagsOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTagsOption createTagsOption = (CreateTagsOption) o;
-        return Objects.equals(this.tags, createTagsOption.tags) && Objects.equals(this.action, createTagsOption.action);
+        CreateTagsOption that = (CreateTagsOption) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.action, that.action);
     }
 
     @Override

@@ -92,16 +92,16 @@ public class LabelSelector {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LabelSelector labelSelector = (LabelSelector) o;
-        return Objects.equals(this.matchExpressions, labelSelector.matchExpressions)
-            && Objects.equals(this.matchLabels, labelSelector.matchLabels);
+        LabelSelector that = (LabelSelector) obj;
+        return Objects.equals(this.matchExpressions, that.matchExpressions)
+            && Objects.equals(this.matchLabels, that.matchLabels);
     }
 
     @Override

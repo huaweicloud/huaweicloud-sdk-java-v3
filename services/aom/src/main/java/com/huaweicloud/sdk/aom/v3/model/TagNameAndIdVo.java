@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * TagNameAndIdVo
  */
-public class TagNameAndIdVo  {
-
+public class TagNameAndIdVo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_id")
-    
+    @JsonProperty(value = "tag_id")
 
     private String tagId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_name")
-    
+    @JsonProperty(value = "tag_name")
 
     private String tagName;
 
@@ -33,9 +24,6 @@ public class TagNameAndIdVo  {
         this.tagId = tagId;
         return this;
     }
-
-    
-
 
     /**
      * 标签Id
@@ -49,15 +37,10 @@ public class TagNameAndIdVo  {
         this.tagId = tagId;
     }
 
-    
-
     public TagNameAndIdVo withTagName(String tagName) {
         this.tagName = tagName;
         return this;
     }
-
-    
-
 
     /**
      * 标签名称
@@ -71,24 +54,23 @@ public class TagNameAndIdVo  {
         this.tagName = tagName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagNameAndIdVo tagNameAndIdVo = (TagNameAndIdVo) o;
-        return Objects.equals(this.tagId, tagNameAndIdVo.tagId) &&
-            Objects.equals(this.tagName, tagNameAndIdVo.tagName);
+        TagNameAndIdVo that = (TagNameAndIdVo) obj;
+        return Objects.equals(this.tagId, that.tagId) && Objects.equals(this.tagName, that.tagName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tagId, tagName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class TagNameAndIdVo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class TagNameAndIdVo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -175,21 +175,19 @@ public class ImageBatchModerationResultBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageBatchModerationResultBody imageBatchModerationResultBody = (ImageBatchModerationResultBody) o;
-        return Objects.equals(this.url, imageBatchModerationResultBody.url)
-            && Objects.equals(this.suggestion, imageBatchModerationResultBody.suggestion)
-            && Objects.equals(this.detail, imageBatchModerationResultBody.detail)
-            && Objects.equals(this.categorySuggestions, imageBatchModerationResultBody.categorySuggestions)
-            && Objects.equals(this.ocrText, imageBatchModerationResultBody.ocrText)
-            && Objects.equals(this.errorCode, imageBatchModerationResultBody.errorCode)
-            && Objects.equals(this.errorMsg, imageBatchModerationResultBody.errorMsg);
+        ImageBatchModerationResultBody that = (ImageBatchModerationResultBody) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.categorySuggestions, that.categorySuggestions)
+            && Objects.equals(this.ocrText, that.ocrText) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

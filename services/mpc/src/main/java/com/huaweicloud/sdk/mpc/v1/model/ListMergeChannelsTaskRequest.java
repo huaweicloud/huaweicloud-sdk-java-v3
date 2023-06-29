@@ -24,8 +24,8 @@ public class ListMergeChannelsTaskRequest {
     private List<String> taskId = null;
 
     /**
-    * 任务执行状态 
-    */
+     * 任务执行状态 
+     */
     public static final class StatusEnum {
 
         /**
@@ -86,22 +86,15 @@ public class ListMergeChannelsTaskRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,20 +259,17 @@ public class ListMergeChannelsTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMergeChannelsTaskRequest listMergeChannelsTaskRequest = (ListMergeChannelsTaskRequest) o;
-        return Objects.equals(this.taskId, listMergeChannelsTaskRequest.taskId)
-            && Objects.equals(this.status, listMergeChannelsTaskRequest.status)
-            && Objects.equals(this.startTime, listMergeChannelsTaskRequest.startTime)
-            && Objects.equals(this.endTime, listMergeChannelsTaskRequest.endTime)
-            && Objects.equals(this.page, listMergeChannelsTaskRequest.page)
-            && Objects.equals(this.size, listMergeChannelsTaskRequest.size);
+        ListMergeChannelsTaskRequest that = (ListMergeChannelsTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override

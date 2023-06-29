@@ -320,28 +320,21 @@ public class CreateCustomfieldsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomfieldsResponse createCustomfieldsResponse = (CreateCustomfieldsResponse) o;
-        return Objects.equals(this.options, createCustomfieldsResponse.options)
-            && Objects.equals(this.region, createCustomfieldsResponse.region)
-            && Objects.equals(this.id, createCustomfieldsResponse.id)
-            && Objects.equals(this.identifier, createCustomfieldsResponse.identifier)
-            && Objects.equals(this.projectId, createCustomfieldsResponse.projectId)
-            && Objects.equals(this.trackerId, createCustomfieldsResponse.trackerId)
-            && Objects.equals(this.customField, createCustomfieldsResponse.customField)
-            && Objects.equals(this.type, createCustomfieldsResponse.type)
-            && Objects.equals(this.name, createCustomfieldsResponse.name)
-            && Objects.equals(this.sort, createCustomfieldsResponse.sort)
-            && Objects.equals(this.memo, createCustomfieldsResponse.memo)
-            && Objects.equals(this.created, createCustomfieldsResponse.created)
-            && Objects.equals(this.modified, createCustomfieldsResponse.modified)
-            && Objects.equals(this.isDelete, createCustomfieldsResponse.isDelete);
+        CreateCustomfieldsResponse that = (CreateCustomfieldsResponse) obj;
+        return Objects.equals(this.options, that.options) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.trackerId, that.trackerId)
+            && Objects.equals(this.customField, that.customField) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.memo, that.memo) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.modified, that.modified) && Objects.equals(this.isDelete, that.isDelete);
     }
 
     @Override

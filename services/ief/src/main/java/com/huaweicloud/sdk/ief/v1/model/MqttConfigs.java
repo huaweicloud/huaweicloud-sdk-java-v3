@@ -74,15 +74,15 @@ public class MqttConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MqttConfigs mqttConfigs = (MqttConfigs) o;
-        return Objects.equals(this.enableMqtt, mqttConfigs.enableMqtt) && Objects.equals(this.mqtts, mqttConfigs.mqtts);
+        MqttConfigs that = (MqttConfigs) obj;
+        return Objects.equals(this.enableMqtt, that.enableMqtt) && Objects.equals(this.mqtts, that.mqtts);
     }
 
     @Override

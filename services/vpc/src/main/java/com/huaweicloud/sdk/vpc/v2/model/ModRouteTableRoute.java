@@ -99,18 +99,16 @@ public class ModRouteTableRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModRouteTableRoute modRouteTableRoute = (ModRouteTableRoute) o;
-        return Objects.equals(this.type, modRouteTableRoute.type)
-            && Objects.equals(this.destination, modRouteTableRoute.destination)
-            && Objects.equals(this.nexthop, modRouteTableRoute.nexthop)
-            && Objects.equals(this.description, modRouteTableRoute.description);
+        ModRouteTableRoute that = (ModRouteTableRoute) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.description, that.description);
     }
 
     @Override

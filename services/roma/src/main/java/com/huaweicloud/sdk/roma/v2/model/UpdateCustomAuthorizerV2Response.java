@@ -70,22 +70,15 @@ public class UpdateCustomAuthorizerV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class UpdateCustomAuthorizerV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthorizerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthorizerTypeEnum(value));
         }
 
         public static AuthorizerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -477,27 +463,22 @@ public class UpdateCustomAuthorizerV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomAuthorizerV2Response updateCustomAuthorizerV2Response = (UpdateCustomAuthorizerV2Response) o;
-        return Objects.equals(this.name, updateCustomAuthorizerV2Response.name)
-            && Objects.equals(this.type, updateCustomAuthorizerV2Response.type)
-            && Objects.equals(this.authorizerType, updateCustomAuthorizerV2Response.authorizerType)
-            && Objects.equals(this.authorizerUri, updateCustomAuthorizerV2Response.authorizerUri)
-            && Objects.equals(this.identities, updateCustomAuthorizerV2Response.identities)
-            && Objects.equals(this.ttl, updateCustomAuthorizerV2Response.ttl)
-            && Objects.equals(this.userData, updateCustomAuthorizerV2Response.userData)
-            && Objects.equals(this.ldApiId, updateCustomAuthorizerV2Response.ldApiId)
-            && Objects.equals(this.needBody, updateCustomAuthorizerV2Response.needBody)
-            && Objects.equals(this.id, updateCustomAuthorizerV2Response.id)
-            && Objects.equals(this.createTime, updateCustomAuthorizerV2Response.createTime)
-            && Objects.equals(this.romaAppId, updateCustomAuthorizerV2Response.romaAppId)
-            && Objects.equals(this.romaAppName, updateCustomAuthorizerV2Response.romaAppName);
+        UpdateCustomAuthorizerV2Response that = (UpdateCustomAuthorizerV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.authorizerType, that.authorizerType)
+            && Objects.equals(this.authorizerUri, that.authorizerUri)
+            && Objects.equals(this.identities, that.identities) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.needBody, that.needBody) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

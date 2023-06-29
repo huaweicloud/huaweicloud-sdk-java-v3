@@ -55,16 +55,16 @@ public class MemberStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberStatus memberStatus = (MemberStatus) o;
-        return Objects.equals(this.listenerId, memberStatus.listenerId)
-            && Objects.equals(this.operatingStatus, memberStatus.operatingStatus);
+        MemberStatus that = (MemberStatus) obj;
+        return Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.operatingStatus, that.operatingStatus);
     }
 
     @Override

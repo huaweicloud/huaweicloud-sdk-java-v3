@@ -99,18 +99,17 @@ public class MatchFeaturePair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MatchFeaturePair matchFeaturePair = (MatchFeaturePair) o;
-        return Objects.equals(this.userFeatureName, matchFeaturePair.userFeatureName)
-            && Objects.equals(this.itemFeatureName, matchFeaturePair.itemFeatureName)
-            && Objects.equals(this.weight, matchFeaturePair.weight)
-            && Objects.equals(this.matchCount, matchFeaturePair.matchCount);
+        MatchFeaturePair that = (MatchFeaturePair) obj;
+        return Objects.equals(this.userFeatureName, that.userFeatureName)
+            && Objects.equals(this.itemFeatureName, that.itemFeatureName) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.matchCount, that.matchCount);
     }
 
     @Override

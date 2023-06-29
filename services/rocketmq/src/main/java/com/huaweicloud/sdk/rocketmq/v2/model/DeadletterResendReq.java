@@ -74,16 +74,15 @@ public class DeadletterResendReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeadletterResendReq deadletterResendReq = (DeadletterResendReq) o;
-        return Objects.equals(this.topic, deadletterResendReq.topic)
-            && Objects.equals(this.msgIdList, deadletterResendReq.msgIdList);
+        DeadletterResendReq that = (DeadletterResendReq) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.msgIdList, that.msgIdList);
     }
 
     @Override

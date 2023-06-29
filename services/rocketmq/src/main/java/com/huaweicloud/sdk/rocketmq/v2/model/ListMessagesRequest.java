@@ -54,22 +54,15 @@ public class ListMessagesRequest {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +256,18 @@ public class ListMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessagesRequest listMessagesRequest = (ListMessagesRequest) o;
-        return Objects.equals(this.engine, listMessagesRequest.engine)
-            && Objects.equals(this.instanceId, listMessagesRequest.instanceId)
-            && Objects.equals(this.topic, listMessagesRequest.topic)
-            && Objects.equals(this.limit, listMessagesRequest.limit)
-            && Objects.equals(this.offset, listMessagesRequest.offset)
-            && Objects.equals(this.startTime, listMessagesRequest.startTime)
-            && Objects.equals(this.endTime, listMessagesRequest.endTime)
-            && Objects.equals(this.msgId, listMessagesRequest.msgId);
+        ListMessagesRequest that = (ListMessagesRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.msgId, that.msgId);
     }
 
     @Override

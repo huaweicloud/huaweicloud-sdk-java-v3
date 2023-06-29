@@ -131,17 +131,17 @@ public class Type {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Type type = (Type) o;
-        return Objects.equals(this.business, type.business) && Objects.equals(this.category, type.category)
-            && Objects.equals(this.classifier, type.classifier) && Objects.equals(this.techDomain, type.techDomain)
-            && Objects.equals(this.properties, type.properties);
+        Type that = (Type) obj;
+        return Objects.equals(this.business, that.business) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.classifier, that.classifier) && Objects.equals(this.techDomain, that.techDomain)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

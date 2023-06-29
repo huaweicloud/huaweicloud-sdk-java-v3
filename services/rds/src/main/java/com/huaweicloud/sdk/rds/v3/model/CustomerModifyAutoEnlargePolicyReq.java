@@ -76,22 +76,15 @@ public class CustomerModifyAutoEnlargePolicyReq {
             if (value == null) {
                 return null;
             }
-            TriggerThresholdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerThresholdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerThresholdEnum(value));
         }
 
         public static TriggerThresholdEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TriggerThresholdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,17 +158,16 @@ public class CustomerModifyAutoEnlargePolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerModifyAutoEnlargePolicyReq customerModifyAutoEnlargePolicyReq = (CustomerModifyAutoEnlargePolicyReq) o;
-        return Objects.equals(this.switchOption, customerModifyAutoEnlargePolicyReq.switchOption)
-            && Objects.equals(this.limitSize, customerModifyAutoEnlargePolicyReq.limitSize)
-            && Objects.equals(this.triggerThreshold, customerModifyAutoEnlargePolicyReq.triggerThreshold);
+        CustomerModifyAutoEnlargePolicyReq that = (CustomerModifyAutoEnlargePolicyReq) obj;
+        return Objects.equals(this.switchOption, that.switchOption) && Objects.equals(this.limitSize, that.limitSize)
+            && Objects.equals(this.triggerThreshold, that.triggerThreshold);
     }
 
     @Override

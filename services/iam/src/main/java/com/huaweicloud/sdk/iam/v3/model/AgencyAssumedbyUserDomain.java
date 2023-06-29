@@ -55,16 +55,15 @@ public class AgencyAssumedbyUserDomain {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyAssumedbyUserDomain agencyAssumedbyUserDomain = (AgencyAssumedbyUserDomain) o;
-        return Objects.equals(this.name, agencyAssumedbyUserDomain.name)
-            && Objects.equals(this.id, agencyAssumedbyUserDomain.id);
+        AgencyAssumedbyUserDomain that = (AgencyAssumedbyUserDomain) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override

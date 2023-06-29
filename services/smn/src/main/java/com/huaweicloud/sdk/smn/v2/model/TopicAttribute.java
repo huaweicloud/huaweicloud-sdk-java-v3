@@ -65,16 +65,16 @@ public class TopicAttribute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicAttribute topicAttribute = (TopicAttribute) o;
-        return Objects.equals(this.accessPolicy, topicAttribute.accessPolicy)
-            && Objects.equals(this.introduction, topicAttribute.introduction);
+        TopicAttribute that = (TopicAttribute) obj;
+        return Objects.equals(this.accessPolicy, that.accessPolicy)
+            && Objects.equals(this.introduction, that.introduction);
     }
 
     @Override

@@ -1,36 +1,29 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 计费类型信息，支持按需和包周期。
  */
-public class OpenGaussChargeInfoListResponse  {
+public class OpenGaussChargeInfoListResponse {
 
     /**
      * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
      */
     public static final class ChargeModeEnum {
 
-        
         /**
          * Enum POSTPAID for value: "postPaid"
          */
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
-        
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,25 +51,18 @@ public class OpenGaussChargeInfoListResponse  {
 
         @JsonCreator
         public static ChargeModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -94,8 +80,7 @@ public class OpenGaussChargeInfoListResponse  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
 
     private ChargeModeEnum chargeMode;
 
@@ -103,9 +88,6 @@ public class OpenGaussChargeInfoListResponse  {
         this.chargeMode = chargeMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式。  取值范围：  postPaid：后付费，即按需付费。  prePaid：预付费，即包年/包月。
@@ -119,23 +101,23 @@ public class OpenGaussChargeInfoListResponse  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussChargeInfoListResponse openGaussChargeInfoListResponse = (OpenGaussChargeInfoListResponse) o;
-        return Objects.equals(this.chargeMode, openGaussChargeInfoListResponse.chargeMode);
+        OpenGaussChargeInfoListResponse that = (OpenGaussChargeInfoListResponse) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,6 +126,7 @@ public class OpenGaussChargeInfoListResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -154,8 +137,5 @@ public class OpenGaussChargeInfoListResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

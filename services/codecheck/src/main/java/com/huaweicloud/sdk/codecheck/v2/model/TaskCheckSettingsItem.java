@@ -77,17 +77,16 @@ public class TaskCheckSettingsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskCheckSettingsItem taskCheckSettingsItem = (TaskCheckSettingsItem) o;
-        return Objects.equals(this.cfgKey, taskCheckSettingsItem.cfgKey)
-            && Objects.equals(this.status, taskCheckSettingsItem.status)
-            && Objects.equals(this.cfgValue, taskCheckSettingsItem.cfgValue);
+        TaskCheckSettingsItem that = (TaskCheckSettingsItem) obj;
+        return Objects.equals(this.cfgKey, that.cfgKey) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.cfgValue, that.cfgValue);
     }
 
     @Override

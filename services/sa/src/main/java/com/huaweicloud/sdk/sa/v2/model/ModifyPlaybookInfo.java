@@ -99,18 +99,16 @@ public class ModifyPlaybookInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyPlaybookInfo modifyPlaybookInfo = (ModifyPlaybookInfo) o;
-        return Objects.equals(this.name, modifyPlaybookInfo.name)
-            && Objects.equals(this.description, modifyPlaybookInfo.description)
-            && Objects.equals(this.enabled, modifyPlaybookInfo.enabled)
-            && Objects.equals(this.activeVersionId, modifyPlaybookInfo.activeVersionId);
+        ModifyPlaybookInfo that = (ModifyPlaybookInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.activeVersionId, that.activeVersionId);
     }
 
     @Override

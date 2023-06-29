@@ -128,17 +128,16 @@ public class RouteTableRouteAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteTableRouteAction routeTableRouteAction = (RouteTableRouteAction) o;
-        return Objects.equals(this.add, routeTableRouteAction.add)
-            && Objects.equals(this.mod, routeTableRouteAction.mod)
-            && Objects.equals(this.del, routeTableRouteAction.del);
+        RouteTableRouteAction that = (RouteTableRouteAction) obj;
+        return Objects.equals(this.add, that.add) && Objects.equals(this.mod, that.mod)
+            && Objects.equals(this.del, that.del);
     }
 
     @Override

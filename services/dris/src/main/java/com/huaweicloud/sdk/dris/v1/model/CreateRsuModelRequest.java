@@ -65,16 +65,15 @@ public class CreateRsuModelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRsuModelRequest createRsuModelRequest = (CreateRsuModelRequest) o;
-        return Objects.equals(this.instanceId, createRsuModelRequest.instanceId)
-            && Objects.equals(this.body, createRsuModelRequest.body);
+        CreateRsuModelRequest that = (CreateRsuModelRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

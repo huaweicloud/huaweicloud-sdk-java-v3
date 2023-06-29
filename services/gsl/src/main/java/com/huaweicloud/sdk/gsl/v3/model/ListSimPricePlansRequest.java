@@ -104,18 +104,16 @@ public class ListSimPricePlansRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSimPricePlansRequest listSimPricePlansRequest = (ListSimPricePlansRequest) o;
-        return Objects.equals(this.simCardId, listSimPricePlansRequest.simCardId)
-            && Objects.equals(this.realTime, listSimPricePlansRequest.realTime)
-            && Objects.equals(this.limit, listSimPricePlansRequest.limit)
-            && Objects.equals(this.offset, listSimPricePlansRequest.offset);
+        ListSimPricePlansRequest that = (ListSimPricePlansRequest) obj;
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.realTime, that.realTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

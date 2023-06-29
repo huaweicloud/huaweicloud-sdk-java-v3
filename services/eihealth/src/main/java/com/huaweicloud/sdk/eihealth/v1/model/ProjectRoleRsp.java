@@ -74,16 +74,15 @@ public class ProjectRoleRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectRoleRsp projectRoleRsp = (ProjectRoleRsp) o;
-        return Objects.equals(this.roleType, projectRoleRsp.roleType)
-            && Objects.equals(this.users, projectRoleRsp.users);
+        ProjectRoleRsp that = (ProjectRoleRsp) obj;
+        return Objects.equals(this.roleType, that.roleType) && Objects.equals(this.users, that.users);
     }
 
     @Override

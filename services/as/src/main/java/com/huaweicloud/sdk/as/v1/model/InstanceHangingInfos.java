@@ -86,22 +86,15 @@ public class InstanceHangingInfos {
             if (value == null) {
                 return null;
             }
-            LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LifecycleHookStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LifecycleHookStatusEnum(value));
         }
 
         public static LifecycleHookStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LifecycleHookStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,21 +246,20 @@ public class InstanceHangingInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceHangingInfos instanceHangingInfos = (InstanceHangingInfos) o;
-        return Objects.equals(this.lifecycleHookName, instanceHangingInfos.lifecycleHookName)
-            && Objects.equals(this.lifecycleActionKey, instanceHangingInfos.lifecycleActionKey)
-            && Objects.equals(this.instanceId, instanceHangingInfos.instanceId)
-            && Objects.equals(this.scalingGroupId, instanceHangingInfos.scalingGroupId)
-            && Objects.equals(this.lifecycleHookStatus, instanceHangingInfos.lifecycleHookStatus)
-            && Objects.equals(this.timeout, instanceHangingInfos.timeout)
-            && Objects.equals(this.defaultResult, instanceHangingInfos.defaultResult);
+        InstanceHangingInfos that = (InstanceHangingInfos) obj;
+        return Objects.equals(this.lifecycleHookName, that.lifecycleHookName)
+            && Objects.equals(this.lifecycleActionKey, that.lifecycleActionKey)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.lifecycleHookStatus, that.lifecycleHookStatus)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.defaultResult, that.defaultResult);
     }
 
     @Override

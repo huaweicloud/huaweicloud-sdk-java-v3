@@ -123,19 +123,17 @@ public class ListLiveDataDataSourcesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataDataSourcesV2Request listLiveDataDataSourcesV2Request = (ListLiveDataDataSourcesV2Request) o;
-        return Objects.equals(this.instanceId, listLiveDataDataSourcesV2Request.instanceId)
-            && Objects.equals(this.offset, listLiveDataDataSourcesV2Request.offset)
-            && Objects.equals(this.limit, listLiveDataDataSourcesV2Request.limit)
-            && Objects.equals(this.appId, listLiveDataDataSourcesV2Request.appId)
-            && Objects.equals(this.name, listLiveDataDataSourcesV2Request.name);
+        ListLiveDataDataSourcesV2Request that = (ListLiveDataDataSourcesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class RequiredDuringScheduling {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RequiredDuringScheduling requiredDuringScheduling = (RequiredDuringScheduling) o;
-        return Objects.equals(this.nodeSelectorTerms, requiredDuringScheduling.nodeSelectorTerms);
+        RequiredDuringScheduling that = (RequiredDuringScheduling) obj;
+        return Objects.equals(this.nodeSelectorTerms, that.nodeSelectorTerms);
     }
 
     @Override

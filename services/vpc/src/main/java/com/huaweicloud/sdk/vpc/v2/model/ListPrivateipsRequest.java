@@ -77,17 +77,16 @@ public class ListPrivateipsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateipsRequest listPrivateipsRequest = (ListPrivateipsRequest) o;
-        return Objects.equals(this.subnetId, listPrivateipsRequest.subnetId)
-            && Objects.equals(this.limit, listPrivateipsRequest.limit)
-            && Objects.equals(this.marker, listPrivateipsRequest.marker);
+        ListPrivateipsRequest that = (ListPrivateipsRequest) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

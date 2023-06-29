@@ -89,17 +89,16 @@ public class SetSsoConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetSsoConfigRequest setSsoConfigRequest = (SetSsoConfigRequest) o;
-        return Objects.equals(this.xRequestId, setSsoConfigRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, setSsoConfigRequest.acceptLanguage)
-            && Objects.equals(this.body, setSsoConfigRequest.body);
+        SetSsoConfigRequest that = (SetSsoConfigRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

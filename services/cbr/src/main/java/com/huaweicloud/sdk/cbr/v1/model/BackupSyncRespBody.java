@@ -55,16 +55,15 @@ public class BackupSyncRespBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupSyncRespBody backupSyncRespBody = (BackupSyncRespBody) o;
-        return Objects.equals(this.backupId, backupSyncRespBody.backupId)
-            && Objects.equals(this.operationLogId, backupSyncRespBody.operationLogId);
+        BackupSyncRespBody that = (BackupSyncRespBody) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.operationLogId, that.operationLogId);
     }
 
     @Override

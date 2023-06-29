@@ -187,21 +187,19 @@ public class RuleConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleConfig ruleConfig = (RuleConfig) o;
-        return Objects.equals(this.id, ruleConfig.id) && Objects.equals(this.ruleId, ruleConfig.ruleId)
-            && Objects.equals(this.defaultValue, ruleConfig.defaultValue)
-            && Objects.equals(this.optionValue, ruleConfig.optionValue)
-            && Objects.equals(this.optionKey, ruleConfig.optionKey)
-            && Objects.equals(this.optionName, ruleConfig.optionName)
-            && Objects.equals(this.templateId, ruleConfig.templateId)
-            && Objects.equals(this.description, ruleConfig.description);
+        RuleConfig that = (RuleConfig) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.optionValue, that.optionValue) && Objects.equals(this.optionKey, that.optionKey)
+            && Objects.equals(this.optionName, that.optionName) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

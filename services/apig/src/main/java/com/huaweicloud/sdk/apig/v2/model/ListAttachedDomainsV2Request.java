@@ -101,18 +101,16 @@ public class ListAttachedDomainsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAttachedDomainsV2Request listAttachedDomainsV2Request = (ListAttachedDomainsV2Request) o;
-        return Objects.equals(this.certificateId, listAttachedDomainsV2Request.certificateId)
-            && Objects.equals(this.offset, listAttachedDomainsV2Request.offset)
-            && Objects.equals(this.limit, listAttachedDomainsV2Request.limit)
-            && Objects.equals(this.urlDomain, listAttachedDomainsV2Request.urlDomain);
+        ListAttachedDomainsV2Request that = (ListAttachedDomainsV2Request) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.urlDomain, that.urlDomain);
     }
 
     @Override

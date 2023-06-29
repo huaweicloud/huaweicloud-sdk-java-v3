@@ -96,16 +96,16 @@ public class MatchExpression {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MatchExpression matchExpression = (MatchExpression) o;
-        return Objects.equals(this.key, matchExpression.key) && Objects.equals(this.operator, matchExpression.operator)
-            && Objects.equals(this.values, matchExpression.values);
+        MatchExpression that = (MatchExpression) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

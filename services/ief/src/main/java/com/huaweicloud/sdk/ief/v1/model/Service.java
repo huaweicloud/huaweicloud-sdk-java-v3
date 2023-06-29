@@ -43,15 +43,15 @@ public class Service {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Service service = (Service) o;
-        return Objects.equals(this.service, service.service);
+        Service that = (Service) obj;
+        return Objects.equals(this.service, that.service);
     }
 
     @Override

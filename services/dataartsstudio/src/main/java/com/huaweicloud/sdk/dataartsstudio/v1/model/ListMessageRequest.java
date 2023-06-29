@@ -99,18 +99,16 @@ public class ListMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageRequest listMessageRequest = (ListMessageRequest) o;
-        return Objects.equals(this.workspace, listMessageRequest.workspace)
-            && Objects.equals(this.offset, listMessageRequest.offset)
-            && Objects.equals(this.limit, listMessageRequest.limit)
-            && Objects.equals(this.apiName, listMessageRequest.apiName);
+        ListMessageRequest that = (ListMessageRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override

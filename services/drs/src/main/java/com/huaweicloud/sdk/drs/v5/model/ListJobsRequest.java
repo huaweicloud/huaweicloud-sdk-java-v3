@@ -60,22 +60,15 @@ public class ListJobsRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class ListJobsRequest {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,22 +343,15 @@ public class ListJobsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -433,22 +412,15 @@ public class ListJobsRequest {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
         }
 
         public static EngineTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -521,22 +493,15 @@ public class ListJobsRequest {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -773,23 +738,20 @@ public class ListJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobsRequest listJobsRequest = (ListJobsRequest) o;
-        return Objects.equals(this.xLanguage, listJobsRequest.xLanguage)
-            && Objects.equals(this.jobType, listJobsRequest.jobType) && Objects.equals(this.name, listJobsRequest.name)
-            && Objects.equals(this.status, listJobsRequest.status)
-            && Objects.equals(this.engineType, listJobsRequest.engineType)
-            && Objects.equals(this.netType, listJobsRequest.netType)
-            && Objects.equals(this.enterpriseProjectId, listJobsRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, listJobsRequest.offset) && Objects.equals(this.limit, listJobsRequest.limit)
-            && Objects.equals(this.sortKey, listJobsRequest.sortKey)
-            && Objects.equals(this.sortDir, listJobsRequest.sortDir);
+        ListJobsRequest that = (ListJobsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.engineType, that.engineType) && Objects.equals(this.netType, that.netType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

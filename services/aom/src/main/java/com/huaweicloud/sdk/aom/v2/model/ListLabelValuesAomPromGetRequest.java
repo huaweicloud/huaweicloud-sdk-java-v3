@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListLabelValuesAomPromGetRequest  {
-
+public class ListLabelValuesAomPromGetRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label_name")
-    
+    @JsonProperty(value = "label_name")
 
     private String labelName;
 
@@ -28,9 +19,6 @@ public class ListLabelValuesAomPromGetRequest  {
         this.labelName = labelName;
         return this;
     }
-
-    
-
 
     /**
      * 查询所用标签。
@@ -44,23 +32,23 @@ public class ListLabelValuesAomPromGetRequest  {
         this.labelName = labelName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLabelValuesAomPromGetRequest listLabelValuesAomPromGetRequest = (ListLabelValuesAomPromGetRequest) o;
-        return Objects.equals(this.labelName, listLabelValuesAomPromGetRequest.labelName);
+        ListLabelValuesAomPromGetRequest that = (ListLabelValuesAomPromGetRequest) obj;
+        return Objects.equals(this.labelName, that.labelName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(labelName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ListLabelValuesAomPromGetRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ListLabelValuesAomPromGetRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

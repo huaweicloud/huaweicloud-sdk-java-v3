@@ -65,16 +65,15 @@ public class UpdateServerMetadataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServerMetadataRequest updateServerMetadataRequest = (UpdateServerMetadataRequest) o;
-        return Objects.equals(this.serverId, updateServerMetadataRequest.serverId)
-            && Objects.equals(this.body, updateServerMetadataRequest.body);
+        UpdateServerMetadataRequest that = (UpdateServerMetadataRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

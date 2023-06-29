@@ -100,18 +100,16 @@ public class AddApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddApplicationResponse addApplicationResponse = (AddApplicationResponse) o;
-        return Objects.equals(this.appId, addApplicationResponse.appId)
-            && Objects.equals(this.appName, addApplicationResponse.appName)
-            && Objects.equals(this.createTime, addApplicationResponse.createTime)
-            && Objects.equals(this.defaultApp, addApplicationResponse.defaultApp);
+        AddApplicationResponse that = (AddApplicationResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.defaultApp, that.defaultApp);
     }
 
     @Override

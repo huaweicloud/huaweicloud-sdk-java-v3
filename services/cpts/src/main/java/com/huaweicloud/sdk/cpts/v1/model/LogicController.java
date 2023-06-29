@@ -55,16 +55,15 @@ public class LogicController {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogicController logicController = (LogicController) o;
-        return Objects.equals(this.forLoopParams, logicController.forLoopParams)
-            && Objects.equals(this.condition, logicController.condition);
+        LogicController that = (LogicController) obj;
+        return Objects.equals(this.forLoopParams, that.forLoopParams) && Objects.equals(this.condition, that.condition);
     }
 
     @Override

@@ -165,21 +165,18 @@ public class UpdateProductRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductRequestBody updateProductRequestBody = (UpdateProductRequestBody) o;
-        return Objects.equals(this.name, updateProductRequestBody.name)
-            && Objects.equals(this.description, updateProductRequestBody.description)
-            && Objects.equals(this.manufacturerId, updateProductRequestBody.manufacturerId)
-            && Objects.equals(this.manufacturerName, updateProductRequestBody.manufacturerName)
-            && Objects.equals(this.model, updateProductRequestBody.model)
-            && Objects.equals(this.deviceType, updateProductRequestBody.deviceType)
-            && Objects.equals(this.version, updateProductRequestBody.version);
+        UpdateProductRequestBody that = (UpdateProductRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.manufacturerId, that.manufacturerId)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.version, that.version);
     }
 
     @Override

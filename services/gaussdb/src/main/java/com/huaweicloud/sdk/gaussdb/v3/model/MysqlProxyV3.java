@@ -1,129 +1,105 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyNodes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MysqlProxyV3
  */
-public class MysqlProxyV3  {
-
+public class MysqlProxyV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
 
     private String address;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_status")
-    
+    @JsonProperty(value = "pool_status")
 
     private String poolStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay_threshold_in_seconds")
-    
+    @JsonProperty(value = "delay_threshold_in_seconds")
 
     private Integer delayThresholdInSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="elb_vip")
-    
+    @JsonProperty(value = "elb_vip")
 
     private String elbVip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eip")
-    
+    @JsonProperty(value = "eip")
 
     private String eip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
 
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<MysqlProxyNodes> nodes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="transaction_split")
-    
+    @JsonProperty(value = "transaction_split")
 
     private String transactionSplit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connection_pool_type")
-    
+    @JsonProperty(value = "connection_pool_type")
 
     private String connectionPoolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="switch_connection_pool_type_enabled")
-    
+    @JsonProperty(value = "switch_connection_pool_type_enabled")
 
     private Boolean switchConnectionPoolTypeEnabled;
 
@@ -131,9 +107,6 @@ public class MysqlProxyV3  {
         this.poolId = poolId;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例ID。
@@ -147,15 +120,10 @@ public class MysqlProxyV3  {
         this.poolId = poolId;
     }
 
-    
-
     public MysqlProxyV3 withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例开启状态。  取值: - “ACTIVE”，表示数据库代理正常； - “FAILED”，表示数据库代理创建失败； - “DELETED”，表示数据库代理已删除； - “ABNORMAL”，表示数据库代理异常； - “ENABLING PROXY”，表示数据库代理正在开启； - “DISABLING PROXY”，表示数据库代理正在关闭； - “ADDING PROXY NODE”，表示数据库代理正在扩容； - “DELETING READ REPLICAS FROM PROXY”，表示数据库代理正在移除只读节点； - “ADDING READ REPLICAS TO PROXY”，表示数据库代理正在添加只读节点； - “CHANGING WEIGHTS”，表示数据库代理正在修改只读节点权重。
@@ -169,15 +137,10 @@ public class MysqlProxyV3  {
         this.status = status;
     }
 
-    
-
     public MysqlProxyV3 withAddress(String address) {
         this.address = address;
         return this;
     }
-
-    
-
 
     /**
      * Proxy读写分离地址。
@@ -191,15 +154,10 @@ public class MysqlProxyV3  {
         this.address = address;
     }
 
-    
-
     public MysqlProxyV3 withPort(Integer port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * Proxy端口信息。
@@ -213,15 +171,10 @@ public class MysqlProxyV3  {
         this.port = port;
     }
 
-    
-
     public MysqlProxyV3 withPoolStatus(String poolStatus) {
         this.poolStatus = poolStatus;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例状态。  取值范围： - ACTIVE，表示数据库代理正常 - ABNORMAL，表示数据库代理异常 - FAILED，表示数据库代理创建失败 - DELETED，表示数据库代理已删除
@@ -235,15 +188,10 @@ public class MysqlProxyV3  {
         this.poolStatus = poolStatus;
     }
 
-    
-
     public MysqlProxyV3 withDelayThresholdInSeconds(Integer delayThresholdInSeconds) {
         this.delayThresholdInSeconds = delayThresholdInSeconds;
         return this;
     }
-
-    
-
 
     /**
      * 延时阈值，单位：秒。
@@ -257,15 +205,10 @@ public class MysqlProxyV3  {
         this.delayThresholdInSeconds = delayThresholdInSeconds;
     }
 
-    
-
     public MysqlProxyV3 withElbVip(String elbVip) {
         this.elbVip = elbVip;
         return this;
     }
-
-    
-
 
     /**
      * Elb模式的虚拟ip信息。
@@ -279,15 +222,10 @@ public class MysqlProxyV3  {
         this.elbVip = elbVip;
     }
 
-    
-
     public MysqlProxyV3 withEip(String eip) {
         this.eip = eip;
         return this;
     }
-
-    
-
 
     /**
      * 弹性公网IP信息。
@@ -301,15 +239,10 @@ public class MysqlProxyV3  {
         this.eip = eip;
     }
 
-    
-
     public MysqlProxyV3 withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例规格的CPU数量。
@@ -323,15 +256,10 @@ public class MysqlProxyV3  {
         this.vcpus = vcpus;
     }
 
-    
-
     public MysqlProxyV3 withRam(String ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例规格的内存数量。
@@ -345,15 +273,10 @@ public class MysqlProxyV3  {
         this.ram = ram;
     }
 
-    
-
     public MysqlProxyV3 withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * Proxy节点个数。
@@ -367,15 +290,10 @@ public class MysqlProxyV3  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public MysqlProxyV3 withMode(String mode) {
         this.mode = mode;
         return this;
     }
-
-    
-
 
     /**
      * Proxy主备模式，取值范围：Cluster。
@@ -389,16 +307,13 @@ public class MysqlProxyV3  {
         this.mode = mode;
     }
 
-    
-
     public MysqlProxyV3 withNodes(List<MysqlProxyNodes> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public MysqlProxyV3 addNodesItem(MysqlProxyNodes nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -406,7 +321,7 @@ public class MysqlProxyV3  {
     }
 
     public MysqlProxyV3 withNodes(Consumer<List<MysqlProxyNodes>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -425,15 +340,10 @@ public class MysqlProxyV3  {
         this.nodes = nodes;
     }
 
-    
-
     public MysqlProxyV3 withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * Proxy规格信息。
@@ -447,15 +357,10 @@ public class MysqlProxyV3  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public MysqlProxyV3 withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例名称。
@@ -469,15 +374,10 @@ public class MysqlProxyV3  {
         this.name = name;
     }
 
-    
-
     public MysqlProxyV3 withTransactionSplit(String transactionSplit) {
         this.transactionSplit = transactionSplit;
         return this;
     }
-
-    
-
 
     /**
      * Proxy事务拆分开关状态【ON/OFF】。
@@ -491,15 +391,10 @@ public class MysqlProxyV3  {
         this.transactionSplit = transactionSplit;
     }
 
-    
-
     public MysqlProxyV3 withConnectionPoolType(String connectionPoolType) {
         this.connectionPoolType = connectionPoolType;
         return this;
     }
-
-    
-
 
     /**
      * 连接池类型。  取值范围: - CLOSED: 关闭连接池。 - SESSION: 开启会话级连接池。
@@ -513,15 +408,10 @@ public class MysqlProxyV3  {
         this.connectionPoolType = connectionPoolType;
     }
 
-    
-
     public MysqlProxyV3 withSwitchConnectionPoolTypeEnabled(Boolean switchConnectionPoolTypeEnabled) {
         this.switchConnectionPoolTypeEnabled = switchConnectionPoolTypeEnabled;
         return this;
     }
-
-    
-
 
     /**
      * 数据库代理版本是否支持会话级连接池。  取值范围: - true: 支持。 - false: 不支持。
@@ -535,40 +425,50 @@ public class MysqlProxyV3  {
         this.switchConnectionPoolTypeEnabled = switchConnectionPoolTypeEnabled;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlProxyV3 mysqlProxyV3 = (MysqlProxyV3) o;
-        return Objects.equals(this.poolId, mysqlProxyV3.poolId) &&
-            Objects.equals(this.status, mysqlProxyV3.status) &&
-            Objects.equals(this.address, mysqlProxyV3.address) &&
-            Objects.equals(this.port, mysqlProxyV3.port) &&
-            Objects.equals(this.poolStatus, mysqlProxyV3.poolStatus) &&
-            Objects.equals(this.delayThresholdInSeconds, mysqlProxyV3.delayThresholdInSeconds) &&
-            Objects.equals(this.elbVip, mysqlProxyV3.elbVip) &&
-            Objects.equals(this.eip, mysqlProxyV3.eip) &&
-            Objects.equals(this.vcpus, mysqlProxyV3.vcpus) &&
-            Objects.equals(this.ram, mysqlProxyV3.ram) &&
-            Objects.equals(this.nodeNum, mysqlProxyV3.nodeNum) &&
-            Objects.equals(this.mode, mysqlProxyV3.mode) &&
-            Objects.equals(this.nodes, mysqlProxyV3.nodes) &&
-            Objects.equals(this.flavorRef, mysqlProxyV3.flavorRef) &&
-            Objects.equals(this.name, mysqlProxyV3.name) &&
-            Objects.equals(this.transactionSplit, mysqlProxyV3.transactionSplit) &&
-            Objects.equals(this.connectionPoolType, mysqlProxyV3.connectionPoolType) &&
-            Objects.equals(this.switchConnectionPoolTypeEnabled, mysqlProxyV3.switchConnectionPoolTypeEnabled);
+        MysqlProxyV3 that = (MysqlProxyV3) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.poolStatus, that.poolStatus)
+            && Objects.equals(this.delayThresholdInSeconds, that.delayThresholdInSeconds)
+            && Objects.equals(this.elbVip, that.elbVip) && Objects.equals(this.eip, that.eip)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.transactionSplit, that.transactionSplit)
+            && Objects.equals(this.connectionPoolType, that.connectionPoolType)
+            && Objects.equals(this.switchConnectionPoolTypeEnabled, that.switchConnectionPoolTypeEnabled);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(poolId, status, address, port, poolStatus, delayThresholdInSeconds, elbVip, eip, vcpus, ram, nodeNum, mode, nodes, flavorRef, name, transactionSplit, connectionPoolType, switchConnectionPoolTypeEnabled);
+        return Objects.hash(poolId,
+            status,
+            address,
+            port,
+            poolStatus,
+            delayThresholdInSeconds,
+            elbVip,
+            eip,
+            vcpus,
+            ram,
+            nodeNum,
+            mode,
+            nodes,
+            flavorRef,
+            name,
+            transactionSplit,
+            connectionPoolType,
+            switchConnectionPoolTypeEnabled);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -590,10 +490,13 @@ public class MysqlProxyV3  {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    transactionSplit: ").append(toIndentedString(transactionSplit)).append("\n");
         sb.append("    connectionPoolType: ").append(toIndentedString(connectionPoolType)).append("\n");
-        sb.append("    switchConnectionPoolTypeEnabled: ").append(toIndentedString(switchConnectionPoolTypeEnabled)).append("\n");
+        sb.append("    switchConnectionPoolTypeEnabled: ")
+            .append(toIndentedString(switchConnectionPoolTypeEnabled))
+            .append("\n");
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -604,8 +507,5 @@ public class MysqlProxyV3  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

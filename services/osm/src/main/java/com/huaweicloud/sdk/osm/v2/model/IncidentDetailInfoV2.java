@@ -483,33 +483,28 @@ public class IncidentDetailInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentDetailInfoV2 incidentDetailInfoV2 = (IncidentDetailInfoV2) o;
-        return Objects.equals(this.xcustomerId, incidentDetailInfoV2.xcustomerId)
-            && Objects.equals(this.xcustomerName, incidentDetailInfoV2.xcustomerName)
-            && Objects.equals(this.status, incidentDetailInfoV2.status)
-            && Objects.equals(this.judgement, incidentDetailInfoV2.judgement)
-            && Objects.equals(this.incidentId, incidentDetailInfoV2.incidentId)
-            && Objects.equals(this.businessTypeName, incidentDetailInfoV2.businessTypeName)
-            && Objects.equals(this.incidentTypeName, incidentDetailInfoV2.incidentTypeName)
-            && Objects.equals(this.customerId, incidentDetailInfoV2.customerId)
-            && Objects.equals(this.dcName, incidentDetailInfoV2.dcName)
-            && Objects.equals(this.simpleDescription, incidentDetailInfoV2.simpleDescription)
-            && Objects.equals(this.sourceName, incidentDetailInfoV2.sourceName)
-            && Objects.equals(this.createTime, incidentDetailInfoV2.createTime)
-            && Objects.equals(this.messageList, incidentDetailInfoV2.messageList)
-            && Objects.equals(this.incidentSatisfaction, incidentDetailInfoV2.incidentSatisfaction)
-            && Objects.equals(this.isAuthorized, incidentDetailInfoV2.isAuthorized)
-            && Objects.equals(this.severityName, incidentDetailInfoV2.severityName)
-            && Objects.equals(this.businessOwnership, incidentDetailInfoV2.businessOwnership)
-            && Objects.equals(this.resolveTime, incidentDetailInfoV2.resolveTime)
-            && Objects.equals(this.extInfo, incidentDetailInfoV2.extInfo);
+        IncidentDetailInfoV2 that = (IncidentDetailInfoV2) obj;
+        return Objects.equals(this.xcustomerId, that.xcustomerId)
+            && Objects.equals(this.xcustomerName, that.xcustomerName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.judgement, that.judgement) && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.businessTypeName, that.businessTypeName)
+            && Objects.equals(this.incidentTypeName, that.incidentTypeName)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.dcName, that.dcName)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.messageList, that.messageList)
+            && Objects.equals(this.incidentSatisfaction, that.incidentSatisfaction)
+            && Objects.equals(this.isAuthorized, that.isAuthorized)
+            && Objects.equals(this.severityName, that.severityName)
+            && Objects.equals(this.businessOwnership, that.businessOwnership)
+            && Objects.equals(this.resolveTime, that.resolveTime) && Objects.equals(this.extInfo, that.extInfo);
     }
 
     @Override

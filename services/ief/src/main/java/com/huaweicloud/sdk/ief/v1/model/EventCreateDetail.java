@@ -131,19 +131,17 @@ public class EventCreateDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventCreateDetail eventCreateDetail = (EventCreateDetail) o;
-        return Objects.equals(this.name, eventCreateDetail.name)
-            && Objects.equals(this.description, eventCreateDetail.description)
-            && Objects.equals(this.events, eventCreateDetail.events)
-            && Objects.equals(this.target, eventCreateDetail.target)
-            && Objects.equals(this.targetResource, eventCreateDetail.targetResource);
+        EventCreateDetail that = (EventCreateDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.events, that.events) && Objects.equals(this.target, that.target)
+            && Objects.equals(this.targetResource, that.targetResource);
     }
 
     @Override

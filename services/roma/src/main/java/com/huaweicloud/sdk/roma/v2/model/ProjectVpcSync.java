@@ -96,17 +96,16 @@ public class ProjectVpcSync {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectVpcSync projectVpcSync = (ProjectVpcSync) o;
-        return Objects.equals(this.vpcChannelId, projectVpcSync.vpcChannelId)
-            && Objects.equals(this.instanceIds, projectVpcSync.instanceIds)
-            && Objects.equals(this.forceSync, projectVpcSync.forceSync);
+        ProjectVpcSync that = (ProjectVpcSync) obj;
+        return Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.instanceIds, that.instanceIds) && Objects.equals(this.forceSync, that.forceSync);
     }
 
     @Override

@@ -85,22 +85,15 @@ public class ListFlavorsRequest {
             if (value == null) {
                 return null;
             }
-            CpuTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuTypeEnum(value));
         }
 
         public static CpuTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,18 @@ public class ListFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.instanceId, listFlavorsRequest.instanceId)
-            && Objects.equals(this.specCode, listFlavorsRequest.specCode)
-            && Objects.equals(this.cacheMode, listFlavorsRequest.cacheMode)
-            && Objects.equals(this.engine, listFlavorsRequest.engine)
-            && Objects.equals(this.engineVersion, listFlavorsRequest.engineVersion)
-            && Objects.equals(this.cpuType, listFlavorsRequest.cpuType)
-            && Objects.equals(this.capacity, listFlavorsRequest.capacity);
+        ListFlavorsRequest that = (ListFlavorsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.cacheMode, that.cacheMode) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.cpuType, that.cpuType)
+            && Objects.equals(this.capacity, that.capacity);
     }
 
     @Override

@@ -118,18 +118,16 @@ public class CreateRouteTableReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRouteTableReq createRouteTableReq = (CreateRouteTableReq) o;
-        return Objects.equals(this.name, createRouteTableReq.name)
-            && Objects.equals(this.routes, createRouteTableReq.routes)
-            && Objects.equals(this.vpcId, createRouteTableReq.vpcId)
-            && Objects.equals(this.description, createRouteTableReq.description);
+        CreateRouteTableReq that = (CreateRouteTableReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.routes, that.routes)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.description, that.description);
     }
 
     @Override

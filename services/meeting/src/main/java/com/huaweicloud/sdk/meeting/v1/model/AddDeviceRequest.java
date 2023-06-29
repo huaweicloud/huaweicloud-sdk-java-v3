@@ -89,17 +89,16 @@ public class AddDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeviceRequest addDeviceRequest = (AddDeviceRequest) o;
-        return Objects.equals(this.xRequestId, addDeviceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addDeviceRequest.acceptLanguage)
-            && Objects.equals(this.body, addDeviceRequest.body);
+        AddDeviceRequest that = (AddDeviceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

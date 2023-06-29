@@ -75,16 +75,15 @@ public class ShowBlackWhiteListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBlackWhiteListResponse showBlackWhiteListResponse = (ShowBlackWhiteListResponse) o;
-        return Objects.equals(this.type, showBlackWhiteListResponse.type)
-            && Objects.equals(this.ipList, showBlackWhiteListResponse.ipList);
+        ShowBlackWhiteListResponse that = (ShowBlackWhiteListResponse) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.ipList, that.ipList);
     }
 
     @Override

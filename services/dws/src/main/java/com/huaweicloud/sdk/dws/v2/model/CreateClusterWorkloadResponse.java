@@ -56,16 +56,16 @@ public class CreateClusterWorkloadResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterWorkloadResponse createClusterWorkloadResponse = (CreateClusterWorkloadResponse) o;
-        return Objects.equals(this.workloadResCode, createClusterWorkloadResponse.workloadResCode)
-            && Objects.equals(this.workloadResStr, createClusterWorkloadResponse.workloadResStr);
+        CreateClusterWorkloadResponse that = (CreateClusterWorkloadResponse) obj;
+        return Objects.equals(this.workloadResCode, that.workloadResCode)
+            && Objects.equals(this.workloadResStr, that.workloadResStr);
     }
 
     @Override

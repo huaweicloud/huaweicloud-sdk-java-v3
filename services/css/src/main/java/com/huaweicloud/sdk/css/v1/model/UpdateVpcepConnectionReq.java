@@ -74,16 +74,15 @@ public class UpdateVpcepConnectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcepConnectionReq updateVpcepConnectionReq = (UpdateVpcepConnectionReq) o;
-        return Objects.equals(this.action, updateVpcepConnectionReq.action)
-            && Objects.equals(this.endpointIdList, updateVpcepConnectionReq.endpointIdList);
+        UpdateVpcepConnectionReq that = (UpdateVpcepConnectionReq) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.endpointIdList, that.endpointIdList);
     }
 
     @Override

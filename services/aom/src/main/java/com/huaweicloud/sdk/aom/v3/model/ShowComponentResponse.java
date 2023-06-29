@@ -1,21 +1,14 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
@@ -23,81 +16,70 @@ import java.util.Objects;
  */
 public class ShowComponentResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aom_id")
-    
+    @JsonProperty(value = "aom_id")
 
     private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
 
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modified_time")
-    
+    @JsonProperty(value = "modified_time")
 
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modifier")
-    
+    @JsonProperty(value = "modifier")
 
     private String modifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
+
     /**
      * 注册方式
      */
     public static final class RegisterTypeEnum {
 
-        
         /**
          * Enum API for value: "API"
          */
         public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
-        
+
         /**
          * Enum CONSOLE for value: "CONSOLE"
          */
         public static final RegisterTypeEnum CONSOLE = new RegisterTypeEnum("CONSOLE");
-        
+
         /**
          * Enum SERVICE_DISCOVERY for value: "SERVICE_DISCOVERY"
          */
         public static final RegisterTypeEnum SERVICE_DISCOVERY = new RegisterTypeEnum("SERVICE_DISCOVERY");
-        
 
         private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -127,25 +109,18 @@ public class ShowComponentResponse extends SdkResponse {
 
         @JsonCreator
         public static RegisterTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RegisterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegisterTypeEnum(value));
         }
 
         public static RegisterTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -163,14 +138,12 @@ public class ShowComponentResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_type")
-    
+    @JsonProperty(value = "register_type")
 
     private RegisterTypeEnum registerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_app_id")
-    
+    @JsonProperty(value = "sub_app_id")
 
     private String subAppId;
 
@@ -178,9 +151,6 @@ public class ShowComponentResponse extends SdkResponse {
         this.aomId = aomId;
         return this;
     }
-
-    
-
 
     /**
      * aomId
@@ -194,15 +164,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.aomId = aomId;
     }
 
-    
-
     public ShowComponentResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用id
@@ -216,15 +181,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowComponentResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -238,15 +198,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowComponentResponse withCreator(String creator) {
         this.creator = creator;
         return this;
     }
-
-    
-
 
     /**
      * 创建者
@@ -260,15 +215,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public ShowComponentResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -282,15 +232,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowComponentResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 组件Id
@@ -304,15 +249,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowComponentResponse withModifiedTime(String modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
     }
-
-    
-
 
     /**
      * 修改时间
@@ -326,15 +266,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.modifiedTime = modifiedTime;
     }
 
-    
-
     public ShowComponentResponse withModifier(String modifier) {
         this.modifier = modifier;
         return this;
     }
-
-    
-
 
     /**
      * 修改者
@@ -348,15 +283,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.modifier = modifier;
     }
 
-    
-
     public ShowComponentResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -370,15 +300,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowComponentResponse withRegisterType(RegisterTypeEnum registerType) {
         this.registerType = registerType;
         return this;
     }
-
-    
-
 
     /**
      * 注册方式
@@ -392,15 +317,10 @@ public class ShowComponentResponse extends SdkResponse {
         this.registerType = registerType;
     }
 
-    
-
     public ShowComponentResponse withSubAppId(String subAppId) {
         this.subAppId = subAppId;
         return this;
     }
-
-    
-
 
     /**
      * 子应用id
@@ -414,33 +334,38 @@ public class ShowComponentResponse extends SdkResponse {
         this.subAppId = subAppId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentResponse showComponentResponse = (ShowComponentResponse) o;
-        return Objects.equals(this.aomId, showComponentResponse.aomId) &&
-            Objects.equals(this.appId, showComponentResponse.appId) &&
-            Objects.equals(this.createTime, showComponentResponse.createTime) &&
-            Objects.equals(this.creator, showComponentResponse.creator) &&
-            Objects.equals(this.description, showComponentResponse.description) &&
-            Objects.equals(this.id, showComponentResponse.id) &&
-            Objects.equals(this.modifiedTime, showComponentResponse.modifiedTime) &&
-            Objects.equals(this.modifier, showComponentResponse.modifier) &&
-            Objects.equals(this.name, showComponentResponse.name) &&
-            Objects.equals(this.registerType, showComponentResponse.registerType) &&
-            Objects.equals(this.subAppId, showComponentResponse.subAppId);
+        ShowComponentResponse that = (ShowComponentResponse) obj;
+        return Objects.equals(this.aomId, that.aomId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.modifier, that.modifier)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.registerType, that.registerType)
+            && Objects.equals(this.subAppId, that.subAppId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(aomId, appId, createTime, creator, description, id, modifiedTime, modifier, name, registerType, subAppId);
+        return Objects.hash(aomId,
+            appId,
+            createTime,
+            creator,
+            description,
+            id,
+            modifiedTime,
+            modifier,
+            name,
+            registerType,
+            subAppId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -459,6 +384,7 @@ public class ShowComponentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -469,8 +395,5 @@ public class ShowComponentResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

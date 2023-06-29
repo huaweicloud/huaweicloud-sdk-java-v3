@@ -33,15 +33,15 @@ public class ShowDetailOfChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailOfChannelRequest showDetailOfChannelRequest = (ShowDetailOfChannelRequest) o;
-        return Objects.equals(this.channelId, showDetailOfChannelRequest.channelId);
+        ShowDetailOfChannelRequest that = (ShowDetailOfChannelRequest) obj;
+        return Objects.equals(this.channelId, that.channelId);
     }
 
     @Override

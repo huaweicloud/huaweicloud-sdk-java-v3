@@ -71,22 +71,15 @@ public class ScheduledPolicy {
             if (value == null) {
                 return null;
             }
-            RecurrenceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecurrenceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecurrenceTypeEnum(value));
         }
 
         public static RecurrenceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecurrenceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,19 +202,18 @@ public class ScheduledPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScheduledPolicy scheduledPolicy = (ScheduledPolicy) o;
-        return Objects.equals(this.launchTime, scheduledPolicy.launchTime)
-            && Objects.equals(this.recurrenceType, scheduledPolicy.recurrenceType)
-            && Objects.equals(this.recurrenceValue, scheduledPolicy.recurrenceValue)
-            && Objects.equals(this.startTime, scheduledPolicy.startTime)
-            && Objects.equals(this.endTime, scheduledPolicy.endTime);
+        ScheduledPolicy that = (ScheduledPolicy) obj;
+        return Objects.equals(this.launchTime, that.launchTime)
+            && Objects.equals(this.recurrenceType, that.recurrenceType)
+            && Objects.equals(this.recurrenceValue, that.recurrenceValue)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

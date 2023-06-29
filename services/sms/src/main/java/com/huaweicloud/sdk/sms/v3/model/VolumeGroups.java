@@ -144,18 +144,17 @@ public class VolumeGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeGroups volumeGroups = (VolumeGroups) o;
-        return Objects.equals(this.components, volumeGroups.components)
-            && Objects.equals(this.freeSize, volumeGroups.freeSize)
-            && Objects.equals(this.logicalVolumes, volumeGroups.logicalVolumes)
-            && Objects.equals(this.name, volumeGroups.name) && Objects.equals(this.size, volumeGroups.size);
+        VolumeGroups that = (VolumeGroups) obj;
+        return Objects.equals(this.components, that.components) && Objects.equals(this.freeSize, that.freeSize)
+            && Objects.equals(this.logicalVolumes, that.logicalVolumes) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

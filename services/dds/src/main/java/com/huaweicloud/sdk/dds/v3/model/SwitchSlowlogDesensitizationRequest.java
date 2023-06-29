@@ -79,18 +79,16 @@ public class SwitchSlowlogDesensitizationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchSlowlogDesensitizationRequest switchSlowlogDesensitizationRequest =
-            (SwitchSlowlogDesensitizationRequest) o;
-        return Objects.equals(this.xLanguage, switchSlowlogDesensitizationRequest.xLanguage)
-            && Objects.equals(this.instanceId, switchSlowlogDesensitizationRequest.instanceId)
-            && Objects.equals(this.status, switchSlowlogDesensitizationRequest.status);
+        SwitchSlowlogDesensitizationRequest that = (SwitchSlowlogDesensitizationRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -451,34 +451,26 @@ public class QueryDataGuardMonitorResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDataGuardMonitorResponse queryDataGuardMonitorResponse = (QueryDataGuardMonitorResponse) o;
-        return Objects.equals(this.bandwidth, queryDataGuardMonitorResponse.bandwidth)
-            && Objects.equals(this.cpuUsedPercent, queryDataGuardMonitorResponse.cpuUsedPercent)
-            && Objects.equals(this.dstDelay, queryDataGuardMonitorResponse.dstDelay)
-            && Objects.equals(this.dstIo, queryDataGuardMonitorResponse.dstIo)
-            && Objects.equals(this.dstNormal, queryDataGuardMonitorResponse.dstNormal)
-            && Objects.equals(this.dstOffset, queryDataGuardMonitorResponse.dstOffset)
-            && Objects.equals(this.dstRps, queryDataGuardMonitorResponse.dstRps)
-            && Objects.equals(this.memUsedInMB, queryDataGuardMonitorResponse.memUsedInMB)
-            && Objects.equals(this.nodeMemInMB, queryDataGuardMonitorResponse.nodeMemInMB)
-            && Objects.equals(this.nodeOffset, queryDataGuardMonitorResponse.nodeOffset)
-            && Objects.equals(this.nodeVolumeInGB, queryDataGuardMonitorResponse.nodeVolumeInGB)
-            && Objects.equals(this.srDelay, queryDataGuardMonitorResponse.srDelay)
-            && Objects.equals(this.srOffset, queryDataGuardMonitorResponse.srOffset)
-            && Objects.equals(this.srcIo, queryDataGuardMonitorResponse.srcIo)
-            && Objects.equals(this.srcNormal, queryDataGuardMonitorResponse.srcNormal)
-            && Objects.equals(this.srcRps, queryDataGuardMonitorResponse.srcRps)
-            && Objects.equals(this.transInMB, queryDataGuardMonitorResponse.transInMB)
-            && Objects.equals(this.transLines, queryDataGuardMonitorResponse.transLines)
-            && Objects.equals(this.volumeUsedInGB, queryDataGuardMonitorResponse.volumeUsedInGB)
-            && Objects.equals(this.migrationBytesPerSecond, queryDataGuardMonitorResponse.migrationBytesPerSecond);
+        QueryDataGuardMonitorResponse that = (QueryDataGuardMonitorResponse) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.cpuUsedPercent, that.cpuUsedPercent) && Objects.equals(this.dstDelay, that.dstDelay)
+            && Objects.equals(this.dstIo, that.dstIo) && Objects.equals(this.dstNormal, that.dstNormal)
+            && Objects.equals(this.dstOffset, that.dstOffset) && Objects.equals(this.dstRps, that.dstRps)
+            && Objects.equals(this.memUsedInMB, that.memUsedInMB) && Objects.equals(this.nodeMemInMB, that.nodeMemInMB)
+            && Objects.equals(this.nodeOffset, that.nodeOffset)
+            && Objects.equals(this.nodeVolumeInGB, that.nodeVolumeInGB) && Objects.equals(this.srDelay, that.srDelay)
+            && Objects.equals(this.srOffset, that.srOffset) && Objects.equals(this.srcIo, that.srcIo)
+            && Objects.equals(this.srcNormal, that.srcNormal) && Objects.equals(this.srcRps, that.srcRps)
+            && Objects.equals(this.transInMB, that.transInMB) && Objects.equals(this.transLines, that.transLines)
+            && Objects.equals(this.volumeUsedInGB, that.volumeUsedInGB)
+            && Objects.equals(this.migrationBytesPerSecond, that.migrationBytesPerSecond);
     }
 
     @Override

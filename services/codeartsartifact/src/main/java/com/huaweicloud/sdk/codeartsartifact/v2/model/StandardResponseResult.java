@@ -100,17 +100,16 @@ public class StandardResponseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandardResponseResult standardResponseResult = (StandardResponseResult) o;
-        return Objects.equals(this.data, standardResponseResult.data)
-            && Objects.equals(this.totalRecords, standardResponseResult.totalRecords)
-            && Objects.equals(this.totalPages, standardResponseResult.totalPages);
+        StandardResponseResult that = (StandardResponseResult) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.totalRecords, that.totalRecords)
+            && Objects.equals(this.totalPages, that.totalPages);
     }
 
     @Override

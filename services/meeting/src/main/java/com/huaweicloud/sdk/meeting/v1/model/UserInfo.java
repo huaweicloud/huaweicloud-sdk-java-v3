@@ -629,35 +629,30 @@ public class UserInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserInfo userInfo = (UserInfo) o;
-        return Objects.equals(this.userId, userInfo.userId)
-            && Objects.equals(this.ucloginAccount, userInfo.ucloginAccount)
-            && Objects.equals(this.serviceAccount, userInfo.serviceAccount)
-            && Objects.equals(this.numberHA1, userInfo.numberHA1) && Objects.equals(this.alias1, userInfo.alias1)
-            && Objects.equals(this.companyId, userInfo.companyId) && Objects.equals(this.spId, userInfo.spId)
-            && Objects.equals(this.companyDomain, userInfo.companyDomain) && Objects.equals(this.realm, userInfo.realm)
-            && Objects.equals(this.userType, userInfo.userType) && Objects.equals(this.adminType, userInfo.adminType)
-            && Objects.equals(this.name, userInfo.name) && Objects.equals(this.nameEn, userInfo.nameEn)
-            && Objects.equals(this.isBindPhone, userInfo.isBindPhone)
-            && Objects.equals(this.freeUser, userInfo.freeUser)
-            && Objects.equals(this.thirdAccount, userInfo.thirdAccount)
-            && Objects.equals(this.visionAccount, userInfo.visionAccount)
-            && Objects.equals(this.headPictureUrl, userInfo.headPictureUrl)
-            && Objects.equals(this.password, userInfo.password) && Objects.equals(this.status, userInfo.status)
-            && Objects.equals(this.paidAccount, userInfo.paidAccount)
-            && Objects.equals(this.paidPassword, userInfo.paidPassword)
-            && Objects.equals(this.weLinkUser, userInfo.weLinkUser) && Objects.equals(this.appId, userInfo.appId)
-            && Objects.equals(this.tr069Account, userInfo.tr069Account)
-            && Objects.equals(this.corpType, userInfo.corpType)
-            && Objects.equals(this.cloudUserId, userInfo.cloudUserId)
-            && Objects.equals(this.grayUser, userInfo.grayUser);
+        UserInfo that = (UserInfo) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.ucloginAccount, that.ucloginAccount)
+            && Objects.equals(this.serviceAccount, that.serviceAccount)
+            && Objects.equals(this.numberHA1, that.numberHA1) && Objects.equals(this.alias1, that.alias1)
+            && Objects.equals(this.companyId, that.companyId) && Objects.equals(this.spId, that.spId)
+            && Objects.equals(this.companyDomain, that.companyDomain) && Objects.equals(this.realm, that.realm)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.isBindPhone, that.isBindPhone) && Objects.equals(this.freeUser, that.freeUser)
+            && Objects.equals(this.thirdAccount, that.thirdAccount)
+            && Objects.equals(this.visionAccount, that.visionAccount)
+            && Objects.equals(this.headPictureUrl, that.headPictureUrl) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.paidAccount, that.paidAccount)
+            && Objects.equals(this.paidPassword, that.paidPassword) && Objects.equals(this.weLinkUser, that.weLinkUser)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.tr069Account, that.tr069Account)
+            && Objects.equals(this.corpType, that.corpType) && Objects.equals(this.cloudUserId, that.cloudUserId)
+            && Objects.equals(this.grayUser, that.grayUser);
     }
 
     @Override

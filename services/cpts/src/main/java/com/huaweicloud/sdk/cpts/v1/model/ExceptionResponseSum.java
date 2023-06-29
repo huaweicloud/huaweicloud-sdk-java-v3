@@ -121,19 +121,19 @@ public class ExceptionResponseSum {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExceptionResponseSum exceptionResponseSum = (ExceptionResponseSum) o;
-        return Objects.equals(this.failedAssert, exceptionResponseSum.failedAssert)
-            && Objects.equals(this.failedOthers, exceptionResponseSum.failedOthers)
-            && Objects.equals(this.failedParsed, exceptionResponseSum.failedParsed)
-            && Objects.equals(this.failedRefused, exceptionResponseSum.failedRefused)
-            && Objects.equals(this.failedTimeout, exceptionResponseSum.failedTimeout);
+        ExceptionResponseSum that = (ExceptionResponseSum) obj;
+        return Objects.equals(this.failedAssert, that.failedAssert)
+            && Objects.equals(this.failedOthers, that.failedOthers)
+            && Objects.equals(this.failedParsed, that.failedParsed)
+            && Objects.equals(this.failedRefused, that.failedRefused)
+            && Objects.equals(this.failedTimeout, that.failedTimeout);
     }
 
     @Override

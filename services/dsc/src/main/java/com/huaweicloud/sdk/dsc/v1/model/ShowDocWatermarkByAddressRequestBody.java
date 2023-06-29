@@ -77,22 +77,15 @@ public class ShowDocWatermarkByAddressRequestBody {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DocTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DocTypeEnum(value));
         }
 
         public static DocTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,19 +186,16 @@ public class ShowDocWatermarkByAddressRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDocWatermarkByAddressRequestBody showDocWatermarkByAddressRequestBody =
-            (ShowDocWatermarkByAddressRequestBody) o;
-        return Objects.equals(this.regionId, showDocWatermarkByAddressRequestBody.regionId)
-            && Objects.equals(this.docType, showDocWatermarkByAddressRequestBody.docType)
-            && Objects.equals(this.srcFile, showDocWatermarkByAddressRequestBody.srcFile)
-            && Objects.equals(this.filePassword, showDocWatermarkByAddressRequestBody.filePassword);
+        ShowDocWatermarkByAddressRequestBody that = (ShowDocWatermarkByAddressRequestBody) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.docType, that.docType)
+            && Objects.equals(this.srcFile, that.srcFile) && Objects.equals(this.filePassword, that.filePassword);
     }
 
     @Override

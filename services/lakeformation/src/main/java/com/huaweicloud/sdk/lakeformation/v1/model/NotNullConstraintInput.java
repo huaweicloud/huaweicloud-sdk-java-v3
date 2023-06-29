@@ -121,19 +121,19 @@ public class NotNullConstraintInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotNullConstraintInput notNullConstraintInput = (NotNullConstraintInput) o;
-        return Objects.equals(this.columnName, notNullConstraintInput.columnName)
-            && Objects.equals(this.constraintName, notNullConstraintInput.constraintName)
-            && Objects.equals(this.enableConstraint, notNullConstraintInput.enableConstraint)
-            && Objects.equals(this.relyConstraint, notNullConstraintInput.relyConstraint)
-            && Objects.equals(this.validateConstraint, notNullConstraintInput.validateConstraint);
+        NotNullConstraintInput that = (NotNullConstraintInput) obj;
+        return Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

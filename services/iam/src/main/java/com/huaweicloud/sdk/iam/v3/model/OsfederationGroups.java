@@ -55,15 +55,15 @@ public class OsfederationGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsfederationGroups osfederationGroups = (OsfederationGroups) o;
-        return Objects.equals(this.id, osfederationGroups.id) && Objects.equals(this.name, osfederationGroups.name);
+        OsfederationGroups that = (OsfederationGroups) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

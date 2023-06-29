@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class Slot  {
-
+public class Slot {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="word")
-    
+    @JsonProperty(value = "word")
 
     private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
 
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="length")
-    
+    @JsonProperty(value = "length")
 
     private Integer length;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="normalized_word")
-    
+    @JsonProperty(value = "normalized_word")
 
     private String normalizedWord;
 
@@ -51,9 +39,6 @@ public class Slot  {
         this.word = word;
         return this;
     }
-
-    
-
 
     /**
      * 实体文本。
@@ -67,15 +52,10 @@ public class Slot  {
         this.word = word;
     }
 
-    
-
     public Slot withTag(String tag) {
         this.tag = tag;
         return this;
     }
-
-    
-
 
     /**
      * 实体类型。对于每个意图类别所支持的实体类型分别为： weather：date(日期)，time(时间)，location(位置) time：location(位置)，timezone(时区) news：genre(风格) joke：genre(风格) translation：content(内容) notification：content(内容)，date(日期)，time(时间)，singer(歌手) alarm：date(日期)，time:(时间) music：singer(歌手)，song(歌曲)，content(内容)
@@ -89,15 +69,10 @@ public class Slot  {
         this.tag = tag;
     }
 
-    
-
     public Slot withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 实体文本在待分析文本中的起始位置。
@@ -111,15 +86,10 @@ public class Slot  {
         this.offset = offset;
     }
 
-    
-
     public Slot withLength(Integer length) {
         this.length = length;
         return this;
     }
-
-    
-
 
     /**
      * 实体文本长度。
@@ -133,15 +103,10 @@ public class Slot  {
         this.length = length;
     }
 
-    
-
     public Slot withNormalizedWord(String normalizedWord) {
         this.normalizedWord = normalizedWord;
         return this;
     }
-
-    
-
 
     /**
      * 同义词或者其他标准表达的词，默认为原始的word。
@@ -155,27 +120,25 @@ public class Slot  {
         this.normalizedWord = normalizedWord;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Slot slot = (Slot) o;
-        return Objects.equals(this.word, slot.word) &&
-            Objects.equals(this.tag, slot.tag) &&
-            Objects.equals(this.offset, slot.offset) &&
-            Objects.equals(this.length, slot.length) &&
-            Objects.equals(this.normalizedWord, slot.normalizedWord);
+        Slot that = (Slot) obj;
+        return Objects.equals(this.word, that.word) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.length, that.length)
+            && Objects.equals(this.normalizedWord, that.normalizedWord);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(word, tag, offset, length, normalizedWord);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class Slot  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class Slot  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

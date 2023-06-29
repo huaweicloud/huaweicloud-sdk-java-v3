@@ -74,16 +74,15 @@ public class BatchDeleteTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteTagsRequestBody batchDeleteTagsRequestBody = (BatchDeleteTagsRequestBody) o;
-        return Objects.equals(this.action, batchDeleteTagsRequestBody.action)
-            && Objects.equals(this.tags, batchDeleteTagsRequestBody.tags);
+        BatchDeleteTagsRequestBody that = (BatchDeleteTagsRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

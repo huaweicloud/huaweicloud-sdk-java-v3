@@ -91,22 +91,15 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,23 +319,19 @@ public class ShowPictureModelingJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPictureModelingJobResponse showPictureModelingJobResponse = (ShowPictureModelingJobResponse) o;
-        return Objects.equals(this.jobId, showPictureModelingJobResponse.jobId)
-            && Objects.equals(this.state, showPictureModelingJobResponse.state)
-            && Objects.equals(this.startTime, showPictureModelingJobResponse.startTime)
-            && Objects.equals(this.endTime, showPictureModelingJobResponse.endTime)
-            && Objects.equals(this.errorInfo, showPictureModelingJobResponse.errorInfo)
-            && Objects.equals(this.modelAssetId, showPictureModelingJobResponse.modelAssetId)
-            && Objects.equals(this.name, showPictureModelingJobResponse.name)
-            && Objects.equals(this.styleId, showPictureModelingJobResponse.styleId)
-            && Objects.equals(this.modelCoverUrl, showPictureModelingJobResponse.modelCoverUrl);
+        ShowPictureModelingJobResponse that = (ShowPictureModelingJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.modelAssetId, that.modelAssetId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.styleId, that.styleId)
+            && Objects.equals(this.modelCoverUrl, that.modelCoverUrl);
     }
 
     @Override

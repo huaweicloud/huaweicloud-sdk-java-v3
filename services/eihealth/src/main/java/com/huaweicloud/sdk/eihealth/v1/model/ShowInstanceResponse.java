@@ -286,25 +286,21 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.id, showInstanceResponse.id) && Objects.equals(this.name, showInstanceResponse.name)
-            && Objects.equals(this.description, showInstanceResponse.description)
-            && Objects.equals(this.template, showInstanceResponse.template)
-            && Objects.equals(this.creator, showInstanceResponse.creator)
-            && Objects.equals(this.createTime, showInstanceResponse.createTime)
-            && Objects.equals(this.updateTime, showInstanceResponse.updateTime)
-            && Objects.equals(this.dataCount, showInstanceResponse.dataCount)
-            && Objects.equals(this.sourceProjectName, showInstanceResponse.sourceProjectName)
-            && Objects.equals(this.sourceProjectId, showInstanceResponse.sourceProjectId)
-            && Objects.equals(this.sourceId, showInstanceResponse.sourceId)
-            && Objects.equals(this.isPrefab, showInstanceResponse.isPrefab);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.template, that.template)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.dataCount, that.dataCount)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.isPrefab, that.isPrefab);
     }
 
     @Override

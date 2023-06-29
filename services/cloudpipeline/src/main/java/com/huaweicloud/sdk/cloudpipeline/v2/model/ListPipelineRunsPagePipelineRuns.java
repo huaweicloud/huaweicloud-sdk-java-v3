@@ -318,26 +318,22 @@ public class ListPipelineRunsPagePipelineRuns {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineRunsPagePipelineRuns listPipelineRunsPagePipelineRuns = (ListPipelineRunsPagePipelineRuns) o;
-        return Objects.equals(this.pipelineId, listPipelineRunsPagePipelineRuns.pipelineId)
-            && Objects.equals(this.pipelineRunId, listPipelineRunsPagePipelineRuns.pipelineRunId)
-            && Objects.equals(this.executorId, listPipelineRunsPagePipelineRuns.executorId)
-            && Objects.equals(this.executorName, listPipelineRunsPagePipelineRuns.executorName)
-            && Objects.equals(this.stageStatusList, listPipelineRunsPagePipelineRuns.stageStatusList)
-            && Objects.equals(this.status, listPipelineRunsPagePipelineRuns.status)
-            && Objects.equals(this.runNumber, listPipelineRunsPagePipelineRuns.runNumber)
-            && Objects.equals(this.triggerType, listPipelineRunsPagePipelineRuns.triggerType)
-            && Objects.equals(this.buildParams, listPipelineRunsPagePipelineRuns.buildParams)
-            && Objects.equals(this.artifactParams, listPipelineRunsPagePipelineRuns.artifactParams)
-            && Objects.equals(this.startTime, listPipelineRunsPagePipelineRuns.startTime)
-            && Objects.equals(this.endTime, listPipelineRunsPagePipelineRuns.endTime);
+        ListPipelineRunsPagePipelineRuns that = (ListPipelineRunsPagePipelineRuns) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId)
+            && Objects.equals(this.executorId, that.executorId) && Objects.equals(this.executorName, that.executorName)
+            && Objects.equals(this.stageStatusList, that.stageStatusList) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runNumber, that.runNumber) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.buildParams, that.buildParams)
+            && Objects.equals(this.artifactParams, that.artifactParams)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

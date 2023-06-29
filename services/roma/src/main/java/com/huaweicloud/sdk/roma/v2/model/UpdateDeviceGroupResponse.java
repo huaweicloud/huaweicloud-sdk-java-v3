@@ -273,24 +273,21 @@ public class UpdateDeviceGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceGroupResponse updateDeviceGroupResponse = (UpdateDeviceGroupResponse) o;
-        return Objects.equals(this.permissions, updateDeviceGroupResponse.permissions)
-            && Objects.equals(this.parentId, updateDeviceGroupResponse.parentId)
-            && Objects.equals(this.id, updateDeviceGroupResponse.id)
-            && Objects.equals(this.name, updateDeviceGroupResponse.name)
-            && Objects.equals(this.description, updateDeviceGroupResponse.description)
-            && Objects.equals(this.appId, updateDeviceGroupResponse.appId)
-            && Objects.equals(this.createdUser, updateDeviceGroupResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, updateDeviceGroupResponse.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, updateDeviceGroupResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, updateDeviceGroupResponse.lastUpdatedDatetime);
+        UpdateDeviceGroupResponse that = (UpdateDeviceGroupResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime);
     }
 
     @Override

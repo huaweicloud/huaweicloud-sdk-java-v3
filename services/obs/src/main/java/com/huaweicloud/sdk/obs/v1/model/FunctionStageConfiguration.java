@@ -144,19 +144,17 @@ public class FunctionStageConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FunctionStageConfiguration functionStageConfiguration = (FunctionStageConfiguration) o;
-        return Objects.equals(this.id, functionStageConfiguration.id)
-            && Objects.equals(this.filter, functionStageConfiguration.filter)
-            && Objects.equals(this.topic, functionStageConfiguration.topic)
-            && Objects.equals(this.event, functionStageConfiguration.event)
-            && Objects.equals(this.functionStage, functionStageConfiguration.functionStage);
+        FunctionStageConfiguration that = (FunctionStageConfiguration) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.event, that.event)
+            && Objects.equals(this.functionStage, that.functionStage);
     }
 
     @Override

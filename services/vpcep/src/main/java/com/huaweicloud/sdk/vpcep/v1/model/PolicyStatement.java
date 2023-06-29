@@ -112,17 +112,16 @@ public class PolicyStatement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyStatement policyStatement = (PolicyStatement) o;
-        return Objects.equals(this.effect, policyStatement.effect)
-            && Objects.equals(this.action, policyStatement.action)
-            && Objects.equals(this.resource, policyStatement.resource);
+        PolicyStatement that = (PolicyStatement) obj;
+        return Objects.equals(this.effect, that.effect) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.resource, that.resource);
     }
 
     @Override

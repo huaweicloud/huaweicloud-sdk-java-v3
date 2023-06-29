@@ -53,16 +53,15 @@ public class ListStatisticsOfRunningInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatisticsOfRunningInstancesResponse listStatisticsOfRunningInstancesResponse =
-            (ListStatisticsOfRunningInstancesResponse) o;
-        return Objects.equals(this.statistics, listStatisticsOfRunningInstancesResponse.statistics);
+        ListStatisticsOfRunningInstancesResponse that = (ListStatisticsOfRunningInstancesResponse) obj;
+        return Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

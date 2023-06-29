@@ -232,24 +232,20 @@ public class ShowApplicationDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationDetailResponse showApplicationDetailResponse = (ShowApplicationDetailResponse) o;
-        return Objects.equals(this.componentCount, showApplicationDetailResponse.componentCount)
-            && Objects.equals(this.unifiedModel, showApplicationDetailResponse.unifiedModel)
-            && Objects.equals(this.id, showApplicationDetailResponse.id)
-            && Objects.equals(this.name, showApplicationDetailResponse.name)
-            && Objects.equals(this.description, showApplicationDetailResponse.description)
-            && Objects.equals(this.creator, showApplicationDetailResponse.creator)
-            && Objects.equals(this.projectId, showApplicationDetailResponse.projectId)
-            && Objects.equals(this.enterpriseProjectId, showApplicationDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.createTime, showApplicationDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showApplicationDetailResponse.updateTime);
+        ShowApplicationDetailResponse that = (ShowApplicationDetailResponse) obj;
+        return Objects.equals(this.componentCount, that.componentCount)
+            && Objects.equals(this.unifiedModel, that.unifiedModel) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

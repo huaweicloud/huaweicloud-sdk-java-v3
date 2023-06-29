@@ -55,16 +55,16 @@ public class ShowEndPointDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEndPointDetailRequest showEndPointDetailRequest = (ShowEndPointDetailRequest) o;
-        return Objects.equals(this.iefInstanceId, showEndPointDetailRequest.iefInstanceId)
-            && Objects.equals(this.endpointId, showEndPointDetailRequest.endpointId);
+        ShowEndPointDetailRequest that = (ShowEndPointDetailRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.endpointId, that.endpointId);
     }
 
     @Override

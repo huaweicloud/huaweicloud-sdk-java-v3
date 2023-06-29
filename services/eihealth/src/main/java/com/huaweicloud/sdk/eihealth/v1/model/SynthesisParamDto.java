@@ -107,18 +107,17 @@ public class SynthesisParamDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisParamDto synthesisParamDto = (SynthesisParamDto) o;
-        return Objects.equals(this.topN, synthesisParamDto.topN)
-            && Objects.equals(this.maxSearchDepth, synthesisParamDto.maxSearchDepth)
-            && Objects.equals(this.timeLimit, synthesisParamDto.timeLimit)
-            && Objects.equals(this.maxPredictionPerProduct, synthesisParamDto.maxPredictionPerProduct);
+        SynthesisParamDto that = (SynthesisParamDto) obj;
+        return Objects.equals(this.topN, that.topN) && Objects.equals(this.maxSearchDepth, that.maxSearchDepth)
+            && Objects.equals(this.timeLimit, that.timeLimit)
+            && Objects.equals(this.maxPredictionPerProduct, that.maxPredictionPerProduct);
     }
 
     @Override

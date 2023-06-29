@@ -1,21 +1,14 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
@@ -23,28 +16,25 @@ import java.util.Objects;
  */
 public class CancelSqlResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="message")
-    
+    @JsonProperty(value = "message")
 
     private String message;
+
     /**
      * 取消SQL的执行结果。 说明： 默认返回SUCCEED，对于已经结束的任务也会返回SUCCEED，只有取消正在运行的SQL时没成功才会FAILED。 枚举值： - SUCCEED：成功 - FAILED：失败
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum SUCCEED for value: "SUCCEED"
          */
         public static final StatusEnum SUCCEED = new StatusEnum("SUCCEED");
-        
+
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,25 +63,18 @@ public class CancelSqlResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -109,8 +92,7 @@ public class CancelSqlResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
@@ -118,9 +100,6 @@ public class CancelSqlResponse extends SdkResponse {
         this.message = message;
         return this;
     }
-
-    
-
 
     /**
      * 错误信息。
@@ -134,15 +113,10 @@ public class CancelSqlResponse extends SdkResponse {
         this.message = message;
     }
 
-    
-
     public CancelSqlResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 取消SQL的执行结果。 说明： 默认返回SUCCEED，对于已经结束的任务也会返回SUCCEED，只有取消正在运行的SQL时没成功才会FAILED。 枚举值： - SUCCEED：成功 - FAILED：失败
@@ -156,24 +130,23 @@ public class CancelSqlResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelSqlResponse cancelSqlResponse = (CancelSqlResponse) o;
-        return Objects.equals(this.message, cancelSqlResponse.message) &&
-            Objects.equals(this.status, cancelSqlResponse.status);
+        CancelSqlResponse that = (CancelSqlResponse) obj;
+        return Objects.equals(this.message, that.message) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(message, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,6 +156,7 @@ public class CancelSqlResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -193,8 +167,5 @@ public class CancelSqlResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

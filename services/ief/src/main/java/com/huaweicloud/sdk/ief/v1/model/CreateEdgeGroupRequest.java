@@ -65,16 +65,15 @@ public class CreateEdgeGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeGroupRequest createEdgeGroupRequest = (CreateEdgeGroupRequest) o;
-        return Objects.equals(this.iefInstanceId, createEdgeGroupRequest.iefInstanceId)
-            && Objects.equals(this.body, createEdgeGroupRequest.body);
+        CreateEdgeGroupRequest that = (CreateEdgeGroupRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

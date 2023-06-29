@@ -68,22 +68,15 @@ public class HandleNotificationRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,19 +233,17 @@ public class HandleNotificationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandleNotificationRequestBody handleNotificationRequestBody = (HandleNotificationRequestBody) o;
-        return Objects.equals(this.channelName, handleNotificationRequestBody.channelName)
-            && Objects.equals(this.status, handleNotificationRequestBody.status)
-            && Objects.equals(this.invitorInfo, handleNotificationRequestBody.invitorInfo)
-            && Objects.equals(this.inviteeInfo, handleNotificationRequestBody.inviteeInfo)
-            && Objects.equals(this.invitedOrgs, handleNotificationRequestBody.invitedOrgs);
+        HandleNotificationRequestBody that = (HandleNotificationRequestBody) obj;
+        return Objects.equals(this.channelName, that.channelName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.invitorInfo, that.invitorInfo) && Objects.equals(this.inviteeInfo, that.inviteeInfo)
+            && Objects.equals(this.invitedOrgs, that.invitedOrgs);
     }
 
     @Override

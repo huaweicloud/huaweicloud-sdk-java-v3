@@ -43,15 +43,15 @@ public class AsscoiateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsscoiateReq asscoiateReq = (AsscoiateReq) o;
-        return Objects.equals(this.subnets, asscoiateReq.subnets);
+        AsscoiateReq that = (AsscoiateReq) obj;
+        return Objects.equals(this.subnets, that.subnets);
     }
 
     @Override

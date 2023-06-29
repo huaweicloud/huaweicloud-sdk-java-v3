@@ -60,22 +60,15 @@ public class ShowApplicationReleaseRepositoriesRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,21 +224,17 @@ public class ShowApplicationReleaseRepositoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationReleaseRepositoriesRequest showApplicationReleaseRepositoriesRequest =
-            (ShowApplicationReleaseRepositoriesRequest) o;
-        return Objects.equals(this.xLanguage, showApplicationReleaseRepositoriesRequest.xLanguage)
-            && Objects.equals(this.applicationId, showApplicationReleaseRepositoriesRequest.applicationId)
-            && Objects.equals(this.parentId, showApplicationReleaseRepositoriesRequest.parentId)
-            && Objects.equals(this.keyword, showApplicationReleaseRepositoriesRequest.keyword)
-            && Objects.equals(this.limit, showApplicationReleaseRepositoriesRequest.limit)
-            && Objects.equals(this.offset, showApplicationReleaseRepositoriesRequest.offset);
+        ShowApplicationReleaseRepositoriesRequest that = (ShowApplicationReleaseRepositoriesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

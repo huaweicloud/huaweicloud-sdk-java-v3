@@ -60,22 +60,15 @@ public class ShowTemplateFileRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class ShowTemplateFileRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,18 +246,16 @@ public class ShowTemplateFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateFileRequest showTemplateFileRequest = (ShowTemplateFileRequest) o;
-        return Objects.equals(this.xLanguage, showTemplateFileRequest.xLanguage)
-            && Objects.equals(this.templateId, showTemplateFileRequest.templateId)
-            && Objects.equals(this.filePath, showTemplateFileRequest.filePath)
-            && Objects.equals(this.type, showTemplateFileRequest.type);
+        ShowTemplateFileRequest that = (ShowTemplateFileRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.type, that.type);
     }
 
     @Override

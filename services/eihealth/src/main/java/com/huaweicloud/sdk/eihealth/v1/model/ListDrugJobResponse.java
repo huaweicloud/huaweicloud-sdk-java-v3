@@ -75,16 +75,15 @@ public class ListDrugJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDrugJobResponse listDrugJobResponse = (ListDrugJobResponse) o;
-        return Objects.equals(this.jobs, listDrugJobResponse.jobs)
-            && Objects.equals(this.count, listDrugJobResponse.count);
+        ListDrugJobResponse that = (ListDrugJobResponse) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.count, that.count);
     }
 
     @Override

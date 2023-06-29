@@ -1212,48 +1212,42 @@ public class ListLoadBalancersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoadBalancersRequest listLoadBalancersRequest = (ListLoadBalancersRequest) o;
-        return Objects.equals(this.marker, listLoadBalancersRequest.marker)
-            && Objects.equals(this.limit, listLoadBalancersRequest.limit)
-            && Objects.equals(this.pageReverse, listLoadBalancersRequest.pageReverse)
-            && Objects.equals(this.id, listLoadBalancersRequest.id)
-            && Objects.equals(this.name, listLoadBalancersRequest.name)
-            && Objects.equals(this.description, listLoadBalancersRequest.description)
-            && Objects.equals(this.adminStateUp, listLoadBalancersRequest.adminStateUp)
-            && Objects.equals(this.provisioningStatus, listLoadBalancersRequest.provisioningStatus)
-            && Objects.equals(this.operatingStatus, listLoadBalancersRequest.operatingStatus)
-            && Objects.equals(this.guaranteed, listLoadBalancersRequest.guaranteed)
-            && Objects.equals(this.vpcId, listLoadBalancersRequest.vpcId)
-            && Objects.equals(this.vipPortId, listLoadBalancersRequest.vipPortId)
-            && Objects.equals(this.vipAddress, listLoadBalancersRequest.vipAddress)
-            && Objects.equals(this.vipSubnetCidrId, listLoadBalancersRequest.vipSubnetCidrId)
-            && Objects.equals(this.ipv6VipPortId, listLoadBalancersRequest.ipv6VipPortId)
-            && Objects.equals(this.ipv6VipAddress, listLoadBalancersRequest.ipv6VipAddress)
-            && Objects.equals(this.ipv6VipVirsubnetId, listLoadBalancersRequest.ipv6VipVirsubnetId)
-            && Objects.equals(this.eips, listLoadBalancersRequest.eips)
-            && Objects.equals(this.publicips, listLoadBalancersRequest.publicips)
-            && Objects.equals(this.availabilityZoneList, listLoadBalancersRequest.availabilityZoneList)
-            && Objects.equals(this.l4FlavorId, listLoadBalancersRequest.l4FlavorId)
-            && Objects.equals(this.l4ScaleFlavorId, listLoadBalancersRequest.l4ScaleFlavorId)
-            && Objects.equals(this.l7FlavorId, listLoadBalancersRequest.l7FlavorId)
-            && Objects.equals(this.l7ScaleFlavorId, listLoadBalancersRequest.l7ScaleFlavorId)
-            && Objects.equals(this.billingInfo, listLoadBalancersRequest.billingInfo)
-            && Objects.equals(this.memberDeviceId, listLoadBalancersRequest.memberDeviceId)
-            && Objects.equals(this.memberAddress, listLoadBalancersRequest.memberAddress)
-            && Objects.equals(this.enterpriseProjectId, listLoadBalancersRequest.enterpriseProjectId)
-            && Objects.equals(this.ipVersion, listLoadBalancersRequest.ipVersion)
-            && Objects.equals(this.deletionProtectionEnable, listLoadBalancersRequest.deletionProtectionEnable)
-            && Objects.equals(this.elbVirsubnetType, listLoadBalancersRequest.elbVirsubnetType)
-            && Objects.equals(this.autoscaling, listLoadBalancersRequest.autoscaling)
-            && Objects.equals(this.protectionStatus, listLoadBalancersRequest.protectionStatus)
-            && Objects.equals(this.globalEips, listLoadBalancersRequest.globalEips);
+        ListLoadBalancersRequest that = (ListLoadBalancersRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.guaranteed, that.guaranteed) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.vipPortId, that.vipPortId) && Objects.equals(this.vipAddress, that.vipAddress)
+            && Objects.equals(this.vipSubnetCidrId, that.vipSubnetCidrId)
+            && Objects.equals(this.ipv6VipPortId, that.ipv6VipPortId)
+            && Objects.equals(this.ipv6VipAddress, that.ipv6VipAddress)
+            && Objects.equals(this.ipv6VipVirsubnetId, that.ipv6VipVirsubnetId) && Objects.equals(this.eips, that.eips)
+            && Objects.equals(this.publicips, that.publicips)
+            && Objects.equals(this.availabilityZoneList, that.availabilityZoneList)
+            && Objects.equals(this.l4FlavorId, that.l4FlavorId)
+            && Objects.equals(this.l4ScaleFlavorId, that.l4ScaleFlavorId)
+            && Objects.equals(this.l7FlavorId, that.l7FlavorId)
+            && Objects.equals(this.l7ScaleFlavorId, that.l7ScaleFlavorId)
+            && Objects.equals(this.billingInfo, that.billingInfo)
+            && Objects.equals(this.memberDeviceId, that.memberDeviceId)
+            && Objects.equals(this.memberAddress, that.memberAddress)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
+            && Objects.equals(this.elbVirsubnetType, that.elbVirsubnetType)
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.globalEips, that.globalEips);
     }
 
     @Override

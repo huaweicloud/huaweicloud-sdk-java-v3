@@ -55,15 +55,15 @@ public class ActionMatch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionMatch actionMatch = (ActionMatch) o;
-        return Objects.equals(this.key, actionMatch.key) && Objects.equals(this.value, actionMatch.value);
+        ActionMatch that = (ActionMatch) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

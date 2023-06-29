@@ -1,35 +1,24 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BackupInfo;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CreateManualBackupResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup")
-    
+    @JsonProperty(value = "backup")
 
     private BackupInfo backup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -39,14 +28,13 @@ public class CreateManualBackupResponse extends SdkResponse {
     }
 
     public CreateManualBackupResponse withBackup(Consumer<BackupInfo> backupSetter) {
-        if(this.backup == null ){
+        if (this.backup == null) {
             this.backup = new BackupInfo();
             backupSetter.accept(this.backup);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backup
@@ -60,15 +48,10 @@ public class CreateManualBackupResponse extends SdkResponse {
         this.backup = backup;
     }
 
-    
-
     public CreateManualBackupResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务id。
@@ -82,24 +65,23 @@ public class CreateManualBackupResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateManualBackupResponse createManualBackupResponse = (CreateManualBackupResponse) o;
-        return Objects.equals(this.backup, createManualBackupResponse.backup) &&
-            Objects.equals(this.jobId, createManualBackupResponse.jobId);
+        CreateManualBackupResponse that = (CreateManualBackupResponse) obj;
+        return Objects.equals(this.backup, that.backup) && Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backup, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -109,6 +91,7 @@ public class CreateManualBackupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -119,8 +102,5 @@ public class CreateManualBackupResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

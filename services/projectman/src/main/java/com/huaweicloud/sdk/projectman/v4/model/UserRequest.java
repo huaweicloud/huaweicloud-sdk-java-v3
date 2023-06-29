@@ -33,15 +33,15 @@ public class UserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserRequest userRequest = (UserRequest) o;
-        return Objects.equals(this.userId, userRequest.userId);
+        UserRequest that = (UserRequest) obj;
+        return Objects.equals(this.userId, that.userId);
     }
 
     @Override

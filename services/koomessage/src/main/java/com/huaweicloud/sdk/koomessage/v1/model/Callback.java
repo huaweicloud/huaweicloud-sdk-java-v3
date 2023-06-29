@@ -77,16 +77,16 @@ public class Callback {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Callback callback = (Callback) o;
-        return Objects.equals(this.callbackUrl, callback.callbackUrl) && Objects.equals(this.id, callback.id)
-            && Objects.equals(this.urlType, callback.urlType);
+        Callback that = (Callback) obj;
+        return Objects.equals(this.callbackUrl, that.callbackUrl) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.urlType, that.urlType);
     }
 
     @Override

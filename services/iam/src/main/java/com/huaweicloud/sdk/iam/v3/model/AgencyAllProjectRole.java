@@ -87,17 +87,16 @@ public class AgencyAllProjectRole {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyAllProjectRole agencyAllProjectRole = (AgencyAllProjectRole) o;
-        return Objects.equals(this.id, agencyAllProjectRole.id)
-            && Objects.equals(this.links, agencyAllProjectRole.links)
-            && Objects.equals(this.name, agencyAllProjectRole.name);
+        AgencyAllProjectRole that = (AgencyAllProjectRole) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

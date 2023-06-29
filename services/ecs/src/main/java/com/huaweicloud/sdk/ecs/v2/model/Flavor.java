@@ -378,24 +378,24 @@ public class Flavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flavor flavor = (Flavor) o;
-        return Objects.equals(this.id, flavor.id) && Objects.equals(this.name, flavor.name)
-            && Objects.equals(this.vcpus, flavor.vcpus) && Objects.equals(this.ram, flavor.ram)
-            && Objects.equals(this.disk, flavor.disk) && Objects.equals(this.swap, flavor.swap)
-            && Objects.equals(this.osFLVEXTDATAEphemeral, flavor.osFLVEXTDATAEphemeral)
-            && Objects.equals(this.osFLVDISABLEDDisabled, flavor.osFLVDISABLEDDisabled)
-            && Objects.equals(this.rxtxFactor, flavor.rxtxFactor) && Objects.equals(this.rxtxQuota, flavor.rxtxQuota)
-            && Objects.equals(this.rxtxCap, flavor.rxtxCap)
-            && Objects.equals(this.osFlavorAccessIsPublic, flavor.osFlavorAccessIsPublic)
-            && Objects.equals(this.links, flavor.links) && Objects.equals(this.osExtraSpecs, flavor.osExtraSpecs)
-            && Objects.equals(this.attachableQuantity, flavor.attachableQuantity);
+        Flavor that = (Flavor) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.swap, that.swap)
+            && Objects.equals(this.osFLVEXTDATAEphemeral, that.osFLVEXTDATAEphemeral)
+            && Objects.equals(this.osFLVDISABLEDDisabled, that.osFLVDISABLEDDisabled)
+            && Objects.equals(this.rxtxFactor, that.rxtxFactor) && Objects.equals(this.rxtxQuota, that.rxtxQuota)
+            && Objects.equals(this.rxtxCap, that.rxtxCap)
+            && Objects.equals(this.osFlavorAccessIsPublic, that.osFlavorAccessIsPublic)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.osExtraSpecs, that.osExtraSpecs)
+            && Objects.equals(this.attachableQuantity, that.attachableQuantity);
     }
 
     @Override

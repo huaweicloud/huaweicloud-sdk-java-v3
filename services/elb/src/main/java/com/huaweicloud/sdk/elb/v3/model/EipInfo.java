@@ -77,16 +77,16 @@ public class EipInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipInfo eipInfo = (EipInfo) o;
-        return Objects.equals(this.eipId, eipInfo.eipId) && Objects.equals(this.eipAddress, eipInfo.eipAddress)
-            && Objects.equals(this.ipVersion, eipInfo.ipVersion);
+        EipInfo that = (EipInfo) obj;
+        return Objects.equals(this.eipId, that.eipId) && Objects.equals(this.eipAddress, that.eipAddress)
+            && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override

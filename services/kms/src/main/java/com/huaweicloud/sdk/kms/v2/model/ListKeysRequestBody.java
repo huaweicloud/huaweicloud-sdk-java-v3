@@ -117,22 +117,15 @@ public class ListKeysRequestBody {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeySpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
         }
 
         public static KeySpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,20 +260,18 @@ public class ListKeysRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListKeysRequestBody listKeysRequestBody = (ListKeysRequestBody) o;
-        return Objects.equals(this.limit, listKeysRequestBody.limit)
-            && Objects.equals(this.marker, listKeysRequestBody.marker)
-            && Objects.equals(this.keyState, listKeysRequestBody.keyState)
-            && Objects.equals(this.keySpec, listKeysRequestBody.keySpec)
-            && Objects.equals(this.enterpriseProjectId, listKeysRequestBody.enterpriseProjectId)
-            && Objects.equals(this.sequence, listKeysRequestBody.sequence);
+        ListKeysRequestBody that = (ListKeysRequestBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.keyState, that.keyState) && Objects.equals(this.keySpec, that.keySpec)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

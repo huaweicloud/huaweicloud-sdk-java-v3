@@ -43,15 +43,15 @@ public class BatchDeleteWorkflowsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteWorkflowsRequest batchDeleteWorkflowsRequest = (BatchDeleteWorkflowsRequest) o;
-        return Objects.equals(this.body, batchDeleteWorkflowsRequest.body);
+        BatchDeleteWorkflowsRequest that = (BatchDeleteWorkflowsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

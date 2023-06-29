@@ -176,19 +176,18 @@ public class SearchEnvTopologyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchEnvTopologyResponse searchEnvTopologyResponse = (SearchEnvTopologyResponse) o;
-        return Objects.equals(this.nodeList, searchEnvTopologyResponse.nodeList)
-            && Objects.equals(this.lineList, searchEnvTopologyResponse.lineList)
-            && Objects.equals(this.collectorConfig, searchEnvTopologyResponse.collectorConfig)
-            && Objects.equals(this.realStartTime, searchEnvTopologyResponse.realStartTime)
-            && Objects.equals(this.realEndTime, searchEnvTopologyResponse.realEndTime);
+        SearchEnvTopologyResponse that = (SearchEnvTopologyResponse) obj;
+        return Objects.equals(this.nodeList, that.nodeList) && Objects.equals(this.lineList, that.lineList)
+            && Objects.equals(this.collectorConfig, that.collectorConfig)
+            && Objects.equals(this.realStartTime, that.realStartTime)
+            && Objects.equals(this.realEndTime, that.realEndTime);
     }
 
     @Override

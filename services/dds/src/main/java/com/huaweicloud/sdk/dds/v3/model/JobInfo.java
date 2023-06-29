@@ -209,19 +209,19 @@ public class JobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobInfo jobInfo = (JobInfo) o;
-        return Objects.equals(this.id, jobInfo.id) && Objects.equals(this.name, jobInfo.name)
-            && Objects.equals(this.instanceId, jobInfo.instanceId)
-            && Objects.equals(this.instanceName, jobInfo.instanceName) && Objects.equals(this.status, jobInfo.status)
-            && Objects.equals(this.progress, jobInfo.progress) && Objects.equals(this.failReason, jobInfo.failReason)
-            && Objects.equals(this.createdAt, jobInfo.createdAt) && Objects.equals(this.endedAt, jobInfo.endedAt);
+        JobInfo that = (JobInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.endedAt, that.endedAt);
     }
 
     @Override

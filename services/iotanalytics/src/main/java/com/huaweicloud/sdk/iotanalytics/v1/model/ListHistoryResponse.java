@@ -91,16 +91,15 @@ public class ListHistoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryResponse listHistoryResponse = (ListHistoryResponse) o;
-        return Objects.equals(this.timestamps, listHistoryResponse.timestamps)
-            && Objects.equals(this.properties, listHistoryResponse.properties);
+        ListHistoryResponse that = (ListHistoryResponse) obj;
+        return Objects.equals(this.timestamps, that.timestamps) && Objects.equals(this.properties, that.properties);
     }
 
     @Override

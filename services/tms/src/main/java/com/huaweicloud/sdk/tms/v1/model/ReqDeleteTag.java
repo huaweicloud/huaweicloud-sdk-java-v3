@@ -112,16 +112,16 @@ public class ReqDeleteTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReqDeleteTag reqDeleteTag = (ReqDeleteTag) o;
-        return Objects.equals(this.projectId, reqDeleteTag.projectId)
-            && Objects.equals(this.resources, reqDeleteTag.resources) && Objects.equals(this.tags, reqDeleteTag.tags);
+        ReqDeleteTag that = (ReqDeleteTag) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

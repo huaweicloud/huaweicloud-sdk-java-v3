@@ -214,20 +214,17 @@ public class InstanceConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceConfiguration instanceConfiguration = (InstanceConfiguration) o;
-        return Objects.equals(this.env, instanceConfiguration.env)
-            && Objects.equals(this.storage, instanceConfiguration.storage)
-            && Objects.equals(this.strategy, instanceConfiguration.strategy)
-            && Objects.equals(this.lifecycle, instanceConfiguration.lifecycle)
-            && Objects.equals(this.scheduler, instanceConfiguration.scheduler)
-            && Objects.equals(this.probes, instanceConfiguration.probes);
+        InstanceConfiguration that = (InstanceConfiguration) obj;
+        return Objects.equals(this.env, that.env) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.strategy, that.strategy) && Objects.equals(this.lifecycle, that.lifecycle)
+            && Objects.equals(this.scheduler, that.scheduler) && Objects.equals(this.probes, that.probes);
     }
 
     @Override

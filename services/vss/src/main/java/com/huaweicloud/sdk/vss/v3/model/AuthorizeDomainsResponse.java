@@ -61,22 +61,15 @@ public class AuthorizeDomainsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InfoCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InfoCodeEnum(value));
         }
 
         public static InfoCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,7 +141,7 @@ public class AuthorizeDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 域名认证使用须知
+     * 网站域名认证使用须知
      * @return usageNotice
      */
     public String getUsageNotice() {
@@ -160,17 +153,17 @@ public class AuthorizeDomainsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizeDomainsResponse authorizeDomainsResponse = (AuthorizeDomainsResponse) o;
-        return Objects.equals(this.infoCode, authorizeDomainsResponse.infoCode)
-            && Objects.equals(this.infoDescription, authorizeDomainsResponse.infoDescription)
-            && Objects.equals(this.usageNotice, authorizeDomainsResponse.usageNotice);
+        AuthorizeDomainsResponse that = (AuthorizeDomainsResponse) obj;
+        return Objects.equals(this.infoCode, that.infoCode)
+            && Objects.equals(this.infoDescription, that.infoDescription)
+            && Objects.equals(this.usageNotice, that.usageNotice);
     }
 
     @Override

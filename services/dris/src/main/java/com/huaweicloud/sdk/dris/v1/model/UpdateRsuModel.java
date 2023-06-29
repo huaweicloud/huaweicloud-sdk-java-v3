@@ -55,16 +55,16 @@ public class UpdateRsuModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRsuModel updateRsuModel = (UpdateRsuModel) o;
-        return Objects.equals(this.manufacturerName, updateRsuModel.manufacturerName)
-            && Objects.equals(this.description, updateRsuModel.description);
+        UpdateRsuModel that = (UpdateRsuModel) obj;
+        return Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

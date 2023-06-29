@@ -65,16 +65,15 @@ public class ValidateCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateCodeRequest validateCodeRequest = (ValidateCodeRequest) o;
-        return Objects.equals(this.userId, validateCodeRequest.userId)
-            && Objects.equals(this.body, validateCodeRequest.body);
+        ValidateCodeRequest that = (ValidateCodeRequest) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -99,18 +99,18 @@ public class ListMonthlyExpendituresRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonthlyExpendituresRequest listMonthlyExpendituresRequest = (ListMonthlyExpendituresRequest) o;
-        return Objects.equals(this.cycle, listMonthlyExpendituresRequest.cycle)
-            && Objects.equals(this.cloudServiceTypeCode, listMonthlyExpendituresRequest.cloudServiceTypeCode)
-            && Objects.equals(this.type, listMonthlyExpendituresRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listMonthlyExpendituresRequest.enterpriseProjectId);
+        ListMonthlyExpendituresRequest that = (ListMonthlyExpendituresRequest) obj;
+        return Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.cloudServiceTypeCode, that.cloudServiceTypeCode)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

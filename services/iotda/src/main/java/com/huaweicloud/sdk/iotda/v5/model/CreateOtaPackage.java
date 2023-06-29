@@ -215,22 +215,19 @@ public class CreateOtaPackage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOtaPackage createOtaPackage = (CreateOtaPackage) o;
-        return Objects.equals(this.appId, createOtaPackage.appId)
-            && Objects.equals(this.packageType, createOtaPackage.packageType)
-            && Objects.equals(this.productId, createOtaPackage.productId)
-            && Objects.equals(this.version, createOtaPackage.version)
-            && Objects.equals(this.supportSourceVersions, createOtaPackage.supportSourceVersions)
-            && Objects.equals(this.description, createOtaPackage.description)
-            && Objects.equals(this.customInfo, createOtaPackage.customInfo)
-            && Objects.equals(this.fileLocation, createOtaPackage.fileLocation);
+        CreateOtaPackage that = (CreateOtaPackage) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
+            && Objects.equals(this.fileLocation, that.fileLocation);
     }
 
     @Override

@@ -55,17 +55,15 @@ public class ResetProductAuthenticationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetProductAuthenticationRequestBody resetProductAuthenticationRequestBody =
-            (ResetProductAuthenticationRequestBody) o;
-        return Objects.equals(this.userName, resetProductAuthenticationRequestBody.userName)
-            && Objects.equals(this.password, resetProductAuthenticationRequestBody.password);
+        ResetProductAuthenticationRequestBody that = (ResetProductAuthenticationRequestBody) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

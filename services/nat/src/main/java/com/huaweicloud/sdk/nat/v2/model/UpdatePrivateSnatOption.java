@@ -74,16 +74,16 @@ public class UpdatePrivateSnatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateSnatOption updatePrivateSnatOption = (UpdatePrivateSnatOption) o;
-        return Objects.equals(this.transitIpIds, updatePrivateSnatOption.transitIpIds)
-            && Objects.equals(this.description, updatePrivateSnatOption.description);
+        UpdatePrivateSnatOption that = (UpdatePrivateSnatOption) obj;
+        return Objects.equals(this.transitIpIds, that.transitIpIds)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

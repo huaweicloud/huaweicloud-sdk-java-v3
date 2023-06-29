@@ -70,22 +70,15 @@ public class MixLayoutPane {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class MixLayoutPane {
             if (value == null) {
                 return null;
             }
-            CropModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CropModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CropModeEnum(value));
         }
 
         public static CropModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CropModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,22 +245,15 @@ public class MixLayoutPane {
             if (value == null) {
                 return null;
             }
-            FillingPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FillingPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FillingPolicyEnum(value));
         }
 
         public static FillingPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FillingPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -479,20 +458,19 @@ public class MixLayoutPane {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MixLayoutPane mixLayoutPane = (MixLayoutPane) o;
-        return Objects.equals(this.id, mixLayoutPane.id) && Objects.equals(this.userId, mixLayoutPane.userId)
-            && Objects.equals(this.videoType, mixLayoutPane.videoType) && Objects.equals(this.x, mixLayoutPane.x)
-            && Objects.equals(this.y, mixLayoutPane.y) && Objects.equals(this.width, mixLayoutPane.width)
-            && Objects.equals(this.height, mixLayoutPane.height) && Objects.equals(this.zorder, mixLayoutPane.zorder)
-            && Objects.equals(this.cropMode, mixLayoutPane.cropMode)
-            && Objects.equals(this.fillingPolicy, mixLayoutPane.fillingPolicy);
+        MixLayoutPane that = (MixLayoutPane) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.videoType, that.videoType) && Objects.equals(this.x, that.x)
+            && Objects.equals(this.y, that.y) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.zorder, that.zorder)
+            && Objects.equals(this.cropMode, that.cropMode) && Objects.equals(this.fillingPolicy, that.fillingPolicy);
     }
 
     @Override

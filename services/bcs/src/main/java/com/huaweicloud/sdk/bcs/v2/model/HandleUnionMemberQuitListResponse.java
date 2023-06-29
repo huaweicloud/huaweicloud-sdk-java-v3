@@ -56,16 +56,15 @@ public class HandleUnionMemberQuitListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandleUnionMemberQuitListResponse handleUnionMemberQuitListResponse = (HandleUnionMemberQuitListResponse) o;
-        return Objects.equals(this.result, handleUnionMemberQuitListResponse.result)
-            && Objects.equals(this.operationId, handleUnionMemberQuitListResponse.operationId);
+        HandleUnionMemberQuitListResponse that = (HandleUnionMemberQuitListResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

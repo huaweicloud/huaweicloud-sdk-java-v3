@@ -75,16 +75,15 @@ public class RunDevstarTemplateJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunDevstarTemplateJobResponse runDevstarTemplateJobResponse = (RunDevstarTemplateJobResponse) o;
-        return Objects.equals(this.jobId, runDevstarTemplateJobResponse.jobId)
-            && Objects.equals(this.fileList, runDevstarTemplateJobResponse.fileList);
+        RunDevstarTemplateJobResponse that = (RunDevstarTemplateJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.fileList, that.fileList);
     }
 
     @Override

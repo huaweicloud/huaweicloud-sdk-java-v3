@@ -253,23 +253,22 @@ public class ItineraryList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItineraryList itineraryList = (ItineraryList) o;
-        return Objects.equals(this.departureStation, itineraryList.departureStation)
-            && Objects.equals(this.destinationStation, itineraryList.destinationStation)
-            && Objects.equals(this.carrier, itineraryList.carrier) && Objects.equals(this.flight, itineraryList.flight)
-            && Objects.equals(this.cabinClass, itineraryList.cabinClass)
-            && Objects.equals(this.date, itineraryList.date) && Objects.equals(this.time, itineraryList.time)
-            && Objects.equals(this.fareBasis, itineraryList.fareBasis)
-            && Objects.equals(this.effectiveDate, itineraryList.effectiveDate)
-            && Objects.equals(this.expiryDate, itineraryList.expiryDate)
-            && Objects.equals(this.baggageAllowance, itineraryList.baggageAllowance);
+        ItineraryList that = (ItineraryList) obj;
+        return Objects.equals(this.departureStation, that.departureStation)
+            && Objects.equals(this.destinationStation, that.destinationStation)
+            && Objects.equals(this.carrier, that.carrier) && Objects.equals(this.flight, that.flight)
+            && Objects.equals(this.cabinClass, that.cabinClass) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.fareBasis, that.fareBasis)
+            && Objects.equals(this.effectiveDate, that.effectiveDate)
+            && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.baggageAllowance, that.baggageAllowance);
     }
 
     @Override

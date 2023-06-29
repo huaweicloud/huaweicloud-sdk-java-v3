@@ -158,19 +158,17 @@ public class ReinstallK8sOptionsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallK8sOptionsConfig reinstallK8sOptionsConfig = (ReinstallK8sOptionsConfig) o;
-        return Objects.equals(this.labels, reinstallK8sOptionsConfig.labels)
-            && Objects.equals(this.taints, reinstallK8sOptionsConfig.taints)
-            && Objects.equals(this.maxPods, reinstallK8sOptionsConfig.maxPods)
-            && Objects.equals(this.nicMultiqueue, reinstallK8sOptionsConfig.nicMultiqueue)
-            && Objects.equals(this.nicThreshold, reinstallK8sOptionsConfig.nicThreshold);
+        ReinstallK8sOptionsConfig that = (ReinstallK8sOptionsConfig) obj;
+        return Objects.equals(this.labels, that.labels) && Objects.equals(this.taints, that.taints)
+            && Objects.equals(this.maxPods, that.maxPods) && Objects.equals(this.nicMultiqueue, that.nicMultiqueue)
+            && Objects.equals(this.nicThreshold, that.nicThreshold);
     }
 
     @Override

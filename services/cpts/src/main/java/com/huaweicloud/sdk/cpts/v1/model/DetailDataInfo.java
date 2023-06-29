@@ -1287,64 +1287,52 @@ public class DetailDataInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetailDataInfo detailDataInfo = (DetailDataInfo) o;
-        return Objects.equals(this.averageRespTime, detailDataInfo.averageRespTime)
-            && Objects.equals(this.avgRecBytes, detailDataInfo.avgRecBytes)
-            && Objects.equals(this.avgSentBytes, detailDataInfo.avgSentBytes)
-            && Objects.equals(this.avgTranRespTime, detailDataInfo.avgTranRespTime)
-            && Objects.equals(this.caseUri, detailDataInfo.caseUri)
-            && Objects.equals(this.createTime, detailDataInfo.createTime)
-            && Objects.equals(this.currentThreadNum, detailDataInfo.currentThreadNum)
-            && Objects.equals(this.detailId, detailDataInfo.detailId)
-            && Objects.equals(this.endTime, detailDataInfo.endTime)
-            && Objects.equals(this.errorCount, detailDataInfo.errorCount)
-            && Objects.equals(this.errorEventsCount, detailDataInfo.errorEventsCount)
-            && Objects.equals(this.failedAssert, detailDataInfo.failedAssert)
-            && Objects.equals(this.failedOthers, detailDataInfo.failedOthers)
-            && Objects.equals(this.failedParsed, detailDataInfo.failedParsed)
-            && Objects.equals(this.failedRefused, detailDataInfo.failedRefused)
-            && Objects.equals(this.failedTimeout, detailDataInfo.failedTimeout)
-            && Objects.equals(this.id, detailDataInfo.id) && Objects.equals(this.isAW, detailDataInfo.isAW)
-            && Objects.equals(this.max, detailDataInfo.max)
-            && Objects.equals(this.maxRecBytes, detailDataInfo.maxRecBytes)
-            && Objects.equals(this.maxRespTime, detailDataInfo.maxRespTime)
-            && Objects.equals(this.maxSentBytes, detailDataInfo.maxSentBytes)
-            && Objects.equals(this.maxTranRespTime, detailDataInfo.maxTranRespTime)
-            && Objects.equals(this.min, detailDataInfo.min)
-            && Objects.equals(this.minNetworkTraffic, detailDataInfo.minNetworkTraffic)
-            && Objects.equals(this.name, detailDataInfo.name) && Objects.equals(this.requests, detailDataInfo.requests)
-            && Objects.equals(this.result, detailDataInfo.result)
-            && Objects.equals(this.startTime, detailDataInfo.startTime)
-            && Objects.equals(this.status, detailDataInfo.status)
-            && Objects.equals(this.successCount, detailDataInfo.successCount)
-            && Objects.equals(this.successRate, detailDataInfo.successRate)
-            && Objects.equals(this.sum1xx, detailDataInfo.sum1xx) && Objects.equals(this.sum2xx, detailDataInfo.sum2xx)
-            && Objects.equals(this.sum3xx, detailDataInfo.sum3xx) && Objects.equals(this.sum4xx, detailDataInfo.sum4xx)
-            && Objects.equals(this.sum5xx, detailDataInfo.sum5xx) && Objects.equals(this.taskId, detailDataInfo.taskId)
-            && Objects.equals(this.taskProjectId, detailDataInfo.taskProjectId)
-            && Objects.equals(this.taskStatus, detailDataInfo.taskStatus)
-            && Objects.equals(this.testCaseUri, detailDataInfo.testCaseUri)
-            && Objects.equals(this.tp50, detailDataInfo.tp50) && Objects.equals(this.tp75, detailDataInfo.tp75)
-            && Objects.equals(this.tp90, detailDataInfo.tp90) && Objects.equals(this.tp95, detailDataInfo.tp95)
-            && Objects.equals(this.tp99, detailDataInfo.tp99) && Objects.equals(this.tps, detailDataInfo.tps)
-            && Objects.equals(this.tranTPS, detailDataInfo.tranTPS)
-            && Objects.equals(this.transactionId, detailDataInfo.transactionId)
-            && Objects.equals(this.transactionSuccess, detailDataInfo.transactionSuccess)
-            && Objects.equals(this.transactionalSuccessRate, detailDataInfo.transactionalSuccessRate)
-            && Objects.equals(this.transactionalTps, detailDataInfo.transactionalTps)
-            && Objects.equals(this.transactionalTpsSuccess, detailDataInfo.transactionalTpsSuccess)
-            && Objects.equals(this.transactions, detailDataInfo.transactions)
-            && Objects.equals(this.updateTime, detailDataInfo.updateTime)
-            && Objects.equals(this.vum, detailDataInfo.vum)
-            && Objects.equals(this.avgNetworkTraffic, detailDataInfo.avgNetworkTraffic)
-            && Objects.equals(this.maxNetworkTraffic, detailDataInfo.maxNetworkTraffic);
+        DetailDataInfo that = (DetailDataInfo) obj;
+        return Objects.equals(this.averageRespTime, that.averageRespTime)
+            && Objects.equals(this.avgRecBytes, that.avgRecBytes)
+            && Objects.equals(this.avgSentBytes, that.avgSentBytes)
+            && Objects.equals(this.avgTranRespTime, that.avgTranRespTime) && Objects.equals(this.caseUri, that.caseUri)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.currentThreadNum, that.currentThreadNum)
+            && Objects.equals(this.detailId, that.detailId) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.errorCount, that.errorCount)
+            && Objects.equals(this.errorEventsCount, that.errorEventsCount)
+            && Objects.equals(this.failedAssert, that.failedAssert)
+            && Objects.equals(this.failedOthers, that.failedOthers)
+            && Objects.equals(this.failedParsed, that.failedParsed)
+            && Objects.equals(this.failedRefused, that.failedRefused)
+            && Objects.equals(this.failedTimeout, that.failedTimeout) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isAW, that.isAW) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.maxRecBytes, that.maxRecBytes) && Objects.equals(this.maxRespTime, that.maxRespTime)
+            && Objects.equals(this.maxSentBytes, that.maxSentBytes)
+            && Objects.equals(this.maxTranRespTime, that.maxTranRespTime) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.minNetworkTraffic, that.minNetworkTraffic) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.requests, that.requests) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.successCount, that.successCount)
+            && Objects.equals(this.successRate, that.successRate) && Objects.equals(this.sum1xx, that.sum1xx)
+            && Objects.equals(this.sum2xx, that.sum2xx) && Objects.equals(this.sum3xx, that.sum3xx)
+            && Objects.equals(this.sum4xx, that.sum4xx) && Objects.equals(this.sum5xx, that.sum5xx)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskProjectId, that.taskProjectId)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.testCaseUri, that.testCaseUri)
+            && Objects.equals(this.tp50, that.tp50) && Objects.equals(this.tp75, that.tp75)
+            && Objects.equals(this.tp90, that.tp90) && Objects.equals(this.tp95, that.tp95)
+            && Objects.equals(this.tp99, that.tp99) && Objects.equals(this.tps, that.tps)
+            && Objects.equals(this.tranTPS, that.tranTPS) && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.transactionSuccess, that.transactionSuccess)
+            && Objects.equals(this.transactionalSuccessRate, that.transactionalSuccessRate)
+            && Objects.equals(this.transactionalTps, that.transactionalTps)
+            && Objects.equals(this.transactionalTpsSuccess, that.transactionalTpsSuccess)
+            && Objects.equals(this.transactions, that.transactions) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.vum, that.vum) && Objects.equals(this.avgNetworkTraffic, that.avgNetworkTraffic)
+            && Objects.equals(this.maxNetworkTraffic, that.maxNetworkTraffic);
     }
 
     @Override

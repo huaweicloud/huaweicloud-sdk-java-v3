@@ -361,29 +361,22 @@ public class ShowTriggerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTriggerResponse showTriggerResponse = (ShowTriggerResponse) o;
-        return Objects.equals(this.action, showTriggerResponse.action)
-            && Objects.equals(this.appType, showTriggerResponse.appType)
-            && Objects.equals(this.application, showTriggerResponse.application)
-            && Objects.equals(this.clusterId, showTriggerResponse.clusterId)
-            && Objects.equals(this.clusterName, showTriggerResponse.clusterName)
-            && Objects.equals(this.clusterNs, showTriggerResponse.clusterNs)
-            && Objects.equals(this.condition, showTriggerResponse.condition)
-            && Objects.equals(this.container, showTriggerResponse.container)
-            && Objects.equals(this.createdAt, showTriggerResponse.createdAt)
-            && Objects.equals(this.creatorName, showTriggerResponse.creatorName)
-            && Objects.equals(this.enable, showTriggerResponse.enable)
-            && Objects.equals(this.name, showTriggerResponse.name)
-            && Objects.equals(this.triggerHistory, showTriggerResponse.triggerHistory)
-            && Objects.equals(this.triggerMode, showTriggerResponse.triggerMode)
-            && Objects.equals(this.triggerType, showTriggerResponse.triggerType);
+        ShowTriggerResponse that = (ShowTriggerResponse) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.application, that.application) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterNs, that.clusterNs)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.container, that.container)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.triggerHistory, that.triggerHistory)
+            && Objects.equals(this.triggerMode, that.triggerMode) && Objects.equals(this.triggerType, that.triggerType);
     }
 
     @Override

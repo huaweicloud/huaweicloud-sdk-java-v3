@@ -143,17 +143,17 @@ public class FlavorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorInfo flavorInfo = (FlavorInfo) o;
-        return Objects.equals(this.connection, flavorInfo.connection) && Objects.equals(this.cps, flavorInfo.cps)
-            && Objects.equals(this.qps, flavorInfo.qps) && Objects.equals(this.bandwidth, flavorInfo.bandwidth)
-            && Objects.equals(this.lcu, flavorInfo.lcu) && Objects.equals(this.httpsCps, flavorInfo.httpsCps);
+        FlavorInfo that = (FlavorInfo) obj;
+        return Objects.equals(this.connection, that.connection) && Objects.equals(this.cps, that.cps)
+            && Objects.equals(this.qps, that.qps) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.lcu, that.lcu) && Objects.equals(this.httpsCps, that.httpsCps);
     }
 
     @Override

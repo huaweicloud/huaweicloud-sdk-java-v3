@@ -114,17 +114,16 @@ public class OsFederationInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsFederationInfo osFederationInfo = (OsFederationInfo) o;
-        return Objects.equals(this.identityProvider, osFederationInfo.identityProvider)
-            && Objects.equals(this.protocol, osFederationInfo.protocol)
-            && Objects.equals(this.groups, osFederationInfo.groups);
+        OsFederationInfo that = (OsFederationInfo) obj;
+        return Objects.equals(this.identityProvider, that.identityProvider)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.groups, that.groups);
     }
 
     @Override

@@ -253,21 +253,20 @@ public class VnicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VnicInfo vnicInfo = (VnicInfo) o;
-        return Objects.equals(this.privateIpAddress, vnicInfo.privateIpAddress)
-            && Objects.equals(this.deviceId, vnicInfo.deviceId)
-            && Objects.equals(this.deviceOwner, vnicInfo.deviceOwner) && Objects.equals(this.vpcId, vnicInfo.vpcId)
-            && Objects.equals(this.portId, vnicInfo.portId) && Objects.equals(this.portProfile, vnicInfo.portProfile)
-            && Objects.equals(this.mac, vnicInfo.mac) && Objects.equals(this.vtep, vnicInfo.vtep)
-            && Objects.equals(this.vni, vnicInfo.vni) && Objects.equals(this.instanceId, vnicInfo.instanceId)
-            && Objects.equals(this.instanceType, vnicInfo.instanceType);
+        VnicInfo that = (VnicInfo) obj;
+        return Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.portProfile, that.portProfile) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.vtep, that.vtep) && Objects.equals(this.vni, that.vni)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType);
     }
 
     @Override

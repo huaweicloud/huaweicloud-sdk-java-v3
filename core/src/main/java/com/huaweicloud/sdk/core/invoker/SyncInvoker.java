@@ -28,11 +28,11 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import java.util.concurrent.ExecutionException;
 
 /**
- * @param <ReqT>
- * @param <ResT>
+ * @param <R> Request type
+ * @param <S> Response type
  * @author HuaweiCloud_SDK
  */
-public class SyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, SyncInvoker<ReqT, ResT>> {
+public class SyncInvoker<R, S> extends BaseInvoker<R, S, SyncInvoker<R, S>> {
     /**
      * The default constructor for SyncInvoker.
      *
@@ -41,7 +41,7 @@ public class SyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, SyncInvoker
      * and extract original HttpResponse
      * @param hcClient encapsulated client before default http client
      */
-    public SyncInvoker(ReqT req, HttpRequestDef<ReqT, ResT> meta, HcClient hcClient) {
+    public SyncInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
         super(req, meta, hcClient);
     }
 
@@ -50,7 +50,7 @@ public class SyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, SyncInvoker
      *
      * @return CompletableFuture
      */
-    public ResT invoke() {
+    public S invoke() {
         try {
             return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange)).get();
         } catch (ExecutionException e) {

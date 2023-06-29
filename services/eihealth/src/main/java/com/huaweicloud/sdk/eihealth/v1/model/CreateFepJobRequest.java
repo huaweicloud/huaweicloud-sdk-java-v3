@@ -65,16 +65,15 @@ public class CreateFepJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFepJobRequest createFepJobRequest = (CreateFepJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, createFepJobRequest.eihealthProjectId)
-            && Objects.equals(this.body, createFepJobRequest.body);
+        CreateFepJobRequest that = (CreateFepJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

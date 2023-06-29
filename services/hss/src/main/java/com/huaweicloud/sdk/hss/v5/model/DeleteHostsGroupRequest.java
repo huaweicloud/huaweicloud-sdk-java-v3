@@ -77,17 +77,17 @@ public class DeleteHostsGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHostsGroupRequest deleteHostsGroupRequest = (DeleteHostsGroupRequest) o;
-        return Objects.equals(this.region, deleteHostsGroupRequest.region)
-            && Objects.equals(this.enterpriseProjectId, deleteHostsGroupRequest.enterpriseProjectId)
-            && Objects.equals(this.groupId, deleteHostsGroupRequest.groupId);
+        DeleteHostsGroupRequest that = (DeleteHostsGroupRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

@@ -56,15 +56,15 @@ public class CreateAkSkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAkSkResponse createAkSkResponse = (CreateAkSkResponse) o;
-        return Objects.equals(this.ak, createAkSkResponse.ak) && Objects.equals(this.sk, createAkSkResponse.sk);
+        CreateAkSkResponse that = (CreateAkSkResponse) obj;
+        return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk);
     }
 
     @Override

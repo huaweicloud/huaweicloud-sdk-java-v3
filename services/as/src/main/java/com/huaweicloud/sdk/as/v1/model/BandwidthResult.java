@@ -65,22 +65,15 @@ public class BandwidthResult {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShareTypeEnum(value));
         }
 
         public static ShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class BandwidthResult {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,18 +246,16 @@ public class BandwidthResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthResult bandwidthResult = (BandwidthResult) o;
-        return Objects.equals(this.size, bandwidthResult.size)
-            && Objects.equals(this.shareType, bandwidthResult.shareType)
-            && Objects.equals(this.chargingMode, bandwidthResult.chargingMode)
-            && Objects.equals(this.id, bandwidthResult.id);
+        BandwidthResult that = (BandwidthResult) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.id, that.id);
     }
 
     @Override

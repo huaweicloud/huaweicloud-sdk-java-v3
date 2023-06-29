@@ -338,24 +338,22 @@ public class VulInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulInfo vulInfo = (VulInfo) o;
-        return Objects.equals(this.vulName, vulInfo.vulName) && Objects.equals(this.vulId, vulInfo.vulId)
-            && Objects.equals(this.labelList, vulInfo.labelList)
-            && Objects.equals(this.repairNecessity, vulInfo.repairNecessity)
-            && Objects.equals(this.severityLevel, vulInfo.severityLevel)
-            && Objects.equals(this.hostNum, vulInfo.hostNum)
-            && Objects.equals(this.unhandleHostNum, vulInfo.unhandleHostNum)
-            && Objects.equals(this.scanTime, vulInfo.scanTime)
-            && Objects.equals(this.solutionDetail, vulInfo.solutionDetail) && Objects.equals(this.url, vulInfo.url)
-            && Objects.equals(this.description, vulInfo.description) && Objects.equals(this.type, vulInfo.type)
-            && Objects.equals(this.hostIdList, vulInfo.hostIdList);
+        VulInfo that = (VulInfo) obj;
+        return Objects.equals(this.vulName, that.vulName) && Objects.equals(this.vulId, that.vulId)
+            && Objects.equals(this.labelList, that.labelList)
+            && Objects.equals(this.repairNecessity, that.repairNecessity)
+            && Objects.equals(this.severityLevel, that.severityLevel) && Objects.equals(this.hostNum, that.hostNum)
+            && Objects.equals(this.unhandleHostNum, that.unhandleHostNum)
+            && Objects.equals(this.scanTime, that.scanTime) && Objects.equals(this.solutionDetail, that.solutionDetail)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override

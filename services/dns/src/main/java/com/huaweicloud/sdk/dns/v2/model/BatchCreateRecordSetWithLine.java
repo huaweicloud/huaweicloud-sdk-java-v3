@@ -118,18 +118,16 @@ public class BatchCreateRecordSetWithLine {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateRecordSetWithLine batchCreateRecordSetWithLine = (BatchCreateRecordSetWithLine) o;
-        return Objects.equals(this.line, batchCreateRecordSetWithLine.line)
-            && Objects.equals(this.ttl, batchCreateRecordSetWithLine.ttl)
-            && Objects.equals(this.weight, batchCreateRecordSetWithLine.weight)
-            && Objects.equals(this.records, batchCreateRecordSetWithLine.records);
+        BatchCreateRecordSetWithLine that = (BatchCreateRecordSetWithLine) obj;
+        return Objects.equals(this.line, that.line) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.records, that.records);
     }
 
     @Override

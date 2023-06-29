@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.RegisterScenesReqScenes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RegisterScenes请求体
  */
-public class RegisterScenesReq  {
-
+public class RegisterScenesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scenes")
-    
+    @JsonProperty(value = "scenes")
+
     private List<RegisterScenesReqScenes> scenes = null;
-    
+
     public RegisterScenesReq withScenes(List<RegisterScenesReqScenes> scenes) {
         this.scenes = scenes;
         return this;
     }
 
-    
     public RegisterScenesReq addScenesItem(RegisterScenesReqScenes scenesItem) {
-        if(this.scenes == null) {
+        if (this.scenes == null) {
             this.scenes = new ArrayList<>();
         }
         this.scenes.add(scenesItem);
@@ -40,7 +32,7 @@ public class RegisterScenesReq  {
     }
 
     public RegisterScenesReq withScenes(Consumer<List<RegisterScenesReqScenes>> scenesSetter) {
-        if(this.scenes == null) {
+        if (this.scenes == null) {
             this.scenes = new ArrayList<>();
         }
         scenesSetter.accept(this.scenes);
@@ -59,23 +51,23 @@ public class RegisterScenesReq  {
         this.scenes = scenes;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterScenesReq registerScenesReq = (RegisterScenesReq) o;
-        return Objects.equals(this.scenes, registerScenesReq.scenes);
+        RegisterScenesReq that = (RegisterScenesReq) obj;
+        return Objects.equals(this.scenes, that.scenes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scenes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class RegisterScenesReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class RegisterScenesReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

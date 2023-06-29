@@ -99,16 +99,16 @@ public class Path {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Path path = (Path) o;
-        return Objects.equals(this.id, path.id) && Objects.equals(this.status, path.status)
-            && Objects.equals(this.agentId, path.agentId) && Objects.equals(this.dirPath, path.dirPath);
+        Path that = (Path) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.dirPath, that.dirPath);
     }
 
     @Override

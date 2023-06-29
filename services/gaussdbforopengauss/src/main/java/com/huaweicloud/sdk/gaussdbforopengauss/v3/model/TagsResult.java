@@ -1,42 +1,32 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * TagsResult
  */
-public class TagsResult  {
-
+public class TagsResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<String> value = null;
-    
+
     public TagsResult withKey(String key) {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 标签键。最大长度36个unicode字符，key不能为空。 字符集：0-9，A-Z，a-z，“_”，“-”，中文。
@@ -50,16 +40,13 @@ public class TagsResult  {
         this.key = key;
     }
 
-    
-
     public TagsResult withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
-    
     public TagsResult addValueItem(String valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -67,7 +54,7 @@ public class TagsResult  {
     }
 
     public TagsResult withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
@@ -86,24 +73,23 @@ public class TagsResult  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagsResult tagsResult = (TagsResult) o;
-        return Objects.equals(this.key, tagsResult.key) &&
-            Objects.equals(this.value, tagsResult.value);
+        TagsResult that = (TagsResult) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class TagsResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class TagsResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

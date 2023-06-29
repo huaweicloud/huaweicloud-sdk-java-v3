@@ -77,17 +77,16 @@ public class NodeResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeResult nodeResult = (NodeResult) o;
-        return Objects.equals(this.nodeId, nodeResult.nodeId)
-            && Objects.equals(this.errorMessage, nodeResult.errorMessage)
-            && Objects.equals(this.errorCode, nodeResult.errorCode);
+        NodeResult that = (NodeResult) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

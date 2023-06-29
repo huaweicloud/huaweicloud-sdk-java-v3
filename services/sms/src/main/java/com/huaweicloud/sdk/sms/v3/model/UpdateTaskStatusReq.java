@@ -91,22 +91,15 @@ public class UpdateTaskStatusReq {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationEnum(value));
         }
 
         public static OperationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -206,17 +199,16 @@ public class UpdateTaskStatusReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskStatusReq updateTaskStatusReq = (UpdateTaskStatusReq) o;
-        return Objects.equals(this.operation, updateTaskStatusReq.operation)
-            && Objects.equals(this.param, updateTaskStatusReq.param)
-            && Objects.equals(this.switchHce, updateTaskStatusReq.switchHce);
+        UpdateTaskStatusReq that = (UpdateTaskStatusReq) obj;
+        return Objects.equals(this.operation, that.operation) && Objects.equals(this.param, that.param)
+            && Objects.equals(this.switchHce, that.switchHce);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class AccountManager {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccountManager accountManager = (AccountManager) o;
-        return Objects.equals(this.accountName, accountManager.accountName);
+        AccountManager that = (AccountManager) obj;
+        return Objects.equals(this.accountName, that.accountName);
     }
 
     @Override

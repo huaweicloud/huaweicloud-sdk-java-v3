@@ -76,16 +76,16 @@ public class MigrateSubNetworkInterfaceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateSubNetworkInterfaceOption migrateSubNetworkInterfaceOption = (MigrateSubNetworkInterfaceOption) o;
-        return Objects.equals(this.parentId, migrateSubNetworkInterfaceOption.parentId)
-            && Objects.equals(this.subNetworkInterfaces, migrateSubNetworkInterfaceOption.subNetworkInterfaces);
+        MigrateSubNetworkInterfaceOption that = (MigrateSubNetworkInterfaceOption) obj;
+        return Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.subNetworkInterfaces, that.subNetworkInterfaces);
     }
 
     @Override

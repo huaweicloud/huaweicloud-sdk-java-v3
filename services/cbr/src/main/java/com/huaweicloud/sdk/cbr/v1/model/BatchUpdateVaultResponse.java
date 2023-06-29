@@ -53,15 +53,15 @@ public class BatchUpdateVaultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateVaultResponse batchUpdateVaultResponse = (BatchUpdateVaultResponse) o;
-        return Objects.equals(this.updatedVaultsId, batchUpdateVaultResponse.updatedVaultsId);
+        BatchUpdateVaultResponse that = (BatchUpdateVaultResponse) obj;
+        return Objects.equals(this.updatedVaultsId, that.updatedVaultsId);
     }
 
     @Override

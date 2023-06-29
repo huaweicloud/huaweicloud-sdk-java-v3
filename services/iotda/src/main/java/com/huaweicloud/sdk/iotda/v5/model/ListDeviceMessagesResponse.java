@@ -75,16 +75,15 @@ public class ListDeviceMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceMessagesResponse listDeviceMessagesResponse = (ListDeviceMessagesResponse) o;
-        return Objects.equals(this.deviceId, listDeviceMessagesResponse.deviceId)
-            && Objects.equals(this.messages, listDeviceMessagesResponse.messages);
+        ListDeviceMessagesResponse that = (ListDeviceMessagesResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.messages, that.messages);
     }
 
     @Override

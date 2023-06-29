@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class RecomendAnswer  {
-
+public class RecomendAnswer {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qa_pair_id")
-    
+    @JsonProperty(value = "qa_pair_id")
 
     private String qaPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="st_question")
-    
+    @JsonProperty(value = "st_question")
 
     private String stQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
 
     private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top_score_question")
-    
+    @JsonProperty(value = "top_score_question")
 
     private String topScoreQuestion;
 
@@ -51,9 +39,6 @@ public class RecomendAnswer  {
         this.qaPairId = qaPairId;
         return this;
     }
-
-    
-
 
     /**
      * 问答对ID。
@@ -67,15 +52,10 @@ public class RecomendAnswer  {
         this.qaPairId = qaPairId;
     }
 
-    
-
     public RecomendAnswer withStQuestion(String stQuestion) {
         this.stQuestion = stQuestion;
         return this;
     }
-
-    
-
 
     /**
      * 标准问题。
@@ -89,15 +69,10 @@ public class RecomendAnswer  {
         this.stQuestion = stQuestion;
     }
 
-    
-
     public RecomendAnswer withScore(Double score) {
         this.score = score;
         return this;
     }
-
-    
-
 
     /**
      * 相似度得分，精确到小数点后3位。
@@ -111,15 +86,10 @@ public class RecomendAnswer  {
         this.score = score;
     }
 
-    
-
     public RecomendAnswer withDomain(String domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 所属领域。
@@ -133,15 +103,10 @@ public class RecomendAnswer  {
         this.domain = domain;
     }
 
-    
-
     public RecomendAnswer withTopScoreQuestion(String topScoreQuestion) {
         this.topScoreQuestion = topScoreQuestion;
         return this;
     }
-
-    
-
 
     /**
      * 最高评分的扩展问或标准问。
@@ -155,27 +120,25 @@ public class RecomendAnswer  {
         this.topScoreQuestion = topScoreQuestion;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecomendAnswer recomendAnswer = (RecomendAnswer) o;
-        return Objects.equals(this.qaPairId, recomendAnswer.qaPairId) &&
-            Objects.equals(this.stQuestion, recomendAnswer.stQuestion) &&
-            Objects.equals(this.score, recomendAnswer.score) &&
-            Objects.equals(this.domain, recomendAnswer.domain) &&
-            Objects.equals(this.topScoreQuestion, recomendAnswer.topScoreQuestion);
+        RecomendAnswer that = (RecomendAnswer) obj;
+        return Objects.equals(this.qaPairId, that.qaPairId) && Objects.equals(this.stQuestion, that.stQuestion)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.topScoreQuestion, that.topScoreQuestion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qaPairId, stQuestion, score, domain, topScoreQuestion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class RecomendAnswer  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class RecomendAnswer  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,18 +77,16 @@ public class ComponentConfigCompareResultModifyEnvs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentConfigCompareResultModifyEnvs componentConfigCompareResultModifyEnvs =
-            (ComponentConfigCompareResultModifyEnvs) o;
-        return Objects.equals(this.name, componentConfigCompareResultModifyEnvs.name)
-            && Objects.equals(this.value, componentConfigCompareResultModifyEnvs.value)
-            && Objects.equals(this.changeValue, componentConfigCompareResultModifyEnvs.changeValue);
+        ComponentConfigCompareResultModifyEnvs that = (ComponentConfigCompareResultModifyEnvs) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.changeValue, that.changeValue);
     }
 
     @Override

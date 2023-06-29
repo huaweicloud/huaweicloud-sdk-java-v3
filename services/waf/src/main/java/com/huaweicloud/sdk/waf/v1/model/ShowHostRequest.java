@@ -55,16 +55,16 @@ public class ShowHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHostRequest showHostRequest = (ShowHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showHostRequest.enterpriseProjectId)
-            && Objects.equals(this.instanceId, showHostRequest.instanceId);
+        ShowHostRequest that = (ShowHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

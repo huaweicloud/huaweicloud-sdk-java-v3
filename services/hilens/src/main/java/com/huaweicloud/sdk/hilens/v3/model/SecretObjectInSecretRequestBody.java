@@ -134,18 +134,16 @@ public class SecretObjectInSecretRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecretObjectInSecretRequestBody secretObjectInSecretRequestBody = (SecretObjectInSecretRequestBody) o;
-        return Objects.equals(this.name, secretObjectInSecretRequestBody.name)
-            && Objects.equals(this.description, secretObjectInSecretRequestBody.description)
-            && Objects.equals(this.secrets, secretObjectInSecretRequestBody.secrets)
-            && Objects.equals(this.tags, secretObjectInSecretRequestBody.tags);
+        SecretObjectInSecretRequestBody that = (SecretObjectInSecretRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.secrets, that.secrets) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,27 +350,20 @@ public class HttpQueryCfwFlowLogsResponseDTODataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpQueryCfwFlowLogsResponseDTODataRecords httpQueryCfwFlowLogsResponseDTODataRecords =
-            (HttpQueryCfwFlowLogsResponseDTODataRecords) o;
-        return Objects.equals(this.bytes, httpQueryCfwFlowLogsResponseDTODataRecords.bytes)
-            && Objects.equals(this.direction, httpQueryCfwFlowLogsResponseDTODataRecords.direction)
-            && Objects.equals(this.packets, httpQueryCfwFlowLogsResponseDTODataRecords.packets)
-            && Objects.equals(this.startTime, httpQueryCfwFlowLogsResponseDTODataRecords.startTime)
-            && Objects.equals(this.endTime, httpQueryCfwFlowLogsResponseDTODataRecords.endTime)
-            && Objects.equals(this.logId, httpQueryCfwFlowLogsResponseDTODataRecords.logId)
-            && Objects.equals(this.srcIp, httpQueryCfwFlowLogsResponseDTODataRecords.srcIp)
-            && Objects.equals(this.srcPort, httpQueryCfwFlowLogsResponseDTODataRecords.srcPort)
-            && Objects.equals(this.dstIp, httpQueryCfwFlowLogsResponseDTODataRecords.dstIp)
-            && Objects.equals(this.app, httpQueryCfwFlowLogsResponseDTODataRecords.app)
-            && Objects.equals(this.dstPort, httpQueryCfwFlowLogsResponseDTODataRecords.dstPort)
-            && Objects.equals(this.protocol, httpQueryCfwFlowLogsResponseDTODataRecords.protocol);
+        HttpQueryCfwFlowLogsResponseDTODataRecords that = (HttpQueryCfwFlowLogsResponseDTODataRecords) obj;
+        return Objects.equals(this.bytes, that.bytes) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.packets, that.packets) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

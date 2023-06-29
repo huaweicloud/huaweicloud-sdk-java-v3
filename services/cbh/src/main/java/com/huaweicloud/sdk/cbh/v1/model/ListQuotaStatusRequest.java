@@ -55,16 +55,16 @@ public class ListQuotaStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotaStatusRequest listQuotaStatusRequest = (ListQuotaStatusRequest) o;
-        return Objects.equals(this.availabilityZone, listQuotaStatusRequest.availabilityZone)
-            && Objects.equals(this.resourceSpecCode, listQuotaStatusRequest.resourceSpecCode);
+        ListQuotaStatusRequest that = (ListQuotaStatusRequest) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override

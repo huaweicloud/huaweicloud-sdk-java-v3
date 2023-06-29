@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.UpdateExternalEntityReqDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateExternalEntityRequest  {
-
+public class UpdateExternalEntityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_id")
-    
+    @JsonProperty(value = "external_id")
 
     private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateExternalEntityReqDTO body;
 
@@ -41,9 +30,6 @@ public class UpdateExternalEntityRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -57,15 +43,10 @@ public class UpdateExternalEntityRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public UpdateExternalEntityRequest withExternalId(String externalId) {
         this.externalId = externalId;
         return this;
     }
-
-    
-
 
     /**
      * 外部实体ID
@@ -79,22 +60,19 @@ public class UpdateExternalEntityRequest  {
         this.externalId = externalId;
     }
 
-    
-
     public UpdateExternalEntityRequest withBody(UpdateExternalEntityReqDTO body) {
         this.body = body;
         return this;
     }
 
     public UpdateExternalEntityRequest withBody(Consumer<UpdateExternalEntityReqDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateExternalEntityReqDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class UpdateExternalEntityRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateExternalEntityRequest updateExternalEntityRequest = (UpdateExternalEntityRequest) o;
-        return Objects.equals(this.edgeNodeId, updateExternalEntityRequest.edgeNodeId) &&
-            Objects.equals(this.externalId, updateExternalEntityRequest.externalId) &&
-            Objects.equals(this.body, updateExternalEntityRequest.body);
+        UpdateExternalEntityRequest that = (UpdateExternalEntityRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.externalId, that.externalId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, externalId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class UpdateExternalEntityRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class UpdateExternalEntityRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

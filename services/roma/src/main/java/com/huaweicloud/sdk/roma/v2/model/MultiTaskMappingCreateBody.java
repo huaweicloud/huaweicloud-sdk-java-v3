@@ -247,22 +247,21 @@ public class MultiTaskMappingCreateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskMappingCreateBody multiTaskMappingCreateBody = (MultiTaskMappingCreateBody) o;
-        return Objects.equals(this.extInfo, multiTaskMappingCreateBody.extInfo)
-            && Objects.equals(this.sourceDatasourceId, multiTaskMappingCreateBody.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, multiTaskMappingCreateBody.targetDatasourceId)
-            && Objects.equals(this.sourceColumns, multiTaskMappingCreateBody.sourceColumns)
-            && Objects.equals(this.targetColumns, multiTaskMappingCreateBody.targetColumns)
-            && Objects.equals(this.sourceTable, multiTaskMappingCreateBody.sourceTable)
-            && Objects.equals(this.targetTable, multiTaskMappingCreateBody.targetTable)
-            && Objects.equals(this.mappingColumns, multiTaskMappingCreateBody.mappingColumns);
+        MultiTaskMappingCreateBody that = (MultiTaskMappingCreateBody) obj;
+        return Objects.equals(this.extInfo, that.extInfo)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.sourceColumns, that.sourceColumns)
+            && Objects.equals(this.targetColumns, that.targetColumns)
+            && Objects.equals(this.sourceTable, that.sourceTable) && Objects.equals(this.targetTable, that.targetTable)
+            && Objects.equals(this.mappingColumns, that.mappingColumns);
     }
 
     @Override

@@ -134,22 +134,15 @@ public class MixParam {
             if (value == null) {
                 return null;
             }
-            EncodeTemplateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EncodeTemplateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EncodeTemplateEnum(value));
         }
 
         public static EncodeTemplateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EncodeTemplateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -394,23 +387,22 @@ public class MixParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MixParam mixParam = (MixParam) o;
-        return Objects.equals(this.roomId, mixParam.roomId)
-            && Objects.equals(this.encodeTemplate, mixParam.encodeTemplate)
-            && Objects.equals(this.maxIdleTime, mixParam.maxIdleTime)
-            && Objects.equals(this.layoutTemplate, mixParam.layoutTemplate)
-            && Objects.equals(this.defaultUserBackgroundImage, mixParam.defaultUserBackgroundImage)
-            && Objects.equals(this.screenBackgroundImage, mixParam.screenBackgroundImage)
-            && Objects.equals(this.backgroundImage, mixParam.backgroundImage)
-            && Objects.equals(this.layoutPanes, mixParam.layoutPanes)
-            && Objects.equals(this.userBackgroundImages, mixParam.userBackgroundImages);
+        MixParam that = (MixParam) obj;
+        return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.encodeTemplate, that.encodeTemplate)
+            && Objects.equals(this.maxIdleTime, that.maxIdleTime)
+            && Objects.equals(this.layoutTemplate, that.layoutTemplate)
+            && Objects.equals(this.defaultUserBackgroundImage, that.defaultUserBackgroundImage)
+            && Objects.equals(this.screenBackgroundImage, that.screenBackgroundImage)
+            && Objects.equals(this.backgroundImage, that.backgroundImage)
+            && Objects.equals(this.layoutPanes, that.layoutPanes)
+            && Objects.equals(this.userBackgroundImages, that.userBackgroundImages);
     }
 
     @Override

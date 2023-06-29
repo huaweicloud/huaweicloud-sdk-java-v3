@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,10 +11,8 @@ import java.util.Objects;
  */
 public class CreateFastExecuteScriptResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_id")
-    
+    @JsonProperty(value = "execution_id")
 
     private String executionId;
 
@@ -30,9 +20,6 @@ public class CreateFastExecuteScriptResponse extends SdkResponse {
         this.executionId = executionId;
         return this;
     }
-
-    
-
 
     /**
      * 工作流执行id。
@@ -46,23 +33,23 @@ public class CreateFastExecuteScriptResponse extends SdkResponse {
         this.executionId = executionId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFastExecuteScriptResponse createFastExecuteScriptResponse = (CreateFastExecuteScriptResponse) o;
-        return Objects.equals(this.executionId, createFastExecuteScriptResponse.executionId);
+        CreateFastExecuteScriptResponse that = (CreateFastExecuteScriptResponse) obj;
+        return Objects.equals(this.executionId, that.executionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(executionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,6 +58,7 @@ public class CreateFastExecuteScriptResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class CreateFastExecuteScriptResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

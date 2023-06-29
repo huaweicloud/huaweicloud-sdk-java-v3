@@ -83,16 +83,15 @@ public class ListVmsTemplateStatusResponseMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVmsTemplateStatusResponseMode listVmsTemplateStatusResponseMode = (ListVmsTemplateStatusResponseMode) o;
-        return Objects.equals(this.templates, listVmsTemplateStatusResponseMode.templates)
-            && Objects.equals(this.pageInfo, listVmsTemplateStatusResponseMode.pageInfo);
+        ListVmsTemplateStatusResponseMode that = (ListVmsTemplateStatusResponseMode) obj;
+        return Objects.equals(this.templates, that.templates) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

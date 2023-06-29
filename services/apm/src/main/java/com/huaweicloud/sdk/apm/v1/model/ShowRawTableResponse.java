@@ -74,22 +74,15 @@ public class ShowRawTableResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableDirectionEnum(value));
         }
 
         public static TableDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,20 +238,18 @@ public class ShowRawTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRawTableResponse showRawTableResponse = (ShowRawTableResponse) o;
-        return Objects.equals(this.rowList, showRawTableResponse.rowList)
-            && Objects.equals(this.latestDataTime, showRawTableResponse.latestDataTime)
-            && Objects.equals(this.tableDirection, showRawTableResponse.tableDirection)
-            && Objects.equals(this.resultId, showRawTableResponse.resultId)
-            && Objects.equals(this.realStartTime, showRawTableResponse.realStartTime)
-            && Objects.equals(this.realEndTime, showRawTableResponse.realEndTime);
+        ShowRawTableResponse that = (ShowRawTableResponse) obj;
+        return Objects.equals(this.rowList, that.rowList) && Objects.equals(this.latestDataTime, that.latestDataTime)
+            && Objects.equals(this.tableDirection, that.tableDirection) && Objects.equals(this.resultId, that.resultId)
+            && Objects.equals(this.realStartTime, that.realStartTime)
+            && Objects.equals(this.realEndTime, that.realEndTime);
     }
 
     @Override

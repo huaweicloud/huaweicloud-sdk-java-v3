@@ -208,22 +208,19 @@ public class ShowConfigurationParameterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationParameterResponse showConfigurationParameterResponse = (ShowConfigurationParameterResponse) o;
-        return Objects.equals(this.id, showConfigurationParameterResponse.id)
-            && Objects.equals(this.name, showConfigurationParameterResponse.name)
-            && Objects.equals(this.datastoreVersion, showConfigurationParameterResponse.datastoreVersion)
-            && Objects.equals(this.datastoreName, showConfigurationParameterResponse.datastoreName)
-            && Objects.equals(this.description, showConfigurationParameterResponse.description)
-            && Objects.equals(this.created, showConfigurationParameterResponse.created)
-            && Objects.equals(this.updated, showConfigurationParameterResponse.updated)
-            && Objects.equals(this.parameters, showConfigurationParameterResponse.parameters);
+        ShowConfigurationParameterResponse that = (ShowConfigurationParameterResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.datastoreName, that.datastoreName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

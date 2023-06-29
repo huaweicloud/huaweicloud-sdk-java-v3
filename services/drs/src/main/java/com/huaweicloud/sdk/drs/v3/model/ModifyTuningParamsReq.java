@@ -188,19 +188,17 @@ public class ModifyTuningParamsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTuningParamsReq modifyTuningParamsReq = (ModifyTuningParamsReq) o;
-        return Objects.equals(this.fullSync, modifyTuningParamsReq.fullSync)
-            && Objects.equals(this.increCapture, modifyTuningParamsReq.increCapture)
-            && Objects.equals(this.increApply, modifyTuningParamsReq.increApply)
-            && Objects.equals(this.increRelay, modifyTuningParamsReq.increRelay)
-            && Objects.equals(this.recovery, modifyTuningParamsReq.recovery);
+        ModifyTuningParamsReq that = (ModifyTuningParamsReq) obj;
+        return Objects.equals(this.fullSync, that.fullSync) && Objects.equals(this.increCapture, that.increCapture)
+            && Objects.equals(this.increApply, that.increApply) && Objects.equals(this.increRelay, that.increRelay)
+            && Objects.equals(this.recovery, that.recovery);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListUserLoginProtectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserLoginProtectsResponse listUserLoginProtectsResponse = (ListUserLoginProtectsResponse) o;
-        return Objects.equals(this.loginProtects, listUserLoginProtectsResponse.loginProtects);
+        ListUserLoginProtectsResponse that = (ListUserLoginProtectsResponse) obj;
+        return Objects.equals(this.loginProtects, that.loginProtects);
     }
 
     @Override

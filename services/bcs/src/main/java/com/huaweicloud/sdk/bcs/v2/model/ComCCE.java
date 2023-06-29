@@ -105,16 +105,16 @@ public class ComCCE {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComCCE comCCE = (ComCCE) o;
-        return Objects.equals(this.cluster, comCCE.cluster) && Objects.equals(this.network, comCCE.network)
-            && Objects.equals(this.securityGroup, comCCE.securityGroup);
+        ComCCE that = (ComCCE) obj;
+        return Objects.equals(this.cluster, that.cluster) && Objects.equals(this.network, that.network)
+            && Objects.equals(this.securityGroup, that.securityGroup);
     }
 
     @Override

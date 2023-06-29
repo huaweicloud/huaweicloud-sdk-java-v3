@@ -1,98 +1,87 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ResourcesPlan
  */
-public class ResourcesPlan  {
-
+public class ResourcesPlan {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
+    @JsonProperty(value = "period_type")
 
     private String periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_capacity")
-    
+    @JsonProperty(value = "min_capacity")
 
     private Integer minCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_capacity")
-    
+    @JsonProperty(value = "max_capacity")
 
     private Integer maxCapacity;
+
     /**
      * 枚举值： - MONDAY: 星期一 - TUESDAY: 星期二 - WEDNESDAY: 星期三 - THURSDAY: 星期四 - FRIDAY: 星期五 - SATURDAY: 星期六 - SUNDAY: 星期日
      */
     public static final class EffectiveDaysEnum {
 
-        
         /**
          * Enum MONDAY for value: "MONDAY"
          */
         public static final EffectiveDaysEnum MONDAY = new EffectiveDaysEnum("MONDAY");
-        
+
         /**
          * Enum TUESDAY for value: "TUESDAY"
          */
         public static final EffectiveDaysEnum TUESDAY = new EffectiveDaysEnum("TUESDAY");
-        
+
         /**
          * Enum WEDNESDAY for value: "WEDNESDAY"
          */
         public static final EffectiveDaysEnum WEDNESDAY = new EffectiveDaysEnum("WEDNESDAY");
-        
+
         /**
          * Enum THURSDAY for value: "THURSDAY"
          */
         public static final EffectiveDaysEnum THURSDAY = new EffectiveDaysEnum("THURSDAY");
-        
+
         /**
          * Enum FRIDAY for value: "FRIDAY"
          */
         public static final EffectiveDaysEnum FRIDAY = new EffectiveDaysEnum("FRIDAY");
-        
+
         /**
          * Enum SATURDAY for value: "SATURDAY"
          */
         public static final EffectiveDaysEnum SATURDAY = new EffectiveDaysEnum("SATURDAY");
-        
+
         /**
          * Enum SUNDAY for value: "SUNDAY"
          */
         public static final EffectiveDaysEnum SUNDAY = new EffectiveDaysEnum("SUNDAY");
-        
 
         private static final Map<String, EffectiveDaysEnum> STATIC_FIELDS = createStaticFields();
 
@@ -126,25 +115,18 @@ public class ResourcesPlan  {
 
         @JsonCreator
         public static EffectiveDaysEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            EffectiveDaysEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectiveDaysEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectiveDaysEnum(value));
         }
 
         public static EffectiveDaysEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            EffectiveDaysEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,17 +144,14 @@ public class ResourcesPlan  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effective_days")
-    
+    @JsonProperty(value = "effective_days")
+
     private List<EffectiveDaysEnum> effectiveDays = null;
-    
+
     public ResourcesPlan withPeriodType(String periodType) {
         this.periodType = periodType;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划的周期类型，当前只允许以下类型：  daily
@@ -186,15 +165,10 @@ public class ResourcesPlan  {
         this.periodType = periodType;
     }
 
-    
-
     public ResourcesPlan withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划的起始时间，格式为“hour:minute”，表示时间在0:00-23:59之间。
@@ -208,15 +182,10 @@ public class ResourcesPlan  {
         this.startTime = startTime;
     }
 
-    
-
     public ResourcesPlan withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划的结束时间，格式与“start_time”相同，不早于start_time表示的时间，且与start_time间隔不小于30min。
@@ -230,15 +199,10 @@ public class ResourcesPlan  {
         this.endTime = endTime;
     }
 
-    
-
     public ResourcesPlan withMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划内该节点组的最小保留节点数。 取值范围：[0～500]
@@ -254,15 +218,10 @@ public class ResourcesPlan  {
         this.minCapacity = minCapacity;
     }
 
-    
-
     public ResourcesPlan withMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划内该节点组的最大保留节点数。 取值范围：[0～500]
@@ -278,16 +237,13 @@ public class ResourcesPlan  {
         this.maxCapacity = maxCapacity;
     }
 
-    
-
     public ResourcesPlan withEffectiveDays(List<EffectiveDaysEnum> effectiveDays) {
         this.effectiveDays = effectiveDays;
         return this;
     }
 
-    
     public ResourcesPlan addEffectiveDaysItem(EffectiveDaysEnum effectiveDaysItem) {
-        if(this.effectiveDays == null) {
+        if (this.effectiveDays == null) {
             this.effectiveDays = new ArrayList<>();
         }
         this.effectiveDays.add(effectiveDaysItem);
@@ -295,7 +251,7 @@ public class ResourcesPlan  {
     }
 
     public ResourcesPlan withEffectiveDays(Consumer<List<EffectiveDaysEnum>> effectiveDaysSetter) {
-        if(this.effectiveDays == null) {
+        if (this.effectiveDays == null) {
             this.effectiveDays = new ArrayList<>();
         }
         effectiveDaysSetter.accept(this.effectiveDays);
@@ -314,28 +270,26 @@ public class ResourcesPlan  {
         this.effectiveDays = effectiveDays;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcesPlan resourcesPlan = (ResourcesPlan) o;
-        return Objects.equals(this.periodType, resourcesPlan.periodType) &&
-            Objects.equals(this.startTime, resourcesPlan.startTime) &&
-            Objects.equals(this.endTime, resourcesPlan.endTime) &&
-            Objects.equals(this.minCapacity, resourcesPlan.minCapacity) &&
-            Objects.equals(this.maxCapacity, resourcesPlan.maxCapacity) &&
-            Objects.equals(this.effectiveDays, resourcesPlan.effectiveDays);
+        ResourcesPlan that = (ResourcesPlan) obj;
+        return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.minCapacity, that.minCapacity)
+            && Objects.equals(this.maxCapacity, that.maxCapacity)
+            && Objects.equals(this.effectiveDays, that.effectiveDays);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(periodType, startTime, endTime, minCapacity, maxCapacity, effectiveDays);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -349,6 +303,7 @@ public class ResourcesPlan  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -359,8 +314,5 @@ public class ResourcesPlan  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

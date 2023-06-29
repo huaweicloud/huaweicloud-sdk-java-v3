@@ -253,23 +253,20 @@ public class TransTemplateRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransTemplateRsp transTemplateRsp = (TransTemplateRsp) o;
-        return Objects.equals(this.groupId, transTemplateRsp.groupId)
-            && Objects.equals(this.name, transTemplateRsp.name)
-            && Objects.equals(this.isDefault, transTemplateRsp.isDefault)
-            && Objects.equals(this.type, transTemplateRsp.type)
-            && Objects.equals(this.isAutoEncrypt, transTemplateRsp.isAutoEncrypt)
-            && Objects.equals(this.qualityInfoList, transTemplateRsp.qualityInfoList)
-            && Objects.equals(this.watermarkTemplateIds, transTemplateRsp.watermarkTemplateIds)
-            && Objects.equals(this.description, transTemplateRsp.description)
-            && Objects.equals(this.common, transTemplateRsp.common);
+        TransTemplateRsp that = (TransTemplateRsp) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isAutoEncrypt, that.isAutoEncrypt)
+            && Objects.equals(this.qualityInfoList, that.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.common, that.common);
     }
 
     @Override

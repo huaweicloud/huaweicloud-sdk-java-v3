@@ -33,15 +33,15 @@ public class StartDisasterRecoveryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartDisasterRecoveryRequest startDisasterRecoveryRequest = (StartDisasterRecoveryRequest) o;
-        return Objects.equals(this.disasterRecoveryId, startDisasterRecoveryRequest.disasterRecoveryId);
+        StartDisasterRecoveryRequest that = (StartDisasterRecoveryRequest) obj;
+        return Objects.equals(this.disasterRecoveryId, that.disasterRecoveryId);
     }
 
     @Override

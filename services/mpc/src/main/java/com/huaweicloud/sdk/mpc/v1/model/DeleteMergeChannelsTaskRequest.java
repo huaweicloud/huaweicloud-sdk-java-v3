@@ -33,15 +33,15 @@ public class DeleteMergeChannelsTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMergeChannelsTaskRequest deleteMergeChannelsTaskRequest = (DeleteMergeChannelsTaskRequest) o;
-        return Objects.equals(this.taskId, deleteMergeChannelsTaskRequest.taskId);
+        DeleteMergeChannelsTaskRequest that = (DeleteMergeChannelsTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

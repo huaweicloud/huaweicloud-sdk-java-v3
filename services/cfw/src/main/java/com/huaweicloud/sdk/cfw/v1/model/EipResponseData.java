@@ -118,17 +118,16 @@ public class EipResponseData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipResponseData eipResponseData = (EipResponseData) o;
-        return Objects.equals(this.limit, eipResponseData.limit) && Objects.equals(this.offset, eipResponseData.offset)
-            && Objects.equals(this.total, eipResponseData.total)
-            && Objects.equals(this.records, eipResponseData.records);
+        EipResponseData that = (EipResponseData) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override

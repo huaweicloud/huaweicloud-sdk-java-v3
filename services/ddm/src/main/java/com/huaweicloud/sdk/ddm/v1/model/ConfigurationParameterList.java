@@ -165,21 +165,18 @@ public class ConfigurationParameterList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationParameterList configurationParameterList = (ConfigurationParameterList) o;
-        return Objects.equals(this.name, configurationParameterList.name)
-            && Objects.equals(this.value, configurationParameterList.value)
-            && Objects.equals(this.needRestart, configurationParameterList.needRestart)
-            && Objects.equals(this.readOnly, configurationParameterList.readOnly)
-            && Objects.equals(this.valueRange, configurationParameterList.valueRange)
-            && Objects.equals(this.dataType, configurationParameterList.dataType)
-            && Objects.equals(this.description, configurationParameterList.description);
+        ConfigurationParameterList that = (ConfigurationParameterList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.needRestart, that.needRestart) && Objects.equals(this.readOnly, that.readOnly)
+            && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

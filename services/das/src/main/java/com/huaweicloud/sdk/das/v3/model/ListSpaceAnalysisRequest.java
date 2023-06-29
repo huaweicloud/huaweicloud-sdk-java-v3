@@ -70,22 +70,15 @@ public class ListSpaceAnalysisRequest {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class ListSpaceAnalysisRequest {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreTypeEnum(value));
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -348,22 +334,19 @@ public class ListSpaceAnalysisRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpaceAnalysisRequest listSpaceAnalysisRequest = (ListSpaceAnalysisRequest) o;
-        return Objects.equals(this.instanceId, listSpaceAnalysisRequest.instanceId)
-            && Objects.equals(this.xLanguage, listSpaceAnalysisRequest.xLanguage)
-            && Objects.equals(this.objectType, listSpaceAnalysisRequest.objectType)
-            && Objects.equals(this.databaseId, listSpaceAnalysisRequest.databaseId)
-            && Objects.equals(this.offset, listSpaceAnalysisRequest.offset)
-            && Objects.equals(this.limit, listSpaceAnalysisRequest.limit)
-            && Objects.equals(this.showInstanceInfo, listSpaceAnalysisRequest.showInstanceInfo)
-            && Objects.equals(this.datastoreType, listSpaceAnalysisRequest.datastoreType);
+        ListSpaceAnalysisRequest that = (ListSpaceAnalysisRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.databaseId, that.databaseId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.showInstanceInfo, that.showInstanceInfo)
+            && Objects.equals(this.datastoreType, that.datastoreType);
     }
 
     @Override

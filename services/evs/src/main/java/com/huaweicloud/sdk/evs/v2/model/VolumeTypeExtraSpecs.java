@@ -122,20 +122,20 @@ public class VolumeTypeExtraSpecs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeTypeExtraSpecs volumeTypeExtraSpecs = (VolumeTypeExtraSpecs) o;
-        return Objects.equals(this.reSKEYAvailabilityZones, volumeTypeExtraSpecs.reSKEYAvailabilityZones)
-            && Objects.equals(this.availabilityZone, volumeTypeExtraSpecs.availabilityZone)
+        VolumeTypeExtraSpecs that = (VolumeTypeExtraSpecs) obj;
+        return Objects.equals(this.reSKEYAvailabilityZones, that.reSKEYAvailabilityZones)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
             && Objects.equals(this.osVendorExtendedSoldOutAvailabilityZones,
-                volumeTypeExtraSpecs.osVendorExtendedSoldOutAvailabilityZones)
-            && Objects.equals(this.volumeBackendName, volumeTypeExtraSpecs.volumeBackendName)
-            && Objects.equals(this.hwAvailabilityZone, volumeTypeExtraSpecs.hwAvailabilityZone);
+                that.osVendorExtendedSoldOutAvailabilityZones)
+            && Objects.equals(this.volumeBackendName, that.volumeBackendName)
+            && Objects.equals(this.hwAvailabilityZone, that.hwAvailabilityZone);
     }
 
     @Override

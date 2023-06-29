@@ -87,17 +87,16 @@ public class UpdateHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostRequest updateHostRequest = (UpdateHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateHostRequest.enterpriseProjectId)
-            && Objects.equals(this.instanceId, updateHostRequest.instanceId)
-            && Objects.equals(this.body, updateHostRequest.body);
+        UpdateHostRequest that = (UpdateHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

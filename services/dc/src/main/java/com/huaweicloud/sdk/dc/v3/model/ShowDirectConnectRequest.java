@@ -120,18 +120,16 @@ public class ShowDirectConnectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDirectConnectRequest showDirectConnectRequest = (ShowDirectConnectRequest) o;
-        return Objects.equals(this.directConnectId, showDirectConnectRequest.directConnectId)
-            && Objects.equals(this.limit, showDirectConnectRequest.limit)
-            && Objects.equals(this.marker, showDirectConnectRequest.marker)
-            && Objects.equals(this.fields, showDirectConnectRequest.fields);
+        ShowDirectConnectRequest that = (ShowDirectConnectRequest) obj;
+        return Objects.equals(this.directConnectId, that.directConnectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.fields, that.fields);
     }
 
     @Override

@@ -253,24 +253,20 @@ public class DiagnoseResourceVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiagnoseResourceVo diagnoseResourceVo = (DiagnoseResourceVo) o;
-        return Objects.equals(this.fault, diagnoseResourceVo.fault) && Objects.equals(this.id, diagnoseResourceVo.id)
-            && Objects.equals(this.name, diagnoseResourceVo.name)
-            && Objects.equals(this.accessIPv4, diagnoseResourceVo.accessIPv4)
-            && Objects.equals(this.accessIPv6, diagnoseResourceVo.accessIPv6)
-            && Objects.equals(this.status, diagnoseResourceVo.status)
-            && Objects.equals(this.progress, diagnoseResourceVo.progress)
-            && Objects.equals(this.tenantId, diagnoseResourceVo.tenantId)
-            && Objects.equals(this.userId, diagnoseResourceVo.userId)
-            && Objects.equals(this.metadata, diagnoseResourceVo.metadata)
-            && Objects.equals(this.hostId, diagnoseResourceVo.hostId);
+        DiagnoseResourceVo that = (DiagnoseResourceVo) obj;
+        return Objects.equals(this.fault, that.fault) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.accessIPv4, that.accessIPv4)
+            && Objects.equals(this.accessIPv6, that.accessIPv6) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

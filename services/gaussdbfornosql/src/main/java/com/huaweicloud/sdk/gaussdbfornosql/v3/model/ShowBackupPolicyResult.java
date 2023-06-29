@@ -77,17 +77,16 @@ public class ShowBackupPolicyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupPolicyResult showBackupPolicyResult = (ShowBackupPolicyResult) o;
-        return Objects.equals(this.keepDays, showBackupPolicyResult.keepDays)
-            && Objects.equals(this.startTime, showBackupPolicyResult.startTime)
-            && Objects.equals(this.period, showBackupPolicyResult.period);
+        ShowBackupPolicyResult that = (ShowBackupPolicyResult) obj;
+        return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.period, that.period);
     }
 
     @Override

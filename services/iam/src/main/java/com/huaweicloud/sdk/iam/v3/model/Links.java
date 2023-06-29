@@ -77,16 +77,16 @@ public class Links {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Links links = (Links) o;
-        return Objects.equals(this.self, links.self) && Objects.equals(this.previous, links.previous)
-            && Objects.equals(this.next, links.next);
+        Links that = (Links) obj;
+        return Objects.equals(this.self, that.self) && Objects.equals(this.previous, that.previous)
+            && Objects.equals(this.next, that.next);
     }
 
     @Override

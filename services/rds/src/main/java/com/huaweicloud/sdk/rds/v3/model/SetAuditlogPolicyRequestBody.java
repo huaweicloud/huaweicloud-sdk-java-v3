@@ -55,16 +55,16 @@ public class SetAuditlogPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetAuditlogPolicyRequestBody setAuditlogPolicyRequestBody = (SetAuditlogPolicyRequestBody) o;
-        return Objects.equals(this.keepDays, setAuditlogPolicyRequestBody.keepDays)
-            && Objects.equals(this.reserveAuditlogs, setAuditlogPolicyRequestBody.reserveAuditlogs);
+        SetAuditlogPolicyRequestBody that = (SetAuditlogPolicyRequestBody) obj;
+        return Objects.equals(this.keepDays, that.keepDays)
+            && Objects.equals(this.reserveAuditlogs, that.reserveAuditlogs);
     }
 
     @Override

@@ -55,6 +55,11 @@ public class ListDesktopsDetailRequest {
 
     private String tag;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
     public ListDesktopsDetailRequest withStatus(String status) {
         this.status = status;
         return this;
@@ -212,29 +217,43 @@ public class ListDesktopsDetailRequest {
         this.tag = tag;
     }
 
+    public ListDesktopsDetailRequest withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * 桌面池ID,多个桌面池ID用逗号隔开。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDesktopsDetailRequest listDesktopsDetailRequest = (ListDesktopsDetailRequest) o;
-        return Objects.equals(this.status, listDesktopsDetailRequest.status)
-            && Objects.equals(this.userName, listDesktopsDetailRequest.userName)
-            && Objects.equals(this.computerName, listDesktopsDetailRequest.computerName)
-            && Objects.equals(this.desktopIp, listDesktopsDetailRequest.desktopIp)
-            && Objects.equals(this.offset, listDesktopsDetailRequest.offset)
-            && Objects.equals(this.limit, listDesktopsDetailRequest.limit)
-            && Objects.equals(this.desktopId, listDesktopsDetailRequest.desktopId)
-            && Objects.equals(this.desktopType, listDesktopsDetailRequest.desktopType)
-            && Objects.equals(this.tag, listDesktopsDetailRequest.tag);
+        ListDesktopsDetailRequest that = (ListDesktopsDetailRequest) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.computerName, that.computerName) && Objects.equals(this.desktopIp, that.desktopIp)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, userName, computerName, desktopIp, offset, limit, desktopId, desktopType, tag);
+        return Objects
+            .hash(status, userName, computerName, desktopIp, offset, limit, desktopId, desktopType, tag, poolId);
     }
 
     @Override
@@ -250,6 +269,7 @@ public class ListDesktopsDetailRequest {
         sb.append("    desktopId: ").append(toIndentedString(desktopId)).append("\n");
         sb.append("    desktopType: ").append(toIndentedString(desktopType)).append("\n");
         sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

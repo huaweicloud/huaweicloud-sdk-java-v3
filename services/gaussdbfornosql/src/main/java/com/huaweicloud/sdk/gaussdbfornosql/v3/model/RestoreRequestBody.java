@@ -55,16 +55,15 @@ public class RestoreRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreRequestBody restoreRequestBody = (RestoreRequestBody) o;
-        return Objects.equals(this.backupId, restoreRequestBody.backupId)
-            && Objects.equals(this.password, restoreRequestBody.password);
+        RestoreRequestBody that = (RestoreRequestBody) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.password, that.password);
     }
 
     @Override

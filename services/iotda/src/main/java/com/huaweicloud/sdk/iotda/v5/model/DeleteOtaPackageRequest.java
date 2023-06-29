@@ -55,16 +55,15 @@ public class DeleteOtaPackageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteOtaPackageRequest deleteOtaPackageRequest = (DeleteOtaPackageRequest) o;
-        return Objects.equals(this.instanceId, deleteOtaPackageRequest.instanceId)
-            && Objects.equals(this.packageId, deleteOtaPackageRequest.packageId);
+        DeleteOtaPackageRequest that = (DeleteOtaPackageRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.packageId, that.packageId);
     }
 
     @Override

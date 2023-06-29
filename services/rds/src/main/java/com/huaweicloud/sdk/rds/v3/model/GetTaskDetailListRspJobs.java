@@ -77,22 +77,15 @@ public class GetTaskDetailListRspJobs {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -329,24 +322,19 @@ public class GetTaskDetailListRspJobs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetTaskDetailListRspJobs getTaskDetailListRspJobs = (GetTaskDetailListRspJobs) o;
-        return Objects.equals(this.id, getTaskDetailListRspJobs.id)
-            && Objects.equals(this.name, getTaskDetailListRspJobs.name)
-            && Objects.equals(this.status, getTaskDetailListRspJobs.status)
-            && Objects.equals(this.created, getTaskDetailListRspJobs.created)
-            && Objects.equals(this.ended, getTaskDetailListRspJobs.ended)
-            && Objects.equals(this.process, getTaskDetailListRspJobs.process)
-            && Objects.equals(this.taskDetail, getTaskDetailListRspJobs.taskDetail)
-            && Objects.equals(this.instance, getTaskDetailListRspJobs.instance)
-            && Objects.equals(this.entities, getTaskDetailListRspJobs.entities)
-            && Objects.equals(this.failReason, getTaskDetailListRspJobs.failReason);
+        GetTaskDetailListRspJobs that = (GetTaskDetailListRspJobs) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.ended, that.ended) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.taskDetail, that.taskDetail) && Objects.equals(this.instance, that.instance)
+            && Objects.equals(this.entities, that.entities) && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

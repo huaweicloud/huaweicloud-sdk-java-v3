@@ -235,24 +235,20 @@ public class ListIncidentTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIncidentTypesRequest listIncidentTypesRequest = (ListIncidentTypesRequest) o;
-        return Objects.equals(this.workspaceId, listIncidentTypesRequest.workspaceId)
-            && Objects.equals(this.parentBusinessCode, listIncidentTypesRequest.parentBusinessCode)
-            && Objects.equals(this.offset, listIncidentTypesRequest.offset)
-            && Objects.equals(this.limit, listIncidentTypesRequest.limit)
-            && Objects.equals(this.order, listIncidentTypesRequest.order)
-            && Objects.equals(this.sortby, listIncidentTypesRequest.sortby)
-            && Objects.equals(this.name, listIncidentTypesRequest.name)
-            && Objects.equals(this.enabled, listIncidentTypesRequest.enabled)
-            && Objects.equals(this.layoutName, listIncidentTypesRequest.layoutName)
-            && Objects.equals(this.isBuiltIn, listIncidentTypesRequest.isBuiltIn);
+        ListIncidentTypesRequest that = (ListIncidentTypesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.parentBusinessCode, that.parentBusinessCode)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.sortby, that.sortby)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.layoutName, that.layoutName) && Objects.equals(this.isBuiltIn, that.isBuiltIn);
     }
 
     @Override

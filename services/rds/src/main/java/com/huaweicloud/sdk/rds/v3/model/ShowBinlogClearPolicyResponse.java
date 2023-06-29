@@ -34,15 +34,15 @@ public class ShowBinlogClearPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBinlogClearPolicyResponse showBinlogClearPolicyResponse = (ShowBinlogClearPolicyResponse) o;
-        return Objects.equals(this.binlogRetentionHours, showBinlogClearPolicyResponse.binlogRetentionHours);
+        ShowBinlogClearPolicyResponse that = (ShowBinlogClearPolicyResponse) obj;
+        return Objects.equals(this.binlogRetentionHours, that.binlogRetentionHours);
     }
 
     @Override

@@ -96,16 +96,16 @@ public class RulesLocal {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RulesLocal rulesLocal = (RulesLocal) o;
-        return Objects.equals(this.user, rulesLocal.user) && Objects.equals(this.group, rulesLocal.group)
-            && Objects.equals(this.groups, rulesLocal.groups);
+        RulesLocal that = (RulesLocal) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.groups, that.groups);
     }
 
     @Override

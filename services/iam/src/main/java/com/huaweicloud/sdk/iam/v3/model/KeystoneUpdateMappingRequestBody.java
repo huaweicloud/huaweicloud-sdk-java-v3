@@ -43,15 +43,15 @@ public class KeystoneUpdateMappingRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateMappingRequestBody keystoneUpdateMappingRequestBody = (KeystoneUpdateMappingRequestBody) o;
-        return Objects.equals(this.mapping, keystoneUpdateMappingRequestBody.mapping);
+        KeystoneUpdateMappingRequestBody that = (KeystoneUpdateMappingRequestBody) obj;
+        return Objects.equals(this.mapping, that.mapping);
     }
 
     @Override

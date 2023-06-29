@@ -250,25 +250,23 @@ public class UpdateProtectionPolicyInfoRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProtectionPolicyInfoRequestInfo updateProtectionPolicyInfoRequestInfo =
-            (UpdateProtectionPolicyInfoRequestInfo) o;
-        return Objects.equals(this.policyId, updateProtectionPolicyInfoRequestInfo.policyId)
-            && Objects.equals(this.policyName, updateProtectionPolicyInfoRequestInfo.policyName)
-            && Objects.equals(this.protectionMode, updateProtectionPolicyInfoRequestInfo.protectionMode)
-            && Objects.equals(this.baitProtectionStatus, updateProtectionPolicyInfoRequestInfo.baitProtectionStatus)
-            && Objects.equals(this.protectionDirectory, updateProtectionPolicyInfoRequestInfo.protectionDirectory)
-            && Objects.equals(this.protectionType, updateProtectionPolicyInfoRequestInfo.protectionType)
-            && Objects.equals(this.excludeDirectory, updateProtectionPolicyInfoRequestInfo.excludeDirectory)
-            && Objects.equals(this.agentIdList, updateProtectionPolicyInfoRequestInfo.agentIdList)
-            && Objects.equals(this.operatingSystem, updateProtectionPolicyInfoRequestInfo.operatingSystem) && Objects
-                .equals(this.runtimeDetectionStatus, updateProtectionPolicyInfoRequestInfo.runtimeDetectionStatus);
+        UpdateProtectionPolicyInfoRequestInfo that = (UpdateProtectionPolicyInfoRequestInfo) obj;
+        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.protectionMode, that.protectionMode)
+            && Objects.equals(this.baitProtectionStatus, that.baitProtectionStatus)
+            && Objects.equals(this.protectionDirectory, that.protectionDirectory)
+            && Objects.equals(this.protectionType, that.protectionType)
+            && Objects.equals(this.excludeDirectory, that.excludeDirectory)
+            && Objects.equals(this.agentIdList, that.agentIdList)
+            && Objects.equals(this.operatingSystem, that.operatingSystem)
+            && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus);
     }
 
     @Override

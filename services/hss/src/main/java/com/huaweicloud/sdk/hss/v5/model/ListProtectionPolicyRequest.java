@@ -147,20 +147,19 @@ public class ListProtectionPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectionPolicyRequest listProtectionPolicyRequest = (ListProtectionPolicyRequest) o;
-        return Objects.equals(this.region, listProtectionPolicyRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listProtectionPolicyRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, listProtectionPolicyRequest.offset)
-            && Objects.equals(this.limit, listProtectionPolicyRequest.limit)
-            && Objects.equals(this.policyName, listProtectionPolicyRequest.policyName)
-            && Objects.equals(this.operatingSystem, listProtectionPolicyRequest.operatingSystem);
+        ListProtectionPolicyRequest that = (ListProtectionPolicyRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.operatingSystem, that.operatingSystem);
     }
 
     @Override

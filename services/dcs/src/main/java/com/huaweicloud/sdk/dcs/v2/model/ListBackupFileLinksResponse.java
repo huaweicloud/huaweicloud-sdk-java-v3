@@ -97,17 +97,16 @@ public class ListBackupFileLinksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupFileLinksResponse listBackupFileLinksResponse = (ListBackupFileLinksResponse) o;
-        return Objects.equals(this.filePath, listBackupFileLinksResponse.filePath)
-            && Objects.equals(this.bucketName, listBackupFileLinksResponse.bucketName)
-            && Objects.equals(this.links, listBackupFileLinksResponse.links);
+        ListBackupFileLinksResponse that = (ListBackupFileLinksResponse) obj;
+        return Objects.equals(this.filePath, that.filePath) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.links, that.links);
     }
 
     @Override

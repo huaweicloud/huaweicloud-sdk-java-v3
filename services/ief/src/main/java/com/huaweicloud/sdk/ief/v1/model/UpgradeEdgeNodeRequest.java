@@ -55,16 +55,15 @@ public class UpgradeEdgeNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeEdgeNodeRequest upgradeEdgeNodeRequest = (UpgradeEdgeNodeRequest) o;
-        return Objects.equals(this.nodeId, upgradeEdgeNodeRequest.nodeId)
-            && Objects.equals(this.iefInstanceId, upgradeEdgeNodeRequest.iefInstanceId);
+        UpgradeEdgeNodeRequest that = (UpgradeEdgeNodeRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

@@ -348,28 +348,21 @@ public class CreateCustomRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomRuleResponse createCustomRuleResponse = (CreateCustomRuleResponse) o;
-        return Objects.equals(this.id, createCustomRuleResponse.id)
-            && Objects.equals(this.name, createCustomRuleResponse.name)
-            && Objects.equals(this.policyid, createCustomRuleResponse.policyid)
-            && Objects.equals(this.description, createCustomRuleResponse.description)
-            && Objects.equals(this.status, createCustomRuleResponse.status)
-            && Objects.equals(this.conditions, createCustomRuleResponse.conditions)
-            && Objects.equals(this.action, createCustomRuleResponse.action)
-            && Objects.equals(this.actionMode, createCustomRuleResponse.actionMode)
-            && Objects.equals(this.priority, createCustomRuleResponse.priority)
-            && Objects.equals(this.timestamp, createCustomRuleResponse.timestamp)
-            && Objects.equals(this.time, createCustomRuleResponse.time)
-            && Objects.equals(this.start, createCustomRuleResponse.start)
-            && Objects.equals(this.terminal, createCustomRuleResponse.terminal)
-            && Objects.equals(this.producer, createCustomRuleResponse.producer);
+        CreateCustomRuleResponse that = (CreateCustomRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.actionMode, that.actionMode)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.terminal, that.terminal) && Objects.equals(this.producer, that.producer);
     }
 
     @Override

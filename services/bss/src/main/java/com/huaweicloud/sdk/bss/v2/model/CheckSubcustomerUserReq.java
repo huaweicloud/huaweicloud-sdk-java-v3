@@ -55,16 +55,15 @@ public class CheckSubcustomerUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckSubcustomerUserReq checkSubcustomerUserReq = (CheckSubcustomerUserReq) o;
-        return Objects.equals(this.searchType, checkSubcustomerUserReq.searchType)
-            && Objects.equals(this.searchValue, checkSubcustomerUserReq.searchValue);
+        CheckSubcustomerUserReq that = (CheckSubcustomerUserReq) obj;
+        return Objects.equals(this.searchType, that.searchType) && Objects.equals(this.searchValue, that.searchValue);
     }
 
     @Override

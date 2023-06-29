@@ -55,15 +55,15 @@ public class TargetServerById {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetServerById targetServerById = (TargetServerById) o;
-        return Objects.equals(this.vmId, targetServerById.vmId) && Objects.equals(this.name, targetServerById.name);
+        TargetServerById that = (TargetServerById) obj;
+        return Objects.equals(this.vmId, that.vmId) && Objects.equals(this.name, that.name);
     }
 
     @Override

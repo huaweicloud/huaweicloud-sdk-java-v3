@@ -209,22 +209,19 @@ public class DBMaskTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DBMaskTaskInfo dbMaskTaskInfo = (DBMaskTaskInfo) o;
-        return Objects.equals(this.dbType, dbMaskTaskInfo.dbType)
-            && Objects.equals(this.endTime, dbMaskTaskInfo.endTime)
-            && Objects.equals(this.executeLine, dbMaskTaskInfo.executeLine)
-            && Objects.equals(this.id, dbMaskTaskInfo.id) && Objects.equals(this.progress, dbMaskTaskInfo.progress)
-            && Objects.equals(this.runStatus, dbMaskTaskInfo.runStatus)
-            && Objects.equals(this.startTime, dbMaskTaskInfo.startTime)
-            && Objects.equals(this.taskTemplateId, dbMaskTaskInfo.taskTemplateId)
-            && Objects.equals(this.type, dbMaskTaskInfo.type);
+        DBMaskTaskInfo that = (DBMaskTaskInfo) obj;
+        return Objects.equals(this.dbType, that.dbType) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.executeLine, that.executeLine) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.runStatus, that.runStatus)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.taskTemplateId, that.taskTemplateId) && Objects.equals(this.type, that.type);
     }
 
     @Override

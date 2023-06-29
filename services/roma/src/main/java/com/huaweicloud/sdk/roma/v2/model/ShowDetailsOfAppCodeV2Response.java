@@ -101,18 +101,16 @@ public class ShowDetailsOfAppCodeV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAppCodeV2Response showDetailsOfAppCodeV2Response = (ShowDetailsOfAppCodeV2Response) o;
-        return Objects.equals(this.appCode, showDetailsOfAppCodeV2Response.appCode)
-            && Objects.equals(this.id, showDetailsOfAppCodeV2Response.id)
-            && Objects.equals(this.appId, showDetailsOfAppCodeV2Response.appId)
-            && Objects.equals(this.createTime, showDetailsOfAppCodeV2Response.createTime);
+        ShowDetailsOfAppCodeV2Response that = (ShowDetailsOfAppCodeV2Response) obj;
+        return Objects.equals(this.appCode, that.appCode) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class ListRouteTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRouteTablesRequest listRouteTablesRequest = (ListRouteTablesRequest) o;
-        return Objects.equals(this.limit, listRouteTablesRequest.limit)
-            && Objects.equals(this.marker, listRouteTablesRequest.marker)
-            && Objects.equals(this.id, listRouteTablesRequest.id)
-            && Objects.equals(this.vpcId, listRouteTablesRequest.vpcId)
-            && Objects.equals(this.subnetId, listRouteTablesRequest.subnetId);
+        ListRouteTablesRequest that = (ListRouteTablesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override

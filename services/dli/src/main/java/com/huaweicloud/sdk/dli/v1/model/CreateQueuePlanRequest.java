@@ -65,16 +65,15 @@ public class CreateQueuePlanRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQueuePlanRequest createQueuePlanRequest = (CreateQueuePlanRequest) o;
-        return Objects.equals(this.queueName, createQueuePlanRequest.queueName)
-            && Objects.equals(this.body, createQueuePlanRequest.body);
+        CreateQueuePlanRequest that = (CreateQueuePlanRequest) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.body, that.body);
     }
 
     @Override

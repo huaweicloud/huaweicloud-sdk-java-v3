@@ -121,19 +121,17 @@ public class ListEdgeGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeGroupsRequest listEdgeGroupsRequest = (ListEdgeGroupsRequest) o;
-        return Objects.equals(this.iefInstanceId, listEdgeGroupsRequest.iefInstanceId)
-            && Objects.equals(this.name, listEdgeGroupsRequest.name)
-            && Objects.equals(this.limit, listEdgeGroupsRequest.limit)
-            && Objects.equals(this.offset, listEdgeGroupsRequest.offset)
-            && Objects.equals(this.sort, listEdgeGroupsRequest.sort);
+        ListEdgeGroupsRequest that = (ListEdgeGroupsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override

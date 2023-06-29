@@ -65,16 +65,15 @@ public class UpdateDedicatedHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDedicatedHostRequest updateDedicatedHostRequest = (UpdateDedicatedHostRequest) o;
-        return Objects.equals(this.dedicatedHostId, updateDedicatedHostRequest.dedicatedHostId)
-            && Objects.equals(this.body, updateDedicatedHostRequest.body);
+        UpdateDedicatedHostRequest that = (UpdateDedicatedHostRequest) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.body, that.body);
     }
 
     @Override

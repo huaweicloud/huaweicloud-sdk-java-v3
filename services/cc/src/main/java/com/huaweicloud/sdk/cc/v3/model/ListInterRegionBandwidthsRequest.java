@@ -212,20 +212,18 @@ public class ListInterRegionBandwidthsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInterRegionBandwidthsRequest listInterRegionBandwidthsRequest = (ListInterRegionBandwidthsRequest) o;
-        return Objects.equals(this.limit, listInterRegionBandwidthsRequest.limit)
-            && Objects.equals(this.marker, listInterRegionBandwidthsRequest.marker)
-            && Objects.equals(this.id, listInterRegionBandwidthsRequest.id)
-            && Objects.equals(this.enterpriseProjectId, listInterRegionBandwidthsRequest.enterpriseProjectId)
-            && Objects.equals(this.cloudConnectionId, listInterRegionBandwidthsRequest.cloudConnectionId)
-            && Objects.equals(this.bandwidthPackageId, listInterRegionBandwidthsRequest.bandwidthPackageId);
+        ListInterRegionBandwidthsRequest that = (ListInterRegionBandwidthsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.bandwidthPackageId, that.bandwidthPackageId);
     }
 
     @Override

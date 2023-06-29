@@ -84,16 +84,16 @@ public class ShowPipelineJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineJobResponse showPipelineJobResponse = (ShowPipelineJobResponse) o;
-        return Objects.equals(this.pipelineConfig, showPipelineJobResponse.pipelineConfig)
-            && Objects.equals(this.pipelineInfo, showPipelineJobResponse.pipelineInfo);
+        ShowPipelineJobResponse that = (ShowPipelineJobResponse) obj;
+        return Objects.equals(this.pipelineConfig, that.pipelineConfig)
+            && Objects.equals(this.pipelineInfo, that.pipelineInfo);
     }
 
     @Override

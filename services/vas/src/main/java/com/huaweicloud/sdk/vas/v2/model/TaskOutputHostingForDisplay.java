@@ -114,17 +114,16 @@ public class TaskOutputHostingForDisplay {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutputHostingForDisplay taskOutputHostingForDisplay = (TaskOutputHostingForDisplay) o;
-        return Objects.equals(this.obs, taskOutputHostingForDisplay.obs)
-            && Objects.equals(this.resultJsonOverdueAt, taskOutputHostingForDisplay.resultJsonOverdueAt)
-            && Objects.equals(this.dataCategory, taskOutputHostingForDisplay.dataCategory);
+        TaskOutputHostingForDisplay that = (TaskOutputHostingForDisplay) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.resultJsonOverdueAt, that.resultJsonOverdueAt)
+            && Objects.equals(this.dataCategory, that.dataCategory);
     }
 
     @Override

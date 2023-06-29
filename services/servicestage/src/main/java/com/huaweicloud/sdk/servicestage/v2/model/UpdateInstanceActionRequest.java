@@ -109,18 +109,17 @@ public class UpdateInstanceActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceActionRequest updateInstanceActionRequest = (UpdateInstanceActionRequest) o;
-        return Objects.equals(this.applicationId, updateInstanceActionRequest.applicationId)
-            && Objects.equals(this.componentId, updateInstanceActionRequest.componentId)
-            && Objects.equals(this.instanceId, updateInstanceActionRequest.instanceId)
-            && Objects.equals(this.body, updateInstanceActionRequest.body);
+        UpdateInstanceActionRequest that = (UpdateInstanceActionRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

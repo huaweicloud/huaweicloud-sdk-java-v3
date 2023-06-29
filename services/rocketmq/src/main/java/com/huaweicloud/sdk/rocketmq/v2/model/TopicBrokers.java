@@ -78,17 +78,16 @@ public class TopicBrokers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicBrokers topicBrokers = (TopicBrokers) o;
-        return Objects.equals(this.brokerName, topicBrokers.brokerName)
-            && Objects.equals(this.readQueueNum, topicBrokers.readQueueNum)
-            && Objects.equals(this.writeQueueNum, topicBrokers.writeQueueNum);
+        TopicBrokers that = (TopicBrokers) obj;
+        return Objects.equals(this.brokerName, that.brokerName) && Objects.equals(this.readQueueNum, that.readQueueNum)
+            && Objects.equals(this.writeQueueNum, that.writeQueueNum);
     }
 
     @Override

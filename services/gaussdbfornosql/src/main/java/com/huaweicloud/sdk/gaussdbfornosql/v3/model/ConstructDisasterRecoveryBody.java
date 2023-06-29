@@ -133,19 +133,17 @@ public class ConstructDisasterRecoveryBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConstructDisasterRecoveryBody constructDisasterRecoveryBody = (ConstructDisasterRecoveryBody) o;
-        return Objects.equals(this.id, constructDisasterRecoveryBody.id)
-            && Objects.equals(this.alias, constructDisasterRecoveryBody.alias)
-            && Objects.equals(this.password, constructDisasterRecoveryBody.password)
-            && Objects.equals(this.instanceRole, constructDisasterRecoveryBody.instanceRole)
-            && Objects.equals(this.disasterRecoveryInstance, constructDisasterRecoveryBody.disasterRecoveryInstance);
+        ConstructDisasterRecoveryBody that = (ConstructDisasterRecoveryBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.instanceRole, that.instanceRole)
+            && Objects.equals(this.disasterRecoveryInstance, that.disasterRecoveryInstance);
     }
 
     @Override

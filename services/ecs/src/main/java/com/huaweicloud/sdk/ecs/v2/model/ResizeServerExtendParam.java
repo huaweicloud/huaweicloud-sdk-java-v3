@@ -33,15 +33,15 @@ public class ResizeServerExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeServerExtendParam resizeServerExtendParam = (ResizeServerExtendParam) o;
-        return Objects.equals(this.isAutoPay, resizeServerExtendParam.isAutoPay);
+        ResizeServerExtendParam that = (ResizeServerExtendParam) obj;
+        return Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

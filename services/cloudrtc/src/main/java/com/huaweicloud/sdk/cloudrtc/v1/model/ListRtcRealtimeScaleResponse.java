@@ -77,16 +77,15 @@ public class ListRtcRealtimeScaleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRealtimeScaleResponse listRtcRealtimeScaleResponse = (ListRtcRealtimeScaleResponse) o;
-        return Objects.equals(this.scale, listRtcRealtimeScaleResponse.scale)
-            && Objects.equals(this.xRequestId, listRtcRealtimeScaleResponse.xRequestId);
+        ListRtcRealtimeScaleResponse that = (ListRtcRealtimeScaleResponse) obj;
+        return Objects.equals(this.scale, that.scale) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

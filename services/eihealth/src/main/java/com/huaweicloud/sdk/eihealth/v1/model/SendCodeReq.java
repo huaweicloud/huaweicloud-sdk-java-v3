@@ -33,15 +33,15 @@ public class SendCodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendCodeReq sendCodeReq = (SendCodeReq) o;
-        return Objects.equals(this.method, sendCodeReq.method);
+        SendCodeReq that = (SendCodeReq) obj;
+        return Objects.equals(this.method, that.method);
     }
 
     @Override

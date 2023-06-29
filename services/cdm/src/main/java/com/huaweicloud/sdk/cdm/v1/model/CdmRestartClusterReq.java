@@ -43,15 +43,15 @@ public class CdmRestartClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmRestartClusterReq cdmRestartClusterReq = (CdmRestartClusterReq) o;
-        return Objects.equals(this.restart, cdmRestartClusterReq.restart);
+        CdmRestartClusterReq that = (CdmRestartClusterReq) obj;
+        return Objects.equals(this.restart, that.restart);
     }
 
     @Override

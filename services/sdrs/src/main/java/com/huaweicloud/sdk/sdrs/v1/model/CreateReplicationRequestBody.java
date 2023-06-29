@@ -43,15 +43,15 @@ public class CreateReplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateReplicationRequestBody createReplicationRequestBody = (CreateReplicationRequestBody) o;
-        return Objects.equals(this.replication, createReplicationRequestBody.replication);
+        CreateReplicationRequestBody that = (CreateReplicationRequestBody) obj;
+        return Objects.equals(this.replication, that.replication);
     }
 
     @Override

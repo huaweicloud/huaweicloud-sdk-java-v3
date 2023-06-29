@@ -44,8 +44,8 @@ public class ListCloudConnectionsRequest {
     private List<String> description = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -82,22 +82,15 @@ public class ListCloudConnectionsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -128,6 +121,11 @@ public class ListCloudConnectionsRequest {
     @JsonProperty(value = "type")
 
     private List<String> type = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "used_scene")
+
+    private List<String> usedScene = null;
 
     public ListCloudConnectionsRequest withLimit(Integer limit) {
         this.limit = limit;
@@ -363,28 +361,58 @@ public class ListCloudConnectionsRequest {
         this.type = type;
     }
 
+    public ListCloudConnectionsRequest withUsedScene(List<String> usedScene) {
+        this.usedScene = usedScene;
+        return this;
+    }
+
+    public ListCloudConnectionsRequest addUsedSceneItem(String usedSceneItem) {
+        if (this.usedScene == null) {
+            this.usedScene = new ArrayList<>();
+        }
+        this.usedScene.add(usedSceneItem);
+        return this;
+    }
+
+    public ListCloudConnectionsRequest withUsedScene(Consumer<List<String>> usedSceneSetter) {
+        if (this.usedScene == null) {
+            this.usedScene = new ArrayList<>();
+        }
+        usedSceneSetter.accept(this.usedScene);
+        return this;
+    }
+
+    /**
+     * 根据使用场景过滤云连接实例列表。
+     * @return usedScene
+     */
+    public List<String> getUsedScene() {
+        return usedScene;
+    }
+
+    public void setUsedScene(List<String> usedScene) {
+        this.usedScene = usedScene;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudConnectionsRequest listCloudConnectionsRequest = (ListCloudConnectionsRequest) o;
-        return Objects.equals(this.limit, listCloudConnectionsRequest.limit)
-            && Objects.equals(this.marker, listCloudConnectionsRequest.marker)
-            && Objects.equals(this.id, listCloudConnectionsRequest.id)
-            && Objects.equals(this.name, listCloudConnectionsRequest.name)
-            && Objects.equals(this.description, listCloudConnectionsRequest.description)
-            && Objects.equals(this.status, listCloudConnectionsRequest.status)
-            && Objects.equals(this.enterpriseProjectId, listCloudConnectionsRequest.enterpriseProjectId)
-            && Objects.equals(this.type, listCloudConnectionsRequest.type);
+        ListCloudConnectionsRequest that = (ListCloudConnectionsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.usedScene, that.usedScene);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(limit, marker, id, name, description, status, enterpriseProjectId, type);
+        return Objects.hash(limit, marker, id, name, description, status, enterpriseProjectId, type, usedScene);
     }
 
     @Override
@@ -399,6 +427,7 @@ public class ListCloudConnectionsRequest {
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    usedScene: ").append(toIndentedString(usedScene)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -131,19 +131,17 @@ public class UserSettingDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserSettingDto userSettingDto = (UserSettingDto) o;
-        return Objects.equals(this.jobQuota, userSettingDto.jobQuota)
-            && Objects.equals(this.jobTimeout, userSettingDto.jobTimeout)
-            && Objects.equals(this.cpuQuota, userSettingDto.cpuQuota)
-            && Objects.equals(this.memQuota, userSettingDto.memQuota)
-            && Objects.equals(this.projectsPerUser, userSettingDto.projectsPerUser);
+        UserSettingDto that = (UserSettingDto) obj;
+        return Objects.equals(this.jobQuota, that.jobQuota) && Objects.equals(this.jobTimeout, that.jobTimeout)
+            && Objects.equals(this.cpuQuota, that.cpuQuota) && Objects.equals(this.memQuota, that.memQuota)
+            && Objects.equals(this.projectsPerUser, that.projectsPerUser);
     }
 
     @Override

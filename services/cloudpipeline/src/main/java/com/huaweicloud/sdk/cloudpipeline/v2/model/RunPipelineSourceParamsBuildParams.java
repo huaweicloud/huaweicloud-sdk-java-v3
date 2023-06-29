@@ -231,24 +231,19 @@ public class RunPipelineSourceParamsBuildParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineSourceParamsBuildParams runPipelineSourceParamsBuildParams = (RunPipelineSourceParamsBuildParams) o;
-        return Objects.equals(this.action, runPipelineSourceParamsBuildParams.action)
-            && Objects.equals(this.buildType, runPipelineSourceParamsBuildParams.buildType)
-            && Objects.equals(this.commitId, runPipelineSourceParamsBuildParams.commitId)
-            && Objects.equals(this.eventType, runPipelineSourceParamsBuildParams.eventType)
-            && Objects.equals(this.mergeId, runPipelineSourceParamsBuildParams.mergeId)
-            && Objects.equals(this.message, runPipelineSourceParamsBuildParams.message)
-            && Objects.equals(this.sourceBranch, runPipelineSourceParamsBuildParams.sourceBranch)
-            && Objects.equals(this.tag, runPipelineSourceParamsBuildParams.tag)
-            && Objects.equals(this.targetBranch, runPipelineSourceParamsBuildParams.targetBranch)
-            && Objects.equals(this.codehubId, runPipelineSourceParamsBuildParams.codehubId);
+        RunPipelineSourceParamsBuildParams that = (RunPipelineSourceParamsBuildParams) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.buildType, that.buildType)
+            && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.mergeId, that.mergeId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.sourceBranch, that.sourceBranch) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.targetBranch, that.targetBranch) && Objects.equals(this.codehubId, that.codehubId);
     }
 
     @Override

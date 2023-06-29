@@ -273,22 +273,15 @@ public class ListDatasourcesRequest {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatasourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatasourceTypeEnum(value));
         }
 
         public static DatasourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,22 +353,15 @@ public class ListDatasourcesRequest {
             if (value == null) {
                 return null;
             }
-            SortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortTypeEnum(value));
         }
 
         public static SortTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -570,23 +556,19 @@ public class ListDatasourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatasourcesRequest listDatasourcesRequest = (ListDatasourcesRequest) o;
-        return Objects.equals(this.instanceId, listDatasourcesRequest.instanceId)
-            && Objects.equals(this.limit, listDatasourcesRequest.limit)
-            && Objects.equals(this.offset, listDatasourcesRequest.offset)
-            && Objects.equals(this.datasourceType, listDatasourcesRequest.datasourceType)
-            && Objects.equals(this.sortField, listDatasourcesRequest.sortField)
-            && Objects.equals(this.sortType, listDatasourcesRequest.sortType)
-            && Objects.equals(this.name, listDatasourcesRequest.name)
-            && Objects.equals(this.appId, listDatasourcesRequest.appId)
-            && Objects.equals(this.customPluginId, listDatasourcesRequest.customPluginId);
+        ListDatasourcesRequest that = (ListDatasourcesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.datasourceType, that.datasourceType)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.customPluginId, that.customPluginId);
     }
 
     @Override

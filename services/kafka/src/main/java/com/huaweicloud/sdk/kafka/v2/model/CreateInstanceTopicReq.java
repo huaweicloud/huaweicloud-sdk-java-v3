@@ -143,20 +143,19 @@ public class CreateInstanceTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceTopicReq createInstanceTopicReq = (CreateInstanceTopicReq) o;
-        return Objects.equals(this.id, createInstanceTopicReq.id)
-            && Objects.equals(this.replication, createInstanceTopicReq.replication)
-            && Objects.equals(this.syncMessageFlush, createInstanceTopicReq.syncMessageFlush)
-            && Objects.equals(this.partition, createInstanceTopicReq.partition)
-            && Objects.equals(this.syncReplication, createInstanceTopicReq.syncReplication)
-            && Objects.equals(this.retentionTime, createInstanceTopicReq.retentionTime);
+        CreateInstanceTopicReq that = (CreateInstanceTopicReq) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.replication, that.replication)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.syncReplication, that.syncReplication)
+            && Objects.equals(this.retentionTime, that.retentionTime);
     }
 
     @Override

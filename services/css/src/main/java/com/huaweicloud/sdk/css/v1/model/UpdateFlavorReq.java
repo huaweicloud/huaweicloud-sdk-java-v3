@@ -77,17 +77,16 @@ public class UpdateFlavorReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlavorReq updateFlavorReq = (UpdateFlavorReq) o;
-        return Objects.equals(this.needCheckReplica, updateFlavorReq.needCheckReplica)
-            && Objects.equals(this.newFlavorId, updateFlavorReq.newFlavorId)
-            && Objects.equals(this.isAutoPay, updateFlavorReq.isAutoPay);
+        UpdateFlavorReq that = (UpdateFlavorReq) obj;
+        return Objects.equals(this.needCheckReplica, that.needCheckReplica)
+            && Objects.equals(this.newFlavorId, that.newFlavorId) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

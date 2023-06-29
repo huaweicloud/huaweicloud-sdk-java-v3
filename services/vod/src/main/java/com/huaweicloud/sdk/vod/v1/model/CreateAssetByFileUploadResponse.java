@@ -150,19 +150,18 @@ public class CreateAssetByFileUploadResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAssetByFileUploadResponse createAssetByFileUploadResponse = (CreateAssetByFileUploadResponse) o;
-        return Objects.equals(this.assetId, createAssetByFileUploadResponse.assetId)
-            && Objects.equals(this.videoUploadUrl, createAssetByFileUploadResponse.videoUploadUrl)
-            && Objects.equals(this.coverUploadUrl, createAssetByFileUploadResponse.coverUploadUrl)
-            && Objects.equals(this.subtitleUploadUrls, createAssetByFileUploadResponse.subtitleUploadUrls)
-            && Objects.equals(this.target, createAssetByFileUploadResponse.target);
+        CreateAssetByFileUploadResponse that = (CreateAssetByFileUploadResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.videoUploadUrl, that.videoUploadUrl)
+            && Objects.equals(this.coverUploadUrl, that.coverUploadUrl)
+            && Objects.equals(this.subtitleUploadUrls, that.subtitleUploadUrls)
+            && Objects.equals(this.target, that.target);
     }
 
     @Override

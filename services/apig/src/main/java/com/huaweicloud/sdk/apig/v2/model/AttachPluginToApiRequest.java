@@ -87,17 +87,16 @@ public class AttachPluginToApiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachPluginToApiRequest attachPluginToApiRequest = (AttachPluginToApiRequest) o;
-        return Objects.equals(this.instanceId, attachPluginToApiRequest.instanceId)
-            && Objects.equals(this.apiId, attachPluginToApiRequest.apiId)
-            && Objects.equals(this.body, attachPluginToApiRequest.body);
+        AttachPluginToApiRequest that = (AttachPluginToApiRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

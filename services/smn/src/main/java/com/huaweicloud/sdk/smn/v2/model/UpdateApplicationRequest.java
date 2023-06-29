@@ -65,16 +65,15 @@ public class UpdateApplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApplicationRequest updateApplicationRequest = (UpdateApplicationRequest) o;
-        return Objects.equals(this.applicationUrn, updateApplicationRequest.applicationUrn)
-            && Objects.equals(this.body, updateApplicationRequest.body);
+        UpdateApplicationRequest that = (UpdateApplicationRequest) obj;
+        return Objects.equals(this.applicationUrn, that.applicationUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

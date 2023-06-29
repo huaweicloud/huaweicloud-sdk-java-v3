@@ -100,22 +100,16 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            NotifyEventSubscriptionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotifyEventSubscriptionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new NotifyEventSubscriptionEnum(value));
         }
 
         public static NotifyEventSubscriptionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotifyEventSubscriptionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -138,8 +132,8 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
     private List<NotifyEventSubscriptionEnum> notifyEventSubscription = null;
 
     /**
-    * 加密类型
-    */
+     * 加密类型
+     */
     public static final class SignTypeEnum {
 
         /**
@@ -182,22 +176,15 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignTypeEnum(value));
         }
 
         public static SignTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -385,22 +372,19 @@ public class ShowRecordCallbackConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordCallbackConfigResponse showRecordCallbackConfigResponse = (ShowRecordCallbackConfigResponse) o;
-        return Objects.equals(this.id, showRecordCallbackConfigResponse.id)
-            && Objects.equals(this.publishDomain, showRecordCallbackConfigResponse.publishDomain)
-            && Objects.equals(this.app, showRecordCallbackConfigResponse.app)
-            && Objects.equals(this.notifyCallbackUrl, showRecordCallbackConfigResponse.notifyCallbackUrl)
-            && Objects.equals(this.notifyEventSubscription, showRecordCallbackConfigResponse.notifyEventSubscription)
-            && Objects.equals(this.signType, showRecordCallbackConfigResponse.signType)
-            && Objects.equals(this.createTime, showRecordCallbackConfigResponse.createTime)
-            && Objects.equals(this.updateTime, showRecordCallbackConfigResponse.updateTime);
+        ShowRecordCallbackConfigResponse that = (ShowRecordCallbackConfigResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.publishDomain, that.publishDomain)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.notifyCallbackUrl, that.notifyCallbackUrl)
+            && Objects.equals(this.notifyEventSubscription, that.notifyEventSubscription)
+            && Objects.equals(this.signType, that.signType) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

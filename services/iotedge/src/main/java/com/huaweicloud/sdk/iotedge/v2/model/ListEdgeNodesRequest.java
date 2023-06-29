@@ -1,69 +1,55 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ListEdgeNodesRequest  {
-
+public class ListEdgeNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_ids")
-    
+    @JsonProperty(value = "node_ids")
+
     private List<String> nodeIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -71,9 +57,6 @@ public class ListEdgeNodesRequest  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 节点名称
@@ -87,15 +70,10 @@ public class ListEdgeNodesRequest  {
         this.name = name;
     }
 
-    
-
     public ListEdgeNodesRequest withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 节点状态,OFFLINE|ONLINE|UNINSTALLED|INSTALLED|DELETING|UPGRADING
@@ -109,15 +87,10 @@ public class ListEdgeNodesRequest  {
         this.state = state;
     }
 
-    
-
     public ListEdgeNodesRequest withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点所属资源类型，advanced|standard
@@ -131,15 +104,10 @@ public class ListEdgeNodesRequest  {
         this.type = type;
     }
 
-    
-
     public ListEdgeNodesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
@@ -153,15 +121,10 @@ public class ListEdgeNodesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListEdgeNodesRequest withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，可以携带该参数查询指定资源空间下的设备列表，不携带该参数则会查询该用户下所有设备列表。
@@ -175,16 +138,13 @@ public class ListEdgeNodesRequest  {
         this.spaceId = spaceId;
     }
 
-    
-
     public ListEdgeNodesRequest withNodeIds(List<String> nodeIds) {
         this.nodeIds = nodeIds;
         return this;
     }
 
-    
     public ListEdgeNodesRequest addNodeIdsItem(String nodeIdsItem) {
-        if(this.nodeIds == null) {
+        if (this.nodeIds == null) {
             this.nodeIds = new ArrayList<>();
         }
         this.nodeIds.add(nodeIdsItem);
@@ -192,7 +152,7 @@ public class ListEdgeNodesRequest  {
     }
 
     public ListEdgeNodesRequest withNodeIds(Consumer<List<String>> nodeIdsSetter) {
-        if(this.nodeIds == null) {
+        if (this.nodeIds == null) {
             this.nodeIds = new ArrayList<>();
         }
         nodeIdsSetter.accept(this.nodeIds);
@@ -211,15 +171,10 @@ public class ListEdgeNodesRequest  {
         this.nodeIds = nodeIds;
     }
 
-    
-
     public ListEdgeNodesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -235,15 +190,10 @@ public class ListEdgeNodesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListEdgeNodesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000
@@ -259,30 +209,26 @@ public class ListEdgeNodesRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeNodesRequest listEdgeNodesRequest = (ListEdgeNodesRequest) o;
-        return Objects.equals(this.name, listEdgeNodesRequest.name) &&
-            Objects.equals(this.state, listEdgeNodesRequest.state) &&
-            Objects.equals(this.type, listEdgeNodesRequest.type) &&
-            Objects.equals(this.instanceId, listEdgeNodesRequest.instanceId) &&
-            Objects.equals(this.spaceId, listEdgeNodesRequest.spaceId) &&
-            Objects.equals(this.nodeIds, listEdgeNodesRequest.nodeIds) &&
-            Objects.equals(this.offset, listEdgeNodesRequest.offset) &&
-            Objects.equals(this.limit, listEdgeNodesRequest.limit);
+        ListEdgeNodesRequest that = (ListEdgeNodesRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.nodeIds, that.nodeIds)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, state, type, instanceId, spaceId, nodeIds, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -298,6 +244,7 @@ public class ListEdgeNodesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -308,8 +255,5 @@ public class ListEdgeNodesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

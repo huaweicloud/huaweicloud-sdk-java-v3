@@ -104,22 +104,15 @@ public class ShowProductResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -197,22 +190,15 @@ public class ShowProductResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -651,33 +637,25 @@ public class ShowProductResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProductResponse showProductResponse = (ShowProductResponse) o;
-        return Objects.equals(this.permissions, showProductResponse.permissions)
-            && Objects.equals(this.id, showProductResponse.id)
-            && Objects.equals(this.productSerial, showProductResponse.productSerial)
-            && Objects.equals(this.appId, showProductResponse.appId)
-            && Objects.equals(this.name, showProductResponse.name)
-            && Objects.equals(this.manufacturerId, showProductResponse.manufacturerId)
-            && Objects.equals(this.manufacturerName, showProductResponse.manufacturerName)
-            && Objects.equals(this.model, showProductResponse.model)
-            && Objects.equals(this.productType, showProductResponse.productType)
-            && Objects.equals(this.description, showProductResponse.description)
-            && Objects.equals(this.protocolType, showProductResponse.protocolType)
-            && Objects.equals(this.deviceType, showProductResponse.deviceType)
-            && Objects.equals(this.version, showProductResponse.version)
-            && Objects.equals(this.createdUser, showProductResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, showProductResponse.lastUpdatedUser)
-            && Objects.equals(this.authentication, showProductResponse.authentication)
-            && Objects.equals(this.createdDatetime, showProductResponse.createdDatetime)
-            && Objects.equals(this.appName, showProductResponse.appName)
-            && Objects.equals(this.dataFormat, showProductResponse.dataFormat);
+        ShowProductResponse that = (ShowProductResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.productSerial, that.productSerial) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.manufacturerId, that.manufacturerId)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocolType, that.protocolType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdDatetime, that.createdDatetime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.dataFormat, that.dataFormat);
     }
 
     @Override

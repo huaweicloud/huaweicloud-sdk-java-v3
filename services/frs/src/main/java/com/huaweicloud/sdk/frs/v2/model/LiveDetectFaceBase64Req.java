@@ -33,15 +33,15 @@ public class LiveDetectFaceBase64Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveDetectFaceBase64Req liveDetectFaceBase64Req = (LiveDetectFaceBase64Req) o;
-        return Objects.equals(this.imageBase64, liveDetectFaceBase64Req.imageBase64);
+        LiveDetectFaceBase64Req that = (LiveDetectFaceBase64Req) obj;
+        return Objects.equals(this.imageBase64, that.imageBase64);
     }
 
     @Override

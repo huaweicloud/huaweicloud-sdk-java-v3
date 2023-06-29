@@ -66,22 +66,15 @@ public class CreateApiRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,17 +162,16 @@ public class CreateApiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApiRequest createApiRequest = (CreateApiRequest) o;
-        return Objects.equals(this.workspace, createApiRequest.workspace)
-            && Objects.equals(this.dlmType, createApiRequest.dlmType)
-            && Objects.equals(this.body, createApiRequest.body);
+        CreateApiRequest that = (CreateApiRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

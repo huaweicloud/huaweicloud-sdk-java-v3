@@ -43,15 +43,15 @@ public class BatchStopServersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStopServersRequestBody batchStopServersRequestBody = (BatchStopServersRequestBody) o;
-        return Objects.equals(this.osStop, batchStopServersRequestBody.osStop);
+        BatchStopServersRequestBody that = (BatchStopServersRequestBody) obj;
+        return Objects.equals(this.osStop, that.osStop);
     }
 
     @Override

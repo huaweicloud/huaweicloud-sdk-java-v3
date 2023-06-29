@@ -187,22 +187,18 @@ public class ShowUrlTaskInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUrlTaskInfoRequest showUrlTaskInfoRequest = (ShowUrlTaskInfoRequest) o;
-        return Objects.equals(this.startTime, showUrlTaskInfoRequest.startTime)
-            && Objects.equals(this.endTime, showUrlTaskInfoRequest.endTime)
-            && Objects.equals(this.offset, showUrlTaskInfoRequest.offset)
-            && Objects.equals(this.limit, showUrlTaskInfoRequest.limit)
-            && Objects.equals(this.url, showUrlTaskInfoRequest.url)
-            && Objects.equals(this.taskType, showUrlTaskInfoRequest.taskType)
-            && Objects.equals(this.status, showUrlTaskInfoRequest.status)
-            && Objects.equals(this.fileType, showUrlTaskInfoRequest.fileType);
+        ShowUrlTaskInfoRequest that = (ShowUrlTaskInfoRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

@@ -80,22 +80,15 @@ public class ListProtectableRequest {
             if (value == null) {
                 return null;
             }
-            ProtectableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectableTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectableTypeEnum(value));
         }
 
         public static ProtectableTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,18 @@ public class ListProtectableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectableRequest listProtectableRequest = (ListProtectableRequest) o;
-        return Objects.equals(this.limit, listProtectableRequest.limit)
-            && Objects.equals(this.marker, listProtectableRequest.marker)
-            && Objects.equals(this.name, listProtectableRequest.name)
-            && Objects.equals(this.offset, listProtectableRequest.offset)
-            && Objects.equals(this.protectableType, listProtectableRequest.protectableType)
-            && Objects.equals(this.status, listProtectableRequest.status)
-            && Objects.equals(this.id, listProtectableRequest.id)
-            && Objects.equals(this.serverId, listProtectableRequest.serverId);
+        ListProtectableRequest that = (ListProtectableRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.protectableType, that.protectableType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

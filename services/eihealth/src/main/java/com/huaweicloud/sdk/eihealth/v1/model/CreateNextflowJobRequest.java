@@ -65,16 +65,15 @@ public class CreateNextflowJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNextflowJobRequest createNextflowJobRequest = (CreateNextflowJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, createNextflowJobRequest.eihealthProjectId)
-            && Objects.equals(this.body, createNextflowJobRequest.body);
+        CreateNextflowJobRequest that = (CreateNextflowJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

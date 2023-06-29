@@ -55,16 +55,15 @@ public class FlightItineraryRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlightItineraryRequestBody flightItineraryRequestBody = (FlightItineraryRequestBody) o;
-        return Objects.equals(this.image, flightItineraryRequestBody.image)
-            && Objects.equals(this.url, flightItineraryRequestBody.url);
+        FlightItineraryRequestBody that = (FlightItineraryRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
     }
 
     @Override

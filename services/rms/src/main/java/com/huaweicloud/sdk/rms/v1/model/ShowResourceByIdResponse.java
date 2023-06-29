@@ -377,29 +377,22 @@ public class ShowResourceByIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceByIdResponse showResourceByIdResponse = (ShowResourceByIdResponse) o;
-        return Objects.equals(this.id, showResourceByIdResponse.id)
-            && Objects.equals(this.name, showResourceByIdResponse.name)
-            && Objects.equals(this.provider, showResourceByIdResponse.provider)
-            && Objects.equals(this.type, showResourceByIdResponse.type)
-            && Objects.equals(this.regionId, showResourceByIdResponse.regionId)
-            && Objects.equals(this.projectId, showResourceByIdResponse.projectId)
-            && Objects.equals(this.projectName, showResourceByIdResponse.projectName)
-            && Objects.equals(this.epId, showResourceByIdResponse.epId)
-            && Objects.equals(this.epName, showResourceByIdResponse.epName)
-            && Objects.equals(this.checksum, showResourceByIdResponse.checksum)
-            && Objects.equals(this.created, showResourceByIdResponse.created)
-            && Objects.equals(this.updated, showResourceByIdResponse.updated)
-            && Objects.equals(this.provisioningState, showResourceByIdResponse.provisioningState)
-            && Objects.equals(this.tags, showResourceByIdResponse.tags)
-            && Objects.equals(this.properties, showResourceByIdResponse.properties);
+        ShowResourceByIdResponse that = (ShowResourceByIdResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.epName, that.epName) && Objects.equals(this.checksum, that.checksum)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.provisioningState, that.provisioningState) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

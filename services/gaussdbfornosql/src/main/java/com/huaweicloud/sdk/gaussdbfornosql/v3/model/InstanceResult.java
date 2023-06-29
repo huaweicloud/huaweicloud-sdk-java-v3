@@ -96,17 +96,16 @@ public class InstanceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceResult instanceResult = (InstanceResult) o;
-        return Objects.equals(this.instanceId, instanceResult.instanceId)
-            && Objects.equals(this.instanceName, instanceResult.instanceName)
-            && Objects.equals(this.tags, instanceResult.tags);
+        InstanceResult that = (InstanceResult) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

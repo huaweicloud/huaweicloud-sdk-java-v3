@@ -141,19 +141,17 @@ public class ShowGlossaryListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGlossaryListResponse showGlossaryListResponse = (ShowGlossaryListResponse) o;
-        return Objects.equals(this.count, showGlossaryListResponse.count)
-            && Objects.equals(this.limit, showGlossaryListResponse.limit)
-            && Objects.equals(this.offset, showGlossaryListResponse.offset)
-            && Objects.equals(this.quota, showGlossaryListResponse.quota)
-            && Objects.equals(this.tags, showGlossaryListResponse.tags);
+        ShowGlossaryListResponse that = (ShowGlossaryListResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

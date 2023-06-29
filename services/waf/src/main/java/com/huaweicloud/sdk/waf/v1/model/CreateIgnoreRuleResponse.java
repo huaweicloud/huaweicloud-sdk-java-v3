@@ -283,24 +283,19 @@ public class CreateIgnoreRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIgnoreRuleResponse createIgnoreRuleResponse = (CreateIgnoreRuleResponse) o;
-        return Objects.equals(this.id, createIgnoreRuleResponse.id)
-            && Objects.equals(this.policyid, createIgnoreRuleResponse.policyid)
-            && Objects.equals(this.timestamp, createIgnoreRuleResponse.timestamp)
-            && Objects.equals(this.description, createIgnoreRuleResponse.description)
-            && Objects.equals(this.status, createIgnoreRuleResponse.status)
-            && Objects.equals(this.rule, createIgnoreRuleResponse.rule)
-            && Objects.equals(this.mode, createIgnoreRuleResponse.mode)
-            && Objects.equals(this.conditions, createIgnoreRuleResponse.conditions)
-            && Objects.equals(this.advanced, createIgnoreRuleResponse.advanced)
-            && Objects.equals(this.domain, createIgnoreRuleResponse.domain);
+        CreateIgnoreRuleResponse that = (CreateIgnoreRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.rule, that.rule)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domain, that.domain);
     }
 
     @Override

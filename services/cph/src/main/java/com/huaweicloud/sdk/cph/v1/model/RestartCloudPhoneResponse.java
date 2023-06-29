@@ -75,16 +75,15 @@ public class RestartCloudPhoneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartCloudPhoneResponse restartCloudPhoneResponse = (RestartCloudPhoneResponse) o;
-        return Objects.equals(this.requestId, restartCloudPhoneResponse.requestId)
-            && Objects.equals(this.jobs, restartCloudPhoneResponse.jobs);
+        RestartCloudPhoneResponse that = (RestartCloudPhoneResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

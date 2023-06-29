@@ -99,17 +99,16 @@ public class ListVpcsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcsRequest listVpcsRequest = (ListVpcsRequest) o;
-        return Objects.equals(this.limit, listVpcsRequest.limit) && Objects.equals(this.marker, listVpcsRequest.marker)
-            && Objects.equals(this.id, listVpcsRequest.id)
-            && Objects.equals(this.enterpriseProjectId, listVpcsRequest.enterpriseProjectId);
+        ListVpcsRequest that = (ListVpcsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

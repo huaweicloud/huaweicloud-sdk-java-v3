@@ -81,22 +81,15 @@ public class ListMqsInstanceTopicsRequest {
             if (value == null) {
                 return null;
             }
-            AccessPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessPolicyEnum(value));
         }
 
         public static AccessPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,20 +224,17 @@ public class ListMqsInstanceTopicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMqsInstanceTopicsRequest listMqsInstanceTopicsRequest = (ListMqsInstanceTopicsRequest) o;
-        return Objects.equals(this.instanceId, listMqsInstanceTopicsRequest.instanceId)
-            && Objects.equals(this.appName, listMqsInstanceTopicsRequest.appName)
-            && Objects.equals(this.name, listMqsInstanceTopicsRequest.name)
-            && Objects.equals(this.accessPolicy, listMqsInstanceTopicsRequest.accessPolicy)
-            && Objects.equals(this.limit, listMqsInstanceTopicsRequest.limit)
-            && Objects.equals(this.offset, listMqsInstanceTopicsRequest.offset);
+        ListMqsInstanceTopicsRequest that = (ListMqsInstanceTopicsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.accessPolicy, that.accessPolicy)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

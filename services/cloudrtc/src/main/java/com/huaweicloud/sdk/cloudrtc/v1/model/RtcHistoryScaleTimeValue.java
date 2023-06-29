@@ -225,23 +225,21 @@ public class RtcHistoryScaleTimeValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtcHistoryScaleTimeValue rtcHistoryScaleTimeValue = (RtcHistoryScaleTimeValue) o;
-        return Objects.equals(this.date, rtcHistoryScaleTimeValue.date)
-            && Objects.equals(this.userCount, rtcHistoryScaleTimeValue.userCount)
-            && Objects.equals(this.sessionCount, rtcHistoryScaleTimeValue.sessionCount)
-            && Objects.equals(this.roomCount, rtcHistoryScaleTimeValue.roomCount)
-            && Objects.equals(this.maxOnlineUserCount, rtcHistoryScaleTimeValue.maxOnlineUserCount)
-            && Objects.equals(this.maxOnlineRoomCount, rtcHistoryScaleTimeValue.maxOnlineRoomCount)
-            && Objects.equals(this.communicationDuration, rtcHistoryScaleTimeValue.communicationDuration)
-            && Objects.equals(this.videoCommunicationDuration, rtcHistoryScaleTimeValue.videoCommunicationDuration)
-            && Objects.equals(this.audioCommunicationDuration, rtcHistoryScaleTimeValue.audioCommunicationDuration);
+        RtcHistoryScaleTimeValue that = (RtcHistoryScaleTimeValue) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.userCount, that.userCount)
+            && Objects.equals(this.sessionCount, that.sessionCount) && Objects.equals(this.roomCount, that.roomCount)
+            && Objects.equals(this.maxOnlineUserCount, that.maxOnlineUserCount)
+            && Objects.equals(this.maxOnlineRoomCount, that.maxOnlineRoomCount)
+            && Objects.equals(this.communicationDuration, that.communicationDuration)
+            && Objects.equals(this.videoCommunicationDuration, that.videoCommunicationDuration)
+            && Objects.equals(this.audioCommunicationDuration, that.audioCommunicationDuration);
     }
 
     @Override

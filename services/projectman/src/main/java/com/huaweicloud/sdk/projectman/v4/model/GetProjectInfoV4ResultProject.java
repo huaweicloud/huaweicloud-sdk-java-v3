@@ -241,24 +241,19 @@ public class GetProjectInfoV4ResultProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetProjectInfoV4ResultProject getProjectInfoV4ResultProject = (GetProjectInfoV4ResultProject) o;
-        return Objects.equals(this.projectNumId, getProjectInfoV4ResultProject.projectNumId)
-            && Objects.equals(this.projectId, getProjectInfoV4ResultProject.projectId)
-            && Objects.equals(this.name, getProjectInfoV4ResultProject.name)
-            && Objects.equals(this.createdOn, getProjectInfoV4ResultProject.createdOn)
-            && Objects.equals(this.updatedOn, getProjectInfoV4ResultProject.updatedOn)
-            && Objects.equals(this.projectType, getProjectInfoV4ResultProject.projectType)
-            && Objects.equals(this.archive, getProjectInfoV4ResultProject.archive)
-            && Objects.equals(this.enterpriseId, getProjectInfoV4ResultProject.enterpriseId)
-            && Objects.equals(this.projectCode, getProjectInfoV4ResultProject.projectCode)
-            && Objects.equals(this.creator, getProjectInfoV4ResultProject.creator);
+        GetProjectInfoV4ResultProject that = (GetProjectInfoV4ResultProject) obj;
+        return Objects.equals(this.projectNumId, that.projectNumId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.createdOn, that.createdOn)
+            && Objects.equals(this.updatedOn, that.updatedOn) && Objects.equals(this.projectType, that.projectType)
+            && Objects.equals(this.archive, that.archive) && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.projectCode, that.projectCode) && Objects.equals(this.creator, that.creator);
     }
 
     @Override

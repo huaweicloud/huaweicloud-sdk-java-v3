@@ -211,21 +211,20 @@ public class AddRsuDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRsuDTO addRsuDTO = (AddRsuDTO) o;
-        return Objects.equals(this.name, addRsuDTO.name) && Objects.equals(this.description, addRsuDTO.description)
-            && Objects.equals(this.esn, addRsuDTO.esn) && Objects.equals(this.ip, addRsuDTO.ip)
-            && Objects.equals(this.positionDescription, addRsuDTO.positionDescription)
-            && Objects.equals(this.relatedEdgeNum, addRsuDTO.relatedEdgeNum)
-            && Objects.equals(this.rsuModelId, addRsuDTO.rsuModelId)
-            && Objects.equals(this.intersectionId, addRsuDTO.intersectionId)
-            && Objects.equals(this.secret, addRsuDTO.secret);
+        AddRsuDTO that = (AddRsuDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.relatedEdgeNum, that.relatedEdgeNum)
+            && Objects.equals(this.rsuModelId, that.rsuModelId)
+            && Objects.equals(this.intersectionId, that.intersectionId) && Objects.equals(this.secret, that.secret);
     }
 
     @Override

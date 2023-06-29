@@ -121,19 +121,17 @@ public class HandwritingRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandwritingRequestBody handwritingRequestBody = (HandwritingRequestBody) o;
-        return Objects.equals(this.image, handwritingRequestBody.image)
-            && Objects.equals(this.url, handwritingRequestBody.url)
-            && Objects.equals(this.quickMode, handwritingRequestBody.quickMode)
-            && Objects.equals(this.charSet, handwritingRequestBody.charSet)
-            && Objects.equals(this.detectDirection, handwritingRequestBody.detectDirection);
+        HandwritingRequestBody that = (HandwritingRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.quickMode, that.quickMode) && Objects.equals(this.charSet, that.charSet)
+            && Objects.equals(this.detectDirection, that.detectDirection);
     }
 
     @Override

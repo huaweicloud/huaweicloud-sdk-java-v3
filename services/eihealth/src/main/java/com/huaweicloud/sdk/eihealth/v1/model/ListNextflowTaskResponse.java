@@ -75,16 +75,15 @@ public class ListNextflowTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNextflowTaskResponse listNextflowTaskResponse = (ListNextflowTaskResponse) o;
-        return Objects.equals(this.tasks, listNextflowTaskResponse.tasks)
-            && Objects.equals(this.count, listNextflowTaskResponse.count);
+        ListNextflowTaskResponse that = (ListNextflowTaskResponse) obj;
+        return Objects.equals(this.tasks, that.tasks) && Objects.equals(this.count, that.count);
     }
 
     @Override

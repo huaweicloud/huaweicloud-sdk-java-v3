@@ -232,23 +232,20 @@ public class CouponRecordV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CouponRecordV2 couponRecordV2 = (CouponRecordV2) o;
-        return Objects.equals(this.id, couponRecordV2.id)
-            && Objects.equals(this.operationType, couponRecordV2.operationType)
-            && Objects.equals(this.quotaId, couponRecordV2.quotaId)
-            && Objects.equals(this.quotaType, couponRecordV2.quotaType)
-            && Objects.equals(this.couponId, couponRecordV2.couponId)
-            && Objects.equals(this.customerId, couponRecordV2.customerId)
-            && Objects.equals(this.operationAmount, couponRecordV2.operationAmount)
-            && Objects.equals(this.operationTime, couponRecordV2.operationTime)
-            && Objects.equals(this.result, couponRecordV2.result) && Objects.equals(this.remark, couponRecordV2.remark);
+        CouponRecordV2 that = (CouponRecordV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.quotaId, that.quotaId) && Objects.equals(this.quotaType, that.quotaType)
+            && Objects.equals(this.couponId, that.couponId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.operationAmount, that.operationAmount)
+            && Objects.equals(this.operationTime, that.operationTime) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

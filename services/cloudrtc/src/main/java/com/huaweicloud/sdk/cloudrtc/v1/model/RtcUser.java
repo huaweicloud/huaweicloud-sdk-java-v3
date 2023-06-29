@@ -91,22 +91,15 @@ public class RtcUser {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -429,22 +422,22 @@ public class RtcUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtcUser rtcUser = (RtcUser) o;
-        return Objects.equals(this.domain, rtcUser.domain) && Objects.equals(this.app, rtcUser.app)
-            && Objects.equals(this.roomId, rtcUser.roomId) && Objects.equals(this.uid, rtcUser.uid)
-            && Objects.equals(this.session, rtcUser.session) && Objects.equals(this.state, rtcUser.state)
-            && Objects.equals(this.nickName, rtcUser.nickName) && Objects.equals(this.ip, rtcUser.ip)
-            && Objects.equals(this.region, rtcUser.region) && Objects.equals(this.isp, rtcUser.isp)
-            && Objects.equals(this.deviceModel, rtcUser.deviceModel) && Objects.equals(this.platform, rtcUser.platform)
-            && Objects.equals(this.sdk, rtcUser.sdk) && Objects.equals(this.joinTime, rtcUser.joinTime)
-            && Objects.equals(this.leaveTime, rtcUser.leaveTime);
+        RtcUser that = (RtcUser) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.session, that.session) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp)
+            && Objects.equals(this.deviceModel, that.deviceModel) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.sdk, that.sdk) && Objects.equals(this.joinTime, that.joinTime)
+            && Objects.equals(this.leaveTime, that.leaveTime);
     }
 
     @Override

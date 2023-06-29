@@ -1,61 +1,50 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.ProbeDTO;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateEdgeApplicationVersionDTO
  */
-public class CreateEdgeApplicationVersionDTO  {
-
+public class CreateEdgeApplicationVersionDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sdk_version")
-    
+    @JsonProperty(value = "sdk_version")
 
     private String sdkVersion;
+
     /**
      * 应用部署类型，分为docker容器部署类型和process进程部署类型，兼容之前数据，此字段可以为空，为空情况为docker类型
      */
     public static final class DeployTypeEnum {
 
-        
         /**
          * Enum DOCKER for value: "docker"
          */
         public static final DeployTypeEnum DOCKER = new DeployTypeEnum("docker");
-        
+
         /**
          * Enum PROCESS for value: "process"
          */
         public static final DeployTypeEnum PROCESS = new DeployTypeEnum("process");
-        
 
         private static final Map<String, DeployTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,25 +73,18 @@ public class CreateEdgeApplicationVersionDTO  {
 
         @JsonCreator
         public static DeployTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployTypeEnum(value));
         }
 
         public static DeployTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -120,80 +102,67 @@ public class CreateEdgeApplicationVersionDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private DeployTypeEnum deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_multi_instance")
-    
+    @JsonProperty(value = "deploy_multi_instance")
 
     private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_settings")
-    
+    @JsonProperty(value = "container_settings")
 
     private ContainerSettingsDTO containerSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveness_probe")
-    
+    @JsonProperty(value = "liveness_probe")
 
     private ProbeDTO livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readiness_probe")
-    
+    @JsonProperty(value = "readiness_probe")
 
     private ProbeDTO readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private Object arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command")
-    
+    @JsonProperty(value = "command")
 
     private Object command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="args")
-    
+    @JsonProperty(value = "args")
 
     private Object args;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="outputs")
-    
+    @JsonProperty(value = "outputs")
 
     private Object outputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inputs")
-    
+    @JsonProperty(value = "inputs")
 
     private Object inputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="services")
-    
+    @JsonProperty(value = "services")
 
     private Object services;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supplier")
-    
+    @JsonProperty(value = "supplier")
 
     private String supplier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tpl_id")
-    
+    @JsonProperty(value = "tpl_id")
 
     private String tplId;
 
@@ -201,9 +170,6 @@ public class CreateEdgeApplicationVersionDTO  {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -217,15 +183,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.version = version;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -239,15 +200,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.description = description;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withSdkVersion(String sdkVersion) {
         this.sdkVersion = sdkVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用集成的边缘SDK版本
@@ -261,15 +217,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.sdkVersion = sdkVersion;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withDeployType(DeployTypeEnum deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 应用部署类型，分为docker容器部署类型和process进程部署类型，兼容之前数据，此字段可以为空，为空情况为docker类型
@@ -283,15 +234,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.deployType = deployType;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withDeployMultiInstance(Boolean deployMultiInstance) {
         this.deployMultiInstance = deployMultiInstance;
         return this;
     }
-
-    
-
 
     /**
      * 是否允许部署多实例
@@ -305,22 +251,20 @@ public class CreateEdgeApplicationVersionDTO  {
         this.deployMultiInstance = deployMultiInstance;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withContainerSettings(ContainerSettingsDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
     }
 
-    public CreateEdgeApplicationVersionDTO withContainerSettings(Consumer<ContainerSettingsDTO> containerSettingsSetter) {
-        if(this.containerSettings == null ){
+    public CreateEdgeApplicationVersionDTO withContainerSettings(
+        Consumer<ContainerSettingsDTO> containerSettingsSetter) {
+        if (this.containerSettings == null) {
             this.containerSettings = new ContainerSettingsDTO();
             containerSettingsSetter.accept(this.containerSettings);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get containerSettings
@@ -334,22 +278,19 @@ public class CreateEdgeApplicationVersionDTO  {
         this.containerSettings = containerSettings;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withLivenessProbe(ProbeDTO livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
     public CreateEdgeApplicationVersionDTO withLivenessProbe(Consumer<ProbeDTO> livenessProbeSetter) {
-        if(this.livenessProbe == null ){
+        if (this.livenessProbe == null) {
             this.livenessProbe = new ProbeDTO();
             livenessProbeSetter.accept(this.livenessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get livenessProbe
@@ -363,22 +304,19 @@ public class CreateEdgeApplicationVersionDTO  {
         this.livenessProbe = livenessProbe;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withReadinessProbe(ProbeDTO readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
     public CreateEdgeApplicationVersionDTO withReadinessProbe(Consumer<ProbeDTO> readinessProbeSetter) {
-        if(this.readinessProbe == null ){
+        if (this.readinessProbe == null) {
             this.readinessProbe = new ProbeDTO();
             readinessProbeSetter.accept(this.readinessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get readinessProbe
@@ -392,15 +330,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.readinessProbe = readinessProbe;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withArch(Object arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 架构
@@ -414,15 +347,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.arch = arch;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withCommand(Object command) {
         this.command = command;
         return this;
     }
-
-    
-
 
     /**
      * 启动命令
@@ -436,15 +364,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.command = command;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withArgs(Object args) {
         this.args = args;
         return this;
     }
-
-    
-
 
     /**
      * 启动参数
@@ -458,15 +381,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.args = args;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withOutputs(Object outputs) {
         this.outputs = outputs;
         return this;
     }
-
-    
-
 
     /**
      * 应用输出路由端点
@@ -480,15 +398,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.outputs = outputs;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withInputs(Object inputs) {
         this.inputs = inputs;
         return this;
     }
-
-    
-
 
     /**
      * 应用输入路由
@@ -502,15 +415,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.inputs = inputs;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withServices(Object services) {
         this.services = services;
         return this;
     }
-
-    
-
 
     /**
      * 应用实现的服务列表
@@ -524,15 +432,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.services = services;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withSupplier(String supplier) {
         this.supplier = supplier;
         return this;
     }
-
-    
-
 
     /**
      * 驱动厂商
@@ -546,15 +449,10 @@ public class CreateEdgeApplicationVersionDTO  {
         this.supplier = supplier;
     }
 
-    
-
     public CreateEdgeApplicationVersionDTO withTplId(String tplId) {
         this.tplId = tplId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id
@@ -568,38 +466,47 @@ public class CreateEdgeApplicationVersionDTO  {
         this.tplId = tplId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationVersionDTO createEdgeApplicationVersionDTO = (CreateEdgeApplicationVersionDTO) o;
-        return Objects.equals(this.version, createEdgeApplicationVersionDTO.version) &&
-            Objects.equals(this.description, createEdgeApplicationVersionDTO.description) &&
-            Objects.equals(this.sdkVersion, createEdgeApplicationVersionDTO.sdkVersion) &&
-            Objects.equals(this.deployType, createEdgeApplicationVersionDTO.deployType) &&
-            Objects.equals(this.deployMultiInstance, createEdgeApplicationVersionDTO.deployMultiInstance) &&
-            Objects.equals(this.containerSettings, createEdgeApplicationVersionDTO.containerSettings) &&
-            Objects.equals(this.livenessProbe, createEdgeApplicationVersionDTO.livenessProbe) &&
-            Objects.equals(this.readinessProbe, createEdgeApplicationVersionDTO.readinessProbe) &&
-            Objects.equals(this.arch, createEdgeApplicationVersionDTO.arch) &&
-            Objects.equals(this.command, createEdgeApplicationVersionDTO.command) &&
-            Objects.equals(this.args, createEdgeApplicationVersionDTO.args) &&
-            Objects.equals(this.outputs, createEdgeApplicationVersionDTO.outputs) &&
-            Objects.equals(this.inputs, createEdgeApplicationVersionDTO.inputs) &&
-            Objects.equals(this.services, createEdgeApplicationVersionDTO.services) &&
-            Objects.equals(this.supplier, createEdgeApplicationVersionDTO.supplier) &&
-            Objects.equals(this.tplId, createEdgeApplicationVersionDTO.tplId);
+        CreateEdgeApplicationVersionDTO that = (CreateEdgeApplicationVersionDTO) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sdkVersion, that.sdkVersion) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deployMultiInstance, that.deployMultiInstance)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.services, that.services) && Objects.equals(this.supplier, that.supplier)
+            && Objects.equals(this.tplId, that.tplId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(version, description, sdkVersion, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, arch, command, args, outputs, inputs, services, supplier, tplId);
+        return Objects.hash(version,
+            description,
+            sdkVersion,
+            deployType,
+            deployMultiInstance,
+            containerSettings,
+            livenessProbe,
+            readinessProbe,
+            arch,
+            command,
+            args,
+            outputs,
+            inputs,
+            services,
+            supplier,
+            tplId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -623,6 +530,7 @@ public class CreateEdgeApplicationVersionDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -633,8 +541,5 @@ public class CreateEdgeApplicationVersionDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -146,22 +146,15 @@ public class ApplicationV3 {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployTypeEnum(value));
         }
 
         public static DeployTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -569,31 +562,26 @@ public class ApplicationV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationV3 applicationV3 = (ApplicationV3) o;
-        return Objects.equals(this.id, applicationV3.id) && Objects.equals(this.name, applicationV3.name)
-            && Objects.equals(this.description, applicationV3.description)
-            && Objects.equals(this.regionId, applicationV3.regionId)
-            && Objects.equals(this.regionName, applicationV3.regionName)
-            && Objects.equals(this.projectId, applicationV3.projectId)
-            && Objects.equals(this.projectName, applicationV3.projectName)
-            && Objects.equals(this.icon, applicationV3.icon)
-            && Objects.equals(this.pipelineCreationResult, applicationV3.pipelineCreationResult)
-            && Objects.equals(this.repositoryCreationResult, applicationV3.repositoryCreationResult)
-            && Objects.equals(this.environmentCreationResult, applicationV3.environmentCreationResult)
-            && Objects.equals(this.templateTypes, applicationV3.templateTypes)
-            && Objects.equals(this.templateDeployment, applicationV3.templateDeployment)
-            && Objects.equals(this.deployType, applicationV3.deployType)
-            && Objects.equals(this.creatorName, applicationV3.creatorName)
-            && Objects.equals(this.createdAt, applicationV3.createdAt)
-            && Objects.equals(this.updatedAt, applicationV3.updatedAt)
-            && Objects.equals(this.version, applicationV3.version);
+        ApplicationV3 that = (ApplicationV3) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.icon, that.icon)
+            && Objects.equals(this.pipelineCreationResult, that.pipelineCreationResult)
+            && Objects.equals(this.repositoryCreationResult, that.repositoryCreationResult)
+            && Objects.equals(this.environmentCreationResult, that.environmentCreationResult)
+            && Objects.equals(this.templateTypes, that.templateTypes)
+            && Objects.equals(this.templateDeployment, that.templateDeployment)
+            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

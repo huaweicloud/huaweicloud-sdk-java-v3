@@ -103,18 +103,16 @@ public class SendVerificationCodeV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendVerificationCodeV2Req sendVerificationCodeV2Req = (SendVerificationCodeV2Req) o;
-        return Objects.equals(this.receiverType, sendVerificationCodeV2Req.receiverType)
-            && Objects.equals(this.timeout, sendVerificationCodeV2Req.timeout)
-            && Objects.equals(this.email, sendVerificationCodeV2Req.email)
-            && Objects.equals(this.lang, sendVerificationCodeV2Req.lang);
+        SendVerificationCodeV2Req that = (SendVerificationCodeV2Req) obj;
+        return Objects.equals(this.receiverType, that.receiverType) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.lang, that.lang);
     }
 
     @Override

@@ -131,19 +131,17 @@ public class CreateTestCaseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTestCaseRequestBody createTestCaseRequestBody = (CreateTestCaseRequestBody) o;
-        return Objects.equals(this.name, createTestCaseRequestBody.name)
-            && Objects.equals(this.serviceId, createTestCaseRequestBody.serviceId)
-            && Objects.equals(this.rankId, createTestCaseRequestBody.rankId)
-            && Objects.equals(this.testcaseNumber, createTestCaseRequestBody.testcaseNumber)
-            && Objects.equals(this.extendInfo, createTestCaseRequestBody.extendInfo);
+        CreateTestCaseRequestBody that = (CreateTestCaseRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.rankId, that.rankId) && Objects.equals(this.testcaseNumber, that.testcaseNumber)
+            && Objects.equals(this.extendInfo, that.extendInfo);
     }
 
     @Override

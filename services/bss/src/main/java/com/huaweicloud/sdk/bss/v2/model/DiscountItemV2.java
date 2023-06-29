@@ -55,16 +55,16 @@ public class DiscountItemV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiscountItemV2 discountItemV2 = (DiscountItemV2) o;
-        return Objects.equals(this.discountType, discountItemV2.discountType)
-            && Objects.equals(this.discountAmount, discountItemV2.discountAmount);
+        DiscountItemV2 that = (DiscountItemV2) obj;
+        return Objects.equals(this.discountType, that.discountType)
+            && Objects.equals(this.discountAmount, that.discountAmount);
     }
 
     @Override

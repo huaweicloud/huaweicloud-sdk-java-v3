@@ -141,19 +141,17 @@ public class ConfigTaskParameterBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigTaskParameterBody configTaskParameterBody = (ConfigTaskParameterBody) o;
-        return Objects.equals(this.checkId, configTaskParameterBody.checkId)
-            && Objects.equals(this.rulesetId, configTaskParameterBody.rulesetId)
-            && Objects.equals(this.language, configTaskParameterBody.language)
-            && Objects.equals(this.status, configTaskParameterBody.status)
-            && Objects.equals(this.taskCheckSettings, configTaskParameterBody.taskCheckSettings);
+        ConfigTaskParameterBody that = (ConfigTaskParameterBody) obj;
+        return Objects.equals(this.checkId, that.checkId) && Objects.equals(this.rulesetId, that.rulesetId)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskCheckSettings, that.taskCheckSettings);
     }
 
     @Override

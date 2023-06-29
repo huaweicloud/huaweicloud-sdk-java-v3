@@ -77,18 +77,17 @@ public class ListApplicationEndpointAttributesResponseBodyAttributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationEndpointAttributesResponseBodyAttributes listApplicationEndpointAttributesResponseBodyAttributes =
-            (ListApplicationEndpointAttributesResponseBodyAttributes) o;
-        return Objects.equals(this.enabled, listApplicationEndpointAttributesResponseBodyAttributes.enabled)
-            && Objects.equals(this.token, listApplicationEndpointAttributesResponseBodyAttributes.token)
-            && Objects.equals(this.userData, listApplicationEndpointAttributesResponseBodyAttributes.userData);
+        ListApplicationEndpointAttributesResponseBodyAttributes that =
+            (ListApplicationEndpointAttributesResponseBodyAttributes) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.userData, that.userData);
     }
 
     @Override

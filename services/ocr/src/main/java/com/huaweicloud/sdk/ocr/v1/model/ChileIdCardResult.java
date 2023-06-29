@@ -259,23 +259,20 @@ public class ChileIdCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChileIdCardResult chileIdCardResult = (ChileIdCardResult) o;
-        return Objects.equals(this.surname, chileIdCardResult.surname)
-            && Objects.equals(this.givenName, chileIdCardResult.givenName)
-            && Objects.equals(this.nationality, chileIdCardResult.nationality)
-            && Objects.equals(this.sex, chileIdCardResult.sex) && Objects.equals(this.birth, chileIdCardResult.birth)
-            && Objects.equals(this.issueDate, chileIdCardResult.issueDate)
-            && Objects.equals(this.expiryDate, chileIdCardResult.expiryDate)
-            && Objects.equals(this.documentNumber, chileIdCardResult.documentNumber)
-            && Objects.equals(this.number, chileIdCardResult.number)
-            && Objects.equals(this.confidence, chileIdCardResult.confidence);
+        ChileIdCardResult that = (ChileIdCardResult) obj;
+        return Objects.equals(this.surname, that.surname) && Objects.equals(this.givenName, that.givenName)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.birth, that.birth) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.documentNumber, that.documentNumber) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreateScalingV2PolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingV2PolicyResponse createScalingV2PolicyResponse = (CreateScalingV2PolicyResponse) o;
-        return Objects.equals(this.scalingPolicyId, createScalingV2PolicyResponse.scalingPolicyId);
+        CreateScalingV2PolicyResponse that = (CreateScalingV2PolicyResponse) obj;
+        return Objects.equals(this.scalingPolicyId, that.scalingPolicyId);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListMeasureUnitsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMeasureUnitsResponse listMeasureUnitsResponse = (ListMeasureUnitsResponse) o;
-        return Objects.equals(this.measureUnits, listMeasureUnitsResponse.measureUnits);
+        ListMeasureUnitsResponse that = (ListMeasureUnitsResponse) obj;
+        return Objects.equals(this.measureUnits, that.measureUnits);
     }
 
     @Override

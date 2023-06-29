@@ -55,17 +55,15 @@ public class BatchRestartOrDeleteInstanceRespResults {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRestartOrDeleteInstanceRespResults batchRestartOrDeleteInstanceRespResults =
-            (BatchRestartOrDeleteInstanceRespResults) o;
-        return Objects.equals(this.result, batchRestartOrDeleteInstanceRespResults.result)
-            && Objects.equals(this.instance, batchRestartOrDeleteInstanceRespResults.instance);
+        BatchRestartOrDeleteInstanceRespResults that = (BatchRestartOrDeleteInstanceRespResults) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.instance, that.instance);
     }
 
     @Override

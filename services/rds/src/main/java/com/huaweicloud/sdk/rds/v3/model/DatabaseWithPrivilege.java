@@ -55,16 +55,15 @@ public class DatabaseWithPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseWithPrivilege databaseWithPrivilege = (DatabaseWithPrivilege) o;
-        return Objects.equals(this.name, databaseWithPrivilege.name)
-            && Objects.equals(this.readonly, databaseWithPrivilege.readonly);
+        DatabaseWithPrivilege that = (DatabaseWithPrivilege) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.readonly, that.readonly);
     }
 
     @Override

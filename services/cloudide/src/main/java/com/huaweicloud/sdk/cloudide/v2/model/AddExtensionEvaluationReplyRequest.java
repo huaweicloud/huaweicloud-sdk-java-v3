@@ -43,15 +43,15 @@ public class AddExtensionEvaluationReplyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddExtensionEvaluationReplyRequest addExtensionEvaluationReplyRequest = (AddExtensionEvaluationReplyRequest) o;
-        return Objects.equals(this.body, addExtensionEvaluationReplyRequest.body);
+        AddExtensionEvaluationReplyRequest that = (AddExtensionEvaluationReplyRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

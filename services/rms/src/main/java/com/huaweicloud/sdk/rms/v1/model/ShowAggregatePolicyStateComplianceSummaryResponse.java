@@ -56,16 +56,16 @@ public class ShowAggregatePolicyStateComplianceSummaryResponse extends SdkRespon
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregatePolicyStateComplianceSummaryResponse showAggregatePolicyStateComplianceSummaryResponse =
-            (ShowAggregatePolicyStateComplianceSummaryResponse) o;
-        return Objects.equals(this.results, showAggregatePolicyStateComplianceSummaryResponse.results);
+        ShowAggregatePolicyStateComplianceSummaryResponse that =
+            (ShowAggregatePolicyStateComplianceSummaryResponse) obj;
+        return Objects.equals(this.results, that.results);
     }
 
     @Override

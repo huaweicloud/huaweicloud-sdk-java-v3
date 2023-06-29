@@ -63,22 +63,15 @@ public class CheckAudioJobResponseBodyInput {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,15 @@ public class CheckAudioJobResponseBodyInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAudioJobResponseBodyInput checkAudioJobResponseBodyInput = (CheckAudioJobResponseBodyInput) o;
-        return Objects.equals(this.type, checkAudioJobResponseBodyInput.type)
-            && Objects.equals(this.data, checkAudioJobResponseBodyInput.data);
+        CheckAudioJobResponseBodyInput that = (CheckAudioJobResponseBodyInput) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.data, that.data);
     }
 
     @Override

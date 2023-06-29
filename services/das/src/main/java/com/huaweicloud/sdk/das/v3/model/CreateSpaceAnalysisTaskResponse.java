@@ -34,15 +34,15 @@ public class CreateSpaceAnalysisTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSpaceAnalysisTaskResponse createSpaceAnalysisTaskResponse = (CreateSpaceAnalysisTaskResponse) o;
-        return Objects.equals(this.executionTime, createSpaceAnalysisTaskResponse.executionTime);
+        CreateSpaceAnalysisTaskResponse that = (CreateSpaceAnalysisTaskResponse) obj;
+        return Objects.equals(this.executionTime, that.executionTime);
     }
 
     @Override

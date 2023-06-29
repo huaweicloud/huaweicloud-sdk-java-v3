@@ -121,19 +121,17 @@ public class ResourceStatDataRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceStatDataRsp resourceStatDataRsp = (ResourceStatDataRsp) o;
-        return Objects.equals(this.statistic, resourceStatDataRsp.statistic)
-            && Objects.equals(this.unit, resourceStatDataRsp.unit)
-            && Objects.equals(this.metricName, resourceStatDataRsp.metricName)
-            && Objects.equals(this.resourceId, resourceStatDataRsp.resourceId)
-            && Objects.equals(this.deviceId, resourceStatDataRsp.deviceId);
+        ResourceStatDataRsp that = (ResourceStatDataRsp) obj;
+        return Objects.equals(this.statistic, that.statistic) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

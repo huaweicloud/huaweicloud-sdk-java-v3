@@ -261,25 +261,21 @@ public class ListSubCustomerCouponsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubCustomerCouponsRequest listSubCustomerCouponsRequest = (ListSubCustomerCouponsRequest) o;
-        return Objects.equals(this.couponId, listSubCustomerCouponsRequest.couponId)
-            && Objects.equals(this.orderId, listSubCustomerCouponsRequest.orderId)
-            && Objects.equals(this.promotionPlanId, listSubCustomerCouponsRequest.promotionPlanId)
-            && Objects.equals(this.couponType, listSubCustomerCouponsRequest.couponType)
-            && Objects.equals(this.status, listSubCustomerCouponsRequest.status)
-            && Objects.equals(this.activeStartTime, listSubCustomerCouponsRequest.activeStartTime)
-            && Objects.equals(this.activeEndTime, listSubCustomerCouponsRequest.activeEndTime)
-            && Objects.equals(this.offset, listSubCustomerCouponsRequest.offset)
-            && Objects.equals(this.limit, listSubCustomerCouponsRequest.limit)
-            && Objects.equals(this.sourceId, listSubCustomerCouponsRequest.sourceId)
-            && Objects.equals(this.indirectPartnerId, listSubCustomerCouponsRequest.indirectPartnerId);
+        ListSubCustomerCouponsRequest that = (ListSubCustomerCouponsRequest) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId)
+            && Objects.equals(this.couponType, that.couponType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.activeStartTime, that.activeStartTime)
+            && Objects.equals(this.activeEndTime, that.activeEndTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

@@ -89,17 +89,16 @@ public class UploadFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadFileRequest uploadFileRequest = (UploadFileRequest) o;
-        return Objects.equals(this.xRequestId, uploadFileRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, uploadFileRequest.acceptLanguage)
-            && Objects.equals(this.body, uploadFileRequest.body);
+        UploadFileRequest that = (UploadFileRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

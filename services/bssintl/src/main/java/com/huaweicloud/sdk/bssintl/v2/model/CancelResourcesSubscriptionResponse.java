@@ -92,17 +92,16 @@ public class CancelResourcesSubscriptionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelResourcesSubscriptionResponse cancelResourcesSubscriptionResponse =
-            (CancelResourcesSubscriptionResponse) o;
-        return Objects.equals(this.orderIds, cancelResourcesSubscriptionResponse.orderIds)
-            && Objects.equals(this.failResourceInfos, cancelResourcesSubscriptionResponse.failResourceInfos);
+        CancelResourcesSubscriptionResponse that = (CancelResourcesSubscriptionResponse) obj;
+        return Objects.equals(this.orderIds, that.orderIds)
+            && Objects.equals(this.failResourceInfos, that.failResourceInfos);
     }
 
     @Override

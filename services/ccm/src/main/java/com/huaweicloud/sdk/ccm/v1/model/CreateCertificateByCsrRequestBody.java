@@ -176,20 +176,18 @@ public class CreateCertificateByCsrRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateByCsrRequestBody createCertificateByCsrRequestBody = (CreateCertificateByCsrRequestBody) o;
-        return Objects.equals(this.issuerId, createCertificateByCsrRequestBody.issuerId)
-            && Objects.equals(this.csr, createCertificateByCsrRequestBody.csr)
-            && Objects.equals(this.validity, createCertificateByCsrRequestBody.validity)
-            && Objects.equals(this.type, createCertificateByCsrRequestBody.type)
-            && Objects.equals(this.pathLength, createCertificateByCsrRequestBody.pathLength)
-            && Objects.equals(this.subjectAlternativeNames, createCertificateByCsrRequestBody.subjectAlternativeNames);
+        CreateCertificateByCsrRequestBody that = (CreateCertificateByCsrRequestBody) obj;
+        return Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.csr, that.csr)
+            && Objects.equals(this.validity, that.validity) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.pathLength, that.pathLength)
+            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames);
     }
 
     @Override

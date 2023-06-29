@@ -88,17 +88,16 @@ public class CreateConfTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfTokenResponse createConfTokenResponse = (CreateConfTokenResponse) o;
-        return Objects.equals(this.data, createConfTokenResponse.data)
-            && Objects.equals(this.addressToken, createConfTokenResponse.addressToken)
-            && Objects.equals(this.gloablPublicIP, createConfTokenResponse.gloablPublicIP);
+        CreateConfTokenResponse that = (CreateConfTokenResponse) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.addressToken, that.addressToken)
+            && Objects.equals(this.gloablPublicIP, that.gloablPublicIP);
     }
 
     @Override

@@ -44,16 +44,15 @@ public class CreateTemporaryAccessKeyByTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemporaryAccessKeyByTokenResponse createTemporaryAccessKeyByTokenResponse =
-            (CreateTemporaryAccessKeyByTokenResponse) o;
-        return Objects.equals(this.credential, createTemporaryAccessKeyByTokenResponse.credential);
+        CreateTemporaryAccessKeyByTokenResponse that = (CreateTemporaryAccessKeyByTokenResponse) obj;
+        return Objects.equals(this.credential, that.credential);
     }
 
     @Override

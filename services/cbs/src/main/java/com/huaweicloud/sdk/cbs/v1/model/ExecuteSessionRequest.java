@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.PostQaSessionReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ExecuteSessionRequest  {
-
+public class ExecuteSessionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_id")
-    
+    @JsonProperty(value = "session_id")
 
     private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private PostQaSessionReq body;
 
@@ -41,9 +30,6 @@ public class ExecuteSessionRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * 机器人标识符。
@@ -57,15 +43,10 @@ public class ExecuteSessionRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public ExecuteSessionRequest withSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
     }
-
-    
-
 
     /**
      * 会话标识符。
@@ -79,22 +60,19 @@ public class ExecuteSessionRequest  {
         this.sessionId = sessionId;
     }
 
-    
-
     public ExecuteSessionRequest withBody(PostQaSessionReq body) {
         this.body = body;
         return this;
     }
 
     public ExecuteSessionRequest withBody(Consumer<PostQaSessionReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new PostQaSessionReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class ExecuteSessionRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteSessionRequest executeSessionRequest = (ExecuteSessionRequest) o;
-        return Objects.equals(this.qabotId, executeSessionRequest.qabotId) &&
-            Objects.equals(this.sessionId, executeSessionRequest.sessionId) &&
-            Objects.equals(this.body, executeSessionRequest.body);
+        ExecuteSessionRequest that = (ExecuteSessionRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, sessionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class ExecuteSessionRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class ExecuteSessionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

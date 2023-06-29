@@ -33,15 +33,15 @@ public class ListPublicBorderGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicBorderGroupsRequest listPublicBorderGroupsRequest = (ListPublicBorderGroupsRequest) o;
-        return Objects.equals(this.fields, listPublicBorderGroupsRequest.fields);
+        ListPublicBorderGroupsRequest that = (ListPublicBorderGroupsRequest) obj;
+        return Objects.equals(this.fields, that.fields);
     }
 
     @Override

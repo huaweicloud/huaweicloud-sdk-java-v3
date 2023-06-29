@@ -34,15 +34,15 @@ public class CreateGrantResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGrantResponse createGrantResponse = (CreateGrantResponse) o;
-        return Objects.equals(this.grantId, createGrantResponse.grantId);
+        CreateGrantResponse that = (CreateGrantResponse) obj;
+        return Objects.equals(this.grantId, that.grantId);
     }
 
     @Override

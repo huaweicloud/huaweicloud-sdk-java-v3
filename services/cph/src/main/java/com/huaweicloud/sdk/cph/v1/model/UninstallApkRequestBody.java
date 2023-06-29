@@ -134,18 +134,16 @@ public class UninstallApkRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UninstallApkRequestBody uninstallApkRequestBody = (UninstallApkRequestBody) o;
-        return Objects.equals(this.command, uninstallApkRequestBody.command)
-            && Objects.equals(this.content, uninstallApkRequestBody.content)
-            && Objects.equals(this.phoneIds, uninstallApkRequestBody.phoneIds)
-            && Objects.equals(this.serverIds, uninstallApkRequestBody.serverIds);
+        UninstallApkRequestBody that = (UninstallApkRequestBody) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.phoneIds, that.phoneIds) && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

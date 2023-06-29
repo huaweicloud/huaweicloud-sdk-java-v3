@@ -78,18 +78,17 @@ public class ShowDbObjectTemplateProgressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDbObjectTemplateProgressResponse showDbObjectTemplateProgressResponse =
-            (ShowDbObjectTemplateProgressResponse) o;
-        return Objects.equals(this.sendSuccess, showDbObjectTemplateProgressResponse.sendSuccess)
-            && Objects.equals(this.processStatus, showDbObjectTemplateProgressResponse.processStatus)
-            && Objects.equals(this.parsedSuccessNumber, showDbObjectTemplateProgressResponse.parsedSuccessNumber);
+        ShowDbObjectTemplateProgressResponse that = (ShowDbObjectTemplateProgressResponse) obj;
+        return Objects.equals(this.sendSuccess, that.sendSuccess)
+            && Objects.equals(this.processStatus, that.processStatus)
+            && Objects.equals(this.parsedSuccessNumber, that.parsedSuccessNumber);
     }
 
     @Override

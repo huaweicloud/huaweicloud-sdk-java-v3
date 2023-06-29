@@ -150,22 +150,15 @@ public class ShowReplicationParams {
             if (value == null) {
                 return null;
             }
-            ReplicationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplicationStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplicationStatusEnum(value));
         }
 
         public static ReplicationStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReplicationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -485,30 +478,25 @@ public class ShowReplicationParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReplicationParams showReplicationParams = (ShowReplicationParams) o;
-        return Objects.equals(this.id, showReplicationParams.id)
-            && Objects.equals(this.name, showReplicationParams.name)
-            && Objects.equals(this.description, showReplicationParams.description)
-            && Objects.equals(this.status, showReplicationParams.status)
-            && Objects.equals(this.volumeIds, showReplicationParams.volumeIds)
-            && Objects.equals(this.attachment, showReplicationParams.attachment)
-            && Objects.equals(this.createdAt, showReplicationParams.createdAt)
-            && Objects.equals(this.updatedAt, showReplicationParams.updatedAt)
-            && Objects.equals(this.replicationModel, showReplicationParams.replicationModel)
-            && Objects.equals(this.progress, showReplicationParams.progress)
-            && Objects.equals(this.failureDetail, showReplicationParams.failureDetail)
-            && Objects.equals(this.recordMetadata, showReplicationParams.recordMetadata)
-            && Objects.equals(this.faultLevel, showReplicationParams.faultLevel)
-            && Objects.equals(this.serverGroupId, showReplicationParams.serverGroupId)
-            && Objects.equals(this.priorityStation, showReplicationParams.priorityStation)
-            && Objects.equals(this.replicationStatus, showReplicationParams.replicationStatus);
+        ShowReplicationParams that = (ShowReplicationParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volumeIds, that.volumeIds) && Objects.equals(this.attachment, that.attachment)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.replicationModel, that.replicationModel)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.failureDetail, that.failureDetail)
+            && Objects.equals(this.recordMetadata, that.recordMetadata)
+            && Objects.equals(this.faultLevel, that.faultLevel)
+            && Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.priorityStation, that.priorityStation)
+            && Objects.equals(this.replicationStatus, that.replicationStatus);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ApproveOpinionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApproveOpinionDetail approveOpinionDetail = (ApproveOpinionDetail) o;
-        return Objects.equals(this.result, approveOpinionDetail.result)
-            && Objects.equals(this.content, approveOpinionDetail.content);
+        ApproveOpinionDetail that = (ApproveOpinionDetail) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.content, that.content);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class RestoreClusterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreClusterRequest restoreClusterRequest = (RestoreClusterRequest) o;
-        return Objects.equals(this.snapshotId, restoreClusterRequest.snapshotId)
-            && Objects.equals(this.body, restoreClusterRequest.body);
+        RestoreClusterRequest that = (RestoreClusterRequest) obj;
+        return Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.body, that.body);
     }
 
     @Override

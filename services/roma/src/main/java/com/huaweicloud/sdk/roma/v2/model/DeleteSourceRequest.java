@@ -79,17 +79,16 @@ public class DeleteSourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSourceRequest deleteSourceRequest = (DeleteSourceRequest) o;
-        return Objects.equals(this.instanceId, deleteSourceRequest.instanceId)
-            && Objects.equals(this.ruleId, deleteSourceRequest.ruleId)
-            && Objects.equals(this.sourceId, deleteSourceRequest.sourceId);
+        DeleteSourceRequest that = (DeleteSourceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.sourceId, that.sourceId);
     }
 
     @Override

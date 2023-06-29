@@ -161,21 +161,18 @@ public class SearchResourceShareInvitationReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResourceShareInvitationReqBody searchResourceShareInvitationReqBody =
-            (SearchResourceShareInvitationReqBody) o;
-        return Objects.equals(this.resourceShareIds, searchResourceShareInvitationReqBody.resourceShareIds)
-            && Objects.equals(this.resourceShareInvitationIds,
-                searchResourceShareInvitationReqBody.resourceShareInvitationIds)
-            && Objects.equals(this.status, searchResourceShareInvitationReqBody.status)
-            && Objects.equals(this.limit, searchResourceShareInvitationReqBody.limit)
-            && Objects.equals(this.marker, searchResourceShareInvitationReqBody.marker);
+        SearchResourceShareInvitationReqBody that = (SearchResourceShareInvitationReqBody) obj;
+        return Objects.equals(this.resourceShareIds, that.resourceShareIds)
+            && Objects.equals(this.resourceShareInvitationIds, that.resourceShareInvitationIds)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

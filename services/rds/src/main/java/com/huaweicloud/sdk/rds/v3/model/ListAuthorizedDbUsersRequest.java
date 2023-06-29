@@ -123,19 +123,17 @@ public class ListAuthorizedDbUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorizedDbUsersRequest listAuthorizedDbUsersRequest = (ListAuthorizedDbUsersRequest) o;
-        return Objects.equals(this.xLanguage, listAuthorizedDbUsersRequest.xLanguage)
-            && Objects.equals(this.instanceId, listAuthorizedDbUsersRequest.instanceId)
-            && Objects.equals(this.dbName, listAuthorizedDbUsersRequest.dbName)
-            && Objects.equals(this.page, listAuthorizedDbUsersRequest.page)
-            && Objects.equals(this.limit, listAuthorizedDbUsersRequest.limit);
+        ListAuthorizedDbUsersRequest that = (ListAuthorizedDbUsersRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

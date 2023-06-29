@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.aom.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.aom.v1.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 
 public class AomClient {
+
     protected HcClient hcClient;
 
     public AomClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class AomClient {
     public static ClientBuilder<AomClient> newBuilder() {
         return new ClientBuilder<>(AomClient::new);
     }
-
 
     /**
      * 快速创建并执行脚本
@@ -41,8 +41,10 @@ public class AomClient {
      * @param CreateFastExecuteScriptRequest 请求对象
      * @return SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>
      */
-    public SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScriptInvoker(CreateFastExecuteScriptRequest request) {
-        return new SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>(request, AomMeta.createFastExecuteScript, hcClient);
+    public SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse> createFastExecuteScriptInvoker(
+        CreateFastExecuteScriptRequest request) {
+        return new SyncInvoker<CreateFastExecuteScriptRequest, CreateFastExecuteScriptResponse>(request,
+            AomMeta.createFastExecuteScript, hcClient);
     }
 
     /**
@@ -69,8 +71,10 @@ public class AomClient {
      * @param CreateWorkflowRequest 请求对象
      * @return SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>
      */
-    public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(CreateWorkflowRequest request) {
-        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, AomMeta.createWorkflow, hcClient);
+    public SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse> createWorkflowInvoker(
+        CreateWorkflowRequest request) {
+        return new SyncInvoker<CreateWorkflowRequest, CreateWorkflowResponse>(request, AomMeta.createWorkflow,
+            hcClient);
     }
 
     /**
@@ -97,8 +101,10 @@ public class AomClient {
      * @param ExecuteWorkflowRequest 请求对象
      * @return SyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse>
      */
-    public SyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse> executeWorkflowInvoker(ExecuteWorkflowRequest request) {
-        return new SyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse>(request, AomMeta.executeWorkflow, hcClient);
+    public SyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse> executeWorkflowInvoker(
+        ExecuteWorkflowRequest request) {
+        return new SyncInvoker<ExecuteWorkflowRequest, ExecuteWorkflowResponse>(request, AomMeta.executeWorkflow,
+            hcClient);
     }
 
     /**
@@ -125,8 +131,10 @@ public class AomClient {
      * @param ListAllJobByNameRequest 请求对象
      * @return SyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse>
      */
-    public SyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse> listAllJobByNameInvoker(ListAllJobByNameRequest request) {
-        return new SyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse>(request, AomMeta.listAllJobByName, hcClient);
+    public SyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse> listAllJobByNameInvoker(
+        ListAllJobByNameRequest request) {
+        return new SyncInvoker<ListAllJobByNameRequest, ListAllJobByNameResponse>(request, AomMeta.listAllJobByName,
+            hcClient);
     }
 
     /**
@@ -153,8 +161,10 @@ public class AomClient {
      * @param ListAllScriptByNameRequest 请求对象
      * @return SyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse>
      */
-    public SyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse> listAllScriptByNameInvoker(ListAllScriptByNameRequest request) {
-        return new SyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse>(request, AomMeta.listAllScriptByName, hcClient);
+    public SyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse> listAllScriptByNameInvoker(
+        ListAllScriptByNameRequest request) {
+        return new SyncInvoker<ListAllScriptByNameRequest, ListAllScriptByNameResponse>(request,
+            AomMeta.listAllScriptByName, hcClient);
     }
 
     /**
@@ -181,8 +191,10 @@ public class AomClient {
      * @param ListAllVersionByVersionIdRequest 请求对象
      * @return SyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse>
      */
-    public SyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> listAllVersionByVersionIdInvoker(ListAllVersionByVersionIdRequest request) {
-        return new SyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse>(request, AomMeta.listAllVersionByVersionId, hcClient);
+    public SyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse> listAllVersionByVersionIdInvoker(
+        ListAllVersionByVersionIdRequest request) {
+        return new SyncInvoker<ListAllVersionByVersionIdRequest, ListAllVersionByVersionIdResponse>(request,
+            AomMeta.listAllVersionByVersionId, hcClient);
     }
 
     /**
@@ -209,8 +221,10 @@ public class AomClient {
      * @param ListTemplateByJobIdRequest 请求对象
      * @return SyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse>
      */
-    public SyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> listTemplateByJobIdInvoker(ListTemplateByJobIdRequest request) {
-        return new SyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse>(request, AomMeta.listTemplateByJobId, hcClient);
+    public SyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse> listTemplateByJobIdInvoker(
+        ListTemplateByJobIdRequest request) {
+        return new SyncInvoker<ListTemplateByJobIdRequest, ListTemplateByJobIdResponse>(request,
+            AomMeta.listTemplateByJobId, hcClient);
     }
 
     /**
@@ -265,8 +279,10 @@ public class AomClient {
      * @param ListWorkflowExecutionsRequest 请求对象
      * @return SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>
      */
-    public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(ListWorkflowExecutionsRequest request) {
-        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request, AomMeta.listWorkflowExecutions, hcClient);
+    public SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse> listWorkflowExecutionsInvoker(
+        ListWorkflowExecutionsRequest request) {
+        return new SyncInvoker<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResponse>(request,
+            AomMeta.listWorkflowExecutions, hcClient);
     }
 
     /**
@@ -293,8 +309,10 @@ public class AomClient {
      * @param SearchTemplateByIdRequest 请求对象
      * @return SyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse>
      */
-    public SyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse> searchTemplateByIdInvoker(SearchTemplateByIdRequest request) {
-        return new SyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse>(request, AomMeta.searchTemplateById, hcClient);
+    public SyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse> searchTemplateByIdInvoker(
+        SearchTemplateByIdRequest request) {
+        return new SyncInvoker<SearchTemplateByIdRequest, SearchTemplateByIdResponse>(request,
+            AomMeta.searchTemplateById, hcClient);
     }
 
     /**
@@ -307,7 +325,8 @@ public class AomClient {
      * @param SearchWorkflowExecutionDetailRequest 请求对象
      * @return SearchWorkflowExecutionDetailResponse
      */
-    public SearchWorkflowExecutionDetailResponse searchWorkflowExecutionDetail(SearchWorkflowExecutionDetailRequest request) {
+    public SearchWorkflowExecutionDetailResponse searchWorkflowExecutionDetail(
+        SearchWorkflowExecutionDetailRequest request) {
         return hcClient.syncInvokeHttp(request, AomMeta.searchWorkflowExecutionDetail);
     }
 
@@ -321,8 +340,10 @@ public class AomClient {
      * @param SearchWorkflowExecutionDetailRequest 请求对象
      * @return SyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse>
      */
-    public SyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> searchWorkflowExecutionDetailInvoker(SearchWorkflowExecutionDetailRequest request) {
-        return new SyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse>(request, AomMeta.searchWorkflowExecutionDetail, hcClient);
+    public SyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse> searchWorkflowExecutionDetailInvoker(
+        SearchWorkflowExecutionDetailRequest request) {
+        return new SyncInvoker<SearchWorkflowExecutionDetailRequest, SearchWorkflowExecutionDetailResponse>(request,
+            AomMeta.searchWorkflowExecutionDetail, hcClient);
     }
 
     /**
@@ -335,7 +356,8 @@ public class AomClient {
      * @param StartPausingWorkflowExecutionsRequest 请求对象
      * @return StartPausingWorkflowExecutionsResponse
      */
-    public StartPausingWorkflowExecutionsResponse startPausingWorkflowExecutions(StartPausingWorkflowExecutionsRequest request) {
+    public StartPausingWorkflowExecutionsResponse startPausingWorkflowExecutions(
+        StartPausingWorkflowExecutionsRequest request) {
         return hcClient.syncInvokeHttp(request, AomMeta.startPausingWorkflowExecutions);
     }
 
@@ -349,8 +371,10 @@ public class AomClient {
      * @param StartPausingWorkflowExecutionsRequest 请求对象
      * @return SyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse>
      */
-    public SyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> startPausingWorkflowExecutionsInvoker(StartPausingWorkflowExecutionsRequest request) {
-        return new SyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse>(request, AomMeta.startPausingWorkflowExecutions, hcClient);
+    public SyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse> startPausingWorkflowExecutionsInvoker(
+        StartPausingWorkflowExecutionsRequest request) {
+        return new SyncInvoker<StartPausingWorkflowExecutionsRequest, StartPausingWorkflowExecutionsResponse>(request,
+            AomMeta.startPausingWorkflowExecutions, hcClient);
     }
 
     /**
@@ -405,8 +429,10 @@ public class AomClient {
      * @param UpdateWorkflowTriggerStatusRequest 请求对象
      * @return SyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse>
      */
-    public SyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> updateWorkflowTriggerStatusInvoker(UpdateWorkflowTriggerStatusRequest request) {
-        return new SyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse>(request, AomMeta.updateWorkflowTriggerStatus, hcClient);
+    public SyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse> updateWorkflowTriggerStatusInvoker(
+        UpdateWorkflowTriggerStatusRequest request) {
+        return new SyncInvoker<UpdateWorkflowTriggerStatusRequest, UpdateWorkflowTriggerStatusResponse>(request,
+            AomMeta.updateWorkflowTriggerStatus, hcClient);
     }
 
 }

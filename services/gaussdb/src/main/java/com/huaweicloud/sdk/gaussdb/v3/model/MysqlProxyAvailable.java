@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlProxyAvailable
  */
-public class MysqlProxyAvailable  {
-
+public class MysqlProxyAvailable {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
 
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -33,9 +24,6 @@ public class MysqlProxyAvailable  {
         this.code = code;
         return this;
     }
-
-    
-
 
     /**
      * 可用区编码。
@@ -49,15 +37,10 @@ public class MysqlProxyAvailable  {
         this.code = code;
     }
 
-    
-
     public MysqlProxyAvailable withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 可用区描述。
@@ -71,24 +54,23 @@ public class MysqlProxyAvailable  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlProxyAvailable mysqlProxyAvailable = (MysqlProxyAvailable) o;
-        return Objects.equals(this.code, mysqlProxyAvailable.code) &&
-            Objects.equals(this.description, mysqlProxyAvailable.description);
+        MysqlProxyAvailable that = (MysqlProxyAvailable) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(code, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class MysqlProxyAvailable  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class MysqlProxyAvailable  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

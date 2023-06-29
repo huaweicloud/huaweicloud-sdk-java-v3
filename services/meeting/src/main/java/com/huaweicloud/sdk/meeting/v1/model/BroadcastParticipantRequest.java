@@ -79,17 +79,17 @@ public class BroadcastParticipantRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BroadcastParticipantRequest broadcastParticipantRequest = (BroadcastParticipantRequest) o;
-        return Objects.equals(this.conferenceID, broadcastParticipantRequest.conferenceID)
-            && Objects.equals(this.participantID, broadcastParticipantRequest.participantID)
-            && Objects.equals(this.xConferenceAuthorization, broadcastParticipantRequest.xConferenceAuthorization);
+        BroadcastParticipantRequest that = (BroadcastParticipantRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

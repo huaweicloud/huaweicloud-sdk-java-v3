@@ -33,15 +33,15 @@ public class Nic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nic nic = (Nic) o;
-        return Objects.equals(this.subnetId, nic.subnetId);
+        Nic that = (Nic) obj;
+        return Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class MoveAccountReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MoveAccountReqBody moveAccountReqBody = (MoveAccountReqBody) o;
-        return Objects.equals(this.sourceParentId, moveAccountReqBody.sourceParentId)
-            && Objects.equals(this.destinationParentId, moveAccountReqBody.destinationParentId);
+        MoveAccountReqBody that = (MoveAccountReqBody) obj;
+        return Objects.equals(this.sourceParentId, that.sourceParentId)
+            && Objects.equals(this.destinationParentId, that.destinationParentId);
     }
 
     @Override

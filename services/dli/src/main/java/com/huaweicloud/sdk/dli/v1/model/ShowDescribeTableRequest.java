@@ -55,16 +55,15 @@ public class ShowDescribeTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDescribeTableRequest showDescribeTableRequest = (ShowDescribeTableRequest) o;
-        return Objects.equals(this.databaseName, showDescribeTableRequest.databaseName)
-            && Objects.equals(this.tableName, showDescribeTableRequest.tableName);
+        ShowDescribeTableRequest that = (ShowDescribeTableRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

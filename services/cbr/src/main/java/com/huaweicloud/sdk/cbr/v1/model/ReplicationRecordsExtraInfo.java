@@ -121,19 +121,17 @@ public class ReplicationRecordsExtraInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplicationRecordsExtraInfo replicationRecordsExtraInfo = (ReplicationRecordsExtraInfo) o;
-        return Objects.equals(this.progress, replicationRecordsExtraInfo.progress)
-            && Objects.equals(this.failCode, replicationRecordsExtraInfo.failCode)
-            && Objects.equals(this.failReason, replicationRecordsExtraInfo.failReason)
-            && Objects.equals(this.autoTrigger, replicationRecordsExtraInfo.autoTrigger)
-            && Objects.equals(this.destinatioVaultId, replicationRecordsExtraInfo.destinatioVaultId);
+        ReplicationRecordsExtraInfo that = (ReplicationRecordsExtraInfo) obj;
+        return Objects.equals(this.progress, that.progress) && Objects.equals(this.failCode, that.failCode)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.autoTrigger, that.autoTrigger)
+            && Objects.equals(this.destinatioVaultId, that.destinatioVaultId);
     }
 
     @Override

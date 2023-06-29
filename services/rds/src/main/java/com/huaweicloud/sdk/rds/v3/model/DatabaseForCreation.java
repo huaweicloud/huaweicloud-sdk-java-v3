@@ -77,17 +77,16 @@ public class DatabaseForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseForCreation databaseForCreation = (DatabaseForCreation) o;
-        return Objects.equals(this.name, databaseForCreation.name)
-            && Objects.equals(this.characterSet, databaseForCreation.characterSet)
-            && Objects.equals(this.comment, databaseForCreation.comment);
+        DatabaseForCreation that = (DatabaseForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.characterSet, that.characterSet)
+            && Objects.equals(this.comment, that.comment);
     }
 
     @Override

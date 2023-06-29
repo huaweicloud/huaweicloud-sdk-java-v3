@@ -66,22 +66,15 @@ public class CreateDestinationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationTypeEnum(value));
         }
 
         public static DestinationTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,25 +333,20 @@ public class CreateDestinationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDestinationResponse createDestinationResponse = (CreateDestinationResponse) o;
-        return Objects.equals(this.destinationId, createDestinationResponse.destinationId)
-            && Objects.equals(this.destinationType, createDestinationResponse.destinationType)
-            && Objects.equals(this.appId, createDestinationResponse.appId)
-            && Objects.equals(this.destinationName, createDestinationResponse.destinationName)
-            && Objects.equals(this.topic, createDestinationResponse.topic)
-            && Objects.equals(this.server, createDestinationResponse.server)
-            && Objects.equals(this.token, createDestinationResponse.token)
-            && Objects.equals(this.tag, createDestinationResponse.tag)
-            && Objects.equals(this.mqsSaslSsl, createDestinationResponse.mqsSaslSsl)
-            && Objects.equals(this.userName, createDestinationResponse.userName)
-            && Objects.equals(this.password, createDestinationResponse.password);
+        CreateDestinationResponse that = (CreateDestinationResponse) obj;
+        return Objects.equals(this.destinationId, that.destinationId)
+            && Objects.equals(this.destinationType, that.destinationType) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.destinationName, that.destinationName) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.server, that.server) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.mqsSaslSsl, that.mqsSaslSsl)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

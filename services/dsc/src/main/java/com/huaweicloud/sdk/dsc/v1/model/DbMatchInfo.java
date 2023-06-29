@@ -140,18 +140,17 @@ public class DbMatchInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbMatchInfo dbMatchInfo = (DbMatchInfo) o;
-        return Objects.equals(this.columnName, dbMatchInfo.columnName)
-            && Objects.equals(this.ruleName, dbMatchInfo.ruleName) && Objects.equals(this.ruleId, dbMatchInfo.ruleId)
-            && Objects.equals(this.ruleRiskLevel, dbMatchInfo.ruleRiskLevel)
-            && Objects.equals(this.columnLine, dbMatchInfo.columnLine);
+        DbMatchInfo that = (DbMatchInfo) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleRiskLevel, that.ruleRiskLevel)
+            && Objects.equals(this.columnLine, that.columnLine);
     }
 
     @Override

@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.CreateGraphReqGraph;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建图请求体
  */
-public class CreateGraphReq  {
-
+public class CreateGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph")
-    
+    @JsonProperty(value = "graph")
 
     private CreateGraphReqGraph graph;
 
@@ -30,14 +22,13 @@ public class CreateGraphReq  {
     }
 
     public CreateGraphReq withGraph(Consumer<CreateGraphReqGraph> graphSetter) {
-        if(this.graph == null ){
+        if (this.graph == null) {
             this.graph = new CreateGraphReqGraph();
             graphSetter.accept(this.graph);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get graph
@@ -51,23 +42,23 @@ public class CreateGraphReq  {
         this.graph = graph;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGraphReq createGraphReq = (CreateGraphReq) o;
-        return Objects.equals(this.graph, createGraphReq.graph);
+        CreateGraphReq that = (CreateGraphReq) obj;
+        return Objects.equals(this.graph, that.graph);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graph);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class CreateGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class CreateGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -53,15 +53,15 @@ public class ShowResourceQuotasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceQuotasResponse showResourceQuotasResponse = (ShowResourceQuotasResponse) o;
-        return Objects.equals(this.dataList, showResourceQuotasResponse.dataList);
+        ShowResourceQuotasResponse that = (ShowResourceQuotasResponse) obj;
+        return Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

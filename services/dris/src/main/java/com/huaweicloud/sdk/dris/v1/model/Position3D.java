@@ -77,16 +77,16 @@ public class Position3D {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Position3D position3D = (Position3D) o;
-        return Objects.equals(this.lat, position3D.lat) && Objects.equals(this.lon, position3D.lon)
-            && Objects.equals(this.ele, position3D.ele);
+        Position3D that = (Position3D) obj;
+        return Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele);
     }
 
     @Override

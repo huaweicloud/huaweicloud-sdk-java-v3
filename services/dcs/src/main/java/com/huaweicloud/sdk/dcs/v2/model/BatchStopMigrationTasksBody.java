@@ -52,15 +52,15 @@ public class BatchStopMigrationTasksBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStopMigrationTasksBody batchStopMigrationTasksBody = (BatchStopMigrationTasksBody) o;
-        return Objects.equals(this.migrationTasks, batchStopMigrationTasksBody.migrationTasks);
+        BatchStopMigrationTasksBody that = (BatchStopMigrationTasksBody) obj;
+        return Objects.equals(this.migrationTasks, that.migrationTasks);
     }
 
     @Override

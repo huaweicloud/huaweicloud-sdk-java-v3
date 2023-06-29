@@ -125,19 +125,17 @@ public class ShowRecordRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordRuleRequest showRecordRuleRequest = (ShowRecordRuleRequest) o;
-        return Objects.equals(this.authorization, showRecordRuleRequest.authorization)
-            && Objects.equals(this.xSdkDate, showRecordRuleRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showRecordRuleRequest.xProjectId)
-            && Objects.equals(this.appId, showRecordRuleRequest.appId)
-            && Objects.equals(this.ruleId, showRecordRuleRequest.ruleId);
+        ShowRecordRuleRequest that = (ShowRecordRuleRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

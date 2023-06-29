@@ -408,32 +408,26 @@ public class CreateTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskResponse createTaskResponse = (CreateTaskResponse) o;
-        return Objects.equals(this.taskId, createTaskResponse.taskId)
-            && Objects.equals(this.workspaceId, createTaskResponse.workspaceId)
-            && Objects.equals(this.dataId, createTaskResponse.dataId)
-            && Objects.equals(this.taskName, createTaskResponse.taskName)
-            && Objects.equals(this.creator, createTaskResponse.creator)
-            && Objects.equals(this.createTime, createTaskResponse.createTime)
-            && Objects.equals(this.taskStatus, createTaskResponse.taskStatus)
-            && Objects.equals(this.taskType, createTaskResponse.taskType)
-            && Objects.equals(this.taskDescription, createTaskResponse.taskDescription)
-            && Objects.equals(this.execStartTime, createTaskResponse.execStartTime)
-            && Objects.equals(this.execStopTime, createTaskResponse.execStopTime)
-            && Objects.equals(this.originDataAlias, createTaskResponse.originDataAlias)
-            && Objects.equals(this.productionLevel, createTaskResponse.productionLevel)
-            && Objects.equals(this.taskProgress, createTaskResponse.taskProgress)
-            && Objects.equals(this.shapeId, createTaskResponse.shapeId)
-            && Objects.equals(this.isDeleted, createTaskResponse.isDeleted)
-            && Objects.equals(this.imageUrl, createTaskResponse.imageUrl)
-            && Objects.equals(this.domainId, createTaskResponse.domainId);
+        CreateTaskResponse that = (CreateTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.dataId, that.dataId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.taskDescription, that.taskDescription)
+            && Objects.equals(this.execStartTime, that.execStartTime)
+            && Objects.equals(this.execStopTime, that.execStopTime)
+            && Objects.equals(this.originDataAlias, that.originDataAlias)
+            && Objects.equals(this.productionLevel, that.productionLevel)
+            && Objects.equals(this.taskProgress, that.taskProgress) && Objects.equals(this.shapeId, that.shapeId)
+            && Objects.equals(this.isDeleted, that.isDeleted) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

@@ -65,17 +65,15 @@ public class BatchAssociateClassificationToEntitiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAssociateClassificationToEntitiesRequest batchAssociateClassificationToEntitiesRequest =
-            (BatchAssociateClassificationToEntitiesRequest) o;
-        return Objects.equals(this.workspace, batchAssociateClassificationToEntitiesRequest.workspace)
-            && Objects.equals(this.body, batchAssociateClassificationToEntitiesRequest.body);
+        BatchAssociateClassificationToEntitiesRequest that = (BatchAssociateClassificationToEntitiesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

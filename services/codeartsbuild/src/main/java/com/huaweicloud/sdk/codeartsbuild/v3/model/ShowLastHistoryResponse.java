@@ -188,22 +188,18 @@ public class ShowLastHistoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLastHistoryResponse showLastHistoryResponse = (ShowLastHistoryResponse) o;
-        return Objects.equals(this.recordId, showLastHistoryResponse.recordId)
-            && Objects.equals(this.jobId, showLastHistoryResponse.jobId)
-            && Objects.equals(this.jobName, showLastHistoryResponse.jobName)
-            && Objects.equals(this.buildNumber, showLastHistoryResponse.buildNumber)
-            && Objects.equals(this.startTime, showLastHistoryResponse.startTime)
-            && Objects.equals(this.endTime, showLastHistoryResponse.endTime)
-            && Objects.equals(this.result, showLastHistoryResponse.result)
-            && Objects.equals(this.commitId, showLastHistoryResponse.commitId);
+        ShowLastHistoryResponse that = (ShowLastHistoryResponse) obj;
+        return Objects.equals(this.recordId, that.recordId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.buildNumber, that.buildNumber)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.commitId, that.commitId);
     }
 
     @Override

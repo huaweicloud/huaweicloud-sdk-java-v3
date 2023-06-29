@@ -43,15 +43,15 @@ public class UpdateParametersReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateParametersReq updateParametersReq = (UpdateParametersReq) o;
-        return Objects.equals(this.values, updateParametersReq.values);
+        UpdateParametersReq that = (UpdateParametersReq) obj;
+        return Objects.equals(this.values, that.values);
     }
 
     @Override

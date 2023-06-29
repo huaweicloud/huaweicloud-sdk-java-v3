@@ -191,22 +191,18 @@ public class ListDeviceGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceGroupsRequest listDeviceGroupsRequest = (ListDeviceGroupsRequest) o;
-        return Objects.equals(this.instanceId, listDeviceGroupsRequest.instanceId)
-            && Objects.equals(this.limit, listDeviceGroupsRequest.limit)
-            && Objects.equals(this.marker, listDeviceGroupsRequest.marker)
-            && Objects.equals(this.offset, listDeviceGroupsRequest.offset)
-            && Objects.equals(this.lastModifiedTime, listDeviceGroupsRequest.lastModifiedTime)
-            && Objects.equals(this.appId, listDeviceGroupsRequest.appId)
-            && Objects.equals(this.groupType, listDeviceGroupsRequest.groupType)
-            && Objects.equals(this.name, listDeviceGroupsRequest.name);
+        ListDeviceGroupsRequest that = (ListDeviceGroupsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.name, that.name);
     }
 
     @Override

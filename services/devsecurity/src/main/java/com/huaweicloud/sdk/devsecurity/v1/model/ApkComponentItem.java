@@ -156,19 +156,17 @@ public class ApkComponentItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApkComponentItem apkComponentItem = (ApkComponentItem) o;
-        return Objects.equals(this.name, apkComponentItem.name)
-            && Objects.equals(this.actionList, apkComponentItem.actionList)
-            && Objects.equals(this.categoryList, apkComponentItem.categoryList)
-            && Objects.equals(this.isMainActivity, apkComponentItem.isMainActivity)
-            && Objects.equals(this.exported, apkComponentItem.exported);
+        ApkComponentItem that = (ApkComponentItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.actionList, that.actionList)
+            && Objects.equals(this.categoryList, that.categoryList)
+            && Objects.equals(this.isMainActivity, that.isMainActivity) && Objects.equals(this.exported, that.exported);
     }
 
     @Override

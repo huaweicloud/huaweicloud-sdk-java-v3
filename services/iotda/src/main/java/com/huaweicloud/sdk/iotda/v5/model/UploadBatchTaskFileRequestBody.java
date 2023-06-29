@@ -64,15 +64,15 @@ public class UploadBatchTaskFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadBatchTaskFileRequestBody uploadBatchTaskFileRequestBody = (UploadBatchTaskFileRequestBody) o;
-        return Objects.equals(this.file, uploadBatchTaskFileRequestBody.file);
+        UploadBatchTaskFileRequestBody that = (UploadBatchTaskFileRequestBody) obj;
+        return Objects.equals(this.file, that.file);
     }
 
     @Override

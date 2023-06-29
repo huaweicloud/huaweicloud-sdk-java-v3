@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.QueryMetricItemOptionParam;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 指标查询参数详情。
  */
-public class MetricAPIQueryItemParam  {
-
+public class MetricAPIQueryItemParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inventoryId")
-    
+    @JsonProperty(value = "inventoryId")
 
     private String inventoryId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metricItems")
-    
+    @JsonProperty(value = "metricItems")
+
     private List<QueryMetricItemOptionParam> metricItems = null;
-    
+
     public MetricAPIQueryItemParam withInventoryId(String inventoryId) {
         this.inventoryId = inventoryId;
         return this;
     }
-
-    
-
 
     /**
      * 资源编号,格式为resType_resId。其中resType部分的枚举值为：host, application, instance, container, process, network, storage, volume。当URI参数中的type取值为“inventory”时，通过该参数查询关联的指标，不再使用metricItems数组中的信息。
@@ -51,16 +40,13 @@ public class MetricAPIQueryItemParam  {
         this.inventoryId = inventoryId;
     }
 
-    
-
     public MetricAPIQueryItemParam withMetricItems(List<QueryMetricItemOptionParam> metricItems) {
         this.metricItems = metricItems;
         return this;
     }
 
-    
     public MetricAPIQueryItemParam addMetricItemsItem(QueryMetricItemOptionParam metricItemsItem) {
-        if(this.metricItems == null) {
+        if (this.metricItems == null) {
             this.metricItems = new ArrayList<>();
         }
         this.metricItems.add(metricItemsItem);
@@ -68,7 +54,7 @@ public class MetricAPIQueryItemParam  {
     }
 
     public MetricAPIQueryItemParam withMetricItems(Consumer<List<QueryMetricItemOptionParam>> metricItemsSetter) {
-        if(this.metricItems == null) {
+        if (this.metricItems == null) {
             this.metricItems = new ArrayList<>();
         }
         metricItemsSetter.accept(this.metricItems);
@@ -87,24 +73,23 @@ public class MetricAPIQueryItemParam  {
         this.metricItems = metricItems;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricAPIQueryItemParam metricAPIQueryItemParam = (MetricAPIQueryItemParam) o;
-        return Objects.equals(this.inventoryId, metricAPIQueryItemParam.inventoryId) &&
-            Objects.equals(this.metricItems, metricAPIQueryItemParam.metricItems);
+        MetricAPIQueryItemParam that = (MetricAPIQueryItemParam) obj;
+        return Objects.equals(this.inventoryId, that.inventoryId) && Objects.equals(this.metricItems, that.metricItems);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(inventoryId, metricItems);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +99,7 @@ public class MetricAPIQueryItemParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +110,5 @@ public class MetricAPIQueryItemParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

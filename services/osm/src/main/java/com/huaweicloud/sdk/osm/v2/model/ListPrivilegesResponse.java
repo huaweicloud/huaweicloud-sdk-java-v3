@@ -36,15 +36,15 @@ public class ListPrivilegesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivilegesResponse listPrivilegesResponse = (ListPrivilegesResponse) o;
-        return Objects.equals(this.hasPrivilege, listPrivilegesResponse.hasPrivilege);
+        ListPrivilegesResponse that = (ListPrivilegesResponse) obj;
+        return Objects.equals(this.hasPrivilege, that.hasPrivilege);
     }
 
     @Override

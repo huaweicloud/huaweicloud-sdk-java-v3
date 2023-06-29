@@ -106,22 +106,15 @@ public class NotebookStatus {
         if (value == null) {
             return null;
         }
-        NotebookStatus result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new NotebookStatus(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotebookStatus(value));
     }
 
     public static NotebookStatus valueOf(String value) {
         if (value == null) {
             return null;
         }
-        NotebookStatus result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

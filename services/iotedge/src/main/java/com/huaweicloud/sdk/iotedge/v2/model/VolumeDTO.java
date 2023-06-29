@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * VolumeDTO
  */
-public class VolumeDTO  {
-
+public class VolumeDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
 
     private String source;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="destination")
-    
+    @JsonProperty(value = "destination")
 
     private String destination;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_only")
-    
+    @JsonProperty(value = "read_only")
 
     private Boolean readOnly;
 
@@ -51,9 +39,6 @@ public class VolumeDTO  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 卷名称
@@ -67,15 +52,10 @@ public class VolumeDTO  {
         this.name = name;
     }
 
-    
-
     public VolumeDTO withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 挂载类型
@@ -89,15 +69,10 @@ public class VolumeDTO  {
         this.type = type;
     }
 
-    
-
     public VolumeDTO withSource(String source) {
         this.source = source;
         return this;
     }
-
-    
-
 
     /**
      * 源路径
@@ -111,15 +86,10 @@ public class VolumeDTO  {
         this.source = source;
     }
 
-    
-
     public VolumeDTO withDestination(String destination) {
         this.destination = destination;
         return this;
     }
-
-    
-
 
     /**
      * 卷挂载路径
@@ -133,15 +103,10 @@ public class VolumeDTO  {
         this.destination = destination;
     }
 
-    
-
     public VolumeDTO withReadOnly(Boolean readOnly) {
         this.readOnly = readOnly;
         return this;
     }
-
-    
-
 
     /**
      * 只读，默认只读
@@ -155,27 +120,25 @@ public class VolumeDTO  {
         this.readOnly = readOnly;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeDTO volumeDTO = (VolumeDTO) o;
-        return Objects.equals(this.name, volumeDTO.name) &&
-            Objects.equals(this.type, volumeDTO.type) &&
-            Objects.equals(this.source, volumeDTO.source) &&
-            Objects.equals(this.destination, volumeDTO.destination) &&
-            Objects.equals(this.readOnly, volumeDTO.readOnly);
+        VolumeDTO that = (VolumeDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.readOnly, that.readOnly);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, source, destination, readOnly);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class VolumeDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class VolumeDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

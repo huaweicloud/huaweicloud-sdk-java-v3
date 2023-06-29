@@ -53,15 +53,15 @@ public class AssociateSignatureKeyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateSignatureKeyV2Response associateSignatureKeyV2Response = (AssociateSignatureKeyV2Response) o;
-        return Objects.equals(this.bindings, associateSignatureKeyV2Response.bindings);
+        AssociateSignatureKeyV2Response that = (AssociateSignatureKeyV2Response) obj;
+        return Objects.equals(this.bindings, that.bindings);
     }
 
     @Override

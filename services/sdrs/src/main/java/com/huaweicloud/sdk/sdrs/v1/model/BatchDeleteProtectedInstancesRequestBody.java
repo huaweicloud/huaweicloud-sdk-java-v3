@@ -97,18 +97,17 @@ public class BatchDeleteProtectedInstancesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteProtectedInstancesRequestBody batchDeleteProtectedInstancesRequestBody =
-            (BatchDeleteProtectedInstancesRequestBody) o;
-        return Objects.equals(this.protectedInstances, batchDeleteProtectedInstancesRequestBody.protectedInstances)
-            && Objects.equals(this.deleteTargetServer, batchDeleteProtectedInstancesRequestBody.deleteTargetServer)
-            && Objects.equals(this.deleteTargetEip, batchDeleteProtectedInstancesRequestBody.deleteTargetEip);
+        BatchDeleteProtectedInstancesRequestBody that = (BatchDeleteProtectedInstancesRequestBody) obj;
+        return Objects.equals(this.protectedInstances, that.protectedInstances)
+            && Objects.equals(this.deleteTargetServer, that.deleteTargetServer)
+            && Objects.equals(this.deleteTargetEip, that.deleteTargetEip);
     }
 
     @Override

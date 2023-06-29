@@ -56,16 +56,15 @@ public class PublishMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishMessageResponse publishMessageResponse = (PublishMessageResponse) o;
-        return Objects.equals(this.requestId, publishMessageResponse.requestId)
-            && Objects.equals(this.messageId, publishMessageResponse.messageId);
+        PublishMessageResponse that = (PublishMessageResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.messageId, that.messageId);
     }
 
     @Override

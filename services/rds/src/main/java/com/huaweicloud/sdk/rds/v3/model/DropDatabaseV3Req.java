@@ -33,15 +33,15 @@ public class DropDatabaseV3Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DropDatabaseV3Req dropDatabaseV3Req = (DropDatabaseV3Req) o;
-        return Objects.equals(this.isForceDelete, dropDatabaseV3Req.isForceDelete);
+        DropDatabaseV3Req that = (DropDatabaseV3Req) obj;
+        return Objects.equals(this.isForceDelete, that.isForceDelete);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowDeploymentGroupDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentGroupDetailRequest showDeploymentGroupDetailRequest = (ShowDeploymentGroupDetailRequest) o;
-        return Objects.equals(this.groupId, showDeploymentGroupDetailRequest.groupId);
+        ShowDeploymentGroupDetailRequest that = (ShowDeploymentGroupDetailRequest) obj;
+        return Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

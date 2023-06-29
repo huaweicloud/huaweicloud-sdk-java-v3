@@ -52,15 +52,15 @@ public class CreateRelation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRelation createRelation = (CreateRelation) o;
-        return Objects.equals(this.ids, createRelation.ids);
+        CreateRelation that = (CreateRelation) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

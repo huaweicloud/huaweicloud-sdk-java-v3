@@ -118,18 +118,17 @@ public class CompareTaskListResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareTaskListResult compareTaskListResult = (CompareTaskListResult) o;
-        return Objects.equals(this.compareTaskList, compareTaskListResult.compareTaskList)
-            && Objects.equals(this.compareTaskListCount, compareTaskListResult.compareTaskListCount)
-            && Objects.equals(this.errorMsg, compareTaskListResult.errorMsg)
-            && Objects.equals(this.errorCode, compareTaskListResult.errorCode);
+        CompareTaskListResult that = (CompareTaskListResult) obj;
+        return Objects.equals(this.compareTaskList, that.compareTaskList)
+            && Objects.equals(this.compareTaskListCount, that.compareTaskListCount)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

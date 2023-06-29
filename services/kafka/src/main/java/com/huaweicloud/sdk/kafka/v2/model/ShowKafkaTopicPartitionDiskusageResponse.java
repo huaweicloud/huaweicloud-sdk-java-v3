@@ -53,16 +53,15 @@ public class ShowKafkaTopicPartitionDiskusageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowKafkaTopicPartitionDiskusageResponse showKafkaTopicPartitionDiskusageResponse =
-            (ShowKafkaTopicPartitionDiskusageResponse) o;
-        return Objects.equals(this.brokerList, showKafkaTopicPartitionDiskusageResponse.brokerList);
+        ShowKafkaTopicPartitionDiskusageResponse that = (ShowKafkaTopicPartitionDiskusageResponse) obj;
+        return Objects.equals(this.brokerList, that.brokerList);
     }
 
     @Override

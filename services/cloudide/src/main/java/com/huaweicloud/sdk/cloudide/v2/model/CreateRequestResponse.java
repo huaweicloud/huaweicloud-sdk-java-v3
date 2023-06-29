@@ -80,17 +80,16 @@ public class CreateRequestResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestResponse createRequestResponse = (CreateRequestResponse) o;
-        return Objects.equals(this.requestId, createRequestResponse.requestId)
-            && Objects.equals(this.status, createRequestResponse.status)
-            && Objects.equals(this.dispatchedTaskNumber, createRequestResponse.dispatchedTaskNumber);
+        CreateRequestResponse that = (CreateRequestResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dispatchedTaskNumber, that.dispatchedTaskNumber);
     }
 
     @Override

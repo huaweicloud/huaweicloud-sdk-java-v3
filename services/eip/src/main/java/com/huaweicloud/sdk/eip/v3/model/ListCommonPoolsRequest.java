@@ -125,19 +125,17 @@ public class ListCommonPoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommonPoolsRequest listCommonPoolsRequest = (ListCommonPoolsRequest) o;
-        return Objects.equals(this.fields, listCommonPoolsRequest.fields)
-            && Objects.equals(this.limit, listCommonPoolsRequest.limit)
-            && Objects.equals(this.offset, listCommonPoolsRequest.offset)
-            && Objects.equals(this.name, listCommonPoolsRequest.name)
-            && Objects.equals(this.publicBorderGroup, listCommonPoolsRequest.publicBorderGroup);
+        ListCommonPoolsRequest that = (ListCommonPoolsRequest) obj;
+        return Objects.equals(this.fields, that.fields) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

@@ -54,15 +54,15 @@ public class UpdateProjectVpcChannelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectVpcChannelResponse updateProjectVpcChannelResponse = (UpdateProjectVpcChannelResponse) o;
-        return Objects.equals(this.projectVpcChannels, updateProjectVpcChannelResponse.projectVpcChannels);
+        UpdateProjectVpcChannelResponse that = (UpdateProjectVpcChannelResponse) obj;
+        return Objects.equals(this.projectVpcChannels, that.projectVpcChannels);
     }
 
     @Override

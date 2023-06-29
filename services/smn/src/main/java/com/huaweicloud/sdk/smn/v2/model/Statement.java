@@ -187,20 +187,18 @@ public class Statement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Statement statement = (Statement) o;
-        return Objects.equals(this.sid, statement.sid) && Objects.equals(this.effect, statement.effect)
-            && Objects.equals(this.principal, statement.principal)
-            && Objects.equals(this.notPrincipal, statement.notPrincipal)
-            && Objects.equals(this.action, statement.action) && Objects.equals(this.notAction, statement.notAction)
-            && Objects.equals(this.resource, statement.resource)
-            && Objects.equals(this.notResource, statement.notResource);
+        Statement that = (Statement) obj;
+        return Objects.equals(this.sid, that.sid) && Objects.equals(this.effect, that.effect)
+            && Objects.equals(this.principal, that.principal) && Objects.equals(this.notPrincipal, that.notPrincipal)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.notAction, that.notAction)
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.notResource, that.notResource);
     }
 
     @Override

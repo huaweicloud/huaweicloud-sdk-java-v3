@@ -65,16 +65,15 @@ public class DeleteNotificationTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNotificationTemplateRequest deleteNotificationTemplateRequest = (DeleteNotificationTemplateRequest) o;
-        return Objects.equals(this.domainId, deleteNotificationTemplateRequest.domainId)
-            && Objects.equals(this.body, deleteNotificationTemplateRequest.body);
+        DeleteNotificationTemplateRequest that = (DeleteNotificationTemplateRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

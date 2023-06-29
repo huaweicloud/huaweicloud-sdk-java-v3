@@ -121,19 +121,19 @@ public class NewCustomerV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NewCustomerV2 newCustomerV2 = (NewCustomerV2) o;
-        return Objects.equals(this.customerName, newCustomerV2.customerName)
-            && Objects.equals(this.mobilePhone, newCustomerV2.mobilePhone)
-            && Objects.equals(this.usePriMobilePhone, newCustomerV2.usePriMobilePhone)
-            && Objects.equals(this.password, newCustomerV2.password)
-            && Objects.equals(this.verificationCode, newCustomerV2.verificationCode);
+        NewCustomerV2 that = (NewCustomerV2) obj;
+        return Objects.equals(this.customerName, that.customerName)
+            && Objects.equals(this.mobilePhone, that.mobilePhone)
+            && Objects.equals(this.usePriMobilePhone, that.usePriMobilePhone)
+            && Objects.equals(this.password, that.password)
+            && Objects.equals(this.verificationCode, that.verificationCode);
     }
 
     @Override

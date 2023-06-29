@@ -97,18 +97,16 @@ public class GetAllRepositoryByProjectIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetAllRepositoryByProjectIdResponse getAllRepositoryByProjectIdResponse =
-            (GetAllRepositoryByProjectIdResponse) o;
-        return Objects.equals(this.error, getAllRepositoryByProjectIdResponse.error)
-            && Objects.equals(this.result, getAllRepositoryByProjectIdResponse.result)
-            && Objects.equals(this.status, getAllRepositoryByProjectIdResponse.status);
+        GetAllRepositoryByProjectIdResponse that = (GetAllRepositoryByProjectIdResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

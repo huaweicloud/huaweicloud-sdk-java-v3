@@ -187,22 +187,18 @@ public class ListRelationFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationFileRequest listRelationFileRequest = (ListRelationFileRequest) o;
-        return Objects.equals(this.jobId, listRelationFileRequest.jobId)
-            && Objects.equals(this.bucketId, listRelationFileRequest.bucketId)
-            && Objects.equals(this.assetsName, listRelationFileRequest.assetsName)
-            && Objects.equals(this.riskStart, listRelationFileRequest.riskStart)
-            && Objects.equals(this.riskEnd, listRelationFileRequest.riskEnd)
-            && Objects.equals(this.offset, listRelationFileRequest.offset)
-            && Objects.equals(this.size, listRelationFileRequest.size)
-            && Objects.equals(this.limit, listRelationFileRequest.limit);
+        ListRelationFileRequest that = (ListRelationFileRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.bucketId, that.bucketId)
+            && Objects.equals(this.assetsName, that.assetsName) && Objects.equals(this.riskStart, that.riskStart)
+            && Objects.equals(this.riskEnd, that.riskEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

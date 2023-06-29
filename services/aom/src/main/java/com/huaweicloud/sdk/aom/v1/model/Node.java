@@ -1,68 +1,53 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.Metadata;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 任务节点定义。
  */
-public class Node  {
-
+public class Node {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parent_node")
-    
+    @JsonProperty(value = "parent_node")
 
     private String parentNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="category")
-    
+    @JsonProperty(value = "category")
 
     private String category;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ignore_error")
-    
+    @JsonProperty(value = "ignore_error")
 
     private Boolean ignoreError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
 
     private Metadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_name")
-    
+    @JsonProperty(value = "task_name")
 
     private String taskName;
 
@@ -70,9 +55,6 @@ public class Node  {
         this.parentNode = parentNode;
         return this;
     }
-
-    
-
 
     /**
      * 父亲节点的名称。
@@ -86,15 +68,10 @@ public class Node  {
         this.parentNode = parentNode;
     }
 
-    
-
     public Node withCategory(String category) {
         this.category = category;
         return this;
     }
-
-    
-
 
     /**
      * 节点类型。
@@ -108,15 +85,10 @@ public class Node  {
         this.category = category;
     }
 
-    
-
     public Node withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 节点描述。
@@ -130,15 +102,10 @@ public class Node  {
         this.description = description;
     }
 
-    
-
     public Node withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 节点id
@@ -152,15 +119,10 @@ public class Node  {
         this.id = id;
     }
 
-    
-
     public Node withIgnoreError(Boolean ignoreError) {
         this.ignoreError = ignoreError;
         return this;
     }
-
-    
-
 
     /**
      * 是否忽略错误
@@ -174,22 +136,19 @@ public class Node  {
         this.ignoreError = ignoreError;
     }
 
-    
-
     public Node withMetadata(Metadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public Node withMetadata(Consumer<Metadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new Metadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get metadata
@@ -203,15 +162,10 @@ public class Node  {
         this.metadata = metadata;
     }
 
-    
-
     public Node withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 节点名称,比如是Node。
@@ -225,15 +179,10 @@ public class Node  {
         this.name = name;
     }
 
-    
-
     public Node withTaskName(String taskName) {
         this.taskName = taskName;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称，节点上任务的名称。
@@ -247,30 +196,26 @@ public class Node  {
         this.taskName = taskName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Node node = (Node) o;
-        return Objects.equals(this.parentNode, node.parentNode) &&
-            Objects.equals(this.category, node.category) &&
-            Objects.equals(this.description, node.description) &&
-            Objects.equals(this.id, node.id) &&
-            Objects.equals(this.ignoreError, node.ignoreError) &&
-            Objects.equals(this.metadata, node.metadata) &&
-            Objects.equals(this.name, node.name) &&
-            Objects.equals(this.taskName, node.taskName);
+        Node that = (Node) obj;
+        return Objects.equals(this.parentNode, that.parentNode) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.ignoreError, that.ignoreError) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.taskName, that.taskName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(parentNode, category, description, id, ignoreError, metadata, name, taskName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -286,6 +231,7 @@ public class Node  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -296,8 +242,5 @@ public class Node  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

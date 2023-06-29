@@ -75,16 +75,15 @@ public class ListImageByTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageByTagsResponse listImageByTagsResponse = (ListImageByTagsResponse) o;
-        return Objects.equals(this.resources, listImageByTagsResponse.resources)
-            && Objects.equals(this.totalCount, listImageByTagsResponse.totalCount);
+        ListImageByTagsResponse that = (ListImageByTagsResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

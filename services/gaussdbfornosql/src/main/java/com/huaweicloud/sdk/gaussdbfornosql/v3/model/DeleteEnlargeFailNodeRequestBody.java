@@ -33,15 +33,15 @@ public class DeleteEnlargeFailNodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEnlargeFailNodeRequestBody deleteEnlargeFailNodeRequestBody = (DeleteEnlargeFailNodeRequestBody) o;
-        return Objects.equals(this.nodeId, deleteEnlargeFailNodeRequestBody.nodeId);
+        DeleteEnlargeFailNodeRequestBody that = (DeleteEnlargeFailNodeRequestBody) obj;
+        return Objects.equals(this.nodeId, that.nodeId);
     }
 
     @Override

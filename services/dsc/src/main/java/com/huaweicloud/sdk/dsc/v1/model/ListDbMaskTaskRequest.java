@@ -99,18 +99,16 @@ public class ListDbMaskTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDbMaskTaskRequest listDbMaskTaskRequest = (ListDbMaskTaskRequest) o;
-        return Objects.equals(this.templateId, listDbMaskTaskRequest.templateId)
-            && Objects.equals(this.workspaceId, listDbMaskTaskRequest.workspaceId)
-            && Objects.equals(this.offset, listDbMaskTaskRequest.offset)
-            && Objects.equals(this.limit, listDbMaskTaskRequest.limit);
+        ListDbMaskTaskRequest that = (ListDbMaskTaskRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -96,22 +96,15 @@ public class ShowConnectorResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ConnectorStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConnectorStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConnectorStatusEnum(value));
         }
 
         public static ConnectorStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConnectorStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,22 +263,21 @@ public class ShowConnectorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConnectorResponse showConnectorResponse = (ShowConnectorResponse) o;
-        return Objects.equals(this.connectorId, showConnectorResponse.connectorId)
-            && Objects.equals(this.connectorName, showConnectorResponse.connectorName)
-            && Objects.equals(this.connectorDescription, showConnectorResponse.connectorDescription)
-            && Objects.equals(this.createTime, showConnectorResponse.createTime)
-            && Objects.equals(this.connectorUrl, showConnectorResponse.connectorUrl)
-            && Objects.equals(this.resultCode, showConnectorResponse.resultCode)
-            && Objects.equals(this.resultDescription, showConnectorResponse.resultDescription)
-            && Objects.equals(this.connectorStatus, showConnectorResponse.connectorStatus);
+        ShowConnectorResponse that = (ShowConnectorResponse) obj;
+        return Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.connectorName, that.connectorName)
+            && Objects.equals(this.connectorDescription, that.connectorDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.connectorUrl, that.connectorUrl)
+            && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.resultDescription, that.resultDescription)
+            && Objects.equals(this.connectorStatus, that.connectorStatus);
     }
 
     @Override

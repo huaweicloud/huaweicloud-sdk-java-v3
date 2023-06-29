@@ -131,19 +131,17 @@ public class BatchListPartitionByValuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListPartitionByValuesRequest batchListPartitionByValuesRequest = (BatchListPartitionByValuesRequest) o;
-        return Objects.equals(this.instanceId, batchListPartitionByValuesRequest.instanceId)
-            && Objects.equals(this.catalogName, batchListPartitionByValuesRequest.catalogName)
-            && Objects.equals(this.databaseName, batchListPartitionByValuesRequest.databaseName)
-            && Objects.equals(this.tableName, batchListPartitionByValuesRequest.tableName)
-            && Objects.equals(this.body, batchListPartitionByValuesRequest.body);
+        BatchListPartitionByValuesRequest that = (BatchListPartitionByValuesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

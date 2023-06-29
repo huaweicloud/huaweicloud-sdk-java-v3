@@ -1,80 +1,62 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.TaskParam;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 全局参数
  */
-public class Parameter  {
-
+public class Parameter {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_name")
-    
+    @JsonProperty(value = "param_name")
 
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_type")
-    
+    @JsonProperty(value = "param_type")
 
     private String paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_group")
-    
+    @JsonProperty(value = "param_group")
 
     private String paramGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
 
     private String defaultValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encryption")
-    
+    @JsonProperty(value = "encryption")
 
     private Boolean encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hint")
-    
+    @JsonProperty(value = "hint")
 
     private String hint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quote_param")
-    
+    @JsonProperty(value = "quote_param")
 
     private Boolean quoteParam;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="required")
-    
+    @JsonProperty(value = "required")
 
     private Boolean required;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -82,9 +64,6 @@ public class Parameter  {
         this.paramName = paramName;
         return this;
     }
-
-    
-
 
     /**
      * 参数名称。
@@ -98,15 +77,10 @@ public class Parameter  {
         this.paramName = paramName;
     }
 
-    
-
     public Parameter withParamType(String paramType) {
         this.paramType = paramType;
         return this;
     }
-
-    
-
 
     /**
      * 参数类型。
@@ -120,15 +94,10 @@ public class Parameter  {
         this.paramType = paramType;
     }
 
-    
-
     public Parameter withParamGroup(String paramGroup) {
         this.paramGroup = paramGroup;
         return this;
     }
-
-    
-
 
     /**
      * 参数分组。
@@ -142,15 +111,10 @@ public class Parameter  {
         this.paramGroup = paramGroup;
     }
 
-    
-
     public Parameter withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
-
-    
-
 
     /**
      * 参数初始值。
@@ -164,15 +128,10 @@ public class Parameter  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     public Parameter withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数id。
@@ -186,15 +145,10 @@ public class Parameter  {
         this.id = id;
     }
 
-    
-
     public Parameter withEncryption(Boolean encryption) {
         this.encryption = encryption;
         return this;
     }
-
-    
-
 
     /**
      * 是否加密。
@@ -208,15 +162,10 @@ public class Parameter  {
         this.encryption = encryption;
     }
 
-    
-
     public Parameter withHint(String hint) {
         this.hint = hint;
         return this;
     }
-
-    
-
 
     /**
      * 参数提示。
@@ -230,15 +179,10 @@ public class Parameter  {
         this.hint = hint;
     }
 
-    
-
     public Parameter withQuoteParam(Boolean quoteParam) {
         this.quoteParam = quoteParam;
         return this;
     }
-
-    
-
 
     /**
      * 是否从参数库选择。
@@ -252,15 +196,10 @@ public class Parameter  {
         this.quoteParam = quoteParam;
     }
 
-    
-
     public Parameter withRequired(Boolean required) {
         this.required = required;
         return this;
     }
-
-    
-
 
     /**
      * 是否为必填参数。
@@ -274,15 +213,10 @@ public class Parameter  {
         this.required = required;
     }
 
-    
-
     public Parameter withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数描述。
@@ -296,32 +230,36 @@ public class Parameter  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Parameter parameter = (Parameter) o;
-        return Objects.equals(this.paramName, parameter.paramName) &&
-            Objects.equals(this.paramType, parameter.paramType) &&
-            Objects.equals(this.paramGroup, parameter.paramGroup) &&
-            Objects.equals(this.defaultValue, parameter.defaultValue) &&
-            Objects.equals(this.id, parameter.id) &&
-            Objects.equals(this.encryption, parameter.encryption) &&
-            Objects.equals(this.hint, parameter.hint) &&
-            Objects.equals(this.quoteParam, parameter.quoteParam) &&
-            Objects.equals(this.required, parameter.required) &&
-            Objects.equals(this.description, parameter.description);
+        Parameter that = (Parameter) obj;
+        return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.paramType, that.paramType)
+            && Objects.equals(this.paramGroup, that.paramGroup) && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.encryption, that.encryption)
+            && Objects.equals(this.hint, that.hint) && Objects.equals(this.quoteParam, that.quoteParam)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(paramName, paramType, paramGroup, defaultValue, id, encryption, hint, quoteParam, required, description);
+        return Objects.hash(paramName,
+            paramType,
+            paramGroup,
+            defaultValue,
+            id,
+            encryption,
+            hint,
+            quoteParam,
+            required,
+            description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -339,6 +277,7 @@ public class Parameter  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -349,8 +288,5 @@ public class Parameter  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

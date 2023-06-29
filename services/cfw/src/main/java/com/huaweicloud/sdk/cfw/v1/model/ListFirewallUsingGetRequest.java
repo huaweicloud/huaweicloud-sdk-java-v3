@@ -70,22 +70,15 @@ public class ListFirewallUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,19 +198,18 @@ public class ListFirewallUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFirewallUsingGetRequest listFirewallUsingGetRequest = (ListFirewallUsingGetRequest) o;
-        return Objects.equals(this.offset, listFirewallUsingGetRequest.offset)
-            && Objects.equals(this.limit, listFirewallUsingGetRequest.limit)
-            && Objects.equals(this.serviceType, listFirewallUsingGetRequest.serviceType)
-            && Objects.equals(this.enterpriseProjectId, listFirewallUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listFirewallUsingGetRequest.fwInstanceId);
+        ListFirewallUsingGetRequest that = (ListFirewallUsingGetRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

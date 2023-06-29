@@ -90,15 +90,15 @@ public class TpsBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TpsBrokens tpsBrokens = (TpsBrokens) o;
-        return Objects.equals(this.average, tpsBrokens.average) && Objects.equals(this.tps, tpsBrokens.tps);
+        TpsBrokens that = (TpsBrokens) obj;
+        return Objects.equals(this.average, that.average) && Objects.equals(this.tps, that.tps);
     }
 
     @Override

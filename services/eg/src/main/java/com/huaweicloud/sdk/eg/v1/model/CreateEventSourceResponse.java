@@ -90,22 +90,15 @@ public class CreateEventSourceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -213,22 +206,15 @@ public class CreateEventSourceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -512,28 +498,21 @@ public class CreateEventSourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEventSourceResponse createEventSourceResponse = (CreateEventSourceResponse) o;
-        return Objects.equals(this.id, createEventSourceResponse.id)
-            && Objects.equals(this.name, createEventSourceResponse.name)
-            && Objects.equals(this.label, createEventSourceResponse.label)
-            && Objects.equals(this.description, createEventSourceResponse.description)
-            && Objects.equals(this.providerType, createEventSourceResponse.providerType)
-            && Objects.equals(this.eventTypes, createEventSourceResponse.eventTypes)
-            && Objects.equals(this.createdTime, createEventSourceResponse.createdTime)
-            && Objects.equals(this.updatedTime, createEventSourceResponse.updatedTime)
-            && Objects.equals(this.channelId, createEventSourceResponse.channelId)
-            && Objects.equals(this.channelName, createEventSourceResponse.channelName)
-            && Objects.equals(this.type, createEventSourceResponse.type)
-            && Objects.equals(this.detail, createEventSourceResponse.detail)
-            && Objects.equals(this.status, createEventSourceResponse.status)
-            && Objects.equals(this.xRequestId, createEventSourceResponse.xRequestId);
+        CreateEventSourceResponse that = (CreateEventSourceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.eventTypes, that.eventTypes)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

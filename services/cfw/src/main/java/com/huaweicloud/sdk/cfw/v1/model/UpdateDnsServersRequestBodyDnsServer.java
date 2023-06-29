@@ -77,18 +77,16 @@ public class UpdateDnsServersRequestBodyDnsServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDnsServersRequestBodyDnsServer updateDnsServersRequestBodyDnsServer =
-            (UpdateDnsServersRequestBodyDnsServer) o;
-        return Objects.equals(this.serverIp, updateDnsServersRequestBodyDnsServer.serverIp)
-            && Objects.equals(this.isCustomized, updateDnsServersRequestBodyDnsServer.isCustomized)
-            && Objects.equals(this.isApplied, updateDnsServersRequestBodyDnsServer.isApplied);
+        UpdateDnsServersRequestBodyDnsServer that = (UpdateDnsServersRequestBodyDnsServer) obj;
+        return Objects.equals(this.serverIp, that.serverIp) && Objects.equals(this.isCustomized, that.isCustomized)
+            && Objects.equals(this.isApplied, that.isApplied);
     }
 
     @Override

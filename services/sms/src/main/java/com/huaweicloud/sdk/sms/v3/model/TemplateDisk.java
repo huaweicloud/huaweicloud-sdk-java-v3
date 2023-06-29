@@ -149,17 +149,17 @@ public class TemplateDisk {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateDisk templateDisk = (TemplateDisk) o;
-        return Objects.equals(this.id, templateDisk.id) && Objects.equals(this.index, templateDisk.index)
-            && Objects.equals(this.name, templateDisk.name) && Objects.equals(this.disktype, templateDisk.disktype)
-            && Objects.equals(this.size, templateDisk.size) && Objects.equals(this.deviceUse, templateDisk.deviceUse);
+        TemplateDisk that = (TemplateDisk) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.index, that.index)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.disktype, that.disktype)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.deviceUse, that.deviceUse);
     }
 
     @Override

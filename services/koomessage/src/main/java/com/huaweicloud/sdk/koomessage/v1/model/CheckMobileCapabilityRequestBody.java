@@ -96,17 +96,16 @@ public class CheckMobileCapabilityRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMobileCapabilityRequestBody checkMobileCapabilityRequestBody = (CheckMobileCapabilityRequestBody) o;
-        return Objects.equals(this.mobiles, checkMobileCapabilityRequestBody.mobiles)
-            && Objects.equals(this.tplId, checkMobileCapabilityRequestBody.tplId)
-            && Objects.equals(this.encryptionAlg, checkMobileCapabilityRequestBody.encryptionAlg);
+        CheckMobileCapabilityRequestBody that = (CheckMobileCapabilityRequestBody) obj;
+        return Objects.equals(this.mobiles, that.mobiles) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.encryptionAlg, that.encryptionAlg);
     }
 
     @Override

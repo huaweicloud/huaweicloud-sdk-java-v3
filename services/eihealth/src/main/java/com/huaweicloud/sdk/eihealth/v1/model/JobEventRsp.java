@@ -165,19 +165,18 @@ public class JobEventRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobEventRsp jobEventRsp = (JobEventRsp) o;
-        return Objects.equals(this.actionName, jobEventRsp.actionName) && Objects.equals(this.count, jobEventRsp.count)
-            && Objects.equals(this.firstTimestamp, jobEventRsp.firstTimestamp)
-            && Objects.equals(this.lastTimestamp, jobEventRsp.lastTimestamp)
-            && Objects.equals(this.message, jobEventRsp.message) && Objects.equals(this.reason, jobEventRsp.reason)
-            && Objects.equals(this.type, jobEventRsp.type);
+        JobEventRsp that = (JobEventRsp) obj;
+        return Objects.equals(this.actionName, that.actionName) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.firstTimestamp, that.firstTimestamp)
+            && Objects.equals(this.lastTimestamp, that.lastTimestamp) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.type, that.type);
     }
 
     @Override

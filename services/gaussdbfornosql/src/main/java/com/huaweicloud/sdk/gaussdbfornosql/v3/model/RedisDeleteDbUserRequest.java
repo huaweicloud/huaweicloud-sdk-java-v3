@@ -52,15 +52,15 @@ public class RedisDeleteDbUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedisDeleteDbUserRequest redisDeleteDbUserRequest = (RedisDeleteDbUserRequest) o;
-        return Objects.equals(this.names, redisDeleteDbUserRequest.names);
+        RedisDeleteDbUserRequest that = (RedisDeleteDbUserRequest) obj;
+        return Objects.equals(this.names, that.names);
     }
 
     @Override

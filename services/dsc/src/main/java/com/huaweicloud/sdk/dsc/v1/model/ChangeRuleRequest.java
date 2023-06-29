@@ -14,16 +14,16 @@ public class ChangeRuleRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private RuleRequest body;
+    private RuleChangeRequest body;
 
-    public ChangeRuleRequest withBody(RuleRequest body) {
+    public ChangeRuleRequest withBody(RuleChangeRequest body) {
         this.body = body;
         return this;
     }
 
-    public ChangeRuleRequest withBody(Consumer<RuleRequest> bodySetter) {
+    public ChangeRuleRequest withBody(Consumer<RuleChangeRequest> bodySetter) {
         if (this.body == null) {
-            this.body = new RuleRequest();
+            this.body = new RuleChangeRequest();
             bodySetter.accept(this.body);
         }
 
@@ -34,24 +34,24 @@ public class ChangeRuleRequest {
      * Get body
      * @return body
      */
-    public RuleRequest getBody() {
+    public RuleChangeRequest getBody() {
         return body;
     }
 
-    public void setBody(RuleRequest body) {
+    public void setBody(RuleChangeRequest body) {
         this.body = body;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeRuleRequest changeRuleRequest = (ChangeRuleRequest) o;
-        return Objects.equals(this.body, changeRuleRequest.body);
+        ChangeRuleRequest that = (ChangeRuleRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class CreateCustomfieldV1Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomfieldV1Req createCustomfieldV1Req = (CreateCustomfieldV1Req) o;
-        return Objects.equals(this.name, createCustomfieldV1Req.name)
-            && Objects.equals(this.type, createCustomfieldV1Req.type)
-            && Objects.equals(this.options, createCustomfieldV1Req.options)
-            && Objects.equals(this.memo, createCustomfieldV1Req.memo)
-            && Objects.equals(this.scrumType, createCustomfieldV1Req.scrumType);
+        CreateCustomfieldV1Req that = (CreateCustomfieldV1Req) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.options, that.options) && Objects.equals(this.memo, that.memo)
+            && Objects.equals(this.scrumType, that.scrumType);
     }
 
     @Override

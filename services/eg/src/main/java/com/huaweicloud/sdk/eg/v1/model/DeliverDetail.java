@@ -99,18 +99,18 @@ public class DeliverDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeliverDetail deliverDetail = (DeliverDetail) o;
-        return Objects.equals(this.deliverTime, deliverDetail.deliverTime)
-            && Objects.equals(this.deliverStatus, deliverDetail.deliverStatus)
-            && Objects.equals(this.deliverConsuming, deliverDetail.deliverConsuming)
-            && Objects.equals(this.deliverRspCode, deliverDetail.deliverRspCode);
+        DeliverDetail that = (DeliverDetail) obj;
+        return Objects.equals(this.deliverTime, that.deliverTime)
+            && Objects.equals(this.deliverStatus, that.deliverStatus)
+            && Objects.equals(this.deliverConsuming, that.deliverConsuming)
+            && Objects.equals(this.deliverRspCode, that.deliverRspCode);
     }
 
     @Override

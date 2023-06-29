@@ -34,15 +34,15 @@ public class DeleteDeploymentHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeploymentHostResponse deleteDeploymentHostResponse = (DeleteDeploymentHostResponse) o;
-        return Objects.equals(this.hostId, deleteDeploymentHostResponse.hostId);
+        DeleteDeploymentHostResponse that = (DeleteDeploymentHostResponse) obj;
+        return Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

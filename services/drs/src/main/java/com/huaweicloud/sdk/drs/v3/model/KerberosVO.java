@@ -99,18 +99,17 @@ public class KerberosVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KerberosVO kerberosVO = (KerberosVO) o;
-        return Objects.equals(this.krb5ConfFile, kerberosVO.krb5ConfFile)
-            && Objects.equals(this.keyTabFile, kerberosVO.keyTabFile)
-            && Objects.equals(this.domainName, kerberosVO.domainName)
-            && Objects.equals(this.userPrincipal, kerberosVO.userPrincipal);
+        KerberosVO that = (KerberosVO) obj;
+        return Objects.equals(this.krb5ConfFile, that.krb5ConfFile) && Objects.equals(this.keyTabFile, that.keyTabFile)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.userPrincipal, that.userPrincipal);
     }
 
     @Override

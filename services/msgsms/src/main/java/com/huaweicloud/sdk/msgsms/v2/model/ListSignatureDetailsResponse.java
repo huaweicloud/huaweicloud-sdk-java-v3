@@ -77,16 +77,15 @@ public class ListSignatureDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSignatureDetailsResponse listSignatureDetailsResponse = (ListSignatureDetailsResponse) o;
-        return Objects.equals(this.results, listSignatureDetailsResponse.results)
-            && Objects.equals(this.total, listSignatureDetailsResponse.total);
+        ListSignatureDetailsResponse that = (ListSignatureDetailsResponse) obj;
+        return Objects.equals(this.results, that.results) && Objects.equals(this.total, that.total);
     }
 
     @Override

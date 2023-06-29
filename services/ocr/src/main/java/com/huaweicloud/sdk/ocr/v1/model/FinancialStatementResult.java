@@ -166,19 +166,18 @@ public class FinancialStatementResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinancialStatementResult financialStatementResult = (FinancialStatementResult) o;
-        return Objects.equals(this.wordsRegionCount, financialStatementResult.wordsRegionCount)
-            && Objects.equals(this.wordsRegionList, financialStatementResult.wordsRegionList)
-            && Objects.equals(this.excel, financialStatementResult.excel)
-            && Objects.equals(this.imageSize, financialStatementResult.imageSize)
-            && Objects.equals(this.rectificationMatrix, financialStatementResult.rectificationMatrix);
+        FinancialStatementResult that = (FinancialStatementResult) obj;
+        return Objects.equals(this.wordsRegionCount, that.wordsRegionCount)
+            && Objects.equals(this.wordsRegionList, that.wordsRegionList) && Objects.equals(this.excel, that.excel)
+            && Objects.equals(this.imageSize, that.imageSize)
+            && Objects.equals(this.rectificationMatrix, that.rectificationMatrix);
     }
 
     @Override

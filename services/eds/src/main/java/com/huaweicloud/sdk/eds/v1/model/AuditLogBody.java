@@ -155,22 +155,15 @@ public class AuditLogBody {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -384,24 +377,22 @@ public class AuditLogBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuditLogBody auditLogBody = (AuditLogBody) o;
-        return Objects.equals(this.auditLogId, auditLogBody.auditLogId)
-            && Objects.equals(this.resourceId, auditLogBody.resourceId)
-            && Objects.equals(this.resourceName, auditLogBody.resourceName)
-            && Objects.equals(this.customerUserId, auditLogBody.customerUserId)
-            && Objects.equals(this.customerUserName, auditLogBody.customerUserName)
-            && Objects.equals(this.customerConnectorId, auditLogBody.customerConnectorId)
-            && Objects.equals(this.customerConnectorName, auditLogBody.customerConnectorName)
-            && Objects.equals(this.happendTime, auditLogBody.happendTime)
-            && Objects.equals(this.action, auditLogBody.action)
-            && Objects.equals(this.description, auditLogBody.description);
+        AuditLogBody that = (AuditLogBody) obj;
+        return Objects.equals(this.auditLogId, that.auditLogId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.customerUserId, that.customerUserId)
+            && Objects.equals(this.customerUserName, that.customerUserName)
+            && Objects.equals(this.customerConnectorId, that.customerConnectorId)
+            && Objects.equals(this.customerConnectorName, that.customerConnectorName)
+            && Objects.equals(this.happendTime, that.happendTime) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

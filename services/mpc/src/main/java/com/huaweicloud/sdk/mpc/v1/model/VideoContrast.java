@@ -101,18 +101,16 @@ public class VideoContrast {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoContrast videoContrast = (VideoContrast) o;
-        return Objects.equals(this.name, videoContrast.name)
-            && Objects.equals(this.executionOrder, videoContrast.executionOrder)
-            && Objects.equals(this.contrast, videoContrast.contrast)
-            && Objects.equals(this.brightness, videoContrast.brightness);
+        VideoContrast that = (VideoContrast) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.executionOrder, that.executionOrder)
+            && Objects.equals(this.contrast, that.contrast) && Objects.equals(this.brightness, that.brightness);
     }
 
     @Override

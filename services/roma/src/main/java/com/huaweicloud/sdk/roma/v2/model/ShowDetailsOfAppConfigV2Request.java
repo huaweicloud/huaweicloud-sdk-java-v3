@@ -77,17 +77,16 @@ public class ShowDetailsOfAppConfigV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAppConfigV2Request showDetailsOfAppConfigV2Request = (ShowDetailsOfAppConfigV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfAppConfigV2Request.instanceId)
-            && Objects.equals(this.appId, showDetailsOfAppConfigV2Request.appId)
-            && Objects.equals(this.appConfigId, showDetailsOfAppConfigV2Request.appConfigId);
+        ShowDetailsOfAppConfigV2Request that = (ShowDetailsOfAppConfigV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appConfigId, that.appConfigId);
     }
 
     @Override

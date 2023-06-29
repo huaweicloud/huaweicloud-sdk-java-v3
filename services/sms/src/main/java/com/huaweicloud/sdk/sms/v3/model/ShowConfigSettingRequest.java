@@ -55,16 +55,15 @@ public class ShowConfigSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigSettingRequest showConfigSettingRequest = (ShowConfigSettingRequest) o;
-        return Objects.equals(this.taskId, showConfigSettingRequest.taskId)
-            && Objects.equals(this.configKey, showConfigSettingRequest.configKey);
+        ShowConfigSettingRequest that = (ShowConfigSettingRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.configKey, that.configKey);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class AvailableQueueInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailableQueueInfo availableQueueInfo = (AvailableQueueInfo) o;
-        return Objects.equals(this.status, availableQueueInfo.status)
-            && Objects.equals(this.name, availableQueueInfo.name) && Objects.equals(this.uuid, availableQueueInfo.uuid)
-            && Objects.equals(this.errMsg, availableQueueInfo.errMsg)
-            && Objects.equals(this.updateTime, availableQueueInfo.updateTime);
+        AvailableQueueInfo that = (AvailableQueueInfo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.errMsg, that.errMsg)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -63,22 +63,15 @@ public class GetHostGroupListFilter {
             if (value == null) {
                 return null;
             }
-            HostGroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostGroupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostGroupTypeEnum(value));
         }
 
         public static HostGroupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostGroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,18 +218,18 @@ public class GetHostGroupListFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHostGroupListFilter getHostGroupListFilter = (GetHostGroupListFilter) o;
-        return Objects.equals(this.hostGroupType, getHostGroupListFilter.hostGroupType)
-            && Objects.equals(this.hostGroupNameList, getHostGroupListFilter.hostGroupNameList)
-            && Objects.equals(this.hostNameList, getHostGroupListFilter.hostNameList)
-            && Objects.equals(this.hostGroupTag, getHostGroupListFilter.hostGroupTag);
+        GetHostGroupListFilter that = (GetHostGroupListFilter) obj;
+        return Objects.equals(this.hostGroupType, that.hostGroupType)
+            && Objects.equals(this.hostGroupNameList, that.hostGroupNameList)
+            && Objects.equals(this.hostNameList, that.hostNameList)
+            && Objects.equals(this.hostGroupTag, that.hostGroupTag);
     }
 
     @Override

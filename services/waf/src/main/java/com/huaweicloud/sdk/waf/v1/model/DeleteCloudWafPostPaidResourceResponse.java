@@ -97,18 +97,16 @@ public class DeleteCloudWafPostPaidResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCloudWafPostPaidResourceResponse deleteCloudWafPostPaidResourceResponse =
-            (DeleteCloudWafPostPaidResourceResponse) o;
-        return Objects.equals(this.type, deleteCloudWafPostPaidResourceResponse.type)
-            && Objects.equals(this.resources, deleteCloudWafPostPaidResourceResponse.resources)
-            && Objects.equals(this.isNewUser, deleteCloudWafPostPaidResourceResponse.isNewUser);
+        DeleteCloudWafPostPaidResourceResponse that = (DeleteCloudWafPostPaidResourceResponse) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.isNewUser, that.isNewUser);
     }
 
     @Override

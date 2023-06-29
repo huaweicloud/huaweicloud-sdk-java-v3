@@ -162,20 +162,18 @@ public class DmsKafkaInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DmsKafkaInfo dmsKafkaInfo = (DmsKafkaInfo) o;
-        return Objects.equals(this.status, dmsKafkaInfo.status)
-            && Objects.equals(this.statusDetail, dmsKafkaInfo.statusDetail)
-            && Objects.equals(this.orderFadeEnabled, dmsKafkaInfo.orderFadeEnabled)
-            && Objects.equals(this.addr, dmsKafkaInfo.addr)
-            && Objects.equals(this.orderFadeEnable, dmsKafkaInfo.orderFadeEnable)
-            && Objects.equals(this.orderFadeCache, dmsKafkaInfo.orderFadeCache);
+        DmsKafkaInfo that = (DmsKafkaInfo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.statusDetail, that.statusDetail)
+            && Objects.equals(this.orderFadeEnabled, that.orderFadeEnabled) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.orderFadeEnable, that.orderFadeEnable)
+            && Objects.equals(this.orderFadeCache, that.orderFadeCache);
     }
 
     @Override

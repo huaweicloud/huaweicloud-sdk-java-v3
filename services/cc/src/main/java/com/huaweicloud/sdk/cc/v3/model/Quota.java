@@ -77,22 +77,15 @@ public class Quota {
             if (value == null) {
                 return null;
             }
-            QuotaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QuotaTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QuotaTypeEnum(value));
         }
 
         public static QuotaTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QuotaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,18 +234,18 @@ public class Quota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Quota quota = (Quota) o;
-        return Objects.equals(this.domainId, quota.domainId) && Objects.equals(this.quotaType, quota.quotaType)
-            && Objects.equals(this.quotaNumber, quota.quotaNumber) && Objects.equals(this.quotaUsed, quota.quotaUsed)
-            && Objects.equals(this.cloudConnectionId, quota.cloudConnectionId)
-            && Objects.equals(this.regionId, quota.regionId);
+        Quota that = (Quota) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.quotaType, that.quotaType)
+            && Objects.equals(this.quotaNumber, that.quotaNumber) && Objects.equals(this.quotaUsed, that.quotaUsed)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

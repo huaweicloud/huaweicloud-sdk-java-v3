@@ -77,17 +77,16 @@ public class ResetConsumeOffsetRespQueues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetConsumeOffsetRespQueues resetConsumeOffsetRespQueues = (ResetConsumeOffsetRespQueues) o;
-        return Objects.equals(this.brokerName, resetConsumeOffsetRespQueues.brokerName)
-            && Objects.equals(this.queueId, resetConsumeOffsetRespQueues.queueId)
-            && Objects.equals(this.timestampOffset, resetConsumeOffsetRespQueues.timestampOffset);
+        ResetConsumeOffsetRespQueues that = (ResetConsumeOffsetRespQueues) obj;
+        return Objects.equals(this.brokerName, that.brokerName) && Objects.equals(this.queueId, that.queueId)
+            && Objects.equals(this.timestampOffset, that.timestampOffset);
     }
 
     @Override

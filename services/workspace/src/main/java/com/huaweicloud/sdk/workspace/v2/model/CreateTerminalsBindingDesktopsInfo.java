@@ -101,18 +101,16 @@ public class CreateTerminalsBindingDesktopsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTerminalsBindingDesktopsInfo createTerminalsBindingDesktopsInfo = (CreateTerminalsBindingDesktopsInfo) o;
-        return Objects.equals(this.line, createTerminalsBindingDesktopsInfo.line)
-            && Objects.equals(this.mac, createTerminalsBindingDesktopsInfo.mac)
-            && Objects.equals(this.desktopName, createTerminalsBindingDesktopsInfo.desktopName)
-            && Objects.equals(this.description, createTerminalsBindingDesktopsInfo.description);
+        CreateTerminalsBindingDesktopsInfo that = (CreateTerminalsBindingDesktopsInfo) obj;
+        return Objects.equals(this.line, that.line) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.description, that.description);
     }
 
     @Override

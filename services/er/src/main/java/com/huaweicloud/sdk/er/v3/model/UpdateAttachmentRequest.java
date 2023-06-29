@@ -87,17 +87,16 @@ public class UpdateAttachmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAttachmentRequest updateAttachmentRequest = (UpdateAttachmentRequest) o;
-        return Objects.equals(this.erId, updateAttachmentRequest.erId)
-            && Objects.equals(this.attachmentId, updateAttachmentRequest.attachmentId)
-            && Objects.equals(this.body, updateAttachmentRequest.body);
+        UpdateAttachmentRequest that = (UpdateAttachmentRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

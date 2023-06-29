@@ -77,17 +77,16 @@ public class DeviceCommandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceCommandRequest deviceCommandRequest = (DeviceCommandRequest) o;
-        return Objects.equals(this.serviceId, deviceCommandRequest.serviceId)
-            && Objects.equals(this.commandName, deviceCommandRequest.commandName)
-            && Objects.equals(this.paras, deviceCommandRequest.paras);
+        DeviceCommandRequest that = (DeviceCommandRequest) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandName, that.commandName)
+            && Objects.equals(this.paras, that.paras);
     }
 
     @Override

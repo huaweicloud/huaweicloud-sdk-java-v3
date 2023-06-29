@@ -83,17 +83,16 @@ public class LaneOccupancy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LaneOccupancy laneOccupancy = (LaneOccupancy) o;
-        return Objects.equals(this.laneId, laneOccupancy.laneId)
-            && Objects.equals(this.spaceOccupancy, laneOccupancy.spaceOccupancy)
-            && Objects.equals(this.timeOccupancy, laneOccupancy.timeOccupancy);
+        LaneOccupancy that = (LaneOccupancy) obj;
+        return Objects.equals(this.laneId, that.laneId) && Objects.equals(this.spaceOccupancy, that.spaceOccupancy)
+            && Objects.equals(this.timeOccupancy, that.timeOccupancy);
     }
 
     @Override

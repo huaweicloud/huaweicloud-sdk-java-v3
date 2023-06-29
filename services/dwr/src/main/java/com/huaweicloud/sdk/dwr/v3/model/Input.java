@@ -89,22 +89,15 @@ public class Input {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -337,21 +330,21 @@ public class Input {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Input input = (Input) o;
-        return Objects.equals(this.parameterName, input.parameterName) && Objects.equals(this.type, input.type)
-            && Objects.equals(this.valueType, input.valueType)
-            && Objects.equals(this.templateParameterName, input.templateParameterName)
-            && Objects.equals(this.parameterValue, input.parameterValue)
-            && Objects.equals(this.description, input.description) && Objects.equals(this._default, input._default)
-            && Objects.equals(this.label, input.label) && Objects.equals(this.constraints, input.constraints)
-            && Objects.equals(this.invisible, input.invisible);
+        Input that = (Input) obj;
+        return Objects.equals(this.parameterName, that.parameterName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.valueType, that.valueType)
+            && Objects.equals(this.templateParameterName, that.templateParameterName)
+            && Objects.equals(this.parameterValue, that.parameterValue)
+            && Objects.equals(this.description, that.description) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.constraints, that.constraints)
+            && Objects.equals(this.invisible, that.invisible);
     }
 
     @Override

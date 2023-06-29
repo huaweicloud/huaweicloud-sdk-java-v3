@@ -53,15 +53,15 @@ public class ShowBlockchainNodesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBlockchainNodesResponse showBlockchainNodesResponse = (ShowBlockchainNodesResponse) o;
-        return Objects.equals(this.nodeOrgs, showBlockchainNodesResponse.nodeOrgs);
+        ShowBlockchainNodesResponse that = (ShowBlockchainNodesResponse) obj;
+        return Objects.equals(this.nodeOrgs, that.nodeOrgs);
     }
 
     @Override

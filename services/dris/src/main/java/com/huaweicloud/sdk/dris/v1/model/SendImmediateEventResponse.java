@@ -97,17 +97,16 @@ public class SendImmediateEventResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendImmediateEventResponse sendImmediateEventResponse = (SendImmediateEventResponse) o;
-        return Objects.equals(this.eventId, sendImmediateEventResponse.eventId)
-            && Objects.equals(this.sendConfig, sendImmediateEventResponse.sendConfig)
-            && Objects.equals(this.immediateEvent, sendImmediateEventResponse.immediateEvent);
+        SendImmediateEventResponse that = (SendImmediateEventResponse) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.sendConfig, that.sendConfig)
+            && Objects.equals(this.immediateEvent, that.immediateEvent);
     }
 
     @Override

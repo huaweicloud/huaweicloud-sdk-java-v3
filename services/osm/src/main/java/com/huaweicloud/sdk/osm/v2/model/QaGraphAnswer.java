@@ -122,16 +122,16 @@ public class QaGraphAnswer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaGraphAnswer qaGraphAnswer = (QaGraphAnswer) o;
-        return Objects.equals(this.answer, qaGraphAnswer.answer) && Objects.equals(this.score, qaGraphAnswer.score)
-            && Objects.equals(this.type, qaGraphAnswer.type) && Objects.equals(this.options, qaGraphAnswer.options);
+        QaGraphAnswer that = (QaGraphAnswer) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.score, that.score)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.options, that.options);
     }
 
     @Override

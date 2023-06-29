@@ -467,33 +467,24 @@ public class ShowRecordSetWithLineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordSetWithLineResponse showRecordSetWithLineResponse = (ShowRecordSetWithLineResponse) o;
-        return Objects.equals(this.id, showRecordSetWithLineResponse.id)
-            && Objects.equals(this.name, showRecordSetWithLineResponse.name)
-            && Objects.equals(this.description, showRecordSetWithLineResponse.description)
-            && Objects.equals(this.zoneId, showRecordSetWithLineResponse.zoneId)
-            && Objects.equals(this.zoneName, showRecordSetWithLineResponse.zoneName)
-            && Objects.equals(this.type, showRecordSetWithLineResponse.type)
-            && Objects.equals(this.ttl, showRecordSetWithLineResponse.ttl)
-            && Objects.equals(this.records, showRecordSetWithLineResponse.records)
-            && Objects.equals(this.createdAt, showRecordSetWithLineResponse.createdAt)
-            && Objects.equals(this.updatedAt, showRecordSetWithLineResponse.updatedAt)
-            && Objects.equals(this.status, showRecordSetWithLineResponse.status)
-            && Objects.equals(this._default, showRecordSetWithLineResponse._default)
-            && Objects.equals(this.projectId, showRecordSetWithLineResponse.projectId)
-            && Objects.equals(this.links, showRecordSetWithLineResponse.links)
-            && Objects.equals(this.line, showRecordSetWithLineResponse.line)
-            && Objects.equals(this.weight, showRecordSetWithLineResponse.weight)
-            && Objects.equals(this.healthCheckId, showRecordSetWithLineResponse.healthCheckId)
-            && Objects.equals(this.aliasTarget, showRecordSetWithLineResponse.aliasTarget)
-            && Objects.equals(this.bundle, showRecordSetWithLineResponse.bundle);
+        ShowRecordSetWithLineResponse that = (ShowRecordSetWithLineResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget) && Objects.equals(this.bundle, that.bundle);
     }
 
     @Override

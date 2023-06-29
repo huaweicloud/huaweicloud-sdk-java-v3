@@ -145,19 +145,17 @@ public class ListTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTablesRequest listTablesRequest = (ListTablesRequest) o;
-        return Objects.equals(this.keyword, listTablesRequest.keyword)
-            && Objects.equals(this.tag, listTablesRequest.tag) && Objects.equals(this.offset, listTablesRequest.offset)
-            && Objects.equals(this.limit, listTablesRequest.limit)
-            && Objects.equals(this.orderBy, listTablesRequest.orderBy)
-            && Objects.equals(this.order, listTablesRequest.order);
+        ListTablesRequest that = (ListTablesRequest) obj;
+        return Objects.equals(this.keyword, that.keyword) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order);
     }
 
     @Override

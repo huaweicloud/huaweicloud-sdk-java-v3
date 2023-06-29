@@ -33,15 +33,15 @@ public class ShowNetworkIpAvailabilitiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNetworkIpAvailabilitiesRequest showNetworkIpAvailabilitiesRequest = (ShowNetworkIpAvailabilitiesRequest) o;
-        return Objects.equals(this.networkId, showNetworkIpAvailabilitiesRequest.networkId);
+        ShowNetworkIpAvailabilitiesRequest that = (ShowNetworkIpAvailabilitiesRequest) obj;
+        return Objects.equals(this.networkId, that.networkId);
     }
 
     @Override

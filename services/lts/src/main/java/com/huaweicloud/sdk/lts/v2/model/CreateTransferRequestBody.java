@@ -107,17 +107,16 @@ public class CreateTransferRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransferRequestBody createTransferRequestBody = (CreateTransferRequestBody) o;
-        return Objects.equals(this.logGroupId, createTransferRequestBody.logGroupId)
-            && Objects.equals(this.logStreams, createTransferRequestBody.logStreams)
-            && Objects.equals(this.logTransferInfo, createTransferRequestBody.logTransferInfo);
+        CreateTransferRequestBody that = (CreateTransferRequestBody) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreams, that.logStreams)
+            && Objects.equals(this.logTransferInfo, that.logTransferInfo);
     }
 
     @Override

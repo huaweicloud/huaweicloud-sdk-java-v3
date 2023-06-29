@@ -69,22 +69,15 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -218,8 +204,8 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     private List<String> activeStatus = null;
 
     /**
-    * 终端节点是否可用。 ● enable：启用 ● disable：不启用
-    */
+     * 终端节点是否可用。 ● enable：启用 ● disable：不启用
+     */
     public static final class EnableStatusEnum {
 
         /**
@@ -262,22 +248,15 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EnableStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EnableStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EnableStatusEnum(value));
         }
 
         public static EnableStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EnableStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -952,40 +931,32 @@ public class ListEndpointInfoDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointInfoDetailsResponse listEndpointInfoDetailsResponse = (ListEndpointInfoDetailsResponse) o;
-        return Objects.equals(this.id, listEndpointInfoDetailsResponse.id)
-            && Objects.equals(this.serviceType, listEndpointInfoDetailsResponse.serviceType)
-            && Objects.equals(this.status, listEndpointInfoDetailsResponse.status)
-            && Objects.equals(this.activeStatus, listEndpointInfoDetailsResponse.activeStatus)
-            && Objects.equals(this.enableStatus, listEndpointInfoDetailsResponse.enableStatus)
-            && Objects.equals(this.specificationName, listEndpointInfoDetailsResponse.specificationName)
-            && Objects.equals(this.endpointServiceName, listEndpointInfoDetailsResponse.endpointServiceName)
-            && Objects.equals(this.markerId, listEndpointInfoDetailsResponse.markerId)
-            && Objects.equals(this.endpointServiceId, listEndpointInfoDetailsResponse.endpointServiceId)
-            && Objects.equals(this.enableDns, listEndpointInfoDetailsResponse.enableDns)
-            && Objects.equals(this.dnsNames, listEndpointInfoDetailsResponse.dnsNames)
-            && Objects.equals(this.ip, listEndpointInfoDetailsResponse.ip)
-            && Objects.equals(this.vpcId, listEndpointInfoDetailsResponse.vpcId)
-            && Objects.equals(this.subnetId, listEndpointInfoDetailsResponse.subnetId)
-            && Objects.equals(this.createdAt, listEndpointInfoDetailsResponse.createdAt)
-            && Objects.equals(this.updatedAt, listEndpointInfoDetailsResponse.updatedAt)
-            && Objects.equals(this.projectId, listEndpointInfoDetailsResponse.projectId)
-            && Objects.equals(this.tags, listEndpointInfoDetailsResponse.tags)
-            && Objects.equals(this.error, listEndpointInfoDetailsResponse.error)
-            && Objects.equals(this.whitelist, listEndpointInfoDetailsResponse.whitelist)
-            && Objects.equals(this.enableWhitelist, listEndpointInfoDetailsResponse.enableWhitelist)
-            && Objects.equals(this.routetables, listEndpointInfoDetailsResponse.routetables)
-            && Objects.equals(this.description, listEndpointInfoDetailsResponse.description)
-            && Objects.equals(this.policyStatement, listEndpointInfoDetailsResponse.policyStatement)
-            && Objects.equals(this.endpointPoolId, listEndpointInfoDetailsResponse.endpointPoolId)
-            && Objects.equals(this.publicBorderGroup, listEndpointInfoDetailsResponse.publicBorderGroup);
+        ListEndpointInfoDetailsResponse that = (ListEndpointInfoDetailsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.activeStatus, that.activeStatus)
+            && Objects.equals(this.enableStatus, that.enableStatus)
+            && Objects.equals(this.specificationName, that.specificationName)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.markerId, that.markerId)
+            && Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.enableDns, that.enableDns) && Objects.equals(this.dnsNames, that.dnsNames)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.whitelist, that.whitelist)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.routetables, that.routetables) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.endpointPoolId, that.endpointPoolId)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

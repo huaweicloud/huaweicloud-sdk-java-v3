@@ -61,22 +61,15 @@ public class AdInfo {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainTypeEnum(value));
         }
 
         public static DomainTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -367,24 +360,24 @@ public class AdInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdInfo adInfo = (AdInfo) o;
-        return Objects.equals(this.domainType, adInfo.domainType) && Objects.equals(this.domainName, adInfo.domainName)
-            && Objects.equals(this.domainAdminAccount, adInfo.domainAdminAccount)
-            && Objects.equals(this.activeDomainName, adInfo.activeDomainName)
-            && Objects.equals(this.activeDomainIp, adInfo.activeDomainIp)
-            && Objects.equals(this.standbyDomainName, adInfo.standbyDomainName)
-            && Objects.equals(this.standbyDomainIp, adInfo.standbyDomainIp)
-            && Objects.equals(this.activeDnsIp, adInfo.activeDnsIp)
-            && Objects.equals(this.standbyDnsIp, adInfo.standbyDnsIp)
-            && Objects.equals(this.deleteComputerObject, adInfo.deleteComputerObject)
-            && Objects.equals(this.useLdaps, adInfo.useLdaps) && Objects.equals(this.tlsConfig, adInfo.tlsConfig);
+        AdInfo that = (AdInfo) obj;
+        return Objects.equals(this.domainType, that.domainType) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.domainAdminAccount, that.domainAdminAccount)
+            && Objects.equals(this.activeDomainName, that.activeDomainName)
+            && Objects.equals(this.activeDomainIp, that.activeDomainIp)
+            && Objects.equals(this.standbyDomainName, that.standbyDomainName)
+            && Objects.equals(this.standbyDomainIp, that.standbyDomainIp)
+            && Objects.equals(this.activeDnsIp, that.activeDnsIp)
+            && Objects.equals(this.standbyDnsIp, that.standbyDnsIp)
+            && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
+            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig);
     }
 
     @Override

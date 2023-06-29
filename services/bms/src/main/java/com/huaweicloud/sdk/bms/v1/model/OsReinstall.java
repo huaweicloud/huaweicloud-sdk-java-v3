@@ -109,17 +109,16 @@ public class OsReinstall {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsReinstall osReinstall = (OsReinstall) o;
-        return Objects.equals(this.adminpass, osReinstall.adminpass)
-            && Objects.equals(this.keyname, osReinstall.keyname) && Objects.equals(this.userid, osReinstall.userid)
-            && Objects.equals(this.metadata, osReinstall.metadata);
+        OsReinstall that = (OsReinstall) obj;
+        return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
+            && Objects.equals(this.userid, that.userid) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

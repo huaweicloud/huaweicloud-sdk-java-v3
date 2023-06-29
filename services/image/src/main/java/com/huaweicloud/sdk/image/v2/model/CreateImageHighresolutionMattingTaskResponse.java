@@ -58,17 +58,15 @@ public class CreateImageHighresolutionMattingTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageHighresolutionMattingTaskResponse createImageHighresolutionMattingTaskResponse =
-            (CreateImageHighresolutionMattingTaskResponse) o;
-        return Objects.equals(this.taskId, createImageHighresolutionMattingTaskResponse.taskId)
-            && Objects.equals(this.xRequestId, createImageHighresolutionMattingTaskResponse.xRequestId);
+        CreateImageHighresolutionMattingTaskResponse that = (CreateImageHighresolutionMattingTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

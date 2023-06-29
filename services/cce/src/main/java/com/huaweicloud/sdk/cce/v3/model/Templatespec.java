@@ -200,19 +200,18 @@ public class Templatespec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Templatespec templatespec = (Templatespec) o;
-        return Objects.equals(this.type, templatespec.type) && Objects.equals(this.require, templatespec.require)
-            && Objects.equals(this.labels, templatespec.labels) && Objects.equals(this.logoURL, templatespec.logoURL)
-            && Objects.equals(this.readmeURL, templatespec.readmeURL)
-            && Objects.equals(this.description, templatespec.description)
-            && Objects.equals(this.versions, templatespec.versions);
+        Templatespec that = (Templatespec) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.require, that.require)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.logoURL, that.logoURL)
+            && Objects.equals(this.readmeURL, that.readmeURL) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.versions, that.versions);
     }
 
     @Override

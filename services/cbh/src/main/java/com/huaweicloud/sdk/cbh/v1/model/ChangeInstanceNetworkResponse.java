@@ -144,20 +144,19 @@ public class ChangeInstanceNetworkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeInstanceNetworkResponse changeInstanceNetworkResponse = (ChangeInstanceNetworkResponse) o;
-        return Objects.equals(this.status, changeInstanceNetworkResponse.status)
-            && Objects.equals(this.securityGrpStatus, changeInstanceNetworkResponse.securityGrpStatus)
-            && Objects.equals(this.firewallStatus, changeInstanceNetworkResponse.firewallStatus)
-            && Objects.equals(this.publicEipStatus, changeInstanceNetworkResponse.publicEipStatus)
-            && Objects.equals(this.nics, changeInstanceNetworkResponse.nics)
-            && Objects.equals(this.publicEipStatu, changeInstanceNetworkResponse.publicEipStatu);
+        ChangeInstanceNetworkResponse that = (ChangeInstanceNetworkResponse) obj;
+        return Objects.equals(this.status, that.status)
+            && Objects.equals(this.securityGrpStatus, that.securityGrpStatus)
+            && Objects.equals(this.firewallStatus, that.firewallStatus)
+            && Objects.equals(this.publicEipStatus, that.publicEipStatus) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.publicEipStatu, that.publicEipStatu);
     }
 
     @Override

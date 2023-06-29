@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 开启/关闭全量SQL参数体
  */
-public class OperateAuditLogRequestV3Body  {
-
+public class OperateAuditLogRequestV3Body {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="switch_status")
-    
+    @JsonProperty(value = "switch_status")
 
     private String switchStatus;
 
@@ -27,9 +19,6 @@ public class OperateAuditLogRequestV3Body  {
         this.switchStatus = switchStatus;
         return this;
     }
-
-    
-
 
     /**
      * 全量SQL开关状态。 取值： - ON，表示开启 - OFF，表示关闭
@@ -43,23 +32,23 @@ public class OperateAuditLogRequestV3Body  {
         this.switchStatus = switchStatus;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateAuditLogRequestV3Body operateAuditLogRequestV3Body = (OperateAuditLogRequestV3Body) o;
-        return Objects.equals(this.switchStatus, operateAuditLogRequestV3Body.switchStatus);
+        OperateAuditLogRequestV3Body that = (OperateAuditLogRequestV3Body) obj;
+        return Objects.equals(this.switchStatus, that.switchStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(switchStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class OperateAuditLogRequestV3Body  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class OperateAuditLogRequestV3Body  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

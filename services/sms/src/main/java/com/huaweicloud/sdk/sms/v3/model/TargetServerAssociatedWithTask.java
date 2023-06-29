@@ -80,22 +80,15 @@ public class TargetServerAssociatedWithTask {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,17 @@ public class TargetServerAssociatedWithTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetServerAssociatedWithTask targetServerAssociatedWithTask = (TargetServerAssociatedWithTask) o;
-        return Objects.equals(this.id, targetServerAssociatedWithTask.id)
-            && Objects.equals(this.vmId, targetServerAssociatedWithTask.vmId)
-            && Objects.equals(this.name, targetServerAssociatedWithTask.name)
-            && Objects.equals(this.ip, targetServerAssociatedWithTask.ip)
-            && Objects.equals(this.osType, targetServerAssociatedWithTask.osType)
-            && Objects.equals(this.osVersion, targetServerAssociatedWithTask.osVersion);
+        TargetServerAssociatedWithTask that = (TargetServerAssociatedWithTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vmId, that.vmId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion);
     }
 
     @Override

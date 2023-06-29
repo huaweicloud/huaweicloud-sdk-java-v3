@@ -85,22 +85,15 @@ public class VpcCreate {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class VpcCreate {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -455,22 +441,20 @@ public class VpcCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcCreate vpcCreate = (VpcCreate) o;
-        return Objects.equals(this.name, vpcCreate.name) && Objects.equals(this.port, vpcCreate.port)
-            && Objects.equals(this.balanceStrategy, vpcCreate.balanceStrategy)
-            && Objects.equals(this.memberType, vpcCreate.memberType) && Objects.equals(this.type, vpcCreate.type)
-            && Objects.equals(this.dictCode, vpcCreate.dictCode)
-            && Objects.equals(this.memberGroups, vpcCreate.memberGroups)
-            && Objects.equals(this.members, vpcCreate.members)
-            && Objects.equals(this.vpcHealthConfig, vpcCreate.vpcHealthConfig)
-            && Objects.equals(this.microserviceInfo, vpcCreate.microserviceInfo);
+        VpcCreate that = (VpcCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo);
     }
 
     @Override

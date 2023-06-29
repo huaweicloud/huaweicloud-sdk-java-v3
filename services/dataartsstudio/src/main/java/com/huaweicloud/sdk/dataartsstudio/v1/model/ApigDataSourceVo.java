@@ -145,20 +145,17 @@ public class ApigDataSourceVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigDataSourceVo apigDataSourceVo = (ApigDataSourceVo) o;
-        return Objects.equals(this.dwName, apigDataSourceVo.dwName)
-            && Objects.equals(this.dwType, apigDataSourceVo.dwType)
-            && Objects.equals(this.dwConfig, apigDataSourceVo.dwConfig)
-            && Objects.equals(this.agentId, apigDataSourceVo.agentId)
-            && Objects.equals(this.agentName, apigDataSourceVo.agentName)
-            && Objects.equals(this.envType, apigDataSourceVo.envType);
+        ApigDataSourceVo that = (ApigDataSourceVo) obj;
+        return Objects.equals(this.dwName, that.dwName) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.dwConfig, that.dwConfig) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.envType, that.envType);
     }
 
     @Override

@@ -122,19 +122,17 @@ public class UpdatePolicyRuleStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyRuleStatusResponse updatePolicyRuleStatusResponse = (UpdatePolicyRuleStatusResponse) o;
-        return Objects.equals(this.id, updatePolicyRuleStatusResponse.id)
-            && Objects.equals(this.policyid, updatePolicyRuleStatusResponse.policyid)
-            && Objects.equals(this.timestamp, updatePolicyRuleStatusResponse.timestamp)
-            && Objects.equals(this.description, updatePolicyRuleStatusResponse.description)
-            && Objects.equals(this.status, updatePolicyRuleStatusResponse.status);
+        UpdatePolicyRuleStatusResponse that = (UpdatePolicyRuleStatusResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

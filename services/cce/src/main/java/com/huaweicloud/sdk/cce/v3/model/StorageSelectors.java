@@ -87,17 +87,16 @@ public class StorageSelectors {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageSelectors storageSelectors = (StorageSelectors) o;
-        return Objects.equals(this.name, storageSelectors.name)
-            && Objects.equals(this.storageType, storageSelectors.storageType)
-            && Objects.equals(this.matchLabels, storageSelectors.matchLabels);
+        StorageSelectors that = (StorageSelectors) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.matchLabels, that.matchLabels);
     }
 
     @Override

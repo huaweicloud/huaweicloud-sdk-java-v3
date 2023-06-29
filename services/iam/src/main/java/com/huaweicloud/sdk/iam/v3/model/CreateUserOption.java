@@ -275,26 +275,20 @@ public class CreateUserOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserOption createUserOption = (CreateUserOption) o;
-        return Objects.equals(this.accessMode, createUserOption.accessMode)
-            && Objects.equals(this.name, createUserOption.name)
-            && Objects.equals(this.domainId, createUserOption.domainId)
-            && Objects.equals(this.password, createUserOption.password)
-            && Objects.equals(this.email, createUserOption.email)
-            && Objects.equals(this.areacode, createUserOption.areacode)
-            && Objects.equals(this.phone, createUserOption.phone)
-            && Objects.equals(this.enabled, createUserOption.enabled)
-            && Objects.equals(this.pwdStatus, createUserOption.pwdStatus)
-            && Objects.equals(this.xuserType, createUserOption.xuserType)
-            && Objects.equals(this.xuserId, createUserOption.xuserId)
-            && Objects.equals(this.description, createUserOption.description);
+        CreateUserOption that = (CreateUserOption) obj;
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.xuserType, that.xuserType)
+            && Objects.equals(this.xuserId, that.xuserId) && Objects.equals(this.description, that.description);
     }
 
     @Override

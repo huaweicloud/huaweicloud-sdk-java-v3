@@ -341,29 +341,22 @@ public class QueryDeviceResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDeviceResultDTO queryDeviceResultDTO = (QueryDeviceResultDTO) o;
-        return Objects.equals(this.name, queryDeviceResultDTO.name)
-            && Objects.equals(this.type, queryDeviceResultDTO.type)
-            && Objects.equals(this.model, queryDeviceResultDTO.model)
-            && Objects.equals(this.sn, queryDeviceResultDTO.sn)
-            && Objects.equals(this.account, queryDeviceResultDTO.account)
-            && Objects.equals(this.number, queryDeviceResultDTO.number)
-            && Objects.equals(this.prjCodeMode, queryDeviceResultDTO.prjCodeMode)
-            && Objects.equals(this.deptCode, queryDeviceResultDTO.deptCode)
-            && Objects.equals(this.deptName, queryDeviceResultDTO.deptName)
-            && Objects.equals(this.deptNamePath, queryDeviceResultDTO.deptNamePath)
-            && Objects.equals(this.phone, queryDeviceResultDTO.phone)
-            && Objects.equals(this.country, queryDeviceResultDTO.country)
-            && Objects.equals(this.email, queryDeviceResultDTO.email)
-            && Objects.equals(this.description, queryDeviceResultDTO.description)
-            && Objects.equals(this.status, queryDeviceResultDTO.status);
+        QueryDeviceResultDTO that = (QueryDeviceResultDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.sn, that.sn)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.prjCodeMode, that.prjCodeMode) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

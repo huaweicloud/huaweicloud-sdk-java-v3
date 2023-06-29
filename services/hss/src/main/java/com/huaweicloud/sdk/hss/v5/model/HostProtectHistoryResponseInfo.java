@@ -123,19 +123,17 @@ public class HostProtectHistoryResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostProtectHistoryResponseInfo hostProtectHistoryResponseInfo = (HostProtectHistoryResponseInfo) o;
-        return Objects.equals(this.occrTime, hostProtectHistoryResponseInfo.occrTime)
-            && Objects.equals(this.filePath, hostProtectHistoryResponseInfo.filePath)
-            && Objects.equals(this.processId, hostProtectHistoryResponseInfo.processId)
-            && Objects.equals(this.processName, hostProtectHistoryResponseInfo.processName)
-            && Objects.equals(this.processCmd, hostProtectHistoryResponseInfo.processCmd);
+        HostProtectHistoryResponseInfo that = (HostProtectHistoryResponseInfo) obj;
+        return Objects.equals(this.occrTime, that.occrTime) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.processId, that.processId) && Objects.equals(this.processName, that.processName)
+            && Objects.equals(this.processCmd, that.processCmd);
     }
 
     @Override

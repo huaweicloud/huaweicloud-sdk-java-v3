@@ -153,20 +153,17 @@ public class UpdateResJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResJobRequestBody updateResJobRequestBody = (UpdateResJobRequestBody) o;
-        return Objects.equals(this.category, updateResJobRequestBody.category)
-            && Objects.equals(this.description, updateResJobRequestBody.description)
-            && Objects.equals(this.jobConfig, updateResJobRequestBody.jobConfig)
-            && Objects.equals(this.jobName, updateResJobRequestBody.jobName)
-            && Objects.equals(this.jobType, updateResJobRequestBody.jobType)
-            && Objects.equals(this.schedule, updateResJobRequestBody.schedule);
+        UpdateResJobRequestBody that = (UpdateResJobRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.jobConfig, that.jobConfig) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

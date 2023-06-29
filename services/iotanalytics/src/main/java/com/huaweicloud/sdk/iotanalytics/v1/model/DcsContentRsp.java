@@ -145,19 +145,18 @@ public class DcsContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DcsContentRsp dcsContentRsp = (DcsContentRsp) o;
-        return Objects.equals(this.endpointServiceId, dcsContentRsp.endpointServiceId)
-            && Objects.equals(this.endpointServiceName, dcsContentRsp.endpointServiceName)
-            && Objects.equals(this.endpointIp, dcsContentRsp.endpointIp)
-            && Objects.equals(this.port, dcsContentRsp.port) && Objects.equals(this.dcsType, dcsContentRsp.dcsType)
-            && Objects.equals(this.password, dcsContentRsp.password);
+        DcsContentRsp that = (DcsContentRsp) obj;
+        return Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.endpointIp, that.endpointIp) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.dcsType, that.dcsType) && Objects.equals(this.password, that.password);
     }
 
     @Override

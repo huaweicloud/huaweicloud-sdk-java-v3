@@ -97,17 +97,16 @@ public class ListAclPolicyBindedToApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAclPolicyBindedToApiV2Response listAclPolicyBindedToApiV2Response = (ListAclPolicyBindedToApiV2Response) o;
-        return Objects.equals(this.size, listAclPolicyBindedToApiV2Response.size)
-            && Objects.equals(this.total, listAclPolicyBindedToApiV2Response.total)
-            && Objects.equals(this.acls, listAclPolicyBindedToApiV2Response.acls);
+        ListAclPolicyBindedToApiV2Response that = (ListAclPolicyBindedToApiV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.acls, that.acls);
     }
 
     @Override

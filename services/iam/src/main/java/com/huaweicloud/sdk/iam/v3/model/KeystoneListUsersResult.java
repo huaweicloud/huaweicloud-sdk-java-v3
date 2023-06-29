@@ -241,24 +241,20 @@ public class KeystoneListUsersResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListUsersResult keystoneListUsersResult = (KeystoneListUsersResult) o;
-        return Objects.equals(this.pwdStatus, keystoneListUsersResult.pwdStatus)
-            && Objects.equals(this.domainId, keystoneListUsersResult.domainId)
-            && Objects.equals(this.lastProjectId, keystoneListUsersResult.lastProjectId)
-            && Objects.equals(this.name, keystoneListUsersResult.name)
-            && Objects.equals(this.description, keystoneListUsersResult.description)
-            && Objects.equals(this.passwordExpiresAt, keystoneListUsersResult.passwordExpiresAt)
-            && Objects.equals(this.links, keystoneListUsersResult.links)
-            && Objects.equals(this.id, keystoneListUsersResult.id)
-            && Objects.equals(this.enabled, keystoneListUsersResult.enabled)
-            && Objects.equals(this.pwdStrength, keystoneListUsersResult.pwdStrength);
+        KeystoneListUsersResult that = (KeystoneListUsersResult) obj;
+        return Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.lastProjectId, that.lastProjectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.pwdStrength, that.pwdStrength);
     }
 
     @Override

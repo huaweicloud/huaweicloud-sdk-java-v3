@@ -266,20 +266,19 @@ public class ConfigMap {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigMap configMap = (ConfigMap) o;
-        return Objects.equals(this.configs, configMap.configs) && Objects.equals(this.createdAt, configMap.createdAt)
-            && Objects.equals(this.description, configMap.description) && Objects.equals(this.id, configMap.id)
-            && Objects.equals(this.name, configMap.name) && Objects.equals(this.projectId, configMap.projectId)
-            && Objects.equals(this.tags, configMap.tags) && Objects.equals(this.type, configMap.type)
-            && Objects.equals(this.updatedAt, configMap.updatedAt)
-            && Objects.equals(this.workspaceId, configMap.workspaceId);
+        ConfigMap that = (ConfigMap) obj;
+        return Objects.equals(this.configs, that.configs) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

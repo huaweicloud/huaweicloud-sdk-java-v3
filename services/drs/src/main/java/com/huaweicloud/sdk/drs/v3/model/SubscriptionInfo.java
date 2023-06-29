@@ -24,8 +24,8 @@ public class SubscriptionInfo {
     private List<String> endpoints = null;
 
     /**
-    * 收件方式，sms：短信,email：邮件
-    */
+     * 收件方式，sms：短信,email：邮件
+     */
     public static final class ProtocolEnum {
 
         /**
@@ -68,22 +68,15 @@ public class SubscriptionInfo {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,15 @@ public class SubscriptionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionInfo subscriptionInfo = (SubscriptionInfo) o;
-        return Objects.equals(this.endpoints, subscriptionInfo.endpoints)
-            && Objects.equals(this.protocol, subscriptionInfo.protocol);
+        SubscriptionInfo that = (SubscriptionInfo) obj;
+        return Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

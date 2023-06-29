@@ -95,22 +95,15 @@ public class ListChartsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,22 +313,19 @@ public class ListChartsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListChartsResponse listChartsResponse = (ListChartsResponse) o;
-        return Objects.equals(this.id, listChartsResponse.id) && Objects.equals(this.sql, listChartsResponse.sql)
-            && Objects.equals(this.title, listChartsResponse.title)
-            && Objects.equals(this.type, listChartsResponse.type)
-            && Objects.equals(this.logGroupId, listChartsResponse.logGroupId)
-            && Objects.equals(this.logGroupName, listChartsResponse.logGroupName)
-            && Objects.equals(this.logStreamId, listChartsResponse.logStreamId)
-            && Objects.equals(this.logStreamName, listChartsResponse.logStreamName)
-            && Objects.equals(this.config, listChartsResponse.config);
+        ListChartsResponse that = (ListChartsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.config, that.config);
     }
 
     @Override

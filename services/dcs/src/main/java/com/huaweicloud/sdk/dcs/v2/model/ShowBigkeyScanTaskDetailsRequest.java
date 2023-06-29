@@ -55,16 +55,15 @@ public class ShowBigkeyScanTaskDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBigkeyScanTaskDetailsRequest showBigkeyScanTaskDetailsRequest = (ShowBigkeyScanTaskDetailsRequest) o;
-        return Objects.equals(this.instanceId, showBigkeyScanTaskDetailsRequest.instanceId)
-            && Objects.equals(this.bigkeyId, showBigkeyScanTaskDetailsRequest.bigkeyId);
+        ShowBigkeyScanTaskDetailsRequest that = (ShowBigkeyScanTaskDetailsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.bigkeyId, that.bigkeyId);
     }
 
     @Override

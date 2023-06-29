@@ -298,26 +298,21 @@ public class CheckRuleRiskInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRuleRiskInfoResponseInfo checkRuleRiskInfoResponseInfo = (CheckRuleRiskInfoResponseInfo) o;
-        return Objects.equals(this.severity, checkRuleRiskInfoResponseInfo.severity)
-            && Objects.equals(this.checkName, checkRuleRiskInfoResponseInfo.checkName)
-            && Objects.equals(this.checkType, checkRuleRiskInfoResponseInfo.checkType)
-            && Objects.equals(this.standard, checkRuleRiskInfoResponseInfo.standard)
-            && Objects.equals(this.checkRuleName, checkRuleRiskInfoResponseInfo.checkRuleName)
-            && Objects.equals(this.checkRuleId, checkRuleRiskInfoResponseInfo.checkRuleId)
-            && Objects.equals(this.hostNum, checkRuleRiskInfoResponseInfo.hostNum)
-            && Objects.equals(this.scanResult, checkRuleRiskInfoResponseInfo.scanResult)
-            && Objects.equals(this.status, checkRuleRiskInfoResponseInfo.status)
-            && Objects.equals(this.enableFix, checkRuleRiskInfoResponseInfo.enableFix)
-            && Objects.equals(this.enableClick, checkRuleRiskInfoResponseInfo.enableClick)
-            && Objects.equals(this.ruleParams, checkRuleRiskInfoResponseInfo.ruleParams);
+        CheckRuleRiskInfoResponseInfo that = (CheckRuleRiskInfoResponseInfo) obj;
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.checkRuleName, that.checkRuleName)
+            && Objects.equals(this.checkRuleId, that.checkRuleId) && Objects.equals(this.hostNum, that.hostNum)
+            && Objects.equals(this.scanResult, that.scanResult) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enableFix, that.enableFix) && Objects.equals(this.enableClick, that.enableClick)
+            && Objects.equals(this.ruleParams, that.ruleParams);
     }
 
     @Override

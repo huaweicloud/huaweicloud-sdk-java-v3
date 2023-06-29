@@ -78,22 +78,15 @@ public class PublicipPoolShowResp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -515,30 +508,25 @@ public class PublicipPoolShowResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicipPoolShowResp publicipPoolShowResp = (PublicipPoolShowResp) o;
-        return Objects.equals(this.id, publicipPoolShowResp.id) && Objects.equals(this.name, publicipPoolShowResp.name)
-            && Objects.equals(this.status, publicipPoolShowResp.status)
-            && Objects.equals(this.type, publicipPoolShowResp.type)
-            && Objects.equals(this.description, publicipPoolShowResp.description)
-            && Objects.equals(this.projectId, publicipPoolShowResp.projectId)
-            && Objects.equals(this.size, publicipPoolShowResp.size)
-            && Objects.equals(this.used, publicipPoolShowResp.used)
-            && Objects.equals(this.createdAt, publicipPoolShowResp.createdAt)
-            && Objects.equals(this.updatedAt, publicipPoolShowResp.updatedAt)
-            && Objects.equals(this.billingInfo, publicipPoolShowResp.billingInfo)
-            && Objects.equals(this.publicBorderGroup, publicipPoolShowResp.publicBorderGroup)
-            && Objects.equals(this.shared, publicipPoolShowResp.shared)
-            && Objects.equals(this.isCommon, publicipPoolShowResp.isCommon)
-            && Objects.equals(this.tags, publicipPoolShowResp.tags)
-            && Objects.equals(this.enterpriseProjectId, publicipPoolShowResp.enterpriseProjectId)
-            && Objects.equals(this.allowShareBandwidthTypes, publicipPoolShowResp.allowShareBandwidthTypes);
+        PublicipPoolShowResp that = (PublicipPoolShowResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.billingInfo, that.billingInfo)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.shared, that.shared) && Objects.equals(this.isCommon, that.isCommon)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.allowShareBandwidthTypes, that.allowShareBandwidthTypes);
     }
 
     @Override

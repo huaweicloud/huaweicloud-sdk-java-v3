@@ -43,15 +43,15 @@ public class DisassociatePublicipsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociatePublicipsRequestBody disassociatePublicipsRequestBody = (DisassociatePublicipsRequestBody) o;
-        return Objects.equals(this.publicip, disassociatePublicipsRequestBody.publicip);
+        DisassociatePublicipsRequestBody that = (DisassociatePublicipsRequestBody) obj;
+        return Objects.equals(this.publicip, that.publicip);
     }
 
     @Override

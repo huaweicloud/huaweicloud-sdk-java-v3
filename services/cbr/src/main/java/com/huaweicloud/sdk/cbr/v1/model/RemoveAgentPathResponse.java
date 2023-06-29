@@ -91,16 +91,15 @@ public class RemoveAgentPathResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveAgentPathResponse removeAgentPathResponse = (RemoveAgentPathResponse) o;
-        return Objects.equals(this.removed, removeAgentPathResponse.removed)
-            && Objects.equals(this.notExisted, removeAgentPathResponse.notExisted);
+        RemoveAgentPathResponse that = (RemoveAgentPathResponse) obj;
+        return Objects.equals(this.removed, that.removed) && Objects.equals(this.notExisted, that.notExisted);
     }
 
     @Override

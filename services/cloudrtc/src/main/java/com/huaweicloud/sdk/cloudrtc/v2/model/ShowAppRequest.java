@@ -103,18 +103,16 @@ public class ShowAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppRequest showAppRequest = (ShowAppRequest) o;
-        return Objects.equals(this.authorization, showAppRequest.authorization)
-            && Objects.equals(this.xSdkDate, showAppRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showAppRequest.xProjectId)
-            && Objects.equals(this.appId, showAppRequest.appId);
+        ShowAppRequest that = (ShowAppRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

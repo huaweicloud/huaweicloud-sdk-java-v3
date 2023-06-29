@@ -330,29 +330,28 @@ public class ShowEvaluationProjectDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEvaluationProjectDetailResponse showEvaluationProjectDetailResponse =
-            (ShowEvaluationProjectDetailResponse) o;
-        return Objects.equals(this.sourceDbSize, showEvaluationProjectDetailResponse.sourceDbSize)
-            && Objects.equals(this.sourceDbSchema, showEvaluationProjectDetailResponse.sourceDbSchema)
-            && Objects.equals(this.sourceDbCpu, showEvaluationProjectDetailResponse.sourceDbCpu)
-            && Objects.equals(this.sourceDbCharacterSet, showEvaluationProjectDetailResponse.sourceDbCharacterSet)
-            && Objects.equals(this.sourceDbOs, showEvaluationProjectDetailResponse.sourceDbOs)
-            && Objects.equals(this.sourceDbInstanceNum, showEvaluationProjectDetailResponse.sourceDbInstanceNum)
-            && Objects.equals(this.sourceDbRam, showEvaluationProjectDetailResponse.sourceDbRam)
-            && Objects.equals(this.sourceDbInfo, showEvaluationProjectDetailResponse.sourceDbInfo)
-            && Objects.equals(this.sourceDbPhyRam, showEvaluationProjectDetailResponse.sourceDbPhyRam)
-            && Objects.equals(this.sourceDbVersion, showEvaluationProjectDetailResponse.sourceDbVersion)
-            && Objects.equals(this.sourceDbConf, showEvaluationProjectDetailResponse.sourceDbConf)
-            && Objects.equals(this.sourceDbClock, showEvaluationProjectDetailResponse.sourceDbClock)
-            && Objects.equals(this.evaluationProjectId, showEvaluationProjectDetailResponse.evaluationProjectId)
-            && Objects.equals(this.evaluationProjectName, showEvaluationProjectDetailResponse.evaluationProjectName);
+        ShowEvaluationProjectDetailResponse that = (ShowEvaluationProjectDetailResponse) obj;
+        return Objects.equals(this.sourceDbSize, that.sourceDbSize)
+            && Objects.equals(this.sourceDbSchema, that.sourceDbSchema)
+            && Objects.equals(this.sourceDbCpu, that.sourceDbCpu)
+            && Objects.equals(this.sourceDbCharacterSet, that.sourceDbCharacterSet)
+            && Objects.equals(this.sourceDbOs, that.sourceDbOs)
+            && Objects.equals(this.sourceDbInstanceNum, that.sourceDbInstanceNum)
+            && Objects.equals(this.sourceDbRam, that.sourceDbRam)
+            && Objects.equals(this.sourceDbInfo, that.sourceDbInfo)
+            && Objects.equals(this.sourceDbPhyRam, that.sourceDbPhyRam)
+            && Objects.equals(this.sourceDbVersion, that.sourceDbVersion)
+            && Objects.equals(this.sourceDbConf, that.sourceDbConf)
+            && Objects.equals(this.sourceDbClock, that.sourceDbClock)
+            && Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName);
     }
 
     @Override

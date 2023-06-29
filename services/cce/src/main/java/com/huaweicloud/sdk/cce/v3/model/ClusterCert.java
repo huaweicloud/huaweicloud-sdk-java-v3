@@ -77,17 +77,17 @@ public class ClusterCert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterCert clusterCert = (ClusterCert) o;
-        return Objects.equals(this.server, clusterCert.server)
-            && Objects.equals(this.certificateAuthorityData, clusterCert.certificateAuthorityData)
-            && Objects.equals(this.insecureSkipTlsVerify, clusterCert.insecureSkipTlsVerify);
+        ClusterCert that = (ClusterCert) obj;
+        return Objects.equals(this.server, that.server)
+            && Objects.equals(this.certificateAuthorityData, that.certificateAuthorityData)
+            && Objects.equals(this.insecureSkipTlsVerify, that.insecureSkipTlsVerify);
     }
 
     @Override

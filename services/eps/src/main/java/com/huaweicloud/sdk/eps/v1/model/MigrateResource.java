@@ -121,19 +121,17 @@ public class MigrateResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateResource migrateResource = (MigrateResource) o;
-        return Objects.equals(this.regionId, migrateResource.regionId)
-            && Objects.equals(this.projectId, migrateResource.projectId)
-            && Objects.equals(this.resourceId, migrateResource.resourceId)
-            && Objects.equals(this.resourceType, migrateResource.resourceType)
-            && Objects.equals(this.associated, migrateResource.associated);
+        MigrateResource that = (MigrateResource) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.associated, that.associated);
     }
 
     @Override

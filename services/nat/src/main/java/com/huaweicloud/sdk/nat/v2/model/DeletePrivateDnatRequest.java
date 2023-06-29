@@ -33,15 +33,15 @@ public class DeletePrivateDnatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePrivateDnatRequest deletePrivateDnatRequest = (DeletePrivateDnatRequest) o;
-        return Objects.equals(this.dnatRuleId, deletePrivateDnatRequest.dnatRuleId);
+        DeletePrivateDnatRequest that = (DeletePrivateDnatRequest) obj;
+        return Objects.equals(this.dnatRuleId, that.dnatRuleId);
     }
 
     @Override

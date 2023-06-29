@@ -279,26 +279,21 @@ public class ListDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.instanceId, listDevicesRequest.instanceId)
-            && Objects.equals(this.productId, listDevicesRequest.productId)
-            && Objects.equals(this.gatewayId, listDevicesRequest.gatewayId)
-            && Objects.equals(this.isCascadeQuery, listDevicesRequest.isCascadeQuery)
-            && Objects.equals(this.nodeId, listDevicesRequest.nodeId)
-            && Objects.equals(this.deviceName, listDevicesRequest.deviceName)
-            && Objects.equals(this.limit, listDevicesRequest.limit)
-            && Objects.equals(this.marker, listDevicesRequest.marker)
-            && Objects.equals(this.offset, listDevicesRequest.offset)
-            && Objects.equals(this.startTime, listDevicesRequest.startTime)
-            && Objects.equals(this.endTime, listDevicesRequest.endTime)
-            && Objects.equals(this.appId, listDevicesRequest.appId);
+        ListDevicesRequest that = (ListDevicesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.isCascadeQuery, that.isCascadeQuery) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

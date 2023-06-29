@@ -43,16 +43,15 @@ public class AssociateServerVirtualIpRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateServerVirtualIpRequestBody associateServerVirtualIpRequestBody =
-            (AssociateServerVirtualIpRequestBody) o;
-        return Objects.equals(this.nic, associateServerVirtualIpRequestBody.nic);
+        AssociateServerVirtualIpRequestBody that = (AssociateServerVirtualIpRequestBody) obj;
+        return Objects.equals(this.nic, that.nic);
     }
 
     @Override

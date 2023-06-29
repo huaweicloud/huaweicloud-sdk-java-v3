@@ -96,17 +96,16 @@ public class AggregateMetric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateMetric aggregateMetric = (AggregateMetric) o;
-        return Objects.equals(this.inputs, aggregateMetric.inputs)
-            && Objects.equals(this.metricName, aggregateMetric.metricName)
-            && Objects.equals(this.expression, aggregateMetric.expression);
+        AggregateMetric that = (AggregateMetric) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.expression, that.expression);
     }
 
     @Override

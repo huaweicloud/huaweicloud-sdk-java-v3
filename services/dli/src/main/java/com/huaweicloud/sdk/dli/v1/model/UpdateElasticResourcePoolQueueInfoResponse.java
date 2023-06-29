@@ -56,17 +56,15 @@ public class UpdateElasticResourcePoolQueueInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateElasticResourcePoolQueueInfoResponse updateElasticResourcePoolQueueInfoResponse =
-            (UpdateElasticResourcePoolQueueInfoResponse) o;
-        return Objects.equals(this.isSuccess, updateElasticResourcePoolQueueInfoResponse.isSuccess)
-            && Objects.equals(this.message, updateElasticResourcePoolQueueInfoResponse.message);
+        UpdateElasticResourcePoolQueueInfoResponse that = (UpdateElasticResourcePoolQueueInfoResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

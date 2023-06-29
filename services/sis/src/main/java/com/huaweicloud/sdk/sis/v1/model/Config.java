@@ -120,22 +120,15 @@ public class Config {
             if (value == null) {
                 return null;
             }
-            AudioFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioFormatEnum(value));
         }
 
         public static AudioFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,22 +237,15 @@ public class Config {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PropertyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PropertyEnum(value));
         }
 
         public static PropertyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,22 +312,15 @@ public class Config {
             if (value == null) {
                 return null;
             }
-            AddPuncEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddPuncEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddPuncEnum(value));
         }
 
         public static AddPuncEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AddPuncEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -413,22 +392,15 @@ public class Config {
             if (value == null) {
                 return null;
             }
-            DigitNormEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DigitNormEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DigitNormEnum(value));
         }
 
         public static DigitNormEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DigitNormEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -495,22 +467,15 @@ public class Config {
             if (value == null) {
                 return null;
             }
-            NeedWordInfoEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NeedWordInfoEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NeedWordInfoEnum(value));
         }
 
         public static NeedWordInfoEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NeedWordInfoEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -635,18 +600,17 @@ public class Config {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Config config = (Config) o;
-        return Objects.equals(this.audioFormat, config.audioFormat) && Objects.equals(this.property, config.property)
-            && Objects.equals(this.addPunc, config.addPunc) && Objects.equals(this.vocabularyId, config.vocabularyId)
-            && Objects.equals(this.digitNorm, config.digitNorm)
-            && Objects.equals(this.needWordInfo, config.needWordInfo);
+        Config that = (Config) obj;
+        return Objects.equals(this.audioFormat, that.audioFormat) && Objects.equals(this.property, that.property)
+            && Objects.equals(this.addPunc, that.addPunc) && Objects.equals(this.vocabularyId, that.vocabularyId)
+            && Objects.equals(this.digitNorm, that.digitNorm) && Objects.equals(this.needWordInfo, that.needWordInfo);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteUserRequest deleteUserRequest = (DeleteUserRequest) o;
-        return Objects.equals(this.instanceId, deleteUserRequest.instanceId)
-            && Objects.equals(this.userName, deleteUserRequest.userName);
+        DeleteUserRequest that = (DeleteUserRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

@@ -58,16 +58,16 @@ public class ReclaimIndirectPartnerAccountReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReclaimIndirectPartnerAccountReq reclaimIndirectPartnerAccountReq = (ReclaimIndirectPartnerAccountReq) o;
-        return Objects.equals(this.indirectPartnerId, reclaimIndirectPartnerAccountReq.indirectPartnerId)
-            && Objects.equals(this.amount, reclaimIndirectPartnerAccountReq.amount);
+        ReclaimIndirectPartnerAccountReq that = (ReclaimIndirectPartnerAccountReq) obj;
+        return Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.amount, that.amount);
     }
 
     @Override

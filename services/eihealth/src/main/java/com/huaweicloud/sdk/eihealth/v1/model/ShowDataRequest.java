@@ -79,17 +79,16 @@ public class ShowDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataRequest showDataRequest = (ShowDataRequest) o;
-        return Objects.equals(this.xNeedContent, showDataRequest.xNeedContent)
-            && Objects.equals(this.eihealthProjectId, showDataRequest.eihealthProjectId)
-            && Objects.equals(this.path, showDataRequest.path);
+        ShowDataRequest that = (ShowDataRequest) obj;
+        return Objects.equals(this.xNeedContent, that.xNeedContent)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.path, that.path);
     }
 
     @Override

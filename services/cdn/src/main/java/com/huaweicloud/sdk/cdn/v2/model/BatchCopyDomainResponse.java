@@ -53,15 +53,15 @@ public class BatchCopyDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCopyDomainResponse batchCopyDomainResponse = (BatchCopyDomainResponse) o;
-        return Objects.equals(this.result, batchCopyDomainResponse.result);
+        BatchCopyDomainResponse that = (BatchCopyDomainResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

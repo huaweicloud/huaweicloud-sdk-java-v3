@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,28 +11,23 @@ import java.util.Objects;
  */
 public class ShowComponentByNameResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aom_id")
-    
+    @JsonProperty(value = "aom_id")
 
     private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
@@ -48,9 +35,6 @@ public class ShowComponentByNameResponse extends SdkResponse {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -64,15 +48,10 @@ public class ShowComponentByNameResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowComponentByNameResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 组件id
@@ -86,15 +65,10 @@ public class ShowComponentByNameResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowComponentByNameResponse withAomId(String aomId) {
         this.aomId = aomId;
         return this;
     }
-
-    
-
 
     /**
      * aomId
@@ -108,15 +82,10 @@ public class ShowComponentByNameResponse extends SdkResponse {
         this.aomId = aomId;
     }
 
-    
-
     public ShowComponentByNameResponse withAppId(String appId) {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用id
@@ -130,26 +99,24 @@ public class ShowComponentByNameResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentByNameResponse showComponentByNameResponse = (ShowComponentByNameResponse) o;
-        return Objects.equals(this.name, showComponentByNameResponse.name) &&
-            Objects.equals(this.id, showComponentByNameResponse.id) &&
-            Objects.equals(this.aomId, showComponentByNameResponse.aomId) &&
-            Objects.equals(this.appId, showComponentByNameResponse.appId);
+        ShowComponentByNameResponse that = (ShowComponentByNameResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.aomId, that.aomId) && Objects.equals(this.appId, that.appId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, id, aomId, appId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,6 +128,7 @@ public class ShowComponentByNameResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -171,8 +139,5 @@ public class ShowComponentByNameResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

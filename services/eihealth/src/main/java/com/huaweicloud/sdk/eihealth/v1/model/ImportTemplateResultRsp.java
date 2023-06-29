@@ -143,20 +143,19 @@ public class ImportTemplateResultRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportTemplateResultRsp importTemplateResultRsp = (ImportTemplateResultRsp) o;
-        return Objects.equals(this.sourceProjectId, importTemplateResultRsp.sourceProjectId)
-            && Objects.equals(this.sourceTemplateId, importTemplateResultRsp.sourceTemplateId)
-            && Objects.equals(this.destinationTemplateId, importTemplateResultRsp.destinationTemplateId)
-            && Objects.equals(this.destinationTemplateName, importTemplateResultRsp.destinationTemplateName)
-            && Objects.equals(this.failedReason, importTemplateResultRsp.failedReason)
-            && Objects.equals(this.status, importTemplateResultRsp.status);
+        ImportTemplateResultRsp that = (ImportTemplateResultRsp) obj;
+        return Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceTemplateId, that.sourceTemplateId)
+            && Objects.equals(this.destinationTemplateId, that.destinationTemplateId)
+            && Objects.equals(this.destinationTemplateName, that.destinationTemplateName)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.status, that.status);
     }
 
     @Override

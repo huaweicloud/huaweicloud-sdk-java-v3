@@ -69,22 +69,15 @@ public class RpoStattisticsParams {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,20 +212,18 @@ public class RpoStattisticsParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RpoStattisticsParams rpoStattisticsParams = (RpoStattisticsParams) o;
-        return Objects.equals(this.id, rpoStattisticsParams.id)
-            && Objects.equals(this.pointTime, rpoStattisticsParams.pointTime)
-            && Objects.equals(this.resourceNum, rpoStattisticsParams.resourceNum)
-            && Objects.equals(this.resourceType, rpoStattisticsParams.resourceType)
-            && Objects.equals(this.createdAt, rpoStattisticsParams.createdAt)
-            && Objects.equals(this.updatedAt, rpoStattisticsParams.updatedAt);
+        RpoStattisticsParams that = (RpoStattisticsParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.pointTime, that.pointTime)
+            && Objects.equals(this.resourceNum, that.resourceNum)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

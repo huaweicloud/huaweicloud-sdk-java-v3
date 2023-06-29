@@ -75,16 +75,15 @@ public class SetPartitionColumnStatisticsInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetPartitionColumnStatisticsInput setPartitionColumnStatisticsInput = (SetPartitionColumnStatisticsInput) o;
-        return Objects.equals(this.needMerge, setPartitionColumnStatisticsInput.needMerge)
-            && Objects.equals(this.statistics, setPartitionColumnStatisticsInput.statistics);
+        SetPartitionColumnStatisticsInput that = (SetPartitionColumnStatisticsInput) obj;
+        return Objects.equals(this.needMerge, that.needMerge) && Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

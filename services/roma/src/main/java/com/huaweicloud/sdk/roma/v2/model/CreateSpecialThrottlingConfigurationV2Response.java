@@ -211,24 +211,19 @@ public class CreateSpecialThrottlingConfigurationV2Response extends SdkResponse 
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSpecialThrottlingConfigurationV2Response createSpecialThrottlingConfigurationV2Response =
-            (CreateSpecialThrottlingConfigurationV2Response) o;
-        return Objects.equals(this.id, createSpecialThrottlingConfigurationV2Response.id)
-            && Objects.equals(this.callLimits, createSpecialThrottlingConfigurationV2Response.callLimits)
-            && Objects.equals(this.applyTime, createSpecialThrottlingConfigurationV2Response.applyTime)
-            && Objects.equals(this.appName, createSpecialThrottlingConfigurationV2Response.appName)
-            && Objects.equals(this.appId, createSpecialThrottlingConfigurationV2Response.appId)
-            && Objects.equals(this.objectId, createSpecialThrottlingConfigurationV2Response.objectId)
-            && Objects.equals(this.objectType, createSpecialThrottlingConfigurationV2Response.objectType)
-            && Objects.equals(this.objectName, createSpecialThrottlingConfigurationV2Response.objectName)
-            && Objects.equals(this.throttleId, createSpecialThrottlingConfigurationV2Response.throttleId);
+        CreateSpecialThrottlingConfigurationV2Response that = (CreateSpecialThrottlingConfigurationV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.callLimits, that.callLimits)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectName, that.objectName)
+            && Objects.equals(this.throttleId, that.throttleId);
     }
 
     @Override

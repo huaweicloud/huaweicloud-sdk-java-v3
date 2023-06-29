@@ -97,17 +97,16 @@ public class ShowEntitiesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEntitiesResponse showEntitiesResponse = (ShowEntitiesResponse) o;
-        return Objects.equals(this.count, showEntitiesResponse.count)
-            && Objects.equals(this.entities, showEntitiesResponse.entities)
-            && Objects.equals(this.scrollId, showEntitiesResponse.scrollId);
+        ShowEntitiesResponse that = (ShowEntitiesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.entities, that.entities)
+            && Objects.equals(this.scrollId, that.scrollId);
     }
 
     @Override

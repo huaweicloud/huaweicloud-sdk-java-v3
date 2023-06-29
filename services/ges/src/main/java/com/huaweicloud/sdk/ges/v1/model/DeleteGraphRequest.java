@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteGraphRequest  {
-
+public class DeleteGraphRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keepBackup")
-    
+    @JsonProperty(value = "keepBackup")
 
     private Boolean keepBackup;
 
@@ -34,9 +24,6 @@ public class DeleteGraphRequest  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -50,15 +37,10 @@ public class DeleteGraphRequest  {
         this.graphId = graphId;
     }
 
-    
-
     public DeleteGraphRequest withKeepBackup(Boolean keepBackup) {
         this.keepBackup = keepBackup;
         return this;
     }
-
-    
-
 
     /**
      * 删除图后是否保留备份，默认保留1个自动备份和2个手动备份。该查询参数为空时，表示不保留。
@@ -72,24 +54,23 @@ public class DeleteGraphRequest  {
         this.keepBackup = keepBackup;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGraphRequest deleteGraphRequest = (DeleteGraphRequest) o;
-        return Objects.equals(this.graphId, deleteGraphRequest.graphId) &&
-            Objects.equals(this.keepBackup, deleteGraphRequest.keepBackup);
+        DeleteGraphRequest that = (DeleteGraphRequest) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.keepBackup, that.keepBackup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, keepBackup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteGraphRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteGraphRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

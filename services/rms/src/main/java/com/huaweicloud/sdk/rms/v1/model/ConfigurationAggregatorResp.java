@@ -177,21 +177,20 @@ public class ConfigurationAggregatorResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationAggregatorResp configurationAggregatorResp = (ConfigurationAggregatorResp) o;
-        return Objects.equals(this.aggregatorName, configurationAggregatorResp.aggregatorName)
-            && Objects.equals(this.aggregatorId, configurationAggregatorResp.aggregatorId)
-            && Objects.equals(this.aggregatorUrn, configurationAggregatorResp.aggregatorUrn)
-            && Objects.equals(this.aggregatorType, configurationAggregatorResp.aggregatorType)
-            && Objects.equals(this.accountAggregationSources, configurationAggregatorResp.accountAggregationSources)
-            && Objects.equals(this.updatedAt, configurationAggregatorResp.updatedAt)
-            && Objects.equals(this.createdAt, configurationAggregatorResp.createdAt);
+        ConfigurationAggregatorResp that = (ConfigurationAggregatorResp) obj;
+        return Objects.equals(this.aggregatorName, that.aggregatorName)
+            && Objects.equals(this.aggregatorId, that.aggregatorId)
+            && Objects.equals(this.aggregatorUrn, that.aggregatorUrn)
+            && Objects.equals(this.aggregatorType, that.aggregatorType)
+            && Objects.equals(this.accountAggregationSources, that.accountAggregationSources)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

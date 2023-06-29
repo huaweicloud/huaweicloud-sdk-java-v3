@@ -330,26 +330,20 @@ public class ListPortInfosResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortInfosResponseModelData listPortInfosResponseModelData = (ListPortInfosResponseModelData) o;
-        return Objects.equals(this.id, listPortInfosResponseModelData.id)
-            && Objects.equals(this.createTime, listPortInfosResponseModelData.createTime)
-            && Objects.equals(this.pubId, listPortInfosResponseModelData.pubId)
-            && Objects.equals(this.port, listPortInfosResponseModelData.port)
-            && Objects.equals(this.sign, listPortInfosResponseModelData.sign)
-            && Objects.equals(this.authorizationFiles, listPortInfosResponseModelData.authorizationFiles)
-            && Objects.equals(this.pubName, listPortInfosResponseModelData.pubName)
-            && Objects.equals(this.portType, listPortInfosResponseModelData.portType)
-            && Objects.equals(this.signCheck, listPortInfosResponseModelData.signCheck)
-            && Objects.equals(this.province, listPortInfosResponseModelData.province)
-            && Objects.equals(this.isBind, listPortInfosResponseModelData.isBind)
-            && Objects.equals(this.pubList, listPortInfosResponseModelData.pubList);
+        ListPortInfosResponseModelData that = (ListPortInfosResponseModelData) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.pubId, that.pubId) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.sign, that.sign) && Objects.equals(this.authorizationFiles, that.authorizationFiles)
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.portType, that.portType)
+            && Objects.equals(this.signCheck, that.signCheck) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.isBind, that.isBind) && Objects.equals(this.pubList, that.pubList);
     }
 
     @Override

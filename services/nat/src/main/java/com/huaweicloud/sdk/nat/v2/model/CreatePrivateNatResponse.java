@@ -66,16 +66,15 @@ public class CreatePrivateNatResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateNatResponse createPrivateNatResponse = (CreatePrivateNatResponse) o;
-        return Objects.equals(this.gateway, createPrivateNatResponse.gateway)
-            && Objects.equals(this.requestId, createPrivateNatResponse.requestId);
+        CreatePrivateNatResponse that = (CreatePrivateNatResponse) obj;
+        return Objects.equals(this.gateway, that.gateway) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

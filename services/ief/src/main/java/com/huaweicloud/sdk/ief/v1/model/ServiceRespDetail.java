@@ -162,20 +162,17 @@ public class ServiceRespDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceRespDetail serviceRespDetail = (ServiceRespDetail) o;
-        return Objects.equals(this.createdAt, serviceRespDetail.createdAt)
-            && Objects.equals(this.id, serviceRespDetail.id)
-            && Objects.equals(this.metaData, serviceRespDetail.metaData)
-            && Objects.equals(this.projectId, serviceRespDetail.projectId)
-            && Objects.equals(this.spec, serviceRespDetail.spec)
-            && Objects.equals(this.updatedAt, serviceRespDetail.updatedAt);
+        ServiceRespDetail that = (ServiceRespDetail) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.metaData, that.metaData) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

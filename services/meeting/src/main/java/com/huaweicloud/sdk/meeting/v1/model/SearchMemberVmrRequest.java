@@ -148,20 +148,18 @@ public class SearchMemberVmrRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchMemberVmrRequest searchMemberVmrRequest = (SearchMemberVmrRequest) o;
-        return Objects.equals(this.xRequestId, searchMemberVmrRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchMemberVmrRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchMemberVmrRequest.offset)
-            && Objects.equals(this.limit, searchMemberVmrRequest.limit)
-            && Objects.equals(this.searchKey, searchMemberVmrRequest.searchKey)
-            && Objects.equals(this.specialVmr, searchMemberVmrRequest.specialVmr);
+        SearchMemberVmrRequest that = (SearchMemberVmrRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.specialVmr, that.specialVmr);
     }
 
     @Override

@@ -166,20 +166,18 @@ public class AppConfigInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppConfigInfoV2 appConfigInfoV2 = (AppConfigInfoV2) o;
-        return Objects.equals(this.id, appConfigInfoV2.id) && Objects.equals(this.appId, appConfigInfoV2.appId)
-            && Objects.equals(this.configType, appConfigInfoV2.configType)
-            && Objects.equals(this.configName, appConfigInfoV2.configName)
-            && Objects.equals(this.configValue, appConfigInfoV2.configValue)
-            && Objects.equals(this.updateTime, appConfigInfoV2.updateTime)
-            && Objects.equals(this.description, appConfigInfoV2.description);
+        AppConfigInfoV2 that = (AppConfigInfoV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.configType, that.configType) && Objects.equals(this.configName, that.configName)
+            && Objects.equals(this.configValue, that.configValue) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

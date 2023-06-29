@@ -34,15 +34,15 @@ public class ListConditionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConditionResponse listConditionResponse = (ListConditionResponse) o;
-        return Objects.equals(this.data, listConditionResponse.data);
+        ListConditionResponse that = (ListConditionResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

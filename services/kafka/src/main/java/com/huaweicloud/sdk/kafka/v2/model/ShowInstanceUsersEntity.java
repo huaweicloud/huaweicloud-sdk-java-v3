@@ -99,18 +99,16 @@ public class ShowInstanceUsersEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceUsersEntity showInstanceUsersEntity = (ShowInstanceUsersEntity) o;
-        return Objects.equals(this.userName, showInstanceUsersEntity.userName)
-            && Objects.equals(this.role, showInstanceUsersEntity.role)
-            && Objects.equals(this.defaultApp, showInstanceUsersEntity.defaultApp)
-            && Objects.equals(this.createdTime, showInstanceUsersEntity.createdTime);
+        ShowInstanceUsersEntity that = (ShowInstanceUsersEntity) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.defaultApp, that.defaultApp) && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

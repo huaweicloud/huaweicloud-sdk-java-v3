@@ -99,18 +99,18 @@ public class Environment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Environment environment = (Environment) o;
-        return Objects.equals(this.environmentId, environment.environmentId)
-            && Objects.equals(this.environmentName, environment.environmentName)
-            && Objects.equals(this.environmentDescription, environment.environmentDescription)
-            && Objects.equals(this.isDefault, environment.isDefault);
+        Environment that = (Environment) obj;
+        return Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.environmentName, that.environmentName)
+            && Objects.equals(this.environmentDescription, that.environmentDescription)
+            && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

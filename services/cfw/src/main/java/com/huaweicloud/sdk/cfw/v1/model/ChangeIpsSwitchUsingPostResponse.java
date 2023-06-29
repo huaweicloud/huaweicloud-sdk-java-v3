@@ -66,16 +66,15 @@ public class ChangeIpsSwitchUsingPostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeIpsSwitchUsingPostResponse changeIpsSwitchUsingPostResponse = (ChangeIpsSwitchUsingPostResponse) o;
-        return Objects.equals(this.traceId, changeIpsSwitchUsingPostResponse.traceId)
-            && Objects.equals(this.data, changeIpsSwitchUsingPostResponse.data);
+        ChangeIpsSwitchUsingPostResponse that = (ChangeIpsSwitchUsingPostResponse) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.data, that.data);
     }
 
     @Override

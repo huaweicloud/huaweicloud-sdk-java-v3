@@ -165,21 +165,19 @@ public class ResultsTopnBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResultsTopnBody resultsTopnBody = (ResultsTopnBody) o;
-        return Objects.equals(this.indexTraffic, resultsTopnBody.indexTraffic)
-            && Objects.equals(this.storage, resultsTopnBody.storage)
-            && Objects.equals(this.writeTraffic, resultsTopnBody.writeTraffic)
-            && Objects.equals(this.logGroupId, resultsTopnBody.logGroupId)
-            && Objects.equals(this.logGroupName, resultsTopnBody.logGroupName)
-            && Objects.equals(this.logStreamId, resultsTopnBody.logStreamId)
-            && Objects.equals(this.logStreamName, resultsTopnBody.logStreamName);
+        ResultsTopnBody that = (ResultsTopnBody) obj;
+        return Objects.equals(this.indexTraffic, that.indexTraffic) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.writeTraffic, that.writeTraffic) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override

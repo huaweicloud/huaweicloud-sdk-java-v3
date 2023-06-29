@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListNasRequest  {
-
+public class ListNasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -40,9 +29,6 @@ public class ListNasRequest  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * NA名称搜索关键字
@@ -56,15 +42,10 @@ public class ListNasRequest  {
         this.name = name;
     }
 
-    
-
     public ListNasRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -80,15 +61,10 @@ public class ListNasRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListNasRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，取值范围为非负整数，默认值为10
@@ -104,25 +80,24 @@ public class ListNasRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNasRequest listNasRequest = (ListNasRequest) o;
-        return Objects.equals(this.name, listNasRequest.name) &&
-            Objects.equals(this.offset, listNasRequest.offset) &&
-            Objects.equals(this.limit, listNasRequest.limit);
+        ListNasRequest that = (ListNasRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -133,6 +108,7 @@ public class ListNasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -143,8 +119,5 @@ public class ListNasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

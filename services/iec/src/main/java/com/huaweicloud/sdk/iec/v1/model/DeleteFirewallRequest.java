@@ -33,15 +33,15 @@ public class DeleteFirewallRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFirewallRequest deleteFirewallRequest = (DeleteFirewallRequest) o;
-        return Objects.equals(this.firewallId, deleteFirewallRequest.firewallId);
+        DeleteFirewallRequest that = (DeleteFirewallRequest) obj;
+        return Objects.equals(this.firewallId, that.firewallId);
     }
 
     @Override

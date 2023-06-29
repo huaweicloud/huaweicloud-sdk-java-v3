@@ -333,27 +333,23 @@ public class ShowNextflowWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowWorkflowResponse showNextflowWorkflowResponse = (ShowNextflowWorkflowResponse) o;
-        return Objects.equals(this.id, showNextflowWorkflowResponse.id)
-            && Objects.equals(this.name, showNextflowWorkflowResponse.name)
-            && Objects.equals(this.description, showNextflowWorkflowResponse.description)
-            && Objects.equals(this.labels, showNextflowWorkflowResponse.labels)
-            && Objects.equals(this.workflowFile, showNextflowWorkflowResponse.workflowFile)
-            && Objects.equals(this.workflowFileUrl, showNextflowWorkflowResponse.workflowFileUrl)
-            && Objects.equals(this.mainFile, showNextflowWorkflowResponse.mainFile)
-            && Objects.equals(this.paramsFile, showNextflowWorkflowResponse.paramsFile)
-            && Objects.equals(this.params, showNextflowWorkflowResponse.params)
-            && Objects.equals(this.createTime, showNextflowWorkflowResponse.createTime)
-            && Objects.equals(this.updateTime, showNextflowWorkflowResponse.updateTime)
-            && Objects.equals(this.sourceProjectName, showNextflowWorkflowResponse.sourceProjectName)
-            && Objects.equals(this.sourceResourceId, showNextflowWorkflowResponse.sourceResourceId);
+        ShowNextflowWorkflowResponse that = (ShowNextflowWorkflowResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.workflowFile, that.workflowFile)
+            && Objects.equals(this.workflowFileUrl, that.workflowFileUrl)
+            && Objects.equals(this.mainFile, that.mainFile) && Objects.equals(this.paramsFile, that.paramsFile)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId);
     }
 
     @Override

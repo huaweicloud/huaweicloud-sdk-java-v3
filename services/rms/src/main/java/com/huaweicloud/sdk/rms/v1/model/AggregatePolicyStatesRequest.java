@@ -77,17 +77,16 @@ public class AggregatePolicyStatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregatePolicyStatesRequest aggregatePolicyStatesRequest = (AggregatePolicyStatesRequest) o;
-        return Objects.equals(this.aggregatorId, aggregatePolicyStatesRequest.aggregatorId)
-            && Objects.equals(this.accountId, aggregatePolicyStatesRequest.accountId)
-            && Objects.equals(this.groupByKey, aggregatePolicyStatesRequest.groupByKey);
+        AggregatePolicyStatesRequest that = (AggregatePolicyStatesRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.groupByKey, that.groupByKey);
     }
 
     @Override

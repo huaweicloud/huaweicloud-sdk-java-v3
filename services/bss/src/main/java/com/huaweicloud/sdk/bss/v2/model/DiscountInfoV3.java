@@ -118,18 +118,17 @@ public class DiscountInfoV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiscountInfoV3 discountInfoV3 = (DiscountInfoV3) o;
-        return Objects.equals(this.discountId, discountInfoV3.discountId)
-            && Objects.equals(this.discountValue, discountInfoV3.discountValue)
-            && Objects.equals(this.discountType, discountInfoV3.discountType)
-            && Objects.equals(this.orders, discountInfoV3.orders);
+        DiscountInfoV3 that = (DiscountInfoV3) obj;
+        return Objects.equals(this.discountId, that.discountId)
+            && Objects.equals(this.discountValue, that.discountValue)
+            && Objects.equals(this.discountType, that.discountType) && Objects.equals(this.orders, that.orders);
     }
 
     @Override

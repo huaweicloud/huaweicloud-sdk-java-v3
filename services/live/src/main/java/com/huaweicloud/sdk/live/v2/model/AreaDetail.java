@@ -112,16 +112,16 @@ public class AreaDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AreaDetail areaDetail = (AreaDetail) o;
-        return Objects.equals(this.area, areaDetail.area) && Objects.equals(this.summary, areaDetail.summary)
-            && Objects.equals(this.detail, areaDetail.detail);
+        AreaDetail that = (AreaDetail) obj;
+        return Objects.equals(this.area, that.area) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.detail, that.detail);
     }
 
     @Override

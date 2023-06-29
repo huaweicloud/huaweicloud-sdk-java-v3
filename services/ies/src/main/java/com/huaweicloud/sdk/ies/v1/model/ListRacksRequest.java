@@ -158,19 +158,17 @@ public class ListRacksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRacksRequest listRacksRequest = (ListRacksRequest) o;
-        return Objects.equals(this.limit, listRacksRequest.limit)
-            && Objects.equals(this.marker, listRacksRequest.marker)
-            && Objects.equals(this.sortKey, listRacksRequest.sortKey)
-            && Objects.equals(this.sortDir, listRacksRequest.sortDir)
-            && Objects.equals(this.edgeSiteId, listRacksRequest.edgeSiteId);
+        ListRacksRequest that = (ListRacksRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.edgeSiteId, that.edgeSiteId);
     }
 
     @Override

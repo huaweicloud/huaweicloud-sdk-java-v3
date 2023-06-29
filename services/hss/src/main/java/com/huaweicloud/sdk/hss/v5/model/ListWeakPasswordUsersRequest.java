@@ -169,21 +169,18 @@ public class ListWeakPasswordUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWeakPasswordUsersRequest listWeakPasswordUsersRequest = (ListWeakPasswordUsersRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listWeakPasswordUsersRequest.enterpriseProjectId)
-            && Objects.equals(this.hostName, listWeakPasswordUsersRequest.hostName)
-            && Objects.equals(this.hostIp, listWeakPasswordUsersRequest.hostIp)
-            && Objects.equals(this.userName, listWeakPasswordUsersRequest.userName)
-            && Objects.equals(this.hostId, listWeakPasswordUsersRequest.hostId)
-            && Objects.equals(this.limit, listWeakPasswordUsersRequest.limit)
-            && Objects.equals(this.offset, listWeakPasswordUsersRequest.offset);
+        ListWeakPasswordUsersRequest that = (ListWeakPasswordUsersRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

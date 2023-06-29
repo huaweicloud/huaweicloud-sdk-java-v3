@@ -83,22 +83,15 @@ public class SearchSharedPrincipalsReqBody {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceOwnerEnum(value));
         }
 
         public static ResourceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -262,20 +255,18 @@ public class SearchSharedPrincipalsReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchSharedPrincipalsReqBody searchSharedPrincipalsReqBody = (SearchSharedPrincipalsReqBody) o;
-        return Objects.equals(this.limit, searchSharedPrincipalsReqBody.limit)
-            && Objects.equals(this.marker, searchSharedPrincipalsReqBody.marker)
-            && Objects.equals(this.principals, searchSharedPrincipalsReqBody.principals)
-            && Objects.equals(this.resourceUrn, searchSharedPrincipalsReqBody.resourceUrn)
-            && Objects.equals(this.resourceOwner, searchSharedPrincipalsReqBody.resourceOwner)
-            && Objects.equals(this.resourceShareIds, searchSharedPrincipalsReqBody.resourceShareIds);
+        SearchSharedPrincipalsReqBody that = (SearchSharedPrincipalsReqBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.principals, that.principals) && Objects.equals(this.resourceUrn, that.resourceUrn)
+            && Objects.equals(this.resourceOwner, that.resourceOwner)
+            && Objects.equals(this.resourceShareIds, that.resourceShareIds);
     }
 
     @Override

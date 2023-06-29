@@ -34,15 +34,15 @@ public class ShowDockerLoginResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDockerLoginResponse showDockerLoginResponse = (ShowDockerLoginResponse) o;
-        return Objects.equals(this.loginCmd, showDockerLoginResponse.loginCmd);
+        ShowDockerLoginResponse that = (ShowDockerLoginResponse) obj;
+        return Objects.equals(this.loginCmd, that.loginCmd);
     }
 
     @Override

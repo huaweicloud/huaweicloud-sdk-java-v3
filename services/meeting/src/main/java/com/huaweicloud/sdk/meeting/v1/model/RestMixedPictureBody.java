@@ -118,18 +118,17 @@ public class RestMixedPictureBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestMixedPictureBody restMixedPictureBody = (RestMixedPictureBody) o;
-        return Objects.equals(this.manualSet, restMixedPictureBody.manualSet)
-            && Objects.equals(this.imageType, restMixedPictureBody.imageType)
-            && Objects.equals(this.subscriberInPics, restMixedPictureBody.subscriberInPics)
-            && Objects.equals(this.switchTime, restMixedPictureBody.switchTime);
+        RestMixedPictureBody that = (RestMixedPictureBody) obj;
+        return Objects.equals(this.manualSet, that.manualSet) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.subscriberInPics, that.subscriberInPics)
+            && Objects.equals(this.switchTime, that.switchTime);
     }
 
     @Override

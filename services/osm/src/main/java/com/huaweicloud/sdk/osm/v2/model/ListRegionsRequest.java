@@ -85,17 +85,16 @@ public class ListRegionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRegionsRequest listRegionsRequest = (ListRegionsRequest) o;
-        return Objects.equals(this.xSite, listRegionsRequest.xSite)
-            && Objects.equals(this.xLanguage, listRegionsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listRegionsRequest.xTimeZone);
+        ListRegionsRequest that = (ListRegionsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -151,22 +144,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,22 +230,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PriorityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PriorityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityEnum(value));
         }
 
         public static PriorityEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PriorityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1033,44 +1012,35 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskResponse showTaskResponse = (ShowTaskResponse) o;
-        return Objects.equals(this.name, showTaskResponse.name) && Objects.equals(this.type, showTaskResponse.type)
-            && Objects.equals(this.osType, showTaskResponse.osType) && Objects.equals(this.id, showTaskResponse.id)
-            && Objects.equals(this.priority, showTaskResponse.priority)
-            && Objects.equals(this.speedLimit, showTaskResponse.speedLimit)
-            && Objects.equals(this.regionId, showTaskResponse.regionId)
-            && Objects.equals(this.startTargetServer, showTaskResponse.startTargetServer)
-            && Objects.equals(this.enterpriseProjectId, showTaskResponse.enterpriseProjectId)
-            && Objects.equals(this.migrationIp, showTaskResponse.migrationIp)
-            && Objects.equals(this.regionName, showTaskResponse.regionName)
-            && Objects.equals(this.projectName, showTaskResponse.projectName)
-            && Objects.equals(this.projectId, showTaskResponse.projectId)
-            && Objects.equals(this.vmTemplateId, showTaskResponse.vmTemplateId)
-            && Objects.equals(this.sourceServer, showTaskResponse.sourceServer)
-            && Objects.equals(this.targetServer, showTaskResponse.targetServer)
-            && Objects.equals(this.state, showTaskResponse.state)
-            && Objects.equals(this.estimateCompleteTime, showTaskResponse.estimateCompleteTime)
-            && Objects.equals(this.connected, showTaskResponse.connected)
-            && Objects.equals(this.createDate, showTaskResponse.createDate)
-            && Objects.equals(this.startDate, showTaskResponse.startDate)
-            && Objects.equals(this.finishDate, showTaskResponse.finishDate)
-            && Objects.equals(this.migrateSpeed, showTaskResponse.migrateSpeed)
-            && Objects.equals(this.compressRate, showTaskResponse.compressRate)
-            && Objects.equals(this.errorJson, showTaskResponse.errorJson)
-            && Objects.equals(this.totalTime, showTaskResponse.totalTime)
-            && Objects.equals(this.floatIp, showTaskResponse.floatIp)
-            && Objects.equals(this.remainSeconds, showTaskResponse.remainSeconds)
-            && Objects.equals(this.targetSnapshotId, showTaskResponse.targetSnapshotId)
-            && Objects.equals(this.cloneServer, showTaskResponse.cloneServer)
-            && Objects.equals(this.subTasks, showTaskResponse.subTasks)
-            && Objects.equals(this.networkCheckInfo, showTaskResponse.networkCheckInfo);
+        ShowTaskResponse that = (ShowTaskResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.migrationIp, that.migrationIp) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.vmTemplateId, that.vmTemplateId)
+            && Objects.equals(this.sourceServer, that.sourceServer)
+            && Objects.equals(this.targetServer, that.targetServer) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.estimateCompleteTime, that.estimateCompleteTime)
+            && Objects.equals(this.connected, that.connected) && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.finishDate, that.finishDate)
+            && Objects.equals(this.migrateSpeed, that.migrateSpeed)
+            && Objects.equals(this.compressRate, that.compressRate) && Objects.equals(this.errorJson, that.errorJson)
+            && Objects.equals(this.totalTime, that.totalTime) && Objects.equals(this.floatIp, that.floatIp)
+            && Objects.equals(this.remainSeconds, that.remainSeconds)
+            && Objects.equals(this.targetSnapshotId, that.targetSnapshotId)
+            && Objects.equals(this.cloneServer, that.cloneServer) && Objects.equals(this.subTasks, that.subTasks)
+            && Objects.equals(this.networkCheckInfo, that.networkCheckInfo);
     }
 
     @Override

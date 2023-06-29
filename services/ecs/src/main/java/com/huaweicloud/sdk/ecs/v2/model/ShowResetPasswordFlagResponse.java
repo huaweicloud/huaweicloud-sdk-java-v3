@@ -34,15 +34,15 @@ public class ShowResetPasswordFlagResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResetPasswordFlagResponse showResetPasswordFlagResponse = (ShowResetPasswordFlagResponse) o;
-        return Objects.equals(this.resetpwdFlag, showResetPasswordFlagResponse.resetpwdFlag);
+        ShowResetPasswordFlagResponse that = (ShowResetPasswordFlagResponse) obj;
+        return Objects.equals(this.resetpwdFlag, that.resetpwdFlag);
     }
 
     @Override

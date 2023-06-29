@@ -165,21 +165,18 @@ public class ListTopAbnormalRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopAbnormalRequest listTopAbnormalRequest = (ListTopAbnormalRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listTopAbnormalRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listTopAbnormalRequest.from)
-            && Objects.equals(this.to, listTopAbnormalRequest.to)
-            && Objects.equals(this.top, listTopAbnormalRequest.top)
-            && Objects.equals(this.code, listTopAbnormalRequest.code)
-            && Objects.equals(this.hosts, listTopAbnormalRequest.hosts)
-            && Objects.equals(this.instances, listTopAbnormalRequest.instances);
+        ListTopAbnormalRequest that = (ListTopAbnormalRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances);
     }
 
     @Override

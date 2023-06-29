@@ -44,15 +44,15 @@ public class ShowSecretResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecretResponse showSecretResponse = (ShowSecretResponse) o;
-        return Objects.equals(this.secret, showSecretResponse.secret);
+        ShowSecretResponse that = (ShowSecretResponse) obj;
+        return Objects.equals(this.secret, that.secret);
     }
 
     @Override

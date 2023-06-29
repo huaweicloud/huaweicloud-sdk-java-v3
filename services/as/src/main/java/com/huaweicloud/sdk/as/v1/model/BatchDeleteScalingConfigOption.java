@@ -53,15 +53,15 @@ public class BatchDeleteScalingConfigOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteScalingConfigOption batchDeleteScalingConfigOption = (BatchDeleteScalingConfigOption) o;
-        return Objects.equals(this.scalingConfigurationId, batchDeleteScalingConfigOption.scalingConfigurationId);
+        BatchDeleteScalingConfigOption that = (BatchDeleteScalingConfigOption) obj;
+        return Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId);
     }
 
     @Override

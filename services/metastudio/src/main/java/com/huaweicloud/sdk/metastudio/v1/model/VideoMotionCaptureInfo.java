@@ -73,22 +73,15 @@ public class VideoMotionCaptureInfo {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MotionCaptureModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MotionCaptureModeEnum(value));
         }
 
         public static MotionCaptureModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,22 +175,15 @@ public class VideoMotionCaptureInfo {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -367,21 +353,18 @@ public class VideoMotionCaptureInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoMotionCaptureInfo videoMotionCaptureInfo = (VideoMotionCaptureInfo) o;
-        return Objects.equals(this.motionCaptureMode, videoMotionCaptureInfo.motionCaptureMode)
-            && Objects.equals(this.inputInfo, videoMotionCaptureInfo.inputInfo)
-            && Objects.equals(this.outputInfo, videoMotionCaptureInfo.outputInfo)
-            && Objects.equals(this.jobId, videoMotionCaptureInfo.jobId)
-            && Objects.equals(this.state, videoMotionCaptureInfo.state)
-            && Objects.equals(this.startTime, videoMotionCaptureInfo.startTime)
-            && Objects.equals(this.endTime, videoMotionCaptureInfo.endTime);
+        VideoMotionCaptureInfo that = (VideoMotionCaptureInfo) obj;
+        return Objects.equals(this.motionCaptureMode, that.motionCaptureMode)
+            && Objects.equals(this.inputInfo, that.inputInfo) && Objects.equals(this.outputInfo, that.outputInfo)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

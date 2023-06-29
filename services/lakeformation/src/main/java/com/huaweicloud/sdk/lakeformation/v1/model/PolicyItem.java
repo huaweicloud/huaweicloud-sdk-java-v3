@@ -226,19 +226,17 @@ public class PolicyItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyItem policyItem = (PolicyItem) o;
-        return Objects.equals(this.accesses, policyItem.accesses)
-            && Objects.equals(this.conditions, policyItem.conditions)
-            && Objects.equals(this.delegateAdmin, policyItem.delegateAdmin)
-            && Objects.equals(this.groups, policyItem.groups) && Objects.equals(this.roles, policyItem.roles)
-            && Objects.equals(this.users, policyItem.users);
+        PolicyItem that = (PolicyItem) obj;
+        return Objects.equals(this.accesses, that.accesses) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.delegateAdmin, that.delegateAdmin) && Objects.equals(this.groups, that.groups)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.users, that.users);
     }
 
     @Override

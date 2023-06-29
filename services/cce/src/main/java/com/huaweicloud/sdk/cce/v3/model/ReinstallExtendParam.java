@@ -34,15 +34,15 @@ public class ReinstallExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallExtendParam reinstallExtendParam = (ReinstallExtendParam) o;
-        return Objects.equals(this.alphaCceNodeImageID, reinstallExtendParam.alphaCceNodeImageID);
+        ReinstallExtendParam that = (ReinstallExtendParam) obj;
+        return Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID);
     }
 
     @Override

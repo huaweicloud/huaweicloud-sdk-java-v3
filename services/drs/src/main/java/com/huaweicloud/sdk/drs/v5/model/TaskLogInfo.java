@@ -77,16 +77,16 @@ public class TaskLogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskLogInfo taskLogInfo = (TaskLogInfo) o;
-        return Objects.equals(this.level, taskLogInfo.level) && Objects.equals(this.message, taskLogInfo.message)
-            && Objects.equals(this.createTime, taskLogInfo.createTime);
+        TaskLogInfo that = (TaskLogInfo) obj;
+        return Objects.equals(this.level, that.level) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

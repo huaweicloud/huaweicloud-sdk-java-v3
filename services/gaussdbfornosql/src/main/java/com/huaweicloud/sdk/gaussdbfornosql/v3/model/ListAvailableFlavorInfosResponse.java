@@ -119,18 +119,17 @@ public class ListAvailableFlavorInfosResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableFlavorInfosResponse listAvailableFlavorInfosResponse = (ListAvailableFlavorInfosResponse) o;
-        return Objects.equals(this.instanceId, listAvailableFlavorInfosResponse.instanceId)
-            && Objects.equals(this.instanceName, listAvailableFlavorInfosResponse.instanceName)
-            && Objects.equals(this.currentFlavor, listAvailableFlavorInfosResponse.currentFlavor)
-            && Objects.equals(this.optionalFlavors, listAvailableFlavorInfosResponse.optionalFlavors);
+        ListAvailableFlavorInfosResponse that = (ListAvailableFlavorInfosResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.currentFlavor, that.currentFlavor)
+            && Objects.equals(this.optionalFlavors, that.optionalFlavors);
     }
 
     @Override

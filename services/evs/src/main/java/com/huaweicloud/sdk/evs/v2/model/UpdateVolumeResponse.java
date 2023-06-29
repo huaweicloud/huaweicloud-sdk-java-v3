@@ -496,34 +496,27 @@ public class UpdateVolumeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVolumeResponse updateVolumeResponse = (UpdateVolumeResponse) o;
-        return Objects.equals(this.attachments, updateVolumeResponse.attachments)
-            && Objects.equals(this.availabilityZone, updateVolumeResponse.availabilityZone)
-            && Objects.equals(this.bootable, updateVolumeResponse.bootable)
-            && Objects.equals(this.createdAt, updateVolumeResponse.createdAt)
-            && Objects.equals(this.id, updateVolumeResponse.id)
-            && Objects.equals(this.links, updateVolumeResponse.links)
-            && Objects.equals(this.metadata, updateVolumeResponse.metadata)
-            && Objects.equals(this.multiattach, updateVolumeResponse.multiattach)
-            && Objects.equals(this.name, updateVolumeResponse.name)
-            && Objects.equals(this.osVolHostAttrHost, updateVolumeResponse.osVolHostAttrHost)
-            && Objects.equals(this.osVolTenantAttrTenantId, updateVolumeResponse.osVolTenantAttrTenantId)
-            && Objects.equals(this.shareable, updateVolumeResponse.shareable)
-            && Objects.equals(this.size, updateVolumeResponse.size)
-            && Objects.equals(this.snapshotId, updateVolumeResponse.snapshotId)
-            && Objects.equals(this.sourceVolid, updateVolumeResponse.sourceVolid)
-            && Objects.equals(this.status, updateVolumeResponse.status)
-            && Objects.equals(this.volumeImageMetadata, updateVolumeResponse.volumeImageMetadata)
-            && Objects.equals(this.volumeType, updateVolumeResponse.volumeType)
-            && Objects.equals(this.description, updateVolumeResponse.description) && Objects
-                .equals(this.osVolumeReplicationExtendedStatus, updateVolumeResponse.osVolumeReplicationExtendedStatus);
+        UpdateVolumeResponse that = (UpdateVolumeResponse) obj;
+        return Objects.equals(this.attachments, that.attachments)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.bootable, that.bootable) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.multiattach, that.multiattach)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.osVolHostAttrHost, that.osVolHostAttrHost)
+            && Objects.equals(this.osVolTenantAttrTenantId, that.osVolTenantAttrTenantId)
+            && Objects.equals(this.shareable, that.shareable) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.sourceVolid, that.sourceVolid)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volumeImageMetadata, that.volumeImageMetadata)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.osVolumeReplicationExtendedStatus, that.osVolumeReplicationExtendedStatus);
     }
 
     @Override

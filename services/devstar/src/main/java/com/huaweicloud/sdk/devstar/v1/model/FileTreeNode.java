@@ -77,17 +77,16 @@ public class FileTreeNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileTreeNode fileTreeNode = (FileTreeNode) o;
-        return Objects.equals(this.filePath, fileTreeNode.filePath)
-            && Objects.equals(this.fileName, fileTreeNode.fileName)
-            && Objects.equals(this.fileType, fileTreeNode.fileType);
+        FileTreeNode that = (FileTreeNode) obj;
+        return Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

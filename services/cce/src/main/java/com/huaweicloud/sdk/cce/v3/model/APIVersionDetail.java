@@ -84,22 +84,15 @@ public class APIVersionDetail {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -250,19 +243,17 @@ public class APIVersionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        APIVersionDetail apIVersionDetail = (APIVersionDetail) o;
-        return Objects.equals(this.id, apIVersionDetail.id) && Objects.equals(this.links, apIVersionDetail.links)
-            && Objects.equals(this.minVersion, apIVersionDetail.minVersion)
-            && Objects.equals(this.status, apIVersionDetail.status)
-            && Objects.equals(this.updated, apIVersionDetail.updated)
-            && Objects.equals(this.version, apIVersionDetail.version);
+        APIVersionDetail that = (APIVersionDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.minVersion, that.minVersion) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.version, that.version);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class CreateResourceGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResourceGroup createResourceGroup = (CreateResourceGroup) o;
-        return Objects.equals(this.namespace, createResourceGroup.namespace)
-            && Objects.equals(this.dimensions, createResourceGroup.dimensions);
+        CreateResourceGroup that = (CreateResourceGroup) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

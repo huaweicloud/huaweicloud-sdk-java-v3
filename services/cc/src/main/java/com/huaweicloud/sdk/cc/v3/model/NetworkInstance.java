@@ -78,22 +78,15 @@ public class NetworkInstance {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,22 +163,15 @@ public class NetworkInstance {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -492,27 +478,23 @@ public class NetworkInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkInstance networkInstance = (NetworkInstance) o;
-        return Objects.equals(this.id, networkInstance.id) && Objects.equals(this.name, networkInstance.name)
-            && Objects.equals(this.description, networkInstance.description)
-            && Objects.equals(this.domainId, networkInstance.domainId)
-            && Objects.equals(this.status, networkInstance.status)
-            && Objects.equals(this.createdAt, networkInstance.createdAt)
-            && Objects.equals(this.updatedAt, networkInstance.updatedAt)
-            && Objects.equals(this.type, networkInstance.type)
-            && Objects.equals(this.cloudConnectionId, networkInstance.cloudConnectionId)
-            && Objects.equals(this.instanceId, networkInstance.instanceId)
-            && Objects.equals(this.instanceDomainId, networkInstance.instanceDomainId)
-            && Objects.equals(this.regionId, networkInstance.regionId)
-            && Objects.equals(this.projectId, networkInstance.projectId)
-            && Objects.equals(this.cidrs, networkInstance.cidrs);
+        NetworkInstance that = (NetworkInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceDomainId, that.instanceDomainId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.cidrs, that.cidrs);
     }
 
     @Override

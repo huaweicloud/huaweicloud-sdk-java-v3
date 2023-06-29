@@ -99,18 +99,17 @@ public class StatUsageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatUsageInfo statUsageInfo = (StatUsageInfo) o;
-        return Objects.equals(this.statTime, statUsageInfo.statTime)
-            && Objects.equals(this.guaranteedBandWidth, statUsageInfo.guaranteedBandWidth)
-            && Objects.equals(this.usage, statUsageInfo.usage)
-            && Objects.equals(this.measureId, statUsageInfo.measureId);
+        StatUsageInfo that = (StatUsageInfo) obj;
+        return Objects.equals(this.statTime, that.statTime)
+            && Objects.equals(this.guaranteedBandWidth, that.guaranteedBandWidth)
+            && Objects.equals(this.usage, that.usage) && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override

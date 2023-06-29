@@ -56,16 +56,15 @@ public class CreateAnonymousAuthRandomResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAnonymousAuthRandomResponse createAnonymousAuthRandomResponse = (CreateAnonymousAuthRandomResponse) o;
-        return Objects.equals(this.siteUrl, createAnonymousAuthRandomResponse.siteUrl)
-            && Objects.equals(this.random, createAnonymousAuthRandomResponse.random);
+        CreateAnonymousAuthRandomResponse that = (CreateAnonymousAuthRandomResponse) obj;
+        return Objects.equals(this.siteUrl, that.siteUrl) && Objects.equals(this.random, that.random);
     }
 
     @Override

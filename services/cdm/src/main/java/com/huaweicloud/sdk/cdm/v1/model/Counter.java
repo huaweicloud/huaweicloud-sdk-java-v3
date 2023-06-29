@@ -231,22 +231,20 @@ public class Counter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Counter counter = (Counter) o;
-        return Objects.equals(this.bytesWritten, counter.bytesWritten)
-            && Objects.equals(this.totalFiles, counter.totalFiles) && Objects.equals(this.rowsRead, counter.rowsRead)
-            && Objects.equals(this.bytesRead, counter.bytesRead)
-            && Objects.equals(this.rowsWritten, counter.rowsWritten)
-            && Objects.equals(this.filesWritten, counter.filesWritten)
-            && Objects.equals(this.filesRead, counter.filesRead) && Objects.equals(this.totalSize, counter.totalSize)
-            && Objects.equals(this.filesSkipped, counter.filesSkipped)
-            && Objects.equals(this.rowsWrittenSkipped, counter.rowsWrittenSkipped);
+        Counter that = (Counter) obj;
+        return Objects.equals(this.bytesWritten, that.bytesWritten) && Objects.equals(this.totalFiles, that.totalFiles)
+            && Objects.equals(this.rowsRead, that.rowsRead) && Objects.equals(this.bytesRead, that.bytesRead)
+            && Objects.equals(this.rowsWritten, that.rowsWritten)
+            && Objects.equals(this.filesWritten, that.filesWritten) && Objects.equals(this.filesRead, that.filesRead)
+            && Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.filesSkipped, that.filesSkipped)
+            && Objects.equals(this.rowsWrittenSkipped, that.rowsWrittenSkipped);
     }
 
     @Override

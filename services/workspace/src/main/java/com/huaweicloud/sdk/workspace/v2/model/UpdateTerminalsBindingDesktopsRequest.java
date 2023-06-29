@@ -44,16 +44,15 @@ public class UpdateTerminalsBindingDesktopsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTerminalsBindingDesktopsRequest updateTerminalsBindingDesktopsRequest =
-            (UpdateTerminalsBindingDesktopsRequest) o;
-        return Objects.equals(this.body, updateTerminalsBindingDesktopsRequest.body);
+        UpdateTerminalsBindingDesktopsRequest that = (UpdateTerminalsBindingDesktopsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

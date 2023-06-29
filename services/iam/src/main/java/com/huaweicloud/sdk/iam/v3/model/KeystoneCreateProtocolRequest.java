@@ -87,17 +87,16 @@ public class KeystoneCreateProtocolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateProtocolRequest keystoneCreateProtocolRequest = (KeystoneCreateProtocolRequest) o;
-        return Objects.equals(this.idpId, keystoneCreateProtocolRequest.idpId)
-            && Objects.equals(this.protocolId, keystoneCreateProtocolRequest.protocolId)
-            && Objects.equals(this.body, keystoneCreateProtocolRequest.body);
+        KeystoneCreateProtocolRequest that = (KeystoneCreateProtocolRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.protocolId, that.protocolId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

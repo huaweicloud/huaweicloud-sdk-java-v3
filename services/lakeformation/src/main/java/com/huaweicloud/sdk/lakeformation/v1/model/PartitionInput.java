@@ -168,19 +168,19 @@ public class PartitionInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartitionInput partitionInput = (PartitionInput) o;
-        return Objects.equals(this.partitionValues, partitionInput.partitionValues)
-            && Objects.equals(this.createTime, partitionInput.createTime)
-            && Objects.equals(this.lastAccessTime, partitionInput.lastAccessTime)
-            && Objects.equals(this.parameters, partitionInput.parameters)
-            && Objects.equals(this.storageDescriptor, partitionInput.storageDescriptor);
+        PartitionInput that = (PartitionInput) obj;
+        return Objects.equals(this.partitionValues, that.partitionValues)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastAccessTime, that.lastAccessTime)
+            && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.storageDescriptor, that.storageDescriptor);
     }
 
     @Override

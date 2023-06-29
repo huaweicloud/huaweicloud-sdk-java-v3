@@ -259,23 +259,19 @@ public class PlaybookInstanceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookInstanceInfo playbookInstanceInfo = (PlaybookInstanceInfo) o;
-        return Objects.equals(this.id, playbookInstanceInfo.id) && Objects.equals(this.name, playbookInstanceInfo.name)
-            && Objects.equals(this.projectId, playbookInstanceInfo.projectId)
-            && Objects.equals(this.playbook, playbookInstanceInfo.playbook)
-            && Objects.equals(this.dataclass, playbookInstanceInfo.dataclass)
-            && Objects.equals(this.dataobject, playbookInstanceInfo.dataobject)
-            && Objects.equals(this.status, playbookInstanceInfo.status)
-            && Objects.equals(this.triggerType, playbookInstanceInfo.triggerType)
-            && Objects.equals(this.startTime, playbookInstanceInfo.startTime)
-            && Objects.equals(this.endTime, playbookInstanceInfo.endTime);
+        PlaybookInstanceInfo that = (PlaybookInstanceInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.playbook, that.playbook)
+            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.dataobject, that.dataobject)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

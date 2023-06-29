@@ -1,42 +1,31 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.AppRules;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListServiceDiscoveryRulesResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "appRules")
+
+    private List<AppRules> appRules = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appRules")
-    
-    private List<AppRules> appRules = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
@@ -45,9 +34,8 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListServiceDiscoveryRulesResponse addAppRulesItem(AppRules appRulesItem) {
-        if(this.appRules == null) {
+        if (this.appRules == null) {
             this.appRules = new ArrayList<>();
         }
         this.appRules.add(appRulesItem);
@@ -55,7 +43,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
     }
 
     public ListServiceDiscoveryRulesResponse withAppRules(Consumer<List<AppRules>> appRulesSetter) {
-        if(this.appRules == null) {
+        if (this.appRules == null) {
             this.appRules = new ArrayList<>();
         }
         appRulesSetter.accept(this.appRules);
@@ -74,15 +62,10 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         this.appRules = appRules;
     }
 
-    
-
     public ListServiceDiscoveryRulesResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 响应码,AOM_INVENTORY_2000000代表正常返回。
@@ -96,15 +79,10 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ListServiceDiscoveryRulesResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 响应信息描述。
@@ -118,25 +96,24 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceDiscoveryRulesResponse listServiceDiscoveryRulesResponse = (ListServiceDiscoveryRulesResponse) o;
-        return Objects.equals(this.appRules, listServiceDiscoveryRulesResponse.appRules) &&
-            Objects.equals(this.errorCode, listServiceDiscoveryRulesResponse.errorCode) &&
-            Objects.equals(this.errorMessage, listServiceDiscoveryRulesResponse.errorMessage);
+        ListServiceDiscoveryRulesResponse that = (ListServiceDiscoveryRulesResponse) obj;
+        return Objects.equals(this.appRules, that.appRules) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appRules, errorCode, errorMessage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,6 +124,7 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -157,8 +135,5 @@ public class ListServiceDiscoveryRulesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

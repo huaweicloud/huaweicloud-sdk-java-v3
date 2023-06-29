@@ -34,15 +34,15 @@ public class RunPipelineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineResponse runPipelineResponse = (RunPipelineResponse) o;
-        return Objects.equals(this.pipelineRunId, runPipelineResponse.pipelineRunId);
+        RunPipelineResponse that = (RunPipelineResponse) obj;
+        return Objects.equals(this.pipelineRunId, that.pipelineRunId);
     }
 
     @Override

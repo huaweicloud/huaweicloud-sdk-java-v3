@@ -56,16 +56,15 @@ public class CreateCategoryReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCategoryReq createCategoryReq = (CreateCategoryReq) o;
-        return Objects.equals(this.name, createCategoryReq.name)
-            && Objects.equals(this.parentId, createCategoryReq.parentId);
+        CreateCategoryReq that = (CreateCategoryReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

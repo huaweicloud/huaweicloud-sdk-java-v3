@@ -209,22 +209,15 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -356,22 +349,15 @@ public class ShowMqsInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RetentionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RetentionPolicyEnum(value));
         }
 
         public static RetentionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1812,87 +1798,72 @@ public class ShowMqsInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMqsInstanceResponse showMqsInstanceResponse = (ShowMqsInstanceResponse) o;
-        return Objects.equals(this.name, showMqsInstanceResponse.name)
-            && Objects.equals(this.description, showMqsInstanceResponse.description)
-            && Objects.equals(this.engine, showMqsInstanceResponse.engine)
-            && Objects.equals(this.engineVersion, showMqsInstanceResponse.engineVersion)
-            && Objects.equals(this.specification, showMqsInstanceResponse.specification)
-            && Objects.equals(this.storageSpace, showMqsInstanceResponse.storageSpace)
-            && Objects.equals(this.partitionNum, showMqsInstanceResponse.partitionNum)
-            && Objects.equals(this.usedStorageSpace, showMqsInstanceResponse.usedStorageSpace)
-            && Objects.equals(this.connectAddress, showMqsInstanceResponse.connectAddress)
-            && Objects.equals(this.port, showMqsInstanceResponse.port)
-            && Objects.equals(this.status, showMqsInstanceResponse.status)
-            && Objects.equals(this.instanceId, showMqsInstanceResponse.instanceId)
-            && Objects.equals(this.resourceSpecCode, showMqsInstanceResponse.resourceSpecCode)
-            && Objects.equals(this.chargingMode, showMqsInstanceResponse.chargingMode)
-            && Objects.equals(this.vpcId, showMqsInstanceResponse.vpcId)
-            && Objects.equals(this.vpcName, showMqsInstanceResponse.vpcName)
-            && Objects.equals(this.createdAt, showMqsInstanceResponse.createdAt)
-            && Objects.equals(this.userId, showMqsInstanceResponse.userId)
-            && Objects.equals(this.userName, showMqsInstanceResponse.userName)
-            && Objects.equals(this.orderId, showMqsInstanceResponse.orderId)
-            && Objects.equals(this.maintainBegin, showMqsInstanceResponse.maintainBegin)
-            && Objects.equals(this.maintainEnd, showMqsInstanceResponse.maintainEnd)
-            && Objects.equals(this.enablePublicip, showMqsInstanceResponse.enablePublicip)
-            && Objects.equals(this.managementConnectAddress, showMqsInstanceResponse.managementConnectAddress)
-            && Objects.equals(this.sslEnable, showMqsInstanceResponse.sslEnable)
-            && Objects.equals(this.enterpriseProjectId, showMqsInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.isLogicalVolume, showMqsInstanceResponse.isLogicalVolume)
-            && Objects.equals(this.extendTimes, showMqsInstanceResponse.extendTimes)
-            && Objects.equals(this.enableAutoTopic, showMqsInstanceResponse.enableAutoTopic)
-            && Objects.equals(this.type, showMqsInstanceResponse.type)
-            && Objects.equals(this.productId, showMqsInstanceResponse.productId)
-            && Objects.equals(this.securityGroupId, showMqsInstanceResponse.securityGroupId)
-            && Objects.equals(this.securityGroupName, showMqsInstanceResponse.securityGroupName)
-            && Objects.equals(this.subnetId, showMqsInstanceResponse.subnetId)
-            && Objects.equals(this.subnetName, showMqsInstanceResponse.subnetName)
-            && Objects.equals(this.subnetCidr, showMqsInstanceResponse.subnetCidr)
-            && Objects.equals(this.availableZones, showMqsInstanceResponse.availableZones)
-            && Objects.equals(this.totalStorageSpace, showMqsInstanceResponse.totalStorageSpace)
-            && Objects.equals(this.publicConnectAddress, showMqsInstanceResponse.publicConnectAddress)
-            && Objects.equals(this.storageResourceId, showMqsInstanceResponse.storageResourceId)
-            && Objects.equals(this.storageSpecCode, showMqsInstanceResponse.storageSpecCode)
-            && Objects.equals(this.serviceType, showMqsInstanceResponse.serviceType)
-            && Objects.equals(this.storageType, showMqsInstanceResponse.storageType)
-            && Objects.equals(this.retentionPolicy, showMqsInstanceResponse.retentionPolicy)
-            && Objects.equals(this.kafkaPublicStatus, showMqsInstanceResponse.kafkaPublicStatus)
-            && Objects.equals(this.publicBandwidth, showMqsInstanceResponse.publicBandwidth)
-            && Objects.equals(this.kafkaManagerUser, showMqsInstanceResponse.kafkaManagerUser)
-            && Objects.equals(this.enableLogCollection, showMqsInstanceResponse.enableLogCollection)
-            && Objects.equals(this.crossVpcInfo, showMqsInstanceResponse.crossVpcInfo)
-            && Objects.equals(this.ipv6Enable, showMqsInstanceResponse.ipv6Enable)
-            && Objects.equals(this.ipv6ConnectAddresses, showMqsInstanceResponse.ipv6ConnectAddresses)
-            && Objects.equals(this.connectorEnable, showMqsInstanceResponse.connectorEnable)
-            && Objects.equals(this.connectorId, showMqsInstanceResponse.connectorId)
-            && Objects.equals(this.mqsConnectorEnable, showMqsInstanceResponse.mqsConnectorEnable)
-            && Objects.equals(this.mqsConnectorAddress, showMqsInstanceResponse.mqsConnectorAddress)
-            && Objects.equals(this.pluginEnable, showMqsInstanceResponse.pluginEnable)
-            && Objects.equals(this.restEnable, showMqsInstanceResponse.restEnable)
-            && Objects.equals(this.restConnectAddress, showMqsInstanceResponse.restConnectAddress)
-            && Objects.equals(this.messageQueryInstEnable, showMqsInstanceResponse.messageQueryInstEnable)
-            && Objects.equals(this.vpcClientPlain, showMqsInstanceResponse.vpcClientPlain)
-            && Objects.equals(this.supportFeatures, showMqsInstanceResponse.supportFeatures)
-            && Objects.equals(this.traceEnable, showMqsInstanceResponse.traceEnable)
-            && Objects.equals(this.podConnectAddress, showMqsInstanceResponse.podConnectAddress)
-            && Objects.equals(this.diskEncrypted, showMqsInstanceResponse.diskEncrypted)
-            && Objects.equals(this.kafkaPrivateConnectAddress, showMqsInstanceResponse.kafkaPrivateConnectAddress)
-            && Objects.equals(this.cesVersion, showMqsInstanceResponse.cesVersion)
-            && Objects.equals(this.nodeNum, showMqsInstanceResponse.nodeNum)
-            && Objects.equals(this.publicipAddress, showMqsInstanceResponse.publicipAddress)
-            && Objects.equals(this.listeners, showMqsInstanceResponse.listeners)
-            && Objects.equals(this.publicAccessEnabled, showMqsInstanceResponse.publicAccessEnabled)
-            && Objects.equals(this.publicBoundwidth, showMqsInstanceResponse.publicBoundwidth)
-            && Objects.equals(this.accessUser, showMqsInstanceResponse.accessUser)
-            && Objects.equals(this.agentEnable, showMqsInstanceResponse.agentEnable);
+        ShowMqsInstanceResponse that = (ShowMqsInstanceResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.specification, that.specification)
+            && Objects.equals(this.storageSpace, that.storageSpace)
+            && Objects.equals(this.partitionNum, that.partitionNum)
+            && Objects.equals(this.usedStorageSpace, that.usedStorageSpace)
+            && Objects.equals(this.connectAddress, that.connectAddress) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.managementConnectAddress, that.managementConnectAddress)
+            && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.isLogicalVolume, that.isLogicalVolume)
+            && Objects.equals(this.extendTimes, that.extendTimes)
+            && Objects.equals(this.enableAutoTopic, that.enableAutoTopic) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.securityGroupName, that.securityGroupName)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.subnetName, that.subnetName)
+            && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
+            && Objects.equals(this.publicConnectAddress, that.publicConnectAddress)
+            && Objects.equals(this.storageResourceId, that.storageResourceId)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.retentionPolicy, that.retentionPolicy)
+            && Objects.equals(this.kafkaPublicStatus, that.kafkaPublicStatus)
+            && Objects.equals(this.publicBandwidth, that.publicBandwidth)
+            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
+            && Objects.equals(this.enableLogCollection, that.enableLogCollection)
+            && Objects.equals(this.crossVpcInfo, that.crossVpcInfo) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6ConnectAddresses, that.ipv6ConnectAddresses)
+            && Objects.equals(this.connectorEnable, that.connectorEnable)
+            && Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.mqsConnectorEnable, that.mqsConnectorEnable)
+            && Objects.equals(this.mqsConnectorAddress, that.mqsConnectorAddress)
+            && Objects.equals(this.pluginEnable, that.pluginEnable) && Objects.equals(this.restEnable, that.restEnable)
+            && Objects.equals(this.restConnectAddress, that.restConnectAddress)
+            && Objects.equals(this.messageQueryInstEnable, that.messageQueryInstEnable)
+            && Objects.equals(this.vpcClientPlain, that.vpcClientPlain)
+            && Objects.equals(this.supportFeatures, that.supportFeatures)
+            && Objects.equals(this.traceEnable, that.traceEnable)
+            && Objects.equals(this.podConnectAddress, that.podConnectAddress)
+            && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.kafkaPrivateConnectAddress, that.kafkaPrivateConnectAddress)
+            && Objects.equals(this.cesVersion, that.cesVersion) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.publicAccessEnabled, that.publicAccessEnabled)
+            && Objects.equals(this.publicBoundwidth, that.publicBoundwidth)
+            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.agentEnable, that.agentEnable);
     }
 
     @Override

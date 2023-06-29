@@ -33,15 +33,15 @@ public class TypeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TypeInfo typeInfo = (TypeInfo) o;
-        return Objects.equals(this.type, typeInfo.type);
+        TypeInfo that = (TypeInfo) obj;
+        return Objects.equals(this.type, that.type);
     }
 
     @Override

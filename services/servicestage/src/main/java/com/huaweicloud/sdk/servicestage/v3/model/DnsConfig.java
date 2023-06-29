@@ -128,16 +128,16 @@ public class DnsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DnsConfig dnsConfig = (DnsConfig) o;
-        return Objects.equals(this.nameservers, dnsConfig.nameservers)
-            && Objects.equals(this.searches, dnsConfig.searches) && Objects.equals(this.options, dnsConfig.options);
+        DnsConfig that = (DnsConfig) obj;
+        return Objects.equals(this.nameservers, that.nameservers) && Objects.equals(this.searches, that.searches)
+            && Objects.equals(this.options, that.options);
     }
 
     @Override

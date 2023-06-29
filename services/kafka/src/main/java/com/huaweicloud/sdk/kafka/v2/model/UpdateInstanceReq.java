@@ -85,22 +85,15 @@ public class UpdateInstanceReq {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RetentionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RetentionPolicyEnum(value));
         }
 
         public static RetentionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,20 @@ public class UpdateInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceReq updateInstanceReq = (UpdateInstanceReq) o;
-        return Objects.equals(this.name, updateInstanceReq.name)
-            && Objects.equals(this.description, updateInstanceReq.description)
-            && Objects.equals(this.maintainBegin, updateInstanceReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, updateInstanceReq.maintainEnd)
-            && Objects.equals(this.securityGroupId, updateInstanceReq.securityGroupId)
-            && Objects.equals(this.retentionPolicy, updateInstanceReq.retentionPolicy)
-            && Objects.equals(this.enterpriseProjectId, updateInstanceReq.enterpriseProjectId);
+        UpdateInstanceReq that = (UpdateInstanceReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.retentionPolicy, that.retentionPolicy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

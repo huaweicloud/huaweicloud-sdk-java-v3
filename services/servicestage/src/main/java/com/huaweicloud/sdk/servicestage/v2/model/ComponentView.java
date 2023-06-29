@@ -338,25 +338,21 @@ public class ComponentView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentView componentView = (ComponentView) o;
-        return Objects.equals(this.id, componentView.id)
-            && Objects.equals(this.applicationId, componentView.applicationId)
-            && Objects.equals(this.name, componentView.name) && Objects.equals(this.projectId, componentView.projectId)
-            && Objects.equals(this.runtime, componentView.runtime)
-            && Objects.equals(this.category, componentView.category)
-            && Objects.equals(this.subCategory, componentView.subCategory)
-            && Objects.equals(this.description, componentView.description)
-            && Objects.equals(this.status, componentView.status) && Objects.equals(this.source, componentView.source)
-            && Objects.equals(this.build, componentView.build) && Objects.equals(this.creator, componentView.creator)
-            && Objects.equals(this.createTime, componentView.createTime)
-            && Objects.equals(this.updateTime, componentView.updateTime);
+        ComponentView that = (ComponentView) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.subCategory, that.subCategory) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

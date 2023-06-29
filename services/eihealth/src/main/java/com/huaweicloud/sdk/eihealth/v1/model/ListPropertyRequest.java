@@ -33,15 +33,15 @@ public class ListPropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPropertyRequest listPropertyRequest = (ListPropertyRequest) o;
-        return Objects.equals(this.property, listPropertyRequest.property);
+        ListPropertyRequest that = (ListPropertyRequest) obj;
+        return Objects.equals(this.property, that.property);
     }
 
     @Override

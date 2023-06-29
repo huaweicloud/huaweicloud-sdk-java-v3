@@ -121,19 +121,17 @@ public class ListBatchJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBatchJobRequest listBatchJobRequest = (ListBatchJobRequest) o;
-        return Objects.equals(this.jobType, listBatchJobRequest.jobType)
-            && Objects.equals(this.limit, listBatchJobRequest.limit)
-            && Objects.equals(this.offset, listBatchJobRequest.offset)
-            && Objects.equals(this.sort, listBatchJobRequest.sort)
-            && Objects.equals(this.iefInstanceId, listBatchJobRequest.iefInstanceId);
+        ListBatchJobRequest that = (ListBatchJobRequest) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

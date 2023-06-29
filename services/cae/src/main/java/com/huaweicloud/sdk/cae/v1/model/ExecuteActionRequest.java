@@ -135,19 +135,18 @@ public class ExecuteActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteActionRequest executeActionRequest = (ExecuteActionRequest) o;
-        return Objects.equals(this.componentId, executeActionRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, executeActionRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, executeActionRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, executeActionRequest.applicationId)
-            && Objects.equals(this.body, executeActionRequest.body);
+        ExecuteActionRequest that = (ExecuteActionRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

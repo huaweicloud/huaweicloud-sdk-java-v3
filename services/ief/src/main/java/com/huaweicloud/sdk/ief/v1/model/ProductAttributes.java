@@ -65,16 +65,15 @@ public class ProductAttributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductAttributes productAttributes = (ProductAttributes) o;
-        return Objects.equals(this.value, productAttributes.value)
-            && Objects.equals(this.metadata, productAttributes.metadata);
+        ProductAttributes that = (ProductAttributes) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

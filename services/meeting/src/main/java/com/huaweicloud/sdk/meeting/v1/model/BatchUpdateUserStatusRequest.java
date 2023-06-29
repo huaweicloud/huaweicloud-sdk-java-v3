@@ -73,22 +73,15 @@ public class BatchUpdateUserStatusRequest {
             if (value == null) {
                 return null;
             }
-            ValueEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ValueEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ValueEnum(value));
         }
 
         public static ValueEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ValueEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,19 +219,17 @@ public class BatchUpdateUserStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateUserStatusRequest batchUpdateUserStatusRequest = (BatchUpdateUserStatusRequest) o;
-        return Objects.equals(this.xRequestId, batchUpdateUserStatusRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, batchUpdateUserStatusRequest.acceptLanguage)
-            && Objects.equals(this.value, batchUpdateUserStatusRequest.value)
-            && Objects.equals(this.accountType, batchUpdateUserStatusRequest.accountType)
-            && Objects.equals(this.body, batchUpdateUserStatusRequest.body);
+        BatchUpdateUserStatusRequest that = (BatchUpdateUserStatusRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

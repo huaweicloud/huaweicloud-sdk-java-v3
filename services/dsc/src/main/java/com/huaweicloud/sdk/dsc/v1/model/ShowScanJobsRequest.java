@@ -121,19 +121,17 @@ public class ShowScanJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScanJobsRequest showScanJobsRequest = (ShowScanJobsRequest) o;
-        return Objects.equals(this.offset, showScanJobsRequest.offset)
-            && Objects.equals(this.limit, showScanJobsRequest.limit)
-            && Objects.equals(this.content, showScanJobsRequest.content)
-            && Objects.equals(this.startTime, showScanJobsRequest.startTime)
-            && Objects.equals(this.endTime, showScanJobsRequest.endTime);
+        ShowScanJobsRequest that = (ShowScanJobsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

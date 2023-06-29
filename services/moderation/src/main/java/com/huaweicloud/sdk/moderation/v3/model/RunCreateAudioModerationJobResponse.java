@@ -56,17 +56,15 @@ public class RunCreateAudioModerationJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunCreateAudioModerationJobResponse runCreateAudioModerationJobResponse =
-            (RunCreateAudioModerationJobResponse) o;
-        return Objects.equals(this.requestId, runCreateAudioModerationJobResponse.requestId)
-            && Objects.equals(this.jobId, runCreateAudioModerationJobResponse.jobId);
+        RunCreateAudioModerationJobResponse that = (RunCreateAudioModerationJobResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

@@ -1,43 +1,35 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.EventQueryParam2;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ListEventsRequest  {
+public class ListEventsRequest {
 
     /**
      * 查询类型。type=active_alert代表查询活动告警，type=history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum HISTORY_ALERT for value: "history_alert"
          */
         public static final TypeEnum HISTORY_ALERT = new TypeEnum("history_alert");
-        
+
         /**
          * Enum ACTIVE_ALERT for value: "active_alert"
          */
         public static final TypeEnum ACTIVE_ALERT = new TypeEnum("active_alert");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +58,18 @@ public class ListEventsRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,14 +87,12 @@ public class ListEventsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private EventQueryParam2 body;
 
@@ -117,9 +100,6 @@ public class ListEventsRequest  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 查询类型。type=active_alert代表查询活动告警，type=history_alert代表查询历史告警。不传或者传其他值则返回指定查询条件的所有信息。
@@ -133,22 +113,19 @@ public class ListEventsRequest  {
         this.type = type;
     }
 
-    
-
     public ListEventsRequest withBody(EventQueryParam2 body) {
         this.body = body;
         return this;
     }
 
     public ListEventsRequest withBody(Consumer<EventQueryParam2> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EventQueryParam2();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -162,24 +139,23 @@ public class ListEventsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.type, listEventsRequest.type) &&
-            Objects.equals(this.body, listEventsRequest.body);
+        ListEventsRequest that = (ListEventsRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,6 +165,7 @@ public class ListEventsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -199,8 +176,5 @@ public class ListEventsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

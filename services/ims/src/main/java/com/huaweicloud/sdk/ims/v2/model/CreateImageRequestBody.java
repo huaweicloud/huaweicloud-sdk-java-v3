@@ -151,22 +151,15 @@ public class CreateImageRequestBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -238,22 +231,15 @@ public class CreateImageRequestBody {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchitectureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchitectureEnum(value));
         }
 
         public static ArchitectureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -635,32 +621,24 @@ public class CreateImageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageRequestBody createImageRequestBody = (CreateImageRequestBody) o;
-        return Objects.equals(this.dataImages, createImageRequestBody.dataImages)
-            && Objects.equals(this.description, createImageRequestBody.description)
-            && Objects.equals(this.enterpriseProjectId, createImageRequestBody.enterpriseProjectId)
-            && Objects.equals(this.imageTags, createImageRequestBody.imageTags)
-            && Objects.equals(this.instanceId, createImageRequestBody.instanceId)
-            && Objects.equals(this.name, createImageRequestBody.name)
-            && Objects.equals(this.tags, createImageRequestBody.tags)
-            && Objects.equals(this.maxRam, createImageRequestBody.maxRam)
-            && Objects.equals(this.minRam, createImageRequestBody.minRam)
-            && Objects.equals(this.osVersion, createImageRequestBody.osVersion)
-            && Objects.equals(this.imageUrl, createImageRequestBody.imageUrl)
-            && Objects.equals(this.minDisk, createImageRequestBody.minDisk)
-            && Objects.equals(this.isConfig, createImageRequestBody.isConfig)
-            && Objects.equals(this.cmkId, createImageRequestBody.cmkId)
-            && Objects.equals(this.type, createImageRequestBody.type)
-            && Objects.equals(this.isQuickImport, createImageRequestBody.isQuickImport)
-            && Objects.equals(this.architecture, createImageRequestBody.architecture)
-            && Objects.equals(this.volumeId, createImageRequestBody.volumeId);
+        CreateImageRequestBody that = (CreateImageRequestBody) obj;
+        return Objects.equals(this.dataImages, that.dataImages) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.imageTags, that.imageTags) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.maxRam, that.maxRam) && Objects.equals(this.minRam, that.minRam)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.isConfig, that.isConfig)
+            && Objects.equals(this.cmkId, that.cmkId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isQuickImport, that.isQuickImport)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

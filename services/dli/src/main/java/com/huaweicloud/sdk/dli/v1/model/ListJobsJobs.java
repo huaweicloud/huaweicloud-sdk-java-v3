@@ -111,22 +111,15 @@ public class ListJobsJobs {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -548,28 +541,24 @@ public class ListJobsJobs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobsJobs listJobsJobs = (ListJobsJobs) o;
-        return Objects.equals(this.jobId, listJobsJobs.jobId) && Objects.equals(this.jobType, listJobsJobs.jobType)
-            && Objects.equals(this.queueName, listJobsJobs.queueName) && Objects.equals(this.owner, listJobsJobs.owner)
-            && Objects.equals(this.startTime, listJobsJobs.startTime)
-            && Objects.equals(this.duration, listJobsJobs.duration) && Objects.equals(this.status, listJobsJobs.status)
-            && Objects.equals(this.inputRowCount, listJobsJobs.inputRowCount)
-            && Objects.equals(this.badRowCount, listJobsJobs.badRowCount)
-            && Objects.equals(this.inputSize, listJobsJobs.inputSize)
-            && Objects.equals(this.resultCount, listJobsJobs.resultCount)
-            && Objects.equals(this.databaseName, listJobsJobs.databaseName)
-            && Objects.equals(this.tableName, listJobsJobs.tableName)
-            && Objects.equals(this.withColumnHeader, listJobsJobs.withColumnHeader)
-            && Objects.equals(this.detail, listJobsJobs.detail)
-            && Objects.equals(this.statement, listJobsJobs.statement) && Objects.equals(this.tags, listJobsJobs.tags)
-            && Objects.equals(this.message, listJobsJobs.message) && Objects.equals(this.endTime, listJobsJobs.endTime);
+        ListJobsJobs that = (ListJobsJobs) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.inputRowCount, that.inputRowCount)
+            && Objects.equals(this.badRowCount, that.badRowCount) && Objects.equals(this.inputSize, that.inputSize)
+            && Objects.equals(this.resultCount, that.resultCount)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.statement, that.statement) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

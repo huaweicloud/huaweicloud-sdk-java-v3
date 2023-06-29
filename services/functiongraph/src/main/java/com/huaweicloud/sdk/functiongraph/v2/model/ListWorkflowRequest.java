@@ -123,19 +123,17 @@ public class ListWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowRequest listWorkflowRequest = (ListWorkflowRequest) o;
-        return Objects.equals(this.workflowName, listWorkflowRequest.workflowName)
-            && Objects.equals(this.limit, listWorkflowRequest.limit)
-            && Objects.equals(this.offset, listWorkflowRequest.offset)
-            && Objects.equals(this.enterpriseProject, listWorkflowRequest.enterpriseProject)
-            && Objects.equals(this.mode, listWorkflowRequest.mode);
+        ListWorkflowRequest that = (ListWorkflowRequest) obj;
+        return Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject) && Objects.equals(this.mode, that.mode);
     }
 
     @Override

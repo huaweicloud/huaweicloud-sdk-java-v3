@@ -74,16 +74,16 @@ public class TaskOutputLocalpath {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutputLocalpath taskOutputLocalpath = (TaskOutputLocalpath) o;
-        return Objects.equals(this.mountSourcePath, taskOutputLocalpath.mountSourcePath)
-            && Objects.equals(this.dataCategory, taskOutputLocalpath.dataCategory);
+        TaskOutputLocalpath that = (TaskOutputLocalpath) obj;
+        return Objects.equals(this.mountSourcePath, that.mountSourcePath)
+            && Objects.equals(this.dataCategory, that.dataCategory);
     }
 
     @Override

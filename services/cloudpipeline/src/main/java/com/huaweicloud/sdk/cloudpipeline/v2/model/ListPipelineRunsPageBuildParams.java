@@ -253,25 +253,20 @@ public class ListPipelineRunsPageBuildParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineRunsPageBuildParams listPipelineRunsPageBuildParams = (ListPipelineRunsPageBuildParams) o;
-        return Objects.equals(this.action, listPipelineRunsPageBuildParams.action)
-            && Objects.equals(this.buildType, listPipelineRunsPageBuildParams.buildType)
-            && Objects.equals(this.commitId, listPipelineRunsPageBuildParams.commitId)
-            && Objects.equals(this.eventType, listPipelineRunsPageBuildParams.eventType)
-            && Objects.equals(this.mergeId, listPipelineRunsPageBuildParams.mergeId)
-            && Objects.equals(this.message, listPipelineRunsPageBuildParams.message)
-            && Objects.equals(this.sourceBranch, listPipelineRunsPageBuildParams.sourceBranch)
-            && Objects.equals(this.tag, listPipelineRunsPageBuildParams.tag)
-            && Objects.equals(this.targetBranch, listPipelineRunsPageBuildParams.targetBranch)
-            && Objects.equals(this.codehubId, listPipelineRunsPageBuildParams.codehubId)
-            && Objects.equals(this.gitUrl, listPipelineRunsPageBuildParams.gitUrl);
+        ListPipelineRunsPageBuildParams that = (ListPipelineRunsPageBuildParams) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.buildType, that.buildType)
+            && Objects.equals(this.commitId, that.commitId) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.mergeId, that.mergeId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.sourceBranch, that.sourceBranch) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.targetBranch, that.targetBranch) && Objects.equals(this.codehubId, that.codehubId)
+            && Objects.equals(this.gitUrl, that.gitUrl);
     }
 
     @Override

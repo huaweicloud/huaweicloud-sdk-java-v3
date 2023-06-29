@@ -35,15 +35,15 @@ public class ListCloudPhoneServerModelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudPhoneServerModelsRequest listCloudPhoneServerModelsRequest = (ListCloudPhoneServerModelsRequest) o;
-        return Objects.equals(this.productType, listCloudPhoneServerModelsRequest.productType);
+        ListCloudPhoneServerModelsRequest that = (ListCloudPhoneServerModelsRequest) obj;
+        return Objects.equals(this.productType, that.productType);
     }
 
     @Override

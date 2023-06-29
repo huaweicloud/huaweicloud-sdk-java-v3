@@ -275,22 +275,20 @@ public class ExecutionPlan {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlan executionPlan = (ExecutionPlan) o;
-        return Objects.equals(this.id, executionPlan.id) && Objects.equals(this.selectType, executionPlan.selectType)
-            && Objects.equals(this.table, executionPlan.table)
-            && Objects.equals(this.partitions, executionPlan.partitions)
-            && Objects.equals(this.type, executionPlan.type)
-            && Objects.equals(this.possibleKeys, executionPlan.possibleKeys)
-            && Objects.equals(this.key, executionPlan.key) && Objects.equals(this.keyLen, executionPlan.keyLen)
-            && Objects.equals(this.ref, executionPlan.ref) && Objects.equals(this.rows, executionPlan.rows)
-            && Objects.equals(this.filtered, executionPlan.filtered) && Objects.equals(this.extra, executionPlan.extra);
+        ExecutionPlan that = (ExecutionPlan) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.selectType, that.selectType)
+            && Objects.equals(this.table, that.table) && Objects.equals(this.partitions, that.partitions)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.possibleKeys, that.possibleKeys)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.keyLen, that.keyLen)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.rows, that.rows)
+            && Objects.equals(this.filtered, that.filtered) && Objects.equals(this.extra, that.extra);
     }
 
     @Override

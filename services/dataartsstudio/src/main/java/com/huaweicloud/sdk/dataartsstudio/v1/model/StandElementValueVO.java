@@ -254,24 +254,20 @@ public class StandElementValueVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandElementValueVO standElementValueVO = (StandElementValueVO) o;
-        return Objects.equals(this.fdName, standElementValueVO.fdName)
-            && Objects.equals(this.fdValue, standElementValueVO.fdValue)
-            && Objects.equals(this.fdId, standElementValueVO.fdId)
-            && Objects.equals(this.directoryId, standElementValueVO.directoryId)
-            && Objects.equals(this.rowId, standElementValueVO.rowId) && Objects.equals(this.id, standElementValueVO.id)
-            && Objects.equals(this.status, standElementValueVO.status)
-            && Objects.equals(this.createBy, standElementValueVO.createBy)
-            && Objects.equals(this.updateBy, standElementValueVO.updateBy)
-            && Objects.equals(this.createTime, standElementValueVO.createTime)
-            && Objects.equals(this.updateTime, standElementValueVO.updateTime);
+        StandElementValueVO that = (StandElementValueVO) obj;
+        return Objects.equals(this.fdName, that.fdName) && Objects.equals(this.fdValue, that.fdValue)
+            && Objects.equals(this.fdId, that.fdId) && Objects.equals(this.directoryId, that.directoryId)
+            && Objects.equals(this.rowId, that.rowId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

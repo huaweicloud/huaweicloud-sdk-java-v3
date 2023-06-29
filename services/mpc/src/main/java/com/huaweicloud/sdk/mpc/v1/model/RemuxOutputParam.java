@@ -79,17 +79,16 @@ public class RemuxOutputParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemuxOutputParam remuxOutputParam = (RemuxOutputParam) o;
-        return Objects.equals(this.format, remuxOutputParam.format)
-            && Objects.equals(this.segmentDuration, remuxOutputParam.segmentDuration)
-            && Objects.equals(this.removeMeta, remuxOutputParam.removeMeta);
+        RemuxOutputParam that = (RemuxOutputParam) obj;
+        return Objects.equals(this.format, that.format) && Objects.equals(this.segmentDuration, that.segmentDuration)
+            && Objects.equals(this.removeMeta, that.removeMeta);
     }
 
     @Override

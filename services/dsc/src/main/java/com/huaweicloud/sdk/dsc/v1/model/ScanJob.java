@@ -34,8 +34,8 @@ public class ScanJob {
     private List<String> ruleGroups = null;
 
     /**
-    * 任务执行方式
-    */
+     * 任务执行方式
+     */
     public static final class CycleEnum {
 
         /**
@@ -90,22 +90,15 @@ public class ScanJob {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CycleEnum(value));
         }
 
         public static CycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -202,22 +195,15 @@ public class ScanJob {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -495,21 +481,20 @@ public class ScanJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScanJob scanJob = (ScanJob) o;
-        return Objects.equals(this.id, scanJob.id) && Objects.equals(this.name, scanJob.name)
-            && Objects.equals(this.ruleGroups, scanJob.ruleGroups) && Objects.equals(this.cycle, scanJob.cycle)
-            && Objects.equals(this.status, scanJob.status) && Objects.equals(this.lastRunTime, scanJob.lastRunTime)
-            && Objects.equals(this.createTime, scanJob.createTime)
-            && Objects.equals(this.lastScanRisk, scanJob.lastScanRisk) && Objects.equals(this.useNlp, scanJob.useNlp)
-            && Objects.equals(this.open, scanJob.open) && Objects.equals(this.topicUrn, scanJob.topicUrn)
-            && Objects.equals(this.startTime, scanJob.startTime);
+        ScanJob that = (ScanJob) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ruleGroups, that.ruleGroups) && Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.lastScanRisk, that.lastScanRisk)
+            && Objects.equals(this.useNlp, that.useNlp) && Objects.equals(this.open, that.open)
+            && Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

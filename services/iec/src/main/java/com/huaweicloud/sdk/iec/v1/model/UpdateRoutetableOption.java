@@ -55,16 +55,15 @@ public class UpdateRoutetableOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoutetableOption updateRoutetableOption = (UpdateRoutetableOption) o;
-        return Objects.equals(this.name, updateRoutetableOption.name)
-            && Objects.equals(this.description, updateRoutetableOption.description);
+        UpdateRoutetableOption that = (UpdateRoutetableOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

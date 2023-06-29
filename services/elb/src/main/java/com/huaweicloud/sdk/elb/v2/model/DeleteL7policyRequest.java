@@ -33,15 +33,15 @@ public class DeleteL7policyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteL7policyRequest deleteL7policyRequest = (DeleteL7policyRequest) o;
-        return Objects.equals(this.l7policyId, deleteL7policyRequest.l7policyId);
+        DeleteL7policyRequest that = (DeleteL7policyRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId);
     }
 
     @Override

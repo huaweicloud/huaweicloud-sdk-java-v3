@@ -74,16 +74,15 @@ public class VpcMemberModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcMemberModify vpcMemberModify = (VpcMemberModify) o;
-        return Objects.equals(this.members, vpcMemberModify.members)
-            && Objects.equals(this.memberGroupName, vpcMemberModify.memberGroupName);
+        VpcMemberModify that = (VpcMemberModify) obj;
+        return Objects.equals(this.members, that.members) && Objects.equals(this.memberGroupName, that.memberGroupName);
     }
 
     @Override

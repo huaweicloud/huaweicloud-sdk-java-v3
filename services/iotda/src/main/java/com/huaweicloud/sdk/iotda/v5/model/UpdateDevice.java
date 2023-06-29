@@ -109,18 +109,16 @@ public class UpdateDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDevice updateDevice = (UpdateDevice) o;
-        return Objects.equals(this.deviceName, updateDevice.deviceName)
-            && Objects.equals(this.description, updateDevice.description)
-            && Objects.equals(this.extensionInfo, updateDevice.extensionInfo)
-            && Objects.equals(this.authInfo, updateDevice.authInfo);
+        UpdateDevice that = (UpdateDevice) obj;
+        return Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.extensionInfo, that.extensionInfo) && Objects.equals(this.authInfo, that.authInfo);
     }
 
     @Override

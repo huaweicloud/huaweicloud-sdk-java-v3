@@ -77,17 +77,17 @@ public class DeleteFaceByExternalImageIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFaceByExternalImageIdRequest deleteFaceByExternalImageIdRequest = (DeleteFaceByExternalImageIdRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteFaceByExternalImageIdRequest.enterpriseProjectId)
-            && Objects.equals(this.faceSetName, deleteFaceByExternalImageIdRequest.faceSetName)
-            && Objects.equals(this.externalImageId, deleteFaceByExternalImageIdRequest.externalImageId);
+        DeleteFaceByExternalImageIdRequest that = (DeleteFaceByExternalImageIdRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.externalImageId, that.externalImageId);
     }
 
     @Override

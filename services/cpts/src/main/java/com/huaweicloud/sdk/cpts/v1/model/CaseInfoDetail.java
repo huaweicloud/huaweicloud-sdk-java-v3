@@ -485,27 +485,24 @@ public class CaseInfoDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseInfoDetail caseInfoDetail = (CaseInfoDetail) o;
-        return Objects.equals(this.caseId, caseInfoDetail.caseId) && Objects.equals(this.name, caseInfoDetail.name)
-            && Objects.equals(this.caseType, caseInfoDetail.caseType)
-            && Objects.equals(this.contents, caseInfoDetail.contents)
-            && Objects.equals(this.forLoopParams, caseInfoDetail.forLoopParams)
-            && Objects.equals(this.increaseSetting, caseInfoDetail.increaseSetting)
-            && Objects.equals(this.stages, caseInfoDetail.stages) && Objects.equals(this.status, caseInfoDetail.status)
-            && Objects.equals(this.tempId, caseInfoDetail.tempId) && Objects.equals(this.sort, caseInfoDetail.sort)
-            && Objects.equals(this.directoryId, caseInfoDetail.directoryId)
-            && Objects.equals(this.setupContents, caseInfoDetail.setupContents)
-            && Objects.equals(this.userReplicas, caseInfoDetail.userReplicas)
-            && Objects.equals(this.collectLogPolicy, caseInfoDetail.collectLogPolicy)
-            && Objects.equals(this.linkAppList, caseInfoDetail.linkAppList)
-            && Objects.equals(this.caseInfo, caseInfoDetail.caseInfo);
+        CaseInfoDetail that = (CaseInfoDetail) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.caseType, that.caseType) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.forLoopParams, that.forLoopParams)
+            && Objects.equals(this.increaseSetting, that.increaseSetting) && Objects.equals(this.stages, that.stages)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tempId, that.tempId)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.directoryId, that.directoryId)
+            && Objects.equals(this.setupContents, that.setupContents)
+            && Objects.equals(this.userReplicas, that.userReplicas)
+            && Objects.equals(this.collectLogPolicy, that.collectLogPolicy)
+            && Objects.equals(this.linkAppList, that.linkAppList) && Objects.equals(this.caseInfo, that.caseInfo);
     }
 
     @Override

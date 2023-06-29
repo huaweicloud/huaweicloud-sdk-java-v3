@@ -112,22 +112,15 @@ public class InstanceConfig {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TenancyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TenancyEnum(value));
         }
 
         public static TenancyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,22 +192,16 @@ public class InstanceConfig {
             if (value == null) {
                 return null;
             }
-            MultiFlavorPriorityPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MultiFlavorPriorityPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new MultiFlavorPriorityPolicyEnum(value));
         }
 
         public static MultiFlavorPriorityPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MultiFlavorPriorityPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +262,15 @@ public class InstanceConfig {
             if (value == null) {
                 return null;
             }
-            MarketTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MarketTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MarketTypeEnum(value));
         }
 
         public static MarketTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MarketTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -634,28 +614,23 @@ public class InstanceConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceConfig instanceConfig = (InstanceConfig) o;
-        return Objects.equals(this.instanceId, instanceConfig.instanceId)
-            && Objects.equals(this.flavorRef, instanceConfig.flavorRef)
-            && Objects.equals(this.imageRef, instanceConfig.imageRef) && Objects.equals(this.disk, instanceConfig.disk)
-            && Objects.equals(this.keyName, instanceConfig.keyName)
-            && Objects.equals(this.personality, instanceConfig.personality)
-            && Objects.equals(this.publicIp, instanceConfig.publicIp)
-            && Objects.equals(this.userData, instanceConfig.userData)
-            && Objects.equals(this.metadata, instanceConfig.metadata)
-            && Objects.equals(this.securityGroups, instanceConfig.securityGroups)
-            && Objects.equals(this.serverGroupId, instanceConfig.serverGroupId)
-            && Objects.equals(this.tenancy, instanceConfig.tenancy)
-            && Objects.equals(this.dedicatedHostId, instanceConfig.dedicatedHostId)
-            && Objects.equals(this.multiFlavorPriorityPolicy, instanceConfig.multiFlavorPriorityPolicy)
-            && Objects.equals(this.marketType, instanceConfig.marketType);
+        InstanceConfig that = (InstanceConfig) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.disk, that.disk)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.personality, that.personality)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
+            && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy)
+            && Objects.equals(this.marketType, that.marketType);
     }
 
     @Override

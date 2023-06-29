@@ -109,18 +109,16 @@ public class ShowInstanceLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceLogRequest showInstanceLogRequest = (ShowInstanceLogRequest) o;
-        return Objects.equals(this.workspace, showInstanceLogRequest.workspace)
-            && Objects.equals(this.taskId, showInstanceLogRequest.taskId)
-            && Objects.equals(this.instanceId, showInstanceLogRequest.instanceId)
-            && Objects.equals(this.body, showInstanceLogRequest.body);
+        ShowInstanceLogRequest that = (ShowInstanceLogRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

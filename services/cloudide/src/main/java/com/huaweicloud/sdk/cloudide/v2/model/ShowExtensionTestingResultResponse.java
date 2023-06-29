@@ -56,16 +56,15 @@ public class ShowExtensionTestingResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtensionTestingResultResponse showExtensionTestingResultResponse = (ShowExtensionTestingResultResponse) o;
-        return Objects.equals(this.result, showExtensionTestingResultResponse.result)
-            && Objects.equals(this.status, showExtensionTestingResultResponse.status);
+        ShowExtensionTestingResultResponse that = (ShowExtensionTestingResultResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

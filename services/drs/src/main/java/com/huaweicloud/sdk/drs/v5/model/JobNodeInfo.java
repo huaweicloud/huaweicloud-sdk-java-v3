@@ -74,15 +74,15 @@ public class JobNodeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobNodeInfo jobNodeInfo = (JobNodeInfo) o;
-        return Objects.equals(this.spec, jobNodeInfo.spec) && Objects.equals(this.vpc, jobNodeInfo.vpc);
+        JobNodeInfo that = (JobNodeInfo) obj;
+        return Objects.equals(this.spec, that.spec) && Objects.equals(this.vpc, that.vpc);
     }
 
     @Override

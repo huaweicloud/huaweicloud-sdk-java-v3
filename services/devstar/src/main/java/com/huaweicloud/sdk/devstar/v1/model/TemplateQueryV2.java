@@ -486,27 +486,22 @@ public class TemplateQueryV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateQueryV2 templateQueryV2 = (TemplateQueryV2) o;
-        return Objects.equals(this.category, templateQueryV2.category)
-            && Objects.equals(this.keyword, templateQueryV2.keyword)
-            && Objects.equals(this.sortBy, templateQueryV2.sortBy) && Objects.equals(this.label, templateQueryV2.label)
-            && Objects.equals(this.myTemplates, templateQueryV2.myTemplates)
-            && Objects.equals(this.status, templateQueryV2.status)
-            && Objects.equals(this.statusArray, templateQueryV2.statusArray)
-            && Objects.equals(this.hasNotices, templateQueryV2.hasNotices)
-            && Objects.equals(this.productshorts, templateQueryV2.productshorts)
-            && Objects.equals(this.offset, templateQueryV2.offset) && Objects.equals(this.limit, templateQueryV2.limit)
-            && Objects.equals(this.tagIds, templateQueryV2.tagIds) && Objects.equals(this.types, templateQueryV2.types)
-            && Objects.equals(this.isStatic, templateQueryV2.isStatic)
-            && Objects.equals(this.platformSource, templateQueryV2.platformSource)
-            && Objects.equals(this.tagNames, templateQueryV2.tagNames);
+        TemplateQueryV2 that = (TemplateQueryV2) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.myTemplates, that.myTemplates) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusArray, that.statusArray) && Objects.equals(this.hasNotices, that.hasNotices)
+            && Objects.equals(this.productshorts, that.productshorts) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tagIds, that.tagIds)
+            && Objects.equals(this.types, that.types) && Objects.equals(this.isStatic, that.isStatic)
+            && Objects.equals(this.platformSource, that.platformSource) && Objects.equals(this.tagNames, that.tagNames);
     }
 
     @Override

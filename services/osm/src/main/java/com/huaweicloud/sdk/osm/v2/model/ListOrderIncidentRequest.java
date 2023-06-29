@@ -404,30 +404,24 @@ public class ListOrderIncidentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrderIncidentRequest listOrderIncidentRequest = (ListOrderIncidentRequest) o;
-        return Objects.equals(this.version, listOrderIncidentRequest.version)
-            && Objects.equals(this.searchKey, listOrderIncidentRequest.searchKey)
-            && Objects.equals(this.labelIdList, listOrderIncidentRequest.labelIdList)
-            && Objects.equals(this.appKey, listOrderIncidentRequest.appKey)
-            && Objects.equals(this.incidentId, listOrderIncidentRequest.incidentId)
-            && Objects.equals(this.queryStartTime, listOrderIncidentRequest.queryStartTime)
-            && Objects.equals(this.queryEndTime, listOrderIncidentRequest.queryEndTime)
-            && Objects.equals(this.status, listOrderIncidentRequest.status)
-            && Objects.equals(this.incidentStatus, listOrderIncidentRequest.incidentStatus)
-            && Objects.equals(this.xCustomerName, listOrderIncidentRequest.xCustomerName)
-            && Objects.equals(this.groupId, listOrderIncidentRequest.groupId)
-            && Objects.equals(this.productCategoryId, listOrderIncidentRequest.productCategoryId)
-            && Objects.equals(this.businessTypeId, listOrderIncidentRequest.businessTypeId)
-            && Objects.equals(this.pageNo, listOrderIncidentRequest.pageNo)
-            && Objects.equals(this.pageSize, listOrderIncidentRequest.pageSize)
-            && Objects.equals(this.xCustomerId, listOrderIncidentRequest.xCustomerId);
+        ListOrderIncidentRequest that = (ListOrderIncidentRequest) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.labelIdList, that.labelIdList) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.queryStartTime, that.queryStartTime)
+            && Objects.equals(this.queryEndTime, that.queryEndTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.incidentStatus, that.incidentStatus)
+            && Objects.equals(this.xCustomerName, that.xCustomerName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.productCategoryId, that.productCategoryId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.xCustomerId, that.xCustomerId);
     }
 
     @Override

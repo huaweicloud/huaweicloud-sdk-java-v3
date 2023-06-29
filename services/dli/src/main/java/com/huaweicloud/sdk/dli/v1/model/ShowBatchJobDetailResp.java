@@ -360,29 +360,22 @@ public class ShowBatchJobDetailResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchJobDetailResp showBatchJobDetailResp = (ShowBatchJobDetailResp) o;
-        return Objects.equals(this.id, showBatchJobDetailResp.id)
-            && Objects.equals(this.state, showBatchJobDetailResp.state)
-            && Objects.equals(this.appId, showBatchJobDetailResp.appId)
-            && Objects.equals(this.log, showBatchJobDetailResp.log)
-            && Objects.equals(this.scType, showBatchJobDetailResp.scType)
-            && Objects.equals(this.clusterName, showBatchJobDetailResp.clusterName)
-            && Objects.equals(this.createTime, showBatchJobDetailResp.createTime)
-            && Objects.equals(this.name, showBatchJobDetailResp.name)
-            && Objects.equals(this.owner, showBatchJobDetailResp.owner)
-            && Objects.equals(this.proxyUser, showBatchJobDetailResp.proxyUser)
-            && Objects.equals(this.kind, showBatchJobDetailResp.kind)
-            && Objects.equals(this.queue, showBatchJobDetailResp.queue)
-            && Objects.equals(this.image, showBatchJobDetailResp.image)
-            && Objects.equals(this.updateTime, showBatchJobDetailResp.updateTime)
-            && Objects.equals(this.duration, showBatchJobDetailResp.duration);
+        ShowBatchJobDetailResp that = (ShowBatchJobDetailResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.scType, that.scType) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.proxyUser, that.proxyUser)
+            && Objects.equals(this.kind, that.kind) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.duration, that.duration);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class CommonQueryTaskRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonQueryTaskRsp commonQueryTaskRsp = (CommonQueryTaskRsp) o;
-        return Objects.equals(this.total, commonQueryTaskRsp.total);
+        CommonQueryTaskRsp that = (CommonQueryTaskRsp) obj;
+        return Objects.equals(this.total, that.total);
     }
 
     @Override

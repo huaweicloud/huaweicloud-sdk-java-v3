@@ -53,15 +53,15 @@ public class ListLoadbalancersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoadbalancersResponse listLoadbalancersResponse = (ListLoadbalancersResponse) o;
-        return Objects.equals(this.loadbalancers, listLoadbalancersResponse.loadbalancers);
+        ListLoadbalancersResponse that = (ListLoadbalancersResponse) obj;
+        return Objects.equals(this.loadbalancers, that.loadbalancers);
     }
 
     @Override

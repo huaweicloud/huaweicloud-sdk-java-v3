@@ -167,21 +167,19 @@ public class ListFunctionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionsRequest listFunctionsRequest = (ListFunctionsRequest) o;
-        return Objects.equals(this.instanceId, listFunctionsRequest.instanceId)
-            && Objects.equals(this.catalogName, listFunctionsRequest.catalogName)
-            && Objects.equals(this.databaseName, listFunctionsRequest.databaseName)
-            && Objects.equals(this.functionNamePattern, listFunctionsRequest.functionNamePattern)
-            && Objects.equals(this.limit, listFunctionsRequest.limit)
-            && Objects.equals(this.marker, listFunctionsRequest.marker)
-            && Objects.equals(this.reversePage, listFunctionsRequest.reversePage);
+        ListFunctionsRequest that = (ListFunctionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.functionNamePattern, that.functionNamePattern)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

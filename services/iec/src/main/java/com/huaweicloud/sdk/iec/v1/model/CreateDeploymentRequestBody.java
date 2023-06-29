@@ -43,15 +43,15 @@ public class CreateDeploymentRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeploymentRequestBody createDeploymentRequestBody = (CreateDeploymentRequestBody) o;
-        return Objects.equals(this.edgecloud, createDeploymentRequestBody.edgecloud);
+        CreateDeploymentRequestBody that = (CreateDeploymentRequestBody) obj;
+        return Objects.equals(this.edgecloud, that.edgecloud);
     }
 
     @Override

@@ -56,15 +56,15 @@ public class ComputeSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputeSpec computeSpec = (ComputeSpec) o;
-        return Objects.equals(this.flavorType, computeSpec.flavorType) && Objects.equals(this.count, computeSpec.count);
+        ComputeSpec that = (ComputeSpec) obj;
+        return Objects.equals(this.flavorType, that.flavorType) && Objects.equals(this.count, that.count);
     }
 
     @Override

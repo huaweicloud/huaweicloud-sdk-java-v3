@@ -166,21 +166,18 @@ public class ListAsyncInvocationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAsyncInvocationsRequest listAsyncInvocationsRequest = (ListAsyncInvocationsRequest) o;
-        return Objects.equals(this.functionUrn, listAsyncInvocationsRequest.functionUrn)
-            && Objects.equals(this.requestId, listAsyncInvocationsRequest.requestId)
-            && Objects.equals(this.marker, listAsyncInvocationsRequest.marker)
-            && Objects.equals(this.limit, listAsyncInvocationsRequest.limit)
-            && Objects.equals(this.status, listAsyncInvocationsRequest.status)
-            && Objects.equals(this.queryBeginTime, listAsyncInvocationsRequest.queryBeginTime)
-            && Objects.equals(this.queryEndTime, listAsyncInvocationsRequest.queryEndTime);
+        ListAsyncInvocationsRequest that = (ListAsyncInvocationsRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.queryBeginTime, that.queryBeginTime)
+            && Objects.equals(this.queryEndTime, that.queryEndTime);
     }
 
     @Override

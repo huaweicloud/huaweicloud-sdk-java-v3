@@ -55,16 +55,15 @@ public class UpdateInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceRequest updateInstanceRequest = (UpdateInstanceRequest) o;
-        return Objects.equals(this.clusterId, updateInstanceRequest.clusterId)
-            && Objects.equals(this.instanceId, updateInstanceRequest.instanceId);
+        UpdateInstanceRequest that = (UpdateInstanceRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

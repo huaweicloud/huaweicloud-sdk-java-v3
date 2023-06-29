@@ -119,22 +119,15 @@ public class ApiAuthBase {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -216,22 +209,15 @@ public class ApiAuthBase {
             if (value == null) {
                 return null;
             }
-            AuthTunnelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTunnelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTunnelEnum(value));
         }
 
         public static AuthTunnelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTunnelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -646,31 +632,25 @@ public class ApiAuthBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAuthBase apiAuthBase = (ApiAuthBase) o;
-        return Objects.equals(this.id, apiAuthBase.id) && Objects.equals(this.apiId, apiAuthBase.apiId)
-            && Objects.equals(this.apiName, apiAuthBase.apiName)
-            && Objects.equals(this.groupName, apiAuthBase.groupName)
-            && Objects.equals(this.apiType, apiAuthBase.apiType)
-            && Objects.equals(this.apiRemark, apiAuthBase.apiRemark) && Objects.equals(this.envId, apiAuthBase.envId)
-            && Objects.equals(this.authRole, apiAuthBase.authRole)
-            && Objects.equals(this.authTime, apiAuthBase.authTime) && Objects.equals(this.appName, apiAuthBase.appName)
-            && Objects.equals(this.appRemark, apiAuthBase.appRemark)
-            && Objects.equals(this.appType, apiAuthBase.appType)
-            && Objects.equals(this.appCreator, apiAuthBase.appCreator)
-            && Objects.equals(this.publishId, apiAuthBase.publishId)
-            && Objects.equals(this.groupId, apiAuthBase.groupId)
-            && Objects.equals(this.authTunnel, apiAuthBase.authTunnel)
-            && Objects.equals(this.authWhitelist, apiAuthBase.authWhitelist)
-            && Objects.equals(this.authBlacklist, apiAuthBase.authBlacklist)
-            && Objects.equals(this.visitParam, apiAuthBase.visitParam)
-            && Objects.equals(this.romaAppType, apiAuthBase.romaAppType);
+        ApiAuthBase that = (ApiAuthBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiRemark, that.apiRemark)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.authRole, that.authRole)
+            && Objects.equals(this.authTime, that.authTime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appRemark, that.appRemark) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.appCreator, that.appCreator) && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.authTunnel, that.authTunnel)
+            && Objects.equals(this.authWhitelist, that.authWhitelist)
+            && Objects.equals(this.authBlacklist, that.authBlacklist)
+            && Objects.equals(this.visitParam, that.visitParam) && Objects.equals(this.romaAppType, that.romaAppType);
     }
 
     @Override

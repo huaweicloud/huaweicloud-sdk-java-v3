@@ -72,22 +72,15 @@ public class UpdateScalingPolicyOption {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingPolicyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingPolicyTypeEnum(value));
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -252,20 +245,19 @@ public class UpdateScalingPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScalingPolicyOption updateScalingPolicyOption = (UpdateScalingPolicyOption) o;
-        return Objects.equals(this.scalingPolicyName, updateScalingPolicyOption.scalingPolicyName)
-            && Objects.equals(this.scalingPolicyType, updateScalingPolicyOption.scalingPolicyType)
-            && Objects.equals(this.alarmId, updateScalingPolicyOption.alarmId)
-            && Objects.equals(this.scheduledPolicy, updateScalingPolicyOption.scheduledPolicy)
-            && Objects.equals(this.scalingPolicyAction, updateScalingPolicyOption.scalingPolicyAction)
-            && Objects.equals(this.coolDownTime, updateScalingPolicyOption.coolDownTime);
+        UpdateScalingPolicyOption that = (UpdateScalingPolicyOption) obj;
+        return Objects.equals(this.scalingPolicyName, that.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.scheduledPolicy, that.scheduledPolicy)
+            && Objects.equals(this.scalingPolicyAction, that.scalingPolicyAction)
+            && Objects.equals(this.coolDownTime, that.coolDownTime);
     }
 
     @Override

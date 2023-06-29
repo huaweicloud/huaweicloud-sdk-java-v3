@@ -53,15 +53,15 @@ public class ListAppsTopResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsTopResponse listAppsTopResponse = (ListAppsTopResponse) o;
-        return Objects.equals(this.statistics, listAppsTopResponse.statistics);
+        ListAppsTopResponse that = (ListAppsTopResponse) obj;
+        return Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

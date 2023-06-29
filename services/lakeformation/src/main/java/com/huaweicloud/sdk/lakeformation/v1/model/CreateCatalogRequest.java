@@ -65,16 +65,15 @@ public class CreateCatalogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCatalogRequest createCatalogRequest = (CreateCatalogRequest) o;
-        return Objects.equals(this.instanceId, createCatalogRequest.instanceId)
-            && Objects.equals(this.body, createCatalogRequest.body);
+        CreateCatalogRequest that = (CreateCatalogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

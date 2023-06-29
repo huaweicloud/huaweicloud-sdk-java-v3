@@ -100,18 +100,18 @@ public class ShowNetworkConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNetworkConfigurationResponse showNetworkConfigurationResponse = (ShowNetworkConfigurationResponse) o;
-        return Objects.equals(this.status, showNetworkConfigurationResponse.status)
-            && Objects.equals(this.securityGrpStatus, showNetworkConfigurationResponse.securityGrpStatus)
-            && Objects.equals(this.firewallStatus, showNetworkConfigurationResponse.firewallStatus)
-            && Objects.equals(this.publicEipStatus, showNetworkConfigurationResponse.publicEipStatus);
+        ShowNetworkConfigurationResponse that = (ShowNetworkConfigurationResponse) obj;
+        return Objects.equals(this.status, that.status)
+            && Objects.equals(this.securityGrpStatus, that.securityGrpStatus)
+            && Objects.equals(this.firewallStatus, that.firewallStatus)
+            && Objects.equals(this.publicEipStatus, that.publicEipStatus);
     }
 
     @Override

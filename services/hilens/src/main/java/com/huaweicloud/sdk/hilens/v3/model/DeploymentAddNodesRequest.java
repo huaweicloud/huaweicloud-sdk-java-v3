@@ -134,18 +134,16 @@ public class DeploymentAddNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentAddNodesRequest deploymentAddNodesRequest = (DeploymentAddNodesRequest) o;
-        return Objects.equals(this.nodeIds, deploymentAddNodesRequest.nodeIds)
-            && Objects.equals(this.deploymentId, deploymentAddNodesRequest.deploymentId)
-            && Objects.equals(this.nodeTags, deploymentAddNodesRequest.nodeTags)
-            && Objects.equals(this.nodeNum, deploymentAddNodesRequest.nodeNum);
+        DeploymentAddNodesRequest that = (DeploymentAddNodesRequest) obj;
+        return Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.nodeTags, that.nodeTags) && Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override

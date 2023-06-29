@@ -34,8 +34,8 @@ public class NovaCreateServersResult {
     private List<NovaServerSecurityGroup> securityGroups = null;
 
     /**
-    * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
-    */
+     * diskConfig方式。  - MANUAL，镜像空间不会扩展。 - AUTO，系统盘镜像空间会自动扩展为与flavor大小一致。
+     */
     public static final class OsDCFDiskConfigEnum {
 
         /**
@@ -78,22 +78,15 @@ public class NovaCreateServersResult {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsDCFDiskConfigEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsDCFDiskConfigEnum(value));
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,20 +253,18 @@ public class NovaCreateServersResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaCreateServersResult novaCreateServersResult = (NovaCreateServersResult) o;
-        return Objects.equals(this.id, novaCreateServersResult.id)
-            && Objects.equals(this.links, novaCreateServersResult.links)
-            && Objects.equals(this.securityGroups, novaCreateServersResult.securityGroups)
-            && Objects.equals(this.osDCFDiskConfig, novaCreateServersResult.osDCFDiskConfig)
-            && Objects.equals(this.reservationId, novaCreateServersResult.reservationId)
-            && Objects.equals(this.adminPass, novaCreateServersResult.adminPass);
+        NovaCreateServersResult that = (NovaCreateServersResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.reservationId, that.reservationId) && Objects.equals(this.adminPass, that.adminPass);
     }
 
     @Override

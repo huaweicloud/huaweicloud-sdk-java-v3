@@ -156,19 +156,17 @@ public class IdDocumentRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdDocumentRequestBody idDocumentRequestBody = (IdDocumentRequestBody) o;
-        return Objects.equals(this.image, idDocumentRequestBody.image)
-            && Objects.equals(this.url, idDocumentRequestBody.url)
-            && Objects.equals(this.countryRegion, idDocumentRequestBody.countryRegion)
-            && Objects.equals(this.idType, idDocumentRequestBody.idType)
-            && Objects.equals(this.returnPortraitImage, idDocumentRequestBody.returnPortraitImage);
+        IdDocumentRequestBody that = (IdDocumentRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.countryRegion, that.countryRegion) && Objects.equals(this.idType, that.idType)
+            && Objects.equals(this.returnPortraitImage, that.returnPortraitImage);
     }
 
     @Override

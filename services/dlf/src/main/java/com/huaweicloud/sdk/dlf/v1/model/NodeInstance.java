@@ -275,25 +275,21 @@ public class NodeInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeInstance nodeInstance = (NodeInstance) o;
-        return Objects.equals(this.nodeName, nodeInstance.nodeName) && Objects.equals(this.status, nodeInstance.status)
-            && Objects.equals(this.planTime, nodeInstance.planTime)
-            && Objects.equals(this.startTime, nodeInstance.startTime)
-            && Objects.equals(this.endTime, nodeInstance.endTime)
-            && Objects.equals(this.executeTime, nodeInstance.executeTime)
-            && Objects.equals(this.nodeType, nodeInstance.nodeType)
-            && Objects.equals(this.retryTimes, nodeInstance.retryTimes)
-            && Objects.equals(this.instanceId, nodeInstance.instanceId)
-            && Objects.equals(this.inputRowCount, nodeInstance.inputRowCount)
-            && Objects.equals(this.outputRowCount, nodeInstance.outputRowCount)
-            && Objects.equals(this.logPath, nodeInstance.logPath);
+        NodeInstance that = (NodeInstance) obj;
+        return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.planTime, that.planTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.executeTime, that.executeTime)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.retryTimes, that.retryTimes)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.inputRowCount, that.inputRowCount)
+            && Objects.equals(this.outputRowCount, that.outputRowCount) && Objects.equals(this.logPath, that.logPath);
     }
 
     @Override

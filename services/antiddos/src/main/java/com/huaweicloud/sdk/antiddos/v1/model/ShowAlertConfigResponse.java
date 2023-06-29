@@ -88,17 +88,16 @@ public class ShowAlertConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertConfigResponse showAlertConfigResponse = (ShowAlertConfigResponse) o;
-        return Objects.equals(this.topicUrn, showAlertConfigResponse.topicUrn)
-            && Objects.equals(this.displayName, showAlertConfigResponse.displayName)
-            && Objects.equals(this.warnConfig, showAlertConfigResponse.warnConfig);
+        ShowAlertConfigResponse that = (ShowAlertConfigResponse) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.warnConfig, that.warnConfig);
     }
 
     @Override

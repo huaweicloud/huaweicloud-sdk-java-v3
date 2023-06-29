@@ -194,20 +194,17 @@ public class UpdatePublicationRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicationRequestDTO updatePublicationRequestDTO = (UpdatePublicationRequestDTO) o;
-        return Objects.equals(this.publishName, updatePublicationRequestDTO.publishName)
-            && Objects.equals(this.startTime, updatePublicationRequestDTO.startTime)
-            && Objects.equals(this.endTime, updatePublicationRequestDTO.endTime)
-            && Objects.equals(this.deptList, updatePublicationRequestDTO.deptList)
-            && Objects.equals(this.deviceList, updatePublicationRequestDTO.deviceList)
-            && Objects.equals(this.programList, updatePublicationRequestDTO.programList);
+        UpdatePublicationRequestDTO that = (UpdatePublicationRequestDTO) obj;
+        return Objects.equals(this.publishName, that.publishName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.deptList, that.deptList)
+            && Objects.equals(this.deviceList, that.deviceList) && Objects.equals(this.programList, that.programList);
     }
 
     @Override

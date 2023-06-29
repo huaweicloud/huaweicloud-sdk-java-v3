@@ -75,16 +75,15 @@ public class ListBrokersRespBrokers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBrokersRespBrokers listBrokersRespBrokers = (ListBrokersRespBrokers) o;
-        return Objects.equals(this.ids, listBrokersRespBrokers.ids)
-            && Objects.equals(this.brokerName, listBrokersRespBrokers.brokerName);
+        ListBrokersRespBrokers that = (ListBrokersRespBrokers) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.brokerName, that.brokerName);
     }
 
     @Override

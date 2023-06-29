@@ -118,18 +118,17 @@ public class NoSqlQueryEpsQuotaInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoSqlQueryEpsQuotaInfo noSqlQueryEpsQuotaInfo = (NoSqlQueryEpsQuotaInfo) o;
-        return Objects.equals(this.enterpriseProjectId, noSqlQueryEpsQuotaInfo.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, noSqlQueryEpsQuotaInfo.enterpriseProjectName)
-            && Objects.equals(this.quota, noSqlQueryEpsQuotaInfo.quota)
-            && Objects.equals(this.used, noSqlQueryEpsQuotaInfo.used);
+        NoSqlQueryEpsQuotaInfo that = (NoSqlQueryEpsQuotaInfo) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.quota, that.quota) && Objects.equals(this.used, that.used);
     }
 
     @Override

@@ -7,9 +7,7 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.ges.v2.model.*;
 
-import java.util.List;
 import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class GesMeta {
@@ -31,28 +29,23 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(AttachEip2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<AttachEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(AttachEipReq.class),
             f -> f.withMarshaller(AttachEip2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        builder.<Map<String, String>>withResponseField(
-            "body",
+        builder.<Map<String, String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(AttachEip2Response::getBody, (response, data)->{
+            f -> f.withMarshaller(AttachEip2Response::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(String.class)
-        );
-
+            }).withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -74,24 +67,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ClearGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<Boolean>withRequestField("clear_metadata",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(ClearGraph2Request::getClearMetadata, (req, v) -> {
                 req.setClearMetadata(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateBackup2Request, CreateBackup2Response> createBackup2 = genForcreateBackup2();
+    public static final HttpRequestDef<CreateBackup2Request, CreateBackup2Response> createBackup2 =
+        genForcreateBackup2();
 
     private static HttpRequestDef<CreateBackup2Request, CreateBackup2Response> genForcreateBackup2() {
         // basic
@@ -108,11 +99,9 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateBackup2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -134,16 +123,15 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(CreateGraphReq.class),
             f -> f.withMarshaller(CreateGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateMetadata2Request, CreateMetadata2Response> createMetadata2 = genForcreateMetadata2();
+    public static final HttpRequestDef<CreateMetadata2Request, CreateMetadata2Response> createMetadata2 =
+        genForcreateMetadata2();
 
     private static HttpRequestDef<CreateMetadata2Request, CreateMetadata2Response> genForcreateMetadata2() {
         // basic
@@ -160,16 +148,15 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(CreateMetadataReq.class),
             f -> f.withMarshaller(CreateMetadata2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteBackup2Request, DeleteBackup2Response> deleteBackup2 = genFordeleteBackup2();
+    public static final HttpRequestDef<DeleteBackup2Request, DeleteBackup2Response> deleteBackup2 =
+        genFordeleteBackup2();
 
     private static HttpRequestDef<DeleteBackup2Request, DeleteBackup2Response> genFordeleteBackup2() {
         // basic
@@ -186,28 +173,23 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackup2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("backup_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteBackup2Request::getBackupId, (req, v) -> {
                 req.setBackupId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<Map<String, String>>withResponseField(
-            "body",
+        builder.<Map<String, String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(DeleteBackup2Response::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteBackup2Response::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(String.class)
-        );
-
+            }).withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -229,24 +211,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<Boolean>withRequestField("keep_backup",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Boolean.class),
             f -> f.withMarshaller(DeleteGraph2Request::getKeepBackup, (req, v) -> {
                 req.setKeepBackup(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2 = genFordeleteMetadata2();
+    public static final HttpRequestDef<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2 =
+        genFordeleteMetadata2();
 
     private static HttpRequestDef<DeleteMetadata2Request, DeleteMetadata2Response> genFordeleteMetadata2() {
         // basic
@@ -263,20 +243,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteMetadata2Request::getMetadataId, (req, v) -> {
                 req.setMetadataId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<Map<String, String>>withResponseField(
-            "body",
+        builder.<Map<String, String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(DeleteMetadata2Response::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteMetadata2Response::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(String.class)
-        );
-
+            }).withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -298,28 +274,23 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DetachEip2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<DetachEipReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DetachEipReq.class),
             f -> f.withMarshaller(DetachEip2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        builder.<Map<String, String>>withResponseField(
-            "body",
+        builder.<Map<String, String>>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Map.class),
-            f -> f.withMarshaller(DetachEip2Response::getBody, (response, data)->{
+            f -> f.withMarshaller(DetachEip2Response::getBody, (response, data) -> {
                 response.setBody(data);
-            }).withInnerContainerType(String.class)
-        );
-
+            }).withInnerContainerType(String.class));
 
         return builder.build();
     }
@@ -341,19 +312,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExpandGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<ExpandGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExpandGraphReq.class),
             f -> f.withMarshaller(ExpandGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -375,19 +343,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ExportGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<ExportGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ExportGraphReq.class),
             f -> f.withMarshaller(ExportGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -409,19 +374,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ImportGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<ImportGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ImportGraphReq.class),
             f -> f.withMarshaller(ImportGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -443,24 +405,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackups2Request::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListBackups2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2 = genForlistGraphBackups2();
+    public static final HttpRequestDef<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2 =
+        genForlistGraphBackups2();
 
     private static HttpRequestDef<ListGraphBackups2Request, ListGraphBackups2Response> genForlistGraphBackups2() {
         // basic
@@ -477,27 +437,23 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListGraphBackups2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGraphBackups2Request::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGraphBackups2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -519,19 +475,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGraphs2Request::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListGraphs2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -553,56 +506,50 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getEndTime, (req, v) -> {
                 req.setEndTime(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("graph_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getGraphName, (req, v) -> {
                 req.setGraphName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("start_time",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getStartTime, (req, v) -> {
                 req.setStartTime(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("status",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListJobs2Request::getStatus, (req, v) -> {
                 req.setStatus(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2 = genForlistMetadatas2();
+    public static final HttpRequestDef<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2 =
+        genForlistMetadatas2();
 
     private static HttpRequestDef<ListMetadatas2Request, ListMetadatas2Response> genForlistMetadatas2() {
         // basic
@@ -619,19 +566,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMetadatas2Request::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListMetadatas2Request::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -649,7 +593,6 @@ public class GesMeta {
         // requests
 
         // response
-
 
         return builder.build();
     }
@@ -671,24 +614,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ResizeGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<ResizeGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ResizeGraphReq.class),
             f -> f.withMarshaller(ResizeGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RestartGraph2Request, RestartGraph2Response> restartGraph2 = genForrestartGraph2();
+    public static final HttpRequestDef<RestartGraph2Request, RestartGraph2Response> restartGraph2 =
+        genForrestartGraph2();
 
     private static HttpRequestDef<RestartGraph2Request, RestartGraph2Response> genForrestartGraph2() {
         // basic
@@ -705,11 +646,9 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RestartGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -731,11 +670,9 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -757,24 +694,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJob2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("job_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowJob2Request::getJobId, (req, v) -> {
                 req.setJobId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowMetadata2Request, ShowMetadata2Response> showMetadata2 = genForshowMetadata2();
+    public static final HttpRequestDef<ShowMetadata2Request, ShowMetadata2Response> showMetadata2 =
+        genForshowMetadata2();
 
     private static HttpRequestDef<ShowMetadata2Request, ShowMetadata2Response> genForshowMetadata2() {
         // basic
@@ -791,11 +726,9 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowMetadata2Request::getMetadataId, (req, v) -> {
                 req.setMetadataId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -817,19 +750,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StartGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<StartGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(StartGraphReq.class),
             f -> f.withMarshaller(StartGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -851,16 +781,15 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(StopGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpgradeGraph2Request, UpgradeGraph2Response> upgradeGraph2 = genForupgradeGraph2();
+    public static final HttpRequestDef<UpgradeGraph2Request, UpgradeGraph2Response> upgradeGraph2 =
+        genForupgradeGraph2();
 
     private static HttpRequestDef<UpgradeGraph2Request, UpgradeGraph2Response> genForupgradeGraph2() {
         // basic
@@ -877,24 +806,22 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpgradeGraph2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<UpgradeGraphReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpgradeGraphReq.class),
             f -> f.withMarshaller(UpgradeGraph2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2 = genForuploadFromObs2();
+    public static final HttpRequestDef<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2 =
+        genForuploadFromObs2();
 
     private static HttpRequestDef<UploadFromObs2Request, UploadFromObs2Response> genForuploadFromObs2() {
         // basic
@@ -911,16 +838,15 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(UploadFromObsReq.class),
             f -> f.withMarshaller(UploadFromObs2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2 = genForderegisterScenes2();
+    public static final HttpRequestDef<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2 =
+        genForderegisterScenes2();
 
     private static HttpRequestDef<DeregisterScenes2Request, DeregisterScenes2Response> genForderegisterScenes2() {
         // basic
@@ -937,19 +863,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeregisterScenes2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<DeregisterScenesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(DeregisterScenesReq.class),
             f -> f.withMarshaller(DeregisterScenes2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -971,32 +894,29 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScenes2Request::getSceneName, (req, v) -> {
                 req.setSceneName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("application_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScenes2Request::getApplicationName, (req, v) -> {
                 req.setApplicationName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("graph_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListScenes2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<RegisterScenes2Request, RegisterScenes2Response> registerScenes2 = genForregisterScenes2();
+    public static final HttpRequestDef<RegisterScenes2Request, RegisterScenes2Response> registerScenes2 =
+        genForregisterScenes2();
 
     private static HttpRequestDef<RegisterScenes2Request, RegisterScenes2Response> genForregisterScenes2() {
         // basic
@@ -1013,19 +933,16 @@ public class GesMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(RegisterScenes2Request::getGraphId, (req, v) -> {
                 req.setGraphId(v);
-            })
-        );
+            }));
         builder.<RegisterScenesReq>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(RegisterScenesReq.class),
             f -> f.withMarshaller(RegisterScenes2Request::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }

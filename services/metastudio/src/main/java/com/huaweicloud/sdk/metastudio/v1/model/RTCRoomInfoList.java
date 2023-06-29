@@ -96,16 +96,16 @@ public class RTCRoomInfoList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RTCRoomInfoList rtCRoomInfoList = (RTCRoomInfoList) o;
-        return Objects.equals(this.appId, rtCRoomInfoList.appId) && Objects.equals(this.roomId, rtCRoomInfoList.roomId)
-            && Objects.equals(this.users, rtCRoomInfoList.users);
+        RTCRoomInfoList that = (RTCRoomInfoList) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.users, that.users);
     }
 
     @Override

@@ -101,18 +101,16 @@ public class ListTagValuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagValuesRequest listTagValuesRequest = (ListTagValuesRequest) o;
-        return Objects.equals(this.regionId, listTagValuesRequest.regionId)
-            && Objects.equals(this.limit, listTagValuesRequest.limit)
-            && Objects.equals(this.marker, listTagValuesRequest.marker)
-            && Objects.equals(this.key, listTagValuesRequest.key);
+        ListTagValuesRequest that = (ListTagValuesRequest) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.key, that.key);
     }
 
     @Override

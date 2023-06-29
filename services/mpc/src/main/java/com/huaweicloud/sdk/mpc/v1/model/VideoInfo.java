@@ -153,17 +153,17 @@ public class VideoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoInfo videoInfo = (VideoInfo) o;
-        return Objects.equals(this.width, videoInfo.width) && Objects.equals(this.height, videoInfo.height)
-            && Objects.equals(this.bitrate, videoInfo.bitrate) && Objects.equals(this.bitrateBps, videoInfo.bitrateBps)
-            && Objects.equals(this.frameRate, videoInfo.frameRate) && Objects.equals(this.codec, videoInfo.codec);
+        VideoInfo that = (VideoInfo) obj;
+        return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.bitrateBps, that.bitrateBps)
+            && Objects.equals(this.frameRate, that.frameRate) && Objects.equals(this.codec, that.codec);
     }
 
     @Override

@@ -121,17 +121,17 @@ public class ResourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceInfo resourceInfo = (ResourceInfo) o;
-        return Objects.equals(this.index, resourceInfo.index) && Objects.equals(this.type, resourceInfo.type)
-            && Objects.equals(this.name, resourceInfo.name) && Objects.equals(this.source, resourceInfo.source)
-            && Objects.equals(this.content, resourceInfo.content);
+        ResourceInfo that = (ResourceInfo) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override

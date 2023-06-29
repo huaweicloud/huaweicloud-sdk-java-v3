@@ -231,24 +231,19 @@ public class MemberListV4Members {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberListV4Members memberListV4Members = (MemberListV4Members) o;
-        return Objects.equals(this.domainId, memberListV4Members.domainId)
-            && Objects.equals(this.domainName, memberListV4Members.domainName)
-            && Objects.equals(this.userId, memberListV4Members.userId)
-            && Objects.equals(this.userName, memberListV4Members.userName)
-            && Objects.equals(this.userNumId, memberListV4Members.userNumId)
-            && Objects.equals(this.roleId, memberListV4Members.roleId)
-            && Objects.equals(this.nickName, memberListV4Members.nickName)
-            && Objects.equals(this.roleName, memberListV4Members.roleName)
-            && Objects.equals(this.userType, memberListV4Members.userType)
-            && Objects.equals(this.forbidden, memberListV4Members.forbidden);
+        MemberListV4Members that = (MemberListV4Members) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.roleName, that.roleName)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.forbidden, that.forbidden);
     }
 
     @Override

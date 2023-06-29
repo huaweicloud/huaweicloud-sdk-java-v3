@@ -77,17 +77,16 @@ public class ListPropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPropertiesRequest listPropertiesRequest = (ListPropertiesRequest) o;
-        return Objects.equals(this.deviceId, listPropertiesRequest.deviceId)
-            && Objects.equals(this.instanceId, listPropertiesRequest.instanceId)
-            && Objects.equals(this.serviceId, listPropertiesRequest.serviceId);
+        ListPropertiesRequest that = (ListPropertiesRequest) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.serviceId, that.serviceId);
     }
 
     @Override

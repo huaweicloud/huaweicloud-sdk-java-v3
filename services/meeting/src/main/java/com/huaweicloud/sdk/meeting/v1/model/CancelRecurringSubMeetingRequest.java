@@ -157,20 +157,18 @@ public class CancelRecurringSubMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelRecurringSubMeetingRequest cancelRecurringSubMeetingRequest = (CancelRecurringSubMeetingRequest) o;
-        return Objects.equals(this.xAuthorizationType, cancelRecurringSubMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.userUUID, cancelRecurringSubMeetingRequest.userUUID)
-            && Objects.equals(this.xSiteId, cancelRecurringSubMeetingRequest.xSiteId)
-            && Objects.equals(this.conferenceID, cancelRecurringSubMeetingRequest.conferenceID)
-            && Objects.equals(this.type, cancelRecurringSubMeetingRequest.type)
-            && Objects.equals(this.body, cancelRecurringSubMeetingRequest.body);
+        CancelRecurringSubMeetingRequest that = (CancelRecurringSubMeetingRequest) obj;
+        return Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.xSiteId, that.xSiteId)
+            && Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

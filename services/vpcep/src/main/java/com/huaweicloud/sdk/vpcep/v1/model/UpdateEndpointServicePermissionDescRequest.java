@@ -87,19 +87,16 @@ public class UpdateEndpointServicePermissionDescRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointServicePermissionDescRequest updateEndpointServicePermissionDescRequest =
-            (UpdateEndpointServicePermissionDescRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId,
-            updateEndpointServicePermissionDescRequest.vpcEndpointServiceId)
-            && Objects.equals(this.permissionId, updateEndpointServicePermissionDescRequest.permissionId)
-            && Objects.equals(this.body, updateEndpointServicePermissionDescRequest.body);
+        UpdateEndpointServicePermissionDescRequest that = (UpdateEndpointServicePermissionDescRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.permissionId, that.permissionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

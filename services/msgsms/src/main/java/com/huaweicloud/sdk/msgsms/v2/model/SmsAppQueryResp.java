@@ -507,36 +507,29 @@ public class SmsAppQueryResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsAppQueryResp smsAppQueryResp = (SmsAppQueryResp) o;
-        return Objects.equals(this.id, smsAppQueryResp.id)
-            && Objects.equals(this.createTime, smsAppQueryResp.createTime)
-            && Objects.equals(this.updateTime, smsAppQueryResp.updateTime)
-            && Objects.equals(this.customerId, smsAppQueryResp.customerId)
-            && Objects.equals(this.resourceId, smsAppQueryResp.resourceId)
-            && Objects.equals(this.developerAccount, smsAppQueryResp.developerAccount)
-            && Objects.equals(this.appName, smsAppQueryResp.appName)
-            && Objects.equals(this.ompAppName, smsAppQueryResp.ompAppName)
-            && Objects.equals(this.appKey, smsAppQueryResp.appKey)
-            && Objects.equals(this.upLinkAddr, smsAppQueryResp.upLinkAddr)
-            && Objects.equals(this.status, smsAppQueryResp.status)
-            && Objects.equals(this.industry, smsAppQueryResp.industry)
-            && Objects.equals(this.region, smsAppQueryResp.region)
-            && Objects.equals(this.intlChannelNum, smsAppQueryResp.intlChannelNum)
-            && Objects.equals(this.enterpriseProjectId, smsAppQueryResp.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, smsAppQueryResp.enterpriseProjectName)
-            && Objects.equals(this.ipWhiteList, smsAppQueryResp.ipWhiteList)
-            && Objects.equals(this.appAccessAddr, smsAppQueryResp.appAccessAddr)
-            && Objects.equals(this.protocol, smsAppQueryResp.protocol)
-            && Objects.equals(this.platform, smsAppQueryResp.platform)
-            && Objects.equals(this.isSupportMultiomp, smsAppQueryResp.isSupportMultiomp)
-            && Objects.equals(this.tenant, smsAppQueryResp.tenant);
+        SmsAppQueryResp that = (SmsAppQueryResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.developerAccount, that.developerAccount)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.ompAppName, that.ompAppName)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.upLinkAddr, that.upLinkAddr)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.industry, that.industry)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.intlChannelNum, that.intlChannelNum)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.ipWhiteList, that.ipWhiteList)
+            && Objects.equals(this.appAccessAddr, that.appAccessAddr) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.isSupportMultiomp, that.isSupportMultiomp)
+            && Objects.equals(this.tenant, that.tenant);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ModifyBindEipRequest
  */
-public class ModifyBindEipRequest  {
-
+public class ModifyBindEipRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip")
-    
+    @JsonProperty(value = "public_ip")
 
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip_id")
-    
+    @JsonProperty(value = "public_ip_id")
 
     private String publicIpId;
 
@@ -33,9 +24,6 @@ public class ModifyBindEipRequest  {
         this.publicIp = publicIp;
         return this;
     }
-
-    
-
 
     /**
      * 待绑定的弹性公网IP地址。
@@ -49,15 +37,10 @@ public class ModifyBindEipRequest  {
         this.publicIp = publicIp;
     }
 
-    
-
     public ModifyBindEipRequest withPublicIpId(String publicIpId) {
         this.publicIpId = publicIpId;
         return this;
     }
-
-    
-
 
     /**
      * 弹性公网IP地址对应的ID。
@@ -71,24 +54,23 @@ public class ModifyBindEipRequest  {
         this.publicIpId = publicIpId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyBindEipRequest modifyBindEipRequest = (ModifyBindEipRequest) o;
-        return Objects.equals(this.publicIp, modifyBindEipRequest.publicIp) &&
-            Objects.equals(this.publicIpId, modifyBindEipRequest.publicIpId);
+        ModifyBindEipRequest that = (ModifyBindEipRequest) obj;
+        return Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.publicIpId, that.publicIpId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publicIp, publicIpId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ModifyBindEipRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ModifyBindEipRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,17 +77,16 @@ public class QuotaDetailSnapshotsSSD {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailSnapshotsSSD quotaDetailSnapshotsSSD = (QuotaDetailSnapshotsSSD) o;
-        return Objects.equals(this.inUse, quotaDetailSnapshotsSSD.inUse)
-            && Objects.equals(this.limit, quotaDetailSnapshotsSSD.limit)
-            && Objects.equals(this.reserved, quotaDetailSnapshotsSSD.reserved);
+        QuotaDetailSnapshotsSSD that = (QuotaDetailSnapshotsSSD) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class MicroserviceLabel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroserviceLabel microserviceLabel = (MicroserviceLabel) o;
-        return Objects.equals(this.labelName, microserviceLabel.labelName)
-            && Objects.equals(this.labelValue, microserviceLabel.labelValue);
+        MicroserviceLabel that = (MicroserviceLabel) obj;
+        return Objects.equals(this.labelName, that.labelName) && Objects.equals(this.labelValue, that.labelValue);
     }
 
     @Override

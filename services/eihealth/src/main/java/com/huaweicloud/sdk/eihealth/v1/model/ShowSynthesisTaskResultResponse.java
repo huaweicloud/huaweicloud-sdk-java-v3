@@ -97,17 +97,16 @@ public class ShowSynthesisTaskResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSynthesisTaskResultResponse showSynthesisTaskResultResponse = (ShowSynthesisTaskResultResponse) o;
-        return Objects.equals(this.status, showSynthesisTaskResultResponse.status)
-            && Objects.equals(this.taskData, showSynthesisTaskResultResponse.taskData)
-            && Objects.equals(this.result, showSynthesisTaskResultResponse.result);
+        ShowSynthesisTaskResultResponse that = (ShowSynthesisTaskResultResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.taskData, that.taskData)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

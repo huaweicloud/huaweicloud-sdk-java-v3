@@ -65,16 +65,15 @@ public class ChangeDbTemplateOperationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeDbTemplateOperationRequest changeDbTemplateOperationRequest = (ChangeDbTemplateOperationRequest) o;
-        return Objects.equals(this.templateId, changeDbTemplateOperationRequest.templateId)
-            && Objects.equals(this.body, changeDbTemplateOperationRequest.body);
+        ChangeDbTemplateOperationRequest that = (ChangeDbTemplateOperationRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

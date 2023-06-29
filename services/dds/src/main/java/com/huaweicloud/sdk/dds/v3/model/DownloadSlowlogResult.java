@@ -143,20 +143,17 @@ public class DownloadSlowlogResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadSlowlogResult downloadSlowlogResult = (DownloadSlowlogResult) o;
-        return Objects.equals(this.nodeName, downloadSlowlogResult.nodeName)
-            && Objects.equals(this.fileName, downloadSlowlogResult.fileName)
-            && Objects.equals(this.status, downloadSlowlogResult.status)
-            && Objects.equals(this.fileSize, downloadSlowlogResult.fileSize)
-            && Objects.equals(this.fileLink, downloadSlowlogResult.fileLink)
-            && Objects.equals(this.updateAt, downloadSlowlogResult.updateAt);
+        DownloadSlowlogResult that = (DownloadSlowlogResult) obj;
+        return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.fileLink, that.fileLink) && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

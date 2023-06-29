@@ -74,16 +74,15 @@ public class BatchUpdateNoticeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateNoticeReq batchUpdateNoticeReq = (BatchUpdateNoticeReq) o;
-        return Objects.equals(this.noticeIds, batchUpdateNoticeReq.noticeIds)
-            && Objects.equals(this.operation, batchUpdateNoticeReq.operation);
+        BatchUpdateNoticeReq that = (BatchUpdateNoticeReq) obj;
+        return Objects.equals(this.noticeIds, that.noticeIds) && Objects.equals(this.operation, that.operation);
     }
 
     @Override

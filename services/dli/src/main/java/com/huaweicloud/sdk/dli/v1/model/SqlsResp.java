@@ -143,17 +143,17 @@ public class SqlsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlsResp sqlsResp = (SqlsResp) o;
-        return Objects.equals(this.sqlId, sqlsResp.sqlId) && Objects.equals(this.sqlName, sqlsResp.sqlName)
-            && Objects.equals(this.sql, sqlsResp.sql) && Objects.equals(this.description, sqlsResp.description)
-            && Objects.equals(this.group, sqlsResp.group) && Objects.equals(this.owner, sqlsResp.owner);
+        SqlsResp that = (SqlsResp) obj;
+        return Objects.equals(this.sqlId, that.sqlId) && Objects.equals(this.sqlName, that.sqlName)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

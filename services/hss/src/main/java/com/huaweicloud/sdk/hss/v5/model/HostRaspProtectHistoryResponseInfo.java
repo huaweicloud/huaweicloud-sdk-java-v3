@@ -125,19 +125,17 @@ public class HostRaspProtectHistoryResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostRaspProtectHistoryResponseInfo hostRaspProtectHistoryResponseInfo = (HostRaspProtectHistoryResponseInfo) o;
-        return Objects.equals(this.alarmTime, hostRaspProtectHistoryResponseInfo.alarmTime)
-            && Objects.equals(this.threatType, hostRaspProtectHistoryResponseInfo.threatType)
-            && Objects.equals(this.alarmLevel, hostRaspProtectHistoryResponseInfo.alarmLevel)
-            && Objects.equals(this.sourceIp, hostRaspProtectHistoryResponseInfo.sourceIp)
-            && Objects.equals(this.attackedUrl, hostRaspProtectHistoryResponseInfo.attackedUrl);
+        HostRaspProtectHistoryResponseInfo that = (HostRaspProtectHistoryResponseInfo) obj;
+        return Objects.equals(this.alarmTime, that.alarmTime) && Objects.equals(this.threatType, that.threatType)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.sourceIp, that.sourceIp)
+            && Objects.equals(this.attackedUrl, that.attackedUrl);
     }
 
     @Override

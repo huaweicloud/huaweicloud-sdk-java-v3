@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAuditDatabasesRequest  {
-
+public class ListAuditDatabasesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
@@ -46,9 +34,6 @@ public class ListAuditDatabasesRequest  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID
@@ -62,15 +47,10 @@ public class ListAuditDatabasesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListAuditDatabasesRequest withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态 ON ：开启 OFF ： 关闭
@@ -84,15 +64,10 @@ public class ListAuditDatabasesRequest  {
         this.status = status;
     }
 
-    
-
     public ListAuditDatabasesRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量
@@ -106,15 +81,10 @@ public class ListAuditDatabasesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListAuditDatabasesRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数
@@ -128,26 +98,24 @@ public class ListAuditDatabasesRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditDatabasesRequest listAuditDatabasesRequest = (ListAuditDatabasesRequest) o;
-        return Objects.equals(this.instanceId, listAuditDatabasesRequest.instanceId) &&
-            Objects.equals(this.status, listAuditDatabasesRequest.status) &&
-            Objects.equals(this.offset, listAuditDatabasesRequest.offset) &&
-            Objects.equals(this.limit, listAuditDatabasesRequest.limit);
+        ListAuditDatabasesRequest that = (ListAuditDatabasesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, status, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,6 +127,7 @@ public class ListAuditDatabasesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -169,8 +138,5 @@ public class ListAuditDatabasesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

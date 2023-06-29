@@ -155,18 +155,18 @@ public class ShowProjectSummaryV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectSummaryV4Response showProjectSummaryV4Response = (ShowProjectSummaryV4Response) o;
-        return Objects.equals(this.bugStatistics, showProjectSummaryV4Response.bugStatistics)
-            && Objects.equals(this.demandStatistics, showProjectSummaryV4Response.demandStatistics)
-            && Objects.equals(this.issueCompletionRates, showProjectSummaryV4Response.issueCompletionRates)
-            && Objects.equals(this.projectId, showProjectSummaryV4Response.projectId);
+        ShowProjectSummaryV4Response that = (ShowProjectSummaryV4Response) obj;
+        return Objects.equals(this.bugStatistics, that.bugStatistics)
+            && Objects.equals(this.demandStatistics, that.demandStatistics)
+            && Objects.equals(this.issueCompletionRates, that.issueCompletionRates)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

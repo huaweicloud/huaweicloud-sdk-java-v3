@@ -153,21 +153,18 @@ public class CreateNet2CloudPhoneServerRequestBodyExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequestBodyExtendParam createNet2CloudPhoneServerRequestBodyExtendParam =
-            (CreateNet2CloudPhoneServerRequestBodyExtendParam) o;
-        return Objects.equals(this.chargingMode, createNet2CloudPhoneServerRequestBodyExtendParam.chargingMode)
-            && Objects.equals(this.periodType, createNet2CloudPhoneServerRequestBodyExtendParam.periodType)
-            && Objects.equals(this.periodNum, createNet2CloudPhoneServerRequestBodyExtendParam.periodNum)
-            && Objects.equals(this.isAutoPay, createNet2CloudPhoneServerRequestBodyExtendParam.isAutoPay)
-            && Objects.equals(this.isAutoRenew, createNet2CloudPhoneServerRequestBodyExtendParam.isAutoRenew) && Objects
-                .equals(this.enterpriseProjectId, createNet2CloudPhoneServerRequestBodyExtendParam.enterpriseProjectId);
+        CreateNet2CloudPhoneServerRequestBodyExtendParam that = (CreateNet2CloudPhoneServerRequestBodyExtendParam) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

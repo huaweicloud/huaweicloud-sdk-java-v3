@@ -165,21 +165,21 @@ public class DeleteBlockchainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBlockchainRequest deleteBlockchainRequest = (DeleteBlockchainRequest) o;
-        return Objects.equals(this.blockchainId, deleteBlockchainRequest.blockchainId)
-            && Objects.equals(this.isDeleteStorage, deleteBlockchainRequest.isDeleteStorage)
-            && Objects.equals(this.isDeleteObs, deleteBlockchainRequest.isDeleteObs)
-            && Objects.equals(this.isDeleteResource, deleteBlockchainRequest.isDeleteResource)
-            && Objects.equals(this.isDeleteIef, deleteBlockchainRequest.isDeleteIef)
-            && Objects.equals(this.isDeleteLightpeer, deleteBlockchainRequest.isDeleteLightpeer)
-            && Objects.equals(this.iefNodesId, deleteBlockchainRequest.iefNodesId);
+        DeleteBlockchainRequest that = (DeleteBlockchainRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId)
+            && Objects.equals(this.isDeleteStorage, that.isDeleteStorage)
+            && Objects.equals(this.isDeleteObs, that.isDeleteObs)
+            && Objects.equals(this.isDeleteResource, that.isDeleteResource)
+            && Objects.equals(this.isDeleteIef, that.isDeleteIef)
+            && Objects.equals(this.isDeleteLightpeer, that.isDeleteLightpeer)
+            && Objects.equals(this.iefNodesId, that.iefNodesId);
     }
 
     @Override

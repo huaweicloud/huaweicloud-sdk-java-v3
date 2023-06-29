@@ -77,17 +77,16 @@ public class BatchDeleteMembersOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteMembersOption batchDeleteMembersOption = (BatchDeleteMembersOption) o;
-        return Objects.equals(this.id, batchDeleteMembersOption.id)
-            && Objects.equals(this.address, batchDeleteMembersOption.address)
-            && Objects.equals(this.protocolPort, batchDeleteMembersOption.protocolPort);
+        BatchDeleteMembersOption that = (BatchDeleteMembersOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.protocolPort, that.protocolPort);
     }
 
     @Override

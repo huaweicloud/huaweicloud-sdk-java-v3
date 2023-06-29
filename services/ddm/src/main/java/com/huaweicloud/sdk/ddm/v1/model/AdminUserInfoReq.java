@@ -55,16 +55,15 @@ public class AdminUserInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdminUserInfoReq adminUserInfoReq = (AdminUserInfoReq) o;
-        return Objects.equals(this.name, adminUserInfoReq.name)
-            && Objects.equals(this.password, adminUserInfoReq.password);
+        AdminUserInfoReq that = (AdminUserInfoReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password);
     }
 
     @Override

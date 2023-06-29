@@ -53,15 +53,15 @@ public class BatchDeleteManualBackupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteManualBackupResponse batchDeleteManualBackupResponse = (BatchDeleteManualBackupResponse) o;
-        return Objects.equals(this.deleteResults, batchDeleteManualBackupResponse.deleteResults);
+        BatchDeleteManualBackupResponse that = (BatchDeleteManualBackupResponse) obj;
+        return Objects.equals(this.deleteResults, that.deleteResults);
     }
 
     @Override

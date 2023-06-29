@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Proxy信息。
  */
-public class MysqlProxyInfo  {
-
+public class MysqlProxyInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pool_id")
-    
+    @JsonProperty(value = "pool_id")
 
     private String poolId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="address")
-    
+    @JsonProperty(value = "address")
 
     private String address;
 
@@ -39,9 +29,6 @@ public class MysqlProxyInfo  {
         this.poolId = poolId;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例ID。
@@ -55,15 +42,10 @@ public class MysqlProxyInfo  {
         this.poolId = poolId;
     }
 
-    
-
     public MysqlProxyInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Proxy实例名称。
@@ -77,15 +59,10 @@ public class MysqlProxyInfo  {
         this.name = name;
     }
 
-    
-
     public MysqlProxyInfo withAddress(String address) {
         this.address = address;
         return this;
     }
-
-    
-
 
     /**
      * Proxy读写分离地址。
@@ -99,25 +76,24 @@ public class MysqlProxyInfo  {
         this.address = address;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlProxyInfo mysqlProxyInfo = (MysqlProxyInfo) o;
-        return Objects.equals(this.poolId, mysqlProxyInfo.poolId) &&
-            Objects.equals(this.name, mysqlProxyInfo.name) &&
-            Objects.equals(this.address, mysqlProxyInfo.address);
+        MysqlProxyInfo that = (MysqlProxyInfo) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(poolId, name, address);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class MysqlProxyInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class MysqlProxyInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -81,17 +81,16 @@ public class ListEnvironmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvironmentsRequest listEnvironmentsRequest = (ListEnvironmentsRequest) o;
-        return Objects.equals(this.projectId, listEnvironmentsRequest.projectId)
-            && Objects.equals(this.offset, listEnvironmentsRequest.offset)
-            && Objects.equals(this.limit, listEnvironmentsRequest.limit);
+        ListEnvironmentsRequest that = (ListEnvironmentsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowPlaybookStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookStatisticsRequest showPlaybookStatisticsRequest = (ShowPlaybookStatisticsRequest) o;
-        return Objects.equals(this.workspaceId, showPlaybookStatisticsRequest.workspaceId);
+        ShowPlaybookStatisticsRequest that = (ShowPlaybookStatisticsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

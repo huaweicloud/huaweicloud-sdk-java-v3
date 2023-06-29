@@ -33,16 +33,15 @@ public class CreateNet2CloudPhoneServerRequestBodyPublicIpEip {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequestBodyPublicIpEip createNet2CloudPhoneServerRequestBodyPublicIpEip =
-            (CreateNet2CloudPhoneServerRequestBodyPublicIpEip) o;
-        return Objects.equals(this.type, createNet2CloudPhoneServerRequestBodyPublicIpEip.type);
+        CreateNet2CloudPhoneServerRequestBodyPublicIpEip that = (CreateNet2CloudPhoneServerRequestBodyPublicIpEip) obj;
+        return Objects.equals(this.type, that.type);
     }
 
     @Override

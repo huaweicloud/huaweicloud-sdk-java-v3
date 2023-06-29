@@ -137,19 +137,16 @@ public class StyleExtraMetaAdditionalProperties1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleExtraMetaAdditionalProperties1 styleExtraMetaAdditionalProperties1 =
-            (StyleExtraMetaAdditionalProperties1) o;
-        return Objects.equals(this.type, styleExtraMetaAdditionalProperties1.type)
-            && Objects.equals(this.matchComponent, styleExtraMetaAdditionalProperties1.matchComponent)
-            && Objects.equals(this.files, styleExtraMetaAdditionalProperties1.files)
-            && Objects.equals(this.classifiedTags, styleExtraMetaAdditionalProperties1.classifiedTags);
+        StyleExtraMetaAdditionalProperties1 that = (StyleExtraMetaAdditionalProperties1) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.matchComponent, that.matchComponent)
+            && Objects.equals(this.files, that.files) && Objects.equals(this.classifiedTags, that.classifiedTags);
     }
 
     @Override

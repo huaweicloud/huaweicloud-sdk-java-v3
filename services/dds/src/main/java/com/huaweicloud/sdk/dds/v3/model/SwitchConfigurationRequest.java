@@ -65,16 +65,15 @@ public class SwitchConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchConfigurationRequest switchConfigurationRequest = (SwitchConfigurationRequest) o;
-        return Objects.equals(this.configId, switchConfigurationRequest.configId)
-            && Objects.equals(this.body, switchConfigurationRequest.body);
+        SwitchConfigurationRequest that = (SwitchConfigurationRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -56,16 +56,16 @@ public class ShowTargetPasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTargetPasswordResponse showTargetPasswordResponse = (ShowTargetPasswordResponse) o;
-        return Objects.equals(this.templateId, showTargetPasswordResponse.templateId)
-            && Objects.equals(this.targetPassword, showTargetPasswordResponse.targetPassword);
+        ShowTargetPasswordResponse that = (ShowTargetPasswordResponse) obj;
+        return Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.targetPassword, that.targetPassword);
     }
 
     @Override

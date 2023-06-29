@@ -57,16 +57,15 @@ public class QuotaStatisticsResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaStatisticsResponseInfo quotaStatisticsResponseInfo = (QuotaStatisticsResponseInfo) o;
-        return Objects.equals(this.version, quotaStatisticsResponseInfo.version)
-            && Objects.equals(this.totalNum, quotaStatisticsResponseInfo.totalNum);
+        QuotaStatisticsResponseInfo that = (QuotaStatisticsResponseInfo) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.totalNum, that.totalNum);
     }
 
     @Override

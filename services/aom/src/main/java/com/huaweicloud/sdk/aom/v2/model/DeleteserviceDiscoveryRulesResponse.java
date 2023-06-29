@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="responseStatus")
-    
+    @JsonProperty(value = "responseStatus")
 
     private Integer responseStatus;
 
@@ -42,9 +30,6 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 响应码。
@@ -58,15 +43,10 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public DeleteserviceDiscoveryRulesResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 响应信息描述。
@@ -80,15 +60,10 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public DeleteserviceDiscoveryRulesResponse withResponseStatus(Integer responseStatus) {
         this.responseStatus = responseStatus;
         return this;
     }
-
-    
-
 
     /**
      * 响应状态码。
@@ -102,25 +77,24 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         this.responseStatus = responseStatus;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteserviceDiscoveryRulesResponse deleteserviceDiscoveryRulesResponse = (DeleteserviceDiscoveryRulesResponse) o;
-        return Objects.equals(this.errorCode, deleteserviceDiscoveryRulesResponse.errorCode) &&
-            Objects.equals(this.errorMessage, deleteserviceDiscoveryRulesResponse.errorMessage) &&
-            Objects.equals(this.responseStatus, deleteserviceDiscoveryRulesResponse.responseStatus);
+        DeleteserviceDiscoveryRulesResponse that = (DeleteserviceDiscoveryRulesResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.responseStatus, that.responseStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorCode, errorMessage, responseStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class DeleteserviceDiscoveryRulesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

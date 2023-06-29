@@ -101,18 +101,18 @@ public class VpcepInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcepInfo vpcepInfo = (VpcepInfo) o;
-        return Objects.equals(this.kafkaBrokerIp, vpcepInfo.kafkaBrokerIp)
-            && Objects.equals(this.vpcepServiceId, vpcepInfo.vpcepServiceId)
-            && Objects.equals(this.vpcepServiceName, vpcepInfo.vpcepServiceName)
-            && Objects.equals(this.vpcepClientPort, vpcepInfo.vpcepClientPort);
+        VpcepInfo that = (VpcepInfo) obj;
+        return Objects.equals(this.kafkaBrokerIp, that.kafkaBrokerIp)
+            && Objects.equals(this.vpcepServiceId, that.vpcepServiceId)
+            && Objects.equals(this.vpcepServiceName, that.vpcepServiceName)
+            && Objects.equals(this.vpcepClientPort, that.vpcepClientPort);
     }
 
     @Override

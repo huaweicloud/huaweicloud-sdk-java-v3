@@ -33,15 +33,15 @@ public class FunctionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FunctionInfo functionInfo = (FunctionInfo) o;
-        return Objects.equals(this.name, functionInfo.name);
+        FunctionInfo that = (FunctionInfo) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

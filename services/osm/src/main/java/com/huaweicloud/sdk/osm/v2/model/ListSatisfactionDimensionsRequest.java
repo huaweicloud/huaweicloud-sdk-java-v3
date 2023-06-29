@@ -85,17 +85,16 @@ public class ListSatisfactionDimensionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSatisfactionDimensionsRequest listSatisfactionDimensionsRequest = (ListSatisfactionDimensionsRequest) o;
-        return Objects.equals(this.xSite, listSatisfactionDimensionsRequest.xSite)
-            && Objects.equals(this.xLanguage, listSatisfactionDimensionsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listSatisfactionDimensionsRequest.xTimeZone);
+        ListSatisfactionDimensionsRequest that = (ListSatisfactionDimensionsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

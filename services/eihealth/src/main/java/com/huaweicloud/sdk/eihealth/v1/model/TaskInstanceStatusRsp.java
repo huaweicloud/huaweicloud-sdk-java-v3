@@ -163,20 +163,18 @@ public class TaskInstanceStatusRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceStatusRsp taskInstanceStatusRsp = (TaskInstanceStatusRsp) o;
-        return Objects.equals(this.phase, taskInstanceStatusRsp.phase)
-            && Objects.equals(this.podIp, taskInstanceStatusRsp.podIp)
-            && Objects.equals(this.hostIp, taskInstanceStatusRsp.hostIp)
-            && Objects.equals(this.hostName, taskInstanceStatusRsp.hostName)
-            && Objects.equals(this.startTime, taskInstanceStatusRsp.startTime)
-            && Objects.equals(this.containerStatuses, taskInstanceStatusRsp.containerStatuses);
+        TaskInstanceStatusRsp that = (TaskInstanceStatusRsp) obj;
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.podIp, that.podIp)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.containerStatuses, that.containerStatuses);
     }
 
     @Override

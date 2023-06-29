@@ -65,16 +65,15 @@ public class UpdateFlinkTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlinkTemplateRequest updateFlinkTemplateRequest = (UpdateFlinkTemplateRequest) o;
-        return Objects.equals(this.templateId, updateFlinkTemplateRequest.templateId)
-            && Objects.equals(this.body, updateFlinkTemplateRequest.body);
+        UpdateFlinkTemplateRequest that = (UpdateFlinkTemplateRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

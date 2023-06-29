@@ -43,15 +43,15 @@ public class ListTransitIpsByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTransitIpsByTagsRequest listTransitIpsByTagsRequest = (ListTransitIpsByTagsRequest) o;
-        return Objects.equals(this.body, listTransitIpsByTagsRequest.body);
+        ListTransitIpsByTagsRequest that = (ListTransitIpsByTagsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

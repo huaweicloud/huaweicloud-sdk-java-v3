@@ -191,22 +191,19 @@ public class ListSubcustomerMonthlyBillsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubcustomerMonthlyBillsRequest listSubcustomerMonthlyBillsRequest = (ListSubcustomerMonthlyBillsRequest) o;
-        return Objects.equals(this.customerId, listSubcustomerMonthlyBillsRequest.customerId)
-            && Objects.equals(this.cycle, listSubcustomerMonthlyBillsRequest.cycle)
-            && Objects.equals(this.cloudServiceType, listSubcustomerMonthlyBillsRequest.cloudServiceType)
-            && Objects.equals(this.chargeMode, listSubcustomerMonthlyBillsRequest.chargeMode)
-            && Objects.equals(this.offset, listSubcustomerMonthlyBillsRequest.offset)
-            && Objects.equals(this.limit, listSubcustomerMonthlyBillsRequest.limit)
-            && Objects.equals(this.billType, listSubcustomerMonthlyBillsRequest.billType)
-            && Objects.equals(this.indirectPartnerId, listSubcustomerMonthlyBillsRequest.indirectPartnerId);
+        ListSubcustomerMonthlyBillsRequest that = (ListSubcustomerMonthlyBillsRequest) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.billType, that.billType)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

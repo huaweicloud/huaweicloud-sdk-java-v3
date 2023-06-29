@@ -81,17 +81,16 @@ public class ListSpecsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpecsRequest listSpecsRequest = (ListSpecsRequest) o;
-        return Objects.equals(this.specCode, listSpecsRequest.specCode)
-            && Objects.equals(this.offset, listSpecsRequest.offset)
-            && Objects.equals(this.limit, listSpecsRequest.limit);
+        ListSpecsRequest that = (ListSpecsRequest) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

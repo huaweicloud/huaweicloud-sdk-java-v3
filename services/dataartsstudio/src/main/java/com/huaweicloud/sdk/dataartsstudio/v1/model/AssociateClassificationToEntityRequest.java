@@ -87,18 +87,16 @@ public class AssociateClassificationToEntityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateClassificationToEntityRequest associateClassificationToEntityRequest =
-            (AssociateClassificationToEntityRequest) o;
-        return Objects.equals(this.workspace, associateClassificationToEntityRequest.workspace)
-            && Objects.equals(this.guid, associateClassificationToEntityRequest.guid)
-            && Objects.equals(this.body, associateClassificationToEntityRequest.body);
+        AssociateClassificationToEntityRequest that = (AssociateClassificationToEntityRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

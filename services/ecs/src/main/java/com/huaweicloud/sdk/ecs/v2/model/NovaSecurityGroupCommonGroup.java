@@ -55,16 +55,15 @@ public class NovaSecurityGroupCommonGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaSecurityGroupCommonGroup novaSecurityGroupCommonGroup = (NovaSecurityGroupCommonGroup) o;
-        return Objects.equals(this.name, novaSecurityGroupCommonGroup.name)
-            && Objects.equals(this.tenantId, novaSecurityGroupCommonGroup.tenantId);
+        NovaSecurityGroupCommonGroup that = (NovaSecurityGroupCommonGroup) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

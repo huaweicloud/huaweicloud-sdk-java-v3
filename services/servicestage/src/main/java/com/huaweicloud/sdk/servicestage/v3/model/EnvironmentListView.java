@@ -109,22 +109,15 @@ public class EnvironmentListView {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployModeEnum(value));
         }
 
         public static DeployModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -338,23 +331,20 @@ public class EnvironmentListView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentListView environmentListView = (EnvironmentListView) o;
-        return Objects.equals(this.id, environmentListView.id) && Objects.equals(this.name, environmentListView.name)
-            && Objects.equals(this.description, environmentListView.description)
-            && Objects.equals(this.enterpriseProjectId, environmentListView.enterpriseProjectId)
-            && Objects.equals(this.vpcId, environmentListView.vpcId)
-            && Objects.equals(this.creator, environmentListView.creator)
-            && Objects.equals(this.createTime, environmentListView.createTime)
-            && Objects.equals(this.updateTime, environmentListView.updateTime)
-            && Objects.equals(this.deployMode, environmentListView.deployMode)
-            && Objects.equals(this.labels, environmentListView.labels);
+        EnvironmentListView that = (EnvironmentListView) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.deployMode, that.deployMode) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class DeleteEvaluationReplyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEvaluationReplyResponse deleteEvaluationReplyResponse = (DeleteEvaluationReplyResponse) o;
-        return Objects.equals(this.result, deleteEvaluationReplyResponse.result)
-            && Objects.equals(this.status, deleteEvaluationReplyResponse.status);
+        DeleteEvaluationReplyResponse that = (DeleteEvaluationReplyResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

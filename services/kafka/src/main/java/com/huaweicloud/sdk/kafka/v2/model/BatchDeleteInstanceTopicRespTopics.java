@@ -55,16 +55,15 @@ public class BatchDeleteInstanceTopicRespTopics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteInstanceTopicRespTopics batchDeleteInstanceTopicRespTopics = (BatchDeleteInstanceTopicRespTopics) o;
-        return Objects.equals(this.id, batchDeleteInstanceTopicRespTopics.id)
-            && Objects.equals(this.success, batchDeleteInstanceTopicRespTopics.success);
+        BatchDeleteInstanceTopicRespTopics that = (BatchDeleteInstanceTopicRespTopics) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.success, that.success);
     }
 
     @Override

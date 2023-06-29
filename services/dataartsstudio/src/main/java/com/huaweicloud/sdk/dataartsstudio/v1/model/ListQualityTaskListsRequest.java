@@ -297,27 +297,22 @@ public class ListQualityTaskListsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQualityTaskListsRequest listQualityTaskListsRequest = (ListQualityTaskListsRequest) o;
-        return Objects.equals(this.start, listQualityTaskListsRequest.start)
-            && Objects.equals(this.pageSize, listQualityTaskListsRequest.pageSize)
-            && Objects.equals(this.offset, listQualityTaskListsRequest.offset)
-            && Objects.equals(this.limit, listQualityTaskListsRequest.limit)
-            && Objects.equals(this.categoryId, listQualityTaskListsRequest.categoryId)
-            && Objects.equals(this.ruleName, listQualityTaskListsRequest.ruleName)
-            && Objects.equals(this.scheduleStatus, listQualityTaskListsRequest.scheduleStatus)
-            && Objects.equals(this.schedulePeriod, listQualityTaskListsRequest.schedulePeriod)
-            && Objects.equals(this.startTime, listQualityTaskListsRequest.startTime)
-            && Objects.equals(this.endTime, listQualityTaskListsRequest.endTime)
-            && Objects.equals(this.resultStatus, listQualityTaskListsRequest.resultStatus)
-            && Objects.equals(this.sort, listQualityTaskListsRequest.sort)
-            && Objects.equals(this.order, listQualityTaskListsRequest.order);
+        ListQualityTaskListsRequest that = (ListQualityTaskListsRequest) obj;
+        return Objects.equals(this.start, that.start) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus)
+            && Objects.equals(this.schedulePeriod, that.schedulePeriod)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.resultStatus, that.resultStatus) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override

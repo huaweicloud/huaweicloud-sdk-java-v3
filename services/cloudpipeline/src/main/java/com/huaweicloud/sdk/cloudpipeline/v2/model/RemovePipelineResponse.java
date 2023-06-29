@@ -56,16 +56,15 @@ public class RemovePipelineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemovePipelineResponse removePipelineResponse = (RemovePipelineResponse) o;
-        return Objects.equals(this.pipelineId, removePipelineResponse.pipelineId)
-            && Objects.equals(this.pipelineName, removePipelineResponse.pipelineName);
+        RemovePipelineResponse that = (RemovePipelineResponse) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.pipelineName, that.pipelineName);
     }
 
     @Override

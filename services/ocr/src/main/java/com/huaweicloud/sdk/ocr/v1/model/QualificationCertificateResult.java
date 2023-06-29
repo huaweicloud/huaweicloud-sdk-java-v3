@@ -460,33 +460,29 @@ public class QualificationCertificateResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualificationCertificateResult qualificationCertificateResult = (QualificationCertificateResult) o;
-        return Objects.equals(this.idNumber, qualificationCertificateResult.idNumber)
-            && Objects.equals(this.assessmentDate, qualificationCertificateResult.assessmentDate)
-            && Objects.equals(this.certificateNumber, qualificationCertificateResult.certificateNumber)
-            && Objects.equals(this.fileNumber, qualificationCertificateResult.fileNumber)
-            && Objects.equals(this.unionCardNumber, qualificationCertificateResult.unionCardNumber)
-            && Objects.equals(this.continuingEducationInfo, qualificationCertificateResult.continuingEducationInfo)
-            && Objects.equals(this.sex, qualificationCertificateResult.sex)
-            && Objects.equals(this.phoneNumber, qualificationCertificateResult.phoneNumber)
-            && Objects.equals(this.registrationDate, qualificationCertificateResult.registrationDate)
-            && Objects.equals(this.workUnit, qualificationCertificateResult.workUnit)
-            && Objects.equals(this.integrityAssessmentInfo, qualificationCertificateResult.integrityAssessmentInfo)
-            && Objects.equals(this.nationality, qualificationCertificateResult.nationality)
-            && Objects.equals(this.name, qualificationCertificateResult.name)
-            && Objects.equals(this.address, qualificationCertificateResult.address)
-            && Objects.equals(this.drivingClass, qualificationCertificateResult.drivingClass)
-            && Objects.equals(this.issuingAuthority, qualificationCertificateResult.issuingAuthority)
-            && Objects.equals(this.birthDate, qualificationCertificateResult.birthDate)
-            && Objects.equals(this.qualificationCategoryList, qualificationCertificateResult.qualificationCategoryList)
-            && Objects.equals(this.confidence, qualificationCertificateResult.confidence);
+        QualificationCertificateResult that = (QualificationCertificateResult) obj;
+        return Objects.equals(this.idNumber, that.idNumber) && Objects.equals(this.assessmentDate, that.assessmentDate)
+            && Objects.equals(this.certificateNumber, that.certificateNumber)
+            && Objects.equals(this.fileNumber, that.fileNumber)
+            && Objects.equals(this.unionCardNumber, that.unionCardNumber)
+            && Objects.equals(this.continuingEducationInfo, that.continuingEducationInfo)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.phoneNumber, that.phoneNumber)
+            && Objects.equals(this.registrationDate, that.registrationDate)
+            && Objects.equals(this.workUnit, that.workUnit)
+            && Objects.equals(this.integrityAssessmentInfo, that.integrityAssessmentInfo)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.drivingClass, that.drivingClass)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.qualificationCategoryList, that.qualificationCategoryList)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

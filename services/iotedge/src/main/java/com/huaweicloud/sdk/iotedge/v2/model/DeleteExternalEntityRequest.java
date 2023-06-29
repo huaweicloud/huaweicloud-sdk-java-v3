@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteExternalEntityRequest  {
-
+public class DeleteExternalEntityRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_id")
-    
+    @JsonProperty(value = "external_id")
 
     private String externalId;
 
@@ -34,9 +24,6 @@ public class DeleteExternalEntityRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -50,15 +37,10 @@ public class DeleteExternalEntityRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public DeleteExternalEntityRequest withExternalId(String externalId) {
         this.externalId = externalId;
         return this;
     }
-
-    
-
 
     /**
      * 外部实体ID
@@ -72,24 +54,23 @@ public class DeleteExternalEntityRequest  {
         this.externalId = externalId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteExternalEntityRequest deleteExternalEntityRequest = (DeleteExternalEntityRequest) o;
-        return Objects.equals(this.edgeNodeId, deleteExternalEntityRequest.edgeNodeId) &&
-            Objects.equals(this.externalId, deleteExternalEntityRequest.externalId);
+        DeleteExternalEntityRequest that = (DeleteExternalEntityRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.externalId, that.externalId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, externalId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteExternalEntityRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteExternalEntityRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

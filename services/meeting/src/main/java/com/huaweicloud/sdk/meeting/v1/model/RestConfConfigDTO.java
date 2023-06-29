@@ -321,28 +321,26 @@ public class RestConfConfigDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestConfConfigDTO restConfConfigDTO = (RestConfConfigDTO) o;
-        return Objects.equals(this.isSendNotify, restConfConfigDTO.isSendNotify)
-            && Objects.equals(this.isSendSms, restConfConfigDTO.isSendSms)
-            && Objects.equals(this.isSendCalendar, restConfConfigDTO.isSendCalendar)
-            && Objects.equals(this.isAutoMute, restConfConfigDTO.isAutoMute)
-            && Objects.equals(this.isHardTerminalAutoMute, restConfConfigDTO.isHardTerminalAutoMute)
-            && Objects.equals(this.isGuestFreePwd, restConfConfigDTO.isGuestFreePwd)
-            && Objects.equals(this.callInRestriction, restConfConfigDTO.callInRestriction)
-            && Objects.equals(this.allowGuestStartConf, restConfConfigDTO.allowGuestStartConf)
-            && Objects.equals(this.guestPwd, restConfConfigDTO.guestPwd)
-            && Objects.equals(this.vmrIDType, restConfConfigDTO.vmrIDType)
-            && Objects.equals(this.prolongLength, restConfConfigDTO.prolongLength)
-            && Objects.equals(this.enableWaitingRoom, restConfConfigDTO.enableWaitingRoom)
-            && Objects.equals(this.isHostCameraOn, restConfConfigDTO.isHostCameraOn)
-            && Objects.equals(this.isGuestCameraOn, restConfConfigDTO.isGuestCameraOn);
+        RestConfConfigDTO that = (RestConfConfigDTO) obj;
+        return Objects.equals(this.isSendNotify, that.isSendNotify) && Objects.equals(this.isSendSms, that.isSendSms)
+            && Objects.equals(this.isSendCalendar, that.isSendCalendar)
+            && Objects.equals(this.isAutoMute, that.isAutoMute)
+            && Objects.equals(this.isHardTerminalAutoMute, that.isHardTerminalAutoMute)
+            && Objects.equals(this.isGuestFreePwd, that.isGuestFreePwd)
+            && Objects.equals(this.callInRestriction, that.callInRestriction)
+            && Objects.equals(this.allowGuestStartConf, that.allowGuestStartConf)
+            && Objects.equals(this.guestPwd, that.guestPwd) && Objects.equals(this.vmrIDType, that.vmrIDType)
+            && Objects.equals(this.prolongLength, that.prolongLength)
+            && Objects.equals(this.enableWaitingRoom, that.enableWaitingRoom)
+            && Objects.equals(this.isHostCameraOn, that.isHostCameraOn)
+            && Objects.equals(this.isGuestCameraOn, that.isGuestCameraOn);
     }
 
     @Override

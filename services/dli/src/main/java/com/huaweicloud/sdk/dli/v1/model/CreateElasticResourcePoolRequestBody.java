@@ -212,24 +212,20 @@ public class CreateElasticResourcePoolRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateElasticResourcePoolRequestBody createElasticResourcePoolRequestBody =
-            (CreateElasticResourcePoolRequestBody) o;
-        return Objects.equals(this.elasticResourcePoolName,
-            createElasticResourcePoolRequestBody.elasticResourcePoolName)
-            && Objects.equals(this.description, createElasticResourcePoolRequestBody.description)
-            && Objects.equals(this.cidrInVpc, createElasticResourcePoolRequestBody.cidrInVpc)
-            && Objects.equals(this.maxCu, createElasticResourcePoolRequestBody.maxCu)
-            && Objects.equals(this.chargingMode, createElasticResourcePoolRequestBody.chargingMode)
-            && Objects.equals(this.minCu, createElasticResourcePoolRequestBody.minCu)
-            && Objects.equals(this.enterpriseProjectId, createElasticResourcePoolRequestBody.enterpriseProjectId)
-            && Objects.equals(this.tags, createElasticResourcePoolRequestBody.tags);
+        CreateElasticResourcePoolRequestBody that = (CreateElasticResourcePoolRequestBody) obj;
+        return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cidrInVpc, that.cidrInVpc)
+            && Objects.equals(this.maxCu, that.maxCu) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.minCu, that.minCu)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

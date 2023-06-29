@@ -127,18 +127,16 @@ public class AudioModerationResultRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioModerationResultRequestParams audioModerationResultRequestParams = (AudioModerationResultRequestParams) o;
-        return Objects.equals(this.eventType, audioModerationResultRequestParams.eventType)
-            && Objects.equals(this.data, audioModerationResultRequestParams.data)
-            && Objects.equals(this.callback, audioModerationResultRequestParams.callback)
-            && Objects.equals(this.categories, audioModerationResultRequestParams.categories);
+        AudioModerationResultRequestParams that = (AudioModerationResultRequestParams) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.callback, that.callback) && Objects.equals(this.categories, that.categories);
     }
 
     @Override

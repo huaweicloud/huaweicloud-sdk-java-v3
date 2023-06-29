@@ -99,18 +99,16 @@ public class ImageTaggingBoundingBox {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageTaggingBoundingBox imageTaggingBoundingBox = (ImageTaggingBoundingBox) o;
-        return Objects.equals(this.width, imageTaggingBoundingBox.width)
-            && Objects.equals(this.height, imageTaggingBoundingBox.height)
-            && Objects.equals(this.topLeftX, imageTaggingBoundingBox.topLeftX)
-            && Objects.equals(this.topLeftY, imageTaggingBoundingBox.topLeftY);
+        ImageTaggingBoundingBox that = (ImageTaggingBoundingBox) obj;
+        return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.topLeftX, that.topLeftX) && Objects.equals(this.topLeftY, that.topLeftY);
     }
 
     @Override

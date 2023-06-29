@@ -78,17 +78,17 @@ public class UpdateYmlsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateYmlsResponse updateYmlsResponse = (UpdateYmlsResponse) o;
-        return Objects.equals(this.acknowledged, updateYmlsResponse.acknowledged)
-            && Objects.equals(this.externalMessage, updateYmlsResponse.externalMessage)
-            && Objects.equals(this.httpErrorResponse, updateYmlsResponse.httpErrorResponse);
+        UpdateYmlsResponse that = (UpdateYmlsResponse) obj;
+        return Objects.equals(this.acknowledged, that.acknowledged)
+            && Objects.equals(this.externalMessage, that.externalMessage)
+            && Objects.equals(this.httpErrorResponse, that.httpErrorResponse);
     }
 
     @Override

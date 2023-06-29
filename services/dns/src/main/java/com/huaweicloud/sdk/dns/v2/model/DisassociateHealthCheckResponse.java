@@ -34,15 +34,15 @@ public class DisassociateHealthCheckResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateHealthCheckResponse disassociateHealthCheckResponse = (DisassociateHealthCheckResponse) o;
-        return Objects.equals(this.healthCheckId, disassociateHealthCheckResponse.healthCheckId);
+        DisassociateHealthCheckResponse that = (DisassociateHealthCheckResponse) obj;
+        return Objects.equals(this.healthCheckId, that.healthCheckId);
     }
 
     @Override

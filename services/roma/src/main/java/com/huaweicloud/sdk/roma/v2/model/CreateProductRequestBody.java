@@ -85,22 +85,15 @@ public class CreateProductRequestBody {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class CreateProductRequestBody {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +261,15 @@ public class CreateProductRequestBody {
             if (value == null) {
                 return null;
             }
-            DataFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataFormatEnum(value));
         }
 
         public static DataFormatEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DataFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -525,26 +504,21 @@ public class CreateProductRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProductRequestBody createProductRequestBody = (CreateProductRequestBody) o;
-        return Objects.equals(this.appId, createProductRequestBody.appId)
-            && Objects.equals(this.name, createProductRequestBody.name)
-            && Objects.equals(this.manufacturerId, createProductRequestBody.manufacturerId)
-            && Objects.equals(this.manufacturerName, createProductRequestBody.manufacturerName)
-            && Objects.equals(this.model, createProductRequestBody.model)
-            && Objects.equals(this.productType, createProductRequestBody.productType)
-            && Objects.equals(this.description, createProductRequestBody.description)
-            && Objects.equals(this.protocolType, createProductRequestBody.protocolType)
-            && Objects.equals(this.deviceType, createProductRequestBody.deviceType)
-            && Objects.equals(this.templateId, createProductRequestBody.templateId)
-            && Objects.equals(this.version, createProductRequestBody.version)
-            && Objects.equals(this.dataFormat, createProductRequestBody.dataFormat);
+        CreateProductRequestBody that = (CreateProductRequestBody) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.manufacturerId, that.manufacturerId)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocolType, that.protocolType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.dataFormat, that.dataFormat);
     }
 
     @Override

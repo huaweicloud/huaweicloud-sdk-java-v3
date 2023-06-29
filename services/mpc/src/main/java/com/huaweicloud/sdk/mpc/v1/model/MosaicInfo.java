@@ -143,18 +143,18 @@ public class MosaicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MosaicInfo mosaicInfo = (MosaicInfo) o;
-        return Objects.equals(this.timelineStart, mosaicInfo.timelineStart)
-            && Objects.equals(this.timelineDuration, mosaicInfo.timelineDuration)
-            && Objects.equals(this.dx, mosaicInfo.dx) && Objects.equals(this.dy, mosaicInfo.dy)
-            && Objects.equals(this.width, mosaicInfo.width) && Objects.equals(this.height, mosaicInfo.height);
+        MosaicInfo that = (MosaicInfo) obj;
+        return Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration) && Objects.equals(this.dx, that.dx)
+            && Objects.equals(this.dy, that.dy) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height);
     }
 
     @Override

@@ -109,18 +109,17 @@ public class CbcUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CbcUpdate cbcUpdate = (CbcUpdate) o;
-        return Objects.equals(this.cloudServiceConsoleURL, cbcUpdate.cloudServiceConsoleURL)
-            && Objects.equals(this.productInfo, cbcUpdate.productInfo)
-            && Objects.equals(this.resourceId, cbcUpdate.resourceId)
-            && Objects.equals(this.promotionInfo, cbcUpdate.promotionInfo);
+        CbcUpdate that = (CbcUpdate) obj;
+        return Objects.equals(this.cloudServiceConsoleURL, that.cloudServiceConsoleURL)
+            && Objects.equals(this.productInfo, that.productInfo) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.promotionInfo, that.promotionInfo);
     }
 
     @Override

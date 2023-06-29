@@ -239,22 +239,19 @@ public class UpdateDataStoreResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataStoreResponse updateDataStoreResponse = (UpdateDataStoreResponse) o;
-        return Objects.equals(this.dataStoreId, updateDataStoreResponse.dataStoreId)
-            && Objects.equals(this.name, updateDataStoreResponse.name)
-            && Objects.equals(this.groupId, updateDataStoreResponse.groupId)
-            && Objects.equals(this.tags, updateDataStoreResponse.tags)
-            && Objects.equals(this.metrics, updateDataStoreResponse.metrics)
-            && Objects.equals(this.properties, updateDataStoreResponse.properties)
-            && Objects.equals(this.createdTime, updateDataStoreResponse.createdTime)
-            && Objects.equals(this.modifiedTime, updateDataStoreResponse.modifiedTime);
+        UpdateDataStoreResponse that = (UpdateDataStoreResponse) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime);
     }
 
     @Override

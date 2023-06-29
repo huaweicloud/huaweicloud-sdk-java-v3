@@ -184,20 +184,18 @@ public class ConditionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConditionInfo conditionInfo = (ConditionInfo) o;
-        return Objects.equals(this.expressionType, conditionInfo.expressionType)
-            && Objects.equals(this.conditions, conditionInfo.conditions)
-            && Objects.equals(this.logics, conditionInfo.logics) && Objects.equals(this.cron, conditionInfo.cron)
-            && Objects.equals(this.scheduleType, conditionInfo.scheduleType)
-            && Objects.equals(this.repeatRange, conditionInfo.repeatRange)
-            && Objects.equals(this.repeatCount, conditionInfo.repeatCount);
+        ConditionInfo that = (ConditionInfo) obj;
+        return Objects.equals(this.expressionType, that.expressionType)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.logics, that.logics)
+            && Objects.equals(this.cron, that.cron) && Objects.equals(this.scheduleType, that.scheduleType)
+            && Objects.equals(this.repeatRange, that.repeatRange) && Objects.equals(this.repeatCount, that.repeatCount);
     }
 
     @Override

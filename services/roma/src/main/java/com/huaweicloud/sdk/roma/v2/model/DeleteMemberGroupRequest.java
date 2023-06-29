@@ -77,17 +77,16 @@ public class DeleteMemberGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMemberGroupRequest deleteMemberGroupRequest = (DeleteMemberGroupRequest) o;
-        return Objects.equals(this.instanceId, deleteMemberGroupRequest.instanceId)
-            && Objects.equals(this.vpcChannelId, deleteMemberGroupRequest.vpcChannelId)
-            && Objects.equals(this.memberGroupId, deleteMemberGroupRequest.memberGroupId);
+        DeleteMemberGroupRequest that = (DeleteMemberGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.memberGroupId, that.memberGroupId);
     }
 
     @Override

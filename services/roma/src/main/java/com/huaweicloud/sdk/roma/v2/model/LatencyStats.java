@@ -55,16 +55,15 @@ public class LatencyStats {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LatencyStats latencyStats = (LatencyStats) o;
-        return Objects.equals(this.maxLatency, latencyStats.maxLatency)
-            && Objects.equals(this.avgLatency, latencyStats.avgLatency);
+        LatencyStats that = (LatencyStats) obj;
+        return Objects.equals(this.maxLatency, that.maxLatency) && Objects.equals(this.avgLatency, that.avgLatency);
     }
 
     @Override

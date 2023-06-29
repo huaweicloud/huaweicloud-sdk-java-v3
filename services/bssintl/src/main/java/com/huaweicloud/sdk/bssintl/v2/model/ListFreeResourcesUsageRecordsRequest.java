@@ -169,22 +169,20 @@ public class ListFreeResourcesUsageRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFreeResourcesUsageRecordsRequest listFreeResourcesUsageRecordsRequest =
-            (ListFreeResourcesUsageRecordsRequest) o;
-        return Objects.equals(this.freeResourceId, listFreeResourcesUsageRecordsRequest.freeResourceId)
-            && Objects.equals(this.productId, listFreeResourcesUsageRecordsRequest.productId)
-            && Objects.equals(this.resourceTypeCode, listFreeResourcesUsageRecordsRequest.resourceTypeCode)
-            && Objects.equals(this.deductTimeBegin, listFreeResourcesUsageRecordsRequest.deductTimeBegin)
-            && Objects.equals(this.deductTimeEnd, listFreeResourcesUsageRecordsRequest.deductTimeEnd)
-            && Objects.equals(this.offset, listFreeResourcesUsageRecordsRequest.offset)
-            && Objects.equals(this.limit, listFreeResourcesUsageRecordsRequest.limit);
+        ListFreeResourcesUsageRecordsRequest that = (ListFreeResourcesUsageRecordsRequest) obj;
+        return Objects.equals(this.freeResourceId, that.freeResourceId)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.deductTimeBegin, that.deductTimeBegin)
+            && Objects.equals(this.deductTimeEnd, that.deductTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

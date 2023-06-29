@@ -85,22 +85,15 @@ public class ListRtcRoomListRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -321,24 +314,19 @@ public class ListRtcRoomListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRoomListRequest listRtcRoomListRequest = (ListRtcRoomListRequest) o;
-        return Objects.equals(this.authorization, listRtcRoomListRequest.authorization)
-            && Objects.equals(this.xSdkDate, listRtcRoomListRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listRtcRoomListRequest.xProjectId)
-            && Objects.equals(this.app, listRtcRoomListRequest.app)
-            && Objects.equals(this.roomId, listRtcRoomListRequest.roomId)
-            && Objects.equals(this.state, listRtcRoomListRequest.state)
-            && Objects.equals(this.startTime, listRtcRoomListRequest.startTime)
-            && Objects.equals(this.endTime, listRtcRoomListRequest.endTime)
-            && Objects.equals(this.limit, listRtcRoomListRequest.limit)
-            && Objects.equals(this.offset, listRtcRoomListRequest.offset);
+        ListRtcRoomListRequest that = (ListRtcRoomListRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

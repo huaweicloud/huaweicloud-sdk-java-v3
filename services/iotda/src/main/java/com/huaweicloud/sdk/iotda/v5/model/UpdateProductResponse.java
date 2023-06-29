@@ -295,26 +295,22 @@ public class UpdateProductResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductResponse updateProductResponse = (UpdateProductResponse) o;
-        return Objects.equals(this.appId, updateProductResponse.appId)
-            && Objects.equals(this.appName, updateProductResponse.appName)
-            && Objects.equals(this.productId, updateProductResponse.productId)
-            && Objects.equals(this.name, updateProductResponse.name)
-            && Objects.equals(this.deviceType, updateProductResponse.deviceType)
-            && Objects.equals(this.protocolType, updateProductResponse.protocolType)
-            && Objects.equals(this.dataFormat, updateProductResponse.dataFormat)
-            && Objects.equals(this.manufacturerName, updateProductResponse.manufacturerName)
-            && Objects.equals(this.industry, updateProductResponse.industry)
-            && Objects.equals(this.description, updateProductResponse.description)
-            && Objects.equals(this.serviceCapabilities, updateProductResponse.serviceCapabilities)
-            && Objects.equals(this.createTime, updateProductResponse.createTime);
+        UpdateProductResponse that = (UpdateProductResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.dataFormat, that.dataFormat)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.industry, that.industry) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.serviceCapabilities, that.serviceCapabilities)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

@@ -101,18 +101,16 @@ public class DeleteTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTagRequest deleteTagRequest = (DeleteTagRequest) o;
-        return Objects.equals(this.xRepoAuth, deleteTagRequest.xRepoAuth)
-            && Objects.equals(this.namespace, deleteTagRequest.namespace)
-            && Objects.equals(this.project, deleteTagRequest.project)
-            && Objects.equals(this.tagName, deleteTagRequest.tagName);
+        DeleteTagRequest that = (DeleteTagRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.tagName, that.tagName);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class AudioOutputHostingObs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioOutputHostingObs audioOutputHostingObs = (AudioOutputHostingObs) o;
-        return Objects.equals(this.bucket, audioOutputHostingObs.bucket)
-            && Objects.equals(this.path, audioOutputHostingObs.path);
+        AudioOutputHostingObs that = (AudioOutputHostingObs) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path);
     }
 
     @Override

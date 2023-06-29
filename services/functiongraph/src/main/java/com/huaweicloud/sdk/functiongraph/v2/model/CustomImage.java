@@ -165,18 +165,18 @@ public class CustomImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomImage customImage = (CustomImage) o;
-        return Objects.equals(this.enabled, customImage.enabled) && Objects.equals(this.image, customImage.image)
-            && Objects.equals(this.command, customImage.command) && Objects.equals(this.args, customImage.args)
-            && Objects.equals(this.workingDir, customImage.workingDir) && Objects.equals(this.uid, customImage.uid)
-            && Objects.equals(this.gid, customImage.gid);
+        CustomImage that = (CustomImage) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.workingDir, that.workingDir) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.gid, that.gid);
     }
 
     @Override

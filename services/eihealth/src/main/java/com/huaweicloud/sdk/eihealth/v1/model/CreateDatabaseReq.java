@@ -109,18 +109,16 @@ public class CreateDatabaseReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseReq createDatabaseReq = (CreateDatabaseReq) o;
-        return Objects.equals(this.name, createDatabaseReq.name)
-            && Objects.equals(this.templateId, createDatabaseReq.templateId)
-            && Objects.equals(this.description, createDatabaseReq.description)
-            && Objects.equals(this.importData, createDatabaseReq.importData);
+        CreateDatabaseReq that = (CreateDatabaseReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.importData, that.importData);
     }
 
     @Override

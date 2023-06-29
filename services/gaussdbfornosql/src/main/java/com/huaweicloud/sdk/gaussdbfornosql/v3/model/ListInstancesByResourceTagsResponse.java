@@ -75,17 +75,15 @@ public class ListInstancesByResourceTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesByResourceTagsResponse listInstancesByResourceTagsResponse =
-            (ListInstancesByResourceTagsResponse) o;
-        return Objects.equals(this.instances, listInstancesByResourceTagsResponse.instances)
-            && Objects.equals(this.totalCount, listInstancesByResourceTagsResponse.totalCount);
+        ListInstancesByResourceTagsResponse that = (ListInstancesByResourceTagsResponse) obj;
+        return Objects.equals(this.instances, that.instances) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

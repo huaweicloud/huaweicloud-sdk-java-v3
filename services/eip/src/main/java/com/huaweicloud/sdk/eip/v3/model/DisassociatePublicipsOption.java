@@ -78,22 +78,15 @@ public class DisassociatePublicipsOption {
             if (value == null) {
                 return null;
             }
-            AssociateInstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssociateInstanceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssociateInstanceTypeEnum(value));
         }
 
         public static AssociateInstanceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssociateInstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,16 +148,16 @@ public class DisassociatePublicipsOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociatePublicipsOption disassociatePublicipsOption = (DisassociatePublicipsOption) o;
-        return Objects.equals(this.associateInstanceType, disassociatePublicipsOption.associateInstanceType)
-            && Objects.equals(this.associateInstanceId, disassociatePublicipsOption.associateInstanceId);
+        DisassociatePublicipsOption that = (DisassociatePublicipsOption) obj;
+        return Objects.equals(this.associateInstanceType, that.associateInstanceType)
+            && Objects.equals(this.associateInstanceId, that.associateInstanceId);
     }
 
     @Override

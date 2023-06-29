@@ -1,167 +1,140 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 阈值规则查询参数。
  */
-public class QueryAlarmResult  {
-
+public class QueryAlarmResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_enabled")
-    
+    @JsonProperty(value = "action_enabled")
 
     private Boolean actionEnabled;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_actions")
-    
+    @JsonProperty(value = "alarm_actions")
+
     private List<String> alarmActions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_advice")
-    
+    @JsonProperty(value = "alarm_advice")
 
     private String alarmAdvice;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_description")
-    
+    @JsonProperty(value = "alarm_description")
 
     private String alarmDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_level")
-    
+    @JsonProperty(value = "alarm_level")
 
     private String alarmLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_rule_id")
-    
+    @JsonProperty(value = "alarm_rule_id")
 
     private String alarmRuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_rule_name")
-    
+    @JsonProperty(value = "alarm_rule_name")
 
     private String alarmRuleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comparison_operator")
-    
+    @JsonProperty(value = "comparison_operator")
 
     private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<Dimension> dimensions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="evaluation_periods")
-    
+    @JsonProperty(value = "evaluation_periods")
 
     private Integer evaluationPeriods;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id_turn_on")
-    
+    @JsonProperty(value = "id_turn_on")
 
     private Boolean idTurnOn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="insufficient_data_actions")
-    
+    @JsonProperty(value = "insufficient_data_actions")
+
     private List<String> insufficientDataActions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
+    @JsonProperty(value = "metric_name")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ok_actions")
-    
+    @JsonProperty(value = "ok_actions")
+
     private List<String> okActions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="policy_name")
-    
+    @JsonProperty(value = "policy_name")
 
     private String policyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private List<String> resources = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state_reason")
-    
+    @JsonProperty(value = "state_reason")
 
     private String stateReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state_updated_timestamp")
-    
+    @JsonProperty(value = "state_updated_timestamp")
 
     private String stateUpdatedTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state_value")
-    
+    @JsonProperty(value = "state_value")
 
     private String stateValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statistic")
-    
+    @JsonProperty(value = "statistic")
 
     private String statistic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="threshold")
-    
+    @JsonProperty(value = "threshold")
 
     private String threshold;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
 
     private String unit;
 
@@ -169,9 +142,6 @@ public class QueryAlarmResult  {
         this.actionEnabled = actionEnabled;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用通知。
@@ -185,16 +155,13 @@ public class QueryAlarmResult  {
         this.actionEnabled = actionEnabled;
     }
 
-    
-
     public QueryAlarmResult withAlarmActions(List<String> alarmActions) {
         this.alarmActions = alarmActions;
         return this;
     }
 
-    
     public QueryAlarmResult addAlarmActionsItem(String alarmActionsItem) {
-        if(this.alarmActions == null) {
+        if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         this.alarmActions.add(alarmActionsItem);
@@ -202,7 +169,7 @@ public class QueryAlarmResult  {
     }
 
     public QueryAlarmResult withAlarmActions(Consumer<List<String>> alarmActionsSetter) {
-        if(this.alarmActions == null) {
+        if (this.alarmActions == null) {
             this.alarmActions = new ArrayList<>();
         }
         alarmActionsSetter.accept(this.alarmActions);
@@ -221,15 +188,10 @@ public class QueryAlarmResult  {
         this.alarmActions = alarmActions;
     }
 
-    
-
     public QueryAlarmResult withAlarmAdvice(String alarmAdvice) {
         this.alarmAdvice = alarmAdvice;
         return this;
     }
-
-    
-
 
     /**
      * 告警清除建议。
@@ -243,15 +205,10 @@ public class QueryAlarmResult  {
         this.alarmAdvice = alarmAdvice;
     }
 
-    
-
     public QueryAlarmResult withAlarmDescription(String alarmDescription) {
         this.alarmDescription = alarmDescription;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则描述。
@@ -265,15 +222,10 @@ public class QueryAlarmResult  {
         this.alarmDescription = alarmDescription;
     }
 
-    
-
     public QueryAlarmResult withAlarmLevel(String alarmLevel) {
         this.alarmLevel = alarmLevel;
         return this;
     }
-
-    
-
 
     /**
      * 告警级别。
@@ -287,15 +239,10 @@ public class QueryAlarmResult  {
         this.alarmLevel = alarmLevel;
     }
 
-    
-
     public QueryAlarmResult withAlarmRuleId(String alarmRuleId) {
         this.alarmRuleId = alarmRuleId;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则ID。
@@ -309,15 +256,10 @@ public class QueryAlarmResult  {
         this.alarmRuleId = alarmRuleId;
     }
 
-    
-
     public QueryAlarmResult withAlarmRuleName(String alarmRuleName) {
         this.alarmRuleName = alarmRuleName;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则名称。
@@ -331,15 +273,10 @@ public class QueryAlarmResult  {
         this.alarmRuleName = alarmRuleName;
     }
 
-    
-
     public QueryAlarmResult withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
         return this;
     }
-
-    
-
 
     /**
      * 极限条件。
@@ -353,16 +290,13 @@ public class QueryAlarmResult  {
         this.comparisonOperator = comparisonOperator;
     }
 
-    
-
     public QueryAlarmResult withDimensions(List<Dimension> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    
     public QueryAlarmResult addDimensionsItem(Dimension dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -370,7 +304,7 @@ public class QueryAlarmResult  {
     }
 
     public QueryAlarmResult withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
@@ -389,15 +323,10 @@ public class QueryAlarmResult  {
         this.dimensions = dimensions;
     }
 
-    
-
     public QueryAlarmResult withEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
         return this;
     }
-
-    
-
 
     /**
      * 间隔周期。
@@ -411,15 +340,10 @@ public class QueryAlarmResult  {
         this.evaluationPeriods = evaluationPeriods;
     }
 
-    
-
     public QueryAlarmResult withIdTurnOn(Boolean idTurnOn) {
         this.idTurnOn = idTurnOn;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则是否启用。
@@ -433,16 +357,13 @@ public class QueryAlarmResult  {
         this.idTurnOn = idTurnOn;
     }
 
-    
-
     public QueryAlarmResult withInsufficientDataActions(List<String> insufficientDataActions) {
         this.insufficientDataActions = insufficientDataActions;
         return this;
     }
 
-    
     public QueryAlarmResult addInsufficientDataActionsItem(String insufficientDataActionsItem) {
-        if(this.insufficientDataActions == null) {
+        if (this.insufficientDataActions == null) {
             this.insufficientDataActions = new ArrayList<>();
         }
         this.insufficientDataActions.add(insufficientDataActionsItem);
@@ -450,7 +371,7 @@ public class QueryAlarmResult  {
     }
 
     public QueryAlarmResult withInsufficientDataActions(Consumer<List<String>> insufficientDataActionsSetter) {
-        if(this.insufficientDataActions == null) {
+        if (this.insufficientDataActions == null) {
             this.insufficientDataActions = new ArrayList<>();
         }
         insufficientDataActionsSetter.accept(this.insufficientDataActions);
@@ -469,15 +390,10 @@ public class QueryAlarmResult  {
         this.insufficientDataActions = insufficientDataActions;
     }
 
-    
-
     public QueryAlarmResult withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
-
-    
-
 
     /**
      * 时间序列名称。
@@ -491,15 +407,10 @@ public class QueryAlarmResult  {
         this.metricName = metricName;
     }
 
-    
-
     public QueryAlarmResult withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 时间序列命名空间。
@@ -513,16 +424,13 @@ public class QueryAlarmResult  {
         this.namespace = namespace;
     }
 
-    
-
     public QueryAlarmResult withOkActions(List<String> okActions) {
         this.okActions = okActions;
         return this;
     }
 
-    
     public QueryAlarmResult addOkActionsItem(String okActionsItem) {
-        if(this.okActions == null) {
+        if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         this.okActions.add(okActionsItem);
@@ -530,7 +438,7 @@ public class QueryAlarmResult  {
     }
 
     public QueryAlarmResult withOkActions(Consumer<List<String>> okActionsSetter) {
-        if(this.okActions == null) {
+        if (this.okActions == null) {
             this.okActions = new ArrayList<>();
         }
         okActionsSetter.accept(this.okActions);
@@ -549,15 +457,10 @@ public class QueryAlarmResult  {
         this.okActions = okActions;
     }
 
-    
-
     public QueryAlarmResult withPeriod(Integer period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 统计周期。
@@ -571,15 +474,10 @@ public class QueryAlarmResult  {
         this.period = period;
     }
 
-    
-
     public QueryAlarmResult withPolicyName(String policyName) {
         this.policyName = policyName;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则模板名称。
@@ -593,16 +491,13 @@ public class QueryAlarmResult  {
         this.policyName = policyName;
     }
 
-    
-
     public QueryAlarmResult withResources(List<String> resources) {
         this.resources = resources;
         return this;
     }
 
-    
     public QueryAlarmResult addResourcesItem(String resourcesItem) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         this.resources.add(resourcesItem);
@@ -610,7 +505,7 @@ public class QueryAlarmResult  {
     }
 
     public QueryAlarmResult withResources(Consumer<List<String>> resourcesSetter) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -629,15 +524,10 @@ public class QueryAlarmResult  {
         this.resources = resources;
     }
 
-    
-
     public QueryAlarmResult withStateReason(String stateReason) {
         this.stateReason = stateReason;
         return this;
     }
-
-    
-
 
     /**
      * 原因描述。
@@ -651,15 +541,10 @@ public class QueryAlarmResult  {
         this.stateReason = stateReason;
     }
 
-    
-
     public QueryAlarmResult withStateUpdatedTimestamp(String stateUpdatedTimestamp) {
         this.stateUpdatedTimestamp = stateUpdatedTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 状态更新时间戳。
@@ -673,15 +558,10 @@ public class QueryAlarmResult  {
         this.stateUpdatedTimestamp = stateUpdatedTimestamp;
     }
 
-    
-
     public QueryAlarmResult withStateValue(String stateValue) {
         this.stateValue = stateValue;
         return this;
     }
-
-    
-
 
     /**
      * 服务状态。
@@ -695,15 +575,10 @@ public class QueryAlarmResult  {
         this.stateValue = stateValue;
     }
 
-    
-
     public QueryAlarmResult withStatistic(String statistic) {
         this.statistic = statistic;
         return this;
     }
-
-    
-
 
     /**
      * 统计方式。
@@ -717,15 +592,10 @@ public class QueryAlarmResult  {
         this.statistic = statistic;
     }
 
-    
-
     public QueryAlarmResult withThreshold(String threshold) {
         this.threshold = threshold;
         return this;
     }
-
-    
-
 
     /**
      * 临界值。
@@ -739,15 +609,10 @@ public class QueryAlarmResult  {
         this.threshold = threshold;
     }
 
-    
-
     public QueryAlarmResult withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则类型。
@@ -761,15 +626,10 @@ public class QueryAlarmResult  {
         this.type = type;
     }
 
-    
-
     public QueryAlarmResult withUnit(String unit) {
         this.unit = unit;
         return this;
     }
-
-    
-
 
     /**
      * 阈值单元。
@@ -783,47 +643,65 @@ public class QueryAlarmResult  {
         this.unit = unit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAlarmResult queryAlarmResult = (QueryAlarmResult) o;
-        return Objects.equals(this.actionEnabled, queryAlarmResult.actionEnabled) &&
-            Objects.equals(this.alarmActions, queryAlarmResult.alarmActions) &&
-            Objects.equals(this.alarmAdvice, queryAlarmResult.alarmAdvice) &&
-            Objects.equals(this.alarmDescription, queryAlarmResult.alarmDescription) &&
-            Objects.equals(this.alarmLevel, queryAlarmResult.alarmLevel) &&
-            Objects.equals(this.alarmRuleId, queryAlarmResult.alarmRuleId) &&
-            Objects.equals(this.alarmRuleName, queryAlarmResult.alarmRuleName) &&
-            Objects.equals(this.comparisonOperator, queryAlarmResult.comparisonOperator) &&
-            Objects.equals(this.dimensions, queryAlarmResult.dimensions) &&
-            Objects.equals(this.evaluationPeriods, queryAlarmResult.evaluationPeriods) &&
-            Objects.equals(this.idTurnOn, queryAlarmResult.idTurnOn) &&
-            Objects.equals(this.insufficientDataActions, queryAlarmResult.insufficientDataActions) &&
-            Objects.equals(this.metricName, queryAlarmResult.metricName) &&
-            Objects.equals(this.namespace, queryAlarmResult.namespace) &&
-            Objects.equals(this.okActions, queryAlarmResult.okActions) &&
-            Objects.equals(this.period, queryAlarmResult.period) &&
-            Objects.equals(this.policyName, queryAlarmResult.policyName) &&
-            Objects.equals(this.resources, queryAlarmResult.resources) &&
-            Objects.equals(this.stateReason, queryAlarmResult.stateReason) &&
-            Objects.equals(this.stateUpdatedTimestamp, queryAlarmResult.stateUpdatedTimestamp) &&
-            Objects.equals(this.stateValue, queryAlarmResult.stateValue) &&
-            Objects.equals(this.statistic, queryAlarmResult.statistic) &&
-            Objects.equals(this.threshold, queryAlarmResult.threshold) &&
-            Objects.equals(this.type, queryAlarmResult.type) &&
-            Objects.equals(this.unit, queryAlarmResult.unit);
+        QueryAlarmResult that = (QueryAlarmResult) obj;
+        return Objects.equals(this.actionEnabled, that.actionEnabled)
+            && Objects.equals(this.alarmActions, that.alarmActions)
+            && Objects.equals(this.alarmAdvice, that.alarmAdvice)
+            && Objects.equals(this.alarmDescription, that.alarmDescription)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.alarmRuleId, that.alarmRuleId)
+            && Objects.equals(this.alarmRuleName, that.alarmRuleName)
+            && Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.evaluationPeriods, that.evaluationPeriods)
+            && Objects.equals(this.idTurnOn, that.idTurnOn)
+            && Objects.equals(this.insufficientDataActions, that.insufficientDataActions)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.okActions, that.okActions) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.policyName, that.policyName) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.stateReason, that.stateReason)
+            && Objects.equals(this.stateUpdatedTimestamp, that.stateUpdatedTimestamp)
+            && Objects.equals(this.stateValue, that.stateValue) && Objects.equals(this.statistic, that.statistic)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.unit, that.unit);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(actionEnabled, alarmActions, alarmAdvice, alarmDescription, alarmLevel, alarmRuleId, alarmRuleName, comparisonOperator, dimensions, evaluationPeriods, idTurnOn, insufficientDataActions, metricName, namespace, okActions, period, policyName, resources, stateReason, stateUpdatedTimestamp, stateValue, statistic, threshold, type, unit);
+        return Objects.hash(actionEnabled,
+            alarmActions,
+            alarmAdvice,
+            alarmDescription,
+            alarmLevel,
+            alarmRuleId,
+            alarmRuleName,
+            comparisonOperator,
+            dimensions,
+            evaluationPeriods,
+            idTurnOn,
+            insufficientDataActions,
+            metricName,
+            namespace,
+            okActions,
+            period,
+            policyName,
+            resources,
+            stateReason,
+            stateUpdatedTimestamp,
+            stateValue,
+            statistic,
+            threshold,
+            type,
+            unit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -856,6 +734,7 @@ public class QueryAlarmResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -866,8 +745,5 @@ public class QueryAlarmResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

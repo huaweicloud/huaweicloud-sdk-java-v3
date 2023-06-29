@@ -143,17 +143,17 @@ public class ElbResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ElbResp elbResp = (ElbResp) o;
-        return Objects.equals(this.publicIp, elbResp.publicIp) && Objects.equals(this.privateIp, elbResp.privateIp)
-            && Objects.equals(this.privateEndpoint, elbResp.privateEndpoint) && Objects.equals(this.name, elbResp.name)
-            && Objects.equals(this.id, elbResp.id) && Objects.equals(this.vpcId, elbResp.vpcId);
+        ElbResp that = (ElbResp) obj;
+        return Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.privateEndpoint, that.privateEndpoint) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateDisasterInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDisasterInfoRequest updateDisasterInfoRequest = (UpdateDisasterInfoRequest) o;
-        return Objects.equals(this.disasterRecoveryId, updateDisasterInfoRequest.disasterRecoveryId)
-            && Objects.equals(this.body, updateDisasterInfoRequest.body);
+        UpdateDisasterInfoRequest that = (UpdateDisasterInfoRequest) obj;
+        return Objects.equals(this.disasterRecoveryId, that.disasterRecoveryId) && Objects.equals(this.body, that.body);
     }
 
     @Override

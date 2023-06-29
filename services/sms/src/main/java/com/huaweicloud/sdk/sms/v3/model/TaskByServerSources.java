@@ -574,37 +574,30 @@ public class TaskByServerSources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskByServerSources taskByServerSources = (TaskByServerSources) o;
-        return Objects.equals(this.id, taskByServerSources.id) && Objects.equals(this.name, taskByServerSources.name)
-            && Objects.equals(this.type, taskByServerSources.type)
-            && Objects.equals(this.state, taskByServerSources.state)
-            && Objects.equals(this.estimateCompleteTime, taskByServerSources.estimateCompleteTime)
-            && Objects.equals(this.startDate, taskByServerSources.startDate)
-            && Objects.equals(this.speedLimit, taskByServerSources.speedLimit)
-            && Objects.equals(this.migrateSpeed, taskByServerSources.migrateSpeed)
-            && Objects.equals(this.compressRate, taskByServerSources.compressRate)
-            && Objects.equals(this.startTargetServer, taskByServerSources.startTargetServer)
-            && Objects.equals(this.vmTemplateId, taskByServerSources.vmTemplateId)
-            && Objects.equals(this.regionId, taskByServerSources.regionId)
-            && Objects.equals(this.projectName, taskByServerSources.projectName)
-            && Objects.equals(this.projectId, taskByServerSources.projectId)
-            && Objects.equals(this.targetServer, taskByServerSources.targetServer)
-            && Objects.equals(this.logCollectStatus, taskByServerSources.logCollectStatus)
-            && Objects.equals(this.existServer, taskByServerSources.existServer)
-            && Objects.equals(this.usePublicIp, taskByServerSources.usePublicIp)
-            && Objects.equals(this.cloneServer, taskByServerSources.cloneServer)
-            && Objects.equals(this.remainSeconds, taskByServerSources.remainSeconds)
-            && Objects.equals(this.logBucket, taskByServerSources.logBucket)
-            && Objects.equals(this.logExpire, taskByServerSources.logExpire)
-            && Objects.equals(this.logUploadTime, taskByServerSources.logUploadTime)
-            && Objects.equals(this.logShareUrl, taskByServerSources.logShareUrl);
+        TaskByServerSources that = (TaskByServerSources) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.estimateCompleteTime, that.estimateCompleteTime)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.migrateSpeed, that.migrateSpeed)
+            && Objects.equals(this.compressRate, that.compressRate)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.vmTemplateId, that.vmTemplateId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.targetServer, that.targetServer)
+            && Objects.equals(this.logCollectStatus, that.logCollectStatus)
+            && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.usePublicIp, that.usePublicIp)
+            && Objects.equals(this.cloneServer, that.cloneServer)
+            && Objects.equals(this.remainSeconds, that.remainSeconds) && Objects.equals(this.logBucket, that.logBucket)
+            && Objects.equals(this.logExpire, that.logExpire) && Objects.equals(this.logUploadTime, that.logUploadTime)
+            && Objects.equals(this.logShareUrl, that.logShareUrl);
     }
 
     @Override

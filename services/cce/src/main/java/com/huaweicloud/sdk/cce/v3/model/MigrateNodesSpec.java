@@ -167,19 +167,17 @@ public class MigrateNodesSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateNodesSpec migrateNodesSpec = (MigrateNodesSpec) o;
-        return Objects.equals(this.os, migrateNodesSpec.os)
-            && Objects.equals(this.extendParam, migrateNodesSpec.extendParam)
-            && Objects.equals(this.login, migrateNodesSpec.login)
-            && Objects.equals(this.runtime, migrateNodesSpec.runtime)
-            && Objects.equals(this.nodes, migrateNodesSpec.nodes);
+        MigrateNodesSpec that = (MigrateNodesSpec) obj;
+        return Objects.equals(this.os, that.os) && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.login, that.login) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

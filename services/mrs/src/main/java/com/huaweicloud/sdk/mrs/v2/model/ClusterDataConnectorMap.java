@@ -1,71 +1,59 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * ClusterDataConnectorMap
  */
-public class ClusterDataConnectorMap  {
-
+public class ClusterDataConnectorMap {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="map_id")
-    
+    @JsonProperty(value = "map_id")
 
     private Integer mapId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connector_id")
-    
+    @JsonProperty(value = "connector_id")
 
     private String connectorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_name")
-    
+    @JsonProperty(value = "component_name")
 
     private String componentName;
+
     /**
      * 组件角色类型。 - hive_metastore：Hive Metastore角色 - hive_data：Hive角色 - hbase_data：Hbase角色 - ranger_data：Ranger角色
      */
     public static final class RoleTypeEnum {
 
-        
         /**
          * Enum LOCAL_DB for value: "LOCAL_DB"
          */
         public static final RoleTypeEnum LOCAL_DB = new RoleTypeEnum("LOCAL_DB");
-        
+
         /**
          * Enum RDS_POSTGRES for value: "RDS_POSTGRES"
          */
         public static final RoleTypeEnum RDS_POSTGRES = new RoleTypeEnum("RDS_POSTGRES");
-        
+
         /**
          * Enum RDS_MYSQL for value: "RDS_MYSQL"
          */
         public static final RoleTypeEnum RDS_MYSQL = new RoleTypeEnum("RDS_MYSQL");
-        
+
         /**
          * Enum GAUSSDB_MYSQL for value: "gaussdb-mysql"
          */
         public static final RoleTypeEnum GAUSSDB_MYSQL = new RoleTypeEnum("gaussdb-mysql");
-        
 
         private static final Map<String, RoleTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -96,25 +84,18 @@ public class ClusterDataConnectorMap  {
 
         @JsonCreator
         public static RoleTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RoleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RoleTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleTypeEnum(value));
         }
 
         public static RoleTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RoleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -132,36 +113,34 @@ public class ClusterDataConnectorMap  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role_type")
-    
+    @JsonProperty(value = "role_type")
 
     private RoleTypeEnum roleType;
+
     /**
      * 数据连接类型。 - LOCAL_DB：本地元数据 - RDS_POSTGRES：RDS服务PostgreSQL数据库 - RDS_MYSQL：RDS服务MySQL数据库 - gaussdb-mysql：云数据库GaussDB(for MySQL)
      */
     public static final class SourceTypeEnum {
 
-        
         /**
          * Enum LOCAL_DB for value: "LOCAL_DB"
          */
         public static final SourceTypeEnum LOCAL_DB = new SourceTypeEnum("LOCAL_DB");
-        
+
         /**
          * Enum RDS_POSTGRES for value: "RDS_POSTGRES"
          */
         public static final SourceTypeEnum RDS_POSTGRES = new SourceTypeEnum("RDS_POSTGRES");
-        
+
         /**
          * Enum RDS_MYSQL for value: "RDS_MYSQL"
          */
         public static final SourceTypeEnum RDS_MYSQL = new SourceTypeEnum("RDS_MYSQL");
-        
+
         /**
          * Enum GAUSSDB_MYSQL for value: "gaussdb-mysql"
          */
         public static final SourceTypeEnum GAUSSDB_MYSQL = new SourceTypeEnum("gaussdb-mysql");
-        
 
         private static final Map<String, SourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -192,25 +171,18 @@ public class ClusterDataConnectorMap  {
 
         @JsonCreator
         public static SourceTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceTypeEnum(value));
         }
 
         public static SourceTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -228,20 +200,17 @@ public class ClusterDataConnectorMap  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_type")
-    
+    @JsonProperty(value = "source_type")
 
     private SourceTypeEnum sourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private Integer status;
 
@@ -249,9 +218,6 @@ public class ClusterDataConnectorMap  {
         this.mapId = mapId;
         return this;
     }
-
-    
-
 
     /**
      * 数据连接关联ID值
@@ -265,15 +231,10 @@ public class ClusterDataConnectorMap  {
         this.mapId = mapId;
     }
 
-    
-
     public ClusterDataConnectorMap withConnectorId(String connectorId) {
         this.connectorId = connectorId;
         return this;
     }
-
-    
-
 
     /**
      * 数据连接ID值
@@ -287,15 +248,10 @@ public class ClusterDataConnectorMap  {
         this.connectorId = connectorId;
     }
 
-    
-
     public ClusterDataConnectorMap withComponentName(String componentName) {
         this.componentName = componentName;
         return this;
     }
-
-    
-
 
     /**
      * 组件名
@@ -309,15 +265,10 @@ public class ClusterDataConnectorMap  {
         this.componentName = componentName;
     }
 
-    
-
     public ClusterDataConnectorMap withRoleType(RoleTypeEnum roleType) {
         this.roleType = roleType;
         return this;
     }
-
-    
-
 
     /**
      * 组件角色类型。 - hive_metastore：Hive Metastore角色 - hive_data：Hive角色 - hbase_data：Hbase角色 - ranger_data：Ranger角色
@@ -331,15 +282,10 @@ public class ClusterDataConnectorMap  {
         this.roleType = roleType;
     }
 
-    
-
     public ClusterDataConnectorMap withSourceType(SourceTypeEnum sourceType) {
         this.sourceType = sourceType;
         return this;
     }
-
-    
-
 
     /**
      * 数据连接类型。 - LOCAL_DB：本地元数据 - RDS_POSTGRES：RDS服务PostgreSQL数据库 - RDS_MYSQL：RDS服务MySQL数据库 - gaussdb-mysql：云数据库GaussDB(for MySQL)
@@ -353,15 +299,10 @@ public class ClusterDataConnectorMap  {
         this.sourceType = sourceType;
     }
 
-    
-
     public ClusterDataConnectorMap withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 关联集群id
@@ -375,15 +316,10 @@ public class ClusterDataConnectorMap  {
         this.clusterId = clusterId;
     }
 
-    
-
     public ClusterDataConnectorMap withStatus(Integer status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 数据连接状态。 - 0：代表正常状态 - 1：代表使用中
@@ -397,29 +333,26 @@ public class ClusterDataConnectorMap  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDataConnectorMap clusterDataConnectorMap = (ClusterDataConnectorMap) o;
-        return Objects.equals(this.mapId, clusterDataConnectorMap.mapId) &&
-            Objects.equals(this.connectorId, clusterDataConnectorMap.connectorId) &&
-            Objects.equals(this.componentName, clusterDataConnectorMap.componentName) &&
-            Objects.equals(this.roleType, clusterDataConnectorMap.roleType) &&
-            Objects.equals(this.sourceType, clusterDataConnectorMap.sourceType) &&
-            Objects.equals(this.clusterId, clusterDataConnectorMap.clusterId) &&
-            Objects.equals(this.status, clusterDataConnectorMap.status);
+        ClusterDataConnectorMap that = (ClusterDataConnectorMap) obj;
+        return Objects.equals(this.mapId, that.mapId) && Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.componentName, that.componentName) && Objects.equals(this.roleType, that.roleType)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(mapId, connectorId, componentName, roleType, sourceType, clusterId, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -434,6 +367,7 @@ public class ClusterDataConnectorMap  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -444,8 +378,5 @@ public class ClusterDataConnectorMap  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -98,17 +98,16 @@ public class AddToPersonalSpaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddToPersonalSpaceRequest addToPersonalSpaceRequest = (AddToPersonalSpaceRequest) o;
-        return Objects.equals(this.xRequestId, addToPersonalSpaceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addToPersonalSpaceRequest.acceptLanguage)
-            && Objects.equals(this.body, addToPersonalSpaceRequest.body);
+        AddToPersonalSpaceRequest that = (AddToPersonalSpaceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

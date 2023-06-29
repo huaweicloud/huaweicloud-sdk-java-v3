@@ -121,19 +121,17 @@ public class DssPoolInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DssPoolInfo dssPoolInfo = (DssPoolInfo) o;
-        return Objects.equals(this.azName, dssPoolInfo.azName)
-            && Objects.equals(this.freeCapacityGb, dssPoolInfo.freeCapacityGb)
-            && Objects.equals(this.dsspoolVolumeType, dssPoolInfo.dsspoolVolumeType)
-            && Objects.equals(this.dsspoolId, dssPoolInfo.dsspoolId)
-            && Objects.equals(this.dsspoolStatus, dssPoolInfo.dsspoolStatus);
+        DssPoolInfo that = (DssPoolInfo) obj;
+        return Objects.equals(this.azName, that.azName) && Objects.equals(this.freeCapacityGb, that.freeCapacityGb)
+            && Objects.equals(this.dsspoolVolumeType, that.dsspoolVolumeType)
+            && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.dsspoolStatus, that.dsspoolStatus);
     }
 
     @Override

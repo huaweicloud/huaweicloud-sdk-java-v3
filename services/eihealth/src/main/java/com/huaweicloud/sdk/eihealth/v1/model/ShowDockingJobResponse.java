@@ -153,18 +153,16 @@ public class ShowDockingJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDockingJobResponse showDockingJobResponse = (ShowDockingJobResponse) o;
-        return Objects.equals(this.basicInfo, showDockingJobResponse.basicInfo)
-            && Objects.equals(this.receptors, showDockingJobResponse.receptors)
-            && Objects.equals(this.ligands, showDockingJobResponse.ligands)
-            && Objects.equals(this.jobResult, showDockingJobResponse.jobResult);
+        ShowDockingJobResponse that = (ShowDockingJobResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptors, that.receptors)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.jobResult, that.jobResult);
     }
 
     @Override

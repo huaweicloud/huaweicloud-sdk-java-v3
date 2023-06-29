@@ -194,20 +194,17 @@ public class CreateIgnoreRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIgnoreRuleRequestBody createIgnoreRuleRequestBody = (CreateIgnoreRuleRequestBody) o;
-        return Objects.equals(this.domain, createIgnoreRuleRequestBody.domain)
-            && Objects.equals(this.conditions, createIgnoreRuleRequestBody.conditions)
-            && Objects.equals(this.mode, createIgnoreRuleRequestBody.mode)
-            && Objects.equals(this.rule, createIgnoreRuleRequestBody.rule)
-            && Objects.equals(this.advanced, createIgnoreRuleRequestBody.advanced)
-            && Objects.equals(this.description, createIgnoreRuleRequestBody.description);
+        CreateIgnoreRuleRequestBody that = (CreateIgnoreRuleRequestBody) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.rule, that.rule)
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.description, that.description);
     }
 
     @Override

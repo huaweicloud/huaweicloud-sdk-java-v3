@@ -107,18 +107,16 @@ public class ShowCaseStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCaseStatusRequest showCaseStatusRequest = (ShowCaseStatusRequest) o;
-        return Objects.equals(this.caseId, showCaseStatusRequest.caseId)
-            && Objects.equals(this.xSite, showCaseStatusRequest.xSite)
-            && Objects.equals(this.xLanguage, showCaseStatusRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showCaseStatusRequest.xTimeZone);
+        ShowCaseStatusRequest that = (ShowCaseStatusRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

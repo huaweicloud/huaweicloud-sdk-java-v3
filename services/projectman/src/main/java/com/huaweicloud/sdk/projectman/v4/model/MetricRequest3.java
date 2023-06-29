@@ -131,19 +131,17 @@ public class MetricRequest3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricRequest3 metricRequest3 = (MetricRequest3) o;
-        return Objects.equals(this.dateRange, metricRequest3.dateRange)
-            && Objects.equals(this.metricType, metricRequest3.metricType)
-            && Objects.equals(this.sprintId, metricRequest3.sprintId)
-            && Objects.equals(this.dividend, metricRequest3.dividend)
-            && Objects.equals(this.divisor, metricRequest3.divisor);
+        MetricRequest3 that = (MetricRequest3) obj;
+        return Objects.equals(this.dateRange, that.dateRange) && Objects.equals(this.metricType, that.metricType)
+            && Objects.equals(this.sprintId, that.sprintId) && Objects.equals(this.dividend, that.dividend)
+            && Objects.equals(this.divisor, that.divisor);
     }
 
     @Override

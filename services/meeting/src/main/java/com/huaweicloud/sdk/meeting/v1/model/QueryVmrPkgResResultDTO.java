@@ -121,19 +121,18 @@ public class QueryVmrPkgResResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryVmrPkgResResultDTO queryVmrPkgResResultDTO = (QueryVmrPkgResResultDTO) o;
-        return Objects.equals(this.vmrPkgId, queryVmrPkgResResultDTO.vmrPkgId)
-            && Objects.equals(this.vmrName, queryVmrPkgResResultDTO.vmrName)
-            && Objects.equals(this.vmrPkgParties, queryVmrPkgResResultDTO.vmrPkgParties)
-            && Objects.equals(this.vmrPkgCount, queryVmrPkgResResultDTO.vmrPkgCount)
-            && Objects.equals(this.vmrPkgUsedCount, queryVmrPkgResResultDTO.vmrPkgUsedCount);
+        QueryVmrPkgResResultDTO that = (QueryVmrPkgResResultDTO) obj;
+        return Objects.equals(this.vmrPkgId, that.vmrPkgId) && Objects.equals(this.vmrName, that.vmrName)
+            && Objects.equals(this.vmrPkgParties, that.vmrPkgParties)
+            && Objects.equals(this.vmrPkgCount, that.vmrPkgCount)
+            && Objects.equals(this.vmrPkgUsedCount, that.vmrPkgUsedCount);
     }
 
     @Override

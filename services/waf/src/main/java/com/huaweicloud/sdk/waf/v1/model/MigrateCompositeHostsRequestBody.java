@@ -96,17 +96,16 @@ public class MigrateCompositeHostsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateCompositeHostsRequestBody migrateCompositeHostsRequestBody = (MigrateCompositeHostsRequestBody) o;
-        return Objects.equals(this.hostIds, migrateCompositeHostsRequestBody.hostIds)
-            && Objects.equals(this.policyId, migrateCompositeHostsRequestBody.policyId)
-            && Objects.equals(this.certificateId, migrateCompositeHostsRequestBody.certificateId);
+        MigrateCompositeHostsRequestBody that = (MigrateCompositeHostsRequestBody) obj;
+        return Objects.equals(this.hostIds, that.hostIds) && Objects.equals(this.policyId, that.policyId)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override

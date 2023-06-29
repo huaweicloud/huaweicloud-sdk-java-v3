@@ -103,18 +103,16 @@ public class StartPipelineJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartPipelineJobRequest startPipelineJobRequest = (StartPipelineJobRequest) o;
-        return Objects.equals(this.pipelineId, startPipelineJobRequest.pipelineId)
-            && Objects.equals(this.parallel, startPipelineJobRequest.parallel)
-            && Objects.equals(this.rtu, startPipelineJobRequest.rtu)
-            && Objects.equals(this.resumeSavepoint, startPipelineJobRequest.resumeSavepoint);
+        StartPipelineJobRequest that = (StartPipelineJobRequest) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.parallel, that.parallel)
+            && Objects.equals(this.rtu, that.rtu) && Objects.equals(this.resumeSavepoint, that.resumeSavepoint);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateResourceShareRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResourceShareRequest updateResourceShareRequest = (UpdateResourceShareRequest) o;
-        return Objects.equals(this.resourceShareId, updateResourceShareRequest.resourceShareId)
-            && Objects.equals(this.body, updateResourceShareRequest.body);
+        UpdateResourceShareRequest that = (UpdateResourceShareRequest) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

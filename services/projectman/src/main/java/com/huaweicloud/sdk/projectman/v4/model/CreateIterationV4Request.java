@@ -65,16 +65,15 @@ public class CreateIterationV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIterationV4Request createIterationV4Request = (CreateIterationV4Request) o;
-        return Objects.equals(this.projectId, createIterationV4Request.projectId)
-            && Objects.equals(this.body, createIterationV4Request.body);
+        CreateIterationV4Request that = (CreateIterationV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

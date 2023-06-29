@@ -101,16 +101,16 @@ public class AppAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppAuth appAuth = (AppAuth) o;
-        return Objects.equals(this.enable, appAuth.enable) && Objects.equals(this.expire, appAuth.expire)
-            && Objects.equals(this.appKey, appAuth.appKey) && Objects.equals(this.updateTime, appAuth.updateTime);
+        AppAuth that = (AppAuth) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.expire, that.expire)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

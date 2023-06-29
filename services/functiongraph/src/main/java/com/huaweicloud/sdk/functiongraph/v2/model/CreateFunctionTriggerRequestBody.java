@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 /**
  * CreateFunctionTriggerRequestBody
@@ -145,22 +144,15 @@ public class CreateFunctionTriggerRequestBody {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeCodeEnum(value));
         }
 
         public static TriggerTypeCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,22 +219,15 @@ public class CreateFunctionTriggerRequestBody {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerStatusEnum(value));
         }
 
         public static TriggerStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -272,7 +257,7 @@ public class CreateFunctionTriggerRequestBody {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "event_data")
 
-    private Map<String, String> eventData = null;
+    private Object eventData;
 
     public CreateFunctionTriggerRequestBody withTriggerTypeCode(TriggerTypeCodeEnum triggerTypeCode) {
         this.triggerTypeCode = triggerTypeCode;
@@ -325,24 +310,8 @@ public class CreateFunctionTriggerRequestBody {
         this.eventTypeCode = eventTypeCode;
     }
 
-    public CreateFunctionTriggerRequestBody withEventData(Map<String, String> eventData) {
+    public CreateFunctionTriggerRequestBody withEventData(Object eventData) {
         this.eventData = eventData;
-        return this;
-    }
-
-    public CreateFunctionTriggerRequestBody putEventDataItem(String key, String eventDataItem) {
-        if (this.eventData == null) {
-            this.eventData = new HashMap<>();
-        }
-        this.eventData.put(key, eventDataItem);
-        return this;
-    }
-
-    public CreateFunctionTriggerRequestBody withEventData(Consumer<Map<String, String>> eventDataSetter) {
-        if (this.eventData == null) {
-            this.eventData = new HashMap<>();
-        }
-        eventDataSetter.accept(this.eventData);
         return this;
     }
 
@@ -350,27 +319,26 @@ public class CreateFunctionTriggerRequestBody {
      * 事件结构体。
      * @return eventData
      */
-    public Map<String, String> getEventData() {
+    public Object getEventData() {
         return eventData;
     }
 
-    public void setEventData(Map<String, String> eventData) {
+    public void setEventData(Object eventData) {
         this.eventData = eventData;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionTriggerRequestBody createFunctionTriggerRequestBody = (CreateFunctionTriggerRequestBody) o;
-        return Objects.equals(this.triggerTypeCode, createFunctionTriggerRequestBody.triggerTypeCode)
-            && Objects.equals(this.triggerStatus, createFunctionTriggerRequestBody.triggerStatus)
-            && Objects.equals(this.eventTypeCode, createFunctionTriggerRequestBody.eventTypeCode)
-            && Objects.equals(this.eventData, createFunctionTriggerRequestBody.eventData);
+        CreateFunctionTriggerRequestBody that = (CreateFunctionTriggerRequestBody) obj;
+        return Objects.equals(this.triggerTypeCode, that.triggerTypeCode)
+            && Objects.equals(this.triggerStatus, that.triggerStatus)
+            && Objects.equals(this.eventTypeCode, that.eventTypeCode) && Objects.equals(this.eventData, that.eventData);
     }
 
     @Override

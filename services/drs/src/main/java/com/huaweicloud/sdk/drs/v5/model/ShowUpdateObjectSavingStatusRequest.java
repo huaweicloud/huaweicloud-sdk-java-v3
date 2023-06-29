@@ -79,18 +79,16 @@ public class ShowUpdateObjectSavingStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpdateObjectSavingStatusRequest showUpdateObjectSavingStatusRequest =
-            (ShowUpdateObjectSavingStatusRequest) o;
-        return Objects.equals(this.jobId, showUpdateObjectSavingStatusRequest.jobId)
-            && Objects.equals(this.xLanguage, showUpdateObjectSavingStatusRequest.xLanguage)
-            && Objects.equals(this.queryId, showUpdateObjectSavingStatusRequest.queryId);
+        ShowUpdateObjectSavingStatusRequest that = (ShowUpdateObjectSavingStatusRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.queryId, that.queryId);
     }
 
     @Override

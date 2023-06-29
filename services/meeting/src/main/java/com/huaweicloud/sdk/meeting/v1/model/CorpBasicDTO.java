@@ -105,22 +105,15 @@ public class CorpBasicDTO {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -335,21 +328,20 @@ public class CorpBasicDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CorpBasicDTO corpBasicDTO = (CorpBasicDTO) o;
-        return Objects.equals(this.name, corpBasicDTO.name) && Objects.equals(this.domain, corpBasicDTO.domain)
-            && Objects.equals(this.phone, corpBasicDTO.phone) && Objects.equals(this.country, corpBasicDTO.country)
-            && Objects.equals(this.fax, corpBasicDTO.fax) && Objects.equals(this.email, corpBasicDTO.email)
-            && Objects.equals(this.address, corpBasicDTO.address)
-            && Objects.equals(this.description, corpBasicDTO.description)
-            && Objects.equals(this.spId, corpBasicDTO.spId) && Objects.equals(this.language, corpBasicDTO.language)
-            && Objects.equals(this.timeZoneId, corpBasicDTO.timeZoneId);
+        CorpBasicDTO that = (CorpBasicDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.fax, that.fax) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spId, that.spId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.timeZoneId, that.timeZoneId);
     }
 
     @Override

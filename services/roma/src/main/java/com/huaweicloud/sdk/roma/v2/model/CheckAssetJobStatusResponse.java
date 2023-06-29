@@ -69,22 +69,15 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +360,19 @@ public class CheckAssetJobStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAssetJobStatusResponse checkAssetJobStatusResponse = (CheckAssetJobStatusResponse) o;
-        return Objects.equals(this.id, checkAssetJobStatusResponse.id)
-            && Objects.equals(this.type, checkAssetJobStatusResponse.type)
-            && Objects.equals(this.status, checkAssetJobStatusResponse.status)
-            && Objects.equals(this.reasons, checkAssetJobStatusResponse.reasons)
-            && Objects.equals(this.progressPercent, checkAssetJobStatusResponse.progressPercent)
-            && Objects.equals(this.archiveId, checkAssetJobStatusResponse.archiveId)
-            && Objects.equals(this.beginTime, checkAssetJobStatusResponse.beginTime)
-            && Objects.equals(this.endTime, checkAssetJobStatusResponse.endTime);
+        CheckAssetJobStatusResponse that = (CheckAssetJobStatusResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.reasons, that.reasons)
+            && Objects.equals(this.progressPercent, that.progressPercent)
+            && Objects.equals(this.archiveId, that.archiveId) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

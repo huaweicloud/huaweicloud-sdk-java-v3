@@ -33,15 +33,15 @@ public class ShowQuotaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQuotaRequest showQuotaRequest = (ShowQuotaRequest) o;
-        return Objects.equals(this.types, showQuotaRequest.types);
+        ShowQuotaRequest that = (ShowQuotaRequest) obj;
+        return Objects.equals(this.types, that.types);
     }
 
     @Override

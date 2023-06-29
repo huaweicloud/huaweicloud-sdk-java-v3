@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.CertificateLocalPathDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 边缘节点认证方式信息。
  */
-public class DeviceAuthInfoDisplayDTO  {
-
+public class DeviceAuthInfoDisplayDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
 
     private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="local_path")
-    
+    @JsonProperty(value = "local_path")
 
     private CertificateLocalPathDTO localPath;
 
@@ -34,9 +25,6 @@ public class DeviceAuthInfoDisplayDTO  {
         this.authType = authType;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点认证方式。
@@ -50,22 +38,19 @@ public class DeviceAuthInfoDisplayDTO  {
         this.authType = authType;
     }
 
-    
-
     public DeviceAuthInfoDisplayDTO withLocalPath(CertificateLocalPathDTO localPath) {
         this.localPath = localPath;
         return this;
     }
 
     public DeviceAuthInfoDisplayDTO withLocalPath(Consumer<CertificateLocalPathDTO> localPathSetter) {
-        if(this.localPath == null ){
+        if (this.localPath == null) {
             this.localPath = new CertificateLocalPathDTO();
             localPathSetter.accept(this.localPath);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get localPath
@@ -79,24 +64,23 @@ public class DeviceAuthInfoDisplayDTO  {
         this.localPath = localPath;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceAuthInfoDisplayDTO deviceAuthInfoDisplayDTO = (DeviceAuthInfoDisplayDTO) o;
-        return Objects.equals(this.authType, deviceAuthInfoDisplayDTO.authType) &&
-            Objects.equals(this.localPath, deviceAuthInfoDisplayDTO.localPath);
+        DeviceAuthInfoDisplayDTO that = (DeviceAuthInfoDisplayDTO) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.localPath, that.localPath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authType, localPath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,6 +90,7 @@ public class DeviceAuthInfoDisplayDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -116,8 +101,5 @@ public class DeviceAuthInfoDisplayDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

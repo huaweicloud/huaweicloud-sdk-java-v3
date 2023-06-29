@@ -52,22 +52,15 @@ public class Area {
         if (value == null) {
             return null;
         }
-        Area result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new Area(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Area(value));
     }
 
     public static Area valueOf(String value) {
         if (value == null) {
             return null;
         }
-        Area result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

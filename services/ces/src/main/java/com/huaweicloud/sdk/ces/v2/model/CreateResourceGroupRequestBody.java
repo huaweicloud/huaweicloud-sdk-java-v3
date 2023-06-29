@@ -156,19 +156,18 @@ public class CreateResourceGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResourceGroupRequestBody createResourceGroupRequestBody = (CreateResourceGroupRequestBody) o;
-        return Objects.equals(this.groupName, createResourceGroupRequestBody.groupName)
-            && Objects.equals(this.enterpriseProjectId, createResourceGroupRequestBody.enterpriseProjectId)
-            && Objects.equals(this.type, createResourceGroupRequestBody.type)
-            && Objects.equals(this.tags, createResourceGroupRequestBody.tags)
-            && Objects.equals(this.associationEpIds, createResourceGroupRequestBody.associationEpIds);
+        CreateResourceGroupRequestBody that = (CreateResourceGroupRequestBody) obj;
+        return Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.associationEpIds, that.associationEpIds);
     }
 
     @Override

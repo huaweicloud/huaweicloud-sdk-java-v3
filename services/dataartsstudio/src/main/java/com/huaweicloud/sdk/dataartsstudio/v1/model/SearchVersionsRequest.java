@@ -210,23 +210,19 @@ public class SearchVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchVersionsRequest searchVersionsRequest = (SearchVersionsRequest) o;
-        return Objects.equals(this.workspace, searchVersionsRequest.workspace)
-            && Objects.equals(this.name, searchVersionsRequest.name)
-            && Objects.equals(this.createBy, searchVersionsRequest.createBy)
-            && Objects.equals(this.bizId, searchVersionsRequest.bizId)
-            && Objects.equals(this.bizType, searchVersionsRequest.bizType)
-            && Objects.equals(this.beginTime, searchVersionsRequest.beginTime)
-            && Objects.equals(this.endTime, searchVersionsRequest.endTime)
-            && Objects.equals(this.limit, searchVersionsRequest.limit)
-            && Objects.equals(this.offset, searchVersionsRequest.offset);
+        SearchVersionsRequest that = (SearchVersionsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.bizId, that.bizId)
+            && Objects.equals(this.bizType, that.bizType) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

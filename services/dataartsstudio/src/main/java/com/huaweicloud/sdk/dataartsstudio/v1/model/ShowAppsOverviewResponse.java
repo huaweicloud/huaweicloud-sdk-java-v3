@@ -144,20 +144,17 @@ public class ShowAppsOverviewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppsOverviewResponse showAppsOverviewResponse = (ShowAppsOverviewResponse) o;
-        return Objects.equals(this.applyNum, showAppsOverviewResponse.applyNum)
-            && Objects.equals(this.callNum, showAppsOverviewResponse.callNum)
-            && Objects.equals(this.successNum, showAppsOverviewResponse.successNum)
-            && Objects.equals(this.failNum, showAppsOverviewResponse.failNum)
-            && Objects.equals(this.legalNum, showAppsOverviewResponse.legalNum)
-            && Objects.equals(this.illegalNum, showAppsOverviewResponse.illegalNum);
+        ShowAppsOverviewResponse that = (ShowAppsOverviewResponse) obj;
+        return Objects.equals(this.applyNum, that.applyNum) && Objects.equals(this.callNum, that.callNum)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.failNum, that.failNum)
+            && Objects.equals(this.legalNum, that.legalNum) && Objects.equals(this.illegalNum, that.illegalNum);
     }
 
     @Override

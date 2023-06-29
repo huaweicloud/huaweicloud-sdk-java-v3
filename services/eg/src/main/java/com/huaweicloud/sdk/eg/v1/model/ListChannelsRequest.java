@@ -81,22 +81,15 @@ public class ListChannelsRequest {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -235,20 +228,17 @@ public class ListChannelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListChannelsRequest listChannelsRequest = (ListChannelsRequest) o;
-        return Objects.equals(this.offset, listChannelsRequest.offset)
-            && Objects.equals(this.limit, listChannelsRequest.limit)
-            && Objects.equals(this.sort, listChannelsRequest.sort)
-            && Objects.equals(this.providerType, listChannelsRequest.providerType)
-            && Objects.equals(this.name, listChannelsRequest.name)
-            && Objects.equals(this.fuzzyName, listChannelsRequest.fuzzyName);
+        ListChannelsRequest that = (ListChannelsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName);
     }
 
     @Override

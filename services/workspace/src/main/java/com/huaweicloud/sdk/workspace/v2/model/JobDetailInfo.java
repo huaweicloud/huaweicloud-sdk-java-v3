@@ -241,21 +241,19 @@ public class JobDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDetailInfo jobDetailInfo = (JobDetailInfo) o;
-        return Objects.equals(this.id, jobDetailInfo.id) && Objects.equals(this.jobType, jobDetailInfo.jobType)
-            && Objects.equals(this.entities, jobDetailInfo.entities)
-            && Objects.equals(this.beginTime, jobDetailInfo.beginTime)
-            && Objects.equals(this.endTime, jobDetailInfo.endTime) && Objects.equals(this.status, jobDetailInfo.status)
-            && Objects.equals(this.errorCode, jobDetailInfo.errorCode)
-            && Objects.equals(this.failReason, jobDetailInfo.failReason)
-            && Objects.equals(this.message, jobDetailInfo.message) && Objects.equals(this.jobId, jobDetailInfo.jobId);
+        JobDetailInfo that = (JobDetailInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.entities, that.entities) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

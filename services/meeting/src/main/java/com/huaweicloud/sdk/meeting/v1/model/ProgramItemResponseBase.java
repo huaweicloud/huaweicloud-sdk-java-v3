@@ -99,18 +99,16 @@ public class ProgramItemResponseBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProgramItemResponseBase programItemResponseBase = (ProgramItemResponseBase) o;
-        return Objects.equals(this.materialId, programItemResponseBase.materialId)
-            && Objects.equals(this.materialName, programItemResponseBase.materialName)
-            && Objects.equals(this.filePath, programItemResponseBase.filePath)
-            && Objects.equals(this.playTime, programItemResponseBase.playTime);
+        ProgramItemResponseBase that = (ProgramItemResponseBase) obj;
+        return Objects.equals(this.materialId, that.materialId) && Objects.equals(this.materialName, that.materialName)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.playTime, that.playTime);
     }
 
     @Override

@@ -100,18 +100,16 @@ public class BatchCreateBandwidthOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateBandwidthOption batchCreateBandwidthOption = (BatchCreateBandwidthOption) o;
-        return Objects.equals(this.count, batchCreateBandwidthOption.count)
-            && Objects.equals(this.name, batchCreateBandwidthOption.name)
-            && Objects.equals(this.size, batchCreateBandwidthOption.size)
-            && Objects.equals(this.publicBorderGroup, batchCreateBandwidthOption.publicBorderGroup);
+        BatchCreateBandwidthOption that = (BatchCreateBandwidthOption) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

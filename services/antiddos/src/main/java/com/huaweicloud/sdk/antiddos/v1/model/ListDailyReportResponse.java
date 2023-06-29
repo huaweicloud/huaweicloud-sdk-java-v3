@@ -53,15 +53,15 @@ public class ListDailyReportResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDailyReportResponse listDailyReportResponse = (ListDailyReportResponse) o;
-        return Objects.equals(this.data, listDailyReportResponse.data);
+        ListDailyReportResponse that = (ListDailyReportResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

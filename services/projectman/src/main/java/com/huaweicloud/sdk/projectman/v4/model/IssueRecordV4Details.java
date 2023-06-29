@@ -143,19 +143,17 @@ public class IssueRecordV4Details {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueRecordV4Details issueRecordV4Details = (IssueRecordV4Details) o;
-        return Objects.equals(this.property, issueRecordV4Details.property)
-            && Objects.equals(this.oldValue, issueRecordV4Details.oldValue)
-            && Objects.equals(this.newValue, issueRecordV4Details.newValue)
-            && Objects.equals(this.operation, issueRecordV4Details.operation)
-            && Objects.equals(this.id, issueRecordV4Details.id) && Objects.equals(this.name, issueRecordV4Details.name);
+        IssueRecordV4Details that = (IssueRecordV4Details) obj;
+        return Objects.equals(this.property, that.property) && Objects.equals(this.oldValue, that.oldValue)
+            && Objects.equals(this.newValue, that.newValue) && Objects.equals(this.operation, that.operation)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

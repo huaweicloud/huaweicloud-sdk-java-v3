@@ -79,17 +79,16 @@ public class ListBranchesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBranchesRequest listBranchesRequest = (ListBranchesRequest) o;
-        return Objects.equals(this.xRepoAuth, listBranchesRequest.xRepoAuth)
-            && Objects.equals(this.namespace, listBranchesRequest.namespace)
-            && Objects.equals(this.project, listBranchesRequest.project);
+        ListBranchesRequest that = (ListBranchesRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project);
     }
 
     @Override

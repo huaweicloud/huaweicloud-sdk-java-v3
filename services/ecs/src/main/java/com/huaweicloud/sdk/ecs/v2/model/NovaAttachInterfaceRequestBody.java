@@ -44,15 +44,15 @@ public class NovaAttachInterfaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaAttachInterfaceRequestBody novaAttachInterfaceRequestBody = (NovaAttachInterfaceRequestBody) o;
-        return Objects.equals(this.interfaceAttachment, novaAttachInterfaceRequestBody.interfaceAttachment);
+        NovaAttachInterfaceRequestBody that = (NovaAttachInterfaceRequestBody) obj;
+        return Objects.equals(this.interfaceAttachment, that.interfaceAttachment);
     }
 
     @Override

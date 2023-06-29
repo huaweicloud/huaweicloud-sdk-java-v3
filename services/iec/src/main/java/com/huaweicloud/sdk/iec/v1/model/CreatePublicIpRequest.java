@@ -43,15 +43,15 @@ public class CreatePublicIpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePublicIpRequest createPublicIpRequest = (CreatePublicIpRequest) o;
-        return Objects.equals(this.body, createPublicIpRequest.body);
+        CreatePublicIpRequest that = (CreatePublicIpRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

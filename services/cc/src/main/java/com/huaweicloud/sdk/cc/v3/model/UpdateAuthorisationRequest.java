@@ -65,16 +65,15 @@ public class UpdateAuthorisationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuthorisationRequest updateAuthorisationRequest = (UpdateAuthorisationRequest) o;
-        return Objects.equals(this.id, updateAuthorisationRequest.id)
-            && Objects.equals(this.body, updateAuthorisationRequest.body);
+        UpdateAuthorisationRequest that = (UpdateAuthorisationRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.body, that.body);
     }
 
     @Override

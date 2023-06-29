@@ -78,16 +78,16 @@ public class CheckAppV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAppV2Response checkAppV2Response = (CheckAppV2Response) o;
-        return Objects.equals(this.id, checkAppV2Response.id) && Objects.equals(this.name, checkAppV2Response.name)
-            && Objects.equals(this.remark, checkAppV2Response.remark);
+        CheckAppV2Response that = (CheckAppV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

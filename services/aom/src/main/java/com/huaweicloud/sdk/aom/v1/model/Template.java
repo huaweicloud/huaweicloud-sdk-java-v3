@@ -1,148 +1,120 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ApproveInfo;
-import com.huaweicloud.sdk.aom.v1.model.Node;
-import com.huaweicloud.sdk.aom.v1.model.Parameter;
-import com.huaweicloud.sdk.aom.v1.model.RateControl;
-import com.huaweicloud.sdk.aom.v1.model.Step;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 变更服务模板模板元数据。
  */
-public class Template  {
-
+public class Template {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approve_info")
-    
+    @JsonProperty(value = "approve_info")
 
     private ApproveInfo approveInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_collect")
-    
+    @JsonProperty(value = "is_collect")
 
     private Boolean isCollect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_publish")
-    
+    @JsonProperty(value = "is_publish")
 
     private Boolean isPublish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_version")
-    
+    @JsonProperty(value = "job_version")
 
     private Integer jobVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_synchronize")
-    
+    @JsonProperty(value = "need_synchronize")
 
     private Boolean needSynchronize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<Node> nodes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameters")
-    
+    @JsonProperty(value = "parameters")
+
     private List<Parameter> parameters = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quote")
-    
+    @JsonProperty(value = "quote")
+
     private List<String> quote = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rate_control")
-    
+    @JsonProperty(value = "rate_control")
 
     private RateControl rateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="share_type")
-    
+    @JsonProperty(value = "share_type")
 
     private String shareType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="steps")
-    
+    @JsonProperty(value = "steps")
+
     private List<Step> steps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_by")
-    
+    @JsonProperty(value = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
@@ -152,14 +124,13 @@ public class Template  {
     }
 
     public Template withApproveInfo(Consumer<ApproveInfo> approveInfoSetter) {
-        if(this.approveInfo == null ){
+        if (this.approveInfo == null) {
             this.approveInfo = new ApproveInfo();
             approveInfoSetter.accept(this.approveInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get approveInfo
@@ -173,15 +144,10 @@ public class Template  {
         this.approveInfo = approveInfo;
     }
 
-    
-
     public Template withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 模板创建人，从接口调用传入的token中获取。
@@ -195,15 +161,10 @@ public class Template  {
         this.createBy = createBy;
     }
 
-    
-
     public Template withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 模板创建时间，为utc时间毫秒数。
@@ -219,15 +180,10 @@ public class Template  {
         this.createTime = createTime;
     }
 
-    
-
     public Template withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目id
@@ -241,15 +197,10 @@ public class Template  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public Template withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 模板id，唯一标识，根据project_id和template_name生成。
@@ -263,15 +214,10 @@ public class Template  {
         this.id = id;
     }
 
-    
-
     public Template withIsCollect(Boolean isCollect) {
         this.isCollect = isCollect;
         return this;
     }
-
-    
-
 
     /**
      * 模板是否收藏，不允许更新模板时修改，更改收藏状态调用单独的更新模板收藏状态接口
@@ -285,15 +231,10 @@ public class Template  {
         this.isCollect = isCollect;
     }
 
-    
-
     public Template withIsPublish(Boolean isPublish) {
         this.isPublish = isPublish;
         return this;
     }
-
-    
-
 
     /**
      * 是否发布成服务
@@ -307,15 +248,10 @@ public class Template  {
         this.isPublish = isPublish;
     }
 
-    
-
     public Template withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业id
@@ -329,15 +265,10 @@ public class Template  {
         this.jobId = jobId;
     }
 
-    
-
     public Template withJobVersion(Integer jobVersion) {
         this.jobVersion = jobVersion;
         return this;
     }
-
-    
-
 
     /**
      * 作业版本
@@ -353,15 +284,10 @@ public class Template  {
         this.jobVersion = jobVersion;
     }
 
-    
-
     public Template withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 模板名称
@@ -375,15 +301,10 @@ public class Template  {
         this.name = name;
     }
 
-    
-
     public Template withNeedSynchronize(Boolean needSynchronize) {
         this.needSynchronize = needSynchronize;
         return this;
     }
-
-    
-
 
     /**
      * 是否需要同步
@@ -397,16 +318,13 @@ public class Template  {
         this.needSynchronize = needSynchronize;
     }
 
-    
-
     public Template withNodes(List<Node> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public Template addNodesItem(Node nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -414,7 +332,7 @@ public class Template  {
     }
 
     public Template withNodes(Consumer<List<Node>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -433,16 +351,13 @@ public class Template  {
         this.nodes = nodes;
     }
 
-    
-
     public Template withParameters(List<Parameter> parameters) {
         this.parameters = parameters;
         return this;
     }
 
-    
     public Template addParametersItem(Parameter parametersItem) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         this.parameters.add(parametersItem);
@@ -450,7 +365,7 @@ public class Template  {
     }
 
     public Template withParameters(Consumer<List<Parameter>> parametersSetter) {
-        if(this.parameters == null) {
+        if (this.parameters == null) {
             this.parameters = new ArrayList<>();
         }
         parametersSetter.accept(this.parameters);
@@ -469,15 +384,10 @@ public class Template  {
         this.parameters = parameters;
     }
 
-    
-
     public Template withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 项目id
@@ -491,16 +401,13 @@ public class Template  {
         this.projectId = projectId;
     }
 
-    
-
     public Template withQuote(List<String> quote) {
         this.quote = quote;
         return this;
     }
 
-    
     public Template addQuoteItem(String quoteItem) {
-        if(this.quote == null) {
+        if (this.quote == null) {
             this.quote = new ArrayList<>();
         }
         this.quote.add(quoteItem);
@@ -508,7 +415,7 @@ public class Template  {
     }
 
     public Template withQuote(Consumer<List<String>> quoteSetter) {
-        if(this.quote == null) {
+        if (this.quote == null) {
             this.quote = new ArrayList<>();
         }
         quoteSetter.accept(this.quote);
@@ -527,22 +434,19 @@ public class Template  {
         this.quote = quote;
     }
 
-    
-
     public Template withRateControl(RateControl rateControl) {
         this.rateControl = rateControl;
         return this;
     }
 
     public Template withRateControl(Consumer<RateControl> rateControlSetter) {
-        if(this.rateControl == null ){
+        if (this.rateControl == null) {
             this.rateControl = new RateControl();
             rateControlSetter.accept(this.rateControl);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get rateControl
@@ -556,15 +460,10 @@ public class Template  {
         this.rateControl = rateControl;
     }
 
-    
-
     public Template withShareType(String shareType) {
         this.shareType = shareType;
         return this;
     }
-
-    
-
 
     /**
      * 默认模板为public，自定义模板为private
@@ -578,16 +477,13 @@ public class Template  {
         this.shareType = shareType;
     }
 
-    
-
     public Template withSteps(List<Step> steps) {
         this.steps = steps;
         return this;
     }
 
-    
     public Template addStepsItem(Step stepsItem) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         this.steps.add(stepsItem);
@@ -595,7 +491,7 @@ public class Template  {
     }
 
     public Template withSteps(Consumer<List<Step>> stepsSetter) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         stepsSetter.accept(this.steps);
@@ -614,15 +510,10 @@ public class Template  {
         this.steps = steps;
     }
 
-    
-
     public Template withUpdateBy(String updateBy) {
         this.updateBy = updateBy;
         return this;
     }
-
-    
-
 
     /**
      * 模板更新人，从接口调用传入的token中获取。
@@ -636,15 +527,10 @@ public class Template  {
         this.updateBy = updateBy;
     }
 
-    
-
     public Template withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 模板更新时间，为utc时间毫秒数。
@@ -660,15 +546,10 @@ public class Template  {
         this.updateTime = updateTime;
     }
 
-    
-
     public Template withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 模板版本
@@ -682,43 +563,53 @@ public class Template  {
         this.version = version;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Template template = (Template) o;
-        return Objects.equals(this.approveInfo, template.approveInfo) &&
-            Objects.equals(this.createBy, template.createBy) &&
-            Objects.equals(this.createTime, template.createTime) &&
-            Objects.equals(this.enterpriseProjectId, template.enterpriseProjectId) &&
-            Objects.equals(this.id, template.id) &&
-            Objects.equals(this.isCollect, template.isCollect) &&
-            Objects.equals(this.isPublish, template.isPublish) &&
-            Objects.equals(this.jobId, template.jobId) &&
-            Objects.equals(this.jobVersion, template.jobVersion) &&
-            Objects.equals(this.name, template.name) &&
-            Objects.equals(this.needSynchronize, template.needSynchronize) &&
-            Objects.equals(this.nodes, template.nodes) &&
-            Objects.equals(this.parameters, template.parameters) &&
-            Objects.equals(this.projectId, template.projectId) &&
-            Objects.equals(this.quote, template.quote) &&
-            Objects.equals(this.rateControl, template.rateControl) &&
-            Objects.equals(this.shareType, template.shareType) &&
-            Objects.equals(this.steps, template.steps) &&
-            Objects.equals(this.updateBy, template.updateBy) &&
-            Objects.equals(this.updateTime, template.updateTime) &&
-            Objects.equals(this.version, template.version);
+        Template that = (Template) obj;
+        return Objects.equals(this.approveInfo, that.approveInfo) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isCollect, that.isCollect) && Objects.equals(this.isPublish, that.isPublish)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobVersion, that.jobVersion)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.needSynchronize, that.needSynchronize)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.quote, that.quote)
+            && Objects.equals(this.rateControl, that.rateControl) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.steps, that.steps) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.version, that.version);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(approveInfo, createBy, createTime, enterpriseProjectId, id, isCollect, isPublish, jobId, jobVersion, name, needSynchronize, nodes, parameters, projectId, quote, rateControl, shareType, steps, updateBy, updateTime, version);
+        return Objects.hash(approveInfo,
+            createBy,
+            createTime,
+            enterpriseProjectId,
+            id,
+            isCollect,
+            isPublish,
+            jobId,
+            jobVersion,
+            name,
+            needSynchronize,
+            nodes,
+            parameters,
+            projectId,
+            quote,
+            rateControl,
+            shareType,
+            steps,
+            updateBy,
+            updateTime,
+            version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -747,6 +638,7 @@ public class Template  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -757,8 +649,5 @@ public class Template  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

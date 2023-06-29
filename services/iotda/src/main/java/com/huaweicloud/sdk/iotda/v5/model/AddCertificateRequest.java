@@ -109,18 +109,17 @@ public class AddCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCertificateRequest addCertificateRequest = (AddCertificateRequest) o;
-        return Objects.equals(this.spAuthToken, addCertificateRequest.spAuthToken)
-            && Objects.equals(this.stageAuthToken, addCertificateRequest.stageAuthToken)
-            && Objects.equals(this.instanceId, addCertificateRequest.instanceId)
-            && Objects.equals(this.body, addCertificateRequest.body);
+        AddCertificateRequest that = (AddCertificateRequest) obj;
+        return Objects.equals(this.spAuthToken, that.spAuthToken)
+            && Objects.equals(this.stageAuthToken, that.stageAuthToken)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

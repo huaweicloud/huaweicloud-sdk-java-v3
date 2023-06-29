@@ -162,20 +162,18 @@ public class NeutronCreateFirewallGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronCreateFirewallGroupOption neutronCreateFirewallGroupOption = (NeutronCreateFirewallGroupOption) o;
-        return Objects.equals(this.name, neutronCreateFirewallGroupOption.name)
-            && Objects.equals(this.description, neutronCreateFirewallGroupOption.description)
-            && Objects.equals(this.ingressFirewallPolicyId, neutronCreateFirewallGroupOption.ingressFirewallPolicyId)
-            && Objects.equals(this.egressFirewallPolicyId, neutronCreateFirewallGroupOption.egressFirewallPolicyId)
-            && Objects.equals(this.ports, neutronCreateFirewallGroupOption.ports)
-            && Objects.equals(this.adminStateUp, neutronCreateFirewallGroupOption.adminStateUp);
+        NeutronCreateFirewallGroupOption that = (NeutronCreateFirewallGroupOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ingressFirewallPolicyId, that.ingressFirewallPolicyId)
+            && Objects.equals(this.egressFirewallPolicyId, that.egressFirewallPolicyId)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.adminStateUp, that.adminStateUp);
     }
 
     @Override

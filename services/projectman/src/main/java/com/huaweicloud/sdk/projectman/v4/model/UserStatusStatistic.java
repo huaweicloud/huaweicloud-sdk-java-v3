@@ -105,17 +105,16 @@ public class UserStatusStatistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserStatusStatistic userStatusStatistic = (UserStatusStatistic) o;
-        return Objects.equals(this.user, userStatusStatistic.user)
-            && Objects.equals(this.itemCount, userStatusStatistic.itemCount)
-            && Objects.equals(this.data, userStatusStatistic.data);
+        UserStatusStatistic that = (UserStatusStatistic) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.itemCount, that.itemCount)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

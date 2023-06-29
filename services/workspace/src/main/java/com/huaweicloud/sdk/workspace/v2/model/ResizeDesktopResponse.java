@@ -17,14 +17,19 @@ public class ResizeDesktopResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jobs")
 
-    private List<ResizeDesktopJobResult> jobs = null;
+    private List<ResizeDesktopJobResponse> jobs = null;
 
-    public ResizeDesktopResponse withJobs(List<ResizeDesktopJobResult> jobs) {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "job_id")
+
+    private String jobId;
+
+    public ResizeDesktopResponse withJobs(List<ResizeDesktopJobResponse> jobs) {
         this.jobs = jobs;
         return this;
     }
 
-    public ResizeDesktopResponse addJobsItem(ResizeDesktopJobResult jobsItem) {
+    public ResizeDesktopResponse addJobsItem(ResizeDesktopJobResponse jobsItem) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -32,7 +37,7 @@ public class ResizeDesktopResponse extends SdkResponse {
         return this;
     }
 
-    public ResizeDesktopResponse withJobs(Consumer<List<ResizeDesktopJobResult>> jobsSetter) {
+    public ResizeDesktopResponse withJobs(Consumer<List<ResizeDesktopJobResponse>> jobsSetter) {
         if (this.jobs == null) {
             this.jobs = new ArrayList<>();
         }
@@ -41,32 +46,49 @@ public class ResizeDesktopResponse extends SdkResponse {
     }
 
     /**
-     * 按需桌面变更规格返回的任务信息。
+     * 按需桌面变更规格返回的任务信息（jobs字段后续会下线，请使用job_id字段）。
      * @return jobs
      */
-    public List<ResizeDesktopJobResult> getJobs() {
+    public List<ResizeDesktopJobResponse> getJobs() {
         return jobs;
     }
 
-    public void setJobs(List<ResizeDesktopJobResult> jobs) {
+    public void setJobs(List<ResizeDesktopJobResponse> jobs) {
         this.jobs = jobs;
     }
 
+    public ResizeDesktopResponse withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+
+    /**
+     * 变更规格任务id。
+     * @return jobId
+     */
+    public String getJobId() {
+        return jobId;
+    }
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeDesktopResponse resizeDesktopResponse = (ResizeDesktopResponse) o;
-        return Objects.equals(this.jobs, resizeDesktopResponse.jobs);
+        ResizeDesktopResponse that = (ResizeDesktopResponse) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(jobs);
+        return Objects.hash(jobs, jobId);
     }
 
     @Override
@@ -74,6 +96,7 @@ public class ResizeDesktopResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResizeDesktopResponse {\n");
         sb.append("    jobs: ").append(toIndentedString(jobs)).append("\n");
+        sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

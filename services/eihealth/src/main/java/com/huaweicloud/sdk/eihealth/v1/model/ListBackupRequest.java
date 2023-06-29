@@ -125,19 +125,17 @@ public class ListBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupRequest listBackupRequest = (ListBackupRequest) o;
-        return Objects.equals(this.eihealthProjectId, listBackupRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listBackupRequest.limit)
-            && Objects.equals(this.offset, listBackupRequest.offset)
-            && Objects.equals(this.sortDir, listBackupRequest.sortDir)
-            && Objects.equals(this.sortKey, listBackupRequest.sortKey);
+        ListBackupRequest that = (ListBackupRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey);
     }
 
     @Override

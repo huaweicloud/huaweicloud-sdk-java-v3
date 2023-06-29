@@ -367,26 +367,23 @@ public class GenerationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GenerationResult generationResult = (GenerationResult) o;
-        return Objects.equals(this.name, generationResult.name)
-            && Objects.equals(this.numRounds, generationResult.numRounds)
-            && Objects.equals(this.numExpected, generationResult.numExpected)
-            && Objects.equals(this.numStrongConstraints, generationResult.numStrongConstraints)
-            && Objects.equals(this.numWeakConstraints, generationResult.numWeakConstraints)
-            && Objects.equals(this.propNames, generationResult.propNames)
-            && Objects.equals(this.result, generationResult.result)
-            && Objects.equals(this.initialDatasetSize, generationResult.initialDatasetSize)
-            && Objects.equals(this.strongConstraints, generationResult.strongConstraints)
-            && Objects.equals(this.weakConstraints, generationResult.weakConstraints)
-            && Objects.equals(this.bindingSite, generationResult.bindingSite)
-            && Objects.equals(this.customProps, generationResult.customProps);
+        GenerationResult that = (GenerationResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.numRounds, that.numRounds)
+            && Objects.equals(this.numExpected, that.numExpected)
+            && Objects.equals(this.numStrongConstraints, that.numStrongConstraints)
+            && Objects.equals(this.numWeakConstraints, that.numWeakConstraints)
+            && Objects.equals(this.propNames, that.propNames) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.initialDatasetSize, that.initialDatasetSize)
+            && Objects.equals(this.strongConstraints, that.strongConstraints)
+            && Objects.equals(this.weakConstraints, that.weakConstraints)
+            && Objects.equals(this.bindingSite, that.bindingSite) && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

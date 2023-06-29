@@ -145,20 +145,19 @@ public class CreateRsuModelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRsuModelResponse createRsuModelResponse = (CreateRsuModelResponse) o;
-        return Objects.equals(this.rsuModelId, createRsuModelResponse.rsuModelId)
-            && Objects.equals(this.name, createRsuModelResponse.name)
-            && Objects.equals(this.manufacturerName, createRsuModelResponse.manufacturerName)
-            && Objects.equals(this.description, createRsuModelResponse.description)
-            && Objects.equals(this.lastModifiedTime, createRsuModelResponse.lastModifiedTime)
-            && Objects.equals(this.createdTime, createRsuModelResponse.createdTime);
+        CreateRsuModelResponse that = (CreateRsuModelResponse) obj;
+        return Objects.equals(this.rsuModelId, that.rsuModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

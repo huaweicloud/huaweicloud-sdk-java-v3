@@ -242,20 +242,20 @@ public class RtmpBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtmpBrokens rtmpBrokens = (RtmpBrokens) o;
-        return Objects.equals(this.audioRecBytes, rtmpBrokens.audioRecBytes)
-            && Objects.equals(this.audioSentBytes, rtmpBrokens.audioSentBytes)
-            && Objects.equals(this.rtmpReceivedPackets, rtmpBrokens.rtmpReceivedPackets)
-            && Objects.equals(this.rtmpSentPackets, rtmpBrokens.rtmpSentPackets)
-            && Objects.equals(this.videoRecBytes, rtmpBrokens.videoRecBytes)
-            && Objects.equals(this.videoSentBytes, rtmpBrokens.videoSentBytes);
+        RtmpBrokens that = (RtmpBrokens) obj;
+        return Objects.equals(this.audioRecBytes, that.audioRecBytes)
+            && Objects.equals(this.audioSentBytes, that.audioSentBytes)
+            && Objects.equals(this.rtmpReceivedPackets, that.rtmpReceivedPackets)
+            && Objects.equals(this.rtmpSentPackets, that.rtmpSentPackets)
+            && Objects.equals(this.videoRecBytes, that.videoRecBytes)
+            && Objects.equals(this.videoSentBytes, that.videoSentBytes);
     }
 
     @Override

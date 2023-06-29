@@ -43,15 +43,15 @@ public class ListInstancesByResourceTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesByResourceTagsRequest listInstancesByResourceTagsRequest = (ListInstancesByResourceTagsRequest) o;
-        return Objects.equals(this.body, listInstancesByResourceTagsRequest.body);
+        ListInstancesByResourceTagsRequest that = (ListInstancesByResourceTagsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

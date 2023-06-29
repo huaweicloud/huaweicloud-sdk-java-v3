@@ -193,18 +193,18 @@ public class IpGroupBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpGroupBody ipGroupBody = (IpGroupBody) o;
-        return Objects.equals(this.id, ipGroupBody.id) && Objects.equals(this.name, ipGroupBody.name)
-            && Objects.equals(this.ips, ipGroupBody.ips) && Objects.equals(this.size, ipGroupBody.size)
-            && Objects.equals(this.rules, ipGroupBody.rules) && Objects.equals(this.shareInfo, ipGroupBody.shareInfo)
-            && Objects.equals(this.description, ipGroupBody.description);
+        IpGroupBody that = (IpGroupBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.shareInfo, that.shareInfo)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

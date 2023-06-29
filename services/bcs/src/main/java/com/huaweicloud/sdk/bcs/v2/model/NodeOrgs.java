@@ -77,16 +77,16 @@ public class NodeOrgs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeOrgs nodeOrgs = (NodeOrgs) o;
-        return Objects.equals(this.name, nodeOrgs.name) && Objects.equals(this.nodeCount, nodeOrgs.nodeCount)
-            && Objects.equals(this.pvcName, nodeOrgs.pvcName);
+        NodeOrgs that = (NodeOrgs) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nodeCount, that.nodeCount)
+            && Objects.equals(this.pvcName, that.pvcName);
     }
 
     @Override

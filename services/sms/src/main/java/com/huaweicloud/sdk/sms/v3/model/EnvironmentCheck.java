@@ -84,22 +84,15 @@ public class EnvironmentCheck {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,19 +267,18 @@ public class EnvironmentCheck {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentCheck environmentCheck = (EnvironmentCheck) o;
-        return Objects.equals(this.id, environmentCheck.id) && Objects.equals(this.params, environmentCheck.params)
-            && Objects.equals(this.name, environmentCheck.name) && Objects.equals(this.result, environmentCheck.result)
-            && Objects.equals(this.errorCode, environmentCheck.errorCode)
-            && Objects.equals(this.errorOrWarn, environmentCheck.errorOrWarn)
-            && Objects.equals(this.errorParams, environmentCheck.errorParams);
+        EnvironmentCheck that = (EnvironmentCheck) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorOrWarn, that.errorOrWarn)
+            && Objects.equals(this.errorParams, that.errorParams);
     }
 
     @Override

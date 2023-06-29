@@ -56,16 +56,15 @@ public class CreateRelationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRelationsResponse createRelationsResponse = (CreateRelationsResponse) o;
-        return Objects.equals(this.errorCode, createRelationsResponse.errorCode)
-            && Objects.equals(this.errorMsg, createRelationsResponse.errorMsg);
+        CreateRelationsResponse that = (CreateRelationsResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

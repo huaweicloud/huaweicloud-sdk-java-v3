@@ -96,17 +96,16 @@ public class ResolveTaskParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResolveTaskParam resolveTaskParam = (ResolveTaskParam) o;
-        return Objects.equals(this.custFlag, resolveTaskParam.custFlag)
-            && Objects.equals(this.dyncParams, resolveTaskParam.dyncParams)
-            && Objects.equals(this.customUrl, resolveTaskParam.customUrl);
+        ResolveTaskParam that = (ResolveTaskParam) obj;
+        return Objects.equals(this.custFlag, that.custFlag) && Objects.equals(this.dyncParams, that.dyncParams)
+            && Objects.equals(this.customUrl, that.customUrl);
     }
 
     @Override

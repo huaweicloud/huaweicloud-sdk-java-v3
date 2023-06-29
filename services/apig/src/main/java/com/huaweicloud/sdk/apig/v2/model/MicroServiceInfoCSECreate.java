@@ -77,17 +77,16 @@ public class MicroServiceInfoCSECreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCSECreate microServiceInfoCSECreate = (MicroServiceInfoCSECreate) o;
-        return Objects.equals(this.engineId, microServiceInfoCSECreate.engineId)
-            && Objects.equals(this.serviceId, microServiceInfoCSECreate.serviceId)
-            && Objects.equals(this.version, microServiceInfoCSECreate.version);
+        MicroServiceInfoCSECreate that = (MicroServiceInfoCSECreate) obj;
+        return Objects.equals(this.engineId, that.engineId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

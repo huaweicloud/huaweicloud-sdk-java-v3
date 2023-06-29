@@ -66,22 +66,15 @@ public class HealthCheck {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,17 +202,17 @@ public class HealthCheck {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthCheck healthCheck = (HealthCheck) o;
-        return Objects.equals(this.protocol, healthCheck.protocol) && Objects.equals(this.port, healthCheck.port)
-            && Objects.equals(this.unhealthy, healthCheck.unhealthy)
-            && Objects.equals(this.timeout, healthCheck.timeout) && Objects.equals(this.interval, healthCheck.interval);
+        HealthCheck that = (HealthCheck) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.unhealthy, that.unhealthy) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.interval, that.interval);
     }
 
     @Override

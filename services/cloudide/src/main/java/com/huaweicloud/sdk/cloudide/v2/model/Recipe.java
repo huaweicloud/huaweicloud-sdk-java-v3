@@ -55,15 +55,15 @@ public class Recipe {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Recipe recipe = (Recipe) o;
-        return Objects.equals(this.content, recipe.content) && Objects.equals(this.type, recipe.type);
+        Recipe that = (Recipe) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.type, that.type);
     }
 
     @Override

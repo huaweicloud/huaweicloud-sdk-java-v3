@@ -89,17 +89,17 @@ public class MoveToWaitingRoomRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MoveToWaitingRoomRequest moveToWaitingRoomRequest = (MoveToWaitingRoomRequest) o;
-        return Objects.equals(this.conferenceID, moveToWaitingRoomRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, moveToWaitingRoomRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, moveToWaitingRoomRequest.body);
+        MoveToWaitingRoomRequest that = (MoveToWaitingRoomRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

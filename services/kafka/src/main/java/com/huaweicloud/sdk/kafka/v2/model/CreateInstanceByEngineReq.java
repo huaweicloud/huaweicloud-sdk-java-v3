@@ -67,22 +67,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,22 +148,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
         }
 
         public static EngineVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,22 +308,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SaslEnabledMechanismsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SaslEnabledMechanismsEnum(value));
         }
 
         public static SaslEnabledMechanismsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,8 +339,8 @@ public class CreateInstanceByEngineReq {
     private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
 
     /**
-    * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
-    */
+     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     */
     public static final class RetentionPolicyEnum {
 
         /**
@@ -404,22 +383,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RetentionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RetentionPolicyEnum(value));
         }
 
         public static RetentionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -498,22 +470,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageSpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageSpecCodeEnum(value));
         }
 
         public static StorageSpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1146,45 +1111,36 @@ public class CreateInstanceByEngineReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceByEngineReq createInstanceByEngineReq = (CreateInstanceByEngineReq) o;
-        return Objects.equals(this.name, createInstanceByEngineReq.name)
-            && Objects.equals(this.description, createInstanceByEngineReq.description)
-            && Objects.equals(this.engine, createInstanceByEngineReq.engine)
-            && Objects.equals(this.engineVersion, createInstanceByEngineReq.engineVersion)
-            && Objects.equals(this.brokerNum, createInstanceByEngineReq.brokerNum)
-            && Objects.equals(this.storageSpace, createInstanceByEngineReq.storageSpace)
-            && Objects.equals(this.accessUser, createInstanceByEngineReq.accessUser)
-            && Objects.equals(this.password, createInstanceByEngineReq.password)
-            && Objects.equals(this.vpcId, createInstanceByEngineReq.vpcId)
-            && Objects.equals(this.securityGroupId, createInstanceByEngineReq.securityGroupId)
-            && Objects.equals(this.subnetId, createInstanceByEngineReq.subnetId)
-            && Objects.equals(this.availableZones, createInstanceByEngineReq.availableZones)
-            && Objects.equals(this.productId, createInstanceByEngineReq.productId)
-            && Objects.equals(this.kafkaManagerUser, createInstanceByEngineReq.kafkaManagerUser)
-            && Objects.equals(this.kafkaManagerPassword, createInstanceByEngineReq.kafkaManagerPassword)
-            && Objects.equals(this.maintainBegin, createInstanceByEngineReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, createInstanceByEngineReq.maintainEnd)
-            && Objects.equals(this.enablePublicip, createInstanceByEngineReq.enablePublicip)
-            && Objects.equals(this.publicipId, createInstanceByEngineReq.publicipId)
-            && Objects.equals(this.sslEnable, createInstanceByEngineReq.sslEnable)
-            && Objects.equals(this.kafkaSecurityProtocol, createInstanceByEngineReq.kafkaSecurityProtocol)
-            && Objects.equals(this.saslEnabledMechanisms, createInstanceByEngineReq.saslEnabledMechanisms)
-            && Objects.equals(this.retentionPolicy, createInstanceByEngineReq.retentionPolicy)
-            && Objects.equals(this.connectorEnable, createInstanceByEngineReq.connectorEnable)
-            && Objects.equals(this.enableAutoTopic, createInstanceByEngineReq.enableAutoTopic)
-            && Objects.equals(this.storageSpecCode, createInstanceByEngineReq.storageSpecCode)
-            && Objects.equals(this.enterpriseProjectId, createInstanceByEngineReq.enterpriseProjectId)
-            && Objects.equals(this.tags, createInstanceByEngineReq.tags)
-            && Objects.equals(this.archType, createInstanceByEngineReq.archType)
-            && Objects.equals(this.vpcClientPlain, createInstanceByEngineReq.vpcClientPlain)
-            && Objects.equals(this.bssParam, createInstanceByEngineReq.bssParam);
+        CreateInstanceByEngineReq that = (CreateInstanceByEngineReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.brokerNum, that.brokerNum) && Objects.equals(this.storageSpace, that.storageSpace)
+            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
+            && Objects.equals(this.kafkaManagerPassword, that.kafkaManagerPassword)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
+            && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
+            && Objects.equals(this.retentionPolicy, that.retentionPolicy)
+            && Objects.equals(this.connectorEnable, that.connectorEnable)
+            && Objects.equals(this.enableAutoTopic, that.enableAutoTopic)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.archType, that.archType)
+            && Objects.equals(this.vpcClientPlain, that.vpcClientPlain) && Objects.equals(this.bssParam, that.bssParam);
     }
 
     @Override

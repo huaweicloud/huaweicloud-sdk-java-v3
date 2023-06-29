@@ -81,17 +81,16 @@ public class ListNoticeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNoticeRequest listNoticeRequest = (ListNoticeRequest) o;
-        return Objects.equals(this.isRead, listNoticeRequest.isRead)
-            && Objects.equals(this.limit, listNoticeRequest.limit)
-            && Objects.equals(this.offset, listNoticeRequest.offset);
+        ListNoticeRequest that = (ListNoticeRequest) obj;
+        return Objects.equals(this.isRead, that.isRead) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

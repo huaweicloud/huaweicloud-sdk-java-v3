@@ -56,16 +56,15 @@ public class UpdateProjectDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectDomainResponse updateProjectDomainResponse = (UpdateProjectDomainResponse) o;
-        return Objects.equals(this.domainName, updateProjectDomainResponse.domainName)
-            && Objects.equals(this.domainId, updateProjectDomainResponse.domainId);
+        UpdateProjectDomainResponse that = (UpdateProjectDomainResponse) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

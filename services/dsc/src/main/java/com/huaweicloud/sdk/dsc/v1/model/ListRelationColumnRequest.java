@@ -165,21 +165,18 @@ public class ListRelationColumnRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationColumnRequest listRelationColumnRequest = (ListRelationColumnRequest) o;
-        return Objects.equals(this.jobId, listRelationColumnRequest.jobId)
-            && Objects.equals(this.tableId, listRelationColumnRequest.tableId)
-            && Objects.equals(this.assetsName, listRelationColumnRequest.assetsName)
-            && Objects.equals(this.riskStart, listRelationColumnRequest.riskStart)
-            && Objects.equals(this.riskEnd, listRelationColumnRequest.riskEnd)
-            && Objects.equals(this.offset, listRelationColumnRequest.offset)
-            && Objects.equals(this.limit, listRelationColumnRequest.limit);
+        ListRelationColumnRequest that = (ListRelationColumnRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.assetsName, that.assetsName) && Objects.equals(this.riskStart, that.riskStart)
+            && Objects.equals(this.riskEnd, that.riskEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

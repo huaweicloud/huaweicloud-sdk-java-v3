@@ -101,17 +101,16 @@ public class ListMergeChannelsTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMergeChannelsTaskResponse listMergeChannelsTaskResponse = (ListMergeChannelsTaskResponse) o;
-        return Objects.equals(this.taskArray, listMergeChannelsTaskResponse.taskArray)
-            && Objects.equals(this.isTruncated, listMergeChannelsTaskResponse.isTruncated)
-            && Objects.equals(this.total, listMergeChannelsTaskResponse.total);
+        ListMergeChannelsTaskResponse that = (ListMergeChannelsTaskResponse) obj;
+        return Objects.equals(this.taskArray, that.taskArray) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

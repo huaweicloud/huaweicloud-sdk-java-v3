@@ -175,18 +175,18 @@ public class CreateUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserReq createUserReq = (CreateUserReq) o;
-        return Objects.equals(this.name, createUserReq.name) && Objects.equals(this.password, createUserReq.password)
-            && Objects.equals(this.role, createUserReq.role) && Objects.equals(this.email, createUserReq.email)
-            && Objects.equals(this.phone, createUserReq.phone) && Objects.equals(this.areacode, createUserReq.areacode)
-            && Objects.equals(this.settings, createUserReq.settings);
+        CreateUserReq that = (CreateUserReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.settings, that.settings);
     }
 
     @Override

@@ -75,22 +75,15 @@ public class ListResizeFlavorsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,22 +174,15 @@ public class ListResizeFlavorsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -348,21 +334,18 @@ public class ListResizeFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResizeFlavorsRequest listResizeFlavorsRequest = (ListResizeFlavorsRequest) o;
-        return Objects.equals(this.instanceUuid, listResizeFlavorsRequest.instanceUuid)
-            && Objects.equals(this.limit, listResizeFlavorsRequest.limit)
-            && Objects.equals(this.marker, listResizeFlavorsRequest.marker)
-            && Objects.equals(this.sortDir, listResizeFlavorsRequest.sortDir)
-            && Objects.equals(this.sortKey, listResizeFlavorsRequest.sortKey)
-            && Objects.equals(this.sourceFlavorId, listResizeFlavorsRequest.sourceFlavorId)
-            && Objects.equals(this.sourceFlavorName, listResizeFlavorsRequest.sourceFlavorName);
+        ListResizeFlavorsRequest that = (ListResizeFlavorsRequest) obj;
+        return Objects.equals(this.instanceUuid, that.instanceUuid) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sourceFlavorId, that.sourceFlavorId)
+            && Objects.equals(this.sourceFlavorName, that.sourceFlavorName);
     }
 
     @Override

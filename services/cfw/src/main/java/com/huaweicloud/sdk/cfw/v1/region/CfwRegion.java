@@ -43,7 +43,7 @@ public class CfwRegion {
 
     public static final Region CN_EAST_2 = new Region("cn-east-2", "https://cfw.cn-east-2.myhuaweicloud.com");
 
-    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://cfw.la-south-2.myhuaweicloud.com");
+    public static final Region AF_SOUTH_1 = new Region("af-south-1", "https://cfw.af-south-1.myhuaweicloud.com");
 
     public static final Region SA_BRAZIL_1 = new Region("sa-brazil-1", "https://cfw.sa-brazil-1.myhuaweicloud.com");
 

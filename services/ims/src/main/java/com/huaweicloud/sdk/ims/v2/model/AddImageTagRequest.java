@@ -65,16 +65,15 @@ public class AddImageTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddImageTagRequest addImageTagRequest = (AddImageTagRequest) o;
-        return Objects.equals(this.imageId, addImageTagRequest.imageId)
-            && Objects.equals(this.body, addImageTagRequest.body);
+        AddImageTagRequest that = (AddImageTagRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -206,20 +206,19 @@ public class Ruleset {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Ruleset ruleset = (Ruleset) o;
-        return Objects.equals(this.projectId, ruleset.projectId)
-            && Objects.equals(this.templateName, ruleset.templateName)
-            && Objects.equals(this.language, ruleset.language) && Objects.equals(this.isDefault, ruleset.isDefault)
-            && Objects.equals(this.ruleIds, ruleset.ruleIds) && Objects.equals(this.uncheckIds, ruleset.uncheckIds)
-            && Objects.equals(this.templateId, ruleset.templateId)
-            && Objects.equals(this.customAttributes, ruleset.customAttributes);
+        Ruleset that = (Ruleset) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.ruleIds, that.ruleIds) && Objects.equals(this.uncheckIds, that.uncheckIds)
+            && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.customAttributes, that.customAttributes);
     }
 
     @Override

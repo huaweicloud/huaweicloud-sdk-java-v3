@@ -178,20 +178,17 @@ public class AssetAddRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetAddRequest assetAddRequest = (AssetAddRequest) o;
-        return Objects.equals(this.assetModelId, assetAddRequest.assetModelId)
-            && Objects.equals(this.name, assetAddRequest.name)
-            && Objects.equals(this.displayName, assetAddRequest.displayName)
-            && Objects.equals(this.parent, assetAddRequest.parent)
-            && Objects.equals(this.properties, assetAddRequest.properties)
-            && Objects.equals(this.analyses, assetAddRequest.analyses);
+        AssetAddRequest that = (AssetAddRequest) obj;
+        return Objects.equals(this.assetModelId, that.assetModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.parent, that.parent)
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.analyses, that.analyses);
     }
 
     @Override

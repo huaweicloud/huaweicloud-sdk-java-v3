@@ -87,17 +87,16 @@ public class CreateLiveDataApiScriptV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLiveDataApiScriptV2Request createLiveDataApiScriptV2Request = (CreateLiveDataApiScriptV2Request) o;
-        return Objects.equals(this.instanceId, createLiveDataApiScriptV2Request.instanceId)
-            && Objects.equals(this.ldApiId, createLiveDataApiScriptV2Request.ldApiId)
-            && Objects.equals(this.body, createLiveDataApiScriptV2Request.body);
+        CreateLiveDataApiScriptV2Request that = (CreateLiveDataApiScriptV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

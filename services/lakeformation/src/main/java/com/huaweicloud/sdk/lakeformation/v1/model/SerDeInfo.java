@@ -96,17 +96,17 @@ public class SerDeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SerDeInfo serDeInfo = (SerDeInfo) o;
-        return Objects.equals(this.name, serDeInfo.name)
-            && Objects.equals(this.serializationLibrary, serDeInfo.serializationLibrary)
-            && Objects.equals(this.parameters, serDeInfo.parameters);
+        SerDeInfo that = (SerDeInfo) obj;
+        return Objects.equals(this.name, that.name)
+            && Objects.equals(this.serializationLibrary, that.serializationLibrary)
+            && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

@@ -131,19 +131,17 @@ public class CreateLoadBalancerPublicIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadBalancerPublicIpOption createLoadBalancerPublicIpOption = (CreateLoadBalancerPublicIpOption) o;
-        return Objects.equals(this.ipVersion, createLoadBalancerPublicIpOption.ipVersion)
-            && Objects.equals(this.networkType, createLoadBalancerPublicIpOption.networkType)
-            && Objects.equals(this.billingInfo, createLoadBalancerPublicIpOption.billingInfo)
-            && Objects.equals(this.description, createLoadBalancerPublicIpOption.description)
-            && Objects.equals(this.bandwidth, createLoadBalancerPublicIpOption.bandwidth);
+        CreateLoadBalancerPublicIpOption that = (CreateLoadBalancerPublicIpOption) obj;
+        return Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

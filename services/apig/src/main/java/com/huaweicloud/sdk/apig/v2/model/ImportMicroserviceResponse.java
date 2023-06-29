@@ -97,17 +97,16 @@ public class ImportMicroserviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportMicroserviceResponse importMicroserviceResponse = (ImportMicroserviceResponse) o;
-        return Objects.equals(this.vpcChannelId, importMicroserviceResponse.vpcChannelId)
-            && Objects.equals(this.apiGroupId, importMicroserviceResponse.apiGroupId)
-            && Objects.equals(this.apis, importMicroserviceResponse.apis);
+        ImportMicroserviceResponse that = (ImportMicroserviceResponse) obj;
+        return Objects.equals(this.vpcChannelId, that.vpcChannelId) && Objects.equals(this.apiGroupId, that.apiGroupId)
+            && Objects.equals(this.apis, that.apis);
     }
 
     @Override

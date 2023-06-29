@@ -89,17 +89,17 @@ public class AllowGuestUnmuteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowGuestUnmuteRequest allowGuestUnmuteRequest = (AllowGuestUnmuteRequest) o;
-        return Objects.equals(this.conferenceID, allowGuestUnmuteRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, allowGuestUnmuteRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, allowGuestUnmuteRequest.body);
+        AllowGuestUnmuteRequest that = (AllowGuestUnmuteRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

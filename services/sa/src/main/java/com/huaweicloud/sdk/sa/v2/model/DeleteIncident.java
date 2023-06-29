@@ -52,15 +52,15 @@ public class DeleteIncident {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIncident deleteIncident = (DeleteIncident) o;
-        return Objects.equals(this.ids, deleteIncident.ids);
+        DeleteIncident that = (DeleteIncident) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

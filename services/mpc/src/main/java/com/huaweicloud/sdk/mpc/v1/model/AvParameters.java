@@ -105,16 +105,16 @@ public class AvParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvParameters avParameters = (AvParameters) o;
-        return Objects.equals(this.video, avParameters.video) && Objects.equals(this.audio, avParameters.audio)
-            && Objects.equals(this.common, avParameters.common);
+        AvParameters that = (AvParameters) obj;
+        return Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio)
+            && Objects.equals(this.common, that.common);
     }
 
     @Override

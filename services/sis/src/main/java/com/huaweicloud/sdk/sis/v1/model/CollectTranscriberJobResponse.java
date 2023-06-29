@@ -185,21 +185,18 @@ public class CollectTranscriberJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectTranscriberJobResponse collectTranscriberJobResponse = (CollectTranscriberJobResponse) o;
-        return Objects.equals(this.jobId, collectTranscriberJobResponse.jobId)
-            && Objects.equals(this.status, collectTranscriberJobResponse.status)
-            && Objects.equals(this.createTime, collectTranscriberJobResponse.createTime)
-            && Objects.equals(this.startTime, collectTranscriberJobResponse.startTime)
-            && Objects.equals(this.finishTime, collectTranscriberJobResponse.finishTime)
-            && Objects.equals(this.segments, collectTranscriberJobResponse.segments)
-            && Objects.equals(this.audioDuration, collectTranscriberJobResponse.audioDuration);
+        CollectTranscriberJobResponse that = (CollectTranscriberJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.segments, that.segments)
+            && Objects.equals(this.audioDuration, that.audioDuration);
     }
 
     @Override

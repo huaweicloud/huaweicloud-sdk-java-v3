@@ -85,22 +85,15 @@ public class StructTemplate {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TemplateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
         }
 
         public static TemplateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -349,23 +342,19 @@ public class StructTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructTemplate structTemplate = (StructTemplate) o;
-        return Objects.equals(this.projectId, structTemplate.projectId)
-            && Objects.equals(this.templateName, structTemplate.templateName)
-            && Objects.equals(this.templateType, structTemplate.templateType)
-            && Objects.equals(this.demoLog, structTemplate.demoLog)
-            && Objects.equals(this.demoFields, structTemplate.demoFields)
-            && Objects.equals(this.tagFields, structTemplate.tagFields)
-            && Objects.equals(this.rule, structTemplate.rule)
-            && Objects.equals(this.demoLabel, structTemplate.demoLabel)
-            && Objects.equals(this.createTime, structTemplate.createTime);
+        StructTemplate that = (StructTemplate) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.demoLog, that.demoLog)
+            && Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.tagFields, that.tagFields)
+            && Objects.equals(this.rule, that.rule) && Objects.equals(this.demoLabel, that.demoLabel)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

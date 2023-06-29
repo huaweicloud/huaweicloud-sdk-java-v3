@@ -99,16 +99,16 @@ public class Source {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Source source = (Source) o;
-        return Objects.equals(this.instanceId, source.instanceId) && Objects.equals(this.type, source.type)
-            && Objects.equals(this.backupId, source.backupId) && Objects.equals(this.restoreTime, source.restoreTime);
+        Source that = (Source) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.restoreTime, that.restoreTime);
     }
 
     @Override

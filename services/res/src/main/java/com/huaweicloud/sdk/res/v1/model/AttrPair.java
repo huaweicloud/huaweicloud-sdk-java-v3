@@ -55,15 +55,15 @@ public class AttrPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttrPair attrPair = (AttrPair) o;
-        return Objects.equals(this.partyA, attrPair.partyA) && Objects.equals(this.partyB, attrPair.partyB);
+        AttrPair that = (AttrPair) obj;
+        return Objects.equals(this.partyA, that.partyA) && Objects.equals(this.partyB, that.partyB);
     }
 
     @Override

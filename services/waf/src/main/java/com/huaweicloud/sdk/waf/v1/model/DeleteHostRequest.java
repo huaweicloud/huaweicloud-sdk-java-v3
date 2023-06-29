@@ -55,16 +55,16 @@ public class DeleteHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHostRequest deleteHostRequest = (DeleteHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteHostRequest.enterpriseProjectId)
-            && Objects.equals(this.instanceId, deleteHostRequest.instanceId);
+        DeleteHostRequest that = (DeleteHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

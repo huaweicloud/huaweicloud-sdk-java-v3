@@ -140,19 +140,18 @@ public class CreateCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCondition createCondition = (CreateCondition) o;
-        return Objects.equals(this.category, createCondition.category)
-            && Objects.equals(this.contents, createCondition.contents)
-            && Objects.equals(this.logicOperation, createCondition.logicOperation)
-            && Objects.equals(this.checkAllIndexesLogic, createCondition.checkAllIndexesLogic)
-            && Objects.equals(this.index, createCondition.index);
+        CreateCondition that = (CreateCondition) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.logicOperation, that.logicOperation)
+            && Objects.equals(this.checkAllIndexesLogic, that.checkAllIndexesLogic)
+            && Objects.equals(this.index, that.index);
     }
 
     @Override

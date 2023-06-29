@@ -66,22 +66,15 @@ public class PolicyStateRequestBody {
             if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeEnum(value));
         }
 
         public static TriggerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class PolicyStateRequestBody {
             if (value == null) {
                 return null;
             }
-            ComplianceStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ComplianceStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComplianceStateEnum(value));
         }
 
         public static ComplianceStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ComplianceStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -334,21 +320,21 @@ public class PolicyStateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyStateRequestBody policyStateRequestBody = (PolicyStateRequestBody) o;
-        return Objects.equals(this.policyResource, policyStateRequestBody.policyResource)
-            && Objects.equals(this.triggerType, policyStateRequestBody.triggerType)
-            && Objects.equals(this.complianceState, policyStateRequestBody.complianceState)
-            && Objects.equals(this.policyAssignmentId, policyStateRequestBody.policyAssignmentId)
-            && Objects.equals(this.policyAssignmentName, policyStateRequestBody.policyAssignmentName)
-            && Objects.equals(this.evaluationTime, policyStateRequestBody.evaluationTime)
-            && Objects.equals(this.evaluationHash, policyStateRequestBody.evaluationHash);
+        PolicyStateRequestBody that = (PolicyStateRequestBody) obj;
+        return Objects.equals(this.policyResource, that.policyResource)
+            && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.evaluationTime, that.evaluationTime)
+            && Objects.equals(this.evaluationHash, that.evaluationHash);
     }
 
     @Override

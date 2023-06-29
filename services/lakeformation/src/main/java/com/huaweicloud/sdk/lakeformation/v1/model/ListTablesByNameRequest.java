@@ -109,18 +109,16 @@ public class ListTablesByNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTablesByNameRequest listTablesByNameRequest = (ListTablesByNameRequest) o;
-        return Objects.equals(this.instanceId, listTablesByNameRequest.instanceId)
-            && Objects.equals(this.catalogName, listTablesByNameRequest.catalogName)
-            && Objects.equals(this.databaseName, listTablesByNameRequest.databaseName)
-            && Objects.equals(this.body, listTablesByNameRequest.body);
+        ListTablesByNameRequest that = (ListTablesByNameRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.body, that.body);
     }
 
     @Override

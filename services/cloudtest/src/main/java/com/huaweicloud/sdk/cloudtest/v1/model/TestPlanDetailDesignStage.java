@@ -77,17 +77,16 @@ public class TestPlanDetailDesignStage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanDetailDesignStage testPlanDetailDesignStage = (TestPlanDetailDesignStage) o;
-        return Objects.equals(this.caseCount, testPlanDetailDesignStage.caseCount)
-            && Objects.equals(this.issueCount, testPlanDetailDesignStage.issueCount)
-            && Objects.equals(this.issueCoveredCount, testPlanDetailDesignStage.issueCoveredCount);
+        TestPlanDetailDesignStage that = (TestPlanDetailDesignStage) obj;
+        return Objects.equals(this.caseCount, that.caseCount) && Objects.equals(this.issueCount, that.issueCount)
+            && Objects.equals(this.issueCoveredCount, that.issueCoveredCount);
     }
 
     @Override

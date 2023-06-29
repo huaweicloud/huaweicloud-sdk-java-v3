@@ -120,18 +120,16 @@ public class ListPipelineRunsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineRunsResponse listPipelineRunsResponse = (ListPipelineRunsResponse) o;
-        return Objects.equals(this.offset, listPipelineRunsResponse.offset)
-            && Objects.equals(this.limit, listPipelineRunsResponse.limit)
-            && Objects.equals(this.total, listPipelineRunsResponse.total)
-            && Objects.equals(this.pipelineRuns, listPipelineRunsResponse.pipelineRuns);
+        ListPipelineRunsResponse that = (ListPipelineRunsResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.pipelineRuns, that.pipelineRuns);
     }
 
     @Override

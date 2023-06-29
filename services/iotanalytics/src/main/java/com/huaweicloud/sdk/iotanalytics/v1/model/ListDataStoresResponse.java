@@ -77,16 +77,15 @@ public class ListDataStoresResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataStoresResponse listDataStoresResponse = (ListDataStoresResponse) o;
-        return Objects.equals(this.dataStores, listDataStoresResponse.dataStores)
-            && Objects.equals(this.count, listDataStoresResponse.count);
+        ListDataStoresResponse that = (ListDataStoresResponse) obj;
+        return Objects.equals(this.dataStores, that.dataStores) && Objects.equals(this.count, that.count);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ShowTableContentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTableContentRequest showTableContentRequest = (ShowTableContentRequest) o;
-        return Objects.equals(this.databaseName, showTableContentRequest.databaseName)
-            && Objects.equals(this.tableName, showTableContentRequest.tableName)
-            && Objects.equals(this.mode, showTableContentRequest.mode);
+        ShowTableContentRequest that = (ShowTableContentRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override

@@ -210,23 +210,23 @@ public class ShowInstanceLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceLogResponse showInstanceLogResponse = (ShowInstanceLogResponse) o;
-        return Objects.equals(this.enableBridge, showInstanceLogResponse.enableBridge)
-            && Objects.equals(this.enableProfile, showInstanceLogResponse.enableProfile)
-            && Objects.equals(this.enableClassification, showInstanceLogResponse.enableClassification)
-            && Objects.equals(this.bridgeStatus, showInstanceLogResponse.bridgeStatus)
-            && Objects.equals(this.profileStatus, showInstanceLogResponse.profileStatus)
-            && Objects.equals(this.classificationStatus, showInstanceLogResponse.classificationStatus)
-            && Objects.equals(this.bridgeJobLog, showInstanceLogResponse.bridgeJobLog)
-            && Objects.equals(this.profileJobLog, showInstanceLogResponse.profileJobLog)
-            && Objects.equals(this.classificationJobLog, showInstanceLogResponse.classificationJobLog);
+        ShowInstanceLogResponse that = (ShowInstanceLogResponse) obj;
+        return Objects.equals(this.enableBridge, that.enableBridge)
+            && Objects.equals(this.enableProfile, that.enableProfile)
+            && Objects.equals(this.enableClassification, that.enableClassification)
+            && Objects.equals(this.bridgeStatus, that.bridgeStatus)
+            && Objects.equals(this.profileStatus, that.profileStatus)
+            && Objects.equals(this.classificationStatus, that.classificationStatus)
+            && Objects.equals(this.bridgeJobLog, that.bridgeJobLog)
+            && Objects.equals(this.profileJobLog, that.profileJobLog)
+            && Objects.equals(this.classificationJobLog, that.classificationJobLog);
     }
 
     @Override

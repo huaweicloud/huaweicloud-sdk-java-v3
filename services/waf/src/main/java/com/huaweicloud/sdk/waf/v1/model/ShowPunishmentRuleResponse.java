@@ -144,20 +144,17 @@ public class ShowPunishmentRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPunishmentRuleResponse showPunishmentRuleResponse = (ShowPunishmentRuleResponse) o;
-        return Objects.equals(this.id, showPunishmentRuleResponse.id)
-            && Objects.equals(this.policyid, showPunishmentRuleResponse.policyid)
-            && Objects.equals(this.blockTime, showPunishmentRuleResponse.blockTime)
-            && Objects.equals(this.category, showPunishmentRuleResponse.category)
-            && Objects.equals(this.description, showPunishmentRuleResponse.description)
-            && Objects.equals(this.timestamp, showPunishmentRuleResponse.timestamp);
+        ShowPunishmentRuleResponse that = (ShowPunishmentRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.blockTime, that.blockTime) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

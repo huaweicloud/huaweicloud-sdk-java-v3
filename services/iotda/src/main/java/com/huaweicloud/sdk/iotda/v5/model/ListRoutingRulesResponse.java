@@ -97,17 +97,16 @@ public class ListRoutingRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutingRulesResponse listRoutingRulesResponse = (ListRoutingRulesResponse) o;
-        return Objects.equals(this.rules, listRoutingRulesResponse.rules)
-            && Objects.equals(this.count, listRoutingRulesResponse.count)
-            && Objects.equals(this.marker, listRoutingRulesResponse.marker);
+        ListRoutingRulesResponse that = (ListRoutingRulesResponse) obj;
+        return Objects.equals(this.rules, that.rules) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

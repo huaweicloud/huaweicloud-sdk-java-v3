@@ -119,18 +119,16 @@ public class ListBatchesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBatchesResponse listBatchesResponse = (ListBatchesResponse) o;
-        return Objects.equals(this.from, listBatchesResponse.from)
-            && Objects.equals(this.total, listBatchesResponse.total)
-            && Objects.equals(this.sessions, listBatchesResponse.sessions)
-            && Objects.equals(this.createTime, listBatchesResponse.createTime);
+        ListBatchesResponse that = (ListBatchesResponse) obj;
+        return Objects.equals(this.from, that.from) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.sessions, that.sessions) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

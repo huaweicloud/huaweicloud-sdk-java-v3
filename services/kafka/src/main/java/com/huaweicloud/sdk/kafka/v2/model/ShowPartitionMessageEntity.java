@@ -165,21 +165,18 @@ public class ShowPartitionMessageEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartitionMessageEntity showPartitionMessageEntity = (ShowPartitionMessageEntity) o;
-        return Objects.equals(this.key, showPartitionMessageEntity.key)
-            && Objects.equals(this.value, showPartitionMessageEntity.value)
-            && Objects.equals(this.topic, showPartitionMessageEntity.topic)
-            && Objects.equals(this.partition, showPartitionMessageEntity.partition)
-            && Objects.equals(this.messageOffset, showPartitionMessageEntity.messageOffset)
-            && Objects.equals(this.size, showPartitionMessageEntity.size)
-            && Objects.equals(this.timestamp, showPartitionMessageEntity.timestamp);
+        ShowPartitionMessageEntity that = (ShowPartitionMessageEntity) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

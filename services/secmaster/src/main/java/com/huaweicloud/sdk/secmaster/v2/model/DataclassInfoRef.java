@@ -55,15 +55,15 @@ public class DataclassInfoRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataclassInfoRef dataclassInfoRef = (DataclassInfoRef) o;
-        return Objects.equals(this.id, dataclassInfoRef.id) && Objects.equals(this.name, dataclassInfoRef.name);
+        DataclassInfoRef that = (DataclassInfoRef) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

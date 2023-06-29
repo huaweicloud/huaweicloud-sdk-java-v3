@@ -319,23 +319,21 @@ public class FullSql {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FullSql fullSql = (FullSql) o;
-        return Objects.equals(this.sql, fullSql.sql) && Objects.equals(this.operateType, fullSql.operateType)
-            && Objects.equals(this.status, fullSql.status) && Objects.equals(this.errorNo, fullSql.errorNo)
-            && Objects.equals(this.database, fullSql.database) && Objects.equals(this.client, fullSql.client)
-            && Objects.equals(this.threadId, fullSql.threadId) && Objects.equals(this.user, fullSql.user)
-            && Objects.equals(this.executeAt, fullSql.executeAt) && Objects.equals(this.queryTime, fullSql.queryTime)
-            && Objects.equals(this.lockTime, fullSql.lockTime)
-            && Objects.equals(this.rowsExamined, fullSql.rowsExamined)
-            && Objects.equals(this.rowsSent, fullSql.rowsSent)
-            && Objects.equals(this.rowsAffected, fullSql.rowsAffected);
+        FullSql that = (FullSql) obj;
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.operateType, that.operateType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorNo, that.errorNo)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.client, that.client)
+            && Objects.equals(this.threadId, that.threadId) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.executeAt, that.executeAt) && Objects.equals(this.queryTime, that.queryTime)
+            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.rowsExamined, that.rowsExamined)
+            && Objects.equals(this.rowsSent, that.rowsSent) && Objects.equals(this.rowsAffected, that.rowsAffected);
     }
 
     @Override

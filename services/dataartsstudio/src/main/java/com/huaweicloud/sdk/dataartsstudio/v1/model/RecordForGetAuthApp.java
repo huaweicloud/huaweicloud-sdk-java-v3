@@ -106,22 +106,15 @@ public class RecordForGetAuthApp {
             if (value == null) {
                 return null;
             }
-            RelationshipTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelationshipTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationshipTypeEnum(value));
         }
 
         public static RelationshipTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RelationshipTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -301,22 +294,20 @@ public class RecordForGetAuthApp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordForGetAuthApp recordForGetAuthApp = (RecordForGetAuthApp) o;
-        return Objects.equals(this.appId, recordForGetAuthApp.appId)
-            && Objects.equals(this.appName, recordForGetAuthApp.appName)
-            && Objects.equals(this.instanceId, recordForGetAuthApp.instanceId)
-            && Objects.equals(this.instanceName, recordForGetAuthApp.instanceName)
-            && Objects.equals(this.apiUsingTime, recordForGetAuthApp.apiUsingTime)
-            && Objects.equals(this.approvalTime, recordForGetAuthApp.approvalTime)
-            && Objects.equals(this.relationshipType, recordForGetAuthApp.relationshipType)
-            && Objects.equals(this.staticParams, recordForGetAuthApp.staticParams);
+        RecordForGetAuthApp that = (RecordForGetAuthApp) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.apiUsingTime, that.apiUsingTime)
+            && Objects.equals(this.approvalTime, that.approvalTime)
+            && Objects.equals(this.relationshipType, that.relationshipType)
+            && Objects.equals(this.staticParams, that.staticParams);
     }
 
     @Override

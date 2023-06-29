@@ -81,17 +81,16 @@ public class ContainerPortDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerPortDTO containerPortDTO = (ContainerPortDTO) o;
-        return Objects.equals(this.containerPort, containerPortDTO.containerPort)
-            && Objects.equals(this.hostPort, containerPortDTO.hostPort)
-            && Objects.equals(this.hostIp, containerPortDTO.hostIp);
+        ContainerPortDTO that = (ContainerPortDTO) obj;
+        return Objects.equals(this.containerPort, that.containerPort) && Objects.equals(this.hostPort, that.hostPort)
+            && Objects.equals(this.hostIp, that.hostIp);
     }
 
     @Override

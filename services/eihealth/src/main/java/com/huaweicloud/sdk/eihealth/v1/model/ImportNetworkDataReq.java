@@ -112,17 +112,16 @@ public class ImportNetworkDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportNetworkDataReq importNetworkDataReq = (ImportNetworkDataReq) o;
-        return Objects.equals(this.targetFolder, importNetworkDataReq.targetFolder)
-            && Objects.equals(this.urls, importNetworkDataReq.urls)
-            && Objects.equals(this.md5s, importNetworkDataReq.md5s);
+        ImportNetworkDataReq that = (ImportNetworkDataReq) obj;
+        return Objects.equals(this.targetFolder, that.targetFolder) && Objects.equals(this.urls, that.urls)
+            && Objects.equals(this.md5s, that.md5s);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class StateDataFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StateDataFilter stateDataFilter = (StateDataFilter) o;
-        return Objects.equals(this.input, stateDataFilter.input) && Objects.equals(this.output, stateDataFilter.output);
+        StateDataFilter that = (StateDataFilter) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output);
     }
 
     @Override

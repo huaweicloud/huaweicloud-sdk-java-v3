@@ -191,22 +191,19 @@ public class ItemResultDetailVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItemResultDetailVo itemResultDetailVo = (ItemResultDetailVo) o;
-        return Objects.equals(this.status, itemResultDetailVo.status)
-            && Objects.equals(this.level, itemResultDetailVo.level)
-            && Objects.equals(this.suggestion, itemResultDetailVo.suggestion)
-            && Objects.equals(this.response, itemResultDetailVo.response)
-            && Objects.equals(this.checkId, itemResultDetailVo.checkId)
-            && Objects.equals(this.checkName, itemResultDetailVo.checkName)
-            && Objects.equals(this.checkNameEn, itemResultDetailVo.checkNameEn)
-            && Objects.equals(this.suggestionUrl, itemResultDetailVo.suggestionUrl);
+        ItemResultDetailVo that = (ItemResultDetailVo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.checkId, that.checkId) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.checkNameEn, that.checkNameEn)
+            && Objects.equals(this.suggestionUrl, that.suggestionUrl);
     }
 
     @Override

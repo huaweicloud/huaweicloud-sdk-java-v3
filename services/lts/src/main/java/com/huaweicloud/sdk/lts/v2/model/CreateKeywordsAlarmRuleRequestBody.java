@@ -95,22 +95,15 @@ public class CreateKeywordsAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeywordsAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeywordsAlarmLevelEnum(value));
         }
 
         public static KeywordsAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -408,28 +401,26 @@ public class CreateKeywordsAlarmRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeywordsAlarmRuleRequestBody createKeywordsAlarmRuleRequestBody = (CreateKeywordsAlarmRuleRequestBody) o;
-        return Objects.equals(this.keywordsAlarmRuleName, createKeywordsAlarmRuleRequestBody.keywordsAlarmRuleName)
-            && Objects.equals(this.keywordsAlarmRuleDescription,
-                createKeywordsAlarmRuleRequestBody.keywordsAlarmRuleDescription)
-            && Objects.equals(this.keywordsRequests, createKeywordsAlarmRuleRequestBody.keywordsRequests)
-            && Objects.equals(this.frequency, createKeywordsAlarmRuleRequestBody.frequency)
-            && Objects.equals(this.keywordsAlarmLevel, createKeywordsAlarmRuleRequestBody.keywordsAlarmLevel)
-            && Objects.equals(this.keywordsAlarmSend, createKeywordsAlarmRuleRequestBody.keywordsAlarmSend)
-            && Objects.equals(this.domainId, createKeywordsAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, createKeywordsAlarmRuleRequestBody.notificationSaveRule)
-            && Objects.equals(this.triggerConditionCount, createKeywordsAlarmRuleRequestBody.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency,
-                createKeywordsAlarmRuleRequestBody.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, createKeywordsAlarmRuleRequestBody.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, createKeywordsAlarmRuleRequestBody.recoveryPolicy);
+        CreateKeywordsAlarmRuleRequestBody that = (CreateKeywordsAlarmRuleRequestBody) obj;
+        return Objects.equals(this.keywordsAlarmRuleName, that.keywordsAlarmRuleName)
+            && Objects.equals(this.keywordsAlarmRuleDescription, that.keywordsAlarmRuleDescription)
+            && Objects.equals(this.keywordsRequests, that.keywordsRequests)
+            && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.keywordsAlarmLevel, that.keywordsAlarmLevel)
+            && Objects.equals(this.keywordsAlarmSend, that.keywordsAlarmSend)
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.notificationSaveRule, that.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

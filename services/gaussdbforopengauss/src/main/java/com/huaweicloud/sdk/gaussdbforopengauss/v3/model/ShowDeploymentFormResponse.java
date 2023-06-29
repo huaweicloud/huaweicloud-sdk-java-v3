@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,28 +11,23 @@ import java.util.Objects;
  */
 public class ShowDeploymentFormResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initial_node_num")
-    
+    @JsonProperty(value = "initial_node_num")
 
     private Integer initialNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="solution")
-    
+    @JsonProperty(value = "solution")
 
     private String solution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shard_num")
-    
+    @JsonProperty(value = "shard_num")
 
     private Integer shardNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replica_num")
-    
+    @JsonProperty(value = "replica_num")
 
     private Integer replicaNum;
 
@@ -48,9 +35,6 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.initialNodeNum = initialNodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 初始节点数。
@@ -64,15 +48,10 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.initialNodeNum = initialNodeNum;
     }
 
-    
-
     public ShowDeploymentFormResponse withSolution(String solution) {
         this.solution = solution;
         return this;
     }
-
-    
-
 
     /**
      * 解决方案模板名称。
@@ -86,15 +65,10 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.solution = solution;
     }
 
-    
-
     public ShowDeploymentFormResponse withShardNum(Integer shardNum) {
         this.shardNum = shardNum;
         return this;
     }
-
-    
-
 
     /**
      * 分片数。
@@ -108,15 +82,10 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.shardNum = shardNum;
     }
 
-    
-
     public ShowDeploymentFormResponse withReplicaNum(Integer replicaNum) {
         this.replicaNum = replicaNum;
         return this;
     }
-
-    
-
 
     /**
      * 副本数。
@@ -130,26 +99,24 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         this.replicaNum = replicaNum;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentFormResponse showDeploymentFormResponse = (ShowDeploymentFormResponse) o;
-        return Objects.equals(this.initialNodeNum, showDeploymentFormResponse.initialNodeNum) &&
-            Objects.equals(this.solution, showDeploymentFormResponse.solution) &&
-            Objects.equals(this.shardNum, showDeploymentFormResponse.shardNum) &&
-            Objects.equals(this.replicaNum, showDeploymentFormResponse.replicaNum);
+        ShowDeploymentFormResponse that = (ShowDeploymentFormResponse) obj;
+        return Objects.equals(this.initialNodeNum, that.initialNodeNum) && Objects.equals(this.solution, that.solution)
+            && Objects.equals(this.shardNum, that.shardNum) && Objects.equals(this.replicaNum, that.replicaNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(initialNodeNum, solution, shardNum, replicaNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,6 +128,7 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -171,8 +139,5 @@ public class ShowDeploymentFormResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

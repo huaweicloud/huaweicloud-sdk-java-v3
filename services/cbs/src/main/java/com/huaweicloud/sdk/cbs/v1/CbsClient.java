@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.cbs.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.cbs.v1.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 
 public class CbsClient {
+
     protected HcClient hcClient;
 
     public CbsClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class CbsClient {
     public static ClientBuilder<CbsClient> newBuilder() {
         return new ClientBuilder<>(CbsClient::new, "BasicCredentials");
     }
-
 
     /**
      * 热点问题统计
@@ -43,8 +43,10 @@ public class CbsClient {
      * @param CollectHotQuestionsRequest 请求对象
      * @return SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>
      */
-    public SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse> collectHotQuestionsInvoker(CollectHotQuestionsRequest request) {
-        return new SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>(request, CbsMeta.collectHotQuestions, hcClient);
+    public SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse> collectHotQuestionsInvoker(
+        CollectHotQuestionsRequest request) {
+        return new SyncInvoker<CollectHotQuestionsRequest, CollectHotQuestionsResponse>(request,
+            CbsMeta.collectHotQuestions, hcClient);
     }
 
     /**
@@ -71,8 +73,10 @@ public class CbsClient {
      * @param CollectKeyWordsRequest 请求对象
      * @return SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>
      */
-    public SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse> collectKeyWordsInvoker(CollectKeyWordsRequest request) {
-        return new SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>(request, CbsMeta.collectKeyWords, hcClient);
+    public SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse> collectKeyWordsInvoker(
+        CollectKeyWordsRequest request) {
+        return new SyncInvoker<CollectKeyWordsRequest, CollectKeyWordsResponse>(request, CbsMeta.collectKeyWords,
+            hcClient);
     }
 
     /**
@@ -101,8 +105,10 @@ public class CbsClient {
      * @param CollectReplyRatesRequest 请求对象
      * @return SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>
      */
-    public SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse> collectReplyRatesInvoker(CollectReplyRatesRequest request) {
-        return new SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>(request, CbsMeta.collectReplyRates, hcClient);
+    public SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse> collectReplyRatesInvoker(
+        CollectReplyRatesRequest request) {
+        return new SyncInvoker<CollectReplyRatesRequest, CollectReplyRatesResponse>(request, CbsMeta.collectReplyRates,
+            hcClient);
     }
 
     /**
@@ -129,8 +135,10 @@ public class CbsClient {
      * @param CollectSessionStatsRequest 请求对象
      * @return SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>
      */
-    public SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse> collectSessionStatsInvoker(CollectSessionStatsRequest request) {
-        return new SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>(request, CbsMeta.collectSessionStats, hcClient);
+    public SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse> collectSessionStatsInvoker(
+        CollectSessionStatsRequest request) {
+        return new SyncInvoker<CollectSessionStatsRequest, CollectSessionStatsResponse>(request,
+            CbsMeta.collectSessionStats, hcClient);
     }
 
     /**
@@ -211,8 +219,10 @@ public class CbsClient {
      * @param ExecuteComposeVideoRequest 请求对象
      * @return SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>
      */
-    public SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideoInvoker(ExecuteComposeVideoRequest request) {
-        return new SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>(request, CbsMeta.executeComposeVideo, hcClient);
+    public SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse> executeComposeVideoInvoker(
+        ExecuteComposeVideoRequest request) {
+        return new SyncInvoker<ExecuteComposeVideoRequest, ExecuteComposeVideoResponse>(request,
+            CbsMeta.executeComposeVideo, hcClient);
     }
 
     /**
@@ -237,8 +247,10 @@ public class CbsClient {
      * @param ExecuteComposeVideoOndemandRequest 请求对象
      * @return SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>
      */
-    public SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandInvoker(ExecuteComposeVideoOndemandRequest request) {
-        return new SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>(request, CbsMeta.executeComposeVideoOndemand, hcClient);
+    public SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse> executeComposeVideoOndemandInvoker(
+        ExecuteComposeVideoOndemandRequest request) {
+        return new SyncInvoker<ExecuteComposeVideoOndemandRequest, ExecuteComposeVideoOndemandResponse>(request,
+            CbsMeta.executeComposeVideoOndemand, hcClient);
     }
 
     /**
@@ -263,8 +275,10 @@ public class CbsClient {
      * @param ExecuteCreateVideoRequest 请求对象
      * @return SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>
      */
-    public SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideoInvoker(ExecuteCreateVideoRequest request) {
-        return new SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>(request, CbsMeta.executeCreateVideo, hcClient);
+    public SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse> executeCreateVideoInvoker(
+        ExecuteCreateVideoRequest request) {
+        return new SyncInvoker<ExecuteCreateVideoRequest, ExecuteCreateVideoResponse>(request,
+            CbsMeta.executeCreateVideo, hcClient);
     }
 
     /**
@@ -289,8 +303,10 @@ public class CbsClient {
      * @param ExecuteDeleteVideoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>
      */
-    public SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdInvoker(ExecuteDeleteVideoByIdRequest request) {
-        return new SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>(request, CbsMeta.executeDeleteVideoById, hcClient);
+    public SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse> executeDeleteVideoByIdInvoker(
+        ExecuteDeleteVideoByIdRequest request) {
+        return new SyncInvoker<ExecuteDeleteVideoByIdRequest, ExecuteDeleteVideoByIdResponse>(request,
+            CbsMeta.executeDeleteVideoById, hcClient);
     }
 
     /**
@@ -315,8 +331,10 @@ public class CbsClient {
      * @param ExecuteDeleteimageByIdRequest 请求对象
      * @return SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>
      */
-    public SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageByIdInvoker(ExecuteDeleteimageByIdRequest request) {
-        return new SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>(request, CbsMeta.executeDeleteimageById, hcClient);
+    public SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse> executeDeleteimageByIdInvoker(
+        ExecuteDeleteimageByIdRequest request) {
+        return new SyncInvoker<ExecuteDeleteimageByIdRequest, ExecuteDeleteimageByIdResponse>(request,
+            CbsMeta.executeDeleteimageById, hcClient);
     }
 
     /**
@@ -341,8 +359,10 @@ public class CbsClient {
      * @param ExecuteGetCharacterInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>
      */
-    public SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdInvoker(ExecuteGetCharacterInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>(request, CbsMeta.executeGetCharacterInfoById, hcClient);
+    public SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse> executeGetCharacterInfoByIdInvoker(
+        ExecuteGetCharacterInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteGetCharacterInfoByIdRequest, ExecuteGetCharacterInfoByIdResponse>(request,
+            CbsMeta.executeGetCharacterInfoById, hcClient);
     }
 
     /**
@@ -373,8 +393,10 @@ public class CbsClient {
      * @param ExecuteGetCharactersRequest 请求对象
      * @return SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>
      */
-    public SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharactersInvoker(ExecuteGetCharactersRequest request) {
-        return new SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>(request, CbsMeta.executeGetCharacters, hcClient);
+    public SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse> executeGetCharactersInvoker(
+        ExecuteGetCharactersRequest request) {
+        return new SyncInvoker<ExecuteGetCharactersRequest, ExecuteGetCharactersResponse>(request,
+            CbsMeta.executeGetCharacters, hcClient);
     }
 
     /**
@@ -387,7 +409,8 @@ public class CbsClient {
      * @param ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return ExecuteGetFramsListByImagesIdResponse
      */
-    public ExecuteGetFramsListByImagesIdResponse executeGetFramsListByImagesId(ExecuteGetFramsListByImagesIdRequest request) {
+    public ExecuteGetFramsListByImagesIdResponse executeGetFramsListByImagesId(
+        ExecuteGetFramsListByImagesIdRequest request) {
         return hcClient.syncInvokeHttp(request, CbsMeta.executeGetFramsListByImagesId);
     }
 
@@ -401,8 +424,10 @@ public class CbsClient {
      * @param ExecuteGetFramsListByImagesIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>
      */
-    public SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdInvoker(ExecuteGetFramsListByImagesIdRequest request) {
-        return new SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>(request, CbsMeta.executeGetFramsListByImagesId, hcClient);
+    public SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse> executeGetFramsListByImagesIdInvoker(
+        ExecuteGetFramsListByImagesIdRequest request) {
+        return new SyncInvoker<ExecuteGetFramsListByImagesIdRequest, ExecuteGetFramsListByImagesIdResponse>(request,
+            CbsMeta.executeGetFramsListByImagesId, hcClient);
     }
 
     /**
@@ -427,8 +452,10 @@ public class CbsClient {
      * @param ExecuteGetImagesListRequest 请求对象
      * @return SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>
      */
-    public SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesListInvoker(ExecuteGetImagesListRequest request) {
-        return new SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>(request, CbsMeta.executeGetImagesList, hcClient);
+    public SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse> executeGetImagesListInvoker(
+        ExecuteGetImagesListRequest request) {
+        return new SyncInvoker<ExecuteGetImagesListRequest, ExecuteGetImagesListResponse>(request,
+            CbsMeta.executeGetImagesList, hcClient);
     }
 
     /**
@@ -453,8 +480,10 @@ public class CbsClient {
      * @param ExecuteGetVideoInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>
      */
-    public SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdInvoker(ExecuteGetVideoInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>(request, CbsMeta.executeGetVideoInfoById, hcClient);
+    public SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse> executeGetVideoInfoByIdInvoker(
+        ExecuteGetVideoInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteGetVideoInfoByIdRequest, ExecuteGetVideoInfoByIdResponse>(request,
+            CbsMeta.executeGetVideoInfoById, hcClient);
     }
 
     /**
@@ -481,8 +510,10 @@ public class CbsClient {
      * @param ExecuteGetVideosListRequest 请求对象
      * @return SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>
      */
-    public SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosListInvoker(ExecuteGetVideosListRequest request) {
-        return new SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>(request, CbsMeta.executeGetVideosList, hcClient);
+    public SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse> executeGetVideosListInvoker(
+        ExecuteGetVideosListRequest request) {
+        return new SyncInvoker<ExecuteGetVideosListRequest, ExecuteGetVideosListResponse>(request,
+            CbsMeta.executeGetVideosList, hcClient);
     }
 
     /**
@@ -507,8 +538,10 @@ public class CbsClient {
      * @param ExecutePostCreateImagesRequest 请求对象
      * @return SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>
      */
-    public SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImagesInvoker(ExecutePostCreateImagesRequest request) {
-        return new SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>(request, CbsMeta.executePostCreateImages, hcClient);
+    public SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse> executePostCreateImagesInvoker(
+        ExecutePostCreateImagesRequest request) {
+        return new SyncInvoker<ExecutePostCreateImagesRequest, ExecutePostCreateImagesResponse>(request,
+            CbsMeta.executePostCreateImages, hcClient);
     }
 
     /**
@@ -563,8 +596,10 @@ public class CbsClient {
      * @param ExecuteSessionRequest 请求对象
      * @return SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>
      */
-    public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(ExecuteSessionRequest request) {
-        return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession, hcClient);
+    public SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse> executeSessionInvoker(
+        ExecuteSessionRequest request) {
+        return new SyncInvoker<ExecuteSessionRequest, ExecuteSessionResponse>(request, CbsMeta.executeSession,
+            hcClient);
     }
 
     /**
@@ -589,8 +624,10 @@ public class CbsClient {
      * @param ExecuteUpdateImageNameRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>
      */
-    public SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageNameInvoker(ExecuteUpdateImageNameRequest request) {
-        return new SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>(request, CbsMeta.executeUpdateImageName, hcClient);
+    public SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse> executeUpdateImageNameInvoker(
+        ExecuteUpdateImageNameRequest request) {
+        return new SyncInvoker<ExecuteUpdateImageNameRequest, ExecuteUpdateImageNameResponse>(request,
+            CbsMeta.executeUpdateImageName, hcClient);
     }
 
     /**
@@ -615,8 +652,10 @@ public class CbsClient {
      * @param ExecuteUpdateVideoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>
      */
-    public SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdInvoker(ExecuteUpdateVideoByIdRequest request) {
-        return new SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>(request, CbsMeta.executeUpdateVideoById, hcClient);
+    public SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse> executeUpdateVideoByIdInvoker(
+        ExecuteUpdateVideoByIdRequest request) {
+        return new SyncInvoker<ExecuteUpdateVideoByIdRequest, ExecuteUpdateVideoByIdResponse>(request,
+            CbsMeta.executeUpdateVideoById, hcClient);
     }
 
     /**
@@ -643,8 +682,10 @@ public class CbsClient {
      * @param ExecuteUpdateVideoInfoByIdRequest 请求对象
      * @return SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>
      */
-    public SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdInvoker(ExecuteUpdateVideoInfoByIdRequest request) {
-        return new SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>(request, CbsMeta.executeUpdateVideoInfoById, hcClient);
+    public SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse> executeUpdateVideoInfoByIdInvoker(
+        ExecuteUpdateVideoInfoByIdRequest request) {
+        return new SyncInvoker<ExecuteUpdateVideoInfoByIdRequest, ExecuteUpdateVideoInfoByIdResponse>(request,
+            CbsMeta.executeUpdateVideoInfoById, hcClient);
     }
 
     /**
@@ -673,8 +714,10 @@ public class CbsClient {
      * @param ExecuteUploadImageRequest 请求对象
      * @return SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>
      */
-    public SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImageInvoker(ExecuteUploadImageRequest request) {
-        return new SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>(request, CbsMeta.executeUploadImage, hcClient);
+    public SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse> executeUploadImageInvoker(
+        ExecuteUploadImageRequest request) {
+        return new SyncInvoker<ExecuteUploadImageRequest, ExecuteUploadImageResponse>(request,
+            CbsMeta.executeUploadImage, hcClient);
     }
 
     /**
@@ -705,8 +748,10 @@ public class CbsClient {
      * @param ExecuteUploadPptRequest 请求对象
      * @return SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>
      */
-    public SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPptInvoker(ExecuteUploadPptRequest request) {
-        return new SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>(request, CbsMeta.executeUploadPpt, hcClient);
+    public SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse> executeUploadPptInvoker(
+        ExecuteUploadPptRequest request) {
+        return new SyncInvoker<ExecuteUploadPptRequest, ExecuteUploadPptResponse>(request, CbsMeta.executeUploadPpt,
+            hcClient);
     }
 
     /**
@@ -733,8 +778,10 @@ public class CbsClient {
      * @param ListSuggestionsRequest 请求对象
      * @return SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>
      */
-    public SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsInvoker(ListSuggestionsRequest request) {
-        return new SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>(request, CbsMeta.listSuggestions, hcClient);
+    public SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse> listSuggestionsInvoker(
+        ListSuggestionsRequest request) {
+        return new SyncInvoker<ListSuggestionsRequest, ListSuggestionsResponse>(request, CbsMeta.listSuggestions,
+            hcClient);
     }
 
     /**
@@ -789,8 +836,10 @@ public class CbsClient {
      * @param TagSatisfactionRequest 请求对象
      * @return SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>
      */
-    public SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse> tagSatisfactionInvoker(TagSatisfactionRequest request) {
-        return new SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>(request, CbsMeta.tagSatisfaction, hcClient);
+    public SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse> tagSatisfactionInvoker(
+        TagSatisfactionRequest request) {
+        return new SyncInvoker<TagSatisfactionRequest, TagSatisfactionResponse>(request, CbsMeta.tagSatisfaction,
+            hcClient);
     }
 
     /**

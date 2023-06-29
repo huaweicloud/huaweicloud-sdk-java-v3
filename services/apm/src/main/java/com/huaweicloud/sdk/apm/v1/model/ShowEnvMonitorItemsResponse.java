@@ -93,16 +93,16 @@ public class ShowEnvMonitorItemsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvMonitorItemsResponse showEnvMonitorItemsResponse = (ShowEnvMonitorItemsResponse) o;
-        return Objects.equals(this.categoryInfoList, showEnvMonitorItemsResponse.categoryInfoList)
-            && Objects.equals(this.monitorItemInfoList, showEnvMonitorItemsResponse.monitorItemInfoList);
+        ShowEnvMonitorItemsResponse that = (ShowEnvMonitorItemsResponse) obj;
+        return Objects.equals(this.categoryInfoList, that.categoryInfoList)
+            && Objects.equals(this.monitorItemInfoList, that.monitorItemInfoList);
     }
 
     @Override

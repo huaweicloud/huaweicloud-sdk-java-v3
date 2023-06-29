@@ -90,22 +90,15 @@ public class ListHostsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -272,21 +265,18 @@ public class ListHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostsRequest listHostsRequest = (ListHostsRequest) o;
-        return Objects.equals(this.groupId, listHostsRequest.groupId)
-            && Objects.equals(this.asProxy, listHostsRequest.asProxy)
-            && Objects.equals(this.offset, listHostsRequest.offset)
-            && Objects.equals(this.limit, listHostsRequest.limit) && Objects.equals(this.name, listHostsRequest.name)
-            && Objects.equals(this.sortKey, listHostsRequest.sortKey)
-            && Objects.equals(this.sortDir, listHostsRequest.sortDir)
-            && Objects.equals(this.withAuth, listHostsRequest.withAuth);
+        ListHostsRequest that = (ListHostsRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.asProxy, that.asProxy)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.withAuth, that.withAuth);
     }
 
     @Override

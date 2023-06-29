@@ -101,17 +101,16 @@ public class ListRequestPropertiesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestPropertiesResponse listRequestPropertiesResponse = (ListRequestPropertiesResponse) o;
-        return Objects.equals(this.total, listRequestPropertiesResponse.total)
-            && Objects.equals(this.size, listRequestPropertiesResponse.size)
-            && Objects.equals(this.items, listRequestPropertiesResponse.items);
+        ListRequestPropertiesResponse that = (ListRequestPropertiesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

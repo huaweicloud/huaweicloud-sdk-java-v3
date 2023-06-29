@@ -143,20 +143,17 @@ public class CreateNatGatewaySnatRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNatGatewaySnatRuleOption createNatGatewaySnatRuleOption = (CreateNatGatewaySnatRuleOption) o;
-        return Objects.equals(this.natGatewayId, createNatGatewaySnatRuleOption.natGatewayId)
-            && Objects.equals(this.cidr, createNatGatewaySnatRuleOption.cidr)
-            && Objects.equals(this.networkId, createNatGatewaySnatRuleOption.networkId)
-            && Objects.equals(this.description, createNatGatewaySnatRuleOption.description)
-            && Objects.equals(this.sourceType, createNatGatewaySnatRuleOption.sourceType)
-            && Objects.equals(this.floatingIpId, createNatGatewaySnatRuleOption.floatingIpId);
+        CreateNatGatewaySnatRuleOption that = (CreateNatGatewaySnatRuleOption) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.floatingIpId, that.floatingIpId);
     }
 
     @Override

@@ -231,24 +231,20 @@ public class ListInstancesNodeResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesNodeResult listInstancesNodeResult = (ListInstancesNodeResult) o;
-        return Objects.equals(this.id, listInstancesNodeResult.id)
-            && Objects.equals(this.name, listInstancesNodeResult.name)
-            && Objects.equals(this.status, listInstancesNodeResult.status)
-            && Objects.equals(this.role, listInstancesNodeResult.role)
-            && Objects.equals(this.subnetId, listInstancesNodeResult.subnetId)
-            && Objects.equals(this.privateIp, listInstancesNodeResult.privateIp)
-            && Objects.equals(this.publicIp, listInstancesNodeResult.publicIp)
-            && Objects.equals(this.specCode, listInstancesNodeResult.specCode)
-            && Objects.equals(this.availabilityZone, listInstancesNodeResult.availabilityZone)
-            && Objects.equals(this.supportReduce, listInstancesNodeResult.supportReduce);
+        ListInstancesNodeResult that = (ListInstancesNodeResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.supportReduce, that.supportReduce);
     }
 
     @Override

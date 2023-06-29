@@ -33,15 +33,15 @@ public class CreateGroupResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGroupResp createGroupResp = (CreateGroupResp) o;
-        return Objects.equals(this.name, createGroupResp.name);
+        CreateGroupResp that = (CreateGroupResp) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

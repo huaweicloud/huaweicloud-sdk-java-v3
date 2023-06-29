@@ -121,17 +121,17 @@ public class MetadataTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataTask metadataTask = (MetadataTask) o;
-        return Objects.equals(this.id, metadataTask.id) && Objects.equals(this.name, metadataTask.name)
-            && Objects.equals(this.startDate, metadataTask.startDate)
-            && Objects.equals(this.status, metadataTask.status) && Objects.equals(this.type, metadataTask.type);
+        MetadataTask that = (MetadataTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

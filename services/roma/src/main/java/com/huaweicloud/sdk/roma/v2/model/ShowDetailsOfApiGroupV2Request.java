@@ -55,16 +55,15 @@ public class ShowDetailsOfApiGroupV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfApiGroupV2Request showDetailsOfApiGroupV2Request = (ShowDetailsOfApiGroupV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfApiGroupV2Request.instanceId)
-            && Objects.equals(this.groupId, showDetailsOfApiGroupV2Request.groupId);
+        ShowDetailsOfApiGroupV2Request that = (ShowDetailsOfApiGroupV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

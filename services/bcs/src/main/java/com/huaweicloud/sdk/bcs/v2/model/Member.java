@@ -158,18 +158,17 @@ public class Member {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Member member = (Member) o;
-        return Objects.equals(this.tcsNeed, member.tcsNeed) && Objects.equals(this.channelName, member.channelName)
-            && Objects.equals(this.invitedOrgs, member.invitedOrgs)
-            && Objects.equals(this.invitorInfo, member.invitorInfo)
-            && Objects.equals(this.inviteeInfo, member.inviteeInfo);
+        Member that = (Member) obj;
+        return Objects.equals(this.tcsNeed, that.tcsNeed) && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.invitedOrgs, that.invitedOrgs) && Objects.equals(this.invitorInfo, that.invitorInfo)
+            && Objects.equals(this.inviteeInfo, that.inviteeInfo);
     }
 
     @Override

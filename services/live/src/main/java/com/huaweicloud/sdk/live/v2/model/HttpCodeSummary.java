@@ -74,16 +74,15 @@ public class HttpCodeSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpCodeSummary httpCodeSummary = (HttpCodeSummary) o;
-        return Objects.equals(this.httpCodes, httpCodeSummary.httpCodes)
-            && Objects.equals(this.time, httpCodeSummary.time);
+        HttpCodeSummary that = (HttpCodeSummary) obj;
+        return Objects.equals(this.httpCodes, that.httpCodes) && Objects.equals(this.time, that.time);
     }
 
     @Override

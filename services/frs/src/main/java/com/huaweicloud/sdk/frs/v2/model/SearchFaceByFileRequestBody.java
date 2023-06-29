@@ -190,20 +190,17 @@ public class SearchFaceByFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchFaceByFileRequestBody searchFaceByFileRequestBody = (SearchFaceByFileRequestBody) o;
-        return Objects.equals(this.imageFile, searchFaceByFileRequestBody.imageFile)
-            && Objects.equals(this.topN, searchFaceByFileRequestBody.topN)
-            && Objects.equals(this.threshold, searchFaceByFileRequestBody.threshold)
-            && Objects.equals(this.sort, searchFaceByFileRequestBody.sort)
-            && Objects.equals(this.filter, searchFaceByFileRequestBody.filter)
-            && Objects.equals(this.returnFields, searchFaceByFileRequestBody.returnFields);
+        SearchFaceByFileRequestBody that = (SearchFaceByFileRequestBody) obj;
+        return Objects.equals(this.imageFile, that.imageFile) && Objects.equals(this.topN, that.topN)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.returnFields, that.returnFields);
     }
 
     @Override

@@ -118,18 +118,17 @@ public class TemplateGroupCollection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateGroupCollection templateGroupCollection = (TemplateGroupCollection) o;
-        return Objects.equals(this.groupCollectionId, templateGroupCollection.groupCollectionId)
-            && Objects.equals(this.name, templateGroupCollection.name)
-            && Objects.equals(this.description, templateGroupCollection.description)
-            && Objects.equals(this.templateGroupList, templateGroupCollection.templateGroupList);
+        TemplateGroupCollection that = (TemplateGroupCollection) obj;
+        return Objects.equals(this.groupCollectionId, that.groupCollectionId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.templateGroupList, that.templateGroupList);
     }
 
     @Override

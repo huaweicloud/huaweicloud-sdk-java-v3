@@ -43,15 +43,15 @@ public class UpdateMemberRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMemberRequestBody updateMemberRequestBody = (UpdateMemberRequestBody) o;
-        return Objects.equals(this.member, updateMemberRequestBody.member);
+        UpdateMemberRequestBody that = (UpdateMemberRequestBody) obj;
+        return Objects.equals(this.member, that.member);
     }
 
     @Override

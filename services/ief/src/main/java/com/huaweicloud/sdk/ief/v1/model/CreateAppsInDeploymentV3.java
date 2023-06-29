@@ -96,17 +96,16 @@ public class CreateAppsInDeploymentV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppsInDeploymentV3 createAppsInDeploymentV3 = (CreateAppsInDeploymentV3) o;
-        return Objects.equals(this.replicas, createAppsInDeploymentV3.replicas)
-            && Objects.equals(this.template, createAppsInDeploymentV3.template)
-            && Objects.equals(this.annotations, createAppsInDeploymentV3.annotations);
+        CreateAppsInDeploymentV3 that = (CreateAppsInDeploymentV3) obj;
+        return Objects.equals(this.replicas, that.replicas) && Objects.equals(this.template, that.template)
+            && Objects.equals(this.annotations, that.annotations);
     }
 
     @Override

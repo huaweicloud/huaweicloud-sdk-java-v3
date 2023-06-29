@@ -77,16 +77,15 @@ public class ListAnimatedGraphicsTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAnimatedGraphicsTaskResponse listAnimatedGraphicsTaskResponse = (ListAnimatedGraphicsTaskResponse) o;
-        return Objects.equals(this.total, listAnimatedGraphicsTaskResponse.total)
-            && Objects.equals(this.tasks, listAnimatedGraphicsTaskResponse.tasks);
+        ListAnimatedGraphicsTaskResponse that = (ListAnimatedGraphicsTaskResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

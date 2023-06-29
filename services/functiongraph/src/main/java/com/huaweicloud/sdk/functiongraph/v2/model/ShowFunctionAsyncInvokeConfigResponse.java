@@ -177,23 +177,21 @@ public class ShowFunctionAsyncInvokeConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFunctionAsyncInvokeConfigResponse showFunctionAsyncInvokeConfigResponse =
-            (ShowFunctionAsyncInvokeConfigResponse) o;
-        return Objects.equals(this.funcUrn, showFunctionAsyncInvokeConfigResponse.funcUrn)
-            && Objects.equals(this.maxAsyncEventAgeInSeconds,
-                showFunctionAsyncInvokeConfigResponse.maxAsyncEventAgeInSeconds)
-            && Objects.equals(this.maxAsyncRetryAttempts, showFunctionAsyncInvokeConfigResponse.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, showFunctionAsyncInvokeConfigResponse.destinationConfig)
-            && Objects.equals(this.createdTime, showFunctionAsyncInvokeConfigResponse.createdTime)
-            && Objects.equals(this.lastModified, showFunctionAsyncInvokeConfigResponse.lastModified)
-            && Objects.equals(this.enableAsyncStatusLog, showFunctionAsyncInvokeConfigResponse.enableAsyncStatusLog);
+        ShowFunctionAsyncInvokeConfigResponse that = (ShowFunctionAsyncInvokeConfigResponse) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn)
+            && Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, that.destinationConfig)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModified, that.lastModified)
+            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog);
     }
 
     @Override

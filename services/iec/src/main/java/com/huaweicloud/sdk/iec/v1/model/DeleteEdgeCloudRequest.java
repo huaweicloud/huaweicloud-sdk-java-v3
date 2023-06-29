@@ -33,15 +33,15 @@ public class DeleteEdgeCloudRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEdgeCloudRequest deleteEdgeCloudRequest = (DeleteEdgeCloudRequest) o;
-        return Objects.equals(this.edgecloudId, deleteEdgeCloudRequest.edgecloudId);
+        DeleteEdgeCloudRequest that = (DeleteEdgeCloudRequest) obj;
+        return Objects.equals(this.edgecloudId, that.edgecloudId);
     }
 
     @Override

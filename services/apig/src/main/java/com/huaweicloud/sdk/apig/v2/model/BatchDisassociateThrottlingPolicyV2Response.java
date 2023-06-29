@@ -76,17 +76,15 @@ public class BatchDisassociateThrottlingPolicyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDisassociateThrottlingPolicyV2Response batchDisassociateThrottlingPolicyV2Response =
-            (BatchDisassociateThrottlingPolicyV2Response) o;
-        return Objects.equals(this.successCount, batchDisassociateThrottlingPolicyV2Response.successCount)
-            && Objects.equals(this.failure, batchDisassociateThrottlingPolicyV2Response.failure);
+        BatchDisassociateThrottlingPolicyV2Response that = (BatchDisassociateThrottlingPolicyV2Response) obj;
+        return Objects.equals(this.successCount, that.successCount) && Objects.equals(this.failure, that.failure);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class PreviewTemplateBody {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class PreviewTemplateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreviewTemplateBody previewTemplateBody = (PreviewTemplateBody) o;
-        return Objects.equals(this.templates, previewTemplateBody.templates)
-            && Objects.equals(this.language, previewTemplateBody.language)
-            && Objects.equals(this.source, previewTemplateBody.source);
+        PreviewTemplateBody that = (PreviewTemplateBody) obj;
+        return Objects.equals(this.templates, that.templates) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.source, that.source);
     }
 
     @Override

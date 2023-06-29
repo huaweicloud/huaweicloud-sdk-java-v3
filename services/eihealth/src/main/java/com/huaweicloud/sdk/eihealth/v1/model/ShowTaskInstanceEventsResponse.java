@@ -75,16 +75,15 @@ public class ShowTaskInstanceEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInstanceEventsResponse showTaskInstanceEventsResponse = (ShowTaskInstanceEventsResponse) o;
-        return Objects.equals(this.count, showTaskInstanceEventsResponse.count)
-            && Objects.equals(this.events, showTaskInstanceEventsResponse.events);
+        ShowTaskInstanceEventsResponse that = (ShowTaskInstanceEventsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.events, that.events);
     }
 
     @Override

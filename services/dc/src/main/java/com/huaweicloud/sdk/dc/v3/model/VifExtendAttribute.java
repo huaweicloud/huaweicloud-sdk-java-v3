@@ -60,22 +60,15 @@ public class VifExtendAttribute {
             if (value == null) {
                 return null;
             }
-            HaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HaTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HaTypeEnum(value));
         }
 
         public static HaTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -160,22 +153,15 @@ public class VifExtendAttribute {
             if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HaModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HaModeEnum(value));
         }
 
         public static HaModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -342,21 +328,20 @@ public class VifExtendAttribute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VifExtendAttribute vifExtendAttribute = (VifExtendAttribute) o;
-        return Objects.equals(this.haType, vifExtendAttribute.haType)
-            && Objects.equals(this.haMode, vifExtendAttribute.haMode)
-            && Objects.equals(this.detectMultiplier, vifExtendAttribute.detectMultiplier)
-            && Objects.equals(this.minRxInterval, vifExtendAttribute.minRxInterval)
-            && Objects.equals(this.minTxInterval, vifExtendAttribute.minTxInterval)
-            && Objects.equals(this.remoteDisclaim, vifExtendAttribute.remoteDisclaim)
-            && Objects.equals(this.localDisclaim, vifExtendAttribute.localDisclaim);
+        VifExtendAttribute that = (VifExtendAttribute) obj;
+        return Objects.equals(this.haType, that.haType) && Objects.equals(this.haMode, that.haMode)
+            && Objects.equals(this.detectMultiplier, that.detectMultiplier)
+            && Objects.equals(this.minRxInterval, that.minRxInterval)
+            && Objects.equals(this.minTxInterval, that.minTxInterval)
+            && Objects.equals(this.remoteDisclaim, that.remoteDisclaim)
+            && Objects.equals(this.localDisclaim, that.localDisclaim);
     }
 
     @Override

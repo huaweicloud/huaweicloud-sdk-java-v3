@@ -118,18 +118,16 @@ public class NodeCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeCreateRequest nodeCreateRequest = (NodeCreateRequest) o;
-        return Objects.equals(this.kind, nodeCreateRequest.kind)
-            && Objects.equals(this.apiVersion, nodeCreateRequest.apiVersion)
-            && Objects.equals(this.metadata, nodeCreateRequest.metadata)
-            && Objects.equals(this.spec, nodeCreateRequest.spec);
+        NodeCreateRequest that = (NodeCreateRequest) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

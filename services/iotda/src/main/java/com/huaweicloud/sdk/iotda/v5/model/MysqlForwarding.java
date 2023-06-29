@@ -193,21 +193,18 @@ public class MysqlForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlForwarding mysqlForwarding = (MysqlForwarding) o;
-        return Objects.equals(this.address, mysqlForwarding.address)
-            && Objects.equals(this.dbName, mysqlForwarding.dbName)
-            && Objects.equals(this.username, mysqlForwarding.username)
-            && Objects.equals(this.password, mysqlForwarding.password)
-            && Objects.equals(this.enableSsl, mysqlForwarding.enableSsl)
-            && Objects.equals(this.tableName, mysqlForwarding.tableName)
-            && Objects.equals(this.columnMappings, mysqlForwarding.columnMappings);
+        MysqlForwarding that = (MysqlForwarding) obj;
+        return Objects.equals(this.address, that.address) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.enableSsl, that.enableSsl) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnMappings, that.columnMappings);
     }
 
     @Override

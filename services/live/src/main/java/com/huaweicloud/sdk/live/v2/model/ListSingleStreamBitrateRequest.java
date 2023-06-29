@@ -121,19 +121,17 @@ public class ListSingleStreamBitrateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSingleStreamBitrateRequest listSingleStreamBitrateRequest = (ListSingleStreamBitrateRequest) o;
-        return Objects.equals(this.domain, listSingleStreamBitrateRequest.domain)
-            && Objects.equals(this.app, listSingleStreamBitrateRequest.app)
-            && Objects.equals(this.stream, listSingleStreamBitrateRequest.stream)
-            && Objects.equals(this.startTime, listSingleStreamBitrateRequest.startTime)
-            && Objects.equals(this.endTime, listSingleStreamBitrateRequest.endTime);
+        ListSingleStreamBitrateRequest that = (ListSingleStreamBitrateRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

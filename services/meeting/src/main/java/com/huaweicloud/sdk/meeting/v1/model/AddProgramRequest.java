@@ -89,17 +89,16 @@ public class AddProgramRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProgramRequest addProgramRequest = (AddProgramRequest) o;
-        return Objects.equals(this.xRequestId, addProgramRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addProgramRequest.acceptLanguage)
-            && Objects.equals(this.body, addProgramRequest.body);
+        AddProgramRequest that = (AddProgramRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

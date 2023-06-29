@@ -232,24 +232,19 @@ public class NovaKeypairDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaKeypairDetail novaKeypairDetail = (NovaKeypairDetail) o;
-        return Objects.equals(this.publicKey, novaKeypairDetail.publicKey)
-            && Objects.equals(this.name, novaKeypairDetail.name)
-            && Objects.equals(this.fingerprint, novaKeypairDetail.fingerprint)
-            && Objects.equals(this.createdAt, novaKeypairDetail.createdAt)
-            && Objects.equals(this.deleted, novaKeypairDetail.deleted)
-            && Objects.equals(this.deletedAt, novaKeypairDetail.deletedAt)
-            && Objects.equals(this.id, novaKeypairDetail.id)
-            && Objects.equals(this.updatedAt, novaKeypairDetail.updatedAt)
-            && Objects.equals(this.userId, novaKeypairDetail.userId)
-            && Objects.equals(this.type, novaKeypairDetail.type);
+        NovaKeypairDetail that = (NovaKeypairDetail) obj;
+        return Objects.equals(this.publicKey, that.publicKey) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.fingerprint, that.fingerprint) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.deleted, that.deleted) && Objects.equals(this.deletedAt, that.deletedAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.type, that.type);
     }
 
     @Override

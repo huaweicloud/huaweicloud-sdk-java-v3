@@ -97,17 +97,16 @@ public class ListDuplicateApisForAppV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDuplicateApisForAppV2Response listDuplicateApisForAppV2Response = (ListDuplicateApisForAppV2Response) o;
-        return Objects.equals(this.size, listDuplicateApisForAppV2Response.size)
-            && Objects.equals(this.total, listDuplicateApisForAppV2Response.total)
-            && Objects.equals(this.apis, listDuplicateApisForAppV2Response.apis);
+        ListDuplicateApisForAppV2Response that = (ListDuplicateApisForAppV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apis, that.apis);
     }
 
     @Override

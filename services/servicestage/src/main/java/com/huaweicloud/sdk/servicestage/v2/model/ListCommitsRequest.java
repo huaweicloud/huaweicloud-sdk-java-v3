@@ -101,18 +101,16 @@ public class ListCommitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommitsRequest listCommitsRequest = (ListCommitsRequest) o;
-        return Objects.equals(this.xRepoAuth, listCommitsRequest.xRepoAuth)
-            && Objects.equals(this.namespace, listCommitsRequest.namespace)
-            && Objects.equals(this.project, listCommitsRequest.project)
-            && Objects.equals(this.ref, listCommitsRequest.ref);
+        ListCommitsRequest that = (ListCommitsRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.ref, that.ref);
     }
 
     @Override

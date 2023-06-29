@@ -65,16 +65,16 @@ public class DetectLiveFaceByBase64Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveFaceByBase64Request detectLiveFaceByBase64Request = (DetectLiveFaceByBase64Request) o;
-        return Objects.equals(this.enterpriseProjectId, detectLiveFaceByBase64Request.enterpriseProjectId)
-            && Objects.equals(this.body, detectLiveFaceByBase64Request.body);
+        DetectLiveFaceByBase64Request that = (DetectLiveFaceByBase64Request) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

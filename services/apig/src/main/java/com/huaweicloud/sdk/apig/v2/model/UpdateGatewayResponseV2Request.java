@@ -109,18 +109,16 @@ public class UpdateGatewayResponseV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGatewayResponseV2Request updateGatewayResponseV2Request = (UpdateGatewayResponseV2Request) o;
-        return Objects.equals(this.instanceId, updateGatewayResponseV2Request.instanceId)
-            && Objects.equals(this.groupId, updateGatewayResponseV2Request.groupId)
-            && Objects.equals(this.responseId, updateGatewayResponseV2Request.responseId)
-            && Objects.equals(this.body, updateGatewayResponseV2Request.body);
+        UpdateGatewayResponseV2Request that = (UpdateGatewayResponseV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.body, that.body);
     }
 
     @Override

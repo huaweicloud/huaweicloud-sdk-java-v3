@@ -376,29 +376,28 @@ public class RemoteAuthRuleVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoteAuthRuleVo remoteAuthRuleVo = (RemoteAuthRuleVo) o;
-        return Objects.equals(this.authServer, remoteAuthRuleVo.authServer)
-            && Objects.equals(this.requestMethod, remoteAuthRuleVo.requestMethod)
-            && Objects.equals(this.fileTypeSetting, remoteAuthRuleVo.fileTypeSetting)
-            && Objects.equals(this.specifiedFileType, remoteAuthRuleVo.specifiedFileType)
-            && Objects.equals(this.reserveArgsSetting, remoteAuthRuleVo.reserveArgsSetting)
-            && Objects.equals(this.reserveArgs, remoteAuthRuleVo.reserveArgs)
-            && Objects.equals(this.addCustomArgsRules, remoteAuthRuleVo.addCustomArgsRules)
-            && Objects.equals(this.reserveHeadersSetting, remoteAuthRuleVo.reserveHeadersSetting)
-            && Objects.equals(this.addCustomHeadersRules, remoteAuthRuleVo.addCustomHeadersRules)
-            && Objects.equals(this.authSuccessStatus, remoteAuthRuleVo.authSuccessStatus)
-            && Objects.equals(this.authFailedStatus, remoteAuthRuleVo.authFailedStatus)
-            && Objects.equals(this.responseStatus, remoteAuthRuleVo.responseStatus)
-            && Objects.equals(this.timeout, remoteAuthRuleVo.timeout)
-            && Objects.equals(this.timeoutAction, remoteAuthRuleVo.timeoutAction)
-            && Objects.equals(this.reserveHeaders, remoteAuthRuleVo.reserveHeaders);
+        RemoteAuthRuleVo that = (RemoteAuthRuleVo) obj;
+        return Objects.equals(this.authServer, that.authServer)
+            && Objects.equals(this.requestMethod, that.requestMethod)
+            && Objects.equals(this.fileTypeSetting, that.fileTypeSetting)
+            && Objects.equals(this.specifiedFileType, that.specifiedFileType)
+            && Objects.equals(this.reserveArgsSetting, that.reserveArgsSetting)
+            && Objects.equals(this.reserveArgs, that.reserveArgs)
+            && Objects.equals(this.addCustomArgsRules, that.addCustomArgsRules)
+            && Objects.equals(this.reserveHeadersSetting, that.reserveHeadersSetting)
+            && Objects.equals(this.addCustomHeadersRules, that.addCustomHeadersRules)
+            && Objects.equals(this.authSuccessStatus, that.authSuccessStatus)
+            && Objects.equals(this.authFailedStatus, that.authFailedStatus)
+            && Objects.equals(this.responseStatus, that.responseStatus) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.timeoutAction, that.timeoutAction)
+            && Objects.equals(this.reserveHeaders, that.reserveHeaders);
     }
 
     @Override

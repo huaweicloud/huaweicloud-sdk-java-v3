@@ -65,16 +65,15 @@ public class UpdateAlarmActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlarmActionRequest updateAlarmActionRequest = (UpdateAlarmActionRequest) o;
-        return Objects.equals(this.alarmId, updateAlarmActionRequest.alarmId)
-            && Objects.equals(this.body, updateAlarmActionRequest.body);
+        UpdateAlarmActionRequest that = (UpdateAlarmActionRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.body, that.body);
     }
 
     @Override

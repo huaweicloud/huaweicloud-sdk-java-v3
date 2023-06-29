@@ -79,17 +79,16 @@ public class ShowWorkflowExecutionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowExecutionRequest showWorkflowExecutionRequest = (ShowWorkflowExecutionRequest) o;
-        return Objects.equals(this.workflowId, showWorkflowExecutionRequest.workflowId)
-            && Objects.equals(this.executionId, showWorkflowExecutionRequest.executionId) && Objects
-                .equals(this.xGetWorkflowFullHistoryData, showWorkflowExecutionRequest.xGetWorkflowFullHistoryData);
+        ShowWorkflowExecutionRequest that = (ShowWorkflowExecutionRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId)
+            && Objects.equals(this.xGetWorkflowFullHistoryData, that.xGetWorkflowFullHistoryData);
     }
 
     @Override

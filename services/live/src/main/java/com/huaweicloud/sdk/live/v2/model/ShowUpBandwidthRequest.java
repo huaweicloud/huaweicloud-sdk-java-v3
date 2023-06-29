@@ -44,8 +44,8 @@ public class ShowUpBandwidthRequest {
     private List<String> isp = null;
 
     /**
-    * 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 
-    */
+     * 查询数据的时间粒度。支持300（默认值），3600和86400秒。不传值时，使用默认值300秒。 
+     */
     public static final class IntervalEnum {
 
         /**
@@ -94,22 +94,15 @@ public class ShowUpBandwidthRequest {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IntervalEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntervalEnum(value));
         }
 
         public static IntervalEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,22 +163,15 @@ public class ShowUpBandwidthRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -421,23 +407,19 @@ public class ShowUpBandwidthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpBandwidthRequest showUpBandwidthRequest = (ShowUpBandwidthRequest) o;
-        return Objects.equals(this.publishDomains, showUpBandwidthRequest.publishDomains)
-            && Objects.equals(this.app, showUpBandwidthRequest.app)
-            && Objects.equals(this.stream, showUpBandwidthRequest.stream)
-            && Objects.equals(this.region, showUpBandwidthRequest.region)
-            && Objects.equals(this.isp, showUpBandwidthRequest.isp)
-            && Objects.equals(this.interval, showUpBandwidthRequest.interval)
-            && Objects.equals(this.type, showUpBandwidthRequest.type)
-            && Objects.equals(this.startTime, showUpBandwidthRequest.startTime)
-            && Objects.equals(this.endTime, showUpBandwidthRequest.endTime);
+        ShowUpBandwidthRequest that = (ShowUpBandwidthRequest) obj;
+        return Objects.equals(this.publishDomains, that.publishDomains) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

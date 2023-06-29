@@ -75,17 +75,15 @@ public class ListWorkitemStatusRecordsV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkitemStatusRecordsV4Response listWorkitemStatusRecordsV4Response =
-            (ListWorkitemStatusRecordsV4Response) o;
-        return Objects.equals(this.records, listWorkitemStatusRecordsV4Response.records)
-            && Objects.equals(this.total, listWorkitemStatusRecordsV4Response.total);
+        ListWorkitemStatusRecordsV4Response that = (ListWorkitemStatusRecordsV4Response) obj;
+        return Objects.equals(this.records, that.records) && Objects.equals(this.total, that.total);
     }
 
     @Override

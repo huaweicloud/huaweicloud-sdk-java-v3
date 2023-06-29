@@ -33,15 +33,15 @@ public class DeleteRepositoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRepositoryRequest deleteRepositoryRequest = (DeleteRepositoryRequest) o;
-        return Objects.equals(this.repositoryUuid, deleteRepositoryRequest.repositoryUuid);
+        DeleteRepositoryRequest that = (DeleteRepositoryRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid);
     }
 
     @Override

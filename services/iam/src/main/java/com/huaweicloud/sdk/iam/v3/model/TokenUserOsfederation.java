@@ -114,17 +114,16 @@ public class TokenUserOsfederation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TokenUserOsfederation tokenUserOsfederation = (TokenUserOsfederation) o;
-        return Objects.equals(this.groups, tokenUserOsfederation.groups)
-            && Objects.equals(this.identityProvider, tokenUserOsfederation.identityProvider)
-            && Objects.equals(this.protocol, tokenUserOsfederation.protocol);
+        TokenUserOsfederation that = (TokenUserOsfederation) obj;
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.identityProvider, that.identityProvider)
+            && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

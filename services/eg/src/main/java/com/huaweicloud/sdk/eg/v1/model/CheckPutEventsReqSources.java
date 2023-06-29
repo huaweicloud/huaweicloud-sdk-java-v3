@@ -55,16 +55,15 @@ public class CheckPutEventsReqSources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckPutEventsReqSources checkPutEventsReqSources = (CheckPutEventsReqSources) o;
-        return Objects.equals(this.channelId, checkPutEventsReqSources.channelId)
-            && Objects.equals(this.sourceName, checkPutEventsReqSources.sourceName);
+        CheckPutEventsReqSources that = (CheckPutEventsReqSources) obj;
+        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.sourceName, that.sourceName);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class CreateMemberGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMemberGroupResponse createMemberGroupResponse = (CreateMemberGroupResponse) o;
-        return Objects.equals(this.size, createMemberGroupResponse.size)
-            && Objects.equals(this.total, createMemberGroupResponse.total)
-            && Objects.equals(this.memberGroups, createMemberGroupResponse.memberGroups);
+        CreateMemberGroupResponse that = (CreateMemberGroupResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.memberGroups, that.memberGroups);
     }
 
     @Override

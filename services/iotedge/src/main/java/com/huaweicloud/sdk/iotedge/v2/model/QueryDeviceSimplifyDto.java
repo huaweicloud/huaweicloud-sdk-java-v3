@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 设备信息
  */
-public class QueryDeviceSimplifyDto  {
-
+public class QueryDeviceSimplifyDto {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_id")
-    
+    @JsonProperty(value = "gateway_id")
 
     private String gatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
 
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol_type")
-    
+    @JsonProperty(value = "protocol_type")
 
     private String protocolType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
 
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
 
     private String productId;
 
@@ -63,9 +49,6 @@ public class QueryDeviceSimplifyDto  {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备id
@@ -79,15 +62,10 @@ public class QueryDeviceSimplifyDto  {
         this.deviceId = deviceId;
     }
 
-    
-
     public QueryDeviceSimplifyDto withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 设备识别码
@@ -101,15 +79,10 @@ public class QueryDeviceSimplifyDto  {
         this.nodeId = nodeId;
     }
 
-    
-
     public QueryDeviceSimplifyDto withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
     }
-
-    
-
 
     /**
      * 父设备id
@@ -123,15 +96,10 @@ public class QueryDeviceSimplifyDto  {
         this.gatewayId = gatewayId;
     }
 
-    
-
     public QueryDeviceSimplifyDto withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
-
-    
-
 
     /**
      * 设备名称
@@ -145,15 +113,10 @@ public class QueryDeviceSimplifyDto  {
         this.deviceName = deviceName;
     }
 
-    
-
     public QueryDeviceSimplifyDto withProtocolType(String protocolType) {
         this.protocolType = protocolType;
         return this;
     }
-
-    
-
 
     /**
      * 设备协议类型
@@ -167,15 +130,10 @@ public class QueryDeviceSimplifyDto  {
         this.protocolType = protocolType;
     }
 
-    
-
     public QueryDeviceSimplifyDto withProductName(String productName) {
         this.productName = productName;
         return this;
     }
-
-    
-
 
     /**
      * 产品名称
@@ -189,15 +147,10 @@ public class QueryDeviceSimplifyDto  {
         this.productName = productName;
     }
 
-    
-
     public QueryDeviceSimplifyDto withProductId(String productId) {
         this.productId = productId;
         return this;
     }
-
-    
-
 
     /**
      * 产品ID
@@ -211,29 +164,26 @@ public class QueryDeviceSimplifyDto  {
         this.productId = productId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDeviceSimplifyDto queryDeviceSimplifyDto = (QueryDeviceSimplifyDto) o;
-        return Objects.equals(this.deviceId, queryDeviceSimplifyDto.deviceId) &&
-            Objects.equals(this.nodeId, queryDeviceSimplifyDto.nodeId) &&
-            Objects.equals(this.gatewayId, queryDeviceSimplifyDto.gatewayId) &&
-            Objects.equals(this.deviceName, queryDeviceSimplifyDto.deviceName) &&
-            Objects.equals(this.protocolType, queryDeviceSimplifyDto.protocolType) &&
-            Objects.equals(this.productName, queryDeviceSimplifyDto.productName) &&
-            Objects.equals(this.productId, queryDeviceSimplifyDto.productId);
+        QueryDeviceSimplifyDto that = (QueryDeviceSimplifyDto) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.productId, that.productId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(deviceId, nodeId, gatewayId, deviceName, protocolType, productName, productId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class QueryDeviceSimplifyDto  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class QueryDeviceSimplifyDto  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

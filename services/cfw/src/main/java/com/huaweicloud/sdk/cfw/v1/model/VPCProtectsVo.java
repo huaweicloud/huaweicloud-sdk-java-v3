@@ -194,20 +194,18 @@ public class VPCProtectsVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VPCProtectsVo vpCProtectsVo = (VPCProtectsVo) o;
-        return Objects.equals(this.total, vpCProtectsVo.total)
-            && Objects.equals(this.selfTotal, vpCProtectsVo.selfTotal)
-            && Objects.equals(this.otherTotal, vpCProtectsVo.otherTotal)
-            && Objects.equals(this.protectVpcs, vpCProtectsVo.protectVpcs)
-            && Objects.equals(this.selfProtectVpcs, vpCProtectsVo.selfProtectVpcs)
-            && Objects.equals(this.otherProtectVpcs, vpCProtectsVo.otherProtectVpcs);
+        VPCProtectsVo that = (VPCProtectsVo) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.selfTotal, that.selfTotal)
+            && Objects.equals(this.otherTotal, that.otherTotal) && Objects.equals(this.protectVpcs, that.protectVpcs)
+            && Objects.equals(this.selfProtectVpcs, that.selfProtectVpcs)
+            && Objects.equals(this.otherProtectVpcs, that.otherProtectVpcs);
     }
 
     @Override

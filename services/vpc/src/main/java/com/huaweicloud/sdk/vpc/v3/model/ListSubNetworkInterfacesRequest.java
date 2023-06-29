@@ -324,23 +324,19 @@ public class ListSubNetworkInterfacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubNetworkInterfacesRequest listSubNetworkInterfacesRequest = (ListSubNetworkInterfacesRequest) o;
-        return Objects.equals(this.limit, listSubNetworkInterfacesRequest.limit)
-            && Objects.equals(this.marker, listSubNetworkInterfacesRequest.marker)
-            && Objects.equals(this.id, listSubNetworkInterfacesRequest.id)
-            && Objects.equals(this.virsubnetId, listSubNetworkInterfacesRequest.virsubnetId)
-            && Objects.equals(this.privateIpAddress, listSubNetworkInterfacesRequest.privateIpAddress)
-            && Objects.equals(this.macAddress, listSubNetworkInterfacesRequest.macAddress)
-            && Objects.equals(this.vpcId, listSubNetworkInterfacesRequest.vpcId)
-            && Objects.equals(this.description, listSubNetworkInterfacesRequest.description)
-            && Objects.equals(this.parentId, listSubNetworkInterfacesRequest.parentId);
+        ListSubNetworkInterfacesRequest that = (ListSubNetworkInterfacesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.macAddress, that.macAddress) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

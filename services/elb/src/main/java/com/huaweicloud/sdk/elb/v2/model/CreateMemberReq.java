@@ -169,21 +169,18 @@ public class CreateMemberReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMemberReq createMemberReq = (CreateMemberReq) o;
-        return Objects.equals(this.tenantId, createMemberReq.tenantId)
-            && Objects.equals(this.name, createMemberReq.name)
-            && Objects.equals(this.adminStateUp, createMemberReq.adminStateUp)
-            && Objects.equals(this.protocolPort, createMemberReq.protocolPort)
-            && Objects.equals(this.subnetId, createMemberReq.subnetId)
-            && Objects.equals(this.address, createMemberReq.address)
-            && Objects.equals(this.weight, createMemberReq.weight);
+        CreateMemberReq that = (CreateMemberReq) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

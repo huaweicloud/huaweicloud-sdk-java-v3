@@ -77,16 +77,16 @@ public class TxNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TxNode txNode = (TxNode) o;
-        return Objects.equals(this.txNodeId, txNode.txNodeId) && Objects.equals(this.txNodeName, txNode.txNodeName)
-            && Objects.equals(this.txNodeType, txNode.txNodeType);
+        TxNode that = (TxNode) obj;
+        return Objects.equals(this.txNodeId, that.txNodeId) && Objects.equals(this.txNodeName, that.txNodeName)
+            && Objects.equals(this.txNodeType, that.txNodeType);
     }
 
     @Override

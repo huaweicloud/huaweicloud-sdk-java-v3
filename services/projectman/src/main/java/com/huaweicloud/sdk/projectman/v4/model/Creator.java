@@ -33,15 +33,15 @@ public class Creator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Creator creator = (Creator) o;
-        return Objects.equals(this.userId, creator.userId);
+        Creator that = (Creator) obj;
+        return Objects.equals(this.userId, that.userId);
     }
 
     @Override

@@ -123,19 +123,17 @@ public class AsyncDeviceCommandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncDeviceCommandRequest asyncDeviceCommandRequest = (AsyncDeviceCommandRequest) o;
-        return Objects.equals(this.serviceId, asyncDeviceCommandRequest.serviceId)
-            && Objects.equals(this.commandName, asyncDeviceCommandRequest.commandName)
-            && Objects.equals(this.paras, asyncDeviceCommandRequest.paras)
-            && Objects.equals(this.expireTime, asyncDeviceCommandRequest.expireTime)
-            && Objects.equals(this.sendStrategy, asyncDeviceCommandRequest.sendStrategy);
+        AsyncDeviceCommandRequest that = (AsyncDeviceCommandRequest) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandName, that.commandName)
+            && Objects.equals(this.paras, that.paras) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.sendStrategy, that.sendStrategy);
     }
 
     @Override

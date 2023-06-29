@@ -74,15 +74,15 @@ public class Brokers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Brokers brokers = (Brokers) o;
-        return Objects.equals(this.brokerName, brokers.brokerName) && Objects.equals(this.queues, brokers.queues);
+        Brokers that = (Brokers) obj;
+        return Objects.equals(this.brokerName, that.brokerName) && Objects.equals(this.queues, that.queues);
     }
 
     @Override

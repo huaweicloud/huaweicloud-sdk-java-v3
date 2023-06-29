@@ -146,19 +146,17 @@ public class CreateTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskRequestBody createTaskRequestBody = (CreateTaskRequestBody) o;
-        return Objects.equals(this.name, createTaskRequestBody.name)
-            && Objects.equals(this.projectId, createTaskRequestBody.projectId)
-            && Objects.equals(this.temps, createTaskRequestBody.temps)
-            && Objects.equals(this.operateMode, createTaskRequestBody.operateMode)
-            && Objects.equals(this.benchConcurrent, createTaskRequestBody.benchConcurrent);
+        CreateTaskRequestBody that = (CreateTaskRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.temps, that.temps) && Objects.equals(this.operateMode, that.operateMode)
+            && Objects.equals(this.benchConcurrent, that.benchConcurrent);
     }
 
     @Override

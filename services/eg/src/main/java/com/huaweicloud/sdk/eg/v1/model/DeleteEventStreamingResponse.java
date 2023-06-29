@@ -58,16 +58,16 @@ public class DeleteEventStreamingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEventStreamingResponse deleteEventStreamingResponse = (DeleteEventStreamingResponse) o;
-        return Objects.equals(this.eventStreamingID, deleteEventStreamingResponse.eventStreamingID)
-            && Objects.equals(this.xRequestId, deleteEventStreamingResponse.xRequestId);
+        DeleteEventStreamingResponse that = (DeleteEventStreamingResponse) obj;
+        return Objects.equals(this.eventStreamingID, that.eventStreamingID)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

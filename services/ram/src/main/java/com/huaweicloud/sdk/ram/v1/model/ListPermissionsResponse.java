@@ -84,16 +84,15 @@ public class ListPermissionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPermissionsResponse listPermissionsResponse = (ListPermissionsResponse) o;
-        return Objects.equals(this.permissions, listPermissionsResponse.permissions)
-            && Objects.equals(this.pageInfo, listPermissionsResponse.pageInfo);
+        ListPermissionsResponse that = (ListPermissionsResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

@@ -273,25 +273,20 @@ public class ShowDeviceMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceMessageResponse showDeviceMessageResponse = (ShowDeviceMessageResponse) o;
-        return Objects.equals(this.messageId, showDeviceMessageResponse.messageId)
-            && Objects.equals(this.name, showDeviceMessageResponse.name)
-            && Objects.equals(this.message, showDeviceMessageResponse.message)
-            && Objects.equals(this.encoding, showDeviceMessageResponse.encoding)
-            && Objects.equals(this.payloadFormat, showDeviceMessageResponse.payloadFormat)
-            && Objects.equals(this.topic, showDeviceMessageResponse.topic)
-            && Objects.equals(this.properties, showDeviceMessageResponse.properties)
-            && Objects.equals(this.status, showDeviceMessageResponse.status)
-            && Objects.equals(this.errorInfo, showDeviceMessageResponse.errorInfo)
-            && Objects.equals(this.createdTime, showDeviceMessageResponse.createdTime)
-            && Objects.equals(this.finishedTime, showDeviceMessageResponse.finishedTime);
+        ShowDeviceMessageResponse that = (ShowDeviceMessageResponse) obj;
+        return Objects.equals(this.messageId, that.messageId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.encoding, that.encoding)
+            && Objects.equals(this.payloadFormat, that.payloadFormat) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.finishedTime, that.finishedTime);
     }
 
     @Override

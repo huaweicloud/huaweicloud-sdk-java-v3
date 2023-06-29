@@ -89,22 +89,15 @@ public class PublicTemplateItem {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,21 +264,19 @@ public class PublicTemplateItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicTemplateItem publicTemplateItem = (PublicTemplateItem) o;
-        return Objects.equals(this.name, publicTemplateItem.name)
-            && Objects.equals(this.category, publicTemplateItem.category)
-            && Objects.equals(this.registerStatus, publicTemplateItem.registerStatus)
-            && Objects.equals(this.providerName, publicTemplateItem.providerName)
-            && Objects.equals(this.description, publicTemplateItem.description)
-            && Objects.equals(this.createTime, publicTemplateItem.createTime)
-            && Objects.equals(this.lastModifyTime, publicTemplateItem.lastModifyTime);
+        PublicTemplateItem that = (PublicTemplateItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.registerStatus, that.registerStatus)
+            && Objects.equals(this.providerName, that.providerName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime);
     }
 
     @Override

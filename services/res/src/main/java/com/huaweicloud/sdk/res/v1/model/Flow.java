@@ -507,27 +507,27 @@ public class Flow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flow flow = (Flow) o;
-        return Objects.equals(this.flowId, flow.flowId)
-            && Objects.equals(this.attrPairRulesFilter, flow.attrPairRulesFilter)
-            && Objects.equals(this.attrPairRulesReserve, flow.attrPairRulesReserve)
-            && Objects.equals(this.deduplicationList, flow.deduplicationList)
-            && Objects.equals(this.attributeInfo, flow.attributeInfo)
-            && Objects.equals(this.bloomFilterConf, flow.bloomFilterConf)
-            && Objects.equals(this.groupAttr, flow.groupAttr) && Objects.equals(this.preDeal, flow.preDeal)
-            && Objects.equals(this.rankSetting, flow.rankSetting) && Objects.equals(this.rules, flow.rules)
-            && Objects.equals(this.filterSets, flow.filterSets)
-            && Objects.equals(this.attrValueRulesFilter, flow.attrValueRulesFilter)
-            && Objects.equals(this.attrValueRulesReserve, flow.attrValueRulesReserve)
-            && Objects.equals(this.ctrJob, flow.ctrJob) && Objects.equals(this.ratio, flow.ratio)
-            && Objects.equals(this.toppings, flow.toppings);
+        Flow that = (Flow) obj;
+        return Objects.equals(this.flowId, that.flowId)
+            && Objects.equals(this.attrPairRulesFilter, that.attrPairRulesFilter)
+            && Objects.equals(this.attrPairRulesReserve, that.attrPairRulesReserve)
+            && Objects.equals(this.deduplicationList, that.deduplicationList)
+            && Objects.equals(this.attributeInfo, that.attributeInfo)
+            && Objects.equals(this.bloomFilterConf, that.bloomFilterConf)
+            && Objects.equals(this.groupAttr, that.groupAttr) && Objects.equals(this.preDeal, that.preDeal)
+            && Objects.equals(this.rankSetting, that.rankSetting) && Objects.equals(this.rules, that.rules)
+            && Objects.equals(this.filterSets, that.filterSets)
+            && Objects.equals(this.attrValueRulesFilter, that.attrValueRulesFilter)
+            && Objects.equals(this.attrValueRulesReserve, that.attrValueRulesReserve)
+            && Objects.equals(this.ctrJob, that.ctrJob) && Objects.equals(this.ratio, that.ratio)
+            && Objects.equals(this.toppings, that.toppings);
     }
 
     @Override

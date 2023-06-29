@@ -53,15 +53,15 @@ public class BatchDisassociatePublicipsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDisassociatePublicipsResponse batchDisassociatePublicipsResponse = (BatchDisassociatePublicipsResponse) o;
-        return Objects.equals(this.jobIds, batchDisassociatePublicipsResponse.jobIds);
+        BatchDisassociatePublicipsResponse that = (BatchDisassociatePublicipsResponse) obj;
+        return Objects.equals(this.jobIds, that.jobIds);
     }
 
     @Override

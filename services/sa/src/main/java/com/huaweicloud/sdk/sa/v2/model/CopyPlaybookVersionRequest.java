@@ -87,17 +87,16 @@ public class CopyPlaybookVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopyPlaybookVersionRequest copyPlaybookVersionRequest = (CopyPlaybookVersionRequest) o;
-        return Objects.equals(this.workspaceId, copyPlaybookVersionRequest.workspaceId)
-            && Objects.equals(this.versionId, copyPlaybookVersionRequest.versionId)
-            && Objects.equals(this.body, copyPlaybookVersionRequest.body);
+        CopyPlaybookVersionRequest that = (CopyPlaybookVersionRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

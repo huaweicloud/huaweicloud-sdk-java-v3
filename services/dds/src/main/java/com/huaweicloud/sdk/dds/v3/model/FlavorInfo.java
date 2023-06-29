@@ -184,18 +184,18 @@ public class FlavorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorInfo flavorInfo = (FlavorInfo) o;
-        return Objects.equals(this.engineName, flavorInfo.engineName) && Objects.equals(this.type, flavorInfo.type)
-            && Objects.equals(this.vcpus, flavorInfo.vcpus) && Objects.equals(this.ram, flavorInfo.ram)
-            && Objects.equals(this.specCode, flavorInfo.specCode) && Objects.equals(this.azStatus, flavorInfo.azStatus)
-            && Objects.equals(this.engineVersions, flavorInfo.engineVersions);
+        FlavorInfo that = (FlavorInfo) obj;
+        return Objects.equals(this.engineName, that.engineName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.engineVersions, that.engineVersions);
     }
 
     @Override

@@ -281,25 +281,20 @@ public class SimplePremiumWafHost {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimplePremiumWafHost simplePremiumWafHost = (SimplePremiumWafHost) o;
-        return Objects.equals(this.id, simplePremiumWafHost.id)
-            && Objects.equals(this.hostname, simplePremiumWafHost.hostname)
-            && Objects.equals(this.extend, simplePremiumWafHost.extend)
-            && Objects.equals(this.region, simplePremiumWafHost.region)
-            && Objects.equals(this.flag, simplePremiumWafHost.flag)
-            && Objects.equals(this.description, simplePremiumWafHost.description)
-            && Objects.equals(this.policyid, simplePremiumWafHost.policyid)
-            && Objects.equals(this.protectStatus, simplePremiumWafHost.protectStatus)
-            && Objects.equals(this.accessStatus, simplePremiumWafHost.accessStatus)
-            && Objects.equals(this.webTag, simplePremiumWafHost.webTag)
-            && Objects.equals(this.hostid, simplePremiumWafHost.hostid);
+        SimplePremiumWafHost that = (SimplePremiumWafHost) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.hostid, that.hostid);
     }
 
     @Override

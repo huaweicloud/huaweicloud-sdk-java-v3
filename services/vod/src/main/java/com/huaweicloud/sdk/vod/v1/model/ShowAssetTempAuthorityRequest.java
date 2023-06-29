@@ -191,22 +191,18 @@ public class ShowAssetTempAuthorityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetTempAuthorityRequest showAssetTempAuthorityRequest = (ShowAssetTempAuthorityRequest) o;
-        return Objects.equals(this.xSdkDate, showAssetTempAuthorityRequest.xSdkDate)
-            && Objects.equals(this.httpVerb, showAssetTempAuthorityRequest.httpVerb)
-            && Objects.equals(this.bucket, showAssetTempAuthorityRequest.bucket)
-            && Objects.equals(this.objectKey, showAssetTempAuthorityRequest.objectKey)
-            && Objects.equals(this.contentType, showAssetTempAuthorityRequest.contentType)
-            && Objects.equals(this.contentMd5, showAssetTempAuthorityRequest.contentMd5)
-            && Objects.equals(this.uploadId, showAssetTempAuthorityRequest.uploadId)
-            && Objects.equals(this.partNumber, showAssetTempAuthorityRequest.partNumber);
+        ShowAssetTempAuthorityRequest that = (ShowAssetTempAuthorityRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.httpVerb, that.httpVerb)
+            && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.objectKey, that.objectKey)
+            && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.contentMd5, that.contentMd5)
+            && Objects.equals(this.uploadId, that.uploadId) && Objects.equals(this.partNumber, that.partNumber);
     }
 
     @Override

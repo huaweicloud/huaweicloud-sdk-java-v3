@@ -100,18 +100,16 @@ public class ListSpecialThrottlingConfigurationsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpecialThrottlingConfigurationsV2Response listSpecialThrottlingConfigurationsV2Response =
-            (ListSpecialThrottlingConfigurationsV2Response) o;
-        return Objects.equals(this.size, listSpecialThrottlingConfigurationsV2Response.size)
-            && Objects.equals(this.total, listSpecialThrottlingConfigurationsV2Response.total)
-            && Objects.equals(this.throttleSpecials, listSpecialThrottlingConfigurationsV2Response.throttleSpecials);
+        ListSpecialThrottlingConfigurationsV2Response that = (ListSpecialThrottlingConfigurationsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.throttleSpecials, that.throttleSpecials);
     }
 
     @Override

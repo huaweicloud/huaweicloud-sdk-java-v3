@@ -321,25 +321,22 @@ public class IncidentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentInfo incidentInfo = (IncidentInfo) o;
-        return Objects.equals(this.incidentId, incidentInfo.incidentId) && Objects.equals(this.type, incidentInfo.type)
-            && Objects.equals(this.businessTypeName, incidentInfo.businessTypeName)
-            && Objects.equals(this.incidentTypeName, incidentInfo.incidentTypeName)
-            && Objects.equals(this.customerId, incidentInfo.customerId)
-            && Objects.equals(this.xcustomerId, incidentInfo.xcustomerId)
-            && Objects.equals(this.xcustomerName, incidentInfo.xcustomerName)
-            && Objects.equals(this.dcName, incidentInfo.dcName)
-            && Objects.equals(this.simpleDescribe, incidentInfo.simpleDescribe)
-            && Objects.equals(this.status, incidentInfo.status)
-            && Objects.equals(this.createTime, incidentInfo.createTime) && Objects.equals(this.gray, incidentInfo.gray)
-            && Objects.equals(this.labelList, incidentInfo.labelList);
+        IncidentInfo that = (IncidentInfo) obj;
+        return Objects.equals(this.incidentId, that.incidentId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.businessTypeName, that.businessTypeName)
+            && Objects.equals(this.incidentTypeName, that.incidentTypeName)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.xcustomerId, that.xcustomerId)
+            && Objects.equals(this.xcustomerName, that.xcustomerName) && Objects.equals(this.dcName, that.dcName)
+            && Objects.equals(this.simpleDescribe, that.simpleDescribe) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.gray, that.gray)
+            && Objects.equals(this.labelList, that.labelList);
     }
 
     @Override

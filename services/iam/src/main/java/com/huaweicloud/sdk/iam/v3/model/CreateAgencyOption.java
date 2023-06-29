@@ -85,22 +85,15 @@ public class CreateAgencyOption {
             if (value == null) {
                 return null;
             }
-            DurationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DurationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DurationEnum(value));
         }
 
         public static DurationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DurationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,18 @@ public class CreateAgencyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAgencyOption createAgencyOption = (CreateAgencyOption) o;
-        return Objects.equals(this.name, createAgencyOption.name)
-            && Objects.equals(this.domainId, createAgencyOption.domainId)
-            && Objects.equals(this.trustDomainId, createAgencyOption.trustDomainId)
-            && Objects.equals(this.trustDomainName, createAgencyOption.trustDomainName)
-            && Objects.equals(this.description, createAgencyOption.description)
-            && Objects.equals(this.duration, createAgencyOption.duration);
+        CreateAgencyOption that = (CreateAgencyOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.trustDomainId, that.trustDomainId)
+            && Objects.equals(this.trustDomainName, that.trustDomainName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

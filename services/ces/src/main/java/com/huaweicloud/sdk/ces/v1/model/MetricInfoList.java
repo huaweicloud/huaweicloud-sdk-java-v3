@@ -118,18 +118,16 @@ public class MetricInfoList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricInfoList metricInfoList = (MetricInfoList) o;
-        return Objects.equals(this.dimensions, metricInfoList.dimensions)
-            && Objects.equals(this.metricName, metricInfoList.metricName)
-            && Objects.equals(this.namespace, metricInfoList.namespace)
-            && Objects.equals(this.unit, metricInfoList.unit);
+        MetricInfoList that = (MetricInfoList) obj;
+        return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

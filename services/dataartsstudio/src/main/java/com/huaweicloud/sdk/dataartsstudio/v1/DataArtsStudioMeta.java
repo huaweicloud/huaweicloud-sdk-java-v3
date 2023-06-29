@@ -4544,7 +4544,7 @@ public class DataArtsStudioMeta {
         HttpRequestDef.Builder<ListQualityTaskListsRequest, ListQualityTaskListsResponse> builder = HttpRequestDef
             .builder(HttpMethod.GET, ListQualityTaskListsRequest.class, ListQualityTaskListsResponse.class)
             .withName("ListQualityTaskLists")
-            .withUri("/dqc/v1/{project_id}/rules")
+            .withUri("/v1/{project_id}/quality/rules")
             .withContentType("application/json");
 
         // requests

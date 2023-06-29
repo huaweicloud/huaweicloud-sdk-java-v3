@@ -373,27 +373,22 @@ public class ShowWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowResponse showWorkflowResponse = (ShowWorkflowResponse) o;
-        return Objects.equals(this.id, showWorkflowResponse.id) && Objects.equals(this.name, showWorkflowResponse.name)
-            && Objects.equals(this.version, showWorkflowResponse.version)
-            && Objects.equals(this.summary, showWorkflowResponse.summary)
-            && Objects.equals(this.description, showWorkflowResponse.description)
-            && Objects.equals(this.labels, showWorkflowResponse.labels)
-            && Objects.equals(this.timeout, showWorkflowResponse.timeout)
-            && Objects.equals(this.outputDir, showWorkflowResponse.outputDir)
-            && Objects.equals(this.tasks, showWorkflowResponse.tasks)
-            && Objects.equals(this.appSnapshotSign, showWorkflowResponse.appSnapshotSign)
-            && Objects.equals(this.createTime, showWorkflowResponse.createTime)
-            && Objects.equals(this.updateTime, showWorkflowResponse.updateTime)
-            && Objects.equals(this.sourceProjectName, showWorkflowResponse.sourceProjectName)
-            && Objects.equals(this.sourceResourceId, showWorkflowResponse.sourceResourceId);
+        ShowWorkflowResponse that = (ShowWorkflowResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.appSnapshotSign, that.appSnapshotSign)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId);
     }
 
     @Override

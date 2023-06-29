@@ -88,22 +88,15 @@ public class AppQuotaInfo {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,22 +297,19 @@ public class AppQuotaInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppQuotaInfo appQuotaInfo = (AppQuotaInfo) o;
-        return Objects.equals(this.appQuotaId, appQuotaInfo.appQuotaId) && Objects.equals(this.name, appQuotaInfo.name)
-            && Objects.equals(this.callLimits, appQuotaInfo.callLimits)
-            && Objects.equals(this.timeUnit, appQuotaInfo.timeUnit)
-            && Objects.equals(this.timeInterval, appQuotaInfo.timeInterval)
-            && Objects.equals(this.remark, appQuotaInfo.remark)
-            && Objects.equals(this.resetTime, appQuotaInfo.resetTime)
-            && Objects.equals(this.createTime, appQuotaInfo.createTime)
-            && Objects.equals(this.boundAppNum, appQuotaInfo.boundAppNum);
+        AppQuotaInfo that = (AppQuotaInfo) obj;
+        return Objects.equals(this.appQuotaId, that.appQuotaId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.callLimits, that.callLimits) && Objects.equals(this.timeUnit, that.timeUnit)
+            && Objects.equals(this.timeInterval, that.timeInterval) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.resetTime, that.resetTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.boundAppNum, that.boundAppNum);
     }
 
     @Override

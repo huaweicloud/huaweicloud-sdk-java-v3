@@ -213,23 +213,20 @@ public class QuerySubCustomerListReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuerySubCustomerListReq querySubCustomerListReq = (QuerySubCustomerListReq) o;
-        return Objects.equals(this.accountName, querySubCustomerListReq.accountName)
-            && Objects.equals(this.customer, querySubCustomerListReq.customer)
-            && Objects.equals(this.offset, querySubCustomerListReq.offset)
-            && Objects.equals(this.limit, querySubCustomerListReq.limit)
-            && Objects.equals(this.label, querySubCustomerListReq.label)
-            && Objects.equals(this.associationType, querySubCustomerListReq.associationType)
-            && Objects.equals(this.associatedOnBegin, querySubCustomerListReq.associatedOnBegin)
-            && Objects.equals(this.associatedOnEnd, querySubCustomerListReq.associatedOnEnd)
-            && Objects.equals(this.indirectPartnerId, querySubCustomerListReq.indirectPartnerId);
+        QuerySubCustomerListReq that = (QuerySubCustomerListReq) obj;
+        return Objects.equals(this.accountName, that.accountName) && Objects.equals(this.customer, that.customer)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.associationType, that.associationType)
+            && Objects.equals(this.associatedOnBegin, that.associatedOnBegin)
+            && Objects.equals(this.associatedOnEnd, that.associatedOnEnd)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

@@ -219,20 +219,20 @@ public class Links {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Links links = (Links) o;
-        return Objects.equals(this.linkConfigValues, links.linkConfigValues)
-            && Objects.equals(this.creationUser, links.creationUser) && Objects.equals(this.name, links.name)
-            && Objects.equals(this.id, links.id) && Objects.equals(this.creationDate, links.creationDate)
-            && Objects.equals(this.connectorName, links.connectorName)
-            && Objects.equals(this.updateDate, links.updateDate) && Objects.equals(this.enabled, links.enabled)
-            && Objects.equals(this.updateUser, links.updateUser);
+        Links that = (Links) obj;
+        return Objects.equals(this.linkConfigValues, that.linkConfigValues)
+            && Objects.equals(this.creationUser, that.creationUser) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.creationDate, that.creationDate)
+            && Objects.equals(this.connectorName, that.connectorName)
+            && Objects.equals(this.updateDate, that.updateDate) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

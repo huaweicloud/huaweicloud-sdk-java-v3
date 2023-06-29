@@ -143,17 +143,17 @@ public class Flavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flavor flavor = (Flavor) o;
-        return Objects.equals(this.engineName, flavor.engineName) && Objects.equals(this.type, flavor.type)
-            && Objects.equals(this.vcpus, flavor.vcpus) && Objects.equals(this.ram, flavor.ram)
-            && Objects.equals(this.specCode, flavor.specCode) && Objects.equals(this.azStatus, flavor.azStatus);
+        Flavor that = (Flavor) obj;
+        return Objects.equals(this.engineName, that.engineName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azStatus, that.azStatus);
     }
 
     @Override

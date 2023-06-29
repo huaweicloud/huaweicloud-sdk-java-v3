@@ -65,16 +65,15 @@ public class UploadIssueImgRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadIssueImgRequest uploadIssueImgRequest = (UploadIssueImgRequest) o;
-        return Objects.equals(this.projectId, uploadIssueImgRequest.projectId)
-            && Objects.equals(this.body, uploadIssueImgRequest.body);
+        UploadIssueImgRequest that = (UploadIssueImgRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

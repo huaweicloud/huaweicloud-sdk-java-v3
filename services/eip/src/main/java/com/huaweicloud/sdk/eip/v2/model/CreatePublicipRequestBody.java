@@ -96,17 +96,17 @@ public class CreatePublicipRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePublicipRequestBody createPublicipRequestBody = (CreatePublicipRequestBody) o;
-        return Objects.equals(this.bandwidth, createPublicipRequestBody.bandwidth)
-            && Objects.equals(this.enterpriseProjectId, createPublicipRequestBody.enterpriseProjectId)
-            && Objects.equals(this.publicip, createPublicipRequestBody.publicip);
+        CreatePublicipRequestBody that = (CreatePublicipRequestBody) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.publicip, that.publicip);
     }
 
     @Override

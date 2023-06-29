@@ -149,19 +149,17 @@ public class ListRtcUserListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcUserListResponse listRtcUserListResponse = (ListRtcUserListResponse) o;
-        return Objects.equals(this.total, listRtcUserListResponse.total)
-            && Objects.equals(this.limit, listRtcUserListResponse.limit)
-            && Objects.equals(this.offset, listRtcUserListResponse.offset)
-            && Objects.equals(this.users, listRtcUserListResponse.users)
-            && Objects.equals(this.xRequestId, listRtcUserListResponse.xRequestId);
+        ListRtcUserListResponse that = (ListRtcUserListResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.users, that.users)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

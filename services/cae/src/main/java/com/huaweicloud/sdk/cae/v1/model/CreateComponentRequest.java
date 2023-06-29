@@ -113,18 +113,17 @@ public class CreateComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComponentRequest createComponentRequest = (CreateComponentRequest) o;
-        return Objects.equals(this.xEnvironmentID, createComponentRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, createComponentRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, createComponentRequest.applicationId)
-            && Objects.equals(this.body, createComponentRequest.body);
+        CreateComponentRequest that = (CreateComponentRequest) obj;
+        return Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -96,22 +96,15 @@ public class VideoTemplateInfo {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QualityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QualityEnum(value));
         }
 
         public static QualityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -239,19 +232,17 @@ public class VideoTemplateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoTemplateInfo videoTemplateInfo = (VideoTemplateInfo) o;
-        return Objects.equals(this.quality, videoTemplateInfo.quality)
-            && Objects.equals(this.width, videoTemplateInfo.width)
-            && Objects.equals(this.height, videoTemplateInfo.height)
-            && Objects.equals(this.bitrate, videoTemplateInfo.bitrate)
-            && Objects.equals(this.frameRate, videoTemplateInfo.frameRate);
+        VideoTemplateInfo that = (VideoTemplateInfo) obj;
+        return Objects.equals(this.quality, that.quality) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.frameRate, that.frameRate);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class ActionDeviceAlarm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionDeviceAlarm actionDeviceAlarm = (ActionDeviceAlarm) o;
-        return Objects.equals(this.name, actionDeviceAlarm.name)
-            && Objects.equals(this.alarmStatus, actionDeviceAlarm.alarmStatus)
-            && Objects.equals(this.severity, actionDeviceAlarm.severity)
-            && Objects.equals(this.dimension, actionDeviceAlarm.dimension)
-            && Objects.equals(this.description, actionDeviceAlarm.description);
+        ActionDeviceAlarm that = (ActionDeviceAlarm) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.alarmStatus, that.alarmStatus)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -248,20 +248,19 @@ public class ApiAuthCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAuthCreate apiAuthCreate = (ApiAuthCreate) o;
-        return Objects.equals(this.envId, apiAuthCreate.envId) && Objects.equals(this.appIds, apiAuthCreate.appIds)
-            && Objects.equals(this.apiIds, apiAuthCreate.apiIds)
-            && Objects.equals(this.authTunnel, apiAuthCreate.authTunnel)
-            && Objects.equals(this.authWhitelist, apiAuthCreate.authWhitelist)
-            && Objects.equals(this.authBlacklist, apiAuthCreate.authBlacklist)
-            && Objects.equals(this.visitParams, apiAuthCreate.visitParams);
+        ApiAuthCreate that = (ApiAuthCreate) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.appIds, that.appIds)
+            && Objects.equals(this.apiIds, that.apiIds) && Objects.equals(this.authTunnel, that.authTunnel)
+            && Objects.equals(this.authWhitelist, that.authWhitelist)
+            && Objects.equals(this.authBlacklist, that.authBlacklist)
+            && Objects.equals(this.visitParams, that.visitParams);
     }
 
     @Override

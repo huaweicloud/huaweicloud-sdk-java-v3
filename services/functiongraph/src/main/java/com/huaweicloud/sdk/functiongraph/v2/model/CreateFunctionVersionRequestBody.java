@@ -77,17 +77,16 @@ public class CreateFunctionVersionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionVersionRequestBody createFunctionVersionRequestBody = (CreateFunctionVersionRequestBody) o;
-        return Objects.equals(this.digest, createFunctionVersionRequestBody.digest)
-            && Objects.equals(this.version, createFunctionVersionRequestBody.version)
-            && Objects.equals(this.description, createFunctionVersionRequestBody.description);
+        CreateFunctionVersionRequestBody that = (CreateFunctionVersionRequestBody) obj;
+        return Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

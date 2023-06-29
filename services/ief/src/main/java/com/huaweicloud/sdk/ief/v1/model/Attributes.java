@@ -55,15 +55,15 @@ public class Attributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attributes attributes = (Attributes) o;
-        return Objects.equals(this.key, attributes.key) && Objects.equals(this.value, attributes.value);
+        Attributes that = (Attributes) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

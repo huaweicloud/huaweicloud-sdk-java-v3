@@ -122,18 +122,17 @@ public class BackPoolMemVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackPoolMemVO backPoolMemVO = (BackPoolMemVO) o;
-        return Objects.equals(this.id, backPoolMemVO.id) && Objects.equals(this.cid, backPoolMemVO.cid)
-            && Objects.equals(this.simPricePlanId, backPoolMemVO.simPricePlanId)
-            && Objects.equals(this.flowUsed, backPoolMemVO.flowUsed)
-            && Objects.equals(this.simStatus, backPoolMemVO.simStatus);
+        BackPoolMemVO that = (BackPoolMemVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.cid, that.cid)
+            && Objects.equals(this.simPricePlanId, that.simPricePlanId) && Objects.equals(this.flowUsed, that.flowUsed)
+            && Objects.equals(this.simStatus, that.simStatus);
     }
 
     @Override

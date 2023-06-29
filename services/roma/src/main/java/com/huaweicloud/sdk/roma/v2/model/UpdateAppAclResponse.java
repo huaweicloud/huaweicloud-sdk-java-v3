@@ -97,17 +97,16 @@ public class UpdateAppAclResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAppAclResponse updateAppAclResponse = (UpdateAppAclResponse) o;
-        return Objects.equals(this.appId, updateAppAclResponse.appId)
-            && Objects.equals(this.appAclType, updateAppAclResponse.appAclType)
-            && Objects.equals(this.appAclValues, updateAppAclResponse.appAclValues);
+        UpdateAppAclResponse that = (UpdateAppAclResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appAclType, that.appAclType)
+            && Objects.equals(this.appAclValues, that.appAclValues);
     }
 
     @Override

@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.*;
 
 public class GaussDBforopenGaussClient {
+
     protected HcClient hcClient;
 
     public GaussDBforopenGaussClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class GaussDBforopenGaussClient {
     public static ClientBuilder<GaussDBforopenGaussClient> newBuilder() {
         return new ClientBuilder<>(GaussDBforopenGaussClient::new);
     }
-
 
     /**
      * 添加实例标签。
@@ -41,8 +41,10 @@ public class GaussDBforopenGaussClient {
      * @param AddInstanceTagsRequest 请求对象
      * @return SyncInvoker<AddInstanceTagsRequest, AddInstanceTagsResponse>
      */
-    public SyncInvoker<AddInstanceTagsRequest, AddInstanceTagsResponse> addInstanceTagsInvoker(AddInstanceTagsRequest request) {
-        return new SyncInvoker<AddInstanceTagsRequest, AddInstanceTagsResponse>(request, GaussDBforopenGaussMeta.addInstanceTags, hcClient);
+    public SyncInvoker<AddInstanceTagsRequest, AddInstanceTagsResponse> addInstanceTagsInvoker(
+        AddInstanceTagsRequest request) {
+        return new SyncInvoker<AddInstanceTagsRequest, AddInstanceTagsResponse>(request,
+            GaussDBforopenGaussMeta.addInstanceTags, hcClient);
     }
 
     /**
@@ -69,8 +71,10 @@ public class GaussDBforopenGaussClient {
      * @param AllowDbPrivilegesRequest 请求对象
      * @return SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>
      */
-    public SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> allowDbPrivilegesInvoker(AllowDbPrivilegesRequest request) {
-        return new SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>(request, GaussDBforopenGaussMeta.allowDbPrivileges, hcClient);
+    public SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse> allowDbPrivilegesInvoker(
+        AllowDbPrivilegesRequest request) {
+        return new SyncInvoker<AllowDbPrivilegesRequest, AllowDbPrivilegesResponse>(request,
+            GaussDBforopenGaussMeta.allowDbPrivileges, hcClient);
     }
 
     /**
@@ -98,7 +102,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<AttachEipRequest, AttachEipResponse>
      */
     public SyncInvoker<AttachEipRequest, AttachEipResponse> attachEipInvoker(AttachEipRequest request) {
-        return new SyncInvoker<AttachEipRequest, AttachEipResponse>(request, GaussDBforopenGaussMeta.attachEip, hcClient);
+        return new SyncInvoker<AttachEipRequest, AttachEipResponse>(request, GaussDBforopenGaussMeta.attachEip,
+            hcClient);
     }
 
     /**
@@ -125,8 +130,10 @@ public class GaussDBforopenGaussClient {
      * @param CopyConfigurationRequest 请求对象
      * @return SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>
      */
-    public SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationInvoker(CopyConfigurationRequest request) {
-        return new SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request, GaussDBforopenGaussMeta.copyConfiguration, hcClient);
+    public SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse> copyConfigurationInvoker(
+        CopyConfigurationRequest request) {
+        return new SyncInvoker<CopyConfigurationRequest, CopyConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.copyConfiguration, hcClient);
     }
 
     /**
@@ -153,8 +160,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateConfigurationTemplateRequest 请求对象
      * @return SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>
      */
-    public SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> createConfigurationTemplateInvoker(CreateConfigurationTemplateRequest request) {
-        return new SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(request, GaussDBforopenGaussMeta.createConfigurationTemplate, hcClient);
+    public SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse> createConfigurationTemplateInvoker(
+        CreateConfigurationTemplateRequest request) {
+        return new SyncInvoker<CreateConfigurationTemplateRequest, CreateConfigurationTemplateResponse>(request,
+            GaussDBforopenGaussMeta.createConfigurationTemplate, hcClient);
     }
 
     /**
@@ -181,8 +190,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateDatabaseRequest 请求对象
      * @return SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>
      */
-    public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(CreateDatabaseRequest request) {
-        return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request, GaussDBforopenGaussMeta.createDatabase, hcClient);
+    public SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse> createDatabaseInvoker(
+        CreateDatabaseRequest request) {
+        return new SyncInvoker<CreateDatabaseRequest, CreateDatabaseResponse>(request,
+            GaussDBforopenGaussMeta.createDatabase, hcClient);
     }
 
     /**
@@ -209,8 +220,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateDatabaseSchemasRequest 请求对象
      * @return SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>
      */
-    public SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> createDatabaseSchemasInvoker(CreateDatabaseSchemasRequest request) {
-        return new SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.createDatabaseSchemas, hcClient);
+    public SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse> createDatabaseSchemasInvoker(
+        CreateDatabaseSchemasRequest request) {
+        return new SyncInvoker<CreateDatabaseSchemasRequest, CreateDatabaseSchemasResponse>(request,
+            GaussDBforopenGaussMeta.createDatabaseSchemas, hcClient);
     }
 
     /**
@@ -237,8 +250,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateDbInstanceRequest 请求对象
      * @return SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse>
      */
-    public SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse> createDbInstanceInvoker(CreateDbInstanceRequest request) {
-        return new SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse>(request, GaussDBforopenGaussMeta.createDbInstance, hcClient);
+    public SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse> createDbInstanceInvoker(
+        CreateDbInstanceRequest request) {
+        return new SyncInvoker<CreateDbInstanceRequest, CreateDbInstanceResponse>(request,
+            GaussDBforopenGaussMeta.createDbInstance, hcClient);
     }
 
     /**
@@ -266,7 +281,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>
      */
     public SyncInvoker<CreateDbUserRequest, CreateDbUserResponse> createDbUserInvoker(CreateDbUserRequest request) {
-        return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforopenGaussMeta.createDbUser, hcClient);
+        return new SyncInvoker<CreateDbUserRequest, CreateDbUserResponse>(request, GaussDBforopenGaussMeta.createDbUser,
+            hcClient);
     }
 
     /**
@@ -293,8 +309,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateInstanceRequest 请求对象
      * @return SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>
      */
-    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(CreateInstanceRequest request) {
-        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request, GaussDBforopenGaussMeta.createInstance, hcClient);
+    public SyncInvoker<CreateInstanceRequest, CreateInstanceResponse> createInstanceInvoker(
+        CreateInstanceRequest request) {
+        return new SyncInvoker<CreateInstanceRequest, CreateInstanceResponse>(request,
+            GaussDBforopenGaussMeta.createInstance, hcClient);
     }
 
     /**
@@ -321,8 +339,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateManualBackupRequest 请求对象
      * @return SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>
      */
-    public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(CreateManualBackupRequest request) {
-        return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request, GaussDBforopenGaussMeta.createManualBackup, hcClient);
+    public SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse> createManualBackupInvoker(
+        CreateManualBackupRequest request) {
+        return new SyncInvoker<CreateManualBackupRequest, CreateManualBackupResponse>(request,
+            GaussDBforopenGaussMeta.createManualBackup, hcClient);
     }
 
     /**
@@ -349,8 +369,10 @@ public class GaussDBforopenGaussClient {
      * @param CreateRestoreInstanceRequest 请求对象
      * @return SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>
      */
-    public SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceInvoker(CreateRestoreInstanceRequest request) {
-        return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request, GaussDBforopenGaussMeta.createRestoreInstance, hcClient);
+    public SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse> createRestoreInstanceInvoker(
+        CreateRestoreInstanceRequest request) {
+        return new SyncInvoker<CreateRestoreInstanceRequest, CreateRestoreInstanceResponse>(request,
+            GaussDBforopenGaussMeta.createRestoreInstance, hcClient);
     }
 
     /**
@@ -377,8 +399,10 @@ public class GaussDBforopenGaussClient {
      * @param DeleteConfigurationRequest 请求对象
      * @return SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>
      */
-    public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(DeleteConfigurationRequest request) {
-        return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request, GaussDBforopenGaussMeta.deleteConfiguration, hcClient);
+    public SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse> deleteConfigurationInvoker(
+        DeleteConfigurationRequest request) {
+        return new SyncInvoker<DeleteConfigurationRequest, DeleteConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.deleteConfiguration, hcClient);
     }
 
     /**
@@ -405,8 +429,10 @@ public class GaussDBforopenGaussClient {
      * @param DeleteInstanceRequest 请求对象
      * @return SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>
      */
-    public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(DeleteInstanceRequest request) {
-        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request, GaussDBforopenGaussMeta.deleteInstance, hcClient);
+    public SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse> deleteInstanceInvoker(
+        DeleteInstanceRequest request) {
+        return new SyncInvoker<DeleteInstanceRequest, DeleteInstanceResponse>(request,
+            GaussDBforopenGaussMeta.deleteInstance, hcClient);
     }
 
     /**
@@ -434,7 +460,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<DeleteJobRequest, DeleteJobResponse>
      */
     public SyncInvoker<DeleteJobRequest, DeleteJobResponse> deleteJobInvoker(DeleteJobRequest request) {
-        return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, GaussDBforopenGaussMeta.deleteJob, hcClient);
+        return new SyncInvoker<DeleteJobRequest, DeleteJobResponse>(request, GaussDBforopenGaussMeta.deleteJob,
+            hcClient);
     }
 
     /**
@@ -461,8 +488,10 @@ public class GaussDBforopenGaussClient {
      * @param DeleteManualBackupRequest 请求对象
      * @return SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>
      */
-    public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(DeleteManualBackupRequest request) {
-        return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request, GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
+    public SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse> deleteManualBackupInvoker(
+        DeleteManualBackupRequest request) {
+        return new SyncInvoker<DeleteManualBackupRequest, DeleteManualBackupResponse>(request,
+            GaussDBforopenGaussMeta.deleteManualBackup, hcClient);
     }
 
     /**
@@ -489,8 +518,10 @@ public class GaussDBforopenGaussClient {
      * @param ListApplicableInstancesRequest 请求对象
      * @return SyncInvoker<ListApplicableInstancesRequest, ListApplicableInstancesResponse>
      */
-    public SyncInvoker<ListApplicableInstancesRequest, ListApplicableInstancesResponse> listApplicableInstancesInvoker(ListApplicableInstancesRequest request) {
-        return new SyncInvoker<ListApplicableInstancesRequest, ListApplicableInstancesResponse>(request, GaussDBforopenGaussMeta.listApplicableInstances, hcClient);
+    public SyncInvoker<ListApplicableInstancesRequest, ListApplicableInstancesResponse> listApplicableInstancesInvoker(
+        ListApplicableInstancesRequest request) {
+        return new SyncInvoker<ListApplicableInstancesRequest, ListApplicableInstancesResponse>(request,
+            GaussDBforopenGaussMeta.listApplicableInstances, hcClient);
     }
 
     /**
@@ -517,8 +548,10 @@ public class GaussDBforopenGaussClient {
      * @param ListAppliedHistoriesRequest 请求对象
      * @return SyncInvoker<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse>
      */
-    public SyncInvoker<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> listAppliedHistoriesInvoker(ListAppliedHistoriesRequest request) {
-        return new SyncInvoker<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse>(request, GaussDBforopenGaussMeta.listAppliedHistories, hcClient);
+    public SyncInvoker<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse> listAppliedHistoriesInvoker(
+        ListAppliedHistoriesRequest request) {
+        return new SyncInvoker<ListAppliedHistoriesRequest, ListAppliedHistoriesResponse>(request,
+            GaussDBforopenGaussMeta.listAppliedHistories, hcClient);
     }
 
     /**
@@ -545,8 +578,10 @@ public class GaussDBforopenGaussClient {
      * @param ListAvailableFlavorsRequest 请求对象
      * @return SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse>
      */
-    public SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> listAvailableFlavorsInvoker(ListAvailableFlavorsRequest request) {
-        return new SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse>(request, GaussDBforopenGaussMeta.listAvailableFlavors, hcClient);
+    public SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse> listAvailableFlavorsInvoker(
+        ListAvailableFlavorsRequest request) {
+        return new SyncInvoker<ListAvailableFlavorsRequest, ListAvailableFlavorsResponse>(request,
+            GaussDBforopenGaussMeta.listAvailableFlavors, hcClient);
     }
 
     /**
@@ -574,7 +609,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListBackupsRequest, ListBackupsResponse>
      */
     public SyncInvoker<ListBackupsRequest, ListBackupsResponse> listBackupsInvoker(ListBackupsRequest request) {
-        return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, GaussDBforopenGaussMeta.listBackups, hcClient);
+        return new SyncInvoker<ListBackupsRequest, ListBackupsResponse>(request, GaussDBforopenGaussMeta.listBackups,
+            hcClient);
     }
 
     /**
@@ -601,8 +637,10 @@ public class GaussDBforopenGaussClient {
      * @param ListBindedEipsRequest 请求对象
      * @return SyncInvoker<ListBindedEipsRequest, ListBindedEipsResponse>
      */
-    public SyncInvoker<ListBindedEipsRequest, ListBindedEipsResponse> listBindedEipsInvoker(ListBindedEipsRequest request) {
-        return new SyncInvoker<ListBindedEipsRequest, ListBindedEipsResponse>(request, GaussDBforopenGaussMeta.listBindedEips, hcClient);
+    public SyncInvoker<ListBindedEipsRequest, ListBindedEipsResponse> listBindedEipsInvoker(
+        ListBindedEipsRequest request) {
+        return new SyncInvoker<ListBindedEipsRequest, ListBindedEipsResponse>(request,
+            GaussDBforopenGaussMeta.listBindedEips, hcClient);
     }
 
     /**
@@ -629,8 +667,10 @@ public class GaussDBforopenGaussClient {
      * @param ListComponentInfosRequest 请求对象
      * @return SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>
      */
-    public SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfosInvoker(ListComponentInfosRequest request) {
-        return new SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>(request, GaussDBforopenGaussMeta.listComponentInfos, hcClient);
+    public SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse> listComponentInfosInvoker(
+        ListComponentInfosRequest request) {
+        return new SyncInvoker<ListComponentInfosRequest, ListComponentInfosResponse>(request,
+            GaussDBforopenGaussMeta.listComponentInfos, hcClient);
     }
 
     /**
@@ -657,8 +697,10 @@ public class GaussDBforopenGaussClient {
      * @param ListConfigurationsRequest 请求对象
      * @return SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>
      */
-    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(ListConfigurationsRequest request) {
-        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request, GaussDBforopenGaussMeta.listConfigurations, hcClient);
+    public SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse> listConfigurationsInvoker(
+        ListConfigurationsRequest request) {
+        return new SyncInvoker<ListConfigurationsRequest, ListConfigurationsResponse>(request,
+            GaussDBforopenGaussMeta.listConfigurations, hcClient);
     }
 
     /**
@@ -685,8 +727,10 @@ public class GaussDBforopenGaussClient {
      * @param ListConfigurationsDiffRequest 请求对象
      * @return SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse>
      */
-    public SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> listConfigurationsDiffInvoker(ListConfigurationsDiffRequest request) {
-        return new SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse>(request, GaussDBforopenGaussMeta.listConfigurationsDiff, hcClient);
+    public SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse> listConfigurationsDiffInvoker(
+        ListConfigurationsDiffRequest request) {
+        return new SyncInvoker<ListConfigurationsDiffRequest, ListConfigurationsDiffResponse>(request,
+            GaussDBforopenGaussMeta.listConfigurationsDiff, hcClient);
     }
 
     /**
@@ -713,8 +757,10 @@ public class GaussDBforopenGaussClient {
      * @param ListDatabaseSchemasRequest 请求对象
      * @return SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>
      */
-    public SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemasInvoker(ListDatabaseSchemasRequest request) {
-        return new SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>(request, GaussDBforopenGaussMeta.listDatabaseSchemas, hcClient);
+    public SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse> listDatabaseSchemasInvoker(
+        ListDatabaseSchemasRequest request) {
+        return new SyncInvoker<ListDatabaseSchemasRequest, ListDatabaseSchemasResponse>(request,
+            GaussDBforopenGaussMeta.listDatabaseSchemas, hcClient);
     }
 
     /**
@@ -742,7 +788,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>
      */
     public SyncInvoker<ListDatabasesRequest, ListDatabasesResponse> listDatabasesInvoker(ListDatabasesRequest request) {
-        return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request, GaussDBforopenGaussMeta.listDatabases, hcClient);
+        return new SyncInvoker<ListDatabasesRequest, ListDatabasesResponse>(request,
+            GaussDBforopenGaussMeta.listDatabases, hcClient);
     }
 
     /**
@@ -769,8 +816,10 @@ public class GaussDBforopenGaussClient {
      * @param ListDatastoresRequest 请求对象
      * @return SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>
      */
-    public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(ListDatastoresRequest request) {
-        return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request, GaussDBforopenGaussMeta.listDatastores, hcClient);
+    public SyncInvoker<ListDatastoresRequest, ListDatastoresResponse> listDatastoresInvoker(
+        ListDatastoresRequest request) {
+        return new SyncInvoker<ListDatastoresRequest, ListDatastoresResponse>(request,
+            GaussDBforopenGaussMeta.listDatastores, hcClient);
     }
 
     /**
@@ -798,7 +847,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse>
      */
     public SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse> listDbBackupsInvoker(ListDbBackupsRequest request) {
-        return new SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse>(request, GaussDBforopenGaussMeta.listDbBackups, hcClient);
+        return new SyncInvoker<ListDbBackupsRequest, ListDbBackupsResponse>(request,
+            GaussDBforopenGaussMeta.listDbBackups, hcClient);
     }
 
     /**
@@ -826,7 +876,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse>
      */
     public SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse> listDbFlavorsInvoker(ListDbFlavorsRequest request) {
-        return new SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse>(request, GaussDBforopenGaussMeta.listDbFlavors, hcClient);
+        return new SyncInvoker<ListDbFlavorsRequest, ListDbFlavorsResponse>(request,
+            GaussDBforopenGaussMeta.listDbFlavors, hcClient);
     }
 
     /**
@@ -854,7 +905,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>
      */
     public SyncInvoker<ListDbUsersRequest, ListDbUsersResponse> listDbUsersInvoker(ListDbUsersRequest request) {
-        return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforopenGaussMeta.listDbUsers, hcClient);
+        return new SyncInvoker<ListDbUsersRequest, ListDbUsersResponse>(request, GaussDBforopenGaussMeta.listDbUsers,
+            hcClient);
     }
 
     /**
@@ -882,7 +934,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>
      */
     public SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse> listEpsQuotasInvoker(ListEpsQuotasRequest request) {
-        return new SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>(request, GaussDBforopenGaussMeta.listEpsQuotas, hcClient);
+        return new SyncInvoker<ListEpsQuotasRequest, ListEpsQuotasResponse>(request,
+            GaussDBforopenGaussMeta.listEpsQuotas, hcClient);
     }
 
     /**
@@ -910,7 +963,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>
      */
     public SyncInvoker<ListFlavorsRequest, ListFlavorsResponse> listFlavorsInvoker(ListFlavorsRequest request) {
-        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforopenGaussMeta.listFlavors, hcClient);
+        return new SyncInvoker<ListFlavorsRequest, ListFlavorsResponse>(request, GaussDBforopenGaussMeta.listFlavors,
+            hcClient);
     }
 
     /**
@@ -937,8 +991,10 @@ public class GaussDBforopenGaussClient {
      * @param ListGaussDbDatastoresRequest 请求对象
      * @return SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse>
      */
-    public SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> listGaussDbDatastoresInvoker(ListGaussDbDatastoresRequest request) {
-        return new SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse>(request, GaussDBforopenGaussMeta.listGaussDbDatastores, hcClient);
+    public SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse> listGaussDbDatastoresInvoker(
+        ListGaussDbDatastoresRequest request) {
+        return new SyncInvoker<ListGaussDbDatastoresRequest, ListGaussDbDatastoresResponse>(request,
+            GaussDBforopenGaussMeta.listGaussDbDatastores, hcClient);
     }
 
     /**
@@ -965,8 +1021,10 @@ public class GaussDBforopenGaussClient {
      * @param ListHistoryOperationsRequest 请求对象
      * @return SyncInvoker<ListHistoryOperationsRequest, ListHistoryOperationsResponse>
      */
-    public SyncInvoker<ListHistoryOperationsRequest, ListHistoryOperationsResponse> listHistoryOperationsInvoker(ListHistoryOperationsRequest request) {
-        return new SyncInvoker<ListHistoryOperationsRequest, ListHistoryOperationsResponse>(request, GaussDBforopenGaussMeta.listHistoryOperations, hcClient);
+    public SyncInvoker<ListHistoryOperationsRequest, ListHistoryOperationsResponse> listHistoryOperationsInvoker(
+        ListHistoryOperationsRequest request) {
+        return new SyncInvoker<ListHistoryOperationsRequest, ListHistoryOperationsResponse>(request,
+            GaussDBforopenGaussMeta.listHistoryOperations, hcClient);
     }
 
     /**
@@ -993,8 +1051,10 @@ public class GaussDBforopenGaussClient {
      * @param ListInstanceTagsRequest 请求对象
      * @return SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>
      */
-    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(ListInstanceTagsRequest request) {
-        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request, GaussDBforopenGaussMeta.listInstanceTags, hcClient);
+    public SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse> listInstanceTagsInvoker(
+        ListInstanceTagsRequest request) {
+        return new SyncInvoker<ListInstanceTagsRequest, ListInstanceTagsResponse>(request,
+            GaussDBforopenGaussMeta.listInstanceTags, hcClient);
     }
 
     /**
@@ -1022,7 +1082,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListInstancesRequest, ListInstancesResponse>
      */
     public SyncInvoker<ListInstancesRequest, ListInstancesResponse> listInstancesInvoker(ListInstancesRequest request) {
-        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request, GaussDBforopenGaussMeta.listInstances, hcClient);
+        return new SyncInvoker<ListInstancesRequest, ListInstancesResponse>(request,
+            GaussDBforopenGaussMeta.listInstances, hcClient);
     }
 
     /**
@@ -1049,8 +1110,10 @@ public class GaussDBforopenGaussClient {
      * @param ListInstancesDetailsRequest 请求对象
      * @return SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>
      */
-    public SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsInvoker(ListInstancesDetailsRequest request) {
-        return new SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>(request, GaussDBforopenGaussMeta.listInstancesDetails, hcClient);
+    public SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse> listInstancesDetailsInvoker(
+        ListInstancesDetailsRequest request) {
+        return new SyncInvoker<ListInstancesDetailsRequest, ListInstancesDetailsResponse>(request,
+            GaussDBforopenGaussMeta.listInstancesDetails, hcClient);
     }
 
     /**
@@ -1077,8 +1140,10 @@ public class GaussDBforopenGaussClient {
      * @param ListParamGroupTemplatesRequest 请求对象
      * @return SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse>
      */
-    public SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplatesInvoker(ListParamGroupTemplatesRequest request) {
-        return new SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse>(request, GaussDBforopenGaussMeta.listParamGroupTemplates, hcClient);
+    public SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse> listParamGroupTemplatesInvoker(
+        ListParamGroupTemplatesRequest request) {
+        return new SyncInvoker<ListParamGroupTemplatesRequest, ListParamGroupTemplatesResponse>(request,
+            GaussDBforopenGaussMeta.listParamGroupTemplates, hcClient);
     }
 
     /**
@@ -1105,8 +1170,10 @@ public class GaussDBforopenGaussClient {
      * @param ListPredefinedTagsRequest 请求对象
      * @return SyncInvoker<ListPredefinedTagsRequest, ListPredefinedTagsResponse>
      */
-    public SyncInvoker<ListPredefinedTagsRequest, ListPredefinedTagsResponse> listPredefinedTagsInvoker(ListPredefinedTagsRequest request) {
-        return new SyncInvoker<ListPredefinedTagsRequest, ListPredefinedTagsResponse>(request, GaussDBforopenGaussMeta.listPredefinedTags, hcClient);
+    public SyncInvoker<ListPredefinedTagsRequest, ListPredefinedTagsResponse> listPredefinedTagsInvoker(
+        ListPredefinedTagsRequest request) {
+        return new SyncInvoker<ListPredefinedTagsRequest, ListPredefinedTagsResponse>(request,
+            GaussDBforopenGaussMeta.listPredefinedTags, hcClient);
     }
 
     /**
@@ -1133,8 +1200,10 @@ public class GaussDBforopenGaussClient {
      * @param ListProjectTagsRequest 请求对象
      * @return SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>
      */
-    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(ListProjectTagsRequest request) {
-        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request, GaussDBforopenGaussMeta.listProjectTags, hcClient);
+    public SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse> listProjectTagsInvoker(
+        ListProjectTagsRequest request) {
+        return new SyncInvoker<ListProjectTagsRequest, ListProjectTagsResponse>(request,
+            GaussDBforopenGaussMeta.listProjectTags, hcClient);
     }
 
     /**
@@ -1161,8 +1230,10 @@ public class GaussDBforopenGaussClient {
      * @param ListRecycleInstancesRequest 请求对象
      * @return SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>
      */
-    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(ListRecycleInstancesRequest request) {
-        return new SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request, GaussDBforopenGaussMeta.listRecycleInstances, hcClient);
+    public SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse> listRecycleInstancesInvoker(
+        ListRecycleInstancesRequest request) {
+        return new SyncInvoker<ListRecycleInstancesRequest, ListRecycleInstancesResponse>(request,
+            GaussDBforopenGaussMeta.listRecycleInstances, hcClient);
     }
 
     /**
@@ -1189,8 +1260,10 @@ public class GaussDBforopenGaussClient {
      * @param ListRestorableInstancesRequest 请求对象
      * @return SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse>
      */
-    public SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse> listRestorableInstancesInvoker(ListRestorableInstancesRequest request) {
-        return new SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse>(request, GaussDBforopenGaussMeta.listRestorableInstances, hcClient);
+    public SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse> listRestorableInstancesInvoker(
+        ListRestorableInstancesRequest request) {
+        return new SyncInvoker<ListRestorableInstancesRequest, ListRestorableInstancesResponse>(request,
+            GaussDBforopenGaussMeta.listRestorableInstances, hcClient);
     }
 
     /**
@@ -1219,8 +1292,10 @@ public class GaussDBforopenGaussClient {
      * @param ListRestoreTimesRequest 请求对象
      * @return SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>
      */
-    public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(ListRestoreTimesRequest request) {
-        return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request, GaussDBforopenGaussMeta.listRestoreTimes, hcClient);
+    public SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse> listRestoreTimesInvoker(
+        ListRestoreTimesRequest request) {
+        return new SyncInvoker<ListRestoreTimesRequest, ListRestoreTimesResponse>(request,
+            GaussDBforopenGaussMeta.listRestoreTimes, hcClient);
     }
 
     /**
@@ -1247,8 +1322,10 @@ public class GaussDBforopenGaussClient {
      * @param ListStorageTypesRequest 请求对象
      * @return SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>
      */
-    public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(ListStorageTypesRequest request) {
-        return new SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request, GaussDBforopenGaussMeta.listStorageTypes, hcClient);
+    public SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse> listStorageTypesInvoker(
+        ListStorageTypesRequest request) {
+        return new SyncInvoker<ListStorageTypesRequest, ListStorageTypesResponse>(request,
+            GaussDBforopenGaussMeta.listStorageTypes, hcClient);
     }
 
     /**
@@ -1276,7 +1353,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ListTasksRequest, ListTasksResponse>
      */
     public SyncInvoker<ListTasksRequest, ListTasksResponse> listTasksInvoker(ListTasksRequest request) {
-        return new SyncInvoker<ListTasksRequest, ListTasksResponse>(request, GaussDBforopenGaussMeta.listTasks, hcClient);
+        return new SyncInvoker<ListTasksRequest, ListTasksResponse>(request, GaussDBforopenGaussMeta.listTasks,
+            hcClient);
     }
 
     /**
@@ -1303,8 +1381,10 @@ public class GaussDBforopenGaussClient {
      * @param ModifyEpsQuotaRequest 请求对象
      * @return SyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse>
      */
-    public SyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> modifyEpsQuotaInvoker(ModifyEpsQuotaRequest request) {
-        return new SyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse>(request, GaussDBforopenGaussMeta.modifyEpsQuota, hcClient);
+    public SyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse> modifyEpsQuotaInvoker(
+        ModifyEpsQuotaRequest request) {
+        return new SyncInvoker<ModifyEpsQuotaRequest, ModifyEpsQuotaResponse>(request,
+            GaussDBforopenGaussMeta.modifyEpsQuota, hcClient);
     }
 
     /**
@@ -1331,8 +1411,10 @@ public class GaussDBforopenGaussClient {
      * @param ResetConfigurationRequest 请求对象
      * @return SyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse>
      */
-    public SyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse> resetConfigurationInvoker(ResetConfigurationRequest request) {
-        return new SyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse>(request, GaussDBforopenGaussMeta.resetConfiguration, hcClient);
+    public SyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse> resetConfigurationInvoker(
+        ResetConfigurationRequest request) {
+        return new SyncInvoker<ResetConfigurationRequest, ResetConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.resetConfiguration, hcClient);
     }
 
     /**
@@ -1387,8 +1469,10 @@ public class GaussDBforopenGaussClient {
      * @param ResizeInstanceFlavorRequest 请求对象
      * @return SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>
      */
-    public SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavorInvoker(ResizeInstanceFlavorRequest request) {
-        return new SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>(request, GaussDBforopenGaussMeta.resizeInstanceFlavor, hcClient);
+    public SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse> resizeInstanceFlavorInvoker(
+        ResizeInstanceFlavorRequest request) {
+        return new SyncInvoker<ResizeInstanceFlavorRequest, ResizeInstanceFlavorResponse>(request,
+            GaussDBforopenGaussMeta.resizeInstanceFlavor, hcClient);
     }
 
     /**
@@ -1415,8 +1499,10 @@ public class GaussDBforopenGaussClient {
      * @param RestartInstanceRequest 请求对象
      * @return SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>
      */
-    public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(RestartInstanceRequest request) {
-        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request, GaussDBforopenGaussMeta.restartInstance, hcClient);
+    public SyncInvoker<RestartInstanceRequest, RestartInstanceResponse> restartInstanceInvoker(
+        RestartInstanceRequest request) {
+        return new SyncInvoker<RestartInstanceRequest, RestartInstanceResponse>(request,
+            GaussDBforopenGaussMeta.restartInstance, hcClient);
     }
 
     /**
@@ -1443,8 +1529,10 @@ public class GaussDBforopenGaussClient {
      * @param RunInstanceActionRequest 请求对象
      * @return SyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse>
      */
-    public SyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse> runInstanceActionInvoker(RunInstanceActionRequest request) {
-        return new SyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse>(request, GaussDBforopenGaussMeta.runInstanceAction, hcClient);
+    public SyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse> runInstanceActionInvoker(
+        RunInstanceActionRequest request) {
+        return new SyncInvoker<RunInstanceActionRequest, RunInstanceActionResponse>(request,
+            GaussDBforopenGaussMeta.runInstanceAction, hcClient);
     }
 
     /**
@@ -1471,8 +1559,10 @@ public class GaussDBforopenGaussClient {
      * @param SetBackupPolicyRequest 请求对象
      * @return SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>
      */
-    public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(SetBackupPolicyRequest request) {
-        return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request, GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
+    public SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse> setBackupPolicyInvoker(
+        SetBackupPolicyRequest request) {
+        return new SyncInvoker<SetBackupPolicyRequest, SetBackupPolicyResponse>(request,
+            GaussDBforopenGaussMeta.setBackupPolicy, hcClient);
     }
 
     /**
@@ -1500,7 +1590,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>
      */
     public SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse> setDbUserPwdInvoker(SetDbUserPwdRequest request) {
-        return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, GaussDBforopenGaussMeta.setDbUserPwd, hcClient);
+        return new SyncInvoker<SetDbUserPwdRequest, SetDbUserPwdResponse>(request, GaussDBforopenGaussMeta.setDbUserPwd,
+            hcClient);
     }
 
     /**
@@ -1527,8 +1618,10 @@ public class GaussDBforopenGaussClient {
      * @param SetRecyclePolicyRequest 请求对象
      * @return SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>
      */
-    public SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyInvoker(SetRecyclePolicyRequest request) {
-        return new SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request, GaussDBforopenGaussMeta.setRecyclePolicy, hcClient);
+    public SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse> setRecyclePolicyInvoker(
+        SetRecyclePolicyRequest request) {
+        return new SyncInvoker<SetRecyclePolicyRequest, SetRecyclePolicyResponse>(request,
+            GaussDBforopenGaussMeta.setRecyclePolicy, hcClient);
     }
 
     /**
@@ -1555,8 +1648,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowBackupPolicyRequest 请求对象
      * @return SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>
      */
-    public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(ShowBackupPolicyRequest request) {
-        return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request, GaussDBforopenGaussMeta.showBackupPolicy, hcClient);
+    public SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse> showBackupPolicyInvoker(
+        ShowBackupPolicyRequest request) {
+        return new SyncInvoker<ShowBackupPolicyRequest, ShowBackupPolicyResponse>(request,
+            GaussDBforopenGaussMeta.showBackupPolicy, hcClient);
     }
 
     /**
@@ -1583,8 +1678,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowBalanceStatusRequest 请求对象
      * @return SyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse>
      */
-    public SyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse> showBalanceStatusInvoker(ShowBalanceStatusRequest request) {
-        return new SyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse>(request, GaussDBforopenGaussMeta.showBalanceStatus, hcClient);
+    public SyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse> showBalanceStatusInvoker(
+        ShowBalanceStatusRequest request) {
+        return new SyncInvoker<ShowBalanceStatusRequest, ShowBalanceStatusResponse>(request,
+            GaussDBforopenGaussMeta.showBalanceStatus, hcClient);
     }
 
     /**
@@ -1611,8 +1708,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowConfigurationDetailRequest 请求对象
      * @return SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>
      */
-    public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(ShowConfigurationDetailRequest request) {
-        return new SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>(request, GaussDBforopenGaussMeta.showConfigurationDetail, hcClient);
+    public SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse> showConfigurationDetailInvoker(
+        ShowConfigurationDetailRequest request) {
+        return new SyncInvoker<ShowConfigurationDetailRequest, ShowConfigurationDetailResponse>(request,
+            GaussDBforopenGaussMeta.showConfigurationDetail, hcClient);
     }
 
     /**
@@ -1639,8 +1738,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowDeploymentFormRequest 请求对象
      * @return SyncInvoker<ShowDeploymentFormRequest, ShowDeploymentFormResponse>
      */
-    public SyncInvoker<ShowDeploymentFormRequest, ShowDeploymentFormResponse> showDeploymentFormInvoker(ShowDeploymentFormRequest request) {
-        return new SyncInvoker<ShowDeploymentFormRequest, ShowDeploymentFormResponse>(request, GaussDBforopenGaussMeta.showDeploymentForm, hcClient);
+    public SyncInvoker<ShowDeploymentFormRequest, ShowDeploymentFormResponse> showDeploymentFormInvoker(
+        ShowDeploymentFormRequest request) {
+        return new SyncInvoker<ShowDeploymentFormRequest, ShowDeploymentFormResponse>(request,
+            GaussDBforopenGaussMeta.showDeploymentForm, hcClient);
     }
 
     /**
@@ -1667,8 +1768,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>
      */
-    public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(ShowInstanceConfigurationRequest request) {
-        return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
+    public SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse> showInstanceConfigurationInvoker(
+        ShowInstanceConfigurationRequest request) {
+        return new SyncInvoker<ShowInstanceConfigurationRequest, ShowInstanceConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.showInstanceConfiguration, hcClient);
     }
 
     /**
@@ -1695,8 +1798,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowInstanceDiskRequest 请求对象
      * @return SyncInvoker<ShowInstanceDiskRequest, ShowInstanceDiskResponse>
      */
-    public SyncInvoker<ShowInstanceDiskRequest, ShowInstanceDiskResponse> showInstanceDiskInvoker(ShowInstanceDiskRequest request) {
-        return new SyncInvoker<ShowInstanceDiskRequest, ShowInstanceDiskResponse>(request, GaussDBforopenGaussMeta.showInstanceDisk, hcClient);
+    public SyncInvoker<ShowInstanceDiskRequest, ShowInstanceDiskResponse> showInstanceDiskInvoker(
+        ShowInstanceDiskRequest request) {
+        return new SyncInvoker<ShowInstanceDiskRequest, ShowInstanceDiskResponse>(request,
+            GaussDBforopenGaussMeta.showInstanceDisk, hcClient);
     }
 
     /**
@@ -1723,8 +1828,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowInstanceParamGroupRequest 请求对象
      * @return SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse>
      */
-    public SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> showInstanceParamGroupInvoker(ShowInstanceParamGroupRequest request) {
-        return new SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse>(request, GaussDBforopenGaussMeta.showInstanceParamGroup, hcClient);
+    public SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse> showInstanceParamGroupInvoker(
+        ShowInstanceParamGroupRequest request) {
+        return new SyncInvoker<ShowInstanceParamGroupRequest, ShowInstanceParamGroupResponse>(request,
+            GaussDBforopenGaussMeta.showInstanceParamGroup, hcClient);
     }
 
     /**
@@ -1751,8 +1858,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowInstanceSnapshotRequest 请求对象
      * @return SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse>
      */
-    public SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshotInvoker(ShowInstanceSnapshotRequest request) {
-        return new SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse>(request, GaussDBforopenGaussMeta.showInstanceSnapshot, hcClient);
+    public SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse> showInstanceSnapshotInvoker(
+        ShowInstanceSnapshotRequest request) {
+        return new SyncInvoker<ShowInstanceSnapshotRequest, ShowInstanceSnapshotResponse>(request,
+            GaussDBforopenGaussMeta.showInstanceSnapshot, hcClient);
     }
 
     /**
@@ -1780,7 +1889,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>
      */
     public SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse> showJobDetailInvoker(ShowJobDetailRequest request) {
-        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request, GaussDBforopenGaussMeta.showJobDetail, hcClient);
+        return new SyncInvoker<ShowJobDetailRequest, ShowJobDetailResponse>(request,
+            GaussDBforopenGaussMeta.showJobDetail, hcClient);
     }
 
     /**
@@ -1805,8 +1915,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowProjectQuotasRequest 请求对象
      * @return SyncInvoker<ShowProjectQuotasRequest, ShowProjectQuotasResponse>
      */
-    public SyncInvoker<ShowProjectQuotasRequest, ShowProjectQuotasResponse> showProjectQuotasInvoker(ShowProjectQuotasRequest request) {
-        return new SyncInvoker<ShowProjectQuotasRequest, ShowProjectQuotasResponse>(request, GaussDBforopenGaussMeta.showProjectQuotas, hcClient);
+    public SyncInvoker<ShowProjectQuotasRequest, ShowProjectQuotasResponse> showProjectQuotasInvoker(
+        ShowProjectQuotasRequest request) {
+        return new SyncInvoker<ShowProjectQuotasRequest, ShowProjectQuotasResponse>(request,
+            GaussDBforopenGaussMeta.showProjectQuotas, hcClient);
     }
 
     /**
@@ -1833,8 +1945,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowRecyclePolicyRequest 请求对象
      * @return SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>
      */
-    public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(ShowRecyclePolicyRequest request) {
-        return new SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request, GaussDBforopenGaussMeta.showRecyclePolicy, hcClient);
+    public SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse> showRecyclePolicyInvoker(
+        ShowRecyclePolicyRequest request) {
+        return new SyncInvoker<ShowRecyclePolicyRequest, ShowRecyclePolicyResponse>(request,
+            GaussDBforopenGaussMeta.showRecyclePolicy, hcClient);
     }
 
     /**
@@ -1861,8 +1975,10 @@ public class GaussDBforopenGaussClient {
      * @param ShowSslCertDownloadLinkRequest 请求对象
      * @return SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse>
      */
-    public SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLinkInvoker(ShowSslCertDownloadLinkRequest request) {
-        return new SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse>(request, GaussDBforopenGaussMeta.showSslCertDownloadLink, hcClient);
+    public SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse> showSslCertDownloadLinkInvoker(
+        ShowSslCertDownloadLinkRequest request) {
+        return new SyncInvoker<ShowSslCertDownloadLinkRequest, ShowSslCertDownloadLinkResponse>(request,
+            GaussDBforopenGaussMeta.showSslCertDownloadLink, hcClient);
     }
 
     /**
@@ -1889,8 +2005,10 @@ public class GaussDBforopenGaussClient {
      * @param SwitchConfigurationRequest 请求对象
      * @return SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>
      */
-    public SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfigurationInvoker(SwitchConfigurationRequest request) {
-        return new SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>(request, GaussDBforopenGaussMeta.switchConfiguration, hcClient);
+    public SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse> switchConfigurationInvoker(
+        SwitchConfigurationRequest request) {
+        return new SyncInvoker<SwitchConfigurationRequest, SwitchConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.switchConfiguration, hcClient);
     }
 
     /**
@@ -1918,7 +2036,8 @@ public class GaussDBforopenGaussClient {
      * @return SyncInvoker<SwitchShardRequest, SwitchShardResponse>
      */
     public SyncInvoker<SwitchShardRequest, SwitchShardResponse> switchShardInvoker(SwitchShardRequest request) {
-        return new SyncInvoker<SwitchShardRequest, SwitchShardResponse>(request, GaussDBforopenGaussMeta.switchShard, hcClient);
+        return new SyncInvoker<SwitchShardRequest, SwitchShardResponse>(request, GaussDBforopenGaussMeta.switchShard,
+            hcClient);
     }
 
     /**
@@ -1945,8 +2064,10 @@ public class GaussDBforopenGaussClient {
      * @param UpdateInstanceConfigurationRequest 请求对象
      * @return SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>
      */
-    public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(UpdateInstanceConfigurationRequest request) {
-        return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request, GaussDBforopenGaussMeta.updateInstanceConfiguration, hcClient);
+    public SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse> updateInstanceConfigurationInvoker(
+        UpdateInstanceConfigurationRequest request) {
+        return new SyncInvoker<UpdateInstanceConfigurationRequest, UpdateInstanceConfigurationResponse>(request,
+            GaussDBforopenGaussMeta.updateInstanceConfiguration, hcClient);
     }
 
     /**
@@ -1973,8 +2094,10 @@ public class GaussDBforopenGaussClient {
      * @param UpdateInstanceNameRequest 请求对象
      * @return SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>
      */
-    public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(UpdateInstanceNameRequest request) {
-        return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request, GaussDBforopenGaussMeta.updateInstanceName, hcClient);
+    public SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse> updateInstanceNameInvoker(
+        UpdateInstanceNameRequest request) {
+        return new SyncInvoker<UpdateInstanceNameRequest, UpdateInstanceNameResponse>(request,
+            GaussDBforopenGaussMeta.updateInstanceName, hcClient);
     }
 
     /**
@@ -2001,8 +2124,10 @@ public class GaussDBforopenGaussClient {
      * @param ValidateParaGroupNameRequest 请求对象
      * @return SyncInvoker<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse>
      */
-    public SyncInvoker<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> validateParaGroupNameInvoker(ValidateParaGroupNameRequest request) {
-        return new SyncInvoker<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse>(request, GaussDBforopenGaussMeta.validateParaGroupName, hcClient);
+    public SyncInvoker<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse> validateParaGroupNameInvoker(
+        ValidateParaGroupNameRequest request) {
+        return new SyncInvoker<ValidateParaGroupNameRequest, ValidateParaGroupNameResponse>(request,
+            GaussDBforopenGaussMeta.validateParaGroupName, hcClient);
     }
 
     /**
@@ -2029,8 +2154,10 @@ public class GaussDBforopenGaussClient {
      * @param ValidateWeakPasswordRequest 请求对象
      * @return SyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>
      */
-    public SyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordInvoker(ValidateWeakPasswordRequest request) {
-        return new SyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>(request, GaussDBforopenGaussMeta.validateWeakPassword, hcClient);
+    public SyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse> validateWeakPasswordInvoker(
+        ValidateWeakPasswordRequest request) {
+        return new SyncInvoker<ValidateWeakPasswordRequest, ValidateWeakPasswordResponse>(request,
+            GaussDBforopenGaussMeta.validateWeakPassword, hcClient);
     }
 
 }

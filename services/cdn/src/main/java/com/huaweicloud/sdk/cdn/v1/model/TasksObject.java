@@ -65,22 +65,15 @@ public class TasksObject {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class TasksObject {
             if (value == null) {
                 return null;
             }
-            FileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FileTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileTypeEnum(value));
         }
 
         public static FileTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -368,20 +354,19 @@ public class TasksObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TasksObject tasksObject = (TasksObject) o;
-        return Objects.equals(this.id, tasksObject.id) && Objects.equals(this.taskType, tasksObject.taskType)
-            && Objects.equals(this.status, tasksObject.status)
-            && Objects.equals(this.processing, tasksObject.processing)
-            && Objects.equals(this.succeed, tasksObject.succeed) && Objects.equals(this.failed, tasksObject.failed)
-            && Objects.equals(this.total, tasksObject.total) && Objects.equals(this.createTime, tasksObject.createTime)
-            && Objects.equals(this.fileType, tasksObject.fileType);
+        TasksObject that = (TasksObject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.processing, that.processing)
+            && Objects.equals(this.succeed, that.succeed) && Objects.equals(this.failed, that.failed)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

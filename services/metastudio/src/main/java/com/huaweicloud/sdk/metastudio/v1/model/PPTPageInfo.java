@@ -79,16 +79,16 @@ public class PPTPageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PPTPageInfo ppTPageInfo = (PPTPageInfo) o;
-        return Objects.equals(this.pageNo, ppTPageInfo.pageNo) && Objects.equals(this.fileId, ppTPageInfo.fileId)
-            && Objects.equals(this.pageContent, ppTPageInfo.pageContent);
+        PPTPageInfo that = (PPTPageInfo) obj;
+        return Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.fileId, that.fileId)
+            && Objects.equals(this.pageContent, that.pageContent);
     }
 
     @Override

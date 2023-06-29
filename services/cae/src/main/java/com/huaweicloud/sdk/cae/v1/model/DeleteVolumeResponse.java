@@ -58,22 +58,15 @@ public class DeleteVolumeResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ApiVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiVersionEnum(value));
         }
 
         public static ApiVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,17 +166,16 @@ public class DeleteVolumeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVolumeResponse deleteVolumeResponse = (DeleteVolumeResponse) o;
-        return Objects.equals(this.apiVersion, deleteVolumeResponse.apiVersion)
-            && Objects.equals(this.kind, deleteVolumeResponse.kind)
-            && Objects.equals(this.items, deleteVolumeResponse.items);
+        DeleteVolumeResponse that = (DeleteVolumeResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

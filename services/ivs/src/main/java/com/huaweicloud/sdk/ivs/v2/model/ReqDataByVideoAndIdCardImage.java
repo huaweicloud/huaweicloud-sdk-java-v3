@@ -121,19 +121,17 @@ public class ReqDataByVideoAndIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReqDataByVideoAndIdCardImage reqDataByVideoAndIdCardImage = (ReqDataByVideoAndIdCardImage) o;
-        return Objects.equals(this.idcardImage1, reqDataByVideoAndIdCardImage.idcardImage1)
-            && Objects.equals(this.idcardImage2, reqDataByVideoAndIdCardImage.idcardImage2)
-            && Objects.equals(this.video, reqDataByVideoAndIdCardImage.video)
-            && Objects.equals(this.actions, reqDataByVideoAndIdCardImage.actions)
-            && Objects.equals(this.nodThreshold, reqDataByVideoAndIdCardImage.nodThreshold);
+        ReqDataByVideoAndIdCardImage that = (ReqDataByVideoAndIdCardImage) obj;
+        return Objects.equals(this.idcardImage1, that.idcardImage1)
+            && Objects.equals(this.idcardImage2, that.idcardImage2) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.nodThreshold, that.nodThreshold);
     }
 
     @Override

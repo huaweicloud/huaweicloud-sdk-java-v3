@@ -56,16 +56,16 @@ public class TrustedServiceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrustedServiceDto trustedServiceDto = (TrustedServiceDto) o;
-        return Objects.equals(this.servicePrincipal, trustedServiceDto.servicePrincipal)
-            && Objects.equals(this.enabledAt, trustedServiceDto.enabledAt);
+        TrustedServiceDto that = (TrustedServiceDto) obj;
+        return Objects.equals(this.servicePrincipal, that.servicePrincipal)
+            && Objects.equals(this.enabledAt, that.enabledAt);
     }
 
     @Override

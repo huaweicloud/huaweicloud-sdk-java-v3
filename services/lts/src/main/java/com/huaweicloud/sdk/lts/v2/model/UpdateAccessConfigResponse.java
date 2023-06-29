@@ -68,22 +68,15 @@ public class UpdateAccessConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AccessConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessConfigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessConfigTypeEnum(value));
         }
 
         public static AccessConfigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,22 +305,21 @@ public class UpdateAccessConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAccessConfigResponse updateAccessConfigResponse = (UpdateAccessConfigResponse) o;
-        return Objects.equals(this.accessConfigId, updateAccessConfigResponse.accessConfigId)
-            && Objects.equals(this.accessConfigName, updateAccessConfigResponse.accessConfigName)
-            && Objects.equals(this.accessConfigType, updateAccessConfigResponse.accessConfigType)
-            && Objects.equals(this.createTime, updateAccessConfigResponse.createTime)
-            && Objects.equals(this.accessConfigDetail, updateAccessConfigResponse.accessConfigDetail)
-            && Objects.equals(this.logInfo, updateAccessConfigResponse.logInfo)
-            && Objects.equals(this.hostGroupInfo, updateAccessConfigResponse.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, updateAccessConfigResponse.accessConfigTag);
+        UpdateAccessConfigResponse that = (UpdateAccessConfigResponse) obj;
+        return Objects.equals(this.accessConfigId, that.accessConfigId)
+            && Objects.equals(this.accessConfigName, that.accessConfigName)
+            && Objects.equals(this.accessConfigType, that.accessConfigType)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
+            && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
     }
 
     @Override

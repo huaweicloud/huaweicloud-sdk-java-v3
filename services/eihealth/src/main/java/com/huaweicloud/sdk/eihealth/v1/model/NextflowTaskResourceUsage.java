@@ -319,28 +319,21 @@ public class NextflowTaskResourceUsage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowTaskResourceUsage nextflowTaskResourceUsage = (NextflowTaskResourceUsage) o;
-        return Objects.equals(this.cpuPercent, nextflowTaskResourceUsage.cpuPercent)
-            && Objects.equals(this.memPercent, nextflowTaskResourceUsage.memPercent)
-            && Objects.equals(this.rchar, nextflowTaskResourceUsage.rchar)
-            && Objects.equals(this.wchar, nextflowTaskResourceUsage.wchar)
-            && Objects.equals(this.readBytes, nextflowTaskResourceUsage.readBytes)
-            && Objects.equals(this.writeBytes, nextflowTaskResourceUsage.writeBytes)
-            && Objects.equals(this.vmem, nextflowTaskResourceUsage.vmem)
-            && Objects.equals(this.rss, nextflowTaskResourceUsage.rss)
-            && Objects.equals(this.peakVmem, nextflowTaskResourceUsage.peakVmem)
-            && Objects.equals(this.peakRss, nextflowTaskResourceUsage.peakRss)
-            && Objects.equals(this.syscr, nextflowTaskResourceUsage.syscr)
-            && Objects.equals(this.syscw, nextflowTaskResourceUsage.syscw)
-            && Objects.equals(this.volCtxt, nextflowTaskResourceUsage.volCtxt)
-            && Objects.equals(this.invCtxt, nextflowTaskResourceUsage.invCtxt);
+        NextflowTaskResourceUsage that = (NextflowTaskResourceUsage) obj;
+        return Objects.equals(this.cpuPercent, that.cpuPercent) && Objects.equals(this.memPercent, that.memPercent)
+            && Objects.equals(this.rchar, that.rchar) && Objects.equals(this.wchar, that.wchar)
+            && Objects.equals(this.readBytes, that.readBytes) && Objects.equals(this.writeBytes, that.writeBytes)
+            && Objects.equals(this.vmem, that.vmem) && Objects.equals(this.rss, that.rss)
+            && Objects.equals(this.peakVmem, that.peakVmem) && Objects.equals(this.peakRss, that.peakRss)
+            && Objects.equals(this.syscr, that.syscr) && Objects.equals(this.syscw, that.syscw)
+            && Objects.equals(this.volCtxt, that.volCtxt) && Objects.equals(this.invCtxt, that.invCtxt);
     }
 
     @Override

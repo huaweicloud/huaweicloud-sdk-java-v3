@@ -77,17 +77,16 @@ public class CreateClusterInstanceNicsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterInstanceNicsBody createClusterInstanceNicsBody = (CreateClusterInstanceNicsBody) o;
-        return Objects.equals(this.vpcId, createClusterInstanceNicsBody.vpcId)
-            && Objects.equals(this.netId, createClusterInstanceNicsBody.netId)
-            && Objects.equals(this.securityGroupId, createClusterInstanceNicsBody.securityGroupId);
+        CreateClusterInstanceNicsBody that = (CreateClusterInstanceNicsBody) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.netId, that.netId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

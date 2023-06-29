@@ -90,22 +90,15 @@ public class ListProcessesRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -249,21 +242,18 @@ public class ListProcessesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProcessesRequest listProcessesRequest = (ListProcessesRequest) o;
-        return Objects.equals(this.instanceId, listProcessesRequest.instanceId)
-            && Objects.equals(this.dbUserId, listProcessesRequest.dbUserId)
-            && Objects.equals(this.user, listProcessesRequest.user)
-            && Objects.equals(this.database, listProcessesRequest.database)
-            && Objects.equals(this.offset, listProcessesRequest.offset)
-            && Objects.equals(this.limit, listProcessesRequest.limit)
-            && Objects.equals(this.xLanguage, listProcessesRequest.xLanguage);
+        ListProcessesRequest that = (ListProcessesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dbUserId, that.dbUserId)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

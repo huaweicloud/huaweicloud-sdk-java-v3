@@ -43,15 +43,15 @@ public class UpdatePredefineTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePredefineTagsRequest updatePredefineTagsRequest = (UpdatePredefineTagsRequest) o;
-        return Objects.equals(this.body, updatePredefineTagsRequest.body);
+        UpdatePredefineTagsRequest that = (UpdatePredefineTagsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

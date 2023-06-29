@@ -97,17 +97,16 @@ public class ListEnvironmentVariablesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvironmentVariablesV2Response listEnvironmentVariablesV2Response = (ListEnvironmentVariablesV2Response) o;
-        return Objects.equals(this.size, listEnvironmentVariablesV2Response.size)
-            && Objects.equals(this.total, listEnvironmentVariablesV2Response.total)
-            && Objects.equals(this.variables, listEnvironmentVariablesV2Response.variables);
+        ListEnvironmentVariablesV2Response that = (ListEnvironmentVariablesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.variables, that.variables);
     }
 
     @Override

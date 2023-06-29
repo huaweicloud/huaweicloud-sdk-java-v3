@@ -77,17 +77,16 @@ public class UpdateFsDirQuotaRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFsDirQuotaRequestBody updateFsDirQuotaRequestBody = (UpdateFsDirQuotaRequestBody) o;
-        return Objects.equals(this.path, updateFsDirQuotaRequestBody.path)
-            && Objects.equals(this.capacity, updateFsDirQuotaRequestBody.capacity)
-            && Objects.equals(this.inode, updateFsDirQuotaRequestBody.inode);
+        UpdateFsDirQuotaRequestBody that = (UpdateFsDirQuotaRequestBody) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.inode, that.inode);
     }
 
     @Override

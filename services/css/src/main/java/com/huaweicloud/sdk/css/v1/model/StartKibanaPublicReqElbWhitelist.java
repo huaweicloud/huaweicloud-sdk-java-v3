@@ -55,16 +55,16 @@ public class StartKibanaPublicReqElbWhitelist {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartKibanaPublicReqElbWhitelist startKibanaPublicReqElbWhitelist = (StartKibanaPublicReqElbWhitelist) o;
-        return Objects.equals(this.enableWhiteList, startKibanaPublicReqElbWhitelist.enableWhiteList)
-            && Objects.equals(this.whiteList, startKibanaPublicReqElbWhitelist.whiteList);
+        StartKibanaPublicReqElbWhitelist that = (StartKibanaPublicReqElbWhitelist) obj;
+        return Objects.equals(this.enableWhiteList, that.enableWhiteList)
+            && Objects.equals(this.whiteList, that.whiteList);
     }
 
     @Override

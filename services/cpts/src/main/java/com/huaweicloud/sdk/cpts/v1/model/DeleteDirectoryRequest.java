@@ -59,16 +59,15 @@ public class DeleteDirectoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDirectoryRequest deleteDirectoryRequest = (DeleteDirectoryRequest) o;
-        return Objects.equals(this.directoryId, deleteDirectoryRequest.directoryId)
-            && Objects.equals(this.testSuiteId, deleteDirectoryRequest.testSuiteId);
+        DeleteDirectoryRequest that = (DeleteDirectoryRequest) obj;
+        return Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.testSuiteId, that.testSuiteId);
     }
 
     @Override

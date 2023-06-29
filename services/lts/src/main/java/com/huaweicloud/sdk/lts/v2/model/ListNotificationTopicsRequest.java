@@ -59,16 +59,15 @@ public class ListNotificationTopicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotificationTopicsRequest listNotificationTopicsRequest = (ListNotificationTopicsRequest) o;
-        return Objects.equals(this.offset, listNotificationTopicsRequest.offset)
-            && Objects.equals(this.limit, listNotificationTopicsRequest.limit);
+        ListNotificationTopicsRequest that = (ListNotificationTopicsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

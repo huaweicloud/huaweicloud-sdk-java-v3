@@ -219,19 +219,19 @@ public class RoutingRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoutingRule routingRule = (RoutingRule) o;
-        return Objects.equals(this.ruleId, routingRule.ruleId) && Objects.equals(this.ruleName, routingRule.ruleName)
-            && Objects.equals(this.description, routingRule.description)
-            && Objects.equals(this.subject, routingRule.subject) && Objects.equals(this.appType, routingRule.appType)
-            && Objects.equals(this.appId, routingRule.appId) && Objects.equals(this.select, routingRule.select)
-            && Objects.equals(this.where, routingRule.where) && Objects.equals(this.active, routingRule.active);
+        RoutingRule that = (RoutingRule) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.select, that.select) && Objects.equals(this.where, that.where)
+            && Objects.equals(this.active, that.active);
     }
 
     @Override

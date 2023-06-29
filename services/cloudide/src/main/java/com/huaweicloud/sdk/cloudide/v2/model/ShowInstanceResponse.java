@@ -88,17 +88,16 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.instance, showInstanceResponse.instance)
-            && Objects.equals(this.status, showInstanceResponse.status)
-            && Objects.equals(this.bundleUrl, showInstanceResponse.bundleUrl);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.bundleUrl, that.bundleUrl);
     }
 
     @Override

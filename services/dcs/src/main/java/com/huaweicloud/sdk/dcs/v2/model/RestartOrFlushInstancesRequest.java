@@ -43,15 +43,15 @@ public class RestartOrFlushInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartOrFlushInstancesRequest restartOrFlushInstancesRequest = (RestartOrFlushInstancesRequest) o;
-        return Objects.equals(this.body, restartOrFlushInstancesRequest.body);
+        RestartOrFlushInstancesRequest that = (RestartOrFlushInstancesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

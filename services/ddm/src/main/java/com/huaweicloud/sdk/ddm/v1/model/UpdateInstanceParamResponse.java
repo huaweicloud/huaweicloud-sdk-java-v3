@@ -122,19 +122,17 @@ public class UpdateInstanceParamResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceParamResponse updateInstanceParamResponse = (UpdateInstanceParamResponse) o;
-        return Objects.equals(this.nodeList, updateInstanceParamResponse.nodeList)
-            && Objects.equals(this.needRestart, updateInstanceParamResponse.needRestart)
-            && Objects.equals(this.jobId, updateInstanceParamResponse.jobId)
-            && Objects.equals(this.configId, updateInstanceParamResponse.configId)
-            && Objects.equals(this.configName, updateInstanceParamResponse.configName);
+        UpdateInstanceParamResponse that = (UpdateInstanceParamResponse) obj;
+        return Objects.equals(this.nodeList, that.nodeList) && Objects.equals(this.needRestart, that.needRestart)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.configId, that.configId)
+            && Objects.equals(this.configName, that.configName);
     }
 
     @Override

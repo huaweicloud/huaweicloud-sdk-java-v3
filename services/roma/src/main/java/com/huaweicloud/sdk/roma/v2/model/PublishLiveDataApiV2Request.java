@@ -87,17 +87,16 @@ public class PublishLiveDataApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishLiveDataApiV2Request publishLiveDataApiV2Request = (PublishLiveDataApiV2Request) o;
-        return Objects.equals(this.instanceId, publishLiveDataApiV2Request.instanceId)
-            && Objects.equals(this.ldApiId, publishLiveDataApiV2Request.ldApiId)
-            && Objects.equals(this.body, publishLiveDataApiV2Request.body);
+        PublishLiveDataApiV2Request that = (PublishLiveDataApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

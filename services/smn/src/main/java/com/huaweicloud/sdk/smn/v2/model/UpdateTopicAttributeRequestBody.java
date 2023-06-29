@@ -33,15 +33,15 @@ public class UpdateTopicAttributeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTopicAttributeRequestBody updateTopicAttributeRequestBody = (UpdateTopicAttributeRequestBody) o;
-        return Objects.equals(this.value, updateTopicAttributeRequestBody.value);
+        UpdateTopicAttributeRequestBody that = (UpdateTopicAttributeRequestBody) obj;
+        return Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -77,22 +77,15 @@ public class ApiBindAclInfo {
             if (value == null) {
                 return null;
             }
-            EntityTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EntityTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EntityTypeEnum(value));
         }
 
         public static EntityTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EntityTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class ApiBindAclInfo {
             if (value == null) {
                 return null;
             }
-            AclTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AclTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AclTypeEnum(value));
         }
 
         public static AclTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AclTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -375,21 +361,19 @@ public class ApiBindAclInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiBindAclInfo apiBindAclInfo = (ApiBindAclInfo) o;
-        return Objects.equals(this.aclId, apiBindAclInfo.aclId) && Objects.equals(this.aclName, apiBindAclInfo.aclName)
-            && Objects.equals(this.entityType, apiBindAclInfo.entityType)
-            && Objects.equals(this.aclType, apiBindAclInfo.aclType)
-            && Objects.equals(this.aclValue, apiBindAclInfo.aclValue)
-            && Objects.equals(this.envId, apiBindAclInfo.envId) && Objects.equals(this.envName, apiBindAclInfo.envName)
-            && Objects.equals(this.bindId, apiBindAclInfo.bindId)
-            && Objects.equals(this.bindTime, apiBindAclInfo.bindTime);
+        ApiBindAclInfo that = (ApiBindAclInfo) obj;
+        return Objects.equals(this.aclId, that.aclId) && Objects.equals(this.aclName, that.aclName)
+            && Objects.equals(this.entityType, that.entityType) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.aclValue, that.aclValue) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.bindId, that.bindId)
+            && Objects.equals(this.bindTime, that.bindTime);
     }
 
     @Override

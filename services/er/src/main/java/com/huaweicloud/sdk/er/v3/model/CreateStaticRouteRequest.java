@@ -89,17 +89,16 @@ public class CreateStaticRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStaticRouteRequest createStaticRouteRequest = (CreateStaticRouteRequest) o;
-        return Objects.equals(this.xClientToken, createStaticRouteRequest.xClientToken)
-            && Objects.equals(this.routeTableId, createStaticRouteRequest.routeTableId)
-            && Objects.equals(this.body, createStaticRouteRequest.body);
+        CreateStaticRouteRequest that = (CreateStaticRouteRequest) obj;
+        return Objects.equals(this.xClientToken, that.xClientToken)
+            && Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

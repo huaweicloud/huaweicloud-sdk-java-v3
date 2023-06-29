@@ -99,18 +99,16 @@ public class ListAppVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppVersionsRequest listAppVersionsRequest = (ListAppVersionsRequest) o;
-        return Objects.equals(this.iefInstanceId, listAppVersionsRequest.iefInstanceId)
-            && Objects.equals(this.appId, listAppVersionsRequest.appId)
-            && Objects.equals(this.limit, listAppVersionsRequest.limit)
-            && Objects.equals(this.offset, listAppVersionsRequest.offset);
+        ListAppVersionsRequest that = (ListAppVersionsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

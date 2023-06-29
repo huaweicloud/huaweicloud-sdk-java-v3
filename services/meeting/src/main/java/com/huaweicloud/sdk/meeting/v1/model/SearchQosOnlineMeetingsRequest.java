@@ -77,17 +77,16 @@ public class SearchQosOnlineMeetingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQosOnlineMeetingsRequest searchQosOnlineMeetingsRequest = (SearchQosOnlineMeetingsRequest) o;
-        return Objects.equals(this.offset, searchQosOnlineMeetingsRequest.offset)
-            && Objects.equals(this.limit, searchQosOnlineMeetingsRequest.limit)
-            && Objects.equals(this.searchKey, searchQosOnlineMeetingsRequest.searchKey);
+        SearchQosOnlineMeetingsRequest that = (SearchQosOnlineMeetingsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

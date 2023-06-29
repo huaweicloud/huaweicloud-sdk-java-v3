@@ -97,17 +97,16 @@ public class ListAppCodesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppCodesV2Response listAppCodesV2Response = (ListAppCodesV2Response) o;
-        return Objects.equals(this.size, listAppCodesV2Response.size)
-            && Objects.equals(this.total, listAppCodesV2Response.total)
-            && Objects.equals(this.appCodes, listAppCodesV2Response.appCodes);
+        ListAppCodesV2Response that = (ListAppCodesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.appCodes, that.appCodes);
     }
 
     @Override

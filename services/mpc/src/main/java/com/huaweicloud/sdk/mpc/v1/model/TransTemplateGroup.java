@@ -167,19 +167,17 @@ public class TransTemplateGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransTemplateGroup transTemplateGroup = (TransTemplateGroup) o;
-        return Objects.equals(this.name, transTemplateGroup.name)
-            && Objects.equals(this.videos, transTemplateGroup.videos)
-            && Objects.equals(this.audio, transTemplateGroup.audio)
-            && Objects.equals(this.videoCommon, transTemplateGroup.videoCommon)
-            && Objects.equals(this.common, transTemplateGroup.common);
+        TransTemplateGroup that = (TransTemplateGroup) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.videos, that.videos)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.videoCommon, that.videoCommon)
+            && Objects.equals(this.common, that.common);
     }
 
     @Override

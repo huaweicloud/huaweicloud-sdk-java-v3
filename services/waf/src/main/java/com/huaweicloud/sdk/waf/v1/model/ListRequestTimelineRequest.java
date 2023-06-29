@@ -178,20 +178,18 @@ public class ListRequestTimelineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestTimelineRequest listRequestTimelineRequest = (ListRequestTimelineRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listRequestTimelineRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listRequestTimelineRequest.from)
-            && Objects.equals(this.to, listRequestTimelineRequest.to)
-            && Objects.equals(this.hosts, listRequestTimelineRequest.hosts)
-            && Objects.equals(this.instances, listRequestTimelineRequest.instances)
-            && Objects.equals(this.groupBy, listRequestTimelineRequest.groupBy);
+        ListRequestTimelineRequest that = (ListRequestTimelineRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.groupBy, that.groupBy);
     }
 
     @Override

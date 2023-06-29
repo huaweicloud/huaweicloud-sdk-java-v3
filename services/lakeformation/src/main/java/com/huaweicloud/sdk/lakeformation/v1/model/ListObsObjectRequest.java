@@ -101,18 +101,16 @@ public class ListObsObjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListObsObjectRequest listObsObjectRequest = (ListObsObjectRequest) o;
-        return Objects.equals(this.bucketName, listObsObjectRequest.bucketName)
-            && Objects.equals(this.marker, listObsObjectRequest.marker)
-            && Objects.equals(this.limit, listObsObjectRequest.limit)
-            && Objects.equals(this.prefix, listObsObjectRequest.prefix);
+        ListObsObjectRequest that = (ListObsObjectRequest) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.prefix, that.prefix);
     }
 
     @Override

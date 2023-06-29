@@ -179,20 +179,18 @@ public class FaceSearchBase64Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceSearchBase64Req faceSearchBase64Req = (FaceSearchBase64Req) o;
-        return Objects.equals(this.filter, faceSearchBase64Req.filter)
-            && Objects.equals(this.topN, faceSearchBase64Req.topN)
-            && Objects.equals(this.imageBase64, faceSearchBase64Req.imageBase64)
-            && Objects.equals(this.returnFields, faceSearchBase64Req.returnFields)
-            && Objects.equals(this.threshold, faceSearchBase64Req.threshold)
-            && Objects.equals(this.sort, faceSearchBase64Req.sort);
+        FaceSearchBase64Req that = (FaceSearchBase64Req) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.topN, that.topN)
+            && Objects.equals(this.imageBase64, that.imageBase64)
+            && Objects.equals(this.returnFields, that.returnFields) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override

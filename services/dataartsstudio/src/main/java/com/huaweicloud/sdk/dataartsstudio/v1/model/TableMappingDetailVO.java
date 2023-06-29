@@ -507,32 +507,27 @@ public class TableMappingDetailVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableMappingDetailVO tableMappingDetailVO = (TableMappingDetailVO) o;
-        return Objects.equals(this.id, tableMappingDetailVO.id)
-            && Objects.equals(this.mappingId, tableMappingDetailVO.mappingId)
-            && Objects.equals(this.targetAttrId, tableMappingDetailVO.targetAttrId)
-            && Objects.equals(this.targetAttrName, tableMappingDetailVO.targetAttrName)
-            && Objects.equals(this.srcTableIds, tableMappingDetailVO.srcTableIds)
-            && Objects.equals(this.srcTableNames, tableMappingDetailVO.srcTableNames)
-            && Objects.equals(this.srcTableDbNames, tableMappingDetailVO.srcTableDbNames)
-            && Objects.equals(this.srcTableModelIds, tableMappingDetailVO.srcTableModelIds)
-            && Objects.equals(this.srcTableIdList, tableMappingDetailVO.srcTableIdList)
-            && Objects.equals(this.srcAttrIds, tableMappingDetailVO.srcAttrIds)
-            && Objects.equals(this.srcAttrNames, tableMappingDetailVO.srcAttrNames)
-            && Objects.equals(this.srcAttrIdList, tableMappingDetailVO.srcAttrIdList)
-            && Objects.equals(this.remark, tableMappingDetailVO.remark)
-            && Objects.equals(this.createTime, tableMappingDetailVO.createTime)
-            && Objects.equals(this.updateTime, tableMappingDetailVO.updateTime)
-            && Objects.equals(this.createBy, tableMappingDetailVO.createBy)
-            && Objects.equals(this.updateBy, tableMappingDetailVO.updateBy)
-            && Objects.equals(this.targetAttr, tableMappingDetailVO.targetAttr);
+        TableMappingDetailVO that = (TableMappingDetailVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.mappingId, that.mappingId)
+            && Objects.equals(this.targetAttrId, that.targetAttrId)
+            && Objects.equals(this.targetAttrName, that.targetAttrName)
+            && Objects.equals(this.srcTableIds, that.srcTableIds)
+            && Objects.equals(this.srcTableNames, that.srcTableNames)
+            && Objects.equals(this.srcTableDbNames, that.srcTableDbNames)
+            && Objects.equals(this.srcTableModelIds, that.srcTableModelIds)
+            && Objects.equals(this.srcTableIdList, that.srcTableIdList)
+            && Objects.equals(this.srcAttrIds, that.srcAttrIds) && Objects.equals(this.srcAttrNames, that.srcAttrNames)
+            && Objects.equals(this.srcAttrIdList, that.srcAttrIdList) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.targetAttr, that.targetAttr);
     }
 
     @Override

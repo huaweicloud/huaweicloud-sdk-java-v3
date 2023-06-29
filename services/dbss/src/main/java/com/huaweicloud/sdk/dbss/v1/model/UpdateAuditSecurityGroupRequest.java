@@ -1,27 +1,18 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.SecurityGroupRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateAuditSecurityGroupRequest  {
-
+public class UpdateAuditSecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private SecurityGroupRequest body;
 
@@ -31,14 +22,13 @@ public class UpdateAuditSecurityGroupRequest  {
     }
 
     public UpdateAuditSecurityGroupRequest withBody(Consumer<SecurityGroupRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new SecurityGroupRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -52,23 +42,23 @@ public class UpdateAuditSecurityGroupRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuditSecurityGroupRequest updateAuditSecurityGroupRequest = (UpdateAuditSecurityGroupRequest) o;
-        return Objects.equals(this.body, updateAuditSecurityGroupRequest.body);
+        UpdateAuditSecurityGroupRequest that = (UpdateAuditSecurityGroupRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -77,6 +67,7 @@ public class UpdateAuditSecurityGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -87,8 +78,5 @@ public class UpdateAuditSecurityGroupRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

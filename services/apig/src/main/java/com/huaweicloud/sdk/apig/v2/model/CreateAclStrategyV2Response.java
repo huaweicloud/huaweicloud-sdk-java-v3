@@ -145,20 +145,17 @@ public class CreateAclStrategyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAclStrategyV2Response createAclStrategyV2Response = (CreateAclStrategyV2Response) o;
-        return Objects.equals(this.aclName, createAclStrategyV2Response.aclName)
-            && Objects.equals(this.aclType, createAclStrategyV2Response.aclType)
-            && Objects.equals(this.aclValue, createAclStrategyV2Response.aclValue)
-            && Objects.equals(this.entityType, createAclStrategyV2Response.entityType)
-            && Objects.equals(this.id, createAclStrategyV2Response.id)
-            && Objects.equals(this.updateTime, createAclStrategyV2Response.updateTime);
+        CreateAclStrategyV2Response that = (CreateAclStrategyV2Response) obj;
+        return Objects.equals(this.aclName, that.aclName) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.aclValue, that.aclValue) && Objects.equals(this.entityType, that.entityType)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

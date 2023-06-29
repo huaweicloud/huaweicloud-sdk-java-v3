@@ -34,15 +34,15 @@ public class ShowMapTileResponse extends SdkStreamResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMapTileResponse showMapTileResponse = (ShowMapTileResponse) o;
-        return Objects.equals(this.contentType, showMapTileResponse.contentType);
+        ShowMapTileResponse that = (ShowMapTileResponse) obj;
+        return Objects.equals(this.contentType, that.contentType);
     }
 
     @Override

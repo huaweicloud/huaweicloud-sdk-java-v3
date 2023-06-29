@@ -143,19 +143,18 @@ public class ErInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErInstance erInstance = (ErInstance) o;
-        return Objects.equals(this.id, erInstance.id) && Objects.equals(this.name, erInstance.name)
-            && Objects.equals(this.state, erInstance.state)
-            && Objects.equals(this.enterpriseProjectId, erInstance.enterpriseProjectId)
-            && Objects.equals(this.projectId, erInstance.projectId)
-            && Objects.equals(this.enableIpv6, erInstance.enableIpv6);
+        ErInstance that = (ErInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.state, that.state)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enableIpv6, that.enableIpv6);
     }
 
     @Override

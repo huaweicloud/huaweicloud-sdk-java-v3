@@ -93,22 +93,15 @@ public class ReplicationRecordMetadata {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeTypeEnum(value));
         }
 
         public static VolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,18 +192,16 @@ public class ReplicationRecordMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplicationRecordMetadata replicationRecordMetadata = (ReplicationRecordMetadata) o;
-        return Objects.equals(this.multiattach, replicationRecordMetadata.multiattach)
-            && Objects.equals(this.bootable, replicationRecordMetadata.bootable)
-            && Objects.equals(this.volumeSize, replicationRecordMetadata.volumeSize)
-            && Objects.equals(this.volumeType, replicationRecordMetadata.volumeType);
+        ReplicationRecordMetadata that = (ReplicationRecordMetadata) obj;
+        return Objects.equals(this.multiattach, that.multiattach) && Objects.equals(this.bootable, that.bootable)
+            && Objects.equals(this.volumeSize, that.volumeSize) && Objects.equals(this.volumeType, that.volumeType);
     }
 
     @Override

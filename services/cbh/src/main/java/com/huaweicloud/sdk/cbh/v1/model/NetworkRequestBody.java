@@ -134,18 +134,16 @@ public class NetworkRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkRequestBody networkRequestBody = (NetworkRequestBody) o;
-        return Objects.equals(this.type, networkRequestBody.type)
-            && Objects.equals(this.securityGroups, networkRequestBody.securityGroups)
-            && Objects.equals(this.nics, networkRequestBody.nics)
-            && Objects.equals(this.serverId, networkRequestBody.serverId);
+        NetworkRequestBody that = (NetworkRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

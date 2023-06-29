@@ -84,16 +84,15 @@ public class ListOtaPackageInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOtaPackageInfoResponse listOtaPackageInfoResponse = (ListOtaPackageInfoResponse) o;
-        return Objects.equals(this.packages, listOtaPackageInfoResponse.packages)
-            && Objects.equals(this.page, listOtaPackageInfoResponse.page);
+        ListOtaPackageInfoResponse that = (ListOtaPackageInfoResponse) obj;
+        return Objects.equals(this.packages, that.packages) && Objects.equals(this.page, that.page);
     }
 
     @Override

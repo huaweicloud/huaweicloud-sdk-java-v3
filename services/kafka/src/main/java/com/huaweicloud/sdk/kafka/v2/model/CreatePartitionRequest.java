@@ -87,17 +87,16 @@ public class CreatePartitionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePartitionRequest createPartitionRequest = (CreatePartitionRequest) o;
-        return Objects.equals(this.instanceId, createPartitionRequest.instanceId)
-            && Objects.equals(this.topic, createPartitionRequest.topic)
-            && Objects.equals(this.body, createPartitionRequest.body);
+        CreatePartitionRequest that = (CreatePartitionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

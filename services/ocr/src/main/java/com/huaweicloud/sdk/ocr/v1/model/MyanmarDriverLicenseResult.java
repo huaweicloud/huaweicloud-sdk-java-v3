@@ -307,27 +307,22 @@ public class MyanmarDriverLicenseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MyanmarDriverLicenseResult myanmarDriverLicenseResult = (MyanmarDriverLicenseResult) o;
-        return Objects.equals(this.cardNumber, myanmarDriverLicenseResult.cardNumber)
-            && Objects.equals(this.cardNumberEn, myanmarDriverLicenseResult.cardNumberEn)
-            && Objects.equals(this.name, myanmarDriverLicenseResult.name)
-            && Objects.equals(this.nameEn, myanmarDriverLicenseResult.nameEn)
-            && Objects.equals(this.nrcId, myanmarDriverLicenseResult.nrcId)
-            && Objects.equals(this.nrcIdEn, myanmarDriverLicenseResult.nrcIdEn)
-            && Objects.equals(this.birth, myanmarDriverLicenseResult.birth)
-            && Objects.equals(this.birthEn, myanmarDriverLicenseResult.birthEn)
-            && Objects.equals(this.bloodGroup, myanmarDriverLicenseResult.bloodGroup)
-            && Objects.equals(this.bloodGroupEn, myanmarDriverLicenseResult.bloodGroupEn)
-            && Objects.equals(this.expiriedDate, myanmarDriverLicenseResult.expiriedDate)
-            && Objects.equals(this.expiriedDateEn, myanmarDriverLicenseResult.expiriedDateEn)
-            && Objects.equals(this.confidence, myanmarDriverLicenseResult.confidence);
+        MyanmarDriverLicenseResult that = (MyanmarDriverLicenseResult) obj;
+        return Objects.equals(this.cardNumber, that.cardNumber) && Objects.equals(this.cardNumberEn, that.cardNumberEn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nrcId, that.nrcId) && Objects.equals(this.nrcIdEn, that.nrcIdEn)
+            && Objects.equals(this.birth, that.birth) && Objects.equals(this.birthEn, that.birthEn)
+            && Objects.equals(this.bloodGroup, that.bloodGroup) && Objects.equals(this.bloodGroupEn, that.bloodGroupEn)
+            && Objects.equals(this.expiriedDate, that.expiriedDate)
+            && Objects.equals(this.expiriedDateEn, that.expiriedDateEn)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

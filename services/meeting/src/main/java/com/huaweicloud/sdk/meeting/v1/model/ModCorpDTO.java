@@ -136,17 +136,16 @@ public class ModCorpDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModCorpDTO modCorpDTO = (ModCorpDTO) o;
-        return Objects.equals(this.basicInfo, modCorpDTO.basicInfo)
-            && Objects.equals(this.adminInfo, modCorpDTO.adminInfo) && Objects.equals(this.groupId, modCorpDTO.groupId)
-            && Objects.equals(this.propertyInfo, modCorpDTO.propertyInfo);
+        ModCorpDTO that = (ModCorpDTO) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.adminInfo, that.adminInfo)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.propertyInfo, that.propertyInfo);
     }
 
     @Override

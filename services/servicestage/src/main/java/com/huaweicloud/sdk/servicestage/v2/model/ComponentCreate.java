@@ -184,19 +184,18 @@ public class ComponentCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentCreate componentCreate = (ComponentCreate) o;
-        return Objects.equals(this.name, componentCreate.name) && Objects.equals(this.runtime, componentCreate.runtime)
-            && Objects.equals(this.category, componentCreate.category)
-            && Objects.equals(this.subCategory, componentCreate.subCategory)
-            && Objects.equals(this.description, componentCreate.description)
-            && Objects.equals(this.source, componentCreate.source) && Objects.equals(this.build, componentCreate.build);
+        ComponentCreate that = (ComponentCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.subCategory, that.subCategory)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build);
     }
 
     @Override

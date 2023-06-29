@@ -77,17 +77,17 @@ public class ShowStructTemplateclusterInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStructTemplateclusterInfo showStructTemplateclusterInfo = (ShowStructTemplateclusterInfo) o;
-        return Objects.equals(this.clusterName, showStructTemplateclusterInfo.clusterName)
-            && Objects.equals(this.kafkaBootstrapServers, showStructTemplateclusterInfo.kafkaBootstrapServers)
-            && Objects.equals(this.kafkaSslEnable, showStructTemplateclusterInfo.kafkaSslEnable);
+        ShowStructTemplateclusterInfo that = (ShowStructTemplateclusterInfo) obj;
+        return Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.kafkaBootstrapServers, that.kafkaBootstrapServers)
+            && Objects.equals(this.kafkaSslEnable, that.kafkaSslEnable);
     }
 
     @Override

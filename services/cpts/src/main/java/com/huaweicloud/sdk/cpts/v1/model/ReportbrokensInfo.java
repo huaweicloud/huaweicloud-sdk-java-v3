@@ -176,19 +176,19 @@ public class ReportbrokensInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportbrokensInfo reportbrokensInfo = (ReportbrokensInfo) o;
-        return Objects.equals(this.brandBrokens, reportbrokensInfo.brandBrokens)
-            && Objects.equals(this.commonTimestamps, reportbrokensInfo.commonTimestamps)
-            && Objects.equals(this.respcodeBrokens, reportbrokensInfo.respcodeBrokens)
-            && Objects.equals(this.tpsBrokens, reportbrokensInfo.tpsBrokens)
-            && Objects.equals(this.vusersBrokens, reportbrokensInfo.vusersBrokens);
+        ReportbrokensInfo that = (ReportbrokensInfo) obj;
+        return Objects.equals(this.brandBrokens, that.brandBrokens)
+            && Objects.equals(this.commonTimestamps, that.commonTimestamps)
+            && Objects.equals(this.respcodeBrokens, that.respcodeBrokens)
+            && Objects.equals(this.tpsBrokens, that.tpsBrokens)
+            && Objects.equals(this.vusersBrokens, that.vusersBrokens);
     }
 
     @Override

@@ -96,17 +96,17 @@ public class WorkloadQueue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkloadQueue workloadQueue = (WorkloadQueue) o;
-        return Objects.equals(this.workloadQueueName, workloadQueue.workloadQueueName)
-            && Objects.equals(this.logicalClusterName, workloadQueue.logicalClusterName)
-            && Objects.equals(this.workloadResourceItemList, workloadQueue.workloadResourceItemList);
+        WorkloadQueue that = (WorkloadQueue) obj;
+        return Objects.equals(this.workloadQueueName, that.workloadQueueName)
+            && Objects.equals(this.logicalClusterName, that.logicalClusterName)
+            && Objects.equals(this.workloadResourceItemList, that.workloadResourceItemList);
     }
 
     @Override

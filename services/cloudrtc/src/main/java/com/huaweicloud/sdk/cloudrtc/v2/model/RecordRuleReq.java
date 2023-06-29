@@ -68,22 +68,15 @@ public class RecordRuleReq {
             if (value == null) {
                 return null;
             }
-            RecordFormatsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordFormatsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordFormatsEnum(value));
         }
 
         public static RecordFormatsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordFormatsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,18 +220,16 @@ public class RecordRuleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordRuleReq recordRuleReq = (RecordRuleReq) o;
-        return Objects.equals(this.obsAddr, recordRuleReq.obsAddr)
-            && Objects.equals(this.recordFormats, recordRuleReq.recordFormats)
-            && Objects.equals(this.hlsConfig, recordRuleReq.hlsConfig)
-            && Objects.equals(this.mp4Config, recordRuleReq.mp4Config);
+        RecordRuleReq that = (RecordRuleReq) obj;
+        return Objects.equals(this.obsAddr, that.obsAddr) && Objects.equals(this.recordFormats, that.recordFormats)
+            && Objects.equals(this.hlsConfig, that.hlsConfig) && Objects.equals(this.mp4Config, that.mp4Config);
     }
 
     @Override

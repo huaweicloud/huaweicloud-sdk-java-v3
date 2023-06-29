@@ -1,32 +1,25 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class OldExtends  {
-
+public class OldExtends {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domains")
-    
+    @JsonProperty(value = "domains")
+
     private List<String> domains = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top")
-    
+    @JsonProperty(value = "top")
 
     private Integer top;
 
@@ -35,9 +28,8 @@ public class OldExtends  {
         return this;
     }
 
-    
     public OldExtends addDomainsItem(String domainsItem) {
-        if(this.domains == null) {
+        if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
         this.domains.add(domainsItem);
@@ -45,7 +37,7 @@ public class OldExtends  {
     }
 
     public OldExtends withDomains(Consumer<List<String>> domainsSetter) {
-        if(this.domains == null) {
+        if (this.domains == null) {
             this.domains = new ArrayList<>();
         }
         domainsSetter.accept(this.domains);
@@ -64,15 +56,10 @@ public class OldExtends  {
         this.domains = domains;
     }
 
-    
-
     public OldExtends withTop(Integer top) {
         this.top = top;
         return this;
     }
-
-    
-
 
     /**
      * 返回答案数量，默认为5，取值范围1~10。
@@ -86,24 +73,23 @@ public class OldExtends  {
         this.top = top;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OldExtends oldExtends = (OldExtends) o;
-        return Objects.equals(this.domains, oldExtends.domains) &&
-            Objects.equals(this.top, oldExtends.top);
+        OldExtends that = (OldExtends) obj;
+        return Objects.equals(this.domains, that.domains) && Objects.equals(this.top, that.top);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domains, top);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class OldExtends  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class OldExtends  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

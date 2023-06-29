@@ -206,22 +206,19 @@ public class CreateTakeOverTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTakeOverTaskReq createTakeOverTaskReq = (CreateTakeOverTaskReq) o;
-        return Objects.equals(this.bucket, createTakeOverTaskReq.bucket)
-            && Objects.equals(this._object, createTakeOverTaskReq._object)
-            && Objects.equals(this.suffix, createTakeOverTaskReq.suffix)
-            && Objects.equals(this.templateGroupName, createTakeOverTaskReq.templateGroupName)
-            && Objects.equals(this.workflowName, createTakeOverTaskReq.workflowName)
-            && Objects.equals(this.hostType, createTakeOverTaskReq.hostType)
-            && Objects.equals(this.outputBucket, createTakeOverTaskReq.outputBucket)
-            && Objects.equals(this.outputPath, createTakeOverTaskReq.outputPath);
+        CreateTakeOverTaskReq that = (CreateTakeOverTaskReq) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.suffix, that.suffix)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.hostType, that.hostType)
+            && Objects.equals(this.outputBucket, that.outputBucket) && Objects.equals(this.outputPath, that.outputPath);
     }
 
     @Override

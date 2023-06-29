@@ -56,16 +56,15 @@ public class RunIefJobActionCallBackResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunIefJobActionCallBackResponse runIefJobActionCallBackResponse = (RunIefJobActionCallBackResponse) o;
-        return Objects.equals(this.isSuccess, runIefJobActionCallBackResponse.isSuccess)
-            && Objects.equals(this.message, runIefJobActionCallBackResponse.message);
+        RunIefJobActionCallBackResponse that = (RunIefJobActionCallBackResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

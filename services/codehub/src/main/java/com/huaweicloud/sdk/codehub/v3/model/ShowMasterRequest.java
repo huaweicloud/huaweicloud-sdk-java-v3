@@ -33,15 +33,15 @@ public class ShowMasterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMasterRequest showMasterRequest = (ShowMasterRequest) o;
-        return Objects.equals(this.repositoryUuid, showMasterRequest.repositoryUuid);
+        ShowMasterRequest that = (ShowMasterRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid);
     }
 
     @Override

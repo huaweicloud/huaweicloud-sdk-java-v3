@@ -75,22 +75,15 @@ public class ListTableModelRelationsRequest {
             if (value == null) {
                 return null;
             }
-            BizTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BizTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BizTypeEnum(value));
         }
 
         public static BizTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BizTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,20 +219,17 @@ public class ListTableModelRelationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableModelRelationsRequest listTableModelRelationsRequest = (ListTableModelRelationsRequest) o;
-        return Objects.equals(this.workspace, listTableModelRelationsRequest.workspace)
-            && Objects.equals(this.modelId, listTableModelRelationsRequest.modelId)
-            && Objects.equals(this.tableIds, listTableModelRelationsRequest.tableIds)
-            && Objects.equals(this.bizType, listTableModelRelationsRequest.bizType)
-            && Objects.equals(this.limit, listTableModelRelationsRequest.limit)
-            && Objects.equals(this.offset, listTableModelRelationsRequest.offset);
+        ListTableModelRelationsRequest that = (ListTableModelRelationsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.tableIds, that.tableIds) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

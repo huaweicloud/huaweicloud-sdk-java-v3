@@ -43,15 +43,15 @@ public class UpdateEnterpriseRouterRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEnterpriseRouterRequestBody updateEnterpriseRouterRequestBody = (UpdateEnterpriseRouterRequestBody) o;
-        return Objects.equals(this.instance, updateEnterpriseRouterRequestBody.instance);
+        UpdateEnterpriseRouterRequestBody that = (UpdateEnterpriseRouterRequestBody) obj;
+        return Objects.equals(this.instance, that.instance);
     }
 
     @Override

@@ -73,22 +73,15 @@ public class StreamTranscodingTemplate {
             if (value == null) {
                 return null;
             }
-            TransTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TransTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TransTypeEnum(value));
         }
 
         public static TransTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TransTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class StreamTranscodingTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamTranscodingTemplate streamTranscodingTemplate = (StreamTranscodingTemplate) o;
-        return Objects.equals(this.domain, streamTranscodingTemplate.domain)
-            && Objects.equals(this.appName, streamTranscodingTemplate.appName)
-            && Objects.equals(this.transType, streamTranscodingTemplate.transType)
-            && Objects.equals(this.qualityInfo, streamTranscodingTemplate.qualityInfo);
+        StreamTranscodingTemplate that = (StreamTranscodingTemplate) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.transType, that.transType) && Objects.equals(this.qualityInfo, that.qualityInfo);
     }
 
     @Override

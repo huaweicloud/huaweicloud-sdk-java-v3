@@ -77,17 +77,16 @@ public class ApiCatalogCreateParaDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiCatalogCreateParaDTO apiCatalogCreateParaDTO = (ApiCatalogCreateParaDTO) o;
-        return Objects.equals(this.pid, apiCatalogCreateParaDTO.pid)
-            && Objects.equals(this.name, apiCatalogCreateParaDTO.name)
-            && Objects.equals(this.description, apiCatalogCreateParaDTO.description);
+        ApiCatalogCreateParaDTO that = (ApiCatalogCreateParaDTO) obj;
+        return Objects.equals(this.pid, that.pid) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

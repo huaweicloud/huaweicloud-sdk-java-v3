@@ -150,19 +150,17 @@ public class ShowResDatasourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResDatasourceResponse showResDatasourceResponse = (ShowResDatasourceResponse) o;
-        return Objects.equals(this.datasource, showResDatasourceResponse.datasource)
-            && Objects.equals(this.jobs, showResDatasourceResponse.jobs)
-            && Objects.equals(this.isSuccess, showResDatasourceResponse.isSuccess)
-            && Objects.equals(this.message, showResDatasourceResponse.message)
-            && Objects.equals(this.errorCode, showResDatasourceResponse.errorCode);
+        ShowResDatasourceResponse that = (ShowResDatasourceResponse) obj;
+        return Objects.equals(this.datasource, that.datasource) && Objects.equals(this.jobs, that.jobs)
+            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

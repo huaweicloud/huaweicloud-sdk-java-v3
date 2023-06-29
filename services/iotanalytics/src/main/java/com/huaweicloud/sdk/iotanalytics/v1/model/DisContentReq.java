@@ -99,17 +99,16 @@ public class DisContentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisContentReq disContentReq = (DisContentReq) o;
-        return Objects.equals(this.projectId, disContentReq.projectId)
-            && Objects.equals(this.streamName, disContentReq.streamName) && Objects.equals(this.ak, disContentReq.ak)
-            && Objects.equals(this.sk, disContentReq.sk);
+        DisContentReq that = (DisContentReq) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.streamName, that.streamName)
+            && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk);
     }
 
     @Override

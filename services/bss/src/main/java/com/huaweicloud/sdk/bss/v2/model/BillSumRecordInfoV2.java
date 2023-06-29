@@ -452,34 +452,32 @@ public class BillSumRecordInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BillSumRecordInfoV2 billSumRecordInfoV2 = (BillSumRecordInfoV2) o;
-        return Objects.equals(this.billCycle, billSumRecordInfoV2.billCycle)
-            && Objects.equals(this.resourceTypeCode, billSumRecordInfoV2.resourceTypeCode)
-            && Objects.equals(this.serviceTypeCode, billSumRecordInfoV2.serviceTypeCode)
-            && Objects.equals(this.serviceTypeName, billSumRecordInfoV2.serviceTypeName)
-            && Objects.equals(this.resourceTypeName, billSumRecordInfoV2.resourceTypeName)
-            && Objects.equals(this.chargingMode, billSumRecordInfoV2.chargingMode)
-            && Objects.equals(this.officialAmount, billSumRecordInfoV2.officialAmount)
-            && Objects.equals(this.officialDiscountAmount, billSumRecordInfoV2.officialDiscountAmount)
-            && Objects.equals(this.truncatedAmount, billSumRecordInfoV2.truncatedAmount)
-            && Objects.equals(this.consumeAmount, billSumRecordInfoV2.consumeAmount)
-            && Objects.equals(this.couponAmount, billSumRecordInfoV2.couponAmount)
-            && Objects.equals(this.flexipurchaseCouponAmount, billSumRecordInfoV2.flexipurchaseCouponAmount)
-            && Objects.equals(this.storedValueCardAmount, billSumRecordInfoV2.storedValueCardAmount)
-            && Objects.equals(this.debtAmount, billSumRecordInfoV2.debtAmount)
-            && Objects.equals(this.writeoffAmount, billSumRecordInfoV2.writeoffAmount)
-            && Objects.equals(this.cashAmount, billSumRecordInfoV2.cashAmount)
-            && Objects.equals(this.creditAmount, billSumRecordInfoV2.creditAmount)
-            && Objects.equals(this.measureId, billSumRecordInfoV2.measureId)
-            && Objects.equals(this.billType, billSumRecordInfoV2.billType)
-            && Objects.equals(this.customerId, billSumRecordInfoV2.customerId);
+        BillSumRecordInfoV2 that = (BillSumRecordInfoV2) obj;
+        return Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.officialDiscountAmount, that.officialDiscountAmount)
+            && Objects.equals(this.truncatedAmount, that.truncatedAmount)
+            && Objects.equals(this.consumeAmount, that.consumeAmount)
+            && Objects.equals(this.couponAmount, that.couponAmount)
+            && Objects.equals(this.flexipurchaseCouponAmount, that.flexipurchaseCouponAmount)
+            && Objects.equals(this.storedValueCardAmount, that.storedValueCardAmount)
+            && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.writeoffAmount, that.writeoffAmount)
+            && Objects.equals(this.cashAmount, that.cashAmount) && Objects.equals(this.creditAmount, that.creditAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.billType, that.billType)
+            && Objects.equals(this.customerId, that.customerId);
     }
 
     @Override

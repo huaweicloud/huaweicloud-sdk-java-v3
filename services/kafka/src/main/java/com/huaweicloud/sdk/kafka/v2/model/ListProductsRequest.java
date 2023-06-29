@@ -33,15 +33,15 @@ public class ListProductsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRequest listProductsRequest = (ListProductsRequest) o;
-        return Objects.equals(this.engine, listProductsRequest.engine);
+        ListProductsRequest that = (ListProductsRequest) obj;
+        return Objects.equals(this.engine, that.engine);
     }
 
     @Override

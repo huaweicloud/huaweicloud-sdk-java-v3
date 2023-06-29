@@ -99,18 +99,16 @@ public class CreateIterationRequestV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIterationRequestV4 createIterationRequestV4 = (CreateIterationRequestV4) o;
-        return Objects.equals(this.beginTime, createIterationRequestV4.beginTime)
-            && Objects.equals(this.description, createIterationRequestV4.description)
-            && Objects.equals(this.endTime, createIterationRequestV4.endTime)
-            && Objects.equals(this.name, createIterationRequestV4.name);
+        CreateIterationRequestV4 that = (CreateIterationRequestV4) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.name, that.name);
     }
 
     @Override

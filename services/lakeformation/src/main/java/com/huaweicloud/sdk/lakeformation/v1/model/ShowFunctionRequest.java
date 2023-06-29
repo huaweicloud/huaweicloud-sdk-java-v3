@@ -99,18 +99,17 @@ public class ShowFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFunctionRequest showFunctionRequest = (ShowFunctionRequest) o;
-        return Objects.equals(this.instanceId, showFunctionRequest.instanceId)
-            && Objects.equals(this.catalogName, showFunctionRequest.catalogName)
-            && Objects.equals(this.databaseName, showFunctionRequest.databaseName)
-            && Objects.equals(this.functionName, showFunctionRequest.functionName);
+        ShowFunctionRequest that = (ShowFunctionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.functionName, that.functionName);
     }
 
     @Override

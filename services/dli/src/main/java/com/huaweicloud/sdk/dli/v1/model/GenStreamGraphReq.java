@@ -258,25 +258,22 @@ public class GenStreamGraphReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GenStreamGraphReq genStreamGraphReq = (GenStreamGraphReq) o;
-        return Objects.equals(this.sqlBody, genStreamGraphReq.sqlBody)
-            && Objects.equals(this.cuNumber, genStreamGraphReq.cuNumber)
-            && Objects.equals(this.managerCuNumber, genStreamGraphReq.managerCuNumber)
-            && Objects.equals(this.parallelNumber, genStreamGraphReq.parallelNumber)
-            && Objects.equals(this.tmCus, genStreamGraphReq.tmCus)
-            && Objects.equals(this.tmSlotNum, genStreamGraphReq.tmSlotNum)
-            && Objects.equals(this.operatorConfig, genStreamGraphReq.operatorConfig)
-            && Objects.equals(this.staticEstimator, genStreamGraphReq.staticEstimator)
-            && Objects.equals(this.jobType, genStreamGraphReq.jobType)
-            && Objects.equals(this.graphType, genStreamGraphReq.graphType)
-            && Objects.equals(this.staticEstimatorConfig, genStreamGraphReq.staticEstimatorConfig);
+        GenStreamGraphReq that = (GenStreamGraphReq) obj;
+        return Objects.equals(this.sqlBody, that.sqlBody) && Objects.equals(this.cuNumber, that.cuNumber)
+            && Objects.equals(this.managerCuNumber, that.managerCuNumber)
+            && Objects.equals(this.parallelNumber, that.parallelNumber) && Objects.equals(this.tmCus, that.tmCus)
+            && Objects.equals(this.tmSlotNum, that.tmSlotNum)
+            && Objects.equals(this.operatorConfig, that.operatorConfig)
+            && Objects.equals(this.staticEstimator, that.staticEstimator) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.graphType, that.graphType)
+            && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig);
     }
 
     @Override

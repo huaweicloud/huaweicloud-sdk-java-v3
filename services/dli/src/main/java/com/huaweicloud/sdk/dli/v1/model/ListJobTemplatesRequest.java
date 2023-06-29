@@ -99,18 +99,16 @@ public class ListJobTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobTemplatesRequest listJobTemplatesRequest = (ListJobTemplatesRequest) o;
-        return Objects.equals(this.type, listJobTemplatesRequest.type)
-            && Objects.equals(this.keyword, listJobTemplatesRequest.keyword)
-            && Objects.equals(this.pageSize, listJobTemplatesRequest.pageSize)
-            && Objects.equals(this.currentPage, listJobTemplatesRequest.currentPage);
+        ListJobTemplatesRequest that = (ListJobTemplatesRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.currentPage, that.currentPage);
     }
 
     @Override

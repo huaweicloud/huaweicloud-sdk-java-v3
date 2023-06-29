@@ -33,15 +33,15 @@ public class DeleteShareRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteShareRequest deleteShareRequest = (DeleteShareRequest) o;
-        return Objects.equals(this.shareId, deleteShareRequest.shareId);
+        DeleteShareRequest that = (DeleteShareRequest) obj;
+        return Objects.equals(this.shareId, that.shareId);
     }
 
     @Override

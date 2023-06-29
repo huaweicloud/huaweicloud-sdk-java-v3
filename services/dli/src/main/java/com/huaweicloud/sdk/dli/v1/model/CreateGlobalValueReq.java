@@ -77,17 +77,16 @@ public class CreateGlobalValueReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGlobalValueReq createGlobalValueReq = (CreateGlobalValueReq) o;
-        return Objects.equals(this.varName, createGlobalValueReq.varName)
-            && Objects.equals(this.varValue, createGlobalValueReq.varValue)
-            && Objects.equals(this.isSensitive, createGlobalValueReq.isSensitive);
+        CreateGlobalValueReq that = (CreateGlobalValueReq) obj;
+        return Objects.equals(this.varName, that.varName) && Objects.equals(this.varValue, that.varValue)
+            && Objects.equals(this.isSensitive, that.isSensitive);
     }
 
     @Override

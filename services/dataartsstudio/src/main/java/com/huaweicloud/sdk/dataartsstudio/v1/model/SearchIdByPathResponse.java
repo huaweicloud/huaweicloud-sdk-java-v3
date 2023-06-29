@@ -34,15 +34,15 @@ public class SearchIdByPathResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchIdByPathResponse searchIdByPathResponse = (SearchIdByPathResponse) o;
-        return Objects.equals(this.catalogId, searchIdByPathResponse.catalogId);
+        SearchIdByPathResponse that = (SearchIdByPathResponse) obj;
+        return Objects.equals(this.catalogId, that.catalogId);
     }
 
     @Override

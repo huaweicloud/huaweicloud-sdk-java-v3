@@ -99,18 +99,16 @@ public class CreateIndicatorDetailIndicatorType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIndicatorDetailIndicatorType createIndicatorDetailIndicatorType = (CreateIndicatorDetailIndicatorType) o;
-        return Objects.equals(this.indicatorType, createIndicatorDetailIndicatorType.indicatorType)
-            && Objects.equals(this.id, createIndicatorDetailIndicatorType.id)
-            && Objects.equals(this.category, createIndicatorDetailIndicatorType.category)
-            && Objects.equals(this.layoutId, createIndicatorDetailIndicatorType.layoutId);
+        CreateIndicatorDetailIndicatorType that = (CreateIndicatorDetailIndicatorType) obj;
+        return Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.layoutId, that.layoutId);
     }
 
     @Override

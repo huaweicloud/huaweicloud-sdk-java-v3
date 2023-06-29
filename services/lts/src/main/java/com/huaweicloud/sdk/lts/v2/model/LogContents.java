@@ -96,16 +96,16 @@ public class LogContents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogContents logContents = (LogContents) o;
-        return Objects.equals(this.content, logContents.content) && Objects.equals(this.lineNum, logContents.lineNum)
-            && Objects.equals(this.labels, logContents.labels);
+        LogContents that = (LogContents) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

@@ -624,41 +624,36 @@ public class UpdateFlinkSqlRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlinkSqlRequestBody updateFlinkSqlRequestBody = (UpdateFlinkSqlRequestBody) o;
-        return Objects.equals(this.name, updateFlinkSqlRequestBody.name)
-            && Objects.equals(this.desc, updateFlinkSqlRequestBody.desc)
-            && Objects.equals(this.queueName, updateFlinkSqlRequestBody.queueName)
-            && Objects.equals(this.sqlBody, updateFlinkSqlRequestBody.sqlBody)
-            && Objects.equals(this.runMode, updateFlinkSqlRequestBody.runMode)
-            && Objects.equals(this.cuNumber, updateFlinkSqlRequestBody.cuNumber)
-            && Objects.equals(this.parallelNumber, updateFlinkSqlRequestBody.parallelNumber)
-            && Objects.equals(this.checkpointEnabled, updateFlinkSqlRequestBody.checkpointEnabled)
-            && Objects.equals(this.checkpointMode, updateFlinkSqlRequestBody.checkpointMode)
-            && Objects.equals(this.checkpointInterval, updateFlinkSqlRequestBody.checkpointInterval)
-            && Objects.equals(this.obsBucket, updateFlinkSqlRequestBody.obsBucket)
-            && Objects.equals(this.logEnabled, updateFlinkSqlRequestBody.logEnabled)
-            && Objects.equals(this.smnTopic, updateFlinkSqlRequestBody.smnTopic)
-            && Objects.equals(this.restartWhenException, updateFlinkSqlRequestBody.restartWhenException)
-            && Objects.equals(this.idleStateRetention, updateFlinkSqlRequestBody.idleStateRetention)
-            && Objects.equals(this.edgeGroupIds, updateFlinkSqlRequestBody.edgeGroupIds)
-            && Objects.equals(this.dirtyDataStrategy, updateFlinkSqlRequestBody.dirtyDataStrategy)
-            && Objects.equals(this.udfJarUrl, updateFlinkSqlRequestBody.udfJarUrl)
-            && Objects.equals(this.managerCuNumber, updateFlinkSqlRequestBody.managerCuNumber)
-            && Objects.equals(this.tmCus, updateFlinkSqlRequestBody.tmCus)
-            && Objects.equals(this.tmSlotNum, updateFlinkSqlRequestBody.tmSlotNum)
-            && Objects.equals(this.resumeCheckpoint, updateFlinkSqlRequestBody.resumeCheckpoint)
-            && Objects.equals(this.resumeMaxNum, updateFlinkSqlRequestBody.resumeMaxNum)
-            && Objects.equals(this.runtimeConfig, updateFlinkSqlRequestBody.runtimeConfig)
-            && Objects.equals(this.operatorConfig, updateFlinkSqlRequestBody.operatorConfig)
-            && Objects.equals(this.staticEstimatorConfig, updateFlinkSqlRequestBody.staticEstimatorConfig)
-            && Objects.equals(this.flinkVersion, updateFlinkSqlRequestBody.flinkVersion);
+        UpdateFlinkSqlRequestBody that = (UpdateFlinkSqlRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.sqlBody, that.sqlBody)
+            && Objects.equals(this.runMode, that.runMode) && Objects.equals(this.cuNumber, that.cuNumber)
+            && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.checkpointEnabled, that.checkpointEnabled)
+            && Objects.equals(this.checkpointMode, that.checkpointMode)
+            && Objects.equals(this.checkpointInterval, that.checkpointInterval)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.logEnabled, that.logEnabled)
+            && Objects.equals(this.smnTopic, that.smnTopic)
+            && Objects.equals(this.restartWhenException, that.restartWhenException)
+            && Objects.equals(this.idleStateRetention, that.idleStateRetention)
+            && Objects.equals(this.edgeGroupIds, that.edgeGroupIds)
+            && Objects.equals(this.dirtyDataStrategy, that.dirtyDataStrategy)
+            && Objects.equals(this.udfJarUrl, that.udfJarUrl)
+            && Objects.equals(this.managerCuNumber, that.managerCuNumber) && Objects.equals(this.tmCus, that.tmCus)
+            && Objects.equals(this.tmSlotNum, that.tmSlotNum)
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
+            && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.operatorConfig, that.operatorConfig)
+            && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig)
+            && Objects.equals(this.flinkVersion, that.flinkVersion);
     }
 
     @Override

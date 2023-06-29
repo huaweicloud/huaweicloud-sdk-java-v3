@@ -66,16 +66,16 @@ public class CreateBandwidthPackageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBandwidthPackageResponse createBandwidthPackageResponse = (CreateBandwidthPackageResponse) o;
-        return Objects.equals(this.bandwidthPackage, createBandwidthPackageResponse.bandwidthPackage)
-            && Objects.equals(this.requestId, createBandwidthPackageResponse.requestId);
+        CreateBandwidthPackageResponse that = (CreateBandwidthPackageResponse) obj;
+        return Objects.equals(this.bandwidthPackage, that.bandwidthPackage)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

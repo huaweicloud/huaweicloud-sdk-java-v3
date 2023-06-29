@@ -369,31 +369,28 @@ public class RtcHistoryQualityTimeValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtcHistoryQualityTimeValue rtcHistoryQualityTimeValue = (RtcHistoryQualityTimeValue) o;
-        return Objects.equals(this.date, rtcHistoryQualityTimeValue.date)
-            && Objects.equals(this.joinSuccessRate, rtcHistoryQualityTimeValue.joinSuccessRate)
-            && Objects.equals(this.joinSuccessIn5secsRate, rtcHistoryQualityTimeValue.joinSuccessIn5secsRate)
-            && Objects.equals(this.videoFreezeRate, rtcHistoryQualityTimeValue.videoFreezeRate)
-            && Objects.equals(this.audioFreezeRate, rtcHistoryQualityTimeValue.audioFreezeRate)
-            && Objects.equals(this.firstVideoRecvTime, rtcHistoryQualityTimeValue.firstVideoRecvTime)
-            && Objects.equals(this.firstAudioRecvTime, rtcHistoryQualityTimeValue.firstAudioRecvTime)
-            && Objects.equals(this.pullStreamSuccessRate, rtcHistoryQualityTimeValue.pullStreamSuccessRate)
-            && Objects.equals(this.pushStreamSuccessRate, rtcHistoryQualityTimeValue.pushStreamSuccessRate)
-            && Objects.equals(this.videoUpstreamExcellentTransRate,
-                rtcHistoryQualityTimeValue.videoUpstreamExcellentTransRate)
-            && Objects.equals(this.audioUpstreamExcellentTransRate,
-                rtcHistoryQualityTimeValue.audioUpstreamExcellentTransRate)
-            && Objects.equals(this.videoExcellentTransRate, rtcHistoryQualityTimeValue.videoExcellentTransRate)
-            && Objects.equals(this.audioExcellentTransRate, rtcHistoryQualityTimeValue.audioExcellentTransRate)
-            && Objects.equals(this.videoTransDelay, rtcHistoryQualityTimeValue.videoTransDelay)
-            && Objects.equals(this.audioTransDelay, rtcHistoryQualityTimeValue.audioTransDelay);
+        RtcHistoryQualityTimeValue that = (RtcHistoryQualityTimeValue) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.joinSuccessRate, that.joinSuccessRate)
+            && Objects.equals(this.joinSuccessIn5secsRate, that.joinSuccessIn5secsRate)
+            && Objects.equals(this.videoFreezeRate, that.videoFreezeRate)
+            && Objects.equals(this.audioFreezeRate, that.audioFreezeRate)
+            && Objects.equals(this.firstVideoRecvTime, that.firstVideoRecvTime)
+            && Objects.equals(this.firstAudioRecvTime, that.firstAudioRecvTime)
+            && Objects.equals(this.pullStreamSuccessRate, that.pullStreamSuccessRate)
+            && Objects.equals(this.pushStreamSuccessRate, that.pushStreamSuccessRate)
+            && Objects.equals(this.videoUpstreamExcellentTransRate, that.videoUpstreamExcellentTransRate)
+            && Objects.equals(this.audioUpstreamExcellentTransRate, that.audioUpstreamExcellentTransRate)
+            && Objects.equals(this.videoExcellentTransRate, that.videoExcellentTransRate)
+            && Objects.equals(this.audioExcellentTransRate, that.audioExcellentTransRate)
+            && Objects.equals(this.videoTransDelay, that.videoTransDelay)
+            && Objects.equals(this.audioTransDelay, that.audioTransDelay);
     }
 
     @Override

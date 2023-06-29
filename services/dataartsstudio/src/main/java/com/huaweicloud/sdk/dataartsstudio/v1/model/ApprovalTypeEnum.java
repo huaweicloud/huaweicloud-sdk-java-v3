@@ -52,22 +52,15 @@ public class ApprovalTypeEnum {
         if (value == null) {
             return null;
         }
-        ApprovalTypeEnum result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new ApprovalTypeEnum(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApprovalTypeEnum(value));
     }
 
     public static ApprovalTypeEnum valueOf(String value) {
         if (value == null) {
             return null;
         }
-        ApprovalTypeEnum result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

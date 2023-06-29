@@ -147,18 +147,16 @@ public class TransformMetrics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformMetrics transformMetrics = (TransformMetrics) o;
-        return Objects.equals(this.timeSpan, transformMetrics.timeSpan)
-            && Objects.equals(this.tags, transformMetrics.tags)
-            && Objects.equals(this.metrics, transformMetrics.metrics)
-            && Objects.equals(this.limit, transformMetrics.limit);
+        TransformMetrics that = (TransformMetrics) obj;
+        return Objects.equals(this.timeSpan, that.timeSpan) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -143,18 +143,17 @@ public class ListAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsRequest listAppsRequest = (ListAppsRequest) o;
-        return Objects.equals(this.iefInstanceId, listAppsRequest.iefInstanceId)
-            && Objects.equals(this.name, listAppsRequest.name) && Objects.equals(this.limit, listAppsRequest.limit)
-            && Objects.equals(this.offset, listAppsRequest.offset) && Objects.equals(this.alias, listAppsRequest.alias)
-            && Objects.equals(this.visibility, listAppsRequest.visibility);
+        ListAppsRequest that = (ListAppsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.visibility, that.visibility);
     }
 
     @Override

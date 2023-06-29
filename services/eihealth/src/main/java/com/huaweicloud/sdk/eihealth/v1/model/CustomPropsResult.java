@@ -105,17 +105,16 @@ public class CustomPropsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomPropsResult customPropsResult = (CustomPropsResult) o;
-        return Objects.equals(this.id, customPropsResult.id)
-            && Objects.equals(this.propDefinition, customPropsResult.propDefinition)
-            && Objects.equals(this.metrics, customPropsResult.metrics);
+        CustomPropsResult that = (CustomPropsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.propDefinition, that.propDefinition)
+            && Objects.equals(this.metrics, that.metrics);
     }
 
     @Override

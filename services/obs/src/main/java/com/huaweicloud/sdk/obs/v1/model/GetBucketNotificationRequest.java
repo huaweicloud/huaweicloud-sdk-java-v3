@@ -86,17 +86,16 @@ public class GetBucketNotificationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetBucketNotificationRequest getBucketNotificationRequest = (GetBucketNotificationRequest) o;
-        return Objects.equals(this.date, getBucketNotificationRequest.date)
-            && Objects.equals(this.bucketName, getBucketNotificationRequest.bucketName)
-            && Objects.equals(this.notification, getBucketNotificationRequest.notification);
+        GetBucketNotificationRequest that = (GetBucketNotificationRequest) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.notification, that.notification);
     }
 
     @Override

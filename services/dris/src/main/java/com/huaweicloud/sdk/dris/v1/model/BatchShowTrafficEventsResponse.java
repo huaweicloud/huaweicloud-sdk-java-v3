@@ -77,16 +77,15 @@ public class BatchShowTrafficEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowTrafficEventsResponse batchShowTrafficEventsResponse = (BatchShowTrafficEventsResponse) o;
-        return Objects.equals(this.count, batchShowTrafficEventsResponse.count)
-            && Objects.equals(this.events, batchShowTrafficEventsResponse.events);
+        BatchShowTrafficEventsResponse that = (BatchShowTrafficEventsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.events, that.events);
     }
 
     @Override

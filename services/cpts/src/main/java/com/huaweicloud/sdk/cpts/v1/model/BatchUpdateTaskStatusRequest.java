@@ -67,16 +67,15 @@ public class BatchUpdateTaskStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateTaskStatusRequest batchUpdateTaskStatusRequest = (BatchUpdateTaskStatusRequest) o;
-        return Objects.equals(this.testSuitId, batchUpdateTaskStatusRequest.testSuitId)
-            && Objects.equals(this.body, batchUpdateTaskStatusRequest.body);
+        BatchUpdateTaskStatusRequest that = (BatchUpdateTaskStatusRequest) obj;
+        return Objects.equals(this.testSuitId, that.testSuitId) && Objects.equals(this.body, that.body);
     }
 
     @Override

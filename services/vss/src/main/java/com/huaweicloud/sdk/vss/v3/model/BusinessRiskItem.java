@@ -88,22 +88,15 @@ public class BusinessRiskItem {
             if (value == null) {
                 return null;
             }
-            RiskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RiskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RiskTypeEnum(value));
         }
 
         public static RiskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RiskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,22 +179,15 @@ public class BusinessRiskItem {
             if (value == null) {
                 return null;
             }
-            RiskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RiskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RiskStatusEnum(value));
         }
 
         public static RiskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RiskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,20 +312,17 @@ public class BusinessRiskItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessRiskItem businessRiskItem = (BusinessRiskItem) o;
-        return Objects.equals(this.riskId, businessRiskItem.riskId)
-            && Objects.equals(this.riskUrl, businessRiskItem.riskUrl)
-            && Objects.equals(this.riskType, businessRiskItem.riskType)
-            && Objects.equals(this.findTime, businessRiskItem.findTime)
-            && Objects.equals(this.riskContent, businessRiskItem.riskContent)
-            && Objects.equals(this.riskStatus, businessRiskItem.riskStatus);
+        BusinessRiskItem that = (BusinessRiskItem) obj;
+        return Objects.equals(this.riskId, that.riskId) && Objects.equals(this.riskUrl, that.riskUrl)
+            && Objects.equals(this.riskType, that.riskType) && Objects.equals(this.findTime, that.findTime)
+            && Objects.equals(this.riskContent, that.riskContent) && Objects.equals(this.riskStatus, that.riskStatus);
     }
 
     @Override

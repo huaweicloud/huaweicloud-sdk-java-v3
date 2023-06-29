@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 设备上报数据打印开关
  */
-public class DeviceDataRecord  {
-
+public class DeviceDataRecord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_quota")
-    
+    @JsonProperty(value = "disk_quota")
 
     private Integer diskQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="age")
-    
+    @JsonProperty(value = "age")
 
     private Integer age;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
@@ -39,9 +29,6 @@ public class DeviceDataRecord  {
         this.diskQuota = diskQuota;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘配额，单位MB，参考值，只能保证在这个值左右
@@ -57,15 +44,10 @@ public class DeviceDataRecord  {
         this.diskQuota = diskQuota;
     }
 
-    
-
     public DeviceDataRecord withAge(Integer age) {
         this.age = age;
         return this;
     }
-
-    
-
 
     /**
      * 老化时间，日志压缩文件名时间戳老于这个时间就会发生老化删除
@@ -81,15 +63,10 @@ public class DeviceDataRecord  {
         this.age = age;
     }
 
-    
-
     public DeviceDataRecord withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 配置开关，true启用数据打印，false不启用数据打印
@@ -103,25 +80,24 @@ public class DeviceDataRecord  {
         this.state = state;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceDataRecord deviceDataRecord = (DeviceDataRecord) o;
-        return Objects.equals(this.diskQuota, deviceDataRecord.diskQuota) &&
-            Objects.equals(this.age, deviceDataRecord.age) &&
-            Objects.equals(this.state, deviceDataRecord.state);
+        DeviceDataRecord that = (DeviceDataRecord) obj;
+        return Objects.equals(this.diskQuota, that.diskQuota) && Objects.equals(this.age, that.age)
+            && Objects.equals(this.state, that.state);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(diskQuota, age, state);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,6 +108,7 @@ public class DeviceDataRecord  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -142,8 +119,5 @@ public class DeviceDataRecord  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

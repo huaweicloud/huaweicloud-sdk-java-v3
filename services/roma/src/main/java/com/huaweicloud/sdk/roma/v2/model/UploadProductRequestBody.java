@@ -65,15 +65,15 @@ public class UploadProductRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadProductRequestBody uploadProductRequestBody = (UploadProductRequestBody) o;
-        return Objects.equals(this.file, uploadProductRequestBody.file);
+        UploadProductRequestBody that = (UploadProductRequestBody) obj;
+        return Objects.equals(this.file, that.file);
     }
 
     @Override

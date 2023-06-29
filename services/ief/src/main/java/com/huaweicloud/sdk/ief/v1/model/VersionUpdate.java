@@ -312,21 +312,19 @@ public class VersionUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionUpdate versionUpdate = (VersionUpdate) o;
-        return Objects.equals(this.envs, versionUpdate.envs) && Objects.equals(this.volumes, versionUpdate.volumes)
-            && Objects.equals(this.configs, versionUpdate.configs)
-            && Objects.equals(this.resources, versionUpdate.resources)
-            && Objects.equals(this.command, versionUpdate.command) && Objects.equals(this.args, versionUpdate.args)
-            && Objects.equals(this.livenessProbe, versionUpdate.livenessProbe)
-            && Objects.equals(this.readinessProbe, versionUpdate.readinessProbe)
-            && Objects.equals(this.npuType, versionUpdate.npuType);
+        VersionUpdate that = (VersionUpdate) obj;
+        return Objects.equals(this.envs, that.envs) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.configs, that.configs) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

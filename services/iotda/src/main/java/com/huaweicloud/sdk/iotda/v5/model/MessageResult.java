@@ -77,17 +77,16 @@ public class MessageResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MessageResult messageResult = (MessageResult) o;
-        return Objects.equals(this.status, messageResult.status)
-            && Objects.equals(this.createdTime, messageResult.createdTime)
-            && Objects.equals(this.finishedTime, messageResult.finishedTime);
+        MessageResult that = (MessageResult) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.finishedTime, that.finishedTime);
     }
 
     @Override

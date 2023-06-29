@@ -77,17 +77,16 @@ public class DeleteDesktopRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDesktopRequest deleteDesktopRequest = (DeleteDesktopRequest) o;
-        return Objects.equals(this.desktopId, deleteDesktopRequest.desktopId)
-            && Objects.equals(this.deleteUsers, deleteDesktopRequest.deleteUsers)
-            && Objects.equals(this.emailNotification, deleteDesktopRequest.emailNotification);
+        DeleteDesktopRequest that = (DeleteDesktopRequest) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.deleteUsers, that.deleteUsers)
+            && Objects.equals(this.emailNotification, that.emailNotification);
     }
 
     @Override

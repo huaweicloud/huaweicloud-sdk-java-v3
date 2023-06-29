@@ -54,22 +54,15 @@ public class PolicyConfig {
             if (value == null) {
                 return null;
             }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterDdlPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterDdlPolicyEnum(value));
         }
 
         public static FilterDdlPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class PolicyConfig {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConflictPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConflictPolicyEnum(value));
         }
 
         public static ConflictPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,22 +226,15 @@ public class PolicyConfig {
             if (value == null) {
                 return null;
             }
-            DataSyncTopologyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataSyncTopologyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataSyncTopologyTypeEnum(value));
         }
 
         public static DataSyncTopologyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataSyncTopologyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -358,22 +337,15 @@ public class PolicyConfig {
             if (value == null) {
                 return null;
             }
-            SupportDdlInfoEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportDdlInfoEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportDdlInfoEnum(value));
         }
 
         public static SupportDdlInfoEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportDdlInfoEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -542,22 +514,21 @@ public class PolicyConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyConfig policyConfig = (PolicyConfig) o;
-        return Objects.equals(this.filterDdlPolicy, policyConfig.filterDdlPolicy)
-            && Objects.equals(this.conflictPolicy, policyConfig.conflictPolicy)
-            && Objects.equals(this.indexTrans, policyConfig.indexTrans)
-            && Objects.equals(this.ddlTrans, policyConfig.ddlTrans)
-            && Objects.equals(this.dataSyncTopologyType, policyConfig.dataSyncTopologyType)
-            && Objects.equals(this.supportDdlInfo, policyConfig.supportDdlInfo)
-            && Objects.equals(this.syncTypePolicy, policyConfig.syncTypePolicy)
-            && Objects.equals(this.incrementReadMode, policyConfig.incrementReadMode);
+        PolicyConfig that = (PolicyConfig) obj;
+        return Objects.equals(this.filterDdlPolicy, that.filterDdlPolicy)
+            && Objects.equals(this.conflictPolicy, that.conflictPolicy)
+            && Objects.equals(this.indexTrans, that.indexTrans) && Objects.equals(this.ddlTrans, that.ddlTrans)
+            && Objects.equals(this.dataSyncTopologyType, that.dataSyncTopologyType)
+            && Objects.equals(this.supportDdlInfo, that.supportDdlInfo)
+            && Objects.equals(this.syncTypePolicy, that.syncTypePolicy)
+            && Objects.equals(this.incrementReadMode, that.incrementReadMode);
     }
 
     @Override

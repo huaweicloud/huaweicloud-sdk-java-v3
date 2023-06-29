@@ -66,16 +66,15 @@ public class UpdateAuthorisationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuthorisationResponse updateAuthorisationResponse = (UpdateAuthorisationResponse) o;
-        return Objects.equals(this.authorisation, updateAuthorisationResponse.authorisation)
-            && Objects.equals(this.requestId, updateAuthorisationResponse.requestId);
+        UpdateAuthorisationResponse that = (UpdateAuthorisationResponse) obj;
+        return Objects.equals(this.authorisation, that.authorisation) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

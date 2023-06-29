@@ -152,19 +152,18 @@ public class UpdateTransferResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTransferResponse updateTransferResponse = (UpdateTransferResponse) o;
-        return Objects.equals(this.logGroupId, updateTransferResponse.logGroupId)
-            && Objects.equals(this.logGroupName, updateTransferResponse.logGroupName)
-            && Objects.equals(this.logStreams, updateTransferResponse.logStreams)
-            && Objects.equals(this.logTransferId, updateTransferResponse.logTransferId)
-            && Objects.equals(this.logTransferInfo, updateTransferResponse.logTransferInfo);
+        UpdateTransferResponse that = (UpdateTransferResponse) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreams, that.logStreams)
+            && Objects.equals(this.logTransferId, that.logTransferId)
+            && Objects.equals(this.logTransferInfo, that.logTransferInfo);
     }
 
     @Override

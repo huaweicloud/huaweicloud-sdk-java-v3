@@ -165,20 +165,18 @@ public class StreamGraphInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamGraphInfo streamGraphInfo = (StreamGraphInfo) o;
-        return Objects.equals(this.jid, streamGraphInfo.jid) && Objects.equals(this.name, streamGraphInfo.name)
-            && Objects.equals(this.isStoppable, streamGraphInfo.isStoppable)
-            && Objects.equals(this.state, streamGraphInfo.state)
-            && Objects.equals(this.startTime, streamGraphInfo.startTime)
-            && Objects.equals(this.endTime, streamGraphInfo.endTime)
-            && Objects.equals(this.duration, streamGraphInfo.duration);
+        StreamGraphInfo that = (StreamGraphInfo) obj;
+        return Objects.equals(this.jid, that.jid) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isStoppable, that.isStoppable) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.duration, that.duration);
     }
 
     @Override

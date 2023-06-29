@@ -65,22 +65,15 @@ public class ItemResultVo {
             if (value == null) {
                 return null;
             }
-            VisibleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibleEnum(value));
         }
 
         public static VisibleEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            VisibleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,15 @@ public class ItemResultVo {
             if (value == null) {
                 return null;
             }
-            ProblemLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProblemLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProblemLevelEnum(value));
         }
 
         public static ProblemLevelEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProblemLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -332,20 +318,18 @@ public class ItemResultVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItemResultVo itemResultVo = (ItemResultVo) o;
-        return Objects.equals(this.status, itemResultVo.status) && Objects.equals(this.visible, itemResultVo.visible)
-            && Objects.equals(this.resourceId, itemResultVo.resourceId)
-            && Objects.equals(this.resourceName, itemResultVo.resourceName)
-            && Objects.equals(this.checkId, itemResultVo.checkId)
-            && Objects.equals(this.checkName, itemResultVo.checkName)
-            && Objects.equals(this.problemLevel, itemResultVo.problemLevel);
+        ItemResultVo that = (ItemResultVo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.visible, that.visible)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.checkId, that.checkId) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.problemLevel, that.problemLevel);
     }
 
     @Override

@@ -123,19 +123,17 @@ public class ListPolicyStatesByDomainIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyStatesByDomainIdRequest listPolicyStatesByDomainIdRequest = (ListPolicyStatesByDomainIdRequest) o;
-        return Objects.equals(this.complianceState, listPolicyStatesByDomainIdRequest.complianceState)
-            && Objects.equals(this.resourceId, listPolicyStatesByDomainIdRequest.resourceId)
-            && Objects.equals(this.resourceName, listPolicyStatesByDomainIdRequest.resourceName)
-            && Objects.equals(this.limit, listPolicyStatesByDomainIdRequest.limit)
-            && Objects.equals(this.marker, listPolicyStatesByDomainIdRequest.marker);
+        ListPolicyStatesByDomainIdRequest that = (ListPolicyStatesByDomainIdRequest) obj;
+        return Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

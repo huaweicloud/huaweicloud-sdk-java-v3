@@ -90,16 +90,16 @@ public class UpdateGroupNodeBindingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGroupNodeBindingRequest updateGroupNodeBindingRequest = (UpdateGroupNodeBindingRequest) o;
-        return Objects.equals(this.addNodeIds, updateGroupNodeBindingRequest.addNodeIds)
-            && Objects.equals(this.removeNodeIds, updateGroupNodeBindingRequest.removeNodeIds);
+        UpdateGroupNodeBindingRequest that = (UpdateGroupNodeBindingRequest) obj;
+        return Objects.equals(this.addNodeIds, that.addNodeIds)
+            && Objects.equals(this.removeNodeIds, that.removeNodeIds);
     }
 
     @Override

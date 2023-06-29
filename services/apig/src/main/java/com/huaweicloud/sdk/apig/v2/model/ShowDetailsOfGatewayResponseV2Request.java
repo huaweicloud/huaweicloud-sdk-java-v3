@@ -77,18 +77,16 @@ public class ShowDetailsOfGatewayResponseV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfGatewayResponseV2Request showDetailsOfGatewayResponseV2Request =
-            (ShowDetailsOfGatewayResponseV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfGatewayResponseV2Request.instanceId)
-            && Objects.equals(this.groupId, showDetailsOfGatewayResponseV2Request.groupId)
-            && Objects.equals(this.responseId, showDetailsOfGatewayResponseV2Request.responseId);
+        ShowDetailsOfGatewayResponseV2Request that = (ShowDetailsOfGatewayResponseV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.responseId, that.responseId);
     }
 
     @Override

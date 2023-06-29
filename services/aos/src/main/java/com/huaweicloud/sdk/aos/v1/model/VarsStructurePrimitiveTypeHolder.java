@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.VarsStructure;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * VarsStructurePrimitiveTypeHolder
  */
-public class VarsStructurePrimitiveTypeHolder  {
-
+public class VarsStructurePrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vars_structure")
-    
+    @JsonProperty(value = "vars_structure")
+
     private List<VarsStructure> varsStructure = null;
-    
+
     public VarsStructurePrimitiveTypeHolder withVarsStructure(List<VarsStructure> varsStructure) {
         this.varsStructure = varsStructure;
         return this;
     }
 
-    
     public VarsStructurePrimitiveTypeHolder addVarsStructureItem(VarsStructure varsStructureItem) {
-        if(this.varsStructure == null) {
+        if (this.varsStructure == null) {
             this.varsStructure = new ArrayList<>();
         }
         this.varsStructure.add(varsStructureItem);
@@ -40,7 +32,7 @@ public class VarsStructurePrimitiveTypeHolder  {
     }
 
     public VarsStructurePrimitiveTypeHolder withVarsStructure(Consumer<List<VarsStructure>> varsStructureSetter) {
-        if(this.varsStructure == null) {
+        if (this.varsStructure == null) {
             this.varsStructure = new ArrayList<>();
         }
         varsStructureSetter.accept(this.varsStructure);
@@ -59,23 +51,23 @@ public class VarsStructurePrimitiveTypeHolder  {
         this.varsStructure = varsStructure;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VarsStructurePrimitiveTypeHolder varsStructurePrimitiveTypeHolder = (VarsStructurePrimitiveTypeHolder) o;
-        return Objects.equals(this.varsStructure, varsStructurePrimitiveTypeHolder.varsStructure);
+        VarsStructurePrimitiveTypeHolder that = (VarsStructurePrimitiveTypeHolder) obj;
+        return Objects.equals(this.varsStructure, that.varsStructure);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(varsStructure);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class VarsStructurePrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class VarsStructurePrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

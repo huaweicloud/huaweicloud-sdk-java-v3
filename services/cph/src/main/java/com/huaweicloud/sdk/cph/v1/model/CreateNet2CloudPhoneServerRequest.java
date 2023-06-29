@@ -43,15 +43,15 @@ public class CreateNet2CloudPhoneServerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequest createNet2CloudPhoneServerRequest = (CreateNet2CloudPhoneServerRequest) o;
-        return Objects.equals(this.body, createNet2CloudPhoneServerRequest.body);
+        CreateNet2CloudPhoneServerRequest that = (CreateNet2CloudPhoneServerRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

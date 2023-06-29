@@ -77,17 +77,16 @@ public class AssociateServerVirtualIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateServerVirtualIpOption associateServerVirtualIpOption = (AssociateServerVirtualIpOption) o;
-        return Objects.equals(this.subnetId, associateServerVirtualIpOption.subnetId)
-            && Objects.equals(this.ipAddress, associateServerVirtualIpOption.ipAddress)
-            && Objects.equals(this.reverseBinding, associateServerVirtualIpOption.reverseBinding);
+        AssociateServerVirtualIpOption that = (AssociateServerVirtualIpOption) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.reverseBinding, that.reverseBinding);
     }
 
     @Override

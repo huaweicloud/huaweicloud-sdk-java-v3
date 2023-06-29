@@ -75,16 +75,16 @@ public class ShowSqlExplainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlExplainResponse showSqlExplainResponse = (ShowSqlExplainResponse) o;
-        return Objects.equals(this.executionPlans, showSqlExplainResponse.executionPlans)
-            && Objects.equals(this.errorMessage, showSqlExplainResponse.errorMessage);
+        ShowSqlExplainResponse that = (ShowSqlExplainResponse) obj;
+        return Objects.equals(this.executionPlans, that.executionPlans)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

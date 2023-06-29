@@ -111,18 +111,17 @@ public class AllowClientRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowClientRecordRequest allowClientRecordRequest = (AllowClientRecordRequest) o;
-        return Objects.equals(this.conferenceID, allowClientRecordRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, allowClientRecordRequest.xConferenceAuthorization)
-            && Objects.equals(this.participantID, allowClientRecordRequest.participantID)
-            && Objects.equals(this.body, allowClientRecordRequest.body);
+        AllowClientRecordRequest that = (AllowClientRecordRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.participantID, that.participantID) && Objects.equals(this.body, that.body);
     }
 
     @Override

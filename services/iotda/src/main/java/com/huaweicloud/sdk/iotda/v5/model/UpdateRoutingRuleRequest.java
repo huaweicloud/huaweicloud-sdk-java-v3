@@ -87,17 +87,16 @@ public class UpdateRoutingRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoutingRuleRequest updateRoutingRuleRequest = (UpdateRoutingRuleRequest) o;
-        return Objects.equals(this.instanceId, updateRoutingRuleRequest.instanceId)
-            && Objects.equals(this.ruleId, updateRoutingRuleRequest.ruleId)
-            && Objects.equals(this.body, updateRoutingRuleRequest.body);
+        UpdateRoutingRuleRequest that = (UpdateRoutingRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

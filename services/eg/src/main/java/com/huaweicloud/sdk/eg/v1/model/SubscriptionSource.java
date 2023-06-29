@@ -76,22 +76,15 @@ public class SubscriptionSource {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,18 +202,17 @@ public class SubscriptionSource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionSource subscriptionSource = (SubscriptionSource) o;
-        return Objects.equals(this.id, subscriptionSource.id) && Objects.equals(this.name, subscriptionSource.name)
-            && Objects.equals(this.providerType, subscriptionSource.providerType)
-            && Objects.equals(this.detail, subscriptionSource.detail)
-            && Objects.equals(this.filter, subscriptionSource.filter);
+        SubscriptionSource that = (SubscriptionSource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override

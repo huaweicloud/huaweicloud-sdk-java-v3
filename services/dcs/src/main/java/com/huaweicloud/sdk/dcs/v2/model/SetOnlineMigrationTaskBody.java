@@ -63,22 +63,15 @@ public class SetOnlineMigrationTaskBody {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationMethodEnum(value));
         }
 
         public static MigrationMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class SetOnlineMigrationTaskBody {
             if (value == null) {
                 return null;
             }
-            ResumeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResumeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResumeModeEnum(value));
         }
 
         public static ResumeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResumeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -301,19 +287,19 @@ public class SetOnlineMigrationTaskBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetOnlineMigrationTaskBody setOnlineMigrationTaskBody = (SetOnlineMigrationTaskBody) o;
-        return Objects.equals(this.migrationMethod, setOnlineMigrationTaskBody.migrationMethod)
-            && Objects.equals(this.resumeMode, setOnlineMigrationTaskBody.resumeMode)
-            && Objects.equals(this.bandwidthLimitMb, setOnlineMigrationTaskBody.bandwidthLimitMb)
-            && Objects.equals(this.sourceInstance, setOnlineMigrationTaskBody.sourceInstance)
-            && Objects.equals(this.targetInstance, setOnlineMigrationTaskBody.targetInstance);
+        SetOnlineMigrationTaskBody that = (SetOnlineMigrationTaskBody) obj;
+        return Objects.equals(this.migrationMethod, that.migrationMethod)
+            && Objects.equals(this.resumeMode, that.resumeMode)
+            && Objects.equals(this.bandwidthLimitMb, that.bandwidthLimitMb)
+            && Objects.equals(this.sourceInstance, that.sourceInstance)
+            && Objects.equals(this.targetInstance, that.targetInstance);
     }
 
     @Override

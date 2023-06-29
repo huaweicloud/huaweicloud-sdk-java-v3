@@ -103,18 +103,17 @@ public class ShowCorpAdminRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpAdminRequest showCorpAdminRequest = (ShowCorpAdminRequest) o;
-        return Objects.equals(this.xRequestId, showCorpAdminRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showCorpAdminRequest.acceptLanguage)
-            && Objects.equals(this.account, showCorpAdminRequest.account)
-            && Objects.equals(this.accountType, showCorpAdminRequest.accountType);
+        ShowCorpAdminRequest that = (ShowCorpAdminRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType);
     }
 
     @Override

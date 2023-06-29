@@ -319,28 +319,22 @@ public class ShowSkillListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSkillListRequest showSkillListRequest = (ShowSkillListRequest) o;
-        return Objects.equals(this.limit, showSkillListRequest.limit)
-            && Objects.equals(this.offset, showSkillListRequest.offset)
-            && Objects.equals(this.skillName, showSkillListRequest.skillName)
-            && Objects.equals(this.skillForm, showSkillListRequest.skillForm)
-            && Objects.equals(this.permission, showSkillListRequest.permission)
-            && Objects.equals(this.templateSource, showSkillListRequest.templateSource)
-            && Objects.equals(this.status, showSkillListRequest.status)
-            && Objects.equals(this.chargeModel, showSkillListRequest.chargeModel)
-            && Objects.equals(this.platform, showSkillListRequest.platform)
-            && Objects.equals(this.chip, showSkillListRequest.chip)
-            && Objects.equals(this.type, showSkillListRequest.type)
-            && Objects.equals(this.chargeModels, showSkillListRequest.chargeModels)
-            && Objects.equals(this.deviceTypes, showSkillListRequest.deviceTypes)
-            && Objects.equals(this.scenes, showSkillListRequest.scenes);
+        ShowSkillListRequest that = (ShowSkillListRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.skillName, that.skillName) && Objects.equals(this.skillForm, that.skillForm)
+            && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.templateSource, that.templateSource) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.chargeModel, that.chargeModel) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.chip, that.chip) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.chargeModels, that.chargeModels)
+            && Objects.equals(this.deviceTypes, that.deviceTypes) && Objects.equals(this.scenes, that.scenes);
     }
 
     @Override

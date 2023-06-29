@@ -59,16 +59,16 @@ public class UpdateStartedConfigReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStartedConfigReqBody updateStartedConfigReqBody = (UpdateStartedConfigReqBody) o;
-        return Objects.equals(this.lockSharing, updateStartedConfigReqBody.lockSharing)
-            && Objects.equals(this.callInRestriction, updateStartedConfigReqBody.callInRestriction);
+        UpdateStartedConfigReqBody that = (UpdateStartedConfigReqBody) obj;
+        return Objects.equals(this.lockSharing, that.lockSharing)
+            && Objects.equals(this.callInRestriction, that.callInRestriction);
     }
 
     @Override

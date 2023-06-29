@@ -145,21 +145,18 @@ public class ListPolicyStatesByAssignmentIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyStatesByAssignmentIdRequest listPolicyStatesByAssignmentIdRequest =
-            (ListPolicyStatesByAssignmentIdRequest) o;
-        return Objects.equals(this.policyAssignmentId, listPolicyStatesByAssignmentIdRequest.policyAssignmentId)
-            && Objects.equals(this.complianceState, listPolicyStatesByAssignmentIdRequest.complianceState)
-            && Objects.equals(this.resourceId, listPolicyStatesByAssignmentIdRequest.resourceId)
-            && Objects.equals(this.resourceName, listPolicyStatesByAssignmentIdRequest.resourceName)
-            && Objects.equals(this.limit, listPolicyStatesByAssignmentIdRequest.limit)
-            && Objects.equals(this.marker, listPolicyStatesByAssignmentIdRequest.marker);
+        ListPolicyStatesByAssignmentIdRequest that = (ListPolicyStatesByAssignmentIdRequest) obj;
+        return Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

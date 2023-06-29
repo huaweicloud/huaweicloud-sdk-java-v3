@@ -1,36 +1,29 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 数据库信息。
  */
-public class OpenGaussDatastoreOption  {
+public class OpenGaussDatastoreOption {
 
     /**
      * 数据库引擎，不区分大小写，取值如下：  GaussDB。
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum GAUSSDB for value: "GaussDB"
          */
         public static final TypeEnum GAUSSDB = new TypeEnum("GaussDB");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,25 +51,18 @@ public class OpenGaussDatastoreOption  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -94,14 +80,12 @@ public class OpenGaussDatastoreOption  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
@@ -109,9 +93,6 @@ public class OpenGaussDatastoreOption  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 数据库引擎，不区分大小写，取值如下：  GaussDB。
@@ -125,15 +106,10 @@ public class OpenGaussDatastoreOption  {
         this.type = type;
     }
 
-    
-
     public OpenGaussDatastoreOption withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本。不填时，默认为当前最新版本。  GaussDB支持的版本参考[查询数据库引擎的版本](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=GaussDB&api=ListDatastores)。
@@ -147,24 +123,23 @@ public class OpenGaussDatastoreOption  {
         this.version = version;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussDatastoreOption openGaussDatastoreOption = (OpenGaussDatastoreOption) o;
-        return Objects.equals(this.type, openGaussDatastoreOption.type) &&
-            Objects.equals(this.version, openGaussDatastoreOption.version);
+        OpenGaussDatastoreOption that = (OpenGaussDatastoreOption) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, version);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +149,7 @@ public class OpenGaussDatastoreOption  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +160,5 @@ public class OpenGaussDatastoreOption  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

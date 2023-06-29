@@ -96,17 +96,16 @@ public class DTAggregateMetrics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DTAggregateMetrics dtAggregateMetrics = (DTAggregateMetrics) o;
-        return Objects.equals(this.inputs, dtAggregateMetrics.inputs)
-            && Objects.equals(this.expression, dtAggregateMetrics.expression)
-            && Objects.equals(this.metricName, dtAggregateMetrics.metricName);
+        DTAggregateMetrics that = (DTAggregateMetrics) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.metricName, that.metricName);
     }
 
     @Override

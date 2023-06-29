@@ -118,17 +118,17 @@ public class PolicyUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyUpdate policyUpdate = (PolicyUpdate) o;
-        return Objects.equals(this.enabled, policyUpdate.enabled) && Objects.equals(this.name, policyUpdate.name)
-            && Objects.equals(this.operationDefinition, policyUpdate.operationDefinition)
-            && Objects.equals(this.trigger, policyUpdate.trigger);
+        PolicyUpdate that = (PolicyUpdate) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.operationDefinition, that.operationDefinition)
+            && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

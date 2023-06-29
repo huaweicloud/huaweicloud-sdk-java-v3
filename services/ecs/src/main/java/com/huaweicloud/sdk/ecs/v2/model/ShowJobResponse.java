@@ -119,22 +119,15 @@ public class ShowJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -336,23 +329,19 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.beginTime, showJobResponse.beginTime)
-            && Objects.equals(this.code, showJobResponse.code) && Objects.equals(this.endTime, showJobResponse.endTime)
-            && Objects.equals(this.entities, showJobResponse.entities)
-            && Objects.equals(this.errorCode, showJobResponse.errorCode)
-            && Objects.equals(this.failReason, showJobResponse.failReason)
-            && Objects.equals(this.jobId, showJobResponse.jobId)
-            && Objects.equals(this.jobType, showJobResponse.jobType)
-            && Objects.equals(this.message, showJobResponse.message)
-            && Objects.equals(this.status, showJobResponse.status);
+        ShowJobResponse that = (ShowJobResponse) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.entities, that.entities)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class FeedbackOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FeedbackOption feedbackOption = (FeedbackOption) o;
-        return Objects.equals(this.feedbackOptionId, feedbackOption.feedbackOptionId)
-            && Objects.equals(this.feedbackOptionName, feedbackOption.feedbackOptionName);
+        FeedbackOption that = (FeedbackOption) obj;
+        return Objects.equals(this.feedbackOptionId, that.feedbackOptionId)
+            && Objects.equals(this.feedbackOptionName, that.feedbackOptionName);
     }
 
     @Override

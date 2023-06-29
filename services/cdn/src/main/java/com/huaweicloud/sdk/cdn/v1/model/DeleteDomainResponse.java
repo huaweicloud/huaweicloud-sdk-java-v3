@@ -44,15 +44,15 @@ public class DeleteDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainResponse deleteDomainResponse = (DeleteDomainResponse) o;
-        return Objects.equals(this.domain, deleteDomainResponse.domain);
+        DeleteDomainResponse that = (DeleteDomainResponse) obj;
+        return Objects.equals(this.domain, that.domain);
     }
 
     @Override

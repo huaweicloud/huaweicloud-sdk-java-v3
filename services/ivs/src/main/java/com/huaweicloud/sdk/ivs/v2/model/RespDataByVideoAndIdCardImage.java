@@ -162,20 +162,19 @@ public class RespDataByVideoAndIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespDataByVideoAndIdCardImage respDataByVideoAndIdCardImage = (RespDataByVideoAndIdCardImage) o;
-        return Objects.equals(this.verificationResult, respDataByVideoAndIdCardImage.verificationResult)
-            && Objects.equals(this.verificationMessage, respDataByVideoAndIdCardImage.verificationMessage)
-            && Objects.equals(this.verificationCode, respDataByVideoAndIdCardImage.verificationCode)
-            && Objects.equals(this.similarity, respDataByVideoAndIdCardImage.similarity)
-            && Objects.equals(this.idcardResult, respDataByVideoAndIdCardImage.idcardResult)
-            && Objects.equals(this.videoResult, respDataByVideoAndIdCardImage.videoResult);
+        RespDataByVideoAndIdCardImage that = (RespDataByVideoAndIdCardImage) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.similarity, that.similarity) && Objects.equals(this.idcardResult, that.idcardResult)
+            && Objects.equals(this.videoResult, that.videoResult);
     }
 
     @Override

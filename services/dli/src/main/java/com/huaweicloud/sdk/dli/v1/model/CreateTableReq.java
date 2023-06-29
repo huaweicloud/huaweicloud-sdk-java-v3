@@ -354,28 +354,22 @@ public class CreateTableReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableReq createTableReq = (CreateTableReq) o;
-        return Objects.equals(this.tableName, createTableReq.tableName)
-            && Objects.equals(this.dataLocation, createTableReq.dataLocation)
-            && Objects.equals(this.description, createTableReq.description)
-            && Objects.equals(this.columns, createTableReq.columns)
-            && Objects.equals(this.dataType, createTableReq.dataType)
-            && Objects.equals(this.dataPath, createTableReq.dataPath)
-            && Objects.equals(this.withColumnHeader, createTableReq.withColumnHeader)
-            && Objects.equals(this.delimiter, createTableReq.delimiter)
-            && Objects.equals(this.quoteChar, createTableReq.quoteChar)
-            && Objects.equals(this.escapeChar, createTableReq.escapeChar)
-            && Objects.equals(this.dateFormat, createTableReq.dateFormat)
-            && Objects.equals(this.timestampFormat, createTableReq.timestampFormat)
-            && Objects.equals(this.selectStatement, createTableReq.selectStatement)
-            && Objects.equals(this.tags, createTableReq.tags);
+        CreateTableReq that = (CreateTableReq) obj;
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.dataLocation, that.dataLocation)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.dataPath, that.dataPath)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.quoteChar, that.quoteChar)
+            && Objects.equals(this.escapeChar, that.escapeChar) && Objects.equals(this.dateFormat, that.dateFormat)
+            && Objects.equals(this.timestampFormat, that.timestampFormat)
+            && Objects.equals(this.selectStatement, that.selectStatement) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -150,18 +150,16 @@ public class ShowCeshierarchyRespChildren {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCeshierarchyRespChildren showCeshierarchyRespChildren = (ShowCeshierarchyRespChildren) o;
-        return Objects.equals(this.name, showCeshierarchyRespChildren.name)
-            && Objects.equals(this.metrics, showCeshierarchyRespChildren.metrics)
-            && Objects.equals(this.keyName, showCeshierarchyRespChildren.keyName)
-            && Objects.equals(this.dimRouter, showCeshierarchyRespChildren.dimRouter);
+        ShowCeshierarchyRespChildren that = (ShowCeshierarchyRespChildren) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.metrics, that.metrics)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.dimRouter, that.dimRouter);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreateDirectoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDirectoryResponse createDirectoryResponse = (CreateDirectoryResponse) o;
-        return Objects.equals(this.data, createDirectoryResponse.data);
+        CreateDirectoryResponse that = (CreateDirectoryResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

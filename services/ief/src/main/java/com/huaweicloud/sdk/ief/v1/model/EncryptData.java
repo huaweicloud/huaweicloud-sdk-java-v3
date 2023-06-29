@@ -228,21 +228,19 @@ public class EncryptData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptData encryptData = (EncryptData) o;
-        return Objects.equals(this.id, encryptData.id) && Objects.equals(this.name, encryptData.name)
-            && Objects.equals(this.description, encryptData.description)
-            && Objects.equals(this.config, encryptData.config) && Objects.equals(this.projectId, encryptData.projectId)
-            && Objects.equals(this.iefInstanceId, encryptData.iefInstanceId)
-            && Objects.equals(this.domainId, encryptData.domainId)
-            && Objects.equals(this.createdTime, encryptData.createdTime)
-            && Objects.equals(this.updatedTime, encryptData.updatedTime);
+        EncryptData that = (EncryptData) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

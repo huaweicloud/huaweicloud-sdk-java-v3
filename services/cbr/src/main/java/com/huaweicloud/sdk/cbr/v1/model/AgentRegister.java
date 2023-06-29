@@ -165,20 +165,18 @@ public class AgentRegister {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentRegister agentRegister = (AgentRegister) o;
-        return Objects.equals(this.agentId, agentRegister.agentId)
-            && Objects.equals(this.hostName, agentRegister.hostName)
-            && Objects.equals(this.hostIp, agentRegister.hostIp) && Objects.equals(this.hostOs, agentRegister.hostOs)
-            && Objects.equals(this.hostNickname, agentRegister.hostNickname)
-            && Objects.equals(this.agentVersion, agentRegister.agentVersion)
-            && Objects.equals(this.agentType, agentRegister.agentType);
+        AgentRegister that = (AgentRegister) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.hostOs, that.hostOs)
+            && Objects.equals(this.hostNickname, that.hostNickname)
+            && Objects.equals(this.agentVersion, that.agentVersion) && Objects.equals(this.agentType, that.agentType);
     }
 
     @Override

@@ -79,22 +79,15 @@ public class FlavorRequirement {
             if (value == null) {
                 return null;
             }
-            CpuManufacturersEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuManufacturersEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuManufacturersEnum(value));
         }
 
         public static CpuManufacturersEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuManufacturersEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +159,15 @@ public class FlavorRequirement {
             if (value == null) {
                 return null;
             }
-            InstanceGenerationsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceGenerationsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceGenerationsEnum(value));
         }
 
         public static InstanceGenerationsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceGenerationsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -349,19 +335,18 @@ public class FlavorRequirement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorRequirement flavorRequirement = (FlavorRequirement) o;
-        return Objects.equals(this.vcpuCount, flavorRequirement.vcpuCount)
-            && Objects.equals(this.memoryMb, flavorRequirement.memoryMb)
-            && Objects.equals(this.cpuManufacturers, flavorRequirement.cpuManufacturers)
-            && Objects.equals(this.memoryGbPerVcpu, flavorRequirement.memoryGbPerVcpu)
-            && Objects.equals(this.instanceGenerations, flavorRequirement.instanceGenerations);
+        FlavorRequirement that = (FlavorRequirement) obj;
+        return Objects.equals(this.vcpuCount, that.vcpuCount) && Objects.equals(this.memoryMb, that.memoryMb)
+            && Objects.equals(this.cpuManufacturers, that.cpuManufacturers)
+            && Objects.equals(this.memoryGbPerVcpu, that.memoryGbPerVcpu)
+            && Objects.equals(this.instanceGenerations, that.instanceGenerations);
     }
 
     @Override

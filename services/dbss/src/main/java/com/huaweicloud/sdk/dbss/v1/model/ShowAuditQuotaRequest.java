@@ -1,33 +1,28 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowAuditQuotaRequest  {
-
+public class ShowAuditQuotaRequest {
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -35,8 +30,5 @@ public class ShowAuditQuotaRequest  {
         sb.append("}");
         return sb.toString();
     }
-    
-    
-    
-}
 
+}

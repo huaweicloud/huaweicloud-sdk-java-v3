@@ -53,15 +53,15 @@ public class ListIssueCustomFieldsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueCustomFieldsResponse listIssueCustomFieldsResponse = (ListIssueCustomFieldsResponse) o;
-        return Objects.equals(this.datas, listIssueCustomFieldsResponse.datas);
+        ListIssueCustomFieldsResponse that = (ListIssueCustomFieldsResponse) obj;
+        return Objects.equals(this.datas, that.datas);
     }
 
     @Override

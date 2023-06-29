@@ -99,16 +99,16 @@ public class ModAdminDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModAdminDTO modAdminDTO = (ModAdminDTO) o;
-        return Objects.equals(this.name, modAdminDTO.name) && Objects.equals(this.email, modAdminDTO.email)
-            && Objects.equals(this.phone, modAdminDTO.phone) && Objects.equals(this.country, modAdminDTO.country);
+        ModAdminDTO that = (ModAdminDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country);
     }
 
     @Override

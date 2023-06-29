@@ -150,19 +150,17 @@ public class CreateAddonInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAddonInstanceResponse createAddonInstanceResponse = (CreateAddonInstanceResponse) o;
-        return Objects.equals(this.kind, createAddonInstanceResponse.kind)
-            && Objects.equals(this.apiVersion, createAddonInstanceResponse.apiVersion)
-            && Objects.equals(this.metadata, createAddonInstanceResponse.metadata)
-            && Objects.equals(this.spec, createAddonInstanceResponse.spec)
-            && Objects.equals(this.status, createAddonInstanceResponse.status);
+        CreateAddonInstanceResponse that = (CreateAddonInstanceResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

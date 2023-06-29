@@ -74,16 +74,15 @@ public class ImportTrafficRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportTrafficRequestBody importTrafficRequestBody = (ImportTrafficRequestBody) o;
-        return Objects.equals(this.trafficType, importTrafficRequestBody.trafficType)
-            && Objects.equals(this.phoneIds, importTrafficRequestBody.phoneIds);
+        ImportTrafficRequestBody that = (ImportTrafficRequestBody) obj;
+        return Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.phoneIds, that.phoneIds);
     }
 
     @Override

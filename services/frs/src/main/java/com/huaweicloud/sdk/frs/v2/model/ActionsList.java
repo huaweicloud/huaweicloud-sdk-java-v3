@@ -55,16 +55,15 @@ public class ActionsList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionsList actionsList = (ActionsList) o;
-        return Objects.equals(this.confidence, actionsList.confidence)
-            && Objects.equals(this.action, actionsList.action);
+        ActionsList that = (ActionsList) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.action, that.action);
     }
 
     @Override

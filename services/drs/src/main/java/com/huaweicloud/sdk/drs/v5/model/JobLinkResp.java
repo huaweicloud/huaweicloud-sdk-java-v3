@@ -69,22 +69,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
         }
 
         public static EngineTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -233,22 +219,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            SourceEndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceEndpointTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceEndpointTypeEnum(value));
         }
 
         public static SourceEndpointTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceEndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -321,22 +300,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            TargetEndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TargetEndpointTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TargetEndpointTypeEnum(value));
         }
 
         public static TargetEndpointTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TargetEndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -409,22 +381,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -497,22 +462,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -585,22 +543,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            TaskTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypesEnum(value));
         }
 
         public static TaskTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -623,8 +574,8 @@ public class JobLinkResp {
     private List<TaskTypesEnum> taskTypes = null;
 
     /**
-    * Gets or Sets clusterModes
-    */
+     * Gets or Sets clusterModes
+     */
     public static final class ClusterModesEnum {
 
         /**
@@ -685,22 +636,15 @@ public class JobLinkResp {
             if (value == null) {
                 return null;
             }
-            ClusterModesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterModesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterModesEnum(value));
         }
 
         public static ClusterModesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ClusterModesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -913,23 +857,20 @@ public class JobLinkResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobLinkResp jobLinkResp = (JobLinkResp) o;
-        return Objects.equals(this.jobType, jobLinkResp.jobType)
-            && Objects.equals(this.engineType, jobLinkResp.engineType)
-            && Objects.equals(this.sourceEndpointType, jobLinkResp.sourceEndpointType)
-            && Objects.equals(this.targetEndpointType, jobLinkResp.targetEndpointType)
-            && Objects.equals(this.jobDirection, jobLinkResp.jobDirection)
-            && Objects.equals(this.netType, jobLinkResp.netType)
-            && Objects.equals(this.taskTypes, jobLinkResp.taskTypes)
-            && Objects.equals(this.clusterModes, jobLinkResp.clusterModes)
-            && Objects.equals(this.description, jobLinkResp.description);
+        JobLinkResp that = (JobLinkResp) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.sourceEndpointType, that.sourceEndpointType)
+            && Objects.equals(this.targetEndpointType, that.targetEndpointType)
+            && Objects.equals(this.jobDirection, that.jobDirection) && Objects.equals(this.netType, that.netType)
+            && Objects.equals(this.taskTypes, that.taskTypes) && Objects.equals(this.clusterModes, that.clusterModes)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

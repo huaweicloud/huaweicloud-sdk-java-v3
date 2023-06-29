@@ -351,26 +351,21 @@ public class ShowNotebookResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNotebookResponse showNotebookResponse = (ShowNotebookResponse) o;
-        return Objects.equals(this.id, showNotebookResponse.id) && Objects.equals(this.name, showNotebookResponse.name)
-            && Objects.equals(this.description, showNotebookResponse.description)
-            && Objects.equals(this.creator, showNotebookResponse.creator)
-            && Objects.equals(this.url, showNotebookResponse.url)
-            && Objects.equals(this.flavor, showNotebookResponse.flavor)
-            && Objects.equals(this.status, showNotebookResponse.status)
-            && Objects.equals(this.image, showNotebookResponse.image)
-            && Objects.equals(this.storages, showNotebookResponse.storages)
-            && Objects.equals(this.createTime, showNotebookResponse.createTime)
-            && Objects.equals(this.updateTime, showNotebookResponse.updateTime)
-            && Objects.equals(this.failedMessage, showNotebookResponse.failedMessage)
-            && Objects.equals(this.events, showNotebookResponse.events);
+        ShowNotebookResponse that = (ShowNotebookResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.storages, that.storages) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.events, that.events);
     }
 
     @Override

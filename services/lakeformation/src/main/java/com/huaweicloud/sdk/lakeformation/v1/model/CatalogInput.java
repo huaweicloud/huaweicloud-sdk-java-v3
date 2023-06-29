@@ -118,18 +118,17 @@ public class CatalogInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogInput catalogInput = (CatalogInput) o;
-        return Objects.equals(this.catalogName, catalogInput.catalogName)
-            && Objects.equals(this.description, catalogInput.description)
-            && Objects.equals(this.location, catalogInput.location)
-            && Objects.equals(this.databaseLocationList, catalogInput.databaseLocationList);
+        CatalogInput that = (CatalogInput) obj;
+        return Objects.equals(this.catalogName, that.catalogName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.location, that.location)
+            && Objects.equals(this.databaseLocationList, that.databaseLocationList);
     }
 
     @Override

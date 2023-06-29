@@ -275,26 +275,23 @@ public class SecurityGroupRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityGroupRule securityGroupRule = (SecurityGroupRule) o;
-        return Objects.equals(this.id, securityGroupRule.id)
-            && Objects.equals(this.description, securityGroupRule.description)
-            && Objects.equals(this.securityGroupId, securityGroupRule.securityGroupId)
-            && Objects.equals(this.direction, securityGroupRule.direction)
-            && Objects.equals(this.ethertype, securityGroupRule.ethertype)
-            && Objects.equals(this.protocol, securityGroupRule.protocol)
-            && Objects.equals(this.portRangeMin, securityGroupRule.portRangeMin)
-            && Objects.equals(this.portRangeMax, securityGroupRule.portRangeMax)
-            && Objects.equals(this.remoteIpPrefix, securityGroupRule.remoteIpPrefix)
-            && Objects.equals(this.remoteGroupId, securityGroupRule.remoteGroupId)
-            && Objects.equals(this.remoteAddressGroupId, securityGroupRule.remoteAddressGroupId)
-            && Objects.equals(this.tenantId, securityGroupRule.tenantId);
+        SecurityGroupRule that = (SecurityGroupRule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.ethertype, that.ethertype)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.portRangeMin, that.portRangeMin)
+            && Objects.equals(this.portRangeMax, that.portRangeMax)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
+            && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

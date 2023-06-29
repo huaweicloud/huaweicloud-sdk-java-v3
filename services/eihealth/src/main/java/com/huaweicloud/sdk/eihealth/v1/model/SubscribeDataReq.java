@@ -99,18 +99,16 @@ public class SubscribeDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscribeDataReq subscribeDataReq = (SubscribeDataReq) o;
-        return Objects.equals(this.assetId, subscribeDataReq.assetId)
-            && Objects.equals(this.overwrite, subscribeDataReq.overwrite)
-            && Objects.equals(this.targetFolder, subscribeDataReq.targetFolder)
-            && Objects.equals(this.version, subscribeDataReq.version);
+        SubscribeDataReq that = (SubscribeDataReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.overwrite, that.overwrite)
+            && Objects.equals(this.targetFolder, that.targetFolder) && Objects.equals(this.version, that.version);
     }
 
     @Override

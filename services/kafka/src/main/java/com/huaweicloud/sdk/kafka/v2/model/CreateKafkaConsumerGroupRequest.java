@@ -65,16 +65,15 @@ public class CreateKafkaConsumerGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKafkaConsumerGroupRequest createKafkaConsumerGroupRequest = (CreateKafkaConsumerGroupRequest) o;
-        return Objects.equals(this.instanceId, createKafkaConsumerGroupRequest.instanceId)
-            && Objects.equals(this.body, createKafkaConsumerGroupRequest.body);
+        CreateKafkaConsumerGroupRequest that = (CreateKafkaConsumerGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

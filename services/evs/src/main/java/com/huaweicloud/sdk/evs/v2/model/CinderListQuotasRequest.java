@@ -59,22 +59,15 @@ public class CinderListQuotasRequest {
             if (value == null) {
                 return null;
             }
-            UsageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UsageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UsageEnum(value));
         }
 
         public static UsageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UsageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -131,16 +124,15 @@ public class CinderListQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CinderListQuotasRequest cinderListQuotasRequest = (CinderListQuotasRequest) o;
-        return Objects.equals(this.targetProjectId, cinderListQuotasRequest.targetProjectId)
-            && Objects.equals(this.usage, cinderListQuotasRequest.usage);
+        CinderListQuotasRequest that = (CinderListQuotasRequest) obj;
+        return Objects.equals(this.targetProjectId, that.targetProjectId) && Objects.equals(this.usage, that.usage);
     }
 
     @Override

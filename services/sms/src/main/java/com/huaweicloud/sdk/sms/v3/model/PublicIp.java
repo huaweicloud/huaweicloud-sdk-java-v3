@@ -79,16 +79,16 @@ public class PublicIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicIp publicIp = (PublicIp) o;
-        return Objects.equals(this.type, publicIp.type) && Objects.equals(this.bandwidthSize, publicIp.bandwidthSize)
-            && Objects.equals(this.bandwidthShareType, publicIp.bandwidthShareType);
+        PublicIp that = (PublicIp) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.bandwidthShareType, that.bandwidthShareType);
     }
 
     @Override

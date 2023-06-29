@@ -277,20 +277,20 @@ public class Attendee {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attendee attendee = (Attendee) o;
-        return Objects.equals(this.userUUID, attendee.userUUID) && Objects.equals(this.accountId, attendee.accountId)
-            && Objects.equals(this.name, attendee.name) && Objects.equals(this.role, attendee.role)
-            && Objects.equals(this.phone, attendee.phone) && Objects.equals(this.phone2, attendee.phone2)
-            && Objects.equals(this.phone3, attendee.phone3) && Objects.equals(this.email, attendee.email)
-            && Objects.equals(this.sms, attendee.sms) && Objects.equals(this.type, attendee.type)
-            && Objects.equals(this.deptUUID, attendee.deptUUID) && Objects.equals(this.deptName, attendee.deptName);
+        Attendee that = (Attendee) obj;
+        return Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.phone2, that.phone2)
+            && Objects.equals(this.phone3, that.phone3) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.sms, that.sms) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.deptUUID, that.deptUUID) && Objects.equals(this.deptName, that.deptName);
     }
 
     @Override

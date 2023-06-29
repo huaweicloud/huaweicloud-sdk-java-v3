@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 修改数据源配置请求结构体
  */
-public class UpdateDcDsReqDTO  {
-
+public class UpdateDcDsReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
 
     private Object config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality_report")
-    
+    @JsonProperty(value = "quality_report")
 
     private Boolean qualityReport;
 
@@ -39,9 +29,6 @@ public class UpdateDcDsReqDTO  {
         this.config = config;
         return this;
     }
-
-    
-
 
     /**
      * 数据源的连接及采集信息
@@ -55,15 +42,10 @@ public class UpdateDcDsReqDTO  {
         this.config = config;
     }
 
-    
-
     public UpdateDcDsReqDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源名称，允许中、数字、英文大小写、下划线、中划线
@@ -77,15 +59,10 @@ public class UpdateDcDsReqDTO  {
         this.name = name;
     }
 
-    
-
     public UpdateDcDsReqDTO withQualityReport(Boolean qualityReport) {
         this.qualityReport = qualityReport;
         return this;
     }
-
-    
-
 
     /**
      * 质量上报开关，不携带或值不为true，默认为false
@@ -99,25 +76,24 @@ public class UpdateDcDsReqDTO  {
         this.qualityReport = qualityReport;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDcDsReqDTO updateDcDsReqDTO = (UpdateDcDsReqDTO) o;
-        return Objects.equals(this.config, updateDcDsReqDTO.config) &&
-            Objects.equals(this.name, updateDcDsReqDTO.name) &&
-            Objects.equals(this.qualityReport, updateDcDsReqDTO.qualityReport);
+        UpdateDcDsReqDTO that = (UpdateDcDsReqDTO) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.qualityReport, that.qualityReport);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(config, name, qualityReport);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class UpdateDcDsReqDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class UpdateDcDsReqDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

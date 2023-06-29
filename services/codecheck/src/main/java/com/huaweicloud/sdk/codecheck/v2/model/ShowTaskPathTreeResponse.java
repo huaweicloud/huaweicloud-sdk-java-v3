@@ -75,16 +75,15 @@ public class ShowTaskPathTreeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskPathTreeResponse showTaskPathTreeResponse = (ShowTaskPathTreeResponse) o;
-        return Objects.equals(this.info, showTaskPathTreeResponse.info)
-            && Objects.equals(this.total, showTaskPathTreeResponse.total);
+        ShowTaskPathTreeResponse that = (ShowTaskPathTreeResponse) obj;
+        return Objects.equals(this.info, that.info) && Objects.equals(this.total, that.total);
     }
 
     @Override

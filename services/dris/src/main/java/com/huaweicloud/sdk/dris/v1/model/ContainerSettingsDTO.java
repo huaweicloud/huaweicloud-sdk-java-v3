@@ -196,20 +196,17 @@ public class ContainerSettingsDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerSettingsDTO containerSettingsDTO = (ContainerSettingsDTO) o;
-        return Objects.equals(this.configs, containerSettingsDTO.configs)
-            && Objects.equals(this.imageUrl, containerSettingsDTO.imageUrl)
-            && Objects.equals(this.envs, containerSettingsDTO.envs)
-            && Objects.equals(this.volumes, containerSettingsDTO.volumes)
-            && Objects.equals(this.resources, containerSettingsDTO.resources)
-            && Objects.equals(this.extDevices, containerSettingsDTO.extDevices);
+        ContainerSettingsDTO that = (ContainerSettingsDTO) obj;
+        return Objects.equals(this.configs, that.configs) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.extDevices, that.extDevices);
     }
 
     @Override

@@ -143,20 +143,18 @@ public class ExtensionsResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionsResponse extensionsResponse = (ExtensionsResponse) o;
-        return Objects.equals(this.name, extensionsResponse.name)
-            && Objects.equals(this.databaseName, extensionsResponse.databaseName)
-            && Objects.equals(this.version, extensionsResponse.version)
-            && Objects.equals(this.sharedPreloadLibraries, extensionsResponse.sharedPreloadLibraries)
-            && Objects.equals(this.created, extensionsResponse.created)
-            && Objects.equals(this.description, extensionsResponse.description);
+        ExtensionsResponse that = (ExtensionsResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.sharedPreloadLibraries, that.sharedPreloadLibraries)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.description, that.description);
     }
 
     @Override

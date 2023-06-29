@@ -77,17 +77,16 @@ public class LoadBalancerStatusL7Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancerStatusL7Rule loadBalancerStatusL7Rule = (LoadBalancerStatusL7Rule) o;
-        return Objects.equals(this.id, loadBalancerStatusL7Rule.id)
-            && Objects.equals(this.type, loadBalancerStatusL7Rule.type)
-            && Objects.equals(this.provisioningStatus, loadBalancerStatusL7Rule.provisioningStatus);
+        LoadBalancerStatusL7Rule that = (LoadBalancerStatusL7Rule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus);
     }
 
     @Override

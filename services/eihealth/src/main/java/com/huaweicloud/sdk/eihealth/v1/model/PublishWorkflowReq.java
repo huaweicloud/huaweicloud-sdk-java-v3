@@ -184,21 +184,18 @@ public class PublishWorkflowReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishWorkflowReq publishWorkflowReq = (PublishWorkflowReq) o;
-        return Objects.equals(this.name, publishWorkflowReq.name)
-            && Objects.equals(this.version, publishWorkflowReq.version)
-            && Objects.equals(this.picture, publishWorkflowReq.picture)
-            && Objects.equals(this.title, publishWorkflowReq.title)
-            && Objects.equals(this.summary, publishWorkflowReq.summary)
-            && Objects.equals(this.description, publishWorkflowReq.description)
-            && Objects.equals(this.labels, publishWorkflowReq.labels);
+        PublishWorkflowReq that = (PublishWorkflowReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.picture, that.picture) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

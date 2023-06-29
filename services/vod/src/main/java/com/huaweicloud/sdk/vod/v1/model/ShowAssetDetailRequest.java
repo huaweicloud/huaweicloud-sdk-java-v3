@@ -85,22 +85,15 @@ public class ShowAssetDetailRequest {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoriesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoriesEnum(value));
         }
 
         public static CategoriesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -192,17 +185,16 @@ public class ShowAssetDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetDetailRequest showAssetDetailRequest = (ShowAssetDetailRequest) o;
-        return Objects.equals(this.xSdkDate, showAssetDetailRequest.xSdkDate)
-            && Objects.equals(this.assetId, showAssetDetailRequest.assetId)
-            && Objects.equals(this.categories, showAssetDetailRequest.categories);
+        ShowAssetDetailRequest that = (ShowAssetDetailRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.categories, that.categories);
     }
 
     @Override

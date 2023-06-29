@@ -109,18 +109,16 @@ public class FreezeCertRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezeCertRequest freezeCertRequest = (FreezeCertRequest) o;
-        return Objects.equals(this.userName, freezeCertRequest.userName)
-            && Objects.equals(this.blockchainId, freezeCertRequest.blockchainId)
-            && Objects.equals(this.orgName, freezeCertRequest.orgName)
-            && Objects.equals(this.body, freezeCertRequest.body);
+        FreezeCertRequest that = (FreezeCertRequest) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.blockchainId, that.blockchainId)
+            && Objects.equals(this.orgName, that.orgName) && Objects.equals(this.body, that.body);
     }
 
     @Override

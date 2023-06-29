@@ -111,7 +111,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 工单子类
+     * 工单子类，通过\"查询工单类目列表\"接口获取
      * @return incidentSubTypeId
      */
     public String getIncidentSubTypeId() {
@@ -128,7 +128,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 工单产品类型
+     * 工单产品类型，通过\"查询工单类目列表\"接口获取
      * @return productCategoryId
      */
     public String getProductCategoryId() {
@@ -145,7 +145,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 工单问题类型
+     * 工单问题类型，通过\"查询问题类型列表\"接口获取
      * @return businessTypeId
      */
     public String getBusinessTypeId() {
@@ -162,7 +162,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 区域ID
+     * 区域ID，根据business_type_id对应工单类型是5则必填，通过\"查询问题类型列表\"查看
      * @return regionId
      */
     public String getRegionId() {
@@ -333,7 +333,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 附件id列表
+     * 附件id列表，\"上传附件\"接口返回的id
      * @return accessoryIds
      */
     public List<String> getAccessoryIds() {
@@ -416,7 +416,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 严重性id
+     * 严重性id，通过\"查询问题严重性列表\"接口获取
      * @return severityId
      */
     public String getSeverityId() {
@@ -433,7 +433,7 @@ public class CreateOrderIncidentV2Req {
     }
 
     /**
-     * 验证码
+     * 验证码，如果是非注册联系方式，需要通过\"获取验证码\"获取验证码
      * @return verifyCode
      */
     public String getVerifyCode() {
@@ -462,32 +462,25 @@ public class CreateOrderIncidentV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrderIncidentV2Req createOrderIncidentV2Req = (CreateOrderIncidentV2Req) o;
-        return Objects.equals(this.incidentSubTypeId, createOrderIncidentV2Req.incidentSubTypeId)
-            && Objects.equals(this.productCategoryId, createOrderIncidentV2Req.productCategoryId)
-            && Objects.equals(this.businessTypeId, createOrderIncidentV2Req.businessTypeId)
-            && Objects.equals(this.regionId, createOrderIncidentV2Req.regionId)
-            && Objects.equals(this.simpleDescription, createOrderIncidentV2Req.simpleDescription)
-            && Objects.equals(this.sourceId, createOrderIncidentV2Req.sourceId)
-            && Objects.equals(this.isAuthorized, createOrderIncidentV2Req.isAuthorized)
-            && Objects.equals(this.authorizationContent, createOrderIncidentV2Req.authorizationContent)
-            && Objects.equals(this.remindMobile, createOrderIncidentV2Req.remindMobile)
-            && Objects.equals(this.remindMail, createOrderIncidentV2Req.remindMail)
-            && Objects.equals(this.remindTime, createOrderIncidentV2Req.remindTime)
-            && Objects.equals(this.projectId, createOrderIncidentV2Req.projectId)
-            && Objects.equals(this.accessoryIds, createOrderIncidentV2Req.accessoryIds)
-            && Objects.equals(this.extendsMap, createOrderIncidentV2Req.extendsMap)
-            && Objects.equals(this.extensionMap, createOrderIncidentV2Req.extensionMap)
-            && Objects.equals(this.severityId, createOrderIncidentV2Req.severityId)
-            && Objects.equals(this.verifyCode, createOrderIncidentV2Req.verifyCode)
-            && Objects.equals(this.areaCode, createOrderIncidentV2Req.areaCode);
+        CreateOrderIncidentV2Req that = (CreateOrderIncidentV2Req) obj;
+        return Objects.equals(this.incidentSubTypeId, that.incidentSubTypeId)
+            && Objects.equals(this.productCategoryId, that.productCategoryId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.isAuthorized, that.isAuthorized)
+            && Objects.equals(this.authorizationContent, that.authorizationContent)
+            && Objects.equals(this.remindMobile, that.remindMobile) && Objects.equals(this.remindMail, that.remindMail)
+            && Objects.equals(this.remindTime, that.remindTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.accessoryIds, that.accessoryIds) && Objects.equals(this.extendsMap, that.extendsMap)
+            && Objects.equals(this.extensionMap, that.extensionMap) && Objects.equals(this.severityId, that.severityId)
+            && Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.areaCode, that.areaCode);
     }
 
     @Override

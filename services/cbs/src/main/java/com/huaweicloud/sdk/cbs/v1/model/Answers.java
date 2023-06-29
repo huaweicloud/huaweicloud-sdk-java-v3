@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ExQuestions;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Answers  {
-
+public class Answers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qa_pair_id")
-    
+    @JsonProperty(value = "qa_pair_id")
 
     private String qaPairId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="st_question")
-    
+    @JsonProperty(value = "st_question")
 
     private String stQuestion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
 
     private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer")
-    
+    @JsonProperty(value = "answer")
 
     private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ex_questions")
-    
+    @JsonProperty(value = "ex_questions")
+
     private List<ExQuestions> exQuestions = null;
-    
+
     public Answers withQaPairId(String qaPairId) {
         this.qaPairId = qaPairId;
         return this;
     }
-
-    
-
 
     /**
      * Answers.
@@ -75,15 +60,10 @@ public class Answers  {
         this.qaPairId = qaPairId;
     }
 
-    
-
     public Answers withStQuestion(String stQuestion) {
         this.stQuestion = stQuestion;
         return this;
     }
-
-    
-
 
     /**
      * 标准问题。
@@ -97,15 +77,10 @@ public class Answers  {
         this.stQuestion = stQuestion;
     }
 
-    
-
     public Answers withScore(Double score) {
         this.score = score;
         return this;
     }
-
-    
-
 
     /**
      * 相似度得分，精确到小数点后3位。
@@ -119,15 +94,10 @@ public class Answers  {
         this.score = score;
     }
 
-    
-
     public Answers withDomain(String domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * Domain.
@@ -141,15 +111,10 @@ public class Answers  {
         this.domain = domain;
     }
 
-    
-
     public Answers withAnswer(String answer) {
         this.answer = answer;
         return this;
     }
-
-    
-
 
     /**
      * 答案。
@@ -163,16 +128,13 @@ public class Answers  {
         this.answer = answer;
     }
 
-    
-
     public Answers withExQuestions(List<ExQuestions> exQuestions) {
         this.exQuestions = exQuestions;
         return this;
     }
 
-    
     public Answers addExQuestionsItem(ExQuestions exQuestionsItem) {
-        if(this.exQuestions == null) {
+        if (this.exQuestions == null) {
             this.exQuestions = new ArrayList<>();
         }
         this.exQuestions.add(exQuestionsItem);
@@ -180,7 +142,7 @@ public class Answers  {
     }
 
     public Answers withExQuestions(Consumer<List<ExQuestions>> exQuestionsSetter) {
-        if(this.exQuestions == null) {
+        if (this.exQuestions == null) {
             this.exQuestions = new ArrayList<>();
         }
         exQuestionsSetter.accept(this.exQuestions);
@@ -199,28 +161,25 @@ public class Answers  {
         this.exQuestions = exQuestions;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Answers answers = (Answers) o;
-        return Objects.equals(this.qaPairId, answers.qaPairId) &&
-            Objects.equals(this.stQuestion, answers.stQuestion) &&
-            Objects.equals(this.score, answers.score) &&
-            Objects.equals(this.domain, answers.domain) &&
-            Objects.equals(this.answer, answers.answer) &&
-            Objects.equals(this.exQuestions, answers.exQuestions);
+        Answers that = (Answers) obj;
+        return Objects.equals(this.qaPairId, that.qaPairId) && Objects.equals(this.stQuestion, that.stQuestion)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.answer, that.answer) && Objects.equals(this.exQuestions, that.exQuestions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qaPairId, stQuestion, score, domain, answer, exQuestions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,6 +193,7 @@ public class Answers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -244,8 +204,5 @@ public class Answers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

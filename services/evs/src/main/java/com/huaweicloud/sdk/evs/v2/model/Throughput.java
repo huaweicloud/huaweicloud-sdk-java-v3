@@ -77,16 +77,16 @@ public class Throughput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Throughput throughput = (Throughput) o;
-        return Objects.equals(this.frozened, throughput.frozened) && Objects.equals(this.id, throughput.id)
-            && Objects.equals(this.totalVal, throughput.totalVal);
+        Throughput that = (Throughput) obj;
+        return Objects.equals(this.frozened, that.frozened) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.totalVal, that.totalVal);
     }
 
     @Override

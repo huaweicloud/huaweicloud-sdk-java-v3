@@ -76,17 +76,16 @@ public class ExportTopSqlTemplatesDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportTopSqlTemplatesDetailsResponse exportTopSqlTemplatesDetailsResponse =
-            (ExportTopSqlTemplatesDetailsResponse) o;
-        return Objects.equals(this.topSqlTemplates, exportTopSqlTemplatesDetailsResponse.topSqlTemplates)
-            && Objects.equals(this.totalCount, exportTopSqlTemplatesDetailsResponse.totalCount);
+        ExportTopSqlTemplatesDetailsResponse that = (ExportTopSqlTemplatesDetailsResponse) obj;
+        return Objects.equals(this.topSqlTemplates, that.topSqlTemplates)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

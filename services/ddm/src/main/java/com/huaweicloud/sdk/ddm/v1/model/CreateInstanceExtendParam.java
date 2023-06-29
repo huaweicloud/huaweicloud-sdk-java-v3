@@ -60,22 +60,15 @@ public class CreateInstanceExtendParam {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class CreateInstanceExtendParam {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,22 +215,15 @@ public class CreateInstanceExtendParam {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoRenewEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
         }
 
         public static IsAutoRenewEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -311,22 +290,15 @@ public class CreateInstanceExtendParam {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoPayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoPayEnum(value));
         }
 
         public static IsAutoPayEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -434,19 +406,17 @@ public class CreateInstanceExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceExtendParam createInstanceExtendParam = (CreateInstanceExtendParam) o;
-        return Objects.equals(this.chargeMode, createInstanceExtendParam.chargeMode)
-            && Objects.equals(this.periodType, createInstanceExtendParam.periodType)
-            && Objects.equals(this.periodNum, createInstanceExtendParam.periodNum)
-            && Objects.equals(this.isAutoRenew, createInstanceExtendParam.isAutoRenew)
-            && Objects.equals(this.isAutoPay, createInstanceExtendParam.isAutoPay);
+        CreateInstanceExtendParam that = (CreateInstanceExtendParam) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

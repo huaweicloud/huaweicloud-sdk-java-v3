@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class HistorySlotWord  {
-
+public class HistorySlotWord {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="word")
-    
+    @JsonProperty(value = "word")
 
     private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="norm_word")
-    
+    @JsonProperty(value = "norm_word")
 
     private String normWord;
 
@@ -33,9 +24,6 @@ public class HistorySlotWord  {
         this.word = word;
         return this;
     }
-
-    
-
 
     /**
      * 词
@@ -49,15 +37,10 @@ public class HistorySlotWord  {
         this.word = word;
     }
 
-    
-
     public HistorySlotWord withNormWord(String normWord) {
         this.normWord = normWord;
         return this;
     }
-
-    
-
 
     /**
      * 归一化后的词
@@ -71,24 +54,23 @@ public class HistorySlotWord  {
         this.normWord = normWord;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistorySlotWord historySlotWord = (HistorySlotWord) o;
-        return Objects.equals(this.word, historySlotWord.word) &&
-            Objects.equals(this.normWord, historySlotWord.normWord);
+        HistorySlotWord that = (HistorySlotWord) obj;
+        return Objects.equals(this.word, that.word) && Objects.equals(this.normWord, that.normWord);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(word, normWord);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class HistorySlotWord  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class HistorySlotWord  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

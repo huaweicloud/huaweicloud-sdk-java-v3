@@ -210,23 +210,19 @@ public class ShowPackageDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPackageDetailResponse showPackageDetailResponse = (ShowPackageDetailResponse) o;
-        return Objects.equals(this.id, showPackageDetailResponse.id)
-            && Objects.equals(this.name, showPackageDetailResponse.name)
-            && Objects.equals(this.tagName, showPackageDetailResponse.tagName)
-            && Objects.equals(this.school, showPackageDetailResponse.school)
-            && Objects.equals(this.teacherName, showPackageDetailResponse.teacherName)
-            && Objects.equals(this.orderCount, showPackageDetailResponse.orderCount)
-            && Objects.equals(this.imageUrl, showPackageDetailResponse.imageUrl)
-            && Objects.equals(this.description, showPackageDetailResponse.description)
-            && Objects.equals(this.exerciseCnt, showPackageDetailResponse.exerciseCnt);
+        ShowPackageDetailResponse that = (ShowPackageDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tagName, that.tagName) && Objects.equals(this.school, that.school)
+            && Objects.equals(this.teacherName, that.teacherName) && Objects.equals(this.orderCount, that.orderCount)
+            && Objects.equals(this.imageUrl, that.imageUrl) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.exerciseCnt, that.exerciseCnt);
     }
 
     @Override

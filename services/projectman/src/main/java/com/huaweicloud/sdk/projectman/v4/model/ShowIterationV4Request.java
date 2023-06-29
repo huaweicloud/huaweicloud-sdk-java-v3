@@ -33,15 +33,15 @@ public class ShowIterationV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIterationV4Request showIterationV4Request = (ShowIterationV4Request) o;
-        return Objects.equals(this.iterationId, showIterationV4Request.iterationId);
+        ShowIterationV4Request that = (ShowIterationV4Request) obj;
+        return Objects.equals(this.iterationId, that.iterationId);
     }
 
     @Override

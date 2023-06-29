@@ -121,18 +121,16 @@ public class ShowUrlTaskInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUrlTaskInfoResponse showUrlTaskInfoResponse = (ShowUrlTaskInfoResponse) o;
-        return Objects.equals(this.total, showUrlTaskInfoResponse.total)
-            && Objects.equals(this.count, showUrlTaskInfoResponse.count)
-            && Objects.equals(this.result, showUrlTaskInfoResponse.result)
-            && Objects.equals(this.xRequestId, showUrlTaskInfoResponse.xRequestId);
+        ShowUrlTaskInfoResponse that = (ShowUrlTaskInfoResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class ShowStreamPortraitResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStreamPortraitResponse showStreamPortraitResponse = (ShowStreamPortraitResponse) o;
-        return Objects.equals(this.streamPortraits, showStreamPortraitResponse.streamPortraits)
-            && Objects.equals(this.xRequestId, showStreamPortraitResponse.xRequestId);
+        ShowStreamPortraitResponse that = (ShowStreamPortraitResponse) obj;
+        return Objects.equals(this.streamPortraits, that.streamPortraits)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

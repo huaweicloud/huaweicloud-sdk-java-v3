@@ -101,17 +101,16 @@ public class ListTreesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTreesRequest listTreesRequest = (ListTreesRequest) o;
-        return Objects.equals(this.xRepoAuth, listTreesRequest.xRepoAuth)
-            && Objects.equals(this.namespace, listTreesRequest.namespace)
-            && Objects.equals(this.project, listTreesRequest.project) && Objects.equals(this.ref, listTreesRequest.ref);
+        ListTreesRequest that = (ListTreesRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.ref, that.ref);
     }
 
     @Override

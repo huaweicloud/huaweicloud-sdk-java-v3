@@ -96,17 +96,16 @@ public class GetMetricsValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetMetricsValue getMetricsValue = (GetMetricsValue) o;
-        return Objects.equals(this.type, getMetricsValue.type)
-            && Objects.equals(this.transform, getMetricsValue.transform)
-            && Objects.equals(this.aggregate, getMetricsValue.aggregate);
+        GetMetricsValue that = (GetMetricsValue) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.aggregate, that.aggregate);
     }
 
     @Override

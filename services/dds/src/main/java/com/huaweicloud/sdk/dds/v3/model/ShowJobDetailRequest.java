@@ -33,15 +33,15 @@ public class ShowJobDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobDetailRequest showJobDetailRequest = (ShowJobDetailRequest) o;
-        return Objects.equals(this.id, showJobDetailRequest.id);
+        ShowJobDetailRequest that = (ShowJobDetailRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

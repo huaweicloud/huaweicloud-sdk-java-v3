@@ -90,22 +90,15 @@ public class VideoInfo {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QualityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QualityEnum(value));
         }
 
         public static QualityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -235,17 +228,17 @@ public class VideoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoInfo videoInfo = (VideoInfo) o;
-        return Objects.equals(this.quality, videoInfo.quality) && Objects.equals(this.width, videoInfo.width)
-            && Objects.equals(this.height, videoInfo.height) && Objects.equals(this.bitrate, videoInfo.bitrate)
-            && Objects.equals(this.frameRate, videoInfo.frameRate);
+        VideoInfo that = (VideoInfo) obj;
+        return Objects.equals(this.quality, that.quality) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.frameRate, that.frameRate);
     }
 
     @Override

@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAppImageRequest  {
-
+public class ListAppImageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
@@ -46,9 +34,6 @@ public class ListAppImageRequest  {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -62,15 +47,10 @@ public class ListAppImageRequest  {
         this.appId = appId;
     }
 
-    
-
     public ListAppImageRequest withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -84,15 +64,10 @@ public class ListAppImageRequest  {
         this.version = version;
     }
 
-    
-
     public ListAppImageRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000。
@@ -108,15 +83,10 @@ public class ListAppImageRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListAppImageRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0。
@@ -132,26 +102,24 @@ public class ListAppImageRequest  {
         this.offset = offset;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppImageRequest listAppImageRequest = (ListAppImageRequest) o;
-        return Objects.equals(this.appId, listAppImageRequest.appId) &&
-            Objects.equals(this.version, listAppImageRequest.version) &&
-            Objects.equals(this.limit, listAppImageRequest.limit) &&
-            Objects.equals(this.offset, listAppImageRequest.offset);
+        ListAppImageRequest that = (ListAppImageRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, version, limit, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -163,6 +131,7 @@ public class ListAppImageRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -173,8 +142,5 @@ public class ListAppImageRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

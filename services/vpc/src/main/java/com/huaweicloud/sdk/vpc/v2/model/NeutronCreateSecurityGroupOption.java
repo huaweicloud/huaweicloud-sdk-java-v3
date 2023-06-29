@@ -55,16 +55,15 @@ public class NeutronCreateSecurityGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronCreateSecurityGroupOption neutronCreateSecurityGroupOption = (NeutronCreateSecurityGroupOption) o;
-        return Objects.equals(this.description, neutronCreateSecurityGroupOption.description)
-            && Objects.equals(this.name, neutronCreateSecurityGroupOption.name);
+        NeutronCreateSecurityGroupOption that = (NeutronCreateSecurityGroupOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name);
     }
 
     @Override

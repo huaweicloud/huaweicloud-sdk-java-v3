@@ -121,19 +121,17 @@ public class TryEmailConnectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TryEmailConnectionReq tryEmailConnectionReq = (TryEmailConnectionReq) o;
-        return Objects.equals(this.server, tryEmailConnectionReq.server)
-            && Objects.equals(this.userName, tryEmailConnectionReq.userName)
-            && Objects.equals(this.password, tryEmailConnectionReq.password)
-            && Objects.equals(this.email, tryEmailConnectionReq.email)
-            && Objects.equals(this.language, tryEmailConnectionReq.language);
+        TryEmailConnectionReq that = (TryEmailConnectionReq) obj;
+        return Objects.equals(this.server, that.server) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override

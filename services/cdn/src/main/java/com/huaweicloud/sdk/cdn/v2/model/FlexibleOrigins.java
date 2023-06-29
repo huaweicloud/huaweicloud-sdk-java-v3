@@ -118,18 +118,16 @@ public class FlexibleOrigins {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlexibleOrigins flexibleOrigins = (FlexibleOrigins) o;
-        return Objects.equals(this.matchType, flexibleOrigins.matchType)
-            && Objects.equals(this.matchPattern, flexibleOrigins.matchPattern)
-            && Objects.equals(this.priority, flexibleOrigins.priority)
-            && Objects.equals(this.backSources, flexibleOrigins.backSources);
+        FlexibleOrigins that = (FlexibleOrigins) obj;
+        return Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchPattern, that.matchPattern)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.backSources, that.backSources);
     }
 
     @Override

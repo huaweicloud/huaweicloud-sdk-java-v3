@@ -128,18 +128,16 @@ public class ShowSubscriptionInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubscriptionInfoResponse showSubscriptionInfoResponse = (ShowSubscriptionInfoResponse) o;
-        return Objects.equals(this.type, showSubscriptionInfoResponse.type)
-            && Objects.equals(this.resources, showSubscriptionInfoResponse.resources)
-            && Objects.equals(this.isNewUser, showSubscriptionInfoResponse.isNewUser)
-            && Objects.equals(this.premium, showSubscriptionInfoResponse.premium);
+        ShowSubscriptionInfoResponse that = (ShowSubscriptionInfoResponse) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.isNewUser, that.isNewUser) && Objects.equals(this.premium, that.premium);
     }
 
     @Override

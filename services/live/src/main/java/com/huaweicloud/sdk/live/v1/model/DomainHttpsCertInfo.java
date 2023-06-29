@@ -54,22 +54,15 @@ public class DomainHttpsCertInfo {
             if (value == null) {
                 return null;
             }
-            CertificateFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CertificateFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CertificateFormatEnum(value));
         }
 
         public static CertificateFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CertificateFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,18 +168,18 @@ public class DomainHttpsCertInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainHttpsCertInfo domainHttpsCertInfo = (DomainHttpsCertInfo) o;
-        return Objects.equals(this.certificateFormat, domainHttpsCertInfo.certificateFormat)
-            && Objects.equals(this.certificate, domainHttpsCertInfo.certificate)
-            && Objects.equals(this.certificateKey, domainHttpsCertInfo.certificateKey)
-            && Objects.equals(this.forceRedirect, domainHttpsCertInfo.forceRedirect);
+        DomainHttpsCertInfo that = (DomainHttpsCertInfo) obj;
+        return Objects.equals(this.certificateFormat, that.certificateFormat)
+            && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.certificateKey, that.certificateKey)
+            && Objects.equals(this.forceRedirect, that.forceRedirect);
     }
 
     @Override

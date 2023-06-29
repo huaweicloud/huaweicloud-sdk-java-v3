@@ -99,16 +99,16 @@ public class SpecsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpecsConfig specsConfig = (SpecsConfig) o;
-        return Objects.equals(this.offline, specsConfig.offline) && Objects.equals(this.nearline, specsConfig.nearline)
-            && Objects.equals(this.rank, specsConfig.rank) && Objects.equals(this.onlineTps, specsConfig.onlineTps);
+        SpecsConfig that = (SpecsConfig) obj;
+        return Objects.equals(this.offline, that.offline) && Objects.equals(this.nearline, that.nearline)
+            && Objects.equals(this.rank, that.rank) && Objects.equals(this.onlineTps, that.onlineTps);
     }
 
     @Override

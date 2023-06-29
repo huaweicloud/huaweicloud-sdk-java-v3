@@ -341,28 +341,23 @@ public class ExtDataSource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtDataSource extDataSource = (ExtDataSource) o;
-        return Objects.equals(this.id, extDataSource.id) && Objects.equals(this.name, extDataSource.name)
-            && Objects.equals(this.type, extDataSource.type)
-            && Objects.equals(this.connectInfo, extDataSource.connectInfo)
-            && Objects.equals(this.userName, extDataSource.userName)
-            && Objects.equals(this.version, extDataSource.version)
-            && Objects.equals(this.configureStatus, extDataSource.configureStatus)
-            && Objects.equals(this.status, extDataSource.status)
-            && Objects.equals(this.dataSourceId, extDataSource.dataSourceId)
-            && Objects.equals(this.created, extDataSource.created)
-            && Objects.equals(this.updated, extDataSource.updated)
-            && Objects.equals(this.dataSourceUpdated, extDataSource.dataSourceUpdated)
-            && Objects.equals(this.extendProperties, extDataSource.extendProperties)
-            && Objects.equals(this.description, extDataSource.description)
-            && Objects.equals(this.failReason, extDataSource.failReason);
+        ExtDataSource that = (ExtDataSource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.connectInfo, that.connectInfo)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.configureStatus, that.configureStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dataSourceId, that.dataSourceId) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.dataSourceUpdated, that.dataSourceUpdated)
+            && Objects.equals(this.extendProperties, that.extendProperties)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class AIMSendTaskRequestMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMSendTaskRequestMode aiMSendTaskRequestMode = (AIMSendTaskRequestMode) o;
-        return Objects.equals(this.taskName, aiMSendTaskRequestMode.taskName)
-            && Objects.equals(this.smsChannel, aiMSendTaskRequestMode.smsChannel)
-            && Objects.equals(this.resolveTask, aiMSendTaskRequestMode.resolveTask);
+        AIMSendTaskRequestMode that = (AIMSendTaskRequestMode) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.smsChannel, that.smsChannel)
+            && Objects.equals(this.resolveTask, that.resolveTask);
     }
 
     @Override

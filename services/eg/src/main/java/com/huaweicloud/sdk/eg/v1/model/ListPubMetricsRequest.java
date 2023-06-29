@@ -66,22 +66,15 @@ public class ListPubMetricsRequest {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterEnum(value));
         }
 
         public static FilterEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,22 +161,15 @@ public class ListPubMetricsRequest {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -330,21 +316,18 @@ public class ListPubMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPubMetricsRequest listPubMetricsRequest = (ListPubMetricsRequest) o;
-        return Objects.equals(this.filter, listPubMetricsRequest.filter)
-            && Objects.equals(this.period, listPubMetricsRequest.period)
-            && Objects.equals(this.startTime, listPubMetricsRequest.startTime)
-            && Objects.equals(this.endTime, listPubMetricsRequest.endTime)
-            && Objects.equals(this.channelId, listPubMetricsRequest.channelId)
-            && Objects.equals(this.providerType, listPubMetricsRequest.providerType)
-            && Objects.equals(this.sourceName, listPubMetricsRequest.sourceName);
+        ListPubMetricsRequest that = (ListPubMetricsRequest) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.sourceName, that.sourceName);
     }
 
     @Override

@@ -77,18 +77,16 @@ public class KeystoneCheckDomainPermissionForGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCheckDomainPermissionForGroupRequest keystoneCheckDomainPermissionForGroupRequest =
-            (KeystoneCheckDomainPermissionForGroupRequest) o;
-        return Objects.equals(this.domainId, keystoneCheckDomainPermissionForGroupRequest.domainId)
-            && Objects.equals(this.groupId, keystoneCheckDomainPermissionForGroupRequest.groupId)
-            && Objects.equals(this.roleId, keystoneCheckDomainPermissionForGroupRequest.roleId);
+        KeystoneCheckDomainPermissionForGroupRequest that = (KeystoneCheckDomainPermissionForGroupRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

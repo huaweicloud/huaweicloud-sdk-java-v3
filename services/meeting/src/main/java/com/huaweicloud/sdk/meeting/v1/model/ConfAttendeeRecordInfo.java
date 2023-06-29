@@ -165,21 +165,18 @@ public class ConfAttendeeRecordInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfAttendeeRecordInfo confAttendeeRecordInfo = (ConfAttendeeRecordInfo) o;
-        return Objects.equals(this.displayName, confAttendeeRecordInfo.displayName)
-            && Objects.equals(this.callNumber, confAttendeeRecordInfo.callNumber)
-            && Objects.equals(this.deviceType, confAttendeeRecordInfo.deviceType)
-            && Objects.equals(this.joinTime, confAttendeeRecordInfo.joinTime)
-            && Objects.equals(this.leftTime, confAttendeeRecordInfo.leftTime)
-            && Objects.equals(this.mediaType, confAttendeeRecordInfo.mediaType)
-            && Objects.equals(this.deptName, confAttendeeRecordInfo.deptName);
+        ConfAttendeeRecordInfo that = (ConfAttendeeRecordInfo) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.callNumber, that.callNumber)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.joinTime, that.joinTime)
+            && Objects.equals(this.leftTime, that.leftTime) && Objects.equals(this.mediaType, that.mediaType)
+            && Objects.equals(this.deptName, that.deptName);
     }
 
     @Override

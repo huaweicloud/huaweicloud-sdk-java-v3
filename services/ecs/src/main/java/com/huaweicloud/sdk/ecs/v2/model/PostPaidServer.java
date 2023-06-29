@@ -655,35 +655,29 @@ public class PostPaidServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServer postPaidServer = (PostPaidServer) o;
-        return Objects.equals(this.autoTerminateTime, postPaidServer.autoTerminateTime)
-            && Objects.equals(this.adminPass, postPaidServer.adminPass)
-            && Objects.equals(this.availabilityZone, postPaidServer.availabilityZone)
-            && Objects.equals(this.batchCreateInMultiAz, postPaidServer.batchCreateInMultiAz)
-            && Objects.equals(this.count, postPaidServer.count)
-            && Objects.equals(this.dataVolumes, postPaidServer.dataVolumes)
-            && Objects.equals(this.extendparam, postPaidServer.extendparam)
-            && Objects.equals(this.flavorRef, postPaidServer.flavorRef)
-            && Objects.equals(this.imageRef, postPaidServer.imageRef)
-            && Objects.equals(this.isAutoRename, postPaidServer.isAutoRename)
-            && Objects.equals(this.keyName, postPaidServer.keyName)
-            && Objects.equals(this.metadata, postPaidServer.metadata) && Objects.equals(this.name, postPaidServer.name)
-            && Objects.equals(this.nics, postPaidServer.nics)
-            && Objects.equals(this.osSchedulerHints, postPaidServer.osSchedulerHints)
-            && Objects.equals(this.publicip, postPaidServer.publicip)
-            && Objects.equals(this.rootVolume, postPaidServer.rootVolume)
-            && Objects.equals(this.securityGroups, postPaidServer.securityGroups)
-            && Objects.equals(this.serverTags, postPaidServer.serverTags)
-            && Objects.equals(this.tags, postPaidServer.tags) && Objects.equals(this.userData, postPaidServer.userData)
-            && Objects.equals(this.vpcid, postPaidServer.vpcid)
-            && Objects.equals(this.description, postPaidServer.description);
+        PostPaidServer that = (PostPaidServer) obj;
+        return Objects.equals(this.autoTerminateTime, that.autoTerminateTime)
+            && Objects.equals(this.adminPass, that.adminPass)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.batchCreateInMultiAz, that.batchCreateInMultiAz)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.isAutoRename, that.isAutoRename)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints)
+            && Objects.equals(this.publicip, that.publicip) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.serverTags, that.serverTags) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.vpcid, that.vpcid)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

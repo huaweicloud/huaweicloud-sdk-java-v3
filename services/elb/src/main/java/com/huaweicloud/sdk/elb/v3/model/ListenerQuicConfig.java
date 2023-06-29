@@ -55,16 +55,16 @@ public class ListenerQuicConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListenerQuicConfig listenerQuicConfig = (ListenerQuicConfig) o;
-        return Objects.equals(this.quicListenerId, listenerQuicConfig.quicListenerId)
-            && Objects.equals(this.enableQuicUpgrade, listenerQuicConfig.enableQuicUpgrade);
+        ListenerQuicConfig that = (ListenerQuicConfig) obj;
+        return Objects.equals(this.quicListenerId, that.quicListenerId)
+            && Objects.equals(this.enableQuicUpgrade, that.enableQuicUpgrade);
     }
 
     @Override

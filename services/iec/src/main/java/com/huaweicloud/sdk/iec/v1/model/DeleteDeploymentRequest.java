@@ -33,15 +33,15 @@ public class DeleteDeploymentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeploymentRequest deleteDeploymentRequest = (DeleteDeploymentRequest) o;
-        return Objects.equals(this.deploymentId, deleteDeploymentRequest.deploymentId);
+        DeleteDeploymentRequest that = (DeleteDeploymentRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId);
     }
 
     @Override

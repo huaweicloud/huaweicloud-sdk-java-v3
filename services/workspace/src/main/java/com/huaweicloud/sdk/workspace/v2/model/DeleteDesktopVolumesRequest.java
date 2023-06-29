@@ -65,16 +65,15 @@ public class DeleteDesktopVolumesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDesktopVolumesRequest deleteDesktopVolumesRequest = (DeleteDesktopVolumesRequest) o;
-        return Objects.equals(this.desktopId, deleteDesktopVolumesRequest.desktopId)
-            && Objects.equals(this.body, deleteDesktopVolumesRequest.body);
+        DeleteDesktopVolumesRequest that = (DeleteDesktopVolumesRequest) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.body, that.body);
     }
 
     @Override

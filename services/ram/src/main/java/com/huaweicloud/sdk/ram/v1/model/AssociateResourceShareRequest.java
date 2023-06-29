@@ -65,16 +65,15 @@ public class AssociateResourceShareRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateResourceShareRequest associateResourceShareRequest = (AssociateResourceShareRequest) o;
-        return Objects.equals(this.resourceShareId, associateResourceShareRequest.resourceShareId)
-            && Objects.equals(this.body, associateResourceShareRequest.body);
+        AssociateResourceShareRequest that = (AssociateResourceShareRequest) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

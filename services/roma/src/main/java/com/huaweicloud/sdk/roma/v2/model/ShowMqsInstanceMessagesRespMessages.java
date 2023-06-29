@@ -253,26 +253,20 @@ public class ShowMqsInstanceMessagesRespMessages {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMqsInstanceMessagesRespMessages showMqsInstanceMessagesRespMessages =
-            (ShowMqsInstanceMessagesRespMessages) o;
-        return Objects.equals(this.topic, showMqsInstanceMessagesRespMessages.topic)
-            && Objects.equals(this.partition, showMqsInstanceMessagesRespMessages.partition)
-            && Objects.equals(this.key, showMqsInstanceMessagesRespMessages.key)
-            && Objects.equals(this.value, showMqsInstanceMessagesRespMessages.value)
-            && Objects.equals(this.size, showMqsInstanceMessagesRespMessages.size)
-            && Objects.equals(this.timestamp, showMqsInstanceMessagesRespMessages.timestamp)
-            && Objects.equals(this.hugeMessage, showMqsInstanceMessagesRespMessages.hugeMessage)
-            && Objects.equals(this.messageOffset, showMqsInstanceMessagesRespMessages.messageOffset)
-            && Objects.equals(this.messageId, showMqsInstanceMessagesRespMessages.messageId)
-            && Objects.equals(this.appId, showMqsInstanceMessagesRespMessages.appId)
-            && Objects.equals(this.tag, showMqsInstanceMessagesRespMessages.tag);
+        ShowMqsInstanceMessagesRespMessages that = (ShowMqsInstanceMessagesRespMessages) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.hugeMessage, that.hugeMessage)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

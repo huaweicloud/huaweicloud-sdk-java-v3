@@ -75,16 +75,15 @@ public class ListIterationHistoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIterationHistoriesResponse listIterationHistoriesResponse = (ListIterationHistoriesResponse) o;
-        return Objects.equals(this.total, listIterationHistoriesResponse.total)
-            && Objects.equals(this.histories, listIterationHistoriesResponse.histories);
+        ListIterationHistoriesResponse that = (ListIterationHistoriesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.histories, that.histories);
     }
 
     @Override

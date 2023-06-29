@@ -244,21 +244,19 @@ public class SecretDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecretDetail secretDetail = (SecretDetail) o;
-        return Objects.equals(this.id, secretDetail.id) && Objects.equals(this.name, secretDetail.name)
-            && Objects.equals(this.description, secretDetail.description)
-            && Objects.equals(this.workspaceId, secretDetail.workspaceId)
-            && Objects.equals(this.projectId, secretDetail.projectId)
-            && Objects.equals(this.createdAt, secretDetail.createdAt)
-            && Objects.equals(this.updatedAt, secretDetail.updatedAt)
-            && Objects.equals(this.secrets, secretDetail.secrets) && Objects.equals(this.tags, secretDetail.tags);
+        SecretDetail that = (SecretDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.secrets, that.secrets)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -144,18 +144,17 @@ public class FeatureInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FeatureInfo featureInfo = (FeatureInfo) o;
-        return Objects.equals(this.id, featureInfo.id) && Objects.equals(this.name, featureInfo.name)
-            && Objects.equals(this.enable, featureInfo.enable) && Objects.equals(this.config, featureInfo.config)
-            && Objects.equals(this.instanceId, featureInfo.instanceId)
-            && Objects.equals(this.updateTime, featureInfo.updateTime);
+        FeatureInfo that = (FeatureInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

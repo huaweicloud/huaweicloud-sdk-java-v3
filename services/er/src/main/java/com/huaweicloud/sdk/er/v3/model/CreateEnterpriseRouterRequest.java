@@ -67,16 +67,15 @@ public class CreateEnterpriseRouterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnterpriseRouterRequest createEnterpriseRouterRequest = (CreateEnterpriseRouterRequest) o;
-        return Objects.equals(this.xClientToken, createEnterpriseRouterRequest.xClientToken)
-            && Objects.equals(this.body, createEnterpriseRouterRequest.body);
+        CreateEnterpriseRouterRequest that = (CreateEnterpriseRouterRequest) obj;
+        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.body, that.body);
     }
 
     @Override

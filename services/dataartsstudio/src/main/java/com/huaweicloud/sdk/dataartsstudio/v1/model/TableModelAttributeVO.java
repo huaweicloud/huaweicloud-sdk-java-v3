@@ -613,39 +613,30 @@ public class TableModelAttributeVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableModelAttributeVO tableModelAttributeVO = (TableModelAttributeVO) o;
-        return Objects.equals(this.id, tableModelAttributeVO.id)
-            && Objects.equals(this.nameEn, tableModelAttributeVO.nameEn)
-            && Objects.equals(this.nameCh, tableModelAttributeVO.nameCh)
-            && Objects.equals(this.description, tableModelAttributeVO.description)
-            && Objects.equals(this.obsLocation, tableModelAttributeVO.obsLocation)
-            && Objects.equals(this.createBy, tableModelAttributeVO.createBy)
-            && Objects.equals(this.updateBy, tableModelAttributeVO.updateBy)
-            && Objects.equals(this.dataType, tableModelAttributeVO.dataType)
-            && Objects.equals(this.domainType, tableModelAttributeVO.domainType)
-            && Objects.equals(this.dataTypeExtend, tableModelAttributeVO.dataTypeExtend)
-            && Objects.equals(this.isPrimaryKey, tableModelAttributeVO.isPrimaryKey)
-            && Objects.equals(this.isPartitionKey, tableModelAttributeVO.isPartitionKey)
-            && Objects.equals(this.isForeignKey, tableModelAttributeVO.isForeignKey)
-            && Objects.equals(this.extendField, tableModelAttributeVO.extendField)
-            && Objects.equals(this.notNull, tableModelAttributeVO.notNull)
-            && Objects.equals(this.ordinal, tableModelAttributeVO.ordinal)
-            && Objects.equals(this.tableModelId, tableModelAttributeVO.tableModelId)
-            && Objects.equals(this.createTime, tableModelAttributeVO.createTime)
-            && Objects.equals(this.updateTime, tableModelAttributeVO.updateTime)
-            && Objects.equals(this.tags, tableModelAttributeVO.tags)
-            && Objects.equals(this.standRowId, tableModelAttributeVO.standRowId)
-            && Objects.equals(this.standRowName, tableModelAttributeVO.standRowName)
-            && Objects.equals(this.qualityInfos, tableModelAttributeVO.qualityInfos)
-            && Objects.equals(this.alias, tableModelAttributeVO.alias)
-            && Objects.equals(this.selfDefinedFields, tableModelAttributeVO.selfDefinedFields);
+        TableModelAttributeVO that = (TableModelAttributeVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.obsLocation, that.obsLocation) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.dataTypeExtend, that.dataTypeExtend)
+            && Objects.equals(this.isPrimaryKey, that.isPrimaryKey)
+            && Objects.equals(this.isPartitionKey, that.isPartitionKey)
+            && Objects.equals(this.isForeignKey, that.isForeignKey)
+            && Objects.equals(this.extendField, that.extendField) && Objects.equals(this.notNull, that.notNull)
+            && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.tableModelId, that.tableModelId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.standRowId, that.standRowId)
+            && Objects.equals(this.standRowName, that.standRowName)
+            && Objects.equals(this.qualityInfos, that.qualityInfos) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
 
     @Override

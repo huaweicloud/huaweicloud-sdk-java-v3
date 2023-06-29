@@ -87,17 +87,16 @@ public class UpdateVersionAliasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVersionAliasRequest updateVersionAliasRequest = (UpdateVersionAliasRequest) o;
-        return Objects.equals(this.functionUrn, updateVersionAliasRequest.functionUrn)
-            && Objects.equals(this.aliasName, updateVersionAliasRequest.aliasName)
-            && Objects.equals(this.body, updateVersionAliasRequest.body);
+        UpdateVersionAliasRequest that = (UpdateVersionAliasRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.aliasName, that.aliasName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

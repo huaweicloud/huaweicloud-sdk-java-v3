@@ -101,17 +101,16 @@ public class ListCommandsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommandsResponse listCommandsResponse = (ListCommandsResponse) o;
-        return Objects.equals(this.total, listCommandsResponse.total)
-            && Objects.equals(this.size, listCommandsResponse.size)
-            && Objects.equals(this.items, listCommandsResponse.items);
+        ListCommandsResponse that = (ListCommandsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

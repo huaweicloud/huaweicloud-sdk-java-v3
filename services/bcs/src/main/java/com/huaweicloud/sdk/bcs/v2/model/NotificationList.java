@@ -268,24 +268,20 @@ public class NotificationList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotificationList notificationList = (NotificationList) o;
-        return Objects.equals(this.channelName, notificationList.channelName)
-            && Objects.equals(this.status, notificationList.status)
-            && Objects.equals(this.updatedTime, notificationList.updatedTime)
-            && Objects.equals(this.tc3Need, notificationList.tc3Need)
-            && Objects.equals(this.invitorInfo, notificationList.invitorInfo)
-            && Objects.equals(this.inviteeInfo, notificationList.inviteeInfo)
-            && Objects.equals(this.hide, notificationList.hide)
-            && Objects.equals(this.inviteeOrgs, notificationList.inviteeOrgs)
-            && Objects.equals(this.readStatus, notificationList.readStatus)
-            && Objects.equals(this.crossVersionUpgrade, notificationList.crossVersionUpgrade);
+        NotificationList that = (NotificationList) obj;
+        return Objects.equals(this.channelName, that.channelName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.tc3Need, that.tc3Need)
+            && Objects.equals(this.invitorInfo, that.invitorInfo) && Objects.equals(this.inviteeInfo, that.inviteeInfo)
+            && Objects.equals(this.hide, that.hide) && Objects.equals(this.inviteeOrgs, that.inviteeOrgs)
+            && Objects.equals(this.readStatus, that.readStatus)
+            && Objects.equals(this.crossVersionUpgrade, that.crossVersionUpgrade);
     }
 
     @Override

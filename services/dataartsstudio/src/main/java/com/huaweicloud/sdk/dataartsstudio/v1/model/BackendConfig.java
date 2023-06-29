@@ -63,22 +63,15 @@ public class BackendConfig {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class BackendConfig {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,19 +345,18 @@ public class BackendConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendConfig backendConfig = (BackendConfig) o;
-        return Objects.equals(this.type, backendConfig.type) && Objects.equals(this.protocol, backendConfig.protocol)
-            && Objects.equals(this.host, backendConfig.host) && Objects.equals(this.timeout, backendConfig.timeout)
-            && Objects.equals(this.path, backendConfig.path)
-            && Objects.equals(this.backendParas, backendConfig.backendParas)
-            && Objects.equals(this.constantParas, backendConfig.constantParas);
+        BackendConfig that = (BackendConfig) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.backendParas, that.backendParas)
+            && Objects.equals(this.constantParas, that.constantParas);
     }
 
     @Override

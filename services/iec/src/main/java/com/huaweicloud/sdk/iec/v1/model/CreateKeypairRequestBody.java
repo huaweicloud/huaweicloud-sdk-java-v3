@@ -55,16 +55,15 @@ public class CreateKeypairRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeypairRequestBody createKeypairRequestBody = (CreateKeypairRequestBody) o;
-        return Objects.equals(this.name, createKeypairRequestBody.name)
-            && Objects.equals(this.publicKey, createKeypairRequestBody.publicKey);
+        CreateKeypairRequestBody that = (CreateKeypairRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.publicKey, that.publicKey);
     }
 
     @Override

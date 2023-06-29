@@ -96,16 +96,16 @@ public class ExtraInfoList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtraInfoList extraInfoList = (ExtraInfoList) o;
-        return Objects.equals(this.item, extraInfoList.item) && Objects.equals(this.value, extraInfoList.value)
-            && Objects.equals(this.note, extraInfoList.note);
+        ExtraInfoList that = (ExtraInfoList) obj;
+        return Objects.equals(this.item, that.item) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.note, that.note);
     }
 
     @Override

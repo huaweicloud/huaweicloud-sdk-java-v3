@@ -75,22 +75,15 @@ public class CreateRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class CreateRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            DataParsingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataParsingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataParsingStatusEnum(value));
         }
 
         public static DataParsingStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DataParsingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -284,19 +270,17 @@ public class CreateRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRuleRequestBody createRuleRequestBody = (CreateRuleRequestBody) o;
-        return Objects.equals(this.name, createRuleRequestBody.name)
-            && Objects.equals(this.appId, createRuleRequestBody.appId)
-            && Objects.equals(this.description, createRuleRequestBody.description)
-            && Objects.equals(this.status, createRuleRequestBody.status)
-            && Objects.equals(this.dataParsingStatus, createRuleRequestBody.dataParsingStatus);
+        CreateRuleRequestBody that = (CreateRuleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dataParsingStatus, that.dataParsingStatus);
     }
 
     @Override

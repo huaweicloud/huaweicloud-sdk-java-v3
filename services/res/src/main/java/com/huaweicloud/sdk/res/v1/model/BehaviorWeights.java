@@ -96,17 +96,16 @@ public class BehaviorWeights {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BehaviorWeights behaviorWeights = (BehaviorWeights) o;
-        return Objects.equals(this.behaviorType, behaviorWeights.behaviorType)
-            && Objects.equals(this.weight, behaviorWeights.weight)
-            && Objects.equals(this.otherUses, behaviorWeights.otherUses);
+        BehaviorWeights that = (BehaviorWeights) obj;
+        return Objects.equals(this.behaviorType, that.behaviorType) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.otherUses, that.otherUses);
     }
 
     @Override

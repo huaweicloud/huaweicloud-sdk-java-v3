@@ -153,20 +153,17 @@ public class KeystoneGroupResultWithLinksSelf {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneGroupResultWithLinksSelf keystoneGroupResultWithLinksSelf = (KeystoneGroupResultWithLinksSelf) o;
-        return Objects.equals(this.description, keystoneGroupResultWithLinksSelf.description)
-            && Objects.equals(this.id, keystoneGroupResultWithLinksSelf.id)
-            && Objects.equals(this.domainId, keystoneGroupResultWithLinksSelf.domainId)
-            && Objects.equals(this.name, keystoneGroupResultWithLinksSelf.name)
-            && Objects.equals(this.links, keystoneGroupResultWithLinksSelf.links)
-            && Objects.equals(this.createTime, keystoneGroupResultWithLinksSelf.createTime);
+        KeystoneGroupResultWithLinksSelf that = (KeystoneGroupResultWithLinksSelf) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

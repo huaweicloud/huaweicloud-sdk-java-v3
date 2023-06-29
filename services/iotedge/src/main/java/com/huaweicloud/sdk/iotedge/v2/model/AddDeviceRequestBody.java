@@ -1,74 +1,58 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.EdgeDeviceAuthInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 添加设备结构体。
  */
-public class AddDeviceRequestBody  {
-
+public class AddDeviceRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
 
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_info")
-    
+    @JsonProperty(value = "auth_info")
 
     private EdgeDeviceAuthInfo authInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_id")
-    
+    @JsonProperty(value = "gateway_id")
 
     private String gatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="extension_info")
-    
+    @JsonProperty(value = "extension_info")
 
     private Object extensionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
 
     private Object config;
 
@@ -76,9 +60,6 @@ public class AddDeviceRequestBody  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 设备标识码，通常使用IMEI、MAC地址或Serial No作为node_id。（注意:NB设备由于模组烧录信息后无法配置，所以NB设备会校验node_id全局唯一。）
@@ -92,15 +73,10 @@ public class AddDeviceRequestBody  {
         this.nodeId = nodeId;
     }
 
-    
-
     public AddDeviceRequestBody withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
-
-    
-
 
     /**
      * 设备名称。
@@ -114,15 +90,10 @@ public class AddDeviceRequestBody  {
         this.deviceName = deviceName;
     }
 
-    
-
     public AddDeviceRequestBody withProductId(String productId) {
         this.productId = productId;
         return this;
     }
-
-    
-
 
     /**
      * 设备关联的产品ID，用于唯一标识一个产品模型，在管理门户导入产品模型后由平台分配获得。
@@ -136,22 +107,19 @@ public class AddDeviceRequestBody  {
         this.productId = productId;
     }
 
-    
-
     public AddDeviceRequestBody withAuthInfo(EdgeDeviceAuthInfo authInfo) {
         this.authInfo = authInfo;
         return this;
     }
 
     public AddDeviceRequestBody withAuthInfo(Consumer<EdgeDeviceAuthInfo> authInfoSetter) {
-        if(this.authInfo == null ){
+        if (this.authInfo == null) {
             this.authInfo = new EdgeDeviceAuthInfo();
             authInfoSetter.accept(this.authInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get authInfo
@@ -165,15 +133,10 @@ public class AddDeviceRequestBody  {
         this.authInfo = authInfo;
     }
 
-    
-
     public AddDeviceRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 设备的描述信息。
@@ -187,15 +150,10 @@ public class AddDeviceRequestBody  {
         this.description = description;
     }
 
-    
-
     public AddDeviceRequestBody withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
     }
-
-    
-
 
     /**
      * 父设备ID，用于标识设备所属的父设备。携带该参数时，表示在该父设备下创建一个子设备，这个子设备不与平台直连，此时必须保证这个父设备在平台已存在，创建成功后子设备的gateway_id等于该参数值；不携带该参数时，表示创建一个和平台直连的设备，创建成功后设备的device_id和gateway_id一致。
@@ -209,15 +167,10 @@ public class AddDeviceRequestBody  {
         this.gatewayId = gatewayId;
     }
 
-    
-
     public AddDeviceRequestBody withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间Id。此参数为非必选参数，用于兼容平台老用户存在多应用的场景。存在多应用的用户需要使用该接口时，必须携带该参数指定注册的设备归属到哪个应用下，否则接口会提示错误。如果用户存在多应用，同时又不想携带该参数，可以联系华为技术支持对用户数据做应用合并。
@@ -231,15 +184,10 @@ public class AddDeviceRequestBody  {
         this.spaceId = spaceId;
     }
 
-    
-
     public AddDeviceRequestBody withExtensionInfo(Object extensionInfo) {
         this.extensionInfo = extensionInfo;
         return this;
     }
-
-    
-
 
     /**
      * 设备扩展信息。用户可以自定义任何想要的扩展信息，如果在创建设备时为子设备指定该字段，将会通过MQTT接口“平台通知网关子设备新增“将该信息通知给网关。字段值大小上限为1K。 追加：如果通过EdgeHub, EdgeAccess进行设备接入，不需要携带extension_info；如果通过用户自定义的应用进行边缘设备接入，则携带模块id参数作为extension_info, 例如：{\\\"module_id\":\\\"user_xxx\"}
@@ -253,15 +201,10 @@ public class AddDeviceRequestBody  {
         this.extensionInfo = extensionInfo;
     }
 
-    
-
     public AddDeviceRequestBody withConfig(Object config) {
         this.config = config;
         return this;
     }
-
-    
-
 
     /**
      * 设备初始配置。用户使用该字段可以为设备指定初始配置，指定后将会根据service_id和desired设置的属性值与产品中对应属性的默认值比对，如果不同，则将以设置的属性值为准写入到设备配置中。例如连接MQTT设备，配置接入平台密码，携带该参数{\\\"password\":\\\"xxxxxxxx\"}
@@ -275,31 +218,28 @@ public class AddDeviceRequestBody  {
         this.config = config;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeviceRequestBody addDeviceRequestBody = (AddDeviceRequestBody) o;
-        return Objects.equals(this.nodeId, addDeviceRequestBody.nodeId) &&
-            Objects.equals(this.deviceName, addDeviceRequestBody.deviceName) &&
-            Objects.equals(this.productId, addDeviceRequestBody.productId) &&
-            Objects.equals(this.authInfo, addDeviceRequestBody.authInfo) &&
-            Objects.equals(this.description, addDeviceRequestBody.description) &&
-            Objects.equals(this.gatewayId, addDeviceRequestBody.gatewayId) &&
-            Objects.equals(this.spaceId, addDeviceRequestBody.spaceId) &&
-            Objects.equals(this.extensionInfo, addDeviceRequestBody.extensionInfo) &&
-            Objects.equals(this.config, addDeviceRequestBody.config);
+        AddDeviceRequestBody that = (AddDeviceRequestBody) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.authInfo, that.authInfo)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.extensionInfo, that.extensionInfo)
+            && Objects.equals(this.config, that.config);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(nodeId, deviceName, productId, authInfo, description, gatewayId, spaceId, extensionInfo, config);
+        return Objects
+            .hash(nodeId, deviceName, productId, authInfo, description, gatewayId, spaceId, extensionInfo, config);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -316,6 +256,7 @@ public class AddDeviceRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -326,8 +267,5 @@ public class AddDeviceRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

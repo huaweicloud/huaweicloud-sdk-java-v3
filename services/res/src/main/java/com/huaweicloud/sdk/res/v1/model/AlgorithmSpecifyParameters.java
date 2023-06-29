@@ -29,8 +29,8 @@ public class AlgorithmSpecifyParameters {
     private List<Integer> architecture = null;
 
     /**
-    * 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
-    */
+     * 激活函数(DEEPFM需要提供此参数,AutoGroup需要提供此参数)。
+     */
     public static final class ActiveFunctionEnum {
 
         /**
@@ -79,22 +79,15 @@ public class AlgorithmSpecifyParameters {
             if (value == null) {
                 return null;
             }
-            ActiveFunctionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActiveFunctionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActiveFunctionEnum(value));
         }
 
         public static ActiveFunctionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActiveFunctionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -481,27 +474,26 @@ public class AlgorithmSpecifyParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlgorithmSpecifyParameters algorithmSpecifyParameters = (AlgorithmSpecifyParameters) o;
-        return Objects.equals(this.latentVectorLength, algorithmSpecifyParameters.latentVectorLength)
-            && Objects.equals(this.architecture, algorithmSpecifyParameters.architecture)
-            && Objects.equals(this.activeFunction, algorithmSpecifyParameters.activeFunction)
-            && Objects.equals(this.valueKeepProbability, algorithmSpecifyParameters.valueKeepProbability)
-            && Objects.equals(this.embedSize, algorithmSpecifyParameters.embedSize)
-            && Objects.equals(this.mlpArchitecture, algorithmSpecifyParameters.mlpArchitecture)
-            && Objects.equals(this.maxOrder, algorithmSpecifyParameters.maxOrder)
-            && Objects.equals(this.hashSizes, algorithmSpecifyParameters.hashSizes)
-            && Objects.equals(this.hashCompensation, algorithmSpecifyParameters.hashCompensation)
-            && Objects.equals(this.useWidePart, algorithmSpecifyParameters.useWidePart)
-            && Objects.equals(this.structureOptimizer, algorithmSpecifyParameters.structureOptimizer)
-            && Objects.equals(this.mergeMultiHot, algorithmSpecifyParameters.mergeMultiHot)
-            && Objects.equals(this.fixStructure, algorithmSpecifyParameters.fixStructure);
+        AlgorithmSpecifyParameters that = (AlgorithmSpecifyParameters) obj;
+        return Objects.equals(this.latentVectorLength, that.latentVectorLength)
+            && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.activeFunction, that.activeFunction)
+            && Objects.equals(this.valueKeepProbability, that.valueKeepProbability)
+            && Objects.equals(this.embedSize, that.embedSize)
+            && Objects.equals(this.mlpArchitecture, that.mlpArchitecture)
+            && Objects.equals(this.maxOrder, that.maxOrder) && Objects.equals(this.hashSizes, that.hashSizes)
+            && Objects.equals(this.hashCompensation, that.hashCompensation)
+            && Objects.equals(this.useWidePart, that.useWidePart)
+            && Objects.equals(this.structureOptimizer, that.structureOptimizer)
+            && Objects.equals(this.mergeMultiHot, that.mergeMultiHot)
+            && Objects.equals(this.fixStructure, that.fixStructure);
     }
 
     @Override

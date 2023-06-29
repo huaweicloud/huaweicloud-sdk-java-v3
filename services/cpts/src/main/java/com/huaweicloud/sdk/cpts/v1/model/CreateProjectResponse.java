@@ -80,17 +80,16 @@ public class CreateProjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectResponse createProjectResponse = (CreateProjectResponse) o;
-        return Objects.equals(this.code, createProjectResponse.code)
-            && Objects.equals(this.message, createProjectResponse.message)
-            && Objects.equals(this.projectId, createProjectResponse.projectId);
+        CreateProjectResponse that = (CreateProjectResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

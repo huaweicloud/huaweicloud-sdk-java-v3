@@ -55,16 +55,15 @@ public class CreateVolumeTransferOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeTransferOption createVolumeTransferOption = (CreateVolumeTransferOption) o;
-        return Objects.equals(this.name, createVolumeTransferOption.name)
-            && Objects.equals(this.volumeId, createVolumeTransferOption.volumeId);
+        CreateVolumeTransferOption that = (CreateVolumeTransferOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

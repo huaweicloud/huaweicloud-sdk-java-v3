@@ -96,17 +96,17 @@ public class BranchesItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BranchesItem branchesItem = (BranchesItem) o;
-        return Objects.equals(this.commit, branchesItem.commit)
-            && Objects.equals(this.divergingCommitCounts, branchesItem.divergingCommitCounts)
-            && Objects.equals(this.name, branchesItem.name);
+        BranchesItem that = (BranchesItem) obj;
+        return Objects.equals(this.commit, that.commit)
+            && Objects.equals(this.divergingCommitCounts, that.divergingCommitCounts)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

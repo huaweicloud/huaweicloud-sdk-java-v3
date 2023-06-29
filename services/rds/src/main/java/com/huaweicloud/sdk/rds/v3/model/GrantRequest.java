@@ -74,15 +74,15 @@ public class GrantRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GrantRequest grantRequest = (GrantRequest) o;
-        return Objects.equals(this.dbName, grantRequest.dbName) && Objects.equals(this.users, grantRequest.users);
+        GrantRequest that = (GrantRequest) obj;
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.users, that.users);
     }
 
     @Override

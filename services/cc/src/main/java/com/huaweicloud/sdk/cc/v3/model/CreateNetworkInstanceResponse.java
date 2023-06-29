@@ -66,16 +66,16 @@ public class CreateNetworkInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNetworkInstanceResponse createNetworkInstanceResponse = (CreateNetworkInstanceResponse) o;
-        return Objects.equals(this.networkInstance, createNetworkInstanceResponse.networkInstance)
-            && Objects.equals(this.requestId, createNetworkInstanceResponse.requestId);
+        CreateNetworkInstanceResponse that = (CreateNetworkInstanceResponse) obj;
+        return Objects.equals(this.networkInstance, that.networkInstance)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

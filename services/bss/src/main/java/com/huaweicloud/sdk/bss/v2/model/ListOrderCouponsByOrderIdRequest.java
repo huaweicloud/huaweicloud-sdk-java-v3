@@ -33,15 +33,15 @@ public class ListOrderCouponsByOrderIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrderCouponsByOrderIdRequest listOrderCouponsByOrderIdRequest = (ListOrderCouponsByOrderIdRequest) o;
-        return Objects.equals(this.orderId, listOrderCouponsByOrderIdRequest.orderId);
+        ListOrderCouponsByOrderIdRequest that = (ListOrderCouponsByOrderIdRequest) obj;
+        return Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

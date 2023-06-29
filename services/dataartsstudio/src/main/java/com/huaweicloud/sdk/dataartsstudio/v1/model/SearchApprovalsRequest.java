@@ -85,22 +85,15 @@ public class SearchApprovalsRequest {
             if (value == null) {
                 return null;
             }
-            ApprovalStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApprovalStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApprovalStatusEnum(value));
         }
 
         public static ApprovalStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApprovalStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,15 @@ public class SearchApprovalsRequest {
             if (value == null) {
                 return null;
             }
-            ApprovalStatusDetailEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApprovalStatusDetailEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApprovalStatusDetailEnum(value));
         }
 
         public static ApprovalStatusDetailEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApprovalStatusDetailEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -255,22 +241,15 @@ public class SearchApprovalsRequest {
             if (value == null) {
                 return null;
             }
-            ApprovalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApprovalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApprovalTypeEnum(value));
         }
 
         public static ApprovalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApprovalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -540,27 +519,21 @@ public class SearchApprovalsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchApprovalsRequest searchApprovalsRequest = (SearchApprovalsRequest) o;
-        return Objects.equals(this.workspace, searchApprovalsRequest.workspace)
-            && Objects.equals(this.bizId, searchApprovalsRequest.bizId)
-            && Objects.equals(this.name, searchApprovalsRequest.name)
-            && Objects.equals(this.createBy, searchApprovalsRequest.createBy)
-            && Objects.equals(this.approver, searchApprovalsRequest.approver)
-            && Objects.equals(this.approvalStatus, searchApprovalsRequest.approvalStatus)
-            && Objects.equals(this.approvalStatusDetail, searchApprovalsRequest.approvalStatusDetail)
-            && Objects.equals(this.approvalType, searchApprovalsRequest.approvalType)
-            && Objects.equals(this.bizType, searchApprovalsRequest.bizType)
-            && Objects.equals(this.beginTime, searchApprovalsRequest.beginTime)
-            && Objects.equals(this.endTime, searchApprovalsRequest.endTime)
-            && Objects.equals(this.limit, searchApprovalsRequest.limit)
-            && Objects.equals(this.offset, searchApprovalsRequest.offset);
+        SearchApprovalsRequest that = (SearchApprovalsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.bizId, that.bizId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.approver, that.approver) && Objects.equals(this.approvalStatus, that.approvalStatus)
+            && Objects.equals(this.approvalStatusDetail, that.approvalStatusDetail)
+            && Objects.equals(this.approvalType, that.approvalType) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

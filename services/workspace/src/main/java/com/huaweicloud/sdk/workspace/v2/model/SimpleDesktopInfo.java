@@ -187,21 +187,18 @@ public class SimpleDesktopInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleDesktopInfo simpleDesktopInfo = (SimpleDesktopInfo) o;
-        return Objects.equals(this.desktopId, simpleDesktopInfo.desktopId)
-            && Objects.equals(this.computerName, simpleDesktopInfo.computerName)
-            && Objects.equals(this.created, simpleDesktopInfo.created)
-            && Objects.equals(this.ipAddress, simpleDesktopInfo.ipAddress)
-            && Objects.equals(this.userName, simpleDesktopInfo.userName)
-            && Objects.equals(this.userGroup, simpleDesktopInfo.userGroup)
-            && Objects.equals(this.sid, simpleDesktopInfo.sid) && Objects.equals(this.ouName, simpleDesktopInfo.ouName);
+        SimpleDesktopInfo that = (SimpleDesktopInfo) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.sid, that.sid) && Objects.equals(this.ouName, that.ouName);
     }
 
     @Override

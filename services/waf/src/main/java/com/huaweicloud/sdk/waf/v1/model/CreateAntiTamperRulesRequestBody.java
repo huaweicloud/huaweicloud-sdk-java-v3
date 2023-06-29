@@ -77,17 +77,16 @@ public class CreateAntiTamperRulesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAntiTamperRulesRequestBody createAntiTamperRulesRequestBody = (CreateAntiTamperRulesRequestBody) o;
-        return Objects.equals(this.hostname, createAntiTamperRulesRequestBody.hostname)
-            && Objects.equals(this.url, createAntiTamperRulesRequestBody.url)
-            && Objects.equals(this.description, createAntiTamperRulesRequestBody.description);
+        CreateAntiTamperRulesRequestBody that = (CreateAntiTamperRulesRequestBody) obj;
+        return Objects.equals(this.hostname, that.hostname) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

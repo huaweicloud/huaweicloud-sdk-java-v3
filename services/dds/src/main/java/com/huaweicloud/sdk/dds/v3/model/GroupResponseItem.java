@@ -171,19 +171,17 @@ public class GroupResponseItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GroupResponseItem groupResponseItem = (GroupResponseItem) o;
-        return Objects.equals(this.type, groupResponseItem.type) && Objects.equals(this.id, groupResponseItem.id)
-            && Objects.equals(this.name, groupResponseItem.name)
-            && Objects.equals(this.status, groupResponseItem.status)
-            && Objects.equals(this.volume, groupResponseItem.volume)
-            && Objects.equals(this.nodes, groupResponseItem.nodes);
+        GroupResponseItem that = (GroupResponseItem) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

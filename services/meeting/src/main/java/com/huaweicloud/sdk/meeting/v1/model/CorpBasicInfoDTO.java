@@ -297,26 +297,22 @@ public class CorpBasicInfoDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CorpBasicInfoDTO corpBasicInfoDTO = (CorpBasicInfoDTO) o;
-        return Objects.equals(this.id, corpBasicInfoDTO.id) && Objects.equals(this.name, corpBasicInfoDTO.name)
-            && Objects.equals(this.address, corpBasicInfoDTO.address)
-            && Objects.equals(this.adminName, corpBasicInfoDTO.adminName)
-            && Objects.equals(this.account, corpBasicInfoDTO.account)
-            && Objects.equals(this.phone, corpBasicInfoDTO.phone)
-            && Objects.equals(this.country, corpBasicInfoDTO.country)
-            && Objects.equals(this.email, corpBasicInfoDTO.email)
-            && Objects.equals(this.enableSMS, corpBasicInfoDTO.enableSMS)
-            && Objects.equals(this.enableCloudDisk, corpBasicInfoDTO.enableCloudDisk)
-            && Objects.equals(this.enablePstn, corpBasicInfoDTO.enablePstn)
-            && Objects.equals(this.autoUserCreate, corpBasicInfoDTO.autoUserCreate)
-            && Objects.equals(this.corpType, corpBasicInfoDTO.corpType);
+        CorpBasicInfoDTO that = (CorpBasicInfoDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.adminName, that.adminName)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.enableSMS, that.enableSMS)
+            && Objects.equals(this.enableCloudDisk, that.enableCloudDisk)
+            && Objects.equals(this.enablePstn, that.enablePstn)
+            && Objects.equals(this.autoUserCreate, that.autoUserCreate) && Objects.equals(this.corpType, that.corpType);
     }
 
     @Override

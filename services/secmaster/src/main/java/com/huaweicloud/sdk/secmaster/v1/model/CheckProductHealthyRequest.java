@@ -67,16 +67,15 @@ public class CheckProductHealthyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckProductHealthyRequest checkProductHealthyRequest = (CheckProductHealthyRequest) o;
-        return Objects.equals(this.xLanguage, checkProductHealthyRequest.xLanguage)
-            && Objects.equals(this.body, checkProductHealthyRequest.body);
+        CheckProductHealthyRequest that = (CheckProductHealthyRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

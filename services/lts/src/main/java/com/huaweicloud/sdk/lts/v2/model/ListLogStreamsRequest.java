@@ -103,18 +103,17 @@ public class ListLogStreamsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogStreamsRequest listLogStreamsRequest = (ListLogStreamsRequest) o;
-        return Objects.equals(this.logGroupName, listLogStreamsRequest.logGroupName)
-            && Objects.equals(this.logStreamName, listLogStreamsRequest.logStreamName)
-            && Objects.equals(this.offset, listLogStreamsRequest.offset)
-            && Objects.equals(this.limit, listLogStreamsRequest.limit);
+        ListLogStreamsRequest that = (ListLogStreamsRequest) obj;
+        return Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

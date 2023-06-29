@@ -101,22 +101,15 @@ public class UpdateEndpointServiceRequestBody {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TcpProxyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
         }
 
         public static TcpProxyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -262,20 +255,18 @@ public class UpdateEndpointServiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointServiceRequestBody updateEndpointServiceRequestBody = (UpdateEndpointServiceRequestBody) o;
-        return Objects.equals(this.approvalEnabled, updateEndpointServiceRequestBody.approvalEnabled)
-            && Objects.equals(this.serviceName, updateEndpointServiceRequestBody.serviceName)
-            && Objects.equals(this.ports, updateEndpointServiceRequestBody.ports)
-            && Objects.equals(this.portId, updateEndpointServiceRequestBody.portId)
-            && Objects.equals(this.tcpProxy, updateEndpointServiceRequestBody.tcpProxy)
-            && Objects.equals(this.description, updateEndpointServiceRequestBody.description);
+        UpdateEndpointServiceRequestBody that = (UpdateEndpointServiceRequestBody) obj;
+        return Objects.equals(this.approvalEnabled, that.approvalEnabled)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.tcpProxy, that.tcpProxy)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowCertificateQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificateQuotaResponse showCertificateQuotaResponse = (ShowCertificateQuotaResponse) o;
-        return Objects.equals(this.quotas, showCertificateQuotaResponse.quotas);
+        ShowCertificateQuotaResponse that = (ShowCertificateQuotaResponse) obj;
+        return Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

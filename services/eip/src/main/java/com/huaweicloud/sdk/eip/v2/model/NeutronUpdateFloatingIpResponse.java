@@ -44,15 +44,15 @@ public class NeutronUpdateFloatingIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateFloatingIpResponse neutronUpdateFloatingIpResponse = (NeutronUpdateFloatingIpResponse) o;
-        return Objects.equals(this.floatingip, neutronUpdateFloatingIpResponse.floatingip);
+        NeutronUpdateFloatingIpResponse that = (NeutronUpdateFloatingIpResponse) obj;
+        return Objects.equals(this.floatingip, that.floatingip);
     }
 
     @Override

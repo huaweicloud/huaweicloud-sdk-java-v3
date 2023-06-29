@@ -77,17 +77,16 @@ public class ImageMainObjectDetectionInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMainObjectDetectionInstance imageMainObjectDetectionInstance = (ImageMainObjectDetectionInstance) o;
-        return Objects.equals(this.label, imageMainObjectDetectionInstance.label)
-            && Objects.equals(this.location, imageMainObjectDetectionInstance.location)
-            && Objects.equals(this.confidence, imageMainObjectDetectionInstance.confidence);
+        ImageMainObjectDetectionInstance that = (ImageMainObjectDetectionInstance) obj;
+        return Objects.equals(this.label, that.label) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

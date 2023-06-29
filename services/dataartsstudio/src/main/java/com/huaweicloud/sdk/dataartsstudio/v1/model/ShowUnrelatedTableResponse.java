@@ -298,25 +298,21 @@ public class ShowUnrelatedTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUnrelatedTableResponse showUnrelatedTableResponse = (ShowUnrelatedTableResponse) o;
-        return Objects.equals(this.attributes, showUnrelatedTableResponse.attributes)
-            && Objects.equals(this.classification, showUnrelatedTableResponse.classification)
-            && Objects.equals(this.count, showUnrelatedTableResponse.count)
-            && Objects.equals(this.entities, showUnrelatedTableResponse.entities)
-            && Objects.equals(this.fullTextResult, showUnrelatedTableResponse.fullTextResult)
-            && Objects.equals(this.queryText, showUnrelatedTableResponse.queryText)
-            && Objects.equals(this.queryType, showUnrelatedTableResponse.queryType)
-            && Objects.equals(this.referredEntities, showUnrelatedTableResponse.referredEntities)
-            && Objects.equals(this.scrollId, showUnrelatedTableResponse.scrollId)
-            && Objects.equals(this.searchParameters, showUnrelatedTableResponse.searchParameters)
-            && Objects.equals(this.type, showUnrelatedTableResponse.type);
+        ShowUnrelatedTableResponse that = (ShowUnrelatedTableResponse) obj;
+        return Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.classification, that.classification) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.entities, that.entities) && Objects.equals(this.fullTextResult, that.fullTextResult)
+            && Objects.equals(this.queryText, that.queryText) && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.referredEntities, that.referredEntities)
+            && Objects.equals(this.scrollId, that.scrollId)
+            && Objects.equals(this.searchParameters, that.searchParameters) && Objects.equals(this.type, that.type);
     }
 
     @Override

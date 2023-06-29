@@ -55,16 +55,16 @@ public class ConfigByOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigByOption configByOption = (ConfigByOption) o;
-        return Objects.equals(this.passwordRegex, configByOption.passwordRegex)
-            && Objects.equals(this.passwordRegexDescription, configByOption.passwordRegexDescription);
+        ConfigByOption that = (ConfigByOption) obj;
+        return Objects.equals(this.passwordRegex, that.passwordRegex)
+            && Objects.equals(this.passwordRegexDescription, that.passwordRegexDescription);
     }
 
     @Override

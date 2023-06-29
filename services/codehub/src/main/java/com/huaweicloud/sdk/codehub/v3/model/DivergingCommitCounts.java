@@ -55,16 +55,15 @@ public class DivergingCommitCounts {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DivergingCommitCounts divergingCommitCounts = (DivergingCommitCounts) o;
-        return Objects.equals(this.ahead, divergingCommitCounts.ahead)
-            && Objects.equals(this.behind, divergingCommitCounts.behind);
+        DivergingCommitCounts that = (DivergingCommitCounts) obj;
+        return Objects.equals(this.ahead, that.ahead) && Objects.equals(this.behind, that.behind);
     }
 
     @Override

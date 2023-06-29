@@ -131,19 +131,18 @@ public class MultiTaskInitBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskInitBody multiTaskInitBody = (MultiTaskInitBody) o;
-        return Objects.equals(this.extInfo, multiTaskInitBody.extInfo)
-            && Objects.equals(this.sourceDatasourceId, multiTaskInitBody.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, multiTaskInitBody.targetDatasourceId)
-            && Objects.equals(this.taskId, multiTaskInitBody.taskId)
-            && Objects.equals(this.autoMapping, multiTaskInitBody.autoMapping);
+        MultiTaskInitBody that = (MultiTaskInitBody) obj;
+        return Objects.equals(this.extInfo, that.extInfo)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.autoMapping, that.autoMapping);
     }
 
     @Override

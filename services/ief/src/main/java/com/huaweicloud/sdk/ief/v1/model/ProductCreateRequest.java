@@ -43,15 +43,15 @@ public class ProductCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductCreateRequest productCreateRequest = (ProductCreateRequest) o;
-        return Objects.equals(this.product, productCreateRequest.product);
+        ProductCreateRequest that = (ProductCreateRequest) obj;
+        return Objects.equals(this.product, that.product);
     }
 
     @Override

@@ -90,16 +90,15 @@ public class DataResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataResponse dataResponse = (DataResponse) o;
-        return Objects.equals(this.successIds, dataResponse.successIds)
-            && Objects.equals(this.errorIds, dataResponse.errorIds);
+        DataResponse that = (DataResponse) obj;
+        return Objects.equals(this.successIds, that.successIds) && Objects.equals(this.errorIds, that.errorIds);
     }
 
     @Override

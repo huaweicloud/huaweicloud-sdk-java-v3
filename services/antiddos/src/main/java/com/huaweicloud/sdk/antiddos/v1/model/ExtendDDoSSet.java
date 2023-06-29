@@ -143,20 +143,20 @@ public class ExtendDDoSSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendDDoSSet extendDDoSSet = (ExtendDDoSSet) o;
-        return Objects.equals(this.setID, extendDDoSSet.setID)
-            && Objects.equals(this.newConnectionLimited, extendDDoSSet.newConnectionLimited)
-            && Objects.equals(this.totalConnectionLimited, extendDDoSSet.totalConnectionLimited)
-            && Objects.equals(this.httpPacketPerSecond, extendDDoSSet.httpPacketPerSecond)
-            && Objects.equals(this.trafficPerSecond, extendDDoSSet.trafficPerSecond)
-            && Objects.equals(this.packetPerSecond, extendDDoSSet.packetPerSecond);
+        ExtendDDoSSet that = (ExtendDDoSSet) obj;
+        return Objects.equals(this.setID, that.setID)
+            && Objects.equals(this.newConnectionLimited, that.newConnectionLimited)
+            && Objects.equals(this.totalConnectionLimited, that.totalConnectionLimited)
+            && Objects.equals(this.httpPacketPerSecond, that.httpPacketPerSecond)
+            && Objects.equals(this.trafficPerSecond, that.trafficPerSecond)
+            && Objects.equals(this.packetPerSecond, that.packetPerSecond);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class CustomerInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerInfoV2 customerInfoV2 = (CustomerInfoV2) o;
-        return Objects.equals(this.customerId, customerInfoV2.customerId);
+        CustomerInfoV2 that = (CustomerInfoV2) obj;
+        return Objects.equals(this.customerId, that.customerId);
     }
 
     @Override

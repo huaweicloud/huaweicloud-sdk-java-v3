@@ -294,26 +294,23 @@ public class SlowSqlTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowSqlTemplate slowSqlTemplate = (SlowSqlTemplate) o;
-        return Objects.equals(this.sqlTemplate, slowSqlTemplate.sqlTemplate)
-            && Objects.equals(this.sqlSample, slowSqlTemplate.sqlSample)
-            && Objects.equals(this.dbNames, slowSqlTemplate.dbNames)
-            && Objects.equals(this.executeCount, slowSqlTemplate.executeCount)
-            && Objects.equals(this.avgExecuteTime, slowSqlTemplate.avgExecuteTime)
-            && Objects.equals(this.maxExecuteTime, slowSqlTemplate.maxExecuteTime)
-            && Objects.equals(this.avgLockWaitTime, slowSqlTemplate.avgLockWaitTime)
-            && Objects.equals(this.maxLockWaitTime, slowSqlTemplate.maxLockWaitTime)
-            && Objects.equals(this.avgRowsExamined, slowSqlTemplate.avgRowsExamined)
-            && Objects.equals(this.maxRowsExamined, slowSqlTemplate.maxRowsExamined)
-            && Objects.equals(this.avgRowsSent, slowSqlTemplate.avgRowsSent)
-            && Objects.equals(this.maxRowsSent, slowSqlTemplate.maxRowsSent);
+        SlowSqlTemplate that = (SlowSqlTemplate) obj;
+        return Objects.equals(this.sqlTemplate, that.sqlTemplate) && Objects.equals(this.sqlSample, that.sqlSample)
+            && Objects.equals(this.dbNames, that.dbNames) && Objects.equals(this.executeCount, that.executeCount)
+            && Objects.equals(this.avgExecuteTime, that.avgExecuteTime)
+            && Objects.equals(this.maxExecuteTime, that.maxExecuteTime)
+            && Objects.equals(this.avgLockWaitTime, that.avgLockWaitTime)
+            && Objects.equals(this.maxLockWaitTime, that.maxLockWaitTime)
+            && Objects.equals(this.avgRowsExamined, that.avgRowsExamined)
+            && Objects.equals(this.maxRowsExamined, that.maxRowsExamined)
+            && Objects.equals(this.avgRowsSent, that.avgRowsSent) && Objects.equals(this.maxRowsSent, that.maxRowsSent);
     }
 
     @Override

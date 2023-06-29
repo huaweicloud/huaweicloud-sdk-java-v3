@@ -56,16 +56,15 @@ public class CreateSubCustomerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubCustomerResponse createSubCustomerResponse = (CreateSubCustomerResponse) o;
-        return Objects.equals(this.domainId, createSubCustomerResponse.domainId)
-            && Objects.equals(this.domainName, createSubCustomerResponse.domainName);
+        CreateSubCustomerResponse that = (CreateSubCustomerResponse) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

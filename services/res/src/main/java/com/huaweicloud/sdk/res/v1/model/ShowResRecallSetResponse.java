@@ -119,18 +119,16 @@ public class ShowResRecallSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResRecallSetResponse showResRecallSetResponse = (ShowResRecallSetResponse) o;
-        return Objects.equals(this.resultSet, showResRecallSetResponse.resultSet)
-            && Objects.equals(this.isSuccess, showResRecallSetResponse.isSuccess)
-            && Objects.equals(this.message, showResRecallSetResponse.message)
-            && Objects.equals(this.errorCode, showResRecallSetResponse.errorCode);
+        ShowResRecallSetResponse that = (ShowResRecallSetResponse) obj;
+        return Objects.equals(this.resultSet, that.resultSet) && Objects.equals(this.isSuccess, that.isSuccess)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

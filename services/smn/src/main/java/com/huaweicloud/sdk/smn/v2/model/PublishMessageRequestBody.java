@@ -162,20 +162,18 @@ public class PublishMessageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishMessageRequestBody publishMessageRequestBody = (PublishMessageRequestBody) o;
-        return Objects.equals(this.subject, publishMessageRequestBody.subject)
-            && Objects.equals(this.message, publishMessageRequestBody.message)
-            && Objects.equals(this.messageStructure, publishMessageRequestBody.messageStructure)
-            && Objects.equals(this.messageTemplateName, publishMessageRequestBody.messageTemplateName)
-            && Objects.equals(this.tags, publishMessageRequestBody.tags)
-            && Objects.equals(this.timeToLive, publishMessageRequestBody.timeToLive);
+        PublishMessageRequestBody that = (PublishMessageRequestBody) obj;
+        return Objects.equals(this.subject, that.subject) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.messageStructure, that.messageStructure)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.timeToLive, that.timeToLive);
     }
 
     @Override

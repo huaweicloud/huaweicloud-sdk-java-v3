@@ -54,15 +54,15 @@ public class ListLogStreamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogStreamsResponse listLogStreamsResponse = (ListLogStreamsResponse) o;
-        return Objects.equals(this.logStreams, listLogStreamsResponse.logStreams);
+        ListLogStreamsResponse that = (ListLogStreamsResponse) obj;
+        return Objects.equals(this.logStreams, that.logStreams);
     }
 
     @Override

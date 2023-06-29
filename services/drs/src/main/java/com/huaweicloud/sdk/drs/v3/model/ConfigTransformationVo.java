@@ -165,21 +165,18 @@ public class ConfigTransformationVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigTransformationVo configTransformationVo = (ConfigTransformationVo) o;
-        return Objects.equals(this.dbTableName, configTransformationVo.dbTableName)
-            && Objects.equals(this.dbName, configTransformationVo.dbName)
-            && Objects.equals(this.tableName, configTransformationVo.tableName)
-            && Objects.equals(this.colNames, configTransformationVo.colNames)
-            && Objects.equals(this.primKeyOrIndex, configTransformationVo.primKeyOrIndex)
-            && Objects.equals(this.indexs, configTransformationVo.indexs)
-            && Objects.equals(this.values, configTransformationVo.values);
+        ConfigTransformationVo that = (ConfigTransformationVo) obj;
+        return Objects.equals(this.dbTableName, that.dbTableName) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.tableName, that.tableName) && Objects.equals(this.colNames, that.colNames)
+            && Objects.equals(this.primKeyOrIndex, that.primKeyOrIndex) && Objects.equals(this.indexs, that.indexs)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

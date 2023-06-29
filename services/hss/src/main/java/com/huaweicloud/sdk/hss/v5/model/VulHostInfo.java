@@ -208,19 +208,18 @@ public class VulHostInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulHostInfo vulHostInfo = (VulHostInfo) o;
-        return Objects.equals(this.hostId, vulHostInfo.hostId)
-            && Objects.equals(this.severityLevel, vulHostInfo.severityLevel)
-            && Objects.equals(this.hostName, vulHostInfo.hostName) && Objects.equals(this.hostIp, vulHostInfo.hostIp)
-            && Objects.equals(this.cveNum, vulHostInfo.cveNum) && Objects.equals(this.cveIdList, vulHostInfo.cveIdList)
-            && Objects.equals(this.status, vulHostInfo.status) && Objects.equals(this.repairCmd, vulHostInfo.repairCmd);
+        VulHostInfo that = (VulHostInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.severityLevel, that.severityLevel)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.cveNum, that.cveNum) && Objects.equals(this.cveIdList, that.cveIdList)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.repairCmd, that.repairCmd);
     }
 
     @Override

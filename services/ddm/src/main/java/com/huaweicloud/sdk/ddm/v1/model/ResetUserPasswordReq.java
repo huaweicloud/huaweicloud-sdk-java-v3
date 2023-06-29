@@ -33,15 +33,15 @@ public class ResetUserPasswordReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetUserPasswordReq resetUserPasswordReq = (ResetUserPasswordReq) o;
-        return Objects.equals(this.password, resetUserPasswordReq.password);
+        ResetUserPasswordReq that = (ResetUserPasswordReq) obj;
+        return Objects.equals(this.password, that.password);
     }
 
     @Override

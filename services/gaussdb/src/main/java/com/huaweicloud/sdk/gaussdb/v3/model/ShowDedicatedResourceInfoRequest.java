@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowDedicatedResourceInfoRequest  {
-
+public class ShowDedicatedResourceInfoRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_resource_id")
-    
+    @JsonProperty(value = "dedicated_resource_id")
 
     private String dedicatedResourceId;
 
@@ -35,15 +25,12 @@ public class ShowDedicatedResourceInfoRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,15 +39,10 @@ public class ShowDedicatedResourceInfoRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowDedicatedResourceInfoRequest withDedicatedResourceId(String dedicatedResourceId) {
         this.dedicatedResourceId = dedicatedResourceId;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池ID。
@@ -74,24 +56,24 @@ public class ShowDedicatedResourceInfoRequest  {
         this.dedicatedResourceId = dedicatedResourceId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDedicatedResourceInfoRequest showDedicatedResourceInfoRequest = (ShowDedicatedResourceInfoRequest) o;
-        return Objects.equals(this.xLanguage, showDedicatedResourceInfoRequest.xLanguage) &&
-            Objects.equals(this.dedicatedResourceId, showDedicatedResourceInfoRequest.dedicatedResourceId);
+        ShowDedicatedResourceInfoRequest that = (ShowDedicatedResourceInfoRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, dedicatedResourceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +83,7 @@ public class ShowDedicatedResourceInfoRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +94,5 @@ public class ShowDedicatedResourceInfoRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

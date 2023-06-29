@@ -143,20 +143,19 @@ public class FaceSetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceSetInfo faceSetInfo = (FaceSetInfo) o;
-        return Objects.equals(this.faceNumber, faceSetInfo.faceNumber)
-            && Objects.equals(this.externalFields, faceSetInfo.externalFields)
-            && Objects.equals(this.faceSetId, faceSetInfo.faceSetId)
-            && Objects.equals(this.faceSetName, faceSetInfo.faceSetName)
-            && Objects.equals(this.createDate, faceSetInfo.createDate)
-            && Objects.equals(this.faceSetCapacity, faceSetInfo.faceSetCapacity);
+        FaceSetInfo that = (FaceSetInfo) obj;
+        return Objects.equals(this.faceNumber, that.faceNumber)
+            && Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.faceSetCapacity, that.faceSetCapacity);
     }
 
     @Override

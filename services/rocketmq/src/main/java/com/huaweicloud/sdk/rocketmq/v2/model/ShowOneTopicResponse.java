@@ -86,22 +86,15 @@ public class ShowOneTopicResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -230,19 +223,17 @@ public class ShowOneTopicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOneTopicResponse showOneTopicResponse = (ShowOneTopicResponse) o;
-        return Objects.equals(this.name, showOneTopicResponse.name)
-            && Objects.equals(this.totalReadQueueNum, showOneTopicResponse.totalReadQueueNum)
-            && Objects.equals(this.totalWriteQueueNum, showOneTopicResponse.totalWriteQueueNum)
-            && Objects.equals(this.permission, showOneTopicResponse.permission)
-            && Objects.equals(this.brokers, showOneTopicResponse.brokers);
+        ShowOneTopicResponse that = (ShowOneTopicResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.totalReadQueueNum, that.totalReadQueueNum)
+            && Objects.equals(this.totalWriteQueueNum, that.totalWriteQueueNum)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.brokers, that.brokers);
     }
 
     @Override

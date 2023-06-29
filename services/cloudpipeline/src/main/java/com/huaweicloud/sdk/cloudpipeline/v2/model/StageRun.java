@@ -430,22 +430,22 @@ public class StageRun {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StageRun stageRun = (StageRun) o;
-        return Objects.equals(this.id, stageRun.id) && Objects.equals(this.category, stageRun.category)
-            && Objects.equals(this.name, stageRun.name) && Objects.equals(this.identifier, stageRun.identifier)
-            && Objects.equals(this.runAlways, stageRun.runAlways) && Objects.equals(this.parallel, stageRun.parallel)
-            && Objects.equals(this.isSelect, stageRun.isSelect) && Objects.equals(this.sequence, stageRun.sequence)
-            && Objects.equals(this.dependsOn, stageRun.dependsOn) && Objects.equals(this.condition, stageRun.condition)
-            && Objects.equals(this.status, stageRun.status) && Objects.equals(this.startTime, stageRun.startTime)
-            && Objects.equals(this.endTime, stageRun.endTime) && Objects.equals(this.pre, stageRun.pre)
-            && Objects.equals(this.post, stageRun.post) && Objects.equals(this.jobs, stageRun.jobs);
+        StageRun that = (StageRun) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.runAlways, that.runAlways) && Objects.equals(this.parallel, that.parallel)
+            && Objects.equals(this.isSelect, that.isSelect) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.dependsOn, that.dependsOn) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.pre, that.pre)
+            && Objects.equals(this.post, that.post) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

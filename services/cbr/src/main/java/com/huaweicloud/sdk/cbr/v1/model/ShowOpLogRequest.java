@@ -33,15 +33,15 @@ public class ShowOpLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOpLogRequest showOpLogRequest = (ShowOpLogRequest) o;
-        return Objects.equals(this.operationLogId, showOpLogRequest.operationLogId);
+        ShowOpLogRequest that = (ShowOpLogRequest) obj;
+        return Objects.equals(this.operationLogId, that.operationLogId);
     }
 
     @Override

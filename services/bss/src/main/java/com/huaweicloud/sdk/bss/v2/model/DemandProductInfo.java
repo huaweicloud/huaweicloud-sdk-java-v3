@@ -281,26 +281,23 @@ public class DemandProductInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemandProductInfo demandProductInfo = (DemandProductInfo) o;
-        return Objects.equals(this.id, demandProductInfo.id)
-            && Objects.equals(this.cloudServiceType, demandProductInfo.cloudServiceType)
-            && Objects.equals(this.resourceType, demandProductInfo.resourceType)
-            && Objects.equals(this.resourceSpec, demandProductInfo.resourceSpec)
-            && Objects.equals(this.region, demandProductInfo.region)
-            && Objects.equals(this.availableZone, demandProductInfo.availableZone)
-            && Objects.equals(this.resourceSize, demandProductInfo.resourceSize)
-            && Objects.equals(this.sizeMeasureId, demandProductInfo.sizeMeasureId)
-            && Objects.equals(this.usageFactor, demandProductInfo.usageFactor)
-            && Objects.equals(this.usageValue, demandProductInfo.usageValue)
-            && Objects.equals(this.usageMeasureId, demandProductInfo.usageMeasureId)
-            && Objects.equals(this.subscriptionNum, demandProductInfo.subscriptionNum);
+        DemandProductInfo that = (DemandProductInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpec, that.resourceSpec) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availableZone, that.availableZone)
+            && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.sizeMeasureId, that.sizeMeasureId)
+            && Objects.equals(this.usageFactor, that.usageFactor) && Objects.equals(this.usageValue, that.usageValue)
+            && Objects.equals(this.usageMeasureId, that.usageMeasureId)
+            && Objects.equals(this.subscriptionNum, that.subscriptionNum);
     }
 
     @Override

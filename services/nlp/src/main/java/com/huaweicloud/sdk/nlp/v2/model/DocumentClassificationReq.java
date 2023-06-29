@@ -1,42 +1,34 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 
  */
-public class DocumentClassificationReq  {
-
+public class DocumentClassificationReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
+
     /**
      * 预留字段，支持的文本语言类型，当前只支持zh（中文），默认zh。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,25 +56,18 @@ public class DocumentClassificationReq  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -100,8 +85,7 @@ public class DocumentClassificationReq  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
 
@@ -109,9 +93,6 @@ public class DocumentClassificationReq  {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 输入的文档，最大长度10000, 长度超过10000字符截取前10000个字符。
@@ -125,15 +106,10 @@ public class DocumentClassificationReq  {
         this.content = content;
     }
 
-    
-
     public DocumentClassificationReq withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 预留字段，支持的文本语言类型，当前只支持zh（中文），默认zh。
@@ -147,24 +123,23 @@ public class DocumentClassificationReq  {
         this.lang = lang;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DocumentClassificationReq documentClassificationReq = (DocumentClassificationReq) o;
-        return Objects.equals(this.content, documentClassificationReq.content) &&
-            Objects.equals(this.lang, documentClassificationReq.lang);
+        DocumentClassificationReq that = (DocumentClassificationReq) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.lang, that.lang);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, lang);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +149,7 @@ public class DocumentClassificationReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +160,5 @@ public class DocumentClassificationReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

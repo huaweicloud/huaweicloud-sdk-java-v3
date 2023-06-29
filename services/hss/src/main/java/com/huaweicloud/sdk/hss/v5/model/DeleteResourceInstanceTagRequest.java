@@ -77,17 +77,16 @@ public class DeleteResourceInstanceTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteResourceInstanceTagRequest deleteResourceInstanceTagRequest = (DeleteResourceInstanceTagRequest) o;
-        return Objects.equals(this.resourceType, deleteResourceInstanceTagRequest.resourceType)
-            && Objects.equals(this.resourceId, deleteResourceInstanceTagRequest.resourceId)
-            && Objects.equals(this.key, deleteResourceInstanceTagRequest.key);
+        DeleteResourceInstanceTagRequest that = (DeleteResourceInstanceTagRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.key, that.key);
     }
 
     @Override

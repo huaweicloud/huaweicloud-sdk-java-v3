@@ -156,19 +156,17 @@ public class CreateSqlJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlJobRequestBody createSqlJobRequestBody = (CreateSqlJobRequestBody) o;
-        return Objects.equals(this.sql, createSqlJobRequestBody.sql)
-            && Objects.equals(this.currentdb, createSqlJobRequestBody.currentdb)
-            && Objects.equals(this.queueName, createSqlJobRequestBody.queueName)
-            && Objects.equals(this.conf, createSqlJobRequestBody.conf)
-            && Objects.equals(this.tags, createSqlJobRequestBody.tags);
+        CreateSqlJobRequestBody that = (CreateSqlJobRequestBody) obj;
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.currentdb, that.currentdb)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.conf, that.conf)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -219,21 +219,20 @@ public class ContentCompareResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareResult contentCompareResult = (ContentCompareResult) o;
-        return Objects.equals(this.compareTaskId, contentCompareResult.compareTaskId)
-            && Objects.equals(this.contentCompareOverview, contentCompareResult.contentCompareOverview)
-            && Objects.equals(this.contentCompareOverviewCount, contentCompareResult.contentCompareOverviewCount)
-            && Objects.equals(this.contentCompareDetails, contentCompareResult.contentCompareDetails)
-            && Objects.equals(this.contentCompareDiffs, contentCompareResult.contentCompareDiffs)
-            && Objects.equals(this.errorCode, contentCompareResult.errorCode)
-            && Objects.equals(this.errorMsg, contentCompareResult.errorMsg);
+        ContentCompareResult that = (ContentCompareResult) obj;
+        return Objects.equals(this.compareTaskId, that.compareTaskId)
+            && Objects.equals(this.contentCompareOverview, that.contentCompareOverview)
+            && Objects.equals(this.contentCompareOverviewCount, that.contentCompareOverviewCount)
+            && Objects.equals(this.contentCompareDetails, that.contentCompareDetails)
+            && Objects.equals(this.contentCompareDiffs, that.contentCompareDiffs)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

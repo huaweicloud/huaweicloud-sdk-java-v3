@@ -56,16 +56,15 @@ public class UpdateAutoLaunchGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAutoLaunchGroupResponse updateAutoLaunchGroupResponse = (UpdateAutoLaunchGroupResponse) o;
-        return Objects.equals(this.errorCode, updateAutoLaunchGroupResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateAutoLaunchGroupResponse.errorMsg);
+        UpdateAutoLaunchGroupResponse that = (UpdateAutoLaunchGroupResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

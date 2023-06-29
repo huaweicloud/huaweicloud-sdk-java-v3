@@ -1,48 +1,36 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.Graph1;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListGraphsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphCount")
-    
+    @JsonProperty(value = "graphCount")
 
     private Integer graphCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphs")
-    
+    @JsonProperty(value = "graphs")
+
     private List<Graph1> graphs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
@@ -50,9 +38,6 @@ public class ListGraphsResponse extends SdkResponse {
         this.graphCount = graphCount;
         return this;
     }
-
-    
-
 
     /**
      * 图总个数。请求失败时为空。
@@ -66,16 +51,13 @@ public class ListGraphsResponse extends SdkResponse {
         this.graphCount = graphCount;
     }
 
-    
-
     public ListGraphsResponse withGraphs(List<Graph1> graphs) {
         this.graphs = graphs;
         return this;
     }
 
-    
     public ListGraphsResponse addGraphsItem(Graph1 graphsItem) {
-        if(this.graphs == null) {
+        if (this.graphs == null) {
             this.graphs = new ArrayList<>();
         }
         this.graphs.add(graphsItem);
@@ -83,7 +65,7 @@ public class ListGraphsResponse extends SdkResponse {
     }
 
     public ListGraphsResponse withGraphs(Consumer<List<Graph1>> graphsSetter) {
-        if(this.graphs == null) {
+        if (this.graphs == null) {
             this.graphs = new ArrayList<>();
         }
         graphsSetter.accept(this.graphs);
@@ -102,15 +84,10 @@ public class ListGraphsResponse extends SdkResponse {
         this.graphs = graphs;
     }
 
-    
-
     public ListGraphsResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -124,15 +101,10 @@ public class ListGraphsResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public ListGraphsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -146,26 +118,24 @@ public class ListGraphsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGraphsResponse listGraphsResponse = (ListGraphsResponse) o;
-        return Objects.equals(this.graphCount, listGraphsResponse.graphCount) &&
-            Objects.equals(this.graphs, listGraphsResponse.graphs) &&
-            Objects.equals(this.errorMessage, listGraphsResponse.errorMessage) &&
-            Objects.equals(this.errorCode, listGraphsResponse.errorCode);
+        ListGraphsResponse that = (ListGraphsResponse) obj;
+        return Objects.equals(this.graphCount, that.graphCount) && Objects.equals(this.graphs, that.graphs)
+            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphCount, graphs, errorMessage, errorCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +147,7 @@ public class ListGraphsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +158,5 @@ public class ListGraphsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

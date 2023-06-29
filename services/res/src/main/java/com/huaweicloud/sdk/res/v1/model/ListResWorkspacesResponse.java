@@ -119,18 +119,16 @@ public class ListResWorkspacesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResWorkspacesResponse listResWorkspacesResponse = (ListResWorkspacesResponse) o;
-        return Objects.equals(this.isSuccess, listResWorkspacesResponse.isSuccess)
-            && Objects.equals(this.workspaces, listResWorkspacesResponse.workspaces)
-            && Objects.equals(this.message, listResWorkspacesResponse.message)
-            && Objects.equals(this.errorCode, listResWorkspacesResponse.errorCode);
+        ListResWorkspacesResponse that = (ListResWorkspacesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.workspaces, that.workspaces)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

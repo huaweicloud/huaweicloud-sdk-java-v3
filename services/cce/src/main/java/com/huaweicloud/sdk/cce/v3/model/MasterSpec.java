@@ -33,15 +33,15 @@ public class MasterSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MasterSpec masterSpec = (MasterSpec) o;
-        return Objects.equals(this.availabilityZone, masterSpec.availabilityZone);
+        MasterSpec that = (MasterSpec) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

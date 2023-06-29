@@ -89,17 +89,16 @@ public class UpdateContactRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateContactRequest updateContactRequest = (UpdateContactRequest) o;
-        return Objects.equals(this.xRequestId, updateContactRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateContactRequest.acceptLanguage)
-            && Objects.equals(this.body, updateContactRequest.body);
+        UpdateContactRequest that = (UpdateContactRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

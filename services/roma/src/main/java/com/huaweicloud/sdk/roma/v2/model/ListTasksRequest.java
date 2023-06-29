@@ -85,22 +85,15 @@ public class ListTasksRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class ListTasksRequest {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,22 +245,15 @@ public class ListTasksRequest {
             if (value == null) {
                 return null;
             }
-            SortFieldEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortFieldEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortFieldEnum(value));
         }
 
         public static SortFieldEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortFieldEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -341,22 +320,15 @@ public class ListTasksRequest {
             if (value == null) {
                 return null;
             }
-            SortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortTypeEnum(value));
         }
 
         public static SortTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -660,28 +632,24 @@ public class ListTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.instanceId, listTasksRequest.instanceId)
-            && Objects.equals(this.limit, listTasksRequest.limit)
-            && Objects.equals(this.offset, listTasksRequest.offset)
-            && Objects.equals(this.taskId, listTasksRequest.taskId) && Objects.equals(this.name, listTasksRequest.name)
-            && Objects.equals(this.status, listTasksRequest.status)
-            && Objects.equals(this.taskType, listTasksRequest.taskType)
-            && Objects.equals(this.sourceDatasourceId, listTasksRequest.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, listTasksRequest.targetDatasourceId)
-            && Objects.equals(this.sortField, listTasksRequest.sortField)
-            && Objects.equals(this.sortType, listTasksRequest.sortType)
-            && Objects.equals(this.executeStatus, listTasksRequest.executeStatus)
-            && Objects.equals(this.sourceAppId, listTasksRequest.sourceAppId)
-            && Objects.equals(this.targetAppId, listTasksRequest.targetAppId)
-            && Objects.equals(this.taskTag, listTasksRequest.taskTag);
+        ListTasksRequest that = (ListTasksRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.executeStatus, that.executeStatus)
+            && Objects.equals(this.sourceAppId, that.sourceAppId) && Objects.equals(this.targetAppId, that.targetAppId)
+            && Objects.equals(this.taskTag, that.taskTag);
     }
 
     @Override

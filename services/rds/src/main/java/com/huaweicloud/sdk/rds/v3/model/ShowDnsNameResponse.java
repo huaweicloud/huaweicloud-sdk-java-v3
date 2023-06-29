@@ -122,19 +122,17 @@ public class ShowDnsNameResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDnsNameResponse showDnsNameResponse = (ShowDnsNameResponse) o;
-        return Objects.equals(this.instanceId, showDnsNameResponse.instanceId)
-            && Objects.equals(this.dnsName, showDnsNameResponse.dnsName)
-            && Objects.equals(this.dnsType, showDnsNameResponse.dnsType)
-            && Objects.equals(this.ipv6Address, showDnsNameResponse.ipv6Address)
-            && Objects.equals(this.status, showDnsNameResponse.status);
+        ShowDnsNameResponse that = (ShowDnsNameResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dnsName, that.dnsName)
+            && Objects.equals(this.dnsType, that.dnsType) && Objects.equals(this.ipv6Address, that.ipv6Address)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -201,22 +201,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,22 +286,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TimingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimingStatusEnum(value));
         }
 
         public static TimingStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -776,34 +762,26 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskResponse showTaskResponse = (ShowTaskResponse) o;
-        return Objects.equals(this.id, showTaskResponse.id) && Objects.equals(this.name, showTaskResponse.name)
-            && Objects.equals(this.creator, showTaskResponse.creator)
-            && Objects.equals(this.projectId, showTaskResponse.projectId)
-            && Objects.equals(this.description, showTaskResponse.description)
-            && Objects.equals(this.serviceName, showTaskResponse.serviceName)
-            && Objects.equals(this.serviceVersion, showTaskResponse.serviceVersion)
-            && Objects.equals(this.serviceTitle, showTaskResponse.serviceTitle)
-            && Objects.equals(this.edgePoolId, showTaskResponse.edgePoolId)
-            && Objects.equals(this.resourceOrderId, showTaskResponse.resourceOrderId)
-            && Objects.equals(this.createdAt, showTaskResponse.createdAt)
-            && Objects.equals(this.updatedAt, showTaskResponse.updatedAt)
-            && Objects.equals(this.state, showTaskResponse.state)
-            && Objects.equals(this.status, showTaskResponse.status)
-            && Objects.equals(this.error, showTaskResponse.error)
-            && Objects.equals(this.timingStatus, showTaskResponse.timingStatus)
-            && Objects.equals(this.timing, showTaskResponse.timing)
-            && Objects.equals(this.input, showTaskResponse.input)
-            && Objects.equals(this.output, showTaskResponse.output)
-            && Objects.equals(this.serviceConfig, showTaskResponse.serviceConfig)
-            && Objects.equals(this.hostingResult, showTaskResponse.hostingResult);
+        ShowTaskResponse that = (ShowTaskResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.serviceVersion, that.serviceVersion)
+            && Objects.equals(this.serviceTitle, that.serviceTitle) && Objects.equals(this.edgePoolId, that.edgePoolId)
+            && Objects.equals(this.resourceOrderId, that.resourceOrderId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.timingStatus, that.timingStatus)
+            && Objects.equals(this.timing, that.timing) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.serviceConfig, that.serviceConfig)
+            && Objects.equals(this.hostingResult, that.hostingResult);
     }
 
     @Override

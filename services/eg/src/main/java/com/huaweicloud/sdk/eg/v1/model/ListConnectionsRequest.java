@@ -125,19 +125,17 @@ public class ListConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConnectionsRequest listConnectionsRequest = (ListConnectionsRequest) o;
-        return Objects.equals(this.offset, listConnectionsRequest.offset)
-            && Objects.equals(this.limit, listConnectionsRequest.limit)
-            && Objects.equals(this.sort, listConnectionsRequest.sort)
-            && Objects.equals(this.name, listConnectionsRequest.name)
-            && Objects.equals(this.fuzzyName, listConnectionsRequest.fuzzyName);
+        ListConnectionsRequest that = (ListConnectionsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.fuzzyName, that.fuzzyName);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class CandidateIntention  {
-
+public class CandidateIntention {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="candidate_intention")
-    
+    @JsonProperty(value = "candidate_intention")
 
     private String candidateIntention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="candidate_confidence")
-    
+    @JsonProperty(value = "candidate_confidence")
 
     private Double candidateConfidence;
 
@@ -33,9 +24,6 @@ public class CandidateIntention  {
         this.candidateIntention = candidateIntention;
         return this;
     }
-
-    
-
 
     /**
      * 候选意图。
@@ -49,15 +37,10 @@ public class CandidateIntention  {
         this.candidateIntention = candidateIntention;
     }
 
-    
-
     public CandidateIntention withCandidateConfidence(Double candidateConfidence) {
         this.candidateConfidence = candidateConfidence;
         return this;
     }
-
-    
-
 
     /**
      * 候选意图置信度。
@@ -71,24 +54,24 @@ public class CandidateIntention  {
         this.candidateConfidence = candidateConfidence;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CandidateIntention candidateIntention = (CandidateIntention) o;
-        return Objects.equals(this.candidateIntention, candidateIntention.candidateIntention) &&
-            Objects.equals(this.candidateConfidence, candidateIntention.candidateConfidence);
+        CandidateIntention that = (CandidateIntention) obj;
+        return Objects.equals(this.candidateIntention, that.candidateIntention)
+            && Objects.equals(this.candidateConfidence, that.candidateConfidence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(candidateIntention, candidateConfidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +81,7 @@ public class CandidateIntention  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +92,5 @@ public class CandidateIntention  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

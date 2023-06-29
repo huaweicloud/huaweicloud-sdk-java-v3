@@ -1,33 +1,25 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension2;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 指标详细信息。
  */
-public class MetricItemInfo  {
-
+public class MetricItemInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<Dimension2> dimensions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
@@ -36,9 +28,8 @@ public class MetricItemInfo  {
         return this;
     }
 
-    
     public MetricItemInfo addDimensionsItem(Dimension2 dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -46,7 +37,7 @@ public class MetricItemInfo  {
     }
 
     public MetricItemInfo withDimensions(Consumer<List<Dimension2>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
@@ -65,15 +56,10 @@ public class MetricItemInfo  {
         this.dimensions = dimensions;
     }
 
-    
-
     public MetricItemInfo withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 指标命名空间。 namespace中不允许存在\":\"符号，取值范围 格式为service.item；service和item必须是字符串，必须以字母开头，只能包含0-9/a-z/A-Z/_，总长度最短为3，最大为32，service不能为“PAAS”。
@@ -87,24 +73,23 @@ public class MetricItemInfo  {
         this.namespace = namespace;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricItemInfo metricItemInfo = (MetricItemInfo) o;
-        return Objects.equals(this.dimensions, metricItemInfo.dimensions) &&
-            Objects.equals(this.namespace, metricItemInfo.namespace);
+        MetricItemInfo that = (MetricItemInfo) obj;
+        return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.namespace, that.namespace);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dimensions, namespace);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +99,7 @@ public class MetricItemInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +110,5 @@ public class MetricItemInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -89,22 +89,15 @@ public class EnvironmentCreate {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployModeEnum(value));
         }
 
         public static DeployModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -250,20 +243,18 @@ public class EnvironmentCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentCreate environmentCreate = (EnvironmentCreate) o;
-        return Objects.equals(this.name, environmentCreate.name)
-            && Objects.equals(this.description, environmentCreate.description)
-            && Objects.equals(this.enterpriseProjectId, environmentCreate.enterpriseProjectId)
-            && Objects.equals(this.vpcId, environmentCreate.vpcId)
-            && Objects.equals(this.deployMode, environmentCreate.deployMode)
-            && Objects.equals(this.labels, environmentCreate.labels);
+        EnvironmentCreate that = (EnvironmentCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.deployMode, that.deployMode)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

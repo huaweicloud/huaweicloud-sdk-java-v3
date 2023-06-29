@@ -82,22 +82,15 @@ public class App {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -356,20 +349,21 @@ public class App {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        App app = (App) o;
-        return Objects.equals(this.appName, app.appName) && Objects.equals(this.appId, app.appId)
-            && Objects.equals(this.state, app.state) && Objects.equals(this.scope, app.scope)
-            && Objects.equals(this.tenantName, app.tenantName) && Objects.equals(this.domain, app.domain)
-            && Objects.equals(this.createTime, app.createTime)
-            && Objects.equals(this.authentication, app.authentication) && Objects.equals(this.callbacks, app.callbacks)
-            && Objects.equals(this.autoRecordMode, app.autoRecordMode);
+        App that = (App) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.callbacks, that.callbacks)
+            && Objects.equals(this.autoRecordMode, that.autoRecordMode);
     }
 
     @Override

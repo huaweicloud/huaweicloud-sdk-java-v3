@@ -121,20 +121,17 @@ public class ListPipelinesPageLatestRunStageStatusList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelinesPageLatestRunStageStatusList listPipelinesPageLatestRunStageStatusList =
-            (ListPipelinesPageLatestRunStageStatusList) o;
-        return Objects.equals(this.name, listPipelinesPageLatestRunStageStatusList.name)
-            && Objects.equals(this.sequence, listPipelinesPageLatestRunStageStatusList.sequence)
-            && Objects.equals(this.status, listPipelinesPageLatestRunStageStatusList.status)
-            && Objects.equals(this.startTime, listPipelinesPageLatestRunStageStatusList.startTime)
-            && Objects.equals(this.endTime, listPipelinesPageLatestRunStageStatusList.endTime);
+        ListPipelinesPageLatestRunStageStatusList that = (ListPipelinesPageLatestRunStageStatusList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

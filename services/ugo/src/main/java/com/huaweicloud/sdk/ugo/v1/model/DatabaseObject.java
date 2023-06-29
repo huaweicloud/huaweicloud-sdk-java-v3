@@ -165,21 +165,19 @@ public class DatabaseObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseObject databaseObject = (DatabaseObject) o;
-        return Objects.equals(this.objectType, databaseObject.objectType)
-            && Objects.equals(this.totalCount, databaseObject.totalCount)
-            && Objects.equals(this.succeedCount, databaseObject.succeedCount)
-            && Objects.equals(this.failedCount, databaseObject.failedCount)
-            && Objects.equals(this.ignoredCount, databaseObject.ignoredCount)
-            && Objects.equals(this.manualCount, databaseObject.manualCount)
-            && Objects.equals(this.successRate, databaseObject.successRate);
+        DatabaseObject that = (DatabaseObject) obj;
+        return Objects.equals(this.objectType, that.objectType) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.succeedCount, that.succeedCount)
+            && Objects.equals(this.failedCount, that.failedCount)
+            && Objects.equals(this.ignoredCount, that.ignoredCount)
+            && Objects.equals(this.manualCount, that.manualCount) && Objects.equals(this.successRate, that.successRate);
     }
 
     @Override

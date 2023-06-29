@@ -551,34 +551,25 @@ public class UpdateServerResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServerResult updateServerResult = (UpdateServerResult) o;
-        return Objects.equals(this.tenantId, updateServerResult.tenantId)
-            && Objects.equals(this.image, updateServerResult.image)
-            && Objects.equals(this.accessIPv4, updateServerResult.accessIPv4)
-            && Objects.equals(this.accessIPv6, updateServerResult.accessIPv6)
-            && Objects.equals(this.metadata, updateServerResult.metadata)
-            && Objects.equals(this.addresses, updateServerResult.addresses)
-            && Objects.equals(this.created, updateServerResult.created)
-            && Objects.equals(this.hostId, updateServerResult.hostId)
-            && Objects.equals(this.flavor, updateServerResult.flavor)
-            && Objects.equals(this.osDCFDiskConfig, updateServerResult.osDCFDiskConfig)
-            && Objects.equals(this.userId, updateServerResult.userId)
-            && Objects.equals(this.name, updateServerResult.name)
-            && Objects.equals(this.progress, updateServerResult.progress)
-            && Objects.equals(this.links, updateServerResult.links) && Objects.equals(this.id, updateServerResult.id)
-            && Objects.equals(this.updated, updateServerResult.updated)
-            && Objects.equals(this.locked, updateServerResult.locked)
-            && Objects.equals(this.description, updateServerResult.description)
-            && Objects.equals(this.tags, updateServerResult.tags)
-            && Objects.equals(this.status, updateServerResult.status)
-            && Objects.equals(this.osEXTSRVATTRHostname, updateServerResult.osEXTSRVATTRHostname);
+        UpdateServerResult that = (UpdateServerResult) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.accessIPv4, that.accessIPv4) && Objects.equals(this.accessIPv6, that.accessIPv6)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListClassroomMembersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClassroomMembersResponse listClassroomMembersResponse = (ListClassroomMembersResponse) o;
-        return Objects.equals(this.members, listClassroomMembersResponse.members)
-            && Objects.equals(this.total, listClassroomMembersResponse.total);
+        ListClassroomMembersResponse that = (ListClassroomMembersResponse) obj;
+        return Objects.equals(this.members, that.members) && Objects.equals(this.total, that.total);
     }
 
     @Override

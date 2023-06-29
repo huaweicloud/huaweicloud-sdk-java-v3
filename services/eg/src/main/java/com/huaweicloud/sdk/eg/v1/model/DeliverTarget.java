@@ -118,18 +118,18 @@ public class DeliverTarget {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeliverTarget deliverTarget = (DeliverTarget) o;
-        return Objects.equals(this.deliverTargetId, deliverTarget.deliverTargetId)
-            && Objects.equals(this.deliverTargetName, deliverTarget.deliverTargetName)
-            && Objects.equals(this.deliverStatus, deliverTarget.deliverStatus)
-            && Objects.equals(this.deliverDetailList, deliverTarget.deliverDetailList);
+        DeliverTarget that = (DeliverTarget) obj;
+        return Objects.equals(this.deliverTargetId, that.deliverTargetId)
+            && Objects.equals(this.deliverTargetName, that.deliverTargetName)
+            && Objects.equals(this.deliverStatus, that.deliverStatus)
+            && Objects.equals(this.deliverDetailList, that.deliverDetailList);
     }
 
     @Override

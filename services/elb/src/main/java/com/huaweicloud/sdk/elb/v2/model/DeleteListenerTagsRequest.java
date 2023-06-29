@@ -55,16 +55,15 @@ public class DeleteListenerTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteListenerTagsRequest deleteListenerTagsRequest = (DeleteListenerTagsRequest) o;
-        return Objects.equals(this.listenerId, deleteListenerTagsRequest.listenerId)
-            && Objects.equals(this.key, deleteListenerTagsRequest.key);
+        DeleteListenerTagsRequest that = (DeleteListenerTagsRequest) obj;
+        return Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.key, that.key);
     }
 
     @Override

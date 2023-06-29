@@ -315,24 +315,21 @@ public class MpeMetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MpeMetaData mpeMetaData = (MpeMetaData) o;
-        return Objects.equals(this.packType, mpeMetaData.packType)
-            && Objects.equals(this.duration, mpeMetaData.duration)
-            && Objects.equals(this.videoSize, mpeMetaData.videoSize) && Objects.equals(this.width, mpeMetaData.width)
-            && Objects.equals(this.height, mpeMetaData.height) && Objects.equals(this.bitRate, mpeMetaData.bitRate)
-            && Objects.equals(this.audioBitRate, mpeMetaData.audioBitRate)
-            && Objects.equals(this.frameRate, mpeMetaData.frameRate)
-            && Objects.equals(this.codecName, mpeMetaData.codecName)
-            && Objects.equals(this.audioCodecName, mpeMetaData.audioCodecName)
-            && Objects.equals(this.channels, mpeMetaData.channels) && Objects.equals(this.sample, mpeMetaData.sample)
-            && Objects.equals(this.isAudio, mpeMetaData.isAudio);
+        MpeMetaData that = (MpeMetaData) obj;
+        return Objects.equals(this.packType, that.packType) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.videoSize, that.videoSize) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitRate, that.bitRate)
+            && Objects.equals(this.audioBitRate, that.audioBitRate) && Objects.equals(this.frameRate, that.frameRate)
+            && Objects.equals(this.codecName, that.codecName)
+            && Objects.equals(this.audioCodecName, that.audioCodecName) && Objects.equals(this.channels, that.channels)
+            && Objects.equals(this.sample, that.sample) && Objects.equals(this.isAudio, that.isAudio);
     }
 
     @Override

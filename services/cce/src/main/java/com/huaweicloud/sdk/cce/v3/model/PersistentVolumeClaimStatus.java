@@ -96,17 +96,16 @@ public class PersistentVolumeClaimStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PersistentVolumeClaimStatus persistentVolumeClaimStatus = (PersistentVolumeClaimStatus) o;
-        return Objects.equals(this.accessModes, persistentVolumeClaimStatus.accessModes)
-            && Objects.equals(this.capacity, persistentVolumeClaimStatus.capacity)
-            && Objects.equals(this.phase, persistentVolumeClaimStatus.phase);
+        PersistentVolumeClaimStatus that = (PersistentVolumeClaimStatus) obj;
+        return Objects.equals(this.accessModes, that.accessModes) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.phase, that.phase);
     }
 
     @Override

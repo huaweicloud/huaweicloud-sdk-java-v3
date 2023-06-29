@@ -121,19 +121,17 @@ public class ShowDataProfileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataProfileRequest showDataProfileRequest = (ShowDataProfileRequest) o;
-        return Objects.equals(this.workspace, showDataProfileRequest.workspace)
-            && Objects.equals(this.dwId, showDataProfileRequest.dwId)
-            && Objects.equals(this.dbType, showDataProfileRequest.dbType)
-            && Objects.equals(this.databaseName, showDataProfileRequest.databaseName)
-            && Objects.equals(this.tableName, showDataProfileRequest.tableName);
+        ShowDataProfileRequest that = (ShowDataProfileRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dwId, that.dwId)
+            && Objects.equals(this.dbType, that.dbType) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

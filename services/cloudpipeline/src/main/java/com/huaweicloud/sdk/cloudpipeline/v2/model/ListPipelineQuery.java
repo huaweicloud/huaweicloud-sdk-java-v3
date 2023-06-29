@@ -364,27 +364,21 @@ public class ListPipelineQuery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineQuery listPipelineQuery = (ListPipelineQuery) o;
-        return Objects.equals(this.projectIds, listPipelineQuery.projectIds)
-            && Objects.equals(this.componentId, listPipelineQuery.componentId)
-            && Objects.equals(this.name, listPipelineQuery.name)
-            && Objects.equals(this.status, listPipelineQuery.status)
-            && Objects.equals(this.isPublish, listPipelineQuery.isPublish)
-            && Objects.equals(this.creatorIds, listPipelineQuery.creatorIds)
-            && Objects.equals(this.executorIds, listPipelineQuery.executorIds)
-            && Objects.equals(this.startTime, listPipelineQuery.startTime)
-            && Objects.equals(this.endTime, listPipelineQuery.endTime)
-            && Objects.equals(this.offset, listPipelineQuery.offset)
-            && Objects.equals(this.limit, listPipelineQuery.limit)
-            && Objects.equals(this.sortKey, listPipelineQuery.sortKey)
-            && Objects.equals(this.sortDir, listPipelineQuery.sortDir);
+        ListPipelineQuery that = (ListPipelineQuery) obj;
+        return Objects.equals(this.projectIds, that.projectIds) && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.creatorIds, that.creatorIds)
+            && Objects.equals(this.executorIds, that.executorIds) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

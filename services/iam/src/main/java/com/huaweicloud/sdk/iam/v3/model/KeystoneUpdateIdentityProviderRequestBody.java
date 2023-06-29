@@ -45,16 +45,15 @@ public class KeystoneUpdateIdentityProviderRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateIdentityProviderRequestBody keystoneUpdateIdentityProviderRequestBody =
-            (KeystoneUpdateIdentityProviderRequestBody) o;
-        return Objects.equals(this.identityProvider, keystoneUpdateIdentityProviderRequestBody.identityProvider);
+        KeystoneUpdateIdentityProviderRequestBody that = (KeystoneUpdateIdentityProviderRequestBody) obj;
+        return Objects.equals(this.identityProvider, that.identityProvider);
     }
 
     @Override

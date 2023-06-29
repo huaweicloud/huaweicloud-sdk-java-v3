@@ -144,19 +144,17 @@ public class CreateVariableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVariableRequestBody createVariableRequestBody = (CreateVariableRequestBody) o;
-        return Objects.equals(this.id, createVariableRequestBody.id)
-            && Objects.equals(this.name, createVariableRequestBody.name)
-            && Objects.equals(this.variableType, createVariableRequestBody.variableType)
-            && Objects.equals(this.variable, createVariableRequestBody.variable)
-            && Objects.equals(this.isQuoted, createVariableRequestBody.isQuoted);
+        CreateVariableRequestBody that = (CreateVariableRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.variableType, that.variableType) && Objects.equals(this.variable, that.variable)
+            && Objects.equals(this.isQuoted, that.isQuoted);
     }
 
     @Override

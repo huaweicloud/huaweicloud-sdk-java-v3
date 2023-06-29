@@ -99,18 +99,16 @@ public class SlaveInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlaveInstance slaveInstance = (SlaveInstance) o;
-        return Objects.equals(this.instanceId, slaveInstance.instanceId)
-            && Objects.equals(this.region, slaveInstance.region)
-            && Objects.equals(this.projectId, slaveInstance.projectId)
-            && Objects.equals(this.projectName, slaveInstance.projectName);
+        SlaveInstance that = (SlaveInstance) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

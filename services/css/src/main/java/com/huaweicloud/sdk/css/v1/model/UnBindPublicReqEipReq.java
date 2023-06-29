@@ -43,15 +43,15 @@ public class UnBindPublicReqEipReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnBindPublicReqEipReq unBindPublicReqEipReq = (UnBindPublicReqEipReq) o;
-        return Objects.equals(this.bandWidth, unBindPublicReqEipReq.bandWidth);
+        UnBindPublicReqEipReq that = (UnBindPublicReqEipReq) obj;
+        return Objects.equals(this.bandWidth, that.bandWidth);
     }
 
     @Override

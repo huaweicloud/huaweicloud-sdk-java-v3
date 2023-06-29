@@ -75,22 +75,15 @@ public class EventParticipant {
             if (value == null) {
                 return null;
             }
-            PtcTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PtcTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PtcTypeEnum(value));
         }
 
         public static PtcTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PtcTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -308,22 +301,18 @@ public class EventParticipant {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventParticipant eventParticipant = (EventParticipant) o;
-        return Objects.equals(this.ptcType, eventParticipant.ptcType)
-            && Objects.equals(this.plateNo, eventParticipant.plateNo)
-            && Objects.equals(this.speed, eventParticipant.speed)
-            && Objects.equals(this.vehicleClass, eventParticipant.vehicleClass)
-            && Objects.equals(this.gatVehicleClass, eventParticipant.gatVehicleClass)
-            && Objects.equals(this.trackId, eventParticipant.trackId)
-            && Objects.equals(this.laneNo, eventParticipant.laneNo)
-            && Objects.equals(this.targetRects, eventParticipant.targetRects);
+        EventParticipant that = (EventParticipant) obj;
+        return Objects.equals(this.ptcType, that.ptcType) && Objects.equals(this.plateNo, that.plateNo)
+            && Objects.equals(this.speed, that.speed) && Objects.equals(this.vehicleClass, that.vehicleClass)
+            && Objects.equals(this.gatVehicleClass, that.gatVehicleClass) && Objects.equals(this.trackId, that.trackId)
+            && Objects.equals(this.laneNo, that.laneNo) && Objects.equals(this.targetRects, that.targetRects);
     }
 
     @Override

@@ -118,18 +118,17 @@ public class BatchCreatePublicipsV2RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreatePublicipsV2RequestBody batchCreatePublicipsV2RequestBody = (BatchCreatePublicipsV2RequestBody) o;
-        return Objects.equals(this.bandwidth, batchCreatePublicipsV2RequestBody.bandwidth)
-            && Objects.equals(this.publicip, batchCreatePublicipsV2RequestBody.publicip)
-            && Objects.equals(this.publicipNumber, batchCreatePublicipsV2RequestBody.publicipNumber)
-            && Objects.equals(this.enterpriseProjectId, batchCreatePublicipsV2RequestBody.enterpriseProjectId);
+        BatchCreatePublicipsV2RequestBody that = (BatchCreatePublicipsV2RequestBody) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.publicip, that.publicip)
+            && Objects.equals(this.publicipNumber, that.publicipNumber)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

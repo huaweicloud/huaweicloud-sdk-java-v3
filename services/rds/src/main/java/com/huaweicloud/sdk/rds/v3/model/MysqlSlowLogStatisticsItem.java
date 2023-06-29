@@ -231,24 +231,19 @@ public class MysqlSlowLogStatisticsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlSlowLogStatisticsItem mysqlSlowLogStatisticsItem = (MysqlSlowLogStatisticsItem) o;
-        return Objects.equals(this.count, mysqlSlowLogStatisticsItem.count)
-            && Objects.equals(this.time, mysqlSlowLogStatisticsItem.time)
-            && Objects.equals(this.lockTime, mysqlSlowLogStatisticsItem.lockTime)
-            && Objects.equals(this.rowsSent, mysqlSlowLogStatisticsItem.rowsSent)
-            && Objects.equals(this.rowsExamined, mysqlSlowLogStatisticsItem.rowsExamined)
-            && Objects.equals(this.database, mysqlSlowLogStatisticsItem.database)
-            && Objects.equals(this.users, mysqlSlowLogStatisticsItem.users)
-            && Objects.equals(this.querySample, mysqlSlowLogStatisticsItem.querySample)
-            && Objects.equals(this.clientIp, mysqlSlowLogStatisticsItem.clientIp)
-            && Objects.equals(this.type, mysqlSlowLogStatisticsItem.type);
+        MysqlSlowLogStatisticsItem that = (MysqlSlowLogStatisticsItem) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.rowsSent, that.rowsSent)
+            && Objects.equals(this.rowsExamined, that.rowsExamined) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.users, that.users) && Objects.equals(this.querySample, that.querySample)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.type, that.type);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateVirtualInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVirtualInterfaceRequest updateVirtualInterfaceRequest = (UpdateVirtualInterfaceRequest) o;
-        return Objects.equals(this.virtualInterfaceId, updateVirtualInterfaceRequest.virtualInterfaceId)
-            && Objects.equals(this.body, updateVirtualInterfaceRequest.body);
+        UpdateVirtualInterfaceRequest that = (UpdateVirtualInterfaceRequest) obj;
+        return Objects.equals(this.virtualInterfaceId, that.virtualInterfaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

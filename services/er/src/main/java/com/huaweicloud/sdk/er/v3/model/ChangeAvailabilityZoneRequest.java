@@ -65,16 +65,15 @@ public class ChangeAvailabilityZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeAvailabilityZoneRequest changeAvailabilityZoneRequest = (ChangeAvailabilityZoneRequest) o;
-        return Objects.equals(this.erId, changeAvailabilityZoneRequest.erId)
-            && Objects.equals(this.body, changeAvailabilityZoneRequest.body);
+        ChangeAvailabilityZoneRequest that = (ChangeAvailabilityZoneRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -143,19 +143,17 @@ public class ShowCredential {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCredential showCredential = (ShowCredential) o;
-        return Objects.equals(this.userId, showCredential.userId) && Objects.equals(this.access, showCredential.access)
-            && Objects.equals(this.status, showCredential.status)
-            && Objects.equals(this.createTime, showCredential.createTime)
-            && Objects.equals(this.lastUseTime, showCredential.lastUseTime)
-            && Objects.equals(this.description, showCredential.description);
+        ShowCredential that = (ShowCredential) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.access, that.access)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastUseTime, that.lastUseTime) && Objects.equals(this.description, that.description);
     }
 
     @Override

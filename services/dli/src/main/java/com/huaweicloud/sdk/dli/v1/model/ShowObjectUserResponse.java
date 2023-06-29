@@ -163,20 +163,17 @@ public class ShowObjectUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowObjectUserResponse showObjectUserResponse = (ShowObjectUserResponse) o;
-        return Objects.equals(this.isSuccess, showObjectUserResponse.isSuccess)
-            && Objects.equals(this.message, showObjectUserResponse.message)
-            && Objects.equals(this.objectName, showObjectUserResponse.objectName)
-            && Objects.equals(this.objectType, showObjectUserResponse.objectType)
-            && Objects.equals(this.count, showObjectUserResponse.count)
-            && Objects.equals(this.privileges, showObjectUserResponse.privileges);
+        ShowObjectUserResponse that = (ShowObjectUserResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.objectName, that.objectName) && Objects.equals(this.objectType, that.objectType)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

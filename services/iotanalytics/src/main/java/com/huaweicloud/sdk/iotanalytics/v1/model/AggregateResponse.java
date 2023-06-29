@@ -174,19 +174,17 @@ public class AggregateResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateResponse aggregateResponse = (AggregateResponse) o;
-        return Objects.equals(this.inputs, aggregateResponse.inputs)
-            && Objects.equals(this.expression, aggregateResponse.expression)
-            && Objects.equals(this.outputProperty, aggregateResponse.outputProperty)
-            && Objects.equals(this.outputs, aggregateResponse.outputs)
-            && Objects.equals(this.schedule, aggregateResponse.schedule);
+        AggregateResponse that = (AggregateResponse) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.outputProperty, that.outputProperty) && Objects.equals(this.outputs, that.outputs)
+            && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

@@ -143,18 +143,18 @@ public class TaskEventRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskEventRsp taskEventRsp = (TaskEventRsp) o;
-        return Objects.equals(this.type, taskEventRsp.type) && Objects.equals(this.count, taskEventRsp.count)
-            && Objects.equals(this.reason, taskEventRsp.reason) && Objects.equals(this.message, taskEventRsp.message)
-            && Objects.equals(this.firstTimestamp, taskEventRsp.firstTimestamp)
-            && Objects.equals(this.lastTimestamp, taskEventRsp.lastTimestamp);
+        TaskEventRsp that = (TaskEventRsp) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.firstTimestamp, that.firstTimestamp)
+            && Objects.equals(this.lastTimestamp, that.lastTimestamp);
     }
 
     @Override

@@ -99,22 +99,15 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,7 +299,7 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -877,48 +870,33 @@ public class ShowDeployTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeployTaskDetailResponse showDeployTaskDetailResponse = (ShowDeployTaskDetailResponse) o;
-        return Objects.equals(this.taskId, showDeployTaskDetailResponse.taskId)
-            && Objects.equals(this.name, showDeployTaskDetailResponse.name)
-            && Objects.equals(this.projectId, showDeployTaskDetailResponse.projectId)
-            && Objects.equals(this.projectName, showDeployTaskDetailResponse.projectName)
-            && Objects.equals(this.deploySystem, showDeployTaskDetailResponse.deploySystem)
-            && Objects.equals(this.createTime, showDeployTaskDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showDeployTaskDetailResponse.updateTime)
-            && Objects.equals(this.state, showDeployTaskDetailResponse.state)
-            && Objects.equals(this.executionTime, showDeployTaskDetailResponse.executionTime)
-            && Objects.equals(this.description, showDeployTaskDetailResponse.description)
-            && Objects.equals(this.isDefautPermission, showDeployTaskDetailResponse.isDefautPermission)
-            && Objects.equals(this.templateId, showDeployTaskDetailResponse.templateId)
-            && Objects.equals(this.owner, showDeployTaskDetailResponse.owner)
-            && Objects.equals(this.nickName, showDeployTaskDetailResponse.nickName)
-            && Objects.equals(this.ownerId, showDeployTaskDetailResponse.ownerId)
-            && Objects.equals(this.tenantId, showDeployTaskDetailResponse.tenantId)
-            && Objects.equals(this.tenantName, showDeployTaskDetailResponse.tenantName)
-            && Objects.equals(this.slaveClusterId, showDeployTaskDetailResponse.slaveClusterId)
-            && Objects.equals(this.isCare, showDeployTaskDetailResponse.isCare)
-            && Objects.equals(this.canModify, showDeployTaskDetailResponse.canModify)
-            && Objects.equals(this.canDelete, showDeployTaskDetailResponse.canDelete)
-            && Objects.equals(this.canView, showDeployTaskDetailResponse.canView)
-            && Objects.equals(this.canExecute, showDeployTaskDetailResponse.canExecute)
-            && Objects.equals(this.canCopy, showDeployTaskDetailResponse.canCopy)
-            && Objects.equals(this.canManage, showDeployTaskDetailResponse.canManage)
-            && Objects.equals(this.appComponentList, showDeployTaskDetailResponse.appComponentList)
-            && Objects.equals(this.roleId, showDeployTaskDetailResponse.roleId)
-            && Objects.equals(this.id, showDeployTaskDetailResponse.id)
-            && Objects.equals(this.releaseId, showDeployTaskDetailResponse.releaseId)
-            && Objects.equals(this.duration, showDeployTaskDetailResponse.duration)
-            && Objects.equals(this.executionState, showDeployTaskDetailResponse.executionState)
-            && Objects.equals(this.executorId, showDeployTaskDetailResponse.executorId)
-            && Objects.equals(this.executorNickName, showDeployTaskDetailResponse.executorNickName)
-            && Objects.equals(this.steps, showDeployTaskDetailResponse.steps);
+        ShowDeployTaskDetailResponse that = (ShowDeployTaskDetailResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.deploySystem, that.deploySystem) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.executionTime, that.executionTime)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isDefautPermission, that.isDefautPermission)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.ownerId, that.ownerId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.tenantName, that.tenantName)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.isCare, that.isCare)
+            && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
+            && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
+            && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
+            && Objects.equals(this.appComponentList, that.appComponentList) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.releaseId, that.releaseId)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.executionState, that.executionState)
+            && Objects.equals(this.executorId, that.executorId)
+            && Objects.equals(this.executorNickName, that.executorNickName) && Objects.equals(this.steps, that.steps);
     }
 
     @Override

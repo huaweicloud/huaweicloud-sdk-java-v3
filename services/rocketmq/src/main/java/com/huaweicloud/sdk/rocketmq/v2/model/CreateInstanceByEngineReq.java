@@ -67,22 +67,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -143,22 +136,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
         }
 
         public static EngineVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -206,8 +192,8 @@ public class CreateInstanceByEngineReq {
     private List<String> availableZones = null;
 
     /**
-    * RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
-    */
+     * RocketMQ实例规格。   - c6.4u8g.cluster.small：单个代理最大Topic数2000，单个代理最大消费组数2000   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+     */
     public static final class ProductIdEnum {
 
         /**
@@ -268,22 +254,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            ProductIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductIdEnum(value));
         }
 
         public static ProductIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProductIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,22 +336,15 @@ public class CreateInstanceByEngineReq {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageSpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageSpecCodeEnum(value));
         }
 
         public static StorageSpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -778,33 +750,27 @@ public class CreateInstanceByEngineReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceByEngineReq createInstanceByEngineReq = (CreateInstanceByEngineReq) o;
-        return Objects.equals(this.name, createInstanceByEngineReq.name)
-            && Objects.equals(this.description, createInstanceByEngineReq.description)
-            && Objects.equals(this.engine, createInstanceByEngineReq.engine)
-            && Objects.equals(this.engineVersion, createInstanceByEngineReq.engineVersion)
-            && Objects.equals(this.storageSpace, createInstanceByEngineReq.storageSpace)
-            && Objects.equals(this.vpcId, createInstanceByEngineReq.vpcId)
-            && Objects.equals(this.subnetId, createInstanceByEngineReq.subnetId)
-            && Objects.equals(this.securityGroupId, createInstanceByEngineReq.securityGroupId)
-            && Objects.equals(this.availableZones, createInstanceByEngineReq.availableZones)
-            && Objects.equals(this.productId, createInstanceByEngineReq.productId)
-            && Objects.equals(this.sslEnable, createInstanceByEngineReq.sslEnable)
-            && Objects.equals(this.storageSpecCode, createInstanceByEngineReq.storageSpecCode)
-            && Objects.equals(this.enterpriseProjectId, createInstanceByEngineReq.enterpriseProjectId)
-            && Objects.equals(this.enableAcl, createInstanceByEngineReq.enableAcl)
-            && Objects.equals(this.ipv6Enable, createInstanceByEngineReq.ipv6Enable)
-            && Objects.equals(this.enablePublicip, createInstanceByEngineReq.enablePublicip)
-            && Objects.equals(this.publicipId, createInstanceByEngineReq.publicipId)
-            && Objects.equals(this.brokerNum, createInstanceByEngineReq.brokerNum)
-            && Objects.equals(this.bssParam, createInstanceByEngineReq.bssParam);
+        CreateInstanceByEngineReq that = (CreateInstanceByEngineReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.storageSpace, that.storageSpace) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.brokerNum, that.brokerNum)
+            && Objects.equals(this.bssParam, that.bssParam);
     }
 
     @Override

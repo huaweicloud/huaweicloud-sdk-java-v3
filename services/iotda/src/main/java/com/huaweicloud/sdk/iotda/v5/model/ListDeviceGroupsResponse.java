@@ -84,16 +84,15 @@ public class ListDeviceGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceGroupsResponse listDeviceGroupsResponse = (ListDeviceGroupsResponse) o;
-        return Objects.equals(this.deviceGroups, listDeviceGroupsResponse.deviceGroups)
-            && Objects.equals(this.page, listDeviceGroupsResponse.page);
+        ListDeviceGroupsResponse that = (ListDeviceGroupsResponse) obj;
+        return Objects.equals(this.deviceGroups, that.deviceGroups) && Objects.equals(this.page, that.page);
     }
 
     @Override

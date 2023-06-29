@@ -96,17 +96,16 @@ public class LineViewConfigModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineViewConfigModel lineViewConfigModel = (LineViewConfigModel) o;
-        return Objects.equals(this.metricSet, lineViewConfigModel.metricSet)
-            && Objects.equals(this.filterPrefix, lineViewConfigModel.filterPrefix)
-            && Objects.equals(this.lineViewItemList, lineViewConfigModel.lineViewItemList);
+        LineViewConfigModel that = (LineViewConfigModel) obj;
+        return Objects.equals(this.metricSet, that.metricSet) && Objects.equals(this.filterPrefix, that.filterPrefix)
+            && Objects.equals(this.lineViewItemList, that.lineViewItemList);
     }
 
     @Override

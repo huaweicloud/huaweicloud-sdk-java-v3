@@ -127,17 +127,16 @@ public class JobTaskDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobTaskDto jobTaskDto = (JobTaskDto) o;
-        return Objects.equals(this.taskName, jobTaskDto.taskName) && Objects.equals(this.inputs, jobTaskDto.inputs)
-            && Objects.equals(this.resources, jobTaskDto.resources)
-            && Objects.equals(this.ioAccType, jobTaskDto.ioAccType);
+        JobTaskDto that = (JobTaskDto) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.ioAccType, that.ioAccType);
     }
 
     @Override

@@ -74,15 +74,15 @@ public class DataConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataConfig dataConfig = (DataConfig) o;
-        return Objects.equals(this.offline, dataConfig.offline) && Objects.equals(this.nearline, dataConfig.nearline);
+        DataConfig that = (DataConfig) obj;
+        return Objects.equals(this.offline, that.offline) && Objects.equals(this.nearline, that.nearline);
     }
 
     @Override

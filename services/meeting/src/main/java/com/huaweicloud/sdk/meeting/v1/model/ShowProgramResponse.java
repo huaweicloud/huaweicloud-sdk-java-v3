@@ -185,21 +185,19 @@ public class ShowProgramResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProgramResponse showProgramResponse = (ShowProgramResponse) o;
-        return Objects.equals(this.id, showProgramResponse.id)
-            && Objects.equals(this.lastUpdatedBy, showProgramResponse.lastUpdatedBy)
-            && Objects.equals(this.updateTime, showProgramResponse.updateTime)
-            && Objects.equals(this.programName, showProgramResponse.programName)
-            && Objects.equals(this.materialSizeStr, showProgramResponse.materialSizeStr)
-            && Objects.equals(this.playTime, showProgramResponse.playTime)
-            && Objects.equals(this.programItemList, showProgramResponse.programItemList);
+        ShowProgramResponse that = (ShowProgramResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lastUpdatedBy, that.lastUpdatedBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.programName, that.programName)
+            && Objects.equals(this.materialSizeStr, that.materialSizeStr)
+            && Objects.equals(this.playTime, that.playTime)
+            && Objects.equals(this.programItemList, that.programItemList);
     }
 
     @Override

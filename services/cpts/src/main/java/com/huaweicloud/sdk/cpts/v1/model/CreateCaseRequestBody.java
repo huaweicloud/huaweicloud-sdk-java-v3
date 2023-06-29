@@ -81,17 +81,16 @@ public class CreateCaseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCaseRequestBody createCaseRequestBody = (CreateCaseRequestBody) o;
-        return Objects.equals(this.name, createCaseRequestBody.name)
-            && Objects.equals(this.type, createCaseRequestBody.type)
-            && Objects.equals(this.taskId, createCaseRequestBody.taskId);
+        CreateCaseRequestBody that = (CreateCaseRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

@@ -187,21 +187,19 @@ public class Metadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metadata metadata = (Metadata) o;
-        return Objects.equals(this.eventType, metadata.eventType) && Objects.equals(this.eventId, metadata.eventId)
-            && Objects.equals(this.eventSeverity, metadata.eventSeverity)
-            && Objects.equals(this.eventName, metadata.eventName)
-            && Objects.equals(this.resourceType, metadata.resourceType)
-            && Objects.equals(this.resourceId, metadata.resourceId)
-            && Objects.equals(this.resourceProvider, metadata.resourceProvider)
-            && Objects.equals(this.ltsAlarmType, metadata.ltsAlarmType);
+        Metadata that = (Metadata) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.eventSeverity, that.eventSeverity) && Objects.equals(this.eventName, that.eventName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.ltsAlarmType, that.ltsAlarmType);
     }
 
     @Override

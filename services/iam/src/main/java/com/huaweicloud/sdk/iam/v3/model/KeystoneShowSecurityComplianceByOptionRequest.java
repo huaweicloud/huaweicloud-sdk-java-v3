@@ -65,22 +65,15 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
             if (value == null) {
                 return null;
             }
-            OptionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OptionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OptionEnum(value));
         }
 
         public static OptionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OptionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,17 +130,15 @@ public class KeystoneShowSecurityComplianceByOptionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowSecurityComplianceByOptionRequest keystoneShowSecurityComplianceByOptionRequest =
-            (KeystoneShowSecurityComplianceByOptionRequest) o;
-        return Objects.equals(this.domainId, keystoneShowSecurityComplianceByOptionRequest.domainId)
-            && Objects.equals(this.option, keystoneShowSecurityComplianceByOptionRequest.option);
+        KeystoneShowSecurityComplianceByOptionRequest that = (KeystoneShowSecurityComplianceByOptionRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.option, that.option);
     }
 
     @Override

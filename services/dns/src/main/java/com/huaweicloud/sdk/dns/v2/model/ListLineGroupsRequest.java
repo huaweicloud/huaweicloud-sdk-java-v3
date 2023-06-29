@@ -99,18 +99,16 @@ public class ListLineGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLineGroupsRequest listLineGroupsRequest = (ListLineGroupsRequest) o;
-        return Objects.equals(this.lineId, listLineGroupsRequest.lineId)
-            && Objects.equals(this.name, listLineGroupsRequest.name)
-            && Objects.equals(this.limit, listLineGroupsRequest.limit)
-            && Objects.equals(this.offset, listLineGroupsRequest.offset);
+        ListLineGroupsRequest that = (ListLineGroupsRequest) obj;
+        return Objects.equals(this.lineId, that.lineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -74,16 +74,16 @@ public class UpdateTrackerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTrackerReq updateTrackerReq = (UpdateTrackerReq) o;
-        return Objects.equals(this.bucketLifecycle, updateTrackerReq.bucketLifecycle)
-            && Objects.equals(this.dataEvent, updateTrackerReq.dataEvent);
+        UpdateTrackerReq that = (UpdateTrackerReq) obj;
+        return Objects.equals(this.bucketLifecycle, that.bucketLifecycle)
+            && Objects.equals(this.dataEvent, that.dataEvent);
     }
 
     @Override

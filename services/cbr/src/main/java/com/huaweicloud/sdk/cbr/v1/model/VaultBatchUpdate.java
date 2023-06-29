@@ -57,16 +57,15 @@ public class VaultBatchUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultBatchUpdate vaultBatchUpdate = (VaultBatchUpdate) o;
-        return Objects.equals(this.smnNotify, vaultBatchUpdate.smnNotify)
-            && Objects.equals(this.threshold, vaultBatchUpdate.threshold);
+        VaultBatchUpdate that = (VaultBatchUpdate) obj;
+        return Objects.equals(this.smnNotify, that.smnNotify) && Objects.equals(this.threshold, that.threshold);
     }
 
     @Override

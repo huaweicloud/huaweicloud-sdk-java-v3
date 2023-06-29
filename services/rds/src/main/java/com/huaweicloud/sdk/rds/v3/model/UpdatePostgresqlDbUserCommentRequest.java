@@ -87,18 +87,16 @@ public class UpdatePostgresqlDbUserCommentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePostgresqlDbUserCommentRequest updatePostgresqlDbUserCommentRequest =
-            (UpdatePostgresqlDbUserCommentRequest) o;
-        return Objects.equals(this.instanceId, updatePostgresqlDbUserCommentRequest.instanceId)
-            && Objects.equals(this.userName, updatePostgresqlDbUserCommentRequest.userName)
-            && Objects.equals(this.body, updatePostgresqlDbUserCommentRequest.body);
+        UpdatePostgresqlDbUserCommentRequest that = (UpdatePostgresqlDbUserCommentRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class CatalogEndpoints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogEndpoints catalogEndpoints = (CatalogEndpoints) o;
-        return Objects.equals(this.id, catalogEndpoints.id)
-            && Objects.equals(this._interface, catalogEndpoints._interface)
-            && Objects.equals(this.region, catalogEndpoints.region)
-            && Objects.equals(this.regionId, catalogEndpoints.regionId)
-            && Objects.equals(this.url, catalogEndpoints.url);
+        CatalogEndpoints that = (CatalogEndpoints) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this._interface, that._interface)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

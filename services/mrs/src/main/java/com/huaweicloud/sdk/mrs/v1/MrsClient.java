@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.mrs.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.mrs.v1.model.*;
 
 public class MrsClient {
+
     protected HcClient hcClient;
 
     public MrsClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class MrsClient {
     public static ClientBuilder<MrsClient> newBuilder() {
         return new ClientBuilder<>(MrsClient::new);
     }
-
 
     /**
      * 批量添加集群标签
@@ -53,8 +53,10 @@ public class MrsClient {
      * @param BatchCreateClusterTagsRequest 请求对象
      * @return SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>
      */
-    public SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsInvoker(BatchCreateClusterTagsRequest request) {
-        return new SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>(request, MrsMeta.batchCreateClusterTags, hcClient);
+    public SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse> batchCreateClusterTagsInvoker(
+        BatchCreateClusterTagsRequest request) {
+        return new SyncInvoker<BatchCreateClusterTagsRequest, BatchCreateClusterTagsResponse>(request,
+            MrsMeta.batchCreateClusterTags, hcClient);
     }
 
     /**
@@ -95,8 +97,10 @@ public class MrsClient {
      * @param BatchDeleteClusterTagsRequest 请求对象
      * @return SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>
      */
-    public SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsInvoker(BatchDeleteClusterTagsRequest request) {
-        return new SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>(request, MrsMeta.batchDeleteClusterTags, hcClient);
+    public SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse> batchDeleteClusterTagsInvoker(
+        BatchDeleteClusterTagsRequest request) {
+        return new SyncInvoker<BatchDeleteClusterTagsRequest, BatchDeleteClusterTagsResponse>(request,
+            MrsMeta.batchDeleteClusterTags, hcClient);
     }
 
     /**
@@ -127,8 +131,10 @@ public class MrsClient {
      * @param CreateAndExecuteJobRequest 请求对象
      * @return SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>
      */
-    public SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJobInvoker(CreateAndExecuteJobRequest request) {
-        return new SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>(request, MrsMeta.createAndExecuteJob, hcClient);
+    public SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse> createAndExecuteJobInvoker(
+        CreateAndExecuteJobRequest request) {
+        return new SyncInvoker<CreateAndExecuteJobRequest, CreateAndExecuteJobResponse>(request,
+            MrsMeta.createAndExecuteJob, hcClient);
     }
 
     /**
@@ -197,8 +203,10 @@ public class MrsClient {
      * @param CreateClusterTagRequest 请求对象
      * @return SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>
      */
-    public SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse> createClusterTagInvoker(CreateClusterTagRequest request) {
-        return new SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>(request, MrsMeta.createClusterTag, hcClient);
+    public SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse> createClusterTagInvoker(
+        CreateClusterTagRequest request) {
+        return new SyncInvoker<CreateClusterTagRequest, CreateClusterTagResponse>(request, MrsMeta.createClusterTag,
+            hcClient);
     }
 
     /**
@@ -229,8 +237,10 @@ public class MrsClient {
      * @param CreateScalingPolicyRequest 请求对象
      * @return SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>
      */
-    public SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicyInvoker(CreateScalingPolicyRequest request) {
-        return new SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>(request, MrsMeta.createScalingPolicy, hcClient);
+    public SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse> createScalingPolicyInvoker(
+        CreateScalingPolicyRequest request) {
+        return new SyncInvoker<CreateScalingPolicyRequest, CreateScalingPolicyResponse>(request,
+            MrsMeta.createScalingPolicy, hcClient);
     }
 
     /**
@@ -301,8 +311,10 @@ public class MrsClient {
      * @param DeleteClusterTagRequest 请求对象
      * @return SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>
      */
-    public SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse> deleteClusterTagInvoker(DeleteClusterTagRequest request) {
-        return new SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>(request, MrsMeta.deleteClusterTag, hcClient);
+    public SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse> deleteClusterTagInvoker(
+        DeleteClusterTagRequest request) {
+        return new SyncInvoker<DeleteClusterTagRequest, DeleteClusterTagResponse>(request, MrsMeta.deleteClusterTag,
+            hcClient);
     }
 
     /**
@@ -331,8 +343,10 @@ public class MrsClient {
      * @param DeleteJobExecutionRequest 请求对象
      * @return SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>
      */
-    public SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecutionInvoker(DeleteJobExecutionRequest request) {
-        return new SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>(request, MrsMeta.deleteJobExecution, hcClient);
+    public SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse> deleteJobExecutionInvoker(
+        DeleteJobExecutionRequest request) {
+        return new SyncInvoker<DeleteJobExecutionRequest, DeleteJobExecutionResponse>(request,
+            MrsMeta.deleteJobExecution, hcClient);
     }
 
     /**
@@ -387,8 +401,10 @@ public class MrsClient {
      * @param ListClusterTagsRequest 请求对象
      * @return SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>
      */
-    public SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTagsInvoker(ListClusterTagsRequest request) {
-        return new SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>(request, MrsMeta.listClusterTags, hcClient);
+    public SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse> listClusterTagsInvoker(
+        ListClusterTagsRequest request) {
+        return new SyncInvoker<ListClusterTagsRequest, ListClusterTagsResponse>(request, MrsMeta.listClusterTags,
+            hcClient);
     }
 
     /**
@@ -447,8 +463,10 @@ public class MrsClient {
      * @param ListClustersByTagsRequest 请求对象
      * @return SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>
      */
-    public SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTagsInvoker(ListClustersByTagsRequest request) {
-        return new SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>(request, MrsMeta.listClustersByTags, hcClient);
+    public SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse> listClustersByTagsInvoker(
+        ListClustersByTagsRequest request) {
+        return new SyncInvoker<ListClustersByTagsRequest, ListClustersByTagsResponse>(request,
+            MrsMeta.listClustersByTags, hcClient);
     }
 
     /**
@@ -477,8 +495,10 @@ public class MrsClient {
      * @param ListExecuteJobRequest 请求对象
      * @return SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>
      */
-    public SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJobInvoker(ListExecuteJobRequest request) {
-        return new SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>(request, MrsMeta.listExecuteJob, hcClient);
+    public SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse> listExecuteJobInvoker(
+        ListExecuteJobRequest request) {
+        return new SyncInvoker<ListExecuteJobRequest, ListExecuteJobResponse>(request, MrsMeta.listExecuteJob,
+            hcClient);
     }
 
     /**
@@ -533,8 +553,10 @@ public class MrsClient {
      * @param ShowClusterDetailsRequest 请求对象
      * @return SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>
      */
-    public SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse> showClusterDetailsInvoker(ShowClusterDetailsRequest request) {
-        return new SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>(request, MrsMeta.showClusterDetails, hcClient);
+    public SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse> showClusterDetailsInvoker(
+        ShowClusterDetailsRequest request) {
+        return new SyncInvoker<ShowClusterDetailsRequest, ShowClusterDetailsResponse>(request,
+            MrsMeta.showClusterDetails, hcClient);
     }
 
     /**
@@ -593,8 +615,10 @@ public class MrsClient {
      * @param UpdateClusterScalingRequest 请求对象
      * @return SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>
      */
-    public SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse> updateClusterScalingInvoker(UpdateClusterScalingRequest request) {
-        return new SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>(request, MrsMeta.updateClusterScaling, hcClient);
+    public SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse> updateClusterScalingInvoker(
+        UpdateClusterScalingRequest request) {
+        return new SyncInvoker<UpdateClusterScalingRequest, UpdateClusterScalingResponse>(request,
+            MrsMeta.updateClusterScaling, hcClient);
     }
 
     /**
@@ -621,8 +645,10 @@ public class MrsClient {
      * @param ListAvailableZonesRequest 请求对象
      * @return SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>
      */
-    public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(ListAvailableZonesRequest request) {
-        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request, MrsMeta.listAvailableZones, hcClient);
+    public SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZonesInvoker(
+        ListAvailableZonesRequest request) {
+        return new SyncInvoker<ListAvailableZonesRequest, ListAvailableZonesResponse>(request,
+            MrsMeta.listAvailableZones, hcClient);
     }
 
 }

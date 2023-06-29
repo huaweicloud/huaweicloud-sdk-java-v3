@@ -187,21 +187,18 @@ public class ListResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourcesRequest listResourcesRequest = (ListResourcesRequest) o;
-        return Objects.equals(this.provider, listResourcesRequest.provider)
-            && Objects.equals(this.type, listResourcesRequest.type)
-            && Objects.equals(this.regionId, listResourcesRequest.regionId)
-            && Objects.equals(this.epId, listResourcesRequest.epId)
-            && Objects.equals(this.tag, listResourcesRequest.tag)
-            && Objects.equals(this.limit, listResourcesRequest.limit)
-            && Objects.equals(this.marker, listResourcesRequest.marker);
+        ListResourcesRequest that = (ListResourcesRequest) obj;
+        return Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

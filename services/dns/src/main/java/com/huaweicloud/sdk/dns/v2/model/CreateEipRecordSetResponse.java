@@ -220,23 +220,19 @@ public class CreateEipRecordSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEipRecordSetResponse createEipRecordSetResponse = (CreateEipRecordSetResponse) o;
-        return Objects.equals(this.id, createEipRecordSetResponse.id)
-            && Objects.equals(this.ptrdname, createEipRecordSetResponse.ptrdname)
-            && Objects.equals(this.description, createEipRecordSetResponse.description)
-            && Objects.equals(this.ttl, createEipRecordSetResponse.ttl)
-            && Objects.equals(this.address, createEipRecordSetResponse.address)
-            && Objects.equals(this.status, createEipRecordSetResponse.status)
-            && Objects.equals(this.action, createEipRecordSetResponse.action)
-            && Objects.equals(this.links, createEipRecordSetResponse.links)
-            && Objects.equals(this.enterpriseProjectId, createEipRecordSetResponse.enterpriseProjectId);
+        CreateEipRecordSetResponse that = (CreateEipRecordSetResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ptrdname, that.ptrdname)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

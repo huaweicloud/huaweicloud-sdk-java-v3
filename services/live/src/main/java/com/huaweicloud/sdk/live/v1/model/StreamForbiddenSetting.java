@@ -100,18 +100,16 @@ public class StreamForbiddenSetting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamForbiddenSetting streamForbiddenSetting = (StreamForbiddenSetting) o;
-        return Objects.equals(this.domain, streamForbiddenSetting.domain)
-            && Objects.equals(this.appName, streamForbiddenSetting.appName)
-            && Objects.equals(this.streamName, streamForbiddenSetting.streamName)
-            && Objects.equals(this.resumeTime, streamForbiddenSetting.resumeTime);
+        StreamForbiddenSetting that = (StreamForbiddenSetting) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.streamName, that.streamName) && Objects.equals(this.resumeTime, that.resumeTime);
     }
 
     @Override

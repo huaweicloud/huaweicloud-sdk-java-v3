@@ -90,22 +90,15 @@ public class CreateScoresRequestModel {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -361,26 +354,20 @@ public class CreateScoresRequestModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScoresRequestModel createScoresRequestModel = (CreateScoresRequestModel) o;
-        return Objects.equals(this.competitionId, createScoresRequestModel.competitionId)
-            && Objects.equals(this.stageId, createScoresRequestModel.stageId)
-            && Objects.equals(this.worksId, createScoresRequestModel.worksId)
-            && Objects.equals(this.name, createScoresRequestModel.name)
-            && Objects.equals(this.worksKind, createScoresRequestModel.worksKind)
-            && Objects.equals(this.score, createScoresRequestModel.score)
-            && Objects.equals(this.status, createScoresRequestModel.status)
-            && Objects.equals(this.createdTime, createScoresRequestModel.createdTime)
-            && Objects.equals(this.note, createScoresRequestModel.note)
-            && Objects.equals(this.message, createScoresRequestModel.message)
-            && Objects.equals(this.domainId, createScoresRequestModel.domainId)
-            && Objects.equals(this.userId, createScoresRequestModel.userId);
+        CreateScoresRequestModel that = (CreateScoresRequestModel) obj;
+        return Objects.equals(this.competitionId, that.competitionId) && Objects.equals(this.stageId, that.stageId)
+            && Objects.equals(this.worksId, that.worksId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.worksKind, that.worksKind) && Objects.equals(this.score, that.score)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.note, that.note) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

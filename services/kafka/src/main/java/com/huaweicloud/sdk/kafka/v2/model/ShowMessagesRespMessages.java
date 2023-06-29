@@ -121,19 +121,17 @@ public class ShowMessagesRespMessages {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessagesRespMessages showMessagesRespMessages = (ShowMessagesRespMessages) o;
-        return Objects.equals(this.topic, showMessagesRespMessages.topic)
-            && Objects.equals(this.partition, showMessagesRespMessages.partition)
-            && Objects.equals(this.messageOffset, showMessagesRespMessages.messageOffset)
-            && Objects.equals(this.size, showMessagesRespMessages.size)
-            && Objects.equals(this.timestamp, showMessagesRespMessages.timestamp);
+        ShowMessagesRespMessages that = (ShowMessagesRespMessages) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

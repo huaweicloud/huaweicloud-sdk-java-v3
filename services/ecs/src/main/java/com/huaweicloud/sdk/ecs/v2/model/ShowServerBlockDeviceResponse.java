@@ -44,15 +44,15 @@ public class ShowServerBlockDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerBlockDeviceResponse showServerBlockDeviceResponse = (ShowServerBlockDeviceResponse) o;
-        return Objects.equals(this.volumeAttachment, showServerBlockDeviceResponse.volumeAttachment);
+        ShowServerBlockDeviceResponse that = (ShowServerBlockDeviceResponse) obj;
+        return Objects.equals(this.volumeAttachment, that.volumeAttachment);
     }
 
     @Override

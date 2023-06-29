@@ -119,18 +119,16 @@ public class DomainItemDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainItemDetail domainItemDetail = (DomainItemDetail) o;
-        return Objects.equals(this.startTime, domainItemDetail.startTime)
-            && Objects.equals(this.endTime, domainItemDetail.endTime)
-            && Objects.equals(this.statType, domainItemDetail.statType)
-            && Objects.equals(this.domains, domainItemDetail.domains);
+        DomainItemDetail that = (DomainItemDetail) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.statType, that.statType) && Objects.equals(this.domains, that.domains);
     }
 
     @Override

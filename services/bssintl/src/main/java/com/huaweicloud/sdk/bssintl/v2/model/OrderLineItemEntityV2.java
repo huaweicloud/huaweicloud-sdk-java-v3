@@ -395,31 +395,29 @@ public class OrderLineItemEntityV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderLineItemEntityV2 orderLineItemEntityV2 = (OrderLineItemEntityV2) o;
-        return Objects.equals(this.orderLineItemId, orderLineItemEntityV2.orderLineItemId)
-            && Objects.equals(this.serviceTypeCode, orderLineItemEntityV2.serviceTypeCode)
-            && Objects.equals(this.serviceTypeName, orderLineItemEntityV2.serviceTypeName)
-            && Objects.equals(this.productId, orderLineItemEntityV2.productId)
-            && Objects.equals(this.productSpecDesc, orderLineItemEntityV2.productSpecDesc)
-            && Objects.equals(this.periodType, orderLineItemEntityV2.periodType)
-            && Objects.equals(this.periodNum, orderLineItemEntityV2.periodNum)
-            && Objects.equals(this.effectiveTime, orderLineItemEntityV2.effectiveTime)
-            && Objects.equals(this.expireTime, orderLineItemEntityV2.expireTime)
-            && Objects.equals(this.subscriptionNum, orderLineItemEntityV2.subscriptionNum)
-            && Objects.equals(this.amountAfterDiscount, orderLineItemEntityV2.amountAfterDiscount)
-            && Objects.equals(this.officialAmount, orderLineItemEntityV2.officialAmount)
-            && Objects.equals(this.amountInfo, orderLineItemEntityV2.amountInfo)
-            && Objects.equals(this.currency, orderLineItemEntityV2.currency)
-            && Objects.equals(this.categoryCode, orderLineItemEntityV2.categoryCode)
-            && Objects.equals(this.productOwnerService, orderLineItemEntityV2.productOwnerService)
-            && Objects.equals(this.commercialResource, orderLineItemEntityV2.commercialResource);
+        OrderLineItemEntityV2 that = (OrderLineItemEntityV2) obj;
+        return Objects.equals(this.orderLineItemId, that.orderLineItemId)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.subscriptionNum, that.subscriptionNum)
+            && Objects.equals(this.amountAfterDiscount, that.amountAfterDiscount)
+            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.amountInfo, that.amountInfo) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.categoryCode, that.categoryCode)
+            && Objects.equals(this.productOwnerService, that.productOwnerService)
+            && Objects.equals(this.commercialResource, that.commercialResource);
     }
 
     @Override

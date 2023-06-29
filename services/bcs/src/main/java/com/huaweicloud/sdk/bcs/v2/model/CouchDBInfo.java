@@ -33,15 +33,15 @@ public class CouchDBInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CouchDBInfo couchDBInfo = (CouchDBInfo) o;
-        return Objects.equals(this.user, couchDBInfo.user);
+        CouchDBInfo that = (CouchDBInfo) obj;
+        return Objects.equals(this.user, that.user);
     }
 
     @Override

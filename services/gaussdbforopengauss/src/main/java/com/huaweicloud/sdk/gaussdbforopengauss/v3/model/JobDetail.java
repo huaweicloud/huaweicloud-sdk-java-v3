@@ -1,68 +1,53 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.JobInstanceInfo;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * JobDetail
  */
-public class JobDetail  {
-
+public class JobDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ended")
-    
+    @JsonProperty(value = "ended")
 
     private String ended;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
 
     private String progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
 
     private JobInstanceInfo instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
 
     private String failReason;
 
@@ -70,9 +55,6 @@ public class JobDetail  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID
@@ -86,15 +68,10 @@ public class JobDetail  {
         this.id = id;
     }
 
-    
-
     public JobDetail withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。
@@ -108,15 +85,10 @@ public class JobDetail  {
         this.name = name;
     }
 
-    
-
     public JobDetail withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行状态。
@@ -130,15 +102,10 @@ public class JobDetail  {
         this.status = status;
     }
 
-    
-
     public JobDetail withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 任务创建时间，格式为yyyy-mm-ddThh:mm:ssZ。
@@ -152,15 +119,10 @@ public class JobDetail  {
         this.created = created;
     }
 
-    
-
     public JobDetail withEnded(String ended) {
         this.ended = ended;
         return this;
     }
-
-    
-
 
     /**
      * 任务结束时间，格式为yyyy-mm-ddThh:mm:ssZ。
@@ -174,15 +136,10 @@ public class JobDetail  {
         this.ended = ended;
     }
 
-    
-
     public JobDetail withProgress(String progress) {
         this.progress = progress;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行进度。
@@ -196,22 +153,19 @@ public class JobDetail  {
         this.progress = progress;
     }
 
-    
-
     public JobDetail withInstance(JobInstanceInfo instance) {
         this.instance = instance;
         return this;
     }
 
     public JobDetail withInstance(Consumer<JobInstanceInfo> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new JobInstanceInfo();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get instance
@@ -225,15 +179,10 @@ public class JobDetail  {
         this.instance = instance;
     }
 
-    
-
     public JobDetail withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行失败时的错误信息。
@@ -247,30 +196,26 @@ public class JobDetail  {
         this.failReason = failReason;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDetail jobDetail = (JobDetail) o;
-        return Objects.equals(this.id, jobDetail.id) &&
-            Objects.equals(this.name, jobDetail.name) &&
-            Objects.equals(this.status, jobDetail.status) &&
-            Objects.equals(this.created, jobDetail.created) &&
-            Objects.equals(this.ended, jobDetail.ended) &&
-            Objects.equals(this.progress, jobDetail.progress) &&
-            Objects.equals(this.instance, jobDetail.instance) &&
-            Objects.equals(this.failReason, jobDetail.failReason);
+        JobDetail that = (JobDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.ended, that.ended) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.failReason, that.failReason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, status, created, ended, progress, instance, failReason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -286,6 +231,7 @@ public class JobDetail  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -296,8 +242,5 @@ public class JobDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

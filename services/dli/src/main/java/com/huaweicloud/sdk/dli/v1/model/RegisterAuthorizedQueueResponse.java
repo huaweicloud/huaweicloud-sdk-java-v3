@@ -56,16 +56,15 @@ public class RegisterAuthorizedQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterAuthorizedQueueResponse registerAuthorizedQueueResponse = (RegisterAuthorizedQueueResponse) o;
-        return Objects.equals(this.isSuccess, registerAuthorizedQueueResponse.isSuccess)
-            && Objects.equals(this.message, registerAuthorizedQueueResponse.message);
+        RegisterAuthorizedQueueResponse that = (RegisterAuthorizedQueueResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

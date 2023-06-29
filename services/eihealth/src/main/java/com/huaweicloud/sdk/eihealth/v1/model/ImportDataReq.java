@@ -118,18 +118,17 @@ public class ImportDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportDataReq importDataReq = (ImportDataReq) o;
-        return Objects.equals(this.overwrite, importDataReq.overwrite)
-            && Objects.equals(this.sourceProjectId, importDataReq.sourceProjectId)
-            && Objects.equals(this.subPaths, importDataReq.subPaths)
-            && Objects.equals(this.targetFolder, importDataReq.targetFolder);
+        ImportDataReq that = (ImportDataReq) obj;
+        return Objects.equals(this.overwrite, that.overwrite)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.subPaths, that.subPaths) && Objects.equals(this.targetFolder, that.targetFolder);
     }
 
     @Override

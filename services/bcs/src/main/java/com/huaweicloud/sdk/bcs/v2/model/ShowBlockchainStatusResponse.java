@@ -199,20 +199,17 @@ public class ShowBlockchainStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBlockchainStatusResponse showBlockchainStatusResponse = (ShowBlockchainStatusResponse) o;
-        return Objects.equals(this.bcs, showBlockchainStatusResponse.bcs)
-            && Objects.equals(this.eip, showBlockchainStatusResponse.eip)
-            && Objects.equals(this.sfs, showBlockchainStatusResponse.sfs)
-            && Objects.equals(this.obs, showBlockchainStatusResponse.obs)
-            && Objects.equals(this.kafka, showBlockchainStatusResponse.kafka)
-            && Objects.equals(this.cce, showBlockchainStatusResponse.cce);
+        ShowBlockchainStatusResponse that = (ShowBlockchainStatusResponse) obj;
+        return Objects.equals(this.bcs, that.bcs) && Objects.equals(this.eip, that.eip)
+            && Objects.equals(this.sfs, that.sfs) && Objects.equals(this.obs, that.obs)
+            && Objects.equals(this.kafka, that.kafka) && Objects.equals(this.cce, that.cce);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DeleteAppVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAppVersionRequest deleteAppVersionRequest = (DeleteAppVersionRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteAppVersionRequest.iefInstanceId)
-            && Objects.equals(this.appId, deleteAppVersionRequest.appId)
-            && Objects.equals(this.versionId, deleteAppVersionRequest.versionId);
+        DeleteAppVersionRequest that = (DeleteAppVersionRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

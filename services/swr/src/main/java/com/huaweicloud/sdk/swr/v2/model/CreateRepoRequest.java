@@ -65,16 +65,15 @@ public class CreateRepoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRepoRequest createRepoRequest = (CreateRepoRequest) o;
-        return Objects.equals(this.namespace, createRepoRequest.namespace)
-            && Objects.equals(this.body, createRepoRequest.body);
+        CreateRepoRequest that = (CreateRepoRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.body, that.body);
     }
 
     @Override

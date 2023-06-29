@@ -77,17 +77,17 @@ public class StateDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StateDetails stateDetails = (StateDetails) o;
-        return Objects.equals(this.registerStat, stateDetails.registerStat)
-            && Objects.equals(this.purchaseStat, stateDetails.purchaseStat)
-            && Objects.equals(this.purchaseError, stateDetails.purchaseError);
+        StateDetails that = (StateDetails) obj;
+        return Objects.equals(this.registerStat, that.registerStat)
+            && Objects.equals(this.purchaseStat, that.purchaseStat)
+            && Objects.equals(this.purchaseError, that.purchaseError);
     }
 
     @Override

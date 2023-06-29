@@ -43,15 +43,15 @@ public class CreateHealthmonitorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHealthmonitorRequest createHealthmonitorRequest = (CreateHealthmonitorRequest) o;
-        return Objects.equals(this.body, createHealthmonitorRequest.body);
+        CreateHealthmonitorRequest that = (CreateHealthmonitorRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

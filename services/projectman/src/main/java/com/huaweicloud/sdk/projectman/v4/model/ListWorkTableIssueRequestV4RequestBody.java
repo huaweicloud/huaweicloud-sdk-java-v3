@@ -299,28 +299,21 @@ public class ListWorkTableIssueRequestV4RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkTableIssueRequestV4RequestBody listWorkTableIssueRequestV4RequestBody =
-            (ListWorkTableIssueRequestV4RequestBody) o;
-        return Objects.equals(this.offset, listWorkTableIssueRequestV4RequestBody.offset)
-            && Objects.equals(this.limit, listWorkTableIssueRequestV4RequestBody.limit)
-            && Objects.equals(this.subject, listWorkTableIssueRequestV4RequestBody.subject)
-            && Objects.equals(this.createdOn, listWorkTableIssueRequestV4RequestBody.createdOn)
-            && Objects.equals(this.updatedOn, listWorkTableIssueRequestV4RequestBody.updatedOn)
-            && Objects.equals(this.closedOn, listWorkTableIssueRequestV4RequestBody.closedOn)
-            && Objects.equals(this.startDate, listWorkTableIssueRequestV4RequestBody.startDate)
-            && Objects.equals(this.dueDate, listWorkTableIssueRequestV4RequestBody.dueDate)
-            && Objects.equals(this.trackerId, listWorkTableIssueRequestV4RequestBody.trackerId)
-            && Objects.equals(this.statusId, listWorkTableIssueRequestV4RequestBody.statusId)
-            && Objects.equals(this.authorId, listWorkTableIssueRequestV4RequestBody.authorId)
-            && Objects.equals(this.developerId, listWorkTableIssueRequestV4RequestBody.developerId)
-            && Objects.equals(this.priorityId, listWorkTableIssueRequestV4RequestBody.priorityId);
+        ListWorkTableIssueRequestV4RequestBody that = (ListWorkTableIssueRequestV4RequestBody) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.createdOn, that.createdOn)
+            && Objects.equals(this.updatedOn, that.updatedOn) && Objects.equals(this.closedOn, that.closedOn)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.dueDate, that.dueDate)
+            && Objects.equals(this.trackerId, that.trackerId) && Objects.equals(this.statusId, that.statusId)
+            && Objects.equals(this.authorId, that.authorId) && Objects.equals(this.developerId, that.developerId)
+            && Objects.equals(this.priorityId, that.priorityId);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class CreateClusterResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterResp createClusterResp = (CreateClusterResp) o;
-        return Objects.equals(this.id, createClusterResp.id) && Objects.equals(this.name, createClusterResp.name);
+        CreateClusterResp that = (CreateClusterResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -294,25 +294,21 @@ public class RecordResultDO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordResultDO recordResultDO = (RecordResultDO) o;
-        return Objects.equals(this.confUUID, recordResultDO.confUUID)
-            && Objects.equals(this.confID, recordResultDO.confID) && Objects.equals(this.url, recordResultDO.url)
-            && Objects.equals(this.rcdTime, recordResultDO.rcdTime)
-            && Objects.equals(this.rcdSize, recordResultDO.rcdSize)
-            && Objects.equals(this.subject, recordResultDO.subject)
-            && Objects.equals(this.scheduserName, recordResultDO.scheduserName)
-            && Objects.equals(this.startTime, recordResultDO.startTime)
-            && Objects.equals(this.isDecodeFinish, recordResultDO.isDecodeFinish)
-            && Objects.equals(this.decodeEndTime, recordResultDO.decodeEndTime)
-            && Objects.equals(this.available, recordResultDO.available)
-            && Objects.equals(this.recordAuthType, recordResultDO.recordAuthType);
+        RecordResultDO that = (RecordResultDO) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.confID, that.confID)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.rcdTime, that.rcdTime)
+            && Objects.equals(this.rcdSize, that.rcdSize) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.scheduserName, that.scheduserName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.isDecodeFinish, that.isDecodeFinish)
+            && Objects.equals(this.decodeEndTime, that.decodeEndTime) && Objects.equals(this.available, that.available)
+            && Objects.equals(this.recordAuthType, that.recordAuthType);
     }
 
     @Override

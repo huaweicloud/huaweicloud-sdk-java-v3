@@ -193,23 +193,19 @@ public class SearchAttendanceRecordsOfHisMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchAttendanceRecordsOfHisMeetingRequest searchAttendanceRecordsOfHisMeetingRequest =
-            (SearchAttendanceRecordsOfHisMeetingRequest) o;
-        return Objects.equals(this.confUUID, searchAttendanceRecordsOfHisMeetingRequest.confUUID)
-            && Objects.equals(this.offset, searchAttendanceRecordsOfHisMeetingRequest.offset)
-            && Objects.equals(this.limit, searchAttendanceRecordsOfHisMeetingRequest.limit)
-            && Objects.equals(this.searchKey, searchAttendanceRecordsOfHisMeetingRequest.searchKey)
-            && Objects.equals(this.userUUID, searchAttendanceRecordsOfHisMeetingRequest.userUUID)
-            && Objects.equals(this.xAuthorizationType, searchAttendanceRecordsOfHisMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, searchAttendanceRecordsOfHisMeetingRequest.xSiteId)
-            && Objects.equals(this.acceptLanguage, searchAttendanceRecordsOfHisMeetingRequest.acceptLanguage);
+        SearchAttendanceRecordsOfHisMeetingRequest that = (SearchAttendanceRecordsOfHisMeetingRequest) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId) && Objects.equals(this.acceptLanguage, that.acceptLanguage);
     }
 
     @Override

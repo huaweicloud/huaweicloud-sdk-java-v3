@@ -276,26 +276,20 @@ public class ShowAccessDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAccessDomainResponse showAccessDomainResponse = (ShowAccessDomainResponse) o;
-        return Objects.equals(this.exist, showAccessDomainResponse.exist)
-            && Objects.equals(this.namespace, showAccessDomainResponse.namespace)
-            && Objects.equals(this.repository, showAccessDomainResponse.repository)
-            && Objects.equals(this.accessDomain, showAccessDomainResponse.accessDomain)
-            && Objects.equals(this.permit, showAccessDomainResponse.permit)
-            && Objects.equals(this.deadline, showAccessDomainResponse.deadline)
-            && Objects.equals(this.description, showAccessDomainResponse.description)
-            && Objects.equals(this.creatorId, showAccessDomainResponse.creatorId)
-            && Objects.equals(this.creatorName, showAccessDomainResponse.creatorName)
-            && Objects.equals(this.created, showAccessDomainResponse.created)
-            && Objects.equals(this.updated, showAccessDomainResponse.updated)
-            && Objects.equals(this.status, showAccessDomainResponse.status);
+        ShowAccessDomainResponse that = (ShowAccessDomainResponse) obj;
+        return Objects.equals(this.exist, that.exist) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.repository, that.repository) && Objects.equals(this.accessDomain, that.accessDomain)
+            && Objects.equals(this.permit, that.permit) && Objects.equals(this.deadline, that.deadline)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.status, that.status);
     }
 
     @Override

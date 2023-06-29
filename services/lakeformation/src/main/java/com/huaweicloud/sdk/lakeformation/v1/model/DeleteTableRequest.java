@@ -121,19 +121,17 @@ public class DeleteTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTableRequest deleteTableRequest = (DeleteTableRequest) o;
-        return Objects.equals(this.instanceId, deleteTableRequest.instanceId)
-            && Objects.equals(this.catalogName, deleteTableRequest.catalogName)
-            && Objects.equals(this.databaseName, deleteTableRequest.databaseName)
-            && Objects.equals(this.tableName, deleteTableRequest.tableName)
-            && Objects.equals(this.deleteData, deleteTableRequest.deleteData);
+        DeleteTableRequest that = (DeleteTableRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.deleteData, that.deleteData);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class ShowCategoryListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCategoryListResponse showCategoryListResponse = (ShowCategoryListResponse) o;
-        return Objects.equals(this.result, showCategoryListResponse.result)
-            && Objects.equals(this.status, showCategoryListResponse.status);
+        ShowCategoryListResponse that = (ShowCategoryListResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

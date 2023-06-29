@@ -75,16 +75,15 @@ public class ListAuthorizedDbUsersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorizedDbUsersResponse listAuthorizedDbUsersResponse = (ListAuthorizedDbUsersResponse) o;
-        return Objects.equals(this.users, listAuthorizedDbUsersResponse.users)
-            && Objects.equals(this.totalCount, listAuthorizedDbUsersResponse.totalCount);
+        ListAuthorizedDbUsersResponse that = (ListAuthorizedDbUsersResponse) obj;
+        return Objects.equals(this.users, that.users) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

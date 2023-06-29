@@ -33,15 +33,15 @@ public class ShowFunctionConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFunctionConfigRequest showFunctionConfigRequest = (ShowFunctionConfigRequest) o;
-        return Objects.equals(this.functionUrn, showFunctionConfigRequest.functionUrn);
+        ShowFunctionConfigRequest that = (ShowFunctionConfigRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

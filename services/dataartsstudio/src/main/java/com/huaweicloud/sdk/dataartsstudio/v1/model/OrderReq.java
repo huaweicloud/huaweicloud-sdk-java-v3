@@ -476,31 +476,28 @@ public class OrderReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderReq orderReq = (OrderReq) o;
-        return Objects.equals(this.regionId, orderReq.regionId)
-            && Objects.equals(this.commodityId, orderReq.commodityId)
-            && Objects.equals(this.productId, orderReq.productId)
-            && Objects.equals(this.periodType, orderReq.periodType)
-            && Objects.equals(this.periodNum, orderReq.periodNum)
-            && Objects.equals(this.availabilityZone, orderReq.availabilityZone)
-            && Objects.equals(this.vpcId, orderReq.vpcId)
-            && Objects.equals(this.securityGroupId, orderReq.securityGroupId)
-            && Objects.equals(this.netId, orderReq.netId) && Objects.equals(this.instanceName, orderReq.instanceName)
-            && Objects.equals(this.epsId, orderReq.epsId) && Objects.equals(this.isAutoRenew, orderReq.isAutoRenew)
-            && Objects.equals(this.promotionInfo, orderReq.promotionInfo)
-            && Objects.equals(this.extesionPackageType, orderReq.extesionPackageType)
-            && Objects.equals(this.bindingInstanceId, orderReq.bindingInstanceId)
-            && Objects.equals(this.cdmVersion, orderReq.cdmVersion)
-            && Objects.equals(this.resourceSpecCode, orderReq.resourceSpecCode)
-            && Objects.equals(this.cloudServiceType, orderReq.cloudServiceType)
-            && Objects.equals(this.resourceType, orderReq.resourceType) && Objects.equals(this.tags, orderReq.tags);
+        OrderReq that = (OrderReq) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.commodityId, that.commodityId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.netId, that.netId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.promotionInfo, that.promotionInfo)
+            && Objects.equals(this.extesionPackageType, that.extesionPackageType)
+            && Objects.equals(this.bindingInstanceId, that.bindingInstanceId)
+            && Objects.equals(this.cdmVersion, that.cdmVersion)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

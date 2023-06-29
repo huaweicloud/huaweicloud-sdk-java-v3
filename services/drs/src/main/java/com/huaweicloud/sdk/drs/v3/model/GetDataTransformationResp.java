@@ -75,16 +75,16 @@ public class GetDataTransformationResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDataTransformationResp getDataTransformationResp = (GetDataTransformationResp) o;
-        return Objects.equals(this.totalCount, getDataTransformationResp.totalCount)
-            && Objects.equals(this.filterConditions, getDataTransformationResp.filterConditions);
+        GetDataTransformationResp that = (GetDataTransformationResp) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.filterConditions, that.filterConditions);
     }
 
     @Override

@@ -118,18 +118,16 @@ public class OprecordCluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OprecordCluster oprecordCluster = (OprecordCluster) o;
-        return Objects.equals(this.clusterType, oprecordCluster.clusterType)
-            && Objects.equals(this.name, oprecordCluster.name)
-            && Objects.equals(this.clusterId, oprecordCluster.clusterId)
-            && Objects.equals(this.nodeInfos, oprecordCluster.nodeInfos);
+        OprecordCluster that = (OprecordCluster) obj;
+        return Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodeInfos, that.nodeInfos);
     }
 
     @Override

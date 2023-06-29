@@ -63,22 +63,15 @@ public class ListApplicationsV6Request {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,22 +174,15 @@ public class ListApplicationsV6Request {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,8 +205,8 @@ public class ListApplicationsV6Request {
     private List<SortKeyEnum> sortKey = null;
 
     /**
-    * Gets or Sets sortDir
-    */
+     * Gets or Sets sortDir
+     */
     public static final class SortDirEnum {
 
         /**
@@ -263,22 +249,15 @@ public class ListApplicationsV6Request {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -536,25 +515,20 @@ public class ListApplicationsV6Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationsV6Request listApplicationsV6Request = (ListApplicationsV6Request) o;
-        return Objects.equals(this.xLanguage, listApplicationsV6Request.xLanguage)
-            && Objects.equals(this.attention, listApplicationsV6Request.attention)
-            && Objects.equals(this.regionId, listApplicationsV6Request.regionId)
-            && Objects.equals(this.keyword, listApplicationsV6Request.keyword)
-            && Objects.equals(this.projectId, listApplicationsV6Request.projectId)
-            && Objects.equals(this.topicId, listApplicationsV6Request.topicId)
-            && Objects.equals(this.isCreatedBySelf, listApplicationsV6Request.isCreatedBySelf)
-            && Objects.equals(this.sortKey, listApplicationsV6Request.sortKey)
-            && Objects.equals(this.sortDir, listApplicationsV6Request.sortDir)
-            && Objects.equals(this.limit, listApplicationsV6Request.limit)
-            && Objects.equals(this.offset, listApplicationsV6Request.offset);
+        ListApplicationsV6Request that = (ListApplicationsV6Request) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.attention, that.attention)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.isCreatedBySelf, that.isCreatedBySelf) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

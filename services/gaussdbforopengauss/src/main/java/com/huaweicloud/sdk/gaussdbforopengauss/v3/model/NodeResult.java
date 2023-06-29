@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 实例节点信息。
  */
-public class NodeResult  {
-
+public class NodeResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
 
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip")
-    
+    @JsonProperty(value = "public_ip")
 
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_names")
-    
+    @JsonProperty(value = "component_names")
 
     private String componentNames;
 
@@ -69,9 +54,6 @@ public class NodeResult  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID。
@@ -85,15 +67,10 @@ public class NodeResult  {
         this.id = id;
     }
 
-    
-
     public NodeResult withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 节点名称。
@@ -107,15 +84,10 @@ public class NodeResult  {
         this.name = name;
     }
 
-    
-
     public NodeResult withRole(String role) {
         this.role = role;
         return this;
     }
-
-    
-
 
     /**
      * 节点类型，取值为“master”、“slave”，分别对应于主节点、备节点。
@@ -129,15 +101,10 @@ public class NodeResult  {
         this.role = role;
     }
 
-    
-
     public NodeResult withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 节点状态。
@@ -151,15 +118,10 @@ public class NodeResult  {
         this.status = status;
     }
 
-    
-
     public NodeResult withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
-
-    
-
 
     /**
      * 可用区。
@@ -173,15 +135,10 @@ public class NodeResult  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public NodeResult withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
-
-    
-
 
     /**
      * 节点内网IP。分布式实例类型下该参数仅针对CN节点有效，主备版实例类型下该参数对所有节点有效，且在弹性云服务器创建成功后参数值存在。
@@ -195,15 +152,10 @@ public class NodeResult  {
         this.privateIp = privateIp;
     }
 
-    
-
     public NodeResult withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
     }
-
-    
-
 
     /**
      * 绑定的外网IP。分布式实例类型下该参数仅针对CN节点有效，主备版实例类型下该参数对所有节点有效，且在弹性云服务器创建成功并绑定弹性公网IP后参数值存在。
@@ -217,15 +169,10 @@ public class NodeResult  {
         this.publicIp = publicIp;
     }
 
-    
-
     public NodeResult withComponentNames(String componentNames) {
         this.componentNames = componentNames;
         return this;
     }
-
-    
-
 
     /**
      * 节点上组件信息（例组件ID:分布式ID），多个组件信息用;隔开。
@@ -239,30 +186,27 @@ public class NodeResult  {
         this.componentNames = componentNames;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeResult nodeResult = (NodeResult) o;
-        return Objects.equals(this.id, nodeResult.id) &&
-            Objects.equals(this.name, nodeResult.name) &&
-            Objects.equals(this.role, nodeResult.role) &&
-            Objects.equals(this.status, nodeResult.status) &&
-            Objects.equals(this.availabilityZone, nodeResult.availabilityZone) &&
-            Objects.equals(this.privateIp, nodeResult.privateIp) &&
-            Objects.equals(this.publicIp, nodeResult.publicIp) &&
-            Objects.equals(this.componentNames, nodeResult.componentNames);
+        NodeResult that = (NodeResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.componentNames, that.componentNames);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, role, status, availabilityZone, privateIp, publicIp, componentNames);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +222,7 @@ public class NodeResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +233,5 @@ public class NodeResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

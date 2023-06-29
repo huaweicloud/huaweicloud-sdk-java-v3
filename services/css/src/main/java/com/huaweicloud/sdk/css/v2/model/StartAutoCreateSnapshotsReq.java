@@ -99,18 +99,16 @@ public class StartAutoCreateSnapshotsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartAutoCreateSnapshotsReq startAutoCreateSnapshotsReq = (StartAutoCreateSnapshotsReq) o;
-        return Objects.equals(this.indices, startAutoCreateSnapshotsReq.indices)
-            && Objects.equals(this.keepday, startAutoCreateSnapshotsReq.keepday)
-            && Objects.equals(this.period, startAutoCreateSnapshotsReq.period)
-            && Objects.equals(this.prefix, startAutoCreateSnapshotsReq.prefix);
+        StartAutoCreateSnapshotsReq that = (StartAutoCreateSnapshotsReq) obj;
+        return Objects.equals(this.indices, that.indices) && Objects.equals(this.keepday, that.keepday)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.prefix, that.prefix);
     }
 
     @Override

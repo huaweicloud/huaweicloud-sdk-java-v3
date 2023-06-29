@@ -57,16 +57,15 @@ public class ListAppEnvsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppEnvsRequest listAppEnvsRequest = (ListAppEnvsRequest) o;
-        return Objects.equals(this.appId, listAppEnvsRequest.appId)
-            && Objects.equals(this.xBusinessId, listAppEnvsRequest.xBusinessId);
+        ListAppEnvsRequest that = (ListAppEnvsRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.xBusinessId, that.xBusinessId);
     }
 
     @Override

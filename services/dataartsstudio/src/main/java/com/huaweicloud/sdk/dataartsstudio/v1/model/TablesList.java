@@ -459,30 +459,25 @@ public class TablesList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TablesList tablesList = (TablesList) o;
-        return Objects.equals(this.tableName, tablesList.tableName) && Objects.equals(this.tableId, tablesList.tableId)
-            && Objects.equals(this.tableNameCn, tablesList.tableNameCn)
-            && Objects.equals(this.columns, tablesList.columns) && Objects.equals(this.dwId, tablesList.dwId)
-            && Objects.equals(this.dwName, tablesList.dwName) && Objects.equals(this.dwType, tablesList.dwType)
-            && Objects.equals(this.databaseName, tablesList.databaseName)
-            && Objects.equals(this.schemaName, tablesList.schemaName)
-            && Objects.equals(this.lifeCycle, tablesList.lifeCycle)
-            && Objects.equals(this.description, tablesList.description)
-            && Objects.equals(this.userId, tablesList.userId) && Objects.equals(this.userName, tablesList.userName)
-            && Objects.equals(this.projectId, tablesList.projectId)
-            && Objects.equals(this.createTime, tablesList.createTime)
-            && Objects.equals(this.tableSize, tablesList.tableSize)
-            && Objects.equals(this.totalCount, tablesList.totalCount)
-            && Objects.equals(this.isValid, tablesList.isValid)
-            && Objects.equals(this.extraSetting, tablesList.extraSetting)
-            && Objects.equals(this.partitioned, tablesList.partitioned);
+        TablesList that = (TablesList) obj;
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.tableNameCn, that.tableNameCn) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.dwId, that.dwId) && Objects.equals(this.dwName, that.dwName)
+            && Objects.equals(this.dwType, that.dwType) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.lifeCycle, that.lifeCycle)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.tableSize, that.tableSize)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.isValid, that.isValid)
+            && Objects.equals(this.extraSetting, that.extraSetting)
+            && Objects.equals(this.partitioned, that.partitioned);
     }
 
     @Override

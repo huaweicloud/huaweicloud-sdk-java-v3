@@ -132,19 +132,17 @@ public class UpdateRuleActionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleActionResponse updateRuleActionResponse = (UpdateRuleActionResponse) o;
-        return Objects.equals(this.actionId, updateRuleActionResponse.actionId)
-            && Objects.equals(this.ruleId, updateRuleActionResponse.ruleId)
-            && Objects.equals(this.appId, updateRuleActionResponse.appId)
-            && Objects.equals(this.channel, updateRuleActionResponse.channel)
-            && Objects.equals(this.channelDetail, updateRuleActionResponse.channelDetail);
+        UpdateRuleActionResponse that = (UpdateRuleActionResponse) obj;
+        return Objects.equals(this.actionId, that.actionId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.channel, that.channel)
+            && Objects.equals(this.channelDetail, that.channelDetail);
     }
 
     @Override

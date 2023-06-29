@@ -148,19 +148,17 @@ public class RenewalResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RenewalResourcesReq renewalResourcesReq = (RenewalResourcesReq) o;
-        return Objects.equals(this.resourceIds, renewalResourcesReq.resourceIds)
-            && Objects.equals(this.periodType, renewalResourcesReq.periodType)
-            && Objects.equals(this.periodNum, renewalResourcesReq.periodNum)
-            && Objects.equals(this.expirePolicy, renewalResourcesReq.expirePolicy)
-            && Objects.equals(this.isAutoPay, renewalResourcesReq.isAutoPay);
+        RenewalResourcesReq that = (RenewalResourcesReq) obj;
+        return Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.expirePolicy, that.expirePolicy)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

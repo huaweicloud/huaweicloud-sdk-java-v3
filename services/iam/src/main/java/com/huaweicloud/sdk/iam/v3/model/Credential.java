@@ -99,17 +99,16 @@ public class Credential {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Credential credential = (Credential) o;
-        return Objects.equals(this.expiresAt, credential.expiresAt) && Objects.equals(this.access, credential.access)
-            && Objects.equals(this.secret, credential.secret)
-            && Objects.equals(this.securitytoken, credential.securitytoken);
+        Credential that = (Credential) obj;
+        return Objects.equals(this.expiresAt, that.expiresAt) && Objects.equals(this.access, that.access)
+            && Objects.equals(this.secret, that.secret) && Objects.equals(this.securitytoken, that.securitytoken);
     }
 
     @Override

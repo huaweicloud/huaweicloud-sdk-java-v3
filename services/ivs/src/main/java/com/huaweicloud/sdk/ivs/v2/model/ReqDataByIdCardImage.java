@@ -77,17 +77,16 @@ public class ReqDataByIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReqDataByIdCardImage reqDataByIdCardImage = (ReqDataByIdCardImage) o;
-        return Objects.equals(this.idcardImage1, reqDataByIdCardImage.idcardImage1)
-            && Objects.equals(this.idcardImage2, reqDataByIdCardImage.idcardImage2)
-            && Objects.equals(this.faceImage, reqDataByIdCardImage.faceImage);
+        ReqDataByIdCardImage that = (ReqDataByIdCardImage) obj;
+        return Objects.equals(this.idcardImage1, that.idcardImage1)
+            && Objects.equals(this.idcardImage2, that.idcardImage2) && Objects.equals(this.faceImage, that.faceImage);
     }
 
     @Override

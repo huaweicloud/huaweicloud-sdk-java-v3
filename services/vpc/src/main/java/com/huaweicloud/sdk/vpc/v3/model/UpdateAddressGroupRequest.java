@@ -65,16 +65,15 @@ public class UpdateAddressGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAddressGroupRequest updateAddressGroupRequest = (UpdateAddressGroupRequest) o;
-        return Objects.equals(this.addressGroupId, updateAddressGroupRequest.addressGroupId)
-            && Objects.equals(this.body, updateAddressGroupRequest.body);
+        UpdateAddressGroupRequest that = (UpdateAddressGroupRequest) obj;
+        return Objects.equals(this.addressGroupId, that.addressGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

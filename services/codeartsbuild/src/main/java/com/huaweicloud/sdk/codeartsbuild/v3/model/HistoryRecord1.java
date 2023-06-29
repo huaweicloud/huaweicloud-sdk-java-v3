@@ -253,24 +253,20 @@ public class HistoryRecord1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryRecord1 historyRecord1 = (HistoryRecord1) o;
-        return Objects.equals(this.recordId, historyRecord1.recordId)
-            && Objects.equals(this.jobId, historyRecord1.jobId)
-            && Objects.equals(this.buildNumber, historyRecord1.buildNumber)
-            && Objects.equals(this.startTime, historyRecord1.startTime)
-            && Objects.equals(this.endTime, historyRecord1.endTime)
-            && Objects.equals(this.result, historyRecord1.result) && Objects.equals(this.branch, historyRecord1.branch)
-            && Objects.equals(this.commitId, historyRecord1.commitId)
-            && Objects.equals(this.commitMessage, historyRecord1.commitMessage)
-            && Objects.equals(this.executor, historyRecord1.executor)
-            && Objects.equals(this.triggerType, historyRecord1.triggerType);
+        HistoryRecord1 that = (HistoryRecord1) obj;
+        return Objects.equals(this.recordId, that.recordId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.buildNumber, that.buildNumber) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.branch, that.branch) && Objects.equals(this.commitId, that.commitId)
+            && Objects.equals(this.commitMessage, that.commitMessage) && Objects.equals(this.executor, that.executor)
+            && Objects.equals(this.triggerType, that.triggerType);
     }
 
     @Override

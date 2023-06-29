@@ -65,16 +65,16 @@ public class RecognizeWebImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeWebImageRequest recognizeWebImageRequest = (RecognizeWebImageRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeWebImageRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeWebImageRequest.body);
+        RecognizeWebImageRequest that = (RecognizeWebImageRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

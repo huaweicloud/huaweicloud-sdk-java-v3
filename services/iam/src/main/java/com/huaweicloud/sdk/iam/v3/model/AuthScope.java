@@ -74,15 +74,15 @@ public class AuthScope {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthScope authScope = (AuthScope) o;
-        return Objects.equals(this.domain, authScope.domain) && Objects.equals(this.project, authScope.project);
+        AuthScope that = (AuthScope) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.project, that.project);
     }
 
     @Override

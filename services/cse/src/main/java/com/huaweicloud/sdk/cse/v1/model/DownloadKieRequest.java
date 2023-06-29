@@ -70,22 +70,15 @@ public class DownloadKieRequest {
             if (value == null) {
                 return null;
             }
-            MatchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchEnum(value));
         }
 
         public static MatchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -211,19 +204,17 @@ public class DownloadKieRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadKieRequest downloadKieRequest = (DownloadKieRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, downloadKieRequest.xEnterpriseProjectID)
-            && Objects.equals(this.xEngineId, downloadKieRequest.xEngineId)
-            && Objects.equals(this.label, downloadKieRequest.label)
-            && Objects.equals(this.match, downloadKieRequest.match)
-            && Objects.equals(this.body, downloadKieRequest.body);
+        DownloadKieRequest that = (DownloadKieRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.xEngineId, that.xEngineId) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.match, that.match) && Objects.equals(this.body, that.body);
     }
 
     @Override

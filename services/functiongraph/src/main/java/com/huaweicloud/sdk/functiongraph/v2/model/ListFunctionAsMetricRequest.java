@@ -99,18 +99,16 @@ public class ListFunctionAsMetricRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionAsMetricRequest listFunctionAsMetricRequest = (ListFunctionAsMetricRequest) o;
-        return Objects.equals(this.type, listFunctionAsMetricRequest.type)
-            && Objects.equals(this.startTime, listFunctionAsMetricRequest.startTime)
-            && Objects.equals(this.endTime, listFunctionAsMetricRequest.endTime)
-            && Objects.equals(this.limit, listFunctionAsMetricRequest.limit);
+        ListFunctionAsMetricRequest that = (ListFunctionAsMetricRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

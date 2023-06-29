@@ -135,19 +135,18 @@ public class UpdateComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateComponentRequest updateComponentRequest = (UpdateComponentRequest) o;
-        return Objects.equals(this.componentId, updateComponentRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, updateComponentRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, updateComponentRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, updateComponentRequest.applicationId)
-            && Objects.equals(this.body, updateComponentRequest.body);
+        UpdateComponentRequest that = (UpdateComponentRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

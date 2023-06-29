@@ -121,19 +121,18 @@ public class EndpointSslConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointSslConfig endpointSslConfig = (EndpointSslConfig) o;
-        return Objects.equals(this.sslLink, endpointSslConfig.sslLink)
-            && Objects.equals(this.sslCertName, endpointSslConfig.sslCertName)
-            && Objects.equals(this.sslCertKey, endpointSslConfig.sslCertKey)
-            && Objects.equals(this.sslCertCheckSum, endpointSslConfig.sslCertCheckSum)
-            && Objects.equals(this.sslCertPassword, endpointSslConfig.sslCertPassword);
+        EndpointSslConfig that = (EndpointSslConfig) obj;
+        return Objects.equals(this.sslLink, that.sslLink) && Objects.equals(this.sslCertName, that.sslCertName)
+            && Objects.equals(this.sslCertKey, that.sslCertKey)
+            && Objects.equals(this.sslCertCheckSum, that.sslCertCheckSum)
+            && Objects.equals(this.sslCertPassword, that.sslCertPassword);
     }
 
     @Override

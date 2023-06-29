@@ -34,15 +34,15 @@ public class ChangeServerChargeModeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeServerChargeModeResponse changeServerChargeModeResponse = (ChangeServerChargeModeResponse) o;
-        return Objects.equals(this.orderId, changeServerChargeModeResponse.orderId);
+        ChangeServerChargeModeResponse that = (ChangeServerChargeModeResponse) obj;
+        return Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

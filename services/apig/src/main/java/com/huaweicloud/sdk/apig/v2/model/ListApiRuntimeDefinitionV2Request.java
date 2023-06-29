@@ -77,17 +77,16 @@ public class ListApiRuntimeDefinitionV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiRuntimeDefinitionV2Request listApiRuntimeDefinitionV2Request = (ListApiRuntimeDefinitionV2Request) o;
-        return Objects.equals(this.instanceId, listApiRuntimeDefinitionV2Request.instanceId)
-            && Objects.equals(this.apiId, listApiRuntimeDefinitionV2Request.apiId)
-            && Objects.equals(this.envId, listApiRuntimeDefinitionV2Request.envId);
+        ListApiRuntimeDefinitionV2Request that = (ListApiRuntimeDefinitionV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.envId, that.envId);
     }
 
     @Override

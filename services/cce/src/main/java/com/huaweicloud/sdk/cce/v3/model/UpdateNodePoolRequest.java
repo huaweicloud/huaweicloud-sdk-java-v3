@@ -87,17 +87,16 @@ public class UpdateNodePoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNodePoolRequest updateNodePoolRequest = (UpdateNodePoolRequest) o;
-        return Objects.equals(this.clusterId, updateNodePoolRequest.clusterId)
-            && Objects.equals(this.nodepoolId, updateNodePoolRequest.nodepoolId)
-            && Objects.equals(this.body, updateNodePoolRequest.body);
+        UpdateNodePoolRequest that = (UpdateNodePoolRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodepoolId, that.nodepoolId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

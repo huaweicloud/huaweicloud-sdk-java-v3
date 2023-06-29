@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.Shards;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SwitchShardRequestBody
  */
-public class SwitchShardRequestBody  {
-
+public class SwitchShardRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shards")
-    
+    @JsonProperty(value = "shards")
+
     private List<Shards> shards = null;
-    
+
     public SwitchShardRequestBody withShards(List<Shards> shards) {
         this.shards = shards;
         return this;
     }
 
-    
     public SwitchShardRequestBody addShardsItem(Shards shardsItem) {
-        if(this.shards == null) {
+        if (this.shards == null) {
             this.shards = new ArrayList<>();
         }
         this.shards.add(shardsItem);
@@ -40,7 +32,7 @@ public class SwitchShardRequestBody  {
     }
 
     public SwitchShardRequestBody withShards(Consumer<List<Shards>> shardsSetter) {
-        if(this.shards == null) {
+        if (this.shards == null) {
             this.shards = new ArrayList<>();
         }
         shardsSetter.accept(this.shards);
@@ -59,23 +51,23 @@ public class SwitchShardRequestBody  {
         this.shards = shards;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchShardRequestBody switchShardRequestBody = (SwitchShardRequestBody) o;
-        return Objects.equals(this.shards, switchShardRequestBody.shards);
+        SwitchShardRequestBody that = (SwitchShardRequestBody) obj;
+        return Objects.equals(this.shards, that.shards);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(shards);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class SwitchShardRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class SwitchShardRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -33,15 +33,15 @@ public class RestartClusterRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartClusterRequestBody restartClusterRequestBody = (RestartClusterRequestBody) o;
-        return Objects.equals(this.restart, restartClusterRequestBody.restart);
+        RestartClusterRequestBody that = (RestartClusterRequestBody) obj;
+        return Objects.equals(this.restart, that.restart);
     }
 
     @Override

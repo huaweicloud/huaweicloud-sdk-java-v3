@@ -75,16 +75,15 @@ public class ListBatchJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBatchJobResponse listBatchJobResponse = (ListBatchJobResponse) o;
-        return Objects.equals(this.jobCount, listBatchJobResponse.jobCount)
-            && Objects.equals(this.jobs, listBatchJobResponse.jobs);
+        ListBatchJobResponse that = (ListBatchJobResponse) obj;
+        return Objects.equals(this.jobCount, that.jobCount) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

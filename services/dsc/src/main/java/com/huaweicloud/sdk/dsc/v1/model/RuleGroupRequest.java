@@ -63,22 +63,15 @@ public class RuleGroupRequest {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,19 +237,17 @@ public class RuleGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleGroupRequest ruleGroupRequest = (RuleGroupRequest) o;
-        return Objects.equals(this.category, ruleGroupRequest.category)
-            && Objects.equals(this.defaultStatus, ruleGroupRequest.defaultStatus)
-            && Objects.equals(this.groupDesc, ruleGroupRequest.groupDesc)
-            && Objects.equals(this.groupName, ruleGroupRequest.groupName)
-            && Objects.equals(this.id, ruleGroupRequest.id) && Objects.equals(this.ruleIds, ruleGroupRequest.ruleIds);
+        RuleGroupRequest that = (RuleGroupRequest) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.defaultStatus, that.defaultStatus)
+            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ruleIds, that.ruleIds);
     }
 
     @Override

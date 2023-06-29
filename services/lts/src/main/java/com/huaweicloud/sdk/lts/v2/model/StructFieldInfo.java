@@ -143,20 +143,17 @@ public class StructFieldInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructFieldInfo structFieldInfo = (StructFieldInfo) o;
-        return Objects.equals(this.isAnalysis, structFieldInfo.isAnalysis)
-            && Objects.equals(this.content, structFieldInfo.content)
-            && Objects.equals(this.fieldName, structFieldInfo.fieldName)
-            && Objects.equals(this.type, structFieldInfo.type)
-            && Objects.equals(this.userDefinedName, structFieldInfo.userDefinedName)
-            && Objects.equals(this.index, structFieldInfo.index);
+        StructFieldInfo that = (StructFieldInfo) obj;
+        return Objects.equals(this.isAnalysis, that.isAnalysis) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.userDefinedName, that.userDefinedName) && Objects.equals(this.index, that.index);
     }
 
     @Override

@@ -189,23 +189,19 @@ public class ListApisUnbindedToRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisUnbindedToRequestThrottlingPolicyV2Request listApisUnbindedToRequestThrottlingPolicyV2Request =
-            (ListApisUnbindedToRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, listApisUnbindedToRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.offset, listApisUnbindedToRequestThrottlingPolicyV2Request.offset)
-            && Objects.equals(this.limit, listApisUnbindedToRequestThrottlingPolicyV2Request.limit)
-            && Objects.equals(this.throttleId, listApisUnbindedToRequestThrottlingPolicyV2Request.throttleId)
-            && Objects.equals(this.envId, listApisUnbindedToRequestThrottlingPolicyV2Request.envId)
-            && Objects.equals(this.groupId, listApisUnbindedToRequestThrottlingPolicyV2Request.groupId)
-            && Objects.equals(this.apiId, listApisUnbindedToRequestThrottlingPolicyV2Request.apiId)
-            && Objects.equals(this.apiName, listApisUnbindedToRequestThrottlingPolicyV2Request.apiName);
+        ListApisUnbindedToRequestThrottlingPolicyV2Request that =
+            (ListApisUnbindedToRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.throttleId, that.throttleId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override

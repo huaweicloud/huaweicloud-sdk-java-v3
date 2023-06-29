@@ -77,17 +77,17 @@ public class CheckRuleCheckCaseResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRuleCheckCaseResponseInfo checkRuleCheckCaseResponseInfo = (CheckRuleCheckCaseResponseInfo) o;
-        return Objects.equals(this.checkDescription, checkRuleCheckCaseResponseInfo.checkDescription)
-            && Objects.equals(this.currentValue, checkRuleCheckCaseResponseInfo.currentValue)
-            && Objects.equals(this.suggestValue, checkRuleCheckCaseResponseInfo.suggestValue);
+        CheckRuleCheckCaseResponseInfo that = (CheckRuleCheckCaseResponseInfo) obj;
+        return Objects.equals(this.checkDescription, that.checkDescription)
+            && Objects.equals(this.currentValue, that.currentValue)
+            && Objects.equals(this.suggestValue, that.suggestValue);
     }
 
     @Override

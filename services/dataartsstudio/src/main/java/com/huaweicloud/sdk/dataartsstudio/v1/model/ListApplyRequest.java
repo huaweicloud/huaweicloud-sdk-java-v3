@@ -121,19 +121,17 @@ public class ListApplyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplyRequest listApplyRequest = (ListApplyRequest) o;
-        return Objects.equals(this.workspace, listApplyRequest.workspace)
-            && Objects.equals(this.offset, listApplyRequest.offset)
-            && Objects.equals(this.limit, listApplyRequest.limit)
-            && Objects.equals(this.apiName, listApplyRequest.apiName)
-            && Objects.equals(this.queryType, listApplyRequest.queryType);
+        ListApplyRequest that = (ListApplyRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.queryType, that.queryType);
     }
 
     @Override

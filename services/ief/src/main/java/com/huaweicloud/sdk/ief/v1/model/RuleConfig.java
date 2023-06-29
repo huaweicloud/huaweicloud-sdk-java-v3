@@ -222,21 +222,19 @@ public class RuleConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleConfig ruleConfig = (RuleConfig) o;
-        return Objects.equals(this.description, ruleConfig.description)
-            && Objects.equals(this.iefInstanceId, ruleConfig.iefInstanceId)
-            && Objects.equals(this.inUsing, ruleConfig.inUsing) && Objects.equals(this.name, ruleConfig.name)
-            && Objects.equals(this.source, ruleConfig.source)
-            && Objects.equals(this.sourceResource, ruleConfig.sourceResource)
-            && Objects.equals(this.target, ruleConfig.target)
-            && Objects.equals(this.targetResource, ruleConfig.targetResource);
+        RuleConfig that = (RuleConfig) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.inUsing, that.inUsing)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.sourceResource, that.sourceResource) && Objects.equals(this.target, that.target)
+            && Objects.equals(this.targetResource, that.targetResource);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class DeleteSecretForScheduleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSecretForScheduleRequestBody deleteSecretForScheduleRequestBody = (DeleteSecretForScheduleRequestBody) o;
-        return Objects.equals(this.recoveryWindowInDays, deleteSecretForScheduleRequestBody.recoveryWindowInDays);
+        DeleteSecretForScheduleRequestBody that = (DeleteSecretForScheduleRequestBody) obj;
+        return Objects.equals(this.recoveryWindowInDays, that.recoveryWindowInDays);
     }
 
     @Override

@@ -150,19 +150,17 @@ public class CreateNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNodeResponse createNodeResponse = (CreateNodeResponse) o;
-        return Objects.equals(this.kind, createNodeResponse.kind)
-            && Objects.equals(this.apiVersion, createNodeResponse.apiVersion)
-            && Objects.equals(this.metadata, createNodeResponse.metadata)
-            && Objects.equals(this.spec, createNodeResponse.spec)
-            && Objects.equals(this.status, createNodeResponse.status);
+        CreateNodeResponse that = (CreateNodeResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

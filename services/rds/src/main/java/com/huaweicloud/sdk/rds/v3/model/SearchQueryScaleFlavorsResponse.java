@@ -53,15 +53,15 @@ public class SearchQueryScaleFlavorsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQueryScaleFlavorsResponse searchQueryScaleFlavorsResponse = (SearchQueryScaleFlavorsResponse) o;
-        return Objects.equals(this.computeFlavorGroups, searchQueryScaleFlavorsResponse.computeFlavorGroups);
+        SearchQueryScaleFlavorsResponse that = (SearchQueryScaleFlavorsResponse) obj;
+        return Objects.equals(this.computeFlavorGroups, that.computeFlavorGroups);
     }
 
     @Override

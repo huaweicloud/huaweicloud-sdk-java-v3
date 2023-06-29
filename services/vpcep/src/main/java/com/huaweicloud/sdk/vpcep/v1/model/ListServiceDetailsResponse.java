@@ -85,22 +85,15 @@ public class ListServiceDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServerTypeEnum(value));
         }
 
         public static ServerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ListServiceDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,15 @@ public class ListServiceDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -328,8 +307,8 @@ public class ListServiceDetailsResponse extends SdkResponse {
     private List<PortList> ports = null;
 
     /**
-    * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
-    */
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     */
     public static final class TcpProxyEnum {
 
         /**
@@ -390,22 +369,15 @@ public class ListServiceDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TcpProxyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
         }
 
         public static TcpProxyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -802,32 +774,24 @@ public class ListServiceDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceDetailsResponse listServiceDetailsResponse = (ListServiceDetailsResponse) o;
-        return Objects.equals(this.id, listServiceDetailsResponse.id)
-            && Objects.equals(this.portId, listServiceDetailsResponse.portId)
-            && Objects.equals(this.serviceName, listServiceDetailsResponse.serviceName)
-            && Objects.equals(this.serverType, listServiceDetailsResponse.serverType)
-            && Objects.equals(this.vpcId, listServiceDetailsResponse.vpcId)
-            && Objects.equals(this.approvalEnabled, listServiceDetailsResponse.approvalEnabled)
-            && Objects.equals(this.status, listServiceDetailsResponse.status)
-            && Objects.equals(this.serviceType, listServiceDetailsResponse.serviceType)
-            && Objects.equals(this.createdAt, listServiceDetailsResponse.createdAt)
-            && Objects.equals(this.updatedAt, listServiceDetailsResponse.updatedAt)
-            && Objects.equals(this.projectId, listServiceDetailsResponse.projectId)
-            && Objects.equals(this.cidrType, listServiceDetailsResponse.cidrType)
-            && Objects.equals(this.ports, listServiceDetailsResponse.ports)
-            && Objects.equals(this.tcpProxy, listServiceDetailsResponse.tcpProxy)
-            && Objects.equals(this.tags, listServiceDetailsResponse.tags)
-            && Objects.equals(this.error, listServiceDetailsResponse.error)
-            && Objects.equals(this.enablePolicy, listServiceDetailsResponse.enablePolicy)
-            && Objects.equals(this.description, listServiceDetailsResponse.description);
+        ListServiceDetailsResponse that = (ListServiceDetailsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serverType, that.serverType)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.approvalEnabled, that.approvalEnabled)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.cidrType, that.cidrType)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.enablePolicy, that.enablePolicy)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

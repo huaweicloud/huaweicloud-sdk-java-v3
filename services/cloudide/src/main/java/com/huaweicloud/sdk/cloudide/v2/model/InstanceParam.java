@@ -68,22 +68,15 @@ public class InstanceParam {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchEnum(value));
         }
 
         public static ArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class InstanceParam {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuMemoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuMemoryEnum(value));
         }
 
         public static CpuMemoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -290,22 +276,15 @@ public class InstanceParam {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PvcQuantityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PvcQuantityEnum(value));
         }
 
         public static PvcQuantityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -742,32 +721,26 @@ public class InstanceParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceParam instanceParam = (InstanceParam) o;
-        return Objects.equals(this.agentId, instanceParam.agentId) && Objects.equals(this.arch, instanceParam.arch)
-            && Objects.equals(this.cpuMemory, instanceParam.cpuMemory)
-            && Objects.equals(this.description, instanceParam.description)
-            && Objects.equals(this.displayName, instanceParam.displayName)
-            && Objects.equals(this.isTemporary, instanceParam.isTemporary)
-            && Objects.equals(this.labelTag, instanceParam.labelTag)
-            && Objects.equals(this.pluginEnableList, instanceParam.pluginEnableList)
-            && Objects.equals(this.pluginVars, instanceParam.pluginVars)
-            && Objects.equals(this.portId, instanceParam.portId)
-            && Objects.equals(this.privateIp, instanceParam.privateIp)
-            && Objects.equals(this.pvcQuantity, instanceParam.pvcQuantity)
-            && Objects.equals(this.refreshInterval, instanceParam.refreshInterval)
-            && Objects.equals(this.repositoryId, instanceParam.repositoryId)
-            && Objects.equals(this.stackId, instanceParam.stackId)
-            && Objects.equals(this.taskType, instanceParam.taskType) && Objects.equals(this.token, instanceParam.token)
-            && Objects.equals(this.vpcId, instanceParam.vpcId)
-            && Objects.equals(this.instanceDomainId, instanceParam.instanceDomainId)
-            && Objects.equals(this.instanceUserId, instanceParam.instanceUserId);
+        InstanceParam that = (InstanceParam) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.cpuMemory, that.cpuMemory) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.isTemporary, that.isTemporary)
+            && Objects.equals(this.labelTag, that.labelTag)
+            && Objects.equals(this.pluginEnableList, that.pluginEnableList)
+            && Objects.equals(this.pluginVars, that.pluginVars) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.pvcQuantity, that.pvcQuantity)
+            && Objects.equals(this.refreshInterval, that.refreshInterval)
+            && Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.stackId, that.stackId)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.instanceDomainId, that.instanceDomainId)
+            && Objects.equals(this.instanceUserId, that.instanceUserId);
     }
 
     @Override

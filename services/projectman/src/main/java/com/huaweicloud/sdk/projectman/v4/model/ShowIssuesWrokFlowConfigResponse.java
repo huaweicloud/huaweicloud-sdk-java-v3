@@ -53,15 +53,15 @@ public class ShowIssuesWrokFlowConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIssuesWrokFlowConfigResponse showIssuesWrokFlowConfigResponse = (ShowIssuesWrokFlowConfigResponse) o;
-        return Objects.equals(this.workflows, showIssuesWrokFlowConfigResponse.workflows);
+        ShowIssuesWrokFlowConfigResponse that = (ShowIssuesWrokFlowConfigResponse) obj;
+        return Objects.equals(this.workflows, that.workflows);
     }
 
     @Override

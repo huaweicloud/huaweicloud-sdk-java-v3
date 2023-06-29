@@ -209,22 +209,19 @@ public class ListBatchesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBatchesRequest listBatchesRequest = (ListBatchesRequest) o;
-        return Objects.equals(this.clusterName, listBatchesRequest.clusterName)
-            && Objects.equals(this.end, listBatchesRequest.end) && Objects.equals(this.from, listBatchesRequest.from)
-            && Objects.equals(this.jobId, listBatchesRequest.jobId)
-            && Objects.equals(this.order, listBatchesRequest.order)
-            && Objects.equals(this.queueName, listBatchesRequest.queueName)
-            && Objects.equals(this.size, listBatchesRequest.size)
-            && Objects.equals(this.start, listBatchesRequest.start)
-            && Objects.equals(this.state, listBatchesRequest.state);
+        ListBatchesRequest that = (ListBatchesRequest) obj;
+        return Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.end, that.end)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.state, that.state);
     }
 
     @Override

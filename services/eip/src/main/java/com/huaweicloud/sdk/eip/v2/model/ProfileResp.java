@@ -99,17 +99,16 @@ public class ProfileResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProfileResp profileResp = (ProfileResp) o;
-        return Objects.equals(this.orderId, profileResp.orderId)
-            && Objects.equals(this.productId, profileResp.productId)
-            && Objects.equals(this.regionId, profileResp.regionId) && Objects.equals(this.userId, profileResp.userId);
+        ProfileResp that = (ProfileResp) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

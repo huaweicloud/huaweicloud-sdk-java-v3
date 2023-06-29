@@ -143,20 +143,18 @@ public class DistinguishedName {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DistinguishedName distinguishedName = (DistinguishedName) o;
-        return Objects.equals(this.commonName, distinguishedName.commonName)
-            && Objects.equals(this.country, distinguishedName.country)
-            && Objects.equals(this.state, distinguishedName.state)
-            && Objects.equals(this.locality, distinguishedName.locality)
-            && Objects.equals(this.organization, distinguishedName.organization)
-            && Objects.equals(this.organizationalUnit, distinguishedName.organizationalUnit);
+        DistinguishedName that = (DistinguishedName) obj;
+        return Objects.equals(this.commonName, that.commonName) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.locality, that.locality)
+            && Objects.equals(this.organization, that.organization)
+            && Objects.equals(this.organizationalUnit, that.organizationalUnit);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class InvoiceVerificationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InvoiceVerificationRequestBody invoiceVerificationRequestBody = (InvoiceVerificationRequestBody) o;
-        return Objects.equals(this.code, invoiceVerificationRequestBody.code)
-            && Objects.equals(this.number, invoiceVerificationRequestBody.number)
-            && Objects.equals(this.issueDate, invoiceVerificationRequestBody.issueDate)
-            && Objects.equals(this.checkCode, invoiceVerificationRequestBody.checkCode)
-            && Objects.equals(this.subtotalAmount, invoiceVerificationRequestBody.subtotalAmount);
+        InvoiceVerificationRequestBody that = (InvoiceVerificationRequestBody) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.checkCode, that.checkCode)
+            && Objects.equals(this.subtotalAmount, that.subtotalAmount);
     }
 
     @Override

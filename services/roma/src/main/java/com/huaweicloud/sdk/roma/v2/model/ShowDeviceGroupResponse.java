@@ -295,25 +295,22 @@ public class ShowDeviceGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceGroupResponse showDeviceGroupResponse = (ShowDeviceGroupResponse) o;
-        return Objects.equals(this.permissions, showDeviceGroupResponse.permissions)
-            && Objects.equals(this.parentId, showDeviceGroupResponse.parentId)
-            && Objects.equals(this.id, showDeviceGroupResponse.id)
-            && Objects.equals(this.name, showDeviceGroupResponse.name)
-            && Objects.equals(this.description, showDeviceGroupResponse.description)
-            && Objects.equals(this.appId, showDeviceGroupResponse.appId)
-            && Objects.equals(this.createdUser, showDeviceGroupResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, showDeviceGroupResponse.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, showDeviceGroupResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, showDeviceGroupResponse.lastUpdatedDatetime)
-            && Objects.equals(this.appName, showDeviceGroupResponse.appName);
+        ShowDeviceGroupResponse that = (ShowDeviceGroupResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.appName, that.appName);
     }
 
     @Override

@@ -87,22 +87,15 @@ public class BriefStructTemplateModel {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TemplateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
         }
 
         public static TemplateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,19 +210,17 @@ public class BriefStructTemplateModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BriefStructTemplateModel briefStructTemplateModel = (BriefStructTemplateModel) o;
-        return Objects.equals(this.createTime, briefStructTemplateModel.createTime)
-            && Objects.equals(this.id, briefStructTemplateModel.id)
-            && Objects.equals(this.templateName, briefStructTemplateModel.templateName)
-            && Objects.equals(this.templateType, briefStructTemplateModel.templateType)
-            && Objects.equals(this.projectId, briefStructTemplateModel.projectId);
+        BriefStructTemplateModel that = (BriefStructTemplateModel) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

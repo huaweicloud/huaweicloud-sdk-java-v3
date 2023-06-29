@@ -99,18 +99,17 @@ public class OpExtendInfoRestore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoRestore opExtendInfoRestore = (OpExtendInfoRestore) o;
-        return Objects.equals(this.backupId, opExtendInfoRestore.backupId)
-            && Objects.equals(this.backupName, opExtendInfoRestore.backupName)
-            && Objects.equals(this.targetResourceId, opExtendInfoRestore.targetResourceId)
-            && Objects.equals(this.targetResourceName, opExtendInfoRestore.targetResourceName);
+        OpExtendInfoRestore that = (OpExtendInfoRestore) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupName, that.backupName)
+            && Objects.equals(this.targetResourceId, that.targetResourceId)
+            && Objects.equals(this.targetResourceName, that.targetResourceName);
     }
 
     @Override

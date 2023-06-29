@@ -125,19 +125,17 @@ public class ListItaSubJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListItaSubJobsRequest listItaSubJobsRequest = (ListItaSubJobsRequest) o;
-        return Objects.equals(this.status, listItaSubJobsRequest.status)
-            && Objects.equals(this.jobId, listItaSubJobsRequest.jobId)
-            && Objects.equals(this.jobType, listItaSubJobsRequest.jobType)
-            && Objects.equals(this.limit, listItaSubJobsRequest.limit)
-            && Objects.equals(this.offset, listItaSubJobsRequest.offset);
+        ListItaSubJobsRequest that = (ListItaSubJobsRequest) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

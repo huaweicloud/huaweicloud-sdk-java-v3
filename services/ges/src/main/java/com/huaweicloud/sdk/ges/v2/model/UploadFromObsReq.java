@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.UploadFromObsReqEncryption;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 从OBS导入元数据请求体
  */
-public class UploadFromObsReq  {
-
+public class UploadFromObsReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_path")
-    
+    @JsonProperty(value = "metadata_path")
 
     private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encryption")
-    
+    @JsonProperty(value = "encryption")
 
     private UploadFromObsReqEncryption encryption;
 
@@ -46,9 +35,6 @@ public class UploadFromObsReq  {
         this.metadataPath = metadataPath;
         return this;
     }
-
-    
-
 
     /**
      * 元数据存储地址。
@@ -62,15 +48,10 @@ public class UploadFromObsReq  {
         this.metadataPath = metadataPath;
     }
 
-    
-
     public UploadFromObsReq withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 元数据的名字。
@@ -84,15 +65,10 @@ public class UploadFromObsReq  {
         this.name = name;
     }
 
-    
-
     public UploadFromObsReq withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 对元数据的描述。
@@ -106,22 +82,19 @@ public class UploadFromObsReq  {
         this.description = description;
     }
 
-    
-
     public UploadFromObsReq withEncryption(UploadFromObsReqEncryption encryption) {
         this.encryption = encryption;
         return this;
     }
 
     public UploadFromObsReq withEncryption(Consumer<UploadFromObsReqEncryption> encryptionSetter) {
-        if(this.encryption == null ){
+        if (this.encryption == null) {
             this.encryption = new UploadFromObsReqEncryption();
             encryptionSetter.accept(this.encryption);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get encryption
@@ -135,26 +108,24 @@ public class UploadFromObsReq  {
         this.encryption = encryption;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadFromObsReq uploadFromObsReq = (UploadFromObsReq) o;
-        return Objects.equals(this.metadataPath, uploadFromObsReq.metadataPath) &&
-            Objects.equals(this.name, uploadFromObsReq.name) &&
-            Objects.equals(this.description, uploadFromObsReq.description) &&
-            Objects.equals(this.encryption, uploadFromObsReq.encryption);
+        UploadFromObsReq that = (UploadFromObsReq) obj;
+        return Objects.equals(this.metadataPath, that.metadataPath) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.encryption, that.encryption);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metadataPath, name, description, encryption);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,6 +137,7 @@ public class UploadFromObsReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -176,8 +148,5 @@ public class UploadFromObsReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

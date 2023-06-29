@@ -43,15 +43,15 @@ public class ShowAdmetPropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAdmetPropertiesRequest showAdmetPropertiesRequest = (ShowAdmetPropertiesRequest) o;
-        return Objects.equals(this.body, showAdmetPropertiesRequest.body);
+        ShowAdmetPropertiesRequest that = (ShowAdmetPropertiesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

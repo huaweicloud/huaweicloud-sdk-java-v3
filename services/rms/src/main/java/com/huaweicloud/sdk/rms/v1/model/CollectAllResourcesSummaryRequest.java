@@ -226,20 +226,17 @@ public class CollectAllResourcesSummaryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectAllResourcesSummaryRequest collectAllResourcesSummaryRequest = (CollectAllResourcesSummaryRequest) o;
-        return Objects.equals(this.name, collectAllResourcesSummaryRequest.name)
-            && Objects.equals(this.type, collectAllResourcesSummaryRequest.type)
-            && Objects.equals(this.regionId, collectAllResourcesSummaryRequest.regionId)
-            && Objects.equals(this.epId, collectAllResourcesSummaryRequest.epId)
-            && Objects.equals(this.projectId, collectAllResourcesSummaryRequest.projectId)
-            && Objects.equals(this.tags, collectAllResourcesSummaryRequest.tags);
+        CollectAllResourcesSummaryRequest that = (CollectAllResourcesSummaryRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

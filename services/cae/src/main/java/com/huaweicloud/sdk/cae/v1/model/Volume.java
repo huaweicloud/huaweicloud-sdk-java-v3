@@ -70,22 +70,15 @@ public class Volume {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class Volume {
             if (value == null) {
                 return null;
             }
-            ResourceSubTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceSubTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceSubTypeEnum(value));
         }
 
         public static ResourceSubTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceSubTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,18 +299,18 @@ public class Volume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Volume volume = (Volume) o;
-        return Objects.equals(this.id, volume.id) && Objects.equals(this.resourceInfo, volume.resourceInfo)
-            && Objects.equals(this.resourceName, volume.resourceName)
-            && Objects.equals(this.resourceType, volume.resourceType)
-            && Objects.equals(this.resourceSubType, volume.resourceSubType) && Objects.equals(this.time, volume.time);
+        Volume that = (Volume) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceInfo, that.resourceInfo)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSubType, that.resourceSubType) && Objects.equals(this.time, that.time);
     }
 
     @Override

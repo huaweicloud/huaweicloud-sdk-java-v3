@@ -145,19 +145,17 @@ public class OperateEventRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateEventRequestInfo operateEventRequestInfo = (OperateEventRequestInfo) o;
-        return Objects.equals(this.eventClassId, operateEventRequestInfo.eventClassId)
-            && Objects.equals(this.eventId, operateEventRequestInfo.eventId)
-            && Objects.equals(this.eventType, operateEventRequestInfo.eventType)
-            && Objects.equals(this.occurTime, operateEventRequestInfo.occurTime)
-            && Objects.equals(this.operateDetailList, operateEventRequestInfo.operateDetailList);
+        OperateEventRequestInfo that = (OperateEventRequestInfo) obj;
+        return Objects.equals(this.eventClassId, that.eventClassId) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.occurTime, that.occurTime)
+            && Objects.equals(this.operateDetailList, that.operateDetailList);
     }
 
     @Override

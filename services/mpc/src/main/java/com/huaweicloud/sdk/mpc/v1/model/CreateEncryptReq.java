@@ -127,18 +127,16 @@ public class CreateEncryptReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEncryptReq createEncryptReq = (CreateEncryptReq) o;
-        return Objects.equals(this.input, createEncryptReq.input)
-            && Objects.equals(this.output, createEncryptReq.output)
-            && Objects.equals(this.encryption, createEncryptReq.encryption)
-            && Objects.equals(this.userData, createEncryptReq.userData);
+        CreateEncryptReq that = (CreateEncryptReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.encryption, that.encryption) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

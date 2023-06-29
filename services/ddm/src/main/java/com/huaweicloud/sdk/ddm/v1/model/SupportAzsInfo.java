@@ -77,16 +77,16 @@ public class SupportAzsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SupportAzsInfo supportAzsInfo = (SupportAzsInfo) o;
-        return Objects.equals(this.code, supportAzsInfo.code) && Objects.equals(this.name, supportAzsInfo.name)
-            && Objects.equals(this.favored, supportAzsInfo.favored);
+        SupportAzsInfo that = (SupportAzsInfo) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.favored, that.favored);
     }
 
     @Override

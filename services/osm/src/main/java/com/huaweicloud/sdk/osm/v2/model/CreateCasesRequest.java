@@ -106,7 +106,7 @@ public class CreateCasesRequest {
     }
 
     /**
-     * 手机验证序列号id，如果选择非注册手机号提醒，必填
+     * 手机验证序列号id，如果是非注册联系方式则必填，通过\"查询已验证的列表\"接口查询获取
      * @return xPhoneVerifiedid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -125,7 +125,7 @@ public class CreateCasesRequest {
     }
 
     /**
-     * 邮件验证序列号id，如果选择非注册邮箱提醒，必填
+     * 邮件验证序列号id，如果是非注册联系方式则必填，通过\"查询已验证的列表\"接口查询获取
      * @return xEmailVerifiedid
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -165,20 +165,18 @@ public class CreateCasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCasesRequest createCasesRequest = (CreateCasesRequest) o;
-        return Objects.equals(this.xSite, createCasesRequest.xSite)
-            && Objects.equals(this.xLanguage, createCasesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, createCasesRequest.xTimeZone)
-            && Objects.equals(this.xPhoneVerifiedid, createCasesRequest.xPhoneVerifiedid)
-            && Objects.equals(this.xEmailVerifiedid, createCasesRequest.xEmailVerifiedid)
-            && Objects.equals(this.body, createCasesRequest.body);
+        CreateCasesRequest that = (CreateCasesRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.xPhoneVerifiedid, that.xPhoneVerifiedid)
+            && Objects.equals(this.xEmailVerifiedid, that.xEmailVerifiedid) && Objects.equals(this.body, that.body);
     }
 
     @Override

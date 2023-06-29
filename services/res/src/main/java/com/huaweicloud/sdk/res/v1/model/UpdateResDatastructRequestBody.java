@@ -96,17 +96,16 @@ public class UpdateResDatastructRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResDatastructRequestBody updateResDatastructRequestBody = (UpdateResDatastructRequestBody) o;
-        return Objects.equals(this.name, updateResDatastructRequestBody.name)
-            && Objects.equals(this.dataConfig, updateResDatastructRequestBody.dataConfig)
-            && Objects.equals(this.specsConfig, updateResDatastructRequestBody.specsConfig);
+        UpdateResDatastructRequestBody that = (UpdateResDatastructRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.dataConfig, that.dataConfig)
+            && Objects.equals(this.specsConfig, that.specsConfig);
     }
 
     @Override

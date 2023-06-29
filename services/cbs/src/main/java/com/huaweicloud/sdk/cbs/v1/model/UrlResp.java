@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.CreateRes;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class UrlResp  {
-
+public class UrlResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
 
     private String url;
 
@@ -40,9 +29,6 @@ public class UrlResp  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 图片id
@@ -56,15 +42,10 @@ public class UrlResp  {
         this.id = id;
     }
 
-    
-
     public UrlResp withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 
@@ -78,15 +59,10 @@ public class UrlResp  {
         this.name = name;
     }
 
-    
-
     public UrlResp withUrl(String url) {
         this.url = url;
         return this;
     }
-
-    
-
 
     /**
      * 访问地址
@@ -100,25 +76,24 @@ public class UrlResp  {
         this.url = url;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlResp urlResp = (UrlResp) o;
-        return Objects.equals(this.id, urlResp.id) &&
-            Objects.equals(this.name, urlResp.name) &&
-            Objects.equals(this.url, urlResp.url);
+        UrlResp that = (UrlResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.url, that.url);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, url);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class UrlResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class UrlResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

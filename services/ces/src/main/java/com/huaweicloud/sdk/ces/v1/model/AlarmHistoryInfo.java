@@ -501,32 +501,26 @@ public class AlarmHistoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmHistoryInfo alarmHistoryInfo = (AlarmHistoryInfo) o;
-        return Objects.equals(this.alarmId, alarmHistoryInfo.alarmId)
-            && Objects.equals(this.alarmName, alarmHistoryInfo.alarmName)
-            && Objects.equals(this.alarmDescription, alarmHistoryInfo.alarmDescription)
-            && Objects.equals(this.metric, alarmHistoryInfo.metric)
-            && Objects.equals(this.condition, alarmHistoryInfo.condition)
-            && Objects.equals(this.alarmLevel, alarmHistoryInfo.alarmLevel)
-            && Objects.equals(this.alarmType, alarmHistoryInfo.alarmType)
-            && Objects.equals(this.alarmEnabled, alarmHistoryInfo.alarmEnabled)
-            && Objects.equals(this.alarmActionEnabled, alarmHistoryInfo.alarmActionEnabled)
-            && Objects.equals(this.alarmActions, alarmHistoryInfo.alarmActions)
-            && Objects.equals(this.okActions, alarmHistoryInfo.okActions)
-            && Objects.equals(this.insufficientdataActions, alarmHistoryInfo.insufficientdataActions)
-            && Objects.equals(this.updateTime, alarmHistoryInfo.updateTime)
-            && Objects.equals(this.enterpriseProjectId, alarmHistoryInfo.enterpriseProjectId)
-            && Objects.equals(this.triggerTime, alarmHistoryInfo.triggerTime)
-            && Objects.equals(this.alarmStatus, alarmHistoryInfo.alarmStatus)
-            && Objects.equals(this.datapoints, alarmHistoryInfo.datapoints)
-            && Objects.equals(this.additionalInfo, alarmHistoryInfo.additionalInfo);
+        AlarmHistoryInfo that = (AlarmHistoryInfo) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.alarmName, that.alarmName)
+            && Objects.equals(this.alarmDescription, that.alarmDescription) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.alarmType, that.alarmType) && Objects.equals(this.alarmEnabled, that.alarmEnabled)
+            && Objects.equals(this.alarmActionEnabled, that.alarmActionEnabled)
+            && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
+            && Objects.equals(this.insufficientdataActions, that.insufficientdataActions)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.triggerTime, that.triggerTime) && Objects.equals(this.alarmStatus, that.alarmStatus)
+            && Objects.equals(this.datapoints, that.datapoints)
+            && Objects.equals(this.additionalInfo, that.additionalInfo);
     }
 
     @Override

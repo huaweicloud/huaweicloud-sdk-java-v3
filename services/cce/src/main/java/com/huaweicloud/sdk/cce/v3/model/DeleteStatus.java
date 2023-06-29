@@ -121,18 +121,17 @@ public class DeleteStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteStatus deleteStatus = (DeleteStatus) o;
-        return Objects.equals(this.previousTotal, deleteStatus.previousTotal)
-            && Objects.equals(this.currentTotal, deleteStatus.currentTotal)
-            && Objects.equals(this.updated, deleteStatus.updated) && Objects.equals(this.added, deleteStatus.added)
-            && Objects.equals(this.deleted, deleteStatus.deleted);
+        DeleteStatus that = (DeleteStatus) obj;
+        return Objects.equals(this.previousTotal, that.previousTotal)
+            && Objects.equals(this.currentTotal, that.currentTotal) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.added, that.added) && Objects.equals(this.deleted, that.deleted);
     }
 
     @Override

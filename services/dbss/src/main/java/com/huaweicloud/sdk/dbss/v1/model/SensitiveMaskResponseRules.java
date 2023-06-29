@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SensitiveMaskResponseRules
  */
-public class SensitiveMaskResponseRules  {
-
+public class SensitiveMaskResponseRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regex")
-    
+    @JsonProperty(value = "regex")
 
     private String regex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mask_value")
-    
+    @JsonProperty(value = "mask_value")
 
     private String maskValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operate_time")
-    
+    @JsonProperty(value = "operate_time")
 
     private String operateTime;
 
@@ -63,9 +49,6 @@ public class SensitiveMaskResponseRules  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 规则ID
@@ -79,15 +62,10 @@ public class SensitiveMaskResponseRules  {
         this.id = id;
     }
 
-    
-
     public SensitiveMaskResponseRules withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 规则名称
@@ -101,15 +79,10 @@ public class SensitiveMaskResponseRules  {
         this.name = name;
     }
 
-    
-
     public SensitiveMaskResponseRules withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 规则类型
@@ -123,15 +96,10 @@ public class SensitiveMaskResponseRules  {
         this.type = type;
     }
 
-    
-
     public SensitiveMaskResponseRules withRegex(String regex) {
         this.regex = regex;
         return this;
     }
-
-    
-
 
     /**
      * 规则正则表达式
@@ -145,15 +113,10 @@ public class SensitiveMaskResponseRules  {
         this.regex = regex;
     }
 
-    
-
     public SensitiveMaskResponseRules withMaskValue(String maskValue) {
         this.maskValue = maskValue;
         return this;
     }
-
-    
-
 
     /**
      * 替换值
@@ -167,15 +130,10 @@ public class SensitiveMaskResponseRules  {
         this.maskValue = maskValue;
     }
 
-    
-
     public SensitiveMaskResponseRules withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 规则状态
@@ -189,15 +147,10 @@ public class SensitiveMaskResponseRules  {
         this.status = status;
     }
 
-    
-
     public SensitiveMaskResponseRules withOperateTime(String operateTime) {
         this.operateTime = operateTime;
         return this;
     }
-
-    
-
 
     /**
      * 操作时间
@@ -211,29 +164,26 @@ public class SensitiveMaskResponseRules  {
         this.operateTime = operateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SensitiveMaskResponseRules sensitiveMaskResponseRules = (SensitiveMaskResponseRules) o;
-        return Objects.equals(this.id, sensitiveMaskResponseRules.id) &&
-            Objects.equals(this.name, sensitiveMaskResponseRules.name) &&
-            Objects.equals(this.type, sensitiveMaskResponseRules.type) &&
-            Objects.equals(this.regex, sensitiveMaskResponseRules.regex) &&
-            Objects.equals(this.maskValue, sensitiveMaskResponseRules.maskValue) &&
-            Objects.equals(this.status, sensitiveMaskResponseRules.status) &&
-            Objects.equals(this.operateTime, sensitiveMaskResponseRules.operateTime);
+        SensitiveMaskResponseRules that = (SensitiveMaskResponseRules) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.regex, that.regex)
+            && Objects.equals(this.maskValue, that.maskValue) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.operateTime, that.operateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, type, regex, maskValue, status, operateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class SensitiveMaskResponseRules  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class SensitiveMaskResponseRules  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

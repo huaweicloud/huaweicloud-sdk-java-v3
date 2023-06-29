@@ -33,15 +33,15 @@ public class AsyncCreateJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncCreateJobResp asyncCreateJobResp = (AsyncCreateJobResp) o;
-        return Objects.equals(this.asyncJobId, asyncCreateJobResp.asyncJobId);
+        AsyncCreateJobResp that = (AsyncCreateJobResp) obj;
+        return Objects.equals(this.asyncJobId, that.asyncJobId);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class EnvPods {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvPods envPods = (EnvPods) o;
-        return Objects.equals(this.name, envPods.name) && Objects.equals(this.value, envPods.value);
+        EnvPods that = (EnvPods) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

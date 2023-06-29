@@ -79,17 +79,16 @@ public class DeleteDepartmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDepartmentRequest deleteDepartmentRequest = (DeleteDepartmentRequest) o;
-        return Objects.equals(this.xRequestId, deleteDepartmentRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, deleteDepartmentRequest.acceptLanguage)
-            && Objects.equals(this.deptCode, deleteDepartmentRequest.deptCode);
+        DeleteDepartmentRequest that = (DeleteDepartmentRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.deptCode, that.deptCode);
     }
 
     @Override

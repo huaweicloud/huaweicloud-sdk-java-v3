@@ -77,16 +77,16 @@ public class BatchOperateJobRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchOperateJobRsp batchOperateJobRsp = (BatchOperateJobRsp) o;
-        return Objects.equals(this.id, batchOperateJobRsp.id) && Objects.equals(this.status, batchOperateJobRsp.status)
-            && Objects.equals(this.message, batchOperateJobRsp.message);
+        BatchOperateJobRsp that = (BatchOperateJobRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

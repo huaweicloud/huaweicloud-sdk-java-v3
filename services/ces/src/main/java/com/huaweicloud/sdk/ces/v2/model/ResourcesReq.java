@@ -52,15 +52,15 @@ public class ResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcesReq resourcesReq = (ResourcesReq) o;
-        return Objects.equals(this.resources, resourcesReq.resources);
+        ResourcesReq that = (ResourcesReq) obj;
+        return Objects.equals(this.resources, that.resources);
     }
 
     @Override

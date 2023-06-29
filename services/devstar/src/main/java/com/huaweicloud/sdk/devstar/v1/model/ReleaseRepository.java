@@ -187,21 +187,18 @@ public class ReleaseRepository {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReleaseRepository releaseRepository = (ReleaseRepository) o;
-        return Objects.equals(this.id, releaseRepository.id) && Objects.equals(this.name, releaseRepository.name)
-            && Objects.equals(this.downloadPath, releaseRepository.downloadPath)
-            && Objects.equals(this.size, releaseRepository.size)
-            && Objects.equals(this.categoryName, releaseRepository.categoryName)
-            && Objects.equals(this.fileType, releaseRepository.fileType)
-            && Objects.equals(this.created, releaseRepository.created)
-            && Objects.equals(this.updated, releaseRepository.updated);
+        ReleaseRepository that = (ReleaseRepository) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.downloadPath, that.downloadPath) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.categoryName, that.categoryName) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
 
     @Override

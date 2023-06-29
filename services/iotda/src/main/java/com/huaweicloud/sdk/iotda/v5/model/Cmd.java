@@ -147,17 +147,17 @@ public class Cmd {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Cmd CMD = (Cmd) o;
-        return Objects.equals(this.commandName, CMD.commandName) && Objects.equals(this.commandBody, CMD.commandBody)
-            && Objects.equals(this.serviceId, CMD.serviceId) && Objects.equals(this.bufferTimeout, CMD.bufferTimeout)
-            && Objects.equals(this.responseTimeout, CMD.responseTimeout) && Objects.equals(this.mode, CMD.mode);
+        Cmd that = (Cmd) obj;
+        return Objects.equals(this.commandName, that.commandName) && Objects.equals(this.commandBody, that.commandBody)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.bufferTimeout, that.bufferTimeout)
+            && Objects.equals(this.responseTimeout, that.responseTimeout) && Objects.equals(this.mode, that.mode);
     }
 
     @Override

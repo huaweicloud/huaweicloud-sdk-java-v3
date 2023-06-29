@@ -33,15 +33,15 @@ public class ListPostpaidBillSumRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPostpaidBillSumRequest listPostpaidBillSumRequest = (ListPostpaidBillSumRequest) o;
-        return Objects.equals(this.billCycle, listPostpaidBillSumRequest.billCycle);
+        ListPostpaidBillSumRequest that = (ListPostpaidBillSumRequest) obj;
+        return Objects.equals(this.billCycle, that.billCycle);
     }
 
     @Override

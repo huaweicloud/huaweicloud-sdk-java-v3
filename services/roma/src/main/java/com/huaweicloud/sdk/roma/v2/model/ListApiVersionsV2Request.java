@@ -145,20 +145,17 @@ public class ListApiVersionsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiVersionsV2Request listApiVersionsV2Request = (ListApiVersionsV2Request) o;
-        return Objects.equals(this.instanceId, listApiVersionsV2Request.instanceId)
-            && Objects.equals(this.apiId, listApiVersionsV2Request.apiId)
-            && Objects.equals(this.offset, listApiVersionsV2Request.offset)
-            && Objects.equals(this.limit, listApiVersionsV2Request.limit)
-            && Objects.equals(this.envId, listApiVersionsV2Request.envId)
-            && Objects.equals(this.envName, listApiVersionsV2Request.envName);
+        ListApiVersionsV2Request that = (ListApiVersionsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName);
     }
 
     @Override

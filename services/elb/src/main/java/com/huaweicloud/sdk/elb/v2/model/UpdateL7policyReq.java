@@ -121,19 +121,18 @@ public class UpdateL7policyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7policyReq updateL7policyReq = (UpdateL7policyReq) o;
-        return Objects.equals(this.name, updateL7policyReq.name)
-            && Objects.equals(this.adminStateUp, updateL7policyReq.adminStateUp)
-            && Objects.equals(this.description, updateL7policyReq.description)
-            && Objects.equals(this.redirectListenerId, updateL7policyReq.redirectListenerId)
-            && Objects.equals(this.redirectPoolId, updateL7policyReq.redirectPoolId);
+        UpdateL7policyReq that = (UpdateL7policyReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectPoolId, that.redirectPoolId);
     }
 
     @Override

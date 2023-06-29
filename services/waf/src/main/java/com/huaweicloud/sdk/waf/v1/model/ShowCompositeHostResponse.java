@@ -453,32 +453,25 @@ public class ShowCompositeHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCompositeHostResponse showCompositeHostResponse = (ShowCompositeHostResponse) o;
-        return Objects.equals(this.id, showCompositeHostResponse.id)
-            && Objects.equals(this.hostid, showCompositeHostResponse.hostid)
-            && Objects.equals(this.hostname, showCompositeHostResponse.hostname)
-            && Objects.equals(this.policyid, showCompositeHostResponse.policyid)
-            && Objects.equals(this.accessCode, showCompositeHostResponse.accessCode)
-            && Objects.equals(this.protectStatus, showCompositeHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, showCompositeHostResponse.accessStatus)
-            && Objects.equals(this.proxy, showCompositeHostResponse.proxy)
-            && Objects.equals(this.timestamp, showCompositeHostResponse.timestamp)
-            && Objects.equals(this.paidType, showCompositeHostResponse.paidType)
-            && Objects.equals(this.flag, showCompositeHostResponse.flag)
-            && Objects.equals(this.wafType, showCompositeHostResponse.wafType)
-            && Objects.equals(this.webTag, showCompositeHostResponse.webTag)
-            && Objects.equals(this.accessProgress, showCompositeHostResponse.accessProgress)
-            && Objects.equals(this.premiumWafInstances, showCompositeHostResponse.premiumWafInstances)
-            && Objects.equals(this.description, showCompositeHostResponse.description)
-            && Objects.equals(this.exclusiveIp, showCompositeHostResponse.exclusiveIp)
-            && Objects.equals(this.region, showCompositeHostResponse.region);
+        ShowCompositeHostResponse that = (ShowCompositeHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.proxy, that.proxy)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.paidType, that.paidType)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.wafType, that.wafType)
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.accessProgress, that.accessProgress)
+            && Objects.equals(this.premiumWafInstances, that.premiumWafInstances)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.exclusiveIp, that.exclusiveIp)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override

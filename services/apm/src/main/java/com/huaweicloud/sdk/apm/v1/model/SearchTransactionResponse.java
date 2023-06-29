@@ -119,18 +119,16 @@ public class SearchTransactionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchTransactionResponse searchTransactionResponse = (SearchTransactionResponse) o;
-        return Objects.equals(this.txItemList, searchTransactionResponse.txItemList)
-            && Objects.equals(this.latestTime, searchTransactionResponse.latestTime)
-            && Objects.equals(this.totalCount, searchTransactionResponse.totalCount)
-            && Objects.equals(this.resultId, searchTransactionResponse.resultId);
+        SearchTransactionResponse that = (SearchTransactionResponse) obj;
+        return Objects.equals(this.txItemList, that.txItemList) && Objects.equals(this.latestTime, that.latestTime)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.resultId, that.resultId);
     }
 
     @Override

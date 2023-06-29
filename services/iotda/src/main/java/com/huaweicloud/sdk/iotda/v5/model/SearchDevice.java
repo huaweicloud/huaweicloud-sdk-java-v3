@@ -363,26 +363,23 @@ public class SearchDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDevice searchDevice = (SearchDevice) o;
-        return Objects.equals(this.appId, searchDevice.appId) && Objects.equals(this.appName, searchDevice.appName)
-            && Objects.equals(this.deviceId, searchDevice.deviceId) && Objects.equals(this.nodeId, searchDevice.nodeId)
-            && Objects.equals(this.gatewayId, searchDevice.gatewayId)
-            && Objects.equals(this.deviceName, searchDevice.deviceName)
-            && Objects.equals(this.nodeType, searchDevice.nodeType)
-            && Objects.equals(this.fwVersion, searchDevice.fwVersion)
-            && Objects.equals(this.swVersion, searchDevice.swVersion)
-            && Objects.equals(this.deviceSdkVersion, searchDevice.deviceSdkVersion)
-            && Objects.equals(this.productId, searchDevice.productId)
-            && Objects.equals(this.productName, searchDevice.productName)
-            && Objects.equals(this.groups, searchDevice.groups) && Objects.equals(this.status, searchDevice.status)
-            && Objects.equals(this.tags, searchDevice.tags) && Objects.equals(this.marker, searchDevice.marker);
+        SearchDevice that = (SearchDevice) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.fwVersion, that.fwVersion)
+            && Objects.equals(this.swVersion, that.swVersion)
+            && Objects.equals(this.deviceSdkVersion, that.deviceSdkVersion)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.groups, that.groups) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

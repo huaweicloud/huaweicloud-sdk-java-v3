@@ -75,22 +75,15 @@ public class AccessConfigWindowsLogInfo {
             if (value == null) {
                 return null;
             }
-            CategorysEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategorysEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategorysEnum(value));
         }
 
         public static CategorysEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategorysEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class AccessConfigWindowsLogInfo {
             if (value == null) {
                 return null;
             }
-            EventLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventLevelEnum(value));
         }
 
         public static EventLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -310,17 +296,16 @@ public class AccessConfigWindowsLogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigWindowsLogInfo accessConfigWindowsLogInfo = (AccessConfigWindowsLogInfo) o;
-        return Objects.equals(this.categorys, accessConfigWindowsLogInfo.categorys)
-            && Objects.equals(this.timeOffset, accessConfigWindowsLogInfo.timeOffset)
-            && Objects.equals(this.eventLevel, accessConfigWindowsLogInfo.eventLevel);
+        AccessConfigWindowsLogInfo that = (AccessConfigWindowsLogInfo) obj;
+        return Objects.equals(this.categorys, that.categorys) && Objects.equals(this.timeOffset, that.timeOffset)
+            && Objects.equals(this.eventLevel, that.eventLevel);
     }
 
     @Override

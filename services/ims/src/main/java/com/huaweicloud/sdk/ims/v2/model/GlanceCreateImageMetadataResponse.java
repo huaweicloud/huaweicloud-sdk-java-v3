@@ -96,22 +96,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskFormatEnum(value));
         }
 
         public static DiskFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -211,22 +204,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -349,22 +335,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -436,22 +415,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsBitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsBitEnum(value));
         }
 
         public static OsBitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -529,22 +501,15 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VirtualEnvTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VirtualEnvTypeEnum(value));
         }
 
         public static VirtualEnvTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1143,44 +1108,31 @@ public class GlanceCreateImageMetadataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceCreateImageMetadataResponse glanceCreateImageMetadataResponse = (GlanceCreateImageMetadataResponse) o;
-        return Objects.equals(this.visibility, glanceCreateImageMetadataResponse.visibility)
-            && Objects.equals(this.name, glanceCreateImageMetadataResponse.name)
-            && Objects.equals(this._protected, glanceCreateImageMetadataResponse._protected)
-            && Objects.equals(this.containerFormat, glanceCreateImageMetadataResponse.containerFormat)
-            && Objects.equals(this.diskFormat, glanceCreateImageMetadataResponse.diskFormat)
-            && Objects.equals(this.tags, glanceCreateImageMetadataResponse.tags)
-            && Objects.equals(this.minRam, glanceCreateImageMetadataResponse.minRam)
-            && Objects.equals(this.minDisk, glanceCreateImageMetadataResponse.minDisk)
-            && Objects.equals(this.status, glanceCreateImageMetadataResponse.status)
-            && Objects.equals(this.createdAt, glanceCreateImageMetadataResponse.createdAt)
-            && Objects.equals(this.updatedAt, glanceCreateImageMetadataResponse.updatedAt)
-            && Objects.equals(this.self, glanceCreateImageMetadataResponse.self)
-            && Objects.equals(this.id, glanceCreateImageMetadataResponse.id)
-            && Objects.equals(this.file, glanceCreateImageMetadataResponse.file)
-            && Objects.equals(this.schema, glanceCreateImageMetadataResponse.schema)
-            && Objects.equals(this.imageSourceType, glanceCreateImageMetadataResponse.imageSourceType)
-            && Objects.equals(this.imageSize, glanceCreateImageMetadataResponse.imageSize)
-            && Objects.equals(this.isregistered, glanceCreateImageMetadataResponse.isregistered)
-            && Objects.equals(this.osVersion, glanceCreateImageMetadataResponse.osVersion)
-            && Objects.equals(this.osType, glanceCreateImageMetadataResponse.osType)
-            && Objects.equals(this.platform, glanceCreateImageMetadataResponse.platform)
-            && Objects.equals(this.osBit, glanceCreateImageMetadataResponse.osBit)
-            && Objects.equals(this.imagetype, glanceCreateImageMetadataResponse.imagetype)
-            && Objects.equals(this.virtualEnvType, glanceCreateImageMetadataResponse.virtualEnvType)
-            && Objects.equals(this.owner, glanceCreateImageMetadataResponse.owner)
-            && Objects.equals(this.virtualSize, glanceCreateImageMetadataResponse.virtualSize)
-            && Objects.equals(this.properties, glanceCreateImageMetadataResponse.properties)
-            && Objects.equals(this.rootOrigin, glanceCreateImageMetadataResponse.rootOrigin)
-            && Objects.equals(this.checksum, glanceCreateImageMetadataResponse.checksum)
-            && Objects.equals(this.size, glanceCreateImageMetadataResponse.size);
+        GlanceCreateImageMetadataResponse that = (GlanceCreateImageMetadataResponse) obj;
+        return Objects.equals(this.visibility, that.visibility) && Objects.equals(this.name, that.name)
+            && Objects.equals(this._protected, that._protected)
+            && Objects.equals(this.containerFormat, that.containerFormat)
+            && Objects.equals(this.diskFormat, that.diskFormat) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.minDisk, that.minDisk)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.self, that.self)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.file, that.file)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.imageSourceType, that.imageSourceType)
+            && Objects.equals(this.imageSize, that.imageSize) && Objects.equals(this.isregistered, that.isregistered)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.osBit, that.osBit)
+            && Objects.equals(this.imagetype, that.imagetype)
+            && Objects.equals(this.virtualEnvType, that.virtualEnvType) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.virtualSize, that.virtualSize) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.rootOrigin, that.rootOrigin) && Objects.equals(this.checksum, that.checksum)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

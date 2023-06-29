@@ -320,28 +320,21 @@ public class CreateXdmApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateXdmApplicationResponse createXdmApplicationResponse = (CreateXdmApplicationResponse) o;
-        return Objects.equals(this.id, createXdmApplicationResponse.id)
-            && Objects.equals(this.projectId, createXdmApplicationResponse.projectId)
-            && Objects.equals(this.markForDelete, createXdmApplicationResponse.markForDelete)
-            && Objects.equals(this.createBy, createXdmApplicationResponse.createBy)
-            && Objects.equals(this.createTime, createXdmApplicationResponse.createTime)
-            && Objects.equals(this.updateBy, createXdmApplicationResponse.updateBy)
-            && Objects.equals(this.updateTime, createXdmApplicationResponse.updateTime)
-            && Objects.equals(this.nameCn, createXdmApplicationResponse.nameCn)
-            && Objects.equals(this.nameEn, createXdmApplicationResponse.nameEn)
-            && Objects.equals(this.descCn, createXdmApplicationResponse.descCn)
-            && Objects.equals(this.descEn, createXdmApplicationResponse.descEn)
-            && Objects.equals(this.databaseType, createXdmApplicationResponse.databaseType)
-            && Objects.equals(this.environment, createXdmApplicationResponse.environment)
-            && Objects.equals(this.versions, createXdmApplicationResponse.versions);
+        CreateXdmApplicationResponse that = (CreateXdmApplicationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.markForDelete, that.markForDelete) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.nameCn, that.nameCn)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.descCn, that.descCn)
+            && Objects.equals(this.descEn, that.descEn) && Objects.equals(this.databaseType, that.databaseType)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.versions, that.versions);
     }
 
     @Override

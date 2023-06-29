@@ -55,17 +55,16 @@ public class CreateClusterPublicKibanaElbWhiteList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterPublicKibanaElbWhiteList createClusterPublicKibanaElbWhiteList =
-            (CreateClusterPublicKibanaElbWhiteList) o;
-        return Objects.equals(this.whiteList, createClusterPublicKibanaElbWhiteList.whiteList)
-            && Objects.equals(this.enableWhiteList, createClusterPublicKibanaElbWhiteList.enableWhiteList);
+        CreateClusterPublicKibanaElbWhiteList that = (CreateClusterPublicKibanaElbWhiteList) obj;
+        return Objects.equals(this.whiteList, that.whiteList)
+            && Objects.equals(this.enableWhiteList, that.enableWhiteList);
     }
 
     @Override

@@ -99,17 +99,16 @@ public class ListDatabasesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabasesResponse listDatabasesResponse = (ListDatabasesResponse) o;
-        return Objects.equals(this.totalCount, listDatabasesResponse.totalCount)
-            && Objects.equals(this.dwId, listDatabasesResponse.dwId)
-            && Objects.equals(this.databases, listDatabasesResponse.databases);
+        ListDatabasesResponse that = (ListDatabasesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.dwId, that.dwId)
+            && Objects.equals(this.databases, that.databases);
     }
 
     @Override

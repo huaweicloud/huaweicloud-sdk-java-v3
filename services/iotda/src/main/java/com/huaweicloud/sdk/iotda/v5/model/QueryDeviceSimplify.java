@@ -360,29 +360,22 @@ public class QueryDeviceSimplify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDeviceSimplify queryDeviceSimplify = (QueryDeviceSimplify) o;
-        return Objects.equals(this.appId, queryDeviceSimplify.appId)
-            && Objects.equals(this.appName, queryDeviceSimplify.appName)
-            && Objects.equals(this.deviceId, queryDeviceSimplify.deviceId)
-            && Objects.equals(this.nodeId, queryDeviceSimplify.nodeId)
-            && Objects.equals(this.gatewayId, queryDeviceSimplify.gatewayId)
-            && Objects.equals(this.deviceName, queryDeviceSimplify.deviceName)
-            && Objects.equals(this.nodeType, queryDeviceSimplify.nodeType)
-            && Objects.equals(this.description, queryDeviceSimplify.description)
-            && Objects.equals(this.fwVersion, queryDeviceSimplify.fwVersion)
-            && Objects.equals(this.swVersion, queryDeviceSimplify.swVersion)
-            && Objects.equals(this.deviceSdkVersion, queryDeviceSimplify.deviceSdkVersion)
-            && Objects.equals(this.productId, queryDeviceSimplify.productId)
-            && Objects.equals(this.productName, queryDeviceSimplify.productName)
-            && Objects.equals(this.status, queryDeviceSimplify.status)
-            && Objects.equals(this.tags, queryDeviceSimplify.tags);
+        QueryDeviceSimplify that = (QueryDeviceSimplify) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fwVersion, that.fwVersion) && Objects.equals(this.swVersion, that.swVersion)
+            && Objects.equals(this.deviceSdkVersion, that.deviceSdkVersion)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -176,21 +176,18 @@ public class LdApiDeployHistoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiDeployHistoryInfo ldApiDeployHistoryInfo = (LdApiDeployHistoryInfo) o;
-        return Objects.equals(this.id, ldApiDeployHistoryInfo.id)
-            && Objects.equals(this.ldApiId, ldApiDeployHistoryInfo.ldApiId)
-            && Objects.equals(this.groupId, ldApiDeployHistoryInfo.groupId)
-            && Objects.equals(this.envId, ldApiDeployHistoryInfo.envId)
-            && Objects.equals(this.apiId, ldApiDeployHistoryInfo.apiId)
-            && Objects.equals(this.deployTime, ldApiDeployHistoryInfo.deployTime)
-            && Objects.equals(this.apiDefinition, ldApiDeployHistoryInfo.apiDefinition);
+        LdApiDeployHistoryInfo that = (LdApiDeployHistoryInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.deployTime, that.deployTime)
+            && Objects.equals(this.apiDefinition, that.apiDefinition);
     }
 
     @Override

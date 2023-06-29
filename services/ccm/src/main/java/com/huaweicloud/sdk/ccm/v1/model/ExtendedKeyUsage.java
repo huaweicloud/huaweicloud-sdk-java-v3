@@ -121,19 +121,18 @@ public class ExtendedKeyUsage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendedKeyUsage extendedKeyUsage = (ExtendedKeyUsage) o;
-        return Objects.equals(this.serverAuth, extendedKeyUsage.serverAuth)
-            && Objects.equals(this.clientAuth, extendedKeyUsage.clientAuth)
-            && Objects.equals(this.codeSigning, extendedKeyUsage.codeSigning)
-            && Objects.equals(this.emailProtection, extendedKeyUsage.emailProtection)
-            && Objects.equals(this.timeStamping, extendedKeyUsage.timeStamping);
+        ExtendedKeyUsage that = (ExtendedKeyUsage) obj;
+        return Objects.equals(this.serverAuth, that.serverAuth) && Objects.equals(this.clientAuth, that.clientAuth)
+            && Objects.equals(this.codeSigning, that.codeSigning)
+            && Objects.equals(this.emailProtection, that.emailProtection)
+            && Objects.equals(this.timeStamping, that.timeStamping);
     }
 
     @Override

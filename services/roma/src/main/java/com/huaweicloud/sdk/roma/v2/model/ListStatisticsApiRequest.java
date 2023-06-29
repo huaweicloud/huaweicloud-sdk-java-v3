@@ -77,22 +77,15 @@ public class ListStatisticsApiRequest {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class ListStatisticsApiRequest {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CycleEnum(value));
         }
 
         public static CycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -364,22 +350,18 @@ public class ListStatisticsApiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatisticsApiRequest listStatisticsApiRequest = (ListStatisticsApiRequest) o;
-        return Objects.equals(this.instanceId, listStatisticsApiRequest.instanceId)
-            && Objects.equals(this.mode, listStatisticsApiRequest.mode)
-            && Objects.equals(this.romaAppId, listStatisticsApiRequest.romaAppId)
-            && Objects.equals(this.apiId, listStatisticsApiRequest.apiId)
-            && Objects.equals(this.cycle, listStatisticsApiRequest.cycle)
-            && Objects.equals(this.startTime, listStatisticsApiRequest.startTime)
-            && Objects.equals(this.endTime, listStatisticsApiRequest.endTime)
-            && Objects.equals(this.duration, listStatisticsApiRequest.duration);
+        ListStatisticsApiRequest that = (ListStatisticsApiRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.cycle, that.cycle) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ComponentModifyCustomMetric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentModifyCustomMetric componentModifyCustomMetric = (ComponentModifyCustomMetric) o;
-        return Objects.equals(this.path, componentModifyCustomMetric.path)
-            && Objects.equals(this.port, componentModifyCustomMetric.port)
-            && Objects.equals(this.dimensions, componentModifyCustomMetric.dimensions);
+        ComponentModifyCustomMetric that = (ComponentModifyCustomMetric) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

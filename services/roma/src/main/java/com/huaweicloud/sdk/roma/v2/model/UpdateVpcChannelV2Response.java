@@ -87,22 +87,15 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,22 +162,15 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +252,15 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -358,22 +337,15 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -608,25 +580,20 @@ public class UpdateVpcChannelV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcChannelV2Response updateVpcChannelV2Response = (UpdateVpcChannelV2Response) o;
-        return Objects.equals(this.name, updateVpcChannelV2Response.name)
-            && Objects.equals(this.port, updateVpcChannelV2Response.port)
-            && Objects.equals(this.balanceStrategy, updateVpcChannelV2Response.balanceStrategy)
-            && Objects.equals(this.memberType, updateVpcChannelV2Response.memberType)
-            && Objects.equals(this.dictCode, updateVpcChannelV2Response.dictCode)
-            && Objects.equals(this.createTime, updateVpcChannelV2Response.createTime)
-            && Objects.equals(this.id, updateVpcChannelV2Response.id)
-            && Objects.equals(this.status, updateVpcChannelV2Response.status)
-            && Objects.equals(this.memberGroups, updateVpcChannelV2Response.memberGroups)
-            && Objects.equals(this.microserviceInfo, updateVpcChannelV2Response.microserviceInfo)
-            && Objects.equals(this.type, updateVpcChannelV2Response.type);
+        UpdateVpcChannelV2Response that = (UpdateVpcChannelV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo) && Objects.equals(this.type, that.type);
     }
 
     @Override

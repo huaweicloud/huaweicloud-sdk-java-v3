@@ -96,17 +96,17 @@ public class CoverageResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CoverageResp coverageResp = (CoverageResp) o;
-        return Objects.equals(this.coveragePolicy, coverageResp.coveragePolicy)
-            && Objects.equals(this.coverageLevel, coverageResp.coverageLevel)
-            && Objects.equals(this.coverageSites, coverageResp.coverageSites);
+        CoverageResp that = (CoverageResp) obj;
+        return Objects.equals(this.coveragePolicy, that.coveragePolicy)
+            && Objects.equals(this.coverageLevel, that.coverageLevel)
+            && Objects.equals(this.coverageSites, that.coverageSites);
     }
 
     @Override

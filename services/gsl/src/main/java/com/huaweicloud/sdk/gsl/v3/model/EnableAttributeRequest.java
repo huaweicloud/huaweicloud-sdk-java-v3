@@ -34,15 +34,15 @@ public class EnableAttributeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableAttributeRequest enableAttributeRequest = (EnableAttributeRequest) o;
-        return Objects.equals(this.attributeId, enableAttributeRequest.attributeId);
+        EnableAttributeRequest that = (EnableAttributeRequest) obj;
+        return Objects.equals(this.attributeId, that.attributeId);
     }
 
     @Override

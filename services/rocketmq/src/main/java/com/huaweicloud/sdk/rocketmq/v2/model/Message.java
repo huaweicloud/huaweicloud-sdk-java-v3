@@ -339,22 +339,22 @@ public class Message {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Message message = (Message) o;
-        return Objects.equals(this.msgId, message.msgId) && Objects.equals(this.instanceId, message.instanceId)
-            && Objects.equals(this.topic, message.topic) && Objects.equals(this.storeTimestamp, message.storeTimestamp)
-            && Objects.equals(this.bornTimestamp, message.bornTimestamp)
-            && Objects.equals(this.reconsumeTimes, message.reconsumeTimes) && Objects.equals(this.body, message.body)
-            && Objects.equals(this.bodyCrc, message.bodyCrc) && Objects.equals(this.storeSize, message.storeSize)
-            && Objects.equals(this.propertyList, message.propertyList)
-            && Objects.equals(this.bornHost, message.bornHost) && Objects.equals(this.storeHost, message.storeHost)
-            && Objects.equals(this.queueId, message.queueId) && Objects.equals(this.queueOffset, message.queueOffset);
+        Message that = (Message) obj;
+        return Objects.equals(this.msgId, that.msgId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.storeTimestamp, that.storeTimestamp)
+            && Objects.equals(this.bornTimestamp, that.bornTimestamp)
+            && Objects.equals(this.reconsumeTimes, that.reconsumeTimes) && Objects.equals(this.body, that.body)
+            && Objects.equals(this.bodyCrc, that.bodyCrc) && Objects.equals(this.storeSize, that.storeSize)
+            && Objects.equals(this.propertyList, that.propertyList) && Objects.equals(this.bornHost, that.bornHost)
+            && Objects.equals(this.storeHost, that.storeHost) && Objects.equals(this.queueId, that.queueId)
+            && Objects.equals(this.queueOffset, that.queueOffset);
     }
 
     @Override

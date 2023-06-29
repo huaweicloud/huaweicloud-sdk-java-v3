@@ -414,26 +414,22 @@ public class ListL7RulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListL7RulesRequest listL7RulesRequest = (ListL7RulesRequest) o;
-        return Objects.equals(this.l7policyId, listL7RulesRequest.l7policyId)
-            && Objects.equals(this.limit, listL7RulesRequest.limit)
-            && Objects.equals(this.marker, listL7RulesRequest.marker)
-            && Objects.equals(this.pageReverse, listL7RulesRequest.pageReverse)
-            && Objects.equals(this.id, listL7RulesRequest.id)
-            && Objects.equals(this.compareType, listL7RulesRequest.compareType)
-            && Objects.equals(this.provisioningStatus, listL7RulesRequest.provisioningStatus)
-            && Objects.equals(this.invert, listL7RulesRequest.invert)
-            && Objects.equals(this.adminStateUp, listL7RulesRequest.adminStateUp)
-            && Objects.equals(this.value, listL7RulesRequest.value) && Objects.equals(this.key, listL7RulesRequest.key)
-            && Objects.equals(this.type, listL7RulesRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listL7RulesRequest.enterpriseProjectId);
+        ListL7RulesRequest that = (ListL7RulesRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.compareType, that.compareType)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.invert, that.invert) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

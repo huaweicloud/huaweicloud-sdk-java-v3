@@ -210,21 +210,20 @@ public class ShowDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataResponse showDataResponse = (ShowDataResponse) o;
-        return Objects.equals(this.path, showDataResponse.path) && Objects.equals(this.name, showDataResponse.name)
-            && Objects.equals(this.type, showDataResponse.type) && Objects.equals(this.size, showDataResponse.size)
-            && Objects.equals(this.createTime, showDataResponse.createTime)
-            && Objects.equals(this.content, showDataResponse.content)
-            && Objects.equals(this.downloadUrl, showDataResponse.downloadUrl)
-            && Objects.equals(this.allowedOperate, showDataResponse.allowedOperate)
-            && Objects.equals(this.deletable, showDataResponse.deletable);
+        ShowDataResponse that = (ShowDataResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.downloadUrl, that.downloadUrl)
+            && Objects.equals(this.allowedOperate, that.allowedOperate)
+            && Objects.equals(this.deletable, that.deletable);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateEventStreamingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEventStreamingRequest updateEventStreamingRequest = (UpdateEventStreamingRequest) o;
-        return Objects.equals(this.eventstreamingId, updateEventStreamingRequest.eventstreamingId)
-            && Objects.equals(this.body, updateEventStreamingRequest.body);
+        UpdateEventStreamingRequest that = (UpdateEventStreamingRequest) obj;
+        return Objects.equals(this.eventstreamingId, that.eventstreamingId) && Objects.equals(this.body, that.body);
     }
 
     @Override

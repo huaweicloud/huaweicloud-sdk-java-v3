@@ -72,22 +72,15 @@ public class FuncDestinationConfig {
             if (value == null) {
                 return null;
             }
-            DestinationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationEnum(value));
         }
 
         public static DestinationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DestinationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,16 +142,15 @@ public class FuncDestinationConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncDestinationConfig funcDestinationConfig = (FuncDestinationConfig) o;
-        return Objects.equals(this.destination, funcDestinationConfig.destination)
-            && Objects.equals(this.param, funcDestinationConfig.param);
+        FuncDestinationConfig that = (FuncDestinationConfig) obj;
+        return Objects.equals(this.destination, that.destination) && Objects.equals(this.param, that.param);
     }
 
     @Override

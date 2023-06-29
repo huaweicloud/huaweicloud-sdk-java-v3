@@ -60,22 +60,15 @@ public class ResourcePrice {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchEnum(value));
         }
 
         public static ArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,16 +176,16 @@ public class ResourcePrice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcePrice resourcePrice = (ResourcePrice) o;
-        return Objects.equals(this.arch, resourcePrice.arch) && Objects.equals(this.price, resourcePrice.price)
-            && Objects.equals(this.size, resourcePrice.size) && Objects.equals(this.type, resourcePrice.type);
+        ResourcePrice that = (ResourcePrice) obj;
+        return Objects.equals(this.arch, that.arch) && Objects.equals(this.price, that.price)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class UnlockPortRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnlockPortRequest unlockPortRequest = (UnlockPortRequest) o;
-        return Objects.equals(this.body, unlockPortRequest.body);
+        UnlockPortRequest that = (UnlockPortRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

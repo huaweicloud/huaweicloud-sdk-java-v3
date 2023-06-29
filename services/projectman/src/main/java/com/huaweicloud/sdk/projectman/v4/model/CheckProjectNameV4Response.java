@@ -34,15 +34,15 @@ public class CheckProjectNameV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckProjectNameV4Response checkProjectNameV4Response = (CheckProjectNameV4Response) o;
-        return Objects.equals(this.exist, checkProjectNameV4Response.exist);
+        CheckProjectNameV4Response that = (CheckProjectNameV4Response) obj;
+        return Objects.equals(this.exist, that.exist);
     }
 
     @Override

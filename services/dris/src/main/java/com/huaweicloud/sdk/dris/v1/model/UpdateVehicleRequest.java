@@ -87,17 +87,16 @@ public class UpdateVehicleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVehicleRequest updateVehicleRequest = (UpdateVehicleRequest) o;
-        return Objects.equals(this.instanceId, updateVehicleRequest.instanceId)
-            && Objects.equals(this.vehicleId, updateVehicleRequest.vehicleId)
-            && Objects.equals(this.body, updateVehicleRequest.body);
+        UpdateVehicleRequest that = (UpdateVehicleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vehicleId, that.vehicleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -109,18 +109,16 @@ public class AssociateCertificateV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateCertificateV2Request associateCertificateV2Request = (AssociateCertificateV2Request) o;
-        return Objects.equals(this.instanceId, associateCertificateV2Request.instanceId)
-            && Objects.equals(this.groupId, associateCertificateV2Request.groupId)
-            && Objects.equals(this.domainId, associateCertificateV2Request.domainId)
-            && Objects.equals(this.body, associateCertificateV2Request.body);
+        AssociateCertificateV2Request that = (AssociateCertificateV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

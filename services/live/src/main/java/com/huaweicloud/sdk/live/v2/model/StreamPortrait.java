@@ -201,21 +201,20 @@ public class StreamPortrait {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamPortrait streamPortrait = (StreamPortrait) o;
-        return Objects.equals(this.time, streamPortrait.time) && Objects.equals(this.flow, streamPortrait.flow)
-            && Objects.equals(this.playDuration, streamPortrait.playDuration)
-            && Objects.equals(this.requestCount, streamPortrait.requestCount)
-            && Objects.equals(this.userCount, streamPortrait.userCount)
-            && Objects.equals(this.peakUserCount, streamPortrait.peakUserCount)
-            && Objects.equals(this.peakBandwidth, streamPortrait.peakBandwidth)
-            && Objects.equals(this.pushDuration, streamPortrait.pushDuration);
+        StreamPortrait that = (StreamPortrait) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.flow, that.flow)
+            && Objects.equals(this.playDuration, that.playDuration)
+            && Objects.equals(this.requestCount, that.requestCount) && Objects.equals(this.userCount, that.userCount)
+            && Objects.equals(this.peakUserCount, that.peakUserCount)
+            && Objects.equals(this.peakBandwidth, that.peakBandwidth)
+            && Objects.equals(this.pushDuration, that.pushDuration);
     }
 
     @Override

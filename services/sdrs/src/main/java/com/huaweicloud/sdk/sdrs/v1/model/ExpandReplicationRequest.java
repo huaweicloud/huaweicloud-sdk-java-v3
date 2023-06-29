@@ -65,16 +65,15 @@ public class ExpandReplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandReplicationRequest expandReplicationRequest = (ExpandReplicationRequest) o;
-        return Objects.equals(this.replicationId, expandReplicationRequest.replicationId)
-            && Objects.equals(this.body, expandReplicationRequest.body);
+        ExpandReplicationRequest that = (ExpandReplicationRequest) obj;
+        return Objects.equals(this.replicationId, that.replicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

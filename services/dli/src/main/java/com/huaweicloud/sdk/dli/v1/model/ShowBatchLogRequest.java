@@ -121,19 +121,17 @@ public class ShowBatchLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchLogRequest showBatchLogRequest = (ShowBatchLogRequest) o;
-        return Objects.equals(this.batchId, showBatchLogRequest.batchId)
-            && Objects.equals(this.from, showBatchLogRequest.from)
-            && Objects.equals(this.index, showBatchLogRequest.index)
-            && Objects.equals(this.size, showBatchLogRequest.size)
-            && Objects.equals(this.type, showBatchLogRequest.type);
+        ShowBatchLogRequest that = (ShowBatchLogRequest) obj;
+        return Objects.equals(this.batchId, that.batchId) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

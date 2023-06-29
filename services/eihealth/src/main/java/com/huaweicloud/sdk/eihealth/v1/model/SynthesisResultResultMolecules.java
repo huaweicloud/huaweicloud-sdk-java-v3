@@ -77,17 +77,16 @@ public class SynthesisResultResultMolecules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisResultResultMolecules synthesisResultResultMolecules = (SynthesisResultResultMolecules) o;
-        return Objects.equals(this.id, synthesisResultResultMolecules.id)
-            && Objects.equals(this.smiles, synthesisResultResultMolecules.smiles)
-            && Objects.equals(this.source, synthesisResultResultMolecules.source);
+        SynthesisResultResultMolecules that = (SynthesisResultResultMolecules) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.source, that.source);
     }
 
     @Override

@@ -93,22 +93,15 @@ public class CheckpointResourceResp {
             if (value == null) {
                 return null;
             }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectStatusEnum(value));
         }
 
         public static ProtectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -287,22 +280,18 @@ public class CheckpointResourceResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointResourceResp checkpointResourceResp = (CheckpointResourceResp) o;
-        return Objects.equals(this.extraInfo, checkpointResourceResp.extraInfo)
-            && Objects.equals(this.id, checkpointResourceResp.id)
-            && Objects.equals(this.name, checkpointResourceResp.name)
-            && Objects.equals(this.protectStatus, checkpointResourceResp.protectStatus)
-            && Objects.equals(this.resourceSize, checkpointResourceResp.resourceSize)
-            && Objects.equals(this.type, checkpointResourceResp.type)
-            && Objects.equals(this.backupSize, checkpointResourceResp.backupSize)
-            && Objects.equals(this.backupCount, checkpointResourceResp.backupCount);
+        CheckpointResourceResp that = (CheckpointResourceResp) obj;
+        return Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.resourceSize, that.resourceSize) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.backupSize, that.backupSize) && Objects.equals(this.backupCount, that.backupCount);
     }
 
     @Override

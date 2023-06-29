@@ -77,16 +77,16 @@ public class SmnContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmnContentRsp smnContentRsp = (SmnContentRsp) o;
-        return Objects.equals(this.projectId, smnContentRsp.projectId) && Objects.equals(this.ak, smnContentRsp.ak)
-            && Objects.equals(this.sk, smnContentRsp.sk);
+        SmnContentRsp that = (SmnContentRsp) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.ak, that.ak)
+            && Objects.equals(this.sk, that.sk);
     }
 
     @Override

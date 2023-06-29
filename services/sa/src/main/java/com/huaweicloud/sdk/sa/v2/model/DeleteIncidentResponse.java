@@ -112,18 +112,16 @@ public class DeleteIncidentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIncidentResponse deleteIncidentResponse = (DeleteIncidentResponse) o;
-        return Objects.equals(this.code, deleteIncidentResponse.code)
-            && Objects.equals(this.message, deleteIncidentResponse.message)
-            && Objects.equals(this.data, deleteIncidentResponse.data)
-            && Objects.equals(this.xRequestId, deleteIncidentResponse.xRequestId);
+        DeleteIncidentResponse that = (DeleteIncidentResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

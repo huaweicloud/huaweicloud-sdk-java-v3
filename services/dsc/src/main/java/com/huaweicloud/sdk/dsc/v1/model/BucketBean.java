@@ -99,18 +99,16 @@ public class BucketBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BucketBean bucketBean = (BucketBean) o;
-        return Objects.equals(this.assetName, bucketBean.assetName)
-            && Objects.equals(this.location, bucketBean.location)
-            && Objects.equals(this.bucketName, bucketBean.bucketName)
-            && Objects.equals(this.bucketPolicy, bucketBean.bucketPolicy);
+        BucketBean that = (BucketBean) obj;
+        return Objects.equals(this.assetName, that.assetName) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.bucketPolicy, that.bucketPolicy);
     }
 
     @Override

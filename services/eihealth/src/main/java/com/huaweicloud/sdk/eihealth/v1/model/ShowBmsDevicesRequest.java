@@ -33,15 +33,15 @@ public class ShowBmsDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBmsDevicesRequest showBmsDevicesRequest = (ShowBmsDevicesRequest) o;
-        return Objects.equals(this.id, showBmsDevicesRequest.id);
+        ShowBmsDevicesRequest that = (ShowBmsDevicesRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

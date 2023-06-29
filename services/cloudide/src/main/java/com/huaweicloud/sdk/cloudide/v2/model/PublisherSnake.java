@@ -75,22 +75,15 @@ public class PublisherSnake {
             if (value == null) {
                 return null;
             }
-            PublisherStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PublisherStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublisherStatusEnum(value));
         }
 
         public static PublisherStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PublisherStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,20 +240,19 @@ public class PublisherSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublisherSnake publisherSnake = (PublisherSnake) o;
-        return Objects.equals(this.publisherId, publisherSnake.publisherId)
-            && Objects.equals(this.publisherName, publisherSnake.publisherName)
-            && Objects.equals(this.displayName, publisherSnake.displayName)
-            && Objects.equals(this.publisherStatus, publisherSnake.publisherStatus)
-            && Objects.equals(this.email, publisherSnake.email) && Objects.equals(this.webUrl, publisherSnake.webUrl)
-            && Objects.equals(this.open, publisherSnake.open);
+        PublisherSnake that = (PublisherSnake) obj;
+        return Objects.equals(this.publisherId, that.publisherId)
+            && Objects.equals(this.publisherName, that.publisherName)
+            && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.publisherStatus, that.publisherStatus) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.webUrl, that.webUrl) && Objects.equals(this.open, that.open);
     }
 
     @Override

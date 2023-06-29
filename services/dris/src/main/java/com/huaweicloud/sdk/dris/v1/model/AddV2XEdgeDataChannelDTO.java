@@ -65,16 +65,16 @@ public class AddV2XEdgeDataChannelDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddV2XEdgeDataChannelDTO addV2XEdgeDataChannelDTO = (AddV2XEdgeDataChannelDTO) o;
-        return Objects.equals(this.platformType, addV2XEdgeDataChannelDTO.platformType)
-            && Objects.equals(this.platformPara, addV2XEdgeDataChannelDTO.platformPara);
+        AddV2XEdgeDataChannelDTO that = (AddV2XEdgeDataChannelDTO) obj;
+        return Objects.equals(this.platformType, that.platformType)
+            && Objects.equals(this.platformPara, that.platformPara);
     }
 
     @Override

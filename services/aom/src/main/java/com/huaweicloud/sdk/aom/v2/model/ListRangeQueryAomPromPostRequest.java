@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListRangeQueryAomPromPostRequest  {
-
+public class ListRangeQueryAomPromPostRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="query")
-    
+    @JsonProperty(value = "query")
 
     private String query;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start")
-    
+    @JsonProperty(value = "start")
 
     private String start;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end")
-    
+    @JsonProperty(value = "end")
 
     private String end;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step")
-    
+    @JsonProperty(value = "step")
 
     private String step;
 
@@ -46,9 +34,6 @@ public class ListRangeQueryAomPromPostRequest  {
         this.query = query;
         return this;
     }
-
-    
-
 
     /**
      * PromQL表达式(参考https://prometheus.io/docs/prometheus/latest/querying/basics/)。
@@ -62,15 +47,10 @@ public class ListRangeQueryAomPromPostRequest  {
         this.query = query;
     }
 
-    
-
     public ListRangeQueryAomPromPostRequest withStart(String start) {
         this.start = start;
         return this;
     }
-
-    
-
 
     /**
      * 起始时间戳(Unix时间戳格式，单位：秒）。
@@ -84,15 +64,10 @@ public class ListRangeQueryAomPromPostRequest  {
         this.start = start;
     }
 
-    
-
     public ListRangeQueryAomPromPostRequest withEnd(String end) {
         this.end = end;
         return this;
     }
-
-    
-
 
     /**
      * 结束时间戳(Unix时间戳格式，单位：秒）。
@@ -106,15 +81,10 @@ public class ListRangeQueryAomPromPostRequest  {
         this.end = end;
     }
 
-    
-
     public ListRangeQueryAomPromPostRequest withStep(String step) {
         this.step = step;
         return this;
     }
-
-    
-
 
     /**
      * 查询时间步长，时间区内每step秒执行一次。
@@ -128,26 +98,24 @@ public class ListRangeQueryAomPromPostRequest  {
         this.step = step;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRangeQueryAomPromPostRequest listRangeQueryAomPromPostRequest = (ListRangeQueryAomPromPostRequest) o;
-        return Objects.equals(this.query, listRangeQueryAomPromPostRequest.query) &&
-            Objects.equals(this.start, listRangeQueryAomPromPostRequest.start) &&
-            Objects.equals(this.end, listRangeQueryAomPromPostRequest.end) &&
-            Objects.equals(this.step, listRangeQueryAomPromPostRequest.step);
+        ListRangeQueryAomPromPostRequest that = (ListRangeQueryAomPromPostRequest) obj;
+        return Objects.equals(this.query, that.query) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.end, that.end) && Objects.equals(this.step, that.step);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(query, start, end, step);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,6 +127,7 @@ public class ListRangeQueryAomPromPostRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -169,8 +138,5 @@ public class ListRangeQueryAomPromPostRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

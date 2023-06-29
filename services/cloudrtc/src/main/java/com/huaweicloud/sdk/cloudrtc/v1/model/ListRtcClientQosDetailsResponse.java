@@ -99,17 +99,16 @@ public class ListRtcClientQosDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcClientQosDetailsResponse listRtcClientQosDetailsResponse = (ListRtcClientQosDetailsResponse) o;
-        return Objects.equals(this.roomId, listRtcClientQosDetailsResponse.roomId)
-            && Objects.equals(this.data, listRtcClientQosDetailsResponse.data)
-            && Objects.equals(this.xRequestId, listRtcClientQosDetailsResponse.xRequestId);
+        ListRtcClientQosDetailsResponse that = (ListRtcClientQosDetailsResponse) obj;
+        return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

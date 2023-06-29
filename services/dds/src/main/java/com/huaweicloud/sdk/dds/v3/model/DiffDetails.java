@@ -77,17 +77,16 @@ public class DiffDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiffDetails diffDetails = (DiffDetails) o;
-        return Objects.equals(this.parameterName, diffDetails.parameterName)
-            && Objects.equals(this.sourceValue, diffDetails.sourceValue)
-            && Objects.equals(this.targetValue, diffDetails.targetValue);
+        DiffDetails that = (DiffDetails) obj;
+        return Objects.equals(this.parameterName, that.parameterName)
+            && Objects.equals(this.sourceValue, that.sourceValue) && Objects.equals(this.targetValue, that.targetValue);
     }
 
     @Override

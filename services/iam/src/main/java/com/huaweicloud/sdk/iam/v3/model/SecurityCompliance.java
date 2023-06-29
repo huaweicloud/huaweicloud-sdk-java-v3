@@ -55,16 +55,16 @@ public class SecurityCompliance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityCompliance securityCompliance = (SecurityCompliance) o;
-        return Objects.equals(this.passwordRegex, securityCompliance.passwordRegex)
-            && Objects.equals(this.passwordRegexDescription, securityCompliance.passwordRegexDescription);
+        SecurityCompliance that = (SecurityCompliance) obj;
+        return Objects.equals(this.passwordRegex, that.passwordRegex)
+            && Objects.equals(this.passwordRegexDescription, that.passwordRegexDescription);
     }
 
     @Override

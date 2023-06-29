@@ -61,22 +61,15 @@ public class PolicyAssignmentRequestBody {
             if (value == null) {
                 return null;
             }
-            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PolicyAssignmentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyAssignmentTypeEnum(value));
         }
 
         public static PolicyAssignmentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class PolicyAssignmentRequestBody {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -399,22 +385,20 @@ public class PolicyAssignmentRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyAssignmentRequestBody policyAssignmentRequestBody = (PolicyAssignmentRequestBody) o;
-        return Objects.equals(this.policyAssignmentType, policyAssignmentRequestBody.policyAssignmentType)
-            && Objects.equals(this.name, policyAssignmentRequestBody.name)
-            && Objects.equals(this.description, policyAssignmentRequestBody.description)
-            && Objects.equals(this.period, policyAssignmentRequestBody.period)
-            && Objects.equals(this.policyFilter, policyAssignmentRequestBody.policyFilter)
-            && Objects.equals(this.customPolicy, policyAssignmentRequestBody.customPolicy)
-            && Objects.equals(this.policyDefinitionId, policyAssignmentRequestBody.policyDefinitionId)
-            && Objects.equals(this.parameters, policyAssignmentRequestBody.parameters);
+        PolicyAssignmentRequestBody that = (PolicyAssignmentRequestBody) obj;
+        return Objects.equals(this.policyAssignmentType, that.policyAssignmentType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.policyFilter, that.policyFilter)
+            && Objects.equals(this.customPolicy, that.customPolicy)
+            && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

@@ -89,17 +89,16 @@ public class CreateWebinarRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWebinarRequest createWebinarRequest = (CreateWebinarRequest) o;
-        return Objects.equals(this.xRequestId, createWebinarRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, createWebinarRequest.acceptLanguage)
-            && Objects.equals(this.body, createWebinarRequest.body);
+        CreateWebinarRequest that = (CreateWebinarRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

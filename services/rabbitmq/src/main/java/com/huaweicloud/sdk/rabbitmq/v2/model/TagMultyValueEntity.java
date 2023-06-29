@@ -74,16 +74,15 @@ public class TagMultyValueEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagMultyValueEntity tagMultyValueEntity = (TagMultyValueEntity) o;
-        return Objects.equals(this.key, tagMultyValueEntity.key)
-            && Objects.equals(this.values, tagMultyValueEntity.values);
+        TagMultyValueEntity that = (TagMultyValueEntity) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override

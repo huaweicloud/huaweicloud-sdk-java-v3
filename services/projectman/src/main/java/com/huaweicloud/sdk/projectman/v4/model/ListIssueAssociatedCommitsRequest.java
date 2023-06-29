@@ -121,19 +121,17 @@ public class ListIssueAssociatedCommitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueAssociatedCommitsRequest listIssueAssociatedCommitsRequest = (ListIssueAssociatedCommitsRequest) o;
-        return Objects.equals(this.projectId, listIssueAssociatedCommitsRequest.projectId)
-            && Objects.equals(this.issueId, listIssueAssociatedCommitsRequest.issueId)
-            && Objects.equals(this.type, listIssueAssociatedCommitsRequest.type)
-            && Objects.equals(this.limit, listIssueAssociatedCommitsRequest.limit)
-            && Objects.equals(this.offset, listIssueAssociatedCommitsRequest.offset);
+        ListIssueAssociatedCommitsRequest that = (ListIssueAssociatedCommitsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

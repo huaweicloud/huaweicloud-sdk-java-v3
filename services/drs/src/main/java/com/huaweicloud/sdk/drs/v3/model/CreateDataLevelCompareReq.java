@@ -63,22 +63,15 @@ public class CreateDataLevelCompareReq {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConflictPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConflictPolicyEnum(value));
         }
 
         public static ConflictPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class CreateDataLevelCompareReq {
             if (value == null) {
                 return null;
             }
-            CompareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareTypeEnum(value));
         }
 
         public static CompareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -221,22 +207,15 @@ public class CreateDataLevelCompareReq {
             if (value == null) {
                 return null;
             }
-            CompareModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareModeEnum(value));
         }
 
         public static CompareModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -412,20 +391,19 @@ public class CreateDataLevelCompareReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataLevelCompareReq createDataLevelCompareReq = (CreateDataLevelCompareReq) o;
-        return Objects.equals(this.conflictPolicy, createDataLevelCompareReq.conflictPolicy)
-            && Objects.equals(this.compareType, createDataLevelCompareReq.compareType)
-            && Objects.equals(this.compareMode, createDataLevelCompareReq.compareMode)
-            && Objects.equals(this.startTime, createDataLevelCompareReq.startTime)
-            && Objects.equals(this.compareObjectInfos, createDataLevelCompareReq.compareObjectInfos)
-            && Objects.equals(this.compareObjectInfosWithToken, createDataLevelCompareReq.compareObjectInfosWithToken);
+        CreateDataLevelCompareReq that = (CreateDataLevelCompareReq) obj;
+        return Objects.equals(this.conflictPolicy, that.conflictPolicy)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.compareMode, that.compareMode)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.compareObjectInfos, that.compareObjectInfos)
+            && Objects.equals(this.compareObjectInfosWithToken, that.compareObjectInfosWithToken);
     }
 
     @Override

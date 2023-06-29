@@ -77,17 +77,17 @@ public class ListIpsSwitchStatusUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpsSwitchStatusUsingGetRequest listIpsSwitchStatusUsingGetRequest = (ListIpsSwitchStatusUsingGetRequest) o;
-        return Objects.equals(this.objectId, listIpsSwitchStatusUsingGetRequest.objectId)
-            && Objects.equals(this.enterpriseProjectId, listIpsSwitchStatusUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listIpsSwitchStatusUsingGetRequest.fwInstanceId);
+        ListIpsSwitchStatusUsingGetRequest that = (ListIpsSwitchStatusUsingGetRequest) obj;
+        return Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

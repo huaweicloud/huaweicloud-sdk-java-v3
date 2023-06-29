@@ -55,17 +55,15 @@ public class ListRestoreTimesResponseBodyRestoreTime {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRestoreTimesResponseBodyRestoreTime listRestoreTimesResponseBodyRestoreTime =
-            (ListRestoreTimesResponseBodyRestoreTime) o;
-        return Objects.equals(this.startTime, listRestoreTimesResponseBodyRestoreTime.startTime)
-            && Objects.equals(this.endTime, listRestoreTimesResponseBodyRestoreTime.endTime);
+        ListRestoreTimesResponseBodyRestoreTime that = (ListRestoreTimesResponseBodyRestoreTime) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

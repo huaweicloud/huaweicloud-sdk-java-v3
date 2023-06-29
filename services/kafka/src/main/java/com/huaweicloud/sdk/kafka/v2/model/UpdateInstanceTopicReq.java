@@ -52,15 +52,15 @@ public class UpdateInstanceTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceTopicReq updateInstanceTopicReq = (UpdateInstanceTopicReq) o;
-        return Objects.equals(this.topics, updateInstanceTopicReq.topics);
+        UpdateInstanceTopicReq that = (UpdateInstanceTopicReq) obj;
+        return Objects.equals(this.topics, that.topics);
     }
 
     @Override

@@ -131,19 +131,19 @@ public class DeleteDataobjectRelationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDataobjectRelationRequest deleteDataobjectRelationRequest = (DeleteDataobjectRelationRequest) o;
-        return Objects.equals(this.workspaceId, deleteDataobjectRelationRequest.workspaceId)
-            && Objects.equals(this.dataclassType, deleteDataobjectRelationRequest.dataclassType)
-            && Objects.equals(this.dataObjectId, deleteDataobjectRelationRequest.dataObjectId)
-            && Objects.equals(this.relatedDataclassType, deleteDataobjectRelationRequest.relatedDataclassType)
-            && Objects.equals(this.body, deleteDataobjectRelationRequest.body);
+        DeleteDataobjectRelationRequest that = (DeleteDataobjectRelationRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.dataclassType, that.dataclassType)
+            && Objects.equals(this.dataObjectId, that.dataObjectId)
+            && Objects.equals(this.relatedDataclassType, that.relatedDataclassType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

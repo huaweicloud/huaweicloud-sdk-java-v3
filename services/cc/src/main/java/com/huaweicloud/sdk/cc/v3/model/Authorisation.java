@@ -298,26 +298,22 @@ public class Authorisation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Authorisation authorisation = (Authorisation) o;
-        return Objects.equals(this.id, authorisation.id) && Objects.equals(this.name, authorisation.name)
-            && Objects.equals(this.description, authorisation.description)
-            && Objects.equals(this.status, authorisation.status)
-            && Objects.equals(this.createdAt, authorisation.createdAt)
-            && Objects.equals(this.updatedAt, authorisation.updatedAt)
-            && Objects.equals(this.domainId, authorisation.domainId)
-            && Objects.equals(this.instanceId, authorisation.instanceId)
-            && Objects.equals(this.instanceType, authorisation.instanceType)
-            && Objects.equals(this.regionId, authorisation.regionId)
-            && Objects.equals(this.projectId, authorisation.projectId)
-            && Objects.equals(this.cloudConnectionDomainId, authorisation.cloudConnectionDomainId)
-            && Objects.equals(this.cloudConnectionId, authorisation.cloudConnectionId);
+        Authorisation that = (Authorisation) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId);
     }
 
     @Override

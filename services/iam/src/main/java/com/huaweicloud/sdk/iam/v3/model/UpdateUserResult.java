@@ -329,26 +329,21 @@ public class UpdateUserResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserResult updateUserResult = (UpdateUserResult) o;
-        return Objects.equals(this.accessMode, updateUserResult.accessMode)
-            && Objects.equals(this.pwdStatus, updateUserResult.pwdStatus)
-            && Objects.equals(this.xuserId, updateUserResult.xuserId)
-            && Objects.equals(this.xuserType, updateUserResult.xuserType)
-            && Objects.equals(this.description, updateUserResult.description)
-            && Objects.equals(this.name, updateUserResult.name) && Objects.equals(this.phone, updateUserResult.phone)
-            && Objects.equals(this.domainId, updateUserResult.domainId)
-            && Objects.equals(this.enabled, updateUserResult.enabled)
-            && Objects.equals(this.areacode, updateUserResult.areacode)
-            && Objects.equals(this.email, updateUserResult.email) && Objects.equals(this.id, updateUserResult.id)
-            && Objects.equals(this.links, updateUserResult.links)
-            && Objects.equals(this.passwordExpiresAt, updateUserResult.passwordExpiresAt);
+        UpdateUserResult that = (UpdateUserResult) obj;
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.pwdStatus, that.pwdStatus)
+            && Objects.equals(this.xuserId, that.xuserId) && Objects.equals(this.xuserType, that.xuserType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
     }
 
     @Override

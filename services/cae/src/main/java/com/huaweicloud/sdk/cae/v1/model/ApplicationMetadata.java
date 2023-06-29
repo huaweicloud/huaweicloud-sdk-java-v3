@@ -140,18 +140,17 @@ public class ApplicationMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationMetadata applicationMetadata = (ApplicationMetadata) o;
-        return Objects.equals(this.id, applicationMetadata.id) && Objects.equals(this.name, applicationMetadata.name)
-            && Objects.equals(this.annotations, applicationMetadata.annotations)
-            && Objects.equals(this.createdAt, applicationMetadata.createdAt)
-            && Objects.equals(this.updatedAt, applicationMetadata.updatedAt);
+        ApplicationMetadata that = (ApplicationMetadata) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

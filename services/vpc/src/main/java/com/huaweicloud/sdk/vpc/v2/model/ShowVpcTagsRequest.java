@@ -33,15 +33,15 @@ public class ShowVpcTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVpcTagsRequest showVpcTagsRequest = (ShowVpcTagsRequest) o;
-        return Objects.equals(this.vpcId, showVpcTagsRequest.vpcId);
+        ShowVpcTagsRequest that = (ShowVpcTagsRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

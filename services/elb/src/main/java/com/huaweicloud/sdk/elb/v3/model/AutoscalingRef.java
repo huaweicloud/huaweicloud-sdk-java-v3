@@ -55,16 +55,15 @@ public class AutoscalingRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoscalingRef autoscalingRef = (AutoscalingRef) o;
-        return Objects.equals(this.enable, autoscalingRef.enable)
-            && Objects.equals(this.minL7FlavorId, autoscalingRef.minL7FlavorId);
+        AutoscalingRef that = (AutoscalingRef) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.minL7FlavorId, that.minL7FlavorId);
     }
 
     @Override

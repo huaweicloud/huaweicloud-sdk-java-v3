@@ -123,17 +123,17 @@ public class Reference {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Reference reference = (Reference) o;
-        return Objects.equals(this.title, reference.title) && Objects.equals(this.url, reference.url)
-            && Objects.equals(this.type, reference.type) && Objects.equals(this.productshort, reference.productshort)
-            && Objects.equals(this.isValid, reference.isValid);
+        Reference that = (Reference) obj;
+        return Objects.equals(this.title, that.title) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.productshort, that.productshort)
+            && Objects.equals(this.isValid, that.isValid);
     }
 
     @Override

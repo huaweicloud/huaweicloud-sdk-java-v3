@@ -75,22 +75,15 @@ public class NeutronFirewallRule {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -403,27 +396,23 @@ public class NeutronFirewallRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronFirewallRule neutronFirewallRule = (NeutronFirewallRule) o;
-        return Objects.equals(this.id, neutronFirewallRule.id) && Objects.equals(this.name, neutronFirewallRule.name)
-            && Objects.equals(this.description, neutronFirewallRule.description)
-            && Objects.equals(this.action, neutronFirewallRule.action)
-            && Objects.equals(this.protocol, neutronFirewallRule.protocol)
-            && Objects.equals(this.ipVersion, neutronFirewallRule.ipVersion)
-            && Objects.equals(this.enabled, neutronFirewallRule.enabled)
-            && Objects.equals(this._public, neutronFirewallRule._public)
-            && Objects.equals(this.destinationIpAddress, neutronFirewallRule.destinationIpAddress)
-            && Objects.equals(this.destinationPort, neutronFirewallRule.destinationPort)
-            && Objects.equals(this.sourceIpAddress, neutronFirewallRule.sourceIpAddress)
-            && Objects.equals(this.sourcePort, neutronFirewallRule.sourcePort)
-            && Objects.equals(this.tenantId, neutronFirewallRule.tenantId)
-            && Objects.equals(this.projectId, neutronFirewallRule.projectId);
+        NeutronFirewallRule that = (NeutronFirewallRule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this._public, that._public)
+            && Objects.equals(this.destinationIpAddress, that.destinationIpAddress)
+            && Objects.equals(this.destinationPort, that.destinationPort)
+            && Objects.equals(this.sourceIpAddress, that.sourceIpAddress)
+            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

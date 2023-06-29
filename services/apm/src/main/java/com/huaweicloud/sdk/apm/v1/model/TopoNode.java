@@ -99,16 +99,16 @@ public class TopoNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopoNode topoNode = (TopoNode) o;
-        return Objects.equals(this.nodeType, topoNode.nodeType) && Objects.equals(this.nodeName, topoNode.nodeName)
-            && Objects.equals(this.nodeId, topoNode.nodeId) && Objects.equals(this.envId, topoNode.envId);
+        TopoNode that = (TopoNode) obj;
+        return Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.nodeName, that.nodeName)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.envId, that.envId);
     }
 
     @Override

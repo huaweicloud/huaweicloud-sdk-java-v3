@@ -83,22 +83,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -292,22 +285,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            SpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecCodeEnum(value));
         }
 
         public static SpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -398,22 +384,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BillingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BillingModeEnum(value));
         }
 
         public static BillingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -474,22 +453,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -560,22 +532,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -666,22 +631,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            LocalAreaIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocalAreaIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocalAreaIdEnum(value));
         }
 
         public static LocalAreaIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocalAreaIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -772,22 +730,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            RemoteAreaIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RemoteAreaIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RemoteAreaIdEnum(value));
         }
 
         public static RemoteAreaIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RemoteAreaIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -859,22 +810,15 @@ public class BandwidthPackage {
             if (value == null) {
                 return null;
             }
-            InterflowModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InterflowModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InterflowModeEnum(value));
         }
 
         public static InterflowModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InterflowModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1294,35 +1238,26 @@ public class BandwidthPackage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthPackage bandwidthPackage = (BandwidthPackage) o;
-        return Objects.equals(this.id, bandwidthPackage.id) && Objects.equals(this.name, bandwidthPackage.name)
-            && Objects.equals(this.description, bandwidthPackage.description)
-            && Objects.equals(this.domainId, bandwidthPackage.domainId)
-            && Objects.equals(this.enterpriseProjectId, bandwidthPackage.enterpriseProjectId)
-            && Objects.equals(this.status, bandwidthPackage.status)
-            && Objects.equals(this.createdAt, bandwidthPackage.createdAt)
-            && Objects.equals(this.updatedAt, bandwidthPackage.updatedAt)
-            && Objects.equals(this.adminStateUp, bandwidthPackage.adminStateUp)
-            && Objects.equals(this.orderId, bandwidthPackage.orderId)
-            && Objects.equals(this.productId, bandwidthPackage.productId)
-            && Objects.equals(this.specCode, bandwidthPackage.specCode)
-            && Objects.equals(this.billingMode, bandwidthPackage.billingMode)
-            && Objects.equals(this.chargeMode, bandwidthPackage.chargeMode)
-            && Objects.equals(this.bandwidth, bandwidthPackage.bandwidth)
-            && Objects.equals(this.resourceId, bandwidthPackage.resourceId)
-            && Objects.equals(this.resourceType, bandwidthPackage.resourceType)
-            && Objects.equals(this.localAreaId, bandwidthPackage.localAreaId)
-            && Objects.equals(this.remoteAreaId, bandwidthPackage.remoteAreaId)
-            && Objects.equals(this.projectId, bandwidthPackage.projectId)
-            && Objects.equals(this.interflowMode, bandwidthPackage.interflowMode)
-            && Objects.equals(this.tags, bandwidthPackage.tags);
+        BandwidthPackage that = (BandwidthPackage) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.localAreaId, that.localAreaId)
+            && Objects.equals(this.remoteAreaId, that.remoteAreaId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.interflowMode, that.interflowMode) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class DeleteRelationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRelationResponse deleteRelationResponse = (DeleteRelationResponse) o;
-        return Objects.equals(this.errorCode, deleteRelationResponse.errorCode)
-            && Objects.equals(this.errorMsg, deleteRelationResponse.errorMsg);
+        DeleteRelationResponse that = (DeleteRelationResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

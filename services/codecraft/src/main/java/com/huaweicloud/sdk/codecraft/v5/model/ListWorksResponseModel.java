@@ -77,17 +77,16 @@ public class ListWorksResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorksResponseModel listWorksResponseModel = (ListWorksResponseModel) o;
-        return Objects.equals(this.worksId, listWorksResponseModel.worksId)
-            && Objects.equals(this.domainId, listWorksResponseModel.domainId)
-            && Objects.equals(this.teamId, listWorksResponseModel.teamId);
+        ListWorksResponseModel that = (ListWorksResponseModel) obj;
+        return Objects.equals(this.worksId, that.worksId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.teamId, that.teamId);
     }
 
     @Override

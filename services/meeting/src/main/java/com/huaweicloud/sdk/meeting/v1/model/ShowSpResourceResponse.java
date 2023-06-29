@@ -438,28 +438,24 @@ public class ShowSpResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSpResourceResponse showSpResourceResponse = (ShowSpResourceResponse) o;
-        return Objects.equals(this.te1080pHardCount, showSpResourceResponse.te1080pHardCount)
-            && Objects.equals(this.te720pHardCount, showSpResourceResponse.te720pHardCount)
-            && Objects.equals(this.teSoftCount, showSpResourceResponse.teSoftCount)
-            && Objects.equals(this.roomCount, showSpResourceResponse.roomCount)
-            && Objects.equals(this.recordCapability, showSpResourceResponse.recordCapability)
-            && Objects.equals(this.confCallCount, showSpResourceResponse.confCallCount)
-            && Objects.equals(this.liveCount, showSpResourceResponse.liveCount)
-            && Objects.equals(this.corpCount, showSpResourceResponse.corpCount)
-            && Objects.equals(this.thirdPartyHardCount, showSpResourceResponse.thirdPartyHardCount)
-            && Objects.equals(this.hwVisionCount, showSpResourceResponse.hwVisionCount)
-            && Objects.equals(this.ideaHubCount, showSpResourceResponse.ideaHubCount)
-            && Objects.equals(this.enablePstn, showSpResourceResponse.enablePstn)
-            && Objects.equals(this.enableSMS, showSpResourceResponse.enableSMS)
-            && Objects.equals(this.groupList, showSpResourceResponse.groupList);
+        ShowSpResourceResponse that = (ShowSpResourceResponse) obj;
+        return Objects.equals(this.te1080pHardCount, that.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, that.te720pHardCount)
+            && Objects.equals(this.teSoftCount, that.teSoftCount) && Objects.equals(this.roomCount, that.roomCount)
+            && Objects.equals(this.recordCapability, that.recordCapability)
+            && Objects.equals(this.confCallCount, that.confCallCount) && Objects.equals(this.liveCount, that.liveCount)
+            && Objects.equals(this.corpCount, that.corpCount)
+            && Objects.equals(this.thirdPartyHardCount, that.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, that.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, that.ideaHubCount) && Objects.equals(this.enablePstn, that.enablePstn)
+            && Objects.equals(this.enableSMS, that.enableSMS) && Objects.equals(this.groupList, that.groupList);
     }
 
     @Override

@@ -119,22 +119,15 @@ public class QuotaItemInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,17 +272,17 @@ public class QuotaItemInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaItemInfo quotaItemInfo = (QuotaItemInfo) o;
-        return Objects.equals(this.name, quotaItemInfo.name) && Objects.equals(this.type, quotaItemInfo.type)
-            && Objects.equals(this.max, quotaItemInfo.max) && Objects.equals(this.min, quotaItemInfo.min)
-            && Objects.equals(this.quota, quotaItemInfo.quota) && Objects.equals(this.used, quotaItemInfo.used);
+        QuotaItemInfo that = (QuotaItemInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.quota, that.quota) && Objects.equals(this.used, that.used);
     }
 
     @Override

@@ -133,22 +133,15 @@ public class ListRtcUserListRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -482,29 +475,22 @@ public class ListRtcUserListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcUserListRequest listRtcUserListRequest = (ListRtcUserListRequest) o;
-        return Objects.equals(this.authorization, listRtcUserListRequest.authorization)
-            && Objects.equals(this.xSdkDate, listRtcUserListRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listRtcUserListRequest.xProjectId)
-            && Objects.equals(this.app, listRtcUserListRequest.app)
-            && Objects.equals(this.roomId, listRtcUserListRequest.roomId)
-            && Objects.equals(this.uid, listRtcUserListRequest.uid)
-            && Objects.equals(this.nickname, listRtcUserListRequest.nickname)
-            && Objects.equals(this.region, listRtcUserListRequest.region)
-            && Objects.equals(this.isp, listRtcUserListRequest.isp)
-            && Objects.equals(this.state, listRtcUserListRequest.state)
-            && Objects.equals(this.startTime, listRtcUserListRequest.startTime)
-            && Objects.equals(this.endTime, listRtcUserListRequest.endTime)
-            && Objects.equals(this.limit, listRtcUserListRequest.limit)
-            && Objects.equals(this.offset, listRtcUserListRequest.offset)
-            && Objects.equals(this.type, listRtcUserListRequest.type);
+        ListRtcUserListRequest that = (ListRtcUserListRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.nickname, that.nickname) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

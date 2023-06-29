@@ -90,16 +90,16 @@ public class TargetList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetList targetList = (TargetList) o;
-        return Objects.equals(this.targetRsuIds, targetList.targetRsuIds)
-            && Objects.equals(this.targetObuIds, targetList.targetObuIds);
+        TargetList that = (TargetList) obj;
+        return Objects.equals(this.targetRsuIds, that.targetRsuIds)
+            && Objects.equals(this.targetObuIds, that.targetObuIds);
     }
 
     @Override

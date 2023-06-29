@@ -118,18 +118,17 @@ public class ResourceTypeBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceTypeBody resourceTypeBody = (ResourceTypeBody) o;
-        return Objects.equals(this.resourceType, resourceTypeBody.resourceType)
-            && Objects.equals(this.resourceTypeI18nDisplayName, resourceTypeBody.resourceTypeI18nDisplayName)
-            && Objects.equals(this.regions, resourceTypeBody.regions)
-            && Objects.equals(this.global, resourceTypeBody.global);
+        ResourceTypeBody that = (ResourceTypeBody) obj;
+        return Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceTypeI18nDisplayName, that.resourceTypeI18nDisplayName)
+            && Objects.equals(this.regions, that.regions) && Objects.equals(this.global, that.global);
     }
 
     @Override

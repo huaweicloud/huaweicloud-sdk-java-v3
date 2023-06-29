@@ -244,21 +244,19 @@ public class UserAccountVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserAccountVO userAccountVO = (UserAccountVO) o;
-        return Objects.equals(this.id, userAccountVO.id) && Objects.equals(this.account, userAccountVO.account)
-            && Objects.equals(this.comment, userAccountVO.comment)
-            && Objects.equals(this.isTransfer, userAccountVO.isTransfer)
-            && Objects.equals(this.privileges, userAccountVO.privileges)
-            && Objects.equals(this.password, userAccountVO.password)
-            && Objects.equals(this.isSetPassword, userAccountVO.isSetPassword)
-            && Objects.equals(this.roles, userAccountVO.roles) && Objects.equals(this.selected, userAccountVO.selected);
+        UserAccountVO that = (UserAccountVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.isTransfer, that.isTransfer)
+            && Objects.equals(this.privileges, that.privileges) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.isSetPassword, that.isSetPassword) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.selected, that.selected);
     }
 
     @Override

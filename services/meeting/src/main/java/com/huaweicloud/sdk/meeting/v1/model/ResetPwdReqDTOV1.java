@@ -77,16 +77,16 @@ public class ResetPwdReqDTOV1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPwdReqDTOV1 resetPwdReqDTOV1 = (ResetPwdReqDTOV1) o;
-        return Objects.equals(this.user, resetPwdReqDTOV1.user) && Objects.equals(this.newPwd, resetPwdReqDTOV1.newPwd)
-            && Objects.equals(this.passWordType, resetPwdReqDTOV1.passWordType);
+        ResetPwdReqDTOV1 that = (ResetPwdReqDTOV1) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.newPwd, that.newPwd)
+            && Objects.equals(this.passWordType, that.passWordType);
     }
 
     @Override

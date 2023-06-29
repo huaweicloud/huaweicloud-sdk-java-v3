@@ -122,18 +122,17 @@ public class DataSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSchema dataSchema = (DataSchema) o;
-        return Objects.equals(this.min, dataSchema.min) && Objects.equals(this.max, dataSchema.max)
-            && Objects.equals(this.minLength, dataSchema.minLength)
-            && Objects.equals(this.maxLength, dataSchema.maxLength)
-            && Objects.equals(this.dataType, dataSchema.dataType);
+        DataSchema that = (DataSchema) obj;
+        return Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.minLength, that.minLength) && Objects.equals(this.maxLength, that.maxLength)
+            && Objects.equals(this.dataType, that.dataType);
     }
 
     @Override

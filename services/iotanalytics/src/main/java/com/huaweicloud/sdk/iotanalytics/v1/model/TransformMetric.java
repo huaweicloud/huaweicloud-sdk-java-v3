@@ -96,17 +96,16 @@ public class TransformMetric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformMetric transformMetric = (TransformMetric) o;
-        return Objects.equals(this.inputs, transformMetric.inputs)
-            && Objects.equals(this.metricName, transformMetric.metricName)
-            && Objects.equals(this.expression, transformMetric.expression);
+        TransformMetric that = (TransformMetric) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.expression, that.expression);
     }
 
     @Override

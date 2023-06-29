@@ -72,22 +72,15 @@ public class CreateConnectorReq {
             if (value == null) {
                 return null;
             }
-            SpecificationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecificationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecificationEnum(value));
         }
 
         public static SpecificationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecificationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,17 +164,16 @@ public class CreateConnectorReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConnectorReq createConnectorReq = (CreateConnectorReq) o;
-        return Objects.equals(this.specification, createConnectorReq.specification)
-            && Objects.equals(this.nodeCnt, createConnectorReq.nodeCnt)
-            && Objects.equals(this.specCode, createConnectorReq.specCode);
+        CreateConnectorReq that = (CreateConnectorReq) obj;
+        return Objects.equals(this.specification, that.specification) && Objects.equals(this.nodeCnt, that.nodeCnt)
+            && Objects.equals(this.specCode, that.specCode);
     }
 
     @Override

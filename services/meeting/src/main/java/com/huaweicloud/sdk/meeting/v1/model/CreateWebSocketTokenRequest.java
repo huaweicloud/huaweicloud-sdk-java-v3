@@ -57,16 +57,16 @@ public class CreateWebSocketTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWebSocketTokenRequest createWebSocketTokenRequest = (CreateWebSocketTokenRequest) o;
-        return Objects.equals(this.conferenceID, createWebSocketTokenRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, createWebSocketTokenRequest.xConferenceAuthorization);
+        CreateWebSocketTokenRequest that = (CreateWebSocketTokenRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class LoadCustomThesaurusReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadCustomThesaurusReq loadCustomThesaurusReq = (LoadCustomThesaurusReq) o;
-        return Objects.equals(this.bucketName, loadCustomThesaurusReq.bucketName)
-            && Objects.equals(this.mainObject, loadCustomThesaurusReq.mainObject)
-            && Objects.equals(this.stopObject, loadCustomThesaurusReq.stopObject)
-            && Objects.equals(this.synonymObject, loadCustomThesaurusReq.synonymObject);
+        LoadCustomThesaurusReq that = (LoadCustomThesaurusReq) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.mainObject, that.mainObject)
+            && Objects.equals(this.stopObject, that.stopObject)
+            && Objects.equals(this.synonymObject, that.synonymObject);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdateResSceneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResSceneRequest updateResSceneRequest = (UpdateResSceneRequest) o;
-        return Objects.equals(this.sceneId, updateResSceneRequest.sceneId)
-            && Objects.equals(this.workspaceId, updateResSceneRequest.workspaceId)
-            && Objects.equals(this.body, updateResSceneRequest.body);
+        UpdateResSceneRequest that = (UpdateResSceneRequest) obj;
+        return Objects.equals(this.sceneId, that.sceneId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

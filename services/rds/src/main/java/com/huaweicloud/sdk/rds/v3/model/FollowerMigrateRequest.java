@@ -55,16 +55,15 @@ public class FollowerMigrateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FollowerMigrateRequest followerMigrateRequest = (FollowerMigrateRequest) o;
-        return Objects.equals(this.nodeId, followerMigrateRequest.nodeId)
-            && Objects.equals(this.azCode, followerMigrateRequest.azCode);
+        FollowerMigrateRequest that = (FollowerMigrateRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.azCode, that.azCode);
     }
 
     @Override

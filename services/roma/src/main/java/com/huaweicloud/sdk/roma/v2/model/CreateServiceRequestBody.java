@@ -80,22 +80,15 @@ public class CreateServiceRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,19 +202,17 @@ public class CreateServiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServiceRequestBody createServiceRequestBody = (CreateServiceRequestBody) o;
-        return Objects.equals(this.productTemplateId, createServiceRequestBody.productTemplateId)
-            && Objects.equals(this.productId, createServiceRequestBody.productId)
-            && Objects.equals(this.serviceName, createServiceRequestBody.serviceName)
-            && Objects.equals(this.description, createServiceRequestBody.description)
-            && Objects.equals(this.status, createServiceRequestBody.status);
+        CreateServiceRequestBody that = (CreateServiceRequestBody) obj;
+        return Objects.equals(this.productTemplateId, that.productTemplateId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status);
     }
 
     @Override

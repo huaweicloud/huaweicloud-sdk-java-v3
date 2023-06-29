@@ -77,17 +77,16 @@ public class ShowPlaybookRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookRuleRequest showPlaybookRuleRequest = (ShowPlaybookRuleRequest) o;
-        return Objects.equals(this.workspaceId, showPlaybookRuleRequest.workspaceId)
-            && Objects.equals(this.versionId, showPlaybookRuleRequest.versionId)
-            && Objects.equals(this.ruleId, showPlaybookRuleRequest.ruleId);
+        ShowPlaybookRuleRequest that = (ShowPlaybookRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

@@ -150,22 +150,15 @@ public class ListFunctionTriggerResult {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeCodeEnum(value));
         }
 
         public static TriggerTypeCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -232,22 +225,15 @@ public class ListFunctionTriggerResult {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerStatusEnum(value));
         }
 
         public static TriggerStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,20 +373,19 @@ public class ListFunctionTriggerResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionTriggerResult listFunctionTriggerResult = (ListFunctionTriggerResult) o;
-        return Objects.equals(this.triggerId, listFunctionTriggerResult.triggerId)
-            && Objects.equals(this.triggerTypeCode, listFunctionTriggerResult.triggerTypeCode)
-            && Objects.equals(this.triggerStatus, listFunctionTriggerResult.triggerStatus)
-            && Objects.equals(this.eventData, listFunctionTriggerResult.eventData)
-            && Objects.equals(this.lastUpdatedTime, listFunctionTriggerResult.lastUpdatedTime)
-            && Objects.equals(this.createdTime, listFunctionTriggerResult.createdTime);
+        ListFunctionTriggerResult that = (ListFunctionTriggerResult) obj;
+        return Objects.equals(this.triggerId, that.triggerId)
+            && Objects.equals(this.triggerTypeCode, that.triggerTypeCode)
+            && Objects.equals(this.triggerStatus, that.triggerStatus) && Objects.equals(this.eventData, that.eventData)
+            && Objects.equals(this.lastUpdatedTime, that.lastUpdatedTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class TaskInstanceSpecRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceSpecRsp taskInstanceSpecRsp = (TaskInstanceSpecRsp) o;
-        return Objects.equals(this.containers, taskInstanceSpecRsp.containers);
+        TaskInstanceSpecRsp that = (TaskInstanceSpecRsp) obj;
+        return Objects.equals(this.containers, that.containers);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateBandwidthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthRequest updateBandwidthRequest = (UpdateBandwidthRequest) o;
-        return Objects.equals(this.bandWidthId, updateBandwidthRequest.bandWidthId)
-            && Objects.equals(this.body, updateBandwidthRequest.body);
+        UpdateBandwidthRequest that = (UpdateBandwidthRequest) obj;
+        return Objects.equals(this.bandWidthId, that.bandWidthId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -143,19 +143,19 @@ public class SourceDB {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceDB sourceDB = (SourceDB) o;
-        return Objects.equals(this.userName, sourceDB.userName)
-            && Objects.equals(this.connectionString, sourceDB.connectionString)
-            && Objects.equals(this.sourceDbType, sourceDB.sourceDbType)
-            && Objects.equals(this.serviceName, sourceDB.serviceName) && Objects.equals(this.ip, sourceDB.ip)
-            && Objects.equals(this.port, sourceDB.port);
+        SourceDB that = (SourceDB) obj;
+        return Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.connectionString, that.connectionString)
+            && Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port);
     }
 
     @Override

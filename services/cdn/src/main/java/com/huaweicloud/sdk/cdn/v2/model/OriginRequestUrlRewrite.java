@@ -99,18 +99,16 @@ public class OriginRequestUrlRewrite {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OriginRequestUrlRewrite originRequestUrlRewrite = (OriginRequestUrlRewrite) o;
-        return Objects.equals(this.priority, originRequestUrlRewrite.priority)
-            && Objects.equals(this.matchType, originRequestUrlRewrite.matchType)
-            && Objects.equals(this.sourceUrl, originRequestUrlRewrite.sourceUrl)
-            && Objects.equals(this.targetUrl, originRequestUrlRewrite.targetUrl);
+        OriginRequestUrlRewrite that = (OriginRequestUrlRewrite) obj;
+        return Objects.equals(this.priority, that.priority) && Objects.equals(this.matchType, that.matchType)
+            && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.targetUrl, that.targetUrl);
     }
 
     @Override

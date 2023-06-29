@@ -83,16 +83,16 @@ public class VideoObj {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoObj videoObj = (VideoObj) o;
-        return Objects.equals(this.width, videoObj.width) && Objects.equals(this.height, videoObj.height)
-            && Objects.equals(this.bitrate, videoObj.bitrate);
+        VideoObj that = (VideoObj) obj;
+        return Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.bitrate, that.bitrate);
     }
 
     @Override

@@ -190,22 +190,18 @@ public class UpdateSubscriptionSourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubscriptionSourceResponse updateSubscriptionSourceResponse = (UpdateSubscriptionSourceResponse) o;
-        return Objects.equals(this.id, updateSubscriptionSourceResponse.id)
-            && Objects.equals(this.name, updateSubscriptionSourceResponse.name)
-            && Objects.equals(this.providerType, updateSubscriptionSourceResponse.providerType)
-            && Objects.equals(this.detail, updateSubscriptionSourceResponse.detail)
-            && Objects.equals(this.filter, updateSubscriptionSourceResponse.filter)
-            && Objects.equals(this.createdTime, updateSubscriptionSourceResponse.createdTime)
-            && Objects.equals(this.updatedTime, updateSubscriptionSourceResponse.updatedTime)
-            && Objects.equals(this.xRequestId, updateSubscriptionSourceResponse.xRequestId);
+        UpdateSubscriptionSourceResponse that = (UpdateSubscriptionSourceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

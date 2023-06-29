@@ -515,36 +515,28 @@ public class IQueryUserPartnerCouponsResultV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IQueryUserPartnerCouponsResultV2 iqueryUserPartnerCouponsResultV2 = (IQueryUserPartnerCouponsResultV2) o;
-        return Objects.equals(this.couponId, iqueryUserPartnerCouponsResultV2.couponId)
-            && Objects.equals(this.status, iqueryUserPartnerCouponsResultV2.status)
-            && Objects.equals(this.customerId, iqueryUserPartnerCouponsResultV2.customerId)
-            && Objects.equals(this.couponType, iqueryUserPartnerCouponsResultV2.couponType)
-            && Objects.equals(this.measureId, iqueryUserPartnerCouponsResultV2.measureId)
-            && Objects.equals(this.faceValue, iqueryUserPartnerCouponsResultV2.faceValue)
-            && Objects.equals(this.effectiveTime, iqueryUserPartnerCouponsResultV2.effectiveTime)
-            && Objects.equals(this.expireTime, iqueryUserPartnerCouponsResultV2.expireTime)
-            && Objects.equals(this.orderId, iqueryUserPartnerCouponsResultV2.orderId)
-            && Objects.equals(this.promotionPlanId, iqueryUserPartnerCouponsResultV2.promotionPlanId)
-            && Objects.equals(this.promotionPlanName, iqueryUserPartnerCouponsResultV2.promotionPlanName)
-            && Objects.equals(this.promotionPlanDesc, iqueryUserPartnerCouponsResultV2.promotionPlanDesc)
-            && Objects.equals(this.mediaType, iqueryUserPartnerCouponsResultV2.mediaType)
-            && Objects.equals(this.fetchMethod, iqueryUserPartnerCouponsResultV2.fetchMethod)
-            && Objects.equals(this.useLimits, iqueryUserPartnerCouponsResultV2.useLimits)
-            && Objects.equals(this.activeTime, iqueryUserPartnerCouponsResultV2.activeTime)
-            && Objects.equals(this.lastUsedTime, iqueryUserPartnerCouponsResultV2.lastUsedTime)
-            && Objects.equals(this.promotionId, iqueryUserPartnerCouponsResultV2.promotionId)
-            && Objects.equals(this.createTime, iqueryUserPartnerCouponsResultV2.createTime)
-            && Objects.equals(this.balance, iqueryUserPartnerCouponsResultV2.balance)
-            && Objects.equals(this.lockOrderId, iqueryUserPartnerCouponsResultV2.lockOrderId)
-            && Objects.equals(this.isFrozen, iqueryUserPartnerCouponsResultV2.isFrozen);
+        IQueryUserPartnerCouponsResultV2 that = (IQueryUserPartnerCouponsResultV2) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.couponType, that.couponType)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.faceValue, that.faceValue)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId)
+            && Objects.equals(this.promotionPlanName, that.promotionPlanName)
+            && Objects.equals(this.promotionPlanDesc, that.promotionPlanDesc)
+            && Objects.equals(this.mediaType, that.mediaType) && Objects.equals(this.fetchMethod, that.fetchMethod)
+            && Objects.equals(this.useLimits, that.useLimits) && Objects.equals(this.activeTime, that.activeTime)
+            && Objects.equals(this.lastUsedTime, that.lastUsedTime)
+            && Objects.equals(this.promotionId, that.promotionId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.balance, that.balance) && Objects.equals(this.lockOrderId, that.lockOrderId)
+            && Objects.equals(this.isFrozen, that.isFrozen);
     }
 
     @Override

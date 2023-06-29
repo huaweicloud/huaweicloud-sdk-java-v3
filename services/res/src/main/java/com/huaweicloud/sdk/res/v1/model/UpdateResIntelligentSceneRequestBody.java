@@ -162,21 +162,17 @@ public class UpdateResIntelligentSceneRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResIntelligentSceneRequestBody updateResIntelligentSceneRequestBody =
-            (UpdateResIntelligentSceneRequestBody) o;
-        return Objects.equals(this.category, updateResIntelligentSceneRequestBody.category)
-            && Objects.equals(this.datasourceId, updateResIntelligentSceneRequestBody.datasourceId)
-            && Objects.equals(this.specsConfig, updateResIntelligentSceneRequestBody.specsConfig)
-            && Objects.equals(this.schedule, updateResIntelligentSceneRequestBody.schedule)
-            && Objects.equals(this.jobConfigs, updateResIntelligentSceneRequestBody.jobConfigs)
-            && Objects.equals(this.sceneName, updateResIntelligentSceneRequestBody.sceneName);
+        UpdateResIntelligentSceneRequestBody that = (UpdateResIntelligentSceneRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.specsConfig, that.specsConfig) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.jobConfigs, that.jobConfigs) && Objects.equals(this.sceneName, that.sceneName);
     }
 
     @Override

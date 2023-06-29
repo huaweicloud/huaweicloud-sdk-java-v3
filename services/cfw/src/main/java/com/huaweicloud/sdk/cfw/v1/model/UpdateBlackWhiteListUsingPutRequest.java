@@ -109,19 +109,17 @@ public class UpdateBlackWhiteListUsingPutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBlackWhiteListUsingPutRequest updateBlackWhiteListUsingPutRequest =
-            (UpdateBlackWhiteListUsingPutRequest) o;
-        return Objects.equals(this.listId, updateBlackWhiteListUsingPutRequest.listId)
-            && Objects.equals(this.enterpriseProjectId, updateBlackWhiteListUsingPutRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, updateBlackWhiteListUsingPutRequest.fwInstanceId)
-            && Objects.equals(this.body, updateBlackWhiteListUsingPutRequest.body);
+        UpdateBlackWhiteListUsingPutRequest that = (UpdateBlackWhiteListUsingPutRequest) obj;
+        return Objects.equals(this.listId, that.listId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

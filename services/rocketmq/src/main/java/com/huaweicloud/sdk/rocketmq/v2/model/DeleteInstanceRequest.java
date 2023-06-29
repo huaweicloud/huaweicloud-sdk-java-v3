@@ -33,15 +33,15 @@ public class DeleteInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteInstanceRequest deleteInstanceRequest = (DeleteInstanceRequest) o;
-        return Objects.equals(this.instanceId, deleteInstanceRequest.instanceId);
+        DeleteInstanceRequest that = (DeleteInstanceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

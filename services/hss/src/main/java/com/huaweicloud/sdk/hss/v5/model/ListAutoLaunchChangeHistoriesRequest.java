@@ -307,28 +307,21 @@ public class ListAutoLaunchChangeHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoLaunchChangeHistoriesRequest listAutoLaunchChangeHistoriesRequest =
-            (ListAutoLaunchChangeHistoriesRequest) o;
-        return Objects.equals(this.hostId, listAutoLaunchChangeHistoriesRequest.hostId)
-            && Objects.equals(this.hostIp, listAutoLaunchChangeHistoriesRequest.hostIp)
-            && Objects.equals(this.hostName, listAutoLaunchChangeHistoriesRequest.hostName)
-            && Objects.equals(this.autoLaunchName, listAutoLaunchChangeHistoriesRequest.autoLaunchName)
-            && Objects.equals(this.type, listAutoLaunchChangeHistoriesRequest.type)
-            && Objects.equals(this.variationType, listAutoLaunchChangeHistoriesRequest.variationType)
-            && Objects.equals(this.enterpriseProjectId, listAutoLaunchChangeHistoriesRequest.enterpriseProjectId)
-            && Objects.equals(this.sortKey, listAutoLaunchChangeHistoriesRequest.sortKey)
-            && Objects.equals(this.sortDir, listAutoLaunchChangeHistoriesRequest.sortDir)
-            && Objects.equals(this.limit, listAutoLaunchChangeHistoriesRequest.limit)
-            && Objects.equals(this.offset, listAutoLaunchChangeHistoriesRequest.offset)
-            && Objects.equals(this.startTime, listAutoLaunchChangeHistoriesRequest.startTime)
-            && Objects.equals(this.endTime, listAutoLaunchChangeHistoriesRequest.endTime);
+        ListAutoLaunchChangeHistoriesRequest that = (ListAutoLaunchChangeHistoriesRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.autoLaunchName, that.autoLaunchName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.variationType, that.variationType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

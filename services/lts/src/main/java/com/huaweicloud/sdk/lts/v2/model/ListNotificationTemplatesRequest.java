@@ -81,17 +81,16 @@ public class ListNotificationTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotificationTemplatesRequest listNotificationTemplatesRequest = (ListNotificationTemplatesRequest) o;
-        return Objects.equals(this.domainId, listNotificationTemplatesRequest.domainId)
-            && Objects.equals(this.offset, listNotificationTemplatesRequest.offset)
-            && Objects.equals(this.limit, listNotificationTemplatesRequest.limit);
+        ListNotificationTemplatesRequest that = (ListNotificationTemplatesRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

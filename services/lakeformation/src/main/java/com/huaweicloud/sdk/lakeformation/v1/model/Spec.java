@@ -228,21 +228,21 @@ public class Spec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Spec spec = (Spec) o;
-        return Objects.equals(this.specCode, spec.specCode) && Objects.equals(this.resourceType, spec.resourceType)
-            && Objects.equals(this.stride, spec.stride) && Objects.equals(this.unit, spec.unit)
-            && Objects.equals(this.minStrideNum, spec.minStrideNum)
-            && Objects.equals(this.maxStrideNum, spec.maxStrideNum)
-            && Objects.equals(this.usageMeasureId, spec.usageMeasureId)
-            && Objects.equals(this.usageFactor, spec.usageFactor)
-            && Objects.equals(this.strideNumWhitelist, spec.strideNumWhitelist);
+        Spec that = (Spec) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.stride, that.stride) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.minStrideNum, that.minStrideNum)
+            && Objects.equals(this.maxStrideNum, that.maxStrideNum)
+            && Objects.equals(this.usageMeasureId, that.usageMeasureId)
+            && Objects.equals(this.usageFactor, that.usageFactor)
+            && Objects.equals(this.strideNumWhitelist, that.strideNumWhitelist);
     }
 
     @Override

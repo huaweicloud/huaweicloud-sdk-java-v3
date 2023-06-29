@@ -87,17 +87,16 @@ public class CreateResOnlineInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResOnlineInstanceRequest createResOnlineInstanceRequest = (CreateResOnlineInstanceRequest) o;
-        return Objects.equals(this.resourceId, createResOnlineInstanceRequest.resourceId)
-            && Objects.equals(this.workspaceId, createResOnlineInstanceRequest.workspaceId)
-            && Objects.equals(this.body, createResOnlineInstanceRequest.body);
+        CreateResOnlineInstanceRequest that = (CreateResOnlineInstanceRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

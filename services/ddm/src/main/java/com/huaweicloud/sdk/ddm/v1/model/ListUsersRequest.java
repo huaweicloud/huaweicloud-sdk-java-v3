@@ -80,17 +80,16 @@ public class ListUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsersRequest listUsersRequest = (ListUsersRequest) o;
-        return Objects.equals(this.instanceId, listUsersRequest.instanceId)
-            && Objects.equals(this.offset, listUsersRequest.offset)
-            && Objects.equals(this.limit, listUsersRequest.limit);
+        ListUsersRequest that = (ListUsersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

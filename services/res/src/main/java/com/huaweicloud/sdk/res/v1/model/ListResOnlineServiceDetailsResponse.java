@@ -110,19 +110,16 @@ public class ListResOnlineServiceDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResOnlineServiceDetailsResponse listResOnlineServiceDetailsResponse =
-            (ListResOnlineServiceDetailsResponse) o;
-        return Objects.equals(this.isSuccess, listResOnlineServiceDetailsResponse.isSuccess)
-            && Objects.equals(this.jobs, listResOnlineServiceDetailsResponse.jobs)
-            && Objects.equals(this.message, listResOnlineServiceDetailsResponse.message)
-            && Objects.equals(this.errorCode, listResOnlineServiceDetailsResponse.errorCode);
+        ListResOnlineServiceDetailsResponse that = (ListResOnlineServiceDetailsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.jobs, that.jobs)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

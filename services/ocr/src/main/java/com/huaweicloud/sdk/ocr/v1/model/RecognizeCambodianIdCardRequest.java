@@ -65,16 +65,16 @@ public class RecognizeCambodianIdCardRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeCambodianIdCardRequest recognizeCambodianIdCardRequest = (RecognizeCambodianIdCardRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeCambodianIdCardRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeCambodianIdCardRequest.body);
+        RecognizeCambodianIdCardRequest that = (RecognizeCambodianIdCardRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -76,16 +76,15 @@ public class EventReferencePath {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventReferencePath eventReferencePath = (EventReferencePath) o;
-        return Objects.equals(this.activePath, eventReferencePath.activePath)
-            && Objects.equals(this.pathRadius, eventReferencePath.pathRadius);
+        EventReferencePath that = (EventReferencePath) obj;
+        return Objects.equals(this.activePath, that.activePath) && Objects.equals(this.pathRadius, that.pathRadius);
     }
 
     @Override

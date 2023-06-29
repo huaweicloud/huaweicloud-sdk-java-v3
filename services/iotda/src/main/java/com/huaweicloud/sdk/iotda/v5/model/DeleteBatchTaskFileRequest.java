@@ -55,16 +55,15 @@ public class DeleteBatchTaskFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBatchTaskFileRequest deleteBatchTaskFileRequest = (DeleteBatchTaskFileRequest) o;
-        return Objects.equals(this.instanceId, deleteBatchTaskFileRequest.instanceId)
-            && Objects.equals(this.fileId, deleteBatchTaskFileRequest.fileId);
+        DeleteBatchTaskFileRequest that = (DeleteBatchTaskFileRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.fileId, that.fileId);
     }
 
     @Override

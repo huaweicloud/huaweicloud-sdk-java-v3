@@ -420,27 +420,24 @@ public class MetadataLock {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataLock metadataLock = (MetadataLock) o;
-        return Objects.equals(this.threadId, metadataLock.threadId)
-            && Objects.equals(this.lockStatus, metadataLock.lockStatus)
-            && Objects.equals(this.lockMode, metadataLock.lockMode)
-            && Objects.equals(this.lockType, metadataLock.lockType)
-            && Objects.equals(this.lockDuration, metadataLock.lockDuration)
-            && Objects.equals(this.tableSchema, metadataLock.tableSchema)
-            && Objects.equals(this.tableName, metadataLock.tableName) && Objects.equals(this.user, metadataLock.user)
-            && Objects.equals(this.time, metadataLock.time) && Objects.equals(this.host, metadataLock.host)
-            && Objects.equals(this.database, metadataLock.database)
-            && Objects.equals(this.command, metadataLock.command) && Objects.equals(this.state, metadataLock.state)
-            && Objects.equals(this.sql, metadataLock.sql) && Objects.equals(this.trxExecTime, metadataLock.trxExecTime)
-            && Objects.equals(this.blockProcess, metadataLock.blockProcess)
-            && Objects.equals(this.waitProcess, metadataLock.waitProcess);
+        MetadataLock that = (MetadataLock) obj;
+        return Objects.equals(this.threadId, that.threadId) && Objects.equals(this.lockStatus, that.lockStatus)
+            && Objects.equals(this.lockMode, that.lockMode) && Objects.equals(this.lockType, that.lockType)
+            && Objects.equals(this.lockDuration, that.lockDuration)
+            && Objects.equals(this.tableSchema, that.tableSchema) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.trxExecTime, that.trxExecTime)
+            && Objects.equals(this.blockProcess, that.blockProcess)
+            && Objects.equals(this.waitProcess, that.waitProcess);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class KeyProtection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyProtection keyProtection = (KeyProtection) o;
-        return Objects.equals(this.privateKey, keyProtection.privateKey)
-            && Objects.equals(this.encryption, keyProtection.encryption);
+        KeyProtection that = (KeyProtection) obj;
+        return Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.encryption, that.encryption);
     }
 
     @Override

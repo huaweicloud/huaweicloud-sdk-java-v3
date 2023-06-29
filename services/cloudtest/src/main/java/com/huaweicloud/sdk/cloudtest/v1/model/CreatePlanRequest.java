@@ -65,16 +65,15 @@ public class CreatePlanRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlanRequest createPlanRequest = (CreatePlanRequest) o;
-        return Objects.equals(this.projectId, createPlanRequest.projectId)
-            && Objects.equals(this.body, createPlanRequest.body);
+        CreatePlanRequest that = (CreatePlanRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

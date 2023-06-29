@@ -43,16 +43,15 @@ public class UpdateCloudServiceCustomPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCloudServiceCustomPolicyRequestBody updateCloudServiceCustomPolicyRequestBody =
-            (UpdateCloudServiceCustomPolicyRequestBody) o;
-        return Objects.equals(this.role, updateCloudServiceCustomPolicyRequestBody.role);
+        UpdateCloudServiceCustomPolicyRequestBody that = (UpdateCloudServiceCustomPolicyRequestBody) obj;
+        return Objects.equals(this.role, that.role);
     }
 
     @Override

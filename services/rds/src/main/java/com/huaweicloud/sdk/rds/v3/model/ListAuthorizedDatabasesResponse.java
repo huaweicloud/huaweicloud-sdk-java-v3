@@ -75,16 +75,15 @@ public class ListAuthorizedDatabasesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorizedDatabasesResponse listAuthorizedDatabasesResponse = (ListAuthorizedDatabasesResponse) o;
-        return Objects.equals(this.databases, listAuthorizedDatabasesResponse.databases)
-            && Objects.equals(this.totalCount, listAuthorizedDatabasesResponse.totalCount);
+        ListAuthorizedDatabasesResponse that = (ListAuthorizedDatabasesResponse) obj;
+        return Objects.equals(this.databases, that.databases) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

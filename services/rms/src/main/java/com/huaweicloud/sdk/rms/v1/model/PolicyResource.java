@@ -143,20 +143,18 @@ public class PolicyResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyResource policyResource = (PolicyResource) o;
-        return Objects.equals(this.resourceId, policyResource.resourceId)
-            && Objects.equals(this.resourceName, policyResource.resourceName)
-            && Objects.equals(this.resourceProvider, policyResource.resourceProvider)
-            && Objects.equals(this.resourceType, policyResource.resourceType)
-            && Objects.equals(this.regionId, policyResource.regionId)
-            && Objects.equals(this.domainId, policyResource.domainId);
+        PolicyResource that = (PolicyResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

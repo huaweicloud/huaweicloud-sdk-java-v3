@@ -65,16 +65,15 @@ public class UpdateInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceRequest updateInstanceRequest = (UpdateInstanceRequest) o;
-        return Objects.equals(this.blockchainId, updateInstanceRequest.blockchainId)
-            && Objects.equals(this.body, updateInstanceRequest.body);
+        UpdateInstanceRequest that = (UpdateInstanceRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

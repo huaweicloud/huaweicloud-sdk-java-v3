@@ -231,22 +231,19 @@ public class ModifyTransTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTransTemplate modifyTransTemplate = (ModifyTransTemplate) o;
-        return Objects.equals(this.groupId, modifyTransTemplate.groupId)
-            && Objects.equals(this.name, modifyTransTemplate.name)
-            && Objects.equals(this.isDefault, modifyTransTemplate.isDefault)
-            && Objects.equals(this.isAutoEncrypt, modifyTransTemplate.isAutoEncrypt)
-            && Objects.equals(this.qualityInfoList, modifyTransTemplate.qualityInfoList)
-            && Objects.equals(this.watermarkTemplateIds, modifyTransTemplate.watermarkTemplateIds)
-            && Objects.equals(this.description, modifyTransTemplate.description)
-            && Objects.equals(this.common, modifyTransTemplate.common);
+        ModifyTransTemplate that = (ModifyTransTemplate) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.isAutoEncrypt, that.isAutoEncrypt)
+            && Objects.equals(this.qualityInfoList, that.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.common, that.common);
     }
 
     @Override

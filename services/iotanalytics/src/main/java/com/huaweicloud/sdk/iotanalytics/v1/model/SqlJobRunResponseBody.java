@@ -134,18 +134,16 @@ public class SqlJobRunResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlJobRunResponseBody sqlJobRunResponseBody = (SqlJobRunResponseBody) o;
-        return Objects.equals(this.sqlType, sqlJobRunResponseBody.sqlType)
-            && Objects.equals(this.schema, sqlJobRunResponseBody.schema)
-            && Objects.equals(this.rows, sqlJobRunResponseBody.rows)
-            && Objects.equals(this.jobMode, sqlJobRunResponseBody.jobMode);
+        SqlJobRunResponseBody that = (SqlJobRunResponseBody) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.rows, that.rows) && Objects.equals(this.jobMode, that.jobMode);
     }
 
     @Override

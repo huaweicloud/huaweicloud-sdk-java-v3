@@ -89,22 +89,15 @@ public class ApiVersionsVersions {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -250,19 +243,17 @@ public class ApiVersionsVersions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiVersionsVersions apiVersionsVersions = (ApiVersionsVersions) o;
-        return Objects.equals(this.id, apiVersionsVersions.id) && Objects.equals(this.links, apiVersionsVersions.links)
-            && Objects.equals(this.version, apiVersionsVersions.version)
-            && Objects.equals(this.minVersion, apiVersionsVersions.minVersion)
-            && Objects.equals(this.status, apiVersionsVersions.status)
-            && Objects.equals(this.updated, apiVersionsVersions.updated);
+        ApiVersionsVersions that = (ApiVersionsVersions) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.minVersion, that.minVersion)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated);
     }
 
     @Override

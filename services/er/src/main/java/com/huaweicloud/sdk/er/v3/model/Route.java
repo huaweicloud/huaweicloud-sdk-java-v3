@@ -229,20 +229,19 @@ public class Route {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Route route = (Route) o;
-        return Objects.equals(this.id, route.id) && Objects.equals(this.type, route.type)
-            && Objects.equals(this.state, route.state) && Objects.equals(this.isBlackhole, route.isBlackhole)
-            && Objects.equals(this.destination, route.destination)
-            && Objects.equals(this.attachments, route.attachments)
-            && Objects.equals(this.routeTableId, route.routeTableId) && Objects.equals(this.createdAt, route.createdAt)
-            && Objects.equals(this.updatedAt, route.updatedAt);
+        Route that = (Route) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.isBlackhole, that.isBlackhole)
+            && Objects.equals(this.destination, that.destination) && Objects.equals(this.attachments, that.attachments)
+            && Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

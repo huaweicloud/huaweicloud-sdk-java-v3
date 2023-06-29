@@ -149,19 +149,18 @@ public class MultiPicDisplayDO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiPicDisplayDO multiPicDisplayDO = (MultiPicDisplayDO) o;
-        return Objects.equals(this.manualSet, multiPicDisplayDO.manualSet)
-            && Objects.equals(this.imageType, multiPicDisplayDO.imageType)
-            && Objects.equals(this.subscriberInPics, multiPicDisplayDO.subscriberInPics)
-            && Objects.equals(this.switchTime, multiPicDisplayDO.switchTime)
-            && Objects.equals(this.picLayoutInfo, multiPicDisplayDO.picLayoutInfo);
+        MultiPicDisplayDO that = (MultiPicDisplayDO) obj;
+        return Objects.equals(this.manualSet, that.manualSet) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.subscriberInPics, that.subscriberInPics)
+            && Objects.equals(this.switchTime, that.switchTime)
+            && Objects.equals(this.picLayoutInfo, that.picLayoutInfo);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class PostgresqlUserWithPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlUserWithPrivilege postgresqlUserWithPrivilege = (PostgresqlUserWithPrivilege) o;
-        return Objects.equals(this.name, postgresqlUserWithPrivilege.name)
-            && Objects.equals(this.readonly, postgresqlUserWithPrivilege.readonly)
-            && Objects.equals(this.schemaName, postgresqlUserWithPrivilege.schemaName);
+        PostgresqlUserWithPrivilege that = (PostgresqlUserWithPrivilege) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.readonly, that.readonly)
+            && Objects.equals(this.schemaName, that.schemaName);
     }
 
     @Override

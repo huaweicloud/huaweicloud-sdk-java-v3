@@ -77,17 +77,16 @@ public class ComponentModifyTomcatOpts {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentModifyTomcatOpts componentModifyTomcatOpts = (ComponentModifyTomcatOpts) o;
-        return Objects.equals(this.serverXml, componentModifyTomcatOpts.serverXml)
-            && Objects.equals(this.httpPort, componentModifyTomcatOpts.httpPort)
-            && Objects.equals(this.contextPath, componentModifyTomcatOpts.contextPath);
+        ComponentModifyTomcatOpts that = (ComponentModifyTomcatOpts) obj;
+        return Objects.equals(this.serverXml, that.serverXml) && Objects.equals(this.httpPort, that.httpPort)
+            && Objects.equals(this.contextPath, that.contextPath);
     }
 
     @Override

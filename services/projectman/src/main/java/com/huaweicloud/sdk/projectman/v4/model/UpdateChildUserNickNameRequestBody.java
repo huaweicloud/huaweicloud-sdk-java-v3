@@ -55,16 +55,15 @@ public class UpdateChildUserNickNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateChildUserNickNameRequestBody updateChildUserNickNameRequestBody = (UpdateChildUserNickNameRequestBody) o;
-        return Objects.equals(this.nickName, updateChildUserNickNameRequestBody.nickName)
-            && Objects.equals(this.userId, updateChildUserNickNameRequestBody.userId);
+        UpdateChildUserNickNameRequestBody that = (UpdateChildUserNickNameRequestBody) obj;
+        return Objects.equals(this.nickName, that.nickName) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

@@ -165,19 +165,18 @@ public class RunlogItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunlogItem runlogItem = (RunlogItem) o;
-        return Objects.equals(this.id, runlogItem.id) && Objects.equals(this.fileName, runlogItem.fileName)
-            && Objects.equals(this.groupName, runlogItem.groupName)
-            && Objects.equals(this.replicationIp, runlogItem.replicationIp)
-            && Objects.equals(this.status, runlogItem.status) && Objects.equals(this.time, runlogItem.time)
-            && Objects.equals(this.backupId, runlogItem.backupId);
+        RunlogItem that = (RunlogItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.replicationIp, that.replicationIp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.backupId, that.backupId);
     }
 
     @Override

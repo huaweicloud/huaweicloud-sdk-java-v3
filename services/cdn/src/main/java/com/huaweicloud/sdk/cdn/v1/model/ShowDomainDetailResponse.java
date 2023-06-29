@@ -44,15 +44,15 @@ public class ShowDomainDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainDetailResponse showDomainDetailResponse = (ShowDomainDetailResponse) o;
-        return Objects.equals(this.domain, showDomainDetailResponse.domain);
+        ShowDomainDetailResponse that = (ShowDomainDetailResponse) obj;
+        return Objects.equals(this.domain, that.domain);
     }
 
     @Override

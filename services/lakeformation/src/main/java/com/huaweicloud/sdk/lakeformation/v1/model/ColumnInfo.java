@@ -24,8 +24,8 @@ public class ColumnInfo {
     private List<String> columnName = null;
 
     /**
-    * 是否排除：Include包含,Exclude排除
-    */
+     * 是否排除：Include包含,Exclude排除
+     */
     public static final class FilterEnum {
 
         /**
@@ -68,22 +68,15 @@ public class ColumnInfo {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterEnum(value));
         }
 
         public static FilterEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,15 +149,15 @@ public class ColumnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnInfo columnInfo = (ColumnInfo) o;
-        return Objects.equals(this.columnName, columnInfo.columnName) && Objects.equals(this.filter, columnInfo.filter);
+        ColumnInfo that = (ColumnInfo) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

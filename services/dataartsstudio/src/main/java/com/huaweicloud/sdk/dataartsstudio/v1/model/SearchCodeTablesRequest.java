@@ -109,22 +109,15 @@ public class SearchCodeTablesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -338,24 +331,19 @@ public class SearchCodeTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCodeTablesRequest searchCodeTablesRequest = (SearchCodeTablesRequest) o;
-        return Objects.equals(this.workspace, searchCodeTablesRequest.workspace)
-            && Objects.equals(this.name, searchCodeTablesRequest.name)
-            && Objects.equals(this.createBy, searchCodeTablesRequest.createBy)
-            && Objects.equals(this.approver, searchCodeTablesRequest.approver)
-            && Objects.equals(this.directoryId, searchCodeTablesRequest.directoryId)
-            && Objects.equals(this.status, searchCodeTablesRequest.status)
-            && Objects.equals(this.beginTime, searchCodeTablesRequest.beginTime)
-            && Objects.equals(this.endTime, searchCodeTablesRequest.endTime)
-            && Objects.equals(this.limit, searchCodeTablesRequest.limit)
-            && Objects.equals(this.offset, searchCodeTablesRequest.offset);
+        SearchCodeTablesRequest that = (SearchCodeTablesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

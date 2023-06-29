@@ -284,24 +284,20 @@ public class ListQuotasDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotasDetailResponse listQuotasDetailResponse = (ListQuotasDetailResponse) o;
-        return Objects.equals(this.packetCycleNum, listQuotasDetailResponse.packetCycleNum)
-            && Objects.equals(this.onDemandNum, listQuotasDetailResponse.onDemandNum)
-            && Objects.equals(this.usedNum, listQuotasDetailResponse.usedNum)
-            && Objects.equals(this.idleNum, listQuotasDetailResponse.idleNum)
-            && Objects.equals(this.normalNum, listQuotasDetailResponse.normalNum)
-            && Objects.equals(this.expiredNum, listQuotasDetailResponse.expiredNum)
-            && Objects.equals(this.freezeNum, listQuotasDetailResponse.freezeNum)
-            && Objects.equals(this.quotaStatisticsList, listQuotasDetailResponse.quotaStatisticsList)
-            && Objects.equals(this.totalNum, listQuotasDetailResponse.totalNum)
-            && Objects.equals(this.dataList, listQuotasDetailResponse.dataList);
+        ListQuotasDetailResponse that = (ListQuotasDetailResponse) obj;
+        return Objects.equals(this.packetCycleNum, that.packetCycleNum)
+            && Objects.equals(this.onDemandNum, that.onDemandNum) && Objects.equals(this.usedNum, that.usedNum)
+            && Objects.equals(this.idleNum, that.idleNum) && Objects.equals(this.normalNum, that.normalNum)
+            && Objects.equals(this.expiredNum, that.expiredNum) && Objects.equals(this.freezeNum, that.freezeNum)
+            && Objects.equals(this.quotaStatisticsList, that.quotaStatisticsList)
+            && Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

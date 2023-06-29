@@ -420,23 +420,23 @@ public class JobRun {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobRun jobRun = (JobRun) o;
-        return Objects.equals(this.id, jobRun.id) && Objects.equals(this.category, jobRun.category)
-            && Objects.equals(this.sequence, jobRun.sequence) && Objects.equals(this.async, jobRun.async)
-            && Objects.equals(this.name, jobRun.name) && Objects.equals(this.identifier, jobRun.identifier)
-            && Objects.equals(this.dependsOn, jobRun.dependsOn) && Objects.equals(this.condition, jobRun.condition)
-            && Objects.equals(this.resource, jobRun.resource) && Objects.equals(this.isSelect, jobRun.isSelect)
-            && Objects.equals(this.timeout, jobRun.timeout)
-            && Objects.equals(this.lastDispatchId, jobRun.lastDispatchId) && Objects.equals(this.status, jobRun.status)
-            && Objects.equals(this.message, jobRun.message) && Objects.equals(this.startTime, jobRun.startTime)
-            && Objects.equals(this.endTime, jobRun.endTime) && Objects.equals(this.steps, jobRun.steps);
+        JobRun that = (JobRun) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.async, that.async)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.dependsOn, that.dependsOn) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.isSelect, that.isSelect)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.lastDispatchId, that.lastDispatchId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.steps, that.steps);
     }
 
     @Override

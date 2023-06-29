@@ -44,15 +44,15 @@ public class UpdateVaultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVaultResponse updateVaultResponse = (UpdateVaultResponse) o;
-        return Objects.equals(this.vault, updateVaultResponse.vault);
+        UpdateVaultResponse that = (UpdateVaultResponse) obj;
+        return Objects.equals(this.vault, that.vault);
     }
 
     @Override

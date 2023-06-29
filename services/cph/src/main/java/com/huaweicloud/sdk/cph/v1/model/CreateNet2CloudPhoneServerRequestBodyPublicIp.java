@@ -84,17 +84,15 @@ public class CreateNet2CloudPhoneServerRequestBodyPublicIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequestBodyPublicIp createNet2CloudPhoneServerRequestBodyPublicIp =
-            (CreateNet2CloudPhoneServerRequestBodyPublicIp) o;
-        return Objects.equals(this.ids, createNet2CloudPhoneServerRequestBodyPublicIp.ids)
-            && Objects.equals(this.eip, createNet2CloudPhoneServerRequestBodyPublicIp.eip);
+        CreateNet2CloudPhoneServerRequestBodyPublicIp that = (CreateNet2CloudPhoneServerRequestBodyPublicIp) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.eip, that.eip);
     }
 
     @Override

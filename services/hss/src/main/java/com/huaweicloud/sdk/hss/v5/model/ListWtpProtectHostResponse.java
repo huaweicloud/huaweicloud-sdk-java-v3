@@ -77,16 +77,15 @@ public class ListWtpProtectHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWtpProtectHostResponse listWtpProtectHostResponse = (ListWtpProtectHostResponse) o;
-        return Objects.equals(this.dataList, listWtpProtectHostResponse.dataList)
-            && Objects.equals(this.totalNum, listWtpProtectHostResponse.totalNum);
+        ListWtpProtectHostResponse that = (ListWtpProtectHostResponse) obj;
+        return Objects.equals(this.dataList, that.dataList) && Objects.equals(this.totalNum, that.totalNum);
     }
 
     @Override

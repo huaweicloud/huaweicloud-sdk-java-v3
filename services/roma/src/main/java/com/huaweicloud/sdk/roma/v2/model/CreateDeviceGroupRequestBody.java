@@ -101,18 +101,16 @@ public class CreateDeviceGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeviceGroupRequestBody createDeviceGroupRequestBody = (CreateDeviceGroupRequestBody) o;
-        return Objects.equals(this.parentId, createDeviceGroupRequestBody.parentId)
-            && Objects.equals(this.name, createDeviceGroupRequestBody.name)
-            && Objects.equals(this.description, createDeviceGroupRequestBody.description)
-            && Objects.equals(this.appId, createDeviceGroupRequestBody.appId);
+        CreateDeviceGroupRequestBody that = (CreateDeviceGroupRequestBody) obj;
+        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

@@ -121,17 +121,17 @@ public class BucketObjectDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BucketObjectDto bucketObjectDto = (BucketObjectDto) o;
-        return Objects.equals(this.path, bucketObjectDto.path) && Objects.equals(this.name, bucketObjectDto.name)
-            && Objects.equals(this.type, bucketObjectDto.type) && Objects.equals(this.size, bucketObjectDto.size)
-            && Objects.equals(this.createTime, bucketObjectDto.createTime);
+        BucketObjectDto that = (BucketObjectDto) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

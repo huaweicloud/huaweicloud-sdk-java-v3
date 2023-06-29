@@ -166,21 +166,18 @@ public class CmAttributeVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CmAttributeVO cmAttributeVO = (CmAttributeVO) o;
-        return Objects.equals(this.id, cmAttributeVO.id)
-            && Objects.equals(this.defaultAttrNameCn, cmAttributeVO.defaultAttrNameCn)
-            && Objects.equals(this.defaultAttrNameEn, cmAttributeVO.defaultAttrNameEn)
-            && Objects.equals(this.custAttrName, cmAttributeVO.custAttrName)
-            && Objects.equals(this.status, cmAttributeVO.status)
-            && Objects.equals(this.createTime, cmAttributeVO.createTime)
-            && Objects.equals(this.modifyTime, cmAttributeVO.modifyTime);
+        CmAttributeVO that = (CmAttributeVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.defaultAttrNameCn, that.defaultAttrNameCn)
+            && Objects.equals(this.defaultAttrNameEn, that.defaultAttrNameEn)
+            && Objects.equals(this.custAttrName, that.custAttrName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.modifyTime, that.modifyTime);
     }
 
     @Override

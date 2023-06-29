@@ -241,20 +241,19 @@ public class MenusRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MenusRsp menusRsp = (MenusRsp) o;
-        return Objects.equals(this.menuId, menusRsp.menuId) && Objects.equals(this.pubId, menusRsp.pubId)
-            && Objects.equals(this.pubName, menusRsp.pubName) && Objects.equals(this.logoImg, menusRsp.logoImg)
-            && Objects.equals(this.logoUrl, menusRsp.logoUrl) && Objects.equals(this.menu, menusRsp.menu)
-            && Objects.equals(this.menuState, menusRsp.menuState)
-            && Objects.equals(this.approveState, menusRsp.approveState)
-            && Objects.equals(this.onlineTime, menusRsp.onlineTime) && Objects.equals(this.operTime, menusRsp.operTime);
+        MenusRsp that = (MenusRsp) obj;
+        return Objects.equals(this.menuId, that.menuId) && Objects.equals(this.pubId, that.pubId)
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.logoImg, that.logoImg)
+            && Objects.equals(this.logoUrl, that.logoUrl) && Objects.equals(this.menu, that.menu)
+            && Objects.equals(this.menuState, that.menuState) && Objects.equals(this.approveState, that.approveState)
+            && Objects.equals(this.onlineTime, that.onlineTime) && Objects.equals(this.operTime, that.operTime);
     }
 
     @Override

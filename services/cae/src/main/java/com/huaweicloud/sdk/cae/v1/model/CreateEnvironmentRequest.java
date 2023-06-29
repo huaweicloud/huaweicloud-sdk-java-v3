@@ -67,16 +67,16 @@ public class CreateEnvironmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnvironmentRequest createEnvironmentRequest = (CreateEnvironmentRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, createEnvironmentRequest.xEnterpriseProjectID)
-            && Objects.equals(this.body, createEnvironmentRequest.body);
+        CreateEnvironmentRequest that = (CreateEnvironmentRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

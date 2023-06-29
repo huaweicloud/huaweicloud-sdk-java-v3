@@ -110,18 +110,17 @@ public class ListSnapshotConfigsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotConfigsResponse listSnapshotConfigsResponse = (ListSnapshotConfigsResponse) o;
-        return Objects.equals(this.total, listSnapshotConfigsResponse.total)
-            && Objects.equals(this.snapshotConfigList, listSnapshotConfigsResponse.snapshotConfigList)
-            && Objects.equals(this.limit, listSnapshotConfigsResponse.limit)
-            && Objects.equals(this.offset, listSnapshotConfigsResponse.offset);
+        ListSnapshotConfigsResponse that = (ListSnapshotConfigsResponse) obj;
+        return Objects.equals(this.total, that.total)
+            && Objects.equals(this.snapshotConfigList, that.snapshotConfigList)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

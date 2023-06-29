@@ -55,16 +55,16 @@ public class ResetInstancePasswordBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetInstancePasswordBody resetInstancePasswordBody = (ResetInstancePasswordBody) o;
-        return Objects.equals(this.newPassword, resetInstancePasswordBody.newPassword)
-            && Objects.equals(this.noPasswordAccess, resetInstancePasswordBody.noPasswordAccess);
+        ResetInstancePasswordBody that = (ResetInstancePasswordBody) obj;
+        return Objects.equals(this.newPassword, that.newPassword)
+            && Objects.equals(this.noPasswordAccess, that.noPasswordAccess);
     }
 
     @Override

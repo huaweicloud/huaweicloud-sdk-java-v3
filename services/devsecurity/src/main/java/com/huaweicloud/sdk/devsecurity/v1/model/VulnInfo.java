@@ -118,16 +118,16 @@ public class VulnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulnInfo vulnInfo = (VulnInfo) o;
-        return Objects.equals(this.category, vulnInfo.category) && Objects.equals(this.principle, vulnInfo.principle)
-            && Objects.equals(this.solution, vulnInfo.solution) && Objects.equals(this.vulnItems, vulnInfo.vulnItems);
+        VulnInfo that = (VulnInfo) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.principle, that.principle)
+            && Objects.equals(this.solution, that.solution) && Objects.equals(this.vulnItems, that.vulnItems);
     }
 
     @Override

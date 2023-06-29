@@ -43,15 +43,15 @@ public class CreateOptimizationTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOptimizationTaskRequest createOptimizationTaskRequest = (CreateOptimizationTaskRequest) o;
-        return Objects.equals(this.body, createOptimizationTaskRequest.body);
+        CreateOptimizationTaskRequest that = (CreateOptimizationTaskRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

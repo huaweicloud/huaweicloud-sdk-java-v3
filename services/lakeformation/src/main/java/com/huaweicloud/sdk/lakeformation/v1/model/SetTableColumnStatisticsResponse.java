@@ -89,16 +89,16 @@ public class SetTableColumnStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetTableColumnStatisticsResponse setTableColumnStatisticsResponse = (SetTableColumnStatisticsResponse) o;
-        return Objects.equals(this.columnStatisticsDesc, setTableColumnStatisticsResponse.columnStatisticsDesc)
-            && Objects.equals(this.columnStatisticsObjects, setTableColumnStatisticsResponse.columnStatisticsObjects);
+        SetTableColumnStatisticsResponse that = (SetTableColumnStatisticsResponse) obj;
+        return Objects.equals(this.columnStatisticsDesc, that.columnStatisticsDesc)
+            && Objects.equals(this.columnStatisticsObjects, that.columnStatisticsObjects);
     }
 
     @Override

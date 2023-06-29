@@ -119,18 +119,16 @@ public class ListResScenesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResScenesResponse listResScenesResponse = (ListResScenesResponse) o;
-        return Objects.equals(this.isSuccess, listResScenesResponse.isSuccess)
-            && Objects.equals(this.resScenes, listResScenesResponse.resScenes)
-            && Objects.equals(this.message, listResScenesResponse.message)
-            && Objects.equals(this.errorCode, listResScenesResponse.errorCode);
+        ListResScenesResponse that = (ListResScenesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.resScenes, that.resScenes)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

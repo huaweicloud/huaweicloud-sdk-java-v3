@@ -99,17 +99,17 @@ public class NovaNetwork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaNetwork novaNetwork = (NovaNetwork) o;
-        return Objects.equals(this.addr, novaNetwork.addr) && Objects.equals(this.version, novaNetwork.version)
-            && Objects.equals(this.osEXTIPSMACMacAddr, novaNetwork.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSType, novaNetwork.osEXTIPSType);
+        NovaNetwork that = (NovaNetwork) obj;
+        return Objects.equals(this.addr, that.addr) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType);
     }
 
     @Override

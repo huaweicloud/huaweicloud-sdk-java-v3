@@ -118,18 +118,16 @@ public class NeutronUpdateFirewallPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateFirewallPolicyOption neutronUpdateFirewallPolicyOption = (NeutronUpdateFirewallPolicyOption) o;
-        return Objects.equals(this.name, neutronUpdateFirewallPolicyOption.name)
-            && Objects.equals(this.description, neutronUpdateFirewallPolicyOption.description)
-            && Objects.equals(this.firewallRules, neutronUpdateFirewallPolicyOption.firewallRules)
-            && Objects.equals(this.audited, neutronUpdateFirewallPolicyOption.audited);
+        NeutronUpdateFirewallPolicyOption that = (NeutronUpdateFirewallPolicyOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.firewallRules, that.firewallRules) && Objects.equals(this.audited, that.audited);
     }
 
     @Override

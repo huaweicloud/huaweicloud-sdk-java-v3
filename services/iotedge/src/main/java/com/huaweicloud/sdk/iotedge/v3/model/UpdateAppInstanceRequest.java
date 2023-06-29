@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v3.model.UpdateAppInstanceRequestDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateAppInstanceRequest  {
-
+public class UpdateAppInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_instance_id")
-    
+    @JsonProperty(value = "app_instance_id")
 
     private String appInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateAppInstanceRequestDTO body;
 
@@ -41,9 +30,6 @@ public class UpdateAppInstanceRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群ID
@@ -57,15 +43,10 @@ public class UpdateAppInstanceRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public UpdateAppInstanceRequest withAppInstanceId(String appInstanceId) {
         this.appInstanceId = appInstanceId;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例ID
@@ -79,22 +60,19 @@ public class UpdateAppInstanceRequest  {
         this.appInstanceId = appInstanceId;
     }
 
-    
-
     public UpdateAppInstanceRequest withBody(UpdateAppInstanceRequestDTO body) {
         this.body = body;
         return this;
     }
 
     public UpdateAppInstanceRequest withBody(Consumer<UpdateAppInstanceRequestDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateAppInstanceRequestDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class UpdateAppInstanceRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAppInstanceRequest updateAppInstanceRequest = (UpdateAppInstanceRequest) o;
-        return Objects.equals(this.clusterId, updateAppInstanceRequest.clusterId) &&
-            Objects.equals(this.appInstanceId, updateAppInstanceRequest.appInstanceId) &&
-            Objects.equals(this.body, updateAppInstanceRequest.body);
+        UpdateAppInstanceRequest that = (UpdateAppInstanceRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.appInstanceId, that.appInstanceId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, appInstanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class UpdateAppInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class UpdateAppInstanceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

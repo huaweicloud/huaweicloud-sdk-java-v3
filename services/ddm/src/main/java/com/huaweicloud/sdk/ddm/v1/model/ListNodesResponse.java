@@ -119,18 +119,16 @@ public class ListNodesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNodesResponse listNodesResponse = (ListNodesResponse) o;
-        return Objects.equals(this.nodes, listNodesResponse.nodes)
-            && Objects.equals(this.offset, listNodesResponse.offset)
-            && Objects.equals(this.limit, listNodesResponse.limit)
-            && Objects.equals(this.total, listNodesResponse.total);
+        ListNodesResponse that = (ListNodesResponse) obj;
+        return Objects.equals(this.nodes, that.nodes) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total);
     }
 
     @Override

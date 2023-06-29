@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 解析路由结果返回结构体
  */
-public class RouterDetailRespDTO  {
-
+public class RouterDetailRespDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="route_id")
-    
+    @JsonProperty(value = "route_id")
 
     private String routeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input_module_id")
-    
+    @JsonProperty(value = "input_module_id")
 
     private String inputModuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output_module_id")
-    
+    @JsonProperty(value = "output_module_id")
 
     private String outputModuleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
 
     private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
 
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql")
-    
+    @JsonProperty(value = "sql")
 
     private String sql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available")
-    
+    @JsonProperty(value = "available")
 
     private Boolean available;
 
@@ -63,9 +49,6 @@ public class RouterDetailRespDTO  {
         this.routeId = routeId;
         return this;
     }
-
-    
-
 
     /**
      * 路由ID，节点下唯一
@@ -79,15 +62,10 @@ public class RouterDetailRespDTO  {
         this.routeId = routeId;
     }
 
-    
-
     public RouterDetailRespDTO withInputModuleId(String inputModuleId) {
         this.inputModuleId = inputModuleId;
         return this;
     }
-
-    
-
 
     /**
      * 输入点所在模块的模块ID
@@ -101,15 +79,10 @@ public class RouterDetailRespDTO  {
         this.inputModuleId = inputModuleId;
     }
 
-    
-
     public RouterDetailRespDTO withOutputModuleId(String outputModuleId) {
         this.outputModuleId = outputModuleId;
         return this;
     }
-
-    
-
 
     /**
      * 输出点所在模块的模块ID
@@ -123,15 +96,10 @@ public class RouterDetailRespDTO  {
         this.outputModuleId = outputModuleId;
     }
 
-    
-
     public RouterDetailRespDTO withInput(String input) {
         this.input = input;
         return this;
     }
-
-    
-
 
     /**
      * 输入点名称
@@ -145,15 +113,10 @@ public class RouterDetailRespDTO  {
         this.input = input;
     }
 
-    
-
     public RouterDetailRespDTO withOutput(String output) {
         this.output = output;
         return this;
     }
-
-    
-
 
     /**
      * 输出点名称
@@ -167,15 +130,10 @@ public class RouterDetailRespDTO  {
         this.output = output;
     }
 
-    
-
     public RouterDetailRespDTO withSql(String sql) {
         this.sql = sql;
         return this;
     }
-
-    
-
 
     /**
      * sql參數
@@ -189,15 +147,10 @@ public class RouterDetailRespDTO  {
         this.sql = sql;
     }
 
-    
-
     public RouterDetailRespDTO withAvailable(Boolean available) {
         this.available = available;
         return this;
     }
-
-    
-
 
     /**
      * 是否可用
@@ -211,29 +164,26 @@ public class RouterDetailRespDTO  {
         this.available = available;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouterDetailRespDTO routerDetailRespDTO = (RouterDetailRespDTO) o;
-        return Objects.equals(this.routeId, routerDetailRespDTO.routeId) &&
-            Objects.equals(this.inputModuleId, routerDetailRespDTO.inputModuleId) &&
-            Objects.equals(this.outputModuleId, routerDetailRespDTO.outputModuleId) &&
-            Objects.equals(this.input, routerDetailRespDTO.input) &&
-            Objects.equals(this.output, routerDetailRespDTO.output) &&
-            Objects.equals(this.sql, routerDetailRespDTO.sql) &&
-            Objects.equals(this.available, routerDetailRespDTO.available);
+        RouterDetailRespDTO that = (RouterDetailRespDTO) obj;
+        return Objects.equals(this.routeId, that.routeId) && Objects.equals(this.inputModuleId, that.inputModuleId)
+            && Objects.equals(this.outputModuleId, that.outputModuleId) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.available, that.available);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(routeId, inputModuleId, outputModuleId, input, output, sql, available);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class RouterDetailRespDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class RouterDetailRespDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

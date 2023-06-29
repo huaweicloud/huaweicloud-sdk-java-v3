@@ -99,17 +99,16 @@ public class ShowQuota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQuota showQuota = (ShowQuota) o;
-        return Objects.equals(this.quotaLimit, showQuota.quotaLimit)
-            && Objects.equals(this.quotaKey, showQuota.quotaKey) && Objects.equals(this.unit, showQuota.unit)
-            && Objects.equals(this.used, showQuota.used);
+        ShowQuota that = (ShowQuota) obj;
+        return Objects.equals(this.quotaLimit, that.quotaLimit) && Objects.equals(this.quotaKey, that.quotaKey)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.used, that.used);
     }
 
     @Override

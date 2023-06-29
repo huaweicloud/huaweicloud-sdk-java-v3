@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 审批信息
  */
-public class ApproveInfo  {
-
+public class ApproveInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="topic_selected")
-    
+    @JsonProperty(value = "topic_selected")
 
     private String topicSelected;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_approve")
-    
+    @JsonProperty(value = "need_approve")
 
     private Boolean needApprove;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_urn_list")
-    
+    @JsonProperty(value = "smn_urn_list")
 
     private String smnUrnList;
 
@@ -39,9 +29,6 @@ public class ApproveInfo  {
         this.topicSelected = topicSelected;
         return this;
     }
-
-    
-
 
     /**
      * 审批人主题选择。
@@ -55,15 +42,10 @@ public class ApproveInfo  {
         this.topicSelected = topicSelected;
     }
 
-    
-
     public ApproveInfo withNeedApprove(Boolean needApprove) {
         this.needApprove = needApprove;
         return this;
     }
-
-    
-
 
     /**
      * 是否审核,默认是不审核，true，false。
@@ -77,15 +59,10 @@ public class ApproveInfo  {
         this.needApprove = needApprove;
     }
 
-    
-
     public ApproveInfo withSmnUrnList(String smnUrnList) {
         this.smnUrnList = smnUrnList;
         return this;
     }
-
-    
-
 
     /**
      * 审批主题urn集合。
@@ -99,25 +76,24 @@ public class ApproveInfo  {
         this.smnUrnList = smnUrnList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApproveInfo approveInfo = (ApproveInfo) o;
-        return Objects.equals(this.topicSelected, approveInfo.topicSelected) &&
-            Objects.equals(this.needApprove, approveInfo.needApprove) &&
-            Objects.equals(this.smnUrnList, approveInfo.smnUrnList);
+        ApproveInfo that = (ApproveInfo) obj;
+        return Objects.equals(this.topicSelected, that.topicSelected)
+            && Objects.equals(this.needApprove, that.needApprove) && Objects.equals(this.smnUrnList, that.smnUrnList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(topicSelected, needApprove, smnUrnList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ApproveInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ApproveInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -76,22 +76,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreTypeEnum(value));
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +360,19 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.id, listInstancesRequest.id) && Objects.equals(this.name, listInstancesRequest.name)
-            && Objects.equals(this.mode, listInstancesRequest.mode)
-            && Objects.equals(this.datastoreType, listInstancesRequest.datastoreType)
-            && Objects.equals(this.vpcId, listInstancesRequest.vpcId)
-            && Objects.equals(this.subnetId, listInstancesRequest.subnetId)
-            && Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.tags, listInstancesRequest.tags);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -471,34 +471,29 @@ public class ShowQualityTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQualityTaskDetailResponse showQualityTaskDetailResponse = (ShowQualityTaskDetailResponse) o;
-        return Objects.equals(this.id, showQualityTaskDetailResponse.id)
-            && Objects.equals(this.name, showQualityTaskDetailResponse.name)
-            && Objects.equals(this.description, showQualityTaskDetailResponse.description)
-            && Objects.equals(this.categoryId, showQualityTaskDetailResponse.categoryId)
-            && Objects.equals(this.level, showQualityTaskDetailResponse.level)
-            && Objects.equals(this.alarmCondition, showQualityTaskDetailResponse.alarmCondition)
-            && Objects.equals(this.alarmNotify, showQualityTaskDetailResponse.alarmNotify)
-            && Objects.equals(this.alarmNotifyType, showQualityTaskDetailResponse.alarmNotifyType)
-            && Objects.equals(this.alarmNotifyTopic, showQualityTaskDetailResponse.alarmNotifyTopic)
-            && Objects.equals(this.scheduleType, showQualityTaskDetailResponse.scheduleType)
-            && Objects.equals(this.scheduleStartDate, showQualityTaskDetailResponse.scheduleStartDate)
-            && Objects.equals(this.scheduleEndDate, showQualityTaskDetailResponse.scheduleEndDate)
-            && Objects.equals(this.schedulePeriod, showQualityTaskDetailResponse.schedulePeriod)
-            && Objects.equals(this.scheduleInterval, showQualityTaskDetailResponse.scheduleInterval)
-            && Objects.equals(this.scheduleStartTime, showQualityTaskDetailResponse.scheduleStartTime)
-            && Objects.equals(this.scheduleEndTime, showQualityTaskDetailResponse.scheduleEndTime)
-            && Objects.equals(this.createTime, showQualityTaskDetailResponse.createTime)
-            && Objects.equals(this.lastRunTime, showQualityTaskDetailResponse.lastRunTime)
-            && Objects.equals(this.subRules, showQualityTaskDetailResponse.subRules)
-            && Objects.equals(this.scheduleCron, showQualityTaskDetailResponse.scheduleCron);
+        ShowQualityTaskDetailResponse that = (ShowQualityTaskDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.alarmCondition, that.alarmCondition)
+            && Objects.equals(this.alarmNotify, that.alarmNotify)
+            && Objects.equals(this.alarmNotifyType, that.alarmNotifyType)
+            && Objects.equals(this.alarmNotifyTopic, that.alarmNotifyTopic)
+            && Objects.equals(this.scheduleType, that.scheduleType)
+            && Objects.equals(this.scheduleStartDate, that.scheduleStartDate)
+            && Objects.equals(this.scheduleEndDate, that.scheduleEndDate)
+            && Objects.equals(this.schedulePeriod, that.schedulePeriod)
+            && Objects.equals(this.scheduleInterval, that.scheduleInterval)
+            && Objects.equals(this.scheduleStartTime, that.scheduleStartTime)
+            && Objects.equals(this.scheduleEndTime, that.scheduleEndTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.subRules, that.subRules) && Objects.equals(this.scheduleCron, that.scheduleCron);
     }
 
     @Override

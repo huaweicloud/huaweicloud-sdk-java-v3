@@ -109,17 +109,16 @@ public class EventItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventItem eventItem = (EventItem) o;
-        return Objects.equals(this.eventName, eventItem.eventName)
-            && Objects.equals(this.eventSource, eventItem.eventSource) && Objects.equals(this.time, eventItem.time)
-            && Objects.equals(this.detail, eventItem.detail);
+        EventItem that = (EventItem) obj;
+        return Objects.equals(this.eventName, that.eventName) && Objects.equals(this.eventSource, that.eventSource)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

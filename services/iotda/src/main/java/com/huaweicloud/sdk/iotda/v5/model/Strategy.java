@@ -56,16 +56,15 @@ public class Strategy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Strategy strategy = (Strategy) o;
-        return Objects.equals(this.trigger, strategy.trigger)
-            && Objects.equals(this.eventValidTime, strategy.eventValidTime);
+        Strategy that = (Strategy) obj;
+        return Objects.equals(this.trigger, that.trigger) && Objects.equals(this.eventValidTime, that.eventValidTime);
     }
 
     @Override

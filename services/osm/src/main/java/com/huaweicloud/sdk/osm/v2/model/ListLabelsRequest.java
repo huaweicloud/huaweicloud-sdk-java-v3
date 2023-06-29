@@ -179,20 +179,18 @@ public class ListLabelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLabelsRequest listLabelsRequest = (ListLabelsRequest) o;
-        return Objects.equals(this.offset, listLabelsRequest.offset)
-            && Objects.equals(this.limit, listLabelsRequest.limit) && Objects.equals(this.name, listLabelsRequest.name)
-            && Objects.equals(this.labelId, listLabelsRequest.labelId)
-            && Objects.equals(this.xSite, listLabelsRequest.xSite)
-            && Objects.equals(this.xLanguage, listLabelsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listLabelsRequest.xTimeZone);
+        ListLabelsRequest that = (ListLabelsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.labelId, that.labelId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

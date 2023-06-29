@@ -77,18 +77,17 @@ public class DeleteBlackWhiteListUsingDeleteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBlackWhiteListUsingDeleteRequest deleteBlackWhiteListUsingDeleteRequest =
-            (DeleteBlackWhiteListUsingDeleteRequest) o;
-        return Objects.equals(this.listId, deleteBlackWhiteListUsingDeleteRequest.listId)
-            && Objects.equals(this.enterpriseProjectId, deleteBlackWhiteListUsingDeleteRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, deleteBlackWhiteListUsingDeleteRequest.fwInstanceId);
+        DeleteBlackWhiteListUsingDeleteRequest that = (DeleteBlackWhiteListUsingDeleteRequest) obj;
+        return Objects.equals(this.listId, that.listId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

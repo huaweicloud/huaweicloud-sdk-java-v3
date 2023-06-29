@@ -65,15 +65,15 @@ public class PostCustomTTSReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostCustomTTSReq postCustomTTSReq = (PostCustomTTSReq) o;
-        return Objects.equals(this.text, postCustomTTSReq.text) && Objects.equals(this.config, postCustomTTSReq.config);
+        PostCustomTTSReq that = (PostCustomTTSReq) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.config, that.config);
     }
 
     @Override

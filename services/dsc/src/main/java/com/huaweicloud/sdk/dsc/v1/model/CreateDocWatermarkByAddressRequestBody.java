@@ -82,22 +82,15 @@ public class CreateDocWatermarkByAddressRequestBody {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DocTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DocTypeEnum(value));
         }
 
         public static DocTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,22 +177,15 @@ public class CreateDocWatermarkByAddressRequestBody {
             if (value == null) {
                 return null;
             }
-            VisibleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibleTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibleTypeEnum(value));
         }
 
         public static VisibleTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -496,29 +482,23 @@ public class CreateDocWatermarkByAddressRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDocWatermarkByAddressRequestBody createDocWatermarkByAddressRequestBody =
-            (CreateDocWatermarkByAddressRequestBody) o;
-        return Objects.equals(this.regionId, createDocWatermarkByAddressRequestBody.regionId)
-            && Objects.equals(this.srcFile, createDocWatermarkByAddressRequestBody.srcFile)
-            && Objects.equals(this.docType, createDocWatermarkByAddressRequestBody.docType)
-            && Objects.equals(this.dstFile, createDocWatermarkByAddressRequestBody.dstFile)
-            && Objects.equals(this.blindWatermark, createDocWatermarkByAddressRequestBody.blindWatermark)
-            && Objects.equals(this.visibleWatermark, createDocWatermarkByAddressRequestBody.visibleWatermark)
-            && Objects.equals(this.imageMark, createDocWatermarkByAddressRequestBody.imageMark)
-            && Objects.equals(this.visibleType, createDocWatermarkByAddressRequestBody.visibleType)
-            && Objects.equals(this.filePassword, createDocWatermarkByAddressRequestBody.filePassword)
-            && Objects.equals(this.markedFilePassword, createDocWatermarkByAddressRequestBody.markedFilePassword)
-            && Objects.equals(this.readonlyPassword, createDocWatermarkByAddressRequestBody.readonlyPassword)
-            && Objects.equals(this.front, createDocWatermarkByAddressRequestBody.front)
-            && Objects.equals(this.rotation, createDocWatermarkByAddressRequestBody.rotation)
-            && Objects.equals(this.opacity, createDocWatermarkByAddressRequestBody.opacity);
+        CreateDocWatermarkByAddressRequestBody that = (CreateDocWatermarkByAddressRequestBody) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.srcFile, that.srcFile)
+            && Objects.equals(this.docType, that.docType) && Objects.equals(this.dstFile, that.dstFile)
+            && Objects.equals(this.blindWatermark, that.blindWatermark)
+            && Objects.equals(this.visibleWatermark, that.visibleWatermark)
+            && Objects.equals(this.imageMark, that.imageMark) && Objects.equals(this.visibleType, that.visibleType)
+            && Objects.equals(this.filePassword, that.filePassword)
+            && Objects.equals(this.markedFilePassword, that.markedFilePassword)
+            && Objects.equals(this.readonlyPassword, that.readonlyPassword) && Objects.equals(this.front, that.front)
+            && Objects.equals(this.rotation, that.rotation) && Objects.equals(this.opacity, that.opacity);
     }
 
     @Override

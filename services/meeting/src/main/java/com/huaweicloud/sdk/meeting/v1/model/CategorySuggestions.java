@@ -77,17 +77,16 @@ public class CategorySuggestions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CategorySuggestions categorySuggestions = (CategorySuggestions) o;
-        return Objects.equals(this.politics, categorySuggestions.politics)
-            && Objects.equals(this.terrorism, categorySuggestions.terrorism)
-            && Objects.equals(this.porn, categorySuggestions.porn);
+        CategorySuggestions that = (CategorySuggestions) obj;
+        return Objects.equals(this.politics, that.politics) && Objects.equals(this.terrorism, that.terrorism)
+            && Objects.equals(this.porn, that.porn);
     }
 
     @Override

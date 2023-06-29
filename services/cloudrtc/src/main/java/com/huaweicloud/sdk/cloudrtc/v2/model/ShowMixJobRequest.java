@@ -125,19 +125,17 @@ public class ShowMixJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMixJobRequest showMixJobRequest = (ShowMixJobRequest) o;
-        return Objects.equals(this.authorization, showMixJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, showMixJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showMixJobRequest.xProjectId)
-            && Objects.equals(this.appId, showMixJobRequest.appId)
-            && Objects.equals(this.jobId, showMixJobRequest.jobId);
+        ShowMixJobRequest that = (ShowMixJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

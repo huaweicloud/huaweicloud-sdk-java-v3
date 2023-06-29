@@ -33,15 +33,15 @@ public class CollectTranscriberJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectTranscriberJobRequest collectTranscriberJobRequest = (CollectTranscriberJobRequest) o;
-        return Objects.equals(this.jobId, collectTranscriberJobRequest.jobId);
+        CollectTranscriberJobRequest that = (CollectTranscriberJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

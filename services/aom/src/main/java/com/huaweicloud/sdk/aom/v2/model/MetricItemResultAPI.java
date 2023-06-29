@@ -1,51 +1,40 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Dimension;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 维度信息。
  */
-public class MetricItemResultAPI  {
-
+public class MetricItemResultAPI {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<Dimension> dimensions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensionvaluehash")
-    
+    @JsonProperty(value = "dimensionvaluehash")
 
     private String dimensionvaluehash;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metricName")
-    
+    @JsonProperty(value = "metricName")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
 
     private String unit;
 
@@ -54,9 +43,8 @@ public class MetricItemResultAPI  {
         return this;
     }
 
-    
     public MetricItemResultAPI addDimensionsItem(Dimension dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -64,7 +52,7 @@ public class MetricItemResultAPI  {
     }
 
     public MetricItemResultAPI withDimensions(Consumer<List<Dimension>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
@@ -83,15 +71,10 @@ public class MetricItemResultAPI  {
         this.dimensions = dimensions;
     }
 
-    
-
     public MetricItemResultAPI withDimensionvaluehash(String dimensionvaluehash) {
         this.dimensionvaluehash = dimensionvaluehash;
         return this;
     }
-
-    
-
 
     /**
      * 指标哈希值。
@@ -105,15 +88,10 @@ public class MetricItemResultAPI  {
         this.dimensionvaluehash = dimensionvaluehash;
     }
 
-    
-
     public MetricItemResultAPI withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
-
-    
-
 
     /**
      * 指标名称。
@@ -127,15 +105,10 @@ public class MetricItemResultAPI  {
         this.metricName = metricName;
     }
 
-    
-
     public MetricItemResultAPI withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 命名空间。
@@ -149,15 +122,10 @@ public class MetricItemResultAPI  {
         this.namespace = namespace;
     }
 
-    
-
     public MetricItemResultAPI withUnit(String unit) {
         this.unit = unit;
         return this;
     }
-
-    
-
 
     /**
      * 指标单位。
@@ -171,27 +139,26 @@ public class MetricItemResultAPI  {
         this.unit = unit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricItemResultAPI metricItemResultAPI = (MetricItemResultAPI) o;
-        return Objects.equals(this.dimensions, metricItemResultAPI.dimensions) &&
-            Objects.equals(this.dimensionvaluehash, metricItemResultAPI.dimensionvaluehash) &&
-            Objects.equals(this.metricName, metricItemResultAPI.metricName) &&
-            Objects.equals(this.namespace, metricItemResultAPI.namespace) &&
-            Objects.equals(this.unit, metricItemResultAPI.unit);
+        MetricItemResultAPI that = (MetricItemResultAPI) obj;
+        return Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.dimensionvaluehash, that.dimensionvaluehash)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.unit, that.unit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dimensions, dimensionvaluehash, metricName, namespace, unit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -204,6 +171,7 @@ public class MetricItemResultAPI  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -214,8 +182,5 @@ public class MetricItemResultAPI  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

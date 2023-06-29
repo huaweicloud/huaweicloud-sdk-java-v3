@@ -98,17 +98,17 @@ public class RateOnDemandReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RateOnDemandReq rateOnDemandReq = (RateOnDemandReq) o;
-        return Objects.equals(this.projectId, rateOnDemandReq.projectId)
-            && Objects.equals(this.inquiryPrecision, rateOnDemandReq.inquiryPrecision)
-            && Objects.equals(this.productInfos, rateOnDemandReq.productInfos);
+        RateOnDemandReq that = (RateOnDemandReq) obj;
+        return Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.inquiryPrecision, that.inquiryPrecision)
+            && Objects.equals(this.productInfos, that.productInfos);
     }
 
     @Override

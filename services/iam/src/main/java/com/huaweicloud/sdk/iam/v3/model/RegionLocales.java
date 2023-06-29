@@ -121,17 +121,17 @@ public class RegionLocales {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegionLocales regionLocales = (RegionLocales) o;
-        return Objects.equals(this.zhCn, regionLocales.zhCn) && Objects.equals(this.enUs, regionLocales.enUs)
-            && Objects.equals(this.ptBr, regionLocales.ptBr) && Objects.equals(this.esUs, regionLocales.esUs)
-            && Objects.equals(this.esEs, regionLocales.esEs);
+        RegionLocales that = (RegionLocales) obj;
+        return Objects.equals(this.zhCn, that.zhCn) && Objects.equals(this.enUs, that.enUs)
+            && Objects.equals(this.ptBr, that.ptBr) && Objects.equals(this.esUs, that.esUs)
+            && Objects.equals(this.esEs, that.esEs);
     }
 
     @Override

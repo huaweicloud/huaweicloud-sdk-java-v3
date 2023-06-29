@@ -55,15 +55,15 @@ public class KeKInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeKInfo keKInfo = (KeKInfo) o;
-        return Objects.equals(this.keyId, keKInfo.keyId) && Objects.equals(this.domainId, keKInfo.domainId);
+        KeKInfo that = (KeKInfo) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

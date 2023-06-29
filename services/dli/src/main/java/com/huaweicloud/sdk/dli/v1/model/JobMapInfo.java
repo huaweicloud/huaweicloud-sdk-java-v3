@@ -77,16 +77,16 @@ public class JobMapInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobMapInfo jobMapInfo = (JobMapInfo) o;
-        return Objects.equals(this.oldJobId, jobMapInfo.oldJobId) && Objects.equals(this.newJobId, jobMapInfo.newJobId)
-            && Objects.equals(this.remark, jobMapInfo.remark);
+        JobMapInfo that = (JobMapInfo) obj;
+        return Objects.equals(this.oldJobId, that.oldJobId) && Objects.equals(this.newJobId, that.newJobId)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

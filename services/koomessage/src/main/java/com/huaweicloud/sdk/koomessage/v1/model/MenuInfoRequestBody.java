@@ -43,15 +43,15 @@ public class MenuInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MenuInfoRequestBody menuInfoRequestBody = (MenuInfoRequestBody) o;
-        return Objects.equals(this.menu, menuInfoRequestBody.menu);
+        MenuInfoRequestBody that = (MenuInfoRequestBody) obj;
+        return Objects.equals(this.menu, that.menu);
     }
 
     @Override

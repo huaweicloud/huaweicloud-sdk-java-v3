@@ -43,15 +43,15 @@ public class CreateRoutetableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRoutetableRequestBody createRoutetableRequestBody = (CreateRoutetableRequestBody) o;
-        return Objects.equals(this.routetable, createRoutetableRequestBody.routetable);
+        CreateRoutetableRequestBody that = (CreateRoutetableRequestBody) obj;
+        return Objects.equals(this.routetable, that.routetable);
     }
 
     @Override

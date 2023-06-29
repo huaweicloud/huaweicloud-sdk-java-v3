@@ -369,25 +369,22 @@ public class RestAttendeeDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestAttendeeDTO restAttendeeDTO = (RestAttendeeDTO) o;
-        return Objects.equals(this.userUUID, restAttendeeDTO.userUUID)
-            && Objects.equals(this.accountId, restAttendeeDTO.accountId)
-            && Objects.equals(this.name, restAttendeeDTO.name) && Objects.equals(this.role, restAttendeeDTO.role)
-            && Objects.equals(this.phone, restAttendeeDTO.phone) && Objects.equals(this.phone2, restAttendeeDTO.phone2)
-            && Objects.equals(this.phone3, restAttendeeDTO.phone3) && Objects.equals(this.email, restAttendeeDTO.email)
-            && Objects.equals(this.sms, restAttendeeDTO.sms) && Objects.equals(this.isMute, restAttendeeDTO.isMute)
-            && Objects.equals(this.isAutoInvite, restAttendeeDTO.isAutoInvite)
-            && Objects.equals(this.type, restAttendeeDTO.type) && Objects.equals(this.address, restAttendeeDTO.address)
-            && Objects.equals(this.deptUUID, restAttendeeDTO.deptUUID)
-            && Objects.equals(this.deptName, restAttendeeDTO.deptName)
-            && Objects.equals(this.appId, restAttendeeDTO.appId);
+        RestAttendeeDTO that = (RestAttendeeDTO) obj;
+        return Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.phone2, that.phone2)
+            && Objects.equals(this.phone3, that.phone3) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.sms, that.sms) && Objects.equals(this.isMute, that.isMute)
+            && Objects.equals(this.isAutoInvite, that.isAutoInvite) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.deptUUID, that.deptUUID)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

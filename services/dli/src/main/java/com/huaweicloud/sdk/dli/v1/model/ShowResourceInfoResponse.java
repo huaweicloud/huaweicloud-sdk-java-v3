@@ -166,21 +166,18 @@ public class ShowResourceInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceInfoResponse showResourceInfoResponse = (ShowResourceInfoResponse) o;
-        return Objects.equals(this.createTime, showResourceInfoResponse.createTime)
-            && Objects.equals(this.updateTime, showResourceInfoResponse.updateTime)
-            && Objects.equals(this.resourceType, showResourceInfoResponse.resourceType)
-            && Objects.equals(this.resourceName, showResourceInfoResponse.resourceName)
-            && Objects.equals(this.status, showResourceInfoResponse.status)
-            && Objects.equals(this.underlyingName, showResourceInfoResponse.underlyingName)
-            && Objects.equals(this.owner, showResourceInfoResponse.owner);
+        ShowResourceInfoResponse that = (ShowResourceInfoResponse) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.underlyingName, that.underlyingName) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

@@ -77,22 +77,15 @@ public class GetJobInfoResponseBodyJob {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,23 +300,19 @@ public class GetJobInfoResponseBodyJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetJobInfoResponseBodyJob getJobInfoResponseBodyJob = (GetJobInfoResponseBodyJob) o;
-        return Objects.equals(this.id, getJobInfoResponseBodyJob.id)
-            && Objects.equals(this.name, getJobInfoResponseBodyJob.name)
-            && Objects.equals(this.status, getJobInfoResponseBodyJob.status)
-            && Objects.equals(this.created, getJobInfoResponseBodyJob.created)
-            && Objects.equals(this.ended, getJobInfoResponseBodyJob.ended)
-            && Objects.equals(this.process, getJobInfoResponseBodyJob.process)
-            && Objects.equals(this.instance, getJobInfoResponseBodyJob.instance)
-            && Objects.equals(this.entities, getJobInfoResponseBodyJob.entities)
-            && Objects.equals(this.failReason, getJobInfoResponseBodyJob.failReason);
+        GetJobInfoResponseBodyJob that = (GetJobInfoResponseBodyJob) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.ended, that.ended) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.entities, that.entities)
+            && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

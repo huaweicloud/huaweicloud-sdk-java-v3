@@ -74,16 +74,15 @@ public class ConfigurationScheduler {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationScheduler configurationScheduler = (ConfigurationScheduler) o;
-        return Objects.equals(this.affinity, configurationScheduler.affinity)
-            && Objects.equals(this.antiAffinity, configurationScheduler.antiAffinity);
+        ConfigurationScheduler that = (ConfigurationScheduler) obj;
+        return Objects.equals(this.affinity, that.affinity) && Objects.equals(this.antiAffinity, that.antiAffinity);
     }
 
     @Override

@@ -209,19 +209,19 @@ public class Process {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Process process = (Process) o;
-        return Objects.equals(this.id, process.id) && Objects.equals(this.user, process.user)
-            && Objects.equals(this.host, process.host) && Objects.equals(this.database, process.database)
-            && Objects.equals(this.command, process.command) && Objects.equals(this.time, process.time)
-            && Objects.equals(this.state, process.state) && Objects.equals(this.sql, process.sql)
-            && Objects.equals(this.trxExecutedTime, process.trxExecutedTime);
+        Process that = (Process) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.trxExecutedTime, that.trxExecutedTime);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class BatchUpdateNodeLabelReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateNodeLabelReq batchUpdateNodeLabelReq = (BatchUpdateNodeLabelReq) o;
-        return Objects.equals(this.labels, batchUpdateNodeLabelReq.labels);
+        BatchUpdateNodeLabelReq that = (BatchUpdateNodeLabelReq) obj;
+        return Objects.equals(this.labels, that.labels);
     }
 
     @Override

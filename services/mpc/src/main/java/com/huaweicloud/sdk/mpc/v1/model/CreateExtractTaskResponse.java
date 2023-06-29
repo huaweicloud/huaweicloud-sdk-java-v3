@@ -185,21 +185,18 @@ public class CreateExtractTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateExtractTaskResponse createExtractTaskResponse = (CreateExtractTaskResponse) o;
-        return Objects.equals(this.taskId, createExtractTaskResponse.taskId)
-            && Objects.equals(this.status, createExtractTaskResponse.status)
-            && Objects.equals(this.createTime, createExtractTaskResponse.createTime)
-            && Objects.equals(this.output, createExtractTaskResponse.output)
-            && Objects.equals(this.outputFileName, createExtractTaskResponse.outputFileName)
-            && Objects.equals(this.description, createExtractTaskResponse.description)
-            && Objects.equals(this.metadata, createExtractTaskResponse.metadata);
+        CreateExtractTaskResponse that = (CreateExtractTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFileName, that.outputFileName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

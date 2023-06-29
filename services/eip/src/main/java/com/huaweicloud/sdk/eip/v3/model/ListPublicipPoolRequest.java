@@ -279,26 +279,21 @@ public class ListPublicipPoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipPoolRequest listPublicipPoolRequest = (ListPublicipPoolRequest) o;
-        return Objects.equals(this.marker, listPublicipPoolRequest.marker)
-            && Objects.equals(this.limit, listPublicipPoolRequest.limit)
-            && Objects.equals(this.fields, listPublicipPoolRequest.fields)
-            && Objects.equals(this.sortKey, listPublicipPoolRequest.sortKey)
-            && Objects.equals(this.sortDir, listPublicipPoolRequest.sortDir)
-            && Objects.equals(this.id, listPublicipPoolRequest.id)
-            && Objects.equals(this.name, listPublicipPoolRequest.name)
-            && Objects.equals(this.size, listPublicipPoolRequest.size)
-            && Objects.equals(this.status, listPublicipPoolRequest.status)
-            && Objects.equals(this.type, listPublicipPoolRequest.type)
-            && Objects.equals(this.description, listPublicipPoolRequest.description)
-            && Objects.equals(this.publicBorderGroup, listPublicipPoolRequest.publicBorderGroup);
+        ListPublicipPoolRequest that = (ListPublicipPoolRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.fields, that.fields) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

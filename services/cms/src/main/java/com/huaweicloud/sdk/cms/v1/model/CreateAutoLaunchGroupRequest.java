@@ -43,15 +43,15 @@ public class CreateAutoLaunchGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAutoLaunchGroupRequest createAutoLaunchGroupRequest = (CreateAutoLaunchGroupRequest) o;
-        return Objects.equals(this.body, createAutoLaunchGroupRequest.body);
+        CreateAutoLaunchGroupRequest that = (CreateAutoLaunchGroupRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

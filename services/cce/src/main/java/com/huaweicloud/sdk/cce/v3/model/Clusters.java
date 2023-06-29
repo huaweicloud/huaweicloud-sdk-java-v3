@@ -65,15 +65,15 @@ public class Clusters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Clusters clusters = (Clusters) o;
-        return Objects.equals(this.name, clusters.name) && Objects.equals(this.cluster, clusters.cluster);
+        Clusters that = (Clusters) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.cluster, that.cluster);
     }
 
     @Override

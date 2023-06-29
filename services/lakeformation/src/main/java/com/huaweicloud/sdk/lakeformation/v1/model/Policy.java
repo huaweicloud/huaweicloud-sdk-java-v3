@@ -837,36 +837,36 @@ public class Policy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Policy policy = (Policy) o;
-        return Objects.equals(this.allowExceptions, policy.allowExceptions)
-            && Objects.equals(this.conditions, policy.conditions) && Objects.equals(this.createTime, policy.createTime)
-            && Objects.equals(this.createdBy, policy.createdBy)
-            && Objects.equals(this.dataMaskPolicyItems, policy.dataMaskPolicyItems)
-            && Objects.equals(this.denyExceptions, policy.denyExceptions)
-            && Objects.equals(this.denyPolicyItems, policy.denyPolicyItems)
-            && Objects.equals(this.description, policy.description) && Objects.equals(this.guid, policy.guid)
-            && Objects.equals(this.id, policy.id) && Objects.equals(this.isAuditEnabled, policy.isAuditEnabled)
-            && Objects.equals(this.isDefaultPolicy, policy.isDefaultPolicy)
-            && Objects.equals(this.isDenyAllElse, policy.isDenyAllElse)
-            && Objects.equals(this.isEnabled, policy.isEnabled) && Objects.equals(this.name, policy.name)
-            && Objects.equals(this.options, policy.options) && Objects.equals(this.policyItems, policy.policyItems)
-            && Objects.equals(this.policyLabels, policy.policyLabels)
-            && Objects.equals(this.policyPriority, policy.policyPriority)
-            && Objects.equals(this.policyType, policy.policyType)
-            && Objects.equals(this.resourceSignature, policy.resourceSignature)
-            && Objects.equals(this.resources, policy.resources)
-            && Objects.equals(this.rowFilterPolicyItems, policy.rowFilterPolicyItems)
-            && Objects.equals(this.service, policy.service) && Objects.equals(this.serviceType, policy.serviceType)
-            && Objects.equals(this.updateTime, policy.updateTime) && Objects.equals(this.updatedBy, policy.updatedBy)
-            && Objects.equals(this.validitySchedules, policy.validitySchedules)
-            && Objects.equals(this.version, policy.version) && Objects.equals(this.zoneName, policy.zoneName);
+        Policy that = (Policy) obj;
+        return Objects.equals(this.allowExceptions, that.allowExceptions)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.dataMaskPolicyItems, that.dataMaskPolicyItems)
+            && Objects.equals(this.denyExceptions, that.denyExceptions)
+            && Objects.equals(this.denyPolicyItems, that.denyPolicyItems)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.isAuditEnabled, that.isAuditEnabled)
+            && Objects.equals(this.isDefaultPolicy, that.isDefaultPolicy)
+            && Objects.equals(this.isDenyAllElse, that.isDenyAllElse) && Objects.equals(this.isEnabled, that.isEnabled)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.options, that.options)
+            && Objects.equals(this.policyItems, that.policyItems)
+            && Objects.equals(this.policyLabels, that.policyLabels)
+            && Objects.equals(this.policyPriority, that.policyPriority)
+            && Objects.equals(this.policyType, that.policyType)
+            && Objects.equals(this.resourceSignature, that.resourceSignature)
+            && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.rowFilterPolicyItems, that.rowFilterPolicyItems)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updatedBy, that.updatedBy)
+            && Objects.equals(this.validitySchedules, that.validitySchedules)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.zoneName, that.zoneName);
     }
 
     @Override

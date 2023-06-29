@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateManualBackupRequestBody
  */
-public class CreateManualBackupRequestBody  {
-
+public class CreateManualBackupRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -39,9 +29,6 @@ public class CreateManualBackupRequestBody  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -55,15 +42,10 @@ public class CreateManualBackupRequestBody  {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateManualBackupRequestBody withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 备份名称，4~64个字符，必须以英文字母开头，区分大小写，可以包含英文字母、数字、中划线或者下划线，不能包含其他特殊字符。
@@ -77,15 +59,10 @@ public class CreateManualBackupRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateManualBackupRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 备份描述，不能包含>!<\"&'=特殊字符，不大于256个字符。
@@ -99,25 +76,24 @@ public class CreateManualBackupRequestBody  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateManualBackupRequestBody createManualBackupRequestBody = (CreateManualBackupRequestBody) o;
-        return Objects.equals(this.instanceId, createManualBackupRequestBody.instanceId) &&
-            Objects.equals(this.name, createManualBackupRequestBody.name) &&
-            Objects.equals(this.description, createManualBackupRequestBody.description);
+        CreateManualBackupRequestBody that = (CreateManualBackupRequestBody) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, name, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class CreateManualBackupRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class CreateManualBackupRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -405,31 +405,24 @@ public class EventUserResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventUserResponseInfo eventUserResponseInfo = (EventUserResponseInfo) o;
-        return Objects.equals(this.userId, eventUserResponseInfo.userId)
-            && Objects.equals(this.userGid, eventUserResponseInfo.userGid)
-            && Objects.equals(this.userName, eventUserResponseInfo.userName)
-            && Objects.equals(this.userGroupName, eventUserResponseInfo.userGroupName)
-            && Objects.equals(this.userHomeDir, eventUserResponseInfo.userHomeDir)
-            && Objects.equals(this.loginIp, eventUserResponseInfo.loginIp)
-            && Objects.equals(this.serviceType, eventUserResponseInfo.serviceType)
-            && Objects.equals(this.servicePort, eventUserResponseInfo.servicePort)
-            && Objects.equals(this.loginMode, eventUserResponseInfo.loginMode)
-            && Objects.equals(this.loginLastTime, eventUserResponseInfo.loginLastTime)
-            && Objects.equals(this.loginFailCount, eventUserResponseInfo.loginFailCount)
-            && Objects.equals(this.pwdHash, eventUserResponseInfo.pwdHash)
-            && Objects.equals(this.pwdWithFuzzing, eventUserResponseInfo.pwdWithFuzzing)
-            && Objects.equals(this.pwdUsedDays, eventUserResponseInfo.pwdUsedDays)
-            && Objects.equals(this.pwdMinDays, eventUserResponseInfo.pwdMinDays)
-            && Objects.equals(this.pwdMaxDays, eventUserResponseInfo.pwdMaxDays)
-            && Objects.equals(this.pwdWarnLeftDays, eventUserResponseInfo.pwdWarnLeftDays);
+        EventUserResponseInfo that = (EventUserResponseInfo) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userGid, that.userGid)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userGroupName, that.userGroupName)
+            && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.loginIp, that.loginIp)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.servicePort, that.servicePort)
+            && Objects.equals(this.loginMode, that.loginMode) && Objects.equals(this.loginLastTime, that.loginLastTime)
+            && Objects.equals(this.loginFailCount, that.loginFailCount) && Objects.equals(this.pwdHash, that.pwdHash)
+            && Objects.equals(this.pwdWithFuzzing, that.pwdWithFuzzing)
+            && Objects.equals(this.pwdUsedDays, that.pwdUsedDays) && Objects.equals(this.pwdMinDays, that.pwdMinDays)
+            && Objects.equals(this.pwdMaxDays, that.pwdMaxDays)
+            && Objects.equals(this.pwdWarnLeftDays, that.pwdWarnLeftDays);
     }
 
     @Override

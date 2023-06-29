@@ -55,15 +55,15 @@ public class Dimension2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Dimension2 dimension2 = (Dimension2) o;
-        return Objects.equals(this.name, dimension2.name) && Objects.equals(this.value, dimension2.value);
+        Dimension2 that = (Dimension2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

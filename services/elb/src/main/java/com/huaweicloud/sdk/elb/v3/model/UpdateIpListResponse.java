@@ -66,16 +66,15 @@ public class UpdateIpListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpListResponse updateIpListResponse = (UpdateIpListResponse) o;
-        return Objects.equals(this.ipgroup, updateIpListResponse.ipgroup)
-            && Objects.equals(this.requestId, updateIpListResponse.requestId);
+        UpdateIpListResponse that = (UpdateIpListResponse) obj;
+        return Objects.equals(this.ipgroup, that.ipgroup) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

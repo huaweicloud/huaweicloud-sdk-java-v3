@@ -241,21 +241,20 @@ public class GenerationTaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GenerationTaskData generationTaskData = (GenerationTaskData) o;
-        return Objects.equals(this.numTrials, generationTaskData.numTrials)
-            && Objects.equals(this.strongConstraints, generationTaskData.strongConstraints)
-            && Objects.equals(this.weakConstraints, generationTaskData.weakConstraints)
-            && Objects.equals(this.numExpected, generationTaskData.numExpected)
-            && Objects.equals(this.initialDataset, generationTaskData.initialDataset)
-            && Objects.equals(this.bindingSite, generationTaskData.bindingSite)
-            && Objects.equals(this.customProps, generationTaskData.customProps);
+        GenerationTaskData that = (GenerationTaskData) obj;
+        return Objects.equals(this.numTrials, that.numTrials)
+            && Objects.equals(this.strongConstraints, that.strongConstraints)
+            && Objects.equals(this.weakConstraints, that.weakConstraints)
+            && Objects.equals(this.numExpected, that.numExpected)
+            && Objects.equals(this.initialDataset, that.initialDataset)
+            && Objects.equals(this.bindingSite, that.bindingSite) && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

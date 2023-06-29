@@ -33,15 +33,15 @@ public class ShowAllFaceSetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllFaceSetsRequest showAllFaceSetsRequest = (ShowAllFaceSetsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showAllFaceSetsRequest.enterpriseProjectId);
+        ShowAllFaceSetsRequest that = (ShowAllFaceSetsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

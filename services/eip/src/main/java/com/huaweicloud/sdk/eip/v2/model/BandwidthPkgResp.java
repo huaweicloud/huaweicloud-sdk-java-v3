@@ -231,24 +231,20 @@ public class BandwidthPkgResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthPkgResp bandwidthPkgResp = (BandwidthPkgResp) o;
-        return Objects.equals(this.resourceId, bandwidthPkgResp.resourceId)
-            && Objects.equals(this.resourceName, bandwidthPkgResp.resourceName)
-            && Objects.equals(this.processedTime, bandwidthPkgResp.processedTime)
-            && Objects.equals(this.bandwidthId, bandwidthPkgResp.bandwidthId)
-            && Objects.equals(this.pkgSize, bandwidthPkgResp.pkgSize)
-            && Objects.equals(this.tenantId, bandwidthPkgResp.tenantId)
-            && Objects.equals(this.billingInfo, bandwidthPkgResp.billingInfo)
-            && Objects.equals(this.startTime, bandwidthPkgResp.startTime)
-            && Objects.equals(this.endTime, bandwidthPkgResp.endTime)
-            && Objects.equals(this.status, bandwidthPkgResp.status);
+        BandwidthPkgResp that = (BandwidthPkgResp) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.processedTime, that.processedTime)
+            && Objects.equals(this.bandwidthId, that.bandwidthId) && Objects.equals(this.pkgSize, that.pkgSize)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.billingInfo, that.billingInfo)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

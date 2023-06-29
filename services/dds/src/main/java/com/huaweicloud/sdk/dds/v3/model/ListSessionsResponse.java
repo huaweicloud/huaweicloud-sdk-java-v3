@@ -75,16 +75,15 @@ public class ListSessionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSessionsResponse listSessionsResponse = (ListSessionsResponse) o;
-        return Objects.equals(this.totalCount, listSessionsResponse.totalCount)
-            && Objects.equals(this.sessions, listSessionsResponse.sessions);
+        ListSessionsResponse that = (ListSessionsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.sessions, that.sessions);
     }
 
     @Override

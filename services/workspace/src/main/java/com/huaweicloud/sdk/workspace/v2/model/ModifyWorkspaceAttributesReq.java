@@ -79,22 +79,15 @@ public class ModifyWorkspaceAttributesReq {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessModeEnum(value));
         }
 
         public static AccessModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,22 +305,21 @@ public class ModifyWorkspaceAttributesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyWorkspaceAttributesReq modifyWorkspaceAttributesReq = (ModifyWorkspaceAttributesReq) o;
-        return Objects.equals(this.adInfo, modifyWorkspaceAttributesReq.adInfo)
-            && Objects.equals(this.adDomains, modifyWorkspaceAttributesReq.adDomains)
-            && Objects.equals(this.accessMode, modifyWorkspaceAttributesReq.accessMode)
-            && Objects.equals(this.dedicatedSubnets, modifyWorkspaceAttributesReq.dedicatedSubnets)
-            && Objects.equals(this.subnetIds, modifyWorkspaceAttributesReq.subnetIds)
-            && Objects.equals(this.internetAccessPort, modifyWorkspaceAttributesReq.internetAccessPort)
-            && Objects.equals(this.enterpriseId, modifyWorkspaceAttributesReq.enterpriseId)
-            && Objects.equals(this.isSendEmail, modifyWorkspaceAttributesReq.isSendEmail);
+        ModifyWorkspaceAttributesReq that = (ModifyWorkspaceAttributesReq) obj;
+        return Objects.equals(this.adInfo, that.adInfo) && Objects.equals(this.adDomains, that.adDomains)
+            && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
+            && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.internetAccessPort, that.internetAccessPort)
+            && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.isSendEmail, that.isSendEmail);
     }
 
     @Override

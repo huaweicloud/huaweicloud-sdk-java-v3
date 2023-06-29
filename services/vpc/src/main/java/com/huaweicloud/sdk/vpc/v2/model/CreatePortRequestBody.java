@@ -43,15 +43,15 @@ public class CreatePortRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortRequestBody createPortRequestBody = (CreatePortRequestBody) o;
-        return Objects.equals(this.port, createPortRequestBody.port);
+        CreatePortRequestBody that = (CreatePortRequestBody) obj;
+        return Objects.equals(this.port, that.port);
     }
 
     @Override

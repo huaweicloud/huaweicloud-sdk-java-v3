@@ -55,16 +55,15 @@ public class CreateDashBoardReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDashBoardReqBody createDashBoardReqBody = (CreateDashBoardReqBody) o;
-        return Objects.equals(this.groupName, createDashBoardReqBody.groupName)
-            && Objects.equals(this.title, createDashBoardReqBody.title);
+        CreateDashBoardReqBody that = (CreateDashBoardReqBody) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.title, that.title);
     }
 
     @Override

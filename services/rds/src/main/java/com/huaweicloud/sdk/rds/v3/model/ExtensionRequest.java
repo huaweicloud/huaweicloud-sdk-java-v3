@@ -55,16 +55,16 @@ public class ExtensionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionRequest extensionRequest = (ExtensionRequest) o;
-        return Objects.equals(this.databaseName, extensionRequest.databaseName)
-            && Objects.equals(this.extensionName, extensionRequest.extensionName);
+        ExtensionRequest that = (ExtensionRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.extensionName, that.extensionName);
     }
 
     @Override

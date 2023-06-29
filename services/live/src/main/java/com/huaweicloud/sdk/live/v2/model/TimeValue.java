@@ -57,15 +57,15 @@ public class TimeValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeValue timeValue = (TimeValue) o;
-        return Objects.equals(this.time, timeValue.time) && Objects.equals(this.value, timeValue.value);
+        TimeValue that = (TimeValue) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.value, that.value);
     }
 
     @Override

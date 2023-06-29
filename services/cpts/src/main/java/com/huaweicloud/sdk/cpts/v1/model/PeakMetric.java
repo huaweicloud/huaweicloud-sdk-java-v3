@@ -121,17 +121,17 @@ public class PeakMetric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeakMetric peakMetric = (PeakMetric) o;
-        return Objects.equals(this.vuser, peakMetric.vuser) && Objects.equals(this.rps, peakMetric.rps)
-            && Objects.equals(this.avgRT, peakMetric.avgRT) && Objects.equals(this.successRate, peakMetric.successRate)
-            && Objects.equals(this.peakTime, peakMetric.peakTime);
+        PeakMetric that = (PeakMetric) obj;
+        return Objects.equals(this.vuser, that.vuser) && Objects.equals(this.rps, that.rps)
+            && Objects.equals(this.avgRT, that.avgRT) && Objects.equals(this.successRate, that.successRate)
+            && Objects.equals(this.peakTime, that.peakTime);
     }
 
     @Override

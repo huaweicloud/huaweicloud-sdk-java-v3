@@ -74,15 +74,15 @@ public class ConditonInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConditonInfo conditonInfo = (ConditonInfo) o;
-        return Objects.equals(this.name, conditonInfo.name) && Objects.equals(this.data, conditonInfo.data);
+        ConditonInfo that = (ConditonInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.data, that.data);
     }
 
     @Override

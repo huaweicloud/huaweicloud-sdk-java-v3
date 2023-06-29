@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * StackNamePrimitiveTypeHolder
  */
-public class StackNamePrimitiveTypeHolder  {
-
+public class StackNamePrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_name")
-    
+    @JsonProperty(value = "stack_name")
 
     private String stackName;
 
@@ -27,9 +19,6 @@ public class StackNamePrimitiveTypeHolder  {
         this.stackName = stackName;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -43,23 +32,23 @@ public class StackNamePrimitiveTypeHolder  {
         this.stackName = stackName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StackNamePrimitiveTypeHolder stackNamePrimitiveTypeHolder = (StackNamePrimitiveTypeHolder) o;
-        return Objects.equals(this.stackName, stackNamePrimitiveTypeHolder.stackName);
+        StackNamePrimitiveTypeHolder that = (StackNamePrimitiveTypeHolder) obj;
+        return Objects.equals(this.stackName, that.stackName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(stackName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class StackNamePrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class StackNamePrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

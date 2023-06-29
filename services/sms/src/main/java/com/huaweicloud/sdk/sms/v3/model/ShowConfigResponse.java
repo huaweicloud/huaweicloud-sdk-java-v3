@@ -93,16 +93,15 @@ public class ShowConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigResponse showConfigResponse = (ShowConfigResponse) o;
-        return Objects.equals(this.config, showConfigResponse.config)
-            && Objects.equals(this.regions, showConfigResponse.regions);
+        ShowConfigResponse that = (ShowConfigResponse) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.regions, that.regions);
     }
 
     @Override

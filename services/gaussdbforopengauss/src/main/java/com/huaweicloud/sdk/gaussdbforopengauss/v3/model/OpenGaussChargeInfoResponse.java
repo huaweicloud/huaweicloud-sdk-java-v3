@@ -1,43 +1,34 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 计费类型信息，支持按需和包周期。
  */
-public class OpenGaussChargeInfoResponse  {
+public class OpenGaussChargeInfoResponse {
 
     /**
      * 计费模式。postPaid：后付费，即按需付费。prePaid：预付费，即包年/包月。
      */
     public static final class ChargeModeEnum {
 
-        
         /**
          * Enum POSTPAID for value: "postPaid"
          */
         public static final ChargeModeEnum POSTPAID = new ChargeModeEnum("postPaid");
-        
+
         /**
          * Enum PREPAID for value: "prePaid"
          */
         public static final ChargeModeEnum PREPAID = new ChargeModeEnum("prePaid");
-        
 
         private static final Map<String, ChargeModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +57,18 @@ public class OpenGaussChargeInfoResponse  {
 
         @JsonCreator
         public static ChargeModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,26 +86,24 @@ public class OpenGaussChargeInfoResponse  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
 
     private ChargeModeEnum chargeMode;
+
     /**
      * 订购周期类型。month：包月。year：包年。 说明： “charge_mode”为“prePaid”时生效，且为必选值。
      */
     public static final class PeriodTypeEnum {
 
-        
         /**
          * Enum MONTH for value: "month"
          */
         public static final PeriodTypeEnum MONTH = new PeriodTypeEnum("month");
-        
+
         /**
          * Enum YEAR for value: "year"
          */
         public static final PeriodTypeEnum YEAR = new PeriodTypeEnum("year");
-        
 
         private static final Map<String, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -150,25 +132,18 @@ public class OpenGaussChargeInfoResponse  {
 
         @JsonCreator
         public static PeriodTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,26 +161,22 @@ public class OpenGaussChargeInfoResponse  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
+    @JsonProperty(value = "period_type")
 
     private PeriodTypeEnum periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_num")
-    
+    @JsonProperty(value = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_renew")
-    
+    @JsonProperty(value = "is_auto_renew")
 
     private Boolean isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_pay")
-    
+    @JsonProperty(value = "is_auto_pay")
 
     private Boolean isAutoPay;
 
@@ -213,9 +184,6 @@ public class OpenGaussChargeInfoResponse  {
         this.chargeMode = chargeMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式。postPaid：后付费，即按需付费。prePaid：预付费，即包年/包月。
@@ -229,15 +197,10 @@ public class OpenGaussChargeInfoResponse  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public OpenGaussChargeInfoResponse withPeriodType(PeriodTypeEnum periodType) {
         this.periodType = periodType;
         return this;
     }
-
-    
-
 
     /**
      * 订购周期类型。month：包月。year：包年。 说明： “charge_mode”为“prePaid”时生效，且为必选值。
@@ -251,15 +214,10 @@ public class OpenGaussChargeInfoResponse  {
         this.periodType = periodType;
     }
 
-    
-
     public OpenGaussChargeInfoResponse withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
     }
-
-    
-
 
     /**
      * “charge_mode”为“prePaid”时生效，且为必选值，指定订购的时间。  取值范围：  当“period_type”为“month”时，取值为1~9。 当“period_type”为“year”时，取值为1~3。
@@ -273,15 +231,10 @@ public class OpenGaussChargeInfoResponse  {
         this.periodNum = periodNum;
     }
 
-    
-
     public OpenGaussChargeInfoResponse withIsAutoRenew(Boolean isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
     }
-
-    
-
 
     /**
      * 创建包周期实例时可指定，表示是否自动续订，续订的周期和原周期相同，且续订时会自动支付。  true，表示自动续订。 false，表示不自动续订，默认为该方式。
@@ -295,15 +248,10 @@ public class OpenGaussChargeInfoResponse  {
         this.isAutoRenew = isAutoRenew;
     }
 
-    
-
     public OpenGaussChargeInfoResponse withIsAutoPay(Boolean isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
     }
-
-    
-
 
     /**
      * 创建包周期实例时可指定，表示是否自动从账户中支付，该字段不影响自动续订的支付方式。  true，表示自动从账户中支付。 false，表示手动从账户中支付，默认为该支付方式。
@@ -317,27 +265,25 @@ public class OpenGaussChargeInfoResponse  {
         this.isAutoPay = isAutoPay;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussChargeInfoResponse openGaussChargeInfoResponse = (OpenGaussChargeInfoResponse) o;
-        return Objects.equals(this.chargeMode, openGaussChargeInfoResponse.chargeMode) &&
-            Objects.equals(this.periodType, openGaussChargeInfoResponse.periodType) &&
-            Objects.equals(this.periodNum, openGaussChargeInfoResponse.periodNum) &&
-            Objects.equals(this.isAutoRenew, openGaussChargeInfoResponse.isAutoRenew) &&
-            Objects.equals(this.isAutoPay, openGaussChargeInfoResponse.isAutoPay);
+        OpenGaussChargeInfoResponse that = (OpenGaussChargeInfoResponse) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode, periodType, periodNum, isAutoRenew, isAutoPay);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -350,6 +296,7 @@ public class OpenGaussChargeInfoResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -360,8 +307,5 @@ public class OpenGaussChargeInfoResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

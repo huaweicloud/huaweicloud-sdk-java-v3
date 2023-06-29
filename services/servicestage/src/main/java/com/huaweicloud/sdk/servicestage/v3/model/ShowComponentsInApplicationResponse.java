@@ -75,17 +75,15 @@ public class ShowComponentsInApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentsInApplicationResponse showComponentsInApplicationResponse =
-            (ShowComponentsInApplicationResponse) o;
-        return Objects.equals(this.count, showComponentsInApplicationResponse.count)
-            && Objects.equals(this.components, showComponentsInApplicationResponse.components);
+        ShowComponentsInApplicationResponse that = (ShowComponentsInApplicationResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.components, that.components);
     }
 
     @Override

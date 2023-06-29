@@ -77,17 +77,16 @@ public class MyanmarDriverLicenseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MyanmarDriverLicenseRequestBody myanmarDriverLicenseRequestBody = (MyanmarDriverLicenseRequestBody) o;
-        return Objects.equals(this.image, myanmarDriverLicenseRequestBody.image)
-            && Objects.equals(this.url, myanmarDriverLicenseRequestBody.url)
-            && Objects.equals(this.convertUnicode, myanmarDriverLicenseRequestBody.convertUnicode);
+        MyanmarDriverLicenseRequestBody that = (MyanmarDriverLicenseRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.convertUnicode, that.convertUnicode);
     }
 
     @Override

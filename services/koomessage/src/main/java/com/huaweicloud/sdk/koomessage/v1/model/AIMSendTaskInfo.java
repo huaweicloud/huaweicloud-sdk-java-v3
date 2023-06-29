@@ -96,17 +96,16 @@ public class AIMSendTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMSendTaskInfo aiMSendTaskInfo = (AIMSendTaskInfo) o;
-        return Objects.equals(this.taskName, aiMSendTaskInfo.taskName)
-            && Objects.equals(this.smsChannel, aiMSendTaskInfo.smsChannel)
-            && Objects.equals(this.resolveTask, aiMSendTaskInfo.resolveTask);
+        AIMSendTaskInfo that = (AIMSendTaskInfo) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.smsChannel, that.smsChannel)
+            && Objects.equals(this.resolveTask, that.resolveTask);
     }
 
     @Override

@@ -230,20 +230,20 @@ public class QabotAnswer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QabotAnswer qabotAnswer = (QabotAnswer) o;
-        return Objects.equals(this.question, qabotAnswer.question) && Objects.equals(this.answer, qabotAnswer.answer)
-            && Objects.equals(this.score, qabotAnswer.score) && Objects.equals(this.domain, qabotAnswer.domain)
-            && Objects.equals(this.link, qabotAnswer.link) && Objects.equals(this.qaPairId, qabotAnswer.qaPairId)
-            && Objects.equals(this.domainId, qabotAnswer.domainId)
-            && Objects.equals(this.topScoreQuestion, qabotAnswer.topScoreQuestion)
-            && Objects.equals(this.relevanceDetails, qabotAnswer.relevanceDetails);
+        QabotAnswer that = (QabotAnswer) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.answer, that.answer)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.qaPairId, that.qaPairId)
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.topScoreQuestion, that.topScoreQuestion)
+            && Objects.equals(this.relevanceDetails, that.relevanceDetails);
     }
 
     @Override

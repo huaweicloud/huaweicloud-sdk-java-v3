@@ -65,16 +65,15 @@ public class DebugRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugRuleRequest debugRuleRequest = (DebugRuleRequest) o;
-        return Objects.equals(this.instanceId, debugRuleRequest.instanceId)
-            && Objects.equals(this.body, debugRuleRequest.body);
+        DebugRuleRequest that = (DebugRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

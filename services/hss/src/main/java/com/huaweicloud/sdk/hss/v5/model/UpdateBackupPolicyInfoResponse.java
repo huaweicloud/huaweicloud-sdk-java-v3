@@ -58,16 +58,16 @@ public class UpdateBackupPolicyInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBackupPolicyInfoResponse updateBackupPolicyInfoResponse = (UpdateBackupPolicyInfoResponse) o;
-        return Objects.equals(this.errorCode, updateBackupPolicyInfoResponse.errorCode)
-            && Objects.equals(this.errorDescription, updateBackupPolicyInfoResponse.errorDescription);
+        UpdateBackupPolicyInfoResponse that = (UpdateBackupPolicyInfoResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorDescription, that.errorDescription);
     }
 
     @Override

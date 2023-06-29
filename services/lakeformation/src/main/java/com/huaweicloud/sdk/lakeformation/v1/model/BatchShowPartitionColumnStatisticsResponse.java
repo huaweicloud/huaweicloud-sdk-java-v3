@@ -79,18 +79,16 @@ public class BatchShowPartitionColumnStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowPartitionColumnStatisticsResponse batchShowPartitionColumnStatisticsResponse =
-            (BatchShowPartitionColumnStatisticsResponse) o;
-        return Objects.equals(this.foundPartitionNumber,
-            batchShowPartitionColumnStatisticsResponse.foundPartitionNumber)
-            && Objects.equals(this.columnStatistics, batchShowPartitionColumnStatisticsResponse.columnStatistics);
+        BatchShowPartitionColumnStatisticsResponse that = (BatchShowPartitionColumnStatisticsResponse) obj;
+        return Objects.equals(this.foundPartitionNumber, that.foundPartitionNumber)
+            && Objects.equals(this.columnStatistics, that.columnStatistics);
     }
 
     @Override

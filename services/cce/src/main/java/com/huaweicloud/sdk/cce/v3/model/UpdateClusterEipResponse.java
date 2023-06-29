@@ -106,17 +106,16 @@ public class UpdateClusterEipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateClusterEipResponse updateClusterEipResponse = (UpdateClusterEipResponse) o;
-        return Objects.equals(this.metadata, updateClusterEipResponse.metadata)
-            && Objects.equals(this.spec, updateClusterEipResponse.spec)
-            && Objects.equals(this.status, updateClusterEipResponse.status);
+        UpdateClusterEipResponse that = (UpdateClusterEipResponse) obj;
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

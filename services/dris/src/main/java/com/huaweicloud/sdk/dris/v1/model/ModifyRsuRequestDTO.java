@@ -145,20 +145,18 @@ public class ModifyRsuRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyRsuRequestDTO modifyRsuRequestDTO = (ModifyRsuRequestDTO) o;
-        return Objects.equals(this.name, modifyRsuRequestDTO.name)
-            && Objects.equals(this.description, modifyRsuRequestDTO.description)
-            && Objects.equals(this.ip, modifyRsuRequestDTO.ip)
-            && Objects.equals(this.positionDescription, modifyRsuRequestDTO.positionDescription)
-            && Objects.equals(this.relatedEdgeNum, modifyRsuRequestDTO.relatedEdgeNum)
-            && Objects.equals(this.intersectionId, modifyRsuRequestDTO.intersectionId);
+        ModifyRsuRequestDTO that = (ModifyRsuRequestDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.relatedEdgeNum, that.relatedEdgeNum)
+            && Objects.equals(this.intersectionId, that.intersectionId);
     }
 
     @Override

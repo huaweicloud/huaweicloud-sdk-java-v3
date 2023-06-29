@@ -85,22 +85,15 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStatusEnum(value));
         }
 
         public static AssetStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -185,22 +178,15 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TranscodeStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TranscodeStatusEnum(value));
         }
 
         public static TranscodeStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -336,19 +322,17 @@ public class ShowTakeOverAssetDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTakeOverAssetDetailsResponse showTakeOverAssetDetailsResponse = (ShowTakeOverAssetDetailsResponse) o;
-        return Objects.equals(this.assetId, showTakeOverAssetDetailsResponse.assetId)
-            && Objects.equals(this.assetStatus, showTakeOverAssetDetailsResponse.assetStatus)
-            && Objects.equals(this.transcodeStatus, showTakeOverAssetDetailsResponse.transcodeStatus)
-            && Objects.equals(this.baseInfo, showTakeOverAssetDetailsResponse.baseInfo)
-            && Objects.equals(this.transcodeInfo, showTakeOverAssetDetailsResponse.transcodeInfo);
+        ShowTakeOverAssetDetailsResponse that = (ShowTakeOverAssetDetailsResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetStatus, that.assetStatus)
+            && Objects.equals(this.transcodeStatus, that.transcodeStatus)
+            && Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.transcodeInfo, that.transcodeInfo);
     }
 
     @Override

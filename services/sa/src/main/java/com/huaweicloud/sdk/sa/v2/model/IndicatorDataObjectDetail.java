@@ -66,16 +66,15 @@ public class IndicatorDataObjectDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorDataObjectDetail indicatorDataObjectDetail = (IndicatorDataObjectDetail) o;
-        return Objects.equals(this.indicatorType, indicatorDataObjectDetail.indicatorType)
-            && Objects.equals(this.value, indicatorDataObjectDetail.value);
+        IndicatorDataObjectDetail that = (IndicatorDataObjectDetail) obj;
+        return Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.value, that.value);
     }
 
     @Override

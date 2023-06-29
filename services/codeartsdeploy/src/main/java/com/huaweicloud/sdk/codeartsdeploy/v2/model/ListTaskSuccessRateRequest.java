@@ -27,7 +27,7 @@ public class ListTaskSuccessRateRequest {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -65,16 +65,15 @@ public class ListTaskSuccessRateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskSuccessRateRequest listTaskSuccessRateRequest = (ListTaskSuccessRateRequest) o;
-        return Objects.equals(this.projectId, listTaskSuccessRateRequest.projectId)
-            && Objects.equals(this.body, listTaskSuccessRateRequest.body);
+        ListTaskSuccessRateRequest that = (ListTaskSuccessRateRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

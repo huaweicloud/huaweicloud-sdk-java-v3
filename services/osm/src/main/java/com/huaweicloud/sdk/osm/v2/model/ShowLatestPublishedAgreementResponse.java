@@ -44,16 +44,15 @@ public class ShowLatestPublishedAgreementResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLatestPublishedAgreementResponse showLatestPublishedAgreementResponse =
-            (ShowLatestPublishedAgreementResponse) o;
-        return Objects.equals(this.caseAgreement, showLatestPublishedAgreementResponse.caseAgreement);
+        ShowLatestPublishedAgreementResponse that = (ShowLatestPublishedAgreementResponse) obj;
+        return Objects.equals(this.caseAgreement, that.caseAgreement);
     }
 
     @Override

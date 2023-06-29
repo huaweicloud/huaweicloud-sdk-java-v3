@@ -66,17 +66,15 @@ public class RunModerationAudioResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunModerationAudioResponseBodyResult runModerationAudioResponseBodyResult =
-            (RunModerationAudioResponseBodyResult) o;
-        return Objects.equals(this.detail, runModerationAudioResponseBodyResult.detail)
-            && Objects.equals(this.suggestion, runModerationAudioResponseBodyResult.suggestion);
+        RunModerationAudioResponseBodyResult that = (RunModerationAudioResponseBodyResult) obj;
+        return Objects.equals(this.detail, that.detail) && Objects.equals(this.suggestion, that.suggestion);
     }
 
     @Override

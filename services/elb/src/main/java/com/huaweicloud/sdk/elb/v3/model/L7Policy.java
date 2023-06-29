@@ -477,27 +477,27 @@ public class L7Policy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L7Policy l7Policy = (L7Policy) o;
-        return Objects.equals(this.action, l7Policy.action) && Objects.equals(this.adminStateUp, l7Policy.adminStateUp)
-            && Objects.equals(this.description, l7Policy.description) && Objects.equals(this.id, l7Policy.id)
-            && Objects.equals(this.listenerId, l7Policy.listenerId) && Objects.equals(this.name, l7Policy.name)
-            && Objects.equals(this.position, l7Policy.position) && Objects.equals(this.priority, l7Policy.priority)
-            && Objects.equals(this.projectId, l7Policy.projectId)
-            && Objects.equals(this.provisioningStatus, l7Policy.provisioningStatus)
-            && Objects.equals(this.redirectPoolId, l7Policy.redirectPoolId)
-            && Objects.equals(this.redirectListenerId, l7Policy.redirectListenerId)
-            && Objects.equals(this.redirectUrl, l7Policy.redirectUrl) && Objects.equals(this.rules, l7Policy.rules)
-            && Objects.equals(this.redirectUrlConfig, l7Policy.redirectUrlConfig)
-            && Objects.equals(this.redirectPoolsExtendConfig, l7Policy.redirectPoolsExtendConfig)
-            && Objects.equals(this.fixedResponseConfig, l7Policy.fixedResponseConfig)
-            && Objects.equals(this.createdAt, l7Policy.createdAt) && Objects.equals(this.updatedAt, l7Policy.updatedAt);
+        L7Policy that = (L7Policy) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.redirectPoolId, that.redirectPoolId)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectUrl, that.redirectUrl) && Objects.equals(this.rules, that.rules)
+            && Objects.equals(this.redirectUrlConfig, that.redirectUrlConfig)
+            && Objects.equals(this.redirectPoolsExtendConfig, that.redirectPoolsExtendConfig)
+            && Objects.equals(this.fixedResponseConfig, that.fixedResponseConfig)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

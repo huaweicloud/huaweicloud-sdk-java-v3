@@ -332,25 +332,23 @@ public class Environment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Environment environment = (Environment) o;
-        return Objects.equals(this.id, environment.id) && Objects.equals(this.name, environment.name)
-            && Objects.equals(this.alias, environment.alias)
-            && Objects.equals(this.description, environment.description)
-            && Objects.equals(this.projectId, environment.projectId)
-            && Objects.equals(this.enterpriseProjectId, environment.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, environment.chargeMode) && Objects.equals(this.vpcId, environment.vpcId)
-            && Objects.equals(this.baseResources, environment.baseResources)
-            && Objects.equals(this.optionalResources, environment.optionalResources)
-            && Objects.equals(this.creator, environment.creator)
-            && Objects.equals(this.createTime, environment.createTime)
-            && Objects.equals(this.updateTime, environment.updateTime);
+        Environment that = (Environment) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.baseResources, that.baseResources)
+            && Objects.equals(this.optionalResources, that.optionalResources)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

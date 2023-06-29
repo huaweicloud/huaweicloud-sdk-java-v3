@@ -98,18 +98,16 @@ public class ListLiveDataApiDeploymentHistoryV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataApiDeploymentHistoryV2Response listLiveDataApiDeploymentHistoryV2Response =
-            (ListLiveDataApiDeploymentHistoryV2Response) o;
-        return Objects.equals(this.size, listLiveDataApiDeploymentHistoryV2Response.size)
-            && Objects.equals(this.total, listLiveDataApiDeploymentHistoryV2Response.total)
-            && Objects.equals(this.histories, listLiveDataApiDeploymentHistoryV2Response.histories);
+        ListLiveDataApiDeploymentHistoryV2Response that = (ListLiveDataApiDeploymentHistoryV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.histories, that.histories);
     }
 
     @Override

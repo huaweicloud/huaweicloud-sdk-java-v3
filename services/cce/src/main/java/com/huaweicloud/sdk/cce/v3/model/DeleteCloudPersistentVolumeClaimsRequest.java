@@ -123,20 +123,17 @@ public class DeleteCloudPersistentVolumeClaimsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCloudPersistentVolumeClaimsRequest deleteCloudPersistentVolumeClaimsRequest =
-            (DeleteCloudPersistentVolumeClaimsRequest) o;
-        return Objects.equals(this.name, deleteCloudPersistentVolumeClaimsRequest.name)
-            && Objects.equals(this.namespace, deleteCloudPersistentVolumeClaimsRequest.namespace)
-            && Objects.equals(this.deleteVolume, deleteCloudPersistentVolumeClaimsRequest.deleteVolume)
-            && Objects.equals(this.storageType, deleteCloudPersistentVolumeClaimsRequest.storageType)
-            && Objects.equals(this.xClusterID, deleteCloudPersistentVolumeClaimsRequest.xClusterID);
+        DeleteCloudPersistentVolumeClaimsRequest that = (DeleteCloudPersistentVolumeClaimsRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.deleteVolume, that.deleteVolume)
+            && Objects.equals(this.storageType, that.storageType) && Objects.equals(this.xClusterID, that.xClusterID);
     }
 
     @Override

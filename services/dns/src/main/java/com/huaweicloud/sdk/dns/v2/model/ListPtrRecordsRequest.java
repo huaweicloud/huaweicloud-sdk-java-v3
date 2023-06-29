@@ -143,20 +143,18 @@ public class ListPtrRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPtrRecordsRequest listPtrRecordsRequest = (ListPtrRecordsRequest) o;
-        return Objects.equals(this.marker, listPtrRecordsRequest.marker)
-            && Objects.equals(this.limit, listPtrRecordsRequest.limit)
-            && Objects.equals(this.offset, listPtrRecordsRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listPtrRecordsRequest.enterpriseProjectId)
-            && Objects.equals(this.tags, listPtrRecordsRequest.tags)
-            && Objects.equals(this.status, listPtrRecordsRequest.status);
+        ListPtrRecordsRequest that = (ListPtrRecordsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status);
     }
 
     @Override

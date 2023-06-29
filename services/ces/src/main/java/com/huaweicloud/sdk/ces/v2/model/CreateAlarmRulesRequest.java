@@ -43,15 +43,15 @@ public class CreateAlarmRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlarmRulesRequest createAlarmRulesRequest = (CreateAlarmRulesRequest) o;
-        return Objects.equals(this.body, createAlarmRulesRequest.body);
+        CreateAlarmRulesRequest that = (CreateAlarmRulesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

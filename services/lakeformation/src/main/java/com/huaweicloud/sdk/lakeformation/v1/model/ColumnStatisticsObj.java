@@ -101,22 +101,15 @@ public class ColumnStatisticsObj {
             if (value == null) {
                 return null;
             }
-            DataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataTypeEnum(value));
         }
 
         public static DataTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -412,24 +405,23 @@ public class ColumnStatisticsObj {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnStatisticsObj columnStatisticsObj = (ColumnStatisticsObj) o;
-        return Objects.equals(this.columnName, columnStatisticsObj.columnName)
-            && Objects.equals(this.columnType, columnStatisticsObj.columnType)
-            && Objects.equals(this.dataType, columnStatisticsObj.dataType)
-            && Objects.equals(this.binaryStatisticsData, columnStatisticsObj.binaryStatisticsData)
-            && Objects.equals(this.longStatisticsData, columnStatisticsObj.longStatisticsData)
-            && Objects.equals(this.decimalStatisticsData, columnStatisticsObj.decimalStatisticsData)
-            && Objects.equals(this.stringStatisticsData, columnStatisticsObj.stringStatisticsData)
-            && Objects.equals(this.doubleStatisticsData, columnStatisticsObj.doubleStatisticsData)
-            && Objects.equals(this.dateStatisticsData, columnStatisticsObj.dateStatisticsData)
-            && Objects.equals(this.booleanStatisticsData, columnStatisticsObj.booleanStatisticsData);
+        ColumnStatisticsObj that = (ColumnStatisticsObj) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.columnType, that.columnType)
+            && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.binaryStatisticsData, that.binaryStatisticsData)
+            && Objects.equals(this.longStatisticsData, that.longStatisticsData)
+            && Objects.equals(this.decimalStatisticsData, that.decimalStatisticsData)
+            && Objects.equals(this.stringStatisticsData, that.stringStatisticsData)
+            && Objects.equals(this.doubleStatisticsData, that.doubleStatisticsData)
+            && Objects.equals(this.dateStatisticsData, that.dateStatisticsData)
+            && Objects.equals(this.booleanStatisticsData, that.booleanStatisticsData);
     }
 
     @Override

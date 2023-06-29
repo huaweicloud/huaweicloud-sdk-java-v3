@@ -442,30 +442,27 @@ public class HealthCodeResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthCodeResult healthCodeResult = (HealthCodeResult) o;
-        return Objects.equals(this.type, healthCodeResult.type) && Objects.equals(this.name, healthCodeResult.name)
-            && Objects.equals(this.idcardNumber, healthCodeResult.idcardNumber)
-            && Objects.equals(this.phoneNumber, healthCodeResult.phoneNumber)
-            && Objects.equals(this.province, healthCodeResult.province)
-            && Objects.equals(this.city, healthCodeResult.city) && Objects.equals(this.time, healthCodeResult.time)
-            && Objects.equals(this.color, healthCodeResult.color)
-            && Objects.equals(this.vaccinationStatus, healthCodeResult.vaccinationStatus)
-            && Objects.equals(this.testInterval, healthCodeResult.testInterval)
-            && Objects.equals(this.pcrTestResult, healthCodeResult.pcrTestResult)
-            && Objects.equals(this.pcrTestOrganization, healthCodeResult.pcrTestOrganization)
-            && Objects.equals(this.pcrTestTime, healthCodeResult.pcrTestTime)
-            && Objects.equals(this.pcrSamplingTime, healthCodeResult.pcrSamplingTime)
-            && Objects.equals(this.reachedCity, healthCodeResult.reachedCity)
-            && Objects.equals(this.confidence, healthCodeResult.confidence)
-            && Objects.equals(this.wordsBlockCount, healthCodeResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, healthCodeResult.wordsBlockList);
+        HealthCodeResult that = (HealthCodeResult) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.idcardNumber, that.idcardNumber)
+            && Objects.equals(this.phoneNumber, that.phoneNumber) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.color, that.color) && Objects.equals(this.vaccinationStatus, that.vaccinationStatus)
+            && Objects.equals(this.testInterval, that.testInterval)
+            && Objects.equals(this.pcrTestResult, that.pcrTestResult)
+            && Objects.equals(this.pcrTestOrganization, that.pcrTestOrganization)
+            && Objects.equals(this.pcrTestTime, that.pcrTestTime)
+            && Objects.equals(this.pcrSamplingTime, that.pcrSamplingTime)
+            && Objects.equals(this.reachedCity, that.reachedCity) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

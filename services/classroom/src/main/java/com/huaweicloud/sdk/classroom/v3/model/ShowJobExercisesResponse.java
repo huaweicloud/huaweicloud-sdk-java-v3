@@ -75,16 +75,15 @@ public class ShowJobExercisesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobExercisesResponse showJobExercisesResponse = (ShowJobExercisesResponse) o;
-        return Objects.equals(this.groupExercises, showJobExercisesResponse.groupExercises)
-            && Objects.equals(this.total, showJobExercisesResponse.total);
+        ShowJobExercisesResponse that = (ShowJobExercisesResponse) obj;
+        return Objects.equals(this.groupExercises, that.groupExercises) && Objects.equals(this.total, that.total);
     }
 
     @Override

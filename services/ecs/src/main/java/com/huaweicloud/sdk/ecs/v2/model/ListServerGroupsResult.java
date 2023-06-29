@@ -174,19 +174,17 @@ public class ListServerGroupsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServerGroupsResult listServerGroupsResult = (ListServerGroupsResult) o;
-        return Objects.equals(this.id, listServerGroupsResult.id)
-            && Objects.equals(this.members, listServerGroupsResult.members)
-            && Objects.equals(this.metadata, listServerGroupsResult.metadata)
-            && Objects.equals(this.name, listServerGroupsResult.name)
-            && Objects.equals(this.policies, listServerGroupsResult.policies);
+        ListServerGroupsResult that = (ListServerGroupsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.members, that.members)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policies, that.policies);
     }
 
     @Override

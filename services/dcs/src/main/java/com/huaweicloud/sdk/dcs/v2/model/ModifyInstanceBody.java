@@ -208,22 +208,20 @@ public class ModifyInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyInstanceBody modifyInstanceBody = (ModifyInstanceBody) o;
-        return Objects.equals(this.name, modifyInstanceBody.name)
-            && Objects.equals(this.description, modifyInstanceBody.description)
-            && Objects.equals(this.port, modifyInstanceBody.port)
-            && Objects.equals(this.renameCommands, modifyInstanceBody.renameCommands)
-            && Objects.equals(this.maintainBegin, modifyInstanceBody.maintainBegin)
-            && Objects.equals(this.maintainEnd, modifyInstanceBody.maintainEnd)
-            && Objects.equals(this.securityGroupId, modifyInstanceBody.securityGroupId)
-            && Objects.equals(this.instanceBackupPolicy, modifyInstanceBody.instanceBackupPolicy);
+        ModifyInstanceBody that = (ModifyInstanceBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.renameCommands, that.renameCommands)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.instanceBackupPolicy, that.instanceBackupPolicy);
     }
 
     @Override

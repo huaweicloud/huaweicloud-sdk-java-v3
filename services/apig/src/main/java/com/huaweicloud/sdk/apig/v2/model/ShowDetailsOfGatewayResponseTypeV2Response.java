@@ -53,16 +53,15 @@ public class ShowDetailsOfGatewayResponseTypeV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfGatewayResponseTypeV2Response showDetailsOfGatewayResponseTypeV2Response =
-            (ShowDetailsOfGatewayResponseTypeV2Response) o;
-        return Objects.equals(this.body, showDetailsOfGatewayResponseTypeV2Response.body);
+        ShowDetailsOfGatewayResponseTypeV2Response that = (ShowDetailsOfGatewayResponseTypeV2Response) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

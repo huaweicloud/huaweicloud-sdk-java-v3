@@ -65,16 +65,15 @@ public class AddServerGroupMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddServerGroupMemberRequest addServerGroupMemberRequest = (AddServerGroupMemberRequest) o;
-        return Objects.equals(this.serverGroupId, addServerGroupMemberRequest.serverGroupId)
-            && Objects.equals(this.body, addServerGroupMemberRequest.body);
+        AddServerGroupMemberRequest that = (AddServerGroupMemberRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

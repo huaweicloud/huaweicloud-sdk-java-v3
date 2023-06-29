@@ -77,17 +77,17 @@ public class RegisterDbUserRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterDbUserRequestBody registerDbUserRequestBody = (RegisterDbUserRequestBody) o;
-        return Objects.equals(this.dbUsername, registerDbUserRequestBody.dbUsername)
-            && Objects.equals(this.dbUserPassword, registerDbUserRequestBody.dbUserPassword)
-            && Objects.equals(this.datastoreType, registerDbUserRequestBody.datastoreType);
+        RegisterDbUserRequestBody that = (RegisterDbUserRequestBody) obj;
+        return Objects.equals(this.dbUsername, that.dbUsername)
+            && Objects.equals(this.dbUserPassword, that.dbUserPassword)
+            && Objects.equals(this.datastoreType, that.datastoreType);
     }
 
     @Override

@@ -81,17 +81,17 @@ public class CombinedOrder {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CombinedOrder combinedOrder = (CombinedOrder) o;
-        return Objects.equals(this.combinedOrderId, combinedOrder.combinedOrderId)
-            && Objects.equals(this.combinedOrderEcsNum, combinedOrder.combinedOrderEcsNum)
-            && Objects.equals(this.combinedOrderNum, combinedOrder.combinedOrderNum);
+        CombinedOrder that = (CombinedOrder) obj;
+        return Objects.equals(this.combinedOrderId, that.combinedOrderId)
+            && Objects.equals(this.combinedOrderEcsNum, that.combinedOrderEcsNum)
+            && Objects.equals(this.combinedOrderNum, that.combinedOrderNum);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class AddApplyJoinProjectForAgcRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddApplyJoinProjectForAgcRequest addApplyJoinProjectForAgcRequest = (AddApplyJoinProjectForAgcRequest) o;
-        return Objects.equals(this.domainId, addApplyJoinProjectForAgcRequest.domainId)
-            && Objects.equals(this.userId, addApplyJoinProjectForAgcRequest.userId)
-            && Objects.equals(this.projectId, addApplyJoinProjectForAgcRequest.projectId);
+        AddApplyJoinProjectForAgcRequest that = (AddApplyJoinProjectForAgcRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

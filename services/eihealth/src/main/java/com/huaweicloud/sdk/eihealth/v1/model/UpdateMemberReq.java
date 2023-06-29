@@ -33,15 +33,15 @@ public class UpdateMemberReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMemberReq updateMemberReq = (UpdateMemberReq) o;
-        return Objects.equals(this.role, updateMemberReq.role);
+        UpdateMemberReq that = (UpdateMemberReq) obj;
+        return Objects.equals(this.role, that.role);
     }
 
     @Override

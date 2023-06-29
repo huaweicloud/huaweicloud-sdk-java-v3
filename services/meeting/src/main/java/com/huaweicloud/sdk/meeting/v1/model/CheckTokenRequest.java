@@ -89,17 +89,16 @@ public class CheckTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTokenRequest checkTokenRequest = (CheckTokenRequest) o;
-        return Objects.equals(this.xRequestID, checkTokenRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, checkTokenRequest.acceptLanguage)
-            && Objects.equals(this.body, checkTokenRequest.body);
+        CheckTokenRequest that = (CheckTokenRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

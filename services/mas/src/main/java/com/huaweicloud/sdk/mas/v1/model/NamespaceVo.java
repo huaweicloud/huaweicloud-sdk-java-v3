@@ -357,25 +357,23 @@ public class NamespaceVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NamespaceVo namespaceVo = (NamespaceVo) o;
-        return Objects.equals(this.createdDate, namespaceVo.createdDate)
-            && Objects.equals(this.dataSyncStatistics, namespaceVo.dataSyncStatistics)
-            && Objects.equals(this.datasourceStatistics, namespaceVo.datasourceStatistics)
-            && Objects.equals(this.description, namespaceVo.description)
-            && Objects.equals(this.enterpriseProjectId, namespaceVo.enterpriseProjectId)
-            && Objects.equals(this.id, namespaceVo.id) && Objects.equals(this.isUsed, namespaceVo.isUsed)
-            && Objects.equals(this.multiActiveZone, namespaceVo.multiActiveZone)
-            && Objects.equals(this.name, namespaceVo.name) && Objects.equals(this.projectId, namespaceVo.projectId)
-            && Objects.equals(this.tenantId, namespaceVo.tenantId) && Objects.equals(this.type, namespaceVo.type)
-            && Objects.equals(this.updatedDate, namespaceVo.updatedDate)
-            && Objects.equals(this.userId, namespaceVo.userId);
+        NamespaceVo that = (NamespaceVo) obj;
+        return Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.dataSyncStatistics, that.dataSyncStatistics)
+            && Objects.equals(this.datasourceStatistics, that.datasourceStatistics)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isUsed, that.isUsed) && Objects.equals(this.multiActiveZone, that.multiActiveZone)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.updatedDate, that.updatedDate) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

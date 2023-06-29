@@ -99,18 +99,17 @@ public class FuncMount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncMount funcMount = (FuncMount) o;
-        return Objects.equals(this.mountType, funcMount.mountType)
-            && Objects.equals(this.mountResource, funcMount.mountResource)
-            && Objects.equals(this.mountSharePath, funcMount.mountSharePath)
-            && Objects.equals(this.localMountPath, funcMount.localMountPath);
+        FuncMount that = (FuncMount) obj;
+        return Objects.equals(this.mountType, that.mountType) && Objects.equals(this.mountResource, that.mountResource)
+            && Objects.equals(this.mountSharePath, that.mountSharePath)
+            && Objects.equals(this.localMountPath, that.localMountPath);
     }
 
     @Override

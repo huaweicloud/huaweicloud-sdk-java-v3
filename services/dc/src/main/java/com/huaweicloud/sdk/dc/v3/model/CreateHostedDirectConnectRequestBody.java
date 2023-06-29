@@ -44,16 +44,15 @@ public class CreateHostedDirectConnectRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHostedDirectConnectRequestBody createHostedDirectConnectRequestBody =
-            (CreateHostedDirectConnectRequestBody) o;
-        return Objects.equals(this.hostedConnect, createHostedDirectConnectRequestBody.hostedConnect);
+        CreateHostedDirectConnectRequestBody that = (CreateHostedDirectConnectRequestBody) obj;
+        return Objects.equals(this.hostedConnect, that.hostedConnect);
     }
 
     @Override

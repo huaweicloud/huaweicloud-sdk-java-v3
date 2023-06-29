@@ -78,22 +78,15 @@ public class Grants {
             if (value == null) {
                 return null;
             }
-            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GranteePrincipalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GranteePrincipalTypeEnum(value));
         }
 
         public static GranteePrincipalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -310,21 +303,21 @@ public class Grants {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Grants grants = (Grants) o;
-        return Objects.equals(this.keyId, grants.keyId) && Objects.equals(this.grantId, grants.grantId)
-            && Objects.equals(this.granteePrincipal, grants.granteePrincipal)
-            && Objects.equals(this.granteePrincipalType, grants.granteePrincipalType)
-            && Objects.equals(this.operations, grants.operations)
-            && Objects.equals(this.issuingPrincipal, grants.issuingPrincipal)
-            && Objects.equals(this.creationDate, grants.creationDate) && Objects.equals(this.name, grants.name)
-            && Objects.equals(this.retiringPrincipal, grants.retiringPrincipal);
+        Grants that = (Grants) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.grantId, that.grantId)
+            && Objects.equals(this.granteePrincipal, that.granteePrincipal)
+            && Objects.equals(this.granteePrincipalType, that.granteePrincipalType)
+            && Objects.equals(this.operations, that.operations)
+            && Objects.equals(this.issuingPrincipal, that.issuingPrincipal)
+            && Objects.equals(this.creationDate, that.creationDate) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.retiringPrincipal, that.retiringPrincipal);
     }
 
     @Override

@@ -163,19 +163,18 @@ public class ConsumerGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConsumerGroup consumerGroup = (ConsumerGroup) o;
-        return Objects.equals(this.enabled, consumerGroup.enabled)
-            && Objects.equals(this.broadcast, consumerGroup.broadcast)
-            && Objects.equals(this.brokers, consumerGroup.brokers) && Objects.equals(this.name, consumerGroup.name)
-            && Objects.equals(this.retryMaxTime, consumerGroup.retryMaxTime)
-            && Objects.equals(this.fromBeginning, consumerGroup.fromBeginning);
+        ConsumerGroup that = (ConsumerGroup) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
+            && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.fromBeginning, that.fromBeginning);
     }
 
     @Override

@@ -80,22 +80,15 @@ public class ExportSqlResultRequestBody {
             if (value == null) {
                 return null;
             }
-            ExportModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExportModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExportModeEnum(value));
         }
 
         public static ExportModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExportModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,19 @@ public class ExportSqlResultRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportSqlResultRequestBody exportSqlResultRequestBody = (ExportSqlResultRequestBody) o;
-        return Objects.equals(this.dataPath, exportSqlResultRequestBody.dataPath)
-            && Objects.equals(this.compress, exportSqlResultRequestBody.compress)
-            && Objects.equals(this.dataType, exportSqlResultRequestBody.dataType)
-            && Objects.equals(this.queueName, exportSqlResultRequestBody.queueName)
-            && Objects.equals(this.exportMode, exportSqlResultRequestBody.exportMode)
-            && Objects.equals(this.withColumnHeader, exportSqlResultRequestBody.withColumnHeader)
-            && Objects.equals(this.limitNum, exportSqlResultRequestBody.limitNum)
-            && Objects.equals(this.encodingType, exportSqlResultRequestBody.encodingType);
+        ExportSqlResultRequestBody that = (ExportSqlResultRequestBody) obj;
+        return Objects.equals(this.dataPath, that.dataPath) && Objects.equals(this.compress, that.compress)
+            && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.exportMode, that.exportMode)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.encodingType, that.encodingType);
     }
 
     @Override

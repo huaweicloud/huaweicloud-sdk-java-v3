@@ -87,16 +87,16 @@ public class ImportUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportUserReq importUserReq = (ImportUserReq) o;
-        return Objects.equals(this.iamUserId, importUserReq.iamUserId) && Objects.equals(this.role, importUserReq.role)
-            && Objects.equals(this.settings, importUserReq.settings);
+        ImportUserReq that = (ImportUserReq) obj;
+        return Objects.equals(this.iamUserId, that.iamUserId) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.settings, that.settings);
     }
 
     @Override

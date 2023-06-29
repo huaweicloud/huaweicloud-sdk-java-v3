@@ -485,33 +485,28 @@ public class UpdateTrafficEventResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTrafficEventResponse updateTrafficEventResponse = (UpdateTrafficEventResponse) o;
-        return Objects.equals(this.status, updateTrafficEventResponse.status)
-            && Objects.equals(this.eventId, updateTrafficEventResponse.eventId)
-            && Objects.equals(this.eventSourceType, updateTrafficEventResponse.eventSourceType)
-            && Objects.equals(this.eventSourceId, updateTrafficEventResponse.eventSourceId)
-            && Objects.equals(this.eventClass, updateTrafficEventResponse.eventClass)
-            && Objects.equals(this.eventType, updateTrafficEventResponse.eventType)
-            && Objects.equals(this.areaCode, updateTrafficEventResponse.areaCode)
-            && Objects.equals(this.eventLevel, updateTrafficEventResponse.eventLevel)
-            && Objects.equals(this.eventParams, updateTrafficEventResponse.eventParams)
-            && Objects.equals(this.eventPosition, updateTrafficEventResponse.eventPosition)
-            && Objects.equals(this.eventDescription, updateTrafficEventResponse.eventDescription)
-            && Objects.equals(this.referencePaths, updateTrafficEventResponse.referencePaths)
-            && Objects.equals(this.eventPositionName, updateTrafficEventResponse.eventPositionName)
-            && Objects.equals(this.startTime, updateTrafficEventResponse.startTime)
-            && Objects.equals(this.endTime, updateTrafficEventResponse.endTime)
-            && Objects.equals(this.note, updateTrafficEventResponse.note)
-            && Objects.equals(this.eventConfidence, updateTrafficEventResponse.eventConfidence)
-            && Objects.equals(this.createdTime, updateTrafficEventResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, updateTrafficEventResponse.lastModifiedTime);
+        UpdateTrafficEventResponse that = (UpdateTrafficEventResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.eventSourceType, that.eventSourceType)
+            && Objects.equals(this.eventSourceId, that.eventSourceId)
+            && Objects.equals(this.eventClass, that.eventClass) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.eventLevel, that.eventLevel)
+            && Objects.equals(this.eventParams, that.eventParams)
+            && Objects.equals(this.eventPosition, that.eventPosition)
+            && Objects.equals(this.eventDescription, that.eventDescription)
+            && Objects.equals(this.referencePaths, that.referencePaths)
+            && Objects.equals(this.eventPositionName, that.eventPositionName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.note, that.note) && Objects.equals(this.eventConfidence, that.eventConfidence)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime);
     }
 
     @Override

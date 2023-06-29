@@ -33,15 +33,15 @@ public class DTSchedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DTSchedule dtSchedule = (DTSchedule) o;
-        return Objects.equals(this.period, dtSchedule.period);
+        DTSchedule that = (DTSchedule) obj;
+        return Objects.equals(this.period, that.period);
     }
 
     @Override

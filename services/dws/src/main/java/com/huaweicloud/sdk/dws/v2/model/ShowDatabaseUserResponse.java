@@ -276,26 +276,20 @@ public class ShowDatabaseUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseUserResponse showDatabaseUserResponse = (ShowDatabaseUserResponse) o;
-        return Objects.equals(this.login, showDatabaseUserResponse.login)
-            && Objects.equals(this.createrole, showDatabaseUserResponse.createrole)
-            && Objects.equals(this.createdb, showDatabaseUserResponse.createdb)
-            && Objects.equals(this.systemadmin, showDatabaseUserResponse.systemadmin)
-            && Objects.equals(this.auditadmin, showDatabaseUserResponse.auditadmin)
-            && Objects.equals(this.inherit, showDatabaseUserResponse.inherit)
-            && Objects.equals(this.useft, showDatabaseUserResponse.useft)
-            && Objects.equals(this.connLimit, showDatabaseUserResponse.connLimit)
-            && Objects.equals(this.replication, showDatabaseUserResponse.replication)
-            && Objects.equals(this.validBegin, showDatabaseUserResponse.validBegin)
-            && Objects.equals(this.validUntil, showDatabaseUserResponse.validUntil)
-            && Objects.equals(this.lock, showDatabaseUserResponse.lock);
+        ShowDatabaseUserResponse that = (ShowDatabaseUserResponse) obj;
+        return Objects.equals(this.login, that.login) && Objects.equals(this.createrole, that.createrole)
+            && Objects.equals(this.createdb, that.createdb) && Objects.equals(this.systemadmin, that.systemadmin)
+            && Objects.equals(this.auditadmin, that.auditadmin) && Objects.equals(this.inherit, that.inherit)
+            && Objects.equals(this.useft, that.useft) && Objects.equals(this.connLimit, that.connLimit)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.validBegin, that.validBegin)
+            && Objects.equals(this.validUntil, that.validUntil) && Objects.equals(this.lock, that.lock);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class CreateClusterTagsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterTagsBody createClusterTagsBody = (CreateClusterTagsBody) o;
-        return Objects.equals(this.key, createClusterTagsBody.key)
-            && Objects.equals(this.value, createClusterTagsBody.value);
+        CreateClusterTagsBody that = (CreateClusterTagsBody) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

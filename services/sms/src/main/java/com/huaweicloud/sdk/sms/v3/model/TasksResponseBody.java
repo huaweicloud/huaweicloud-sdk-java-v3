@@ -73,22 +73,15 @@ public class TasksResponseBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,22 +148,15 @@ public class TasksResponseBody {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -258,22 +244,15 @@ public class TasksResponseBody {
             if (value == null) {
                 return null;
             }
-            PriorityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PriorityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityEnum(value));
         }
 
         public static PriorityEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PriorityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -449,22 +428,15 @@ public class TasksResponseBody {
             if (value == null) {
                 return null;
             }
-            LogCollectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogCollectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogCollectStatusEnum(value));
         }
 
         public static LogCollectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogCollectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -997,37 +969,31 @@ public class TasksResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TasksResponseBody tasksResponseBody = (TasksResponseBody) o;
-        return Objects.equals(this.id, tasksResponseBody.id) && Objects.equals(this.name, tasksResponseBody.name)
-            && Objects.equals(this.type, tasksResponseBody.type)
-            && Objects.equals(this.osType, tasksResponseBody.osType)
-            && Objects.equals(this.state, tasksResponseBody.state)
-            && Objects.equals(this.estimateCompleteTime, tasksResponseBody.estimateCompleteTime)
-            && Objects.equals(this.createDate, tasksResponseBody.createDate)
-            && Objects.equals(this.priority, tasksResponseBody.priority)
-            && Objects.equals(this.speedLimit, tasksResponseBody.speedLimit)
-            && Objects.equals(this.migrateSpeed, tasksResponseBody.migrateSpeed)
-            && Objects.equals(this.compressRate, tasksResponseBody.compressRate)
-            && Objects.equals(this.startTargetServer, tasksResponseBody.startTargetServer)
-            && Objects.equals(this.errorJson, tasksResponseBody.errorJson)
-            && Objects.equals(this.totalTime, tasksResponseBody.totalTime)
-            && Objects.equals(this.migrationIp, tasksResponseBody.migrationIp)
-            && Objects.equals(this.subTasks, tasksResponseBody.subTasks)
-            && Objects.equals(this.sourceServer, tasksResponseBody.sourceServer)
-            && Objects.equals(this.enterpriseProjectId, tasksResponseBody.enterpriseProjectId)
-            && Objects.equals(this.targetServer, tasksResponseBody.targetServer)
-            && Objects.equals(this.logCollectStatus, tasksResponseBody.logCollectStatus)
-            && Objects.equals(this.cloneServer, tasksResponseBody.cloneServer)
-            && Objects.equals(this.syncing, tasksResponseBody.syncing)
-            && Objects.equals(this.networkCheckInfo, tasksResponseBody.networkCheckInfo)
-            && Objects.equals(this.specialConfig, tasksResponseBody.specialConfig);
+        TasksResponseBody that = (TasksResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.state, that.state)
+            && Objects.equals(this.estimateCompleteTime, that.estimateCompleteTime)
+            && Objects.equals(this.createDate, that.createDate) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.migrateSpeed, that.migrateSpeed)
+            && Objects.equals(this.compressRate, that.compressRate)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.errorJson, that.errorJson) && Objects.equals(this.totalTime, that.totalTime)
+            && Objects.equals(this.migrationIp, that.migrationIp) && Objects.equals(this.subTasks, that.subTasks)
+            && Objects.equals(this.sourceServer, that.sourceServer)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.targetServer, that.targetServer)
+            && Objects.equals(this.logCollectStatus, that.logCollectStatus)
+            && Objects.equals(this.cloneServer, that.cloneServer) && Objects.equals(this.syncing, that.syncing)
+            && Objects.equals(this.networkCheckInfo, that.networkCheckInfo)
+            && Objects.equals(this.specialConfig, that.specialConfig);
     }
 
     @Override

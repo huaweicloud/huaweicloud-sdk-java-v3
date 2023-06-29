@@ -89,17 +89,16 @@ public class CreateVisionActiveCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVisionActiveCodeRequest createVisionActiveCodeRequest = (CreateVisionActiveCodeRequest) o;
-        return Objects.equals(this.xRequestId, createVisionActiveCodeRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, createVisionActiveCodeRequest.acceptLanguage)
-            && Objects.equals(this.body, createVisionActiveCodeRequest.body);
+        CreateVisionActiveCodeRequest that = (CreateVisionActiveCodeRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

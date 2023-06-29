@@ -80,17 +80,16 @@ public class CreateTempResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTempResponse createTempResponse = (CreateTempResponse) o;
-        return Objects.equals(this.code, createTempResponse.code)
-            && Objects.equals(this.tempId, createTempResponse.tempId)
-            && Objects.equals(this.message, createTempResponse.message);
+        CreateTempResponse that = (CreateTempResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.tempId, that.tempId)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

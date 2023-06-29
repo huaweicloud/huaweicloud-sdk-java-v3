@@ -34,15 +34,15 @@ public class UpdatePortResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePortResponse updatePortResponse = (UpdatePortResponse) o;
-        return Objects.equals(this.workflowId, updatePortResponse.workflowId);
+        UpdatePortResponse that = (UpdatePortResponse) obj;
+        return Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

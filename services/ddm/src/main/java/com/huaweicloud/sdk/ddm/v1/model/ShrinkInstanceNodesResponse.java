@@ -78,17 +78,16 @@ public class ShrinkInstanceNodesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShrinkInstanceNodesResponse shrinkInstanceNodesResponse = (ShrinkInstanceNodesResponse) o;
-        return Objects.equals(this.instanceId, shrinkInstanceNodesResponse.instanceId)
-            && Objects.equals(this.instanceName, shrinkInstanceNodesResponse.instanceName)
-            && Objects.equals(this.jobId, shrinkInstanceNodesResponse.jobId);
+        ShrinkInstanceNodesResponse that = (ShrinkInstanceNodesResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

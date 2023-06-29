@@ -123,19 +123,17 @@ public class ListAllFunctionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllFunctionsRequest listAllFunctionsRequest = (ListAllFunctionsRequest) o;
-        return Objects.equals(this.instanceId, listAllFunctionsRequest.instanceId)
-            && Objects.equals(this.catalogName, listAllFunctionsRequest.catalogName)
-            && Objects.equals(this.limit, listAllFunctionsRequest.limit)
-            && Objects.equals(this.marker, listAllFunctionsRequest.marker)
-            && Objects.equals(this.reversePage, listAllFunctionsRequest.reversePage);
+        ListAllFunctionsRequest that = (ListAllFunctionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

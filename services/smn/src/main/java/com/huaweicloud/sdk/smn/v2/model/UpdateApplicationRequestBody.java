@@ -55,16 +55,16 @@ public class UpdateApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApplicationRequestBody updateApplicationRequestBody = (UpdateApplicationRequestBody) o;
-        return Objects.equals(this.platformPrincipal, updateApplicationRequestBody.platformPrincipal)
-            && Objects.equals(this.platformCredential, updateApplicationRequestBody.platformCredential);
+        UpdateApplicationRequestBody that = (UpdateApplicationRequestBody) obj;
+        return Objects.equals(this.platformPrincipal, that.platformPrincipal)
+            && Objects.equals(this.platformCredential, that.platformCredential);
     }
 
     @Override

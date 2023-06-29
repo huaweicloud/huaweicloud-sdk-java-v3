@@ -77,17 +77,16 @@ public class ShowExtensionAuthorizationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtensionAuthorizationRequest showExtensionAuthorizationRequest = (ShowExtensionAuthorizationRequest) o;
-        return Objects.equals(this.extensionVersion, showExtensionAuthorizationRequest.extensionVersion)
-            && Objects.equals(this.identifier, showExtensionAuthorizationRequest.identifier)
-            && Objects.equals(this.instanceId, showExtensionAuthorizationRequest.instanceId);
+        ShowExtensionAuthorizationRequest that = (ShowExtensionAuthorizationRequest) obj;
+        return Objects.equals(this.extensionVersion, that.extensionVersion)
+            && Objects.equals(this.identifier, that.identifier) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

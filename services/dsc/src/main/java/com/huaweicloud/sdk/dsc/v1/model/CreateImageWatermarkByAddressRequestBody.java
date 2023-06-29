@@ -121,20 +121,17 @@ public class CreateImageWatermarkByAddressRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageWatermarkByAddressRequestBody createImageWatermarkByAddressRequestBody =
-            (CreateImageWatermarkByAddressRequestBody) o;
-        return Objects.equals(this.regionId, createImageWatermarkByAddressRequestBody.regionId)
-            && Objects.equals(this.srcFile, createImageWatermarkByAddressRequestBody.srcFile)
-            && Objects.equals(this.blindWatermark, createImageWatermarkByAddressRequestBody.blindWatermark)
-            && Objects.equals(this.imageWatermark, createImageWatermarkByAddressRequestBody.imageWatermark)
-            && Objects.equals(this.dstFile, createImageWatermarkByAddressRequestBody.dstFile);
+        CreateImageWatermarkByAddressRequestBody that = (CreateImageWatermarkByAddressRequestBody) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.srcFile, that.srcFile)
+            && Objects.equals(this.blindWatermark, that.blindWatermark)
+            && Objects.equals(this.imageWatermark, that.imageWatermark) && Objects.equals(this.dstFile, that.dstFile);
     }
 
     @Override

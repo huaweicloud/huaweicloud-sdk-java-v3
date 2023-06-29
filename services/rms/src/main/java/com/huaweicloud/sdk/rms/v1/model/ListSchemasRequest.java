@@ -57,16 +57,15 @@ public class ListSchemasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSchemasRequest listSchemasRequest = (ListSchemasRequest) o;
-        return Objects.equals(this.limit, listSchemasRequest.limit)
-            && Objects.equals(this.marker, listSchemasRequest.marker);
+        ListSchemasRequest that = (ListSchemasRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

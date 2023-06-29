@@ -83,22 +83,15 @@ public class ShowAppResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -381,24 +374,22 @@ public class ShowAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppResponse showAppResponse = (ShowAppResponse) o;
-        return Objects.equals(this.appName, showAppResponse.appName)
-            && Objects.equals(this.appId, showAppResponse.appId) && Objects.equals(this.state, showAppResponse.state)
-            && Objects.equals(this.scope, showAppResponse.scope)
-            && Objects.equals(this.tenantName, showAppResponse.tenantName)
-            && Objects.equals(this.domain, showAppResponse.domain)
-            && Objects.equals(this.createTime, showAppResponse.createTime)
-            && Objects.equals(this.authentication, showAppResponse.authentication)
-            && Objects.equals(this.callbacks, showAppResponse.callbacks)
-            && Objects.equals(this.autoRecordMode, showAppResponse.autoRecordMode)
-            && Objects.equals(this.xRequestId, showAppResponse.xRequestId);
+        ShowAppResponse that = (ShowAppResponse) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.tenantName, that.tenantName) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.callbacks, that.callbacks)
+            && Objects.equals(this.autoRecordMode, that.autoRecordMode)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

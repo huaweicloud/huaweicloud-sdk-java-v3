@@ -144,20 +144,19 @@ public class ShowEnvResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvResponse showEnvResponse = (ShowEnvResponse) o;
-        return Objects.equals(this.devUserPool, showEnvResponse.devUserPool)
-            && Objects.equals(this.hasDev, showEnvResponse.hasDev)
-            && Objects.equals(this.hasDrug, showEnvResponse.hasDrug)
-            && Objects.equals(this.hasEncryptionButton, showEnvResponse.hasEncryptionButton)
-            && Objects.equals(this.deployMode, showEnvResponse.deployMode)
-            && Objects.equals(this.enableColdArchive, showEnvResponse.enableColdArchive);
+        ShowEnvResponse that = (ShowEnvResponse) obj;
+        return Objects.equals(this.devUserPool, that.devUserPool) && Objects.equals(this.hasDev, that.hasDev)
+            && Objects.equals(this.hasDrug, that.hasDrug)
+            && Objects.equals(this.hasEncryptionButton, that.hasEncryptionButton)
+            && Objects.equals(this.deployMode, that.deployMode)
+            && Objects.equals(this.enableColdArchive, that.enableColdArchive);
     }
 
     @Override

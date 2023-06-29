@@ -96,16 +96,16 @@ public class PicInfoNotify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PicInfoNotify picInfoNotify = (PicInfoNotify) o;
-        return Objects.equals(this.index, picInfoNotify.index) && Objects.equals(this.id, picInfoNotify.id)
-            && Objects.equals(this.share, picInfoNotify.share);
+        PicInfoNotify that = (PicInfoNotify) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.share, that.share);
     }
 
     @Override

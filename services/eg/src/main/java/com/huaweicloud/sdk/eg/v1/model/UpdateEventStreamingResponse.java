@@ -58,16 +58,16 @@ public class UpdateEventStreamingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEventStreamingResponse updateEventStreamingResponse = (UpdateEventStreamingResponse) o;
-        return Objects.equals(this.eventStreamingID, updateEventStreamingResponse.eventStreamingID)
-            && Objects.equals(this.xRequestId, updateEventStreamingResponse.xRequestId);
+        UpdateEventStreamingResponse that = (UpdateEventStreamingResponse) obj;
+        return Objects.equals(this.eventStreamingID, that.eventStreamingID)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

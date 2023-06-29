@@ -153,22 +153,18 @@ public class ShowDomainProtectPolicyResponseBodyProtectPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainProtectPolicyResponseBodyProtectPolicy showDomainProtectPolicyResponseBodyProtectPolicy =
-            (ShowDomainProtectPolicyResponseBodyProtectPolicy) o;
-        return Objects.equals(this.allowUser, showDomainProtectPolicyResponseBodyProtectPolicy.allowUser)
-            && Objects.equals(this.operationProtection,
-                showDomainProtectPolicyResponseBodyProtectPolicy.operationProtection)
-            && Objects.equals(this.mobile, showDomainProtectPolicyResponseBodyProtectPolicy.mobile)
-            && Objects.equals(this.adminCheck, showDomainProtectPolicyResponseBodyProtectPolicy.adminCheck)
-            && Objects.equals(this.email, showDomainProtectPolicyResponseBodyProtectPolicy.email)
-            && Objects.equals(this.scene, showDomainProtectPolicyResponseBodyProtectPolicy.scene);
+        ShowDomainProtectPolicyResponseBodyProtectPolicy that = (ShowDomainProtectPolicyResponseBodyProtectPolicy) obj;
+        return Objects.equals(this.allowUser, that.allowUser)
+            && Objects.equals(this.operationProtection, that.operationProtection)
+            && Objects.equals(this.mobile, that.mobile) && Objects.equals(this.adminCheck, that.adminCheck)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.scene, that.scene);
     }
 
     @Override

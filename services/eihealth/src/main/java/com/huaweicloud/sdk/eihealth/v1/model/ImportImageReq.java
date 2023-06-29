@@ -77,16 +77,16 @@ public class ImportImageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportImageReq importImageReq = (ImportImageReq) o;
-        return Objects.equals(this.sourceProjectId, importImageReq.sourceProjectId)
-            && Objects.equals(this.imageId, importImageReq.imageId) && Objects.equals(this.tag, importImageReq.tag);
+        ImportImageReq that = (ImportImageReq) obj;
+        return Objects.equals(this.sourceProjectId, that.sourceProjectId) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

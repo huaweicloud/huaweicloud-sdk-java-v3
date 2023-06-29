@@ -75,16 +75,15 @@ public class ListIssueAssociatedCommitsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueAssociatedCommitsResponse listIssueAssociatedCommitsResponse = (ListIssueAssociatedCommitsResponse) o;
-        return Objects.equals(this.commits, listIssueAssociatedCommitsResponse.commits)
-            && Objects.equals(this.total, listIssueAssociatedCommitsResponse.total);
+        ListIssueAssociatedCommitsResponse that = (ListIssueAssociatedCommitsResponse) obj;
+        return Objects.equals(this.commits, that.commits) && Objects.equals(this.total, that.total);
     }
 
     @Override

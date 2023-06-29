@@ -90,15 +90,15 @@ public class BoundingBox {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BoundingBox boundingBox = (BoundingBox) o;
-        return Objects.equals(this.center, boundingBox.center) && Objects.equals(this.size, boundingBox.size);
+        BoundingBox that = (BoundingBox) obj;
+        return Objects.equals(this.center, that.center) && Objects.equals(this.size, that.size);
     }
 
     @Override

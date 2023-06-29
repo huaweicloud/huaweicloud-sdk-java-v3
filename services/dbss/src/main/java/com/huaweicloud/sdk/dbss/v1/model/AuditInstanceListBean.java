@@ -1,193 +1,157 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 审计实例列表bean
  */
-public class AuditInstanceListBean  {
-
+public class AuditInstanceListBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_model")
-    
+    @JsonProperty(value = "charge_model")
 
     private String chargeModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config_num")
-    
+    @JsonProperty(value = "config_num")
 
     private Integer configNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connect_ip")
-    
+    @JsonProperty(value = "connect_ip")
 
     private String connectIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connect_ipv6")
-    
+    @JsonProperty(value = "connect_ipv6")
 
     private String connectIpv6;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
 
     private Integer cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database_limit")
-    
+    @JsonProperty(value = "database_limit")
 
     private Integer databaseLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="effect")
-    
+    @JsonProperty(value = "effect")
 
     private Integer effect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expired")
-    
+    @JsonProperty(value = "expired")
 
     private String expired;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_days")
-    
+    @JsonProperty(value = "keep_days")
 
     private String keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="new_version")
-    
+    @JsonProperty(value = "new_version")
 
     private String newVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port_id")
-    
+    @JsonProperty(value = "port_id")
 
     private String portId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remain_days")
-    
+    @JsonProperty(value = "remain_days")
 
     private String remainDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_spec_code")
-    
+    @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scene")
-    
+    @JsonProperty(value = "scene")
 
     private String scene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="specification")
-    
+    @JsonProperty(value = "specification")
 
     private String specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task")
-    
+    @JsonProperty(value = "task")
 
     private String task;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="zone")
-    
+    @JsonProperty(value = "zone")
 
     private String zone;
 
@@ -195,9 +159,6 @@ public class AuditInstanceListBean  {
         this.chargeModel = chargeModel;
         return this;
     }
-
-    
-
 
     /**
      * 付费模式 Period：包周期 Demand：按需。
@@ -211,15 +172,10 @@ public class AuditInstanceListBean  {
         this.chargeModel = chargeModel;
     }
 
-    
-
     public AuditInstanceListBean withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 备注信息。
@@ -233,15 +189,10 @@ public class AuditInstanceListBean  {
         this.comment = comment;
     }
 
-    
-
     public AuditInstanceListBean withConfigNum(Integer configNum) {
         this.configNum = configNum;
         return this;
     }
-
-    
-
 
     /**
      * 配置的数据库总数。
@@ -255,15 +206,10 @@ public class AuditInstanceListBean  {
         this.configNum = configNum;
     }
 
-    
-
     public AuditInstanceListBean withConnectIp(String connectIp) {
         this.connectIp = connectIp;
         return this;
     }
-
-    
-
 
     /**
      * 连接地址。
@@ -277,15 +223,10 @@ public class AuditInstanceListBean  {
         this.connectIp = connectIp;
     }
 
-    
-
     public AuditInstanceListBean withConnectIpv6(String connectIpv6) {
         this.connectIpv6 = connectIpv6;
         return this;
     }
-
-    
-
 
     /**
      * ipv6连接地址。
@@ -299,15 +240,10 @@ public class AuditInstanceListBean  {
         this.connectIpv6 = connectIpv6;
     }
 
-    
-
     public AuditInstanceListBean withCpu(Integer cpu) {
         this.cpu = cpu;
         return this;
     }
-
-    
-
 
     /**
      * CPU个数
@@ -321,15 +257,10 @@ public class AuditInstanceListBean  {
         this.cpu = cpu;
     }
 
-    
-
     public AuditInstanceListBean withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -343,15 +274,10 @@ public class AuditInstanceListBean  {
         this.created = created;
     }
 
-    
-
     public AuditInstanceListBean withDatabaseLimit(Integer databaseLimit) {
         this.databaseLimit = databaseLimit;
         return this;
     }
-
-    
-
 
     /**
      * 支持的数据库总数
@@ -365,15 +291,10 @@ public class AuditInstanceListBean  {
         this.databaseLimit = databaseLimit;
     }
 
-    
-
     public AuditInstanceListBean withEffect(Integer effect) {
         this.effect = effect;
         return this;
     }
-
-    
-
 
     /**
      * 1.冻结可释放  2.冻结不可释放 3.冻结后不可续费
@@ -387,15 +308,10 @@ public class AuditInstanceListBean  {
         this.effect = effect;
     }
 
-    
-
     public AuditInstanceListBean withExpired(String expired) {
         this.expired = expired;
         return this;
     }
-
-    
-
 
     /**
      * 过期时间
@@ -409,15 +325,10 @@ public class AuditInstanceListBean  {
         this.expired = expired;
     }
 
-    
-
     public AuditInstanceListBean withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * ID
@@ -431,15 +342,10 @@ public class AuditInstanceListBean  {
         this.id = id;
     }
 
-    
-
     public AuditInstanceListBean withKeepDays(String keepDays) {
         this.keepDays = keepDays;
         return this;
     }
-
-    
-
 
     /**
      * 剩余天数
@@ -453,15 +359,10 @@ public class AuditInstanceListBean  {
         this.keepDays = keepDays;
     }
 
-    
-
     public AuditInstanceListBean withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例别名
@@ -475,15 +376,10 @@ public class AuditInstanceListBean  {
         this.name = name;
     }
 
-    
-
     public AuditInstanceListBean withNewVersion(String newVersion) {
         this.newVersion = newVersion;
         return this;
     }
-
-    
-
 
     /**
      * 如果有返回，则需要升级，如果没有，则为null
@@ -497,15 +393,10 @@ public class AuditInstanceListBean  {
         this.newVersion = newVersion;
     }
 
-    
-
     public AuditInstanceListBean withPortId(String portId) {
         this.portId = portId;
         return this;
     }
-
-    
-
 
     /**
      * 绑定弹性IP的portID
@@ -519,15 +410,10 @@ public class AuditInstanceListBean  {
         this.portId = portId;
     }
 
-    
-
     public AuditInstanceListBean withRam(Integer ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存
@@ -541,15 +427,10 @@ public class AuditInstanceListBean  {
         this.ram = ram;
     }
 
-    
-
     public AuditInstanceListBean withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 实例所在region
@@ -563,15 +444,10 @@ public class AuditInstanceListBean  {
         this.region = region;
     }
 
-    
-
     public AuditInstanceListBean withRemainDays(String remainDays) {
         this.remainDays = remainDays;
         return this;
     }
-
-    
-
 
     /**
      * 到期天数
@@ -585,15 +461,10 @@ public class AuditInstanceListBean  {
         this.remainDays = remainDays;
     }
 
-    
-
     public AuditInstanceListBean withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源ID
@@ -607,15 +478,10 @@ public class AuditInstanceListBean  {
         this.resourceId = resourceId;
     }
 
-    
-
     public AuditInstanceListBean withResourceSpecCode(String resourceSpecCode) {
         this.resourceSpecCode = resourceSpecCode;
         return this;
     }
-
-    
-
 
     /**
      * 实例的规格
@@ -629,15 +495,10 @@ public class AuditInstanceListBean  {
         this.resourceSpecCode = resourceSpecCode;
     }
 
-    
-
     public AuditInstanceListBean withScene(String scene) {
         this.scene = scene;
         return this;
     }
-
-    
-
 
     /**
      * 场景
@@ -651,15 +512,10 @@ public class AuditInstanceListBean  {
         this.scene = scene;
     }
 
-    
-
     public AuditInstanceListBean withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组
@@ -673,15 +529,10 @@ public class AuditInstanceListBean  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public AuditInstanceListBean withSpecification(String specification) {
         this.specification = specification;
         return this;
     }
-
-    
-
 
     /**
      * 实例规格
@@ -695,15 +546,10 @@ public class AuditInstanceListBean  {
         this.specification = specification;
     }
 
-    
-
     public AuditInstanceListBean withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态： SHUTOFF(已关闭) ACTIVE(运行中，允许任何操作) DELETING(删除中，不允许任何操作) BUILD(创建中，不允许任何操作) DELETED(已删除，不需要展示) ERROR(故障，只允许删除) HAWAIT(等待备机创建成功，不允许任何操作) FROZEN(已冻结，只允许续费、绑定/解绑) UPGRADING(升级中，不允许升级操作)
@@ -717,15 +563,10 @@ public class AuditInstanceListBean  {
         this.status = status;
     }
 
-    
-
     public AuditInstanceListBean withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网ID
@@ -739,15 +580,10 @@ public class AuditInstanceListBean  {
         this.subnetId = subnetId;
     }
 
-    
-
     public AuditInstanceListBean withTask(String task) {
         this.task = task;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态： powering-on(正在开启，实例可以绑定、解绑) powering-off(正在关闭，实例可以绑定、解绑) rebooting(正在重启，实例可以绑定、解绑) delete_wait(等待删除，集群与实例不允许任何操作) NO_TASK(不展示)
@@ -761,15 +597,10 @@ public class AuditInstanceListBean  {
         this.task = task;
     }
 
-    
-
     public AuditInstanceListBean withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 实例的当前版本
@@ -783,15 +614,10 @@ public class AuditInstanceListBean  {
         this.version = version;
     }
 
-    
-
     public AuditInstanceListBean withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云
@@ -805,15 +631,10 @@ public class AuditInstanceListBean  {
         this.vpcId = vpcId;
     }
 
-    
-
     public AuditInstanceListBean withZone(String zone) {
         this.zone = zone;
         return this;
     }
-
-    
-
 
     /**
      * 可用区
@@ -827,51 +648,66 @@ public class AuditInstanceListBean  {
         this.zone = zone;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuditInstanceListBean auditInstanceListBean = (AuditInstanceListBean) o;
-        return Objects.equals(this.chargeModel, auditInstanceListBean.chargeModel) &&
-            Objects.equals(this.comment, auditInstanceListBean.comment) &&
-            Objects.equals(this.configNum, auditInstanceListBean.configNum) &&
-            Objects.equals(this.connectIp, auditInstanceListBean.connectIp) &&
-            Objects.equals(this.connectIpv6, auditInstanceListBean.connectIpv6) &&
-            Objects.equals(this.cpu, auditInstanceListBean.cpu) &&
-            Objects.equals(this.created, auditInstanceListBean.created) &&
-            Objects.equals(this.databaseLimit, auditInstanceListBean.databaseLimit) &&
-            Objects.equals(this.effect, auditInstanceListBean.effect) &&
-            Objects.equals(this.expired, auditInstanceListBean.expired) &&
-            Objects.equals(this.id, auditInstanceListBean.id) &&
-            Objects.equals(this.keepDays, auditInstanceListBean.keepDays) &&
-            Objects.equals(this.name, auditInstanceListBean.name) &&
-            Objects.equals(this.newVersion, auditInstanceListBean.newVersion) &&
-            Objects.equals(this.portId, auditInstanceListBean.portId) &&
-            Objects.equals(this.ram, auditInstanceListBean.ram) &&
-            Objects.equals(this.region, auditInstanceListBean.region) &&
-            Objects.equals(this.remainDays, auditInstanceListBean.remainDays) &&
-            Objects.equals(this.resourceId, auditInstanceListBean.resourceId) &&
-            Objects.equals(this.resourceSpecCode, auditInstanceListBean.resourceSpecCode) &&
-            Objects.equals(this.scene, auditInstanceListBean.scene) &&
-            Objects.equals(this.securityGroupId, auditInstanceListBean.securityGroupId) &&
-            Objects.equals(this.specification, auditInstanceListBean.specification) &&
-            Objects.equals(this.status, auditInstanceListBean.status) &&
-            Objects.equals(this.subnetId, auditInstanceListBean.subnetId) &&
-            Objects.equals(this.task, auditInstanceListBean.task) &&
-            Objects.equals(this.version, auditInstanceListBean.version) &&
-            Objects.equals(this.vpcId, auditInstanceListBean.vpcId) &&
-            Objects.equals(this.zone, auditInstanceListBean.zone);
+        AuditInstanceListBean that = (AuditInstanceListBean) obj;
+        return Objects.equals(this.chargeModel, that.chargeModel) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.configNum, that.configNum) && Objects.equals(this.connectIp, that.connectIp)
+            && Objects.equals(this.connectIpv6, that.connectIpv6) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.databaseLimit, that.databaseLimit)
+            && Objects.equals(this.effect, that.effect) && Objects.equals(this.expired, that.expired)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.keepDays, that.keepDays)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.newVersion, that.newVersion)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.remainDays, that.remainDays)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode) && Objects.equals(this.scene, that.scene)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.task, that.task)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.zone, that.zone);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(chargeModel, comment, configNum, connectIp, connectIpv6, cpu, created, databaseLimit, effect, expired, id, keepDays, name, newVersion, portId, ram, region, remainDays, resourceId, resourceSpecCode, scene, securityGroupId, specification, status, subnetId, task, version, vpcId, zone);
+        return Objects.hash(chargeModel,
+            comment,
+            configNum,
+            connectIp,
+            connectIpv6,
+            cpu,
+            created,
+            databaseLimit,
+            effect,
+            expired,
+            id,
+            keepDays,
+            name,
+            newVersion,
+            portId,
+            ram,
+            region,
+            remainDays,
+            resourceId,
+            resourceSpecCode,
+            scene,
+            securityGroupId,
+            specification,
+            status,
+            subnetId,
+            task,
+            version,
+            vpcId,
+            zone);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -908,6 +744,7 @@ public class AuditInstanceListBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -918,8 +755,5 @@ public class AuditInstanceListBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

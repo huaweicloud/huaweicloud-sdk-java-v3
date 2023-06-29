@@ -55,16 +55,16 @@ public class TemplateSrcReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateSrcReq templateSrcReq = (TemplateSrcReq) o;
-        return Objects.equals(this.sourceTemplateId, templateSrcReq.sourceTemplateId)
-            && Objects.equals(this.destinationTemplateName, templateSrcReq.destinationTemplateName);
+        TemplateSrcReq that = (TemplateSrcReq) obj;
+        return Objects.equals(this.sourceTemplateId, that.sourceTemplateId)
+            && Objects.equals(this.destinationTemplateName, that.destinationTemplateName);
     }
 
     @Override

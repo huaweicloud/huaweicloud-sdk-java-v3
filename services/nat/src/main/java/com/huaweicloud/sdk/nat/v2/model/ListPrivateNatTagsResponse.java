@@ -75,16 +75,15 @@ public class ListPrivateNatTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateNatTagsResponse listPrivateNatTagsResponse = (ListPrivateNatTagsResponse) o;
-        return Objects.equals(this.requestId, listPrivateNatTagsResponse.requestId)
-            && Objects.equals(this.tags, listPrivateNatTagsResponse.tags);
+        ListPrivateNatTagsResponse that = (ListPrivateNatTagsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

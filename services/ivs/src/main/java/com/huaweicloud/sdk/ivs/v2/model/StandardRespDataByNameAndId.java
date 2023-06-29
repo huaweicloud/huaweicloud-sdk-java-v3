@@ -99,18 +99,18 @@ public class StandardRespDataByNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandardRespDataByNameAndId standardRespDataByNameAndId = (StandardRespDataByNameAndId) o;
-        return Objects.equals(this.verificationResult, standardRespDataByNameAndId.verificationResult)
-            && Objects.equals(this.verificationMessage, standardRespDataByNameAndId.verificationMessage)
-            && Objects.equals(this.verificationCode, standardRespDataByNameAndId.verificationCode)
-            && Objects.equals(this.similarity, standardRespDataByNameAndId.similarity);
+        StandardRespDataByNameAndId that = (StandardRespDataByNameAndId) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.similarity, that.similarity);
     }
 
     @Override

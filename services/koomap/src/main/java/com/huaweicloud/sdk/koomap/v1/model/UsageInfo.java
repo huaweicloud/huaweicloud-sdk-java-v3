@@ -231,21 +231,20 @@ public class UsageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UsageInfo usageInfo = (UsageInfo) o;
-        return Objects.equals(this.usageMeasureName, usageInfo.usageMeasureName)
-            && Objects.equals(this.usageUnitType, usageInfo.usageUnitType)
-            && Objects.equals(this.usageType, usageInfo.usageType) && Objects.equals(this.domainId, usageInfo.domainId)
-            && Objects.equals(this.usageSubtype, usageInfo.usageSubtype) && Objects.equals(this.usage, usageInfo.usage)
-            && Objects.equals(this.capacity, usageInfo.capacity) && Objects.equals(this.unit, usageInfo.unit)
-            && Objects.equals(this.createdTime, usageInfo.createdTime)
-            && Objects.equals(this.updateTime, usageInfo.updateTime);
+        UsageInfo that = (UsageInfo) obj;
+        return Objects.equals(this.usageMeasureName, that.usageMeasureName)
+            && Objects.equals(this.usageUnitType, that.usageUnitType) && Objects.equals(this.usageType, that.usageType)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.usageSubtype, that.usageSubtype)
+            && Objects.equals(this.usage, that.usage) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

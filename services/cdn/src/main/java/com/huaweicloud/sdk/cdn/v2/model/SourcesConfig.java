@@ -187,22 +187,19 @@ public class SourcesConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourcesConfig sourcesConfig = (SourcesConfig) o;
-        return Objects.equals(this.originAddr, sourcesConfig.originAddr)
-            && Objects.equals(this.originType, sourcesConfig.originType)
-            && Objects.equals(this.priority, sourcesConfig.priority)
-            && Objects.equals(this.obsWebHostingStatus, sourcesConfig.obsWebHostingStatus)
-            && Objects.equals(this.httpPort, sourcesConfig.httpPort)
-            && Objects.equals(this.httpsPort, sourcesConfig.httpsPort)
-            && Objects.equals(this.hostName, sourcesConfig.hostName)
-            && Objects.equals(this.obsBucketType, sourcesConfig.obsBucketType);
+        SourcesConfig that = (SourcesConfig) obj;
+        return Objects.equals(this.originAddr, that.originAddr) && Objects.equals(this.originType, that.originType)
+            && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.obsWebHostingStatus, that.obsWebHostingStatus)
+            && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.obsBucketType, that.obsBucketType);
     }
 
     @Override

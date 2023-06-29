@@ -1,181 +1,144 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Character;
-import com.huaweicloud.sdk.cbs.v1.model.CharacterDimension;
-import com.huaweicloud.sdk.cbs.v1.model.CharacterPosition;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_name")
-    
+    @JsonProperty(value = "character_name")
 
     private String characterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gender")
-    
+    @JsonProperty(value = "gender")
 
     private Integer gender;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="photo_url")
-    
+    @JsonProperty(value = "photo_url")
 
     private String photoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="posture")
-    
+    @JsonProperty(value = "posture")
 
     private Integer posture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="train_finish_time_estimate")
-    
+    @JsonProperty(value = "train_finish_time_estimate")
 
     private String trainFinishTimeEstimate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="train_start_time")
-    
+    @JsonProperty(value = "train_start_time")
 
     private String trainStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="train_status")
-    
+    @JsonProperty(value = "train_status")
 
     private Integer trainStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="center_photo_url")
-    
+    @JsonProperty(value = "center_photo_url")
 
     private String centerPhotoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="left_photo_url")
-    
+    @JsonProperty(value = "left_photo_url")
 
     private String leftPhotoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="preview_video_url")
-    
+    @JsonProperty(value = "preview_video_url")
 
     private String previewVideoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="right_photo_url")
-    
+    @JsonProperty(value = "right_photo_url")
 
     private String rightPhotoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="best_img_quality_preview_url")
-    
+    @JsonProperty(value = "best_img_quality_preview_url")
 
     private String bestImgQualityPreviewUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="best_lip_sync_preview_url")
-    
+    @JsonProperty(value = "best_lip_sync_preview_url")
 
     private String bestLipSyncPreviewUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="best_mouth_rec_preview_url")
-    
+    @JsonProperty(value = "best_mouth_rec_preview_url")
 
     private String bestMouthRecPreviewUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="have_segment_data")
-    
+    @JsonProperty(value = "have_segment_data")
 
     private Boolean haveSegmentData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initial_video_url")
-    
+    @JsonProperty(value = "initial_video_url")
 
     private String initialVideoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="background_url")
-    
+    @JsonProperty(value = "background_url")
 
     private String backgroundUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
 
     private Integer model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charater_position")
-    
+    @JsonProperty(value = "charater_position")
 
     private CharacterPosition charaterPosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charater_dimension")
-    
+    @JsonProperty(value = "charater_dimension")
 
     private CharacterDimension charaterDimension;
 
@@ -183,9 +146,6 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -199,15 +159,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -221,15 +176,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withCharacterName(String characterName) {
         this.characterName = characterName;
         return this;
     }
-
-    
-
 
     /**
      * 形象的个人姓名
@@ -243,15 +193,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.characterName = characterName;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withGender(Integer gender) {
         this.gender = gender;
         return this;
     }
-
-    
-
 
     /**
      * Get gender
@@ -265,15 +210,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.gender = gender;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 形象id
@@ -287,15 +227,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 形象名
@@ -309,15 +244,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 形象obs地址
@@ -331,15 +261,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.photoUrl = photoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withPosture(Integer posture) {
         this.posture = posture;
         return this;
     }
-
-    
-
 
     /**
      * 姿态： 0：站姿全身 1：站姿半身 2：坐姿全身 3：坐姿半身
@@ -353,15 +278,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.posture = posture;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withTrainFinishTimeEstimate(String trainFinishTimeEstimate) {
         this.trainFinishTimeEstimate = trainFinishTimeEstimate;
         return this;
     }
-
-    
-
 
     /**
      * 估算的训练结束时间
@@ -375,15 +295,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.trainFinishTimeEstimate = trainFinishTimeEstimate;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withTrainStartTime(String trainStartTime) {
         this.trainStartTime = trainStartTime;
         return this;
     }
-
-    
-
 
     /**
      * 训练开始时间
@@ -397,15 +312,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.trainStartTime = trainStartTime;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withTrainStatus(Integer trainStatus) {
         this.trainStatus = trainStatus;
         return this;
     }
-
-    
-
 
     /**
      * 训练状态： 0：预处理 1：训练中 2：训练成功 3：训练失败 4：预览视频生成中
@@ -419,15 +329,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.trainStatus = trainStatus;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withType(Integer type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 形象类型： 0：预制形象 1：用户自定义形象
@@ -441,15 +346,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withCenterPhotoUrl(String centerPhotoUrl) {
         this.centerPhotoUrl = centerPhotoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 形象在中心时的图片obs 地址
@@ -463,15 +363,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.centerPhotoUrl = centerPhotoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 合成错误信息
@@ -485,15 +380,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withLeftPhotoUrl(String leftPhotoUrl) {
         this.leftPhotoUrl = leftPhotoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 形象在左时的图片obs 地址 考虑兼容性：如果为null，形象无法使用左右配置
@@ -507,15 +397,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.leftPhotoUrl = leftPhotoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withPreviewVideoUrl(String previewVideoUrl) {
         this.previewVideoUrl = previewVideoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 预览视频
@@ -529,15 +414,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.previewVideoUrl = previewVideoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withRightPhotoUrl(String rightPhotoUrl) {
         this.rightPhotoUrl = rightPhotoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 形象在右时的图片obs 地址 考虑兼容性：如果为null，形象无法使用左右配置
@@ -551,15 +431,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.rightPhotoUrl = rightPhotoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withBestImgQualityPreviewUrl(String bestImgQualityPreviewUrl) {
         this.bestImgQualityPreviewUrl = bestImgQualityPreviewUrl;
         return this;
     }
-
-    
-
 
     /**
      * 显示效果最佳预览
@@ -573,15 +448,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.bestImgQualityPreviewUrl = bestImgQualityPreviewUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withBestLipSyncPreviewUrl(String bestLipSyncPreviewUrl) {
         this.bestLipSyncPreviewUrl = bestLipSyncPreviewUrl;
         return this;
     }
-
-    
-
 
     /**
      * 音唇同步最佳预览
@@ -595,15 +465,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.bestLipSyncPreviewUrl = bestLipSyncPreviewUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withBestMouthRecPreviewUrl(String bestMouthRecPreviewUrl) {
         this.bestMouthRecPreviewUrl = bestMouthRecPreviewUrl;
         return this;
     }
-
-    
-
 
     /**
      * 嘴巴部分效果最佳
@@ -617,15 +482,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.bestMouthRecPreviewUrl = bestMouthRecPreviewUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withHaveSegmentData(Boolean haveSegmentData) {
         this.haveSegmentData = haveSegmentData;
         return this;
     }
-
-    
-
 
     /**
      * 是否有人像分割数据
@@ -639,15 +499,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.haveSegmentData = haveSegmentData;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withInitialVideoUrl(String initialVideoUrl) {
         this.initialVideoUrl = initialVideoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 合成原始视频地址
@@ -661,15 +516,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.initialVideoUrl = initialVideoUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withBackgroundUrl(String backgroundUrl) {
         this.backgroundUrl = backgroundUrl;
         return this;
     }
-
-    
-
 
     /**
      * 抠图背景地址
@@ -683,15 +533,10 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.backgroundUrl = backgroundUrl;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withModel(Integer model) {
         this.model = model;
         return this;
     }
-
-    
-
 
     /**
      * 0: best img quality 1: best lip sync 2: best mouth rec
@@ -705,22 +550,20 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.model = model;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withCharaterPosition(CharacterPosition charaterPosition) {
         this.charaterPosition = charaterPosition;
         return this;
     }
 
-    public ExecuteGetCharacterInfoByIdResponse withCharaterPosition(Consumer<CharacterPosition> charaterPositionSetter) {
-        if(this.charaterPosition == null ){
+    public ExecuteGetCharacterInfoByIdResponse withCharaterPosition(
+        Consumer<CharacterPosition> charaterPositionSetter) {
+        if (this.charaterPosition == null) {
             this.charaterPosition = new CharacterPosition();
             charaterPositionSetter.accept(this.charaterPosition);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get charaterPosition
@@ -734,22 +577,20 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.charaterPosition = charaterPosition;
     }
 
-    
-
     public ExecuteGetCharacterInfoByIdResponse withCharaterDimension(CharacterDimension charaterDimension) {
         this.charaterDimension = charaterDimension;
         return this;
     }
 
-    public ExecuteGetCharacterInfoByIdResponse withCharaterDimension(Consumer<CharacterDimension> charaterDimensionSetter) {
-        if(this.charaterDimension == null ){
+    public ExecuteGetCharacterInfoByIdResponse withCharaterDimension(
+        Consumer<CharacterDimension> charaterDimensionSetter) {
+        if (this.charaterDimension == null) {
             this.charaterDimension = new CharacterDimension();
             charaterDimensionSetter.accept(this.charaterDimension);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get charaterDimension
@@ -763,48 +604,66 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         this.charaterDimension = charaterDimension;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetCharacterInfoByIdResponse executeGetCharacterInfoByIdResponse = (ExecuteGetCharacterInfoByIdResponse) o;
-        return Objects.equals(this.createTime, executeGetCharacterInfoByIdResponse.createTime) &&
-            Objects.equals(this.updateTime, executeGetCharacterInfoByIdResponse.updateTime) &&
-            Objects.equals(this.characterName, executeGetCharacterInfoByIdResponse.characterName) &&
-            Objects.equals(this.gender, executeGetCharacterInfoByIdResponse.gender) &&
-            Objects.equals(this.id, executeGetCharacterInfoByIdResponse.id) &&
-            Objects.equals(this.name, executeGetCharacterInfoByIdResponse.name) &&
-            Objects.equals(this.photoUrl, executeGetCharacterInfoByIdResponse.photoUrl) &&
-            Objects.equals(this.posture, executeGetCharacterInfoByIdResponse.posture) &&
-            Objects.equals(this.trainFinishTimeEstimate, executeGetCharacterInfoByIdResponse.trainFinishTimeEstimate) &&
-            Objects.equals(this.trainStartTime, executeGetCharacterInfoByIdResponse.trainStartTime) &&
-            Objects.equals(this.trainStatus, executeGetCharacterInfoByIdResponse.trainStatus) &&
-            Objects.equals(this.type, executeGetCharacterInfoByIdResponse.type) &&
-            Objects.equals(this.centerPhotoUrl, executeGetCharacterInfoByIdResponse.centerPhotoUrl) &&
-            Objects.equals(this.errorMsg, executeGetCharacterInfoByIdResponse.errorMsg) &&
-            Objects.equals(this.leftPhotoUrl, executeGetCharacterInfoByIdResponse.leftPhotoUrl) &&
-            Objects.equals(this.previewVideoUrl, executeGetCharacterInfoByIdResponse.previewVideoUrl) &&
-            Objects.equals(this.rightPhotoUrl, executeGetCharacterInfoByIdResponse.rightPhotoUrl) &&
-            Objects.equals(this.bestImgQualityPreviewUrl, executeGetCharacterInfoByIdResponse.bestImgQualityPreviewUrl) &&
-            Objects.equals(this.bestLipSyncPreviewUrl, executeGetCharacterInfoByIdResponse.bestLipSyncPreviewUrl) &&
-            Objects.equals(this.bestMouthRecPreviewUrl, executeGetCharacterInfoByIdResponse.bestMouthRecPreviewUrl) &&
-            Objects.equals(this.haveSegmentData, executeGetCharacterInfoByIdResponse.haveSegmentData) &&
-            Objects.equals(this.initialVideoUrl, executeGetCharacterInfoByIdResponse.initialVideoUrl) &&
-            Objects.equals(this.backgroundUrl, executeGetCharacterInfoByIdResponse.backgroundUrl) &&
-            Objects.equals(this.model, executeGetCharacterInfoByIdResponse.model) &&
-            Objects.equals(this.charaterPosition, executeGetCharacterInfoByIdResponse.charaterPosition) &&
-            Objects.equals(this.charaterDimension, executeGetCharacterInfoByIdResponse.charaterDimension);
+        ExecuteGetCharacterInfoByIdResponse that = (ExecuteGetCharacterInfoByIdResponse) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.characterName, that.characterName) && Objects.equals(this.gender, that.gender)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.photoUrl, that.photoUrl) && Objects.equals(this.posture, that.posture)
+            && Objects.equals(this.trainFinishTimeEstimate, that.trainFinishTimeEstimate)
+            && Objects.equals(this.trainStartTime, that.trainStartTime)
+            && Objects.equals(this.trainStatus, that.trainStatus) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.centerPhotoUrl, that.centerPhotoUrl) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.leftPhotoUrl, that.leftPhotoUrl)
+            && Objects.equals(this.previewVideoUrl, that.previewVideoUrl)
+            && Objects.equals(this.rightPhotoUrl, that.rightPhotoUrl)
+            && Objects.equals(this.bestImgQualityPreviewUrl, that.bestImgQualityPreviewUrl)
+            && Objects.equals(this.bestLipSyncPreviewUrl, that.bestLipSyncPreviewUrl)
+            && Objects.equals(this.bestMouthRecPreviewUrl, that.bestMouthRecPreviewUrl)
+            && Objects.equals(this.haveSegmentData, that.haveSegmentData)
+            && Objects.equals(this.initialVideoUrl, that.initialVideoUrl)
+            && Objects.equals(this.backgroundUrl, that.backgroundUrl) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.charaterPosition, that.charaterPosition)
+            && Objects.equals(this.charaterDimension, that.charaterDimension);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, updateTime, characterName, gender, id, name, photoUrl, posture, trainFinishTimeEstimate, trainStartTime, trainStatus, type, centerPhotoUrl, errorMsg, leftPhotoUrl, previewVideoUrl, rightPhotoUrl, bestImgQualityPreviewUrl, bestLipSyncPreviewUrl, bestMouthRecPreviewUrl, haveSegmentData, initialVideoUrl, backgroundUrl, model, charaterPosition, charaterDimension);
+        return Objects.hash(createTime,
+            updateTime,
+            characterName,
+            gender,
+            id,
+            name,
+            photoUrl,
+            posture,
+            trainFinishTimeEstimate,
+            trainStartTime,
+            trainStatus,
+            type,
+            centerPhotoUrl,
+            errorMsg,
+            leftPhotoUrl,
+            previewVideoUrl,
+            rightPhotoUrl,
+            bestImgQualityPreviewUrl,
+            bestLipSyncPreviewUrl,
+            bestMouthRecPreviewUrl,
+            haveSegmentData,
+            initialVideoUrl,
+            backgroundUrl,
+            model,
+            charaterPosition,
+            charaterDimension);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -838,6 +697,7 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -848,8 +708,5 @@ public class ExecuteGetCharacterInfoByIdResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

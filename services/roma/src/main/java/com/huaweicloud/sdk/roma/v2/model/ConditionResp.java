@@ -65,22 +65,15 @@ public class ConditionResp {
             if (value == null) {
                 return null;
             }
-            SysParamNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SysParamNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SysParamNameEnum(value));
         }
 
         public static SysParamNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SysParamNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class ConditionResp {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionTypeEnum(value));
         }
 
         public static ConditionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,22 +226,15 @@ public class ConditionResp {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionOriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionOriginEnum(value));
         }
 
         public static ConditionOriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -451,22 +430,22 @@ public class ConditionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConditionResp conditionResp = (ConditionResp) o;
-        return Objects.equals(this.reqParamName, conditionResp.reqParamName)
-            && Objects.equals(this.sysParamName, conditionResp.sysParamName)
-            && Objects.equals(this.cookieParamName, conditionResp.cookieParamName)
-            && Objects.equals(this.conditionType, conditionResp.conditionType)
-            && Objects.equals(this.conditionOrigin, conditionResp.conditionOrigin)
-            && Objects.equals(this.conditionValue, conditionResp.conditionValue)
-            && Objects.equals(this.id, conditionResp.id) && Objects.equals(this.reqParamId, conditionResp.reqParamId)
-            && Objects.equals(this.reqParamLocation, conditionResp.reqParamLocation);
+        ConditionResp that = (ConditionResp) obj;
+        return Objects.equals(this.reqParamName, that.reqParamName)
+            && Objects.equals(this.sysParamName, that.sysParamName)
+            && Objects.equals(this.cookieParamName, that.cookieParamName)
+            && Objects.equals(this.conditionType, that.conditionType)
+            && Objects.equals(this.conditionOrigin, that.conditionOrigin)
+            && Objects.equals(this.conditionValue, that.conditionValue) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.reqParamId, that.reqParamId)
+            && Objects.equals(this.reqParamLocation, that.reqParamLocation);
     }
 
     @Override

@@ -308,20 +308,20 @@ public class Task {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Task task = (Task) o;
-        return Objects.equals(this.taskId, task.taskId) && Objects.equals(this.taskName, task.taskName)
-            && Objects.equals(this.taskType, task.taskType) && Objects.equals(this.targets, task.targets)
-            && Objects.equals(this.targetsFilter, task.targetsFilter) && Objects.equals(this.document, task.document)
-            && Objects.equals(this.taskPolicy, task.taskPolicy) && Objects.equals(this.status, task.status)
-            && Objects.equals(this.statusDesc, task.statusDesc) && Objects.equals(this.taskProgress, task.taskProgress)
-            && Objects.equals(this.createTime, task.createTime);
+        Task that = (Task) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.targetsFilter, that.targetsFilter) && Objects.equals(this.document, that.document)
+            && Objects.equals(this.taskPolicy, that.taskPolicy) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusDesc, that.statusDesc) && Objects.equals(this.taskProgress, that.taskProgress)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

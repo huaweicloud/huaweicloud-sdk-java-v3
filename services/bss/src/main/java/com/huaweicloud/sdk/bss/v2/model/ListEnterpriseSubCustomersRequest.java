@@ -149,20 +149,18 @@ public class ListEnterpriseSubCustomersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseSubCustomersRequest listEnterpriseSubCustomersRequest = (ListEnterpriseSubCustomersRequest) o;
-        return Objects.equals(this.subCustomerAccountName, listEnterpriseSubCustomersRequest.subCustomerAccountName)
-            && Objects.equals(this.subCustomerDisplayName, listEnterpriseSubCustomersRequest.subCustomerDisplayName)
-            && Objects.equals(this.fuzzyQuery, listEnterpriseSubCustomersRequest.fuzzyQuery)
-            && Objects.equals(this.offset, listEnterpriseSubCustomersRequest.offset)
-            && Objects.equals(this.limit, listEnterpriseSubCustomersRequest.limit)
-            && Objects.equals(this.orgId, listEnterpriseSubCustomersRequest.orgId);
+        ListEnterpriseSubCustomersRequest that = (ListEnterpriseSubCustomersRequest) obj;
+        return Objects.equals(this.subCustomerAccountName, that.subCustomerAccountName)
+            && Objects.equals(this.subCustomerDisplayName, that.subCustomerDisplayName)
+            && Objects.equals(this.fuzzyQuery, that.fuzzyQuery) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.orgId, that.orgId);
     }
 
     @Override

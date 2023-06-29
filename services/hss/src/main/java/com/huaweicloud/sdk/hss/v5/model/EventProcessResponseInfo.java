@@ -839,50 +839,45 @@ public class EventProcessResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventProcessResponseInfo eventProcessResponseInfo = (EventProcessResponseInfo) o;
-        return Objects.equals(this.processName, eventProcessResponseInfo.processName)
-            && Objects.equals(this.processPath, eventProcessResponseInfo.processPath)
-            && Objects.equals(this.processPid, eventProcessResponseInfo.processPid)
-            && Objects.equals(this.processUid, eventProcessResponseInfo.processUid)
-            && Objects.equals(this.processUsername, eventProcessResponseInfo.processUsername)
-            && Objects.equals(this.processCmdline, eventProcessResponseInfo.processCmdline)
-            && Objects.equals(this.processFilename, eventProcessResponseInfo.processFilename)
-            && Objects.equals(this.processStartTime, eventProcessResponseInfo.processStartTime)
-            && Objects.equals(this.processGid, eventProcessResponseInfo.processGid)
-            && Objects.equals(this.processEgid, eventProcessResponseInfo.processEgid)
-            && Objects.equals(this.processEuid, eventProcessResponseInfo.processEuid)
-            && Objects.equals(this.parentProcessName, eventProcessResponseInfo.parentProcessName)
-            && Objects.equals(this.parentProcessPath, eventProcessResponseInfo.parentProcessPath)
-            && Objects.equals(this.parentProcessPid, eventProcessResponseInfo.parentProcessPid)
-            && Objects.equals(this.parentProcessUid, eventProcessResponseInfo.parentProcessUid)
-            && Objects.equals(this.parentProcessCmdline, eventProcessResponseInfo.parentProcessCmdline)
-            && Objects.equals(this.parentProcessFilename, eventProcessResponseInfo.parentProcessFilename)
-            && Objects.equals(this.parentProcessStartTime, eventProcessResponseInfo.parentProcessStartTime)
-            && Objects.equals(this.parentProcessGid, eventProcessResponseInfo.parentProcessGid)
-            && Objects.equals(this.parentProcessEgid, eventProcessResponseInfo.parentProcessEgid)
-            && Objects.equals(this.parentProcessEuid, eventProcessResponseInfo.parentProcessEuid)
-            && Objects.equals(this.childProcessName, eventProcessResponseInfo.childProcessName)
-            && Objects.equals(this.childProcessPath, eventProcessResponseInfo.childProcessPath)
-            && Objects.equals(this.childProcessPid, eventProcessResponseInfo.childProcessPid)
-            && Objects.equals(this.childProcessUid, eventProcessResponseInfo.childProcessUid)
-            && Objects.equals(this.childProcessCmdline, eventProcessResponseInfo.childProcessCmdline)
-            && Objects.equals(this.childProcessFilename, eventProcessResponseInfo.childProcessFilename)
-            && Objects.equals(this.childProcessStartTime, eventProcessResponseInfo.childProcessStartTime)
-            && Objects.equals(this.childProcessGid, eventProcessResponseInfo.childProcessGid)
-            && Objects.equals(this.childProcessEgid, eventProcessResponseInfo.childProcessEgid)
-            && Objects.equals(this.childProcessEuid, eventProcessResponseInfo.childProcessEuid)
-            && Objects.equals(this.virtCmd, eventProcessResponseInfo.virtCmd)
-            && Objects.equals(this.virtProcessName, eventProcessResponseInfo.virtProcessName)
-            && Objects.equals(this.escapeMode, eventProcessResponseInfo.escapeMode)
-            && Objects.equals(this.escapeCmd, eventProcessResponseInfo.escapeCmd)
-            && Objects.equals(this.processHash, eventProcessResponseInfo.processHash);
+        EventProcessResponseInfo that = (EventProcessResponseInfo) obj;
+        return Objects.equals(this.processName, that.processName) && Objects.equals(this.processPath, that.processPath)
+            && Objects.equals(this.processPid, that.processPid) && Objects.equals(this.processUid, that.processUid)
+            && Objects.equals(this.processUsername, that.processUsername)
+            && Objects.equals(this.processCmdline, that.processCmdline)
+            && Objects.equals(this.processFilename, that.processFilename)
+            && Objects.equals(this.processStartTime, that.processStartTime)
+            && Objects.equals(this.processGid, that.processGid) && Objects.equals(this.processEgid, that.processEgid)
+            && Objects.equals(this.processEuid, that.processEuid)
+            && Objects.equals(this.parentProcessName, that.parentProcessName)
+            && Objects.equals(this.parentProcessPath, that.parentProcessPath)
+            && Objects.equals(this.parentProcessPid, that.parentProcessPid)
+            && Objects.equals(this.parentProcessUid, that.parentProcessUid)
+            && Objects.equals(this.parentProcessCmdline, that.parentProcessCmdline)
+            && Objects.equals(this.parentProcessFilename, that.parentProcessFilename)
+            && Objects.equals(this.parentProcessStartTime, that.parentProcessStartTime)
+            && Objects.equals(this.parentProcessGid, that.parentProcessGid)
+            && Objects.equals(this.parentProcessEgid, that.parentProcessEgid)
+            && Objects.equals(this.parentProcessEuid, that.parentProcessEuid)
+            && Objects.equals(this.childProcessName, that.childProcessName)
+            && Objects.equals(this.childProcessPath, that.childProcessPath)
+            && Objects.equals(this.childProcessPid, that.childProcessPid)
+            && Objects.equals(this.childProcessUid, that.childProcessUid)
+            && Objects.equals(this.childProcessCmdline, that.childProcessCmdline)
+            && Objects.equals(this.childProcessFilename, that.childProcessFilename)
+            && Objects.equals(this.childProcessStartTime, that.childProcessStartTime)
+            && Objects.equals(this.childProcessGid, that.childProcessGid)
+            && Objects.equals(this.childProcessEgid, that.childProcessEgid)
+            && Objects.equals(this.childProcessEuid, that.childProcessEuid)
+            && Objects.equals(this.virtCmd, that.virtCmd) && Objects.equals(this.virtProcessName, that.virtProcessName)
+            && Objects.equals(this.escapeMode, that.escapeMode) && Objects.equals(this.escapeCmd, that.escapeCmd)
+            && Objects.equals(this.processHash, that.processHash);
     }
 
     @Override

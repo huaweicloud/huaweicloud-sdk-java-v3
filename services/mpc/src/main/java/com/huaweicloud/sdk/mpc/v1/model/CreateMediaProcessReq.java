@@ -96,17 +96,16 @@ public class CreateMediaProcessReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMediaProcessReq createMediaProcessReq = (CreateMediaProcessReq) o;
-        return Objects.equals(this.input, createMediaProcessReq.input)
-            && Objects.equals(this.output, createMediaProcessReq.output)
-            && Objects.equals(this.templateId, createMediaProcessReq.templateId);
+        CreateMediaProcessReq that = (CreateMediaProcessReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

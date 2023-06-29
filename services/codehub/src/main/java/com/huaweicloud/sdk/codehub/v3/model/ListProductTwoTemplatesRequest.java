@@ -77,17 +77,16 @@ public class ListProductTwoTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductTwoTemplatesRequest listProductTwoTemplatesRequest = (ListProductTwoTemplatesRequest) o;
-        return Objects.equals(this.projectUuid, listProductTwoTemplatesRequest.projectUuid)
-            && Objects.equals(this.pageNo, listProductTwoTemplatesRequest.pageNo)
-            && Objects.equals(this.pageSize, listProductTwoTemplatesRequest.pageSize);
+        ListProductTwoTemplatesRequest that = (ListProductTwoTemplatesRequest) obj;
+        return Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

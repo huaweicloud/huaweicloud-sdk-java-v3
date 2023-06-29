@@ -209,23 +209,20 @@ public class DisasterRecoveryCluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisasterRecoveryCluster disasterRecoveryCluster = (DisasterRecoveryCluster) o;
-        return Objects.equals(this.id, disasterRecoveryCluster.id)
-            && Objects.equals(this.name, disasterRecoveryCluster.name)
-            && Objects.equals(this.clusterAz, disasterRecoveryCluster.clusterAz)
-            && Objects.equals(this.role, disasterRecoveryCluster.role)
-            && Objects.equals(this.region, disasterRecoveryCluster.region)
-            && Objects.equals(this.status, disasterRecoveryCluster.status)
-            && Objects.equals(this.progress, disasterRecoveryCluster.progress)
-            && Objects.equals(this.lastSuccessTime, disasterRecoveryCluster.lastSuccessTime)
-            && Objects.equals(this.obsBucketName, disasterRecoveryCluster.obsBucketName);
+        DisasterRecoveryCluster that = (DisasterRecoveryCluster) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.clusterAz, that.clusterAz) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.lastSuccessTime, that.lastSuccessTime)
+            && Objects.equals(this.obsBucketName, that.obsBucketName);
     }
 
     @Override

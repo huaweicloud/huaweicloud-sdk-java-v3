@@ -231,24 +231,19 @@ public class ShowAlertRspNetworkList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspNetworkList showAlertRspNetworkList = (ShowAlertRspNetworkList) o;
-        return Objects.equals(this.direction, showAlertRspNetworkList.direction)
-            && Objects.equals(this.protocol, showAlertRspNetworkList.protocol)
-            && Objects.equals(this.srcIp, showAlertRspNetworkList.srcIp)
-            && Objects.equals(this.srcPort, showAlertRspNetworkList.srcPort)
-            && Objects.equals(this.srcDomain, showAlertRspNetworkList.srcDomain)
-            && Objects.equals(this.destIp, showAlertRspNetworkList.destIp)
-            && Objects.equals(this.destPort, showAlertRspNetworkList.destPort)
-            && Objects.equals(this.destDomain, showAlertRspNetworkList.destDomain)
-            && Objects.equals(this.srcGeo, showAlertRspNetworkList.srcGeo)
-            && Objects.equals(this.destGeo, showAlertRspNetworkList.destGeo);
+        ShowAlertRspNetworkList that = (ShowAlertRspNetworkList) obj;
+        return Objects.equals(this.direction, that.direction) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.srcDomain, that.srcDomain) && Objects.equals(this.destIp, that.destIp)
+            && Objects.equals(this.destPort, that.destPort) && Objects.equals(this.destDomain, that.destDomain)
+            && Objects.equals(this.srcGeo, that.srcGeo) && Objects.equals(this.destGeo, that.destGeo);
     }
 
     @Override

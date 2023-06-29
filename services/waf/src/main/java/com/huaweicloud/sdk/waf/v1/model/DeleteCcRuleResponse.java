@@ -139,22 +139,15 @@ public class DeleteCcRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TagTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
         }
 
         public static TagTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -689,37 +682,27 @@ public class DeleteCcRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCcRuleResponse deleteCcRuleResponse = (DeleteCcRuleResponse) o;
-        return Objects.equals(this.name, deleteCcRuleResponse.name) && Objects.equals(this.id, deleteCcRuleResponse.id)
-            && Objects.equals(this.policyid, deleteCcRuleResponse.policyid)
-            && Objects.equals(this.url, deleteCcRuleResponse.url)
-            && Objects.equals(this.prefix, deleteCcRuleResponse.prefix)
-            && Objects.equals(this.mode, deleteCcRuleResponse.mode)
-            && Objects.equals(this.status, deleteCcRuleResponse.status)
-            && Objects.equals(this.conditions, deleteCcRuleResponse.conditions)
-            && Objects.equals(this.action, deleteCcRuleResponse.action)
-            && Objects.equals(this.tagType, deleteCcRuleResponse.tagType)
-            && Objects.equals(this.tagIndex, deleteCcRuleResponse.tagIndex)
-            && Objects.equals(this.tagCondition, deleteCcRuleResponse.tagCondition)
-            && Objects.equals(this.limitNum, deleteCcRuleResponse.limitNum)
-            && Objects.equals(this.limitPeriod, deleteCcRuleResponse.limitPeriod)
-            && Objects.equals(this.unlockNum, deleteCcRuleResponse.unlockNum)
-            && Objects.equals(this.lockTime, deleteCcRuleResponse.lockTime)
-            && Objects.equals(this.domainAggregation, deleteCcRuleResponse.domainAggregation)
-            && Objects.equals(this.regionAggregation, deleteCcRuleResponse.regionAggregation)
-            && Objects.equals(this.description, deleteCcRuleResponse.description)
-            && Objects.equals(this.totalNum, deleteCcRuleResponse.totalNum)
-            && Objects.equals(this.unaggregation, deleteCcRuleResponse.unaggregation)
-            && Objects.equals(this.agingTime, deleteCcRuleResponse.agingTime)
-            && Objects.equals(this.producer, deleteCcRuleResponse.producer)
-            && Objects.equals(this.timestamp, deleteCcRuleResponse.timestamp);
+        DeleteCcRuleResponse that = (DeleteCcRuleResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.tagType, that.tagType)
+            && Objects.equals(this.tagIndex, that.tagIndex) && Objects.equals(this.tagCondition, that.tagCondition)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.limitPeriod, that.limitPeriod)
+            && Objects.equals(this.unlockNum, that.unlockNum) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.domainAggregation, that.domainAggregation)
+            && Objects.equals(this.regionAggregation, that.regionAggregation)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.unaggregation, that.unaggregation) && Objects.equals(this.agingTime, that.agingTime)
+            && Objects.equals(this.producer, that.producer) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

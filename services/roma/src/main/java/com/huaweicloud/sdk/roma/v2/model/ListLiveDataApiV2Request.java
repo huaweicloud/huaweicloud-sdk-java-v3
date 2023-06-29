@@ -211,23 +211,19 @@ public class ListLiveDataApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataApiV2Request listLiveDataApiV2Request = (ListLiveDataApiV2Request) o;
-        return Objects.equals(this.instanceId, listLiveDataApiV2Request.instanceId)
-            && Objects.equals(this.offset, listLiveDataApiV2Request.offset)
-            && Objects.equals(this.limit, listLiveDataApiV2Request.limit)
-            && Objects.equals(this.appId, listLiveDataApiV2Request.appId)
-            && Objects.equals(this.appName, listLiveDataApiV2Request.appName)
-            && Objects.equals(this.name, listLiveDataApiV2Request.name)
-            && Objects.equals(this.status, listLiveDataApiV2Request.status)
-            && Objects.equals(this.path, listLiveDataApiV2Request.path)
-            && Objects.equals(this.preciseSearch, listLiveDataApiV2Request.preciseSearch);
+        ListLiveDataApiV2Request that = (ListLiveDataApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

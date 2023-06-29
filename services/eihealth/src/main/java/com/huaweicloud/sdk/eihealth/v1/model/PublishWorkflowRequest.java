@@ -87,17 +87,16 @@ public class PublishWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishWorkflowRequest publishWorkflowRequest = (PublishWorkflowRequest) o;
-        return Objects.equals(this.eihealthProjectId, publishWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.workflowId, publishWorkflowRequest.workflowId)
-            && Objects.equals(this.body, publishWorkflowRequest.body);
+        PublishWorkflowRequest that = (PublishWorkflowRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class AppSearchParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppSearchParam appSearchParam = (AppSearchParam) o;
-        return Objects.equals(this.businessId, appSearchParam.businessId)
-            && Objects.equals(this.region, appSearchParam.region) && Objects.equals(this.page, appSearchParam.page)
-            && Objects.equals(this.pageSize, appSearchParam.pageSize)
-            && Objects.equals(this.keyword, appSearchParam.keyword);
+        AppSearchParam that = (AppSearchParam) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.keyword, that.keyword);
     }
 
     @Override

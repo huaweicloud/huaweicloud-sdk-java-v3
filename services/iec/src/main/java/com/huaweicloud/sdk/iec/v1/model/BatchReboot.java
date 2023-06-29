@@ -24,8 +24,8 @@ public class BatchReboot {
     private List<BaseId> servers = null;
 
     /**
-    * 重启类型：   - SOFT：普通重启。  - HARD：强制重启。  > 重启必须指定重启类型。
-    */
+     * 重启类型：   - SOFT：普通重启。  - HARD：强制重启。  > 重启必须指定重启类型。
+     */
     public static final class TypeEnum {
 
         /**
@@ -68,22 +68,15 @@ public class BatchReboot {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,15 +149,15 @@ public class BatchReboot {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchReboot batchReboot = (BatchReboot) o;
-        return Objects.equals(this.servers, batchReboot.servers) && Objects.equals(this.type, batchReboot.type);
+        BatchReboot that = (BatchReboot) obj;
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.type, that.type);
     }
 
     @Override

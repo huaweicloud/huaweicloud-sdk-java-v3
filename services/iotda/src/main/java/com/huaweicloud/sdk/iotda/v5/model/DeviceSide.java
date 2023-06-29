@@ -52,15 +52,15 @@ public class DeviceSide {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceSide deviceSide = (DeviceSide) o;
-        return Objects.equals(this.deviceIds, deviceSide.deviceIds);
+        DeviceSide that = (DeviceSide) obj;
+        return Objects.equals(this.deviceIds, that.deviceIds);
     }
 
     @Override

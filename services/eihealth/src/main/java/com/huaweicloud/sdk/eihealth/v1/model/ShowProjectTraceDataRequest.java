@@ -55,16 +55,15 @@ public class ShowProjectTraceDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectTraceDataRequest showProjectTraceDataRequest = (ShowProjectTraceDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, showProjectTraceDataRequest.eihealthProjectId)
-            && Objects.equals(this.path, showProjectTraceDataRequest.path);
+        ShowProjectTraceDataRequest that = (ShowProjectTraceDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.path, that.path);
     }
 
     @Override

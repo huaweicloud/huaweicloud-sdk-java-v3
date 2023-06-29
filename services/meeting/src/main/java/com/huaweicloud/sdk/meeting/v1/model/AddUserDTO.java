@@ -121,22 +121,15 @@ public class AddUserDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -479,26 +472,23 @@ public class AddUserDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddUserDTO addUserDTO = (AddUserDTO) o;
-        return Objects.equals(this.name, addUserDTO.name) && Objects.equals(this.englishName, addUserDTO.englishName)
-            && Objects.equals(this.account, addUserDTO.account)
-            && Objects.equals(this.thirdAccount, addUserDTO.thirdAccount)
-            && Objects.equals(this.phone, addUserDTO.phone) && Objects.equals(this.country, addUserDTO.country)
-            && Objects.equals(this.pwd, addUserDTO.pwd) && Objects.equals(this.email, addUserDTO.email)
-            && Objects.equals(this.deptCode, addUserDTO.deptCode)
-            && Objects.equals(this.signature, addUserDTO.signature) && Objects.equals(this.title, addUserDTO.title)
-            && Objects.equals(this.desc, addUserDTO.desc) && Objects.equals(this.status, addUserDTO.status)
-            && Objects.equals(this.function, addUserDTO.function)
-            && Objects.equals(this.sendNotify, addUserDTO.sendNotify)
-            && Objects.equals(this.sortLevel, addUserDTO.sortLevel)
-            && Objects.equals(this.hidePhone, addUserDTO.hidePhone);
+        AddUserDTO that = (AddUserDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.thirdAccount, that.thirdAccount)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.pwd, that.pwd) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.signature, that.signature)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.function, that.function)
+            && Objects.equals(this.sendNotify, that.sendNotify) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.hidePhone, that.hidePhone);
     }
 
     @Override

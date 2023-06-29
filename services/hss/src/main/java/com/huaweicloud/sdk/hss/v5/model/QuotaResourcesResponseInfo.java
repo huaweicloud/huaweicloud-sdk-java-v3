@@ -296,26 +296,21 @@ public class QuotaResourcesResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaResourcesResponseInfo quotaResourcesResponseInfo = (QuotaResourcesResponseInfo) o;
-        return Objects.equals(this.resourceId, quotaResourcesResponseInfo.resourceId)
-            && Objects.equals(this.version, quotaResourcesResponseInfo.version)
-            && Objects.equals(this.quotaStatus, quotaResourcesResponseInfo.quotaStatus)
-            && Objects.equals(this.usedStatus, quotaResourcesResponseInfo.usedStatus)
-            && Objects.equals(this.hostId, quotaResourcesResponseInfo.hostId)
-            && Objects.equals(this.hostName, quotaResourcesResponseInfo.hostName)
-            && Objects.equals(this.chargingMode, quotaResourcesResponseInfo.chargingMode)
-            && Objects.equals(this.tags, quotaResourcesResponseInfo.tags)
-            && Objects.equals(this.expireTime, quotaResourcesResponseInfo.expireTime)
-            && Objects.equals(this.sharedQuota, quotaResourcesResponseInfo.sharedQuota)
-            && Objects.equals(this.enterpriseProjectId, quotaResourcesResponseInfo.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, quotaResourcesResponseInfo.enterpriseProjectName);
+        QuotaResourcesResponseInfo that = (QuotaResourcesResponseInfo) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.quotaStatus, that.quotaStatus) && Objects.equals(this.usedStatus, that.usedStatus)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.sharedQuota, that.sharedQuota)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
     }
 
     @Override

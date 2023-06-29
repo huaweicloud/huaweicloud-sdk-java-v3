@@ -233,24 +233,19 @@ public class EventDetailRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventDetailRequestInfo eventDetailRequestInfo = (EventDetailRequestInfo) o;
-        return Objects.equals(this.agentId, eventDetailRequestInfo.agentId)
-            && Objects.equals(this.processPid, eventDetailRequestInfo.processPid)
-            && Objects.equals(this.fileHash, eventDetailRequestInfo.fileHash)
-            && Objects.equals(this.filePath, eventDetailRequestInfo.filePath)
-            && Objects.equals(this.fileAttr, eventDetailRequestInfo.fileAttr)
-            && Objects.equals(this.keyword, eventDetailRequestInfo.keyword)
-            && Objects.equals(this.hash, eventDetailRequestInfo.hash)
-            && Objects.equals(this.privateIp, eventDetailRequestInfo.privateIp)
-            && Objects.equals(this.loginIp, eventDetailRequestInfo.loginIp)
-            && Objects.equals(this.loginUserName, eventDetailRequestInfo.loginUserName);
+        EventDetailRequestInfo that = (EventDetailRequestInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.processPid, that.processPid)
+            && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.fileAttr, that.fileAttr) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.hash, that.hash) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.loginIp, that.loginIp) && Objects.equals(this.loginUserName, that.loginUserName);
     }
 
     @Override

@@ -96,18 +96,16 @@ public class AttachOrDetachDomainInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachOrDetachDomainInfo attachOrDetachDomainInfo = (AttachOrDetachDomainInfo) o;
-        return Objects.equals(this.domain, attachOrDetachDomainInfo.domain)
-            && Objects.equals(this.instanceIds, attachOrDetachDomainInfo.instanceIds)
-            && Objects.equals(this.verifiedClientCertificateEnabled,
-                attachOrDetachDomainInfo.verifiedClientCertificateEnabled);
+        AttachOrDetachDomainInfo that = (AttachOrDetachDomainInfo) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.instanceIds, that.instanceIds)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled);
     }
 
     @Override

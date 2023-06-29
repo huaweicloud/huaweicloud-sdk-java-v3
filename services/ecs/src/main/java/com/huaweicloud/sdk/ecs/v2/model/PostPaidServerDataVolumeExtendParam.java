@@ -77,18 +77,16 @@ public class PostPaidServerDataVolumeExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerDataVolumeExtendParam postPaidServerDataVolumeExtendParam =
-            (PostPaidServerDataVolumeExtendParam) o;
-        return Objects.equals(this.resourceSpecCode, postPaidServerDataVolumeExtendParam.resourceSpecCode)
-            && Objects.equals(this.resourceType, postPaidServerDataVolumeExtendParam.resourceType)
-            && Objects.equals(this.snapshotId, postPaidServerDataVolumeExtendParam.snapshotId);
+        PostPaidServerDataVolumeExtendParam that = (PostPaidServerDataVolumeExtendParam) obj;
+        return Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.snapshotId, that.snapshotId);
     }
 
     @Override

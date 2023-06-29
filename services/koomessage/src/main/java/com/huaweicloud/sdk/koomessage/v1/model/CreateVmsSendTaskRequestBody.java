@@ -218,21 +218,18 @@ public class CreateVmsSendTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVmsSendTaskRequestBody createVmsSendTaskRequestBody = (CreateVmsSendTaskRequestBody) o;
-        return Objects.equals(this.taskName, createVmsSendTaskRequestBody.taskName)
-            && Objects.equals(this.tplId, createVmsSendTaskRequestBody.tplId)
-            && Objects.equals(this.expirationTime, createVmsSendTaskRequestBody.expirationTime)
-            && Objects.equals(this.mobiles, createVmsSendTaskRequestBody.mobiles)
-            && Objects.equals(this.dyncParams, createVmsSendTaskRequestBody.dyncParams)
-            && Objects.equals(this.individualParams, createVmsSendTaskRequestBody.individualParams)
-            && Objects.equals(this.exdata, createVmsSendTaskRequestBody.exdata);
+        CreateVmsSendTaskRequestBody that = (CreateVmsSendTaskRequestBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.mobiles, that.mobiles)
+            && Objects.equals(this.dyncParams, that.dyncParams)
+            && Objects.equals(this.individualParams, that.individualParams) && Objects.equals(this.exdata, that.exdata);
     }
 
     @Override

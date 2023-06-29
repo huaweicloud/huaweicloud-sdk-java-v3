@@ -55,16 +55,15 @@ public class ParamsReqBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamsReqBean paramsReqBean = (ParamsReqBean) o;
-        return Objects.equals(this.key, paramsReqBean.key)
-            && Objects.equals(this.targetValue, paramsReqBean.targetValue);
+        ParamsReqBean that = (ParamsReqBean) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.targetValue, that.targetValue);
     }
 
     @Override

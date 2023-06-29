@@ -92,22 +92,15 @@ public class BaseEndpoint {
             if (value == null) {
                 return null;
             }
-            EndpointNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EndpointNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EndpointNameEnum(value));
         }
 
         public static EndpointNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EndpointNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -356,22 +349,19 @@ public class BaseEndpoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseEndpoint baseEndpoint = (BaseEndpoint) o;
-        return Objects.equals(this.id, baseEndpoint.id) && Objects.equals(this.endpointName, baseEndpoint.endpointName)
-            && Objects.equals(this.ip, baseEndpoint.ip) && Objects.equals(this.dbPort, baseEndpoint.dbPort)
-            && Objects.equals(this.dbUser, baseEndpoint.dbUser)
-            && Objects.equals(this.dbPassword, baseEndpoint.dbPassword)
-            && Objects.equals(this.instanceId, baseEndpoint.instanceId)
-            && Objects.equals(this.instanceName, baseEndpoint.instanceName)
-            && Objects.equals(this.dbName, baseEndpoint.dbName)
-            && Objects.equals(this.sourceSharding, baseEndpoint.sourceSharding);
+        BaseEndpoint that = (BaseEndpoint) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.endpointName, that.endpointName)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.dbPort, that.dbPort)
+            && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.dbPassword, that.dbPassword)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.sourceSharding, that.sourceSharding);
     }
 
     @Override

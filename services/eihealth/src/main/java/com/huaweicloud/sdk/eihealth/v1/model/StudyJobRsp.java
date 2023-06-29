@@ -297,24 +297,21 @@ public class StudyJobRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StudyJobRsp studyJobRsp = (StudyJobRsp) o;
-        return Objects.equals(this.id, studyJobRsp.id) && Objects.equals(this.workflowJobId, studyJobRsp.workflowJobId)
-            && Objects.equals(this.name, studyJobRsp.name) && Objects.equals(this.status, studyJobRsp.status)
-            && Objects.equals(this.templateId, studyJobRsp.templateId)
-            && Objects.equals(this.databaseName, studyJobRsp.databaseName)
-            && Objects.equals(this.databaseId, studyJobRsp.databaseId)
-            && Objects.equals(this.relativePath, studyJobRsp.relativePath)
-            && Objects.equals(this.outputFileType, studyJobRsp.outputFileType)
-            && Objects.equals(this.workflowName, studyJobRsp.workflowName)
-            && Objects.equals(this.label, studyJobRsp.label) && Objects.equals(this.createTime, studyJobRsp.createTime)
-            && Objects.equals(this.updateTime, studyJobRsp.updateTime);
+        StudyJobRsp that = (StudyJobRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.workflowJobId, that.workflowJobId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.databaseId, that.databaseId) && Objects.equals(this.relativePath, that.relativePath)
+            && Objects.equals(this.outputFileType, that.outputFileType)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

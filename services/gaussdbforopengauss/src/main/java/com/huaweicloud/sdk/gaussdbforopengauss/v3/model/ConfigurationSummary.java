@@ -1,73 +1,57 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 参数模板信息。
  */
-public class ConfigurationSummary  {
-
+public class ConfigurationSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_version")
-    
+    @JsonProperty(value = "datastore_version")
 
     private String datastoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_name")
-    
+    @JsonProperty(value = "datastore_name")
 
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_mode")
-    
+    @JsonProperty(value = "ha_mode")
 
     private String haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_defined")
-    
+    @JsonProperty(value = "user_defined")
 
     private Boolean userDefined;
 
@@ -75,9 +59,6 @@ public class ConfigurationSummary  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数组ID。
@@ -91,15 +72,10 @@ public class ConfigurationSummary  {
         this.id = id;
     }
 
-    
-
     public ConfigurationSummary withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数组名称。
@@ -113,15 +89,10 @@ public class ConfigurationSummary  {
         this.name = name;
     }
 
-    
-
     public ConfigurationSummary withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数组描述。
@@ -135,15 +106,10 @@ public class ConfigurationSummary  {
         this.description = description;
     }
 
-    
-
     public ConfigurationSummary withDatastoreVersion(String datastoreVersion) {
         this.datastoreVersion = datastoreVersion;
         return this;
     }
-
-    
-
 
     /**
      * 引擎版本。
@@ -157,15 +123,10 @@ public class ConfigurationSummary  {
         this.datastoreVersion = datastoreVersion;
     }
 
-    
-
     public ConfigurationSummary withDatastoreName(String datastoreName) {
         this.datastoreName = datastoreName;
         return this;
     }
-
-    
-
 
     /**
      * 引擎名称。
@@ -179,15 +140,10 @@ public class ConfigurationSummary  {
         this.datastoreName = datastoreName;
     }
 
-    
-
     public ConfigurationSummary withHaMode(String haMode) {
         this.haMode = haMode;
         return this;
     }
-
-    
-
 
     /**
      * 数据库部署模式。
@@ -201,15 +157,10 @@ public class ConfigurationSummary  {
         this.haMode = haMode;
     }
 
-    
-
     public ConfigurationSummary withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为\"yyyy-MM-dd HH:mm:ss\"。
@@ -223,15 +174,10 @@ public class ConfigurationSummary  {
         this.created = created;
     }
 
-    
-
     public ConfigurationSummary withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式为\"yyyy-MM-dd HH:mm:ss\"。
@@ -245,15 +191,10 @@ public class ConfigurationSummary  {
         this.updated = updated;
     }
 
-    
-
     public ConfigurationSummary withUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
         return this;
     }
-
-    
-
 
     /**
      * 是否是用户自定义参数模板：  - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
@@ -267,31 +208,29 @@ public class ConfigurationSummary  {
         this.userDefined = userDefined;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationSummary configurationSummary = (ConfigurationSummary) o;
-        return Objects.equals(this.id, configurationSummary.id) &&
-            Objects.equals(this.name, configurationSummary.name) &&
-            Objects.equals(this.description, configurationSummary.description) &&
-            Objects.equals(this.datastoreVersion, configurationSummary.datastoreVersion) &&
-            Objects.equals(this.datastoreName, configurationSummary.datastoreName) &&
-            Objects.equals(this.haMode, configurationSummary.haMode) &&
-            Objects.equals(this.created, configurationSummary.created) &&
-            Objects.equals(this.updated, configurationSummary.updated) &&
-            Objects.equals(this.userDefined, configurationSummary.userDefined);
+        ConfigurationSummary that = (ConfigurationSummary) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.haMode, that.haMode)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.userDefined, that.userDefined);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, datastoreVersion, datastoreName, haMode, created, updated, userDefined);
+        return Objects
+            .hash(id, name, description, datastoreVersion, datastoreName, haMode, created, updated, userDefined);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -308,6 +247,7 @@ public class ConfigurationSummary  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -318,8 +258,5 @@ public class ConfigurationSummary  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

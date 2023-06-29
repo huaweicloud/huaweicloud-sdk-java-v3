@@ -101,22 +101,15 @@ public class QualityInfo {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FormatEnum(value));
         }
 
         public static FormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -208,16 +201,16 @@ public class QualityInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityInfo qualityInfo = (QualityInfo) o;
-        return Objects.equals(this.video, qualityInfo.video) && Objects.equals(this.audio, qualityInfo.audio)
-            && Objects.equals(this.format, qualityInfo.format);
+        QualityInfo that = (QualityInfo) obj;
+        return Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio)
+            && Objects.equals(this.format, that.format);
     }
 
     @Override

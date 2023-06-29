@@ -73,22 +73,15 @@ public class VideoMotionCaptureJobReq {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MotionCaptureModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MotionCaptureModeEnum(value));
         }
 
         public static MotionCaptureModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -190,17 +183,16 @@ public class VideoMotionCaptureJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoMotionCaptureJobReq videoMotionCaptureJobReq = (VideoMotionCaptureJobReq) o;
-        return Objects.equals(this.motionCaptureMode, videoMotionCaptureJobReq.motionCaptureMode)
-            && Objects.equals(this.inputInfo, videoMotionCaptureJobReq.inputInfo)
-            && Objects.equals(this.outputInfo, videoMotionCaptureJobReq.outputInfo);
+        VideoMotionCaptureJobReq that = (VideoMotionCaptureJobReq) obj;
+        return Objects.equals(this.motionCaptureMode, that.motionCaptureMode)
+            && Objects.equals(this.inputInfo, that.inputInfo) && Objects.equals(this.outputInfo, that.outputInfo);
     }
 
     @Override

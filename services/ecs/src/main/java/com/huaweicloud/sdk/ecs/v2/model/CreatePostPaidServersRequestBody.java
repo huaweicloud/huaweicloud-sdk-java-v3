@@ -65,16 +65,15 @@ public class CreatePostPaidServersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostPaidServersRequestBody createPostPaidServersRequestBody = (CreatePostPaidServersRequestBody) o;
-        return Objects.equals(this.dryRun, createPostPaidServersRequestBody.dryRun)
-            && Objects.equals(this.server, createPostPaidServersRequestBody.server);
+        CreatePostPaidServersRequestBody that = (CreatePostPaidServersRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.server, that.server);
     }
 
     @Override

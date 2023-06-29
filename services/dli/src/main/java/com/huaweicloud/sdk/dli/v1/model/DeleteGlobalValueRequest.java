@@ -33,15 +33,15 @@ public class DeleteGlobalValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGlobalValueRequest deleteGlobalValueRequest = (DeleteGlobalValueRequest) o;
-        return Objects.equals(this.varName, deleteGlobalValueRequest.varName);
+        DeleteGlobalValueRequest that = (DeleteGlobalValueRequest) obj;
+        return Objects.equals(this.varName, that.varName);
     }
 
     @Override

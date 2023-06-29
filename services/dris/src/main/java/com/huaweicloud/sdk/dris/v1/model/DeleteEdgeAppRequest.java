@@ -55,16 +55,15 @@ public class DeleteEdgeAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEdgeAppRequest deleteEdgeAppRequest = (DeleteEdgeAppRequest) o;
-        return Objects.equals(this.instanceId, deleteEdgeAppRequest.instanceId)
-            && Objects.equals(this.edgeAppId, deleteEdgeAppRequest.edgeAppId);
+        DeleteEdgeAppRequest that = (DeleteEdgeAppRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId);
     }
 
     @Override

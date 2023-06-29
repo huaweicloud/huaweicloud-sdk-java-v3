@@ -121,19 +121,17 @@ public class EnvVariableInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvVariableInfo envVariableInfo = (EnvVariableInfo) o;
-        return Objects.equals(this.variableValue, envVariableInfo.variableValue)
-            && Objects.equals(this.envId, envVariableInfo.envId)
-            && Objects.equals(this.groupId, envVariableInfo.groupId)
-            && Objects.equals(this.variableName, envVariableInfo.variableName)
-            && Objects.equals(this.id, envVariableInfo.id);
+        EnvVariableInfo that = (EnvVariableInfo) obj;
+        return Objects.equals(this.variableValue, that.variableValue) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.variableName, that.variableName)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

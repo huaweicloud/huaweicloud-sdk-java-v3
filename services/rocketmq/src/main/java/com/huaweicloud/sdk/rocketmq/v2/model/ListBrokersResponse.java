@@ -53,15 +53,15 @@ public class ListBrokersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBrokersResponse listBrokersResponse = (ListBrokersResponse) o;
-        return Objects.equals(this.brokers, listBrokersResponse.brokers);
+        ListBrokersResponse that = (ListBrokersResponse) obj;
+        return Objects.equals(this.brokers, that.brokers);
     }
 
     @Override

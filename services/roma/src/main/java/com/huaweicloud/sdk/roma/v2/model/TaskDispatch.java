@@ -83,22 +83,15 @@ public class TaskDispatch {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,20 +240,17 @@ public class TaskDispatch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDispatch taskDispatch = (TaskDispatch) o;
-        return Objects.equals(this.startDatetime, taskDispatch.startDatetime)
-            && Objects.equals(this.period, taskDispatch.period)
-            && Objects.equals(this.dispatchInterval, taskDispatch.dispatchInterval)
-            && Objects.equals(this.remark, taskDispatch.remark)
-            && Objects.equals(this.useQuartzCron, taskDispatch.useQuartzCron)
-            && Objects.equals(this.cron, taskDispatch.cron);
+        TaskDispatch that = (TaskDispatch) obj;
+        return Objects.equals(this.startDatetime, that.startDatetime) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.dispatchInterval, that.dispatchInterval) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.useQuartzCron, that.useQuartzCron) && Objects.equals(this.cron, that.cron);
     }
 
     @Override

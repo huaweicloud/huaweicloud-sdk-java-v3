@@ -408,29 +408,26 @@ public class PostAlarmsReqV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostAlarmsReqV2 postAlarmsReqV2 = (PostAlarmsReqV2) o;
-        return Objects.equals(this.name, postAlarmsReqV2.name)
-            && Objects.equals(this.description, postAlarmsReqV2.description)
-            && Objects.equals(this.namespace, postAlarmsReqV2.namespace)
-            && Objects.equals(this.resourceGroupId, postAlarmsReqV2.resourceGroupId)
-            && Objects.equals(this.resources, postAlarmsReqV2.resources)
-            && Objects.equals(this.policies, postAlarmsReqV2.policies)
-            && Objects.equals(this.type, postAlarmsReqV2.type)
-            && Objects.equals(this.alarmNotifications, postAlarmsReqV2.alarmNotifications)
-            && Objects.equals(this.okNotifications, postAlarmsReqV2.okNotifications)
-            && Objects.equals(this.notificationBeginTime, postAlarmsReqV2.notificationBeginTime)
-            && Objects.equals(this.notificationEndTime, postAlarmsReqV2.notificationEndTime)
-            && Objects.equals(this.enterpriseProjectId, postAlarmsReqV2.enterpriseProjectId)
-            && Objects.equals(this.enabled, postAlarmsReqV2.enabled)
-            && Objects.equals(this.notificationEnabled, postAlarmsReqV2.notificationEnabled)
-            && Objects.equals(this.alarmTemplateId, postAlarmsReqV2.alarmTemplateId);
+        PostAlarmsReqV2 that = (PostAlarmsReqV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.resourceGroupId, that.resourceGroupId)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.policies, that.policies)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.alarmNotifications, that.alarmNotifications)
+            && Objects.equals(this.okNotifications, that.okNotifications)
+            && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
+            && Objects.equals(this.notificationEndTime, that.notificationEndTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.notificationEnabled, that.notificationEnabled)
+            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId);
     }
 
     @Override

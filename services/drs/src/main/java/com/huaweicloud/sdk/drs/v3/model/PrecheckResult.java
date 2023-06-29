@@ -74,22 +74,15 @@ public class PrecheckResult {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -272,20 +265,18 @@ public class PrecheckResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrecheckResult precheckResult = (PrecheckResult) o;
-        return Objects.equals(this.item, precheckResult.item) && Objects.equals(this.result, precheckResult.result)
-            && Objects.equals(this.failedReason, precheckResult.failedReason)
-            && Objects.equals(this.data, precheckResult.data)
-            && Objects.equals(this.rawErrorMsg, precheckResult.rawErrorMsg)
-            && Objects.equals(this.group, precheckResult.group)
-            && Objects.equals(this.failedSubJobs, precheckResult.failedSubJobs);
+        PrecheckResult that = (PrecheckResult) obj;
+        return Objects.equals(this.item, that.item) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.rawErrorMsg, that.rawErrorMsg) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.failedSubJobs, that.failedSubJobs);
     }
 
     @Override

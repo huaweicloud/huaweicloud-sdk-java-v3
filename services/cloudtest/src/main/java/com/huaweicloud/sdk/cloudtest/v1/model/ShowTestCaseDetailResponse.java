@@ -317,27 +317,21 @@ public class ShowTestCaseDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTestCaseDetailResponse showTestCaseDetailResponse = (ShowTestCaseDetailResponse) o;
-        return Objects.equals(this.testcaseId, showTestCaseDetailResponse.testcaseId)
-            && Objects.equals(this.projectId, showTestCaseDetailResponse.projectId)
-            && Objects.equals(this.serviceId, showTestCaseDetailResponse.serviceId)
-            && Objects.equals(this.name, showTestCaseDetailResponse.name)
-            && Objects.equals(this.testcaseNumber, showTestCaseDetailResponse.testcaseNumber)
-            && Objects.equals(this.rankId, showTestCaseDetailResponse.rankId)
-            && Objects.equals(this.statusId, showTestCaseDetailResponse.statusId)
-            && Objects.equals(this.assignedUser, showTestCaseDetailResponse.assignedUser)
-            && Objects.equals(this.executeCount, showTestCaseDetailResponse.executeCount)
-            && Objects.equals(this.resultId, showTestCaseDetailResponse.resultId)
-            && Objects.equals(this.extendInfo, showTestCaseDetailResponse.extendInfo)
-            && Objects.equals(this.errorCode, showTestCaseDetailResponse.errorCode)
-            && Objects.equals(this.errorMsg, showTestCaseDetailResponse.errorMsg);
+        ShowTestCaseDetailResponse that = (ShowTestCaseDetailResponse) obj;
+        return Objects.equals(this.testcaseId, that.testcaseId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.testcaseNumber, that.testcaseNumber) && Objects.equals(this.rankId, that.rankId)
+            && Objects.equals(this.statusId, that.statusId) && Objects.equals(this.assignedUser, that.assignedUser)
+            && Objects.equals(this.executeCount, that.executeCount) && Objects.equals(this.resultId, that.resultId)
+            && Objects.equals(this.extendInfo, that.extendInfo) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

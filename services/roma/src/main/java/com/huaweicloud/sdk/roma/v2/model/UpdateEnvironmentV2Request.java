@@ -87,17 +87,16 @@ public class UpdateEnvironmentV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEnvironmentV2Request updateEnvironmentV2Request = (UpdateEnvironmentV2Request) o;
-        return Objects.equals(this.instanceId, updateEnvironmentV2Request.instanceId)
-            && Objects.equals(this.envId, updateEnvironmentV2Request.envId)
-            && Objects.equals(this.body, updateEnvironmentV2Request.body);
+        UpdateEnvironmentV2Request that = (UpdateEnvironmentV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -106,17 +106,16 @@ public class AddRepoMembersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRepoMembersResponse addRepoMembersResponse = (AddRepoMembersResponse) o;
-        return Objects.equals(this.error, addRepoMembersResponse.error)
-            && Objects.equals(this.result, addRepoMembersResponse.result)
-            && Objects.equals(this.status, addRepoMembersResponse.status);
+        AddRepoMembersResponse that = (AddRepoMembersResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -97,22 +97,15 @@ public class ListEndpointGroupsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -261,21 +254,18 @@ public class ListEndpointGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointGroupsRequest listEndpointGroupsRequest = (ListEndpointGroupsRequest) o;
-        return Objects.equals(this.limit, listEndpointGroupsRequest.limit)
-            && Objects.equals(this.marker, listEndpointGroupsRequest.marker)
-            && Objects.equals(this.pageReverse, listEndpointGroupsRequest.pageReverse)
-            && Objects.equals(this.id, listEndpointGroupsRequest.id)
-            && Objects.equals(this.name, listEndpointGroupsRequest.name)
-            && Objects.equals(this.status, listEndpointGroupsRequest.status)
-            && Objects.equals(this.listenerId, listEndpointGroupsRequest.listenerId);
+        ListEndpointGroupsRequest that = (ListEndpointGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.listenerId, that.listenerId);
     }
 
     @Override

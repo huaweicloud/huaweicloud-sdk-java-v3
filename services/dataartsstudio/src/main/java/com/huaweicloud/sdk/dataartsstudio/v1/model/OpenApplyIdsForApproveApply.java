@@ -74,16 +74,15 @@ public class OpenApplyIdsForApproveApply {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenApplyIdsForApproveApply openApplyIdsForApproveApply = (OpenApplyIdsForApproveApply) o;
-        return Objects.equals(this.applyResult, openApplyIdsForApproveApply.applyResult)
-            && Objects.equals(this.applyIds, openApplyIdsForApproveApply.applyIds);
+        OpenApplyIdsForApproveApply that = (OpenApplyIdsForApproveApply) obj;
+        return Objects.equals(this.applyResult, that.applyResult) && Objects.equals(this.applyIds, that.applyIds);
     }
 
     @Override

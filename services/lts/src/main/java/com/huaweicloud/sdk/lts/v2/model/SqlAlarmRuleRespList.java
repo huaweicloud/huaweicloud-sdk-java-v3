@@ -54,8 +54,8 @@ public class SqlAlarmRuleRespList {
     private List<Topics> topics = null;
 
     /**
-    * 告警级别
-    */
+     * 告警级别
+     */
     public static final class SqlAlarmLevelEnum {
 
         /**
@@ -110,22 +110,15 @@ public class SqlAlarmRuleRespList {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAlarmLevelEnum(value));
         }
 
         public static SqlAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,22 +210,15 @@ public class SqlAlarmRuleRespList {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -622,32 +608,27 @@ public class SqlAlarmRuleRespList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlAlarmRuleRespList sqlAlarmRuleRespList = (SqlAlarmRuleRespList) o;
-        return Objects.equals(this.sqlAlarmRuleName, sqlAlarmRuleRespList.sqlAlarmRuleName)
-            && Objects.equals(this.sqlAlarmRuleId, sqlAlarmRuleRespList.sqlAlarmRuleId)
-            && Objects.equals(this.sqlAlarmRuleDescription, sqlAlarmRuleRespList.sqlAlarmRuleDescription)
-            && Objects.equals(this.sqlRequests, sqlAlarmRuleRespList.sqlRequests)
-            && Objects.equals(this.frequency, sqlAlarmRuleRespList.frequency)
-            && Objects.equals(this.conditionExpression, sqlAlarmRuleRespList.conditionExpression)
-            && Objects.equals(this.topics, sqlAlarmRuleRespList.topics)
-            && Objects.equals(this.sqlAlarmLevel, sqlAlarmRuleRespList.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, sqlAlarmRuleRespList.sqlAlarmSend)
-            && Objects.equals(this.domainId, sqlAlarmRuleRespList.domainId)
-            && Objects.equals(this.createTime, sqlAlarmRuleRespList.createTime)
-            && Objects.equals(this.updateTime, sqlAlarmRuleRespList.updateTime)
-            && Objects.equals(this.templateName, sqlAlarmRuleRespList.templateName)
-            && Objects.equals(this.status, sqlAlarmRuleRespList.status)
-            && Objects.equals(this.triggerConditionCount, sqlAlarmRuleRespList.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency, sqlAlarmRuleRespList.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, sqlAlarmRuleRespList.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, sqlAlarmRuleRespList.recoveryPolicy);
+        SqlAlarmRuleRespList that = (SqlAlarmRuleRespList) obj;
+        return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+            && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
+            && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
+            && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.conditionExpression, that.conditionExpression)
+            && Objects.equals(this.topics, that.topics) && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
+            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

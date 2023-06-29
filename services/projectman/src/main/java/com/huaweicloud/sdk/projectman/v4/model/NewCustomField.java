@@ -77,17 +77,16 @@ public class NewCustomField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NewCustomField newCustomField = (NewCustomField) o;
-        return Objects.equals(this.customField, newCustomField.customField)
-            && Objects.equals(this.fieldName, newCustomField.fieldName)
-            && Objects.equals(this.value, newCustomField.value);
+        NewCustomField that = (NewCustomField) obj;
+        return Objects.equals(this.customField, that.customField) && Objects.equals(this.fieldName, that.fieldName)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

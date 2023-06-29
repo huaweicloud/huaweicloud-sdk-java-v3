@@ -151,20 +151,17 @@ public class UpdateHealthCheckOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHealthCheckOption updateHealthCheckOption = (UpdateHealthCheckOption) o;
-        return Objects.equals(this.protocol, updateHealthCheckOption.protocol)
-            && Objects.equals(this.port, updateHealthCheckOption.port)
-            && Objects.equals(this.interval, updateHealthCheckOption.interval)
-            && Objects.equals(this.timeout, updateHealthCheckOption.timeout)
-            && Objects.equals(this.maxRetries, updateHealthCheckOption.maxRetries)
-            && Objects.equals(this.enabled, updateHealthCheckOption.enabled);
+        UpdateHealthCheckOption that = (UpdateHealthCheckOption) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.interval, that.interval) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

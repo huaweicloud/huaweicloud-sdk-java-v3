@@ -165,21 +165,19 @@ public class ApplicationItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationItem applicationItem = (ApplicationItem) o;
-        return Objects.equals(this.name, applicationItem.name)
-            && Objects.equals(this.platform, applicationItem.platform)
-            && Objects.equals(this.createTime, applicationItem.createTime)
-            && Objects.equals(this.applicationUrn, applicationItem.applicationUrn)
-            && Objects.equals(this.applicationId, applicationItem.applicationId)
-            && Objects.equals(this.enabled, applicationItem.enabled)
-            && Objects.equals(this.appleCertificateExpirationDate, applicationItem.appleCertificateExpirationDate);
+        ApplicationItem that = (ApplicationItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.applicationUrn, that.applicationUrn)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.appleCertificateExpirationDate, that.appleCertificateExpirationDate);
     }
 
     @Override

@@ -294,21 +294,21 @@ public class BackupDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupDto backupDto = (BackupDto) o;
-        return Objects.equals(this.id, backupDto.id) && Objects.equals(this.name, backupDto.name)
-            && Objects.equals(this.type, backupDto.type) && Objects.equals(this.storageType, backupDto.storageType)
-            && Objects.equals(this.region, backupDto.region) && Objects.equals(this.paths, backupDto.paths)
-            && Objects.equals(this.startTime, backupDto.startTime) && Objects.equals(this.endTime, backupDto.endTime)
-            && Objects.equals(this.archiveDays, backupDto.archiveDays) && Objects.equals(this.size, backupDto.size)
-            && Objects.equals(this.description, backupDto.description)
-            && Objects.equals(this.operatorName, backupDto.operatorName);
+        BackupDto that = (BackupDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.paths, that.paths)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.archiveDays, that.archiveDays) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.operatorName, that.operatorName);
     }
 
     @Override

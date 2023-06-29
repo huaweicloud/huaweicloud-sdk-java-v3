@@ -65,22 +65,15 @@ public class DeleteScalingGroupRequest {
             if (value == null) {
                 return null;
             }
-            ForceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ForceDeleteEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ForceDeleteEnum(value));
         }
 
         public static ForceDeleteEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ForceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,16 @@ public class DeleteScalingGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteScalingGroupRequest deleteScalingGroupRequest = (DeleteScalingGroupRequest) o;
-        return Objects.equals(this.scalingGroupId, deleteScalingGroupRequest.scalingGroupId)
-            && Objects.equals(this.forceDelete, deleteScalingGroupRequest.forceDelete);
+        DeleteScalingGroupRequest that = (DeleteScalingGroupRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.forceDelete, that.forceDelete);
     }
 
     @Override

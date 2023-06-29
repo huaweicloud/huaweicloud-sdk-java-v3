@@ -55,16 +55,15 @@ public class ShowStandardByIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStandardByIdRequest showStandardByIdRequest = (ShowStandardByIdRequest) o;
-        return Objects.equals(this.workspace, showStandardByIdRequest.workspace)
-            && Objects.equals(this.id, showStandardByIdRequest.id);
+        ShowStandardByIdRequest that = (ShowStandardByIdRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id);
     }
 
     @Override

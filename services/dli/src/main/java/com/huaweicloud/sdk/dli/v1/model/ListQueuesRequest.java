@@ -99,18 +99,16 @@ public class ListQueuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueuesRequest listQueuesRequest = (ListQueuesRequest) o;
-        return Objects.equals(this.queueType, listQueuesRequest.queueType)
-            && Objects.equals(this.tags, listQueuesRequest.tags)
-            && Objects.equals(this.withChargeInfo, listQueuesRequest.withChargeInfo)
-            && Objects.equals(this.withPriv, listQueuesRequest.withPriv);
+        ListQueuesRequest that = (ListQueuesRequest) obj;
+        return Objects.equals(this.queueType, that.queueType) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.withChargeInfo, that.withChargeInfo) && Objects.equals(this.withPriv, that.withPriv);
     }
 
     @Override

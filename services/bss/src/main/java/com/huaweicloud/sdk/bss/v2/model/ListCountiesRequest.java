@@ -105,18 +105,16 @@ public class ListCountiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCountiesRequest listCountiesRequest = (ListCountiesRequest) o;
-        return Objects.equals(this.xLanguage, listCountiesRequest.xLanguage)
-            && Objects.equals(this.cityCode, listCountiesRequest.cityCode)
-            && Objects.equals(this.offset, listCountiesRequest.offset)
-            && Objects.equals(this.limit, listCountiesRequest.limit);
+        ListCountiesRequest that = (ListCountiesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.cityCode, that.cityCode)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

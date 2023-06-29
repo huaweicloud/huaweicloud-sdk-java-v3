@@ -87,17 +87,17 @@ public class UpdateOriginHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateOriginHostRequest updateOriginHostRequest = (UpdateOriginHostRequest) o;
-        return Objects.equals(this.domainId, updateOriginHostRequest.domainId)
-            && Objects.equals(this.enterpriseProjectId, updateOriginHostRequest.enterpriseProjectId)
-            && Objects.equals(this.body, updateOriginHostRequest.body);
+        UpdateOriginHostRequest that = (UpdateOriginHostRequest) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

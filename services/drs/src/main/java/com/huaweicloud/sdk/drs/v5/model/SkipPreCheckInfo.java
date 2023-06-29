@@ -74,16 +74,16 @@ public class SkipPreCheckInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SkipPreCheckInfo skipPreCheckInfo = (SkipPreCheckInfo) o;
-        return Objects.equals(this.skippedPrecheckList, skipPreCheckInfo.skippedPrecheckList)
-            && Objects.equals(this.skipReason, skipPreCheckInfo.skipReason);
+        SkipPreCheckInfo that = (SkipPreCheckInfo) obj;
+        return Objects.equals(this.skippedPrecheckList, that.skippedPrecheckList)
+            && Objects.equals(this.skipReason, that.skipReason);
     }
 
     @Override

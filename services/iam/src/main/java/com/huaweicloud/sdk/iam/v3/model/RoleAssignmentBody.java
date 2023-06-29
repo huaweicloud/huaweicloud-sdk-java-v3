@@ -189,19 +189,17 @@ public class RoleAssignmentBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoleAssignmentBody roleAssignmentBody = (RoleAssignmentBody) o;
-        return Objects.equals(this.user, roleAssignmentBody.user) && Objects.equals(this.role, roleAssignmentBody.role)
-            && Objects.equals(this.group, roleAssignmentBody.group)
-            && Objects.equals(this.agency, roleAssignmentBody.agency)
-            && Objects.equals(this.scope, roleAssignmentBody.scope)
-            && Objects.equals(this.isInherited, roleAssignmentBody.isInherited);
+        RoleAssignmentBody that = (RoleAssignmentBody) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.scope, that.scope) && Objects.equals(this.isInherited, that.isInherited);
     }
 
     @Override

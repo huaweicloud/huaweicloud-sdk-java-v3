@@ -87,16 +87,16 @@ public class RunDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunDetail runDetail = (RunDetail) o;
-        return Objects.equals(this.detailId, runDetail.detailId) && Objects.equals(this.status, runDetail.status)
-            && Objects.equals(this.sqlJob, runDetail.sqlJob);
+        RunDetail that = (RunDetail) obj;
+        return Objects.equals(this.detailId, that.detailId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sqlJob, that.sqlJob);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class CreatePlaybookRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookRuleRequest createPlaybookRuleRequest = (CreatePlaybookRuleRequest) o;
-        return Objects.equals(this.workspaceId, createPlaybookRuleRequest.workspaceId)
-            && Objects.equals(this.versionId, createPlaybookRuleRequest.versionId)
-            && Objects.equals(this.body, createPlaybookRuleRequest.body);
+        CreatePlaybookRuleRequest that = (CreatePlaybookRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

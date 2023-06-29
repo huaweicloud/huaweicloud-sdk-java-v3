@@ -334,27 +334,23 @@ public class PipelineJobInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineJobInfoDto pipelineJobInfoDto = (PipelineJobInfoDto) o;
-        return Objects.equals(this.pipelineId, pipelineJobInfoDto.pipelineId)
-            && Objects.equals(this.pipelineName, pipelineJobInfoDto.pipelineName)
-            && Objects.equals(this.dataSourceId, pipelineJobInfoDto.dataSourceId)
-            && Objects.equals(this.dataStoreList, pipelineJobInfoDto.dataStoreList)
-            && Objects.equals(this.pipelineDescription, pipelineJobInfoDto.pipelineDescription)
-            && Objects.equals(this.tagList, pipelineJobInfoDto.tagList)
-            && Objects.equals(this.pipelineState, pipelineJobInfoDto.pipelineState)
-            && Objects.equals(this.status, pipelineJobInfoDto.status)
-            && Objects.equals(this.rtu, pipelineJobInfoDto.rtu)
-            && Objects.equals(this.createdTime, pipelineJobInfoDto.createdTime)
-            && Objects.equals(this.modifiedTime, pipelineJobInfoDto.modifiedTime)
-            && Objects.equals(this.userId, pipelineJobInfoDto.userId)
-            && Objects.equals(this.hasSavepoint, pipelineJobInfoDto.hasSavepoint);
+        PipelineJobInfoDto that = (PipelineJobInfoDto) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.pipelineName, that.pipelineName)
+            && Objects.equals(this.dataSourceId, that.dataSourceId)
+            && Objects.equals(this.dataStoreList, that.dataStoreList)
+            && Objects.equals(this.pipelineDescription, that.pipelineDescription)
+            && Objects.equals(this.tagList, that.tagList) && Objects.equals(this.pipelineState, that.pipelineState)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.rtu, that.rtu)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.hasSavepoint, that.hasSavepoint);
     }
 
     @Override

@@ -102,18 +102,17 @@ public class ListProjectIssuesRecordsV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectIssuesRecordsV4Request listProjectIssuesRecordsV4Request = (ListProjectIssuesRecordsV4Request) o;
-        return Objects.equals(this.projectId, listProjectIssuesRecordsV4Request.projectId)
-            && Objects.equals(this.offset, listProjectIssuesRecordsV4Request.offset)
-            && Objects.equals(this.limit, listProjectIssuesRecordsV4Request.limit)
-            && Objects.equals(this.operatedTimeInterval, listProjectIssuesRecordsV4Request.operatedTimeInterval);
+        ListProjectIssuesRecordsV4Request that = (ListProjectIssuesRecordsV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.operatedTimeInterval, that.operatedTimeInterval);
     }
 
     @Override

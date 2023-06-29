@@ -122,19 +122,17 @@ public class RunQueueActionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunQueueActionResponse runQueueActionResponse = (RunQueueActionResponse) o;
-        return Objects.equals(this.isSuccess, runQueueActionResponse.isSuccess)
-            && Objects.equals(this.message, runQueueActionResponse.message)
-            && Objects.equals(this.jobId, runQueueActionResponse.jobId)
-            && Objects.equals(this.queueName, runQueueActionResponse.queueName)
-            && Objects.equals(this.result, runQueueActionResponse.result);
+        RunQueueActionResponse that = (RunQueueActionResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

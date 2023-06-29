@@ -77,17 +77,16 @@ public class ApiAuthVisitParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAuthVisitParam apiAuthVisitParam = (ApiAuthVisitParam) o;
-        return Objects.equals(this.apiId, apiAuthVisitParam.apiId)
-            && Objects.equals(this.appId, apiAuthVisitParam.appId)
-            && Objects.equals(this.visitParam, apiAuthVisitParam.visitParam);
+        ApiAuthVisitParam that = (ApiAuthVisitParam) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.visitParam, that.visitParam);
     }
 
     @Override

@@ -162,18 +162,17 @@ public class Phoneme {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Phoneme phoneme = (Phoneme) o;
-        return Objects.equals(this.arpa, phoneme.arpa) && Objects.equals(this.ipa, phoneme.ipa)
-            && Objects.equals(this.startTime, phoneme.startTime) && Objects.equals(this.endTime, phoneme.endTime)
-            && Objects.equals(this.fluency, phoneme.fluency)
-            && Objects.equals(this.pronunciation, phoneme.pronunciation);
+        Phoneme that = (Phoneme) obj;
+        return Objects.equals(this.arpa, that.arpa) && Objects.equals(this.ipa, that.ipa)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.fluency, that.fluency) && Objects.equals(this.pronunciation, that.pronunciation);
     }
 
     @Override

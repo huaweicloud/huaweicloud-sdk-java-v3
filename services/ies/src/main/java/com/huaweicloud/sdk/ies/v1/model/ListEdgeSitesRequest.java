@@ -288,21 +288,19 @@ public class ListEdgeSitesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeSitesRequest listEdgeSitesRequest = (ListEdgeSitesRequest) o;
-        return Objects.equals(this.limit, listEdgeSitesRequest.limit)
-            && Objects.equals(this.marker, listEdgeSitesRequest.marker)
-            && Objects.equals(this.sortKey, listEdgeSitesRequest.sortKey)
-            && Objects.equals(this.sortDir, listEdgeSitesRequest.sortDir)
-            && Objects.equals(this.id, listEdgeSitesRequest.id) && Objects.equals(this.name, listEdgeSitesRequest.name)
-            && Objects.equals(this.availabilityZoneId, listEdgeSitesRequest.availabilityZoneId)
-            && Objects.equals(this.status, listEdgeSitesRequest.status);
+        ListEdgeSitesRequest that = (ListEdgeSitesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -265,25 +265,23 @@ public class PolicyoODCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyoODCreate policyoODCreate = (PolicyoODCreate) o;
-        return Objects.equals(this.dayBackups, policyoODCreate.dayBackups)
-            && Objects.equals(this.destinationProjectId, policyoODCreate.destinationProjectId)
-            && Objects.equals(this.destinationRegion, policyoODCreate.destinationRegion)
-            && Objects.equals(this.enableAcceleration, policyoODCreate.enableAcceleration)
-            && Objects.equals(this.maxBackups, policyoODCreate.maxBackups)
-            && Objects.equals(this.monthBackups, policyoODCreate.monthBackups)
-            && Objects.equals(this.retentionDurationDays, policyoODCreate.retentionDurationDays)
-            && Objects.equals(this.timezone, policyoODCreate.timezone)
-            && Objects.equals(this.weekBackups, policyoODCreate.weekBackups)
-            && Objects.equals(this.yearBackups, policyoODCreate.yearBackups)
-            && Objects.equals(this.fullBackupInterval, policyoODCreate.fullBackupInterval);
+        PolicyoODCreate that = (PolicyoODCreate) obj;
+        return Objects.equals(this.dayBackups, that.dayBackups)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.enableAcceleration, that.enableAcceleration)
+            && Objects.equals(this.maxBackups, that.maxBackups) && Objects.equals(this.monthBackups, that.monthBackups)
+            && Objects.equals(this.retentionDurationDays, that.retentionDurationDays)
+            && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.weekBackups, that.weekBackups)
+            && Objects.equals(this.yearBackups, that.yearBackups)
+            && Objects.equals(this.fullBackupInterval, that.fullBackupInterval);
     }
 
     @Override

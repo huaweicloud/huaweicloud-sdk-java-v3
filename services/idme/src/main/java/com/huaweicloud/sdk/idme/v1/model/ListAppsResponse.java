@@ -141,19 +141,17 @@ public class ListAppsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsResponse listAppsResponse = (ListAppsResponse) o;
-        return Objects.equals(this.pageNum, listAppsResponse.pageNum)
-            && Objects.equals(this.pageSize, listAppsResponse.pageSize)
-            && Objects.equals(this.totalSize, listAppsResponse.totalSize)
-            && Objects.equals(this.totalPages, listAppsResponse.totalPages)
-            && Objects.equals(this.result, listAppsResponse.result);
+        ListAppsResponse that = (ListAppsResponse) obj;
+        return Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.totalPages, that.totalPages)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

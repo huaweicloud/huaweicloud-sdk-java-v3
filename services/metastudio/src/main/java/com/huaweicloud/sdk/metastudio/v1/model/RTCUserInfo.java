@@ -72,22 +72,15 @@ public class RTCUserInfo {
             if (value == null) {
                 return null;
             }
-            UserTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UserTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UserTypeEnum(value));
         }
 
         public static UserTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UserTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,16 +188,16 @@ public class RTCUserInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RTCUserInfo rtCUserInfo = (RTCUserInfo) o;
-        return Objects.equals(this.userType, rtCUserInfo.userType) && Objects.equals(this.userId, rtCUserInfo.userId)
-            && Objects.equals(this.signature, rtCUserInfo.signature) && Objects.equals(this.ctime, rtCUserInfo.ctime);
+        RTCUserInfo that = (RTCUserInfo) obj;
+        return Objects.equals(this.userType, that.userType) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.ctime, that.ctime);
     }
 
     @Override

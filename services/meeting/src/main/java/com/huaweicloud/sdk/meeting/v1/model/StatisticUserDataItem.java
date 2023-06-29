@@ -165,21 +165,20 @@ public class StatisticUserDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticUserDataItem statisticUserDataItem = (StatisticUserDataItem) o;
-        return Objects.equals(this.time, statisticUserDataItem.time)
-            && Objects.equals(this.userLoginCount, statisticUserDataItem.userLoginCount)
-            && Objects.equals(this.userPCLoginCount, statisticUserDataItem.userPCLoginCount)
-            && Objects.equals(this.userMobileLoginCount, statisticUserDataItem.userMobileLoginCount)
-            && Objects.equals(this.userActivatedCount, statisticUserDataItem.userActivatedCount)
-            && Objects.equals(this.userLoginDevicesName, statisticUserDataItem.userLoginDevicesName)
-            && Objects.equals(this.userLoginDevicesCount, statisticUserDataItem.userLoginDevicesCount);
+        StatisticUserDataItem that = (StatisticUserDataItem) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.userLoginCount, that.userLoginCount)
+            && Objects.equals(this.userPCLoginCount, that.userPCLoginCount)
+            && Objects.equals(this.userMobileLoginCount, that.userMobileLoginCount)
+            && Objects.equals(this.userActivatedCount, that.userActivatedCount)
+            && Objects.equals(this.userLoginDevicesName, that.userLoginDevicesName)
+            && Objects.equals(this.userLoginDevicesCount, that.userLoginDevicesCount);
     }
 
     @Override

@@ -203,22 +203,20 @@ public class RestScheduleCycleConfDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestScheduleCycleConfDTO restScheduleCycleConfDTO = (RestScheduleCycleConfDTO) o;
-        return Objects.equals(this.cycleSubConfID, restScheduleCycleConfDTO.cycleSubConfID)
-            && Objects.equals(this.mediaTypes, restScheduleCycleConfDTO.mediaTypes)
-            && Objects.equals(this.startTime, restScheduleCycleConfDTO.startTime)
-            && Objects.equals(this.length, restScheduleCycleConfDTO.length)
-            && Objects.equals(this.isAutoRecord, restScheduleCycleConfDTO.isAutoRecord)
-            && Objects.equals(this.confConfigInfo, restScheduleCycleConfDTO.confConfigInfo)
-            && Objects.equals(this.recordAuthType, restScheduleCycleConfDTO.recordAuthType)
-            && Objects.equals(this.description, restScheduleCycleConfDTO.description);
+        RestScheduleCycleConfDTO that = (RestScheduleCycleConfDTO) obj;
+        return Objects.equals(this.cycleSubConfID, that.cycleSubConfID)
+            && Objects.equals(this.mediaTypes, that.mediaTypes) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.length, that.length) && Objects.equals(this.isAutoRecord, that.isAutoRecord)
+            && Objects.equals(this.confConfigInfo, that.confConfigInfo)
+            && Objects.equals(this.recordAuthType, that.recordAuthType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -814,47 +814,41 @@ public class FlinkJobConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlinkJobConfig flinkJobConfig = (FlinkJobConfig) o;
-        return Objects.equals(this.checkpointEnabled, flinkJobConfig.checkpointEnabled)
-            && Objects.equals(this.checkpointMode, flinkJobConfig.checkpointMode)
-            && Objects.equals(this.checkpointInterval, flinkJobConfig.checkpointInterval)
-            && Objects.equals(this.logEnabled, flinkJobConfig.logEnabled)
-            && Objects.equals(this.obsBucket, flinkJobConfig.obsBucket)
-            && Objects.equals(this.smnTopic, flinkJobConfig.smnTopic)
-            && Objects.equals(this.edgeGroupIds, flinkJobConfig.edgeGroupIds)
-            && Objects.equals(this.rootId, flinkJobConfig.rootId)
-            && Objects.equals(this.managerCuNumber, flinkJobConfig.managerCuNumber)
-            && Objects.equals(this.cuNumber, flinkJobConfig.cuNumber)
-            && Objects.equals(this.parallelNumber, flinkJobConfig.parallelNumber)
-            && Objects.equals(this.restartWhenException, flinkJobConfig.restartWhenException)
-            && Objects.equals(this.idleStateRetention, flinkJobConfig.idleStateRetention)
-            && Objects.equals(this.udfJarUrl, flinkJobConfig.udfJarUrl)
-            && Objects.equals(this.dirtyDataStrategy, flinkJobConfig.dirtyDataStrategy)
-            && Objects.equals(this.entrypoint, flinkJobConfig.entrypoint)
-            && Objects.equals(this.dependencyJars, flinkJobConfig.dependencyJars)
-            && Objects.equals(this.dependencyFiles, flinkJobConfig.dependencyFiles)
-            && Objects.equals(this.executorNumber, flinkJobConfig.executorNumber)
-            && Objects.equals(this.executorCuNumber, flinkJobConfig.executorCuNumber)
-            && Objects.equals(this.resumeCheckpoint, flinkJobConfig.resumeCheckpoint)
-            && Objects.equals(this.runtimeConfig, flinkJobConfig.runtimeConfig)
-            && Objects.equals(this.graphEditorEnabled, flinkJobConfig.graphEditorEnabled)
-            && Objects.equals(this.graphEditorData, flinkJobConfig.graphEditorData)
-            && Objects.equals(this.resumeMaxNum, flinkJobConfig.resumeMaxNum)
-            && Objects.equals(this.checkpointPath, flinkJobConfig.checkpointPath)
-            && Objects.equals(this.configUrl, flinkJobConfig.configUrl)
-            && Objects.equals(this.tmCus, flinkJobConfig.tmCus)
-            && Objects.equals(this.tmSlotNum, flinkJobConfig.tmSlotNum)
-            && Objects.equals(this.image, flinkJobConfig.image) && Objects.equals(this.feature, flinkJobConfig.feature)
-            && Objects.equals(this.flinkVersion, flinkJobConfig.flinkVersion)
-            && Objects.equals(this.operatorConfig, flinkJobConfig.operatorConfig)
-            && Objects.equals(this.staticEstimatorConfig, flinkJobConfig.staticEstimatorConfig);
+        FlinkJobConfig that = (FlinkJobConfig) obj;
+        return Objects.equals(this.checkpointEnabled, that.checkpointEnabled)
+            && Objects.equals(this.checkpointMode, that.checkpointMode)
+            && Objects.equals(this.checkpointInterval, that.checkpointInterval)
+            && Objects.equals(this.logEnabled, that.logEnabled) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.smnTopic, that.smnTopic) && Objects.equals(this.edgeGroupIds, that.edgeGroupIds)
+            && Objects.equals(this.rootId, that.rootId) && Objects.equals(this.managerCuNumber, that.managerCuNumber)
+            && Objects.equals(this.cuNumber, that.cuNumber) && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.restartWhenException, that.restartWhenException)
+            && Objects.equals(this.idleStateRetention, that.idleStateRetention)
+            && Objects.equals(this.udfJarUrl, that.udfJarUrl)
+            && Objects.equals(this.dirtyDataStrategy, that.dirtyDataStrategy)
+            && Objects.equals(this.entrypoint, that.entrypoint)
+            && Objects.equals(this.dependencyJars, that.dependencyJars)
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles)
+            && Objects.equals(this.executorNumber, that.executorNumber)
+            && Objects.equals(this.executorCuNumber, that.executorCuNumber)
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.graphEditorEnabled, that.graphEditorEnabled)
+            && Objects.equals(this.graphEditorData, that.graphEditorData)
+            && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
+            && Objects.equals(this.checkpointPath, that.checkpointPath)
+            && Objects.equals(this.configUrl, that.configUrl) && Objects.equals(this.tmCus, that.tmCus)
+            && Objects.equals(this.tmSlotNum, that.tmSlotNum) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.feature, that.feature) && Objects.equals(this.flinkVersion, that.flinkVersion)
+            && Objects.equals(this.operatorConfig, that.operatorConfig)
+            && Objects.equals(this.staticEstimatorConfig, that.staticEstimatorConfig);
     }
 
     @Override

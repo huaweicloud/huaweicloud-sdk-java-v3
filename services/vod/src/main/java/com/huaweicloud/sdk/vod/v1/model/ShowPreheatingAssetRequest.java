@@ -57,16 +57,15 @@ public class ShowPreheatingAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPreheatingAssetRequest showPreheatingAssetRequest = (ShowPreheatingAssetRequest) o;
-        return Objects.equals(this.xSdkDate, showPreheatingAssetRequest.xSdkDate)
-            && Objects.equals(this.taskId, showPreheatingAssetRequest.taskId);
+        ShowPreheatingAssetRequest that = (ShowPreheatingAssetRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

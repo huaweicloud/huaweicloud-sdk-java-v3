@@ -66,15 +66,15 @@ public class ResetNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetNode resetNode = (ResetNode) o;
-        return Objects.equals(this.nodeID, resetNode.nodeID) && Objects.equals(this.spec, resetNode.spec);
+        ResetNode that = (ResetNode) obj;
+        return Objects.equals(this.nodeID, that.nodeID) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

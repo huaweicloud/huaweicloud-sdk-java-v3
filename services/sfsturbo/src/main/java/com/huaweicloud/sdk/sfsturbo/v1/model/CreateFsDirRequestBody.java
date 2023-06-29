@@ -102,18 +102,16 @@ public class CreateFsDirRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFsDirRequestBody createFsDirRequestBody = (CreateFsDirRequestBody) o;
-        return Objects.equals(this.path, createFsDirRequestBody.path)
-            && Objects.equals(this.mode, createFsDirRequestBody.mode)
-            && Objects.equals(this.uid, createFsDirRequestBody.uid)
-            && Objects.equals(this.gid, createFsDirRequestBody.gid);
+        CreateFsDirRequestBody that = (CreateFsDirRequestBody) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.uid, that.uid) && Objects.equals(this.gid, that.gid);
     }
 
     @Override

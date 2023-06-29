@@ -65,16 +65,16 @@ public class AcceptOrRejectEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceptOrRejectEndpointRequest acceptOrRejectEndpointRequest = (AcceptOrRejectEndpointRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, acceptOrRejectEndpointRequest.vpcEndpointServiceId)
-            && Objects.equals(this.body, acceptOrRejectEndpointRequest.body);
+        AcceptOrRejectEndpointRequest that = (AcceptOrRejectEndpointRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

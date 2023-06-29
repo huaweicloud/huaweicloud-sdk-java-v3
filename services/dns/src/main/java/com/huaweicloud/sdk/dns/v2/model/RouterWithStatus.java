@@ -77,17 +77,16 @@ public class RouterWithStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouterWithStatus routerWithStatus = (RouterWithStatus) o;
-        return Objects.equals(this.status, routerWithStatus.status)
-            && Objects.equals(this.routerId, routerWithStatus.routerId)
-            && Objects.equals(this.routerRegion, routerWithStatus.routerRegion);
+        RouterWithStatus that = (RouterWithStatus) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.routerId, that.routerId)
+            && Objects.equals(this.routerRegion, that.routerRegion);
     }
 
     @Override

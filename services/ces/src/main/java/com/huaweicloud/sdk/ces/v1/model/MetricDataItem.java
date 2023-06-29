@@ -155,18 +155,17 @@ public class MetricDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDataItem metricDataItem = (MetricDataItem) o;
-        return Objects.equals(this.metric, metricDataItem.metric) && Objects.equals(this.ttl, metricDataItem.ttl)
-            && Objects.equals(this.collectTime, metricDataItem.collectTime)
-            && Objects.equals(this.value, metricDataItem.value) && Objects.equals(this.unit, metricDataItem.unit)
-            && Objects.equals(this.type, metricDataItem.type);
+        MetricDataItem that = (MetricDataItem) obj;
+        return Objects.equals(this.metric, that.metric) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.collectTime, that.collectTime) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.type, that.type);
     }
 
     @Override

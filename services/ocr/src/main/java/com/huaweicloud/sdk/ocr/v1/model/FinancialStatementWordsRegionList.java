@@ -136,18 +136,17 @@ public class FinancialStatementWordsRegionList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinancialStatementWordsRegionList financialStatementWordsRegionList = (FinancialStatementWordsRegionList) o;
-        return Objects.equals(this.type, financialStatementWordsRegionList.type)
-            && Objects.equals(this.wordsBlockCount, financialStatementWordsRegionList.wordsBlockCount)
-            && Objects.equals(this.tableLocation, financialStatementWordsRegionList.tableLocation)
-            && Objects.equals(this.wordsBlockList, financialStatementWordsRegionList.wordsBlockList);
+        FinancialStatementWordsRegionList that = (FinancialStatementWordsRegionList) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.tableLocation, that.tableLocation)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

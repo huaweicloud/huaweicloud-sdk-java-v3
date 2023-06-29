@@ -75,16 +75,15 @@ public class ListApiCatalogListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiCatalogListResponse listApiCatalogListResponse = (ListApiCatalogListResponse) o;
-        return Objects.equals(this.total, listApiCatalogListResponse.total)
-            && Objects.equals(this.apis, listApiCatalogListResponse.apis);
+        ListApiCatalogListResponse that = (ListApiCatalogListResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.apis, that.apis);
     }
 
     @Override

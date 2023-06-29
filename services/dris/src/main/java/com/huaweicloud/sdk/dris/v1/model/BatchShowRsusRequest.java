@@ -169,21 +169,18 @@ public class BatchShowRsusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowRsusRequest batchShowRsusRequest = (BatchShowRsusRequest) o;
-        return Objects.equals(this.instanceId, batchShowRsusRequest.instanceId)
-            && Objects.equals(this.offset, batchShowRsusRequest.offset)
-            && Objects.equals(this.limit, batchShowRsusRequest.limit)
-            && Objects.equals(this.rsuId, batchShowRsusRequest.rsuId)
-            && Objects.equals(this.esn, batchShowRsusRequest.esn)
-            && Objects.equals(this.status, batchShowRsusRequest.status)
-            && Objects.equals(this.rsuModelId, batchShowRsusRequest.rsuModelId);
+        BatchShowRsusRequest that = (BatchShowRsusRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.rsuId, that.rsuId)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.rsuModelId, that.rsuModelId);
     }
 
     @Override

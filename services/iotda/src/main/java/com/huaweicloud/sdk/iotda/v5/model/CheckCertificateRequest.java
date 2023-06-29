@@ -153,20 +153,19 @@ public class CheckCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckCertificateRequest checkCertificateRequest = (CheckCertificateRequest) o;
-        return Objects.equals(this.spAuthToken, checkCertificateRequest.spAuthToken)
-            && Objects.equals(this.stageAuthToken, checkCertificateRequest.stageAuthToken)
-            && Objects.equals(this.instanceId, checkCertificateRequest.instanceId)
-            && Objects.equals(this.certificateId, checkCertificateRequest.certificateId)
-            && Objects.equals(this.actionId, checkCertificateRequest.actionId)
-            && Objects.equals(this.body, checkCertificateRequest.body);
+        CheckCertificateRequest that = (CheckCertificateRequest) obj;
+        return Objects.equals(this.spAuthToken, that.spAuthToken)
+            && Objects.equals(this.stageAuthToken, that.stageAuthToken)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

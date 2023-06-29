@@ -65,16 +65,15 @@ public class CreateDeploymentHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeploymentHostRequest createDeploymentHostRequest = (CreateDeploymentHostRequest) o;
-        return Objects.equals(this.groupId, createDeploymentHostRequest.groupId)
-            && Objects.equals(this.body, createDeploymentHostRequest.body);
+        CreateDeploymentHostRequest that = (CreateDeploymentHostRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

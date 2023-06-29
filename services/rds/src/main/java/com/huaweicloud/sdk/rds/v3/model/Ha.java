@@ -60,22 +60,15 @@ public class Ha {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class Ha {
             if (value == null) {
                 return null;
             }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplicationModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplicationModeEnum(value));
         }
 
         public static ReplicationModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -220,15 +206,15 @@ public class Ha {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Ha ha = (Ha) o;
-        return Objects.equals(this.mode, ha.mode) && Objects.equals(this.replicationMode, ha.replicationMode);
+        Ha that = (Ha) obj;
+        return Objects.equals(this.mode, that.mode) && Objects.equals(this.replicationMode, that.replicationMode);
     }
 
     @Override

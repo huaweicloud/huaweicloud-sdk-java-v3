@@ -77,17 +77,16 @@ public class SwitchNodeConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchNodeConnectionRequest switchNodeConnectionRequest = (SwitchNodeConnectionRequest) o;
-        return Objects.equals(this.nodeId, switchNodeConnectionRequest.nodeId)
-            && Objects.equals(this.provider, switchNodeConnectionRequest.provider)
-            && Objects.equals(this.action, switchNodeConnectionRequest.action);
+        SwitchNodeConnectionRequest that = (SwitchNodeConnectionRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

@@ -253,21 +253,20 @@ public class TemplateGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateGroup templateGroup = (TemplateGroup) o;
-        return Objects.equals(this.groupId, templateGroup.groupId) && Objects.equals(this.name, templateGroup.name)
-            && Objects.equals(this.status, templateGroup.status) && Objects.equals(this.type, templateGroup.type)
-            && Objects.equals(this.autoEncrypt, templateGroup.autoEncrypt)
-            && Objects.equals(this.qualityInfoList, templateGroup.qualityInfoList)
-            && Objects.equals(this.watermarkTemplateIds, templateGroup.watermarkTemplateIds)
-            && Objects.equals(this.description, templateGroup.description)
-            && Objects.equals(this.common, templateGroup.common);
+        TemplateGroup that = (TemplateGroup) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt)
+            && Objects.equals(this.qualityInfoList, that.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.common, that.common);
     }
 
     @Override

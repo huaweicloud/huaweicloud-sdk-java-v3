@@ -57,15 +57,15 @@ public class TrafficData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrafficData trafficData = (TrafficData) o;
-        return Objects.equals(this.value, trafficData.value) && Objects.equals(this.time, trafficData.time);
+        TrafficData that = (TrafficData) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.time, that.time);
     }
 
     @Override

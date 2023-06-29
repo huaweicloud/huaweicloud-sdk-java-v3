@@ -57,16 +57,15 @@ public class RecordData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordData recordData = (RecordData) o;
-        return Objects.equals(this.concurrentCount, recordData.concurrentCount)
-            && Objects.equals(this.time, recordData.time);
+        RecordData that = (RecordData) obj;
+        return Objects.equals(this.concurrentCount, that.concurrentCount) && Objects.equals(this.time, that.time);
     }
 
     @Override

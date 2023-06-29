@@ -213,22 +213,19 @@ public class ListCommitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommitsRequest listCommitsRequest = (ListCommitsRequest) o;
-        return Objects.equals(this.repoId, listCommitsRequest.repoId)
-            && Objects.equals(this.refName, listCommitsRequest.refName)
-            && Objects.equals(this.since, listCommitsRequest.since)
-            && Objects.equals(this.until, listCommitsRequest.until)
-            && Objects.equals(this.path, listCommitsRequest.path) && Objects.equals(this.all, listCommitsRequest.all)
-            && Objects.equals(this.withStats, listCommitsRequest.withStats)
-            && Objects.equals(this.page, listCommitsRequest.page)
-            && Objects.equals(this.perPage, listCommitsRequest.perPage);
+        ListCommitsRequest that = (ListCommitsRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.refName, that.refName)
+            && Objects.equals(this.since, that.since) && Objects.equals(this.until, that.until)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.all, that.all)
+            && Objects.equals(this.withStats, that.withStats) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

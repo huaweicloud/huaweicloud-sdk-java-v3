@@ -77,17 +77,16 @@ public class RunQueueActionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunQueueActionReq runQueueActionReq = (RunQueueActionReq) o;
-        return Objects.equals(this.action, runQueueActionReq.action)
-            && Objects.equals(this.force, runQueueActionReq.force)
-            && Objects.equals(this.cuCount, runQueueActionReq.cuCount);
+        RunQueueActionReq that = (RunQueueActionReq) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.force, that.force)
+            && Objects.equals(this.cuCount, that.cuCount);
     }
 
     @Override

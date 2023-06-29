@@ -99,18 +99,16 @@ public class ShowAlertRspEnvironment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspEnvironment showAlertRspEnvironment = (ShowAlertRspEnvironment) o;
-        return Objects.equals(this.vendorType, showAlertRspEnvironment.vendorType)
-            && Objects.equals(this.domainId, showAlertRspEnvironment.domainId)
-            && Objects.equals(this.regionId, showAlertRspEnvironment.regionId)
-            && Objects.equals(this.projectId, showAlertRspEnvironment.projectId);
+        ShowAlertRspEnvironment that = (ShowAlertRspEnvironment) obj;
+        return Objects.equals(this.vendorType, that.vendorType) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CommandBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommandBody commandBody = (CommandBody) o;
-        return Objects.equals(this.commandName, commandBody.commandName)
-            && Objects.equals(this.result, commandBody.result)
-            && Objects.equals(this.resultDetail, commandBody.resultDetail);
+        CommandBody that = (CommandBody) obj;
+        return Objects.equals(this.commandName, that.commandName) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.resultDetail, that.resultDetail);
     }
 
     @Override

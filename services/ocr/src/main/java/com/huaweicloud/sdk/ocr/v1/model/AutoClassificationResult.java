@@ -127,18 +127,16 @@ public class AutoClassificationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoClassificationResult autoClassificationResult = (AutoClassificationResult) o;
-        return Objects.equals(this.status, autoClassificationResult.status)
-            && Objects.equals(this.content, autoClassificationResult.content)
-            && Objects.equals(this.type, autoClassificationResult.type)
-            && Objects.equals(this.location, autoClassificationResult.location);
+        AutoClassificationResult that = (AutoClassificationResult) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.location, that.location);
     }
 
     @Override

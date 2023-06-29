@@ -65,16 +65,16 @@ public class PropagationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropagationRequestBody propagationRequestBody = (PropagationRequestBody) o;
-        return Objects.equals(this.attachmentId, propagationRequestBody.attachmentId)
-            && Objects.equals(this.routePolicy, propagationRequestBody.routePolicy);
+        PropagationRequestBody that = (PropagationRequestBody) obj;
+        return Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.routePolicy, that.routePolicy);
     }
 
     @Override

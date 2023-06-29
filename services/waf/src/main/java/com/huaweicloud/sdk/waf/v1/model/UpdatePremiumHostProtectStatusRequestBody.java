@@ -33,16 +33,15 @@ public class UpdatePremiumHostProtectStatusRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePremiumHostProtectStatusRequestBody updatePremiumHostProtectStatusRequestBody =
-            (UpdatePremiumHostProtectStatusRequestBody) o;
-        return Objects.equals(this.protectStatus, updatePremiumHostProtectStatusRequestBody.protectStatus);
+        UpdatePremiumHostProtectStatusRequestBody that = (UpdatePremiumHostProtectStatusRequestBody) obj;
+        return Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

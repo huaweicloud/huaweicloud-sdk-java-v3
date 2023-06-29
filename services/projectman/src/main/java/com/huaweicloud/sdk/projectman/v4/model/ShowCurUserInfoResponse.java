@@ -232,24 +232,19 @@ public class ShowCurUserInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCurUserInfoResponse showCurUserInfoResponse = (ShowCurUserInfoResponse) o;
-        return Objects.equals(this.domainId, showCurUserInfoResponse.domainId)
-            && Objects.equals(this.domainName, showCurUserInfoResponse.domainName)
-            && Objects.equals(this.userNumId, showCurUserInfoResponse.userNumId)
-            && Objects.equals(this.userId, showCurUserInfoResponse.userId)
-            && Objects.equals(this.userName, showCurUserInfoResponse.userName)
-            && Objects.equals(this.nickName, showCurUserInfoResponse.nickName)
-            && Objects.equals(this.createdTime, showCurUserInfoResponse.createdTime)
-            && Objects.equals(this.updatedTime, showCurUserInfoResponse.updatedTime)
-            && Objects.equals(this.gender, showCurUserInfoResponse.gender)
-            && Objects.equals(this.userType, showCurUserInfoResponse.userType);
+        ShowCurUserInfoResponse that = (ShowCurUserInfoResponse) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.gender, that.gender) && Objects.equals(this.userType, that.userType);
     }
 
     @Override

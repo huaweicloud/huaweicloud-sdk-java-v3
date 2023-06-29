@@ -109,18 +109,17 @@ public class UpdatePrivacyRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivacyRuleRequest updatePrivacyRuleRequest = (UpdatePrivacyRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updatePrivacyRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updatePrivacyRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updatePrivacyRuleRequest.ruleId)
-            && Objects.equals(this.body, updatePrivacyRuleRequest.body);
+        UpdatePrivacyRuleRequest that = (UpdatePrivacyRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -587,40 +587,29 @@ public class ListHostStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostStatusRequest listHostStatusRequest = (ListHostStatusRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listHostStatusRequest.enterpriseProjectId)
-            && Objects.equals(this.version, listHostStatusRequest.version)
-            && Objects.equals(this.agentStatus, listHostStatusRequest.agentStatus)
-            && Objects.equals(this.detectResult, listHostStatusRequest.detectResult)
-            && Objects.equals(this.hostName, listHostStatusRequest.hostName)
-            && Objects.equals(this.hostId, listHostStatusRequest.hostId)
-            && Objects.equals(this.hostStatus, listHostStatusRequest.hostStatus)
-            && Objects.equals(this.osType, listHostStatusRequest.osType)
-            && Objects.equals(this.privateIp, listHostStatusRequest.privateIp)
-            && Objects.equals(this.publicIp, listHostStatusRequest.publicIp)
-            && Objects.equals(this.ipAddr, listHostStatusRequest.ipAddr)
-            && Objects.equals(this.protectStatus, listHostStatusRequest.protectStatus)
-            && Objects.equals(this.groupId, listHostStatusRequest.groupId)
-            && Objects.equals(this.groupName, listHostStatusRequest.groupName)
-            && Objects.equals(this.region, listHostStatusRequest.region)
-            && Objects.equals(this.policyGroupId, listHostStatusRequest.policyGroupId)
-            && Objects.equals(this.policyGroupName, listHostStatusRequest.policyGroupName)
-            && Objects.equals(this.chargingMode, listHostStatusRequest.chargingMode)
-            && Objects.equals(this.refresh, listHostStatusRequest.refresh)
-            && Objects.equals(this.aboveVersion, listHostStatusRequest.aboveVersion)
-            && Objects.equals(this.outsideHost, listHostStatusRequest.outsideHost)
-            && Objects.equals(this.assetValue, listHostStatusRequest.assetValue)
-            && Objects.equals(this.label, listHostStatusRequest.label)
-            && Objects.equals(this.serverGroup, listHostStatusRequest.serverGroup)
-            && Objects.equals(this.limit, listHostStatusRequest.limit)
-            && Objects.equals(this.offset, listHostStatusRequest.offset);
+        ListHostStatusRequest that = (ListHostStatusRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.detectResult, that.detectResult) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.ipAddr, that.ipAddr)
+            && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.policyGroupId, that.policyGroupId)
+            && Objects.equals(this.policyGroupName, that.policyGroupName)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.refresh, that.refresh)
+            && Objects.equals(this.aboveVersion, that.aboveVersion)
+            && Objects.equals(this.outsideHost, that.outsideHost) && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.serverGroup, that.serverGroup)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

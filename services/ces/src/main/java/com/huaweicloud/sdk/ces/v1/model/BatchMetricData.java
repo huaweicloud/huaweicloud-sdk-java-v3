@@ -156,19 +156,17 @@ public class BatchMetricData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchMetricData batchMetricData = (BatchMetricData) o;
-        return Objects.equals(this.unit, batchMetricData.unit)
-            && Objects.equals(this.datapoints, batchMetricData.datapoints)
-            && Objects.equals(this.namespace, batchMetricData.namespace)
-            && Objects.equals(this.metricName, batchMetricData.metricName)
-            && Objects.equals(this.dimensions, batchMetricData.dimensions);
+        BatchMetricData that = (BatchMetricData) obj;
+        return Objects.equals(this.unit, that.unit) && Objects.equals(this.datapoints, that.datapoints)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

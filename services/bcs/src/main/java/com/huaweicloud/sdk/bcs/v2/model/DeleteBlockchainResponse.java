@@ -34,15 +34,15 @@ public class DeleteBlockchainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBlockchainResponse deleteBlockchainResponse = (DeleteBlockchainResponse) o;
-        return Objects.equals(this.operationId, deleteBlockchainResponse.operationId);
+        DeleteBlockchainResponse that = (DeleteBlockchainResponse) obj;
+        return Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

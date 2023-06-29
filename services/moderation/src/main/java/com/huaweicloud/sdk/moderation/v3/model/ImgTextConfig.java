@@ -90,16 +90,16 @@ public class ImgTextConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImgTextConfig imgTextConfig = (ImgTextConfig) o;
-        return Objects.equals(this.blackGlossaryNames, imgTextConfig.blackGlossaryNames)
-            && Objects.equals(this.whiteGlossaryNames, imgTextConfig.whiteGlossaryNames);
+        ImgTextConfig that = (ImgTextConfig) obj;
+        return Objects.equals(this.blackGlossaryNames, that.blackGlossaryNames)
+            && Objects.equals(this.whiteGlossaryNames, that.whiteGlossaryNames);
     }
 
     @Override

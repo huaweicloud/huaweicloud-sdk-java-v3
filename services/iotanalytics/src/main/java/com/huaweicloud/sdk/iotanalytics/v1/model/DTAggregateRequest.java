@@ -90,16 +90,15 @@ public class DTAggregateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DTAggregateRequest dtAggregateRequest = (DTAggregateRequest) o;
-        return Objects.equals(this.inputs, dtAggregateRequest.inputs)
-            && Objects.equals(this.outputs, dtAggregateRequest.outputs);
+        DTAggregateRequest that = (DTAggregateRequest) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class BatchRemoveOrgsFromChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRemoveOrgsFromChannelRequest batchRemoveOrgsFromChannelRequest = (BatchRemoveOrgsFromChannelRequest) o;
-        return Objects.equals(this.blockchainId, batchRemoveOrgsFromChannelRequest.blockchainId)
-            && Objects.equals(this.channelId, batchRemoveOrgsFromChannelRequest.channelId)
-            && Objects.equals(this.body, batchRemoveOrgsFromChannelRequest.body);
+        BatchRemoveOrgsFromChannelRequest that = (BatchRemoveOrgsFromChannelRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.channelId, that.channelId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

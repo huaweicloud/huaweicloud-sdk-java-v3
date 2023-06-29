@@ -342,29 +342,23 @@ public class CreateEventSubResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEventSubResponse createEventSubResponse = (CreateEventSubResponse) o;
-        return Objects.equals(this.id, createEventSubResponse.id)
-            && Objects.equals(this.name, createEventSubResponse.name)
-            && Objects.equals(this.sourceType, createEventSubResponse.sourceType)
-            && Objects.equals(this.sourceId, createEventSubResponse.sourceId)
-            && Objects.equals(this.category, createEventSubResponse.category)
-            && Objects.equals(this.severity, createEventSubResponse.severity)
-            && Objects.equals(this.tag, createEventSubResponse.tag)
-            && Objects.equals(this.enable, createEventSubResponse.enable)
-            && Objects.equals(this.projectId, createEventSubResponse.projectId)
-            && Objects.equals(this.nameSpace, createEventSubResponse.nameSpace)
-            && Objects.equals(this.notificationTarget, createEventSubResponse.notificationTarget)
-            && Objects.equals(this.notificationTargetName, createEventSubResponse.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, createEventSubResponse.notificationTargetType)
-            && Objects.equals(this.language, createEventSubResponse.language)
-            && Objects.equals(this.timeZone, createEventSubResponse.timeZone);
+        CreateEventSubResponse that = (CreateEventSubResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

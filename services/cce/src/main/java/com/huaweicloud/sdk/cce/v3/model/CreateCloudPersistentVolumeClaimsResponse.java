@@ -151,20 +151,17 @@ public class CreateCloudPersistentVolumeClaimsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudPersistentVolumeClaimsResponse createCloudPersistentVolumeClaimsResponse =
-            (CreateCloudPersistentVolumeClaimsResponse) o;
-        return Objects.equals(this.apiVersion, createCloudPersistentVolumeClaimsResponse.apiVersion)
-            && Objects.equals(this.kind, createCloudPersistentVolumeClaimsResponse.kind)
-            && Objects.equals(this.metadata, createCloudPersistentVolumeClaimsResponse.metadata)
-            && Objects.equals(this.spec, createCloudPersistentVolumeClaimsResponse.spec)
-            && Objects.equals(this.status, createCloudPersistentVolumeClaimsResponse.status);
+        CreateCloudPersistentVolumeClaimsResponse that = (CreateCloudPersistentVolumeClaimsResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

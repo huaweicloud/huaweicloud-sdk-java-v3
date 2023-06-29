@@ -53,15 +53,15 @@ public class ListResizeFlavorsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResizeFlavorsResponse listResizeFlavorsResponse = (ListResizeFlavorsResponse) o;
-        return Objects.equals(this.flavors, listResizeFlavorsResponse.flavors);
+        ListResizeFlavorsResponse that = (ListResizeFlavorsResponse) obj;
+        return Objects.equals(this.flavors, that.flavors);
     }
 
     @Override

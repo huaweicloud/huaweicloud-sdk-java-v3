@@ -97,17 +97,16 @@ public class ShowCustomPropsTaskResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomPropsTaskResultResponse showCustomPropsTaskResultResponse = (ShowCustomPropsTaskResultResponse) o;
-        return Objects.equals(this.status, showCustomPropsTaskResultResponse.status)
-            && Objects.equals(this.taskData, showCustomPropsTaskResultResponse.taskData)
-            && Objects.equals(this.result, showCustomPropsTaskResultResponse.result);
+        ShowCustomPropsTaskResultResponse that = (ShowCustomPropsTaskResultResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.taskData, that.taskData)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

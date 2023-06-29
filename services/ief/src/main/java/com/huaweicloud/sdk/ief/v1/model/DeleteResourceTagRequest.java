@@ -99,18 +99,17 @@ public class DeleteResourceTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteResourceTagRequest deleteResourceTagRequest = (DeleteResourceTagRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteResourceTagRequest.iefInstanceId)
-            && Objects.equals(this.resourceType, deleteResourceTagRequest.resourceType)
-            && Objects.equals(this.resourceId, deleteResourceTagRequest.resourceId)
-            && Objects.equals(this.key, deleteResourceTagRequest.key);
+        DeleteResourceTagRequest that = (DeleteResourceTagRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.key, that.key);
     }
 
     @Override

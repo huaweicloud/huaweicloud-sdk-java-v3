@@ -65,16 +65,15 @@ public class CatalogEntityVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogEntityVO catalogEntityVO = (CatalogEntityVO) o;
-        return Objects.equals(this.typeName, catalogEntityVO.typeName)
-            && Objects.equals(this.attributes, catalogEntityVO.attributes);
+        CatalogEntityVO that = (CatalogEntityVO) obj;
+        return Objects.equals(this.typeName, that.typeName) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

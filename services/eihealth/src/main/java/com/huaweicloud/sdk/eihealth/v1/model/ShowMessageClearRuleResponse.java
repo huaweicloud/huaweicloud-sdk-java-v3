@@ -34,15 +34,15 @@ public class ShowMessageClearRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessageClearRuleResponse showMessageClearRuleResponse = (ShowMessageClearRuleResponse) o;
-        return Objects.equals(this.messageRetainNumber, showMessageClearRuleResponse.messageRetainNumber);
+        ShowMessageClearRuleResponse that = (ShowMessageClearRuleResponse) obj;
+        return Objects.equals(this.messageRetainNumber, that.messageRetainNumber);
     }
 
     @Override

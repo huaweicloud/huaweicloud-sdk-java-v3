@@ -118,16 +118,16 @@ public class Retention {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Retention retention = (Retention) o;
-        return Objects.equals(this.algorithm, retention.algorithm) && Objects.equals(this.id, retention.id)
-            && Objects.equals(this.rules, retention.rules) && Objects.equals(this.scope, retention.scope);
+        Retention that = (Retention) obj;
+        return Objects.equals(this.algorithm, that.algorithm) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

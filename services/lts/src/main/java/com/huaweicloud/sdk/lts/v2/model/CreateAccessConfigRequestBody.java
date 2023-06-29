@@ -62,22 +62,15 @@ public class CreateAccessConfigRequestBody {
             if (value == null) {
                 return null;
             }
-            AccessConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessConfigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessConfigTypeEnum(value));
         }
 
         public static AccessConfigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,20 +260,19 @@ public class CreateAccessConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAccessConfigRequestBody createAccessConfigRequestBody = (CreateAccessConfigRequestBody) o;
-        return Objects.equals(this.accessConfigName, createAccessConfigRequestBody.accessConfigName)
-            && Objects.equals(this.accessConfigType, createAccessConfigRequestBody.accessConfigType)
-            && Objects.equals(this.accessConfigDetail, createAccessConfigRequestBody.accessConfigDetail)
-            && Objects.equals(this.logInfo, createAccessConfigRequestBody.logInfo)
-            && Objects.equals(this.hostGroupInfo, createAccessConfigRequestBody.hostGroupInfo)
-            && Objects.equals(this.accessConfigTag, createAccessConfigRequestBody.accessConfigTag);
+        CreateAccessConfigRequestBody that = (CreateAccessConfigRequestBody) obj;
+        return Objects.equals(this.accessConfigName, that.accessConfigName)
+            && Objects.equals(this.accessConfigType, that.accessConfigType)
+            && Objects.equals(this.accessConfigDetail, that.accessConfigDetail)
+            && Objects.equals(this.logInfo, that.logInfo) && Objects.equals(this.hostGroupInfo, that.hostGroupInfo)
+            && Objects.equals(this.accessConfigTag, that.accessConfigTag);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class Addresses {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Addresses addresses = (Addresses) o;
-        return Objects.equals(this.vpcId, addresses.vpcId);
+        Addresses that = (Addresses) obj;
+        return Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

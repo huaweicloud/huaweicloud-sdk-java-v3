@@ -56,16 +56,15 @@ public class CreateExtractAudioTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateExtractAudioTaskResponse createExtractAudioTaskResponse = (CreateExtractAudioTaskResponse) o;
-        return Objects.equals(this.assetId, createExtractAudioTaskResponse.assetId)
-            && Objects.equals(this.audioAssetId, createExtractAudioTaskResponse.audioAssetId);
+        CreateExtractAudioTaskResponse that = (CreateExtractAudioTaskResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.audioAssetId, that.audioAssetId);
     }
 
     @Override

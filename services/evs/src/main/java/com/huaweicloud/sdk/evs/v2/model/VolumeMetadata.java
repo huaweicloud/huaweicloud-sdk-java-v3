@@ -125,19 +125,18 @@ public class VolumeMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeMetadata volumeMetadata = (VolumeMetadata) o;
-        return Objects.equals(this.systemCmkid, volumeMetadata.systemCmkid)
-            && Objects.equals(this.systemEncrypted, volumeMetadata.systemEncrypted)
-            && Objects.equals(this.fullClone, volumeMetadata.fullClone)
-            && Objects.equals(this.hwPassthrough, volumeMetadata.hwPassthrough)
-            && Objects.equals(this.orderID, volumeMetadata.orderID);
+        VolumeMetadata that = (VolumeMetadata) obj;
+        return Objects.equals(this.systemCmkid, that.systemCmkid)
+            && Objects.equals(this.systemEncrypted, that.systemEncrypted)
+            && Objects.equals(this.fullClone, that.fullClone) && Objects.equals(this.hwPassthrough, that.hwPassthrough)
+            && Objects.equals(this.orderID, that.orderID);
     }
 
     @Override

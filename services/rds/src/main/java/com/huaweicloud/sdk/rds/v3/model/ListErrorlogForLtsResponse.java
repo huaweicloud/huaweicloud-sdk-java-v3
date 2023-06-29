@@ -53,15 +53,15 @@ public class ListErrorlogForLtsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListErrorlogForLtsResponse listErrorlogForLtsResponse = (ListErrorlogForLtsResponse) o;
-        return Objects.equals(this.errorLogList, listErrorlogForLtsResponse.errorLogList);
+        ListErrorlogForLtsResponse that = (ListErrorlogForLtsResponse) obj;
+        return Objects.equals(this.errorLogList, that.errorLogList);
     }
 
     @Override

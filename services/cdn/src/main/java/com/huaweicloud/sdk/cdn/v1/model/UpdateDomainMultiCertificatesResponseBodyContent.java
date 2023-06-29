@@ -242,27 +242,22 @@ public class UpdateDomainMultiCertificatesResponseBodyContent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainMultiCertificatesResponseBodyContent updateDomainMultiCertificatesResponseBodyContent =
-            (UpdateDomainMultiCertificatesResponseBodyContent) o;
-        return Objects.equals(this.domainName, updateDomainMultiCertificatesResponseBodyContent.domainName)
-            && Objects.equals(this.httpsSwitch, updateDomainMultiCertificatesResponseBodyContent.httpsSwitch)
-            && Objects.equals(this.accessOriginWay, updateDomainMultiCertificatesResponseBodyContent.accessOriginWay)
-            && Objects.equals(this.forceRedirectHttps,
-                updateDomainMultiCertificatesResponseBodyContent.forceRedirectHttps)
-            && Objects.equals(this.forceRedirectConfig,
-                updateDomainMultiCertificatesResponseBodyContent.forceRedirectConfig)
-            && Objects.equals(this.http2, updateDomainMultiCertificatesResponseBodyContent.http2)
-            && Objects.equals(this.certName, updateDomainMultiCertificatesResponseBodyContent.certName)
-            && Objects.equals(this.certificate, updateDomainMultiCertificatesResponseBodyContent.certificate)
-            && Objects.equals(this.certificateType, updateDomainMultiCertificatesResponseBodyContent.certificateType)
-            && Objects.equals(this.expirationTime, updateDomainMultiCertificatesResponseBodyContent.expirationTime);
+        UpdateDomainMultiCertificatesResponseBodyContent that = (UpdateDomainMultiCertificatesResponseBodyContent) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.httpsSwitch, that.httpsSwitch)
+            && Objects.equals(this.accessOriginWay, that.accessOriginWay)
+            && Objects.equals(this.forceRedirectHttps, that.forceRedirectHttps)
+            && Objects.equals(this.forceRedirectConfig, that.forceRedirectConfig)
+            && Objects.equals(this.http2, that.http2) && Objects.equals(this.certName, that.certName)
+            && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.expirationTime, that.expirationTime);
     }
 
     @Override

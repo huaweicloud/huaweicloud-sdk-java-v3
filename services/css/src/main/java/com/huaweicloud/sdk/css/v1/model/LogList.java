@@ -77,16 +77,16 @@ public class LogList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogList logList = (LogList) o;
-        return Objects.equals(this.content, logList.content) && Objects.equals(this.date, logList.date)
-            && Objects.equals(this.level, logList.level);
+        LogList that = (LogList) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.level, that.level);
     }
 
     @Override

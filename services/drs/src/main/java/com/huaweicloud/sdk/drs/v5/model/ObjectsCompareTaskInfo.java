@@ -96,22 +96,15 @@ public class ObjectsCompareTaskInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,22 +299,20 @@ public class ObjectsCompareTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObjectsCompareTaskInfo objectsCompareTaskInfo = (ObjectsCompareTaskInfo) o;
-        return Objects.equals(this.createTime, objectsCompareTaskInfo.createTime)
-            && Objects.equals(this.compareResults, objectsCompareTaskInfo.compareResults)
-            && Objects.equals(this.startTime, objectsCompareTaskInfo.startTime)
-            && Objects.equals(this.status, objectsCompareTaskInfo.status)
-            && Objects.equals(this.exportStatus, objectsCompareTaskInfo.exportStatus)
-            && Objects.equals(this.reportRemainSeconds, objectsCompareTaskInfo.reportRemainSeconds)
-            && Objects.equals(this.compareJobId, objectsCompareTaskInfo.compareJobId)
-            && Objects.equals(this.errorMsg, objectsCompareTaskInfo.errorMsg);
+        ObjectsCompareTaskInfo that = (ObjectsCompareTaskInfo) obj;
+        return Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.compareResults, that.compareResults)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.exportStatus, that.exportStatus)
+            && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
+            && Objects.equals(this.compareJobId, that.compareJobId) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

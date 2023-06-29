@@ -122,19 +122,17 @@ public class ApplyHistoryRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyHistoryRsp applyHistoryRsp = (ApplyHistoryRsp) o;
-        return Objects.equals(this.instanceId, applyHistoryRsp.instanceId)
-            && Objects.equals(this.instanceName, applyHistoryRsp.instanceName)
-            && Objects.equals(this.appliedAt, applyHistoryRsp.appliedAt)
-            && Objects.equals(this.applyResult, applyHistoryRsp.applyResult)
-            && Objects.equals(this.failureReason, applyHistoryRsp.failureReason);
+        ApplyHistoryRsp that = (ApplyHistoryRsp) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.appliedAt, that.appliedAt) && Objects.equals(this.applyResult, that.applyResult)
+            && Objects.equals(this.failureReason, that.failureReason);
     }
 
     @Override

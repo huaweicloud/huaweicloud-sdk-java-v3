@@ -121,19 +121,19 @@ public class MemberInvitor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberInvitor memberInvitor = (MemberInvitor) o;
-        return Objects.equals(this.invitorBcsId, memberInvitor.invitorBcsId)
-            && Objects.equals(this.invitorBcsName, memberInvitor.invitorBcsName)
-            && Objects.equals(this.invitorProjectId, memberInvitor.invitorProjectId)
-            && Objects.equals(this.invitorUserId, memberInvitor.invitorUserId)
-            && Objects.equals(this.invitorUsername, memberInvitor.invitorUsername);
+        MemberInvitor that = (MemberInvitor) obj;
+        return Objects.equals(this.invitorBcsId, that.invitorBcsId)
+            && Objects.equals(this.invitorBcsName, that.invitorBcsName)
+            && Objects.equals(this.invitorProjectId, that.invitorProjectId)
+            && Objects.equals(this.invitorUserId, that.invitorUserId)
+            && Objects.equals(this.invitorUsername, that.invitorUsername);
     }
 
     @Override

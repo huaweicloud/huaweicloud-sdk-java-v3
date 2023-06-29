@@ -122,18 +122,17 @@ public class BatchDeleteCorpAdminsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteCorpAdminsRequest batchDeleteCorpAdminsRequest = (BatchDeleteCorpAdminsRequest) o;
-        return Objects.equals(this.xRequestId, batchDeleteCorpAdminsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, batchDeleteCorpAdminsRequest.acceptLanguage)
-            && Objects.equals(this.accountType, batchDeleteCorpAdminsRequest.accountType)
-            && Objects.equals(this.body, batchDeleteCorpAdminsRequest.body);
+        BatchDeleteCorpAdminsRequest that = (BatchDeleteCorpAdminsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

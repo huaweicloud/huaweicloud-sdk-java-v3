@@ -131,17 +131,17 @@ public class SkewedInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SkewedInfo skewedInfo = (SkewedInfo) o;
-        return Objects.equals(this.skewedColumnNames, skewedInfo.skewedColumnNames)
-            && Objects.equals(this.skewedColumnValueLocationMaps, skewedInfo.skewedColumnValueLocationMaps)
-            && Objects.equals(this.skewedColumnValues, skewedInfo.skewedColumnValues);
+        SkewedInfo that = (SkewedInfo) obj;
+        return Objects.equals(this.skewedColumnNames, that.skewedColumnNames)
+            && Objects.equals(this.skewedColumnValueLocationMaps, that.skewedColumnValueLocationMaps)
+            && Objects.equals(this.skewedColumnValues, that.skewedColumnValues);
     }
 
     @Override

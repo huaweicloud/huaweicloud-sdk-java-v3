@@ -58,22 +58,15 @@ public class JobNameType {
         if (value == null) {
             return null;
         }
-        JobNameType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new JobNameType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobNameType(value));
     }
 
     public static JobNameType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        JobNameType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

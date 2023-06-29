@@ -119,18 +119,16 @@ public class ListGlobalValuesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGlobalValuesResponse listGlobalValuesResponse = (ListGlobalValuesResponse) o;
-        return Objects.equals(this.isSuccess, listGlobalValuesResponse.isSuccess)
-            && Objects.equals(this.message, listGlobalValuesResponse.message)
-            && Objects.equals(this.globalVars, listGlobalValuesResponse.globalVars)
-            && Objects.equals(this.count, listGlobalValuesResponse.count);
+        ListGlobalValuesResponse that = (ListGlobalValuesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.globalVars, that.globalVars) && Objects.equals(this.count, that.count);
     }
 
     @Override

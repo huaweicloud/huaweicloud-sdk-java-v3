@@ -88,17 +88,16 @@ public class DeleteHooksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHooksResponse deleteHooksResponse = (DeleteHooksResponse) o;
-        return Objects.equals(this.error, deleteHooksResponse.error)
-            && Objects.equals(this.result, deleteHooksResponse.result)
-            && Objects.equals(this.status, deleteHooksResponse.status);
+        DeleteHooksResponse that = (DeleteHooksResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

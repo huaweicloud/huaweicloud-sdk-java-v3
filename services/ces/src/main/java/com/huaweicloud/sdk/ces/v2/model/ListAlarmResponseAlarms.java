@@ -408,29 +408,25 @@ public class ListAlarmResponseAlarms {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmResponseAlarms listAlarmResponseAlarms = (ListAlarmResponseAlarms) o;
-        return Objects.equals(this.alarmId, listAlarmResponseAlarms.alarmId)
-            && Objects.equals(this.name, listAlarmResponseAlarms.name)
-            && Objects.equals(this.description, listAlarmResponseAlarms.description)
-            && Objects.equals(this.namespace, listAlarmResponseAlarms.namespace)
-            && Objects.equals(this.policies, listAlarmResponseAlarms.policies)
-            && Objects.equals(this.resources, listAlarmResponseAlarms.resources)
-            && Objects.equals(this.type, listAlarmResponseAlarms.type)
-            && Objects.equals(this.enabled, listAlarmResponseAlarms.enabled)
-            && Objects.equals(this.notificationEnabled, listAlarmResponseAlarms.notificationEnabled)
-            && Objects.equals(this.alarmNotifications, listAlarmResponseAlarms.alarmNotifications)
-            && Objects.equals(this.okNotifications, listAlarmResponseAlarms.okNotifications)
-            && Objects.equals(this.notificationBeginTime, listAlarmResponseAlarms.notificationBeginTime)
-            && Objects.equals(this.notificationEndTime, listAlarmResponseAlarms.notificationEndTime)
-            && Objects.equals(this.enterpriseProjectId, listAlarmResponseAlarms.enterpriseProjectId)
-            && Objects.equals(this.alarmTemplateId, listAlarmResponseAlarms.alarmTemplateId);
+        ListAlarmResponseAlarms that = (ListAlarmResponseAlarms) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.policies, that.policies) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.notificationEnabled, that.notificationEnabled)
+            && Objects.equals(this.alarmNotifications, that.alarmNotifications)
+            && Objects.equals(this.okNotifications, that.okNotifications)
+            && Objects.equals(this.notificationBeginTime, that.notificationBeginTime)
+            && Objects.equals(this.notificationEndTime, that.notificationEndTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.alarmTemplateId, that.alarmTemplateId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class OpenProxyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenProxyRequest openProxyRequest = (OpenProxyRequest) o;
-        return Objects.equals(this.flavorId, openProxyRequest.flavorId)
-            && Objects.equals(this.nodeNum, openProxyRequest.nodeNum);
+        OpenProxyRequest that = (OpenProxyRequest) obj;
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override

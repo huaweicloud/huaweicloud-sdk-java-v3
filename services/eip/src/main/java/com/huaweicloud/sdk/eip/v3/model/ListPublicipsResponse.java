@@ -130,18 +130,16 @@ public class ListPublicipsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipsResponse listPublicipsResponse = (ListPublicipsResponse) o;
-        return Objects.equals(this.requestId, listPublicipsResponse.requestId)
-            && Objects.equals(this.publicips, listPublicipsResponse.publicips)
-            && Objects.equals(this.pageInfo, listPublicipsResponse.pageInfo)
-            && Objects.equals(this.totalCount, listPublicipsResponse.totalCount);
+        ListPublicipsResponse that = (ListPublicipsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.publicips, that.publicips)
+            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

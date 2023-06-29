@@ -43,15 +43,15 @@ public class UpdateLogtankRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLogtankRequestBody updateLogtankRequestBody = (UpdateLogtankRequestBody) o;
-        return Objects.equals(this.logtank, updateLogtankRequestBody.logtank);
+        UpdateLogtankRequestBody that = (UpdateLogtankRequestBody) obj;
+        return Objects.equals(this.logtank, that.logtank);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowPtrRecordSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPtrRecordSetRequest showPtrRecordSetRequest = (ShowPtrRecordSetRequest) o;
-        return Objects.equals(this.region, showPtrRecordSetRequest.region)
-            && Objects.equals(this.floatingipId, showPtrRecordSetRequest.floatingipId);
+        ShowPtrRecordSetRequest that = (ShowPtrRecordSetRequest) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.floatingipId, that.floatingipId);
     }
 
     @Override

@@ -1,64 +1,52 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ListInstancesDetailsRequest  {
-
+public class ListInstancesDetailsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
+
     /**
      * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。当前支持取值\"Ha\"（区分大小写），对应主备式实例。
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum ENTERPRISE for value: "Enterprise"
          */
         public static final TypeEnum ENTERPRISE = new TypeEnum("Enterprise");
-        
+
         /**
          * Enum HA for value: "Ha"
          */
         public static final TypeEnum HA = new TypeEnum("Ha");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -87,25 +75,18 @@ public class ListInstancesDetailsRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -123,21 +104,19 @@ public class ListInstancesDetailsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
+
     /**
      * 数据库类型，区分大小写。  - GaussDB
      */
     public static final class DatastoreTypeEnum {
 
-        
         /**
          * Enum GAUSSDB for value: "GaussDB"
          */
         public static final DatastoreTypeEnum GAUSSDB = new DatastoreTypeEnum("GaussDB");
-        
 
         private static final Map<String, DatastoreTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -165,25 +144,18 @@ public class ListInstancesDetailsRequest  {
 
         @JsonCreator
         public static DatastoreTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreTypeEnum(value));
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -201,54 +173,46 @@ public class ListInstancesDetailsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
 
     private DatastoreTypeEnum datastoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
+
     public ListInstancesDetailsRequest withXLanguage(String xLanguage) {
         this.xLanguage = xLanguage;
         return this;
     }
-
-    
-
 
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -257,15 +221,10 @@ public class ListInstancesDetailsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListInstancesDetailsRequest withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。  “\\*”为系统保留字符，如果id是以“\\*”起始，表示按照\\*后面的值模糊匹配，否则，按照id精确匹配查询。不能只传入“\\*”。
@@ -279,15 +238,10 @@ public class ListInstancesDetailsRequest  {
         this.id = id;
     }
 
-    
-
     public ListInstancesDetailsRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。  “\\*”为系统保留字符，如果name是以“\\*”起始，表示按照\\*后面的值模糊匹配，否则，按照name精确匹配查询。不能只传入“\\*”。
@@ -301,15 +255,10 @@ public class ListInstancesDetailsRequest  {
         this.name = name;
     }
 
-    
-
     public ListInstancesDetailsRequest withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 按照实例类型查询。目前仅支持取值“Enterprise”（区分大小写），对应分布式实例（企业版）。当前支持取值\"Ha\"（区分大小写），对应主备式实例。
@@ -323,15 +272,10 @@ public class ListInstancesDetailsRequest  {
         this.type = type;
     }
 
-    
-
     public ListInstancesDetailsRequest withDatastoreType(DatastoreTypeEnum datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
-
-    
-
 
     /**
      * 数据库类型，区分大小写。  - GaussDB
@@ -345,15 +289,10 @@ public class ListInstancesDetailsRequest  {
         this.datastoreType = datastoreType;
     }
 
-    
-
     public ListInstancesDetailsRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。  方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
@@ -367,15 +306,10 @@ public class ListInstancesDetailsRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListInstancesDetailsRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息。  - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
@@ -389,15 +323,10 @@ public class ListInstancesDetailsRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ListInstancesDetailsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -411,15 +340,10 @@ public class ListInstancesDetailsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListInstancesDetailsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100
@@ -433,16 +357,13 @@ public class ListInstancesDetailsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListInstancesDetailsRequest withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListInstancesDetailsRequest addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -450,7 +371,7 @@ public class ListInstancesDetailsRequest  {
     }
 
     public ListInstancesDetailsRequest withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -469,32 +390,27 @@ public class ListInstancesDetailsRequest  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesDetailsRequest listInstancesDetailsRequest = (ListInstancesDetailsRequest) o;
-        return Objects.equals(this.xLanguage, listInstancesDetailsRequest.xLanguage) &&
-            Objects.equals(this.id, listInstancesDetailsRequest.id) &&
-            Objects.equals(this.name, listInstancesDetailsRequest.name) &&
-            Objects.equals(this.type, listInstancesDetailsRequest.type) &&
-            Objects.equals(this.datastoreType, listInstancesDetailsRequest.datastoreType) &&
-            Objects.equals(this.vpcId, listInstancesDetailsRequest.vpcId) &&
-            Objects.equals(this.subnetId, listInstancesDetailsRequest.subnetId) &&
-            Objects.equals(this.offset, listInstancesDetailsRequest.offset) &&
-            Objects.equals(this.limit, listInstancesDetailsRequest.limit) &&
-            Objects.equals(this.tags, listInstancesDetailsRequest.tags);
+        ListInstancesDetailsRequest that = (ListInstancesDetailsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, offset, limit, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -512,6 +428,7 @@ public class ListInstancesDetailsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -522,8 +439,5 @@ public class ListInstancesDetailsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

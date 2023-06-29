@@ -55,16 +55,15 @@ public class AttributesExpression {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttributesExpression attributesExpression = (AttributesExpression) o;
-        return Objects.equals(this.type, attributesExpression.type)
-            && Objects.equals(this.probability, attributesExpression.probability);
+        AttributesExpression that = (AttributesExpression) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.probability, that.probability);
     }
 
     @Override

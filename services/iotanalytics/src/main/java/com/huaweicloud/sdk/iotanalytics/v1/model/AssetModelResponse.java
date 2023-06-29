@@ -200,21 +200,18 @@ public class AssetModelResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetModelResponse assetModelResponse = (AssetModelResponse) o;
-        return Objects.equals(this.assetModelId, assetModelResponse.assetModelId)
-            && Objects.equals(this.name, assetModelResponse.name)
-            && Objects.equals(this.displayName, assetModelResponse.displayName)
-            && Objects.equals(this.properties, assetModelResponse.properties)
-            && Objects.equals(this.analyses, assetModelResponse.analyses)
-            && Objects.equals(this.createdTime, assetModelResponse.createdTime)
-            && Objects.equals(this.modifiedTime, assetModelResponse.modifiedTime);
+        AssetModelResponse that = (AssetModelResponse) obj;
+        return Objects.equals(this.assetModelId, that.assetModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.analyses, that.analyses) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime);
     }
 
     @Override

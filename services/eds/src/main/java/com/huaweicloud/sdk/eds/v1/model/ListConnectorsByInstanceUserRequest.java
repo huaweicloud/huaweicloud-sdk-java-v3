@@ -81,18 +81,16 @@ public class ListConnectorsByInstanceUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConnectorsByInstanceUserRequest listConnectorsByInstanceUserRequest =
-            (ListConnectorsByInstanceUserRequest) o;
-        return Objects.equals(this.instanceId, listConnectorsByInstanceUserRequest.instanceId)
-            && Objects.equals(this.offset, listConnectorsByInstanceUserRequest.offset)
-            && Objects.equals(this.limit, listConnectorsByInstanceUserRequest.limit);
+        ListConnectorsByInstanceUserRequest that = (ListConnectorsByInstanceUserRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

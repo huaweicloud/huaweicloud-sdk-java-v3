@@ -34,15 +34,15 @@ public class CreateBindPublicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBindPublicResponse createBindPublicResponse = (CreateBindPublicResponse) o;
-        return Objects.equals(this.action, createBindPublicResponse.action);
+        CreateBindPublicResponse that = (CreateBindPublicResponse) obj;
+        return Objects.equals(this.action, that.action);
     }
 
     @Override

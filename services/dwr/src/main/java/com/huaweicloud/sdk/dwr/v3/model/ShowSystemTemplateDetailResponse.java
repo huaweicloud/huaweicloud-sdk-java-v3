@@ -143,19 +143,17 @@ public class ShowSystemTemplateDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSystemTemplateDetailResponse showSystemTemplateDetailResponse = (ShowSystemTemplateDetailResponse) o;
-        return Objects.equals(this.providedActions, showSystemTemplateDetailResponse.providedActions)
-            && Objects.equals(this.xRequestId, showSystemTemplateDetailResponse.xRequestId)
-            && Objects.equals(this.connection, showSystemTemplateDetailResponse.connection)
-            && Objects.equals(this.contentLength, showSystemTemplateDetailResponse.contentLength)
-            && Objects.equals(this.date, showSystemTemplateDetailResponse.date);
+        ShowSystemTemplateDetailResponse that = (ShowSystemTemplateDetailResponse) obj;
+        return Objects.equals(this.providedActions, that.providedActions)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

@@ -97,18 +97,16 @@ public class NeutronListSecurityGroupRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListSecurityGroupRulesResponse neutronListSecurityGroupRulesResponse =
-            (NeutronListSecurityGroupRulesResponse) o;
-        return Objects.equals(this.securityGroupRules, neutronListSecurityGroupRulesResponse.securityGroupRules)
-            && Objects.equals(this.securityGroupRulesLinks,
-                neutronListSecurityGroupRulesResponse.securityGroupRulesLinks);
+        NeutronListSecurityGroupRulesResponse that = (NeutronListSecurityGroupRulesResponse) obj;
+        return Objects.equals(this.securityGroupRules, that.securityGroupRules)
+            && Objects.equals(this.securityGroupRulesLinks, that.securityGroupRulesLinks);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class BackupTriggerRequestInfo1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupTriggerRequestInfo1 backupTriggerRequestInfo1 = (BackupTriggerRequestInfo1) o;
-        return Objects.equals(this.properties, backupTriggerRequestInfo1.properties);
+        BackupTriggerRequestInfo1 that = (BackupTriggerRequestInfo1) obj;
+        return Objects.equals(this.properties, that.properties);
     }
 
     @Override

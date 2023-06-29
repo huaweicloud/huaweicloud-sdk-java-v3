@@ -121,19 +121,17 @@ public class IterationHistoryOperator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IterationHistoryOperator iterationHistoryOperator = (IterationHistoryOperator) o;
-        return Objects.equals(this.userId, iterationHistoryOperator.userId)
-            && Objects.equals(this.userName, iterationHistoryOperator.userName)
-            && Objects.equals(this.nickName, iterationHistoryOperator.nickName)
-            && Objects.equals(this.domainId, iterationHistoryOperator.domainId)
-            && Objects.equals(this.domainName, iterationHistoryOperator.domainName);
+        IterationHistoryOperator that = (IterationHistoryOperator) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

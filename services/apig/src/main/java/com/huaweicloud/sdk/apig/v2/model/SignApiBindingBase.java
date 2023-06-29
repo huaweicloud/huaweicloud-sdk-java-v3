@@ -276,26 +276,20 @@ public class SignApiBindingBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SignApiBindingBase signApiBindingBase = (SignApiBindingBase) o;
-        return Objects.equals(this.publishId, signApiBindingBase.publishId)
-            && Objects.equals(this.apiId, signApiBindingBase.apiId)
-            && Objects.equals(this.groupName, signApiBindingBase.groupName)
-            && Objects.equals(this.bindingTime, signApiBindingBase.bindingTime)
-            && Objects.equals(this.envId, signApiBindingBase.envId)
-            && Objects.equals(this.envName, signApiBindingBase.envName)
-            && Objects.equals(this.apiType, signApiBindingBase.apiType)
-            && Objects.equals(this.apiName, signApiBindingBase.apiName)
-            && Objects.equals(this.id, signApiBindingBase.id)
-            && Objects.equals(this.apiRemark, signApiBindingBase.apiRemark)
-            && Objects.equals(this.signId, signApiBindingBase.signId)
-            && Objects.equals(this.signName, signApiBindingBase.signName);
+        SignApiBindingBase that = (SignApiBindingBase) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.bindingTime, that.bindingTime)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.apiRemark, that.apiRemark)
+            && Objects.equals(this.signId, that.signId) && Objects.equals(this.signName, that.signName);
     }
 
     @Override

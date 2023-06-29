@@ -99,18 +99,17 @@ public class PipelineLatestRunArtifactParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineLatestRunArtifactParams pipelineLatestRunArtifactParams = (PipelineLatestRunArtifactParams) o;
-        return Objects.equals(this.version, pipelineLatestRunArtifactParams.version)
-            && Objects.equals(this.branchFilter, pipelineLatestRunArtifactParams.branchFilter)
-            && Objects.equals(this.packageName, pipelineLatestRunArtifactParams.packageName)
-            && Objects.equals(this.organization, pipelineLatestRunArtifactParams.organization);
+        PipelineLatestRunArtifactParams that = (PipelineLatestRunArtifactParams) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.branchFilter, that.branchFilter)
+            && Objects.equals(this.packageName, that.packageName)
+            && Objects.equals(this.organization, that.organization);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class GroupedResourceCount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GroupedResourceCount groupedResourceCount = (GroupedResourceCount) o;
-        return Objects.equals(this.groupName, groupedResourceCount.groupName)
-            && Objects.equals(this.resourceCount, groupedResourceCount.resourceCount);
+        GroupedResourceCount that = (GroupedResourceCount) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.resourceCount, that.resourceCount);
     }
 
     @Override

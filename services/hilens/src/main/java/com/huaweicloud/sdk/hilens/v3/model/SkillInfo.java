@@ -952,43 +952,37 @@ public class SkillInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SkillInfo skillInfo = (SkillInfo) o;
-        return Objects.equals(this.subScenes, skillInfo.subScenes)
-            && Objects.equals(this.appTemplateId, skillInfo.appTemplateId) && Objects.equals(this.icon, skillInfo.icon)
-            && Objects.equals(this.versionNum, skillInfo.versionNum)
-            && Objects.equals(this.description, skillInfo.description)
-            && Objects.equals(this.productInfo, skillInfo.productInfo) && Objects.equals(this.type, skillInfo.type)
-            && Objects.equals(this.platform, skillInfo.platform)
-            && Objects.equals(this.selfDevFlag, skillInfo.selfDevFlag)
-            && Objects.equals(this.measureType, skillInfo.measureType)
-            && Objects.equals(this.approvalResult, skillInfo.approvalResult)
-            && Objects.equals(this.updateTime, skillInfo.updateTime)
-            && Objects.equals(this.channelLimit, skillInfo.channelLimit)
-            && Objects.equals(this.publishTime, skillInfo.publishTime)
-            && Objects.equals(this.resourceStepSize, skillInfo.resourceStepSize)
-            && Objects.equals(this.approvalTime, skillInfo.approvalTime)
-            && Objects.equals(this.cloudServiceType, skillInfo.cloudServiceType)
-            && Objects.equals(this.summary, skillInfo.summary) && Objects.equals(this.testStatus, skillInfo.testStatus)
-            && Objects.equals(this.chip, skillInfo.chip) && Objects.equals(this.isVerifyModel, skillInfo.isVerifyModel)
-            && Objects.equals(this.format, skillInfo.format)
-            && Objects.equals(this.resourceType, skillInfo.resourceType)
-            && Objects.equals(this.version, skillInfo.version)
-            && Objects.equals(this.measureUnit, skillInfo.measureUnit) && Objects.equals(this.tags, skillInfo.tags)
-            && Objects.equals(this.size, skillInfo.size) && Objects.equals(this.testResult, skillInfo.testResult)
-            && Objects.equals(this.installTimes, skillInfo.installTimes)
-            && Objects.equals(this.privacyPolicy, skillInfo.privacyPolicy) && Objects.equals(this.name, skillInfo.name)
-            && Objects.equals(this.scenes, skillInfo.scenes) && Objects.equals(this.chargeModel, skillInfo.chargeModel)
-            && Objects.equals(this.resourceSpecCode, skillInfo.resourceSpecCode)
-            && Objects.equals(this.skillId, skillInfo.skillId) && Objects.equals(this.developer, skillInfo.developer)
-            && Objects.equals(this.mainScenes, skillInfo.mainScenes)
-            && Objects.equals(this.deviceTypes, skillInfo.deviceTypes) && Objects.equals(this.status, skillInfo.status);
+        SkillInfo that = (SkillInfo) obj;
+        return Objects.equals(this.subScenes, that.subScenes) && Objects.equals(this.appTemplateId, that.appTemplateId)
+            && Objects.equals(this.icon, that.icon) && Objects.equals(this.versionNum, that.versionNum)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.productInfo, that.productInfo)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.selfDevFlag, that.selfDevFlag) && Objects.equals(this.measureType, that.measureType)
+            && Objects.equals(this.approvalResult, that.approvalResult)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.channelLimit, that.channelLimit)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.resourceStepSize, that.resourceStepSize)
+            && Objects.equals(this.approvalTime, that.approvalTime)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.testStatus, that.testStatus)
+            && Objects.equals(this.chip, that.chip) && Objects.equals(this.isVerifyModel, that.isVerifyModel)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.measureUnit, that.measureUnit)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.testResult, that.testResult) && Objects.equals(this.installTimes, that.installTimes)
+            && Objects.equals(this.privacyPolicy, that.privacyPolicy) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.scenes, that.scenes) && Objects.equals(this.chargeModel, that.chargeModel)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.skillId, that.skillId) && Objects.equals(this.developer, that.developer)
+            && Objects.equals(this.mainScenes, that.mainScenes) && Objects.equals(this.deviceTypes, that.deviceTypes)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

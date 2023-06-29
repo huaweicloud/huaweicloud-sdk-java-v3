@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ListScenesRespParams
  */
-public class ListScenesRespParams  {
-
+public class ListScenesRespParams {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
 
     private String defaultValue;
 
@@ -39,9 +29,6 @@ public class ListScenesRespParams  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数名称。
@@ -55,15 +42,10 @@ public class ListScenesRespParams  {
         this.name = name;
     }
 
-    
-
     public ListScenesRespParams withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 参数类型。取值范围[\"string\",\"int\"]，目前仅支持\"string\"
@@ -77,15 +59,10 @@ public class ListScenesRespParams  {
         this.type = type;
     }
 
-    
-
     public ListScenesRespParams withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
-
-    
-
 
     /**
      * 取值范围为空，或参数默认值，当为空是表示客户使用时必须传入此参数
@@ -99,25 +76,24 @@ public class ListScenesRespParams  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScenesRespParams listScenesRespParams = (ListScenesRespParams) o;
-        return Objects.equals(this.name, listScenesRespParams.name) &&
-            Objects.equals(this.type, listScenesRespParams.type) &&
-            Objects.equals(this.defaultValue, listScenesRespParams.defaultValue);
+        ListScenesRespParams that = (ListScenesRespParams) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.defaultValue, that.defaultValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, type, defaultValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ListScenesRespParams  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ListScenesRespParams  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -33,15 +33,15 @@ public class ShowStoragePoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStoragePoolRequest showStoragePoolRequest = (ShowStoragePoolRequest) o;
-        return Objects.equals(this.id, showStoragePoolRequest.id);
+        ShowStoragePoolRequest that = (ShowStoragePoolRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

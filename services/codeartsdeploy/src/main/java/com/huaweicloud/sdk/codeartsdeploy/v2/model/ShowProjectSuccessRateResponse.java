@@ -74,7 +74,7 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -188,22 +188,19 @@ public class ShowProjectSuccessRateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectSuccessRateResponse showProjectSuccessRateResponse = (ShowProjectSuccessRateResponse) o;
-        return Objects.equals(this.successRate, showProjectSuccessRateResponse.successRate)
-            && Objects.equals(this.projectId, showProjectSuccessRateResponse.projectId)
-            && Objects.equals(this.projectName, showProjectSuccessRateResponse.projectName)
-            && Objects.equals(this.startDate, showProjectSuccessRateResponse.startDate)
-            && Objects.equals(this.endDate, showProjectSuccessRateResponse.endDate)
-            && Objects.equals(this.taskCount, showProjectSuccessRateResponse.taskCount)
-            && Objects.equals(this.recordCount, showProjectSuccessRateResponse.recordCount)
-            && Objects.equals(this.successRecordCount, showProjectSuccessRateResponse.successRecordCount);
+        ShowProjectSuccessRateResponse that = (ShowProjectSuccessRateResponse) obj;
+        return Objects.equals(this.successRate, that.successRate) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.taskCount, that.taskCount)
+            && Objects.equals(this.recordCount, that.recordCount)
+            && Objects.equals(this.successRecordCount, that.successRecordCount);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 存储盘信息。
  */
-public class MysqlVolumeInfo  {
-
+public class MysqlVolumeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private String size;
 
@@ -33,9 +24,6 @@ public class MysqlVolumeInfo  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘类型。
@@ -49,15 +37,10 @@ public class MysqlVolumeInfo  {
         this.type = type;
     }
 
-    
-
     public MysqlVolumeInfo withSize(String size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 已使用磁盘大小，单位GB。
@@ -71,24 +54,23 @@ public class MysqlVolumeInfo  {
         this.size = size;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlVolumeInfo mysqlVolumeInfo = (MysqlVolumeInfo) o;
-        return Objects.equals(this.type, mysqlVolumeInfo.type) &&
-            Objects.equals(this.size, mysqlVolumeInfo.size);
+        MysqlVolumeInfo that = (MysqlVolumeInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class MysqlVolumeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class MysqlVolumeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

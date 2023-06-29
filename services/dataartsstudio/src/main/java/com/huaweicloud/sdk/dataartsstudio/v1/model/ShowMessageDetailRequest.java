@@ -55,16 +55,15 @@ public class ShowMessageDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessageDetailRequest showMessageDetailRequest = (ShowMessageDetailRequest) o;
-        return Objects.equals(this.workspace, showMessageDetailRequest.workspace)
-            && Objects.equals(this.messageId, showMessageDetailRequest.messageId);
+        ShowMessageDetailRequest that = (ShowMessageDetailRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.messageId, that.messageId);
     }
 
     @Override

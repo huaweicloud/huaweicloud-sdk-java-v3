@@ -55,16 +55,15 @@ public class OperateEipRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateEipRequestBody operateEipRequestBody = (OperateEipRequestBody) o;
-        return Objects.equals(this.publicipId, operateEipRequestBody.publicipId)
-            && Objects.equals(this.publicEip, operateEipRequestBody.publicEip);
+        OperateEipRequestBody that = (OperateEipRequestBody) obj;
+        return Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.publicEip, that.publicEip);
     }
 
     @Override

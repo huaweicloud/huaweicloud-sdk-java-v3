@@ -87,18 +87,16 @@ public class ListAggregationAuthorizationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAggregationAuthorizationsResponse listAggregationAuthorizationsResponse =
-            (ListAggregationAuthorizationsResponse) o;
-        return Objects.equals(this.aggregationAuthorizations,
-            listAggregationAuthorizationsResponse.aggregationAuthorizations)
-            && Objects.equals(this.pageInfo, listAggregationAuthorizationsResponse.pageInfo);
+        ListAggregationAuthorizationsResponse that = (ListAggregationAuthorizationsResponse) obj;
+        return Objects.equals(this.aggregationAuthorizations, that.aggregationAuthorizations)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

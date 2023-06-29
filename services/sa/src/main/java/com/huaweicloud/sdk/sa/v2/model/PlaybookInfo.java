@@ -407,30 +407,25 @@ public class PlaybookInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookInfo playbookInfo = (PlaybookInfo) o;
-        return Objects.equals(this.id, playbookInfo.id) && Objects.equals(this.name, playbookInfo.name)
-            && Objects.equals(this.description, playbookInfo.description)
-            && Objects.equals(this.createTime, playbookInfo.createTime)
-            && Objects.equals(this.updateTime, playbookInfo.updateTime)
-            && Objects.equals(this.projectId, playbookInfo.projectId)
-            && Objects.equals(this.versionId, playbookInfo.versionId)
-            && Objects.equals(this.enabled, playbookInfo.enabled)
-            && Objects.equals(this.workspaceId, playbookInfo.workspaceId)
-            && Objects.equals(this.approveRole, playbookInfo.approveRole)
-            && Objects.equals(this.userRole, playbookInfo.userRole)
-            && Objects.equals(this.editRole, playbookInfo.editRole)
-            && Objects.equals(this.ownerId, playbookInfo.ownerId) && Objects.equals(this.version, playbookInfo.version)
-            && Objects.equals(this.dataclassName, playbookInfo.dataclassName)
-            && Objects.equals(this.dataclassId, playbookInfo.dataclassId)
-            && Objects.equals(this.unauditedVersionId, playbookInfo.unauditedVersionId)
-            && Objects.equals(this.rejectVersionId, playbookInfo.rejectVersionId);
+        PlaybookInfo that = (PlaybookInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.versionId, that.versionId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.approveRole, that.approveRole)
+            && Objects.equals(this.userRole, that.userRole) && Objects.equals(this.editRole, that.editRole)
+            && Objects.equals(this.ownerId, that.ownerId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.dataclassName, that.dataclassName)
+            && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.unauditedVersionId, that.unauditedVersionId)
+            && Objects.equals(this.rejectVersionId, that.rejectVersionId);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ShowFacesByFaceIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFacesByFaceIdRequest showFacesByFaceIdRequest = (ShowFacesByFaceIdRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showFacesByFaceIdRequest.enterpriseProjectId)
-            && Objects.equals(this.faceSetName, showFacesByFaceIdRequest.faceSetName)
-            && Objects.equals(this.faceId, showFacesByFaceIdRequest.faceId);
+        ShowFacesByFaceIdRequest that = (ShowFacesByFaceIdRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.faceId, that.faceId);
     }
 
     @Override

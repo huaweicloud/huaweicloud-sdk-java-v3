@@ -90,22 +90,15 @@ public class ConfigTemplatesListInfo {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class ConfigTemplatesListInfo {
             if (value == null) {
                 return null;
             }
-            StorageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageTypeEnum(value));
         }
 
         public static StorageTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -213,6 +199,11 @@ public class ConfigTemplatesListInfo {
     @JsonProperty(value = "type")
 
     private String type;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "created_at")
+
+    private String createdAt;
 
     public ConfigTemplatesListInfo withTemplateId(String templateId) {
         this.templateId = templateId;
@@ -367,30 +358,51 @@ public class ConfigTemplatesListInfo {
         this.type = type;
     }
 
+    public ConfigTemplatesListInfo withCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    /**
+     * 模板创建时间，仅在自定义参数模板中有意义，格式例如：2023-05-10T11:09:35.802Z
+     * @return createdAt
+     */
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigTemplatesListInfo configTemplatesListInfo = (ConfigTemplatesListInfo) o;
-        return Objects.equals(this.templateId, configTemplatesListInfo.templateId)
-            && Objects.equals(this.cacheMode, configTemplatesListInfo.cacheMode)
-            && Objects.equals(this.description, configTemplatesListInfo.description)
-            && Objects.equals(this.engine, configTemplatesListInfo.engine)
-            && Objects.equals(this.engineVersion, configTemplatesListInfo.engineVersion)
-            && Objects.equals(this.name, configTemplatesListInfo.name)
-            && Objects.equals(this.productType, configTemplatesListInfo.productType)
-            && Objects.equals(this.storageType, configTemplatesListInfo.storageType)
-            && Objects.equals(this.type, configTemplatesListInfo.type);
+        ConfigTemplatesListInfo that = (ConfigTemplatesListInfo) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.cacheMode, that.cacheMode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects
-            .hash(templateId, cacheMode, description, engine, engineVersion, name, productType, storageType, type);
+        return Objects.hash(templateId,
+            cacheMode,
+            description,
+            engine,
+            engineVersion,
+            name,
+            productType,
+            storageType,
+            type,
+            createdAt);
     }
 
     @Override
@@ -406,6 +418,7 @@ public class ConfigTemplatesListInfo {
         sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
         sb.append("    storageType: ").append(toIndentedString(storageType)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("}");
         return sb.toString();
     }

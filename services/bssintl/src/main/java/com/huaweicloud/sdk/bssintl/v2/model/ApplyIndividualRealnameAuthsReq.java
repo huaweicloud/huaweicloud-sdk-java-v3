@@ -212,22 +212,19 @@ public class ApplyIndividualRealnameAuthsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyIndividualRealnameAuthsReq applyIndividualRealnameAuthsReq = (ApplyIndividualRealnameAuthsReq) o;
-        return Objects.equals(this.customerId, applyIndividualRealnameAuthsReq.customerId)
-            && Objects.equals(this.identifyType, applyIndividualRealnameAuthsReq.identifyType)
-            && Objects.equals(this.verifiedType, applyIndividualRealnameAuthsReq.verifiedType)
-            && Objects.equals(this.verifiedFileUrl, applyIndividualRealnameAuthsReq.verifiedFileUrl)
-            && Objects.equals(this.name, applyIndividualRealnameAuthsReq.name)
-            && Objects.equals(this.verifiedNumber, applyIndividualRealnameAuthsReq.verifiedNumber)
-            && Objects.equals(this.changeType, applyIndividualRealnameAuthsReq.changeType)
-            && Objects.equals(this.xaccountType, applyIndividualRealnameAuthsReq.xaccountType);
+        ApplyIndividualRealnameAuthsReq that = (ApplyIndividualRealnameAuthsReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.identifyType, that.identifyType)
+            && Objects.equals(this.verifiedType, that.verifiedType)
+            && Objects.equals(this.verifiedFileUrl, that.verifiedFileUrl) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.verifiedNumber, that.verifiedNumber)
+            && Objects.equals(this.changeType, that.changeType) && Objects.equals(this.xaccountType, that.xaccountType);
     }
 
     @Override

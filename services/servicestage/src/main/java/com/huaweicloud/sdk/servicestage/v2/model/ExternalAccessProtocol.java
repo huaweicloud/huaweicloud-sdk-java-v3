@@ -52,22 +52,15 @@ public class ExternalAccessProtocol {
         if (value == null) {
             return null;
         }
-        ExternalAccessProtocol result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new ExternalAccessProtocol(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExternalAccessProtocol(value));
     }
 
     public static ExternalAccessProtocol valueOf(String value) {
         if (value == null) {
             return null;
         }
-        ExternalAccessProtocol result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

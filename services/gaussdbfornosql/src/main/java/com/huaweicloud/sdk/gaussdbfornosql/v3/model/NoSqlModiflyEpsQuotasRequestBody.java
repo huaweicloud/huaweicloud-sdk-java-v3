@@ -52,15 +52,15 @@ public class NoSqlModiflyEpsQuotasRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoSqlModiflyEpsQuotasRequestBody noSqlModiflyEpsQuotasRequestBody = (NoSqlModiflyEpsQuotasRequestBody) o;
-        return Objects.equals(this.quotas, noSqlModiflyEpsQuotasRequestBody.quotas);
+        NoSqlModiflyEpsQuotasRequestBody that = (NoSqlModiflyEpsQuotasRequestBody) obj;
+        return Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

@@ -217,23 +217,19 @@ public class SecurityCheckInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityCheckInfoResponseInfo securityCheckInfoResponseInfo = (SecurityCheckInfoResponseInfo) o;
-        return Objects.equals(this.severity, securityCheckInfoResponseInfo.severity)
-            && Objects.equals(this.checkName, securityCheckInfoResponseInfo.checkName)
-            && Objects.equals(this.checkType, securityCheckInfoResponseInfo.checkType)
-            && Objects.equals(this.standard, securityCheckInfoResponseInfo.standard)
-            && Objects.equals(this.checkRuleNum, securityCheckInfoResponseInfo.checkRuleNum)
-            && Objects.equals(this.failedRuleNum, securityCheckInfoResponseInfo.failedRuleNum)
-            && Objects.equals(this.hostNum, securityCheckInfoResponseInfo.hostNum)
-            && Objects.equals(this.scanTime, securityCheckInfoResponseInfo.scanTime)
-            && Objects.equals(this.checkTypeDesc, securityCheckInfoResponseInfo.checkTypeDesc);
+        SecurityCheckInfoResponseInfo that = (SecurityCheckInfoResponseInfo) obj;
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.checkName, that.checkName)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.checkRuleNum, that.checkRuleNum)
+            && Objects.equals(this.failedRuleNum, that.failedRuleNum) && Objects.equals(this.hostNum, that.hostNum)
+            && Objects.equals(this.scanTime, that.scanTime) && Objects.equals(this.checkTypeDesc, that.checkTypeDesc);
     }
 
     @Override

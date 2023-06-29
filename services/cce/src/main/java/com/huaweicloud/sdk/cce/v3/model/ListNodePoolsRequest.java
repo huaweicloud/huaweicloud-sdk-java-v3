@@ -55,16 +55,16 @@ public class ListNodePoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNodePoolsRequest listNodePoolsRequest = (ListNodePoolsRequest) o;
-        return Objects.equals(this.clusterId, listNodePoolsRequest.clusterId)
-            && Objects.equals(this.showDefaultNodePool, listNodePoolsRequest.showDefaultNodePool);
+        ListNodePoolsRequest that = (ListNodePoolsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.showDefaultNodePool, that.showDefaultNodePool);
     }
 
     @Override

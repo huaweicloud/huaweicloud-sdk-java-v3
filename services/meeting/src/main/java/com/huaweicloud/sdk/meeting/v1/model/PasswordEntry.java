@@ -55,16 +55,15 @@ public class PasswordEntry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PasswordEntry passwordEntry = (PasswordEntry) o;
-        return Objects.equals(this.conferenceRole, passwordEntry.conferenceRole)
-            && Objects.equals(this.password, passwordEntry.password);
+        PasswordEntry that = (PasswordEntry) obj;
+        return Objects.equals(this.conferenceRole, that.conferenceRole) && Objects.equals(this.password, that.password);
     }
 
     @Override

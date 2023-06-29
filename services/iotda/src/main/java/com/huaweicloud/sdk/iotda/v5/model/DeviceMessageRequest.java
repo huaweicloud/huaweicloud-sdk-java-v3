@@ -221,23 +221,19 @@ public class DeviceMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceMessageRequest deviceMessageRequest = (DeviceMessageRequest) o;
-        return Objects.equals(this.messageId, deviceMessageRequest.messageId)
-            && Objects.equals(this.name, deviceMessageRequest.name)
-            && Objects.equals(this.message, deviceMessageRequest.message)
-            && Objects.equals(this.properties, deviceMessageRequest.properties)
-            && Objects.equals(this.encoding, deviceMessageRequest.encoding)
-            && Objects.equals(this.payloadFormat, deviceMessageRequest.payloadFormat)
-            && Objects.equals(this.topic, deviceMessageRequest.topic)
-            && Objects.equals(this.topicFullName, deviceMessageRequest.topicFullName)
-            && Objects.equals(this.ttl, deviceMessageRequest.ttl);
+        DeviceMessageRequest that = (DeviceMessageRequest) obj;
+        return Objects.equals(this.messageId, that.messageId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.encoding, that.encoding) && Objects.equals(this.payloadFormat, that.payloadFormat)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.topicFullName, that.topicFullName)
+            && Objects.equals(this.ttl, that.ttl);
     }
 
     @Override

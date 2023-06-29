@@ -87,17 +87,16 @@ public class ModifyComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyComponentRequest modifyComponentRequest = (ModifyComponentRequest) o;
-        return Objects.equals(this.applicationId, modifyComponentRequest.applicationId)
-            && Objects.equals(this.componentId, modifyComponentRequest.componentId)
-            && Objects.equals(this.body, modifyComponentRequest.body);
+        ModifyComponentRequest that = (ModifyComponentRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

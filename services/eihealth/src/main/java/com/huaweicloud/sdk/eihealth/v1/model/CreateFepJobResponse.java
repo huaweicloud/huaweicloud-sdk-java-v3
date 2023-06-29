@@ -56,16 +56,15 @@ public class CreateFepJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFepJobResponse createFepJobResponse = (CreateFepJobResponse) o;
-        return Objects.equals(this.id, createFepJobResponse.id)
-            && Objects.equals(this.limitConcurrency, createFepJobResponse.limitConcurrency);
+        CreateFepJobResponse that = (CreateFepJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.limitConcurrency, that.limitConcurrency);
     }
 
     @Override

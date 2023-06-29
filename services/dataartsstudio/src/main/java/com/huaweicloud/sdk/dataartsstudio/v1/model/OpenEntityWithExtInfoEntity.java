@@ -320,26 +320,21 @@ public class OpenEntityWithExtInfoEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenEntityWithExtInfoEntity openEntityWithExtInfoEntity = (OpenEntityWithExtInfoEntity) o;
-        return Objects.equals(this.attributes, openEntityWithExtInfoEntity.attributes)
-            && Objects.equals(this.connection, openEntityWithExtInfoEntity.connection)
-            && Objects.equals(this.createTime, openEntityWithExtInfoEntity.createTime)
-            && Objects.equals(this.createdBy, openEntityWithExtInfoEntity.createdBy)
-            && Objects.equals(this.displayText, openEntityWithExtInfoEntity.displayText)
-            && Objects.equals(this.guid, openEntityWithExtInfoEntity.guid)
-            && Objects.equals(this.relationshipAttributes, openEntityWithExtInfoEntity.relationshipAttributes)
-            && Objects.equals(this.typeName, openEntityWithExtInfoEntity.typeName)
-            && Objects.equals(this.updatedBy, openEntityWithExtInfoEntity.updatedBy)
-            && Objects.equals(this.updateTime, openEntityWithExtInfoEntity.updateTime)
-            && Objects.equals(this.tags, openEntityWithExtInfoEntity.tags)
-            && Objects.equals(this.classificationNames, openEntityWithExtInfoEntity.classificationNames);
+        OpenEntityWithExtInfoEntity that = (OpenEntityWithExtInfoEntity) obj;
+        return Objects.equals(this.attributes, that.attributes) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.displayText, that.displayText) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.relationshipAttributes, that.relationshipAttributes)
+            && Objects.equals(this.typeName, that.typeName) && Objects.equals(this.updatedBy, that.updatedBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.classificationNames, that.classificationNames);
     }
 
     @Override

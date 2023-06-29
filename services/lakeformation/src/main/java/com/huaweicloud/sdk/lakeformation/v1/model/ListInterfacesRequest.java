@@ -105,22 +105,15 @@ public class ListInterfacesRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,22 +192,15 @@ public class ListInterfacesRequest {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrincipalSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalSourceEnum(value));
         }
 
         public static PrincipalSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -299,22 +285,15 @@ public class ListInterfacesRequest {
             if (value == null) {
                 return null;
             }
-            PrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrincipalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalTypeEnum(value));
         }
 
         public static PrincipalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -506,23 +485,21 @@ public class ListInterfacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInterfacesRequest listInterfacesRequest = (ListInterfacesRequest) o;
-        return Objects.equals(this.instanceId, listInterfacesRequest.instanceId)
-            && Objects.equals(this.filter, listInterfacesRequest.filter)
-            && Objects.equals(this.resourceName, listInterfacesRequest.resourceName)
-            && Objects.equals(this.resourceType, listInterfacesRequest.resourceType)
-            && Objects.equals(this.principalSource, listInterfacesRequest.principalSource)
-            && Objects.equals(this.principalType, listInterfacesRequest.principalType)
-            && Objects.equals(this.principalName, listInterfacesRequest.principalName)
-            && Objects.equals(this.limit, listInterfacesRequest.limit)
-            && Objects.equals(this.marker, listInterfacesRequest.marker);
+        ListInterfacesRequest that = (ListInterfacesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.principalSource, that.principalSource)
+            && Objects.equals(this.principalType, that.principalType)
+            && Objects.equals(this.principalName, that.principalName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

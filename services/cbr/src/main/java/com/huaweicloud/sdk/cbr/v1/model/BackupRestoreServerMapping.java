@@ -55,16 +55,15 @@ public class BackupRestoreServerMapping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupRestoreServerMapping backupRestoreServerMapping = (BackupRestoreServerMapping) o;
-        return Objects.equals(this.backupId, backupRestoreServerMapping.backupId)
-            && Objects.equals(this.volumeId, backupRestoreServerMapping.volumeId);
+        BackupRestoreServerMapping that = (BackupRestoreServerMapping) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

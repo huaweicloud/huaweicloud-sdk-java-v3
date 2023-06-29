@@ -65,16 +65,15 @@ public class UpdateNatGatewayRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewayRequest updateNatGatewayRequest = (UpdateNatGatewayRequest) o;
-        return Objects.equals(this.natGatewayId, updateNatGatewayRequest.natGatewayId)
-            && Objects.equals(this.body, updateNatGatewayRequest.body);
+        UpdateNatGatewayRequest that = (UpdateNatGatewayRequest) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.body, that.body);
     }
 
     @Override

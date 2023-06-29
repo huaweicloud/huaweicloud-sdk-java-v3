@@ -87,17 +87,16 @@ public class TemplateItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateItem templateItem = (TemplateItem) o;
-        return Objects.equals(this.metricName, templateItem.metricName)
-            && Objects.equals(this.condition, templateItem.condition)
-            && Objects.equals(this.alarmLevel, templateItem.alarmLevel);
+        TemplateItem that = (TemplateItem) obj;
+        return Objects.equals(this.metricName, that.metricName) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.alarmLevel, that.alarmLevel);
     }
 
     @Override

@@ -92,22 +92,15 @@ public class ScalingGroups {
             if (value == null) {
                 return null;
             }
-            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingGroupStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingGroupStatusEnum(value));
         }
 
         public static ScalingGroupStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -254,22 +247,16 @@ public class ScalingGroups {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthPeriodicAuditMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new HealthPeriodicAuditMethodEnum(value));
         }
 
         public static HealthPeriodicAuditMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,22 +347,16 @@ public class ScalingGroups {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceTerminatePolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstanceTerminatePolicyEnum(value));
         }
 
         public static InstanceTerminatePolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1069,45 +1050,43 @@ public class ScalingGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingGroups scalingGroups = (ScalingGroups) o;
-        return Objects.equals(this.scalingGroupName, scalingGroups.scalingGroupName)
-            && Objects.equals(this.scalingGroupId, scalingGroups.scalingGroupId)
-            && Objects.equals(this.scalingGroupStatus, scalingGroups.scalingGroupStatus)
-            && Objects.equals(this.scalingConfigurationId, scalingGroups.scalingConfigurationId)
-            && Objects.equals(this.scalingConfigurationName, scalingGroups.scalingConfigurationName)
-            && Objects.equals(this.currentInstanceNumber, scalingGroups.currentInstanceNumber)
-            && Objects.equals(this.desireInstanceNumber, scalingGroups.desireInstanceNumber)
-            && Objects.equals(this.minInstanceNumber, scalingGroups.minInstanceNumber)
-            && Objects.equals(this.maxInstanceNumber, scalingGroups.maxInstanceNumber)
-            && Objects.equals(this.coolDownTime, scalingGroups.coolDownTime)
-            && Objects.equals(this.lbListenerId, scalingGroups.lbListenerId)
-            && Objects.equals(this.lbaasListeners, scalingGroups.lbaasListeners)
-            && Objects.equals(this.availableZones, scalingGroups.availableZones)
-            && Objects.equals(this.networks, scalingGroups.networks)
-            && Objects.equals(this.securityGroups, scalingGroups.securityGroups)
-            && Objects.equals(this.createTime, scalingGroups.createTime)
-            && Objects.equals(this.vpcId, scalingGroups.vpcId) && Objects.equals(this.detail, scalingGroups.detail)
-            && Objects.equals(this.isScaling, scalingGroups.isScaling)
-            && Objects.equals(this.healthPeriodicAuditMethod, scalingGroups.healthPeriodicAuditMethod)
-            && Objects.equals(this.healthPeriodicAuditTime, scalingGroups.healthPeriodicAuditTime)
-            && Objects.equals(this.healthPeriodicAuditGracePeriod, scalingGroups.healthPeriodicAuditGracePeriod)
-            && Objects.equals(this.instanceTerminatePolicy, scalingGroups.instanceTerminatePolicy)
-            && Objects.equals(this.notifications, scalingGroups.notifications)
-            && Objects.equals(this.deletePublicip, scalingGroups.deletePublicip)
-            && Objects.equals(this.deleteVolume, scalingGroups.deleteVolume)
-            && Objects.equals(this.cloudLocationId, scalingGroups.cloudLocationId)
-            && Objects.equals(this.enterpriseProjectId, scalingGroups.enterpriseProjectId)
-            && Objects.equals(this.activityType, scalingGroups.activityType)
-            && Objects.equals(this.multiAzPriorityPolicy, scalingGroups.multiAzPriorityPolicy)
-            && Objects.equals(this.iamAgencyName, scalingGroups.iamAgencyName)
-            && Objects.equals(this.description, scalingGroups.description);
+        ScalingGroups that = (ScalingGroups) obj;
+        return Objects.equals(this.scalingGroupName, that.scalingGroupName)
+            && Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.scalingGroupStatus, that.scalingGroupStatus)
+            && Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId)
+            && Objects.equals(this.scalingConfigurationName, that.scalingConfigurationName)
+            && Objects.equals(this.currentInstanceNumber, that.currentInstanceNumber)
+            && Objects.equals(this.desireInstanceNumber, that.desireInstanceNumber)
+            && Objects.equals(this.minInstanceNumber, that.minInstanceNumber)
+            && Objects.equals(this.maxInstanceNumber, that.maxInstanceNumber)
+            && Objects.equals(this.coolDownTime, that.coolDownTime)
+            && Objects.equals(this.lbListenerId, that.lbListenerId)
+            && Objects.equals(this.lbaasListeners, that.lbaasListeners)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.isScaling, that.isScaling)
+            && Objects.equals(this.healthPeriodicAuditMethod, that.healthPeriodicAuditMethod)
+            && Objects.equals(this.healthPeriodicAuditTime, that.healthPeriodicAuditTime)
+            && Objects.equals(this.healthPeriodicAuditGracePeriod, that.healthPeriodicAuditGracePeriod)
+            && Objects.equals(this.instanceTerminatePolicy, that.instanceTerminatePolicy)
+            && Objects.equals(this.notifications, that.notifications)
+            && Objects.equals(this.deletePublicip, that.deletePublicip)
+            && Objects.equals(this.deleteVolume, that.deleteVolume)
+            && Objects.equals(this.cloudLocationId, that.cloudLocationId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.activityType, that.activityType)
+            && Objects.equals(this.multiAzPriorityPolicy, that.multiAzPriorityPolicy)
+            && Objects.equals(this.iamAgencyName, that.iamAgencyName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

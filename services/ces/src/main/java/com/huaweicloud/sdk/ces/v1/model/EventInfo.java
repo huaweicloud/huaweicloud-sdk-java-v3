@@ -121,19 +121,18 @@ public class EventInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventInfo eventInfo = (EventInfo) o;
-        return Objects.equals(this.eventName, eventInfo.eventName)
-            && Objects.equals(this.eventType, eventInfo.eventType)
-            && Objects.equals(this.eventCount, eventInfo.eventCount)
-            && Objects.equals(this.latestOccurTime, eventInfo.latestOccurTime)
-            && Objects.equals(this.latestEventSource, eventInfo.latestEventSource);
+        EventInfo that = (EventInfo) obj;
+        return Objects.equals(this.eventName, that.eventName) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventCount, that.eventCount)
+            && Objects.equals(this.latestOccurTime, that.latestOccurTime)
+            && Objects.equals(this.latestEventSource, that.latestEventSource);
     }
 
     @Override

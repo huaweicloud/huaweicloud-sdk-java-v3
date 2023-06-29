@@ -98,18 +98,17 @@ public class AggregatePolicyComplianceSummaryResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregatePolicyComplianceSummaryResult aggregatePolicyComplianceSummaryResult =
-            (AggregatePolicyComplianceSummaryResult) o;
-        return Objects.equals(this.resourceDetails, aggregatePolicyComplianceSummaryResult.resourceDetails)
-            && Objects.equals(this.assignmentDetails, aggregatePolicyComplianceSummaryResult.assignmentDetails)
-            && Objects.equals(this.groupName, aggregatePolicyComplianceSummaryResult.groupName);
+        AggregatePolicyComplianceSummaryResult that = (AggregatePolicyComplianceSummaryResult) obj;
+        return Objects.equals(this.resourceDetails, that.resourceDetails)
+            && Objects.equals(this.assignmentDetails, that.assignmentDetails)
+            && Objects.equals(this.groupName, that.groupName);
     }
 
     @Override

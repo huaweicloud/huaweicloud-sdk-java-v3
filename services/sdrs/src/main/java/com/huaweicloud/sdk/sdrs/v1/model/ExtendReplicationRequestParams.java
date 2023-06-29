@@ -33,15 +33,15 @@ public class ExtendReplicationRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendReplicationRequestParams extendReplicationRequestParams = (ExtendReplicationRequestParams) o;
-        return Objects.equals(this.newSize, extendReplicationRequestParams.newSize);
+        ExtendReplicationRequestParams that = (ExtendReplicationRequestParams) obj;
+        return Objects.equals(this.newSize, that.newSize);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class CreateImageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageResponse createImageResponse = (CreateImageResponse) o;
-        return Objects.equals(this.jobId, createImageResponse.jobId)
-            && Objects.equals(this.imageId, createImageResponse.imageId);
+        CreateImageResponse that = (CreateImageResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

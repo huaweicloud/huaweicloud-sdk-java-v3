@@ -116,18 +116,16 @@ public class ShowInformationAboutDatabaseProxyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInformationAboutDatabaseProxyResponse showInformationAboutDatabaseProxyResponse =
-            (ShowInformationAboutDatabaseProxyResponse) o;
-        return Objects.equals(this.proxy, showInformationAboutDatabaseProxyResponse.proxy)
-            && Objects.equals(this.masterInstance, showInformationAboutDatabaseProxyResponse.masterInstance)
-            && Objects.equals(this.readonlyInstances, showInformationAboutDatabaseProxyResponse.readonlyInstances);
+        ShowInformationAboutDatabaseProxyResponse that = (ShowInformationAboutDatabaseProxyResponse) obj;
+        return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.masterInstance, that.masterInstance)
+            && Objects.equals(this.readonlyInstances, that.readonlyInstances);
     }
 
     @Override

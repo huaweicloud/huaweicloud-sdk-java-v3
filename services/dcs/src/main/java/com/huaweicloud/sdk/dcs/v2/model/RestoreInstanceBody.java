@@ -55,16 +55,15 @@ public class RestoreInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreInstanceBody restoreInstanceBody = (RestoreInstanceBody) o;
-        return Objects.equals(this.backupId, restoreInstanceBody.backupId)
-            && Objects.equals(this.remark, restoreInstanceBody.remark);
+        RestoreInstanceBody that = (RestoreInstanceBody) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.remark, that.remark);
     }
 
     @Override

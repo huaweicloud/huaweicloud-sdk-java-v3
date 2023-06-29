@@ -44,15 +44,15 @@ public class DisablePolicyTypeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisablePolicyTypeResponse disablePolicyTypeResponse = (DisablePolicyTypeResponse) o;
-        return Objects.equals(this.root, disablePolicyTypeResponse.root);
+        DisablePolicyTypeResponse that = (DisablePolicyTypeResponse) obj;
+        return Objects.equals(this.root, that.root);
     }
 
     @Override

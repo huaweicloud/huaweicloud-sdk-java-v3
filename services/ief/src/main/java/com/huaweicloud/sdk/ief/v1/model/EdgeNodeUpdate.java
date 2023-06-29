@@ -150,18 +150,16 @@ public class EdgeNodeUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNodeUpdate edgeNodeUpdate = (EdgeNodeUpdate) o;
-        return Objects.equals(this.description, edgeNodeUpdate.description)
-            && Objects.equals(this.logConfigs, edgeNodeUpdate.logConfigs)
-            && Objects.equals(this.ntpServers, edgeNodeUpdate.ntpServers)
-            && Objects.equals(this.attributes, edgeNodeUpdate.attributes);
+        EdgeNodeUpdate that = (EdgeNodeUpdate) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.ntpServers, that.ntpServers) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

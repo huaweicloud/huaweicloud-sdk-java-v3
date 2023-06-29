@@ -33,15 +33,15 @@ public class DeleteAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAgencyRequest deleteAgencyRequest = (DeleteAgencyRequest) o;
-        return Objects.equals(this.agencyId, deleteAgencyRequest.agencyId);
+        DeleteAgencyRequest that = (DeleteAgencyRequest) obj;
+        return Objects.equals(this.agencyId, that.agencyId);
     }
 
     @Override

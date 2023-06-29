@@ -298,27 +298,22 @@ public class ShowAsyncDeviceCommandResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAsyncDeviceCommandResponse showAsyncDeviceCommandResponse = (ShowAsyncDeviceCommandResponse) o;
-        return Objects.equals(this.deviceId, showAsyncDeviceCommandResponse.deviceId)
-            && Objects.equals(this.commandId, showAsyncDeviceCommandResponse.commandId)
-            && Objects.equals(this.serviceId, showAsyncDeviceCommandResponse.serviceId)
-            && Objects.equals(this.commandName, showAsyncDeviceCommandResponse.commandName)
-            && Objects.equals(this.paras, showAsyncDeviceCommandResponse.paras)
-            && Objects.equals(this.expireTime, showAsyncDeviceCommandResponse.expireTime)
-            && Objects.equals(this.status, showAsyncDeviceCommandResponse.status)
-            && Objects.equals(this.result, showAsyncDeviceCommandResponse.result)
-            && Objects.equals(this.createdTime, showAsyncDeviceCommandResponse.createdTime)
-            && Objects.equals(this.sentTime, showAsyncDeviceCommandResponse.sentTime)
-            && Objects.equals(this.deliveredTime, showAsyncDeviceCommandResponse.deliveredTime)
-            && Objects.equals(this.sendStrategy, showAsyncDeviceCommandResponse.sendStrategy)
-            && Objects.equals(this.responseTime, showAsyncDeviceCommandResponse.responseTime);
+        ShowAsyncDeviceCommandResponse that = (ShowAsyncDeviceCommandResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandName, that.commandName)
+            && Objects.equals(this.paras, that.paras) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.sentTime, that.sentTime)
+            && Objects.equals(this.deliveredTime, that.deliveredTime)
+            && Objects.equals(this.sendStrategy, that.sendStrategy)
+            && Objects.equals(this.responseTime, that.responseTime);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class RestoreDatabasesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreDatabasesInfo restoreDatabasesInfo = (RestoreDatabasesInfo) o;
-        return Objects.equals(this.database, restoreDatabasesInfo.database)
-            && Objects.equals(this.tables, restoreDatabasesInfo.tables);
+        RestoreDatabasesInfo that = (RestoreDatabasesInfo) obj;
+        return Objects.equals(this.database, that.database) && Objects.equals(this.tables, that.tables);
     }
 
     @Override

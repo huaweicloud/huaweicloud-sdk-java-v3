@@ -332,27 +332,21 @@ public class VmsTemplateStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VmsTemplateStatus vmsTemplateStatus = (VmsTemplateStatus) o;
-        return Objects.equals(this.tplId, vmsTemplateStatus.tplId)
-            && Objects.equals(this.auditState, vmsTemplateStatus.auditState)
-            && Objects.equals(this.auditDesc, vmsTemplateStatus.auditDesc)
-            && Objects.equals(this.tplSize, vmsTemplateStatus.tplSize)
-            && Objects.equals(this.validTime, vmsTemplateStatus.validTime)
-            && Objects.equals(this.statusDetail, vmsTemplateStatus.statusDetail)
-            && Objects.equals(this.previewUrl, vmsTemplateStatus.previewUrl)
-            && Objects.equals(this.tplName, vmsTemplateStatus.tplName)
-            && Objects.equals(this.title, vmsTemplateStatus.title)
-            && Objects.equals(this.tplSign, vmsTemplateStatus.tplSign)
-            && Objects.equals(this.createTime, vmsTemplateStatus.createTime)
-            && Objects.equals(this.varInfo, vmsTemplateStatus.varInfo)
-            && Objects.equals(this.restags, vmsTemplateStatus.restags);
+        VmsTemplateStatus that = (VmsTemplateStatus) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.auditState, that.auditState)
+            && Objects.equals(this.auditDesc, that.auditDesc) && Objects.equals(this.tplSize, that.tplSize)
+            && Objects.equals(this.validTime, that.validTime) && Objects.equals(this.statusDetail, that.statusDetail)
+            && Objects.equals(this.previewUrl, that.previewUrl) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.tplSign, that.tplSign)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.varInfo, that.varInfo)
+            && Objects.equals(this.restags, that.restags);
     }
 
     @Override

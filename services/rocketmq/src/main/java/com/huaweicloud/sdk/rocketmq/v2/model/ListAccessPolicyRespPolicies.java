@@ -121,19 +121,17 @@ public class ListAccessPolicyRespPolicies {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessPolicyRespPolicies listAccessPolicyRespPolicies = (ListAccessPolicyRespPolicies) o;
-        return Objects.equals(this.accessKey, listAccessPolicyRespPolicies.accessKey)
-            && Objects.equals(this.secretKey, listAccessPolicyRespPolicies.secretKey)
-            && Objects.equals(this.whiteRemoteAddress, listAccessPolicyRespPolicies.whiteRemoteAddress)
-            && Objects.equals(this.admin, listAccessPolicyRespPolicies.admin)
-            && Objects.equals(this.perm, listAccessPolicyRespPolicies.perm);
+        ListAccessPolicyRespPolicies that = (ListAccessPolicyRespPolicies) obj;
+        return Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
+            && Objects.equals(this.whiteRemoteAddress, that.whiteRemoteAddress)
+            && Objects.equals(this.admin, that.admin) && Objects.equals(this.perm, that.perm);
     }
 
     @Override

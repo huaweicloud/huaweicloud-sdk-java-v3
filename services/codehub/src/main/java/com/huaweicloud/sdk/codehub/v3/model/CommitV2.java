@@ -143,18 +143,18 @@ public class CommitV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitV2 commitV2 = (CommitV2) o;
-        return Objects.equals(this.committedDate, commitV2.committedDate)
-            && Objects.equals(this.committerName, commitV2.committerName) && Objects.equals(this.id, commitV2.id)
-            && Objects.equals(this.message, commitV2.message) && Objects.equals(this.shortId, commitV2.shortId)
-            && Objects.equals(this.title, commitV2.title);
+        CommitV2 that = (CommitV2) obj;
+        return Objects.equals(this.committedDate, that.committedDate)
+            && Objects.equals(this.committerName, that.committerName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.shortId, that.shortId)
+            && Objects.equals(this.title, that.title);
     }
 
     @Override

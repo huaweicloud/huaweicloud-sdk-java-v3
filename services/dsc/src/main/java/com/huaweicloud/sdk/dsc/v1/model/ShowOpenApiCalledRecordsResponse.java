@@ -142,19 +142,18 @@ public class ShowOpenApiCalledRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOpenApiCalledRecordsResponse showOpenApiCalledRecordsResponse = (ShowOpenApiCalledRecordsResponse) o;
-        return Objects.equals(this.total, showOpenApiCalledRecordsResponse.total)
-            && Objects.equals(this.succeed, showOpenApiCalledRecordsResponse.succeed)
-            && Objects.equals(this.failed, showOpenApiCalledRecordsResponse.failed)
-            && Objects.equals(this.openapiCalledRecords, showOpenApiCalledRecordsResponse.openapiCalledRecords)
-            && Objects.equals(this.nextMarker, showOpenApiCalledRecordsResponse.nextMarker);
+        ShowOpenApiCalledRecordsResponse that = (ShowOpenApiCalledRecordsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.succeed, that.succeed)
+            && Objects.equals(this.failed, that.failed)
+            && Objects.equals(this.openapiCalledRecords, that.openapiCalledRecords)
+            && Objects.equals(this.nextMarker, that.nextMarker);
     }
 
     @Override

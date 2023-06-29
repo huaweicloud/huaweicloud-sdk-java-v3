@@ -60,22 +60,15 @@ public class ListLinksRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class ListLinksRequest {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,18 +252,16 @@ public class ListLinksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLinksRequest listLinksRequest = (ListLinksRequest) o;
-        return Objects.equals(this.xLanguage, listLinksRequest.xLanguage)
-            && Objects.equals(this.jobType, listLinksRequest.jobType)
-            && Objects.equals(this.offset, listLinksRequest.offset)
-            && Objects.equals(this.limit, listLinksRequest.limit);
+        ListLinksRequest that = (ListLinksRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

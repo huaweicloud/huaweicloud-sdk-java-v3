@@ -44,15 +44,15 @@ public class ShowProductDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProductDetailResponse showProductDetailResponse = (ShowProductDetailResponse) o;
-        return Objects.equals(this.product, showProductDetailResponse.product);
+        ShowProductDetailResponse that = (ShowProductDetailResponse) obj;
+        return Objects.equals(this.product, that.product);
     }
 
     @Override

@@ -118,18 +118,16 @@ public class UpdateAnticrawlerRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAnticrawlerRuleRequestBody updateAnticrawlerRuleRequestBody = (UpdateAnticrawlerRuleRequestBody) o;
-        return Objects.equals(this.conditions, updateAnticrawlerRuleRequestBody.conditions)
-            && Objects.equals(this.name, updateAnticrawlerRuleRequestBody.name)
-            && Objects.equals(this.type, updateAnticrawlerRuleRequestBody.type)
-            && Objects.equals(this.priority, updateAnticrawlerRuleRequestBody.priority);
+        UpdateAnticrawlerRuleRequestBody that = (UpdateAnticrawlerRuleRequestBody) obj;
+        return Objects.equals(this.conditions, that.conditions) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

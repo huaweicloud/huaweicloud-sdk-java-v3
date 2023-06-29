@@ -52,15 +52,15 @@ public class MatchExpressions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MatchExpressions matchExpressions = (MatchExpressions) o;
-        return Objects.equals(this.matchExpressions, matchExpressions.matchExpressions);
+        MatchExpressions that = (MatchExpressions) obj;
+        return Objects.equals(this.matchExpressions, that.matchExpressions);
     }
 
     @Override

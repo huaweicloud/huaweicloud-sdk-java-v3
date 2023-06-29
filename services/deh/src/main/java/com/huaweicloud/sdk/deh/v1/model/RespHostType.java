@@ -55,16 +55,15 @@ public class RespHostType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespHostType respHostType = (RespHostType) o;
-        return Objects.equals(this.hostType, respHostType.hostType)
-            && Objects.equals(this.hostTypeName, respHostType.hostTypeName);
+        RespHostType that = (RespHostType) obj;
+        return Objects.equals(this.hostType, that.hostType) && Objects.equals(this.hostTypeName, that.hostTypeName);
     }
 
     @Override

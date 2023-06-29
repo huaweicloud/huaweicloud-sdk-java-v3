@@ -297,27 +297,21 @@ public class ShowRecordSetByZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordSetByZoneRequest showRecordSetByZoneRequest = (ShowRecordSetByZoneRequest) o;
-        return Objects.equals(this.zoneId, showRecordSetByZoneRequest.zoneId)
-            && Objects.equals(this.marker, showRecordSetByZoneRequest.marker)
-            && Objects.equals(this.limit, showRecordSetByZoneRequest.limit)
-            && Objects.equals(this.offset, showRecordSetByZoneRequest.offset)
-            && Objects.equals(this.lineId, showRecordSetByZoneRequest.lineId)
-            && Objects.equals(this.tags, showRecordSetByZoneRequest.tags)
-            && Objects.equals(this.status, showRecordSetByZoneRequest.status)
-            && Objects.equals(this.type, showRecordSetByZoneRequest.type)
-            && Objects.equals(this.name, showRecordSetByZoneRequest.name)
-            && Objects.equals(this.id, showRecordSetByZoneRequest.id)
-            && Objects.equals(this.sortKey, showRecordSetByZoneRequest.sortKey)
-            && Objects.equals(this.sortDir, showRecordSetByZoneRequest.sortDir)
-            && Objects.equals(this.searchMode, showRecordSetByZoneRequest.searchMode);
+        ShowRecordSetByZoneRequest that = (ShowRecordSetByZoneRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.searchMode, that.searchMode);
     }
 
     @Override

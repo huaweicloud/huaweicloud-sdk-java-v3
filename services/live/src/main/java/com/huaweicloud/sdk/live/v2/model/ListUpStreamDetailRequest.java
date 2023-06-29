@@ -121,19 +121,17 @@ public class ListUpStreamDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUpStreamDetailRequest listUpStreamDetailRequest = (ListUpStreamDetailRequest) o;
-        return Objects.equals(this.publishDomain, listUpStreamDetailRequest.publishDomain)
-            && Objects.equals(this.app, listUpStreamDetailRequest.app)
-            && Objects.equals(this.stream, listUpStreamDetailRequest.stream)
-            && Objects.equals(this.startTime, listUpStreamDetailRequest.startTime)
-            && Objects.equals(this.endTime, listUpStreamDetailRequest.endTime);
+        ListUpStreamDetailRequest that = (ListUpStreamDetailRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

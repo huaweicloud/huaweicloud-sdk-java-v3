@@ -106,17 +106,16 @@ public class ListSpaceAnalysisResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpaceAnalysisResponse listSpaceAnalysisResponse = (ListSpaceAnalysisResponse) o;
-        return Objects.equals(this.total, listSpaceAnalysisResponse.total)
-            && Objects.equals(this.dbObjects, listSpaceAnalysisResponse.dbObjects)
-            && Objects.equals(this.instanceInfo, listSpaceAnalysisResponse.instanceInfo);
+        ListSpaceAnalysisResponse that = (ListSpaceAnalysisResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.dbObjects, that.dbObjects)
+            && Objects.equals(this.instanceInfo, that.instanceInfo);
     }
 
     @Override

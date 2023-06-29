@@ -191,22 +191,18 @@ public class ListRuleActionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRuleActionsRequest listRuleActionsRequest = (ListRuleActionsRequest) o;
-        return Objects.equals(this.instanceId, listRuleActionsRequest.instanceId)
-            && Objects.equals(this.ruleId, listRuleActionsRequest.ruleId)
-            && Objects.equals(this.channel, listRuleActionsRequest.channel)
-            && Objects.equals(this.appType, listRuleActionsRequest.appType)
-            && Objects.equals(this.appId, listRuleActionsRequest.appId)
-            && Objects.equals(this.limit, listRuleActionsRequest.limit)
-            && Objects.equals(this.marker, listRuleActionsRequest.marker)
-            && Objects.equals(this.offset, listRuleActionsRequest.offset);
+        ListRuleActionsRequest that = (ListRuleActionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.channel, that.channel) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

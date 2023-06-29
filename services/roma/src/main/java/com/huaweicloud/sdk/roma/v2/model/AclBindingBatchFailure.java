@@ -121,19 +121,17 @@ public class AclBindingBatchFailure {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclBindingBatchFailure aclBindingBatchFailure = (AclBindingBatchFailure) o;
-        return Objects.equals(this.bindId, aclBindingBatchFailure.bindId)
-            && Objects.equals(this.errorCode, aclBindingBatchFailure.errorCode)
-            && Objects.equals(this.errorMsg, aclBindingBatchFailure.errorMsg)
-            && Objects.equals(this.apiId, aclBindingBatchFailure.apiId)
-            && Objects.equals(this.apiName, aclBindingBatchFailure.apiName);
+        AclBindingBatchFailure that = (AclBindingBatchFailure) obj;
+        return Objects.equals(this.bindId, that.bindId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override

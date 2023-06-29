@@ -91,22 +91,15 @@ public class LiveSnapshotConfig {
             if (value == null) {
                 return null;
             }
-            CallBackEnableEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CallBackEnableEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CallBackEnableEnum(value));
         }
 
         public static CallBackEnableEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CallBackEnableEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +272,20 @@ public class LiveSnapshotConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveSnapshotConfig liveSnapshotConfig = (LiveSnapshotConfig) o;
-        return Objects.equals(this.domain, liveSnapshotConfig.domain)
-            && Objects.equals(this.appName, liveSnapshotConfig.appName)
-            && Objects.equals(this.authKey, liveSnapshotConfig.authKey)
-            && Objects.equals(this.timeInterval, liveSnapshotConfig.timeInterval)
-            && Objects.equals(this.objectWriteMode, liveSnapshotConfig.objectWriteMode)
-            && Objects.equals(this.obsLocation, liveSnapshotConfig.obsLocation)
-            && Objects.equals(this.callBackEnable, liveSnapshotConfig.callBackEnable)
-            && Objects.equals(this.callBackUrl, liveSnapshotConfig.callBackUrl);
+        LiveSnapshotConfig that = (LiveSnapshotConfig) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.authKey, that.authKey) && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.objectWriteMode, that.objectWriteMode)
+            && Objects.equals(this.obsLocation, that.obsLocation)
+            && Objects.equals(this.callBackEnable, that.callBackEnable)
+            && Objects.equals(this.callBackUrl, that.callBackUrl);
     }
 
     @Override

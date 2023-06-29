@@ -320,25 +320,21 @@ public class AcceleratorDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceleratorDetail acceleratorDetail = (AcceleratorDetail) o;
-        return Objects.equals(this.id, acceleratorDetail.id) && Objects.equals(this.name, acceleratorDetail.name)
-            && Objects.equals(this.description, acceleratorDetail.description)
-            && Objects.equals(this.status, acceleratorDetail.status)
-            && Objects.equals(this.ipSets, acceleratorDetail.ipSets)
-            && Objects.equals(this.createdAt, acceleratorDetail.createdAt)
-            && Objects.equals(this.updatedAt, acceleratorDetail.updatedAt)
-            && Objects.equals(this.domainId, acceleratorDetail.domainId)
-            && Objects.equals(this.enterpriseProjectId, acceleratorDetail.enterpriseProjectId)
-            && Objects.equals(this.flavorId, acceleratorDetail.flavorId)
-            && Objects.equals(this.frozenInfo, acceleratorDetail.frozenInfo)
-            && Objects.equals(this.tags, acceleratorDetail.tags);
+        AcceleratorDetail that = (AcceleratorDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ipSets, that.ipSets) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.frozenInfo, that.frozenInfo)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class ChangeCatalogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeCatalogRequest changeCatalogRequest = (ChangeCatalogRequest) o;
-        return Objects.equals(this.workspace, changeCatalogRequest.workspace)
-            && Objects.equals(this.body, changeCatalogRequest.body);
+        ChangeCatalogRequest that = (ChangeCatalogRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

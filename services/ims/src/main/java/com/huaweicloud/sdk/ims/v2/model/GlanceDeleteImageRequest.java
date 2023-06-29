@@ -65,16 +65,15 @@ public class GlanceDeleteImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceDeleteImageRequest glanceDeleteImageRequest = (GlanceDeleteImageRequest) o;
-        return Objects.equals(this.imageId, glanceDeleteImageRequest.imageId)
-            && Objects.equals(this.body, glanceDeleteImageRequest.body);
+        GlanceDeleteImageRequest that = (GlanceDeleteImageRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

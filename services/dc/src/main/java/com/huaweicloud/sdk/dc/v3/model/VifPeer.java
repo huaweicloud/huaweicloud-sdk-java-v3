@@ -98,22 +98,15 @@ public class VifPeer {
             if (value == null) {
                 return null;
             }
-            RouteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RouteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RouteModeEnum(value));
         }
 
         public static RouteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RouteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -504,26 +497,24 @@ public class VifPeer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VifPeer vifPeer = (VifPeer) o;
-        return Objects.equals(this.id, vifPeer.id) && Objects.equals(this.tenantId, vifPeer.tenantId)
-            && Objects.equals(this.name, vifPeer.name) && Objects.equals(this.description, vifPeer.description)
-            && Objects.equals(this.addressFamily, vifPeer.addressFamily)
-            && Objects.equals(this.localGatewayIp, vifPeer.localGatewayIp)
-            && Objects.equals(this.remoteGatewayIp, vifPeer.remoteGatewayIp)
-            && Objects.equals(this.routeMode, vifPeer.routeMode) && Objects.equals(this.bgpAsn, vifPeer.bgpAsn)
-            && Objects.equals(this.bgpMd5, vifPeer.bgpMd5) && Objects.equals(this.remoteEpGroup, vifPeer.remoteEpGroup)
-            && Objects.equals(this.serviceEpGroup, vifPeer.serviceEpGroup)
-            && Objects.equals(this.deviceId, vifPeer.deviceId)
-            && Objects.equals(this.bgpRouteLimit, vifPeer.bgpRouteLimit)
-            && Objects.equals(this.bgpStatus, vifPeer.bgpStatus) && Objects.equals(this.status, vifPeer.status)
-            && Objects.equals(this.vifId, vifPeer.vifId);
+        VifPeer that = (VifPeer) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.addressFamily, that.addressFamily)
+            && Objects.equals(this.localGatewayIp, that.localGatewayIp)
+            && Objects.equals(this.remoteGatewayIp, that.remoteGatewayIp)
+            && Objects.equals(this.routeMode, that.routeMode) && Objects.equals(this.bgpAsn, that.bgpAsn)
+            && Objects.equals(this.bgpMd5, that.bgpMd5) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.serviceEpGroup, that.serviceEpGroup) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.bgpRouteLimit, that.bgpRouteLimit) && Objects.equals(this.bgpStatus, that.bgpStatus)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vifId, that.vifId);
     }
 
     @Override

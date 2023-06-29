@@ -100,18 +100,16 @@ public class ListApproversRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApproversRequest listApproversRequest = (ListApproversRequest) o;
-        return Objects.equals(this.workspace, listApproversRequest.workspace)
-            && Objects.equals(this.approverName, listApproversRequest.approverName)
-            && Objects.equals(this.limit, listApproversRequest.limit)
-            && Objects.equals(this.offset, listApproversRequest.offset);
+        ListApproversRequest that = (ListApproversRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.approverName, that.approverName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

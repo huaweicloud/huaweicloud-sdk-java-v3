@@ -65,16 +65,15 @@ public class AssociateKeypairRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateKeypairRequestBody associateKeypairRequestBody = (AssociateKeypairRequestBody) o;
-        return Objects.equals(this.keypairName, associateKeypairRequestBody.keypairName)
-            && Objects.equals(this.server, associateKeypairRequestBody.server);
+        AssociateKeypairRequestBody that = (AssociateKeypairRequestBody) obj;
+        return Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.server, that.server);
     }
 
     @Override

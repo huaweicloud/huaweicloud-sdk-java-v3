@@ -75,16 +75,15 @@ public class PushShareAppsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushShareAppsResponse pushShareAppsResponse = (PushShareAppsResponse) o;
-        return Objects.equals(this.requestId, pushShareAppsResponse.requestId)
-            && Objects.equals(this.jobs, pushShareAppsResponse.jobs);
+        PushShareAppsResponse that = (PushShareAppsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

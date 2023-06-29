@@ -57,16 +57,15 @@ public class ListHandshakesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHandshakesRequest listHandshakesRequest = (ListHandshakesRequest) o;
-        return Objects.equals(this.limit, listHandshakesRequest.limit)
-            && Objects.equals(this.marker, listHandshakesRequest.marker);
+        ListHandshakesRequest that = (ListHandshakesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

@@ -143,22 +143,15 @@ public class NovaCreateServersOption {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsDCFDiskConfigEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsDCFDiskConfigEnum(value));
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -557,32 +550,27 @@ public class NovaCreateServersOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaCreateServersOption novaCreateServersOption = (NovaCreateServersOption) o;
-        return Objects.equals(this.autoTerminateTime, novaCreateServersOption.autoTerminateTime)
-            && Objects.equals(this.imageRef, novaCreateServersOption.imageRef)
-            && Objects.equals(this.flavorRef, novaCreateServersOption.flavorRef)
-            && Objects.equals(this.name, novaCreateServersOption.name)
-            && Objects.equals(this.metadata, novaCreateServersOption.metadata)
-            && Objects.equals(this.adminPass, novaCreateServersOption.adminPass)
-            && Objects.equals(this.blockDeviceMappingV2, novaCreateServersOption.blockDeviceMappingV2)
-            && Objects.equals(this.configDrive, novaCreateServersOption.configDrive)
-            && Objects.equals(this.securityGroups, novaCreateServersOption.securityGroups)
-            && Objects.equals(this.networks, novaCreateServersOption.networks)
-            && Objects.equals(this.keyName, novaCreateServersOption.keyName)
-            && Objects.equals(this.userData, novaCreateServersOption.userData)
-            && Objects.equals(this.availabilityZone, novaCreateServersOption.availabilityZone)
-            && Objects.equals(this.returnReservationId, novaCreateServersOption.returnReservationId)
-            && Objects.equals(this.minCount, novaCreateServersOption.minCount)
-            && Objects.equals(this.maxCount, novaCreateServersOption.maxCount)
-            && Objects.equals(this.osDCFDiskConfig, novaCreateServersOption.osDCFDiskConfig)
-            && Objects.equals(this.description, novaCreateServersOption.description);
+        NovaCreateServersOption that = (NovaCreateServersOption) obj;
+        return Objects.equals(this.autoTerminateTime, that.autoTerminateTime)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.adminPass, that.adminPass)
+            && Objects.equals(this.blockDeviceMappingV2, that.blockDeviceMappingV2)
+            && Objects.equals(this.configDrive, that.configDrive)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.returnReservationId, that.returnReservationId)
+            && Objects.equals(this.minCount, that.minCount) && Objects.equals(this.maxCount, that.maxCount)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

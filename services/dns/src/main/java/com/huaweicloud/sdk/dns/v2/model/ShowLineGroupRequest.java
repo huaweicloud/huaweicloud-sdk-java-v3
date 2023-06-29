@@ -33,15 +33,15 @@ public class ShowLineGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLineGroupRequest showLineGroupRequest = (ShowLineGroupRequest) o;
-        return Objects.equals(this.linegroupId, showLineGroupRequest.linegroupId);
+        ShowLineGroupRequest that = (ShowLineGroupRequest) obj;
+        return Objects.equals(this.linegroupId, that.linegroupId);
     }
 
     @Override

@@ -275,26 +275,21 @@ public class SlowLogDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowLogDetail slowLogDetail = (SlowLogDetail) o;
-        return Objects.equals(this.nodeName, slowLogDetail.nodeName)
-            && Objects.equals(this.nodeId, slowLogDetail.nodeId)
-            && Objects.equals(this.wholeMessage, slowLogDetail.wholeMessage)
-            && Objects.equals(this.operateType, slowLogDetail.operateType)
-            && Objects.equals(this.costTime, slowLogDetail.costTime)
-            && Objects.equals(this.lockTime, slowLogDetail.lockTime)
-            && Objects.equals(this.docsReturned, slowLogDetail.docsReturned)
-            && Objects.equals(this.docsScanned, slowLogDetail.docsScanned)
-            && Objects.equals(this.database, slowLogDetail.database)
-            && Objects.equals(this.collection, slowLogDetail.collection)
-            && Objects.equals(this.logTime, slowLogDetail.logTime)
-            && Objects.equals(this.lineNum, slowLogDetail.lineNum);
+        SlowLogDetail that = (SlowLogDetail) obj;
+        return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.wholeMessage, that.wholeMessage)
+            && Objects.equals(this.operateType, that.operateType) && Objects.equals(this.costTime, that.costTime)
+            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.docsReturned, that.docsReturned)
+            && Objects.equals(this.docsScanned, that.docsScanned) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.collection, that.collection) && Objects.equals(this.logTime, that.logTime)
+            && Objects.equals(this.lineNum, that.lineNum);
     }
 
     @Override

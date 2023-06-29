@@ -144,18 +144,17 @@ public class OriginPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OriginPara originPara = (OriginPara) o;
-        return Objects.equals(this.duration, originPara.duration)
-            && Objects.equals(this.durationMs, originPara.durationMs)
-            && Objects.equals(this.fileFormat, originPara.fileFormat) && Objects.equals(this.video, originPara.video)
-            && Objects.equals(this.audio, originPara.audio);
+        OriginPara that = (OriginPara) obj;
+        return Objects.equals(this.duration, that.duration) && Objects.equals(this.durationMs, that.durationMs)
+            && Objects.equals(this.fileFormat, that.fileFormat) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.audio, that.audio);
     }
 
     @Override

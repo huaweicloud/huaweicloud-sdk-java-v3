@@ -248,21 +248,18 @@ public class GeneralTableWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTableWordsBlockList generalTableWordsBlockList = (GeneralTableWordsBlockList) o;
-        return Objects.equals(this.words, generalTableWordsBlockList.words)
-            && Objects.equals(this.confidence, generalTableWordsBlockList.confidence)
-            && Objects.equals(this.location, generalTableWordsBlockList.location)
-            && Objects.equals(this.wordsList, generalTableWordsBlockList.wordsList)
-            && Objects.equals(this.rows, generalTableWordsBlockList.rows)
-            && Objects.equals(this.columns, generalTableWordsBlockList.columns)
-            && Objects.equals(this.cellLocation, generalTableWordsBlockList.cellLocation);
+        GeneralTableWordsBlockList that = (GeneralTableWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.wordsList, that.wordsList)
+            && Objects.equals(this.rows, that.rows) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.cellLocation, that.cellLocation);
     }
 
     @Override

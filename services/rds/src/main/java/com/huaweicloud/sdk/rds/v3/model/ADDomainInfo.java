@@ -55,16 +55,16 @@ public class ADDomainInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ADDomainInfo adDomainInfo = (ADDomainInfo) o;
-        return Objects.equals(this.domainAdminAccountName, adDomainInfo.domainAdminAccountName)
-            && Objects.equals(this.domainAdminPwd, adDomainInfo.domainAdminPwd);
+        ADDomainInfo that = (ADDomainInfo) obj;
+        return Objects.equals(this.domainAdminAccountName, that.domainAdminAccountName)
+            && Objects.equals(this.domainAdminPwd, that.domainAdminPwd);
     }
 
     @Override

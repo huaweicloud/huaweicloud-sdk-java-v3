@@ -957,56 +957,55 @@ public class MetricInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricInfo metricInfo = (MetricInfo) o;
-        return Objects.equals(this.codeSize, metricInfo.codeSize) && Objects.equals(this.rawLines, metricInfo.rawLines)
-            && Objects.equals(this.methodsTotal, metricInfo.methodsTotal)
-            && Objects.equals(this.cyclomaticComplexityTotal, metricInfo.cyclomaticComplexityTotal)
-            && Objects.equals(this.cyclomaticComplexityPerMethod, metricInfo.cyclomaticComplexityPerMethod)
-            && Objects.equals(this.maximumCyclomaticComplexity, metricInfo.maximumCyclomaticComplexity)
-            && Objects.equals(this.hugeCyclomaticComplexityTotal, metricInfo.hugeCyclomaticComplexityTotal)
-            && Objects.equals(this.hugeCyclomaticComplexityRatio, metricInfo.hugeCyclomaticComplexityRatio)
-            && Objects.equals(this.ccaCyclomaticComplexityTotal, metricInfo.ccaCyclomaticComplexityTotal)
-            && Objects.equals(this.ccaCyclomaticComplexityPerMethod, metricInfo.ccaCyclomaticComplexityPerMethod)
-            && Objects.equals(this.maximumCcaCyclomaticComplexity, metricInfo.maximumCcaCyclomaticComplexity)
-            && Objects.equals(this.hugeCcaCyclomaticComplexityTotal, metricInfo.hugeCcaCyclomaticComplexityTotal)
-            && Objects.equals(this.cyclomaticComplexityAdequacy, metricInfo.cyclomaticComplexityAdequacy)
-            && Objects.equals(this.maximumDepth, metricInfo.maximumDepth)
-            && Objects.equals(this.hugeDepthTotal, metricInfo.hugeDepthTotal)
-            && Objects.equals(this.hugeDepthRatio, metricInfo.hugeDepthRatio)
-            && Objects.equals(this.methodLines, metricInfo.methodLines)
-            && Objects.equals(this.linesPerMethod, metricInfo.linesPerMethod)
-            && Objects.equals(this.hugeMethodTotal, metricInfo.hugeMethodTotal)
-            && Objects.equals(this.hugeMethodRatio, metricInfo.hugeMethodRatio)
-            && Objects.equals(this.filesTotal, metricInfo.filesTotal)
-            && Objects.equals(this.foldersTotal, metricInfo.foldersTotal)
-            && Objects.equals(this.linesPerFile, metricInfo.linesPerFile)
-            && Objects.equals(this.hugeHeaderfileTotal, metricInfo.hugeHeaderfileTotal)
-            && Objects.equals(this.hugeHeaderfileRatio, metricInfo.hugeHeaderfileRatio)
-            && Objects.equals(this.hugeNonHeaderfileTotal, metricInfo.hugeNonHeaderfileTotal)
-            && Objects.equals(this.hugeNonHeaderfileRatio, metricInfo.hugeNonHeaderfileRatio)
-            && Objects.equals(this.hugeFolderTotal, metricInfo.hugeFolderTotal)
-            && Objects.equals(this.hugeFolderRatio, metricInfo.hugeFolderRatio)
-            && Objects.equals(this.fileDuplicationTotal, metricInfo.fileDuplicationTotal)
-            && Objects.equals(this.fileDuplicationRatio, metricInfo.fileDuplicationRatio)
-            && Objects.equals(this.nonHfileDuplicationTotal, metricInfo.nonHfileDuplicationTotal)
-            && Objects.equals(this.nonHfileDuplicationRatio, metricInfo.nonHfileDuplicationRatio)
-            && Objects.equals(this.codeDuplicationTotal, metricInfo.codeDuplicationTotal)
-            && Objects.equals(this.codeDuplicationRatio, metricInfo.codeDuplicationRatio)
-            && Objects.equals(this.nonHfileCodeDuplicationTotal, metricInfo.nonHfileCodeDuplicationTotal)
-            && Objects.equals(this.nonHfileCodeDuplicationRatio, metricInfo.nonHfileCodeDuplicationRatio)
-            && Objects.equals(this.unsafeFunctionsTotal, metricInfo.unsafeFunctionsTotal)
-            && Objects.equals(this.unsafeFunctionsKloc, metricInfo.unsafeFunctionsKloc)
-            && Objects.equals(this.redundantCodeTotal, metricInfo.redundantCodeTotal)
-            && Objects.equals(this.redundantCodeKloc, metricInfo.redundantCodeKloc)
-            && Objects.equals(this.warningSuppressionTotal, metricInfo.warningSuppressionTotal)
-            && Objects.equals(this.warningSuppressionKloc, metricInfo.warningSuppressionKloc);
+        MetricInfo that = (MetricInfo) obj;
+        return Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.rawLines, that.rawLines)
+            && Objects.equals(this.methodsTotal, that.methodsTotal)
+            && Objects.equals(this.cyclomaticComplexityTotal, that.cyclomaticComplexityTotal)
+            && Objects.equals(this.cyclomaticComplexityPerMethod, that.cyclomaticComplexityPerMethod)
+            && Objects.equals(this.maximumCyclomaticComplexity, that.maximumCyclomaticComplexity)
+            && Objects.equals(this.hugeCyclomaticComplexityTotal, that.hugeCyclomaticComplexityTotal)
+            && Objects.equals(this.hugeCyclomaticComplexityRatio, that.hugeCyclomaticComplexityRatio)
+            && Objects.equals(this.ccaCyclomaticComplexityTotal, that.ccaCyclomaticComplexityTotal)
+            && Objects.equals(this.ccaCyclomaticComplexityPerMethod, that.ccaCyclomaticComplexityPerMethod)
+            && Objects.equals(this.maximumCcaCyclomaticComplexity, that.maximumCcaCyclomaticComplexity)
+            && Objects.equals(this.hugeCcaCyclomaticComplexityTotal, that.hugeCcaCyclomaticComplexityTotal)
+            && Objects.equals(this.cyclomaticComplexityAdequacy, that.cyclomaticComplexityAdequacy)
+            && Objects.equals(this.maximumDepth, that.maximumDepth)
+            && Objects.equals(this.hugeDepthTotal, that.hugeDepthTotal)
+            && Objects.equals(this.hugeDepthRatio, that.hugeDepthRatio)
+            && Objects.equals(this.methodLines, that.methodLines)
+            && Objects.equals(this.linesPerMethod, that.linesPerMethod)
+            && Objects.equals(this.hugeMethodTotal, that.hugeMethodTotal)
+            && Objects.equals(this.hugeMethodRatio, that.hugeMethodRatio)
+            && Objects.equals(this.filesTotal, that.filesTotal) && Objects.equals(this.foldersTotal, that.foldersTotal)
+            && Objects.equals(this.linesPerFile, that.linesPerFile)
+            && Objects.equals(this.hugeHeaderfileTotal, that.hugeHeaderfileTotal)
+            && Objects.equals(this.hugeHeaderfileRatio, that.hugeHeaderfileRatio)
+            && Objects.equals(this.hugeNonHeaderfileTotal, that.hugeNonHeaderfileTotal)
+            && Objects.equals(this.hugeNonHeaderfileRatio, that.hugeNonHeaderfileRatio)
+            && Objects.equals(this.hugeFolderTotal, that.hugeFolderTotal)
+            && Objects.equals(this.hugeFolderRatio, that.hugeFolderRatio)
+            && Objects.equals(this.fileDuplicationTotal, that.fileDuplicationTotal)
+            && Objects.equals(this.fileDuplicationRatio, that.fileDuplicationRatio)
+            && Objects.equals(this.nonHfileDuplicationTotal, that.nonHfileDuplicationTotal)
+            && Objects.equals(this.nonHfileDuplicationRatio, that.nonHfileDuplicationRatio)
+            && Objects.equals(this.codeDuplicationTotal, that.codeDuplicationTotal)
+            && Objects.equals(this.codeDuplicationRatio, that.codeDuplicationRatio)
+            && Objects.equals(this.nonHfileCodeDuplicationTotal, that.nonHfileCodeDuplicationTotal)
+            && Objects.equals(this.nonHfileCodeDuplicationRatio, that.nonHfileCodeDuplicationRatio)
+            && Objects.equals(this.unsafeFunctionsTotal, that.unsafeFunctionsTotal)
+            && Objects.equals(this.unsafeFunctionsKloc, that.unsafeFunctionsKloc)
+            && Objects.equals(this.redundantCodeTotal, that.redundantCodeTotal)
+            && Objects.equals(this.redundantCodeKloc, that.redundantCodeKloc)
+            && Objects.equals(this.warningSuppressionTotal, that.warningSuppressionTotal)
+            && Objects.equals(this.warningSuppressionKloc, that.warningSuppressionKloc);
     }
 
     @Override

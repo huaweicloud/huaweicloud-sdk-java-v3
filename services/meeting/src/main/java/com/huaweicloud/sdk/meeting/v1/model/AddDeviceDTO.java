@@ -81,22 +81,15 @@ public class AddDeviceDTO {
             if (value == null) {
                 return null;
             }
-            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrjCodeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrjCodeModeEnum(value));
         }
 
         public static PrjCodeModeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PrjCodeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class AddDeviceDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -418,21 +404,20 @@ public class AddDeviceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeviceDTO addDeviceDTO = (AddDeviceDTO) o;
-        return Objects.equals(this.name, addDeviceDTO.name) && Objects.equals(this.model, addDeviceDTO.model)
-            && Objects.equals(this.sn, addDeviceDTO.sn) && Objects.equals(this.prjCodeMode, addDeviceDTO.prjCodeMode)
-            && Objects.equals(this.deptCode, addDeviceDTO.deptCode) && Objects.equals(this.phone, addDeviceDTO.phone)
-            && Objects.equals(this.country, addDeviceDTO.country) && Objects.equals(this.email, addDeviceDTO.email)
-            && Objects.equals(this.description, addDeviceDTO.description)
-            && Objects.equals(this.status, addDeviceDTO.status)
-            && Objects.equals(this.sendNotify, addDeviceDTO.sendNotify);
+        AddDeviceDTO that = (AddDeviceDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.sn, that.sn) && Objects.equals(this.prjCodeMode, that.prjCodeMode)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sendNotify, that.sendNotify);
     }
 
     @Override

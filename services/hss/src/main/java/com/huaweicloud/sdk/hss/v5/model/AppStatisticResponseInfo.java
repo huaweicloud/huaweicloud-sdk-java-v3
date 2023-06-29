@@ -57,16 +57,15 @@ public class AppStatisticResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppStatisticResponseInfo appStatisticResponseInfo = (AppStatisticResponseInfo) o;
-        return Objects.equals(this.appName, appStatisticResponseInfo.appName)
-            && Objects.equals(this.num, appStatisticResponseInfo.num);
+        AppStatisticResponseInfo that = (AppStatisticResponseInfo) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.num, that.num);
     }
 
     @Override

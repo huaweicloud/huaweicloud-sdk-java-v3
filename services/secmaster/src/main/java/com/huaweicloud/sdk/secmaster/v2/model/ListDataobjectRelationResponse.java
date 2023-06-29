@@ -193,21 +193,18 @@ public class ListDataobjectRelationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataobjectRelationResponse listDataobjectRelationResponse = (ListDataobjectRelationResponse) o;
-        return Objects.equals(this.code, listDataobjectRelationResponse.code)
-            && Objects.equals(this.message, listDataobjectRelationResponse.message)
-            && Objects.equals(this.total, listDataobjectRelationResponse.total)
-            && Objects.equals(this.limit, listDataobjectRelationResponse.limit)
-            && Objects.equals(this.offset, listDataobjectRelationResponse.offset)
-            && Objects.equals(this.data, listDataobjectRelationResponse.data)
-            && Objects.equals(this.xRequestId, listDataobjectRelationResponse.xRequestId);
+        ListDataobjectRelationResponse that = (ListDataobjectRelationResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

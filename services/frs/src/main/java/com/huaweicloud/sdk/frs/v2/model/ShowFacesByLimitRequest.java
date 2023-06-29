@@ -99,18 +99,17 @@ public class ShowFacesByLimitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFacesByLimitRequest showFacesByLimitRequest = (ShowFacesByLimitRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showFacesByLimitRequest.enterpriseProjectId)
-            && Objects.equals(this.faceSetName, showFacesByLimitRequest.faceSetName)
-            && Objects.equals(this.offset, showFacesByLimitRequest.offset)
-            && Objects.equals(this.limit, showFacesByLimitRequest.limit);
+        ShowFacesByLimitRequest that = (ShowFacesByLimitRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

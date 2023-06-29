@@ -187,21 +187,18 @@ public class ApplicationBaseV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationBaseV3 applicationBaseV3 = (ApplicationBaseV3) o;
-        return Objects.equals(this.id, applicationBaseV3.id) && Objects.equals(this.name, applicationBaseV3.name)
-            && Objects.equals(this.description, applicationBaseV3.description)
-            && Objects.equals(this.regionId, applicationBaseV3.regionId)
-            && Objects.equals(this.regionName, applicationBaseV3.regionName)
-            && Objects.equals(this.projectId, applicationBaseV3.projectId)
-            && Objects.equals(this.projectName, applicationBaseV3.projectName)
-            && Objects.equals(this.icon, applicationBaseV3.icon);
+        ApplicationBaseV3 that = (ApplicationBaseV3) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.icon, that.icon);
     }
 
     @Override

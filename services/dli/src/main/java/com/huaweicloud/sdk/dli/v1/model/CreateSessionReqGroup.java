@@ -74,16 +74,15 @@ public class CreateSessionReqGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSessionReqGroup createSessionReqGroup = (CreateSessionReqGroup) o;
-        return Objects.equals(this.name, createSessionReqGroup.name)
-            && Objects.equals(this.resources, createSessionReqGroup.resources);
+        CreateSessionReqGroup that = (CreateSessionReqGroup) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.resources, that.resources);
     }
 
     @Override

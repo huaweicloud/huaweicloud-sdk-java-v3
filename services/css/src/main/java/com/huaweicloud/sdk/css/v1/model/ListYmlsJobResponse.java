@@ -53,15 +53,15 @@ public class ListYmlsJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListYmlsJobResponse listYmlsJobResponse = (ListYmlsJobResponse) o;
-        return Objects.equals(this.configList, listYmlsJobResponse.configList);
+        ListYmlsJobResponse that = (ListYmlsJobResponse) obj;
+        return Objects.equals(this.configList, that.configList);
     }
 
     @Override

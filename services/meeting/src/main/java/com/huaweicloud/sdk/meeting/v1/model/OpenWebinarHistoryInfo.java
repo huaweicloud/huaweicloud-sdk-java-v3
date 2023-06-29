@@ -429,33 +429,26 @@ public class OpenWebinarHistoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenWebinarHistoryInfo openWebinarHistoryInfo = (OpenWebinarHistoryInfo) o;
-        return Objects.equals(this.conferenceId, openWebinarHistoryInfo.conferenceId)
-            && Objects.equals(this.confUUID, openWebinarHistoryInfo.confUUID)
-            && Objects.equals(this.subject, openWebinarHistoryInfo.subject)
-            && Objects.equals(this.scheduserName, openWebinarHistoryInfo.scheduserName)
-            && Objects.equals(this.moderator, openWebinarHistoryInfo.moderator)
-            && Objects.equals(this.deptName, openWebinarHistoryInfo.deptName)
-            && Objects.equals(this.timeZoneId, openWebinarHistoryInfo.timeZoneId)
-            && Objects.equals(this.startTime, openWebinarHistoryInfo.startTime)
-            && Objects.equals(this.duration, openWebinarHistoryInfo.duration)
-            && Objects.equals(this.actualStartTime, openWebinarHistoryInfo.actualStartTime)
-            && Objects.equals(this.endTime, openWebinarHistoryInfo.endTime)
-            && Objects.equals(this.actualDuration, openWebinarHistoryInfo.actualDuration)
-            && Objects.equals(this.attendeeCount, openWebinarHistoryInfo.attendeeCount)
-            && Objects.equals(this.chairCount, openWebinarHistoryInfo.chairCount)
-            && Objects.equals(this.guestCount, openWebinarHistoryInfo.guestCount)
-            && Objects.equals(this.audienceCount, openWebinarHistoryInfo.audienceCount)
-            && Objects.equals(this.vmrId, openWebinarHistoryInfo.vmrId)
-            && Objects.equals(this.vmrPkgAudienceParties, openWebinarHistoryInfo.vmrPkgAudienceParties)
-            && Objects.equals(this.vmrPkgName, openWebinarHistoryInfo.vmrPkgName);
+        OpenWebinarHistoryInfo that = (OpenWebinarHistoryInfo) obj;
+        return Objects.equals(this.conferenceId, that.conferenceId) && Objects.equals(this.confUUID, that.confUUID)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.moderator, that.moderator) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.timeZoneId, that.timeZoneId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.actualStartTime, that.actualStartTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.actualDuration, that.actualDuration)
+            && Objects.equals(this.attendeeCount, that.attendeeCount)
+            && Objects.equals(this.chairCount, that.chairCount) && Objects.equals(this.guestCount, that.guestCount)
+            && Objects.equals(this.audienceCount, that.audienceCount) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.vmrPkgAudienceParties, that.vmrPkgAudienceParties)
+            && Objects.equals(this.vmrPkgName, that.vmrPkgName);
     }
 
     @Override

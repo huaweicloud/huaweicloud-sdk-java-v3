@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库名称列表，即创建数据库用户时同步将列表中的数据库授权给用户，列表最大长度为50。列表可以为空，在需要给该用户授权某数据库时，调用数据库用户授权接口即可。
  */
-public class CreateDatabaseList  {
-
+public class CreateDatabaseList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly")
-    
+    @JsonProperty(value = "readonly")
 
     private Boolean readonly;
 
@@ -33,9 +24,6 @@ public class CreateDatabaseList  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。
@@ -49,15 +37,10 @@ public class CreateDatabaseList  {
         this.name = name;
     }
 
-    
-
     public CreateDatabaseList withReadonly(Boolean readonly) {
         this.readonly = readonly;
         return this;
     }
-
-    
-
 
     /**
      * 是否为只读权限： - true，表示只读。 - false，表示可读写。
@@ -71,24 +54,23 @@ public class CreateDatabaseList  {
         this.readonly = readonly;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseList createDatabaseList = (CreateDatabaseList) o;
-        return Objects.equals(this.name, createDatabaseList.name) &&
-            Objects.equals(this.readonly, createDatabaseList.readonly);
+        CreateDatabaseList that = (CreateDatabaseList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.readonly, that.readonly);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, readonly);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class CreateDatabaseList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class CreateDatabaseList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

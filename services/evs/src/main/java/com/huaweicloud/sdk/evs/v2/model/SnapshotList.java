@@ -338,28 +338,24 @@ public class SnapshotList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SnapshotList snapshotList = (SnapshotList) o;
-        return Objects.equals(this.id, snapshotList.id) && Objects.equals(this.status, snapshotList.status)
-            && Objects.equals(this.name, snapshotList.name)
-            && Objects.equals(this.description, snapshotList.description)
-            && Objects.equals(this.createdAt, snapshotList.createdAt)
-            && Objects.equals(this.updatedAt, snapshotList.updatedAt)
-            && Objects.equals(this.metadata, snapshotList.metadata)
-            && Objects.equals(this.volumeId, snapshotList.volumeId) && Objects.equals(this.size, snapshotList.size)
-            && Objects.equals(this.osExtendedSnapshotAttributesProjectId,
-                snapshotList.osExtendedSnapshotAttributesProjectId)
-            && Objects.equals(this.osExtendedSnapshotAttributesProgress,
-                snapshotList.osExtendedSnapshotAttributesProgress)
-            && Objects.equals(this.dedicatedStorageId, snapshotList.dedicatedStorageId)
-            && Objects.equals(this.dedicatedStorageName, snapshotList.dedicatedStorageName)
-            && Objects.equals(this.serviceType, snapshotList.serviceType);
+        SnapshotList that = (SnapshotList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.size, that.size)
+            && Objects.equals(this.osExtendedSnapshotAttributesProjectId, that.osExtendedSnapshotAttributesProjectId)
+            && Objects.equals(this.osExtendedSnapshotAttributesProgress, that.osExtendedSnapshotAttributesProgress)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
+            && Objects.equals(this.serviceType, that.serviceType);
     }
 
     @Override

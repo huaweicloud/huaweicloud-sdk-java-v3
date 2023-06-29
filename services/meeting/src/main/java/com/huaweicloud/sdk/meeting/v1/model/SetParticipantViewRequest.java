@@ -111,18 +111,18 @@ public class SetParticipantViewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetParticipantViewRequest setParticipantViewRequest = (SetParticipantViewRequest) o;
-        return Objects.equals(this.conferenceID, setParticipantViewRequest.conferenceID)
-            && Objects.equals(this.participantID, setParticipantViewRequest.participantID)
-            && Objects.equals(this.xConferenceAuthorization, setParticipantViewRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, setParticipantViewRequest.body);
+        SetParticipantViewRequest that = (SetParticipantViewRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

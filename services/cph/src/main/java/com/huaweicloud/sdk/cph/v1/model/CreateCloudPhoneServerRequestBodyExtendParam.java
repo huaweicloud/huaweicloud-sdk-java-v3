@@ -153,21 +153,18 @@ public class CreateCloudPhoneServerRequestBodyExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudPhoneServerRequestBodyExtendParam createCloudPhoneServerRequestBodyExtendParam =
-            (CreateCloudPhoneServerRequestBodyExtendParam) o;
-        return Objects.equals(this.chargingMode, createCloudPhoneServerRequestBodyExtendParam.chargingMode)
-            && Objects.equals(this.periodType, createCloudPhoneServerRequestBodyExtendParam.periodType)
-            && Objects.equals(this.periodNum, createCloudPhoneServerRequestBodyExtendParam.periodNum)
-            && Objects.equals(this.isAutoPay, createCloudPhoneServerRequestBodyExtendParam.isAutoPay)
-            && Objects.equals(this.isAutoRenew, createCloudPhoneServerRequestBodyExtendParam.isAutoRenew) && Objects
-                .equals(this.enterpriseProjectId, createCloudPhoneServerRequestBodyExtendParam.enterpriseProjectId);
+        CreateCloudPhoneServerRequestBodyExtendParam that = (CreateCloudPhoneServerRequestBodyExtendParam) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

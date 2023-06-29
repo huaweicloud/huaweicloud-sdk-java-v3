@@ -165,21 +165,18 @@ public class IncidentDetailExtInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentDetailExtInfoV2 incidentDetailExtInfoV2 = (IncidentDetailExtInfoV2) o;
-        return Objects.equals(this.areaCode, incidentDetailExtInfoV2.areaCode)
-            && Objects.equals(this.remindMobile, incidentDetailExtInfoV2.remindMobile)
-            && Objects.equals(this.remindMail, incidentDetailExtInfoV2.remindMail)
-            && Objects.equals(this.contactType, incidentDetailExtInfoV2.contactType)
-            && Objects.equals(this.remindTime, incidentDetailExtInfoV2.remindTime)
-            && Objects.equals(this.ccEmail, incidentDetailExtInfoV2.ccEmail)
-            && Objects.equals(this.commodityId, incidentDetailExtInfoV2.commodityId);
+        IncidentDetailExtInfoV2 that = (IncidentDetailExtInfoV2) obj;
+        return Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.remindMobile, that.remindMobile)
+            && Objects.equals(this.remindMail, that.remindMail) && Objects.equals(this.contactType, that.contactType)
+            && Objects.equals(this.remindTime, that.remindTime) && Objects.equals(this.ccEmail, that.ccEmail)
+            && Objects.equals(this.commodityId, that.commodityId);
     }
 
     @Override

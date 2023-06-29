@@ -34,15 +34,15 @@ public class DeletePipelineJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePipelineJobResponse deletePipelineJobResponse = (DeletePipelineJobResponse) o;
-        return Objects.equals(this.body, deletePipelineJobResponse.body);
+        DeletePipelineJobResponse that = (DeletePipelineJobResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ChangePasswordReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePasswordReq changePasswordReq = (ChangePasswordReq) o;
-        return Objects.equals(this.originalPassword, changePasswordReq.originalPassword)
-            && Objects.equals(this.newPassword, changePasswordReq.newPassword)
-            && Objects.equals(this.ticket, changePasswordReq.ticket);
+        ChangePasswordReq that = (ChangePasswordReq) obj;
+        return Objects.equals(this.originalPassword, that.originalPassword)
+            && Objects.equals(this.newPassword, that.newPassword) && Objects.equals(this.ticket, that.ticket);
     }
 
     @Override

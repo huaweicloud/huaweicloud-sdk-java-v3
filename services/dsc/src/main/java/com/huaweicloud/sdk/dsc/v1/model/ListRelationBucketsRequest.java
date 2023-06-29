@@ -143,20 +143,17 @@ public class ListRelationBucketsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationBucketsRequest listRelationBucketsRequest = (ListRelationBucketsRequest) o;
-        return Objects.equals(this.jobId, listRelationBucketsRequest.jobId)
-            && Objects.equals(this.assetsName, listRelationBucketsRequest.assetsName)
-            && Objects.equals(this.riskStart, listRelationBucketsRequest.riskStart)
-            && Objects.equals(this.riskEnd, listRelationBucketsRequest.riskEnd)
-            && Objects.equals(this.offset, listRelationBucketsRequest.offset)
-            && Objects.equals(this.limit, listRelationBucketsRequest.limit);
+        ListRelationBucketsRequest that = (ListRelationBucketsRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.assetsName, that.assetsName)
+            && Objects.equals(this.riskStart, that.riskStart) && Objects.equals(this.riskEnd, that.riskEnd)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

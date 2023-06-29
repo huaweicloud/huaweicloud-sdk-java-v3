@@ -77,16 +77,15 @@ public class ListNotifySmnTopicConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotifySmnTopicConfigResponse listNotifySmnTopicConfigResponse = (ListNotifySmnTopicConfigResponse) o;
-        return Objects.equals(this.notifications, listNotifySmnTopicConfigResponse.notifications)
-            && Objects.equals(this.total, listNotifySmnTopicConfigResponse.total);
+        ListNotifySmnTopicConfigResponse that = (ListNotifySmnTopicConfigResponse) obj;
+        return Objects.equals(this.notifications, that.notifications) && Objects.equals(this.total, that.total);
     }
 
     @Override

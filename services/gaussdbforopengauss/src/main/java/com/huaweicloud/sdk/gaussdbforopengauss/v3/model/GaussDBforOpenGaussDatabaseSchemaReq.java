@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussCreateSchemaReq;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建数据库schema信息。
  */
-public class GaussDBforOpenGaussDatabaseSchemaReq  {
-
+public class GaussDBforOpenGaussDatabaseSchemaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
 
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemas")
-    
+    @JsonProperty(value = "schemas")
+
     private List<GaussDBforOpenGaussCreateSchemaReq> schemas = null;
-    
+
     public GaussDBforOpenGaussDatabaseSchemaReq withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。  数据库名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，且不能和GaussDB 模板库重名。  GaussDB 模板库包括postgres， template0 ，template1。
@@ -51,24 +40,22 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
         this.dbName = dbName;
     }
 
-    
-
     public GaussDBforOpenGaussDatabaseSchemaReq withSchemas(List<GaussDBforOpenGaussCreateSchemaReq> schemas) {
         this.schemas = schemas;
         return this;
     }
 
-    
     public GaussDBforOpenGaussDatabaseSchemaReq addSchemasItem(GaussDBforOpenGaussCreateSchemaReq schemasItem) {
-        if(this.schemas == null) {
+        if (this.schemas == null) {
             this.schemas = new ArrayList<>();
         }
         this.schemas.add(schemasItem);
         return this;
     }
 
-    public GaussDBforOpenGaussDatabaseSchemaReq withSchemas(Consumer<List<GaussDBforOpenGaussCreateSchemaReq>> schemasSetter) {
-        if(this.schemas == null) {
+    public GaussDBforOpenGaussDatabaseSchemaReq withSchemas(
+        Consumer<List<GaussDBforOpenGaussCreateSchemaReq>> schemasSetter) {
+        if (this.schemas == null) {
             this.schemas = new ArrayList<>();
         }
         schemasSetter.accept(this.schemas);
@@ -87,24 +74,23 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
         this.schemas = schemas;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussDatabaseSchemaReq gaussDBforOpenGaussDatabaseSchemaReq = (GaussDBforOpenGaussDatabaseSchemaReq) o;
-        return Objects.equals(this.dbName, gaussDBforOpenGaussDatabaseSchemaReq.dbName) &&
-            Objects.equals(this.schemas, gaussDBforOpenGaussDatabaseSchemaReq.schemas);
+        GaussDBforOpenGaussDatabaseSchemaReq that = (GaussDBforOpenGaussDatabaseSchemaReq) obj;
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.schemas, that.schemas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(dbName, schemas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +100,7 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +111,5 @@ public class GaussDBforOpenGaussDatabaseSchemaReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

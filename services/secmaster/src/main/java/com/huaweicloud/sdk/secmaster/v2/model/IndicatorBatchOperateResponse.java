@@ -90,16 +90,15 @@ public class IndicatorBatchOperateResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorBatchOperateResponse indicatorBatchOperateResponse = (IndicatorBatchOperateResponse) o;
-        return Objects.equals(this.successIds, indicatorBatchOperateResponse.successIds)
-            && Objects.equals(this.errorIds, indicatorBatchOperateResponse.errorIds);
+        IndicatorBatchOperateResponse that = (IndicatorBatchOperateResponse) obj;
+        return Objects.equals(this.successIds, that.successIds) && Objects.equals(this.errorIds, that.errorIds);
     }
 
     @Override

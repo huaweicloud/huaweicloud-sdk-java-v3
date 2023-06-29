@@ -35,15 +35,15 @@ public class MultiTaskResetBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskResetBody multiTaskResetBody = (MultiTaskResetBody) o;
-        return Objects.equals(this.dateFrom, multiTaskResetBody.dateFrom);
+        MultiTaskResetBody that = (MultiTaskResetBody) obj;
+        return Objects.equals(this.dateFrom, that.dateFrom);
     }
 
     @Override

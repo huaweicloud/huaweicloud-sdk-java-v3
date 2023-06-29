@@ -96,22 +96,15 @@ public class ShowUserResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DefaultTopicPermEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefaultTopicPermEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultTopicPermEnum(value));
         }
 
         public static DefaultTopicPermEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefaultTopicPermEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class ShowUserResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DefaultGroupPermEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefaultGroupPermEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultGroupPermEnum(value));
         }
 
         public static DefaultGroupPermEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefaultGroupPermEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -394,22 +380,19 @@ public class ShowUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserResponse showUserResponse = (ShowUserResponse) o;
-        return Objects.equals(this.accessKey, showUserResponse.accessKey)
-            && Objects.equals(this.secretKey, showUserResponse.secretKey)
-            && Objects.equals(this.whiteRemoteAddress, showUserResponse.whiteRemoteAddress)
-            && Objects.equals(this.admin, showUserResponse.admin)
-            && Objects.equals(this.defaultTopicPerm, showUserResponse.defaultTopicPerm)
-            && Objects.equals(this.defaultGroupPerm, showUserResponse.defaultGroupPerm)
-            && Objects.equals(this.topicPerms, showUserResponse.topicPerms)
-            && Objects.equals(this.groupPerms, showUserResponse.groupPerms);
+        ShowUserResponse that = (ShowUserResponse) obj;
+        return Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
+            && Objects.equals(this.whiteRemoteAddress, that.whiteRemoteAddress)
+            && Objects.equals(this.admin, that.admin) && Objects.equals(this.defaultTopicPerm, that.defaultTopicPerm)
+            && Objects.equals(this.defaultGroupPerm, that.defaultGroupPerm)
+            && Objects.equals(this.topicPerms, that.topicPerms) && Objects.equals(this.groupPerms, that.groupPerms);
     }
 
     @Override

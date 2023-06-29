@@ -55,16 +55,15 @@ public class DeviceShadowProperties {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceShadowProperties deviceShadowProperties = (DeviceShadowProperties) o;
-        return Objects.equals(this.properties, deviceShadowProperties.properties)
-            && Objects.equals(this.eventTime, deviceShadowProperties.eventTime);
+        DeviceShadowProperties that = (DeviceShadowProperties) obj;
+        return Objects.equals(this.properties, that.properties) && Objects.equals(this.eventTime, that.eventTime);
     }
 
     @Override

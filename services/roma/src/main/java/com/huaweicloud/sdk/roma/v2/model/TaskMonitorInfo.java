@@ -70,22 +70,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,22 +253,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,22 +339,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -466,22 +438,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecuteStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecuteStatusEnum(value));
         }
 
         public static ExecuteStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -572,22 +537,15 @@ public class TaskMonitorInfo {
             if (value == null) {
                 return null;
             }
-            ExtTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExtTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExtTypeEnum(value));
         }
 
         public static ExtTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExtTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -964,33 +922,29 @@ public class TaskMonitorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskMonitorInfo taskMonitorInfo = (TaskMonitorInfo) o;
-        return Objects.equals(this.taskId, taskMonitorInfo.taskId)
-            && Objects.equals(this.taskName, taskMonitorInfo.taskName)
-            && Objects.equals(this.taskType, taskMonitorInfo.taskType)
-            && Objects.equals(this.status, taskMonitorInfo.status)
-            && Objects.equals(this.lastExecuteTime, taskMonitorInfo.lastExecuteTime)
-            && Objects.equals(this.useQuartzCron, taskMonitorInfo.useQuartzCron)
-            && Objects.equals(this.cron, taskMonitorInfo.cron) && Objects.equals(this.period, taskMonitorInfo.period)
-            && Objects.equals(this.dispatchInterval, taskMonitorInfo.dispatchInterval)
-            && Objects.equals(this.position, taskMonitorInfo.position)
-            && Objects.equals(this.executeStatus, taskMonitorInfo.executeStatus)
-            && Objects.equals(this.sourceAppId, taskMonitorInfo.sourceAppId)
-            && Objects.equals(this.sourceAppName, taskMonitorInfo.sourceAppName)
-            && Objects.equals(this.sourceInstanceId, taskMonitorInfo.sourceInstanceId)
-            && Objects.equals(this.targetAppId, taskMonitorInfo.targetAppId)
-            && Objects.equals(this.targetAppName, taskMonitorInfo.targetAppName)
-            && Objects.equals(this.targetInstanceId, taskMonitorInfo.targetInstanceId)
-            && Objects.equals(this.extType, taskMonitorInfo.extType)
-            && Objects.equals(this.enterpriseProjectId, taskMonitorInfo.enterpriseProjectId)
-            && Objects.equals(this.taskTag, taskMonitorInfo.taskTag);
+        TaskMonitorInfo that = (TaskMonitorInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.lastExecuteTime, that.lastExecuteTime)
+            && Objects.equals(this.useQuartzCron, that.useQuartzCron) && Objects.equals(this.cron, that.cron)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.dispatchInterval, that.dispatchInterval)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.executeStatus, that.executeStatus)
+            && Objects.equals(this.sourceAppId, that.sourceAppId)
+            && Objects.equals(this.sourceAppName, that.sourceAppName)
+            && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
+            && Objects.equals(this.targetAppId, that.targetAppId)
+            && Objects.equals(this.targetAppName, that.targetAppName)
+            && Objects.equals(this.targetInstanceId, that.targetInstanceId)
+            && Objects.equals(this.extType, that.extType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.taskTag, that.taskTag);
     }
 
     @Override

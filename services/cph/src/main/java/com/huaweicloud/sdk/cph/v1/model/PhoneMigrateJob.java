@@ -121,19 +121,17 @@ public class PhoneMigrateJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneMigrateJob phoneMigrateJob = (PhoneMigrateJob) o;
-        return Objects.equals(this.sourcePhoneId, phoneMigrateJob.sourcePhoneId)
-            && Objects.equals(this.targetPhoneId, phoneMigrateJob.targetPhoneId)
-            && Objects.equals(this.jobId, phoneMigrateJob.jobId)
-            && Objects.equals(this.errorCode, phoneMigrateJob.errorCode)
-            && Objects.equals(this.errorMsg, phoneMigrateJob.errorMsg);
+        PhoneMigrateJob that = (PhoneMigrateJob) obj;
+        return Objects.equals(this.sourcePhoneId, that.sourcePhoneId)
+            && Objects.equals(this.targetPhoneId, that.targetPhoneId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

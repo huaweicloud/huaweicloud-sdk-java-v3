@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class SearchTemplateByIdRequest  {
-
+public class SearchTemplateByIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="share_type")
-    
+    @JsonProperty(value = "share_type")
 
     private String shareType;
 
@@ -34,9 +24,6 @@ public class SearchTemplateByIdRequest  {
         this.templateId = templateId;
         return this;
     }
-
-    
-
 
     /**
      * 方案id。
@@ -50,15 +37,10 @@ public class SearchTemplateByIdRequest  {
         this.templateId = templateId;
     }
 
-    
-
     public SearchTemplateByIdRequest withShareType(String shareType) {
         this.shareType = shareType;
         return this;
     }
-
-    
-
 
     /**
      * 模板共享类型，默认为private。可选public private
@@ -72,24 +54,23 @@ public class SearchTemplateByIdRequest  {
         this.shareType = shareType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchTemplateByIdRequest searchTemplateByIdRequest = (SearchTemplateByIdRequest) o;
-        return Objects.equals(this.templateId, searchTemplateByIdRequest.templateId) &&
-            Objects.equals(this.shareType, searchTemplateByIdRequest.shareType);
+        SearchTemplateByIdRequest that = (SearchTemplateByIdRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.shareType, that.shareType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, shareType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class SearchTemplateByIdRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class SearchTemplateByIdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

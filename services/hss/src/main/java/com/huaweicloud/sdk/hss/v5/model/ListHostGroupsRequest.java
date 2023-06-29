@@ -125,19 +125,18 @@ public class ListHostGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostGroupsRequest listHostGroupsRequest = (ListHostGroupsRequest) o;
-        return Objects.equals(this.region, listHostGroupsRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listHostGroupsRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, listHostGroupsRequest.offset)
-            && Objects.equals(this.limit, listHostGroupsRequest.limit)
-            && Objects.equals(this.groupName, listHostGroupsRequest.groupName);
+        ListHostGroupsRequest that = (ListHostGroupsRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.groupName, that.groupName);
     }
 
     @Override

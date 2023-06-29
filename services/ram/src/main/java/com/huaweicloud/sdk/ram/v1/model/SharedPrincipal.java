@@ -100,17 +100,16 @@ public class SharedPrincipal {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SharedPrincipal sharedPrincipal = (SharedPrincipal) o;
-        return Objects.equals(this.resourceShareId, sharedPrincipal.resourceShareId)
-            && Objects.equals(this.id, sharedPrincipal.id) && Objects.equals(this.createdAt, sharedPrincipal.createdAt)
-            && Objects.equals(this.updatedAt, sharedPrincipal.updatedAt);
+        SharedPrincipal that = (SharedPrincipal) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

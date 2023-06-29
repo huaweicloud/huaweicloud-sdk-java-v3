@@ -65,16 +65,16 @@ public class ImageModerationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageModerationResult imageModerationResult = (ImageModerationResult) o;
-        return Objects.equals(this.suggestion, imageModerationResult.suggestion)
-            && Objects.equals(this.categorySuggestions, imageModerationResult.categorySuggestions);
+        ImageModerationResult that = (ImageModerationResult) obj;
+        return Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.categorySuggestions, that.categorySuggestions);
     }
 
     @Override

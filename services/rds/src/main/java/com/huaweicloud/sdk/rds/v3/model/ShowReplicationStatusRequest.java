@@ -57,16 +57,15 @@ public class ShowReplicationStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReplicationStatusRequest showReplicationStatusRequest = (ShowReplicationStatusRequest) o;
-        return Objects.equals(this.instanceId, showReplicationStatusRequest.instanceId)
-            && Objects.equals(this.xLanguage, showReplicationStatusRequest.xLanguage);
+        ShowReplicationStatusRequest that = (ShowReplicationStatusRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

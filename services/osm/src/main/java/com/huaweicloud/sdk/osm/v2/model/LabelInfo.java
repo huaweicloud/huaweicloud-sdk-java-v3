@@ -79,16 +79,16 @@ public class LabelInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LabelInfo labelInfo = (LabelInfo) o;
-        return Objects.equals(this.labelId, labelInfo.labelId) && Objects.equals(this.name, labelInfo.name)
-            && Objects.equals(this.color, labelInfo.color);
+        LabelInfo that = (LabelInfo) obj;
+        return Objects.equals(this.labelId, that.labelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.color, that.color);
     }
 
     @Override

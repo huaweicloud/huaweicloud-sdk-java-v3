@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库schema信息。
  */
-public class GaussDBforOpenGaussDatabaseForListSchema  {
-
+public class GaussDBforOpenGaussDatabaseForListSchema {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema_name")
-    
+    @JsonProperty(value = "schema_name")
 
     private String schemaName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
 
     private String owner;
 
@@ -33,9 +24,6 @@ public class GaussDBforOpenGaussDatabaseForListSchema  {
         this.schemaName = schemaName;
         return this;
     }
-
-    
-
 
     /**
      * schema名称。
@@ -49,15 +37,10 @@ public class GaussDBforOpenGaussDatabaseForListSchema  {
         this.schemaName = schemaName;
     }
 
-    
-
     public GaussDBforOpenGaussDatabaseForListSchema withOwner(String owner) {
         this.owner = owner;
         return this;
     }
-
-    
-
 
     /**
      * schema所属用户。
@@ -71,24 +54,23 @@ public class GaussDBforOpenGaussDatabaseForListSchema  {
         this.owner = owner;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussDatabaseForListSchema gaussDBforOpenGaussDatabaseForListSchema = (GaussDBforOpenGaussDatabaseForListSchema) o;
-        return Objects.equals(this.schemaName, gaussDBforOpenGaussDatabaseForListSchema.schemaName) &&
-            Objects.equals(this.owner, gaussDBforOpenGaussDatabaseForListSchema.owner);
+        GaussDBforOpenGaussDatabaseForListSchema that = (GaussDBforOpenGaussDatabaseForListSchema) obj;
+        return Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.owner, that.owner);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(schemaName, owner);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class GaussDBforOpenGaussDatabaseForListSchema  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class GaussDBforOpenGaussDatabaseForListSchema  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

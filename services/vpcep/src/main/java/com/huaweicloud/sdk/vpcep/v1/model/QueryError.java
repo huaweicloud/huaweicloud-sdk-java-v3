@@ -55,16 +55,15 @@ public class QueryError {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryError queryError = (QueryError) o;
-        return Objects.equals(this.errorCode, queryError.errorCode)
-            && Objects.equals(this.errorMessage, queryError.errorMessage);
+        QueryError that = (QueryError) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

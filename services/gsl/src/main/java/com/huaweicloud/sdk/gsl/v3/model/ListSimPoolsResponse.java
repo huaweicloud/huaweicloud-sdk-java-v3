@@ -119,18 +119,16 @@ public class ListSimPoolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSimPoolsResponse listSimPoolsResponse = (ListSimPoolsResponse) o;
-        return Objects.equals(this.limit, listSimPoolsResponse.limit)
-            && Objects.equals(this.offset, listSimPoolsResponse.offset)
-            && Objects.equals(this.count, listSimPoolsResponse.count)
-            && Objects.equals(this.pools, listSimPoolsResponse.pools);
+        ListSimPoolsResponse that = (ListSimPoolsResponse) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.pools, that.pools);
     }
 
     @Override

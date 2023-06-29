@@ -77,16 +77,16 @@ public class Repo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Repo repo = (Repo) o;
-        return Objects.equals(this.authName, repo.authName) && Objects.equals(this.branch, repo.branch)
-            && Objects.equals(this.namespace, repo.namespace);
+        Repo that = (Repo) obj;
+        return Objects.equals(this.authName, that.authName) && Objects.equals(this.branch, that.branch)
+            && Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

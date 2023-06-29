@@ -596,39 +596,31 @@ public class UpdateFlinkJarRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlinkJarRequestBody updateFlinkJarRequestBody = (UpdateFlinkJarRequestBody) o;
-        return Objects.equals(this.name, updateFlinkJarRequestBody.name)
-            && Objects.equals(this.desc, updateFlinkJarRequestBody.desc)
-            && Objects.equals(this.queueName, updateFlinkJarRequestBody.queueName)
-            && Objects.equals(this.cuNumber, updateFlinkJarRequestBody.cuNumber)
-            && Objects.equals(this.managerCuNumber, updateFlinkJarRequestBody.managerCuNumber)
-            && Objects.equals(this.parallelNumber, updateFlinkJarRequestBody.parallelNumber)
-            && Objects.equals(this.logEnabled, updateFlinkJarRequestBody.logEnabled)
-            && Objects.equals(this.obsBucket, updateFlinkJarRequestBody.obsBucket)
-            && Objects.equals(this.smnTopic, updateFlinkJarRequestBody.smnTopic)
-            && Objects.equals(this.mainClass, updateFlinkJarRequestBody.mainClass)
-            && Objects.equals(this.entrypointArgs, updateFlinkJarRequestBody.entrypointArgs)
-            && Objects.equals(this.restartWhenException, updateFlinkJarRequestBody.restartWhenException)
-            && Objects.equals(this.entrypoint, updateFlinkJarRequestBody.entrypoint)
-            && Objects.equals(this.dependencyJars, updateFlinkJarRequestBody.dependencyJars)
-            && Objects.equals(this.dependencyFiles, updateFlinkJarRequestBody.dependencyFiles)
-            && Objects.equals(this.tmCus, updateFlinkJarRequestBody.tmCus)
-            && Objects.equals(this.tmSlotNum, updateFlinkJarRequestBody.tmSlotNum)
-            && Objects.equals(this.feature, updateFlinkJarRequestBody.feature)
-            && Objects.equals(this.flinkVersion, updateFlinkJarRequestBody.flinkVersion)
-            && Objects.equals(this.image, updateFlinkJarRequestBody.image)
-            && Objects.equals(this.resumeCheckpoint, updateFlinkJarRequestBody.resumeCheckpoint)
-            && Objects.equals(this.resumeMaxNum, updateFlinkJarRequestBody.resumeMaxNum)
-            && Objects.equals(this.checkpointPath, updateFlinkJarRequestBody.checkpointPath)
-            && Objects.equals(this.runtimeConfig, updateFlinkJarRequestBody.runtimeConfig)
-            && Objects.equals(this.jobType, updateFlinkJarRequestBody.jobType);
+        UpdateFlinkJarRequestBody that = (UpdateFlinkJarRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.cuNumber, that.cuNumber)
+            && Objects.equals(this.managerCuNumber, that.managerCuNumber)
+            && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.logEnabled, that.logEnabled) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.smnTopic, that.smnTopic) && Objects.equals(this.mainClass, that.mainClass)
+            && Objects.equals(this.entrypointArgs, that.entrypointArgs)
+            && Objects.equals(this.restartWhenException, that.restartWhenException)
+            && Objects.equals(this.entrypoint, that.entrypoint)
+            && Objects.equals(this.dependencyJars, that.dependencyJars)
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles) && Objects.equals(this.tmCus, that.tmCus)
+            && Objects.equals(this.tmSlotNum, that.tmSlotNum) && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.flinkVersion, that.flinkVersion) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
+            && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
+            && Objects.equals(this.checkpointPath, that.checkpointPath)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig) && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

@@ -318,27 +318,25 @@ public class ShowContractResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowContractResponse showContractResponse = (ShowContractResponse) o;
-        return Objects.equals(this.contractName, showContractResponse.contractName)
-            && Objects.equals(this.contractDescription, showContractResponse.contractDescription)
-            && Objects.equals(this.ownerConnectorId, showContractResponse.ownerConnectorId)
-            && Objects.equals(this.ownerConnectorName, showContractResponse.ownerConnectorName)
-            && Objects.equals(this.subscribeConnectorId, showContractResponse.subscribeConnectorId)
-            && Objects.equals(this.subscribeConnectorName, showContractResponse.subscribeConnectorName)
-            && Objects.equals(this.subscriberName, showContractResponse.subscriberName)
-            && Objects.equals(this.subscriberId, showContractResponse.subscriberId)
-            && Objects.equals(this.approverId, showContractResponse.approverId)
-            && Objects.equals(this.approverName, showContractResponse.approverName)
-            && Objects.equals(this.offerId, showContractResponse.offerId)
-            && Objects.equals(this.offerName, showContractResponse.offerName)
-            && Objects.equals(this.useControlPolicies, showContractResponse.useControlPolicies);
+        ShowContractResponse that = (ShowContractResponse) obj;
+        return Objects.equals(this.contractName, that.contractName)
+            && Objects.equals(this.contractDescription, that.contractDescription)
+            && Objects.equals(this.ownerConnectorId, that.ownerConnectorId)
+            && Objects.equals(this.ownerConnectorName, that.ownerConnectorName)
+            && Objects.equals(this.subscribeConnectorId, that.subscribeConnectorId)
+            && Objects.equals(this.subscribeConnectorName, that.subscribeConnectorName)
+            && Objects.equals(this.subscriberName, that.subscriberName)
+            && Objects.equals(this.subscriberId, that.subscriberId) && Objects.equals(this.approverId, that.approverId)
+            && Objects.equals(this.approverName, that.approverName) && Objects.equals(this.offerId, that.offerId)
+            && Objects.equals(this.offerName, that.offerName)
+            && Objects.equals(this.useControlPolicies, that.useControlPolicies);
     }
 
     @Override

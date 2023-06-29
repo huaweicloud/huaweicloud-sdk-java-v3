@@ -317,27 +317,21 @@ public class ShowTestCaseDetailV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTestCaseDetailV2Response showTestCaseDetailV2Response = (ShowTestCaseDetailV2Response) o;
-        return Objects.equals(this.testcaseId, showTestCaseDetailV2Response.testcaseId)
-            && Objects.equals(this.projectId, showTestCaseDetailV2Response.projectId)
-            && Objects.equals(this.serviceId, showTestCaseDetailV2Response.serviceId)
-            && Objects.equals(this.name, showTestCaseDetailV2Response.name)
-            && Objects.equals(this.testcaseNumber, showTestCaseDetailV2Response.testcaseNumber)
-            && Objects.equals(this.rankId, showTestCaseDetailV2Response.rankId)
-            && Objects.equals(this.statusId, showTestCaseDetailV2Response.statusId)
-            && Objects.equals(this.assignedUser, showTestCaseDetailV2Response.assignedUser)
-            && Objects.equals(this.executeCount, showTestCaseDetailV2Response.executeCount)
-            && Objects.equals(this.resultId, showTestCaseDetailV2Response.resultId)
-            && Objects.equals(this.extendInfo, showTestCaseDetailV2Response.extendInfo)
-            && Objects.equals(this.errorCode, showTestCaseDetailV2Response.errorCode)
-            && Objects.equals(this.errorMsg, showTestCaseDetailV2Response.errorMsg);
+        ShowTestCaseDetailV2Response that = (ShowTestCaseDetailV2Response) obj;
+        return Objects.equals(this.testcaseId, that.testcaseId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.testcaseNumber, that.testcaseNumber) && Objects.equals(this.rankId, that.rankId)
+            && Objects.equals(this.statusId, that.statusId) && Objects.equals(this.assignedUser, that.assignedUser)
+            && Objects.equals(this.executeCount, that.executeCount) && Objects.equals(this.resultId, that.resultId)
+            && Objects.equals(this.extendInfo, that.extendInfo) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

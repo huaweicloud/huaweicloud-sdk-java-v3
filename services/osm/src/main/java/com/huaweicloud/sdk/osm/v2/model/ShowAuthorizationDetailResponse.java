@@ -433,32 +433,30 @@ public class ShowAuthorizationDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuthorizationDetailResponse showAuthorizationDetailResponse = (ShowAuthorizationDetailResponse) o;
-        return Objects.equals(this.id, showAuthorizationDetailResponse.id)
-            && Objects.equals(this.status, showAuthorizationDetailResponse.status)
-            && Objects.equals(this.incidentId, showAuthorizationDetailResponse.incidentId)
-            && Objects.equals(this.simpleDescription, showAuthorizationDetailResponse.simpleDescription)
-            && Objects.equals(this.resourceTypeId, showAuthorizationDetailResponse.resourceTypeId)
-            && Objects.equals(this.resourceTypeName, showAuthorizationDetailResponse.resourceTypeName)
-            && Objects.equals(this.visitTypeId, showAuthorizationDetailResponse.visitTypeId)
-            && Objects.equals(this.visitTypeName, showAuthorizationDetailResponse.visitTypeName)
-            && Objects.equals(this.authEffectiveTime, showAuthorizationDetailResponse.authEffectiveTime)
-            && Objects.equals(this.authExpireTime, showAuthorizationDetailResponse.authExpireTime)
-            && Objects.equals(this.rejectReason, showAuthorizationDetailResponse.rejectReason)
-            && Objects.equals(this.incidentAuthDetailList, showAuthorizationDetailResponse.incidentAuthDetailList)
-            && Objects.equals(this.xcustomerName, showAuthorizationDetailResponse.xcustomerName)
-            && Objects.equals(this.authHandlerName, showAuthorizationDetailResponse.authHandlerName)
-            && Objects.equals(this.agencyName, showAuthorizationDetailResponse.agencyName)
-            && Objects.equals(this.authDescribe, showAuthorizationDetailResponse.authDescribe)
-            && Objects.equals(this.contentTypeId, showAuthorizationDetailResponse.contentTypeId)
-            && Objects.equals(this.contentTypeName, showAuthorizationDetailResponse.contentTypeName);
+        ShowAuthorizationDetailResponse that = (ShowAuthorizationDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.resourceTypeId, that.resourceTypeId)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.visitTypeId, that.visitTypeId)
+            && Objects.equals(this.visitTypeName, that.visitTypeName)
+            && Objects.equals(this.authEffectiveTime, that.authEffectiveTime)
+            && Objects.equals(this.authExpireTime, that.authExpireTime)
+            && Objects.equals(this.rejectReason, that.rejectReason)
+            && Objects.equals(this.incidentAuthDetailList, that.incidentAuthDetailList)
+            && Objects.equals(this.xcustomerName, that.xcustomerName)
+            && Objects.equals(this.authHandlerName, that.authHandlerName)
+            && Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.authDescribe, that.authDescribe)
+            && Objects.equals(this.contentTypeId, that.contentTypeId)
+            && Objects.equals(this.contentTypeName, that.contentTypeName);
     }
 
     @Override

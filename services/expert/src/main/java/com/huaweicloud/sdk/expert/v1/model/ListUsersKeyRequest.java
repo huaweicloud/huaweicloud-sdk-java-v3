@@ -99,18 +99,16 @@ public class ListUsersKeyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsersKeyRequest listUsersKeyRequest = (ListUsersKeyRequest) o;
-        return Objects.equals(this.appletKey, listUsersKeyRequest.appletKey)
-            && Objects.equals(this.paperId, listUsersKeyRequest.paperId)
-            && Objects.equals(this.offset, listUsersKeyRequest.offset)
-            && Objects.equals(this.limit, listUsersKeyRequest.limit);
+        ListUsersKeyRequest that = (ListUsersKeyRequest) obj;
+        return Objects.equals(this.appletKey, that.appletKey) && Objects.equals(this.paperId, that.paperId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

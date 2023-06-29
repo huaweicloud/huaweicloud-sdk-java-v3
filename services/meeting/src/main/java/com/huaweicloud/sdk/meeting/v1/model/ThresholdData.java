@@ -107,18 +107,17 @@ public class ThresholdData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThresholdData thresholdData = (ThresholdData) o;
-        return Objects.equals(this.receiving, thresholdData.receiving)
-            && Objects.equals(this.receivingDefault, thresholdData.receivingDefault)
-            && Objects.equals(this.sending, thresholdData.sending)
-            && Objects.equals(this.sendingDefault, thresholdData.sendingDefault);
+        ThresholdData that = (ThresholdData) obj;
+        return Objects.equals(this.receiving, that.receiving)
+            && Objects.equals(this.receivingDefault, that.receivingDefault)
+            && Objects.equals(this.sending, that.sending) && Objects.equals(this.sendingDefault, that.sendingDefault);
     }
 
     @Override

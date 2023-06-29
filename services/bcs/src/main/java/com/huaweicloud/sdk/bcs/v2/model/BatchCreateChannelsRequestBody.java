@@ -52,15 +52,15 @@ public class BatchCreateChannelsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateChannelsRequestBody batchCreateChannelsRequestBody = (BatchCreateChannelsRequestBody) o;
-        return Objects.equals(this.channels, batchCreateChannelsRequestBody.channels);
+        BatchCreateChannelsRequestBody that = (BatchCreateChannelsRequestBody) obj;
+        return Objects.equals(this.channels, that.channels);
     }
 
     @Override

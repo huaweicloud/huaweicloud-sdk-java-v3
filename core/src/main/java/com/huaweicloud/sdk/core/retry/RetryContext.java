@@ -9,20 +9,20 @@ import com.huaweicloud.sdk.core.exception.SdkException;
 /**
  * Context used to build retry information.
  *
- * @param <ResT>
+ * @param <T>
  * @author HuaweiCloud_SDK
  */
-public final class RetryContext<ResT> {
+public final class RetryContext<T> {
 
     private final int retriesAttempted;
 
     private final int statusCode;
 
-    private final ResT lastResponse;
+    private final T lastResponse;
 
     private final SdkException lastException;
 
-    private RetryContext(int retriesAttempted, int statusCode, ResT lastResponse, SdkException lastException) {
+    private RetryContext(int retriesAttempted, int statusCode, T lastResponse, SdkException lastException) {
         this.retriesAttempted = retriesAttempted;
         this.statusCode = statusCode;
         this.lastResponse = lastResponse;
@@ -37,7 +37,7 @@ public final class RetryContext<ResT> {
         return statusCode;
     }
 
-    public ResT getLastResponse() {
+    public T getLastResponse() {
         return lastResponse;
     }
 
@@ -45,17 +45,17 @@ public final class RetryContext<ResT> {
         return lastException;
     }
 
-    public static <ResT> Builder<ResT> builder() {
+    public static <B> Builder<B> builder() {
         return new Builder<>();
     }
 
-    public static class Builder<ResT> {
+    public static class Builder<S> {
 
         private int retriesAttempted;
 
         private int statusCode;
 
-        private ResT lastResponse;
+        private S lastResponse;
 
         private SdkException lastException;
 
@@ -63,27 +63,27 @@ public final class RetryContext<ResT> {
 
         }
 
-        public Builder<ResT> withRetriesAttempted(int retriesAttempted) {
+        public Builder<S> withRetriesAttempted(int retriesAttempted) {
             this.retriesAttempted = retriesAttempted;
             return this;
         }
 
-        public Builder<ResT> withStatusCode(int statusCode) {
+        public Builder<S> withStatusCode(int statusCode) {
             this.statusCode = statusCode;
             return this;
         }
 
-        public Builder<ResT> withLastResponse(ResT lastResponse) {
+        public Builder<S> withLastResponse(S lastResponse) {
             this.lastResponse = lastResponse;
             return this;
         }
 
-        public Builder<ResT> withLastException(SdkException lastException) {
+        public Builder<S> withLastException(SdkException lastException) {
             this.lastException = lastException;
             return this;
         }
 
-        public RetryContext<ResT> build() {
+        public RetryContext<S> build() {
             return new RetryContext<>(retriesAttempted, statusCode, lastResponse, lastException);
         }
     }

@@ -124,22 +124,15 @@ public class InstanceCreateReq {
             if (value == null) {
                 return null;
             }
-            SpecIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecIdEnum(value));
         }
 
         public static SpecIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,22 +234,15 @@ public class InstanceCreateReq {
             if (value == null) {
                 return null;
             }
-            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthChargingModeEnum(value));
         }
 
         public static BandwidthChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -328,22 +314,15 @@ public class InstanceCreateReq {
             if (value == null) {
                 return null;
             }
-            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LoadbalancerProviderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LoadbalancerProviderEnum(value));
         }
 
         public static LoadbalancerProviderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LoadbalancerProviderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -426,22 +405,16 @@ public class InstanceCreateReq {
             if (value == null) {
                 return null;
             }
-            IngressBandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IngressBandwidthChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new IngressBandwidthChargingModeEnum(value));
         }
 
         public static IngressBandwidthChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IngressBandwidthChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -837,34 +810,30 @@ public class InstanceCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceCreateReq instanceCreateReq = (InstanceCreateReq) o;
-        return Objects.equals(this.description, instanceCreateReq.description)
-            && Objects.equals(this.maintainBegin, instanceCreateReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, instanceCreateReq.maintainEnd)
-            && Objects.equals(this.instanceName, instanceCreateReq.instanceName)
-            && Objects.equals(this.instanceId, instanceCreateReq.instanceId)
-            && Objects.equals(this.specId, instanceCreateReq.specId)
-            && Objects.equals(this.vpcId, instanceCreateReq.vpcId)
-            && Objects.equals(this.subnetId, instanceCreateReq.subnetId)
-            && Objects.equals(this.securityGroupId, instanceCreateReq.securityGroupId)
-            && Objects.equals(this.eipId, instanceCreateReq.eipId)
-            && Objects.equals(this.enterpriseProjectId, instanceCreateReq.enterpriseProjectId)
-            && Objects.equals(this.availableZoneIds, instanceCreateReq.availableZoneIds)
-            && Objects.equals(this.bandwidthSize, instanceCreateReq.bandwidthSize)
-            && Objects.equals(this.bandwidthChargingMode, instanceCreateReq.bandwidthChargingMode)
-            && Objects.equals(this.ipv6Enable, instanceCreateReq.ipv6Enable)
-            && Objects.equals(this.loadbalancerProvider, instanceCreateReq.loadbalancerProvider)
-            && Objects.equals(this.tags, instanceCreateReq.tags)
-            && Objects.equals(this.vpcepServiceName, instanceCreateReq.vpcepServiceName)
-            && Objects.equals(this.ingressBandwidthSize, instanceCreateReq.ingressBandwidthSize)
-            && Objects.equals(this.ingressBandwidthChargingMode, instanceCreateReq.ingressBandwidthChargingMode);
+        InstanceCreateReq that = (InstanceCreateReq) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.specId, that.specId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.eipId, that.eipId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.availableZoneIds, that.availableZoneIds)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.bandwidthChargingMode, that.bandwidthChargingMode)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.loadbalancerProvider, that.loadbalancerProvider)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.vpcepServiceName, that.vpcepServiceName)
+            && Objects.equals(this.ingressBandwidthSize, that.ingressBandwidthSize)
+            && Objects.equals(this.ingressBandwidthChargingMode, that.ingressBandwidthChargingMode);
     }
 
     @Override

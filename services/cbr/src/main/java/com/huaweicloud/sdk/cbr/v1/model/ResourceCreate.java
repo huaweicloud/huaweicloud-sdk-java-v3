@@ -109,16 +109,16 @@ public class ResourceCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceCreate resourceCreate = (ResourceCreate) o;
-        return Objects.equals(this.extraInfo, resourceCreate.extraInfo) && Objects.equals(this.id, resourceCreate.id)
-            && Objects.equals(this.type, resourceCreate.type) && Objects.equals(this.name, resourceCreate.name);
+        ResourceCreate that = (ResourceCreate) obj;
+        return Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class ChangeVulStatusRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeVulStatusRequestInfo changeVulStatusRequestInfo = (ChangeVulStatusRequestInfo) o;
-        return Objects.equals(this.operateType, changeVulStatusRequestInfo.operateType)
-            && Objects.equals(this.dataList, changeVulStatusRequestInfo.dataList);
+        ChangeVulStatusRequestInfo that = (ChangeVulStatusRequestInfo) obj;
+        return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

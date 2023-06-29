@@ -97,18 +97,16 @@ public class ListEnterpriseOrganizationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseOrganizationsResponse listEnterpriseOrganizationsResponse =
-            (ListEnterpriseOrganizationsResponse) o;
-        return Objects.equals(this.rootId, listEnterpriseOrganizationsResponse.rootId)
-            && Objects.equals(this.rootName, listEnterpriseOrganizationsResponse.rootName)
-            && Objects.equals(this.childNodes, listEnterpriseOrganizationsResponse.childNodes);
+        ListEnterpriseOrganizationsResponse that = (ListEnterpriseOrganizationsResponse) obj;
+        return Objects.equals(this.rootId, that.rootId) && Objects.equals(this.rootName, that.rootName)
+            && Objects.equals(this.childNodes, that.childNodes);
     }
 
     @Override

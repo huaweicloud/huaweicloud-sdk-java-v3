@@ -149,17 +149,17 @@ public class Node {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Node node = (Node) o;
-        return Objects.equals(this.kind, node.kind) && Objects.equals(this.apiVersion, node.apiVersion)
-            && Objects.equals(this.metadata, node.metadata) && Objects.equals(this.spec, node.spec)
-            && Objects.equals(this.status, node.status);
+        Node that = (Node) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -86,22 +86,15 @@ public class ConfigurationSummaryForCreate {
             if (value == null) {
                 return null;
             }
-            DatastoreNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreNameEnum(value));
         }
 
         public static DatastoreNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,21 +246,19 @@ public class ConfigurationSummaryForCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationSummaryForCreate configurationSummaryForCreate = (ConfigurationSummaryForCreate) o;
-        return Objects.equals(this.id, configurationSummaryForCreate.id)
-            && Objects.equals(this.name, configurationSummaryForCreate.name)
-            && Objects.equals(this.description, configurationSummaryForCreate.description)
-            && Objects.equals(this.datastoreVersionName, configurationSummaryForCreate.datastoreVersionName)
-            && Objects.equals(this.datastoreName, configurationSummaryForCreate.datastoreName)
-            && Objects.equals(this.created, configurationSummaryForCreate.created)
-            && Objects.equals(this.updated, configurationSummaryForCreate.updated);
+        ConfigurationSummaryForCreate that = (ConfigurationSummaryForCreate) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated);
     }
 
     @Override

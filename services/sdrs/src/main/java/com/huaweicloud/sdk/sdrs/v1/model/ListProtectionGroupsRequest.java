@@ -92,22 +92,15 @@ public class ListProtectionGroupsRequest {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,20 +233,18 @@ public class ListProtectionGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectionGroupsRequest listProtectionGroupsRequest = (ListProtectionGroupsRequest) o;
-        return Objects.equals(this.limit, listProtectionGroupsRequest.limit)
-            && Objects.equals(this.offset, listProtectionGroupsRequest.offset)
-            && Objects.equals(this.status, listProtectionGroupsRequest.status)
-            && Objects.equals(this.name, listProtectionGroupsRequest.name)
-            && Objects.equals(this.queryType, listProtectionGroupsRequest.queryType)
-            && Objects.equals(this.availabilityZone, listProtectionGroupsRequest.availabilityZone);
+        ListProtectionGroupsRequest that = (ListProtectionGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

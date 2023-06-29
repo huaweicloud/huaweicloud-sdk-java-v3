@@ -253,25 +253,20 @@ public class MyanmarIdcardConfidence {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MyanmarIdcardConfidence myanmarIdcardConfidence = (MyanmarIdcardConfidence) o;
-        return Objects.equals(this.nrcId, myanmarIdcardConfidence.nrcId)
-            && Objects.equals(this.issueDate, myanmarIdcardConfidence.issueDate)
-            && Objects.equals(this.name, myanmarIdcardConfidence.name)
-            && Objects.equals(this.birth, myanmarIdcardConfidence.birth)
-            && Objects.equals(this.bloodlinesReligion, myanmarIdcardConfidence.bloodlinesReligion)
-            && Objects.equals(this.height, myanmarIdcardConfidence.height)
-            && Objects.equals(this.bloodGroup, myanmarIdcardConfidence.bloodGroup)
-            && Objects.equals(this.cardId, myanmarIdcardConfidence.cardId)
-            && Objects.equals(this.nrcIdBack, myanmarIdcardConfidence.nrcIdBack)
-            && Objects.equals(this.profession, myanmarIdcardConfidence.profession)
-            && Objects.equals(this.address, myanmarIdcardConfidence.address);
+        MyanmarIdcardConfidence that = (MyanmarIdcardConfidence) obj;
+        return Objects.equals(this.nrcId, that.nrcId) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.birth, that.birth)
+            && Objects.equals(this.bloodlinesReligion, that.bloodlinesReligion)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bloodGroup, that.bloodGroup)
+            && Objects.equals(this.cardId, that.cardId) && Objects.equals(this.nrcIdBack, that.nrcIdBack)
+            && Objects.equals(this.profession, that.profession) && Objects.equals(this.address, that.address);
     }
 
     @Override

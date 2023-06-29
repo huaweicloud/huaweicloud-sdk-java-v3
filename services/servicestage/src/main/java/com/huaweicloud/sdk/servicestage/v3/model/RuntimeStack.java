@@ -75,22 +75,15 @@ public class RuntimeStack {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployModeEnum(value));
         }
 
         public static DeployModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,17 +174,16 @@ public class RuntimeStack {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuntimeStack runtimeStack = (RuntimeStack) o;
-        return Objects.equals(this.name, runtimeStack.name) && Objects.equals(this.type, runtimeStack.type)
-            && Objects.equals(this.version, runtimeStack.version)
-            && Objects.equals(this.deployMode, runtimeStack.deployMode);
+        RuntimeStack that = (RuntimeStack) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.deployMode, that.deployMode);
     }
 
     @Override

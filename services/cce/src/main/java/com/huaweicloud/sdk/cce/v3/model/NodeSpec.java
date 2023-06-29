@@ -577,26 +577,25 @@ public class NodeSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeSpec nodeSpec = (NodeSpec) o;
-        return Objects.equals(this.flavor, nodeSpec.flavor) && Objects.equals(this.az, nodeSpec.az)
-            && Objects.equals(this.os, nodeSpec.os) && Objects.equals(this.login, nodeSpec.login)
-            && Objects.equals(this.rootVolume, nodeSpec.rootVolume)
-            && Objects.equals(this.dataVolumes, nodeSpec.dataVolumes) && Objects.equals(this.storage, nodeSpec.storage)
-            && Objects.equals(this.publicIP, nodeSpec.publicIP)
-            && Objects.equals(this.nodeNicSpec, nodeSpec.nodeNicSpec) && Objects.equals(this.count, nodeSpec.count)
-            && Objects.equals(this.billingMode, nodeSpec.billingMode) && Objects.equals(this.taints, nodeSpec.taints)
-            && Objects.equals(this.k8sTags, nodeSpec.k8sTags) && Objects.equals(this.ecsGroupId, nodeSpec.ecsGroupId)
-            && Objects.equals(this.dedicatedHostId, nodeSpec.dedicatedHostId)
-            && Objects.equals(this.userTags, nodeSpec.userTags) && Objects.equals(this.runtime, nodeSpec.runtime)
-            && Objects.equals(this.initializedConditions, nodeSpec.initializedConditions)
-            && Objects.equals(this.extendParam, nodeSpec.extendParam);
+        NodeSpec that = (NodeSpec) obj;
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.az, that.az)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.login, that.login)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.storage, that.storage) && Objects.equals(this.publicIP, that.publicIP)
+            && Objects.equals(this.nodeNicSpec, that.nodeNicSpec) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.taints, that.taints)
+            && Objects.equals(this.k8sTags, that.k8sTags) && Objects.equals(this.ecsGroupId, that.ecsGroupId)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
+            && Objects.equals(this.userTags, that.userTags) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.initializedConditions, that.initializedConditions)
+            && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override

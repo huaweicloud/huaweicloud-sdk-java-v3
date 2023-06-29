@@ -87,16 +87,16 @@ public class SearchDistinctPrincipalsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDistinctPrincipalsResponse searchDistinctPrincipalsResponse = (SearchDistinctPrincipalsResponse) o;
-        return Objects.equals(this.distinctSharedPrincipals, searchDistinctPrincipalsResponse.distinctSharedPrincipals)
-            && Objects.equals(this.pageInfo, searchDistinctPrincipalsResponse.pageInfo);
+        SearchDistinctPrincipalsResponse that = (SearchDistinctPrincipalsResponse) obj;
+        return Objects.equals(this.distinctSharedPrincipals, that.distinctSharedPrincipals)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

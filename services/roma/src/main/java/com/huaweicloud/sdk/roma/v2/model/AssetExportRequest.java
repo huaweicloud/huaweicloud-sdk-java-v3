@@ -90,16 +90,15 @@ public class AssetExportRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetExportRequest assetExportRequest = (AssetExportRequest) o;
-        return Objects.equals(this.apps, assetExportRequest.apps)
-            && Objects.equals(this.tasks, assetExportRequest.tasks);
+        AssetExportRequest that = (AssetExportRequest) obj;
+        return Objects.equals(this.apps, that.apps) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

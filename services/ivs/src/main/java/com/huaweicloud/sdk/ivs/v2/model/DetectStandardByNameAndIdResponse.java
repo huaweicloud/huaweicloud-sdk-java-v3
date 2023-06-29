@@ -76,16 +76,15 @@ public class DetectStandardByNameAndIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectStandardByNameAndIdResponse detectStandardByNameAndIdResponse = (DetectStandardByNameAndIdResponse) o;
-        return Objects.equals(this.meta, detectStandardByNameAndIdResponse.meta)
-            && Objects.equals(this.result, detectStandardByNameAndIdResponse.result);
+        DetectStandardByNameAndIdResponse that = (DetectStandardByNameAndIdResponse) obj;
+        return Objects.equals(this.meta, that.meta) && Objects.equals(this.result, that.result);
     }
 
     @Override

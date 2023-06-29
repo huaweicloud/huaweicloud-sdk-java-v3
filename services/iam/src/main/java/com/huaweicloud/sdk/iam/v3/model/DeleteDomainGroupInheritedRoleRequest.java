@@ -77,18 +77,16 @@ public class DeleteDomainGroupInheritedRoleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainGroupInheritedRoleRequest deleteDomainGroupInheritedRoleRequest =
-            (DeleteDomainGroupInheritedRoleRequest) o;
-        return Objects.equals(this.domainId, deleteDomainGroupInheritedRoleRequest.domainId)
-            && Objects.equals(this.groupId, deleteDomainGroupInheritedRoleRequest.groupId)
-            && Objects.equals(this.roleId, deleteDomainGroupInheritedRoleRequest.roleId);
+        DeleteDomainGroupInheritedRoleRequest that = (DeleteDomainGroupInheritedRoleRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

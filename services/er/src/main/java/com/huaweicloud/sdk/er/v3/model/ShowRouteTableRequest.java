@@ -55,16 +55,15 @@ public class ShowRouteTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRouteTableRequest showRouteTableRequest = (ShowRouteTableRequest) o;
-        return Objects.equals(this.erId, showRouteTableRequest.erId)
-            && Objects.equals(this.routeTableId, showRouteTableRequest.routeTableId);
+        ShowRouteTableRequest that = (ShowRouteTableRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.routeTableId, that.routeTableId);
     }
 
     @Override

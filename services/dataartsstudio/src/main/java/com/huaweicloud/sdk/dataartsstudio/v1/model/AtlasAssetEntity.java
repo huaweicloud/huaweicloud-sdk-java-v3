@@ -333,27 +333,22 @@ public class AtlasAssetEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AtlasAssetEntity atlasAssetEntity = (AtlasAssetEntity) o;
-        return Objects.equals(this.typeName, atlasAssetEntity.typeName)
-            && Objects.equals(this.guid, atlasAssetEntity.guid)
-            && Objects.equals(this.version, atlasAssetEntity.version)
-            && Objects.equals(this.updateTime, atlasAssetEntity.updateTime)
-            && Objects.equals(this.updateUser, atlasAssetEntity.updateUser)
-            && Objects.equals(this.createTime, atlasAssetEntity.createTime)
-            && Objects.equals(this.createUser, atlasAssetEntity.createUser)
-            && Objects.equals(this.displayText, atlasAssetEntity.displayText)
-            && Objects.equals(this.status, atlasAssetEntity.status)
-            && Objects.equals(this.classifications, atlasAssetEntity.classifications)
-            && Objects.equals(this.meanings, atlasAssetEntity.meanings)
-            && Objects.equals(this.relationShipAttributes, atlasAssetEntity.relationShipAttributes)
-            && Objects.equals(this.attributes, atlasAssetEntity.attributes);
+        AtlasAssetEntity that = (AtlasAssetEntity) obj;
+        return Objects.equals(this.typeName, that.typeName) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateUser, that.updateUser) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.displayText, that.displayText)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.classifications, that.classifications)
+            && Objects.equals(this.meanings, that.meanings)
+            && Objects.equals(this.relationShipAttributes, that.relationShipAttributes)
+            && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

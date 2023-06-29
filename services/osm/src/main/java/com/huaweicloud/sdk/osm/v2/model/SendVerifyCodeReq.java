@@ -79,17 +79,16 @@ public class SendVerifyCodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendVerifyCodeReq sendVerifyCodeReq = (SendVerifyCodeReq) o;
-        return Objects.equals(this.contactValue, sendVerifyCodeReq.contactValue)
-            && Objects.equals(this.contactWay, sendVerifyCodeReq.contactWay)
-            && Objects.equals(this.areaCode, sendVerifyCodeReq.areaCode);
+        SendVerifyCodeReq that = (SendVerifyCodeReq) obj;
+        return Objects.equals(this.contactValue, that.contactValue) && Objects.equals(this.contactWay, that.contactWay)
+            && Objects.equals(this.areaCode, that.areaCode);
     }
 
     @Override

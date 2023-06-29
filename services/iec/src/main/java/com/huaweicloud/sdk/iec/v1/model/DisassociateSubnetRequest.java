@@ -65,16 +65,15 @@ public class DisassociateSubnetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateSubnetRequest disassociateSubnetRequest = (DisassociateSubnetRequest) o;
-        return Objects.equals(this.routetableId, disassociateSubnetRequest.routetableId)
-            && Objects.equals(this.body, disassociateSubnetRequest.body);
+        DisassociateSubnetRequest that = (DisassociateSubnetRequest) obj;
+        return Objects.equals(this.routetableId, that.routetableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

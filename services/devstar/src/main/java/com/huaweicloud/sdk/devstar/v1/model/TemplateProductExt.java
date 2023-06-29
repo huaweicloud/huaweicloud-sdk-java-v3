@@ -187,22 +187,18 @@ public class TemplateProductExt {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateProductExt templateProductExt = (TemplateProductExt) o;
-        return Objects.equals(this.id, templateProductExt.id)
-            && Objects.equals(this.productshort, templateProductExt.productshort)
-            && Objects.equals(this.productName, templateProductExt.productName)
-            && Objects.equals(this.homeLink, templateProductExt.homeLink)
-            && Objects.equals(this.apiLink, templateProductExt.apiLink)
-            && Objects.equals(this.sdkLink, templateProductExt.sdkLink)
-            && Objects.equals(this.docLink, templateProductExt.docLink)
-            && Objects.equals(this.logoLink, templateProductExt.logoLink);
+        TemplateProductExt that = (TemplateProductExt) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.productshort, that.productshort)
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.homeLink, that.homeLink)
+            && Objects.equals(this.apiLink, that.apiLink) && Objects.equals(this.sdkLink, that.sdkLink)
+            && Objects.equals(this.docLink, that.docLink) && Objects.equals(this.logoLink, that.logoLink);
     }
 
     @Override

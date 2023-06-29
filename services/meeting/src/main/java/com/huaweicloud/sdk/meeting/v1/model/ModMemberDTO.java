@@ -121,18 +121,17 @@ public class ModMemberDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModMemberDTO modMemberDTO = (ModMemberDTO) o;
-        return Objects.equals(this.name, modMemberDTO.name)
-            && Objects.equals(this.englishName, modMemberDTO.englishName)
-            && Objects.equals(this.signature, modMemberDTO.signature) && Objects.equals(this.title, modMemberDTO.title)
-            && Objects.equals(this.desc, modMemberDTO.desc);
+        ModMemberDTO that = (ModMemberDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

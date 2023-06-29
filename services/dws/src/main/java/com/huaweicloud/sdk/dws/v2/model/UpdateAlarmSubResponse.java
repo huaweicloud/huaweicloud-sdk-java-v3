@@ -254,25 +254,21 @@ public class UpdateAlarmSubResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlarmSubResponse updateAlarmSubResponse = (UpdateAlarmSubResponse) o;
-        return Objects.equals(this.id, updateAlarmSubResponse.id)
-            && Objects.equals(this.name, updateAlarmSubResponse.name)
-            && Objects.equals(this.enable, updateAlarmSubResponse.enable)
-            && Objects.equals(this.alarmLevel, updateAlarmSubResponse.alarmLevel)
-            && Objects.equals(this.projectId, updateAlarmSubResponse.projectId)
-            && Objects.equals(this.nameSpace, updateAlarmSubResponse.nameSpace)
-            && Objects.equals(this.notificationTarget, updateAlarmSubResponse.notificationTarget)
-            && Objects.equals(this.notificationTargetName, updateAlarmSubResponse.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, updateAlarmSubResponse.notificationTargetType)
-            && Objects.equals(this.language, updateAlarmSubResponse.language)
-            && Objects.equals(this.timeZone, updateAlarmSubResponse.timeZone);
+        UpdateAlarmSubResponse that = (UpdateAlarmSubResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

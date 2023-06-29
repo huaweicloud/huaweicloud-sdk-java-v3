@@ -34,15 +34,15 @@ public class ValidateCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateCodeResponse validateCodeResponse = (ValidateCodeResponse) o;
-        return Objects.equals(this.ticket, validateCodeResponse.ticket);
+        ValidateCodeResponse that = (ValidateCodeResponse) obj;
+        return Objects.equals(this.ticket, that.ticket);
     }
 
     @Override

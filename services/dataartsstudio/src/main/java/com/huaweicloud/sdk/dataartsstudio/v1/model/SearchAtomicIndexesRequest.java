@@ -104,22 +104,15 @@ public class SearchAtomicIndexesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,25 +353,20 @@ public class SearchAtomicIndexesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchAtomicIndexesRequest searchAtomicIndexesRequest = (SearchAtomicIndexesRequest) o;
-        return Objects.equals(this.workspace, searchAtomicIndexesRequest.workspace)
-            && Objects.equals(this.name, searchAtomicIndexesRequest.name)
-            && Objects.equals(this.createBy, searchAtomicIndexesRequest.createBy)
-            && Objects.equals(this.approver, searchAtomicIndexesRequest.approver)
-            && Objects.equals(this.status, searchAtomicIndexesRequest.status)
-            && Objects.equals(this.beginTime, searchAtomicIndexesRequest.beginTime)
-            && Objects.equals(this.endTime, searchAtomicIndexesRequest.endTime)
-            && Objects.equals(this.l3Id, searchAtomicIndexesRequest.l3Id)
-            && Objects.equals(this.tableId, searchAtomicIndexesRequest.tableId)
-            && Objects.equals(this.limit, searchAtomicIndexesRequest.limit)
-            && Objects.equals(this.offset, searchAtomicIndexesRequest.offset);
+        SearchAtomicIndexesRequest that = (SearchAtomicIndexesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.l3Id, that.l3Id)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

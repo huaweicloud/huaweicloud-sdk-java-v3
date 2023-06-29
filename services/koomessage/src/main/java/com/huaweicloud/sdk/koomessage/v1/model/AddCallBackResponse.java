@@ -88,17 +88,16 @@ public class AddCallBackResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCallBackResponse addCallBackResponse = (AddCallBackResponse) o;
-        return Objects.equals(this.status, addCallBackResponse.status)
-            && Objects.equals(this.message, addCallBackResponse.message)
-            && Objects.equals(this.data, addCallBackResponse.data);
+        AddCallBackResponse that = (AddCallBackResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

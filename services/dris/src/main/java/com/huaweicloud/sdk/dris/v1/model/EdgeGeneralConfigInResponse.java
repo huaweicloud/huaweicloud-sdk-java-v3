@@ -213,23 +213,22 @@ public class EdgeGeneralConfigInResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeGeneralConfigInResponse edgeGeneralConfigInResponse = (EdgeGeneralConfigInResponse) o;
-        return Objects.equals(this.avpEnabled, edgeGeneralConfigInResponse.avpEnabled)
-            && Objects.equals(this.rsmEnabled, edgeGeneralConfigInResponse.rsmEnabled)
-            && Objects.equals(this.timeCompensate, edgeGeneralConfigInResponse.timeCompensate)
-            && Objects.equals(this.rsiPositioningEnabled, edgeGeneralConfigInResponse.rsiPositioningEnabled)
-            && Objects.equals(this.logLevel, edgeGeneralConfigInResponse.logLevel)
-            && Objects.equals(this.roadDetectionLength, edgeGeneralConfigInResponse.roadDetectionLength)
-            && Objects.equals(this.rampDetectionLength, edgeGeneralConfigInResponse.rampDetectionLength)
-            && Objects.equals(this.gat1400Username, edgeGeneralConfigInResponse.gat1400Username)
-            && Objects.equals(this.userName, edgeGeneralConfigInResponse.userName);
+        EdgeGeneralConfigInResponse that = (EdgeGeneralConfigInResponse) obj;
+        return Objects.equals(this.avpEnabled, that.avpEnabled) && Objects.equals(this.rsmEnabled, that.rsmEnabled)
+            && Objects.equals(this.timeCompensate, that.timeCompensate)
+            && Objects.equals(this.rsiPositioningEnabled, that.rsiPositioningEnabled)
+            && Objects.equals(this.logLevel, that.logLevel)
+            && Objects.equals(this.roadDetectionLength, that.roadDetectionLength)
+            && Objects.equals(this.rampDetectionLength, that.rampDetectionLength)
+            && Objects.equals(this.gat1400Username, that.gat1400Username)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

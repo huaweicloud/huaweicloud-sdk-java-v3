@@ -250,24 +250,20 @@ public class UpdateAlertNoticeConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlertNoticeConfigRequestBody updateAlertNoticeConfigRequestBody = (UpdateAlertNoticeConfigRequestBody) o;
-        return Objects.equals(this.name, updateAlertNoticeConfigRequestBody.name)
-            && Objects.equals(this.enabled, updateAlertNoticeConfigRequestBody.enabled)
-            && Objects.equals(this.topicUrn, updateAlertNoticeConfigRequestBody.topicUrn)
-            && Objects.equals(this.sendfreq, updateAlertNoticeConfigRequestBody.sendfreq)
-            && Objects.equals(this.locale, updateAlertNoticeConfigRequestBody.locale)
-            && Objects.equals(this.times, updateAlertNoticeConfigRequestBody.times)
-            && Objects.equals(this.threat, updateAlertNoticeConfigRequestBody.threat)
-            && Objects.equals(this.noticeClass, updateAlertNoticeConfigRequestBody.noticeClass)
-            && Objects.equals(this.nearlyExpiredTime, updateAlertNoticeConfigRequestBody.nearlyExpiredTime)
-            && Objects.equals(this.isAllEnterpriseProject, updateAlertNoticeConfigRequestBody.isAllEnterpriseProject);
+        UpdateAlertNoticeConfigRequestBody that = (UpdateAlertNoticeConfigRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.sendfreq, that.sendfreq)
+            && Objects.equals(this.locale, that.locale) && Objects.equals(this.times, that.times)
+            && Objects.equals(this.threat, that.threat) && Objects.equals(this.noticeClass, that.noticeClass)
+            && Objects.equals(this.nearlyExpiredTime, that.nearlyExpiredTime)
+            && Objects.equals(this.isAllEnterpriseProject, that.isAllEnterpriseProject);
     }
 
     @Override

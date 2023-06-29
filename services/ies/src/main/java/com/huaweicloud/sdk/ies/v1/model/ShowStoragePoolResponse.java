@@ -44,15 +44,15 @@ public class ShowStoragePoolResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStoragePoolResponse showStoragePoolResponse = (ShowStoragePoolResponse) o;
-        return Objects.equals(this.storagePool, showStoragePoolResponse.storagePool);
+        ShowStoragePoolResponse that = (ShowStoragePoolResponse) obj;
+        return Objects.equals(this.storagePool, that.storagePool);
     }
 
     @Override

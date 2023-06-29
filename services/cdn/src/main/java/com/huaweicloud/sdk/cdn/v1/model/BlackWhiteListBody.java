@@ -74,16 +74,15 @@ public class BlackWhiteListBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BlackWhiteListBody blackWhiteListBody = (BlackWhiteListBody) o;
-        return Objects.equals(this.type, blackWhiteListBody.type)
-            && Objects.equals(this.ipList, blackWhiteListBody.ipList);
+        BlackWhiteListBody that = (BlackWhiteListBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.ipList, that.ipList);
     }
 
     @Override

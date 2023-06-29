@@ -407,29 +407,25 @@ public class PolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyOption policyOption = (PolicyOption) o;
-        return Objects.equals(this.webattack, policyOption.webattack)
-            && Objects.equals(this.common, policyOption.common) && Objects.equals(this.crawler, policyOption.crawler)
-            && Objects.equals(this.crawlerEngine, policyOption.crawlerEngine)
-            && Objects.equals(this.crawlerScanner, policyOption.crawlerScanner)
-            && Objects.equals(this.crawlerScript, policyOption.crawlerScript)
-            && Objects.equals(this.crawlerOther, policyOption.crawlerOther)
-            && Objects.equals(this.webshell, policyOption.webshell) && Objects.equals(this.cc, policyOption.cc)
-            && Objects.equals(this.custom, policyOption.custom)
-            && Objects.equals(this.whiteblackip, policyOption.whiteblackip)
-            && Objects.equals(this.geoip, policyOption.geoip) && Objects.equals(this.ignore, policyOption.ignore)
-            && Objects.equals(this.privacy, policyOption.privacy)
-            && Objects.equals(this.antitamper, policyOption.antitamper)
-            && Objects.equals(this.antileakage, policyOption.antileakage)
-            && Objects.equals(this.botEnable, policyOption.botEnable)
-            && Objects.equals(this.modulexEnabled, policyOption.modulexEnabled);
+        PolicyOption that = (PolicyOption) obj;
+        return Objects.equals(this.webattack, that.webattack) && Objects.equals(this.common, that.common)
+            && Objects.equals(this.crawler, that.crawler) && Objects.equals(this.crawlerEngine, that.crawlerEngine)
+            && Objects.equals(this.crawlerScanner, that.crawlerScanner)
+            && Objects.equals(this.crawlerScript, that.crawlerScript)
+            && Objects.equals(this.crawlerOther, that.crawlerOther) && Objects.equals(this.webshell, that.webshell)
+            && Objects.equals(this.cc, that.cc) && Objects.equals(this.custom, that.custom)
+            && Objects.equals(this.whiteblackip, that.whiteblackip) && Objects.equals(this.geoip, that.geoip)
+            && Objects.equals(this.ignore, that.ignore) && Objects.equals(this.privacy, that.privacy)
+            && Objects.equals(this.antitamper, that.antitamper) && Objects.equals(this.antileakage, that.antileakage)
+            && Objects.equals(this.botEnable, that.botEnable)
+            && Objects.equals(this.modulexEnabled, that.modulexEnabled);
     }
 
     @Override

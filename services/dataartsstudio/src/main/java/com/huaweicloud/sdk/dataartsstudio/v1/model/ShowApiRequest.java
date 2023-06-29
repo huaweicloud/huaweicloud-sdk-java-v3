@@ -55,16 +55,15 @@ public class ShowApiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApiRequest showApiRequest = (ShowApiRequest) o;
-        return Objects.equals(this.workspace, showApiRequest.workspace)
-            && Objects.equals(this.apiId, showApiRequest.apiId);
+        ShowApiRequest that = (ShowApiRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.apiId, that.apiId);
     }
 
     @Override

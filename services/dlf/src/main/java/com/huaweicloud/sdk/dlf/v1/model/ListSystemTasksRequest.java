@@ -55,16 +55,15 @@ public class ListSystemTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemTasksRequest listSystemTasksRequest = (ListSystemTasksRequest) o;
-        return Objects.equals(this.workspace, listSystemTasksRequest.workspace)
-            && Objects.equals(this.taskId, listSystemTasksRequest.taskId);
+        ListSystemTasksRequest that = (ListSystemTasksRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

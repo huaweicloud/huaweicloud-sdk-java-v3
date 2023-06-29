@@ -169,21 +169,18 @@ public class ShowBatchTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchTaskRequest showBatchTaskRequest = (ShowBatchTaskRequest) o;
-        return Objects.equals(this.instanceId, showBatchTaskRequest.instanceId)
-            && Objects.equals(this.taskId, showBatchTaskRequest.taskId)
-            && Objects.equals(this.taskDetailStatus, showBatchTaskRequest.taskDetailStatus)
-            && Objects.equals(this.target, showBatchTaskRequest.target)
-            && Objects.equals(this.limit, showBatchTaskRequest.limit)
-            && Objects.equals(this.marker, showBatchTaskRequest.marker)
-            && Objects.equals(this.offset, showBatchTaskRequest.offset);
+        ShowBatchTaskRequest that = (ShowBatchTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskDetailStatus, that.taskDetailStatus) && Objects.equals(this.target, that.target)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

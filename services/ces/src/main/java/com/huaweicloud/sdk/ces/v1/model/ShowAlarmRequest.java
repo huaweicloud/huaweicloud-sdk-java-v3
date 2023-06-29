@@ -33,15 +33,15 @@ public class ShowAlarmRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlarmRequest showAlarmRequest = (ShowAlarmRequest) o;
-        return Objects.equals(this.alarmId, showAlarmRequest.alarmId);
+        ShowAlarmRequest that = (ShowAlarmRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId);
     }
 
     @Override

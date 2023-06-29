@@ -87,17 +87,16 @@ public class CreateResJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResJobRequest createResJobRequest = (CreateResJobRequest) o;
-        return Objects.equals(this.resourceId, createResJobRequest.resourceId)
-            && Objects.equals(this.workspaceId, createResJobRequest.workspaceId)
-            && Objects.equals(this.body, createResJobRequest.body);
+        CreateResJobRequest that = (CreateResJobRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

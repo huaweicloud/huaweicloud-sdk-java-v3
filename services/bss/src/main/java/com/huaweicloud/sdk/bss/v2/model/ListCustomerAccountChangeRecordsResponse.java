@@ -98,18 +98,16 @@ public class ListCustomerAccountChangeRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerAccountChangeRecordsResponse listCustomerAccountChangeRecordsResponse =
-            (ListCustomerAccountChangeRecordsResponse) o;
-        return Objects.equals(this.totalCount, listCustomerAccountChangeRecordsResponse.totalCount)
-            && Objects.equals(this.currency, listCustomerAccountChangeRecordsResponse.currency)
-            && Objects.equals(this.records, listCustomerAccountChangeRecordsResponse.records);
+        ListCustomerAccountChangeRecordsResponse that = (ListCustomerAccountChangeRecordsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

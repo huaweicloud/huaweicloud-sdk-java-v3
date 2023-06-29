@@ -52,15 +52,15 @@ public class BatchSetupSyncPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSetupSyncPolicyReq batchSetupSyncPolicyReq = (BatchSetupSyncPolicyReq) o;
-        return Objects.equals(this.jobs, batchSetupSyncPolicyReq.jobs);
+        BatchSetupSyncPolicyReq that = (BatchSetupSyncPolicyReq) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

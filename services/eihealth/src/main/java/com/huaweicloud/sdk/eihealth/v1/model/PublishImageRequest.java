@@ -65,16 +65,15 @@ public class PublishImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishImageRequest publishImageRequest = (PublishImageRequest) o;
-        return Objects.equals(this.eihealthProjectId, publishImageRequest.eihealthProjectId)
-            && Objects.equals(this.body, publishImageRequest.body);
+        PublishImageRequest that = (PublishImageRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

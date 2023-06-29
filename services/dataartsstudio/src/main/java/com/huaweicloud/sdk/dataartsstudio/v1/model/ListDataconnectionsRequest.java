@@ -121,19 +121,17 @@ public class ListDataconnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataconnectionsRequest listDataconnectionsRequest = (ListDataconnectionsRequest) o;
-        return Objects.equals(this.workspace, listDataconnectionsRequest.workspace)
-            && Objects.equals(this.name, listDataconnectionsRequest.name)
-            && Objects.equals(this.type, listDataconnectionsRequest.type)
-            && Objects.equals(this.limit, listDataconnectionsRequest.limit)
-            && Objects.equals(this.offset, listDataconnectionsRequest.offset);
+        ListDataconnectionsRequest that = (ListDataconnectionsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

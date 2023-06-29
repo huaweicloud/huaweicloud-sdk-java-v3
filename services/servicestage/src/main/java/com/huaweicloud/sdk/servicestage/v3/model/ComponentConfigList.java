@@ -99,18 +99,16 @@ public class ComponentConfigList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentConfigList componentConfigList = (ComponentConfigList) o;
-        return Objects.equals(this.version, componentConfigList.version)
-            && Objects.equals(this.createTime, componentConfigList.createTime)
-            && Objects.equals(this.creator, componentConfigList.creator)
-            && Objects.equals(this.source, componentConfigList.source);
+        ComponentConfigList that = (ComponentConfigList) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.source, that.source);
     }
 
     @Override

@@ -216,21 +216,19 @@ public class RepositoryTemplateVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepositoryTemplateVO repositoryTemplateVO = (RepositoryTemplateVO) o;
-        return Objects.equals(this.templateType, repositoryTemplateVO.templateType)
-            && Objects.equals(this.codeTitle, repositoryTemplateVO.codeTitle)
-            && Objects.equals(this.creatorName, repositoryTemplateVO.creatorName)
-            && Objects.equals(this.codeDescription, repositoryTemplateVO.codeDescription)
-            && Objects.equals(this.languages, repositoryTemplateVO.languages)
-            && Objects.equals(this.plateform, repositoryTemplateVO.plateform)
-            && Objects.equals(this.entertype, repositoryTemplateVO.entertype);
+        RepositoryTemplateVO that = (RepositoryTemplateVO) obj;
+        return Objects.equals(this.templateType, that.templateType) && Objects.equals(this.codeTitle, that.codeTitle)
+            && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.codeDescription, that.codeDescription)
+            && Objects.equals(this.languages, that.languages) && Objects.equals(this.plateform, that.plateform)
+            && Objects.equals(this.entertype, that.entertype);
     }
 
     @Override

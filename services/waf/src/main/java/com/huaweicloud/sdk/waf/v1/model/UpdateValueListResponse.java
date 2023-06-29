@@ -163,20 +163,17 @@ public class UpdateValueListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateValueListResponse updateValueListResponse = (UpdateValueListResponse) o;
-        return Objects.equals(this.id, updateValueListResponse.id)
-            && Objects.equals(this.name, updateValueListResponse.name)
-            && Objects.equals(this.type, updateValueListResponse.type)
-            && Objects.equals(this.description, updateValueListResponse.description)
-            && Objects.equals(this.values, updateValueListResponse.values)
-            && Objects.equals(this.producer, updateValueListResponse.producer);
+        UpdateValueListResponse that = (UpdateValueListResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.producer, that.producer);
     }
 
     @Override

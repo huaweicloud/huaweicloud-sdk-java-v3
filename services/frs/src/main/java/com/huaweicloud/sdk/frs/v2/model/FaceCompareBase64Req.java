@@ -55,16 +55,16 @@ public class FaceCompareBase64Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceCompareBase64Req faceCompareBase64Req = (FaceCompareBase64Req) o;
-        return Objects.equals(this.image2Base64, faceCompareBase64Req.image2Base64)
-            && Objects.equals(this.image1Base64, faceCompareBase64Req.image1Base64);
+        FaceCompareBase64Req that = (FaceCompareBase64Req) obj;
+        return Objects.equals(this.image2Base64, that.image2Base64)
+            && Objects.equals(this.image1Base64, that.image1Base64);
     }
 
     @Override

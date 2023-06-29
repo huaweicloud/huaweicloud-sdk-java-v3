@@ -45,15 +45,15 @@ public class ShowOrganizationalUnitResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOrganizationalUnitResponse showOrganizationalUnitResponse = (ShowOrganizationalUnitResponse) o;
-        return Objects.equals(this.organizationalUnit, showOrganizationalUnitResponse.organizationalUnit);
+        ShowOrganizationalUnitResponse that = (ShowOrganizationalUnitResponse) obj;
+        return Objects.equals(this.organizationalUnit, that.organizationalUnit);
     }
 
     @Override

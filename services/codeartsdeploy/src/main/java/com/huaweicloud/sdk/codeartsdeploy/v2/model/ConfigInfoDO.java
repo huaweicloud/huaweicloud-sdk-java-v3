@@ -80,22 +80,15 @@ public class ConfigInfoDO {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class ConfigInfoDO {
             if (value == null) {
                 return null;
             }
-            StaticStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StaticStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StaticStatusEnum(value));
         }
 
         public static StaticStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StaticStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -355,19 +341,18 @@ public class ConfigInfoDO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigInfoDO configInfoDO = (ConfigInfoDO) o;
-        return Objects.equals(this.name, configInfoDO.name) && Objects.equals(this.type, configInfoDO.type)
-            && Objects.equals(this.description, configInfoDO.description)
-            && Objects.equals(this.value, configInfoDO.value) && Objects.equals(this.taskId, configInfoDO.taskId)
-            && Objects.equals(this.staticStatus, configInfoDO.staticStatus)
-            && Objects.equals(this.limits, configInfoDO.limits);
+        ConfigInfoDO that = (ConfigInfoDO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.staticStatus, that.staticStatus)
+            && Objects.equals(this.limits, that.limits);
     }
 
     @Override

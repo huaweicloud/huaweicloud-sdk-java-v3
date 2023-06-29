@@ -99,17 +99,16 @@ public class EsMatchInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EsMatchInfo esMatchInfo = (EsMatchInfo) o;
-        return Objects.equals(this.fieldName, esMatchInfo.fieldName)
-            && Objects.equals(this.ruleName, esMatchInfo.ruleName) && Objects.equals(this.ruleId, esMatchInfo.ruleId)
-            && Objects.equals(this.ruleRiskLevel, esMatchInfo.ruleRiskLevel);
+        EsMatchInfo that = (EsMatchInfo) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleRiskLevel, that.ruleRiskLevel);
     }
 
     @Override

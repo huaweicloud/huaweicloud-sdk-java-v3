@@ -354,25 +354,25 @@ public class RsuDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RsuDTO rsuDTO = (RsuDTO) o;
-        return Objects.equals(this.rsuId, rsuDTO.rsuId) && Objects.equals(this.name, rsuDTO.name)
-            && Objects.equals(this.description, rsuDTO.description) && Objects.equals(this.esn, rsuDTO.esn)
-            && Objects.equals(this.lastModifiedTime, rsuDTO.lastModifiedTime)
-            && Objects.equals(this.createdTime, rsuDTO.createdTime)
-            && Objects.equals(this.lastOnlineTime, rsuDTO.lastOnlineTime) && Objects.equals(this.ip, rsuDTO.ip)
-            && Objects.equals(this.positionDescription, rsuDTO.positionDescription)
-            && Objects.equals(this.location, rsuDTO.location) && Objects.equals(this.status, rsuDTO.status)
-            && Objects.equals(this.rsuModelId, rsuDTO.rsuModelId)
-            && Objects.equals(this.intersectionId, rsuDTO.intersectionId)
-            && Objects.equals(this.relatedEdgeNum, rsuDTO.relatedEdgeNum)
-            && Objects.equals(this.softwareVersion, rsuDTO.softwareVersion);
+        RsuDTO that = (RsuDTO) obj;
+        return Objects.equals(this.rsuId, that.rsuId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.rsuModelId, that.rsuModelId)
+            && Objects.equals(this.intersectionId, that.intersectionId)
+            && Objects.equals(this.relatedEdgeNum, that.relatedEdgeNum)
+            && Objects.equals(this.softwareVersion, that.softwareVersion);
     }
 
     @Override

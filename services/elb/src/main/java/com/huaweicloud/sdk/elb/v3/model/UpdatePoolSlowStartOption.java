@@ -57,16 +57,15 @@ public class UpdatePoolSlowStartOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePoolSlowStartOption updatePoolSlowStartOption = (UpdatePoolSlowStartOption) o;
-        return Objects.equals(this.enable, updatePoolSlowStartOption.enable)
-            && Objects.equals(this.duration, updatePoolSlowStartOption.duration);
+        UpdatePoolSlowStartOption that = (UpdatePoolSlowStartOption) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

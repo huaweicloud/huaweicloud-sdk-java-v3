@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsReqDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建边缘模块请求结构体
  */
-public class CreateEdgeModuleReqDTO  {
-
+public class CreateEdgeModuleReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_version")
-    
+    @JsonProperty(value = "app_version")
 
     private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_name")
-    
+    @JsonProperty(value = "module_name")
 
     private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_settings")
-    
+    @JsonProperty(value = "container_settings")
 
     private ContainerSettingsReqDTO containerSettings;
 
@@ -46,9 +35,6 @@ public class CreateEdgeModuleReqDTO  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘应用名称
@@ -62,15 +48,10 @@ public class CreateEdgeModuleReqDTO  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public CreateEdgeModuleReqDTO withAppVersion(String appVersion) {
         this.appVersion = appVersion;
         return this;
     }
-
-    
-
 
     /**
      * 边缘应用版本
@@ -84,15 +65,10 @@ public class CreateEdgeModuleReqDTO  {
         this.appVersion = appVersion;
     }
 
-    
-
     public CreateEdgeModuleReqDTO withModuleName(String moduleName) {
         this.moduleName = moduleName;
         return this;
     }
-
-    
-
 
     /**
      * 边缘模块名称
@@ -106,22 +82,19 @@ public class CreateEdgeModuleReqDTO  {
         this.moduleName = moduleName;
     }
 
-    
-
     public CreateEdgeModuleReqDTO withContainerSettings(ContainerSettingsReqDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
     }
 
     public CreateEdgeModuleReqDTO withContainerSettings(Consumer<ContainerSettingsReqDTO> containerSettingsSetter) {
-        if(this.containerSettings == null ){
+        if (this.containerSettings == null) {
             this.containerSettings = new ContainerSettingsReqDTO();
             containerSettingsSetter.accept(this.containerSettings);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get containerSettings
@@ -135,26 +108,25 @@ public class CreateEdgeModuleReqDTO  {
         this.containerSettings = containerSettings;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeModuleReqDTO createEdgeModuleReqDTO = (CreateEdgeModuleReqDTO) o;
-        return Objects.equals(this.edgeAppId, createEdgeModuleReqDTO.edgeAppId) &&
-            Objects.equals(this.appVersion, createEdgeModuleReqDTO.appVersion) &&
-            Objects.equals(this.moduleName, createEdgeModuleReqDTO.moduleName) &&
-            Objects.equals(this.containerSettings, createEdgeModuleReqDTO.containerSettings);
+        CreateEdgeModuleReqDTO that = (CreateEdgeModuleReqDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.containerSettings, that.containerSettings);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeAppId, appVersion, moduleName, containerSettings);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,6 +138,7 @@ public class CreateEdgeModuleReqDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -176,8 +149,5 @@ public class CreateEdgeModuleReqDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

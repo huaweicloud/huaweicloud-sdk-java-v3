@@ -171,21 +171,20 @@ public class Bandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Bandwidth bandwidth = (Bandwidth) o;
-        return Objects.equals(this.bandWidthName, bandwidth.bandWidthName)
-            && Objects.equals(this.bandWidthId, bandwidth.bandWidthId)
-            && Objects.equals(this.bandWidthSize, bandwidth.bandWidthSize)
-            && Objects.equals(this.bandWidthChargeMode, bandwidth.bandWidthChargeMode)
-            && Objects.equals(this.bandWidthShareType, bandwidth.bandWidthShareType)
-            && Objects.equals(this.createTime, bandwidth.createTime)
-            && Objects.equals(this.updateTime, bandwidth.updateTime);
+        Bandwidth that = (Bandwidth) obj;
+        return Objects.equals(this.bandWidthName, that.bandWidthName)
+            && Objects.equals(this.bandWidthId, that.bandWidthId)
+            && Objects.equals(this.bandWidthSize, that.bandWidthSize)
+            && Objects.equals(this.bandWidthChargeMode, that.bandWidthChargeMode)
+            && Objects.equals(this.bandWidthShareType, that.bandWidthShareType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

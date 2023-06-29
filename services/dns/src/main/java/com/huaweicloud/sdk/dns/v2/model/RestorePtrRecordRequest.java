@@ -87,17 +87,16 @@ public class RestorePtrRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestorePtrRecordRequest restorePtrRecordRequest = (RestorePtrRecordRequest) o;
-        return Objects.equals(this.region, restorePtrRecordRequest.region)
-            && Objects.equals(this.floatingipId, restorePtrRecordRequest.floatingipId)
-            && Objects.equals(this.body, restorePtrRecordRequest.body);
+        RestorePtrRecordRequest that = (RestorePtrRecordRequest) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.floatingipId, that.floatingipId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

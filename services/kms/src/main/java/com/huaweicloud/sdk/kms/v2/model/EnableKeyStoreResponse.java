@@ -44,15 +44,15 @@ public class EnableKeyStoreResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableKeyStoreResponse enableKeyStoreResponse = (EnableKeyStoreResponse) o;
-        return Objects.equals(this.keystore, enableKeyStoreResponse.keystore);
+        EnableKeyStoreResponse that = (EnableKeyStoreResponse) obj;
+        return Objects.equals(this.keystore, that.keystore);
     }
 
     @Override

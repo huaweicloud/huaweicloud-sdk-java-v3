@@ -73,22 +73,15 @@ public class MultiTaskRequestBody {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class MultiTaskRequestBody {
             if (value == null) {
                 return null;
             }
-            OperationTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypesEnum(value));
         }
 
         public static OperationTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -371,22 +357,18 @@ public class MultiTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskRequestBody multiTaskRequestBody = (MultiTaskRequestBody) o;
-        return Objects.equals(this.taskName, multiTaskRequestBody.taskName)
-            && Objects.equals(this.taskId, multiTaskRequestBody.taskId)
-            && Objects.equals(this.taskType, multiTaskRequestBody.taskType)
-            && Objects.equals(this.description, multiTaskRequestBody.description)
-            && Objects.equals(this.taskTag, multiTaskRequestBody.taskTag)
-            && Objects.equals(this.operationTypes, multiTaskRequestBody.operationTypes)
-            && Objects.equals(this.sourceAppId, multiTaskRequestBody.sourceAppId)
-            && Objects.equals(this.targetAppId, multiTaskRequestBody.targetAppId);
+        MultiTaskRequestBody that = (MultiTaskRequestBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.taskTag, that.taskTag) && Objects.equals(this.operationTypes, that.operationTypes)
+            && Objects.equals(this.sourceAppId, that.sourceAppId) && Objects.equals(this.targetAppId, that.targetAppId);
     }
 
     @Override

@@ -185,19 +185,19 @@ public class ShowSecAppTaskResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecAppTaskResultResponse showSecAppTaskResultResponse = (ShowSecAppTaskResultResponse) o;
-        return Objects.equals(this.basicInfo, showSecAppTaskResultResponse.basicInfo)
-            && Objects.equals(this.apkComponentInfo, showSecAppTaskResultResponse.apkComponentInfo)
-            && Objects.equals(this.hapComponentInfo, showSecAppTaskResultResponse.hapComponentInfo)
-            && Objects.equals(this.vulnList, showSecAppTaskResultResponse.vulnList)
-            && Objects.equals(this.privacyComplianceList, showSecAppTaskResultResponse.privacyComplianceList);
+        ShowSecAppTaskResultResponse that = (ShowSecAppTaskResultResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo)
+            && Objects.equals(this.apkComponentInfo, that.apkComponentInfo)
+            && Objects.equals(this.hapComponentInfo, that.hapComponentInfo)
+            && Objects.equals(this.vulnList, that.vulnList)
+            && Objects.equals(this.privacyComplianceList, that.privacyComplianceList);
     }
 
     @Override

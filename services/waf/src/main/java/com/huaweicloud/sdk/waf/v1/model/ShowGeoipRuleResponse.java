@@ -144,20 +144,17 @@ public class ShowGeoipRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGeoipRuleResponse showGeoipRuleResponse = (ShowGeoipRuleResponse) o;
-        return Objects.equals(this.id, showGeoipRuleResponse.id)
-            && Objects.equals(this.policyid, showGeoipRuleResponse.policyid)
-            && Objects.equals(this.geoip, showGeoipRuleResponse.geoip)
-            && Objects.equals(this.white, showGeoipRuleResponse.white)
-            && Objects.equals(this.status, showGeoipRuleResponse.status)
-            && Objects.equals(this.timestamp, showGeoipRuleResponse.timestamp);
+        ShowGeoipRuleResponse that = (ShowGeoipRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.geoip, that.geoip) && Objects.equals(this.white, that.white)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

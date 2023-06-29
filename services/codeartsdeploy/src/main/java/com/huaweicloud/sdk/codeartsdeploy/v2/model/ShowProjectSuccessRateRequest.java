@@ -31,7 +31,7 @@ public class ShowProjectSuccessRateRequest {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -77,17 +77,16 @@ public class ShowProjectSuccessRateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectSuccessRateRequest showProjectSuccessRateRequest = (ShowProjectSuccessRateRequest) o;
-        return Objects.equals(this.projectId, showProjectSuccessRateRequest.projectId)
-            && Objects.equals(this.startDate, showProjectSuccessRateRequest.startDate)
-            && Objects.equals(this.endDate, showProjectSuccessRateRequest.endDate);
+        ShowProjectSuccessRateRequest that = (ShowProjectSuccessRateRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class PostPaidServerIpv6Bandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerIpv6Bandwidth postPaidServerIpv6Bandwidth = (PostPaidServerIpv6Bandwidth) o;
-        return Objects.equals(this.id, postPaidServerIpv6Bandwidth.id);
+        PostPaidServerIpv6Bandwidth that = (PostPaidServerIpv6Bandwidth) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -121,18 +121,18 @@ public class WhitelistResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WhitelistResp whitelistResp = (WhitelistResp) o;
-        return Objects.equals(this.id, whitelistResp.id) && Objects.equals(this.tenantId, whitelistResp.tenantId)
-            && Objects.equals(this.listenerId, whitelistResp.listenerId)
-            && Objects.equals(this.enableWhitelist, whitelistResp.enableWhitelist)
-            && Objects.equals(this.whitelist, whitelistResp.whitelist);
+        WhitelistResp that = (WhitelistResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.whitelist, that.whitelist);
     }
 
     @Override

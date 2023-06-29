@@ -65,16 +65,15 @@ public class ListKmsByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListKmsByTagsRequest listKmsByTagsRequest = (ListKmsByTagsRequest) o;
-        return Objects.equals(this.resourceInstances, listKmsByTagsRequest.resourceInstances)
-            && Objects.equals(this.body, listKmsByTagsRequest.body);
+        ListKmsByTagsRequest that = (ListKmsByTagsRequest) obj;
+        return Objects.equals(this.resourceInstances, that.resourceInstances) && Objects.equals(this.body, that.body);
     }
 
     @Override

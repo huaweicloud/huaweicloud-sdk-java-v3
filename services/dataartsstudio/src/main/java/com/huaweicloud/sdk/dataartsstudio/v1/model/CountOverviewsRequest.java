@@ -33,15 +33,15 @@ public class CountOverviewsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountOverviewsRequest countOverviewsRequest = (CountOverviewsRequest) o;
-        return Objects.equals(this.workspace, countOverviewsRequest.workspace);
+        CountOverviewsRequest that = (CountOverviewsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

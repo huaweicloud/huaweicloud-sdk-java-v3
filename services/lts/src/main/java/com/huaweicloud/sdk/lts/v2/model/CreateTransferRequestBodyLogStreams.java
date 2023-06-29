@@ -55,17 +55,16 @@ public class CreateTransferRequestBodyLogStreams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransferRequestBodyLogStreams createTransferRequestBodyLogStreams =
-            (CreateTransferRequestBodyLogStreams) o;
-        return Objects.equals(this.logStreamId, createTransferRequestBodyLogStreams.logStreamId)
-            && Objects.equals(this.logStreamName, createTransferRequestBodyLogStreams.logStreamName);
+        CreateTransferRequestBodyLogStreams that = (CreateTransferRequestBodyLogStreams) obj;
+        return Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override

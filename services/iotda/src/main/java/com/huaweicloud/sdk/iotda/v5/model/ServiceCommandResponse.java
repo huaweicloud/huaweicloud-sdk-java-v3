@@ -74,16 +74,15 @@ public class ServiceCommandResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceCommandResponse serviceCommandResponse = (ServiceCommandResponse) o;
-        return Objects.equals(this.responseName, serviceCommandResponse.responseName)
-            && Objects.equals(this.paras, serviceCommandResponse.paras);
+        ServiceCommandResponse that = (ServiceCommandResponse) obj;
+        return Objects.equals(this.responseName, that.responseName) && Objects.equals(this.paras, that.paras);
     }
 
     @Override

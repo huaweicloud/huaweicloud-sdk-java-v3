@@ -20,7 +20,6 @@ public class VpcepClient {
     /**
      * 接受或拒绝终端节点的连接
      *
-     * 功能介绍
      * 接受或者拒绝终端节点连接到当前的终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -35,7 +34,6 @@ public class VpcepClient {
     /**
      * 接受或拒绝终端节点的连接
      *
-     * 功能介绍
      * 接受或者拒绝终端节点连接到当前的终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -52,7 +50,6 @@ public class VpcepClient {
     /**
      * 批量添加或移除终端节点服务的白名单
      *
-     * 功能介绍
      * 批量添加或移除当前用户下终端节点服务的白名单。
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
@@ -70,7 +67,6 @@ public class VpcepClient {
     /**
      * 批量添加或移除终端节点服务的白名单
      *
-     * 功能介绍
      * 批量添加或移除当前用户下终端节点服务的白名单。
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
@@ -89,7 +85,6 @@ public class VpcepClient {
     /**
      * 批量添加终端节点服务的白名单
      *
-     * 功能介绍
      * 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
@@ -107,7 +102,6 @@ public class VpcepClient {
     /**
      * 批量添加终端节点服务的白名单
      *
-     * 功能介绍
      * 批量添加当前用户下终端节点服务的白名单，支持添加描述信息。
      * 说明
      * 本帐号默认在自身用户的终端节点服务的白名单中。
@@ -126,7 +120,6 @@ public class VpcepClient {
     /**
      * 批量删除终端节点服务的白名单
      *
-     * 功能介绍
      * 批量删除当前用户下终端节点服务的白名单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -142,7 +135,6 @@ public class VpcepClient {
     /**
      * 批量删除终端节点服务的白名单
      *
-     * 功能介绍
      * 批量删除当前用户下终端节点服务的白名单
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -159,7 +151,6 @@ public class VpcepClient {
     /**
      * 创建终端节点
      *
-     * 功能介绍
      * 创建终端节点，以便访问终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -174,7 +165,6 @@ public class VpcepClient {
     /**
      * 创建终端节点
      *
-     * 功能介绍
      * 创建终端节点，以便访问终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -191,7 +181,6 @@ public class VpcepClient {
     /**
      * 创建终端节点服务
      *
-     * 功能介绍
      * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，
      * 使用您所提供的服务。
      * 说明
@@ -210,7 +199,6 @@ public class VpcepClient {
     /**
      * 创建终端节点服务
      *
-     * 功能介绍
      * 创建终端节点服务，允许其他用户创建终端节点连接您创建的终端节点服务，
      * 使用您所提供的服务。
      * 说明
@@ -231,7 +219,6 @@ public class VpcepClient {
     /**
      * 删除终端节点
      *
-     * 功能介绍
      * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -246,7 +233,6 @@ public class VpcepClient {
     /**
      * 删除终端节点
      *
-     * 功能介绍
      * 删除终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -263,7 +249,6 @@ public class VpcepClient {
     /**
      * 删除网关型终端节点policy
      *
-     * 功能介绍
      * 删除网关型终端节点policy。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -278,7 +263,6 @@ public class VpcepClient {
     /**
      * 删除网关型终端节点policy
      *
-     * 功能介绍
      * 删除网关型终端节点policy。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -295,7 +279,6 @@ public class VpcepClient {
     /**
      * 删除终端节点服务
      *
-     * 功能介绍
      * 删除终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -310,7 +293,6 @@ public class VpcepClient {
     /**
      * 删除终端节点服务
      *
-     * 功能介绍
      * 删除终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -327,7 +309,6 @@ public class VpcepClient {
     /**
      * 查询终端节点详情
      *
-     * 功能介绍
      * 查询终端节点的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -342,7 +323,6 @@ public class VpcepClient {
     /**
      * 查询终端节点详情
      *
-     * 功能介绍
      * 查询终端节点的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -359,7 +339,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务列表
      *
-     * 功能介绍
      * 查询当前用户下的终端节点服务的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -374,7 +353,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务列表
      *
-     * 功能介绍
      * 查询当前用户下的终端节点服务的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -391,7 +369,6 @@ public class VpcepClient {
     /**
      * 查询终端节点列表
      *
-     * 功能介绍
      * 查询当前用户下的终端节点的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -406,7 +383,6 @@ public class VpcepClient {
     /**
      * 查询终端节点列表
      *
-     * 功能介绍
      * 查询当前用户下的终端节点的列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -421,7 +397,6 @@ public class VpcepClient {
     /**
      * 查询配额
      *
-     * 功能介绍
      * 查询用户的资源配额，包括终端节点服务和终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -436,7 +411,6 @@ public class VpcepClient {
     /**
      * 查询配额
      *
-     * 功能介绍
      * 查询用户的资源配额，包括终端节点服务和终端节点。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -453,7 +427,6 @@ public class VpcepClient {
     /**
      * 查询连接终端节点服务的连接列表
      *
-     * 功能介绍
      * 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -468,7 +441,6 @@ public class VpcepClient {
     /**
      * 查询连接终端节点服务的连接列表
      *
-     * 功能介绍
      * 查询连接当前用户下的某一个终端节点服务的连接列表。marker_id是连接的唯一标识。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -485,7 +457,7 @@ public class VpcepClient {
     /**
      * 查询终端节点服务概要
      *
-     * 功能介绍查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
+     * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -499,7 +471,7 @@ public class VpcepClient {
     /**
      * 查询终端节点服务概要
      *
-     * 功能介绍查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
+     * 查询终端节点服务的概要信息， 此接口是供创建终端节点的用户来查询需要连接的终端节点服务信息。 此接口既可以方便其他用户查询到您的终端节点服务概要信息, 又可以避免您的终端节点服务的细节信息暴露给其他用户。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -515,7 +487,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务详情
      *
-     * 功能介绍
      * 查询终端节点服务的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -530,7 +501,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务详情
      *
-     * 功能介绍
      * 查询终端节点服务的详细信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -547,7 +517,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务的白名单列表
      *
-     * 功能介绍
      * 查询当前用户下终端节点服务的白名单列表。
      * 说明
      * 本帐号默认在当前用户下终端节点服务的白名单中。
@@ -565,7 +534,6 @@ public class VpcepClient {
     /**
      * 查询终端节点服务的白名单列表
      *
-     * 功能介绍
      * 查询当前用户下终端节点服务的白名单列表。
      * 说明
      * 本帐号默认在当前用户下终端节点服务的白名单中。
@@ -584,7 +552,6 @@ public class VpcepClient {
     /**
      * 查询公共终端节点服务列表
      *
-     * 功能介绍
      * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
      * 由运维人员创建，用户可直接使用，但无权创建。
      * 
@@ -600,7 +567,6 @@ public class VpcepClient {
     /**
      * 查询公共终端节点服务列表
      *
-     * 功能介绍
      * 查询公共终端节点服务的列表，公共终端节点服务是所有用户可见且可连接的终端节点服务，
      * 由运维人员创建，用户可直接使用，但无权创建。
      * 
@@ -618,7 +584,6 @@ public class VpcepClient {
     /**
      * 查询指定VPC终端节点接口版本信息
      *
-     * 功能介绍
      * 查询指定VPC终端节点接口版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -633,7 +598,6 @@ public class VpcepClient {
     /**
      * 查询指定VPC终端节点接口版本信息
      *
-     * 功能介绍
      * 查询指定VPC终端节点接口版本信息。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -650,7 +614,6 @@ public class VpcepClient {
     /**
      * 查询VPC终端节点接口版本列表
      *
-     * 功能介绍
      * 查询VPC终端节点接口版本列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -665,7 +628,6 @@ public class VpcepClient {
     /**
      * 查询VPC终端节点接口版本列表
      *
-     * 功能介绍
      * 查询VPC终端节点接口版本列表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -682,8 +644,7 @@ public class VpcepClient {
     /**
      * 更新终端节点连接描述
      *
-     * 功能介绍：
-     *      更新终端节点服务连接的终端节点的描述。
+     * 更新终端节点服务连接的终端节点的描述。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -698,8 +659,7 @@ public class VpcepClient {
     /**
      * 更新终端节点连接描述
      *
-     * 功能介绍：
-     *      更新终端节点服务连接的终端节点的描述。
+     * 更新终端节点服务连接的终端节点的描述。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -715,7 +675,6 @@ public class VpcepClient {
     /**
      * 修改网关型终端节点policy
      *
-     * 功能介绍
      * 修改网关型终端节点policy。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -730,7 +689,6 @@ public class VpcepClient {
     /**
      * 修改网关型终端节点policy
      *
-     * 功能介绍
      * 修改网关型终端节点policy。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -747,7 +705,6 @@ public class VpcepClient {
     /**
      * 修改终端节点的路由表
      *
-     * 功能介绍
      * 修改终端节点的路由表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -762,7 +719,6 @@ public class VpcepClient {
     /**
      * 修改终端节点的路由表
      *
-     * 功能介绍
      * 修改终端节点的路由表。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -779,7 +735,6 @@ public class VpcepClient {
     /**
      * 修改终端节点服务
      *
-     * 功能介绍
      * 修改终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -794,7 +749,6 @@ public class VpcepClient {
     /**
      * 修改终端节点服务
      *
-     * 功能介绍
      * 修改终端节点服务。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -811,7 +765,6 @@ public class VpcepClient {
     /**
      * 修改终端节点服务名称
      *
-     * 功能介绍
      * 修改终端节点服务名称
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -826,7 +779,6 @@ public class VpcepClient {
     /**
      * 修改终端节点服务名称
      *
-     * 功能介绍
      * 修改终端节点服务名称
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -843,7 +795,6 @@ public class VpcepClient {
     /**
      * 更新终端节点服务白名单描述
      *
-     * 功能介绍
      * 更新当前用户下终端节点服务白名单的描述信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -859,7 +810,6 @@ public class VpcepClient {
     /**
      * 更新终端节点服务白名单描述
      *
-     * 功能介绍
      * 更新当前用户下终端节点服务白名单的描述信息
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -876,7 +826,6 @@ public class VpcepClient {
     /**
      * 更新终端节点
      *
-     * 功能介绍
      * 更新或删除允许访问终端节点的白名单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -891,7 +840,6 @@ public class VpcepClient {
     /**
      * 更新终端节点
      *
-     * 功能介绍
      * 更新或删除允许访问终端节点的白名单。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -908,7 +856,6 @@ public class VpcepClient {
     /**
      * 批量添加或删除资源标签接口
      *
-     * 功能介绍
      * 为指定Endpoint Service或Endpoint批量添加或删除标签。
      * ● 一个资源上最多有10个标签。
      * 
@@ -925,7 +872,6 @@ public class VpcepClient {
     /**
      * 批量添加或删除资源标签接口
      *
-     * 功能介绍
      * 为指定Endpoint Service或Endpoint批量添加或删除标签。
      * ● 一个资源上最多有10个标签。
      * 
@@ -943,7 +889,6 @@ public class VpcepClient {
     /**
      * 查询租户资源标签接口
      *
-     * 功能介绍
      * 根据租户ID和资源类型，获取租户下资源的标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -959,7 +904,6 @@ public class VpcepClient {
     /**
      * 查询租户资源标签接口
      *
-     * 功能介绍
      * 根据租户ID和资源类型，获取租户下资源的标签。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -976,7 +920,6 @@ public class VpcepClient {
     /**
      * 查询资源实例接口
      *
-     * 功能介绍
      * 使用标签过滤查询租户下资源的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
@@ -991,7 +934,6 @@ public class VpcepClient {
     /**
      * 查询资源实例接口
      *
-     * 功能介绍
      * 使用标签过滤查询租户下资源的实例。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.

@@ -66,17 +66,15 @@ public class CreateOrganizationPolicyAssignmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrganizationPolicyAssignmentRequest createOrganizationPolicyAssignmentRequest =
-            (CreateOrganizationPolicyAssignmentRequest) o;
-        return Objects.equals(this.organizationId, createOrganizationPolicyAssignmentRequest.organizationId)
-            && Objects.equals(this.body, createOrganizationPolicyAssignmentRequest.body);
+        CreateOrganizationPolicyAssignmentRequest that = (CreateOrganizationPolicyAssignmentRequest) obj;
+        return Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -316,22 +316,21 @@ public class RoleResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoleResult roleResult = (RoleResult) o;
-        return Objects.equals(this.domainId, roleResult.domainId) && Objects.equals(this.flag, roleResult.flag)
-            && Objects.equals(this.descriptionCn, roleResult.descriptionCn)
-            && Objects.equals(this.catalog, roleResult.catalog) && Objects.equals(this.name, roleResult.name)
-            && Objects.equals(this.description, roleResult.description) && Objects.equals(this.links, roleResult.links)
-            && Objects.equals(this.id, roleResult.id) && Objects.equals(this.displayName, roleResult.displayName)
-            && Objects.equals(this.type, roleResult.type) && Objects.equals(this.policy, roleResult.policy)
-            && Objects.equals(this.updatedTime, roleResult.updatedTime)
-            && Objects.equals(this.createdTime, roleResult.createdTime);
+        RoleResult that = (RoleResult) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.descriptionCn, that.descriptionCn) && Objects.equals(this.catalog, that.catalog)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.policy, that.policy) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

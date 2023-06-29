@@ -187,23 +187,18 @@ public class UploadAimTemplateMaterialRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAimTemplateMaterialRequestBody uploadAimTemplateMaterialRequestBody =
-            (UploadAimTemplateMaterialRequestBody) o;
-        return Objects.equals(this.resourceType, uploadAimTemplateMaterialRequestBody.resourceType)
-            && Objects.equals(this.materialId, uploadAimTemplateMaterialRequestBody.materialId)
-            && Objects.equals(this.fileType, uploadAimTemplateMaterialRequestBody.fileType)
-            && Objects.equals(this.fileUrl, uploadAimTemplateMaterialRequestBody.fileUrl)
-            && Objects.equals(this.fileStream, uploadAimTemplateMaterialRequestBody.fileStream)
-            && Objects.equals(this.imageRate, uploadAimTemplateMaterialRequestBody.imageRate)
-            && Objects.equals(this.fileName, uploadAimTemplateMaterialRequestBody.fileName)
-            && Objects.equals(this.description, uploadAimTemplateMaterialRequestBody.description);
+        UploadAimTemplateMaterialRequestBody that = (UploadAimTemplateMaterialRequestBody) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.materialId, that.materialId)
+            && Objects.equals(this.fileType, that.fileType) && Objects.equals(this.fileUrl, that.fileUrl)
+            && Objects.equals(this.fileStream, that.fileStream) && Objects.equals(this.imageRate, that.imageRate)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.description, that.description);
     }
 
     @Override

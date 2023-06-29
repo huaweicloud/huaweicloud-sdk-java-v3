@@ -77,17 +77,17 @@ public class Attributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attributes attributes = (Attributes) o;
-        return Objects.equals(this.cpuLimit, attributes.cpuLimit)
-            && Objects.equals(this.memoryLimitBytes, attributes.memoryLimitBytes)
-            && Objects.equals(this.pvcQuantity, attributes.pvcQuantity);
+        Attributes that = (Attributes) obj;
+        return Objects.equals(this.cpuLimit, that.cpuLimit)
+            && Objects.equals(this.memoryLimitBytes, that.memoryLimitBytes)
+            && Objects.equals(this.pvcQuantity, that.pvcQuantity);
     }
 
     @Override

@@ -101,18 +101,16 @@ public class CreateEndpointOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointOption createEndpointOption = (CreateEndpointOption) o;
-        return Objects.equals(this.resourceId, createEndpointOption.resourceId)
-            && Objects.equals(this.resourceType, createEndpointOption.resourceType)
-            && Objects.equals(this.weight, createEndpointOption.weight)
-            && Objects.equals(this.ipAddress, createEndpointOption.ipAddress);
+        CreateEndpointOption that = (CreateEndpointOption) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override

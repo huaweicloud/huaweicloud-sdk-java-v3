@@ -44,15 +44,15 @@ public class RunCheckResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunCheckResultResponse runCheckResultResponse = (RunCheckResultResponse) o;
-        return Objects.equals(this.result, runCheckResultResponse.result);
+        RunCheckResultResponse that = (RunCheckResultResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

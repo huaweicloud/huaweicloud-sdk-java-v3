@@ -77,16 +77,15 @@ public class ListHasVerifiedContactsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHasVerifiedContactsResponse listHasVerifiedContactsResponse = (ListHasVerifiedContactsResponse) o;
-        return Objects.equals(this.count, listHasVerifiedContactsResponse.count)
-            && Objects.equals(this.contactList, listHasVerifiedContactsResponse.contactList);
+        ListHasVerifiedContactsResponse that = (ListHasVerifiedContactsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.contactList, that.contactList);
     }
 
     @Override

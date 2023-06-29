@@ -55,16 +55,16 @@ public class CloudResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudResource cloudResource = (CloudResource) o;
-        return Objects.equals(this.resourceType, cloudResource.resourceType)
-            && Objects.equals(this.resourceCount, cloudResource.resourceCount);
+        CloudResource that = (CloudResource) obj;
+        return Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceCount, that.resourceCount);
     }
 
     @Override

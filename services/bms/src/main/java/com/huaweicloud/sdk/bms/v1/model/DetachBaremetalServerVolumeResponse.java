@@ -34,16 +34,15 @@ public class DetachBaremetalServerVolumeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetachBaremetalServerVolumeResponse detachBaremetalServerVolumeResponse =
-            (DetachBaremetalServerVolumeResponse) o;
-        return Objects.equals(this.jobId, detachBaremetalServerVolumeResponse.jobId);
+        DetachBaremetalServerVolumeResponse that = (DetachBaremetalServerVolumeResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

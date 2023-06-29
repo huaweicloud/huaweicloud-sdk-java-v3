@@ -123,19 +123,17 @@ public class ListAppQuotaBindableAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuotaBindableAppsRequest listAppQuotaBindableAppsRequest = (ListAppQuotaBindableAppsRequest) o;
-        return Objects.equals(this.instanceId, listAppQuotaBindableAppsRequest.instanceId)
-            && Objects.equals(this.appQuotaId, listAppQuotaBindableAppsRequest.appQuotaId)
-            && Objects.equals(this.offset, listAppQuotaBindableAppsRequest.offset)
-            && Objects.equals(this.limit, listAppQuotaBindableAppsRequest.limit)
-            && Objects.equals(this.appName, listAppQuotaBindableAppsRequest.appName);
+        ListAppQuotaBindableAppsRequest that = (ListAppQuotaBindableAppsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appQuotaId, that.appQuotaId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.appName, that.appName);
     }
 
     @Override

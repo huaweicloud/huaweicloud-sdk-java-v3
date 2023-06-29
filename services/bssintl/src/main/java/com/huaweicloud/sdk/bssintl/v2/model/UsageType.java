@@ -143,19 +143,19 @@ public class UsageType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UsageType usageType = (UsageType) o;
-        return Objects.equals(this.code, usageType.code) && Objects.equals(this.name, usageType.name)
-            && Objects.equals(this.resourceTypeCode, usageType.resourceTypeCode)
-            && Objects.equals(this.serviceTypeCode, usageType.serviceTypeCode)
-            && Objects.equals(this.resourceTypeName, usageType.resourceTypeName)
-            && Objects.equals(this.serviceTypeName, usageType.serviceTypeName);
+        UsageType that = (UsageType) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName);
     }
 
     @Override

@@ -94,22 +94,15 @@ public class PostPaidServerExtendParam {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InterruptionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InterruptionPolicyEnum(value));
         }
 
         public static InterruptionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -331,25 +324,23 @@ public class PostPaidServerExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerExtendParam postPaidServerExtendParam = (PostPaidServerExtendParam) o;
-        return Objects.equals(this.chargingMode, postPaidServerExtendParam.chargingMode)
-            && Objects.equals(this.regionID, postPaidServerExtendParam.regionID)
-            && Objects.equals(this.supportAutoRecovery, postPaidServerExtendParam.supportAutoRecovery)
-            && Objects.equals(this.enterpriseProjectId, postPaidServerExtendParam.enterpriseProjectId)
-            && Objects.equals(this.marketType, postPaidServerExtendParam.marketType)
-            && Objects.equals(this.spotPrice, postPaidServerExtendParam.spotPrice)
-            && Objects.equals(this.diskPrior, postPaidServerExtendParam.diskPrior)
-            && Objects.equals(this.spotDurationHours, postPaidServerExtendParam.spotDurationHours)
-            && Objects.equals(this.interruptionPolicy, postPaidServerExtendParam.interruptionPolicy)
-            && Objects.equals(this.spotDurationCount, postPaidServerExtendParam.spotDurationCount)
-            && Objects.equals(this.cbCsbsBackup, postPaidServerExtendParam.cbCsbsBackup);
+        PostPaidServerExtendParam that = (PostPaidServerExtendParam) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.regionID, that.regionID)
+            && Objects.equals(this.supportAutoRecovery, that.supportAutoRecovery)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.marketType, that.marketType) && Objects.equals(this.spotPrice, that.spotPrice)
+            && Objects.equals(this.diskPrior, that.diskPrior)
+            && Objects.equals(this.spotDurationHours, that.spotDurationHours)
+            && Objects.equals(this.interruptionPolicy, that.interruptionPolicy)
+            && Objects.equals(this.spotDurationCount, that.spotDurationCount)
+            && Objects.equals(this.cbCsbsBackup, that.cbCsbsBackup);
     }
 
     @Override

@@ -102,18 +102,16 @@ public class UpgradeCbhInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeCbhInstanceResponse upgradeCbhInstanceResponse = (UpgradeCbhInstanceResponse) o;
-        return Objects.equals(this.code, upgradeCbhInstanceResponse.code)
-            && Objects.equals(this.description, upgradeCbhInstanceResponse.description)
-            && Objects.equals(this.taskId, upgradeCbhInstanceResponse.taskId)
-            && Objects.equals(this.orderId, upgradeCbhInstanceResponse.orderId);
+        UpgradeCbhInstanceResponse that = (UpgradeCbhInstanceResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

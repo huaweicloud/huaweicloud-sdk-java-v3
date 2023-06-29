@@ -55,16 +55,15 @@ public class DeleteVariableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVariableRequest deleteVariableRequest = (DeleteVariableRequest) o;
-        return Objects.equals(this.variableId, deleteVariableRequest.variableId)
-            && Objects.equals(this.testSuiteId, deleteVariableRequest.testSuiteId);
+        DeleteVariableRequest that = (DeleteVariableRequest) obj;
+        return Objects.equals(this.variableId, that.variableId) && Objects.equals(this.testSuiteId, that.testSuiteId);
     }
 
     @Override

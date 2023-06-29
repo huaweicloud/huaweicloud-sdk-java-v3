@@ -121,17 +121,17 @@ public class StructDetailVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructDetailVO structDetailVO = (StructDetailVO) o;
-        return Objects.equals(this.progress, structDetailVO.progress)
-            && Objects.equals(this.srcDB, structDetailVO.srcDB) && Objects.equals(this.srcTB, structDetailVO.srcTB)
-            && Objects.equals(this.dstDB, structDetailVO.dstDB) && Objects.equals(this.dstTB, structDetailVO.dstTB);
+        StructDetailVO that = (StructDetailVO) obj;
+        return Objects.equals(this.progress, that.progress) && Objects.equals(this.srcDB, that.srcDB)
+            && Objects.equals(this.srcTB, that.srcTB) && Objects.equals(this.dstDB, that.dstDB)
+            && Objects.equals(this.dstTB, that.dstTB);
     }
 
     @Override

@@ -97,18 +97,16 @@ public class IvsStandardByIdCardImageResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IvsStandardByIdCardImageResponseBodyResult ivsStandardByIdCardImageResponseBodyResult =
-            (IvsStandardByIdCardImageResponseBodyResult) o;
-        return Objects.equals(this.serviceName, ivsStandardByIdCardImageResponseBodyResult.serviceName)
-            && Objects.equals(this.count, ivsStandardByIdCardImageResponseBodyResult.count)
-            && Objects.equals(this.respData, ivsStandardByIdCardImageResponseBodyResult.respData);
+        IvsStandardByIdCardImageResponseBodyResult that = (IvsStandardByIdCardImageResponseBodyResult) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.respData, that.respData);
     }
 
     @Override

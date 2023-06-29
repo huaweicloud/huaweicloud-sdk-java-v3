@@ -208,22 +208,15 @@ public class Listener {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -915,43 +908,39 @@ public class Listener {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Listener listener = (Listener) o;
-        return Objects.equals(this.adminStateUp, listener.adminStateUp)
-            && Objects.equals(this.clientCaTlsContainerRef, listener.clientCaTlsContainerRef)
-            && Objects.equals(this.connectionLimit, listener.connectionLimit)
-            && Objects.equals(this.createdAt, listener.createdAt)
-            && Objects.equals(this.defaultPoolId, listener.defaultPoolId)
-            && Objects.equals(this.defaultTlsContainerRef, listener.defaultTlsContainerRef)
-            && Objects.equals(this.description, listener.description)
-            && Objects.equals(this.http2Enable, listener.http2Enable) && Objects.equals(this.id, listener.id)
-            && Objects.equals(this.insertHeaders, listener.insertHeaders)
-            && Objects.equals(this.loadbalancers, listener.loadbalancers) && Objects.equals(this.name, listener.name)
-            && Objects.equals(this.projectId, listener.projectId) && Objects.equals(this.protocol, listener.protocol)
-            && Objects.equals(this.protocolPort, listener.protocolPort)
-            && Objects.equals(this.sniContainerRefs, listener.sniContainerRefs)
-            && Objects.equals(this.sniMatchAlgo, listener.sniMatchAlgo) && Objects.equals(this.tags, listener.tags)
-            && Objects.equals(this.updatedAt, listener.updatedAt)
-            && Objects.equals(this.tlsCiphersPolicy, listener.tlsCiphersPolicy)
-            && Objects.equals(this.securityPolicyId, listener.securityPolicyId)
-            && Objects.equals(this.enableMemberRetry, listener.enableMemberRetry)
-            && Objects.equals(this.keepaliveTimeout, listener.keepaliveTimeout)
-            && Objects.equals(this.clientTimeout, listener.clientTimeout)
-            && Objects.equals(this.memberTimeout, listener.memberTimeout)
-            && Objects.equals(this.ipgroup, listener.ipgroup)
-            && Objects.equals(this.transparentClientIpEnable, listener.transparentClientIpEnable)
-            && Objects.equals(this.enhanceL7policyEnable, listener.enhanceL7policyEnable)
-            && Objects.equals(this.quicConfig, listener.quicConfig)
-            && Objects.equals(this.protectionStatus, listener.protectionStatus)
-            && Objects.equals(this.protectionReason, listener.protectionReason)
-            && Objects.equals(this.gzipEnable, listener.gzipEnable)
-            && Objects.equals(this.portRanges, listener.portRanges);
+        Listener that = (Listener) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.connectionLimit, that.connectionLimit)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.defaultPoolId, that.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.insertHeaders, that.insertHeaders)
+            && Objects.equals(this.loadbalancers, that.loadbalancers) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.sniContainerRefs, that.sniContainerRefs)
+            && Objects.equals(this.sniMatchAlgo, that.sniMatchAlgo) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy)
+            && Objects.equals(this.securityPolicyId, that.securityPolicyId)
+            && Objects.equals(this.enableMemberRetry, that.enableMemberRetry)
+            && Objects.equals(this.keepaliveTimeout, that.keepaliveTimeout)
+            && Objects.equals(this.clientTimeout, that.clientTimeout)
+            && Objects.equals(this.memberTimeout, that.memberTimeout) && Objects.equals(this.ipgroup, that.ipgroup)
+            && Objects.equals(this.transparentClientIpEnable, that.transparentClientIpEnable)
+            && Objects.equals(this.enhanceL7policyEnable, that.enhanceL7policyEnable)
+            && Objects.equals(this.quicConfig, that.quicConfig)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.gzipEnable, that.gzipEnable) && Objects.equals(this.portRanges, that.portRanges);
     }
 
     @Override

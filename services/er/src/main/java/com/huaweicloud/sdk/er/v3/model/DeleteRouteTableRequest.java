@@ -55,16 +55,15 @@ public class DeleteRouteTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRouteTableRequest deleteRouteTableRequest = (DeleteRouteTableRequest) o;
-        return Objects.equals(this.erId, deleteRouteTableRequest.erId)
-            && Objects.equals(this.routeTableId, deleteRouteTableRequest.routeTableId);
+        DeleteRouteTableRequest that = (DeleteRouteTableRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.routeTableId, that.routeTableId);
     }
 
     @Override

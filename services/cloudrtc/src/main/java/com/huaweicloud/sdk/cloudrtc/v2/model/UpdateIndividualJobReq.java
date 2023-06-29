@@ -74,16 +74,16 @@ public class UpdateIndividualJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndividualJobReq updateIndividualJobReq = (UpdateIndividualJobReq) o;
-        return Objects.equals(this.publishParam, updateIndividualJobReq.publishParam)
-            && Objects.equals(this.recordParam, updateIndividualJobReq.recordParam);
+        UpdateIndividualJobReq that = (UpdateIndividualJobReq) obj;
+        return Objects.equals(this.publishParam, that.publishParam)
+            && Objects.equals(this.recordParam, that.recordParam);
     }
 
     @Override

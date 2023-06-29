@@ -34,15 +34,15 @@ public class CreateEncryptTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEncryptTaskResponse createEncryptTaskResponse = (CreateEncryptTaskResponse) o;
-        return Objects.equals(this.taskId, createEncryptTaskResponse.taskId);
+        CreateEncryptTaskResponse that = (CreateEncryptTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

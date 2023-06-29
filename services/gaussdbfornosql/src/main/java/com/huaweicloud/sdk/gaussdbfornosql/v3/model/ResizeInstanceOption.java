@@ -33,15 +33,15 @@ public class ResizeInstanceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInstanceOption resizeInstanceOption = (ResizeInstanceOption) o;
-        return Objects.equals(this.targetSpecCode, resizeInstanceOption.targetSpecCode);
+        ResizeInstanceOption that = (ResizeInstanceOption) obj;
+        return Objects.equals(this.targetSpecCode, that.targetSpecCode);
     }
 
     @Override

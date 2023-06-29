@@ -209,22 +209,19 @@ public class ListFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.offset, listFlavorsRequest.offset)
-            && Objects.equals(this.limit, listFlavorsRequest.limit)
-            && Objects.equals(this.name, listFlavorsRequest.name) && Objects.equals(this.area, listFlavorsRequest.area)
-            && Objects.equals(this.province, listFlavorsRequest.province)
-            && Objects.equals(this.city, listFlavorsRequest.city)
-            && Objects.equals(this.operator, listFlavorsRequest.operator)
-            && Objects.equals(this.id, listFlavorsRequest.id)
-            && Objects.equals(this.siteIds, listFlavorsRequest.siteIds);
+        ListFlavorsRequest that = (ListFlavorsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.siteIds, that.siteIds);
     }
 
     @Override

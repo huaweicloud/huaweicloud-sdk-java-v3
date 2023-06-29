@@ -44,15 +44,15 @@ public class KeystoneShowProjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowProjectResponse keystoneShowProjectResponse = (KeystoneShowProjectResponse) o;
-        return Objects.equals(this.project, keystoneShowProjectResponse.project);
+        KeystoneShowProjectResponse that = (KeystoneShowProjectResponse) obj;
+        return Objects.equals(this.project, that.project);
     }
 
     @Override

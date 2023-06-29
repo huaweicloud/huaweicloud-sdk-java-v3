@@ -187,22 +187,18 @@ public class PeriodOrderResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodOrderResp periodOrderResp = (PeriodOrderResp) o;
-        return Objects.equals(this.status, periodOrderResp.status)
-            && Objects.equals(this.orderId, periodOrderResp.orderId)
-            && Objects.equals(this.chargingMode, periodOrderResp.chargingMode)
-            && Objects.equals(this.periodType, periodOrderResp.periodType)
-            && Objects.equals(this.periodNum, periodOrderResp.periodNum)
-            && Objects.equals(this.isAutoRenew, periodOrderResp.isAutoRenew)
-            && Objects.equals(this.effTime, periodOrderResp.effTime)
-            && Objects.equals(this.expTime, periodOrderResp.expTime);
+        PeriodOrderResp that = (PeriodOrderResp) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.effTime, that.effTime) && Objects.equals(this.expTime, that.expTime);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class GetProductTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetProductTemplatesRequest getProductTemplatesRequest = (GetProductTemplatesRequest) o;
-        return Objects.equals(this.projectUuid, getProductTemplatesRequest.projectUuid)
-            && Objects.equals(this.pageNo, getProductTemplatesRequest.pageNo)
-            && Objects.equals(this.pageSize, getProductTemplatesRequest.pageSize);
+        GetProductTemplatesRequest that = (GetProductTemplatesRequest) obj;
+        return Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

@@ -186,20 +186,18 @@ public class VaultUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultUpdate vaultUpdate = (VaultUpdate) o;
-        return Objects.equals(this.billing, vaultUpdate.billing) && Objects.equals(this.name, vaultUpdate.name)
-            && Objects.equals(this.autoBind, vaultUpdate.autoBind)
-            && Objects.equals(this.bindRules, vaultUpdate.bindRules)
-            && Objects.equals(this.autoExpand, vaultUpdate.autoExpand)
-            && Objects.equals(this.smnNotify, vaultUpdate.smnNotify)
-            && Objects.equals(this.threshold, vaultUpdate.threshold);
+        VaultUpdate that = (VaultUpdate) obj;
+        return Objects.equals(this.billing, that.billing) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
+            && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
+            && Objects.equals(this.threshold, that.threshold);
     }
 
     @Override

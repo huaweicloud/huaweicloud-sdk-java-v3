@@ -55,16 +55,15 @@ public class BackupStrategyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupStrategyResult backupStrategyResult = (BackupStrategyResult) o;
-        return Objects.equals(this.startTime, backupStrategyResult.startTime)
-            && Objects.equals(this.keepDays, backupStrategyResult.keepDays);
+        BackupStrategyResult that = (BackupStrategyResult) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.keepDays, that.keepDays);
     }
 
     @Override

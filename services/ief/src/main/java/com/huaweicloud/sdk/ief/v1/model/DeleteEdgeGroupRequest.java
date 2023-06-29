@@ -55,16 +55,15 @@ public class DeleteEdgeGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEdgeGroupRequest deleteEdgeGroupRequest = (DeleteEdgeGroupRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteEdgeGroupRequest.iefInstanceId)
-            && Objects.equals(this.groupId, deleteEdgeGroupRequest.groupId);
+        DeleteEdgeGroupRequest that = (DeleteEdgeGroupRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

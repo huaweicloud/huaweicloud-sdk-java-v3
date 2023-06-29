@@ -210,23 +210,19 @@ public class UpdateDependcyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDependcyResponse updateDependcyResponse = (UpdateDependcyResponse) o;
-        return Objects.equals(this.id, updateDependcyResponse.id)
-            && Objects.equals(this.owner, updateDependcyResponse.owner)
-            && Objects.equals(this.link, updateDependcyResponse.link)
-            && Objects.equals(this.runtime, updateDependcyResponse.runtime)
-            && Objects.equals(this.etag, updateDependcyResponse.etag)
-            && Objects.equals(this.size, updateDependcyResponse.size)
-            && Objects.equals(this.name, updateDependcyResponse.name)
-            && Objects.equals(this.description, updateDependcyResponse.description)
-            && Objects.equals(this.fileName, updateDependcyResponse.fileName);
+        UpdateDependcyResponse that = (UpdateDependcyResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

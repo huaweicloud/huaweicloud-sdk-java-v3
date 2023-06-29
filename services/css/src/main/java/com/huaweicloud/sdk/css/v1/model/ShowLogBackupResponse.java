@@ -53,15 +53,15 @@ public class ShowLogBackupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLogBackupResponse showLogBackupResponse = (ShowLogBackupResponse) o;
-        return Objects.equals(this.logList, showLogBackupResponse.logList);
+        ShowLogBackupResponse that = (ShowLogBackupResponse) obj;
+        return Objects.equals(this.logList, that.logList);
     }
 
     @Override

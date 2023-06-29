@@ -84,16 +84,15 @@ public class KeystoneShowCatalogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowCatalogResponse keystoneShowCatalogResponse = (KeystoneShowCatalogResponse) o;
-        return Objects.equals(this.catalog, keystoneShowCatalogResponse.catalog)
-            && Objects.equals(this.links, keystoneShowCatalogResponse.links);
+        KeystoneShowCatalogResponse that = (KeystoneShowCatalogResponse) obj;
+        return Objects.equals(this.catalog, that.catalog) && Objects.equals(this.links, that.links);
     }
 
     @Override

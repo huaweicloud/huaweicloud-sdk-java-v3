@@ -102,22 +102,15 @@ public class PrivateDnat {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -408,26 +401,24 @@ public class PrivateDnat {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivateDnat privateDnat = (PrivateDnat) o;
-        return Objects.equals(this.id, privateDnat.id) && Objects.equals(this.projectId, privateDnat.projectId)
-            && Objects.equals(this.description, privateDnat.description)
-            && Objects.equals(this.transitIpId, privateDnat.transitIpId)
-            && Objects.equals(this.gatewayId, privateDnat.gatewayId)
-            && Objects.equals(this.networkInterfaceId, privateDnat.networkInterfaceId)
-            && Objects.equals(this.type, privateDnat.type) && Objects.equals(this.protocol, privateDnat.protocol)
-            && Objects.equals(this.privateIpAddress, privateDnat.privateIpAddress)
-            && Objects.equals(this.internalServicePort, privateDnat.internalServicePort)
-            && Objects.equals(this.transitServicePort, privateDnat.transitServicePort)
-            && Objects.equals(this.enterpriseProjectId, privateDnat.enterpriseProjectId)
-            && Objects.equals(this.createdAt, privateDnat.createdAt)
-            && Objects.equals(this.updatedAt, privateDnat.updatedAt);
+        PrivateDnat that = (PrivateDnat) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.transitServicePort, that.transitServicePort)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

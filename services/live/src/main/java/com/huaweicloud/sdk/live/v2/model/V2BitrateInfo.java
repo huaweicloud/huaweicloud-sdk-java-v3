@@ -162,19 +162,17 @@ public class V2BitrateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2BitrateInfo v2BitrateInfo = (V2BitrateInfo) o;
-        return Objects.equals(this.publishDomain, v2BitrateInfo.publishDomain)
-            && Objects.equals(this.app, v2BitrateInfo.app) && Objects.equals(this.stream, v2BitrateInfo.stream)
-            && Objects.equals(this.startTime, v2BitrateInfo.startTime)
-            && Objects.equals(this.endTime, v2BitrateInfo.endTime)
-            && Objects.equals(this.dataList, v2BitrateInfo.dataList);
+        V2BitrateInfo that = (V2BitrateInfo) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

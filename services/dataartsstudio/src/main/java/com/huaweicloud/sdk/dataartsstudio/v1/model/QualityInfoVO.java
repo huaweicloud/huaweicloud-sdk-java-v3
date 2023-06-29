@@ -364,28 +364,24 @@ public class QualityInfoVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityInfoVO qualityInfoVO = (QualityInfoVO) o;
-        return Objects.equals(this.id, qualityInfoVO.id) && Objects.equals(this.tableId, qualityInfoVO.tableId)
-            && Objects.equals(this.attrId, qualityInfoVO.attrId) && Objects.equals(this.bizType, qualityInfoVO.bizType)
-            && Objects.equals(this.dataQualityId, qualityInfoVO.dataQualityId)
-            && Objects.equals(this.showControl, qualityInfoVO.showControl)
-            && Objects.equals(this.dataQualityName, qualityInfoVO.dataQualityName)
-            && Objects.equals(this.alertConf, qualityInfoVO.alertConf)
-            && Objects.equals(this.expression, qualityInfoVO.expression)
-            && Objects.equals(this.extendInfo, qualityInfoVO.extendInfo)
-            && Objects.equals(this.fromStandard, qualityInfoVO.fromStandard)
-            && Objects.equals(this.resultDescription, qualityInfoVO.resultDescription)
-            && Objects.equals(this.createBy, qualityInfoVO.createBy)
-            && Objects.equals(this.updateBy, qualityInfoVO.updateBy)
-            && Objects.equals(this.createTime, qualityInfoVO.createTime)
-            && Objects.equals(this.updateTime, qualityInfoVO.updateTime);
+        QualityInfoVO that = (QualityInfoVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.attrId, that.attrId) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.dataQualityId, that.dataQualityId)
+            && Objects.equals(this.showControl, that.showControl)
+            && Objects.equals(this.dataQualityName, that.dataQualityName)
+            && Objects.equals(this.alertConf, that.alertConf) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.extendInfo, that.extendInfo) && Objects.equals(this.fromStandard, that.fromStandard)
+            && Objects.equals(this.resultDescription, that.resultDescription)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

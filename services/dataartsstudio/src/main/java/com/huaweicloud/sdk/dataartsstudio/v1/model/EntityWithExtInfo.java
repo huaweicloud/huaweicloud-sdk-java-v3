@@ -65,16 +65,15 @@ public class EntityWithExtInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntityWithExtInfo entityWithExtInfo = (EntityWithExtInfo) o;
-        return Objects.equals(this.entity, entityWithExtInfo.entity)
-            && Objects.equals(this.referredEntities, entityWithExtInfo.referredEntities);
+        EntityWithExtInfo that = (EntityWithExtInfo) obj;
+        return Objects.equals(this.entity, that.entity) && Objects.equals(this.referredEntities, that.referredEntities);
     }
 
     @Override

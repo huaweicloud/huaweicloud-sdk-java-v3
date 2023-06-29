@@ -166,19 +166,17 @@ public class ListEnterpriseResourceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseResourceResult listEnterpriseResourceResult = (ListEnterpriseResourceResult) o;
-        return Objects.equals(this.resourceId, listEnterpriseResourceResult.resourceId)
-            && Objects.equals(this.resourceDetail, listEnterpriseResourceResult.resourceDetail)
-            && Objects.equals(this.tags, listEnterpriseResourceResult.tags)
-            && Objects.equals(this.sysTags, listEnterpriseResourceResult.sysTags)
-            && Objects.equals(this.resourceName, listEnterpriseResourceResult.resourceName);
+        ListEnterpriseResourceResult that = (ListEnterpriseResourceResult) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override

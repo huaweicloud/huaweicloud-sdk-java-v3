@@ -77,17 +77,16 @@ public class HttpResponseHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpResponseHeader httpResponseHeader = (HttpResponseHeader) o;
-        return Objects.equals(this.name, httpResponseHeader.name)
-            && Objects.equals(this.value, httpResponseHeader.value)
-            && Objects.equals(this.action, httpResponseHeader.action);
+        HttpResponseHeader that = (HttpResponseHeader) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

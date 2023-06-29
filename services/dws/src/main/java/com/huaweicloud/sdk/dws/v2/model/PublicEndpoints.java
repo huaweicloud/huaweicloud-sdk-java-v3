@@ -55,16 +55,16 @@ public class PublicEndpoints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicEndpoints publicEndpoints = (PublicEndpoints) o;
-        return Objects.equals(this.publicConnectInfo, publicEndpoints.publicConnectInfo)
-            && Objects.equals(this.jdbcUrl, publicEndpoints.jdbcUrl);
+        PublicEndpoints that = (PublicEndpoints) obj;
+        return Objects.equals(this.publicConnectInfo, that.publicConnectInfo)
+            && Objects.equals(this.jdbcUrl, that.jdbcUrl);
     }
 
     @Override

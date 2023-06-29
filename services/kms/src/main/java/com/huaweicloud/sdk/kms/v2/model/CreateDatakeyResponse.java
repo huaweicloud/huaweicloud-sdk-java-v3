@@ -78,17 +78,16 @@ public class CreateDatakeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatakeyResponse createDatakeyResponse = (CreateDatakeyResponse) o;
-        return Objects.equals(this.keyId, createDatakeyResponse.keyId)
-            && Objects.equals(this.plainText, createDatakeyResponse.plainText)
-            && Objects.equals(this.cipherText, createDatakeyResponse.cipherText);
+        CreateDatakeyResponse that = (CreateDatakeyResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.plainText, that.plainText)
+            && Objects.equals(this.cipherText, that.cipherText);
     }
 
     @Override

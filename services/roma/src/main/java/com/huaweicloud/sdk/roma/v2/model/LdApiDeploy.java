@@ -91,22 +91,15 @@ public class LdApiDeploy {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -363,23 +356,20 @@ public class LdApiDeploy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiDeploy ldApiDeploy = (LdApiDeploy) o;
-        return Objects.equals(this.deployFrontApi, ldApiDeploy.deployFrontApi)
-            && Objects.equals(this.authType, ldApiDeploy.authType)
-            && Objects.equals(this.authorizerId, ldApiDeploy.authorizerId)
-            && Objects.equals(this.groupId, ldApiDeploy.groupId) && Objects.equals(this.envId, ldApiDeploy.envId)
-            && Objects.equals(this.protocol, ldApiDeploy.protocol)
-            && Objects.equals(this.backendTimeout, ldApiDeploy.backendTimeout)
-            && Objects.equals(this.path, ldApiDeploy.path) && Objects.equals(this.method, ldApiDeploy.method)
-            && Objects.equals(this.cors, ldApiDeploy.cors) && Objects.equals(this.romaAppId, ldApiDeploy.romaAppId)
-            && Objects.equals(this.retryCount, ldApiDeploy.retryCount);
+        LdApiDeploy that = (LdApiDeploy) obj;
+        return Objects.equals(this.deployFrontApi, that.deployFrontApi) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.cors, that.cors)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.retryCount, that.retryCount);
     }
 
     @Override

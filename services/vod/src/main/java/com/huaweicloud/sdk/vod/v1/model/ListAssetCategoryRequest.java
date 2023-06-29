@@ -58,16 +58,15 @@ public class ListAssetCategoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetCategoryRequest listAssetCategoryRequest = (ListAssetCategoryRequest) o;
-        return Objects.equals(this.xSdkDate, listAssetCategoryRequest.xSdkDate)
-            && Objects.equals(this.id, listAssetCategoryRequest.id);
+        ListAssetCategoryRequest that = (ListAssetCategoryRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.id, that.id);
     }
 
     @Override

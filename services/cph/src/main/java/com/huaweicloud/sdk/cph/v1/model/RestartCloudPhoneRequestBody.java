@@ -74,16 +74,15 @@ public class RestartCloudPhoneRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartCloudPhoneRequestBody restartCloudPhoneRequestBody = (RestartCloudPhoneRequestBody) o;
-        return Objects.equals(this.imageId, restartCloudPhoneRequestBody.imageId)
-            && Objects.equals(this.phones, restartCloudPhoneRequestBody.phones);
+        RestartCloudPhoneRequestBody that = (RestartCloudPhoneRequestBody) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.phones, that.phones);
     }
 
     @Override

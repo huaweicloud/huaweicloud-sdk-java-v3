@@ -77,16 +77,15 @@ public class ListPubMetricsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPubMetricsResponse listPubMetricsResponse = (ListPubMetricsResponse) o;
-        return Objects.equals(this.total, listPubMetricsResponse.total)
-            && Objects.equals(this.result, listPubMetricsResponse.result);
+        ListPubMetricsResponse that = (ListPubMetricsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.result, that.result);
     }
 
     @Override

@@ -671,40 +671,31 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
-        return Objects.equals(this.datastore, showClusterDetailResponse.datastore)
-            && Objects.equals(this.instances, showClusterDetailResponse.instances)
-            && Objects.equals(this.publicKibanaResp, showClusterDetailResponse.publicKibanaResp)
-            && Objects.equals(this.elbWhiteList, showClusterDetailResponse.elbWhiteList)
-            && Objects.equals(this.updated, showClusterDetailResponse.updated)
-            && Objects.equals(this.name, showClusterDetailResponse.name)
-            && Objects.equals(this.publicIp, showClusterDetailResponse.publicIp)
-            && Objects.equals(this.created, showClusterDetailResponse.created)
-            && Objects.equals(this.id, showClusterDetailResponse.id)
-            && Objects.equals(this.status, showClusterDetailResponse.status)
-            && Objects.equals(this.endpoint, showClusterDetailResponse.endpoint)
-            && Objects.equals(this.vpcId, showClusterDetailResponse.vpcId)
-            && Objects.equals(this.subnetId, showClusterDetailResponse.subnetId)
-            && Objects.equals(this.securityGroupId, showClusterDetailResponse.securityGroupId)
-            && Objects.equals(this.vpcepIp, showClusterDetailResponse.vpcepIp)
-            && Objects.equals(this.bandwidthSize, showClusterDetailResponse.bandwidthSize)
-            && Objects.equals(this.httpsEnable, showClusterDetailResponse.httpsEnable)
-            && Objects.equals(this.diskEncrypted, showClusterDetailResponse.diskEncrypted)
-            && Objects.equals(this.authorityEnable, showClusterDetailResponse.authorityEnable)
-            && Objects.equals(this.backupAvailable, showClusterDetailResponse.backupAvailable)
-            && Objects.equals(this.actionProgress, showClusterDetailResponse.actionProgress)
-            && Objects.equals(this.actions, showClusterDetailResponse.actions)
-            && Objects.equals(this.enterpriseProjectId, showClusterDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.tags, showClusterDetailResponse.tags)
-            && Objects.equals(this.failedReason, showClusterDetailResponse.failedReason)
-            && Objects.equals(this.period, showClusterDetailResponse.period);
+        ShowClusterDetailResponse that = (ShowClusterDetailResponse) obj;
+        return Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.publicKibanaResp, that.publicKibanaResp)
+            && Objects.equals(this.elbWhiteList, that.elbWhiteList) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcepIp, that.vpcepIp)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.httpsEnable, that.httpsEnable)
+            && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.authorityEnable, that.authorityEnable)
+            && Objects.equals(this.backupAvailable, that.backupAvailable)
+            && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.period, that.period);
     }
 
     @Override

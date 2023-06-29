@@ -90,22 +90,15 @@ public class ShowConfigurationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DatastoreNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreNameEnum(value));
         }
 
         public static DatastoreNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,22 +290,20 @@ public class ShowConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationResponse showConfigurationResponse = (ShowConfigurationResponse) o;
-        return Objects.equals(this.id, showConfigurationResponse.id)
-            && Objects.equals(this.name, showConfigurationResponse.name)
-            && Objects.equals(this.description, showConfigurationResponse.description)
-            && Objects.equals(this.datastoreVersionName, showConfigurationResponse.datastoreVersionName)
-            && Objects.equals(this.datastoreName, showConfigurationResponse.datastoreName)
-            && Objects.equals(this.created, showConfigurationResponse.created)
-            && Objects.equals(this.updated, showConfigurationResponse.updated)
-            && Objects.equals(this.configurationParameters, showConfigurationResponse.configurationParameters);
+        ShowConfigurationResponse that = (ShowConfigurationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.configurationParameters, that.configurationParameters);
     }
 
     @Override

@@ -143,20 +143,19 @@ public class AlarmSubUpdateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmSubUpdateRequest alarmSubUpdateRequest = (AlarmSubUpdateRequest) o;
-        return Objects.equals(this.name, alarmSubUpdateRequest.name)
-            && Objects.equals(this.enable, alarmSubUpdateRequest.enable)
-            && Objects.equals(this.alarmLevel, alarmSubUpdateRequest.alarmLevel)
-            && Objects.equals(this.notificationTarget, alarmSubUpdateRequest.notificationTarget)
-            && Objects.equals(this.notificationTargetName, alarmSubUpdateRequest.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, alarmSubUpdateRequest.notificationTargetType);
+        AlarmSubUpdateRequest that = (AlarmSubUpdateRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType);
     }
 
     @Override

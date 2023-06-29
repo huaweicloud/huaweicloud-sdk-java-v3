@@ -551,37 +551,29 @@ public class SmsSignatureResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsSignatureResp smsSignatureResp = (SmsSignatureResp) o;
-        return Objects.equals(this.id, smsSignatureResp.id)
-            && Objects.equals(this.createTime, smsSignatureResp.createTime)
-            && Objects.equals(this.updateTime, smsSignatureResp.updateTime)
-            && Objects.equals(this.customerId, smsSignatureResp.customerId)
-            && Objects.equals(this.tenant, smsSignatureResp.tenant)
-            && Objects.equals(this.signatureName, smsSignatureResp.signatureName)
-            && Objects.equals(this.signatureId, smsSignatureResp.signatureId)
-            && Objects.equals(this.signatureType, smsSignatureResp.signatureType)
-            && Objects.equals(this.appName, smsSignatureResp.appName)
-            && Objects.equals(this.applyDesc, smsSignatureResp.applyDesc)
-            && Objects.equals(this.channelNum, smsSignatureResp.channelNum)
-            && Objects.equals(this.reviewDesc, smsSignatureResp.reviewDesc)
-            && Objects.equals(this.fileId, smsSignatureResp.fileId)
-            && Objects.equals(this.status, smsSignatureResp.status) && Objects.equals(this.site, smsSignatureResp.site)
-            && Objects.equals(this.signatureSource, smsSignatureResp.signatureSource)
-            && Objects.equals(this.isInvolvedThird, smsSignatureResp.isInvolvedThird)
-            && Objects.equals(this.powerAttorneyFileId, smsSignatureResp.powerAttorneyFileId)
-            && Objects.equals(this.urgeStatus, smsSignatureResp.urgeStatus)
-            && Objects.equals(this.urgeTime, smsSignatureResp.urgeTime)
-            && Objects.equals(this.urgeDesc, smsSignatureResp.urgeDesc)
-            && Objects.equals(this.appKey, smsSignatureResp.appKey)
-            && Objects.equals(this.sourceTitleContent, smsSignatureResp.sourceTitleContent)
-            && Objects.equals(this.signatureUsage, smsSignatureResp.signatureUsage);
+        SmsSignatureResp that = (SmsSignatureResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.tenant, that.tenant) && Objects.equals(this.signatureName, that.signatureName)
+            && Objects.equals(this.signatureId, that.signatureId)
+            && Objects.equals(this.signatureType, that.signatureType) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.applyDesc, that.applyDesc) && Objects.equals(this.channelNum, that.channelNum)
+            && Objects.equals(this.reviewDesc, that.reviewDesc) && Objects.equals(this.fileId, that.fileId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.site, that.site)
+            && Objects.equals(this.signatureSource, that.signatureSource)
+            && Objects.equals(this.isInvolvedThird, that.isInvolvedThird)
+            && Objects.equals(this.powerAttorneyFileId, that.powerAttorneyFileId)
+            && Objects.equals(this.urgeStatus, that.urgeStatus) && Objects.equals(this.urgeTime, that.urgeTime)
+            && Objects.equals(this.urgeDesc, that.urgeDesc) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.sourceTitleContent, that.sourceTitleContent)
+            && Objects.equals(this.signatureUsage, that.signatureUsage);
     }
 
     @Override

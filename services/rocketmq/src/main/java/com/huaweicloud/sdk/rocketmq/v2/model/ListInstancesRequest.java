@@ -105,22 +105,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,22 +180,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            IncludeFailureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IncludeFailureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IncludeFailureEnum(value));
         }
 
         public static IncludeFailureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IncludeFailureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +255,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            ExactMatchNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExactMatchNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExactMatchNameEnum(value));
         }
 
         public static ExactMatchNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExactMatchNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -475,23 +454,20 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.engine, listInstancesRequest.engine)
-            && Objects.equals(this.name, listInstancesRequest.name)
-            && Objects.equals(this.instanceId, listInstancesRequest.instanceId)
-            && Objects.equals(this.status, listInstancesRequest.status)
-            && Objects.equals(this.includeFailure, listInstancesRequest.includeFailure)
-            && Objects.equals(this.exactMatchName, listInstancesRequest.exactMatchName)
-            && Objects.equals(this.enterpriseProjectId, listInstancesRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.offset, listInstancesRequest.offset);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.includeFailure, that.includeFailure)
+            && Objects.equals(this.exactMatchName, that.exactMatchName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

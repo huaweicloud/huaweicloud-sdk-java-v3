@@ -55,16 +55,16 @@ public class ComponentConfigCompare {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentConfigCompare componentConfigCompare = (ComponentConfigCompare) o;
-        return Objects.equals(this.baseVersion, componentConfigCompare.baseVersion)
-            && Objects.equals(this.compareVersion, componentConfigCompare.compareVersion);
+        ComponentConfigCompare that = (ComponentConfigCompare) obj;
+        return Objects.equals(this.baseVersion, that.baseVersion)
+            && Objects.equals(this.compareVersion, that.compareVersion);
     }
 
     @Override

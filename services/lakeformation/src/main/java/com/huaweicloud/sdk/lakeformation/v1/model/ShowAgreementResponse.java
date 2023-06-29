@@ -99,17 +99,16 @@ public class ShowAgreementResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAgreementResponse showAgreementResponse = (ShowAgreementResponse) o;
-        return Objects.equals(this.agreements, showAgreementResponse.agreements)
-            && Objects.equals(this.isAgency, showAgreementResponse.isAgency)
-            && Objects.equals(this.xRequestId, showAgreementResponse.xRequestId);
+        ShowAgreementResponse that = (ShowAgreementResponse) obj;
+        return Objects.equals(this.agreements, that.agreements) && Objects.equals(this.isAgency, that.isAgency)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

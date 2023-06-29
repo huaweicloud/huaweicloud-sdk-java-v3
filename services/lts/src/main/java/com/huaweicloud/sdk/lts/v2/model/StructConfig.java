@@ -83,22 +83,15 @@ public class StructConfig {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TemplateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
         }
 
         public static TemplateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,22 +297,18 @@ public class StructConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructConfig structConfig = (StructConfig) o;
-        return Objects.equals(this.logGroupId, structConfig.logGroupId)
-            && Objects.equals(this.logStreamId, structConfig.logStreamId)
-            && Objects.equals(this.templateId, structConfig.templateId)
-            && Objects.equals(this.templateName, structConfig.templateName)
-            && Objects.equals(this.templateType, structConfig.templateType)
-            && Objects.equals(this.demoFields, structConfig.demoFields)
-            && Objects.equals(this.tagFields, structConfig.tagFields)
-            && Objects.equals(this.quickAnalysis, structConfig.quickAnalysis);
+        StructConfig that = (StructConfig) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.demoFields, that.demoFields)
+            && Objects.equals(this.tagFields, that.tagFields) && Objects.equals(this.quickAnalysis, that.quickAnalysis);
     }
 
     @Override

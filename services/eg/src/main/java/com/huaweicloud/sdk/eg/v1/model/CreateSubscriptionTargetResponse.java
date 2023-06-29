@@ -222,23 +222,19 @@ public class CreateSubscriptionTargetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubscriptionTargetResponse createSubscriptionTargetResponse = (CreateSubscriptionTargetResponse) o;
-        return Objects.equals(this.id, createSubscriptionTargetResponse.id)
-            && Objects.equals(this.name, createSubscriptionTargetResponse.name)
-            && Objects.equals(this.providerType, createSubscriptionTargetResponse.providerType)
-            && Objects.equals(this.connectionId, createSubscriptionTargetResponse.connectionId)
-            && Objects.equals(this.detail, createSubscriptionTargetResponse.detail)
-            && Objects.equals(this.transform, createSubscriptionTargetResponse.transform)
-            && Objects.equals(this.createdTime, createSubscriptionTargetResponse.createdTime)
-            && Objects.equals(this.updatedTime, createSubscriptionTargetResponse.updatedTime)
-            && Objects.equals(this.xRequestId, createSubscriptionTargetResponse.xRequestId);
+        CreateSubscriptionTargetResponse that = (CreateSubscriptionTargetResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.transform, that.transform) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

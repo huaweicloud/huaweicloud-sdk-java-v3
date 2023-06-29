@@ -74,22 +74,15 @@ public class BackendRequestPara {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,17 +161,16 @@ public class BackendRequestPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendRequestPara backendRequestPara = (BackendRequestPara) o;
-        return Objects.equals(this.name, backendRequestPara.name)
-            && Objects.equals(this.position, backendRequestPara.position)
-            && Objects.equals(this.backendParaName, backendRequestPara.backendParaName);
+        BackendRequestPara that = (BackendRequestPara) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.backendParaName, that.backendParaName);
     }
 
     @Override

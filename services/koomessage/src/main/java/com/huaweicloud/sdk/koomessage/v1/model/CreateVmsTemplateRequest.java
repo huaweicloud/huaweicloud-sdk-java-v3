@@ -43,15 +43,15 @@ public class CreateVmsTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVmsTemplateRequest createVmsTemplateRequest = (CreateVmsTemplateRequest) o;
-        return Objects.equals(this.body, createVmsTemplateRequest.body);
+        CreateVmsTemplateRequest that = (CreateVmsTemplateRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Position;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class CharacterConfig  {
-
+public class CharacterConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_id")
-    
+    @JsonProperty(value = "character_id")
 
     private String characterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="position")
-    
+    @JsonProperty(value = "position")
 
     private Position position;
 
@@ -34,9 +25,6 @@ public class CharacterConfig  {
         this.characterId = characterId;
         return this;
     }
-
-    
-
 
     /**
      * 形象id
@@ -50,22 +38,19 @@ public class CharacterConfig  {
         this.characterId = characterId;
     }
 
-    
-
     public CharacterConfig withPosition(Position position) {
         this.position = position;
         return this;
     }
 
     public CharacterConfig withPosition(Consumer<Position> positionSetter) {
-        if(this.position == null ){
+        if (this.position == null) {
             this.position = new Position();
             positionSetter.accept(this.position);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get position
@@ -79,24 +64,23 @@ public class CharacterConfig  {
         this.position = position;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CharacterConfig characterConfig = (CharacterConfig) o;
-        return Objects.equals(this.characterId, characterConfig.characterId) &&
-            Objects.equals(this.position, characterConfig.position);
+        CharacterConfig that = (CharacterConfig) obj;
+        return Objects.equals(this.characterId, that.characterId) && Objects.equals(this.position, that.position);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(characterId, position);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,6 +90,7 @@ public class CharacterConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -116,8 +101,5 @@ public class CharacterConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

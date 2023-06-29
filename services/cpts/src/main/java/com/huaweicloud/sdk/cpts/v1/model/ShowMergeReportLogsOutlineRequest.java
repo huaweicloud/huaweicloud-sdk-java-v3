@@ -35,15 +35,15 @@ public class ShowMergeReportLogsOutlineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMergeReportLogsOutlineRequest showMergeReportLogsOutlineRequest = (ShowMergeReportLogsOutlineRequest) o;
-        return Objects.equals(this.taskRunId, showMergeReportLogsOutlineRequest.taskRunId);
+        ShowMergeReportLogsOutlineRequest that = (ShowMergeReportLogsOutlineRequest) obj;
+        return Objects.equals(this.taskRunId, that.taskRunId);
     }
 
     @Override

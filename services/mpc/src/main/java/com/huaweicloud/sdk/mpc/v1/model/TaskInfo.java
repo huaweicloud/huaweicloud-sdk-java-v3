@@ -224,19 +224,18 @@ public class TaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfo taskInfo = (TaskInfo) o;
-        return Objects.equals(this.taskId, taskInfo.taskId) && Objects.equals(this.status, taskInfo.status)
-            && Objects.equals(this.createTime, taskInfo.createTime) && Objects.equals(this.endTime, taskInfo.endTime)
-            && Objects.equals(this.output, taskInfo.output) && Objects.equals(this.description, taskInfo.description)
-            && Objects.equals(this.outputFileName, taskInfo.outputFileName)
-            && Objects.equals(this.input, taskInfo.input);
+        TaskInfo that = (TaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.outputFileName, that.outputFileName) && Objects.equals(this.input, that.input);
     }
 
     @Override

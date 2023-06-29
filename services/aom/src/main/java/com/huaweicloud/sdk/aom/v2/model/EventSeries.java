@@ -1,53 +1,47 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 事件或者告警统计值统计结果元数据。
  */
-public class EventSeries  {
+public class EventSeries {
 
     /**
      * 事件或者告警级别枚举类型。
      */
     public static final class EventSeverityEnum {
 
-        
         /**
          * Enum CRITICAL for value: "Critical"
          */
         public static final EventSeverityEnum CRITICAL = new EventSeverityEnum("Critical");
-        
+
         /**
          * Enum MAJOR for value: "Major"
          */
         public static final EventSeverityEnum MAJOR = new EventSeverityEnum("Major");
-        
+
         /**
          * Enum MINOR for value: "Minor"
          */
         public static final EventSeverityEnum MINOR = new EventSeverityEnum("Minor");
-        
+
         /**
          * Enum INFO for value: "Info"
          */
         public static final EventSeverityEnum INFO = new EventSeverityEnum("Info");
-        
 
         private static final Map<String, EventSeverityEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,25 +72,18 @@ public class EventSeries  {
 
         @JsonCreator
         public static EventSeverityEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            EventSeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventSeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventSeverityEnum(value));
         }
 
         public static EventSeverityEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            EventSeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -114,23 +101,19 @@ public class EventSeries  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_severity")
-    
+    @JsonProperty(value = "event_severity")
 
     private EventSeverityEnum eventSeverity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<Integer> values = null;
-    
+
     public EventSeries withEventSeverity(EventSeverityEnum eventSeverity) {
         this.eventSeverity = eventSeverity;
         return this;
     }
-
-    
-
 
     /**
      * 事件或者告警级别枚举类型。
@@ -144,16 +127,13 @@ public class EventSeries  {
         this.eventSeverity = eventSeverity;
     }
 
-    
-
     public EventSeries withValues(List<Integer> values) {
         this.values = values;
         return this;
     }
 
-    
     public EventSeries addValuesItem(Integer valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -161,7 +141,7 @@ public class EventSeries  {
     }
 
     public EventSeries withValues(Consumer<List<Integer>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
@@ -180,24 +160,23 @@ public class EventSeries  {
         this.values = values;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSeries eventSeries = (EventSeries) o;
-        return Objects.equals(this.eventSeverity, eventSeries.eventSeverity) &&
-            Objects.equals(this.values, eventSeries.values);
+        EventSeries that = (EventSeries) obj;
+        return Objects.equals(this.eventSeverity, that.eventSeverity) && Objects.equals(this.values, that.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventSeverity, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -207,6 +186,7 @@ public class EventSeries  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -217,8 +197,5 @@ public class EventSeries  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

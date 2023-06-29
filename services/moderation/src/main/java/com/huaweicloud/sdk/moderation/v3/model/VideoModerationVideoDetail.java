@@ -63,22 +63,15 @@ public class VideoModerationVideoDetail {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuggestionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuggestionEnum(value));
         }
 
         public static SuggestionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -244,20 +237,17 @@ public class VideoModerationVideoDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoModerationVideoDetail videoModerationVideoDetail = (VideoModerationVideoDetail) o;
-        return Objects.equals(this.suggestion, videoModerationVideoDetail.suggestion)
-            && Objects.equals(this.label, videoModerationVideoDetail.label)
-            && Objects.equals(this.audioText, videoModerationVideoDetail.audioText)
-            && Objects.equals(this.endTime, videoModerationVideoDetail.endTime)
-            && Objects.equals(this.startTime, videoModerationVideoDetail.startTime)
-            && Objects.equals(this.detail, videoModerationVideoDetail.detail);
+        VideoModerationVideoDetail that = (VideoModerationVideoDetail) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.audioText, that.audioText) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

@@ -341,27 +341,23 @@ public class WatermarkTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WatermarkTemplate watermarkTemplate = (WatermarkTemplate) o;
-        return Objects.equals(this.name, watermarkTemplate.name) && Objects.equals(this.id, watermarkTemplate.id)
-            && Objects.equals(this.status, watermarkTemplate.status) && Objects.equals(this.dx, watermarkTemplate.dx)
-            && Objects.equals(this.dy, watermarkTemplate.dy)
-            && Objects.equals(this.position, watermarkTemplate.position)
-            && Objects.equals(this.width, watermarkTemplate.width)
-            && Objects.equals(this.height, watermarkTemplate.height)
-            && Objects.equals(this.createTime, watermarkTemplate.createTime)
-            && Objects.equals(this.imageUrl, watermarkTemplate.imageUrl)
-            && Objects.equals(this.type, watermarkTemplate.type)
-            && Objects.equals(this.watermarkType, watermarkTemplate.watermarkType)
-            && Objects.equals(this.imageProcess, watermarkTemplate.imageProcess)
-            && Objects.equals(this.timelineStart, watermarkTemplate.timelineStart)
-            && Objects.equals(this.timelineDuration, watermarkTemplate.timelineDuration);
+        WatermarkTemplate that = (WatermarkTemplate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.dx, that.dx)
+            && Objects.equals(this.dy, that.dy) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.watermarkType, that.watermarkType)
+            && Objects.equals(this.imageProcess, that.imageProcess)
+            && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration);
     }
 
     @Override

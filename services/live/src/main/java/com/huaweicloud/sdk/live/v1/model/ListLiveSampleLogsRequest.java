@@ -78,17 +78,16 @@ public class ListLiveSampleLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveSampleLogsRequest listLiveSampleLogsRequest = (ListLiveSampleLogsRequest) o;
-        return Objects.equals(this.playDomain, listLiveSampleLogsRequest.playDomain)
-            && Objects.equals(this.startTime, listLiveSampleLogsRequest.startTime)
-            && Objects.equals(this.endTime, listLiveSampleLogsRequest.endTime);
+        ListLiveSampleLogsRequest that = (ListLiveSampleLogsRequest) obj;
+        return Objects.equals(this.playDomain, that.playDomain) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

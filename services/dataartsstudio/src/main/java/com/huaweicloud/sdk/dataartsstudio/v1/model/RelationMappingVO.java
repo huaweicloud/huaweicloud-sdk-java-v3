@@ -232,24 +232,21 @@ public class RelationMappingVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelationMappingVO relationMappingVO = (RelationMappingVO) o;
-        return Objects.equals(this.id, relationMappingVO.id)
-            && Objects.equals(this.relationId, relationMappingVO.relationId)
-            && Objects.equals(this.sourceFieldId, relationMappingVO.sourceFieldId)
-            && Objects.equals(this.targetFieldId, relationMappingVO.targetFieldId)
-            && Objects.equals(this.sourceFieldName, relationMappingVO.sourceFieldName)
-            && Objects.equals(this.targetFieldName, relationMappingVO.targetFieldName)
-            && Objects.equals(this.createBy, relationMappingVO.createBy)
-            && Objects.equals(this.updateBy, relationMappingVO.updateBy)
-            && Objects.equals(this.createTime, relationMappingVO.createTime)
-            && Objects.equals(this.updateTime, relationMappingVO.updateTime);
+        RelationMappingVO that = (RelationMappingVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.relationId, that.relationId)
+            && Objects.equals(this.sourceFieldId, that.sourceFieldId)
+            && Objects.equals(this.targetFieldId, that.targetFieldId)
+            && Objects.equals(this.sourceFieldName, that.sourceFieldName)
+            && Objects.equals(this.targetFieldName, that.targetFieldName)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

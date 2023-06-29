@@ -61,22 +61,15 @@ public class SourceOrArtifact {
             if (value == null) {
                 return null;
             }
-            StorageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageEnum(value));
         }
 
         public static StorageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,22 +130,15 @@ public class SourceOrArtifact {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -394,22 +380,19 @@ public class SourceOrArtifact {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceOrArtifact sourceOrArtifact = (SourceOrArtifact) o;
-        return Objects.equals(this.storage, sourceOrArtifact.storage)
-            && Objects.equals(this.type, sourceOrArtifact.type) && Objects.equals(this.url, sourceOrArtifact.url)
-            && Objects.equals(this.webUrl, sourceOrArtifact.webUrl) && Objects.equals(this.auth, sourceOrArtifact.auth)
-            && Objects.equals(this.properties, sourceOrArtifact.properties)
-            && Objects.equals(this.repoType, sourceOrArtifact.repoType)
-            && Objects.equals(this.repoUrl, sourceOrArtifact.repoUrl)
-            && Objects.equals(this.repoRef, sourceOrArtifact.repoRef)
-            && Objects.equals(this.repoAuth, sourceOrArtifact.repoAuth);
+        SourceOrArtifact that = (SourceOrArtifact) obj;
+        return Objects.equals(this.storage, that.storage) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.webUrl, that.webUrl)
+            && Objects.equals(this.auth, that.auth) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.repoType, that.repoType) && Objects.equals(this.repoUrl, that.repoUrl)
+            && Objects.equals(this.repoRef, that.repoRef) && Objects.equals(this.repoAuth, that.repoAuth);
     }
 
     @Override

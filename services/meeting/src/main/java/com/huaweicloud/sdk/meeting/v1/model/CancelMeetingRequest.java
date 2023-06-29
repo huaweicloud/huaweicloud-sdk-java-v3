@@ -125,19 +125,17 @@ public class CancelMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelMeetingRequest cancelMeetingRequest = (CancelMeetingRequest) o;
-        return Objects.equals(this.conferenceID, cancelMeetingRequest.conferenceID)
-            && Objects.equals(this.userUUID, cancelMeetingRequest.userUUID)
-            && Objects.equals(this.type, cancelMeetingRequest.type)
-            && Objects.equals(this.xAuthorizationType, cancelMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, cancelMeetingRequest.xSiteId);
+        CancelMeetingRequest that = (CancelMeetingRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

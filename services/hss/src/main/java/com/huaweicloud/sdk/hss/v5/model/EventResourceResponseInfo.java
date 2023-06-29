@@ -429,33 +429,24 @@ public class EventResourceResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventResourceResponseInfo eventResourceResponseInfo = (EventResourceResponseInfo) o;
-        return Objects.equals(this.domainId, eventResourceResponseInfo.domainId)
-            && Objects.equals(this.projectId, eventResourceResponseInfo.projectId)
-            && Objects.equals(this.enterpriseProjectId, eventResourceResponseInfo.enterpriseProjectId)
-            && Objects.equals(this.regionName, eventResourceResponseInfo.regionName)
-            && Objects.equals(this.vpcId, eventResourceResponseInfo.vpcId)
-            && Objects.equals(this.cloudId, eventResourceResponseInfo.cloudId)
-            && Objects.equals(this.vmName, eventResourceResponseInfo.vmName)
-            && Objects.equals(this.vmUuid, eventResourceResponseInfo.vmUuid)
-            && Objects.equals(this.containerId, eventResourceResponseInfo.containerId)
-            && Objects.equals(this.imageId, eventResourceResponseInfo.imageId)
-            && Objects.equals(this.imageName, eventResourceResponseInfo.imageName)
-            && Objects.equals(this.hostAttr, eventResourceResponseInfo.hostAttr)
-            && Objects.equals(this.service, eventResourceResponseInfo.service)
-            && Objects.equals(this.microService, eventResourceResponseInfo.microService)
-            && Objects.equals(this.sysArch, eventResourceResponseInfo.sysArch)
-            && Objects.equals(this.osBit, eventResourceResponseInfo.osBit)
-            && Objects.equals(this.osType, eventResourceResponseInfo.osType)
-            && Objects.equals(this.osName, eventResourceResponseInfo.osName)
-            && Objects.equals(this.osVersion, eventResourceResponseInfo.osVersion);
+        EventResourceResponseInfo that = (EventResourceResponseInfo) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.cloudId, that.cloudId) && Objects.equals(this.vmName, that.vmName)
+            && Objects.equals(this.vmUuid, that.vmUuid) && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.imageName, that.imageName)
+            && Objects.equals(this.hostAttr, that.hostAttr) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.microService, that.microService) && Objects.equals(this.sysArch, that.sysArch)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion);
     }
 
     @Override

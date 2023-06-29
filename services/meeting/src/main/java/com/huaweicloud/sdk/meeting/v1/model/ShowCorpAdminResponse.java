@@ -198,22 +198,18 @@ public class ShowCorpAdminResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpAdminResponse showCorpAdminResponse = (ShowCorpAdminResponse) o;
-        return Objects.equals(this.id, showCorpAdminResponse.id)
-            && Objects.equals(this.account, showCorpAdminResponse.account)
-            && Objects.equals(this.name, showCorpAdminResponse.name)
-            && Objects.equals(this.adminType, showCorpAdminResponse.adminType)
-            && Objects.equals(this.email, showCorpAdminResponse.email)
-            && Objects.equals(this.phone, showCorpAdminResponse.phone)
-            && Objects.equals(this.country, showCorpAdminResponse.country)
-            && Objects.equals(this.dept, showCorpAdminResponse.dept);
+        ShowCorpAdminResponse that = (ShowCorpAdminResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.dept, that.dept);
     }
 
     @Override

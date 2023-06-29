@@ -359,26 +359,21 @@ public class VaultOrder {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultOrder vaultOrder = (VaultOrder) o;
-        return Objects.equals(this.name, vaultOrder.name) && Objects.equals(this.billing, vaultOrder.billing)
-            && Objects.equals(this.resources, vaultOrder.resources)
-            && Objects.equals(this.description, vaultOrder.description)
-            && Objects.equals(this.backupPolicyId, vaultOrder.backupPolicyId)
-            && Objects.equals(this.tags, vaultOrder.tags)
-            && Objects.equals(this.enterpriseProjectId, vaultOrder.enterpriseProjectId)
-            && Objects.equals(this.autoBind, vaultOrder.autoBind)
-            && Objects.equals(this.bindRules, vaultOrder.bindRules)
-            && Objects.equals(this.threshold, vaultOrder.threshold)
-            && Objects.equals(this.smnNotify, vaultOrder.smnNotify)
-            && Objects.equals(this.parameters, vaultOrder.parameters)
-            && Objects.equals(this.autoExpand, vaultOrder.autoExpand);
+        VaultOrder that = (VaultOrder) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.billing, that.billing)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.backupPolicyId, that.backupPolicyId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.smnNotify, that.smnNotify)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.autoExpand, that.autoExpand);
     }
 
     @Override

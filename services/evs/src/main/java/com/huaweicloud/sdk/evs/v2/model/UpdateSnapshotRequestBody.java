@@ -43,15 +43,15 @@ public class UpdateSnapshotRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSnapshotRequestBody updateSnapshotRequestBody = (UpdateSnapshotRequestBody) o;
-        return Objects.equals(this.snapshot, updateSnapshotRequestBody.snapshot);
+        UpdateSnapshotRequestBody that = (UpdateSnapshotRequestBody) obj;
+        return Objects.equals(this.snapshot, that.snapshot);
     }
 
     @Override

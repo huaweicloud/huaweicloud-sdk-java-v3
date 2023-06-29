@@ -113,22 +113,15 @@ public class FlowExecutionBriefV2 {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,22 +305,18 @@ public class FlowExecutionBriefV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlowExecutionBriefV2 flowExecutionBriefV2 = (FlowExecutionBriefV2) o;
-        return Objects.equals(this.workflowId, flowExecutionBriefV2.workflowId)
-            && Objects.equals(this.executionId, flowExecutionBriefV2.executionId)
-            && Objects.equals(this.status, flowExecutionBriefV2.status)
-            && Objects.equals(this.beginTime, flowExecutionBriefV2.beginTime)
-            && Objects.equals(this.endTime, flowExecutionBriefV2.endTime)
-            && Objects.equals(this.lastUpdateTime, flowExecutionBriefV2.lastUpdateTime)
-            && Objects.equals(this.createdBy, flowExecutionBriefV2.createdBy)
-            && Objects.equals(this.workflowUrn, flowExecutionBriefV2.workflowUrn);
+        FlowExecutionBriefV2 that = (FlowExecutionBriefV2) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.workflowUrn, that.workflowUrn);
     }
 
     @Override

@@ -68,22 +68,15 @@ public class ApiGroupInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -497,29 +490,23 @@ public class ApiGroupInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiGroupInfo apiGroupInfo = (ApiGroupInfo) o;
-        return Objects.equals(this.id, apiGroupInfo.id) && Objects.equals(this.name, apiGroupInfo.name)
-            && Objects.equals(this.status, apiGroupInfo.status) && Objects.equals(this.slDomain, apiGroupInfo.slDomain)
-            && Objects.equals(this.registerTime, apiGroupInfo.registerTime)
-            && Objects.equals(this.updateTime, apiGroupInfo.updateTime)
-            && Objects.equals(this.onSellStatus, apiGroupInfo.onSellStatus)
-            && Objects.equals(this.urlDomains, apiGroupInfo.urlDomains)
-            && Objects.equals(this.slDomains, apiGroupInfo.slDomains)
-            && Objects.equals(this.remark, apiGroupInfo.remark)
-            && Objects.equals(this.callLimits, apiGroupInfo.callLimits)
-            && Objects.equals(this.timeInterval, apiGroupInfo.timeInterval)
-            && Objects.equals(this.timeUnit, apiGroupInfo.timeUnit)
-            && Objects.equals(this.isDefault, apiGroupInfo.isDefault)
-            && Objects.equals(this.version, apiGroupInfo.version)
-            && Objects.equals(this.romaAppId, apiGroupInfo.romaAppId)
-            && Objects.equals(this.romaAppName, apiGroupInfo.romaAppName);
+        ApiGroupInfo that = (ApiGroupInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.slDomain, that.slDomain)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains)
+            && Objects.equals(this.slDomains, that.slDomains) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.callLimits, that.callLimits) && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

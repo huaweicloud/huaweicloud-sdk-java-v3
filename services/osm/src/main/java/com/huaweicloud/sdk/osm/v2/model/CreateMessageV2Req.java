@@ -65,16 +65,15 @@ public class CreateMessageV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMessageV2Req createMessageV2Req = (CreateMessageV2Req) o;
-        return Objects.equals(this.message, createMessageV2Req.message)
-            && Objects.equals(this.groupId, createMessageV2Req.groupId);
+        CreateMessageV2Req that = (CreateMessageV2Req) obj;
+        return Objects.equals(this.message, that.message) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

@@ -57,16 +57,16 @@ public class DeleteEngineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEngineRequest deleteEngineRequest = (DeleteEngineRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, deleteEngineRequest.xEnterpriseProjectID)
-            && Objects.equals(this.engineId, deleteEngineRequest.engineId);
+        DeleteEngineRequest that = (DeleteEngineRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.engineId, that.engineId);
     }
 
     @Override

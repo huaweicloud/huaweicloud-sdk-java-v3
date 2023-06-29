@@ -363,26 +363,25 @@ public class Quota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Quota quota = (Quota) o;
-        return Objects.equals(this.projectId, quota.projectId) && Objects.equals(this.loadbalancer, quota.loadbalancer)
-            && Objects.equals(this.certificate, quota.certificate) && Objects.equals(this.listener, quota.listener)
-            && Objects.equals(this.l7policy, quota.l7policy)
-            && Objects.equals(this.conditionPerPolicy, quota.conditionPerPolicy)
-            && Objects.equals(this.pool, quota.pool) && Objects.equals(this.healthmonitor, quota.healthmonitor)
-            && Objects.equals(this.member, quota.member) && Objects.equals(this.membersPerPool, quota.membersPerPool)
-            && Objects.equals(this.listenersPerPool, quota.listenersPerPool)
-            && Objects.equals(this.ipgroup, quota.ipgroup)
-            && Objects.equals(this.ipgroupBindings, quota.ipgroupBindings)
-            && Objects.equals(this.ipgroupMaxLength, quota.ipgroupMaxLength)
-            && Objects.equals(this.securityPolicy, quota.securityPolicy)
-            && Objects.equals(this.listenersPerLoadbalancer, quota.listenersPerLoadbalancer);
+        Quota that = (Quota) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.loadbalancer, that.loadbalancer)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.listener, that.listener)
+            && Objects.equals(this.l7policy, that.l7policy)
+            && Objects.equals(this.conditionPerPolicy, that.conditionPerPolicy) && Objects.equals(this.pool, that.pool)
+            && Objects.equals(this.healthmonitor, that.healthmonitor) && Objects.equals(this.member, that.member)
+            && Objects.equals(this.membersPerPool, that.membersPerPool)
+            && Objects.equals(this.listenersPerPool, that.listenersPerPool)
+            && Objects.equals(this.ipgroup, that.ipgroup) && Objects.equals(this.ipgroupBindings, that.ipgroupBindings)
+            && Objects.equals(this.ipgroupMaxLength, that.ipgroupMaxLength)
+            && Objects.equals(this.securityPolicy, that.securityPolicy)
+            && Objects.equals(this.listenersPerLoadbalancer, that.listenersPerLoadbalancer);
     }
 
     @Override

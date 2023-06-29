@@ -75,22 +75,15 @@ public class ListBandwidthsRequest {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShareTypeEnum(value));
         }
 
         public static ShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,18 +175,17 @@ public class ListBandwidthsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthsRequest listBandwidthsRequest = (ListBandwidthsRequest) o;
-        return Objects.equals(this.marker, listBandwidthsRequest.marker)
-            && Objects.equals(this.limit, listBandwidthsRequest.limit)
-            && Objects.equals(this.enterpriseProjectId, listBandwidthsRequest.enterpriseProjectId)
-            && Objects.equals(this.shareType, listBandwidthsRequest.shareType);
+        ListBandwidthsRequest that = (ListBandwidthsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.shareType, that.shareType);
     }
 
     @Override

@@ -1,42 +1,32 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DeregisterScenesReqScenes
  */
-public class DeregisterScenesReqScenes  {
-
+public class DeregisterScenesReqScenes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="applications")
-    
+    @JsonProperty(value = "applications")
+
     private List<String> applications = null;
-    
+
     public DeregisterScenesReqScenes withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 场景名。
@@ -50,16 +40,13 @@ public class DeregisterScenesReqScenes  {
         this.name = name;
     }
 
-    
-
     public DeregisterScenesReqScenes withApplications(List<String> applications) {
         this.applications = applications;
         return this;
     }
 
-    
     public DeregisterScenesReqScenes addApplicationsItem(String applicationsItem) {
-        if(this.applications == null) {
+        if (this.applications == null) {
             this.applications = new ArrayList<>();
         }
         this.applications.add(applicationsItem);
@@ -67,7 +54,7 @@ public class DeregisterScenesReqScenes  {
     }
 
     public DeregisterScenesReqScenes withApplications(Consumer<List<String>> applicationsSetter) {
-        if(this.applications == null) {
+        if (this.applications == null) {
             this.applications = new ArrayList<>();
         }
         applicationsSetter.accept(this.applications);
@@ -86,24 +73,23 @@ public class DeregisterScenesReqScenes  {
         this.applications = applications;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeregisterScenesReqScenes deregisterScenesReqScenes = (DeregisterScenesReqScenes) o;
-        return Objects.equals(this.name, deregisterScenesReqScenes.name) &&
-            Objects.equals(this.applications, deregisterScenesReqScenes.applications);
+        DeregisterScenesReqScenes that = (DeregisterScenesReqScenes) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.applications, that.applications);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, applications);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class DeregisterScenesReqScenes  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class DeregisterScenesReqScenes  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

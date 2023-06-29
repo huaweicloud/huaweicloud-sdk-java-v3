@@ -34,15 +34,15 @@ public class UnfreezeDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnfreezeDeviceResponse unfreezeDeviceResponse = (UnfreezeDeviceResponse) o;
-        return Objects.equals(this.body, unfreezeDeviceResponse.body);
+        UnfreezeDeviceResponse that = (UnfreezeDeviceResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

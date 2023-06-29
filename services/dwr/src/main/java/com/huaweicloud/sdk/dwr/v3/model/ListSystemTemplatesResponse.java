@@ -237,23 +237,19 @@ public class ListSystemTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemTemplatesResponse listSystemTemplatesResponse = (ListSystemTemplatesResponse) o;
-        return Objects.equals(this.count, listSystemTemplatesResponse.count)
-            && Objects.equals(this.actionTemplates, listSystemTemplatesResponse.actionTemplates)
-            && Objects.equals(this.offset, listSystemTemplatesResponse.offset)
-            && Objects.equals(this.isTruncated, listSystemTemplatesResponse.isTruncated)
-            && Objects.equals(this.total, listSystemTemplatesResponse.total)
-            && Objects.equals(this.xRequestId, listSystemTemplatesResponse.xRequestId)
-            && Objects.equals(this.connection, listSystemTemplatesResponse.connection)
-            && Objects.equals(this.contentLength, listSystemTemplatesResponse.contentLength)
-            && Objects.equals(this.date, listSystemTemplatesResponse.date);
+        ListSystemTemplatesResponse that = (ListSystemTemplatesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.actionTemplates, that.actionTemplates)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

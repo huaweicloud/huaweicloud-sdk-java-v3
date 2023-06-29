@@ -78,17 +78,16 @@ public class ShowAutoEnlargePolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoEnlargePolicyResponse showAutoEnlargePolicyResponse = (ShowAutoEnlargePolicyResponse) o;
-        return Objects.equals(this.switchOption, showAutoEnlargePolicyResponse.switchOption)
-            && Objects.equals(this.limitSize, showAutoEnlargePolicyResponse.limitSize)
-            && Objects.equals(this.triggerThreshold, showAutoEnlargePolicyResponse.triggerThreshold);
+        ShowAutoEnlargePolicyResponse that = (ShowAutoEnlargePolicyResponse) obj;
+        return Objects.equals(this.switchOption, that.switchOption) && Objects.equals(this.limitSize, that.limitSize)
+            && Objects.equals(this.triggerThreshold, that.triggerThreshold);
     }
 
     @Override

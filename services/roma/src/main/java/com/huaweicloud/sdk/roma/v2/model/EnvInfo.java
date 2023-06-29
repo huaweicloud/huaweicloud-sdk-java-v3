@@ -100,16 +100,16 @@ public class EnvInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvInfo envInfo = (EnvInfo) o;
-        return Objects.equals(this.createTime, envInfo.createTime) && Objects.equals(this.name, envInfo.name)
-            && Objects.equals(this.remark, envInfo.remark) && Objects.equals(this.id, envInfo.id);
+        EnvInfo that = (EnvInfo) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.id, that.id);
     }
 
     @Override

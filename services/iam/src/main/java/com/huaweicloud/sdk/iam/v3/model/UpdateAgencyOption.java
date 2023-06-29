@@ -75,22 +75,15 @@ public class UpdateAgencyOption {
             if (value == null) {
                 return null;
             }
-            DurationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DurationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DurationEnum(value));
         }
 
         public static DurationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DurationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,17 @@ public class UpdateAgencyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAgencyOption updateAgencyOption = (UpdateAgencyOption) o;
-        return Objects.equals(this.trustDomainId, updateAgencyOption.trustDomainId)
-            && Objects.equals(this.trustDomainName, updateAgencyOption.trustDomainName)
-            && Objects.equals(this.description, updateAgencyOption.description)
-            && Objects.equals(this.duration, updateAgencyOption.duration);
+        UpdateAgencyOption that = (UpdateAgencyOption) obj;
+        return Objects.equals(this.trustDomainId, that.trustDomainId)
+            && Objects.equals(this.trustDomainName, that.trustDomainName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

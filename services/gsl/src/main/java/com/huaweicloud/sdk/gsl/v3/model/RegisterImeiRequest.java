@@ -66,16 +66,15 @@ public class RegisterImeiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterImeiRequest registerImeiRequest = (RegisterImeiRequest) o;
-        return Objects.equals(this.simCardId, registerImeiRequest.simCardId)
-            && Objects.equals(this.body, registerImeiRequest.body);
+        RegisterImeiRequest that = (RegisterImeiRequest) obj;
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.body, that.body);
     }
 
     @Override

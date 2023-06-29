@@ -86,22 +86,15 @@ public class CreateMqsInstanceTopicReq {
             if (value == null) {
                 return null;
             }
-            AccessPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessPolicyEnum(value));
         }
 
         public static AccessPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -341,25 +334,22 @@ public class CreateMqsInstanceTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMqsInstanceTopicReq createMqsInstanceTopicReq = (CreateMqsInstanceTopicReq) o;
-        return Objects.equals(this.name, createMqsInstanceTopicReq.name)
-            && Objects.equals(this.appId, createMqsInstanceTopicReq.appId)
-            && Objects.equals(this.partition, createMqsInstanceTopicReq.partition)
-            && Objects.equals(this.replication, createMqsInstanceTopicReq.replication)
-            && Objects.equals(this.accessPolicy, createMqsInstanceTopicReq.accessPolicy)
-            && Objects.equals(this.syncMessageFlush, createMqsInstanceTopicReq.syncMessageFlush)
-            && Objects.equals(this.syncReplication, createMqsInstanceTopicReq.syncReplication)
-            && Objects.equals(this.retentionTime, createMqsInstanceTopicReq.retentionTime)
-            && Objects.equals(this.tag, createMqsInstanceTopicReq.tag)
-            && Objects.equals(this.description, createMqsInstanceTopicReq.description)
-            && Objects.equals(this.sensitiveWord, createMqsInstanceTopicReq.sensitiveWord);
+        CreateMqsInstanceTopicReq that = (CreateMqsInstanceTopicReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.partition, that.partition) && Objects.equals(this.replication, that.replication)
+            && Objects.equals(this.accessPolicy, that.accessPolicy)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.syncReplication, that.syncReplication)
+            && Objects.equals(this.retentionTime, that.retentionTime) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sensitiveWord, that.sensitiveWord);
     }
 
     @Override

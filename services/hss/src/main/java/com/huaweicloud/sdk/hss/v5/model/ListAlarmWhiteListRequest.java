@@ -149,20 +149,18 @@ public class ListAlarmWhiteListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmWhiteListRequest listAlarmWhiteListRequest = (ListAlarmWhiteListRequest) o;
-        return Objects.equals(this.region, listAlarmWhiteListRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listAlarmWhiteListRequest.enterpriseProjectId)
-            && Objects.equals(this.hash, listAlarmWhiteListRequest.hash)
-            && Objects.equals(this.eventType, listAlarmWhiteListRequest.eventType)
-            && Objects.equals(this.offset, listAlarmWhiteListRequest.offset)
-            && Objects.equals(this.limit, listAlarmWhiteListRequest.limit);
+        ListAlarmWhiteListRequest that = (ListAlarmWhiteListRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hash, that.hash) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

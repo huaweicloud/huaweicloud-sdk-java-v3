@@ -127,18 +127,17 @@ public class RuleAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleAction ruleAction = (RuleAction) o;
-        return Objects.equals(this.type, ruleAction.type)
-            && Objects.equals(this.deviceCommand, ruleAction.deviceCommand)
-            && Objects.equals(this.smnForwarding, ruleAction.smnForwarding)
-            && Objects.equals(this.deviceAlarm, ruleAction.deviceAlarm);
+        RuleAction that = (RuleAction) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.deviceCommand, that.deviceCommand)
+            && Objects.equals(this.smnForwarding, that.smnForwarding)
+            && Objects.equals(this.deviceAlarm, that.deviceAlarm);
     }
 
     @Override

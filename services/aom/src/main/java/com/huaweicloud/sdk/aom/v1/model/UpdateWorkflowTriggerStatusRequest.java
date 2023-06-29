@@ -1,48 +1,39 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class UpdateWorkflowTriggerStatusRequest  {
-
+public class UpdateWorkflowTriggerStatusRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
+
     /**
      * 启动或暂停任务的定时执行。enable为开启定时任务，disable为关闭定时任务
      */
     public static final class ActionEnum {
 
-        
         /**
          * Enum ENABLE for value: "enable"
          */
         public static final ActionEnum ENABLE = new ActionEnum("enable");
-        
+
         /**
          * Enum DISABLE for value: "disable"
          */
         public static final ActionEnum DISABLE = new ActionEnum("disable");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,25 +62,18 @@ public class UpdateWorkflowTriggerStatusRequest  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -107,8 +91,7 @@ public class UpdateWorkflowTriggerStatusRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private ActionEnum action;
 
@@ -116,9 +99,6 @@ public class UpdateWorkflowTriggerStatusRequest  {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * 任务id，待修改任务的id。
@@ -132,15 +112,10 @@ public class UpdateWorkflowTriggerStatusRequest  {
         this.workflowId = workflowId;
     }
 
-    
-
     public UpdateWorkflowTriggerStatusRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 启动或暂停任务的定时执行。enable为开启定时任务，disable为关闭定时任务
@@ -154,24 +129,23 @@ public class UpdateWorkflowTriggerStatusRequest  {
         this.action = action;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkflowTriggerStatusRequest updateWorkflowTriggerStatusRequest = (UpdateWorkflowTriggerStatusRequest) o;
-        return Objects.equals(this.workflowId, updateWorkflowTriggerStatusRequest.workflowId) &&
-            Objects.equals(this.action, updateWorkflowTriggerStatusRequest.action);
+        UpdateWorkflowTriggerStatusRequest that = (UpdateWorkflowTriggerStatusRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.action, that.action);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(workflowId, action);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -181,6 +155,7 @@ public class UpdateWorkflowTriggerStatusRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -191,8 +166,5 @@ public class UpdateWorkflowTriggerStatusRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

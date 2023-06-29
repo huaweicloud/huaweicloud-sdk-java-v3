@@ -421,29 +421,26 @@ public class EnterpriseRouter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnterpriseRouter enterpriseRouter = (EnterpriseRouter) o;
-        return Objects.equals(this.id, enterpriseRouter.id) && Objects.equals(this.name, enterpriseRouter.name)
-            && Objects.equals(this.description, enterpriseRouter.description)
-            && Objects.equals(this.state, enterpriseRouter.state) && Objects.equals(this.tags, enterpriseRouter.tags)
-            && Objects.equals(this.chargeMode, enterpriseRouter.chargeMode)
-            && Objects.equals(this.createdAt, enterpriseRouter.createdAt)
-            && Objects.equals(this.updatedAt, enterpriseRouter.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, enterpriseRouter.enterpriseProjectId)
-            && Objects.equals(this.projectId, enterpriseRouter.projectId)
-            && Objects.equals(this.asn, enterpriseRouter.asn)
-            && Objects.equals(this.enableDefaultPropagation, enterpriseRouter.enableDefaultPropagation)
-            && Objects.equals(this.enableDefaultAssociation, enterpriseRouter.enableDefaultAssociation)
-            && Objects.equals(this.defaultPropagationRouteTableId, enterpriseRouter.defaultPropagationRouteTableId)
-            && Objects.equals(this.defaultAssociationRouteTableId, enterpriseRouter.defaultAssociationRouteTableId)
-            && Objects.equals(this.availabilityZoneIds, enterpriseRouter.availabilityZoneIds)
-            && Objects.equals(this.autoAcceptSharedAttachments, enterpriseRouter.autoAcceptSharedAttachments);
+        EnterpriseRouter that = (EnterpriseRouter) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.asn, that.asn)
+            && Objects.equals(this.enableDefaultPropagation, that.enableDefaultPropagation)
+            && Objects.equals(this.enableDefaultAssociation, that.enableDefaultAssociation)
+            && Objects.equals(this.defaultPropagationRouteTableId, that.defaultPropagationRouteTableId)
+            && Objects.equals(this.defaultAssociationRouteTableId, that.defaultAssociationRouteTableId)
+            && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.autoAcceptSharedAttachments, that.autoAcceptSharedAttachments);
     }
 
     @Override

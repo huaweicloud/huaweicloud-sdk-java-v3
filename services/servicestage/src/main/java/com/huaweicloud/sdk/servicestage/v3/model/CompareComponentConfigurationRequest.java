@@ -87,18 +87,16 @@ public class CompareComponentConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareComponentConfigurationRequest compareComponentConfigurationRequest =
-            (CompareComponentConfigurationRequest) o;
-        return Objects.equals(this.componentId, compareComponentConfigurationRequest.componentId)
-            && Objects.equals(this.applicationId, compareComponentConfigurationRequest.applicationId)
-            && Objects.equals(this.body, compareComponentConfigurationRequest.body);
+        CompareComponentConfigurationRequest that = (CompareComponentConfigurationRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -497,32 +497,27 @@ public class V2CreateCluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2CreateCluster v2CreateCluster = (V2CreateCluster) o;
-        return Objects.equals(this.name, v2CreateCluster.name) && Objects.equals(this.flavor, v2CreateCluster.flavor)
-            && Objects.equals(this.numCn, v2CreateCluster.numCn)
-            && Objects.equals(this.numNode, v2CreateCluster.numNode)
-            && Objects.equals(this.dbName, v2CreateCluster.dbName)
-            && Objects.equals(this.dbPassword, v2CreateCluster.dbPassword)
-            && Objects.equals(this.dbPort, v2CreateCluster.dbPort)
-            && Objects.equals(this.dssPoolId, v2CreateCluster.dssPoolId)
-            && Objects.equals(this.availabilityZones, v2CreateCluster.availabilityZones)
-            && Objects.equals(this.tags, v2CreateCluster.tags) && Objects.equals(this.vpcId, v2CreateCluster.vpcId)
-            && Objects.equals(this.subnetId, v2CreateCluster.subnetId)
-            && Objects.equals(this.securityGroupId, v2CreateCluster.securityGroupId)
-            && Objects.equals(this.publicIp, v2CreateCluster.publicIp)
-            && Objects.equals(this.datastoreVersion, v2CreateCluster.datastoreVersion)
-            && Objects.equals(this.masterKeyId, v2CreateCluster.masterKeyId)
-            && Objects.equals(this.masterKeyName, v2CreateCluster.masterKeyName)
-            && Objects.equals(this.cryptAlgorithm, v2CreateCluster.cryptAlgorithm)
-            && Objects.equals(this.volume, v2CreateCluster.volume)
-            && Objects.equals(this.enterpriseProjectId, v2CreateCluster.enterpriseProjectId);
+        V2CreateCluster that = (V2CreateCluster) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.numCn, that.numCn) && Objects.equals(this.numNode, that.numNode)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.dbPassword, that.dbPassword)
+            && Objects.equals(this.dbPort, that.dbPort) && Objects.equals(this.dssPoolId, that.dssPoolId)
+            && Objects.equals(this.availabilityZones, that.availabilityZones) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.masterKeyId, that.masterKeyId)
+            && Objects.equals(this.masterKeyName, that.masterKeyName)
+            && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

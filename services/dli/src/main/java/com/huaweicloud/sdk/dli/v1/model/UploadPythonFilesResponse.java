@@ -289,25 +289,20 @@ public class UploadPythonFilesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadPythonFilesResponse uploadPythonFilesResponse = (UploadPythonFilesResponse) o;
-        return Objects.equals(this.status, uploadPythonFilesResponse.status)
-            && Objects.equals(this.description, uploadPythonFilesResponse.description)
-            && Objects.equals(this.resources, uploadPythonFilesResponse.resources)
-            && Objects.equals(this.createTime, uploadPythonFilesResponse.createTime)
-            && Objects.equals(this.updateTime, uploadPythonFilesResponse.updateTime)
-            && Objects.equals(this.groupName, uploadPythonFilesResponse.groupName)
-            && Objects.equals(this.owner, uploadPythonFilesResponse.owner)
-            && Objects.equals(this.isAsync, uploadPythonFilesResponse.isAsync)
-            && Objects.equals(this.details, uploadPythonFilesResponse.details)
-            && Objects.equals(this.moduleName, uploadPythonFilesResponse.moduleName)
-            && Objects.equals(this.moduleType, uploadPythonFilesResponse.moduleType);
+        UploadPythonFilesResponse that = (UploadPythonFilesResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.isAsync, that.isAsync)
+            && Objects.equals(this.details, that.details) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.moduleType, that.moduleType);
     }
 
     @Override

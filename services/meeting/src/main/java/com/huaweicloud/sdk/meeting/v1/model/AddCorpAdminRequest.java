@@ -113,18 +113,17 @@ public class AddCorpAdminRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCorpAdminRequest addCorpAdminRequest = (AddCorpAdminRequest) o;
-        return Objects.equals(this.xRequestId, addCorpAdminRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addCorpAdminRequest.acceptLanguage)
-            && Objects.equals(this.accountType, addCorpAdminRequest.accountType)
-            && Objects.equals(this.body, addCorpAdminRequest.body);
+        AddCorpAdminRequest that = (AddCorpAdminRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

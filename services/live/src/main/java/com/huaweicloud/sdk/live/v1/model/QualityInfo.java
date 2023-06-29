@@ -70,22 +70,15 @@ public class QualityInfo {
             if (value == null) {
                 return null;
             }
-            PvcEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PvcEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PvcEnum(value));
         }
 
         public static PvcEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PvcEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class QualityInfo {
             if (value == null) {
                 return null;
             }
-            HdlbEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HdlbEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HdlbEnum(value));
         }
 
         public static HdlbEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HdlbEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,22 +220,15 @@ public class QualityInfo {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodecEnum(value));
         }
 
         public static CodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -342,22 +321,15 @@ public class QualityInfo {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -606,23 +578,20 @@ public class QualityInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityInfo qualityInfo = (QualityInfo) o;
-        return Objects.equals(this.templateName, qualityInfo.templateName)
-            && Objects.equals(this.quality, qualityInfo.quality) && Objects.equals(this.pvc, qualityInfo.pvc)
-            && Objects.equals(this.hdlb, qualityInfo.hdlb) && Objects.equals(this.codec, qualityInfo.codec)
-            && Objects.equals(this.width, qualityInfo.width) && Objects.equals(this.height, qualityInfo.height)
-            && Objects.equals(this.bitrate, qualityInfo.bitrate)
-            && Objects.equals(this.videoFrameRate, qualityInfo.videoFrameRate)
-            && Objects.equals(this.protocol, qualityInfo.protocol)
-            && Objects.equals(this.iFrameInterval, qualityInfo.iFrameInterval)
-            && Objects.equals(this.gop, qualityInfo.gop);
+        QualityInfo that = (QualityInfo) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.pvc, that.pvc) && Objects.equals(this.hdlb, that.hdlb)
+            && Objects.equals(this.codec, that.codec) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.videoFrameRate, that.videoFrameRate) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.iFrameInterval, that.iFrameInterval) && Objects.equals(this.gop, that.gop);
     }
 
     @Override

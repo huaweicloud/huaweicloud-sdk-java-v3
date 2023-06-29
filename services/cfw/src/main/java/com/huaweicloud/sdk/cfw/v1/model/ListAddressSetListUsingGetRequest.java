@@ -85,22 +85,15 @@ public class ListAddressSetListUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
         }
 
         public static AddressTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,19 @@ public class ListAddressSetListUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAddressSetListUsingGetRequest listAddressSetListUsingGetRequest = (ListAddressSetListUsingGetRequest) o;
-        return Objects.equals(this.objectId, listAddressSetListUsingGetRequest.objectId)
-            && Objects.equals(this.keyWord, listAddressSetListUsingGetRequest.keyWord)
-            && Objects.equals(this.limit, listAddressSetListUsingGetRequest.limit)
-            && Objects.equals(this.offset, listAddressSetListUsingGetRequest.offset)
-            && Objects.equals(this.address, listAddressSetListUsingGetRequest.address)
-            && Objects.equals(this.addressType, listAddressSetListUsingGetRequest.addressType)
-            && Objects.equals(this.enterpriseProjectId, listAddressSetListUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listAddressSetListUsingGetRequest.fwInstanceId);
+        ListAddressSetListUsingGetRequest that = (ListAddressSetListUsingGetRequest) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

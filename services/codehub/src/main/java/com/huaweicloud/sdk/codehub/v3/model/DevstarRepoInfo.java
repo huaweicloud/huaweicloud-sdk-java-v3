@@ -143,19 +143,17 @@ public class DevstarRepoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DevstarRepoInfo devstarRepoInfo = (DevstarRepoInfo) o;
-        return Objects.equals(this.uuid, devstarRepoInfo.uuid) && Objects.equals(this.repoId, devstarRepoInfo.repoId)
-            && Objects.equals(this.repoName, devstarRepoInfo.repoName)
-            && Objects.equals(this.sshUrl, devstarRepoInfo.sshUrl)
-            && Objects.equals(this.codeUrl, devstarRepoInfo.codeUrl)
-            && Objects.equals(this.detailUrl, devstarRepoInfo.detailUrl);
+        DevstarRepoInfo that = (DevstarRepoInfo) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.repoId, that.repoId)
+            && Objects.equals(this.repoName, that.repoName) && Objects.equals(this.sshUrl, that.sshUrl)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.detailUrl, that.detailUrl);
     }
 
     @Override

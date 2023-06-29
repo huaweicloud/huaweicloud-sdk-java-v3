@@ -55,16 +55,15 @@ public class CreateRouteRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRouteRequestBody createRouteRequestBody = (CreateRouteRequestBody) o;
-        return Objects.equals(this.name, createRouteRequestBody.name)
-            && Objects.equals(this.cidr, createRouteRequestBody.cidr);
+        CreateRouteRequestBody that = (CreateRouteRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.cidr, that.cidr);
     }
 
     @Override

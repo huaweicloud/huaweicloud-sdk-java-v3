@@ -55,16 +55,16 @@ public class ShowMergeRequestRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMergeRequestRequest showMergeRequestRequest = (ShowMergeRequestRequest) o;
-        return Objects.equals(this.repositoryId, showMergeRequestRequest.repositoryId)
-            && Objects.equals(this.mergeRequestId, showMergeRequestRequest.mergeRequestId);
+        ShowMergeRequestRequest that = (ShowMergeRequestRequest) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.mergeRequestId, that.mergeRequestId);
     }
 
     @Override

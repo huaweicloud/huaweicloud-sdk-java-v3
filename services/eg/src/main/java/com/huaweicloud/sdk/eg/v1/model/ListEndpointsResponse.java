@@ -125,18 +125,16 @@ public class ListEndpointsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointsResponse listEndpointsResponse = (ListEndpointsResponse) o;
-        return Objects.equals(this.total, listEndpointsResponse.total)
-            && Objects.equals(this.size, listEndpointsResponse.size)
-            && Objects.equals(this.items, listEndpointsResponse.items)
-            && Objects.equals(this.xRequestId, listEndpointsResponse.xRequestId);
+        ListEndpointsResponse that = (ListEndpointsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -539,35 +539,25 @@ public class CatalogAttributeVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogAttributeVO catalogAttributeVO = (CatalogAttributeVO) o;
-        return Objects.equals(this.path, catalogAttributeVO.path)
-            && Objects.equals(this.qualifiedName, catalogAttributeVO.qualifiedName)
-            && Objects.equals(this.level, catalogAttributeVO.level)
-            && Objects.equals(this.name, catalogAttributeVO.name)
-            && Objects.equals(this.nameEng, catalogAttributeVO.nameEng)
-            && Objects.equals(this.alias, catalogAttributeVO.alias)
-            && Objects.equals(this.description, catalogAttributeVO.description)
-            && Objects.equals(this.dataOwner, catalogAttributeVO.dataOwner)
-            && Objects.equals(this.owner, catalogAttributeVO.owner)
-            && Objects.equals(this.dataOwnerList, catalogAttributeVO.dataOwnerList)
-            && Objects.equals(this.createTime, catalogAttributeVO.createTime)
-            && Objects.equals(this.createBy, catalogAttributeVO.createBy)
-            && Objects.equals(this.updateTime, catalogAttributeVO.updateTime)
-            && Objects.equals(this.updateBy, catalogAttributeVO.updateBy)
-            && Objects.equals(this.parent, catalogAttributeVO.parent)
-            && Objects.equals(this.parentId, catalogAttributeVO.parentId)
-            && Objects.equals(this.l1, catalogAttributeVO.l1) && Objects.equals(this.l2, catalogAttributeVO.l2)
-            && Objects.equals(this.l3, catalogAttributeVO.l3)
-            && Objects.equals(this.ordinal, catalogAttributeVO.ordinal)
-            && Objects.equals(this.tenantId, catalogAttributeVO.tenantId)
-            && Objects.equals(this.selfDefinedFields, catalogAttributeVO.selfDefinedFields);
+        CatalogAttributeVO that = (CatalogAttributeVO) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.qualifiedName, that.qualifiedName)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nameEng, that.nameEng) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.dataOwner, that.dataOwner)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.dataOwnerList, that.dataOwnerList)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.parent, that.parent) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.l1, that.l1) && Objects.equals(this.l2, that.l2) && Objects.equals(this.l3, that.l3)
+            && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
 
     @Override

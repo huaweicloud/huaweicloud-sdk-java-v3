@@ -105,17 +105,17 @@ public class WebImageResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebImageResult webImageResult = (WebImageResult) o;
-        return Objects.equals(this.wordsBlockCount, webImageResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, webImageResult.wordsBlockList)
-            && Objects.equals(this.extractedData, webImageResult.extractedData);
+        WebImageResult that = (WebImageResult) obj;
+        return Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList)
+            && Objects.equals(this.extractedData, that.extractedData);
     }
 
     @Override

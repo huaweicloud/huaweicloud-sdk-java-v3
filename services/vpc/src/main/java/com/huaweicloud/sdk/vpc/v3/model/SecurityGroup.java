@@ -166,20 +166,18 @@ public class SecurityGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityGroup securityGroup = (SecurityGroup) o;
-        return Objects.equals(this.id, securityGroup.id) && Objects.equals(this.name, securityGroup.name)
-            && Objects.equals(this.description, securityGroup.description)
-            && Objects.equals(this.projectId, securityGroup.projectId)
-            && Objects.equals(this.createdAt, securityGroup.createdAt)
-            && Objects.equals(this.updatedAt, securityGroup.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, securityGroup.enterpriseProjectId);
+        SecurityGroup that = (SecurityGroup) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

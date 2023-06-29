@@ -1,102 +1,87 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * QueryEdgeAppVersionBriefResponseDTO
  */
-public class QueryEdgeAppVersionBriefResponseDTO  {
-
+public class QueryEdgeAppVersionBriefResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sdk_version")
-    
+    @JsonProperty(value = "sdk_version")
 
     private String sdkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_multi_instance")
-    
+    @JsonProperty(value = "deploy_multi_instance")
 
     private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
+
     /**
      * 应用版本状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum DRAFT for value: "DRAFT"
          */
         public static final StateEnum DRAFT = new StateEnum("DRAFT");
-        
+
         /**
          * Enum PUBLISHED for value: "PUBLISHED"
          */
         public static final StateEnum PUBLISHED = new StateEnum("PUBLISHED");
-        
+
         /**
          * Enum OFF_SHELF for value: "OFF_SHELF"
          */
         public static final StateEnum OFF_SHELF = new StateEnum("OFF_SHELF");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -126,25 +111,18 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,25 +140,22 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private List<String> arch = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_time")
-    
+    @JsonProperty(value = "publish_time")
 
     private String publishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="off_shelf_time")
-    
+    @JsonProperty(value = "off_shelf_time")
 
     private String offShelfTime;
 
@@ -188,9 +163,6 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -204,15 +176,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -226,15 +193,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.name = name;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -248,15 +210,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.version = version;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withSdkVersion(String sdkVersion) {
         this.sdkVersion = sdkVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用集成的边缘SDK版本
@@ -270,15 +227,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.sdkVersion = sdkVersion;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -292,15 +244,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.description = description;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -314,15 +261,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.deployType = deployType;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withDeployMultiInstance(Boolean deployMultiInstance) {
         this.deployMultiInstance = deployMultiInstance;
         return this;
     }
-
-    
-
 
     /**
      * 是否允许部署多实例
@@ -336,15 +278,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.deployMultiInstance = deployMultiInstance;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -358,15 +295,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -380,15 +312,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本状态
@@ -402,16 +329,13 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.state = state;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withArch(List<String> arch) {
         this.arch = arch;
         return this;
     }
 
-    
     public QueryEdgeAppVersionBriefResponseDTO addArchItem(String archItem) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         this.arch.add(archItem);
@@ -419,7 +343,7 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
     }
 
     public QueryEdgeAppVersionBriefResponseDTO withArch(Consumer<List<String>> archSetter) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         archSetter.accept(this.arch);
@@ -438,15 +362,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.arch = arch;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withPublishTime(String publishTime) {
         this.publishTime = publishTime;
         return this;
     }
-
-    
-
 
     /**
      * 发布时间
@@ -460,15 +379,10 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.publishTime = publishTime;
     }
 
-    
-
     public QueryEdgeAppVersionBriefResponseDTO withOffShelfTime(String offShelfTime) {
         this.offShelfTime = offShelfTime;
         return this;
     }
-
-    
-
 
     /**
      * 下线时间
@@ -482,35 +396,42 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         this.offShelfTime = offShelfTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryEdgeAppVersionBriefResponseDTO queryEdgeAppVersionBriefResponseDTO = (QueryEdgeAppVersionBriefResponseDTO) o;
-        return Objects.equals(this.edgeAppId, queryEdgeAppVersionBriefResponseDTO.edgeAppId) &&
-            Objects.equals(this.name, queryEdgeAppVersionBriefResponseDTO.name) &&
-            Objects.equals(this.version, queryEdgeAppVersionBriefResponseDTO.version) &&
-            Objects.equals(this.sdkVersion, queryEdgeAppVersionBriefResponseDTO.sdkVersion) &&
-            Objects.equals(this.description, queryEdgeAppVersionBriefResponseDTO.description) &&
-            Objects.equals(this.deployType, queryEdgeAppVersionBriefResponseDTO.deployType) &&
-            Objects.equals(this.deployMultiInstance, queryEdgeAppVersionBriefResponseDTO.deployMultiInstance) &&
-            Objects.equals(this.createTime, queryEdgeAppVersionBriefResponseDTO.createTime) &&
-            Objects.equals(this.updateTime, queryEdgeAppVersionBriefResponseDTO.updateTime) &&
-            Objects.equals(this.state, queryEdgeAppVersionBriefResponseDTO.state) &&
-            Objects.equals(this.arch, queryEdgeAppVersionBriefResponseDTO.arch) &&
-            Objects.equals(this.publishTime, queryEdgeAppVersionBriefResponseDTO.publishTime) &&
-            Objects.equals(this.offShelfTime, queryEdgeAppVersionBriefResponseDTO.offShelfTime);
+        QueryEdgeAppVersionBriefResponseDTO that = (QueryEdgeAppVersionBriefResponseDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.sdkVersion, that.sdkVersion)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deployMultiInstance, that.deployMultiInstance)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.offShelfTime, that.offShelfTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, name, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId,
+            name,
+            version,
+            sdkVersion,
+            description,
+            deployType,
+            deployMultiInstance,
+            createTime,
+            updateTime,
+            state,
+            arch,
+            publishTime,
+            offShelfTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -531,6 +452,7 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -541,8 +463,5 @@ public class QueryEdgeAppVersionBriefResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

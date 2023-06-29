@@ -121,19 +121,17 @@ public class ObsFolder {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsFolder obsFolder = (ObsFolder) o;
-        return Objects.equals(this.folderName, obsFolder.folderName)
-            && Objects.equals(this.folderGuid, obsFolder.folderGuid)
-            && Objects.equals(this.folderQualifiedName, obsFolder.folderQualifiedName)
-            && Objects.equals(this.objectCount, obsFolder.objectCount)
-            && Objects.equals(this.dataSize, obsFolder.dataSize);
+        ObsFolder that = (ObsFolder) obj;
+        return Objects.equals(this.folderName, that.folderName) && Objects.equals(this.folderGuid, that.folderGuid)
+            && Objects.equals(this.folderQualifiedName, that.folderQualifiedName)
+            && Objects.equals(this.objectCount, that.objectCount) && Objects.equals(this.dataSize, that.dataSize);
     }
 
     @Override

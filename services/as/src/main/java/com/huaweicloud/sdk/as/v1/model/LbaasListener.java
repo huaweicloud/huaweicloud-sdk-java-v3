@@ -101,18 +101,16 @@ public class LbaasListener {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LbaasListener lbaasListener = (LbaasListener) o;
-        return Objects.equals(this.listenerId, lbaasListener.listenerId)
-            && Objects.equals(this.poolId, lbaasListener.poolId)
-            && Objects.equals(this.protocolPort, lbaasListener.protocolPort)
-            && Objects.equals(this.weight, lbaasListener.weight);
+        LbaasListener that = (LbaasListener) obj;
+        return Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

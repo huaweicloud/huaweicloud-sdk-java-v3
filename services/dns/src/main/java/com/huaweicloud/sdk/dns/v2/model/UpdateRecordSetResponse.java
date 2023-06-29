@@ -348,28 +348,21 @@ public class UpdateRecordSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordSetResponse updateRecordSetResponse = (UpdateRecordSetResponse) o;
-        return Objects.equals(this.id, updateRecordSetResponse.id)
-            && Objects.equals(this.name, updateRecordSetResponse.name)
-            && Objects.equals(this.description, updateRecordSetResponse.description)
-            && Objects.equals(this.zoneId, updateRecordSetResponse.zoneId)
-            && Objects.equals(this.zoneName, updateRecordSetResponse.zoneName)
-            && Objects.equals(this.type, updateRecordSetResponse.type)
-            && Objects.equals(this.ttl, updateRecordSetResponse.ttl)
-            && Objects.equals(this.records, updateRecordSetResponse.records)
-            && Objects.equals(this.createAt, updateRecordSetResponse.createAt)
-            && Objects.equals(this.updateAt, updateRecordSetResponse.updateAt)
-            && Objects.equals(this.status, updateRecordSetResponse.status)
-            && Objects.equals(this._default, updateRecordSetResponse._default)
-            && Objects.equals(this.projectId, updateRecordSetResponse.projectId)
-            && Objects.equals(this.links, updateRecordSetResponse.links);
+        UpdateRecordSetResponse that = (UpdateRecordSetResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links);
     }
 
     @Override

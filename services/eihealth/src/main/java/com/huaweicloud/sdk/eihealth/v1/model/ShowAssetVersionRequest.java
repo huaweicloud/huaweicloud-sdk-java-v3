@@ -55,16 +55,15 @@ public class ShowAssetVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetVersionRequest showAssetVersionRequest = (ShowAssetVersionRequest) o;
-        return Objects.equals(this.assetId, showAssetVersionRequest.assetId)
-            && Objects.equals(this.version, showAssetVersionRequest.version);
+        ShowAssetVersionRequest that = (ShowAssetVersionRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.version, that.version);
     }
 
     @Override

@@ -77,16 +77,15 @@ public class ShowDeviceGroupTreeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceGroupTreeResponse showDeviceGroupTreeResponse = (ShowDeviceGroupTreeResponse) o;
-        return Objects.equals(this.size, showDeviceGroupTreeResponse.size)
-            && Objects.equals(this.items, showDeviceGroupTreeResponse.items);
+        ShowDeviceGroupTreeResponse that = (ShowDeviceGroupTreeResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.items, that.items);
     }
 
     @Override

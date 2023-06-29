@@ -87,17 +87,16 @@ public class AddAddressSetInfoUsingPostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddAddressSetInfoUsingPostRequest addAddressSetInfoUsingPostRequest = (AddAddressSetInfoUsingPostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, addAddressSetInfoUsingPostRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, addAddressSetInfoUsingPostRequest.fwInstanceId)
-            && Objects.equals(this.body, addAddressSetInfoUsingPostRequest.body);
+        AddAddressSetInfoUsingPostRequest that = (AddAddressSetInfoUsingPostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

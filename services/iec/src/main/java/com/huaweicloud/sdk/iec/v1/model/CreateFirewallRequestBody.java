@@ -43,15 +43,15 @@ public class CreateFirewallRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFirewallRequestBody createFirewallRequestBody = (CreateFirewallRequestBody) o;
-        return Objects.equals(this.firewall, createFirewallRequestBody.firewall);
+        CreateFirewallRequestBody that = (CreateFirewallRequestBody) obj;
+        return Objects.equals(this.firewall, that.firewall);
     }
 
     @Override

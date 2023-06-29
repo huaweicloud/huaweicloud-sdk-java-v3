@@ -62,22 +62,15 @@ public class VideoCreateRequest {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
         }
 
         public static EventTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,22 +149,15 @@ public class VideoCreateRequest {
             if (value == null) {
                 return null;
             }
-            ImageCategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImageCategoriesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageCategoriesEnum(value));
         }
 
         public static ImageCategoriesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImageCategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,8 +180,8 @@ public class VideoCreateRequest {
     private List<ImageCategoriesEnum> imageCategories = null;
 
     /**
-    * Gets or Sets audioCategories
-    */
+     * Gets or Sets audioCategories
+     */
     public static final class AudioCategoriesEnum {
 
         /**
@@ -256,22 +242,15 @@ public class VideoCreateRequest {
             if (value == null) {
                 return null;
             }
-            AudioCategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioCategoriesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioCategoriesEnum(value));
         }
 
         public static AudioCategoriesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioCategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -425,19 +404,18 @@ public class VideoCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoCreateRequest videoCreateRequest = (VideoCreateRequest) o;
-        return Objects.equals(this.data, videoCreateRequest.data)
-            && Objects.equals(this.eventType, videoCreateRequest.eventType)
-            && Objects.equals(this.imageCategories, videoCreateRequest.imageCategories)
-            && Objects.equals(this.audioCategories, videoCreateRequest.audioCategories)
-            && Objects.equals(this.callback, videoCreateRequest.callback);
+        VideoCreateRequest that = (VideoCreateRequest) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.imageCategories, that.imageCategories)
+            && Objects.equals(this.audioCategories, that.audioCategories)
+            && Objects.equals(this.callback, that.callback);
     }
 
     @Override

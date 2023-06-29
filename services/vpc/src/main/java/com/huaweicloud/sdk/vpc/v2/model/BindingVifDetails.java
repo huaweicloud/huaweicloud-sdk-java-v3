@@ -77,17 +77,17 @@ public class BindingVifDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindingVifDetails bindingVifDetails = (BindingVifDetails) o;
-        return Objects.equals(this.primaryInterface, bindingVifDetails.primaryInterface)
-            && Objects.equals(this.portFilter, bindingVifDetails.portFilter)
-            && Objects.equals(this.ovsHybridPlug, bindingVifDetails.ovsHybridPlug);
+        BindingVifDetails that = (BindingVifDetails) obj;
+        return Objects.equals(this.primaryInterface, that.primaryInterface)
+            && Objects.equals(this.portFilter, that.portFilter)
+            && Objects.equals(this.ovsHybridPlug, that.ovsHybridPlug);
     }
 
     @Override

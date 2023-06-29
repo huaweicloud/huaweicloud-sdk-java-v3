@@ -55,16 +55,15 @@ public class FGSDeploymentJobsParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FGSDeploymentJobsParam fgSDeploymentJobsParam = (FGSDeploymentJobsParam) o;
-        return Objects.equals(this.fileId, fgSDeploymentJobsParam.fileId)
-            && Objects.equals(this.handler, fgSDeploymentJobsParam.handler);
+        FGSDeploymentJobsParam that = (FGSDeploymentJobsParam) obj;
+        return Objects.equals(this.fileId, that.fileId) && Objects.equals(this.handler, that.handler);
     }
 
     @Override

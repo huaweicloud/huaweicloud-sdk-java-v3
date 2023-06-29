@@ -91,22 +91,15 @@ public class BatchShowEdgeAppVersionsRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -235,20 +228,17 @@ public class BatchShowEdgeAppVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowEdgeAppVersionsRequest batchShowEdgeAppVersionsRequest = (BatchShowEdgeAppVersionsRequest) o;
-        return Objects.equals(this.instanceId, batchShowEdgeAppVersionsRequest.instanceId)
-            && Objects.equals(this.edgeAppId, batchShowEdgeAppVersionsRequest.edgeAppId)
-            && Objects.equals(this.version, batchShowEdgeAppVersionsRequest.version)
-            && Objects.equals(this.offset, batchShowEdgeAppVersionsRequest.offset)
-            && Objects.equals(this.limit, batchShowEdgeAppVersionsRequest.limit)
-            && Objects.equals(this.state, batchShowEdgeAppVersionsRequest.state);
+        BatchShowEdgeAppVersionsRequest that = (BatchShowEdgeAppVersionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.state, that.state);
     }
 
     @Override

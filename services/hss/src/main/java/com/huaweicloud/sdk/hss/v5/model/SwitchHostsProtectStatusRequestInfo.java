@@ -156,20 +156,17 @@ public class SwitchHostsProtectStatusRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchHostsProtectStatusRequestInfo switchHostsProtectStatusRequestInfo =
-            (SwitchHostsProtectStatusRequestInfo) o;
-        return Objects.equals(this.version, switchHostsProtectStatusRequestInfo.version)
-            && Objects.equals(this.chargingMode, switchHostsProtectStatusRequestInfo.chargingMode)
-            && Objects.equals(this.resourceId, switchHostsProtectStatusRequestInfo.resourceId)
-            && Objects.equals(this.hostIdList, switchHostsProtectStatusRequestInfo.hostIdList)
-            && Objects.equals(this.tags, switchHostsProtectStatusRequestInfo.tags);
+        SwitchHostsProtectStatusRequestInfo that = (SwitchHostsProtectStatusRequestInfo) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

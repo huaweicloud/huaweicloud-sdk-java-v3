@@ -165,18 +165,18 @@ public class Stages {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Stages stages = (Stages) o;
-        return Objects.equals(this.result, stages.result) && Objects.equals(this.status, stages.status)
-            && Objects.equals(this.name, stages.name) && Objects.equals(this.parameters, stages.parameters)
-            && Objects.equals(this.order, stages.order) && Objects.equals(this.dslMethod, stages.dslMethod)
-            && Objects.equals(this.displayName, stages.displayName);
+        Stages that = (Stages) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.dslMethod, that.dslMethod)
+            && Objects.equals(this.displayName, that.displayName);
     }
 
     @Override

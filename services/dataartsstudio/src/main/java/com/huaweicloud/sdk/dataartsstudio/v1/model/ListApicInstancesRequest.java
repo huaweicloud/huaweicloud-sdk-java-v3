@@ -65,22 +65,15 @@ public class ListApicInstancesRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class ListApicInstancesRequest {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApigTypeEnum(value));
         }
 
         public static ApigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -280,19 +266,17 @@ public class ListApicInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApicInstancesRequest listApicInstancesRequest = (ListApicInstancesRequest) o;
-        return Objects.equals(this.workspace, listApicInstancesRequest.workspace)
-            && Objects.equals(this.dlmType, listApicInstancesRequest.dlmType)
-            && Objects.equals(this.apigType, listApicInstancesRequest.apigType)
-            && Objects.equals(this.limit, listApicInstancesRequest.limit)
-            && Objects.equals(this.offset, listApicInstancesRequest.offset);
+        ListApicInstancesRequest that = (ListApicInstancesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.apigType, that.apigType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

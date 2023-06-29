@@ -121,17 +121,17 @@ public class SvcPort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SvcPort svcPort = (SvcPort) o;
-        return Objects.equals(this.name, svcPort.name) && Objects.equals(this.nodePort, svcPort.nodePort)
-            && Objects.equals(this.port, svcPort.port) && Objects.equals(this.protocol, svcPort.protocol)
-            && Objects.equals(this.targetPort, svcPort.targetPort);
+        SvcPort that = (SvcPort) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nodePort, that.nodePort)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.targetPort, that.targetPort);
     }
 
     @Override

@@ -286,25 +286,21 @@ public class StoragePool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StoragePool storagePool = (StoragePool) o;
-        return Objects.equals(this.id, storagePool.id) && Objects.equals(this.name, storagePool.name)
-            && Objects.equals(this.edgeSiteId, storagePool.edgeSiteId)
-            && Objects.equals(this.storageType, storagePool.storageType)
-            && Objects.equals(this.status, storagePool.status)
-            && Objects.equals(this.assignedSize, storagePool.assignedSize)
-            && Objects.equals(this.resourceSpecCode, storagePool.resourceSpecCode)
-            && Objects.equals(this.capacity, storagePool.capacity)
-            && Objects.equals(this.marketOptions, storagePool.marketOptions)
-            && Objects.equals(this.createdAt, storagePool.createdAt)
-            && Objects.equals(this.updatedAt, storagePool.updatedAt)
-            && Objects.equals(this.effectedAt, storagePool.effectedAt);
+        StoragePool that = (StoragePool) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.edgeSiteId, that.edgeSiteId) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.assignedSize, that.assignedSize)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.marketOptions, that.marketOptions)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.effectedAt, that.effectedAt);
     }
 
     @Override

@@ -109,18 +109,16 @@ public class CreateProjectModuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectModuleRequestBody createProjectModuleRequestBody = (CreateProjectModuleRequestBody) o;
-        return Objects.equals(this.description, createProjectModuleRequestBody.description)
-            && Objects.equals(this.moduleName, createProjectModuleRequestBody.moduleName)
-            && Objects.equals(this.parentModuleId, createProjectModuleRequestBody.parentModuleId)
-            && Objects.equals(this.owner, createProjectModuleRequestBody.owner);
+        CreateProjectModuleRequestBody that = (CreateProjectModuleRequestBody) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.parentModuleId, that.parentModuleId) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

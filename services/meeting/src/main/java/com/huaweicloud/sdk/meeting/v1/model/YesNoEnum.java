@@ -52,22 +52,15 @@ public class YesNoEnum {
         if (value == null) {
             return null;
         }
-        YesNoEnum result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new YesNoEnum(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new YesNoEnum(value));
     }
 
     public static YesNoEnum valueOf(String value) {
         if (value == null) {
             return null;
         }
-        YesNoEnum result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

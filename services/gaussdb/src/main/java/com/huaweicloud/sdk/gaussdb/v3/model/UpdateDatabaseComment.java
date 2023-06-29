@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库备注信息。
  */
-public class UpdateDatabaseComment  {
-
+public class UpdateDatabaseComment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
@@ -33,9 +24,6 @@ public class UpdateDatabaseComment  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。
@@ -49,15 +37,10 @@ public class UpdateDatabaseComment  {
         this.name = name;
     }
 
-    
-
     public UpdateDatabaseComment withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 数据库备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。
@@ -71,24 +54,23 @@ public class UpdateDatabaseComment  {
         this.comment = comment;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseComment updateDatabaseComment = (UpdateDatabaseComment) o;
-        return Objects.equals(this.name, updateDatabaseComment.name) &&
-            Objects.equals(this.comment, updateDatabaseComment.comment);
+        UpdateDatabaseComment that = (UpdateDatabaseComment) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.comment, that.comment);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, comment);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class UpdateDatabaseComment  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class UpdateDatabaseComment  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

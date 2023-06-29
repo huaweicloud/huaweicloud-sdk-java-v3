@@ -297,26 +297,26 @@ public class MonitorItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MonitorItem monitorItem = (MonitorItem) o;
-        return Objects.equals(this.id, monitorItem.id) && Objects.equals(this.envId, monitorItem.envId)
-            && Objects.equals(this.collectorId, monitorItem.collectorId)
-            && Objects.equals(this.collectorName, monitorItem.collectorName)
-            && Objects.equals(this.displayName, monitorItem.displayName)
-            && Objects.equals(this.collectInterval, monitorItem.collectInterval)
-            && Objects.equals(this.disabled, monitorItem.disabled)
-            && Objects.equals(this.statusChangeUserId, monitorItem.statusChangeUserId)
-            && Objects.equals(this.statusChangeUserName, monitorItem.statusChangeUserName)
-            && Objects.equals(this.statusChangeTime, monitorItem.statusChangeTime)
-            && Objects.equals(this.configChangeUserId, monitorItem.configChangeUserId)
-            && Objects.equals(this.configChangeUserName, monitorItem.configChangeUserName)
-            && Objects.equals(this.configChangeTime, monitorItem.configChangeTime);
+        MonitorItem that = (MonitorItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.collectorId, that.collectorId)
+            && Objects.equals(this.collectorName, that.collectorName)
+            && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.collectInterval, that.collectInterval)
+            && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.statusChangeUserId, that.statusChangeUserId)
+            && Objects.equals(this.statusChangeUserName, that.statusChangeUserName)
+            && Objects.equals(this.statusChangeTime, that.statusChangeTime)
+            && Objects.equals(this.configChangeUserId, that.configChangeUserId)
+            && Objects.equals(this.configChangeUserName, that.configChangeUserName)
+            && Objects.equals(this.configChangeTime, that.configChangeTime);
     }
 
     @Override

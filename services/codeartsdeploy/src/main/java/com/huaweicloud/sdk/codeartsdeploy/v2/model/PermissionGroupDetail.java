@@ -121,19 +121,17 @@ public class PermissionGroupDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PermissionGroupDetail permissionGroupDetail = (PermissionGroupDetail) o;
-        return Objects.equals(this.canView, permissionGroupDetail.canView)
-            && Objects.equals(this.canEdit, permissionGroupDetail.canEdit)
-            && Objects.equals(this.canDelete, permissionGroupDetail.canDelete)
-            && Objects.equals(this.canAddHost, permissionGroupDetail.canAddHost)
-            && Objects.equals(this.canManage, permissionGroupDetail.canManage);
+        PermissionGroupDetail that = (PermissionGroupDetail) obj;
+        return Objects.equals(this.canView, that.canView) && Objects.equals(this.canEdit, that.canEdit)
+            && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.canAddHost, that.canAddHost)
+            && Objects.equals(this.canManage, that.canManage);
     }
 
     @Override

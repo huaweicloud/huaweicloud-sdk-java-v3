@@ -537,35 +537,27 @@ public class RestoreNewInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreNewInstanceResponse restoreNewInstanceResponse = (RestoreNewInstanceResponse) o;
-        return Objects.equals(this.id, restoreNewInstanceResponse.id)
-            && Objects.equals(this.datastore, restoreNewInstanceResponse.datastore)
-            && Objects.equals(this.name, restoreNewInstanceResponse.name)
-            && Objects.equals(this.created, restoreNewInstanceResponse.created)
-            && Objects.equals(this.status, restoreNewInstanceResponse.status)
-            && Objects.equals(this.region, restoreNewInstanceResponse.region)
-            && Objects.equals(this.availabilityZone, restoreNewInstanceResponse.availabilityZone)
-            && Objects.equals(this.vpcId, restoreNewInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, restoreNewInstanceResponse.subnetId)
-            && Objects.equals(this.securityGroupId, restoreNewInstanceResponse.securityGroupId)
-            && Objects.equals(this.diskEncryptionId, restoreNewInstanceResponse.diskEncryptionId)
-            && Objects.equals(this.mode, restoreNewInstanceResponse.mode)
-            && Objects.equals(this.configurations, restoreNewInstanceResponse.configurations)
-            && Objects.equals(this.flavor, restoreNewInstanceResponse.flavor)
-            && Objects.equals(this.backupStrategy, restoreNewInstanceResponse.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, restoreNewInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.sslOption, restoreNewInstanceResponse.sslOption)
-            && Objects.equals(this.dssPoolId, restoreNewInstanceResponse.dssPoolId)
-            && Objects.equals(this.jobId, restoreNewInstanceResponse.jobId)
-            && Objects.equals(this.orderId, restoreNewInstanceResponse.orderId)
-            && Objects.equals(this.chargeInfo, restoreNewInstanceResponse.chargeInfo);
+        RestoreNewInstanceResponse that = (RestoreNewInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.configurations, that.configurations) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.dssPoolId, that.dssPoolId)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo);
     }
 
     @Override

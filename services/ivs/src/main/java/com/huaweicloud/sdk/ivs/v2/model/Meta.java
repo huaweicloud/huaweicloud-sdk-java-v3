@@ -33,15 +33,15 @@ public class Meta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Meta meta = (Meta) o;
-        return Objects.equals(this.uuid, meta.uuid);
+        Meta that = (Meta) obj;
+        return Objects.equals(this.uuid, that.uuid);
     }
 
     @Override

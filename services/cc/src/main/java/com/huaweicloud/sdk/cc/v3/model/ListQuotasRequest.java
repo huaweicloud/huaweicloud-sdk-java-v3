@@ -82,22 +82,15 @@ public class ListQuotasRequest {
             if (value == null) {
                 return null;
             }
-            QuotaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QuotaTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QuotaTypeEnum(value));
         }
 
         public static QuotaTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QuotaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,17 +166,16 @@ public class ListQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotasRequest listQuotasRequest = (ListQuotasRequest) o;
-        return Objects.equals(this.limit, listQuotasRequest.limit)
-            && Objects.equals(this.marker, listQuotasRequest.marker)
-            && Objects.equals(this.quotaType, listQuotasRequest.quotaType);
+        ListQuotasRequest that = (ListQuotasRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.quotaType, that.quotaType);
     }
 
     @Override

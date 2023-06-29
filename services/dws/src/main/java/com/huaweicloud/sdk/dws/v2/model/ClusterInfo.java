@@ -664,33 +664,30 @@ public class ClusterInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterInfo clusterInfo = (ClusterInfo) o;
-        return Objects.equals(this.id, clusterInfo.id) && Objects.equals(this.name, clusterInfo.name)
-            && Objects.equals(this.status, clusterInfo.status) && Objects.equals(this.version, clusterInfo.version)
-            && Objects.equals(this.updated, clusterInfo.updated) && Objects.equals(this.created, clusterInfo.created)
-            && Objects.equals(this.port, clusterInfo.port) && Objects.equals(this.endpoints, clusterInfo.endpoints)
-            && Objects.equals(this.nodes, clusterInfo.nodes) && Objects.equals(this.tags, clusterInfo.tags)
-            && Objects.equals(this.userName, clusterInfo.userName)
-            && Objects.equals(this.numberOfNode, clusterInfo.numberOfNode)
-            && Objects.equals(this.recentEvent, clusterInfo.recentEvent)
-            && Objects.equals(this.availabilityZone, clusterInfo.availabilityZone)
-            && Objects.equals(this.enterpriseProjectId, clusterInfo.enterpriseProjectId)
-            && Objects.equals(this.nodeType, clusterInfo.nodeType) && Objects.equals(this.vpcId, clusterInfo.vpcId)
-            && Objects.equals(this.subnetId, clusterInfo.subnetId)
-            && Objects.equals(this.publicIp, clusterInfo.publicIp)
-            && Objects.equals(this.publicEndpoints, clusterInfo.publicEndpoints)
-            && Objects.equals(this.actionProgress, clusterInfo.actionProgress)
-            && Objects.equals(this.subStatus, clusterInfo.subStatus)
-            && Objects.equals(this.taskStatus, clusterInfo.taskStatus)
-            && Objects.equals(this.securityGroupId, clusterInfo.securityGroupId)
-            && Objects.equals(this.failedReasons, clusterInfo.failedReasons);
+        ClusterInfo that = (ClusterInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.endpoints, that.endpoints)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.numberOfNode, that.numberOfNode)
+            && Objects.equals(this.recentEvent, that.recentEvent)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.publicEndpoints, that.publicEndpoints)
+            && Objects.equals(this.actionProgress, that.actionProgress)
+            && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.failedReasons, that.failedReasons);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DeadletterResendRespResendResults {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeadletterResendRespResendResults deadletterResendRespResendResults = (DeadletterResendRespResendResults) o;
-        return Objects.equals(this.msgId, deadletterResendRespResendResults.msgId)
-            && Objects.equals(this.errorCode, deadletterResendRespResendResults.errorCode)
-            && Objects.equals(this.errorMessage, deadletterResendRespResendResults.errorMessage);
+        DeadletterResendRespResendResults that = (DeadletterResendRespResendResults) obj;
+        return Objects.equals(this.msgId, that.msgId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

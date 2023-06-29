@@ -134,18 +134,17 @@ public class SubtitleModifyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubtitleModifyReq subtitleModifyReq = (SubtitleModifyReq) o;
-        return Objects.equals(this.assetId, subtitleModifyReq.assetId)
-            && Objects.equals(this.defaultLanguage, subtitleModifyReq.defaultLanguage)
-            && Objects.equals(this.addSubtitles, subtitleModifyReq.addSubtitles)
-            && Objects.equals(this.deleteSubtitles, subtitleModifyReq.deleteSubtitles);
+        SubtitleModifyReq that = (SubtitleModifyReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.defaultLanguage, that.defaultLanguage)
+            && Objects.equals(this.addSubtitles, that.addSubtitles)
+            && Objects.equals(this.deleteSubtitles, that.deleteSubtitles);
     }
 
     @Override

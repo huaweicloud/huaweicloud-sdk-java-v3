@@ -82,22 +82,15 @@ public class PluginApiInfo {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,22 +193,15 @@ public class PluginApiInfo {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -299,22 +285,15 @@ public class PluginApiInfo {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -381,22 +360,15 @@ public class PluginApiInfo {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchModeEnum(value));
         }
 
         public static MatchModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -753,28 +725,24 @@ public class PluginApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginApiInfo pluginApiInfo = (PluginApiInfo) o;
-        return Objects.equals(this.apiId, pluginApiInfo.apiId) && Objects.equals(this.apiName, pluginApiInfo.apiName)
-            && Objects.equals(this.type, pluginApiInfo.type)
-            && Objects.equals(this.reqProtocol, pluginApiInfo.reqProtocol)
-            && Objects.equals(this.reqMethod, pluginApiInfo.reqMethod)
-            && Objects.equals(this.reqUri, pluginApiInfo.reqUri)
-            && Objects.equals(this.authType, pluginApiInfo.authType)
-            && Objects.equals(this.matchMode, pluginApiInfo.matchMode)
-            && Objects.equals(this.remark, pluginApiInfo.remark) && Objects.equals(this.groupId, pluginApiInfo.groupId)
-            && Objects.equals(this.groupName, pluginApiInfo.groupName)
-            && Objects.equals(this.romaAppId, pluginApiInfo.romaAppId)
-            && Objects.equals(this.envId, pluginApiInfo.envId) && Objects.equals(this.envName, pluginApiInfo.envName)
-            && Objects.equals(this.publishId, pluginApiInfo.publishId)
-            && Objects.equals(this.pluginAttachId, pluginApiInfo.pluginAttachId)
-            && Objects.equals(this.attachedTime, pluginApiInfo.attachedTime);
+        PluginApiInfo that = (PluginApiInfo) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.reqProtocol, that.reqProtocol)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.matchMode, that.matchMode)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.pluginAttachId, that.pluginAttachId)
+            && Objects.equals(this.attachedTime, that.attachedTime);
     }
 
     @Override

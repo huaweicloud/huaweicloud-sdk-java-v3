@@ -109,18 +109,16 @@ public class TargetRect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetRect targetRect = (TargetRect) o;
-        return Objects.equals(this.cameraCode, targetRect.cameraCode)
-            && Objects.equals(this.cameraIp, targetRect.cameraIp)
-            && Objects.equals(this.targetPos, targetRect.targetPos)
-            && Objects.equals(this.timeStampDiff, targetRect.timeStampDiff);
+        TargetRect that = (TargetRect) obj;
+        return Objects.equals(this.cameraCode, that.cameraCode) && Objects.equals(this.cameraIp, that.cameraIp)
+            && Objects.equals(this.targetPos, that.targetPos) && Objects.equals(this.timeStampDiff, that.timeStampDiff);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class UpdateFirewallRuleResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,18 +187,17 @@ public class UpdateFirewallRuleResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFirewallRuleResp updateFirewallRuleResp = (UpdateFirewallRuleResp) o;
-        return Objects.equals(this.id, updateFirewallRuleResp.id)
-            && Objects.equals(this.status, updateFirewallRuleResp.status)
-            && Objects.equals(this.egressFirewallPolicy, updateFirewallRuleResp.egressFirewallPolicy)
-            && Objects.equals(this.ingressFirewallPolicy, updateFirewallRuleResp.ingressFirewallPolicy);
+        UpdateFirewallRuleResp that = (UpdateFirewallRuleResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.egressFirewallPolicy, that.egressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallPolicy, that.ingressFirewallPolicy);
     }
 
     @Override

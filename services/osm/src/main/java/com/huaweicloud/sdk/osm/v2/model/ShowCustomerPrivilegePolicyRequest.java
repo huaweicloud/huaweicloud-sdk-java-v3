@@ -85,17 +85,16 @@ public class ShowCustomerPrivilegePolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomerPrivilegePolicyRequest showCustomerPrivilegePolicyRequest = (ShowCustomerPrivilegePolicyRequest) o;
-        return Objects.equals(this.xSite, showCustomerPrivilegePolicyRequest.xSite)
-            && Objects.equals(this.xLanguage, showCustomerPrivilegePolicyRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showCustomerPrivilegePolicyRequest.xTimeZone);
+        ShowCustomerPrivilegePolicyRequest that = (ShowCustomerPrivilegePolicyRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

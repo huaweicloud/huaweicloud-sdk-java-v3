@@ -33,15 +33,15 @@ public class BaseEndpointConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseEndpointConfig baseEndpointConfig = (BaseEndpointConfig) o;
-        return Objects.equals(this.isTargetReadonly, baseEndpointConfig.isTargetReadonly);
+        BaseEndpointConfig that = (BaseEndpointConfig) obj;
+        return Objects.equals(this.isTargetReadonly, that.isTargetReadonly);
     }
 
     @Override

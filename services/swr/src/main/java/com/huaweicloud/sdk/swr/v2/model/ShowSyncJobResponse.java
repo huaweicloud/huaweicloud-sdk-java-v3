@@ -75,16 +75,15 @@ public class ShowSyncJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSyncJobResponse showSyncJobResponse = (ShowSyncJobResponse) o;
-        return Objects.equals(this.body, showSyncJobResponse.body)
-            && Objects.equals(this.contentRange, showSyncJobResponse.contentRange);
+        ShowSyncJobResponse that = (ShowSyncJobResponse) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.contentRange, that.contentRange);
     }
 
     @Override

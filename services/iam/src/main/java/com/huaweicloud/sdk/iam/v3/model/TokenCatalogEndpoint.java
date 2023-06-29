@@ -121,19 +121,17 @@ public class TokenCatalogEndpoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TokenCatalogEndpoint tokenCatalogEndpoint = (TokenCatalogEndpoint) o;
-        return Objects.equals(this.url, tokenCatalogEndpoint.url)
-            && Objects.equals(this.region, tokenCatalogEndpoint.region)
-            && Objects.equals(this.regionId, tokenCatalogEndpoint.regionId)
-            && Objects.equals(this._interface, tokenCatalogEndpoint._interface)
-            && Objects.equals(this.id, tokenCatalogEndpoint.id);
+        TokenCatalogEndpoint that = (TokenCatalogEndpoint) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this._interface, that._interface)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -187,20 +187,18 @@ public class RepoCommitStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoCommitStatistics repoCommitStatistics = (RepoCommitStatistics) o;
-        return Objects.equals(this.allBranchCommitsCount, repoCommitStatistics.allBranchCommitsCount)
-            && Objects.equals(this.codelines, repoCommitStatistics.codelines)
-            && Objects.equals(this.count, repoCommitStatistics.count)
-            && Objects.equals(this.event, repoCommitStatistics.event)
-            && Objects.equals(this.statistics, repoCommitStatistics.statistics)
-            && Objects.equals(this.total, repoCommitStatistics.total);
+        RepoCommitStatistics that = (RepoCommitStatistics) obj;
+        return Objects.equals(this.allBranchCommitsCount, that.allBranchCommitsCount)
+            && Objects.equals(this.codelines, that.codelines) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.event, that.event) && Objects.equals(this.statistics, that.statistics)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

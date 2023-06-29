@@ -99,18 +99,17 @@ public class DecryptDatakeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DecryptDatakeyRequestBody decryptDatakeyRequestBody = (DecryptDatakeyRequestBody) o;
-        return Objects.equals(this.keyId, decryptDatakeyRequestBody.keyId)
-            && Objects.equals(this.cipherText, decryptDatakeyRequestBody.cipherText)
-            && Objects.equals(this.datakeyCipherLength, decryptDatakeyRequestBody.datakeyCipherLength)
-            && Objects.equals(this.sequence, decryptDatakeyRequestBody.sequence);
+        DecryptDatakeyRequestBody that = (DecryptDatakeyRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.cipherText, that.cipherText)
+            && Objects.equals(this.datakeyCipherLength, that.datakeyCipherLength)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

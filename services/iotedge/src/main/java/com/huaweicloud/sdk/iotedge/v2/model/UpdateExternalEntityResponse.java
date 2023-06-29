@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,46 +11,38 @@ import java.util.Objects;
  */
 public class UpdateExternalEntityResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="external_id")
-    
+    @JsonProperty(value = "external_id")
 
     private String externalId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connection_type")
-    
+    @JsonProperty(value = "connection_type")
 
     private String connectionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_modify_time")
-    
+    @JsonProperty(value = "last_modify_time")
 
     private String lastModifyTime;
 
@@ -66,9 +50,6 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID
@@ -82,15 +63,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
-    
-
     public UpdateExternalEntityResponse withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间ID。此参数为非必选参数，存在多资源空间的用户需要使用该接口时，建议携带该参数指定创建的外部实体归属到IoDA哪个资源空间下的边缘节点设备下，否则创建的外部实体将会归属到默认资源空间下对应的边缘节点下,对应于IoDA的app_id.
@@ -104,15 +80,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.spaceId = spaceId;
     }
 
-    
-
     public UpdateExternalEntityResponse withExternalId(String externalId) {
         this.externalId = externalId;
         return this;
     }
-
-    
-
 
     /**
      * 外部实体ID
@@ -126,15 +97,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.externalId = externalId;
     }
 
-    
-
     public UpdateExternalEntityResponse withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-
-    
-
 
     /**
      * 接入协议类型
@@ -148,15 +114,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.protocol = protocol;
     }
 
-    
-
     public UpdateExternalEntityResponse withConnectionType(String connectionType) {
         this.connectionType = connectionType;
         return this;
     }
-
-    
-
 
     /**
      * 连接类型(client和server)
@@ -170,15 +131,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.connectionType = connectionType;
     }
 
-    
-
     public UpdateExternalEntityResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -192,15 +148,10 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateExternalEntityResponse withLastModifyTime(String lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后修改时间
@@ -214,29 +165,27 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         this.lastModifyTime = lastModifyTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateExternalEntityResponse updateExternalEntityResponse = (UpdateExternalEntityResponse) o;
-        return Objects.equals(this.nodeId, updateExternalEntityResponse.nodeId) &&
-            Objects.equals(this.spaceId, updateExternalEntityResponse.spaceId) &&
-            Objects.equals(this.externalId, updateExternalEntityResponse.externalId) &&
-            Objects.equals(this.protocol, updateExternalEntityResponse.protocol) &&
-            Objects.equals(this.connectionType, updateExternalEntityResponse.connectionType) &&
-            Objects.equals(this.createTime, updateExternalEntityResponse.createTime) &&
-            Objects.equals(this.lastModifyTime, updateExternalEntityResponse.lastModifyTime);
+        UpdateExternalEntityResponse that = (UpdateExternalEntityResponse) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.spaceId, that.spaceId)
+            && Objects.equals(this.externalId, that.externalId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, spaceId, externalId, protocol, connectionType, createTime, lastModifyTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -251,6 +200,7 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -261,8 +211,5 @@ public class UpdateExternalEntityResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

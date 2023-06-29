@@ -53,15 +53,15 @@ public class ShowTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTagsResponse showTagsResponse = (ShowTagsResponse) o;
-        return Objects.equals(this.tags, showTagsResponse.tags);
+        ShowTagsResponse that = (ShowTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

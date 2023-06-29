@@ -55,15 +55,15 @@ public class MfaTotpUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MfaTotpUser mfaTotpUser = (MfaTotpUser) o;
-        return Objects.equals(this.id, mfaTotpUser.id) && Objects.equals(this.passcode, mfaTotpUser.passcode);
+        MfaTotpUser that = (MfaTotpUser) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.passcode, that.passcode);
     }
 
     @Override

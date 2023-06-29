@@ -228,22 +228,19 @@ public class Datasources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Datasources datasources = (Datasources) o;
-        return Objects.equals(this.datasourceId, datasources.datasourceId)
-            && Objects.equals(this.datasourceName, datasources.datasourceName)
-            && Objects.equals(this.status, datasources.status) && Objects.equals(this.structure, datasources.structure)
-            && Objects.equals(this.workspaceId, datasources.workspaceId)
-            && Objects.equals(this.dataConfig, datasources.dataConfig)
-            && Objects.equals(this.specsConfig, datasources.specsConfig)
-            && Objects.equals(this.createdAt, datasources.createdAt)
-            && Objects.equals(this.updateAt, datasources.updateAt);
+        Datasources that = (Datasources) obj;
+        return Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.datasourceName, that.datasourceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.structure, that.structure) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.dataConfig, that.dataConfig) && Objects.equals(this.specsConfig, that.specsConfig)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

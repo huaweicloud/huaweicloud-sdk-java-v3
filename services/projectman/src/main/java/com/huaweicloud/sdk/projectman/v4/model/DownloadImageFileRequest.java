@@ -81,16 +81,15 @@ public class DownloadImageFileRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadImageFileRequest downloadImageFileRequest = (DownloadImageFileRequest) o;
-        return Objects.equals(this.projectId, downloadImageFileRequest.projectId)
-            && Objects.equals(this.imageUri, downloadImageFileRequest.imageUri);
+        DownloadImageFileRequest that = (DownloadImageFileRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.imageUri, that.imageUri);
     }
 
     @Override

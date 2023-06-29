@@ -36,15 +36,15 @@ public class ShowUserInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserInstancesResponse showUserInstancesResponse = (ShowUserInstancesResponse) o;
-        return Objects.equals(this.instanceNum, showUserInstancesResponse.instanceNum);
+        ShowUserInstancesResponse that = (ShowUserInstancesResponse) obj;
+        return Objects.equals(this.instanceNum, that.instanceNum);
     }
 
     @Override

@@ -165,22 +165,15 @@ public class ServerDetails {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -299,22 +292,15 @@ public class ServerDetails {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSTaskStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSTaskStateEnum(value));
         }
 
         public static OsEXTSTSTaskStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSTaskStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,22 +373,15 @@ public class ServerDetails {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTSTSVmStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTSTSVmStateEnum(value));
         }
 
         public static OsEXTSTSVmStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTSTSVmStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -494,22 +473,15 @@ public class ServerDetails {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsDCFDiskConfigEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsDCFDiskConfigEnum(value));
         }
 
         public static OsDCFDiskConfigEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsDCFDiskConfigEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -613,22 +585,15 @@ public class ServerDetails {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostStatusEnum(value));
         }
 
         public static HostStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1587,54 +1552,46 @@ public class ServerDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerDetails serverDetails = (ServerDetails) o;
-        return Objects.equals(this.id, serverDetails.id) && Objects.equals(this.userId, serverDetails.userId)
-            && Objects.equals(this.name, serverDetails.name) && Objects.equals(this.created, serverDetails.created)
-            && Objects.equals(this.updated, serverDetails.updated)
-            && Objects.equals(this.tenantId, serverDetails.tenantId)
-            && Objects.equals(this.hostId, serverDetails.hostId)
-            && Objects.equals(this.addresses, serverDetails.addresses)
-            && Objects.equals(this.keyName, serverDetails.keyName) && Objects.equals(this.image, serverDetails.image)
-            && Objects.equals(this.flavor, serverDetails.flavor)
-            && Objects.equals(this.securityGroups, serverDetails.securityGroups)
-            && Objects.equals(this.accessIPv4, serverDetails.accessIPv4)
-            && Objects.equals(this.accessIPv6, serverDetails.accessIPv6)
-            && Objects.equals(this.status, serverDetails.status)
-            && Objects.equals(this.progress, serverDetails.progress)
-            && Objects.equals(this.configDrive, serverDetails.configDrive)
-            && Objects.equals(this.metadata, serverDetails.metadata)
-            && Objects.equals(this.osEXTSTSTaskState, serverDetails.osEXTSTSTaskState)
-            && Objects.equals(this.osEXTSTSVmState, serverDetails.osEXTSTSVmState)
-            && Objects.equals(this.osEXTSRVATTRHost, serverDetails.osEXTSRVATTRHost)
-            && Objects.equals(this.osEXTSRVATTRInstanceName, serverDetails.osEXTSRVATTRInstanceName)
-            && Objects.equals(this.osEXTSTSPowerState, serverDetails.osEXTSTSPowerState)
-            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, serverDetails.osEXTSRVATTRHypervisorHostname)
-            && Objects.equals(this.osEXTAZAvailabilityZone, serverDetails.osEXTAZAvailabilityZone)
-            && Objects.equals(this.osDCFDiskConfig, serverDetails.osDCFDiskConfig)
-            && Objects.equals(this.fault, serverDetails.fault)
-            && Objects.equals(this.osSRVUSGLaunchedAt, serverDetails.osSRVUSGLaunchedAt)
-            && Objects.equals(this.osSRVUSGTerminatedAt, serverDetails.osSRVUSGTerminatedAt)
-            && Objects.equals(this.osExtendedVolumesVolumesAttached, serverDetails.osExtendedVolumesVolumesAttached)
-            && Objects.equals(this.description, serverDetails.description)
-            && Objects.equals(this.hostStatus, serverDetails.hostStatus)
-            && Objects.equals(this.osEXTSRVATTRHostname, serverDetails.osEXTSRVATTRHostname)
-            && Objects.equals(this.osEXTSRVATTRReservationId, serverDetails.osEXTSRVATTRReservationId)
-            && Objects.equals(this.osEXTSRVATTRLaunchIndex, serverDetails.osEXTSRVATTRLaunchIndex)
-            && Objects.equals(this.osEXTSRVATTRKernelId, serverDetails.osEXTSRVATTRKernelId)
-            && Objects.equals(this.osEXTSRVATTRRamdiskId, serverDetails.osEXTSRVATTRRamdiskId)
-            && Objects.equals(this.osEXTSRVATTRRootDeviceName, serverDetails.osEXTSRVATTRRootDeviceName)
-            && Objects.equals(this.osEXTSRVATTRUserData, serverDetails.osEXTSRVATTRUserData)
-            && Objects.equals(this.locked, serverDetails.locked) && Objects.equals(this.tags, serverDetails.tags)
-            && Objects.equals(this.osSchedulerHints, serverDetails.osSchedulerHints)
-            && Objects.equals(this.enterpriseProjectId, serverDetails.enterpriseProjectId)
-            && Objects.equals(this.sysTags, serverDetails.sysTags);
+        ServerDetails that = (ServerDetails) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.accessIPv4, that.accessIPv4) && Objects.equals(this.accessIPv6, that.accessIPv6)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.configDrive, that.configDrive) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.osEXTSTSTaskState, that.osEXTSTSTaskState)
+            && Objects.equals(this.osEXTSTSVmState, that.osEXTSTSVmState)
+            && Objects.equals(this.osEXTSRVATTRHost, that.osEXTSRVATTRHost)
+            && Objects.equals(this.osEXTSRVATTRInstanceName, that.osEXTSRVATTRInstanceName)
+            && Objects.equals(this.osEXTSTSPowerState, that.osEXTSTSPowerState)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, that.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.osEXTAZAvailabilityZone, that.osEXTAZAvailabilityZone)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig) && Objects.equals(this.fault, that.fault)
+            && Objects.equals(this.osSRVUSGLaunchedAt, that.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, that.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached, that.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRReservationId, that.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, that.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRKernelId, that.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, that.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName, that.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRUserData, that.osEXTSRVATTRUserData)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

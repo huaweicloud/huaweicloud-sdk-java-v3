@@ -121,18 +121,17 @@ public class ProductInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductInfo productInfo = (ProductInfo) o;
-        return Objects.equals(this.domainId, productInfo.domainId)
-            && Objects.equals(this.projectId, productInfo.projectId) && Objects.equals(this.region, productInfo.region)
-            && Objects.equals(this.companyName, productInfo.companyName)
-            && Objects.equals(this.productName, productInfo.productName);
+        ProductInfo that = (ProductInfo) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.companyName, that.companyName)
+            && Objects.equals(this.productName, that.productName);
     }
 
     @Override

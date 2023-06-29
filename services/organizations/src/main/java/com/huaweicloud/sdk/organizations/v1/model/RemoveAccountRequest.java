@@ -33,15 +33,15 @@ public class RemoveAccountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveAccountRequest removeAccountRequest = (RemoveAccountRequest) o;
-        return Objects.equals(this.accountId, removeAccountRequest.accountId);
+        RemoveAccountRequest that = (RemoveAccountRequest) obj;
+        return Objects.equals(this.accountId, that.accountId);
     }
 
     @Override

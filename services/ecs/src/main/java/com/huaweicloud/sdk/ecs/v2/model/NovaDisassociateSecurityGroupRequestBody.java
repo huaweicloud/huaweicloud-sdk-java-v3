@@ -45,16 +45,15 @@ public class NovaDisassociateSecurityGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaDisassociateSecurityGroupRequestBody novaDisassociateSecurityGroupRequestBody =
-            (NovaDisassociateSecurityGroupRequestBody) o;
-        return Objects.equals(this.removeSecurityGroup, novaDisassociateSecurityGroupRequestBody.removeSecurityGroup);
+        NovaDisassociateSecurityGroupRequestBody that = (NovaDisassociateSecurityGroupRequestBody) obj;
+        return Objects.equals(this.removeSecurityGroup, that.removeSecurityGroup);
     }
 
     @Override

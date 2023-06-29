@@ -33,15 +33,15 @@ public class UnlockTargetEcsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnlockTargetEcsRequest unlockTargetEcsRequest = (UnlockTargetEcsRequest) o;
-        return Objects.equals(this.taskId, unlockTargetEcsRequest.taskId);
+        UnlockTargetEcsRequest that = (UnlockTargetEcsRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

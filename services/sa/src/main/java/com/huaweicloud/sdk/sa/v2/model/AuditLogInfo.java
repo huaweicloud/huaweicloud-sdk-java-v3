@@ -297,24 +297,21 @@ public class AuditLogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuditLogInfo auditLogInfo = (AuditLogInfo) o;
-        return Objects.equals(this.instanceType, auditLogInfo.instanceType)
-            && Objects.equals(this.actionId, auditLogInfo.actionId)
-            && Objects.equals(this.actionName, auditLogInfo.actionName)
-            && Objects.equals(this.instanceId, auditLogInfo.instanceId)
-            && Objects.equals(this.parentInstanceId, auditLogInfo.parentInstanceId)
-            && Objects.equals(this.logLevel, auditLogInfo.logLevel) && Objects.equals(this.input, auditLogInfo.input)
-            && Objects.equals(this.output, auditLogInfo.output) && Objects.equals(this.errorMsg, auditLogInfo.errorMsg)
-            && Objects.equals(this.startTime, auditLogInfo.startTime)
-            && Objects.equals(this.endTime, auditLogInfo.endTime) && Objects.equals(this.status, auditLogInfo.status)
-            && Objects.equals(this.triggerType, auditLogInfo.triggerType);
+        AuditLogInfo that = (AuditLogInfo) obj;
+        return Objects.equals(this.instanceType, that.instanceType) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.actionName, that.actionName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.parentInstanceId, that.parentInstanceId)
+            && Objects.equals(this.logLevel, that.logLevel) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerType, that.triggerType);
     }
 
     @Override

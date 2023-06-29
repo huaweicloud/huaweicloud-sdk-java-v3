@@ -185,21 +185,18 @@ public class ShowConsumerConnectionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsumerConnectionsResponse showConsumerConnectionsResponse = (ShowConsumerConnectionsResponse) o;
-        return Objects.equals(this.groupName, showConsumerConnectionsResponse.groupName)
-            && Objects.equals(this.online, showConsumerConnectionsResponse.online)
-            && Objects.equals(this.subscriptionConsistency, showConsumerConnectionsResponse.subscriptionConsistency)
-            && Objects.equals(this.total, showConsumerConnectionsResponse.total)
-            && Objects.equals(this.nextOffset, showConsumerConnectionsResponse.nextOffset)
-            && Objects.equals(this.previousOffset, showConsumerConnectionsResponse.previousOffset)
-            && Objects.equals(this.clients, showConsumerConnectionsResponse.clients);
+        ShowConsumerConnectionsResponse that = (ShowConsumerConnectionsResponse) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.online, that.online)
+            && Objects.equals(this.subscriptionConsistency, that.subscriptionConsistency)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.clients, that.clients);
     }
 
     @Override

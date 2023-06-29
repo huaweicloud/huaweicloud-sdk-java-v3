@@ -55,16 +55,16 @@ public class ShowBackupPolicyInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupPolicyInfoRequest showBackupPolicyInfoRequest = (ShowBackupPolicyInfoRequest) o;
-        return Objects.equals(this.region, showBackupPolicyInfoRequest.region)
-            && Objects.equals(this.enterpriseProjectId, showBackupPolicyInfoRequest.enterpriseProjectId);
+        ShowBackupPolicyInfoRequest that = (ShowBackupPolicyInfoRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

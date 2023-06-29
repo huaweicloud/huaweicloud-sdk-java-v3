@@ -55,16 +55,15 @@ public class RestProlongDurReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestProlongDurReqBody restProlongDurReqBody = (RestProlongDurReqBody) o;
-        return Objects.equals(this.auto, restProlongDurReqBody.auto)
-            && Objects.equals(this.duration, restProlongDurReqBody.duration);
+        RestProlongDurReqBody that = (RestProlongDurReqBody) obj;
+        return Objects.equals(this.auto, that.auto) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

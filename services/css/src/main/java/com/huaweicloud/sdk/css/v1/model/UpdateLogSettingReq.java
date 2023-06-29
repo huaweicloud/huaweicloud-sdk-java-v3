@@ -77,17 +77,16 @@ public class UpdateLogSettingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLogSettingReq updateLogSettingReq = (UpdateLogSettingReq) o;
-        return Objects.equals(this.agency, updateLogSettingReq.agency)
-            && Objects.equals(this.logBasePath, updateLogSettingReq.logBasePath)
-            && Objects.equals(this.logBucket, updateLogSettingReq.logBucket);
+        UpdateLogSettingReq that = (UpdateLogSettingReq) obj;
+        return Objects.equals(this.agency, that.agency) && Objects.equals(this.logBasePath, that.logBasePath)
+            && Objects.equals(this.logBucket, that.logBucket);
     }
 
     @Override

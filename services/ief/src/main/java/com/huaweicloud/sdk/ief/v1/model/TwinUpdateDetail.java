@@ -91,16 +91,15 @@ public class TwinUpdateDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TwinUpdateDetail twinUpdateDetail = (TwinUpdateDetail) o;
-        return Objects.equals(this.twin, twinUpdateDetail.twin)
-            && Objects.equals(this.propertyVisitors, twinUpdateDetail.propertyVisitors);
+        TwinUpdateDetail that = (TwinUpdateDetail) obj;
+        return Objects.equals(this.twin, that.twin) && Objects.equals(this.propertyVisitors, that.propertyVisitors);
     }
 
     @Override

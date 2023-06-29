@@ -97,17 +97,16 @@ public class ListCertificatesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificatesV2Response listCertificatesV2Response = (ListCertificatesV2Response) o;
-        return Objects.equals(this.size, listCertificatesV2Response.size)
-            && Objects.equals(this.total, listCertificatesV2Response.total)
-            && Objects.equals(this.certs, listCertificatesV2Response.certs);
+        ListCertificatesV2Response that = (ListCertificatesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.certs, that.certs);
     }
 
     @Override

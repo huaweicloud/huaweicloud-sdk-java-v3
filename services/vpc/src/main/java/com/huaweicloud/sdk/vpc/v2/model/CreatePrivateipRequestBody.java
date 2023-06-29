@@ -52,15 +52,15 @@ public class CreatePrivateipRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateipRequestBody createPrivateipRequestBody = (CreatePrivateipRequestBody) o;
-        return Objects.equals(this.privateips, createPrivateipRequestBody.privateips);
+        CreatePrivateipRequestBody that = (CreatePrivateipRequestBody) obj;
+        return Objects.equals(this.privateips, that.privateips);
     }
 
     @Override

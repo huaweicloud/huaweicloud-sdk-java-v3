@@ -44,15 +44,15 @@ public class ShowSnapshotResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSnapshotResponse showSnapshotResponse = (ShowSnapshotResponse) o;
-        return Objects.equals(this.snapshot, showSnapshotResponse.snapshot);
+        ShowSnapshotResponse that = (ShowSnapshotResponse) obj;
+        return Objects.equals(this.snapshot, that.snapshot);
     }
 
     @Override

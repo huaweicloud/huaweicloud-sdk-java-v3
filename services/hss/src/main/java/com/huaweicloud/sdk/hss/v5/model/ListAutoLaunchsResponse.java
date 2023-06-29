@@ -77,16 +77,15 @@ public class ListAutoLaunchsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoLaunchsResponse listAutoLaunchsResponse = (ListAutoLaunchsResponse) o;
-        return Objects.equals(this.totalNum, listAutoLaunchsResponse.totalNum)
-            && Objects.equals(this.dataList, listAutoLaunchsResponse.dataList);
+        ListAutoLaunchsResponse that = (ListAutoLaunchsResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

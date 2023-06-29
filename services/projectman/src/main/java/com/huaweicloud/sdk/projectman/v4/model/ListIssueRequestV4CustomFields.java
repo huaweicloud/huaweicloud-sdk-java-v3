@@ -55,16 +55,15 @@ public class ListIssueRequestV4CustomFields {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueRequestV4CustomFields listIssueRequestV4CustomFields = (ListIssueRequestV4CustomFields) o;
-        return Objects.equals(this.customField, listIssueRequestV4CustomFields.customField)
-            && Objects.equals(this.value, listIssueRequestV4CustomFields.value);
+        ListIssueRequestV4CustomFields that = (ListIssueRequestV4CustomFields) obj;
+        return Objects.equals(this.customField, that.customField) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class InstancesResourceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstancesResourceDetail instancesResourceDetail = (InstancesResourceDetail) o;
-        return Objects.equals(this.vault, instancesResourceDetail.vault);
+        InstancesResourceDetail that = (InstancesResourceDetail) obj;
+        return Objects.equals(this.vault, that.vault);
     }
 
     @Override

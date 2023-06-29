@@ -33,15 +33,15 @@ public class ListConfsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfsRequest listConfsRequest = (ListConfsRequest) o;
-        return Objects.equals(this.clusterId, listConfsRequest.clusterId);
+        ListConfsRequest that = (ListConfsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

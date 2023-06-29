@@ -112,22 +112,15 @@ public class MultiTaskMappingElement {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -370,23 +363,19 @@ public class MultiTaskMappingElement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskMappingElement multiTaskMappingElement = (MultiTaskMappingElement) o;
-        return Objects.equals(this.id, multiTaskMappingElement.id)
-            && Objects.equals(this.sourceTable, multiTaskMappingElement.sourceTable)
-            && Objects.equals(this.targetTable, multiTaskMappingElement.targetTable)
-            && Objects.equals(this.updatedTime, multiTaskMappingElement.updatedTime)
-            && Objects.equals(this.mappingPercent, multiTaskMappingElement.mappingPercent)
-            && Objects.equals(this.status, multiTaskMappingElement.status)
-            && Objects.equals(this.sourceColumns, multiTaskMappingElement.sourceColumns)
-            && Objects.equals(this.targetColumns, multiTaskMappingElement.targetColumns)
-            && Objects.equals(this.mapping, multiTaskMappingElement.mapping);
+        MultiTaskMappingElement that = (MultiTaskMappingElement) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.sourceTable, that.sourceTable)
+            && Objects.equals(this.targetTable, that.targetTable) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.mappingPercent, that.mappingPercent) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sourceColumns, that.sourceColumns)
+            && Objects.equals(this.targetColumns, that.targetColumns) && Objects.equals(this.mapping, that.mapping);
     }
 
     @Override

@@ -495,36 +495,29 @@ public class GetDevicesListArrayObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDevicesListArrayObject getDevicesListArrayObject = (GetDevicesListArrayObject) o;
-        return Objects.equals(this.id, getDevicesListArrayObject.id)
-            && Objects.equals(this.name, getDevicesListArrayObject.name)
-            && Objects.equals(this.type, getDevicesListArrayObject.type)
-            && Objects.equals(this.status, getDevicesListArrayObject.status)
-            && Objects.equals(this.cpu, getDevicesListArrayObject.cpu)
-            && Objects.equals(this.memory, getDevicesListArrayObject.memory)
-            && Objects.equals(this.os, getDevicesListArrayObject.os)
-            && Objects.equals(this.firmwareName, getDevicesListArrayObject.firmwareName)
-            && Objects.equals(this.firmwareVersion, getDevicesListArrayObject.firmwareVersion)
-            && Objects.equals(this.firmwareStatus, getDevicesListArrayObject.firmwareStatus)
-            && Objects.equals(this.firmwareCause, getDevicesListArrayObject.firmwareCause)
-            && Objects.equals(this.path, getDevicesListArrayObject.path)
-            && Objects.equals(this.pathUpdateStatus, getDevicesListArrayObject.pathUpdateStatus)
-            && Objects.equals(this.pathUpdateCause, getDevicesListArrayObject.pathUpdateCause)
-            && Objects.equals(this.createTime, getDevicesListArrayObject.createTime)
-            && Objects.equals(this.updateTime, getDevicesListArrayObject.updateTime)
-            && Objects.equals(this.userTime, getDevicesListArrayObject.userTime)
-            && Objects.equals(this.resourceSpecCode, getDevicesListArrayObject.resourceSpecCode)
-            && Objects.equals(this.cloudServiceType, getDevicesListArrayObject.cloudServiceType)
-            && Objects.equals(this.activeContent, getDevicesListArrayObject.activeContent)
-            && Objects.equals(this.activeFlag, getDevicesListArrayObject.activeFlag)
-            && Objects.equals(this.topicUrn, getDevicesListArrayObject.topicUrn);
+        GetDevicesListArrayObject that = (GetDevicesListArrayObject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.firmwareName, that.firmwareName)
+            && Objects.equals(this.firmwareVersion, that.firmwareVersion)
+            && Objects.equals(this.firmwareStatus, that.firmwareStatus)
+            && Objects.equals(this.firmwareCause, that.firmwareCause) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.pathUpdateStatus, that.pathUpdateStatus)
+            && Objects.equals(this.pathUpdateCause, that.pathUpdateCause)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.userTime, that.userTime)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.activeContent, that.activeContent)
+            && Objects.equals(this.activeFlag, that.activeFlag) && Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

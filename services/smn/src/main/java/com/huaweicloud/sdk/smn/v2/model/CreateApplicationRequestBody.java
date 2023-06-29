@@ -99,18 +99,17 @@ public class CreateApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationRequestBody createApplicationRequestBody = (CreateApplicationRequestBody) o;
-        return Objects.equals(this.name, createApplicationRequestBody.name)
-            && Objects.equals(this.platform, createApplicationRequestBody.platform)
-            && Objects.equals(this.platformPrincipal, createApplicationRequestBody.platformPrincipal)
-            && Objects.equals(this.platformCredential, createApplicationRequestBody.platformCredential);
+        CreateApplicationRequestBody that = (CreateApplicationRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.platformPrincipal, that.platformPrincipal)
+            && Objects.equals(this.platformCredential, that.platformCredential);
     }
 
     @Override

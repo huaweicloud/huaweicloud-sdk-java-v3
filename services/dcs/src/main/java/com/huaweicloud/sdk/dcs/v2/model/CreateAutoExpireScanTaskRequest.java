@@ -33,15 +33,15 @@ public class CreateAutoExpireScanTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAutoExpireScanTaskRequest createAutoExpireScanTaskRequest = (CreateAutoExpireScanTaskRequest) o;
-        return Objects.equals(this.instanceId, createAutoExpireScanTaskRequest.instanceId);
+        CreateAutoExpireScanTaskRequest that = (CreateAutoExpireScanTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

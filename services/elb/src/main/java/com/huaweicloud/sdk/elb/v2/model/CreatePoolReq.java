@@ -67,22 +67,15 @@ public class CreatePoolReq {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,22 +300,20 @@ public class CreatePoolReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePoolReq createPoolReq = (CreatePoolReq) o;
-        return Objects.equals(this.protocol, createPoolReq.protocol)
-            && Objects.equals(this.lbAlgorithm, createPoolReq.lbAlgorithm)
-            && Objects.equals(this.loadbalancerId, createPoolReq.loadbalancerId)
-            && Objects.equals(this.listenerId, createPoolReq.listenerId)
-            && Objects.equals(this.tenantId, createPoolReq.tenantId) && Objects.equals(this.name, createPoolReq.name)
-            && Objects.equals(this.description, createPoolReq.description)
-            && Objects.equals(this.adminStateUp, createPoolReq.adminStateUp)
-            && Objects.equals(this.sessionPersistence, createPoolReq.sessionPersistence);
+        CreatePoolReq that = (CreatePoolReq) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.lbAlgorithm, that.lbAlgorithm)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.sessionPersistence, that.sessionPersistence);
     }
 
     @Override

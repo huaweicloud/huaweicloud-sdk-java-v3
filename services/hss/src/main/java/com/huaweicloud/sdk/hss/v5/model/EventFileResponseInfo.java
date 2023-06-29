@@ -485,35 +485,26 @@ public class EventFileResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventFileResponseInfo eventFileResponseInfo = (EventFileResponseInfo) o;
-        return Objects.equals(this.filePath, eventFileResponseInfo.filePath)
-            && Objects.equals(this.fileAlias, eventFileResponseInfo.fileAlias)
-            && Objects.equals(this.fileSize, eventFileResponseInfo.fileSize)
-            && Objects.equals(this.fileMtime, eventFileResponseInfo.fileMtime)
-            && Objects.equals(this.fileAtime, eventFileResponseInfo.fileAtime)
-            && Objects.equals(this.fileCtime, eventFileResponseInfo.fileCtime)
-            && Objects.equals(this.fileHash, eventFileResponseInfo.fileHash)
-            && Objects.equals(this.fileMd5, eventFileResponseInfo.fileMd5)
-            && Objects.equals(this.fileSha256, eventFileResponseInfo.fileSha256)
-            && Objects.equals(this.fileType, eventFileResponseInfo.fileType)
-            && Objects.equals(this.fileContent, eventFileResponseInfo.fileContent)
-            && Objects.equals(this.fileAttr, eventFileResponseInfo.fileAttr)
-            && Objects.equals(this.fileOperation, eventFileResponseInfo.fileOperation)
-            && Objects.equals(this.fileAction, eventFileResponseInfo.fileAction)
-            && Objects.equals(this.fileChangeAttr, eventFileResponseInfo.fileChangeAttr)
-            && Objects.equals(this.fileNewPath, eventFileResponseInfo.fileNewPath)
-            && Objects.equals(this.fileDesc, eventFileResponseInfo.fileDesc)
-            && Objects.equals(this.fileKeyWord, eventFileResponseInfo.fileKeyWord)
-            && Objects.equals(this.isDir, eventFileResponseInfo.isDir)
-            && Objects.equals(this.fdInfo, eventFileResponseInfo.fdInfo)
-            && Objects.equals(this.fdCount, eventFileResponseInfo.fdCount);
+        EventFileResponseInfo that = (EventFileResponseInfo) obj;
+        return Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileAlias, that.fileAlias)
+            && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.fileMtime, that.fileMtime)
+            && Objects.equals(this.fileAtime, that.fileAtime) && Objects.equals(this.fileCtime, that.fileCtime)
+            && Objects.equals(this.fileHash, that.fileHash) && Objects.equals(this.fileMd5, that.fileMd5)
+            && Objects.equals(this.fileSha256, that.fileSha256) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.fileContent, that.fileContent) && Objects.equals(this.fileAttr, that.fileAttr)
+            && Objects.equals(this.fileOperation, that.fileOperation)
+            && Objects.equals(this.fileAction, that.fileAction)
+            && Objects.equals(this.fileChangeAttr, that.fileChangeAttr)
+            && Objects.equals(this.fileNewPath, that.fileNewPath) && Objects.equals(this.fileDesc, that.fileDesc)
+            && Objects.equals(this.fileKeyWord, that.fileKeyWord) && Objects.equals(this.isDir, that.isDir)
+            && Objects.equals(this.fdInfo, that.fdInfo) && Objects.equals(this.fdCount, that.fdCount);
     }
 
     @Override

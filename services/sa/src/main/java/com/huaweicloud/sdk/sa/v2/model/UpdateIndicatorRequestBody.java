@@ -65,16 +65,15 @@ public class UpdateIndicatorRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndicatorRequestBody updateIndicatorRequestBody = (UpdateIndicatorRequestBody) o;
-        return Objects.equals(this.triggerFlag, updateIndicatorRequestBody.triggerFlag)
-            && Objects.equals(this.dataObject, updateIndicatorRequestBody.dataObject);
+        UpdateIndicatorRequestBody that = (UpdateIndicatorRequestBody) obj;
+        return Objects.equals(this.triggerFlag, that.triggerFlag) && Objects.equals(this.dataObject, that.dataObject);
     }
 
     @Override

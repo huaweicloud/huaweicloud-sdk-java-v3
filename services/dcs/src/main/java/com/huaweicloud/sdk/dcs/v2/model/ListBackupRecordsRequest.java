@@ -121,19 +121,17 @@ public class ListBackupRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupRecordsRequest listBackupRecordsRequest = (ListBackupRecordsRequest) o;
-        return Objects.equals(this.instanceId, listBackupRecordsRequest.instanceId)
-            && Objects.equals(this.beginTime, listBackupRecordsRequest.beginTime)
-            && Objects.equals(this.endTime, listBackupRecordsRequest.endTime)
-            && Objects.equals(this.limit, listBackupRecordsRequest.limit)
-            && Objects.equals(this.offset, listBackupRecordsRequest.offset);
+        ListBackupRecordsRequest that = (ListBackupRecordsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

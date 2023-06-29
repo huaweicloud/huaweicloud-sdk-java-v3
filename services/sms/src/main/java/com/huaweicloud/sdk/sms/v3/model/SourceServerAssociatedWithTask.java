@@ -75,22 +75,15 @@ public class SourceServerAssociatedWithTask {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,22 +220,15 @@ public class SourceServerAssociatedWithTask {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -384,21 +370,18 @@ public class SourceServerAssociatedWithTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceServerAssociatedWithTask sourceServerAssociatedWithTask = (SourceServerAssociatedWithTask) o;
-        return Objects.equals(this.id, sourceServerAssociatedWithTask.id)
-            && Objects.equals(this.ip, sourceServerAssociatedWithTask.ip)
-            && Objects.equals(this.name, sourceServerAssociatedWithTask.name)
-            && Objects.equals(this.osType, sourceServerAssociatedWithTask.osType)
-            && Objects.equals(this.osVersion, sourceServerAssociatedWithTask.osVersion)
-            && Objects.equals(this.oemSystem, sourceServerAssociatedWithTask.oemSystem)
-            && Objects.equals(this.state, sourceServerAssociatedWithTask.state);
+        SourceServerAssociatedWithTask that = (SourceServerAssociatedWithTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.oemSystem, that.oemSystem)
+            && Objects.equals(this.state, that.state);
     }
 
     @Override

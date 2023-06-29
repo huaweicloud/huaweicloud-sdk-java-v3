@@ -217,22 +217,19 @@ public class CodehubJobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodehubJobInfo codehubJobInfo = (CodehubJobInfo) o;
-        return Objects.equals(this.applicationName, codehubJobInfo.applicationName)
-            && Objects.equals(this.privately, codehubJobInfo.privately)
-            && Objects.equals(this.shortId, codehubJobInfo.shortId)
-            && Objects.equals(this.codeUrl, codehubJobInfo.codeUrl)
-            && Objects.equals(this.regionId, codehubJobInfo.regionId)
-            && Objects.equals(this.repoType, codehubJobInfo.repoType)
-            && Objects.equals(this.properties, codehubJobInfo.properties)
-            && Objects.equals(this.repoInfo, codehubJobInfo.repoInfo);
+        CodehubJobInfo that = (CodehubJobInfo) obj;
+        return Objects.equals(this.applicationName, that.applicationName)
+            && Objects.equals(this.privately, that.privately) && Objects.equals(this.shortId, that.shortId)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.repoType, that.repoType) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.repoInfo, that.repoInfo);
     }
 
     @Override

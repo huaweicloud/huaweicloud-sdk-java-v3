@@ -57,16 +57,15 @@ public class UpdatePerformanceResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePerformanceResourceReq updatePerformanceResourceReq = (UpdatePerformanceResourceReq) o;
-        return Objects.equals(this.jobQuota, updatePerformanceResourceReq.jobQuota)
-            && Objects.equals(this.schedulable, updatePerformanceResourceReq.schedulable);
+        UpdatePerformanceResourceReq that = (UpdatePerformanceResourceReq) obj;
+        return Objects.equals(this.jobQuota, that.jobQuota) && Objects.equals(this.schedulable, that.schedulable);
     }
 
     @Override

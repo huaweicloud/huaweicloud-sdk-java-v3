@@ -240,23 +240,21 @@ public class CreateInstanceOrder {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceOrder createInstanceOrder = (CreateInstanceOrder) o;
-        return Objects.equals(this.instanceKey, createInstanceOrder.instanceKey)
-            && Objects.equals(this.cloudServiceType, createInstanceOrder.cloudServiceType)
-            && Objects.equals(this.regionId, createInstanceOrder.regionId)
-            && Objects.equals(this.chargingMode, createInstanceOrder.chargingMode)
-            && Objects.equals(this.periodType, createInstanceOrder.periodType)
-            && Objects.equals(this.periodNum, createInstanceOrder.periodNum)
-            && Objects.equals(this.productInfos, createInstanceOrder.productInfos)
-            && Objects.equals(this.isAutoRenew, createInstanceOrder.isAutoRenew)
-            && Objects.equals(this.subscriptionNum, createInstanceOrder.subscriptionNum);
+        CreateInstanceOrder that = (CreateInstanceOrder) obj;
+        return Objects.equals(this.instanceKey, that.instanceKey)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.productInfos, that.productInfos)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.subscriptionNum, that.subscriptionNum);
     }
 
     @Override

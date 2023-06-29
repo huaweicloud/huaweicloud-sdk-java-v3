@@ -75,22 +75,15 @@ public class UpdateBandwidthPackage {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BillingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BillingModeEnum(value));
         }
 
         public static BillingModeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,18 +176,16 @@ public class UpdateBandwidthPackage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthPackage updateBandwidthPackage = (UpdateBandwidthPackage) o;
-        return Objects.equals(this.name, updateBandwidthPackage.name)
-            && Objects.equals(this.description, updateBandwidthPackage.description)
-            && Objects.equals(this.bandwidth, updateBandwidthPackage.bandwidth)
-            && Objects.equals(this.billingMode, updateBandwidthPackage.billingMode);
+        UpdateBandwidthPackage that = (UpdateBandwidthPackage) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.billingMode, that.billingMode);
     }
 
     @Override

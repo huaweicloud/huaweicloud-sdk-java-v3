@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.AuthorizeNa2NodesRequestDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class BatchAssociateNaToNodesRequest  {
-
+public class BatchAssociateNaToNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="na_id")
-    
+    @JsonProperty(value = "na_id")
 
     private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private AuthorizeNa2NodesRequestDTO body;
 
@@ -41,9 +30,6 @@ public class BatchAssociateNaToNodesRequest  {
         this.naId = naId;
         return this;
     }
-
-    
-
 
     /**
      * 北向数据接收端点ID
@@ -57,15 +43,10 @@ public class BatchAssociateNaToNodesRequest  {
         this.naId = naId;
     }
 
-    
-
     public BatchAssociateNaToNodesRequest withAction(String action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 批量删除delete，批量添加add
@@ -79,22 +60,19 @@ public class BatchAssociateNaToNodesRequest  {
         this.action = action;
     }
 
-    
-
     public BatchAssociateNaToNodesRequest withBody(AuthorizeNa2NodesRequestDTO body) {
         this.body = body;
         return this;
     }
 
     public BatchAssociateNaToNodesRequest withBody(Consumer<AuthorizeNa2NodesRequestDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new AuthorizeNa2NodesRequestDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class BatchAssociateNaToNodesRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAssociateNaToNodesRequest batchAssociateNaToNodesRequest = (BatchAssociateNaToNodesRequest) o;
-        return Objects.equals(this.naId, batchAssociateNaToNodesRequest.naId) &&
-            Objects.equals(this.action, batchAssociateNaToNodesRequest.action) &&
-            Objects.equals(this.body, batchAssociateNaToNodesRequest.body);
+        BatchAssociateNaToNodesRequest that = (BatchAssociateNaToNodesRequest) obj;
+        return Objects.equals(this.naId, that.naId) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(naId, action, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class BatchAssociateNaToNodesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class BatchAssociateNaToNodesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

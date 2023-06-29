@@ -34,15 +34,15 @@ public class SetExceedCutNetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetExceedCutNetResponse setExceedCutNetResponse = (SetExceedCutNetResponse) o;
-        return Objects.equals(this.workOrderId, setExceedCutNetResponse.workOrderId);
+        SetExceedCutNetResponse that = (SetExceedCutNetResponse) obj;
+        return Objects.equals(this.workOrderId, that.workOrderId);
     }
 
     @Override

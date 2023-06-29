@@ -57,22 +57,15 @@ public class BatchCreateListenerTagsRequestBody {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,16 +143,15 @@ public class BatchCreateListenerTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateListenerTagsRequestBody batchCreateListenerTagsRequestBody = (BatchCreateListenerTagsRequestBody) o;
-        return Objects.equals(this.action, batchCreateListenerTagsRequestBody.action)
-            && Objects.equals(this.tags, batchCreateListenerTagsRequestBody.tags);
+        BatchCreateListenerTagsRequestBody that = (BatchCreateListenerTagsRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

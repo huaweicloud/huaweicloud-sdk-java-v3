@@ -48,15 +48,15 @@ public class TopicConfigurationFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicConfigurationFilter topicConfigurationFilter = (TopicConfigurationFilter) o;
-        return Objects.equals(this.object, topicConfigurationFilter.object);
+        TopicConfigurationFilter that = (TopicConfigurationFilter) obj;
+        return Objects.equals(this.object, that.object);
     }
 
     @Override

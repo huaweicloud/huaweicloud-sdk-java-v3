@@ -87,17 +87,16 @@ public class UpdateLtsInfoConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLtsInfoConfigRequestBody updateLtsInfoConfigRequestBody = (UpdateLtsInfoConfigRequestBody) o;
-        return Objects.equals(this.enabled, updateLtsInfoConfigRequestBody.enabled)
-            && Objects.equals(this.ltsIdInfo, updateLtsInfoConfigRequestBody.ltsIdInfo)
-            && Objects.equals(this.enabale, updateLtsInfoConfigRequestBody.enabale);
+        UpdateLtsInfoConfigRequestBody that = (UpdateLtsInfoConfigRequestBody) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.ltsIdInfo, that.ltsIdInfo)
+            && Objects.equals(this.enabale, that.enabale);
     }
 
     @Override

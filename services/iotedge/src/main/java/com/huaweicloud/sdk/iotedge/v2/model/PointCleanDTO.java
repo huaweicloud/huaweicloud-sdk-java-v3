@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 点位清洗配置结构体
  */
-public class PointCleanDTO  {
-
+public class PointCleanDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="silent_window")
-    
+    @JsonProperty(value = "silent_window")
 
     private Integer silentWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deviation")
-    
+    @JsonProperty(value = "deviation")
 
     private Double deviation;
 
@@ -33,9 +24,6 @@ public class PointCleanDTO  {
         this.silentWindow = silentWindow;
         return this;
     }
-
-    
-
 
     /**
      * 静默时间窗口，在该时间窗口内，没有触发上报条件，点位将不会上
@@ -51,15 +39,10 @@ public class PointCleanDTO  {
         this.silentWindow = silentWindow;
     }
 
-    
-
     public PointCleanDTO withDeviation(Double deviation) {
         this.deviation = deviation;
         return this;
     }
-
-    
-
 
     /**
      * 偏差，在该偏差范围内表示是正常波动，点位将不进行上报
@@ -75,24 +58,23 @@ public class PointCleanDTO  {
         this.deviation = deviation;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PointCleanDTO pointCleanDTO = (PointCleanDTO) o;
-        return Objects.equals(this.silentWindow, pointCleanDTO.silentWindow) &&
-            Objects.equals(this.deviation, pointCleanDTO.deviation);
+        PointCleanDTO that = (PointCleanDTO) obj;
+        return Objects.equals(this.silentWindow, that.silentWindow) && Objects.equals(this.deviation, that.deviation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(silentWindow, deviation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,6 +84,7 @@ public class PointCleanDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -112,8 +95,5 @@ public class PointCleanDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

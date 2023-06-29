@@ -87,16 +87,16 @@ public class UpdateApiRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApiRequest updateApiRequest = (UpdateApiRequest) o;
-        return Objects.equals(this.workspace, updateApiRequest.workspace)
-            && Objects.equals(this.apiId, updateApiRequest.apiId) && Objects.equals(this.body, updateApiRequest.body);
+        UpdateApiRequest that = (UpdateApiRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

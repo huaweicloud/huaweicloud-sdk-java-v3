@@ -65,16 +65,15 @@ public class CopyImageInRegionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopyImageInRegionRequest copyImageInRegionRequest = (CopyImageInRegionRequest) o;
-        return Objects.equals(this.imageId, copyImageInRegionRequest.imageId)
-            && Objects.equals(this.body, copyImageInRegionRequest.body);
+        CopyImageInRegionRequest that = (CopyImageInRegionRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

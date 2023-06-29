@@ -75,22 +75,15 @@ public class CreateSourceRequestBody {
             if (value == null) {
                 return null;
             }
-            IsBase64Enum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsBase64Enum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsBase64Enum(value));
         }
 
         public static IsBase64Enum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IsBase64Enum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class CreateSourceRequestBody {
             if (value == null) {
                 return null;
             }
-            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContainDeviceInfoEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContainDeviceInfoEnum(value));
         }
 
         public static ContainDeviceInfoEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,19 +274,17 @@ public class CreateSourceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSourceRequestBody createSourceRequestBody = (CreateSourceRequestBody) o;
-        return Objects.equals(this.productId, createSourceRequestBody.productId)
-            && Objects.equals(this.deviceId, createSourceRequestBody.deviceId)
-            && Objects.equals(this.topic, createSourceRequestBody.topic)
-            && Objects.equals(this.isBase64, createSourceRequestBody.isBase64)
-            && Objects.equals(this.containDeviceInfo, createSourceRequestBody.containDeviceInfo);
+        CreateSourceRequestBody that = (CreateSourceRequestBody) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.isBase64, that.isBase64)
+            && Objects.equals(this.containDeviceInfo, that.containDeviceInfo);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class ObsProperties {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsProperties obsProperties = (ObsProperties) o;
-        return Objects.equals(this.endpoint, obsProperties.endpoint)
-            && Objects.equals(this.bucket, obsProperties.bucket) && Objects.equals(this.key, obsProperties.key);
+        ObsProperties that = (ObsProperties) obj;
+        return Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.key, that.key);
     }
 
     @Override

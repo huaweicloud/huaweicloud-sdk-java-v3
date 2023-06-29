@@ -66,16 +66,15 @@ public class ShowConfigMapResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigMapResponse showConfigMapResponse = (ShowConfigMapResponse) o;
-        return Objects.equals(this.configmap, showConfigMapResponse.configmap)
-            && Objects.equals(this.workspaceId, showConfigMapResponse.workspaceId);
+        ShowConfigMapResponse that = (ShowConfigMapResponse) obj;
+        return Objects.equals(this.configmap, that.configmap) && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

@@ -1,59 +1,52 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询条件。
  */
-public class RelationModel  {
-
+public class RelationModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<String> value = null;
-        /**
+
+    /**
      * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
      */
     public static final class RelationEnum {
 
-        
         /**
          * Enum AND for value: "AND"
          */
         public static final RelationEnum AND = new RelationEnum("AND");
-        
+
         /**
          * Enum OR for value: "OR"
          */
         public static final RelationEnum OR = new RelationEnum("OR");
-        
+
         /**
          * Enum NOT for value: "NOT"
          */
         public static final RelationEnum NOT = new RelationEnum("NOT");
-        
 
         private static final Map<String, RelationEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,25 +76,18 @@ public class RelationModel  {
 
         @JsonCreator
         public static RelationEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RelationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationEnum(value));
         }
 
         public static RelationEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RelationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -119,8 +105,7 @@ public class RelationModel  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="relation")
-    
+    @JsonProperty(value = "relation")
 
     private RelationEnum relation;
 
@@ -128,9 +113,6 @@ public class RelationModel  {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 指定查询字段的key，对应metadata里面的key 。
@@ -144,16 +126,13 @@ public class RelationModel  {
         this.key = key;
     }
 
-    
-
     public RelationModel withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
-    
     public RelationModel addValueItem(String valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -161,7 +140,7 @@ public class RelationModel  {
     }
 
     public RelationModel withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
@@ -180,15 +159,10 @@ public class RelationModel  {
         this.value = value;
     }
 
-    
-
     public RelationModel withRelation(RelationEnum relation) {
         this.relation = relation;
         return this;
     }
-
-    
-
 
     /**
      * 该条件与其他条件的组合方式。 AND：必须满足所有条件； OR：可以满足其中一个条件； NOT：必须不满足所有条件。
@@ -202,25 +176,24 @@ public class RelationModel  {
         this.relation = relation;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelationModel relationModel = (RelationModel) o;
-        return Objects.equals(this.key, relationModel.key) &&
-            Objects.equals(this.value, relationModel.value) &&
-            Objects.equals(this.relation, relationModel.relation);
+        RelationModel that = (RelationModel) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.relation, that.relation);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value, relation);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -231,6 +204,7 @@ public class RelationModel  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -241,8 +215,5 @@ public class RelationModel  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

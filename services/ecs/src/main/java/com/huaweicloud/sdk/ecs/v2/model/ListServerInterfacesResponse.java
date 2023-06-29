@@ -86,16 +86,16 @@ public class ListServerInterfacesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServerInterfacesResponse listServerInterfacesResponse = (ListServerInterfacesResponse) o;
-        return Objects.equals(this.attachableQuantity, listServerInterfacesResponse.attachableQuantity)
-            && Objects.equals(this.interfaceAttachments, listServerInterfacesResponse.interfaceAttachments);
+        ListServerInterfacesResponse that = (ListServerInterfacesResponse) obj;
+        return Objects.equals(this.attachableQuantity, that.attachableQuantity)
+            && Objects.equals(this.interfaceAttachments, that.interfaceAttachments);
     }
 
     @Override

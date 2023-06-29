@@ -190,22 +190,19 @@ public class ListEndpointsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointsRequest listEndpointsRequest = (ListEndpointsRequest) o;
-        return Objects.equals(this.endpointServiceName, listEndpointsRequest.endpointServiceName)
-            && Objects.equals(this.vpcId, listEndpointsRequest.vpcId)
-            && Objects.equals(this.id, listEndpointsRequest.id)
-            && Objects.equals(this.limit, listEndpointsRequest.limit)
-            && Objects.equals(this.offset, listEndpointsRequest.offset)
-            && Objects.equals(this.sortKey, listEndpointsRequest.sortKey)
-            && Objects.equals(this.sortDir, listEndpointsRequest.sortDir)
-            && Objects.equals(this.publicBorderGroup, listEndpointsRequest.publicBorderGroup);
+        ListEndpointsRequest that = (ListEndpointsRequest) obj;
+        return Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

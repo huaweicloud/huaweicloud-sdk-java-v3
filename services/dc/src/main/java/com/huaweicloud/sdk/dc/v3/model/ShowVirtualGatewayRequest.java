@@ -74,16 +74,15 @@ public class ShowVirtualGatewayRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVirtualGatewayRequest showVirtualGatewayRequest = (ShowVirtualGatewayRequest) o;
-        return Objects.equals(this.fields, showVirtualGatewayRequest.fields)
-            && Objects.equals(this.virtualGatewayId, showVirtualGatewayRequest.virtualGatewayId);
+        ShowVirtualGatewayRequest that = (ShowVirtualGatewayRequest) obj;
+        return Objects.equals(this.fields, that.fields) && Objects.equals(this.virtualGatewayId, that.virtualGatewayId);
     }
 
     @Override

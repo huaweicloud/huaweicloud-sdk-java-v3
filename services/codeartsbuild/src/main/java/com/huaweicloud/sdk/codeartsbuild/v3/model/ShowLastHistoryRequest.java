@@ -55,16 +55,16 @@ public class ShowLastHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLastHistoryRequest showLastHistoryRequest = (ShowLastHistoryRequest) o;
-        return Objects.equals(this.projectId, showLastHistoryRequest.projectId)
-            && Objects.equals(this.repositoryName, showLastHistoryRequest.repositoryName);
+        ShowLastHistoryRequest that = (ShowLastHistoryRequest) obj;
+        return Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.repositoryName, that.repositoryName);
     }
 
     @Override

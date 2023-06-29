@@ -361,30 +361,27 @@ public class ListNumberOfInstancesInDifferentStatusResponse extends SdkResponse 
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNumberOfInstancesInDifferentStatusResponse listNumberOfInstancesInDifferentStatusResponse =
-            (ListNumberOfInstancesInDifferentStatusResponse) o;
-        return Objects.equals(this.redis, listNumberOfInstancesInDifferentStatusResponse.redis)
-            && Objects.equals(this.memcached, listNumberOfInstancesInDifferentStatusResponse.memcached)
-            && Objects.equals(this.payingCount, listNumberOfInstancesInDifferentStatusResponse.payingCount)
-            && Objects.equals(this.freezingCount, listNumberOfInstancesInDifferentStatusResponse.freezingCount)
-            && Objects.equals(this.migratingCount, listNumberOfInstancesInDifferentStatusResponse.migratingCount)
-            && Objects.equals(this.flushingCount, listNumberOfInstancesInDifferentStatusResponse.flushingCount)
-            && Objects.equals(this.upgradingCount, listNumberOfInstancesInDifferentStatusResponse.upgradingCount)
-            && Objects.equals(this.restoringCount, listNumberOfInstancesInDifferentStatusResponse.restoringCount)
-            && Objects.equals(this.extendingCount, listNumberOfInstancesInDifferentStatusResponse.extendingCount)
-            && Objects.equals(this.creatingCount, listNumberOfInstancesInDifferentStatusResponse.creatingCount)
-            && Objects.equals(this.runningCount, listNumberOfInstancesInDifferentStatusResponse.runningCount)
-            && Objects.equals(this.errorCount, listNumberOfInstancesInDifferentStatusResponse.errorCount)
-            && Objects.equals(this.frozenCount, listNumberOfInstancesInDifferentStatusResponse.frozenCount)
-            && Objects.equals(this.createfailedCount, listNumberOfInstancesInDifferentStatusResponse.createfailedCount)
-            && Objects.equals(this.restartingCount, listNumberOfInstancesInDifferentStatusResponse.restartingCount);
+        ListNumberOfInstancesInDifferentStatusResponse that = (ListNumberOfInstancesInDifferentStatusResponse) obj;
+        return Objects.equals(this.redis, that.redis) && Objects.equals(this.memcached, that.memcached)
+            && Objects.equals(this.payingCount, that.payingCount)
+            && Objects.equals(this.freezingCount, that.freezingCount)
+            && Objects.equals(this.migratingCount, that.migratingCount)
+            && Objects.equals(this.flushingCount, that.flushingCount)
+            && Objects.equals(this.upgradingCount, that.upgradingCount)
+            && Objects.equals(this.restoringCount, that.restoringCount)
+            && Objects.equals(this.extendingCount, that.extendingCount)
+            && Objects.equals(this.creatingCount, that.creatingCount)
+            && Objects.equals(this.runningCount, that.runningCount) && Objects.equals(this.errorCount, that.errorCount)
+            && Objects.equals(this.frozenCount, that.frozenCount)
+            && Objects.equals(this.createfailedCount, that.createfailedCount)
+            && Objects.equals(this.restartingCount, that.restartingCount);
     }
 
     @Override

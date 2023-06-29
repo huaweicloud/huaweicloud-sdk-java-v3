@@ -34,15 +34,15 @@ public class UpdateCodeTableValuesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCodeTableValuesResponse updateCodeTableValuesResponse = (UpdateCodeTableValuesResponse) o;
-        return Objects.equals(this.data, updateCodeTableValuesResponse.data);
+        UpdateCodeTableValuesResponse that = (UpdateCodeTableValuesResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

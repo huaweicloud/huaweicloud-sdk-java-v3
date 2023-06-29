@@ -57,15 +57,15 @@ public class TranscodeSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscodeSpec transcodeSpec = (TranscodeSpec) o;
-        return Objects.equals(this.type, transcodeSpec.type) && Objects.equals(this.value, transcodeSpec.value);
+        TranscodeSpec that = (TranscodeSpec) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value);
     }
 
     @Override

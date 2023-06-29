@@ -35,15 +35,15 @@ public class ProductTemplatesCalculation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductTemplatesCalculation productTemplatesCalculation = (ProductTemplatesCalculation) o;
-        return Objects.equals(this.productTemplatesNumbers, productTemplatesCalculation.productTemplatesNumbers);
+        ProductTemplatesCalculation that = (ProductTemplatesCalculation) obj;
+        return Objects.equals(this.productTemplatesNumbers, that.productTemplatesNumbers);
     }
 
     @Override

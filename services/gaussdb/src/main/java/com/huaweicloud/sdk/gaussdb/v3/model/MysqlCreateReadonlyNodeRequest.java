@@ -1,32 +1,25 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 只读节点信息
  */
-public class MysqlCreateReadonlyNodeRequest  {
-
+public class MysqlCreateReadonlyNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priorities")
-    
+    @JsonProperty(value = "priorities")
+
     private List<Integer> priorities = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_pay")
-    
+    @JsonProperty(value = "is_auto_pay")
 
     private String isAutoPay;
 
@@ -35,9 +28,8 @@ public class MysqlCreateReadonlyNodeRequest  {
         return this;
     }
 
-    
     public MysqlCreateReadonlyNodeRequest addPrioritiesItem(Integer prioritiesItem) {
-        if(this.priorities == null) {
+        if (this.priorities == null) {
             this.priorities = new ArrayList<>();
         }
         this.priorities.add(prioritiesItem);
@@ -45,7 +37,7 @@ public class MysqlCreateReadonlyNodeRequest  {
     }
 
     public MysqlCreateReadonlyNodeRequest withPriorities(Consumer<List<Integer>> prioritiesSetter) {
-        if(this.priorities == null) {
+        if (this.priorities == null) {
             this.priorities = new ArrayList<>();
         }
         prioritiesSetter.accept(this.priorities);
@@ -64,15 +56,10 @@ public class MysqlCreateReadonlyNodeRequest  {
         this.priorities = priorities;
     }
 
-    
-
     public MysqlCreateReadonlyNodeRequest withIsAutoPay(String isAutoPay) {
         this.isAutoPay = isAutoPay;
         return this;
     }
-
-    
-
 
     /**
      * 创建包周期时可指定，表示是否自动从客户的账户中支付，此字段不影响自动续订的支付方式。  - true，为自动支付，默认该方式。 - false，为手动支付。
@@ -86,24 +73,23 @@ public class MysqlCreateReadonlyNodeRequest  {
         this.isAutoPay = isAutoPay;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlCreateReadonlyNodeRequest mysqlCreateReadonlyNodeRequest = (MysqlCreateReadonlyNodeRequest) o;
-        return Objects.equals(this.priorities, mysqlCreateReadonlyNodeRequest.priorities) &&
-            Objects.equals(this.isAutoPay, mysqlCreateReadonlyNodeRequest.isAutoPay);
+        MysqlCreateReadonlyNodeRequest that = (MysqlCreateReadonlyNodeRequest) obj;
+        return Objects.equals(this.priorities, that.priorities) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(priorities, isAutoPay);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class MysqlCreateReadonlyNodeRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class MysqlCreateReadonlyNodeRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

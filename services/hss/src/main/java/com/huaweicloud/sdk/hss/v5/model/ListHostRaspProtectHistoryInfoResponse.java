@@ -78,17 +78,15 @@ public class ListHostRaspProtectHistoryInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostRaspProtectHistoryInfoResponse listHostRaspProtectHistoryInfoResponse =
-            (ListHostRaspProtectHistoryInfoResponse) o;
-        return Objects.equals(this.totalNum, listHostRaspProtectHistoryInfoResponse.totalNum)
-            && Objects.equals(this.dataList, listHostRaspProtectHistoryInfoResponse.dataList);
+        ListHostRaspProtectHistoryInfoResponse that = (ListHostRaspProtectHistoryInfoResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

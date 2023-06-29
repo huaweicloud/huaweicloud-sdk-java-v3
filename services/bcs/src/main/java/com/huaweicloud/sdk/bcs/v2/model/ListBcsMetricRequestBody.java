@@ -52,15 +52,15 @@ public class ListBcsMetricRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBcsMetricRequestBody listBcsMetricRequestBody = (ListBcsMetricRequestBody) o;
-        return Objects.equals(this.metricNames, listBcsMetricRequestBody.metricNames);
+        ListBcsMetricRequestBody that = (ListBcsMetricRequestBody) obj;
+        return Objects.equals(this.metricNames, that.metricNames);
     }
 
     @Override

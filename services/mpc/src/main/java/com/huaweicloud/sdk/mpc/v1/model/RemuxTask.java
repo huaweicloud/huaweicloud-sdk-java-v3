@@ -336,23 +336,22 @@ public class RemuxTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemuxTask remuxTask = (RemuxTask) o;
-        return Objects.equals(this.taskId, remuxTask.taskId) && Objects.equals(this.status, remuxTask.status)
-            && Objects.equals(this.createTime, remuxTask.createTime)
-            && Objects.equals(this.startTime, remuxTask.startTime) && Objects.equals(this.endTime, remuxTask.endTime)
-            && Objects.equals(this.errorCode, remuxTask.errorCode)
-            && Objects.equals(this.description, remuxTask.description)
-            && Objects.equals(this.userData, remuxTask.userData) && Objects.equals(this.input, remuxTask.input)
-            && Objects.equals(this.output, remuxTask.output) && Objects.equals(this.outputParam, remuxTask.outputParam)
-            && Objects.equals(this.completeRatio, remuxTask.completeRatio)
-            && Objects.equals(this.outputMetadata, remuxTask.outputMetadata);
+        RemuxTask that = (RemuxTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputParam, that.outputParam)
+            && Objects.equals(this.completeRatio, that.completeRatio)
+            && Objects.equals(this.outputMetadata, that.outputMetadata);
     }
 
     @Override

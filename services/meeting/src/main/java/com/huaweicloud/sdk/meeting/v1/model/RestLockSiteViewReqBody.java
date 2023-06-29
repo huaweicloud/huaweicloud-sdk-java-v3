@@ -55,16 +55,15 @@ public class RestLockSiteViewReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestLockSiteViewReqBody restLockSiteViewReqBody = (RestLockSiteViewReqBody) o;
-        return Objects.equals(this.status, restLockSiteViewReqBody.status)
-            && Objects.equals(this.participantID, restLockSiteViewReqBody.participantID);
+        RestLockSiteViewReqBody that = (RestLockSiteViewReqBody) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.participantID, that.participantID);
     }
 
     @Override

@@ -342,27 +342,22 @@ public class AddDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeviceResponse addDeviceResponse = (AddDeviceResponse) o;
-        return Objects.equals(this.name, addDeviceResponse.name) && Objects.equals(this.type, addDeviceResponse.type)
-            && Objects.equals(this.model, addDeviceResponse.model) && Objects.equals(this.sn, addDeviceResponse.sn)
-            && Objects.equals(this.account, addDeviceResponse.account)
-            && Objects.equals(this.number, addDeviceResponse.number)
-            && Objects.equals(this.prjCodeMode, addDeviceResponse.prjCodeMode)
-            && Objects.equals(this.deptCode, addDeviceResponse.deptCode)
-            && Objects.equals(this.deptName, addDeviceResponse.deptName)
-            && Objects.equals(this.deptNamePath, addDeviceResponse.deptNamePath)
-            && Objects.equals(this.phone, addDeviceResponse.phone)
-            && Objects.equals(this.country, addDeviceResponse.country)
-            && Objects.equals(this.email, addDeviceResponse.email)
-            && Objects.equals(this.description, addDeviceResponse.description)
-            && Objects.equals(this.status, addDeviceResponse.status);
+        AddDeviceResponse that = (AddDeviceResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.sn, that.sn)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.prjCodeMode, that.prjCodeMode) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

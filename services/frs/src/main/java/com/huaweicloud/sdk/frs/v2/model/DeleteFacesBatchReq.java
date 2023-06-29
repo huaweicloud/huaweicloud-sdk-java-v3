@@ -33,15 +33,15 @@ public class DeleteFacesBatchReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFacesBatchReq deleteFacesBatchReq = (DeleteFacesBatchReq) o;
-        return Objects.equals(this.filter, deleteFacesBatchReq.filter);
+        DeleteFacesBatchReq that = (DeleteFacesBatchReq) obj;
+        return Objects.equals(this.filter, that.filter);
     }
 
     @Override

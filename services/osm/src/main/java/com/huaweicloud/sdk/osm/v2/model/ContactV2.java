@@ -101,18 +101,16 @@ public class ContactV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContactV2 contactV2 = (ContactV2) o;
-        return Objects.equals(this.contactWay, contactV2.contactWay)
-            && Objects.equals(this.contactValue, contactV2.contactValue)
-            && Objects.equals(this.areaCode, contactV2.areaCode)
-            && Objects.equals(this.verifiedId, contactV2.verifiedId);
+        ContactV2 that = (ContactV2) obj;
+        return Objects.equals(this.contactWay, that.contactWay) && Objects.equals(this.contactValue, that.contactValue)
+            && Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.verifiedId, that.verifiedId);
     }
 
     @Override

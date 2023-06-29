@@ -55,16 +55,15 @@ public class ShowDataChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataChannelRequest showDataChannelRequest = (ShowDataChannelRequest) o;
-        return Objects.equals(this.instanceId, showDataChannelRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, showDataChannelRequest.v2xEdgeId);
+        ShowDataChannelRequest that = (ShowDataChannelRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId);
     }
 
     @Override

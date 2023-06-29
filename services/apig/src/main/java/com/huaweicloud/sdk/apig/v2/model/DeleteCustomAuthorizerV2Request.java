@@ -55,16 +55,15 @@ public class DeleteCustomAuthorizerV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCustomAuthorizerV2Request deleteCustomAuthorizerV2Request = (DeleteCustomAuthorizerV2Request) o;
-        return Objects.equals(this.instanceId, deleteCustomAuthorizerV2Request.instanceId)
-            && Objects.equals(this.authorizerId, deleteCustomAuthorizerV2Request.authorizerId);
+        DeleteCustomAuthorizerV2Request that = (DeleteCustomAuthorizerV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

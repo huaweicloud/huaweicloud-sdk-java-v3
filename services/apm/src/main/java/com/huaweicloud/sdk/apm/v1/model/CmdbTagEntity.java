@@ -228,21 +228,19 @@ public class CmdbTagEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CmdbTagEntity cmdbTagEntity = (CmdbTagEntity) o;
-        return Objects.equals(this.name, cmdbTagEntity.name)
-            && Objects.equals(this.businessId, cmdbTagEntity.businessId)
-            && Objects.equals(this.uuid, cmdbTagEntity.uuid) && Objects.equals(this.descp, cmdbTagEntity.descp)
-            && Objects.equals(this.creatorId, cmdbTagEntity.creatorId)
-            && Objects.equals(this.envIdList, cmdbTagEntity.envIdList) && Objects.equals(this.id, cmdbTagEntity.id)
-            && Objects.equals(this.gmtCreate, cmdbTagEntity.gmtCreate)
-            && Objects.equals(this.gmtModify, cmdbTagEntity.gmtModify);
+        CmdbTagEntity that = (CmdbTagEntity) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.descp, that.descp)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.envIdList, that.envIdList)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify);
     }
 
     @Override

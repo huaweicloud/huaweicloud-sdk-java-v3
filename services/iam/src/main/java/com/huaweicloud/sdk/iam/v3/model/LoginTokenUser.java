@@ -109,17 +109,16 @@ public class LoginTokenUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginTokenUser loginTokenUser = (LoginTokenUser) o;
-        return Objects.equals(this.domain, loginTokenUser.domain) && Objects.equals(this.name, loginTokenUser.name)
-            && Objects.equals(this.passwordExpiresAt, loginTokenUser.passwordExpiresAt)
-            && Objects.equals(this.id, loginTokenUser.id);
+        LoginTokenUser that = (LoginTokenUser) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.id, that.id);
     }
 
     @Override

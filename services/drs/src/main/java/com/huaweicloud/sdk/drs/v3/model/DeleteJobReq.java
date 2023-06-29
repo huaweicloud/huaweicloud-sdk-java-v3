@@ -66,22 +66,15 @@ public class DeleteJobReq {
             if (value == null) {
                 return null;
             }
-            DeleteTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeleteTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeleteTypeEnum(value));
         }
 
         public static DeleteTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeleteTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -143,16 +136,15 @@ public class DeleteJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteJobReq deleteJobReq = (DeleteJobReq) o;
-        return Objects.equals(this.deleteType, deleteJobReq.deleteType)
-            && Objects.equals(this.jobId, deleteJobReq.jobId);
+        DeleteJobReq that = (DeleteJobReq) obj;
+        return Objects.equals(this.deleteType, that.deleteType) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class TaskSettingsTaskConfig {
             if (value == null) {
                 return null;
             }
-            ScanModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScanModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScanModeEnum(value));
         }
 
         public static ScanModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScanModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +268,19 @@ public class TaskSettingsTaskConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskSettingsTaskConfig taskSettingsTaskConfig = (TaskSettingsTaskConfig) o;
-        return Objects.equals(this.scanMode, taskSettingsTaskConfig.scanMode)
-            && Objects.equals(this.portScan, taskSettingsTaskConfig.portScan)
-            && Objects.equals(this.weakPwdScan, taskSettingsTaskConfig.weakPwdScan)
-            && Objects.equals(this.cveCheck, taskSettingsTaskConfig.cveCheck)
-            && Objects.equals(this.textCheck, taskSettingsTaskConfig.textCheck)
-            && Objects.equals(this.pictureCheck, taskSettingsTaskConfig.pictureCheck)
-            && Objects.equals(this.maliciousCode, taskSettingsTaskConfig.maliciousCode)
-            && Objects.equals(this.maliciousLink, taskSettingsTaskConfig.maliciousLink);
+        TaskSettingsTaskConfig that = (TaskSettingsTaskConfig) obj;
+        return Objects.equals(this.scanMode, that.scanMode) && Objects.equals(this.portScan, that.portScan)
+            && Objects.equals(this.weakPwdScan, that.weakPwdScan) && Objects.equals(this.cveCheck, that.cveCheck)
+            && Objects.equals(this.textCheck, that.textCheck) && Objects.equals(this.pictureCheck, that.pictureCheck)
+            && Objects.equals(this.maliciousCode, that.maliciousCode)
+            && Objects.equals(this.maliciousLink, that.maliciousLink);
     }
 
     @Override

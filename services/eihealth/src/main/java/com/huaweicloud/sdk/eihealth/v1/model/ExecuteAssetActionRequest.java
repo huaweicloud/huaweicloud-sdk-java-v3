@@ -87,17 +87,16 @@ public class ExecuteAssetActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteAssetActionRequest executeAssetActionRequest = (ExecuteAssetActionRequest) o;
-        return Objects.equals(this.assetId, executeAssetActionRequest.assetId)
-            && Objects.equals(this.version, executeAssetActionRequest.version)
-            && Objects.equals(this.body, executeAssetActionRequest.body);
+        ExecuteAssetActionRequest that = (ExecuteAssetActionRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

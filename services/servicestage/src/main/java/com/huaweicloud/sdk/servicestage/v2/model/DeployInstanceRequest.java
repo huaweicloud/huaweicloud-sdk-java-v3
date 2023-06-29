@@ -43,15 +43,15 @@ public class DeployInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeployInstanceRequest deployInstanceRequest = (DeployInstanceRequest) o;
-        return Objects.equals(this.body, deployInstanceRequest.body);
+        DeployInstanceRequest that = (DeployInstanceRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

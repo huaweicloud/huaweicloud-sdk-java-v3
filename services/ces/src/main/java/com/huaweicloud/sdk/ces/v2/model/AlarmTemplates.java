@@ -246,23 +246,21 @@ public class AlarmTemplates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmTemplates alarmTemplates = (AlarmTemplates) o;
-        return Objects.equals(this.templateId, alarmTemplates.templateId)
-            && Objects.equals(this.templateName, alarmTemplates.templateName)
-            && Objects.equals(this.templateType, alarmTemplates.templateType)
-            && Objects.equals(this.createTime, alarmTemplates.createTime)
-            && Objects.equals(this.templateDescription, alarmTemplates.templateDescription)
-            && Objects.equals(this.associationAlarmTotal, alarmTemplates.associationAlarmTotal)
-            && Objects.equals(this.policyTotal, alarmTemplates.policyTotal)
-            && Objects.equals(this.policyStatistics, alarmTemplates.policyStatistics)
-            && Objects.equals(this.associationResourceGroups, alarmTemplates.associationResourceGroups);
+        AlarmTemplates that = (AlarmTemplates) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.templateDescription, that.templateDescription)
+            && Objects.equals(this.associationAlarmTotal, that.associationAlarmTotal)
+            && Objects.equals(this.policyTotal, that.policyTotal)
+            && Objects.equals(this.policyStatistics, that.policyStatistics)
+            && Objects.equals(this.associationResourceGroups, that.associationResourceGroups);
     }
 
     @Override

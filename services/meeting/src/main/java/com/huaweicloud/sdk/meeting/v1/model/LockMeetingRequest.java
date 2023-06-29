@@ -89,17 +89,17 @@ public class LockMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LockMeetingRequest lockMeetingRequest = (LockMeetingRequest) o;
-        return Objects.equals(this.conferenceID, lockMeetingRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, lockMeetingRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, lockMeetingRequest.body);
+        LockMeetingRequest that = (LockMeetingRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

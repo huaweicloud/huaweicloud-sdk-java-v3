@@ -150,19 +150,17 @@ public class ShowNamespaceAuthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNamespaceAuthResponse showNamespaceAuthResponse = (ShowNamespaceAuthResponse) o;
-        return Objects.equals(this.id, showNamespaceAuthResponse.id)
-            && Objects.equals(this.name, showNamespaceAuthResponse.name)
-            && Objects.equals(this.creatorName, showNamespaceAuthResponse.creatorName)
-            && Objects.equals(this.selfAuth, showNamespaceAuthResponse.selfAuth)
-            && Objects.equals(this.othersAuths, showNamespaceAuthResponse.othersAuths);
+        ShowNamespaceAuthResponse that = (ShowNamespaceAuthResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.selfAuth, that.selfAuth)
+            && Objects.equals(this.othersAuths, that.othersAuths);
     }
 
     @Override

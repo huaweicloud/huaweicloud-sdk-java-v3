@@ -541,38 +541,30 @@ public class PlaybookVersionListEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookVersionListEntity playbookVersionListEntity = (PlaybookVersionListEntity) o;
-        return Objects.equals(this.id, playbookVersionListEntity.id)
-            && Objects.equals(this.description, playbookVersionListEntity.description)
-            && Objects.equals(this.createTime, playbookVersionListEntity.createTime)
-            && Objects.equals(this.updateTime, playbookVersionListEntity.updateTime)
-            && Objects.equals(this.projectId, playbookVersionListEntity.projectId)
-            && Objects.equals(this.creatorId, playbookVersionListEntity.creatorId)
-            && Objects.equals(this.modifierId, playbookVersionListEntity.modifierId)
-            && Objects.equals(this.playbookId, playbookVersionListEntity.playbookId)
-            && Objects.equals(this.version, playbookVersionListEntity.version)
-            && Objects.equals(this.runMode, playbookVersionListEntity.runMode)
-            && Objects.equals(this.enabled, playbookVersionListEntity.enabled)
-            && Objects.equals(this.status, playbookVersionListEntity.status)
-            && Objects.equals(this.actionStrategy, playbookVersionListEntity.actionStrategy)
-            && Objects.equals(this.ruleEnable, playbookVersionListEntity.ruleEnable)
-            && Objects.equals(this.dataclassId, playbookVersionListEntity.dataclassId)
-            && Objects.equals(this.triggerType, playbookVersionListEntity.triggerType)
-            && Objects.equals(this.dataobjectCreate, playbookVersionListEntity.dataobjectCreate)
-            && Objects.equals(this.dataobjectUpdate, playbookVersionListEntity.dataobjectUpdate)
-            && Objects.equals(this.dataobjectDelete, playbookVersionListEntity.dataobjectDelete)
-            && Objects.equals(this.versionType, playbookVersionListEntity.versionType)
-            && Objects.equals(this.ruleId, playbookVersionListEntity.ruleId)
-            && Objects.equals(this.dataclassName, playbookVersionListEntity.dataclassName)
-            && Objects.equals(this.approveName, playbookVersionListEntity.approveName)
-            && Objects.equals(this.dataobjectId, playbookVersionListEntity.dataobjectId);
+        PlaybookVersionListEntity that = (PlaybookVersionListEntity) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.modifierId, that.modifierId) && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.runMode, that.runMode)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.actionStrategy, that.actionStrategy)
+            && Objects.equals(this.ruleEnable, that.ruleEnable) && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.dataobjectCreate, that.dataobjectCreate)
+            && Objects.equals(this.dataobjectUpdate, that.dataobjectUpdate)
+            && Objects.equals(this.dataobjectDelete, that.dataobjectDelete)
+            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.dataclassName, that.dataclassName)
+            && Objects.equals(this.approveName, that.approveName)
+            && Objects.equals(this.dataobjectId, that.dataobjectId);
     }
 
     @Override

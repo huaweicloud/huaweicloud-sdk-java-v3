@@ -124,18 +124,17 @@ public class ListScalingConfigsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingConfigsResponse listScalingConfigsResponse = (ListScalingConfigsResponse) o;
-        return Objects.equals(this.totalNumber, listScalingConfigsResponse.totalNumber)
-            && Objects.equals(this.startNumber, listScalingConfigsResponse.startNumber)
-            && Objects.equals(this.limit, listScalingConfigsResponse.limit)
-            && Objects.equals(this.scalingConfigurations, listScalingConfigsResponse.scalingConfigurations);
+        ListScalingConfigsResponse that = (ListScalingConfigsResponse) obj;
+        return Objects.equals(this.totalNumber, that.totalNumber) && Objects.equals(this.startNumber, that.startNumber)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.scalingConfigurations, that.scalingConfigurations);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdateCodeTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCodeTableRequest updateCodeTableRequest = (UpdateCodeTableRequest) o;
-        return Objects.equals(this.workspace, updateCodeTableRequest.workspace)
-            && Objects.equals(this.id, updateCodeTableRequest.id)
-            && Objects.equals(this.body, updateCodeTableRequest.body);
+        UpdateCodeTableRequest that = (UpdateCodeTableRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

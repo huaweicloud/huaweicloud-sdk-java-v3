@@ -77,16 +77,16 @@ public class RespQuotaSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespQuotaSet respQuotaSet = (RespQuotaSet) o;
-        return Objects.equals(this.resource, respQuotaSet.resource)
-            && Objects.equals(this.hardLimit, respQuotaSet.hardLimit) && Objects.equals(this.used, respQuotaSet.used);
+        RespQuotaSet that = (RespQuotaSet) obj;
+        return Objects.equals(this.resource, that.resource) && Objects.equals(this.hardLimit, that.hardLimit)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

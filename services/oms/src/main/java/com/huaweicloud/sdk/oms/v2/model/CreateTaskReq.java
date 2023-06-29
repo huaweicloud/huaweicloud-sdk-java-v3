@@ -75,22 +75,15 @@ public class CreateTaskReq {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,22 +219,15 @@ public class CreateTaskReq {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectOverwriteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectOverwriteModeEnum(value));
         }
 
         public static ObjectOverwriteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -314,22 +300,15 @@ public class CreateTaskReq {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistencyCheckEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyCheckEnum(value));
         }
 
         public static ConsistencyCheckEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -666,29 +645,26 @@ public class CreateTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskReq createTaskReq = (CreateTaskReq) o;
-        return Objects.equals(this.taskType, createTaskReq.taskType)
-            && Objects.equals(this.srcNode, createTaskReq.srcNode)
-            && Objects.equals(this.dstNode, createTaskReq.dstNode)
-            && Objects.equals(this.enableKms, createTaskReq.enableKms)
-            && Objects.equals(this.description, createTaskReq.description)
-            && Objects.equals(this.migrateSince, createTaskReq.migrateSince)
-            && Objects.equals(this.bandwidthPolicy, createTaskReq.bandwidthPolicy)
-            && Objects.equals(this.sourceCdn, createTaskReq.sourceCdn)
-            && Objects.equals(this.smnConfig, createTaskReq.smnConfig)
-            && Objects.equals(this.enableMetadataMigration, createTaskReq.enableMetadataMigration)
-            && Objects.equals(this.enableRestore, createTaskReq.enableRestore)
-            && Objects.equals(this.enableFailedObjectRecording, createTaskReq.enableFailedObjectRecording)
-            && Objects.equals(this.objectOverwriteMode, createTaskReq.objectOverwriteMode)
-            && Objects.equals(this.consistencyCheck, createTaskReq.consistencyCheck)
-            && Objects.equals(this.enableRequesterPays, createTaskReq.enableRequesterPays);
+        CreateTaskReq that = (CreateTaskReq) obj;
+        return Objects.equals(this.taskType, that.taskType) && Objects.equals(this.srcNode, that.srcNode)
+            && Objects.equals(this.dstNode, that.dstNode) && Objects.equals(this.enableKms, that.enableKms)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.migrateSince, that.migrateSince)
+            && Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
+            && Objects.equals(this.sourceCdn, that.sourceCdn) && Objects.equals(this.smnConfig, that.smnConfig)
+            && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
+            && Objects.equals(this.enableRestore, that.enableRestore)
+            && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
+            && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
+            && Objects.equals(this.consistencyCheck, that.consistencyCheck)
+            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
     }
 
     @Override

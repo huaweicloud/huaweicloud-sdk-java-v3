@@ -162,19 +162,18 @@ public class ObjectCompareResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObjectCompareResult objectCompareResult = (ObjectCompareResult) o;
-        return Objects.equals(this.compareTaskId, objectCompareResult.compareTaskId)
-            && Objects.equals(this.objectCompareOverview, objectCompareResult.objectCompareOverview)
-            && Objects.equals(this.objectCompareDetails, objectCompareResult.objectCompareDetails)
-            && Objects.equals(this.errorCode, objectCompareResult.errorCode)
-            && Objects.equals(this.errorMsg, objectCompareResult.errorMsg);
+        ObjectCompareResult that = (ObjectCompareResult) obj;
+        return Objects.equals(this.compareTaskId, that.compareTaskId)
+            && Objects.equals(this.objectCompareOverview, that.objectCompareOverview)
+            && Objects.equals(this.objectCompareDetails, that.objectCompareDetails)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

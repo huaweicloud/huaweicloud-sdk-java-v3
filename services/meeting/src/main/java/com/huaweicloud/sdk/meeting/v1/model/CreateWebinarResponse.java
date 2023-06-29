@@ -537,37 +537,31 @@ public class CreateWebinarResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWebinarResponse createWebinarResponse = (CreateWebinarResponse) o;
-        return Objects.equals(this.conferenceId, createWebinarResponse.conferenceId)
-            && Objects.equals(this.corpId, createWebinarResponse.corpId)
-            && Objects.equals(this.subject, createWebinarResponse.subject)
-            && Objects.equals(this.description, createWebinarResponse.description)
-            && Objects.equals(this.startTime, createWebinarResponse.startTime)
-            && Objects.equals(this.duration, createWebinarResponse.duration)
-            && Objects.equals(this.timeZoneId, createWebinarResponse.timeZoneId)
-            && Objects.equals(this.state, createWebinarResponse.state)
-            && Objects.equals(this.scheduserId, createWebinarResponse.scheduserId)
-            && Objects.equals(this.deptName, createWebinarResponse.deptName)
-            && Objects.equals(this.scheduserName, createWebinarResponse.scheduserName)
-            && Objects.equals(this.vmrPkgName, createWebinarResponse.vmrPkgName)
-            && Objects.equals(this.callRestriction, createWebinarResponse.callRestriction)
-            && Objects.equals(this.scope, createWebinarResponse.scope)
-            && Objects.equals(this.audienceScope, createWebinarResponse.audienceScope)
-            && Objects.equals(this.chairJoinUri, createWebinarResponse.chairJoinUri)
-            && Objects.equals(this.chairPasswd, createWebinarResponse.chairPasswd)
-            && Objects.equals(this.guestJoinUri, createWebinarResponse.guestJoinUri)
-            && Objects.equals(this.guestPasswd, createWebinarResponse.guestPasswd)
-            && Objects.equals(this.audienceJoinUri, createWebinarResponse.audienceJoinUri)
-            && Objects.equals(this.audiencePasswd, createWebinarResponse.audiencePasswd)
-            && Objects.equals(this.enableRecording, createWebinarResponse.enableRecording)
-            && Objects.equals(this.attendees, createWebinarResponse.attendees);
+        CreateWebinarResponse that = (CreateWebinarResponse) obj;
+        return Objects.equals(this.conferenceId, that.conferenceId) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.timeZoneId, that.timeZoneId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.scheduserId, that.scheduserId) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.vmrPkgName, that.vmrPkgName)
+            && Objects.equals(this.callRestriction, that.callRestriction) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.audienceScope, that.audienceScope)
+            && Objects.equals(this.chairJoinUri, that.chairJoinUri)
+            && Objects.equals(this.chairPasswd, that.chairPasswd)
+            && Objects.equals(this.guestJoinUri, that.guestJoinUri)
+            && Objects.equals(this.guestPasswd, that.guestPasswd)
+            && Objects.equals(this.audienceJoinUri, that.audienceJoinUri)
+            && Objects.equals(this.audiencePasswd, that.audiencePasswd)
+            && Objects.equals(this.enableRecording, that.enableRecording)
+            && Objects.equals(this.attendees, that.attendees);
     }
 
     @Override

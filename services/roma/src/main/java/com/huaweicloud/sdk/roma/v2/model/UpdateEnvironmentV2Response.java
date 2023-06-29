@@ -101,18 +101,16 @@ public class UpdateEnvironmentV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEnvironmentV2Response updateEnvironmentV2Response = (UpdateEnvironmentV2Response) o;
-        return Objects.equals(this.createTime, updateEnvironmentV2Response.createTime)
-            && Objects.equals(this.name, updateEnvironmentV2Response.name)
-            && Objects.equals(this.remark, updateEnvironmentV2Response.remark)
-            && Objects.equals(this.id, updateEnvironmentV2Response.id);
+        UpdateEnvironmentV2Response that = (UpdateEnvironmentV2Response) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.id, that.id);
     }
 
     @Override

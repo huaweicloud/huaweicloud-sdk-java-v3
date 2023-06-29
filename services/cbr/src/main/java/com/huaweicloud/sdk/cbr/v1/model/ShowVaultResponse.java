@@ -44,15 +44,15 @@ public class ShowVaultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVaultResponse showVaultResponse = (ShowVaultResponse) o;
-        return Objects.equals(this.vault, showVaultResponse.vault);
+        ShowVaultResponse that = (ShowVaultResponse) obj;
+        return Objects.equals(this.vault, that.vault);
     }
 
     @Override

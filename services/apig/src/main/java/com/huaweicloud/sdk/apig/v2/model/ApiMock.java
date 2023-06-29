@@ -188,18 +188,18 @@ public class ApiMock {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiMock apiMock = (ApiMock) o;
-        return Objects.equals(this.remark, apiMock.remark) && Objects.equals(this.resultContent, apiMock.resultContent)
-            && Objects.equals(this.version, apiMock.version) && Objects.equals(this.authorizerId, apiMock.authorizerId)
-            && Objects.equals(this.id, apiMock.id) && Objects.equals(this.registerTime, apiMock.registerTime)
-            && Objects.equals(this.status, apiMock.status) && Objects.equals(this.updateTime, apiMock.updateTime);
+        ApiMock that = (ApiMock) obj;
+        return Objects.equals(this.remark, that.remark) && Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

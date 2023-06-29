@@ -173,21 +173,18 @@ public class ListResponsePropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResponsePropertiesRequest listResponsePropertiesRequest = (ListResponsePropertiesRequest) o;
-        return Objects.equals(this.instanceId, listResponsePropertiesRequest.instanceId)
-            && Objects.equals(this.serviceId, listResponsePropertiesRequest.serviceId)
-            && Objects.equals(this.commandId, listResponsePropertiesRequest.commandId)
-            && Objects.equals(this.limit, listResponsePropertiesRequest.limit)
-            && Objects.equals(this.responseId, listResponsePropertiesRequest.responseId)
-            && Objects.equals(this.responseName, listResponsePropertiesRequest.responseName)
-            && Objects.equals(this.offset, listResponsePropertiesRequest.offset);
+        ListResponsePropertiesRequest that = (ListResponsePropertiesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.responseName, that.responseName)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

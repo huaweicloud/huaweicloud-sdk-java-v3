@@ -69,22 +69,15 @@ public class ReviewInfo {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuggestionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuggestionEnum(value));
         }
 
         public static SuggestionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,18 +268,17 @@ public class ReviewInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReviewInfo reviewInfo = (ReviewInfo) o;
-        return Objects.equals(this.suggestion, reviewInfo.suggestion) && Objects.equals(this.text, reviewInfo.text)
-            && Objects.equals(this.cover, reviewInfo.cover) && Objects.equals(this.video, reviewInfo.video)
-            && Objects.equals(this.execDesc, reviewInfo.execDesc)
-            && Objects.equals(this.reviewStatus, reviewInfo.reviewStatus);
+        ReviewInfo that = (ReviewInfo) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.text, that.text)
+            && Objects.equals(this.cover, that.cover) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.execDesc, that.execDesc) && Objects.equals(this.reviewStatus, that.reviewStatus);
     }
 
     @Override

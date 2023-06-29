@@ -78,17 +78,16 @@ public class DeleteTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTableResponse deleteTableResponse = (DeleteTableResponse) o;
-        return Objects.equals(this.isSuccess, deleteTableResponse.isSuccess)
-            && Objects.equals(this.message, deleteTableResponse.message)
-            && Objects.equals(this.jobMode, deleteTableResponse.jobMode);
+        DeleteTableResponse that = (DeleteTableResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobMode, that.jobMode);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ShowBackgroundTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackgroundTaskResponse showBackgroundTaskResponse = (ShowBackgroundTaskResponse) o;
-        return Objects.equals(this.taskCount, showBackgroundTaskResponse.taskCount)
-            && Objects.equals(this.tasks, showBackgroundTaskResponse.tasks);
+        ShowBackgroundTaskResponse that = (ShowBackgroundTaskResponse) obj;
+        return Objects.equals(this.taskCount, that.taskCount) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

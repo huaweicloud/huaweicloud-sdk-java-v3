@@ -209,24 +209,22 @@ public class ListAvailableDisasterClustersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableDisasterClustersRequest listAvailableDisasterClustersRequest =
-            (ListAvailableDisasterClustersRequest) o;
-        return Objects.equals(this.primaryClusterId, listAvailableDisasterClustersRequest.primaryClusterId)
-            && Objects.equals(this.primarySpecId, listAvailableDisasterClustersRequest.primarySpecId)
-            && Objects.equals(this.primaryClusterDnNum, listAvailableDisasterClustersRequest.primaryClusterDnNum)
-            && Objects.equals(this.standbyRegion, listAvailableDisasterClustersRequest.standbyRegion)
-            && Objects.equals(this.standbyProjectId, listAvailableDisasterClustersRequest.standbyProjectId)
-            && Objects.equals(this.standbyAzCode, listAvailableDisasterClustersRequest.standbyAzCode)
-            && Objects.equals(this.drType, listAvailableDisasterClustersRequest.drType)
-            && Objects.equals(this.datastoreType, listAvailableDisasterClustersRequest.datastoreType)
-            && Objects.equals(this.datastoreVersion, listAvailableDisasterClustersRequest.datastoreVersion);
+        ListAvailableDisasterClustersRequest that = (ListAvailableDisasterClustersRequest) obj;
+        return Objects.equals(this.primaryClusterId, that.primaryClusterId)
+            && Objects.equals(this.primarySpecId, that.primarySpecId)
+            && Objects.equals(this.primaryClusterDnNum, that.primaryClusterDnNum)
+            && Objects.equals(this.standbyRegion, that.standbyRegion)
+            && Objects.equals(this.standbyProjectId, that.standbyProjectId)
+            && Objects.equals(this.standbyAzCode, that.standbyAzCode) && Objects.equals(this.drType, that.drType)
+            && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion);
     }
 
     @Override

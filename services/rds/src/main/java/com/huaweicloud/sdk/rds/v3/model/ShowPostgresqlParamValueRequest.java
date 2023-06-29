@@ -79,17 +79,16 @@ public class ShowPostgresqlParamValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPostgresqlParamValueRequest showPostgresqlParamValueRequest = (ShowPostgresqlParamValueRequest) o;
-        return Objects.equals(this.xLanguage, showPostgresqlParamValueRequest.xLanguage)
-            && Objects.equals(this.instanceId, showPostgresqlParamValueRequest.instanceId)
-            && Objects.equals(this.name, showPostgresqlParamValueRequest.name);
+        ShowPostgresqlParamValueRequest that = (ShowPostgresqlParamValueRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

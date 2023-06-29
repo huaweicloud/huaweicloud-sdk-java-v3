@@ -187,22 +187,18 @@ public class ListRepositoryTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRepositoryTagsRequest listRepositoryTagsRequest = (ListRepositoryTagsRequest) o;
-        return Objects.equals(this.namespace, listRepositoryTagsRequest.namespace)
-            && Objects.equals(this.repository, listRepositoryTagsRequest.repository)
-            && Objects.equals(this.limit, listRepositoryTagsRequest.limit)
-            && Objects.equals(this.offset, listRepositoryTagsRequest.offset)
-            && Objects.equals(this.orderColumn, listRepositoryTagsRequest.orderColumn)
-            && Objects.equals(this.orderType, listRepositoryTagsRequest.orderType)
-            && Objects.equals(this.tag, listRepositoryTagsRequest.tag)
-            && Objects.equals(this.filter, listRepositoryTagsRequest.filter);
+        ListRepositoryTagsRequest that = (ListRepositoryTagsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.orderColumn, that.orderColumn) && Objects.equals(this.orderType, that.orderType)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

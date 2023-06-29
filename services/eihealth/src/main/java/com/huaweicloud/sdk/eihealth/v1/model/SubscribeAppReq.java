@@ -99,18 +99,17 @@ public class SubscribeAppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscribeAppReq subscribeAppReq = (SubscribeAppReq) o;
-        return Objects.equals(this.assetId, subscribeAppReq.assetId)
-            && Objects.equals(this.assetVersion, subscribeAppReq.assetVersion)
-            && Objects.equals(this.destinationAppName, subscribeAppReq.destinationAppName)
-            && Objects.equals(this.destinationAppVersion, subscribeAppReq.destinationAppVersion);
+        SubscribeAppReq that = (SubscribeAppReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetVersion, that.assetVersion)
+            && Objects.equals(this.destinationAppName, that.destinationAppName)
+            && Objects.equals(this.destinationAppVersion, that.destinationAppVersion);
     }
 
     @Override

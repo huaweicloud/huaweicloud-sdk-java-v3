@@ -466,33 +466,24 @@ public class QueryRecordSetWithLineResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryRecordSetWithLineResp queryRecordSetWithLineResp = (QueryRecordSetWithLineResp) o;
-        return Objects.equals(this.id, queryRecordSetWithLineResp.id)
-            && Objects.equals(this.name, queryRecordSetWithLineResp.name)
-            && Objects.equals(this.description, queryRecordSetWithLineResp.description)
-            && Objects.equals(this.zoneId, queryRecordSetWithLineResp.zoneId)
-            && Objects.equals(this.zoneName, queryRecordSetWithLineResp.zoneName)
-            && Objects.equals(this.type, queryRecordSetWithLineResp.type)
-            && Objects.equals(this.ttl, queryRecordSetWithLineResp.ttl)
-            && Objects.equals(this.records, queryRecordSetWithLineResp.records)
-            && Objects.equals(this.createdAt, queryRecordSetWithLineResp.createdAt)
-            && Objects.equals(this.updatedAt, queryRecordSetWithLineResp.updatedAt)
-            && Objects.equals(this.status, queryRecordSetWithLineResp.status)
-            && Objects.equals(this._default, queryRecordSetWithLineResp._default)
-            && Objects.equals(this.projectId, queryRecordSetWithLineResp.projectId)
-            && Objects.equals(this.links, queryRecordSetWithLineResp.links)
-            && Objects.equals(this.line, queryRecordSetWithLineResp.line)
-            && Objects.equals(this.weight, queryRecordSetWithLineResp.weight)
-            && Objects.equals(this.healthCheckId, queryRecordSetWithLineResp.healthCheckId)
-            && Objects.equals(this.aliasTarget, queryRecordSetWithLineResp.aliasTarget)
-            && Objects.equals(this.bundle, queryRecordSetWithLineResp.bundle);
+        QueryRecordSetWithLineResp that = (QueryRecordSetWithLineResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget) && Objects.equals(this.bundle, that.bundle);
     }
 
     @Override

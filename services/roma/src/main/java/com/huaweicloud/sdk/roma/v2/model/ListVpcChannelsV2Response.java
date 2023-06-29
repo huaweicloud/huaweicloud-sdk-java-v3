@@ -97,17 +97,16 @@ public class ListVpcChannelsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcChannelsV2Response listVpcChannelsV2Response = (ListVpcChannelsV2Response) o;
-        return Objects.equals(this.size, listVpcChannelsV2Response.size)
-            && Objects.equals(this.total, listVpcChannelsV2Response.total)
-            && Objects.equals(this.vpcChannels, listVpcChannelsV2Response.vpcChannels);
+        ListVpcChannelsV2Response that = (ListVpcChannelsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.vpcChannels, that.vpcChannels);
     }
 
     @Override

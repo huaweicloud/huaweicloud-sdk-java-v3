@@ -55,16 +55,16 @@ public class DeleteAutoJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAutoJobRequest deleteAutoJobRequest = (DeleteAutoJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteAutoJobRequest.eihealthProjectId)
-            && Objects.equals(this.autoJobId, deleteAutoJobRequest.autoJobId);
+        DeleteAutoJobRequest that = (DeleteAutoJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.autoJobId, that.autoJobId);
     }
 
     @Override

@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.iotedge.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.iotedge.v3.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class IoTEdgeAsyncClient {
+
     protected HcClient hcClient;
 
     public IoTEdgeAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class IoTEdgeAsyncClient {
     public static ClientBuilder<IoTEdgeAsyncClient> newBuilder() {
         return new ClientBuilder<>(IoTEdgeAsyncClient::new);
     }
-
 
     /**
      * 创建应用模板
@@ -155,8 +155,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateAppInstanceRequest 请求对象
      * @return AsyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>
      */
-    public AsyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstanceAsyncInvoker(CreateAppInstanceRequest request) {
-        return new AsyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>(request, IoTEdgeMeta.createAppInstance, hcClient);
+    public AsyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstanceAsyncInvoker(
+        CreateAppInstanceRequest request) {
+        return new AsyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>(request,
+            IoTEdgeMeta.createAppInstance, hcClient);
     }
 
     /**
@@ -183,8 +185,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteAppInstanceRequest 请求对象
      * @return AsyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>
      */
-    public AsyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstanceAsyncInvoker(DeleteAppInstanceRequest request) {
-        return new AsyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>(request, IoTEdgeMeta.deleteAppInstance, hcClient);
+    public AsyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstanceAsyncInvoker(
+        DeleteAppInstanceRequest request) {
+        return new AsyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>(request,
+            IoTEdgeMeta.deleteAppInstance, hcClient);
     }
 
     /**
@@ -197,7 +201,8 @@ public class IoTEdgeAsyncClient {
      * @param ListAppInstanceHistoryRequest 请求对象
      * @return CompletableFuture<ListAppInstanceHistoryResponse>
      */
-    public CompletableFuture<ListAppInstanceHistoryResponse> listAppInstanceHistoryAsync(ListAppInstanceHistoryRequest request) {
+    public CompletableFuture<ListAppInstanceHistoryResponse> listAppInstanceHistoryAsync(
+        ListAppInstanceHistoryRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.listAppInstanceHistory);
     }
 
@@ -211,8 +216,10 @@ public class IoTEdgeAsyncClient {
      * @param ListAppInstanceHistoryRequest 请求对象
      * @return AsyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>
      */
-    public AsyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistoryAsyncInvoker(ListAppInstanceHistoryRequest request) {
-        return new AsyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>(request, IoTEdgeMeta.listAppInstanceHistory, hcClient);
+    public AsyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistoryAsyncInvoker(
+        ListAppInstanceHistoryRequest request) {
+        return new AsyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>(request,
+            IoTEdgeMeta.listAppInstanceHistory, hcClient);
     }
 
     /**
@@ -239,8 +246,10 @@ public class IoTEdgeAsyncClient {
      * @param ListAppInstancesRequest 请求对象
      * @return AsyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>
      */
-    public AsyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstancesAsyncInvoker(ListAppInstancesRequest request) {
-        return new AsyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>(request, IoTEdgeMeta.listAppInstances, hcClient);
+    public AsyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstancesAsyncInvoker(
+        ListAppInstancesRequest request) {
+        return new AsyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>(request,
+            IoTEdgeMeta.listAppInstances, hcClient);
     }
 
     /**
@@ -267,8 +276,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateAppInstanceRequest 请求对象
      * @return AsyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>
      */
-    public AsyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstanceAsyncInvoker(UpdateAppInstanceRequest request) {
-        return new AsyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>(request, IoTEdgeMeta.updateAppInstance, hcClient);
+    public AsyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstanceAsyncInvoker(
+        UpdateAppInstanceRequest request) {
+        return new AsyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>(request,
+            IoTEdgeMeta.updateAppInstance, hcClient);
     }
 
     /**
@@ -295,8 +306,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateAppVersionRequest 请求对象
      * @return AsyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>
      */
-    public AsyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersionAsyncInvoker(CreateAppVersionRequest request) {
-        return new AsyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>(request, IoTEdgeMeta.createAppVersion, hcClient);
+    public AsyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersionAsyncInvoker(
+        CreateAppVersionRequest request) {
+        return new AsyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>(request,
+            IoTEdgeMeta.createAppVersion, hcClient);
     }
 
     /**
@@ -323,8 +336,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteAppVersionRequest 请求对象
      * @return AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>
      */
-    public AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersionAsyncInvoker(DeleteAppVersionRequest request) {
-        return new AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>(request, IoTEdgeMeta.deleteAppVersion, hcClient);
+    public AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersionAsyncInvoker(
+        DeleteAppVersionRequest request) {
+        return new AsyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>(request,
+            IoTEdgeMeta.deleteAppVersion, hcClient);
     }
 
     /**
@@ -351,8 +366,10 @@ public class IoTEdgeAsyncClient {
      * @param DownloadAppVersionRequest 请求对象
      * @return AsyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>
      */
-    public AsyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersionAsyncInvoker(DownloadAppVersionRequest request) {
-        return new AsyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>(request, IoTEdgeMeta.downloadAppVersion, hcClient);
+    public AsyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersionAsyncInvoker(
+        DownloadAppVersionRequest request) {
+        return new AsyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>(request,
+            IoTEdgeMeta.downloadAppVersion, hcClient);
     }
 
     /**
@@ -379,7 +396,8 @@ public class IoTEdgeAsyncClient {
      * @param ListAppImageRequest 请求对象
      * @return AsyncInvoker<ListAppImageRequest, ListAppImageResponse>
      */
-    public AsyncInvoker<ListAppImageRequest, ListAppImageResponse> listAppImageAsyncInvoker(ListAppImageRequest request) {
+    public AsyncInvoker<ListAppImageRequest, ListAppImageResponse> listAppImageAsyncInvoker(
+        ListAppImageRequest request) {
         return new AsyncInvoker<ListAppImageRequest, ListAppImageResponse>(request, IoTEdgeMeta.listAppImage, hcClient);
     }
 
@@ -407,8 +425,10 @@ public class IoTEdgeAsyncClient {
      * @param ListAppVersionsRequest 请求对象
      * @return AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>
      */
-    public AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersionsAsyncInvoker(ListAppVersionsRequest request) {
-        return new AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>(request, IoTEdgeMeta.listAppVersions, hcClient);
+    public AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersionsAsyncInvoker(
+        ListAppVersionsRequest request) {
+        return new AsyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>(request, IoTEdgeMeta.listAppVersions,
+            hcClient);
     }
 
     /**
@@ -435,8 +455,10 @@ public class IoTEdgeAsyncClient {
      * @param ShowAppVersionRequest 请求对象
      * @return AsyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>
      */
-    public AsyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersionAsyncInvoker(ShowAppVersionRequest request) {
-        return new AsyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>(request, IoTEdgeMeta.showAppVersion, hcClient);
+    public AsyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersionAsyncInvoker(
+        ShowAppVersionRequest request) {
+        return new AsyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>(request, IoTEdgeMeta.showAppVersion,
+            hcClient);
     }
 
     /**
@@ -463,8 +485,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
-    public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(CreateClusterRequest request) {
-        return new AsyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, IoTEdgeMeta.createCluster, hcClient);
+    public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(
+        CreateClusterRequest request) {
+        return new AsyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, IoTEdgeMeta.createCluster,
+            hcClient);
     }
 
     /**
@@ -477,7 +501,8 @@ public class IoTEdgeAsyncClient {
      * @param CreateClusterInstallCmdRequest 请求对象
      * @return CompletableFuture<CreateClusterInstallCmdResponse>
      */
-    public CompletableFuture<CreateClusterInstallCmdResponse> createClusterInstallCmdAsync(CreateClusterInstallCmdRequest request) {
+    public CompletableFuture<CreateClusterInstallCmdResponse> createClusterInstallCmdAsync(
+        CreateClusterInstallCmdRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createClusterInstallCmd);
     }
 
@@ -491,8 +516,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateClusterInstallCmdRequest 请求对象
      * @return AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>
      */
-    public AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmdAsyncInvoker(CreateClusterInstallCmdRequest request) {
-        return new AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>(request, IoTEdgeMeta.createClusterInstallCmd, hcClient);
+    public AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmdAsyncInvoker(
+        CreateClusterInstallCmdRequest request) {
+        return new AsyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>(request,
+            IoTEdgeMeta.createClusterInstallCmd, hcClient);
     }
 
     /**
@@ -519,8 +546,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteClusterRequest 请求对象
      * @return AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
-    public AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterAsyncInvoker(DeleteClusterRequest request) {
-        return new AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, IoTEdgeMeta.deleteCluster, hcClient);
+    public AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterAsyncInvoker(
+        DeleteClusterRequest request) {
+        return new AsyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, IoTEdgeMeta.deleteCluster,
+            hcClient);
     }
 
     /**
@@ -547,7 +576,8 @@ public class IoTEdgeAsyncClient {
      * @param ListClustersRequest 请求对象
      * @return AsyncInvoker<ListClustersRequest, ListClustersResponse>
      */
-    public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(ListClustersRequest request) {
+    public AsyncInvoker<ListClustersRequest, ListClustersResponse> listClustersAsyncInvoker(
+        ListClustersRequest request) {
         return new AsyncInvoker<ListClustersRequest, ListClustersResponse>(request, IoTEdgeMeta.listClusters, hcClient);
     }
 

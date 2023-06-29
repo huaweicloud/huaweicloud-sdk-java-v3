@@ -134,18 +134,16 @@ public class StacksAttribute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StacksAttribute stacksAttribute = (StacksAttribute) o;
-        return Objects.equals(this.specs, stacksAttribute.specs)
-            && Objects.equals(this.suggest, stacksAttribute.suggest)
-            && Objects.equals(this.suggestTitle, stacksAttribute.suggestTitle)
-            && Objects.equals(this.volumes, stacksAttribute.volumes);
+        StacksAttribute that = (StacksAttribute) obj;
+        return Objects.equals(this.specs, that.specs) && Objects.equals(this.suggest, that.suggest)
+            && Objects.equals(this.suggestTitle, that.suggestTitle) && Objects.equals(this.volumes, that.volumes);
     }
 
     @Override

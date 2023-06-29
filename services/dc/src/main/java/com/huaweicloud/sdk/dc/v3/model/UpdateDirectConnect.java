@@ -74,22 +74,15 @@ public class UpdateDirectConnect {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,22 +149,15 @@ public class UpdateDirectConnect {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderStatusEnum(value));
         }
 
         public static ProviderStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -298,20 +284,17 @@ public class UpdateDirectConnect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDirectConnect updateDirectConnect = (UpdateDirectConnect) o;
-        return Objects.equals(this.name, updateDirectConnect.name)
-            && Objects.equals(this.description, updateDirectConnect.description)
-            && Objects.equals(this.bandwidth, updateDirectConnect.bandwidth)
-            && Objects.equals(this.peerLocation, updateDirectConnect.peerLocation)
-            && Objects.equals(this.status, updateDirectConnect.status)
-            && Objects.equals(this.providerStatus, updateDirectConnect.providerStatus);
+        UpdateDirectConnect that = (UpdateDirectConnect) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.peerLocation, that.peerLocation)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.providerStatus, that.providerStatus);
     }
 
     @Override

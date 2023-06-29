@@ -33,15 +33,15 @@ public class ContainerCIDR {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerCIDR containerCIDR = (ContainerCIDR) o;
-        return Objects.equals(this.cidr, containerCIDR.cidr);
+        ContainerCIDR that = (ContainerCIDR) obj;
+        return Objects.equals(this.cidr, that.cidr);
     }
 
     @Override

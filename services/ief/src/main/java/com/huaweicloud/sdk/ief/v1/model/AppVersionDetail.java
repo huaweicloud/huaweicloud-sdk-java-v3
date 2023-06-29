@@ -466,29 +466,22 @@ public class AppVersionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppVersionDetail appVersionDetail = (AppVersionDetail) o;
-        return Objects.equals(this.id, appVersionDetail.id) && Objects.equals(this.version, appVersionDetail.version)
-            && Objects.equals(this.createdAt, appVersionDetail.createdAt)
-            && Objects.equals(this.updatedAt, appVersionDetail.updatedAt)
-            && Objects.equals(this.projectId, appVersionDetail.projectId)
-            && Objects.equals(this.imageUrl, appVersionDetail.imageUrl)
-            && Objects.equals(this.envs, appVersionDetail.envs)
-            && Objects.equals(this.volumes, appVersionDetail.volumes)
-            && Objects.equals(this.configs, appVersionDetail.configs)
-            && Objects.equals(this.resources, appVersionDetail.resources)
-            && Objects.equals(this.arch, appVersionDetail.arch)
-            && Objects.equals(this.command, appVersionDetail.command)
-            && Objects.equals(this.args, appVersionDetail.args)
-            && Objects.equals(this.livenessProbe, appVersionDetail.livenessProbe)
-            && Objects.equals(this.readinessProbe, appVersionDetail.readinessProbe)
-            && Objects.equals(this.npuType, appVersionDetail.npuType);
+        AppVersionDetail that = (AppVersionDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.configs, that.configs) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.args, that.args) && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

@@ -253,22 +253,21 @@ public class Workspaces {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Workspaces workspaces = (Workspaces) o;
-        return Objects.equals(this.createdAt, workspaces.createdAt)
-            && Objects.equals(this.description, workspaces.description)
-            && Objects.equals(this.enterpriseProjectId, workspaces.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, workspaces.enterpriseProjectName)
-            && Objects.equals(this.id, workspaces.id) && Objects.equals(this.name, workspaces.name)
-            && Objects.equals(this.owner, workspaces.owner) && Objects.equals(this.status, workspaces.status)
-            && Objects.equals(this.updateAt, workspaces.updateAt) && Objects.equals(this.userId, workspaces.userId)
-            && Objects.equals(this.projectId, workspaces.projectId);
+        Workspaces that = (Workspaces) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

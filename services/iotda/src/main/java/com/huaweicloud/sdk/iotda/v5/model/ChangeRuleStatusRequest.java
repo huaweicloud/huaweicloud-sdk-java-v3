@@ -87,17 +87,16 @@ public class ChangeRuleStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeRuleStatusRequest changeRuleStatusRequest = (ChangeRuleStatusRequest) o;
-        return Objects.equals(this.instanceId, changeRuleStatusRequest.instanceId)
-            && Objects.equals(this.ruleId, changeRuleStatusRequest.ruleId)
-            && Objects.equals(this.body, changeRuleStatusRequest.body);
+        ChangeRuleStatusRequest that = (ChangeRuleStatusRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

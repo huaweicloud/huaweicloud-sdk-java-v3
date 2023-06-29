@@ -118,18 +118,16 @@ public class GrantQueuePermissionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GrantQueuePermissionReq grantQueuePermissionReq = (GrantQueuePermissionReq) o;
-        return Objects.equals(this.queueName, grantQueuePermissionReq.queueName)
-            && Objects.equals(this.userName, grantQueuePermissionReq.userName)
-            && Objects.equals(this.action, grantQueuePermissionReq.action)
-            && Objects.equals(this.privileges, grantQueuePermissionReq.privileges);
+        GrantQueuePermissionReq that = (GrantQueuePermissionReq) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

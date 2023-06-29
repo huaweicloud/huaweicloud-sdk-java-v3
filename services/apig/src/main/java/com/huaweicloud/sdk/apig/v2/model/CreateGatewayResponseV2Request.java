@@ -87,17 +87,16 @@ public class CreateGatewayResponseV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGatewayResponseV2Request createGatewayResponseV2Request = (CreateGatewayResponseV2Request) o;
-        return Objects.equals(this.instanceId, createGatewayResponseV2Request.instanceId)
-            && Objects.equals(this.groupId, createGatewayResponseV2Request.groupId)
-            && Objects.equals(this.body, createGatewayResponseV2Request.body);
+        CreateGatewayResponseV2Request that = (CreateGatewayResponseV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

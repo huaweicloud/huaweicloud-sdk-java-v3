@@ -217,23 +217,21 @@ public class RepositoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepositoryInfo repositoryInfo = (RepositoryInfo) o;
-        return Objects.equals(this.name, repositoryInfo.name)
-            && Objects.equals(this.description, repositoryInfo.description)
-            && Objects.equals(this.projectId, repositoryInfo.projectId)
-            && Objects.equals(this.regionId, repositoryInfo.regionId)
-            && Objects.equals(this.gitignore, repositoryInfo.gitignore)
-            && Objects.equals(this.memberPermission, repositoryInfo.memberPermission)
-            && Objects.equals(this.readmePermission, repositoryInfo.readmePermission)
-            && Objects.equals(this.visibilityLevel, repositoryInfo.visibilityLevel)
-            && Objects.equals(this.licenseId, repositoryInfo.licenseId);
+        RepositoryInfo that = (RepositoryInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.gitignore, that.gitignore)
+            && Objects.equals(this.memberPermission, that.memberPermission)
+            && Objects.equals(this.readmePermission, that.readmePermission)
+            && Objects.equals(this.visibilityLevel, that.visibilityLevel)
+            && Objects.equals(this.licenseId, that.licenseId);
     }
 
     @Override

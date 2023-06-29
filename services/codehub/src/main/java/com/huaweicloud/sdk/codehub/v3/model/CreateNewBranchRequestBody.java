@@ -55,16 +55,15 @@ public class CreateNewBranchRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNewBranchRequestBody createNewBranchRequestBody = (CreateNewBranchRequestBody) o;
-        return Objects.equals(this.branchName, createNewBranchRequestBody.branchName)
-            && Objects.equals(this.ref, createNewBranchRequestBody.ref);
+        CreateNewBranchRequestBody that = (CreateNewBranchRequestBody) obj;
+        return Objects.equals(this.branchName, that.branchName) && Objects.equals(this.ref, that.ref);
     }
 
     @Override

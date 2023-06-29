@@ -96,17 +96,16 @@ public class WordsRegionList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WordsRegionList wordsRegionList = (WordsRegionList) o;
-        return Objects.equals(this.type, wordsRegionList.type)
-            && Objects.equals(this.wordsBlockCount, wordsRegionList.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, wordsRegionList.wordsBlockList);
+        WordsRegionList that = (WordsRegionList) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

@@ -87,18 +87,17 @@ public class ListAggregateComplianceByPolicyAssignmentResponse extends SdkRespon
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAggregateComplianceByPolicyAssignmentResponse listAggregateComplianceByPolicyAssignmentResponse =
-            (ListAggregateComplianceByPolicyAssignmentResponse) o;
-        return Objects.equals(this.aggregatePolicyAssignments,
-            listAggregateComplianceByPolicyAssignmentResponse.aggregatePolicyAssignments)
-            && Objects.equals(this.pageInfo, listAggregateComplianceByPolicyAssignmentResponse.pageInfo);
+        ListAggregateComplianceByPolicyAssignmentResponse that =
+            (ListAggregateComplianceByPolicyAssignmentResponse) obj;
+        return Objects.equals(this.aggregatePolicyAssignments, that.aggregatePolicyAssignments)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

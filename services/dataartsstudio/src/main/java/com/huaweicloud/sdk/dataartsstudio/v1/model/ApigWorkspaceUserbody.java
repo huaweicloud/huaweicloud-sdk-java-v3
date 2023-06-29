@@ -367,29 +367,23 @@ public class ApigWorkspaceUserbody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigWorkspaceUserbody apigWorkspaceUserbody = (ApigWorkspaceUserbody) o;
-        return Objects.equals(this.id, apigWorkspaceUserbody.id)
-            && Objects.equals(this.userId, apigWorkspaceUserbody.userId)
-            && Objects.equals(this.userName, apigWorkspaceUserbody.userName)
-            && Objects.equals(this.domainId, apigWorkspaceUserbody.domainId)
-            && Objects.equals(this.domainName, apigWorkspaceUserbody.domainName)
-            && Objects.equals(this.displayUserName, apigWorkspaceUserbody.displayUserName)
-            && Objects.equals(this.domainOwner, apigWorkspaceUserbody.domainOwner)
-            && Objects.equals(this.description, apigWorkspaceUserbody.description)
-            && Objects.equals(this.workspaceId, apigWorkspaceUserbody.workspaceId)
-            && Objects.equals(this.roles, apigWorkspaceUserbody.roles)
-            && Objects.equals(this.createTime, apigWorkspaceUserbody.createTime)
-            && Objects.equals(this.createUser, apigWorkspaceUserbody.createUser)
-            && Objects.equals(this.updateTime, apigWorkspaceUserbody.updateTime)
-            && Objects.equals(this.updateUser, apigWorkspaceUserbody.updateUser)
-            && Objects.equals(this.type, apigWorkspaceUserbody.type);
+        ApigWorkspaceUserbody that = (ApigWorkspaceUserbody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.displayUserName, that.displayUserName)
+            && Objects.equals(this.domainOwner, that.domainOwner) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

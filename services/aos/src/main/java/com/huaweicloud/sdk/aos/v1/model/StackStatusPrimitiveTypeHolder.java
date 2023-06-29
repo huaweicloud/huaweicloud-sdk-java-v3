@@ -1,76 +1,69 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * StackStatusPrimitiveTypeHolder
  */
-public class StackStatusPrimitiveTypeHolder  {
+public class StackStatusPrimitiveTypeHolder {
 
     /**
      * 资源栈的状态     * `CREATION_COMPLETE` - 生成空资源栈完成，并没有任何部署     * `DEPLOYMENT_IN_PROGRESS` - 正在部署，请等待     * `DEPLOYMENT_FAILED` - 部署失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * `DEPLOYMENT_COMPLETE` - 部署完成     * `ROLLBACK_IN_PROGRESS` - 部署失败，正在回滚，请等待     * `ROLLBACK_FAILED` - 回滚失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除，请等待     * `DELETION_FAILED` - 删除失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum CREATION_COMPLETE for value: "CREATION_COMPLETE"
          */
         public static final StatusEnum CREATION_COMPLETE = new StatusEnum("CREATION_COMPLETE");
-        
+
         /**
          * Enum DEPLOYMENT_IN_PROGRESS for value: "DEPLOYMENT_IN_PROGRESS"
          */
         public static final StatusEnum DEPLOYMENT_IN_PROGRESS = new StatusEnum("DEPLOYMENT_IN_PROGRESS");
-        
+
         /**
          * Enum DEPLOYMENT_FAILED for value: "DEPLOYMENT_FAILED"
          */
         public static final StatusEnum DEPLOYMENT_FAILED = new StatusEnum("DEPLOYMENT_FAILED");
-        
+
         /**
          * Enum DEPLOYMENT_COMPLETE for value: "DEPLOYMENT_COMPLETE"
          */
         public static final StatusEnum DEPLOYMENT_COMPLETE = new StatusEnum("DEPLOYMENT_COMPLETE");
-        
+
         /**
          * Enum ROLLBACK_IN_PROGRESS for value: "ROLLBACK_IN_PROGRESS"
          */
         public static final StatusEnum ROLLBACK_IN_PROGRESS = new StatusEnum("ROLLBACK_IN_PROGRESS");
-        
+
         /**
          * Enum ROLLBACK_FAILED for value: "ROLLBACK_FAILED"
          */
         public static final StatusEnum ROLLBACK_FAILED = new StatusEnum("ROLLBACK_FAILED");
-        
+
         /**
          * Enum ROLLBACK_COMPLETE for value: "ROLLBACK_COMPLETE"
          */
         public static final StatusEnum ROLLBACK_COMPLETE = new StatusEnum("ROLLBACK_COMPLETE");
-        
+
         /**
          * Enum DELETION_IN_PROGRESS for value: "DELETION_IN_PROGRESS"
          */
         public static final StatusEnum DELETION_IN_PROGRESS = new StatusEnum("DELETION_IN_PROGRESS");
-        
+
         /**
          * Enum DELETION_FAILED for value: "DELETION_FAILED"
          */
         public static final StatusEnum DELETION_FAILED = new StatusEnum("DELETION_FAILED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,25 +99,18 @@ public class StackStatusPrimitiveTypeHolder  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,8 +128,7 @@ public class StackStatusPrimitiveTypeHolder  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
@@ -151,9 +136,6 @@ public class StackStatusPrimitiveTypeHolder  {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的状态     * `CREATION_COMPLETE` - 生成空资源栈完成，并没有任何部署     * `DEPLOYMENT_IN_PROGRESS` - 正在部署，请等待     * `DEPLOYMENT_FAILED` - 部署失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * `DEPLOYMENT_COMPLETE` - 部署完成     * `ROLLBACK_IN_PROGRESS` - 部署失败，正在回滚，请等待     * `ROLLBACK_FAILED` - 回滚失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情     * `ROLLBACK_COMPLETE` - 回滚完成     * `DELETION_IN_PROGRESS` - 正在删除，请等待     * `DELETION_FAILED` - 删除失败。请从status_message获取错误信息汇总，或者调用ListStackEvents获得事件详情
@@ -167,23 +149,23 @@ public class StackStatusPrimitiveTypeHolder  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StackStatusPrimitiveTypeHolder stackStatusPrimitiveTypeHolder = (StackStatusPrimitiveTypeHolder) o;
-        return Objects.equals(this.status, stackStatusPrimitiveTypeHolder.status);
+        StackStatusPrimitiveTypeHolder that = (StackStatusPrimitiveTypeHolder) obj;
+        return Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -192,6 +174,7 @@ public class StackStatusPrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -202,8 +185,5 @@ public class StackStatusPrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,17 +77,16 @@ public class RefererRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RefererRsp refererRsp = (RefererRsp) o;
-        return Objects.equals(this.refererType, refererRsp.refererType)
-            && Objects.equals(this.refererList, refererRsp.refererList)
-            && Objects.equals(this.includeEmpty, refererRsp.includeEmpty);
+        RefererRsp that = (RefererRsp) obj;
+        return Objects.equals(this.refererType, that.refererType) && Objects.equals(this.refererList, that.refererList)
+            && Objects.equals(this.includeEmpty, that.includeEmpty);
     }
 
     @Override

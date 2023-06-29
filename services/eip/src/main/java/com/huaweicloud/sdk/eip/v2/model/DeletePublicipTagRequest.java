@@ -55,16 +55,15 @@ public class DeletePublicipTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePublicipTagRequest deletePublicipTagRequest = (DeletePublicipTagRequest) o;
-        return Objects.equals(this.publicipId, deletePublicipTagRequest.publicipId)
-            && Objects.equals(this.key, deletePublicipTagRequest.key);
+        DeletePublicipTagRequest that = (DeletePublicipTagRequest) obj;
+        return Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.key, that.key);
     }
 
     @Override

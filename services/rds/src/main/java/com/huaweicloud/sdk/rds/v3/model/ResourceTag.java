@@ -77,16 +77,16 @@ public class ResourceTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceTag resourceTag = (ResourceTag) o;
-        return Objects.equals(this.key, resourceTag.key) && Objects.equals(this.value, resourceTag.value)
-            && Objects.equals(this.tagType, resourceTag.tagType);
+        ResourceTag that = (ResourceTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.tagType, that.tagType);
     }
 
     @Override

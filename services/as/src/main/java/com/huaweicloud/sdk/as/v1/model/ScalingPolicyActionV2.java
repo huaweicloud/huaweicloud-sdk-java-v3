@@ -72,22 +72,15 @@ public class ScalingPolicyActionV2 {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationEnum(value));
         }
 
         public static OperationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -197,18 +190,16 @@ public class ScalingPolicyActionV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingPolicyActionV2 scalingPolicyActionV2 = (ScalingPolicyActionV2) o;
-        return Objects.equals(this.operation, scalingPolicyActionV2.operation)
-            && Objects.equals(this.size, scalingPolicyActionV2.size)
-            && Objects.equals(this.percentage, scalingPolicyActionV2.percentage)
-            && Objects.equals(this.limits, scalingPolicyActionV2.limits);
+        ScalingPolicyActionV2 that = (ScalingPolicyActionV2) obj;
+        return Objects.equals(this.operation, that.operation) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.percentage, that.percentage) && Objects.equals(this.limits, that.limits);
     }
 
     @Override

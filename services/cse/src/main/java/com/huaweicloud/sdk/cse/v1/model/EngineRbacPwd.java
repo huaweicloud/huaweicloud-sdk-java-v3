@@ -33,15 +33,15 @@ public class EngineRbacPwd {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineRbacPwd engineRbacPwd = (EngineRbacPwd) o;
-        return Objects.equals(this.pwd, engineRbacPwd.pwd);
+        EngineRbacPwd that = (EngineRbacPwd) obj;
+        return Objects.equals(this.pwd, that.pwd);
     }
 
     @Override

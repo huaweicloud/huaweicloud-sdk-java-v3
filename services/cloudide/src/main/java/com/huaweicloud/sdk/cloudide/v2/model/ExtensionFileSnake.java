@@ -55,16 +55,15 @@ public class ExtensionFileSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionFileSnake extensionFileSnake = (ExtensionFileSnake) o;
-        return Objects.equals(this.assetType, extensionFileSnake.assetType)
-            && Objects.equals(this.source, extensionFileSnake.source);
+        ExtensionFileSnake that = (ExtensionFileSnake) obj;
+        return Objects.equals(this.assetType, that.assetType) && Objects.equals(this.source, that.source);
     }
 
     @Override

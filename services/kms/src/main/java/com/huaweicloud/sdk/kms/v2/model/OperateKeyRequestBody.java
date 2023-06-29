@@ -55,16 +55,15 @@ public class OperateKeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateKeyRequestBody operateKeyRequestBody = (OperateKeyRequestBody) o;
-        return Objects.equals(this.keyId, operateKeyRequestBody.keyId)
-            && Objects.equals(this.sequence, operateKeyRequestBody.sequence);
+        OperateKeyRequestBody that = (OperateKeyRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class DeleteProductResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProductResponse deleteProductResponse = (DeleteProductResponse) o;
-        return Objects.equals(this.body, deleteProductResponse.body);
+        DeleteProductResponse that = (DeleteProductResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

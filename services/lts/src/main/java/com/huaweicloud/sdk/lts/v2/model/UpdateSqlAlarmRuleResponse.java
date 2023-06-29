@@ -126,22 +126,15 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAlarmLevelEnum(value));
         }
 
         public static SqlAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -502,30 +495,25 @@ public class UpdateSqlAlarmRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSqlAlarmRuleResponse updateSqlAlarmRuleResponse = (UpdateSqlAlarmRuleResponse) o;
-        return Objects.equals(this.id, updateSqlAlarmRuleResponse.id)
-            && Objects.equals(this.indexId, updateSqlAlarmRuleResponse.indexId)
-            && Objects.equals(this.language, updateSqlAlarmRuleResponse.language)
-            && Objects.equals(this.projectId, updateSqlAlarmRuleResponse.projectId)
-            && Objects.equals(this.sqlAlarmRuleName, updateSqlAlarmRuleResponse.sqlAlarmRuleName)
-            && Objects.equals(this.sqlAlarmRuleId, updateSqlAlarmRuleResponse.sqlAlarmRuleId)
-            && Objects.equals(this.sqlAlarmRuleDescription, updateSqlAlarmRuleResponse.sqlAlarmRuleDescription)
-            && Objects.equals(this.sqlRequests, updateSqlAlarmRuleResponse.sqlRequests)
-            && Objects.equals(this.frequency, updateSqlAlarmRuleResponse.frequency)
-            && Objects.equals(this.conditionExpression, updateSqlAlarmRuleResponse.conditionExpression)
-            && Objects.equals(this.sqlAlarmLevel, updateSqlAlarmRuleResponse.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, updateSqlAlarmRuleResponse.sqlAlarmSend)
-            && Objects.equals(this.domainId, updateSqlAlarmRuleResponse.domainId)
-            && Objects.equals(this.createTime, updateSqlAlarmRuleResponse.createTime)
-            && Objects.equals(this.updateTime, updateSqlAlarmRuleResponse.updateTime)
-            && Objects.equals(this.topics, updateSqlAlarmRuleResponse.topics);
+        UpdateSqlAlarmRuleResponse that = (UpdateSqlAlarmRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.indexId, that.indexId)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+            && Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
+            && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
+            && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.conditionExpression, that.conditionExpression)
+            && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
+            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.topics, that.topics);
     }
 
     @Override

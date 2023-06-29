@@ -57,16 +57,15 @@ public class UploadLogRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadLogRequestBody uploadLogRequestBody = (UploadLogRequestBody) o;
-        return Objects.equals(this.logBucket, uploadLogRequestBody.logBucket)
-            && Objects.equals(this.logExpire, uploadLogRequestBody.logExpire);
+        UploadLogRequestBody that = (UploadLogRequestBody) obj;
+        return Objects.equals(this.logBucket, that.logBucket) && Objects.equals(this.logExpire, that.logExpire);
     }
 
     @Override

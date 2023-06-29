@@ -55,16 +55,15 @@ public class ShowMetadataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetadataRequest showMetadataRequest = (ShowMetadataRequest) o;
-        return Objects.equals(this.idpId, showMetadataRequest.idpId)
-            && Objects.equals(this.protocolId, showMetadataRequest.protocolId);
+        ShowMetadataRequest that = (ShowMetadataRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.protocolId, that.protocolId);
     }
 
     @Override

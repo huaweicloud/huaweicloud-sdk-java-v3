@@ -68,22 +68,15 @@ public class ExportApiDefinitionsV2Request implements ProgressRequest {
             if (value == null) {
                 return null;
             }
-            OasVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OasVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OasVersionEnum(value));
         }
 
         public static OasVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OasVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,17 +188,16 @@ public class ExportApiDefinitionsV2Request implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportApiDefinitionsV2Request exportApiDefinitionsV2Request = (ExportApiDefinitionsV2Request) o;
-        return Objects.equals(this.instanceId, exportApiDefinitionsV2Request.instanceId)
-            && Objects.equals(this.oasVersion, exportApiDefinitionsV2Request.oasVersion)
-            && Objects.equals(this.body, exportApiDefinitionsV2Request.body);
+        ExportApiDefinitionsV2Request that = (ExportApiDefinitionsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.oasVersion, that.oasVersion)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

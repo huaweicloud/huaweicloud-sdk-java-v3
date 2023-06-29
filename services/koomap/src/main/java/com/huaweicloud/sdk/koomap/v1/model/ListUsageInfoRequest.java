@@ -81,17 +81,16 @@ public class ListUsageInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsageInfoRequest listUsageInfoRequest = (ListUsageInfoRequest) o;
-        return Objects.equals(this.usageType, listUsageInfoRequest.usageType)
-            && Objects.equals(this.limit, listUsageInfoRequest.limit)
-            && Objects.equals(this.offset, listUsageInfoRequest.offset);
+        ListUsageInfoRequest that = (ListUsageInfoRequest) obj;
+        return Objects.equals(this.usageType, that.usageType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

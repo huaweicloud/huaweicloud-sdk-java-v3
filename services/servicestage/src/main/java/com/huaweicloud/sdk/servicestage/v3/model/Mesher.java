@@ -33,15 +33,15 @@ public class Mesher {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Mesher mesher = (Mesher) o;
-        return Objects.equals(this.port, mesher.port);
+        Mesher that = (Mesher) obj;
+        return Objects.equals(this.port, that.port);
     }
 
     @Override

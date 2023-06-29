@@ -59,22 +59,15 @@ public class FailureJobParams {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobStatusEnum(value));
         }
 
         public static JobStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,22 +198,15 @@ public class FailureJobParams {
             if (value == null) {
                 return null;
             }
-            FailureStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FailureStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FailureStatusEnum(value));
         }
 
         public static FailureStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FailureStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,22 +306,15 @@ public class FailureJobParams {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -528,24 +507,20 @@ public class FailureJobParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailureJobParams failureJobParams = (FailureJobParams) o;
-        return Objects.equals(this.jobType, failureJobParams.jobType)
-            && Objects.equals(this.jobStatus, failureJobParams.jobStatus)
-            && Objects.equals(this.beginTime, failureJobParams.beginTime)
-            && Objects.equals(this.jobId, failureJobParams.jobId)
-            && Objects.equals(this.failureStatus, failureJobParams.failureStatus)
-            && Objects.equals(this.resourceId, failureJobParams.resourceId)
-            && Objects.equals(this.resourceName, failureJobParams.resourceName)
-            && Objects.equals(this.errorCode, failureJobParams.errorCode)
-            && Objects.equals(this.failReason, failureJobParams.failReason)
-            && Objects.equals(this.resourceType, failureJobParams.resourceType);
+        FailureJobParams that = (FailureJobParams) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobStatus, that.jobStatus)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.failureStatus, that.failureStatus)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

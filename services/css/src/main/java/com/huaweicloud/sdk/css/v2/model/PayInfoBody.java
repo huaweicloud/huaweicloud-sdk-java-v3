@@ -99,17 +99,16 @@ public class PayInfoBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PayInfoBody payInfoBody = (PayInfoBody) o;
-        return Objects.equals(this.payModel, payInfoBody.payModel) && Objects.equals(this.period, payInfoBody.period)
-            && Objects.equals(this.isAutoRenew, payInfoBody.isAutoRenew)
-            && Objects.equals(this.isAutoPay, payInfoBody.isAutoPay);
+        PayInfoBody that = (PayInfoBody) obj;
+        return Objects.equals(this.payModel, that.payModel) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ListTaskCasesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskCasesResponse listTaskCasesResponse = (ListTaskCasesResponse) o;
-        return Objects.equals(this.code, listTaskCasesResponse.code)
-            && Objects.equals(this.message, listTaskCasesResponse.message)
-            && Objects.equals(this.testCases, listTaskCasesResponse.testCases);
+        ListTaskCasesResponse that = (ListTaskCasesResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.testCases, that.testCases);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class QuotaDetailVolumesSSD {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailVolumesSSD quotaDetailVolumesSSD = (QuotaDetailVolumesSSD) o;
-        return Objects.equals(this.inUse, quotaDetailVolumesSSD.inUse)
-            && Objects.equals(this.limit, quotaDetailVolumesSSD.limit)
-            && Objects.equals(this.reserved, quotaDetailVolumesSSD.reserved);
+        QuotaDetailVolumesSSD that = (QuotaDetailVolumesSSD) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

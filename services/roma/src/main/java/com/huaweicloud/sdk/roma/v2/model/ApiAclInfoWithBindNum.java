@@ -166,21 +166,18 @@ public class ApiAclInfoWithBindNum {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAclInfoWithBindNum apiAclInfoWithBindNum = (ApiAclInfoWithBindNum) o;
-        return Objects.equals(this.aclName, apiAclInfoWithBindNum.aclName)
-            && Objects.equals(this.aclType, apiAclInfoWithBindNum.aclType)
-            && Objects.equals(this.aclValue, apiAclInfoWithBindNum.aclValue)
-            && Objects.equals(this.bindNum, apiAclInfoWithBindNum.bindNum)
-            && Objects.equals(this.entityType, apiAclInfoWithBindNum.entityType)
-            && Objects.equals(this.id, apiAclInfoWithBindNum.id)
-            && Objects.equals(this.updateTime, apiAclInfoWithBindNum.updateTime);
+        ApiAclInfoWithBindNum that = (ApiAclInfoWithBindNum) obj;
+        return Objects.equals(this.aclName, that.aclName) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.aclValue, that.aclValue) && Objects.equals(this.bindNum, that.bindNum)
+            && Objects.equals(this.entityType, that.entityType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

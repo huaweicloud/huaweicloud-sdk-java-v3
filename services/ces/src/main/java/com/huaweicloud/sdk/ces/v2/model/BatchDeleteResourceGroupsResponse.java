@@ -53,15 +53,15 @@ public class BatchDeleteResourceGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteResourceGroupsResponse batchDeleteResourceGroupsResponse = (BatchDeleteResourceGroupsResponse) o;
-        return Objects.equals(this.groupIds, batchDeleteResourceGroupsResponse.groupIds);
+        BatchDeleteResourceGroupsResponse that = (BatchDeleteResourceGroupsResponse) obj;
+        return Objects.equals(this.groupIds, that.groupIds);
     }
 
     @Override

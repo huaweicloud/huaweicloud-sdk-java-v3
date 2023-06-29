@@ -97,17 +97,16 @@ public class ListRelationFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationFileResponse listRelationFileResponse = (ListRelationFileResponse) o;
-        return Objects.equals(this.total, listRelationFileResponse.total)
-            && Objects.equals(this.currentPage, listRelationFileResponse.currentPage)
-            && Objects.equals(this.fileList, listRelationFileResponse.fileList);
+        ListRelationFileResponse that = (ListRelationFileResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.currentPage, that.currentPage)
+            && Objects.equals(this.fileList, that.fileList);
     }
 
     @Override

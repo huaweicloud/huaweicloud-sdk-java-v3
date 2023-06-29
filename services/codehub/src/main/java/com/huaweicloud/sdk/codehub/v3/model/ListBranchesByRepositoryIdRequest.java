@@ -99,18 +99,16 @@ public class ListBranchesByRepositoryIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBranchesByRepositoryIdRequest listBranchesByRepositoryIdRequest = (ListBranchesByRepositoryIdRequest) o;
-        return Objects.equals(this.repositoryId, listBranchesByRepositoryIdRequest.repositoryId)
-            && Objects.equals(this.page, listBranchesByRepositoryIdRequest.page)
-            && Objects.equals(this.perPage, listBranchesByRepositoryIdRequest.perPage)
-            && Objects.equals(this.match, listBranchesByRepositoryIdRequest.match);
+        ListBranchesByRepositoryIdRequest that = (ListBranchesByRepositoryIdRequest) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.perPage, that.perPage) && Objects.equals(this.match, that.match);
     }
 
     @Override

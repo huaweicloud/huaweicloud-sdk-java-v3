@@ -75,22 +75,15 @@ public class CertificateForm {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,18 @@ public class CertificateForm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificateForm certificateForm = (CertificateForm) o;
-        return Objects.equals(this.name, certificateForm.name)
-            && Objects.equals(this.certContent, certificateForm.certContent)
-            && Objects.equals(this.privateKey, certificateForm.privateKey)
-            && Objects.equals(this.type, certificateForm.type)
-            && Objects.equals(this.instanceId, certificateForm.instanceId)
-            && Objects.equals(this.trustedRootCa, certificateForm.trustedRootCa);
+        CertificateForm that = (CertificateForm) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.certContent, that.certContent)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.trustedRootCa, that.trustedRootCa);
     }
 
     @Override

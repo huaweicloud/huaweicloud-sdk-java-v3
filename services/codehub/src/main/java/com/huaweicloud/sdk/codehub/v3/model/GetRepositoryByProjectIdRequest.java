@@ -33,15 +33,15 @@ public class GetRepositoryByProjectIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetRepositoryByProjectIdRequest getRepositoryByProjectIdRequest = (GetRepositoryByProjectIdRequest) o;
-        return Objects.equals(this.repositoryUuid, getRepositoryByProjectIdRequest.repositoryUuid);
+        GetRepositoryByProjectIdRequest that = (GetRepositoryByProjectIdRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid);
     }
 
     @Override

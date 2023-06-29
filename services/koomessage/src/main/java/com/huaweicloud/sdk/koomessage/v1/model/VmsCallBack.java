@@ -77,17 +77,16 @@ public class VmsCallBack {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VmsCallBack vmsCallBack = (VmsCallBack) o;
-        return Objects.equals(this.urlType, vmsCallBack.urlType)
-            && Objects.equals(this.callbackUrl, vmsCallBack.callbackUrl)
-            && Objects.equals(this.remark, vmsCallBack.remark);
+        VmsCallBack that = (VmsCallBack) obj;
+        return Objects.equals(this.urlType, that.urlType) && Objects.equals(this.callbackUrl, that.callbackUrl)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

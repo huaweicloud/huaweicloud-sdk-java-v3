@@ -146,20 +146,17 @@ public class CheckRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRecordRequest checkRecordRequest = (CheckRecordRequest) o;
-        return Objects.equals(this.projectId, checkRecordRequest.projectId)
-            && Objects.equals(this.taskId, checkRecordRequest.taskId)
-            && Objects.equals(this.offset, checkRecordRequest.offset)
-            && Objects.equals(this.limit, checkRecordRequest.limit)
-            && Objects.equals(this.startTime, checkRecordRequest.startTime)
-            && Objects.equals(this.endTime, checkRecordRequest.endTime);
+        CheckRecordRequest that = (CheckRecordRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

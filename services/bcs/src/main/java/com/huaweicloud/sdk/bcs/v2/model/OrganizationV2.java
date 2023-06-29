@@ -121,18 +121,17 @@ public class OrganizationV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrganizationV2 organizationV2 = (OrganizationV2) o;
-        return Objects.equals(this.name, organizationV2.name) && Objects.equals(this.nameHash, organizationV2.nameHash)
-            && Objects.equals(this.nodeCount, organizationV2.nodeCount)
-            && Objects.equals(this.status, organizationV2.status)
-            && Objects.equals(this.statusDetail, organizationV2.statusDetail);
+        OrganizationV2 that = (OrganizationV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameHash, that.nameHash)
+            && Objects.equals(this.nodeCount, that.nodeCount) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusDetail, that.statusDetail);
     }
 
     @Override

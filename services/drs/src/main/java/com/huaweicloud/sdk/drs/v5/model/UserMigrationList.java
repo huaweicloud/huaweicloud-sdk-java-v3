@@ -99,17 +99,16 @@ public class UserMigrationList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserMigrationList userMigrationList = (UserMigrationList) o;
-        return Objects.equals(this.id, userMigrationList.id) && Objects.equals(this.account, userMigrationList.account)
-            && Objects.equals(this.isSetPassword, userMigrationList.isSetPassword)
-            && Objects.equals(this.password, userMigrationList.password);
+        UserMigrationList that = (UserMigrationList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.isSetPassword, that.isSetPassword) && Objects.equals(this.password, that.password);
     }
 
     @Override

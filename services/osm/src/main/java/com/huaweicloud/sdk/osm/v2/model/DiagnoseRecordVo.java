@@ -250,22 +250,19 @@ public class DiagnoseRecordVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiagnoseRecordVo diagnoseRecordVo = (DiagnoseRecordVo) o;
-        return Objects.equals(this.id, diagnoseRecordVo.id) && Objects.equals(this.status, diagnoseRecordVo.status)
-            && Objects.equals(this.params, diagnoseRecordVo.params)
-            && Objects.equals(this.domainId, diagnoseRecordVo.domainId)
-            && Objects.equals(this.createTime, diagnoseRecordVo.createTime)
-            && Objects.equals(this.jobId, diagnoseRecordVo.jobId)
-            && Objects.equals(this.abnormalItems, diagnoseRecordVo.abnormalItems)
-            && Objects.equals(this.redCount, diagnoseRecordVo.redCount)
-            && Objects.equals(this.region, diagnoseRecordVo.region);
+        DiagnoseRecordVo that = (DiagnoseRecordVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.abnormalItems, that.abnormalItems) && Objects.equals(this.redCount, that.redCount)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override

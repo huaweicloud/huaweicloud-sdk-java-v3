@@ -87,17 +87,16 @@ public class UpdateConsumerGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConsumerGroupRequest updateConsumerGroupRequest = (UpdateConsumerGroupRequest) o;
-        return Objects.equals(this.instanceId, updateConsumerGroupRequest.instanceId)
-            && Objects.equals(this.group, updateConsumerGroupRequest.group)
-            && Objects.equals(this.body, updateConsumerGroupRequest.body);
+        UpdateConsumerGroupRequest that = (UpdateConsumerGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

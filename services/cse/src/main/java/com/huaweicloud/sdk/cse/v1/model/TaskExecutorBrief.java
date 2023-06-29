@@ -55,16 +55,15 @@ public class TaskExecutorBrief {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskExecutorBrief taskExecutorBrief = (TaskExecutorBrief) o;
-        return Objects.equals(this.duration, taskExecutorBrief.duration)
-            && Objects.equals(this.description, taskExecutorBrief.description);
+        TaskExecutorBrief that = (TaskExecutorBrief) obj;
+        return Objects.equals(this.duration, that.duration) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -99,16 +99,16 @@ public class DatabaseDiskDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseDiskDto databaseDiskDto = (DatabaseDiskDto) o;
-        return Objects.equals(this.type, databaseDiskDto.type) && Objects.equals(this.space, databaseDiskDto.space)
-            && Objects.equals(this.encrypt, databaseDiskDto.encrypt) && Objects.equals(this.used, databaseDiskDto.used);
+        DatabaseDiskDto that = (DatabaseDiskDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.space, that.space)
+            && Objects.equals(this.encrypt, that.encrypt) && Objects.equals(this.used, that.used);
     }
 
     @Override

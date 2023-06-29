@@ -1,107 +1,88 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.ProbeDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowEdgeApplicationVersionResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_multi_instance")
-    
+    @JsonProperty(value = "deploy_multi_instance")
 
     private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sdk_version")
-    
+    @JsonProperty(value = "sdk_version")
 
     private String sdkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
+
     /**
      * 应用版本状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum DRAFT for value: "DRAFT"
          */
         public static final StateEnum DRAFT = new StateEnum("DRAFT");
-        
+
         /**
          * Enum PUBLISHED for value: "PUBLISHED"
          */
         public static final StateEnum PUBLISHED = new StateEnum("PUBLISHED");
-        
+
         /**
          * Enum OFF_SHELF for value: "OFF_SHELF"
          */
         public static final StateEnum OFF_SHELF = new StateEnum("OFF_SHELF");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -131,25 +112,18 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,80 +141,72 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveness_probe")
-    
+    @JsonProperty(value = "liveness_probe")
 
     private ProbeDTO livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readiness_probe")
-    
+    @JsonProperty(value = "readiness_probe")
 
     private ProbeDTO readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private List<String> arch = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command")
-    
+    @JsonProperty(value = "command")
+
     private List<String> command = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="args")
-    
+    @JsonProperty(value = "args")
+
     private List<String> args = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_settings")
-    
+    @JsonProperty(value = "container_settings")
 
     private ContainerSettingsDTO containerSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="outputs")
-    
+    @JsonProperty(value = "outputs")
+
     private List<String> outputs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inputs")
-    
+    @JsonProperty(value = "inputs")
+
     private List<String> inputs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="services")
-    
+    @JsonProperty(value = "services")
+
     private List<String> services = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_time")
-    
+    @JsonProperty(value = "publish_time")
 
     private String publishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="off_shelf_time")
-    
+    @JsonProperty(value = "off_shelf_time")
 
     private String offShelfTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supplier")
-    
+    @JsonProperty(value = "supplier")
 
     private String supplier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tpl_id")
-    
+    @JsonProperty(value = "tpl_id")
 
     private String tplId;
 
@@ -248,9 +214,6 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -264,15 +227,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -286,15 +244,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -308,15 +261,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.deployType = deployType;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withDeployMultiInstance(Boolean deployMultiInstance) {
         this.deployMultiInstance = deployMultiInstance;
         return this;
     }
-
-    
-
 
     /**
      * 是否允许部署多实例
@@ -330,15 +278,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.deployMultiInstance = deployMultiInstance;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -352,15 +295,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withSdkVersion(String sdkVersion) {
         this.sdkVersion = sdkVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用集成的边缘SDK版本
@@ -374,15 +312,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.sdkVersion = sdkVersion;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -396,15 +329,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -418,15 +346,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -440,15 +363,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本状态
@@ -462,22 +380,19 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withLivenessProbe(ProbeDTO livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
     public ShowEdgeApplicationVersionResponse withLivenessProbe(Consumer<ProbeDTO> livenessProbeSetter) {
-        if(this.livenessProbe == null ){
+        if (this.livenessProbe == null) {
             this.livenessProbe = new ProbeDTO();
             livenessProbeSetter.accept(this.livenessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get livenessProbe
@@ -491,22 +406,19 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.livenessProbe = livenessProbe;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withReadinessProbe(ProbeDTO readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
     public ShowEdgeApplicationVersionResponse withReadinessProbe(Consumer<ProbeDTO> readinessProbeSetter) {
-        if(this.readinessProbe == null ){
+        if (this.readinessProbe == null) {
             this.readinessProbe = new ProbeDTO();
             readinessProbeSetter.accept(this.readinessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get readinessProbe
@@ -520,16 +432,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.readinessProbe = readinessProbe;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withArch(List<String> arch) {
         this.arch = arch;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addArchItem(String archItem) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         this.arch.add(archItem);
@@ -537,7 +446,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withArch(Consumer<List<String>> archSetter) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         archSetter.accept(this.arch);
@@ -556,16 +465,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.arch = arch;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withCommand(List<String> command) {
         this.command = command;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addCommandItem(String commandItem) {
-        if(this.command == null) {
+        if (this.command == null) {
             this.command = new ArrayList<>();
         }
         this.command.add(commandItem);
@@ -573,7 +479,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withCommand(Consumer<List<String>> commandSetter) {
-        if(this.command == null) {
+        if (this.command == null) {
             this.command = new ArrayList<>();
         }
         commandSetter.accept(this.command);
@@ -592,16 +498,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.command = command;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withArgs(List<String> args) {
         this.args = args;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addArgsItem(String argsItem) {
-        if(this.args == null) {
+        if (this.args == null) {
             this.args = new ArrayList<>();
         }
         this.args.add(argsItem);
@@ -609,7 +512,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withArgs(Consumer<List<String>> argsSetter) {
-        if(this.args == null) {
+        if (this.args == null) {
             this.args = new ArrayList<>();
         }
         argsSetter.accept(this.args);
@@ -628,22 +531,20 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.args = args;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withContainerSettings(ContainerSettingsDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
     }
 
-    public ShowEdgeApplicationVersionResponse withContainerSettings(Consumer<ContainerSettingsDTO> containerSettingsSetter) {
-        if(this.containerSettings == null ){
+    public ShowEdgeApplicationVersionResponse withContainerSettings(
+        Consumer<ContainerSettingsDTO> containerSettingsSetter) {
+        if (this.containerSettings == null) {
             this.containerSettings = new ContainerSettingsDTO();
             containerSettingsSetter.accept(this.containerSettings);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get containerSettings
@@ -657,16 +558,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.containerSettings = containerSettings;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withOutputs(List<String> outputs) {
         this.outputs = outputs;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addOutputsItem(String outputsItem) {
-        if(this.outputs == null) {
+        if (this.outputs == null) {
             this.outputs = new ArrayList<>();
         }
         this.outputs.add(outputsItem);
@@ -674,7 +572,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withOutputs(Consumer<List<String>> outputsSetter) {
-        if(this.outputs == null) {
+        if (this.outputs == null) {
             this.outputs = new ArrayList<>();
         }
         outputsSetter.accept(this.outputs);
@@ -693,16 +591,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.outputs = outputs;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withInputs(List<String> inputs) {
         this.inputs = inputs;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addInputsItem(String inputsItem) {
-        if(this.inputs == null) {
+        if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
         this.inputs.add(inputsItem);
@@ -710,7 +605,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withInputs(Consumer<List<String>> inputsSetter) {
-        if(this.inputs == null) {
+        if (this.inputs == null) {
             this.inputs = new ArrayList<>();
         }
         inputsSetter.accept(this.inputs);
@@ -729,16 +624,13 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.inputs = inputs;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withServices(List<String> services) {
         this.services = services;
         return this;
     }
 
-    
     public ShowEdgeApplicationVersionResponse addServicesItem(String servicesItem) {
-        if(this.services == null) {
+        if (this.services == null) {
             this.services = new ArrayList<>();
         }
         this.services.add(servicesItem);
@@ -746,7 +638,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     public ShowEdgeApplicationVersionResponse withServices(Consumer<List<String>> servicesSetter) {
-        if(this.services == null) {
+        if (this.services == null) {
             this.services = new ArrayList<>();
         }
         servicesSetter.accept(this.services);
@@ -765,15 +657,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.services = services;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withPublishTime(String publishTime) {
         this.publishTime = publishTime;
         return this;
     }
-
-    
-
 
     /**
      * 发布时间
@@ -787,15 +674,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.publishTime = publishTime;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withOffShelfTime(String offShelfTime) {
         this.offShelfTime = offShelfTime;
         return this;
     }
-
-    
-
 
     /**
      * 下线时间
@@ -809,15 +691,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.offShelfTime = offShelfTime;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withSupplier(String supplier) {
         this.supplier = supplier;
         return this;
     }
-
-    
-
 
     /**
      * 驱动厂商
@@ -831,15 +708,10 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.supplier = supplier;
     }
 
-    
-
     public ShowEdgeApplicationVersionResponse withTplId(String tplId) {
         this.tplId = tplId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id
@@ -853,45 +725,58 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         this.tplId = tplId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeApplicationVersionResponse showEdgeApplicationVersionResponse = (ShowEdgeApplicationVersionResponse) o;
-        return Objects.equals(this.edgeAppId, showEdgeApplicationVersionResponse.edgeAppId) &&
-            Objects.equals(this.name, showEdgeApplicationVersionResponse.name) &&
-            Objects.equals(this.deployType, showEdgeApplicationVersionResponse.deployType) &&
-            Objects.equals(this.deployMultiInstance, showEdgeApplicationVersionResponse.deployMultiInstance) &&
-            Objects.equals(this.version, showEdgeApplicationVersionResponse.version) &&
-            Objects.equals(this.sdkVersion, showEdgeApplicationVersionResponse.sdkVersion) &&
-            Objects.equals(this.description, showEdgeApplicationVersionResponse.description) &&
-            Objects.equals(this.createTime, showEdgeApplicationVersionResponse.createTime) &&
-            Objects.equals(this.updateTime, showEdgeApplicationVersionResponse.updateTime) &&
-            Objects.equals(this.state, showEdgeApplicationVersionResponse.state) &&
-            Objects.equals(this.livenessProbe, showEdgeApplicationVersionResponse.livenessProbe) &&
-            Objects.equals(this.readinessProbe, showEdgeApplicationVersionResponse.readinessProbe) &&
-            Objects.equals(this.arch, showEdgeApplicationVersionResponse.arch) &&
-            Objects.equals(this.command, showEdgeApplicationVersionResponse.command) &&
-            Objects.equals(this.args, showEdgeApplicationVersionResponse.args) &&
-            Objects.equals(this.containerSettings, showEdgeApplicationVersionResponse.containerSettings) &&
-            Objects.equals(this.outputs, showEdgeApplicationVersionResponse.outputs) &&
-            Objects.equals(this.inputs, showEdgeApplicationVersionResponse.inputs) &&
-            Objects.equals(this.services, showEdgeApplicationVersionResponse.services) &&
-            Objects.equals(this.publishTime, showEdgeApplicationVersionResponse.publishTime) &&
-            Objects.equals(this.offShelfTime, showEdgeApplicationVersionResponse.offShelfTime) &&
-            Objects.equals(this.supplier, showEdgeApplicationVersionResponse.supplier) &&
-            Objects.equals(this.tplId, showEdgeApplicationVersionResponse.tplId);
+        ShowEdgeApplicationVersionResponse that = (ShowEdgeApplicationVersionResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deployMultiInstance, that.deployMultiInstance)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.sdkVersion, that.sdkVersion)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.services, that.services) && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.offShelfTime, that.offShelfTime) && Objects.equals(this.supplier, that.supplier)
+            && Objects.equals(this.tplId, that.tplId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, name, deployType, deployMultiInstance, version, sdkVersion, description, createTime, updateTime, state, livenessProbe, readinessProbe, arch, command, args, containerSettings, outputs, inputs, services, publishTime, offShelfTime, supplier, tplId);
+        return Objects.hash(edgeAppId,
+            name,
+            deployType,
+            deployMultiInstance,
+            version,
+            sdkVersion,
+            description,
+            createTime,
+            updateTime,
+            state,
+            livenessProbe,
+            readinessProbe,
+            arch,
+            command,
+            args,
+            containerSettings,
+            outputs,
+            inputs,
+            services,
+            publishTime,
+            offShelfTime,
+            supplier,
+            tplId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -922,6 +807,7 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -932,8 +818,5 @@ public class ShowEdgeApplicationVersionResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

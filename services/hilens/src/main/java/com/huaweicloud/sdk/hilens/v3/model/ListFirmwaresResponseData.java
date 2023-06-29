@@ -404,31 +404,23 @@ public class ListFirmwaresResponseData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFirmwaresResponseData listFirmwaresResponseData = (ListFirmwaresResponseData) o;
-        return Objects.equals(this.id, listFirmwaresResponseData.id)
-            && Objects.equals(this.name, listFirmwaresResponseData.name)
-            && Objects.equals(this.description, listFirmwaresResponseData.description)
-            && Objects.equals(this.version, listFirmwaresResponseData.version)
-            && Objects.equals(this.versionType, listFirmwaresResponseData.versionType)
-            && Objects.equals(this.expireTime, listFirmwaresResponseData.expireTime)
-            && Objects.equals(this.firmwareWhitelist, listFirmwaresResponseData.firmwareWhitelist)
-            && Objects.equals(this.type, listFirmwaresResponseData.type)
-            && Objects.equals(this.series, listFirmwaresResponseData.series)
-            && Objects.equals(this.deviceType, listFirmwaresResponseData.deviceType)
-            && Objects.equals(this.arch, listFirmwaresResponseData.arch)
-            && Objects.equals(this.osName, listFirmwaresResponseData.osName)
-            && Objects.equals(this.osType, listFirmwaresResponseData.osType)
-            && Objects.equals(this.osVersion, listFirmwaresResponseData.osVersion)
-            && Objects.equals(this.size, listFirmwaresResponseData.size)
-            && Objects.equals(this.createTime, listFirmwaresResponseData.createTime)
-            && Objects.equals(this.updateTime, listFirmwaresResponseData.updateTime);
+        ListFirmwaresResponseData that = (ListFirmwaresResponseData) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.firmwareWhitelist, that.firmwareWhitelist) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.series, that.series) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.osName, that.osName)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

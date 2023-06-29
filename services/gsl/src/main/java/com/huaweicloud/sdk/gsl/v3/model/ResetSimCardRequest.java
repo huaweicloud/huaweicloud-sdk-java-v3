@@ -66,16 +66,15 @@ public class ResetSimCardRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetSimCardRequest resetSimCardRequest = (ResetSimCardRequest) o;
-        return Objects.equals(this.simCardId, resetSimCardRequest.simCardId)
-            && Objects.equals(this.body, resetSimCardRequest.body);
+        ResetSimCardRequest that = (ResetSimCardRequest) obj;
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.body, that.body);
     }
 
     @Override

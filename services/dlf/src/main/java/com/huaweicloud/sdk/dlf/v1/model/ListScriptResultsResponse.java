@@ -75,16 +75,15 @@ public class ListScriptResultsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScriptResultsResponse listScriptResultsResponse = (ListScriptResultsResponse) o;
-        return Objects.equals(this.status, listScriptResultsResponse.status)
-            && Objects.equals(this.result, listScriptResultsResponse.result);
+        ListScriptResultsResponse that = (ListScriptResultsResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result);
     }
 
     @Override

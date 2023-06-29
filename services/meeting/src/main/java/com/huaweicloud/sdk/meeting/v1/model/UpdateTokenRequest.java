@@ -57,16 +57,16 @@ public class UpdateTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTokenRequest updateTokenRequest = (UpdateTokenRequest) o;
-        return Objects.equals(this.xRequestID, updateTokenRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, updateTokenRequest.acceptLanguage);
+        UpdateTokenRequest that = (UpdateTokenRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage);
     }
 
     @Override

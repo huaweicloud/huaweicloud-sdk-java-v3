@@ -275,26 +275,25 @@ public class InvitorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InvitorInfo invitorInfo = (InvitorInfo) o;
-        return Objects.equals(this.invitorId, invitorInfo.invitorId)
-            && Objects.equals(this.invitorName, invitorInfo.invitorName)
-            && Objects.equals(this.invitorBcsId, invitorInfo.invitorBcsId)
-            && Objects.equals(this.invitorBcsName, invitorInfo.invitorBcsName)
-            && Objects.equals(this.invitorConsensus, invitorInfo.invitorConsensus)
-            && Objects.equals(this.invitorProjectId, invitorInfo.invitorProjectId)
-            && Objects.equals(this.invitorClusterType, invitorInfo.invitorClusterType)
-            && Objects.equals(this.invitorDatabaseType, invitorInfo.invitorDatabaseType)
-            && Objects.equals(this.invitorSignatureAlgorithm, invitorInfo.invitorSignatureAlgorithm)
-            && Objects.equals(this.invitorFabricVersion, invitorInfo.invitorFabricVersion)
-            && Objects.equals(this.orderFadeEnabled, invitorInfo.orderFadeEnabled)
-            && Objects.equals(this.orderFadeCache, invitorInfo.orderFadeCache);
+        InvitorInfo that = (InvitorInfo) obj;
+        return Objects.equals(this.invitorId, that.invitorId) && Objects.equals(this.invitorName, that.invitorName)
+            && Objects.equals(this.invitorBcsId, that.invitorBcsId)
+            && Objects.equals(this.invitorBcsName, that.invitorBcsName)
+            && Objects.equals(this.invitorConsensus, that.invitorConsensus)
+            && Objects.equals(this.invitorProjectId, that.invitorProjectId)
+            && Objects.equals(this.invitorClusterType, that.invitorClusterType)
+            && Objects.equals(this.invitorDatabaseType, that.invitorDatabaseType)
+            && Objects.equals(this.invitorSignatureAlgorithm, that.invitorSignatureAlgorithm)
+            && Objects.equals(this.invitorFabricVersion, that.invitorFabricVersion)
+            && Objects.equals(this.orderFadeEnabled, that.orderFadeEnabled)
+            && Objects.equals(this.orderFadeCache, that.orderFadeCache);
     }
 
     @Override

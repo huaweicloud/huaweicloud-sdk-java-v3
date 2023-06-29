@@ -108,22 +108,15 @@ public class SubDevice {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class SubDevice {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OnlineStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OnlineStatusEnum(value));
         }
 
         public static OnlineStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -751,34 +737,32 @@ public class SubDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubDevice subDevice = (SubDevice) o;
-        return Objects.equals(this.id, subDevice.id) && Objects.equals(this.deviceId, subDevice.deviceId)
-            && Objects.equals(this.parentDeviceId, subDevice.parentDeviceId)
-            && Objects.equals(this.parentDeviceName, subDevice.parentDeviceName)
-            && Objects.equals(this.product, subDevice.product) && Objects.equals(this.deviceName, subDevice.deviceName)
-            && Objects.equals(this.instanceId, subDevice.instanceId)
-            && Objects.equals(this.clientId, subDevice.clientId) && Objects.equals(this.nodeId, subDevice.nodeId)
-            && Objects.equals(this.status, subDevice.status)
-            && Objects.equals(this.onlineStatus, subDevice.onlineStatus)
-            && Objects.equals(this.description, subDevice.description)
-            && Objects.equals(this.authentication, subDevice.authentication)
-            && Objects.equals(this.createdUser, subDevice.createdUser)
-            && Objects.equals(this.lastUpdatedUser, subDevice.lastUpdatedUser)
-            && Objects.equals(this.tags, subDevice.tags)
-            && Objects.equals(this.createdDatetime, subDevice.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, subDevice.lastUpdatedDatetime)
-            && Objects.equals(this.connectAddress, subDevice.connectAddress)
-            && Objects.equals(this.sslConnectAddress, subDevice.sslConnectAddress)
-            && Objects.equals(this.ipv6ConnectAddress, subDevice.ipv6ConnectAddress)
-            && Objects.equals(this.ipv6SslConnectAddress, subDevice.ipv6SslConnectAddress)
-            && Objects.equals(this.appId, subDevice.appId);
+        SubDevice that = (SubDevice) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.parentDeviceId, that.parentDeviceId)
+            && Objects.equals(this.parentDeviceName, that.parentDeviceName)
+            && Objects.equals(this.product, that.product) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.sslConnectAddress, that.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, that.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, that.ipv6SslConnectAddress)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

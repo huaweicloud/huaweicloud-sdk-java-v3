@@ -111,18 +111,17 @@ public class ResetActivecodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetActivecodeRequest resetActivecodeRequest = (ResetActivecodeRequest) o;
-        return Objects.equals(this.xRequestId, resetActivecodeRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, resetActivecodeRequest.acceptLanguage)
-            && Objects.equals(this.sn, resetActivecodeRequest.sn)
-            && Objects.equals(this.body, resetActivecodeRequest.body);
+        ResetActivecodeRequest that = (ResetActivecodeRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.sn, that.sn)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

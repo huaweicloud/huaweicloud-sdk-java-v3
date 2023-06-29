@@ -95,22 +95,15 @@ public class ListProtectedInstancesRequest {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -294,23 +287,21 @@ public class ListProtectedInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectedInstancesRequest listProtectedInstancesRequest = (ListProtectedInstancesRequest) o;
-        return Objects.equals(this.serverGroupId, listProtectedInstancesRequest.serverGroupId)
-            && Objects.equals(this.serverGroupIds, listProtectedInstancesRequest.serverGroupIds)
-            && Objects.equals(this.protectedInstanceIds, listProtectedInstancesRequest.protectedInstanceIds)
-            && Objects.equals(this.limit, listProtectedInstancesRequest.limit)
-            && Objects.equals(this.offset, listProtectedInstancesRequest.offset)
-            && Objects.equals(this.status, listProtectedInstancesRequest.status)
-            && Objects.equals(this.name, listProtectedInstancesRequest.name)
-            && Objects.equals(this.queryType, listProtectedInstancesRequest.queryType)
-            && Objects.equals(this.availabilityZone, listProtectedInstancesRequest.availabilityZone);
+        ListProtectedInstancesRequest that = (ListProtectedInstancesRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.serverGroupIds, that.serverGroupIds)
+            && Objects.equals(this.protectedInstanceIds, that.protectedInstanceIds)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

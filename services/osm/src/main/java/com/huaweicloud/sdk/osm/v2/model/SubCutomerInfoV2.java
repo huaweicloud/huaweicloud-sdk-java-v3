@@ -143,20 +143,17 @@ public class SubCutomerInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubCutomerInfoV2 subCutomerInfoV2 = (SubCutomerInfoV2) o;
-        return Objects.equals(this.mobile, subCutomerInfoV2.mobile)
-            && Objects.equals(this.email, subCutomerInfoV2.email)
-            && Objects.equals(this.customerId, subCutomerInfoV2.customerId)
-            && Objects.equals(this.domainId, subCutomerInfoV2.domainId)
-            && Objects.equals(this.customerName, subCutomerInfoV2.customerName)
-            && Objects.equals(this.areaCode, subCutomerInfoV2.areaCode);
+        SubCutomerInfoV2 that = (SubCutomerInfoV2) obj;
+        return Objects.equals(this.mobile, that.mobile) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.customerName, that.customerName) && Objects.equals(this.areaCode, that.areaCode);
     }
 
     @Override

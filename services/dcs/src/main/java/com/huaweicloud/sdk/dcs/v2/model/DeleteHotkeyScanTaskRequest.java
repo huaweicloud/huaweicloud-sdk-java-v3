@@ -55,16 +55,15 @@ public class DeleteHotkeyScanTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHotkeyScanTaskRequest deleteHotkeyScanTaskRequest = (DeleteHotkeyScanTaskRequest) o;
-        return Objects.equals(this.instanceId, deleteHotkeyScanTaskRequest.instanceId)
-            && Objects.equals(this.hotkeyId, deleteHotkeyScanTaskRequest.hotkeyId);
+        DeleteHotkeyScanTaskRequest that = (DeleteHotkeyScanTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.hotkeyId, that.hotkeyId);
     }
 
     @Override

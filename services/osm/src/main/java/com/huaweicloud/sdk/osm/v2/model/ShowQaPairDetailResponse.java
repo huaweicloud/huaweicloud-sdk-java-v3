@@ -88,17 +88,16 @@ public class ShowQaPairDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQaPairDetailResponse showQaPairDetailResponse = (ShowQaPairDetailResponse) o;
-        return Objects.equals(this.qapair, showQaPairDetailResponse.qapair)
-            && Objects.equals(this.errorCode, showQaPairDetailResponse.errorCode)
-            && Objects.equals(this.errorMsg, showQaPairDetailResponse.errorMsg);
+        ShowQaPairDetailResponse that = (ShowQaPairDetailResponse) obj;
+        return Objects.equals(this.qapair, that.qapair) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

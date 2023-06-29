@@ -122,19 +122,18 @@ public class CreateEdgeAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeAppResponse createEdgeAppResponse = (CreateEdgeAppResponse) o;
-        return Objects.equals(this.edgeAppId, createEdgeAppResponse.edgeAppId)
-            && Objects.equals(this.description, createEdgeAppResponse.description)
-            && Objects.equals(this.createdTime, createEdgeAppResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, createEdgeAppResponse.lastModifiedTime)
-            && Objects.equals(this.lastPublishedVersion, createEdgeAppResponse.lastPublishedVersion);
+        CreateEdgeAppResponse that = (CreateEdgeAppResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.lastPublishedVersion, that.lastPublishedVersion);
     }
 
     @Override

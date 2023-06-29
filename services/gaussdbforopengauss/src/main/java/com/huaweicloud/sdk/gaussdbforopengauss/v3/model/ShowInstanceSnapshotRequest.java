@@ -1,42 +1,34 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowInstanceSnapshotRequest  {
+public class ShowInstanceSnapshotRequest {
 
     /**
      * 语言。默认值：en-us。
      */
     public static final class XLanguageEnum {
 
-        
         /**
          * Enum ZH_CN for value: "zh-cn"
          */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
+
         /**
          * Enum EN_US for value: "en-us"
          */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +57,18 @@ public class ShowInstanceSnapshotRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,26 +86,22 @@ public class ShowInstanceSnapshotRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_time")
-    
+    @JsonProperty(value = "restore_time")
 
     private String restoreTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 
@@ -129,15 +110,12 @@ public class ShowInstanceSnapshotRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。默认值：en-us。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -146,15 +124,10 @@ public class ShowInstanceSnapshotRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowInstanceSnapshotRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 原实例ID。  (instance_id 、restore_time为一组)
@@ -168,15 +141,10 @@ public class ShowInstanceSnapshotRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowInstanceSnapshotRequest withRestoreTime(String restoreTime) {
         this.restoreTime = restoreTime;
         return this;
     }
-
-    
-
 
     /**
      * UNIX时间戳格式，单位是毫秒，时区是UTC，某时间点实例的信息。  (instance_id 、restore_time为一组)
@@ -190,15 +158,10 @@ public class ShowInstanceSnapshotRequest  {
         this.restoreTime = restoreTime;
     }
 
-    
-
     public ShowInstanceSnapshotRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。  (backup_id为一组)  备份ID不为空时，可以不需要实例ID和时间戳。
@@ -212,26 +175,24 @@ public class ShowInstanceSnapshotRequest  {
         this.backupId = backupId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceSnapshotRequest showInstanceSnapshotRequest = (ShowInstanceSnapshotRequest) o;
-        return Objects.equals(this.xLanguage, showInstanceSnapshotRequest.xLanguage) &&
-            Objects.equals(this.instanceId, showInstanceSnapshotRequest.instanceId) &&
-            Objects.equals(this.restoreTime, showInstanceSnapshotRequest.restoreTime) &&
-            Objects.equals(this.backupId, showInstanceSnapshotRequest.backupId);
+        ShowInstanceSnapshotRequest that = (ShowInstanceSnapshotRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.restoreTime, that.restoreTime) && Objects.equals(this.backupId, that.backupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, restoreTime, backupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -243,6 +204,7 @@ public class ShowInstanceSnapshotRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -253,8 +215,5 @@ public class ShowInstanceSnapshotRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

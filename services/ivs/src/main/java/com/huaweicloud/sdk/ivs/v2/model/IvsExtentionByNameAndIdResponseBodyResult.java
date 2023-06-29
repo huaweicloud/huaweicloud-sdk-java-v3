@@ -97,18 +97,16 @@ public class IvsExtentionByNameAndIdResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IvsExtentionByNameAndIdResponseBodyResult ivsExtentionByNameAndIdResponseBodyResult =
-            (IvsExtentionByNameAndIdResponseBodyResult) o;
-        return Objects.equals(this.serviceName, ivsExtentionByNameAndIdResponseBodyResult.serviceName)
-            && Objects.equals(this.count, ivsExtentionByNameAndIdResponseBodyResult.count)
-            && Objects.equals(this.respData, ivsExtentionByNameAndIdResponseBodyResult.respData);
+        IvsExtentionByNameAndIdResponseBodyResult that = (IvsExtentionByNameAndIdResponseBodyResult) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.respData, that.respData);
     }
 
     @Override

@@ -22,26 +22,26 @@ public class CreateTagRequest {
     private String resourceId;
 
     /**
-     * 资源类型: - cc: 云连接 - bwp: 带宽包
+     * 资源类型: - cloud-connection: 云连接 - bandwidth-package: 带宽包
      */
     public static final class ResourceTypeEnum {
 
         /**
-         * Enum CC for value: "cc"
+         * Enum CLOUD_CONNECTION for value: "cloud-connection"
          */
-        public static final ResourceTypeEnum CC = new ResourceTypeEnum("cc");
+        public static final ResourceTypeEnum CLOUD_CONNECTION = new ResourceTypeEnum("cloud-connection");
 
         /**
-         * Enum BWP for value: "bwp"
+         * Enum BANDWIDTH_PACKAGE for value: "bandwidth-package"
          */
-        public static final ResourceTypeEnum BWP = new ResourceTypeEnum("bwp");
+        public static final ResourceTypeEnum BANDWIDTH_PACKAGE = new ResourceTypeEnum("bandwidth-package");
 
         private static final Map<String, ResourceTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ResourceTypeEnum> createStaticFields() {
             Map<String, ResourceTypeEnum> map = new HashMap<>();
-            map.put("cc", CC);
-            map.put("bwp", BWP);
+            map.put("cloud-connection", CLOUD_CONNECTION);
+            map.put("bandwidth-package", BANDWIDTH_PACKAGE);
             return Collections.unmodifiableMap(map);
         }
 
@@ -66,22 +66,15 @@ public class CreateTagRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -131,7 +124,7 @@ public class CreateTagRequest {
     }
 
     /**
-     * 资源类型: - cc: 云连接 - bwp: 带宽包
+     * 资源类型: - cloud-connection: 云连接 - bandwidth-package: 带宽包
      * @return resourceType
      */
     public ResourceTypeEnum getResourceType() {
@@ -169,17 +162,16 @@ public class CreateTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTagRequest createTagRequest = (CreateTagRequest) o;
-        return Objects.equals(this.resourceId, createTagRequest.resourceId)
-            && Objects.equals(this.resourceType, createTagRequest.resourceType)
-            && Objects.equals(this.body, createTagRequest.body);
+        CreateTagRequest that = (CreateTagRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

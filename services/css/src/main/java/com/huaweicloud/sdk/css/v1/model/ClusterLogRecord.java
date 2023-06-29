@@ -209,23 +209,19 @@ public class ClusterLogRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterLogRecord clusterLogRecord = (ClusterLogRecord) o;
-        return Objects.equals(this.id, clusterLogRecord.id)
-            && Objects.equals(this.clusterId, clusterLogRecord.clusterId)
-            && Objects.equals(this.createAt, clusterLogRecord.createAt)
-            && Objects.equals(this.logPath, clusterLogRecord.logPath)
-            && Objects.equals(this.status, clusterLogRecord.status)
-            && Objects.equals(this.finishedAt, clusterLogRecord.finishedAt)
-            && Objects.equals(this.jobTypes, clusterLogRecord.jobTypes)
-            && Objects.equals(this.failedMsg, clusterLogRecord.failedMsg)
-            && Objects.equals(this.jobId, clusterLogRecord.jobId);
+        ClusterLogRecord that = (ClusterLogRecord) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.logPath, that.logPath)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.finishedAt, that.finishedAt)
+            && Objects.equals(this.jobTypes, that.jobTypes) && Objects.equals(this.failedMsg, that.failedMsg)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

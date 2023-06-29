@@ -97,22 +97,15 @@ public class MpeCallBackReq {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -273,19 +266,17 @@ public class MpeCallBackReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MpeCallBackReq mpeCallBackReq = (MpeCallBackReq) o;
-        return Objects.equals(this.taskType, mpeCallBackReq.taskType)
-            && Objects.equals(this.taskId, mpeCallBackReq.taskId) && Objects.equals(this.status, mpeCallBackReq.status)
-            && Objects.equals(this.completeRatio, mpeCallBackReq.completeRatio)
-            && Objects.equals(this.description, mpeCallBackReq.description)
-            && Objects.equals(this.metaData, mpeCallBackReq.metaData);
+        MpeCallBackReq that = (MpeCallBackReq) obj;
+        return Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.completeRatio, that.completeRatio)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

@@ -21,21 +21,21 @@ public class BssInfo {
     public static final class IsAutoRenewEnum {
 
         /**
-         * Enum NUMBER_0 for value: 0l
+         * Enum NUMBER_0 for value: 0L
          */
-        public static final IsAutoRenewEnum NUMBER_0 = new IsAutoRenewEnum(0l);
+        public static final IsAutoRenewEnum NUMBER_0 = new IsAutoRenewEnum(0L);
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final IsAutoRenewEnum NUMBER_1 = new IsAutoRenewEnum(1l);
+        public static final IsAutoRenewEnum NUMBER_1 = new IsAutoRenewEnum(1L);
 
         private static final Map<Long, IsAutoRenewEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, IsAutoRenewEnum> createStaticFields() {
             Map<Long, IsAutoRenewEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
+            map.put(0L, NUMBER_0);
+            map.put(1L, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -60,22 +60,15 @@ public class BssInfo {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoRenewEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
         }
 
         public static IsAutoRenewEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -108,21 +101,21 @@ public class BssInfo {
     public static final class PeriodTypeEnum {
 
         /**
-         * Enum NUMBER_2 for value: 2l
+         * Enum NUMBER_2 for value: 2L
          */
-        public static final PeriodTypeEnum NUMBER_2 = new PeriodTypeEnum(2l);
+        public static final PeriodTypeEnum NUMBER_2 = new PeriodTypeEnum(2L);
 
         /**
-         * Enum NUMBER_3 for value: 3l
+         * Enum NUMBER_3 for value: 3L
          */
-        public static final PeriodTypeEnum NUMBER_3 = new PeriodTypeEnum(3l);
+        public static final PeriodTypeEnum NUMBER_3 = new PeriodTypeEnum(3L);
 
         private static final Map<Long, PeriodTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, PeriodTypeEnum> createStaticFields() {
             Map<Long, PeriodTypeEnum> map = new HashMap<>();
-            map.put(2l, NUMBER_2);
-            map.put(3l, NUMBER_3);
+            map.put(2L, NUMBER_2);
+            map.put(3L, NUMBER_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -147,22 +140,15 @@ public class BssInfo {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -190,21 +176,21 @@ public class BssInfo {
     public static final class IsAutoPayEnum {
 
         /**
-         * Enum NUMBER_0 for value: 0l
+         * Enum NUMBER_0 for value: 0L
          */
-        public static final IsAutoPayEnum NUMBER_0 = new IsAutoPayEnum(0l);
+        public static final IsAutoPayEnum NUMBER_0 = new IsAutoPayEnum(0L);
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final IsAutoPayEnum NUMBER_1 = new IsAutoPayEnum(1l);
+        public static final IsAutoPayEnum NUMBER_1 = new IsAutoPayEnum(1L);
 
         private static final Map<Long, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, IsAutoPayEnum> createStaticFields() {
             Map<Long, IsAutoPayEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
+            map.put(0L, NUMBER_0);
+            map.put(1L, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -229,22 +215,15 @@ public class BssInfo {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoPayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoPayEnum(value));
         }
 
         public static IsAutoPayEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -337,17 +316,16 @@ public class BssInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BssInfo bssInfo = (BssInfo) o;
-        return Objects.equals(this.isAutoRenew, bssInfo.isAutoRenew)
-            && Objects.equals(this.periodNum, bssInfo.periodNum) && Objects.equals(this.periodType, bssInfo.periodType)
-            && Objects.equals(this.isAutoPay, bssInfo.isAutoPay);
+        BssInfo that = (BssInfo) obj;
+        return Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

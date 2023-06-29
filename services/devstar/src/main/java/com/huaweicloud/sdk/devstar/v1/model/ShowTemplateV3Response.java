@@ -729,42 +729,30 @@ public class ShowTemplateV3Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateV3Response showTemplateV3Response = (ShowTemplateV3Response) o;
-        return Objects.equals(this.id, showTemplateV3Response.id)
-            && Objects.equals(this.title, showTemplateV3Response.title)
-            && Objects.equals(this.description, showTemplateV3Response.description)
-            && Objects.equals(this.creatorId, showTemplateV3Response.creatorId)
-            && Objects.equals(this.creator, showTemplateV3Response.creator)
-            && Objects.equals(this.nickname, showTemplateV3Response.nickname)
-            && Objects.equals(this.score, showTemplateV3Response.score)
-            && Objects.equals(this.status, showTemplateV3Response.status)
-            && Objects.equals(this.viewCount, showTemplateV3Response.viewCount)
-            && Objects.equals(this.usageCount, showTemplateV3Response.usageCount)
-            && Objects.equals(this.createdAt, showTemplateV3Response.createdAt)
-            && Objects.equals(this.updatedAt, showTemplateV3Response.updatedAt)
-            && Objects.equals(this.publishedAt, showTemplateV3Response.publishedAt)
-            && Objects.equals(this.favoriteState, showTemplateV3Response.favoriteState)
-            && Objects.equals(this.maintainers, showTemplateV3Response.maintainers)
-            && Objects.equals(this.platformSource, showTemplateV3Response.platformSource)
-            && Objects.equals(this.properties, showTemplateV3Response.properties)
-            && Objects.equals(this.dependencies, showTemplateV3Response.dependencies)
-            && Objects.equals(this.dependencyType, showTemplateV3Response.dependencyType)
-            && Objects.equals(this.store, showTemplateV3Response.store)
-            && Objects.equals(this.storeInfo, showTemplateV3Response.storeInfo)
-            && Objects.equals(this.fileSize, showTemplateV3Response.fileSize)
-            && Objects.equals(this.deployment, showTemplateV3Response.deployment)
-            && Objects.equals(this.isStatic, showTemplateV3Response.isStatic)
-            && Objects.equals(this.updateId, showTemplateV3Response.updateId)
-            && Objects.equals(this.topic, showTemplateV3Response.topic)
-            && Objects.equals(this.tags, showTemplateV3Response.tags)
-            && Objects.equals(this.dependents, showTemplateV3Response.dependents);
+        ShowTemplateV3Response that = (ShowTemplateV3Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.nickname, that.nickname)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.viewCount, that.viewCount) && Objects.equals(this.usageCount, that.usageCount)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.publishedAt, that.publishedAt)
+            && Objects.equals(this.favoriteState, that.favoriteState)
+            && Objects.equals(this.maintainers, that.maintainers)
+            && Objects.equals(this.platformSource, that.platformSource)
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.dependencyType, that.dependencyType) && Objects.equals(this.store, that.store)
+            && Objects.equals(this.storeInfo, that.storeInfo) && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.deployment, that.deployment) && Objects.equals(this.isStatic, that.isStatic)
+            && Objects.equals(this.updateId, that.updateId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.dependents, that.dependents);
     }
 
     @Override

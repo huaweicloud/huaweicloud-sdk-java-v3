@@ -501,35 +501,27 @@ public class MetadataCollectionTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataCollectionTask metadataCollectionTask = (MetadataCollectionTask) o;
-        return Objects.equals(this.id, metadataCollectionTask.id)
-            && Objects.equals(this.name, metadataCollectionTask.name)
-            && Objects.equals(this.description, metadataCollectionTask.description)
-            && Objects.equals(this.userId, metadataCollectionTask.userId)
-            && Objects.equals(this.createTime, metadataCollectionTask.createTime)
-            && Objects.equals(this.projectId, metadataCollectionTask.projectId)
-            && Objects.equals(this.dirId, metadataCollectionTask.dirId)
-            && Objects.equals(this.scheduleConfig, metadataCollectionTask.scheduleConfig)
-            && Objects.equals(this.parameterConfig, metadataCollectionTask.parameterConfig)
-            && Objects.equals(this.updateTime, metadataCollectionTask.updateTime)
-            && Objects.equals(this.userName, metadataCollectionTask.userName)
-            && Objects.equals(this.path, metadataCollectionTask.path)
-            && Objects.equals(this.lastRunTime, metadataCollectionTask.lastRunTime)
-            && Objects.equals(this.startTime, metadataCollectionTask.startTime)
-            && Objects.equals(this.endTime, metadataCollectionTask.endTime)
-            && Objects.equals(this.nextRunTime, metadataCollectionTask.nextRunTime)
-            && Objects.equals(this.dutyPerson, metadataCollectionTask.dutyPerson)
-            && Objects.equals(this.updateType, metadataCollectionTask.updateType)
-            && Objects.equals(this.dataSourceType, metadataCollectionTask.dataSourceType)
-            && Objects.equals(this.taskConfig, metadataCollectionTask.taskConfig)
-            && Objects.equals(this.dataSourceWorkspaceId, metadataCollectionTask.dataSourceWorkspaceId);
+        MetadataCollectionTask that = (MetadataCollectionTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.dirId, that.dirId) && Objects.equals(this.scheduleConfig, that.scheduleConfig)
+            && Objects.equals(this.parameterConfig, that.parameterConfig)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.nextRunTime, that.nextRunTime) && Objects.equals(this.dutyPerson, that.dutyPerson)
+            && Objects.equals(this.updateType, that.updateType)
+            && Objects.equals(this.dataSourceType, that.dataSourceType)
+            && Objects.equals(this.taskConfig, that.taskConfig)
+            && Objects.equals(this.dataSourceWorkspaceId, that.dataSourceWorkspaceId);
     }
 
     @Override

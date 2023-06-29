@@ -41,7 +41,7 @@ public class ListOtpDevicesByUserIdResponse extends SdkResponse {
     }
 
     /**
-     * otp设备
+     * otp设备。
      * @return otpDevices
      */
     public List<OtpDevice> getOtpDevices() {
@@ -53,15 +53,15 @@ public class ListOtpDevicesByUserIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOtpDevicesByUserIdResponse listOtpDevicesByUserIdResponse = (ListOtpDevicesByUserIdResponse) o;
-        return Objects.equals(this.otpDevices, listOtpDevicesByUserIdResponse.otpDevices);
+        ListOtpDevicesByUserIdResponse that = (ListOtpDevicesByUserIdResponse) obj;
+        return Objects.equals(this.otpDevices, that.otpDevices);
     }
 
     @Override

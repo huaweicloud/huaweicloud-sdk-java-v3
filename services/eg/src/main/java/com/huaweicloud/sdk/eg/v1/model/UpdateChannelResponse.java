@@ -82,22 +82,15 @@ public class UpdateChannelResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -256,21 +249,19 @@ public class UpdateChannelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateChannelResponse updateChannelResponse = (UpdateChannelResponse) o;
-        return Objects.equals(this.id, updateChannelResponse.id)
-            && Objects.equals(this.name, updateChannelResponse.name)
-            && Objects.equals(this.description, updateChannelResponse.description)
-            && Objects.equals(this.providerType, updateChannelResponse.providerType)
-            && Objects.equals(this.createdTime, updateChannelResponse.createdTime)
-            && Objects.equals(this.updatedTime, updateChannelResponse.updatedTime)
-            && Objects.equals(this.xRequestId, updateChannelResponse.xRequestId);
+        UpdateChannelResponse that = (UpdateChannelResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

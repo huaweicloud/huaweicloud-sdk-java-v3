@@ -59,15 +59,15 @@ public class UcbParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UcbParam ucbParam = (UcbParam) o;
-        return Objects.equals(this.alpha, ucbParam.alpha) && Objects.equals(this.minUsedNum, ucbParam.minUsedNum);
+        UcbParam that = (UcbParam) obj;
+        return Objects.equals(this.alpha, that.alpha) && Objects.equals(this.minUsedNum, that.minUsedNum);
     }
 
     @Override

@@ -192,22 +192,19 @@ public class SearchCorpDirRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCorpDirRequest searchCorpDirRequest = (SearchCorpDirRequest) o;
-        return Objects.equals(this.xRequestId, searchCorpDirRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchCorpDirRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchCorpDirRequest.offset)
-            && Objects.equals(this.limit, searchCorpDirRequest.limit)
-            && Objects.equals(this.searchKey, searchCorpDirRequest.searchKey)
-            && Objects.equals(this.deptCode, searchCorpDirRequest.deptCode)
-            && Objects.equals(this.querySubDept, searchCorpDirRequest.querySubDept)
-            && Objects.equals(this.searchScope, searchCorpDirRequest.searchScope);
+        SearchCorpDirRequest that = (SearchCorpDirRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.querySubDept, that.querySubDept)
+            && Objects.equals(this.searchScope, that.searchScope);
     }
 
     @Override

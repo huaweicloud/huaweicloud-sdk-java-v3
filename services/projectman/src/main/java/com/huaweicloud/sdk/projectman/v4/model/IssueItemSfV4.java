@@ -703,39 +703,30 @@ public class IssueItemSfV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueItemSfV4 issueItemSfV4 = (IssueItemSfV4) o;
-        return Objects.equals(this.actualWorkHours, issueItemSfV4.actualWorkHours)
-            && Objects.equals(this.assignedUser, issueItemSfV4.assignedUser)
-            && Objects.equals(this.author, issueItemSfV4.author)
-            && Objects.equals(this.beginTime, issueItemSfV4.beginTime)
-            && Objects.equals(this.closedTime, issueItemSfV4.closedTime)
-            && Objects.equals(this.createdTime, issueItemSfV4.createdTime)
-            && Objects.equals(this.customFeilds, issueItemSfV4.customFeilds)
-            && Objects.equals(this.developer, issueItemSfV4.developer)
-            && Objects.equals(this.discoverVersion, issueItemSfV4.discoverVersion)
-            && Objects.equals(this.endTime, issueItemSfV4.endTime)
-            && Objects.equals(this.doneRatio, issueItemSfV4.doneRatio)
-            && Objects.equals(this.expectedWorkHours, issueItemSfV4.expectedWorkHours)
-            && Objects.equals(this.order, issueItemSfV4.order)
-            && Objects.equals(this.parentIssueId, issueItemSfV4.parentIssueId)
-            && Objects.equals(this.releaseVersion, issueItemSfV4.releaseVersion)
-            && Objects.equals(this.rootIssueId, issueItemSfV4.rootIssueId)
-            && Objects.equals(this.storyPoint, issueItemSfV4.storyPoint)
-            && Objects.equals(this.domain, issueItemSfV4.domain)
-            && Objects.equals(this.iteration, issueItemSfV4.iteration)
-            && Objects.equals(this.module, issueItemSfV4.module)
-            && Objects.equals(this.priority, issueItemSfV4.priority)
-            && Objects.equals(this.severity, issueItemSfV4.severity)
-            && Objects.equals(this.status, issueItemSfV4.status) && Objects.equals(this.tracker, issueItemSfV4.tracker)
-            && Objects.equals(this.subject, issueItemSfV4.subject)
-            && Objects.equals(this.updatedTime, issueItemSfV4.updatedTime);
+        IssueItemSfV4 that = (IssueItemSfV4) obj;
+        return Objects.equals(this.actualWorkHours, that.actualWorkHours)
+            && Objects.equals(this.assignedUser, that.assignedUser) && Objects.equals(this.author, that.author)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.closedTime, that.closedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.customFeilds, that.customFeilds) && Objects.equals(this.developer, that.developer)
+            && Objects.equals(this.discoverVersion, that.discoverVersion) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.doneRatio, that.doneRatio)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.parentIssueId, that.parentIssueId)
+            && Objects.equals(this.releaseVersion, that.releaseVersion)
+            && Objects.equals(this.rootIssueId, that.rootIssueId) && Objects.equals(this.storyPoint, that.storyPoint)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.iteration, that.iteration)
+            && Objects.equals(this.module, that.module) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tracker, that.tracker) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

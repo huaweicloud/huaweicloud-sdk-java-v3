@@ -55,16 +55,15 @@ public class ListResScenesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResScenesRequest listResScenesRequest = (ListResScenesRequest) o;
-        return Objects.equals(this.workspaceId, listResScenesRequest.workspaceId)
-            && Objects.equals(this.category, listResScenesRequest.category);
+        ListResScenesRequest that = (ListResScenesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.category, that.category);
     }
 
     @Override

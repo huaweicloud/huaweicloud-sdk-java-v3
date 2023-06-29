@@ -74,16 +74,15 @@ public class ShowAllTagsTagsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllTagsTagsResp showAllTagsTagsResp = (ShowAllTagsTagsResp) o;
-        return Objects.equals(this.key, showAllTagsTagsResp.key)
-            && Objects.equals(this.values, showAllTagsTagsResp.values);
+        ShowAllTagsTagsResp that = (ShowAllTagsTagsResp) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override

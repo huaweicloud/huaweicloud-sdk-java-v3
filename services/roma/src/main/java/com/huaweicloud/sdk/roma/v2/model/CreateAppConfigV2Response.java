@@ -167,21 +167,18 @@ public class CreateAppConfigV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppConfigV2Response createAppConfigV2Response = (CreateAppConfigV2Response) o;
-        return Objects.equals(this.id, createAppConfigV2Response.id)
-            && Objects.equals(this.appId, createAppConfigV2Response.appId)
-            && Objects.equals(this.configType, createAppConfigV2Response.configType)
-            && Objects.equals(this.configName, createAppConfigV2Response.configName)
-            && Objects.equals(this.configValue, createAppConfigV2Response.configValue)
-            && Objects.equals(this.updateTime, createAppConfigV2Response.updateTime)
-            && Objects.equals(this.description, createAppConfigV2Response.description);
+        CreateAppConfigV2Response that = (CreateAppConfigV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.configType, that.configType) && Objects.equals(this.configName, that.configName)
+            && Objects.equals(this.configValue, that.configValue) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class CreateFloatingIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFloatingIpOption createFloatingIpOption = (CreateFloatingIpOption) o;
-        return Objects.equals(this.floatingIpAddress, createFloatingIpOption.floatingIpAddress)
-            && Objects.equals(this.floatingNetworkId, createFloatingIpOption.floatingNetworkId)
-            && Objects.equals(this.portId, createFloatingIpOption.portId)
-            && Objects.equals(this.fixedIpAddress, createFloatingIpOption.fixedIpAddress);
+        CreateFloatingIpOption that = (CreateFloatingIpOption) obj;
+        return Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.floatingNetworkId, that.floatingNetworkId)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.fixedIpAddress, that.fixedIpAddress);
     }
 
     @Override

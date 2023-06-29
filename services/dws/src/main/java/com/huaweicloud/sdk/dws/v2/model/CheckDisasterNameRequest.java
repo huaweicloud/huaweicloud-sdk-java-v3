@@ -99,18 +99,17 @@ public class CheckDisasterNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckDisasterNameRequest checkDisasterNameRequest = (CheckDisasterNameRequest) o;
-        return Objects.equals(this.drName, checkDisasterNameRequest.drName)
-            && Objects.equals(this.type, checkDisasterNameRequest.type)
-            && Objects.equals(this.standbyRegion, checkDisasterNameRequest.standbyRegion)
-            && Objects.equals(this.standbyProjectId, checkDisasterNameRequest.standbyProjectId);
+        CheckDisasterNameRequest that = (CheckDisasterNameRequest) obj;
+        return Objects.equals(this.drName, that.drName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.standbyRegion, that.standbyRegion)
+            && Objects.equals(this.standbyProjectId, that.standbyProjectId);
     }
 
     @Override

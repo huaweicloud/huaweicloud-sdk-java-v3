@@ -162,20 +162,18 @@ public class ApprovalBatchParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApprovalBatchParam approvalBatchParam = (ApprovalBatchParam) o;
-        return Objects.equals(this.bizInfos, approvalBatchParam.bizInfos)
-            && Objects.equals(this.approverUserId, approvalBatchParam.approverUserId)
-            && Objects.equals(this.approverUserName, approvalBatchParam.approverUserName)
-            && Objects.equals(this.email, approvalBatchParam.email)
-            && Objects.equals(this.fastApproval, approvalBatchParam.fastApproval)
-            && Objects.equals(this.scheduleTime, approvalBatchParam.scheduleTime);
+        ApprovalBatchParam that = (ApprovalBatchParam) obj;
+        return Objects.equals(this.bizInfos, that.bizInfos) && Objects.equals(this.approverUserId, that.approverUserId)
+            && Objects.equals(this.approverUserName, that.approverUserName) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.fastApproval, that.fastApproval)
+            && Objects.equals(this.scheduleTime, that.scheduleTime);
     }
 
     @Override

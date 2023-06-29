@@ -238,23 +238,19 @@ public class ShowAssetVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetVersionResponse showAssetVersionResponse = (ShowAssetVersionResponse) o;
-        return Objects.equals(this.id, showAssetVersionResponse.id)
-            && Objects.equals(this.name, showAssetVersionResponse.name)
-            && Objects.equals(this.title, showAssetVersionResponse.title)
-            && Objects.equals(this.category, showAssetVersionResponse.category)
-            && Objects.equals(this.labels, showAssetVersionResponse.labels)
-            && Objects.equals(this.vendorId, showAssetVersionResponse.vendorId)
-            && Objects.equals(this.version, showAssetVersionResponse.version)
-            && Objects.equals(this.createTime, showAssetVersionResponse.createTime)
-            && Objects.equals(this.updateTime, showAssetVersionResponse.updateTime);
+        ShowAssetVersionResponse that = (ShowAssetVersionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.vendorId, that.vendorId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

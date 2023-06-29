@@ -65,16 +65,15 @@ public class CloseKibanaPublicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloseKibanaPublicReq closeKibanaPublicReq = (CloseKibanaPublicReq) o;
-        return Objects.equals(this.eipSize, closeKibanaPublicReq.eipSize)
-            && Objects.equals(this.elbWhiteList, closeKibanaPublicReq.elbWhiteList);
+        CloseKibanaPublicReq that = (CloseKibanaPublicReq) obj;
+        return Objects.equals(this.eipSize, that.eipSize) && Objects.equals(this.elbWhiteList, that.elbWhiteList);
     }
 
     @Override

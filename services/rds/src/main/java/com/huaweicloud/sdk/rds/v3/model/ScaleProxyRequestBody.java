@@ -55,16 +55,15 @@ public class ScaleProxyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScaleProxyRequestBody scaleProxyRequestBody = (ScaleProxyRequestBody) o;
-        return Objects.equals(this.flavorRef, scaleProxyRequestBody.flavorRef)
-            && Objects.equals(this.delay, scaleProxyRequestBody.delay);
+        ScaleProxyRequestBody that = (ScaleProxyRequestBody) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.delay, that.delay);
     }
 
     @Override

@@ -67,16 +67,15 @@ public class SearchAgentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchAgentRequest searchAgentRequest = (SearchAgentRequest) o;
-        return Objects.equals(this.xBusinessId, searchAgentRequest.xBusinessId)
-            && Objects.equals(this.body, searchAgentRequest.body);
+        SearchAgentRequest that = (SearchAgentRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

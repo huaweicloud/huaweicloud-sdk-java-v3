@@ -44,15 +44,15 @@ public class CreateServiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServiceResponse createServiceResponse = (CreateServiceResponse) o;
-        return Objects.equals(this.service, createServiceResponse.service);
+        CreateServiceResponse that = (CreateServiceResponse) obj;
+        return Objects.equals(this.service, that.service);
     }
 
     @Override

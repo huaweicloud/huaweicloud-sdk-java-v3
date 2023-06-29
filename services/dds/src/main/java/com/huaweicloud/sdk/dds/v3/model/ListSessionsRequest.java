@@ -165,21 +165,18 @@ public class ListSessionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSessionsRequest listSessionsRequest = (ListSessionsRequest) o;
-        return Objects.equals(this.nodeId, listSessionsRequest.nodeId)
-            && Objects.equals(this.offset, listSessionsRequest.offset)
-            && Objects.equals(this.limit, listSessionsRequest.limit)
-            && Objects.equals(this.planSummary, listSessionsRequest.planSummary)
-            && Objects.equals(this.type, listSessionsRequest.type)
-            && Objects.equals(this.namespace, listSessionsRequest.namespace)
-            && Objects.equals(this.costTime, listSessionsRequest.costTime);
+        ListSessionsRequest that = (ListSessionsRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.planSummary, that.planSummary)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.costTime, that.costTime);
     }
 
     @Override

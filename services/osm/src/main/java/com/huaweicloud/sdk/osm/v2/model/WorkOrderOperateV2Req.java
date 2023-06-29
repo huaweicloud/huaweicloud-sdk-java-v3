@@ -120,18 +120,17 @@ public class WorkOrderOperateV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkOrderOperateV2Req workOrderOperateV2Req = (WorkOrderOperateV2Req) o;
-        return Objects.equals(this.judgement, workOrderOperateV2Req.judgement)
-            && Objects.equals(this.operateDesc, workOrderOperateV2Req.operateDesc)
-            && Objects.equals(this.groupId, workOrderOperateV2Req.groupId)
-            && Objects.equals(this.incidentSatisfactionList, workOrderOperateV2Req.incidentSatisfactionList);
+        WorkOrderOperateV2Req that = (WorkOrderOperateV2Req) obj;
+        return Objects.equals(this.judgement, that.judgement) && Objects.equals(this.operateDesc, that.operateDesc)
+            && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.incidentSatisfactionList, that.incidentSatisfactionList);
     }
 
     @Override

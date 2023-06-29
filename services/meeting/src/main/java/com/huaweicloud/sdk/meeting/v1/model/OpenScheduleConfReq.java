@@ -347,28 +347,23 @@ public class OpenScheduleConfReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenScheduleConfReq openScheduleConfReq = (OpenScheduleConfReq) o;
-        return Objects.equals(this.subject, openScheduleConfReq.subject)
-            && Objects.equals(this.description, openScheduleConfReq.description)
-            && Objects.equals(this.startTime, openScheduleConfReq.startTime)
-            && Objects.equals(this.duration, openScheduleConfReq.duration)
-            && Objects.equals(this.timeZoneId, openScheduleConfReq.timeZoneId)
-            && Objects.equals(this.attendees, openScheduleConfReq.attendees)
-            && Objects.equals(this.notifySetting, openScheduleConfReq.notifySetting)
-            && Objects.equals(this.vmrID, openScheduleConfReq.vmrID)
-            && Objects.equals(this.guestPasswd, openScheduleConfReq.guestPasswd)
-            && Objects.equals(this.audiencePasswd, openScheduleConfReq.audiencePasswd)
-            && Objects.equals(this.callRestriction, openScheduleConfReq.callRestriction)
-            && Objects.equals(this.scope, openScheduleConfReq.scope)
-            && Objects.equals(this.audienceScope, openScheduleConfReq.audienceScope)
-            && Objects.equals(this.enableRecording, openScheduleConfReq.enableRecording);
+        OpenScheduleConfReq that = (OpenScheduleConfReq) obj;
+        return Objects.equals(this.subject, that.subject) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.timeZoneId, that.timeZoneId) && Objects.equals(this.attendees, that.attendees)
+            && Objects.equals(this.notifySetting, that.notifySetting) && Objects.equals(this.vmrID, that.vmrID)
+            && Objects.equals(this.guestPasswd, that.guestPasswd)
+            && Objects.equals(this.audiencePasswd, that.audiencePasswd)
+            && Objects.equals(this.callRestriction, that.callRestriction) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.audienceScope, that.audienceScope)
+            && Objects.equals(this.enableRecording, that.enableRecording);
     }
 
     @Override

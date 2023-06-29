@@ -44,15 +44,15 @@ public class ShowVolumeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVolumeResponse showVolumeResponse = (ShowVolumeResponse) o;
-        return Objects.equals(this.volume, showVolumeResponse.volume);
+        ShowVolumeResponse that = (ShowVolumeResponse) obj;
+        return Objects.equals(this.volume, that.volume);
     }
 
     @Override

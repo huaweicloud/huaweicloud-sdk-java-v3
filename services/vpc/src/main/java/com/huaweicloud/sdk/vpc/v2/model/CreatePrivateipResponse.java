@@ -53,15 +53,15 @@ public class CreatePrivateipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateipResponse createPrivateipResponse = (CreatePrivateipResponse) o;
-        return Objects.equals(this.privateips, createPrivateipResponse.privateips);
+        CreatePrivateipResponse that = (CreatePrivateipResponse) obj;
+        return Objects.equals(this.privateips, that.privateips);
     }
 
     @Override

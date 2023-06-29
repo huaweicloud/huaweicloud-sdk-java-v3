@@ -91,16 +91,16 @@ public class CreatePartnerCouponsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePartnerCouponsResponse createPartnerCouponsResponse = (CreatePartnerCouponsResponse) o;
-        return Objects.equals(this.errorDetails, createPartnerCouponsResponse.errorDetails)
-            && Objects.equals(this.couponInfos, createPartnerCouponsResponse.couponInfos);
+        CreatePartnerCouponsResponse that = (CreatePartnerCouponsResponse) obj;
+        return Objects.equals(this.errorDetails, that.errorDetails)
+            && Objects.equals(this.couponInfos, that.couponInfos);
     }
 
     @Override

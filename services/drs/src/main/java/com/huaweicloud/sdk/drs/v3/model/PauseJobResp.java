@@ -99,17 +99,16 @@ public class PauseJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PauseJobResp pauseJobResp = (PauseJobResp) o;
-        return Objects.equals(this.id, pauseJobResp.id) && Objects.equals(this.status, pauseJobResp.status)
-            && Objects.equals(this.errorCode, pauseJobResp.errorCode)
-            && Objects.equals(this.errorMsg, pauseJobResp.errorMsg);
+        PauseJobResp that = (PauseJobResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

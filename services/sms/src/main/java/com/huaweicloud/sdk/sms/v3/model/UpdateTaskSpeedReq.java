@@ -162,22 +162,15 @@ public class UpdateTaskSpeedReq {
             if (value == null) {
                 return null;
             }
-            SubtaskNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SubtaskNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SubtaskNameEnum(value));
         }
 
         public static SubtaskNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SubtaskNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -383,22 +376,19 @@ public class UpdateTaskSpeedReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskSpeedReq updateTaskSpeedReq = (UpdateTaskSpeedReq) o;
-        return Objects.equals(this.subtaskName, updateTaskSpeedReq.subtaskName)
-            && Objects.equals(this.progress, updateTaskSpeedReq.progress)
-            && Objects.equals(this.replicatesize, updateTaskSpeedReq.replicatesize)
-            && Objects.equals(this.totalsize, updateTaskSpeedReq.totalsize)
-            && Objects.equals(this.processTrace, updateTaskSpeedReq.processTrace)
-            && Objects.equals(this.migrateSpeed, updateTaskSpeedReq.migrateSpeed)
-            && Objects.equals(this.compressRate, updateTaskSpeedReq.compressRate)
-            && Objects.equals(this.remainTime, updateTaskSpeedReq.remainTime);
+        UpdateTaskSpeedReq that = (UpdateTaskSpeedReq) obj;
+        return Objects.equals(this.subtaskName, that.subtaskName) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.replicatesize, that.replicatesize) && Objects.equals(this.totalsize, that.totalsize)
+            && Objects.equals(this.processTrace, that.processTrace)
+            && Objects.equals(this.migrateSpeed, that.migrateSpeed)
+            && Objects.equals(this.compressRate, that.compressRate) && Objects.equals(this.remainTime, that.remainTime);
     }
 
     @Override

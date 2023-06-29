@@ -122,18 +122,16 @@ public class SendCommandRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendCommandRequestBody sendCommandRequestBody = (SendCommandRequestBody) o;
-        return Objects.equals(this.serviceId, sendCommandRequestBody.serviceId)
-            && Objects.equals(this.commandId, sendCommandRequestBody.commandId)
-            && Objects.equals(this.isSync, sendCommandRequestBody.isSync)
-            && Objects.equals(this.requests, sendCommandRequestBody.requests);
+        SendCommandRequestBody that = (SendCommandRequestBody) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.isSync, that.isSync) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

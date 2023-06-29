@@ -602,40 +602,40 @@ public class ServerLimits {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerLimits serverLimits = (ServerLimits) o;
-        return Objects.equals(this.maxImageMeta, serverLimits.maxImageMeta)
-            && Objects.equals(this.maxPersonality, serverLimits.maxPersonality)
-            && Objects.equals(this.maxPersonalitySize, serverLimits.maxPersonalitySize)
-            && Objects.equals(this.maxSecurityGroupRules, serverLimits.maxSecurityGroupRules)
-            && Objects.equals(this.maxSecurityGroups, serverLimits.maxSecurityGroups)
-            && Objects.equals(this.maxServerGroupMembers, serverLimits.maxServerGroupMembers)
-            && Objects.equals(this.maxServerGroups, serverLimits.maxServerGroups)
-            && Objects.equals(this.maxServerMeta, serverLimits.maxServerMeta)
-            && Objects.equals(this.maxTotalCores, serverLimits.maxTotalCores)
-            && Objects.equals(this.maxTotalFloatingIps, serverLimits.maxTotalFloatingIps)
-            && Objects.equals(this.maxTotalInstances, serverLimits.maxTotalInstances)
-            && Objects.equals(this.maxTotalKeypairs, serverLimits.maxTotalKeypairs)
-            && Objects.equals(this.maxTotalRAMSize, serverLimits.maxTotalRAMSize)
-            && Objects.equals(this.totalCoresUsed, serverLimits.totalCoresUsed)
-            && Objects.equals(this.totalFloatingIpsUsed, serverLimits.totalFloatingIpsUsed)
-            && Objects.equals(this.totalInstancesUsed, serverLimits.totalInstancesUsed)
-            && Objects.equals(this.totalRAMUsed, serverLimits.totalRAMUsed)
-            && Objects.equals(this.totalSecurityGroupsUsed, serverLimits.totalSecurityGroupsUsed)
-            && Objects.equals(this.totalServerGroupsUsed, serverLimits.totalServerGroupsUsed)
-            && Objects.equals(this.maxTotalSpotInstances, serverLimits.maxTotalSpotInstances)
-            && Objects.equals(this.maxTotalSpotCores, serverLimits.maxTotalSpotCores)
-            && Objects.equals(this.maxTotalSpotRAMSize, serverLimits.maxTotalSpotRAMSize)
-            && Objects.equals(this.totalSpotInstancesUsed, serverLimits.totalSpotInstancesUsed)
-            && Objects.equals(this.totalSpotCoresUsed, serverLimits.totalSpotCoresUsed)
-            && Objects.equals(this.totalSpotRAMUsed, serverLimits.totalSpotRAMUsed)
-            && Objects.equals(this.limitByFlavor, serverLimits.limitByFlavor);
+        ServerLimits that = (ServerLimits) obj;
+        return Objects.equals(this.maxImageMeta, that.maxImageMeta)
+            && Objects.equals(this.maxPersonality, that.maxPersonality)
+            && Objects.equals(this.maxPersonalitySize, that.maxPersonalitySize)
+            && Objects.equals(this.maxSecurityGroupRules, that.maxSecurityGroupRules)
+            && Objects.equals(this.maxSecurityGroups, that.maxSecurityGroups)
+            && Objects.equals(this.maxServerGroupMembers, that.maxServerGroupMembers)
+            && Objects.equals(this.maxServerGroups, that.maxServerGroups)
+            && Objects.equals(this.maxServerMeta, that.maxServerMeta)
+            && Objects.equals(this.maxTotalCores, that.maxTotalCores)
+            && Objects.equals(this.maxTotalFloatingIps, that.maxTotalFloatingIps)
+            && Objects.equals(this.maxTotalInstances, that.maxTotalInstances)
+            && Objects.equals(this.maxTotalKeypairs, that.maxTotalKeypairs)
+            && Objects.equals(this.maxTotalRAMSize, that.maxTotalRAMSize)
+            && Objects.equals(this.totalCoresUsed, that.totalCoresUsed)
+            && Objects.equals(this.totalFloatingIpsUsed, that.totalFloatingIpsUsed)
+            && Objects.equals(this.totalInstancesUsed, that.totalInstancesUsed)
+            && Objects.equals(this.totalRAMUsed, that.totalRAMUsed)
+            && Objects.equals(this.totalSecurityGroupsUsed, that.totalSecurityGroupsUsed)
+            && Objects.equals(this.totalServerGroupsUsed, that.totalServerGroupsUsed)
+            && Objects.equals(this.maxTotalSpotInstances, that.maxTotalSpotInstances)
+            && Objects.equals(this.maxTotalSpotCores, that.maxTotalSpotCores)
+            && Objects.equals(this.maxTotalSpotRAMSize, that.maxTotalSpotRAMSize)
+            && Objects.equals(this.totalSpotInstancesUsed, that.totalSpotInstancesUsed)
+            && Objects.equals(this.totalSpotCoresUsed, that.totalSpotCoresUsed)
+            && Objects.equals(this.totalSpotRAMUsed, that.totalSpotRAMUsed)
+            && Objects.equals(this.limitByFlavor, that.limitByFlavor);
     }
 
     @Override

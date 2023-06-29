@@ -1,124 +1,98 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlBackupStrategy;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlChargeInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MysqlInstanceResponse
  */
-public class MysqlInstanceResponse  {
-
+public class MysqlInstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private MysqlDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_id")
-    
+    @JsonProperty(value = "configuration_id")
 
     private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
 
     private MysqlBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_mode")
-    
+    @JsonProperty(value = "availability_zone_mode")
 
     private String availabilityZoneMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_availability_zone")
-    
+    @JsonProperty(value = "master_availability_zone")
 
     private String masterAvailabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private MysqlChargeInfo chargeInfo;
 
@@ -126,9 +100,6 @@ public class MysqlInstanceResponse  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -142,15 +113,10 @@ public class MysqlInstanceResponse  {
         this.id = id;
     }
 
-    
-
     public MysqlInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。用于表示实例的名称，同一租户下，同类型的实例名称可相同。  取值范围：4~64个字符之间，必须以字母开头，不区分大小写，可以包含字母、数字、中划线或者下划线, 不能包含其它的特殊字符。
@@ -164,15 +130,10 @@ public class MysqlInstanceResponse  {
         this.name = name;
     }
 
-    
-
     public MysqlInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。
@@ -186,22 +147,19 @@ public class MysqlInstanceResponse  {
         this.status = status;
     }
 
-    
-
     public MysqlInstanceResponse withDatastore(MysqlDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public MysqlInstanceResponse withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new MysqlDatastore();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -215,15 +173,10 @@ public class MysqlInstanceResponse  {
         this.datastore = datastore;
     }
 
-    
-
     public MysqlInstanceResponse withMode(String mode) {
         this.mode = mode;
         return this;
     }
-
-    
-
 
     /**
      * 实例类型，仅支持Cluster。
@@ -237,15 +190,10 @@ public class MysqlInstanceResponse  {
         this.mode = mode;
     }
 
-    
-
     public MysqlInstanceResponse withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
     }
-
-    
-
 
     /**
      * 参数组ID。
@@ -259,15 +207,10 @@ public class MysqlInstanceResponse  {
         this.configurationId = configurationId;
     }
 
-    
-
     public MysqlInstanceResponse withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口信息。
@@ -281,22 +224,19 @@ public class MysqlInstanceResponse  {
         this.port = port;
     }
 
-    
-
     public MysqlInstanceResponse withBackupStrategy(MysqlBackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
     public MysqlInstanceResponse withBackupStrategy(Consumer<MysqlBackupStrategy> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+        if (this.backupStrategy == null) {
             this.backupStrategy = new MysqlBackupStrategy();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupStrategy
@@ -310,15 +250,10 @@ public class MysqlInstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public MysqlInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。
@@ -332,15 +267,10 @@ public class MysqlInstanceResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public MysqlInstanceResponse withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 区域ID，与请求参数相同。
@@ -354,15 +284,10 @@ public class MysqlInstanceResponse  {
         this.region = region;
     }
 
-    
-
     public MysqlInstanceResponse withAvailabilityZoneMode(String availabilityZoneMode) {
         this.availabilityZoneMode = availabilityZoneMode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区模式，与请求参数相同。
@@ -376,15 +301,10 @@ public class MysqlInstanceResponse  {
         this.availabilityZoneMode = availabilityZoneMode;
     }
 
-    
-
     public MysqlInstanceResponse withMasterAvailabilityZone(String masterAvailabilityZone) {
         this.masterAvailabilityZone = masterAvailabilityZone;
         return this;
     }
-
-    
-
 
     /**
      * 主可用区ID。
@@ -398,15 +318,10 @@ public class MysqlInstanceResponse  {
         this.masterAvailabilityZone = masterAvailabilityZone;
     }
 
-    
-
     public MysqlInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID，与请求参数相同。
@@ -420,15 +335,10 @@ public class MysqlInstanceResponse  {
         this.vpcId = vpcId;
     }
 
-    
-
     public MysqlInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID，与请求参数相同。
@@ -442,15 +352,10 @@ public class MysqlInstanceResponse  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public MysqlInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网ID，与请求参数相同。
@@ -464,15 +369,10 @@ public class MysqlInstanceResponse  {
         this.subnetId = subnetId;
     }
 
-    
-
     public MysqlInstanceResponse withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 规格码，与请求参数相同。
@@ -486,22 +386,19 @@ public class MysqlInstanceResponse  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public MysqlInstanceResponse withChargeInfo(MysqlChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public MysqlInstanceResponse withChargeInfo(Consumer<MysqlChargeInfo> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new MysqlChargeInfo();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -515,39 +412,49 @@ public class MysqlInstanceResponse  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlInstanceResponse mysqlInstanceResponse = (MysqlInstanceResponse) o;
-        return Objects.equals(this.id, mysqlInstanceResponse.id) &&
-            Objects.equals(this.name, mysqlInstanceResponse.name) &&
-            Objects.equals(this.status, mysqlInstanceResponse.status) &&
-            Objects.equals(this.datastore, mysqlInstanceResponse.datastore) &&
-            Objects.equals(this.mode, mysqlInstanceResponse.mode) &&
-            Objects.equals(this.configurationId, mysqlInstanceResponse.configurationId) &&
-            Objects.equals(this.port, mysqlInstanceResponse.port) &&
-            Objects.equals(this.backupStrategy, mysqlInstanceResponse.backupStrategy) &&
-            Objects.equals(this.enterpriseProjectId, mysqlInstanceResponse.enterpriseProjectId) &&
-            Objects.equals(this.region, mysqlInstanceResponse.region) &&
-            Objects.equals(this.availabilityZoneMode, mysqlInstanceResponse.availabilityZoneMode) &&
-            Objects.equals(this.masterAvailabilityZone, mysqlInstanceResponse.masterAvailabilityZone) &&
-            Objects.equals(this.vpcId, mysqlInstanceResponse.vpcId) &&
-            Objects.equals(this.securityGroupId, mysqlInstanceResponse.securityGroupId) &&
-            Objects.equals(this.subnetId, mysqlInstanceResponse.subnetId) &&
-            Objects.equals(this.flavorRef, mysqlInstanceResponse.flavorRef) &&
-            Objects.equals(this.chargeInfo, mysqlInstanceResponse.chargeInfo);
+        MysqlInstanceResponse that = (MysqlInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availabilityZoneMode, that.availabilityZoneMode)
+            && Objects.equals(this.masterAvailabilityZone, that.masterAvailabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.chargeInfo, that.chargeInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, datastore, mode, configurationId, port, backupStrategy, enterpriseProjectId, region, availabilityZoneMode, masterAvailabilityZone, vpcId, securityGroupId, subnetId, flavorRef, chargeInfo);
+        return Objects.hash(id,
+            name,
+            status,
+            datastore,
+            mode,
+            configurationId,
+            port,
+            backupStrategy,
+            enterpriseProjectId,
+            region,
+            availabilityZoneMode,
+            masterAvailabilityZone,
+            vpcId,
+            securityGroupId,
+            subnetId,
+            flavorRef,
+            chargeInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -572,6 +479,7 @@ public class MysqlInstanceResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -582,8 +490,5 @@ public class MysqlInstanceResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

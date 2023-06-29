@@ -187,22 +187,18 @@ public class WorkflowSimpleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowSimpleInfo workflowSimpleInfo = (WorkflowSimpleInfo) o;
-        return Objects.equals(this.enableStreamResponse, workflowSimpleInfo.enableStreamResponse)
-            && Objects.equals(this.id, workflowSimpleInfo.id)
-            && Objects.equals(this.workflowUrn, workflowSimpleInfo.workflowUrn)
-            && Objects.equals(this.name, workflowSimpleInfo.name)
-            && Objects.equals(this.description, workflowSimpleInfo.description)
-            && Objects.equals(this.createdTime, workflowSimpleInfo.createdTime)
-            && Objects.equals(this.updatedTime, workflowSimpleInfo.updatedTime)
-            && Objects.equals(this.createdBy, workflowSimpleInfo.createdBy);
+        WorkflowSimpleInfo that = (WorkflowSimpleInfo) obj;
+        return Objects.equals(this.enableStreamResponse, that.enableStreamResponse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.workflowUrn, that.workflowUrn) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdBy, that.createdBy);
     }
 
     @Override

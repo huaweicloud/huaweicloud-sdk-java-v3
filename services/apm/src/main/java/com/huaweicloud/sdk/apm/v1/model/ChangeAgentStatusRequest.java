@@ -67,16 +67,15 @@ public class ChangeAgentStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeAgentStatusRequest changeAgentStatusRequest = (ChangeAgentStatusRequest) o;
-        return Objects.equals(this.xBusinessId, changeAgentStatusRequest.xBusinessId)
-            && Objects.equals(this.body, changeAgentStatusRequest.body);
+        ChangeAgentStatusRequest that = (ChangeAgentStatusRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

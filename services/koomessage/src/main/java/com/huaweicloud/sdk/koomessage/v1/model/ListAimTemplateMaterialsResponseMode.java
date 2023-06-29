@@ -83,17 +83,15 @@ public class ListAimTemplateMaterialsResponseMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplateMaterialsResponseMode listAimTemplateMaterialsResponseMode =
-            (ListAimTemplateMaterialsResponseMode) o;
-        return Objects.equals(this.pageInfo, listAimTemplateMaterialsResponseMode.pageInfo)
-            && Objects.equals(this.results, listAimTemplateMaterialsResponseMode.results);
+        ListAimTemplateMaterialsResponseMode that = (ListAimTemplateMaterialsResponseMode) obj;
+        return Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.results, that.results);
     }
 
     @Override

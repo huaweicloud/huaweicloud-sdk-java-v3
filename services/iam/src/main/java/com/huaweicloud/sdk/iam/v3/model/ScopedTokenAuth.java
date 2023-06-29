@@ -74,16 +74,15 @@ public class ScopedTokenAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopedTokenAuth scopedTokenAuth = (ScopedTokenAuth) o;
-        return Objects.equals(this.identity, scopedTokenAuth.identity)
-            && Objects.equals(this.scope, scopedTokenAuth.scope);
+        ScopedTokenAuth that = (ScopedTokenAuth) obj;
+        return Objects.equals(this.identity, that.identity) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

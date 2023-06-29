@@ -138,22 +138,15 @@ public class CcrulesListInfo {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TagTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
         }
 
         public static TagTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -688,35 +681,27 @@ public class CcrulesListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CcrulesListInfo ccrulesListInfo = (CcrulesListInfo) o;
-        return Objects.equals(this.name, ccrulesListInfo.name) && Objects.equals(this.id, ccrulesListInfo.id)
-            && Objects.equals(this.policyid, ccrulesListInfo.policyid) && Objects.equals(this.url, ccrulesListInfo.url)
-            && Objects.equals(this.prefix, ccrulesListInfo.prefix) && Objects.equals(this.mode, ccrulesListInfo.mode)
-            && Objects.equals(this.status, ccrulesListInfo.status)
-            && Objects.equals(this.conditions, ccrulesListInfo.conditions)
-            && Objects.equals(this.action, ccrulesListInfo.action)
-            && Objects.equals(this.tagType, ccrulesListInfo.tagType)
-            && Objects.equals(this.tagIndex, ccrulesListInfo.tagIndex)
-            && Objects.equals(this.tagCondition, ccrulesListInfo.tagCondition)
-            && Objects.equals(this.limitNum, ccrulesListInfo.limitNum)
-            && Objects.equals(this.limitPeriod, ccrulesListInfo.limitPeriod)
-            && Objects.equals(this.unlockNum, ccrulesListInfo.unlockNum)
-            && Objects.equals(this.lockTime, ccrulesListInfo.lockTime)
-            && Objects.equals(this.domainAggregation, ccrulesListInfo.domainAggregation)
-            && Objects.equals(this.regionAggregation, ccrulesListInfo.regionAggregation)
-            && Objects.equals(this.description, ccrulesListInfo.description)
-            && Objects.equals(this.totalNum, ccrulesListInfo.totalNum)
-            && Objects.equals(this.unaggregation, ccrulesListInfo.unaggregation)
-            && Objects.equals(this.agingTime, ccrulesListInfo.agingTime)
-            && Objects.equals(this.producer, ccrulesListInfo.producer)
-            && Objects.equals(this.timestamp, ccrulesListInfo.timestamp);
+        CcrulesListInfo that = (CcrulesListInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.tagType, that.tagType)
+            && Objects.equals(this.tagIndex, that.tagIndex) && Objects.equals(this.tagCondition, that.tagCondition)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.limitPeriod, that.limitPeriod)
+            && Objects.equals(this.unlockNum, that.unlockNum) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.domainAggregation, that.domainAggregation)
+            && Objects.equals(this.regionAggregation, that.regionAggregation)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.unaggregation, that.unaggregation) && Objects.equals(this.agingTime, that.agingTime)
+            && Objects.equals(this.producer, that.producer) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

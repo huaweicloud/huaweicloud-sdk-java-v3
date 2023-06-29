@@ -163,20 +163,18 @@ public class NetworkIpAvailability {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkIpAvailability networkIpAvailability = (NetworkIpAvailability) o;
-        return Objects.equals(this.networkId, networkIpAvailability.networkId)
-            && Objects.equals(this.networkName, networkIpAvailability.networkName)
-            && Objects.equals(this.tenantId, networkIpAvailability.tenantId)
-            && Objects.equals(this.totalIps, networkIpAvailability.totalIps)
-            && Objects.equals(this.usedIps, networkIpAvailability.usedIps)
-            && Objects.equals(this.subnetIpAvailability, networkIpAvailability.subnetIpAvailability);
+        NetworkIpAvailability that = (NetworkIpAvailability) obj;
+        return Objects.equals(this.networkId, that.networkId) && Objects.equals(this.networkName, that.networkName)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.totalIps, that.totalIps)
+            && Objects.equals(this.usedIps, that.usedIps)
+            && Objects.equals(this.subnetIpAvailability, that.subnetIpAvailability);
     }
 
     @Override

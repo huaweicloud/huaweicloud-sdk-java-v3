@@ -96,16 +96,16 @@ public class ResetNodeList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetNodeList resetNodeList = (ResetNodeList) o;
-        return Objects.equals(this.apiVersion, resetNodeList.apiVersion)
-            && Objects.equals(this.kind, resetNodeList.kind) && Objects.equals(this.nodeList, resetNodeList.nodeList);
+        ResetNodeList that = (ResetNodeList) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.nodeList, that.nodeList);
     }
 
     @Override

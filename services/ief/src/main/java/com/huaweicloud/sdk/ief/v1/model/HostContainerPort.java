@@ -77,17 +77,16 @@ public class HostContainerPort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostContainerPort hostContainerPort = (HostContainerPort) o;
-        return Objects.equals(this.containerPort, hostContainerPort.containerPort)
-            && Objects.equals(this.hostPort, hostContainerPort.hostPort)
-            && Objects.equals(this.hostIp, hostContainerPort.hostIp);
+        HostContainerPort that = (HostContainerPort) obj;
+        return Objects.equals(this.containerPort, that.containerPort) && Objects.equals(this.hostPort, that.hostPort)
+            && Objects.equals(this.hostIp, that.hostIp);
     }
 
     @Override

@@ -162,20 +162,17 @@ public class AvailTransferCoupon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailTransferCoupon availTransferCoupon = (AvailTransferCoupon) o;
-        return Objects.equals(this.couponId, availTransferCoupon.couponId)
-            && Objects.equals(this.planName, availTransferCoupon.planName)
-            && Objects.equals(this.balance, availTransferCoupon.balance)
-            && Objects.equals(this.effectiveTime, availTransferCoupon.effectiveTime)
-            && Objects.equals(this.expireTime, availTransferCoupon.expireTime)
-            && Objects.equals(this.useLimits, availTransferCoupon.useLimits);
+        AvailTransferCoupon that = (AvailTransferCoupon) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.planName, that.planName)
+            && Objects.equals(this.balance, that.balance) && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.useLimits, that.useLimits);
     }
 
     @Override

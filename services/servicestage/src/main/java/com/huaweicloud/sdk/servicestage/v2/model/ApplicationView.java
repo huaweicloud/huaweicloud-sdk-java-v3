@@ -231,23 +231,20 @@ public class ApplicationView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationView applicationView = (ApplicationView) o;
-        return Objects.equals(this.componentCount, applicationView.componentCount)
-            && Objects.equals(this.unifiedModel, applicationView.unifiedModel)
-            && Objects.equals(this.id, applicationView.id) && Objects.equals(this.name, applicationView.name)
-            && Objects.equals(this.description, applicationView.description)
-            && Objects.equals(this.creator, applicationView.creator)
-            && Objects.equals(this.projectId, applicationView.projectId)
-            && Objects.equals(this.enterpriseProjectId, applicationView.enterpriseProjectId)
-            && Objects.equals(this.createTime, applicationView.createTime)
-            && Objects.equals(this.updateTime, applicationView.updateTime);
+        ApplicationView that = (ApplicationView) obj;
+        return Objects.equals(this.componentCount, that.componentCount)
+            && Objects.equals(this.unifiedModel, that.unifiedModel) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

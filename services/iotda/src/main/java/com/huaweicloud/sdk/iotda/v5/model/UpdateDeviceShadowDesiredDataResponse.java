@@ -75,17 +75,15 @@ public class UpdateDeviceShadowDesiredDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceShadowDesiredDataResponse updateDeviceShadowDesiredDataResponse =
-            (UpdateDeviceShadowDesiredDataResponse) o;
-        return Objects.equals(this.deviceId, updateDeviceShadowDesiredDataResponse.deviceId)
-            && Objects.equals(this.shadow, updateDeviceShadowDesiredDataResponse.shadow);
+        UpdateDeviceShadowDesiredDataResponse that = (UpdateDeviceShadowDesiredDataResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.shadow, that.shadow);
     }
 
     @Override

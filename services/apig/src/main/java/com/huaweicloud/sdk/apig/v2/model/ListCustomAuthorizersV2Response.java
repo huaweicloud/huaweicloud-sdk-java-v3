@@ -97,17 +97,16 @@ public class ListCustomAuthorizersV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomAuthorizersV2Response listCustomAuthorizersV2Response = (ListCustomAuthorizersV2Response) o;
-        return Objects.equals(this.size, listCustomAuthorizersV2Response.size)
-            && Objects.equals(this.total, listCustomAuthorizersV2Response.total)
-            && Objects.equals(this.authorizerList, listCustomAuthorizersV2Response.authorizerList);
+        ListCustomAuthorizersV2Response that = (ListCustomAuthorizersV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.authorizerList, that.authorizerList);
     }
 
     @Override

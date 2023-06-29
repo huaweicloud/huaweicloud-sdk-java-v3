@@ -142,19 +142,17 @@ public class ShowEntityConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEntityConfigurationResponse showEntityConfigurationResponse = (ShowEntityConfigurationResponse) o;
-        return Objects.equals(this.datastoreVersion, showEntityConfigurationResponse.datastoreVersion)
-            && Objects.equals(this.datastoreName, showEntityConfigurationResponse.datastoreName)
-            && Objects.equals(this.created, showEntityConfigurationResponse.created)
-            && Objects.equals(this.updated, showEntityConfigurationResponse.updated)
-            && Objects.equals(this.parameters, showEntityConfigurationResponse.parameters);
+        ShowEntityConfigurationResponse that = (ShowEntityConfigurationResponse) obj;
+        return Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

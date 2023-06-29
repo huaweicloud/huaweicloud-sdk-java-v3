@@ -121,19 +121,17 @@ public class ListDailyLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDailyLogRequest listDailyLogRequest = (ListDailyLogRequest) o;
-        return Objects.equals(this.floatingIpId, listDailyLogRequest.floatingIpId)
-            && Objects.equals(this.sortDir, listDailyLogRequest.sortDir)
-            && Objects.equals(this.limit, listDailyLogRequest.limit)
-            && Objects.equals(this.offset, listDailyLogRequest.offset)
-            && Objects.equals(this.ip, listDailyLogRequest.ip);
+        ListDailyLogRequest that = (ListDailyLogRequest) obj;
+        return Objects.equals(this.floatingIpId, that.floatingIpId) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.ip, that.ip);
     }
 
     @Override

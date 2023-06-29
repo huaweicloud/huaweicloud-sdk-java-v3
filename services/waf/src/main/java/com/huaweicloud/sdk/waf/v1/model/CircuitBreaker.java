@@ -166,21 +166,18 @@ public class CircuitBreaker {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CircuitBreaker circuitBreaker = (CircuitBreaker) o;
-        return Objects.equals(this._switch, circuitBreaker._switch)
-            && Objects.equals(this.deadNum, circuitBreaker.deadNum)
-            && Objects.equals(this.deadRatio, circuitBreaker.deadRatio)
-            && Objects.equals(this.blockTime, circuitBreaker.blockTime)
-            && Objects.equals(this.superpositionNum, circuitBreaker.superpositionNum)
-            && Objects.equals(this.suspendNum, circuitBreaker.suspendNum)
-            && Objects.equals(this.susBlockTime, circuitBreaker.susBlockTime);
+        CircuitBreaker that = (CircuitBreaker) obj;
+        return Objects.equals(this._switch, that._switch) && Objects.equals(this.deadNum, that.deadNum)
+            && Objects.equals(this.deadRatio, that.deadRatio) && Objects.equals(this.blockTime, that.blockTime)
+            && Objects.equals(this.superpositionNum, that.superpositionNum)
+            && Objects.equals(this.suspendNum, that.suspendNum) && Objects.equals(this.susBlockTime, that.susBlockTime);
     }
 
     @Override

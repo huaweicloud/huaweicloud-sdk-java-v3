@@ -185,20 +185,18 @@ public class DebugApiResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugApiResponse debugApiResponse = (DebugApiResponse) o;
-        return Objects.equals(this.requestId, debugApiResponse.requestId)
-            && Objects.equals(this.url, debugApiResponse.url) && Objects.equals(this.result, debugApiResponse.result)
-            && Objects.equals(this.timeout, debugApiResponse.timeout)
-            && Objects.equals(this.success, debugApiResponse.success)
-            && Objects.equals(this.requestHeader, debugApiResponse.requestHeader)
-            && Objects.equals(this.responseHeader, debugApiResponse.responseHeader);
+        DebugApiResponse that = (DebugApiResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.requestHeader, that.requestHeader)
+            && Objects.equals(this.responseHeader, that.responseHeader);
     }
 
     @Override

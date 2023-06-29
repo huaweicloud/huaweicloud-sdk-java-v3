@@ -1,89 +1,71 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ExecutionResultList;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_id")
-    
+    @JsonProperty(value = "execution_id")
 
     private String executionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_update_time")
-    
+    @JsonProperty(value = "last_update_time")
 
     private Long lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_result_list")
-    
+    @JsonProperty(value = "execution_result_list")
+
     private List<ExecutionResultList> executionResultList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approve_user_name_list")
-    
+    @JsonProperty(value = "approve_user_name_list")
+
     private List<String> approveUserNameList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_edit_time")
-    
+    @JsonProperty(value = "workflow_edit_time")
 
     private Long workflowEditTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_record_id_with_snapshot")
-    
+    @JsonProperty(value = "last_record_id_with_snapshot")
 
     private String lastRecordIdWithSnapshot;
 
@@ -91,9 +73,6 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * 流程定义ID。
@@ -107,15 +86,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.workflowId = workflowId;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withExecutionId(String executionId) {
         this.executionId = executionId;
         return this;
     }
-
-    
-
 
     /**
      * 流程执行实例ID。
@@ -129,15 +103,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.executionId = executionId;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例执行状态。
@@ -151,15 +120,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例创建时间，格式：UTC时间戳
@@ -175,15 +139,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.beginTime = beginTime;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例结束时间，格式：UTC时间戳
@@ -199,15 +158,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.endTime = endTime;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withLastUpdateTime(Long lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例上次更新时间，格式：yyyy-MM-ddTHH:mm:ssZ，UTC时间。
@@ -223,24 +177,24 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    
-
-    public SearchWorkflowExecutionDetailResponse withExecutionResultList(List<ExecutionResultList> executionResultList) {
+    public SearchWorkflowExecutionDetailResponse withExecutionResultList(
+        List<ExecutionResultList> executionResultList) {
         this.executionResultList = executionResultList;
         return this;
     }
 
-    
-    public SearchWorkflowExecutionDetailResponse addExecutionResultListItem(ExecutionResultList executionResultListItem) {
-        if(this.executionResultList == null) {
+    public SearchWorkflowExecutionDetailResponse addExecutionResultListItem(
+        ExecutionResultList executionResultListItem) {
+        if (this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
         this.executionResultList.add(executionResultListItem);
         return this;
     }
 
-    public SearchWorkflowExecutionDetailResponse withExecutionResultList(Consumer<List<ExecutionResultList>> executionResultListSetter) {
-        if(this.executionResultList == null) {
+    public SearchWorkflowExecutionDetailResponse withExecutionResultList(
+        Consumer<List<ExecutionResultList>> executionResultListSetter) {
+        if (this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
         executionResultListSetter.accept(this.executionResultList);
@@ -259,24 +213,22 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.executionResultList = executionResultList;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withApproveUserNameList(List<String> approveUserNameList) {
         this.approveUserNameList = approveUserNameList;
         return this;
     }
 
-    
     public SearchWorkflowExecutionDetailResponse addApproveUserNameListItem(String approveUserNameListItem) {
-        if(this.approveUserNameList == null) {
+        if (this.approveUserNameList == null) {
             this.approveUserNameList = new ArrayList<>();
         }
         this.approveUserNameList.add(approveUserNameListItem);
         return this;
     }
 
-    public SearchWorkflowExecutionDetailResponse withApproveUserNameList(Consumer<List<String>> approveUserNameListSetter) {
-        if(this.approveUserNameList == null) {
+    public SearchWorkflowExecutionDetailResponse withApproveUserNameList(
+        Consumer<List<String>> approveUserNameListSetter) {
+        if (this.approveUserNameList == null) {
             this.approveUserNameList = new ArrayList<>();
         }
         approveUserNameListSetter.accept(this.approveUserNameList);
@@ -295,15 +247,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.approveUserNameList = approveUserNameList;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 租户从IAM申请到的projectid，一般为32位字符串。
@@ -317,15 +264,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withWorkflowEditTime(Long workflowEditTime) {
         this.workflowEditTime = workflowEditTime;
         return this;
     }
-
-    
-
 
     /**
      * 执行workflow的更新时间
@@ -341,15 +283,10 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.workflowEditTime = workflowEditTime;
     }
 
-    
-
     public SearchWorkflowExecutionDetailResponse withLastRecordIdWithSnapshot(String lastRecordIdWithSnapshot) {
         this.lastRecordIdWithSnapshot = lastRecordIdWithSnapshot;
         return this;
     }
-
-    
-
 
     /**
      * 执行快照
@@ -363,33 +300,40 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         this.lastRecordIdWithSnapshot = lastRecordIdWithSnapshot;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchWorkflowExecutionDetailResponse searchWorkflowExecutionDetailResponse = (SearchWorkflowExecutionDetailResponse) o;
-        return Objects.equals(this.workflowId, searchWorkflowExecutionDetailResponse.workflowId) &&
-            Objects.equals(this.executionId, searchWorkflowExecutionDetailResponse.executionId) &&
-            Objects.equals(this.status, searchWorkflowExecutionDetailResponse.status) &&
-            Objects.equals(this.beginTime, searchWorkflowExecutionDetailResponse.beginTime) &&
-            Objects.equals(this.endTime, searchWorkflowExecutionDetailResponse.endTime) &&
-            Objects.equals(this.lastUpdateTime, searchWorkflowExecutionDetailResponse.lastUpdateTime) &&
-            Objects.equals(this.executionResultList, searchWorkflowExecutionDetailResponse.executionResultList) &&
-            Objects.equals(this.approveUserNameList, searchWorkflowExecutionDetailResponse.approveUserNameList) &&
-            Objects.equals(this.projectId, searchWorkflowExecutionDetailResponse.projectId) &&
-            Objects.equals(this.workflowEditTime, searchWorkflowExecutionDetailResponse.workflowEditTime) &&
-            Objects.equals(this.lastRecordIdWithSnapshot, searchWorkflowExecutionDetailResponse.lastRecordIdWithSnapshot);
+        SearchWorkflowExecutionDetailResponse that = (SearchWorkflowExecutionDetailResponse) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.executionResultList, that.executionResultList)
+            && Objects.equals(this.approveUserNameList, that.approveUserNameList)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.workflowEditTime, that.workflowEditTime)
+            && Objects.equals(this.lastRecordIdWithSnapshot, that.lastRecordIdWithSnapshot);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, executionId, status, beginTime, endTime, lastUpdateTime, executionResultList, approveUserNameList, projectId, workflowEditTime, lastRecordIdWithSnapshot);
+        return Objects.hash(workflowId,
+            executionId,
+            status,
+            beginTime,
+            endTime,
+            lastUpdateTime,
+            executionResultList,
+            approveUserNameList,
+            projectId,
+            workflowEditTime,
+            lastRecordIdWithSnapshot);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -408,6 +352,7 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -418,8 +363,5 @@ public class SearchWorkflowExecutionDetailResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

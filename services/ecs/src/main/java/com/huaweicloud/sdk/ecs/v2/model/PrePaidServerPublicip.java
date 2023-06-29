@@ -87,16 +87,16 @@ public class PrePaidServerPublicip {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerPublicip prePaidServerPublicip = (PrePaidServerPublicip) o;
-        return Objects.equals(this.id, prePaidServerPublicip.id) && Objects.equals(this.eip, prePaidServerPublicip.eip)
-            && Objects.equals(this.deleteOnTermination, prePaidServerPublicip.deleteOnTermination);
+        PrePaidServerPublicip that = (PrePaidServerPublicip) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.eip, that.eip)
+            && Objects.equals(this.deleteOnTermination, that.deleteOnTermination);
     }
 
     @Override

@@ -87,22 +87,15 @@ public class TableConstraintsInput {
             if (value == null) {
                 return null;
             }
-            ConstraintTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConstraintTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConstraintTypeEnum(value));
         }
 
         public static ConstraintTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConstraintTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -372,21 +365,20 @@ public class TableConstraintsInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableConstraintsInput tableConstraintsInput = (TableConstraintsInput) o;
-        return Objects.equals(this.constraintType, tableConstraintsInput.constraintType)
-            && Objects.equals(this.foreignKeys, tableConstraintsInput.foreignKeys)
-            && Objects.equals(this.primaryKeys, tableConstraintsInput.primaryKeys)
-            && Objects.equals(this.notNullConstraints, tableConstraintsInput.notNullConstraints)
-            && Objects.equals(this.checkConstraints, tableConstraintsInput.checkConstraints)
-            && Objects.equals(this.uniqueConstraints, tableConstraintsInput.uniqueConstraints)
-            && Objects.equals(this.defaultConstraints, tableConstraintsInput.defaultConstraints);
+        TableConstraintsInput that = (TableConstraintsInput) obj;
+        return Objects.equals(this.constraintType, that.constraintType)
+            && Objects.equals(this.foreignKeys, that.foreignKeys) && Objects.equals(this.primaryKeys, that.primaryKeys)
+            && Objects.equals(this.notNullConstraints, that.notNullConstraints)
+            && Objects.equals(this.checkConstraints, that.checkConstraints)
+            && Objects.equals(this.uniqueConstraints, that.uniqueConstraints)
+            && Objects.equals(this.defaultConstraints, that.defaultConstraints);
     }
 
     @Override

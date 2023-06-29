@@ -44,15 +44,15 @@ public class CancelHandshakeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelHandshakeResponse cancelHandshakeResponse = (CancelHandshakeResponse) o;
-        return Objects.equals(this.handshake, cancelHandshakeResponse.handshake);
+        CancelHandshakeResponse that = (CancelHandshakeResponse) obj;
+        return Objects.equals(this.handshake, that.handshake);
     }
 
     @Override

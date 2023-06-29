@@ -97,17 +97,16 @@ public class DownloadSlowlogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadSlowlogResponse downloadSlowlogResponse = (DownloadSlowlogResponse) o;
-        return Objects.equals(this.list, downloadSlowlogResponse.list)
-            && Objects.equals(this.status, downloadSlowlogResponse.status)
-            && Objects.equals(this.count, downloadSlowlogResponse.count);
+        DownloadSlowlogResponse that = (DownloadSlowlogResponse) obj;
+        return Objects.equals(this.list, that.list) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

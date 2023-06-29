@@ -33,15 +33,15 @@ public class ExportRoutePolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportRoutePolicy exportRoutePolicy = (ExportRoutePolicy) o;
-        return Objects.equals(this.exportPolicyId, exportRoutePolicy.exportPolicyId);
+        ExportRoutePolicy that = (ExportRoutePolicy) obj;
+        return Objects.equals(this.exportPolicyId, that.exportPolicyId);
     }
 
     @Override

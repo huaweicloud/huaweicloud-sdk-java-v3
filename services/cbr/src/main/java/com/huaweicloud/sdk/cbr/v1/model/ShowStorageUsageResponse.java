@@ -75,16 +75,16 @@ public class ShowStorageUsageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStorageUsageResponse showStorageUsageResponse = (ShowStorageUsageResponse) o;
-        return Objects.equals(this.resourceCount, showStorageUsageResponse.resourceCount)
-            && Objects.equals(this.storageUsage, showStorageUsageResponse.storageUsage);
+        ShowStorageUsageResponse that = (ShowStorageUsageResponse) obj;
+        return Objects.equals(this.resourceCount, that.resourceCount)
+            && Objects.equals(this.storageUsage, that.storageUsage);
     }
 
     @Override

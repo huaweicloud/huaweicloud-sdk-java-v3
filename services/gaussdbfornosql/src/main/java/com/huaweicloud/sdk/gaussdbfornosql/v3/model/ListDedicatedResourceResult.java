@@ -175,21 +175,19 @@ public class ListDedicatedResourceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDedicatedResourceResult listDedicatedResourceResult = (ListDedicatedResourceResult) o;
-        return Objects.equals(this.id, listDedicatedResourceResult.id)
-            && Objects.equals(this.resourceName, listDedicatedResourceResult.resourceName)
-            && Objects.equals(this.engineName, listDedicatedResourceResult.engineName)
-            && Objects.equals(this.availabilityZone, listDedicatedResourceResult.availabilityZone)
-            && Objects.equals(this.architecture, listDedicatedResourceResult.architecture)
-            && Objects.equals(this.capacity, listDedicatedResourceResult.capacity)
-            && Objects.equals(this.status, listDedicatedResourceResult.status);
+        ListDedicatedResourceResult that = (ListDedicatedResourceResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

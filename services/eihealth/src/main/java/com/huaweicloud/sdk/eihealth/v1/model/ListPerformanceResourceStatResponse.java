@@ -78,17 +78,16 @@ public class ListPerformanceResourceStatResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPerformanceResourceStatResponse listPerformanceResourceStatResponse =
-            (ListPerformanceResourceStatResponse) o;
-        return Objects.equals(this.count, listPerformanceResourceStatResponse.count)
-            && Objects.equals(this.performanceResources, listPerformanceResourceStatResponse.performanceResources);
+        ListPerformanceResourceStatResponse that = (ListPerformanceResourceStatResponse) obj;
+        return Objects.equals(this.count, that.count)
+            && Objects.equals(this.performanceResources, that.performanceResources);
     }
 
     @Override

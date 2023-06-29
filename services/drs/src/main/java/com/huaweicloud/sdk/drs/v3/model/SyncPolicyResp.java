@@ -99,17 +99,16 @@ public class SyncPolicyResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncPolicyResp syncPolicyResp = (SyncPolicyResp) o;
-        return Objects.equals(this.id, syncPolicyResp.id) && Objects.equals(this.status, syncPolicyResp.status)
-            && Objects.equals(this.errorCode, syncPolicyResp.errorCode)
-            && Objects.equals(this.errorMsg, syncPolicyResp.errorMsg);
+        SyncPolicyResp that = (SyncPolicyResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

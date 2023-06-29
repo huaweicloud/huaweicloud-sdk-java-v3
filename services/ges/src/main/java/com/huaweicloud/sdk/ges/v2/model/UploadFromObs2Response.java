@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,16 +11,13 @@ import java.util.Objects;
  */
 public class UploadFromObs2Response extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
@@ -36,9 +25,6 @@ public class UploadFromObs2Response extends SdkResponse {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 元数据的id。
@@ -52,15 +38,10 @@ public class UploadFromObs2Response extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public UploadFromObs2Response withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 元数据的名字。
@@ -74,24 +55,23 @@ public class UploadFromObs2Response extends SdkResponse {
         this.name = name;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadFromObs2Response uploadFromObs2Response = (UploadFromObs2Response) o;
-        return Objects.equals(this.id, uploadFromObs2Response.id) &&
-            Objects.equals(this.name, uploadFromObs2Response.name);
+        UploadFromObs2Response that = (UploadFromObs2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +81,7 @@ public class UploadFromObs2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +92,5 @@ public class UploadFromObs2Response extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

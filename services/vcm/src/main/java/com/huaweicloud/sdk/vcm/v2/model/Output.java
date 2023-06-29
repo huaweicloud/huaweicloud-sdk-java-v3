@@ -167,17 +167,17 @@ public class Output {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Output output = (Output) o;
-        return Objects.equals(this.obs, output.obs) && Objects.equals(this.hosting, output.hosting)
-            && Objects.equals(this.dis, output.dis) && Objects.equals(this.webhook, output.webhook)
-            && Objects.equals(this.localpath, output.localpath);
+        Output that = (Output) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.hosting, that.hosting)
+            && Objects.equals(this.dis, that.dis) && Objects.equals(this.webhook, that.webhook)
+            && Objects.equals(this.localpath, that.localpath);
     }
 
     @Override

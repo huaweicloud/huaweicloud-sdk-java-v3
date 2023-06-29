@@ -78,17 +78,16 @@ public class CreatePlanResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlanResponse createPlanResponse = (CreatePlanResponse) o;
-        return Objects.equals(this.planId, createPlanResponse.planId)
-            && Objects.equals(this.errorCode, createPlanResponse.errorCode)
-            && Objects.equals(this.errorMsg, createPlanResponse.errorMsg);
+        CreatePlanResponse that = (CreatePlanResponse) obj;
+        return Objects.equals(this.planId, that.planId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

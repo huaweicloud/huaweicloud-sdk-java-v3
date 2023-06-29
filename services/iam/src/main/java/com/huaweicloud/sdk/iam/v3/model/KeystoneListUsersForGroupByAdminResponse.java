@@ -84,17 +84,15 @@ public class KeystoneListUsersForGroupByAdminResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListUsersForGroupByAdminResponse keystoneListUsersForGroupByAdminResponse =
-            (KeystoneListUsersForGroupByAdminResponse) o;
-        return Objects.equals(this.links, keystoneListUsersForGroupByAdminResponse.links)
-            && Objects.equals(this.users, keystoneListUsersForGroupByAdminResponse.users);
+        KeystoneListUsersForGroupByAdminResponse that = (KeystoneListUsersForGroupByAdminResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.users, that.users);
     }
 
     @Override

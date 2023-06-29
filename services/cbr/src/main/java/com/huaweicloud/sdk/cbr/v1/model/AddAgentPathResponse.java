@@ -91,16 +91,15 @@ public class AddAgentPathResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddAgentPathResponse addAgentPathResponse = (AddAgentPathResponse) o;
-        return Objects.equals(this.added, addAgentPathResponse.added)
-            && Objects.equals(this.existed, addAgentPathResponse.existed);
+        AddAgentPathResponse that = (AddAgentPathResponse) obj;
+        return Objects.equals(this.added, that.added) && Objects.equals(this.existed, that.existed);
     }
 
     @Override

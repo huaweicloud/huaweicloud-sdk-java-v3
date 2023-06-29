@@ -55,16 +55,15 @@ public class DeletePortResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePortResponseModelData deletePortResponseModelData = (DeletePortResponseModelData) o;
-        return Objects.equals(this.port, deletePortResponseModelData.port)
-            && Objects.equals(this.portType, deletePortResponseModelData.portType);
+        DeletePortResponseModelData that = (DeletePortResponseModelData) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.portType, that.portType);
     }
 
     @Override

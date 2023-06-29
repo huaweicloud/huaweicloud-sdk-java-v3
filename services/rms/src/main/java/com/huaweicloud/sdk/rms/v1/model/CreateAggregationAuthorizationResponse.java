@@ -78,19 +78,17 @@ public class CreateAggregationAuthorizationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAggregationAuthorizationResponse createAggregationAuthorizationResponse =
-            (CreateAggregationAuthorizationResponse) o;
-        return Objects.equals(this.aggregationAuthorizationUrn,
-            createAggregationAuthorizationResponse.aggregationAuthorizationUrn)
-            && Objects.equals(this.authorizedAccountId, createAggregationAuthorizationResponse.authorizedAccountId)
-            && Objects.equals(this.createdAt, createAggregationAuthorizationResponse.createdAt);
+        CreateAggregationAuthorizationResponse that = (CreateAggregationAuthorizationResponse) obj;
+        return Objects.equals(this.aggregationAuthorizationUrn, that.aggregationAuthorizationUrn)
+            && Objects.equals(this.authorizedAccountId, that.authorizedAccountId)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

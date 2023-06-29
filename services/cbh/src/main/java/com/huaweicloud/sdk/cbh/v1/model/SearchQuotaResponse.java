@@ -104,18 +104,16 @@ public class SearchQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQuotaResponse searchQuotaResponse = (SearchQuotaResponse) o;
-        return Objects.equals(this.quota, searchQuotaResponse.quota)
-            && Objects.equals(this.eipQuota, searchQuotaResponse.eipQuota)
-            && Objects.equals(this.statusV6, searchQuotaResponse.statusV6)
-            && Objects.equals(this.status, searchQuotaResponse.status);
+        SearchQuotaResponse that = (SearchQuotaResponse) obj;
+        return Objects.equals(this.quota, that.quota) && Objects.equals(this.eipQuota, that.eipQuota)
+            && Objects.equals(this.statusV6, that.statusV6) && Objects.equals(this.status, that.status);
     }
 
     @Override

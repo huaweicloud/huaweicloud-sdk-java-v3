@@ -111,18 +111,18 @@ public class LockViewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LockViewRequest lockViewRequest = (LockViewRequest) o;
-        return Objects.equals(this.conferenceID, lockViewRequest.conferenceID)
-            && Objects.equals(this.participantID, lockViewRequest.participantID)
-            && Objects.equals(this.xConferenceAuthorization, lockViewRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, lockViewRequest.body);
+        LockViewRequest that = (LockViewRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

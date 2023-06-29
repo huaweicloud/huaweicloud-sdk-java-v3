@@ -121,18 +121,17 @@ public class GetTagDetailRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetTagDetailRsp getTagDetailRsp = (GetTagDetailRsp) o;
-        return Objects.equals(this.tag, getTagDetailRsp.tag) && Objects.equals(this.size, getTagDetailRsp.size)
-            && Objects.equals(this.createTime, getTagDetailRsp.createTime)
-            && Objects.equals(this.updateTime, getTagDetailRsp.updateTime)
-            && Objects.equals(this.path, getTagDetailRsp.path);
+        GetTagDetailRsp that = (GetTagDetailRsp) obj;
+        return Objects.equals(this.tag, that.tag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.path, that.path);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class NeutronUpdateSecurityGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateSecurityGroupRequest neutronUpdateSecurityGroupRequest = (NeutronUpdateSecurityGroupRequest) o;
-        return Objects.equals(this.securityGroupId, neutronUpdateSecurityGroupRequest.securityGroupId)
-            && Objects.equals(this.body, neutronUpdateSecurityGroupRequest.body);
+        NeutronUpdateSecurityGroupRequest that = (NeutronUpdateSecurityGroupRequest) obj;
+        return Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

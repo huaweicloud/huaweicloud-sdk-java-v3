@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ImportGraphReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ImportGraph2Request  {
-
+public class ImportGraph2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ImportGraphReq body;
 
@@ -35,9 +25,6 @@ public class ImportGraph2Request  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -51,22 +38,19 @@ public class ImportGraph2Request  {
         this.graphId = graphId;
     }
 
-    
-
     public ImportGraph2Request withBody(ImportGraphReq body) {
         this.body = body;
         return this;
     }
 
     public ImportGraph2Request withBody(Consumer<ImportGraphReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ImportGraphReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ImportGraph2Request  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportGraph2Request importGraph2Request = (ImportGraph2Request) o;
-        return Objects.equals(this.graphId, importGraph2Request.graphId) &&
-            Objects.equals(this.body, importGraph2Request.body);
+        ImportGraph2Request that = (ImportGraph2Request) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ImportGraph2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ImportGraph2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

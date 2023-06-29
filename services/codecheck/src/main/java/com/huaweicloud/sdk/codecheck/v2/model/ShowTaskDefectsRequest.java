@@ -124,19 +124,17 @@ public class ShowTaskDefectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskDefectsRequest showTaskDefectsRequest = (ShowTaskDefectsRequest) o;
-        return Objects.equals(this.taskId, showTaskDefectsRequest.taskId)
-            && Objects.equals(this.offset, showTaskDefectsRequest.offset)
-            && Objects.equals(this.limit, showTaskDefectsRequest.limit)
-            && Objects.equals(this.statusIds, showTaskDefectsRequest.statusIds)
-            && Objects.equals(this.severity, showTaskDefectsRequest.severity);
+        ShowTaskDefectsRequest that = (ShowTaskDefectsRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.statusIds, that.statusIds)
+            && Objects.equals(this.severity, that.severity);
     }
 
     @Override

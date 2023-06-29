@@ -143,20 +143,18 @@ public class TransferAmountInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransferAmountInfoV2 transferAmountInfoV2 = (TransferAmountInfoV2) o;
-        return Objects.equals(this.availTransferAmount, transferAmountInfoV2.availTransferAmount)
-            && Objects.equals(this.measureId, transferAmountInfoV2.measureId)
-            && Objects.equals(this.currency, transferAmountInfoV2.currency)
-            && Objects.equals(this.amount, transferAmountInfoV2.amount)
-            && Objects.equals(this.creditAmount, transferAmountInfoV2.creditAmount)
-            && Objects.equals(this.expireTime, transferAmountInfoV2.expireTime);
+        TransferAmountInfoV2 that = (TransferAmountInfoV2) obj;
+        return Objects.equals(this.availTransferAmount, that.availTransferAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.creditAmount, that.creditAmount)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

@@ -74,16 +74,16 @@ public class CollectorConfigModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectorConfigModel collectorConfigModel = (CollectorConfigModel) o;
-        return Objects.equals(this.lineViewConfig, collectorConfigModel.lineViewConfig)
-            && Objects.equals(this.detailViewConfig, collectorConfigModel.detailViewConfig);
+        CollectorConfigModel that = (CollectorConfigModel) obj;
+        return Objects.equals(this.lineViewConfig, that.lineViewConfig)
+            && Objects.equals(this.detailViewConfig, that.detailViewConfig);
     }
 
     @Override

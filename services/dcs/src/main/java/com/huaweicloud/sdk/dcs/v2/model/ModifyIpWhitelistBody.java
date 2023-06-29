@@ -96,17 +96,17 @@ public class ModifyIpWhitelistBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyIpWhitelistBody modifyIpWhitelistBody = (ModifyIpWhitelistBody) o;
-        return Objects.equals(this.instanceId, modifyIpWhitelistBody.instanceId)
-            && Objects.equals(this.enableWhitelist, modifyIpWhitelistBody.enableWhitelist)
-            && Objects.equals(this.whitelist, modifyIpWhitelistBody.whitelist);
+        ModifyIpWhitelistBody that = (ModifyIpWhitelistBody) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.whitelist, that.whitelist);
     }
 
     @Override

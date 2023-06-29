@@ -55,15 +55,15 @@ public class TaskInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInput taskInput = (TaskInput) o;
-        return Objects.equals(this.data, taskInput.data) && Objects.equals(this.type, taskInput.type);
+        TaskInput that = (TaskInput) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.type, that.type);
     }
 
     @Override

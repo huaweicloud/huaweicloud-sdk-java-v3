@@ -87,17 +87,16 @@ public class ChangeQueuePlanRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeQueuePlanRequest changeQueuePlanRequest = (ChangeQueuePlanRequest) o;
-        return Objects.equals(this.planId, changeQueuePlanRequest.planId)
-            && Objects.equals(this.queueName, changeQueuePlanRequest.queueName)
-            && Objects.equals(this.body, changeQueuePlanRequest.body);
+        ChangeQueuePlanRequest that = (ChangeQueuePlanRequest) obj;
+        return Objects.equals(this.planId, that.planId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

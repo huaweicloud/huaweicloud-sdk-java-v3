@@ -34,15 +34,15 @@ public class InviteUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InviteUserResponse inviteUserResponse = (InviteUserResponse) o;
-        return Objects.equals(this.userExist, inviteUserResponse.userExist);
+        InviteUserResponse that = (InviteUserResponse) obj;
+        return Objects.equals(this.userExist, that.userExist);
     }
 
     @Override

@@ -207,22 +207,19 @@ public class NeutronAddFirewallRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronAddFirewallRuleResponse neutronAddFirewallRuleResponse = (NeutronAddFirewallRuleResponse) o;
-        return Objects.equals(this.id, neutronAddFirewallRuleResponse.id)
-            && Objects.equals(this.name, neutronAddFirewallRuleResponse.name)
-            && Objects.equals(this.description, neutronAddFirewallRuleResponse.description)
-            && Objects.equals(this.firewallRules, neutronAddFirewallRuleResponse.firewallRules)
-            && Objects.equals(this.audited, neutronAddFirewallRuleResponse.audited)
-            && Objects.equals(this._public, neutronAddFirewallRuleResponse._public)
-            && Objects.equals(this.tenantId, neutronAddFirewallRuleResponse.tenantId)
-            && Objects.equals(this.projectId, neutronAddFirewallRuleResponse.projectId);
+        NeutronAddFirewallRuleResponse that = (NeutronAddFirewallRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.firewallRules, that.firewallRules) && Objects.equals(this.audited, that.audited)
+            && Objects.equals(this._public, that._public) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

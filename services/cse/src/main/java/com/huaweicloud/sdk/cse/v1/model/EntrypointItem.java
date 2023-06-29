@@ -80,22 +80,15 @@ public class EntrypointItem {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,19 +196,19 @@ public class EntrypointItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntrypointItem entrypointItem = (EntrypointItem) o;
-        return Objects.equals(this.masterEntrypoint, entrypointItem.masterEntrypoint)
-            && Objects.equals(this.masterEntrypointIpv6, entrypointItem.masterEntrypointIpv6)
-            && Objects.equals(this.slaveEntrypoint, entrypointItem.slaveEntrypoint)
-            && Objects.equals(this.slaveEntrypointIpv6, entrypointItem.slaveEntrypointIpv6)
-            && Objects.equals(this.type, entrypointItem.type);
+        EntrypointItem that = (EntrypointItem) obj;
+        return Objects.equals(this.masterEntrypoint, that.masterEntrypoint)
+            && Objects.equals(this.masterEntrypointIpv6, that.masterEntrypointIpv6)
+            && Objects.equals(this.slaveEntrypoint, that.slaveEntrypoint)
+            && Objects.equals(this.slaveEntrypointIpv6, that.slaveEntrypointIpv6)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

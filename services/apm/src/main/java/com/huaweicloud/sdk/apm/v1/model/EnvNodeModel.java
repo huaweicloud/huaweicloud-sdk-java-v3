@@ -254,22 +254,20 @@ public class EnvNodeModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvNodeModel envNodeModel = (EnvNodeModel) o;
-        return Objects.equals(this.id, envNodeModel.id) && Objects.equals(this.gmtCreate, envNodeModel.gmtCreate)
-            && Objects.equals(this.gmtModify, envNodeModel.gmtModify) && Objects.equals(this.appId, envNodeModel.appId)
-            && Objects.equals(this.businessName, envNodeModel.businessName)
-            && Objects.equals(this.innerDomainId, envNodeModel.innerDomainId)
-            && Objects.equals(this.name, envNodeModel.name) && Objects.equals(this.isDefault, envNodeModel.isDefault)
-            && Objects.equals(this.appName, envNodeModel.appName)
-            && Objects.equals(this.businessId, envNodeModel.businessId)
-            && Objects.equals(this.region, envNodeModel.region);
+        EnvNodeModel that = (EnvNodeModel) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.businessName, that.businessName)
+            && Objects.equals(this.innerDomainId, that.innerDomainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.region, that.region);
     }
 
     @Override

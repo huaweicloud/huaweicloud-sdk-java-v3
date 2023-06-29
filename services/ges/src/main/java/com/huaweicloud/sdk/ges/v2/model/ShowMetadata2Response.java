@@ -1,47 +1,34 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ShowMetadataRespGesMetadata;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowMetadata2Response extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_name")
-    
+    @JsonProperty(value = "master_key_name")
 
     private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_id")
-    
+    @JsonProperty(value = "master_key_id")
 
     private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ges_metadata")
-    
+    @JsonProperty(value = "ges_metadata")
 
     private ShowMetadataRespGesMetadata gesMetadata;
 
@@ -49,9 +36,6 @@ public class ShowMetadata2Response extends SdkResponse {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 元数据是否加密
@@ -65,15 +49,10 @@ public class ShowMetadata2Response extends SdkResponse {
         this.encrypted = encrypted;
     }
 
-    
-
     public ShowMetadata2Response withMasterKeyName(String masterKeyName) {
         this.masterKeyName = masterKeyName;
         return this;
     }
-
-    
-
 
     /**
      * 秘钥名称
@@ -87,15 +66,10 @@ public class ShowMetadata2Response extends SdkResponse {
         this.masterKeyName = masterKeyName;
     }
 
-    
-
     public ShowMetadata2Response withMasterKeyId(String masterKeyId) {
         this.masterKeyId = masterKeyId;
         return this;
     }
-
-    
-
 
     /**
      * 秘钥id
@@ -109,22 +83,19 @@ public class ShowMetadata2Response extends SdkResponse {
         this.masterKeyId = masterKeyId;
     }
 
-    
-
     public ShowMetadata2Response withGesMetadata(ShowMetadataRespGesMetadata gesMetadata) {
         this.gesMetadata = gesMetadata;
         return this;
     }
 
     public ShowMetadata2Response withGesMetadata(Consumer<ShowMetadataRespGesMetadata> gesMetadataSetter) {
-        if(this.gesMetadata == null ){
+        if (this.gesMetadata == null) {
             this.gesMetadata = new ShowMetadataRespGesMetadata();
             gesMetadataSetter.accept(this.gesMetadata);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get gesMetadata
@@ -138,26 +109,24 @@ public class ShowMetadata2Response extends SdkResponse {
         this.gesMetadata = gesMetadata;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetadata2Response showMetadata2Response = (ShowMetadata2Response) o;
-        return Objects.equals(this.encrypted, showMetadata2Response.encrypted) &&
-            Objects.equals(this.masterKeyName, showMetadata2Response.masterKeyName) &&
-            Objects.equals(this.masterKeyId, showMetadata2Response.masterKeyId) &&
-            Objects.equals(this.gesMetadata, showMetadata2Response.gesMetadata);
+        ShowMetadata2Response that = (ShowMetadata2Response) obj;
+        return Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.masterKeyName, that.masterKeyName)
+            && Objects.equals(this.masterKeyId, that.masterKeyId) && Objects.equals(this.gesMetadata, that.gesMetadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(encrypted, masterKeyName, masterKeyId, gesMetadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -169,6 +138,7 @@ public class ShowMetadata2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -179,8 +149,5 @@ public class ShowMetadata2Response extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

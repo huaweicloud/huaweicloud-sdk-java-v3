@@ -33,15 +33,15 @@ public class UserFunctionDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserFunctionDTO userFunctionDTO = (UserFunctionDTO) o;
-        return Objects.equals(this.enableRoom, userFunctionDTO.enableRoom);
+        UserFunctionDTO that = (UserFunctionDTO) obj;
+        return Objects.equals(this.enableRoom, that.enableRoom);
     }
 
     @Override

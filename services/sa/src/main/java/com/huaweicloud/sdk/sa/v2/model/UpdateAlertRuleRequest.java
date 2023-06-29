@@ -87,17 +87,16 @@ public class UpdateAlertRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlertRuleRequest updateAlertRuleRequest = (UpdateAlertRuleRequest) o;
-        return Objects.equals(this.workspaceId, updateAlertRuleRequest.workspaceId)
-            && Objects.equals(this.ruleId, updateAlertRuleRequest.ruleId)
-            && Objects.equals(this.body, updateAlertRuleRequest.body);
+        UpdateAlertRuleRequest that = (UpdateAlertRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

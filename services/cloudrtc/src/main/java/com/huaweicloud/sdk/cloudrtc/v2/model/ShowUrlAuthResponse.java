@@ -90,17 +90,16 @@ public class ShowUrlAuthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUrlAuthResponse showUrlAuthResponse = (ShowUrlAuthResponse) o;
-        return Objects.equals(this.appId, showUrlAuthResponse.appId)
-            && Objects.equals(this.authentication, showUrlAuthResponse.authentication)
-            && Objects.equals(this.xRequestId, showUrlAuthResponse.xRequestId);
+        ShowUrlAuthResponse that = (ShowUrlAuthResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

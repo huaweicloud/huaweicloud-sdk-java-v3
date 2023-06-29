@@ -213,22 +213,19 @@ public class ListWorkflowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowInstanceResponse listWorkflowInstanceResponse = (ListWorkflowInstanceResponse) o;
-        return Objects.equals(this.count, listWorkflowInstanceResponse.count)
-            && Objects.equals(this.executions, listWorkflowInstanceResponse.executions)
-            && Objects.equals(this.isTruncated, listWorkflowInstanceResponse.isTruncated)
-            && Objects.equals(this.nextOffset, listWorkflowInstanceResponse.nextOffset)
-            && Objects.equals(this.xRequestId, listWorkflowInstanceResponse.xRequestId)
-            && Objects.equals(this.contentLength, listWorkflowInstanceResponse.contentLength)
-            && Objects.equals(this.date, listWorkflowInstanceResponse.date)
-            && Objects.equals(this.contentType, listWorkflowInstanceResponse.contentType);
+        ListWorkflowInstanceResponse that = (ListWorkflowInstanceResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.executions, that.executions)
+            && Objects.equals(this.isTruncated, that.isTruncated) && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.contentType, that.contentType);
     }
 
     @Override

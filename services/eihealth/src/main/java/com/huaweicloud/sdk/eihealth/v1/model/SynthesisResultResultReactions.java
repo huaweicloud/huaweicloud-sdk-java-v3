@@ -96,17 +96,16 @@ public class SynthesisResultResultReactions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisResultResultReactions synthesisResultResultReactions = (SynthesisResultResultReactions) o;
-        return Objects.equals(this.id, synthesisResultResultReactions.id)
-            && Objects.equals(this.reactants, synthesisResultResultReactions.reactants)
-            && Objects.equals(this.product, synthesisResultResultReactions.product);
+        SynthesisResultResultReactions that = (SynthesisResultResultReactions) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.reactants, that.reactants)
+            && Objects.equals(this.product, that.product);
     }
 
     @Override

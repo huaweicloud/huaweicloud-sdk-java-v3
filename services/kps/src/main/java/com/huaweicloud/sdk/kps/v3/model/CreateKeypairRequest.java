@@ -43,15 +43,15 @@ public class CreateKeypairRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeypairRequest createKeypairRequest = (CreateKeypairRequest) o;
-        return Objects.equals(this.body, createKeypairRequest.body);
+        CreateKeypairRequest that = (CreateKeypairRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

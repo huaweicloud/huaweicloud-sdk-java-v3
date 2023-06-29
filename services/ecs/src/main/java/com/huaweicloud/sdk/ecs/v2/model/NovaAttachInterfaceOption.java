@@ -96,17 +96,16 @@ public class NovaAttachInterfaceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaAttachInterfaceOption novaAttachInterfaceOption = (NovaAttachInterfaceOption) o;
-        return Objects.equals(this.fixedIps, novaAttachInterfaceOption.fixedIps)
-            && Objects.equals(this.netId, novaAttachInterfaceOption.netId)
-            && Objects.equals(this.portId, novaAttachInterfaceOption.portId);
+        NovaAttachInterfaceOption that = (NovaAttachInterfaceOption) obj;
+        return Objects.equals(this.fixedIps, that.fixedIps) && Objects.equals(this.netId, that.netId)
+            && Objects.equals(this.portId, that.portId);
     }
 
     @Override

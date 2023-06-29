@@ -55,16 +55,15 @@ public class ExtraDhcpOpt {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtraDhcpOpt extraDhcpOpt = (ExtraDhcpOpt) o;
-        return Objects.equals(this.optName, extraDhcpOpt.optName)
-            && Objects.equals(this.optValue, extraDhcpOpt.optValue);
+        ExtraDhcpOpt that = (ExtraDhcpOpt) obj;
+        return Objects.equals(this.optName, that.optName) && Objects.equals(this.optValue, that.optValue);
     }
 
     @Override

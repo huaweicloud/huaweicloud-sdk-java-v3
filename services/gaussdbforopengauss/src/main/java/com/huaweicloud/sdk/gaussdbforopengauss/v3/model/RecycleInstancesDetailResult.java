@@ -1,61 +1,44 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * RecycleInstancesDetailResult
  */
-public class RecycleInstancesDetailResult  {
-
+public class RecycleInstancesDetailResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
+
     /**
      * 部署形态。
      */
     public static final class HaModeEnum {
 
-        
         /**
          * Enum HA for value: "Ha"
          */
         public static final HaModeEnum HA = new HaModeEnum("Ha");
-        
+
         /**
          * Enum INDEPENDENT for value: "Independent"
          */
         public static final HaModeEnum INDEPENDENT = new HaModeEnum("Independent");
-        
 
         private static final Map<String, HaModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -84,25 +67,18 @@ public class RecycleInstancesDetailResult  {
 
         @JsonCreator
         public static HaModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HaModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HaModeEnum(value));
         }
 
         public static HaModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -120,32 +96,29 @@ public class RecycleInstancesDetailResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_mode")
-    
+    @JsonProperty(value = "ha_mode")
 
     private HaModeEnum haMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
 
     private String engineVersion;
+
     /**
      * 计费模式（0：按需计费；1：包年/包月）。
      */
     public static final class PayModelEnum {
 
-        
         /**
          * Enum _0 for value: "0"
          */
         public static final PayModelEnum _0 = new PayModelEnum("0");
-        
+
         /**
          * Enum _1 for value: "1"
          */
         public static final PayModelEnum _1 = new PayModelEnum("1");
-        
 
         private static final Map<String, PayModelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -174,25 +147,18 @@ public class RecycleInstancesDetailResult  {
 
         @JsonCreator
         public static PayModelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PayModelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PayModelEnum(value));
         }
 
         public static PayModelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -210,43 +176,39 @@ public class RecycleInstancesDetailResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pay_model")
-    
+    @JsonProperty(value = "pay_model")
 
     private PayModelEnum payModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deleted_at")
-    
+    @JsonProperty(value = "deleted_at")
 
     private String deletedAt;
+
     /**
      * 磁盘类型。（SAS：high；SSD：ultrahigh；ESSD：essd）。
      */
     public static final class VolumeTypeEnum {
 
-        
         /**
          * Enum HIGH for value: "high"
          */
         public static final VolumeTypeEnum HIGH = new VolumeTypeEnum("high");
-        
+
         /**
          * Enum ULTRAHIGH for value: "ultrahigh"
          */
         public static final VolumeTypeEnum ULTRAHIGH = new VolumeTypeEnum("ultrahigh");
-        
+
         /**
          * Enum ESSD for value: "essd"
          */
         public static final VolumeTypeEnum ESSD = new VolumeTypeEnum("essd");
-        
 
         private static final Map<String, VolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -276,25 +238,18 @@ public class RecycleInstancesDetailResult  {
 
         @JsonCreator
         public static VolumeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeTypeEnum(value));
         }
 
         public static VolumeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,44 +267,39 @@ public class RecycleInstancesDetailResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume_type")
-    
+    @JsonProperty(value = "volume_type")
 
     private VolumeTypeEnum volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_vip")
-    
+    @JsonProperty(value = "data_vip")
 
     private String dataVip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recycle_backup_id")
-    
+    @JsonProperty(value = "recycle_backup_id")
 
     private String recycleBackupId;
+
     /**
      * 回收站备份状态。（Running：运行中；Active：有效的）。
      */
     public static final class RecycleStatusEnum {
 
-        
         /**
          * Enum RUNNING for value: "Running"
          */
         public static final RecycleStatusEnum RUNNING = new RecycleStatusEnum("Running");
-        
+
         /**
          * Enum ACTIVE for value: "Active"
          */
         public static final RecycleStatusEnum ACTIVE = new RecycleStatusEnum("Active");
-        
 
         private static final Map<String, RecycleStatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -378,25 +328,18 @@ public class RecycleInstancesDetailResult  {
 
         @JsonCreator
         public static RecycleStatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RecycleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecycleStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecycleStatusEnum(value));
         }
 
         public static RecycleStatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RecycleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -414,31 +357,29 @@ public class RecycleInstancesDetailResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recycle_status")
-    
+    @JsonProperty(value = "recycle_status")
 
     private RecycleStatusEnum recycleStatus;
+
     /**
      * 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
      */
     public static final class ModeEnum {
 
-        
         /**
          * Enum BASIC for value: "basic"
          */
         public static final ModeEnum BASIC = new ModeEnum("basic");
-        
+
         /**
          * Enum STANDARD for value: "standard"
          */
         public static final ModeEnum STANDARD = new ModeEnum("standard");
-        
+
         /**
          * Enum ENTERPRISE for value: "enterprise"
          */
         public static final ModeEnum ENTERPRISE = new ModeEnum("enterprise");
-        
 
         private static final Map<String, ModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -468,25 +409,18 @@ public class RecycleInstancesDetailResult  {
 
         @JsonCreator
         public static ModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -504,8 +438,7 @@ public class RecycleInstancesDetailResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
 
     private ModeEnum mode;
 
@@ -513,9 +446,6 @@ public class RecycleInstancesDetailResult  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -529,15 +459,10 @@ public class RecycleInstancesDetailResult  {
         this.id = id;
     }
 
-    
-
     public RecycleInstancesDetailResult withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。
@@ -551,15 +476,10 @@ public class RecycleInstancesDetailResult  {
         this.name = name;
     }
 
-    
-
     public RecycleInstancesDetailResult withHaMode(HaModeEnum haMode) {
         this.haMode = haMode;
         return this;
     }
-
-    
-
 
     /**
      * 部署形态。
@@ -573,15 +493,10 @@ public class RecycleInstancesDetailResult  {
         this.haMode = haMode;
     }
 
-    
-
     public RecycleInstancesDetailResult withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
-
-    
-
 
     /**
      * 引擎版本号。
@@ -595,15 +510,10 @@ public class RecycleInstancesDetailResult  {
         this.engineVersion = engineVersion;
     }
 
-    
-
     public RecycleInstancesDetailResult withPayModel(PayModelEnum payModel) {
         this.payModel = payModel;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式（0：按需计费；1：包年/包月）。
@@ -617,15 +527,10 @@ public class RecycleInstancesDetailResult  {
         this.payModel = payModel;
     }
 
-    
-
     public RecycleInstancesDetailResult withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -639,15 +544,10 @@ public class RecycleInstancesDetailResult  {
         this.createdAt = createdAt;
     }
 
-    
-
     public RecycleInstancesDetailResult withDeletedAt(String deletedAt) {
         this.deletedAt = deletedAt;
         return this;
     }
-
-    
-
 
     /**
      * 删除时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -661,15 +561,10 @@ public class RecycleInstancesDetailResult  {
         this.deletedAt = deletedAt;
     }
 
-    
-
     public RecycleInstancesDetailResult withVolumeType(VolumeTypeEnum volumeType) {
         this.volumeType = volumeType;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘类型。（SAS：high；SSD：ultrahigh；ESSD：essd）。
@@ -683,15 +578,10 @@ public class RecycleInstancesDetailResult  {
         this.volumeType = volumeType;
     }
 
-    
-
     public RecycleInstancesDetailResult withDataVip(String dataVip) {
         this.dataVip = dataVip;
         return this;
     }
-
-    
-
 
     /**
      * 数据vip。
@@ -705,15 +595,10 @@ public class RecycleInstancesDetailResult  {
         this.dataVip = dataVip;
     }
 
-    
-
     public RecycleInstancesDetailResult withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。
@@ -727,15 +612,10 @@ public class RecycleInstancesDetailResult  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public RecycleInstancesDetailResult withRecycleBackupId(String recycleBackupId) {
         this.recycleBackupId = recycleBackupId;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。（指删除实例时产生备份信息中的备份ID）。
@@ -749,15 +629,10 @@ public class RecycleInstancesDetailResult  {
         this.recycleBackupId = recycleBackupId;
     }
 
-    
-
     public RecycleInstancesDetailResult withRecycleStatus(RecycleStatusEnum recycleStatus) {
         this.recycleStatus = recycleStatus;
         return this;
     }
-
-    
-
 
     /**
      * 回收站备份状态。（Running：运行中；Active：有效的）。
@@ -771,15 +646,10 @@ public class RecycleInstancesDetailResult  {
         this.recycleStatus = recycleStatus;
     }
 
-    
-
     public RecycleInstancesDetailResult withMode(ModeEnum mode) {
         this.mode = mode;
         return this;
     }
-
-    
-
 
     /**
      * 实例类型（basic：基础版；standard：标准版；enterprise：企业版）。
@@ -793,35 +663,42 @@ public class RecycleInstancesDetailResult  {
         this.mode = mode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecycleInstancesDetailResult recycleInstancesDetailResult = (RecycleInstancesDetailResult) o;
-        return Objects.equals(this.id, recycleInstancesDetailResult.id) &&
-            Objects.equals(this.name, recycleInstancesDetailResult.name) &&
-            Objects.equals(this.haMode, recycleInstancesDetailResult.haMode) &&
-            Objects.equals(this.engineVersion, recycleInstancesDetailResult.engineVersion) &&
-            Objects.equals(this.payModel, recycleInstancesDetailResult.payModel) &&
-            Objects.equals(this.createdAt, recycleInstancesDetailResult.createdAt) &&
-            Objects.equals(this.deletedAt, recycleInstancesDetailResult.deletedAt) &&
-            Objects.equals(this.volumeType, recycleInstancesDetailResult.volumeType) &&
-            Objects.equals(this.dataVip, recycleInstancesDetailResult.dataVip) &&
-            Objects.equals(this.enterpriseProjectId, recycleInstancesDetailResult.enterpriseProjectId) &&
-            Objects.equals(this.recycleBackupId, recycleInstancesDetailResult.recycleBackupId) &&
-            Objects.equals(this.recycleStatus, recycleInstancesDetailResult.recycleStatus) &&
-            Objects.equals(this.mode, recycleInstancesDetailResult.mode);
+        RecycleInstancesDetailResult that = (RecycleInstancesDetailResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.payModel, that.payModel) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.deletedAt, that.deletedAt) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.dataVip, that.dataVip)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.recycleBackupId, that.recycleBackupId)
+            && Objects.equals(this.recycleStatus, that.recycleStatus) && Objects.equals(this.mode, that.mode);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, haMode, engineVersion, payModel, createdAt, deletedAt, volumeType, dataVip, enterpriseProjectId, recycleBackupId, recycleStatus, mode);
+        return Objects.hash(id,
+            name,
+            haMode,
+            engineVersion,
+            payModel,
+            createdAt,
+            deletedAt,
+            volumeType,
+            dataVip,
+            enterpriseProjectId,
+            recycleBackupId,
+            recycleStatus,
+            mode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -842,6 +719,7 @@ public class RecycleInstancesDetailResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -852,8 +730,5 @@ public class RecycleInstancesDetailResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,16 +77,16 @@ public class BuildStep {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BuildStep buildStep = (BuildStep) o;
-        return Objects.equals(this.name, buildStep.name) && Objects.equals(this.status, buildStep.status)
-            && Objects.equals(this.buildTime, buildStep.buildTime);
+        BuildStep that = (BuildStep) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.buildTime, that.buildTime);
     }
 
     @Override

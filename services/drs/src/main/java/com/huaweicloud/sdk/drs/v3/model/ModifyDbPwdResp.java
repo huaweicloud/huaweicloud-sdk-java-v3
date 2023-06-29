@@ -121,18 +121,17 @@ public class ModifyDbPwdResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyDbPwdResp modifyDbPwdResp = (ModifyDbPwdResp) o;
-        return Objects.equals(this.id, modifyDbPwdResp.id) && Objects.equals(this.status, modifyDbPwdResp.status)
-            && Objects.equals(this.endPointType, modifyDbPwdResp.endPointType)
-            && Objects.equals(this.errorCode, modifyDbPwdResp.errorCode)
-            && Objects.equals(this.errorMsg, modifyDbPwdResp.errorMsg);
+        ModifyDbPwdResp that = (ModifyDbPwdResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.endPointType, that.endPointType) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

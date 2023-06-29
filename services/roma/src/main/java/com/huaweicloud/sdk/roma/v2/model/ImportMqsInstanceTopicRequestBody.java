@@ -65,15 +65,15 @@ public class ImportMqsInstanceTopicRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportMqsInstanceTopicRequestBody importMqsInstanceTopicRequestBody = (ImportMqsInstanceTopicRequestBody) o;
-        return Objects.equals(this.uploadFileName, importMqsInstanceTopicRequestBody.uploadFileName);
+        ImportMqsInstanceTopicRequestBody that = (ImportMqsInstanceTopicRequestBody) obj;
+        return Objects.equals(this.uploadFileName, that.uploadFileName);
     }
 
     @Override

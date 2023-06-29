@@ -1,57 +1,46 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyNodeV3;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlProxyV3;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MysqlShowProxyResponseV3
  */
-public class MysqlShowProxyResponseV3  {
-
+public class MysqlShowProxyResponseV3 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
 
     private MysqlProxyV3 proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_node")
-    
+    @JsonProperty(value = "master_node")
 
     private MysqlProxyNodeV3 masterNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly_nodes")
-    
+    @JsonProperty(value = "readonly_nodes")
+
     private List<MysqlProxyNodeV3> readonlyNodes = null;
-    
+
     public MysqlShowProxyResponseV3 withProxy(MysqlProxyV3 proxy) {
         this.proxy = proxy;
         return this;
     }
 
     public MysqlShowProxyResponseV3 withProxy(Consumer<MysqlProxyV3> proxySetter) {
-        if(this.proxy == null ){
+        if (this.proxy == null) {
             this.proxy = new MysqlProxyV3();
             proxySetter.accept(this.proxy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get proxy
@@ -65,22 +54,19 @@ public class MysqlShowProxyResponseV3  {
         this.proxy = proxy;
     }
 
-    
-
     public MysqlShowProxyResponseV3 withMasterNode(MysqlProxyNodeV3 masterNode) {
         this.masterNode = masterNode;
         return this;
     }
 
     public MysqlShowProxyResponseV3 withMasterNode(Consumer<MysqlProxyNodeV3> masterNodeSetter) {
-        if(this.masterNode == null ){
+        if (this.masterNode == null) {
             this.masterNode = new MysqlProxyNodeV3();
             masterNodeSetter.accept(this.masterNode);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get masterNode
@@ -94,16 +80,13 @@ public class MysqlShowProxyResponseV3  {
         this.masterNode = masterNode;
     }
 
-    
-
     public MysqlShowProxyResponseV3 withReadonlyNodes(List<MysqlProxyNodeV3> readonlyNodes) {
         this.readonlyNodes = readonlyNodes;
         return this;
     }
 
-    
     public MysqlShowProxyResponseV3 addReadonlyNodesItem(MysqlProxyNodeV3 readonlyNodesItem) {
-        if(this.readonlyNodes == null) {
+        if (this.readonlyNodes == null) {
             this.readonlyNodes = new ArrayList<>();
         }
         this.readonlyNodes.add(readonlyNodesItem);
@@ -111,7 +94,7 @@ public class MysqlShowProxyResponseV3  {
     }
 
     public MysqlShowProxyResponseV3 withReadonlyNodes(Consumer<List<MysqlProxyNodeV3>> readonlyNodesSetter) {
-        if(this.readonlyNodes == null) {
+        if (this.readonlyNodes == null) {
             this.readonlyNodes = new ArrayList<>();
         }
         readonlyNodesSetter.accept(this.readonlyNodes);
@@ -130,25 +113,24 @@ public class MysqlShowProxyResponseV3  {
         this.readonlyNodes = readonlyNodes;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlShowProxyResponseV3 mysqlShowProxyResponseV3 = (MysqlShowProxyResponseV3) o;
-        return Objects.equals(this.proxy, mysqlShowProxyResponseV3.proxy) &&
-            Objects.equals(this.masterNode, mysqlShowProxyResponseV3.masterNode) &&
-            Objects.equals(this.readonlyNodes, mysqlShowProxyResponseV3.readonlyNodes);
+        MysqlShowProxyResponseV3 that = (MysqlShowProxyResponseV3) obj;
+        return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.masterNode, that.masterNode)
+            && Objects.equals(this.readonlyNodes, that.readonlyNodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(proxy, masterNode, readonlyNodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -159,6 +141,7 @@ public class MysqlShowProxyResponseV3  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -169,8 +152,5 @@ public class MysqlShowProxyResponseV3  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -97,17 +97,16 @@ public class ListAddonTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAddonTemplatesResponse listAddonTemplatesResponse = (ListAddonTemplatesResponse) o;
-        return Objects.equals(this.kind, listAddonTemplatesResponse.kind)
-            && Objects.equals(this.apiVersion, listAddonTemplatesResponse.apiVersion)
-            && Objects.equals(this.items, listAddonTemplatesResponse.items);
+        ListAddonTemplatesResponse that = (ListAddonTemplatesResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

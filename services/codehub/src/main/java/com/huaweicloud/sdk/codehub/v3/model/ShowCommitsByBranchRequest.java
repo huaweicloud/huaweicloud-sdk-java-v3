@@ -121,19 +121,17 @@ public class ShowCommitsByBranchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCommitsByBranchRequest showCommitsByBranchRequest = (ShowCommitsByBranchRequest) o;
-        return Objects.equals(this.groupName, showCommitsByBranchRequest.groupName)
-            && Objects.equals(this.pageIndex, showCommitsByBranchRequest.pageIndex)
-            && Objects.equals(this.pageSize, showCommitsByBranchRequest.pageSize)
-            && Objects.equals(this.refName, showCommitsByBranchRequest.refName)
-            && Objects.equals(this.repositoryName, showCommitsByBranchRequest.repositoryName);
+        ShowCommitsByBranchRequest that = (ShowCommitsByBranchRequest) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.pageIndex, that.pageIndex)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.refName, that.refName)
+            && Objects.equals(this.repositoryName, that.repositoryName);
     }
 
     @Override

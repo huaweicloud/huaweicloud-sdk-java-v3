@@ -43,15 +43,15 @@ public class ChangeIncidentRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeIncidentRequestBody changeIncidentRequestBody = (ChangeIncidentRequestBody) o;
-        return Objects.equals(this.dataObject, changeIncidentRequestBody.dataObject);
+        ChangeIncidentRequestBody that = (ChangeIncidentRequestBody) obj;
+        return Objects.equals(this.dataObject, that.dataObject);
     }
 
     @Override

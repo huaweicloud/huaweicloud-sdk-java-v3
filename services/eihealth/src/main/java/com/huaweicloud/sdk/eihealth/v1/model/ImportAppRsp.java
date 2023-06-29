@@ -143,19 +143,19 @@ public class ImportAppRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportAppRsp importAppRsp = (ImportAppRsp) o;
-        return Objects.equals(this.sourceAppId, importAppRsp.sourceAppId)
-            && Objects.equals(this.destinationAppId, importAppRsp.destinationAppId)
-            && Objects.equals(this.destinationAppName, importAppRsp.destinationAppName)
-            && Objects.equals(this.version, importAppRsp.version) && Objects.equals(this.message, importAppRsp.message)
-            && Objects.equals(this.status, importAppRsp.status);
+        ImportAppRsp that = (ImportAppRsp) obj;
+        return Objects.equals(this.sourceAppId, that.sourceAppId)
+            && Objects.equals(this.destinationAppId, that.destinationAppId)
+            && Objects.equals(this.destinationAppName, that.destinationAppName)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

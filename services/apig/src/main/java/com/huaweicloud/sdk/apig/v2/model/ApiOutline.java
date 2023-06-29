@@ -231,21 +231,19 @@ public class ApiOutline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiOutline apiOutline = (ApiOutline) o;
-        return Objects.equals(this.authType, apiOutline.authType)
-            && Objects.equals(this.runEnvName, apiOutline.runEnvName)
-            && Objects.equals(this.groupName, apiOutline.groupName)
-            && Objects.equals(this.publishId, apiOutline.publishId) && Objects.equals(this.groupId, apiOutline.groupId)
-            && Objects.equals(this.name, apiOutline.name) && Objects.equals(this.remark, apiOutline.remark)
-            && Objects.equals(this.runEnvId, apiOutline.runEnvId) && Objects.equals(this.id, apiOutline.id)
-            && Objects.equals(this.reqUri, apiOutline.reqUri);
+        ApiOutline that = (ApiOutline) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.runEnvName, that.runEnvName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri);
     }
 
     @Override

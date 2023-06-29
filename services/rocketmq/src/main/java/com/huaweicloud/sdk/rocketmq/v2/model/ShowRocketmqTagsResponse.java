@@ -53,15 +53,15 @@ public class ShowRocketmqTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRocketmqTagsResponse showRocketmqTagsResponse = (ShowRocketmqTagsResponse) o;
-        return Objects.equals(this.tags, showRocketmqTagsResponse.tags);
+        ShowRocketmqTagsResponse that = (ShowRocketmqTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

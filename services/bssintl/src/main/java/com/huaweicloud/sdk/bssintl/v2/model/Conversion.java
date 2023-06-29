@@ -99,18 +99,17 @@ public class Conversion {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Conversion conversion = (Conversion) o;
-        return Objects.equals(this.measureId, conversion.measureId)
-            && Objects.equals(this.refMeasureId, conversion.refMeasureId)
-            && Objects.equals(this.conversionRatio, conversion.conversionRatio)
-            && Objects.equals(this.measureType, conversion.measureType);
+        Conversion that = (Conversion) obj;
+        return Objects.equals(this.measureId, that.measureId) && Objects.equals(this.refMeasureId, that.refMeasureId)
+            && Objects.equals(this.conversionRatio, that.conversionRatio)
+            && Objects.equals(this.measureType, that.measureType);
     }
 
     @Override

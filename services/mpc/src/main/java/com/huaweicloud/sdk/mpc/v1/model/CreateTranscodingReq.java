@@ -522,30 +522,24 @@ public class CreateTranscodingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTranscodingReq createTranscodingReq = (CreateTranscodingReq) o;
-        return Objects.equals(this.input, createTranscodingReq.input)
-            && Objects.equals(this.output, createTranscodingReq.output)
-            && Objects.equals(this.transTemplateId, createTranscodingReq.transTemplateId)
-            && Objects.equals(this.avParameters, createTranscodingReq.avParameters)
-            && Objects.equals(this.outputFilenames, createTranscodingReq.outputFilenames)
-            && Objects.equals(this.userData, createTranscodingReq.userData)
-            && Objects.equals(this.watermarks, createTranscodingReq.watermarks)
-            && Objects.equals(this.thumbnail, createTranscodingReq.thumbnail)
-            && Objects.equals(this.priority, createTranscodingReq.priority)
-            && Objects.equals(this.subtitle, createTranscodingReq.subtitle)
-            && Objects.equals(this.encryption, createTranscodingReq.encryption)
-            && Objects.equals(this.crop, createTranscodingReq.crop)
-            && Objects.equals(this.audioTrack, createTranscodingReq.audioTrack)
-            && Objects.equals(this.multiAudio, createTranscodingReq.multiAudio)
-            && Objects.equals(this.videoProcess, createTranscodingReq.videoProcess)
-            && Objects.equals(this.audioProcess, createTranscodingReq.audioProcess);
+        CreateTranscodingReq that = (CreateTranscodingReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.transTemplateId, that.transTemplateId)
+            && Objects.equals(this.avParameters, that.avParameters)
+            && Objects.equals(this.outputFilenames, that.outputFilenames)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.watermarks, that.watermarks)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.subtitle, that.subtitle) && Objects.equals(this.encryption, that.encryption)
+            && Objects.equals(this.crop, that.crop) && Objects.equals(this.audioTrack, that.audioTrack)
+            && Objects.equals(this.multiAudio, that.multiAudio) && Objects.equals(this.videoProcess, that.videoProcess)
+            && Objects.equals(this.audioProcess, that.audioProcess);
     }
 
     @Override

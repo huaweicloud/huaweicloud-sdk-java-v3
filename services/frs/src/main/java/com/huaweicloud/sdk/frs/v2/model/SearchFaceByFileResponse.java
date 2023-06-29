@@ -53,15 +53,15 @@ public class SearchFaceByFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchFaceByFileResponse searchFaceByFileResponse = (SearchFaceByFileResponse) o;
-        return Objects.equals(this.faces, searchFaceByFileResponse.faces);
+        SearchFaceByFileResponse that = (SearchFaceByFileResponse) obj;
+        return Objects.equals(this.faces, that.faces);
     }
 
     @Override

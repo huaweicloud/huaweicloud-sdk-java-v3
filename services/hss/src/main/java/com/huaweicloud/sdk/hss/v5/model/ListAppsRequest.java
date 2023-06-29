@@ -213,22 +213,19 @@ public class ListAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsRequest listAppsRequest = (ListAppsRequest) o;
-        return Objects.equals(this.hostId, listAppsRequest.hostId)
-            && Objects.equals(this.hostName, listAppsRequest.hostName)
-            && Objects.equals(this.appName, listAppsRequest.appName)
-            && Objects.equals(this.hostIp, listAppsRequest.hostIp)
-            && Objects.equals(this.version, listAppsRequest.version)
-            && Objects.equals(this.installDir, listAppsRequest.installDir)
-            && Objects.equals(this.enterpriseProjectId, listAppsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listAppsRequest.limit) && Objects.equals(this.offset, listAppsRequest.offset);
+        ListAppsRequest that = (ListAppsRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.installDir, that.installDir)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

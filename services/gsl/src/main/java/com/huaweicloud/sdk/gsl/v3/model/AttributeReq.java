@@ -165,21 +165,21 @@ public class AttributeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttributeReq attributeReq = (AttributeReq) o;
-        return Objects.equals(this.simCardId, attributeReq.simCardId)
-            && Objects.equals(this.customerAttribute1, attributeReq.customerAttribute1)
-            && Objects.equals(this.customerAttribute2, attributeReq.customerAttribute2)
-            && Objects.equals(this.customerAttribute3, attributeReq.customerAttribute3)
-            && Objects.equals(this.customerAttribute4, attributeReq.customerAttribute4)
-            && Objects.equals(this.customerAttribute5, attributeReq.customerAttribute5)
-            && Objects.equals(this.customerAttribute6, attributeReq.customerAttribute6);
+        AttributeReq that = (AttributeReq) obj;
+        return Objects.equals(this.simCardId, that.simCardId)
+            && Objects.equals(this.customerAttribute1, that.customerAttribute1)
+            && Objects.equals(this.customerAttribute2, that.customerAttribute2)
+            && Objects.equals(this.customerAttribute3, that.customerAttribute3)
+            && Objects.equals(this.customerAttribute4, that.customerAttribute4)
+            && Objects.equals(this.customerAttribute5, that.customerAttribute5)
+            && Objects.equals(this.customerAttribute6, that.customerAttribute6);
     }
 
     @Override

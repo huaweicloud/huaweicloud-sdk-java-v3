@@ -33,15 +33,15 @@ public class BinlogClearPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BinlogClearPolicyRequestBody binlogClearPolicyRequestBody = (BinlogClearPolicyRequestBody) o;
-        return Objects.equals(this.binlogRetentionHours, binlogClearPolicyRequestBody.binlogRetentionHours);
+        BinlogClearPolicyRequestBody that = (BinlogClearPolicyRequestBody) obj;
+        return Objects.equals(this.binlogRetentionHours, that.binlogRetentionHours);
     }
 
     @Override

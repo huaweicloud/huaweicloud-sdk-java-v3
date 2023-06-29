@@ -33,15 +33,15 @@ public class DeleteBandwidthPackageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBandwidthPackageRequest deleteBandwidthPackageRequest = (DeleteBandwidthPackageRequest) o;
-        return Objects.equals(this.id, deleteBandwidthPackageRequest.id);
+        DeleteBandwidthPackageRequest that = (DeleteBandwidthPackageRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

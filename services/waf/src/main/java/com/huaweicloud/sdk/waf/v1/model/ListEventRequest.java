@@ -86,22 +86,15 @@ public class ListEventRequest {
             if (value == null) {
                 return null;
             }
-            RecentEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecentEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecentEnum(value));
         }
 
         public static RecentEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecentEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,19 +315,19 @@ public class ListEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventRequest listEventRequest = (ListEventRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listEventRequest.enterpriseProjectId)
-            && Objects.equals(this.recent, listEventRequest.recent) && Objects.equals(this.from, listEventRequest.from)
-            && Objects.equals(this.to, listEventRequest.to) && Objects.equals(this.attacks, listEventRequest.attacks)
-            && Objects.equals(this.hosts, listEventRequest.hosts) && Objects.equals(this.page, listEventRequest.page)
-            && Objects.equals(this.pagesize, listEventRequest.pagesize);
+        ListEventRequest that = (ListEventRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.recent, that.recent) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.attacks, that.attacks)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize);
     }
 
     @Override

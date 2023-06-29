@@ -60,22 +60,15 @@ public class Follow302StatusRequest {
             if (value == null) {
                 return null;
             }
-            Follow302StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Follow302StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Follow302StatusEnum(value));
         }
 
         public static Follow302StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Follow302StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,15 +108,15 @@ public class Follow302StatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Follow302StatusRequest follow302StatusRequest = (Follow302StatusRequest) o;
-        return Objects.equals(this.follow302Status, follow302StatusRequest.follow302Status);
+        Follow302StatusRequest that = (Follow302StatusRequest) obj;
+        return Objects.equals(this.follow302Status, that.follow302Status);
     }
 
     @Override

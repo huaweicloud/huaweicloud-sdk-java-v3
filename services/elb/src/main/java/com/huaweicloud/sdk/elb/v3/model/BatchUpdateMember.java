@@ -320,26 +320,21 @@ public class BatchUpdateMember {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateMember batchUpdateMember = (BatchUpdateMember) o;
-        return Objects.equals(this.id, batchUpdateMember.id) && Objects.equals(this.name, batchUpdateMember.name)
-            && Objects.equals(this.projectId, batchUpdateMember.projectId)
-            && Objects.equals(this.adminStateUp, batchUpdateMember.adminStateUp)
-            && Objects.equals(this.subnetCidrId, batchUpdateMember.subnetCidrId)
-            && Objects.equals(this.protocolPort, batchUpdateMember.protocolPort)
-            && Objects.equals(this.weight, batchUpdateMember.weight)
-            && Objects.equals(this.address, batchUpdateMember.address)
-            && Objects.equals(this.operatingStatus, batchUpdateMember.operatingStatus)
-            && Objects.equals(this.status, batchUpdateMember.status)
-            && Objects.equals(this.memberType, batchUpdateMember.memberType)
-            && Objects.equals(this.instanceId, batchUpdateMember.instanceId)
-            && Objects.equals(this.portId, batchUpdateMember.portId);
+        BatchUpdateMember that = (BatchUpdateMember) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.memberType, that.memberType)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.portId, that.portId);
     }
 
     @Override

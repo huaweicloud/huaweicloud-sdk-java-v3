@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Notifications;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListNotifiedHistoriesResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_sn")
-    
+    @JsonProperty(value = "event_sn")
 
     private String eventSn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notifications")
-    
+    @JsonProperty(value = "notifications")
+
     private List<Notifications> notifications = null;
-    
+
     public ListNotifiedHistoriesResponse withEventSn(String eventSn) {
         this.eventSn = eventSn;
         return this;
     }
-
-    
-
 
     /**
      * 告警流水号
@@ -54,16 +41,13 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
         this.eventSn = eventSn;
     }
 
-    
-
     public ListNotifiedHistoriesResponse withNotifications(List<Notifications> notifications) {
         this.notifications = notifications;
         return this;
     }
 
-    
     public ListNotifiedHistoriesResponse addNotificationsItem(Notifications notificationsItem) {
-        if(this.notifications == null) {
+        if (this.notifications == null) {
             this.notifications = new ArrayList<>();
         }
         this.notifications.add(notificationsItem);
@@ -71,7 +55,7 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
     }
 
     public ListNotifiedHistoriesResponse withNotifications(Consumer<List<Notifications>> notificationsSetter) {
-        if(this.notifications == null) {
+        if (this.notifications == null) {
             this.notifications = new ArrayList<>();
         }
         notificationsSetter.accept(this.notifications);
@@ -90,24 +74,23 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
         this.notifications = notifications;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotifiedHistoriesResponse listNotifiedHistoriesResponse = (ListNotifiedHistoriesResponse) o;
-        return Objects.equals(this.eventSn, listNotifiedHistoriesResponse.eventSn) &&
-            Objects.equals(this.notifications, listNotifiedHistoriesResponse.notifications);
+        ListNotifiedHistoriesResponse that = (ListNotifiedHistoriesResponse) obj;
+        return Objects.equals(this.eventSn, that.eventSn) && Objects.equals(this.notifications, that.notifications);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventSn, notifications);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListNotifiedHistoriesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

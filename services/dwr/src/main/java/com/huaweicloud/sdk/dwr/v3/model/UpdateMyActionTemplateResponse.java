@@ -168,21 +168,18 @@ public class UpdateMyActionTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMyActionTemplateResponse updateMyActionTemplateResponse = (UpdateMyActionTemplateResponse) o;
-        return Objects.equals(this.templateName, updateMyActionTemplateResponse.templateName)
-            && Objects.equals(this.createdAt, updateMyActionTemplateResponse.createdAt)
-            && Objects.equals(this.version, updateMyActionTemplateResponse.version)
-            && Objects.equals(this.xRequestId, updateMyActionTemplateResponse.xRequestId)
-            && Objects.equals(this.connection, updateMyActionTemplateResponse.connection)
-            && Objects.equals(this.contentLength, updateMyActionTemplateResponse.contentLength)
-            && Objects.equals(this.date, updateMyActionTemplateResponse.date);
+        UpdateMyActionTemplateResponse that = (UpdateMyActionTemplateResponse) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

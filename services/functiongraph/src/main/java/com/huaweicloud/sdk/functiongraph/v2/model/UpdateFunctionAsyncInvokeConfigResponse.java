@@ -177,23 +177,21 @@ public class UpdateFunctionAsyncInvokeConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionAsyncInvokeConfigResponse updateFunctionAsyncInvokeConfigResponse =
-            (UpdateFunctionAsyncInvokeConfigResponse) o;
-        return Objects.equals(this.funcUrn, updateFunctionAsyncInvokeConfigResponse.funcUrn)
-            && Objects.equals(this.maxAsyncEventAgeInSeconds,
-                updateFunctionAsyncInvokeConfigResponse.maxAsyncEventAgeInSeconds)
-            && Objects.equals(this.maxAsyncRetryAttempts, updateFunctionAsyncInvokeConfigResponse.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, updateFunctionAsyncInvokeConfigResponse.destinationConfig)
-            && Objects.equals(this.createdTime, updateFunctionAsyncInvokeConfigResponse.createdTime)
-            && Objects.equals(this.lastModified, updateFunctionAsyncInvokeConfigResponse.lastModified)
-            && Objects.equals(this.enableAsyncStatusLog, updateFunctionAsyncInvokeConfigResponse.enableAsyncStatusLog);
+        UpdateFunctionAsyncInvokeConfigResponse that = (UpdateFunctionAsyncInvokeConfigResponse) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn)
+            && Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, that.destinationConfig)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModified, that.lastModified)
+            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog);
     }
 
     @Override

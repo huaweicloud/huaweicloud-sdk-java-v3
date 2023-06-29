@@ -100,22 +100,15 @@ public class PluginApiAttachInfo {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginTypeEnum(value));
         }
 
         public static PluginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class PluginApiAttachInfo {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginScopeEnum(value));
         }
 
         public static PluginScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -409,24 +395,19 @@ public class PluginApiAttachInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginApiAttachInfo pluginApiAttachInfo = (PluginApiAttachInfo) o;
-        return Objects.equals(this.pluginAttachId, pluginApiAttachInfo.pluginAttachId)
-            && Objects.equals(this.pluginId, pluginApiAttachInfo.pluginId)
-            && Objects.equals(this.pluginName, pluginApiAttachInfo.pluginName)
-            && Objects.equals(this.pluginType, pluginApiAttachInfo.pluginType)
-            && Objects.equals(this.pluginScope, pluginApiAttachInfo.pluginScope)
-            && Objects.equals(this.envId, pluginApiAttachInfo.envId)
-            && Objects.equals(this.envName, pluginApiAttachInfo.envName)
-            && Objects.equals(this.apiId, pluginApiAttachInfo.apiId)
-            && Objects.equals(this.apiName, pluginApiAttachInfo.apiName)
-            && Objects.equals(this.attachedTime, pluginApiAttachInfo.attachedTime);
+        PluginApiAttachInfo that = (PluginApiAttachInfo) obj;
+        return Objects.equals(this.pluginAttachId, that.pluginAttachId) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.pluginType, that.pluginType)
+            && Objects.equals(this.pluginScope, that.pluginScope) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.attachedTime, that.attachedTime);
     }
 
     @Override

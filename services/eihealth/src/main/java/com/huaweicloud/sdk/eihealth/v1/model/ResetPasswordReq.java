@@ -99,17 +99,17 @@ public class ResetPasswordReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPasswordReq resetPasswordReq = (ResetPasswordReq) o;
-        return Objects.equals(this.code, resetPasswordReq.code) && Objects.equals(this.method, resetPasswordReq.method)
-            && Objects.equals(this.originalPassword, resetPasswordReq.originalPassword)
-            && Objects.equals(this.newPassword, resetPasswordReq.newPassword);
+        ResetPasswordReq that = (ResetPasswordReq) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.originalPassword, that.originalPassword)
+            && Objects.equals(this.newPassword, that.newPassword);
     }
 
     @Override

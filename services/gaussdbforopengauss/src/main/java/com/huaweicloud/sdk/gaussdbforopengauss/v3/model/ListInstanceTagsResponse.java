@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.TagsResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListInstanceTagsResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<TagsResult> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
-    private List<TagsResult> tags = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
@@ -39,9 +29,8 @@ public class ListInstanceTagsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListInstanceTagsResponse addTagsItem(TagsResult tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -49,7 +38,7 @@ public class ListInstanceTagsResponse extends SdkResponse {
     }
 
     public ListInstanceTagsResponse withTags(Consumer<List<TagsResult>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -68,15 +57,10 @@ public class ListInstanceTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    
-
     public ListInstanceTagsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数。
@@ -90,24 +74,23 @@ public class ListInstanceTagsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceTagsResponse listInstanceTagsResponse = (ListInstanceTagsResponse) o;
-        return Objects.equals(this.tags, listInstanceTagsResponse.tags) &&
-            Objects.equals(this.totalCount, listInstanceTagsResponse.totalCount);
+        ListInstanceTagsResponse that = (ListInstanceTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.totalCount, that.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListInstanceTagsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListInstanceTagsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

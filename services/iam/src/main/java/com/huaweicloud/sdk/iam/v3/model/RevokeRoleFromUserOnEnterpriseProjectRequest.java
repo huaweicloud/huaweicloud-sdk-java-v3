@@ -77,19 +77,16 @@ public class RevokeRoleFromUserOnEnterpriseProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RevokeRoleFromUserOnEnterpriseProjectRequest revokeRoleFromUserOnEnterpriseProjectRequest =
-            (RevokeRoleFromUserOnEnterpriseProjectRequest) o;
-        return Objects.equals(this.enterpriseProjectId,
-            revokeRoleFromUserOnEnterpriseProjectRequest.enterpriseProjectId)
-            && Objects.equals(this.userId, revokeRoleFromUserOnEnterpriseProjectRequest.userId)
-            && Objects.equals(this.roleId, revokeRoleFromUserOnEnterpriseProjectRequest.roleId);
+        RevokeRoleFromUserOnEnterpriseProjectRequest that = (RevokeRoleFromUserOnEnterpriseProjectRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

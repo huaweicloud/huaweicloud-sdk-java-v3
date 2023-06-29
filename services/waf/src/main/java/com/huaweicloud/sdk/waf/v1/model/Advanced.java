@@ -74,15 +74,15 @@ public class Advanced {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Advanced advanced = (Advanced) o;
-        return Objects.equals(this.index, advanced.index) && Objects.equals(this.contensts, advanced.contensts);
+        Advanced that = (Advanced) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.contensts, that.contensts);
     }
 
     @Override

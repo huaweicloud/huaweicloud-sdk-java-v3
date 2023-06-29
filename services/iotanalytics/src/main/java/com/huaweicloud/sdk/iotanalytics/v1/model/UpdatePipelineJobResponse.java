@@ -119,18 +119,17 @@ public class UpdatePipelineJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePipelineJobResponse updatePipelineJobResponse = (UpdatePipelineJobResponse) o;
-        return Objects.equals(this.pipelineId, updatePipelineJobResponse.pipelineId)
-            && Objects.equals(this.pipelineState, updatePipelineJobResponse.pipelineState)
-            && Objects.equals(this.status, updatePipelineJobResponse.status)
-            && Objects.equals(this.checkInfo, updatePipelineJobResponse.checkInfo);
+        UpdatePipelineJobResponse that = (UpdatePipelineJobResponse) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.pipelineState, that.pipelineState) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.checkInfo, that.checkInfo);
     }
 
     @Override

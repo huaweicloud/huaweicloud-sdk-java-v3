@@ -57,16 +57,15 @@ public class ListProjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectsRequest listProjectsRequest = (ListProjectsRequest) o;
-        return Objects.equals(this.xRepoAuth, listProjectsRequest.xRepoAuth)
-            && Objects.equals(this.namespace, listProjectsRequest.namespace);
+        ListProjectsRequest that = (ListProjectsRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

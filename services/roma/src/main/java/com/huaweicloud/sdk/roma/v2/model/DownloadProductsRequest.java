@@ -100,16 +100,15 @@ public class DownloadProductsRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadProductsRequest downloadProductsRequest = (DownloadProductsRequest) o;
-        return Objects.equals(this.instanceId, downloadProductsRequest.instanceId)
-            && Objects.equals(this.productIds, downloadProductsRequest.productIds);
+        DownloadProductsRequest that = (DownloadProductsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productIds, that.productIds);
     }
 
     @Override

@@ -65,6 +65,11 @@ public class AddressGroup {
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<ResourceTag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "status")
 
     private String status;
@@ -260,6 +265,39 @@ public class AddressGroup {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
+    public AddressGroup withTags(List<ResourceTag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public AddressGroup addTagsItem(ResourceTag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public AddressGroup withTags(Consumer<List<ResourceTag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * IP地址组资源标签
+     * @return tags
+     */
+    public List<ResourceTag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<ResourceTag> tags) {
+        this.tags = tags;
+    }
+
     public AddressGroup withStatus(String status) {
         this.status = status;
         return this;
@@ -295,24 +333,22 @@ public class AddressGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddressGroup addressGroup = (AddressGroup) o;
-        return Objects.equals(this.id, addressGroup.id) && Objects.equals(this.name, addressGroup.name)
-            && Objects.equals(this.description, addressGroup.description)
-            && Objects.equals(this.maxCapacity, addressGroup.maxCapacity)
-            && Objects.equals(this.ipSet, addressGroup.ipSet) && Objects.equals(this.ipVersion, addressGroup.ipVersion)
-            && Objects.equals(this.createdAt, addressGroup.createdAt)
-            && Objects.equals(this.updatedAt, addressGroup.updatedAt)
-            && Objects.equals(this.tenantId, addressGroup.tenantId)
-            && Objects.equals(this.enterpriseProjectId, addressGroup.enterpriseProjectId)
-            && Objects.equals(this.status, addressGroup.status)
-            && Objects.equals(this.statusMessage, addressGroup.statusMessage);
+        AddressGroup that = (AddressGroup) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.maxCapacity, that.maxCapacity)
+            && Objects.equals(this.ipSet, that.ipSet) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusMessage, that.statusMessage);
     }
 
     @Override
@@ -327,6 +363,7 @@ public class AddressGroup {
             updatedAt,
             tenantId,
             enterpriseProjectId,
+            tags,
             status,
             statusMessage);
     }
@@ -345,6 +382,7 @@ public class AddressGroup {
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    tenantId: ").append(toIndentedString(tenantId)).append("\n");
         sb.append("    enterpriseProjectId: ").append(toIndentedString(enterpriseProjectId)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    statusMessage: ").append(toIndentedString(statusMessage)).append("\n");
         sb.append("}");

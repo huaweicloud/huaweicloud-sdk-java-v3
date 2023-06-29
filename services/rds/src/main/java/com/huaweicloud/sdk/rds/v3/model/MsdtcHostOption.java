@@ -55,15 +55,15 @@ public class MsdtcHostOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MsdtcHostOption msdtcHostOption = (MsdtcHostOption) o;
-        return Objects.equals(this.hostName, msdtcHostOption.hostName) && Objects.equals(this.ip, msdtcHostOption.ip);
+        MsdtcHostOption that = (MsdtcHostOption) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

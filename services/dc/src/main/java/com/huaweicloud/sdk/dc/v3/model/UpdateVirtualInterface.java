@@ -98,22 +98,15 @@ public class UpdateVirtualInterface {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,22 +299,19 @@ public class UpdateVirtualInterface {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVirtualInterface updateVirtualInterface = (UpdateVirtualInterface) o;
-        return Objects.equals(this.name, updateVirtualInterface.name)
-            && Objects.equals(this.description, updateVirtualInterface.description)
-            && Objects.equals(this.bandwidth, updateVirtualInterface.bandwidth)
-            && Objects.equals(this.remoteEpGroup, updateVirtualInterface.remoteEpGroup)
-            && Objects.equals(this.serviceEpGroup, updateVirtualInterface.serviceEpGroup)
-            && Objects.equals(this.enableBfd, updateVirtualInterface.enableBfd)
-            && Objects.equals(this.enableNqa, updateVirtualInterface.enableNqa)
-            && Objects.equals(this.status, updateVirtualInterface.status);
+        UpdateVirtualInterface that = (UpdateVirtualInterface) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.serviceEpGroup, that.serviceEpGroup)
+            && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.enableNqa, that.enableNqa)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

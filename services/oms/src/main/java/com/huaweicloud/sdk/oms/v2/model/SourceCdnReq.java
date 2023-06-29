@@ -91,22 +91,15 @@ public class SourceCdnReq {
             if (value == null) {
                 return null;
             }
-            AuthenticationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthenticationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthenticationTypeEnum(value));
         }
 
         public static AuthenticationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthenticationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class SourceCdnReq {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -284,17 +270,17 @@ public class SourceCdnReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceCdnReq sourceCdnReq = (SourceCdnReq) o;
-        return Objects.equals(this.authenticationKey, sourceCdnReq.authenticationKey)
-            && Objects.equals(this.authenticationType, sourceCdnReq.authenticationType)
-            && Objects.equals(this.domain, sourceCdnReq.domain) && Objects.equals(this.protocol, sourceCdnReq.protocol);
+        SourceCdnReq that = (SourceCdnReq) obj;
+        return Objects.equals(this.authenticationKey, that.authenticationKey)
+            && Objects.equals(this.authenticationType, that.authenticationType)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

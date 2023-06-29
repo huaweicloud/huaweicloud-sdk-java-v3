@@ -387,31 +387,25 @@ public class ShowClassroomDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClassroomDetailResponse showClassroomDetailResponse = (ShowClassroomDetailResponse) o;
-        return Objects.equals(this.name, showClassroomDetailResponse.name)
-            && Objects.equals(this.description, showClassroomDetailResponse.description)
-            && Objects.equals(this.announcement, showClassroomDetailResponse.announcement)
-            && Objects.equals(this.announcementTime, showClassroomDetailResponse.announcementTime)
-            && Objects.equals(this.createTime, showClassroomDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showClassroomDetailResponse.updateTime)
-            && Objects.equals(this.teacher, showClassroomDetailResponse.teacher)
-            && Objects.equals(this.credit, showClassroomDetailResponse.credit)
-            && Objects.equals(this.startTime, showClassroomDetailResponse.startTime)
-            && Objects.equals(this.endTime, showClassroomDetailResponse.endTime)
-            && Objects.equals(this.role, showClassroomDetailResponse.role)
-            && Objects.equals(this.school, showClassroomDetailResponse.school)
-            && Objects.equals(this.contentCount, showClassroomDetailResponse.contentCount)
-            && Objects.equals(this.coursewareCount, showClassroomDetailResponse.coursewareCount)
-            && Objects.equals(this.jobCount, showClassroomDetailResponse.jobCount)
-            && Objects.equals(this.memberCount, showClassroomDetailResponse.memberCount)
-            && Objects.equals(this.status, showClassroomDetailResponse.status);
+        ShowClassroomDetailResponse that = (ShowClassroomDetailResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.announcement, that.announcement)
+            && Objects.equals(this.announcementTime, that.announcementTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.teacher, that.teacher) && Objects.equals(this.credit, that.credit)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.school, that.school)
+            && Objects.equals(this.contentCount, that.contentCount)
+            && Objects.equals(this.coursewareCount, that.coursewareCount)
+            && Objects.equals(this.jobCount, that.jobCount) && Objects.equals(this.memberCount, that.memberCount)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

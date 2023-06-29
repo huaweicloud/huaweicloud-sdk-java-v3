@@ -79,17 +79,16 @@ public class CreateDatabaseResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseResourceReq createDatabaseResourceReq = (CreateDatabaseResourceReq) o;
-        return Objects.equals(this.specCode, createDatabaseResourceReq.specCode)
-            && Objects.equals(this.diskSpace, createDatabaseResourceReq.diskSpace)
-            && Objects.equals(this.diskEncrypt, createDatabaseResourceReq.diskEncrypt);
+        CreateDatabaseResourceReq that = (CreateDatabaseResourceReq) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.diskSpace, that.diskSpace)
+            && Objects.equals(this.diskEncrypt, that.diskEncrypt);
     }
 
     @Override

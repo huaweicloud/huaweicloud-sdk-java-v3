@@ -99,18 +99,16 @@ public class V2XEdgeAppResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2XEdgeAppResponseDTO v2XEdgeAppResponseDTO = (V2XEdgeAppResponseDTO) o;
-        return Objects.equals(this.v2xEdgeId, v2XEdgeAppResponseDTO.v2xEdgeId)
-            && Objects.equals(this.edgeAppId, v2XEdgeAppResponseDTO.edgeAppId)
-            && Objects.equals(this.appVersion, v2XEdgeAppResponseDTO.appVersion)
-            && Objects.equals(this.status, v2XEdgeAppResponseDTO.status);
+        V2XEdgeAppResponseDTO that = (V2XEdgeAppResponseDTO) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.status, that.status);
     }
 
     @Override

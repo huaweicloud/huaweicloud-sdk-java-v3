@@ -78,17 +78,16 @@ public class CreateEvaluateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEvaluateResponse createEvaluateResponse = (CreateEvaluateResponse) o;
-        return Objects.equals(this.errorCode, createEvaluateResponse.errorCode)
-            && Objects.equals(this.errorMsg, createEvaluateResponse.errorMsg)
-            && Objects.equals(this.requestId, createEvaluateResponse.requestId);
+        CreateEvaluateResponse that = (CreateEvaluateResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

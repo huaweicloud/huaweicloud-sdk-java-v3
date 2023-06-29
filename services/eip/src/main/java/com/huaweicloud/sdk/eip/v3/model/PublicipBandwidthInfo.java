@@ -145,20 +145,17 @@ public class PublicipBandwidthInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicipBandwidthInfo publicipBandwidthInfo = (PublicipBandwidthInfo) o;
-        return Objects.equals(this.id, publicipBandwidthInfo.id)
-            && Objects.equals(this.size, publicipBandwidthInfo.size)
-            && Objects.equals(this.shareType, publicipBandwidthInfo.shareType)
-            && Objects.equals(this.chargeMode, publicipBandwidthInfo.chargeMode)
-            && Objects.equals(this.name, publicipBandwidthInfo.name)
-            && Objects.equals(this.billingInfo, publicipBandwidthInfo.billingInfo);
+        PublicipBandwidthInfo that = (PublicipBandwidthInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.shareType, that.shareType) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.billingInfo, that.billingInfo);
     }
 
     @Override

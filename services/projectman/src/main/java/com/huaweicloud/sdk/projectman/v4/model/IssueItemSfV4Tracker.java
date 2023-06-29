@@ -55,15 +55,15 @@ public class IssueItemSfV4Tracker {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueItemSfV4Tracker issueItemSfV4Tracker = (IssueItemSfV4Tracker) o;
-        return Objects.equals(this.id, issueItemSfV4Tracker.id) && Objects.equals(this.name, issueItemSfV4Tracker.name);
+        IssueItemSfV4Tracker that = (IssueItemSfV4Tracker) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

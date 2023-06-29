@@ -103,18 +103,16 @@ public class UpdateMemberOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMemberOption updateMemberOption = (UpdateMemberOption) o;
-        return Objects.equals(this.adminStateUp, updateMemberOption.adminStateUp)
-            && Objects.equals(this.name, updateMemberOption.name)
-            && Objects.equals(this.weight, updateMemberOption.weight)
-            && Objects.equals(this.protocolPort, updateMemberOption.protocolPort);
+        UpdateMemberOption that = (UpdateMemberOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.protocolPort, that.protocolPort);
     }
 
     @Override

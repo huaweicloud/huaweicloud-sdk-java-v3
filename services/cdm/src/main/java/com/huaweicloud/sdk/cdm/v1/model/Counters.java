@@ -46,16 +46,16 @@ public class Counters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Counters counters = (Counters) o;
+        Counters that = (Counters) obj;
         return Objects.equals(this.orgApacheSqoopSubmissionCounterSqoopCounters,
-            counters.orgApacheSqoopSubmissionCounterSqoopCounters);
+            that.orgApacheSqoopSubmissionCounterSqoopCounters);
     }
 
     @Override

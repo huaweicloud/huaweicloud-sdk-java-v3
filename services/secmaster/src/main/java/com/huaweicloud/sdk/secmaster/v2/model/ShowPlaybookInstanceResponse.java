@@ -284,25 +284,20 @@ public class ShowPlaybookInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookInstanceResponse showPlaybookInstanceResponse = (ShowPlaybookInstanceResponse) o;
-        return Objects.equals(this.id, showPlaybookInstanceResponse.id)
-            && Objects.equals(this.name, showPlaybookInstanceResponse.name)
-            && Objects.equals(this.projectId, showPlaybookInstanceResponse.projectId)
-            && Objects.equals(this.playbook, showPlaybookInstanceResponse.playbook)
-            && Objects.equals(this.dataclass, showPlaybookInstanceResponse.dataclass)
-            && Objects.equals(this.dataobject, showPlaybookInstanceResponse.dataobject)
-            && Objects.equals(this.status, showPlaybookInstanceResponse.status)
-            && Objects.equals(this.triggerType, showPlaybookInstanceResponse.triggerType)
-            && Objects.equals(this.startTime, showPlaybookInstanceResponse.startTime)
-            && Objects.equals(this.endTime, showPlaybookInstanceResponse.endTime)
-            && Objects.equals(this.xRequestId, showPlaybookInstanceResponse.xRequestId);
+        ShowPlaybookInstanceResponse that = (ShowPlaybookInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.playbook, that.playbook)
+            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.dataobject, that.dataobject)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class CheckParametersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckParametersResponse checkParametersResponse = (CheckParametersResponse) o;
-        return Objects.equals(this.body, checkParametersResponse.body);
+        CheckParametersResponse that = (CheckParametersResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

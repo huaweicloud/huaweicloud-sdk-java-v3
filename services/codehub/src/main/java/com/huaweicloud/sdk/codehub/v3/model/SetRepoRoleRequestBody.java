@@ -66,22 +66,15 @@ public class SetRepoRoleRequestBody {
             if (value == null) {
                 return null;
             }
-            RoleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RoleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleEnum(value));
         }
 
         public static RoleEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            RoleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -121,15 +114,15 @@ public class SetRepoRoleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRepoRoleRequestBody setRepoRoleRequestBody = (SetRepoRoleRequestBody) o;
-        return Objects.equals(this.role, setRepoRoleRequestBody.role);
+        SetRepoRoleRequestBody that = (SetRepoRoleRequestBody) obj;
+        return Objects.equals(this.role, that.role);
     }
 
     @Override

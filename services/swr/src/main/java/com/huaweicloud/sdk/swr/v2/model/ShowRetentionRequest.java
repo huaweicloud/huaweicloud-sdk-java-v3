@@ -77,17 +77,16 @@ public class ShowRetentionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRetentionRequest showRetentionRequest = (ShowRetentionRequest) o;
-        return Objects.equals(this.namespace, showRetentionRequest.namespace)
-            && Objects.equals(this.repository, showRetentionRequest.repository)
-            && Objects.equals(this.retentionId, showRetentionRequest.retentionId);
+        ShowRetentionRequest that = (ShowRetentionRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.retentionId, that.retentionId);
     }
 
     @Override

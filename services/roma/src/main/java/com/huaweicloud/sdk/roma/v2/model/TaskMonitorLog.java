@@ -108,22 +108,15 @@ public class TaskMonitorLog {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecuteStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecuteStatusEnum(value));
         }
 
         public static ExecuteStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class TaskMonitorLog {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,22 +288,15 @@ public class TaskMonitorLog {
             if (value == null) {
                 return null;
             }
-            PositionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionStatusEnum(value));
         }
 
         public static PositionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -422,22 +401,15 @@ public class TaskMonitorLog {
             if (value == null) {
                 return null;
             }
-            DataSizeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataSizeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataSizeUnitEnum(value));
         }
 
         public static DataSizeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataSizeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -810,30 +782,24 @@ public class TaskMonitorLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskMonitorLog taskMonitorLog = (TaskMonitorLog) o;
-        return Objects.equals(this.id, taskMonitorLog.id) && Objects.equals(this.startTime, taskMonitorLog.startTime)
-            && Objects.equals(this.dispatchTime, taskMonitorLog.dispatchTime)
-            && Objects.equals(this.endTime, taskMonitorLog.endTime)
-            && Objects.equals(this.executeStatus, taskMonitorLog.executeStatus)
-            && Objects.equals(this.position, taskMonitorLog.position)
-            && Objects.equals(this.positionStatus, taskMonitorLog.positionStatus)
-            && Objects.equals(this.status, taskMonitorLog.status)
-            && Objects.equals(this.dirtyDataCount, taskMonitorLog.dirtyDataCount)
-            && Objects.equals(this.dataCount, taskMonitorLog.dataCount)
-            && Objects.equals(this.dataSize, taskMonitorLog.dataSize)
-            && Objects.equals(this.dataSizeUnit, taskMonitorLog.dataSizeUnit)
-            && Objects.equals(this.spendTime, taskMonitorLog.spendTime)
-            && Objects.equals(this.readSpendTime, taskMonitorLog.readSpendTime)
-            && Objects.equals(this.writeSpendTime, taskMonitorLog.writeSpendTime)
-            && Objects.equals(this.remarks, taskMonitorLog.remarks)
-            && Objects.equals(this.detailLogs, taskMonitorLog.detailLogs);
+        TaskMonitorLog that = (TaskMonitorLog) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.dispatchTime, that.dispatchTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.executeStatus, that.executeStatus) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.positionStatus, that.positionStatus) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dirtyDataCount, that.dirtyDataCount)
+            && Objects.equals(this.dataCount, that.dataCount) && Objects.equals(this.dataSize, that.dataSize)
+            && Objects.equals(this.dataSizeUnit, that.dataSizeUnit) && Objects.equals(this.spendTime, that.spendTime)
+            && Objects.equals(this.readSpendTime, that.readSpendTime)
+            && Objects.equals(this.writeSpendTime, that.writeSpendTime) && Objects.equals(this.remarks, that.remarks)
+            && Objects.equals(this.detailLogs, that.detailLogs);
     }
 
     @Override

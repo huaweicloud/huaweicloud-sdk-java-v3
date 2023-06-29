@@ -71,22 +71,15 @@ public class CreateMigrationTaskBody {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationTypeEnum(value));
         }
 
         public static MigrationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,22 +148,15 @@ public class CreateMigrationTaskBody {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationMethodEnum(value));
         }
 
         public static MigrationMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -242,22 +228,15 @@ public class CreateMigrationTaskBody {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetworkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkTypeEnum(value));
         }
 
         public static NetworkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -453,22 +432,20 @@ public class CreateMigrationTaskBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMigrationTaskBody createMigrationTaskBody = (CreateMigrationTaskBody) o;
-        return Objects.equals(this.taskName, createMigrationTaskBody.taskName)
-            && Objects.equals(this.description, createMigrationTaskBody.description)
-            && Objects.equals(this.migrationType, createMigrationTaskBody.migrationType)
-            && Objects.equals(this.migrationMethod, createMigrationTaskBody.migrationMethod)
-            && Objects.equals(this.backupFiles, createMigrationTaskBody.backupFiles)
-            && Objects.equals(this.networkType, createMigrationTaskBody.networkType)
-            && Objects.equals(this.sourceInstance, createMigrationTaskBody.sourceInstance)
-            && Objects.equals(this.targetInstance, createMigrationTaskBody.targetInstance);
+        CreateMigrationTaskBody that = (CreateMigrationTaskBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.migrationType, that.migrationType)
+            && Objects.equals(this.migrationMethod, that.migrationMethod)
+            && Objects.equals(this.backupFiles, that.backupFiles) && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.sourceInstance, that.sourceInstance)
+            && Objects.equals(this.targetInstance, that.targetInstance);
     }
 
     @Override

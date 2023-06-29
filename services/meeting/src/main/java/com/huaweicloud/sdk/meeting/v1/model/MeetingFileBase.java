@@ -253,24 +253,22 @@ public class MeetingFileBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MeetingFileBase meetingFileBase = (MeetingFileBase) o;
-        return Objects.equals(this.fileCode, meetingFileBase.fileCode)
-            && Objects.equals(this.topic, meetingFileBase.topic) && Objects.equals(this.fileId, meetingFileBase.fileId)
-            && Objects.equals(this.fileName, meetingFileBase.fileName)
-            && Objects.equals(this.fileSize, meetingFileBase.fileSize)
-            && Objects.equals(this.thumbnailFileId, meetingFileBase.thumbnailFileId)
-            && Objects.equals(this.thumbnailFileName, meetingFileBase.thumbnailFileName)
-            && Objects.equals(this.thumbnailFileSize, meetingFileBase.thumbnailFileSize)
-            && Objects.equals(this.pdfFileId, meetingFileBase.pdfFileId)
-            && Objects.equals(this.pdfFileName, meetingFileBase.pdfFileName)
-            && Objects.equals(this.pdfFileSize, meetingFileBase.pdfFileSize);
+        MeetingFileBase that = (MeetingFileBase) obj;
+        return Objects.equals(this.fileCode, that.fileCode) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.thumbnailFileId, that.thumbnailFileId)
+            && Objects.equals(this.thumbnailFileName, that.thumbnailFileName)
+            && Objects.equals(this.thumbnailFileSize, that.thumbnailFileSize)
+            && Objects.equals(this.pdfFileId, that.pdfFileId) && Objects.equals(this.pdfFileName, that.pdfFileName)
+            && Objects.equals(this.pdfFileSize, that.pdfFileSize);
     }
 
     @Override

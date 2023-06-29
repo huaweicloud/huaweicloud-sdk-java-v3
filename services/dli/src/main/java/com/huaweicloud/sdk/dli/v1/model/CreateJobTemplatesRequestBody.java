@@ -143,20 +143,17 @@ public class CreateJobTemplatesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateJobTemplatesRequestBody createJobTemplatesRequestBody = (CreateJobTemplatesRequestBody) o;
-        return Objects.equals(this.type, createJobTemplatesRequestBody.type)
-            && Objects.equals(this.name, createJobTemplatesRequestBody.name)
-            && Objects.equals(this.body, createJobTemplatesRequestBody.body)
-            && Objects.equals(this.group, createJobTemplatesRequestBody.group)
-            && Objects.equals(this.description, createJobTemplatesRequestBody.description)
-            && Objects.equals(this.language, createJobTemplatesRequestBody.language);
+        CreateJobTemplatesRequestBody that = (CreateJobTemplatesRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.body, that.body) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.language, that.language);
     }
 
     @Override

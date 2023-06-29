@@ -77,17 +77,16 @@ public class SpecificCommitInfoStats {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpecificCommitInfoStats specificCommitInfoStats = (SpecificCommitInfoStats) o;
-        return Objects.equals(this.additions, specificCommitInfoStats.additions)
-            && Objects.equals(this.deletions, specificCommitInfoStats.deletions)
-            && Objects.equals(this.total, specificCommitInfoStats.total);
+        SpecificCommitInfoStats that = (SpecificCommitInfoStats) obj;
+        return Objects.equals(this.additions, that.additions) && Objects.equals(this.deletions, that.deletions)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -444,30 +444,25 @@ public class RestoreNewInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreNewInstanceRequestBody restoreNewInstanceRequestBody = (RestoreNewInstanceRequestBody) o;
-        return Objects.equals(this.name, restoreNewInstanceRequestBody.name)
-            && Objects.equals(this.availabilityZone, restoreNewInstanceRequestBody.availabilityZone)
-            && Objects.equals(this.vpcId, restoreNewInstanceRequestBody.vpcId)
-            && Objects.equals(this.subnetId, restoreNewInstanceRequestBody.subnetId)
-            && Objects.equals(this.securityGroupId, restoreNewInstanceRequestBody.securityGroupId)
-            && Objects.equals(this.password, restoreNewInstanceRequestBody.password)
-            && Objects.equals(this.diskEncryptionId, restoreNewInstanceRequestBody.diskEncryptionId)
-            && Objects.equals(this.configurations, restoreNewInstanceRequestBody.configurations)
-            && Objects.equals(this.flavor, restoreNewInstanceRequestBody.flavor)
-            && Objects.equals(this.backupStrategy, restoreNewInstanceRequestBody.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, restoreNewInstanceRequestBody.enterpriseProjectId)
-            && Objects.equals(this.sslOption, restoreNewInstanceRequestBody.sslOption)
-            && Objects.equals(this.dssPoolId, restoreNewInstanceRequestBody.dssPoolId)
-            && Objects.equals(this.serverGroupPolicies, restoreNewInstanceRequestBody.serverGroupPolicies)
-            && Objects.equals(this.restorePoint, restoreNewInstanceRequestBody.restorePoint)
-            && Objects.equals(this.chargeInfo, restoreNewInstanceRequestBody.chargeInfo);
+        RestoreNewInstanceRequestBody that = (RestoreNewInstanceRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.password, that.password)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.configurations, that.configurations) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.dssPoolId, that.dssPoolId)
+            && Objects.equals(this.serverGroupPolicies, that.serverGroupPolicies)
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.chargeInfo, that.chargeInfo);
     }
 
     @Override

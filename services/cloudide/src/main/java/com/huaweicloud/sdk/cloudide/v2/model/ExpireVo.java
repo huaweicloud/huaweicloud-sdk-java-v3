@@ -81,16 +81,16 @@ public class ExpireVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpireVo expireVo = (ExpireVo) o;
-        return Objects.equals(this.expiration, expireVo.expiration)
-            && Objects.equals(this.instanceId, expireVo.instanceId) && Objects.equals(this.interval, expireVo.interval);
+        ExpireVo that = (ExpireVo) obj;
+        return Objects.equals(this.expiration, that.expiration) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.interval, that.interval);
     }
 
     @Override

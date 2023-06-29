@@ -65,16 +65,15 @@ public class AddMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddMemberRequest addMemberRequest = (AddMemberRequest) o;
-        return Objects.equals(this.backupId, addMemberRequest.backupId)
-            && Objects.equals(this.body, addMemberRequest.body);
+        AddMemberRequest that = (AddMemberRequest) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

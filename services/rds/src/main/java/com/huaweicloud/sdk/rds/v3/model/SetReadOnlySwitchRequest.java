@@ -89,17 +89,16 @@ public class SetReadOnlySwitchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetReadOnlySwitchRequest setReadOnlySwitchRequest = (SetReadOnlySwitchRequest) o;
-        return Objects.equals(this.xLanguage, setReadOnlySwitchRequest.xLanguage)
-            && Objects.equals(this.instanceId, setReadOnlySwitchRequest.instanceId)
-            && Objects.equals(this.body, setReadOnlySwitchRequest.body);
+        SetReadOnlySwitchRequest that = (SetReadOnlySwitchRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

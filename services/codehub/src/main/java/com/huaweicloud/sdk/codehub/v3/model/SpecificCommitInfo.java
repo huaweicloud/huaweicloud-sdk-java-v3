@@ -357,28 +357,23 @@ public class SpecificCommitInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpecificCommitInfo specificCommitInfo = (SpecificCommitInfo) o;
-        return Objects.equals(this.id, specificCommitInfo.id)
-            && Objects.equals(this.shortId, specificCommitInfo.shortId)
-            && Objects.equals(this.title, specificCommitInfo.title)
-            && Objects.equals(this.authorName, specificCommitInfo.authorName)
-            && Objects.equals(this.authorEmail, specificCommitInfo.authorEmail)
-            && Objects.equals(this.committerName, specificCommitInfo.committerName)
-            && Objects.equals(this.committerEmail, specificCommitInfo.committerEmail)
-            && Objects.equals(this.createdAt, specificCommitInfo.createdAt)
-            && Objects.equals(this.message, specificCommitInfo.message)
-            && Objects.equals(this.parentIds, specificCommitInfo.parentIds)
-            && Objects.equals(this.committedDate, specificCommitInfo.committedDate)
-            && Objects.equals(this.authoredDate, specificCommitInfo.authoredDate)
-            && Objects.equals(this.stats, specificCommitInfo.stats)
-            && Objects.equals(this.lastPipeline, specificCommitInfo.lastPipeline);
+        SpecificCommitInfo that = (SpecificCommitInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.shortId, that.shortId)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.authorName, that.authorName)
+            && Objects.equals(this.authorEmail, that.authorEmail)
+            && Objects.equals(this.committerName, that.committerName)
+            && Objects.equals(this.committerEmail, that.committerEmail)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.parentIds, that.parentIds) && Objects.equals(this.committedDate, that.committedDate)
+            && Objects.equals(this.authoredDate, that.authoredDate) && Objects.equals(this.stats, that.stats)
+            && Objects.equals(this.lastPipeline, that.lastPipeline);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBackupRequest deleteBackupRequest = (DeleteBackupRequest) o;
-        return Objects.equals(this.backupId, deleteBackupRequest.backupId);
+        DeleteBackupRequest that = (DeleteBackupRequest) obj;
+        return Objects.equals(this.backupId, that.backupId);
     }
 
     @Override

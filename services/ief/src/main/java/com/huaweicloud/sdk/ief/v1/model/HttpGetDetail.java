@@ -99,16 +99,16 @@ public class HttpGetDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpGetDetail httpGetDetail = (HttpGetDetail) o;
-        return Objects.equals(this.path, httpGetDetail.path) && Objects.equals(this.port, httpGetDetail.port)
-            && Objects.equals(this.host, httpGetDetail.host) && Objects.equals(this.scheme, httpGetDetail.scheme);
+        HttpGetDetail that = (HttpGetDetail) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.scheme, that.scheme);
     }
 
     @Override

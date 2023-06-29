@@ -165,22 +165,18 @@ public class ListUsersForEnterpriseProjectResUsers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsersForEnterpriseProjectResUsers listUsersForEnterpriseProjectResUsers =
-            (ListUsersForEnterpriseProjectResUsers) o;
-        return Objects.equals(this.domainId, listUsersForEnterpriseProjectResUsers.domainId)
-            && Objects.equals(this.id, listUsersForEnterpriseProjectResUsers.id)
-            && Objects.equals(this.name, listUsersForEnterpriseProjectResUsers.name)
-            && Objects.equals(this.enabled, listUsersForEnterpriseProjectResUsers.enabled)
-            && Objects.equals(this.description, listUsersForEnterpriseProjectResUsers.description)
-            && Objects.equals(this.policyNum, listUsersForEnterpriseProjectResUsers.policyNum)
-            && Objects.equals(this.lastestPolicyTime, listUsersForEnterpriseProjectResUsers.lastestPolicyTime);
+        ListUsersForEnterpriseProjectResUsers that = (ListUsersForEnterpriseProjectResUsers) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.policyNum, that.policyNum)
+            && Objects.equals(this.lastestPolicyTime, that.lastestPolicyTime);
     }
 
     @Override

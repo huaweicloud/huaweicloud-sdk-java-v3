@@ -65,16 +65,15 @@ public class ExtractAudioTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtractAudioTaskReq extractAudioTaskReq = (ExtractAudioTaskReq) o;
-        return Objects.equals(this.assetId, extractAudioTaskReq.assetId)
-            && Objects.equals(this.parameter, extractAudioTaskReq.parameter);
+        ExtractAudioTaskReq that = (ExtractAudioTaskReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.parameter, that.parameter);
     }
 
     @Override

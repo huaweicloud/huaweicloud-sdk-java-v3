@@ -150,19 +150,17 @@ public class ShowClusterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterResponse showClusterResponse = (ShowClusterResponse) o;
-        return Objects.equals(this.kind, showClusterResponse.kind)
-            && Objects.equals(this.apiVersion, showClusterResponse.apiVersion)
-            && Objects.equals(this.metadata, showClusterResponse.metadata)
-            && Objects.equals(this.spec, showClusterResponse.spec)
-            && Objects.equals(this.status, showClusterResponse.status);
+        ShowClusterResponse that = (ShowClusterResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

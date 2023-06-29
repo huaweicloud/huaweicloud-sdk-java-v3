@@ -263,23 +263,22 @@ public class ProtectionInfoRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectionInfoRequestInfo protectionInfoRequestInfo = (ProtectionInfoRequestInfo) o;
-        return Objects.equals(this.operatingSystem, protectionInfoRequestInfo.operatingSystem)
-            && Objects.equals(this.ransomProtectionStatus, protectionInfoRequestInfo.ransomProtectionStatus)
-            && Objects.equals(this.protectionPolicyId, protectionInfoRequestInfo.protectionPolicyId)
-            && Objects.equals(this.createProtectionPolicy, protectionInfoRequestInfo.createProtectionPolicy)
-            && Objects.equals(this.backupProtectionStatus, protectionInfoRequestInfo.backupProtectionStatus)
-            && Objects.equals(this.backupPolicyId, protectionInfoRequestInfo.backupPolicyId)
-            && Objects.equals(this.backupCycle, protectionInfoRequestInfo.backupCycle)
-            && Objects.equals(this.agentIdList, protectionInfoRequestInfo.agentIdList)
-            && Objects.equals(this.hostIdList, protectionInfoRequestInfo.hostIdList);
+        ProtectionInfoRequestInfo that = (ProtectionInfoRequestInfo) obj;
+        return Objects.equals(this.operatingSystem, that.operatingSystem)
+            && Objects.equals(this.ransomProtectionStatus, that.ransomProtectionStatus)
+            && Objects.equals(this.protectionPolicyId, that.protectionPolicyId)
+            && Objects.equals(this.createProtectionPolicy, that.createProtectionPolicy)
+            && Objects.equals(this.backupProtectionStatus, that.backupProtectionStatus)
+            && Objects.equals(this.backupPolicyId, that.backupPolicyId)
+            && Objects.equals(this.backupCycle, that.backupCycle) && Objects.equals(this.agentIdList, that.agentIdList)
+            && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override

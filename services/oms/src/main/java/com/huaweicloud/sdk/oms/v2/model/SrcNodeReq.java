@@ -237,20 +237,19 @@ public class SrcNodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SrcNodeReq srcNodeReq = (SrcNodeReq) o;
-        return Objects.equals(this.cloudType, srcNodeReq.cloudType) && Objects.equals(this.region, srcNodeReq.region)
-            && Objects.equals(this.ak, srcNodeReq.ak) && Objects.equals(this.sk, srcNodeReq.sk)
-            && Objects.equals(this.securityToken, srcNodeReq.securityToken)
-            && Objects.equals(this.appId, srcNodeReq.appId) && Objects.equals(this.bucket, srcNodeReq.bucket)
-            && Objects.equals(this.objectKey, srcNodeReq.objectKey)
-            && Objects.equals(this.listFile, srcNodeReq.listFile);
+        SrcNodeReq that = (SrcNodeReq) obj;
+        return Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.securityToken, that.securityToken) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bucket, that.bucket) && Objects.equals(this.objectKey, that.objectKey)
+            && Objects.equals(this.listFile, that.listFile);
     }
 
     @Override

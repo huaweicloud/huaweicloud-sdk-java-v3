@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.RegisterScenesReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class RegisterScenes2Request  {
-
+public class RegisterScenes2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private RegisterScenesReq body;
 
@@ -35,9 +25,6 @@ public class RegisterScenes2Request  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -51,22 +38,19 @@ public class RegisterScenes2Request  {
         this.graphId = graphId;
     }
 
-    
-
     public RegisterScenes2Request withBody(RegisterScenesReq body) {
         this.body = body;
         return this;
     }
 
     public RegisterScenes2Request withBody(Consumer<RegisterScenesReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RegisterScenesReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class RegisterScenes2Request  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterScenes2Request registerScenes2Request = (RegisterScenes2Request) o;
-        return Objects.equals(this.graphId, registerScenes2Request.graphId) &&
-            Objects.equals(this.body, registerScenes2Request.body);
+        RegisterScenes2Request that = (RegisterScenes2Request) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class RegisterScenes2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class RegisterScenes2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

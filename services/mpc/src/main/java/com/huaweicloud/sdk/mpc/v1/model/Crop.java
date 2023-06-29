@@ -35,15 +35,15 @@ public class Crop {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Crop crop = (Crop) o;
-        return Objects.equals(this.duration, crop.duration);
+        Crop that = (Crop) obj;
+        return Objects.equals(this.duration, that.duration);
     }
 
     @Override

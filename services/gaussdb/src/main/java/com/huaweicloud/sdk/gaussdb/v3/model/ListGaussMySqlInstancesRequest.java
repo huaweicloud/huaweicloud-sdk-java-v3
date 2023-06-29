@@ -1,98 +1,77 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListGaussMySqlInstancesRequest  {
-
+public class ListGaussMySqlInstancesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
 
     private String datastoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readonly_private_ip")
-    
+    @JsonProperty(value = "readonly_private_ip")
 
     private String readonlyPrivateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy_ip")
-    
+    @JsonProperty(value = "proxy_ip")
 
     private String proxyIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
 
     private String tags;
 
@@ -101,15 +80,12 @@ public class ListGaussMySqlInstancesRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -118,15 +94,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。 “\\*”为系统保留字符，如果id是以“\\*”起始，表示按照“\\*”后面的值模糊匹配，否则，按照id精确匹配查询。不能只传入“\\*”。
@@ -140,15 +111,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.id = id;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。  “\\*”为系统保留字符，如果name是以“\\*”起始，表示按照“\\*”后面的值模糊匹配，否则，按照name精确匹配查询。不能只传入“\\*”。
@@ -162,15 +128,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.name = name;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 按照实例类型查询。目前仅支持Cluster。
@@ -184,15 +145,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.type = type;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
-
-    
-
 
     /**
      * 数据库类型，现在只支持gaussdb-mysql。
@@ -206,15 +162,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.datastoreType = datastoreType;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -228,15 +179,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息。
@@ -250,15 +196,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
-
-    
-
 
     /**
      * 读写内网IP。
@@ -272,15 +213,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.privateIp = privateIp;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withReadonlyPrivateIp(String readonlyPrivateIp) {
         this.readonlyPrivateIp = readonlyPrivateIp;
         return this;
     }
-
-    
-
 
     /**
      * 读内网IP。
@@ -294,15 +230,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.readonlyPrivateIp = readonlyPrivateIp;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withProxyIp(String proxyIp) {
         this.proxyIp = proxyIp;
         return this;
     }
-
-    
-
 
     /**
      * 读写分离IP。
@@ -316,15 +247,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.proxyIp = proxyIp;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -338,15 +264,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
@@ -360,15 +281,10 @@ public class ListGaussMySqlInstancesRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListGaussMySqlInstancesRequest withTags(String tags) {
         this.tags = tags;
         return this;
     }
-
-    
-
 
     /**
      * 根据实例标签键值对进行查询。 - {key}表示标签键。 - {value}表示标签值。  如果同时使用多个标签键值对进行查询，中间使用逗号分隔开，表示查询同时包含指定标签键值对的实例。key不能重复，key之间是与的关系。
@@ -382,35 +298,41 @@ public class ListGaussMySqlInstancesRequest  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGaussMySqlInstancesRequest listGaussMySqlInstancesRequest = (ListGaussMySqlInstancesRequest) o;
-        return Objects.equals(this.xLanguage, listGaussMySqlInstancesRequest.xLanguage) &&
-            Objects.equals(this.id, listGaussMySqlInstancesRequest.id) &&
-            Objects.equals(this.name, listGaussMySqlInstancesRequest.name) &&
-            Objects.equals(this.type, listGaussMySqlInstancesRequest.type) &&
-            Objects.equals(this.datastoreType, listGaussMySqlInstancesRequest.datastoreType) &&
-            Objects.equals(this.vpcId, listGaussMySqlInstancesRequest.vpcId) &&
-            Objects.equals(this.subnetId, listGaussMySqlInstancesRequest.subnetId) &&
-            Objects.equals(this.privateIp, listGaussMySqlInstancesRequest.privateIp) &&
-            Objects.equals(this.readonlyPrivateIp, listGaussMySqlInstancesRequest.readonlyPrivateIp) &&
-            Objects.equals(this.proxyIp, listGaussMySqlInstancesRequest.proxyIp) &&
-            Objects.equals(this.offset, listGaussMySqlInstancesRequest.offset) &&
-            Objects.equals(this.limit, listGaussMySqlInstancesRequest.limit) &&
-            Objects.equals(this.tags, listGaussMySqlInstancesRequest.tags);
+        ListGaussMySqlInstancesRequest that = (ListGaussMySqlInstancesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.readonlyPrivateIp, that.readonlyPrivateIp)
+            && Objects.equals(this.proxyIp, that.proxyIp) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(xLanguage, id, name, type, datastoreType, vpcId, subnetId, privateIp, readonlyPrivateIp, proxyIp, offset, limit, tags);
+        return Objects.hash(xLanguage,
+            id,
+            name,
+            type,
+            datastoreType,
+            vpcId,
+            subnetId,
+            privateIp,
+            readonlyPrivateIp,
+            proxyIp,
+            offset,
+            limit,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -431,6 +353,7 @@ public class ListGaussMySqlInstancesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -441,8 +364,5 @@ public class ListGaussMySqlInstancesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -121,19 +121,17 @@ public class ResDetailDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResDetailDTO resDetailDTO = (ResDetailDTO) o;
-        return Objects.equals(this.sumCount, resDetailDTO.sumCount)
-            && Objects.equals(this.trialCount, resDetailDTO.trialCount)
-            && Objects.equals(this.expiredCount, resDetailDTO.expiredCount)
-            && Objects.equals(this.expiringCount, resDetailDTO.expiringCount)
-            && Objects.equals(this.usedCount, resDetailDTO.usedCount);
+        ResDetailDTO that = (ResDetailDTO) obj;
+        return Objects.equals(this.sumCount, that.sumCount) && Objects.equals(this.trialCount, that.trialCount)
+            && Objects.equals(this.expiredCount, that.expiredCount)
+            && Objects.equals(this.expiringCount, that.expiringCount) && Objects.equals(this.usedCount, that.usedCount);
     }
 
     @Override

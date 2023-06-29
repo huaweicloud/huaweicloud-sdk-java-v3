@@ -231,19 +231,19 @@ public class Resource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.id, resource.id) && Objects.equals(this.name, resource.name)
-            && Objects.equals(this.type, resource.type) && Objects.equals(this.provider, resource.provider)
-            && Objects.equals(this.regionId, resource.regionId) && Objects.equals(this.domainId, resource.domainId)
-            && Objects.equals(this.projectId, resource.projectId) && Objects.equals(this.epId, resource.epId)
-            && Objects.equals(this.epName, resource.epName) && Objects.equals(this.tags, resource.tags);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.epName, that.epName) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

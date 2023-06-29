@@ -276,25 +276,22 @@ public class QuotaRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaRecord quotaRecord = (QuotaRecord) o;
-        return Objects.equals(this.id, quotaRecord.id) && Objects.equals(this.operator, quotaRecord.operator)
-            && Objects.equals(this.operationType, quotaRecord.operationType)
-            && Objects.equals(this.quotaId, quotaRecord.quotaId)
-            && Objects.equals(this.parentQuotaId, quotaRecord.parentQuotaId)
-            && Objects.equals(this.amount, quotaRecord.amount)
-            && Objects.equals(this.operationTime, quotaRecord.operationTime)
-            && Objects.equals(this.result, quotaRecord.result)
-            && Objects.equals(this.indirectPartnerAccountName, quotaRecord.indirectPartnerAccountName)
-            && Objects.equals(this.indirectPartnerId, quotaRecord.indirectPartnerId)
-            && Objects.equals(this.indirectPartnerName, quotaRecord.indirectPartnerName)
-            && Objects.equals(this.remark, quotaRecord.remark);
+        QuotaRecord that = (QuotaRecord) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.quotaId, that.quotaId)
+            && Objects.equals(this.parentQuotaId, that.parentQuotaId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.operationTime, that.operationTime) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.indirectPartnerAccountName, that.indirectPartnerAccountName)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.indirectPartnerName, that.indirectPartnerName)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

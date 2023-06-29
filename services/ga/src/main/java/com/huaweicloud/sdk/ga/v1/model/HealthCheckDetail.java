@@ -316,27 +316,21 @@ public class HealthCheckDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthCheckDetail healthCheckDetail = (HealthCheckDetail) o;
-        return Objects.equals(this.id, healthCheckDetail.id)
-            && Objects.equals(this.endpointGroupId, healthCheckDetail.endpointGroupId)
-            && Objects.equals(this.protocol, healthCheckDetail.protocol)
-            && Objects.equals(this.status, healthCheckDetail.status)
-            && Objects.equals(this.port, healthCheckDetail.port)
-            && Objects.equals(this.interval, healthCheckDetail.interval)
-            && Objects.equals(this.timeout, healthCheckDetail.timeout)
-            && Objects.equals(this.maxRetries, healthCheckDetail.maxRetries)
-            && Objects.equals(this.createdAt, healthCheckDetail.createdAt)
-            && Objects.equals(this.updatedAt, healthCheckDetail.updatedAt)
-            && Objects.equals(this.domainId, healthCheckDetail.domainId)
-            && Objects.equals(this.enabled, healthCheckDetail.enabled)
-            && Objects.equals(this.frozenInfo, healthCheckDetail.frozenInfo);
+        HealthCheckDetail that = (HealthCheckDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.endpointGroupId, that.endpointGroupId)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.maxRetries, that.maxRetries)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.frozenInfo, that.frozenInfo);
     }
 
     @Override

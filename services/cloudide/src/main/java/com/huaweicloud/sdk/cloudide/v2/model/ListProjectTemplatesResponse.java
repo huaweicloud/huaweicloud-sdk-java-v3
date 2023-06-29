@@ -75,16 +75,15 @@ public class ListProjectTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectTemplatesResponse listProjectTemplatesResponse = (ListProjectTemplatesResponse) o;
-        return Objects.equals(this.templates, listProjectTemplatesResponse.templates)
-            && Objects.equals(this.status, listProjectTemplatesResponse.status);
+        ListProjectTemplatesResponse that = (ListProjectTemplatesResponse) obj;
+        return Objects.equals(this.templates, that.templates) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -150,19 +150,17 @@ public class DeleteClusterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteClusterResponse deleteClusterResponse = (DeleteClusterResponse) o;
-        return Objects.equals(this.kind, deleteClusterResponse.kind)
-            && Objects.equals(this.apiVersion, deleteClusterResponse.apiVersion)
-            && Objects.equals(this.metadata, deleteClusterResponse.metadata)
-            && Objects.equals(this.spec, deleteClusterResponse.spec)
-            && Objects.equals(this.status, deleteClusterResponse.status);
+        DeleteClusterResponse that = (DeleteClusterResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

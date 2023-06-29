@@ -90,16 +90,15 @@ public class BrandBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BrandBrokens brandBrokens = (BrandBrokens) o;
-        return Objects.equals(this.recBytes, brandBrokens.recBytes)
-            && Objects.equals(this.sentBytes, brandBrokens.sentBytes);
+        BrandBrokens that = (BrandBrokens) obj;
+        return Objects.equals(this.recBytes, that.recBytes) && Objects.equals(this.sentBytes, that.sentBytes);
     }
 
     @Override

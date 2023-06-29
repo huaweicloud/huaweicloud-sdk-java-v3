@@ -75,16 +75,15 @@ public class ListSpecsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpecsResponse listSpecsResponse = (ListSpecsResponse) o;
-        return Objects.equals(this.total, listSpecsResponse.total)
-            && Objects.equals(this.specCodes, listSpecsResponse.specCodes);
+        ListSpecsResponse that = (ListSpecsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.specCodes, that.specCodes);
     }
 
     @Override

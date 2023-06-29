@@ -90,16 +90,15 @@ public class DbParamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbParamInfo dbParamInfo = (DbParamInfo) o;
-        return Objects.equals(this.common, dbParamInfo.common)
-            && Objects.equals(this.performance, dbParamInfo.performance);
+        DbParamInfo that = (DbParamInfo) obj;
+        return Objects.equals(this.common, that.common) && Objects.equals(this.performance, that.performance);
     }
 
     @Override

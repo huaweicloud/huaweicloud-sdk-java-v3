@@ -81,16 +81,16 @@ public class CtsQuota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CtsQuota ctsQuota = (CtsQuota) o;
-        return Objects.equals(this.type, ctsQuota.type) && Objects.equals(this.used, ctsQuota.used)
-            && Objects.equals(this.quota, ctsQuota.quota);
+        CtsQuota that = (CtsQuota) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.quota, that.quota);
     }
 
     @Override

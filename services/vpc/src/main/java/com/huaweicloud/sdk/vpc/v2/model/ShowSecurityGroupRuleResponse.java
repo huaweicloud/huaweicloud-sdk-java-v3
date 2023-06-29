@@ -44,15 +44,15 @@ public class ShowSecurityGroupRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecurityGroupRuleResponse showSecurityGroupRuleResponse = (ShowSecurityGroupRuleResponse) o;
-        return Objects.equals(this.securityGroupRule, showSecurityGroupRuleResponse.securityGroupRule);
+        ShowSecurityGroupRuleResponse that = (ShowSecurityGroupRuleResponse) obj;
+        return Objects.equals(this.securityGroupRule, that.securityGroupRule);
     }
 
     @Override

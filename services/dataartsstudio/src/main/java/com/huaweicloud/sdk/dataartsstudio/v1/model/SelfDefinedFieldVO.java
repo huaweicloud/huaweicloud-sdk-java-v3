@@ -99,18 +99,16 @@ public class SelfDefinedFieldVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SelfDefinedFieldVO selfDefinedFieldVO = (SelfDefinedFieldVO) o;
-        return Objects.equals(this.fdNameCh, selfDefinedFieldVO.fdNameCh)
-            && Objects.equals(this.fdNameEn, selfDefinedFieldVO.fdNameEn)
-            && Objects.equals(this.notNull, selfDefinedFieldVO.notNull)
-            && Objects.equals(this.fdValue, selfDefinedFieldVO.fdValue);
+        SelfDefinedFieldVO that = (SelfDefinedFieldVO) obj;
+        return Objects.equals(this.fdNameCh, that.fdNameCh) && Objects.equals(this.fdNameEn, that.fdNameEn)
+            && Objects.equals(this.notNull, that.notNull) && Objects.equals(this.fdValue, that.fdValue);
     }
 
     @Override

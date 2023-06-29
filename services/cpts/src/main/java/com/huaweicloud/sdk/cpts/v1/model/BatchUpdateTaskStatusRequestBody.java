@@ -245,23 +245,20 @@ public class BatchUpdateTaskStatusRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateTaskStatusRequestBody batchUpdateTaskStatusRequestBody = (BatchUpdateTaskStatusRequestBody) o;
-        return Objects.equals(this.type, batchUpdateTaskStatusRequestBody.type)
-            && Objects.equals(this.projectId, batchUpdateTaskStatusRequestBody.projectId)
-            && Objects.equals(this.taskIdList, batchUpdateTaskStatusRequestBody.taskIdList)
-            && Objects.equals(this.clusterId, batchUpdateTaskStatusRequestBody.clusterId)
-            && Objects.equals(this.clusterType, batchUpdateTaskStatusRequestBody.clusterType)
-            && Objects.equals(this.withoutPackage, batchUpdateTaskStatusRequestBody.withoutPackage)
-            && Objects.equals(this.networkInfo, batchUpdateTaskStatusRequestBody.networkInfo)
-            && Objects.equals(this.status, batchUpdateTaskStatusRequestBody.status)
-            && Objects.equals(this.enterpriseProjectId, batchUpdateTaskStatusRequestBody.enterpriseProjectId);
+        BatchUpdateTaskStatusRequestBody that = (BatchUpdateTaskStatusRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.taskIdList, that.taskIdList) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.withoutPackage, that.withoutPackage)
+            && Objects.equals(this.networkInfo, that.networkInfo) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

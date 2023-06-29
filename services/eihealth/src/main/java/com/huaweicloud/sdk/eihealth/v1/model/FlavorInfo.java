@@ -83,16 +83,16 @@ public class FlavorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorInfo flavorInfo = (FlavorInfo) o;
-        return Objects.equals(this.cpu, flavorInfo.cpu) && Objects.equals(this.gpu, flavorInfo.gpu)
-            && Objects.equals(this.memory, flavorInfo.memory);
+        FlavorInfo that = (FlavorInfo) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.gpu, that.gpu)
+            && Objects.equals(this.memory, that.memory);
     }
 
     @Override

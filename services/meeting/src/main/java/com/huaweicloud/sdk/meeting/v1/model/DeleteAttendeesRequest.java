@@ -89,17 +89,17 @@ public class DeleteAttendeesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAttendeesRequest deleteAttendeesRequest = (DeleteAttendeesRequest) o;
-        return Objects.equals(this.conferenceID, deleteAttendeesRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, deleteAttendeesRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, deleteAttendeesRequest.body);
+        DeleteAttendeesRequest that = (DeleteAttendeesRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

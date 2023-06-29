@@ -81,17 +81,16 @@ public class ChangeSeversOsMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeSeversOsMetadata changeSeversOsMetadata = (ChangeSeversOsMetadata) o;
-        return Objects.equals(this.systemEncrypted, changeSeversOsMetadata.systemEncrypted)
-            && Objects.equals(this.systemCmkid, changeSeversOsMetadata.systemCmkid)
-            && Objects.equals(this.userData, changeSeversOsMetadata.userData);
+        ChangeSeversOsMetadata that = (ChangeSeversOsMetadata) obj;
+        return Objects.equals(this.systemEncrypted, that.systemEncrypted)
+            && Objects.equals(this.systemCmkid, that.systemCmkid) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

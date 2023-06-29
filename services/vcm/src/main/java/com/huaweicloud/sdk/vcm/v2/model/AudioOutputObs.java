@@ -55,15 +55,15 @@ public class AudioOutputObs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioOutputObs audioOutputObs = (AudioOutputObs) o;
-        return Objects.equals(this.bucket, audioOutputObs.bucket) && Objects.equals(this.path, audioOutputObs.path);
+        AudioOutputObs that = (AudioOutputObs) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path);
     }
 
     @Override

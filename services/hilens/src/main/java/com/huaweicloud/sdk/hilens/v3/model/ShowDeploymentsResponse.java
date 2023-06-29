@@ -75,16 +75,15 @@ public class ShowDeploymentsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentsResponse showDeploymentsResponse = (ShowDeploymentsResponse) o;
-        return Objects.equals(this.count, showDeploymentsResponse.count)
-            && Objects.equals(this.deployments, showDeploymentsResponse.deployments);
+        ShowDeploymentsResponse that = (ShowDeploymentsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.deployments, that.deployments);
     }
 
     @Override

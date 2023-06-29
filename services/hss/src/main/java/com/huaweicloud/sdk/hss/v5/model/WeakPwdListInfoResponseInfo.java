@@ -119,18 +119,16 @@ public class WeakPwdListInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeakPwdListInfoResponseInfo weakPwdListInfoResponseInfo = (WeakPwdListInfoResponseInfo) o;
-        return Objects.equals(this.hostId, weakPwdListInfoResponseInfo.hostId)
-            && Objects.equals(this.hostName, weakPwdListInfoResponseInfo.hostName)
-            && Objects.equals(this.hostIp, weakPwdListInfoResponseInfo.hostIp)
-            && Objects.equals(this.weakPwdAccounts, weakPwdListInfoResponseInfo.weakPwdAccounts);
+        WeakPwdListInfoResponseInfo that = (WeakPwdListInfoResponseInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.weakPwdAccounts, that.weakPwdAccounts);
     }
 
     @Override

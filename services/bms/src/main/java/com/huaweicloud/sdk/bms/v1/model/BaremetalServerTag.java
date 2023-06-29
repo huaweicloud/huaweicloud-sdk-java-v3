@@ -55,15 +55,15 @@ public class BaremetalServerTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaremetalServerTag baremetalServerTag = (BaremetalServerTag) o;
-        return Objects.equals(this.key, baremetalServerTag.key) && Objects.equals(this.value, baremetalServerTag.value);
+        BaremetalServerTag that = (BaremetalServerTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

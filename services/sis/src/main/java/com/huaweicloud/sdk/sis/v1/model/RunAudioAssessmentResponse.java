@@ -207,21 +207,18 @@ public class RunAudioAssessmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunAudioAssessmentResponse runAudioAssessmentResponse = (RunAudioAssessmentResponse) o;
-        return Objects.equals(this.score, runAudioAssessmentResponse.score)
-            && Objects.equals(this.completeness, runAudioAssessmentResponse.completeness)
-            && Objects.equals(this.duration, runAudioAssessmentResponse.duration)
-            && Objects.equals(this.pronunciation, runAudioAssessmentResponse.pronunciation)
-            && Objects.equals(this.fluency, runAudioAssessmentResponse.fluency)
-            && Objects.equals(this.words, runAudioAssessmentResponse.words)
-            && Objects.equals(this.traceId, runAudioAssessmentResponse.traceId);
+        RunAudioAssessmentResponse that = (RunAudioAssessmentResponse) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.completeness, that.completeness)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.pronunciation, that.pronunciation)
+            && Objects.equals(this.fluency, that.fluency) && Objects.equals(this.words, that.words)
+            && Objects.equals(this.traceId, that.traceId);
     }
 
     @Override

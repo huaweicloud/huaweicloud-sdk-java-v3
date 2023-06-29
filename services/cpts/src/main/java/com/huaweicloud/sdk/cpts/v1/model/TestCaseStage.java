@@ -461,32 +461,25 @@ public class TestCaseStage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestCaseStage testCaseStage = (TestCaseStage) o;
-        return Objects.equals(this.operateMode, testCaseStage.operateMode)
-            && Objects.equals(this.name, testCaseStage.name) && Objects.equals(this.time, testCaseStage.time)
-            && Objects.equals(this.startTime, testCaseStage.startTime)
-            && Objects.equals(this.endTime, testCaseStage.endTime)
-            && Objects.equals(this.issueNum, testCaseStage.issueNum) && Objects.equals(this.count, testCaseStage.count)
-            && Objects.equals(this.pressureMode, testCaseStage.pressureMode)
-            && Objects.equals(this.tpsValue, testCaseStage.tpsValue)
-            && Objects.equals(this.currentUserNum, testCaseStage.currentUserNum)
-            && Objects.equals(this.currentTps, testCaseStage.currentTps)
-            && Objects.equals(this.voltageRegulatingMode, testCaseStage.voltageRegulatingMode)
-            && Objects.equals(this.maximum, testCaseStage.maximum)
-            && Objects.equals(this.minimum, testCaseStage.minimum)
-            && Objects.equals(this.loopCount, testCaseStage.loopCount)
-            && Objects.equals(this.maxDuration, testCaseStage.maxDuration)
-            && Objects.equals(this.rampUp, testCaseStage.rampUp)
-            && Objects.equals(this.peakLoadKpis, testCaseStage.peakLoadKpis)
-            && Objects.equals(this.stepDuration, testCaseStage.stepDuration)
-            && Objects.equals(this.stepSize, testCaseStage.stepSize);
+        TestCaseStage that = (TestCaseStage) obj;
+        return Objects.equals(this.operateMode, that.operateMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.issueNum, that.issueNum)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.pressureMode, that.pressureMode)
+            && Objects.equals(this.tpsValue, that.tpsValue) && Objects.equals(this.currentUserNum, that.currentUserNum)
+            && Objects.equals(this.currentTps, that.currentTps)
+            && Objects.equals(this.voltageRegulatingMode, that.voltageRegulatingMode)
+            && Objects.equals(this.maximum, that.maximum) && Objects.equals(this.minimum, that.minimum)
+            && Objects.equals(this.loopCount, that.loopCount) && Objects.equals(this.maxDuration, that.maxDuration)
+            && Objects.equals(this.rampUp, that.rampUp) && Objects.equals(this.peakLoadKpis, that.peakLoadKpis)
+            && Objects.equals(this.stepDuration, that.stepDuration) && Objects.equals(this.stepSize, that.stepSize);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class ColumnValueDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnValueDto columnValueDto = (ColumnValueDto) o;
-        return Objects.equals(this.column, columnValueDto.column) && Objects.equals(this.value, columnValueDto.value);
+        ColumnValueDto that = (ColumnValueDto) obj;
+        return Objects.equals(this.column, that.column) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class FunctionGraphForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FunctionGraphForwarding functionGraphForwarding = (FunctionGraphForwarding) o;
-        return Objects.equals(this.funcUrn, functionGraphForwarding.funcUrn)
-            && Objects.equals(this.funcName, functionGraphForwarding.funcName);
+        FunctionGraphForwarding that = (FunctionGraphForwarding) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName);
     }
 
     @Override

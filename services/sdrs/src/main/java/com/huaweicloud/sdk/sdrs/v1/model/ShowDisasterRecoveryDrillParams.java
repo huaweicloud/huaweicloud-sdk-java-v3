@@ -206,22 +206,19 @@ public class ShowDisasterRecoveryDrillParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDisasterRecoveryDrillParams showDisasterRecoveryDrillParams = (ShowDisasterRecoveryDrillParams) o;
-        return Objects.equals(this.id, showDisasterRecoveryDrillParams.id)
-            && Objects.equals(this.name, showDisasterRecoveryDrillParams.name)
-            && Objects.equals(this.status, showDisasterRecoveryDrillParams.status)
-            && Objects.equals(this.drillVpcId, showDisasterRecoveryDrillParams.drillVpcId)
-            && Objects.equals(this.createdAt, showDisasterRecoveryDrillParams.createdAt)
-            && Objects.equals(this.updatedAt, showDisasterRecoveryDrillParams.updatedAt)
-            && Objects.equals(this.serverGroupId, showDisasterRecoveryDrillParams.serverGroupId)
-            && Objects.equals(this.drillServers, showDisasterRecoveryDrillParams.drillServers);
+        ShowDisasterRecoveryDrillParams that = (ShowDisasterRecoveryDrillParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.drillVpcId, that.drillVpcId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.drillServers, that.drillServers);
     }
 
     @Override

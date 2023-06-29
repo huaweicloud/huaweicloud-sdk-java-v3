@@ -33,15 +33,15 @@ public class ShowDomainKeyChainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainKeyChainRequest showDomainKeyChainRequest = (ShowDomainKeyChainRequest) o;
-        return Objects.equals(this.domain, showDomainKeyChainRequest.domain);
+        ShowDomainKeyChainRequest that = (ShowDomainKeyChainRequest) obj;
+        return Objects.equals(this.domain, that.domain);
     }
 
     @Override

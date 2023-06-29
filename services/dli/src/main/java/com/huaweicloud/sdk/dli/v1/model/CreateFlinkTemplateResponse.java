@@ -88,17 +88,16 @@ public class CreateFlinkTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlinkTemplateResponse createFlinkTemplateResponse = (CreateFlinkTemplateResponse) o;
-        return Objects.equals(this.isSuccess, createFlinkTemplateResponse.isSuccess)
-            && Objects.equals(this.message, createFlinkTemplateResponse.message)
-            && Objects.equals(this.template, createFlinkTemplateResponse.template);
+        CreateFlinkTemplateResponse that = (CreateFlinkTemplateResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.template, that.template);
     }
 
     @Override

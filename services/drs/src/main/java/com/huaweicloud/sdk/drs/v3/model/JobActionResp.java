@@ -258,22 +258,15 @@ public class JobActionResp {
             if (value == null) {
                 return null;
             }
-            AvailableActionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AvailableActionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AvailableActionsEnum(value));
         }
 
         public static AvailableActionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AvailableActionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -296,8 +289,8 @@ public class JobActionResp {
     private List<AvailableActionsEnum> availableActions = null;
 
     /**
-    * Gets or Sets unavailableActions
-    */
+     * Gets or Sets unavailableActions
+     */
     public static final class UnavailableActionsEnum {
 
         /**
@@ -536,22 +529,15 @@ public class JobActionResp {
             if (value == null) {
                 return null;
             }
-            UnavailableActionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UnavailableActionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UnavailableActionsEnum(value));
         }
 
         public static UnavailableActionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UnavailableActionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -574,8 +560,8 @@ public class JobActionResp {
     private List<UnavailableActionsEnum> unavailableActions = null;
 
     /**
-    * 示例： SWITCH_OVER：灾备倒换中 STOP_JOB：任务暂停中
-    */
+     * 示例： SWITCH_OVER：灾备倒换中 STOP_JOB：任务暂停中
+     */
     public static final class CurrentActionEnum {
 
         /**
@@ -618,22 +604,15 @@ public class JobActionResp {
             if (value == null) {
                 return null;
             }
-            CurrentActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CurrentActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CurrentActionEnum(value));
         }
 
         public static CurrentActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CurrentActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -739,17 +718,17 @@ public class JobActionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobActionResp jobActionResp = (JobActionResp) o;
-        return Objects.equals(this.availableActions, jobActionResp.availableActions)
-            && Objects.equals(this.unavailableActions, jobActionResp.unavailableActions)
-            && Objects.equals(this.currentAction, jobActionResp.currentAction);
+        JobActionResp that = (JobActionResp) obj;
+        return Objects.equals(this.availableActions, that.availableActions)
+            && Objects.equals(this.unavailableActions, that.unavailableActions)
+            && Objects.equals(this.currentAction, that.currentAction);
     }
 
     @Override

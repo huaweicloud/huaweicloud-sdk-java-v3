@@ -77,17 +77,16 @@ public class ShowAppVersionDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppVersionDetailRequest showAppVersionDetailRequest = (ShowAppVersionDetailRequest) o;
-        return Objects.equals(this.iefInstanceId, showAppVersionDetailRequest.iefInstanceId)
-            && Objects.equals(this.appId, showAppVersionDetailRequest.appId)
-            && Objects.equals(this.versionId, showAppVersionDetailRequest.versionId);
+        ShowAppVersionDetailRequest that = (ShowAppVersionDetailRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

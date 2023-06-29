@@ -177,21 +177,18 @@ public class ListCaseOperateLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseOperateLogsRequest listCaseOperateLogsRequest = (ListCaseOperateLogsRequest) o;
-        return Objects.equals(this.caseId, listCaseOperateLogsRequest.caseId)
-            && Objects.equals(this.groupId, listCaseOperateLogsRequest.groupId)
-            && Objects.equals(this.offset, listCaseOperateLogsRequest.offset)
-            && Objects.equals(this.limit, listCaseOperateLogsRequest.limit)
-            && Objects.equals(this.xSite, listCaseOperateLogsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseOperateLogsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseOperateLogsRequest.xTimeZone);
+        ListCaseOperateLogsRequest that = (ListCaseOperateLogsRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

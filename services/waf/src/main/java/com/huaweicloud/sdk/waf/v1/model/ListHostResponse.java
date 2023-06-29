@@ -75,15 +75,15 @@ public class ListHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostResponse listHostResponse = (ListHostResponse) o;
-        return Objects.equals(this.total, listHostResponse.total) && Objects.equals(this.items, listHostResponse.items);
+        ListHostResponse that = (ListHostResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items);
     }
 
     @Override

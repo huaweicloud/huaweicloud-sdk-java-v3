@@ -55,16 +55,15 @@ public class ShowDatabaseUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseUserRequest showDatabaseUserRequest = (ShowDatabaseUserRequest) o;
-        return Objects.equals(this.clusterId, showDatabaseUserRequest.clusterId)
-            && Objects.equals(this.name, showDatabaseUserRequest.name);
+        ShowDatabaseUserRequest that = (ShowDatabaseUserRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.name, that.name);
     }
 
     @Override

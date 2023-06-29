@@ -14,57 +14,57 @@ import java.util.function.Consumer;
 public class PeriodOrderRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "chargingMode")
+    @JsonProperty(value = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloudServiceType")
+    @JsonProperty(value = "cloud_service_type")
 
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "compositeProductId")
+    @JsonProperty(value = "composite_product_id")
 
     private String compositeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "discountId")
+    @JsonProperty(value = "discount_id")
 
     private String discountId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "isAutoRenew")
+    @JsonProperty(value = "is_auto_renew")
 
     private Integer isAutoRenew;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "periodNum")
+    @JsonProperty(value = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "periodType")
+    @JsonProperty(value = "period_type")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "productInfos")
+    @JsonProperty(value = "product_infos")
 
     private List<ProductInfoBean> productInfos = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotionActivityId")
+    @JsonProperty(value = "promotion_activity_id")
 
     private String promotionActivityId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "promotionInfo")
+    @JsonProperty(value = "promotion_info")
 
     private String promotionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "regionId")
+    @JsonProperty(value = "region_id")
 
     private String regionId;
 
@@ -294,26 +294,23 @@ public class PeriodOrderRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodOrderRequest periodOrderRequest = (PeriodOrderRequest) o;
-        return Objects.equals(this.chargingMode, periodOrderRequest.chargingMode)
-            && Objects.equals(this.cloudServiceType, periodOrderRequest.cloudServiceType)
-            && Objects.equals(this.compositeProductId, periodOrderRequest.compositeProductId)
-            && Objects.equals(this.discountId, periodOrderRequest.discountId)
-            && Objects.equals(this.isAutoRenew, periodOrderRequest.isAutoRenew)
-            && Objects.equals(this.periodNum, periodOrderRequest.periodNum)
-            && Objects.equals(this.periodType, periodOrderRequest.periodType)
-            && Objects.equals(this.productInfos, periodOrderRequest.productInfos)
-            && Objects.equals(this.promotionActivityId, periodOrderRequest.promotionActivityId)
-            && Objects.equals(this.promotionInfo, periodOrderRequest.promotionInfo)
-            && Objects.equals(this.regionId, periodOrderRequest.regionId)
-            && Objects.equals(this.zone, periodOrderRequest.zone);
+        PeriodOrderRequest that = (PeriodOrderRequest) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.compositeProductId, that.compositeProductId)
+            && Objects.equals(this.discountId, that.discountId) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.productInfos, that.productInfos)
+            && Objects.equals(this.promotionActivityId, that.promotionActivityId)
+            && Objects.equals(this.promotionInfo, that.promotionInfo) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.zone, that.zone);
     }
 
     @Override

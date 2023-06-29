@@ -121,19 +121,17 @@ public class UnscopedTokenInfoCatalog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnscopedTokenInfoCatalog unscopedTokenInfoCatalog = (UnscopedTokenInfoCatalog) o;
-        return Objects.equals(this.id, unscopedTokenInfoCatalog.id)
-            && Objects.equals(this._interface, unscopedTokenInfoCatalog._interface)
-            && Objects.equals(this.region, unscopedTokenInfoCatalog.region)
-            && Objects.equals(this.regionId, unscopedTokenInfoCatalog.regionId)
-            && Objects.equals(this.url, unscopedTokenInfoCatalog.url);
+        UnscopedTokenInfoCatalog that = (UnscopedTokenInfoCatalog) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this._interface, that._interface)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

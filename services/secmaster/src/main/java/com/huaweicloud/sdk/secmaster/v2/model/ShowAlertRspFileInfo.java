@@ -165,21 +165,18 @@ public class ShowAlertRspFileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspFileInfo showAlertRspFileInfo = (ShowAlertRspFileInfo) o;
-        return Objects.equals(this.filePath, showAlertRspFileInfo.filePath)
-            && Objects.equals(this.fileContent, showAlertRspFileInfo.fileContent)
-            && Objects.equals(this.fileNewPath, showAlertRspFileInfo.fileNewPath)
-            && Objects.equals(this.fileHash, showAlertRspFileInfo.fileHash)
-            && Objects.equals(this.fileMd5, showAlertRspFileInfo.fileMd5)
-            && Objects.equals(this.fileSha256, showAlertRspFileInfo.fileSha256)
-            && Objects.equals(this.fileAttr, showAlertRspFileInfo.fileAttr);
+        ShowAlertRspFileInfo that = (ShowAlertRspFileInfo) obj;
+        return Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileContent, that.fileContent)
+            && Objects.equals(this.fileNewPath, that.fileNewPath) && Objects.equals(this.fileHash, that.fileHash)
+            && Objects.equals(this.fileMd5, that.fileMd5) && Objects.equals(this.fileSha256, that.fileSha256)
+            && Objects.equals(this.fileAttr, that.fileAttr);
     }
 
     @Override

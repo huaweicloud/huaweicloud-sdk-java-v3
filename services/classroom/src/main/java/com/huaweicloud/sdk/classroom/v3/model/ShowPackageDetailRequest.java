@@ -33,15 +33,15 @@ public class ShowPackageDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPackageDetailRequest showPackageDetailRequest = (ShowPackageDetailRequest) o;
-        return Objects.equals(this.packageId, showPackageDetailRequest.packageId);
+        ShowPackageDetailRequest that = (ShowPackageDetailRequest) obj;
+        return Objects.equals(this.packageId, that.packageId);
     }
 
     @Override

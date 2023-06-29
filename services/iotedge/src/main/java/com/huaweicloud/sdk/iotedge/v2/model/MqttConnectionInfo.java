@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 边缘hub与外部实体的mqtt连接信息
  */
-public class MqttConnectionInfo  {
-
+public class MqttConnectionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_address")
-    
+    @JsonProperty(value = "server_address")
 
     private String serverAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_id")
-    
+    @JsonProperty(value = "client_id")
 
     private String clientId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
 
     private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_key")
-    
+    @JsonProperty(value = "private_key")
 
     private String privateKey;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="certificate")
-    
+    @JsonProperty(value = "certificate")
 
     private String certificate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_name")
-    
+    @JsonProperty(value = "user_name")
 
     private String userName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qos")
-    
+    @JsonProperty(value = "qos")
 
     private Integer qos;
 
@@ -69,9 +54,6 @@ public class MqttConnectionInfo  {
         this.serverAddress = serverAddress;
         return this;
     }
-
-    
-
 
     /**
      * 采用cleint方式连接时，mqtt服务器地址
@@ -85,15 +67,10 @@ public class MqttConnectionInfo  {
         this.serverAddress = serverAddress;
     }
 
-    
-
     public MqttConnectionInfo withClientId(String clientId) {
         this.clientId = clientId;
         return this;
     }
-
-    
-
 
     /**
      * mqtt连接时，client_id
@@ -107,15 +84,10 @@ public class MqttConnectionInfo  {
         this.clientId = clientId;
     }
 
-    
-
     public MqttConnectionInfo withAuthType(String authType) {
         this.authType = authType;
         return this;
     }
-
-    
-
 
     /**
      * 鉴权类型。支持密钥认证接入(SECRET)和证书认证接入(CERTIFICATES)两种方式。使用密钥认证接入方式(SECRET)填写user_name和user_name字段，使用证书认证接入方式(CERTIFICATES)填写privateKey和certificate字段
@@ -129,15 +101,10 @@ public class MqttConnectionInfo  {
         this.authType = authType;
     }
 
-    
-
     public MqttConnectionInfo withPrivateKey(String privateKey) {
         this.privateKey = privateKey;
         return this;
     }
-
-    
-
 
     /**
      * 证书秘钥
@@ -151,15 +118,10 @@ public class MqttConnectionInfo  {
         this.privateKey = privateKey;
     }
 
-    
-
     public MqttConnectionInfo withCertificate(String certificate) {
         this.certificate = certificate;
         return this;
     }
-
-    
-
 
     /**
      * 证书
@@ -173,15 +135,10 @@ public class MqttConnectionInfo  {
         this.certificate = certificate;
     }
 
-    
-
     public MqttConnectionInfo withUserName(String userName) {
         this.userName = userName;
         return this;
     }
-
-    
-
 
     /**
      * 用户名
@@ -195,15 +152,10 @@ public class MqttConnectionInfo  {
         this.userName = userName;
     }
 
-    
-
     public MqttConnectionInfo withPassword(String password) {
         this.password = password;
         return this;
     }
-
-    
-
 
     /**
      * 密码
@@ -217,15 +169,10 @@ public class MqttConnectionInfo  {
         this.password = password;
     }
 
-    
-
     public MqttConnectionInfo withQos(Integer qos) {
         this.qos = qos;
         return this;
     }
-
-    
-
 
     /**
      * 服务质量,默认为0,表示最多一次的传输,1表示至少一次,2表示仅一次.
@@ -239,30 +186,26 @@ public class MqttConnectionInfo  {
         this.qos = qos;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MqttConnectionInfo mqttConnectionInfo = (MqttConnectionInfo) o;
-        return Objects.equals(this.serverAddress, mqttConnectionInfo.serverAddress) &&
-            Objects.equals(this.clientId, mqttConnectionInfo.clientId) &&
-            Objects.equals(this.authType, mqttConnectionInfo.authType) &&
-            Objects.equals(this.privateKey, mqttConnectionInfo.privateKey) &&
-            Objects.equals(this.certificate, mqttConnectionInfo.certificate) &&
-            Objects.equals(this.userName, mqttConnectionInfo.userName) &&
-            Objects.equals(this.password, mqttConnectionInfo.password) &&
-            Objects.equals(this.qos, mqttConnectionInfo.qos);
+        MqttConnectionInfo that = (MqttConnectionInfo) obj;
+        return Objects.equals(this.serverAddress, that.serverAddress) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.qos, that.qos);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serverAddress, clientId, authType, privateKey, certificate, userName, password, qos);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +221,7 @@ public class MqttConnectionInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +232,5 @@ public class MqttConnectionInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -87,17 +87,16 @@ public class UpdateScriptRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScriptRequest updateScriptRequest = (UpdateScriptRequest) o;
-        return Objects.equals(this.workspace, updateScriptRequest.workspace)
-            && Objects.equals(this.scriptName, updateScriptRequest.scriptName)
-            && Objects.equals(this.body, updateScriptRequest.body);
+        UpdateScriptRequest that = (UpdateScriptRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.scriptName, that.scriptName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

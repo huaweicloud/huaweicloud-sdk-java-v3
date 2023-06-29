@@ -253,21 +253,20 @@ public class SyncRepo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncRepo syncRepo = (SyncRepo) o;
-        return Objects.equals(this.createdAt, syncRepo.createdAt) && Objects.equals(this.domainID, syncRepo.domainID)
-            && Objects.equals(this.domainName, syncRepo.domainName) && Objects.equals(this.id, syncRepo.id)
-            && Objects.equals(this.namespace, syncRepo.namespace) && Objects.equals(this.override, syncRepo.override)
-            && Objects.equals(this.remoteNamespace, syncRepo.remoteNamespace)
-            && Objects.equals(this.remoteRegionId, syncRepo.remoteRegionId)
-            && Objects.equals(this.repoName, syncRepo.repoName) && Objects.equals(this.syncAuto, syncRepo.syncAuto)
-            && Objects.equals(this.updatedAt, syncRepo.updatedAt);
+        SyncRepo that = (SyncRepo) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.domainID, that.domainID)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.override, that.override)
+            && Objects.equals(this.remoteNamespace, that.remoteNamespace)
+            && Objects.equals(this.remoteRegionId, that.remoteRegionId) && Objects.equals(this.repoName, that.repoName)
+            && Objects.equals(this.syncAuto, that.syncAuto) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

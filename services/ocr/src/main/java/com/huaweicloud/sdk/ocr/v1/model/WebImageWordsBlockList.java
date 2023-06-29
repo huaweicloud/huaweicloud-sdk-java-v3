@@ -172,19 +172,17 @@ public class WebImageWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebImageWordsBlockList webImageWordsBlockList = (WebImageWordsBlockList) o;
-        return Objects.equals(this.words, webImageWordsBlockList.words)
-            && Objects.equals(this.confidence, webImageWordsBlockList.confidence)
-            && Objects.equals(this.location, webImageWordsBlockList.location)
-            && Objects.equals(this.fontList, webImageWordsBlockList.fontList)
-            && Objects.equals(this.fontScores, webImageWordsBlockList.fontScores);
+        WebImageWordsBlockList that = (WebImageWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.fontList, that.fontList)
+            && Objects.equals(this.fontScores, that.fontScores);
     }
 
     @Override

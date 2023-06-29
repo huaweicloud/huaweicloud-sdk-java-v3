@@ -187,22 +187,20 @@ public class IndirectPartnerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndirectPartnerInfo indirectPartnerInfo = (IndirectPartnerInfo) o;
-        return Objects.equals(this.indirectPartnerId, indirectPartnerInfo.indirectPartnerId)
-            && Objects.equals(this.mobilePhone, indirectPartnerInfo.mobilePhone)
-            && Objects.equals(this.email, indirectPartnerInfo.email)
-            && Objects.equals(this.accountName, indirectPartnerInfo.accountName)
-            && Objects.equals(this.name, indirectPartnerInfo.name)
-            && Objects.equals(this.associatedOn, indirectPartnerInfo.associatedOn)
-            && Objects.equals(this.accountManagerId, indirectPartnerInfo.accountManagerId)
-            && Objects.equals(this.accountManagerName, indirectPartnerInfo.accountManagerName);
+        IndirectPartnerInfo that = (IndirectPartnerInfo) obj;
+        return Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.mobilePhone, that.mobilePhone) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.accountName, that.accountName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.associatedOn, that.associatedOn)
+            && Objects.equals(this.accountManagerId, that.accountManagerId)
+            && Objects.equals(this.accountManagerName, that.accountManagerName);
     }
 
     @Override

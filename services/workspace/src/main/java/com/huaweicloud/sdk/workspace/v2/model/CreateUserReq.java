@@ -206,22 +206,20 @@ public class CreateUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserReq createUserReq = (CreateUserReq) o;
-        return Objects.equals(this.userName, createUserReq.userName)
-            && Objects.equals(this.userEmail, createUserReq.userEmail)
-            && Objects.equals(this.accountExpires, createUserReq.accountExpires)
-            && Objects.equals(this.enableChangePassword, createUserReq.enableChangePassword)
-            && Objects.equals(this.nextLoginChangePassword, createUserReq.nextLoginChangePassword)
-            && Objects.equals(this.groupIds, createUserReq.groupIds)
-            && Objects.equals(this.description, createUserReq.description)
-            && Objects.equals(this.aliasName, createUserReq.aliasName);
+        CreateUserReq that = (CreateUserReq) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.accountExpires, that.accountExpires)
+            && Objects.equals(this.enableChangePassword, that.enableChangePassword)
+            && Objects.equals(this.nextLoginChangePassword, that.nextLoginChangePassword)
+            && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.aliasName, that.aliasName);
     }
 
     @Override

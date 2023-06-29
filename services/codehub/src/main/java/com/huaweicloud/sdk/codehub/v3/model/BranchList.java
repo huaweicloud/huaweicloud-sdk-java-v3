@@ -74,15 +74,15 @@ public class BranchList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BranchList branchList = (BranchList) o;
-        return Objects.equals(this.branches, branchList.branches) && Objects.equals(this.total, branchList.total);
+        BranchList that = (BranchList) obj;
+        return Objects.equals(this.branches, that.branches) && Objects.equals(this.total, that.total);
     }
 
     @Override

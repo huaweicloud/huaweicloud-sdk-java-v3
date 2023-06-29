@@ -742,6 +742,37 @@ public class DcsAsyncClient {
     }
 
     /**
+     * 集群分片倒换
+     *
+     * 集群分片倒换，适用于proxy和cluster实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @return CompletableFuture<ExecuteClusterSwitchoverResponse>
+     */
+    public CompletableFuture<ExecuteClusterSwitchoverResponse> executeClusterSwitchoverAsync(
+        ExecuteClusterSwitchoverRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.executeClusterSwitchover);
+    }
+
+    /**
+     * 集群分片倒换
+     *
+     * 集群分片倒换，适用于proxy和cluster实例
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ExecuteClusterSwitchoverRequest 请求对象
+     * @return AsyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>
+     */
+    public AsyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> executeClusterSwitchoverAsyncInvoker(
+        ExecuteClusterSwitchoverRequest request) {
+        return new AsyncInvoker<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse>(request,
+            DcsMeta.executeClusterSwitchover, hcClient);
+    }
+
+    /**
      * 查询可用区信息
      *
      * 查询所在局点的可用区信息
@@ -1774,6 +1805,34 @@ public class DcsAsyncClient {
     public AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse> showInstanceAsyncInvoker(
         ShowInstanceRequest request) {
         return new AsyncInvoker<ShowInstanceRequest, ShowInstanceResponse>(request, DcsMeta.showInstance, hcClient);
+    }
+
+    /**
+     * 查询租户Job执行结果
+     *
+     * 查询租户Job执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return CompletableFuture<ShowJobInfoResponse>
+     */
+    public CompletableFuture<ShowJobInfoResponse> showJobInfoAsync(ShowJobInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, DcsMeta.showJobInfo);
+    }
+
+    /**
+     * 查询租户Job执行结果
+     *
+     * 查询租户Job执行结果
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
+     */
+    public AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoAsyncInvoker(ShowJobInfoRequest request) {
+        return new AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, DcsMeta.showJobInfo, hcClient);
     }
 
     /**

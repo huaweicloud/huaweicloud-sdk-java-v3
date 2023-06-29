@@ -76,22 +76,15 @@ public class OtpDevice {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -124,7 +117,7 @@ public class OtpDevice {
     }
 
     /**
-     * 用户otp 信息id
+     * 用户otp 信息id。
      * @return id
      */
     public String getId() {
@@ -141,7 +134,7 @@ public class OtpDevice {
     }
 
     /**
-     * 用户id
+     * 用户id。
      * @return userId
      */
     public String getUserId() {
@@ -158,7 +151,7 @@ public class OtpDevice {
     }
 
     /**
-     * 用户名
+     * 用户名。
      * @return userName
      */
     public String getUserName() {
@@ -192,7 +185,7 @@ public class OtpDevice {
     }
 
     /**
-     * 用户otp设备绑定时间
+     * 用户otp设备绑定时间。
      * @return createTime
      */
     public OffsetDateTime getCreateTime() {
@@ -204,17 +197,17 @@ public class OtpDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OtpDevice otpDevice = (OtpDevice) o;
-        return Objects.equals(this.id, otpDevice.id) && Objects.equals(this.userId, otpDevice.userId)
-            && Objects.equals(this.userName, otpDevice.userName) && Objects.equals(this.status, otpDevice.status)
-            && Objects.equals(this.createTime, otpDevice.createTime);
+        OtpDevice that = (OtpDevice) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

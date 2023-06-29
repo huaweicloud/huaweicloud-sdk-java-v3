@@ -77,16 +77,16 @@ public class RackInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RackInfo rackInfo = (RackInfo) o;
-        return Objects.equals(this.power, rackInfo.power) && Objects.equals(this.size, rackInfo.size)
-            && Objects.equals(this.hasLock, rackInfo.hasLock);
+        RackInfo that = (RackInfo) obj;
+        return Objects.equals(this.power, that.power) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.hasLock, that.hasLock);
     }
 
     @Override

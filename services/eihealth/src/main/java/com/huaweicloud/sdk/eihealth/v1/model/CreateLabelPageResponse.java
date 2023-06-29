@@ -34,15 +34,15 @@ public class CreateLabelPageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLabelPageResponse createLabelPageResponse = (CreateLabelPageResponse) o;
-        return Objects.equals(this.id, createLabelPageResponse.id);
+        CreateLabelPageResponse that = (CreateLabelPageResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

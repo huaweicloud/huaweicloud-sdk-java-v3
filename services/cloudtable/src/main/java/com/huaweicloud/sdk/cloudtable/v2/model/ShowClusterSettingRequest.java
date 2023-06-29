@@ -11,12 +11,7 @@ import java.util.Objects;
 public class ShowClusterSettingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projectId")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "clusterId")
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
@@ -24,23 +19,6 @@ public class ShowClusterSettingRequest {
     @JsonProperty(value = "X-Language")
 
     private String xLanguage;
-
-    public ShowClusterSettingRequest withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 租户ID
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
 
     public ShowClusterSettingRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -79,29 +57,26 @@ public class ShowClusterSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterSettingRequest showClusterSettingRequest = (ShowClusterSettingRequest) o;
-        return Objects.equals(this.projectId, showClusterSettingRequest.projectId)
-            && Objects.equals(this.clusterId, showClusterSettingRequest.clusterId)
-            && Objects.equals(this.xLanguage, showClusterSettingRequest.xLanguage);
+        ShowClusterSettingRequest that = (ShowClusterSettingRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, clusterId, xLanguage);
+        return Objects.hash(clusterId, xLanguage);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowClusterSettingRequest {\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("}");

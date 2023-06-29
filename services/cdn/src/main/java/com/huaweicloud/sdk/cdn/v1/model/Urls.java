@@ -187,18 +187,18 @@ public class Urls {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Urls urls = (Urls) o;
-        return Objects.equals(this.id, urls.id) && Objects.equals(this.url, urls.url)
-            && Objects.equals(this.status, urls.status) && Objects.equals(this.type, urls.type)
-            && Objects.equals(this.taskId, urls.taskId) && Objects.equals(this.modifyTime, urls.modifyTime)
-            && Objects.equals(this.createTime, urls.createTime) && Objects.equals(this.fileType, urls.fileType);
+        Urls that = (Urls) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.modifyTime, that.modifyTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

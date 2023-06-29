@@ -118,22 +118,15 @@ public class ShowShareResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PayModelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PayModelEnum(value));
         }
 
         public static PayModelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PayModelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -567,34 +560,26 @@ public class ShowShareResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowShareResponse showShareResponse = (ShowShareResponse) o;
-        return Objects.equals(this.actionProgress, showShareResponse.actionProgress)
-            && Objects.equals(this.version, showShareResponse.version)
-            && Objects.equals(this.availCapacity, showShareResponse.availCapacity)
-            && Objects.equals(this.availabilityZone, showShareResponse.availabilityZone)
-            && Objects.equals(this.azName, showShareResponse.azName)
-            && Objects.equals(this.createdAt, showShareResponse.createdAt)
-            && Objects.equals(this.cryptKeyId, showShareResponse.cryptKeyId)
-            && Objects.equals(this.expandType, showShareResponse.expandType)
-            && Objects.equals(this.exportLocation, showShareResponse.exportLocation)
-            && Objects.equals(this.id, showShareResponse.id) && Objects.equals(this.name, showShareResponse.name)
-            && Objects.equals(this.payModel, showShareResponse.payModel)
-            && Objects.equals(this.region, showShareResponse.region)
-            && Objects.equals(this.securityGroupId, showShareResponse.securityGroupId)
-            && Objects.equals(this.shareProto, showShareResponse.shareProto)
-            && Objects.equals(this.shareType, showShareResponse.shareType)
-            && Objects.equals(this.size, showShareResponse.size)
-            && Objects.equals(this.status, showShareResponse.status)
-            && Objects.equals(this.subStatus, showShareResponse.subStatus)
-            && Objects.equals(this.subnetId, showShareResponse.subnetId)
-            && Objects.equals(this.vpcId, showShareResponse.vpcId);
+        ShowShareResponse that = (ShowShareResponse) obj;
+        return Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.availCapacity, that.availCapacity)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.azName, that.azName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.cryptKeyId, that.cryptKeyId)
+            && Objects.equals(this.expandType, that.expandType)
+            && Objects.equals(this.exportLocation, that.exportLocation) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.payModel, that.payModel)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.shareProto, that.shareProto) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

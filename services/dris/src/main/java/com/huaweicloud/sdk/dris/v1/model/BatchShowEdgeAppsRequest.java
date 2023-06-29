@@ -103,18 +103,16 @@ public class BatchShowEdgeAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowEdgeAppsRequest batchShowEdgeAppsRequest = (BatchShowEdgeAppsRequest) o;
-        return Objects.equals(this.instanceId, batchShowEdgeAppsRequest.instanceId)
-            && Objects.equals(this.edgeAppId, batchShowEdgeAppsRequest.edgeAppId)
-            && Objects.equals(this.offset, batchShowEdgeAppsRequest.offset)
-            && Objects.equals(this.limit, batchShowEdgeAppsRequest.limit);
+        BatchShowEdgeAppsRequest that = (BatchShowEdgeAppsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

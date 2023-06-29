@@ -77,17 +77,16 @@ public class TraceTopologyNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TraceTopologyNode traceTopologyNode = (TraceTopologyNode) o;
-        return Objects.equals(this.nodeId, traceTopologyNode.nodeId)
-            && Objects.equals(this.nodeName, traceTopologyNode.nodeName)
-            && Objects.equals(this.hint, traceTopologyNode.hint);
+        TraceTopologyNode that = (TraceTopologyNode) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.nodeName, that.nodeName)
+            && Objects.equals(this.hint, that.hint);
     }
 
     @Override

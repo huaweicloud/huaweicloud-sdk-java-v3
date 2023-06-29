@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 集群节点信息
  */
-public class NodeConfig  {
-
+public class NodeConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_ip")
-    
+    @JsonProperty(value = "node_ip")
 
     private String nodeIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_name")
-    
+    @JsonProperty(value = "node_name")
 
     private String nodeName;
 
@@ -33,9 +24,6 @@ public class NodeConfig  {
         this.nodeIp = nodeIp;
         return this;
     }
-
-    
-
 
     /**
      * 节点IP
@@ -49,15 +37,10 @@ public class NodeConfig  {
         this.nodeIp = nodeIp;
     }
 
-    
-
     public NodeConfig withNodeName(String nodeName) {
         this.nodeName = nodeName;
         return this;
     }
-
-    
-
 
     /**
      * 节点名称
@@ -71,24 +54,23 @@ public class NodeConfig  {
         this.nodeName = nodeName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeConfig nodeConfig = (NodeConfig) o;
-        return Objects.equals(this.nodeIp, nodeConfig.nodeIp) &&
-            Objects.equals(this.nodeName, nodeConfig.nodeName);
+        NodeConfig that = (NodeConfig) obj;
+        return Objects.equals(this.nodeIp, that.nodeIp) && Objects.equals(this.nodeName, that.nodeName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeIp, nodeName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class NodeConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class NodeConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -101,17 +101,16 @@ public class OutputInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputInfo outputInfo = (OutputInfo) o;
-        return Objects.equals(this.faceAddr, outputInfo.faceAddr) && Objects.equals(this.bodyAddr, outputInfo.bodyAddr)
-            && Objects.equals(this.audioAddr, outputInfo.audioAddr)
-            && Objects.equals(this.sessionId, outputInfo.sessionId);
+        OutputInfo that = (OutputInfo) obj;
+        return Objects.equals(this.faceAddr, that.faceAddr) && Objects.equals(this.bodyAddr, that.bodyAddr)
+            && Objects.equals(this.audioAddr, that.audioAddr) && Objects.equals(this.sessionId, that.sessionId);
     }
 
     @Override

@@ -64,15 +64,15 @@ public class DetectLiveFaceByFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveFaceByFileRequestBody detectLiveFaceByFileRequestBody = (DetectLiveFaceByFileRequestBody) o;
-        return Objects.equals(this.imageFile, detectLiveFaceByFileRequestBody.imageFile);
+        DetectLiveFaceByFileRequestBody that = (DetectLiveFaceByFileRequestBody) obj;
+        return Objects.equals(this.imageFile, that.imageFile);
     }
 
     @Override

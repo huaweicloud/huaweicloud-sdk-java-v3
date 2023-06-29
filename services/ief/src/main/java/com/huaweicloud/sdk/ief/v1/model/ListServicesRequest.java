@@ -143,19 +143,17 @@ public class ListServicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServicesRequest listServicesRequest = (ListServicesRequest) o;
-        return Objects.equals(this.limit, listServicesRequest.limit)
-            && Objects.equals(this.offset, listServicesRequest.offset)
-            && Objects.equals(this.sorted, listServicesRequest.sorted)
-            && Objects.equals(this.name, listServicesRequest.name) && Objects.equals(this.app, listServicesRequest.app)
-            && Objects.equals(this.iefInstanceId, listServicesRequest.iefInstanceId);
+        ListServicesRequest that = (ListServicesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sorted, that.sorted) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

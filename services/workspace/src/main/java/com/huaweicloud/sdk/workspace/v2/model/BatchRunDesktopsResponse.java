@@ -63,7 +63,7 @@ public class BatchRunDesktopsResponse extends SdkResponse {
     }
 
     /**
-     * 任务ID。
+     * 任务ID，冷迁移启动时返回。
      * @return jobId
      */
     public String getJobId() {
@@ -75,16 +75,16 @@ public class BatchRunDesktopsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRunDesktopsResponse batchRunDesktopsResponse = (BatchRunDesktopsResponse) o;
-        return Objects.equals(this.failedOperationList, batchRunDesktopsResponse.failedOperationList)
-            && Objects.equals(this.jobId, batchRunDesktopsResponse.jobId);
+        BatchRunDesktopsResponse that = (BatchRunDesktopsResponse) obj;
+        return Objects.equals(this.failedOperationList, that.failedOperationList)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

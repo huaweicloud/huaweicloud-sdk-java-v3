@@ -99,18 +99,16 @@ public class ExportCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportCertificateRequestBody exportCertificateRequestBody = (ExportCertificateRequestBody) o;
-        return Objects.equals(this.isCompressed, exportCertificateRequestBody.isCompressed)
-            && Objects.equals(this.type, exportCertificateRequestBody.type)
-            && Objects.equals(this.isSmStandard, exportCertificateRequestBody.isSmStandard)
-            && Objects.equals(this.password, exportCertificateRequestBody.password);
+        ExportCertificateRequestBody that = (ExportCertificateRequestBody) obj;
+        return Objects.equals(this.isCompressed, that.isCompressed) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isSmStandard, that.isSmStandard) && Objects.equals(this.password, that.password);
     }
 
     @Override

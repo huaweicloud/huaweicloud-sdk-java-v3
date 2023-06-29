@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 任务参数对象。
  */
-public class TaskParam  {
-
+public class TaskParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_name")
-    
+    @JsonProperty(value = "param_name")
 
     private String paramName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_type")
-    
+    @JsonProperty(value = "param_type")
 
     private String paramType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="param_group")
-    
+    @JsonProperty(value = "param_group")
 
     private String paramGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_value")
-    
+    @JsonProperty(value = "default_value")
 
     private String defaultValue;
 
@@ -45,9 +34,6 @@ public class TaskParam  {
         this.paramName = paramName;
         return this;
     }
-
-    
-
 
     /**
      * 参数名称。
@@ -61,15 +47,10 @@ public class TaskParam  {
         this.paramName = paramName;
     }
 
-    
-
     public TaskParam withParamType(String paramType) {
         this.paramType = paramType;
         return this;
     }
-
-    
-
 
     /**
      * 参数类型。
@@ -83,15 +64,10 @@ public class TaskParam  {
         this.paramType = paramType;
     }
 
-    
-
     public TaskParam withParamGroup(String paramGroup) {
         this.paramGroup = paramGroup;
         return this;
     }
-
-    
-
 
     /**
      * 参数分组。
@@ -105,15 +81,10 @@ public class TaskParam  {
         this.paramGroup = paramGroup;
     }
 
-    
-
     public TaskParam withDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
         return this;
     }
-
-    
-
 
     /**
      * 参数初始值。
@@ -127,26 +98,24 @@ public class TaskParam  {
         this.defaultValue = defaultValue;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskParam taskParam = (TaskParam) o;
-        return Objects.equals(this.paramName, taskParam.paramName) &&
-            Objects.equals(this.paramType, taskParam.paramType) &&
-            Objects.equals(this.paramGroup, taskParam.paramGroup) &&
-            Objects.equals(this.defaultValue, taskParam.defaultValue);
+        TaskParam that = (TaskParam) obj;
+        return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.paramType, that.paramType)
+            && Objects.equals(this.paramGroup, that.paramGroup) && Objects.equals(this.defaultValue, that.defaultValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(paramName, paramType, paramGroup, defaultValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class TaskParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class TaskParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

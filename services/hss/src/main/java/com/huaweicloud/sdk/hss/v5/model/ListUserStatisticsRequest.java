@@ -103,18 +103,17 @@ public class ListUserStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserStatisticsRequest listUserStatisticsRequest = (ListUserStatisticsRequest) o;
-        return Objects.equals(this.userName, listUserStatisticsRequest.userName)
-            && Objects.equals(this.enterpriseProjectId, listUserStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listUserStatisticsRequest.limit)
-            && Objects.equals(this.offset, listUserStatisticsRequest.offset);
+        ListUserStatisticsRequest that = (ListUserStatisticsRequest) obj;
+        return Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

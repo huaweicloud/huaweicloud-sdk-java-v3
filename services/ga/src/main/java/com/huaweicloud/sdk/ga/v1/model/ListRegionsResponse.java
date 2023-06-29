@@ -75,16 +75,15 @@ public class ListRegionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRegionsResponse listRegionsResponse = (ListRegionsResponse) o;
-        return Objects.equals(this.areaRegions, listRegionsResponse.areaRegions)
-            && Objects.equals(this.requestId, listRegionsResponse.requestId);
+        ListRegionsResponse that = (ListRegionsResponse) obj;
+        return Objects.equals(this.areaRegions, that.areaRegions) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

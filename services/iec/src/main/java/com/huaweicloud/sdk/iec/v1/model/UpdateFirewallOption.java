@@ -118,18 +118,16 @@ public class UpdateFirewallOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFirewallOption updateFirewallOption = (UpdateFirewallOption) o;
-        return Objects.equals(this.name, updateFirewallOption.name)
-            && Objects.equals(this.adminStateUp, updateFirewallOption.adminStateUp)
-            && Objects.equals(this.description, updateFirewallOption.description)
-            && Objects.equals(this.subnets, updateFirewallOption.subnets);
+        UpdateFirewallOption that = (UpdateFirewallOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.subnets, that.subnets);
     }
 
     @Override

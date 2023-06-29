@@ -53,15 +53,15 @@ public class PublishAssetsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAssetsResponse publishAssetsResponse = (PublishAssetsResponse) o;
-        return Objects.equals(this.assetInfoArray, publishAssetsResponse.assetInfoArray);
+        PublishAssetsResponse that = (PublishAssetsResponse) obj;
+        return Objects.equals(this.assetInfoArray, that.assetInfoArray);
     }
 
     @Override

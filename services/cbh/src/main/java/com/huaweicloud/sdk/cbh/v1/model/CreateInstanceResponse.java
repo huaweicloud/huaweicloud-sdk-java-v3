@@ -100,18 +100,17 @@ public class CreateInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceResponse createInstanceResponse = (CreateInstanceResponse) o;
-        return Objects.equals(this.instanceKey, createInstanceResponse.instanceKey)
-            && Objects.equals(this.slaveInstanceKey, createInstanceResponse.slaveInstanceKey)
-            && Objects.equals(this.requestInfo, createInstanceResponse.requestInfo)
-            && Objects.equals(this.jobId, createInstanceResponse.jobId);
+        CreateInstanceResponse that = (CreateInstanceResponse) obj;
+        return Objects.equals(this.instanceKey, that.instanceKey)
+            && Objects.equals(this.slaveInstanceKey, that.slaveInstanceKey)
+            && Objects.equals(this.requestInfo, that.requestInfo) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

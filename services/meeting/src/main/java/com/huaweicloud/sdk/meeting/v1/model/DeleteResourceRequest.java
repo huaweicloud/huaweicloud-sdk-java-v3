@@ -120,18 +120,17 @@ public class DeleteResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteResourceRequest deleteResourceRequest = (DeleteResourceRequest) o;
-        return Objects.equals(this.xRequestId, deleteResourceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, deleteResourceRequest.acceptLanguage)
-            && Objects.equals(this.corpId, deleteResourceRequest.corpId)
-            && Objects.equals(this.body, deleteResourceRequest.body);
+        DeleteResourceRequest that = (DeleteResourceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

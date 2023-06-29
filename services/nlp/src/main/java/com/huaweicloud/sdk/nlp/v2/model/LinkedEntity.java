@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 链接的实体 类
  */
-public class LinkedEntity  {
-
+public class LinkedEntity {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mention")
-    
+    @JsonProperty(value = "mention")
 
     private String mention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entity_title")
-    
+    @JsonProperty(value = "entity_title")
 
     private String entityTitle;
 
@@ -39,9 +29,6 @@ public class LinkedEntity  {
         this.mention = mention;
         return this;
     }
-
-    
-
 
     /**
      * 实体指称
@@ -55,15 +42,10 @@ public class LinkedEntity  {
         this.mention = mention;
     }
 
-    
-
     public LinkedEntity withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量
@@ -77,15 +59,10 @@ public class LinkedEntity  {
         this.offset = offset;
     }
 
-    
-
     public LinkedEntity withEntityTitle(String entityTitle) {
         this.entityTitle = entityTitle;
         return this;
     }
-
-    
-
 
     /**
      * 实体名称
@@ -99,25 +76,24 @@ public class LinkedEntity  {
         this.entityTitle = entityTitle;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinkedEntity linkedEntity = (LinkedEntity) o;
-        return Objects.equals(this.mention, linkedEntity.mention) &&
-            Objects.equals(this.offset, linkedEntity.offset) &&
-            Objects.equals(this.entityTitle, linkedEntity.entityTitle);
+        LinkedEntity that = (LinkedEntity) obj;
+        return Objects.equals(this.mention, that.mention) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.entityTitle, that.entityTitle);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(mention, offset, entityTitle);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class LinkedEntity  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class LinkedEntity  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

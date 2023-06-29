@@ -165,21 +165,19 @@ public class CreateConfigurationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfigurationResult createConfigurationResult = (CreateConfigurationResult) o;
-        return Objects.equals(this.id, createConfigurationResult.id)
-            && Objects.equals(this.name, createConfigurationResult.name)
-            && Objects.equals(this.description, createConfigurationResult.description)
-            && Objects.equals(this.datastoreVersionName, createConfigurationResult.datastoreVersionName)
-            && Objects.equals(this.datastoreName, createConfigurationResult.datastoreName)
-            && Objects.equals(this.created, createConfigurationResult.created)
-            && Objects.equals(this.updated, createConfigurationResult.updated);
+        CreateConfigurationResult that = (CreateConfigurationResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated);
     }
 
     @Override

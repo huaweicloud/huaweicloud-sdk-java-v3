@@ -136,7 +136,7 @@ public class ListLoginRecordsNewRequest {
     }
 
     /**
-     * 用于分页查询，取值范围0-255，默认值20。
+     * 用于分页查询，取值范围0-100，默认值20。
      * @return limit
      */
     public String getLimit() {
@@ -165,21 +165,18 @@ public class ListLoginRecordsNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoginRecordsNewRequest listLoginRecordsNewRequest = (ListLoginRecordsNewRequest) o;
-        return Objects.equals(this.startTime, listLoginRecordsNewRequest.startTime)
-            && Objects.equals(this.endTime, listLoginRecordsNewRequest.endTime)
-            && Objects.equals(this.userName, listLoginRecordsNewRequest.userName)
-            && Objects.equals(this.computerName, listLoginRecordsNewRequest.computerName)
-            && Objects.equals(this.terminalType, listLoginRecordsNewRequest.terminalType)
-            && Objects.equals(this.limit, listLoginRecordsNewRequest.limit)
-            && Objects.equals(this.offset, listLoginRecordsNewRequest.offset);
+        ListLoginRecordsNewRequest that = (ListLoginRecordsNewRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

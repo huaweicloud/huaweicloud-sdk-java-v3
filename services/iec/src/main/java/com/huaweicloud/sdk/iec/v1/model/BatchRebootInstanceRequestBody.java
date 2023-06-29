@@ -43,15 +43,15 @@ public class BatchRebootInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRebootInstanceRequestBody batchRebootInstanceRequestBody = (BatchRebootInstanceRequestBody) o;
-        return Objects.equals(this.reboot, batchRebootInstanceRequestBody.reboot);
+        BatchRebootInstanceRequestBody that = (BatchRebootInstanceRequestBody) obj;
+        return Objects.equals(this.reboot, that.reboot);
     }
 
     @Override

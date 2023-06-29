@@ -144,20 +144,17 @@ public class ComponentSnapshotItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentSnapshotItem componentSnapshotItem = (ComponentSnapshotItem) o;
-        return Objects.equals(this.componentId, componentSnapshotItem.componentId)
-            && Objects.equals(this.context, componentSnapshotItem.context)
-            && Objects.equals(this.createdAt, componentSnapshotItem.createdAt)
-            && Objects.equals(this.description, componentSnapshotItem.description)
-            && Objects.equals(this.index, componentSnapshotItem.index)
-            && Objects.equals(this.updatedAt, componentSnapshotItem.updatedAt);
+        ComponentSnapshotItem that = (ComponentSnapshotItem) obj;
+        return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.context, that.context)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

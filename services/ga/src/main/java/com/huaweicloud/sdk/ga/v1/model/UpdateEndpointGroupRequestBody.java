@@ -43,15 +43,15 @@ public class UpdateEndpointGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointGroupRequestBody updateEndpointGroupRequestBody = (UpdateEndpointGroupRequestBody) o;
-        return Objects.equals(this.endpointGroup, updateEndpointGroupRequestBody.endpointGroup);
+        UpdateEndpointGroupRequestBody that = (UpdateEndpointGroupRequestBody) obj;
+        return Objects.equals(this.endpointGroup, that.endpointGroup);
     }
 
     @Override

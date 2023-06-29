@@ -165,21 +165,18 @@ public class ShowResourceMetricDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceMetricDataRequest showResourceMetricDataRequest = (ShowResourceMetricDataRequest) o;
-        return Objects.equals(this.fromTime, showResourceMetricDataRequest.fromTime)
-            && Objects.equals(this.toTime, showResourceMetricDataRequest.toTime)
-            && Objects.equals(this.period, showResourceMetricDataRequest.period)
-            && Objects.equals(this.method, showResourceMetricDataRequest.method)
-            && Objects.equals(this.metricName, showResourceMetricDataRequest.metricName)
-            && Objects.equals(this.resourceId, showResourceMetricDataRequest.resourceId)
-            && Objects.equals(this.deviceId, showResourceMetricDataRequest.deviceId);
+        ShowResourceMetricDataRequest that = (ShowResourceMetricDataRequest) obj;
+        return Objects.equals(this.fromTime, that.fromTime) && Objects.equals(this.toTime, that.toTime)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

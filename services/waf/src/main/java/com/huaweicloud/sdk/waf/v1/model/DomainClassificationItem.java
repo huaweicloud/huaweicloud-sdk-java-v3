@@ -74,16 +74,15 @@ public class DomainClassificationItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainClassificationItem domainClassificationItem = (DomainClassificationItem) o;
-        return Objects.equals(this.total, domainClassificationItem.total)
-            && Objects.equals(this.items, domainClassificationItem.items);
+        DomainClassificationItem that = (DomainClassificationItem) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items);
     }
 
     @Override

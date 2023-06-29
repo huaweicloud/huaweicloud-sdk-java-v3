@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowEnvByNameRequest  {
-
+public class ShowEnvByNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_name")
-    
+    @JsonProperty(value = "environment_name")
 
     private String environmentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
 
     private String componentId;
 
@@ -40,9 +29,6 @@ public class ShowEnvByNameRequest  {
         this.environmentName = environmentName;
         return this;
     }
-
-    
-
 
     /**
      * 环境名称
@@ -56,15 +42,10 @@ public class ShowEnvByNameRequest  {
         this.environmentName = environmentName;
     }
 
-    
-
     public ShowEnvByNameRequest withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 环境region
@@ -78,15 +59,10 @@ public class ShowEnvByNameRequest  {
         this.region = region;
     }
 
-    
-
     public ShowEnvByNameRequest withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
-
-    
-
 
     /**
      * 组件id
@@ -100,25 +76,24 @@ public class ShowEnvByNameRequest  {
         this.componentId = componentId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvByNameRequest showEnvByNameRequest = (ShowEnvByNameRequest) o;
-        return Objects.equals(this.environmentName, showEnvByNameRequest.environmentName) &&
-            Objects.equals(this.region, showEnvByNameRequest.region) &&
-            Objects.equals(this.componentId, showEnvByNameRequest.componentId);
+        ShowEnvByNameRequest that = (ShowEnvByNameRequest) obj;
+        return Objects.equals(this.environmentName, that.environmentName) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.componentId, that.componentId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(environmentName, region, componentId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ShowEnvByNameRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ShowEnvByNameRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

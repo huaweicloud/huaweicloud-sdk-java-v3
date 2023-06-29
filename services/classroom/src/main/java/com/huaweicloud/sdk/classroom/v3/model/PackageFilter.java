@@ -74,15 +74,15 @@ public class PackageFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackageFilter packageFilter = (PackageFilter) o;
-        return Objects.equals(this.name, packageFilter.name) && Objects.equals(this.tagNames, packageFilter.tagNames);
+        PackageFilter that = (PackageFilter) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.tagNames, that.tagNames);
     }
 
     @Override

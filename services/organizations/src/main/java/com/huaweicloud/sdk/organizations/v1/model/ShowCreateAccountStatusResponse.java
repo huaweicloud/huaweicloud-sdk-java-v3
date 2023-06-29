@@ -45,15 +45,15 @@ public class ShowCreateAccountStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCreateAccountStatusResponse showCreateAccountStatusResponse = (ShowCreateAccountStatusResponse) o;
-        return Objects.equals(this.createAccountStatus, showCreateAccountStatusResponse.createAccountStatus);
+        ShowCreateAccountStatusResponse that = (ShowCreateAccountStatusResponse) obj;
+        return Objects.equals(this.createAccountStatus, that.createAccountStatus);
     }
 
     @Override

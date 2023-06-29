@@ -56,22 +56,15 @@ public class ShowServiceContractResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AgreementTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AgreementTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgreementTypeEnum(value));
         }
 
         public static AgreementTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AgreementTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -223,20 +216,18 @@ public class ShowServiceContractResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServiceContractResponse showServiceContractResponse = (ShowServiceContractResponse) o;
-        return Objects.equals(this.agreementType, showServiceContractResponse.agreementType)
-            && Objects.equals(this.createTime, showServiceContractResponse.createTime)
-            && Objects.equals(this.xRequestId, showServiceContractResponse.xRequestId)
-            && Objects.equals(this.connection, showServiceContractResponse.connection)
-            && Objects.equals(this.contentLength, showServiceContractResponse.contentLength)
-            && Objects.equals(this.date, showServiceContractResponse.date);
+        ShowServiceContractResponse that = (ShowServiceContractResponse) obj;
+        return Objects.equals(this.agreementType, that.agreementType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

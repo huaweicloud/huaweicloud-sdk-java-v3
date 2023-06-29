@@ -65,16 +65,15 @@ public class BatchDeleteTestCaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteTestCaseRequest batchDeleteTestCaseRequest = (BatchDeleteTestCaseRequest) o;
-        return Objects.equals(this.projectId, batchDeleteTestCaseRequest.projectId)
-            && Objects.equals(this.body, batchDeleteTestCaseRequest.body);
+        BatchDeleteTestCaseRequest that = (BatchDeleteTestCaseRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

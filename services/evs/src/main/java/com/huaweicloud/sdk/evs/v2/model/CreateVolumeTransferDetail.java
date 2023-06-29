@@ -162,20 +162,17 @@ public class CreateVolumeTransferDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeTransferDetail createVolumeTransferDetail = (CreateVolumeTransferDetail) o;
-        return Objects.equals(this.authKey, createVolumeTransferDetail.authKey)
-            && Objects.equals(this.createdAt, createVolumeTransferDetail.createdAt)
-            && Objects.equals(this.id, createVolumeTransferDetail.id)
-            && Objects.equals(this.links, createVolumeTransferDetail.links)
-            && Objects.equals(this.name, createVolumeTransferDetail.name)
-            && Objects.equals(this.volumeId, createVolumeTransferDetail.volumeId);
+        CreateVolumeTransferDetail that = (CreateVolumeTransferDetail) obj;
+        return Objects.equals(this.authKey, that.authKey) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

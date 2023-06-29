@@ -66,16 +66,15 @@ public class CreateEndpointGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointGroupResponse createEndpointGroupResponse = (CreateEndpointGroupResponse) o;
-        return Objects.equals(this.endpointGroup, createEndpointGroupResponse.endpointGroup)
-            && Objects.equals(this.requestId, createEndpointGroupResponse.requestId);
+        CreateEndpointGroupResponse that = (CreateEndpointGroupResponse) obj;
+        return Objects.equals(this.endpointGroup, that.endpointGroup) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

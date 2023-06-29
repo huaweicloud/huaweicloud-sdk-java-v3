@@ -98,17 +98,16 @@ public class DeleteCorpVmrRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCorpVmrRequest deleteCorpVmrRequest = (DeleteCorpVmrRequest) o;
-        return Objects.equals(this.xRequestId, deleteCorpVmrRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, deleteCorpVmrRequest.acceptLanguage)
-            && Objects.equals(this.body, deleteCorpVmrRequest.body);
+        DeleteCorpVmrRequest that = (DeleteCorpVmrRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -96,17 +96,17 @@ public class ThailandLicensePlateItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThailandLicensePlateItem thailandLicensePlateItem = (ThailandLicensePlateItem) o;
-        return Objects.equals(this.plateNumber, thailandLicensePlateItem.plateNumber)
-            && Objects.equals(this.plateLocation, thailandLicensePlateItem.plateLocation)
-            && Objects.equals(this.confidence, thailandLicensePlateItem.confidence);
+        ThailandLicensePlateItem that = (ThailandLicensePlateItem) obj;
+        return Objects.equals(this.plateNumber, that.plateNumber)
+            && Objects.equals(this.plateLocation, that.plateLocation)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

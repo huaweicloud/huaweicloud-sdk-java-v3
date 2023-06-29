@@ -121,18 +121,17 @@ public class CloneServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloneServer cloneServer = (CloneServer) o;
-        return Objects.equals(this.vmId, cloneServer.vmId) && Objects.equals(this.name, cloneServer.name)
-            && Objects.equals(this.cloneError, cloneServer.cloneError)
-            && Objects.equals(this.cloneState, cloneServer.cloneState)
-            && Objects.equals(this.errorMsg, cloneServer.errorMsg);
+        CloneServer that = (CloneServer) obj;
+        return Objects.equals(this.vmId, that.vmId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cloneError, that.cloneError) && Objects.equals(this.cloneState, that.cloneState)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

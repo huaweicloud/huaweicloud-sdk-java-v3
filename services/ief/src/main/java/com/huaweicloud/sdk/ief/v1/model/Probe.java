@@ -118,17 +118,17 @@ public class Probe {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Probe probe = (Probe) o;
-        return Objects.equals(this.exec, probe.exec) && Objects.equals(this.httpGet, probe.httpGet)
-            && Objects.equals(this.initialDelaySeconds, probe.initialDelaySeconds)
-            && Objects.equals(this.timeoutSeconds, probe.timeoutSeconds);
+        Probe that = (Probe) obj;
+        return Objects.equals(this.exec, that.exec) && Objects.equals(this.httpGet, that.httpGet)
+            && Objects.equals(this.initialDelaySeconds, that.initialDelaySeconds)
+            && Objects.equals(this.timeoutSeconds, that.timeoutSeconds);
     }
 
     @Override

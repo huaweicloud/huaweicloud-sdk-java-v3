@@ -78,17 +78,16 @@ public class ShowConfigSettingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigSettingResponse showConfigSettingResponse = (ShowConfigSettingResponse) o;
-        return Objects.equals(this.taskId, showConfigSettingResponse.taskId)
-            && Objects.equals(this.migrateType, showConfigSettingResponse.migrateType)
-            && Objects.equals(this.configurations, showConfigSettingResponse.configurations);
+        ShowConfigSettingResponse that = (ShowConfigSettingResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.migrateType, that.migrateType)
+            && Objects.equals(this.configurations, that.configurations);
     }
 
     @Override

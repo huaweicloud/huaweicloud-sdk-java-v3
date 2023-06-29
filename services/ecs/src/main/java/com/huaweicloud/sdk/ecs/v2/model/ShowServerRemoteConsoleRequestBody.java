@@ -44,15 +44,15 @@ public class ShowServerRemoteConsoleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerRemoteConsoleRequestBody showServerRemoteConsoleRequestBody = (ShowServerRemoteConsoleRequestBody) o;
-        return Objects.equals(this.remoteConsole, showServerRemoteConsoleRequestBody.remoteConsole);
+        ShowServerRemoteConsoleRequestBody that = (ShowServerRemoteConsoleRequestBody) obj;
+        return Objects.equals(this.remoteConsole, that.remoteConsole);
     }
 
     @Override

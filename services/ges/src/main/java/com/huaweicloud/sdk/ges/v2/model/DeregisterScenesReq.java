@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.DeregisterScenesReqScenes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DeregisterScenes请求体
  */
-public class DeregisterScenesReq  {
-
+public class DeregisterScenesReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scenes")
-    
+    @JsonProperty(value = "scenes")
+
     private List<DeregisterScenesReqScenes> scenes = null;
-    
+
     public DeregisterScenesReq withScenes(List<DeregisterScenesReqScenes> scenes) {
         this.scenes = scenes;
         return this;
     }
 
-    
     public DeregisterScenesReq addScenesItem(DeregisterScenesReqScenes scenesItem) {
-        if(this.scenes == null) {
+        if (this.scenes == null) {
             this.scenes = new ArrayList<>();
         }
         this.scenes.add(scenesItem);
@@ -40,7 +32,7 @@ public class DeregisterScenesReq  {
     }
 
     public DeregisterScenesReq withScenes(Consumer<List<DeregisterScenesReqScenes>> scenesSetter) {
-        if(this.scenes == null) {
+        if (this.scenes == null) {
             this.scenes = new ArrayList<>();
         }
         scenesSetter.accept(this.scenes);
@@ -59,23 +51,23 @@ public class DeregisterScenesReq  {
         this.scenes = scenes;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeregisterScenesReq deregisterScenesReq = (DeregisterScenesReq) o;
-        return Objects.equals(this.scenes, deregisterScenesReq.scenes);
+        DeregisterScenesReq that = (DeregisterScenesReq) obj;
+        return Objects.equals(this.scenes, that.scenes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scenes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class DeregisterScenesReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class DeregisterScenesReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

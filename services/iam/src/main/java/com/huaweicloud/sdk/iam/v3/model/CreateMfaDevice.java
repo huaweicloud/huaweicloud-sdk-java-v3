@@ -55,15 +55,15 @@ public class CreateMfaDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMfaDevice createMfaDevice = (CreateMfaDevice) o;
-        return Objects.equals(this.name, createMfaDevice.name) && Objects.equals(this.userId, createMfaDevice.userId);
+        CreateMfaDevice that = (CreateMfaDevice) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

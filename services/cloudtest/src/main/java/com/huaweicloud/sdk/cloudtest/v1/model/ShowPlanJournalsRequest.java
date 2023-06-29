@@ -103,18 +103,16 @@ public class ShowPlanJournalsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlanJournalsRequest showPlanJournalsRequest = (ShowPlanJournalsRequest) o;
-        return Objects.equals(this.projectId, showPlanJournalsRequest.projectId)
-            && Objects.equals(this.planId, showPlanJournalsRequest.planId)
-            && Objects.equals(this.offset, showPlanJournalsRequest.offset)
-            && Objects.equals(this.limit, showPlanJournalsRequest.limit);
+        ShowPlanJournalsRequest that = (ShowPlanJournalsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

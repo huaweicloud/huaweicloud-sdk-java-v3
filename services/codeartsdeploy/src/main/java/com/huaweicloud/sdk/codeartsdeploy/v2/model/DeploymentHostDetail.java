@@ -81,22 +81,15 @@ public class DeploymentHostDetail {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEnum(value));
         }
 
         public static OsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -446,7 +439,7 @@ public class DeploymentHostDetail {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -671,38 +664,29 @@ public class DeploymentHostDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentHostDetail deploymentHostDetail = (DeploymentHostDetail) o;
-        return Objects.equals(this.groupId, deploymentHostDetail.groupId)
-            && Objects.equals(this.hostName, deploymentHostDetail.hostName)
-            && Objects.equals(this.ip, deploymentHostDetail.ip) && Objects.equals(this.port, deploymentHostDetail.port)
-            && Objects.equals(this.os, deploymentHostDetail.os)
-            && Objects.equals(this.asProxy, deploymentHostDetail.asProxy)
-            && Objects.equals(this.proxyHostId, deploymentHostDetail.proxyHostId)
-            && Objects.equals(this.authorization, deploymentHostDetail.authorization)
-            && Objects.equals(this.installIcagent, deploymentHostDetail.installIcagent)
-            && Objects.equals(this.hostId, deploymentHostDetail.hostId)
-            && Objects.equals(this.proxyHost, deploymentHostDetail.proxyHost)
-            && Objects.equals(this.groupName, deploymentHostDetail.groupName)
-            && Objects.equals(this.projectId, deploymentHostDetail.projectId)
-            && Objects.equals(this.projectName, deploymentHostDetail.projectName)
-            && Objects.equals(this.permission, deploymentHostDetail.permission)
-            && Objects.equals(this.updateTime, deploymentHostDetail.updateTime)
-            && Objects.equals(this.lastestConnectionTime, deploymentHostDetail.lastestConnectionTime)
-            && Objects.equals(this.connectionStatus, deploymentHostDetail.connectionStatus)
-            && Objects.equals(this.ownerName, deploymentHostDetail.ownerName)
-            && Objects.equals(this.updatorId, deploymentHostDetail.updatorId)
-            && Objects.equals(this.createTime, deploymentHostDetail.createTime)
-            && Objects.equals(this.nickName, deploymentHostDetail.nickName)
-            && Objects.equals(this.ownerId, deploymentHostDetail.ownerId)
-            && Objects.equals(this.updatorName, deploymentHostDetail.updatorName)
-            && Objects.equals(this.connectionResult, deploymentHostDetail.connectionResult);
+        DeploymentHostDetail that = (DeploymentHostDetail) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.asProxy, that.asProxy)
+            && Objects.equals(this.proxyHostId, that.proxyHostId)
+            && Objects.equals(this.authorization, that.authorization)
+            && Objects.equals(this.installIcagent, that.installIcagent) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.proxyHost, that.proxyHost) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.lastestConnectionTime, that.lastestConnectionTime)
+            && Objects.equals(this.connectionStatus, that.connectionStatus)
+            && Objects.equals(this.ownerName, that.ownerName) && Objects.equals(this.updatorId, that.updatorId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.ownerId, that.ownerId) && Objects.equals(this.updatorName, that.updatorName)
+            && Objects.equals(this.connectionResult, that.connectionResult);
     }
 
     @Override

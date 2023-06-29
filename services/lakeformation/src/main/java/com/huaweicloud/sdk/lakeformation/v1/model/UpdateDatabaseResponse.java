@@ -85,22 +85,15 @@ public class UpdateDatabaseResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OwnerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerTypeEnum(value));
         }
 
         public static OwnerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -349,23 +342,20 @@ public class UpdateDatabaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseResponse updateDatabaseResponse = (UpdateDatabaseResponse) o;
-        return Objects.equals(this.catalogName, updateDatabaseResponse.catalogName)
-            && Objects.equals(this.databaseName, updateDatabaseResponse.databaseName)
-            && Objects.equals(this.owner, updateDatabaseResponse.owner)
-            && Objects.equals(this.ownerType, updateDatabaseResponse.ownerType)
-            && Objects.equals(this.description, updateDatabaseResponse.description)
-            && Objects.equals(this.location, updateDatabaseResponse.location)
-            && Objects.equals(this.parameters, updateDatabaseResponse.parameters)
-            && Objects.equals(this.tableLocationList, updateDatabaseResponse.tableLocationList)
-            && Objects.equals(this.functionLocationList, updateDatabaseResponse.functionLocationList);
+        UpdateDatabaseResponse that = (UpdateDatabaseResponse) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.tableLocationList, that.tableLocationList)
+            && Objects.equals(this.functionLocationList, that.functionLocationList);
     }
 
     @Override

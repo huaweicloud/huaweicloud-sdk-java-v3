@@ -272,24 +272,20 @@ public class IndicatorDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorDetail indicatorDetail = (IndicatorDetail) o;
-        return Objects.equals(this.id, indicatorDetail.id) && Objects.equals(this.name, indicatorDetail.name)
-            && Objects.equals(this.dataclassId, indicatorDetail.dataclassId)
-            && Objects.equals(this.type, indicatorDetail.type)
-            && Objects.equals(this.dataObject, indicatorDetail.dataObject)
-            && Objects.equals(this.workspaceId, indicatorDetail.workspaceId)
-            && Objects.equals(this.projectId, indicatorDetail.projectId)
-            && Objects.equals(this.layoutId, indicatorDetail.layoutId)
-            && Objects.equals(this.dataclass, indicatorDetail.dataclass)
-            && Objects.equals(this.createTime, indicatorDetail.createTime)
-            && Objects.equals(this.updateTime, indicatorDetail.updateTime);
+        IndicatorDetail that = (IndicatorDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.layoutId, that.layoutId)
+            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -219,23 +219,20 @@ public class HttpInfoResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpInfoResponseBody httpInfoResponseBody = (HttpInfoResponseBody) o;
-        return Objects.equals(this.httpsStatus, httpInfoResponseBody.httpsStatus)
-            && Objects.equals(this.certName, httpInfoResponseBody.certName)
-            && Objects.equals(this.certificate, httpInfoResponseBody.certificate)
-            && Objects.equals(this.privateKey, httpInfoResponseBody.privateKey)
-            && Objects.equals(this.certificateType, httpInfoResponseBody.certificateType)
-            && Objects.equals(this.forceRedirectHttps, httpInfoResponseBody.forceRedirectHttps)
-            && Objects.equals(this.forceRedirectConfig, httpInfoResponseBody.forceRedirectConfig)
-            && Objects.equals(this.http2, httpInfoResponseBody.http2)
-            && Objects.equals(this.expirationTime, httpInfoResponseBody.expirationTime);
+        HttpInfoResponseBody that = (HttpInfoResponseBody) obj;
+        return Objects.equals(this.httpsStatus, that.httpsStatus) && Objects.equals(this.certName, that.certName)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.forceRedirectHttps, that.forceRedirectHttps)
+            && Objects.equals(this.forceRedirectConfig, that.forceRedirectConfig)
+            && Objects.equals(this.http2, that.http2) && Objects.equals(this.expirationTime, that.expirationTime);
     }
 
     @Override

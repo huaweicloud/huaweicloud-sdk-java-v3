@@ -68,22 +68,15 @@ public class AuthorizerBase {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,22 +143,15 @@ public class AuthorizerBase {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthorizerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthorizerTypeEnum(value));
         }
 
         public static AuthorizerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,21 +373,20 @@ public class AuthorizerBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizerBase authorizerBase = (AuthorizerBase) o;
-        return Objects.equals(this.name, authorizerBase.name) && Objects.equals(this.type, authorizerBase.type)
-            && Objects.equals(this.authorizerType, authorizerBase.authorizerType)
-            && Objects.equals(this.authorizerUri, authorizerBase.authorizerUri)
-            && Objects.equals(this.identities, authorizerBase.identities)
-            && Objects.equals(this.ttl, authorizerBase.ttl) && Objects.equals(this.userData, authorizerBase.userData)
-            && Objects.equals(this.ldApiId, authorizerBase.ldApiId)
-            && Objects.equals(this.needBody, authorizerBase.needBody);
+        AuthorizerBase that = (AuthorizerBase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.authorizerType, that.authorizerType)
+            && Objects.equals(this.authorizerUri, that.authorizerUri)
+            && Objects.equals(this.identities, that.identities) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.needBody, that.needBody);
     }
 
     @Override

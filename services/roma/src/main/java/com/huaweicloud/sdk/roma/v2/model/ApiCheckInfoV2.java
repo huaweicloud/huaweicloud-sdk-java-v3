@@ -101,22 +101,15 @@ public class ApiCheckInfoV2 {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class ApiCheckInfoV2 {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchModeEnum(value));
         }
 
         public static MatchModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,22 +271,15 @@ public class ApiCheckInfoV2 {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,21 +438,18 @@ public class ApiCheckInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiCheckInfoV2 apiCheckInfoV2 = (ApiCheckInfoV2) o;
-        return Objects.equals(this.name, apiCheckInfoV2.name)
-            && Objects.equals(this.reqMethod, apiCheckInfoV2.reqMethod)
-            && Objects.equals(this.reqUri, apiCheckInfoV2.reqUri)
-            && Objects.equals(this.matchMode, apiCheckInfoV2.matchMode)
-            && Objects.equals(this.groupId, apiCheckInfoV2.groupId)
-            && Objects.equals(this.romaAppId, apiCheckInfoV2.romaAppId)
-            && Objects.equals(this.apiId, apiCheckInfoV2.apiId) && Objects.equals(this.type, apiCheckInfoV2.type);
+        ApiCheckInfoV2 that = (ApiCheckInfoV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.reqMethod, that.reqMethod)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.matchMode, that.matchMode)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.type, that.type);
     }
 
     @Override

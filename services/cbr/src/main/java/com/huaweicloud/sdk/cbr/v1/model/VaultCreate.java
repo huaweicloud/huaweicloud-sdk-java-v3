@@ -374,26 +374,23 @@ public class VaultCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultCreate vaultCreate = (VaultCreate) o;
-        return Objects.equals(this.backupPolicyId, vaultCreate.backupPolicyId)
-            && Objects.equals(this.billing, vaultCreate.billing)
-            && Objects.equals(this.description, vaultCreate.description) && Objects.equals(this.name, vaultCreate.name)
-            && Objects.equals(this.resources, vaultCreate.resources) && Objects.equals(this.tags, vaultCreate.tags)
-            && Objects.equals(this.enterpriseProjectId, vaultCreate.enterpriseProjectId)
-            && Objects.equals(this.autoBind, vaultCreate.autoBind)
-            && Objects.equals(this.bindRules, vaultCreate.bindRules)
-            && Objects.equals(this.autoExpand, vaultCreate.autoExpand)
-            && Objects.equals(this.threshold, vaultCreate.threshold)
-            && Objects.equals(this.smnNotify, vaultCreate.smnNotify)
-            && Objects.equals(this.backupNamePrefix, vaultCreate.backupNamePrefix)
-            && Objects.equals(this.demandBilling, vaultCreate.demandBilling);
+        VaultCreate that = (VaultCreate) obj;
+        return Objects.equals(this.backupPolicyId, that.backupPolicyId) && Objects.equals(this.billing, that.billing)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
+            && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.smnNotify, that.smnNotify)
+            && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
+            && Objects.equals(this.demandBilling, that.demandBilling);
     }
 
     @Override

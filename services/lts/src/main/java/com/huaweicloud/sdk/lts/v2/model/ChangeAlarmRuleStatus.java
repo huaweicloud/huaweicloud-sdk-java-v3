@@ -77,17 +77,16 @@ public class ChangeAlarmRuleStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeAlarmRuleStatus changeAlarmRuleStatus = (ChangeAlarmRuleStatus) o;
-        return Objects.equals(this.alarmRuleId, changeAlarmRuleStatus.alarmRuleId)
-            && Objects.equals(this.status, changeAlarmRuleStatus.status)
-            && Objects.equals(this.type, changeAlarmRuleStatus.type);
+        ChangeAlarmRuleStatus that = (ChangeAlarmRuleStatus) obj;
+        return Objects.equals(this.alarmRuleId, that.alarmRuleId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

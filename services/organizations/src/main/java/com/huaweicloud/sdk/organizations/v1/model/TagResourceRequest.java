@@ -65,16 +65,15 @@ public class TagResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagResourceRequest tagResourceRequest = (TagResourceRequest) o;
-        return Objects.equals(this.resourceId, tagResourceRequest.resourceId)
-            && Objects.equals(this.body, tagResourceRequest.body);
+        TagResourceRequest that = (TagResourceRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

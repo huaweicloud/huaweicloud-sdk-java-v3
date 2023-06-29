@@ -65,16 +65,15 @@ public class ExportCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportCertificateRequest exportCertificateRequest = (ExportCertificateRequest) o;
-        return Objects.equals(this.certificateId, exportCertificateRequest.certificateId)
-            && Objects.equals(this.body, exportCertificateRequest.body);
+        ExportCertificateRequest that = (ExportCertificateRequest) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

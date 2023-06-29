@@ -121,18 +121,17 @@ public class TagHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagHeader tagHeader = (TagHeader) o;
-        return Objects.equals(this.name, tagHeader.name) && Objects.equals(this.dexcription, tagHeader.dexcription)
-            && Objects.equals(this.displayText, tagHeader.displayText)
-            && Objects.equals(this.relationGuid, tagHeader.relationGuid)
-            && Objects.equals(this.tagGuid, tagHeader.tagGuid);
+        TagHeader that = (TagHeader) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.dexcription, that.dexcription)
+            && Objects.equals(this.displayText, that.displayText)
+            && Objects.equals(this.relationGuid, that.relationGuid) && Objects.equals(this.tagGuid, that.tagGuid);
     }
 
     @Override

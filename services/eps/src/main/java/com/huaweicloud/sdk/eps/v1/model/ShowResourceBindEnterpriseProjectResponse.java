@@ -113,18 +113,16 @@ public class ShowResourceBindEnterpriseProjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceBindEnterpriseProjectResponse showResourceBindEnterpriseProjectResponse =
-            (ShowResourceBindEnterpriseProjectResponse) o;
-        return Objects.equals(this.resources, showResourceBindEnterpriseProjectResponse.resources)
-            && Objects.equals(this.errors, showResourceBindEnterpriseProjectResponse.errors)
-            && Objects.equals(this.totalCount, showResourceBindEnterpriseProjectResponse.totalCount);
+        ShowResourceBindEnterpriseProjectResponse that = (ShowResourceBindEnterpriseProjectResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.errors, that.errors)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

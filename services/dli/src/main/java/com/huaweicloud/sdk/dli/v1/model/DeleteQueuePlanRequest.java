@@ -55,16 +55,15 @@ public class DeleteQueuePlanRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteQueuePlanRequest deleteQueuePlanRequest = (DeleteQueuePlanRequest) o;
-        return Objects.equals(this.planId, deleteQueuePlanRequest.planId)
-            && Objects.equals(this.queueName, deleteQueuePlanRequest.queueName);
+        DeleteQueuePlanRequest that = (DeleteQueuePlanRequest) obj;
+        return Objects.equals(this.planId, that.planId) && Objects.equals(this.queueName, that.queueName);
     }
 
     @Override

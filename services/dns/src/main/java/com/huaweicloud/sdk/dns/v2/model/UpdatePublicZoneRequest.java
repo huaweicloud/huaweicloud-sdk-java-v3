@@ -65,16 +65,15 @@ public class UpdatePublicZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicZoneRequest updatePublicZoneRequest = (UpdatePublicZoneRequest) o;
-        return Objects.equals(this.zoneId, updatePublicZoneRequest.zoneId)
-            && Objects.equals(this.body, updatePublicZoneRequest.body);
+        UpdatePublicZoneRequest that = (UpdatePublicZoneRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.body, that.body);
     }
 
     @Override

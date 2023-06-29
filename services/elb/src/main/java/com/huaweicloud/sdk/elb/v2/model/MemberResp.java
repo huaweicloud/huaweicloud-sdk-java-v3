@@ -235,21 +235,20 @@ public class MemberResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberResp memberResp = (MemberResp) o;
-        return Objects.equals(this.id, memberResp.id) && Objects.equals(this.projectId, memberResp.projectId)
-            && Objects.equals(this.tenantId, memberResp.tenantId) && Objects.equals(this.name, memberResp.name)
-            && Objects.equals(this.adminStateUp, memberResp.adminStateUp)
-            && Objects.equals(this.protocolPort, memberResp.protocolPort)
-            && Objects.equals(this.subnetId, memberResp.subnetId) && Objects.equals(this.address, memberResp.address)
-            && Objects.equals(this.weight, memberResp.weight)
-            && Objects.equals(this.operatingStatus, memberResp.operatingStatus);
+        MemberResp that = (MemberResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.operatingStatus, that.operatingStatus);
     }
 
     @Override

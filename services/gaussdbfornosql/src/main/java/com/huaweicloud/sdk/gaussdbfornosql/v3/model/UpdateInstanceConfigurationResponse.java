@@ -56,17 +56,15 @@ public class UpdateInstanceConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceConfigurationResponse updateInstanceConfigurationResponse =
-            (UpdateInstanceConfigurationResponse) o;
-        return Objects.equals(this.jobId, updateInstanceConfigurationResponse.jobId)
-            && Objects.equals(this.restartRequired, updateInstanceConfigurationResponse.restartRequired);
+        UpdateInstanceConfigurationResponse that = (UpdateInstanceConfigurationResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.restartRequired, that.restartRequired);
     }
 
     @Override

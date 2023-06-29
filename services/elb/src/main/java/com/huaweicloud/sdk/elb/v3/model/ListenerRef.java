@@ -33,15 +33,15 @@ public class ListenerRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListenerRef listenerRef = (ListenerRef) o;
-        return Objects.equals(this.id, listenerRef.id);
+        ListenerRef that = (ListenerRef) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.GaussMySqlDatabaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库信息列表，列表最大长度为50。
  */
-public class CreateGaussMySqlDatabase  {
-
+public class CreateGaussMySqlDatabase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_set")
-    
+    @JsonProperty(value = "character_set")
 
     private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<GaussMySqlDatabaseUser> users = null;
-    
+
     public CreateGaussMySqlDatabase withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称,数据库名称长度可在1～64个字符之间，由字母、数字、下划线、中划线组成，中划线的累计总长度小于等于10个字符，且不能包含其他特殊字符。
@@ -63,15 +50,10 @@ public class CreateGaussMySqlDatabase  {
         this.name = name;
     }
 
-    
-
     public CreateGaussMySqlDatabase withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 数据库备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。
@@ -85,15 +67,10 @@ public class CreateGaussMySqlDatabase  {
         this.comment = comment;
     }
 
-    
-
     public CreateGaussMySqlDatabase withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
-
-    
-
 
     /**
      * 数据库使用的字符集名称，如utf8mb4、gbk。
@@ -107,16 +84,13 @@ public class CreateGaussMySqlDatabase  {
         this.characterSet = characterSet;
     }
 
-    
-
     public CreateGaussMySqlDatabase withUsers(List<GaussMySqlDatabaseUser> users) {
         this.users = users;
         return this;
     }
 
-    
     public CreateGaussMySqlDatabase addUsersItem(GaussMySqlDatabaseUser usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -124,7 +98,7 @@ public class CreateGaussMySqlDatabase  {
     }
 
     public CreateGaussMySqlDatabase withUsers(Consumer<List<GaussMySqlDatabaseUser>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
@@ -143,26 +117,24 @@ public class CreateGaussMySqlDatabase  {
         this.users = users;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGaussMySqlDatabase createGaussMySqlDatabase = (CreateGaussMySqlDatabase) o;
-        return Objects.equals(this.name, createGaussMySqlDatabase.name) &&
-            Objects.equals(this.comment, createGaussMySqlDatabase.comment) &&
-            Objects.equals(this.characterSet, createGaussMySqlDatabase.characterSet) &&
-            Objects.equals(this.users, createGaussMySqlDatabase.users);
+        CreateGaussMySqlDatabase that = (CreateGaussMySqlDatabase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.characterSet, that.characterSet) && Objects.equals(this.users, that.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, comment, characterSet, users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +146,7 @@ public class CreateGaussMySqlDatabase  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +157,5 @@ public class CreateGaussMySqlDatabase  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

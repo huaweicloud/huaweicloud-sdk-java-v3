@@ -101,18 +101,16 @@ public class ListScrumProjectStatusesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScrumProjectStatusesRequest listScrumProjectStatusesRequest = (ListScrumProjectStatusesRequest) o;
-        return Objects.equals(this.projectId, listScrumProjectStatusesRequest.projectId)
-            && Objects.equals(this.offset, listScrumProjectStatusesRequest.offset)
-            && Objects.equals(this.limit, listScrumProjectStatusesRequest.limit)
-            && Objects.equals(this.trackerId, listScrumProjectStatusesRequest.trackerId);
+        ListScrumProjectStatusesRequest that = (ListScrumProjectStatusesRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.trackerId, that.trackerId);
     }
 
     @Override

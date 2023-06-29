@@ -65,16 +65,15 @@ public class UpdateEndpointRoutetableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointRoutetableRequest updateEndpointRoutetableRequest = (UpdateEndpointRoutetableRequest) o;
-        return Objects.equals(this.vpcEndpointId, updateEndpointRoutetableRequest.vpcEndpointId)
-            && Objects.equals(this.body, updateEndpointRoutetableRequest.body);
+        UpdateEndpointRoutetableRequest that = (UpdateEndpointRoutetableRequest) obj;
+        return Objects.equals(this.vpcEndpointId, that.vpcEndpointId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowBackgroundTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackgroundTaskRequest showBackgroundTaskRequest = (ShowBackgroundTaskRequest) o;
-        return Objects.equals(this.instanceId, showBackgroundTaskRequest.instanceId)
-            && Objects.equals(this.taskId, showBackgroundTaskRequest.taskId);
+        ShowBackgroundTaskRequest that = (ShowBackgroundTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

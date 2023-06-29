@@ -44,15 +44,15 @@ public class ShowCaseDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCaseDetailResponse showCaseDetailResponse = (ShowCaseDetailResponse) o;
-        return Objects.equals(this.incidentDetailInfo, showCaseDetailResponse.incidentDetailInfo);
+        ShowCaseDetailResponse that = (ShowCaseDetailResponse) obj;
+        return Objects.equals(this.incidentDetailInfo, that.incidentDetailInfo);
     }
 
     @Override

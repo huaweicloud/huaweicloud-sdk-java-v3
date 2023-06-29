@@ -99,18 +99,16 @@ public class MaintainWindowsEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MaintainWindowsEntity maintainWindowsEntity = (MaintainWindowsEntity) o;
-        return Objects.equals(this.seq, maintainWindowsEntity.seq)
-            && Objects.equals(this._default, maintainWindowsEntity._default)
-            && Objects.equals(this.begin, maintainWindowsEntity.begin)
-            && Objects.equals(this.end, maintainWindowsEntity.end);
+        MaintainWindowsEntity that = (MaintainWindowsEntity) obj;
+        return Objects.equals(this.seq, that.seq) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.begin, that.begin) && Objects.equals(this.end, that.end);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class TreeNodeElement {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,18 @@ public class TreeNodeElement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TreeNodeElement treeNodeElement = (TreeNodeElement) o;
-        return Objects.equals(this.type, treeNodeElement.type)
-            && Objects.equals(this.parentDirectoryId, treeNodeElement.parentDirectoryId)
-            && Objects.equals(this.name, treeNodeElement.name)
-            && Objects.equals(this.elementId, treeNodeElement.elementId)
-            && Objects.equals(this.owner, treeNodeElement.owner)
-            && Objects.equals(this.processType, treeNodeElement.processType)
-            && Objects.equals(this.isSingleNodeJob, treeNodeElement.isSingleNodeJob);
+        TreeNodeElement that = (TreeNodeElement) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.parentDirectoryId, that.parentDirectoryId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.elementId, that.elementId)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.processType, that.processType)
+            && Objects.equals(this.isSingleNodeJob, that.isSingleNodeJob);
     }
 
     @Override

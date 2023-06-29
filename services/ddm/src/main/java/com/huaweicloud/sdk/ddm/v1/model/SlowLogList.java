@@ -187,20 +187,18 @@ public class SlowLogList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowLogList slowLogList = (SlowLogList) o;
-        return Objects.equals(this.users, slowLogList.users) && Objects.equals(this.database, slowLogList.database)
-            && Objects.equals(this.querySample, slowLogList.querySample)
-            && Objects.equals(this.logTime, slowLogList.logTime) && Objects.equals(this.time, slowLogList.time)
-            && Objects.equals(this.shards, slowLogList.shards)
-            && Objects.equals(this.rowsExamined, slowLogList.rowsExamined)
-            && Objects.equals(this.host, slowLogList.host);
+        SlowLogList that = (SlowLogList) obj;
+        return Objects.equals(this.users, that.users) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.querySample, that.querySample) && Objects.equals(this.logTime, that.logTime)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.shards, that.shards)
+            && Objects.equals(this.rowsExamined, that.rowsExamined) && Objects.equals(this.host, that.host);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class RestartDeploymentsPodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartDeploymentsPodRequest restartDeploymentsPodRequest = (RestartDeploymentsPodRequest) o;
-        return Objects.equals(this.deploymentId, restartDeploymentsPodRequest.deploymentId)
-            && Objects.equals(this.podName, restartDeploymentsPodRequest.podName)
-            && Objects.equals(this.iefInstanceId, restartDeploymentsPodRequest.iefInstanceId);
+        RestartDeploymentsPodRequest that = (RestartDeploymentsPodRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.podName, that.podName)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

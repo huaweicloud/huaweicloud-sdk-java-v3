@@ -165,20 +165,19 @@ public class ConfigListRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigListRsp configListRsp = (ConfigListRsp) o;
-        return Objects.equals(this.id, configListRsp.id) && Objects.equals(this.clusterId, configListRsp.clusterId)
-            && Objects.equals(this.createAt, configListRsp.createAt)
-            && Objects.equals(this.status, configListRsp.status)
-            && Objects.equals(this.finishedAt, configListRsp.finishedAt)
-            && Objects.equals(this.modifyDeleteReset, configListRsp.modifyDeleteReset)
-            && Objects.equals(this.failedMsg, configListRsp.failedMsg);
+        ConfigListRsp that = (ConfigListRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.finishedAt, that.finishedAt)
+            && Objects.equals(this.modifyDeleteReset, that.modifyDeleteReset)
+            && Objects.equals(this.failedMsg, that.failedMsg);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ListAuditLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditLogResponse listAuditLogResponse = (ListAuditLogResponse) o;
-        return Objects.equals(this.records, listAuditLogResponse.records)
-            && Objects.equals(this.clusterId, listAuditLogResponse.clusterId)
-            && Objects.equals(this.count, listAuditLogResponse.count);
+        ListAuditLogResponse that = (ListAuditLogResponse) obj;
+        return Objects.equals(this.records, that.records) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

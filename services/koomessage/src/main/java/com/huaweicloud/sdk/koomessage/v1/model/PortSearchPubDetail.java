@@ -55,16 +55,15 @@ public class PortSearchPubDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortSearchPubDetail portSearchPubDetail = (PortSearchPubDetail) o;
-        return Objects.equals(this.pubName, portSearchPubDetail.pubName)
-            && Objects.equals(this.pubReference, portSearchPubDetail.pubReference);
+        PortSearchPubDetail that = (PortSearchPubDetail) obj;
+        return Objects.equals(this.pubName, that.pubName) && Objects.equals(this.pubReference, that.pubReference);
     }
 
     @Override

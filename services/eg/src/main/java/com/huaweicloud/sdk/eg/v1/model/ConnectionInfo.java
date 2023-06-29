@@ -82,22 +82,15 @@ public class ConnectionInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -382,23 +375,20 @@ public class ConnectionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConnectionInfo connectionInfo = (ConnectionInfo) o;
-        return Objects.equals(this.id, connectionInfo.id) && Objects.equals(this.name, connectionInfo.name)
-            && Objects.equals(this.description, connectionInfo.description)
-            && Objects.equals(this.status, connectionInfo.status) && Objects.equals(this.vpcId, connectionInfo.vpcId)
-            && Objects.equals(this.subnetId, connectionInfo.subnetId)
-            && Objects.equals(this.agency, connectionInfo.agency) && Objects.equals(this.flavor, connectionInfo.flavor)
-            && Objects.equals(this.type, connectionInfo.type)
-            && Objects.equals(this.kafkaDetail, connectionInfo.kafkaDetail)
-            && Objects.equals(this.createdTime, connectionInfo.createdTime)
-            && Objects.equals(this.updatedTime, connectionInfo.updatedTime);
+        ConnectionInfo that = (ConnectionInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.agency, that.agency) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.kafkaDetail, that.kafkaDetail)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

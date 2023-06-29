@@ -121,19 +121,17 @@ public class AttachServerVolumeOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachServerVolumeOption attachServerVolumeOption = (AttachServerVolumeOption) o;
-        return Objects.equals(this.device, attachServerVolumeOption.device)
-            && Objects.equals(this.volumeId, attachServerVolumeOption.volumeId)
-            && Objects.equals(this.volumeType, attachServerVolumeOption.volumeType)
-            && Objects.equals(this.count, attachServerVolumeOption.count)
-            && Objects.equals(this.hwPassthrough, attachServerVolumeOption.hwPassthrough);
+        AttachServerVolumeOption that = (AttachServerVolumeOption) obj;
+        return Objects.equals(this.device, that.device) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.hwPassthrough, that.hwPassthrough);
     }
 
     @Override

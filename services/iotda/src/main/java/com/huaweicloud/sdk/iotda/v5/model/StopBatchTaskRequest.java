@@ -87,17 +87,16 @@ public class StopBatchTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopBatchTaskRequest stopBatchTaskRequest = (StopBatchTaskRequest) o;
-        return Objects.equals(this.instanceId, stopBatchTaskRequest.instanceId)
-            && Objects.equals(this.taskId, stopBatchTaskRequest.taskId)
-            && Objects.equals(this.body, stopBatchTaskRequest.body);
+        StopBatchTaskRequest that = (StopBatchTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

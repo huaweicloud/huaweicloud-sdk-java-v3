@@ -1,91 +1,72 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * JobBean
  */
-public class JobBean  {
-
+public class JobBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_id")
-    
+    @JsonProperty(value = "server_id")
 
     private String serverId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="server_name")
-    
+    @JsonProperty(value = "server_name")
 
     private String serverName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
 
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
 
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_id")
-    
+    @JsonProperty(value = "ha_id")
 
     private String haId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_name")
-    
+    @JsonProperty(value = "ha_name")
 
     private String haName;
 
@@ -93,9 +74,6 @@ public class JobBean  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID,异步查询标识
@@ -109,15 +87,10 @@ public class JobBean  {
         this.jobId = jobId;
     }
 
-    
-
     public JobBean withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 状态
@@ -131,15 +104,10 @@ public class JobBean  {
         this.status = status;
     }
 
-    
-
     public JobBean withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 类型
@@ -153,15 +121,10 @@ public class JobBean  {
         this.jobType = jobType;
     }
 
-    
-
     public JobBean withServerId(String serverId) {
         this.serverId = serverId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机ID
@@ -175,15 +138,10 @@ public class JobBean  {
         this.serverId = serverId;
     }
 
-    
-
     public JobBean withServerName(String serverName) {
         this.serverName = serverName;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机名称
@@ -197,15 +155,10 @@ public class JobBean  {
         this.serverName = serverName;
     }
 
-    
-
     public JobBean withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 开始时间
@@ -219,15 +172,10 @@ public class JobBean  {
         this.beginTime = beginTime;
     }
 
-    
-
     public JobBean withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 结束时间
@@ -241,15 +189,10 @@ public class JobBean  {
         this.endTime = endTime;
     }
 
-    
-
     public JobBean withChargeMode(String chargeMode) {
         this.chargeMode = chargeMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式
@@ -263,15 +206,10 @@ public class JobBean  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public JobBean withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 错误码
@@ -285,15 +223,10 @@ public class JobBean  {
         this.errorCode = errorCode;
     }
 
-    
-
     public JobBean withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
-
-    
-
 
     /**
      * 失败原因
@@ -307,15 +240,10 @@ public class JobBean  {
         this.failReason = failReason;
     }
 
-    
-
     public JobBean withHaId(String haId) {
         this.haId = haId;
         return this;
     }
-
-    
-
 
     /**
      * 双机实例HA共用的id
@@ -329,15 +257,10 @@ public class JobBean  {
         this.haId = haId;
     }
 
-    
-
     public JobBean withHaName(String haName) {
         this.haName = haName;
         return this;
     }
-
-    
-
 
     /**
      * HA别名
@@ -351,34 +274,39 @@ public class JobBean  {
         this.haName = haName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobBean jobBean = (JobBean) o;
-        return Objects.equals(this.jobId, jobBean.jobId) &&
-            Objects.equals(this.status, jobBean.status) &&
-            Objects.equals(this.jobType, jobBean.jobType) &&
-            Objects.equals(this.serverId, jobBean.serverId) &&
-            Objects.equals(this.serverName, jobBean.serverName) &&
-            Objects.equals(this.beginTime, jobBean.beginTime) &&
-            Objects.equals(this.endTime, jobBean.endTime) &&
-            Objects.equals(this.chargeMode, jobBean.chargeMode) &&
-            Objects.equals(this.errorCode, jobBean.errorCode) &&
-            Objects.equals(this.failReason, jobBean.failReason) &&
-            Objects.equals(this.haId, jobBean.haId) &&
-            Objects.equals(this.haName, jobBean.haName);
+        JobBean that = (JobBean) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.serverName, that.serverName) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.haId, that.haId) && Objects.equals(this.haName, that.haName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, status, jobType, serverId, serverName, beginTime, endTime, chargeMode, errorCode, failReason, haId, haName);
+        return Objects.hash(jobId,
+            status,
+            jobType,
+            serverId,
+            serverName,
+            beginTime,
+            endTime,
+            chargeMode,
+            errorCode,
+            failReason,
+            haId,
+            haName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,6 +326,7 @@ public class JobBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -408,8 +337,5 @@ public class JobBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

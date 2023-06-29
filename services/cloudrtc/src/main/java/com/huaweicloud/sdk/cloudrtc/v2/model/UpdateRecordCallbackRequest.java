@@ -135,19 +135,17 @@ public class UpdateRecordCallbackRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordCallbackRequest updateRecordCallbackRequest = (UpdateRecordCallbackRequest) o;
-        return Objects.equals(this.authorization, updateRecordCallbackRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateRecordCallbackRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, updateRecordCallbackRequest.xProjectId)
-            && Objects.equals(this.appId, updateRecordCallbackRequest.appId)
-            && Objects.equals(this.body, updateRecordCallbackRequest.body);
+        UpdateRecordCallbackRequest that = (UpdateRecordCallbackRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

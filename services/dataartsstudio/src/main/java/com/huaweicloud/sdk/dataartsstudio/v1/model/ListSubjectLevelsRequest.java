@@ -78,17 +78,16 @@ public class ListSubjectLevelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubjectLevelsRequest listSubjectLevelsRequest = (ListSubjectLevelsRequest) o;
-        return Objects.equals(this.workspace, listSubjectLevelsRequest.workspace)
-            && Objects.equals(this.limit, listSubjectLevelsRequest.limit)
-            && Objects.equals(this.offset, listSubjectLevelsRequest.offset);
+        ListSubjectLevelsRequest that = (ListSubjectLevelsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteScalingConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteScalingConfigRequest deleteScalingConfigRequest = (DeleteScalingConfigRequest) o;
-        return Objects.equals(this.scalingConfigurationId, deleteScalingConfigRequest.scalingConfigurationId);
+        DeleteScalingConfigRequest that = (DeleteScalingConfigRequest) obj;
+        return Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId);
     }
 
     @Override

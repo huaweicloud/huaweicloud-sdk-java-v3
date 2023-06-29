@@ -33,15 +33,15 @@ public class DeleteVirtualGatewayRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVirtualGatewayRequest deleteVirtualGatewayRequest = (DeleteVirtualGatewayRequest) o;
-        return Objects.equals(this.virtualGatewayId, deleteVirtualGatewayRequest.virtualGatewayId);
+        DeleteVirtualGatewayRequest that = (DeleteVirtualGatewayRequest) obj;
+        return Objects.equals(this.virtualGatewayId, that.virtualGatewayId);
     }
 
     @Override

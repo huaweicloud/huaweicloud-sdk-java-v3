@@ -165,19 +165,18 @@ public class DatabaseFlavorRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseFlavorRsp databaseFlavorRsp = (DatabaseFlavorRsp) o;
-        return Objects.equals(this.code, databaseFlavorRsp.code) && Objects.equals(this.name, databaseFlavorRsp.name)
-            && Objects.equals(this.cpu, databaseFlavorRsp.cpu) && Objects.equals(this.ram, databaseFlavorRsp.ram)
-            && Objects.equals(this.maxConnections, databaseFlavorRsp.maxConnections)
-            && Objects.equals(this.diskSpace, databaseFlavorRsp.diskSpace)
-            && Objects.equals(this.soldOut, databaseFlavorRsp.soldOut);
+        DatabaseFlavorRsp that = (DatabaseFlavorRsp) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.maxConnections, that.maxConnections)
+            && Objects.equals(this.diskSpace, that.diskSpace) && Objects.equals(this.soldOut, that.soldOut);
     }
 
     @Override

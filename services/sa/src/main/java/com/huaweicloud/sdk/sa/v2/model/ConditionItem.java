@@ -96,16 +96,16 @@ public class ConditionItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConditionItem conditionItem = (ConditionItem) o;
-        return Objects.equals(this.name, conditionItem.name) && Objects.equals(this.detail, conditionItem.detail)
-            && Objects.equals(this.data, conditionItem.data);
+        ConditionItem that = (ConditionItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

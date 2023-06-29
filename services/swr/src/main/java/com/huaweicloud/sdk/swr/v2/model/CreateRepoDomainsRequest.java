@@ -87,17 +87,16 @@ public class CreateRepoDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRepoDomainsRequest createRepoDomainsRequest = (CreateRepoDomainsRequest) o;
-        return Objects.equals(this.namespace, createRepoDomainsRequest.namespace)
-            && Objects.equals(this.repository, createRepoDomainsRequest.repository)
-            && Objects.equals(this.body, createRepoDomainsRequest.body);
+        CreateRepoDomainsRequest that = (CreateRepoDomainsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

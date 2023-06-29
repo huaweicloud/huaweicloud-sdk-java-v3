@@ -74,16 +74,16 @@ public class QueryCustomersBalancesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCustomersBalancesReq queryCustomersBalancesReq = (QueryCustomersBalancesReq) o;
-        return Objects.equals(this.customerInfos, queryCustomersBalancesReq.customerInfos)
-            && Objects.equals(this.indirectPartnerId, queryCustomersBalancesReq.indirectPartnerId);
+        QueryCustomersBalancesReq that = (QueryCustomersBalancesReq) obj;
+        return Objects.equals(this.customerInfos, that.customerInfos)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

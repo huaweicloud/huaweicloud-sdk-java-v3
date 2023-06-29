@@ -55,16 +55,15 @@ public class ShowVpcAttachmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVpcAttachmentRequest showVpcAttachmentRequest = (ShowVpcAttachmentRequest) o;
-        return Objects.equals(this.erId, showVpcAttachmentRequest.erId)
-            && Objects.equals(this.vpcAttachmentId, showVpcAttachmentRequest.vpcAttachmentId);
+        ShowVpcAttachmentRequest that = (ShowVpcAttachmentRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.vpcAttachmentId, that.vpcAttachmentId);
     }
 
     @Override

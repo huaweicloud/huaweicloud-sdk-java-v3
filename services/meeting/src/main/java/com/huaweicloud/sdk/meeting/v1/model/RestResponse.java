@@ -57,16 +57,15 @@ public class RestResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestResponse restResponse = (RestResponse) o;
-        return Objects.equals(this.returnCode, restResponse.returnCode)
-            && Objects.equals(this.returnDesc, restResponse.returnDesc);
+        RestResponse that = (RestResponse) obj;
+        return Objects.equals(this.returnCode, that.returnCode) && Objects.equals(this.returnDesc, that.returnDesc);
     }
 
     @Override

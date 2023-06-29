@@ -55,16 +55,15 @@ public class UpdateUserInformationOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserInformationOption updateUserInformationOption = (UpdateUserInformationOption) o;
-        return Objects.equals(this.email, updateUserInformationOption.email)
-            && Objects.equals(this.mobile, updateUserInformationOption.mobile);
+        UpdateUserInformationOption that = (UpdateUserInformationOption) obj;
+        return Objects.equals(this.email, that.email) && Objects.equals(this.mobile, that.mobile);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DeleteEdgeGroupCertRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEdgeGroupCertRequest deleteEdgeGroupCertRequest = (DeleteEdgeGroupCertRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteEdgeGroupCertRequest.iefInstanceId)
-            && Objects.equals(this.groupId, deleteEdgeGroupCertRequest.groupId)
-            && Objects.equals(this.groupCertId, deleteEdgeGroupCertRequest.groupCertId);
+        DeleteEdgeGroupCertRequest that = (DeleteEdgeGroupCertRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupCertId, that.groupCertId);
     }
 
     @Override

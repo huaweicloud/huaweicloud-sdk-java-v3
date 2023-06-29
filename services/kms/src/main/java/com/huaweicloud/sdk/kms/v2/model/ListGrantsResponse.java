@@ -74,22 +74,15 @@ public class ListGrantsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TruncatedEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TruncatedEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TruncatedEnum(value));
         }
 
         public static TruncatedEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TruncatedEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,18 +196,16 @@ public class ListGrantsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGrantsResponse listGrantsResponse = (ListGrantsResponse) o;
-        return Objects.equals(this.grants, listGrantsResponse.grants)
-            && Objects.equals(this.nextMarker, listGrantsResponse.nextMarker)
-            && Objects.equals(this.truncated, listGrantsResponse.truncated)
-            && Objects.equals(this.total, listGrantsResponse.total);
+        ListGrantsResponse that = (ListGrantsResponse) obj;
+        return Objects.equals(this.grants, that.grants) && Objects.equals(this.nextMarker, that.nextMarker)
+            && Objects.equals(this.truncated, that.truncated) && Objects.equals(this.total, that.total);
     }
 
     @Override

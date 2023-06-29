@@ -81,22 +81,16 @@ public class ShowMigrationProjectStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MigrationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationProjectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new MigrationProjectStatusEnum(value));
         }
 
         public static MigrationProjectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationProjectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,22 +175,15 @@ public class ShowMigrationProjectStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PermissionCheckStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionCheckStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionCheckStatusEnum(value));
         }
 
         public static PermissionCheckStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionCheckStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -389,23 +376,22 @@ public class ShowMigrationProjectStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrationProjectStatusResponse showMigrationProjectStatusResponse = (ShowMigrationProjectStatusResponse) o;
-        return Objects.equals(this.migrationProjectId, showMigrationProjectStatusResponse.migrationProjectId)
-            && Objects.equals(this.migrationProjectName, showMigrationProjectStatusResponse.migrationProjectName)
-            && Objects.equals(this.evaluationProjectId, showMigrationProjectStatusResponse.evaluationProjectId)
-            && Objects.equals(this.evaluationProjectName, showMigrationProjectStatusResponse.evaluationProjectName)
-            && Objects.equals(this.migrationProjectStatus, showMigrationProjectStatusResponse.migrationProjectStatus)
-            && Objects.equals(this.permissionCheckStatus, showMigrationProjectStatusResponse.permissionCheckStatus)
-            && Objects.equals(this.resourceId, showMigrationProjectStatusResponse.resourceId)
-            && Objects.equals(this.createdTime, showMigrationProjectStatusResponse.createdTime)
-            && Objects.equals(this.updatedTime, showMigrationProjectStatusResponse.updatedTime);
+        ShowMigrationProjectStatusResponse that = (ShowMigrationProjectStatusResponse) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId)
+            && Objects.equals(this.migrationProjectName, that.migrationProjectName)
+            && Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.migrationProjectStatus, that.migrationProjectStatus)
+            && Objects.equals(this.permissionCheckStatus, that.permissionCheckStatus)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

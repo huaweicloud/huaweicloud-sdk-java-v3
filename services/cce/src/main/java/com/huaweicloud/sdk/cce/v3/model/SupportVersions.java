@@ -74,16 +74,16 @@ public class SupportVersions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SupportVersions supportVersions = (SupportVersions) o;
-        return Objects.equals(this.clusterType, supportVersions.clusterType)
-            && Objects.equals(this.clusterVersion, supportVersions.clusterVersion);
+        SupportVersions that = (SupportVersions) obj;
+        return Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.clusterVersion, that.clusterVersion);
     }
 
     @Override

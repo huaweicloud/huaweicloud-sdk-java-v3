@@ -102,18 +102,16 @@ public class ShowTasksRulesetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTasksRulesetsRequest showTasksRulesetsRequest = (ShowTasksRulesetsRequest) o;
-        return Objects.equals(this.projectId, showTasksRulesetsRequest.projectId)
-            && Objects.equals(this.taskId, showTasksRulesetsRequest.taskId)
-            && Objects.equals(this.offset, showTasksRulesetsRequest.offset)
-            && Objects.equals(this.limit, showTasksRulesetsRequest.limit);
+        ShowTasksRulesetsRequest that = (ShowTasksRulesetsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

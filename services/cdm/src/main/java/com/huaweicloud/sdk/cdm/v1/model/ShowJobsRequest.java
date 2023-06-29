@@ -91,22 +91,15 @@ public class ShowJobsRequest {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,20 +227,17 @@ public class ShowJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobsRequest showJobsRequest = (ShowJobsRequest) o;
-        return Objects.equals(this.clusterId, showJobsRequest.clusterId)
-            && Objects.equals(this.jobName, showJobsRequest.jobName)
-            && Objects.equals(this.filter, showJobsRequest.filter)
-            && Objects.equals(this.pageNo, showJobsRequest.pageNo)
-            && Objects.equals(this.pageSize, showJobsRequest.pageSize)
-            && Objects.equals(this.jobType, showJobsRequest.jobType);
+        ShowJobsRequest that = (ShowJobsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

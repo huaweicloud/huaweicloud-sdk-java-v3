@@ -251,24 +251,20 @@ public class CreateBatchJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBatchJobResponse createBatchJobResponse = (CreateBatchJobResponse) o;
-        return Objects.equals(this.jobId, createBatchJobResponse.jobId)
-            && Objects.equals(this.jobName, createBatchJobResponse.jobName)
-            && Objects.equals(this.tags, createBatchJobResponse.tags)
-            && Objects.equals(this.createdTime, createBatchJobResponse.createdTime)
-            && Objects.equals(this.modifiedTime, createBatchJobResponse.modifiedTime)
-            && Objects.equals(this.jobType, createBatchJobResponse.jobType)
-            && Objects.equals(this.exportPath, createBatchJobResponse.exportPath)
-            && Objects.equals(this.mergeResultFile, createBatchJobResponse.mergeResultFile)
-            && Objects.equals(this.sqlJob, createBatchJobResponse.sqlJob)
-            && Objects.equals(this.schedule, createBatchJobResponse.schedule);
+        CreateBatchJobResponse that = (CreateBatchJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.exportPath, that.exportPath)
+            && Objects.equals(this.mergeResultFile, that.mergeResultFile) && Objects.equals(this.sqlJob, that.sqlJob)
+            && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

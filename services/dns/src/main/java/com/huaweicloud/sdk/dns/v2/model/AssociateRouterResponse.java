@@ -78,17 +78,16 @@ public class AssociateRouterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateRouterResponse associateRouterResponse = (AssociateRouterResponse) o;
-        return Objects.equals(this.routerId, associateRouterResponse.routerId)
-            && Objects.equals(this.routerRegion, associateRouterResponse.routerRegion)
-            && Objects.equals(this.status, associateRouterResponse.status);
+        AssociateRouterResponse that = (AssociateRouterResponse) obj;
+        return Objects.equals(this.routerId, that.routerId) && Objects.equals(this.routerRegion, that.routerRegion)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

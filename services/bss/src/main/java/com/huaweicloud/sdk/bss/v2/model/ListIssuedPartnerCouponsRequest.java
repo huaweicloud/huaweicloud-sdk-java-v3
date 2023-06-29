@@ -327,28 +327,23 @@ public class ListIssuedPartnerCouponsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuedPartnerCouponsRequest listIssuedPartnerCouponsRequest = (ListIssuedPartnerCouponsRequest) o;
-        return Objects.equals(this.couponId, listIssuedPartnerCouponsRequest.couponId)
-            && Objects.equals(this.customerId, listIssuedPartnerCouponsRequest.customerId)
-            && Objects.equals(this.orderId, listIssuedPartnerCouponsRequest.orderId)
-            && Objects.equals(this.couponType, listIssuedPartnerCouponsRequest.couponType)
-            && Objects.equals(this.status, listIssuedPartnerCouponsRequest.status)
-            && Objects.equals(this.createTimeBegin, listIssuedPartnerCouponsRequest.createTimeBegin)
-            && Objects.equals(this.createTimeEnd, listIssuedPartnerCouponsRequest.createTimeEnd)
-            && Objects.equals(this.effectiveTimeBegin, listIssuedPartnerCouponsRequest.effectiveTimeBegin)
-            && Objects.equals(this.effectiveTimeEnd, listIssuedPartnerCouponsRequest.effectiveTimeEnd)
-            && Objects.equals(this.expireTimeBegin, listIssuedPartnerCouponsRequest.expireTimeBegin)
-            && Objects.equals(this.expireTimeEnd, listIssuedPartnerCouponsRequest.expireTimeEnd)
-            && Objects.equals(this.offset, listIssuedPartnerCouponsRequest.offset)
-            && Objects.equals(this.limit, listIssuedPartnerCouponsRequest.limit)
-            && Objects.equals(this.indirectPartnerId, listIssuedPartnerCouponsRequest.indirectPartnerId);
+        ListIssuedPartnerCouponsRequest that = (ListIssuedPartnerCouponsRequest) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.couponType, that.couponType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTimeBegin, that.createTimeBegin)
+            && Objects.equals(this.createTimeEnd, that.createTimeEnd)
+            && Objects.equals(this.effectiveTimeBegin, that.effectiveTimeBegin)
+            && Objects.equals(this.effectiveTimeEnd, that.effectiveTimeEnd)
+            && Objects.equals(this.expireTimeBegin, that.expireTimeBegin)
+            && Objects.equals(this.expireTimeEnd, that.expireTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

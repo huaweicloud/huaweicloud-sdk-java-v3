@@ -74,22 +74,15 @@ public class AutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,16 @@ public class AutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExcessFulfilledCapacityBehaviorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ExcessFulfilledCapacityBehaviorEnum(value));
         }
 
         public static ExcessFulfilledCapacityBehaviorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -257,22 +244,16 @@ public class AutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstancesBehaviorWithExpirationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstancesBehaviorWithExpirationEnum(value));
         }
 
         public static InstancesBehaviorWithExpirationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -362,22 +343,15 @@ public class AutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AllocationStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AllocationStrategyEnum(value));
         }
 
         public static AllocationStrategyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -405,8 +379,8 @@ public class AutoLaunchGroupReqV2 {
     private List<RegionSpec> regionSpecs = null;
 
     /**
-    * 资源供给中规格选择策略：枚举值 singlation：选择一种规格供给 multiple：组合多种规格供给 默认值：multiple
-    */
+     * 资源供给中规格选择策略：枚举值 singlation：选择一种规格供给 multiple：组合多种规格供给 默认值：multiple
+     */
     public static final class SupplyOptionEnum {
 
         /**
@@ -449,22 +423,15 @@ public class AutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            SupplyOptionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupplyOptionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupplyOptionEnum(value));
         }
 
         public static SupplyOptionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupplyOptionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -754,30 +721,24 @@ public class AutoLaunchGroupReqV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoLaunchGroupReqV2 autoLaunchGroupReqV2 = (AutoLaunchGroupReqV2) o;
-        return Objects.equals(this.name, autoLaunchGroupReqV2.name)
-            && Objects.equals(this.dryRun, autoLaunchGroupReqV2.dryRun)
-            && Objects.equals(this.type, autoLaunchGroupReqV2.type)
-            && Objects.equals(this.guaranteePlanId, autoLaunchGroupReqV2.guaranteePlanId)
-            && Objects.equals(this.targetCapacity, autoLaunchGroupReqV2.targetCapacity)
-            && Objects.equals(this.stableCapacity, autoLaunchGroupReqV2.stableCapacity)
-            && Objects.equals(this.excessFulfilledCapacityBehavior,
-                autoLaunchGroupReqV2.excessFulfilledCapacityBehavior)
-            && Objects.equals(this.instancesBehaviorWithExpiration,
-                autoLaunchGroupReqV2.instancesBehaviorWithExpiration)
-            && Objects.equals(this.validSince, autoLaunchGroupReqV2.validSince)
-            && Objects.equals(this.validUntil, autoLaunchGroupReqV2.validUntil)
-            && Objects.equals(this.allocationStrategy, autoLaunchGroupReqV2.allocationStrategy)
-            && Objects.equals(this.regionSpecs, autoLaunchGroupReqV2.regionSpecs)
-            && Objects.equals(this.supplyOption, autoLaunchGroupReqV2.supplyOption)
-            && Objects.equals(this.spotPrice, autoLaunchGroupReqV2.spotPrice);
+        AutoLaunchGroupReqV2 that = (AutoLaunchGroupReqV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.guaranteePlanId, that.guaranteePlanId)
+            && Objects.equals(this.targetCapacity, that.targetCapacity)
+            && Objects.equals(this.stableCapacity, that.stableCapacity)
+            && Objects.equals(this.excessFulfilledCapacityBehavior, that.excessFulfilledCapacityBehavior)
+            && Objects.equals(this.instancesBehaviorWithExpiration, that.instancesBehaviorWithExpiration)
+            && Objects.equals(this.validSince, that.validSince) && Objects.equals(this.validUntil, that.validUntil)
+            && Objects.equals(this.allocationStrategy, that.allocationStrategy)
+            && Objects.equals(this.regionSpecs, that.regionSpecs)
+            && Objects.equals(this.supplyOption, that.supplyOption) && Objects.equals(this.spotPrice, that.spotPrice);
     }
 
     @Override

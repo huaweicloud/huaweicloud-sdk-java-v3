@@ -34,15 +34,15 @@ public class CreateDeploymentHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeploymentHostResponse createDeploymentHostResponse = (CreateDeploymentHostResponse) o;
-        return Objects.equals(this.hostId, createDeploymentHostResponse.hostId);
+        CreateDeploymentHostResponse that = (CreateDeploymentHostResponse) obj;
+        return Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

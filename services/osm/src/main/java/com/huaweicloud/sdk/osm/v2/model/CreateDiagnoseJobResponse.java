@@ -78,17 +78,16 @@ public class CreateDiagnoseJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDiagnoseJobResponse createDiagnoseJobResponse = (CreateDiagnoseJobResponse) o;
-        return Objects.equals(this.errorCode, createDiagnoseJobResponse.errorCode)
-            && Objects.equals(this.errorMsg, createDiagnoseJobResponse.errorMsg)
-            && Objects.equals(this.jobId, createDiagnoseJobResponse.jobId);
+        CreateDiagnoseJobResponse that = (CreateDiagnoseJobResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

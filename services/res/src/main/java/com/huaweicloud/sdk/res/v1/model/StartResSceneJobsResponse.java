@@ -78,17 +78,16 @@ public class StartResSceneJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartResSceneJobsResponse startResSceneJobsResponse = (StartResSceneJobsResponse) o;
-        return Objects.equals(this.isSuccess, startResSceneJobsResponse.isSuccess)
-            && Objects.equals(this.message, startResSceneJobsResponse.message)
-            && Objects.equals(this.errorCode, startResSceneJobsResponse.errorCode);
+        StartResSceneJobsResponse that = (StartResSceneJobsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

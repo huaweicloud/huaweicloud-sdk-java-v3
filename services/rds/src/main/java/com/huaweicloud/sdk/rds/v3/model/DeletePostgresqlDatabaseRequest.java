@@ -79,17 +79,16 @@ public class DeletePostgresqlDatabaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePostgresqlDatabaseRequest deletePostgresqlDatabaseRequest = (DeletePostgresqlDatabaseRequest) o;
-        return Objects.equals(this.xLanguage, deletePostgresqlDatabaseRequest.xLanguage)
-            && Objects.equals(this.instanceId, deletePostgresqlDatabaseRequest.instanceId)
-            && Objects.equals(this.dbName, deletePostgresqlDatabaseRequest.dbName);
+        DeletePostgresqlDatabaseRequest that = (DeletePostgresqlDatabaseRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.dbName, that.dbName);
     }
 
     @Override

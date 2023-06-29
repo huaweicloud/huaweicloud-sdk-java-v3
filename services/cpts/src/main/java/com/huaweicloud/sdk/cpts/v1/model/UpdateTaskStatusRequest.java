@@ -91,17 +91,16 @@ public class UpdateTaskStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskStatusRequest updateTaskStatusRequest = (UpdateTaskStatusRequest) o;
-        return Objects.equals(this.testSuiteId, updateTaskStatusRequest.testSuiteId)
-            && Objects.equals(this.taskId, updateTaskStatusRequest.taskId)
-            && Objects.equals(this.body, updateTaskStatusRequest.body);
+        UpdateTaskStatusRequest that = (UpdateTaskStatusRequest) obj;
+        return Objects.equals(this.testSuiteId, that.testSuiteId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

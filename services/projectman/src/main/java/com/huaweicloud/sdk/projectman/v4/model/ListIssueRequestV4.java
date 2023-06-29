@@ -665,34 +665,27 @@ public class ListIssueRequestV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssueRequestV4 listIssueRequestV4 = (ListIssueRequestV4) o;
-        return Objects.equals(this.assignedIds, listIssueRequestV4.assignedIds)
-            && Objects.equals(this.creatorIds, listIssueRequestV4.creatorIds)
-            && Objects.equals(this.developerIds, listIssueRequestV4.developerIds)
-            && Objects.equals(this.domainIds, listIssueRequestV4.domainIds)
-            && Objects.equals(this.doneRatios, listIssueRequestV4.doneRatios)
-            && Objects.equals(this.iterationIds, listIssueRequestV4.iterationIds)
-            && Objects.equals(this.limit, listIssueRequestV4.limit)
-            && Objects.equals(this.offset, listIssueRequestV4.offset)
-            && Objects.equals(this.moduleIds, listIssueRequestV4.moduleIds)
-            && Objects.equals(this.priorityIds, listIssueRequestV4.priorityIds)
-            && Objects.equals(this.queryType, listIssueRequestV4.queryType)
-            && Objects.equals(this.severityIds, listIssueRequestV4.severityIds)
-            && Objects.equals(this.statusIds, listIssueRequestV4.statusIds)
-            && Objects.equals(this.storyPointIds, listIssueRequestV4.storyPointIds)
-            && Objects.equals(this.trackerIds, listIssueRequestV4.trackerIds)
-            && Objects.equals(this.includeDeleted, listIssueRequestV4.includeDeleted)
-            && Objects.equals(this.createdTimeInterval, listIssueRequestV4.createdTimeInterval)
-            && Objects.equals(this.updatedTimeInterval, listIssueRequestV4.updatedTimeInterval)
-            && Objects.equals(this.closedTimeInterval, listIssueRequestV4.closedTimeInterval)
-            && Objects.equals(this.customFields, listIssueRequestV4.customFields);
+        ListIssueRequestV4 that = (ListIssueRequestV4) obj;
+        return Objects.equals(this.assignedIds, that.assignedIds) && Objects.equals(this.creatorIds, that.creatorIds)
+            && Objects.equals(this.developerIds, that.developerIds) && Objects.equals(this.domainIds, that.domainIds)
+            && Objects.equals(this.doneRatios, that.doneRatios) && Objects.equals(this.iterationIds, that.iterationIds)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.moduleIds, that.moduleIds) && Objects.equals(this.priorityIds, that.priorityIds)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.severityIds, that.severityIds)
+            && Objects.equals(this.statusIds, that.statusIds) && Objects.equals(this.storyPointIds, that.storyPointIds)
+            && Objects.equals(this.trackerIds, that.trackerIds)
+            && Objects.equals(this.includeDeleted, that.includeDeleted)
+            && Objects.equals(this.createdTimeInterval, that.createdTimeInterval)
+            && Objects.equals(this.updatedTimeInterval, that.updatedTimeInterval)
+            && Objects.equals(this.closedTimeInterval, that.closedTimeInterval)
+            && Objects.equals(this.customFields, that.customFields);
     }
 
     @Override

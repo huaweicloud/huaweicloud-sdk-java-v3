@@ -44,15 +44,15 @@ public class ShowFlowLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFlowLogResponse showFlowLogResponse = (ShowFlowLogResponse) o;
-        return Objects.equals(this.flowLog, showFlowLogResponse.flowLog);
+        ShowFlowLogResponse that = (ShowFlowLogResponse) obj;
+        return Objects.equals(this.flowLog, that.flowLog);
     }
 
     @Override

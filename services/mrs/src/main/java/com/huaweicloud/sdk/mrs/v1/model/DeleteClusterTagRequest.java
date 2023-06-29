@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteClusterTagRequest  {
-
+public class DeleteClusterTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
@@ -34,9 +24,6 @@ public class DeleteClusterTagRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。
@@ -50,15 +37,10 @@ public class DeleteClusterTagRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public DeleteClusterTagRequest withKey(String key) {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 键。标签的key值
@@ -72,24 +54,23 @@ public class DeleteClusterTagRequest  {
         this.key = key;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteClusterTagRequest deleteClusterTagRequest = (DeleteClusterTagRequest) o;
-        return Objects.equals(this.clusterId, deleteClusterTagRequest.clusterId) &&
-            Objects.equals(this.key, deleteClusterTagRequest.key);
+        DeleteClusterTagRequest that = (DeleteClusterTagRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.key, that.key);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, key);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteClusterTagRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteClusterTagRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

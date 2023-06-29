@@ -77,17 +77,16 @@ public class RestRenamePartReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestRenamePartReqBody restRenamePartReqBody = (RestRenamePartReqBody) o;
-        return Objects.equals(this.participantID, restRenamePartReqBody.participantID)
-            && Objects.equals(this.number, restRenamePartReqBody.number)
-            && Objects.equals(this.newName, restRenamePartReqBody.newName);
+        RestRenamePartReqBody that = (RestRenamePartReqBody) obj;
+        return Objects.equals(this.participantID, that.participantID) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.newName, that.newName);
     }
 
     @Override

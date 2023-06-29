@@ -33,15 +33,15 @@ public class ShowDetailsOfCertificateV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfCertificateV2Request showDetailsOfCertificateV2Request = (ShowDetailsOfCertificateV2Request) o;
-        return Objects.equals(this.certificateId, showDetailsOfCertificateV2Request.certificateId);
+        ShowDetailsOfCertificateV2Request that = (ShowDetailsOfCertificateV2Request) obj;
+        return Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override

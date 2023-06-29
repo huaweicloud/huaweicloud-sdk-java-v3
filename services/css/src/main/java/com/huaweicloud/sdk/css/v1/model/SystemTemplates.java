@@ -99,17 +99,16 @@ public class SystemTemplates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SystemTemplates systemTemplates = (SystemTemplates) o;
-        return Objects.equals(this.id, systemTemplates.id) && Objects.equals(this.name, systemTemplates.name)
-            && Objects.equals(this.confContent, systemTemplates.confContent)
-            && Objects.equals(this.desc, systemTemplates.desc);
+        SystemTemplates that = (SystemTemplates) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.desc, that.desc);
     }
 
     @Override

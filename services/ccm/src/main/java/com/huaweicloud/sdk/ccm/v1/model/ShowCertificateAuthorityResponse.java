@@ -408,31 +408,25 @@ public class ShowCertificateAuthorityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificateAuthorityResponse showCertificateAuthorityResponse = (ShowCertificateAuthorityResponse) o;
-        return Objects.equals(this.caId, showCertificateAuthorityResponse.caId)
-            && Objects.equals(this.type, showCertificateAuthorityResponse.type)
-            && Objects.equals(this.status, showCertificateAuthorityResponse.status)
-            && Objects.equals(this.pathLength, showCertificateAuthorityResponse.pathLength)
-            && Objects.equals(this.issuerId, showCertificateAuthorityResponse.issuerId)
-            && Objects.equals(this.issuerName, showCertificateAuthorityResponse.issuerName)
-            && Objects.equals(this.keyAlgorithm, showCertificateAuthorityResponse.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, showCertificateAuthorityResponse.signatureAlgorithm)
-            && Objects.equals(this.freezeFlag, showCertificateAuthorityResponse.freezeFlag)
-            && Objects.equals(this.genMode, showCertificateAuthorityResponse.genMode)
-            && Objects.equals(this.serialNumber, showCertificateAuthorityResponse.serialNumber)
-            && Objects.equals(this.createTime, showCertificateAuthorityResponse.createTime)
-            && Objects.equals(this.deleteTime, showCertificateAuthorityResponse.deleteTime)
-            && Objects.equals(this.notBefore, showCertificateAuthorityResponse.notBefore)
-            && Objects.equals(this.notAfter, showCertificateAuthorityResponse.notAfter)
-            && Objects.equals(this.distinguishedName, showCertificateAuthorityResponse.distinguishedName)
-            && Objects.equals(this.crlConfiguration, showCertificateAuthorityResponse.crlConfiguration);
+        ShowCertificateAuthorityResponse that = (ShowCertificateAuthorityResponse) obj;
+        return Objects.equals(this.caId, that.caId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.pathLength, that.pathLength)
+            && Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.issuerName, that.issuerName)
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.freezeFlag, that.freezeFlag) && Objects.equals(this.genMode, that.genMode)
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.notAfter, that.notAfter)
+            && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.crlConfiguration, that.crlConfiguration);
     }
 
     @Override

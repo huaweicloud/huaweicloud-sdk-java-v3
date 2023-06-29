@@ -242,22 +242,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,22 +333,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -448,22 +434,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -561,22 +540,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -649,22 +621,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbUseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbUseTypeEnum(value));
         }
 
         public static DbUseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -747,22 +712,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConflictPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConflictPolicyEnum(value));
         }
 
         public static ConflictPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -795,8 +753,8 @@ public class QueryJobResp {
     private List<SpeedLimitInfo> speedLimit = null;
 
     /**
-    * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
-    */
+     * 迁移方案 - Replication-主从复制 - Tungsten-日志解析 - PGBaseBackup-PG备份
+     */
     public static final class SchemaTypeEnum {
 
         /**
@@ -845,22 +803,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            SchemaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SchemaTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SchemaTypeEnum(value));
         }
 
         public static SchemaTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SchemaTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1028,8 +979,8 @@ public class QueryJobResp {
     private List<DatabaseObjectInfo> objectInfos = null;
 
     /**
-    * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
-    */
+     * 初始任务方向。 取值： - up：入云，灾备场景时对应本云为备。 - down：出云，灾备场景时对应本云为主。 - non-dbs：自建。
+     */
     public static final class OriginalJobDirectionEnum {
 
         /**
@@ -1078,22 +1029,15 @@ public class QueryJobResp {
             if (value == null) {
                 return null;
             }
-            OriginalJobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginalJobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginalJobDirectionEnum(value));
         }
 
         public static OriginalJobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginalJobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -2231,66 +2175,50 @@ public class QueryJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryJobResp queryJobResp = (QueryJobResp) o;
-        return Objects.equals(this.id, queryJobResp.id) && Objects.equals(this.parentId, queryJobResp.parentId)
-            && Objects.equals(this.name, queryJobResp.name) && Objects.equals(this.status, queryJobResp.status)
-            && Objects.equals(this.description, queryJobResp.description)
-            && Objects.equals(this.createTime, queryJobResp.createTime)
-            && Objects.equals(this.taskType, queryJobResp.taskType)
-            && Objects.equals(this.sourceEndpoint, queryJobResp.sourceEndpoint)
-            && Objects.equals(this.dmqEndpoint, queryJobResp.dmqEndpoint)
-            && Objects.equals(this.sourceSharding, queryJobResp.sourceSharding)
-            && Objects.equals(this.targetEndpoint, queryJobResp.targetEndpoint)
-            && Objects.equals(this.netType, queryJobResp.netType)
-            && Objects.equals(this.failedReason, queryJobResp.failedReason)
-            && Objects.equals(this.instInfo, queryJobResp.instInfo)
-            && Objects.equals(this.actualStartTime, queryJobResp.actualStartTime)
-            && Objects.equals(this.fullTransferCompleteTime, queryJobResp.fullTransferCompleteTime)
-            && Objects.equals(this.updateTime, queryJobResp.updateTime)
-            && Objects.equals(this.jobDirection, queryJobResp.jobDirection)
-            && Objects.equals(this.dbUseType, queryJobResp.dbUseType)
-            && Objects.equals(this.needRestart, queryJobResp.needRestart)
-            && Objects.equals(this.isTargetReadonly, queryJobResp.isTargetReadonly)
-            && Objects.equals(this.conflictPolicy, queryJobResp.conflictPolicy)
-            && Objects.equals(this.filterDdlPolicy, queryJobResp.filterDdlPolicy)
-            && Objects.equals(this.speedLimit, queryJobResp.speedLimit)
-            && Objects.equals(this.schemaType, queryJobResp.schemaType)
-            && Objects.equals(this.nodeNum, queryJobResp.nodeNum)
-            && Objects.equals(this.objectSwitch, queryJobResp.objectSwitch)
-            && Objects.equals(this.masterJobId, queryJobResp.masterJobId)
-            && Objects.equals(this.fullMode, queryJobResp.fullMode)
-            && Objects.equals(this.structTrans, queryJobResp.structTrans)
-            && Objects.equals(this.indexTrans, queryJobResp.indexTrans)
-            && Objects.equals(this.replaceDefiner, queryJobResp.replaceDefiner)
-            && Objects.equals(this.migrateUser, queryJobResp.migrateUser)
-            && Objects.equals(this.syncDatabase, queryJobResp.syncDatabase)
-            && Objects.equals(this.errorCode, queryJobResp.errorCode)
-            && Objects.equals(this.errorMessage, queryJobResp.errorMessage)
-            && Objects.equals(this.targetRootDb, queryJobResp.targetRootDb)
-            && Objects.equals(this.azCode, queryJobResp.azCode) && Objects.equals(this.vpcId, queryJobResp.vpcId)
-            && Objects.equals(this.subnetId, queryJobResp.subnetId)
-            && Objects.equals(this.securityGroupId, queryJobResp.securityGroupId)
-            && Objects.equals(this.multiWrite, queryJobResp.multiWrite)
-            && Objects.equals(this.supportIpV6, queryJobResp.supportIpV6)
-            && Objects.equals(this.inheritId, queryJobResp.inheritId) && Objects.equals(this.gtid, queryJobResp.gtid)
-            && Objects.equals(this.alarmNotify, queryJobResp.alarmNotify)
-            && Objects.equals(this.increStartPosition, queryJobResp.increStartPosition)
-            && Objects.equals(this.isMultiAz, queryJobResp.isMultiAz)
-            && Objects.equals(this.azName, queryJobResp.azName) && Objects.equals(this.masterAz, queryJobResp.masterAz)
-            && Objects.equals(this.slaveAz, queryJobResp.slaveAz)
-            && Objects.equals(this.nodeRole, queryJobResp.nodeRole)
-            && Objects.equals(this.periodOrder, queryJobResp.periodOrder)
-            && Objects.equals(this.objectInfos, queryJobResp.objectInfos)
-            && Objects.equals(this.originalJobDirection, queryJobResp.originalJobDirection)
-            && Objects.equals(this.dataTransformation, queryJobResp.dataTransformation)
-            && Objects.equals(this.tags, queryJobResp.tags);
+        QueryJobResp that = (QueryJobResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.dmqEndpoint, that.dmqEndpoint)
+            && Objects.equals(this.sourceSharding, that.sourceSharding)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint) && Objects.equals(this.netType, that.netType)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.instInfo, that.instInfo)
+            && Objects.equals(this.actualStartTime, that.actualStartTime)
+            && Objects.equals(this.fullTransferCompleteTime, that.fullTransferCompleteTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.jobDirection, that.jobDirection)
+            && Objects.equals(this.dbUseType, that.dbUseType) && Objects.equals(this.needRestart, that.needRestart)
+            && Objects.equals(this.isTargetReadonly, that.isTargetReadonly)
+            && Objects.equals(this.conflictPolicy, that.conflictPolicy)
+            && Objects.equals(this.filterDdlPolicy, that.filterDdlPolicy)
+            && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.schemaType, that.schemaType)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.objectSwitch, that.objectSwitch)
+            && Objects.equals(this.masterJobId, that.masterJobId) && Objects.equals(this.fullMode, that.fullMode)
+            && Objects.equals(this.structTrans, that.structTrans) && Objects.equals(this.indexTrans, that.indexTrans)
+            && Objects.equals(this.replaceDefiner, that.replaceDefiner)
+            && Objects.equals(this.migrateUser, that.migrateUser)
+            && Objects.equals(this.syncDatabase, that.syncDatabase) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.targetRootDb, that.targetRootDb) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.multiWrite, that.multiWrite) && Objects.equals(this.supportIpV6, that.supportIpV6)
+            && Objects.equals(this.inheritId, that.inheritId) && Objects.equals(this.gtid, that.gtid)
+            && Objects.equals(this.alarmNotify, that.alarmNotify)
+            && Objects.equals(this.increStartPosition, that.increStartPosition)
+            && Objects.equals(this.isMultiAz, that.isMultiAz) && Objects.equals(this.azName, that.azName)
+            && Objects.equals(this.masterAz, that.masterAz) && Objects.equals(this.slaveAz, that.slaveAz)
+            && Objects.equals(this.nodeRole, that.nodeRole) && Objects.equals(this.periodOrder, that.periodOrder)
+            && Objects.equals(this.objectInfos, that.objectInfos)
+            && Objects.equals(this.originalJobDirection, that.originalJobDirection)
+            && Objects.equals(this.dataTransformation, that.dataTransformation) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

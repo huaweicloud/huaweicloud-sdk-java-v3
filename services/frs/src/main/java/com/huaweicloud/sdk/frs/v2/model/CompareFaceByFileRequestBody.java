@@ -102,16 +102,15 @@ public class CompareFaceByFileRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareFaceByFileRequestBody compareFaceByFileRequestBody = (CompareFaceByFileRequestBody) o;
-        return Objects.equals(this.image1File, compareFaceByFileRequestBody.image1File)
-            && Objects.equals(this.image2File, compareFaceByFileRequestBody.image2File);
+        CompareFaceByFileRequestBody that = (CompareFaceByFileRequestBody) obj;
+        return Objects.equals(this.image1File, that.image1File) && Objects.equals(this.image2File, that.image2File);
     }
 
     @Override

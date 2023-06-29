@@ -65,16 +65,16 @@ public class CommonRemoteAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonRemoteAuth commonRemoteAuth = (CommonRemoteAuth) o;
-        return Objects.equals(this.remoteAuthentication, commonRemoteAuth.remoteAuthentication)
-            && Objects.equals(this.remoteAuthRules, commonRemoteAuth.remoteAuthRules);
+        CommonRemoteAuth that = (CommonRemoteAuth) obj;
+        return Objects.equals(this.remoteAuthentication, that.remoteAuthentication)
+            && Objects.equals(this.remoteAuthRules, that.remoteAuthRules);
     }
 
     @Override

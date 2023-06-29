@@ -43,15 +43,15 @@ public class NodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeRequest nodeRequest = (NodeRequest) o;
-        return Objects.equals(this.node, nodeRequest.node);
+        NodeRequest that = (NodeRequest) obj;
+        return Objects.equals(this.node, that.node);
     }
 
     @Override

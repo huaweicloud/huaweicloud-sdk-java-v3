@@ -96,17 +96,16 @@ public class ComponentConfigCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentConfigCreate componentConfigCreate = (ComponentConfigCreate) o;
-        return Objects.equals(this.version, componentConfigCreate.version)
-            && Objects.equals(this.source, componentConfigCreate.source)
-            && Objects.equals(this.envs, componentConfigCreate.envs);
+        ComponentConfigCreate that = (ComponentConfigCreate) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.envs, that.envs);
     }
 
     @Override

@@ -73,22 +73,15 @@ public class GetHostGroupInfo {
             if (value == null) {
                 return null;
             }
-            HostGroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostGroupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostGroupTypeEnum(value));
         }
 
         public static HostGroupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostGroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,21 +279,19 @@ public class GetHostGroupInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHostGroupInfo getHostGroupInfo = (GetHostGroupInfo) o;
-        return Objects.equals(this.hostGroupId, getHostGroupInfo.hostGroupId)
-            && Objects.equals(this.hostGroupName, getHostGroupInfo.hostGroupName)
-            && Objects.equals(this.hostGroupType, getHostGroupInfo.hostGroupType)
-            && Objects.equals(this.hostIdList, getHostGroupInfo.hostIdList)
-            && Objects.equals(this.hostGroupTag, getHostGroupInfo.hostGroupTag)
-            && Objects.equals(this.createTime, getHostGroupInfo.createTime)
-            && Objects.equals(this.updateTime, getHostGroupInfo.updateTime);
+        GetHostGroupInfo that = (GetHostGroupInfo) obj;
+        return Objects.equals(this.hostGroupId, that.hostGroupId)
+            && Objects.equals(this.hostGroupName, that.hostGroupName)
+            && Objects.equals(this.hostGroupType, that.hostGroupType)
+            && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.hostGroupTag, that.hostGroupTag)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

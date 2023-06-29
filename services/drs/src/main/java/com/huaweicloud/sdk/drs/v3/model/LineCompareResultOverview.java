@@ -101,22 +101,15 @@ public class LineCompareResultOverview {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LineCompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LineCompareResultEnum(value));
         }
 
         public static LineCompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -190,17 +183,17 @@ public class LineCompareResultOverview {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineCompareResultOverview lineCompareResultOverview = (LineCompareResultOverview) o;
-        return Objects.equals(this.sourceDbName, lineCompareResultOverview.sourceDbName)
-            && Objects.equals(this.targetDbName, lineCompareResultOverview.targetDbName)
-            && Objects.equals(this.lineCompareResult, lineCompareResultOverview.lineCompareResult);
+        LineCompareResultOverview that = (LineCompareResultOverview) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.targetDbName, that.targetDbName)
+            && Objects.equals(this.lineCompareResult, that.lineCompareResult);
     }
 
     @Override

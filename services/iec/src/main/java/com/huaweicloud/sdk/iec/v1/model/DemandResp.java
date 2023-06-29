@@ -35,15 +35,15 @@ public class DemandResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemandResp demandResp = (DemandResp) o;
-        return Objects.equals(this.demandCount, demandResp.demandCount);
+        DemandResp that = (DemandResp) obj;
+        return Objects.equals(this.demandCount, that.demandCount);
     }
 
     @Override

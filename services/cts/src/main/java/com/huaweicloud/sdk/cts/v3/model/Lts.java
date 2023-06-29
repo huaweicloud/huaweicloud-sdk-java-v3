@@ -77,17 +77,17 @@ public class Lts {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Lts lts = (Lts) o;
-        return Objects.equals(this.isLtsEnabled, lts.isLtsEnabled)
-            && Objects.equals(this.logGroupName, lts.logGroupName)
-            && Objects.equals(this.logTopicName, lts.logTopicName);
+        Lts that = (Lts) obj;
+        return Objects.equals(this.isLtsEnabled, that.isLtsEnabled)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logTopicName, that.logTopicName);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class AudioServiceConfigCommon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioServiceConfigCommon audioServiceConfigCommon = (AudioServiceConfigCommon) o;
-        return Objects.equals(this.categories, audioServiceConfigCommon.categories);
+        AudioServiceConfigCommon that = (AudioServiceConfigCommon) obj;
+        return Objects.equals(this.categories, that.categories);
     }
 
     @Override

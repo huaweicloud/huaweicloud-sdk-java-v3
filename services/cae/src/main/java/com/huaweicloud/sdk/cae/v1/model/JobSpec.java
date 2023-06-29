@@ -74,15 +74,15 @@ public class JobSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobSpec jobSpec = (JobSpec) o;
-        return Objects.equals(this.status, jobSpec.status) && Objects.equals(this.tasks, jobSpec.tasks);
+        JobSpec that = (JobSpec) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

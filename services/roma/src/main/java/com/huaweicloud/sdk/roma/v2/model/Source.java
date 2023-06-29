@@ -90,22 +90,15 @@ public class Source {
             if (value == null) {
                 return null;
             }
-            IsBase64Enum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsBase64Enum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsBase64Enum(value));
         }
 
         public static IsBase64Enum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IsBase64Enum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class Source {
             if (value == null) {
                 return null;
             }
-            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContainDeviceInfoEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContainDeviceInfoEnum(value));
         }
 
         public static ContainDeviceInfoEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ContainDeviceInfoEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -356,19 +342,19 @@ public class Source {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Source source = (Source) o;
-        return Objects.equals(this.sourceId, source.sourceId) && Objects.equals(this.productId, source.productId)
-            && Objects.equals(this.deviceId, source.deviceId) && Objects.equals(this.topic, source.topic)
-            && Objects.equals(this.deviceName, source.deviceName)
-            && Objects.equals(this.productName, source.productName) && Objects.equals(this.isBase64, source.isBase64)
-            && Objects.equals(this.containDeviceInfo, source.containDeviceInfo);
+        Source that = (Source) obj;
+        return Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.isBase64, that.isBase64)
+            && Objects.equals(this.containDeviceInfo, that.containDeviceInfo);
     }
 
     @Override

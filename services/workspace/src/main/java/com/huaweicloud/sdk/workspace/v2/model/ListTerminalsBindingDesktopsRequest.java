@@ -125,20 +125,17 @@ public class ListTerminalsBindingDesktopsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTerminalsBindingDesktopsRequest listTerminalsBindingDesktopsRequest =
-            (ListTerminalsBindingDesktopsRequest) o;
-        return Objects.equals(this.computerName, listTerminalsBindingDesktopsRequest.computerName)
-            && Objects.equals(this.mac, listTerminalsBindingDesktopsRequest.mac)
-            && Objects.equals(this.offset, listTerminalsBindingDesktopsRequest.offset)
-            && Objects.equals(this.limit, listTerminalsBindingDesktopsRequest.limit)
-            && Objects.equals(this.countOnly, listTerminalsBindingDesktopsRequest.countOnly);
+        ListTerminalsBindingDesktopsRequest that = (ListTerminalsBindingDesktopsRequest) obj;
+        return Objects.equals(this.computerName, that.computerName) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.countOnly, that.countOnly);
     }
 
     @Override

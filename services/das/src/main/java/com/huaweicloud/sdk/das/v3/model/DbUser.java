@@ -55,15 +55,15 @@ public class DbUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbUser dbUser = (DbUser) o;
-        return Objects.equals(this.dbUserId, dbUser.dbUserId) && Objects.equals(this.dbUsername, dbUser.dbUsername);
+        DbUser that = (DbUser) obj;
+        return Objects.equals(this.dbUserId, that.dbUserId) && Objects.equals(this.dbUsername, that.dbUsername);
     }
 
     @Override

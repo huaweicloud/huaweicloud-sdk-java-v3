@@ -228,21 +228,19 @@ public class PublishAssetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAssetReq publishAssetReq = (PublishAssetReq) o;
-        return Objects.equals(this.imageId, publishAssetReq.imageId) && Objects.equals(this.tag, publishAssetReq.tag)
-            && Objects.equals(this.name, publishAssetReq.name) && Objects.equals(this.version, publishAssetReq.version)
-            && Objects.equals(this.title, publishAssetReq.title)
-            && Objects.equals(this.picture, publishAssetReq.picture)
-            && Objects.equals(this.summary, publishAssetReq.summary)
-            && Objects.equals(this.description, publishAssetReq.description)
-            && Objects.equals(this.labels, publishAssetReq.labels);
+        PublishAssetReq that = (PublishAssetReq) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.picture, that.picture)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

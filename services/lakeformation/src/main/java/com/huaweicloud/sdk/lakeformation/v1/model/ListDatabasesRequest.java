@@ -144,20 +144,18 @@ public class ListDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabasesRequest listDatabasesRequest = (ListDatabasesRequest) o;
-        return Objects.equals(this.instanceId, listDatabasesRequest.instanceId)
-            && Objects.equals(this.catalogName, listDatabasesRequest.catalogName)
-            && Objects.equals(this.databaseNamePattern, listDatabasesRequest.databaseNamePattern)
-            && Objects.equals(this.limit, listDatabasesRequest.limit)
-            && Objects.equals(this.marker, listDatabasesRequest.marker)
-            && Objects.equals(this.reversePage, listDatabasesRequest.reversePage);
+        ListDatabasesRequest that = (ListDatabasesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseNamePattern, that.databaseNamePattern)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

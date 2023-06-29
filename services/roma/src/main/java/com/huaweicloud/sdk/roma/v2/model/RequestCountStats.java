@@ -121,19 +121,17 @@ public class RequestCountStats {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RequestCountStats requestCountStats = (RequestCountStats) o;
-        return Objects.equals(this.reqCount, requestCountStats.reqCount)
-            && Objects.equals(this.reqCount2xx, requestCountStats.reqCount2xx)
-            && Objects.equals(this.reqCount4xx, requestCountStats.reqCount4xx)
-            && Objects.equals(this.reqCount5xx, requestCountStats.reqCount5xx)
-            && Objects.equals(this.reqCountError, requestCountStats.reqCountError);
+        RequestCountStats that = (RequestCountStats) obj;
+        return Objects.equals(this.reqCount, that.reqCount) && Objects.equals(this.reqCount2xx, that.reqCount2xx)
+            && Objects.equals(this.reqCount4xx, that.reqCount4xx) && Objects.equals(this.reqCount5xx, that.reqCount5xx)
+            && Objects.equals(this.reqCountError, that.reqCountError);
     }
 
     @Override

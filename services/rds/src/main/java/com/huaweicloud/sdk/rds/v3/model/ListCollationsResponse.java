@@ -53,15 +53,15 @@ public class ListCollationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCollationsResponse listCollationsResponse = (ListCollationsResponse) o;
-        return Objects.equals(this.charSets, listCollationsResponse.charSets);
+        ListCollationsResponse that = (ListCollationsResponse) obj;
+        return Objects.equals(this.charSets, that.charSets);
     }
 
     @Override

@@ -253,25 +253,20 @@ public class CustomerPostalAddressV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerPostalAddressV2 customerPostalAddressV2 = (CustomerPostalAddressV2) o;
-        return Objects.equals(this.addressId, customerPostalAddressV2.addressId)
-            && Objects.equals(this.recipient, customerPostalAddressV2.recipient)
-            && Objects.equals(this.nationality, customerPostalAddressV2.nationality)
-            && Objects.equals(this.province, customerPostalAddressV2.province)
-            && Objects.equals(this.city, customerPostalAddressV2.city)
-            && Objects.equals(this.district, customerPostalAddressV2.district)
-            && Objects.equals(this.address, customerPostalAddressV2.address)
-            && Objects.equals(this.zipcode, customerPostalAddressV2.zipcode)
-            && Objects.equals(this.areacode, customerPostalAddressV2.areacode)
-            && Objects.equals(this.mobilePhone, customerPostalAddressV2.mobilePhone)
-            && Objects.equals(this.isDefault, customerPostalAddressV2.isDefault);
+        CustomerPostalAddressV2 that = (CustomerPostalAddressV2) obj;
+        return Objects.equals(this.addressId, that.addressId) && Objects.equals(this.recipient, that.recipient)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.district, that.district)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.zipcode, that.zipcode)
+            && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.mobilePhone, that.mobilePhone)
+            && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

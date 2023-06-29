@@ -74,22 +74,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbUseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbUseTypeEnum(value));
         }
 
         public static DbUseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,22 +177,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
         }
 
         public static EngineTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -277,22 +263,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -370,22 +349,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -451,22 +423,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -504,8 +469,8 @@ public class CreateJobReq {
     private List<ResourceTag> tags = null;
 
     /**
-    * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
-    */
+     * 迁移模式，FULL_TRANS 全量,FULL_INCR_TRANS 全量+增量,INCR_TRANS 增量，灾备场景单主灾备仅支持全量加增量（FULL_INCR_TRANS）
+     */
     public static final class TaskTypeEnum {
 
         /**
@@ -554,22 +519,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -666,22 +624,15 @@ public class CreateJobReq {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1161,34 +1112,28 @@ public class CreateJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateJobReq createJobReq = (CreateJobReq) o;
-        return Objects.equals(this.bindEip, createJobReq.bindEip)
-            && Objects.equals(this.dbUseType, createJobReq.dbUseType) && Objects.equals(this.name, createJobReq.name)
-            && Objects.equals(this.description, createJobReq.description)
-            && Objects.equals(this.engineType, createJobReq.engineType)
-            && Objects.equals(this.isTargetReadonly, createJobReq.isTargetReadonly)
-            && Objects.equals(this.jobDirection, createJobReq.jobDirection)
-            && Objects.equals(this.multiWrite, createJobReq.multiWrite)
-            && Objects.equals(this.netType, createJobReq.netType) && Objects.equals(this.nodeNum, createJobReq.nodeNum)
-            && Objects.equals(this.nodeType, createJobReq.nodeType)
-            && Objects.equals(this.sourceEndpoint, createJobReq.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, createJobReq.targetEndpoint)
-            && Objects.equals(this.tags, createJobReq.tags) && Objects.equals(this.taskType, createJobReq.taskType)
-            && Objects.equals(this.customizeSutnetId, createJobReq.customizeSutnetId)
-            && Objects.equals(this.productId, createJobReq.productId)
-            && Objects.equals(this.sysTags, createJobReq.sysTags)
-            && Objects.equals(this.expiredDays, createJobReq.expiredDays)
-            && Objects.equals(this.masterAz, createJobReq.masterAz)
-            && Objects.equals(this.slaveAz, createJobReq.slaveAz)
-            && Objects.equals(this.chargingMode, createJobReq.chargingMode)
-            && Objects.equals(this.periodOrder, createJobReq.periodOrder);
+        CreateJobReq that = (CreateJobReq) obj;
+        return Objects.equals(this.bindEip, that.bindEip) && Objects.equals(this.dbUseType, that.dbUseType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.isTargetReadonly, that.isTargetReadonly)
+            && Objects.equals(this.jobDirection, that.jobDirection) && Objects.equals(this.multiWrite, that.multiWrite)
+            && Objects.equals(this.netType, that.netType) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.customizeSutnetId, that.customizeSutnetId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.sysTags, that.sysTags)
+            && Objects.equals(this.expiredDays, that.expiredDays) && Objects.equals(this.masterAz, that.masterAz)
+            && Objects.equals(this.slaveAz, that.slaveAz) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.periodOrder, that.periodOrder);
     }
 
     @Override

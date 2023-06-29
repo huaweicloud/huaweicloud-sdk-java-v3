@@ -171,21 +171,18 @@ public class IncidentOrderAuthDetailInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentOrderAuthDetailInfoV2 incidentOrderAuthDetailInfoV2 = (IncidentOrderAuthDetailInfoV2) o;
-        return Objects.equals(this.id, incidentOrderAuthDetailInfoV2.id)
-            && Objects.equals(this.port, incidentOrderAuthDetailInfoV2.port)
-            && Objects.equals(this.account, incidentOrderAuthDetailInfoV2.account)
-            && Objects.equals(this.type, incidentOrderAuthDetailInfoV2.type)
-            && Objects.equals(this.instanceId, incidentOrderAuthDetailInfoV2.instanceId)
-            && Objects.equals(this.instanceName, incidentOrderAuthDetailInfoV2.instanceName)
-            && Objects.equals(this.regionId, incidentOrderAuthDetailInfoV2.regionId);
+        IncidentOrderAuthDetailInfoV2 that = (IncidentOrderAuthDetailInfoV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

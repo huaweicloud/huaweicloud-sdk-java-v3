@@ -98,17 +98,16 @@ public class SearchTaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchTaskData searchTaskData = (SearchTaskData) o;
-        return Objects.equals(this.smiles, searchTaskData.smiles)
-            && Objects.equals(this.databases, searchTaskData.databases)
-            && Objects.equals(this.topN, searchTaskData.topN);
+        SearchTaskData that = (SearchTaskData) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.topN, that.topN);
     }
 
     @Override

@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ExecutionPlanDiffAttribute
  */
-public class ExecutionPlanDiffAttribute  {
-
+public class ExecutionPlanDiffAttribute {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="previous_value")
-    
+    @JsonProperty(value = "previous_value")
 
     private String previousValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_value")
-    
+    @JsonProperty(value = "target_value")
 
     private String targetValue;
 
@@ -39,9 +29,6 @@ public class ExecutionPlanDiffAttribute  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 当前资源将要被修改的参数的名字。
@@ -55,15 +42,10 @@ public class ExecutionPlanDiffAttribute  {
         this.name = name;
     }
 
-    
-
     public ExecutionPlanDiffAttribute withPreviousValue(String previousValue) {
         this.previousValue = previousValue;
         return this;
     }
-
-    
-
 
     /**
      * 当前资源被修改的参数的原始值。  若是资源创建的场景，则previous_value为空  若远端资源产生了偏差，则同一个资源会返回两个ExecutionPlanItem，其中一个的drifted为true，另一个的drifted为false   * drifted为true的previous_value为资源栈中所维持的资源属性和状态   * drifted为false的previous_value为provider请求远端资源后，远端资源所返回的资源属性和状态  若远端资源未产生偏差，则只会返回一个drifted为false的ExecutionPlanItem   * drifted为false的previous_value为资源栈中所维持的资源属性和状态 
@@ -77,15 +59,10 @@ public class ExecutionPlanDiffAttribute  {
         this.previousValue = previousValue;
     }
 
-    
-
     public ExecutionPlanDiffAttribute withTargetValue(String targetValue) {
         this.targetValue = targetValue;
         return this;
     }
-
-    
-
 
     /**
      * 当前资源被修改的参数的目的值。  若是资源删除的场景，则target_value为空  若远端资源产生了偏差，则同一个资源会返回两个ExecutionPlanItem，其中一个的drifted为true，另一个的drifted为false   * drifted为true的target_value为provider请求远端资源后，远端资源所返回的资源属性和状态   * drifted为false的target_value为基于用户模板更新的资源属性和状态  若远端资源未产生偏差，则只会返回一个drifted为false的ExecutionPlanItem   * drifted为false的target_value为基于用户模板更新的资源属性和状态 
@@ -99,25 +76,24 @@ public class ExecutionPlanDiffAttribute  {
         this.targetValue = targetValue;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlanDiffAttribute executionPlanDiffAttribute = (ExecutionPlanDiffAttribute) o;
-        return Objects.equals(this.name, executionPlanDiffAttribute.name) &&
-            Objects.equals(this.previousValue, executionPlanDiffAttribute.previousValue) &&
-            Objects.equals(this.targetValue, executionPlanDiffAttribute.targetValue);
+        ExecutionPlanDiffAttribute that = (ExecutionPlanDiffAttribute) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.previousValue, that.previousValue)
+            && Objects.equals(this.targetValue, that.targetValue);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, previousValue, targetValue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ExecutionPlanDiffAttribute  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ExecutionPlanDiffAttribute  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

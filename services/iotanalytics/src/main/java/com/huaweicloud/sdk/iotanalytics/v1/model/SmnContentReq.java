@@ -77,16 +77,16 @@ public class SmnContentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmnContentReq smnContentReq = (SmnContentReq) o;
-        return Objects.equals(this.projectId, smnContentReq.projectId) && Objects.equals(this.ak, smnContentReq.ak)
-            && Objects.equals(this.sk, smnContentReq.sk);
+        SmnContentReq that = (SmnContentReq) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.ak, that.ak)
+            && Objects.equals(this.sk, that.sk);
     }
 
     @Override

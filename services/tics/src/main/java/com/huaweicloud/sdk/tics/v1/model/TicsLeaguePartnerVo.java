@@ -99,18 +99,17 @@ public class TicsLeaguePartnerVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TicsLeaguePartnerVo ticsLeaguePartnerVo = (TicsLeaguePartnerVo) o;
-        return Objects.equals(this.id, ticsLeaguePartnerVo.id)
-            && Objects.equals(this.partnerDomainAlias, ticsLeaguePartnerVo.partnerDomainAlias)
-            && Objects.equals(this.partnerDomainName, ticsLeaguePartnerVo.partnerDomainName)
-            && Objects.equals(this.partnerStatus, ticsLeaguePartnerVo.partnerStatus);
+        TicsLeaguePartnerVo that = (TicsLeaguePartnerVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.partnerDomainAlias, that.partnerDomainAlias)
+            && Objects.equals(this.partnerDomainName, that.partnerDomainName)
+            && Objects.equals(this.partnerStatus, that.partnerStatus);
     }
 
     @Override

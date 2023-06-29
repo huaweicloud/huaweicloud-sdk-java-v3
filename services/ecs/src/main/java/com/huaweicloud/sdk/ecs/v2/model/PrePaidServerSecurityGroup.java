@@ -33,15 +33,15 @@ public class PrePaidServerSecurityGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerSecurityGroup prePaidServerSecurityGroup = (PrePaidServerSecurityGroup) o;
-        return Objects.equals(this.id, prePaidServerSecurityGroup.id);
+        PrePaidServerSecurityGroup that = (PrePaidServerSecurityGroup) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

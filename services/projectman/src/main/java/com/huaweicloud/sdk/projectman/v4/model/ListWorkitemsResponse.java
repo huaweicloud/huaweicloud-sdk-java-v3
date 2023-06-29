@@ -75,16 +75,15 @@ public class ListWorkitemsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkitemsResponse listWorkitemsResponse = (ListWorkitemsResponse) o;
-        return Objects.equals(this.workItems, listWorkitemsResponse.workItems)
-            && Objects.equals(this.total, listWorkitemsResponse.total);
+        ListWorkitemsResponse that = (ListWorkitemsResponse) obj;
+        return Objects.equals(this.workItems, that.workItems) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -181,20 +181,18 @@ public class ShowGroupsRespGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGroupsRespGroup showGroupsRespGroup = (ShowGroupsRespGroup) o;
-        return Objects.equals(this.groupId, showGroupsRespGroup.groupId)
-            && Objects.equals(this.state, showGroupsRespGroup.state)
-            && Objects.equals(this.coordinatorId, showGroupsRespGroup.coordinatorId)
-            && Objects.equals(this.members, showGroupsRespGroup.members)
-            && Objects.equals(this.groupMessageOffsets, showGroupsRespGroup.groupMessageOffsets)
-            && Objects.equals(this.assignmentStrategy, showGroupsRespGroup.assignmentStrategy);
+        ShowGroupsRespGroup that = (ShowGroupsRespGroup) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.coordinatorId, that.coordinatorId) && Objects.equals(this.members, that.members)
+            && Objects.equals(this.groupMessageOffsets, that.groupMessageOffsets)
+            && Objects.equals(this.assignmentStrategy, that.assignmentStrategy);
     }
 
     @Override

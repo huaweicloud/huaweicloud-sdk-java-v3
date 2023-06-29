@@ -55,16 +55,16 @@ public class DeleteReplicationRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteReplicationRequestParams deleteReplicationRequestParams = (DeleteReplicationRequestParams) o;
-        return Objects.equals(this.serverGroupId, deleteReplicationRequestParams.serverGroupId)
-            && Objects.equals(this.deleteTargetVolume, deleteReplicationRequestParams.deleteTargetVolume);
+        DeleteReplicationRequestParams that = (DeleteReplicationRequestParams) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.deleteTargetVolume, that.deleteTargetVolume);
     }
 
     @Override

@@ -126,22 +126,15 @@ public class ListErrorLogsNewRequest {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LevelEnum(value));
         }
 
         public static LevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,21 +278,18 @@ public class ListErrorLogsNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListErrorLogsNewRequest listErrorLogsNewRequest = (ListErrorLogsNewRequest) o;
-        return Objects.equals(this.xLanguage, listErrorLogsNewRequest.xLanguage)
-            && Objects.equals(this.instanceId, listErrorLogsNewRequest.instanceId)
-            && Objects.equals(this.startDate, listErrorLogsNewRequest.startDate)
-            && Objects.equals(this.endDate, listErrorLogsNewRequest.endDate)
-            && Objects.equals(this.offset, listErrorLogsNewRequest.offset)
-            && Objects.equals(this.limit, listErrorLogsNewRequest.limit)
-            && Objects.equals(this.level, listErrorLogsNewRequest.level);
+        ListErrorLogsNewRequest that = (ListErrorLogsNewRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.level, that.level);
     }
 
     @Override

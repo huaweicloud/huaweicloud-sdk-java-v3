@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ListMetadatasRespSchemaList
  */
-public class ListMetadatasRespSchemaList  {
-
+public class ListMetadatasRespSchemaList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_update_time")
-    
+    @JsonProperty(value = "last_update_time")
 
     private String lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_name")
-    
+    @JsonProperty(value = "master_key_name")
 
     private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_id")
-    
+    @JsonProperty(value = "master_key_id")
 
     private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata_path")
-    
+    @JsonProperty(value = "metadata_path")
 
     private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
@@ -81,9 +64,6 @@ public class ListMetadatasRespSchemaList  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 元数据 ID。
@@ -97,15 +77,10 @@ public class ListMetadatasRespSchemaList  {
         this.id = id;
     }
 
-    
-
     public ListMetadatasRespSchemaList withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 元数据名称。
@@ -119,15 +94,10 @@ public class ListMetadatasRespSchemaList  {
         this.name = name;
     }
 
-    
-
     public ListMetadatasRespSchemaList withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 元数据创建时间
@@ -141,15 +111,10 @@ public class ListMetadatasRespSchemaList  {
         this.startTime = startTime;
     }
 
-    
-
     public ListMetadatasRespSchemaList withLastUpdateTime(String lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
-
-    
-
 
     /**
      * 元数据最后更新时间
@@ -163,15 +128,10 @@ public class ListMetadatasRespSchemaList  {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    
-
     public ListMetadatasRespSchemaList withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 元数据是否加密
@@ -185,15 +145,10 @@ public class ListMetadatasRespSchemaList  {
         this.encrypted = encrypted;
     }
 
-    
-
     public ListMetadatasRespSchemaList withMasterKeyName(String masterKeyName) {
         this.masterKeyName = masterKeyName;
         return this;
     }
-
-    
-
 
     /**
      * 秘钥名称
@@ -207,15 +162,10 @@ public class ListMetadatasRespSchemaList  {
         this.masterKeyName = masterKeyName;
     }
 
-    
-
     public ListMetadatasRespSchemaList withMasterKeyId(String masterKeyId) {
         this.masterKeyId = masterKeyId;
         return this;
     }
-
-    
-
 
     /**
      * 秘钥id
@@ -229,15 +179,10 @@ public class ListMetadatasRespSchemaList  {
         this.masterKeyId = masterKeyId;
     }
 
-    
-
     public ListMetadatasRespSchemaList withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 元数据 描述。
@@ -251,15 +196,10 @@ public class ListMetadatasRespSchemaList  {
         this.description = description;
     }
 
-    
-
     public ListMetadatasRespSchemaList withMetadataPath(String metadataPath) {
         this.metadataPath = metadataPath;
         return this;
     }
-
-    
-
 
     /**
      * 元数据对应路径。
@@ -273,15 +213,10 @@ public class ListMetadatasRespSchemaList  {
         this.metadataPath = metadataPath;
     }
 
-    
-
     public ListMetadatasRespSchemaList withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 元数据是否可用。
@@ -295,32 +230,37 @@ public class ListMetadatasRespSchemaList  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetadatasRespSchemaList listMetadatasRespSchemaList = (ListMetadatasRespSchemaList) o;
-        return Objects.equals(this.id, listMetadatasRespSchemaList.id) &&
-            Objects.equals(this.name, listMetadatasRespSchemaList.name) &&
-            Objects.equals(this.startTime, listMetadatasRespSchemaList.startTime) &&
-            Objects.equals(this.lastUpdateTime, listMetadatasRespSchemaList.lastUpdateTime) &&
-            Objects.equals(this.encrypted, listMetadatasRespSchemaList.encrypted) &&
-            Objects.equals(this.masterKeyName, listMetadatasRespSchemaList.masterKeyName) &&
-            Objects.equals(this.masterKeyId, listMetadatasRespSchemaList.masterKeyId) &&
-            Objects.equals(this.description, listMetadatasRespSchemaList.description) &&
-            Objects.equals(this.metadataPath, listMetadatasRespSchemaList.metadataPath) &&
-            Objects.equals(this.status, listMetadatasRespSchemaList.status);
+        ListMetadatasRespSchemaList that = (ListMetadatasRespSchemaList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.masterKeyName, that.masterKeyName)
+            && Objects.equals(this.masterKeyId, that.masterKeyId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.metadataPath, that.metadataPath) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, startTime, lastUpdateTime, encrypted, masterKeyName, masterKeyId, description, metadataPath, status);
+        return Objects.hash(id,
+            name,
+            startTime,
+            lastUpdateTime,
+            encrypted,
+            masterKeyName,
+            masterKeyId,
+            description,
+            metadataPath,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,6 +278,7 @@ public class ListMetadatasRespSchemaList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -348,8 +289,5 @@ public class ListMetadatasRespSchemaList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

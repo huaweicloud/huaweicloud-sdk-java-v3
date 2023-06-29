@@ -79,22 +79,15 @@ public class UpdateRecordRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RecordFormatsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordFormatsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordFormatsEnum(value));
         }
 
         public static RecordFormatsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordFormatsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,23 +333,19 @@ public class UpdateRecordRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordRuleResponse updateRecordRuleResponse = (UpdateRecordRuleResponse) o;
-        return Objects.equals(this.ruleId, updateRecordRuleResponse.ruleId)
-            && Objects.equals(this.appId, updateRecordRuleResponse.appId)
-            && Objects.equals(this.obsAddr, updateRecordRuleResponse.obsAddr)
-            && Objects.equals(this.recordFormats, updateRecordRuleResponse.recordFormats)
-            && Objects.equals(this.hlsConfig, updateRecordRuleResponse.hlsConfig)
-            && Objects.equals(this.mp4Config, updateRecordRuleResponse.mp4Config)
-            && Objects.equals(this.createTime, updateRecordRuleResponse.createTime)
-            && Objects.equals(this.updateTime, updateRecordRuleResponse.updateTime)
-            && Objects.equals(this.xRequestId, updateRecordRuleResponse.xRequestId);
+        UpdateRecordRuleResponse that = (UpdateRecordRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.obsAddr, that.obsAddr) && Objects.equals(this.recordFormats, that.recordFormats)
+            && Objects.equals(this.hlsConfig, that.hlsConfig) && Objects.equals(this.mp4Config, that.mp4Config)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class StructFieldInfoReturn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructFieldInfoReturn structFieldInfoReturn = (StructFieldInfoReturn) o;
-        return Objects.equals(this.fieldName, structFieldInfoReturn.fieldName)
-            && Objects.equals(this.type, structFieldInfoReturn.type)
-            && Objects.equals(this.content, structFieldInfoReturn.content)
-            && Objects.equals(this.isAnalysis, structFieldInfoReturn.isAnalysis)
-            && Objects.equals(this.index, structFieldInfoReturn.index);
+        StructFieldInfoReturn that = (StructFieldInfoReturn) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.isAnalysis, that.isAnalysis)
+            && Objects.equals(this.index, that.index);
     }
 
     @Override

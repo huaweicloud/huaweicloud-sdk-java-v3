@@ -97,17 +97,16 @@ public class ListMergeRequestResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMergeRequestResponse listMergeRequestResponse = (ListMergeRequestResponse) o;
-        return Objects.equals(this.error, listMergeRequestResponse.error)
-            && Objects.equals(this.result, listMergeRequestResponse.result)
-            && Objects.equals(this.status, listMergeRequestResponse.status);
+        ListMergeRequestResponse that = (ListMergeRequestResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

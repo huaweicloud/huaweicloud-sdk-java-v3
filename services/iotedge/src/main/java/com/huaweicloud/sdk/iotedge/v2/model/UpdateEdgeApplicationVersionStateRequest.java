@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.UpdateEdgeAppVersionStateDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateEdgeApplicationVersionStateRequest  {
-
+public class UpdateEdgeApplicationVersionStateRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateEdgeAppVersionStateDTO body;
 
@@ -41,9 +30,6 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID，应用唯一标识。
@@ -57,15 +43,10 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateRequest withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本,应用内版本唯一。
@@ -79,22 +60,19 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         this.version = version;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateRequest withBody(UpdateEdgeAppVersionStateDTO body) {
         this.body = body;
         return this;
     }
 
     public UpdateEdgeApplicationVersionStateRequest withBody(Consumer<UpdateEdgeAppVersionStateDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateEdgeAppVersionStateDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeApplicationVersionStateRequest updateEdgeApplicationVersionStateRequest = (UpdateEdgeApplicationVersionStateRequest) o;
-        return Objects.equals(this.edgeAppId, updateEdgeApplicationVersionStateRequest.edgeAppId) &&
-            Objects.equals(this.version, updateEdgeApplicationVersionStateRequest.version) &&
-            Objects.equals(this.body, updateEdgeApplicationVersionStateRequest.body);
+        UpdateEdgeApplicationVersionStateRequest that = (UpdateEdgeApplicationVersionStateRequest) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeAppId, version, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class UpdateEdgeApplicationVersionStateRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

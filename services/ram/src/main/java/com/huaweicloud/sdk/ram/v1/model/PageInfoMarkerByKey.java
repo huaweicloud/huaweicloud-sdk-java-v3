@@ -79,17 +79,16 @@ public class PageInfoMarkerByKey {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoMarkerByKey pageInfoMarkerByKey = (PageInfoMarkerByKey) o;
-        return Objects.equals(this.previousMarker, pageInfoMarkerByKey.previousMarker)
-            && Objects.equals(this.nextMarker, pageInfoMarkerByKey.nextMarker)
-            && Objects.equals(this.currentCount, pageInfoMarkerByKey.currentCount);
+        PageInfoMarkerByKey that = (PageInfoMarkerByKey) obj;
+        return Objects.equals(this.previousMarker, that.previousMarker)
+            && Objects.equals(this.nextMarker, that.nextMarker) && Objects.equals(this.currentCount, that.currentCount);
     }
 
     @Override

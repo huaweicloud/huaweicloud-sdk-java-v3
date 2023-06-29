@@ -241,24 +241,19 @@ public class IssueAttrHistoryRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueAttrHistoryRecord issueAttrHistoryRecord = (IssueAttrHistoryRecord) o;
-        return Objects.equals(this.fieldKey, issueAttrHistoryRecord.fieldKey)
-            && Objects.equals(this.fieldName, issueAttrHistoryRecord.fieldName)
-            && Objects.equals(this.id, issueAttrHistoryRecord.id)
-            && Objects.equals(this.issueId, issueAttrHistoryRecord.issueId)
-            && Objects.equals(this.newValue, issueAttrHistoryRecord.newValue)
-            && Objects.equals(this.oldValue, issueAttrHistoryRecord.oldValue)
-            && Objects.equals(this.operatedTime, issueAttrHistoryRecord.operatedTime)
-            && Objects.equals(this.operation, issueAttrHistoryRecord.operation)
-            && Objects.equals(this.operator, issueAttrHistoryRecord.operator)
-            && Objects.equals(this.property, issueAttrHistoryRecord.property);
+        IssueAttrHistoryRecord that = (IssueAttrHistoryRecord) obj;
+        return Objects.equals(this.fieldKey, that.fieldKey) && Objects.equals(this.fieldName, that.fieldName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.newValue, that.newValue) && Objects.equals(this.oldValue, that.oldValue)
+            && Objects.equals(this.operatedTime, that.operatedTime) && Objects.equals(this.operation, that.operation)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.property, that.property);
     }
 
     @Override

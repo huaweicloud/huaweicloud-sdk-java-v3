@@ -101,17 +101,16 @@ public class TaskInputVcn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInputVcn taskInputVcn = (TaskInputVcn) o;
-        return Objects.equals(this.ip, taskInputVcn.ip) && Objects.equals(this.port, taskInputVcn.port)
-            && Objects.equals(this.username, taskInputVcn.username)
-            && Objects.equals(this.password, taskInputVcn.password);
+        TaskInputVcn that = (TaskInputVcn) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password);
     }
 
     @Override

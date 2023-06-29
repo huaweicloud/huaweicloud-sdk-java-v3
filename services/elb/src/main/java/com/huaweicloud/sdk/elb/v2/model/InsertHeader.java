@@ -59,16 +59,16 @@ public class InsertHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InsertHeader insertHeader = (InsertHeader) o;
-        return Objects.equals(this.xForwardedELBIP, insertHeader.xForwardedELBIP)
-            && Objects.equals(this.xForwardedHost, insertHeader.xForwardedHost);
+        InsertHeader that = (InsertHeader) obj;
+        return Objects.equals(this.xForwardedELBIP, that.xForwardedELBIP)
+            && Objects.equals(this.xForwardedHost, that.xForwardedHost);
     }
 
     @Override

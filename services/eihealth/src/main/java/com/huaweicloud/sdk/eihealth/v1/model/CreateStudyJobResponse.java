@@ -34,15 +34,15 @@ public class CreateStudyJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStudyJobResponse createStudyJobResponse = (CreateStudyJobResponse) o;
-        return Objects.equals(this.id, createStudyJobResponse.id);
+        CreateStudyJobResponse that = (CreateStudyJobResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

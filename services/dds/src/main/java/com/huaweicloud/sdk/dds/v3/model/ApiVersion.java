@@ -162,18 +162,17 @@ public class ApiVersion {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiVersion apiVersion = (ApiVersion) o;
-        return Objects.equals(this.id, apiVersion.id) && Objects.equals(this.links, apiVersion.links)
-            && Objects.equals(this.status, apiVersion.status) && Objects.equals(this.version, apiVersion.version)
-            && Objects.equals(this.minVersion, apiVersion.minVersion)
-            && Objects.equals(this.updated, apiVersion.updated);
+        ApiVersion that = (ApiVersion) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.minVersion, that.minVersion) && Objects.equals(this.updated, that.updated);
     }
 
     @Override

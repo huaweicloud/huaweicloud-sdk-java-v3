@@ -33,15 +33,15 @@ public class ShowProjectTrackerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectTrackerRequest showProjectTrackerRequest = (ShowProjectTrackerRequest) o;
-        return Objects.equals(this.eihealthProjectId, showProjectTrackerRequest.eihealthProjectId);
+        ShowProjectTrackerRequest that = (ShowProjectTrackerRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

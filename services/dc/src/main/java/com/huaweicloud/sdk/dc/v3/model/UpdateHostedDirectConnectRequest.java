@@ -65,16 +65,15 @@ public class UpdateHostedDirectConnectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostedDirectConnectRequest updateHostedDirectConnectRequest = (UpdateHostedDirectConnectRequest) o;
-        return Objects.equals(this.hostedConnectId, updateHostedDirectConnectRequest.hostedConnectId)
-            && Objects.equals(this.body, updateHostedDirectConnectRequest.body);
+        UpdateHostedDirectConnectRequest that = (UpdateHostedDirectConnectRequest) obj;
+        return Objects.equals(this.hostedConnectId, that.hostedConnectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

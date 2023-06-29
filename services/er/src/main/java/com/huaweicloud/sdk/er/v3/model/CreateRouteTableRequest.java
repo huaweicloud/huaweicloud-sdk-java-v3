@@ -89,17 +89,16 @@ public class CreateRouteTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRouteTableRequest createRouteTableRequest = (CreateRouteTableRequest) o;
-        return Objects.equals(this.xClientToken, createRouteTableRequest.xClientToken)
-            && Objects.equals(this.erId, createRouteTableRequest.erId)
-            && Objects.equals(this.body, createRouteTableRequest.body);
+        CreateRouteTableRequest that = (CreateRouteTableRequest) obj;
+        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

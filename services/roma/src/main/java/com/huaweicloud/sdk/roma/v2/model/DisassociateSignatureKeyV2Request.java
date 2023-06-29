@@ -55,16 +55,16 @@ public class DisassociateSignatureKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateSignatureKeyV2Request disassociateSignatureKeyV2Request = (DisassociateSignatureKeyV2Request) o;
-        return Objects.equals(this.instanceId, disassociateSignatureKeyV2Request.instanceId)
-            && Objects.equals(this.signBindingsId, disassociateSignatureKeyV2Request.signBindingsId);
+        DisassociateSignatureKeyV2Request that = (DisassociateSignatureKeyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.signBindingsId, that.signBindingsId);
     }
 
     @Override

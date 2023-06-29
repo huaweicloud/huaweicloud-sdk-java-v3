@@ -271,22 +271,15 @@ public class DataSourceRsp {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatasourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatasourceTypeEnum(value));
         }
 
         public static DatasourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -410,22 +403,15 @@ public class DataSourceRsp {
             if (value == null) {
                 return null;
             }
-            AppPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppPermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppPermissionEnum(value));
         }
 
         public static AppPermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -698,26 +684,23 @@ public class DataSourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSourceRsp dataSourceRsp = (DataSourceRsp) o;
-        return Objects.equals(this.datasourceId, dataSourceRsp.datasourceId)
-            && Objects.equals(this.datasourceName, dataSourceRsp.datasourceName)
-            && Objects.equals(this.datasourceType, dataSourceRsp.datasourceType)
-            && Objects.equals(this.vpcId, dataSourceRsp.vpcId) && Objects.equals(this.appId, dataSourceRsp.appId)
-            && Objects.equals(this.appName, dataSourceRsp.appName)
-            && Objects.equals(this.instanceId, dataSourceRsp.instanceId)
-            && Objects.equals(this.createTime, dataSourceRsp.createTime)
-            && Objects.equals(this.updateTime, dataSourceRsp.updateTime)
-            && Objects.equals(this.customPluginId, dataSourceRsp.customPluginId)
-            && Objects.equals(this.content, dataSourceRsp.content)
-            && Objects.equals(this.description, dataSourceRsp.description)
-            && Objects.equals(this.appPermission, dataSourceRsp.appPermission);
+        DataSourceRsp that = (DataSourceRsp) obj;
+        return Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.datasourceName, that.datasourceName)
+            && Objects.equals(this.datasourceType, that.datasourceType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.customPluginId, that.customPluginId) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.appPermission, that.appPermission);
     }
 
     @Override

@@ -363,28 +363,23 @@ public class ShowProtectedInstanceParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProtectedInstanceParams showProtectedInstanceParams = (ShowProtectedInstanceParams) o;
-        return Objects.equals(this.id, showProtectedInstanceParams.id)
-            && Objects.equals(this.name, showProtectedInstanceParams.name)
-            && Objects.equals(this.description, showProtectedInstanceParams.description)
-            && Objects.equals(this.status, showProtectedInstanceParams.status)
-            && Objects.equals(this.sourceServer, showProtectedInstanceParams.sourceServer)
-            && Objects.equals(this.targetServer, showProtectedInstanceParams.targetServer)
-            && Objects.equals(this.serverGroupId, showProtectedInstanceParams.serverGroupId)
-            && Objects.equals(this.createdAt, showProtectedInstanceParams.createdAt)
-            && Objects.equals(this.updatedAt, showProtectedInstanceParams.updatedAt)
-            && Objects.equals(this.metadata, showProtectedInstanceParams.metadata)
-            && Objects.equals(this.attachment, showProtectedInstanceParams.attachment)
-            && Objects.equals(this.tags, showProtectedInstanceParams.tags)
-            && Objects.equals(this.progress, showProtectedInstanceParams.progress)
-            && Objects.equals(this.priorityStation, showProtectedInstanceParams.priorityStation);
+        ShowProtectedInstanceParams that = (ShowProtectedInstanceParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sourceServer, that.sourceServer)
+            && Objects.equals(this.targetServer, that.targetServer)
+            && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.attachment, that.attachment) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.priorityStation, that.priorityStation);
     }
 
     @Override

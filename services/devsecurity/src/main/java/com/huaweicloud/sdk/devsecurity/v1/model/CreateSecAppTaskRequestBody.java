@@ -139,18 +139,17 @@ public class CreateSecAppTaskRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecAppTaskRequestBody createSecAppTaskRequestBody = (CreateSecAppTaskRequestBody) o;
-        return Objects.equals(this.version, createSecAppTaskRequestBody.version)
-            && Objects.equals(this.file, createSecAppTaskRequestBody.file)
-            && Objects.equals(this.privacyStatementUrl, createSecAppTaskRequestBody.privacyStatementUrl)
-            && Objects.equals(this.personalInfoShareUrl, createSecAppTaskRequestBody.personalInfoShareUrl);
+        CreateSecAppTaskRequestBody that = (CreateSecAppTaskRequestBody) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.file, that.file)
+            && Objects.equals(this.privacyStatementUrl, that.privacyStatementUrl)
+            && Objects.equals(this.personalInfoShareUrl, that.personalInfoShareUrl);
     }
 
     @Override

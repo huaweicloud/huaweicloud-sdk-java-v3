@@ -103,18 +103,16 @@ public class DeleteAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAssetRequest deleteAssetRequest = (DeleteAssetRequest) o;
-        return Objects.equals(this.authorization, deleteAssetRequest.authorization)
-            && Objects.equals(this.xSdkDate, deleteAssetRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, deleteAssetRequest.xAppUserId)
-            && Objects.equals(this.assetId, deleteAssetRequest.assetId);
+        DeleteAssetRequest that = (DeleteAssetRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

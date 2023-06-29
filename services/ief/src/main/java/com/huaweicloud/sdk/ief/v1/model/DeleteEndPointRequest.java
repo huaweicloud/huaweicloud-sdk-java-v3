@@ -55,16 +55,16 @@ public class DeleteEndPointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEndPointRequest deleteEndPointRequest = (DeleteEndPointRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteEndPointRequest.iefInstanceId)
-            && Objects.equals(this.endpointId, deleteEndPointRequest.endpointId);
+        DeleteEndPointRequest that = (DeleteEndPointRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.endpointId, that.endpointId);
     }
 
     @Override

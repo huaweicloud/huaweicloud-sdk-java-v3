@@ -58,16 +58,16 @@ public class DeleteMyActionTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMyActionTemplateResponse deleteMyActionTemplateResponse = (DeleteMyActionTemplateResponse) o;
-        return Objects.equals(this.xRequestId, deleteMyActionTemplateResponse.xRequestId)
-            && Objects.equals(this.contentLength, deleteMyActionTemplateResponse.contentLength);
+        DeleteMyActionTemplateResponse that = (DeleteMyActionTemplateResponse) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.contentLength, that.contentLength);
     }
 
     @Override

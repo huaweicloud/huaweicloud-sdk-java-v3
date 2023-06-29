@@ -65,16 +65,15 @@ public class UpdateGlobalValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGlobalValueRequest updateGlobalValueRequest = (UpdateGlobalValueRequest) o;
-        return Objects.equals(this.varName, updateGlobalValueRequest.varName)
-            && Objects.equals(this.body, updateGlobalValueRequest.body);
+        UpdateGlobalValueRequest that = (UpdateGlobalValueRequest) obj;
+        return Objects.equals(this.varName, that.varName) && Objects.equals(this.body, that.body);
     }
 
     @Override

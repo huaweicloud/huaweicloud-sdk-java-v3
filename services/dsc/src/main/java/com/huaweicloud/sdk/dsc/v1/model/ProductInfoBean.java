@@ -14,67 +14,67 @@ import java.util.function.Consumer;
 public class ProductInfoBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "allResourceNames")
+    @JsonProperty(value = "all_resource_names")
 
     private List<String> allResourceNames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cloudServiceType")
+    @JsonProperty(value = "cloud_service_type")
 
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "displayId")
+    @JsonProperty(value = "display_id")
 
     private String displayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "productId")
+    @JsonProperty(value = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "productSpecDesc")
+    @JsonProperty(value = "product_spec_desc")
 
     private String productSpecDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resourceName")
+    @JsonProperty(value = "resource_name")
 
     private String resourceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resourceSize")
+    @JsonProperty(value = "resource_size")
 
     private Integer resourceSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resourceSizeMeasureId")
+    @JsonProperty(value = "resource_size_measure_id")
 
     private Integer resourceSizeMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resourceSpecCode")
+    @JsonProperty(value = "resource_spec_code")
 
     private String resourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "resourceType")
+    @JsonProperty(value = "resource_type")
 
     private String resourceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "usageFactor")
+    @JsonProperty(value = "usage_factor")
 
     private String usageFactor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "usageMeasureId")
+    @JsonProperty(value = "usage_measure_id")
 
     private Integer usageMeasureId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "usageValue")
+    @JsonProperty(value = "usage_value")
 
     private Double usageValue;
 
@@ -316,27 +316,26 @@ public class ProductInfoBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductInfoBean productInfoBean = (ProductInfoBean) o;
-        return Objects.equals(this.allResourceNames, productInfoBean.allResourceNames)
-            && Objects.equals(this.cloudServiceType, productInfoBean.cloudServiceType)
-            && Objects.equals(this.displayId, productInfoBean.displayId)
-            && Objects.equals(this.productId, productInfoBean.productId)
-            && Objects.equals(this.productSpecDesc, productInfoBean.productSpecDesc)
-            && Objects.equals(this.resourceName, productInfoBean.resourceName)
-            && Objects.equals(this.resourceSize, productInfoBean.resourceSize)
-            && Objects.equals(this.resourceSizeMeasureId, productInfoBean.resourceSizeMeasureId)
-            && Objects.equals(this.resourceSpecCode, productInfoBean.resourceSpecCode)
-            && Objects.equals(this.resourceType, productInfoBean.resourceType)
-            && Objects.equals(this.usageFactor, productInfoBean.usageFactor)
-            && Objects.equals(this.usageMeasureId, productInfoBean.usageMeasureId)
-            && Objects.equals(this.usageValue, productInfoBean.usageValue);
+        ProductInfoBean that = (ProductInfoBean) obj;
+        return Objects.equals(this.allResourceNames, that.allResourceNames)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.displayId, that.displayId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.resourceSizeMeasureId, that.resourceSizeMeasureId)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.usageFactor, that.usageFactor)
+            && Objects.equals(this.usageMeasureId, that.usageMeasureId)
+            && Objects.equals(this.usageValue, that.usageValue);
     }
 
     @Override

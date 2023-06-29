@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * This is a auto create Body Object
  */
-public class ExportGraphReq  {
-
+public class ExportGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphExportPath")
-    
+    @JsonProperty(value = "graphExportPath")
 
     private String graphExportPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeSetName")
-    
+    @JsonProperty(value = "edgeSetName")
 
     private String edgeSetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexSetName")
-    
+    @JsonProperty(value = "vertexSetName")
 
     private String vertexSetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaName")
-    
+    @JsonProperty(value = "schemaName")
 
     private String schemaName;
 
@@ -45,9 +34,6 @@ public class ExportGraphReq  {
         this.graphExportPath = graphExportPath;
         return this;
     }
-
-    
-
 
     /**
      * 图的导出OBS路径。
@@ -61,15 +47,10 @@ public class ExportGraphReq  {
         this.graphExportPath = graphExportPath;
     }
 
-    
-
     public ExportGraphReq withEdgeSetName(String edgeSetName) {
         this.edgeSetName = edgeSetName;
         return this;
     }
-
-    
-
 
     /**
      * 导出边文件名。
@@ -83,15 +64,10 @@ public class ExportGraphReq  {
         this.edgeSetName = edgeSetName;
     }
 
-    
-
     public ExportGraphReq withVertexSetName(String vertexSetName) {
         this.vertexSetName = vertexSetName;
         return this;
     }
-
-    
-
 
     /**
      * 导出点文件名。
@@ -105,15 +81,10 @@ public class ExportGraphReq  {
         this.vertexSetName = vertexSetName;
     }
 
-    
-
     public ExportGraphReq withSchemaName(String schemaName) {
         this.schemaName = schemaName;
         return this;
     }
-
-    
-
 
     /**
      * 导出元数据文件名。
@@ -127,26 +98,26 @@ public class ExportGraphReq  {
         this.schemaName = schemaName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportGraphReq exportGraphReq = (ExportGraphReq) o;
-        return Objects.equals(this.graphExportPath, exportGraphReq.graphExportPath) &&
-            Objects.equals(this.edgeSetName, exportGraphReq.edgeSetName) &&
-            Objects.equals(this.vertexSetName, exportGraphReq.vertexSetName) &&
-            Objects.equals(this.schemaName, exportGraphReq.schemaName);
+        ExportGraphReq that = (ExportGraphReq) obj;
+        return Objects.equals(this.graphExportPath, that.graphExportPath)
+            && Objects.equals(this.edgeSetName, that.edgeSetName)
+            && Objects.equals(this.vertexSetName, that.vertexSetName)
+            && Objects.equals(this.schemaName, that.schemaName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphExportPath, edgeSetName, vertexSetName, schemaName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +129,7 @@ public class ExportGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +140,5 @@ public class ExportGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

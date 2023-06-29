@@ -65,16 +65,16 @@ public class RecognizeHealthCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeHealthCodeRequest recognizeHealthCodeRequest = (RecognizeHealthCodeRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeHealthCodeRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeHealthCodeRequest.body);
+        RecognizeHealthCodeRequest that = (RecognizeHealthCodeRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ObsLocation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsLocation obsLocation = (ObsLocation) o;
-        return Objects.equals(this.regionName, obsLocation.regionName)
-            && Objects.equals(this.bucketName, obsLocation.bucketName)
-            && Objects.equals(this.objectKey, obsLocation.objectKey);
+        ObsLocation that = (ObsLocation) obj;
+        return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.objectKey, that.objectKey);
     }
 
     @Override

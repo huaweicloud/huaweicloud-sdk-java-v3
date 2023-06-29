@@ -90,16 +90,16 @@ public class StopAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopAppResponse stopAppResponse = (StopAppResponse) o;
-        return Objects.equals(this.appId, stopAppResponse.appId) && Objects.equals(this.state, stopAppResponse.state)
-            && Objects.equals(this.xRequestId, stopAppResponse.xRequestId);
+        StopAppResponse that = (StopAppResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

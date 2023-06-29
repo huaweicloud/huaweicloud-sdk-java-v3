@@ -144,19 +144,17 @@ public class GroupDeployment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GroupDeployment groupDeployment = (GroupDeployment) o;
-        return Objects.equals(this.id, groupDeployment.id) && Objects.equals(this.name, groupDeployment.name)
-            && Objects.equals(this.description, groupDeployment.description)
-            && Objects.equals(this.projectId, groupDeployment.projectId)
-            && Objects.equals(this.createdAt, groupDeployment.createdAt)
-            && Objects.equals(this.updatedAt, groupDeployment.updatedAt);
+        GroupDeployment that = (GroupDeployment) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

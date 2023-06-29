@@ -1,50 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListDevicesRequest  {
-
+public class ListDevicesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gateway_id")
-    
+    @JsonProperty(value = "gateway_id")
 
     private String gatewayId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_name")
-    
+    @JsonProperty(value = "device_name")
 
     private String deviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -52,9 +39,6 @@ public class ListDevicesRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -68,15 +52,10 @@ public class ListDevicesRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public ListDevicesRequest withGatewayId(String gatewayId) {
         this.gatewayId = gatewayId;
         return this;
     }
-
-    
-
 
     /**
      * 父设备ID,对应之前的gatewayId的概念，传该参数时代表查询网关下的子设备，不传代表查询网关直连设备
@@ -90,15 +69,10 @@ public class ListDevicesRequest  {
         this.gatewayId = gatewayId;
     }
 
-    
-
     public ListDevicesRequest withDeviceName(String deviceName) {
         this.deviceName = deviceName;
         return this;
     }
-
-    
-
 
     /**
      * 设备名称
@@ -112,15 +86,10 @@ public class ListDevicesRequest  {
         this.deviceName = deviceName;
     }
 
-    
-
     public ListDevicesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -136,15 +105,10 @@ public class ListDevicesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDevicesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000
@@ -160,27 +124,25 @@ public class ListDevicesRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.edgeNodeId, listDevicesRequest.edgeNodeId) &&
-            Objects.equals(this.gatewayId, listDevicesRequest.gatewayId) &&
-            Objects.equals(this.deviceName, listDevicesRequest.deviceName) &&
-            Objects.equals(this.offset, listDevicesRequest.offset) &&
-            Objects.equals(this.limit, listDevicesRequest.limit);
+        ListDevicesRequest that = (ListDevicesRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, gatewayId, deviceName, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -193,6 +155,7 @@ public class ListDevicesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -203,8 +166,5 @@ public class ListDevicesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

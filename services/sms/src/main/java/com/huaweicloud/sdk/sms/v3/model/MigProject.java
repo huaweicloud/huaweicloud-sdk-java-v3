@@ -111,22 +111,15 @@ public class MigProject {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -413,25 +406,23 @@ public class MigProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigProject migProject = (MigProject) o;
-        return Objects.equals(this.id, migProject.id) && Objects.equals(this.name, migProject.name)
-            && Objects.equals(this.description, migProject.description)
-            && Objects.equals(this.isdefault, migProject.isdefault)
-            && Objects.equals(this.template, migProject.template) && Objects.equals(this.region, migProject.region)
-            && Objects.equals(this.startTargetServer, migProject.startTargetServer)
-            && Objects.equals(this.speedLimit, migProject.speedLimit)
-            && Objects.equals(this.usePublicIp, migProject.usePublicIp)
-            && Objects.equals(this.existServer, migProject.existServer) && Objects.equals(this.type, migProject.type)
-            && Objects.equals(this.enterpriseProject, migProject.enterpriseProject)
-            && Objects.equals(this.syncing, migProject.syncing)
-            && Objects.equals(this.startNetworkCheck, migProject.startNetworkCheck);
+        MigProject that = (MigProject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isdefault, that.isdefault)
+            && Objects.equals(this.template, that.template) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.usePublicIp, that.usePublicIp)
+            && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject)
+            && Objects.equals(this.syncing, that.syncing)
+            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
     }
 
     @Override

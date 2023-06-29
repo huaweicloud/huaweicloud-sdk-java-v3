@@ -44,15 +44,15 @@ public class CreatePolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePolicyResponse createPolicyResponse = (CreatePolicyResponse) o;
-        return Objects.equals(this.policy, createPolicyResponse.policy);
+        CreatePolicyResponse that = (CreatePolicyResponse) obj;
+        return Objects.equals(this.policy, that.policy);
     }
 
     @Override

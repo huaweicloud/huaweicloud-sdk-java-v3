@@ -528,35 +528,31 @@ public class ShowStreamJobListJobConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStreamJobListJobConfig showStreamJobListJobConfig = (ShowStreamJobListJobConfig) o;
-        return Objects.equals(this.checkpointEnabled, showStreamJobListJobConfig.checkpointEnabled)
-            && Objects.equals(this.checkpointMode, showStreamJobListJobConfig.checkpointMode)
-            && Objects.equals(this.checkpointInterval, showStreamJobListJobConfig.checkpointInterval)
-            && Objects.equals(this.logEnabled, showStreamJobListJobConfig.logEnabled)
-            && Objects.equals(this.obsBucket, showStreamJobListJobConfig.obsBucket)
-            && Objects.equals(this.smnTopic, showStreamJobListJobConfig.smnTopic)
-            && Objects.equals(this.edgeGroupIds, showStreamJobListJobConfig.edgeGroupIds)
-            && Objects.equals(this.rootId, showStreamJobListJobConfig.rootId)
-            && Objects.equals(this.managerCuNumber, showStreamJobListJobConfig.managerCuNumber)
-            && Objects.equals(this.cuNumber, showStreamJobListJobConfig.cuNumber)
-            && Objects.equals(this.parallelNumber, showStreamJobListJobConfig.parallelNumber)
-            && Objects.equals(this.restartWhenException, showStreamJobListJobConfig.restartWhenException)
-            && Objects.equals(this.idleStateRetention, showStreamJobListJobConfig.idleStateRetention)
-            && Objects.equals(this.udfJarUrl, showStreamJobListJobConfig.udfJarUrl)
-            && Objects.equals(this.dirtyDataStrategy, showStreamJobListJobConfig.dirtyDataStrategy)
-            && Objects.equals(this.entrypoint, showStreamJobListJobConfig.entrypoint)
-            && Objects.equals(this.dependencyJars, showStreamJobListJobConfig.dependencyJars)
-            && Objects.equals(this.dependencyFiles, showStreamJobListJobConfig.dependencyFiles)
-            && Objects.equals(this.executorNumber, showStreamJobListJobConfig.executorNumber)
-            && Objects.equals(this.executorCuNumber, showStreamJobListJobConfig.executorCuNumber)
-            && Objects.equals(this.resumeCheckpoint, showStreamJobListJobConfig.resumeCheckpoint);
+        ShowStreamJobListJobConfig that = (ShowStreamJobListJobConfig) obj;
+        return Objects.equals(this.checkpointEnabled, that.checkpointEnabled)
+            && Objects.equals(this.checkpointMode, that.checkpointMode)
+            && Objects.equals(this.checkpointInterval, that.checkpointInterval)
+            && Objects.equals(this.logEnabled, that.logEnabled) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.smnTopic, that.smnTopic) && Objects.equals(this.edgeGroupIds, that.edgeGroupIds)
+            && Objects.equals(this.rootId, that.rootId) && Objects.equals(this.managerCuNumber, that.managerCuNumber)
+            && Objects.equals(this.cuNumber, that.cuNumber) && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.restartWhenException, that.restartWhenException)
+            && Objects.equals(this.idleStateRetention, that.idleStateRetention)
+            && Objects.equals(this.udfJarUrl, that.udfJarUrl)
+            && Objects.equals(this.dirtyDataStrategy, that.dirtyDataStrategy)
+            && Objects.equals(this.entrypoint, that.entrypoint)
+            && Objects.equals(this.dependencyJars, that.dependencyJars)
+            && Objects.equals(this.dependencyFiles, that.dependencyFiles)
+            && Objects.equals(this.executorNumber, that.executorNumber)
+            && Objects.equals(this.executorCuNumber, that.executorCuNumber)
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint);
     }
 
     @Override

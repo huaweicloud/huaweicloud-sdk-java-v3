@@ -65,16 +65,15 @@ public class ListTemplatesTwoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplatesTwoRequest listTemplatesTwoRequest = (ListTemplatesTwoRequest) o;
-        return Objects.equals(this.repositoryUuid, listTemplatesTwoRequest.repositoryUuid)
-            && Objects.equals(this.body, listTemplatesTwoRequest.body);
+        ListTemplatesTwoRequest that = (ListTemplatesTwoRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid) && Objects.equals(this.body, that.body);
     }
 
     @Override

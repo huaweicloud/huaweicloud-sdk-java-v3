@@ -118,18 +118,16 @@ public class ActionOnComponentSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionOnComponentSpec actionOnComponentSpec = (ActionOnComponentSpec) o;
-        return Objects.equals(this.snapshotIndex, actionOnComponentSpec.snapshotIndex)
-            && Objects.equals(this.replica, actionOnComponentSpec.replica)
-            && Objects.equals(this.source, actionOnComponentSpec.source)
-            && Objects.equals(this.resourceLimit, actionOnComponentSpec.resourceLimit);
+        ActionOnComponentSpec that = (ActionOnComponentSpec) obj;
+        return Objects.equals(this.snapshotIndex, that.snapshotIndex) && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.resourceLimit, that.resourceLimit);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class ChangeEventRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEventRequestInfo changeEventRequestInfo = (ChangeEventRequestInfo) o;
-        return Objects.equals(this.operateType, changeEventRequestInfo.operateType)
-            && Objects.equals(this.handler, changeEventRequestInfo.handler)
-            && Objects.equals(this.operateEventList, changeEventRequestInfo.operateEventList);
+        ChangeEventRequestInfo that = (ChangeEventRequestInfo) obj;
+        return Objects.equals(this.operateType, that.operateType) && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.operateEventList, that.operateEventList);
     }
 
     @Override

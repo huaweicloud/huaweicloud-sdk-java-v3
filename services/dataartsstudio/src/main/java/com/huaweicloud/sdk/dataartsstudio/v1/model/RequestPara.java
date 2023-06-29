@@ -74,22 +74,15 @@ public class RequestPara {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,22 +149,15 @@ public class RequestPara {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -333,19 +319,18 @@ public class RequestPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RequestPara requestPara = (RequestPara) o;
-        return Objects.equals(this.name, requestPara.name) && Objects.equals(this.position, requestPara.position)
-            && Objects.equals(this.type, requestPara.type) && Objects.equals(this.description, requestPara.description)
-            && Objects.equals(this.necessary, requestPara.necessary)
-            && Objects.equals(this.exampleValue, requestPara.exampleValue)
-            && Objects.equals(this.defaultValue, requestPara.defaultValue);
+        RequestPara that = (RequestPara) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.necessary, that.necessary) && Objects.equals(this.exampleValue, that.exampleValue)
+            && Objects.equals(this.defaultValue, that.defaultValue);
     }
 
     @Override

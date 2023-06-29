@@ -270,22 +270,18 @@ public class ListInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceRequestBody listInstanceRequestBody = (ListInstanceRequestBody) o;
-        return Objects.equals(this.tags, listInstanceRequestBody.tags)
-            && Objects.equals(this.tagsAny, listInstanceRequestBody.tagsAny)
-            && Objects.equals(this.notTags, listInstanceRequestBody.notTags)
-            && Objects.equals(this.notTagsAny, listInstanceRequestBody.notTagsAny)
-            && Objects.equals(this.offset, listInstanceRequestBody.offset)
-            && Objects.equals(this.limit, listInstanceRequestBody.limit)
-            && Objects.equals(this.action, listInstanceRequestBody.action)
-            && Objects.equals(this.matches, listInstanceRequestBody.matches);
+        ListInstanceRequestBody that = (ListInstanceRequestBody) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.tagsAny, that.tagsAny)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.notTagsAny, that.notTagsAny)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.matches, that.matches);
     }
 
     @Override

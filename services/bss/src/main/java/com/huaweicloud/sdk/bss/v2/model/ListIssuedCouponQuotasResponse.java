@@ -75,16 +75,15 @@ public class ListIssuedCouponQuotasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuedCouponQuotasResponse listIssuedCouponQuotasResponse = (ListIssuedCouponQuotasResponse) o;
-        return Objects.equals(this.totalCount, listIssuedCouponQuotasResponse.totalCount)
-            && Objects.equals(this.quotas, listIssuedCouponQuotasResponse.quotas);
+        ListIssuedCouponQuotasResponse that = (ListIssuedCouponQuotasResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

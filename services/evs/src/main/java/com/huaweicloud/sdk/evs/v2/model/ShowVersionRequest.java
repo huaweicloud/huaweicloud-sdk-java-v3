@@ -66,22 +66,15 @@ public class ShowVersionRequest {
             if (value == null) {
                 return null;
             }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VersionEnum(value));
         }
 
         public static VersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -121,15 +114,15 @@ public class ShowVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVersionRequest showVersionRequest = (ShowVersionRequest) o;
-        return Objects.equals(this.version, showVersionRequest.version);
+        ShowVersionRequest that = (ShowVersionRequest) obj;
+        return Objects.equals(this.version, that.version);
     }
 
     @Override

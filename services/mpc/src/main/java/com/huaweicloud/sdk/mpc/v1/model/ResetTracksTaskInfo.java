@@ -246,23 +246,19 @@ public class ResetTracksTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetTracksTaskInfo resetTracksTaskInfo = (ResetTracksTaskInfo) o;
-        return Objects.equals(this.taskId, resetTracksTaskInfo.taskId)
-            && Objects.equals(this.status, resetTracksTaskInfo.status)
-            && Objects.equals(this.createTime, resetTracksTaskInfo.createTime)
-            && Objects.equals(this.endTime, resetTracksTaskInfo.endTime)
-            && Objects.equals(this.output, resetTracksTaskInfo.output)
-            && Objects.equals(this.description, resetTracksTaskInfo.description)
-            && Objects.equals(this.outputFilename, resetTracksTaskInfo.outputFilename)
-            && Objects.equals(this.tracksInfo, resetTracksTaskInfo.tracksInfo)
-            && Objects.equals(this.input, resetTracksTaskInfo.input);
+        ResetTracksTaskInfo that = (ResetTracksTaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.outputFilename, that.outputFilename)
+            && Objects.equals(this.tracksInfo, that.tracksInfo) && Objects.equals(this.input, that.input);
     }
 
     @Override

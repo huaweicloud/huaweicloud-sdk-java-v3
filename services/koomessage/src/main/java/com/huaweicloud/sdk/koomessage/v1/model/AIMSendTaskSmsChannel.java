@@ -99,18 +99,16 @@ public class AIMSendTaskSmsChannel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMSendTaskSmsChannel aiMSendTaskSmsChannel = (AIMSendTaskSmsChannel) o;
-        return Objects.equals(this.channelNumber, aiMSendTaskSmsChannel.channelNumber)
-            && Objects.equals(this.smsTplId, aiMSendTaskSmsChannel.smsTplId)
-            && Objects.equals(this.smsSign, aiMSendTaskSmsChannel.smsSign)
-            && Objects.equals(this.smsAppName, aiMSendTaskSmsChannel.smsAppName);
+        AIMSendTaskSmsChannel that = (AIMSendTaskSmsChannel) obj;
+        return Objects.equals(this.channelNumber, that.channelNumber) && Objects.equals(this.smsTplId, that.smsTplId)
+            && Objects.equals(this.smsSign, that.smsSign) && Objects.equals(this.smsAppName, that.smsAppName);
     }
 
     @Override

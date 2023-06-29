@@ -145,20 +145,18 @@ public class ImportKeyMaterialRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportKeyMaterialRequestBody importKeyMaterialRequestBody = (ImportKeyMaterialRequestBody) o;
-        return Objects.equals(this.keyId, importKeyMaterialRequestBody.keyId)
-            && Objects.equals(this.importToken, importKeyMaterialRequestBody.importToken)
-            && Objects.equals(this.encryptedKeyMaterial, importKeyMaterialRequestBody.encryptedKeyMaterial)
-            && Objects.equals(this.encryptedPrivatekey, importKeyMaterialRequestBody.encryptedPrivatekey)
-            && Objects.equals(this.expirationTime, importKeyMaterialRequestBody.expirationTime)
-            && Objects.equals(this.sequence, importKeyMaterialRequestBody.sequence);
+        ImportKeyMaterialRequestBody that = (ImportKeyMaterialRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.importToken, that.importToken)
+            && Objects.equals(this.encryptedKeyMaterial, that.encryptedKeyMaterial)
+            && Objects.equals(this.encryptedPrivatekey, that.encryptedPrivatekey)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class UpdateJobTemplatesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateJobTemplatesRequestBody updateJobTemplatesRequestBody = (UpdateJobTemplatesRequestBody) o;
-        return Objects.equals(this.name, updateJobTemplatesRequestBody.name)
-            && Objects.equals(this.body, updateJobTemplatesRequestBody.body)
-            && Objects.equals(this.group, updateJobTemplatesRequestBody.group)
-            && Objects.equals(this.description, updateJobTemplatesRequestBody.description);
+        UpdateJobTemplatesRequestBody that = (UpdateJobTemplatesRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.body, that.body)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.description, that.description);
     }
 
     @Override

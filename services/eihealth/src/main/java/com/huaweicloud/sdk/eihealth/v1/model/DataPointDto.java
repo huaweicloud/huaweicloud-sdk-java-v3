@@ -78,16 +78,16 @@ public class DataPointDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataPointDto dataPointDto = (DataPointDto) o;
-        return Objects.equals(this.timestamp, dataPointDto.timestamp) && Objects.equals(this.unit, dataPointDto.unit)
-            && Objects.equals(this.value, dataPointDto.value);
+        DataPointDto that = (DataPointDto) obj;
+        return Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

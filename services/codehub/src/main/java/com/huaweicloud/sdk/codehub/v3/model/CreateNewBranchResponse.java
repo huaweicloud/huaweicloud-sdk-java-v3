@@ -97,17 +97,16 @@ public class CreateNewBranchResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNewBranchResponse createNewBranchResponse = (CreateNewBranchResponse) o;
-        return Objects.equals(this.error, createNewBranchResponse.error)
-            && Objects.equals(this.result, createNewBranchResponse.result)
-            && Objects.equals(this.status, createNewBranchResponse.status);
+        CreateNewBranchResponse that = (CreateNewBranchResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

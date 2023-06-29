@@ -122,22 +122,15 @@ public class TaskGroupSrcNodeResp {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CloudTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloudTypeEnum(value));
         }
 
         public static CloudTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,20 +300,17 @@ public class TaskGroupSrcNodeResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskGroupSrcNodeResp taskGroupSrcNodeResp = (TaskGroupSrcNodeResp) o;
-        return Objects.equals(this.bucket, taskGroupSrcNodeResp.bucket)
-            && Objects.equals(this.cloudType, taskGroupSrcNodeResp.cloudType)
-            && Objects.equals(this.region, taskGroupSrcNodeResp.region)
-            && Objects.equals(this.appId, taskGroupSrcNodeResp.appId)
-            && Objects.equals(this.objectKey, taskGroupSrcNodeResp.objectKey)
-            && Objects.equals(this.listFile, taskGroupSrcNodeResp.listFile);
+        TaskGroupSrcNodeResp that = (TaskGroupSrcNodeResp) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.cloudType, that.cloudType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.listFile, that.listFile);
     }
 
     @Override

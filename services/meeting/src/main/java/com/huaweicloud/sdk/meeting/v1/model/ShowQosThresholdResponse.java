@@ -168,19 +168,17 @@ public class ShowQosThresholdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQosThresholdResponse showQosThresholdResponse = (ShowQosThresholdResponse) o;
-        return Objects.equals(this.latency, showQosThresholdResponse.latency)
-            && Objects.equals(this.jitter, showQosThresholdResponse.jitter)
-            && Objects.equals(this.packetLoss, showQosThresholdResponse.packetLoss)
-            && Objects.equals(this.clientCpuMax, showQosThresholdResponse.clientCpuMax)
-            && Objects.equals(this.systemCpuMax, showQosThresholdResponse.systemCpuMax);
+        ShowQosThresholdResponse that = (ShowQosThresholdResponse) obj;
+        return Objects.equals(this.latency, that.latency) && Objects.equals(this.jitter, that.jitter)
+            && Objects.equals(this.packetLoss, that.packetLoss) && Objects.equals(this.clientCpuMax, that.clientCpuMax)
+            && Objects.equals(this.systemCpuMax, that.systemCpuMax);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class RequestParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RequestParameter requestParameter = (RequestParameter) o;
-        return Objects.equals(this.parameterName, requestParameter.parameterName)
-            && Objects.equals(this.parameterValue, requestParameter.parameterValue);
+        RequestParameter that = (RequestParameter) obj;
+        return Objects.equals(this.parameterName, that.parameterName)
+            && Objects.equals(this.parameterValue, that.parameterValue);
     }
 
     @Override

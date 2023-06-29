@@ -55,16 +55,15 @@ public class RuleHitCountObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleHitCountObject ruleHitCountObject = (RuleHitCountObject) o;
-        return Objects.equals(this.ruleId, ruleHitCountObject.ruleId)
-            && Objects.equals(this.ruleHitCount, ruleHitCountObject.ruleHitCount);
+        RuleHitCountObject that = (RuleHitCountObject) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleHitCount, that.ruleHitCount);
     }
 
     @Override

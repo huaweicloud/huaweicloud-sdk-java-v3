@@ -75,22 +75,15 @@ public class OnlineInfo {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoCodecEnum(value));
         }
 
         public static VideoCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -151,22 +144,15 @@ public class OnlineInfo {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioCodecEnum(value));
         }
 
         public static AudioCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -428,24 +414,22 @@ public class OnlineInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OnlineInfo onlineInfo = (OnlineInfo) o;
-        return Objects.equals(this.publishDomain, onlineInfo.publishDomain) && Objects.equals(this.app, onlineInfo.app)
-            && Objects.equals(this.stream, onlineInfo.stream) && Objects.equals(this.videoCodec, onlineInfo.videoCodec)
-            && Objects.equals(this.audioCodec, onlineInfo.audioCodec)
-            && Objects.equals(this.videoFrameRate, onlineInfo.videoFrameRate)
-            && Objects.equals(this.audioFrameRate, onlineInfo.audioFrameRate)
-            && Objects.equals(this.videoBitrate, onlineInfo.videoBitrate)
-            && Objects.equals(this.audioBitrate, onlineInfo.audioBitrate)
-            && Objects.equals(this.resolution, onlineInfo.resolution)
-            && Objects.equals(this.clientIp, onlineInfo.clientIp)
-            && Objects.equals(this.startTime, onlineInfo.startTime);
+        OnlineInfo that = (OnlineInfo) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.videoCodec, that.videoCodec)
+            && Objects.equals(this.audioCodec, that.audioCodec)
+            && Objects.equals(this.videoFrameRate, that.videoFrameRate)
+            && Objects.equals(this.audioFrameRate, that.audioFrameRate)
+            && Objects.equals(this.videoBitrate, that.videoBitrate)
+            && Objects.equals(this.audioBitrate, that.audioBitrate) && Objects.equals(this.resolution, that.resolution)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

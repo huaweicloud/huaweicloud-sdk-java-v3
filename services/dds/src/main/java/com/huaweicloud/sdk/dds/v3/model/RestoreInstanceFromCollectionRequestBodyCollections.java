@@ -77,19 +77,17 @@ public class RestoreInstanceFromCollectionRequestBodyCollections {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreInstanceFromCollectionRequestBodyCollections restoreInstanceFromCollectionRequestBodyCollections =
-            (RestoreInstanceFromCollectionRequestBodyCollections) o;
-        return Objects.equals(this.oldName, restoreInstanceFromCollectionRequestBodyCollections.oldName)
-            && Objects.equals(this.newName, restoreInstanceFromCollectionRequestBodyCollections.newName)
-            && Objects.equals(this.restoreCollectionTime,
-                restoreInstanceFromCollectionRequestBodyCollections.restoreCollectionTime);
+        RestoreInstanceFromCollectionRequestBodyCollections that =
+            (RestoreInstanceFromCollectionRequestBodyCollections) obj;
+        return Objects.equals(this.oldName, that.oldName) && Objects.equals(this.newName, that.newName)
+            && Objects.equals(this.restoreCollectionTime, that.restoreCollectionTime);
     }
 
     @Override

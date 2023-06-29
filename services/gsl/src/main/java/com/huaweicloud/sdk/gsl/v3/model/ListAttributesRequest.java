@@ -105,18 +105,16 @@ public class ListAttributesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAttributesRequest listAttributesRequest = (ListAttributesRequest) o;
-        return Objects.equals(this.custAttrName, listAttributesRequest.custAttrName)
-            && Objects.equals(this.limit, listAttributesRequest.limit)
-            && Objects.equals(this.offset, listAttributesRequest.offset)
-            && Objects.equals(this.status, listAttributesRequest.status);
+        ListAttributesRequest that = (ListAttributesRequest) obj;
+        return Objects.equals(this.custAttrName, that.custAttrName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status);
     }
 
     @Override

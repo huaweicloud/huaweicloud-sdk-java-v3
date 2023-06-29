@@ -142,19 +142,17 @@ public class VersionMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionMetadata versionMetadata = (VersionMetadata) o;
-        return Objects.equals(this.id, versionMetadata.id)
-            && Objects.equals(this.createTime, versionMetadata.createTime)
-            && Objects.equals(this.kmsKeyId, versionMetadata.kmsKeyId)
-            && Objects.equals(this.secretName, versionMetadata.secretName)
-            && Objects.equals(this.versionStages, versionMetadata.versionStages);
+        VersionMetadata that = (VersionMetadata) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.kmsKeyId, that.kmsKeyId) && Objects.equals(this.secretName, that.secretName)
+            && Objects.equals(this.versionStages, that.versionStages);
     }
 
     @Override

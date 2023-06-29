@@ -439,31 +439,26 @@ public class FlinkJobDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlinkJobDetail flinkJobDetail = (FlinkJobDetail) o;
-        return Objects.equals(this.jobId, flinkJobDetail.jobId) && Objects.equals(this.name, flinkJobDetail.name)
-            && Objects.equals(this.desc, flinkJobDetail.desc) && Objects.equals(this.jobType, flinkJobDetail.jobType)
-            && Objects.equals(this.status, flinkJobDetail.status)
-            && Objects.equals(this.statusDesc, flinkJobDetail.statusDesc)
-            && Objects.equals(this.createTime, flinkJobDetail.createTime)
-            && Objects.equals(this.startTime, flinkJobDetail.startTime)
-            && Objects.equals(this.userId, flinkJobDetail.userId)
-            && Objects.equals(this.queueName, flinkJobDetail.queueName)
-            && Objects.equals(this.projectId, flinkJobDetail.projectId)
-            && Objects.equals(this.sqlBody, flinkJobDetail.sqlBody)
-            && Objects.equals(this.runMode, flinkJobDetail.runMode)
-            && Objects.equals(this.jobConfig, flinkJobDetail.jobConfig)
-            && Objects.equals(this.mainClass, flinkJobDetail.mainClass)
-            && Objects.equals(this.entrypointArgs, flinkJobDetail.entrypointArgs)
-            && Objects.equals(this.executionGraph, flinkJobDetail.executionGraph)
-            && Objects.equals(this.updateTime, flinkJobDetail.updateTime)
-            && Objects.equals(this.savepointPath, flinkJobDetail.savepointPath);
+        FlinkJobDetail that = (FlinkJobDetail) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.statusDesc, that.statusDesc)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.sqlBody, that.sqlBody)
+            && Objects.equals(this.runMode, that.runMode) && Objects.equals(this.jobConfig, that.jobConfig)
+            && Objects.equals(this.mainClass, that.mainClass)
+            && Objects.equals(this.entrypointArgs, that.entrypointArgs)
+            && Objects.equals(this.executionGraph, that.executionGraph)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.savepointPath, that.savepointPath);
     }
 
     @Override

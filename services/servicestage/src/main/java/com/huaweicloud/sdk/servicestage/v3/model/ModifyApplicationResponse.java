@@ -251,24 +251,20 @@ public class ModifyApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyApplicationResponse modifyApplicationResponse = (ModifyApplicationResponse) o;
-        return Objects.equals(this.id, modifyApplicationResponse.id)
-            && Objects.equals(this.name, modifyApplicationResponse.name)
-            && Objects.equals(this.componentCount, modifyApplicationResponse.componentCount)
-            && Objects.equals(this.creator, modifyApplicationResponse.creator)
-            && Objects.equals(this.projectId, modifyApplicationResponse.projectId)
-            && Objects.equals(this.enterpriseProjectId, modifyApplicationResponse.enterpriseProjectId)
-            && Objects.equals(this.createTime, modifyApplicationResponse.createTime)
-            && Objects.equals(this.updateTime, modifyApplicationResponse.updateTime)
-            && Objects.equals(this.description, modifyApplicationResponse.description)
-            && Objects.equals(this.labels, modifyApplicationResponse.labels);
+        ModifyApplicationResponse that = (ModifyApplicationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.componentCount, that.componentCount) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

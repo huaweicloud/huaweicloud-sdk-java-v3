@@ -94,22 +94,15 @@ public class ShowJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -345,22 +338,19 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.name, showJobResponse.name) && Objects.equals(this.id, showJobResponse.id)
-            && Objects.equals(this.nodes, showJobResponse.nodes)
-            && Objects.equals(this.schedule, showJobResponse.schedule)
-            && Objects.equals(this.params, showJobResponse.params)
-            && Objects.equals(this.directory, showJobResponse.directory)
-            && Objects.equals(this.jobType, showJobResponse.jobType)
-            && Objects.equals(this.lastUpdateUser, showJobResponse.lastUpdateUser)
-            && Objects.equals(this.basicConfig, showJobResponse.basicConfig);
+        ShowJobResponse that = (ShowJobResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.lastUpdateUser, that.lastUpdateUser)
+            && Objects.equals(this.basicConfig, that.basicConfig);
     }
 
     @Override

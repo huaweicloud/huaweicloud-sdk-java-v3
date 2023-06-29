@@ -74,16 +74,16 @@ public class AppCallbacks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppCallbacks appCallbacks = (AppCallbacks) o;
-        return Objects.equals(this.pushCallback, appCallbacks.pushCallback)
-            && Objects.equals(this.recordCallback, appCallbacks.recordCallback);
+        AppCallbacks that = (AppCallbacks) obj;
+        return Objects.equals(this.pushCallback, that.pushCallback)
+            && Objects.equals(this.recordCallback, that.recordCallback);
     }
 
     @Override

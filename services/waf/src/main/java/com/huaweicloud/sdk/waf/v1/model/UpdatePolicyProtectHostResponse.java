@@ -372,26 +372,20 @@ public class UpdatePolicyProtectHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyProtectHostResponse updatePolicyProtectHostResponse = (UpdatePolicyProtectHostResponse) o;
-        return Objects.equals(this.id, updatePolicyProtectHostResponse.id)
-            && Objects.equals(this.name, updatePolicyProtectHostResponse.name)
-            && Objects.equals(this.level, updatePolicyProtectHostResponse.level)
-            && Objects.equals(this.fullDetection, updatePolicyProtectHostResponse.fullDetection)
-            && Objects.equals(this.robotAction, updatePolicyProtectHostResponse.robotAction)
-            && Objects.equals(this.action, updatePolicyProtectHostResponse.action)
-            && Objects.equals(this.options, updatePolicyProtectHostResponse.options)
-            && Objects.equals(this.modulexOptions, updatePolicyProtectHostResponse.modulexOptions)
-            && Objects.equals(this.hosts, updatePolicyProtectHostResponse.hosts)
-            && Objects.equals(this.bindHost, updatePolicyProtectHostResponse.bindHost)
-            && Objects.equals(this.extend, updatePolicyProtectHostResponse.extend)
-            && Objects.equals(this.timestamp, updatePolicyProtectHostResponse.timestamp);
+        UpdatePolicyProtectHostResponse that = (UpdatePolicyProtectHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.fullDetection, that.fullDetection)
+            && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

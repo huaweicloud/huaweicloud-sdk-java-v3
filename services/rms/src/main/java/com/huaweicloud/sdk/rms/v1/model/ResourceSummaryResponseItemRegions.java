@@ -55,16 +55,15 @@ public class ResourceSummaryResponseItemRegions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceSummaryResponseItemRegions resourceSummaryResponseItemRegions = (ResourceSummaryResponseItemRegions) o;
-        return Objects.equals(this.regionId, resourceSummaryResponseItemRegions.regionId)
-            && Objects.equals(this.count, resourceSummaryResponseItemRegions.count);
+        ResourceSummaryResponseItemRegions that = (ResourceSummaryResponseItemRegions) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.count, that.count);
     }
 
     @Override

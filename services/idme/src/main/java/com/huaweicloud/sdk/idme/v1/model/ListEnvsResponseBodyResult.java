@@ -517,37 +517,29 @@ public class ListEnvsResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvsResponseBodyResult listEnvsResponseBodyResult = (ListEnvsResponseBodyResult) o;
-        return Objects.equals(this.projectId, listEnvsResponseBodyResult.projectId)
-            && Objects.equals(this.regionId, listEnvsResponseBodyResult.regionId)
-            && Objects.equals(this.envId, listEnvsResponseBodyResult.envId)
-            && Objects.equals(this.envName, listEnvsResponseBodyResult.envName)
-            && Objects.equals(this.envStatus, listEnvsResponseBodyResult.envStatus)
-            && Objects.equals(this.envAppLinkStatus, listEnvsResponseBodyResult.envAppLinkStatus)
-            && Objects.equals(this.envAppLinkStatusMsg, listEnvsResponseBodyResult.envAppLinkStatusMsg)
-            && Objects.equals(this.endpoint, listEnvsResponseBodyResult.endpoint)
-            && Objects.equals(this.jobId, listEnvsResponseBodyResult.jobId)
-            && Objects.equals(this.envConfInfo, listEnvsResponseBodyResult.envConfInfo)
-            && Objects.equals(this.appId, listEnvsResponseBodyResult.appId)
-            && Objects.equals(this.appVersion, listEnvsResponseBodyResult.appVersion)
-            && Objects.equals(this.appNameEn, listEnvsResponseBodyResult.appNameEn)
-            && Objects.equals(this.appNameCn, listEnvsResponseBodyResult.appNameCn)
-            && Objects.equals(this.enabled, listEnvsResponseBodyResult.enabled)
-            && Objects.equals(this.expireTime, listEnvsResponseBodyResult.expireTime)
-            && Objects.equals(this.lastDeployTime, listEnvsResponseBodyResult.lastDeployTime)
-            && Objects.equals(this.deployUserId, listEnvsResponseBodyResult.deployUserId)
-            && Objects.equals(this.chargingMode, listEnvsResponseBodyResult.chargingMode)
-            && Objects.equals(this.createTime, listEnvsResponseBodyResult.createTime)
-            && Objects.equals(this.resourceId, listEnvsResponseBodyResult.resourceId)
-            && Objects.equals(this.deployable, listEnvsResponseBodyResult.deployable)
-            && Objects.equals(this.uninstallable, listEnvsResponseBodyResult.uninstallable);
+        ListEnvsResponseBodyResult that = (ListEnvsResponseBodyResult) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.envStatus, that.envStatus)
+            && Objects.equals(this.envAppLinkStatus, that.envAppLinkStatus)
+            && Objects.equals(this.envAppLinkStatusMsg, that.envAppLinkStatusMsg)
+            && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.envConfInfo, that.envConfInfo) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.appNameEn, that.appNameEn)
+            && Objects.equals(this.appNameCn, that.appNameCn) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.lastDeployTime, that.lastDeployTime)
+            && Objects.equals(this.deployUserId, that.deployUserId)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.deployable, that.deployable)
+            && Objects.equals(this.uninstallable, that.uninstallable);
     }
 
     @Override

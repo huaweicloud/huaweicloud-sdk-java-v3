@@ -187,22 +187,18 @@ public class ListSharedReposDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSharedReposDetailsRequest listSharedReposDetailsRequest = (ListSharedReposDetailsRequest) o;
-        return Objects.equals(this.namespace, listSharedReposDetailsRequest.namespace)
-            && Objects.equals(this.name, listSharedReposDetailsRequest.name)
-            && Objects.equals(this.center, listSharedReposDetailsRequest.center)
-            && Objects.equals(this.limit, listSharedReposDetailsRequest.limit)
-            && Objects.equals(this.offset, listSharedReposDetailsRequest.offset)
-            && Objects.equals(this.orderColumn, listSharedReposDetailsRequest.orderColumn)
-            && Objects.equals(this.orderType, listSharedReposDetailsRequest.orderType)
-            && Objects.equals(this.filter, listSharedReposDetailsRequest.filter);
+        ListSharedReposDetailsRequest that = (ListSharedReposDetailsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.center, that.center) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.orderColumn, that.orderColumn)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

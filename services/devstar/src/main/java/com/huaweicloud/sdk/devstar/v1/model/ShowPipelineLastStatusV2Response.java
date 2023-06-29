@@ -273,25 +273,20 @@ public class ShowPipelineLastStatusV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineLastStatusV2Response showPipelineLastStatusV2Response = (ShowPipelineLastStatusV2Response) o;
-        return Objects.equals(this.pipelineId, showPipelineLastStatusV2Response.pipelineId)
-            && Objects.equals(this.name, showPipelineLastStatusV2Response.name)
-            && Objects.equals(this.status, showPipelineLastStatusV2Response.status)
-            && Objects.equals(this.result, showPipelineLastStatusV2Response.result)
-            && Objects.equals(this.executor, showPipelineLastStatusV2Response.executor)
-            && Objects.equals(this.startTime, showPipelineLastStatusV2Response.startTime)
-            && Objects.equals(this.finishTime, showPipelineLastStatusV2Response.finishTime)
-            && Objects.equals(this.detailUrl, showPipelineLastStatusV2Response.detailUrl)
-            && Objects.equals(this.modifyUrl, showPipelineLastStatusV2Response.modifyUrl)
-            && Objects.equals(this.buildId, showPipelineLastStatusV2Response.buildId)
-            && Objects.equals(this.stages, showPipelineLastStatusV2Response.stages);
+        ShowPipelineLastStatusV2Response that = (ShowPipelineLastStatusV2Response) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.executor, that.executor) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.detailUrl, that.detailUrl)
+            && Objects.equals(this.modifyUrl, that.modifyUrl) && Objects.equals(this.buildId, that.buildId)
+            && Objects.equals(this.stages, that.stages);
     }
 
     @Override

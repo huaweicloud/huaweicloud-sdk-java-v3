@@ -100,19 +100,16 @@ public class ShowV2XEdgeAppDetailByEdgeAppIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowV2XEdgeAppDetailByEdgeAppIdResponse showV2XEdgeAppDetailByEdgeAppIdResponse =
-            (ShowV2XEdgeAppDetailByEdgeAppIdResponse) o;
-        return Objects.equals(this.v2xEdgeId, showV2XEdgeAppDetailByEdgeAppIdResponse.v2xEdgeId)
-            && Objects.equals(this.edgeAppId, showV2XEdgeAppDetailByEdgeAppIdResponse.edgeAppId)
-            && Objects.equals(this.appVersion, showV2XEdgeAppDetailByEdgeAppIdResponse.appVersion)
-            && Objects.equals(this.status, showV2XEdgeAppDetailByEdgeAppIdResponse.status);
+        ShowV2XEdgeAppDetailByEdgeAppIdResponse that = (ShowV2XEdgeAppDetailByEdgeAppIdResponse) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.status, that.status);
     }
 
     @Override

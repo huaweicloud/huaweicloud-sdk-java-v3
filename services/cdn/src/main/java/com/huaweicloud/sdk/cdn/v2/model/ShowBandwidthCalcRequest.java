@@ -147,20 +147,18 @@ public class ShowBandwidthCalcRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBandwidthCalcRequest showBandwidthCalcRequest = (ShowBandwidthCalcRequest) o;
-        return Objects.equals(this.startTime, showBandwidthCalcRequest.startTime)
-            && Objects.equals(this.endTime, showBandwidthCalcRequest.endTime)
-            && Objects.equals(this.domainName, showBandwidthCalcRequest.domainName)
-            && Objects.equals(this.serviceArea, showBandwidthCalcRequest.serviceArea)
-            && Objects.equals(this.enterpriseProjectId, showBandwidthCalcRequest.enterpriseProjectId)
-            && Objects.equals(this.calcType, showBandwidthCalcRequest.calcType);
+        ShowBandwidthCalcRequest that = (ShowBandwidthCalcRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.calcType, that.calcType);
     }
 
     @Override

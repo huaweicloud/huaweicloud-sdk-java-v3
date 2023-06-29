@@ -77,16 +77,16 @@ public class ListProtectedInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectedInstancesResponse listProtectedInstancesResponse = (ListProtectedInstancesResponse) o;
-        return Objects.equals(this.protectedInstances, listProtectedInstancesResponse.protectedInstances)
-            && Objects.equals(this.count, listProtectedInstancesResponse.count);
+        ListProtectedInstancesResponse that = (ListProtectedInstancesResponse) obj;
+        return Objects.equals(this.protectedInstances, that.protectedInstances)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

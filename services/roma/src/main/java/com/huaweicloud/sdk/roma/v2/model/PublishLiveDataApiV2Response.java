@@ -177,21 +177,18 @@ public class PublishLiveDataApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishLiveDataApiV2Response publishLiveDataApiV2Response = (PublishLiveDataApiV2Response) o;
-        return Objects.equals(this.id, publishLiveDataApiV2Response.id)
-            && Objects.equals(this.ldApiId, publishLiveDataApiV2Response.ldApiId)
-            && Objects.equals(this.groupId, publishLiveDataApiV2Response.groupId)
-            && Objects.equals(this.envId, publishLiveDataApiV2Response.envId)
-            && Objects.equals(this.apiId, publishLiveDataApiV2Response.apiId)
-            && Objects.equals(this.deployTime, publishLiveDataApiV2Response.deployTime)
-            && Objects.equals(this.apiDefinition, publishLiveDataApiV2Response.apiDefinition);
+        PublishLiveDataApiV2Response that = (PublishLiveDataApiV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.deployTime, that.deployTime)
+            && Objects.equals(this.apiDefinition, that.apiDefinition);
     }
 
     @Override

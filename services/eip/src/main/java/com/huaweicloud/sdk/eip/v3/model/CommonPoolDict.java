@@ -186,19 +186,18 @@ public class CommonPoolDict {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonPoolDict commonPoolDict = (CommonPoolDict) o;
-        return Objects.equals(this.name, commonPoolDict.name) && Objects.equals(this.status, commonPoolDict.status)
-            && Objects.equals(this.type, commonPoolDict.type) && Objects.equals(this.used, commonPoolDict.used)
-            && Objects.equals(this.publicBorderGroup, commonPoolDict.publicBorderGroup)
-            && Objects.equals(this.id, commonPoolDict.id)
-            && Objects.equals(this.allowShareBandwidthTypes, commonPoolDict.allowShareBandwidthTypes);
+        CommonPoolDict that = (CommonPoolDict) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.allowShareBandwidthTypes, that.allowShareBandwidthTypes);
     }
 
     @Override

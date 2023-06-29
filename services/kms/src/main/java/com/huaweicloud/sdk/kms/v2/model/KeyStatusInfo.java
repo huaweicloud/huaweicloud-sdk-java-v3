@@ -55,15 +55,15 @@ public class KeyStatusInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyStatusInfo keyStatusInfo = (KeyStatusInfo) o;
-        return Objects.equals(this.keyId, keyStatusInfo.keyId) && Objects.equals(this.keyState, keyStatusInfo.keyState);
+        KeyStatusInfo that = (KeyStatusInfo) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keyState, that.keyState);
     }
 
     @Override

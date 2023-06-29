@@ -197,21 +197,18 @@ public class ClusterListInstances {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterListInstances clusterListInstances = (ClusterListInstances) o;
-        return Objects.equals(this.status, clusterListInstances.status)
-            && Objects.equals(this.type, clusterListInstances.type) && Objects.equals(this.id, clusterListInstances.id)
-            && Objects.equals(this.name, clusterListInstances.name)
-            && Objects.equals(this.specCode, clusterListInstances.specCode)
-            && Objects.equals(this.azCode, clusterListInstances.azCode)
-            && Objects.equals(this.ip, clusterListInstances.ip)
-            && Objects.equals(this.volume, clusterListInstances.volume);
+        ClusterListInstances that = (ClusterListInstances) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.volume, that.volume);
     }
 
     @Override

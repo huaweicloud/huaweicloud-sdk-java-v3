@@ -75,16 +75,15 @@ public class BatchExportCloudPhoneDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchExportCloudPhoneDataResponse batchExportCloudPhoneDataResponse = (BatchExportCloudPhoneDataResponse) o;
-        return Objects.equals(this.requestId, batchExportCloudPhoneDataResponse.requestId)
-            && Objects.equals(this.jobs, batchExportCloudPhoneDataResponse.jobs);
+        BatchExportCloudPhoneDataResponse that = (BatchExportCloudPhoneDataResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

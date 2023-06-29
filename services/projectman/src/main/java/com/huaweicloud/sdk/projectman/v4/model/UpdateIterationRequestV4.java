@@ -143,20 +143,17 @@ public class UpdateIterationRequestV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIterationRequestV4 updateIterationRequestV4 = (UpdateIterationRequestV4) o;
-        return Objects.equals(this.beginTime, updateIterationRequestV4.beginTime)
-            && Objects.equals(this.description, updateIterationRequestV4.description)
-            && Objects.equals(this.endTime, updateIterationRequestV4.endTime)
-            && Objects.equals(this.name, updateIterationRequestV4.name)
-            && Objects.equals(this.status, updateIterationRequestV4.status)
-            && Objects.equals(this.overType, updateIterationRequestV4.overType);
+        UpdateIterationRequestV4 that = (UpdateIterationRequestV4) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.overType, that.overType);
     }
 
     @Override

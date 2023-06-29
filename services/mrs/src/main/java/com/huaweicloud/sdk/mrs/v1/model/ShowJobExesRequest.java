@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowJobExesRequest  {
-
+public class ShowJobExesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_exe_id")
-    
+    @JsonProperty(value = "job_exe_id")
 
     private String jobExeId;
 
@@ -28,9 +19,6 @@ public class ShowJobExesRequest  {
         this.jobExeId = jobExeId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -44,23 +32,23 @@ public class ShowJobExesRequest  {
         this.jobExeId = jobExeId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobExesRequest showJobExesRequest = (ShowJobExesRequest) o;
-        return Objects.equals(this.jobExeId, showJobExesRequest.jobExeId);
+        ShowJobExesRequest that = (ShowJobExesRequest) obj;
+        return Objects.equals(this.jobExeId, that.jobExeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobExeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ShowJobExesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ShowJobExesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

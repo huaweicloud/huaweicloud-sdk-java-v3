@@ -126,19 +126,17 @@ public class SearchProgramsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchProgramsRequest searchProgramsRequest = (SearchProgramsRequest) o;
-        return Objects.equals(this.xRequestId, searchProgramsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchProgramsRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchProgramsRequest.offset)
-            && Objects.equals(this.limit, searchProgramsRequest.limit)
-            && Objects.equals(this.searchKey, searchProgramsRequest.searchKey);
+        SearchProgramsRequest that = (SearchProgramsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

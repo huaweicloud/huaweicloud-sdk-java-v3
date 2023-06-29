@@ -55,16 +55,16 @@ public class BackendLatencyStats {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendLatencyStats backendLatencyStats = (BackendLatencyStats) o;
-        return Objects.equals(this.maxBackendLatency, backendLatencyStats.maxBackendLatency)
-            && Objects.equals(this.avgBackendLatency, backendLatencyStats.avgBackendLatency);
+        BackendLatencyStats that = (BackendLatencyStats) obj;
+        return Objects.equals(this.maxBackendLatency, that.maxBackendLatency)
+            && Objects.equals(this.avgBackendLatency, that.avgBackendLatency);
     }
 
     @Override

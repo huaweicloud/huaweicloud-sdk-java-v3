@@ -103,18 +103,16 @@ public class ListShareFilesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListShareFilesRequest listShareFilesRequest = (ListShareFilesRequest) o;
-        return Objects.equals(this.offset, listShareFilesRequest.offset)
-            && Objects.equals(this.limit, listShareFilesRequest.limit)
-            && Objects.equals(this.serverIds, listShareFilesRequest.serverIds)
-            && Objects.equals(this.path, listShareFilesRequest.path);
+        ListShareFilesRequest that = (ListShareFilesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.serverIds, that.serverIds) && Objects.equals(this.path, that.path);
     }
 
     @Override

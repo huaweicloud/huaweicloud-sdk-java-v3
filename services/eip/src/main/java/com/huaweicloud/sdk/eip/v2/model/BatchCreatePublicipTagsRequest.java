@@ -65,16 +65,15 @@ public class BatchCreatePublicipTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreatePublicipTagsRequest batchCreatePublicipTagsRequest = (BatchCreatePublicipTagsRequest) o;
-        return Objects.equals(this.publicipId, batchCreatePublicipTagsRequest.publicipId)
-            && Objects.equals(this.body, batchCreatePublicipTagsRequest.body);
+        BatchCreatePublicipTagsRequest that = (BatchCreatePublicipTagsRequest) obj;
+        return Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.body, that.body);
     }
 
     @Override

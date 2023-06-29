@@ -113,17 +113,16 @@ public class ShowTopologyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopologyResponse showTopologyResponse = (ShowTopologyResponse) o;
-        return Objects.equals(this.globalTraceId, showTopologyResponse.globalTraceId)
-            && Objects.equals(this.lineList, showTopologyResponse.lineList)
-            && Objects.equals(this.nodeList, showTopologyResponse.nodeList);
+        ShowTopologyResponse that = (ShowTopologyResponse) obj;
+        return Objects.equals(this.globalTraceId, that.globalTraceId) && Objects.equals(this.lineList, that.lineList)
+            && Objects.equals(this.nodeList, that.nodeList);
     }
 
     @Override

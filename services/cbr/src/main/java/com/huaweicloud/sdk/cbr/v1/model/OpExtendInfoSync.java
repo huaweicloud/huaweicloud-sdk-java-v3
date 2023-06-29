@@ -77,17 +77,17 @@ public class OpExtendInfoSync {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoSync opExtendInfoSync = (OpExtendInfoSync) o;
-        return Objects.equals(this.syncBackupNum, opExtendInfoSync.syncBackupNum)
-            && Objects.equals(this.deleteBackupNum, opExtendInfoSync.deleteBackupNum)
-            && Objects.equals(this.errSyncBackupNum, opExtendInfoSync.errSyncBackupNum);
+        OpExtendInfoSync that = (OpExtendInfoSync) obj;
+        return Objects.equals(this.syncBackupNum, that.syncBackupNum)
+            && Objects.equals(this.deleteBackupNum, that.deleteBackupNum)
+            && Objects.equals(this.errSyncBackupNum, that.errSyncBackupNum);
     }
 
     @Override

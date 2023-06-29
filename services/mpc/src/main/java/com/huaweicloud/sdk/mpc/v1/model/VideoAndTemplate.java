@@ -107,18 +107,16 @@ public class VideoAndTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoAndTemplate videoAndTemplate = (VideoAndTemplate) o;
-        return Objects.equals(this.templateId, videoAndTemplate.templateId)
-            && Objects.equals(this.width, videoAndTemplate.width)
-            && Objects.equals(this.height, videoAndTemplate.height)
-            && Objects.equals(this.bitrate, videoAndTemplate.bitrate);
+        VideoAndTemplate that = (VideoAndTemplate) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.bitrate, that.bitrate);
     }
 
     @Override

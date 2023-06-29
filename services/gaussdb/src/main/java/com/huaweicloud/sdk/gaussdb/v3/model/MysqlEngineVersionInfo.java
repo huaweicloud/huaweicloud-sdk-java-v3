@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlEngineVersionInfo
  */
-public class MysqlEngineVersionInfo  {
-
+public class MysqlEngineVersionInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
@@ -33,9 +24,6 @@ public class MysqlEngineVersionInfo  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本ID，该字段不会有重复
@@ -49,15 +37,10 @@ public class MysqlEngineVersionInfo  {
         this.id = id;
     }
 
-    
-
     public MysqlEngineVersionInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本号，只返回两位数的大版本号
@@ -71,24 +54,23 @@ public class MysqlEngineVersionInfo  {
         this.name = name;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlEngineVersionInfo mysqlEngineVersionInfo = (MysqlEngineVersionInfo) o;
-        return Objects.equals(this.id, mysqlEngineVersionInfo.id) &&
-            Objects.equals(this.name, mysqlEngineVersionInfo.name);
+        MysqlEngineVersionInfo that = (MysqlEngineVersionInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class MysqlEngineVersionInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class MysqlEngineVersionInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -43,15 +43,15 @@ public class UpdateSubnetRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubnetRequestBody updateSubnetRequestBody = (UpdateSubnetRequestBody) o;
-        return Objects.equals(this.subnet, updateSubnetRequestBody.subnet);
+        UpdateSubnetRequestBody that = (UpdateSubnetRequestBody) obj;
+        return Objects.equals(this.subnet, that.subnet);
     }
 
     @Override

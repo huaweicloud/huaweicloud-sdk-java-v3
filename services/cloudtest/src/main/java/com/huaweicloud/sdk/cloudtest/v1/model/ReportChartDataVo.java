@@ -127,17 +127,16 @@ public class ReportChartDataVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportChartDataVo reportChartDataVo = (ReportChartDataVo) o;
-        return Objects.equals(this.id, reportChartDataVo.id) && Objects.equals(this.name, reportChartDataVo.name)
-            && Objects.equals(this.analyzeDim, reportChartDataVo.analyzeDim)
-            && Objects.equals(this.compareDim, reportChartDataVo.compareDim);
+        ReportChartDataVo that = (ReportChartDataVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.analyzeDim, that.analyzeDim) && Objects.equals(this.compareDim, that.compareDim);
     }
 
     @Override

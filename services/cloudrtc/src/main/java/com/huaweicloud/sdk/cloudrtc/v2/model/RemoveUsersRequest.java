@@ -157,20 +157,17 @@ public class RemoveUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveUsersRequest removeUsersRequest = (RemoveUsersRequest) o;
-        return Objects.equals(this.authorization, removeUsersRequest.authorization)
-            && Objects.equals(this.xSdkDate, removeUsersRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, removeUsersRequest.xProjectId)
-            && Objects.equals(this.appId, removeUsersRequest.appId)
-            && Objects.equals(this.roomId, removeUsersRequest.roomId)
-            && Objects.equals(this.body, removeUsersRequest.body);
+        RemoveUsersRequest that = (RemoveUsersRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.body, that.body);
     }
 
     @Override

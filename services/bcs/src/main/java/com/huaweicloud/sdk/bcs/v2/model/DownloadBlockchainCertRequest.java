@@ -78,22 +78,15 @@ public class DownloadBlockchainCertRequest implements ProgressRequest {
             if (value == null) {
                 return null;
             }
-            CertTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CertTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CertTypeEnum(value));
         }
 
         public static CertTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CertTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,17 +184,16 @@ public class DownloadBlockchainCertRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadBlockchainCertRequest downloadBlockchainCertRequest = (DownloadBlockchainCertRequest) o;
-        return Objects.equals(this.blockchainId, downloadBlockchainCertRequest.blockchainId)
-            && Objects.equals(this.orgName, downloadBlockchainCertRequest.orgName)
-            && Objects.equals(this.certType, downloadBlockchainCertRequest.certType);
+        DownloadBlockchainCertRequest that = (DownloadBlockchainCertRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.orgName, that.orgName)
+            && Objects.equals(this.certType, that.certType);
     }
 
     @Override

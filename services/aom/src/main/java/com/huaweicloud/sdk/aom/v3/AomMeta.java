@@ -1,15 +1,11 @@
 package com.huaweicloud.sdk.aom.v3;
 
+import com.huaweicloud.sdk.aom.v3.model.*;
 import com.huaweicloud.sdk.core.TypeCasts;
 import com.huaweicloud.sdk.core.http.FieldExistence;
 import com.huaweicloud.sdk.core.http.HttpMethod;
 import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
-import com.huaweicloud.sdk.aom.v3.model.*;
-
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
 
 @SuppressWarnings("unchecked")
 public class AomMeta {
@@ -31,25 +27,22 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(BizAppParam.class),
             f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(CreateAppResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(CreateAppResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent = genForcreateComponent();
+    public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
+        genForcreateComponent();
 
     private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
         // basic
@@ -66,11 +59,9 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(ComponentParam.class),
             f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -92,11 +83,9 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(EnvParam.class),
             f -> f.withMarshaller(CreateEnvRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -118,25 +107,22 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent = genFordeleteComponent();
+    public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
+        genFordeleteComponent();
 
     private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
         // basic
@@ -153,20 +139,16 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
                 req.setComponentId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteComponentResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteComponentResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -188,24 +170,23 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteEnvRequest::getEnvironmentId, (req, v) -> {
                 req.setEnvironmentId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNode = genForlistResourceUnderNode();
+    public static final HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNode =
+        genForlistResourceUnderNode();
 
     private static HttpRequestDef<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> genForlistResourceUnderNode() {
         // basic
-        HttpRequestDef.Builder<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, ListResourceUnderNodeRequest.class, ListResourceUnderNodeResponse.class)
-                .withName("ListResourceUnderNode")
-                .withUri("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, ListResourceUnderNodeRequest.class, ListResourceUnderNodeResponse.class)
+            .withName("ListResourceUnderNode")
+            .withUri("/v1/resource/{rf_resource_type}/type/{type}/ci-relationships")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("rf_resource_type",
@@ -214,27 +195,23 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceUnderNodeRequest::getRfResourceType, (req, v) -> {
                 req.setRfResourceType(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("type",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListResourceUnderNodeRequest::getType, (req, v) -> {
                 req.setType(v);
-            })
-        );
+            }));
         builder.<PageResourceListParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(PageResourceListParam.class),
             f -> f.withMarshaller(ListResourceUnderNodeRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -256,16 +233,15 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> showAppByName = genForshowAppByName();
+    public static final HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> showAppByName =
+        genForshowAppByName();
 
     private static HttpRequestDef<ShowAppByNameRequest, ShowAppByNameResponse> genForshowAppByName() {
         // basic
@@ -282,24 +258,22 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppByNameRequest::getName, (req, v) -> {
                 req.setName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("display_name",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppByNameRequest::getDisplayName, (req, v) -> {
                 req.setDisplayName(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowComponentRequest, ShowComponentResponse> showComponent = genForshowComponent();
+    public static final HttpRequestDef<ShowComponentRequest, ShowComponentResponse> showComponent =
+        genForshowComponent();
 
     private static HttpRequestDef<ShowComponentRequest, ShowComponentResponse> genForshowComponent() {
         // basic
@@ -316,16 +290,15 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowComponentRequest::getComponentId, (req, v) -> {
                 req.setComponentId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByName = genForshowComponentByName();
+    public static final HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByName =
+        genForshowComponentByName();
 
     private static HttpRequestDef<ShowComponentByNameRequest, ShowComponentByNameResponse> genForshowComponentByName() {
         // basic
@@ -342,19 +315,16 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowComponentByNameRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("component_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowComponentByNameRequest::getComponentName, (req, v) -> {
                 req.setComponentName(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -376,16 +346,15 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEnvRequest::getEnvironmentId, (req, v) -> {
                 req.setEnvironmentId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByName = genForshowEnvByName();
+    public static final HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByName =
+        genForshowEnvByName();
 
     private static HttpRequestDef<ShowEnvByNameRequest, ShowEnvByNameResponse> genForshowEnvByName() {
         // basic
@@ -402,27 +371,23 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEnvByNameRequest::getEnvironmentName, (req, v) -> {
                 req.setEnvironmentName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("region",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEnvByNameRequest::getRegion, (req, v) -> {
                 req.setRegion(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("component_id",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowEnvByNameRequest::getComponentId, (req, v) -> {
                 req.setComponentId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -444,24 +409,22 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAppRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
-            })
-        );
+            }));
         builder.<BizAppParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(BizAppParam.class),
             f -> f.withMarshaller(UpdateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> updateComponent = genForupdateComponent();
+    public static final HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> updateComponent =
+        genForupdateComponent();
 
     private static HttpRequestDef<UpdateComponentRequest, UpdateComponentResponse> genForupdateComponent() {
         // basic
@@ -478,19 +441,16 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateComponentRequest::getComponentId, (req, v) -> {
                 req.setComponentId(v);
-            })
-        );
+            }));
         builder.<ComponentUpdateParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(ComponentUpdateParam.class),
             f -> f.withMarshaller(UpdateComponentRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -512,19 +472,16 @@ public class AomMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateEnvRequest::getEnvironmentId, (req, v) -> {
                 req.setEnvironmentId(v);
-            })
-        );
+            }));
         builder.<EnvParam>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(EnvParam.class),
             f -> f.withMarshaller(UpdateEnvRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }

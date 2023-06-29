@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.dbss.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.dbss.v1.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class DbssAsyncClient {
+
     protected HcClient hcClient;
 
     public DbssAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class DbssAsyncClient {
     public static ClientBuilder<DbssAsyncClient> newBuilder() {
         return new ClientBuilder<>(DbssAsyncClient::new);
     }
-
 
     /**
      * 添加RDS免agent数据库
@@ -29,7 +29,8 @@ public class DbssAsyncClient {
      * @param AddRdsNoAgentDatabaseRequest 请求对象
      * @return CompletableFuture<AddRdsNoAgentDatabaseResponse>
      */
-    public CompletableFuture<AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseAsync(AddRdsNoAgentDatabaseRequest request) {
+    public CompletableFuture<AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseAsync(
+        AddRdsNoAgentDatabaseRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.addRdsNoAgentDatabase);
     }
 
@@ -43,8 +44,10 @@ public class DbssAsyncClient {
      * @param AddRdsNoAgentDatabaseRequest 请求对象
      * @return AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>
      */
-    public AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseAsyncInvoker(AddRdsNoAgentDatabaseRequest request) {
-        return new AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>(request, DbssMeta.addRdsNoAgentDatabase, hcClient);
+    public AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseAsyncInvoker(
+        AddRdsNoAgentDatabaseRequest request) {
+        return new AsyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>(request,
+            DbssMeta.addRdsNoAgentDatabase, hcClient);
     }
 
     /**
@@ -71,8 +74,10 @@ public class DbssAsyncClient {
      * @param BatchAddResourceTagRequest 请求对象
      * @return AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>
      */
-    public AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagAsyncInvoker(BatchAddResourceTagRequest request) {
-        return new AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>(request, DbssMeta.batchAddResourceTag, hcClient);
+    public AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagAsyncInvoker(
+        BatchAddResourceTagRequest request) {
+        return new AsyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>(request,
+            DbssMeta.batchAddResourceTag, hcClient);
     }
 
     /**
@@ -85,7 +90,8 @@ public class DbssAsyncClient {
      * @param BatchDeleteResourceTagRequest 请求对象
      * @return CompletableFuture<BatchDeleteResourceTagResponse>
      */
-    public CompletableFuture<BatchDeleteResourceTagResponse> batchDeleteResourceTagAsync(BatchDeleteResourceTagRequest request) {
+    public CompletableFuture<BatchDeleteResourceTagResponse> batchDeleteResourceTagAsync(
+        BatchDeleteResourceTagRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.batchDeleteResourceTag);
     }
 
@@ -99,8 +105,10 @@ public class DbssAsyncClient {
      * @param BatchDeleteResourceTagRequest 请求对象
      * @return AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
      */
-    public AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagAsyncInvoker(BatchDeleteResourceTagRequest request) {
-        return new AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request, DbssMeta.batchDeleteResourceTag, hcClient);
+    public AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagAsyncInvoker(
+        BatchDeleteResourceTagRequest request) {
+        return new AsyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request,
+            DbssMeta.batchDeleteResourceTag, hcClient);
     }
 
     /**
@@ -113,7 +121,8 @@ public class DbssAsyncClient {
      * @param CountResourceInstanceByTagRequest 请求对象
      * @return CompletableFuture<CountResourceInstanceByTagResponse>
      */
-    public CompletableFuture<CountResourceInstanceByTagResponse> countResourceInstanceByTagAsync(CountResourceInstanceByTagRequest request) {
+    public CompletableFuture<CountResourceInstanceByTagResponse> countResourceInstanceByTagAsync(
+        CountResourceInstanceByTagRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.countResourceInstanceByTag);
     }
 
@@ -127,8 +136,10 @@ public class DbssAsyncClient {
      * @param CountResourceInstanceByTagRequest 请求对象
      * @return AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>
      */
-    public AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagAsyncInvoker(CountResourceInstanceByTagRequest request) {
-        return new AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>(request, DbssMeta.countResourceInstanceByTag, hcClient);
+    public AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagAsyncInvoker(
+        CountResourceInstanceByTagRequest request) {
+        return new AsyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>(request,
+            DbssMeta.countResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -141,7 +152,8 @@ public class DbssAsyncClient {
      * @param CreateInstancesPeriodOrderRequest 请求对象
      * @return CompletableFuture<CreateInstancesPeriodOrderResponse>
      */
-    public CompletableFuture<CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderAsync(CreateInstancesPeriodOrderRequest request) {
+    public CompletableFuture<CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderAsync(
+        CreateInstancesPeriodOrderRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.createInstancesPeriodOrder);
     }
 
@@ -155,8 +167,10 @@ public class DbssAsyncClient {
      * @param CreateInstancesPeriodOrderRequest 请求对象
      * @return AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>
      */
-    public AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderAsyncInvoker(CreateInstancesPeriodOrderRequest request) {
-        return new AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>(request, DbssMeta.createInstancesPeriodOrder, hcClient);
+    public AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderAsyncInvoker(
+        CreateInstancesPeriodOrderRequest request) {
+        return new AsyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>(request,
+            DbssMeta.createInstancesPeriodOrder, hcClient);
     }
 
     /**
@@ -183,8 +197,10 @@ public class DbssAsyncClient {
      * @param ListAuditDatabasesRequest 请求对象
      * @return AsyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>
      */
-    public AsyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabasesAsyncInvoker(ListAuditDatabasesRequest request) {
-        return new AsyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>(request, DbssMeta.listAuditDatabases, hcClient);
+    public AsyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabasesAsyncInvoker(
+        ListAuditDatabasesRequest request) {
+        return new AsyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>(request,
+            DbssMeta.listAuditDatabases, hcClient);
     }
 
     /**
@@ -197,7 +213,8 @@ public class DbssAsyncClient {
      * @param ListAuditInstanceJobsRequest 请求对象
      * @return CompletableFuture<ListAuditInstanceJobsResponse>
      */
-    public CompletableFuture<ListAuditInstanceJobsResponse> listAuditInstanceJobsAsync(ListAuditInstanceJobsRequest request) {
+    public CompletableFuture<ListAuditInstanceJobsResponse> listAuditInstanceJobsAsync(
+        ListAuditInstanceJobsRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditInstanceJobs);
     }
 
@@ -211,8 +228,10 @@ public class DbssAsyncClient {
      * @param ListAuditInstanceJobsRequest 请求对象
      * @return AsyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>
      */
-    public AsyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobsAsyncInvoker(ListAuditInstanceJobsRequest request) {
-        return new AsyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>(request, DbssMeta.listAuditInstanceJobs, hcClient);
+    public AsyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobsAsyncInvoker(
+        ListAuditInstanceJobsRequest request) {
+        return new AsyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>(request,
+            DbssMeta.listAuditInstanceJobs, hcClient);
     }
 
     /**
@@ -239,8 +258,10 @@ public class DbssAsyncClient {
      * @param ListAuditInstancesRequest 请求对象
      * @return AsyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>
      */
-    public AsyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstancesAsyncInvoker(ListAuditInstancesRequest request) {
-        return new AsyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>(request, DbssMeta.listAuditInstances, hcClient);
+    public AsyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstancesAsyncInvoker(
+        ListAuditInstancesRequest request) {
+        return new AsyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>(request,
+            DbssMeta.listAuditInstances, hcClient);
     }
 
     /**
@@ -253,7 +274,8 @@ public class DbssAsyncClient {
      * @param ListAuditOperateLogsRequest 请求对象
      * @return CompletableFuture<ListAuditOperateLogsResponse>
      */
-    public CompletableFuture<ListAuditOperateLogsResponse> listAuditOperateLogsAsync(ListAuditOperateLogsRequest request) {
+    public CompletableFuture<ListAuditOperateLogsResponse> listAuditOperateLogsAsync(
+        ListAuditOperateLogsRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditOperateLogs);
     }
 
@@ -267,8 +289,10 @@ public class DbssAsyncClient {
      * @param ListAuditOperateLogsRequest 请求对象
      * @return AsyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>
      */
-    public AsyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogsAsyncInvoker(ListAuditOperateLogsRequest request) {
-        return new AsyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>(request, DbssMeta.listAuditOperateLogs, hcClient);
+    public AsyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogsAsyncInvoker(
+        ListAuditOperateLogsRequest request) {
+        return new AsyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>(request,
+            DbssMeta.listAuditOperateLogs, hcClient);
     }
 
     /**
@@ -295,8 +319,10 @@ public class DbssAsyncClient {
      * @param ListAuditRuleRisksRequest 请求对象
      * @return AsyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>
      */
-    public AsyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisksAsyncInvoker(ListAuditRuleRisksRequest request) {
-        return new AsyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>(request, DbssMeta.listAuditRuleRisks, hcClient);
+    public AsyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisksAsyncInvoker(
+        ListAuditRuleRisksRequest request) {
+        return new AsyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>(request,
+            DbssMeta.listAuditRuleRisks, hcClient);
     }
 
     /**
@@ -323,8 +349,10 @@ public class DbssAsyncClient {
      * @param ListAuditRuleScopesRequest 请求对象
      * @return AsyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>
      */
-    public AsyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopesAsyncInvoker(ListAuditRuleScopesRequest request) {
-        return new AsyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>(request, DbssMeta.listAuditRuleScopes, hcClient);
+    public AsyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopesAsyncInvoker(
+        ListAuditRuleScopesRequest request) {
+        return new AsyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>(request,
+            DbssMeta.listAuditRuleScopes, hcClient);
     }
 
     /**
@@ -337,7 +365,8 @@ public class DbssAsyncClient {
      * @param ListAuditSensitiveMasksRequest 请求对象
      * @return CompletableFuture<ListAuditSensitiveMasksResponse>
      */
-    public CompletableFuture<ListAuditSensitiveMasksResponse> listAuditSensitiveMasksAsync(ListAuditSensitiveMasksRequest request) {
+    public CompletableFuture<ListAuditSensitiveMasksResponse> listAuditSensitiveMasksAsync(
+        ListAuditSensitiveMasksRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listAuditSensitiveMasks);
     }
 
@@ -351,8 +380,10 @@ public class DbssAsyncClient {
      * @param ListAuditSensitiveMasksRequest 请求对象
      * @return AsyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>
      */
-    public AsyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasksAsyncInvoker(ListAuditSensitiveMasksRequest request) {
-        return new AsyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>(request, DbssMeta.listAuditSensitiveMasks, hcClient);
+    public AsyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasksAsyncInvoker(
+        ListAuditSensitiveMasksRequest request) {
+        return new AsyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>(request,
+            DbssMeta.listAuditSensitiveMasks, hcClient);
     }
 
     /**
@@ -365,7 +396,8 @@ public class DbssAsyncClient {
      * @param ListAvailabilityZoneInfosRequest 请求对象
      * @return CompletableFuture<ListAvailabilityZoneInfosResponse>
      */
-    public CompletableFuture<ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosAsync(ListAvailabilityZoneInfosRequest request) {
+    public CompletableFuture<ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosAsync(
+        ListAvailabilityZoneInfosRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listAvailabilityZoneInfos);
     }
 
@@ -379,8 +411,10 @@ public class DbssAsyncClient {
      * @param ListAvailabilityZoneInfosRequest 请求对象
      * @return AsyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>
      */
-    public AsyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosAsyncInvoker(ListAvailabilityZoneInfosRequest request) {
-        return new AsyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>(request, DbssMeta.listAvailabilityZoneInfos, hcClient);
+    public AsyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosAsyncInvoker(
+        ListAvailabilityZoneInfosRequest request) {
+        return new AsyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>(request,
+            DbssMeta.listAvailabilityZoneInfos, hcClient);
     }
 
     /**
@@ -393,7 +427,8 @@ public class DbssAsyncClient {
      * @param ListEcsSpecificationRequest 请求对象
      * @return CompletableFuture<ListEcsSpecificationResponse>
      */
-    public CompletableFuture<ListEcsSpecificationResponse> listEcsSpecificationAsync(ListEcsSpecificationRequest request) {
+    public CompletableFuture<ListEcsSpecificationResponse> listEcsSpecificationAsync(
+        ListEcsSpecificationRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listEcsSpecification);
     }
 
@@ -407,8 +442,10 @@ public class DbssAsyncClient {
      * @param ListEcsSpecificationRequest 请求对象
      * @return AsyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>
      */
-    public AsyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecificationAsyncInvoker(ListEcsSpecificationRequest request) {
-        return new AsyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>(request, DbssMeta.listEcsSpecification, hcClient);
+    public AsyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecificationAsyncInvoker(
+        ListEcsSpecificationRequest request) {
+        return new AsyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>(request,
+            DbssMeta.listEcsSpecification, hcClient);
     }
 
     /**
@@ -421,7 +458,8 @@ public class DbssAsyncClient {
      * @param ListProjectResourceTagsRequest 请求对象
      * @return CompletableFuture<ListProjectResourceTagsResponse>
      */
-    public CompletableFuture<ListProjectResourceTagsResponse> listProjectResourceTagsAsync(ListProjectResourceTagsRequest request) {
+    public CompletableFuture<ListProjectResourceTagsResponse> listProjectResourceTagsAsync(
+        ListProjectResourceTagsRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listProjectResourceTags);
     }
 
@@ -435,8 +473,10 @@ public class DbssAsyncClient {
      * @param ListProjectResourceTagsRequest 请求对象
      * @return AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>
      */
-    public AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsAsyncInvoker(ListProjectResourceTagsRequest request) {
-        return new AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>(request, DbssMeta.listProjectResourceTags, hcClient);
+    public AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsAsyncInvoker(
+        ListProjectResourceTagsRequest request) {
+        return new AsyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>(request,
+            DbssMeta.listProjectResourceTags, hcClient);
     }
 
     /**
@@ -449,7 +489,8 @@ public class DbssAsyncClient {
      * @param ListResourceInstanceByTagRequest 请求对象
      * @return CompletableFuture<ListResourceInstanceByTagResponse>
      */
-    public CompletableFuture<ListResourceInstanceByTagResponse> listResourceInstanceByTagAsync(ListResourceInstanceByTagRequest request) {
+    public CompletableFuture<ListResourceInstanceByTagResponse> listResourceInstanceByTagAsync(
+        ListResourceInstanceByTagRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listResourceInstanceByTag);
     }
 
@@ -463,8 +504,10 @@ public class DbssAsyncClient {
      * @param ListResourceInstanceByTagRequest 请求对象
      * @return AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>
      */
-    public AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagAsyncInvoker(ListResourceInstanceByTagRequest request) {
-        return new AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>(request, DbssMeta.listResourceInstanceByTag, hcClient);
+    public AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagAsyncInvoker(
+        ListResourceInstanceByTagRequest request) {
+        return new AsyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>(request,
+            DbssMeta.listResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -477,7 +520,8 @@ public class DbssAsyncClient {
      * @param ListSqlInjectionRulesRequest 请求对象
      * @return CompletableFuture<ListSqlInjectionRulesResponse>
      */
-    public CompletableFuture<ListSqlInjectionRulesResponse> listSqlInjectionRulesAsync(ListSqlInjectionRulesRequest request) {
+    public CompletableFuture<ListSqlInjectionRulesResponse> listSqlInjectionRulesAsync(
+        ListSqlInjectionRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.listSqlInjectionRules);
     }
 
@@ -491,8 +535,10 @@ public class DbssAsyncClient {
      * @param ListSqlInjectionRulesRequest 请求对象
      * @return AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>
      */
-    public AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesAsyncInvoker(ListSqlInjectionRulesRequest request) {
-        return new AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>(request, DbssMeta.listSqlInjectionRules, hcClient);
+    public AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesAsyncInvoker(
+        ListSqlInjectionRulesRequest request) {
+        return new AsyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>(request,
+            DbssMeta.listSqlInjectionRules, hcClient);
     }
 
     /**
@@ -519,8 +565,10 @@ public class DbssAsyncClient {
      * @param ShowAuditQuotaRequest 请求对象
      * @return AsyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>
      */
-    public AsyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuotaAsyncInvoker(ShowAuditQuotaRequest request) {
-        return new AsyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>(request, DbssMeta.showAuditQuota, hcClient);
+    public AsyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuotaAsyncInvoker(
+        ShowAuditQuotaRequest request) {
+        return new AsyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>(request, DbssMeta.showAuditQuota,
+            hcClient);
     }
 
     /**
@@ -547,8 +595,10 @@ public class DbssAsyncClient {
      * @param ShowAuditRuleRiskRequest 请求对象
      * @return AsyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>
      */
-    public AsyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRiskAsyncInvoker(ShowAuditRuleRiskRequest request) {
-        return new AsyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>(request, DbssMeta.showAuditRuleRisk, hcClient);
+    public AsyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRiskAsyncInvoker(
+        ShowAuditRuleRiskRequest request) {
+        return new AsyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>(request,
+            DbssMeta.showAuditRuleRisk, hcClient);
     }
 
     /**
@@ -603,8 +653,10 @@ public class DbssAsyncClient {
      * @param SwitchRiskRuleRequest 请求对象
      * @return AsyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>
      */
-    public AsyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRuleAsyncInvoker(SwitchRiskRuleRequest request) {
-        return new AsyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>(request, DbssMeta.switchRiskRule, hcClient);
+    public AsyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRuleAsyncInvoker(
+        SwitchRiskRuleRequest request) {
+        return new AsyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>(request, DbssMeta.switchRiskRule,
+            hcClient);
     }
 
     /**
@@ -617,7 +669,8 @@ public class DbssAsyncClient {
      * @param UpdateAuditSecurityGroupRequest 请求对象
      * @return CompletableFuture<UpdateAuditSecurityGroupResponse>
      */
-    public CompletableFuture<UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupAsync(UpdateAuditSecurityGroupRequest request) {
+    public CompletableFuture<UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupAsync(
+        UpdateAuditSecurityGroupRequest request) {
         return hcClient.asyncInvokeHttp(request, DbssMeta.updateAuditSecurityGroup);
     }
 
@@ -631,8 +684,10 @@ public class DbssAsyncClient {
      * @param UpdateAuditSecurityGroupRequest 请求对象
      * @return AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>
      */
-    public AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupAsyncInvoker(UpdateAuditSecurityGroupRequest request) {
-        return new AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>(request, DbssMeta.updateAuditSecurityGroup, hcClient);
+    public AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupAsyncInvoker(
+        UpdateAuditSecurityGroupRequest request) {
+        return new AsyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>(request,
+            DbssMeta.updateAuditSecurityGroup, hcClient);
     }
 
 }

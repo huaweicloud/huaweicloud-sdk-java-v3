@@ -327,21 +327,21 @@ public class Vpc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Vpc vpc = (Vpc) o;
-        return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
-            && Objects.equals(this.description, vpc.description) && Objects.equals(this.cidr, vpc.cidr)
-            && Objects.equals(this.extendCidrs, vpc.extendCidrs) && Objects.equals(this.status, vpc.status)
-            && Objects.equals(this.projectId, vpc.projectId)
-            && Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId)
-            && Objects.equals(this.createdAt, vpc.createdAt) && Objects.equals(this.updatedAt, vpc.updatedAt)
-            && Objects.equals(this.cloudResources, vpc.cloudResources) && Objects.equals(this.tags, vpc.tags);
+        Vpc that = (Vpc) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.extendCidrs, that.extendCidrs) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.cloudResources, that.cloudResources) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

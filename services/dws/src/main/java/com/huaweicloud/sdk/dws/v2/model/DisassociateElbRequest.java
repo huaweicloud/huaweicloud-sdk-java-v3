@@ -55,16 +55,15 @@ public class DisassociateElbRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateElbRequest disassociateElbRequest = (DisassociateElbRequest) o;
-        return Objects.equals(this.clusterId, disassociateElbRequest.clusterId)
-            && Objects.equals(this.elbId, disassociateElbRequest.elbId);
+        DisassociateElbRequest that = (DisassociateElbRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.elbId, that.elbId);
     }
 
     @Override

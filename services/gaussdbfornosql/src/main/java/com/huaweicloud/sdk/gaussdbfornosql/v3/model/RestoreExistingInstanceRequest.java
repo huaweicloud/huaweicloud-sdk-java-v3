@@ -65,16 +65,15 @@ public class RestoreExistingInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreExistingInstanceRequest restoreExistingInstanceRequest = (RestoreExistingInstanceRequest) o;
-        return Objects.equals(this.instanceId, restoreExistingInstanceRequest.instanceId)
-            && Objects.equals(this.body, restoreExistingInstanceRequest.body);
+        RestoreExistingInstanceRequest that = (RestoreExistingInstanceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

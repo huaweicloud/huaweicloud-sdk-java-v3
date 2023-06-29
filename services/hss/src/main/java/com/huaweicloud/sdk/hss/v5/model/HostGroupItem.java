@@ -168,20 +168,18 @@ public class HostGroupItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostGroupItem hostGroupItem = (HostGroupItem) o;
-        return Objects.equals(this.groupId, hostGroupItem.groupId)
-            && Objects.equals(this.groupName, hostGroupItem.groupName)
-            && Objects.equals(this.hostNum, hostGroupItem.hostNum)
-            && Objects.equals(this.riskHostNum, hostGroupItem.riskHostNum)
-            && Objects.equals(this.unprotectHostNum, hostGroupItem.unprotectHostNum)
-            && Objects.equals(this.hostIdList, hostGroupItem.hostIdList);
+        HostGroupItem that = (HostGroupItem) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.hostNum, that.hostNum) && Objects.equals(this.riskHostNum, that.riskHostNum)
+            && Objects.equals(this.unprotectHostNum, that.unprotectHostNum)
+            && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override

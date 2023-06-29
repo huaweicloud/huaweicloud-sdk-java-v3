@@ -310,25 +310,25 @@ public class InnodbTrx {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InnodbTrx innodbTrx = (InnodbTrx) o;
-        return Objects.equals(this.trxId, innodbTrx.trxId) && Objects.equals(this.trxState, innodbTrx.trxState)
-            && Objects.equals(this.trxStarted, innodbTrx.trxStarted)
-            && Objects.equals(this.trxWaitStarted, innodbTrx.trxWaitStarted)
-            && Objects.equals(this.trxMysqlThreadId, innodbTrx.trxMysqlThreadId)
-            && Objects.equals(this.trxQuery, innodbTrx.trxQuery)
-            && Objects.equals(this.trxTablesLocked, innodbTrx.trxTablesLocked)
-            && Objects.equals(this.trxRowsLocked, innodbTrx.trxRowsLocked)
-            && Objects.equals(this.trxRowsModified, innodbTrx.trxRowsModified)
-            && Objects.equals(this.trxIsolationLevel, innodbTrx.trxIsolationLevel)
-            && Objects.equals(this.innodbWaitLocks, innodbTrx.innodbWaitLocks)
-            && Objects.equals(this.innodbHoldLocks, innodbTrx.innodbHoldLocks);
+        InnodbTrx that = (InnodbTrx) obj;
+        return Objects.equals(this.trxId, that.trxId) && Objects.equals(this.trxState, that.trxState)
+            && Objects.equals(this.trxStarted, that.trxStarted)
+            && Objects.equals(this.trxWaitStarted, that.trxWaitStarted)
+            && Objects.equals(this.trxMysqlThreadId, that.trxMysqlThreadId)
+            && Objects.equals(this.trxQuery, that.trxQuery)
+            && Objects.equals(this.trxTablesLocked, that.trxTablesLocked)
+            && Objects.equals(this.trxRowsLocked, that.trxRowsLocked)
+            && Objects.equals(this.trxRowsModified, that.trxRowsModified)
+            && Objects.equals(this.trxIsolationLevel, that.trxIsolationLevel)
+            && Objects.equals(this.innodbWaitLocks, that.innodbWaitLocks)
+            && Objects.equals(this.innodbHoldLocks, that.innodbHoldLocks);
     }
 
     @Override

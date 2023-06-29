@@ -67,22 +67,15 @@ public class Job {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -897,37 +890,38 @@ public class Job {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Job job = (Job) o;
-        return Objects.equals(this.jobType, job.jobType)
-            && Objects.equals(this.fromConnectorName, job.fromConnectorName)
-            && Objects.equals(this.toConfigValues, job.toConfigValues)
-            && Objects.equals(this.toLinkName, job.toLinkName)
-            && Objects.equals(this.driverConfigValues, job.driverConfigValues)
-            && Objects.equals(this.fromConfigValues, job.fromConfigValues)
-            && Objects.equals(this.toConnectorName, job.toConnectorName) && Objects.equals(this.name, job.name)
-            && Objects.equals(this.fromLinkName, job.fromLinkName)
-            && Objects.equals(this.creationUser, job.creationUser)
-            && Objects.equals(this.creationDate, job.creationDate) && Objects.equals(this.updateDate, job.updateDate)
-            && Objects.equals(this.isIncreJob, job.isIncreJob) && Objects.equals(this.flag, job.flag)
-            && Objects.equals(this.filesRead, job.filesRead) && Objects.equals(this.updateUser, job.updateUser)
-            && Objects.equals(this.externalId, job.externalId) && Objects.equals(this.type, job.type)
-            && Objects.equals(this.executeStartDate, job.executeStartDate)
-            && Objects.equals(this.deleteRows, job.deleteRows) && Objects.equals(this.enabled, job.enabled)
-            && Objects.equals(this.bytesWritten, job.bytesWritten) && Objects.equals(this.id, job.id)
-            && Objects.equals(this.isUseSql, job.isUseSql) && Objects.equals(this.updateRows, job.updateRows)
-            && Objects.equals(this.groupName, job.groupName) && Objects.equals(this.bytesRead, job.bytesRead)
-            && Objects.equals(this.executeUpdateDate, job.executeUpdateDate)
-            && Objects.equals(this.writeRows, job.writeRows) && Objects.equals(this.rowsWritten, job.rowsWritten)
-            && Objects.equals(this.rowsRead, job.rowsRead) && Objects.equals(this.filesWritten, job.filesWritten)
-            && Objects.equals(this.isIncrementing, job.isIncrementing)
-            && Objects.equals(this.executeCreateDate, job.executeCreateDate) && Objects.equals(this.status, job.status);
+        Job that = (Job) obj;
+        return Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.fromConnectorName, that.fromConnectorName)
+            && Objects.equals(this.toConfigValues, that.toConfigValues)
+            && Objects.equals(this.toLinkName, that.toLinkName)
+            && Objects.equals(this.driverConfigValues, that.driverConfigValues)
+            && Objects.equals(this.fromConfigValues, that.fromConfigValues)
+            && Objects.equals(this.toConnectorName, that.toConnectorName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.fromLinkName, that.fromLinkName)
+            && Objects.equals(this.creationUser, that.creationUser)
+            && Objects.equals(this.creationDate, that.creationDate) && Objects.equals(this.updateDate, that.updateDate)
+            && Objects.equals(this.isIncreJob, that.isIncreJob) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.filesRead, that.filesRead) && Objects.equals(this.updateUser, that.updateUser)
+            && Objects.equals(this.externalId, that.externalId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.executeStartDate, that.executeStartDate)
+            && Objects.equals(this.deleteRows, that.deleteRows) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.bytesWritten, that.bytesWritten) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isUseSql, that.isUseSql) && Objects.equals(this.updateRows, that.updateRows)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.bytesRead, that.bytesRead)
+            && Objects.equals(this.executeUpdateDate, that.executeUpdateDate)
+            && Objects.equals(this.writeRows, that.writeRows) && Objects.equals(this.rowsWritten, that.rowsWritten)
+            && Objects.equals(this.rowsRead, that.rowsRead) && Objects.equals(this.filesWritten, that.filesWritten)
+            && Objects.equals(this.isIncrementing, that.isIncrementing)
+            && Objects.equals(this.executeCreateDate, that.executeCreateDate)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

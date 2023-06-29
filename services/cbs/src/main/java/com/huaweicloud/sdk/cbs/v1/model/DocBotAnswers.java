@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.DocQueryAnswerDetail;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class DocBotAnswers  {
-
+public class DocBotAnswers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer")
-    
+    @JsonProperty(value = "answer")
 
     private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
 
     private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="question")
-    
+    @JsonProperty(value = "question")
 
     private String question;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer_detail")
-    
+    @JsonProperty(value = "answer_detail")
 
     private DocQueryAnswerDetail answerDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="details")
-    
+    @JsonProperty(value = "details")
+
     private List<DocQueryAnswerDetail> details = null;
-    
+
     public DocBotAnswers withAnswer(String answer) {
         this.answer = answer;
         return this;
     }
-
-    
-
 
     /**
      * 答案。
@@ -69,15 +55,10 @@ public class DocBotAnswers  {
         this.answer = answer;
     }
 
-    
-
     public DocBotAnswers withScore(Double score) {
         this.score = score;
         return this;
     }
-
-    
-
 
     /**
      * 置信度。
@@ -91,15 +72,10 @@ public class DocBotAnswers  {
         this.score = score;
     }
 
-    
-
     public DocBotAnswers withQuestion(String question) {
         this.question = question;
         return this;
     }
-
-    
-
 
     /**
      * 问题。
@@ -113,22 +89,19 @@ public class DocBotAnswers  {
         this.question = question;
     }
 
-    
-
     public DocBotAnswers withAnswerDetail(DocQueryAnswerDetail answerDetail) {
         this.answerDetail = answerDetail;
         return this;
     }
 
     public DocBotAnswers withAnswerDetail(Consumer<DocQueryAnswerDetail> answerDetailSetter) {
-        if(this.answerDetail == null ){
+        if (this.answerDetail == null) {
             this.answerDetail = new DocQueryAnswerDetail();
             answerDetailSetter.accept(this.answerDetail);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get answerDetail
@@ -142,16 +115,13 @@ public class DocBotAnswers  {
         this.answerDetail = answerDetail;
     }
 
-    
-
     public DocBotAnswers withDetails(List<DocQueryAnswerDetail> details) {
         this.details = details;
         return this;
     }
 
-    
     public DocBotAnswers addDetailsItem(DocQueryAnswerDetail detailsItem) {
-        if(this.details == null) {
+        if (this.details == null) {
             this.details = new ArrayList<>();
         }
         this.details.add(detailsItem);
@@ -159,7 +129,7 @@ public class DocBotAnswers  {
     }
 
     public DocBotAnswers withDetails(Consumer<List<DocQueryAnswerDetail>> detailsSetter) {
-        if(this.details == null) {
+        if (this.details == null) {
             this.details = new ArrayList<>();
         }
         detailsSetter.accept(this.details);
@@ -178,27 +148,25 @@ public class DocBotAnswers  {
         this.details = details;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DocBotAnswers docBotAnswers = (DocBotAnswers) o;
-        return Objects.equals(this.answer, docBotAnswers.answer) &&
-            Objects.equals(this.score, docBotAnswers.score) &&
-            Objects.equals(this.question, docBotAnswers.question) &&
-            Objects.equals(this.answerDetail, docBotAnswers.answerDetail) &&
-            Objects.equals(this.details, docBotAnswers.details);
+        DocBotAnswers that = (DocBotAnswers) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.score, that.score)
+            && Objects.equals(this.question, that.question) && Objects.equals(this.answerDetail, that.answerDetail)
+            && Objects.equals(this.details, that.details);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(answer, score, question, answerDetail, details);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -211,6 +179,7 @@ public class DocBotAnswers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -221,8 +190,5 @@ public class DocBotAnswers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

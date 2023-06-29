@@ -185,21 +185,18 @@ public class UpdateCustomLineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomLineResponse updateCustomLineResponse = (UpdateCustomLineResponse) o;
-        return Objects.equals(this.lineId, updateCustomLineResponse.lineId)
-            && Objects.equals(this.name, updateCustomLineResponse.name)
-            && Objects.equals(this.ipSegments, updateCustomLineResponse.ipSegments)
-            && Objects.equals(this.createdAt, updateCustomLineResponse.createdAt)
-            && Objects.equals(this.updatedAt, updateCustomLineResponse.updatedAt)
-            && Objects.equals(this.status, updateCustomLineResponse.status)
-            && Objects.equals(this.description, updateCustomLineResponse.description);
+        UpdateCustomLineResponse that = (UpdateCustomLineResponse) obj;
+        return Objects.equals(this.lineId, that.lineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ipSegments, that.ipSegments) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

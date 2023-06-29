@@ -61,22 +61,15 @@ public class UpdateTransferRequestBodyLogTransferInfo {
             if (value == null) {
                 return null;
             }
-            LogStorageFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogStorageFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogStorageFormatEnum(value));
         }
 
         public static LogStorageFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogStorageFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,22 +142,15 @@ public class UpdateTransferRequestBodyLogTransferInfo {
             if (value == null) {
                 return null;
             }
-            LogTransferStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTransferStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTransferStatusEnum(value));
         }
 
         public static LogTransferStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTransferStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,18 +239,17 @@ public class UpdateTransferRequestBodyLogTransferInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTransferRequestBodyLogTransferInfo updateTransferRequestBodyLogTransferInfo =
-            (UpdateTransferRequestBodyLogTransferInfo) o;
-        return Objects.equals(this.logStorageFormat, updateTransferRequestBodyLogTransferInfo.logStorageFormat)
-            && Objects.equals(this.logTransferStatus, updateTransferRequestBodyLogTransferInfo.logTransferStatus)
-            && Objects.equals(this.logTransferDetail, updateTransferRequestBodyLogTransferInfo.logTransferDetail);
+        UpdateTransferRequestBodyLogTransferInfo that = (UpdateTransferRequestBodyLogTransferInfo) obj;
+        return Objects.equals(this.logStorageFormat, that.logStorageFormat)
+            && Objects.equals(this.logTransferStatus, that.logTransferStatus)
+            && Objects.equals(this.logTransferDetail, that.logTransferDetail);
     }
 
     @Override

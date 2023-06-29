@@ -55,15 +55,15 @@ public class TaskOutputs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutputs taskOutputs = (TaskOutputs) o;
-        return Objects.equals(this.data, taskOutputs.data) && Objects.equals(this.type, taskOutputs.type);
+        TaskOutputs that = (TaskOutputs) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.type, that.type);
     }
 
     @Override

@@ -1,43 +1,37 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 命名实体识别post请求体
  */
-public class PostSentenceEmbeddingReq  {
-
+public class PostSentenceEmbeddingReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sentences")
-    
+    @JsonProperty(value = "sentences")
+
     private List<String> sentences = null;
-        /**
+
+    /**
      * 支持的领域类型，目前只支持通用领域，默认为general。
      */
     public static final class DomainEnum {
 
-        
         /**
          * Enum GENERAL for value: "general"
          */
         public static final DomainEnum GENERAL = new DomainEnum("general");
-        
 
         private static final Map<String, DomainEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +59,18 @@ public class PostSentenceEmbeddingReq  {
 
         @JsonCreator
         public static DomainEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DomainEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainEnum(value));
         }
 
         public static DomainEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DomainEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,8 +88,7 @@ public class PostSentenceEmbeddingReq  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private DomainEnum domain;
 
@@ -111,9 +97,8 @@ public class PostSentenceEmbeddingReq  {
         return this;
     }
 
-    
     public PostSentenceEmbeddingReq addSentencesItem(String sentencesItem) {
-        if(this.sentences == null) {
+        if (this.sentences == null) {
             this.sentences = new ArrayList<>();
         }
         this.sentences.add(sentencesItem);
@@ -121,7 +106,7 @@ public class PostSentenceEmbeddingReq  {
     }
 
     public PostSentenceEmbeddingReq withSentences(Consumer<List<String>> sentencesSetter) {
-        if(this.sentences == null) {
+        if (this.sentences == null) {
             this.sentences = new ArrayList<>();
         }
         sentencesSetter.accept(this.sentences);
@@ -140,15 +125,10 @@ public class PostSentenceEmbeddingReq  {
         this.sentences = sentences;
     }
 
-    
-
     public PostSentenceEmbeddingReq withDomain(DomainEnum domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 支持的领域类型，目前只支持通用领域，默认为general。
@@ -162,24 +142,23 @@ public class PostSentenceEmbeddingReq  {
         this.domain = domain;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostSentenceEmbeddingReq postSentenceEmbeddingReq = (PostSentenceEmbeddingReq) o;
-        return Objects.equals(this.sentences, postSentenceEmbeddingReq.sentences) &&
-            Objects.equals(this.domain, postSentenceEmbeddingReq.domain);
+        PostSentenceEmbeddingReq that = (PostSentenceEmbeddingReq) obj;
+        return Objects.equals(this.sentences, that.sentences) && Objects.equals(this.domain, that.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sentences, domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,6 +168,7 @@ public class PostSentenceEmbeddingReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -199,8 +179,5 @@ public class PostSentenceEmbeddingReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

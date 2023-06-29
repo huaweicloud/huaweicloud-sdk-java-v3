@@ -183,19 +183,17 @@ public class CreateJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateJobReq createJobReq = (CreateJobReq) o;
-        return Objects.equals(this.baseInfo, createJobReq.baseInfo)
-            && Objects.equals(this.sourceEndpoint, createJobReq.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, createJobReq.targetEndpoint)
-            && Objects.equals(this.periodOrder, createJobReq.periodOrder)
-            && Objects.equals(this.nodeInfo, createJobReq.nodeInfo);
+        CreateJobReq that = (CreateJobReq) obj;
+        return Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint)
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo);
     }
 
     @Override

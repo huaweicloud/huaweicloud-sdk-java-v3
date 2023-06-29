@@ -109,18 +109,16 @@ public class AddSubscriptionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddSubscriptionRequestBody addSubscriptionRequestBody = (AddSubscriptionRequestBody) o;
-        return Objects.equals(this.protocol, addSubscriptionRequestBody.protocol)
-            && Objects.equals(this.endpoint, addSubscriptionRequestBody.endpoint)
-            && Objects.equals(this.remark, addSubscriptionRequestBody.remark)
-            && Objects.equals(this.extension, addSubscriptionRequestBody.extension);
+        AddSubscriptionRequestBody that = (AddSubscriptionRequestBody) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.extension, that.extension);
     }
 
     @Override

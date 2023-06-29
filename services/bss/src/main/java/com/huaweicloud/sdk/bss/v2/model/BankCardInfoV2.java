@@ -99,18 +99,16 @@ public class BankCardInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BankCardInfoV2 bankCardInfoV2 = (BankCardInfoV2) o;
-        return Objects.equals(this.bankAccount, bankCardInfoV2.bankAccount)
-            && Objects.equals(this.areacode, bankCardInfoV2.areacode)
-            && Objects.equals(this.mobile, bankCardInfoV2.mobile)
-            && Objects.equals(this.verificationCode, bankCardInfoV2.verificationCode);
+        BankCardInfoV2 that = (BankCardInfoV2) obj;
+        return Objects.equals(this.bankAccount, that.bankAccount) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.mobile, that.mobile) && Objects.equals(this.verificationCode, that.verificationCode);
     }
 
     @Override

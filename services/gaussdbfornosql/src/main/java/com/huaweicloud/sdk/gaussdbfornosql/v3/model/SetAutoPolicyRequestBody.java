@@ -112,17 +112,16 @@ public class SetAutoPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetAutoPolicyRequestBody setAutoPolicyRequestBody = (SetAutoPolicyRequestBody) o;
-        return Objects.equals(this.instanceIds, setAutoPolicyRequestBody.instanceIds)
-            && Objects.equals(this.switchOption, setAutoPolicyRequestBody.switchOption)
-            && Objects.equals(this.policy, setAutoPolicyRequestBody.policy);
+        SetAutoPolicyRequestBody that = (SetAutoPolicyRequestBody) obj;
+        return Objects.equals(this.instanceIds, that.instanceIds)
+            && Objects.equals(this.switchOption, that.switchOption) && Objects.equals(this.policy, that.policy);
     }
 
     @Override

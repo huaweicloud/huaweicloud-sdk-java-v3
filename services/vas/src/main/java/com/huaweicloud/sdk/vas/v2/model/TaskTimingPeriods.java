@@ -55,16 +55,15 @@ public class TaskTimingPeriods {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskTimingPeriods taskTimingPeriods = (TaskTimingPeriods) o;
-        return Objects.equals(this.beginAt, taskTimingPeriods.beginAt)
-            && Objects.equals(this.endAt, taskTimingPeriods.endAt);
+        TaskTimingPeriods that = (TaskTimingPeriods) obj;
+        return Objects.equals(this.beginAt, that.beginAt) && Objects.equals(this.endAt, that.endAt);
     }
 
     @Override

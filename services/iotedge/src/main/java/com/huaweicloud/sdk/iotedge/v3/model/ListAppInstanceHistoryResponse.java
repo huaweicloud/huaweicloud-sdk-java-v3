@@ -1,49 +1,40 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v3.model.QueryAppInstanceHistoryResponseDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListAppInstanceHistoryResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="history")
-    
+    @JsonProperty(value = "history")
+
     private List<QueryAppInstanceHistoryResponseDTO> history = null;
-    
+
     public ListAppInstanceHistoryResponse withHistory(List<QueryAppInstanceHistoryResponseDTO> history) {
         this.history = history;
         return this;
     }
 
-    
     public ListAppInstanceHistoryResponse addHistoryItem(QueryAppInstanceHistoryResponseDTO historyItem) {
-        if(this.history == null) {
+        if (this.history == null) {
             this.history = new ArrayList<>();
         }
         this.history.add(historyItem);
         return this;
     }
 
-    public ListAppInstanceHistoryResponse withHistory(Consumer<List<QueryAppInstanceHistoryResponseDTO>> historySetter) {
-        if(this.history == null) {
+    public ListAppInstanceHistoryResponse withHistory(
+        Consumer<List<QueryAppInstanceHistoryResponseDTO>> historySetter) {
+        if (this.history == null) {
             this.history = new ArrayList<>();
         }
         historySetter.accept(this.history);
@@ -62,23 +53,23 @@ public class ListAppInstanceHistoryResponse extends SdkResponse {
         this.history = history;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppInstanceHistoryResponse listAppInstanceHistoryResponse = (ListAppInstanceHistoryResponse) o;
-        return Objects.equals(this.history, listAppInstanceHistoryResponse.history);
+        ListAppInstanceHistoryResponse that = (ListAppInstanceHistoryResponse) obj;
+        return Objects.equals(this.history, that.history);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(history);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,6 +78,7 @@ public class ListAppInstanceHistoryResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -97,8 +89,5 @@ public class ListAppInstanceHistoryResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

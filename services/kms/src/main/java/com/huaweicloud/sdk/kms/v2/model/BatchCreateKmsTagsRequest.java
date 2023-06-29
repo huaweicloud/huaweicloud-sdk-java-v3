@@ -65,16 +65,15 @@ public class BatchCreateKmsTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateKmsTagsRequest batchCreateKmsTagsRequest = (BatchCreateKmsTagsRequest) o;
-        return Objects.equals(this.keyId, batchCreateKmsTagsRequest.keyId)
-            && Objects.equals(this.body, batchCreateKmsTagsRequest.body);
+        BatchCreateKmsTagsRequest that = (BatchCreateKmsTagsRequest) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

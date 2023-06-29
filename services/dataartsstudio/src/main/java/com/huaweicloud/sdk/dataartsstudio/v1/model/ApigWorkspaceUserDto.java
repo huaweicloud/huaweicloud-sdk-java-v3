@@ -152,18 +152,16 @@ public class ApigWorkspaceUserDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigWorkspaceUserDto apigWorkspaceUserDto = (ApigWorkspaceUserDto) o;
-        return Objects.equals(this.type, apigWorkspaceUserDto.type)
-            && Objects.equals(this.userIds, apigWorkspaceUserDto.userIds)
-            && Objects.equals(this.groups, apigWorkspaceUserDto.groups)
-            && Objects.equals(this.rolesIds, apigWorkspaceUserDto.rolesIds);
+        ApigWorkspaceUserDto that = (ApigWorkspaceUserDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.userIds, that.userIds)
+            && Objects.equals(this.groups, that.groups) && Objects.equals(this.rolesIds, that.rolesIds);
     }
 
     @Override

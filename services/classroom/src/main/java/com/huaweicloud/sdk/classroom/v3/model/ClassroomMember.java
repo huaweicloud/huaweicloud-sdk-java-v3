@@ -210,22 +210,20 @@ public class ClassroomMember {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClassroomMember classroomMember = (ClassroomMember) o;
-        return Objects.equals(this.memberId, classroomMember.memberId)
-            && Objects.equals(this.name, classroomMember.name) && Objects.equals(this.number, classroomMember.number)
-            && Objects.equals(this.className, classroomMember.className)
-            && Objects.equals(this.userName, classroomMember.userName)
-            && Objects.equals(this.joinTime, classroomMember.joinTime)
-            && Objects.equals(this.jobReceivedCount, classroomMember.jobReceivedCount)
-            && Objects.equals(this.jobFinishedCount, classroomMember.jobFinishedCount)
-            && Objects.equals(this.jobFinishedRate, classroomMember.jobFinishedRate);
+        ClassroomMember that = (ClassroomMember) obj;
+        return Objects.equals(this.memberId, that.memberId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.joinTime, that.joinTime)
+            && Objects.equals(this.jobReceivedCount, that.jobReceivedCount)
+            && Objects.equals(this.jobFinishedCount, that.jobFinishedCount)
+            && Objects.equals(this.jobFinishedRate, that.jobFinishedRate);
     }
 
     @Override

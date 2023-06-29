@@ -88,18 +88,17 @@ public class ApplicationListConfigConfiguration1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationListConfigConfiguration1 applicationListConfigConfiguration1 =
-            (ApplicationListConfigConfiguration1) o;
-        return Objects.equals(this.applicationId, applicationListConfigConfiguration1.applicationId)
-            && Objects.equals(this.environmentId, applicationListConfigConfiguration1.environmentId)
-            && Objects.equals(this._configuration, applicationListConfigConfiguration1._configuration);
+        ApplicationListConfigConfiguration1 that = (ApplicationListConfigConfiguration1) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this._configuration, that._configuration);
     }
 
     @Override

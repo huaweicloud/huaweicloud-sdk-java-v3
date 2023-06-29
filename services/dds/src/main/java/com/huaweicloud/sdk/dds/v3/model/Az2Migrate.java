@@ -77,16 +77,16 @@ public class Az2Migrate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Az2Migrate az2Migrate = (Az2Migrate) o;
-        return Objects.equals(this.code, az2Migrate.code) && Objects.equals(this.description, az2Migrate.description)
-            && Objects.equals(this.status, az2Migrate.status);
+        Az2Migrate that = (Az2Migrate) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

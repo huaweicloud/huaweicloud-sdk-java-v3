@@ -55,16 +55,15 @@ public class ShowDeploymentCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentCodeRequest showDeploymentCodeRequest = (ShowDeploymentCodeRequest) o;
-        return Objects.equals(this.instanceId, showDeploymentCodeRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, showDeploymentCodeRequest.v2xEdgeId);
+        ShowDeploymentCodeRequest that = (ShowDeploymentCodeRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId);
     }
 
     @Override

@@ -113,17 +113,16 @@ public class ListInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesResponse listInstancesResponse = (ListInstancesResponse) o;
-        return Objects.equals(this.errSites, listInstancesResponse.errSites)
-            && Objects.equals(this.count, listInstancesResponse.count)
-            && Objects.equals(this.servers, listInstancesResponse.servers);
+        ListInstancesResponse that = (ListInstancesResponse) obj;
+        return Objects.equals(this.errSites, that.errSites) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.servers, that.servers);
     }
 
     @Override

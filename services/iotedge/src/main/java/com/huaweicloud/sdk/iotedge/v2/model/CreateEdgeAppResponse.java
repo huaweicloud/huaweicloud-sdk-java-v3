@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,64 +11,53 @@ import java.util.Objects;
  */
 public class CreateEdgeAppResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_published_version")
-    
+    @JsonProperty(value = "last_published_version")
 
     private String lastPublishedVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_type")
-    
+    @JsonProperty(value = "function_type")
 
     private String functionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
 
     private String protocol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_name")
-    
+    @JsonProperty(value = "edge_app_name")
 
     private String edgeAppName;
 
@@ -84,9 +65,6 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用id
@@ -100,15 +78,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public CreateEdgeAppResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -122,15 +95,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateEdgeAppResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -144,15 +112,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateEdgeAppResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -166,15 +129,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public CreateEdgeAppResponse withLastPublishedVersion(String lastPublishedVersion) {
         this.lastPublishedVersion = lastPublishedVersion;
         return this;
     }
-
-    
-
 
     /**
      * 最新发布版本
@@ -188,15 +146,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.lastPublishedVersion = lastPublishedVersion;
     }
 
-    
-
     public CreateEdgeAppResponse withAppType(String appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型SYSTEM_REQUIRED|SYSTEM_OPTIONAL|USER
@@ -210,15 +163,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.appType = appType;
     }
 
-    
-
     public CreateEdgeAppResponse withFunctionType(String functionType) {
         this.functionType = functionType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型DATA_PROCESSING|PROTOCOL_PARSING
@@ -232,15 +180,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.functionType = functionType;
     }
 
-    
-
     public CreateEdgeAppResponse withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -254,15 +197,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.deployType = deployType;
     }
 
-    
-
     public CreateEdgeAppResponse withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-
-    
-
 
     /**
      * 驱动协议类型OPCUA|Modbus-TCP
@@ -276,15 +214,10 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.protocol = protocol;
     }
 
-    
-
     public CreateEdgeAppResponse withEdgeAppName(String edgeAppName) {
         this.edgeAppName = edgeAppName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -298,32 +231,37 @@ public class CreateEdgeAppResponse extends SdkResponse {
         this.edgeAppName = edgeAppName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeAppResponse createEdgeAppResponse = (CreateEdgeAppResponse) o;
-        return Objects.equals(this.edgeAppId, createEdgeAppResponse.edgeAppId) &&
-            Objects.equals(this.description, createEdgeAppResponse.description) &&
-            Objects.equals(this.createTime, createEdgeAppResponse.createTime) &&
-            Objects.equals(this.updateTime, createEdgeAppResponse.updateTime) &&
-            Objects.equals(this.lastPublishedVersion, createEdgeAppResponse.lastPublishedVersion) &&
-            Objects.equals(this.appType, createEdgeAppResponse.appType) &&
-            Objects.equals(this.functionType, createEdgeAppResponse.functionType) &&
-            Objects.equals(this.deployType, createEdgeAppResponse.deployType) &&
-            Objects.equals(this.protocol, createEdgeAppResponse.protocol) &&
-            Objects.equals(this.edgeAppName, createEdgeAppResponse.edgeAppName);
+        CreateEdgeAppResponse that = (CreateEdgeAppResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.lastPublishedVersion, that.lastPublishedVersion)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.functionType, that.functionType)
+            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.edgeAppName, that.edgeAppName);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, description, createTime, updateTime, lastPublishedVersion, appType, functionType, deployType, protocol, edgeAppName);
+        return Objects.hash(edgeAppId,
+            description,
+            createTime,
+            updateTime,
+            lastPublishedVersion,
+            appType,
+            functionType,
+            deployType,
+            protocol,
+            edgeAppName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -341,6 +279,7 @@ public class CreateEdgeAppResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -351,8 +290,5 @@ public class CreateEdgeAppResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

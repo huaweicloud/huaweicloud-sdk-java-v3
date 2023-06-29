@@ -65,17 +65,15 @@ public class BatchUpdateRecordSetWithLineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateRecordSetWithLineRequest batchUpdateRecordSetWithLineRequest =
-            (BatchUpdateRecordSetWithLineRequest) o;
-        return Objects.equals(this.zoneId, batchUpdateRecordSetWithLineRequest.zoneId)
-            && Objects.equals(this.body, batchUpdateRecordSetWithLineRequest.body);
+        BatchUpdateRecordSetWithLineRequest that = (BatchUpdateRecordSetWithLineRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.body, that.body);
     }
 
     @Override

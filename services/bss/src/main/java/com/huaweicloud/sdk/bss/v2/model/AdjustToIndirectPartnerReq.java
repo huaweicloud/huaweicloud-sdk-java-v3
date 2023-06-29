@@ -58,16 +58,16 @@ public class AdjustToIndirectPartnerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdjustToIndirectPartnerReq adjustToIndirectPartnerReq = (AdjustToIndirectPartnerReq) o;
-        return Objects.equals(this.indirectPartnerId, adjustToIndirectPartnerReq.indirectPartnerId)
-            && Objects.equals(this.amount, adjustToIndirectPartnerReq.amount);
+        AdjustToIndirectPartnerReq that = (AdjustToIndirectPartnerReq) obj;
+        return Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.amount, that.amount);
     }
 
     @Override

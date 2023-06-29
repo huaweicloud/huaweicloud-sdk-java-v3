@@ -74,22 +74,15 @@ public class TargetDisk {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceUseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceUseEnum(value));
         }
 
         public static DeviceUseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,22 +184,15 @@ public class TargetDisk {
             if (value == null) {
                 return null;
             }
-            PartitionStyleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PartitionStyleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartitionStyleEnum(value));
         }
 
         public static PartitionStyleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PartitionStyleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -443,21 +429,20 @@ public class TargetDisk {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetDisk targetDisk = (TargetDisk) o;
-        return Objects.equals(this.id, targetDisk.id) && Objects.equals(this.deviceUse, targetDisk.deviceUse)
-            && Objects.equals(this.diskId, targetDisk.diskId) && Objects.equals(this.name, targetDisk.name)
-            && Objects.equals(this.physicalVolumes, targetDisk.physicalVolumes)
-            && Objects.equals(this.size, targetDisk.size) && Objects.equals(this.usedSize, targetDisk.usedSize)
-            && Objects.equals(this.diskIndex, targetDisk.diskIndex) && Objects.equals(this.osDisk, targetDisk.osDisk)
-            && Objects.equals(this.partitionStyle, targetDisk.partitionStyle)
-            && Objects.equals(this.relationName, targetDisk.relationName);
+        TargetDisk that = (TargetDisk) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceUse, that.deviceUse)
+            && Objects.equals(this.diskId, that.diskId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.physicalVolumes, that.physicalVolumes) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.usedSize, that.usedSize) && Objects.equals(this.diskIndex, that.diskIndex)
+            && Objects.equals(this.osDisk, that.osDisk) && Objects.equals(this.partitionStyle, that.partitionStyle)
+            && Objects.equals(this.relationName, that.relationName);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * PageInfoDTO
  */
-public class PageInfoDTO  {
-
+public class PageInfoDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -33,9 +24,6 @@ public class PageInfoDTO  {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 页码
@@ -51,15 +39,10 @@ public class PageInfoDTO  {
         this.offset = offset;
     }
 
-    
-
     public PageInfoDTO withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数
@@ -75,24 +58,23 @@ public class PageInfoDTO  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoDTO pageInfoDTO = (PageInfoDTO) o;
-        return Objects.equals(this.offset, pageInfoDTO.offset) &&
-            Objects.equals(this.limit, pageInfoDTO.limit);
+        PageInfoDTO that = (PageInfoDTO) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -102,6 +84,7 @@ public class PageInfoDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -112,8 +95,5 @@ public class PageInfoDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

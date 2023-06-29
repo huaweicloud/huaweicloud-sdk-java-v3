@@ -121,19 +121,17 @@ public class RenameCommandResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RenameCommandResp renameCommandResp = (RenameCommandResp) o;
-        return Objects.equals(this.command, renameCommandResp.command)
-            && Objects.equals(this.flushall, renameCommandResp.flushall)
-            && Objects.equals(this.flushdb, renameCommandResp.flushdb)
-            && Objects.equals(this.hgetall, renameCommandResp.hgetall)
-            && Objects.equals(this.keys, renameCommandResp.keys);
+        RenameCommandResp that = (RenameCommandResp) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.flushall, that.flushall)
+            && Objects.equals(this.flushdb, that.flushdb) && Objects.equals(this.hgetall, that.hgetall)
+            && Objects.equals(this.keys, that.keys);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowCloudConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCloudConnectionRequest showCloudConnectionRequest = (ShowCloudConnectionRequest) o;
-        return Objects.equals(this.id, showCloudConnectionRequest.id);
+        ShowCloudConnectionRequest that = (ShowCloudConnectionRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

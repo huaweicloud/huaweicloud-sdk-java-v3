@@ -105,18 +105,17 @@ public class SynthesisTaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisTaskData synthesisTaskData = (SynthesisTaskData) o;
-        return Objects.equals(this.smiles, synthesisTaskData.smiles)
-            && Objects.equals(this.topN, synthesisTaskData.topN)
-            && Objects.equals(this.maxSearchDepth, synthesisTaskData.maxSearchDepth)
-            && Objects.equals(this.maxPredictionPerProduct, synthesisTaskData.maxPredictionPerProduct);
+        SynthesisTaskData that = (SynthesisTaskData) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.topN, that.topN)
+            && Objects.equals(this.maxSearchDepth, that.maxSearchDepth)
+            && Objects.equals(this.maxPredictionPerProduct, that.maxPredictionPerProduct);
     }
 
     @Override

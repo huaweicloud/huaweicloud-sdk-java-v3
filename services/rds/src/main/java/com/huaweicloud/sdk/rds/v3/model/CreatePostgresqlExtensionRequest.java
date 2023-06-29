@@ -89,17 +89,16 @@ public class CreatePostgresqlExtensionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostgresqlExtensionRequest createPostgresqlExtensionRequest = (CreatePostgresqlExtensionRequest) o;
-        return Objects.equals(this.xLanguage, createPostgresqlExtensionRequest.xLanguage)
-            && Objects.equals(this.instanceId, createPostgresqlExtensionRequest.instanceId)
-            && Objects.equals(this.body, createPostgresqlExtensionRequest.body);
+        CreatePostgresqlExtensionRequest that = (CreatePostgresqlExtensionRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

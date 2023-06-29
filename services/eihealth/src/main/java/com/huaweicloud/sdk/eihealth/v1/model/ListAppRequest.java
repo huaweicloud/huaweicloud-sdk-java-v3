@@ -77,16 +77,16 @@ public class ListAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppRequest listAppRequest = (ListAppRequest) o;
-        return Objects.equals(this.eihealthProjectId, listAppRequest.eihealthProjectId)
-            && Objects.equals(this.name, listAppRequest.name) && Objects.equals(this.version, listAppRequest.version);
+        ListAppRequest that = (ListAppRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

@@ -100,18 +100,17 @@ public class AddEipV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddEipV2Response addEipV2Response = (AddEipV2Response) o;
-        return Objects.equals(this.eipId, addEipV2Response.eipId)
-            && Objects.equals(this.eipAddress, addEipV2Response.eipAddress)
-            && Objects.equals(this.eipStatus, addEipV2Response.eipStatus)
-            && Objects.equals(this.eipIpv6Address, addEipV2Response.eipIpv6Address);
+        AddEipV2Response that = (AddEipV2Response) obj;
+        return Objects.equals(this.eipId, that.eipId) && Objects.equals(this.eipAddress, that.eipAddress)
+            && Objects.equals(this.eipStatus, that.eipStatus)
+            && Objects.equals(this.eipIpv6Address, that.eipIpv6Address);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CreateKeyStoreRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeyStoreRequestBody createKeyStoreRequestBody = (CreateKeyStoreRequestBody) o;
-        return Objects.equals(this.keystoreAlias, createKeyStoreRequestBody.keystoreAlias)
-            && Objects.equals(this.hsmClusterId, createKeyStoreRequestBody.hsmClusterId)
-            && Objects.equals(this.hsmCaCert, createKeyStoreRequestBody.hsmCaCert);
+        CreateKeyStoreRequestBody that = (CreateKeyStoreRequestBody) obj;
+        return Objects.equals(this.keystoreAlias, that.keystoreAlias)
+            && Objects.equals(this.hsmClusterId, that.hsmClusterId) && Objects.equals(this.hsmCaCert, that.hsmCaCert);
     }
 
     @Override

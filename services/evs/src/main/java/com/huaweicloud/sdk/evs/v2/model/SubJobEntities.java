@@ -99,17 +99,16 @@ public class SubJobEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubJobEntities subJobEntities = (SubJobEntities) o;
-        return Objects.equals(this.volumeType, subJobEntities.volumeType)
-            && Objects.equals(this.size, subJobEntities.size) && Objects.equals(this.volumeId, subJobEntities.volumeId)
-            && Objects.equals(this.name, subJobEntities.name);
+        SubJobEntities that = (SubJobEntities) obj;
+        return Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.name, that.name);
     }
 
     @Override

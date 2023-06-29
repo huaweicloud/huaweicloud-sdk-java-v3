@@ -65,16 +65,15 @@ public class UpdateUserSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserSettingRequest updateUserSettingRequest = (UpdateUserSettingRequest) o;
-        return Objects.equals(this.userId, updateUserSettingRequest.userId)
-            && Objects.equals(this.body, updateUserSettingRequest.body);
+        UpdateUserSettingRequest that = (UpdateUserSettingRequest) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.body, that.body);
     }
 
     @Override

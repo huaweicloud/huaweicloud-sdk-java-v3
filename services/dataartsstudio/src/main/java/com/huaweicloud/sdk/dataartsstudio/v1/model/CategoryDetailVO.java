@@ -140,17 +140,17 @@ public class CategoryDetailVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CategoryDetailVO categoryDetailVO = (CategoryDetailVO) o;
-        return Objects.equals(this.id, categoryDetailVO.id) && Objects.equals(this.name, categoryDetailVO.name)
-            && Objects.equals(this.type, categoryDetailVO.type) && Objects.equals(this.pid, categoryDetailVO.pid)
-            && Objects.equals(this.subCategories, categoryDetailVO.subCategories);
+        CategoryDetailVO that = (CategoryDetailVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.pid, that.pid)
+            && Objects.equals(this.subCategories, that.subCategories);
     }
 
     @Override

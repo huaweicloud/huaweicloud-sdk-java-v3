@@ -55,15 +55,15 @@ public class State {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        State state = (State) o;
-        return Objects.equals(this.phase, state.phase) && Objects.equals(this.reason, state.reason);
+        State that = (State) obj;
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.reason, that.reason);
     }
 
     @Override

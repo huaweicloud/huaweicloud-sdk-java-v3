@@ -65,16 +65,15 @@ public class UpdateSinkTaskQuotaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSinkTaskQuotaRequest updateSinkTaskQuotaRequest = (UpdateSinkTaskQuotaRequest) o;
-        return Objects.equals(this.connectorId, updateSinkTaskQuotaRequest.connectorId)
-            && Objects.equals(this.body, updateSinkTaskQuotaRequest.body);
+        UpdateSinkTaskQuotaRequest that = (UpdateSinkTaskQuotaRequest) obj;
+        return Objects.equals(this.connectorId, that.connectorId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -81,22 +81,15 @@ public class ShowScanJobResultsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,20 +224,17 @@ public class ShowScanJobResultsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScanJobResultsRequest showScanJobResultsRequest = (ShowScanJobResultsRequest) o;
-        return Objects.equals(this.jobId, showScanJobResultsRequest.jobId)
-            && Objects.equals(this.offset, showScanJobResultsRequest.offset)
-            && Objects.equals(this.limit, showScanJobResultsRequest.limit)
-            && Objects.equals(this.type, showScanJobResultsRequest.type)
-            && Objects.equals(this.startTime, showScanJobResultsRequest.startTime)
-            && Objects.equals(this.endTime, showScanJobResultsRequest.endTime);
+        ShowScanJobResultsRequest that = (ShowScanJobResultsRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

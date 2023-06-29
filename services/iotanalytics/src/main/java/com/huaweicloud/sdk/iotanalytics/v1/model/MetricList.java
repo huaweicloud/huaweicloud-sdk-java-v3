@@ -74,15 +74,15 @@ public class MetricList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricList metricList = (MetricList) o;
-        return Objects.equals(this.metricName, metricList.metricName) && Objects.equals(this.values, metricList.values);
+        MetricList that = (MetricList) obj;
+        return Objects.equals(this.metricName, that.metricName) && Objects.equals(this.values, that.values);
     }
 
     @Override

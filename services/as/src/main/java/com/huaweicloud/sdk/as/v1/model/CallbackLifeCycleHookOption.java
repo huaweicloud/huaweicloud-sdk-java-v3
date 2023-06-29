@@ -81,22 +81,15 @@ public class CallbackLifeCycleHookOption {
             if (value == null) {
                 return null;
             }
-            LifecycleActionResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LifecycleActionResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LifecycleActionResultEnum(value));
         }
 
         public static LifecycleActionResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LifecycleActionResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,18 +180,18 @@ public class CallbackLifeCycleHookOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CallbackLifeCycleHookOption callbackLifeCycleHookOption = (CallbackLifeCycleHookOption) o;
-        return Objects.equals(this.lifecycleActionKey, callbackLifeCycleHookOption.lifecycleActionKey)
-            && Objects.equals(this.instanceId, callbackLifeCycleHookOption.instanceId)
-            && Objects.equals(this.lifecycleHookName, callbackLifeCycleHookOption.lifecycleHookName)
-            && Objects.equals(this.lifecycleActionResult, callbackLifeCycleHookOption.lifecycleActionResult);
+        CallbackLifeCycleHookOption that = (CallbackLifeCycleHookOption) obj;
+        return Objects.equals(this.lifecycleActionKey, that.lifecycleActionKey)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.lifecycleHookName, that.lifecycleHookName)
+            && Objects.equals(this.lifecycleActionResult, that.lifecycleActionResult);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteRsuModelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRsuModelRequest deleteRsuModelRequest = (DeleteRsuModelRequest) o;
-        return Objects.equals(this.instanceId, deleteRsuModelRequest.instanceId)
-            && Objects.equals(this.rsuModelId, deleteRsuModelRequest.rsuModelId);
+        DeleteRsuModelRequest that = (DeleteRsuModelRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.rsuModelId, that.rsuModelId);
     }
 
     @Override

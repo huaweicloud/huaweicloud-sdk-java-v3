@@ -34,15 +34,15 @@ public class ExecuteExerciseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteExerciseResponse executeExerciseResponse = (ExecuteExerciseResponse) o;
-        return Objects.equals(this.judgementId, executeExerciseResponse.judgementId);
+        ExecuteExerciseResponse that = (ExecuteExerciseResponse) obj;
+        return Objects.equals(this.judgementId, that.judgementId);
     }
 
     @Override

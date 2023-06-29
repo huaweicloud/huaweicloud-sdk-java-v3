@@ -92,22 +92,15 @@ public class ListTablesRequest {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableTypeEnum(value));
         }
 
         public static TableTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,23 +298,20 @@ public class ListTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTablesRequest listTablesRequest = (ListTablesRequest) o;
-        return Objects.equals(this.instanceId, listTablesRequest.instanceId)
-            && Objects.equals(this.catalogName, listTablesRequest.catalogName)
-            && Objects.equals(this.databaseName, listTablesRequest.databaseName)
-            && Objects.equals(this.tableNamePattern, listTablesRequest.tableNamePattern)
-            && Objects.equals(this.tableType, listTablesRequest.tableType)
-            && Objects.equals(this.filter, listTablesRequest.filter)
-            && Objects.equals(this.limit, listTablesRequest.limit)
-            && Objects.equals(this.marker, listTablesRequest.marker)
-            && Objects.equals(this.reversePage, listTablesRequest.reversePage);
+        ListTablesRequest that = (ListTablesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.tableNamePattern, that.tableNamePattern)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

@@ -1,63 +1,48 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.HttpGetDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.TcpSocketDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ProbeDTO
  */
-public class ProbeDTO  {
-
+public class ProbeDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exec_command")
-    
+    @JsonProperty(value = "exec_command")
 
     private String execCommand;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tcp_socket")
-    
+    @JsonProperty(value = "tcp_socket")
 
     private TcpSocketDTO tcpSocket;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="http_get")
-    
+    @JsonProperty(value = "http_get")
 
     private HttpGetDTO httpGet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="initial_delay_seconds")
-    
+    @JsonProperty(value = "initial_delay_seconds")
 
     private Integer initialDelaySeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout_seconds")
-    
+    @JsonProperty(value = "timeout_seconds")
 
     private Integer timeoutSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_seconds")
-    
+    @JsonProperty(value = "period_seconds")
 
     private Integer periodSeconds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failure_threshold")
-    
+    @JsonProperty(value = "failure_threshold")
 
     private Integer failureThreshold;
 
@@ -65,9 +50,6 @@ public class ProbeDTO  {
         this.execCommand = execCommand;
         return this;
     }
-
-    
-
 
     /**
      * 执行探测的命令行命令
@@ -81,22 +63,19 @@ public class ProbeDTO  {
         this.execCommand = execCommand;
     }
 
-    
-
     public ProbeDTO withTcpSocket(TcpSocketDTO tcpSocket) {
         this.tcpSocket = tcpSocket;
         return this;
     }
 
     public ProbeDTO withTcpSocket(Consumer<TcpSocketDTO> tcpSocketSetter) {
-        if(this.tcpSocket == null ){
+        if (this.tcpSocket == null) {
             this.tcpSocket = new TcpSocketDTO();
             tcpSocketSetter.accept(this.tcpSocket);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get tcpSocket
@@ -110,22 +89,19 @@ public class ProbeDTO  {
         this.tcpSocket = tcpSocket;
     }
 
-    
-
     public ProbeDTO withHttpGet(HttpGetDTO httpGet) {
         this.httpGet = httpGet;
         return this;
     }
 
     public ProbeDTO withHttpGet(Consumer<HttpGetDTO> httpGetSetter) {
-        if(this.httpGet == null ){
+        if (this.httpGet == null) {
             this.httpGet = new HttpGetDTO();
             httpGetSetter.accept(this.httpGet);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get httpGet
@@ -139,15 +115,10 @@ public class ProbeDTO  {
         this.httpGet = httpGet;
     }
 
-    
-
     public ProbeDTO withInitialDelaySeconds(Integer initialDelaySeconds) {
         this.initialDelaySeconds = initialDelaySeconds;
         return this;
     }
-
-    
-
 
     /**
      * 表示从工作负载启动后从多久开始探测
@@ -163,15 +134,10 @@ public class ProbeDTO  {
         this.initialDelaySeconds = initialDelaySeconds;
     }
 
-    
-
     public ProbeDTO withTimeoutSeconds(Integer timeoutSeconds) {
         this.timeoutSeconds = timeoutSeconds;
         return this;
     }
-
-    
-
 
     /**
      * 表示探测超时时间
@@ -187,15 +153,10 @@ public class ProbeDTO  {
         this.timeoutSeconds = timeoutSeconds;
     }
 
-    
-
     public ProbeDTO withPeriodSeconds(Integer periodSeconds) {
         this.periodSeconds = periodSeconds;
         return this;
     }
-
-    
-
 
     /**
      * 检查周期
@@ -211,15 +172,10 @@ public class ProbeDTO  {
         this.periodSeconds = periodSeconds;
     }
 
-    
-
     public ProbeDTO withFailureThreshold(Integer failureThreshold) {
         this.failureThreshold = failureThreshold;
         return this;
     }
-
-    
-
 
     /**
      * 失败多少次算不健康
@@ -235,29 +191,34 @@ public class ProbeDTO  {
         this.failureThreshold = failureThreshold;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProbeDTO probeDTO = (ProbeDTO) o;
-        return Objects.equals(this.execCommand, probeDTO.execCommand) &&
-            Objects.equals(this.tcpSocket, probeDTO.tcpSocket) &&
-            Objects.equals(this.httpGet, probeDTO.httpGet) &&
-            Objects.equals(this.initialDelaySeconds, probeDTO.initialDelaySeconds) &&
-            Objects.equals(this.timeoutSeconds, probeDTO.timeoutSeconds) &&
-            Objects.equals(this.periodSeconds, probeDTO.periodSeconds) &&
-            Objects.equals(this.failureThreshold, probeDTO.failureThreshold);
+        ProbeDTO that = (ProbeDTO) obj;
+        return Objects.equals(this.execCommand, that.execCommand) && Objects.equals(this.tcpSocket, that.tcpSocket)
+            && Objects.equals(this.httpGet, that.httpGet)
+            && Objects.equals(this.initialDelaySeconds, that.initialDelaySeconds)
+            && Objects.equals(this.timeoutSeconds, that.timeoutSeconds)
+            && Objects.equals(this.periodSeconds, that.periodSeconds)
+            && Objects.equals(this.failureThreshold, that.failureThreshold);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(execCommand, tcpSocket, httpGet, initialDelaySeconds, timeoutSeconds, periodSeconds, failureThreshold);
+        return Objects.hash(execCommand,
+            tcpSocket,
+            httpGet,
+            initialDelaySeconds,
+            timeoutSeconds,
+            periodSeconds,
+            failureThreshold);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -272,6 +233,7 @@ public class ProbeDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -282,8 +244,5 @@ public class ProbeDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

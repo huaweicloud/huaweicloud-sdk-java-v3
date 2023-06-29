@@ -231,24 +231,19 @@ public class ShowInstanceMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceMessagesRequest showInstanceMessagesRequest = (ShowInstanceMessagesRequest) o;
-        return Objects.equals(this.instanceId, showInstanceMessagesRequest.instanceId)
-            && Objects.equals(this.topic, showInstanceMessagesRequest.topic)
-            && Objects.equals(this.asc, showInstanceMessagesRequest.asc)
-            && Objects.equals(this.startTime, showInstanceMessagesRequest.startTime)
-            && Objects.equals(this.endTime, showInstanceMessagesRequest.endTime)
-            && Objects.equals(this.limit, showInstanceMessagesRequest.limit)
-            && Objects.equals(this.offset, showInstanceMessagesRequest.offset)
-            && Objects.equals(this.download, showInstanceMessagesRequest.download)
-            && Objects.equals(this.messageOffset, showInstanceMessagesRequest.messageOffset)
-            && Objects.equals(this.partition, showInstanceMessagesRequest.partition);
+        ShowInstanceMessagesRequest that = (ShowInstanceMessagesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.asc, that.asc) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.download, that.download)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.partition, that.partition);
     }
 
     @Override

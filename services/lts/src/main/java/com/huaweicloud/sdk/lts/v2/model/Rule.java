@@ -55,15 +55,15 @@ public class Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rule rule = (Rule) o;
-        return Objects.equals(this.type, rule.type) && Objects.equals(this.param, rule.param);
+        Rule that = (Rule) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.param, that.param);
     }
 
     @Override

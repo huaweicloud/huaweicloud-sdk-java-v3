@@ -603,32 +603,28 @@ public class Clusters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Clusters clusters = (Clusters) o;
-        return Objects.equals(this.customerConfig, clusters.customerConfig)
-            && Objects.equals(this.datastore, clusters.datastore) && Objects.equals(this.instances, clusters.instances)
-            && Objects.equals(this.azName, clusters.azName) && Objects.equals(this.dbuser, clusters.dbuser)
-            && Objects.equals(this.flavorName, clusters.flavorName)
-            && Objects.equals(this.recentEvent, clusters.recentEvent)
-            && Objects.equals(this.isAutoOff, clusters.isAutoOff)
-            && Objects.equals(this.isScheduleBootOff, clusters.isScheduleBootOff)
-            && Objects.equals(this.clusterMode, clusters.clusterMode)
-            && Objects.equals(this.namespace, clusters.namespace) && Objects.equals(this.task, clusters.task)
-            && Objects.equals(this.publicEndpoint, clusters.publicEndpoint)
-            && Objects.equals(this.actionProgress, clusters.actionProgress)
-            && Objects.equals(this.created, clusters.created)
-            && Objects.equals(this.bakExpectedStartTime, clusters.bakExpectedStartTime)
-            && Objects.equals(this.bakKeepDay, clusters.bakKeepDay) && Objects.equals(this.name, clusters.name)
-            && Objects.equals(this.statusDetail, clusters.statusDetail) && Objects.equals(this.id, clusters.id)
-            && Objects.equals(this.isFrozen, clusters.isFrozen) && Objects.equals(this.updated, clusters.updated)
-            && Objects.equals(this.status, clusters.status)
-            && Objects.equals(this.failedReasons, clusters.failedReasons);
+        Clusters that = (Clusters) obj;
+        return Objects.equals(this.customerConfig, that.customerConfig)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.azName, that.azName) && Objects.equals(this.dbuser, that.dbuser)
+            && Objects.equals(this.flavorName, that.flavorName) && Objects.equals(this.recentEvent, that.recentEvent)
+            && Objects.equals(this.isAutoOff, that.isAutoOff)
+            && Objects.equals(this.isScheduleBootOff, that.isScheduleBootOff)
+            && Objects.equals(this.clusterMode, that.clusterMode) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.task, that.task) && Objects.equals(this.publicEndpoint, that.publicEndpoint)
+            && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.bakExpectedStartTime, that.bakExpectedStartTime)
+            && Objects.equals(this.bakKeepDay, that.bakKeepDay) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.statusDetail, that.statusDetail) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isFrozen, that.isFrozen) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failedReasons, that.failedReasons);
     }
 
     @Override

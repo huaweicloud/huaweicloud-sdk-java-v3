@@ -1009,47 +1009,37 @@ public class TemplateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateInfo templateInfo = (TemplateInfo) o;
-        return Objects.equals(this.id, templateInfo.id) && Objects.equals(this.title, templateInfo.title)
-            && Objects.equals(this.description, templateInfo.description)
-            && Objects.equals(this.productshorts, templateInfo.productshorts)
-            && Objects.equals(this.products, templateInfo.products) && Objects.equals(this.topic, templateInfo.topic)
-            && Objects.equals(this.creatorId, templateInfo.creatorId)
-            && Objects.equals(this.creator, templateInfo.creator)
-            && Objects.equals(this.nickname, templateInfo.nickname) && Objects.equals(this.score, templateInfo.score)
-            && Objects.equals(this.label, templateInfo.label) && Objects.equals(this.store, templateInfo.store)
-            && Objects.equals(this.storeInfo, templateInfo.storeInfo)
-            && Objects.equals(this.status, templateInfo.status)
-            && Objects.equals(this.viewCount, templateInfo.viewCount)
-            && Objects.equals(this.usageCount, templateInfo.usageCount)
-            && Objects.equals(this.createdAt, templateInfo.createdAt)
-            && Objects.equals(this.updatedAt, templateInfo.updatedAt)
-            && Objects.equals(this.publishedAt, templateInfo.publishedAt)
-            && Objects.equals(this.favoriteState, templateInfo.favoriteState)
-            && Objects.equals(this.tags, templateInfo.tags) && Objects.equals(this.type, templateInfo.type)
-            && Objects.equals(this.isStatic, templateInfo.isStatic)
-            && Objects.equals(this.maintainers, templateInfo.maintainers)
-            && Objects.equals(this.pipelineTemplate, templateInfo.pipelineTemplate)
-            && Objects.equals(this.platformSource, templateInfo.platformSource)
-            && Objects.equals(this.references, templateInfo.references)
-            && Objects.equals(this.properties, templateInfo.properties)
-            && Objects.equals(this.dependencies, templateInfo.dependencies)
-            && Objects.equals(this.dependencyType, templateInfo.dependencyType)
-            && Objects.equals(this.forumId, templateInfo.forumId)
-            && Objects.equals(this.fileSize, templateInfo.fileSize)
-            && Objects.equals(this.deployment, templateInfo.deployment)
-            && Objects.equals(this.updateId, templateInfo.updateId)
-            && Objects.equals(this.isSupportCloudide, templateInfo.isSupportCloudide)
-            && Objects.equals(this.hasNotices, templateInfo.hasNotices)
-            && Objects.equals(this.dependents, templateInfo.dependents)
-            && Objects.equals(this.dependentServices, templateInfo.dependentServices);
+        TemplateInfo that = (TemplateInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.productshorts, that.productshorts) && Objects.equals(this.products, that.products)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.nickname, that.nickname)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.store, that.store) && Objects.equals(this.storeInfo, that.storeInfo)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.viewCount, that.viewCount)
+            && Objects.equals(this.usageCount, that.usageCount) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.publishedAt, that.publishedAt)
+            && Objects.equals(this.favoriteState, that.favoriteState) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.isStatic, that.isStatic)
+            && Objects.equals(this.maintainers, that.maintainers)
+            && Objects.equals(this.pipelineTemplate, that.pipelineTemplate)
+            && Objects.equals(this.platformSource, that.platformSource)
+            && Objects.equals(this.references, that.references) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.dependencyType, that.dependencyType) && Objects.equals(this.forumId, that.forumId)
+            && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.deployment, that.deployment)
+            && Objects.equals(this.updateId, that.updateId)
+            && Objects.equals(this.isSupportCloudide, that.isSupportCloudide)
+            && Objects.equals(this.hasNotices, that.hasNotices) && Objects.equals(this.dependents, that.dependents)
+            && Objects.equals(this.dependentServices, that.dependentServices);
     }
 
     @Override

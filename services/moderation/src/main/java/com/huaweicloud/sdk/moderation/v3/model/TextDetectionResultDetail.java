@@ -118,18 +118,16 @@ public class TextDetectionResultDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TextDetectionResultDetail textDetectionResultDetail = (TextDetectionResultDetail) o;
-        return Objects.equals(this.suggestion, textDetectionResultDetail.suggestion)
-            && Objects.equals(this.label, textDetectionResultDetail.label)
-            && Objects.equals(this.confidence, textDetectionResultDetail.confidence)
-            && Objects.equals(this.segments, textDetectionResultDetail.segments);
+        TextDetectionResultDetail that = (TextDetectionResultDetail) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.segments, that.segments);
     }
 
     @Override

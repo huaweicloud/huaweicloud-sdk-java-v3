@@ -33,15 +33,15 @@ public class DeleteAlarmSubRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAlarmSubRequest deleteAlarmSubRequest = (DeleteAlarmSubRequest) o;
-        return Objects.equals(this.alarmSubId, deleteAlarmSubRequest.alarmSubId);
+        DeleteAlarmSubRequest that = (DeleteAlarmSubRequest) obj;
+        return Objects.equals(this.alarmSubId, that.alarmSubId);
     }
 
     @Override

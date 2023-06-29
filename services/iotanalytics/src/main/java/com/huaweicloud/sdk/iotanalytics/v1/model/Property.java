@@ -99,16 +99,16 @@ public class Property {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Property property = (Property) o;
-        return Objects.equals(this.name, property.name) && Objects.equals(this.type, property.type)
-            && Objects.equals(this.description, property.description) && Objects.equals(this.unit, property.unit);
+        Property that = (Property) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

@@ -191,20 +191,18 @@ public class Event {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event event = (Event) o;
-        return Objects.equals(this.hostId, event.hostId) && Objects.equals(this.hostName, event.hostName)
-            && Objects.equals(this.eventType, event.eventType) && Objects.equals(this.occurTime, event.occurTime)
-            && Objects.equals(this.handleTime, event.handleTime)
-            && Objects.equals(this.handleStatus, event.handleStatus)
-            && Objects.equals(this.handleMethod, event.handleMethod)
-            && Objects.equals(this.appendInfo, event.appendInfo);
+        Event that = (Event) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.occurTime, that.occurTime)
+            && Objects.equals(this.handleTime, that.handleTime) && Objects.equals(this.handleStatus, that.handleStatus)
+            && Objects.equals(this.handleMethod, that.handleMethod) && Objects.equals(this.appendInfo, that.appendInfo);
     }
 
     @Override

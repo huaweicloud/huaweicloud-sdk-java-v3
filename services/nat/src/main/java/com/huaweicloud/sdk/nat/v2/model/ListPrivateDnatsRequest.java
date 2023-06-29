@@ -424,26 +424,22 @@ public class ListPrivateDnatsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateDnatsRequest listPrivateDnatsRequest = (ListPrivateDnatsRequest) o;
-        return Objects.equals(this.limit, listPrivateDnatsRequest.limit)
-            && Objects.equals(this.marker, listPrivateDnatsRequest.marker)
-            && Objects.equals(this.pageReverse, listPrivateDnatsRequest.pageReverse)
-            && Objects.equals(this.id, listPrivateDnatsRequest.id)
-            && Objects.equals(this.enterpriseProjectId, listPrivateDnatsRequest.enterpriseProjectId)
-            && Objects.equals(this.description, listPrivateDnatsRequest.description)
-            && Objects.equals(this.gatewayId, listPrivateDnatsRequest.gatewayId)
-            && Objects.equals(this.transitIpId, listPrivateDnatsRequest.transitIpId)
-            && Objects.equals(this.externalIpAddress, listPrivateDnatsRequest.externalIpAddress)
-            && Objects.equals(this.networkInterfaceId, listPrivateDnatsRequest.networkInterfaceId)
-            && Objects.equals(this.type, listPrivateDnatsRequest.type)
-            && Objects.equals(this.privateIpAddress, listPrivateDnatsRequest.privateIpAddress);
+        ListPrivateDnatsRequest that = (ListPrivateDnatsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.externalIpAddress, that.externalIpAddress)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress);
     }
 
     @Override

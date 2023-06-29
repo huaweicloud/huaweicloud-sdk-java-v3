@@ -171,21 +171,19 @@ public class ApiTemplateVariable {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiTemplateVariable apiTemplateVariable = (ApiTemplateVariable) o;
-        return Objects.equals(this.id, apiTemplateVariable.id)
-            && Objects.equals(this.userName, apiTemplateVariable.userName)
-            && Objects.equals(this.tempName, apiTemplateVariable.tempName)
-            && Objects.equals(this.variableIndex, apiTemplateVariable.variableIndex)
-            && Objects.equals(this.variableType, apiTemplateVariable.variableType)
-            && Objects.equals(this.variableLength, apiTemplateVariable.variableLength)
-            && Objects.equals(this.variableDesc, apiTemplateVariable.variableDesc);
+        ApiTemplateVariable that = (ApiTemplateVariable) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.tempName, that.tempName) && Objects.equals(this.variableIndex, that.variableIndex)
+            && Objects.equals(this.variableType, that.variableType)
+            && Objects.equals(this.variableLength, that.variableLength)
+            && Objects.equals(this.variableDesc, that.variableDesc);
     }
 
     @Override

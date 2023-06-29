@@ -77,17 +77,16 @@ public class ConfigItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigItem configItem = (ConfigItem) o;
-        return Objects.equals(this.configName, configItem.configName)
-            && Objects.equals(this.configValue, configItem.configValue)
-            && Objects.equals(this.shouldOverride, configItem.shouldOverride);
+        ConfigItem that = (ConfigItem) obj;
+        return Objects.equals(this.configName, that.configName) && Objects.equals(this.configValue, that.configValue)
+            && Objects.equals(this.shouldOverride, that.shouldOverride);
     }
 
     @Override

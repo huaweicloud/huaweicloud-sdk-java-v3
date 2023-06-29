@@ -272,23 +272,21 @@ public class ClusterStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterStatus clusterStatus = (ClusterStatus) o;
-        return Objects.equals(this.phase, clusterStatus.phase) && Objects.equals(this.jobID, clusterStatus.jobID)
-            && Objects.equals(this.reason, clusterStatus.reason) && Objects.equals(this.message, clusterStatus.message)
-            && Objects.equals(this.endpoints, clusterStatus.endpoints)
-            && Objects.equals(this.isLocked, clusterStatus.isLocked)
-            && Objects.equals(this.lockScene, clusterStatus.lockScene)
-            && Objects.equals(this.lockSource, clusterStatus.lockSource)
-            && Objects.equals(this.lockSourceId, clusterStatus.lockSourceId)
-            && Objects.equals(this.deleteOption, clusterStatus.deleteOption)
-            && Objects.equals(this.deleteStatus, clusterStatus.deleteStatus);
+        ClusterStatus that = (ClusterStatus) obj;
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.jobID, that.jobID)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.isLocked, that.isLocked)
+            && Objects.equals(this.lockScene, that.lockScene) && Objects.equals(this.lockSource, that.lockSource)
+            && Objects.equals(this.lockSourceId, that.lockSourceId)
+            && Objects.equals(this.deleteOption, that.deleteOption)
+            && Objects.equals(this.deleteStatus, that.deleteStatus);
     }
 
     @Override

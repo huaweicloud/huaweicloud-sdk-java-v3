@@ -75,16 +75,15 @@ public class ShowMetricDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetricDataResponse showMetricDataResponse = (ShowMetricDataResponse) o;
-        return Objects.equals(this.datapoints, showMetricDataResponse.datapoints)
-            && Objects.equals(this.metricName, showMetricDataResponse.metricName);
+        ShowMetricDataResponse that = (ShowMetricDataResponse) obj;
+        return Objects.equals(this.datapoints, that.datapoints) && Objects.equals(this.metricName, that.metricName);
     }
 
     @Override

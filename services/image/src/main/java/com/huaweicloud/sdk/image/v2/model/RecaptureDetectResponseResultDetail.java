@@ -55,17 +55,15 @@ public class RecaptureDetectResponseResultDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecaptureDetectResponseResultDetail recaptureDetectResponseResultDetail =
-            (RecaptureDetectResponseResultDetail) o;
-        return Objects.equals(this.label, recaptureDetectResponseResultDetail.label)
-            && Objects.equals(this.confidence, recaptureDetectResponseResultDetail.confidence);
+        RecaptureDetectResponseResultDetail that = (RecaptureDetectResponseResultDetail) obj;
+        return Objects.equals(this.label, that.label) && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

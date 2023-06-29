@@ -99,18 +99,16 @@ public class IntellectualPropertyV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IntellectualPropertyV2 intellectualPropertyV2 = (IntellectualPropertyV2) o;
-        return Objects.equals(this.ipType, intellectualPropertyV2.ipType)
-            && Objects.equals(this.ipArea, intellectualPropertyV2.ipArea)
-            && Objects.equals(this.ipNumber, intellectualPropertyV2.ipNumber)
-            && Objects.equals(this.ipContent, intellectualPropertyV2.ipContent);
+        IntellectualPropertyV2 that = (IntellectualPropertyV2) obj;
+        return Objects.equals(this.ipType, that.ipType) && Objects.equals(this.ipArea, that.ipArea)
+            && Objects.equals(this.ipNumber, that.ipNumber) && Objects.equals(this.ipContent, that.ipContent);
     }
 
     @Override

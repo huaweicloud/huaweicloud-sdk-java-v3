@@ -240,22 +240,20 @@ public class CreateVirtualGateway {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVirtualGateway createVirtualGateway = (CreateVirtualGateway) o;
-        return Objects.equals(this.vpcId, createVirtualGateway.vpcId)
-            && Objects.equals(this.name, createVirtualGateway.name)
-            && Objects.equals(this.description, createVirtualGateway.description)
-            && Objects.equals(this.localEpGroup, createVirtualGateway.localEpGroup)
-            && Objects.equals(this.localEpGroupIpv6, createVirtualGateway.localEpGroupIpv6)
-            && Objects.equals(this.bgpAsn, createVirtualGateway.bgpAsn)
-            && Objects.equals(this.enterpriseProjectId, createVirtualGateway.enterpriseProjectId)
-            && Objects.equals(this.tags, createVirtualGateway.tags);
+        CreateVirtualGateway that = (CreateVirtualGateway) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.localEpGroup, that.localEpGroup)
+            && Objects.equals(this.localEpGroupIpv6, that.localEpGroupIpv6) && Objects.equals(this.bgpAsn, that.bgpAsn)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -147,20 +147,18 @@ public class ListAimTemplateMaterialsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplateMaterialsRequest listAimTemplateMaterialsRequest = (ListAimTemplateMaterialsRequest) o;
-        return Objects.equals(this.resourceType, listAimTemplateMaterialsRequest.resourceType)
-            && Objects.equals(this.fileName, listAimTemplateMaterialsRequest.fileName)
-            && Objects.equals(this.materialId, listAimTemplateMaterialsRequest.materialId)
-            && Objects.equals(this.aimResourceId, listAimTemplateMaterialsRequest.aimResourceId)
-            && Objects.equals(this.offset, listAimTemplateMaterialsRequest.offset)
-            && Objects.equals(this.limit, listAimTemplateMaterialsRequest.limit);
+        ListAimTemplateMaterialsRequest that = (ListAimTemplateMaterialsRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.materialId, that.materialId)
+            && Objects.equals(this.aimResourceId, that.aimResourceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

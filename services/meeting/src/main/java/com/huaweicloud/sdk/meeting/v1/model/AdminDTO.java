@@ -143,17 +143,17 @@ public class AdminDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdminDTO adminDTO = (AdminDTO) o;
-        return Objects.equals(this.account, adminDTO.account) && Objects.equals(this.name, adminDTO.name)
-            && Objects.equals(this.pwd, adminDTO.pwd) && Objects.equals(this.email, adminDTO.email)
-            && Objects.equals(this.phone, adminDTO.phone) && Objects.equals(this.country, adminDTO.country);
+        AdminDTO that = (AdminDTO) obj;
+        return Objects.equals(this.account, that.account) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.pwd, that.pwd) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country);
     }
 
     @Override

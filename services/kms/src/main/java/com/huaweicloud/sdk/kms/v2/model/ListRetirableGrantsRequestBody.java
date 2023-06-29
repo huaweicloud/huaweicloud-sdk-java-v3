@@ -77,17 +77,16 @@ public class ListRetirableGrantsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRetirableGrantsRequestBody listRetirableGrantsRequestBody = (ListRetirableGrantsRequestBody) o;
-        return Objects.equals(this.limit, listRetirableGrantsRequestBody.limit)
-            && Objects.equals(this.marker, listRetirableGrantsRequestBody.marker)
-            && Objects.equals(this.sequence, listRetirableGrantsRequestBody.sequence);
+        ListRetirableGrantsRequestBody that = (ListRetirableGrantsRequestBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

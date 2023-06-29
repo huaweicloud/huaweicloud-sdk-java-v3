@@ -77,16 +77,16 @@ public class CertForm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertForm certForm = (CertForm) o;
-        return Objects.equals(this.certContent, certForm.certContent) && Objects.equals(this.name, certForm.name)
-            && Objects.equals(this.privateKey, certForm.privateKey);
+        CertForm that = (CertForm) obj;
+        return Objects.equals(this.certContent, that.certContent) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.privateKey, that.privateKey);
     }
 
     @Override

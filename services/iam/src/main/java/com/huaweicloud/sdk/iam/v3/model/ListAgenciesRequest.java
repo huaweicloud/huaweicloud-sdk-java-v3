@@ -77,17 +77,16 @@ public class ListAgenciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgenciesRequest listAgenciesRequest = (ListAgenciesRequest) o;
-        return Objects.equals(this.domainId, listAgenciesRequest.domainId)
-            && Objects.equals(this.trustDomainId, listAgenciesRequest.trustDomainId)
-            && Objects.equals(this.name, listAgenciesRequest.name);
+        ListAgenciesRequest that = (ListAgenciesRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.trustDomainId, that.trustDomainId)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class ShowJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobRequest showJobRequest = (ShowJobRequest) o;
-        return Objects.equals(this.xAdditionInfo, showJobRequest.xAdditionInfo)
-            && Objects.equals(this.eihealthProjectId, showJobRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showJobRequest.jobId);
+        ShowJobRequest that = (ShowJobRequest) obj;
+        return Objects.equals(this.xAdditionInfo, that.xAdditionInfo)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

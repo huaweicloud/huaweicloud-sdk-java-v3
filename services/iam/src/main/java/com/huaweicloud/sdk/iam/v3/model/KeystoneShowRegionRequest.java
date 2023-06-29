@@ -33,15 +33,15 @@ public class KeystoneShowRegionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowRegionRequest keystoneShowRegionRequest = (KeystoneShowRegionRequest) o;
-        return Objects.equals(this.regionId, keystoneShowRegionRequest.regionId);
+        KeystoneShowRegionRequest that = (KeystoneShowRegionRequest) obj;
+        return Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

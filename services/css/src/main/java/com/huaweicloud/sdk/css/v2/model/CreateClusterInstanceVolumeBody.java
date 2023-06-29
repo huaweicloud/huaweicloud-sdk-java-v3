@@ -55,16 +55,15 @@ public class CreateClusterInstanceVolumeBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterInstanceVolumeBody createClusterInstanceVolumeBody = (CreateClusterInstanceVolumeBody) o;
-        return Objects.equals(this.volumeType, createClusterInstanceVolumeBody.volumeType)
-            && Objects.equals(this.size, createClusterInstanceVolumeBody.size);
+        CreateClusterInstanceVolumeBody that = (CreateClusterInstanceVolumeBody) obj;
+        return Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.size, that.size);
     }
 
     @Override

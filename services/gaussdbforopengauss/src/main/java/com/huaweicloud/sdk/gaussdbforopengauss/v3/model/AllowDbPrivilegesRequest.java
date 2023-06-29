@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussGrantRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class AllowDbPrivilegesRequest  {
-
+public class AllowDbPrivilegesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private GaussDBforOpenGaussGrantRequest body;
 
@@ -42,15 +31,12 @@ public class AllowDbPrivilegesRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -59,15 +45,10 @@ public class AllowDbPrivilegesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public AllowDbPrivilegesRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -81,22 +62,19 @@ public class AllowDbPrivilegesRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public AllowDbPrivilegesRequest withBody(GaussDBforOpenGaussGrantRequest body) {
         this.body = body;
         return this;
     }
 
     public AllowDbPrivilegesRequest withBody(Consumer<GaussDBforOpenGaussGrantRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new GaussDBforOpenGaussGrantRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -110,25 +88,24 @@ public class AllowDbPrivilegesRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowDbPrivilegesRequest allowDbPrivilegesRequest = (AllowDbPrivilegesRequest) o;
-        return Objects.equals(this.xLanguage, allowDbPrivilegesRequest.xLanguage) &&
-            Objects.equals(this.instanceId, allowDbPrivilegesRequest.instanceId) &&
-            Objects.equals(this.body, allowDbPrivilegesRequest.body);
+        AllowDbPrivilegesRequest that = (AllowDbPrivilegesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,6 +116,7 @@ public class AllowDbPrivilegesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -149,8 +127,5 @@ public class AllowDbPrivilegesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

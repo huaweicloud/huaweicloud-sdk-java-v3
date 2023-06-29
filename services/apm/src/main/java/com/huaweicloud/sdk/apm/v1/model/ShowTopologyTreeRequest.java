@@ -123,19 +123,17 @@ public class ShowTopologyTreeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopologyTreeRequest showTopologyTreeRequest = (ShowTopologyTreeRequest) o;
-        return Objects.equals(this.regionId, showTopologyTreeRequest.regionId)
-            && Objects.equals(this.businessId, showTopologyTreeRequest.businessId)
-            && Objects.equals(this.envTagId, showTopologyTreeRequest.envTagId)
-            && Objects.equals(this.envKeyword, showTopologyTreeRequest.envKeyword)
-            && Objects.equals(this.xBusinessId, showTopologyTreeRequest.xBusinessId);
+        ShowTopologyTreeRequest that = (ShowTopologyTreeRequest) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.envTagId, that.envTagId) && Objects.equals(this.envKeyword, that.envKeyword)
+            && Objects.equals(this.xBusinessId, that.xBusinessId);
     }
 
     @Override

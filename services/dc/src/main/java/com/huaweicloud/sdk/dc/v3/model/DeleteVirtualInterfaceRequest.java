@@ -33,15 +33,15 @@ public class DeleteVirtualInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVirtualInterfaceRequest deleteVirtualInterfaceRequest = (DeleteVirtualInterfaceRequest) o;
-        return Objects.equals(this.virtualInterfaceId, deleteVirtualInterfaceRequest.virtualInterfaceId);
+        DeleteVirtualInterfaceRequest that = (DeleteVirtualInterfaceRequest) obj;
+        return Objects.equals(this.virtualInterfaceId, that.virtualInterfaceId);
     }
 
     @Override

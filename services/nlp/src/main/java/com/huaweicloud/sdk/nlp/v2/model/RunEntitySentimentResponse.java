@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,40 +11,33 @@ import java.util.Objects;
  */
 public class RunEntitySentimentResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entity")
-    
+    @JsonProperty(value = "entity")
 
     private String entity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
 
     private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Double confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
@@ -60,9 +45,6 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 响应的文本
@@ -76,15 +58,10 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.content = content;
     }
 
-    
-
     public RunEntitySentimentResponse withEntity(String entity) {
         this.entity = entity;
         return this;
     }
-
-    
-
 
     /**
      * 响应的实体
@@ -98,15 +75,10 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.entity = entity;
     }
 
-    
-
     public RunEntitySentimentResponse withLabel(Integer label) {
         this.label = label;
         return this;
     }
-
-    
-
 
     /**
      * 响应的情感标签，0表示负面，1表示非负面，2表示不相关
@@ -120,15 +92,10 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.label = label;
     }
 
-    
-
     public RunEntitySentimentResponse withConfidence(Double confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 该实体在文本中的情感label的置信度
@@ -142,15 +109,10 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.confidence = confidence;
     }
 
-    
-
     public RunEntitySentimentResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误码，具体请参见错误码。调用成功时无此字段。
@@ -164,15 +126,10 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public RunEntitySentimentResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误信息。调用成功时无此字段。
@@ -186,28 +143,25 @@ public class RunEntitySentimentResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunEntitySentimentResponse runEntitySentimentResponse = (RunEntitySentimentResponse) o;
-        return Objects.equals(this.content, runEntitySentimentResponse.content) &&
-            Objects.equals(this.entity, runEntitySentimentResponse.entity) &&
-            Objects.equals(this.label, runEntitySentimentResponse.label) &&
-            Objects.equals(this.confidence, runEntitySentimentResponse.confidence) &&
-            Objects.equals(this.errorCode, runEntitySentimentResponse.errorCode) &&
-            Objects.equals(this.errorMsg, runEntitySentimentResponse.errorMsg);
+        RunEntitySentimentResponse that = (RunEntitySentimentResponse) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.entity, that.entity)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, entity, label, confidence, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -221,6 +175,7 @@ public class RunEntitySentimentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -231,8 +186,5 @@ public class RunEntitySentimentResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

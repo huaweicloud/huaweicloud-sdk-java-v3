@@ -55,16 +55,15 @@ public class WeeklyTop10 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeeklyTop10 weeklyTop10 = (WeeklyTop10) o;
-        return Objects.equals(this.floatingIpAddress, weeklyTop10.floatingIpAddress)
-            && Objects.equals(this.times, weeklyTop10.times);
+        WeeklyTop10 that = (WeeklyTop10) obj;
+        return Objects.equals(this.floatingIpAddress, that.floatingIpAddress) && Objects.equals(this.times, that.times);
     }
 
     @Override

@@ -374,28 +374,21 @@ public class TestPlanIssueDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanIssueDetail testPlanIssueDetail = (TestPlanIssueDetail) o;
-        return Objects.equals(this.projectId, testPlanIssueDetail.projectId)
-            && Objects.equals(this.planId, testPlanIssueDetail.planId)
-            && Objects.equals(this.workitemId, testPlanIssueDetail.workitemId)
-            && Objects.equals(this.parentIssue, testPlanIssueDetail.parentIssue)
-            && Objects.equals(this.startDate, testPlanIssueDetail.startDate)
-            && Objects.equals(this.endDate, testPlanIssueDetail.endDate)
-            && Objects.equals(this.name, testPlanIssueDetail.name)
-            && Objects.equals(this.regionId, testPlanIssueDetail.regionId)
-            && Objects.equals(this.owner, testPlanIssueDetail.owner)
-            && Objects.equals(this.severity, testPlanIssueDetail.severity)
-            && Objects.equals(this.status, testPlanIssueDetail.status)
-            && Objects.equals(this.tracker, testPlanIssueDetail.tracker)
-            && Objects.equals(this.iteration, testPlanIssueDetail.iteration)
-            && Objects.equals(this.module, testPlanIssueDetail.module);
+        TestPlanIssueDetail that = (TestPlanIssueDetail) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.workitemId, that.workitemId) && Objects.equals(this.parentIssue, that.parentIssue)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tracker, that.tracker)
+            && Objects.equals(this.iteration, that.iteration) && Objects.equals(this.module, that.module);
     }
 
     @Override

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,16 +11,13 @@ import java.util.Objects;
  */
 public class AddMetricDataResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
@@ -36,9 +25,6 @@ public class AddMetricDataResponse extends SdkResponse {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 响应码。
@@ -52,15 +38,10 @@ public class AddMetricDataResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public AddMetricDataResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 响应信息描述。
@@ -74,24 +55,23 @@ public class AddMetricDataResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddMetricDataResponse addMetricDataResponse = (AddMetricDataResponse) o;
-        return Objects.equals(this.errorCode, addMetricDataResponse.errorCode) &&
-            Objects.equals(this.errorMessage, addMetricDataResponse.errorMessage);
+        AddMetricDataResponse that = (AddMetricDataResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorCode, errorMessage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +81,7 @@ public class AddMetricDataResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +92,5 @@ public class AddMetricDataResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

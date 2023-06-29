@@ -213,22 +213,19 @@ public class SimCardsFlowVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimCardsFlowVO simCardsFlowVO = (SimCardsFlowVO) o;
-        return Objects.equals(this.id, simCardsFlowVO.id) && Objects.equals(this.accountId, simCardsFlowVO.accountId)
-            && Objects.equals(this.simCardId, simCardsFlowVO.simCardId)
-            && Objects.equals(this.pricePlanId, simCardsFlowVO.pricePlanId)
-            && Objects.equals(this.pricePlanName, simCardsFlowVO.pricePlanName)
-            && Objects.equals(this.iccid, simCardsFlowVO.iccid)
-            && Objects.equals(this.flowTotal, simCardsFlowVO.flowTotal)
-            && Objects.equals(this.flowUsed, simCardsFlowVO.flowUsed)
-            && Objects.equals(this.flowLeft, simCardsFlowVO.flowLeft);
+        SimCardsFlowVO that = (SimCardsFlowVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.pricePlanId, that.pricePlanId)
+            && Objects.equals(this.pricePlanName, that.pricePlanName) && Objects.equals(this.iccid, that.iccid)
+            && Objects.equals(this.flowTotal, that.flowTotal) && Objects.equals(this.flowUsed, that.flowUsed)
+            && Objects.equals(this.flowLeft, that.flowLeft);
     }
 
     @Override

@@ -93,22 +93,15 @@ public class QueryTagsOption {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,21 +367,19 @@ public class QueryTagsOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryTagsOption queryTagsOption = (QueryTagsOption) o;
-        return Objects.equals(this.tags, queryTagsOption.tags) && Objects.equals(this.tagsAny, queryTagsOption.tagsAny)
-            && Objects.equals(this.notTags, queryTagsOption.notTags)
-            && Objects.equals(this.notTagsAny, queryTagsOption.notTagsAny)
-            && Objects.equals(this.limit, queryTagsOption.limit) && Objects.equals(this.marker, queryTagsOption.marker)
-            && Objects.equals(this.action, queryTagsOption.action)
-            && Objects.equals(this.offset, queryTagsOption.offset)
-            && Objects.equals(this.matches, queryTagsOption.matches);
+        QueryTagsOption that = (QueryTagsOption) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.tagsAny, that.tagsAny)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.notTagsAny, that.notTagsAny)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.matches, that.matches);
     }
 
     @Override

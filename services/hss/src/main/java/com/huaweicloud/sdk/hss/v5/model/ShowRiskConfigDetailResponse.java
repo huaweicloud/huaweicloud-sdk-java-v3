@@ -198,22 +198,20 @@ public class ShowRiskConfigDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRiskConfigDetailResponse showRiskConfigDetailResponse = (ShowRiskConfigDetailResponse) o;
-        return Objects.equals(this.severity, showRiskConfigDetailResponse.severity)
-            && Objects.equals(this.checkType, showRiskConfigDetailResponse.checkType)
-            && Objects.equals(this.checkTypeDesc, showRiskConfigDetailResponse.checkTypeDesc)
-            && Objects.equals(this.checkRuleNum, showRiskConfigDetailResponse.checkRuleNum)
-            && Objects.equals(this.failedRuleNum, showRiskConfigDetailResponse.failedRuleNum)
-            && Objects.equals(this.passedRuleNum, showRiskConfigDetailResponse.passedRuleNum)
-            && Objects.equals(this.ignoredRuleNum, showRiskConfigDetailResponse.ignoredRuleNum)
-            && Objects.equals(this.hostNum, showRiskConfigDetailResponse.hostNum);
+        ShowRiskConfigDetailResponse that = (ShowRiskConfigDetailResponse) obj;
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.checkType, that.checkType)
+            && Objects.equals(this.checkTypeDesc, that.checkTypeDesc)
+            && Objects.equals(this.checkRuleNum, that.checkRuleNum)
+            && Objects.equals(this.failedRuleNum, that.failedRuleNum)
+            && Objects.equals(this.passedRuleNum, that.passedRuleNum)
+            && Objects.equals(this.ignoredRuleNum, that.ignoredRuleNum) && Objects.equals(this.hostNum, that.hostNum);
     }
 
     @Override

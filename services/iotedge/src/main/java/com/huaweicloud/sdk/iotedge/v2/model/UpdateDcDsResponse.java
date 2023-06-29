@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,94 +11,78 @@ import java.util.Objects;
  */
 public class UpdateDcDsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ds_id")
-    
+    @JsonProperty(value = "ds_id")
 
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="config")
-    
+    @JsonProperty(value = "config")
 
     private Object config;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_id")
-    
+    @JsonProperty(value = "module_id")
 
     private String moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tpl_id")
-    
+    @JsonProperty(value = "tpl_id")
 
     private String tplId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quality_report")
-    
+    @JsonProperty(value = "quality_report")
 
     private Boolean qualityReport;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_name")
-    
+    @JsonProperty(value = "edge_app_name")
 
     private String edgeAppName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="connection_info")
-    
+    @JsonProperty(value = "connection_info")
 
     private Object connectionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_state")
-    
+    @JsonProperty(value = "module_state")
 
     private String moduleState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="synchronized")
-    
+    @JsonProperty(value = "synchronized")
 
     private Boolean _synchronized;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="synchronized_time")
-    
+    @JsonProperty(value = "synchronized_time")
 
     private String synchronizedTime;
 
@@ -114,9 +90,6 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.dsId = dsId;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源id，节点下唯一
@@ -130,15 +103,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.dsId = dsId;
     }
 
-    
-
     public UpdateDcDsResponse withConfig(Object config) {
         this.config = config;
         return this;
     }
-
-    
-
 
     /**
      * 数据源的连接及采集信息
@@ -152,15 +120,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.config = config;
     }
 
-    
-
     public UpdateDcDsResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源名称，允许中、数字、英文大小写、下划线、中划线
@@ -174,15 +137,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateDcDsResponse withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点id
@@ -196,15 +154,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public UpdateDcDsResponse withModuleId(String moduleId) {
         this.moduleId = moduleId;
         return this;
     }
-
-    
-
 
     /**
      * 模块id
@@ -218,15 +171,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.moduleId = moduleId;
     }
 
-    
-
     public UpdateDcDsResponse withTplId(String tplId) {
         this.tplId = tplId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id，节点下唯一
@@ -240,15 +188,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.tplId = tplId;
     }
 
-    
-
     public UpdateDcDsResponse withQualityReport(Boolean qualityReport) {
         this.qualityReport = qualityReport;
         return this;
     }
-
-    
-
 
     /**
      * 质量上报开关，不携带或值不为true，默认为false
@@ -262,15 +205,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.qualityReport = qualityReport;
     }
 
-    
-
     public UpdateDcDsResponse withEdgeAppName(String edgeAppName) {
         this.edgeAppName = edgeAppName;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -284,15 +222,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.edgeAppName = edgeAppName;
     }
 
-    
-
     public UpdateDcDsResponse withConnectionInfo(Object connectionInfo) {
         this.connectionInfo = connectionInfo;
         return this;
     }
-
-    
-
 
     /**
      * 数采连接信息
@@ -306,15 +239,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.connectionInfo = connectionInfo;
     }
 
-    
-
     public UpdateDcDsResponse withModuleState(String moduleState) {
         this.moduleState = moduleState;
         return this;
     }
-
-    
-
 
     /**
      * 数采连接状态,stopped|running
@@ -328,15 +256,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.moduleState = moduleState;
     }
 
-    
-
     public UpdateDcDsResponse withCount(Long count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 数采连接下点位数
@@ -352,15 +275,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public UpdateDcDsResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -374,15 +292,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateDcDsResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -396,15 +309,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public UpdateDcDsResponse withSynchronized(Boolean _synchronized) {
         this._synchronized = _synchronized;
         return this;
     }
-
-    
-
 
     /**
      * 数采配置是否已同步，已同步：true,未同步：false
@@ -418,15 +326,10 @@ public class UpdateDcDsResponse extends SdkResponse {
         this._synchronized = _synchronized;
     }
 
-    
-
     public UpdateDcDsResponse withSynchronizedTime(String synchronizedTime) {
         this.synchronizedTime = synchronizedTime;
         return this;
     }
-
-    
-
 
     /**
      * 数采配置同步时间
@@ -440,37 +343,46 @@ public class UpdateDcDsResponse extends SdkResponse {
         this.synchronizedTime = synchronizedTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDcDsResponse updateDcDsResponse = (UpdateDcDsResponse) o;
-        return Objects.equals(this.dsId, updateDcDsResponse.dsId) &&
-            Objects.equals(this.config, updateDcDsResponse.config) &&
-            Objects.equals(this.name, updateDcDsResponse.name) &&
-            Objects.equals(this.edgeNodeId, updateDcDsResponse.edgeNodeId) &&
-            Objects.equals(this.moduleId, updateDcDsResponse.moduleId) &&
-            Objects.equals(this.tplId, updateDcDsResponse.tplId) &&
-            Objects.equals(this.qualityReport, updateDcDsResponse.qualityReport) &&
-            Objects.equals(this.edgeAppName, updateDcDsResponse.edgeAppName) &&
-            Objects.equals(this.connectionInfo, updateDcDsResponse.connectionInfo) &&
-            Objects.equals(this.moduleState, updateDcDsResponse.moduleState) &&
-            Objects.equals(this.count, updateDcDsResponse.count) &&
-            Objects.equals(this.createTime, updateDcDsResponse.createTime) &&
-            Objects.equals(this.updateTime, updateDcDsResponse.updateTime) &&
-            Objects.equals(this._synchronized, updateDcDsResponse._synchronized) &&
-            Objects.equals(this.synchronizedTime, updateDcDsResponse.synchronizedTime);
+        UpdateDcDsResponse that = (UpdateDcDsResponse) obj;
+        return Objects.equals(this.dsId, that.dsId) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.edgeNodeId, that.edgeNodeId)
+            && Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.qualityReport, that.qualityReport)
+            && Objects.equals(this.edgeAppName, that.edgeAppName)
+            && Objects.equals(this.connectionInfo, that.connectionInfo)
+            && Objects.equals(this.moduleState, that.moduleState) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this._synchronized, that._synchronized)
+            && Objects.equals(this.synchronizedTime, that.synchronizedTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(dsId, config, name, edgeNodeId, moduleId, tplId, qualityReport, edgeAppName, connectionInfo, moduleState, count, createTime, updateTime, _synchronized, synchronizedTime);
+        return Objects.hash(dsId,
+            config,
+            name,
+            edgeNodeId,
+            moduleId,
+            tplId,
+            qualityReport,
+            edgeAppName,
+            connectionInfo,
+            moduleState,
+            count,
+            createTime,
+            updateTime,
+            _synchronized,
+            synchronizedTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -493,6 +405,7 @@ public class UpdateDcDsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -503,8 +416,5 @@ public class UpdateDcDsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

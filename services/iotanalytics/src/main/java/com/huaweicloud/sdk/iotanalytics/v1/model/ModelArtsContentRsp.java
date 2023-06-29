@@ -143,19 +143,18 @@ public class ModelArtsContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModelArtsContentRsp modelArtsContentRsp = (ModelArtsContentRsp) o;
-        return Objects.equals(this.serviceName, modelArtsContentRsp.serviceName)
-            && Objects.equals(this.accessAddress, modelArtsContentRsp.accessAddress)
-            && Objects.equals(this.verifyBody, modelArtsContentRsp.verifyBody)
-            && Objects.equals(this.ak, modelArtsContentRsp.ak) && Objects.equals(this.sk, modelArtsContentRsp.sk)
-            && Objects.equals(this.projectId, modelArtsContentRsp.projectId);
+        ModelArtsContentRsp that = (ModelArtsContentRsp) obj;
+        return Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.accessAddress, that.accessAddress)
+            && Objects.equals(this.verifyBody, that.verifyBody) && Objects.equals(this.ak, that.ak)
+            && Objects.equals(this.sk, that.sk) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

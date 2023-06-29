@@ -76,22 +76,15 @@ public class Sources {
             if (value == null) {
                 return null;
             }
-            OriginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginTypeEnum(value));
         }
 
         public static OriginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,18 +202,18 @@ public class Sources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Sources sources = (Sources) o;
-        return Objects.equals(this.domainId, sources.domainId) && Objects.equals(this.ipOrDomain, sources.ipOrDomain)
-            && Objects.equals(this.originType, sources.originType)
-            && Objects.equals(this.activeStandby, sources.activeStandby)
-            && Objects.equals(this.enableObsWebHosting, sources.enableObsWebHosting);
+        Sources that = (Sources) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.ipOrDomain, that.ipOrDomain)
+            && Objects.equals(this.originType, that.originType)
+            && Objects.equals(this.activeStandby, that.activeStandby)
+            && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting);
     }
 
     @Override

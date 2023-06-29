@@ -55,15 +55,15 @@ public class TagV5DTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagV5DTO tagV5DTO = (TagV5DTO) o;
-        return Objects.equals(this.tagKey, tagV5DTO.tagKey) && Objects.equals(this.tagValue, tagV5DTO.tagValue);
+        TagV5DTO that = (TagV5DTO) obj;
+        return Objects.equals(this.tagKey, that.tagKey) && Objects.equals(this.tagValue, that.tagValue);
     }
 
     @Override

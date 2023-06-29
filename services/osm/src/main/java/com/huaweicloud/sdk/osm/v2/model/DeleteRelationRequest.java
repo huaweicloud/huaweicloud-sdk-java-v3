@@ -139,19 +139,17 @@ public class DeleteRelationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRelationRequest deleteRelationRequest = (DeleteRelationRequest) o;
-        return Objects.equals(this.caseId, deleteRelationRequest.caseId)
-            && Objects.equals(this.xSite, deleteRelationRequest.xSite)
-            && Objects.equals(this.xLanguage, deleteRelationRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, deleteRelationRequest.xTimeZone)
-            && Objects.equals(this.body, deleteRelationRequest.body);
+        DeleteRelationRequest that = (DeleteRelationRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

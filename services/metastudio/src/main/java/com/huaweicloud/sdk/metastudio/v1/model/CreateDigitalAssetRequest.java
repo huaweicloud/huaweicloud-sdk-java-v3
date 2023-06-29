@@ -113,18 +113,16 @@ public class CreateDigitalAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDigitalAssetRequest createDigitalAssetRequest = (CreateDigitalAssetRequest) o;
-        return Objects.equals(this.authorization, createDigitalAssetRequest.authorization)
-            && Objects.equals(this.xSdkDate, createDigitalAssetRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, createDigitalAssetRequest.xAppUserId)
-            && Objects.equals(this.body, createDigitalAssetRequest.body);
+        CreateDigitalAssetRequest that = (CreateDigitalAssetRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
     }
 
     @Override

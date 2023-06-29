@@ -57,16 +57,15 @@ public class CreatePerformanceResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePerformanceResourceReq createPerformanceResourceReq = (CreatePerformanceResourceReq) o;
-        return Objects.equals(this.space, createPerformanceResourceReq.space)
-            && Objects.equals(this.count, createPerformanceResourceReq.count);
+        CreatePerformanceResourceReq that = (CreatePerformanceResourceReq) obj;
+        return Objects.equals(this.space, that.space) && Objects.equals(this.count, that.count);
     }
 
     @Override

@@ -134,18 +134,17 @@ public class ListEngineIosEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEngineIosEntity listEngineIosEntity = (ListEngineIosEntity) o;
-        return Objects.equals(this.ioSpec, listEngineIosEntity.ioSpec)
-            && Objects.equals(this.type, listEngineIosEntity.type)
-            && Objects.equals(this.availableZones, listEngineIosEntity.availableZones)
-            && Objects.equals(this.unavailableZones, listEngineIosEntity.unavailableZones);
+        ListEngineIosEntity that = (ListEngineIosEntity) obj;
+        return Objects.equals(this.ioSpec, that.ioSpec) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.unavailableZones, that.unavailableZones);
     }
 
     @Override

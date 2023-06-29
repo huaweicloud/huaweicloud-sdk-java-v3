@@ -44,15 +44,15 @@ public class CreatePermanentAccessKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePermanentAccessKeyResponse createPermanentAccessKeyResponse = (CreatePermanentAccessKeyResponse) o;
-        return Objects.equals(this.credential, createPermanentAccessKeyResponse.credential);
+        CreatePermanentAccessKeyResponse that = (CreatePermanentAccessKeyResponse) obj;
+        return Objects.equals(this.credential, that.credential);
     }
 
     @Override

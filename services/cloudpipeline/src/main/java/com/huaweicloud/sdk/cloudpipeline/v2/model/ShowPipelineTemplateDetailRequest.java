@@ -55,16 +55,15 @@ public class ShowPipelineTemplateDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineTemplateDetailRequest showPipelineTemplateDetailRequest = (ShowPipelineTemplateDetailRequest) o;
-        return Objects.equals(this.tenantId, showPipelineTemplateDetailRequest.tenantId)
-            && Objects.equals(this.templateId, showPipelineTemplateDetailRequest.templateId);
+        ShowPipelineTemplateDetailRequest that = (ShowPipelineTemplateDetailRequest) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

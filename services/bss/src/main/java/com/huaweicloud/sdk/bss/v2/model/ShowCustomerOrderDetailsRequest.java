@@ -127,19 +127,17 @@ public class ShowCustomerOrderDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomerOrderDetailsRequest showCustomerOrderDetailsRequest = (ShowCustomerOrderDetailsRequest) o;
-        return Objects.equals(this.xLanguage, showCustomerOrderDetailsRequest.xLanguage)
-            && Objects.equals(this.orderId, showCustomerOrderDetailsRequest.orderId)
-            && Objects.equals(this.limit, showCustomerOrderDetailsRequest.limit)
-            && Objects.equals(this.offset, showCustomerOrderDetailsRequest.offset)
-            && Objects.equals(this.indirectPartnerId, showCustomerOrderDetailsRequest.indirectPartnerId);
+        ShowCustomerOrderDetailsRequest that = (ShowCustomerOrderDetailsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

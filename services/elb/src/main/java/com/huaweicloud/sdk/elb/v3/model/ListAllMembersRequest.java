@@ -522,29 +522,23 @@ public class ListAllMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllMembersRequest listAllMembersRequest = (ListAllMembersRequest) o;
-        return Objects.equals(this.marker, listAllMembersRequest.marker)
-            && Objects.equals(this.limit, listAllMembersRequest.limit)
-            && Objects.equals(this.pageReverse, listAllMembersRequest.pageReverse)
-            && Objects.equals(this.name, listAllMembersRequest.name)
-            && Objects.equals(this.weight, listAllMembersRequest.weight)
-            && Objects.equals(this.adminStateUp, listAllMembersRequest.adminStateUp)
-            && Objects.equals(this.subnetCidrId, listAllMembersRequest.subnetCidrId)
-            && Objects.equals(this.address, listAllMembersRequest.address)
-            && Objects.equals(this.protocolPort, listAllMembersRequest.protocolPort)
-            && Objects.equals(this.id, listAllMembersRequest.id)
-            && Objects.equals(this.operatingStatus, listAllMembersRequest.operatingStatus)
-            && Objects.equals(this.enterpriseProjectId, listAllMembersRequest.enterpriseProjectId)
-            && Objects.equals(this.ipVersion, listAllMembersRequest.ipVersion)
-            && Objects.equals(this.poolId, listAllMembersRequest.poolId)
-            && Objects.equals(this.loadbalancerId, listAllMembersRequest.loadbalancerId);
+        ListAllMembersRequest that = (ListAllMembersRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId);
     }
 
     @Override

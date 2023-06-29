@@ -57,15 +57,15 @@ public class DataPointInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataPointInfo dataPointInfo = (DataPointInfo) o;
-        return Objects.equals(this.time, dataPointInfo.time) && Objects.equals(this.value, dataPointInfo.value);
+        DataPointInfo that = (DataPointInfo) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.value, that.value);
     }
 
     @Override

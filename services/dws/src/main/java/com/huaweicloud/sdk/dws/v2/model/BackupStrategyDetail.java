@@ -165,21 +165,18 @@ public class BackupStrategyDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupStrategyDetail backupStrategyDetail = (BackupStrategyDetail) o;
-        return Objects.equals(this.policyId, backupStrategyDetail.policyId)
-            && Objects.equals(this.policyName, backupStrategyDetail.policyName)
-            && Objects.equals(this.backupStrategy, backupStrategyDetail.backupStrategy)
-            && Objects.equals(this.backupType, backupStrategyDetail.backupType)
-            && Objects.equals(this.backupLevel, backupStrategyDetail.backupLevel)
-            && Objects.equals(this.nextFireTime, backupStrategyDetail.nextFireTime)
-            && Objects.equals(this.updateTime, backupStrategyDetail.updateTime);
+        BackupStrategyDetail that = (BackupStrategyDetail) obj;
+        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.backupLevel, that.backupLevel)
+            && Objects.equals(this.nextFireTime, that.nextFireTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

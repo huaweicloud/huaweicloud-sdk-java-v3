@@ -119,18 +119,16 @@ public class SearchMemberVmrResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchMemberVmrResponse searchMemberVmrResponse = (SearchMemberVmrResponse) o;
-        return Objects.equals(this.offset, searchMemberVmrResponse.offset)
-            && Objects.equals(this.limit, searchMemberVmrResponse.limit)
-            && Objects.equals(this.count, searchMemberVmrResponse.count)
-            && Objects.equals(this.data, searchMemberVmrResponse.data);
+        SearchMemberVmrResponse that = (SearchMemberVmrResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -81,22 +81,15 @@ public class SourceObject {
             if (value == null) {
                 return null;
             }
-            StorageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageEnum(value));
         }
 
         public static StorageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -341,21 +334,20 @@ public class SourceObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceObject sourceObject = (SourceObject) o;
-        return Objects.equals(this.kind, sourceObject.kind) && Objects.equals(this.url, sourceObject.url)
-            && Objects.equals(this.version, sourceObject.version) && Objects.equals(this.storage, sourceObject.storage)
-            && Objects.equals(this.auth, sourceObject.auth) && Objects.equals(this.repoAuth, sourceObject.repoAuth)
-            && Objects.equals(this.repoNamespace, sourceObject.repoNamespace)
-            && Objects.equals(this.repoRef, sourceObject.repoRef)
-            && Objects.equals(this.repoType, sourceObject.repoType) && Objects.equals(this.webUrl, sourceObject.webUrl)
-            && Objects.equals(this.repoUrl, sourceObject.repoUrl);
+        SourceObject that = (SourceObject) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.auth, that.auth) && Objects.equals(this.repoAuth, that.repoAuth)
+            && Objects.equals(this.repoNamespace, that.repoNamespace) && Objects.equals(this.repoRef, that.repoRef)
+            && Objects.equals(this.repoType, that.repoType) && Objects.equals(this.webUrl, that.webUrl)
+            && Objects.equals(this.repoUrl, that.repoUrl);
     }
 
     @Override

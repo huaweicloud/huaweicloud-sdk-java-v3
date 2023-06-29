@@ -76,22 +76,15 @@ public class ListScalingPoliciesRequest {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingPolicyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingPolicyTypeEnum(value));
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -233,20 +226,19 @@ public class ListScalingPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingPoliciesRequest listScalingPoliciesRequest = (ListScalingPoliciesRequest) o;
-        return Objects.equals(this.scalingGroupId, listScalingPoliciesRequest.scalingGroupId)
-            && Objects.equals(this.scalingPolicyName, listScalingPoliciesRequest.scalingPolicyName)
-            && Objects.equals(this.scalingPolicyType, listScalingPoliciesRequest.scalingPolicyType)
-            && Objects.equals(this.scalingPolicyId, listScalingPoliciesRequest.scalingPolicyId)
-            && Objects.equals(this.startNumber, listScalingPoliciesRequest.startNumber)
-            && Objects.equals(this.limit, listScalingPoliciesRequest.limit);
+        ListScalingPoliciesRequest that = (ListScalingPoliciesRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.scalingPolicyName, that.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
+            && Objects.equals(this.scalingPolicyId, that.scalingPolicyId)
+            && Objects.equals(this.startNumber, that.startNumber) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

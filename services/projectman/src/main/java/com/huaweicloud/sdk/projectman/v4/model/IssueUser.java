@@ -121,17 +121,17 @@ public class IssueUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueUser issueUser = (IssueUser) o;
-        return Objects.equals(this.userId, issueUser.userId) && Objects.equals(this.userNumId, issueUser.userNumId)
-            && Objects.equals(this.id, issueUser.id) && Objects.equals(this.name, issueUser.name)
-            && Objects.equals(this.nickName, issueUser.nickName);
+        IssueUser that = (IssueUser) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userNumId, that.userNumId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

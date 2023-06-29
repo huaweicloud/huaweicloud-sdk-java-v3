@@ -163,18 +163,17 @@ public class ResponsesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponsesInfo responsesInfo = (ResponsesInfo) o;
-        return Objects.equals(this.name, responsesInfo.name) && Objects.equals(this.responses, responsesInfo.responses)
-            && Objects.equals(this.id, responsesInfo.id) && Objects.equals(this._default, responsesInfo._default)
-            && Objects.equals(this.createTime, responsesInfo.createTime)
-            && Objects.equals(this.updateTime, responsesInfo.updateTime);
+        ResponsesInfo that = (ResponsesInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.responses, that.responses)
+            && Objects.equals(this.id, that.id) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -109,17 +109,16 @@ public class CreateEdgeSite {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeSite createEdgeSite = (CreateEdgeSite) o;
-        return Objects.equals(this.name, createEdgeSite.name) && Objects.equals(this.regionId, createEdgeSite.regionId)
-            && Objects.equals(this.description, createEdgeSite.description)
-            && Objects.equals(this.location, createEdgeSite.location);
+        CreateEdgeSite that = (CreateEdgeSite) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location);
     }
 
     @Override

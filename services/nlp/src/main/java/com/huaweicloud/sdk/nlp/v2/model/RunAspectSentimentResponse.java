@@ -1,60 +1,46 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.AspectOpinion;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class RunAspectSentimentResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
 
     private Integer label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aspect_opinions")
-    
+    @JsonProperty(value = "aspect_opinions")
+
     private List<AspectOpinion> aspectOpinions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
@@ -62,9 +48,6 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分析文本
@@ -78,15 +61,10 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.text = text;
     }
 
-    
-
     public RunAspectSentimentResponse withLabel(Integer label) {
         this.label = label;
         return this;
     }
-
-    
-
 
     /**
      * 该文本的整体情感标签，取值如下： 0  负向 1  正向
@@ -100,15 +78,10 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.label = label;
     }
 
-    
-
     public RunAspectSentimentResponse withConfidence(Float confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 该文本整体情感label的置信度,小数点精确到3位。
@@ -122,16 +95,13 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.confidence = confidence;
     }
 
-    
-
     public RunAspectSentimentResponse withAspectOpinions(List<AspectOpinion> aspectOpinions) {
         this.aspectOpinions = aspectOpinions;
         return this;
     }
 
-    
     public RunAspectSentimentResponse addAspectOpinionsItem(AspectOpinion aspectOpinionsItem) {
-        if(this.aspectOpinions == null) {
+        if (this.aspectOpinions == null) {
             this.aspectOpinions = new ArrayList<>();
         }
         this.aspectOpinions.add(aspectOpinionsItem);
@@ -139,7 +109,7 @@ public class RunAspectSentimentResponse extends SdkResponse {
     }
 
     public RunAspectSentimentResponse withAspectOpinions(Consumer<List<AspectOpinion>> aspectOpinionsSetter) {
-        if(this.aspectOpinions == null) {
+        if (this.aspectOpinions == null) {
             this.aspectOpinions = new ArrayList<>();
         }
         aspectOpinionsSetter.accept(this.aspectOpinions);
@@ -158,15 +128,10 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.aspectOpinions = aspectOpinions;
     }
 
-    
-
     public RunAspectSentimentResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误码，具体请参见错误码。调用成功时无此字段。
@@ -180,15 +145,10 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public RunAspectSentimentResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误信息。调用成功时无此字段。
@@ -202,28 +162,26 @@ public class RunAspectSentimentResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunAspectSentimentResponse runAspectSentimentResponse = (RunAspectSentimentResponse) o;
-        return Objects.equals(this.text, runAspectSentimentResponse.text) &&
-            Objects.equals(this.label, runAspectSentimentResponse.label) &&
-            Objects.equals(this.confidence, runAspectSentimentResponse.confidence) &&
-            Objects.equals(this.aspectOpinions, runAspectSentimentResponse.aspectOpinions) &&
-            Objects.equals(this.errorCode, runAspectSentimentResponse.errorCode) &&
-            Objects.equals(this.errorMsg, runAspectSentimentResponse.errorMsg);
+        RunAspectSentimentResponse that = (RunAspectSentimentResponse) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.aspectOpinions, that.aspectOpinions)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, label, confidence, aspectOpinions, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -237,6 +195,7 @@ public class RunAspectSentimentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -247,8 +206,5 @@ public class RunAspectSentimentResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

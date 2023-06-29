@@ -55,16 +55,16 @@ public class ShowSubCustomerBudgetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubCustomerBudgetRequest showSubCustomerBudgetRequest = (ShowSubCustomerBudgetRequest) o;
-        return Objects.equals(this.customerId, showSubCustomerBudgetRequest.customerId)
-            && Objects.equals(this.indirectPartnerId, showSubCustomerBudgetRequest.indirectPartnerId);
+        ShowSubCustomerBudgetRequest that = (ShowSubCustomerBudgetRequest) obj;
+        return Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ListAppConfigsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppConfigsV2Response listAppConfigsV2Response = (ListAppConfigsV2Response) o;
-        return Objects.equals(this.size, listAppConfigsV2Response.size)
-            && Objects.equals(this.total, listAppConfigsV2Response.total)
-            && Objects.equals(this.configs, listAppConfigsV2Response.configs);
+        ListAppConfigsV2Response that = (ListAppConfigsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.configs, that.configs);
     }
 
     @Override

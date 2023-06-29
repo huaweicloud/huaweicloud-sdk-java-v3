@@ -242,20 +242,17 @@ public class QosSendReceiveInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosSendReceiveInfo qosSendReceiveInfo = (QosSendReceiveInfo) o;
-        return Objects.equals(this.bitrate, qosSendReceiveInfo.bitrate)
-            && Objects.equals(this.latency, qosSendReceiveInfo.latency)
-            && Objects.equals(this.jitter, qosSendReceiveInfo.jitter)
-            && Objects.equals(this.packetLossMax, qosSendReceiveInfo.packetLossMax)
-            && Objects.equals(this.resolution, qosSendReceiveInfo.resolution)
-            && Objects.equals(this.frame, qosSendReceiveInfo.frame);
+        QosSendReceiveInfo that = (QosSendReceiveInfo) obj;
+        return Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.latency, that.latency)
+            && Objects.equals(this.jitter, that.jitter) && Objects.equals(this.packetLossMax, that.packetLossMax)
+            && Objects.equals(this.resolution, that.resolution) && Objects.equals(this.frame, that.frame);
     }
 
     @Override

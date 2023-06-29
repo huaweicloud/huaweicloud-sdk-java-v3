@@ -188,22 +188,19 @@ public class ShowApisOverviewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApisOverviewResponse showApisOverviewResponse = (ShowApisOverviewResponse) o;
-        return Objects.equals(this.publishNum, showApisOverviewResponse.publishNum)
-            && Objects.equals(this.developingNum, showApisOverviewResponse.developingNum)
-            && Objects.equals(this.applyNum, showApisOverviewResponse.applyNum)
-            && Objects.equals(this.callNum, showApisOverviewResponse.callNum)
-            && Objects.equals(this.successNum, showApisOverviewResponse.successNum)
-            && Objects.equals(this.failNum, showApisOverviewResponse.failNum)
-            && Objects.equals(this.legalNum, showApisOverviewResponse.legalNum)
-            && Objects.equals(this.illegalNum, showApisOverviewResponse.illegalNum);
+        ShowApisOverviewResponse that = (ShowApisOverviewResponse) obj;
+        return Objects.equals(this.publishNum, that.publishNum)
+            && Objects.equals(this.developingNum, that.developingNum) && Objects.equals(this.applyNum, that.applyNum)
+            && Objects.equals(this.callNum, that.callNum) && Objects.equals(this.successNum, that.successNum)
+            && Objects.equals(this.failNum, that.failNum) && Objects.equals(this.legalNum, that.legalNum)
+            && Objects.equals(this.illegalNum, that.illegalNum);
     }
 
     @Override

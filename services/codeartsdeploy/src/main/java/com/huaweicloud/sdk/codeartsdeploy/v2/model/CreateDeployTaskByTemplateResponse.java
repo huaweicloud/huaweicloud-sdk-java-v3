@@ -56,16 +56,15 @@ public class CreateDeployTaskByTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeployTaskByTemplateResponse createDeployTaskByTemplateResponse = (CreateDeployTaskByTemplateResponse) o;
-        return Objects.equals(this.taskName, createDeployTaskByTemplateResponse.taskName)
-            && Objects.equals(this.taskId, createDeployTaskByTemplateResponse.taskId);
+        CreateDeployTaskByTemplateResponse that = (CreateDeployTaskByTemplateResponse) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

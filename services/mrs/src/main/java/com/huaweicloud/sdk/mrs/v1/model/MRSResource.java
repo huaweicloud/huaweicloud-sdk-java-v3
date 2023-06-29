@@ -1,45 +1,35 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.TagPlain;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * MRSResource
  */
-public class MRSResource  {
-
+public class MRSResource {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_detail")
-    
+    @JsonProperty(value = "resource_detail")
 
     private String resourceDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagPlain> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_name")
-    
+    @JsonProperty(value = "resource_name")
 
     private String resourceName;
 
@@ -47,9 +37,6 @@ public class MRSResource  {
         this.resourceId = resourceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源ID
@@ -63,15 +50,10 @@ public class MRSResource  {
         this.resourceId = resourceId;
     }
 
-    
-
     public MRSResource withResourceDetail(String resourceDetail) {
         this.resourceDetail = resourceDetail;
         return this;
     }
-
-    
-
 
     /**
      * 资源详情
@@ -85,16 +67,13 @@ public class MRSResource  {
         this.resourceDetail = resourceDetail;
     }
 
-    
-
     public MRSResource withTags(List<TagPlain> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public MRSResource addTagsItem(TagPlain tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -102,7 +81,7 @@ public class MRSResource  {
     }
 
     public MRSResource withTags(Consumer<List<TagPlain>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -121,15 +100,10 @@ public class MRSResource  {
         this.tags = tags;
     }
 
-    
-
     public MRSResource withResourceName(String resourceName) {
         this.resourceName = resourceName;
         return this;
     }
-
-    
-
 
     /**
      * 资源名称
@@ -143,26 +117,25 @@ public class MRSResource  {
         this.resourceName = resourceName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MRSResource mrSResource = (MRSResource) o;
-        return Objects.equals(this.resourceId, mrSResource.resourceId) &&
-            Objects.equals(this.resourceDetail, mrSResource.resourceDetail) &&
-            Objects.equals(this.tags, mrSResource.tags) &&
-            Objects.equals(this.resourceName, mrSResource.resourceName);
+        MRSResource that = (MRSResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId, resourceDetail, tags, resourceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +147,7 @@ public class MRSResource  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +158,5 @@ public class MRSResource  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

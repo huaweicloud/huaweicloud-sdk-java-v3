@@ -81,16 +81,16 @@ public class Retry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Retry retry = (Retry) o;
-        return Objects.equals(this.name, retry.name) && Objects.equals(this.delay, retry.delay)
-            && Objects.equals(this.maxAttempts, retry.maxAttempts);
+        Retry that = (Retry) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.maxAttempts, that.maxAttempts);
     }
 
     @Override

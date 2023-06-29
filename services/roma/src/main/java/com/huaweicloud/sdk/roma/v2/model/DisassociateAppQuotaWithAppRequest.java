@@ -77,17 +77,16 @@ public class DisassociateAppQuotaWithAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateAppQuotaWithAppRequest disassociateAppQuotaWithAppRequest = (DisassociateAppQuotaWithAppRequest) o;
-        return Objects.equals(this.instanceId, disassociateAppQuotaWithAppRequest.instanceId)
-            && Objects.equals(this.appQuotaId, disassociateAppQuotaWithAppRequest.appQuotaId)
-            && Objects.equals(this.appId, disassociateAppQuotaWithAppRequest.appId);
+        DisassociateAppQuotaWithAppRequest that = (DisassociateAppQuotaWithAppRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appQuotaId, that.appQuotaId)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

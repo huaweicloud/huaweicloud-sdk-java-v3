@@ -76,22 +76,15 @@ public class SourceWithPort {
             if (value == null) {
                 return null;
             }
-            OriginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginTypeEnum(value));
         }
 
         public static OriginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,21 +246,19 @@ public class SourceWithPort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceWithPort sourceWithPort = (SourceWithPort) o;
-        return Objects.equals(this.domainId, sourceWithPort.domainId)
-            && Objects.equals(this.ipOrDomain, sourceWithPort.ipOrDomain)
-            && Objects.equals(this.originType, sourceWithPort.originType)
-            && Objects.equals(this.activeStandby, sourceWithPort.activeStandby)
-            && Objects.equals(this.enableObsWebHosting, sourceWithPort.enableObsWebHosting)
-            && Objects.equals(this.httpPort, sourceWithPort.httpPort)
-            && Objects.equals(this.httpsPort, sourceWithPort.httpsPort);
+        SourceWithPort that = (SourceWithPort) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.ipOrDomain, that.ipOrDomain)
+            && Objects.equals(this.originType, that.originType)
+            && Objects.equals(this.activeStandby, that.activeStandby)
+            && Objects.equals(this.enableObsWebHosting, that.enableObsWebHosting)
+            && Objects.equals(this.httpPort, that.httpPort) && Objects.equals(this.httpsPort, that.httpsPort);
     }
 
     @Override

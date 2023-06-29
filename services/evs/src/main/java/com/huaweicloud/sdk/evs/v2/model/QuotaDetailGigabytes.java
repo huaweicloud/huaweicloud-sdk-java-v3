@@ -77,17 +77,16 @@ public class QuotaDetailGigabytes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailGigabytes quotaDetailGigabytes = (QuotaDetailGigabytes) o;
-        return Objects.equals(this.inUse, quotaDetailGigabytes.inUse)
-            && Objects.equals(this.limit, quotaDetailGigabytes.limit)
-            && Objects.equals(this.reserved, quotaDetailGigabytes.reserved);
+        QuotaDetailGigabytes that = (QuotaDetailGigabytes) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

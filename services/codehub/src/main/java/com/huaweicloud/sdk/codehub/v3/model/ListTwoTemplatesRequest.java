@@ -253,25 +253,20 @@ public class ListTwoTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTwoTemplatesRequest listTwoTemplatesRequest = (ListTwoTemplatesRequest) o;
-        return Objects.equals(this.platform, listTwoTemplatesRequest.platform)
-            && Objects.equals(this.language, listTwoTemplatesRequest.language)
-            && Objects.equals(this.pipeline, listTwoTemplatesRequest.pipeline)
-            && Objects.equals(this.enterType, listTwoTemplatesRequest.enterType)
-            && Objects.equals(this.search, listTwoTemplatesRequest.search)
-            && Objects.equals(this.dateOrder, listTwoTemplatesRequest.dateOrder)
-            && Objects.equals(this.usedTimeOrder, listTwoTemplatesRequest.usedTimeOrder)
-            && Objects.equals(this.type, listTwoTemplatesRequest.type)
-            && Objects.equals(this.region, listTwoTemplatesRequest.region)
-            && Objects.equals(this.pageNo, listTwoTemplatesRequest.pageNo)
-            && Objects.equals(this.pageSize, listTwoTemplatesRequest.pageSize);
+        ListTwoTemplatesRequest that = (ListTwoTemplatesRequest) obj;
+        return Objects.equals(this.platform, that.platform) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.pipeline, that.pipeline) && Objects.equals(this.enterType, that.enterType)
+            && Objects.equals(this.search, that.search) && Objects.equals(this.dateOrder, that.dateOrder)
+            && Objects.equals(this.usedTimeOrder, that.usedTimeOrder) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

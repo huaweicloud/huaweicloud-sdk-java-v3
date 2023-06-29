@@ -84,17 +84,16 @@ public class ImmediateEventPosition3D {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImmediateEventPosition3D immediateEventPosition3D = (ImmediateEventPosition3D) o;
-        return Objects.equals(this.lat, immediateEventPosition3D.lat)
-            && Objects.equals(this.lon, immediateEventPosition3D.lon)
-            && Objects.equals(this.ele, immediateEventPosition3D.ele);
+        ImmediateEventPosition3D that = (ImmediateEventPosition3D) obj;
+        return Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele);
     }
 
     @Override

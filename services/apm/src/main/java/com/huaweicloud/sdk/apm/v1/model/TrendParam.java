@@ -153,19 +153,17 @@ public class TrendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrendParam trendParam = (TrendParam) o;
-        return Objects.equals(this.viewConfig, trendParam.viewConfig)
-            && Objects.equals(this.instanceId, trendParam.instanceId)
-            && Objects.equals(this.monitorItemId, trendParam.monitorItemId)
-            && Objects.equals(this.envId, trendParam.envId) && Objects.equals(this.startTime, trendParam.startTime)
-            && Objects.equals(this.endTime, trendParam.endTime);
+        TrendParam that = (TrendParam) obj;
+        return Objects.equals(this.viewConfig, that.viewConfig) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

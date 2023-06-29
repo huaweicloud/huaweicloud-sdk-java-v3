@@ -33,15 +33,15 @@ public class TaskInstanceContainerStatusRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceContainerStatusRsp taskInstanceContainerStatusRsp = (TaskInstanceContainerStatusRsp) o;
-        return Objects.equals(this.restartCount, taskInstanceContainerStatusRsp.restartCount);
+        TaskInstanceContainerStatusRsp that = (TaskInstanceContainerStatusRsp) obj;
+        return Objects.equals(this.restartCount, that.restartCount);
     }
 
     @Override

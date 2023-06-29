@@ -57,16 +57,16 @@ public class ShowBuiltInPolicyDefinitionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBuiltInPolicyDefinitionRequest showBuiltInPolicyDefinitionRequest = (ShowBuiltInPolicyDefinitionRequest) o;
-        return Objects.equals(this.policyDefinitionId, showBuiltInPolicyDefinitionRequest.policyDefinitionId)
-            && Objects.equals(this.xLanguage, showBuiltInPolicyDefinitionRequest.xLanguage);
+        ShowBuiltInPolicyDefinitionRequest that = (ShowBuiltInPolicyDefinitionRequest) obj;
+        return Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

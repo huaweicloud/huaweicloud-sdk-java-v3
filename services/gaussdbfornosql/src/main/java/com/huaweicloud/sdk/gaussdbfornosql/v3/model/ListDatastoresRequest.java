@@ -33,15 +33,15 @@ public class ListDatastoresRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatastoresRequest listDatastoresRequest = (ListDatastoresRequest) o;
-        return Objects.equals(this.datastoreName, listDatastoresRequest.datastoreName);
+        ListDatastoresRequest that = (ListDatastoresRequest) obj;
+        return Objects.equals(this.datastoreName, that.datastoreName);
     }
 
     @Override

@@ -78,22 +78,15 @@ public class OfferResponseBodyOfferResources {
             if (value == null) {
                 return null;
             }
-            ResourceCategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceCategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceCategoryEnum(value));
         }
 
         public static ResourceCategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceCategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,19 +218,19 @@ public class OfferResponseBodyOfferResources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OfferResponseBodyOfferResources offerResponseBodyOfferResources = (OfferResponseBodyOfferResources) o;
-        return Objects.equals(this.resourceId, offerResponseBodyOfferResources.resourceId)
-            && Objects.equals(this.resourceTitle, offerResponseBodyOfferResources.resourceTitle)
-            && Objects.equals(this.resourceType, offerResponseBodyOfferResources.resourceType)
-            && Objects.equals(this.resourceCategory, offerResponseBodyOfferResources.resourceCategory) && Objects
-                .equals(this.useControlPoliciesTemplate, offerResponseBodyOfferResources.useControlPoliciesTemplate);
+        OfferResponseBodyOfferResources that = (OfferResponseBodyOfferResources) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceTitle, that.resourceTitle)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceCategory, that.resourceCategory)
+            && Objects.equals(this.useControlPoliciesTemplate, that.useControlPoliciesTemplate);
     }
 
     @Override

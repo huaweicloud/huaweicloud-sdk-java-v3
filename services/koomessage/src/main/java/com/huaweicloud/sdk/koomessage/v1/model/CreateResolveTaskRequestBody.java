@@ -224,22 +224,19 @@ public class CreateResolveTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResolveTaskRequestBody createResolveTaskRequestBody = (CreateResolveTaskRequestBody) o;
-        return Objects.equals(this.tplId, createResolveTaskRequestBody.tplId)
-            && Objects.equals(this.smsSigns, createResolveTaskRequestBody.smsSigns)
-            && Objects.equals(this.resolvingTimes, createResolveTaskRequestBody.resolvingTimes)
-            && Objects.equals(this.aimCodeType, createResolveTaskRequestBody.aimCodeType)
-            && Objects.equals(this.generationType, createResolveTaskRequestBody.generationType)
-            && Objects.equals(this.domain, createResolveTaskRequestBody.domain)
-            && Objects.equals(this.expirationTime, createResolveTaskRequestBody.expirationTime)
-            && Objects.equals(this.params, createResolveTaskRequestBody.params);
+        CreateResolveTaskRequestBody that = (CreateResolveTaskRequestBody) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.smsSigns, that.smsSigns)
+            && Objects.equals(this.resolvingTimes, that.resolvingTimes)
+            && Objects.equals(this.aimCodeType, that.aimCodeType)
+            && Objects.equals(this.generationType, that.generationType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
     }
 
     @Override

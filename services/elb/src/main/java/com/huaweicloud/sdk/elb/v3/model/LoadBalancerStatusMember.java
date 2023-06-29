@@ -121,19 +121,17 @@ public class LoadBalancerStatusMember {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancerStatusMember loadBalancerStatusMember = (LoadBalancerStatusMember) o;
-        return Objects.equals(this.provisioningStatus, loadBalancerStatusMember.provisioningStatus)
-            && Objects.equals(this.address, loadBalancerStatusMember.address)
-            && Objects.equals(this.protocolPort, loadBalancerStatusMember.protocolPort)
-            && Objects.equals(this.id, loadBalancerStatusMember.id)
-            && Objects.equals(this.operatingStatus, loadBalancerStatusMember.operatingStatus);
+        LoadBalancerStatusMember that = (LoadBalancerStatusMember) obj;
+        return Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.operatingStatus, that.operatingStatus);
     }
 
     @Override

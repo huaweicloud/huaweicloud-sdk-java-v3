@@ -161,20 +161,17 @@ public class CreateVideoMotionCaptureJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVideoMotionCaptureJobRequest createVideoMotionCaptureJobRequest = (CreateVideoMotionCaptureJobRequest) o;
-        return Objects.equals(this.authorization, createVideoMotionCaptureJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, createVideoMotionCaptureJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createVideoMotionCaptureJobRequest.xProjectId)
-            && Objects.equals(this.xAppUserId, createVideoMotionCaptureJobRequest.xAppUserId)
-            && Objects.equals(this.xUserPrivilege, createVideoMotionCaptureJobRequest.xUserPrivilege)
-            && Objects.equals(this.body, createVideoMotionCaptureJobRequest.body);
+        CreateVideoMotionCaptureJobRequest that = (CreateVideoMotionCaptureJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.xUserPrivilege, that.xUserPrivilege) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class ResetAdministratorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetAdministratorRequest resetAdministratorRequest = (ResetAdministratorRequest) o;
-        return Objects.equals(this.instanceId, resetAdministratorRequest.instanceId)
-            && Objects.equals(this.body, resetAdministratorRequest.body);
+        ResetAdministratorRequest that = (ResetAdministratorRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

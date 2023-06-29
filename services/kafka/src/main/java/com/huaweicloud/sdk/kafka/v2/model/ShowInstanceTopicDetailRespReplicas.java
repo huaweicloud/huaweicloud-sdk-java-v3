@@ -121,20 +121,17 @@ public class ShowInstanceTopicDetailRespReplicas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceTopicDetailRespReplicas showInstanceTopicDetailRespReplicas =
-            (ShowInstanceTopicDetailRespReplicas) o;
-        return Objects.equals(this.broker, showInstanceTopicDetailRespReplicas.broker)
-            && Objects.equals(this.leader, showInstanceTopicDetailRespReplicas.leader)
-            && Objects.equals(this.inSync, showInstanceTopicDetailRespReplicas.inSync)
-            && Objects.equals(this.size, showInstanceTopicDetailRespReplicas.size)
-            && Objects.equals(this.lag, showInstanceTopicDetailRespReplicas.lag);
+        ShowInstanceTopicDetailRespReplicas that = (ShowInstanceTopicDetailRespReplicas) obj;
+        return Objects.equals(this.broker, that.broker) && Objects.equals(this.leader, that.leader)
+            && Objects.equals(this.inSync, that.inSync) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.lag, that.lag);
     }
 
     @Override

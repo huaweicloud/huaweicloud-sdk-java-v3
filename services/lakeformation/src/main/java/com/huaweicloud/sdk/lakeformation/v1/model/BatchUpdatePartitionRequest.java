@@ -131,19 +131,17 @@ public class BatchUpdatePartitionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdatePartitionRequest batchUpdatePartitionRequest = (BatchUpdatePartitionRequest) o;
-        return Objects.equals(this.instanceId, batchUpdatePartitionRequest.instanceId)
-            && Objects.equals(this.catalogName, batchUpdatePartitionRequest.catalogName)
-            && Objects.equals(this.databaseName, batchUpdatePartitionRequest.databaseName)
-            && Objects.equals(this.tableName, batchUpdatePartitionRequest.tableName)
-            && Objects.equals(this.body, batchUpdatePartitionRequest.body);
+        BatchUpdatePartitionRequest that = (BatchUpdatePartitionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ListFreeResourcesUsageRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFreeResourcesUsageRecordsResponse listFreeResourcesUsageRecordsResponse =
-            (ListFreeResourcesUsageRecordsResponse) o;
-        return Objects.equals(this.freeResourceRecords, listFreeResourcesUsageRecordsResponse.freeResourceRecords)
-            && Objects.equals(this.totalCount, listFreeResourcesUsageRecordsResponse.totalCount);
+        ListFreeResourcesUsageRecordsResponse that = (ListFreeResourcesUsageRecordsResponse) obj;
+        return Objects.equals(this.freeResourceRecords, that.freeResourceRecords)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

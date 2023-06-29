@@ -149,7 +149,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 组内主机数量，一个主机集群内最多可添加200台主机
+     * 集群内主机数量，一个主机集群内最多可添加200台主机
      * minimum: 0
      * maximum: 200
      * @return hostCount
@@ -219,7 +219,7 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -394,30 +394,23 @@ public class ShowDeploymentGroupDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentGroupDetailResponse showDeploymentGroupDetailResponse = (ShowDeploymentGroupDetailResponse) o;
-        return Objects.equals(this.groupId, showDeploymentGroupDetailResponse.groupId)
-            && Objects.equals(this.createdTime, showDeploymentGroupDetailResponse.createdTime)
-            && Objects.equals(this.updatedTime, showDeploymentGroupDetailResponse.updatedTime)
-            && Objects.equals(this.hostCount, showDeploymentGroupDetailResponse.hostCount)
-            && Objects.equals(this.projectName, showDeploymentGroupDetailResponse.projectName)
-            && Objects.equals(this.name, showDeploymentGroupDetailResponse.name)
-            && Objects.equals(this.regionName, showDeploymentGroupDetailResponse.regionName)
-            && Objects.equals(this.projectId, showDeploymentGroupDetailResponse.projectId)
-            && Objects.equals(this.os, showDeploymentGroupDetailResponse.os)
-            && Objects.equals(this.autoConnectionTestSwitch, showDeploymentGroupDetailResponse.autoConnectionTestSwitch)
-            && Objects.equals(this.slaveClusterId, showDeploymentGroupDetailResponse.slaveClusterId)
-            && Objects.equals(this.nickName, showDeploymentGroupDetailResponse.nickName)
-            && Objects.equals(this.createdBy, showDeploymentGroupDetailResponse.createdBy)
-            && Objects.equals(this.updatedBy, showDeploymentGroupDetailResponse.updatedBy)
-            && Objects.equals(this.description, showDeploymentGroupDetailResponse.description)
-            && Objects.equals(this.permission, showDeploymentGroupDetailResponse.permission);
+        ShowDeploymentGroupDetailResponse that = (ShowDeploymentGroupDetailResponse) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.hostCount, that.hostCount)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.os, that.os)
+            && Objects.equals(this.autoConnectionTestSwitch, that.autoConnectionTestSwitch)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.updatedBy, that.updatedBy)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.permission, that.permission);
     }
 
     @Override

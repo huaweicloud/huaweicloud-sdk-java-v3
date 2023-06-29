@@ -79,17 +79,16 @@ public class ListProjectModulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectModulesRequest listProjectModulesRequest = (ListProjectModulesRequest) o;
-        return Objects.equals(this.projectId, listProjectModulesRequest.projectId)
-            && Objects.equals(this.offset, listProjectModulesRequest.offset)
-            && Objects.equals(this.limit, listProjectModulesRequest.limit);
+        ListProjectModulesRequest that = (ListProjectModulesRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

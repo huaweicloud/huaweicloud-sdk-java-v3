@@ -206,20 +206,18 @@ public class AnticrawlerRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnticrawlerRule anticrawlerRule = (AnticrawlerRule) o;
-        return Objects.equals(this.id, anticrawlerRule.id) && Objects.equals(this.policyid, anticrawlerRule.policyid)
-            && Objects.equals(this.conditions, anticrawlerRule.conditions)
-            && Objects.equals(this.name, anticrawlerRule.name) && Objects.equals(this.type, anticrawlerRule.type)
-            && Objects.equals(this.timestamp, anticrawlerRule.timestamp)
-            && Objects.equals(this.status, anticrawlerRule.status)
-            && Objects.equals(this.priority, anticrawlerRule.priority);
+        AnticrawlerRule that = (AnticrawlerRule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

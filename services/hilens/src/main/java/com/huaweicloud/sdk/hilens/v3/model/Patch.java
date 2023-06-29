@@ -52,15 +52,15 @@ public class Patch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Patch patch = (Patch) o;
-        return Objects.equals(this.envs, patch.envs);
+        Patch that = (Patch) obj;
+        return Objects.equals(this.envs, that.envs);
     }
 
     @Override

@@ -292,23 +292,19 @@ public class ListSecurityGroupRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityGroupRulesRequest listSecurityGroupRulesRequest = (ListSecurityGroupRulesRequest) o;
-        return Objects.equals(this.limit, listSecurityGroupRulesRequest.limit)
-            && Objects.equals(this.marker, listSecurityGroupRulesRequest.marker)
-            && Objects.equals(this.id, listSecurityGroupRulesRequest.id)
-            && Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId)
-            && Objects.equals(this.protocol, listSecurityGroupRulesRequest.protocol)
-            && Objects.equals(this.description, listSecurityGroupRulesRequest.description)
-            && Objects.equals(this.remoteGroupId, listSecurityGroupRulesRequest.remoteGroupId)
-            && Objects.equals(this.direction, listSecurityGroupRulesRequest.direction)
-            && Objects.equals(this.action, listSecurityGroupRulesRequest.action);
+        ListSecurityGroupRulesRequest that = (ListSecurityGroupRulesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

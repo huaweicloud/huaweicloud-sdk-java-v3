@@ -278,22 +278,21 @@ public class Table {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Table table = (Table) o;
-        return Objects.equals(this.createTime, table.createTime) && Objects.equals(this.dataType, table.dataType)
-            && Objects.equals(this.dataLocation, table.dataLocation)
-            && Objects.equals(this.lastAccessTime, table.lastAccessTime)
-            && Objects.equals(this.location, table.location) && Objects.equals(this.owner, table.owner)
-            && Objects.equals(this.tableName, table.tableName) && Objects.equals(this.tableSize, table.tableSize)
-            && Objects.equals(this.tableType, table.tableType)
-            && Objects.equals(this.partitionColumns, table.partitionColumns)
-            && Objects.equals(this.pageSize, table.pageSize) && Objects.equals(this.currentPage, table.currentPage);
+        Table that = (Table) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataLocation, that.dataLocation)
+            && Objects.equals(this.lastAccessTime, that.lastAccessTime) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableSize, that.tableSize) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.partitionColumns, that.partitionColumns)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.currentPage, that.currentPage);
     }
 
     @Override

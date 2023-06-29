@@ -96,16 +96,16 @@ public class NodeSelector {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeSelector nodeSelector = (NodeSelector) o;
-        return Objects.equals(this.key, nodeSelector.key) && Objects.equals(this.value, nodeSelector.value)
-            && Objects.equals(this.operator, nodeSelector.operator);
+        NodeSelector that = (NodeSelector) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.operator, that.operator);
     }
 
     @Override

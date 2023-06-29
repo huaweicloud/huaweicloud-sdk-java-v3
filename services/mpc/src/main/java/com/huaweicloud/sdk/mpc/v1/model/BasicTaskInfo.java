@@ -153,18 +153,17 @@ public class BasicTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicTaskInfo basicTaskInfo = (BasicTaskInfo) o;
-        return Objects.equals(this.taskId, basicTaskInfo.taskId) && Objects.equals(this.status, basicTaskInfo.status)
-            && Objects.equals(this.createTime, basicTaskInfo.createTime)
-            && Objects.equals(this.endTime, basicTaskInfo.endTime) && Objects.equals(this.output, basicTaskInfo.output)
-            && Objects.equals(this.description, basicTaskInfo.description);
+        BasicTaskInfo that = (BasicTaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.description, that.description);
     }
 
     @Override

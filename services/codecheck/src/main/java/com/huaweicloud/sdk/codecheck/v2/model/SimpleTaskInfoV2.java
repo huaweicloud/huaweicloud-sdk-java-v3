@@ -165,21 +165,18 @@ public class SimpleTaskInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleTaskInfoV2 simpleTaskInfoV2 = (SimpleTaskInfoV2) o;
-        return Objects.equals(this.taskId, simpleTaskInfoV2.taskId)
-            && Objects.equals(this.taskName, simpleTaskInfoV2.taskName)
-            && Objects.equals(this.creatorId, simpleTaskInfoV2.creatorId)
-            && Objects.equals(this.gitUrl, simpleTaskInfoV2.gitUrl)
-            && Objects.equals(this.gitBranch, simpleTaskInfoV2.gitBranch)
-            && Objects.equals(this.createdAt, simpleTaskInfoV2.createdAt)
-            && Objects.equals(this.lastCheckTime, simpleTaskInfoV2.lastCheckTime);
+        SimpleTaskInfoV2 that = (SimpleTaskInfoV2) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.lastCheckTime, that.lastCheckTime);
     }
 
     @Override

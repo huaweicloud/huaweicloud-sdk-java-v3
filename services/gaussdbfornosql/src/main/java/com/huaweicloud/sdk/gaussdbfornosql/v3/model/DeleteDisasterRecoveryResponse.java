@@ -34,15 +34,15 @@ public class DeleteDisasterRecoveryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDisasterRecoveryResponse deleteDisasterRecoveryResponse = (DeleteDisasterRecoveryResponse) o;
-        return Objects.equals(this.jobId, deleteDisasterRecoveryResponse.jobId);
+        DeleteDisasterRecoveryResponse that = (DeleteDisasterRecoveryResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

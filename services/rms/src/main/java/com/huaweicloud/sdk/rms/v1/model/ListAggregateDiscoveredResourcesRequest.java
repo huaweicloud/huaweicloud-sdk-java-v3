@@ -89,18 +89,16 @@ public class ListAggregateDiscoveredResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAggregateDiscoveredResourcesRequest listAggregateDiscoveredResourcesRequest =
-            (ListAggregateDiscoveredResourcesRequest) o;
-        return Objects.equals(this.limit, listAggregateDiscoveredResourcesRequest.limit)
-            && Objects.equals(this.marker, listAggregateDiscoveredResourcesRequest.marker)
-            && Objects.equals(this.body, listAggregateDiscoveredResourcesRequest.body);
+        ListAggregateDiscoveredResourcesRequest that = (ListAggregateDiscoveredResourcesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

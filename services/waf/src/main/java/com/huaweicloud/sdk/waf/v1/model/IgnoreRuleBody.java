@@ -326,23 +326,20 @@ public class IgnoreRuleBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IgnoreRuleBody ignoreRuleBody = (IgnoreRuleBody) o;
-        return Objects.equals(this.id, ignoreRuleBody.id) && Objects.equals(this.policyid, ignoreRuleBody.policyid)
-            && Objects.equals(this.timestamp, ignoreRuleBody.timestamp)
-            && Objects.equals(this.description, ignoreRuleBody.description)
-            && Objects.equals(this.status, ignoreRuleBody.status) && Objects.equals(this.url, ignoreRuleBody.url)
-            && Objects.equals(this.rule, ignoreRuleBody.rule) && Objects.equals(this.mode, ignoreRuleBody.mode)
-            && Objects.equals(this.urlLogic, ignoreRuleBody.urlLogic)
-            && Objects.equals(this.conditions, ignoreRuleBody.conditions)
-            && Objects.equals(this.domain, ignoreRuleBody.domain)
-            && Objects.equals(this.advanced, ignoreRuleBody.advanced);
+        IgnoreRuleBody that = (IgnoreRuleBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.rule, that.rule) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.urlLogic, that.urlLogic) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.advanced, that.advanced);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class StopPipelineRunResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopPipelineRunResponse stopPipelineRunResponse = (StopPipelineRunResponse) o;
-        return Objects.equals(this.success, stopPipelineRunResponse.success);
+        StopPipelineRunResponse that = (StopPipelineRunResponse) obj;
+        return Objects.equals(this.success, that.success);
     }
 
     @Override

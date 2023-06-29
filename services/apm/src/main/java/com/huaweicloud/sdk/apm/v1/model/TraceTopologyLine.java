@@ -184,20 +184,18 @@ public class TraceTopologyLine {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TraceTopologyLine traceTopologyLine = (TraceTopologyLine) o;
-        return Objects.equals(this.startNodeId, traceTopologyLine.startNodeId)
-            && Objects.equals(this.endNodeId, traceTopologyLine.endNodeId)
-            && Objects.equals(this.spanId, traceTopologyLine.spanId)
-            && Objects.equals(this.clientInfo, traceTopologyLine.clientInfo)
-            && Objects.equals(this.serverInfo, traceTopologyLine.serverInfo)
-            && Objects.equals(this.id, traceTopologyLine.id) && Objects.equals(this.hint, traceTopologyLine.hint);
+        TraceTopologyLine that = (TraceTopologyLine) obj;
+        return Objects.equals(this.startNodeId, that.startNodeId) && Objects.equals(this.endNodeId, that.endNodeId)
+            && Objects.equals(this.spanId, that.spanId) && Objects.equals(this.clientInfo, that.clientInfo)
+            && Objects.equals(this.serverInfo, that.serverInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.hint, that.hint);
     }
 
     @Override

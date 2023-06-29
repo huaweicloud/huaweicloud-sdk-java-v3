@@ -99,18 +99,16 @@ public class VmOperateResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VmOperateResult vmOperateResult = (VmOperateResult) o;
-        return Objects.equals(this.desktopId, vmOperateResult.desktopId)
-            && Objects.equals(this.desktopName, vmOperateResult.desktopName)
-            && Objects.equals(this.errorCode, vmOperateResult.errorCode)
-            && Objects.equals(this.errorMsg, vmOperateResult.errorMsg);
+        VmOperateResult that = (VmOperateResult) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.desktopName, that.desktopName)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

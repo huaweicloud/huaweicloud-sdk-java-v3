@@ -55,16 +55,15 @@ public class ShowDetailsOfAppV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAppV2Request showDetailsOfAppV2Request = (ShowDetailsOfAppV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfAppV2Request.instanceId)
-            && Objects.equals(this.appId, showDetailsOfAppV2Request.appId);
+        ShowDetailsOfAppV2Request that = (ShowDetailsOfAppV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

@@ -184,21 +184,18 @@ public class AvailRetrieveCoupons {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailRetrieveCoupons availRetrieveCoupons = (AvailRetrieveCoupons) o;
-        return Objects.equals(this.couponId, availRetrieveCoupons.couponId)
-            && Objects.equals(this.planName, availRetrieveCoupons.planName)
-            && Objects.equals(this.subCouponId, availRetrieveCoupons.subCouponId)
-            && Objects.equals(this.balance, availRetrieveCoupons.balance)
-            && Objects.equals(this.effectiveTime, availRetrieveCoupons.effectiveTime)
-            && Objects.equals(this.expireTime, availRetrieveCoupons.expireTime)
-            && Objects.equals(this.useLimits, availRetrieveCoupons.useLimits);
+        AvailRetrieveCoupons that = (AvailRetrieveCoupons) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.planName, that.planName)
+            && Objects.equals(this.subCouponId, that.subCouponId) && Objects.equals(this.balance, that.balance)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.useLimits, that.useLimits);
     }
 
     @Override

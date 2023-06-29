@@ -209,23 +209,22 @@ public class UniqueConstraint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UniqueConstraint uniqueConstraint = (UniqueConstraint) o;
-        return Objects.equals(this.catalogName, uniqueConstraint.catalogName)
-            && Objects.equals(this.databaseName, uniqueConstraint.databaseName)
-            && Objects.equals(this.tableName, uniqueConstraint.tableName)
-            && Objects.equals(this.columnName, uniqueConstraint.columnName)
-            && Objects.equals(this.constraintName, uniqueConstraint.constraintName)
-            && Objects.equals(this.keySequence, uniqueConstraint.keySequence)
-            && Objects.equals(this.enableConstraint, uniqueConstraint.enableConstraint)
-            && Objects.equals(this.relyConstraint, uniqueConstraint.relyConstraint)
-            && Objects.equals(this.validateConstraint, uniqueConstraint.validateConstraint);
+        UniqueConstraint that = (UniqueConstraint) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

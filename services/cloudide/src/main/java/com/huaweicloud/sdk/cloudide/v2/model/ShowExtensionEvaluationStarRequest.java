@@ -81,17 +81,16 @@ public class ShowExtensionEvaluationStarRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtensionEvaluationStarRequest showExtensionEvaluationStarRequest = (ShowExtensionEvaluationStarRequest) o;
-        return Objects.equals(this.extensionId, showExtensionEvaluationStarRequest.extensionId)
-            && Objects.equals(this.limit, showExtensionEvaluationStarRequest.limit)
-            && Objects.equals(this.offset, showExtensionEvaluationStarRequest.offset);
+        ShowExtensionEvaluationStarRequest that = (ShowExtensionEvaluationStarRequest) obj;
+        return Objects.equals(this.extensionId, that.extensionId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

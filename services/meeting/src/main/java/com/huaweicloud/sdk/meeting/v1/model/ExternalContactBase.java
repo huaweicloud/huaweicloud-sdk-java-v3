@@ -231,24 +231,20 @@ public class ExternalContactBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalContactBase externalContactBase = (ExternalContactBase) o;
-        return Objects.equals(this.otherNumber, externalContactBase.otherNumber)
-            && Objects.equals(this.otherNumberCountry, externalContactBase.otherNumberCountry)
-            && Objects.equals(this.country, externalContactBase.country)
-            && Objects.equals(this.phone, externalContactBase.phone)
-            && Objects.equals(this.email, externalContactBase.email)
-            && Objects.equals(this.corpName, externalContactBase.corpName)
-            && Objects.equals(this.deptName, externalContactBase.deptName)
-            && Objects.equals(this.position, externalContactBase.position)
-            && Objects.equals(this.address, externalContactBase.address)
-            && Objects.equals(this.remarks, externalContactBase.remarks);
+        ExternalContactBase that = (ExternalContactBase) obj;
+        return Objects.equals(this.otherNumber, that.otherNumber)
+            && Objects.equals(this.otherNumberCountry, that.otherNumberCountry)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.corpName, that.corpName)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.remarks, that.remarks);
     }
 
     @Override

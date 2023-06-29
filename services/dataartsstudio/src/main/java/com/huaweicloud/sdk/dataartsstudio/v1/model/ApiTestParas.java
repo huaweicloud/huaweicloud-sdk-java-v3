@@ -55,16 +55,15 @@ public class ApiTestParas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiTestParas apiTestParas = (ApiTestParas) o;
-        return Objects.equals(this.pageSize, apiTestParas.pageSize)
-            && Objects.equals(this.pageNum, apiTestParas.pageNum);
+        ApiTestParas that = (ApiTestParas) obj;
+        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNum, that.pageNum);
     }
 
     @Override

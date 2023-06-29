@@ -98,22 +98,15 @@ public class CreateDeviceRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -345,24 +338,19 @@ public class CreateDeviceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeviceRequestBody createDeviceRequestBody = (CreateDeviceRequestBody) o;
-        return Objects.equals(this.parentDeviceId, createDeviceRequestBody.parentDeviceId)
-            && Objects.equals(this.product, createDeviceRequestBody.product)
-            && Objects.equals(this.password, createDeviceRequestBody.password)
-            && Objects.equals(this.userName, createDeviceRequestBody.userName)
-            && Objects.equals(this.deviceName, createDeviceRequestBody.deviceName)
-            && Objects.equals(this.nodeId, createDeviceRequestBody.nodeId)
-            && Objects.equals(this.appId, createDeviceRequestBody.appId)
-            && Objects.equals(this.status, createDeviceRequestBody.status)
-            && Objects.equals(this.description, createDeviceRequestBody.description)
-            && Objects.equals(this.tags, createDeviceRequestBody.tags);
+        CreateDeviceRequestBody that = (CreateDeviceRequestBody) obj;
+        return Objects.equals(this.parentDeviceId, that.parentDeviceId) && Objects.equals(this.product, that.product)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

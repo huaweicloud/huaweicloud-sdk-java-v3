@@ -213,23 +213,19 @@ public class ShowHistoryTrafficEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHistoryTrafficEventsRequest showHistoryTrafficEventsRequest = (ShowHistoryTrafficEventsRequest) o;
-        return Objects.equals(this.instanceId, showHistoryTrafficEventsRequest.instanceId)
-            && Objects.equals(this.offset, showHistoryTrafficEventsRequest.offset)
-            && Objects.equals(this.limit, showHistoryTrafficEventsRequest.limit)
-            && Objects.equals(this.fromDate, showHistoryTrafficEventsRequest.fromDate)
-            && Objects.equals(this.toDate, showHistoryTrafficEventsRequest.toDate)
-            && Objects.equals(this.eventId, showHistoryTrafficEventsRequest.eventId)
-            && Objects.equals(this.eventClass, showHistoryTrafficEventsRequest.eventClass)
-            && Objects.equals(this.eventType, showHistoryTrafficEventsRequest.eventType)
-            && Objects.equals(this.eventSource, showHistoryTrafficEventsRequest.eventSource);
+        ShowHistoryTrafficEventsRequest that = (ShowHistoryTrafficEventsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.fromDate, that.fromDate)
+            && Objects.equals(this.toDate, that.toDate) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.eventClass, that.eventClass) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventSource, that.eventSource);
     }
 
     @Override

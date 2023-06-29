@@ -87,22 +87,15 @@ public class ListRecordContentsRequest {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordTypeEnum(value));
         }
 
         public static RecordTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,22 +278,18 @@ public class ListRecordContentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordContentsRequest listRecordContentsRequest = (ListRecordContentsRequest) o;
-        return Objects.equals(this.publishDomain, listRecordContentsRequest.publishDomain)
-            && Objects.equals(this.app, listRecordContentsRequest.app)
-            && Objects.equals(this.stream, listRecordContentsRequest.stream)
-            && Objects.equals(this.recordType, listRecordContentsRequest.recordType)
-            && Objects.equals(this.startTime, listRecordContentsRequest.startTime)
-            && Objects.equals(this.endTime, listRecordContentsRequest.endTime)
-            && Objects.equals(this.offset, listRecordContentsRequest.offset)
-            && Objects.equals(this.limit, listRecordContentsRequest.limit);
+        ListRecordContentsRequest that = (ListRecordContentsRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

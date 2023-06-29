@@ -77,17 +77,17 @@ public class ListVpcProtectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcProtectsRequest listVpcProtectsRequest = (ListVpcProtectsRequest) o;
-        return Objects.equals(this.objectId, listVpcProtectsRequest.objectId)
-            && Objects.equals(this.enterpriseProjectId, listVpcProtectsRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listVpcProtectsRequest.fwInstanceId);
+        ListVpcProtectsRequest that = (ListVpcProtectsRequest) obj;
+        return Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

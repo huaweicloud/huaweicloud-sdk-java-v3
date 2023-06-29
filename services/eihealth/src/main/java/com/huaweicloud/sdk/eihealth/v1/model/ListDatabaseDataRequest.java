@@ -169,21 +169,18 @@ public class ListDatabaseDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabaseDataRequest listDatabaseDataRequest = (ListDatabaseDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, listDatabaseDataRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listDatabaseDataRequest.limit)
-            && Objects.equals(this.query, listDatabaseDataRequest.query)
-            && Objects.equals(this.offset, listDatabaseDataRequest.offset)
-            && Objects.equals(this.databaseId, listDatabaseDataRequest.databaseId)
-            && Objects.equals(this.sortKey, listDatabaseDataRequest.sortKey)
-            && Objects.equals(this.sortDir, listDatabaseDataRequest.sortDir);
+        ListDatabaseDataRequest that = (ListDatabaseDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.databaseId, that.databaseId) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

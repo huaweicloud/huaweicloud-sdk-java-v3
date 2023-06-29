@@ -65,16 +65,15 @@ public class UpdateBandwidthPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthPolicyRequest updateBandwidthPolicyRequest = (UpdateBandwidthPolicyRequest) o;
-        return Objects.equals(this.taskId, updateBandwidthPolicyRequest.taskId)
-            && Objects.equals(this.body, updateBandwidthPolicyRequest.body);
+        UpdateBandwidthPolicyRequest that = (UpdateBandwidthPolicyRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.body, that.body);
     }
 
     @Override

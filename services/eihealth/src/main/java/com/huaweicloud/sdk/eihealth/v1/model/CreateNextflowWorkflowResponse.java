@@ -34,15 +34,15 @@ public class CreateNextflowWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNextflowWorkflowResponse createNextflowWorkflowResponse = (CreateNextflowWorkflowResponse) o;
-        return Objects.equals(this.id, createNextflowWorkflowResponse.id);
+        CreateNextflowWorkflowResponse that = (CreateNextflowWorkflowResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

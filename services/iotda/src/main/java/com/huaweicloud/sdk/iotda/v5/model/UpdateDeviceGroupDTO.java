@@ -55,16 +55,15 @@ public class UpdateDeviceGroupDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceGroupDTO updateDeviceGroupDTO = (UpdateDeviceGroupDTO) o;
-        return Objects.equals(this.name, updateDeviceGroupDTO.name)
-            && Objects.equals(this.description, updateDeviceGroupDTO.description);
+        UpdateDeviceGroupDTO that = (UpdateDeviceGroupDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

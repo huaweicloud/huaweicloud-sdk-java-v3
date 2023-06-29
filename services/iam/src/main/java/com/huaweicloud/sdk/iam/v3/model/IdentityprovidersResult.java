@@ -171,20 +171,17 @@ public class IdentityprovidersResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdentityprovidersResult identityprovidersResult = (IdentityprovidersResult) o;
-        return Objects.equals(this.ssoType, identityprovidersResult.ssoType)
-            && Objects.equals(this.id, identityprovidersResult.id)
-            && Objects.equals(this.description, identityprovidersResult.description)
-            && Objects.equals(this.enabled, identityprovidersResult.enabled)
-            && Objects.equals(this.remoteIds, identityprovidersResult.remoteIds)
-            && Objects.equals(this.links, identityprovidersResult.links);
+        IdentityprovidersResult that = (IdentityprovidersResult) obj;
+        return Objects.equals(this.ssoType, that.ssoType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.remoteIds, that.remoteIds) && Objects.equals(this.links, that.links);
     }
 
     @Override

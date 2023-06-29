@@ -87,17 +87,16 @@ public class UpdateIterationV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIterationV4Request updateIterationV4Request = (UpdateIterationV4Request) o;
-        return Objects.equals(this.projectId, updateIterationV4Request.projectId)
-            && Objects.equals(this.iterationId, updateIterationV4Request.iterationId)
-            && Objects.equals(this.body, updateIterationV4Request.body);
+        UpdateIterationV4Request that = (UpdateIterationV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.iterationId, that.iterationId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

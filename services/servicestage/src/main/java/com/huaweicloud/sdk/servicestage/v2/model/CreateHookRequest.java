@@ -111,18 +111,16 @@ public class CreateHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHookRequest createHookRequest = (CreateHookRequest) o;
-        return Objects.equals(this.xRepoAuth, createHookRequest.xRepoAuth)
-            && Objects.equals(this.namespace, createHookRequest.namespace)
-            && Objects.equals(this.project, createHookRequest.project)
-            && Objects.equals(this.body, createHookRequest.body);
+        CreateHookRequest that = (CreateHookRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.body, that.body);
     }
 
     @Override

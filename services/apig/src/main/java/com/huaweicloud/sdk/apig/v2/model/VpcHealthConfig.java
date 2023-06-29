@@ -66,22 +66,15 @@ public class VpcHealthConfig {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class VpcHealthConfig {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,15 @@ public class VpcHealthConfig {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -505,24 +484,21 @@ public class VpcHealthConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcHealthConfig vpcHealthConfig = (VpcHealthConfig) o;
-        return Objects.equals(this.protocol, vpcHealthConfig.protocol)
-            && Objects.equals(this.path, vpcHealthConfig.path) && Objects.equals(this.method, vpcHealthConfig.method)
-            && Objects.equals(this.port, vpcHealthConfig.port)
-            && Objects.equals(this.thresholdNormal, vpcHealthConfig.thresholdNormal)
-            && Objects.equals(this.thresholdAbnormal, vpcHealthConfig.thresholdAbnormal)
-            && Objects.equals(this.timeInterval, vpcHealthConfig.timeInterval)
-            && Objects.equals(this.httpCode, vpcHealthConfig.httpCode)
-            && Objects.equals(this.enableClientSsl, vpcHealthConfig.enableClientSsl)
-            && Objects.equals(this.status, vpcHealthConfig.status)
-            && Objects.equals(this.timeout, vpcHealthConfig.timeout);
+        VpcHealthConfig that = (VpcHealthConfig) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.thresholdNormal, that.thresholdNormal)
+            && Objects.equals(this.thresholdAbnormal, that.thresholdAbnormal)
+            && Objects.equals(this.timeInterval, that.timeInterval) && Objects.equals(this.httpCode, that.httpCode)
+            && Objects.equals(this.enableClientSsl, that.enableClientSsl) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

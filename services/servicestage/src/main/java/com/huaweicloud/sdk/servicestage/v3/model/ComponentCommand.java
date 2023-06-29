@@ -90,16 +90,15 @@ public class ComponentCommand {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentCommand componentCommand = (ComponentCommand) o;
-        return Objects.equals(this.command, componentCommand.command)
-            && Objects.equals(this.args, componentCommand.args);
+        ComponentCommand that = (ComponentCommand) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args);
     }
 
     @Override

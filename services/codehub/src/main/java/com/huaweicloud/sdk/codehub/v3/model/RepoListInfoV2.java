@@ -74,16 +74,15 @@ public class RepoListInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoListInfoV2 repoListInfoV2 = (RepoListInfoV2) o;
-        return Objects.equals(this.repositories, repoListInfoV2.repositories)
-            && Objects.equals(this.total, repoListInfoV2.total);
+        RepoListInfoV2 that = (RepoListInfoV2) obj;
+        return Objects.equals(this.repositories, that.repositories) && Objects.equals(this.total, that.total);
     }
 
     @Override

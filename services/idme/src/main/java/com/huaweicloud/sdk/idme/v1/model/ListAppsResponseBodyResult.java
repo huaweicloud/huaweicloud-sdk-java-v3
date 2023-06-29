@@ -338,28 +338,21 @@ public class ListAppsResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsResponseBodyResult listAppsResponseBodyResult = (ListAppsResponseBodyResult) o;
-        return Objects.equals(this.id, listAppsResponseBodyResult.id)
-            && Objects.equals(this.projectId, listAppsResponseBodyResult.projectId)
-            && Objects.equals(this.markForDelete, listAppsResponseBodyResult.markForDelete)
-            && Objects.equals(this.createBy, listAppsResponseBodyResult.createBy)
-            && Objects.equals(this.createTime, listAppsResponseBodyResult.createTime)
-            && Objects.equals(this.updateBy, listAppsResponseBodyResult.updateBy)
-            && Objects.equals(this.updateTime, listAppsResponseBodyResult.updateTime)
-            && Objects.equals(this.nameCn, listAppsResponseBodyResult.nameCn)
-            && Objects.equals(this.nameEn, listAppsResponseBodyResult.nameEn)
-            && Objects.equals(this.descCn, listAppsResponseBodyResult.descCn)
-            && Objects.equals(this.descEn, listAppsResponseBodyResult.descEn)
-            && Objects.equals(this.databaseType, listAppsResponseBodyResult.databaseType)
-            && Objects.equals(this.environment, listAppsResponseBodyResult.environment)
-            && Objects.equals(this.owners, listAppsResponseBodyResult.owners);
+        ListAppsResponseBodyResult that = (ListAppsResponseBodyResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.markForDelete, that.markForDelete) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.nameCn, that.nameCn)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.descCn, that.descCn)
+            && Objects.equals(this.descEn, that.descEn) && Objects.equals(this.databaseType, that.databaseType)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.owners, that.owners);
     }
 
     @Override

@@ -120,22 +120,15 @@ public class ListServersRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -256,22 +249,15 @@ public class ListServersRequest {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationCycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationCycleEnum(value));
         }
 
         public static MigrationCycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -478,23 +464,20 @@ public class ListServersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServersRequest listServersRequest = (ListServersRequest) o;
-        return Objects.equals(this.state, listServersRequest.state)
-            && Objects.equals(this.name, listServersRequest.name) && Objects.equals(this.id, listServersRequest.id)
-            && Objects.equals(this.ip, listServersRequest.ip)
-            && Objects.equals(this.migproject, listServersRequest.migproject)
-            && Objects.equals(this.limit, listServersRequest.limit)
-            && Objects.equals(this.offset, listServersRequest.offset)
-            && Objects.equals(this.migrationCycle, listServersRequest.migrationCycle)
-            && Objects.equals(this.connected, listServersRequest.connected)
-            && Objects.equals(this.enterpriseProjectId, listServersRequest.enterpriseProjectId);
+        ListServersRequest that = (ListServersRequest) obj;
+        return Objects.equals(this.state, that.state) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.migproject, that.migproject) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.migrationCycle, that.migrationCycle)
+            && Objects.equals(this.connected, that.connected)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

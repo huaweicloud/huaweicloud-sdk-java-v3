@@ -81,22 +81,15 @@ public class ImmediateEventResponseDTO {
             if (value == null) {
                 return null;
             }
-            EventClassEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventClassEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventClassEnum(value));
         }
 
         public static EventClassEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventClassEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -210,22 +203,15 @@ public class ImmediateEventResponseDTO {
             if (value == null) {
                 return null;
             }
-            EventSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventSourceEnum(value));
         }
 
         public static EventSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -504,25 +490,23 @@ public class ImmediateEventResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImmediateEventResponseDTO immediateEventResponseDTO = (ImmediateEventResponseDTO) o;
-        return Objects.equals(this.timeStamp, immediateEventResponseDTO.timeStamp)
-            && Objects.equals(this.eventClass, immediateEventResponseDTO.eventClass)
-            && Objects.equals(this.eventType, immediateEventResponseDTO.eventType)
-            && Objects.equals(this.eventSource, immediateEventResponseDTO.eventSource)
-            && Objects.equals(this.eventSourceId, immediateEventResponseDTO.eventSourceId)
-            && Objects.equals(this.eventConfidence, immediateEventResponseDTO.eventConfidence)
-            && Objects.equals(this.eventPosition, immediateEventResponseDTO.eventPosition)
-            && Objects.equals(this.eventRadius, immediateEventResponseDTO.eventRadius)
-            && Objects.equals(this.eventDescription, immediateEventResponseDTO.eventDescription)
-            && Objects.equals(this.eventPriority, immediateEventResponseDTO.eventPriority)
-            && Objects.equals(this.referencePaths, immediateEventResponseDTO.referencePaths);
+        ImmediateEventResponseDTO that = (ImmediateEventResponseDTO) obj;
+        return Objects.equals(this.timeStamp, that.timeStamp) && Objects.equals(this.eventClass, that.eventClass)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventSource, that.eventSource)
+            && Objects.equals(this.eventSourceId, that.eventSourceId)
+            && Objects.equals(this.eventConfidence, that.eventConfidence)
+            && Objects.equals(this.eventPosition, that.eventPosition)
+            && Objects.equals(this.eventRadius, that.eventRadius)
+            && Objects.equals(this.eventDescription, that.eventDescription)
+            && Objects.equals(this.eventPriority, that.eventPriority)
+            && Objects.equals(this.referencePaths, that.referencePaths);
     }
 
     @Override

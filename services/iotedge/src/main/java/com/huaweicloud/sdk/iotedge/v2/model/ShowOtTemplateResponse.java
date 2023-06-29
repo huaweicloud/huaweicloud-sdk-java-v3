@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,46 +11,38 @@ import java.util.Objects;
  */
 public class ShowOtTemplateResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tpl_id")
-    
+    @JsonProperty(value = "tpl_id")
 
     private String tplId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datasource_meta")
-    
+    @JsonProperty(value = "datasource_meta")
 
     private Object datasourceMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="point_meta")
-    
+    @JsonProperty(value = "point_meta")
 
     private Object pointMeta;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -66,9 +50,6 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.tplId = tplId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id
@@ -82,15 +63,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.tplId = tplId;
     }
 
-    
-
     public ShowOtTemplateResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 模板名称
@@ -104,15 +80,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowOtTemplateResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -126,15 +97,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowOtTemplateResponse withDatasourceMeta(Object datasourceMeta) {
         this.datasourceMeta = datasourceMeta;
         return this;
     }
-
-    
-
 
     /**
      * 数据源元数据
@@ -148,15 +114,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.datasourceMeta = datasourceMeta;
     }
 
-    
-
     public ShowOtTemplateResponse withPointMeta(Object pointMeta) {
         this.pointMeta = pointMeta;
         return this;
     }
-
-    
-
 
     /**
      * 点位表元数据
@@ -170,15 +131,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.pointMeta = pointMeta;
     }
 
-    
-
     public ShowOtTemplateResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -192,15 +148,10 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowOtTemplateResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -214,29 +165,27 @@ public class ShowOtTemplateResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOtTemplateResponse showOtTemplateResponse = (ShowOtTemplateResponse) o;
-        return Objects.equals(this.tplId, showOtTemplateResponse.tplId) &&
-            Objects.equals(this.name, showOtTemplateResponse.name) &&
-            Objects.equals(this.description, showOtTemplateResponse.description) &&
-            Objects.equals(this.datasourceMeta, showOtTemplateResponse.datasourceMeta) &&
-            Objects.equals(this.pointMeta, showOtTemplateResponse.pointMeta) &&
-            Objects.equals(this.createTime, showOtTemplateResponse.createTime) &&
-            Objects.equals(this.updateTime, showOtTemplateResponse.updateTime);
+        ShowOtTemplateResponse that = (ShowOtTemplateResponse) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datasourceMeta, that.datasourceMeta)
+            && Objects.equals(this.pointMeta, that.pointMeta) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tplId, name, description, datasourceMeta, pointMeta, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -251,6 +200,7 @@ public class ShowOtTemplateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -261,8 +211,5 @@ public class ShowOtTemplateResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

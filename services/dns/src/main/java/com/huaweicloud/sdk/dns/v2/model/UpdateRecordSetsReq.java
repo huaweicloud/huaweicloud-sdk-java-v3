@@ -162,19 +162,17 @@ public class UpdateRecordSetsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordSetsReq updateRecordSetsReq = (UpdateRecordSetsReq) o;
-        return Objects.equals(this.name, updateRecordSetsReq.name)
-            && Objects.equals(this.description, updateRecordSetsReq.description)
-            && Objects.equals(this.type, updateRecordSetsReq.type) && Objects.equals(this.ttl, updateRecordSetsReq.ttl)
-            && Objects.equals(this.records, updateRecordSetsReq.records)
-            && Objects.equals(this.weight, updateRecordSetsReq.weight);
+        UpdateRecordSetsReq that = (UpdateRecordSetsReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.records, that.records) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

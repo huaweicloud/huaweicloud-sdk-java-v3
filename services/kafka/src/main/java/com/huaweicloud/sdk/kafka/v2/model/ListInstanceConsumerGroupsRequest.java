@@ -99,18 +99,16 @@ public class ListInstanceConsumerGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceConsumerGroupsRequest listInstanceConsumerGroupsRequest = (ListInstanceConsumerGroupsRequest) o;
-        return Objects.equals(this.instanceId, listInstanceConsumerGroupsRequest.instanceId)
-            && Objects.equals(this.offset, listInstanceConsumerGroupsRequest.offset)
-            && Objects.equals(this.limit, listInstanceConsumerGroupsRequest.limit)
-            && Objects.equals(this.group, listInstanceConsumerGroupsRequest.group);
+        ListInstanceConsumerGroupsRequest that = (ListInstanceConsumerGroupsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.group, that.group);
     }
 
     @Override

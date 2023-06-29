@@ -74,16 +74,16 @@ public class CommonPoolsWithBorderGroupDict {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonPoolsWithBorderGroupDict commonPoolsWithBorderGroupDict = (CommonPoolsWithBorderGroupDict) o;
-        return Objects.equals(this.publicipPools, commonPoolsWithBorderGroupDict.publicipPools)
-            && Objects.equals(this.publicBorderGroup, commonPoolsWithBorderGroupDict.publicBorderGroup);
+        CommonPoolsWithBorderGroupDict that = (CommonPoolsWithBorderGroupDict) obj;
+        return Objects.equals(this.publicipPools, that.publicipPools)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class CreateDatabaseDetailResponses {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseDetailResponses createDatabaseDetailResponses = (CreateDatabaseDetailResponses) o;
-        return Objects.equals(this.name, createDatabaseDetailResponses.name);
+        CreateDatabaseDetailResponses that = (CreateDatabaseDetailResponses) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

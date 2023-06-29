@@ -140,19 +140,17 @@ public class NearLineRecallParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NearLineRecallParam nearLineRecallParam = (NearLineRecallParam) o;
-        return Objects.equals(this.timeLimit, nearLineRecallParam.timeLimit)
-            && Objects.equals(this.timeFeature, nearLineRecallParam.timeFeature)
-            && Objects.equals(this.retainDays, nearLineRecallParam.retainDays)
-            && Objects.equals(this.recallFileds, nearLineRecallParam.recallFileds)
-            && Objects.equals(this.itemCFJobName, nearLineRecallParam.itemCFJobName);
+        NearLineRecallParam that = (NearLineRecallParam) obj;
+        return Objects.equals(this.timeLimit, that.timeLimit) && Objects.equals(this.timeFeature, that.timeFeature)
+            && Objects.equals(this.retainDays, that.retainDays) && Objects.equals(this.recallFileds, that.recallFileds)
+            && Objects.equals(this.itemCFJobName, that.itemCFJobName);
     }
 
     @Override

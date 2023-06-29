@@ -95,22 +95,15 @@ public class ShowForwardingConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -350,24 +343,21 @@ public class ShowForwardingConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowForwardingConfigResponse showForwardingConfigResponse = (ShowForwardingConfigResponse) o;
-        return Objects.equals(this.forwardingType, showForwardingConfigResponse.forwardingType)
-            && Objects.equals(this.kafkaConfigId, showForwardingConfigResponse.kafkaConfigId)
-            && Objects.equals(this.kafkaTopics, showForwardingConfigResponse.kafkaTopics)
-            && Objects.equals(this.brokers, showForwardingConfigResponse.brokers)
-            && Objects.equals(this.username, showForwardingConfigResponse.username)
-            && Objects.equals(this.topicPrefix, showForwardingConfigResponse.topicPrefix)
-            && Objects.equals(this.status, showForwardingConfigResponse.status)
-            && Objects.equals(this.authentication, showForwardingConfigResponse.authentication)
-            && Objects.equals(this.createdTime, showForwardingConfigResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, showForwardingConfigResponse.lastModifiedTime);
+        ShowForwardingConfigResponse that = (ShowForwardingConfigResponse) obj;
+        return Objects.equals(this.forwardingType, that.forwardingType)
+            && Objects.equals(this.kafkaConfigId, that.kafkaConfigId)
+            && Objects.equals(this.kafkaTopics, that.kafkaTopics) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.topicPrefix, that.topicPrefix)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime);
     }
 
     @Override

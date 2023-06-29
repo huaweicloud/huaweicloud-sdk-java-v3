@@ -253,25 +253,20 @@ public class PipelineBasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineBasicInfo pipelineBasicInfo = (PipelineBasicInfo) o;
-        return Objects.equals(this.projectId, pipelineBasicInfo.projectId)
-            && Objects.equals(this.projectName, pipelineBasicInfo.projectName)
-            && Objects.equals(this.pipelineId, pipelineBasicInfo.pipelineId)
-            && Objects.equals(this.pipelineName, pipelineBasicInfo.pipelineName)
-            && Objects.equals(this.creatorId, pipelineBasicInfo.creatorId)
-            && Objects.equals(this.creatorName, pipelineBasicInfo.creatorName)
-            && Objects.equals(this.executorId, pipelineBasicInfo.executorId)
-            && Objects.equals(this.executorName, pipelineBasicInfo.executorName)
-            && Objects.equals(this.startTime, pipelineBasicInfo.startTime)
-            && Objects.equals(this.createTime, pipelineBasicInfo.createTime)
-            && Objects.equals(this.watched, pipelineBasicInfo.watched);
+        PipelineBasicInfo that = (PipelineBasicInfo) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.pipelineName, that.pipelineName)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.executorId, that.executorId) && Objects.equals(this.executorName, that.executorName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.watched, that.watched);
     }
 
     @Override

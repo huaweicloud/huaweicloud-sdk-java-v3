@@ -55,16 +55,15 @@ public class KeystoneUpdateProjectOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateProjectOption keystoneUpdateProjectOption = (KeystoneUpdateProjectOption) o;
-        return Objects.equals(this.name, keystoneUpdateProjectOption.name)
-            && Objects.equals(this.description, keystoneUpdateProjectOption.description);
+        KeystoneUpdateProjectOption that = (KeystoneUpdateProjectOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -530,31 +530,28 @@ public class ListInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstance listInstance = (ListInstance) o;
-        return Objects.equals(this.id, listInstance.id) && Objects.equals(this.instancename, listInstance.instancename)
-            && Objects.equals(this.region, listInstance.region) && Objects.equals(this.zone, listInstance.zone)
-            && Objects.equals(this.arch, listInstance.arch) && Objects.equals(this.cpuFlavor, listInstance.cpuFlavor)
-            && Objects.equals(this.vpcId, listInstance.vpcId) && Objects.equals(this.subnetId, listInstance.subnetId)
-            && Objects.equals(this.serviceIp, listInstance.serviceIp)
-            && Objects.equals(this.securityGroupIds, listInstance.securityGroupIds)
-            && Objects.equals(this.status, listInstance.status)
-            && Objects.equals(this.runStatus, listInstance.runStatus)
-            && Objects.equals(this.accessStatus, listInstance.accessStatus)
-            && Objects.equals(this.upgradable, listInstance.upgradable)
-            && Objects.equals(this.cloudServiceType, listInstance.cloudServiceType)
-            && Objects.equals(this.resourceType, listInstance.resourceType)
-            && Objects.equals(this.resourceSpecCode, listInstance.resourceSpecCode)
-            && Objects.equals(this.specification, listInstance.specification)
-            && Objects.equals(this.hosts, listInstance.hosts) && Objects.equals(this.serverId, listInstance.serverId)
-            && Objects.equals(this.createTime, listInstance.createTime)
-            && Objects.equals(this.instanceName, listInstance.instanceName);
+        ListInstance that = (ListInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instancename, that.instancename)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.zone, that.zone)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.serviceIp, that.serviceIp)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.upgradable, that.upgradable)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override

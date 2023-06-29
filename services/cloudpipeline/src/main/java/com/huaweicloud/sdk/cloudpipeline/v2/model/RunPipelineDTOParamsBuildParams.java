@@ -99,18 +99,16 @@ public class RunPipelineDTOParamsBuildParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineDTOParamsBuildParams runPipelineDTOParamsBuildParams = (RunPipelineDTOParamsBuildParams) o;
-        return Objects.equals(this.buildType, runPipelineDTOParamsBuildParams.buildType)
-            && Objects.equals(this.targetBranch, runPipelineDTOParamsBuildParams.targetBranch)
-            && Objects.equals(this.tag, runPipelineDTOParamsBuildParams.tag)
-            && Objects.equals(this.eventType, runPipelineDTOParamsBuildParams.eventType);
+        RunPipelineDTOParamsBuildParams that = (RunPipelineDTOParamsBuildParams) obj;
+        return Objects.equals(this.buildType, that.buildType) && Objects.equals(this.targetBranch, that.targetBranch)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.eventType, that.eventType);
     }
 
     @Override

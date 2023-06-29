@@ -57,16 +57,15 @@ public class AuthInfoWithoutSecret {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthInfoWithoutSecret authInfoWithoutSecret = (AuthInfoWithoutSecret) o;
-        return Objects.equals(this.secureAccess, authInfoWithoutSecret.secureAccess)
-            && Objects.equals(this.timeout, authInfoWithoutSecret.timeout);
+        AuthInfoWithoutSecret that = (AuthInfoWithoutSecret) obj;
+        return Objects.equals(this.secureAccess, that.secureAccess) && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

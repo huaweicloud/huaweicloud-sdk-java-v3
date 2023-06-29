@@ -347,22 +347,21 @@ public class CustomRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomRule customRule = (CustomRule) o;
-        return Objects.equals(this.id, customRule.id) && Objects.equals(this.policyid, customRule.policyid)
-            && Objects.equals(this.description, customRule.description)
-            && Objects.equals(this.status, customRule.status) && Objects.equals(this.conditions, customRule.conditions)
-            && Objects.equals(this.action, customRule.action) && Objects.equals(this.actionMode, customRule.actionMode)
-            && Objects.equals(this.priority, customRule.priority)
-            && Objects.equals(this.timestamp, customRule.timestamp) && Objects.equals(this.time, customRule.time)
-            && Objects.equals(this.start, customRule.start) && Objects.equals(this.terminal, customRule.terminal)
-            && Objects.equals(this.producer, customRule.producer) && Objects.equals(this.name, customRule.name);
+        CustomRule that = (CustomRule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.actionMode, that.actionMode) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.terminal, that.terminal)
+            && Objects.equals(this.producer, that.producer) && Objects.equals(this.name, that.name);
     }
 
     @Override

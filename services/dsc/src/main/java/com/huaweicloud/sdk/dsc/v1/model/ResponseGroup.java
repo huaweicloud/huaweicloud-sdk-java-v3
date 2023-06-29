@@ -60,22 +60,15 @@ public class ResponseGroup {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,21 +262,18 @@ public class ResponseGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponseGroup responseGroup = (ResponseGroup) o;
-        return Objects.equals(this.category, responseGroup.category)
-            && Objects.equals(this.deleteAllowed, responseGroup.deleteAllowed)
-            && Objects.equals(this.groupDesc, responseGroup.groupDesc)
-            && Objects.equals(this.groupName, responseGroup.groupName) && Objects.equals(this.id, responseGroup.id)
-            && Objects.equals(this.ruleNames, responseGroup.ruleNames)
-            && Objects.equals(this.taskNames, responseGroup.taskNames)
-            && Objects.equals(this.isDefault, responseGroup.isDefault);
+        ResponseGroup that = (ResponseGroup) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.deleteAllowed, that.deleteAllowed)
+            && Objects.equals(this.groupDesc, that.groupDesc) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ruleNames, that.ruleNames)
+            && Objects.equals(this.taskNames, that.taskNames) && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowUpgradeClusterTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpgradeClusterTaskRequest showUpgradeClusterTaskRequest = (ShowUpgradeClusterTaskRequest) o;
-        return Objects.equals(this.clusterId, showUpgradeClusterTaskRequest.clusterId)
-            && Objects.equals(this.taskId, showUpgradeClusterTaskRequest.taskId);
+        ShowUpgradeClusterTaskRequest that = (ShowUpgradeClusterTaskRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

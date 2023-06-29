@@ -1,48 +1,40 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 日志路径配置规则。 当cmdLineHash为固定字符串时,指定日志路径或者日志文件。否则只采集进程当前打开的以.log和.trace结尾的文件。nameType取值cmdLineHash时,args格式为[\&quot;00001\&quot;],value格式为[\&quot;/xxx/xx.log\&quot;],表示当启动命令是00001时,日志路径为/xxx/xx.log。
  */
-public class LogPathRule  {
-
+public class LogPathRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="args")
-    
+    @JsonProperty(value = "args")
+
     private List<String> args = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nameType")
-    
+    @JsonProperty(value = "nameType")
 
     private String nameType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
+
     private List<String> value = null;
-    
+
     public LogPathRule withArgs(List<String> args) {
         this.args = args;
         return this;
     }
 
-    
     public LogPathRule addArgsItem(String argsItem) {
-        if(this.args == null) {
+        if (this.args == null) {
             this.args = new ArrayList<>();
         }
         this.args.add(argsItem);
@@ -50,7 +42,7 @@ public class LogPathRule  {
     }
 
     public LogPathRule withArgs(Consumer<List<String>> argsSetter) {
-        if(this.args == null) {
+        if (this.args == null) {
             this.args = new ArrayList<>();
         }
         argsSetter.accept(this.args);
@@ -69,15 +61,10 @@ public class LogPathRule  {
         this.args = args;
     }
 
-    
-
     public LogPathRule withNameType(String nameType) {
         this.nameType = nameType;
         return this;
     }
-
-    
-
 
     /**
      * 取值类型。 cmdLineHash
@@ -91,16 +78,13 @@ public class LogPathRule  {
         this.nameType = nameType;
     }
 
-    
-
     public LogPathRule withValue(List<String> value) {
         this.value = value;
         return this;
     }
 
-    
     public LogPathRule addValueItem(String valueItem) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         this.value.add(valueItem);
@@ -108,7 +92,7 @@ public class LogPathRule  {
     }
 
     public LogPathRule withValue(Consumer<List<String>> valueSetter) {
-        if(this.value == null) {
+        if (this.value == null) {
             this.value = new ArrayList<>();
         }
         valueSetter.accept(this.value);
@@ -127,25 +111,24 @@ public class LogPathRule  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogPathRule logPathRule = (LogPathRule) o;
-        return Objects.equals(this.args, logPathRule.args) &&
-            Objects.equals(this.nameType, logPathRule.nameType) &&
-            Objects.equals(this.value, logPathRule.value);
+        LogPathRule that = (LogPathRule) obj;
+        return Objects.equals(this.args, that.args) && Objects.equals(this.nameType, that.nameType)
+            && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(args, nameType, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -156,6 +139,7 @@ public class LogPathRule  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -166,8 +150,5 @@ public class LogPathRule  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

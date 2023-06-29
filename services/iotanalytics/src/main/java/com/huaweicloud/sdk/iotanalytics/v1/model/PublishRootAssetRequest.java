@@ -33,15 +33,15 @@ public class PublishRootAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishRootAssetRequest publishRootAssetRequest = (PublishRootAssetRequest) o;
-        return Objects.equals(this.rootAssetId, publishRootAssetRequest.rootAssetId);
+        PublishRootAssetRequest that = (PublishRootAssetRequest) obj;
+        return Objects.equals(this.rootAssetId, that.rootAssetId);
     }
 
     @Override

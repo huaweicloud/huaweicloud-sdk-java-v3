@@ -53,15 +53,15 @@ public class ListShadowsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListShadowsResponse listShadowsResponse = (ListShadowsResponse) o;
-        return Objects.equals(this.body, listShadowsResponse.body);
+        ListShadowsResponse that = (ListShadowsResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

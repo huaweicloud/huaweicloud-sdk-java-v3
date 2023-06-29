@@ -65,16 +65,15 @@ public class CreateOptmJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOptmJobRequest createOptmJobRequest = (CreateOptmJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, createOptmJobRequest.eihealthProjectId)
-            && Objects.equals(this.body, createOptmJobRequest.body);
+        CreateOptmJobRequest that = (CreateOptmJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

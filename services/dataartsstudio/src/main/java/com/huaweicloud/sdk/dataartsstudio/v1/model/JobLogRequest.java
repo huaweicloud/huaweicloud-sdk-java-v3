@@ -55,16 +55,16 @@ public class JobLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobLogRequest jobLogRequest = (JobLogRequest) o;
-        return Objects.equals(this.bridgeId, jobLogRequest.bridgeId)
-            && Objects.equals(this.classificationId, jobLogRequest.classificationId);
+        JobLogRequest that = (JobLogRequest) obj;
+        return Objects.equals(this.bridgeId, that.bridgeId)
+            && Objects.equals(this.classificationId, that.classificationId);
     }
 
     @Override

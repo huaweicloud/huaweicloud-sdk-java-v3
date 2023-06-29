@@ -77,16 +77,16 @@ public class TagInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagInfoDto tagInfoDto = (TagInfoDto) o;
-        return Objects.equals(this.operatorId, tagInfoDto.operatorId)
-            && Objects.equals(this.dataStoreId, tagInfoDto.dataStoreId) && Objects.equals(this.tag, tagInfoDto.tag);
+        TagInfoDto that = (TagInfoDto) obj;
+        return Objects.equals(this.operatorId, that.operatorId) && Objects.equals(this.dataStoreId, that.dataStoreId)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ListAlarmsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmsRequest listAlarmsRequest = (ListAlarmsRequest) o;
-        return Objects.equals(this.limit, listAlarmsRequest.limit)
-            && Objects.equals(this.order, listAlarmsRequest.order)
-            && Objects.equals(this.start, listAlarmsRequest.start);
+        ListAlarmsRequest that = (ListAlarmsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.start, that.start);
     }
 
     @Override

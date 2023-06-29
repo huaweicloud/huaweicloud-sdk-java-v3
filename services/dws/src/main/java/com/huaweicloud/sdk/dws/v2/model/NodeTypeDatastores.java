@@ -65,16 +65,15 @@ public class NodeTypeDatastores {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTypeDatastores nodeTypeDatastores = (NodeTypeDatastores) o;
-        return Objects.equals(this.version, nodeTypeDatastores.version)
-            && Objects.equals(this.attachments, nodeTypeDatastores.attachments);
+        NodeTypeDatastores that = (NodeTypeDatastores) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.attachments, that.attachments);
     }
 
     @Override

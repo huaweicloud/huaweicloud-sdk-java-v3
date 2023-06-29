@@ -33,15 +33,15 @@ public class OperationPlaybookInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperationPlaybookInfo operationPlaybookInfo = (OperationPlaybookInfo) o;
-        return Objects.equals(this.operation, operationPlaybookInfo.operation);
+        OperationPlaybookInfo that = (OperationPlaybookInfo) obj;
+        return Objects.equals(this.operation, that.operation);
     }
 
     @Override

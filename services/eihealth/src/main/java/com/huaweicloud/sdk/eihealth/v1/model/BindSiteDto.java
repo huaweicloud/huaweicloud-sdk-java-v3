@@ -140,19 +140,17 @@ public class BindSiteDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindSiteDto bindSiteDto = (BindSiteDto) o;
-        return Objects.equals(this.receptor, bindSiteDto.receptor)
-            && Objects.equals(this.boundingBox, bindSiteDto.boundingBox)
-            && Objects.equals(this.removeIon, bindSiteDto.removeIon)
-            && Objects.equals(this.removeWater, bindSiteDto.removeWater)
-            && Objects.equals(this.removeLigand, bindSiteDto.removeLigand);
+        BindSiteDto that = (BindSiteDto) obj;
+        return Objects.equals(this.receptor, that.receptor) && Objects.equals(this.boundingBox, that.boundingBox)
+            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
+            && Objects.equals(this.removeLigand, that.removeLigand);
     }
 
     @Override

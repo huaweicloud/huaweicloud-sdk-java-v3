@@ -43,15 +43,15 @@ public class EdgeNodeUpdateByDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNodeUpdateByDevice edgeNodeUpdateByDevice = (EdgeNodeUpdateByDevice) o;
-        return Objects.equals(this.nodes, edgeNodeUpdateByDevice.nodes);
+        EdgeNodeUpdateByDevice that = (EdgeNodeUpdateByDevice) obj;
+        return Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

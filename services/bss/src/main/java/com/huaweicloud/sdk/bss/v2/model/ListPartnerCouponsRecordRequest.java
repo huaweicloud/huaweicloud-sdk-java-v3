@@ -294,25 +294,21 @@ public class ListPartnerCouponsRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerCouponsRecordRequest listPartnerCouponsRecordRequest = (ListPartnerCouponsRecordRequest) o;
-        return Objects.equals(this.operationTypes, listPartnerCouponsRecordRequest.operationTypes)
-            && Objects.equals(this.quotaId, listPartnerCouponsRecordRequest.quotaId)
-            && Objects.equals(this.quotaType, listPartnerCouponsRecordRequest.quotaType)
-            && Objects.equals(this.couponIds, listPartnerCouponsRecordRequest.couponIds)
-            && Objects.equals(this.customerId, listPartnerCouponsRecordRequest.customerId)
-            && Objects.equals(this.operationTimeBegin, listPartnerCouponsRecordRequest.operationTimeBegin)
-            && Objects.equals(this.operationTimeEnd, listPartnerCouponsRecordRequest.operationTimeEnd)
-            && Objects.equals(this.result, listPartnerCouponsRecordRequest.result)
-            && Objects.equals(this.offset, listPartnerCouponsRecordRequest.offset)
-            && Objects.equals(this.limit, listPartnerCouponsRecordRequest.limit)
-            && Objects.equals(this.indirectPartnerId, listPartnerCouponsRecordRequest.indirectPartnerId);
+        ListPartnerCouponsRecordRequest that = (ListPartnerCouponsRecordRequest) obj;
+        return Objects.equals(this.operationTypes, that.operationTypes) && Objects.equals(this.quotaId, that.quotaId)
+            && Objects.equals(this.quotaType, that.quotaType) && Objects.equals(this.couponIds, that.couponIds)
+            && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.operationTimeBegin, that.operationTimeBegin)
+            && Objects.equals(this.operationTimeEnd, that.operationTimeEnd) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

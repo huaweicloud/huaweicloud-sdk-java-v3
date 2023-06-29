@@ -55,16 +55,16 @@ public class ResetFingerprint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetFingerprint resetFingerprint = (ResetFingerprint) o;
-        return Objects.equals(this.fingerprint, resetFingerprint.fingerprint)
-            && Objects.equals(this.forceDisconnect, resetFingerprint.forceDisconnect);
+        ResetFingerprint that = (ResetFingerprint) obj;
+        return Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.forceDisconnect, that.forceDisconnect);
     }
 
     @Override

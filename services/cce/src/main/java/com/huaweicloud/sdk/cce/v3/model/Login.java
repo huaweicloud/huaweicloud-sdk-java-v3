@@ -65,15 +65,15 @@ public class Login {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Login login = (Login) o;
-        return Objects.equals(this.sshKey, login.sshKey) && Objects.equals(this.userPassword, login.userPassword);
+        Login that = (Login) obj;
+        return Objects.equals(this.sshKey, that.sshKey) && Objects.equals(this.userPassword, that.userPassword);
     }
 
     @Override

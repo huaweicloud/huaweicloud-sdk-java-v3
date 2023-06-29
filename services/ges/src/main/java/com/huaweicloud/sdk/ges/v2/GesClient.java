@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.ges.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.ges.v2.model.*;
 
 public class GesClient {
+
     protected HcClient hcClient;
 
     public GesClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class GesClient {
     public static ClientBuilder<GesClient> newBuilder() {
         return new ClientBuilder<>(GesClient::new);
     }
-
 
     /**
      * 绑定EIP
@@ -153,8 +153,10 @@ public class GesClient {
      * @param CreateMetadata2Request 请求对象
      * @return SyncInvoker<CreateMetadata2Request, CreateMetadata2Response>
      */
-    public SyncInvoker<CreateMetadata2Request, CreateMetadata2Response> createMetadata2Invoker(CreateMetadata2Request request) {
-        return new SyncInvoker<CreateMetadata2Request, CreateMetadata2Response>(request, GesMeta.createMetadata2, hcClient);
+    public SyncInvoker<CreateMetadata2Request, CreateMetadata2Response> createMetadata2Invoker(
+        CreateMetadata2Request request) {
+        return new SyncInvoker<CreateMetadata2Request, CreateMetadata2Response>(request, GesMeta.createMetadata2,
+            hcClient);
     }
 
     /**
@@ -237,8 +239,10 @@ public class GesClient {
      * @param DeleteMetadata2Request 请求对象
      * @return SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>
      */
-    public SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2Invoker(DeleteMetadata2Request request) {
-        return new SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>(request, GesMeta.deleteMetadata2, hcClient);
+    public SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2Invoker(
+        DeleteMetadata2Request request) {
+        return new SyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>(request, GesMeta.deleteMetadata2,
+            hcClient);
     }
 
     /**
@@ -413,8 +417,10 @@ public class GesClient {
      * @param ListGraphBackups2Request 请求对象
      * @return SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>
      */
-    public SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2Invoker(ListGraphBackups2Request request) {
-        return new SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>(request, GesMeta.listGraphBackups2, hcClient);
+    public SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2Invoker(
+        ListGraphBackups2Request request) {
+        return new SyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>(request, GesMeta.listGraphBackups2,
+            hcClient);
     }
 
     /**
@@ -497,8 +503,10 @@ public class GesClient {
      * @param ListMetadatas2Request 请求对象
      * @return SyncInvoker<ListMetadatas2Request, ListMetadatas2Response>
      */
-    public SyncInvoker<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2Invoker(ListMetadatas2Request request) {
-        return new SyncInvoker<ListMetadatas2Request, ListMetadatas2Response>(request, GesMeta.listMetadatas2, hcClient);
+    public SyncInvoker<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2Invoker(
+        ListMetadatas2Request request) {
+        return new SyncInvoker<ListMetadatas2Request, ListMetadatas2Response>(request, GesMeta.listMetadatas2,
+            hcClient);
     }
 
     /**
@@ -781,8 +789,10 @@ public class GesClient {
      * @param UploadFromObs2Request 请求对象
      * @return SyncInvoker<UploadFromObs2Request, UploadFromObs2Response>
      */
-    public SyncInvoker<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2Invoker(UploadFromObs2Request request) {
-        return new SyncInvoker<UploadFromObs2Request, UploadFromObs2Response>(request, GesMeta.uploadFromObs2, hcClient);
+    public SyncInvoker<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2Invoker(
+        UploadFromObs2Request request) {
+        return new SyncInvoker<UploadFromObs2Request, UploadFromObs2Response>(request, GesMeta.uploadFromObs2,
+            hcClient);
     }
 
     /**
@@ -809,8 +819,10 @@ public class GesClient {
      * @param DeregisterScenes2Request 请求对象
      * @return SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>
      */
-    public SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2Invoker(DeregisterScenes2Request request) {
-        return new SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>(request, GesMeta.deregisterScenes2, hcClient);
+    public SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2Invoker(
+        DeregisterScenes2Request request) {
+        return new SyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>(request, GesMeta.deregisterScenes2,
+            hcClient);
     }
 
     /**
@@ -867,8 +879,10 @@ public class GesClient {
      * @param RegisterScenes2Request 请求对象
      * @return SyncInvoker<RegisterScenes2Request, RegisterScenes2Response>
      */
-    public SyncInvoker<RegisterScenes2Request, RegisterScenes2Response> registerScenes2Invoker(RegisterScenes2Request request) {
-        return new SyncInvoker<RegisterScenes2Request, RegisterScenes2Response>(request, GesMeta.registerScenes2, hcClient);
+    public SyncInvoker<RegisterScenes2Request, RegisterScenes2Response> registerScenes2Invoker(
+        RegisterScenes2Request request) {
+        return new SyncInvoker<RegisterScenes2Request, RegisterScenes2Response>(request, GesMeta.registerScenes2,
+            hcClient);
     }
 
 }

@@ -98,17 +98,16 @@ public class BatchDeleteMaterialsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteMaterialsRequest batchDeleteMaterialsRequest = (BatchDeleteMaterialsRequest) o;
-        return Objects.equals(this.xRequestId, batchDeleteMaterialsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, batchDeleteMaterialsRequest.acceptLanguage)
-            && Objects.equals(this.body, batchDeleteMaterialsRequest.body);
+        BatchDeleteMaterialsRequest that = (BatchDeleteMaterialsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

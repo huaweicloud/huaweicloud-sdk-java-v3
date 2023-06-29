@@ -128,17 +128,16 @@ public class PutDiskInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutDiskInfoReq putDiskInfoReq = (PutDiskInfoReq) o;
-        return Objects.equals(this.disks, putDiskInfoReq.disks)
-            && Objects.equals(this.volumegroups, putDiskInfoReq.volumegroups)
-            && Objects.equals(this.btrfsList, putDiskInfoReq.btrfsList);
+        PutDiskInfoReq that = (PutDiskInfoReq) obj;
+        return Objects.equals(this.disks, that.disks) && Objects.equals(this.volumegroups, that.volumegroups)
+            && Objects.equals(this.btrfsList, that.btrfsList);
     }
 
     @Override

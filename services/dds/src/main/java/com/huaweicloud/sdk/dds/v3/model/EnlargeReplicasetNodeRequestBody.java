@@ -55,16 +55,15 @@ public class EnlargeReplicasetNodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeReplicasetNodeRequestBody enlargeReplicasetNodeRequestBody = (EnlargeReplicasetNodeRequestBody) o;
-        return Objects.equals(this.num, enlargeReplicasetNodeRequestBody.num)
-            && Objects.equals(this.isAutoPay, enlargeReplicasetNodeRequestBody.isAutoPay);
+        EnlargeReplicasetNodeRequestBody that = (EnlargeReplicasetNodeRequestBody) obj;
+        return Objects.equals(this.num, that.num) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

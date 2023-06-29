@@ -65,16 +65,15 @@ public class CreateAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppRequest createAppRequest = (CreateAppRequest) o;
-        return Objects.equals(this.iefInstanceId, createAppRequest.iefInstanceId)
-            && Objects.equals(this.body, createAppRequest.body);
+        CreateAppRequest that = (CreateAppRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

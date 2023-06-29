@@ -87,17 +87,16 @@ public class DeployApplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeployApplicationRequest deployApplicationRequest = (DeployApplicationRequest) o;
-        return Objects.equals(this.envId, deployApplicationRequest.envId)
-            && Objects.equals(this.appId, deployApplicationRequest.appId)
-            && Objects.equals(this.body, deployApplicationRequest.body);
+        DeployApplicationRequest that = (DeployApplicationRequest) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

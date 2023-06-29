@@ -99,18 +99,16 @@ public class TopicCategory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicCategory topicCategory = (TopicCategory) o;
-        return Objects.equals(this.topicId, topicCategory.topicId)
-            && Objects.equals(this.topicName, topicCategory.topicName)
-            && Objects.equals(this.categoryId, topicCategory.categoryId)
-            && Objects.equals(this.categoryName, topicCategory.categoryName);
+        TopicCategory that = (TopicCategory) obj;
+        return Objects.equals(this.topicId, that.topicId) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.categoryName, that.categoryName);
     }
 
     @Override

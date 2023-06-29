@@ -204,19 +204,17 @@ public class ApkComponentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApkComponentInfo apkComponentInfo = (ApkComponentInfo) o;
-        return Objects.equals(this.permission, apkComponentInfo.permission)
-            && Objects.equals(this.activity, apkComponentInfo.activity)
-            && Objects.equals(this.service, apkComponentInfo.service)
-            && Objects.equals(this.provider, apkComponentInfo.provider)
-            && Objects.equals(this.receive, apkComponentInfo.receive);
+        ApkComponentInfo that = (ApkComponentInfo) obj;
+        return Objects.equals(this.permission, that.permission) && Objects.equals(this.activity, that.activity)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.receive, that.receive);
     }
 
     @Override

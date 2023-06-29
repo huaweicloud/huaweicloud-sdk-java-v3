@@ -74,16 +74,15 @@ public class ChangeInstanceStatusBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeInstanceStatusBody changeInstanceStatusBody = (ChangeInstanceStatusBody) o;
-        return Objects.equals(this.instances, changeInstanceStatusBody.instances)
-            && Objects.equals(this.action, changeInstanceStatusBody.action);
+        ChangeInstanceStatusBody that = (ChangeInstanceStatusBody) obj;
+        return Objects.equals(this.instances, that.instances) && Objects.equals(this.action, that.action);
     }
 
     @Override

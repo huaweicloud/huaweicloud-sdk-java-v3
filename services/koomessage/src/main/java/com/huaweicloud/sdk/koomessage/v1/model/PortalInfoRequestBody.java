@@ -172,19 +172,17 @@ public class PortalInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortalInfoRequestBody portalInfoRequestBody = (PortalInfoRequestBody) o;
-        return Objects.equals(this.backgroundImg, portalInfoRequestBody.backgroundImg)
-            && Objects.equals(this.summary, portalInfoRequestBody.summary)
-            && Objects.equals(this.tels, portalInfoRequestBody.tels)
-            && Objects.equals(this.fastapps, portalInfoRequestBody.fastapps)
-            && Objects.equals(this.hwPubs, portalInfoRequestBody.hwPubs);
+        PortalInfoRequestBody that = (PortalInfoRequestBody) obj;
+        return Objects.equals(this.backgroundImg, that.backgroundImg) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.tels, that.tels) && Objects.equals(this.fastapps, that.fastapps)
+            && Objects.equals(this.hwPubs, that.hwPubs);
     }
 
     @Override

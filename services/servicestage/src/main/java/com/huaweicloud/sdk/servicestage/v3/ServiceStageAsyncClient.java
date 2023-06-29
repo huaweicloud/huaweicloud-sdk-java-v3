@@ -20,37 +20,6 @@ public class ServiceStageAsyncClient {
     }
 
     /**
-     * 比较不同版本组件配置信息
-     *
-     * 此API用来比较不同版本组件配置信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CompareComponentConfigurationRequest 请求对象
-     * @return CompletableFuture<CompareComponentConfigurationResponse>
-     */
-    public CompletableFuture<CompareComponentConfigurationResponse> compareComponentConfigurationAsync(
-        CompareComponentConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.compareComponentConfiguration);
-    }
-
-    /**
-     * 比较不同版本组件配置信息
-     *
-     * 此API用来比较不同版本组件配置信息
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CompareComponentConfigurationRequest 请求对象
-     * @return AsyncInvoker<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse>
-     */
-    public AsyncInvoker<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse> compareComponentConfigurationAsyncInvoker(
-        CompareComponentConfigurationRequest request) {
-        return new AsyncInvoker<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse>(request,
-            ServiceStageMeta.compareComponentConfiguration, hcClient);
-    }
-
-    /**
      * 创建应用
      *
      * 应用是一个功能相对完备的业务系统，由一个或多个特性相关的组件组成。
@@ -82,101 +51,6 @@ public class ServiceStageAsyncClient {
         CreateApplicationRequest request) {
         return new AsyncInvoker<CreateApplicationRequest, CreateApplicationResponse>(request,
             ServiceStageMeta.createApplication, hcClient);
-    }
-
-    /**
-     * 创建组件
-     *
-     * 通过此API创建组件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateComponentRequest 请求对象
-     * @return CompletableFuture<CreateComponentResponse>
-     */
-    public CompletableFuture<CreateComponentResponse> createComponentAsync(CreateComponentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createComponent);
-    }
-
-    /**
-     * 创建组件
-     *
-     * 通过此API创建组件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateComponentRequest 请求对象
-     * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
-     */
-    public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(
-        CreateComponentRequest request) {
-        return new AsyncInvoker<CreateComponentRequest, CreateComponentResponse>(request,
-            ServiceStageMeta.createComponent, hcClient);
-    }
-
-    /**
-     * 创建组件配置
-     *
-     * 此API用来创建组件配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateComponentConfigurationRequest 请求对象
-     * @return CompletableFuture<CreateComponentConfigurationResponse>
-     */
-    public CompletableFuture<CreateComponentConfigurationResponse> createComponentConfigurationAsync(
-        CreateComponentConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createComponentConfiguration);
-    }
-
-    /**
-     * 创建组件配置
-     *
-     * 此API用来创建组件配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateComponentConfigurationRequest 请求对象
-     * @return AsyncInvoker<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse>
-     */
-    public AsyncInvoker<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> createComponentConfigurationAsyncInvoker(
-        CreateComponentConfigurationRequest request) {
-        return new AsyncInvoker<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse>(request,
-            ServiceStageMeta.createComponentConfiguration, hcClient);
-    }
-
-    /**
-     * 创建环境
-     *
-     * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
-     * 
-     * 此API用来创建环境。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEnvironmentRequest 请求对象
-     * @return CompletableFuture<CreateEnvironmentResponse>
-     */
-    public CompletableFuture<CreateEnvironmentResponse> createEnvironmentAsync(CreateEnvironmentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createEnvironment);
-    }
-
-    /**
-     * 创建环境
-     *
-     * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
-     * 
-     * 此API用来创建环境。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateEnvironmentRequest 请求对象
-     * @return AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
-     */
-    public AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironmentAsyncInvoker(
-        CreateEnvironmentRequest request) {
-        return new AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>(request,
-            ServiceStageMeta.createEnvironment, hcClient);
     }
 
     /**
@@ -241,66 +115,6 @@ public class ServiceStageAsyncClient {
     }
 
     /**
-     * 根据应用组件ID删除应用组件
-     *
-     * 此API通过应用组件ID删除应用组件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteComponentRequest 请求对象
-     * @return CompletableFuture<DeleteComponentResponse>
-     */
-    public CompletableFuture<DeleteComponentResponse> deleteComponentAsync(DeleteComponentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteComponent);
-    }
-
-    /**
-     * 根据应用组件ID删除应用组件
-     *
-     * 此API通过应用组件ID删除应用组件。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteComponentRequest 请求对象
-     * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
-     */
-    public AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentAsyncInvoker(
-        DeleteComponentRequest request) {
-        return new AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request,
-            ServiceStageMeta.deleteComponent, hcClient);
-    }
-
-    /**
-     * 根据环境ID删除环境
-     *
-     * 此API通过环境ID删除环境。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEnvironmentRequest 请求对象
-     * @return CompletableFuture<DeleteEnvironmentResponse>
-     */
-    public CompletableFuture<DeleteEnvironmentResponse> deleteEnvironmentAsync(DeleteEnvironmentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteEnvironment);
-    }
-
-    /**
-     * 根据环境ID删除环境
-     *
-     * 此API通过环境ID删除环境。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteEnvironmentRequest 请求对象
-     * @return AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
-     */
-    public AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironmentAsyncInvoker(
-        DeleteEnvironmentRequest request) {
-        return new AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>(request,
-            ServiceStageMeta.deleteEnvironment, hcClient);
-    }
-
-    /**
      * 修改应用信息
      *
      * 此API通过应用ID修改应用信息。
@@ -359,97 +173,6 @@ public class ServiceStageAsyncClient {
         ModifyApplicationConfigurationRequest request) {
         return new AsyncInvoker<ModifyApplicationConfigurationRequest, ModifyApplicationConfigurationResponse>(request,
             ServiceStageMeta.modifyApplicationConfiguration, hcClient);
-    }
-
-    /**
-     * 根据组件ID修改组件信息
-     *
-     * 此API通过组件ID修改组件信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyComponentRequest 请求对象
-     * @return CompletableFuture<ModifyComponentResponse>
-     */
-    public CompletableFuture<ModifyComponentResponse> modifyComponentAsync(ModifyComponentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyComponent);
-    }
-
-    /**
-     * 根据组件ID修改组件信息
-     *
-     * 此API通过组件ID修改组件信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyComponentRequest 请求对象
-     * @return AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>
-     */
-    public AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse> modifyComponentAsyncInvoker(
-        ModifyComponentRequest request) {
-        return new AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>(request,
-            ServiceStageMeta.modifyComponent, hcClient);
-    }
-
-    /**
-     * 修改环境信息
-     *
-     * 此API通过环境ID修改环境信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyEnvironmentRequest 请求对象
-     * @return CompletableFuture<ModifyEnvironmentResponse>
-     */
-    public CompletableFuture<ModifyEnvironmentResponse> modifyEnvironmentAsync(ModifyEnvironmentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyEnvironment);
-    }
-
-    /**
-     * 修改环境信息
-     *
-     * 此API通过环境ID修改环境信息。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyEnvironmentRequest 请求对象
-     * @return AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>
-     */
-    public AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironmentAsyncInvoker(
-        ModifyEnvironmentRequest request) {
-        return new AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>(request,
-            ServiceStageMeta.modifyEnvironment, hcClient);
-    }
-
-    /**
-     * 修改环境资源
-     *
-     * 此API用来修改环境资源
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyResourceInEnvironmentRequest 请求对象
-     * @return CompletableFuture<ModifyResourceInEnvironmentResponse>
-     */
-    public CompletableFuture<ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsync(
-        ModifyResourceInEnvironmentRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyResourceInEnvironment);
-    }
-
-    /**
-     * 修改环境资源
-     *
-     * 此API用来修改环境资源
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ModifyResourceInEnvironmentRequest 请求对象
-     * @return AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>
-     */
-    public AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsyncInvoker(
-        ModifyResourceInEnvironmentRequest request) {
-        return new AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>(request,
-            ServiceStageMeta.modifyResourceInEnvironment, hcClient);
     }
 
     /**
@@ -544,65 +267,93 @@ public class ServiceStageAsyncClient {
     }
 
     /**
-     * 根据版本获取组件配置信息
+     * 创建组件
      *
-     * 此api用来根据版本获取组件配置信息
+     * 通过此API创建组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentConfigurationRequest 请求对象
-     * @return CompletableFuture<ShowComponentConfigurationResponse>
+     * @param CreateComponentRequest 请求对象
+     * @return CompletableFuture<CreateComponentResponse>
      */
-    public CompletableFuture<ShowComponentConfigurationResponse> showComponentConfigurationAsync(
-        ShowComponentConfigurationRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.showComponentConfiguration);
+    public CompletableFuture<CreateComponentResponse> createComponentAsync(CreateComponentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createComponent);
     }
 
     /**
-     * 根据版本获取组件配置信息
+     * 创建组件
      *
-     * 此api用来根据版本获取组件配置信息
+     * 通过此API创建组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentConfigurationRequest 请求对象
-     * @return AsyncInvoker<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse>
+     * @param CreateComponentRequest 请求对象
+     * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
      */
-    public AsyncInvoker<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse> showComponentConfigurationAsyncInvoker(
-        ShowComponentConfigurationRequest request) {
-        return new AsyncInvoker<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse>(request,
-            ServiceStageMeta.showComponentConfiguration, hcClient);
+    public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(
+        CreateComponentRequest request) {
+        return new AsyncInvoker<CreateComponentRequest, CreateComponentResponse>(request,
+            ServiceStageMeta.createComponent, hcClient);
     }
 
     /**
-     * 获取组件配置信息
+     * 根据应用组件ID删除应用组件
      *
-     * 此API用来获取组件配置信息
+     * 此API通过应用组件ID删除应用组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentConfigurationsRequest 请求对象
-     * @return CompletableFuture<ShowComponentConfigurationsResponse>
+     * @param DeleteComponentRequest 请求对象
+     * @return CompletableFuture<DeleteComponentResponse>
      */
-    public CompletableFuture<ShowComponentConfigurationsResponse> showComponentConfigurationsAsync(
-        ShowComponentConfigurationsRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.showComponentConfigurations);
+    public CompletableFuture<DeleteComponentResponse> deleteComponentAsync(DeleteComponentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteComponent);
     }
 
     /**
-     * 获取组件配置信息
+     * 根据应用组件ID删除应用组件
      *
-     * 此API用来获取组件配置信息
+     * 此API通过应用组件ID删除应用组件。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
-     * @param ShowComponentConfigurationsRequest 请求对象
-     * @return AsyncInvoker<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse>
+     * @param DeleteComponentRequest 请求对象
+     * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
      */
-    public AsyncInvoker<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse> showComponentConfigurationsAsyncInvoker(
-        ShowComponentConfigurationsRequest request) {
-        return new AsyncInvoker<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse>(request,
-            ServiceStageMeta.showComponentConfigurations, hcClient);
+    public AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentAsyncInvoker(
+        DeleteComponentRequest request) {
+        return new AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request,
+            ServiceStageMeta.deleteComponent, hcClient);
+    }
+
+    /**
+     * 根据组件ID修改组件信息
+     *
+     * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyComponentRequest 请求对象
+     * @return CompletableFuture<ModifyComponentResponse>
+     */
+    public CompletableFuture<ModifyComponentResponse> modifyComponentAsync(ModifyComponentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyComponent);
+    }
+
+    /**
+     * 根据组件ID修改组件信息
+     *
+     * 此API通过组件ID修改组件信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyComponentRequest 请求对象
+     * @return AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>
+     */
+    public AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse> modifyComponentAsyncInvoker(
+        ModifyComponentRequest request) {
+        return new AsyncInvoker<ModifyComponentRequest, ModifyComponentResponse>(request,
+            ServiceStageMeta.modifyComponent, hcClient);
     }
 
     /**
@@ -728,6 +479,162 @@ public class ServiceStageAsyncClient {
     }
 
     /**
+     * 对组件的操作
+     *
+     * 通过此API获取对组件的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateComponentActionRequest 请求对象
+     * @return CompletableFuture<UpdateComponentActionResponse>
+     */
+    public CompletableFuture<UpdateComponentActionResponse> updateComponentActionAsync(
+        UpdateComponentActionRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.updateComponentAction);
+    }
+
+    /**
+     * 对组件的操作
+     *
+     * 通过此API获取对组件的操作。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateComponentActionRequest 请求对象
+     * @return AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>
+     */
+    public AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentActionAsyncInvoker(
+        UpdateComponentActionRequest request) {
+        return new AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>(request,
+            ServiceStageMeta.updateComponentAction, hcClient);
+    }
+
+    /**
+     * 创建环境
+     *
+     * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
+     * 
+     * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEnvironmentRequest 请求对象
+     * @return CompletableFuture<CreateEnvironmentResponse>
+     */
+    public CompletableFuture<CreateEnvironmentResponse> createEnvironmentAsync(CreateEnvironmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.createEnvironment);
+    }
+
+    /**
+     * 创建环境
+     *
+     * 环境是用于应用部署和运行的计算、存储、网络等基础设施的集合。Servicestage把相同VPC下的CCE集群加上多个ELB、RDS、DCS实例组合为一个环境，如：开发环境，测试环境，预生产环境，生产环境。环境内网络互通，可以按环境维度来管理资源、部署服务，减少具体基础设施运维管理的复杂性。
+     * 
+     * 此API用来创建环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateEnvironmentRequest 请求对象
+     * @return AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>
+     */
+    public AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironmentAsyncInvoker(
+        CreateEnvironmentRequest request) {
+        return new AsyncInvoker<CreateEnvironmentRequest, CreateEnvironmentResponse>(request,
+            ServiceStageMeta.createEnvironment, hcClient);
+    }
+
+    /**
+     * 根据环境ID删除环境
+     *
+     * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEnvironmentRequest 请求对象
+     * @return CompletableFuture<DeleteEnvironmentResponse>
+     */
+    public CompletableFuture<DeleteEnvironmentResponse> deleteEnvironmentAsync(DeleteEnvironmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.deleteEnvironment);
+    }
+
+    /**
+     * 根据环境ID删除环境
+     *
+     * 此API通过环境ID删除环境。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteEnvironmentRequest 请求对象
+     * @return AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>
+     */
+    public AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironmentAsyncInvoker(
+        DeleteEnvironmentRequest request) {
+        return new AsyncInvoker<DeleteEnvironmentRequest, DeleteEnvironmentResponse>(request,
+            ServiceStageMeta.deleteEnvironment, hcClient);
+    }
+
+    /**
+     * 修改环境信息
+     *
+     * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyEnvironmentRequest 请求对象
+     * @return CompletableFuture<ModifyEnvironmentResponse>
+     */
+    public CompletableFuture<ModifyEnvironmentResponse> modifyEnvironmentAsync(ModifyEnvironmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyEnvironment);
+    }
+
+    /**
+     * 修改环境信息
+     *
+     * 此API通过环境ID修改环境信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyEnvironmentRequest 请求对象
+     * @return AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>
+     */
+    public AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironmentAsyncInvoker(
+        ModifyEnvironmentRequest request) {
+        return new AsyncInvoker<ModifyEnvironmentRequest, ModifyEnvironmentResponse>(request,
+            ServiceStageMeta.modifyEnvironment, hcClient);
+    }
+
+    /**
+     * 修改环境资源
+     *
+     * 此API用来修改环境资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyResourceInEnvironmentRequest 请求对象
+     * @return CompletableFuture<ModifyResourceInEnvironmentResponse>
+     */
+    public CompletableFuture<ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsync(
+        ModifyResourceInEnvironmentRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.modifyResourceInEnvironment);
+    }
+
+    /**
+     * 修改环境资源
+     *
+     * 此API用来修改环境资源
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ModifyResourceInEnvironmentRequest 请求对象
+     * @return AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>
+     */
+    public AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironmentAsyncInvoker(
+        ModifyResourceInEnvironmentRequest request) {
+        return new AsyncInvoker<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse>(request,
+            ServiceStageMeta.modifyResourceInEnvironment, hcClient);
+    }
+
+    /**
      * 根据环境ID获取环境详细信息
      *
      * 此API通过环境ID获取环境详细信息。
@@ -819,6 +726,33 @@ public class ServiceStageAsyncClient {
     }
 
     /**
+     * get cas job infomation
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return CompletableFuture<ShowJobInfoResponse>
+     */
+    public CompletableFuture<ShowJobInfoResponse> showJobInfoAsync(ShowJobInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.showJobInfo);
+    }
+
+    /**
+     * get cas job infomation
+     *
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInfoRequest 请求对象
+     * @return AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
+     */
+    public AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoAsyncInvoker(ShowJobInfoRequest request) {
+        return new AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, ServiceStageMeta.showJobInfo,
+            hcClient);
+    }
+
+    /**
      * 获取所有技术栈
      *
      * 获取所有技术栈
@@ -846,64 +780,6 @@ public class ServiceStageAsyncClient {
         ShowRuntimeStacksRequest request) {
         return new AsyncInvoker<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse>(request,
             ServiceStageMeta.showRuntimeStacks, hcClient);
-    }
-
-    /**
-     * 对组件的操作
-     *
-     * 通过此API获取对组件的操作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateComponentActionRequest 请求对象
-     * @return CompletableFuture<UpdateComponentActionResponse>
-     */
-    public CompletableFuture<UpdateComponentActionResponse> updateComponentActionAsync(
-        UpdateComponentActionRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.updateComponentAction);
-    }
-
-    /**
-     * 对组件的操作
-     *
-     * 通过此API获取对组件的操作。
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateComponentActionRequest 请求对象
-     * @return AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>
-     */
-    public AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentActionAsyncInvoker(
-        UpdateComponentActionRequest request) {
-        return new AsyncInvoker<UpdateComponentActionRequest, UpdateComponentActionResponse>(request,
-            ServiceStageMeta.updateComponentAction, hcClient);
-    }
-
-    /**
-     * get cas job infomation
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowJobInfoRequest 请求对象
-     * @return CompletableFuture<ShowJobInfoResponse>
-     */
-    public CompletableFuture<ShowJobInfoResponse> showJobInfoAsync(ShowJobInfoRequest request) {
-        return hcClient.asyncInvokeHttp(request, ServiceStageMeta.showJobInfo);
-    }
-
-    /**
-     * get cas job infomation
-     *
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowJobInfoRequest 请求对象
-     * @return AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>
-     */
-    public AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfoAsyncInvoker(ShowJobInfoRequest request) {
-        return new AsyncInvoker<ShowJobInfoRequest, ShowJobInfoResponse>(request, ServiceStageMeta.showJobInfo,
-            hcClient);
     }
 
 }

@@ -197,22 +197,18 @@ public class ListProjectsV4ResponseBodyProjects {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectsV4ResponseBodyProjects listProjectsV4ResponseBodyProjects = (ListProjectsV4ResponseBodyProjects) o;
-        return Objects.equals(this.projectNumId, listProjectsV4ResponseBodyProjects.projectNumId)
-            && Objects.equals(this.projectId, listProjectsV4ResponseBodyProjects.projectId)
-            && Objects.equals(this.projectName, listProjectsV4ResponseBodyProjects.projectName)
-            && Objects.equals(this.description, listProjectsV4ResponseBodyProjects.description)
-            && Objects.equals(this.createdTime, listProjectsV4ResponseBodyProjects.createdTime)
-            && Objects.equals(this.updatedTime, listProjectsV4ResponseBodyProjects.updatedTime)
-            && Objects.equals(this.projectType, listProjectsV4ResponseBodyProjects.projectType)
-            && Objects.equals(this.creator, listProjectsV4ResponseBodyProjects.creator);
+        ListProjectsV4ResponseBodyProjects that = (ListProjectsV4ResponseBodyProjects) obj;
+        return Objects.equals(this.projectNumId, that.projectNumId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.projectType, that.projectType) && Objects.equals(this.creator, that.creator);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ListAppliedInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppliedInstancesRequest listAppliedInstancesRequest = (ListAppliedInstancesRequest) o;
-        return Objects.equals(this.configId, listAppliedInstancesRequest.configId)
-            && Objects.equals(this.offset, listAppliedInstancesRequest.offset)
-            && Objects.equals(this.limit, listAppliedInstancesRequest.limit);
+        ListAppliedInstancesRequest that = (ListAppliedInstancesRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListRuntimesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRuntimesResponse listRuntimesResponse = (ListRuntimesResponse) o;
-        return Objects.equals(this.runtimes, listRuntimesResponse.runtimes);
+        ListRuntimesResponse that = (ListRuntimesResponse) obj;
+        return Objects.equals(this.runtimes, that.runtimes);
     }
 
     @Override

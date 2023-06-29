@@ -121,19 +121,17 @@ public class ShowSinkTaskDetailRespPartitions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSinkTaskDetailRespPartitions showSinkTaskDetailRespPartitions = (ShowSinkTaskDetailRespPartitions) o;
-        return Objects.equals(this.partitionId, showSinkTaskDetailRespPartitions.partitionId)
-            && Objects.equals(this.status, showSinkTaskDetailRespPartitions.status)
-            && Objects.equals(this.lastTransferOffset, showSinkTaskDetailRespPartitions.lastTransferOffset)
-            && Objects.equals(this.logEndOffset, showSinkTaskDetailRespPartitions.logEndOffset)
-            && Objects.equals(this.lag, showSinkTaskDetailRespPartitions.lag);
+        ShowSinkTaskDetailRespPartitions that = (ShowSinkTaskDetailRespPartitions) obj;
+        return Objects.equals(this.partitionId, that.partitionId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.lastTransferOffset, that.lastTransferOffset)
+            && Objects.equals(this.logEndOffset, that.logEndOffset) && Objects.equals(this.lag, that.lag);
     }
 
     @Override

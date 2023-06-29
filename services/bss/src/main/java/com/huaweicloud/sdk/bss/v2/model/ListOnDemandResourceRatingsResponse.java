@@ -169,21 +169,18 @@ public class ListOnDemandResourceRatingsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOnDemandResourceRatingsResponse listOnDemandResourceRatingsResponse =
-            (ListOnDemandResourceRatingsResponse) o;
-        return Objects.equals(this.amount, listOnDemandResourceRatingsResponse.amount)
-            && Objects.equals(this.discountAmount, listOnDemandResourceRatingsResponse.discountAmount)
-            && Objects.equals(this.officialWebsiteAmount, listOnDemandResourceRatingsResponse.officialWebsiteAmount)
-            && Objects.equals(this.measureId, listOnDemandResourceRatingsResponse.measureId)
-            && Objects.equals(this.currency, listOnDemandResourceRatingsResponse.currency)
-            && Objects.equals(this.productRatingResults, listOnDemandResourceRatingsResponse.productRatingResults);
+        ListOnDemandResourceRatingsResponse that = (ListOnDemandResourceRatingsResponse) obj;
+        return Objects.equals(this.amount, that.amount) && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.productRatingResults, that.productRatingResults);
     }
 
     @Override

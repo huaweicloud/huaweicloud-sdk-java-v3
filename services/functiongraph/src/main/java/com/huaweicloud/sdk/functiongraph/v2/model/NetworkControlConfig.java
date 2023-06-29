@@ -74,16 +74,16 @@ public class NetworkControlConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkControlConfig networkControlConfig = (NetworkControlConfig) o;
-        return Objects.equals(this.disablePublicNetwork, networkControlConfig.disablePublicNetwork)
-            && Objects.equals(this.triggerAccessVpcs, networkControlConfig.triggerAccessVpcs);
+        NetworkControlConfig that = (NetworkControlConfig) obj;
+        return Objects.equals(this.disablePublicNetwork, that.disablePublicNetwork)
+            && Objects.equals(this.triggerAccessVpcs, that.triggerAccessVpcs);
     }
 
     @Override

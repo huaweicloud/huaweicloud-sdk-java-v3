@@ -33,15 +33,15 @@ public class ShowWorkSpaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkSpaceRequest showWorkSpaceRequest = (ShowWorkSpaceRequest) o;
-        return Objects.equals(this.workspaceId, showWorkSpaceRequest.workspaceId);
+        ShowWorkSpaceRequest that = (ShowWorkSpaceRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

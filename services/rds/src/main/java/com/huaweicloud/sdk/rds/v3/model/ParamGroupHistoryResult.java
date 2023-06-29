@@ -165,21 +165,18 @@ public class ParamGroupHistoryResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamGroupHistoryResult paramGroupHistoryResult = (ParamGroupHistoryResult) o;
-        return Objects.equals(this.parameterName, paramGroupHistoryResult.parameterName)
-            && Objects.equals(this.oldValue, paramGroupHistoryResult.oldValue)
-            && Objects.equals(this.newValue, paramGroupHistoryResult.newValue)
-            && Objects.equals(this.updateResult, paramGroupHistoryResult.updateResult)
-            && Objects.equals(this.applied, paramGroupHistoryResult.applied)
-            && Objects.equals(this.updateTime, paramGroupHistoryResult.updateTime)
-            && Objects.equals(this.applyTime, paramGroupHistoryResult.applyTime);
+        ParamGroupHistoryResult that = (ParamGroupHistoryResult) obj;
+        return Objects.equals(this.parameterName, that.parameterName) && Objects.equals(this.oldValue, that.oldValue)
+            && Objects.equals(this.newValue, that.newValue) && Objects.equals(this.updateResult, that.updateResult)
+            && Objects.equals(this.applied, that.applied) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.applyTime, that.applyTime);
     }
 
     @Override

@@ -78,17 +78,17 @@ public class CreateApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationResponse createApplicationResponse = (CreateApplicationResponse) o;
-        return Objects.equals(this.requestId, createApplicationResponse.requestId)
-            && Objects.equals(this.applicationUrn, createApplicationResponse.applicationUrn)
-            && Objects.equals(this.applicationId, createApplicationResponse.applicationId);
+        CreateApplicationResponse that = (CreateApplicationResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.applicationUrn, that.applicationUrn)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

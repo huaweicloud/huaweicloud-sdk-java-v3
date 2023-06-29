@@ -77,19 +77,18 @@ public class CreateAgencyEpPolicyAssignmentReqBodyRoleAssignments {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAgencyEpPolicyAssignmentReqBodyRoleAssignments createAgencyEpPolicyAssignmentReqBodyRoleAssignments =
-            (CreateAgencyEpPolicyAssignmentReqBodyRoleAssignments) o;
-        return Objects.equals(this.agencyId, createAgencyEpPolicyAssignmentReqBodyRoleAssignments.agencyId)
-            && Objects.equals(this.enterpriseProjectId,
-                createAgencyEpPolicyAssignmentReqBodyRoleAssignments.enterpriseProjectId)
-            && Objects.equals(this.roleId, createAgencyEpPolicyAssignmentReqBodyRoleAssignments.roleId);
+        CreateAgencyEpPolicyAssignmentReqBodyRoleAssignments that =
+            (CreateAgencyEpPolicyAssignmentReqBodyRoleAssignments) obj;
+        return Objects.equals(this.agencyId, that.agencyId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

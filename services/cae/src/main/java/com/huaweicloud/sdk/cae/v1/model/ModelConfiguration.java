@@ -122,19 +122,17 @@ public class ModelConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModelConfiguration _configuration = (ModelConfiguration) o;
-        return Objects.equals(this.data, _configuration.data)
-            && Objects.equals(this.operatedAt, _configuration.operatedAt)
-            && Objects.equals(this.operationId, _configuration.operationId)
-            && Objects.equals(this.type, _configuration.type)
-            && Objects.equals(this.isActivated, _configuration.isActivated);
+        ModelConfiguration that = (ModelConfiguration) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.operatedAt, that.operatedAt)
+            && Objects.equals(this.operationId, that.operationId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isActivated, that.isActivated);
     }
 
     @Override

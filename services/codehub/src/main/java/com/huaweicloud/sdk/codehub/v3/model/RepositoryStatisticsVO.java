@@ -165,21 +165,18 @@ public class RepositoryStatisticsVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepositoryStatisticsVO repositoryStatisticsVO = (RepositoryStatisticsVO) o;
-        return Objects.equals(this.repoName, repositoryStatisticsVO.repoName)
-            && Objects.equals(this.commitCount, repositoryStatisticsVO.commitCount)
-            && Objects.equals(this.repoSize, repositoryStatisticsVO.repoSize)
-            && Objects.equals(this.lastCommitTime, repositoryStatisticsVO.lastCommitTime)
-            && Objects.equals(this.codeLines, repositoryStatisticsVO.codeLines)
-            && Objects.equals(this.branchCount, repositoryStatisticsVO.branchCount)
-            && Objects.equals(this.archiveUrl, repositoryStatisticsVO.archiveUrl);
+        RepositoryStatisticsVO that = (RepositoryStatisticsVO) obj;
+        return Objects.equals(this.repoName, that.repoName) && Objects.equals(this.commitCount, that.commitCount)
+            && Objects.equals(this.repoSize, that.repoSize) && Objects.equals(this.lastCommitTime, that.lastCommitTime)
+            && Objects.equals(this.codeLines, that.codeLines) && Objects.equals(this.branchCount, that.branchCount)
+            && Objects.equals(this.archiveUrl, that.archiveUrl);
     }
 
     @Override

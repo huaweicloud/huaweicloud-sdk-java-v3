@@ -65,16 +65,15 @@ public class UpdatePublicKibanaWhitelistRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicKibanaWhitelistRequest updatePublicKibanaWhitelistRequest = (UpdatePublicKibanaWhitelistRequest) o;
-        return Objects.equals(this.clusterId, updatePublicKibanaWhitelistRequest.clusterId)
-            && Objects.equals(this.body, updatePublicKibanaWhitelistRequest.body);
+        UpdatePublicKibanaWhitelistRequest that = (UpdatePublicKibanaWhitelistRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

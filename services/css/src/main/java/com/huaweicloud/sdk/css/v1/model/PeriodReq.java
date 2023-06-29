@@ -121,19 +121,17 @@ public class PeriodReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodReq periodReq = (PeriodReq) o;
-        return Objects.equals(this.periodType, periodReq.periodType)
-            && Objects.equals(this.periodNum, periodReq.periodNum)
-            && Objects.equals(this.isAutoRenew, periodReq.isAutoRenew)
-            && Objects.equals(this.isAutoPay, periodReq.isAutoPay)
-            && Objects.equals(this.consoleURL, periodReq.consoleURL);
+        PeriodReq that = (PeriodReq) obj;
+        return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.consoleURL, that.consoleURL);
     }
 
     @Override

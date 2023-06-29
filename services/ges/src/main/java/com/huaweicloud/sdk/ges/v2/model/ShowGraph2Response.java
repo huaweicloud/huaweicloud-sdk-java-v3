@@ -1,29 +1,19 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ShowGraphRespGraph;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowGraph2Response extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph")
-    
+    @JsonProperty(value = "graph")
 
     private ShowGraphRespGraph graph;
 
@@ -33,14 +23,13 @@ public class ShowGraph2Response extends SdkResponse {
     }
 
     public ShowGraph2Response withGraph(Consumer<ShowGraphRespGraph> graphSetter) {
-        if(this.graph == null ){
+        if (this.graph == null) {
             this.graph = new ShowGraphRespGraph();
             graphSetter.accept(this.graph);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get graph
@@ -54,23 +43,23 @@ public class ShowGraph2Response extends SdkResponse {
         this.graph = graph;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGraph2Response showGraph2Response = (ShowGraph2Response) o;
-        return Objects.equals(this.graph, showGraph2Response.graph);
+        ShowGraph2Response that = (ShowGraph2Response) obj;
+        return Objects.equals(this.graph, that.graph);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graph);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -79,6 +68,7 @@ public class ShowGraph2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -89,8 +79,5 @@ public class ShowGraph2Response extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

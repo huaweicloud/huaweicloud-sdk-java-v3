@@ -76,22 +76,15 @@ public class EndpointVO {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbTypeEnum(value));
         }
 
         public static DbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +272,15 @@ public class EndpointVO {
             if (value == null) {
                 return null;
             }
-            MongoHaModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MongoHaModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MongoHaModeEnum(value));
         }
 
         public static MongoHaModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MongoHaModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -432,22 +418,15 @@ public class EndpointVO {
             if (value == null) {
                 return null;
             }
-            ClusterModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterModeEnum(value));
         }
 
         public static ClusterModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ClusterModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1121,41 +1100,36 @@ public class EndpointVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointVO endpointVO = (EndpointVO) o;
-        return Objects.equals(this.id, endpointVO.id) && Objects.equals(this.objId, endpointVO.objId)
-            && Objects.equals(this.instanceName, endpointVO.instanceName)
-            && Objects.equals(this.dbType, endpointVO.dbType) && Objects.equals(this.dbUser, endpointVO.dbUser)
-            && Objects.equals(this.dbPassword, endpointVO.dbPassword)
-            && Objects.equals(this.manageIp, endpointVO.manageIp)
-            && Objects.equals(this.trafficIp, endpointVO.trafficIp) && Objects.equals(this.dbPort, endpointVO.dbPort)
-            && Objects.equals(this.region, endpointVO.region) && Objects.equals(this.createdAt, endpointVO.createdAt)
-            && Objects.equals(this.updatedAt, endpointVO.updatedAt) && Objects.equals(this.ip, endpointVO.ip)
-            && Objects.equals(this.publicIp, endpointVO.publicIp) && Objects.equals(this.azCode, endpointVO.azCode)
-            && Objects.equals(this.securityGroupId, endpointVO.securityGroupId)
-            && Objects.equals(this.subnetId, endpointVO.subnetId) && Objects.equals(this.vpcId, endpointVO.vpcId)
-            && Objects.equals(this.volumeSize, endpointVO.volumeSize)
-            && Objects.equals(this.fullTransUserPwd, endpointVO.fullTransUserPwd)
-            && Objects.equals(this.incrementTransUserPwd, endpointVO.incrementTransUserPwd)
-            && Objects.equals(this.sslLink, endpointVO.sslLink)
-            && Objects.equals(this.sslCertKey, endpointVO.sslCertKey)
-            && Objects.equals(this.sslCertName, endpointVO.sslCertName)
-            && Objects.equals(this.sslCertCheckSum, endpointVO.sslCertCheckSum)
-            && Objects.equals(this.sslCertPassword, endpointVO.sslCertPassword)
-            && Objects.equals(this.dbVersion, endpointVO.dbVersion)
-            && Objects.equals(this.mongoHaMode, endpointVO.mongoHaMode)
-            && Objects.equals(this.projectId, endpointVO.projectId)
-            && Objects.equals(this.clusterMode, endpointVO.clusterMode)
-            && Objects.equals(this.instanceId, endpointVO.instanceId) && Objects.equals(this.dbName, endpointVO.dbName)
-            && Objects.equals(this.topic, endpointVO.topic) && Objects.equals(this.safeMode, endpointVO.safeMode)
-            && Objects.equals(this.kerberosVo, endpointVO.kerberosVo)
-            && Objects.equals(this.multiWriteDbId, endpointVO.multiWriteDbId);
+        EndpointVO that = (EndpointVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.objId, that.objId)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.dbType, that.dbType)
+            && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.dbPassword, that.dbPassword)
+            && Objects.equals(this.manageIp, that.manageIp) && Objects.equals(this.trafficIp, that.trafficIp)
+            && Objects.equals(this.dbPort, that.dbPort) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.azCode, that.azCode) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.volumeSize, that.volumeSize)
+            && Objects.equals(this.fullTransUserPwd, that.fullTransUserPwd)
+            && Objects.equals(this.incrementTransUserPwd, that.incrementTransUserPwd)
+            && Objects.equals(this.sslLink, that.sslLink) && Objects.equals(this.sslCertKey, that.sslCertKey)
+            && Objects.equals(this.sslCertName, that.sslCertName)
+            && Objects.equals(this.sslCertCheckSum, that.sslCertCheckSum)
+            && Objects.equals(this.sslCertPassword, that.sslCertPassword)
+            && Objects.equals(this.dbVersion, that.dbVersion) && Objects.equals(this.mongoHaMode, that.mongoHaMode)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.clusterMode, that.clusterMode)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.safeMode, that.safeMode)
+            && Objects.equals(this.kerberosVo, that.kerberosVo)
+            && Objects.equals(this.multiWriteDbId, that.multiWriteDbId);
     }
 
     @Override

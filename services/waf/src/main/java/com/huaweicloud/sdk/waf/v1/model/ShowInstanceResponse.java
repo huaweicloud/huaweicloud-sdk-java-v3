@@ -471,34 +471,27 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.id, showInstanceResponse.id)
-            && Objects.equals(this.instancename, showInstanceResponse.instancename)
-            && Objects.equals(this.region, showInstanceResponse.region)
-            && Objects.equals(this.zone, showInstanceResponse.zone)
-            && Objects.equals(this.arch, showInstanceResponse.arch)
-            && Objects.equals(this.cpuFlavor, showInstanceResponse.cpuFlavor)
-            && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, showInstanceResponse.subnetId)
-            && Objects.equals(this.serviceIp, showInstanceResponse.serviceIp)
-            && Objects.equals(this.securityGroupIds, showInstanceResponse.securityGroupIds)
-            && Objects.equals(this.status, showInstanceResponse.status)
-            && Objects.equals(this.runStatus, showInstanceResponse.runStatus)
-            && Objects.equals(this.accessStatus, showInstanceResponse.accessStatus)
-            && Objects.equals(this.upgradable, showInstanceResponse.upgradable)
-            && Objects.equals(this.cloudServiceType, showInstanceResponse.cloudServiceType)
-            && Objects.equals(this.resourceType, showInstanceResponse.resourceType)
-            && Objects.equals(this.resourceSpecCode, showInstanceResponse.resourceSpecCode)
-            && Objects.equals(this.specification, showInstanceResponse.specification)
-            && Objects.equals(this.serverId, showInstanceResponse.serverId)
-            && Objects.equals(this.createTime, showInstanceResponse.createTime);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instancename, that.instancename)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.zone, that.zone)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.serviceIp, that.serviceIp)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.upgradable, that.upgradable)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

@@ -127,18 +127,16 @@ public class CreateConfigurationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfigurationRequestBody createConfigurationRequestBody = (CreateConfigurationRequestBody) o;
-        return Objects.equals(this.name, createConfigurationRequestBody.name)
-            && Objects.equals(this.description, createConfigurationRequestBody.description)
-            && Objects.equals(this.datastore, createConfigurationRequestBody.datastore)
-            && Objects.equals(this.values, createConfigurationRequestBody.values);
+        CreateConfigurationRequestBody that = (CreateConfigurationRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.values, that.values);
     }
 
     @Override

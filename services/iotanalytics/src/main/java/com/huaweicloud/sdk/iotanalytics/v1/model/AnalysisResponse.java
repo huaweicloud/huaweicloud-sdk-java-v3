@@ -193,21 +193,18 @@ public class AnalysisResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnalysisResponse analysisResponse = (AnalysisResponse) o;
-        return Objects.equals(this.analysisId, analysisResponse.analysisId)
-            && Objects.equals(this.name, analysisResponse.name)
-            && Objects.equals(this.displayName, analysisResponse.displayName)
-            && Objects.equals(this.type, analysisResponse.type)
-            && Objects.equals(this.transform, analysisResponse.transform)
-            && Objects.equals(this.aggregate, analysisResponse.aggregate)
-            && Objects.equals(this.stream, analysisResponse.stream);
+        AnalysisResponse that = (AnalysisResponse) obj;
+        return Objects.equals(this.analysisId, that.analysisId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.transform, that.transform) && Objects.equals(this.aggregate, that.aggregate)
+            && Objects.equals(this.stream, that.stream);
     }
 
     @Override

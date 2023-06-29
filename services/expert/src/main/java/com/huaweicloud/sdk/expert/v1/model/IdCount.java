@@ -55,15 +55,15 @@ public class IdCount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdCount idCount = (IdCount) o;
-        return Objects.equals(this.paperId, idCount.paperId) && Objects.equals(this.count, idCount.count);
+        IdCount that = (IdCount) obj;
+        return Objects.equals(this.paperId, that.paperId) && Objects.equals(this.count, that.count);
     }
 
     @Override

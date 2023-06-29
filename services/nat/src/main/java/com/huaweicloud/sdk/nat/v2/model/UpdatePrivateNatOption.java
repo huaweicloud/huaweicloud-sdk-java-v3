@@ -82,22 +82,15 @@ public class UpdatePrivateNatOption {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,17 +164,16 @@ public class UpdatePrivateNatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateNatOption updatePrivateNatOption = (UpdatePrivateNatOption) o;
-        return Objects.equals(this.name, updatePrivateNatOption.name)
-            && Objects.equals(this.description, updatePrivateNatOption.description)
-            && Objects.equals(this.spec, updatePrivateNatOption.spec);
+        UpdatePrivateNatOption that = (UpdatePrivateNatOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spec, that.spec);
     }
 
     @Override

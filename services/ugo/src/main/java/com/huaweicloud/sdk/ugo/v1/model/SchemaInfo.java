@@ -74,16 +74,16 @@ public class SchemaInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchemaInfo schemaInfo = (SchemaInfo) o;
-        return Objects.equals(this.isSelectAllSchemas, schemaInfo.isSelectAllSchemas)
-            && Objects.equals(this.schemasList, schemaInfo.schemasList);
+        SchemaInfo that = (SchemaInfo) obj;
+        return Objects.equals(this.isSelectAllSchemas, that.isSelectAllSchemas)
+            && Objects.equals(this.schemasList, that.schemasList);
     }
 
     @Override

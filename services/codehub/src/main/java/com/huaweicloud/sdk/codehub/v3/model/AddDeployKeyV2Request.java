@@ -65,16 +65,15 @@ public class AddDeployKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeployKeyV2Request addDeployKeyV2Request = (AddDeployKeyV2Request) o;
-        return Objects.equals(this.repositoryId, addDeployKeyV2Request.repositoryId)
-            && Objects.equals(this.body, addDeployKeyV2Request.body);
+        AddDeployKeyV2Request that = (AddDeployKeyV2Request) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.body, that.body);
     }
 
     @Override

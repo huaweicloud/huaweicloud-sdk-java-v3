@@ -77,16 +77,16 @@ public class Ports {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Ports ports = (Ports) o;
-        return Objects.equals(this.containerPort, ports.containerPort) && Objects.equals(this.hostPort, ports.hostPort)
-            && Objects.equals(this.hostIp, ports.hostIp);
+        Ports that = (Ports) obj;
+        return Objects.equals(this.containerPort, that.containerPort) && Objects.equals(this.hostPort, that.hostPort)
+            && Objects.equals(this.hostIp, that.hostIp);
     }
 
     @Override

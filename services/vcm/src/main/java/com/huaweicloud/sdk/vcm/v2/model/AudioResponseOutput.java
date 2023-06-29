@@ -74,16 +74,15 @@ public class AudioResponseOutput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioResponseOutput audioResponseOutput = (AudioResponseOutput) o;
-        return Objects.equals(this.obs, audioResponseOutput.obs)
-            && Objects.equals(this.hosting, audioResponseOutput.hosting);
+        AudioResponseOutput that = (AudioResponseOutput) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.hosting, that.hosting);
     }
 
     @Override

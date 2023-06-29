@@ -125,19 +125,17 @@ public class BatchShowVehiclesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowVehiclesRequest batchShowVehiclesRequest = (BatchShowVehiclesRequest) o;
-        return Objects.equals(this.instanceId, batchShowVehiclesRequest.instanceId)
-            && Objects.equals(this.offset, batchShowVehiclesRequest.offset)
-            && Objects.equals(this.limit, batchShowVehiclesRequest.limit)
-            && Objects.equals(this.vehicleId, batchShowVehiclesRequest.vehicleId)
-            && Objects.equals(this.status, batchShowVehiclesRequest.status);
+        BatchShowVehiclesRequest that = (BatchShowVehiclesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.vehicleId, that.vehicleId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

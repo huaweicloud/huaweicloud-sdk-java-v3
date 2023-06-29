@@ -93,22 +93,15 @@ public class JobInfo {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -344,20 +337,19 @@ public class JobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobInfo jobInfo = (JobInfo) o;
-        return Objects.equals(this.name, jobInfo.name) && Objects.equals(this.id, jobInfo.id)
-            && Objects.equals(this.nodes, jobInfo.nodes) && Objects.equals(this.schedule, jobInfo.schedule)
-            && Objects.equals(this.params, jobInfo.params) && Objects.equals(this.directory, jobInfo.directory)
-            && Objects.equals(this.jobType, jobInfo.jobType)
-            && Objects.equals(this.lastUpdateUser, jobInfo.lastUpdateUser)
-            && Objects.equals(this.basicConfig, jobInfo.basicConfig);
+        JobInfo that = (JobInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.directory, that.directory)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.lastUpdateUser, that.lastUpdateUser)
+            && Objects.equals(this.basicConfig, that.basicConfig);
     }
 
     @Override

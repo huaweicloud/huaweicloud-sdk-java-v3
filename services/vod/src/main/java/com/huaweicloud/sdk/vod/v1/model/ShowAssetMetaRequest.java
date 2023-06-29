@@ -29,8 +29,8 @@ public class ShowAssetMetaRequest {
     private List<String> assetId = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -133,22 +133,15 @@ public class ShowAssetMetaRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,8 +164,8 @@ public class ShowAssetMetaRequest {
     private List<StatusEnum> status = null;
 
     /**
-    * Gets or Sets transcodeStatus
-    */
+     * Gets or Sets transcodeStatus
+     */
     public static final class TranscodeStatusEnum {
 
         /**
@@ -233,22 +226,15 @@ public class ShowAssetMetaRequest {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TranscodeStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TranscodeStatusEnum(value));
         }
 
         public static TranscodeStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TranscodeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,8 +257,8 @@ public class ShowAssetMetaRequest {
     private List<TranscodeStatusEnum> transcodeStatus = null;
 
     /**
-    * Gets or Sets assetStatus
-    */
+     * Gets or Sets assetStatus
+     */
     public static final class AssetStatusEnum {
 
         /**
@@ -315,22 +301,15 @@ public class ShowAssetMetaRequest {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStatusEnum(value));
         }
 
         public static AssetStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -661,26 +640,20 @@ public class ShowAssetMetaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetMetaRequest showAssetMetaRequest = (ShowAssetMetaRequest) o;
-        return Objects.equals(this.xSdkDate, showAssetMetaRequest.xSdkDate)
-            && Objects.equals(this.assetId, showAssetMetaRequest.assetId)
-            && Objects.equals(this.status, showAssetMetaRequest.status)
-            && Objects.equals(this.transcodeStatus, showAssetMetaRequest.transcodeStatus)
-            && Objects.equals(this.assetStatus, showAssetMetaRequest.assetStatus)
-            && Objects.equals(this.startTime, showAssetMetaRequest.startTime)
-            && Objects.equals(this.endTime, showAssetMetaRequest.endTime)
-            && Objects.equals(this.categoryId, showAssetMetaRequest.categoryId)
-            && Objects.equals(this.tags, showAssetMetaRequest.tags)
-            && Objects.equals(this.queryString, showAssetMetaRequest.queryString)
-            && Objects.equals(this.page, showAssetMetaRequest.page)
-            && Objects.equals(this.size, showAssetMetaRequest.size);
+        ShowAssetMetaRequest that = (ShowAssetMetaRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.transcodeStatus, that.transcodeStatus)
+            && Objects.equals(this.assetStatus, that.assetStatus) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.queryString, that.queryString)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class CreateSearchCriteriasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSearchCriteriasRequest createSearchCriteriasRequest = (CreateSearchCriteriasRequest) o;
-        return Objects.equals(this.groupId, createSearchCriteriasRequest.groupId)
-            && Objects.equals(this.topicId, createSearchCriteriasRequest.topicId)
-            && Objects.equals(this.body, createSearchCriteriasRequest.body);
+        CreateSearchCriteriasRequest that = (CreateSearchCriteriasRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

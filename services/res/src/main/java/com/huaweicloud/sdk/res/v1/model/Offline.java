@@ -77,16 +77,16 @@ public class Offline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Offline offline = (Offline) o;
-        return Objects.equals(this.userUrl, offline.userUrl) && Objects.equals(this.itemUrl, offline.itemUrl)
-            && Objects.equals(this.behaviorUrl, offline.behaviorUrl);
+        Offline that = (Offline) obj;
+        return Objects.equals(this.userUrl, that.userUrl) && Objects.equals(this.itemUrl, that.itemUrl)
+            && Objects.equals(this.behaviorUrl, that.behaviorUrl);
     }
 
     @Override

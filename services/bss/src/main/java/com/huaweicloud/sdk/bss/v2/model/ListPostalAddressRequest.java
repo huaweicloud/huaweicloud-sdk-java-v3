@@ -59,16 +59,15 @@ public class ListPostalAddressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPostalAddressRequest listPostalAddressRequest = (ListPostalAddressRequest) o;
-        return Objects.equals(this.offset, listPostalAddressRequest.offset)
-            && Objects.equals(this.limit, listPostalAddressRequest.limit);
+        ListPostalAddressRequest that = (ListPostalAddressRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

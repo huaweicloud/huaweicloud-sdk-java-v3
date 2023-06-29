@@ -66,16 +66,15 @@ public class ChangeEwProtectStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEwProtectStatusResponse changeEwProtectStatusResponse = (ChangeEwProtectStatusResponse) o;
-        return Objects.equals(this.data, changeEwProtectStatusResponse.data)
-            && Objects.equals(this.traceId, changeEwProtectStatusResponse.traceId);
+        ChangeEwProtectStatusResponse that = (ChangeEwProtectStatusResponse) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.traceId, that.traceId);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateHealthmonitorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHealthmonitorRequest updateHealthmonitorRequest = (UpdateHealthmonitorRequest) o;
-        return Objects.equals(this.healthmonitorId, updateHealthmonitorRequest.healthmonitorId)
-            && Objects.equals(this.body, updateHealthmonitorRequest.body);
+        UpdateHealthmonitorRequest that = (UpdateHealthmonitorRequest) obj;
+        return Objects.equals(this.healthmonitorId, that.healthmonitorId) && Objects.equals(this.body, that.body);
     }
 
     @Override

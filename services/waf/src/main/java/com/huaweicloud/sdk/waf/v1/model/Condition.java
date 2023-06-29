@@ -140,18 +140,18 @@ public class Condition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Condition condition = (Condition) o;
-        return Objects.equals(this.category, condition.category) && Objects.equals(this.contents, condition.contents)
-            && Objects.equals(this.logicOperation, condition.logicOperation)
-            && Objects.equals(this.checkAllIndexesLogic, condition.checkAllIndexesLogic)
-            && Objects.equals(this.index, condition.index);
+        Condition that = (Condition) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.logicOperation, that.logicOperation)
+            && Objects.equals(this.checkAllIndexesLogic, that.checkAllIndexesLogic)
+            && Objects.equals(this.index, that.index);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class ShowCeshierarchyRespQueues1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCeshierarchyRespQueues1 showCeshierarchyRespQueues1 = (ShowCeshierarchyRespQueues1) o;
-        return Objects.equals(this.name, showCeshierarchyRespQueues1.name)
-            && Objects.equals(this.partitions, showCeshierarchyRespQueues1.partitions);
+        ShowCeshierarchyRespQueues1 that = (ShowCeshierarchyRespQueues1) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.partitions, that.partitions);
     }
 
     @Override

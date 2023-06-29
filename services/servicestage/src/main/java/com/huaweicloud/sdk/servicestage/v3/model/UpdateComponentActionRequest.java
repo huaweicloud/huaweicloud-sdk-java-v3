@@ -87,17 +87,16 @@ public class UpdateComponentActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateComponentActionRequest updateComponentActionRequest = (UpdateComponentActionRequest) o;
-        return Objects.equals(this.applicationId, updateComponentActionRequest.applicationId)
-            && Objects.equals(this.componentId, updateComponentActionRequest.componentId)
-            && Objects.equals(this.body, updateComponentActionRequest.body);
+        UpdateComponentActionRequest that = (UpdateComponentActionRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

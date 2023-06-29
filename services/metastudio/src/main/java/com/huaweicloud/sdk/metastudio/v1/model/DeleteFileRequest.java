@@ -103,18 +103,16 @@ public class DeleteFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFileRequest deleteFileRequest = (DeleteFileRequest) o;
-        return Objects.equals(this.authorization, deleteFileRequest.authorization)
-            && Objects.equals(this.xSdkDate, deleteFileRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, deleteFileRequest.xAppUserId)
-            && Objects.equals(this.fileId, deleteFileRequest.fileId);
+        DeleteFileRequest that = (DeleteFileRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.fileId, that.fileId);
     }
 
     @Override

@@ -84,17 +84,15 @@ public class KeystoneListDomainPermissionsForGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListDomainPermissionsForGroupResponse keystoneListDomainPermissionsForGroupResponse =
-            (KeystoneListDomainPermissionsForGroupResponse) o;
-        return Objects.equals(this.links, keystoneListDomainPermissionsForGroupResponse.links)
-            && Objects.equals(this.roles, keystoneListDomainPermissionsForGroupResponse.roles);
+        KeystoneListDomainPermissionsForGroupResponse that = (KeystoneListDomainPermissionsForGroupResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.roles, that.roles);
     }
 
     @Override

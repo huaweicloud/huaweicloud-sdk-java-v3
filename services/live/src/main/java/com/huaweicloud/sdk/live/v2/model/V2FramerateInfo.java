@@ -162,19 +162,17 @@ public class V2FramerateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2FramerateInfo v2FramerateInfo = (V2FramerateInfo) o;
-        return Objects.equals(this.publishDomain, v2FramerateInfo.publishDomain)
-            && Objects.equals(this.app, v2FramerateInfo.app) && Objects.equals(this.stream, v2FramerateInfo.stream)
-            && Objects.equals(this.startTime, v2FramerateInfo.startTime)
-            && Objects.equals(this.endTime, v2FramerateInfo.endTime)
-            && Objects.equals(this.dataList, v2FramerateInfo.dataList);
+        V2FramerateInfo that = (V2FramerateInfo) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

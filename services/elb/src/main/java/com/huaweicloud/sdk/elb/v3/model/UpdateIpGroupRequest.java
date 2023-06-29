@@ -65,16 +65,15 @@ public class UpdateIpGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpGroupRequest updateIpGroupRequest = (UpdateIpGroupRequest) o;
-        return Objects.equals(this.ipgroupId, updateIpGroupRequest.ipgroupId)
-            && Objects.equals(this.body, updateIpGroupRequest.body);
+        UpdateIpGroupRequest that = (UpdateIpGroupRequest) obj;
+        return Objects.equals(this.ipgroupId, that.ipgroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

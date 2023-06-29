@@ -76,22 +76,15 @@ public class PolicyCreate {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypeEnum(value));
         }
 
         public static OperationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -222,18 +215,17 @@ public class PolicyCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyCreate policyCreate = (PolicyCreate) o;
-        return Objects.equals(this.enabled, policyCreate.enabled) && Objects.equals(this.name, policyCreate.name)
-            && Objects.equals(this.operationDefinition, policyCreate.operationDefinition)
-            && Objects.equals(this.operationType, policyCreate.operationType)
-            && Objects.equals(this.trigger, policyCreate.trigger);
+        PolicyCreate that = (PolicyCreate) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.operationDefinition, that.operationDefinition)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class NodeContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeContentRsp nodeContentRsp = (NodeContentRsp) o;
-        return Objects.equals(this.siteId, nodeContentRsp.siteId)
-            && Objects.equals(this.sqllist, nodeContentRsp.sqllist);
+        NodeContentRsp that = (NodeContentRsp) obj;
+        return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.sqllist, that.sqllist);
     }
 
     @Override

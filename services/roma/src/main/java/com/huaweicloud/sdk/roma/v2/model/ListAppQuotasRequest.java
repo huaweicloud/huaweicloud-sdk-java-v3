@@ -101,18 +101,16 @@ public class ListAppQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuotasRequest listAppQuotasRequest = (ListAppQuotasRequest) o;
-        return Objects.equals(this.instanceId, listAppQuotasRequest.instanceId)
-            && Objects.equals(this.offset, listAppQuotasRequest.offset)
-            && Objects.equals(this.limit, listAppQuotasRequest.limit)
-            && Objects.equals(this.name, listAppQuotasRequest.name);
+        ListAppQuotasRequest that = (ListAppQuotasRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name);
     }
 
     @Override

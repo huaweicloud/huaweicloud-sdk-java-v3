@@ -145,20 +145,17 @@ public class ListTranscodeTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodeTemplateRequest listTranscodeTemplateRequest = (ListTranscodeTemplateRequest) o;
-        return Objects.equals(this.xSdkDate, listTranscodeTemplateRequest.xSdkDate)
-            && Objects.equals(this.groupId, listTranscodeTemplateRequest.groupId)
-            && Objects.equals(this.isDefault, listTranscodeTemplateRequest.isDefault)
-            && Objects.equals(this.offset, listTranscodeTemplateRequest.offset)
-            && Objects.equals(this.limit, listTranscodeTemplateRequest.limit)
-            && Objects.equals(this.queryString, listTranscodeTemplateRequest.queryString);
+        ListTranscodeTemplateRequest that = (ListTranscodeTemplateRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.isDefault, that.isDefault) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.queryString, that.queryString);
     }
 
     @Override

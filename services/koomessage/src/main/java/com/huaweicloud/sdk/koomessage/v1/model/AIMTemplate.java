@@ -354,25 +354,22 @@ public class AIMTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMTemplate aiMTemplate = (AIMTemplate) o;
-        return Objects.equals(this.tplId, aiMTemplate.tplId) && Objects.equals(this.tplName, aiMTemplate.tplName)
-            && Objects.equals(this.scene, aiMTemplate.scene) && Objects.equals(this.tplState, aiMTemplate.tplState)
-            && Objects.equals(this.disableDesc, aiMTemplate.disableDesc)
-            && Objects.equals(this.disableTime, aiMTemplate.disableTime)
-            && Objects.equals(this.auditState, aiMTemplate.auditState)
-            && Objects.equals(this.auditDesc, aiMTemplate.auditDesc)
-            && Objects.equals(this.description, aiMTemplate.description)
-            && Objects.equals(this.creationTime, aiMTemplate.creationTime)
-            && Objects.equals(this.updateTime, aiMTemplate.updateTime) && Objects.equals(this.pages, aiMTemplate.pages)
-            && Objects.equals(this.params, aiMTemplate.params)
-            && Objects.equals(this.factoryInfo, aiMTemplate.factoryInfo);
+        AIMTemplate that = (AIMTemplate) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.scene, that.scene) && Objects.equals(this.tplState, that.tplState)
+            && Objects.equals(this.disableDesc, that.disableDesc) && Objects.equals(this.disableTime, that.disableTime)
+            && Objects.equals(this.auditState, that.auditState) && Objects.equals(this.auditDesc, that.auditDesc)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.creationTime, that.creationTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.pages, that.pages) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.factoryInfo, that.factoryInfo);
     }
 
     @Override

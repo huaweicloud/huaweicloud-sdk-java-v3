@@ -77,17 +77,16 @@ public class HbaseModifySettingV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HbaseModifySettingV2 hbaseModifySettingV2 = (HbaseModifySettingV2) o;
-        return Objects.equals(this.parmName, hbaseModifySettingV2.parmName)
-            && Objects.equals(this.newValue, hbaseModifySettingV2.newValue)
-            && Objects.equals(this.id, hbaseModifySettingV2.id);
+        HbaseModifySettingV2 that = (HbaseModifySettingV2) obj;
+        return Objects.equals(this.parmName, that.parmName) && Objects.equals(this.newValue, that.newValue)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

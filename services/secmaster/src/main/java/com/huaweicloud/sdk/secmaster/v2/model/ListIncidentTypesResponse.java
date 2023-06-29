@@ -193,21 +193,18 @@ public class ListIncidentTypesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIncidentTypesResponse listIncidentTypesResponse = (ListIncidentTypesResponse) o;
-        return Objects.equals(this.code, listIncidentTypesResponse.code)
-            && Objects.equals(this.message, listIncidentTypesResponse.message)
-            && Objects.equals(this.data, listIncidentTypesResponse.data)
-            && Objects.equals(this.total, listIncidentTypesResponse.total)
-            && Objects.equals(this.size, listIncidentTypesResponse.size)
-            && Objects.equals(this.page, listIncidentTypesResponse.page)
-            && Objects.equals(this.xRequestId, listIncidentTypesResponse.xRequestId);
+        ListIncidentTypesResponse that = (ListIncidentTypesResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

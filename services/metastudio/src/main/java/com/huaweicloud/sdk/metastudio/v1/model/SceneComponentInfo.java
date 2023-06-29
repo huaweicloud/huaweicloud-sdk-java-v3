@@ -76,22 +76,15 @@ public class SceneComponentInfo {
             if (value == null) {
                 return null;
             }
-            ComponentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ComponentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComponentTypeEnum(value));
         }
 
         public static ComponentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ComponentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,18 +182,17 @@ public class SceneComponentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SceneComponentInfo sceneComponentInfo = (SceneComponentInfo) o;
-        return Objects.equals(this.index, sceneComponentInfo.index)
-            && Objects.equals(this.componentName, sceneComponentInfo.componentName)
-            && Objects.equals(this.componentType, sceneComponentInfo.componentType)
-            && Objects.equals(this.componentDesc, sceneComponentInfo.componentDesc);
+        SceneComponentInfo that = (SceneComponentInfo) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.componentName, that.componentName)
+            && Objects.equals(this.componentType, that.componentType)
+            && Objects.equals(this.componentDesc, that.componentDesc);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowAomMappingRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAomMappingRuleRequest showAomMappingRuleRequest = (ShowAomMappingRuleRequest) o;
-        return Objects.equals(this.ruleId, showAomMappingRuleRequest.ruleId);
+        ShowAomMappingRuleRequest that = (ShowAomMappingRuleRequest) obj;
+        return Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

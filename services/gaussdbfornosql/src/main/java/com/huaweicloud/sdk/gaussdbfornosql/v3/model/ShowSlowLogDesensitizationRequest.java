@@ -33,15 +33,15 @@ public class ShowSlowLogDesensitizationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSlowLogDesensitizationRequest showSlowLogDesensitizationRequest = (ShowSlowLogDesensitizationRequest) o;
-        return Objects.equals(this.instanceId, showSlowLogDesensitizationRequest.instanceId);
+        ShowSlowLogDesensitizationRequest that = (ShowSlowLogDesensitizationRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

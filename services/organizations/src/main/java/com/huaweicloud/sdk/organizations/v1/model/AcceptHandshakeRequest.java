@@ -33,15 +33,15 @@ public class AcceptHandshakeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceptHandshakeRequest acceptHandshakeRequest = (AcceptHandshakeRequest) o;
-        return Objects.equals(this.handshakeId, acceptHandshakeRequest.handshakeId);
+        AcceptHandshakeRequest that = (AcceptHandshakeRequest) obj;
+        return Objects.equals(this.handshakeId, that.handshakeId);
     }
 
     @Override

@@ -152,17 +152,17 @@ public class PodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PodRequest podRequest = (PodRequest) o;
-        return Objects.equals(this.configs, podRequest.configs) && Objects.equals(this.affinity, podRequest.affinity)
-            && Objects.equals(this.initContainers, podRequest.initContainers)
-            && Objects.equals(this.containers, podRequest.containers);
+        PodRequest that = (PodRequest) obj;
+        return Objects.equals(this.configs, that.configs) && Objects.equals(this.affinity, that.affinity)
+            && Objects.equals(this.initContainers, that.initContainers)
+            && Objects.equals(this.containers, that.containers);
     }
 
     @Override

@@ -121,18 +121,18 @@ public class InstanceAddress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceAddress instanceAddress = (InstanceAddress) o;
-        return Objects.equals(this.osEXTIPSMACMacAddr, instanceAddress.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSPortId, instanceAddress.osEXTIPSPortId)
-            && Objects.equals(this.osEXTIPSType, instanceAddress.osEXTIPSType)
-            && Objects.equals(this.addr, instanceAddress.addr) && Objects.equals(this.version, instanceAddress.version);
+        InstanceAddress that = (InstanceAddress) obj;
+        return Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

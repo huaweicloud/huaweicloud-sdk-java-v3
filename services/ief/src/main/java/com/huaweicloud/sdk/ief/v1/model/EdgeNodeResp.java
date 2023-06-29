@@ -1402,59 +1402,44 @@ public class EdgeNodeResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNodeResp edgeNodeResp = (EdgeNodeResp) o;
-        return Objects.equals(this.id, edgeNodeResp.id) && Objects.equals(this.name, edgeNodeResp.name)
-            && Objects.equals(this.description, edgeNodeResp.description)
-            && Objects.equals(this.createdAt, edgeNodeResp.createdAt)
-            && Objects.equals(this.updatedAt, edgeNodeResp.updatedAt)
-            && Objects.equals(this.projectId, edgeNodeResp.projectId)
-            && Objects.equals(this.privateKey, edgeNodeResp.privateKey)
-            && Objects.equals(this.certificate, edgeNodeResp.certificate) && Objects.equals(this.ca, edgeNodeResp.ca)
-            && Objects.equals(this.state, edgeNodeResp.state) && Objects.equals(this._package, edgeNodeResp._package)
-            && Objects.equals(this.masterAddr, edgeNodeResp.masterAddr) && Objects.equals(this.cpu, edgeNodeResp.cpu)
-            && Objects.equals(this.memory, edgeNodeResp.memory) && Objects.equals(this.osName, edgeNodeResp.osName)
-            && Objects.equals(this.osVersion, edgeNodeResp.osVersion)
-            && Objects.equals(this.pauseDockerImage, edgeNodeResp.pauseDockerImage)
-            && Objects.equals(this.arch, edgeNodeResp.arch) && Objects.equals(this.osType, edgeNodeResp.osType)
-            && Objects.equals(this.deploymentNum, edgeNodeResp.deploymentNum)
-            && Objects.equals(this.enableGpu, edgeNodeResp.enableGpu)
-            && Objects.equals(this.logConfigs, edgeNodeResp.logConfigs)
-            && Objects.equals(this.deviceInfos, edgeNodeResp.deviceInfos)
-            && Objects.equals(this.edgedVersion, edgeNodeResp.edgedVersion)
-            && Objects.equals(this.gpuNum, edgeNodeResp.gpuNum) && Objects.equals(this.hostIps, edgeNodeResp.hostIps)
-            && Objects.equals(this.relation, edgeNodeResp.relation)
-            && Objects.equals(this.comment, edgeNodeResp.comment) && Objects.equals(this.gpuInfo, edgeNodeResp.gpuInfo)
-            && Objects.equals(this.deviceNum, edgeNodeResp.deviceNum)
-            && Objects.equals(this.enableNpu, edgeNodeResp.enableNpu)
-            && Objects.equals(this.npuType, edgeNodeResp.npuType) && Objects.equals(this.nics, edgeNodeResp.nics)
-            && Objects.equals(this.hostName, edgeNodeResp.hostName)
-            && Objects.equals(this.iefNodeVersion, edgeNodeResp.iefNodeVersion)
-            && Objects.equals(this.upgradeFlag, edgeNodeResp.upgradeFlag)
-            && Objects.equals(this.productId, edgeNodeResp.productId)
-            && Objects.equals(this.groupIds, edgeNodeResp.groupIds)
-            && Objects.equals(this.upgradeHistory, edgeNodeResp.upgradeHistory)
-            && Objects.equals(this.attributes, edgeNodeResp.attributes)
-            && Objects.equals(this.dockerEnable, edgeNodeResp.dockerEnable)
-            && Objects.equals(this.mqttMode, edgeNodeResp.mqttMode)
-            && Objects.equals(this.mqttExternal, edgeNodeResp.mqttExternal)
-            && Objects.equals(this.mqttInternal, edgeNodeResp.mqttInternal)
-            && Objects.equals(this.nodeType, edgeNodeResp.nodeType)
-            && Objects.equals(this.ntpConfigs, edgeNodeResp.ntpConfigs)
-            && Objects.equals(this.errorReason, edgeNodeResp.errorReason)
-            && Objects.equals(this.tags, edgeNodeResp.tags) && Objects.equals(this.npuNum, edgeNodeResp.npuNum)
-            && Objects.equals(this.npuInfo, edgeNodeResp.npuInfo)
-            && Objects.equals(this.containerRuntimeVersion, edgeNodeResp.containerRuntimeVersion)
-            && Objects.equals(this.identifier, edgeNodeResp.identifier)
-            && Objects.equals(this.purchaseId, edgeNodeResp.purchaseId)
-            && Objects.equals(this.stateDetails, edgeNodeResp.stateDetails)
-            && Objects.equals(this.certRemainingValidTime, edgeNodeResp.certRemainingValidTime);
+        EdgeNodeResp that = (EdgeNodeResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.ca, that.ca) && Objects.equals(this.state, that.state)
+            && Objects.equals(this._package, that._package) && Objects.equals(this.masterAddr, that.masterAddr)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.pauseDockerImage, that.pauseDockerImage) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.deploymentNum, that.deploymentNum)
+            && Objects.equals(this.enableGpu, that.enableGpu) && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.deviceInfos, that.deviceInfos)
+            && Objects.equals(this.edgedVersion, that.edgedVersion) && Objects.equals(this.gpuNum, that.gpuNum)
+            && Objects.equals(this.hostIps, that.hostIps) && Objects.equals(this.relation, that.relation)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.gpuInfo, that.gpuInfo)
+            && Objects.equals(this.deviceNum, that.deviceNum) && Objects.equals(this.enableNpu, that.enableNpu)
+            && Objects.equals(this.npuType, that.npuType) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.iefNodeVersion, that.iefNodeVersion)
+            && Objects.equals(this.upgradeFlag, that.upgradeFlag) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.groupIds, that.groupIds) && Objects.equals(this.upgradeHistory, that.upgradeHistory)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.dockerEnable, that.dockerEnable)
+            && Objects.equals(this.mqttMode, that.mqttMode) && Objects.equals(this.mqttExternal, that.mqttExternal)
+            && Objects.equals(this.mqttInternal, that.mqttInternal) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.ntpConfigs, that.ntpConfigs) && Objects.equals(this.errorReason, that.errorReason)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.npuNum, that.npuNum)
+            && Objects.equals(this.npuInfo, that.npuInfo)
+            && Objects.equals(this.containerRuntimeVersion, that.containerRuntimeVersion)
+            && Objects.equals(this.identifier, that.identifier) && Objects.equals(this.purchaseId, that.purchaseId)
+            && Objects.equals(this.stateDetails, that.stateDetails)
+            && Objects.equals(this.certRemainingValidTime, that.certRemainingValidTime);
     }
 
     @Override

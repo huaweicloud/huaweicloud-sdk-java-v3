@@ -52,15 +52,15 @@ public class UpdateHostMassageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostMassageReq updateHostMassageReq = (UpdateHostMassageReq) o;
-        return Objects.equals(this.hosts, updateHostMassageReq.hosts);
+        UpdateHostMassageReq that = (UpdateHostMassageReq) obj;
+        return Objects.equals(this.hosts, that.hosts);
     }
 
     @Override

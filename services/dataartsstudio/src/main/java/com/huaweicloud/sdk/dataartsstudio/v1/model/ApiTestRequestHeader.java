@@ -103,18 +103,16 @@ public class ApiTestRequestHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiTestRequestHeader apiTestRequestHeader = (ApiTestRequestHeader) o;
-        return Objects.equals(this.path, apiTestRequestHeader.path)
-            && Objects.equals(this.userAgent, apiTestRequestHeader.userAgent)
-            && Objects.equals(this.xApigMode, apiTestRequestHeader.xApigMode)
-            && Objects.equals(this.xAppIdentity, apiTestRequestHeader.xAppIdentity);
+        ApiTestRequestHeader that = (ApiTestRequestHeader) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.userAgent, that.userAgent)
+            && Objects.equals(this.xApigMode, that.xApigMode) && Objects.equals(this.xAppIdentity, that.xAppIdentity);
     }
 
     @Override

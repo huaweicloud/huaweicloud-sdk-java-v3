@@ -77,17 +77,16 @@ public class AddVmsCallBackRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddVmsCallBackRequestBody addVmsCallBackRequestBody = (AddVmsCallBackRequestBody) o;
-        return Objects.equals(this.urlType, addVmsCallBackRequestBody.urlType)
-            && Objects.equals(this.callbackUrl, addVmsCallBackRequestBody.callbackUrl)
-            && Objects.equals(this.remark, addVmsCallBackRequestBody.remark);
+        AddVmsCallBackRequestBody that = (AddVmsCallBackRequestBody) obj;
+        return Objects.equals(this.urlType, that.urlType) && Objects.equals(this.callbackUrl, that.callbackUrl)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

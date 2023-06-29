@@ -121,17 +121,17 @@ public class Review {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Review review = (Review) o;
-        return Objects.equals(this.templateId, review.templateId) && Objects.equals(this.interval, review.interval)
-            && Objects.equals(this.politics, review.politics) && Objects.equals(this.terrorism, review.terrorism)
-            && Objects.equals(this.porn, review.porn);
+        Review that = (Review) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.politics, that.politics) && Objects.equals(this.terrorism, that.terrorism)
+            && Objects.equals(this.porn, that.porn);
     }
 
     @Override

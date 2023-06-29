@@ -44,16 +44,15 @@ public class AddPublicipsIntoSharedBandwidthRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddPublicipsIntoSharedBandwidthRequestBody addPublicipsIntoSharedBandwidthRequestBody =
-            (AddPublicipsIntoSharedBandwidthRequestBody) o;
-        return Objects.equals(this.bandwidth, addPublicipsIntoSharedBandwidthRequestBody.bandwidth);
+        AddPublicipsIntoSharedBandwidthRequestBody that = (AddPublicipsIntoSharedBandwidthRequestBody) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

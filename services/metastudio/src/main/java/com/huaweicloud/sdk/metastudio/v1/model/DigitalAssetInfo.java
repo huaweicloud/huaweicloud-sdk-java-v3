@@ -136,22 +136,15 @@ public class DigitalAssetInfo {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetTypeEnum(value));
         }
 
         public static AssetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -242,22 +235,15 @@ public class DigitalAssetInfo {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStateEnum(value));
         }
 
         public static AssetStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -544,25 +530,20 @@ public class DigitalAssetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DigitalAssetInfo digitalAssetInfo = (DigitalAssetInfo) o;
-        return Objects.equals(this.assetId, digitalAssetInfo.assetId)
-            && Objects.equals(this.assetName, digitalAssetInfo.assetName)
-            && Objects.equals(this.assetDescription, digitalAssetInfo.assetDescription)
-            && Objects.equals(this.createTime, digitalAssetInfo.createTime)
-            && Objects.equals(this.updateTime, digitalAssetInfo.updateTime)
-            && Objects.equals(this.assetType, digitalAssetInfo.assetType)
-            && Objects.equals(this.assetState, digitalAssetInfo.assetState)
-            && Objects.equals(this.tags, digitalAssetInfo.tags)
-            && Objects.equals(this.assetExtraMeta, digitalAssetInfo.assetExtraMeta)
-            && Objects.equals(this.systemProperties, digitalAssetInfo.systemProperties)
-            && Objects.equals(this.files, digitalAssetInfo.files);
+        DigitalAssetInfo that = (DigitalAssetInfo) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.assetDescription, that.assetDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files);
     }
 
     @Override

@@ -34,8 +34,8 @@ public class L7policyResp {
     private List<ResourceList> rules = null;
 
     /**
-    * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
-    */
+     * 转发策略的转发动作；取值：REDIRECT_TO_POOL：转发到后端云服务器组；REDIRECT_TO_LISTENER：重定向到监听器
+     */
     public static final class ActionEnum {
 
         /**
@@ -78,22 +78,15 @@ public class L7policyResp {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -422,26 +415,23 @@ public class L7policyResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L7policyResp l7policyResp = (L7policyResp) o;
-        return Objects.equals(this.id, l7policyResp.id) && Objects.equals(this.name, l7policyResp.name)
-            && Objects.equals(this.rules, l7policyResp.rules) && Objects.equals(this.action, l7policyResp.action)
-            && Objects.equals(this.provisioningStatus, l7policyResp.provisioningStatus)
-            && Objects.equals(this.tenantId, l7policyResp.tenantId)
-            && Objects.equals(this.projectId, l7policyResp.projectId)
-            && Objects.equals(this.adminStateUp, l7policyResp.adminStateUp)
-            && Objects.equals(this.description, l7policyResp.description)
-            && Objects.equals(this.listenerId, l7policyResp.listenerId)
-            && Objects.equals(this.redirectPoolId, l7policyResp.redirectPoolId)
-            && Objects.equals(this.redirectListenerId, l7policyResp.redirectListenerId)
-            && Objects.equals(this.redirectUrl, l7policyResp.redirectUrl)
-            && Objects.equals(this.position, l7policyResp.position);
+        L7policyResp that = (L7policyResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.redirectPoolId, that.redirectPoolId)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectUrl, that.redirectUrl) && Objects.equals(this.position, that.position);
     }
 
     @Override

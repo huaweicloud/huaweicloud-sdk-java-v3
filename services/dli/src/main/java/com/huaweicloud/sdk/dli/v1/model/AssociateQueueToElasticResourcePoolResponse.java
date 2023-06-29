@@ -56,17 +56,15 @@ public class AssociateQueueToElasticResourcePoolResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateQueueToElasticResourcePoolResponse associateQueueToElasticResourcePoolResponse =
-            (AssociateQueueToElasticResourcePoolResponse) o;
-        return Objects.equals(this.isSuccess, associateQueueToElasticResourcePoolResponse.isSuccess)
-            && Objects.equals(this.message, associateQueueToElasticResourcePoolResponse.message);
+        AssociateQueueToElasticResourcePoolResponse that = (AssociateQueueToElasticResourcePoolResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

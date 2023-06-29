@@ -169,21 +169,19 @@ public class ShowDetailsOfMemberGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfMemberGroupResponse showDetailsOfMemberGroupResponse = (ShowDetailsOfMemberGroupResponse) o;
-        return Objects.equals(this.memberGroupName, showDetailsOfMemberGroupResponse.memberGroupName)
-            && Objects.equals(this.memberGroupRemark, showDetailsOfMemberGroupResponse.memberGroupRemark)
-            && Objects.equals(this.memberGroupWeight, showDetailsOfMemberGroupResponse.memberGroupWeight)
-            && Objects.equals(this.dictCode, showDetailsOfMemberGroupResponse.dictCode)
-            && Objects.equals(this.memberGroupId, showDetailsOfMemberGroupResponse.memberGroupId)
-            && Objects.equals(this.createTime, showDetailsOfMemberGroupResponse.createTime)
-            && Objects.equals(this.updateTime, showDetailsOfMemberGroupResponse.updateTime);
+        ShowDetailsOfMemberGroupResponse that = (ShowDetailsOfMemberGroupResponse) obj;
+        return Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.memberGroupRemark, that.memberGroupRemark)
+            && Objects.equals(this.memberGroupWeight, that.memberGroupWeight)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

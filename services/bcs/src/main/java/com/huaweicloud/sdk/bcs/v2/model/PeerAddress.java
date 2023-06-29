@@ -55,16 +55,15 @@ public class PeerAddress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeerAddress peerAddress = (PeerAddress) o;
-        return Objects.equals(this.domainPort, peerAddress.domainPort)
-            && Objects.equals(this.ipPort, peerAddress.ipPort);
+        PeerAddress that = (PeerAddress) obj;
+        return Objects.equals(this.domainPort, that.domainPort) && Objects.equals(this.ipPort, that.ipPort);
     }
 
     @Override

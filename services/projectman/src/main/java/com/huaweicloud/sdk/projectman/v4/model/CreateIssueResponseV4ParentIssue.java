@@ -55,16 +55,15 @@ public class CreateIssueResponseV4ParentIssue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIssueResponseV4ParentIssue createIssueResponseV4ParentIssue = (CreateIssueResponseV4ParentIssue) o;
-        return Objects.equals(this.id, createIssueResponseV4ParentIssue.id)
-            && Objects.equals(this.name, createIssueResponseV4ParentIssue.name);
+        CreateIssueResponseV4ParentIssue that = (CreateIssueResponseV4ParentIssue) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

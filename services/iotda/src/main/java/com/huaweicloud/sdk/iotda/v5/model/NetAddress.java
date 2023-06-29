@@ -49,7 +49,6 @@ public class NetAddress {
 
     /**
      * **参数说明**：服务对应端口
-     * minimum: 0
      * maximum: 65535
      * @return port
      */
@@ -79,16 +78,16 @@ public class NetAddress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetAddress netAddress = (NetAddress) o;
-        return Objects.equals(this.ip, netAddress.ip) && Objects.equals(this.port, netAddress.port)
-            && Objects.equals(this.domain, netAddress.domain);
+        NetAddress that = (NetAddress) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override

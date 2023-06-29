@@ -429,32 +429,27 @@ public class TrainTicketResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrainTicketResult trainTicketResult = (TrainTicketResult) o;
-        return Objects.equals(this.ticketId, trainTicketResult.ticketId)
-            && Objects.equals(this.checkPort, trainTicketResult.checkPort)
-            && Objects.equals(this.trainNumber, trainTicketResult.trainNumber)
-            && Objects.equals(this.departureStation, trainTicketResult.departureStation)
-            && Objects.equals(this.destinationStation, trainTicketResult.destinationStation)
-            && Objects.equals(this.departureStationEn, trainTicketResult.departureStationEn)
-            && Objects.equals(this.destinationStationEn, trainTicketResult.destinationStationEn)
-            && Objects.equals(this.departureTime, trainTicketResult.departureTime)
-            && Objects.equals(this.seatNumber, trainTicketResult.seatNumber)
-            && Objects.equals(this.ticketPrice, trainTicketResult.ticketPrice)
-            && Objects.equals(this.saleMethod, trainTicketResult.saleMethod)
-            && Objects.equals(this.seatCategory, trainTicketResult.seatCategory)
-            && Objects.equals(this.ticketChanging, trainTicketResult.ticketChanging)
-            && Objects.equals(this.idNumber, trainTicketResult.idNumber)
-            && Objects.equals(this.name, trainTicketResult.name) && Objects.equals(this.logId, trainTicketResult.logId)
-            && Objects.equals(this.saleLocation, trainTicketResult.saleLocation)
-            && Objects.equals(this.confidence, trainTicketResult.confidence)
-            && Objects.equals(this.textLocation, trainTicketResult.textLocation);
+        TrainTicketResult that = (TrainTicketResult) obj;
+        return Objects.equals(this.ticketId, that.ticketId) && Objects.equals(this.checkPort, that.checkPort)
+            && Objects.equals(this.trainNumber, that.trainNumber)
+            && Objects.equals(this.departureStation, that.departureStation)
+            && Objects.equals(this.destinationStation, that.destinationStation)
+            && Objects.equals(this.departureStationEn, that.departureStationEn)
+            && Objects.equals(this.destinationStationEn, that.destinationStationEn)
+            && Objects.equals(this.departureTime, that.departureTime)
+            && Objects.equals(this.seatNumber, that.seatNumber) && Objects.equals(this.ticketPrice, that.ticketPrice)
+            && Objects.equals(this.saleMethod, that.saleMethod) && Objects.equals(this.seatCategory, that.seatCategory)
+            && Objects.equals(this.ticketChanging, that.ticketChanging) && Objects.equals(this.idNumber, that.idNumber)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.saleLocation, that.saleLocation) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

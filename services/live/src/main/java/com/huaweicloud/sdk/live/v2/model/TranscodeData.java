@@ -74,15 +74,15 @@ public class TranscodeData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscodeData transcodeData = (TranscodeData) o;
-        return Objects.equals(this.specList, transcodeData.specList) && Objects.equals(this.time, transcodeData.time);
+        TranscodeData that = (TranscodeData) obj;
+        return Objects.equals(this.specList, that.specList) && Objects.equals(this.time, that.time);
     }
 
     @Override

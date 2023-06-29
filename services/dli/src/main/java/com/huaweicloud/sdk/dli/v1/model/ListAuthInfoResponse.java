@@ -119,18 +119,16 @@ public class ListAuthInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthInfoResponse listAuthInfoResponse = (ListAuthInfoResponse) o;
-        return Objects.equals(this.isSuccess, listAuthInfoResponse.isSuccess)
-            && Objects.equals(this.message, listAuthInfoResponse.message)
-            && Objects.equals(this.count, listAuthInfoResponse.count)
-            && Objects.equals(this.authInfos, listAuthInfoResponse.authInfos);
+        ListAuthInfoResponse that = (ListAuthInfoResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.authInfos, that.authInfos);
     }
 
     @Override

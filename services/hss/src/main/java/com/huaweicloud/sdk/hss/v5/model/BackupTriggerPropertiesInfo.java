@@ -74,16 +74,15 @@ public class BackupTriggerPropertiesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupTriggerPropertiesInfo backupTriggerPropertiesInfo = (BackupTriggerPropertiesInfo) o;
-        return Objects.equals(this.pattern, backupTriggerPropertiesInfo.pattern)
-            && Objects.equals(this.startTime, backupTriggerPropertiesInfo.startTime);
+        BackupTriggerPropertiesInfo that = (BackupTriggerPropertiesInfo) obj;
+        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

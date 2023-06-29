@@ -87,17 +87,16 @@ public class ShowReportRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReportRequest showReportRequest = (ShowReportRequest) o;
-        return Objects.equals(this.projectId, showReportRequest.projectId)
-            && Objects.equals(this.planId, showReportRequest.planId)
-            && Objects.equals(this.body, showReportRequest.body);
+        ShowReportRequest that = (ShowReportRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

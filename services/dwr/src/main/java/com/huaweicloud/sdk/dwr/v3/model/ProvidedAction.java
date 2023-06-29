@@ -92,22 +92,15 @@ public class ProvidedAction {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -544,31 +537,28 @@ public class ProvidedAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProvidedAction providedAction = (ProvidedAction) o;
-        return Objects.equals(this.templateName, providedAction.templateName)
-            && Objects.equals(this.category, providedAction.category)
-            && Objects.equals(this.createTime, providedAction.createTime)
-            && Objects.equals(this.lastModifyTime, providedAction.lastModifyTime)
-            && Objects.equals(this.inputs, providedAction.inputs)
-            && Objects.equals(this.dynamicSourceDefinition, providedAction.dynamicSourceDefinition)
-            && Objects.equals(this.needPolicy, providedAction.needPolicy)
-            && Objects.equals(this.providerName, providedAction.providerName)
-            && Objects.equals(this.isUploadedFuncPkg, providedAction.isUploadedFuncPkg)
-            && Objects.equals(this.funcPkgEndpoint, providedAction.funcPkgEndpoint)
-            && Objects.equals(this.uploadFuncPkgSize, providedAction.uploadFuncPkgSize)
-            && Objects.equals(this.uploadFuncPkgEtag, providedAction.uploadFuncPkgEtag)
-            && Objects.equals(this.registerStatus, providedAction.registerStatus)
-            && Objects.equals(this.description, providedAction.description)
-            && Objects.equals(this.functionTemplate, providedAction.functionTemplate)
-            && Objects.equals(this.providerDomainid, providedAction.providerDomainid)
-            && Objects.equals(this.providerUserid, providedAction.providerUserid);
+        ProvidedAction that = (ProvidedAction) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.dynamicSourceDefinition, that.dynamicSourceDefinition)
+            && Objects.equals(this.needPolicy, that.needPolicy) && Objects.equals(this.providerName, that.providerName)
+            && Objects.equals(this.isUploadedFuncPkg, that.isUploadedFuncPkg)
+            && Objects.equals(this.funcPkgEndpoint, that.funcPkgEndpoint)
+            && Objects.equals(this.uploadFuncPkgSize, that.uploadFuncPkgSize)
+            && Objects.equals(this.uploadFuncPkgEtag, that.uploadFuncPkgEtag)
+            && Objects.equals(this.registerStatus, that.registerStatus)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.functionTemplate, that.functionTemplate)
+            && Objects.equals(this.providerDomainid, that.providerDomainid)
+            && Objects.equals(this.providerUserid, that.providerUserid);
     }
 
     @Override

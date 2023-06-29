@@ -143,20 +143,18 @@ public class ListCertificatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listCertificatesRequest.enterpriseProjectId)
-            && Objects.equals(this.page, listCertificatesRequest.page)
-            && Objects.equals(this.pagesize, listCertificatesRequest.pagesize)
-            && Objects.equals(this.name, listCertificatesRequest.name)
-            && Objects.equals(this.host, listCertificatesRequest.host)
-            && Objects.equals(this.expStatus, listCertificatesRequest.expStatus);
+        ListCertificatesRequest that = (ListCertificatesRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.expStatus, that.expStatus);
     }
 
     @Override

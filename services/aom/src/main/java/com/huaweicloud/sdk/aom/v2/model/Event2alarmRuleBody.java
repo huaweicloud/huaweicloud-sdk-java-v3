@@ -1,100 +1,80 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.Event2alarmRuleBodyMetadata;
-import com.huaweicloud.sdk.aom.v2.model.Event2alarmRuleBodyTriggerPolicies;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 事件类告警实体
  */
-public class Event2alarmRuleBody  {
-
+public class Event2alarmRuleBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_id")
-    
+    @JsonProperty(value = "user_id")
 
     private String userId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private Integer createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private Integer updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_provider")
-    
+    @JsonProperty(value = "resource_provider")
 
     private String resourceProvider;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadata")
-    
+    @JsonProperty(value = "metadata")
 
     private Event2alarmRuleBodyMetadata metadata;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
 
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_policies")
-    
+    @JsonProperty(value = "trigger_policies")
+
     private List<Event2alarmRuleBodyTriggerPolicies> triggerPolicies = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_type")
-    
+    @JsonProperty(value = "alarm_type")
 
     private String alarmType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_rule")
-    
+    @JsonProperty(value = "action_rule")
 
     private String actionRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inhibit_rule")
-    
+    @JsonProperty(value = "inhibit_rule")
 
     private String inhibitRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="route_group_rule")
-    
+    @JsonProperty(value = "route_group_rule")
 
     private String routeGroupRule;
 
@@ -102,9 +82,6 @@ public class Event2alarmRuleBody  {
         this.userId = userId;
         return this;
     }
-
-    
-
 
     /**
      * 用户项目id
@@ -118,15 +95,10 @@ public class Event2alarmRuleBody  {
         this.userId = userId;
     }
 
-    
-
     public Event2alarmRuleBody withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 规则名称
@@ -140,15 +112,10 @@ public class Event2alarmRuleBody  {
         this.name = name;
     }
 
-    
-
     public Event2alarmRuleBody withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 规则描述
@@ -162,15 +129,10 @@ public class Event2alarmRuleBody  {
         this.description = description;
     }
 
-    
-
     public Event2alarmRuleBody withCreateTime(Integer createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -186,15 +148,10 @@ public class Event2alarmRuleBody  {
         this.createTime = createTime;
     }
 
-    
-
     public Event2alarmRuleBody withUpdateTime(Integer updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -210,15 +167,10 @@ public class Event2alarmRuleBody  {
         this.updateTime = updateTime;
     }
 
-    
-
     public Event2alarmRuleBody withResourceProvider(String resourceProvider) {
         this.resourceProvider = resourceProvider;
         return this;
     }
-
-    
-
 
     /**
      * 事件源
@@ -232,22 +184,19 @@ public class Event2alarmRuleBody  {
         this.resourceProvider = resourceProvider;
     }
 
-    
-
     public Event2alarmRuleBody withMetadata(Event2alarmRuleBodyMetadata metadata) {
         this.metadata = metadata;
         return this;
     }
 
     public Event2alarmRuleBody withMetadata(Consumer<Event2alarmRuleBodyMetadata> metadataSetter) {
-        if(this.metadata == null ){
+        if (this.metadata == null) {
             this.metadata = new Event2alarmRuleBodyMetadata();
             metadataSetter.accept(this.metadata);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get metadata
@@ -261,15 +210,10 @@ public class Event2alarmRuleBody  {
         this.metadata = metadata;
     }
 
-    
-
     public Event2alarmRuleBody withEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
-
-    
-
 
     /**
      * 规则是否启用
@@ -283,24 +227,22 @@ public class Event2alarmRuleBody  {
         this.enable = enable;
     }
 
-    
-
     public Event2alarmRuleBody withTriggerPolicies(List<Event2alarmRuleBodyTriggerPolicies> triggerPolicies) {
         this.triggerPolicies = triggerPolicies;
         return this;
     }
 
-    
     public Event2alarmRuleBody addTriggerPoliciesItem(Event2alarmRuleBodyTriggerPolicies triggerPoliciesItem) {
-        if(this.triggerPolicies == null) {
+        if (this.triggerPolicies == null) {
             this.triggerPolicies = new ArrayList<>();
         }
         this.triggerPolicies.add(triggerPoliciesItem);
         return this;
     }
 
-    public Event2alarmRuleBody withTriggerPolicies(Consumer<List<Event2alarmRuleBodyTriggerPolicies>> triggerPoliciesSetter) {
-        if(this.triggerPolicies == null) {
+    public Event2alarmRuleBody withTriggerPolicies(
+        Consumer<List<Event2alarmRuleBodyTriggerPolicies>> triggerPoliciesSetter) {
+        if (this.triggerPolicies == null) {
             this.triggerPolicies = new ArrayList<>();
         }
         triggerPoliciesSetter.accept(this.triggerPolicies);
@@ -319,15 +261,10 @@ public class Event2alarmRuleBody  {
         this.triggerPolicies = triggerPolicies;
     }
 
-    
-
     public Event2alarmRuleBody withAlarmType(String alarmType) {
         this.alarmType = alarmType;
         return this;
     }
-
-    
-
 
     /**
      * 告警类型
@@ -341,15 +278,10 @@ public class Event2alarmRuleBody  {
         this.alarmType = alarmType;
     }
 
-    
-
     public Event2alarmRuleBody withActionRule(String actionRule) {
         this.actionRule = actionRule;
         return this;
     }
-
-    
-
 
     /**
      * 告警行动规则
@@ -363,15 +295,10 @@ public class Event2alarmRuleBody  {
         this.actionRule = actionRule;
     }
 
-    
-
     public Event2alarmRuleBody withInhibitRule(String inhibitRule) {
         this.inhibitRule = inhibitRule;
         return this;
     }
-
-    
-
 
     /**
      * 告警抑制规则
@@ -385,15 +312,10 @@ public class Event2alarmRuleBody  {
         this.inhibitRule = inhibitRule;
     }
 
-    
-
     public Event2alarmRuleBody withRouteGroupRule(String routeGroupRule) {
         this.routeGroupRule = routeGroupRule;
         return this;
     }
-
-    
-
 
     /**
      * 告警静默规则
@@ -407,35 +329,43 @@ public class Event2alarmRuleBody  {
         this.routeGroupRule = routeGroupRule;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event2alarmRuleBody event2alarmRuleBody = (Event2alarmRuleBody) o;
-        return Objects.equals(this.userId, event2alarmRuleBody.userId) &&
-            Objects.equals(this.name, event2alarmRuleBody.name) &&
-            Objects.equals(this.description, event2alarmRuleBody.description) &&
-            Objects.equals(this.createTime, event2alarmRuleBody.createTime) &&
-            Objects.equals(this.updateTime, event2alarmRuleBody.updateTime) &&
-            Objects.equals(this.resourceProvider, event2alarmRuleBody.resourceProvider) &&
-            Objects.equals(this.metadata, event2alarmRuleBody.metadata) &&
-            Objects.equals(this.enable, event2alarmRuleBody.enable) &&
-            Objects.equals(this.triggerPolicies, event2alarmRuleBody.triggerPolicies) &&
-            Objects.equals(this.alarmType, event2alarmRuleBody.alarmType) &&
-            Objects.equals(this.actionRule, event2alarmRuleBody.actionRule) &&
-            Objects.equals(this.inhibitRule, event2alarmRuleBody.inhibitRule) &&
-            Objects.equals(this.routeGroupRule, event2alarmRuleBody.routeGroupRule);
+        Event2alarmRuleBody that = (Event2alarmRuleBody) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.triggerPolicies, that.triggerPolicies)
+            && Objects.equals(this.alarmType, that.alarmType) && Objects.equals(this.actionRule, that.actionRule)
+            && Objects.equals(this.inhibitRule, that.inhibitRule)
+            && Objects.equals(this.routeGroupRule, that.routeGroupRule);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(userId, name, description, createTime, updateTime, resourceProvider, metadata, enable, triggerPolicies, alarmType, actionRule, inhibitRule, routeGroupRule);
+        return Objects.hash(userId,
+            name,
+            description,
+            createTime,
+            updateTime,
+            resourceProvider,
+            metadata,
+            enable,
+            triggerPolicies,
+            alarmType,
+            actionRule,
+            inhibitRule,
+            routeGroupRule);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -456,6 +386,7 @@ public class Event2alarmRuleBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -466,8 +397,5 @@ public class Event2alarmRuleBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

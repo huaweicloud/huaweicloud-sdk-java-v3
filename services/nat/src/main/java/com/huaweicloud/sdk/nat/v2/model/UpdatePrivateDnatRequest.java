@@ -65,16 +65,15 @@ public class UpdatePrivateDnatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateDnatRequest updatePrivateDnatRequest = (UpdatePrivateDnatRequest) o;
-        return Objects.equals(this.dnatRuleId, updatePrivateDnatRequest.dnatRuleId)
-            && Objects.equals(this.body, updatePrivateDnatRequest.body);
+        UpdatePrivateDnatRequest that = (UpdatePrivateDnatRequest) obj;
+        return Objects.equals(this.dnatRuleId, that.dnatRuleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

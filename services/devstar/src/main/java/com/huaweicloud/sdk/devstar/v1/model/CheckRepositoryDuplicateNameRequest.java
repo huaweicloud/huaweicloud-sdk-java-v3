@@ -101,19 +101,16 @@ public class CheckRepositoryDuplicateNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRepositoryDuplicateNameRequest checkRepositoryDuplicateNameRequest =
-            (CheckRepositoryDuplicateNameRequest) o;
-        return Objects.equals(this.xLanguage, checkRepositoryDuplicateNameRequest.xLanguage)
-            && Objects.equals(this.projectId, checkRepositoryDuplicateNameRequest.projectId)
-            && Objects.equals(this.name, checkRepositoryDuplicateNameRequest.name)
-            && Objects.equals(this.regionId, checkRepositoryDuplicateNameRequest.regionId);
+        CheckRepositoryDuplicateNameRequest that = (CheckRepositoryDuplicateNameRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

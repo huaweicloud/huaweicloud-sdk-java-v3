@@ -99,18 +99,16 @@ public class DisForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisForwarding disForwarding = (DisForwarding) o;
-        return Objects.equals(this.regionName, disForwarding.regionName)
-            && Objects.equals(this.projectId, disForwarding.projectId)
-            && Objects.equals(this.streamName, disForwarding.streamName)
-            && Objects.equals(this.streamId, disForwarding.streamId);
+        DisForwarding that = (DisForwarding) obj;
+        return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.streamName, that.streamName) && Objects.equals(this.streamId, that.streamId);
     }
 
     @Override

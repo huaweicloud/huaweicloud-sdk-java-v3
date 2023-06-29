@@ -209,23 +209,19 @@ public class CreateIncidentResourceList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIncidentResourceList createIncidentResourceList = (CreateIncidentResourceList) o;
-        return Objects.equals(this.id, createIncidentResourceList.id)
-            && Objects.equals(this.name, createIncidentResourceList.name)
-            && Objects.equals(this.type, createIncidentResourceList.type)
-            && Objects.equals(this.domainId, createIncidentResourceList.domainId)
-            && Objects.equals(this.projectId, createIncidentResourceList.projectId)
-            && Objects.equals(this.regionId, createIncidentResourceList.regionId)
-            && Objects.equals(this.epId, createIncidentResourceList.epId)
-            && Objects.equals(this.epName, createIncidentResourceList.epName)
-            && Objects.equals(this.tags, createIncidentResourceList.tags);
+        CreateIncidentResourceList that = (CreateIncidentResourceList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.epId, that.epId) && Objects.equals(this.epName, that.epName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

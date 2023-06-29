@@ -121,19 +121,18 @@ public class DataTransformationObjectVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataTransformationObjectVO dataTransformationObjectVO = (DataTransformationObjectVO) o;
-        return Objects.equals(this.id, dataTransformationObjectVO.id)
-            && Objects.equals(this.dataTransformationType, dataTransformationObjectVO.dataTransformationType)
-            && Objects.equals(this.dbName, dataTransformationObjectVO.dbName)
-            && Objects.equals(this.schemaName, dataTransformationObjectVO.schemaName)
-            && Objects.equals(this.tableName, dataTransformationObjectVO.tableName);
+        DataTransformationObjectVO that = (DataTransformationObjectVO) obj;
+        return Objects.equals(this.id, that.id)
+            && Objects.equals(this.dataTransformationType, that.dataTransformationType)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.schemaName, that.schemaName)
+            && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

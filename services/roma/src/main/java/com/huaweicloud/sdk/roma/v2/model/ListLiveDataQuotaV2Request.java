@@ -33,15 +33,15 @@ public class ListLiveDataQuotaV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataQuotaV2Request listLiveDataQuotaV2Request = (ListLiveDataQuotaV2Request) o;
-        return Objects.equals(this.instanceId, listLiveDataQuotaV2Request.instanceId);
+        ListLiveDataQuotaV2Request that = (ListLiveDataQuotaV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

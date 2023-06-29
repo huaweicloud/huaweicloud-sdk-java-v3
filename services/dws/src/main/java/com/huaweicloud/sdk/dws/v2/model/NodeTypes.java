@@ -307,20 +307,20 @@ public class NodeTypes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTypes nodeTypes = (NodeTypes) o;
-        return Objects.equals(this.specName, nodeTypes.specName) && Objects.equals(this.detail, nodeTypes.detail)
-            && Objects.equals(this.id, nodeTypes.id) && Objects.equals(this.datastoreType, nodeTypes.datastoreType)
-            && Objects.equals(this.availableZones, nodeTypes.availableZones) && Objects.equals(this.ram, nodeTypes.ram)
-            && Objects.equals(this.vcpus, nodeTypes.vcpus) && Objects.equals(this.datastores, nodeTypes.datastores)
-            && Objects.equals(this.volume, nodeTypes.volume)
-            && Objects.equals(this.elasticVolumeSpecs, nodeTypes.elasticVolumeSpecs);
+        NodeTypes that = (NodeTypes) obj;
+        return Objects.equals(this.specName, that.specName) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.datastores, that.datastores)
+            && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.elasticVolumeSpecs, that.elasticVolumeSpecs);
     }
 
     @Override

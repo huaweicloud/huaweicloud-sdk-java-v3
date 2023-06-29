@@ -279,26 +279,21 @@ public class ListSignatureDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSignatureDetailsRequest listSignatureDetailsRequest = (ListSignatureDetailsRequest) o;
-        return Objects.equals(this.appName, listSignatureDetailsRequest.appName)
-            && Objects.equals(this.startTime, listSignatureDetailsRequest.startTime)
-            && Objects.equals(this.endTime, listSignatureDetailsRequest.endTime)
-            && Objects.equals(this.limit, listSignatureDetailsRequest.limit)
-            && Objects.equals(this.offset, listSignatureDetailsRequest.offset)
-            && Objects.equals(this.signatureId, listSignatureDetailsRequest.signatureId)
-            && Objects.equals(this.signatureName, listSignatureDetailsRequest.signatureName)
-            && Objects.equals(this.signatureType, listSignatureDetailsRequest.signatureType)
-            && Objects.equals(this.site, listSignatureDetailsRequest.site)
-            && Objects.equals(this.sortDir, listSignatureDetailsRequest.sortDir)
-            && Objects.equals(this.sortKey, listSignatureDetailsRequest.sortKey)
-            && Objects.equals(this.status, listSignatureDetailsRequest.status);
+        ListSignatureDetailsRequest that = (ListSignatureDetailsRequest) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.signatureId, that.signatureId)
+            && Objects.equals(this.signatureName, that.signatureName)
+            && Objects.equals(this.signatureType, that.signatureType) && Objects.equals(this.site, that.site)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

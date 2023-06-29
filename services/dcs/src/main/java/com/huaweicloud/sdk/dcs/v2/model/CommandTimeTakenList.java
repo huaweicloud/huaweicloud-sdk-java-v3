@@ -73,22 +73,15 @@ public class CommandTimeTakenList {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class CommandTimeTakenList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommandTimeTakenList commandTimeTakenList = (CommandTimeTakenList) o;
-        return Objects.equals(this.totalNum, commandTimeTakenList.totalNum)
-            && Objects.equals(this.totalUsecSum, commandTimeTakenList.totalUsecSum)
-            && Objects.equals(this.result, commandTimeTakenList.result)
-            && Objects.equals(this.commandList, commandTimeTakenList.commandList);
+        CommandTimeTakenList that = (CommandTimeTakenList) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.totalUsecSum, that.totalUsecSum)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.commandList, that.commandList);
     }
 
     @Override

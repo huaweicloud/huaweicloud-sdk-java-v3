@@ -96,17 +96,16 @@ public class CustomAttributesRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomAttributesRule customAttributesRule = (CustomAttributesRule) o;
-        return Objects.equals(this.ruleId, customAttributesRule.ruleId)
-            && Objects.equals(this.value, customAttributesRule.value)
-            && Objects.equals(this.ruleConfigList, customAttributesRule.ruleConfigList);
+        CustomAttributesRule that = (CustomAttributesRule) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.ruleConfigList, that.ruleConfigList);
     }
 
     @Override

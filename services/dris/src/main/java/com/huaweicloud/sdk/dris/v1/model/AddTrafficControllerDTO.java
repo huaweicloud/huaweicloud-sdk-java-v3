@@ -282,26 +282,21 @@ public class AddTrafficControllerDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTrafficControllerDTO addTrafficControllerDTO = (AddTrafficControllerDTO) o;
-        return Objects.equals(this.trafficControllerId, addTrafficControllerDTO.trafficControllerId)
-            && Objects.equals(this.esn, addTrafficControllerDTO.esn)
-            && Objects.equals(this.name, addTrafficControllerDTO.name)
-            && Objects.equals(this.description, addTrafficControllerDTO.description)
-            && Objects.equals(this.lat, addTrafficControllerDTO.lat)
-            && Objects.equals(this.lon, addTrafficControllerDTO.lon)
-            && Objects.equals(this.ele, addTrafficControllerDTO.ele)
-            && Objects.equals(this.posDescription, addTrafficControllerDTO.posDescription)
-            && Objects.equals(this.installationMode, addTrafficControllerDTO.installationMode)
-            && Objects.equals(this.roadName, addTrafficControllerDTO.roadName)
-            && Objects.equals(this.linkId, addTrafficControllerDTO.linkId)
-            && Objects.equals(this.secret, addTrafficControllerDTO.secret);
+        AddTrafficControllerDTO that = (AddTrafficControllerDTO) obj;
+        return Objects.equals(this.trafficControllerId, that.trafficControllerId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele) && Objects.equals(this.posDescription, that.posDescription)
+            && Objects.equals(this.installationMode, that.installationMode)
+            && Objects.equals(this.roadName, that.roadName) && Objects.equals(this.linkId, that.linkId)
+            && Objects.equals(this.secret, that.secret);
     }
 
     @Override

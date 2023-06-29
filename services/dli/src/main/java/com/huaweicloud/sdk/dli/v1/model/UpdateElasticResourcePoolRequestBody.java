@@ -77,18 +77,16 @@ public class UpdateElasticResourcePoolRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateElasticResourcePoolRequestBody updateElasticResourcePoolRequestBody =
-            (UpdateElasticResourcePoolRequestBody) o;
-        return Objects.equals(this.description, updateElasticResourcePoolRequestBody.description)
-            && Objects.equals(this.maxCu, updateElasticResourcePoolRequestBody.maxCu)
-            && Objects.equals(this.minCu, updateElasticResourcePoolRequestBody.minCu);
+        UpdateElasticResourcePoolRequestBody that = (UpdateElasticResourcePoolRequestBody) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.maxCu, that.maxCu)
+            && Objects.equals(this.minCu, that.minCu);
     }
 
     @Override

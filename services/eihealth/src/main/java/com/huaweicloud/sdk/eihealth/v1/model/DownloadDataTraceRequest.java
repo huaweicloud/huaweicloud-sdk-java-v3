@@ -57,16 +57,16 @@ public class DownloadDataTraceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadDataTraceRequest downloadDataTraceRequest = (DownloadDataTraceRequest) o;
-        return Objects.equals(this.xLanguage, downloadDataTraceRequest.xLanguage)
-            && Objects.equals(this.eihealthProjectId, downloadDataTraceRequest.eihealthProjectId);
+        DownloadDataTraceRequest that = (DownloadDataTraceRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

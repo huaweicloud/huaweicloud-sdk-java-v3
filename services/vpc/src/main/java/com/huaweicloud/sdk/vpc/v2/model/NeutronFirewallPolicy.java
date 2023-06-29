@@ -206,22 +206,18 @@ public class NeutronFirewallPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronFirewallPolicy neutronFirewallPolicy = (NeutronFirewallPolicy) o;
-        return Objects.equals(this.audited, neutronFirewallPolicy.audited)
-            && Objects.equals(this.description, neutronFirewallPolicy.description)
-            && Objects.equals(this.firewallRules, neutronFirewallPolicy.firewallRules)
-            && Objects.equals(this.id, neutronFirewallPolicy.id)
-            && Objects.equals(this.name, neutronFirewallPolicy.name)
-            && Objects.equals(this._public, neutronFirewallPolicy._public)
-            && Objects.equals(this.tenantId, neutronFirewallPolicy.tenantId)
-            && Objects.equals(this.projectId, neutronFirewallPolicy.projectId);
+        NeutronFirewallPolicy that = (NeutronFirewallPolicy) obj;
+        return Objects.equals(this.audited, that.audited) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.firewallRules, that.firewallRules) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this._public, that._public)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

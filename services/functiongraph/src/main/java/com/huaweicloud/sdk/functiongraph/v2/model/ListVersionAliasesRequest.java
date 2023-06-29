@@ -33,15 +33,15 @@ public class ListVersionAliasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVersionAliasesRequest listVersionAliasesRequest = (ListVersionAliasesRequest) o;
-        return Objects.equals(this.functionUrn, listVersionAliasesRequest.functionUrn);
+        ListVersionAliasesRequest that = (ListVersionAliasesRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

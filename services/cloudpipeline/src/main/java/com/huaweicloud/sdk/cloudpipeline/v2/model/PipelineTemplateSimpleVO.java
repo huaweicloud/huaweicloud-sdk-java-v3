@@ -404,31 +404,23 @@ public class PipelineTemplateSimpleVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineTemplateSimpleVO pipelineTemplateSimpleVO = (PipelineTemplateSimpleVO) o;
-        return Objects.equals(this.id, pipelineTemplateSimpleVO.id)
-            && Objects.equals(this.name, pipelineTemplateSimpleVO.name)
-            && Objects.equals(this.icon, pipelineTemplateSimpleVO.icon)
-            && Objects.equals(this.manifestVersion, pipelineTemplateSimpleVO.manifestVersion)
-            && Objects.equals(this.language, pipelineTemplateSimpleVO.language)
-            && Objects.equals(this.description, pipelineTemplateSimpleVO.description)
-            && Objects.equals(this.isSystem, pipelineTemplateSimpleVO.isSystem)
-            && Objects.equals(this.region, pipelineTemplateSimpleVO.region)
-            && Objects.equals(this.domainId, pipelineTemplateSimpleVO.domainId)
-            && Objects.equals(this.creatorId, pipelineTemplateSimpleVO.creatorId)
-            && Objects.equals(this.creatorName, pipelineTemplateSimpleVO.creatorName)
-            && Objects.equals(this.updaterId, pipelineTemplateSimpleVO.updaterId)
-            && Objects.equals(this.createTime, pipelineTemplateSimpleVO.createTime)
-            && Objects.equals(this.updateTime, pipelineTemplateSimpleVO.updateTime)
-            && Objects.equals(this.isCollect, pipelineTemplateSimpleVO.isCollect)
-            && Objects.equals(this.isShowSource, pipelineTemplateSimpleVO.isShowSource)
-            && Objects.equals(this.stages, pipelineTemplateSimpleVO.stages);
+        PipelineTemplateSimpleVO that = (PipelineTemplateSimpleVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.icon, that.icon) && Objects.equals(this.manifestVersion, that.manifestVersion)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isSystem, that.isSystem) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.updaterId, that.updaterId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.isCollect, that.isCollect) && Objects.equals(this.isShowSource, that.isShowSource)
+            && Objects.equals(this.stages, that.stages);
     }
 
     @Override

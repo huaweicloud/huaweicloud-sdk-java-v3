@@ -44,15 +44,15 @@ public class CreateVirtualInterfaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVirtualInterfaceRequestBody createVirtualInterfaceRequestBody = (CreateVirtualInterfaceRequestBody) o;
-        return Objects.equals(this.virtualInterface, createVirtualInterfaceRequestBody.virtualInterface);
+        CreateVirtualInterfaceRequestBody that = (CreateVirtualInterfaceRequestBody) obj;
+        return Objects.equals(this.virtualInterface, that.virtualInterface);
     }
 
     @Override

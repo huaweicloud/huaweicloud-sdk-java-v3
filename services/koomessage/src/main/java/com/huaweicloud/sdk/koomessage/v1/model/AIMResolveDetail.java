@@ -275,26 +275,21 @@ public class AIMResolveDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMResolveDetail aiMResolveDetail = (AIMResolveDetail) o;
-        return Objects.equals(this.resolveId, aiMResolveDetail.resolveId)
-            && Objects.equals(this.taskId, aiMResolveDetail.taskId)
-            && Objects.equals(this.sendAccount, aiMResolveDetail.sendAccount)
-            && Objects.equals(this.tplId, aiMResolveDetail.tplId)
-            && Objects.equals(this.tplName, aiMResolveDetail.tplName)
-            && Objects.equals(this.custFlag, aiMResolveDetail.custFlag)
-            && Objects.equals(this.aimUrl, aiMResolveDetail.aimUrl)
-            && Objects.equals(this.resultCode, aiMResolveDetail.resultCode)
-            && Objects.equals(this.generateDate, aiMResolveDetail.generateDate)
-            && Objects.equals(this.expireDate, aiMResolveDetail.expireDate)
-            && Objects.equals(this.resolvedTime, aiMResolveDetail.resolvedTime)
-            && Objects.equals(this.resolvedStatus, aiMResolveDetail.resolvedStatus);
+        AIMResolveDetail that = (AIMResolveDetail) obj;
+        return Objects.equals(this.resolveId, that.resolveId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.sendAccount, that.sendAccount) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.custFlag, that.custFlag)
+            && Objects.equals(this.aimUrl, that.aimUrl) && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.generateDate, that.generateDate) && Objects.equals(this.expireDate, that.expireDate)
+            && Objects.equals(this.resolvedTime, that.resolvedTime)
+            && Objects.equals(this.resolvedStatus, that.resolvedStatus);
     }
 
     @Override

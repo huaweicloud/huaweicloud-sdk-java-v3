@@ -141,19 +141,17 @@ public class ListEnvsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvsResponse listEnvsResponse = (ListEnvsResponse) o;
-        return Objects.equals(this.pageNum, listEnvsResponse.pageNum)
-            && Objects.equals(this.pageSize, listEnvsResponse.pageSize)
-            && Objects.equals(this.totalSize, listEnvsResponse.totalSize)
-            && Objects.equals(this.totalPages, listEnvsResponse.totalPages)
-            && Objects.equals(this.result, listEnvsResponse.result);
+        ListEnvsResponse that = (ListEnvsResponse) obj;
+        return Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.totalPages, that.totalPages)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShrinkNodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShrinkNodeReq shrinkNodeReq = (ShrinkNodeReq) o;
-        return Objects.equals(this.reducedNodeNum, shrinkNodeReq.reducedNodeNum)
-            && Objects.equals(this.type, shrinkNodeReq.type);
+        ShrinkNodeReq that = (ShrinkNodeReq) obj;
+        return Objects.equals(this.reducedNodeNum, that.reducedNodeNum) && Objects.equals(this.type, that.type);
     }
 
     @Override

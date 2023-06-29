@@ -83,22 +83,15 @@ public class ListSupplyRecommendationRequestBody {
             if (value == null) {
                 return null;
             }
-            StrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StrategyEnum(value));
         }
 
         public static StrategyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,22 +295,18 @@ public class ListSupplyRecommendationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSupplyRecommendationRequestBody listSupplyRecommendationRequestBody =
-            (ListSupplyRecommendationRequestBody) o;
-        return Objects.equals(this.flavorConstraint, listSupplyRecommendationRequestBody.flavorConstraint)
-            && Objects.equals(this.flavorIds, listSupplyRecommendationRequestBody.flavorIds)
-            && Objects.equals(this.locations, listSupplyRecommendationRequestBody.locations)
-            && Objects.equals(this.option, listSupplyRecommendationRequestBody.option)
-            && Objects.equals(this.strategy, listSupplyRecommendationRequestBody.strategy)
-            && Objects.equals(this.limit, listSupplyRecommendationRequestBody.limit)
-            && Objects.equals(this.marker, listSupplyRecommendationRequestBody.marker);
+        ListSupplyRecommendationRequestBody that = (ListSupplyRecommendationRequestBody) obj;
+        return Objects.equals(this.flavorConstraint, that.flavorConstraint)
+            && Objects.equals(this.flavorIds, that.flavorIds) && Objects.equals(this.locations, that.locations)
+            && Objects.equals(this.option, that.option) && Objects.equals(this.strategy, that.strategy)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

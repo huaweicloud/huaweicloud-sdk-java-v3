@@ -72,22 +72,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImagetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImagetypeEnum(value));
         }
 
         public static ImagetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsBitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsBitEnum(value));
         }
 
         public static OsBitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,22 +233,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -389,22 +368,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PlatformEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlatformEnum(value));
         }
 
         public static PlatformEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -533,22 +505,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskFormatEnum(value));
         }
 
         public static DiskFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -688,22 +653,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -781,22 +739,15 @@ public class GlanceListImagesRequest {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibilityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibilityEnum(value));
         }
 
         public static VisibilityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1403,46 +1354,36 @@ public class GlanceListImagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceListImagesRequest glanceListImagesRequest = (GlanceListImagesRequest) o;
-        return Objects.equals(this.imagetype, glanceListImagesRequest.imagetype)
-            && Objects.equals(this.isregistered, glanceListImagesRequest.isregistered)
-            && Objects.equals(this.osBit, glanceListImagesRequest.osBit)
-            && Objects.equals(this.osType, glanceListImagesRequest.osType)
-            && Objects.equals(this.platform, glanceListImagesRequest.platform)
-            && Objects.equals(this.supportDiskintensive, glanceListImagesRequest.supportDiskintensive)
-            && Objects.equals(this.supportHighperformance, glanceListImagesRequest.supportHighperformance)
-            && Objects.equals(this.supportKvm, glanceListImagesRequest.supportKvm)
-            && Objects.equals(this.supportKvmGpuType, glanceListImagesRequest.supportKvmGpuType)
-            && Objects.equals(this.supportKvmInfiniband, glanceListImagesRequest.supportKvmInfiniband)
-            && Objects.equals(this.supportLargememory, glanceListImagesRequest.supportLargememory)
-            && Objects.equals(this.supportXen, glanceListImagesRequest.supportXen)
-            && Objects.equals(this.supportXenGpuType, glanceListImagesRequest.supportXenGpuType)
-            && Objects.equals(this.supportXenHana, glanceListImagesRequest.supportXenHana)
-            && Objects.equals(this.containerFormat, glanceListImagesRequest.containerFormat)
-            && Objects.equals(this.diskFormat, glanceListImagesRequest.diskFormat)
-            && Objects.equals(this.id, glanceListImagesRequest.id)
-            && Objects.equals(this.limit, glanceListImagesRequest.limit)
-            && Objects.equals(this.marker, glanceListImagesRequest.marker)
-            && Objects.equals(this.memberStatus, glanceListImagesRequest.memberStatus)
-            && Objects.equals(this.minDisk, glanceListImagesRequest.minDisk)
-            && Objects.equals(this.minRam, glanceListImagesRequest.minRam)
-            && Objects.equals(this.name, glanceListImagesRequest.name)
-            && Objects.equals(this.owner, glanceListImagesRequest.owner)
-            && Objects.equals(this._protected, glanceListImagesRequest._protected)
-            && Objects.equals(this.sortDir, glanceListImagesRequest.sortDir)
-            && Objects.equals(this.sortKey, glanceListImagesRequest.sortKey)
-            && Objects.equals(this.status, glanceListImagesRequest.status)
-            && Objects.equals(this.tag, glanceListImagesRequest.tag)
-            && Objects.equals(this.visibility, glanceListImagesRequest.visibility)
-            && Objects.equals(this.createdAt, glanceListImagesRequest.createdAt)
-            && Objects.equals(this.updatedAt, glanceListImagesRequest.updatedAt);
+        GlanceListImagesRequest that = (GlanceListImagesRequest) obj;
+        return Objects.equals(this.imagetype, that.imagetype) && Objects.equals(this.isregistered, that.isregistered)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.supportDiskintensive, that.supportDiskintensive)
+            && Objects.equals(this.supportHighperformance, that.supportHighperformance)
+            && Objects.equals(this.supportKvm, that.supportKvm)
+            && Objects.equals(this.supportKvmGpuType, that.supportKvmGpuType)
+            && Objects.equals(this.supportKvmInfiniband, that.supportKvmInfiniband)
+            && Objects.equals(this.supportLargememory, that.supportLargememory)
+            && Objects.equals(this.supportXen, that.supportXen)
+            && Objects.equals(this.supportXenGpuType, that.supportXenGpuType)
+            && Objects.equals(this.supportXenHana, that.supportXenHana)
+            && Objects.equals(this.containerFormat, that.containerFormat)
+            && Objects.equals(this.diskFormat, that.diskFormat) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.memberStatus, that.memberStatus) && Objects.equals(this.minDisk, that.minDisk)
+            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this._protected, that._protected)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

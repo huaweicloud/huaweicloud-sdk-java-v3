@@ -1,47 +1,33 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.CharacterConfig;
-import com.huaweicloud.sdk.cbs.v1.model.ReadConfig;
-import com.huaweicloud.sdk.cbs.v1.model.TtsConfig;
-import com.huaweicloud.sdk.cbs.v1.model.VideoConfig;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * PutVideoInfo
  */
-public class PutVideoInfo  {
-
+public class PutVideoInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tts_config")
-    
+    @JsonProperty(value = "tts_config")
 
     private TtsConfig ttsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_config")
-    
+    @JsonProperty(value = "video_config")
 
     private VideoConfig videoConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_config")
-    
+    @JsonProperty(value = "character_config")
 
     private CharacterConfig characterConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_config")
-    
+    @JsonProperty(value = "read_config")
 
     private ReadConfig readConfig;
 
@@ -51,14 +37,13 @@ public class PutVideoInfo  {
     }
 
     public PutVideoInfo withTtsConfig(Consumer<TtsConfig> ttsConfigSetter) {
-        if(this.ttsConfig == null ){
+        if (this.ttsConfig == null) {
             this.ttsConfig = new TtsConfig();
             ttsConfigSetter.accept(this.ttsConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get ttsConfig
@@ -72,22 +57,19 @@ public class PutVideoInfo  {
         this.ttsConfig = ttsConfig;
     }
 
-    
-
     public PutVideoInfo withVideoConfig(VideoConfig videoConfig) {
         this.videoConfig = videoConfig;
         return this;
     }
 
     public PutVideoInfo withVideoConfig(Consumer<VideoConfig> videoConfigSetter) {
-        if(this.videoConfig == null ){
+        if (this.videoConfig == null) {
             this.videoConfig = new VideoConfig();
             videoConfigSetter.accept(this.videoConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get videoConfig
@@ -101,22 +83,19 @@ public class PutVideoInfo  {
         this.videoConfig = videoConfig;
     }
 
-    
-
     public PutVideoInfo withCharacterConfig(CharacterConfig characterConfig) {
         this.characterConfig = characterConfig;
         return this;
     }
 
     public PutVideoInfo withCharacterConfig(Consumer<CharacterConfig> characterConfigSetter) {
-        if(this.characterConfig == null ){
+        if (this.characterConfig == null) {
             this.characterConfig = new CharacterConfig();
             characterConfigSetter.accept(this.characterConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get characterConfig
@@ -130,22 +109,19 @@ public class PutVideoInfo  {
         this.characterConfig = characterConfig;
     }
 
-    
-
     public PutVideoInfo withReadConfig(ReadConfig readConfig) {
         this.readConfig = readConfig;
         return this;
     }
 
     public PutVideoInfo withReadConfig(Consumer<ReadConfig> readConfigSetter) {
-        if(this.readConfig == null ){
+        if (this.readConfig == null) {
             this.readConfig = new ReadConfig();
             readConfigSetter.accept(this.readConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get readConfig
@@ -159,26 +135,25 @@ public class PutVideoInfo  {
         this.readConfig = readConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutVideoInfo putVideoInfo = (PutVideoInfo) o;
-        return Objects.equals(this.ttsConfig, putVideoInfo.ttsConfig) &&
-            Objects.equals(this.videoConfig, putVideoInfo.videoConfig) &&
-            Objects.equals(this.characterConfig, putVideoInfo.characterConfig) &&
-            Objects.equals(this.readConfig, putVideoInfo.readConfig);
+        PutVideoInfo that = (PutVideoInfo) obj;
+        return Objects.equals(this.ttsConfig, that.ttsConfig) && Objects.equals(this.videoConfig, that.videoConfig)
+            && Objects.equals(this.characterConfig, that.characterConfig)
+            && Objects.equals(this.readConfig, that.readConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ttsConfig, videoConfig, characterConfig, readConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,6 +165,7 @@ public class PutVideoInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -200,8 +176,5 @@ public class PutVideoInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

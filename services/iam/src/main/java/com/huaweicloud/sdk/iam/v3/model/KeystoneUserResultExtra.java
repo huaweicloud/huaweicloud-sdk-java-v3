@@ -77,17 +77,16 @@ public class KeystoneUserResultExtra {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUserResultExtra keystoneUserResultExtra = (KeystoneUserResultExtra) o;
-        return Objects.equals(this.description, keystoneUserResultExtra.description)
-            && Objects.equals(this.pwdStatus, keystoneUserResultExtra.pwdStatus)
-            && Objects.equals(this.lastProjectId, keystoneUserResultExtra.lastProjectId);
+        KeystoneUserResultExtra that = (KeystoneUserResultExtra) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.pwdStatus, that.pwdStatus)
+            && Objects.equals(this.lastProjectId, that.lastProjectId);
     }
 
     @Override

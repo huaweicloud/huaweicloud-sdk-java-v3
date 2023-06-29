@@ -65,22 +65,15 @@ public class ListAppsRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class ListAppsRequest {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,18 +306,17 @@ public class ListAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsRequest listAppsRequest = (ListAppsRequest) o;
-        return Objects.equals(this.workspace, listAppsRequest.workspace)
-            && Objects.equals(this.dlmType, listAppsRequest.dlmType)
-            && Objects.equals(this.limit, listAppsRequest.limit) && Objects.equals(this.offset, listAppsRequest.offset)
-            && Objects.equals(this.name, listAppsRequest.name) && Objects.equals(this.appType, listAppsRequest.appType);
+        ListAppsRequest that = (ListAppsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.appType, that.appType);
     }
 
     @Override

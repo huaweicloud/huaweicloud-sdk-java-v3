@@ -143,19 +143,18 @@ public class DisStream {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisStream disStream = (DisStream) o;
-        return Objects.equals(this.streamName, disStream.streamName)
-            && Objects.equals(this.streamGuid, disStream.streamGuid)
-            && Objects.equals(this.streamQualifiedName, disStream.streamQualifiedName)
-            && Objects.equals(this.partitionCount, disStream.partitionCount)
-            && Objects.equals(this.appCount, disStream.appCount) && Objects.equals(this.taskCount, disStream.taskCount);
+        DisStream that = (DisStream) obj;
+        return Objects.equals(this.streamName, that.streamName) && Objects.equals(this.streamGuid, that.streamGuid)
+            && Objects.equals(this.streamQualifiedName, that.streamQualifiedName)
+            && Objects.equals(this.partitionCount, that.partitionCount) && Objects.equals(this.appCount, that.appCount)
+            && Objects.equals(this.taskCount, that.taskCount);
     }
 
     @Override

@@ -1,111 +1,90 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.TagPlain;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * HostModel
  */
-public class HostModel  {
-
+public class HostModel {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_id")
-    
+    @JsonProperty(value = "availability_zone_id")
 
     private String availabilityZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagPlain> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor")
-    
+    @JsonProperty(value = "flavor")
 
     private String flavor;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mem")
-    
+    @JsonProperty(value = "mem")
 
     private String mem;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
 
     private String cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="root_volume_size")
-    
+    @JsonProperty(value = "root_volume_size")
 
     private String rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_type")
-    
+    @JsonProperty(value = "data_volume_type")
 
     private String dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_size")
-    
+    @JsonProperty(value = "data_volume_size")
 
     private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_count")
-    
+    @JsonProperty(value = "data_volume_count")
 
     private Integer dataVolumeCount;
 
@@ -113,9 +92,6 @@ public class HostModel  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机ID
@@ -129,15 +105,10 @@ public class HostModel  {
         this.id = id;
     }
 
-    
-
     public HostModel withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机名称
@@ -151,15 +122,10 @@ public class HostModel  {
         this.name = name;
     }
 
-    
-
     public HostModel withIp(String ip) {
         this.ip = ip;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机IP地址
@@ -173,15 +139,10 @@ public class HostModel  {
         this.ip = ip;
     }
 
-    
-
     public HostModel withAvailabilityZoneId(String availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
         return this;
     }
-
-    
-
 
     /**
      * 可用区域
@@ -195,16 +156,13 @@ public class HostModel  {
         this.availabilityZoneId = availabilityZoneId;
     }
 
-    
-
     public HostModel withTags(List<TagPlain> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public HostModel addTagsItem(TagPlain tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -212,7 +170,7 @@ public class HostModel  {
     }
 
     public HostModel withTags(Consumer<List<TagPlain>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -231,15 +189,10 @@ public class HostModel  {
         this.tags = tags;
     }
 
-    
-
     public HostModel withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机当前状态
@@ -253,15 +206,10 @@ public class HostModel  {
         this.status = status;
     }
 
-    
-
     public HostModel withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
-
-    
-
 
     /**
      * 节点资源ID
@@ -275,15 +223,10 @@ public class HostModel  {
         this.resourceId = resourceId;
     }
 
-    
-
     public HostModel withFlavor(String flavor) {
         this.flavor = flavor;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机规格ID
@@ -297,15 +240,10 @@ public class HostModel  {
         this.flavor = flavor;
     }
 
-    
-
     public HostModel withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟机类型，当前支持MasterNode，CoreNode，TaskNode
@@ -319,15 +257,10 @@ public class HostModel  {
         this.type = type;
     }
 
-    
-
     public HostModel withMem(String mem) {
         this.mem = mem;
         return this;
     }
-
-    
-
 
     /**
      * 内存
@@ -341,15 +274,10 @@ public class HostModel  {
         this.mem = mem;
     }
 
-    
-
     public HostModel withCpu(String cpu) {
         this.cpu = cpu;
         return this;
     }
-
-    
-
 
     /**
      * CPU核数
@@ -363,15 +291,10 @@ public class HostModel  {
         this.cpu = cpu;
     }
 
-    
-
     public HostModel withRootVolumeSize(String rootVolumeSize) {
         this.rootVolumeSize = rootVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 操作系统盘容量
@@ -385,15 +308,10 @@ public class HostModel  {
         this.rootVolumeSize = rootVolumeSize;
     }
 
-    
-
     public HostModel withDataVolumeType(String dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * 数据盘类型
@@ -407,15 +325,10 @@ public class HostModel  {
         this.dataVolumeType = dataVolumeType;
     }
 
-    
-
     public HostModel withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 数据盘容量
@@ -429,15 +342,10 @@ public class HostModel  {
         this.dataVolumeSize = dataVolumeSize;
     }
 
-    
-
     public HostModel withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * 数据盘个数
@@ -451,37 +359,45 @@ public class HostModel  {
         this.dataVolumeCount = dataVolumeCount;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostModel hostModel = (HostModel) o;
-        return Objects.equals(this.id, hostModel.id) &&
-            Objects.equals(this.name, hostModel.name) &&
-            Objects.equals(this.ip, hostModel.ip) &&
-            Objects.equals(this.availabilityZoneId, hostModel.availabilityZoneId) &&
-            Objects.equals(this.tags, hostModel.tags) &&
-            Objects.equals(this.status, hostModel.status) &&
-            Objects.equals(this.resourceId, hostModel.resourceId) &&
-            Objects.equals(this.flavor, hostModel.flavor) &&
-            Objects.equals(this.type, hostModel.type) &&
-            Objects.equals(this.mem, hostModel.mem) &&
-            Objects.equals(this.cpu, hostModel.cpu) &&
-            Objects.equals(this.rootVolumeSize, hostModel.rootVolumeSize) &&
-            Objects.equals(this.dataVolumeType, hostModel.dataVolumeType) &&
-            Objects.equals(this.dataVolumeSize, hostModel.dataVolumeSize) &&
-            Objects.equals(this.dataVolumeCount, hostModel.dataVolumeCount);
+        HostModel that = (HostModel) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.mem, that.mem)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.rootVolumeSize, that.rootVolumeSize)
+            && Objects.equals(this.dataVolumeType, that.dataVolumeType)
+            && Objects.equals(this.dataVolumeSize, that.dataVolumeSize)
+            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, ip, availabilityZoneId, tags, status, resourceId, flavor, type, mem, cpu, rootVolumeSize, dataVolumeType, dataVolumeSize, dataVolumeCount);
+        return Objects.hash(id,
+            name,
+            ip,
+            availabilityZoneId,
+            tags,
+            status,
+            resourceId,
+            flavor,
+            type,
+            mem,
+            cpu,
+            rootVolumeSize,
+            dataVolumeType,
+            dataVolumeSize,
+            dataVolumeCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -504,6 +420,7 @@ public class HostModel  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -514,8 +431,5 @@ public class HostModel  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

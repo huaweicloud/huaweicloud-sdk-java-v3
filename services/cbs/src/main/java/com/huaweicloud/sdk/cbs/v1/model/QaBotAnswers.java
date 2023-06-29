@@ -1,33 +1,25 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.QaBotAnswer;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class QaBotAnswers  {
-
+public class QaBotAnswers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answers")
-    
+    @JsonProperty(value = "answers")
+
     private List<QaBotAnswer> answers = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
 
     private String requestId;
 
@@ -36,9 +28,8 @@ public class QaBotAnswers  {
         return this;
     }
 
-    
     public QaBotAnswers addAnswersItem(QaBotAnswer answersItem) {
-        if(this.answers == null) {
+        if (this.answers == null) {
             this.answers = new ArrayList<>();
         }
         this.answers.add(answersItem);
@@ -46,7 +37,7 @@ public class QaBotAnswers  {
     }
 
     public QaBotAnswers withAnswers(Consumer<List<QaBotAnswer>> answersSetter) {
-        if(this.answers == null) {
+        if (this.answers == null) {
             this.answers = new ArrayList<>();
         }
         answersSetter.accept(this.answers);
@@ -65,15 +56,10 @@ public class QaBotAnswers  {
         this.answers = answers;
     }
 
-    
-
     public QaBotAnswers withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
-
-    
-
 
     /**
      * 请求ID。
@@ -87,24 +73,23 @@ public class QaBotAnswers  {
         this.requestId = requestId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaBotAnswers qaBotAnswers = (QaBotAnswers) o;
-        return Objects.equals(this.answers, qaBotAnswers.answers) &&
-            Objects.equals(this.requestId, qaBotAnswers.requestId);
+        QaBotAnswers that = (QaBotAnswers) obj;
+        return Objects.equals(this.answers, that.answers) && Objects.equals(this.requestId, that.requestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(answers, requestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +99,7 @@ public class QaBotAnswers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +110,5 @@ public class QaBotAnswers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

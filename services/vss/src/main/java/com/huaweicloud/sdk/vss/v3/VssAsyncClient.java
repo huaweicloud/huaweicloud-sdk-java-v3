@@ -20,186 +20,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 认证域名资产
+     * 下载网站扫描报告
      *
-     * 认证租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param AuthorizeDomainsRequest 请求对象
-     * @return CompletableFuture<AuthorizeDomainsResponse>
-     */
-    public CompletableFuture<AuthorizeDomainsResponse> authorizeDomainsAsync(AuthorizeDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.authorizeDomains);
-    }
-
-    /**
-     * 认证域名资产
-     *
-     * 认证租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param AuthorizeDomainsRequest 请求对象
-     * @return AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>
-     */
-    public AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomainsAsyncInvoker(
-        AuthorizeDomainsRequest request) {
-        return new AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>(request, VssMeta.authorizeDomains,
-            hcClient);
-    }
-
-    /**
-     * 创建域名资产
-     *
-     * 创建租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateDomainsRequest 请求对象
-     * @return CompletableFuture<CreateDomainsResponse>
-     */
-    public CompletableFuture<CreateDomainsResponse> createDomainsAsync(CreateDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.createDomains);
-    }
-
-    /**
-     * 创建域名资产
-     *
-     * 创建租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param CreateDomainsRequest 请求对象
-     * @return AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse>
-     */
-    public AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse> createDomainsAsyncInvoker(
-        CreateDomainsRequest request) {
-        return new AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse>(request, VssMeta.createDomains, hcClient);
-    }
-
-    /**
-     * 删除域名资产
-     *
-     * 删除租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteDomainsRequest 请求对象
-     * @return CompletableFuture<DeleteDomainsResponse>
-     */
-    public CompletableFuture<DeleteDomainsResponse> deleteDomainsAsync(DeleteDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.deleteDomains);
-    }
-
-    /**
-     * 删除域名资产
-     *
-     * 删除租户的域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param DeleteDomainsRequest 请求对象
-     * @return AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
-     */
-    public AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsAsyncInvoker(
-        DeleteDomainsRequest request) {
-        return new AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>(request, VssMeta.deleteDomains, hcClient);
-    }
-
-    /**
-     * 获取域名资产
-     *
-     * 获取租户的所有域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListDomainsRequest 请求对象
-     * @return CompletableFuture<ListDomainsResponse>
-     */
-    public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.listDomains);
-    }
-
-    /**
-     * 获取域名资产
-     *
-     * 获取租户的所有域名资产
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ListDomainsRequest 请求对象
-     * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
-     */
-    public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
-        return new AsyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, VssMeta.listDomains, hcClient);
-    }
-
-    /**
-     * 获取域名配置
-     *
-     * 获取域名登录配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDomainSettingsRequest 请求对象
-     * @return CompletableFuture<ShowDomainSettingsResponse>
-     */
-    public CompletableFuture<ShowDomainSettingsResponse> showDomainSettingsAsync(ShowDomainSettingsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.showDomainSettings);
-    }
-
-    /**
-     * 获取域名配置
-     *
-     * 获取域名登录配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param ShowDomainSettingsRequest 请求对象
-     * @return AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>
-     */
-    public AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettingsAsyncInvoker(
-        ShowDomainSettingsRequest request) {
-        return new AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>(request,
-            VssMeta.showDomainSettings, hcClient);
-    }
-
-    /**
-     * 更新域名配置
-     *
-     * 更新域名登录配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDomainSettingsRequest 请求对象
-     * @return CompletableFuture<UpdateDomainSettingsResponse>
-     */
-    public CompletableFuture<UpdateDomainSettingsResponse> updateDomainSettingsAsync(
-        UpdateDomainSettingsRequest request) {
-        return hcClient.asyncInvokeHttp(request, VssMeta.updateDomainSettings);
-    }
-
-    /**
-     * 更新域名配置
-     *
-     * 更新域名登录配置
-     * 
-     * Please refer to HUAWEI cloud API Explorer for details.
-     *
-     * @param UpdateDomainSettingsRequest 请求对象
-     * @return AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>
-     */
-    public AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettingsAsyncInvoker(
-        UpdateDomainSettingsRequest request) {
-        return new AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>(request,
-            VssMeta.updateDomainSettings, hcClient);
-    }
-
-    /**
-     * 下载域名扫描报告
-     *
-     * 下载域名扫描任务PDF报告
+     * 下载网站扫描任务PDF报告
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -211,9 +34,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 下载域名扫描报告
+     * 下载网站扫描报告
      *
-     * 下载域名扫描任务PDF报告
+     * 下载网站扫描任务PDF报告
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -227,9 +50,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 生成域名扫描报告
+     * 生成网站扫描报告
      *
-     * 生成域名扫描PDF报告
+     * 生成网站扫描PDF报告
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -242,9 +65,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 生成域名扫描报告
+     * 生成网站扫描报告
      *
-     * 生成域名扫描PDF报告
+     * 生成网站扫描PDF报告
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -258,9 +81,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取业务风险扫描结果
+     * 获取网站业务风险扫描结果
      *
-     * 获取域名业务风险扫描结果
+     * 获取网站业务风险扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -272,9 +95,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取业务风险扫描结果
+     * 获取网站业务风险扫描结果
      *
-     * 获取域名业务风险扫描结果
+     * 获取网站业务风险扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -288,9 +111,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取端口扫描结果
+     * 获取网站端口扫描结果
      *
-     * 获取域名端口扫描结果
+     * 获取网站端口扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -302,9 +125,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取端口扫描结果
+     * 获取网站端口扫描结果
      *
-     * 获取域名端口扫描结果
+     * 获取网站端口扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -318,9 +141,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取域名扫描报告状态
+     * 获取网站扫描报告状态
      *
-     * 获取域名扫描PDF报告生成状态
+     * 获取网站扫描PDF报告生成状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -332,9 +155,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取域名扫描报告状态
+     * 获取网站扫描报告状态
      *
-     * 获取域名扫描PDF报告生成状态
+     * 获取网站扫描PDF报告生成状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -348,9 +171,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取扫描结果
+     * 获取网站扫描结果
      *
-     * 获取域名漏洞扫描结果
+     * 获取网站漏洞扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -362,9 +185,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取扫描结果
+     * 获取网站扫描结果
      *
-     * 获取域名漏洞扫描结果
+     * 获取网站漏洞扫描结果
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -376,9 +199,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 更新漏洞的误报状态
+     * 更新网站漏洞的误报状态
      *
-     * 更新域名扫描漏洞的误报状态
+     * 更新网站扫描漏洞的误报状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -390,9 +213,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 更新漏洞的误报状态
+     * 更新网站漏洞的误报状态
      *
-     * 更新域名扫描漏洞的误报状态
+     * 更新网站扫描漏洞的误报状态
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -406,9 +229,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 取消或重启扫描任务
+     * 取消或重启网站扫描任务
      *
-     * 取消或重启域名漏洞扫描任务
+     * 取消或重启网站漏洞扫描任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -420,9 +243,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 取消或重启扫描任务
+     * 取消或重启网站扫描任务
      *
-     * 取消或重启域名漏洞扫描任务
+     * 取消或重启网站漏洞扫描任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -434,9 +257,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 创建扫描任务并启动
+     * 创建网站扫描任务并启动
      *
-     * 创建域名漏洞扫描任务并启动
+     * 创建网站漏洞扫描任务并启动
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -448,9 +271,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 创建扫描任务并启动
+     * 创建网站扫描任务并启动
      *
-     * 创建域名漏洞扫描任务并启动
+     * 创建网站漏洞扫描任务并启动
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -462,9 +285,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取域名的历史扫描任务
+     * 获取网站的历史扫描任务
      *
-     * 获取域名漏洞扫描的历史扫描任务
+     * 获取网站漏洞扫描的历史扫描任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -476,9 +299,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取域名的历史扫描任务
+     * 获取网站的历史扫描任务
      *
-     * 获取域名漏洞扫描的历史扫描任务
+     * 获取网站漏洞扫描的历史扫描任务
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -492,9 +315,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取扫描任务详情
+     * 获取网站扫描任务详情
      *
-     * 获取域名漏洞扫描任务详情
+     * 获取网站漏洞扫描任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -506,9 +329,9 @@ public class VssAsyncClient {
     }
 
     /**
-     * 获取扫描任务详情
+     * 获取网站扫描任务详情
      *
-     * 获取域名漏洞扫描任务详情
+     * 获取网站漏洞扫描任务详情
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -517,6 +340,183 @@ public class VssAsyncClient {
      */
     public AsyncInvoker<ShowTasksRequest, ShowTasksResponse> showTasksAsyncInvoker(ShowTasksRequest request) {
         return new AsyncInvoker<ShowTasksRequest, ShowTasksResponse>(request, VssMeta.showTasks, hcClient);
+    }
+
+    /**
+     * 认证网站资产
+     *
+     * 认证租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return CompletableFuture<AuthorizeDomainsResponse>
+     */
+    public CompletableFuture<AuthorizeDomainsResponse> authorizeDomainsAsync(AuthorizeDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.authorizeDomains);
+    }
+
+    /**
+     * 认证网站资产
+     *
+     * 认证租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AuthorizeDomainsRequest 请求对象
+     * @return AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>
+     */
+    public AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse> authorizeDomainsAsyncInvoker(
+        AuthorizeDomainsRequest request) {
+        return new AsyncInvoker<AuthorizeDomainsRequest, AuthorizeDomainsResponse>(request, VssMeta.authorizeDomains,
+            hcClient);
+    }
+
+    /**
+     * 创建网站资产
+     *
+     * 创建租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDomainsRequest 请求对象
+     * @return CompletableFuture<CreateDomainsResponse>
+     */
+    public CompletableFuture<CreateDomainsResponse> createDomainsAsync(CreateDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.createDomains);
+    }
+
+    /**
+     * 创建网站资产
+     *
+     * 创建租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateDomainsRequest 请求对象
+     * @return AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse>
+     */
+    public AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse> createDomainsAsyncInvoker(
+        CreateDomainsRequest request) {
+        return new AsyncInvoker<CreateDomainsRequest, CreateDomainsResponse>(request, VssMeta.createDomains, hcClient);
+    }
+
+    /**
+     * 删除网站资产
+     *
+     * 删除租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainsRequest 请求对象
+     * @return CompletableFuture<DeleteDomainsResponse>
+     */
+    public CompletableFuture<DeleteDomainsResponse> deleteDomainsAsync(DeleteDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.deleteDomains);
+    }
+
+    /**
+     * 删除网站资产
+     *
+     * 删除租户的网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteDomainsRequest 请求对象
+     * @return AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>
+     */
+    public AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse> deleteDomainsAsyncInvoker(
+        DeleteDomainsRequest request) {
+        return new AsyncInvoker<DeleteDomainsRequest, DeleteDomainsResponse>(request, VssMeta.deleteDomains, hcClient);
+    }
+
+    /**
+     * 获取网站资产
+     *
+     * 获取租户的所有网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return CompletableFuture<ListDomainsResponse>
+     */
+    public CompletableFuture<ListDomainsResponse> listDomainsAsync(ListDomainsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.listDomains);
+    }
+
+    /**
+     * 获取网站资产
+     *
+     * 获取租户的所有网站资产
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDomainsRequest 请求对象
+     * @return AsyncInvoker<ListDomainsRequest, ListDomainsResponse>
+     */
+    public AsyncInvoker<ListDomainsRequest, ListDomainsResponse> listDomainsAsyncInvoker(ListDomainsRequest request) {
+        return new AsyncInvoker<ListDomainsRequest, ListDomainsResponse>(request, VssMeta.listDomains, hcClient);
+    }
+
+    /**
+     * 获取网站配置
+     *
+     * 获取网站登录配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainSettingsRequest 请求对象
+     * @return CompletableFuture<ShowDomainSettingsResponse>
+     */
+    public CompletableFuture<ShowDomainSettingsResponse> showDomainSettingsAsync(ShowDomainSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.showDomainSettings);
+    }
+
+    /**
+     * 获取网站配置
+     *
+     * 获取网站登录配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDomainSettingsRequest 请求对象
+     * @return AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>
+     */
+    public AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse> showDomainSettingsAsyncInvoker(
+        ShowDomainSettingsRequest request) {
+        return new AsyncInvoker<ShowDomainSettingsRequest, ShowDomainSettingsResponse>(request,
+            VssMeta.showDomainSettings, hcClient);
+    }
+
+    /**
+     * 更新网站配置
+     *
+     * 更新网站登录配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainSettingsRequest 请求对象
+     * @return CompletableFuture<UpdateDomainSettingsResponse>
+     */
+    public CompletableFuture<UpdateDomainSettingsResponse> updateDomainSettingsAsync(
+        UpdateDomainSettingsRequest request) {
+        return hcClient.asyncInvokeHttp(request, VssMeta.updateDomainSettings);
+    }
+
+    /**
+     * 更新网站配置
+     *
+     * 更新网站登录配置
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateDomainSettingsRequest 请求对象
+     * @return AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>
+     */
+    public AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse> updateDomainSettingsAsyncInvoker(
+        UpdateDomainSettingsRequest request) {
+        return new AsyncInvoker<UpdateDomainSettingsRequest, UpdateDomainSettingsResponse>(request,
+            VssMeta.updateDomainSettings, hcClient);
     }
 
 }

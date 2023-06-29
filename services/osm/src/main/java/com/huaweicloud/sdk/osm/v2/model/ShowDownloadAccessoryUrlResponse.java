@@ -78,17 +78,16 @@ public class ShowDownloadAccessoryUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDownloadAccessoryUrlResponse showDownloadAccessoryUrlResponse = (ShowDownloadAccessoryUrlResponse) o;
-        return Objects.equals(this.errorCode, showDownloadAccessoryUrlResponse.errorCode)
-            && Objects.equals(this.errorMsg, showDownloadAccessoryUrlResponse.errorMsg)
-            && Objects.equals(this.accessoryUrl, showDownloadAccessoryUrlResponse.accessoryUrl);
+        ShowDownloadAccessoryUrlResponse that = (ShowDownloadAccessoryUrlResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.accessoryUrl, that.accessoryUrl);
     }
 
     @Override

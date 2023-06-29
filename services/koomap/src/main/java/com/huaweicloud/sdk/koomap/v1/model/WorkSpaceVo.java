@@ -166,21 +166,20 @@ public class WorkSpaceVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkSpaceVo workSpaceVo = (WorkSpaceVo) o;
-        return Objects.equals(this.workspaceId, workSpaceVo.workspaceId)
-            && Objects.equals(this.workspaceName, workSpaceVo.workspaceName)
-            && Objects.equals(this.creator, workSpaceVo.creator)
-            && Objects.equals(this.createTime, workSpaceVo.createTime)
-            && Objects.equals(this.workspaceType, workSpaceVo.workspaceType)
-            && Objects.equals(this.workspaceDescription, workSpaceVo.workspaceDescription)
-            && Objects.equals(this.star, workSpaceVo.star);
+        WorkSpaceVo that = (WorkSpaceVo) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.workspaceName, that.workspaceName) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.workspaceType, that.workspaceType)
+            && Objects.equals(this.workspaceDescription, that.workspaceDescription)
+            && Objects.equals(this.star, that.star);
     }
 
     @Override

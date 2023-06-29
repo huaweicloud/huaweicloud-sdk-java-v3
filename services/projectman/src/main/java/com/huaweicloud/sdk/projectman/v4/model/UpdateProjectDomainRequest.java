@@ -87,17 +87,16 @@ public class UpdateProjectDomainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectDomainRequest updateProjectDomainRequest = (UpdateProjectDomainRequest) o;
-        return Objects.equals(this.projectId, updateProjectDomainRequest.projectId)
-            && Objects.equals(this.domainId, updateProjectDomainRequest.domainId)
-            && Objects.equals(this.body, updateProjectDomainRequest.body);
+        UpdateProjectDomainRequest that = (UpdateProjectDomainRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

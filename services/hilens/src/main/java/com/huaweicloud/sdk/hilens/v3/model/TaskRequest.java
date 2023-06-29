@@ -153,18 +153,17 @@ public class TaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskRequest taskRequest = (TaskRequest) o;
-        return Objects.equals(this.business, taskRequest.business) && Objects.equals(this.data, taskRequest.data)
-            && Objects.equals(this.description, taskRequest.description)
-            && Objects.equals(this.instanceId, taskRequest.instanceId) && Objects.equals(this.name, taskRequest.name)
-            && Objects.equals(this.timestamp, taskRequest.timestamp);
+        TaskRequest that = (TaskRequest) obj;
+        return Objects.equals(this.business, that.business) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

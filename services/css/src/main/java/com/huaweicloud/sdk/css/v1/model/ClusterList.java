@@ -648,35 +648,31 @@ public class ClusterList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterList clusterList = (ClusterList) o;
-        return Objects.equals(this.datastore, clusterList.datastore)
-            && Objects.equals(this.instances, clusterList.instances)
-            && Objects.equals(this.publicKibanaResp, clusterList.publicKibanaResp)
-            && Objects.equals(this.elbWhiteList, clusterList.elbWhiteList)
-            && Objects.equals(this.updated, clusterList.updated) && Objects.equals(this.name, clusterList.name)
-            && Objects.equals(this.publicIp, clusterList.publicIp) && Objects.equals(this.created, clusterList.created)
-            && Objects.equals(this.id, clusterList.id) && Objects.equals(this.status, clusterList.status)
-            && Objects.equals(this.endpoint, clusterList.endpoint) && Objects.equals(this.vpcId, clusterList.vpcId)
-            && Objects.equals(this.subnetId, clusterList.subnetId)
-            && Objects.equals(this.securityGroupId, clusterList.securityGroupId)
-            && Objects.equals(this.bandwidthSize, clusterList.bandwidthSize)
-            && Objects.equals(this.httpsEnable, clusterList.httpsEnable)
-            && Objects.equals(this.authorityEnable, clusterList.authorityEnable)
-            && Objects.equals(this.diskEncrypted, clusterList.diskEncrypted)
-            && Objects.equals(this.backupAvailable, clusterList.backupAvailable)
-            && Objects.equals(this.actionProgress, clusterList.actionProgress)
-            && Objects.equals(this.actions, clusterList.actions)
-            && Objects.equals(this.enterpriseProjectId, clusterList.enterpriseProjectId)
-            && Objects.equals(this.tags, clusterList.tags)
-            && Objects.equals(this.failedReason, clusterList.failedReason)
-            && Objects.equals(this.period, clusterList.period);
+        ClusterList that = (ClusterList) obj;
+        return Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.publicKibanaResp, that.publicKibanaResp)
+            && Objects.equals(this.elbWhiteList, that.elbWhiteList) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.httpsEnable, that.httpsEnable)
+            && Objects.equals(this.authorityEnable, that.authorityEnable)
+            && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.backupAvailable, that.backupAvailable)
+            && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.period, that.period);
     }
 
     @Override

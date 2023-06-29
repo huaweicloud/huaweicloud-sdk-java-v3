@@ -75,16 +75,16 @@ public class ShowTopUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopUrlResponse showTopUrlResponse = (ShowTopUrlResponse) o;
-        return Objects.equals(this.serviceArea, showTopUrlResponse.serviceArea)
-            && Objects.equals(this.topUrlSummary, showTopUrlResponse.topUrlSummary);
+        ShowTopUrlResponse that = (ShowTopUrlResponse) obj;
+        return Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.topUrlSummary, that.topUrlSummary);
     }
 
     @Override

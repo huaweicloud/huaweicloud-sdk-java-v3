@@ -87,17 +87,17 @@ public class PublicKibanaRespBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicKibanaRespBody publicKibanaRespBody = (PublicKibanaRespBody) o;
-        return Objects.equals(this.eipSize, publicKibanaRespBody.eipSize)
-            && Objects.equals(this.elbWhiteListResp, publicKibanaRespBody.elbWhiteListResp)
-            && Objects.equals(this.publicKibanaIp, publicKibanaRespBody.publicKibanaIp);
+        PublicKibanaRespBody that = (PublicKibanaRespBody) obj;
+        return Objects.equals(this.eipSize, that.eipSize)
+            && Objects.equals(this.elbWhiteListResp, that.elbWhiteListResp)
+            && Objects.equals(this.publicKibanaIp, that.publicKibanaIp);
     }
 
     @Override

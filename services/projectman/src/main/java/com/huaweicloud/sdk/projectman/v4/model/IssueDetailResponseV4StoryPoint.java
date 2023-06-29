@@ -55,16 +55,15 @@ public class IssueDetailResponseV4StoryPoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueDetailResponseV4StoryPoint issueDetailResponseV4StoryPoint = (IssueDetailResponseV4StoryPoint) o;
-        return Objects.equals(this.id, issueDetailResponseV4StoryPoint.id)
-            && Objects.equals(this.name, issueDetailResponseV4StoryPoint.name);
+        IssueDetailResponseV4StoryPoint that = (IssueDetailResponseV4StoryPoint) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

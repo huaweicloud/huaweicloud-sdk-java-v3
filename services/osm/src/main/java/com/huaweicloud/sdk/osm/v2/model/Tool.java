@@ -165,19 +165,19 @@ public class Tool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Tool tool = (Tool) o;
-        return Objects.equals(this.id, tool.id) && Objects.equals(this.name, tool.name)
-            && Objects.equals(this.url, tool.url) && Objects.equals(this.icon, tool.icon)
-            && Objects.equals(this.problemTypeId, tool.problemTypeId)
-            && Objects.equals(this.businessTypeId, tool.businessTypeId)
-            && Objects.equals(this.productTypeId, tool.productTypeId);
+        Tool that = (Tool) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.icon, that.icon)
+            && Objects.equals(this.problemTypeId, that.problemTypeId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId)
+            && Objects.equals(this.productTypeId, that.productTypeId);
     }
 
     @Override

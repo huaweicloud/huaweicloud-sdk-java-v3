@@ -55,16 +55,15 @@ public class EnlargeVolumeObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeVolumeObject enlargeVolumeObject = (EnlargeVolumeObject) o;
-        return Objects.equals(this.size, enlargeVolumeObject.size)
-            && Objects.equals(this.isAutoPay, enlargeVolumeObject.isAutoPay);
+        EnlargeVolumeObject that = (EnlargeVolumeObject) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

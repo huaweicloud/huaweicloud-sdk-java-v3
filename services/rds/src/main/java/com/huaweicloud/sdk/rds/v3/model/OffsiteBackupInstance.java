@@ -197,22 +197,21 @@ public class OffsiteBackupInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OffsiteBackupInstance offsiteBackupInstance = (OffsiteBackupInstance) o;
-        return Objects.equals(this.id, offsiteBackupInstance.id)
-            && Objects.equals(this.name, offsiteBackupInstance.name)
-            && Objects.equals(this.sourceRegion, offsiteBackupInstance.sourceRegion)
-            && Objects.equals(this.sourceProjectId, offsiteBackupInstance.sourceProjectId)
-            && Objects.equals(this.datastore, offsiteBackupInstance.datastore)
-            && Objects.equals(this.destinationRegion, offsiteBackupInstance.destinationRegion)
-            && Objects.equals(this.destinationProjectId, offsiteBackupInstance.destinationProjectId)
-            && Objects.equals(this.keepDays, offsiteBackupInstance.keepDays);
+        OffsiteBackupInstance that = (OffsiteBackupInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sourceRegion, that.sourceRegion)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.keepDays, that.keepDays);
     }
 
     @Override

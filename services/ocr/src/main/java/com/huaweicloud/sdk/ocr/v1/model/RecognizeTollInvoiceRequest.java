@@ -65,16 +65,16 @@ public class RecognizeTollInvoiceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeTollInvoiceRequest recognizeTollInvoiceRequest = (RecognizeTollInvoiceRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeTollInvoiceRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeTollInvoiceRequest.body);
+        RecognizeTollInvoiceRequest that = (RecognizeTollInvoiceRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

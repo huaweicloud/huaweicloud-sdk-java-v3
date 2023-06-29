@@ -73,22 +73,15 @@ public class BatchActionDesktopsReq {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,7 +142,7 @@ public class BatchActionDesktopsReq {
     }
 
     /**
-     * 操作类型。 -os-start 启动。 -reboot 重启。 -os-stop 关机。
+     * 操作类型。 -os-start 启动。 -reboot 重启。 -os-stop 关机。 -os-hibernate 休眠。
      * @return opType
      */
     public String getOpType() {
@@ -178,17 +171,16 @@ public class BatchActionDesktopsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchActionDesktopsReq batchActionDesktopsReq = (BatchActionDesktopsReq) o;
-        return Objects.equals(this.desktopIds, batchActionDesktopsReq.desktopIds)
-            && Objects.equals(this.opType, batchActionDesktopsReq.opType)
-            && Objects.equals(this.type, batchActionDesktopsReq.type);
+        BatchActionDesktopsReq that = (BatchActionDesktopsReq) obj;
+        return Objects.equals(this.desktopIds, that.desktopIds) && Objects.equals(this.opType, that.opType)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

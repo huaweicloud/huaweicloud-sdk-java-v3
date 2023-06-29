@@ -77,16 +77,16 @@ public class BatchWindow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchWindow batchWindow = (BatchWindow) o;
-        return Objects.equals(this.count, batchWindow.count) && Objects.equals(this.time, batchWindow.time)
-            && Objects.equals(this.interval, batchWindow.interval);
+        BatchWindow that = (BatchWindow) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.interval, that.interval);
     }
 
     @Override

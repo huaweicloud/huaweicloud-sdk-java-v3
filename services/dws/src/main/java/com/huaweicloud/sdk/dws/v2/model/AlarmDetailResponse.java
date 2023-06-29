@@ -231,24 +231,22 @@ public class AlarmDetailResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmDetailResponse alarmDetailResponse = (AlarmDetailResponse) o;
-        return Objects.equals(this.alarmId, alarmDetailResponse.alarmId)
-            && Objects.equals(this.alarmName, alarmDetailResponse.alarmName)
-            && Objects.equals(this.alarmLevel, alarmDetailResponse.alarmLevel)
-            && Objects.equals(this.alarmSource, alarmDetailResponse.alarmSource)
-            && Objects.equals(this.alarmMessage, alarmDetailResponse.alarmMessage)
-            && Objects.equals(this.alarmLocation, alarmDetailResponse.alarmLocation)
-            && Objects.equals(this.resourceId, alarmDetailResponse.resourceId)
-            && Objects.equals(this.resourceIdName, alarmDetailResponse.resourceIdName)
-            && Objects.equals(this.alarmGenerateDate, alarmDetailResponse.alarmGenerateDate)
-            && Objects.equals(this.alarmStatus, alarmDetailResponse.alarmStatus);
+        AlarmDetailResponse that = (AlarmDetailResponse) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.alarmName, that.alarmName)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.alarmSource, that.alarmSource)
+            && Objects.equals(this.alarmMessage, that.alarmMessage)
+            && Objects.equals(this.alarmLocation, that.alarmLocation)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceIdName, that.resourceIdName)
+            && Objects.equals(this.alarmGenerateDate, that.alarmGenerateDate)
+            && Objects.equals(this.alarmStatus, that.alarmStatus);
     }
 
     @Override

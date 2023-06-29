@@ -98,17 +98,16 @@ public class EipOperateProtectReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipOperateProtectReq eipOperateProtectReq = (EipOperateProtectReq) o;
-        return Objects.equals(this.objectId, eipOperateProtectReq.objectId)
-            && Objects.equals(this.status, eipOperateProtectReq.status)
-            && Objects.equals(this.ipInfos, eipOperateProtectReq.ipInfos);
+        EipOperateProtectReq that = (EipOperateProtectReq) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ipInfos, that.ipInfos);
     }
 
     @Override

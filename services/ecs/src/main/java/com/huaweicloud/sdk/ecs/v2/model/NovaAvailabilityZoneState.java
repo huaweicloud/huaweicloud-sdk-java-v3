@@ -33,15 +33,15 @@ public class NovaAvailabilityZoneState {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaAvailabilityZoneState novaAvailabilityZoneState = (NovaAvailabilityZoneState) o;
-        return Objects.equals(this.available, novaAvailabilityZoneState.available);
+        NovaAvailabilityZoneState that = (NovaAvailabilityZoneState) obj;
+        return Objects.equals(this.available, that.available);
     }
 
     @Override

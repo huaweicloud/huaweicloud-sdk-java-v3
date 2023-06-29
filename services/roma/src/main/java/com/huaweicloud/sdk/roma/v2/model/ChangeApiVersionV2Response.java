@@ -167,21 +167,18 @@ public class ChangeApiVersionV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeApiVersionV2Response changeApiVersionV2Response = (ChangeApiVersionV2Response) o;
-        return Objects.equals(this.publishId, changeApiVersionV2Response.publishId)
-            && Objects.equals(this.apiId, changeApiVersionV2Response.apiId)
-            && Objects.equals(this.apiName, changeApiVersionV2Response.apiName)
-            && Objects.equals(this.envId, changeApiVersionV2Response.envId)
-            && Objects.equals(this.remark, changeApiVersionV2Response.remark)
-            && Objects.equals(this.publishTime, changeApiVersionV2Response.publishTime)
-            && Objects.equals(this.versionId, changeApiVersionV2Response.versionId);
+        ChangeApiVersionV2Response that = (ChangeApiVersionV2Response) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

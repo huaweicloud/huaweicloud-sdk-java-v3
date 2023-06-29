@@ -65,16 +65,16 @@ public class RecognizeBankcardRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeBankcardRequest recognizeBankcardRequest = (RecognizeBankcardRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeBankcardRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeBankcardRequest.body);
+        RecognizeBankcardRequest that = (RecognizeBankcardRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

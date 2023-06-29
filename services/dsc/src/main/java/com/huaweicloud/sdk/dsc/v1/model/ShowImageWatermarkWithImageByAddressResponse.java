@@ -56,17 +56,15 @@ public class ShowImageWatermarkWithImageByAddressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageWatermarkWithImageByAddressResponse showImageWatermarkWithImageByAddressResponse =
-            (ShowImageWatermarkWithImageByAddressResponse) o;
-        return Objects.equals(this.regionId, showImageWatermarkWithImageByAddressResponse.regionId)
-            && Objects.equals(this.imageWatermark, showImageWatermarkWithImageByAddressResponse.imageWatermark);
+        ShowImageWatermarkWithImageByAddressResponse that = (ShowImageWatermarkWithImageByAddressResponse) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.imageWatermark, that.imageWatermark);
     }
 
     @Override

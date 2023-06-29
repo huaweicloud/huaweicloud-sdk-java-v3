@@ -140,18 +140,18 @@ public class CreateVpcOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcOption createVpcOption = (CreateVpcOption) o;
-        return Objects.equals(this.cidr, createVpcOption.cidr) && Objects.equals(this.name, createVpcOption.name)
-            && Objects.equals(this.description, createVpcOption.description)
-            && Objects.equals(this.enterpriseProjectId, createVpcOption.enterpriseProjectId)
-            && Objects.equals(this.tags, createVpcOption.tags);
+        CreateVpcOption that = (CreateVpcOption) obj;
+        return Objects.equals(this.cidr, that.cidr) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

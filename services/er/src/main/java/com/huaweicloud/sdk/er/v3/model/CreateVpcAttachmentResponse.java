@@ -90,17 +90,16 @@ public class CreateVpcAttachmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcAttachmentResponse createVpcAttachmentResponse = (CreateVpcAttachmentResponse) o;
-        return Objects.equals(this.vpcAttachment, createVpcAttachmentResponse.vpcAttachment)
-            && Objects.equals(this.requestId, createVpcAttachmentResponse.requestId)
-            && Objects.equals(this.xClientToken, createVpcAttachmentResponse.xClientToken);
+        CreateVpcAttachmentResponse that = (CreateVpcAttachmentResponse) obj;
+        return Objects.equals(this.vpcAttachment, that.vpcAttachment) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.xClientToken, that.xClientToken);
     }
 
     @Override

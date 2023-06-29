@@ -55,16 +55,15 @@ public class IdentityprovidersLinks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdentityprovidersLinks identityprovidersLinks = (IdentityprovidersLinks) o;
-        return Objects.equals(this.self, identityprovidersLinks.self)
-            && Objects.equals(this.protocols, identityprovidersLinks.protocols);
+        IdentityprovidersLinks that = (IdentityprovidersLinks) obj;
+        return Objects.equals(this.self, that.self) && Objects.equals(this.protocols, that.protocols);
     }
 
     @Override

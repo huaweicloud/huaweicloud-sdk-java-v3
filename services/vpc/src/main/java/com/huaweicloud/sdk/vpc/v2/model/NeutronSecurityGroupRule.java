@@ -66,22 +66,15 @@ public class NeutronSecurityGroupRule {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -424,29 +417,24 @@ public class NeutronSecurityGroupRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronSecurityGroupRule neutronSecurityGroupRule = (NeutronSecurityGroupRule) o;
-        return Objects.equals(this.description, neutronSecurityGroupRule.description)
-            && Objects.equals(this.direction, neutronSecurityGroupRule.direction)
-            && Objects.equals(this.ethertype, neutronSecurityGroupRule.ethertype)
-            && Objects.equals(this.id, neutronSecurityGroupRule.id)
-            && Objects.equals(this.portRangeMax, neutronSecurityGroupRule.portRangeMax)
-            && Objects.equals(this.portRangeMin, neutronSecurityGroupRule.portRangeMin)
-            && Objects.equals(this.protocol, neutronSecurityGroupRule.protocol)
-            && Objects.equals(this.remoteGroupId, neutronSecurityGroupRule.remoteGroupId)
-            && Objects.equals(this.remoteIpPrefix, neutronSecurityGroupRule.remoteIpPrefix)
-            && Objects.equals(this.remoteAddressGroupId, neutronSecurityGroupRule.remoteAddressGroupId)
-            && Objects.equals(this.securityGroupId, neutronSecurityGroupRule.securityGroupId)
-            && Objects.equals(this.tenantId, neutronSecurityGroupRule.tenantId)
-            && Objects.equals(this.projectId, neutronSecurityGroupRule.projectId)
-            && Objects.equals(this.createdAt, neutronSecurityGroupRule.createdAt)
-            && Objects.equals(this.updatedAt, neutronSecurityGroupRule.updatedAt);
+        NeutronSecurityGroupRule that = (NeutronSecurityGroupRule) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.ethertype, that.ethertype) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.portRangeMax, that.portRangeMax)
+            && Objects.equals(this.portRangeMin, that.portRangeMin) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

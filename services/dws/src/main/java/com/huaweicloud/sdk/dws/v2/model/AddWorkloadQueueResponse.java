@@ -56,16 +56,16 @@ public class AddWorkloadQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddWorkloadQueueResponse addWorkloadQueueResponse = (AddWorkloadQueueResponse) o;
-        return Objects.equals(this.workloadResCode, addWorkloadQueueResponse.workloadResCode)
-            && Objects.equals(this.workloadResStr, addWorkloadQueueResponse.workloadResStr);
+        AddWorkloadQueueResponse that = (AddWorkloadQueueResponse) obj;
+        return Objects.equals(this.workloadResCode, that.workloadResCode)
+            && Objects.equals(this.workloadResStr, that.workloadResStr);
     }
 
     @Override

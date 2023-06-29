@@ -33,15 +33,15 @@ public class UpdateKeypairDescriptionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeypairDescriptionReq updateKeypairDescriptionReq = (UpdateKeypairDescriptionReq) o;
-        return Objects.equals(this.description, updateKeypairDescriptionReq.description);
+        UpdateKeypairDescriptionReq that = (UpdateKeypairDescriptionReq) obj;
+        return Objects.equals(this.description, that.description);
     }
 
     @Override

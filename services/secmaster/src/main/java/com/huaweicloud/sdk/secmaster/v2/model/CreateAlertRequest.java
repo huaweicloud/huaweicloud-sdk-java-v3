@@ -65,16 +65,15 @@ public class CreateAlertRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertRequest createAlertRequest = (CreateAlertRequest) o;
-        return Objects.equals(this.workspaceId, createAlertRequest.workspaceId)
-            && Objects.equals(this.body, createAlertRequest.body);
+        CreateAlertRequest that = (CreateAlertRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class ListMeasureUnitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMeasureUnitsRequest listMeasureUnitsRequest = (ListMeasureUnitsRequest) o;
-        return Objects.equals(this.xLanguage, listMeasureUnitsRequest.xLanguage);
+        ListMeasureUnitsRequest that = (ListMeasureUnitsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

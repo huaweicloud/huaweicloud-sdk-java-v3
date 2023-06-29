@@ -79,17 +79,16 @@ public class OpExtendInfoCommon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoCommon opExtendInfoCommon = (OpExtendInfoCommon) o;
-        return Objects.equals(this.progress, opExtendInfoCommon.progress)
-            && Objects.equals(this.requestId, opExtendInfoCommon.requestId)
-            && Objects.equals(this.taskId, opExtendInfoCommon.taskId);
+        OpExtendInfoCommon that = (OpExtendInfoCommon) obj;
+        return Objects.equals(this.progress, that.progress) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

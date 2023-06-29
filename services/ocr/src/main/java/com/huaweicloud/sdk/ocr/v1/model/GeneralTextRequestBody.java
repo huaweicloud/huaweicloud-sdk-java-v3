@@ -165,21 +165,19 @@ public class GeneralTextRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTextRequestBody generalTextRequestBody = (GeneralTextRequestBody) o;
-        return Objects.equals(this.image, generalTextRequestBody.image)
-            && Objects.equals(this.url, generalTextRequestBody.url)
-            && Objects.equals(this.detectDirection, generalTextRequestBody.detectDirection)
-            && Objects.equals(this.quickMode, generalTextRequestBody.quickMode)
-            && Objects.equals(this.characterMode, generalTextRequestBody.characterMode)
-            && Objects.equals(this.language, generalTextRequestBody.language)
-            && Objects.equals(this.singleOrientationMode, generalTextRequestBody.singleOrientationMode);
+        GeneralTextRequestBody that = (GeneralTextRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.detectDirection, that.detectDirection)
+            && Objects.equals(this.quickMode, that.quickMode) && Objects.equals(this.characterMode, that.characterMode)
+            && Objects.equals(this.language, that.language)
+            && Objects.equals(this.singleOrientationMode, that.singleOrientationMode);
     }
 
     @Override

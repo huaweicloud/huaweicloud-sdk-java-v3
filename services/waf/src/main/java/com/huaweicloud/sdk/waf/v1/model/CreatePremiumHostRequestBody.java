@@ -255,23 +255,21 @@ public class CreatePremiumHostRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePremiumHostRequestBody createPremiumHostRequestBody = (CreatePremiumHostRequestBody) o;
-        return Objects.equals(this.certificateid, createPremiumHostRequestBody.certificateid)
-            && Objects.equals(this.certificatename, createPremiumHostRequestBody.certificatename)
-            && Objects.equals(this.hostname, createPremiumHostRequestBody.hostname)
-            && Objects.equals(this.proxy, createPremiumHostRequestBody.proxy)
-            && Objects.equals(this.policyid, createPremiumHostRequestBody.policyid)
-            && Objects.equals(this.server, createPremiumHostRequestBody.server)
-            && Objects.equals(this.blockPage, createPremiumHostRequestBody.blockPage)
-            && Objects.equals(this.forwardHeaderMap, createPremiumHostRequestBody.forwardHeaderMap)
-            && Objects.equals(this.description, createPremiumHostRequestBody.description);
+        CreatePremiumHostRequestBody that = (CreatePremiumHostRequestBody) obj;
+        return Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.proxy, that.proxy)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -187,20 +187,19 @@ public class Bucket {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Bucket bucket = (Bucket) o;
-        return Objects.equals(this.assetName, bucket.assetName)
-            && Objects.equals(this.bucketLocation, bucket.bucketLocation)
-            && Objects.equals(this.bucketName, bucket.bucketName)
-            && Objects.equals(this.bucketPolicy, bucket.bucketPolicy)
-            && Objects.equals(this.createTime, bucket.createTime) && Objects.equals(this.deleted, bucket.deleted)
-            && Objects.equals(this.id, bucket.id) && Objects.equals(this.isDeleted, bucket.isDeleted);
+        Bucket that = (Bucket) obj;
+        return Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.bucketLocation, that.bucketLocation)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.bucketPolicy, that.bucketPolicy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.deleted, that.deleted)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.isDeleted, that.isDeleted);
     }
 
     @Override

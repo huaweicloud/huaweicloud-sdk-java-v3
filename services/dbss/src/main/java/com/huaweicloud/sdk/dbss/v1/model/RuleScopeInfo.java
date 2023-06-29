@@ -1,85 +1,67 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * RuleScopeInfo
  */
-public class RuleScopeInfo  {
-
+public class RuleScopeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exception_ips")
-    
+    @JsonProperty(value = "exception_ips")
 
     private String exceptionIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_ips")
-    
+    @JsonProperty(value = "source_ips")
 
     private String sourceIps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source_ports")
-    
+    @JsonProperty(value = "source_ports")
 
     private String sourcePorts;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_ids")
-    
+    @JsonProperty(value = "db_ids")
 
     private String dbIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_names")
-    
+    @JsonProperty(value = "db_names")
 
     private String dbNames;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_users")
-    
+    @JsonProperty(value = "db_users")
 
     private String dbUsers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="all_audit")
-    
+    @JsonProperty(value = "all_audit")
 
     private Boolean allAudit;
 
@@ -87,9 +69,6 @@ public class RuleScopeInfo  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围规则ID
@@ -103,15 +82,10 @@ public class RuleScopeInfo  {
         this.id = id;
     }
 
-    
-
     public RuleScopeInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围名称
@@ -125,15 +99,10 @@ public class RuleScopeInfo  {
         this.name = name;
     }
 
-    
-
     public RuleScopeInfo withAction(String action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围动作
@@ -147,15 +116,10 @@ public class RuleScopeInfo  {
         this.action = action;
     }
 
-    
-
     public RuleScopeInfo withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围规则状态
@@ -169,15 +133,10 @@ public class RuleScopeInfo  {
         this.status = status;
     }
 
-    
-
     public RuleScopeInfo withExceptionIps(String exceptionIps) {
         this.exceptionIps = exceptionIps;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围例外IP
@@ -191,15 +150,10 @@ public class RuleScopeInfo  {
         this.exceptionIps = exceptionIps;
     }
 
-    
-
     public RuleScopeInfo withSourceIps(String sourceIps) {
         this.sourceIps = sourceIps;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围规则源IP
@@ -213,15 +167,10 @@ public class RuleScopeInfo  {
         this.sourceIps = sourceIps;
     }
 
-    
-
     public RuleScopeInfo withSourcePorts(String sourcePorts) {
         this.sourcePorts = sourcePorts;
         return this;
     }
-
-    
-
 
     /**
      * 审计范围源端口
@@ -235,15 +184,10 @@ public class RuleScopeInfo  {
         this.sourcePorts = sourcePorts;
     }
 
-    
-
     public RuleScopeInfo withDbIds(String dbIds) {
         this.dbIds = dbIds;
         return this;
     }
-
-    
-
 
     /**
      * 数据库ID
@@ -257,15 +201,10 @@ public class RuleScopeInfo  {
         this.dbIds = dbIds;
     }
 
-    
-
     public RuleScopeInfo withDbNames(String dbNames) {
         this.dbNames = dbNames;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称
@@ -279,15 +218,10 @@ public class RuleScopeInfo  {
         this.dbNames = dbNames;
     }
 
-    
-
     public RuleScopeInfo withDbUsers(String dbUsers) {
         this.dbUsers = dbUsers;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户
@@ -301,15 +235,10 @@ public class RuleScopeInfo  {
         this.dbUsers = dbUsers;
     }
 
-    
-
     public RuleScopeInfo withAllAudit(Boolean allAudit) {
         this.allAudit = allAudit;
         return this;
     }
-
-    
-
 
     /**
      * 是否全审计
@@ -323,33 +252,29 @@ public class RuleScopeInfo  {
         this.allAudit = allAudit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleScopeInfo ruleScopeInfo = (RuleScopeInfo) o;
-        return Objects.equals(this.id, ruleScopeInfo.id) &&
-            Objects.equals(this.name, ruleScopeInfo.name) &&
-            Objects.equals(this.action, ruleScopeInfo.action) &&
-            Objects.equals(this.status, ruleScopeInfo.status) &&
-            Objects.equals(this.exceptionIps, ruleScopeInfo.exceptionIps) &&
-            Objects.equals(this.sourceIps, ruleScopeInfo.sourceIps) &&
-            Objects.equals(this.sourcePorts, ruleScopeInfo.sourcePorts) &&
-            Objects.equals(this.dbIds, ruleScopeInfo.dbIds) &&
-            Objects.equals(this.dbNames, ruleScopeInfo.dbNames) &&
-            Objects.equals(this.dbUsers, ruleScopeInfo.dbUsers) &&
-            Objects.equals(this.allAudit, ruleScopeInfo.allAudit);
+        RuleScopeInfo that = (RuleScopeInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.exceptionIps, that.exceptionIps) && Objects.equals(this.sourceIps, that.sourceIps)
+            && Objects.equals(this.sourcePorts, that.sourcePorts) && Objects.equals(this.dbIds, that.dbIds)
+            && Objects.equals(this.dbNames, that.dbNames) && Objects.equals(this.dbUsers, that.dbUsers)
+            && Objects.equals(this.allAudit, that.allAudit);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, action, status, exceptionIps, sourceIps, sourcePorts, dbIds, dbNames, dbUsers, allAudit);
+        return Objects
+            .hash(id, name, action, status, exceptionIps, sourceIps, sourcePorts, dbIds, dbNames, dbUsers, allAudit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -368,6 +293,7 @@ public class RuleScopeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -378,8 +304,5 @@ public class RuleScopeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

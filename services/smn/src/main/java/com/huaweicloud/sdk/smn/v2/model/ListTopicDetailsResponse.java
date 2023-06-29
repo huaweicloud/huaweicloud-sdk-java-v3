@@ -210,23 +210,20 @@ public class ListTopicDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicDetailsResponse listTopicDetailsResponse = (ListTopicDetailsResponse) o;
-        return Objects.equals(this.updateTime, listTopicDetailsResponse.updateTime)
-            && Objects.equals(this.pushPolicy, listTopicDetailsResponse.pushPolicy)
-            && Objects.equals(this.createTime, listTopicDetailsResponse.createTime)
-            && Objects.equals(this.name, listTopicDetailsResponse.name)
-            && Objects.equals(this.topicUrn, listTopicDetailsResponse.topicUrn)
-            && Objects.equals(this.displayName, listTopicDetailsResponse.displayName)
-            && Objects.equals(this.requestId, listTopicDetailsResponse.requestId)
-            && Objects.equals(this.enterpriseProjectId, listTopicDetailsResponse.enterpriseProjectId)
-            && Objects.equals(this.topicId, listTopicDetailsResponse.topicId);
+        ListTopicDetailsResponse that = (ListTopicDetailsResponse) obj;
+        return Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.pushPolicy, that.pushPolicy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.topicId, that.topicId);
     }
 
     @Override

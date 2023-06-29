@@ -52,15 +52,15 @@ public class BatchUpdateSrcUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateSrcUserReq batchUpdateSrcUserReq = (BatchUpdateSrcUserReq) o;
-        return Objects.equals(this.jobs, batchUpdateSrcUserReq.jobs);
+        BatchUpdateSrcUserReq that = (BatchUpdateSrcUserReq) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

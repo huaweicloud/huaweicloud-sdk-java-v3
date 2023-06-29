@@ -135,19 +135,17 @@ public class UpdateAutoRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAutoRecordRequest updateAutoRecordRequest = (UpdateAutoRecordRequest) o;
-        return Objects.equals(this.authorization, updateAutoRecordRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateAutoRecordRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, updateAutoRecordRequest.xProjectId)
-            && Objects.equals(this.appId, updateAutoRecordRequest.appId)
-            && Objects.equals(this.body, updateAutoRecordRequest.body);
+        UpdateAutoRecordRequest that = (UpdateAutoRecordRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

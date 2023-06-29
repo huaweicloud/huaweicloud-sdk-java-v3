@@ -55,15 +55,15 @@ public class UpdateLabelsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLabelsReq updateLabelsReq = (UpdateLabelsReq) o;
-        return Objects.equals(this.name, updateLabelsReq.name) && Objects.equals(this.color, updateLabelsReq.color);
+        UpdateLabelsReq that = (UpdateLabelsReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.color, that.color);
     }
 
     @Override

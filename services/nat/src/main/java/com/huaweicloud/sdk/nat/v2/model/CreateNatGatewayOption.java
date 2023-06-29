@@ -92,22 +92,15 @@ public class CreateNatGatewayOption {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,20 +230,18 @@ public class CreateNatGatewayOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNatGatewayOption createNatGatewayOption = (CreateNatGatewayOption) o;
-        return Objects.equals(this.name, createNatGatewayOption.name)
-            && Objects.equals(this.routerId, createNatGatewayOption.routerId)
-            && Objects.equals(this.internalNetworkId, createNatGatewayOption.internalNetworkId)
-            && Objects.equals(this.description, createNatGatewayOption.description)
-            && Objects.equals(this.spec, createNatGatewayOption.spec)
-            && Objects.equals(this.enterpriseProjectId, createNatGatewayOption.enterpriseProjectId);
+        CreateNatGatewayOption that = (CreateNatGatewayOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.routerId, that.routerId)
+            && Objects.equals(this.internalNetworkId, that.internalNetworkId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

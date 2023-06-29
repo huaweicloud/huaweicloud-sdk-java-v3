@@ -33,15 +33,15 @@ public class ListPartnerBalancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerBalancesRequest listPartnerBalancesRequest = (ListPartnerBalancesRequest) o;
-        return Objects.equals(this.indirectPartnerId, listPartnerBalancesRequest.indirectPartnerId);
+        ListPartnerBalancesRequest that = (ListPartnerBalancesRequest) obj;
+        return Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

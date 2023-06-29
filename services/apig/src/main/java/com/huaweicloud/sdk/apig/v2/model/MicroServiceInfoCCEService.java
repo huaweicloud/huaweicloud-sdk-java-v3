@@ -99,18 +99,16 @@ public class MicroServiceInfoCCEService {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCCEService microServiceInfoCCEService = (MicroServiceInfoCCEService) o;
-        return Objects.equals(this.clusterId, microServiceInfoCCEService.clusterId)
-            && Objects.equals(this.namespace, microServiceInfoCCEService.namespace)
-            && Objects.equals(this.serviceName, microServiceInfoCCEService.serviceName)
-            && Objects.equals(this.clusterName, microServiceInfoCCEService.clusterName);
+        MicroServiceInfoCCEService that = (MicroServiceInfoCCEService) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.clusterName, that.clusterName);
     }
 
     @Override

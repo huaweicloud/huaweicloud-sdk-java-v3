@@ -211,22 +211,19 @@ public class HistoryStreamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryStreamInfo historyStreamInfo = (HistoryStreamInfo) o;
-        return Objects.equals(this.domain, historyStreamInfo.domain) && Objects.equals(this.app, historyStreamInfo.app)
-            && Objects.equals(this.stream, historyStreamInfo.stream)
-            && Objects.equals(this.type, historyStreamInfo.type)
-            && Objects.equals(this.videoCodec, historyStreamInfo.videoCodec)
-            && Objects.equals(this.audioCodec, historyStreamInfo.audioCodec)
-            && Objects.equals(this.clientIp, historyStreamInfo.clientIp)
-            && Objects.equals(this.startTime, historyStreamInfo.startTime)
-            && Objects.equals(this.endTime, historyStreamInfo.endTime);
+        HistoryStreamInfo that = (HistoryStreamInfo) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.videoCodec, that.videoCodec) && Objects.equals(this.audioCodec, that.audioCodec)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

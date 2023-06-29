@@ -44,15 +44,15 @@ public class ListAddressItemsUsingGetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAddressItemsUsingGetResponse listAddressItemsUsingGetResponse = (ListAddressItemsUsingGetResponse) o;
-        return Objects.equals(this.data, listAddressItemsUsingGetResponse.data);
+        ListAddressItemsUsingGetResponse that = (ListAddressItemsUsingGetResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

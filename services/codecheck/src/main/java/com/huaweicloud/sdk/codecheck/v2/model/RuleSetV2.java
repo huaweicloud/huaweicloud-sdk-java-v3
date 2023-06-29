@@ -55,15 +55,15 @@ public class RuleSetV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleSetV2 ruleSetV2 = (RuleSetV2) o;
-        return Objects.equals(this.rulesetId, ruleSetV2.rulesetId) && Objects.equals(this.language, ruleSetV2.language);
+        RuleSetV2 that = (RuleSetV2) obj;
+        return Objects.equals(this.rulesetId, that.rulesetId) && Objects.equals(this.language, that.language);
     }
 
     @Override

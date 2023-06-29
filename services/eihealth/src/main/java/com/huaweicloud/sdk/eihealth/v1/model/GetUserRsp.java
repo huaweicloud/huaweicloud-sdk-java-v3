@@ -275,22 +275,20 @@ public class GetUserRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetUserRsp getUserRsp = (GetUserRsp) o;
-        return Objects.equals(this.id, getUserRsp.id) && Objects.equals(this.name, getUserRsp.name)
-            && Objects.equals(this.role, getUserRsp.role) && Objects.equals(this.status, getUserRsp.status)
-            && Objects.equals(this.email, getUserRsp.email) && Objects.equals(this.phone, getUserRsp.phone)
-            && Objects.equals(this.areacode, getUserRsp.areacode)
-            && Objects.equals(this.isDomainOwner, getUserRsp.isDomainOwner)
-            && Objects.equals(this.createTime, getUserRsp.createTime)
-            && Objects.equals(this.pwdStatus, getUserRsp.pwdStatus)
-            && Objects.equals(this.updateTime, getUserRsp.updateTime) && Objects.equals(this.source, getUserRsp.source);
+        GetUserRsp that = (GetUserRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.isDomainOwner, that.isDomainOwner)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.pwdStatus, that.pwdStatus)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.source, that.source);
     }
 
     @Override

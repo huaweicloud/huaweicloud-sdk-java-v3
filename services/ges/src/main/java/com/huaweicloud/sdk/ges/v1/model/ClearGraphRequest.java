@@ -1,43 +1,34 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ClearGraphRequest  {
-
+public class ClearGraphRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
+
     /**
      * 图actionId
      */
     public static final class ActionIdEnum {
 
-        
         /**
          * Enum CLEAR_GRAPH for value: "clear-graph"
          */
         public static final ActionIdEnum CLEAR_GRAPH = new ActionIdEnum("clear-graph");
-        
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +56,18 @@ public class ClearGraphRequest  {
 
         @JsonCreator
         public static ActionIdEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionIdEnum(value));
         }
 
         public static ActionIdEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,14 +85,12 @@ public class ClearGraphRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
 
     private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clear-metadata")
-    
+    @JsonProperty(value = "clear-metadata")
 
     private Boolean clearMetadata;
 
@@ -116,9 +98,6 @@ public class ClearGraphRequest  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -132,15 +111,10 @@ public class ClearGraphRequest  {
         this.graphId = graphId;
     }
 
-    
-
     public ClearGraphRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
-
-    
-
 
     /**
      * 图actionId
@@ -154,15 +128,10 @@ public class ClearGraphRequest  {
         this.actionId = actionId;
     }
 
-    
-
     public ClearGraphRequest withClearMetadata(Boolean clearMetadata) {
         this.clearMetadata = clearMetadata;
         return this;
     }
-
-    
-
 
     /**
      * 是否清空图关联的元数据。建议清除。
@@ -176,25 +145,24 @@ public class ClearGraphRequest  {
         this.clearMetadata = clearMetadata;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClearGraphRequest clearGraphRequest = (ClearGraphRequest) o;
-        return Objects.equals(this.graphId, clearGraphRequest.graphId) &&
-            Objects.equals(this.actionId, clearGraphRequest.actionId) &&
-            Objects.equals(this.clearMetadata, clearGraphRequest.clearMetadata);
+        ClearGraphRequest that = (ClearGraphRequest) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.clearMetadata, that.clearMetadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, actionId, clearMetadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -205,6 +173,7 @@ public class ClearGraphRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -215,8 +184,5 @@ public class ClearGraphRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

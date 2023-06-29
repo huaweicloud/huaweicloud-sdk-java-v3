@@ -96,17 +96,16 @@ public class CreateDatabaseRoleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseRoleRequestBody createDatabaseRoleRequestBody = (CreateDatabaseRoleRequestBody) o;
-        return Objects.equals(this.roleName, createDatabaseRoleRequestBody.roleName)
-            && Objects.equals(this.dbName, createDatabaseRoleRequestBody.dbName)
-            && Objects.equals(this.roles, createDatabaseRoleRequestBody.roles);
+        CreateDatabaseRoleRequestBody that = (CreateDatabaseRoleRequestBody) obj;
+        return Objects.equals(this.roleName, that.roleName) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.roles, that.roles);
     }
 
     @Override

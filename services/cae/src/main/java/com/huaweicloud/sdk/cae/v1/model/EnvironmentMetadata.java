@@ -187,21 +187,18 @@ public class EnvironmentMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentMetadata environmentMetadata = (EnvironmentMetadata) o;
-        return Objects.equals(this.annotations, environmentMetadata.annotations)
-            && Objects.equals(this.id, environmentMetadata.id) && Objects.equals(this.name, environmentMetadata.name)
-            && Objects.equals(this.status, environmentMetadata.status)
-            && Objects.equals(this.type, environmentMetadata.type)
-            && Objects.equals(this.jobId, environmentMetadata.jobId)
-            && Objects.equals(this.createdAt, environmentMetadata.createdAt)
-            && Objects.equals(this.updatedAt, environmentMetadata.updatedAt);
+        EnvironmentMetadata that = (EnvironmentMetadata) obj;
+        return Objects.equals(this.annotations, that.annotations) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

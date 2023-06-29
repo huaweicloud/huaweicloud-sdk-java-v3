@@ -96,17 +96,16 @@ public class FreezeSubCustomersReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezeSubCustomersReq freezeSubCustomersReq = (FreezeSubCustomersReq) o;
-        return Objects.equals(this.customerIds, freezeSubCustomersReq.customerIds)
-            && Objects.equals(this.reason, freezeSubCustomersReq.reason)
-            && Objects.equals(this.indirectPartnerId, freezeSubCustomersReq.indirectPartnerId);
+        FreezeSubCustomersReq that = (FreezeSubCustomersReq) obj;
+        return Objects.equals(this.customerIds, that.customerIds) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

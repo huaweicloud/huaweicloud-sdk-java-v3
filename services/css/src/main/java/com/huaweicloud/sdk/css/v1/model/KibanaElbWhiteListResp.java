@@ -55,16 +55,16 @@ public class KibanaElbWhiteListResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KibanaElbWhiteListResp kibanaElbWhiteListResp = (KibanaElbWhiteListResp) o;
-        return Objects.equals(this.enableWhiteList, kibanaElbWhiteListResp.enableWhiteList)
-            && Objects.equals(this.whiteList, kibanaElbWhiteListResp.whiteList);
+        KibanaElbWhiteListResp that = (KibanaElbWhiteListResp) obj;
+        return Objects.equals(this.enableWhiteList, that.enableWhiteList)
+            && Objects.equals(this.whiteList, that.whiteList);
     }
 
     @Override

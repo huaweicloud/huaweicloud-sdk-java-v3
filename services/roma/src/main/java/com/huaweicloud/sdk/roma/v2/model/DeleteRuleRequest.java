@@ -55,16 +55,15 @@ public class DeleteRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRuleRequest deleteRuleRequest = (DeleteRuleRequest) o;
-        return Objects.equals(this.instanceId, deleteRuleRequest.instanceId)
-            && Objects.equals(this.ruleId, deleteRuleRequest.ruleId);
+        DeleteRuleRequest that = (DeleteRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

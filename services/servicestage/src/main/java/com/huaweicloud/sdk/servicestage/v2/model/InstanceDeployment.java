@@ -65,16 +65,15 @@ public class InstanceDeployment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceDeployment instanceDeployment = (InstanceDeployment) o;
-        return Objects.equals(this.instanceId, instanceDeployment.instanceId)
-            && Objects.equals(this.variables, instanceDeployment.variables);
+        InstanceDeployment that = (InstanceDeployment) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.variables, that.variables);
     }
 
     @Override

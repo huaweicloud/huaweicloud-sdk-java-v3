@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库信息。
  */
-public class GaussDBforOpenGaussListDatabase  {
-
+public class GaussDBforOpenGaussListDatabase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
 
     private String owner;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_set")
-    
+    @JsonProperty(value = "character_set")
 
     private String characterSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="collate_set")
-    
+    @JsonProperty(value = "collate_set")
 
     private String collateSet;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private String size;
 
@@ -51,9 +39,6 @@ public class GaussDBforOpenGaussListDatabase  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。
@@ -67,15 +52,10 @@ public class GaussDBforOpenGaussListDatabase  {
         this.name = name;
     }
 
-    
-
     public GaussDBforOpenGaussListDatabase withOwner(String owner) {
         this.owner = owner;
         return this;
     }
-
-    
-
 
     /**
      * 数据库所属用户。
@@ -89,15 +69,10 @@ public class GaussDBforOpenGaussListDatabase  {
         this.owner = owner;
     }
 
-    
-
     public GaussDBforOpenGaussListDatabase withCharacterSet(String characterSet) {
         this.characterSet = characterSet;
         return this;
     }
-
-    
-
 
     /**
      * 数据库使用的字符集，例如UTF8。
@@ -111,15 +86,10 @@ public class GaussDBforOpenGaussListDatabase  {
         this.characterSet = characterSet;
     }
 
-    
-
     public GaussDBforOpenGaussListDatabase withCollateSet(String collateSet) {
         this.collateSet = collateSet;
         return this;
     }
-
-    
-
 
     /**
      * 数据库排序集，例如en_US.UTF-8等。
@@ -133,15 +103,10 @@ public class GaussDBforOpenGaussListDatabase  {
         this.collateSet = collateSet;
     }
 
-    
-
     public GaussDBforOpenGaussListDatabase withSize(String size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 数据库大小（单位：MB）。
@@ -155,27 +120,25 @@ public class GaussDBforOpenGaussListDatabase  {
         this.size = size;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussListDatabase gaussDBforOpenGaussListDatabase = (GaussDBforOpenGaussListDatabase) o;
-        return Objects.equals(this.name, gaussDBforOpenGaussListDatabase.name) &&
-            Objects.equals(this.owner, gaussDBforOpenGaussListDatabase.owner) &&
-            Objects.equals(this.characterSet, gaussDBforOpenGaussListDatabase.characterSet) &&
-            Objects.equals(this.collateSet, gaussDBforOpenGaussListDatabase.collateSet) &&
-            Objects.equals(this.size, gaussDBforOpenGaussListDatabase.size);
+        GaussDBforOpenGaussListDatabase that = (GaussDBforOpenGaussListDatabase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.characterSet, that.characterSet) && Objects.equals(this.collateSet, that.collateSet)
+            && Objects.equals(this.size, that.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, owner, characterSet, collateSet, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class GaussDBforOpenGaussListDatabase  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class GaussDBforOpenGaussListDatabase  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -33,15 +33,15 @@ public class ConfigurationStrategy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationStrategy configurationStrategy = (ConfigurationStrategy) o;
-        return Objects.equals(this.upgrade, configurationStrategy.upgrade);
+        ConfigurationStrategy that = (ConfigurationStrategy) obj;
+        return Objects.equals(this.upgrade, that.upgrade);
     }
 
     @Override

@@ -108,22 +108,15 @@ public class ShowMetricDataRequest {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterEnum(value));
         }
 
         public static FilterEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -331,24 +324,19 @@ public class ShowMetricDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetricDataRequest showMetricDataRequest = (ShowMetricDataRequest) o;
-        return Objects.equals(this.namespace, showMetricDataRequest.namespace)
-            && Objects.equals(this.metricName, showMetricDataRequest.metricName)
-            && Objects.equals(this.dim0, showMetricDataRequest.dim0)
-            && Objects.equals(this.dim1, showMetricDataRequest.dim1)
-            && Objects.equals(this.dim2, showMetricDataRequest.dim2)
-            && Objects.equals(this.dim3, showMetricDataRequest.dim3)
-            && Objects.equals(this.filter, showMetricDataRequest.filter)
-            && Objects.equals(this.period, showMetricDataRequest.period)
-            && Objects.equals(this.from, showMetricDataRequest.from)
-            && Objects.equals(this.to, showMetricDataRequest.to);
+        ShowMetricDataRequest that = (ShowMetricDataRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dim0, that.dim0) && Objects.equals(this.dim1, that.dim1)
+            && Objects.equals(this.dim2, that.dim2) && Objects.equals(this.dim3, that.dim3)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
     }
 
     @Override

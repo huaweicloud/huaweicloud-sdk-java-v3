@@ -341,29 +341,27 @@ public class FreeResourceRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreeResourceRecord freeResourceRecord = (FreeResourceRecord) o;
-        return Objects.equals(this.deductTime, freeResourceRecord.deductTime)
-            && Objects.equals(this.freeResourceId, freeResourceRecord.freeResourceId)
-            && Objects.equals(this.resourceId, freeResourceRecord.resourceId)
-            && Objects.equals(this.resourceTypeCode, freeResourceRecord.resourceTypeCode)
-            && Objects.equals(this.resourceTypeName, freeResourceRecord.resourceTypeName)
-            && Objects.equals(this.resourceTag, freeResourceRecord.resourceTag)
-            && Objects.equals(this.productId, freeResourceRecord.productId)
-            && Objects.equals(this.productName, freeResourceRecord.productName)
-            && Objects.equals(this.usageTypeCode, freeResourceRecord.usageTypeCode)
-            && Objects.equals(this.availableAmount, freeResourceRecord.availableAmount)
-            && Objects.equals(this.remainingAmount, freeResourceRecord.remainingAmount)
-            && Objects.equals(this.usedAmount, freeResourceRecord.usedAmount)
-            && Objects.equals(this.measureId, freeResourceRecord.measureId)
-            && Objects.equals(this.effectiveTime, freeResourceRecord.effectiveTime)
-            && Objects.equals(this.expireTime, freeResourceRecord.expireTime);
+        FreeResourceRecord that = (FreeResourceRecord) obj;
+        return Objects.equals(this.deductTime, that.deductTime)
+            && Objects.equals(this.freeResourceId, that.freeResourceId)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.resourceTag, that.resourceTag) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.usageTypeCode, that.usageTypeCode)
+            && Objects.equals(this.availableAmount, that.availableAmount)
+            && Objects.equals(this.remainingAmount, that.remainingAmount)
+            && Objects.equals(this.usedAmount, that.usedAmount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

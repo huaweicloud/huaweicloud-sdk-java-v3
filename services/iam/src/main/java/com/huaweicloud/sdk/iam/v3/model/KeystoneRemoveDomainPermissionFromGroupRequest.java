@@ -77,18 +77,16 @@ public class KeystoneRemoveDomainPermissionFromGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneRemoveDomainPermissionFromGroupRequest keystoneRemoveDomainPermissionFromGroupRequest =
-            (KeystoneRemoveDomainPermissionFromGroupRequest) o;
-        return Objects.equals(this.domainId, keystoneRemoveDomainPermissionFromGroupRequest.domainId)
-            && Objects.equals(this.groupId, keystoneRemoveDomainPermissionFromGroupRequest.groupId)
-            && Objects.equals(this.roleId, keystoneRemoveDomainPermissionFromGroupRequest.roleId);
+        KeystoneRemoveDomainPermissionFromGroupRequest that = (KeystoneRemoveDomainPermissionFromGroupRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

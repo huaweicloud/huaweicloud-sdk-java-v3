@@ -65,16 +65,16 @@ public class AddProtectedInstanceTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProtectedInstanceTagsRequest addProtectedInstanceTagsRequest = (AddProtectedInstanceTagsRequest) o;
-        return Objects.equals(this.protectedInstanceId, addProtectedInstanceTagsRequest.protectedInstanceId)
-            && Objects.equals(this.body, addProtectedInstanceTagsRequest.body);
+        AddProtectedInstanceTagsRequest that = (AddProtectedInstanceTagsRequest) obj;
+        return Objects.equals(this.protectedInstanceId, that.protectedInstanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

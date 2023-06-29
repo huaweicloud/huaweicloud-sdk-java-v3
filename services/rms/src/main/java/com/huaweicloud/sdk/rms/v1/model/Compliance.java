@@ -65,16 +65,16 @@ public class Compliance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Compliance compliance = (Compliance) o;
-        return Objects.equals(this.complianceState, compliance.complianceState)
-            && Objects.equals(this.resourceDetails, compliance.resourceDetails);
+        Compliance that = (Compliance) obj;
+        return Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.resourceDetails, that.resourceDetails);
     }
 
     @Override

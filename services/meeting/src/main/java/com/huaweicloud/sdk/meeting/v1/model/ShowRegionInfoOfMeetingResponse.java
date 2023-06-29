@@ -56,16 +56,15 @@ public class ShowRegionInfoOfMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRegionInfoOfMeetingResponse showRegionInfoOfMeetingResponse = (ShowRegionInfoOfMeetingResponse) o;
-        return Objects.equals(this.regionIP, showRegionInfoOfMeetingResponse.regionIP)
-            && Objects.equals(this.regionUrl, showRegionInfoOfMeetingResponse.regionUrl);
+        ShowRegionInfoOfMeetingResponse that = (ShowRegionInfoOfMeetingResponse) obj;
+        return Objects.equals(this.regionIP, that.regionIP) && Objects.equals(this.regionUrl, that.regionUrl);
     }
 
     @Override

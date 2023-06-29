@@ -369,28 +369,25 @@ public class CertificateDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificateDetail certificateDetail = (CertificateDetail) o;
-        return Objects.equals(this.id, certificateDetail.id) && Objects.equals(this.name, certificateDetail.name)
-            && Objects.equals(this.domain, certificateDetail.domain)
-            && Objects.equals(this.sans, certificateDetail.sans)
-            && Objects.equals(this.signatureAlgorithm, certificateDetail.signatureAlgorithm)
-            && Objects.equals(this.deploySupport, certificateDetail.deploySupport)
-            && Objects.equals(this.type, certificateDetail.type) && Objects.equals(this.brand, certificateDetail.brand)
-            && Objects.equals(this.expireTime, certificateDetail.expireTime)
-            && Objects.equals(this.domainType, certificateDetail.domainType)
-            && Objects.equals(this.validityPeriod, certificateDetail.validityPeriod)
-            && Objects.equals(this.status, certificateDetail.status)
-            && Objects.equals(this.domainCount, certificateDetail.domainCount)
-            && Objects.equals(this.wildcardCount, certificateDetail.wildcardCount)
-            && Objects.equals(this.description, certificateDetail.description)
-            && Objects.equals(this.enterpriseProjectId, certificateDetail.enterpriseProjectId);
+        CertificateDetail that = (CertificateDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.sans, that.sans)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.deploySupport, that.deploySupport) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.brand, that.brand) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.validityPeriod, that.validityPeriod) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.domainCount, that.domainCount)
+            && Objects.equals(this.wildcardCount, that.wildcardCount)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

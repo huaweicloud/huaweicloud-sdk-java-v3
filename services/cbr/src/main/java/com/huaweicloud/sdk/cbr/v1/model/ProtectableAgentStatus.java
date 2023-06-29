@@ -143,20 +143,17 @@ public class ProtectableAgentStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectableAgentStatus protectableAgentStatus = (ProtectableAgentStatus) o;
-        return Objects.equals(this.code, protectableAgentStatus.code)
-            && Objects.equals(this.installed, protectableAgentStatus.installed)
-            && Objects.equals(this.isOld, protectableAgentStatus.isOld)
-            && Objects.equals(this.message, protectableAgentStatus.message)
-            && Objects.equals(this.resourceId, protectableAgentStatus.resourceId)
-            && Objects.equals(this.version, protectableAgentStatus.version);
+        ProtectableAgentStatus that = (ProtectableAgentStatus) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.installed, that.installed)
+            && Objects.equals(this.isOld, that.isOld) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.version, that.version);
     }
 
     @Override

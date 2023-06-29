@@ -153,20 +153,17 @@ public class CheckNeedVerifyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckNeedVerifyRequest checkNeedVerifyRequest = (CheckNeedVerifyRequest) o;
-        return Objects.equals(this.contactValue, checkNeedVerifyRequest.contactValue)
-            && Objects.equals(this.contactWay, checkNeedVerifyRequest.contactWay)
-            && Objects.equals(this.areaCode, checkNeedVerifyRequest.areaCode)
-            && Objects.equals(this.xSite, checkNeedVerifyRequest.xSite)
-            && Objects.equals(this.xLanguage, checkNeedVerifyRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, checkNeedVerifyRequest.xTimeZone);
+        CheckNeedVerifyRequest that = (CheckNeedVerifyRequest) obj;
+        return Objects.equals(this.contactValue, that.contactValue) && Objects.equals(this.contactWay, that.contactWay)
+            && Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class StopProtectionGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopProtectionGroupRequest stopProtectionGroupRequest = (StopProtectionGroupRequest) o;
-        return Objects.equals(this.serverGroupId, stopProtectionGroupRequest.serverGroupId)
-            && Objects.equals(this.body, stopProtectionGroupRequest.body);
+        StopProtectionGroupRequest that = (StopProtectionGroupRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

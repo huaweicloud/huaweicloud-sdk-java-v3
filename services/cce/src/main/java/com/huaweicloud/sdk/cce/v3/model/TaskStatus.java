@@ -33,15 +33,15 @@ public class TaskStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskStatus taskStatus = (TaskStatus) o;
-        return Objects.equals(this.jobID, taskStatus.jobID);
+        TaskStatus that = (TaskStatus) obj;
+        return Objects.equals(this.jobID, that.jobID);
     }
 
     @Override

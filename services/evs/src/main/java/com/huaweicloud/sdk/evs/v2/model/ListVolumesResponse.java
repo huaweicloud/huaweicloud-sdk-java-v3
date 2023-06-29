@@ -113,17 +113,16 @@ public class ListVolumesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVolumesResponse listVolumesResponse = (ListVolumesResponse) o;
-        return Objects.equals(this.count, listVolumesResponse.count)
-            && Objects.equals(this.volumesLinks, listVolumesResponse.volumesLinks)
-            && Objects.equals(this.volumes, listVolumesResponse.volumes);
+        ListVolumesResponse that = (ListVolumesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.volumesLinks, that.volumesLinks)
+            && Objects.equals(this.volumes, that.volumes);
     }
 
     @Override

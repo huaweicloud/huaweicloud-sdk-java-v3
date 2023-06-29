@@ -144,20 +144,18 @@ public class ShowCompletionRateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCompletionRateResponse showCompletionRateResponse = (ShowCompletionRateResponse) o;
-        return Objects.equals(this.dividendValue, showCompletionRateResponse.dividendValue)
-            && Objects.equals(this.divisorValue, showCompletionRateResponse.divisorValue)
-            && Objects.equals(this.metricName, showCompletionRateResponse.metricName)
-            && Objects.equals(this.metricValue, showCompletionRateResponse.metricValue)
-            && Objects.equals(this.projectId, showCompletionRateResponse.projectId)
-            && Objects.equals(this.projectName, showCompletionRateResponse.projectName);
+        ShowCompletionRateResponse that = (ShowCompletionRateResponse) obj;
+        return Objects.equals(this.dividendValue, that.dividendValue)
+            && Objects.equals(this.divisorValue, that.divisorValue) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.metricValue, that.metricValue) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

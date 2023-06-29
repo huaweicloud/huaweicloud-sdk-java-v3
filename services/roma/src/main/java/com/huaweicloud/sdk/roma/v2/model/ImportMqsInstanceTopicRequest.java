@@ -66,22 +66,15 @@ public class ImportMqsInstanceTopicRequest {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,18 +184,16 @@ public class ImportMqsInstanceTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportMqsInstanceTopicRequest importMqsInstanceTopicRequest = (ImportMqsInstanceTopicRequest) o;
-        return Objects.equals(this.instanceId, importMqsInstanceTopicRequest.instanceId)
-            && Objects.equals(this.mode, importMqsInstanceTopicRequest.mode)
-            && Objects.equals(this.prefix, importMqsInstanceTopicRequest.prefix)
-            && Objects.equals(this.body, importMqsInstanceTopicRequest.body);
+        ImportMqsInstanceTopicRequest that = (ImportMqsInstanceTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.body, that.body);
     }
 
     @Override

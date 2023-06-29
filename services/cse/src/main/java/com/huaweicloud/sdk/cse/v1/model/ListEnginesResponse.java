@@ -75,16 +75,15 @@ public class ListEnginesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnginesResponse listEnginesResponse = (ListEnginesResponse) o;
-        return Objects.equals(this.total, listEnginesResponse.total)
-            && Objects.equals(this.data, listEnginesResponse.data);
+        ListEnginesResponse that = (ListEnginesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override

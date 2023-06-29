@@ -199,23 +199,18 @@ public class ListDomainNotAddedProjectsV4ResponseBodyProjects {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainNotAddedProjectsV4ResponseBodyProjects listDomainNotAddedProjectsV4ResponseBodyProjects =
-            (ListDomainNotAddedProjectsV4ResponseBodyProjects) o;
-        return Objects.equals(this.projectNumId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectNumId)
-            && Objects.equals(this.projectId, listDomainNotAddedProjectsV4ResponseBodyProjects.projectId)
-            && Objects.equals(this.projectName, listDomainNotAddedProjectsV4ResponseBodyProjects.projectName)
-            && Objects.equals(this.description, listDomainNotAddedProjectsV4ResponseBodyProjects.description)
-            && Objects.equals(this.createdTime, listDomainNotAddedProjectsV4ResponseBodyProjects.createdTime)
-            && Objects.equals(this.updatedTime, listDomainNotAddedProjectsV4ResponseBodyProjects.updatedTime)
-            && Objects.equals(this.projectType, listDomainNotAddedProjectsV4ResponseBodyProjects.projectType)
-            && Objects.equals(this.creator, listDomainNotAddedProjectsV4ResponseBodyProjects.creator);
+        ListDomainNotAddedProjectsV4ResponseBodyProjects that = (ListDomainNotAddedProjectsV4ResponseBodyProjects) obj;
+        return Objects.equals(this.projectNumId, that.projectNumId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.projectType, that.projectType) && Objects.equals(this.creator, that.creator);
     }
 
     @Override

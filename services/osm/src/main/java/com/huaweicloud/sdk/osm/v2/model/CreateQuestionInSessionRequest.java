@@ -137,19 +137,17 @@ public class CreateQuestionInSessionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQuestionInSessionRequest createQuestionInSessionRequest = (CreateQuestionInSessionRequest) o;
-        return Objects.equals(this.xServiceKey, createQuestionInSessionRequest.xServiceKey)
-            && Objects.equals(this.xSite, createQuestionInSessionRequest.xSite)
-            && Objects.equals(this.xLanguage, createQuestionInSessionRequest.xLanguage)
-            && Objects.equals(this.sessionId, createQuestionInSessionRequest.sessionId)
-            && Objects.equals(this.body, createQuestionInSessionRequest.body);
+        CreateQuestionInSessionRequest that = (CreateQuestionInSessionRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

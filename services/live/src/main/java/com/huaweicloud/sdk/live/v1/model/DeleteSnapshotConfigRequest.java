@@ -55,16 +55,15 @@ public class DeleteSnapshotConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSnapshotConfigRequest deleteSnapshotConfigRequest = (DeleteSnapshotConfigRequest) o;
-        return Objects.equals(this.domain, deleteSnapshotConfigRequest.domain)
-            && Objects.equals(this.appName, deleteSnapshotConfigRequest.appName);
+        DeleteSnapshotConfigRequest that = (DeleteSnapshotConfigRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class Connection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Connection connection = (Connection) o;
-        return Objects.equals(this.guid, connection.guid) && Objects.equals(this.displayText, connection.displayText)
-            && Objects.equals(this.typeName, connection.typeName)
-            && Objects.equals(this.connectionType, connection.connectionType)
-            && Objects.equals(this.qualifiedName, connection.qualifiedName);
+        Connection that = (Connection) obj;
+        return Objects.equals(this.guid, that.guid) && Objects.equals(this.displayText, that.displayText)
+            && Objects.equals(this.typeName, that.typeName) && Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.qualifiedName, that.qualifiedName);
     }
 
     @Override

@@ -149,18 +149,17 @@ public class AddonInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddonInstance addonInstance = (AddonInstance) o;
-        return Objects.equals(this.kind, addonInstance.kind)
-            && Objects.equals(this.apiVersion, addonInstance.apiVersion)
-            && Objects.equals(this.metadata, addonInstance.metadata) && Objects.equals(this.spec, addonInstance.spec)
-            && Objects.equals(this.status, addonInstance.status);
+        AddonInstance that = (AddonInstance) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

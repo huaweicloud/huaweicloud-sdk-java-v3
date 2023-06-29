@@ -65,16 +65,15 @@ public class ListResourceInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceInstancesRequest listResourceInstancesRequest = (ListResourceInstancesRequest) o;
-        return Objects.equals(this.resourceType, listResourceInstancesRequest.resourceType)
-            && Objects.equals(this.body, listResourceInstancesRequest.body);
+        ListResourceInstancesRequest that = (ListResourceInstancesRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.body, that.body);
     }
 
     @Override

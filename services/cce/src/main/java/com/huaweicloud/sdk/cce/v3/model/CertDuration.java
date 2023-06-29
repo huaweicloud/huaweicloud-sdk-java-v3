@@ -35,15 +35,15 @@ public class CertDuration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertDuration certDuration = (CertDuration) o;
-        return Objects.equals(this.duration, certDuration.duration);
+        CertDuration that = (CertDuration) obj;
+        return Objects.equals(this.duration, that.duration);
     }
 
     @Override

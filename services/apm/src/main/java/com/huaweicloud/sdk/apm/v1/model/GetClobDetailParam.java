@@ -55,16 +55,15 @@ public class GetClobDetailParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetClobDetailParam getClobDetailParam = (GetClobDetailParam) o;
-        return Objects.equals(this.envId, getClobDetailParam.envId)
-            && Objects.equals(this.clobId, getClobDetailParam.clobId);
+        GetClobDetailParam that = (GetClobDetailParam) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.clobId, that.clobId);
     }
 
     @Override

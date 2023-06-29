@@ -228,23 +228,20 @@ public class OtaPackageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OtaPackageInfo otaPackageInfo = (OtaPackageInfo) o;
-        return Objects.equals(this.packageId, otaPackageInfo.packageId)
-            && Objects.equals(this.appId, otaPackageInfo.appId)
-            && Objects.equals(this.packageType, otaPackageInfo.packageType)
-            && Objects.equals(this.productId, otaPackageInfo.productId)
-            && Objects.equals(this.version, otaPackageInfo.version)
-            && Objects.equals(this.supportSourceVersions, otaPackageInfo.supportSourceVersions)
-            && Objects.equals(this.description, otaPackageInfo.description)
-            && Objects.equals(this.customInfo, otaPackageInfo.customInfo)
-            && Objects.equals(this.createTime, otaPackageInfo.createTime);
+        OtaPackageInfo that = (OtaPackageInfo) obj;
+        return Objects.equals(this.packageId, that.packageId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

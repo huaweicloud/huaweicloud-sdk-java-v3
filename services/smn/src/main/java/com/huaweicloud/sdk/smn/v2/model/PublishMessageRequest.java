@@ -65,16 +65,15 @@ public class PublishMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishMessageRequest publishMessageRequest = (PublishMessageRequest) o;
-        return Objects.equals(this.topicUrn, publishMessageRequest.topicUrn)
-            && Objects.equals(this.body, publishMessageRequest.body);
+        PublishMessageRequest that = (PublishMessageRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

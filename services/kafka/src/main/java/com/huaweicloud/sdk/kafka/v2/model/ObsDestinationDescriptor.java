@@ -70,22 +70,15 @@ public class ObsDestinationDescriptor {
             if (value == null) {
                 return null;
             }
-            ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsumerStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsumerStrategyEnum(value));
         }
 
         public static ConsumerStrategyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsumerStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -146,22 +139,15 @@ public class ObsDestinationDescriptor {
             if (value == null) {
                 return null;
             }
-            DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationFileTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationFileTypeEnum(value));
         }
 
         public static DestinationFileTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DestinationFileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -406,25 +392,22 @@ public class ObsDestinationDescriptor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsDestinationDescriptor obsDestinationDescriptor = (ObsDestinationDescriptor) o;
-        return Objects.equals(this.topics, obsDestinationDescriptor.topics)
-            && Objects.equals(this.topicsRegex, obsDestinationDescriptor.topicsRegex)
-            && Objects.equals(this.consumerStrategy, obsDestinationDescriptor.consumerStrategy)
-            && Objects.equals(this.destinationFileType, obsDestinationDescriptor.destinationFileType)
-            && Objects.equals(this.accessKey, obsDestinationDescriptor.accessKey)
-            && Objects.equals(this.secretKey, obsDestinationDescriptor.secretKey)
-            && Objects.equals(this.obsBucketName, obsDestinationDescriptor.obsBucketName)
-            && Objects.equals(this.obsPath, obsDestinationDescriptor.obsPath)
-            && Objects.equals(this.partitionFormat, obsDestinationDescriptor.partitionFormat)
-            && Objects.equals(this.recordDelimiter, obsDestinationDescriptor.recordDelimiter)
-            && Objects.equals(this.deliverTimeInterval, obsDestinationDescriptor.deliverTimeInterval);
+        ObsDestinationDescriptor that = (ObsDestinationDescriptor) obj;
+        return Objects.equals(this.topics, that.topics) && Objects.equals(this.topicsRegex, that.topicsRegex)
+            && Objects.equals(this.consumerStrategy, that.consumerStrategy)
+            && Objects.equals(this.destinationFileType, that.destinationFileType)
+            && Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.obsPath, that.obsPath)
+            && Objects.equals(this.partitionFormat, that.partitionFormat)
+            && Objects.equals(this.recordDelimiter, that.recordDelimiter)
+            && Objects.equals(this.deliverTimeInterval, that.deliverTimeInterval);
     }
 
     @Override

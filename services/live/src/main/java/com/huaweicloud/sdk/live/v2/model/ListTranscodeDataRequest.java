@@ -99,18 +99,16 @@ public class ListTranscodeDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodeDataRequest listTranscodeDataRequest = (ListTranscodeDataRequest) o;
-        return Objects.equals(this.publishDomain, listTranscodeDataRequest.publishDomain)
-            && Objects.equals(this.stream, listTranscodeDataRequest.stream)
-            && Objects.equals(this.startTime, listTranscodeDataRequest.startTime)
-            && Objects.equals(this.endTime, listTranscodeDataRequest.endTime);
+        ListTranscodeDataRequest that = (ListTranscodeDataRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.stream, that.stream)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

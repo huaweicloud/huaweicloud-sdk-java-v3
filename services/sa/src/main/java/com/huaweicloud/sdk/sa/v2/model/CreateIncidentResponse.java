@@ -112,18 +112,16 @@ public class CreateIncidentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIncidentResponse createIncidentResponse = (CreateIncidentResponse) o;
-        return Objects.equals(this.code, createIncidentResponse.code)
-            && Objects.equals(this.message, createIncidentResponse.message)
-            && Objects.equals(this.data, createIncidentResponse.data)
-            && Objects.equals(this.xRequestId, createIncidentResponse.xRequestId);
+        CreateIncidentResponse that = (CreateIncidentResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

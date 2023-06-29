@@ -55,16 +55,15 @@ public class WebImageImageSize {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebImageImageSize webImageImageSize = (WebImageImageSize) o;
-        return Objects.equals(this.height, webImageImageSize.height)
-            && Objects.equals(this.width, webImageImageSize.width);
+        WebImageImageSize that = (WebImageImageSize) obj;
+        return Objects.equals(this.height, that.height) && Objects.equals(this.width, that.width);
     }
 
     @Override

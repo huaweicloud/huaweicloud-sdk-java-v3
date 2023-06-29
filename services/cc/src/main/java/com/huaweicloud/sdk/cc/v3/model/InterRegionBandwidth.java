@@ -253,23 +253,20 @@ public class InterRegionBandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterRegionBandwidth interRegionBandwidth = (InterRegionBandwidth) o;
-        return Objects.equals(this.id, interRegionBandwidth.id) && Objects.equals(this.name, interRegionBandwidth.name)
-            && Objects.equals(this.description, interRegionBandwidth.description)
-            && Objects.equals(this.domainId, interRegionBandwidth.domainId)
-            && Objects.equals(this.bandwidthPackageId, interRegionBandwidth.bandwidthPackageId)
-            && Objects.equals(this.createdAt, interRegionBandwidth.createdAt)
-            && Objects.equals(this.updatedAt, interRegionBandwidth.updatedAt)
-            && Objects.equals(this.cloudConnectionId, interRegionBandwidth.cloudConnectionId)
-            && Objects.equals(this.interRegions, interRegionBandwidth.interRegions)
-            && Objects.equals(this.bandwidth, interRegionBandwidth.bandwidth);
+        InterRegionBandwidth that = (InterRegionBandwidth) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.bandwidthPackageId, that.bandwidthPackageId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.interRegions, that.interRegions) && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

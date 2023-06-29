@@ -165,18 +165,18 @@ public class GeOIpItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeOIpItem geOIpItem = (GeOIpItem) o;
-        return Objects.equals(this.id, geOIpItem.id) && Objects.equals(this.policyid, geOIpItem.policyid)
-            && Objects.equals(this.name, geOIpItem.name) && Objects.equals(this.geoip, geOIpItem.geoip)
-            && Objects.equals(this.white, geOIpItem.white) && Objects.equals(this.status, geOIpItem.status)
-            && Objects.equals(this.timestamp, geOIpItem.timestamp);
+        GeOIpItem that = (GeOIpItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.geoip, that.geoip)
+            && Objects.equals(this.white, that.white) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

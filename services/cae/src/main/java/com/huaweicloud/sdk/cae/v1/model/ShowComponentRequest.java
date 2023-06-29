@@ -103,18 +103,18 @@ public class ShowComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentRequest showComponentRequest = (ShowComponentRequest) o;
-        return Objects.equals(this.componentId, showComponentRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, showComponentRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, showComponentRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, showComponentRequest.applicationId);
+        ShowComponentRequest that = (ShowComponentRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

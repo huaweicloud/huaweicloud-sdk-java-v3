@@ -65,17 +65,15 @@ public class UploadSpecialConfigurationSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadSpecialConfigurationSettingRequest uploadSpecialConfigurationSettingRequest =
-            (UploadSpecialConfigurationSettingRequest) o;
-        return Objects.equals(this.taskId, uploadSpecialConfigurationSettingRequest.taskId)
-            && Objects.equals(this.body, uploadSpecialConfigurationSettingRequest.body);
+        UploadSpecialConfigurationSettingRequest that = (UploadSpecialConfigurationSettingRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.body, that.body);
     }
 
     @Override

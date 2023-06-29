@@ -237,23 +237,20 @@ public class QueryMessageInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryMessageInfoV2 queryMessageInfoV2 = (QueryMessageInfoV2) o;
-        return Objects.equals(this.type, queryMessageInfoV2.type)
-            && Objects.equals(this.replierType, queryMessageInfoV2.replierType)
-            && Objects.equals(this.replier, queryMessageInfoV2.replier)
-            && Objects.equals(this.content, queryMessageInfoV2.content)
-            && Objects.equals(this.createTime, queryMessageInfoV2.createTime)
-            && Objects.equals(this.replierName, queryMessageInfoV2.replierName)
-            && Objects.equals(this.isFirstMessage, queryMessageInfoV2.isFirstMessage)
-            && Objects.equals(this.iamUserType, queryMessageInfoV2.iamUserType)
-            && Objects.equals(this.accessoryList, queryMessageInfoV2.accessoryList);
+        QueryMessageInfoV2 that = (QueryMessageInfoV2) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.replierType, that.replierType)
+            && Objects.equals(this.replier, that.replier) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.replierName, that.replierName)
+            && Objects.equals(this.isFirstMessage, that.isFirstMessage)
+            && Objects.equals(this.iamUserType, that.iamUserType)
+            && Objects.equals(this.accessoryList, that.accessoryList);
     }
 
     @Override

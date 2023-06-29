@@ -99,17 +99,16 @@ public class ReferResourceCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReferResourceCreate referResourceCreate = (ReferResourceCreate) o;
-        return Objects.equals(this.id, referResourceCreate.id) && Objects.equals(this.type, referResourceCreate.type)
-            && Objects.equals(this.referAlias, referResourceCreate.referAlias)
-            && Objects.equals(this.parameters, referResourceCreate.parameters);
+        ReferResourceCreate that = (ReferResourceCreate) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.referAlias, that.referAlias) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class NextflowJobReportFile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowJobReportFile nextflowJobReportFile = (NextflowJobReportFile) o;
-        return Objects.equals(this.name, nextflowJobReportFile.name)
-            && Objects.equals(this.downloadUrl, nextflowJobReportFile.downloadUrl);
+        NextflowJobReportFile that = (NextflowJobReportFile) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

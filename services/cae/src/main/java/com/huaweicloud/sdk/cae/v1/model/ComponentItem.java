@@ -149,18 +149,17 @@ public class ComponentItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentItem componentItem = (ComponentItem) o;
-        return Objects.equals(this.id, componentItem.id) && Objects.equals(this.name, componentItem.name)
-            && Objects.equals(this.status, componentItem.status)
-            && Objects.equals(this.annotations, componentItem.annotations)
-            && Objects.equals(this.spec, componentItem.spec);
+        ComponentItem that = (ComponentItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.spec, that.spec);
     }
 
     @Override

@@ -310,22 +310,20 @@ public class GetAssetRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetAssetRsp getAssetRsp = (GetAssetRsp) o;
-        return Objects.equals(this.id, getAssetRsp.id) && Objects.equals(this.category, getAssetRsp.category)
-            && Objects.equals(this.name, getAssetRsp.name) && Objects.equals(this.title, getAssetRsp.title)
-            && Objects.equals(this.labels, getAssetRsp.labels) && Objects.equals(this.picture, getAssetRsp.picture)
-            && Objects.equals(this.vendorId, getAssetRsp.vendorId)
-            && Objects.equals(this.versions, getAssetRsp.versions)
-            && Objects.equals(this.createTime, getAssetRsp.createTime)
-            && Objects.equals(this.updateTime, getAssetRsp.updateTime) && Objects.equals(this.stars, getAssetRsp.stars)
-            && Objects.equals(this.subscribes, getAssetRsp.subscribes);
+        GetAssetRsp that = (GetAssetRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.picture, that.picture)
+            && Objects.equals(this.vendorId, that.vendorId) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.stars, that.stars) && Objects.equals(this.subscribes, that.subscribes);
     }
 
     @Override

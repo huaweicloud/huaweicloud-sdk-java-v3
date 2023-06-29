@@ -111,16 +111,16 @@ public class LigandPreviewDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LigandPreviewDto ligandPreviewDto = (LigandPreviewDto) o;
-        return Objects.equals(this.index, ligandPreviewDto.index) && Objects.equals(this.file, ligandPreviewDto.file)
-            && Objects.equals(this.name, ligandPreviewDto.name) && Objects.equals(this.smiles, ligandPreviewDto.smiles);
+        LigandPreviewDto that = (LigandPreviewDto) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.file, that.file)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.smiles, that.smiles);
     }
 
     @Override

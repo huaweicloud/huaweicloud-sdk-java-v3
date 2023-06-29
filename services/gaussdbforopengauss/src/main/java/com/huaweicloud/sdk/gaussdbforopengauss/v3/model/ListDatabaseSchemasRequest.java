@@ -1,50 +1,37 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListDatabaseSchemasRequest  {
-
+public class ListDatabaseSchemasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_name")
-    
+    @JsonProperty(value = "db_name")
 
     private String dbName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -53,15 +40,12 @@ public class ListDatabaseSchemasRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -70,15 +54,10 @@ public class ListDatabaseSchemasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListDatabaseSchemasRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -92,15 +71,10 @@ public class ListDatabaseSchemasRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListDatabaseSchemasRequest withDbName(String dbName) {
         this.dbName = dbName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称。
@@ -114,15 +88,10 @@ public class ListDatabaseSchemasRequest  {
         this.dbName = dbName;
     }
 
-    
-
     public ListDatabaseSchemasRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量表示从此偏移量开始查询, offset大于等于0。
@@ -136,15 +105,10 @@ public class ListDatabaseSchemasRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDatabaseSchemasRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页显示的条目数量,取值范围[1, 100]。
@@ -158,27 +122,25 @@ public class ListDatabaseSchemasRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabaseSchemasRequest listDatabaseSchemasRequest = (ListDatabaseSchemasRequest) o;
-        return Objects.equals(this.xLanguage, listDatabaseSchemasRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listDatabaseSchemasRequest.instanceId) &&
-            Objects.equals(this.dbName, listDatabaseSchemasRequest.dbName) &&
-            Objects.equals(this.offset, listDatabaseSchemasRequest.offset) &&
-            Objects.equals(this.limit, listDatabaseSchemasRequest.limit);
+        ListDatabaseSchemasRequest that = (ListDatabaseSchemasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, dbName, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,6 +153,7 @@ public class ListDatabaseSchemasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -201,8 +164,5 @@ public class ListDatabaseSchemasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

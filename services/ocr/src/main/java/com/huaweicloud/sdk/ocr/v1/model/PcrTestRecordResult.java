@@ -193,21 +193,19 @@ public class PcrTestRecordResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PcrTestRecordResult pcrTestRecordResult = (PcrTestRecordResult) o;
-        return Objects.equals(this.name, pcrTestRecordResult.name)
-            && Objects.equals(this.samplingTime, pcrTestRecordResult.samplingTime)
-            && Objects.equals(this.testTime, pcrTestRecordResult.testTime)
-            && Objects.equals(this.testResult, pcrTestRecordResult.testResult)
-            && Objects.equals(this.confidence, pcrTestRecordResult.confidence)
-            && Objects.equals(this.wordsBlockCount, pcrTestRecordResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, pcrTestRecordResult.wordsBlockList);
+        PcrTestRecordResult that = (PcrTestRecordResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.samplingTime, that.samplingTime)
+            && Objects.equals(this.testTime, that.testTime) && Objects.equals(this.testResult, that.testResult)
+            && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

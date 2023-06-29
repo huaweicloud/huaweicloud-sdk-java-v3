@@ -44,16 +44,15 @@ public class ShowImageWatermarkWithImageByAddressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageWatermarkWithImageByAddressRequest showImageWatermarkWithImageByAddressRequest =
-            (ShowImageWatermarkWithImageByAddressRequest) o;
-        return Objects.equals(this.body, showImageWatermarkWithImageByAddressRequest.body);
+        ShowImageWatermarkWithImageByAddressRequest that = (ShowImageWatermarkWithImageByAddressRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

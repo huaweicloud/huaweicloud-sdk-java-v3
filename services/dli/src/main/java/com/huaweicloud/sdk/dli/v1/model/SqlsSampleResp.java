@@ -121,18 +121,17 @@ public class SqlsSampleResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlsSampleResp sqlsSampleResp = (SqlsSampleResp) o;
-        return Objects.equals(this.lang, sqlsSampleResp.lang) && Objects.equals(this.name, sqlsSampleResp.name)
-            && Objects.equals(this.sql, sqlsSampleResp.sql)
-            && Objects.equals(this.description, sqlsSampleResp.description)
-            && Objects.equals(this.group, sqlsSampleResp.group);
+        SqlsSampleResp that = (SqlsSampleResp) obj;
+        return Objects.equals(this.lang, that.lang) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.group, that.group);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class ListRepositoryStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRepositoryStatusResponse listRepositoryStatusResponse = (ListRepositoryStatusResponse) o;
-        return Objects.equals(this.error, listRepositoryStatusResponse.error)
-            && Objects.equals(this.result, listRepositoryStatusResponse.result)
-            && Objects.equals(this.status, listRepositoryStatusResponse.status);
+        ListRepositoryStatusResponse that = (ListRepositoryStatusResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -52,22 +52,15 @@ public class ActionType {
         if (value == null) {
             return null;
         }
-        ActionType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new ActionType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionType(value));
     }
 
     public static ActionType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        ActionType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

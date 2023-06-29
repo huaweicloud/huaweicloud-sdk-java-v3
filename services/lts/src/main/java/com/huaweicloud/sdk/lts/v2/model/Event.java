@@ -65,15 +65,15 @@ public class Event {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event event = (Event) o;
-        return Objects.equals(this.metadata, event.metadata) && Objects.equals(this.startsAt, event.startsAt);
+        Event that = (Event) obj;
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.startsAt, that.startsAt);
     }
 
     @Override

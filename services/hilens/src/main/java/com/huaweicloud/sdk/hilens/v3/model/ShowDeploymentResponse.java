@@ -430,31 +430,23 @@ public class ShowDeploymentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentResponse showDeploymentResponse = (ShowDeploymentResponse) o;
-        return Objects.equals(this.template, showDeploymentResponse.template)
-            && Objects.equals(this.reason, showDeploymentResponse.reason)
-            && Objects.equals(this.readyReplicas, showDeploymentResponse.readyReplicas)
-            && Objects.equals(this.replicas, showDeploymentResponse.replicas)
-            && Objects.equals(this.description, showDeploymentResponse.description)
-            && Objects.equals(this.createdAt, showDeploymentResponse.createdAt)
-            && Objects.equals(this.source, showDeploymentResponse.source)
-            && Objects.equals(this.apiVersion, showDeploymentResponse.apiVersion)
-            && Objects.equals(this.nodeIds, showDeploymentResponse.nodeIds)
-            && Objects.equals(this.clusterId, showDeploymentResponse.clusterId)
-            && Objects.equals(this.updatedAt, showDeploymentResponse.updatedAt)
-            && Objects.equals(this.projectId, showDeploymentResponse.projectId)
-            && Objects.equals(this.name, showDeploymentResponse.name)
-            && Objects.equals(this.id, showDeploymentResponse.id)
-            && Objects.equals(this.state, showDeploymentResponse.state)
-            && Objects.equals(this.nodeNum, showDeploymentResponse.nodeNum)
-            && Objects.equals(this.result, showDeploymentResponse.result);
+        ShowDeploymentResponse that = (ShowDeploymentResponse) obj;
+        return Objects.equals(this.template, that.template) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.readyReplicas, that.readyReplicas) && Objects.equals(this.replicas, that.replicas)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

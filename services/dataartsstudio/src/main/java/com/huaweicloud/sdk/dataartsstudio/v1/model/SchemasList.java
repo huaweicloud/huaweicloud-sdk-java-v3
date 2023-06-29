@@ -55,16 +55,15 @@ public class SchemasList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchemasList schemasList = (SchemasList) o;
-        return Objects.equals(this.schemaName, schemasList.schemaName)
-            && Objects.equals(this.description, schemasList.description);
+        SchemasList that = (SchemasList) obj;
+        return Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.description, that.description);
     }
 
     @Override

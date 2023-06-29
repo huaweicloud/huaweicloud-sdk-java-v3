@@ -84,16 +84,15 @@ public class ListTagValuesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagValuesResponse listTagValuesResponse = (ListTagValuesResponse) o;
-        return Objects.equals(this.values, listTagValuesResponse.values)
-            && Objects.equals(this.pageInfo, listTagValuesResponse.pageInfo);
+        ListTagValuesResponse that = (ListTagValuesResponse) obj;
+        return Objects.equals(this.values, that.values) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

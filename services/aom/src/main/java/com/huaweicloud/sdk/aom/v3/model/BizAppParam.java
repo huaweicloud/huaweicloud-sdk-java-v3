@@ -1,65 +1,55 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * BizAppParam
  */
-public class BizAppParam  {
-
+public class BizAppParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="display_name")
-    
+    @JsonProperty(value = "display_name")
 
     private String displayName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eps_id")
-    
+    @JsonProperty(value = "eps_id")
 
     private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
+
     /**
      * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
      */
     public static final class RegisterTypeEnum {
 
-        
         /**
          * Enum API for value: "API"
          */
         public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
-        
+
         /**
          * Enum CONSOLESERVICE_DISCOVERY for value: "CONSOLESERVICE_DISCOVERY"
          */
-        public static final RegisterTypeEnum CONSOLESERVICE_DISCOVERY = new RegisterTypeEnum("CONSOLESERVICE_DISCOVERY");
-        
+        public static final RegisterTypeEnum CONSOLESERVICE_DISCOVERY =
+            new RegisterTypeEnum("CONSOLESERVICE_DISCOVERY");
 
         private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -88,25 +78,18 @@ public class BizAppParam  {
 
         @JsonCreator
         public static RegisterTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RegisterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegisterTypeEnum(value));
         }
 
         public static RegisterTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -124,8 +107,7 @@ public class BizAppParam  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_type")
-    
+    @JsonProperty(value = "register_type")
 
     private RegisterTypeEnum registerType;
 
@@ -133,9 +115,6 @@ public class BizAppParam  {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -149,15 +128,10 @@ public class BizAppParam  {
         this.description = description;
     }
 
-    
-
     public BizAppParam withDisplayName(String displayName) {
         this.displayName = displayName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称.字符集长度2-64，仅支持字符集：中文字符、英文字母、数字、下划线、中划线、点
@@ -171,15 +145,10 @@ public class BizAppParam  {
         this.displayName = displayName;
     }
 
-    
-
     public BizAppParam withEpsId(String epsId) {
         this.epsId = epsId;
         return this;
     }
-
-    
-
 
     /**
      * 应用关联的企业项目id。企业级用户必传
@@ -193,15 +162,10 @@ public class BizAppParam  {
         this.epsId = epsId;
     }
 
-    
-
     public BizAppParam withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 唯一标识.字符集长度2-64，仅支持字符集：英文字母、数字、下划线、中划线、点
@@ -215,15 +179,10 @@ public class BizAppParam  {
         this.name = name;
     }
 
-    
-
     public BizAppParam withRegisterType(RegisterTypeEnum registerType) {
         this.registerType = registerType;
         return this;
     }
-
-    
-
 
     /**
      * 前端默认是CONSOLE，不需要传参。rest接口无参数是API，有参数只能是：SERVICE_DISCOVERY
@@ -237,27 +196,25 @@ public class BizAppParam  {
         this.registerType = registerType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BizAppParam bizAppParam = (BizAppParam) o;
-        return Objects.equals(this.description, bizAppParam.description) &&
-            Objects.equals(this.displayName, bizAppParam.displayName) &&
-            Objects.equals(this.epsId, bizAppParam.epsId) &&
-            Objects.equals(this.name, bizAppParam.name) &&
-            Objects.equals(this.registerType, bizAppParam.registerType);
+        BizAppParam that = (BizAppParam) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.registerType, that.registerType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, displayName, epsId, name, registerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -270,6 +227,7 @@ public class BizAppParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -280,8 +238,5 @@ public class BizAppParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -187,22 +187,19 @@ public class KeystoneListPermissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListPermissionsRequest keystoneListPermissionsRequest = (KeystoneListPermissionsRequest) o;
-        return Objects.equals(this.name, keystoneListPermissionsRequest.name)
-            && Objects.equals(this.domainId, keystoneListPermissionsRequest.domainId)
-            && Objects.equals(this.page, keystoneListPermissionsRequest.page)
-            && Objects.equals(this.perPage, keystoneListPermissionsRequest.perPage)
-            && Objects.equals(this.permissionType, keystoneListPermissionsRequest.permissionType)
-            && Objects.equals(this.displayName, keystoneListPermissionsRequest.displayName)
-            && Objects.equals(this.type, keystoneListPermissionsRequest.type)
-            && Objects.equals(this.catalog, keystoneListPermissionsRequest.catalog);
+        KeystoneListPermissionsRequest that = (KeystoneListPermissionsRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.perPage, that.perPage)
+            && Objects.equals(this.permissionType, that.permissionType)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.catalog, that.catalog);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ReconfigureExtDataSourceActionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReconfigureExtDataSourceActionReq reconfigureExtDataSourceActionReq = (ReconfigureExtDataSourceActionReq) o;
-        return Objects.equals(this.reconfigure, reconfigureExtDataSourceActionReq.reconfigure);
+        ReconfigureExtDataSourceActionReq that = (ReconfigureExtDataSourceActionReq) obj;
+        return Objects.equals(this.reconfigure, that.reconfigure);
     }
 
     @Override

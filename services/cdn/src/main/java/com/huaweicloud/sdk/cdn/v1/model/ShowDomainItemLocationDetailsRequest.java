@@ -165,22 +165,18 @@ public class ShowDomainItemLocationDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainItemLocationDetailsRequest showDomainItemLocationDetailsRequest =
-            (ShowDomainItemLocationDetailsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showDomainItemLocationDetailsRequest.enterpriseProjectId)
-            && Objects.equals(this.startTime, showDomainItemLocationDetailsRequest.startTime)
-            && Objects.equals(this.endTime, showDomainItemLocationDetailsRequest.endTime)
-            && Objects.equals(this.domainName, showDomainItemLocationDetailsRequest.domainName)
-            && Objects.equals(this.statType, showDomainItemLocationDetailsRequest.statType)
-            && Objects.equals(this.region, showDomainItemLocationDetailsRequest.region)
-            && Objects.equals(this.isp, showDomainItemLocationDetailsRequest.isp);
+        ShowDomainItemLocationDetailsRequest that = (ShowDomainItemLocationDetailsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.statType, that.statType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp);
     }
 
     @Override

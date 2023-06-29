@@ -96,17 +96,16 @@ public class PrivilegesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivilegesInfo privilegesInfo = (PrivilegesInfo) o;
-        return Objects.equals(this.isAdmin, privilegesInfo.isAdmin)
-            && Objects.equals(this.userName, privilegesInfo.userName)
-            && Objects.equals(this.privileges, privilegesInfo.privileges);
+        PrivilegesInfo that = (PrivilegesInfo) obj;
+        return Objects.equals(this.isAdmin, that.isAdmin) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

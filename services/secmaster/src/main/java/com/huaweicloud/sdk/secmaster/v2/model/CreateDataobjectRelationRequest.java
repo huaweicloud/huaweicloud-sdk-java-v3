@@ -131,19 +131,19 @@ public class CreateDataobjectRelationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataobjectRelationRequest createDataobjectRelationRequest = (CreateDataobjectRelationRequest) o;
-        return Objects.equals(this.workspaceId, createDataobjectRelationRequest.workspaceId)
-            && Objects.equals(this.dataclassType, createDataobjectRelationRequest.dataclassType)
-            && Objects.equals(this.dataObjectId, createDataobjectRelationRequest.dataObjectId)
-            && Objects.equals(this.relatedDataclassType, createDataobjectRelationRequest.relatedDataclassType)
-            && Objects.equals(this.body, createDataobjectRelationRequest.body);
+        CreateDataobjectRelationRequest that = (CreateDataobjectRelationRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.dataclassType, that.dataclassType)
+            && Objects.equals(this.dataObjectId, that.dataObjectId)
+            && Objects.equals(this.relatedDataclassType, that.relatedDataclassType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

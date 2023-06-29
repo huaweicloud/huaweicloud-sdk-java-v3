@@ -168,25 +168,19 @@ public class OrganizationPolicyAssignmentStatusResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrganizationPolicyAssignmentStatusResponse organizationPolicyAssignmentStatusResponse =
-            (OrganizationPolicyAssignmentStatusResponse) o;
-        return Objects.equals(this.organizationPolicyAssignmentId,
-            organizationPolicyAssignmentStatusResponse.organizationPolicyAssignmentId)
-            && Objects.equals(this.organizationPolicyAssignmentName,
-                organizationPolicyAssignmentStatusResponse.organizationPolicyAssignmentName)
-            && Objects.equals(this.organizationPolicyAssignmentStatus,
-                organizationPolicyAssignmentStatusResponse.organizationPolicyAssignmentStatus)
-            && Objects.equals(this.errorCode, organizationPolicyAssignmentStatusResponse.errorCode)
-            && Objects.equals(this.errorMessage, organizationPolicyAssignmentStatusResponse.errorMessage)
-            && Objects.equals(this.createdAt, organizationPolicyAssignmentStatusResponse.createdAt)
-            && Objects.equals(this.updatedAt, organizationPolicyAssignmentStatusResponse.updatedAt);
+        OrganizationPolicyAssignmentStatusResponse that = (OrganizationPolicyAssignmentStatusResponse) obj;
+        return Objects.equals(this.organizationPolicyAssignmentId, that.organizationPolicyAssignmentId)
+            && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
+            && Objects.equals(this.organizationPolicyAssignmentStatus, that.organizationPolicyAssignmentStatus)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

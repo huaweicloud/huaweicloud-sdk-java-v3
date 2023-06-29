@@ -55,16 +55,15 @@ public class DeleteProjectModuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProjectModuleRequest deleteProjectModuleRequest = (DeleteProjectModuleRequest) o;
-        return Objects.equals(this.projectId, deleteProjectModuleRequest.projectId)
-            && Objects.equals(this.moduleId, deleteProjectModuleRequest.moduleId);
+        DeleteProjectModuleRequest that = (DeleteProjectModuleRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.moduleId, that.moduleId);
     }
 
     @Override

@@ -143,20 +143,17 @@ public class MigrationErrors {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrationErrors migrationErrors = (MigrationErrors) o;
-        return Objects.equals(this.errorJson, migrationErrors.errorJson)
-            && Objects.equals(this.hostName, migrationErrors.hostName)
-            && Objects.equals(this.name, migrationErrors.name)
-            && Objects.equals(this.sourceId, migrationErrors.sourceId)
-            && Objects.equals(this.sourceIp, migrationErrors.sourceIp)
-            && Objects.equals(this.targetIp, migrationErrors.targetIp);
+        MigrationErrors that = (MigrationErrors) obj;
+        return Objects.equals(this.errorJson, that.errorJson) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.targetIp, that.targetIp);
     }
 
     @Override

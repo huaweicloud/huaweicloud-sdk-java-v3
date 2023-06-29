@@ -143,20 +143,17 @@ public class ListInstanceParamHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceParamHistoriesRequest listInstanceParamHistoriesRequest = (ListInstanceParamHistoriesRequest) o;
-        return Objects.equals(this.instanceId, listInstanceParamHistoriesRequest.instanceId)
-            && Objects.equals(this.offset, listInstanceParamHistoriesRequest.offset)
-            && Objects.equals(this.limit, listInstanceParamHistoriesRequest.limit)
-            && Objects.equals(this.startTime, listInstanceParamHistoriesRequest.startTime)
-            && Objects.equals(this.endTime, listInstanceParamHistoriesRequest.endTime)
-            && Objects.equals(this.paramName, listInstanceParamHistoriesRequest.paramName);
+        ListInstanceParamHistoriesRequest that = (ListInstanceParamHistoriesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.paramName, that.paramName);
     }
 
     @Override

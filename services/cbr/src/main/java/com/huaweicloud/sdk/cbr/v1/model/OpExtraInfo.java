@@ -291,20 +291,19 @@ public class OpExtraInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtraInfo opExtraInfo = (OpExtraInfo) o;
-        return Objects.equals(this.backup, opExtraInfo.backup) && Objects.equals(this.common, opExtraInfo.common)
-            && Objects.equals(this.delete, opExtraInfo.delete) && Objects.equals(this.sync, opExtraInfo.sync)
-            && Objects.equals(this.removeResources, opExtraInfo.removeResources)
-            && Objects.equals(this.replication, opExtraInfo.replication)
-            && Objects.equals(this.resource, opExtraInfo.resource) && Objects.equals(this.restore, opExtraInfo.restore)
-            && Objects.equals(this.vaultDelete, opExtraInfo.vaultDelete);
+        OpExtraInfo that = (OpExtraInfo) obj;
+        return Objects.equals(this.backup, that.backup) && Objects.equals(this.common, that.common)
+            && Objects.equals(this.delete, that.delete) && Objects.equals(this.sync, that.sync)
+            && Objects.equals(this.removeResources, that.removeResources)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.resource, that.resource)
+            && Objects.equals(this.restore, that.restore) && Objects.equals(this.vaultDelete, that.vaultDelete);
     }
 
     @Override

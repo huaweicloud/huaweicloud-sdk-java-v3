@@ -34,15 +34,15 @@ public class CreateCasesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCasesResponse createCasesResponse = (CreateCasesResponse) o;
-        return Objects.equals(this.incidentId, createCasesResponse.incidentId);
+        CreateCasesResponse that = (CreateCasesResponse) obj;
+        return Objects.equals(this.incidentId, that.incidentId);
     }
 
     @Override

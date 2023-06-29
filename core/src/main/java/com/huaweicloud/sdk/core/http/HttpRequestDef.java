@@ -34,37 +34,36 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @param <ReqT>
- * @param <ResT>
+ * @param <R> Request type
+ * @param <S> Response type
  * @author HuaweiCloud_SDK
  */
-public interface HttpRequestDef<ReqT, ResT> {
+public interface HttpRequestDef<R, S> {
     /**
      * Builder of HttpRequestDef
      *
      * @param method http request method
      * @param r request type
      * @param t response type
-     * @param <BuilderReqT> BuilderReqT
-     * @param <BuilderRespT> BuilderRespT
+     * @param <R> Request builder type
+     * @param <S> Response builder type
      * @return .
      */
-    static <BuilderReqT, BuilderRespT> Builder<BuilderReqT, BuilderRespT> builder(HttpMethod method,
-        Class<BuilderReqT> r, Class<BuilderRespT> t) {
-        Builder<BuilderReqT, BuilderRespT> builder = new Builder<>(method, r, t);
+    static <R, S> Builder<R, S> builder(HttpMethod method, Class<R> r, Class<S> t) {
+        Builder<R, S> builder = new Builder<>(method, r, t);
         builder.impl.requestClass = r;
         builder.impl.responseClass = t;
         builder.impl.method = method;
         return builder;
     }
 
-    Builder<ReqT, ResT> builder();
+    Builder<R, S> builder();
 
     @JsonIgnore
-    Class<ReqT> getRequestType();
+    Class<R> getRequestType();
 
     @JsonIgnore
-    Class<ResT> getResponseType();
+    Class<S> getResponseType();
 
     @JsonIgnore
     HttpMethod getMethod();
@@ -82,18 +81,18 @@ public interface HttpRequestDef<ReqT, ResT> {
     String getName();
 
     @JsonIgnore
-    List<Field<ReqT, ?>> getRequestFields();
+    List<Field<R, ?>> getRequestFields();
 
     @JsonIgnore
-    <T> Field<ReqT, T> getRequestField(String name);
+    <T> Field<R, T> getRequestField(String name);
 
     boolean hasRequestField(String name);
 
     @JsonIgnore
-    List<Field<ResT, ?>> getResponseFields();
+    List<Field<S, ?>> getResponseFields();
 
     @JsonIgnore
-    Field<ResT, ?> getResponseField(String name);
+    Field<S, ?> getResponseField(String name);
 
     boolean hasResponseField(String name);
 

@@ -97,17 +97,16 @@ public class ListRuleActionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRuleActionsResponse listRuleActionsResponse = (ListRuleActionsResponse) o;
-        return Objects.equals(this.actions, listRuleActionsResponse.actions)
-            && Objects.equals(this.count, listRuleActionsResponse.count)
-            && Objects.equals(this.marker, listRuleActionsResponse.marker);
+        ListRuleActionsResponse that = (ListRuleActionsResponse) obj;
+        return Objects.equals(this.actions, that.actions) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

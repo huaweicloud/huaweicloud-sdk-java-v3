@@ -143,20 +143,17 @@ public class WebImageContactInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebImageContactInfo webImageContactInfo = (WebImageContactInfo) o;
-        return Objects.equals(this.name, webImageContactInfo.name)
-            && Objects.equals(this.phone, webImageContactInfo.phone)
-            && Objects.equals(this.province, webImageContactInfo.province)
-            && Objects.equals(this.city, webImageContactInfo.city)
-            && Objects.equals(this.district, webImageContactInfo.district)
-            && Objects.equals(this.detailAddress, webImageContactInfo.detailAddress);
+        WebImageContactInfo that = (WebImageContactInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.district, that.district) && Objects.equals(this.detailAddress, that.detailAddress);
     }
 
     @Override

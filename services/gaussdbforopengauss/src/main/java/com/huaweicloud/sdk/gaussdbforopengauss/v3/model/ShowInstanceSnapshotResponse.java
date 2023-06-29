@@ -1,25 +1,14 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
@@ -32,17 +21,15 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
      */
     public static final class ClusterModeEnum {
 
-        
         /**
          * Enum HA for value: "Ha"
          */
         public static final ClusterModeEnum HA = new ClusterModeEnum("Ha");
-        
+
         /**
          * Enum INDEPENDENT for value: "Independent"
          */
         public static final ClusterModeEnum INDEPENDENT = new ClusterModeEnum("Independent");
-        
 
         private static final Map<String, ClusterModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,25 +58,18 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
 
         @JsonCreator
         public static ClusterModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ClusterModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterModeEnum(value));
         }
 
         public static ClusterModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ClusterModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -107,31 +87,29 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_mode")
-    
+    @JsonProperty(value = "cluster_mode")
 
     private ClusterModeEnum clusterMode;
+
     /**
      * 实例模型，企业版enterprise，标准版standard，基础版basic。
      */
     public static final class InstanceModeEnum {
 
-        
         /**
          * Enum BASIC for value: "basic"
          */
         public static final InstanceModeEnum BASIC = new InstanceModeEnum("basic");
-        
+
         /**
          * Enum STANDARD for value: "standard"
          */
         public static final InstanceModeEnum STANDARD = new InstanceModeEnum("standard");
-        
+
         /**
          * Enum ENTERPRISE for value: "enterprise"
          */
         public static final InstanceModeEnum ENTERPRISE = new InstanceModeEnum("enterprise");
-        
 
         private static final Map<String, InstanceModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -161,25 +139,18 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
 
         @JsonCreator
         public static InstanceModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceModeEnum(value));
         }
 
         public static InstanceModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -197,32 +168,29 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_mode")
-    
+    @JsonProperty(value = "instance_mode")
 
     private InstanceModeEnum instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_size")
-    
+    @JsonProperty(value = "data_volume_size")
 
     private String dataVolumeSize;
+
     /**
      * 解决方案模板类型。集中式Ha一般用triset，分布式Independent一般为空或者默认hws。  描述如下：  triset：高可用(1主2备)  hws：默认。
      */
     public static final class SolutionEnum {
 
-        
         /**
          * Enum TRISET for value: "triset"
          */
         public static final SolutionEnum TRISET = new SolutionEnum("triset");
-        
+
         /**
          * Enum HWS for value: "hws"
          */
         public static final SolutionEnum HWS = new SolutionEnum("hws");
-        
 
         private static final Map<String, SolutionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -251,25 +219,18 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
 
         @JsonCreator
         public static SolutionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SolutionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SolutionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SolutionEnum(value));
         }
 
         public static SolutionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SolutionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -287,38 +248,32 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="solution")
-    
+    @JsonProperty(value = "solution")
 
     private SolutionEnum solution;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coordinator_num")
-    
+    @JsonProperty(value = "coordinator_num")
 
     private Integer coordinatorNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sharding_num")
-    
+    @JsonProperty(value = "sharding_num")
 
     private Integer shardingNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replica_num")
-    
+    @JsonProperty(value = "replica_num")
 
     private Integer replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
 
     private String engineVersion;
 
@@ -326,9 +281,6 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.clusterMode = clusterMode;
         return this;
     }
-
-    
-
 
     /**
      * 实例部署形态。集中式Ha(主备)、分布式Independent(独立部署)。
@@ -342,15 +294,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.clusterMode = clusterMode;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withInstanceMode(InstanceModeEnum instanceMode) {
         this.instanceMode = instanceMode;
         return this;
     }
-
-    
-
 
     /**
      * 实例模型，企业版enterprise，标准版standard，基础版basic。
@@ -364,15 +311,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.instanceMode = instanceMode;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withDataVolumeSize(String dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘大小，单位：GB。
@@ -386,15 +328,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.dataVolumeSize = dataVolumeSize;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withSolution(SolutionEnum solution) {
         this.solution = solution;
         return this;
     }
-
-    
-
 
     /**
      * 解决方案模板类型。集中式Ha一般用triset，分布式Independent一般为空或者默认hws。  描述如下：  triset：高可用(1主2备)  hws：默认。
@@ -408,15 +345,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.solution = solution;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 节点数量。
@@ -430,15 +362,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withCoordinatorNum(Integer coordinatorNum) {
         this.coordinatorNum = coordinatorNum;
         return this;
     }
-
-    
-
 
     /**
      * 协调节点数量。
@@ -452,15 +379,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.coordinatorNum = coordinatorNum;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withShardingNum(Integer shardingNum) {
         this.shardingNum = shardingNum;
         return this;
     }
-
-    
-
 
     /**
      * 分片数量。
@@ -474,15 +396,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.shardingNum = shardingNum;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withReplicaNum(Integer replicaNum) {
         this.replicaNum = replicaNum;
         return this;
     }
-
-    
-
 
     /**
      * 副本数量。
@@ -496,15 +413,10 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.replicaNum = replicaNum;
     }
 
-    
-
     public ShowInstanceSnapshotResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
-
-    
-
 
     /**
      * 引擎版本。
@@ -518,31 +430,36 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         this.engineVersion = engineVersion;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceSnapshotResponse showInstanceSnapshotResponse = (ShowInstanceSnapshotResponse) o;
-        return Objects.equals(this.clusterMode, showInstanceSnapshotResponse.clusterMode) &&
-            Objects.equals(this.instanceMode, showInstanceSnapshotResponse.instanceMode) &&
-            Objects.equals(this.dataVolumeSize, showInstanceSnapshotResponse.dataVolumeSize) &&
-            Objects.equals(this.solution, showInstanceSnapshotResponse.solution) &&
-            Objects.equals(this.nodeNum, showInstanceSnapshotResponse.nodeNum) &&
-            Objects.equals(this.coordinatorNum, showInstanceSnapshotResponse.coordinatorNum) &&
-            Objects.equals(this.shardingNum, showInstanceSnapshotResponse.shardingNum) &&
-            Objects.equals(this.replicaNum, showInstanceSnapshotResponse.replicaNum) &&
-            Objects.equals(this.engineVersion, showInstanceSnapshotResponse.engineVersion);
+        ShowInstanceSnapshotResponse that = (ShowInstanceSnapshotResponse) obj;
+        return Objects.equals(this.clusterMode, that.clusterMode)
+            && Objects.equals(this.instanceMode, that.instanceMode)
+            && Objects.equals(this.dataVolumeSize, that.dataVolumeSize) && Objects.equals(this.solution, that.solution)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.coordinatorNum, that.coordinatorNum)
+            && Objects.equals(this.shardingNum, that.shardingNum) && Objects.equals(this.replicaNum, that.replicaNum)
+            && Objects.equals(this.engineVersion, that.engineVersion);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(clusterMode, instanceMode, dataVolumeSize, solution, nodeNum, coordinatorNum, shardingNum, replicaNum, engineVersion);
+        return Objects.hash(clusterMode,
+            instanceMode,
+            dataVolumeSize,
+            solution,
+            nodeNum,
+            coordinatorNum,
+            shardingNum,
+            replicaNum,
+            engineVersion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -559,6 +476,7 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -569,8 +487,5 @@ public class ShowInstanceSnapshotResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

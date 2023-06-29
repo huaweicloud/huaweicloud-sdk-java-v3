@@ -77,17 +77,16 @@ public class DeleteRetentionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRetentionRequest deleteRetentionRequest = (DeleteRetentionRequest) o;
-        return Objects.equals(this.namespace, deleteRetentionRequest.namespace)
-            && Objects.equals(this.repository, deleteRetentionRequest.repository)
-            && Objects.equals(this.retentionId, deleteRetentionRequest.retentionId);
+        DeleteRetentionRequest that = (DeleteRetentionRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.retentionId, that.retentionId);
     }
 
     @Override

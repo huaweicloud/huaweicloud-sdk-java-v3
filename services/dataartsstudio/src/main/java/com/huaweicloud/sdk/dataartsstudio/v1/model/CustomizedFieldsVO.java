@@ -98,22 +98,15 @@ public class CustomizedFieldsVO {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -370,25 +363,20 @@ public class CustomizedFieldsVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomizedFieldsVO customizedFieldsVO = (CustomizedFieldsVO) o;
-        return Objects.equals(this.id, customizedFieldsVO.id) && Objects.equals(this.nameCh, customizedFieldsVO.nameCh)
-            && Objects.equals(this.nameEn, customizedFieldsVO.nameEn)
-            && Objects.equals(this.notNull, customizedFieldsVO.notNull)
-            && Objects.equals(this.optionalValues, customizedFieldsVO.optionalValues)
-            && Objects.equals(this.type, customizedFieldsVO.type)
-            && Objects.equals(this.ordinal, customizedFieldsVO.ordinal)
-            && Objects.equals(this.description, customizedFieldsVO.description)
-            && Objects.equals(this.createBy, customizedFieldsVO.createBy)
-            && Objects.equals(this.updateBy, customizedFieldsVO.updateBy)
-            && Objects.equals(this.createTime, customizedFieldsVO.createTime)
-            && Objects.equals(this.updateTime, customizedFieldsVO.updateTime);
+        CustomizedFieldsVO that = (CustomizedFieldsVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nameCh, that.nameCh)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.notNull, that.notNull)
+            && Objects.equals(this.optionalValues, that.optionalValues) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

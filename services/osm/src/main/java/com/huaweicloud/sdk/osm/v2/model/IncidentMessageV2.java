@@ -211,22 +211,19 @@ public class IncidentMessageV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentMessageV2 incidentMessageV2 = (IncidentMessageV2) o;
-        return Objects.equals(this.type, incidentMessageV2.type)
-            && Objects.equals(this.replier, incidentMessageV2.replier)
-            && Objects.equals(this.content, incidentMessageV2.content)
-            && Objects.equals(this.messageId, incidentMessageV2.messageId)
-            && Objects.equals(this.replierName, incidentMessageV2.replierName)
-            && Objects.equals(this.createTime, incidentMessageV2.createTime)
-            && Objects.equals(this.isFirstMessage, incidentMessageV2.isFirstMessage)
-            && Objects.equals(this.accessoryList, incidentMessageV2.accessoryList);
+        IncidentMessageV2 that = (IncidentMessageV2) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.replier, that.replier)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.replierName, that.replierName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.isFirstMessage, that.isFirstMessage)
+            && Objects.equals(this.accessoryList, that.accessoryList);
     }
 
     @Override

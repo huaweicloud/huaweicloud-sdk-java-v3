@@ -137,19 +137,17 @@ public class ListArticlesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListArticlesRequest listArticlesRequest = (ListArticlesRequest) o;
-        return Objects.equals(this.xServiceKey, listArticlesRequest.xServiceKey)
-            && Objects.equals(this.xSite, listArticlesRequest.xSite)
-            && Objects.equals(this.xLanguage, listArticlesRequest.xLanguage)
-            && Objects.equals(this.searchType, listArticlesRequest.searchType)
-            && Objects.equals(this.body, listArticlesRequest.body);
+        ListArticlesRequest that = (ListArticlesRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.searchType, that.searchType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

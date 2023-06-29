@@ -338,28 +338,23 @@ public class CreateResolveTaskParamMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResolveTaskParamMode createResolveTaskParamMode = (CreateResolveTaskParamMode) o;
-        return Objects.equals(this.custFlag, createResolveTaskParamMode.custFlag)
-            && Objects.equals(this.custId, createResolveTaskParamMode.custId)
-            && Objects.equals(this.dyncParams, createResolveTaskParamMode.dyncParams)
-            && Objects.equals(this.customUrl, createResolveTaskParamMode.customUrl)
-            && Objects.equals(this.aimUrl, createResolveTaskParamMode.aimUrl)
-            && Objects.equals(this.aimCode, createResolveTaskParamMode.aimCode)
-            && Objects.equals(this.extData, createResolveTaskParamMode.extData)
-            && Objects.equals(this.resultCode, createResolveTaskParamMode.resultCode)
-            && Objects.equals(this.errorMessage, createResolveTaskParamMode.errorMessage)
-            && Objects.equals(this.generateDate, createResolveTaskParamMode.generateDate)
-            && Objects.equals(this.expireDate, createResolveTaskParamMode.expireDate)
-            && Objects.equals(this.resolvedDate, createResolveTaskParamMode.resolvedDate)
-            && Objects.equals(this.resolvedTimes, createResolveTaskParamMode.resolvedTimes)
-            && Objects.equals(this.customShortCode, createResolveTaskParamMode.customShortCode);
+        CreateResolveTaskParamMode that = (CreateResolveTaskParamMode) obj;
+        return Objects.equals(this.custFlag, that.custFlag) && Objects.equals(this.custId, that.custId)
+            && Objects.equals(this.dyncParams, that.dyncParams) && Objects.equals(this.customUrl, that.customUrl)
+            && Objects.equals(this.aimUrl, that.aimUrl) && Objects.equals(this.aimCode, that.aimCode)
+            && Objects.equals(this.extData, that.extData) && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.generateDate, that.generateDate) && Objects.equals(this.expireDate, that.expireDate)
+            && Objects.equals(this.resolvedDate, that.resolvedDate)
+            && Objects.equals(this.resolvedTimes, that.resolvedTimes)
+            && Objects.equals(this.customShortCode, that.customShortCode);
     }
 
     @Override

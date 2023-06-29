@@ -55,15 +55,15 @@ public class UninstallRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UninstallRequest uninstallRequest = (UninstallRequest) o;
-        return Objects.equals(this.envId, uninstallRequest.envId) && Objects.equals(this.appId, uninstallRequest.appId);
+        UninstallRequest that = (UninstallRequest) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

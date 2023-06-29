@@ -96,17 +96,16 @@ public class StructureConstraintParamsDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructureConstraintParamsDto structureConstraintParamsDto = (StructureConstraintParamsDto) o;
-        return Objects.equals(this.structs, structureConstraintParamsDto.structs)
-            && Objects.equals(this.exclusive, structureConstraintParamsDto.exclusive)
-            && Objects.equals(this.operator, structureConstraintParamsDto.operator);
+        StructureConstraintParamsDto that = (StructureConstraintParamsDto) obj;
+        return Objects.equals(this.structs, that.structs) && Objects.equals(this.exclusive, that.exclusive)
+            && Objects.equals(this.operator, that.operator);
     }
 
     @Override

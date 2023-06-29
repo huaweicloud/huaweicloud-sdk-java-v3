@@ -283,23 +283,20 @@ public class ProjectTemplates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectTemplates projectTemplates = (ProjectTemplates) o;
-        return Objects.equals(this.description, projectTemplates.description)
-            && Objects.equals(this.displayName, projectTemplates.displayName)
-            && Objects.equals(this.logo, projectTemplates.logo) && Objects.equals(this.name, projectTemplates.name)
-            && Objects.equals(this.path, projectTemplates.path)
-            && Objects.equals(this.projectType, projectTemplates.projectType)
-            && Objects.equals(this.region, projectTemplates.region)
-            && Objects.equals(this.source, projectTemplates.source) && Objects.equals(this.tags, projectTemplates.tags)
-            && Objects.equals(this.templateId, projectTemplates.templateId)
-            && Objects.equals(this.arch, projectTemplates.arch);
+        ProjectTemplates that = (ProjectTemplates) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.logo, that.logo) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.projectType, that.projectType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.arch, that.arch);
     }
 
     @Override

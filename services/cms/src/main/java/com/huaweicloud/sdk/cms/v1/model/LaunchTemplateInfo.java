@@ -55,16 +55,16 @@ public class LaunchTemplateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LaunchTemplateInfo launchTemplateInfo = (LaunchTemplateInfo) o;
-        return Objects.equals(this.launchTemplateId, launchTemplateInfo.launchTemplateId)
-            && Objects.equals(this.version, launchTemplateInfo.version);
+        LaunchTemplateInfo that = (LaunchTemplateInfo) obj;
+        return Objects.equals(this.launchTemplateId, that.launchTemplateId)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

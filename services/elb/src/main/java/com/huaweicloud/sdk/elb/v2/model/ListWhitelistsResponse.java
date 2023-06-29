@@ -53,15 +53,15 @@ public class ListWhitelistsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWhitelistsResponse listWhitelistsResponse = (ListWhitelistsResponse) o;
-        return Objects.equals(this.whitelists, listWhitelistsResponse.whitelists);
+        ListWhitelistsResponse that = (ListWhitelistsResponse) obj;
+        return Objects.equals(this.whitelists, that.whitelists);
     }
 
     @Override

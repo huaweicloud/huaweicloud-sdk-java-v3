@@ -175,21 +175,19 @@ public class ForkProjectRepoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForkProjectRepoRequest forkProjectRepoRequest = (ForkProjectRepoRequest) o;
-        return Objects.equals(this.importMembers, forkProjectRepoRequest.importMembers)
-            && Objects.equals(this.projectName, forkProjectRepoRequest.projectName)
-            && Objects.equals(this.repoName, forkProjectRepoRequest.repoName)
-            && Objects.equals(this.templateId, forkProjectRepoRequest.templateId)
-            && Objects.equals(this.type, forkProjectRepoRequest.type)
-            && Objects.equals(this.visibilityLevel, forkProjectRepoRequest.visibilityLevel)
-            && Objects.equals(this.externalProjectInfo, forkProjectRepoRequest.externalProjectInfo);
+        ForkProjectRepoRequest that = (ForkProjectRepoRequest) obj;
+        return Objects.equals(this.importMembers, that.importMembers)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.repoName, that.repoName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.visibilityLevel, that.visibilityLevel)
+            && Objects.equals(this.externalProjectInfo, that.externalProjectInfo);
     }
 
     @Override

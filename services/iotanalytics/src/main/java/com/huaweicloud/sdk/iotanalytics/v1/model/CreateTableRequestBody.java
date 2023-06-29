@@ -338,28 +338,22 @@ public class CreateTableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableRequestBody createTableRequestBody = (CreateTableRequestBody) o;
-        return Objects.equals(this.tags, createTableRequestBody.tags)
-            && Objects.equals(this.tableName, createTableRequestBody.tableName)
-            && Objects.equals(this.tableAlias, createTableRequestBody.tableAlias)
-            && Objects.equals(this.description, createTableRequestBody.description)
-            && Objects.equals(this.columns, createTableRequestBody.columns)
-            && Objects.equals(this.dataType, createTableRequestBody.dataType)
-            && Objects.equals(this.dataSource, createTableRequestBody.dataSource)
-            && Objects.equals(this.dataStoreId, createTableRequestBody.dataStoreId)
-            && Objects.equals(this.withColumnHeader, createTableRequestBody.withColumnHeader)
-            && Objects.equals(this.delimiter, createTableRequestBody.delimiter)
-            && Objects.equals(this.quoteChar, createTableRequestBody.quoteChar)
-            && Objects.equals(this.escapeChar, createTableRequestBody.escapeChar)
-            && Objects.equals(this.dateFormat, createTableRequestBody.dateFormat)
-            && Objects.equals(this.timestampFormat, createTableRequestBody.timestampFormat);
+        CreateTableRequestBody that = (CreateTableRequestBody) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableAlias, that.tableAlias) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.columns, that.columns) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.dataStoreId, that.dataStoreId)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.quoteChar, that.quoteChar)
+            && Objects.equals(this.escapeChar, that.escapeChar) && Objects.equals(this.dateFormat, that.dateFormat)
+            && Objects.equals(this.timestampFormat, that.timestampFormat);
     }
 
     @Override

@@ -71,22 +71,15 @@ public class LdApiParameter {
             if (value == null) {
                 return null;
             }
-            InEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InEnum(value));
         }
 
         public static InEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,18 +202,17 @@ public class LdApiParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiParameter ldApiParameter = (LdApiParameter) o;
-        return Objects.equals(this.name, ldApiParameter.name) && Objects.equals(this.in, ldApiParameter.in)
-            && Objects.equals(this._default, ldApiParameter._default)
-            && Objects.equals(this.description, ldApiParameter.description)
-            && Objects.equals(this.required, ldApiParameter.required);
+        LdApiParameter that = (LdApiParameter) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.in, that.in)
+            && Objects.equals(this._default, that._default) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.required, that.required);
     }
 
     @Override

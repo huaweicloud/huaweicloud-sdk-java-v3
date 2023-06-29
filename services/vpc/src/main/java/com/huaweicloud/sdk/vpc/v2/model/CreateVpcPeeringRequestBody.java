@@ -43,15 +43,15 @@ public class CreateVpcPeeringRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcPeeringRequestBody createVpcPeeringRequestBody = (CreateVpcPeeringRequestBody) o;
-        return Objects.equals(this.peering, createVpcPeeringRequestBody.peering);
+        CreateVpcPeeringRequestBody that = (CreateVpcPeeringRequestBody) obj;
+        return Objects.equals(this.peering, that.peering);
     }
 
     @Override

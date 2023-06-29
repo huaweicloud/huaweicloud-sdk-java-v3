@@ -6,10 +6,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 云连接实例。
@@ -80,22 +83,15 @@ public class CloudConnection {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +167,15 @@ public class CloudConnection {
             if (value == null) {
                 return null;
             }
-            UsedSceneEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UsedSceneEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UsedSceneEnum(value));
         }
 
         public static UsedSceneEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UsedSceneEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -207,6 +196,11 @@ public class CloudConnection {
     @JsonProperty(value = "used_scene")
 
     private UsedSceneEnum usedScene;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "tags")
+
+    private List<Tag> tags = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "network_instance_number")
@@ -393,6 +387,39 @@ public class CloudConnection {
         this.usedScene = usedScene;
     }
 
+    public CloudConnection withTags(List<Tag> tags) {
+        this.tags = tags;
+        return this;
+    }
+
+    public CloudConnection addTagsItem(Tag tagsItem) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        this.tags.add(tagsItem);
+        return this;
+    }
+
+    public CloudConnection withTags(Consumer<List<Tag>> tagsSetter) {
+        if (this.tags == null) {
+            this.tags = new ArrayList<>();
+        }
+        tagsSetter.accept(this.tags);
+        return this;
+    }
+
+    /**
+     * 标签列表。
+     * @return tags
+     */
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
+
     public CloudConnection withNetworkInstanceNumber(Integer networkInstanceNumber) {
         this.networkInstanceNumber = networkInstanceNumber;
         return this;
@@ -451,26 +478,23 @@ public class CloudConnection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudConnection cloudConnection = (CloudConnection) o;
-        return Objects.equals(this.id, cloudConnection.id) && Objects.equals(this.name, cloudConnection.name)
-            && Objects.equals(this.description, cloudConnection.description)
-            && Objects.equals(this.domainId, cloudConnection.domainId)
-            && Objects.equals(this.enterpriseProjectId, cloudConnection.enterpriseProjectId)
-            && Objects.equals(this.status, cloudConnection.status)
-            && Objects.equals(this.adminStateUp, cloudConnection.adminStateUp)
-            && Objects.equals(this.createdAt, cloudConnection.createdAt)
-            && Objects.equals(this.updatedAt, cloudConnection.updatedAt)
-            && Objects.equals(this.usedScene, cloudConnection.usedScene)
-            && Objects.equals(this.networkInstanceNumber, cloudConnection.networkInstanceNumber)
-            && Objects.equals(this.bandwidthPackageNumber, cloudConnection.bandwidthPackageNumber)
-            && Objects.equals(this.interRegionBandwidthNumber, cloudConnection.interRegionBandwidthNumber);
+        CloudConnection that = (CloudConnection) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.usedScene, that.usedScene) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.networkInstanceNumber, that.networkInstanceNumber)
+            && Objects.equals(this.bandwidthPackageNumber, that.bandwidthPackageNumber)
+            && Objects.equals(this.interRegionBandwidthNumber, that.interRegionBandwidthNumber);
     }
 
     @Override
@@ -485,6 +509,7 @@ public class CloudConnection {
             createdAt,
             updatedAt,
             usedScene,
+            tags,
             networkInstanceNumber,
             bandwidthPackageNumber,
             interRegionBandwidthNumber);
@@ -504,6 +529,7 @@ public class CloudConnection {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    usedScene: ").append(toIndentedString(usedScene)).append("\n");
+        sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
         sb.append("    networkInstanceNumber: ").append(toIndentedString(networkInstanceNumber)).append("\n");
         sb.append("    bandwidthPackageNumber: ").append(toIndentedString(bandwidthPackageNumber)).append("\n");
         sb.append("    interRegionBandwidthNumber: ").append(toIndentedString(interRegionBandwidthNumber)).append("\n");

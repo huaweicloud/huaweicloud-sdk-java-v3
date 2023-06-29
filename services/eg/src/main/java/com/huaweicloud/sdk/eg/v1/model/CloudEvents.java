@@ -209,19 +209,19 @@ public class CloudEvents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudEvents cloudEvents = (CloudEvents) o;
-        return Objects.equals(this.id, cloudEvents.id) && Objects.equals(this.source, cloudEvents.source)
-            && Objects.equals(this.specversion, cloudEvents.specversion) && Objects.equals(this.type, cloudEvents.type)
-            && Objects.equals(this.datacontenttype, cloudEvents.datacontenttype)
-            && Objects.equals(this.dataschema, cloudEvents.dataschema) && Objects.equals(this.data, cloudEvents.data)
-            && Objects.equals(this.time, cloudEvents.time) && Objects.equals(this.subject, cloudEvents.subject);
+        CloudEvents that = (CloudEvents) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.specversion, that.specversion) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.datacontenttype, that.datacontenttype)
+            && Objects.equals(this.dataschema, that.dataschema) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.subject, that.subject);
     }
 
     @Override

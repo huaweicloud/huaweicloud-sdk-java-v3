@@ -96,22 +96,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            PortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PortTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PortTypeEnum(value));
         }
 
         public static PortTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PortTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -216,22 +209,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -315,22 +301,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -484,22 +463,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -576,22 +548,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderStatusEnum(value));
         }
 
         public static ProviderStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -687,22 +652,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            VgwTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VgwTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VgwTypeEnum(value));
         }
 
         public static VgwTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VgwTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -768,22 +726,15 @@ public class DirectConnect {
             if (value == null) {
                 return null;
             }
-            SignedAgreementStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignedAgreementStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignedAgreementStatusEnum(value));
         }
 
         public static SignedAgreementStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignedAgreementStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1363,41 +1314,32 @@ public class DirectConnect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DirectConnect directConnect = (DirectConnect) o;
-        return Objects.equals(this.id, directConnect.id) && Objects.equals(this.tenantId, directConnect.tenantId)
-            && Objects.equals(this.name, directConnect.name)
-            && Objects.equals(this.description, directConnect.description)
-            && Objects.equals(this.portType, directConnect.portType)
-            && Objects.equals(this.bandwidth, directConnect.bandwidth)
-            && Objects.equals(this.location, directConnect.location)
-            && Objects.equals(this.peerLocation, directConnect.peerLocation)
-            && Objects.equals(this.deviceId, directConnect.deviceId) && Objects.equals(this.type, directConnect.type)
-            && Objects.equals(this.hostingId, directConnect.hostingId)
-            && Objects.equals(this.chargeMode, directConnect.chargeMode)
-            && Objects.equals(this.provider, directConnect.provider)
-            && Objects.equals(this.adminStateUp, directConnect.adminStateUp)
-            && Objects.equals(this.vlan, directConnect.vlan) && Objects.equals(this.status, directConnect.status)
-            && Objects.equals(this.applyTime, directConnect.applyTime)
-            && Objects.equals(this.createTime, directConnect.createTime)
-            && Objects.equals(this.providerStatus, directConnect.providerStatus)
-            && Objects.equals(this.peerPortType, directConnect.peerPortType)
-            && Objects.equals(this.peerProvider, directConnect.peerProvider)
-            && Objects.equals(this.orderId, directConnect.orderId)
-            && Objects.equals(this.productId, directConnect.productId)
-            && Objects.equals(this.specCode, directConnect.specCode)
-            && Objects.equals(this.periodType, directConnect.periodType)
-            && Objects.equals(this.periodNum, directConnect.periodNum)
-            && Objects.equals(this.vgwType, directConnect.vgwType) && Objects.equals(this.lagId, directConnect.lagId)
-            && Objects.equals(this.signedAgreementStatus, directConnect.signedAgreementStatus)
-            && Objects.equals(this.enterpriseProjectId, directConnect.enterpriseProjectId)
-            && Objects.equals(this.tags, directConnect.tags);
+        DirectConnect that = (DirectConnect) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.portType, that.portType) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.peerLocation, that.peerLocation)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.hostingId, that.hostingId) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.vlan, that.vlan) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.providerStatus, that.providerStatus)
+            && Objects.equals(this.peerPortType, that.peerPortType)
+            && Objects.equals(this.peerProvider, that.peerProvider) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.vgwType, that.vgwType) && Objects.equals(this.lagId, that.lagId)
+            && Objects.equals(this.signedAgreementStatus, that.signedAgreementStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

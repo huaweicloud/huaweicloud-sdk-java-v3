@@ -187,21 +187,19 @@ public class DemandProductRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemandProductRatingResult demandProductRatingResult = (DemandProductRatingResult) o;
-        return Objects.equals(this.id, demandProductRatingResult.id)
-            && Objects.equals(this.productId, demandProductRatingResult.productId)
-            && Objects.equals(this.amount, demandProductRatingResult.amount)
-            && Objects.equals(this.discountAmount, demandProductRatingResult.discountAmount)
-            && Objects.equals(this.officialWebsiteAmount, demandProductRatingResult.officialWebsiteAmount)
-            && Objects.equals(this.measureId, demandProductRatingResult.measureId)
-            && Objects.equals(this.discountRatingResults, demandProductRatingResult.discountRatingResults);
+        DemandProductRatingResult that = (DemandProductRatingResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.discountRatingResults, that.discountRatingResults);
     }
 
     @Override

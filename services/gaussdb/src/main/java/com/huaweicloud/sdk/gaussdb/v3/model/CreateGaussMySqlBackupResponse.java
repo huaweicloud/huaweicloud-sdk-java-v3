@@ -1,35 +1,24 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.Backup;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CreateGaussMySqlBackupResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup")
-    
+    @JsonProperty(value = "backup")
 
     private Backup backup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -39,14 +28,13 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
     }
 
     public CreateGaussMySqlBackupResponse withBackup(Consumer<Backup> backupSetter) {
-        if(this.backup == null ){
+        if (this.backup == null) {
             this.backup = new Backup();
             backupSetter.accept(this.backup);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backup
@@ -60,15 +48,10 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
         this.backup = backup;
     }
 
-    
-
     public CreateGaussMySqlBackupResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -82,24 +65,23 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGaussMySqlBackupResponse createGaussMySqlBackupResponse = (CreateGaussMySqlBackupResponse) o;
-        return Objects.equals(this.backup, createGaussMySqlBackupResponse.backup) &&
-            Objects.equals(this.jobId, createGaussMySqlBackupResponse.jobId);
+        CreateGaussMySqlBackupResponse that = (CreateGaussMySqlBackupResponse) obj;
+        return Objects.equals(this.backup, that.backup) && Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backup, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -109,6 +91,7 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -119,8 +102,5 @@ public class CreateGaussMySqlBackupResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

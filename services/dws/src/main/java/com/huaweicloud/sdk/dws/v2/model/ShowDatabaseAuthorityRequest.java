@@ -162,20 +162,17 @@ public class ShowDatabaseAuthorityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseAuthorityRequest showDatabaseAuthorityRequest = (ShowDatabaseAuthorityRequest) o;
-        return Objects.equals(this.clusterId, showDatabaseAuthorityRequest.clusterId)
-            && Objects.equals(this.type, showDatabaseAuthorityRequest.type)
-            && Objects.equals(this.name, showDatabaseAuthorityRequest.name)
-            && Objects.equals(this.database, showDatabaseAuthorityRequest.database)
-            && Objects.equals(this.schema, showDatabaseAuthorityRequest.schema)
-            && Objects.equals(this.table, showDatabaseAuthorityRequest.table);
+        ShowDatabaseAuthorityRequest that = (ShowDatabaseAuthorityRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.table, that.table);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class NovaServerVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServerVolume novaServerVolume = (NovaServerVolume) o;
-        return Objects.equals(this.id, novaServerVolume.id)
-            && Objects.equals(this.deleteOnTermination, novaServerVolume.deleteOnTermination);
+        NovaServerVolume that = (NovaServerVolume) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deleteOnTermination, that.deleteOnTermination);
     }
 
     @Override

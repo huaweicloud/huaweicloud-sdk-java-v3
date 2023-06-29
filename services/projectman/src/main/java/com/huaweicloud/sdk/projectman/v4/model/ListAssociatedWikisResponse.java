@@ -75,16 +75,15 @@ public class ListAssociatedWikisResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssociatedWikisResponse listAssociatedWikisResponse = (ListAssociatedWikisResponse) o;
-        return Objects.equals(this.wikis, listAssociatedWikisResponse.wikis)
-            && Objects.equals(this.total, listAssociatedWikisResponse.total);
+        ListAssociatedWikisResponse that = (ListAssociatedWikisResponse) obj;
+        return Objects.equals(this.wikis, that.wikis) && Objects.equals(this.total, that.total);
     }
 
     @Override

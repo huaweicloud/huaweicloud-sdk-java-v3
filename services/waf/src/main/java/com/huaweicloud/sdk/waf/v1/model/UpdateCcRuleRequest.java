@@ -109,18 +109,17 @@ public class UpdateCcRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCcRuleRequest updateCcRuleRequest = (UpdateCcRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateCcRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateCcRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateCcRuleRequest.ruleId)
-            && Objects.equals(this.body, updateCcRuleRequest.body);
+        UpdateCcRuleRequest that = (UpdateCcRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

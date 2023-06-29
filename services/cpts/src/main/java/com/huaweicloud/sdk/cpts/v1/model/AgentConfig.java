@@ -384,28 +384,26 @@ public class AgentConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentConfig agentConfig = (AgentConfig) o;
-        return Objects.equals(this.agentId, agentConfig.agentId) && Objects.equals(this.dbEnable, agentConfig.dbEnable)
-            && Objects.equals(this.dbShadowRepository, agentConfig.dbShadowRepository)
-            && Objects.equals(this.dbShadowType, agentConfig.dbShadowType)
-            && Objects.equals(this.logLevel, agentConfig.logLevel) && Objects.equals(this.logPath, agentConfig.logPath)
-            && Objects.equals(this.mainSwitch, agentConfig.mainSwitch)
-            && Objects.equals(this.redisEnable, agentConfig.redisEnable)
-            && Objects.equals(this.redisShadowKeyPrefix, agentConfig.redisShadowKeyPrefix)
-            && Objects.equals(this.redisShadowRepository, agentConfig.redisShadowRepository)
-            && Objects.equals(this.redisShadowType, agentConfig.redisShadowType)
-            && Objects.equals(this.kafkaEnable, agentConfig.kafkaEnable)
-            && Objects.equals(this.kafkaShadowTopicPrefix, agentConfig.kafkaShadowTopicPrefix)
-            && Objects.equals(this.appLogLevel, agentConfig.appLogLevel)
-            && Objects.equals(this.appLogPath, agentConfig.appLogPath)
-            && Objects.equals(this.mockRuleList, agentConfig.mockRuleList);
+        AgentConfig that = (AgentConfig) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.dbEnable, that.dbEnable)
+            && Objects.equals(this.dbShadowRepository, that.dbShadowRepository)
+            && Objects.equals(this.dbShadowType, that.dbShadowType) && Objects.equals(this.logLevel, that.logLevel)
+            && Objects.equals(this.logPath, that.logPath) && Objects.equals(this.mainSwitch, that.mainSwitch)
+            && Objects.equals(this.redisEnable, that.redisEnable)
+            && Objects.equals(this.redisShadowKeyPrefix, that.redisShadowKeyPrefix)
+            && Objects.equals(this.redisShadowRepository, that.redisShadowRepository)
+            && Objects.equals(this.redisShadowType, that.redisShadowType)
+            && Objects.equals(this.kafkaEnable, that.kafkaEnable)
+            && Objects.equals(this.kafkaShadowTopicPrefix, that.kafkaShadowTopicPrefix)
+            && Objects.equals(this.appLogLevel, that.appLogLevel) && Objects.equals(this.appLogPath, that.appLogPath)
+            && Objects.equals(this.mockRuleList, that.mockRuleList);
     }
 
     @Override

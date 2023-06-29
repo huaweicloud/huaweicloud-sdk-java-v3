@@ -65,16 +65,15 @@ public class ShowPropertyValuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPropertyValuesRequest showPropertyValuesRequest = (ShowPropertyValuesRequest) o;
-        return Objects.equals(this.dataStoreId, showPropertyValuesRequest.dataStoreId)
-            && Objects.equals(this.body, showPropertyValuesRequest.body);
+        ShowPropertyValuesRequest that = (ShowPropertyValuesRequest) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.body, that.body);
     }
 
     @Override

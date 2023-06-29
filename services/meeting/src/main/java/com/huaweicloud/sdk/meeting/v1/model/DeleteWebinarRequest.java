@@ -79,17 +79,17 @@ public class DeleteWebinarRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteWebinarRequest deleteWebinarRequest = (DeleteWebinarRequest) o;
-        return Objects.equals(this.xRequestId, deleteWebinarRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, deleteWebinarRequest.acceptLanguage)
-            && Objects.equals(this.conferenceId, deleteWebinarRequest.conferenceId);
+        DeleteWebinarRequest that = (DeleteWebinarRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.conferenceId, that.conferenceId);
     }
 
     @Override

@@ -109,18 +109,17 @@ public class ChangeInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeInstanceRequest changeInstanceRequest = (ChangeInstanceRequest) o;
-        return Objects.equals(this.applicationId, changeInstanceRequest.applicationId)
-            && Objects.equals(this.componentId, changeInstanceRequest.componentId)
-            && Objects.equals(this.instanceId, changeInstanceRequest.instanceId)
-            && Objects.equals(this.body, changeInstanceRequest.body);
+        ChangeInstanceRequest that = (ChangeInstanceRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

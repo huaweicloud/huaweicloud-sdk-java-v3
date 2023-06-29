@@ -55,16 +55,15 @@ public class PostgresqlDatabaseForListSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlDatabaseForListSchema postgresqlDatabaseForListSchema = (PostgresqlDatabaseForListSchema) o;
-        return Objects.equals(this.schemaName, postgresqlDatabaseForListSchema.schemaName)
-            && Objects.equals(this.owner, postgresqlDatabaseForListSchema.owner);
+        PostgresqlDatabaseForListSchema that = (PostgresqlDatabaseForListSchema) obj;
+        return Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class CbcOrderResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CbcOrderResult cbcOrderResult = (CbcOrderResult) o;
-        return Objects.equals(this.cloudServiceId, cbcOrderResult.cloudServiceId)
-            && Objects.equals(this.orderId, cbcOrderResult.orderId)
-            && Objects.equals(this.subscribeResult, cbcOrderResult.subscribeResult)
-            && Objects.equals(this.resourceId, cbcOrderResult.resourceId);
+        CbcOrderResult that = (CbcOrderResult) obj;
+        return Objects.equals(this.cloudServiceId, that.cloudServiceId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.subscribeResult, that.subscribeResult)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

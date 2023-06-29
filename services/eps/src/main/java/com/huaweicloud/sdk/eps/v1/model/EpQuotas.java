@@ -77,16 +77,16 @@ public class EpQuotas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EpQuotas epQuotas = (EpQuotas) o;
-        return Objects.equals(this.quota, epQuotas.quota) && Objects.equals(this.type, epQuotas.type)
-            && Objects.equals(this.used, epQuotas.used);
+        EpQuotas that = (EpQuotas) obj;
+        return Objects.equals(this.quota, that.quota) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

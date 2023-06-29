@@ -127,19 +127,19 @@ public class AbnormalEventDimensionValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AbnormalEventDimensionValue abnormalEventDimensionValue = (AbnormalEventDimensionValue) o;
-        return Objects.equals(this.abnormalType, abnormalEventDimensionValue.abnormalType)
-            && Objects.equals(this.abnormalTypeDesc, abnormalEventDimensionValue.abnormalTypeDesc)
-            && Objects.equals(this.abnormalFactor, abnormalEventDimensionValue.abnormalFactor)
-            && Objects.equals(this.abnormalFactorDesc, abnormalEventDimensionValue.abnormalFactorDesc)
-            && Objects.equals(this.userCount, abnormalEventDimensionValue.userCount);
+        AbnormalEventDimensionValue that = (AbnormalEventDimensionValue) obj;
+        return Objects.equals(this.abnormalType, that.abnormalType)
+            && Objects.equals(this.abnormalTypeDesc, that.abnormalTypeDesc)
+            && Objects.equals(this.abnormalFactor, that.abnormalFactor)
+            && Objects.equals(this.abnormalFactorDesc, that.abnormalFactorDesc)
+            && Objects.equals(this.userCount, that.userCount);
     }
 
     @Override

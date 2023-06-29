@@ -96,16 +96,16 @@ public class TaskParameterDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskParameterDto taskParameterDto = (TaskParameterDto) o;
-        return Objects.equals(this.name, taskParameterDto.name) && Objects.equals(this.source, taskParameterDto.source)
-            && Objects.equals(this.values, taskParameterDto.values);
+        TaskParameterDto that = (TaskParameterDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

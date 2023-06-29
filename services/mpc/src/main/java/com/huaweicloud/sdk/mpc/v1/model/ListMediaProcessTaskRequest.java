@@ -24,8 +24,8 @@ public class ListMediaProcessTaskRequest {
     private List<String> taskId = null;
 
     /**
-    * 任务状态。  取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
-    */
+     * 任务状态。  取值如下： - WAITING：等待启动 - PROCESSING：处理中 - SUCCEEDED：处理成功 - FAILED：处理失败 - CANCELED：已取消 
+     */
     public static final class StatusEnum {
 
         /**
@@ -86,22 +86,15 @@ public class ListMediaProcessTaskRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,20 +259,17 @@ public class ListMediaProcessTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMediaProcessTaskRequest listMediaProcessTaskRequest = (ListMediaProcessTaskRequest) o;
-        return Objects.equals(this.taskId, listMediaProcessTaskRequest.taskId)
-            && Objects.equals(this.status, listMediaProcessTaskRequest.status)
-            && Objects.equals(this.startTime, listMediaProcessTaskRequest.startTime)
-            && Objects.equals(this.endTime, listMediaProcessTaskRequest.endTime)
-            && Objects.equals(this.page, listMediaProcessTaskRequest.page)
-            && Objects.equals(this.size, listMediaProcessTaskRequest.size);
+        ListMediaProcessTaskRequest that = (ListMediaProcessTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override

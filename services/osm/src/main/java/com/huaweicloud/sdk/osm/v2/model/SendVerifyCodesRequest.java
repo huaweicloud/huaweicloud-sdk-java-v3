@@ -117,18 +117,16 @@ public class SendVerifyCodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendVerifyCodesRequest sendVerifyCodesRequest = (SendVerifyCodesRequest) o;
-        return Objects.equals(this.xSite, sendVerifyCodesRequest.xSite)
-            && Objects.equals(this.xLanguage, sendVerifyCodesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, sendVerifyCodesRequest.xTimeZone)
-            && Objects.equals(this.body, sendVerifyCodesRequest.body);
+        SendVerifyCodesRequest that = (SendVerifyCodesRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone) && Objects.equals(this.body, that.body);
     }
 
     @Override

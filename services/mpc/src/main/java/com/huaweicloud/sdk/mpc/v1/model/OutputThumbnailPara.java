@@ -137,19 +137,17 @@ public class OutputThumbnailPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputThumbnailPara outputThumbnailPara = (OutputThumbnailPara) o;
-        return Objects.equals(this.totalPictures, outputThumbnailPara.totalPictures)
-            && Objects.equals(this.width, outputThumbnailPara.width)
-            && Objects.equals(this.height, outputThumbnailPara.height)
-            && Objects.equals(this.fileName, outputThumbnailPara.fileName)
-            && Objects.equals(this.output, outputThumbnailPara.output);
+        OutputThumbnailPara that = (OutputThumbnailPara) obj;
+        return Objects.equals(this.totalPictures, that.totalPictures) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.output, that.output);
     }
 
     @Override

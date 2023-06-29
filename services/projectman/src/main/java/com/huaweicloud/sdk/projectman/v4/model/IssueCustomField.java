@@ -162,20 +162,17 @@ public class IssueCustomField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueCustomField issueCustomField = (IssueCustomField) o;
-        return Objects.equals(this.name, issueCustomField.name)
-            && Objects.equals(this.customField, issueCustomField.customField)
-            && Objects.equals(this.options, issueCustomField.options)
-            && Objects.equals(this.type, issueCustomField.type)
-            && Objects.equals(this.trackerIds, issueCustomField.trackerIds)
-            && Objects.equals(this.createTime, issueCustomField.createTime);
+        IssueCustomField that = (IssueCustomField) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.customField, that.customField)
+            && Objects.equals(this.options, that.options) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.trackerIds, that.trackerIds) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

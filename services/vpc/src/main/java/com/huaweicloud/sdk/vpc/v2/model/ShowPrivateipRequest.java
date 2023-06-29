@@ -33,15 +33,15 @@ public class ShowPrivateipRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateipRequest showPrivateipRequest = (ShowPrivateipRequest) o;
-        return Objects.equals(this.privateipId, showPrivateipRequest.privateipId);
+        ShowPrivateipRequest that = (ShowPrivateipRequest) obj;
+        return Objects.equals(this.privateipId, that.privateipId);
     }
 
     @Override

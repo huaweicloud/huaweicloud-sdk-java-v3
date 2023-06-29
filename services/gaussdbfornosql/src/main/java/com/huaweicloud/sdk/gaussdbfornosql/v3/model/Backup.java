@@ -303,22 +303,20 @@ public class Backup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Backup backup = (Backup) o;
-        return Objects.equals(this.id, backup.id) && Objects.equals(this.description, backup.description)
-            && Objects.equals(this.instanceId, backup.instanceId)
-            && Objects.equals(this.instanceName, backup.instanceName)
-            && Objects.equals(this.datastore, backup.datastore) && Objects.equals(this.name, backup.name)
-            && Objects.equals(this.type, backup.type) && Objects.equals(this.size, backup.size)
-            && Objects.equals(this.status, backup.status) && Objects.equals(this.beginTime, backup.beginTime)
-            && Objects.equals(this.endTime, backup.endTime)
-            && Objects.equals(this.databaseTables, backup.databaseTables);
+        Backup that = (Backup) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.databaseTables, that.databaseTables);
     }
 
     @Override

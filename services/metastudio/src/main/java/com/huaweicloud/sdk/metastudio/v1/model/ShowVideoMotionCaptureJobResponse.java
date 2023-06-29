@@ -74,22 +74,15 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MotionCaptureModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MotionCaptureModeEnum(value));
         }
 
         public static MotionCaptureModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MotionCaptureModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -368,21 +354,18 @@ public class ShowVideoMotionCaptureJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVideoMotionCaptureJobResponse showVideoMotionCaptureJobResponse = (ShowVideoMotionCaptureJobResponse) o;
-        return Objects.equals(this.motionCaptureMode, showVideoMotionCaptureJobResponse.motionCaptureMode)
-            && Objects.equals(this.inputInfo, showVideoMotionCaptureJobResponse.inputInfo)
-            && Objects.equals(this.outputInfo, showVideoMotionCaptureJobResponse.outputInfo)
-            && Objects.equals(this.jobId, showVideoMotionCaptureJobResponse.jobId)
-            && Objects.equals(this.state, showVideoMotionCaptureJobResponse.state)
-            && Objects.equals(this.startTime, showVideoMotionCaptureJobResponse.startTime)
-            && Objects.equals(this.endTime, showVideoMotionCaptureJobResponse.endTime);
+        ShowVideoMotionCaptureJobResponse that = (ShowVideoMotionCaptureJobResponse) obj;
+        return Objects.equals(this.motionCaptureMode, that.motionCaptureMode)
+            && Objects.equals(this.inputInfo, that.inputInfo) && Objects.equals(this.outputInfo, that.outputInfo)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

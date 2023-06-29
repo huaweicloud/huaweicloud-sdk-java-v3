@@ -191,22 +191,18 @@ public class ListRomaAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRomaAppRequest listRomaAppRequest = (ListRomaAppRequest) o;
-        return Objects.equals(this.instanceId, listRomaAppRequest.instanceId)
-            && Objects.equals(this.offset, listRomaAppRequest.offset)
-            && Objects.equals(this.limit, listRomaAppRequest.limit)
-            && Objects.equals(this.favorite, listRomaAppRequest.favorite)
-            && Objects.equals(this.authRole, listRomaAppRequest.authRole)
-            && Objects.equals(this.name, listRomaAppRequest.name)
-            && Objects.equals(this.owner, listRomaAppRequest.owner)
-            && Objects.equals(this.userName, listRomaAppRequest.userName);
+        ListRomaAppRequest that = (ListRomaAppRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.favorite, that.favorite)
+            && Objects.equals(this.authRole, that.authRole) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

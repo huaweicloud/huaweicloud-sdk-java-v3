@@ -21,21 +21,21 @@ public class BssInfoExtend {
     public static final class IsAutoPayEnum {
 
         /**
-         * Enum NUMBER_0 for value: 0l
+         * Enum NUMBER_0 for value: 0L
          */
-        public static final IsAutoPayEnum NUMBER_0 = new IsAutoPayEnum(0l);
+        public static final IsAutoPayEnum NUMBER_0 = new IsAutoPayEnum(0L);
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final IsAutoPayEnum NUMBER_1 = new IsAutoPayEnum(1l);
+        public static final IsAutoPayEnum NUMBER_1 = new IsAutoPayEnum(1L);
 
         private static final Map<Long, IsAutoPayEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, IsAutoPayEnum> createStaticFields() {
             Map<Long, IsAutoPayEnum> map = new HashMap<>();
-            map.put(0l, NUMBER_0);
-            map.put(1l, NUMBER_1);
+            map.put(0L, NUMBER_0);
+            map.put(1L, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -60,22 +60,15 @@ public class BssInfoExtend {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoPayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoPayEnum(value));
         }
 
         public static IsAutoPayEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,15 +108,15 @@ public class BssInfoExtend {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BssInfoExtend bssInfoExtend = (BssInfoExtend) o;
-        return Objects.equals(this.isAutoPay, bssInfoExtend.isAutoPay);
+        BssInfoExtend that = (BssInfoExtend) obj;
+        return Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

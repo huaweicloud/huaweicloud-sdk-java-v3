@@ -119,18 +119,16 @@ public class ShowSubmissionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubmissionsResponse showSubmissionsResponse = (ShowSubmissionsResponse) o;
-        return Objects.equals(this.submissions, showSubmissionsResponse.submissions)
-            && Objects.equals(this.total, showSubmissionsResponse.total)
-            && Objects.equals(this.pageNo, showSubmissionsResponse.pageNo)
-            && Objects.equals(this.pageSize, showSubmissionsResponse.pageSize);
+        ShowSubmissionsResponse that = (ShowSubmissionsResponse) obj;
+        return Objects.equals(this.submissions, that.submissions) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

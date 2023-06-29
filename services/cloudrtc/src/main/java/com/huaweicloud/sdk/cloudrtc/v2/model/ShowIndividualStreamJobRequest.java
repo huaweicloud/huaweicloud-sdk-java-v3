@@ -125,19 +125,17 @@ public class ShowIndividualStreamJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIndividualStreamJobRequest showIndividualStreamJobRequest = (ShowIndividualStreamJobRequest) o;
-        return Objects.equals(this.authorization, showIndividualStreamJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, showIndividualStreamJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showIndividualStreamJobRequest.xProjectId)
-            && Objects.equals(this.appId, showIndividualStreamJobRequest.appId)
-            && Objects.equals(this.jobId, showIndividualStreamJobRequest.jobId);
+        ShowIndividualStreamJobRequest that = (ShowIndividualStreamJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

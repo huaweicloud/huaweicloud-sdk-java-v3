@@ -106,17 +106,16 @@ public class ListNetworkInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNetworkInstancesResponse listNetworkInstancesResponse = (ListNetworkInstancesResponse) o;
-        return Objects.equals(this.networkInstances, listNetworkInstancesResponse.networkInstances)
-            && Objects.equals(this.pageInfo, listNetworkInstancesResponse.pageInfo)
-            && Objects.equals(this.requestId, listNetworkInstancesResponse.requestId);
+        ListNetworkInstancesResponse that = (ListNetworkInstancesResponse) obj;
+        return Objects.equals(this.networkInstances, that.networkInstances)
+            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

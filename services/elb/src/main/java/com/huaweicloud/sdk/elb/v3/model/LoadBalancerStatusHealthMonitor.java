@@ -99,18 +99,16 @@ public class LoadBalancerStatusHealthMonitor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancerStatusHealthMonitor loadBalancerStatusHealthMonitor = (LoadBalancerStatusHealthMonitor) o;
-        return Objects.equals(this.type, loadBalancerStatusHealthMonitor.type)
-            && Objects.equals(this.id, loadBalancerStatusHealthMonitor.id)
-            && Objects.equals(this.name, loadBalancerStatusHealthMonitor.name)
-            && Objects.equals(this.provisioningStatus, loadBalancerStatusHealthMonitor.provisioningStatus);
+        LoadBalancerStatusHealthMonitor that = (LoadBalancerStatusHealthMonitor) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.provisioningStatus, that.provisioningStatus);
     }
 
     @Override

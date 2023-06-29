@@ -43,15 +43,15 @@ public class UpdateCompetitionScoreRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCompetitionScoreRequest updateCompetitionScoreRequest = (UpdateCompetitionScoreRequest) o;
-        return Objects.equals(this.body, updateCompetitionScoreRequest.body);
+        UpdateCompetitionScoreRequest that = (UpdateCompetitionScoreRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

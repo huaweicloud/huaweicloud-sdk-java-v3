@@ -55,16 +55,15 @@ public class ShowBizCatalogDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBizCatalogDetailRequest showBizCatalogDetailRequest = (ShowBizCatalogDetailRequest) o;
-        return Objects.equals(this.workspace, showBizCatalogDetailRequest.workspace)
-            && Objects.equals(this.id, showBizCatalogDetailRequest.id);
+        ShowBizCatalogDetailRequest that = (ShowBizCatalogDetailRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -90,17 +90,16 @@ public class ListApplicationAttributesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationAttributesResponse listApplicationAttributesResponse = (ListApplicationAttributesResponse) o;
-        return Objects.equals(this.requestId, listApplicationAttributesResponse.requestId)
-            && Objects.equals(this.applicationId, listApplicationAttributesResponse.applicationId)
-            && Objects.equals(this.attributes, listApplicationAttributesResponse.attributes);
+        ListApplicationAttributesResponse that = (ListApplicationAttributesResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

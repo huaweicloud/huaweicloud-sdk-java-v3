@@ -77,17 +77,16 @@ public class DeleteCcRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCcRuleRequest deleteCcRuleRequest = (DeleteCcRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteCcRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, deleteCcRuleRequest.policyId)
-            && Objects.equals(this.ruleId, deleteCcRuleRequest.ruleId);
+        DeleteCcRuleRequest that = (DeleteCcRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

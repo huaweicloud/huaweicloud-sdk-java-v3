@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class CancelSqlRequest  {
-
+public class CancelSqlRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql_id")
-    
+    @JsonProperty(value = "sql_id")
 
     private String sqlId;
 
@@ -34,9 +24,6 @@ public class CancelSqlRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。获取方法，请参见[获取集群ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)。
@@ -50,15 +37,10 @@ public class CancelSqlRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public CancelSqlRequest withSqlId(String sqlId) {
         this.sqlId = sqlId;
         return this;
     }
-
-    
-
 
     /**
      * SQL的执行ID，即提交SQL语句返回结果中的sql_id。
@@ -72,24 +54,23 @@ public class CancelSqlRequest  {
         this.sqlId = sqlId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelSqlRequest cancelSqlRequest = (CancelSqlRequest) o;
-        return Objects.equals(this.clusterId, cancelSqlRequest.clusterId) &&
-            Objects.equals(this.sqlId, cancelSqlRequest.sqlId);
+        CancelSqlRequest that = (CancelSqlRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.sqlId, that.sqlId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, sqlId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class CancelSqlRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class CancelSqlRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

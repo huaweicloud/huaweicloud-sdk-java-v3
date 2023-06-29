@@ -82,22 +82,15 @@ public class ShowAllInstancesBackupsRequest {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreTypeEnum(value));
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -174,22 +167,15 @@ public class ShowAllInstancesBackupsRequest {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupTypeEnum(value));
         }
 
         public static BackupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -361,22 +347,19 @@ public class ShowAllInstancesBackupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllInstancesBackupsRequest showAllInstancesBackupsRequest = (ShowAllInstancesBackupsRequest) o;
-        return Objects.equals(this.offset, showAllInstancesBackupsRequest.offset)
-            && Objects.equals(this.limit, showAllInstancesBackupsRequest.limit)
-            && Objects.equals(this.datastoreType, showAllInstancesBackupsRequest.datastoreType)
-            && Objects.equals(this.instanceId, showAllInstancesBackupsRequest.instanceId)
-            && Objects.equals(this.backupId, showAllInstancesBackupsRequest.backupId)
-            && Objects.equals(this.backupType, showAllInstancesBackupsRequest.backupType)
-            && Objects.equals(this.beginTime, showAllInstancesBackupsRequest.beginTime)
-            && Objects.equals(this.endTime, showAllInstancesBackupsRequest.endTime);
+        ShowAllInstancesBackupsRequest that = (ShowAllInstancesBackupsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

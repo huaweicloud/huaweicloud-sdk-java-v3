@@ -80,22 +80,15 @@ public class ListSubsetsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,22 +161,15 @@ public class ListSubsetsRequest {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OnlineStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OnlineStatusEnum(value));
         }
 
         public static OnlineStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,21 +326,18 @@ public class ListSubsetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubsetsRequest listSubsetsRequest = (ListSubsetsRequest) o;
-        return Objects.equals(this.instanceId, listSubsetsRequest.instanceId)
-            && Objects.equals(this.deviceId, listSubsetsRequest.deviceId)
-            && Objects.equals(this.limit, listSubsetsRequest.limit)
-            && Objects.equals(this.deviceName, listSubsetsRequest.deviceName)
-            && Objects.equals(this.status, listSubsetsRequest.status)
-            && Objects.equals(this.onlineStatus, listSubsetsRequest.onlineStatus)
-            && Objects.equals(this.offset, listSubsetsRequest.offset);
+        ListSubsetsRequest that = (ListSubsetsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class Papers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Papers papers = (Papers) o;
-        return Objects.equals(this.paperIds, papers.paperIds);
+        Papers that = (Papers) obj;
+        return Objects.equals(this.paperIds, that.paperIds);
     }
 
     @Override

@@ -57,16 +57,16 @@ public class CancelBroadcastRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelBroadcastRequest cancelBroadcastRequest = (CancelBroadcastRequest) o;
-        return Objects.equals(this.conferenceID, cancelBroadcastRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, cancelBroadcastRequest.xConferenceAuthorization);
+        CancelBroadcastRequest that = (CancelBroadcastRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

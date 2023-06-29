@@ -162,19 +162,18 @@ public class AppConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppConfigs appConfigs = (AppConfigs) o;
-        return Objects.equals(this.privileged, appConfigs.privileged)
-            && Objects.equals(this.runAsUser, appConfigs.runAsUser)
-            && Objects.equals(this.hostNetwork, appConfigs.hostNetwork)
-            && Objects.equals(this.restartPolicy, appConfigs.restartPolicy)
-            && Objects.equals(this.ports, appConfigs.ports) && Objects.equals(this.hostPid, appConfigs.hostPid);
+        AppConfigs that = (AppConfigs) obj;
+        return Objects.equals(this.privileged, that.privileged) && Objects.equals(this.runAsUser, that.runAsUser)
+            && Objects.equals(this.hostNetwork, that.hostNetwork)
+            && Objects.equals(this.restartPolicy, that.restartPolicy) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.hostPid, that.hostPid);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ShowBranchesByRepositoryIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBranchesByRepositoryIdResponse showBranchesByRepositoryIdResponse = (ShowBranchesByRepositoryIdResponse) o;
-        return Objects.equals(this.error, showBranchesByRepositoryIdResponse.error)
-            && Objects.equals(this.result, showBranchesByRepositoryIdResponse.result)
-            && Objects.equals(this.status, showBranchesByRepositoryIdResponse.status);
+        ShowBranchesByRepositoryIdResponse that = (ShowBranchesByRepositoryIdResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

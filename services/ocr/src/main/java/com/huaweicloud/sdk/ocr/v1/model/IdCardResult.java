@@ -307,23 +307,23 @@ public class IdCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdCardResult idCardResult = (IdCardResult) o;
-        return Objects.equals(this.name, idCardResult.name) && Objects.equals(this.sex, idCardResult.sex)
-            && Objects.equals(this.birth, idCardResult.birth) && Objects.equals(this.ethnicity, idCardResult.ethnicity)
-            && Objects.equals(this.address, idCardResult.address) && Objects.equals(this.number, idCardResult.number)
-            && Objects.equals(this.issue, idCardResult.issue) && Objects.equals(this.validFrom, idCardResult.validFrom)
-            && Objects.equals(this.validTo, idCardResult.validTo)
-            && Objects.equals(this.verificationResult, idCardResult.verificationResult)
-            && Objects.equals(this.textLocation, idCardResult.textLocation)
-            && Objects.equals(this.detectReproduceResult, idCardResult.detectReproduceResult)
-            && Objects.equals(this.detectCopyResult, idCardResult.detectCopyResult);
+        IdCardResult that = (IdCardResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.birth, that.birth) && Objects.equals(this.ethnicity, that.ethnicity)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.issue, that.issue) && Objects.equals(this.validFrom, that.validFrom)
+            && Objects.equals(this.validTo, that.validTo)
+            && Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.textLocation, that.textLocation)
+            && Objects.equals(this.detectReproduceResult, that.detectReproduceResult)
+            && Objects.equals(this.detectCopyResult, that.detectCopyResult);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class TimeRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeRange timeRange = (TimeRange) o;
-        return Objects.equals(this.startTime, timeRange.startTime) && Objects.equals(this.endTime, timeRange.endTime)
-            && Objects.equals(this.daysOfWeek, timeRange.daysOfWeek);
+        TimeRange that = (TimeRange) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.daysOfWeek, that.daysOfWeek);
     }
 
     @Override

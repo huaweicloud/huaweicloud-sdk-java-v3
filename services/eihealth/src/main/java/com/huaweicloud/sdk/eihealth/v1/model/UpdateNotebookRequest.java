@@ -87,17 +87,16 @@ public class UpdateNotebookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNotebookRequest updateNotebookRequest = (UpdateNotebookRequest) o;
-        return Objects.equals(this.eihealthProjectId, updateNotebookRequest.eihealthProjectId)
-            && Objects.equals(this.notebookId, updateNotebookRequest.notebookId)
-            && Objects.equals(this.body, updateNotebookRequest.body);
+        UpdateNotebookRequest that = (UpdateNotebookRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.notebookId, that.notebookId) && Objects.equals(this.body, that.body);
     }
 
     @Override

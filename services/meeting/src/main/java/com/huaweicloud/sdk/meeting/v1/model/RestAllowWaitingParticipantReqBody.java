@@ -55,16 +55,15 @@ public class RestAllowWaitingParticipantReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestAllowWaitingParticipantReqBody restAllowWaitingParticipantReqBody = (RestAllowWaitingParticipantReqBody) o;
-        return Objects.equals(this.participantID, restAllowWaitingParticipantReqBody.participantID)
-            && Objects.equals(this.allowAll, restAllowWaitingParticipantReqBody.allowAll);
+        RestAllowWaitingParticipantReqBody that = (RestAllowWaitingParticipantReqBody) obj;
+        return Objects.equals(this.participantID, that.participantID) && Objects.equals(this.allowAll, that.allowAll);
     }
 
     @Override

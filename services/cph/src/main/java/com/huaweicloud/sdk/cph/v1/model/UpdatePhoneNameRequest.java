@@ -65,16 +65,15 @@ public class UpdatePhoneNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePhoneNameRequest updatePhoneNameRequest = (UpdatePhoneNameRequest) o;
-        return Objects.equals(this.phoneId, updatePhoneNameRequest.phoneId)
-            && Objects.equals(this.body, updatePhoneNameRequest.body);
+        UpdatePhoneNameRequest that = (UpdatePhoneNameRequest) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.body, that.body);
     }
 
     @Override

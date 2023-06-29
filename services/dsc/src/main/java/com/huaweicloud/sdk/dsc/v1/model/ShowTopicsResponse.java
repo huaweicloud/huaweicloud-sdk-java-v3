@@ -97,17 +97,16 @@ public class ShowTopicsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopicsResponse showTopicsResponse = (ShowTopicsResponse) o;
-        return Objects.equals(this.defaultTopicUrn, showTopicsResponse.defaultTopicUrn)
-            && Objects.equals(this.topicCount, showTopicsResponse.topicCount)
-            && Objects.equals(this.topics, showTopicsResponse.topics);
+        ShowTopicsResponse that = (ShowTopicsResponse) obj;
+        return Objects.equals(this.defaultTopicUrn, that.defaultTopicUrn)
+            && Objects.equals(this.topicCount, that.topicCount) && Objects.equals(this.topics, that.topics);
     }
 
     @Override

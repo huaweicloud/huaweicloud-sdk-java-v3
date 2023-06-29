@@ -79,22 +79,15 @@ public class OpenIdConnectConfig {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResponseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResponseTypeEnum(value));
         }
 
         public static ResponseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -161,22 +154,15 @@ public class OpenIdConnectConfig {
             if (value == null) {
                 return null;
             }
-            ResponseModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResponseModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResponseModeEnum(value));
         }
 
         public static ResponseModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResponseModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,22 +326,19 @@ public class OpenIdConnectConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenIdConnectConfig openIdConnectConfig = (OpenIdConnectConfig) o;
-        return Objects.equals(this.accessMode, openIdConnectConfig.accessMode)
-            && Objects.equals(this.idpUrl, openIdConnectConfig.idpUrl)
-            && Objects.equals(this.clientId, openIdConnectConfig.clientId)
-            && Objects.equals(this.authorizationEndpoint, openIdConnectConfig.authorizationEndpoint)
-            && Objects.equals(this.scope, openIdConnectConfig.scope)
-            && Objects.equals(this.responseType, openIdConnectConfig.responseType)
-            && Objects.equals(this.responseMode, openIdConnectConfig.responseMode)
-            && Objects.equals(this.signingKey, openIdConnectConfig.signingKey);
+        OpenIdConnectConfig that = (OpenIdConnectConfig) obj;
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.idpUrl, that.idpUrl)
+            && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.authorizationEndpoint, that.authorizationEndpoint)
+            && Objects.equals(this.scope, that.scope) && Objects.equals(this.responseType, that.responseType)
+            && Objects.equals(this.responseMode, that.responseMode) && Objects.equals(this.signingKey, that.signingKey);
     }
 
     @Override

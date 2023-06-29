@@ -56,16 +56,15 @@ public class QuotaReclaim {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaReclaim quotaReclaim = (QuotaReclaim) o;
-        return Objects.equals(this.quotaId, quotaReclaim.quotaId)
-            && Objects.equals(this.quotaBalance, quotaReclaim.quotaBalance);
+        QuotaReclaim that = (QuotaReclaim) obj;
+        return Objects.equals(this.quotaId, that.quotaId) && Objects.equals(this.quotaBalance, that.quotaBalance);
     }
 
     @Override

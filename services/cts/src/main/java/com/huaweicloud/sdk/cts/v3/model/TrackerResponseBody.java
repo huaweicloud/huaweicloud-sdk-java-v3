@@ -86,22 +86,15 @@ public class TrackerResponseBody {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrackerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrackerTypeEnum(value));
         }
 
         public static TrackerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class TrackerResponseBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -552,30 +538,23 @@ public class TrackerResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrackerResponseBody trackerResponseBody = (TrackerResponseBody) o;
-        return Objects.equals(this.id, trackerResponseBody.id)
-            && Objects.equals(this.createTime, trackerResponseBody.createTime)
-            && Objects.equals(this.kmsId, trackerResponseBody.kmsId)
-            && Objects.equals(this.isSupportValidate, trackerResponseBody.isSupportValidate)
-            && Objects.equals(this.lts, trackerResponseBody.lts)
-            && Objects.equals(this.trackerType, trackerResponseBody.trackerType)
-            && Objects.equals(this.domainId, trackerResponseBody.domainId)
-            && Objects.equals(this.projectId, trackerResponseBody.projectId)
-            && Objects.equals(this.trackerName, trackerResponseBody.trackerName)
-            && Objects.equals(this.status, trackerResponseBody.status)
-            && Objects.equals(this.detail, trackerResponseBody.detail)
-            && Objects.equals(this.isSupportTraceFilesEncryption, trackerResponseBody.isSupportTraceFilesEncryption)
-            && Objects.equals(this.groupId, trackerResponseBody.groupId)
-            && Objects.equals(this.streamId, trackerResponseBody.streamId)
-            && Objects.equals(this.obsInfo, trackerResponseBody.obsInfo)
-            && Objects.equals(this.dataBucket, trackerResponseBody.dataBucket);
+        TrackerResponseBody that = (TrackerResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.kmsId, that.kmsId) && Objects.equals(this.isSupportValidate, that.isSupportValidate)
+            && Objects.equals(this.lts, that.lts) && Objects.equals(this.trackerType, that.trackerType)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.trackerName, that.trackerName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.isSupportTraceFilesEncryption, that.isSupportTraceFilesEncryption)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.streamId, that.streamId)
+            && Objects.equals(this.obsInfo, that.obsInfo) && Objects.equals(this.dataBucket, that.dataBucket);
     }
 
     @Override

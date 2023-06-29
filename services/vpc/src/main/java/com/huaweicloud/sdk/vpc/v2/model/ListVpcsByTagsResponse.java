@@ -75,16 +75,15 @@ public class ListVpcsByTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcsByTagsResponse listVpcsByTagsResponse = (ListVpcsByTagsResponse) o;
-        return Objects.equals(this.resources, listVpcsByTagsResponse.resources)
-            && Objects.equals(this.totalCount, listVpcsByTagsResponse.totalCount);
+        ListVpcsByTagsResponse that = (ListVpcsByTagsResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

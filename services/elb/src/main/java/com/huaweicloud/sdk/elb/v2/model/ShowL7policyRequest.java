@@ -33,15 +33,15 @@ public class ShowL7policyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowL7policyRequest showL7policyRequest = (ShowL7policyRequest) o;
-        return Objects.equals(this.l7policyId, showL7policyRequest.l7policyId);
+        ShowL7policyRequest that = (ShowL7policyRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId);
     }
 
     @Override

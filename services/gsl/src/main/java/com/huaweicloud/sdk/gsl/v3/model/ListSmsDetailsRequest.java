@@ -126,19 +126,17 @@ public class ListSmsDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSmsDetailsRequest listSmsDetailsRequest = (ListSmsDetailsRequest) o;
-        return Objects.equals(this.limit, listSmsDetailsRequest.limit)
-            && Objects.equals(this.offset, listSmsDetailsRequest.offset)
-            && Objects.equals(this.cid, listSmsDetailsRequest.cid)
-            && Objects.equals(this.startTime, listSmsDetailsRequest.startTime)
-            && Objects.equals(this.endTime, listSmsDetailsRequest.endTime);
+        ListSmsDetailsRequest that = (ListSmsDetailsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.cid, that.cid) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

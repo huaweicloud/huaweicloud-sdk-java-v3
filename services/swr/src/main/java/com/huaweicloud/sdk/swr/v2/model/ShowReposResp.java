@@ -426,27 +426,23 @@ public class ShowReposResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReposResp showReposResp = (ShowReposResp) o;
-        return Objects.equals(this.name, showReposResp.name) && Objects.equals(this.category, showReposResp.category)
-            && Objects.equals(this.description, showReposResp.description)
-            && Objects.equals(this.size, showReposResp.size) && Objects.equals(this.isPublic, showReposResp.isPublic)
-            && Objects.equals(this.numImages, showReposResp.numImages)
-            && Objects.equals(this.numDownload, showReposResp.numDownload)
-            && Objects.equals(this.createdAt, showReposResp.createdAt)
-            && Objects.equals(this.updatedAt, showReposResp.updatedAt) && Objects.equals(this.logo, showReposResp.logo)
-            && Objects.equals(this.url, showReposResp.url) && Objects.equals(this.path, showReposResp.path)
-            && Objects.equals(this.internalPath, showReposResp.internalPath)
-            && Objects.equals(this.domainName, showReposResp.domainName)
-            && Objects.equals(this.namespace, showReposResp.namespace) && Objects.equals(this.tags, showReposResp.tags)
-            && Objects.equals(this.status, showReposResp.status)
-            && Objects.equals(this.totalRange, showReposResp.totalRange);
+        ShowReposResp that = (ShowReposResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.numImages, that.numImages)
+            && Objects.equals(this.numDownload, that.numDownload) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.logo, that.logo)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.internalPath, that.internalPath) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.totalRange, that.totalRange);
     }
 
     @Override

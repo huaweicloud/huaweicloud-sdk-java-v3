@@ -407,32 +407,27 @@ public class OpenWebinarOngoingInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenWebinarOngoingInfo openWebinarOngoingInfo = (OpenWebinarOngoingInfo) o;
-        return Objects.equals(this.onlineAttendeeCount, openWebinarOngoingInfo.onlineAttendeeCount)
-            && Objects.equals(this.confUUID, openWebinarOngoingInfo.confUUID)
-            && Objects.equals(this.deptName, openWebinarOngoingInfo.deptName)
-            && Objects.equals(this.conferenceId, openWebinarOngoingInfo.conferenceId)
-            && Objects.equals(this.corpId, openWebinarOngoingInfo.corpId)
-            && Objects.equals(this.subject, openWebinarOngoingInfo.subject)
-            && Objects.equals(this.description, openWebinarOngoingInfo.description)
-            && Objects.equals(this.startTime, openWebinarOngoingInfo.startTime)
-            && Objects.equals(this.timeZoneId, openWebinarOngoingInfo.timeZoneId)
-            && Objects.equals(this.scheduserId, openWebinarOngoingInfo.scheduserId)
-            && Objects.equals(this.scheduserName, openWebinarOngoingInfo.scheduserName)
-            && Objects.equals(this.vmrPkgName, openWebinarOngoingInfo.vmrPkgName)
-            && Objects.equals(this.chairJoinUri, openWebinarOngoingInfo.chairJoinUri)
-            && Objects.equals(this.chairPasswd, openWebinarOngoingInfo.chairPasswd)
-            && Objects.equals(this.guestJoinUri, openWebinarOngoingInfo.guestJoinUri)
-            && Objects.equals(this.guestPasswd, openWebinarOngoingInfo.guestPasswd)
-            && Objects.equals(this.audienceJoinUri, openWebinarOngoingInfo.audienceJoinUri)
-            && Objects.equals(this.audiencePasswd, openWebinarOngoingInfo.audiencePasswd);
+        OpenWebinarOngoingInfo that = (OpenWebinarOngoingInfo) obj;
+        return Objects.equals(this.onlineAttendeeCount, that.onlineAttendeeCount)
+            && Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.conferenceId, that.conferenceId) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeZoneId, that.timeZoneId)
+            && Objects.equals(this.scheduserId, that.scheduserId)
+            && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.vmrPkgName, that.vmrPkgName) && Objects.equals(this.chairJoinUri, that.chairJoinUri)
+            && Objects.equals(this.chairPasswd, that.chairPasswd)
+            && Objects.equals(this.guestJoinUri, that.guestJoinUri)
+            && Objects.equals(this.guestPasswd, that.guestPasswd)
+            && Objects.equals(this.audienceJoinUri, that.audienceJoinUri)
+            && Objects.equals(this.audiencePasswd, that.audiencePasswd);
     }
 
     @Override

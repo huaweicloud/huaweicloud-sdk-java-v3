@@ -246,21 +246,19 @@ public class EachEncryptRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EachEncryptRsp eachEncryptRsp = (EachEncryptRsp) o;
-        return Objects.equals(this.taskId, eachEncryptRsp.taskId) && Objects.equals(this.status, eachEncryptRsp.status)
-            && Objects.equals(this.createTime, eachEncryptRsp.createTime)
-            && Objects.equals(this.endTime, eachEncryptRsp.endTime) && Objects.equals(this.input, eachEncryptRsp.input)
-            && Objects.equals(this.output, eachEncryptRsp.output)
-            && Objects.equals(this.outputFileName, eachEncryptRsp.outputFileName)
-            && Objects.equals(this.userData, eachEncryptRsp.userData)
-            && Objects.equals(this.description, eachEncryptRsp.description);
+        EachEncryptRsp that = (EachEncryptRsp) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFileName, that.outputFileName) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

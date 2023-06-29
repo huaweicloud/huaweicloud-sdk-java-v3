@@ -33,15 +33,15 @@ public class KeystoneShowPermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowPermissionRequest keystoneShowPermissionRequest = (KeystoneShowPermissionRequest) o;
-        return Objects.equals(this.roleId, keystoneShowPermissionRequest.roleId);
+        KeystoneShowPermissionRequest that = (KeystoneShowPermissionRequest) obj;
+        return Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

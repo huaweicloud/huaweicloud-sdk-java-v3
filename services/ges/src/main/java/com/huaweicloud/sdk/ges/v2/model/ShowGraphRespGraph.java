@@ -1,252 +1,210 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ListGraphsRespSchemaPath;
-import com.huaweicloud.sdk.ges.v2.model.ListGraphsRespTags;
-import com.huaweicloud.sdk.ges.v2.model.ListGraphsRespVertexIdType;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 请求失败时为空。
  */
-public class ShowGraphRespGraph  {
-
+public class ShowGraphRespGraph {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_by")
-    
+    @JsonProperty(value = "created_by")
 
     private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_multi_az")
-    
+    @JsonProperty(value = "is_multi_az")
 
     private String isMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
+    @JsonProperty(value = "region_code")
 
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_code")
-    
+    @JsonProperty(value = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema_path")
-    
+    @JsonProperty(value = "schema_path")
+
     private List<ListGraphsRespSchemaPath> schemaPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeset_path")
-    
+    @JsonProperty(value = "edgeset_path")
+
     private List<ListGraphsRespSchemaPath> edgesetPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexset_path")
-    
+    @JsonProperty(value = "vertexset_path")
+
     private List<ListGraphsRespSchemaPath> vertexsetPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeset_format")
-    
+    @JsonProperty(value = "edgeset_format")
 
     private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeset_default_label")
-    
+    @JsonProperty(value = "edgeset_default_label")
 
     private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexset_format")
-    
+    @JsonProperty(value = "vertexset_format")
 
     private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexset_default_label")
-    
+    @JsonProperty(value = "vertexset_default_label")
 
     private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_store_version")
-    
+    @JsonProperty(value = "data_store_version")
 
     private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<String> sysTags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_progress")
-    
+    @JsonProperty(value = "action_progress")
 
     private String actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_size_type_index")
-    
+    @JsonProperty(value = "graph_size_type_index")
 
     private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
 
     private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ip")
-    
+    @JsonProperty(value = "private_ip")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ip")
-    
+    @JsonProperty(value = "public_ip")
 
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_id")
-    
+    @JsonProperty(value = "master_key_id")
 
     private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_key_name")
-    
+    @JsonProperty(value = "master_key_name")
 
     private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_rbac")
-    
+    @JsonProperty(value = "enable_rbac")
 
     private Boolean enableRbac;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_full_text_index")
-    
+    @JsonProperty(value = "enable_full_text_index")
 
     private Boolean enableFullTextIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_hyg")
-    
+    @JsonProperty(value = "enable_hyg")
 
     private Boolean enableHyg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="traffic_ip_list")
-    
+    @JsonProperty(value = "traffic_ip_list")
+
     private List<String> trafficIpList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="crypt_algorithm")
-    
+    @JsonProperty(value = "crypt_algorithm")
 
     private String cryptAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_https")
-    
+    @JsonProperty(value = "enable_https")
 
     private Boolean enableHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<ListGraphsRespTags> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_type")
-    
+    @JsonProperty(value = "product_type")
 
     private String productType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertex_id_type")
-    
+    @JsonProperty(value = "vertex_id_type")
 
     private ListGraphsRespVertexIdType vertexIdType;
 
@@ -254,9 +212,6 @@ public class ShowGraphRespGraph  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -270,15 +225,10 @@ public class ShowGraphRespGraph  {
         this.id = id;
     }
 
-    
-
     public ShowGraphRespGraph withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 图名称。
@@ -292,15 +242,10 @@ public class ShowGraphRespGraph  {
         this.name = name;
     }
 
-    
-
     public ShowGraphRespGraph withCreatedBy(String createdBy) {
         this.createdBy = createdBy;
         return this;
     }
-
-    
-
 
     /**
      * 图的创建人账号。
@@ -314,15 +259,10 @@ public class ShowGraphRespGraph  {
         this.createdBy = createdBy;
     }
 
-    
-
     public ShowGraphRespGraph withIsMultiAz(String isMultiAz) {
         this.isMultiAz = isMultiAz;
         return this;
     }
-
-    
-
 
     /**
      * 是否支持跨AZ高可用。
@@ -336,15 +276,10 @@ public class ShowGraphRespGraph  {
         this.isMultiAz = isMultiAz;
     }
 
-    
-
     public ShowGraphRespGraph withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
-
-    
-
 
     /**
      * 域编码。
@@ -358,15 +293,10 @@ public class ShowGraphRespGraph  {
         this.regionCode = regionCode;
     }
 
-    
-
     public ShowGraphRespGraph withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区编码。
@@ -380,16 +310,13 @@ public class ShowGraphRespGraph  {
         this.azCode = azCode;
     }
 
-    
-
     public ShowGraphRespGraph withSchemaPath(List<ListGraphsRespSchemaPath> schemaPath) {
         this.schemaPath = schemaPath;
         return this;
     }
 
-    
     public ShowGraphRespGraph addSchemaPathItem(ListGraphsRespSchemaPath schemaPathItem) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         this.schemaPath.add(schemaPathItem);
@@ -397,7 +324,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withSchemaPath(Consumer<List<ListGraphsRespSchemaPath>> schemaPathSetter) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         schemaPathSetter.accept(this.schemaPath);
@@ -416,16 +343,13 @@ public class ShowGraphRespGraph  {
         this.schemaPath = schemaPath;
     }
 
-    
-
     public ShowGraphRespGraph withEdgesetPath(List<ListGraphsRespSchemaPath> edgesetPath) {
         this.edgesetPath = edgesetPath;
         return this;
     }
 
-    
     public ShowGraphRespGraph addEdgesetPathItem(ListGraphsRespSchemaPath edgesetPathItem) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         this.edgesetPath.add(edgesetPathItem);
@@ -433,7 +357,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withEdgesetPath(Consumer<List<ListGraphsRespSchemaPath>> edgesetPathSetter) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         edgesetPathSetter.accept(this.edgesetPath);
@@ -452,16 +376,13 @@ public class ShowGraphRespGraph  {
         this.edgesetPath = edgesetPath;
     }
 
-    
-
     public ShowGraphRespGraph withVertexsetPath(List<ListGraphsRespSchemaPath> vertexsetPath) {
         this.vertexsetPath = vertexsetPath;
         return this;
     }
 
-    
     public ShowGraphRespGraph addVertexsetPathItem(ListGraphsRespSchemaPath vertexsetPathItem) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         this.vertexsetPath.add(vertexsetPathItem);
@@ -469,7 +390,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withVertexsetPath(Consumer<List<ListGraphsRespSchemaPath>> vertexsetPathSetter) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         vertexsetPathSetter.accept(this.vertexsetPath);
@@ -488,15 +409,10 @@ public class ShowGraphRespGraph  {
         this.vertexsetPath = vertexsetPath;
     }
 
-    
-
     public ShowGraphRespGraph withEdgesetFormat(String edgesetFormat) {
         this.edgesetFormat = edgesetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集文件格式。
@@ -510,15 +426,10 @@ public class ShowGraphRespGraph  {
         this.edgesetFormat = edgesetFormat;
     }
 
-    
-
     public ShowGraphRespGraph withEdgesetDefaultLabel(String edgesetDefaultLabel) {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集文件默认Label。
@@ -532,15 +443,10 @@ public class ShowGraphRespGraph  {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
     }
 
-    
-
     public ShowGraphRespGraph withVertexsetFormat(String vertexsetFormat) {
         this.vertexsetFormat = vertexsetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集文件格式。
@@ -554,15 +460,10 @@ public class ShowGraphRespGraph  {
         this.vertexsetFormat = vertexsetFormat;
     }
 
-    
-
     public ShowGraphRespGraph withVertexsetDefaultLabel(String vertexsetDefaultLabel) {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集文件默认Label。
@@ -576,15 +477,10 @@ public class ShowGraphRespGraph  {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
     }
 
-    
-
     public ShowGraphRespGraph withDataStoreVersion(String dataStoreVersion) {
         this.dataStoreVersion = dataStoreVersion;
         return this;
     }
-
-    
-
 
     /**
      * 图版本。
@@ -598,16 +494,13 @@ public class ShowGraphRespGraph  {
         this.dataStoreVersion = dataStoreVersion;
     }
 
-    
-
     public ShowGraphRespGraph withSysTags(List<String> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public ShowGraphRespGraph addSysTagsItem(String sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -615,7 +508,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withSysTags(Consumer<List<String>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
@@ -634,15 +527,10 @@ public class ShowGraphRespGraph  {
         this.sysTags = sysTags;
     }
 
-    
-
     public ShowGraphRespGraph withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 图的状态码。  - 100：准备中 - 200：运行中 - 201：升级中 - 202：导入中 - 203：回滚中 - 204：导出中 - 205：清空中 - 206：扩容准备中 - 207：扩容中 - 208：扩容回退中 - 210：扩副本准备中 - 211：扩副本中 - 300：故障 - 303：创建失败 - 400：被删除 - 800：已冻结 - 900：停止 - 901：停止中 - 920：启动中
@@ -656,15 +544,10 @@ public class ShowGraphRespGraph  {
         this.status = status;
     }
 
-    
-
     public ShowGraphRespGraph withActionProgress(String actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
-
-    
-
 
     /**
      * 图创建进度百分比。 > 只有图状态码为100时返回该字段。
@@ -678,15 +561,10 @@ public class ShowGraphRespGraph  {
         this.actionProgress = actionProgress;
     }
 
-    
-
     public ShowGraphRespGraph withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
-
-    
-
 
     /**
      * 图规模类型索引。  - 0：一万边 - 1：百万边 - 2：千万边 - 3：一亿边 - 4：十亿边 - 5：百亿边 - 6：千亿边 - 401：十亿增强边
@@ -700,15 +578,10 @@ public class ShowGraphRespGraph  {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 
-    
-
     public ShowGraphRespGraph withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -722,15 +595,10 @@ public class ShowGraphRespGraph  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ShowGraphRespGraph withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 指定虚拟私有云下的子网ID。
@@ -744,15 +612,10 @@ public class ShowGraphRespGraph  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ShowGraphRespGraph withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -766,15 +629,10 @@ public class ShowGraphRespGraph  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ShowGraphRespGraph withReplication(Integer replication) {
         this.replication = replication;
         return this;
     }
-
-    
-
 
     /**
      * 副本个数，默认为1。
@@ -788,15 +646,10 @@ public class ShowGraphRespGraph  {
         this.replication = replication;
     }
 
-    
-
     public ShowGraphRespGraph withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 图创建时间。
@@ -810,15 +663,10 @@ public class ShowGraphRespGraph  {
         this.created = created;
     }
 
-    
-
     public ShowGraphRespGraph withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 图更新时间。
@@ -832,15 +680,10 @@ public class ShowGraphRespGraph  {
         this.updated = updated;
     }
 
-    
-
     public ShowGraphRespGraph withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
-
-    
-
 
     /**
      * 图实例私有网络访问浮动IP地址，通过该IP用户可以通过私有网络中已部署的弹性云服务器对图实例进行访问。
@@ -854,15 +697,10 @@ public class ShowGraphRespGraph  {
         this.privateIp = privateIp;
     }
 
-    
-
     public ShowGraphRespGraph withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
     }
-
-    
-
 
     /**
      * 图实例公网访问地址，通过该IP用户可以从互联网对图实例进行访问。
@@ -876,15 +714,10 @@ public class ShowGraphRespGraph  {
         this.publicIp = publicIp;
     }
 
-    
-
     public ShowGraphRespGraph withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 图实例CPU架构类型，取值为x86_64和aarch64。
@@ -898,15 +731,10 @@ public class ShowGraphRespGraph  {
         this.arch = arch;
     }
 
-    
-
     public ShowGraphRespGraph withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 是否加密。默认值为“false”，默认不加密。
@@ -920,15 +748,10 @@ public class ShowGraphRespGraph  {
         this.encrypted = encrypted;
     }
 
-    
-
     public ShowGraphRespGraph withMasterKeyId(String masterKeyId) {
         this.masterKeyId = masterKeyId;
         return this;
     }
-
-    
-
 
     /**
      * 用户主密钥ID。
@@ -942,15 +765,10 @@ public class ShowGraphRespGraph  {
         this.masterKeyId = masterKeyId;
     }
 
-    
-
     public ShowGraphRespGraph withMasterKeyName(String masterKeyName) {
         this.masterKeyName = masterKeyName;
         return this;
     }
-
-    
-
 
     /**
      * 用户主密钥名称。
@@ -964,15 +782,10 @@ public class ShowGraphRespGraph  {
         this.masterKeyName = masterKeyName;
     }
 
-    
-
     public ShowGraphRespGraph withEnableRbac(Boolean enableRbac) {
         this.enableRbac = enableRbac;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用细粒度权限控制。
@@ -986,15 +799,10 @@ public class ShowGraphRespGraph  {
         this.enableRbac = enableRbac;
     }
 
-    
-
     public ShowGraphRespGraph withEnableFullTextIndex(Boolean enableFullTextIndex) {
         this.enableFullTextIndex = enableFullTextIndex;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用全文索引。
@@ -1008,15 +816,10 @@ public class ShowGraphRespGraph  {
         this.enableFullTextIndex = enableFullTextIndex;
     }
 
-    
-
     public ShowGraphRespGraph withEnableHyg(Boolean enableHyg) {
         this.enableHyg = enableHyg;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用HyG，该参数只对千亿规格图生效。
@@ -1030,16 +833,13 @@ public class ShowGraphRespGraph  {
         this.enableHyg = enableHyg;
     }
 
-    
-
     public ShowGraphRespGraph withTrafficIpList(List<String> trafficIpList) {
         this.trafficIpList = trafficIpList;
         return this;
     }
 
-    
     public ShowGraphRespGraph addTrafficIpListItem(String trafficIpListItem) {
-        if(this.trafficIpList == null) {
+        if (this.trafficIpList == null) {
             this.trafficIpList = new ArrayList<>();
         }
         this.trafficIpList.add(trafficIpListItem);
@@ -1047,7 +847,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withTrafficIpList(Consumer<List<String>> trafficIpListSetter) {
-        if(this.trafficIpList == null) {
+        if (this.trafficIpList == null) {
             this.trafficIpList = new ArrayList<>();
         }
         trafficIpListSetter.accept(this.trafficIpList);
@@ -1066,15 +866,10 @@ public class ShowGraphRespGraph  {
         this.trafficIpList = trafficIpList;
     }
 
-    
-
     public ShowGraphRespGraph withCryptAlgorithm(String cryptAlgorithm) {
         this.cryptAlgorithm = cryptAlgorithm;
         return this;
     }
-
-    
-
 
     /**
      * 图实例加密算法，取值为：  - generalCipher：国密算法 - SMcompatible：商密算法（兼容国际）
@@ -1088,15 +883,10 @@ public class ShowGraphRespGraph  {
         this.cryptAlgorithm = cryptAlgorithm;
     }
 
-    
-
     public ShowGraphRespGraph withEnableHttps(Boolean enableHttps) {
         this.enableHttps = enableHttps;
         return this;
     }
-
-    
-
 
     /**
      * 是否开启安全模式，开启安全模式会对性能有较大影响
@@ -1110,16 +900,13 @@ public class ShowGraphRespGraph  {
         this.enableHttps = enableHttps;
     }
 
-    
-
     public ShowGraphRespGraph withTags(List<ListGraphsRespTags> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ShowGraphRespGraph addTagsItem(ListGraphsRespTags tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1127,7 +914,7 @@ public class ShowGraphRespGraph  {
     }
 
     public ShowGraphRespGraph withTags(Consumer<List<ListGraphsRespTags>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1146,15 +933,10 @@ public class ShowGraphRespGraph  {
         this.tags = tags;
     }
 
-    
-
     public ShowGraphRespGraph withProductType(String productType) {
         this.productType = productType;
         return this;
     }
-
-    
-
 
     /**
      * 图产品类型，取值为InMemory和Persistence，默认为InMemory，当graph_size_type_index取值为\"6\"时，默认为Persistence。  - InMemory：内存版 - Persistence：持久化版
@@ -1168,22 +950,19 @@ public class ShowGraphRespGraph  {
         this.productType = productType;
     }
 
-    
-
     public ShowGraphRespGraph withVertexIdType(ListGraphsRespVertexIdType vertexIdType) {
         this.vertexIdType = vertexIdType;
         return this;
     }
 
     public ShowGraphRespGraph withVertexIdType(Consumer<ListGraphsRespVertexIdType> vertexIdTypeSetter) {
-        if(this.vertexIdType == null ){
+        if (this.vertexIdType == null) {
             this.vertexIdType = new ListGraphsRespVertexIdType();
             vertexIdTypeSetter.accept(this.vertexIdType);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get vertexIdType
@@ -1197,61 +976,87 @@ public class ShowGraphRespGraph  {
         this.vertexIdType = vertexIdType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGraphRespGraph showGraphRespGraph = (ShowGraphRespGraph) o;
-        return Objects.equals(this.id, showGraphRespGraph.id) &&
-            Objects.equals(this.name, showGraphRespGraph.name) &&
-            Objects.equals(this.createdBy, showGraphRespGraph.createdBy) &&
-            Objects.equals(this.isMultiAz, showGraphRespGraph.isMultiAz) &&
-            Objects.equals(this.regionCode, showGraphRespGraph.regionCode) &&
-            Objects.equals(this.azCode, showGraphRespGraph.azCode) &&
-            Objects.equals(this.schemaPath, showGraphRespGraph.schemaPath) &&
-            Objects.equals(this.edgesetPath, showGraphRespGraph.edgesetPath) &&
-            Objects.equals(this.vertexsetPath, showGraphRespGraph.vertexsetPath) &&
-            Objects.equals(this.edgesetFormat, showGraphRespGraph.edgesetFormat) &&
-            Objects.equals(this.edgesetDefaultLabel, showGraphRespGraph.edgesetDefaultLabel) &&
-            Objects.equals(this.vertexsetFormat, showGraphRespGraph.vertexsetFormat) &&
-            Objects.equals(this.vertexsetDefaultLabel, showGraphRespGraph.vertexsetDefaultLabel) &&
-            Objects.equals(this.dataStoreVersion, showGraphRespGraph.dataStoreVersion) &&
-            Objects.equals(this.sysTags, showGraphRespGraph.sysTags) &&
-            Objects.equals(this.status, showGraphRespGraph.status) &&
-            Objects.equals(this.actionProgress, showGraphRespGraph.actionProgress) &&
-            Objects.equals(this.graphSizeTypeIndex, showGraphRespGraph.graphSizeTypeIndex) &&
-            Objects.equals(this.vpcId, showGraphRespGraph.vpcId) &&
-            Objects.equals(this.subnetId, showGraphRespGraph.subnetId) &&
-            Objects.equals(this.securityGroupId, showGraphRespGraph.securityGroupId) &&
-            Objects.equals(this.replication, showGraphRespGraph.replication) &&
-            Objects.equals(this.created, showGraphRespGraph.created) &&
-            Objects.equals(this.updated, showGraphRespGraph.updated) &&
-            Objects.equals(this.privateIp, showGraphRespGraph.privateIp) &&
-            Objects.equals(this.publicIp, showGraphRespGraph.publicIp) &&
-            Objects.equals(this.arch, showGraphRespGraph.arch) &&
-            Objects.equals(this.encrypted, showGraphRespGraph.encrypted) &&
-            Objects.equals(this.masterKeyId, showGraphRespGraph.masterKeyId) &&
-            Objects.equals(this.masterKeyName, showGraphRespGraph.masterKeyName) &&
-            Objects.equals(this.enableRbac, showGraphRespGraph.enableRbac) &&
-            Objects.equals(this.enableFullTextIndex, showGraphRespGraph.enableFullTextIndex) &&
-            Objects.equals(this.enableHyg, showGraphRespGraph.enableHyg) &&
-            Objects.equals(this.trafficIpList, showGraphRespGraph.trafficIpList) &&
-            Objects.equals(this.cryptAlgorithm, showGraphRespGraph.cryptAlgorithm) &&
-            Objects.equals(this.enableHttps, showGraphRespGraph.enableHttps) &&
-            Objects.equals(this.tags, showGraphRespGraph.tags) &&
-            Objects.equals(this.productType, showGraphRespGraph.productType) &&
-            Objects.equals(this.vertexIdType, showGraphRespGraph.vertexIdType);
+        ShowGraphRespGraph that = (ShowGraphRespGraph) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.isMultiAz, that.isMultiAz)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.schemaPath, that.schemaPath) && Objects.equals(this.edgesetPath, that.edgesetPath)
+            && Objects.equals(this.vertexsetPath, that.vertexsetPath)
+            && Objects.equals(this.edgesetFormat, that.edgesetFormat)
+            && Objects.equals(this.edgesetDefaultLabel, that.edgesetDefaultLabel)
+            && Objects.equals(this.vertexsetFormat, that.vertexsetFormat)
+            && Objects.equals(this.vertexsetDefaultLabel, that.vertexsetDefaultLabel)
+            && Objects.equals(this.dataStoreVersion, that.dataStoreVersion)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.actionProgress, that.actionProgress)
+            && Objects.equals(this.graphSizeTypeIndex, that.graphSizeTypeIndex)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.masterKeyId, that.masterKeyId)
+            && Objects.equals(this.masterKeyName, that.masterKeyName)
+            && Objects.equals(this.enableRbac, that.enableRbac)
+            && Objects.equals(this.enableFullTextIndex, that.enableFullTextIndex)
+            && Objects.equals(this.enableHyg, that.enableHyg) && Objects.equals(this.trafficIpList, that.trafficIpList)
+            && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm)
+            && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.vertexIdType, that.vertexIdType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, createdBy, isMultiAz, regionCode, azCode, schemaPath, edgesetPath, vertexsetPath, edgesetFormat, edgesetDefaultLabel, vertexsetFormat, vertexsetDefaultLabel, dataStoreVersion, sysTags, status, actionProgress, graphSizeTypeIndex, vpcId, subnetId, securityGroupId, replication, created, updated, privateIp, publicIp, arch, encrypted, masterKeyId, masterKeyName, enableRbac, enableFullTextIndex, enableHyg, trafficIpList, cryptAlgorithm, enableHttps, tags, productType, vertexIdType);
+        return Objects.hash(id,
+            name,
+            createdBy,
+            isMultiAz,
+            regionCode,
+            azCode,
+            schemaPath,
+            edgesetPath,
+            vertexsetPath,
+            edgesetFormat,
+            edgesetDefaultLabel,
+            vertexsetFormat,
+            vertexsetDefaultLabel,
+            dataStoreVersion,
+            sysTags,
+            status,
+            actionProgress,
+            graphSizeTypeIndex,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            replication,
+            created,
+            updated,
+            privateIp,
+            publicIp,
+            arch,
+            encrypted,
+            masterKeyId,
+            masterKeyName,
+            enableRbac,
+            enableFullTextIndex,
+            enableHyg,
+            trafficIpList,
+            cryptAlgorithm,
+            enableHttps,
+            tags,
+            productType,
+            vertexIdType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1298,6 +1103,7 @@ public class ShowGraphRespGraph  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1308,8 +1114,5 @@ public class ShowGraphRespGraph  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

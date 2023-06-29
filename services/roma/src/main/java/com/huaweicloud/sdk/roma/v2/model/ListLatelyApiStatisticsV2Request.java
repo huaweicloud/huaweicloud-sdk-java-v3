@@ -77,17 +77,16 @@ public class ListLatelyApiStatisticsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLatelyApiStatisticsV2Request listLatelyApiStatisticsV2Request = (ListLatelyApiStatisticsV2Request) o;
-        return Objects.equals(this.instanceId, listLatelyApiStatisticsV2Request.instanceId)
-            && Objects.equals(this.apiId, listLatelyApiStatisticsV2Request.apiId)
-            && Objects.equals(this.duration, listLatelyApiStatisticsV2Request.duration);
+        ListLatelyApiStatisticsV2Request that = (ListLatelyApiStatisticsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.duration, that.duration);
     }
 
     @Override

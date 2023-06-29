@@ -189,22 +189,19 @@ public class ListAclStrategiesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAclStrategiesV2Request listAclStrategiesV2Request = (ListAclStrategiesV2Request) o;
-        return Objects.equals(this.instanceId, listAclStrategiesV2Request.instanceId)
-            && Objects.equals(this.offset, listAclStrategiesV2Request.offset)
-            && Objects.equals(this.limit, listAclStrategiesV2Request.limit)
-            && Objects.equals(this.id, listAclStrategiesV2Request.id)
-            && Objects.equals(this.name, listAclStrategiesV2Request.name)
-            && Objects.equals(this.aclType, listAclStrategiesV2Request.aclType)
-            && Objects.equals(this.entityType, listAclStrategiesV2Request.entityType)
-            && Objects.equals(this.preciseSearch, listAclStrategiesV2Request.preciseSearch);
+        ListAclStrategiesV2Request that = (ListAclStrategiesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.entityType, that.entityType)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

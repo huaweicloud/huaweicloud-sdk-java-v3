@@ -147,19 +147,17 @@ public class ResourceQuotasInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceQuotasInfo resourceQuotasInfo = (ResourceQuotasInfo) o;
-        return Objects.equals(this.version, resourceQuotasInfo.version)
-            && Objects.equals(this.totalNum, resourceQuotasInfo.totalNum)
-            && Objects.equals(this.usedNum, resourceQuotasInfo.usedNum)
-            && Objects.equals(this.availableNum, resourceQuotasInfo.availableNum)
-            && Objects.equals(this.availableResourcesList, resourceQuotasInfo.availableResourcesList);
+        ResourceQuotasInfo that = (ResourceQuotasInfo) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.usedNum, that.usedNum) && Objects.equals(this.availableNum, that.availableNum)
+            && Objects.equals(this.availableResourcesList, that.availableResourcesList);
     }
 
     @Override

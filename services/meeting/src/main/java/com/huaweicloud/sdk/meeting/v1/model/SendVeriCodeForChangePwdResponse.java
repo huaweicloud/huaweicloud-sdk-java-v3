@@ -78,17 +78,16 @@ public class SendVeriCodeForChangePwdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendVeriCodeForChangePwdResponse sendVeriCodeForChangePwdResponse = (SendVeriCodeForChangePwdResponse) o;
-        return Objects.equals(this.expire, sendVeriCodeForChangePwdResponse.expire)
-            && Objects.equals(this.bindPhone, sendVeriCodeForChangePwdResponse.bindPhone)
-            && Objects.equals(this.bindEmail, sendVeriCodeForChangePwdResponse.bindEmail);
+        SendVeriCodeForChangePwdResponse that = (SendVeriCodeForChangePwdResponse) obj;
+        return Objects.equals(this.expire, that.expire) && Objects.equals(this.bindPhone, that.bindPhone)
+            && Objects.equals(this.bindEmail, that.bindEmail);
     }
 
     @Override

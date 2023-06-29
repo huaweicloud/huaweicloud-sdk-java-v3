@@ -55,15 +55,15 @@ public class DiskDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskDto diskDto = (DiskDto) o;
-        return Objects.equals(this.type, diskDto.type) && Objects.equals(this.space, diskDto.space);
+        DiskDto that = (DiskDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.space, that.space);
     }
 
     @Override

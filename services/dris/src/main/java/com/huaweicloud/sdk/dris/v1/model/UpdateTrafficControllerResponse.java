@@ -350,29 +350,23 @@ public class UpdateTrafficControllerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTrafficControllerResponse updateTrafficControllerResponse = (UpdateTrafficControllerResponse) o;
-        return Objects.equals(this.trafficControllerId, updateTrafficControllerResponse.trafficControllerId)
-            && Objects.equals(this.esn, updateTrafficControllerResponse.esn)
-            && Objects.equals(this.name, updateTrafficControllerResponse.name)
-            && Objects.equals(this.description, updateTrafficControllerResponse.description)
-            && Objects.equals(this.lat, updateTrafficControllerResponse.lat)
-            && Objects.equals(this.lon, updateTrafficControllerResponse.lon)
-            && Objects.equals(this.ele, updateTrafficControllerResponse.ele)
-            && Objects.equals(this.posDescription, updateTrafficControllerResponse.posDescription)
-            && Objects.equals(this.installationMode, updateTrafficControllerResponse.installationMode)
-            && Objects.equals(this.roadName, updateTrafficControllerResponse.roadName)
-            && Objects.equals(this.linkId, updateTrafficControllerResponse.linkId)
-            && Objects.equals(this.status, updateTrafficControllerResponse.status)
-            && Objects.equals(this.lastModifiedTime, updateTrafficControllerResponse.lastModifiedTime)
-            && Objects.equals(this.createdTime, updateTrafficControllerResponse.createdTime)
-            && Objects.equals(this.lastOnlineTime, updateTrafficControllerResponse.lastOnlineTime);
+        UpdateTrafficControllerResponse that = (UpdateTrafficControllerResponse) obj;
+        return Objects.equals(this.trafficControllerId, that.trafficControllerId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele) && Objects.equals(this.posDescription, that.posDescription)
+            && Objects.equals(this.installationMode, that.installationMode)
+            && Objects.equals(this.roadName, that.roadName) && Objects.equals(this.linkId, that.linkId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime);
     }
 
     @Override

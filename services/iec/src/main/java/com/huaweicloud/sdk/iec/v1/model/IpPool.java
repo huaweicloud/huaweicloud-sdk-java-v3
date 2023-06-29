@@ -153,17 +153,17 @@ public class IpPool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpPool ipPool = (IpPool) o;
-        return Objects.equals(this.id, ipPool.id) && Objects.equals(this.siteId, ipPool.siteId)
-            && Objects.equals(this.poolId, ipPool.poolId) && Objects.equals(this.ipVersion, ipPool.ipVersion)
-            && Objects.equals(this.operator, ipPool.operator) && Objects.equals(this.displayName, ipPool.displayName);
+        IpPool that = (IpPool) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.siteId, that.siteId)
+            && Objects.equals(this.poolId, that.poolId) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.displayName, that.displayName);
     }
 
     @Override

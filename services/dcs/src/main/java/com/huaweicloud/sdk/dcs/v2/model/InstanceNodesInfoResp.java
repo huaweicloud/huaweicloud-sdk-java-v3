@@ -96,17 +96,16 @@ public class InstanceNodesInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceNodesInfoResp instanceNodesInfoResp = (InstanceNodesInfoResp) o;
-        return Objects.equals(this.instanceId, instanceNodesInfoResp.instanceId)
-            && Objects.equals(this.nodeCount, instanceNodesInfoResp.nodeCount)
-            && Objects.equals(this.nodes, instanceNodesInfoResp.nodes);
+        InstanceNodesInfoResp that = (InstanceNodesInfoResp) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.nodeCount, that.nodeCount)
+            && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

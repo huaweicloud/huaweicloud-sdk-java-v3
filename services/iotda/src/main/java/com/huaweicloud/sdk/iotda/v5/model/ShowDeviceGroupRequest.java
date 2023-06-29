@@ -55,16 +55,15 @@ public class ShowDeviceGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceGroupRequest showDeviceGroupRequest = (ShowDeviceGroupRequest) o;
-        return Objects.equals(this.instanceId, showDeviceGroupRequest.instanceId)
-            && Objects.equals(this.groupId, showDeviceGroupRequest.groupId);
+        ShowDeviceGroupRequest that = (ShowDeviceGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

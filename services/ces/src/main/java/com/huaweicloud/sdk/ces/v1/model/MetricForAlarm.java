@@ -118,18 +118,17 @@ public class MetricForAlarm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricForAlarm metricForAlarm = (MetricForAlarm) o;
-        return Objects.equals(this.namespace, metricForAlarm.namespace)
-            && Objects.equals(this.metricName, metricForAlarm.metricName)
-            && Objects.equals(this.dimensions, metricForAlarm.dimensions)
-            && Objects.equals(this.resourceGroupId, metricForAlarm.resourceGroupId);
+        MetricForAlarm that = (MetricForAlarm) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.resourceGroupId, that.resourceGroupId);
     }
 
     @Override

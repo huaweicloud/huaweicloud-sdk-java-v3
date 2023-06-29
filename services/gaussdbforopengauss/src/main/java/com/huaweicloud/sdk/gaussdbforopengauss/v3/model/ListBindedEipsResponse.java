@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindedEipResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListBindedEipsResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "public_ips")
+
+    private List<BindedEipResult> publicIps = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ips")
-    
-    private List<BindedEipResult> publicIps = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
@@ -39,9 +29,8 @@ public class ListBindedEipsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListBindedEipsResponse addPublicIpsItem(BindedEipResult publicIpsItem) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         this.publicIps.add(publicIpsItem);
@@ -49,7 +38,7 @@ public class ListBindedEipsResponse extends SdkResponse {
     }
 
     public ListBindedEipsResponse withPublicIps(Consumer<List<BindedEipResult>> publicIpsSetter) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         publicIpsSetter.accept(this.publicIps);
@@ -68,15 +57,10 @@ public class ListBindedEipsResponse extends SdkResponse {
         this.publicIps = publicIps;
     }
 
-    
-
     public ListBindedEipsResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数。
@@ -90,24 +74,23 @@ public class ListBindedEipsResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBindedEipsResponse listBindedEipsResponse = (ListBindedEipsResponse) o;
-        return Objects.equals(this.publicIps, listBindedEipsResponse.publicIps) &&
-            Objects.equals(this.totalCount, listBindedEipsResponse.totalCount);
+        ListBindedEipsResponse that = (ListBindedEipsResponse) obj;
+        return Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.totalCount, that.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(publicIps, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListBindedEipsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListBindedEipsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

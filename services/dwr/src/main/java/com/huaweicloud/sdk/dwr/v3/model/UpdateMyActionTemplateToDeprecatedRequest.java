@@ -33,16 +33,15 @@ public class UpdateMyActionTemplateToDeprecatedRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMyActionTemplateToDeprecatedRequest updateMyActionTemplateToDeprecatedRequest =
-            (UpdateMyActionTemplateToDeprecatedRequest) o;
-        return Objects.equals(this.templateName, updateMyActionTemplateToDeprecatedRequest.templateName);
+        UpdateMyActionTemplateToDeprecatedRequest that = (UpdateMyActionTemplateToDeprecatedRequest) obj;
+        return Objects.equals(this.templateName, that.templateName);
     }
 
     @Override

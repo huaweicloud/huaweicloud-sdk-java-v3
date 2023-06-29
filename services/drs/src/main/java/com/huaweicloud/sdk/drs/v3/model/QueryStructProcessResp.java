@@ -109,18 +109,17 @@ public class QueryStructProcessResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryStructProcessResp queryStructProcessResp = (QueryStructProcessResp) o;
-        return Objects.equals(this.jobId, queryStructProcessResp.jobId)
-            && Objects.equals(this.errorCode, queryStructProcessResp.errorCode)
-            && Objects.equals(this.errorMessage, queryStructProcessResp.errorMessage)
-            && Objects.equals(this.structProcess, queryStructProcessResp.structProcess);
+        QueryStructProcessResp that = (QueryStructProcessResp) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.structProcess, that.structProcess);
     }
 
     @Override

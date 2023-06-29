@@ -65,16 +65,15 @@ public class CreatePrivateNatTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateNatTagRequest createPrivateNatTagRequest = (CreatePrivateNatTagRequest) o;
-        return Objects.equals(this.resourceId, createPrivateNatTagRequest.resourceId)
-            && Objects.equals(this.body, createPrivateNatTagRequest.body);
+        CreatePrivateNatTagRequest that = (CreatePrivateNatTagRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

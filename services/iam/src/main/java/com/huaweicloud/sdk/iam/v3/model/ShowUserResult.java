@@ -417,28 +417,25 @@ public class ShowUserResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserResult showUserResult = (ShowUserResult) o;
-        return Objects.equals(this.enabled, showUserResult.enabled) && Objects.equals(this.id, showUserResult.id)
-            && Objects.equals(this.domainId, showUserResult.domainId) && Objects.equals(this.name, showUserResult.name)
-            && Objects.equals(this.links, showUserResult.links) && Objects.equals(this.xuserId, showUserResult.xuserId)
-            && Objects.equals(this.xuserType, showUserResult.xuserType)
-            && Objects.equals(this.areacode, showUserResult.areacode)
-            && Objects.equals(this.email, showUserResult.email) && Objects.equals(this.phone, showUserResult.phone)
-            && Objects.equals(this.pwdStatus, showUserResult.pwdStatus)
-            && Objects.equals(this.updateTime, showUserResult.updateTime)
-            && Objects.equals(this.createTime, showUserResult.createTime)
-            && Objects.equals(this.lastLoginTime, showUserResult.lastLoginTime)
-            && Objects.equals(this.pwdStrength, showUserResult.pwdStrength)
-            && Objects.equals(this.isDomainOwner, showUserResult.isDomainOwner)
-            && Objects.equals(this.accessMode, showUserResult.accessMode)
-            && Objects.equals(this.description, showUserResult.description);
+        ShowUserResult that = (ShowUserResult) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.xuserId, that.xuserId)
+            && Objects.equals(this.xuserType, that.xuserType) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastLoginTime, that.lastLoginTime)
+            && Objects.equals(this.pwdStrength, that.pwdStrength)
+            && Objects.equals(this.isDomainOwner, that.isDomainOwner)
+            && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.description, that.description);
     }
 
     @Override

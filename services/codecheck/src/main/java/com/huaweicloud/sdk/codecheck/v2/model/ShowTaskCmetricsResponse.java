@@ -242,24 +242,19 @@ public class ShowTaskCmetricsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskCmetricsResponse showTaskCmetricsResponse = (ShowTaskCmetricsResponse) o;
-        return Objects.equals(this.taskId, showTaskCmetricsResponse.taskId)
-            && Objects.equals(this.taskName, showTaskCmetricsResponse.taskName)
-            && Objects.equals(this.creatorId, showTaskCmetricsResponse.creatorId)
-            && Objects.equals(this.gitUrl, showTaskCmetricsResponse.gitUrl)
-            && Objects.equals(this.gitBranch, showTaskCmetricsResponse.gitBranch)
-            && Objects.equals(this.lastCheckTime, showTaskCmetricsResponse.lastCheckTime)
-            && Objects.equals(this.lastExecTime, showTaskCmetricsResponse.lastExecTime)
-            && Objects.equals(this.checkType, showTaskCmetricsResponse.checkType)
-            && Objects.equals(this.createdAt, showTaskCmetricsResponse.createdAt)
-            && Objects.equals(this.metricInfo, showTaskCmetricsResponse.metricInfo);
+        ShowTaskCmetricsResponse that = (ShowTaskCmetricsResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.lastCheckTime, that.lastCheckTime)
+            && Objects.equals(this.lastExecTime, that.lastExecTime) && Objects.equals(this.checkType, that.checkType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.metricInfo, that.metricInfo);
     }
 
     @Override

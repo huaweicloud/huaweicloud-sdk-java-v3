@@ -53,15 +53,15 @@ public class CheckCanAuthUsersOfAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckCanAuthUsersOfAppResponse checkCanAuthUsersOfAppResponse = (CheckCanAuthUsersOfAppResponse) o;
-        return Objects.equals(this.users, checkCanAuthUsersOfAppResponse.users);
+        CheckCanAuthUsersOfAppResponse that = (CheckCanAuthUsersOfAppResponse) obj;
+        return Objects.equals(this.users, that.users);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ProtocolLinks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtocolLinks protocolLinks = (ProtocolLinks) o;
-        return Objects.equals(this.identityProvider, protocolLinks.identityProvider)
-            && Objects.equals(this.self, protocolLinks.self);
+        ProtocolLinks that = (ProtocolLinks) obj;
+        return Objects.equals(this.identityProvider, that.identityProvider) && Objects.equals(this.self, that.self);
     }
 
     @Override

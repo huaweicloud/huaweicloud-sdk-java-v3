@@ -57,16 +57,15 @@ public class ShowInstanceConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceConfigurationRequest showInstanceConfigurationRequest = (ShowInstanceConfigurationRequest) o;
-        return Objects.equals(this.xLanguage, showInstanceConfigurationRequest.xLanguage)
-            && Objects.equals(this.instanceId, showInstanceConfigurationRequest.instanceId);
+        ShowInstanceConfigurationRequest that = (ShowInstanceConfigurationRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class ProxyNodeMonitoredObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProxyNodeMonitoredObject proxyNodeMonitoredObject = (ProxyNodeMonitoredObject) o;
-        return Objects.equals(this.dcsInstanceId, proxyNodeMonitoredObject.dcsInstanceId)
-            && Objects.equals(this.name, proxyNodeMonitoredObject.name)
-            && Objects.equals(this.dcsClusterProxyNode, proxyNodeMonitoredObject.dcsClusterProxyNode)
-            && Objects.equals(this.status, proxyNodeMonitoredObject.status);
+        ProxyNodeMonitoredObject that = (ProxyNodeMonitoredObject) obj;
+        return Objects.equals(this.dcsInstanceId, that.dcsInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dcsClusterProxyNode, that.dcsClusterProxyNode)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -99,16 +99,16 @@ public class Resource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.type, resource.type) && Objects.equals(this.used, resource.used)
-            && Objects.equals(this.unit, resource.unit) && Objects.equals(this.quota, resource.quota);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.quota, that.quota);
     }
 
     @Override

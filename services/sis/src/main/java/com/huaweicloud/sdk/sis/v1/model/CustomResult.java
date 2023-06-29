@@ -33,15 +33,15 @@ public class CustomResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomResult customResult = (CustomResult) o;
-        return Objects.equals(this.data, customResult.data);
+        CustomResult that = (CustomResult) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

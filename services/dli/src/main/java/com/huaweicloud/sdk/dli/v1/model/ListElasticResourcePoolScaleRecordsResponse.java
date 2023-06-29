@@ -99,18 +99,16 @@ public class ListElasticResourcePoolScaleRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListElasticResourcePoolScaleRecordsResponse listElasticResourcePoolScaleRecordsResponse =
-            (ListElasticResourcePoolScaleRecordsResponse) o;
-        return Objects.equals(this.count, listElasticResourcePoolScaleRecordsResponse.count)
-            && Objects.equals(this.items, listElasticResourcePoolScaleRecordsResponse.items)
-            && Objects.equals(this.xAuthToken, listElasticResourcePoolScaleRecordsResponse.xAuthToken);
+        ListElasticResourcePoolScaleRecordsResponse that = (ListElasticResourcePoolScaleRecordsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.items, that.items)
+            && Objects.equals(this.xAuthToken, that.xAuthToken);
     }
 
     @Override

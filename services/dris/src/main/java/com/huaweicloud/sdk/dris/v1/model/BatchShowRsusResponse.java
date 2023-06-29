@@ -77,16 +77,15 @@ public class BatchShowRsusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowRsusResponse batchShowRsusResponse = (BatchShowRsusResponse) o;
-        return Objects.equals(this.count, batchShowRsusResponse.count)
-            && Objects.equals(this.rsus, batchShowRsusResponse.rsus);
+        BatchShowRsusResponse that = (BatchShowRsusResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.rsus, that.rsus);
     }
 
     @Override

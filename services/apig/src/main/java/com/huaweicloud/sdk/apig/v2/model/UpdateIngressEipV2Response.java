@@ -78,17 +78,16 @@ public class UpdateIngressEipV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIngressEipV2Response updateIngressEipV2Response = (UpdateIngressEipV2Response) o;
-        return Objects.equals(this.instanceId, updateIngressEipV2Response.instanceId)
-            && Objects.equals(this.message, updateIngressEipV2Response.message)
-            && Objects.equals(this.jobId, updateIngressEipV2Response.jobId);
+        UpdateIngressEipV2Response that = (UpdateIngressEipV2Response) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

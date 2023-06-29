@@ -57,16 +57,15 @@ public class AcceptanceSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceptanceSchema acceptanceSchema = (AcceptanceSchema) o;
-        return Objects.equals(this.requestId, acceptanceSchema.requestId)
-            && Objects.equals(this.taskId, acceptanceSchema.taskId);
+        AcceptanceSchema that = (AcceptanceSchema) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

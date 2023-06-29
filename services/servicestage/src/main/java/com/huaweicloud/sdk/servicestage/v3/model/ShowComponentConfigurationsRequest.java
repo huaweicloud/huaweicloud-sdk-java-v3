@@ -85,22 +85,15 @@ public class ShowComponentConfigurationsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,20 +220,18 @@ public class ShowComponentConfigurationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentConfigurationsRequest showComponentConfigurationsRequest = (ShowComponentConfigurationsRequest) o;
-        return Objects.equals(this.componentId, showComponentConfigurationsRequest.componentId)
-            && Objects.equals(this.applicationId, showComponentConfigurationsRequest.applicationId)
-            && Objects.equals(this.limit, showComponentConfigurationsRequest.limit)
-            && Objects.equals(this.offset, showComponentConfigurationsRequest.offset)
-            && Objects.equals(this.orderBy, showComponentConfigurationsRequest.orderBy)
-            && Objects.equals(this.order, showComponentConfigurationsRequest.order);
+        ShowComponentConfigurationsRequest that = (ShowComponentConfigurationsRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override

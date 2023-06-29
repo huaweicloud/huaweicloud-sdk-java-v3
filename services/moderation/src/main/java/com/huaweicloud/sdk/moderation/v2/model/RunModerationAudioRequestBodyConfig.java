@@ -114,22 +114,15 @@ public class RunModerationAudioRequestBodyConfig {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FormatEnum(value));
         }
 
         public static FormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class RunModerationAudioRequestBodyConfig {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PropertyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PropertyEnum(value));
         }
 
         public static PropertyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -268,17 +254,15 @@ public class RunModerationAudioRequestBodyConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunModerationAudioRequestBodyConfig runModerationAudioRequestBodyConfig =
-            (RunModerationAudioRequestBodyConfig) o;
-        return Objects.equals(this.format, runModerationAudioRequestBodyConfig.format)
-            && Objects.equals(this.property, runModerationAudioRequestBodyConfig.property);
+        RunModerationAudioRequestBodyConfig that = (RunModerationAudioRequestBodyConfig) obj;
+        return Objects.equals(this.format, that.format) && Objects.equals(this.property, that.property);
     }
 
     @Override

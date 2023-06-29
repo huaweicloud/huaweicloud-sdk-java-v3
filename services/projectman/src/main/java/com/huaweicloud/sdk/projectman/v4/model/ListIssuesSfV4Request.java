@@ -99,22 +99,15 @@ public class ListIssuesSfV4Request {
             if (value == null) {
                 return null;
             }
-            TrackerIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrackerIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrackerIdEnum(value));
         }
 
         public static TrackerIdEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TrackerIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -252,20 +245,18 @@ public class ListIssuesSfV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuesSfV4Request listIssuesSfV4Request = (ListIssuesSfV4Request) o;
-        return Objects.equals(this.projectId, listIssuesSfV4Request.projectId)
-            && Objects.equals(this.offset, listIssuesSfV4Request.offset)
-            && Objects.equals(this.limit, listIssuesSfV4Request.limit)
-            && Objects.equals(this.trackerId, listIssuesSfV4Request.trackerId)
-            && Objects.equals(this.createdTimeInterval, listIssuesSfV4Request.createdTimeInterval)
-            && Objects.equals(this.updatedTimeInterval, listIssuesSfV4Request.updatedTimeInterval);
+        ListIssuesSfV4Request that = (ListIssuesSfV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.trackerId, that.trackerId)
+            && Objects.equals(this.createdTimeInterval, that.createdTimeInterval)
+            && Objects.equals(this.updatedTimeInterval, that.updatedTimeInterval);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeletePluginRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePluginRequest deletePluginRequest = (DeletePluginRequest) o;
-        return Objects.equals(this.instanceId, deletePluginRequest.instanceId)
-            && Objects.equals(this.pluginId, deletePluginRequest.pluginId);
+        DeletePluginRequest that = (DeletePluginRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.pluginId, that.pluginId);
     }
 
     @Override

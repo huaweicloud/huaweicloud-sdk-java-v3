@@ -165,21 +165,17 @@ public class ShowDetailsOfGatewayResponseV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfGatewayResponseV2Response showDetailsOfGatewayResponseV2Response =
-            (ShowDetailsOfGatewayResponseV2Response) o;
-        return Objects.equals(this.name, showDetailsOfGatewayResponseV2Response.name)
-            && Objects.equals(this.responses, showDetailsOfGatewayResponseV2Response.responses)
-            && Objects.equals(this.id, showDetailsOfGatewayResponseV2Response.id)
-            && Objects.equals(this._default, showDetailsOfGatewayResponseV2Response._default)
-            && Objects.equals(this.createTime, showDetailsOfGatewayResponseV2Response.createTime)
-            && Objects.equals(this.updateTime, showDetailsOfGatewayResponseV2Response.updateTime);
+        ShowDetailsOfGatewayResponseV2Response that = (ShowDetailsOfGatewayResponseV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.responses, that.responses)
+            && Objects.equals(this.id, that.id) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

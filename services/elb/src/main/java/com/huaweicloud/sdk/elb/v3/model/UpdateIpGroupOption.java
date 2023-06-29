@@ -96,17 +96,16 @@ public class UpdateIpGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpGroupOption updateIpGroupOption = (UpdateIpGroupOption) o;
-        return Objects.equals(this.description, updateIpGroupOption.description)
-            && Objects.equals(this.name, updateIpGroupOption.name)
-            && Objects.equals(this.ipList, updateIpGroupOption.ipList);
+        UpdateIpGroupOption that = (UpdateIpGroupOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ipList, that.ipList);
     }
 
     @Override

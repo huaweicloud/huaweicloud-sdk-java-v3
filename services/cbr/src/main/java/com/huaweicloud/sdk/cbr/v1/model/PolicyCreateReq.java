@@ -43,15 +43,15 @@ public class PolicyCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyCreateReq policyCreateReq = (PolicyCreateReq) o;
-        return Objects.equals(this.policy, policyCreateReq.policy);
+        PolicyCreateReq that = (PolicyCreateReq) obj;
+        return Objects.equals(this.policy, that.policy);
     }
 
     @Override

@@ -360,28 +360,24 @@ public class Certificates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Certificates certificates = (Certificates) o;
-        return Objects.equals(this.certificateId, certificates.certificateId)
-            && Objects.equals(this.status, certificates.status) && Objects.equals(this.issuerId, certificates.issuerId)
-            && Objects.equals(this.issuerName, certificates.issuerName)
-            && Objects.equals(this.keyAlgorithm, certificates.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, certificates.signatureAlgorithm)
-            && Objects.equals(this.freezeFlag, certificates.freezeFlag)
-            && Objects.equals(this.genMode, certificates.genMode)
-            && Objects.equals(this.serialNumber, certificates.serialNumber)
-            && Objects.equals(this.createTime, certificates.createTime)
-            && Objects.equals(this.deleteTime, certificates.deleteTime)
-            && Objects.equals(this.notBefore, certificates.notBefore)
-            && Objects.equals(this.notAfter, certificates.notAfter)
-            && Objects.equals(this.distinguishedName, certificates.distinguishedName)
-            && Objects.equals(this.encCertInfo, certificates.encCertInfo);
+        Certificates that = (Certificates) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.issuerName, that.issuerName)
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.freezeFlag, that.freezeFlag) && Objects.equals(this.genMode, that.genMode)
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.notAfter, that.notAfter)
+            && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.encCertInfo, that.encCertInfo);
     }
 
     @Override

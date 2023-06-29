@@ -55,16 +55,16 @@ public class BalanceTypePay {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BalanceTypePay balanceTypePay = (BalanceTypePay) o;
-        return Objects.equals(this.balanceTypeId, balanceTypePay.balanceTypeId)
-            && Objects.equals(this.deductAmount, balanceTypePay.deductAmount);
+        BalanceTypePay that = (BalanceTypePay) obj;
+        return Objects.equals(this.balanceTypeId, that.balanceTypeId)
+            && Objects.equals(this.deductAmount, that.deductAmount);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class EnterprisePersonNew {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnterprisePersonNew enterprisePersonNew = (EnterprisePersonNew) o;
-        return Objects.equals(this.legelName, enterprisePersonNew.legelName)
-            && Objects.equals(this.legelIdNumber, enterprisePersonNew.legelIdNumber)
-            && Objects.equals(this.certifierRole, enterprisePersonNew.certifierRole);
+        EnterprisePersonNew that = (EnterprisePersonNew) obj;
+        return Objects.equals(this.legelName, that.legelName) && Objects.equals(this.legelIdNumber, that.legelIdNumber)
+            && Objects.equals(this.certifierRole, that.certifierRole);
     }
 
     @Override

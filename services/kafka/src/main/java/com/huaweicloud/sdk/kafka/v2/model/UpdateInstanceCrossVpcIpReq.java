@@ -53,15 +53,15 @@ public class UpdateInstanceCrossVpcIpReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVpcIpReq updateInstanceCrossVpcIpReq = (UpdateInstanceCrossVpcIpReq) o;
-        return Objects.equals(this.advertisedIpContents, updateInstanceCrossVpcIpReq.advertisedIpContents);
+        UpdateInstanceCrossVpcIpReq that = (UpdateInstanceCrossVpcIpReq) obj;
+        return Objects.equals(this.advertisedIpContents, that.advertisedIpContents);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class SearchDebugInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDebugInfoResponse searchDebugInfoResponse = (SearchDebugInfoResponse) o;
-        return Objects.equals(this.total, searchDebugInfoResponse.total)
-            && Objects.equals(this.publishMessages, searchDebugInfoResponse.publishMessages);
+        SearchDebugInfoResponse that = (SearchDebugInfoResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.publishMessages, that.publishMessages);
     }
 
     @Override

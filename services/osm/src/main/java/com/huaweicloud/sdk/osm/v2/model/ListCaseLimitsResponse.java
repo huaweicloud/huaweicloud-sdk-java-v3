@@ -44,15 +44,15 @@ public class ListCaseLimitsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseLimitsResponse listCaseLimitsResponse = (ListCaseLimitsResponse) o;
-        return Objects.equals(this.config, listCaseLimitsResponse.config);
+        ListCaseLimitsResponse that = (ListCaseLimitsResponse) obj;
+        return Objects.equals(this.config, that.config);
     }
 
     @Override

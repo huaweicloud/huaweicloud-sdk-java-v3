@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ChargeInfo
  */
-public class ChargeInfo  {
-
+public class ChargeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
 
     private String chargeMode;
 
@@ -27,9 +19,6 @@ public class ChargeInfo  {
         this.chargeMode = chargeMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式。 取值范围： - prePaid：预付费，即包年/包月。暂不支持。 - postPaid：后付费，即按需计费。
@@ -43,23 +32,23 @@ public class ChargeInfo  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChargeInfo chargeInfo = (ChargeInfo) o;
-        return Objects.equals(this.chargeMode, chargeInfo.chargeMode);
+        ChargeInfo that = (ChargeInfo) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ChargeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ChargeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

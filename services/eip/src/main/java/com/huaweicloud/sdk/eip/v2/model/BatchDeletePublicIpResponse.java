@@ -53,15 +53,15 @@ public class BatchDeletePublicIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeletePublicIpResponse batchDeletePublicIpResponse = (BatchDeletePublicIpResponse) o;
-        return Objects.equals(this.jobIds, batchDeletePublicIpResponse.jobIds);
+        BatchDeletePublicIpResponse that = (BatchDeletePublicIpResponse) obj;
+        return Objects.equals(this.jobIds, that.jobIds);
     }
 
     @Override

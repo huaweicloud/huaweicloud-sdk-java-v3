@@ -119,18 +119,16 @@ public class ListSinkTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSinkTasksResponse listSinkTasksResponse = (ListSinkTasksResponse) o;
-        return Objects.equals(this.tasks, listSinkTasksResponse.tasks)
-            && Objects.equals(this.totalNumber, listSinkTasksResponse.totalNumber)
-            && Objects.equals(this.maxTasks, listSinkTasksResponse.maxTasks)
-            && Objects.equals(this.quotaTasks, listSinkTasksResponse.quotaTasks);
+        ListSinkTasksResponse that = (ListSinkTasksResponse) obj;
+        return Objects.equals(this.tasks, that.tasks) && Objects.equals(this.totalNumber, that.totalNumber)
+            && Objects.equals(this.maxTasks, that.maxTasks) && Objects.equals(this.quotaTasks, that.quotaTasks);
     }
 
     @Override

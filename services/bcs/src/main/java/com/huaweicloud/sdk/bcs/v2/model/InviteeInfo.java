@@ -121,19 +121,18 @@ public class InviteeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InviteeInfo inviteeInfo = (InviteeInfo) o;
-        return Objects.equals(this.inviteeId, inviteeInfo.inviteeId)
-            && Objects.equals(this.inviteeName, inviteeInfo.inviteeName)
-            && Objects.equals(this.inviteeBcsName, inviteeInfo.inviteeBcsName)
-            && Objects.equals(this.inviteeBcsId, inviteeInfo.inviteeBcsId)
-            && Objects.equals(this.inviteeProjectId, inviteeInfo.inviteeProjectId);
+        InviteeInfo that = (InviteeInfo) obj;
+        return Objects.equals(this.inviteeId, that.inviteeId) && Objects.equals(this.inviteeName, that.inviteeName)
+            && Objects.equals(this.inviteeBcsName, that.inviteeBcsName)
+            && Objects.equals(this.inviteeBcsId, that.inviteeBcsId)
+            && Objects.equals(this.inviteeProjectId, that.inviteeProjectId);
     }
 
     @Override

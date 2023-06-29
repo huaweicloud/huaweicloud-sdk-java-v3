@@ -75,16 +75,15 @@ public class ShowVaultResourceInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVaultResourceInstancesResponse showVaultResourceInstancesResponse = (ShowVaultResourceInstancesResponse) o;
-        return Objects.equals(this.resources, showVaultResourceInstancesResponse.resources)
-            && Objects.equals(this.totalCount, showVaultResourceInstancesResponse.totalCount);
+        ShowVaultResourceInstancesResponse that = (ShowVaultResourceInstancesResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

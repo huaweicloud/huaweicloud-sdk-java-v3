@@ -61,22 +61,15 @@ public class CreateDomainsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InfoCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InfoCodeEnum(value));
         }
 
         public static InfoCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,7 +141,7 @@ public class CreateDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 域名ID
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -160,17 +153,17 @@ public class CreateDomainsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDomainsResponse createDomainsResponse = (CreateDomainsResponse) o;
-        return Objects.equals(this.infoCode, createDomainsResponse.infoCode)
-            && Objects.equals(this.infoDescription, createDomainsResponse.infoDescription)
-            && Objects.equals(this.domainId, createDomainsResponse.domainId);
+        CreateDomainsResponse that = (CreateDomainsResponse) obj;
+        return Objects.equals(this.infoCode, that.infoCode)
+            && Objects.equals(this.infoDescription, that.infoDescription)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

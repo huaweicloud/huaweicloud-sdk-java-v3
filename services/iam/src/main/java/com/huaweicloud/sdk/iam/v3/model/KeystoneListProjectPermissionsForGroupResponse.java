@@ -84,17 +84,15 @@ public class KeystoneListProjectPermissionsForGroupResponse extends SdkResponse 
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListProjectPermissionsForGroupResponse keystoneListProjectPermissionsForGroupResponse =
-            (KeystoneListProjectPermissionsForGroupResponse) o;
-        return Objects.equals(this.links, keystoneListProjectPermissionsForGroupResponse.links)
-            && Objects.equals(this.roles, keystoneListProjectPermissionsForGroupResponse.roles);
+        KeystoneListProjectPermissionsForGroupResponse that = (KeystoneListProjectPermissionsForGroupResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.roles, that.roles);
     }
 
     @Override

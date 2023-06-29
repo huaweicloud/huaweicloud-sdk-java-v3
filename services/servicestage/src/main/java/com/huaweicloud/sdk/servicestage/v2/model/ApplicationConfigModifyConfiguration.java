@@ -53,16 +53,15 @@ public class ApplicationConfigModifyConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationConfigModifyConfiguration applicationConfigModifyConfiguration =
-            (ApplicationConfigModifyConfiguration) o;
-        return Objects.equals(this.env, applicationConfigModifyConfiguration.env);
+        ApplicationConfigModifyConfiguration that = (ApplicationConfigModifyConfiguration) obj;
+        return Objects.equals(this.env, that.env);
     }
 
     @Override

@@ -145,20 +145,17 @@ public class ListAuditlogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditlogsRequest listAuditlogsRequest = (ListAuditlogsRequest) o;
-        return Objects.equals(this.xLanguage, listAuditlogsRequest.xLanguage)
-            && Objects.equals(this.instanceId, listAuditlogsRequest.instanceId)
-            && Objects.equals(this.startTime, listAuditlogsRequest.startTime)
-            && Objects.equals(this.endTime, listAuditlogsRequest.endTime)
-            && Objects.equals(this.offset, listAuditlogsRequest.offset)
-            && Objects.equals(this.limit, listAuditlogsRequest.limit);
+        ListAuditlogsRequest that = (ListAuditlogsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

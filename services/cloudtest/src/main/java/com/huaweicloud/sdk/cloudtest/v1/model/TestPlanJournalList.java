@@ -150,19 +150,17 @@ public class TestPlanJournalList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanJournalList testPlanJournalList = (TestPlanJournalList) o;
-        return Objects.equals(this.projectId, testPlanJournalList.projectId)
-            && Objects.equals(this.planId, testPlanJournalList.planId)
-            && Objects.equals(this.operateTime, testPlanJournalList.operateTime)
-            && Objects.equals(this.operator, testPlanJournalList.operator)
-            && Objects.equals(this.detail, testPlanJournalList.detail);
+        TestPlanJournalList that = (TestPlanJournalList) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.operateTime, that.operateTime) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.detail, that.detail);
     }
 
     @Override

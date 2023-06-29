@@ -75,16 +75,15 @@ public class ListEnterpriseMultiAccountResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseMultiAccountResponse listEnterpriseMultiAccountResponse = (ListEnterpriseMultiAccountResponse) o;
-        return Objects.equals(this.totalCount, listEnterpriseMultiAccountResponse.totalCount)
-            && Objects.equals(this.amountInfos, listEnterpriseMultiAccountResponse.amountInfos);
+        ListEnterpriseMultiAccountResponse that = (ListEnterpriseMultiAccountResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.amountInfos, that.amountInfos);
     }
 
     @Override

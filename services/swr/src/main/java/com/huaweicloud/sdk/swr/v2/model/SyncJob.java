@@ -319,23 +319,22 @@ public class SyncJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncJob syncJob = (SyncJob) o;
-        return Objects.equals(this.createdAt, syncJob.createdAt) && Objects.equals(this.domainID, syncJob.domainID)
-            && Objects.equals(this.domainName, syncJob.domainName) && Objects.equals(this.id, syncJob.id)
-            && Objects.equals(this.namespace, syncJob.namespace) && Objects.equals(this.override, syncJob.override)
-            && Objects.equals(this.remoteNamespace, syncJob.remoteNamespace)
-            && Objects.equals(this.remoteRegionId, syncJob.remoteRegionId)
-            && Objects.equals(this.repoName, syncJob.repoName) && Objects.equals(this.status, syncJob.status)
-            && Objects.equals(this.syncOperatorId, syncJob.syncOperatorId)
-            && Objects.equals(this.syncOperatorName, syncJob.syncOperatorName) && Objects.equals(this.tag, syncJob.tag)
-            && Objects.equals(this.updatedAt, syncJob.updatedAt);
+        SyncJob that = (SyncJob) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.domainID, that.domainID)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.override, that.override)
+            && Objects.equals(this.remoteNamespace, that.remoteNamespace)
+            && Objects.equals(this.remoteRegionId, that.remoteRegionId) && Objects.equals(this.repoName, that.repoName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.syncOperatorId, that.syncOperatorId)
+            && Objects.equals(this.syncOperatorName, that.syncOperatorName) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

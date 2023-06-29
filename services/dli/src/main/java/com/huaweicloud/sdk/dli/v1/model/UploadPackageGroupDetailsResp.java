@@ -165,21 +165,18 @@ public class UploadPackageGroupDetailsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadPackageGroupDetailsResp uploadPackageGroupDetailsResp = (UploadPackageGroupDetailsResp) o;
-        return Objects.equals(this.createTime, uploadPackageGroupDetailsResp.createTime)
-            && Objects.equals(this.updateTime, uploadPackageGroupDetailsResp.updateTime)
-            && Objects.equals(this.resourceType, uploadPackageGroupDetailsResp.resourceType)
-            && Objects.equals(this.isAsync, uploadPackageGroupDetailsResp.isAsync)
-            && Objects.equals(this.resourceName, uploadPackageGroupDetailsResp.resourceName)
-            && Objects.equals(this.status, uploadPackageGroupDetailsResp.status)
-            && Objects.equals(this.underlyingName, uploadPackageGroupDetailsResp.underlyingName);
+        UploadPackageGroupDetailsResp that = (UploadPackageGroupDetailsResp) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.isAsync, that.isAsync)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.underlyingName, that.underlyingName);
     }
 
     @Override

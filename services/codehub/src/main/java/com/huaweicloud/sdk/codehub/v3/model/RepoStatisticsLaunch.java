@@ -77,17 +77,16 @@ public class RepoStatisticsLaunch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoStatisticsLaunch repoStatisticsLaunch = (RepoStatisticsLaunch) o;
-        return Objects.equals(this.canStatistics, repoStatisticsLaunch.canStatistics)
-            && Objects.equals(this.joinId, repoStatisticsLaunch.joinId)
-            && Objects.equals(this.message, repoStatisticsLaunch.message);
+        RepoStatisticsLaunch that = (RepoStatisticsLaunch) obj;
+        return Objects.equals(this.canStatistics, that.canStatistics) && Objects.equals(this.joinId, that.joinId)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

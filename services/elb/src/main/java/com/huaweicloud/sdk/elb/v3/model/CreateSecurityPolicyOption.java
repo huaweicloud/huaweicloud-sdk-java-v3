@@ -39,8 +39,8 @@ public class CreateSecurityPolicyOption {
     private List<String> protocols = null;
 
     /**
-    * Gets or Sets ciphers
-    */
+     * Gets or Sets ciphers
+     */
     public static final class CiphersEnum {
 
         /**
@@ -242,22 +242,15 @@ public class CreateSecurityPolicyOption {
             if (value == null) {
                 return null;
             }
-            CiphersEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CiphersEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CiphersEnum(value));
         }
 
         public static CiphersEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CiphersEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -397,19 +390,17 @@ public class CreateSecurityPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecurityPolicyOption createSecurityPolicyOption = (CreateSecurityPolicyOption) o;
-        return Objects.equals(this.name, createSecurityPolicyOption.name)
-            && Objects.equals(this.description, createSecurityPolicyOption.description)
-            && Objects.equals(this.enterpriseProjectId, createSecurityPolicyOption.enterpriseProjectId)
-            && Objects.equals(this.protocols, createSecurityPolicyOption.protocols)
-            && Objects.equals(this.ciphers, createSecurityPolicyOption.ciphers);
+        CreateSecurityPolicyOption that = (CreateSecurityPolicyOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.protocols, that.protocols) && Objects.equals(this.ciphers, that.ciphers);
     }
 
     @Override

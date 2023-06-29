@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.UpdateReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ExecuteUpdateVideoByIdRequest  {
-
+public class ExecuteUpdateVideoByIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_id")
-    
+    @JsonProperty(value = "video_id")
 
     private String videoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateReq body;
 
@@ -35,9 +25,6 @@ public class ExecuteUpdateVideoByIdRequest  {
         this.videoId = videoId;
         return this;
     }
-
-    
-
 
     /**
      * 视频id
@@ -51,22 +38,19 @@ public class ExecuteUpdateVideoByIdRequest  {
         this.videoId = videoId;
     }
 
-    
-
     public ExecuteUpdateVideoByIdRequest withBody(UpdateReq body) {
         this.body = body;
         return this;
     }
 
     public ExecuteUpdateVideoByIdRequest withBody(Consumer<UpdateReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ExecuteUpdateVideoByIdRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteUpdateVideoByIdRequest executeUpdateVideoByIdRequest = (ExecuteUpdateVideoByIdRequest) o;
-        return Objects.equals(this.videoId, executeUpdateVideoByIdRequest.videoId) &&
-            Objects.equals(this.body, executeUpdateVideoByIdRequest.body);
+        ExecuteUpdateVideoByIdRequest that = (ExecuteUpdateVideoByIdRequest) obj;
+        return Objects.equals(this.videoId, that.videoId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(videoId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ExecuteUpdateVideoByIdRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ExecuteUpdateVideoByIdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

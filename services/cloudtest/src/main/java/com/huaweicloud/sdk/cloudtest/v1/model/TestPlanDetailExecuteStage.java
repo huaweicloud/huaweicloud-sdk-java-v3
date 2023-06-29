@@ -99,18 +99,18 @@ public class TestPlanDetailExecuteStage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanDetailExecuteStage testPlanDetailExecuteStage = (TestPlanDetailExecuteStage) o;
-        return Objects.equals(this.defectCount, testPlanDetailExecuteStage.defectCount)
-            && Objects.equals(this.completedDefectCount, testPlanDetailExecuteStage.completedDefectCount)
-            && Objects.equals(this.casePassRate, testPlanDetailExecuteStage.casePassRate)
-            && Objects.equals(this.executedCaseCount, testPlanDetailExecuteStage.executedCaseCount);
+        TestPlanDetailExecuteStage that = (TestPlanDetailExecuteStage) obj;
+        return Objects.equals(this.defectCount, that.defectCount)
+            && Objects.equals(this.completedDefectCount, that.completedDefectCount)
+            && Objects.equals(this.casePassRate, that.casePassRate)
+            && Objects.equals(this.executedCaseCount, that.executedCaseCount);
     }
 
     @Override

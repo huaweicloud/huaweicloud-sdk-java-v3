@@ -88,17 +88,16 @@ public class DeleteDeployKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeployKeyResponse deleteDeployKeyResponse = (DeleteDeployKeyResponse) o;
-        return Objects.equals(this.error, deleteDeployKeyResponse.error)
-            && Objects.equals(this.result, deleteDeployKeyResponse.result)
-            && Objects.equals(this.status, deleteDeployKeyResponse.status);
+        DeleteDeployKeyResponse that = (DeleteDeployKeyResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

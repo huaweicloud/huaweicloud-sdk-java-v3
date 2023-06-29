@@ -81,16 +81,15 @@ public class ExportDatasetRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportDatasetRequest exportDatasetRequest = (ExportDatasetRequest) o;
-        return Objects.equals(this.jobId, exportDatasetRequest.jobId)
-            && Objects.equals(this.runId, exportDatasetRequest.runId);
+        ExportDatasetRequest that = (ExportDatasetRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.runId, that.runId);
     }
 
     @Override

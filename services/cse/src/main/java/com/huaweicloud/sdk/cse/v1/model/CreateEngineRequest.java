@@ -67,16 +67,16 @@ public class CreateEngineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEngineRequest createEngineRequest = (CreateEngineRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, createEngineRequest.xEnterpriseProjectID)
-            && Objects.equals(this.body, createEngineRequest.body);
+        CreateEngineRequest that = (CreateEngineRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

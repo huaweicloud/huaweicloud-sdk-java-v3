@@ -169,21 +169,19 @@ public class ShowCustomerMonthlySumRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomerMonthlySumRequest showCustomerMonthlySumRequest = (ShowCustomerMonthlySumRequest) o;
-        return Objects.equals(this.billCycle, showCustomerMonthlySumRequest.billCycle)
-            && Objects.equals(this.serviceTypeCode, showCustomerMonthlySumRequest.serviceTypeCode)
-            && Objects.equals(this.enterpriseProjectId, showCustomerMonthlySumRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, showCustomerMonthlySumRequest.offset)
-            && Objects.equals(this.limit, showCustomerMonthlySumRequest.limit)
-            && Objects.equals(this.method, showCustomerMonthlySumRequest.method)
-            && Objects.equals(this.subCustomerId, showCustomerMonthlySumRequest.subCustomerId);
+        ShowCustomerMonthlySumRequest that = (ShowCustomerMonthlySumRequest) obj;
+        return Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId);
     }
 
     @Override

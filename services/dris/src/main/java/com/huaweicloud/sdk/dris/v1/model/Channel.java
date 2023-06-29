@@ -55,15 +55,15 @@ public class Channel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Channel channel = (Channel) o;
-        return Objects.equals(this.byLtePc5, channel.byLtePc5) && Objects.equals(this.byLteUu, channel.byLteUu);
+        Channel that = (Channel) obj;
+        return Objects.equals(this.byLtePc5, that.byLtePc5) && Objects.equals(this.byLteUu, that.byLteUu);
     }
 
     @Override

@@ -80,22 +80,15 @@ public class ListProductTemplatesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -303,23 +296,19 @@ public class ListProductTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductTemplatesRequest listProductTemplatesRequest = (ListProductTemplatesRequest) o;
-        return Objects.equals(this.instanceId, listProductTemplatesRequest.instanceId)
-            && Objects.equals(this.limit, listProductTemplatesRequest.limit)
-            && Objects.equals(this.id, listProductTemplatesRequest.id)
-            && Objects.equals(this.name, listProductTemplatesRequest.name)
-            && Objects.equals(this.status, listProductTemplatesRequest.status)
-            && Objects.equals(this.createdUserName, listProductTemplatesRequest.createdUserName)
-            && Objects.equals(this.createdDateStart, listProductTemplatesRequest.createdDateStart)
-            && Objects.equals(this.createdDateEnd, listProductTemplatesRequest.createdDateEnd)
-            && Objects.equals(this.offset, listProductTemplatesRequest.offset);
+        ListProductTemplatesRequest that = (ListProductTemplatesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdUserName, that.createdUserName)
+            && Objects.equals(this.createdDateStart, that.createdDateStart)
+            && Objects.equals(this.createdDateEnd, that.createdDateEnd) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

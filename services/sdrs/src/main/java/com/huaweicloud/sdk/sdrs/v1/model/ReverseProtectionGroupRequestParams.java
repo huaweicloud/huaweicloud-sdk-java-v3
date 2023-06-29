@@ -60,22 +60,15 @@ public class ReverseProtectionGroupRequestParams {
             if (value == null) {
                 return null;
             }
-            PriorityStationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PriorityStationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PriorityStationEnum(value));
         }
 
         public static PriorityStationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PriorityStationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,16 +108,15 @@ public class ReverseProtectionGroupRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReverseProtectionGroupRequestParams reverseProtectionGroupRequestParams =
-            (ReverseProtectionGroupRequestParams) o;
-        return Objects.equals(this.priorityStation, reverseProtectionGroupRequestParams.priorityStation);
+        ReverseProtectionGroupRequestParams that = (ReverseProtectionGroupRequestParams) obj;
+        return Objects.equals(this.priorityStation, that.priorityStation);
     }
 
     @Override

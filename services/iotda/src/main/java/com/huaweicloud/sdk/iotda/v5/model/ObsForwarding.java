@@ -121,19 +121,17 @@ public class ObsForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsForwarding obsForwarding = (ObsForwarding) o;
-        return Objects.equals(this.regionName, obsForwarding.regionName)
-            && Objects.equals(this.projectId, obsForwarding.projectId)
-            && Objects.equals(this.bucketName, obsForwarding.bucketName)
-            && Objects.equals(this.location, obsForwarding.location)
-            && Objects.equals(this.filePath, obsForwarding.filePath);
+        ObsForwarding that = (ObsForwarding) obj;
+        return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.filePath, that.filePath);
     }
 
     @Override

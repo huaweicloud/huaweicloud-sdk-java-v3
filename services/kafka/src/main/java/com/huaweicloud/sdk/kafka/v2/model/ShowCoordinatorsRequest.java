@@ -33,15 +33,15 @@ public class ShowCoordinatorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCoordinatorsRequest showCoordinatorsRequest = (ShowCoordinatorsRequest) o;
-        return Objects.equals(this.instanceId, showCoordinatorsRequest.instanceId);
+        ShowCoordinatorsRequest that = (ShowCoordinatorsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

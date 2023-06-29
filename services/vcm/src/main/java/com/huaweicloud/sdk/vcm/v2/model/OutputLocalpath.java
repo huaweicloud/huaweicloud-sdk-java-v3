@@ -55,16 +55,16 @@ public class OutputLocalpath {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputLocalpath outputLocalpath = (OutputLocalpath) o;
-        return Objects.equals(this.mountSourcePath, outputLocalpath.mountSourcePath)
-            && Objects.equals(this.dataCategory, outputLocalpath.dataCategory);
+        OutputLocalpath that = (OutputLocalpath) obj;
+        return Objects.equals(this.mountSourcePath, that.mountSourcePath)
+            && Objects.equals(this.dataCategory, that.dataCategory);
     }
 
     @Override

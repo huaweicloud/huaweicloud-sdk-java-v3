@@ -326,28 +326,22 @@ public class ShowInstanceExtendProductInfoRespDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceExtendProductInfoRespDetail showInstanceExtendProductInfoRespDetail =
-            (ShowInstanceExtendProductInfoRespDetail) o;
-        return Objects.equals(this.tps, showInstanceExtendProductInfoRespDetail.tps)
-            && Objects.equals(this.storage, showInstanceExtendProductInfoRespDetail.storage)
-            && Objects.equals(this.partitionNum, showInstanceExtendProductInfoRespDetail.partitionNum)
-            && Objects.equals(this.productId, showInstanceExtendProductInfoRespDetail.productId)
-            && Objects.equals(this.specCode, showInstanceExtendProductInfoRespDetail.specCode)
-            && Objects.equals(this.io, showInstanceExtendProductInfoRespDetail.io)
-            && Objects.equals(this.bandwidth, showInstanceExtendProductInfoRespDetail.bandwidth)
-            && Objects.equals(this.recommendMaxConsGroups,
-                showInstanceExtendProductInfoRespDetail.recommendMaxConsGroups)
-            && Objects.equals(this.unavailableZones, showInstanceExtendProductInfoRespDetail.unavailableZones)
-            && Objects.equals(this.availableZones, showInstanceExtendProductInfoRespDetail.availableZones)
-            && Objects.equals(this.ecsFlavorId, showInstanceExtendProductInfoRespDetail.ecsFlavorId)
-            && Objects.equals(this.archType, showInstanceExtendProductInfoRespDetail.archType);
+        ShowInstanceExtendProductInfoRespDetail that = (ShowInstanceExtendProductInfoRespDetail) obj;
+        return Objects.equals(this.tps, that.tps) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.partitionNum, that.partitionNum) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.io, that.io)
+            && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.recommendMaxConsGroups, that.recommendMaxConsGroups)
+            && Objects.equals(this.unavailableZones, that.unavailableZones)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.archType, that.archType);
     }
 
     @Override

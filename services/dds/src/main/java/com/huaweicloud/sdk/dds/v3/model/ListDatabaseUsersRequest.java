@@ -121,19 +121,17 @@ public class ListDatabaseUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabaseUsersRequest listDatabaseUsersRequest = (ListDatabaseUsersRequest) o;
-        return Objects.equals(this.instanceId, listDatabaseUsersRequest.instanceId)
-            && Objects.equals(this.userName, listDatabaseUsersRequest.userName)
-            && Objects.equals(this.dbName, listDatabaseUsersRequest.dbName)
-            && Objects.equals(this.offset, listDatabaseUsersRequest.offset)
-            && Objects.equals(this.limit, listDatabaseUsersRequest.limit);
+        ListDatabaseUsersRequest that = (ListDatabaseUsersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -83,22 +83,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            ApiTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiTypeEnum(value));
         }
 
         public static ApiTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,22 +239,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            PublishTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PublishTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishTypeEnum(value));
         }
 
         public static PublishTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PublishTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -345,22 +324,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -427,22 +399,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequestTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequestTypeEnum(value));
         }
 
         public static RequestTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -470,8 +435,8 @@ public class Api {
     private List<String> tags = null;
 
     /**
-    * 可见性
-    */
+     * 可见性
+     */
     public static final class VisibilityEnum {
 
         /**
@@ -520,22 +485,15 @@ public class Api {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibilityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibilityEnum(value));
         }
 
         public static VisibilityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -895,23 +853,23 @@ public class Api {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Api api = (Api) o;
-        return Objects.equals(this.catalogId, api.catalogId) && Objects.equals(this.name, api.name)
-            && Objects.equals(this.description, api.description) && Objects.equals(this.logFlag, api.logFlag)
-            && Objects.equals(this.apiType, api.apiType) && Objects.equals(this.authType, api.authType)
-            && Objects.equals(this.publishType, api.publishType) && Objects.equals(this.manager, api.manager)
-            && Objects.equals(this.path, api.path) && Objects.equals(this.protocol, api.protocol)
-            && Objects.equals(this.requestType, api.requestType) && Objects.equals(this.tags, api.tags)
-            && Objects.equals(this.visibility, api.visibility) && Objects.equals(this.requestParas, api.requestParas)
-            && Objects.equals(this.datasourceConfig, api.datasourceConfig)
-            && Objects.equals(this.backendConfig, api.backendConfig);
+        Api that = (Api) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.logFlag, that.logFlag)
+            && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.publishType, that.publishType) && Objects.equals(this.manager, that.manager)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.requestType, that.requestType) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.requestParas, that.requestParas)
+            && Objects.equals(this.datasourceConfig, that.datasourceConfig)
+            && Objects.equals(this.backendConfig, that.backendConfig);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class ValidateSignatureResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateSignatureResponse validateSignatureResponse = (ValidateSignatureResponse) o;
-        return Objects.equals(this.keyId, validateSignatureResponse.keyId)
-            && Objects.equals(this.signatureValid, validateSignatureResponse.signatureValid);
+        ValidateSignatureResponse that = (ValidateSignatureResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.signatureValid, that.signatureValid);
     }
 
     @Override

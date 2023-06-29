@@ -96,16 +96,16 @@ public class QueryCategoryRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCategoryRsp queryCategoryRsp = (QueryCategoryRsp) o;
-        return Objects.equals(this.id, queryCategoryRsp.id) && Objects.equals(this.name, queryCategoryRsp.name)
-            && Objects.equals(this.children, queryCategoryRsp.children);
+        QueryCategoryRsp that = (QueryCategoryRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.children, that.children);
     }
 
     @Override

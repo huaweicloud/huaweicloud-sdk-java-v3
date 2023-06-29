@@ -143,20 +143,20 @@ public class CheckConstraintInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckConstraintInput checkConstraintInput = (CheckConstraintInput) o;
-        return Objects.equals(this.columnName, checkConstraintInput.columnName)
-            && Objects.equals(this.constraintName, checkConstraintInput.constraintName)
-            && Objects.equals(this.checkExpression, checkConstraintInput.checkExpression)
-            && Objects.equals(this.enableConstraint, checkConstraintInput.enableConstraint)
-            && Objects.equals(this.relyConstraint, checkConstraintInput.relyConstraint)
-            && Objects.equals(this.validateConstraint, checkConstraintInput.validateConstraint);
+        CheckConstraintInput that = (CheckConstraintInput) obj;
+        return Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.checkExpression, that.checkExpression)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

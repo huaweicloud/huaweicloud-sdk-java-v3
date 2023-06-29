@@ -43,15 +43,15 @@ public class UpdateHealthCheckRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHealthCheckRequestBody updateHealthCheckRequestBody = (UpdateHealthCheckRequestBody) o;
-        return Objects.equals(this.healthCheck, updateHealthCheckRequestBody.healthCheck);
+        UpdateHealthCheckRequestBody that = (UpdateHealthCheckRequestBody) obj;
+        return Objects.equals(this.healthCheck, that.healthCheck);
     }
 
     @Override

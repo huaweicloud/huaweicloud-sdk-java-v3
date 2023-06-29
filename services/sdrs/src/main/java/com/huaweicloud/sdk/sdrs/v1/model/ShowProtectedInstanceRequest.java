@@ -33,15 +33,15 @@ public class ShowProtectedInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProtectedInstanceRequest showProtectedInstanceRequest = (ShowProtectedInstanceRequest) o;
-        return Objects.equals(this.protectedInstanceId, showProtectedInstanceRequest.protectedInstanceId);
+        ShowProtectedInstanceRequest that = (ShowProtectedInstanceRequest) obj;
+        return Objects.equals(this.protectedInstanceId, that.protectedInstanceId);
     }
 
     @Override

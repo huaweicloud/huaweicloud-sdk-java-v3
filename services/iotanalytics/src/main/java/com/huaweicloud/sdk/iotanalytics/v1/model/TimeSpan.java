@@ -55,15 +55,15 @@ public class TimeSpan {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeSpan timeSpan = (TimeSpan) o;
-        return Objects.equals(this.from, timeSpan.from) && Objects.equals(this.to, timeSpan.to);
+        TimeSpan that = (TimeSpan) obj;
+        return Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
     }
 
     @Override

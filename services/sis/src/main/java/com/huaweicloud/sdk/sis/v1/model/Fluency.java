@@ -77,16 +77,16 @@ public class Fluency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Fluency fluency = (Fluency) o;
-        return Objects.equals(this.score, fluency.score) && Objects.equals(this.rhythm, fluency.rhythm)
-            && Objects.equals(this.cohesion, fluency.cohesion);
+        Fluency that = (Fluency) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.rhythm, that.rhythm)
+            && Objects.equals(this.cohesion, that.cohesion);
     }
 
     @Override

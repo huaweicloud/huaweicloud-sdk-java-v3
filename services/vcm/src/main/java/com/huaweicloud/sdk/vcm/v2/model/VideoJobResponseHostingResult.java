@@ -99,18 +99,17 @@ public class VideoJobResponseHostingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoJobResponseHostingResult videoJobResponseHostingResult = (VideoJobResponseHostingResult) o;
-        return Objects.equals(this.data, videoJobResponseHostingResult.data)
-            && Objects.equals(this.obs, videoJobResponseHostingResult.obs)
-            && Objects.equals(this.status, videoJobResponseHostingResult.status)
-            && Objects.equals(this.resultJsonOverdueAt, videoJobResponseHostingResult.resultJsonOverdueAt);
+        VideoJobResponseHostingResult that = (VideoJobResponseHostingResult) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.obs, that.obs)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resultJsonOverdueAt, that.resultJsonOverdueAt);
     }
 
     @Override

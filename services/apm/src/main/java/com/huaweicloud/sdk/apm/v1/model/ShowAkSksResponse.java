@@ -53,15 +53,15 @@ public class ShowAkSksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAkSksResponse showAkSksResponse = (ShowAkSksResponse) o;
-        return Objects.equals(this.accessAkSkModels, showAkSksResponse.accessAkSkModels);
+        ShowAkSksResponse that = (ShowAkSksResponse) obj;
+        return Objects.equals(this.accessAkSkModels, that.accessAkSkModels);
     }
 
     @Override

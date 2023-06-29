@@ -43,15 +43,15 @@ public class CreateAgencyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAgencyRequestBody createAgencyRequestBody = (CreateAgencyRequestBody) o;
-        return Objects.equals(this.agency, createAgencyRequestBody.agency);
+        CreateAgencyRequestBody that = (CreateAgencyRequestBody) obj;
+        return Objects.equals(this.agency, that.agency);
     }
 
     @Override

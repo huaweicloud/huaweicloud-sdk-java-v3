@@ -55,15 +55,15 @@ public class HostGroupTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostGroupTag hostGroupTag = (HostGroupTag) o;
-        return Objects.equals(this.key, hostGroupTag.key) && Objects.equals(this.value, hostGroupTag.value);
+        HostGroupTag that = (HostGroupTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ListDeviceMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceMessagesRequest listDeviceMessagesRequest = (ListDeviceMessagesRequest) o;
-        return Objects.equals(this.deviceId, listDeviceMessagesRequest.deviceId)
-            && Objects.equals(this.instanceId, listDeviceMessagesRequest.instanceId);
+        ListDeviceMessagesRequest that = (ListDeviceMessagesRequest) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

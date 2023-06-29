@@ -103,18 +103,17 @@ public class ListEnterpriseMultiAccountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseMultiAccountRequest listEnterpriseMultiAccountRequest = (ListEnterpriseMultiAccountRequest) o;
-        return Objects.equals(this.subCustomerId, listEnterpriseMultiAccountRequest.subCustomerId)
-            && Objects.equals(this.balanceType, listEnterpriseMultiAccountRequest.balanceType)
-            && Objects.equals(this.offset, listEnterpriseMultiAccountRequest.offset)
-            && Objects.equals(this.limit, listEnterpriseMultiAccountRequest.limit);
+        ListEnterpriseMultiAccountRequest that = (ListEnterpriseMultiAccountRequest) obj;
+        return Objects.equals(this.subCustomerId, that.subCustomerId)
+            && Objects.equals(this.balanceType, that.balanceType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

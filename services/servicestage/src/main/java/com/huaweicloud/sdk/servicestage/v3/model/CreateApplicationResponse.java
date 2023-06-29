@@ -229,23 +229,19 @@ public class CreateApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationResponse createApplicationResponse = (CreateApplicationResponse) o;
-        return Objects.equals(this.id, createApplicationResponse.id)
-            && Objects.equals(this.name, createApplicationResponse.name)
-            && Objects.equals(this.creator, createApplicationResponse.creator)
-            && Objects.equals(this.projectId, createApplicationResponse.projectId)
-            && Objects.equals(this.enterpriseProjectId, createApplicationResponse.enterpriseProjectId)
-            && Objects.equals(this.createTime, createApplicationResponse.createTime)
-            && Objects.equals(this.updateTime, createApplicationResponse.updateTime)
-            && Objects.equals(this.description, createApplicationResponse.description)
-            && Objects.equals(this.labels, createApplicationResponse.labels);
+        CreateApplicationResponse that = (CreateApplicationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

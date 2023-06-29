@@ -77,17 +77,16 @@ public class RegisterInfoRequestModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterInfoRequestModel registerInfoRequestModel = (RegisterInfoRequestModel) o;
-        return Objects.equals(this.competitionId, registerInfoRequestModel.competitionId)
-            && Objects.equals(this.stageId, registerInfoRequestModel.stageId)
-            && Objects.equals(this.domainId, registerInfoRequestModel.domainId);
+        RegisterInfoRequestModel that = (RegisterInfoRequestModel) obj;
+        return Objects.equals(this.competitionId, that.competitionId) && Objects.equals(this.stageId, that.stageId)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

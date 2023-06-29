@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ConfirmIaConfigsRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class BatchConfirmConfigsNewRequest  {
-
+public class BatchConfirmConfigsNewRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ia_id")
-    
+    @JsonProperty(value = "ia_id")
 
     private String iaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ConfirmIaConfigsRequestBody body;
 
@@ -41,9 +30,6 @@ public class BatchConfirmConfigsNewRequest  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -57,15 +43,10 @@ public class BatchConfirmConfigsNewRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public BatchConfirmConfigsNewRequest withIaId(String iaId) {
         this.iaId = iaId;
         return this;
     }
-
-    
-
 
     /**
      * 边侧第三方应用的模块ID
@@ -79,22 +60,19 @@ public class BatchConfirmConfigsNewRequest  {
         this.iaId = iaId;
     }
 
-    
-
     public BatchConfirmConfigsNewRequest withBody(ConfirmIaConfigsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public BatchConfirmConfigsNewRequest withBody(Consumer<ConfirmIaConfigsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ConfirmIaConfigsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class BatchConfirmConfigsNewRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchConfirmConfigsNewRequest batchConfirmConfigsNewRequest = (BatchConfirmConfigsNewRequest) o;
-        return Objects.equals(this.nodeId, batchConfirmConfigsNewRequest.nodeId) &&
-            Objects.equals(this.iaId, batchConfirmConfigsNewRequest.iaId) &&
-            Objects.equals(this.body, batchConfirmConfigsNewRequest.body);
+        BatchConfirmConfigsNewRequest that = (BatchConfirmConfigsNewRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iaId, that.iaId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, iaId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class BatchConfirmConfigsNewRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class BatchConfirmConfigsNewRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

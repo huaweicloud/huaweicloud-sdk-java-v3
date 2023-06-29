@@ -310,23 +310,20 @@ public class ListTransitIpsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTransitIpsRequest listTransitIpsRequest = (ListTransitIpsRequest) o;
-        return Objects.equals(this.limit, listTransitIpsRequest.limit)
-            && Objects.equals(this.marker, listTransitIpsRequest.marker)
-            && Objects.equals(this.pageReverse, listTransitIpsRequest.pageReverse)
-            && Objects.equals(this.id, listTransitIpsRequest.id)
-            && Objects.equals(this.networkInterfaceId, listTransitIpsRequest.networkInterfaceId)
-            && Objects.equals(this.ipAddress, listTransitIpsRequest.ipAddress)
-            && Objects.equals(this.gatewayId, listTransitIpsRequest.gatewayId)
-            && Objects.equals(this.enterpriseProjectId, listTransitIpsRequest.enterpriseProjectId)
-            && Objects.equals(this.virsubnetId, listTransitIpsRequest.virsubnetId);
+        ListTransitIpsRequest that = (ListTransitIpsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.virsubnetId, that.virsubnetId);
     }
 
     @Override

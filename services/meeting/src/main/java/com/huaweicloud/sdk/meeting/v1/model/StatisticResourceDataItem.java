@@ -143,20 +143,19 @@ public class StatisticResourceDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticResourceDataItem statisticResourceDataItem = (StatisticResourceDataItem) o;
-        return Objects.equals(this.time, statisticResourceDataItem.time)
-            && Objects.equals(this.vmrParties, statisticResourceDataItem.vmrParties)
-            && Objects.equals(this.maxConcurrencyVmrCount, statisticResourceDataItem.maxConcurrencyVmrCount)
-            && Objects.equals(this.livePortUsedCount, statisticResourceDataItem.livePortUsedCount)
-            && Objects.equals(this.recordUsedSize, statisticResourceDataItem.recordUsedSize)
-            && Objects.equals(this.pstnUsedDuration, statisticResourceDataItem.pstnUsedDuration);
+        StatisticResourceDataItem that = (StatisticResourceDataItem) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.vmrParties, that.vmrParties)
+            && Objects.equals(this.maxConcurrencyVmrCount, that.maxConcurrencyVmrCount)
+            && Objects.equals(this.livePortUsedCount, that.livePortUsedCount)
+            && Objects.equals(this.recordUsedSize, that.recordUsedSize)
+            && Objects.equals(this.pstnUsedDuration, that.pstnUsedDuration);
     }
 
     @Override

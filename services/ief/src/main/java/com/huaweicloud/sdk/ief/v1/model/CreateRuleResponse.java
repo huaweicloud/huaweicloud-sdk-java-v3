@@ -44,15 +44,15 @@ public class CreateRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRuleResponse createRuleResponse = (CreateRuleResponse) o;
-        return Objects.equals(this.rule, createRuleResponse.rule);
+        CreateRuleResponse that = (CreateRuleResponse) obj;
+        return Objects.equals(this.rule, that.rule);
     }
 
     @Override

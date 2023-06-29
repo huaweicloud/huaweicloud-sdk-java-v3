@@ -111,17 +111,17 @@ public class UpdateDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceRequest updateDeviceRequest = (UpdateDeviceRequest) o;
-        return Objects.equals(this.xRequestId, updateDeviceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateDeviceRequest.acceptLanguage)
-            && Objects.equals(this.sn, updateDeviceRequest.sn) && Objects.equals(this.body, updateDeviceRequest.body);
+        UpdateDeviceRequest that = (UpdateDeviceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.sn, that.sn)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

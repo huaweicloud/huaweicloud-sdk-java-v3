@@ -34,15 +34,15 @@ public class SetSpeedValueReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetSpeedValueReq setSpeedValueReq = (SetSpeedValueReq) o;
-        return Objects.equals(this.speedValue, setSpeedValueReq.speedValue);
+        SetSpeedValueReq that = (SetSpeedValueReq) obj;
+        return Objects.equals(this.speedValue, that.speedValue);
     }
 
     @Override

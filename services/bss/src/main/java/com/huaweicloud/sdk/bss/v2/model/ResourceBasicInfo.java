@@ -99,18 +99,17 @@ public class ResourceBasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceBasicInfo resourceBasicInfo = (ResourceBasicInfo) o;
-        return Objects.equals(this.resourceTypeCode, resourceBasicInfo.resourceTypeCode)
-            && Objects.equals(this.productOwnerService, resourceBasicInfo.productOwnerService)
-            && Objects.equals(this.name, resourceBasicInfo.name)
-            && Objects.equals(this.description, resourceBasicInfo.description);
+        ResourceBasicInfo that = (ResourceBasicInfo) obj;
+        return Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.productOwnerService, that.productOwnerService)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

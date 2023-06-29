@@ -96,16 +96,16 @@ public class Attribute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attribute attribute = (Attribute) o;
-        return Objects.equals(this.name, attribute.name) && Objects.equals(this.dataType, attribute.dataType)
-            && Objects.equals(this.otherUses, attribute.otherUses);
+        Attribute that = (Attribute) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.otherUses, that.otherUses);
     }
 
     @Override

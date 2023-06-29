@@ -132,19 +132,17 @@ public class CreateEdgeApplicationVersionDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationVersionDTO createEdgeApplicationVersionDTO = (CreateEdgeApplicationVersionDTO) o;
-        return Objects.equals(this.version, createEdgeApplicationVersionDTO.version)
-            && Objects.equals(this.description, createEdgeApplicationVersionDTO.description)
-            && Objects.equals(this.containerSettings, createEdgeApplicationVersionDTO.containerSettings)
-            && Objects.equals(this.command, createEdgeApplicationVersionDTO.command)
-            && Objects.equals(this.args, createEdgeApplicationVersionDTO.args);
+        CreateEdgeApplicationVersionDTO that = (CreateEdgeApplicationVersionDTO) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args);
     }
 
     @Override

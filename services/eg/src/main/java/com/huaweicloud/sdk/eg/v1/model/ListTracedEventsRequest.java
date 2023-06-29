@@ -209,23 +209,19 @@ public class ListTracedEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTracedEventsRequest listTracedEventsRequest = (ListTracedEventsRequest) o;
-        return Objects.equals(this.startTime, listTracedEventsRequest.startTime)
-            && Objects.equals(this.endTime, listTracedEventsRequest.endTime)
-            && Objects.equals(this.eventId, listTracedEventsRequest.eventId)
-            && Objects.equals(this.sourceName, listTracedEventsRequest.sourceName)
-            && Objects.equals(this.eventType, listTracedEventsRequest.eventType)
-            && Objects.equals(this.subscriptionName, listTracedEventsRequest.subscriptionName)
-            && Objects.equals(this.limit, listTracedEventsRequest.limit)
-            && Objects.equals(this.offset, listTracedEventsRequest.offset)
-            && Objects.equals(this.channelId, listTracedEventsRequest.channelId);
+        ListTracedEventsRequest that = (ListTracedEventsRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.eventId, that.eventId) && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.subscriptionName, that.subscriptionName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.channelId, that.channelId);
     }
 
     @Override

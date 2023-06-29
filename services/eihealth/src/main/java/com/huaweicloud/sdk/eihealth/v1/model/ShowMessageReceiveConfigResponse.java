@@ -97,17 +97,16 @@ public class ShowMessageReceiveConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessageReceiveConfigResponse showMessageReceiveConfigResponse = (ShowMessageReceiveConfigResponse) o;
-        return Objects.equals(this.scope, showMessageReceiveConfigResponse.scope)
-            && Objects.equals(this.resourceTypes, showMessageReceiveConfigResponse.resourceTypes)
-            && Objects.equals(this.language, showMessageReceiveConfigResponse.language);
+        ShowMessageReceiveConfigResponse that = (ShowMessageReceiveConfigResponse) obj;
+        return Objects.equals(this.scope, that.scope) && Objects.equals(this.resourceTypes, that.resourceTypes)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override

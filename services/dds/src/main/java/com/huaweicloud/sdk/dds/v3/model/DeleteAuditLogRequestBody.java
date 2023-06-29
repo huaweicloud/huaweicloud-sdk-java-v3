@@ -52,15 +52,15 @@ public class DeleteAuditLogRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAuditLogRequestBody deleteAuditLogRequestBody = (DeleteAuditLogRequestBody) o;
-        return Objects.equals(this.fileNames, deleteAuditLogRequestBody.fileNames);
+        DeleteAuditLogRequestBody that = (DeleteAuditLogRequestBody) obj;
+        return Objects.equals(this.fileNames, that.fileNames);
     }
 
     @Override

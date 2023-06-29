@@ -380,23 +380,21 @@ public class ExtendInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendInfo extendInfo = (ExtendInfo) o;
-        return Objects.equals(this.author, extendInfo.author) && Objects.equals(this.updator, extendInfo.updator)
-            && Objects.equals(this.domain, extendInfo.domain)
-            && Objects.equals(this.description, extendInfo.description)
-            && Objects.equals(this.preparation, extendInfo.preparation) && Objects.equals(this.steps, extendInfo.steps)
-            && Objects.equals(this.labelList, extendInfo.labelList)
-            && Objects.equals(this.defectList, extendInfo.defectList) && Objects.equals(this.module, extendInfo.module)
-            && Objects.equals(this.issue, extendInfo.issue)
-            && Objects.equals(this.testVersionId, extendInfo.testVersionId)
-            && Objects.equals(this.fixedVersion, extendInfo.fixedVersion);
+        ExtendInfo that = (ExtendInfo) obj;
+        return Objects.equals(this.author, that.author) && Objects.equals(this.updator, that.updator)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.preparation, that.preparation) && Objects.equals(this.steps, that.steps)
+            && Objects.equals(this.labelList, that.labelList) && Objects.equals(this.defectList, that.defectList)
+            && Objects.equals(this.module, that.module) && Objects.equals(this.issue, that.issue)
+            && Objects.equals(this.testVersionId, that.testVersionId)
+            && Objects.equals(this.fixedVersion, that.fixedVersion);
     }
 
     @Override

@@ -84,16 +84,15 @@ public class ListTracesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTracesResponse listTracesResponse = (ListTracesResponse) o;
-        return Objects.equals(this.traces, listTracesResponse.traces)
-            && Objects.equals(this.metaData, listTracesResponse.metaData);
+        ListTracesResponse that = (ListTracesResponse) obj;
+        return Objects.equals(this.traces, that.traces) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

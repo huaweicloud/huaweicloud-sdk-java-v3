@@ -234,20 +234,18 @@ public class ListIpGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpGroupsRequest listIpGroupsRequest = (ListIpGroupsRequest) o;
-        return Objects.equals(this.marker, listIpGroupsRequest.marker)
-            && Objects.equals(this.limit, listIpGroupsRequest.limit)
-            && Objects.equals(this.pageReverse, listIpGroupsRequest.pageReverse)
-            && Objects.equals(this.id, listIpGroupsRequest.id) && Objects.equals(this.name, listIpGroupsRequest.name)
-            && Objects.equals(this.description, listIpGroupsRequest.description)
-            && Objects.equals(this.ipList, listIpGroupsRequest.ipList);
+        ListIpGroupsRequest that = (ListIpGroupsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipList, that.ipList);
     }
 
     @Override

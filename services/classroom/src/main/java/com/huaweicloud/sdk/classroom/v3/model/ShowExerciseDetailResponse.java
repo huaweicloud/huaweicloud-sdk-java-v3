@@ -291,25 +291,22 @@ public class ShowExerciseDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExerciseDetailResponse showExerciseDetailResponse = (ShowExerciseDetailResponse) o;
-        return Objects.equals(this.id, showExerciseDetailResponse.id)
-            && Objects.equals(this.name, showExerciseDetailResponse.name)
-            && Objects.equals(this.description, showExerciseDetailResponse.description)
-            && Objects.equals(this.difficult, showExerciseDetailResponse.difficult)
-            && Objects.equals(this.exerciseType, showExerciseDetailResponse.exerciseType)
-            && Objects.equals(this.exerciseTypeName, showExerciseDetailResponse.exerciseTypeName)
-            && Objects.equals(this.orderCount, showExerciseDetailResponse.orderCount)
-            && Objects.equals(this.testCaseDescription, showExerciseDetailResponse.testCaseDescription)
-            && Objects.equals(this.knowledgePoint, showExerciseDetailResponse.knowledgePoint)
-            && Objects.equals(this.judgeType, showExerciseDetailResponse.judgeType)
-            && Objects.equals(this.exerciseData, showExerciseDetailResponse.exerciseData);
+        ShowExerciseDetailResponse that = (ShowExerciseDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.difficult, that.difficult)
+            && Objects.equals(this.exerciseType, that.exerciseType)
+            && Objects.equals(this.exerciseTypeName, that.exerciseTypeName)
+            && Objects.equals(this.orderCount, that.orderCount)
+            && Objects.equals(this.testCaseDescription, that.testCaseDescription)
+            && Objects.equals(this.knowledgePoint, that.knowledgePoint)
+            && Objects.equals(this.judgeType, that.judgeType) && Objects.equals(this.exerciseData, that.exerciseData);
     }
 
     @Override

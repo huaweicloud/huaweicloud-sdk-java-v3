@@ -43,15 +43,15 @@ public class PolicyDelta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyDelta policyDelta = (PolicyDelta) o;
-        return Objects.equals(this.policy, policyDelta.policy);
+        PolicyDelta that = (PolicyDelta) obj;
+        return Objects.equals(this.policy, that.policy);
     }
 
     @Override

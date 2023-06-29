@@ -87,17 +87,16 @@ public class UpdateDataconnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataconnectionRequest updateDataconnectionRequest = (UpdateDataconnectionRequest) o;
-        return Objects.equals(this.workspace, updateDataconnectionRequest.workspace)
-            && Objects.equals(this.dataConnectionId, updateDataconnectionRequest.dataConnectionId)
-            && Objects.equals(this.body, updateDataconnectionRequest.body);
+        UpdateDataconnectionRequest that = (UpdateDataconnectionRequest) obj;
+        return Objects.equals(this.workspace, that.workspace)
+            && Objects.equals(this.dataConnectionId, that.dataConnectionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

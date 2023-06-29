@@ -87,17 +87,16 @@ public class CreateInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceRequest createInstanceRequest = (CreateInstanceRequest) o;
-        return Objects.equals(this.applicationId, createInstanceRequest.applicationId)
-            && Objects.equals(this.componentId, createInstanceRequest.componentId)
-            && Objects.equals(this.body, createInstanceRequest.body);
+        CreateInstanceRequest that = (CreateInstanceRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.componentId, that.componentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

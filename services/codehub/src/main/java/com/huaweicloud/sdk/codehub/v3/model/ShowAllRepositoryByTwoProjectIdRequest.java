@@ -99,19 +99,16 @@ public class ShowAllRepositoryByTwoProjectIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllRepositoryByTwoProjectIdRequest showAllRepositoryByTwoProjectIdRequest =
-            (ShowAllRepositoryByTwoProjectIdRequest) o;
-        return Objects.equals(this.pageIndex, showAllRepositoryByTwoProjectIdRequest.pageIndex)
-            && Objects.equals(this.pageSize, showAllRepositoryByTwoProjectIdRequest.pageSize)
-            && Objects.equals(this.projectUuid, showAllRepositoryByTwoProjectIdRequest.projectUuid)
-            && Objects.equals(this.search, showAllRepositoryByTwoProjectIdRequest.search);
+        ShowAllRepositoryByTwoProjectIdRequest that = (ShowAllRepositoryByTwoProjectIdRequest) obj;
+        return Objects.equals(this.pageIndex, that.pageIndex) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.projectUuid, that.projectUuid) && Objects.equals(this.search, that.search);
     }
 
     @Override

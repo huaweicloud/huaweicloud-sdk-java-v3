@@ -124,19 +124,17 @@ public class ShowTaskPathTreeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskPathTreeRequest showTaskPathTreeRequest = (ShowTaskPathTreeRequest) o;
-        return Objects.equals(this.projectId, showTaskPathTreeRequest.projectId)
-            && Objects.equals(this.taskId, showTaskPathTreeRequest.taskId)
-            && Objects.equals(this.currentPath, showTaskPathTreeRequest.currentPath)
-            && Objects.equals(this.offset, showTaskPathTreeRequest.offset)
-            && Objects.equals(this.limit, showTaskPathTreeRequest.limit);
+        ShowTaskPathTreeRequest that = (ShowTaskPathTreeRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.currentPath, that.currentPath) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -76,16 +76,15 @@ public class ExtensionQueryParamSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionQueryParamSnake extensionQueryParamSnake = (ExtensionQueryParamSnake) o;
-        return Objects.equals(this.filters, extensionQueryParamSnake.filters)
-            && Objects.equals(this.flags, extensionQueryParamSnake.flags);
+        ExtensionQueryParamSnake that = (ExtensionQueryParamSnake) obj;
+        return Objects.equals(this.filters, that.filters) && Objects.equals(this.flags, that.flags);
     }
 
     @Override

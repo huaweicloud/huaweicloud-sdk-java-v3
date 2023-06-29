@@ -55,15 +55,15 @@ public class TmsTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TmsTag tmsTag = (TmsTag) o;
-        return Objects.equals(this.key, tmsTag.key) && Objects.equals(this.value, tmsTag.value);
+        TmsTag that = (TmsTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

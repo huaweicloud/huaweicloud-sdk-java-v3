@@ -77,18 +77,16 @@ public class ShowConfigurationModifyHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationModifyHistoryRequest showConfigurationModifyHistoryRequest =
-            (ShowConfigurationModifyHistoryRequest) o;
-        return Objects.equals(this.configId, showConfigurationModifyHistoryRequest.configId)
-            && Objects.equals(this.offset, showConfigurationModifyHistoryRequest.offset)
-            && Objects.equals(this.limit, showConfigurationModifyHistoryRequest.limit);
+        ShowConfigurationModifyHistoryRequest that = (ShowConfigurationModifyHistoryRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

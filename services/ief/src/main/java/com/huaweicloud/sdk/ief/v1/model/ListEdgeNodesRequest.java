@@ -124,22 +124,15 @@ public class ListEdgeNodesRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -337,24 +330,19 @@ public class ListEdgeNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeNodesRequest listEdgeNodesRequest = (ListEdgeNodesRequest) o;
-        return Objects.equals(this.iefInstanceId, listEdgeNodesRequest.iefInstanceId)
-            && Objects.equals(this.name, listEdgeNodesRequest.name)
-            && Objects.equals(this.limit, listEdgeNodesRequest.limit)
-            && Objects.equals(this.offset, listEdgeNodesRequest.offset)
-            && Objects.equals(this.sort, listEdgeNodesRequest.sort)
-            && Objects.equals(this.deviceId, listEdgeNodesRequest.deviceId)
-            && Objects.equals(this.deviceName, listEdgeNodesRequest.deviceName)
-            && Objects.equals(this.appName, listEdgeNodesRequest.appName)
-            && Objects.equals(this.state, listEdgeNodesRequest.state)
-            && Objects.equals(this.tags, listEdgeNodesRequest.tags);
+        ListEdgeNodesRequest that = (ListEdgeNodesRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

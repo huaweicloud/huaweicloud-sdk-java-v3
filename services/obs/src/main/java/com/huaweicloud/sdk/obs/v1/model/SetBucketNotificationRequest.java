@@ -120,18 +120,16 @@ public class SetBucketNotificationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBucketNotificationRequest setBucketNotificationRequest = (SetBucketNotificationRequest) o;
-        return Objects.equals(this.date, setBucketNotificationRequest.date)
-            && Objects.equals(this.bucketName, setBucketNotificationRequest.bucketName)
-            && Objects.equals(this.notification, setBucketNotificationRequest.notification)
-            && Objects.equals(this.body, setBucketNotificationRequest.body);
+        SetBucketNotificationRequest that = (SetBucketNotificationRequest) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.notification, that.notification) && Objects.equals(this.body, that.body);
     }
 
     @Override

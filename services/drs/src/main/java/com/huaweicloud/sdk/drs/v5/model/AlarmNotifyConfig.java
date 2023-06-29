@@ -127,19 +127,17 @@ public class AlarmNotifyConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmNotifyConfig alarmNotifyConfig = (AlarmNotifyConfig) o;
-        return Objects.equals(this.alarmToUser, alarmNotifyConfig.alarmToUser)
-            && Objects.equals(this.topicUrn, alarmNotifyConfig.topicUrn)
-            && Objects.equals(this.delayTime, alarmNotifyConfig.delayTime)
-            && Objects.equals(this.rpoDelay, alarmNotifyConfig.rpoDelay)
-            && Objects.equals(this.rtoDelay, alarmNotifyConfig.rtoDelay);
+        AlarmNotifyConfig that = (AlarmNotifyConfig) obj;
+        return Objects.equals(this.alarmToUser, that.alarmToUser) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.delayTime, that.delayTime) && Objects.equals(this.rpoDelay, that.rpoDelay)
+            && Objects.equals(this.rtoDelay, that.rtoDelay);
     }
 
     @Override

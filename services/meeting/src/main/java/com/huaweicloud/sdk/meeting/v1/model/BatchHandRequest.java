@@ -89,17 +89,17 @@ public class BatchHandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchHandRequest batchHandRequest = (BatchHandRequest) o;
-        return Objects.equals(this.conferenceID, batchHandRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, batchHandRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, batchHandRequest.body);
+        BatchHandRequest that = (BatchHandRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

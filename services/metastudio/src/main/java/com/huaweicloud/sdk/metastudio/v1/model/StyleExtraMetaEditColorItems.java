@@ -130,17 +130,16 @@ public class StyleExtraMetaEditColorItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleExtraMetaEditColorItems styleExtraMetaEditColorItems = (StyleExtraMetaEditColorItems) o;
-        return Objects.equals(this.minValue, styleExtraMetaEditColorItems.minValue)
-            && Objects.equals(this.maxValue, styleExtraMetaEditColorItems.maxValue)
-            && Objects.equals(this.label, styleExtraMetaEditColorItems.label);
+        StyleExtraMetaEditColorItems that = (StyleExtraMetaEditColorItems) obj;
+        return Objects.equals(this.minValue, that.minValue) && Objects.equals(this.maxValue, that.maxValue)
+            && Objects.equals(this.label, that.label);
     }
 
     @Override

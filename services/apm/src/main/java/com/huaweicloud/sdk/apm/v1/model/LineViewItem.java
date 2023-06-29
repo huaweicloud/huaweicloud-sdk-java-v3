@@ -55,15 +55,15 @@ public class LineViewItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineViewItem lineViewItem = (LineViewItem) o;
-        return Objects.equals(this.function, lineViewItem.function) && Objects.equals(this.as, lineViewItem.as);
+        LineViewItem that = (LineViewItem) obj;
+        return Objects.equals(this.function, that.function) && Objects.equals(this.as, that.as);
     }
 
     @Override

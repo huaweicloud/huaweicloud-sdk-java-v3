@@ -101,18 +101,16 @@ public class ShowVodStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVodStatisticsRequest showVodStatisticsRequest = (ShowVodStatisticsRequest) o;
-        return Objects.equals(this.xSdkDate, showVodStatisticsRequest.xSdkDate)
-            && Objects.equals(this.startTime, showVodStatisticsRequest.startTime)
-            && Objects.equals(this.endTime, showVodStatisticsRequest.endTime)
-            && Objects.equals(this.interval, showVodStatisticsRequest.interval);
+        ShowVodStatisticsRequest that = (ShowVodStatisticsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.interval, that.interval);
     }
 
     @Override

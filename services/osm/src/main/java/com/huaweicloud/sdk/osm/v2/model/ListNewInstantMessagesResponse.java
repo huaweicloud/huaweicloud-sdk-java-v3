@@ -113,17 +113,16 @@ public class ListNewInstantMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNewInstantMessagesResponse listNewInstantMessagesResponse = (ListNewInstantMessagesResponse) o;
-        return Objects.equals(this.imstatus, listNewInstantMessagesResponse.imstatus)
-            && Objects.equals(this.immsg, listNewInstantMessagesResponse.immsg)
-            && Objects.equals(this.lastMessageTimeId, listNewInstantMessagesResponse.lastMessageTimeId);
+        ListNewInstantMessagesResponse that = (ListNewInstantMessagesResponse) obj;
+        return Objects.equals(this.imstatus, that.imstatus) && Objects.equals(this.immsg, that.immsg)
+            && Objects.equals(this.lastMessageTimeId, that.lastMessageTimeId);
     }
 
     @Override

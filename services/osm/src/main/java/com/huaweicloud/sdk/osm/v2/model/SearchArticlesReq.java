@@ -101,18 +101,17 @@ public class SearchArticlesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchArticlesReq searchArticlesReq = (SearchArticlesReq) o;
-        return Objects.equals(this.top, searchArticlesReq.top)
-            && Objects.equals(this.productTypeId, searchArticlesReq.productTypeId)
-            && Objects.equals(this.businessTypeId, searchArticlesReq.businessTypeId)
-            && Objects.equals(this.problemTypeId, searchArticlesReq.problemTypeId);
+        SearchArticlesReq that = (SearchArticlesReq) obj;
+        return Objects.equals(this.top, that.top) && Objects.equals(this.productTypeId, that.productTypeId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId)
+            && Objects.equals(this.problemTypeId, that.problemTypeId);
     }
 
     @Override

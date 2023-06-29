@@ -187,22 +187,20 @@ public class DetailsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetailsBody detailsBody = (DetailsBody) o;
-        return Objects.equals(this.oldCapacity, detailsBody.oldCapacity)
-            && Objects.equals(this.newCapacity, detailsBody.newCapacity)
-            && Objects.equals(this.enablePublicIp, detailsBody.enablePublicIp)
-            && Objects.equals(this.publicIpId, detailsBody.publicIpId)
-            && Objects.equals(this.publicIpAddress, detailsBody.publicIpAddress)
-            && Objects.equals(this.enableSsl, detailsBody.enableSsl)
-            && Objects.equals(this.oldCacheMode, detailsBody.oldCacheMode)
-            && Objects.equals(this.newCacheMode, detailsBody.newCacheMode);
+        DetailsBody that = (DetailsBody) obj;
+        return Objects.equals(this.oldCapacity, that.oldCapacity) && Objects.equals(this.newCapacity, that.newCapacity)
+            && Objects.equals(this.enablePublicIp, that.enablePublicIp)
+            && Objects.equals(this.publicIpId, that.publicIpId)
+            && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.enableSsl, that.enableSsl) && Objects.equals(this.oldCacheMode, that.oldCacheMode)
+            && Objects.equals(this.newCacheMode, that.newCacheMode);
     }
 
     @Override

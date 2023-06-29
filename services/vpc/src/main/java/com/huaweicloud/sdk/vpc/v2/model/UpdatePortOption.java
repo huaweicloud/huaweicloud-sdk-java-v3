@@ -150,18 +150,17 @@ public class UpdatePortOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePortOption updatePortOption = (UpdatePortOption) o;
-        return Objects.equals(this.name, updatePortOption.name)
-            && Objects.equals(this.securityGroups, updatePortOption.securityGroups)
-            && Objects.equals(this.allowedAddressPairs, updatePortOption.allowedAddressPairs)
-            && Objects.equals(this.extraDhcpOpts, updatePortOption.extraDhcpOpts);
+        UpdatePortOption that = (UpdatePortOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs)
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class RunTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunTaskResponse runTaskResponse = (RunTaskResponse) o;
-        return Objects.equals(this.execId, runTaskResponse.execId);
+        RunTaskResponse that = (RunTaskResponse) obj;
+        return Objects.equals(this.execId, that.execId);
     }
 
     @Override

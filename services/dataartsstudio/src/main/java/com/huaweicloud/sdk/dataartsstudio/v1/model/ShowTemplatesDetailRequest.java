@@ -55,16 +55,15 @@ public class ShowTemplatesDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplatesDetailRequest showTemplatesDetailRequest = (ShowTemplatesDetailRequest) o;
-        return Objects.equals(this.id, showTemplatesDetailRequest.id)
-            && Objects.equals(this.workspace, showTemplatesDetailRequest.workspace);
+        ShowTemplatesDetailRequest that = (ShowTemplatesDetailRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

@@ -85,16 +85,16 @@ public class ListDelegatedServicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDelegatedServicesResponse listDelegatedServicesResponse = (ListDelegatedServicesResponse) o;
-        return Objects.equals(this.delegatedServices, listDelegatedServicesResponse.delegatedServices)
-            && Objects.equals(this.pageInfo, listDelegatedServicesResponse.pageInfo);
+        ListDelegatedServicesResponse that = (ListDelegatedServicesResponse) obj;
+        return Objects.equals(this.delegatedServices, that.delegatedServices)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

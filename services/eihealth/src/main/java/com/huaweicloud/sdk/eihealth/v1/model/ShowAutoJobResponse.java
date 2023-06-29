@@ -594,36 +594,29 @@ public class ShowAutoJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoJobResponse showAutoJobResponse = (ShowAutoJobResponse) o;
-        return Objects.equals(this.id, showAutoJobResponse.id) && Objects.equals(this.name, showAutoJobResponse.name)
-            && Objects.equals(this.description, showAutoJobResponse.description)
-            && Objects.equals(this.status, showAutoJobResponse.status)
-            && Objects.equals(this.createTime, showAutoJobResponse.createTime)
-            && Objects.equals(this.finishTime, showAutoJobResponse.finishTime)
-            && Objects.equals(this.databaseId, showAutoJobResponse.databaseId)
-            && Objects.equals(this.databaseColumn, showAutoJobResponse.databaseColumn)
-            && Objects.equals(this.databaseColumnType, showAutoJobResponse.databaseColumnType)
-            && Objects.equals(this.cleanDatabaseColumn, showAutoJobResponse.cleanDatabaseColumn)
-            && Objects.equals(this.databaseTrigger, showAutoJobResponse.databaseTrigger)
-            && Objects.equals(this.toolInfo, showAutoJobResponse.toolInfo)
-            && Objects.equals(this.jobName, showAutoJobResponse.jobName)
-            && Objects.equals(this.jobNameType, showAutoJobResponse.jobNameType)
-            && Objects.equals(this.jobDescription, showAutoJobResponse.jobDescription)
-            && Objects.equals(this.labels, showAutoJobResponse.labels)
-            && Objects.equals(this.priority, showAutoJobResponse.priority)
-            && Objects.equals(this.timeout, showAutoJobResponse.timeout)
-            && Objects.equals(this.outputDir, showAutoJobResponse.outputDir)
-            && Objects.equals(this.outputDirType, showAutoJobResponse.outputDirType)
-            && Objects.equals(this.nodeLabels, showAutoJobResponse.nodeLabels)
-            && Objects.equals(this.ioAccId, showAutoJobResponse.ioAccId)
-            && Objects.equals(this.tasks, showAutoJobResponse.tasks);
+        ShowAutoJobResponse that = (ShowAutoJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.databaseId, that.databaseId)
+            && Objects.equals(this.databaseColumn, that.databaseColumn)
+            && Objects.equals(this.databaseColumnType, that.databaseColumnType)
+            && Objects.equals(this.cleanDatabaseColumn, that.cleanDatabaseColumn)
+            && Objects.equals(this.databaseTrigger, that.databaseTrigger)
+            && Objects.equals(this.toolInfo, that.toolInfo) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobNameType, that.jobNameType)
+            && Objects.equals(this.jobDescription, that.jobDescription) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.outputDirType, that.outputDirType)
+            && Objects.equals(this.nodeLabels, that.nodeLabels) && Objects.equals(this.ioAccId, that.ioAccId)
+            && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

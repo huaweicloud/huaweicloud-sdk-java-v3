@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteSessionRequest  {
-
+public class DeleteSessionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_id")
-    
+    @JsonProperty(value = "session_id")
 
     private String sessionId;
 
@@ -34,9 +24,6 @@ public class DeleteSessionRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * 机器人标识符。
@@ -50,15 +37,10 @@ public class DeleteSessionRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public DeleteSessionRequest withSessionId(String sessionId) {
         this.sessionId = sessionId;
         return this;
     }
-
-    
-
 
     /**
      * 会话标识符。
@@ -72,24 +54,23 @@ public class DeleteSessionRequest  {
         this.sessionId = sessionId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSessionRequest deleteSessionRequest = (DeleteSessionRequest) o;
-        return Objects.equals(this.qabotId, deleteSessionRequest.qabotId) &&
-            Objects.equals(this.sessionId, deleteSessionRequest.sessionId);
+        DeleteSessionRequest that = (DeleteSessionRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.sessionId, that.sessionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, sessionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteSessionRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteSessionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

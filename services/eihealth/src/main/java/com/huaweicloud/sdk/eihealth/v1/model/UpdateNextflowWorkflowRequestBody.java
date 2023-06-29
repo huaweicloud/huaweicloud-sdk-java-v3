@@ -202,19 +202,17 @@ public class UpdateNextflowWorkflowRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNextflowWorkflowRequestBody updateNextflowWorkflowRequestBody = (UpdateNextflowWorkflowRequestBody) o;
-        return Objects.equals(this.workflowFile, updateNextflowWorkflowRequestBody.workflowFile)
-            && Objects.equals(this.description, updateNextflowWorkflowRequestBody.description)
-            && Objects.equals(this.labels, updateNextflowWorkflowRequestBody.labels)
-            && Objects.equals(this.mainFile, updateNextflowWorkflowRequestBody.mainFile)
-            && Objects.equals(this.params, updateNextflowWorkflowRequestBody.params);
+        UpdateNextflowWorkflowRequestBody that = (UpdateNextflowWorkflowRequestBody) obj;
+        return Objects.equals(this.workflowFile, that.workflowFile)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.mainFile, that.mainFile) && Objects.equals(this.params, that.params);
     }
 
     @Override

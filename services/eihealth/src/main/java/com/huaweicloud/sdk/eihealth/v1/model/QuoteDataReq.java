@@ -74,16 +74,15 @@ public class QuoteDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuoteDataReq quoteDataReq = (QuoteDataReq) o;
-        return Objects.equals(this.quoteProjectId, quoteDataReq.quoteProjectId)
-            && Objects.equals(this.subPaths, quoteDataReq.subPaths);
+        QuoteDataReq that = (QuoteDataReq) obj;
+        return Objects.equals(this.quoteProjectId, that.quoteProjectId) && Objects.equals(this.subPaths, that.subPaths);
     }
 
     @Override

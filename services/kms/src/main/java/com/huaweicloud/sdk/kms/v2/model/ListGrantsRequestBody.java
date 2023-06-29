@@ -99,18 +99,16 @@ public class ListGrantsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGrantsRequestBody listGrantsRequestBody = (ListGrantsRequestBody) o;
-        return Objects.equals(this.keyId, listGrantsRequestBody.keyId)
-            && Objects.equals(this.limit, listGrantsRequestBody.limit)
-            && Objects.equals(this.marker, listGrantsRequestBody.marker)
-            && Objects.equals(this.sequence, listGrantsRequestBody.sequence);
+        ListGrantsRequestBody that = (ListGrantsRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

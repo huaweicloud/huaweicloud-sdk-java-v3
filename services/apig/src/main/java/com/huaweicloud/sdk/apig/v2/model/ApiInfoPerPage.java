@@ -69,22 +69,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -280,22 +266,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -379,22 +358,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -471,22 +443,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MatchModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MatchModeEnum(value));
         }
 
         public static MatchModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MatchModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -559,22 +524,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            BackendTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackendTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackendTypeEnum(value));
         }
 
         public static BackendTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackendTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -708,22 +666,15 @@ public class ApiInfoPerPage {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
         }
 
         public static ContentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1548,50 +1499,35 @@ public class ApiInfoPerPage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiInfoPerPage apiInfoPerPage = (ApiInfoPerPage) o;
-        return Objects.equals(this.name, apiInfoPerPage.name) && Objects.equals(this.type, apiInfoPerPage.type)
-            && Objects.equals(this.version, apiInfoPerPage.version)
-            && Objects.equals(this.reqProtocol, apiInfoPerPage.reqProtocol)
-            && Objects.equals(this.reqMethod, apiInfoPerPage.reqMethod)
-            && Objects.equals(this.reqUri, apiInfoPerPage.reqUri)
-            && Objects.equals(this.authType, apiInfoPerPage.authType)
-            && Objects.equals(this.authOpt, apiInfoPerPage.authOpt) && Objects.equals(this.cors, apiInfoPerPage.cors)
-            && Objects.equals(this.matchMode, apiInfoPerPage.matchMode)
-            && Objects.equals(this.backendType, apiInfoPerPage.backendType)
-            && Objects.equals(this.remark, apiInfoPerPage.remark)
-            && Objects.equals(this.groupId, apiInfoPerPage.groupId)
-            && Objects.equals(this.bodyRemark, apiInfoPerPage.bodyRemark)
-            && Objects.equals(this.resultNormalSample, apiInfoPerPage.resultNormalSample)
-            && Objects.equals(this.resultFailureSample, apiInfoPerPage.resultFailureSample)
-            && Objects.equals(this.authorizerId, apiInfoPerPage.authorizerId)
-            && Objects.equals(this.tags, apiInfoPerPage.tags)
-            && Objects.equals(this.responseId, apiInfoPerPage.responseId)
-            && Objects.equals(this.romaAppId, apiInfoPerPage.romaAppId)
-            && Objects.equals(this.domainName, apiInfoPerPage.domainName)
-            && Objects.equals(this.tag, apiInfoPerPage.tag)
-            && Objects.equals(this.contentType, apiInfoPerPage.contentType)
-            && Objects.equals(this.id, apiInfoPerPage.id) && Objects.equals(this.status, apiInfoPerPage.status)
-            && Objects.equals(this.arrangeNecessary, apiInfoPerPage.arrangeNecessary)
-            && Objects.equals(this.registerTime, apiInfoPerPage.registerTime)
-            && Objects.equals(this.updateTime, apiInfoPerPage.updateTime)
-            && Objects.equals(this.groupName, apiInfoPerPage.groupName)
-            && Objects.equals(this.groupVersion, apiInfoPerPage.groupVersion)
-            && Objects.equals(this.runEnvId, apiInfoPerPage.runEnvId)
-            && Objects.equals(this.runEnvName, apiInfoPerPage.runEnvName)
-            && Objects.equals(this.publishId, apiInfoPerPage.publishId)
-            && Objects.equals(this.publishTime, apiInfoPerPage.publishTime)
-            && Objects.equals(this.romaAppName, apiInfoPerPage.romaAppName)
-            && Objects.equals(this.ldApiId, apiInfoPerPage.ldApiId)
-            && Objects.equals(this.backendApi, apiInfoPerPage.backendApi)
-            && Objects.equals(this.apiGroupInfo, apiInfoPerPage.apiGroupInfo)
-            && Objects.equals(this.reqParams, apiInfoPerPage.reqParams);
+        ApiInfoPerPage that = (ApiInfoPerPage) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.reqProtocol, that.reqProtocol)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.authOpt, that.authOpt)
+            && Objects.equals(this.cors, that.cors) && Objects.equals(this.matchMode, that.matchMode)
+            && Objects.equals(this.backendType, that.backendType) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.bodyRemark, that.bodyRemark)
+            && Objects.equals(this.resultNormalSample, that.resultNormalSample)
+            && Objects.equals(this.resultFailureSample, that.resultFailureSample)
+            && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.arrangeNecessary, that.arrangeNecessary)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupVersion, that.groupVersion)
+            && Objects.equals(this.runEnvId, that.runEnvId) && Objects.equals(this.runEnvName, that.runEnvName)
+            && Objects.equals(this.publishId, that.publishId) && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.romaAppName, that.romaAppName) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.backendApi, that.backendApi) && Objects.equals(this.apiGroupInfo, that.apiGroupInfo)
+            && Objects.equals(this.reqParams, that.reqParams);
     }
 
     @Override

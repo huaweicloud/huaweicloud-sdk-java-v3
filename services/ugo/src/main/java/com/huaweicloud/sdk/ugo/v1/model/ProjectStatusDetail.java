@@ -99,18 +99,18 @@ public class ProjectStatusDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectStatusDetail projectStatusDetail = (ProjectStatusDetail) o;
-        return Objects.equals(this.objectCollectionStatus, projectStatusDetail.objectCollectionStatus)
-            && Objects.equals(this.objectCollectionProgress, projectStatusDetail.objectCollectionProgress)
-            && Objects.equals(this.preMigrationStatus, projectStatusDetail.preMigrationStatus)
-            && Objects.equals(this.preMigrationProgress, projectStatusDetail.preMigrationProgress);
+        ProjectStatusDetail that = (ProjectStatusDetail) obj;
+        return Objects.equals(this.objectCollectionStatus, that.objectCollectionStatus)
+            && Objects.equals(this.objectCollectionProgress, that.objectCollectionProgress)
+            && Objects.equals(this.preMigrationStatus, that.preMigrationStatus)
+            && Objects.equals(this.preMigrationProgress, that.preMigrationProgress);
     }
 
     @Override

@@ -167,22 +167,18 @@ public class CreateOrDeletePublishRecordForApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrDeletePublishRecordForApiV2Response createOrDeletePublishRecordForApiV2Response =
-            (CreateOrDeletePublishRecordForApiV2Response) o;
-        return Objects.equals(this.publishId, createOrDeletePublishRecordForApiV2Response.publishId)
-            && Objects.equals(this.apiId, createOrDeletePublishRecordForApiV2Response.apiId)
-            && Objects.equals(this.apiName, createOrDeletePublishRecordForApiV2Response.apiName)
-            && Objects.equals(this.envId, createOrDeletePublishRecordForApiV2Response.envId)
-            && Objects.equals(this.remark, createOrDeletePublishRecordForApiV2Response.remark)
-            && Objects.equals(this.publishTime, createOrDeletePublishRecordForApiV2Response.publishTime)
-            && Objects.equals(this.versionId, createOrDeletePublishRecordForApiV2Response.versionId);
+        CreateOrDeletePublishRecordForApiV2Response that = (CreateOrDeletePublishRecordForApiV2Response) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

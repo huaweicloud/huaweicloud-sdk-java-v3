@@ -55,16 +55,15 @@ public class DeleteChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteChannelRequest deleteChannelRequest = (DeleteChannelRequest) o;
-        return Objects.equals(this.blockchainId, deleteChannelRequest.blockchainId)
-            && Objects.equals(this.channelId, deleteChannelRequest.channelId);
+        DeleteChannelRequest that = (DeleteChannelRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.channelId, that.channelId);
     }
 
     @Override

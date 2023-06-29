@@ -97,17 +97,16 @@ public class ListApisV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisV2Response listApisV2Response = (ListApisV2Response) o;
-        return Objects.equals(this.size, listApisV2Response.size)
-            && Objects.equals(this.total, listApisV2Response.total)
-            && Objects.equals(this.apis, listApisV2Response.apis);
+        ListApisV2Response that = (ListApisV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apis, that.apis);
     }
 
     @Override

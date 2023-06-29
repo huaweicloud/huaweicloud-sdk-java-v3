@@ -162,20 +162,17 @@ public class UpdateCaseContactInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCaseContactInfoReq updateCaseContactInfoReq = (UpdateCaseContactInfoReq) o;
-        return Objects.equals(this.areaCode, updateCaseContactInfoReq.areaCode)
-            && Objects.equals(this.remindMobile, updateCaseContactInfoReq.remindMobile)
-            && Objects.equals(this.remindMail, updateCaseContactInfoReq.remindMail)
-            && Objects.equals(this.remindTime, updateCaseContactInfoReq.remindTime)
-            && Objects.equals(this.groupId, updateCaseContactInfoReq.groupId)
-            && Objects.equals(this.extensionMap, updateCaseContactInfoReq.extensionMap);
+        UpdateCaseContactInfoReq that = (UpdateCaseContactInfoReq) obj;
+        return Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.remindMobile, that.remindMobile)
+            && Objects.equals(this.remindMail, that.remindMail) && Objects.equals(this.remindTime, that.remindTime)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.extensionMap, that.extensionMap);
     }
 
     @Override

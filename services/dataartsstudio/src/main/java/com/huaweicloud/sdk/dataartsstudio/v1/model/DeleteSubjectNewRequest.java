@@ -65,16 +65,15 @@ public class DeleteSubjectNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSubjectNewRequest deleteSubjectNewRequest = (DeleteSubjectNewRequest) o;
-        return Objects.equals(this.workspace, deleteSubjectNewRequest.workspace)
-            && Objects.equals(this.body, deleteSubjectNewRequest.body);
+        DeleteSubjectNewRequest that = (DeleteSubjectNewRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

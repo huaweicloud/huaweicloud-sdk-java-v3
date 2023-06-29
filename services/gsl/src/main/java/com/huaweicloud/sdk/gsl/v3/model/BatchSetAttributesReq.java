@@ -74,16 +74,15 @@ public class BatchSetAttributesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSetAttributesReq batchSetAttributesReq = (BatchSetAttributesReq) o;
-        return Objects.equals(this.fileTempId, batchSetAttributesReq.fileTempId)
-            && Objects.equals(this.attributes, batchSetAttributesReq.attributes);
+        BatchSetAttributesReq that = (BatchSetAttributesReq) obj;
+        return Objects.equals(this.fileTempId, that.fileTempId) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

@@ -187,25 +187,21 @@ public class ShowSinkTaskDetailRespObsDestinationDescriptor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSinkTaskDetailRespObsDestinationDescriptor showSinkTaskDetailRespObsDestinationDescriptor =
-            (ShowSinkTaskDetailRespObsDestinationDescriptor) o;
-        return Objects.equals(this.consumerStrategy, showSinkTaskDetailRespObsDestinationDescriptor.consumerStrategy)
-            && Objects.equals(this.destinationFileType,
-                showSinkTaskDetailRespObsDestinationDescriptor.destinationFileType)
-            && Objects.equals(this.obsBucketName, showSinkTaskDetailRespObsDestinationDescriptor.obsBucketName)
-            && Objects.equals(this.obsPath, showSinkTaskDetailRespObsDestinationDescriptor.obsPath)
-            && Objects.equals(this.partitionFormat, showSinkTaskDetailRespObsDestinationDescriptor.partitionFormat)
-            && Objects.equals(this.recordDelimiter, showSinkTaskDetailRespObsDestinationDescriptor.recordDelimiter)
-            && Objects.equals(this.deliverTimeInterval,
-                showSinkTaskDetailRespObsDestinationDescriptor.deliverTimeInterval)
-            && Objects.equals(this.obsPartSize, showSinkTaskDetailRespObsDestinationDescriptor.obsPartSize);
+        ShowSinkTaskDetailRespObsDestinationDescriptor that = (ShowSinkTaskDetailRespObsDestinationDescriptor) obj;
+        return Objects.equals(this.consumerStrategy, that.consumerStrategy)
+            && Objects.equals(this.destinationFileType, that.destinationFileType)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.obsPath, that.obsPath)
+            && Objects.equals(this.partitionFormat, that.partitionFormat)
+            && Objects.equals(this.recordDelimiter, that.recordDelimiter)
+            && Objects.equals(this.deliverTimeInterval, that.deliverTimeInterval)
+            && Objects.equals(this.obsPartSize, that.obsPartSize);
     }
 
     @Override

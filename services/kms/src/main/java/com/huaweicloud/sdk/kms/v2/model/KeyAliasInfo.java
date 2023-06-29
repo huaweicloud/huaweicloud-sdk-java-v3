@@ -55,15 +55,15 @@ public class KeyAliasInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyAliasInfo keyAliasInfo = (KeyAliasInfo) o;
-        return Objects.equals(this.keyId, keyAliasInfo.keyId) && Objects.equals(this.keyAlias, keyAliasInfo.keyAlias);
+        KeyAliasInfo that = (KeyAliasInfo) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keyAlias, that.keyAlias);
     }
 
     @Override

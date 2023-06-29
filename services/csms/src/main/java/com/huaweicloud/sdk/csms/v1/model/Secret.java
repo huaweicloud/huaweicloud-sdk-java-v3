@@ -193,19 +193,19 @@ public class Secret {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Secret secret = (Secret) o;
-        return Objects.equals(this.id, secret.id) && Objects.equals(this.name, secret.name)
-            && Objects.equals(this.state, secret.state) && Objects.equals(this.kmsKeyId, secret.kmsKeyId)
-            && Objects.equals(this.description, secret.description)
-            && Objects.equals(this.createTime, secret.createTime) && Objects.equals(this.updateTime, secret.updateTime)
-            && Objects.equals(this.scheduledDeleteTime, secret.scheduledDeleteTime);
+        Secret that = (Secret) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.kmsKeyId, that.kmsKeyId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.scheduledDeleteTime, that.scheduledDeleteTime);
     }
 
     @Override

@@ -425,27 +425,23 @@ public class BaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseInfo baseInfo = (BaseInfo) o;
-        return Objects.equals(this.title, baseInfo.title) && Objects.equals(this.videoName, baseInfo.videoName)
-            && Objects.equals(this.description, baseInfo.description)
-            && Objects.equals(this.categoryId, baseInfo.categoryId)
-            && Objects.equals(this.categoryName, baseInfo.categoryName)
-            && Objects.equals(this.createTime, baseInfo.createTime)
-            && Objects.equals(this.lastModified, baseInfo.lastModified)
-            && Objects.equals(this.videoType, baseInfo.videoType) && Objects.equals(this.tags, baseInfo.tags)
-            && Objects.equals(this.metaData, baseInfo.metaData) && Objects.equals(this.videoUrl, baseInfo.videoUrl)
-            && Objects.equals(this.signUrl, baseInfo.signUrl)
-            && Objects.equals(this.coverInfoArray, baseInfo.coverInfoArray)
-            && Objects.equals(this.subtitleInfo, baseInfo.subtitleInfo)
-            && Objects.equals(this.sourcePath, baseInfo.sourcePath)
-            && Objects.equals(this.outputPath, baseInfo.outputPath);
+        BaseInfo that = (BaseInfo) obj;
+        return Objects.equals(this.title, that.title) && Objects.equals(this.videoName, that.videoName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.categoryName, that.categoryName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.videoType, that.videoType)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.metaData, that.metaData)
+            && Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.signUrl, that.signUrl)
+            && Objects.equals(this.coverInfoArray, that.coverInfoArray)
+            && Objects.equals(this.subtitleInfo, that.subtitleInfo) && Objects.equals(this.sourcePath, that.sourcePath)
+            && Objects.equals(this.outputPath, that.outputPath);
     }
 
     @Override

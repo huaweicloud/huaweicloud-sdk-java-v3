@@ -77,16 +77,15 @@ public class ListRtcRealtimeQualityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRealtimeQualityResponse listRtcRealtimeQualityResponse = (ListRtcRealtimeQualityResponse) o;
-        return Objects.equals(this.quality, listRtcRealtimeQualityResponse.quality)
-            && Objects.equals(this.xRequestId, listRtcRealtimeQualityResponse.xRequestId);
+        ListRtcRealtimeQualityResponse that = (ListRtcRealtimeQualityResponse) obj;
+        return Objects.equals(this.quality, that.quality) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

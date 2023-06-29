@@ -123,19 +123,17 @@ public class ApigChangeResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigChangeResourceReq apigChangeResourceReq = (ApigChangeResourceReq) o;
-        return Objects.equals(this.changeMode, apigChangeResourceReq.changeMode)
-            && Objects.equals(this.resourceId, apigChangeResourceReq.resourceId)
-            && Objects.equals(this.resourceSpecCode, apigChangeResourceReq.resourceSpecCode)
-            && Objects.equals(this.productId, apigChangeResourceReq.productId)
-            && Objects.equals(this.promotionInfo, apigChangeResourceReq.promotionInfo);
+        ApigChangeResourceReq that = (ApigChangeResourceReq) obj;
+        return Objects.equals(this.changeMode, that.changeMode) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.promotionInfo, that.promotionInfo);
     }
 
     @Override

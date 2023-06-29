@@ -90,17 +90,16 @@ public class AssociateRouteTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateRouteTableResponse associateRouteTableResponse = (AssociateRouteTableResponse) o;
-        return Objects.equals(this.association, associateRouteTableResponse.association)
-            && Objects.equals(this.requestId, associateRouteTableResponse.requestId)
-            && Objects.equals(this.xClientToken, associateRouteTableResponse.xClientToken);
+        AssociateRouteTableResponse that = (AssociateRouteTableResponse) obj;
+        return Objects.equals(this.association, that.association) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.xClientToken, that.xClientToken);
     }
 
     @Override

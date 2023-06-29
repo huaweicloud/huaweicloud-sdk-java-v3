@@ -75,16 +75,15 @@ public class ListOpRecordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOpRecordResponse listOpRecordResponse = (ListOpRecordResponse) o;
-        return Objects.equals(this.count, listOpRecordResponse.count)
-            && Objects.equals(this.operationRecords, listOpRecordResponse.operationRecords);
+        ListOpRecordResponse that = (ListOpRecordResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.operationRecords, that.operationRecords);
     }
 
     @Override

@@ -143,20 +143,20 @@ public class HeaderMap {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HeaderMap headerMap = (HeaderMap) o;
-        return Objects.equals(this.contentDisposition, headerMap.contentDisposition)
-            && Objects.equals(this.contentLanguage, headerMap.contentLanguage)
-            && Objects.equals(this.accessControlAllowOrigin, headerMap.accessControlAllowOrigin)
-            && Objects.equals(this.accessControlAllowMethods, headerMap.accessControlAllowMethods)
-            && Objects.equals(this.accessControlMaxAge, headerMap.accessControlMaxAge)
-            && Objects.equals(this.accessControlExposeHeaders, headerMap.accessControlExposeHeaders);
+        HeaderMap that = (HeaderMap) obj;
+        return Objects.equals(this.contentDisposition, that.contentDisposition)
+            && Objects.equals(this.contentLanguage, that.contentLanguage)
+            && Objects.equals(this.accessControlAllowOrigin, that.accessControlAllowOrigin)
+            && Objects.equals(this.accessControlAllowMethods, that.accessControlAllowMethods)
+            && Objects.equals(this.accessControlMaxAge, that.accessControlMaxAge)
+            && Objects.equals(this.accessControlExposeHeaders, that.accessControlExposeHeaders);
     }
 
     @Override

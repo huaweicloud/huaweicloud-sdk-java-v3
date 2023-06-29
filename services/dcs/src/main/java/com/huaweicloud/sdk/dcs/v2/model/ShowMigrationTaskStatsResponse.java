@@ -166,21 +166,19 @@ public class ShowMigrationTaskStatsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrationTaskStatsResponse showMigrationTaskStatsResponse = (ShowMigrationTaskStatsResponse) o;
-        return Objects.equals(this.fullMigrationProgress, showMigrationTaskStatsResponse.fullMigrationProgress)
-            && Objects.equals(this.offset, showMigrationTaskStatsResponse.offset)
-            && Objects.equals(this.sourceDbsize, showMigrationTaskStatsResponse.sourceDbsize)
-            && Objects.equals(this.targetDbsize, showMigrationTaskStatsResponse.targetDbsize)
-            && Objects.equals(this.targetInputKbps, showMigrationTaskStatsResponse.targetInputKbps)
-            && Objects.equals(this.targetOps, showMigrationTaskStatsResponse.targetOps)
-            && Objects.equals(this.isMigrating, showMigrationTaskStatsResponse.isMigrating);
+        ShowMigrationTaskStatsResponse that = (ShowMigrationTaskStatsResponse) obj;
+        return Objects.equals(this.fullMigrationProgress, that.fullMigrationProgress)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sourceDbsize, that.sourceDbsize)
+            && Objects.equals(this.targetDbsize, that.targetDbsize)
+            && Objects.equals(this.targetInputKbps, that.targetInputKbps)
+            && Objects.equals(this.targetOps, that.targetOps) && Objects.equals(this.isMigrating, that.isMigrating);
     }
 
     @Override

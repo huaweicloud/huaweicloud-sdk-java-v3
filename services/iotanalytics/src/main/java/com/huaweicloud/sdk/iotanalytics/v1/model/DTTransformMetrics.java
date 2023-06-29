@@ -96,17 +96,16 @@ public class DTTransformMetrics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DTTransformMetrics dtTransformMetrics = (DTTransformMetrics) o;
-        return Objects.equals(this.inputs, dtTransformMetrics.inputs)
-            && Objects.equals(this.expression, dtTransformMetrics.expression)
-            && Objects.equals(this.metricName, dtTransformMetrics.metricName);
+        DTTransformMetrics that = (DTTransformMetrics) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.metricName, that.metricName);
     }
 
     @Override

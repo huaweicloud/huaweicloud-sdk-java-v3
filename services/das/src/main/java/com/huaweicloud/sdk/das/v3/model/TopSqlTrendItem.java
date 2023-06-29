@@ -121,19 +121,19 @@ public class TopSqlTrendItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopSqlTrendItem topSqlTrendItem = (TopSqlTrendItem) o;
-        return Objects.equals(this.executeAt, topSqlTrendItem.executeAt)
-            && Objects.equals(this.queryTimeIn100ms, topSqlTrendItem.queryTimeIn100ms)
-            && Objects.equals(this.queryTimeIn500ms, topSqlTrendItem.queryTimeIn500ms)
-            && Objects.equals(this.queryTimeIn1s, topSqlTrendItem.queryTimeIn1s)
-            && Objects.equals(this.queryTimeOver1s, topSqlTrendItem.queryTimeOver1s);
+        TopSqlTrendItem that = (TopSqlTrendItem) obj;
+        return Objects.equals(this.executeAt, that.executeAt)
+            && Objects.equals(this.queryTimeIn100ms, that.queryTimeIn100ms)
+            && Objects.equals(this.queryTimeIn500ms, that.queryTimeIn500ms)
+            && Objects.equals(this.queryTimeIn1s, that.queryTimeIn1s)
+            && Objects.equals(this.queryTimeOver1s, that.queryTimeOver1s);
     }
 
     @Override

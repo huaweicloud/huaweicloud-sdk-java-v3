@@ -1,80 +1,63 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ImportGraphReqParallelEdge;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 增量导入图请求体
  */
-public class ImportGraphReq  {
-
+public class ImportGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeset_path")
-    
+    @JsonProperty(value = "edgeset_path")
 
     private String edgesetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgeset_format")
-    
+    @JsonProperty(value = "edgeset_format")
 
     private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexset_path")
-    
+    @JsonProperty(value = "vertexset_path")
 
     private String vertexsetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexset_format")
-    
+    @JsonProperty(value = "vertexset_format")
 
     private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schema_path")
-    
+    @JsonProperty(value = "schema_path")
 
     private String schemaPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_dir")
-    
+    @JsonProperty(value = "log_dir")
 
     private String logDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parallel_edge")
-    
+    @JsonProperty(value = "parallel_edge")
 
     private ImportGraphReqParallelEdge parallelEdge;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delimiter")
-    
+    @JsonProperty(value = "delimiter")
 
     private String delimiter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trim_quote")
-    
+    @JsonProperty(value = "trim_quote")
 
     private String trimQuote;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offline")
-    
+    @JsonProperty(value = "offline")
 
     private Boolean offline;
 
@@ -82,9 +65,6 @@ public class ImportGraphReq  {
         this.edgesetPath = edgesetPath;
         return this;
     }
-
-    
-
 
     /**
      * 边文件目录或边文件名。
@@ -98,15 +78,10 @@ public class ImportGraphReq  {
         this.edgesetPath = edgesetPath;
     }
 
-    
-
     public ImportGraphReq withEdgesetFormat(String edgesetFormat) {
         this.edgesetFormat = edgesetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集格式。当前仅支持csv。  默认为csv。
@@ -120,15 +95,10 @@ public class ImportGraphReq  {
         this.edgesetFormat = edgesetFormat;
     }
 
-    
-
     public ImportGraphReq withVertexsetPath(String vertexsetPath) {
         this.vertexsetPath = vertexsetPath;
         return this;
     }
-
-    
-
 
     /**
      * 点文件目录或点文件名。
@@ -142,15 +112,10 @@ public class ImportGraphReq  {
         this.vertexsetPath = vertexsetPath;
     }
 
-    
-
     public ImportGraphReq withVertexsetFormat(String vertexsetFormat) {
         this.vertexsetFormat = vertexsetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集格式。当前仅支持csv。  默认为csv。
@@ -164,15 +129,10 @@ public class ImportGraphReq  {
         this.vertexsetFormat = vertexsetFormat;
     }
 
-    
-
     public ImportGraphReq withSchemaPath(String schemaPath) {
         this.schemaPath = schemaPath;
         return this;
     }
-
-    
-
 
     /**
      * 新增数据的元数据文件路径。
@@ -186,15 +146,10 @@ public class ImportGraphReq  {
         this.schemaPath = schemaPath;
     }
 
-    
-
     public ImportGraphReq withLogDir(String logDir) {
         this.logDir = logDir;
         return this;
     }
-
-    
-
 
     /**
      * 导入图日志存放目录，用于存储导入失败的数据和详细错入原因。
@@ -208,22 +163,19 @@ public class ImportGraphReq  {
         this.logDir = logDir;
     }
 
-    
-
     public ImportGraphReq withParallelEdge(ImportGraphReqParallelEdge parallelEdge) {
         this.parallelEdge = parallelEdge;
         return this;
     }
 
     public ImportGraphReq withParallelEdge(Consumer<ImportGraphReqParallelEdge> parallelEdgeSetter) {
-        if(this.parallelEdge == null ){
+        if (this.parallelEdge == null) {
             this.parallelEdge = new ImportGraphReqParallelEdge();
             parallelEdgeSetter.accept(this.parallelEdge);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get parallelEdge
@@ -237,15 +189,10 @@ public class ImportGraphReq  {
         this.parallelEdge = parallelEdge;
     }
 
-    
-
     public ImportGraphReq withDelimiter(String delimiter) {
         this.delimiter = delimiter;
         return this;
     }
-
-    
-
 
     /**
      * csv格式文件字段分隔符，默认值为逗号（,）。list/set类型的字段内元素分隔符默认为分号（;）。
@@ -259,15 +206,10 @@ public class ImportGraphReq  {
         this.delimiter = delimiter;
     }
 
-    
-
     public ImportGraphReq withTrimQuote(String trimQuote) {
         this.trimQuote = trimQuote;
         return this;
     }
-
-    
-
 
     /**
      * csv格式文件字段包围符，默认值为双引号（\"）。用来包围一个字段，如字段中含有分隔符或者换行等。
@@ -281,15 +223,10 @@ public class ImportGraphReq  {
         this.trimQuote = trimQuote;
     }
 
-    
-
     public ImportGraphReq withOffline(Boolean offline) {
         this.offline = offline;
         return this;
     }
-
-    
-
 
     /**
      * 是否离线导入，取值为true或者false，默认取false。  - true 表示离线导入，导入速度较快，但导入过程中图处于锁定状态，不可读不可写。 - false 表示在线导入，相对离线导入，在线导入速度略慢，但导入过程中图并未锁定，可读不可写。
@@ -303,32 +240,38 @@ public class ImportGraphReq  {
         this.offline = offline;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportGraphReq importGraphReq = (ImportGraphReq) o;
-        return Objects.equals(this.edgesetPath, importGraphReq.edgesetPath) &&
-            Objects.equals(this.edgesetFormat, importGraphReq.edgesetFormat) &&
-            Objects.equals(this.vertexsetPath, importGraphReq.vertexsetPath) &&
-            Objects.equals(this.vertexsetFormat, importGraphReq.vertexsetFormat) &&
-            Objects.equals(this.schemaPath, importGraphReq.schemaPath) &&
-            Objects.equals(this.logDir, importGraphReq.logDir) &&
-            Objects.equals(this.parallelEdge, importGraphReq.parallelEdge) &&
-            Objects.equals(this.delimiter, importGraphReq.delimiter) &&
-            Objects.equals(this.trimQuote, importGraphReq.trimQuote) &&
-            Objects.equals(this.offline, importGraphReq.offline);
+        ImportGraphReq that = (ImportGraphReq) obj;
+        return Objects.equals(this.edgesetPath, that.edgesetPath)
+            && Objects.equals(this.edgesetFormat, that.edgesetFormat)
+            && Objects.equals(this.vertexsetPath, that.vertexsetPath)
+            && Objects.equals(this.vertexsetFormat, that.vertexsetFormat)
+            && Objects.equals(this.schemaPath, that.schemaPath) && Objects.equals(this.logDir, that.logDir)
+            && Objects.equals(this.parallelEdge, that.parallelEdge) && Objects.equals(this.delimiter, that.delimiter)
+            && Objects.equals(this.trimQuote, that.trimQuote) && Objects.equals(this.offline, that.offline);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgesetPath, edgesetFormat, vertexsetPath, vertexsetFormat, schemaPath, logDir, parallelEdge, delimiter, trimQuote, offline);
+        return Objects.hash(edgesetPath,
+            edgesetFormat,
+            vertexsetPath,
+            vertexsetFormat,
+            schemaPath,
+            logDir,
+            parallelEdge,
+            delimiter,
+            trimQuote,
+            offline);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,6 +289,7 @@ public class ImportGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -356,8 +300,5 @@ public class ImportGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

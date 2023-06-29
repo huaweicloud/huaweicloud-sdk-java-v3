@@ -61,22 +61,15 @@ public class JobEndpointInfo {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbTypeEnum(value));
         }
 
         public static DbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -149,22 +142,15 @@ public class JobEndpointInfo {
             if (value == null) {
                 return null;
             }
-            EndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EndpointTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EndpointTypeEnum(value));
         }
 
         public static EndpointTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EndpointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,22 +217,15 @@ public class JobEndpointInfo {
             if (value == null) {
                 return null;
             }
-            EndpointRoleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EndpointRoleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EndpointRoleEnum(value));
         }
 
         public static EndpointRoleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EndpointRoleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -475,20 +454,18 @@ public class JobEndpointInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobEndpointInfo jobEndpointInfo = (JobEndpointInfo) o;
-        return Objects.equals(this.dbType, jobEndpointInfo.dbType)
-            && Objects.equals(this.endpointType, jobEndpointInfo.endpointType)
-            && Objects.equals(this.endpointRole, jobEndpointInfo.endpointRole)
-            && Objects.equals(this.endpoint, jobEndpointInfo.endpoint)
-            && Objects.equals(this.cloud, jobEndpointInfo.cloud) && Objects.equals(this.vpc, jobEndpointInfo.vpc)
-            && Objects.equals(this.config, jobEndpointInfo.config) && Objects.equals(this.ssl, jobEndpointInfo.ssl);
+        JobEndpointInfo that = (JobEndpointInfo) obj;
+        return Objects.equals(this.dbType, that.dbType) && Objects.equals(this.endpointType, that.endpointType)
+            && Objects.equals(this.endpointRole, that.endpointRole) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.cloud, that.cloud) && Objects.equals(this.vpc, that.vpc)
+            && Objects.equals(this.config, that.config) && Objects.equals(this.ssl, that.ssl);
     }
 
     @Override

@@ -601,30 +601,24 @@ public class AccessConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfig accessConfig = (AccessConfig) o;
-        return Objects.equals(this.protocolType, accessConfig.protocolType)
-            && Objects.equals(this.protocolName, accessConfig.protocolName)
-            && Objects.equals(this.slaveId, accessConfig.slaveId) && Objects.equals(this.ip, accessConfig.ip)
-            && Objects.equals(this.port, accessConfig.port) && Objects.equals(this.serialPort, accessConfig.serialPort)
-            && Objects.equals(this.baudRate, accessConfig.baudRate)
-            && Objects.equals(this.dataBits, accessConfig.dataBits)
-            && Objects.equals(this.stopBits, accessConfig.stopBits)
-            && Objects.equals(this.parityBits, accessConfig.parityBits) && Objects.equals(this.url, accessConfig.url)
-            && Objects.equals(this.secMode, accessConfig.secMode)
-            && Objects.equals(this.secPolicy, accessConfig.secPolicy)
-            && Objects.equals(this.authType, accessConfig.authType)
-            && Objects.equals(this.username, accessConfig.username)
-            && Objects.equals(this.password, accessConfig.password)
-            && Objects.equals(this.privateKey, accessConfig.privateKey)
-            && Objects.equals(this.certificate, accessConfig.certificate)
-            && Objects.equals(this.timeout, accessConfig.timeout);
+        AccessConfig that = (AccessConfig) obj;
+        return Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.protocolName, that.protocolName) && Objects.equals(this.slaveId, that.slaveId)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.serialPort, that.serialPort) && Objects.equals(this.baudRate, that.baudRate)
+            && Objects.equals(this.dataBits, that.dataBits) && Objects.equals(this.stopBits, that.stopBits)
+            && Objects.equals(this.parityBits, that.parityBits) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.secMode, that.secMode) && Objects.equals(this.secPolicy, that.secPolicy)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

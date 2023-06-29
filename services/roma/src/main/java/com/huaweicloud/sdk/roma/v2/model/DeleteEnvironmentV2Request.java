@@ -55,16 +55,15 @@ public class DeleteEnvironmentV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEnvironmentV2Request deleteEnvironmentV2Request = (DeleteEnvironmentV2Request) o;
-        return Objects.equals(this.instanceId, deleteEnvironmentV2Request.instanceId)
-            && Objects.equals(this.envId, deleteEnvironmentV2Request.envId);
+        DeleteEnvironmentV2Request that = (DeleteEnvironmentV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.envId, that.envId);
     }
 
     @Override

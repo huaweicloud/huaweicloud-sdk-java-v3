@@ -165,19 +165,19 @@ public class ExtMsg {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtMsg extMsg = (ExtMsg) o;
-        return Objects.equals(this.openInBrowser, extMsg.openInBrowser)
-            && Objects.equals(this.webTitle, extMsg.webTitle) && Objects.equals(this.packageName, extMsg.packageName)
-            && Objects.equals(this.appId, extMsg.appId) && Objects.equals(this.browserFloorUrl, extMsg.browserFloorUrl)
-            && Objects.equals(this.dependEngineVer, extMsg.dependEngineVer)
-            && Objects.equals(this.thirdServiceName, extMsg.thirdServiceName);
+        ExtMsg that = (ExtMsg) obj;
+        return Objects.equals(this.openInBrowser, that.openInBrowser) && Objects.equals(this.webTitle, that.webTitle)
+            && Objects.equals(this.packageName, that.packageName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.browserFloorUrl, that.browserFloorUrl)
+            && Objects.equals(this.dependEngineVer, that.dependEngineVer)
+            && Objects.equals(this.thirdServiceName, that.thirdServiceName);
     }
 
     @Override

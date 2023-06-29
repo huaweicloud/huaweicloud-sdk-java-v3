@@ -144,20 +144,17 @@ public class ShowStoredQueryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStoredQueryResponse showStoredQueryResponse = (ShowStoredQueryResponse) o;
-        return Objects.equals(this.id, showStoredQueryResponse.id)
-            && Objects.equals(this.name, showStoredQueryResponse.name)
-            && Objects.equals(this.description, showStoredQueryResponse.description)
-            && Objects.equals(this.expression, showStoredQueryResponse.expression)
-            && Objects.equals(this.created, showStoredQueryResponse.created)
-            && Objects.equals(this.updated, showStoredQueryResponse.updated);
+        ShowStoredQueryResponse that = (ShowStoredQueryResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class HostFlag {
             if (value == null) {
                 return null;
             }
-            Pci3dsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Pci3dsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Pci3dsEnum(value));
         }
 
         public static Pci3dsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Pci3dsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class HostFlag {
             if (value == null) {
                 return null;
             }
-            PciDssEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PciDssEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PciDssEnum(value));
         }
 
         public static PciDssEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PciDssEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -214,15 +200,15 @@ public class HostFlag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostFlag hostFlag = (HostFlag) o;
-        return Objects.equals(this.pci3ds, hostFlag.pci3ds) && Objects.equals(this.pciDss, hostFlag.pciDss);
+        HostFlag that = (HostFlag) obj;
+        return Objects.equals(this.pci3ds, that.pci3ds) && Objects.equals(this.pciDss, that.pciDss);
     }
 
     @Override

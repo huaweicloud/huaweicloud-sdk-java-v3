@@ -285,25 +285,20 @@ public class SumTableParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SumTableParam sumTableParam = (SumTableParam) o;
-        return Objects.equals(this.requestId, sumTableParam.requestId)
-            && Objects.equals(this.viewConfig, sumTableParam.viewConfig)
-            && Objects.equals(this.strategy, sumTableParam.strategy) && Objects.equals(this.page, sumTableParam.page)
-            && Objects.equals(this.pageSize, sumTableParam.pageSize)
-            && Objects.equals(this.orderBy, sumTableParam.orderBy)
-            && Objects.equals(this.searchWord, sumTableParam.searchWord)
-            && Objects.equals(this.instanceId, sumTableParam.instanceId)
-            && Objects.equals(this.monitorItemId, sumTableParam.monitorItemId)
-            && Objects.equals(this.envId, sumTableParam.envId)
-            && Objects.equals(this.startTime, sumTableParam.startTime)
-            && Objects.equals(this.endTime, sumTableParam.endTime);
+        SumTableParam that = (SumTableParam) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.viewConfig, that.viewConfig)
+            && Objects.equals(this.strategy, that.strategy) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.searchWord, that.searchWord) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

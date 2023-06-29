@@ -77,16 +77,15 @@ public class ListExtractTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExtractTaskResponse listExtractTaskResponse = (ListExtractTaskResponse) o;
-        return Objects.equals(this.total, listExtractTaskResponse.total)
-            && Objects.equals(this.tasks, listExtractTaskResponse.tasks);
+        ListExtractTaskResponse that = (ListExtractTaskResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

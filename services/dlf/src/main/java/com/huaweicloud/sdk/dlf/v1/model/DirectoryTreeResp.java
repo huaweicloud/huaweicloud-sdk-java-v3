@@ -266,24 +266,21 @@ public class DirectoryTreeResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DirectoryTreeResp directoryTreeResp = (DirectoryTreeResp) o;
-        return Objects.equals(this.parentDirectoryId, directoryTreeResp.parentDirectoryId)
-            && Objects.equals(this.directoryName, directoryTreeResp.directoryName)
-            && Objects.equals(this.categoryType, directoryTreeResp.categoryType)
-            && Objects.equals(this.directoryId, directoryTreeResp.directoryId)
-            && Objects.equals(this.paging, directoryTreeResp.paging)
-            && Objects.equals(this.offset, directoryTreeResp.offset)
-            && Objects.equals(this.limit, directoryTreeResp.limit)
-            && Objects.equals(this.count, directoryTreeResp.count)
-            && Objects.equals(this.elements, directoryTreeResp.elements)
-            && Objects.equals(this.subDirectories, directoryTreeResp.subDirectories);
+        DirectoryTreeResp that = (DirectoryTreeResp) obj;
+        return Objects.equals(this.parentDirectoryId, that.parentDirectoryId)
+            && Objects.equals(this.directoryName, that.directoryName)
+            && Objects.equals(this.categoryType, that.categoryType)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.paging, that.paging)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.elements, that.elements)
+            && Objects.equals(this.subDirectories, that.subDirectories);
     }
 
     @Override

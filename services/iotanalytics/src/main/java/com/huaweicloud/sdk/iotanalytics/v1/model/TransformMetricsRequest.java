@@ -184,19 +184,17 @@ public class TransformMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformMetricsRequest transformMetricsRequest = (TransformMetricsRequest) o;
-        return Objects.equals(this.timeSpan, transformMetricsRequest.timeSpan)
-            && Objects.equals(this.tags, transformMetricsRequest.tags)
-            && Objects.equals(this.propertyFilter, transformMetricsRequest.propertyFilter)
-            && Objects.equals(this.metrics, transformMetricsRequest.metrics)
-            && Objects.equals(this.limit, transformMetricsRequest.limit);
+        TransformMetricsRequest that = (TransformMetricsRequest) obj;
+        return Objects.equals(this.timeSpan, that.timeSpan) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.propertyFilter, that.propertyFilter) && Objects.equals(this.metrics, that.metrics)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

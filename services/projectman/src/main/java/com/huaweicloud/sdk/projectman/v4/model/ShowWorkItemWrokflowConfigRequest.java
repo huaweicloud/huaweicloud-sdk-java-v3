@@ -55,16 +55,15 @@ public class ShowWorkItemWrokflowConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkItemWrokflowConfigRequest showWorkItemWrokflowConfigRequest = (ShowWorkItemWrokflowConfigRequest) o;
-        return Objects.equals(this.projectId, showWorkItemWrokflowConfigRequest.projectId)
-            && Objects.equals(this.boardId, showWorkItemWrokflowConfigRequest.boardId);
+        ShowWorkItemWrokflowConfigRequest that = (ShowWorkItemWrokflowConfigRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.boardId, that.boardId);
     }
 
     @Override

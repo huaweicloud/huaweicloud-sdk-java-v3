@@ -77,17 +77,16 @@ public class InstancesMonitoredObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstancesMonitoredObject instancesMonitoredObject = (InstancesMonitoredObject) o;
-        return Objects.equals(this.dcsInstanceId, instancesMonitoredObject.dcsInstanceId)
-            && Objects.equals(this.name, instancesMonitoredObject.name)
-            && Objects.equals(this.status, instancesMonitoredObject.status);
+        InstancesMonitoredObject that = (InstancesMonitoredObject) obj;
+        return Objects.equals(this.dcsInstanceId, that.dcsInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

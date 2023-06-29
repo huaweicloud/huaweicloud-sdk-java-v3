@@ -103,18 +103,16 @@ public class ListRsuModelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRsuModelsRequest listRsuModelsRequest = (ListRsuModelsRequest) o;
-        return Objects.equals(this.instanceId, listRsuModelsRequest.instanceId)
-            && Objects.equals(this.limit, listRsuModelsRequest.limit)
-            && Objects.equals(this.manufacturerName, listRsuModelsRequest.manufacturerName)
-            && Objects.equals(this.offset, listRsuModelsRequest.offset);
+        ListRsuModelsRequest that = (ListRsuModelsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class TemplateRepositoryList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateRepositoryList templateRepositoryList = (TemplateRepositoryList) o;
-        return Objects.equals(this.projects, templateRepositoryList.projects)
-            && Objects.equals(this.total, templateRepositoryList.total);
+        TemplateRepositoryList that = (TemplateRepositoryList) obj;
+        return Objects.equals(this.projects, that.projects) && Objects.equals(this.total, that.total);
     }
 
     @Override

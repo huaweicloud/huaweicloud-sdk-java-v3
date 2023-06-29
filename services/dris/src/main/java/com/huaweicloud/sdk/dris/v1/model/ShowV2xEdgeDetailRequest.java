@@ -55,16 +55,15 @@ public class ShowV2xEdgeDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowV2xEdgeDetailRequest showV2xEdgeDetailRequest = (ShowV2xEdgeDetailRequest) o;
-        return Objects.equals(this.instanceId, showV2xEdgeDetailRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, showV2xEdgeDetailRequest.v2xEdgeId);
+        ShowV2xEdgeDetailRequest that = (ShowV2xEdgeDetailRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId);
     }
 
     @Override

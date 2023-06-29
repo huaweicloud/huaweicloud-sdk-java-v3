@@ -77,17 +77,16 @@ public class UpdatePolicyReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyReqBody updatePolicyReqBody = (UpdatePolicyReqBody) o;
-        return Objects.equals(this.content, updatePolicyReqBody.content)
-            && Objects.equals(this.description, updatePolicyReqBody.description)
-            && Objects.equals(this.name, updatePolicyReqBody.name);
+        UpdatePolicyReqBody that = (UpdatePolicyReqBody) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

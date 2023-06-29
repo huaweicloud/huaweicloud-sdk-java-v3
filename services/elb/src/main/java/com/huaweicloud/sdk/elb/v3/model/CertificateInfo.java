@@ -319,27 +319,23 @@ public class CertificateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificateInfo certificateInfo = (CertificateInfo) o;
-        return Objects.equals(this.adminStateUp, certificateInfo.adminStateUp)
-            && Objects.equals(this.certificate, certificateInfo.certificate)
-            && Objects.equals(this.description, certificateInfo.description)
-            && Objects.equals(this.domain, certificateInfo.domain) && Objects.equals(this.id, certificateInfo.id)
-            && Objects.equals(this.name, certificateInfo.name)
-            && Objects.equals(this.privateKey, certificateInfo.privateKey)
-            && Objects.equals(this.type, certificateInfo.type)
-            && Objects.equals(this.createdAt, certificateInfo.createdAt)
-            && Objects.equals(this.updatedAt, certificateInfo.updatedAt)
-            && Objects.equals(this.expireTime, certificateInfo.expireTime)
-            && Objects.equals(this.projectId, certificateInfo.projectId)
-            && Objects.equals(this.encCertificate, certificateInfo.encCertificate)
-            && Objects.equals(this.encPrivateKey, certificateInfo.encPrivateKey);
+        CertificateInfo that = (CertificateInfo) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.encCertificate, that.encCertificate)
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
     }
 
     @Override

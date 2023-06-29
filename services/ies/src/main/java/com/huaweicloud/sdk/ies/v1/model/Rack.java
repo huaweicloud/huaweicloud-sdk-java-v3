@@ -432,26 +432,26 @@ public class Rack {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rack rack = (Rack) o;
-        return Objects.equals(this.id, rack.id) && Objects.equals(this.name, rack.name)
-            && Objects.equals(this.edgeSiteId, rack.edgeSiteId)
-            && Objects.equals(this.rackCategoryId, rack.rackCategoryId) && Objects.equals(this.rackType, rack.rackType)
-            && Objects.equals(this.status, rack.status)
-            && Objects.equals(this.storageAssignedSize, rack.storageAssignedSize)
-            && Objects.equals(this.description, rack.description) && Objects.equals(this.rackSnNo, rack.rackSnNo)
-            && Objects.equals(this.rackLocationNo, rack.rackLocationNo)
-            && Objects.equals(this.createdAt, rack.createdAt) && Objects.equals(this.updatedAt, rack.updatedAt)
-            && Objects.equals(this.effectedAt, rack.effectedAt)
-            && Objects.equals(this.marketOptions, rack.marketOptions)
-            && Objects.equals(this.computeUnit, rack.computeUnit) && Objects.equals(this.storageUnit, rack.storageUnit)
-            && Objects.equals(this.rackInfo, rack.rackInfo);
+        Rack that = (Rack) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.edgeSiteId, that.edgeSiteId)
+            && Objects.equals(this.rackCategoryId, that.rackCategoryId) && Objects.equals(this.rackType, that.rackType)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.storageAssignedSize, that.storageAssignedSize)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.rackSnNo, that.rackSnNo)
+            && Objects.equals(this.rackLocationNo, that.rackLocationNo)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.effectedAt, that.effectedAt)
+            && Objects.equals(this.marketOptions, that.marketOptions)
+            && Objects.equals(this.computeUnit, that.computeUnit) && Objects.equals(this.storageUnit, that.storageUnit)
+            && Objects.equals(this.rackInfo, that.rackInfo);
     }
 
     @Override

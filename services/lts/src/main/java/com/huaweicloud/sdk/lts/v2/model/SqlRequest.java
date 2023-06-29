@@ -100,22 +100,15 @@ public class SqlRequest {
             if (value == null) {
                 return null;
             }
-            SearchTimeRangeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SearchTimeRangeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SearchTimeRangeUnitEnum(value));
         }
 
         public static SearchTimeRangeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SearchTimeRangeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,22 +286,21 @@ public class SqlRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlRequest sqlRequest = (SqlRequest) o;
-        return Objects.equals(this.isTimeRangeRelative, sqlRequest.isTimeRangeRelative)
-            && Objects.equals(this.logStreamId, sqlRequest.logStreamId)
-            && Objects.equals(this.logStreamName, sqlRequest.logStreamName)
-            && Objects.equals(this.logGroupId, sqlRequest.logGroupId)
-            && Objects.equals(this.logGroupName, sqlRequest.logGroupName) && Objects.equals(this.sql, sqlRequest.sql)
-            && Objects.equals(this.sqlRequestTitle, sqlRequest.sqlRequestTitle)
-            && Objects.equals(this.searchTimeRange, sqlRequest.searchTimeRange)
-            && Objects.equals(this.searchTimeRangeUnit, sqlRequest.searchTimeRangeUnit);
+        SqlRequest that = (SqlRequest) obj;
+        return Objects.equals(this.isTimeRangeRelative, that.isTimeRangeRelative)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlRequestTitle, that.sqlRequestTitle)
+            && Objects.equals(this.searchTimeRange, that.searchTimeRange)
+            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit);
     }
 
     @Override

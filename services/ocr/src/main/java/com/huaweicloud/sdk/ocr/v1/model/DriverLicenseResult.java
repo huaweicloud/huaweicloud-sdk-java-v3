@@ -510,34 +510,27 @@ public class DriverLicenseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DriverLicenseResult driverLicenseResult = (DriverLicenseResult) o;
-        return Objects.equals(this.type, driverLicenseResult.type)
-            && Objects.equals(this.number, driverLicenseResult.number)
-            && Objects.equals(this.name, driverLicenseResult.name) && Objects.equals(this.sex, driverLicenseResult.sex)
-            && Objects.equals(this.nationality, driverLicenseResult.nationality)
-            && Objects.equals(this.address, driverLicenseResult.address)
-            && Objects.equals(this.birth, driverLicenseResult.birth)
-            && Objects.equals(this.issueDate, driverLicenseResult.issueDate)
-            && Objects.equals(this.propertyClass, driverLicenseResult.propertyClass)
-            && Objects.equals(this.validFrom, driverLicenseResult.validFrom)
-            && Objects.equals(this.validTo, driverLicenseResult.validTo)
-            && Objects.equals(this.issuingAuthority, driverLicenseResult.issuingAuthority)
-            && Objects.equals(this.fileNumber, driverLicenseResult.fileNumber)
-            && Objects.equals(this.record, driverLicenseResult.record)
-            && Objects.equals(this.accumulatedScores, driverLicenseResult.accumulatedScores)
-            && Objects.equals(this.status, driverLicenseResult.status)
-            && Objects.equals(this.generationDate, driverLicenseResult.generationDate)
-            && Objects.equals(this.currentTime, driverLicenseResult.currentTime)
-            && Objects.equals(this.textLocation, driverLicenseResult.textLocation)
-            && Objects.equals(this.front, driverLicenseResult.front)
-            && Objects.equals(this.back, driverLicenseResult.back);
+        DriverLicenseResult that = (DriverLicenseResult) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.birth, that.birth) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.propertyClass, that.propertyClass) && Objects.equals(this.validFrom, that.validFrom)
+            && Objects.equals(this.validTo, that.validTo)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.fileNumber, that.fileNumber) && Objects.equals(this.record, that.record)
+            && Objects.equals(this.accumulatedScores, that.accumulatedScores)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.generationDate, that.generationDate)
+            && Objects.equals(this.currentTime, that.currentTime)
+            && Objects.equals(this.textLocation, that.textLocation) && Objects.equals(this.front, that.front)
+            && Objects.equals(this.back, that.back);
     }
 
     @Override

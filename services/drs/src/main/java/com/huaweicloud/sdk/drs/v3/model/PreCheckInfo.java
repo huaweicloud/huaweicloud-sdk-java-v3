@@ -65,22 +65,15 @@ public class PreCheckInfo {
             if (value == null) {
                 return null;
             }
-            PrecheckModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrecheckModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrecheckModeEnum(value));
         }
 
         public static PrecheckModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrecheckModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class PreCheckInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreCheckInfo preCheckInfo = (PreCheckInfo) o;
-        return Objects.equals(this.jobId, preCheckInfo.jobId)
-            && Objects.equals(this.precheckMode, preCheckInfo.precheckMode);
+        PreCheckInfo that = (PreCheckInfo) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.precheckMode, that.precheckMode);
     }
 
     @Override

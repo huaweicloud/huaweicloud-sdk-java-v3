@@ -392,30 +392,23 @@ public class ShowPublicZoneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicZoneResponse showPublicZoneResponse = (ShowPublicZoneResponse) o;
-        return Objects.equals(this.id, showPublicZoneResponse.id)
-            && Objects.equals(this.name, showPublicZoneResponse.name)
-            && Objects.equals(this.description, showPublicZoneResponse.description)
-            && Objects.equals(this.email, showPublicZoneResponse.email)
-            && Objects.equals(this.zoneType, showPublicZoneResponse.zoneType)
-            && Objects.equals(this.ttl, showPublicZoneResponse.ttl)
-            && Objects.equals(this.serial, showPublicZoneResponse.serial)
-            && Objects.equals(this.status, showPublicZoneResponse.status)
-            && Objects.equals(this.recordNum, showPublicZoneResponse.recordNum)
-            && Objects.equals(this.poolId, showPublicZoneResponse.poolId)
-            && Objects.equals(this.createdAt, showPublicZoneResponse.createdAt)
-            && Objects.equals(this.updatedAt, showPublicZoneResponse.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, showPublicZoneResponse.enterpriseProjectId)
-            && Objects.equals(this.masters, showPublicZoneResponse.masters)
-            && Objects.equals(this.links, showPublicZoneResponse.links)
-            && Objects.equals(this.projectId, showPublicZoneResponse.projectId);
+        ShowPublicZoneResponse that = (ShowPublicZoneResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.serial, that.serial) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.recordNum, that.recordNum) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.masters, that.masters) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

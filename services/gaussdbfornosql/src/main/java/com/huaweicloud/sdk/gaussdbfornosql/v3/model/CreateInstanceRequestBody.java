@@ -462,32 +462,25 @@ public class CreateInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceRequestBody createInstanceRequestBody = (CreateInstanceRequestBody) o;
-        return Objects.equals(this.name, createInstanceRequestBody.name)
-            && Objects.equals(this.datastore, createInstanceRequestBody.datastore)
-            && Objects.equals(this.region, createInstanceRequestBody.region)
-            && Objects.equals(this.availabilityZone, createInstanceRequestBody.availabilityZone)
-            && Objects.equals(this.vpcId, createInstanceRequestBody.vpcId)
-            && Objects.equals(this.subnetId, createInstanceRequestBody.subnetId)
-            && Objects.equals(this.securityGroupId, createInstanceRequestBody.securityGroupId)
-            && Objects.equals(this.password, createInstanceRequestBody.password)
-            && Objects.equals(this.mode, createInstanceRequestBody.mode)
-            && Objects.equals(this.flavor, createInstanceRequestBody.flavor)
-            && Objects.equals(this.configurationId, createInstanceRequestBody.configurationId)
-            && Objects.equals(this.backupStrategy, createInstanceRequestBody.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, createInstanceRequestBody.enterpriseProjectId)
-            && Objects.equals(this.dedicatedResourceId, createInstanceRequestBody.dedicatedResourceId)
-            && Objects.equals(this.sslOption, createInstanceRequestBody.sslOption)
-            && Objects.equals(this.chargeInfo, createInstanceRequestBody.chargeInfo)
-            && Objects.equals(this.restoreInfo, createInstanceRequestBody.restoreInfo)
-            && Objects.equals(this.port, createInstanceRequestBody.port);
+        CreateInstanceRequestBody that = (CreateInstanceRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
+            && Objects.equals(this.sslOption, that.sslOption) && Objects.equals(this.chargeInfo, that.chargeInfo)
+            && Objects.equals(this.restoreInfo, that.restoreInfo) && Objects.equals(this.port, that.port);
     }
 
     @Override

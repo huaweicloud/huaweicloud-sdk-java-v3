@@ -24,8 +24,8 @@ public class IdsParam {
     private List<Long> ids = null;
 
     /**
-    * 删除物理表
-    */
+     * 删除物理表
+     */
     public static final class DelTypesEnum {
 
         /**
@@ -62,22 +62,15 @@ public class IdsParam {
             if (value == null) {
                 return null;
             }
-            DelTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DelTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DelTypesEnum(value));
         }
 
         public static DelTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DelTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,15 +143,15 @@ public class IdsParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdsParam idsParam = (IdsParam) o;
-        return Objects.equals(this.ids, idsParam.ids) && Objects.equals(this.delTypes, idsParam.delTypes);
+        IdsParam that = (IdsParam) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.delTypes, that.delTypes);
     }
 
     @Override

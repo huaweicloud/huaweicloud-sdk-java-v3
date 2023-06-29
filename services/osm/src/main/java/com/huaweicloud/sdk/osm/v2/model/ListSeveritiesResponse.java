@@ -75,16 +75,15 @@ public class ListSeveritiesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSeveritiesResponse listSeveritiesResponse = (ListSeveritiesResponse) o;
-        return Objects.equals(this.show, listSeveritiesResponse.show)
-            && Objects.equals(this.severityList, listSeveritiesResponse.severityList);
+        ListSeveritiesResponse that = (ListSeveritiesResponse) obj;
+        return Objects.equals(this.show, that.show) && Objects.equals(this.severityList, that.severityList);
     }
 
     @Override

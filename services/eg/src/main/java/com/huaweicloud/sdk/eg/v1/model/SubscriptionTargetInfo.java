@@ -197,22 +197,19 @@ public class SubscriptionTargetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionTargetInfo subscriptionTargetInfo = (SubscriptionTargetInfo) o;
-        return Objects.equals(this.id, subscriptionTargetInfo.id)
-            && Objects.equals(this.name, subscriptionTargetInfo.name)
-            && Objects.equals(this.providerType, subscriptionTargetInfo.providerType)
-            && Objects.equals(this.connectionId, subscriptionTargetInfo.connectionId)
-            && Objects.equals(this.detail, subscriptionTargetInfo.detail)
-            && Objects.equals(this.transform, subscriptionTargetInfo.transform)
-            && Objects.equals(this.createdTime, subscriptionTargetInfo.createdTime)
-            && Objects.equals(this.updatedTime, subscriptionTargetInfo.updatedTime);
+        SubscriptionTargetInfo that = (SubscriptionTargetInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.transform, that.transform) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

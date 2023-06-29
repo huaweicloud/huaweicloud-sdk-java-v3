@@ -100,18 +100,16 @@ public class SearchCodeTableValuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCodeTableValuesRequest searchCodeTableValuesRequest = (SearchCodeTableValuesRequest) o;
-        return Objects.equals(this.workspace, searchCodeTableValuesRequest.workspace)
-            && Objects.equals(this.id, searchCodeTableValuesRequest.id)
-            && Objects.equals(this.limit, searchCodeTableValuesRequest.limit)
-            && Objects.equals(this.offset, searchCodeTableValuesRequest.offset);
+        SearchCodeTableValuesRequest that = (SearchCodeTableValuesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -239,23 +239,18 @@ public class CreateKubernetesClusterCertResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKubernetesClusterCertResponse createKubernetesClusterCertResponse =
-            (CreateKubernetesClusterCertResponse) o;
-        return Objects.equals(this.kind, createKubernetesClusterCertResponse.kind)
-            && Objects.equals(this.apiVersion, createKubernetesClusterCertResponse.apiVersion)
-            && Objects.equals(this.preferences, createKubernetesClusterCertResponse.preferences)
-            && Objects.equals(this.clusters, createKubernetesClusterCertResponse.clusters)
-            && Objects.equals(this.users, createKubernetesClusterCertResponse.users)
-            && Objects.equals(this.contexts, createKubernetesClusterCertResponse.contexts)
-            && Objects.equals(this.currentContext, createKubernetesClusterCertResponse.currentContext)
-            && Objects.equals(this.portID, createKubernetesClusterCertResponse.portID);
+        CreateKubernetesClusterCertResponse that = (CreateKubernetesClusterCertResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.preferences, that.preferences) && Objects.equals(this.clusters, that.clusters)
+            && Objects.equals(this.users, that.users) && Objects.equals(this.contexts, that.contexts)
+            && Objects.equals(this.currentContext, that.currentContext) && Objects.equals(this.portID, that.portID);
     }
 
     @Override

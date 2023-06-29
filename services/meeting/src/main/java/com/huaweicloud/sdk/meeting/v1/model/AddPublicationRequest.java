@@ -89,17 +89,16 @@ public class AddPublicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddPublicationRequest addPublicationRequest = (AddPublicationRequest) o;
-        return Objects.equals(this.xRequestId, addPublicationRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addPublicationRequest.acceptLanguage)
-            && Objects.equals(this.body, addPublicationRequest.body);
+        AddPublicationRequest that = (AddPublicationRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

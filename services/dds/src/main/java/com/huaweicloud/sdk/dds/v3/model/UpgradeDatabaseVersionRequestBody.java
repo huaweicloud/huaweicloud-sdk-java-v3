@@ -33,15 +33,15 @@ public class UpgradeDatabaseVersionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeDatabaseVersionRequestBody upgradeDatabaseVersionRequestBody = (UpgradeDatabaseVersionRequestBody) o;
-        return Objects.equals(this.upgradeMode, upgradeDatabaseVersionRequestBody.upgradeMode);
+        UpgradeDatabaseVersionRequestBody that = (UpgradeDatabaseVersionRequestBody) obj;
+        return Objects.equals(this.upgradeMode, that.upgradeMode);
     }
 
     @Override

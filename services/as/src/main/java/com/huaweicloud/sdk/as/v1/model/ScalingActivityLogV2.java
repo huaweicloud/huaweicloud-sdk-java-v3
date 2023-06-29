@@ -70,22 +70,15 @@ public class ScalingActivityLogV2 {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -643,32 +636,29 @@ public class ScalingActivityLogV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingActivityLogV2 scalingActivityLogV2 = (ScalingActivityLogV2) o;
-        return Objects.equals(this.status, scalingActivityLogV2.status)
-            && Objects.equals(this.startTime, scalingActivityLogV2.startTime)
-            && Objects.equals(this.endTime, scalingActivityLogV2.endTime)
-            && Objects.equals(this.id, scalingActivityLogV2.id)
-            && Objects.equals(this.instanceRemovedList, scalingActivityLogV2.instanceRemovedList)
-            && Objects.equals(this.instanceDeletedList, scalingActivityLogV2.instanceDeletedList)
-            && Objects.equals(this.instanceAddedList, scalingActivityLogV2.instanceAddedList)
-            && Objects.equals(this.instanceFailedList, scalingActivityLogV2.instanceFailedList)
-            && Objects.equals(this.instanceStandbyList, scalingActivityLogV2.instanceStandbyList)
-            && Objects.equals(this.scalingValue, scalingActivityLogV2.scalingValue)
-            && Objects.equals(this.description, scalingActivityLogV2.description)
-            && Objects.equals(this.instanceValue, scalingActivityLogV2.instanceValue)
-            && Objects.equals(this.desireValue, scalingActivityLogV2.desireValue)
-            && Objects.equals(this.lbBindSuccessList, scalingActivityLogV2.lbBindSuccessList)
-            && Objects.equals(this.lbBindFailedList, scalingActivityLogV2.lbBindFailedList)
-            && Objects.equals(this.lbUnbindSuccessList, scalingActivityLogV2.lbUnbindSuccessList)
-            && Objects.equals(this.lbUnbindFailedList, scalingActivityLogV2.lbUnbindFailedList)
-            && Objects.equals(this.type, scalingActivityLogV2.type);
+        ScalingActivityLogV2 that = (ScalingActivityLogV2) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.instanceRemovedList, that.instanceRemovedList)
+            && Objects.equals(this.instanceDeletedList, that.instanceDeletedList)
+            && Objects.equals(this.instanceAddedList, that.instanceAddedList)
+            && Objects.equals(this.instanceFailedList, that.instanceFailedList)
+            && Objects.equals(this.instanceStandbyList, that.instanceStandbyList)
+            && Objects.equals(this.scalingValue, that.scalingValue)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceValue, that.instanceValue)
+            && Objects.equals(this.desireValue, that.desireValue)
+            && Objects.equals(this.lbBindSuccessList, that.lbBindSuccessList)
+            && Objects.equals(this.lbBindFailedList, that.lbBindFailedList)
+            && Objects.equals(this.lbUnbindSuccessList, that.lbUnbindSuccessList)
+            && Objects.equals(this.lbUnbindFailedList, that.lbUnbindFailedList) && Objects.equals(this.type, that.type);
     }
 
     @Override

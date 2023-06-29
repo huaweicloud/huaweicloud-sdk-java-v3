@@ -314,22 +314,15 @@ public class MockApiBaseInfo {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusCodeEnum(value));
         }
 
         public static StatusCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,20 +452,17 @@ public class MockApiBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MockApiBaseInfo mockApiBaseInfo = (MockApiBaseInfo) o;
-        return Objects.equals(this.remark, mockApiBaseInfo.remark)
-            && Objects.equals(this.resultContent, mockApiBaseInfo.resultContent)
-            && Objects.equals(this.version, mockApiBaseInfo.version)
-            && Objects.equals(this.authorizerId, mockApiBaseInfo.authorizerId)
-            && Objects.equals(this.statusCode, mockApiBaseInfo.statusCode)
-            && Objects.equals(this.header, mockApiBaseInfo.header);
+        MockApiBaseInfo that = (MockApiBaseInfo) obj;
+        return Objects.equals(this.remark, that.remark) && Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.header, that.header);
     }
 
     @Override

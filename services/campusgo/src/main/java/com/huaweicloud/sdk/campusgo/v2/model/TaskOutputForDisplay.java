@@ -136,17 +136,16 @@ public class TaskOutputForDisplay {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutputForDisplay taskOutputForDisplay = (TaskOutputForDisplay) o;
-        return Objects.equals(this.obs, taskOutputForDisplay.obs) && Objects.equals(this.dis, taskOutputForDisplay.dis)
-            && Objects.equals(this.webhook, taskOutputForDisplay.webhook)
-            && Objects.equals(this.localpath, taskOutputForDisplay.localpath);
+        TaskOutputForDisplay that = (TaskOutputForDisplay) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.dis, that.dis)
+            && Objects.equals(this.webhook, that.webhook) && Objects.equals(this.localpath, that.localpath);
     }
 
     @Override

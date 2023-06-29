@@ -87,18 +87,16 @@ public class CreateTopicOrBatchDeleteTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicOrBatchDeleteTopicRequest createTopicOrBatchDeleteTopicRequest =
-            (CreateTopicOrBatchDeleteTopicRequest) o;
-        return Objects.equals(this.instanceId, createTopicOrBatchDeleteTopicRequest.instanceId)
-            && Objects.equals(this.action, createTopicOrBatchDeleteTopicRequest.action)
-            && Objects.equals(this.body, createTopicOrBatchDeleteTopicRequest.body);
+        CreateTopicOrBatchDeleteTopicRequest that = (CreateTopicOrBatchDeleteTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

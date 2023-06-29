@@ -55,16 +55,15 @@ public class FinancialStatementResultImageSize {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinancialStatementResultImageSize financialStatementResultImageSize = (FinancialStatementResultImageSize) o;
-        return Objects.equals(this.height, financialStatementResultImageSize.height)
-            && Objects.equals(this.width, financialStatementResultImageSize.width);
+        FinancialStatementResultImageSize that = (FinancialStatementResultImageSize) obj;
+        return Objects.equals(this.height, that.height) && Objects.equals(this.width, that.width);
     }
 
     @Override

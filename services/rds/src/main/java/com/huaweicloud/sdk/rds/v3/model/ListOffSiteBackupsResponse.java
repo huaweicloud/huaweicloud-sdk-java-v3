@@ -75,16 +75,15 @@ public class ListOffSiteBackupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOffSiteBackupsResponse listOffSiteBackupsResponse = (ListOffSiteBackupsResponse) o;
-        return Objects.equals(this.backups, listOffSiteBackupsResponse.backups)
-            && Objects.equals(this.totalCount, listOffSiteBackupsResponse.totalCount);
+        ListOffSiteBackupsResponse that = (ListOffSiteBackupsResponse) obj;
+        return Objects.equals(this.backups, that.backups) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

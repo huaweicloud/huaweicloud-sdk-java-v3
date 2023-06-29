@@ -187,20 +187,19 @@ public class Distribution {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Distribution distribution = (Distribution) o;
-        return Objects.equals(this.area, distribution.area) && Objects.equals(this.city, distribution.city)
-            && Objects.equals(this.operator, distribution.operator)
-            && Objects.equals(this.province, distribution.province) && Objects.equals(this.siteId, distribution.siteId)
-            && Objects.equals(this.poolId, distribution.poolId)
-            && Objects.equals(this.stackCount, distribution.stackCount)
-            && Objects.equals(this.cityShortName, distribution.cityShortName);
+        Distribution that = (Distribution) obj;
+        return Objects.equals(this.area, that.area) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.stackCount, that.stackCount)
+            && Objects.equals(this.cityShortName, that.cityShortName);
     }
 
     @Override

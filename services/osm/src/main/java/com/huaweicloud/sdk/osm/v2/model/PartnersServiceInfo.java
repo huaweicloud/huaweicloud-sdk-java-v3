@@ -121,19 +121,18 @@ public class PartnersServiceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartnersServiceInfo partnersServiceInfo = (PartnersServiceInfo) o;
-        return Objects.equals(this.customerId, partnersServiceInfo.customerId)
-            && Objects.equals(this.customerName, partnersServiceInfo.customerName)
-            && Objects.equals(this.serviceTimeZone, partnersServiceInfo.serviceTimeZone)
-            && Objects.equals(this.serviceTimeDay, partnersServiceInfo.serviceTimeDay)
-            && Objects.equals(this.serviceTimeHour, partnersServiceInfo.serviceTimeHour);
+        PartnersServiceInfo that = (PartnersServiceInfo) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.customerName, that.customerName)
+            && Objects.equals(this.serviceTimeZone, that.serviceTimeZone)
+            && Objects.equals(this.serviceTimeDay, that.serviceTimeDay)
+            && Objects.equals(this.serviceTimeHour, that.serviceTimeHour);
     }
 
     @Override

@@ -121,17 +121,17 @@ public class Volumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Volumes volumes = (Volumes) o;
-        return Objects.equals(this.name, volumes.name) && Objects.equals(this.type, volumes.type)
-            && Objects.equals(this.source, volumes.source) && Objects.equals(this.destination, volumes.destination)
-            && Objects.equals(this.readOnly, volumes.readOnly);
+        Volumes that = (Volumes) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.readOnly, that.readOnly);
     }
 
     @Override

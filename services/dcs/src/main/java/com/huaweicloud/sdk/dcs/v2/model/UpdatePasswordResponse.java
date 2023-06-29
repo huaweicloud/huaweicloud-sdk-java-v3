@@ -78,22 +78,15 @@ public class UpdatePasswordResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -216,19 +209,17 @@ public class UpdatePasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePasswordResponse updatePasswordResponse = (UpdatePasswordResponse) o;
-        return Objects.equals(this.lockTime, updatePasswordResponse.lockTime)
-            && Objects.equals(this.result, updatePasswordResponse.result)
-            && Objects.equals(this.lockTimeLeft, updatePasswordResponse.lockTimeLeft)
-            && Objects.equals(this.retryTimesLeft, updatePasswordResponse.retryTimesLeft)
-            && Objects.equals(this.message, updatePasswordResponse.message);
+        UpdatePasswordResponse that = (UpdatePasswordResponse) obj;
+        return Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.lockTimeLeft, that.lockTimeLeft)
+            && Objects.equals(this.retryTimesLeft, that.retryTimesLeft) && Objects.equals(this.message, that.message);
     }
 
     @Override

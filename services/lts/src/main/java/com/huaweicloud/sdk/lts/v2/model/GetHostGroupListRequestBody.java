@@ -83,16 +83,15 @@ public class GetHostGroupListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHostGroupListRequestBody getHostGroupListRequestBody = (GetHostGroupListRequestBody) o;
-        return Objects.equals(this.hostGroupIdList, getHostGroupListRequestBody.hostGroupIdList)
-            && Objects.equals(this.filter, getHostGroupListRequestBody.filter);
+        GetHostGroupListRequestBody that = (GetHostGroupListRequestBody) obj;
+        return Objects.equals(this.hostGroupIdList, that.hostGroupIdList) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

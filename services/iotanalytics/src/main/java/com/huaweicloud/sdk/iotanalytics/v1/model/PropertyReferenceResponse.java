@@ -121,19 +121,17 @@ public class PropertyReferenceResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyReferenceResponse propertyReferenceResponse = (PropertyReferenceResponse) o;
-        return Objects.equals(this.type, propertyReferenceResponse.type)
-            && Objects.equals(this.assetModelId, propertyReferenceResponse.assetModelId)
-            && Objects.equals(this.assetModelName, propertyReferenceResponse.assetModelName)
-            && Objects.equals(this.propertyName, propertyReferenceResponse.propertyName)
-            && Objects.equals(this.assetId, propertyReferenceResponse.assetId);
+        PropertyReferenceResponse that = (PropertyReferenceResponse) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.assetModelId, that.assetModelId)
+            && Objects.equals(this.assetModelName, that.assetModelName)
+            && Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

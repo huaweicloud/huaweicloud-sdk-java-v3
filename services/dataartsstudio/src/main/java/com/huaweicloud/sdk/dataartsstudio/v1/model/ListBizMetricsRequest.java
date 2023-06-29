@@ -107,22 +107,15 @@ public class ListBizMetricsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -201,22 +194,15 @@ public class ListBizMetricsRequest {
             if (value == null) {
                 return null;
             }
-            SyncStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SyncStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncStatusEnum(value));
         }
 
         public static SyncStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SyncStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,22 +299,15 @@ public class ListBizMetricsRequest {
             if (value == null) {
                 return null;
             }
-            SyncKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SyncKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncKeyEnum(value));
         }
 
         public static SyncKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SyncKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -597,26 +576,20 @@ public class ListBizMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBizMetricsRequest listBizMetricsRequest = (ListBizMetricsRequest) o;
-        return Objects.equals(this.workspace, listBizMetricsRequest.workspace)
-            && Objects.equals(this.name, listBizMetricsRequest.name)
-            && Objects.equals(this.createBy, listBizMetricsRequest.createBy)
-            && Objects.equals(this.owner, listBizMetricsRequest.owner)
-            && Objects.equals(this.status, listBizMetricsRequest.status)
-            && Objects.equals(this.syncStatus, listBizMetricsRequest.syncStatus)
-            && Objects.equals(this.syncKey, listBizMetricsRequest.syncKey)
-            && Objects.equals(this.bizCatalogId, listBizMetricsRequest.bizCatalogId)
-            && Objects.equals(this.beginTime, listBizMetricsRequest.beginTime)
-            && Objects.equals(this.endTime, listBizMetricsRequest.endTime)
-            && Objects.equals(this.limit, listBizMetricsRequest.limit)
-            && Objects.equals(this.offset, listBizMetricsRequest.offset);
+        ListBizMetricsRequest that = (ListBizMetricsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.syncStatus, that.syncStatus)
+            && Objects.equals(this.syncKey, that.syncKey) && Objects.equals(this.bizCatalogId, that.bizCatalogId)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

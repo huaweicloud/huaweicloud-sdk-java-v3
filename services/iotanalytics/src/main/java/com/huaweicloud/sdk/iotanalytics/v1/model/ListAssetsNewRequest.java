@@ -102,18 +102,16 @@ public class ListAssetsNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetsNewRequest listAssetsNewRequest = (ListAssetsNewRequest) o;
-        return Objects.equals(this.limit, listAssetsNewRequest.limit)
-            && Objects.equals(this.offset, listAssetsNewRequest.offset)
-            && Objects.equals(this.filter, listAssetsNewRequest.filter)
-            && Objects.equals(this.type, listAssetsNewRequest.type);
+        ListAssetsNewRequest that = (ListAssetsNewRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.type, that.type);
     }
 
     @Override

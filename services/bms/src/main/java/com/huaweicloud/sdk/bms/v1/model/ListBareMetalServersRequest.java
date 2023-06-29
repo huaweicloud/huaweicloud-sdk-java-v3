@@ -209,23 +209,19 @@ public class ListBareMetalServersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBareMetalServersRequest listBareMetalServersRequest = (ListBareMetalServersRequest) o;
-        return Objects.equals(this.flavor, listBareMetalServersRequest.flavor)
-            && Objects.equals(this.name, listBareMetalServersRequest.name)
-            && Objects.equals(this.status, listBareMetalServersRequest.status)
-            && Objects.equals(this.limit, listBareMetalServersRequest.limit)
-            && Objects.equals(this.offset, listBareMetalServersRequest.offset)
-            && Objects.equals(this.tags, listBareMetalServersRequest.tags)
-            && Objects.equals(this.reservationId, listBareMetalServersRequest.reservationId)
-            && Objects.equals(this.detail, listBareMetalServersRequest.detail)
-            && Objects.equals(this.enterpriseProjectId, listBareMetalServersRequest.enterpriseProjectId);
+        ListBareMetalServersRequest that = (ListBareMetalServersRequest) obj;
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.reservationId, that.reservationId) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

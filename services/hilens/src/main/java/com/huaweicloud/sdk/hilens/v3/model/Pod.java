@@ -356,21 +356,21 @@ public class Pod {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Pod pod = (Pod) o;
-        return Objects.equals(this.configs, pod.configs) && Objects.equals(this.reason, pod.reason)
-            && Objects.equals(this.hostIp, pod.hostIp) && Objects.equals(this.createdAt, pod.createdAt)
-            && Objects.equals(this.clusterId, pod.clusterId) && Objects.equals(this.updatedAt, pod.updatedAt)
-            && Objects.equals(this.projectId, pod.projectId) && Objects.equals(this.name, pod.name)
-            && Objects.equals(this.id, pod.id) && Objects.equals(this.deploymentId, pod.deploymentId)
-            && Objects.equals(this.affinity, pod.affinity) && Objects.equals(this.apps, pod.apps)
-            && Objects.equals(this.nodeId, pod.nodeId) && Objects.equals(this.status, pod.status);
+        Pod that = (Pod) obj;
+        return Objects.equals(this.configs, that.configs) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.affinity, that.affinity) && Objects.equals(this.apps, that.apps)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.status, that.status);
     }
 
     @Override

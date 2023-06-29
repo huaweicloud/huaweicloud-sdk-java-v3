@@ -43,15 +43,15 @@ public class ImageHighresolutionMattingConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageHighresolutionMattingConfig imageHighresolutionMattingConfig = (ImageHighresolutionMattingConfig) o;
-        return Objects.equals(this.common, imageHighresolutionMattingConfig.common);
+        ImageHighresolutionMattingConfig that = (ImageHighresolutionMattingConfig) obj;
+        return Objects.equals(this.common, that.common);
     }
 
     @Override

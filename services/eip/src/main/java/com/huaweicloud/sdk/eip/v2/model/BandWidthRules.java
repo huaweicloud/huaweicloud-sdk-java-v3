@@ -164,19 +164,18 @@ public class BandWidthRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandWidthRules bandWidthRules = (BandWidthRules) o;
-        return Objects.equals(this.id, bandWidthRules.id) && Objects.equals(this.name, bandWidthRules.name)
-            && Objects.equals(this.adminStateUp, bandWidthRules.adminStateUp)
-            && Objects.equals(this.egressSize, bandWidthRules.egressSize)
-            && Objects.equals(this.egressGuarentedSize, bandWidthRules.egressGuarentedSize)
-            && Objects.equals(this.publicipInfo, bandWidthRules.publicipInfo);
+        BandWidthRules that = (BandWidthRules) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.egressSize, that.egressSize)
+            && Objects.equals(this.egressGuarentedSize, that.egressGuarentedSize)
+            && Objects.equals(this.publicipInfo, that.publicipInfo);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class JobRecords {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordTypeEnum(value));
         }
 
         public static RecordTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class JobRecords {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobStatusEnum(value));
         }
 
         public static JobStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -346,20 +332,18 @@ public class JobRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobRecords jobRecords = (JobRecords) o;
-        return Objects.equals(this.jobName, jobRecords.jobName)
-            && Objects.equals(this.recordType, jobRecords.recordType)
-            && Objects.equals(this.recordTime, jobRecords.recordTime)
-            && Objects.equals(this.request, jobRecords.request) && Objects.equals(this.response, jobRecords.response)
-            && Objects.equals(this.code, jobRecords.code) && Objects.equals(this.message, jobRecords.message)
-            && Objects.equals(this.jobStatus, jobRecords.jobStatus);
+        JobRecords that = (JobRecords) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.recordTime, that.recordTime) && Objects.equals(this.request, that.request)
+            && Objects.equals(this.response, that.response) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.jobStatus, that.jobStatus);
     }
 
     @Override

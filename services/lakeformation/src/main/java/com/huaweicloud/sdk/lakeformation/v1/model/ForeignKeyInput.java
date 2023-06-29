@@ -275,26 +275,26 @@ public class ForeignKeyInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForeignKeyInput foreignKeyInput = (ForeignKeyInput) o;
-        return Objects.equals(this.parentKeyDatabaseName, foreignKeyInput.parentKeyDatabaseName)
-            && Objects.equals(this.parentKeyTableName, foreignKeyInput.parentKeyTableName)
-            && Objects.equals(this.parentKeyColumnName, foreignKeyInput.parentKeyColumnName)
-            && Objects.equals(this.parentKeyName, foreignKeyInput.parentKeyName)
-            && Objects.equals(this.foreignKeyColumnName, foreignKeyInput.foreignKeyColumnName)
-            && Objects.equals(this.foreignKeyName, foreignKeyInput.foreignKeyName)
-            && Objects.equals(this.deleteRule, foreignKeyInput.deleteRule)
-            && Objects.equals(this.enableConstraint, foreignKeyInput.enableConstraint)
-            && Objects.equals(this.keySequence, foreignKeyInput.keySequence)
-            && Objects.equals(this.relyConstraint, foreignKeyInput.relyConstraint)
-            && Objects.equals(this.updateRule, foreignKeyInput.updateRule)
-            && Objects.equals(this.validateConstraint, foreignKeyInput.validateConstraint);
+        ForeignKeyInput that = (ForeignKeyInput) obj;
+        return Objects.equals(this.parentKeyDatabaseName, that.parentKeyDatabaseName)
+            && Objects.equals(this.parentKeyTableName, that.parentKeyTableName)
+            && Objects.equals(this.parentKeyColumnName, that.parentKeyColumnName)
+            && Objects.equals(this.parentKeyName, that.parentKeyName)
+            && Objects.equals(this.foreignKeyColumnName, that.foreignKeyColumnName)
+            && Objects.equals(this.foreignKeyName, that.foreignKeyName)
+            && Objects.equals(this.deleteRule, that.deleteRule)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.updateRule, that.updateRule)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

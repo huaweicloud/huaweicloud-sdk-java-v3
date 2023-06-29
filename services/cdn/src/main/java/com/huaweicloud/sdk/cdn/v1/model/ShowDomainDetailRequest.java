@@ -55,16 +55,16 @@ public class ShowDomainDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainDetailRequest showDomainDetailRequest = (ShowDomainDetailRequest) o;
-        return Objects.equals(this.domainId, showDomainDetailRequest.domainId)
-            && Objects.equals(this.enterpriseProjectId, showDomainDetailRequest.enterpriseProjectId);
+        ShowDomainDetailRequest that = (ShowDomainDetailRequest) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -355,29 +355,22 @@ public class ShowAggregateResourceConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregateResourceConfigResponse showAggregateResourceConfigResponse =
-            (ShowAggregateResourceConfigResponse) o;
-        return Objects.equals(this.resourceId, showAggregateResourceConfigResponse.resourceId)
-            && Objects.equals(this.aggregatorId, showAggregateResourceConfigResponse.aggregatorId)
-            && Objects.equals(this.aggregatorDomainId, showAggregateResourceConfigResponse.aggregatorDomainId)
-            && Objects.equals(this.domainId, showAggregateResourceConfigResponse.domainId)
-            && Objects.equals(this.epId, showAggregateResourceConfigResponse.epId)
-            && Objects.equals(this.provider, showAggregateResourceConfigResponse.provider)
-            && Objects.equals(this.type, showAggregateResourceConfigResponse.type)
-            && Objects.equals(this.name, showAggregateResourceConfigResponse.name)
-            && Objects.equals(this.regionId, showAggregateResourceConfigResponse.regionId)
-            && Objects.equals(this.projectId, showAggregateResourceConfigResponse.projectId)
-            && Objects.equals(this.created, showAggregateResourceConfigResponse.created)
-            && Objects.equals(this.updated, showAggregateResourceConfigResponse.updated)
-            && Objects.equals(this.tags, showAggregateResourceConfigResponse.tags)
-            && Objects.equals(this.properties, showAggregateResourceConfigResponse.properties);
+        ShowAggregateResourceConfigResponse that = (ShowAggregateResourceConfigResponse) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.aggregatorId, that.aggregatorId)
+            && Objects.equals(this.aggregatorDomainId, that.aggregatorDomainId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

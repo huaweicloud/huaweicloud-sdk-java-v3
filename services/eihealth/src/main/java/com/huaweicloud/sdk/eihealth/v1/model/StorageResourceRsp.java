@@ -131,18 +131,17 @@ public class StorageResourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageResourceRsp storageResourceRsp = (StorageResourceRsp) o;
-        return Objects.equals(this.spec, storageResourceRsp.spec) && Objects.equals(this.size, storageResourceRsp.size)
-            && Objects.equals(this.chargeMode, storageResourceRsp.chargeMode)
-            && Objects.equals(this.createTime, storageResourceRsp.createTime)
-            && Objects.equals(this.status, storageResourceRsp.status);
+        StorageResourceRsp that = (StorageResourceRsp) obj;
+        return Objects.equals(this.spec, that.spec) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

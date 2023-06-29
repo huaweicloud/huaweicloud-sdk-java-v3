@@ -103,18 +103,16 @@ public class ListWorkflowTriggersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowTriggersRequest listWorkflowTriggersRequest = (ListWorkflowTriggersRequest) o;
-        return Objects.equals(this.workflowId, listWorkflowTriggersRequest.workflowId)
-            && Objects.equals(this.offset, listWorkflowTriggersRequest.offset)
-            && Objects.equals(this.limit, listWorkflowTriggersRequest.limit)
-            && Objects.equals(this.sort, listWorkflowTriggersRequest.sort);
+        ListWorkflowTriggersRequest that = (ListWorkflowTriggersRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort);
     }
 
     @Override

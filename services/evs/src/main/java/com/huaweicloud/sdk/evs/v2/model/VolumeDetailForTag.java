@@ -815,46 +815,37 @@ public class VolumeDetailForTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeDetailForTag volumeDetailForTag = (VolumeDetailForTag) o;
-        return Objects.equals(this.id, volumeDetailForTag.id) && Objects.equals(this.links, volumeDetailForTag.links)
-            && Objects.equals(this.name, volumeDetailForTag.name)
-            && Objects.equals(this.status, volumeDetailForTag.status)
-            && Objects.equals(this.attachments, volumeDetailForTag.attachments)
-            && Objects.equals(this.availabilityZone, volumeDetailForTag.availabilityZone)
-            && Objects.equals(this.osVolHostAttrHost, volumeDetailForTag.osVolHostAttrHost)
-            && Objects.equals(this.sourceVolid, volumeDetailForTag.sourceVolid)
-            && Objects.equals(this.snapshotId, volumeDetailForTag.snapshotId)
-            && Objects.equals(this.description, volumeDetailForTag.description)
-            && Objects.equals(this.createdAt, volumeDetailForTag.createdAt)
-            && Objects.equals(this.osVolTenantAttrTenantId, volumeDetailForTag.osVolTenantAttrTenantId)
-            && Objects.equals(this.volumeImageMetadata, volumeDetailForTag.volumeImageMetadata)
-            && Objects.equals(this.volumeType, volumeDetailForTag.volumeType)
-            && Objects.equals(this.size, volumeDetailForTag.size)
-            && Objects.equals(this.consistencygroupId, volumeDetailForTag.consistencygroupId)
-            && Objects.equals(this.bootable, volumeDetailForTag.bootable)
-            && Objects.equals(this.metadata, volumeDetailForTag.metadata)
-            && Objects.equals(this.updatedAt, volumeDetailForTag.updatedAt)
-            && Objects.equals(this.encrypted, volumeDetailForTag.encrypted)
-            && Objects.equals(this.replicationStatus, volumeDetailForTag.replicationStatus)
-            && Objects.equals(this.osVolumeReplicationExtendedStatus,
-                volumeDetailForTag.osVolumeReplicationExtendedStatus)
-            && Objects.equals(this.osVolMigStatusAttrMigstat, volumeDetailForTag.osVolMigStatusAttrMigstat)
-            && Objects.equals(this.osVolMigStatusAttrNameId, volumeDetailForTag.osVolMigStatusAttrNameId)
-            && Objects.equals(this.shareable, volumeDetailForTag.shareable)
-            && Objects.equals(this.userId, volumeDetailForTag.userId)
-            && Objects.equals(this.serviceType, volumeDetailForTag.serviceType)
-            && Objects.equals(this.multiattach, volumeDetailForTag.multiattach)
-            && Objects.equals(this.dedicatedStorageId, volumeDetailForTag.dedicatedStorageId)
-            && Objects.equals(this.dedicatedStorageName, volumeDetailForTag.dedicatedStorageName)
-            && Objects.equals(this.tags, volumeDetailForTag.tags) && Objects.equals(this.wwn, volumeDetailForTag.wwn)
-            && Objects.equals(this.enterpriseProjectId, volumeDetailForTag.enterpriseProjectId);
+        VolumeDetailForTag that = (VolumeDetailForTag) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.attachments, that.attachments)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.osVolHostAttrHost, that.osVolHostAttrHost)
+            && Objects.equals(this.sourceVolid, that.sourceVolid) && Objects.equals(this.snapshotId, that.snapshotId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.osVolTenantAttrTenantId, that.osVolTenantAttrTenantId)
+            && Objects.equals(this.volumeImageMetadata, that.volumeImageMetadata)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.consistencygroupId, that.consistencygroupId)
+            && Objects.equals(this.bootable, that.bootable) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.encrypted, that.encrypted)
+            && Objects.equals(this.replicationStatus, that.replicationStatus)
+            && Objects.equals(this.osVolumeReplicationExtendedStatus, that.osVolumeReplicationExtendedStatus)
+            && Objects.equals(this.osVolMigStatusAttrMigstat, that.osVolMigStatusAttrMigstat)
+            && Objects.equals(this.osVolMigStatusAttrNameId, that.osVolMigStatusAttrNameId)
+            && Objects.equals(this.shareable, that.shareable) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.multiattach, that.multiattach)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.wwn, that.wwn)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

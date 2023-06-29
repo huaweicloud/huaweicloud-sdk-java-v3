@@ -55,15 +55,15 @@ public class InputParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InputParam inputParam = (InputParam) o;
-        return Objects.equals(this.name, inputParam.name) && Objects.equals(this.propertyName, inputParam.propertyName);
+        InputParam that = (InputParam) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.propertyName, that.propertyName);
     }
 
     @Override

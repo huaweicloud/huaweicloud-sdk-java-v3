@@ -63,22 +63,15 @@ public class InstanceEdgeParam {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchEnum(value));
         }
 
         public static ArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class InstanceEdgeParam {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuMemoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuMemoryEnum(value));
         }
 
         public static CpuMemoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,8 +211,8 @@ public class InstanceEdgeParam {
     private List<Plugin> plugins = null;
 
     /**
-    * PVC规格 5GB|10GB|20GB
-    */
+     * PVC规格 5GB|10GB|20GB
+     */
     public static final class PvcQuantityEnum {
 
         /**
@@ -275,22 +261,15 @@ public class InstanceEdgeParam {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PvcQuantityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PvcQuantityEnum(value));
         }
 
         public static PvcQuantityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -526,25 +505,22 @@ public class InstanceEdgeParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceEdgeParam instanceEdgeParam = (InstanceEdgeParam) o;
-        return Objects.equals(this.arch, instanceEdgeParam.arch)
-            && Objects.equals(this.cpuMemory, instanceEdgeParam.cpuMemory)
-            && Objects.equals(this.description, instanceEdgeParam.description)
-            && Objects.equals(this.instanceName, instanceEdgeParam.instanceName)
-            && Objects.equals(this.instanceUserDomainId, instanceEdgeParam.instanceUserDomainId)
-            && Objects.equals(this.instanceUserId, instanceEdgeParam.instanceUserId)
-            && Objects.equals(this.isTemporary, instanceEdgeParam.isTemporary)
-            && Objects.equals(this.plugins, instanceEdgeParam.plugins)
-            && Objects.equals(this.pvcQuantity, instanceEdgeParam.pvcQuantity)
-            && Objects.equals(this.refreshTime, instanceEdgeParam.refreshTime)
-            && Objects.equals(this.stackId, instanceEdgeParam.stackId);
+        InstanceEdgeParam that = (InstanceEdgeParam) obj;
+        return Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuMemory, that.cpuMemory)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceUserDomainId, that.instanceUserDomainId)
+            && Objects.equals(this.instanceUserId, that.instanceUserId)
+            && Objects.equals(this.isTemporary, that.isTemporary) && Objects.equals(this.plugins, that.plugins)
+            && Objects.equals(this.pvcQuantity, that.pvcQuantity) && Objects.equals(this.refreshTime, that.refreshTime)
+            && Objects.equals(this.stackId, that.stackId);
     }
 
     @Override

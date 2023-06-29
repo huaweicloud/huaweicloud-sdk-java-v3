@@ -56,15 +56,15 @@ public class FilterObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilterObject filterObject = (FilterObject) o;
-        return Objects.equals(this.filterRule, filterObject.filterRule);
+        FilterObject that = (FilterObject) obj;
+        return Objects.equals(this.filterRule, that.filterRule);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class LocalName {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LocalName localName = (LocalName) o;
-        return Objects.equals(this.enUs, localName.enUs) && Objects.equals(this.zhCn, localName.zhCn);
+        LocalName that = (LocalName) obj;
+        return Objects.equals(this.enUs, that.enUs) && Objects.equals(this.zhCn, that.zhCn);
     }
 
     @Override

@@ -1040,48 +1040,38 @@ public class CreateAlert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlert createAlert = (CreateAlert) o;
-        return Objects.equals(this.version, createAlert.version)
-            && Objects.equals(this.environment, createAlert.environment)
-            && Objects.equals(this.dataSource, createAlert.dataSource)
-            && Objects.equals(this.firstObservedTime, createAlert.firstObservedTime)
-            && Objects.equals(this.lastObservedTime, createAlert.lastObservedTime)
-            && Objects.equals(this.createTime, createAlert.createTime)
-            && Objects.equals(this.arriveTime, createAlert.arriveTime) && Objects.equals(this.title, createAlert.title)
-            && Objects.equals(this.label, createAlert.label)
-            && Objects.equals(this.description, createAlert.description)
-            && Objects.equals(this.sourceUrl, createAlert.sourceUrl) && Objects.equals(this.count, createAlert.count)
-            && Objects.equals(this.confidence, createAlert.confidence)
-            && Objects.equals(this.severity, createAlert.severity)
-            && Objects.equals(this.criticality, createAlert.criticality)
-            && Objects.equals(this.alertType, createAlert.alertType)
-            && Objects.equals(this.networkList, createAlert.networkList)
-            && Objects.equals(this.resourceList, createAlert.resourceList)
-            && Objects.equals(this.remediation, createAlert.remediation)
-            && Objects.equals(this.verificationState, createAlert.verificationState)
-            && Objects.equals(this.handleStatus, createAlert.handleStatus) && Objects.equals(this.sla, createAlert.sla)
-            && Objects.equals(this.updateTime, createAlert.updateTime)
-            && Objects.equals(this.closeTime, createAlert.closeTime)
-            && Objects.equals(this.chopPhase, createAlert.chopPhase)
-            && Objects.equals(this.ipdrrPhase, createAlert.ipdrrPhase)
-            && Objects.equals(this.ppdrPhase, createAlert.ppdrPhase)
-            && Objects.equals(this.simulation, createAlert.simulation) && Objects.equals(this.actor, createAlert.actor)
-            && Objects.equals(this.owner, createAlert.owner) && Objects.equals(this.cteator, createAlert.cteator)
-            && Objects.equals(this.closeReason, createAlert.closeReason)
-            && Objects.equals(this.closeComment, createAlert.closeComment)
-            && Objects.equals(this.malware, createAlert.malware)
-            && Objects.equals(this.systemInfo, createAlert.systemInfo)
-            && Objects.equals(this.process, createAlert.process) && Objects.equals(this.userInfo, createAlert.userInfo)
-            && Objects.equals(this.fileInfo, createAlert.fileInfo)
-            && Objects.equals(this.systemAlertTable, createAlert.systemAlertTable)
-            && Objects.equals(this.id, createAlert.id) && Objects.equals(this.workspaceId, createAlert.workspaceId);
+        CreateAlert that = (CreateAlert) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
+            && Objects.equals(this.dataSource, that.dataSource)
+            && Objects.equals(this.firstObservedTime, that.firstObservedTime)
+            && Objects.equals(this.lastObservedTime, that.lastObservedTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.sourceUrl, that.sourceUrl)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.criticality, that.criticality)
+            && Objects.equals(this.alertType, that.alertType) && Objects.equals(this.networkList, that.networkList)
+            && Objects.equals(this.resourceList, that.resourceList)
+            && Objects.equals(this.remediation, that.remediation)
+            && Objects.equals(this.verificationState, that.verificationState)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.sla, that.sla)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.closeTime, that.closeTime)
+            && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
+            && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
+            && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
+            && Objects.equals(this.systemAlertTable, that.systemAlertTable) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

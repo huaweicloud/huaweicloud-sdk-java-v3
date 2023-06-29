@@ -55,16 +55,16 @@ public class DeleteProtectedInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProtectedInstanceRequestBody deleteProtectedInstanceRequestBody = (DeleteProtectedInstanceRequestBody) o;
-        return Objects.equals(this.deleteTargetServer, deleteProtectedInstanceRequestBody.deleteTargetServer)
-            && Objects.equals(this.deleteTargetEip, deleteProtectedInstanceRequestBody.deleteTargetEip);
+        DeleteProtectedInstanceRequestBody that = (DeleteProtectedInstanceRequestBody) obj;
+        return Objects.equals(this.deleteTargetServer, that.deleteTargetServer)
+            && Objects.equals(this.deleteTargetEip, that.deleteTargetEip);
     }
 
     @Override

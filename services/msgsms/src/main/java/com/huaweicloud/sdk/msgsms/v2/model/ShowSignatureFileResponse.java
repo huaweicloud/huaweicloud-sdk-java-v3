@@ -218,23 +218,19 @@ public class ShowSignatureFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSignatureFileResponse showSignatureFileResponse = (ShowSignatureFileResponse) o;
-        return Objects.equals(this.fileId, showSignatureFileResponse.fileId)
-            && Objects.equals(this.fileName, showSignatureFileResponse.fileName)
-            && Objects.equals(this.fileRef, showSignatureFileResponse.fileRef)
-            && Objects.equals(this.fileSize, showSignatureFileResponse.fileSize)
-            && Objects.equals(this.fileType, showSignatureFileResponse.fileType)
-            && Objects.equals(this.moduleType, showSignatureFileResponse.moduleType)
-            && Objects.equals(this.operator, showSignatureFileResponse.operator)
-            && Objects.equals(this.fileDesc, showSignatureFileResponse.fileDesc)
-            && Objects.equals(this.updateTime, showSignatureFileResponse.updateTime);
+        ShowSignatureFileResponse that = (ShowSignatureFileResponse) obj;
+        return Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileRef, that.fileRef) && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.fileType, that.fileType) && Objects.equals(this.moduleType, that.moduleType)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.fileDesc, that.fileDesc)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

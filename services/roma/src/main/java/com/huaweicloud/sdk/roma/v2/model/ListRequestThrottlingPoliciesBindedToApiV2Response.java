@@ -98,18 +98,17 @@ public class ListRequestThrottlingPoliciesBindedToApiV2Response extends SdkRespo
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestThrottlingPoliciesBindedToApiV2Response listRequestThrottlingPoliciesBindedToApiV2Response =
-            (ListRequestThrottlingPoliciesBindedToApiV2Response) o;
-        return Objects.equals(this.size, listRequestThrottlingPoliciesBindedToApiV2Response.size)
-            && Objects.equals(this.total, listRequestThrottlingPoliciesBindedToApiV2Response.total)
-            && Objects.equals(this.throttles, listRequestThrottlingPoliciesBindedToApiV2Response.throttles);
+        ListRequestThrottlingPoliciesBindedToApiV2Response that =
+            (ListRequestThrottlingPoliciesBindedToApiV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.throttles, that.throttles);
     }
 
     @Override

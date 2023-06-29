@@ -127,17 +127,16 @@ public class TransTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransTemplate transTemplate = (TransTemplate) o;
-        return Objects.equals(this.templateName, transTemplate.templateName)
-            && Objects.equals(this.video, transTemplate.video) && Objects.equals(this.audio, transTemplate.audio)
-            && Objects.equals(this.common, transTemplate.common);
+        TransTemplate that = (TransTemplate) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.common, that.common);
     }
 
     @Override

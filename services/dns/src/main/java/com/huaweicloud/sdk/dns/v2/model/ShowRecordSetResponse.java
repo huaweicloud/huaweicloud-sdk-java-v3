@@ -370,29 +370,22 @@ public class ShowRecordSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordSetResponse showRecordSetResponse = (ShowRecordSetResponse) o;
-        return Objects.equals(this.id, showRecordSetResponse.id)
-            && Objects.equals(this.name, showRecordSetResponse.name)
-            && Objects.equals(this.description, showRecordSetResponse.description)
-            && Objects.equals(this.zoneId, showRecordSetResponse.zoneId)
-            && Objects.equals(this.zoneName, showRecordSetResponse.zoneName)
-            && Objects.equals(this.type, showRecordSetResponse.type)
-            && Objects.equals(this.ttl, showRecordSetResponse.ttl)
-            && Objects.equals(this.records, showRecordSetResponse.records)
-            && Objects.equals(this.createAt, showRecordSetResponse.createAt)
-            && Objects.equals(this.updateAt, showRecordSetResponse.updateAt)
-            && Objects.equals(this.status, showRecordSetResponse.status)
-            && Objects.equals(this._default, showRecordSetResponse._default)
-            && Objects.equals(this.projectId, showRecordSetResponse.projectId)
-            && Objects.equals(this.links, showRecordSetResponse.links)
-            && Objects.equals(this.bundle, showRecordSetResponse.bundle);
+        ShowRecordSetResponse that = (ShowRecordSetResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.bundle, that.bundle);
     }
 
     @Override

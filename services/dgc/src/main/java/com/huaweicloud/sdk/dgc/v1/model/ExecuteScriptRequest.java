@@ -87,17 +87,16 @@ public class ExecuteScriptRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteScriptRequest executeScriptRequest = (ExecuteScriptRequest) o;
-        return Objects.equals(this.workspace, executeScriptRequest.workspace)
-            && Objects.equals(this.scriptName, executeScriptRequest.scriptName)
-            && Objects.equals(this.body, executeScriptRequest.body);
+        ExecuteScriptRequest that = (ExecuteScriptRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.scriptName, that.scriptName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

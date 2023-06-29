@@ -55,15 +55,15 @@ public class Nameserver {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nameserver nameserver = (Nameserver) o;
-        return Objects.equals(this.hostname, nameserver.hostname) && Objects.equals(this.priority, nameserver.priority);
+        Nameserver that = (Nameserver) obj;
+        return Objects.equals(this.hostname, that.hostname) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

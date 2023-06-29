@@ -121,18 +121,18 @@ public class BasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicInfo basicInfo = (BasicInfo) o;
-        return Objects.equals(this.owner, basicInfo.owner) && Objects.equals(this.priority, basicInfo.priority)
-            && Objects.equals(this.executeUser, basicInfo.executeUser)
-            && Objects.equals(this.instanceTimeout, basicInfo.instanceTimeout)
-            && Objects.equals(this.customFields, basicInfo.customFields);
+        BasicInfo that = (BasicInfo) obj;
+        return Objects.equals(this.owner, that.owner) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.executeUser, that.executeUser)
+            && Objects.equals(this.instanceTimeout, that.instanceTimeout)
+            && Objects.equals(this.customFields, that.customFields);
     }
 
     @Override

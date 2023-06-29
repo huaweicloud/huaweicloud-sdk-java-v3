@@ -183,19 +183,18 @@ public class MediaDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MediaDetail mediaDetail = (MediaDetail) o;
-        return Objects.equals(this.features, mediaDetail.features)
-            && Objects.equals(this.originPara, mediaDetail.originPara)
-            && Objects.equals(this.outputVideoParas, mediaDetail.outputVideoParas)
-            && Objects.equals(this.outputThumbnailPara, mediaDetail.outputThumbnailPara)
-            && Objects.equals(this.outputWatermarkParas, mediaDetail.outputWatermarkParas);
+        MediaDetail that = (MediaDetail) obj;
+        return Objects.equals(this.features, that.features) && Objects.equals(this.originPara, that.originPara)
+            && Objects.equals(this.outputVideoParas, that.outputVideoParas)
+            && Objects.equals(this.outputThumbnailPara, that.outputThumbnailPara)
+            && Objects.equals(this.outputWatermarkParas, that.outputWatermarkParas);
     }
 
     @Override

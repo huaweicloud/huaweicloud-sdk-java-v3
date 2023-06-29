@@ -56,16 +56,15 @@ public class ShowPublicKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicKeyResponse showPublicKeyResponse = (ShowPublicKeyResponse) o;
-        return Objects.equals(this.keyId, showPublicKeyResponse.keyId)
-            && Objects.equals(this.publicKey, showPublicKeyResponse.publicKey);
+        ShowPublicKeyResponse that = (ShowPublicKeyResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.publicKey, that.publicKey);
     }
 
     @Override

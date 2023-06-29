@@ -55,16 +55,15 @@ public class RestSwitchModeReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestSwitchModeReqBody restSwitchModeReqBody = (RestSwitchModeReqBody) o;
-        return Objects.equals(this.switchMode, restSwitchModeReqBody.switchMode)
-            && Objects.equals(this.imageType, restSwitchModeReqBody.imageType);
+        RestSwitchModeReqBody that = (RestSwitchModeReqBody) obj;
+        return Objects.equals(this.switchMode, that.switchMode) && Objects.equals(this.imageType, that.imageType);
     }
 
     @Override

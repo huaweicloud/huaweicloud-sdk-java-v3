@@ -109,18 +109,16 @@ public class QueryLtsStructLogParamsNew {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryLtsStructLogParamsNew queryLtsStructLogParamsNew = (QueryLtsStructLogParamsNew) o;
-        return Objects.equals(this.query, queryLtsStructLogParamsNew.query)
-            && Objects.equals(this.format, queryLtsStructLogParamsNew.format)
-            && Objects.equals(this.timeRange, queryLtsStructLogParamsNew.timeRange)
-            && Objects.equals(this.whetherToRows, queryLtsStructLogParamsNew.whetherToRows);
+        QueryLtsStructLogParamsNew that = (QueryLtsStructLogParamsNew) obj;
+        return Objects.equals(this.query, that.query) && Objects.equals(this.format, that.format)
+            && Objects.equals(this.timeRange, that.timeRange) && Objects.equals(this.whetherToRows, that.whetherToRows);
     }
 
     @Override

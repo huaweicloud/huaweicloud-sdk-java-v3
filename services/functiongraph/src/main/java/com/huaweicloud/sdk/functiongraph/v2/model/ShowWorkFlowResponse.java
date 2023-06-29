@@ -198,22 +198,18 @@ public class ShowWorkFlowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkFlowResponse showWorkFlowResponse = (ShowWorkFlowResponse) o;
-        return Objects.equals(this.id, showWorkFlowResponse.id)
-            && Objects.equals(this.workflowUrn, showWorkFlowResponse.workflowUrn)
-            && Objects.equals(this.createdTime, showWorkFlowResponse.createdTime)
-            && Objects.equals(this.updatedTime, showWorkFlowResponse.updatedTime)
-            && Objects.equals(this.createdBy, showWorkFlowResponse.createdBy)
-            && Objects.equals(this.ltsGroupId, showWorkFlowResponse.ltsGroupId)
-            && Objects.equals(this.ltsStreamId, showWorkFlowResponse.ltsStreamId)
-            && Objects.equals(this.definition, showWorkFlowResponse.definition);
+        ShowWorkFlowResponse that = (ShowWorkFlowResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.workflowUrn, that.workflowUrn)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.ltsGroupId, that.ltsGroupId)
+            && Objects.equals(this.ltsStreamId, that.ltsStreamId) && Objects.equals(this.definition, that.definition);
     }
 
     @Override

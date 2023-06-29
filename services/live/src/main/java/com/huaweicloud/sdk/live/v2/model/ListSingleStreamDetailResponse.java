@@ -219,21 +219,19 @@ public class ListSingleStreamDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSingleStreamDetailResponse listSingleStreamDetailResponse = (ListSingleStreamDetailResponse) o;
-        return Objects.equals(this.publishDomain, listSingleStreamDetailResponse.publishDomain)
-            && Objects.equals(this.app, listSingleStreamDetailResponse.app)
-            && Objects.equals(this.stream, listSingleStreamDetailResponse.stream)
-            && Objects.equals(this.videoFramerate, listSingleStreamDetailResponse.videoFramerate)
-            && Objects.equals(this.videoBitrate, listSingleStreamDetailResponse.videoBitrate)
-            && Objects.equals(this.audioFramerate, listSingleStreamDetailResponse.audioFramerate)
-            && Objects.equals(this.xRequestId, listSingleStreamDetailResponse.xRequestId);
+        ListSingleStreamDetailResponse that = (ListSingleStreamDetailResponse) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.videoFramerate, that.videoFramerate)
+            && Objects.equals(this.videoBitrate, that.videoBitrate)
+            && Objects.equals(this.audioFramerate, that.audioFramerate)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

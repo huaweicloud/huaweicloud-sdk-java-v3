@@ -121,19 +121,19 @@ public class ResourceRelation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceRelation resourceRelation = (ResourceRelation) o;
-        return Objects.equals(this.relationType, resourceRelation.relationType)
-            && Objects.equals(this.fromResourceType, resourceRelation.fromResourceType)
-            && Objects.equals(this.toResourceType, resourceRelation.toResourceType)
-            && Objects.equals(this.fromResourceId, resourceRelation.fromResourceId)
-            && Objects.equals(this.toResourceId, resourceRelation.toResourceId);
+        ResourceRelation that = (ResourceRelation) obj;
+        return Objects.equals(this.relationType, that.relationType)
+            && Objects.equals(this.fromResourceType, that.fromResourceType)
+            && Objects.equals(this.toResourceType, that.toResourceType)
+            && Objects.equals(this.fromResourceId, that.fromResourceId)
+            && Objects.equals(this.toResourceId, that.toResourceId);
     }
 
     @Override

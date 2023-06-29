@@ -97,17 +97,16 @@ public class ListCommitStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommitStatisticsResponse listCommitStatisticsResponse = (ListCommitStatisticsResponse) o;
-        return Objects.equals(this.error, listCommitStatisticsResponse.error)
-            && Objects.equals(this.result, listCommitStatisticsResponse.result)
-            && Objects.equals(this.status, listCommitStatisticsResponse.status);
+        ListCommitStatisticsResponse that = (ListCommitStatisticsResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListGroupReplicationInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupReplicationInfoResponse listGroupReplicationInfoResponse = (ListGroupReplicationInfoResponse) o;
-        return Objects.equals(this.groupList, listGroupReplicationInfoResponse.groupList)
-            && Objects.equals(this.groupCount, listGroupReplicationInfoResponse.groupCount);
+        ListGroupReplicationInfoResponse that = (ListGroupReplicationInfoResponse) obj;
+        return Objects.equals(this.groupList, that.groupList) && Objects.equals(this.groupCount, that.groupCount);
     }
 
     @Override

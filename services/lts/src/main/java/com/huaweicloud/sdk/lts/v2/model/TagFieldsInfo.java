@@ -121,18 +121,17 @@ public class TagFieldsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagFieldsInfo tagFieldsInfo = (TagFieldsInfo) o;
-        return Objects.equals(this.fieldName, tagFieldsInfo.fieldName) && Objects.equals(this.type, tagFieldsInfo.type)
-            && Objects.equals(this.content, tagFieldsInfo.content)
-            && Objects.equals(this.isAnalysis, tagFieldsInfo.isAnalysis)
-            && Objects.equals(this.index, tagFieldsInfo.index);
+        TagFieldsInfo that = (TagFieldsInfo) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.isAnalysis, that.isAnalysis)
+            && Objects.equals(this.index, that.index);
     }
 
     @Override

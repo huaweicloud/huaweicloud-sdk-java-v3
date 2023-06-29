@@ -85,22 +85,15 @@ public class LdApiCreate {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class LdApiCreate {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
         }
 
         public static ContentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -427,23 +413,20 @@ public class LdApiCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiCreate ldApiCreate = (LdApiCreate) o;
-        return Objects.equals(this.name, ldApiCreate.name) && Objects.equals(this.path, ldApiCreate.path)
-            && Objects.equals(this.method, ldApiCreate.method)
-            && Objects.equals(this.description, ldApiCreate.description)
-            && Objects.equals(this.version, ldApiCreate.version)
-            && Objects.equals(this.contentType, ldApiCreate.contentType)
-            && Objects.equals(this.apiSignatureId, ldApiCreate.apiSignatureId)
-            && Objects.equals(this.romaAppId, ldApiCreate.romaAppId)
-            && Objects.equals(this.returnFormat, ldApiCreate.returnFormat)
-            && Objects.equals(this.parameters, ldApiCreate.parameters);
+        LdApiCreate that = (LdApiCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.apiSignatureId, that.apiSignatureId)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.returnFormat, that.returnFormat)
+            && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

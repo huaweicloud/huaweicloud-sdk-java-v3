@@ -294,22 +294,20 @@ public class EditSetting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EditSetting editSetting = (EditSetting) o;
-        return Objects.equals(this.timelineStart, editSetting.timelineStart)
-            && Objects.equals(this.timelineEnd, editSetting.timelineEnd)
-            && Objects.equals(this.transTemplateId, editSetting.transTemplateId)
-            && Objects.equals(this.avParameter, editSetting.avParameter)
-            && Objects.equals(this.mosaics, editSetting.mosaics)
-            && Objects.equals(this.imageWatermarks, editSetting.imageWatermarks)
-            && Objects.equals(this.heads, editSetting.heads) && Objects.equals(this.tails, editSetting.tails)
-            && Objects.equals(this.output, editSetting.output);
+        EditSetting that = (EditSetting) obj;
+        return Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineEnd, that.timelineEnd)
+            && Objects.equals(this.transTemplateId, that.transTemplateId)
+            && Objects.equals(this.avParameter, that.avParameter) && Objects.equals(this.mosaics, that.mosaics)
+            && Objects.equals(this.imageWatermarks, that.imageWatermarks) && Objects.equals(this.heads, that.heads)
+            && Objects.equals(this.tails, that.tails) && Objects.equals(this.output, that.output);
     }
 
     @Override

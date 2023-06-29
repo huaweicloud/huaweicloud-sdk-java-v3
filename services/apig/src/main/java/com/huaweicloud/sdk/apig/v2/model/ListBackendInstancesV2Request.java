@@ -189,22 +189,19 @@ public class ListBackendInstancesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackendInstancesV2Request listBackendInstancesV2Request = (ListBackendInstancesV2Request) o;
-        return Objects.equals(this.instanceId, listBackendInstancesV2Request.instanceId)
-            && Objects.equals(this.vpcChannelId, listBackendInstancesV2Request.vpcChannelId)
-            && Objects.equals(this.offset, listBackendInstancesV2Request.offset)
-            && Objects.equals(this.limit, listBackendInstancesV2Request.limit)
-            && Objects.equals(this.name, listBackendInstancesV2Request.name)
-            && Objects.equals(this.memberGroupName, listBackendInstancesV2Request.memberGroupName)
-            && Objects.equals(this.memberGroupId, listBackendInstancesV2Request.memberGroupId)
-            && Objects.equals(this.preciseSearch, listBackendInstancesV2Request.preciseSearch);
+        ListBackendInstancesV2Request that = (ListBackendInstancesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

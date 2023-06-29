@@ -105,17 +105,17 @@ public class DevicesCalculation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DevicesCalculation devicesCalculation = (DevicesCalculation) o;
-        return Objects.equals(this.normalDevices, devicesCalculation.normalDevices)
-            && Objects.equals(this.gatewayDevices, devicesCalculation.gatewayDevices)
-            && Objects.equals(this.subsetsDevices, devicesCalculation.subsetsDevices);
+        DevicesCalculation that = (DevicesCalculation) obj;
+        return Objects.equals(this.normalDevices, that.normalDevices)
+            && Objects.equals(this.gatewayDevices, that.gatewayDevices)
+            && Objects.equals(this.subsetsDevices, that.subsetsDevices);
     }
 
     @Override

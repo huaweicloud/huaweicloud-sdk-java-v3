@@ -55,16 +55,16 @@ public class CreateMfaDeviceRespon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMfaDeviceRespon createMfaDeviceRespon = (CreateMfaDeviceRespon) o;
-        return Objects.equals(this.serialNumber, createMfaDeviceRespon.serialNumber)
-            && Objects.equals(this.base32StringSeed, createMfaDeviceRespon.base32StringSeed);
+        CreateMfaDeviceRespon that = (CreateMfaDeviceRespon) obj;
+        return Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.base32StringSeed, that.base32StringSeed);
     }
 
     @Override

@@ -107,19 +107,16 @@ public class ShowLatestPublishedAgreementRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLatestPublishedAgreementRequest showLatestPublishedAgreementRequest =
-            (ShowLatestPublishedAgreementRequest) o;
-        return Objects.equals(this.agreementType, showLatestPublishedAgreementRequest.agreementType)
-            && Objects.equals(this.xSite, showLatestPublishedAgreementRequest.xSite)
-            && Objects.equals(this.xLanguage, showLatestPublishedAgreementRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showLatestPublishedAgreementRequest.xTimeZone);
+        ShowLatestPublishedAgreementRequest that = (ShowLatestPublishedAgreementRequest) obj;
+        return Objects.equals(this.agreementType, that.agreementType) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

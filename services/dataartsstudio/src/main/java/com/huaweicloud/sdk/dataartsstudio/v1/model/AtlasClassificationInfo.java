@@ -140,19 +140,17 @@ public class AtlasClassificationInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AtlasClassificationInfo atlasClassificationInfo = (AtlasClassificationInfo) o;
-        return Objects.equals(this.entityGuid, atlasClassificationInfo.entityGuid)
-            && Objects.equals(this.propagate, atlasClassificationInfo.propagate)
-            && Objects.equals(this.validityPeriods, atlasClassificationInfo.validityPeriods)
-            && Objects.equals(this.typeName, atlasClassificationInfo.typeName)
-            && Objects.equals(this.attributes, atlasClassificationInfo.attributes);
+        AtlasClassificationInfo that = (AtlasClassificationInfo) obj;
+        return Objects.equals(this.entityGuid, that.entityGuid) && Objects.equals(this.propagate, that.propagate)
+            && Objects.equals(this.validityPeriods, that.validityPeriods)
+            && Objects.equals(this.typeName, that.typeName) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

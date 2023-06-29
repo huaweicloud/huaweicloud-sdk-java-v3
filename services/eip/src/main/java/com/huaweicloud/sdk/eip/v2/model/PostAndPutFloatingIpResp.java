@@ -96,22 +96,15 @@ public class PostAndPutFloatingIpResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -319,24 +312,20 @@ public class PostAndPutFloatingIpResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostAndPutFloatingIpResp postAndPutFloatingIpResp = (PostAndPutFloatingIpResp) o;
-        return Objects.equals(this.fixedIpAddress, postAndPutFloatingIpResp.fixedIpAddress)
-            && Objects.equals(this.floatingIpAddress, postAndPutFloatingIpResp.floatingIpAddress)
-            && Objects.equals(this.floatingNetworkId, postAndPutFloatingIpResp.floatingNetworkId)
-            && Objects.equals(this.id, postAndPutFloatingIpResp.id)
-            && Objects.equals(this.portId, postAndPutFloatingIpResp.portId)
-            && Objects.equals(this.routerId, postAndPutFloatingIpResp.routerId)
-            && Objects.equals(this.status, postAndPutFloatingIpResp.status)
-            && Objects.equals(this.tenantId, postAndPutFloatingIpResp.tenantId)
-            && Objects.equals(this.dnsName, postAndPutFloatingIpResp.dnsName)
-            && Objects.equals(this.dnsDomain, postAndPutFloatingIpResp.dnsDomain);
+        PostAndPutFloatingIpResp that = (PostAndPutFloatingIpResp) obj;
+        return Objects.equals(this.fixedIpAddress, that.fixedIpAddress)
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.floatingNetworkId, that.floatingNetworkId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.routerId, that.routerId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.dnsName, that.dnsName) && Objects.equals(this.dnsDomain, that.dnsDomain);
     }
 
     @Override

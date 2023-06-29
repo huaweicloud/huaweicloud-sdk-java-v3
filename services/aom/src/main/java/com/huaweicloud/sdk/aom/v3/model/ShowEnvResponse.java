@@ -1,135 +1,113 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v3.model.TagNameAndIdVo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowEnvResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="aom_id")
-    
+    @JsonProperty(value = "aom_id")
 
     private String aomId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
 
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="creator")
-    
+    @JsonProperty(value = "creator")
 
     private String creator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_id")
-    
+    @JsonProperty(value = "env_id")
 
     private String envId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_tags")
-    
+    @JsonProperty(value = "env_tags")
+
     private List<TagNameAndIdVo> envTags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_type")
-    
+    @JsonProperty(value = "env_type")
 
     private String envType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eps_id")
-    
+    @JsonProperty(value = "eps_id")
 
     private String epsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modified_time")
-    
+    @JsonProperty(value = "modified_time")
 
     private String modifiedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modifier")
-    
+    @JsonProperty(value = "modifier")
 
     private String modifier;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
 
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
+
     /**
      * 注册方式
      */
     public static final class RegisterTypeEnum {
 
-        
         /**
          * Enum API for value: "API"
          */
         public static final RegisterTypeEnum API = new RegisterTypeEnum("API");
-        
+
         /**
          * Enum CONSOLE for value: "CONSOLE"
          */
         public static final RegisterTypeEnum CONSOLE = new RegisterTypeEnum("CONSOLE");
-        
+
         /**
          * Enum SERVICE_DISCOVERY for value: "SERVICE_DISCOVERY"
          */
         public static final RegisterTypeEnum SERVICE_DISCOVERY = new RegisterTypeEnum("SERVICE_DISCOVERY");
-        
 
         private static final Map<String, RegisterTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -159,25 +137,18 @@ public class ShowEnvResponse extends SdkResponse {
 
         @JsonCreator
         public static RegisterTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RegisterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegisterTypeEnum(value));
         }
 
         public static RegisterTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            RegisterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,8 +166,7 @@ public class ShowEnvResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_type")
-    
+    @JsonProperty(value = "register_type")
 
     private RegisterTypeEnum registerType;
 
@@ -204,9 +174,6 @@ public class ShowEnvResponse extends SdkResponse {
         this.aomId = aomId;
         return this;
     }
-
-    
-
 
     /**
      * aomId
@@ -220,15 +187,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.aomId = aomId;
     }
 
-    
-
     public ShowEnvResponse withComponentId(String componentId) {
         this.componentId = componentId;
         return this;
     }
-
-    
-
 
     /**
      * 组件Id
@@ -242,15 +204,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.componentId = componentId;
     }
 
-    
-
     public ShowEnvResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -264,15 +221,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowEnvResponse withCreator(String creator) {
         this.creator = creator;
         return this;
     }
-
-    
-
 
     /**
      * 创建者
@@ -286,15 +238,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.creator = creator;
     }
 
-    
-
     public ShowEnvResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -308,15 +255,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowEnvResponse withEnvId(String envId) {
         this.envId = envId;
         return this;
     }
-
-    
-
 
     /**
      * 环境Id
@@ -330,15 +272,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.envId = envId;
     }
 
-    
-
     public ShowEnvResponse withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
-
-    
-
 
     /**
      * 环境名称
@@ -352,16 +289,13 @@ public class ShowEnvResponse extends SdkResponse {
         this.envName = envName;
     }
 
-    
-
     public ShowEnvResponse withEnvTags(List<TagNameAndIdVo> envTags) {
         this.envTags = envTags;
         return this;
     }
 
-    
     public ShowEnvResponse addEnvTagsItem(TagNameAndIdVo envTagsItem) {
-        if(this.envTags == null) {
+        if (this.envTags == null) {
             this.envTags = new ArrayList<>();
         }
         this.envTags.add(envTagsItem);
@@ -369,7 +303,7 @@ public class ShowEnvResponse extends SdkResponse {
     }
 
     public ShowEnvResponse withEnvTags(Consumer<List<TagNameAndIdVo>> envTagsSetter) {
-        if(this.envTags == null) {
+        if (this.envTags == null) {
             this.envTags = new ArrayList<>();
         }
         envTagsSetter.accept(this.envTags);
@@ -388,15 +322,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.envTags = envTags;
     }
 
-    
-
     public ShowEnvResponse withEnvType(String envType) {
         this.envType = envType;
         return this;
     }
-
-    
-
 
     /**
      * 环境类型
@@ -410,15 +339,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.envType = envType;
     }
 
-    
-
     public ShowEnvResponse withEpsId(String epsId) {
         this.epsId = epsId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目Id
@@ -432,15 +356,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.epsId = epsId;
     }
 
-    
-
     public ShowEnvResponse withModifiedTime(String modifiedTime) {
         this.modifiedTime = modifiedTime;
         return this;
     }
-
-    
-
 
     /**
      * 修改时间
@@ -454,15 +373,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.modifiedTime = modifiedTime;
     }
 
-    
-
     public ShowEnvResponse withModifier(String modifier) {
         this.modifier = modifier;
         return this;
     }
-
-    
-
 
     /**
      * 修改者
@@ -476,15 +390,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.modifier = modifier;
     }
 
-    
-
     public ShowEnvResponse withOsType(String osType) {
         this.osType = osType;
         return this;
     }
-
-    
-
 
     /**
      * os类型
@@ -498,15 +407,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.osType = osType;
     }
 
-    
-
     public ShowEnvResponse withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 区域
@@ -520,15 +424,10 @@ public class ShowEnvResponse extends SdkResponse {
         this.region = region;
     }
 
-    
-
     public ShowEnvResponse withRegisterType(RegisterTypeEnum registerType) {
         this.registerType = registerType;
         return this;
     }
-
-    
-
 
     /**
      * 注册方式
@@ -542,37 +441,44 @@ public class ShowEnvResponse extends SdkResponse {
         this.registerType = registerType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvResponse showEnvResponse = (ShowEnvResponse) o;
-        return Objects.equals(this.aomId, showEnvResponse.aomId) &&
-            Objects.equals(this.componentId, showEnvResponse.componentId) &&
-            Objects.equals(this.createTime, showEnvResponse.createTime) &&
-            Objects.equals(this.creator, showEnvResponse.creator) &&
-            Objects.equals(this.description, showEnvResponse.description) &&
-            Objects.equals(this.envId, showEnvResponse.envId) &&
-            Objects.equals(this.envName, showEnvResponse.envName) &&
-            Objects.equals(this.envTags, showEnvResponse.envTags) &&
-            Objects.equals(this.envType, showEnvResponse.envType) &&
-            Objects.equals(this.epsId, showEnvResponse.epsId) &&
-            Objects.equals(this.modifiedTime, showEnvResponse.modifiedTime) &&
-            Objects.equals(this.modifier, showEnvResponse.modifier) &&
-            Objects.equals(this.osType, showEnvResponse.osType) &&
-            Objects.equals(this.region, showEnvResponse.region) &&
-            Objects.equals(this.registerType, showEnvResponse.registerType);
+        ShowEnvResponse that = (ShowEnvResponse) obj;
+        return Objects.equals(this.aomId, that.aomId) && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.envTags, that.envTags)
+            && Objects.equals(this.envType, that.envType) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.modifier, that.modifier)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.registerType, that.registerType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(aomId, componentId, createTime, creator, description, envId, envName, envTags, envType, epsId, modifiedTime, modifier, osType, region, registerType);
+        return Objects.hash(aomId,
+            componentId,
+            createTime,
+            creator,
+            description,
+            envId,
+            envName,
+            envTags,
+            envType,
+            epsId,
+            modifiedTime,
+            modifier,
+            osType,
+            region,
+            registerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -595,6 +501,7 @@ public class ShowEnvResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -605,8 +512,5 @@ public class ShowEnvResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

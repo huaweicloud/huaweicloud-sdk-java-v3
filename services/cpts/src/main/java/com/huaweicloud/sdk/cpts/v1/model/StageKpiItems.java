@@ -74,16 +74,16 @@ public class StageKpiItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StageKpiItems stageKpiItems = (StageKpiItems) o;
-        return Objects.equals(this.averageResponseTime, stageKpiItems.averageResponseTime)
-            && Objects.equals(this.successRate, stageKpiItems.successRate);
+        StageKpiItems that = (StageKpiItems) obj;
+        return Objects.equals(this.averageResponseTime, that.averageResponseTime)
+            && Objects.equals(this.successRate, that.successRate);
     }
 
     @Override

@@ -99,18 +99,18 @@ public class AomMappingLogStreamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AomMappingLogStreamInfo aomMappingLogStreamInfo = (AomMappingLogStreamInfo) o;
-        return Objects.equals(this.targetLogGroupId, aomMappingLogStreamInfo.targetLogGroupId)
-            && Objects.equals(this.targetLogGroupName, aomMappingLogStreamInfo.targetLogGroupName)
-            && Objects.equals(this.targetLogStreamId, aomMappingLogStreamInfo.targetLogStreamId)
-            && Objects.equals(this.targetLogStreamName, aomMappingLogStreamInfo.targetLogStreamName);
+        AomMappingLogStreamInfo that = (AomMappingLogStreamInfo) obj;
+        return Objects.equals(this.targetLogGroupId, that.targetLogGroupId)
+            && Objects.equals(this.targetLogGroupName, that.targetLogGroupName)
+            && Objects.equals(this.targetLogStreamId, that.targetLogStreamId)
+            && Objects.equals(this.targetLogStreamName, that.targetLogStreamName);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class CreateConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConnectionRequest createConnectionRequest = (CreateConnectionRequest) o;
-        return Objects.equals(this.workspace, createConnectionRequest.workspace)
-            && Objects.equals(this.body, createConnectionRequest.body);
+        CreateConnectionRequest that = (CreateConnectionRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DifferentDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DifferentDetails differentDetails = (DifferentDetails) o;
-        return Objects.equals(this.parameterName, differentDetails.parameterName)
-            && Objects.equals(this.sourceValue, differentDetails.sourceValue)
-            && Objects.equals(this.targetValue, differentDetails.targetValue);
+        DifferentDetails that = (DifferentDetails) obj;
+        return Objects.equals(this.parameterName, that.parameterName)
+            && Objects.equals(this.sourceValue, that.sourceValue) && Objects.equals(this.targetValue, that.targetValue);
     }
 
     @Override

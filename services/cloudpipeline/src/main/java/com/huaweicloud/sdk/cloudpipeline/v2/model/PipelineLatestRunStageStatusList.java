@@ -121,19 +121,17 @@ public class PipelineLatestRunStageStatusList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineLatestRunStageStatusList pipelineLatestRunStageStatusList = (PipelineLatestRunStageStatusList) o;
-        return Objects.equals(this.name, pipelineLatestRunStageStatusList.name)
-            && Objects.equals(this.sequence, pipelineLatestRunStageStatusList.sequence)
-            && Objects.equals(this.status, pipelineLatestRunStageStatusList.status)
-            && Objects.equals(this.startTime, pipelineLatestRunStageStatusList.startTime)
-            && Objects.equals(this.endTime, pipelineLatestRunStageStatusList.endTime);
+        PipelineLatestRunStageStatusList that = (PipelineLatestRunStageStatusList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

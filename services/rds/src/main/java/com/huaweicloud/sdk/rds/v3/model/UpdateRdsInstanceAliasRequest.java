@@ -33,15 +33,15 @@ public class UpdateRdsInstanceAliasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRdsInstanceAliasRequest updateRdsInstanceAliasRequest = (UpdateRdsInstanceAliasRequest) o;
-        return Objects.equals(this.alias, updateRdsInstanceAliasRequest.alias);
+        UpdateRdsInstanceAliasRequest that = (UpdateRdsInstanceAliasRequest) obj;
+        return Objects.equals(this.alias, that.alias);
     }
 
     @Override

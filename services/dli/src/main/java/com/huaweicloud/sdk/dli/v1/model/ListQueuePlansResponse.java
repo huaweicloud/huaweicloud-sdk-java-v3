@@ -97,17 +97,16 @@ public class ListQueuePlansResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueuePlansResponse listQueuePlansResponse = (ListQueuePlansResponse) o;
-        return Objects.equals(this.isSuccess, listQueuePlansResponse.isSuccess)
-            && Objects.equals(this.message, listQueuePlansResponse.message)
-            && Objects.equals(this.plans, listQueuePlansResponse.plans);
+        ListQueuePlansResponse that = (ListQueuePlansResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.plans, that.plans);
     }
 
     @Override

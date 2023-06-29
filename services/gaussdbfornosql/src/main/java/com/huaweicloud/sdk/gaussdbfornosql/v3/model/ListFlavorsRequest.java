@@ -55,16 +55,15 @@ public class ListFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.region, listFlavorsRequest.region)
-            && Objects.equals(this.engineName, listFlavorsRequest.engineName);
+        ListFlavorsRequest that = (ListFlavorsRequest) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.engineName, that.engineName);
     }
 
     @Override

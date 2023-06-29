@@ -106,22 +106,15 @@ public class AskQuestionReq {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateTypeEnum(value));
         }
 
         public static OperateTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -308,21 +301,20 @@ public class AskQuestionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AskQuestionReq askQuestionReq = (AskQuestionReq) o;
-        return Objects.equals(this.question, askQuestionReq.question)
-            && Objects.equals(this.domains, askQuestionReq.domains) && Objects.equals(this.top, askQuestionReq.top)
-            && Objects.equals(this.sessionId, askQuestionReq.sessionId)
-            && Objects.equals(this.sourceQaPairId, askQuestionReq.sourceQaPairId)
-            && Objects.equals(this.operateType, askQuestionReq.operateType)
-            && Objects.equals(this.thresholdEnable, askQuestionReq.thresholdEnable)
-            && Objects.equals(this.productTypeId, askQuestionReq.productTypeId);
+        AskQuestionReq that = (AskQuestionReq) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.domains, that.domains)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.sourceQaPairId, that.sourceQaPairId)
+            && Objects.equals(this.operateType, that.operateType)
+            && Objects.equals(this.thresholdEnable, that.thresholdEnable)
+            && Objects.equals(this.productTypeId, that.productTypeId);
     }
 
     @Override

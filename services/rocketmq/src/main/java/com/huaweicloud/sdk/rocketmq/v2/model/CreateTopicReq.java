@@ -85,22 +85,15 @@ public class CreateTopicReq {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -207,17 +200,16 @@ public class CreateTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicReq createTopicReq = (CreateTopicReq) o;
-        return Objects.equals(this.name, createTopicReq.name) && Objects.equals(this.brokers, createTopicReq.brokers)
-            && Objects.equals(this.queueNum, createTopicReq.queueNum)
-            && Objects.equals(this.permission, createTopicReq.permission);
+        CreateTopicReq that = (CreateTopicReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.queueNum, that.queueNum) && Objects.equals(this.permission, that.permission);
     }
 
     @Override

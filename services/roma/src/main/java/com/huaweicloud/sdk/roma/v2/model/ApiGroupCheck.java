@@ -55,16 +55,15 @@ public class ApiGroupCheck {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiGroupCheck apiGroupCheck = (ApiGroupCheck) o;
-        return Objects.equals(this.groupName, apiGroupCheck.groupName)
-            && Objects.equals(this.romaAppId, apiGroupCheck.romaAppId);
+        ApiGroupCheck that = (ApiGroupCheck) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.romaAppId, that.romaAppId);
     }
 
     @Override

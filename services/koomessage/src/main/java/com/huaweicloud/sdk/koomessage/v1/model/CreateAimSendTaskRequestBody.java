@@ -96,17 +96,16 @@ public class CreateAimSendTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAimSendTaskRequestBody createAimSendTaskRequestBody = (CreateAimSendTaskRequestBody) o;
-        return Objects.equals(this.taskName, createAimSendTaskRequestBody.taskName)
-            && Objects.equals(this.smsChannel, createAimSendTaskRequestBody.smsChannel)
-            && Objects.equals(this.resolveTask, createAimSendTaskRequestBody.resolveTask);
+        CreateAimSendTaskRequestBody that = (CreateAimSendTaskRequestBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.smsChannel, that.smsChannel)
+            && Objects.equals(this.resolveTask, that.resolveTask);
     }
 
     @Override

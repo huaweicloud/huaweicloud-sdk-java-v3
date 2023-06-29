@@ -192,22 +192,15 @@ public class AccessPolicyInput {
             if (value == null) {
                 return null;
             }
-            PermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionsEnum(value));
         }
 
         public static PermissionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -230,8 +223,8 @@ public class AccessPolicyInput {
     private List<PermissionsEnum> permissions = null;
 
     /**
-    * Gets or Sets grantAblePermissions
-    */
+     * Gets or Sets grantAblePermissions
+     */
     public static final class GrantAblePermissionsEnum {
 
         /**
@@ -388,22 +381,15 @@ public class AccessPolicyInput {
             if (value == null) {
                 return null;
             }
-            GrantAblePermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GrantAblePermissionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GrantAblePermissionsEnum(value));
         }
 
         public static GrantAblePermissionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GrantAblePermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -635,22 +621,19 @@ public class AccessPolicyInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessPolicyInput accessPolicyInput = (AccessPolicyInput) o;
-        return Objects.equals(this.principalList, accessPolicyInput.principalList)
-            && Objects.equals(this.resource, accessPolicyInput.resource)
-            && Objects.equals(this.effect, accessPolicyInput.effect)
-            && Objects.equals(this.permissions, accessPolicyInput.permissions)
-            && Objects.equals(this.grantAblePermissions, accessPolicyInput.grantAblePermissions)
-            && Objects.equals(this.conditions, accessPolicyInput.conditions)
-            && Objects.equals(this.dataFilter, accessPolicyInput.dataFilter)
-            && Objects.equals(this.dataMask, accessPolicyInput.dataMask);
+        AccessPolicyInput that = (AccessPolicyInput) obj;
+        return Objects.equals(this.principalList, that.principalList) && Objects.equals(this.resource, that.resource)
+            && Objects.equals(this.effect, that.effect) && Objects.equals(this.permissions, that.permissions)
+            && Objects.equals(this.grantAblePermissions, that.grantAblePermissions)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.dataFilter, that.dataFilter)
+            && Objects.equals(this.dataMask, that.dataMask);
     }
 
     @Override

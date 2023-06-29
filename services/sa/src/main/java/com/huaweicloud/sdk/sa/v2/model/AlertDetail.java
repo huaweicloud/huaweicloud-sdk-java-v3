@@ -254,22 +254,20 @@ public class AlertDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlertDetail alertDetail = (AlertDetail) o;
-        return Objects.equals(this.dataObject, alertDetail.dataObject)
-            && Objects.equals(this.createTime, alertDetail.createTime)
-            && Objects.equals(this.updateTime, alertDetail.updateTime)
-            && Objects.equals(this.projectId, alertDetail.projectId)
-            && Objects.equals(this.workspaceId, alertDetail.workspaceId) && Objects.equals(this.id, alertDetail.id)
-            && Objects.equals(this.type, alertDetail.type) && Objects.equals(this.version, alertDetail.version)
-            && Objects.equals(this.formatVersion, alertDetail.formatVersion)
-            && Objects.equals(this.dataclassRef, alertDetail.dataclassRef);
+        AlertDetail that = (AlertDetail) obj;
+        return Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.formatVersion, that.formatVersion)
+            && Objects.equals(this.dataclassRef, that.dataclassRef);
     }
 
     @Override

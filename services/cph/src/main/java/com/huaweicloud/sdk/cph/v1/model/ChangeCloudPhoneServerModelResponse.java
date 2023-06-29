@@ -78,18 +78,16 @@ public class ChangeCloudPhoneServerModelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeCloudPhoneServerModelResponse changeCloudPhoneServerModelResponse =
-            (ChangeCloudPhoneServerModelResponse) o;
-        return Objects.equals(this.requestId, changeCloudPhoneServerModelResponse.requestId)
-            && Objects.equals(this.orderId, changeCloudPhoneServerModelResponse.orderId)
-            && Objects.equals(this.productId, changeCloudPhoneServerModelResponse.productId);
+        ChangeCloudPhoneServerModelResponse that = (ChangeCloudPhoneServerModelResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.productId, that.productId);
     }
 
     @Override

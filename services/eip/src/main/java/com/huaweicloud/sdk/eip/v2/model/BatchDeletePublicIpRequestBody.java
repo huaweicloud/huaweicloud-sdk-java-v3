@@ -52,15 +52,15 @@ public class BatchDeletePublicIpRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeletePublicIpRequestBody batchDeletePublicIpRequestBody = (BatchDeletePublicIpRequestBody) o;
-        return Objects.equals(this.publicipIds, batchDeletePublicIpRequestBody.publicipIds);
+        BatchDeletePublicIpRequestBody that = (BatchDeletePublicIpRequestBody) obj;
+        return Objects.equals(this.publicipIds, that.publicipIds);
     }
 
     @Override

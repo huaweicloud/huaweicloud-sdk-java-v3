@@ -151,19 +151,18 @@ public class CreateSubCustomerReqV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubCustomerReqV2 createSubCustomerReqV2 = (CreateSubCustomerReqV2) o;
-        return Objects.equals(this.partyId, createSubCustomerReqV2.partyId)
-            && Objects.equals(this.displayName, createSubCustomerReqV2.displayName)
-            && Objects.equals(this.subCustomerAssociationType, createSubCustomerReqV2.subCustomerAssociationType)
-            && Objects.equals(this.permissionIds, createSubCustomerReqV2.permissionIds)
-            && Objects.equals(this.newSubCustomer, createSubCustomerReqV2.newSubCustomer);
+        CreateSubCustomerReqV2 that = (CreateSubCustomerReqV2) obj;
+        return Objects.equals(this.partyId, that.partyId) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.subCustomerAssociationType, that.subCustomerAssociationType)
+            && Objects.equals(this.permissionIds, that.permissionIds)
+            && Objects.equals(this.newSubCustomer, that.newSubCustomer);
     }
 
     @Override

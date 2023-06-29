@@ -33,15 +33,15 @@ public class ListOsVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOsVersionsRequest listOsVersionsRequest = (ListOsVersionsRequest) o;
-        return Objects.equals(this.tag, listOsVersionsRequest.tag);
+        ListOsVersionsRequest that = (ListOsVersionsRequest) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

@@ -184,21 +184,19 @@ public class PermissionItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PermissionItem permissionItem = (PermissionItem) o;
-        return Objects.equals(this.permissionType, permissionItem.permissionType)
-            && Objects.equals(this.schemaName, permissionItem.schemaName)
-            && Objects.equals(this.description, permissionItem.description)
-            && Objects.equals(this.status, permissionItem.status)
-            && Objects.equals(this.failedReason, permissionItem.failedReason)
-            && Objects.equals(this.failedDetail, permissionItem.failedDetail)
-            && Objects.equals(this.suggestSolution, permissionItem.suggestSolution);
+        PermissionItem that = (PermissionItem) obj;
+        return Objects.equals(this.permissionType, that.permissionType)
+            && Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.failedDetail, that.failedDetail)
+            && Objects.equals(this.suggestSolution, that.suggestSolution);
     }
 
     @Override

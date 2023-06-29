@@ -97,22 +97,15 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -396,26 +389,21 @@ public class ShowWorkflowExecutionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowExecutionResponse showWorkflowExecutionResponse = (ShowWorkflowExecutionResponse) o;
-        return Objects.equals(this.workflowId, showWorkflowExecutionResponse.workflowId)
-            && Objects.equals(this.workflowUrn, showWorkflowExecutionResponse.workflowUrn)
-            && Objects.equals(this.executionId, showWorkflowExecutionResponse.executionId)
-            && Objects.equals(this.status, showWorkflowExecutionResponse.status)
-            && Objects.equals(this.headers, showWorkflowExecutionResponse.headers)
-            && Objects.equals(this.input, showWorkflowExecutionResponse.input)
-            && Objects.equals(this.output, showWorkflowExecutionResponse.output)
-            && Objects.equals(this.beginTime, showWorkflowExecutionResponse.beginTime)
-            && Objects.equals(this.endTime, showWorkflowExecutionResponse.endTime)
-            && Objects.equals(this.lastUpdateTime, showWorkflowExecutionResponse.lastUpdateTime)
-            && Objects.equals(this.createdBy, showWorkflowExecutionResponse.createdBy)
-            && Objects.equals(this.nodeExecutionDetails, showWorkflowExecutionResponse.nodeExecutionDetails);
+        ShowWorkflowExecutionResponse that = (ShowWorkflowExecutionResponse) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.workflowUrn, that.workflowUrn)
+            && Objects.equals(this.executionId, that.executionId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.headers, that.headers) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.nodeExecutionDetails, that.nodeExecutionDetails);
     }
 
     @Override

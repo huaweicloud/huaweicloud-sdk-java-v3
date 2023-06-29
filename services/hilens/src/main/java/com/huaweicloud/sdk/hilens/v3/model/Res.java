@@ -99,16 +99,16 @@ public class Res {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Res res = (Res) o;
-        return Objects.equals(this.cpu, res.cpu) && Objects.equals(this.gpu, res.gpu)
-            && Objects.equals(this.memory, res.memory) && Objects.equals(this.npu, res.npu);
+        Res that = (Res) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.gpu, that.gpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.npu, that.npu);
     }
 
     @Override

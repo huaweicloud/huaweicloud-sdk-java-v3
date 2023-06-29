@@ -246,22 +246,19 @@ public class PolicyDefinition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyDefinition policyDefinition = (PolicyDefinition) o;
-        return Objects.equals(this.id, policyDefinition.id) && Objects.equals(this.name, policyDefinition.name)
-            && Objects.equals(this.policyType, policyDefinition.policyType)
-            && Objects.equals(this.description, policyDefinition.description)
-            && Objects.equals(this.policyRuleType, policyDefinition.policyRuleType)
-            && Objects.equals(this.policyRule, policyDefinition.policyRule)
-            && Objects.equals(this.triggerType, policyDefinition.triggerType)
-            && Objects.equals(this.keywords, policyDefinition.keywords)
-            && Objects.equals(this.parameters, policyDefinition.parameters);
+        PolicyDefinition that = (PolicyDefinition) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyType, that.policyType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyRuleType, that.policyRuleType)
+            && Objects.equals(this.policyRule, that.policyRule) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

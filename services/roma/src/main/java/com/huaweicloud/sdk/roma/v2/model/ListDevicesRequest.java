@@ -331,28 +331,22 @@ public class ListDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesRequest listDevicesRequest = (ListDevicesRequest) o;
-        return Objects.equals(this.instanceId, listDevicesRequest.instanceId)
-            && Objects.equals(this.limit, listDevicesRequest.limit)
-            && Objects.equals(this.offset, listDevicesRequest.offset)
-            && Objects.equals(this.appId, listDevicesRequest.appId)
-            && Objects.equals(this.productId, listDevicesRequest.productId)
-            && Objects.equals(this.productName, listDevicesRequest.productName)
-            && Objects.equals(this.deviceName, listDevicesRequest.deviceName)
-            && Objects.equals(this.clientId, listDevicesRequest.clientId)
-            && Objects.equals(this.nodeId, listDevicesRequest.nodeId)
-            && Objects.equals(this.nodeType, listDevicesRequest.nodeType)
-            && Objects.equals(this.onlineStatus, listDevicesRequest.onlineStatus)
-            && Objects.equals(this.createdDateStart, listDevicesRequest.createdDateStart)
-            && Objects.equals(this.createdDateEnd, listDevicesRequest.createdDateEnd)
-            && Objects.equals(this.tag, listDevicesRequest.tag);
+        ListDevicesRequest that = (ListDevicesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.createdDateStart, that.createdDateStart)
+            && Objects.equals(this.createdDateEnd, that.createdDateEnd) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

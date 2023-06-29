@@ -78,17 +78,16 @@ public class ShowJobSuccessRatioResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobSuccessRatioResponse showJobSuccessRatioResponse = (ShowJobSuccessRatioResponse) o;
-        return Objects.equals(this.successCount, showJobSuccessRatioResponse.successCount)
-            && Objects.equals(this.totalCount, showJobSuccessRatioResponse.totalCount)
-            && Objects.equals(this.successRatio, showJobSuccessRatioResponse.successRatio);
+        ShowJobSuccessRatioResponse that = (ShowJobSuccessRatioResponse) obj;
+        return Objects.equals(this.successCount, that.successCount) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.successRatio, that.successRatio);
     }
 
     @Override

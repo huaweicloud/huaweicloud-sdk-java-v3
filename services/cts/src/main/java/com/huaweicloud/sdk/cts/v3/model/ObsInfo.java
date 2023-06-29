@@ -85,22 +85,15 @@ public class ObsInfo {
             if (value == null) {
                 return null;
             }
-            CompressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompressTypeEnum(value));
         }
 
         public static CompressTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -249,21 +242,21 @@ public class ObsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsInfo obsInfo = (ObsInfo) o;
-        return Objects.equals(this.bucketName, obsInfo.bucketName)
-            && Objects.equals(this.filePrefixName, obsInfo.filePrefixName)
-            && Objects.equals(this.isObsCreated, obsInfo.isObsCreated)
-            && Objects.equals(this.isAuthorizedBucket, obsInfo.isAuthorizedBucket)
-            && Objects.equals(this.bucketLifecycle, obsInfo.bucketLifecycle)
-            && Objects.equals(this.compressType, obsInfo.compressType)
-            && Objects.equals(this.isSortByService, obsInfo.isSortByService);
+        ObsInfo that = (ObsInfo) obj;
+        return Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.filePrefixName, that.filePrefixName)
+            && Objects.equals(this.isObsCreated, that.isObsCreated)
+            && Objects.equals(this.isAuthorizedBucket, that.isAuthorizedBucket)
+            && Objects.equals(this.bucketLifecycle, that.bucketLifecycle)
+            && Objects.equals(this.compressType, that.compressType)
+            && Objects.equals(this.isSortByService, that.isSortByService);
     }
 
     @Override

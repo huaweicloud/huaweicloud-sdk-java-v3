@@ -55,16 +55,15 @@ public class ShowDetailsOfVpcChannelV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfVpcChannelV2Request showDetailsOfVpcChannelV2Request = (ShowDetailsOfVpcChannelV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfVpcChannelV2Request.instanceId)
-            && Objects.equals(this.vpcChannelId, showDetailsOfVpcChannelV2Request.vpcChannelId);
+        ShowDetailsOfVpcChannelV2Request that = (ShowDetailsOfVpcChannelV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId);
     }
 
     @Override

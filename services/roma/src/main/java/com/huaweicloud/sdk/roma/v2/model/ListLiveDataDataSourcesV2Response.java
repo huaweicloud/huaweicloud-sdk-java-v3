@@ -97,17 +97,16 @@ public class ListLiveDataDataSourcesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataDataSourcesV2Response listLiveDataDataSourcesV2Response = (ListLiveDataDataSourcesV2Response) o;
-        return Objects.equals(this.size, listLiveDataDataSourcesV2Response.size)
-            && Objects.equals(this.total, listLiveDataDataSourcesV2Response.total)
-            && Objects.equals(this.dataSources, listLiveDataDataSourcesV2Response.dataSources);
+        ListLiveDataDataSourcesV2Response that = (ListLiveDataDataSourcesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.dataSources, that.dataSources);
     }
 
     @Override

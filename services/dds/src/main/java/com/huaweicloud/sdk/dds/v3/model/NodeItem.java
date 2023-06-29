@@ -187,19 +187,19 @@ public class NodeItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeItem nodeItem = (NodeItem) o;
-        return Objects.equals(this.id, nodeItem.id) && Objects.equals(this.name, nodeItem.name)
-            && Objects.equals(this.status, nodeItem.status) && Objects.equals(this.role, nodeItem.role)
-            && Objects.equals(this.privateIp, nodeItem.privateIp) && Objects.equals(this.publicIp, nodeItem.publicIp)
-            && Objects.equals(this.specCode, nodeItem.specCode)
-            && Objects.equals(this.availabilityZone, nodeItem.availabilityZone);
+        NodeItem that = (NodeItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

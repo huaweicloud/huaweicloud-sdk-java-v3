@@ -55,16 +55,15 @@ public class ProtectedInstanceAttachment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectedInstanceAttachment protectedInstanceAttachment = (ProtectedInstanceAttachment) o;
-        return Objects.equals(this.replication, protectedInstanceAttachment.replication)
-            && Objects.equals(this.device, protectedInstanceAttachment.device);
+        ProtectedInstanceAttachment that = (ProtectedInstanceAttachment) obj;
+        return Objects.equals(this.replication, that.replication) && Objects.equals(this.device, that.device);
     }
 
     @Override

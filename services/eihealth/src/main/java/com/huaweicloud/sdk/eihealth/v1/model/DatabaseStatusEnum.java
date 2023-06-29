@@ -76,22 +76,15 @@ public class DatabaseStatusEnum {
         if (value == null) {
             return null;
         }
-        DatabaseStatusEnum result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new DatabaseStatusEnum(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatabaseStatusEnum(value));
     }
 
     public static DatabaseStatusEnum valueOf(String value) {
         if (value == null) {
             return null;
         }
-        DatabaseStatusEnum result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

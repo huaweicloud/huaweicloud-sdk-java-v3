@@ -281,25 +281,20 @@ public class AnimatedGraphicsTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnimatedGraphicsTask animatedGraphicsTask = (AnimatedGraphicsTask) o;
-        return Objects.equals(this.taskId, animatedGraphicsTask.taskId)
-            && Objects.equals(this.status, animatedGraphicsTask.status)
-            && Objects.equals(this.createTime, animatedGraphicsTask.createTime)
-            && Objects.equals(this.startTime, animatedGraphicsTask.startTime)
-            && Objects.equals(this.endTime, animatedGraphicsTask.endTime)
-            && Objects.equals(this.errorCode, animatedGraphicsTask.errorCode)
-            && Objects.equals(this.description, animatedGraphicsTask.description)
-            && Objects.equals(this.userData, animatedGraphicsTask.userData)
-            && Objects.equals(this.input, animatedGraphicsTask.input)
-            && Objects.equals(this.output, animatedGraphicsTask.output)
-            && Objects.equals(this.outputParam, animatedGraphicsTask.outputParam);
+        AnimatedGraphicsTask that = (AnimatedGraphicsTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputParam, that.outputParam);
     }
 
     @Override

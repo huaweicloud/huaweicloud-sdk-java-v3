@@ -99,18 +99,17 @@ public class ListAntileakageRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAntileakageRulesRequest listAntileakageRulesRequest = (ListAntileakageRulesRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listAntileakageRulesRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, listAntileakageRulesRequest.policyId)
-            && Objects.equals(this.offset, listAntileakageRulesRequest.offset)
-            && Objects.equals(this.limit, listAntileakageRulesRequest.limit);
+        ListAntileakageRulesRequest that = (ListAntileakageRulesRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreatePreheatingTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePreheatingTasksResponse createPreheatingTasksResponse = (CreatePreheatingTasksResponse) o;
-        return Objects.equals(this.preheatingTask, createPreheatingTasksResponse.preheatingTask);
+        CreatePreheatingTasksResponse that = (CreatePreheatingTasksResponse) obj;
+        return Objects.equals(this.preheatingTask, that.preheatingTask);
     }
 
     @Override

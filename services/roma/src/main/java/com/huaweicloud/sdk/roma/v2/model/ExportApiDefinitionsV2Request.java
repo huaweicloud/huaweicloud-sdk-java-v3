@@ -91,16 +91,15 @@ public class ExportApiDefinitionsV2Request implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportApiDefinitionsV2Request exportApiDefinitionsV2Request = (ExportApiDefinitionsV2Request) o;
-        return Objects.equals(this.instanceId, exportApiDefinitionsV2Request.instanceId)
-            && Objects.equals(this.body, exportApiDefinitionsV2Request.body);
+        ExportApiDefinitionsV2Request that = (ExportApiDefinitionsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

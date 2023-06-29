@@ -85,17 +85,16 @@ public class ShowAggregateComplianceDetailsByPolicyAssignmentResponse extends Sd
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregateComplianceDetailsByPolicyAssignmentResponse showAggregateComplianceDetailsByPolicyAssignmentResponse =
-            (ShowAggregateComplianceDetailsByPolicyAssignmentResponse) o;
-        return Objects.equals(this.policyStates, showAggregateComplianceDetailsByPolicyAssignmentResponse.policyStates)
-            && Objects.equals(this.pageInfo, showAggregateComplianceDetailsByPolicyAssignmentResponse.pageInfo);
+        ShowAggregateComplianceDetailsByPolicyAssignmentResponse that =
+            (ShowAggregateComplianceDetailsByPolicyAssignmentResponse) obj;
+        return Objects.equals(this.policyStates, that.policyStates) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

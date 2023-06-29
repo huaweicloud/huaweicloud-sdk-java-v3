@@ -144,20 +144,17 @@ public class GlanceUpdateImageMemberResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceUpdateImageMemberResponse glanceUpdateImageMemberResponse = (GlanceUpdateImageMemberResponse) o;
-        return Objects.equals(this.status, glanceUpdateImageMemberResponse.status)
-            && Objects.equals(this.createdAt, glanceUpdateImageMemberResponse.createdAt)
-            && Objects.equals(this.updatedAt, glanceUpdateImageMemberResponse.updatedAt)
-            && Objects.equals(this.imageId, glanceUpdateImageMemberResponse.imageId)
-            && Objects.equals(this.memberId, glanceUpdateImageMemberResponse.memberId)
-            && Objects.equals(this.schema, glanceUpdateImageMemberResponse.schema);
+        GlanceUpdateImageMemberResponse that = (GlanceUpdateImageMemberResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.schema, that.schema);
     }
 
     @Override

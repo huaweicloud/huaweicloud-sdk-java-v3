@@ -56,16 +56,15 @@ public class ConfirmImageUploadResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmImageUploadResponse confirmImageUploadResponse = (ConfirmImageUploadResponse) o;
-        return Objects.equals(this.id, confirmImageUploadResponse.id)
-            && Objects.equals(this.imageUrl, confirmImageUploadResponse.imageUrl);
+        ConfirmImageUploadResponse that = (ConfirmImageUploadResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.imageUrl, that.imageUrl);
     }
 
     @Override

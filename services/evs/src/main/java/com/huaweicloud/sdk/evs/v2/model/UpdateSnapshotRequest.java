@@ -65,16 +65,15 @@ public class UpdateSnapshotRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSnapshotRequest updateSnapshotRequest = (UpdateSnapshotRequest) o;
-        return Objects.equals(this.snapshotId, updateSnapshotRequest.snapshotId)
-            && Objects.equals(this.body, updateSnapshotRequest.body);
+        UpdateSnapshotRequest that = (UpdateSnapshotRequest) obj;
+        return Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.body, that.body);
     }
 
     @Override

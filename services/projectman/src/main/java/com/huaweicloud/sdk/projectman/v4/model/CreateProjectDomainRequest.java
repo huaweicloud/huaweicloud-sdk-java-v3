@@ -65,16 +65,15 @@ public class CreateProjectDomainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectDomainRequest createProjectDomainRequest = (CreateProjectDomainRequest) o;
-        return Objects.equals(this.projectId, createProjectDomainRequest.projectId)
-            && Objects.equals(this.body, createProjectDomainRequest.body);
+        CreateProjectDomainRequest that = (CreateProjectDomainRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

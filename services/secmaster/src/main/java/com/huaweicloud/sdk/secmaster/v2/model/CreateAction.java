@@ -121,19 +121,17 @@ public class CreateAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAction createAction = (CreateAction) o;
-        return Objects.equals(this.name, createAction.name)
-            && Objects.equals(this.description, createAction.description)
-            && Objects.equals(this.actionType, createAction.actionType)
-            && Objects.equals(this.actionId, createAction.actionId)
-            && Objects.equals(this.sortOrder, createAction.sortOrder);
+        CreateAction that = (CreateAction) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.sortOrder, that.sortOrder);
     }
 
     @Override

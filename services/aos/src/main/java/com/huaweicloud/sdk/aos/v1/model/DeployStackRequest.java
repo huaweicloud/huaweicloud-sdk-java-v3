@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.DeployStackRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class DeployStackRequest  {
-
+public class DeployStackRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Client-Request-Id")
-    
+    @JsonProperty(value = "Client-Request-Id")
 
     private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_name")
-    
+    @JsonProperty(value = "stack_name")
 
     private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private DeployStackRequestBody body;
 
@@ -41,9 +30,6 @@ public class DeployStackRequest  {
         this.clientRequestId = clientRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -57,15 +43,10 @@ public class DeployStackRequest  {
         this.clientRequestId = clientRequestId;
     }
 
-    
-
     public DeployStackRequest withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -79,22 +60,19 @@ public class DeployStackRequest  {
         this.stackName = stackName;
     }
 
-    
-
     public DeployStackRequest withBody(DeployStackRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DeployStackRequest withBody(Consumer<DeployStackRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new DeployStackRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class DeployStackRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeployStackRequest deployStackRequest = (DeployStackRequest) o;
-        return Objects.equals(this.clientRequestId, deployStackRequest.clientRequestId) &&
-            Objects.equals(this.stackName, deployStackRequest.stackName) &&
-            Objects.equals(this.body, deployStackRequest.body);
+        DeployStackRequest that = (DeployStackRequest) obj;
+        return Objects.equals(this.clientRequestId, that.clientRequestId)
+            && Objects.equals(this.stackName, that.stackName) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientRequestId, stackName, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class DeployStackRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class DeployStackRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

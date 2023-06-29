@@ -43,15 +43,15 @@ public class EncryptDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDataReq encryptDataReq = (EncryptDataReq) o;
-        return Objects.equals(this.encryptData, encryptDataReq.encryptData);
+        EncryptDataReq that = (EncryptDataReq) obj;
+        return Objects.equals(this.encryptData, that.encryptData);
     }
 
     @Override

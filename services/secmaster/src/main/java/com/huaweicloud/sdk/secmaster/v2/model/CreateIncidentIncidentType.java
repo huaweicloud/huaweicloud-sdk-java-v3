@@ -99,18 +99,16 @@ public class CreateIncidentIncidentType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIncidentIncidentType createIncidentIncidentType = (CreateIncidentIncidentType) o;
-        return Objects.equals(this.id, createIncidentIncidentType.id)
-            && Objects.equals(this.layoutId, createIncidentIncidentType.layoutId)
-            && Objects.equals(this.incidentType, createIncidentIncidentType.incidentType)
-            && Objects.equals(this.category, createIncidentIncidentType.category);
+        CreateIncidentIncidentType that = (CreateIncidentIncidentType) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.layoutId, that.layoutId)
+            && Objects.equals(this.incidentType, that.incidentType) && Objects.equals(this.category, that.category);
     }
 
     @Override

@@ -267,24 +267,20 @@ public class ShowTableSchemaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTableSchemaResponse showTableSchemaResponse = (ShowTableSchemaResponse) o;
-        return Objects.equals(this.tableId, showTableSchemaResponse.tableId)
-            && Objects.equals(this.tableName, showTableSchemaResponse.tableName)
-            && Objects.equals(this.tableAlias, showTableSchemaResponse.tableAlias)
-            && Objects.equals(this.tags, showTableSchemaResponse.tags)
-            && Objects.equals(this.columnCount, showTableSchemaResponse.columnCount)
-            && Objects.equals(this.columns, showTableSchemaResponse.columns)
-            && Objects.equals(this.tableType, showTableSchemaResponse.tableType)
-            && Objects.equals(this.dataType, showTableSchemaResponse.dataType)
-            && Objects.equals(this.dataLocation, showTableSchemaResponse.dataLocation)
-            && Objects.equals(this.storageProperties, showTableSchemaResponse.storageProperties);
+        ShowTableSchemaResponse that = (ShowTableSchemaResponse) obj;
+        return Objects.equals(this.tableId, that.tableId) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableAlias, that.tableAlias) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.columnCount, that.columnCount) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataLocation, that.dataLocation)
+            && Objects.equals(this.storageProperties, that.storageProperties);
     }
 
     @Override

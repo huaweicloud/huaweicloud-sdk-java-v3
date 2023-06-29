@@ -137,18 +137,17 @@ public class CheckDataTransformationReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckDataTransformationReq checkDataTransformationReq = (CheckDataTransformationReq) o;
-        return Objects.equals(this.jobId, checkDataTransformationReq.jobId)
-            && Objects.equals(this.objectInfo, checkDataTransformationReq.objectInfo)
-            && Objects.equals(this.transformationInfo, checkDataTransformationReq.transformationInfo)
-            && Objects.equals(this.configTransformation, checkDataTransformationReq.configTransformation);
+        CheckDataTransformationReq that = (CheckDataTransformationReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.objectInfo, that.objectInfo)
+            && Objects.equals(this.transformationInfo, that.transformationInfo)
+            && Objects.equals(this.configTransformation, that.configTransformation);
     }
 
     @Override

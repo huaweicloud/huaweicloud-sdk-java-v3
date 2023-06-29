@@ -165,21 +165,20 @@ public class ImportCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportCertificateRequestBody importCertificateRequestBody = (ImportCertificateRequestBody) o;
-        return Objects.equals(this.name, importCertificateRequestBody.name)
-            && Objects.equals(this.certificate, importCertificateRequestBody.certificate)
-            && Objects.equals(this.certificateChain, importCertificateRequestBody.certificateChain)
-            && Objects.equals(this.privateKey, importCertificateRequestBody.privateKey)
-            && Objects.equals(this.enterpriseProjectId, importCertificateRequestBody.enterpriseProjectId)
-            && Objects.equals(this.encCertificate, importCertificateRequestBody.encCertificate)
-            && Objects.equals(this.encPrivateKey, importCertificateRequestBody.encPrivateKey);
+        ImportCertificateRequestBody that = (ImportCertificateRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.certificateChain, that.certificateChain)
+            && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.encCertificate, that.encCertificate)
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
     }
 
     @Override

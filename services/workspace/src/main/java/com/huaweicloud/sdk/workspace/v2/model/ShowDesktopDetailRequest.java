@@ -33,15 +33,15 @@ public class ShowDesktopDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDesktopDetailRequest showDesktopDetailRequest = (ShowDesktopDetailRequest) o;
-        return Objects.equals(this.desktopId, showDesktopDetailRequest.desktopId);
+        ShowDesktopDetailRequest that = (ShowDesktopDetailRequest) obj;
+        return Objects.equals(this.desktopId, that.desktopId);
     }
 
     @Override

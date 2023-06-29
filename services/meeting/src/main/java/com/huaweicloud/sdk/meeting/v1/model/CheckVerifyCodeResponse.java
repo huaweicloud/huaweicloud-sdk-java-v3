@@ -56,16 +56,15 @@ public class CheckVerifyCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckVerifyCodeResponse checkVerifyCodeResponse = (CheckVerifyCodeResponse) o;
-        return Objects.equals(this.token, checkVerifyCodeResponse.token)
-            && Objects.equals(this.expire, checkVerifyCodeResponse.expire);
+        CheckVerifyCodeResponse that = (CheckVerifyCodeResponse) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.expire, that.expire);
     }
 
     @Override

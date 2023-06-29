@@ -113,22 +113,15 @@ public class CreateRecordIndexResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocationEnum(value));
         }
 
         public static LocationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -395,27 +388,21 @@ public class CreateRecordIndexResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRecordIndexResponse createRecordIndexResponse = (CreateRecordIndexResponse) o;
-        return Objects.equals(this.indexUrl, createRecordIndexResponse.indexUrl)
-            && Objects.equals(this.publishDomain, createRecordIndexResponse.publishDomain)
-            && Objects.equals(this.app, createRecordIndexResponse.app)
-            && Objects.equals(this.stream, createRecordIndexResponse.stream)
-            && Objects.equals(this.startTime, createRecordIndexResponse.startTime)
-            && Objects.equals(this.endTime, createRecordIndexResponse.endTime)
-            && Objects.equals(this.duration, createRecordIndexResponse.duration)
-            && Objects.equals(this.width, createRecordIndexResponse.width)
-            && Objects.equals(this.height, createRecordIndexResponse.height)
-            && Objects.equals(this.location, createRecordIndexResponse.location)
-            && Objects.equals(this.bucket, createRecordIndexResponse.bucket)
-            && Objects.equals(this._object, createRecordIndexResponse._object)
-            && Objects.equals(this.xRequestId, createRecordIndexResponse.xRequestId);
+        CreateRecordIndexResponse that = (CreateRecordIndexResponse) obj;
+        return Objects.equals(this.indexUrl, that.indexUrl) && Objects.equals(this.publishDomain, that.publishDomain)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.stream, that.stream)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

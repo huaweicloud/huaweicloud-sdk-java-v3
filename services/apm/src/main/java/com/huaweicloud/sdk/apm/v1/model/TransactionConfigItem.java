@@ -209,23 +209,19 @@ public class TransactionConfigItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransactionConfigItem transactionConfigItem = (TransactionConfigItem) o;
-        return Objects.equals(this.id, transactionConfigItem.id)
-            && Objects.equals(this.businessId, transactionConfigItem.businessId)
-            && Objects.equals(this.envId, transactionConfigItem.envId)
-            && Objects.equals(this.method, transactionConfigItem.method)
-            && Objects.equals(this.envName, transactionConfigItem.envName)
-            && Objects.equals(this.region, transactionConfigItem.region)
-            && Objects.equals(this.type, transactionConfigItem.type)
-            && Objects.equals(this.appName, transactionConfigItem.appName)
-            && Objects.equals(this.url, transactionConfigItem.url);
+        TransactionConfigItem that = (TransactionConfigItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

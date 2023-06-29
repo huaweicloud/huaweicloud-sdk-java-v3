@@ -33,15 +33,15 @@ public class ShowCreateAccountStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCreateAccountStatusRequest showCreateAccountStatusRequest = (ShowCreateAccountStatusRequest) o;
-        return Objects.equals(this.createAccountStatusId, showCreateAccountStatusRequest.createAccountStatusId);
+        ShowCreateAccountStatusRequest that = (ShowCreateAccountStatusRequest) obj;
+        return Objects.equals(this.createAccountStatusId, that.createAccountStatusId);
     }
 
     @Override

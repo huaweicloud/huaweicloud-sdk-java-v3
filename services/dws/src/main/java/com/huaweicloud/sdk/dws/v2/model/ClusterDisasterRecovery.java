@@ -162,20 +162,20 @@ public class ClusterDisasterRecovery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDisasterRecovery clusterDisasterRecovery = (ClusterDisasterRecovery) o;
-        return Objects.equals(this.primaryCluster, clusterDisasterRecovery.primaryCluster)
-            && Objects.equals(this.standbyCluster, clusterDisasterRecovery.standbyCluster)
-            && Objects.equals(this.latestBarrierTime, clusterDisasterRecovery.latestBarrierTime)
-            && Objects.equals(this.lastRecoverySpend, clusterDisasterRecovery.lastRecoverySpend)
-            && Objects.equals(this.recoveryPointObject, clusterDisasterRecovery.recoveryPointObject)
-            && Objects.equals(this.recoveryTimeObject, clusterDisasterRecovery.recoveryTimeObject);
+        ClusterDisasterRecovery that = (ClusterDisasterRecovery) obj;
+        return Objects.equals(this.primaryCluster, that.primaryCluster)
+            && Objects.equals(this.standbyCluster, that.standbyCluster)
+            && Objects.equals(this.latestBarrierTime, that.latestBarrierTime)
+            && Objects.equals(this.lastRecoverySpend, that.lastRecoverySpend)
+            && Objects.equals(this.recoveryPointObject, that.recoveryPointObject)
+            && Objects.equals(this.recoveryTimeObject, that.recoveryTimeObject);
     }
 
     @Override

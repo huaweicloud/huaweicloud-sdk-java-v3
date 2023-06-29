@@ -77,18 +77,16 @@ public class ShowPartitionBeginningMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartitionBeginningMessageRequest showPartitionBeginningMessageRequest =
-            (ShowPartitionBeginningMessageRequest) o;
-        return Objects.equals(this.instanceId, showPartitionBeginningMessageRequest.instanceId)
-            && Objects.equals(this.topic, showPartitionBeginningMessageRequest.topic)
-            && Objects.equals(this.partition, showPartitionBeginningMessageRequest.partition);
+        ShowPartitionBeginningMessageRequest that = (ShowPartitionBeginningMessageRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.partition, that.partition);
     }
 
     @Override

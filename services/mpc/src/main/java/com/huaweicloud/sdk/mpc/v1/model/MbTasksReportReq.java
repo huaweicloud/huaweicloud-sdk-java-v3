@@ -131,19 +131,17 @@ public class MbTasksReportReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MbTasksReportReq mbTasksReportReq = (MbTasksReportReq) o;
-        return Objects.equals(this.taskId, mbTasksReportReq.taskId)
-            && Objects.equals(this.status, mbTasksReportReq.status)
-            && Objects.equals(this.taskName, mbTasksReportReq.taskName)
-            && Objects.equals(this.retry, mbTasksReportReq.retry)
-            && Objects.equals(this.parameter, mbTasksReportReq.parameter);
+        MbTasksReportReq that = (MbTasksReportReq) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.retry, that.retry)
+            && Objects.equals(this.parameter, that.parameter);
     }
 
     @Override

@@ -332,21 +332,21 @@ public class JobDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDto jobDto = (JobDto) o;
-        return Objects.equals(this.name, jobDto.name) && Objects.equals(this.description, jobDto.description)
-            && Objects.equals(this.labels, jobDto.labels) && Objects.equals(this.priority, jobDto.priority)
-            && Objects.equals(this.timeout, jobDto.timeout) && Objects.equals(this.outputDir, jobDto.outputDir)
-            && Objects.equals(this.toolId, jobDto.toolId) && Objects.equals(this.toolType, jobDto.toolType)
-            && Objects.equals(this.tasks, jobDto.tasks) && Objects.equals(this.ioAccId, jobDto.ioAccId)
-            && Objects.equals(this.ioAccExpectedUsage, jobDto.ioAccExpectedUsage)
-            && Objects.equals(this.nodeLabels, jobDto.nodeLabels);
+        JobDto that = (JobDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.toolId, that.toolId) && Objects.equals(this.toolType, that.toolType)
+            && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.ioAccId, that.ioAccId)
+            && Objects.equals(this.ioAccExpectedUsage, that.ioAccExpectedUsage)
+            && Objects.equals(this.nodeLabels, that.nodeLabels);
     }
 
     @Override

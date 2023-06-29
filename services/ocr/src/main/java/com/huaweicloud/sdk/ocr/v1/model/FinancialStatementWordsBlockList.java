@@ -210,20 +210,17 @@ public class FinancialStatementWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinancialStatementWordsBlockList financialStatementWordsBlockList = (FinancialStatementWordsBlockList) o;
-        return Objects.equals(this.words, financialStatementWordsBlockList.words)
-            && Objects.equals(this.location, financialStatementWordsBlockList.location)
-            && Objects.equals(this.confidence, financialStatementWordsBlockList.confidence)
-            && Objects.equals(this.rows, financialStatementWordsBlockList.rows)
-            && Objects.equals(this.columns, financialStatementWordsBlockList.columns)
-            && Objects.equals(this.cellLocation, financialStatementWordsBlockList.cellLocation);
+        FinancialStatementWordsBlockList that = (FinancialStatementWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.rows, that.rows)
+            && Objects.equals(this.columns, that.columns) && Objects.equals(this.cellLocation, that.cellLocation);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ApplicationModifyInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationModifyInfo applicationModifyInfo = (ApplicationModifyInfo) o;
-        return Objects.equals(this.name, applicationModifyInfo.name)
-            && Objects.equals(this.description, applicationModifyInfo.description)
-            && Objects.equals(this.icon, applicationModifyInfo.icon);
+        ApplicationModifyInfo that = (ApplicationModifyInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.icon, that.icon);
     }
 
     @Override

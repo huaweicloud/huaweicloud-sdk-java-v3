@@ -60,22 +60,15 @@ public class GlanceUpdateImageMemberRequestBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class GlanceUpdateImageMemberRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceUpdateImageMemberRequestBody glanceUpdateImageMemberRequestBody = (GlanceUpdateImageMemberRequestBody) o;
-        return Objects.equals(this.status, glanceUpdateImageMemberRequestBody.status)
-            && Objects.equals(this.vaultId, glanceUpdateImageMemberRequestBody.vaultId);
+        GlanceUpdateImageMemberRequestBody that = (GlanceUpdateImageMemberRequestBody) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

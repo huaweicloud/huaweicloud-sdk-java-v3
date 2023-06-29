@@ -65,16 +65,15 @@ public class CreateOrUpdateAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrUpdateAssetRequest createOrUpdateAssetRequest = (CreateOrUpdateAssetRequest) o;
-        return Objects.equals(this.workspace, createOrUpdateAssetRequest.workspace)
-            && Objects.equals(this.body, createOrUpdateAssetRequest.body);
+        CreateOrUpdateAssetRequest that = (CreateOrUpdateAssetRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

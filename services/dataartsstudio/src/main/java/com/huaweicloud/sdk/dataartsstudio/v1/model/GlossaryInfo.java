@@ -122,18 +122,17 @@ public class GlossaryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlossaryInfo glossaryInfo = (GlossaryInfo) o;
-        return Objects.equals(this.name, glossaryInfo.name)
-            && Objects.equals(this.description, glossaryInfo.description)
-            && Objects.equals(this.guid, glossaryInfo.guid) && Objects.equals(this.createUser, glossaryInfo.createUser)
-            && Objects.equals(this.createTime, glossaryInfo.createTime);
+        GlossaryInfo that = (GlossaryInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.guid, that.guid) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

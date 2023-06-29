@@ -24,15 +24,15 @@ package com.huaweicloud.sdk.core.http;
 import java.util.Optional;
 
 /**
- * @param <ReqT> 字段类型
+ * @param <R> 字段类型
  * @author HuaweiCloud_SDK
  */
-public interface Field<ReqT, FieldT> {
+public interface Field<R, F> {
     String getName();
 
     LocationType getLocation();
 
-    Class<FieldT> getFieldType();
+    Class<F> getFieldType();
 
     Class<?> getInnerContainerType();
 
@@ -45,7 +45,7 @@ public interface Field<ReqT, FieldT> {
      * @param request
      * @return
      */
-    boolean isValueProvided(ReqT request);
+    boolean isValueProvided(R request);
 
     /**
      * 读取请求中指定字段的值，校验请求参数是否满足 FieldExistence 的限制
@@ -53,7 +53,7 @@ public interface Field<ReqT, FieldT> {
      * @param request 请求
      * @return 可为空的字段值
      */
-    Optional<FieldT> readValue(ReqT request);
+    Optional<F> readValue(R request);
 
     /**
      * 读取请求中指定字段的值，同时不校验请求参数是否满足 FieldExistence 的限制
@@ -61,9 +61,9 @@ public interface Field<ReqT, FieldT> {
      * @param request 请求
      * @return 可为空的字段值
      */
-    Optional<FieldT> readValueNoValidation(ReqT request);
+    Optional<F> readValueNoValidation(R request);
 
-    void writeValue(ReqT request, FieldT value, Class<FieldT> clazz);
+    void writeValue(R request, F value, Class<F> clazz);
 
     /**
      * 内部会做类型校验
@@ -72,5 +72,5 @@ public interface Field<ReqT, FieldT> {
      * @param value
      * @param clazz
      */
-    void writeValueSafe(ReqT request, Object value, Class<?> clazz);
+    void writeValueSafe(R request, Object value, Class<?> clazz);
 }

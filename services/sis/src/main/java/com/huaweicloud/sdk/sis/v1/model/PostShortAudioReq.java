@@ -65,16 +65,15 @@ public class PostShortAudioReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostShortAudioReq postShortAudioReq = (PostShortAudioReq) o;
-        return Objects.equals(this.config, postShortAudioReq.config)
-            && Objects.equals(this.data, postShortAudioReq.data);
+        PostShortAudioReq that = (PostShortAudioReq) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.data, that.data);
     }
 
     @Override

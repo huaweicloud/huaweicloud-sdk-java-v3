@@ -55,16 +55,15 @@ public class IgnorePathSettingItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IgnorePathSettingItem ignorePathSettingItem = (IgnorePathSettingItem) o;
-        return Objects.equals(this.filePath, ignorePathSettingItem.filePath)
-            && Objects.equals(this.checkboxStatus, ignorePathSettingItem.checkboxStatus);
+        IgnorePathSettingItem that = (IgnorePathSettingItem) obj;
+        return Objects.equals(this.filePath, that.filePath) && Objects.equals(this.checkboxStatus, that.checkboxStatus);
     }
 
     @Override

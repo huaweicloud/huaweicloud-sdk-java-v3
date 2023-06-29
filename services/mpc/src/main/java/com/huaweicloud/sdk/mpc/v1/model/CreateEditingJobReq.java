@@ -351,24 +351,20 @@ public class CreateEditingJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEditingJobReq createEditingJobReq = (CreateEditingJobReq) o;
-        return Objects.equals(this.editType, createEditingJobReq.editType)
-            && Objects.equals(this.clips, createEditingJobReq.clips)
-            && Objects.equals(this.concats, createEditingJobReq.concats)
-            && Objects.equals(this.concat, createEditingJobReq.concat)
-            && Objects.equals(this.mix, createEditingJobReq.mix)
-            && Objects.equals(this.input, createEditingJobReq.input)
-            && Objects.equals(this.outputSetting, createEditingJobReq.outputSetting)
-            && Objects.equals(this.imageWatermarkSettings, createEditingJobReq.imageWatermarkSettings)
-            && Objects.equals(this.editSettings, createEditingJobReq.editSettings)
-            && Objects.equals(this.userData, createEditingJobReq.userData);
+        CreateEditingJobReq that = (CreateEditingJobReq) obj;
+        return Objects.equals(this.editType, that.editType) && Objects.equals(this.clips, that.clips)
+            && Objects.equals(this.concats, that.concats) && Objects.equals(this.concat, that.concat)
+            && Objects.equals(this.mix, that.mix) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.outputSetting, that.outputSetting)
+            && Objects.equals(this.imageWatermarkSettings, that.imageWatermarkSettings)
+            && Objects.equals(this.editSettings, that.editSettings) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

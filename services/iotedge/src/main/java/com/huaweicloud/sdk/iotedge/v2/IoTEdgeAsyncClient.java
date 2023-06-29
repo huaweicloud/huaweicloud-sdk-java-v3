@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.iotedge.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.iotedge.v2.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class IoTEdgeAsyncClient {
+
     protected HcClient hcClient;
 
     public IoTEdgeAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class IoTEdgeAsyncClient {
     public static ClientBuilder<IoTEdgeAsyncClient> newBuilder() {
         return new ClientBuilder<>(IoTEdgeAsyncClient::new);
     }
-
 
     /**
      * 创建边缘节点
@@ -43,8 +43,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateEdgeNodeRequest 请求对象
      * @return AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>
      */
-    public AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNodeAsyncInvoker(CreateEdgeNodeRequest request) {
-        return new AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>(request, IoTEdgeMeta.createEdgeNode, hcClient);
+    public AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNodeAsyncInvoker(
+        CreateEdgeNodeRequest request) {
+        return new AsyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>(request, IoTEdgeMeta.createEdgeNode,
+            hcClient);
     }
 
     /**
@@ -71,8 +73,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateInstallCmdRequest 请求对象
      * @return AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>
      */
-    public AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdAsyncInvoker(CreateInstallCmdRequest request) {
-        return new AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request, IoTEdgeMeta.createInstallCmd, hcClient);
+    public AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdAsyncInvoker(
+        CreateInstallCmdRequest request) {
+        return new AsyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request,
+            IoTEdgeMeta.createInstallCmd, hcClient);
     }
 
     /**
@@ -99,8 +103,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteEdgeNodeRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>
      */
-    public AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNodeAsyncInvoker(DeleteEdgeNodeRequest request) {
-        return new AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>(request, IoTEdgeMeta.deleteEdgeNode, hcClient);
+    public AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNodeAsyncInvoker(
+        DeleteEdgeNodeRequest request) {
+        return new AsyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>(request, IoTEdgeMeta.deleteEdgeNode,
+            hcClient);
     }
 
     /**
@@ -127,8 +133,10 @@ public class IoTEdgeAsyncClient {
      * @param ListEdgeNodesRequest 请求对象
      * @return AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>
      */
-    public AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodesAsyncInvoker(ListEdgeNodesRequest request) {
-        return new AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>(request, IoTEdgeMeta.listEdgeNodes, hcClient);
+    public AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodesAsyncInvoker(
+        ListEdgeNodesRequest request) {
+        return new AsyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>(request, IoTEdgeMeta.listEdgeNodes,
+            hcClient);
     }
 
     /**
@@ -155,7 +163,8 @@ public class IoTEdgeAsyncClient {
      * @param ShowEdgeNodeRequest 请求对象
      * @return AsyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>
      */
-    public AsyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNodeAsyncInvoker(ShowEdgeNodeRequest request) {
+    public AsyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse> showEdgeNodeAsyncInvoker(
+        ShowEdgeNodeRequest request) {
         return new AsyncInvoker<ShowEdgeNodeRequest, ShowEdgeNodeResponse>(request, IoTEdgeMeta.showEdgeNode, hcClient);
     }
 
@@ -211,7 +220,8 @@ public class IoTEdgeAsyncClient {
      * @param DeleteDeviceRequest 请求对象
      * @return AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>
      */
-    public AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse> deleteDeviceAsyncInvoker(DeleteDeviceRequest request) {
+    public AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse> deleteDeviceAsyncInvoker(
+        DeleteDeviceRequest request) {
         return new AsyncInvoker<DeleteDeviceRequest, DeleteDeviceResponse>(request, IoTEdgeMeta.deleteDevice, hcClient);
     }
 
@@ -267,8 +277,10 @@ public class IoTEdgeAsyncClient {
      * @param ShowProductConfigRequest 请求对象
      * @return AsyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>
      */
-    public AsyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfigAsyncInvoker(ShowProductConfigRequest request) {
-        return new AsyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>(request, IoTEdgeMeta.showProductConfig, hcClient);
+    public AsyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfigAsyncInvoker(
+        ShowProductConfigRequest request) {
+        return new AsyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>(request,
+            IoTEdgeMeta.showProductConfig, hcClient);
     }
 
     /**
@@ -295,7 +307,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateDeviceRequest 请求对象
      * @return AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>
      */
-    public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(UpdateDeviceRequest request) {
+    public AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse> updateDeviceAsyncInvoker(
+        UpdateDeviceRequest request) {
         return new AsyncInvoker<UpdateDeviceRequest, UpdateDeviceResponse>(request, IoTEdgeMeta.updateDevice, hcClient);
     }
 
@@ -323,8 +336,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListEdgeAppsRequest 请求对象
      * @return AsyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>
      */
-    public AsyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeAppsAsyncInvoker(BatchListEdgeAppsRequest request) {
-        return new AsyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>(request, IoTEdgeMeta.batchListEdgeApps, hcClient);
+    public AsyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeAppsAsyncInvoker(
+        BatchListEdgeAppsRequest request) {
+        return new AsyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>(request,
+            IoTEdgeMeta.batchListEdgeApps, hcClient);
     }
 
     /**
@@ -351,8 +366,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateEdgeAppRequest 请求对象
      * @return AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
      */
-    public AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppAsyncInvoker(CreateEdgeAppRequest request) {
-        return new AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, IoTEdgeMeta.createEdgeApp, hcClient);
+    public AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppAsyncInvoker(
+        CreateEdgeAppRequest request) {
+        return new AsyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, IoTEdgeMeta.createEdgeApp,
+            hcClient);
     }
 
     /**
@@ -379,8 +396,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteEdgeAppRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
      */
-    public AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppAsyncInvoker(DeleteEdgeAppRequest request) {
-        return new AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, IoTEdgeMeta.deleteEdgeApp, hcClient);
+    public AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppAsyncInvoker(
+        DeleteEdgeAppRequest request) {
+        return new AsyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, IoTEdgeMeta.deleteEdgeApp,
+            hcClient);
     }
 
     /**
@@ -421,7 +440,8 @@ public class IoTEdgeAsyncClient {
      * @param BatchListEdgeAppVersionsRequest 请求对象
      * @return CompletableFuture<BatchListEdgeAppVersionsResponse>
      */
-    public CompletableFuture<BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsAsync(BatchListEdgeAppVersionsRequest request) {
+    public CompletableFuture<BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsAsync(
+        BatchListEdgeAppVersionsRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListEdgeAppVersions);
     }
 
@@ -435,8 +455,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListEdgeAppVersionsRequest 请求对象
      * @return AsyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>
      */
-    public AsyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsAsyncInvoker(BatchListEdgeAppVersionsRequest request) {
-        return new AsyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>(request, IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
+    public AsyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsAsyncInvoker(
+        BatchListEdgeAppVersionsRequest request) {
+        return new AsyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>(request,
+            IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
     }
 
     /**
@@ -449,7 +471,8 @@ public class IoTEdgeAsyncClient {
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<CreateEdgeApplicationVersionResponse>
      */
-    public CompletableFuture<CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsync(CreateEdgeApplicationVersionRequest request) {
+    public CompletableFuture<CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsync(
+        CreateEdgeApplicationVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createEdgeApplicationVersion);
     }
 
@@ -463,8 +486,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
      */
-    public AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsyncInvoker(CreateEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request, IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
+    public AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionAsyncInvoker(
+        CreateEdgeApplicationVersionRequest request) {
+        return new AsyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -477,7 +502,8 @@ public class IoTEdgeAsyncClient {
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<DeleteEdgeApplicationVersionResponse>
      */
-    public CompletableFuture<DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsync(DeleteEdgeApplicationVersionRequest request) {
+    public CompletableFuture<DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsync(
+        DeleteEdgeApplicationVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteEdgeApplicationVersion);
     }
 
@@ -491,8 +517,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
      */
-    public AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsyncInvoker(DeleteEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request, IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
+    public AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionAsyncInvoker(
+        DeleteEdgeApplicationVersionRequest request) {
+        return new AsyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -505,7 +533,8 @@ public class IoTEdgeAsyncClient {
      * @param ShowEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<ShowEdgeApplicationVersionResponse>
      */
-    public CompletableFuture<ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsync(ShowEdgeApplicationVersionRequest request) {
+    public CompletableFuture<ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsync(
+        ShowEdgeApplicationVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.showEdgeApplicationVersion);
     }
 
@@ -519,8 +548,10 @@ public class IoTEdgeAsyncClient {
      * @param ShowEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
      */
-    public AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsyncInvoker(ShowEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request, IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
+    public AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionAsyncInvoker(
+        ShowEdgeApplicationVersionRequest request) {
+        return new AsyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -533,7 +564,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return CompletableFuture<UpdateEdgeApplicationVersionResponse>
      */
-    public CompletableFuture<UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsync(UpdateEdgeApplicationVersionRequest request) {
+    public CompletableFuture<UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsync(
+        UpdateEdgeApplicationVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateEdgeApplicationVersion);
     }
 
@@ -547,8 +579,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
      */
-    public AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsyncInvoker(UpdateEdgeApplicationVersionRequest request) {
-        return new AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request, IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
+    public AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionAsyncInvoker(
+        UpdateEdgeApplicationVersionRequest request) {
+        return new AsyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -561,7 +595,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return CompletableFuture<UpdateEdgeApplicationVersionStateResponse>
      */
-    public CompletableFuture<UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsync(UpdateEdgeApplicationVersionStateRequest request) {
+    public CompletableFuture<UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsync(
+        UpdateEdgeApplicationVersionStateRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateEdgeApplicationVersionState);
     }
 
@@ -575,8 +610,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
      */
-    public AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsyncInvoker(UpdateEdgeApplicationVersionStateRequest request) {
-        return new AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
+    public AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateAsyncInvoker(
+        UpdateEdgeApplicationVersionStateRequest request) {
+        return new AsyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
+            request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
     }
 
     /**
@@ -603,8 +640,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListDcDsRequest 请求对象
      * @return AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>
      */
-    public AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDsAsyncInvoker(BatchListDcDsRequest request) {
-        return new AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs, hcClient);
+    public AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDsAsyncInvoker(
+        BatchListDcDsRequest request) {
+        return new AsyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs,
+            hcClient);
     }
 
     /**
@@ -701,7 +740,8 @@ public class IoTEdgeAsyncClient {
      * @param SynchronizeDcConfigsRequest 请求对象
      * @return CompletableFuture<SynchronizeDcConfigsResponse>
      */
-    public CompletableFuture<SynchronizeDcConfigsResponse> synchronizeDcConfigsAsync(SynchronizeDcConfigsRequest request) {
+    public CompletableFuture<SynchronizeDcConfigsResponse> synchronizeDcConfigsAsync(
+        SynchronizeDcConfigsRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.synchronizeDcConfigs);
     }
 
@@ -715,8 +755,10 @@ public class IoTEdgeAsyncClient {
      * @param SynchronizeDcConfigsRequest 请求对象
      * @return AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>
      */
-    public AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsAsyncInvoker(SynchronizeDcConfigsRequest request) {
-        return new AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request, IoTEdgeMeta.synchronizeDcConfigs, hcClient);
+    public AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsAsyncInvoker(
+        SynchronizeDcConfigsRequest request) {
+        return new AsyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request,
+            IoTEdgeMeta.synchronizeDcConfigs, hcClient);
     }
 
     /**
@@ -771,8 +813,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListDcDevicesRequest 请求对象
      * @return AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>
      */
-    public AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesAsyncInvoker(BatchListDcDevicesRequest request) {
-        return new AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request, IoTEdgeMeta.batchListDcDevices, hcClient);
+    public AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesAsyncInvoker(
+        BatchListDcDevicesRequest request) {
+        return new AsyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request,
+            IoTEdgeMeta.batchListDcDevices, hcClient);
     }
 
     /**
@@ -799,8 +843,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListDcPointsRequest 请求对象
      * @return AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>
      */
-    public AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsAsyncInvoker(BatchListDcPointsRequest request) {
-        return new AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request, IoTEdgeMeta.batchListDcPoints, hcClient);
+    public AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsAsyncInvoker(
+        BatchListDcPointsRequest request) {
+        return new AsyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request,
+            IoTEdgeMeta.batchListDcPoints, hcClient);
     }
 
     /**
@@ -827,8 +873,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateDcPointRequest 请求对象
      * @return AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse>
      */
-    public AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse> createDcPointAsyncInvoker(CreateDcPointRequest request) {
-        return new AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint, hcClient);
+    public AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse> createDcPointAsyncInvoker(
+        CreateDcPointRequest request) {
+        return new AsyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint,
+            hcClient);
     }
 
     /**
@@ -855,8 +903,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteDcPointRequest 请求对象
      * @return AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>
      */
-    public AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointAsyncInvoker(DeleteDcPointRequest request) {
-        return new AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint, hcClient);
+    public AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointAsyncInvoker(
+        DeleteDcPointRequest request) {
+        return new AsyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint,
+            hcClient);
     }
 
     /**
@@ -911,8 +961,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateDcPointRequest 请求对象
      * @return AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>
      */
-    public AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPointAsyncInvoker(UpdateDcPointRequest request) {
-        return new AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint, hcClient);
+    public AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPointAsyncInvoker(
+        UpdateDcPointRequest request) {
+        return new AsyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint,
+            hcClient);
     }
 
     /**
@@ -925,7 +977,8 @@ public class IoTEdgeAsyncClient {
      * @param CreateExternalEntityRequest 请求对象
      * @return CompletableFuture<CreateExternalEntityResponse>
      */
-    public CompletableFuture<CreateExternalEntityResponse> createExternalEntityAsync(CreateExternalEntityRequest request) {
+    public CompletableFuture<CreateExternalEntityResponse> createExternalEntityAsync(
+        CreateExternalEntityRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.createExternalEntity);
     }
 
@@ -939,8 +992,10 @@ public class IoTEdgeAsyncClient {
      * @param CreateExternalEntityRequest 请求对象
      * @return AsyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>
      */
-    public AsyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntityAsyncInvoker(CreateExternalEntityRequest request) {
-        return new AsyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>(request, IoTEdgeMeta.createExternalEntity, hcClient);
+    public AsyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntityAsyncInvoker(
+        CreateExternalEntityRequest request) {
+        return new AsyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>(request,
+            IoTEdgeMeta.createExternalEntity, hcClient);
     }
 
     /**
@@ -953,7 +1008,8 @@ public class IoTEdgeAsyncClient {
      * @param DeleteExternalEntityRequest 请求对象
      * @return CompletableFuture<DeleteExternalEntityResponse>
      */
-    public CompletableFuture<DeleteExternalEntityResponse> deleteExternalEntityAsync(DeleteExternalEntityRequest request) {
+    public CompletableFuture<DeleteExternalEntityResponse> deleteExternalEntityAsync(
+        DeleteExternalEntityRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.deleteExternalEntity);
     }
 
@@ -967,8 +1023,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteExternalEntityRequest 请求对象
      * @return AsyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>
      */
-    public AsyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntityAsyncInvoker(DeleteExternalEntityRequest request) {
-        return new AsyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>(request, IoTEdgeMeta.deleteExternalEntity, hcClient);
+    public AsyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntityAsyncInvoker(
+        DeleteExternalEntityRequest request) {
+        return new AsyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>(request,
+            IoTEdgeMeta.deleteExternalEntity, hcClient);
     }
 
     /**
@@ -995,8 +1053,10 @@ public class IoTEdgeAsyncClient {
      * @param ListExternalEntityRequest 请求对象
      * @return AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>
      */
-    public AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityAsyncInvoker(ListExternalEntityRequest request) {
-        return new AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request, IoTEdgeMeta.listExternalEntity, hcClient);
+    public AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityAsyncInvoker(
+        ListExternalEntityRequest request) {
+        return new AsyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request,
+            IoTEdgeMeta.listExternalEntity, hcClient);
     }
 
     /**
@@ -1009,7 +1069,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateExternalEntityRequest 请求对象
      * @return CompletableFuture<UpdateExternalEntityResponse>
      */
-    public CompletableFuture<UpdateExternalEntityResponse> updateExternalEntityAsync(UpdateExternalEntityRequest request) {
+    public CompletableFuture<UpdateExternalEntityResponse> updateExternalEntityAsync(
+        UpdateExternalEntityRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.updateExternalEntity);
     }
 
@@ -1023,8 +1084,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateExternalEntityRequest 请求对象
      * @return AsyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>
      */
-    public AsyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntityAsyncInvoker(UpdateExternalEntityRequest request) {
-        return new AsyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>(request, IoTEdgeMeta.updateExternalEntity, hcClient);
+    public AsyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntityAsyncInvoker(
+        UpdateExternalEntityRequest request) {
+        return new AsyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>(request,
+            IoTEdgeMeta.updateExternalEntity, hcClient);
     }
 
     /**
@@ -1051,8 +1114,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListModulesRequest 请求对象
      * @return AsyncInvoker<BatchListModulesRequest, BatchListModulesResponse>
      */
-    public AsyncInvoker<BatchListModulesRequest, BatchListModulesResponse> batchListModulesAsyncInvoker(BatchListModulesRequest request) {
-        return new AsyncInvoker<BatchListModulesRequest, BatchListModulesResponse>(request, IoTEdgeMeta.batchListModules, hcClient);
+    public AsyncInvoker<BatchListModulesRequest, BatchListModulesResponse> batchListModulesAsyncInvoker(
+        BatchListModulesRequest request) {
+        return new AsyncInvoker<BatchListModulesRequest, BatchListModulesResponse>(request,
+            IoTEdgeMeta.batchListModules, hcClient);
     }
 
     /**
@@ -1079,7 +1144,8 @@ public class IoTEdgeAsyncClient {
      * @param CreateModuleRequest 请求对象
      * @return AsyncInvoker<CreateModuleRequest, CreateModuleResponse>
      */
-    public AsyncInvoker<CreateModuleRequest, CreateModuleResponse> createModuleAsyncInvoker(CreateModuleRequest request) {
+    public AsyncInvoker<CreateModuleRequest, CreateModuleResponse> createModuleAsyncInvoker(
+        CreateModuleRequest request) {
         return new AsyncInvoker<CreateModuleRequest, CreateModuleResponse>(request, IoTEdgeMeta.createModule, hcClient);
     }
 
@@ -1107,7 +1173,8 @@ public class IoTEdgeAsyncClient {
      * @param DeleteModuleRequest 请求对象
      * @return AsyncInvoker<DeleteModuleRequest, DeleteModuleResponse>
      */
-    public AsyncInvoker<DeleteModuleRequest, DeleteModuleResponse> deleteModuleAsyncInvoker(DeleteModuleRequest request) {
+    public AsyncInvoker<DeleteModuleRequest, DeleteModuleResponse> deleteModuleAsyncInvoker(
+        DeleteModuleRequest request) {
         return new AsyncInvoker<DeleteModuleRequest, DeleteModuleResponse>(request, IoTEdgeMeta.deleteModule, hcClient);
     }
 
@@ -1163,7 +1230,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateModuleRequest 请求对象
      * @return AsyncInvoker<UpdateModuleRequest, UpdateModuleResponse>
      */
-    public AsyncInvoker<UpdateModuleRequest, UpdateModuleResponse> updateModuleAsyncInvoker(UpdateModuleRequest request) {
+    public AsyncInvoker<UpdateModuleRequest, UpdateModuleResponse> updateModuleAsyncInvoker(
+        UpdateModuleRequest request) {
         return new AsyncInvoker<UpdateModuleRequest, UpdateModuleResponse>(request, IoTEdgeMeta.updateModule, hcClient);
     }
 
@@ -1191,8 +1259,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateModuleStateRequest 请求对象
      * @return AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>
      */
-    public AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateAsyncInvoker(UpdateModuleStateRequest request) {
-        return new AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request, IoTEdgeMeta.updateModuleState, hcClient);
+    public AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateAsyncInvoker(
+        UpdateModuleStateRequest request) {
+        return new AsyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request,
+            IoTEdgeMeta.updateModuleState, hcClient);
     }
 
     /**
@@ -1247,7 +1317,8 @@ public class IoTEdgeAsyncClient {
      * @param UpdateRoutesRequest 请求对象
      * @return AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>
      */
-    public AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesAsyncInvoker(UpdateRoutesRequest request) {
+    public AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse> updateRoutesAsyncInvoker(
+        UpdateRoutesRequest request) {
         return new AsyncInvoker<UpdateRoutesRequest, UpdateRoutesResponse>(request, IoTEdgeMeta.updateRoutes, hcClient);
     }
 
@@ -1261,7 +1332,8 @@ public class IoTEdgeAsyncClient {
      * @param AddGeneralOtTemplateRequest 请求对象
      * @return CompletableFuture<AddGeneralOtTemplateResponse>
      */
-    public CompletableFuture<AddGeneralOtTemplateResponse> addGeneralOtTemplateAsync(AddGeneralOtTemplateRequest request) {
+    public CompletableFuture<AddGeneralOtTemplateResponse> addGeneralOtTemplateAsync(
+        AddGeneralOtTemplateRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.addGeneralOtTemplate);
     }
 
@@ -1275,8 +1347,10 @@ public class IoTEdgeAsyncClient {
      * @param AddGeneralOtTemplateRequest 请求对象
      * @return AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>
      */
-    public AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateAsyncInvoker(AddGeneralOtTemplateRequest request) {
-        return new AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request, IoTEdgeMeta.addGeneralOtTemplate, hcClient);
+    public AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateAsyncInvoker(
+        AddGeneralOtTemplateRequest request) {
+        return new AsyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request,
+            IoTEdgeMeta.addGeneralOtTemplate, hcClient);
     }
 
     /**
@@ -1303,8 +1377,10 @@ public class IoTEdgeAsyncClient {
      * @param AddOtTemplatesRequest 请求对象
      * @return AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>
      */
-    public AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesAsyncInvoker(AddOtTemplatesRequest request) {
-        return new AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates, hcClient);
+    public AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesAsyncInvoker(
+        AddOtTemplatesRequest request) {
+        return new AsyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates,
+            hcClient);
     }
 
     /**
@@ -1317,7 +1393,8 @@ public class IoTEdgeAsyncClient {
      * @param BatchListOtTemplatesRequest 请求对象
      * @return CompletableFuture<BatchListOtTemplatesResponse>
      */
-    public CompletableFuture<BatchListOtTemplatesResponse> batchListOtTemplatesAsync(BatchListOtTemplatesRequest request) {
+    public CompletableFuture<BatchListOtTemplatesResponse> batchListOtTemplatesAsync(
+        BatchListOtTemplatesRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchListOtTemplates);
     }
 
@@ -1331,8 +1408,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchListOtTemplatesRequest 请求对象
      * @return AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>
      */
-    public AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesAsyncInvoker(BatchListOtTemplatesRequest request) {
-        return new AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request, IoTEdgeMeta.batchListOtTemplates, hcClient);
+    public AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesAsyncInvoker(
+        BatchListOtTemplatesRequest request) {
+        return new AsyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request,
+            IoTEdgeMeta.batchListOtTemplates, hcClient);
     }
 
     /**
@@ -1359,8 +1438,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteOtTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>
      */
-    public AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateAsyncInvoker(DeleteOtTemplateRequest request) {
-        return new AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate, hcClient);
+    public AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateAsyncInvoker(
+        DeleteOtTemplateRequest request) {
+        return new AsyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request,
+            IoTEdgeMeta.deleteOtTemplate, hcClient);
     }
 
     /**
@@ -1387,8 +1468,10 @@ public class IoTEdgeAsyncClient {
      * @param ShowOtTemplateRequest 请求对象
      * @return AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>
      */
-    public AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateAsyncInvoker(ShowOtTemplateRequest request) {
-        return new AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate, hcClient);
+    public AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateAsyncInvoker(
+        ShowOtTemplateRequest request) {
+        return new AsyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate,
+            hcClient);
     }
 
     /**
@@ -1415,7 +1498,8 @@ public class IoTEdgeAsyncClient {
      * @param ImportPointsRequest 请求对象
      * @return AsyncInvoker<ImportPointsRequest, ImportPointsResponse>
      */
-    public AsyncInvoker<ImportPointsRequest, ImportPointsResponse> importPointsAsyncInvoker(ImportPointsRequest request) {
+    public AsyncInvoker<ImportPointsRequest, ImportPointsResponse> importPointsAsyncInvoker(
+        ImportPointsRequest request) {
         return new AsyncInvoker<ImportPointsRequest, ImportPointsResponse>(request, IoTEdgeMeta.importPoints, hcClient);
     }
 
@@ -1443,8 +1527,10 @@ public class IoTEdgeAsyncClient {
      * @param ShowPointTemplateRequest 请求对象
      * @return AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>
      */
-    public AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateAsyncInvoker(ShowPointTemplateRequest request) {
-        return new AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request, IoTEdgeMeta.showPointTemplate, hcClient);
+    public AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateAsyncInvoker(
+        ShowPointTemplateRequest request) {
+        return new AsyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request,
+            IoTEdgeMeta.showPointTemplate, hcClient);
     }
 
     /**
@@ -1485,7 +1571,8 @@ public class IoTEdgeAsyncClient {
      * @param BatchConfirmConfigsNewRequest 请求对象
      * @return CompletableFuture<BatchConfirmConfigsNewResponse>
      */
-    public CompletableFuture<BatchConfirmConfigsNewResponse> batchConfirmConfigsNewAsync(BatchConfirmConfigsNewRequest request) {
+    public CompletableFuture<BatchConfirmConfigsNewResponse> batchConfirmConfigsNewAsync(
+        BatchConfirmConfigsNewRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchConfirmConfigsNew);
     }
 
@@ -1499,8 +1586,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchConfirmConfigsNewRequest 请求对象
      * @return AsyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>
      */
-    public AsyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNewAsyncInvoker(BatchConfirmConfigsNewRequest request) {
-        return new AsyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>(request, IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
+    public AsyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNewAsyncInvoker(
+        BatchConfirmConfigsNewRequest request) {
+        return new AsyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>(request,
+            IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
     }
 
     /**
@@ -1527,8 +1616,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchImportConfigsRequest 请求对象
      * @return AsyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>
      */
-    public AsyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigsAsyncInvoker(BatchImportConfigsRequest request) {
-        return new AsyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>(request, IoTEdgeMeta.batchImportConfigs, hcClient);
+    public AsyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigsAsyncInvoker(
+        BatchImportConfigsRequest request) {
+        return new AsyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>(request,
+            IoTEdgeMeta.batchImportConfigs, hcClient);
     }
 
     /**
@@ -1555,8 +1646,10 @@ public class IoTEdgeAsyncClient {
      * @param DeleteIaConfigRequest 请求对象
      * @return AsyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>
      */
-    public AsyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfigAsyncInvoker(DeleteIaConfigRequest request) {
-        return new AsyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>(request, IoTEdgeMeta.deleteIaConfig, hcClient);
+    public AsyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfigAsyncInvoker(
+        DeleteIaConfigRequest request) {
+        return new AsyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>(request, IoTEdgeMeta.deleteIaConfig,
+            hcClient);
     }
 
     /**
@@ -1583,8 +1676,10 @@ public class IoTEdgeAsyncClient {
      * @param ListIaConfigsRequest 请求对象
      * @return AsyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>
      */
-    public AsyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse> listIaConfigsAsyncInvoker(ListIaConfigsRequest request) {
-        return new AsyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>(request, IoTEdgeMeta.listIaConfigs, hcClient);
+    public AsyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse> listIaConfigsAsyncInvoker(
+        ListIaConfigsRequest request) {
+        return new AsyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>(request, IoTEdgeMeta.listIaConfigs,
+            hcClient);
     }
 
     /**
@@ -1611,7 +1706,8 @@ public class IoTEdgeAsyncClient {
      * @param ShowIaConfigRequest 请求对象
      * @return AsyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse>
      */
-    public AsyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse> showIaConfigAsyncInvoker(ShowIaConfigRequest request) {
+    public AsyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse> showIaConfigAsyncInvoker(
+        ShowIaConfigRequest request) {
         return new AsyncInvoker<ShowIaConfigRequest, ShowIaConfigResponse>(request, IoTEdgeMeta.showIaConfig, hcClient);
     }
 
@@ -1639,8 +1735,10 @@ public class IoTEdgeAsyncClient {
      * @param UpdateIaConfigRequest 请求对象
      * @return AsyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>
      */
-    public AsyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfigAsyncInvoker(UpdateIaConfigRequest request) {
-        return new AsyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>(request, IoTEdgeMeta.updateIaConfig, hcClient);
+    public AsyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfigAsyncInvoker(
+        UpdateIaConfigRequest request) {
+        return new AsyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>(request, IoTEdgeMeta.updateIaConfig,
+            hcClient);
     }
 
     /**
@@ -1654,7 +1752,8 @@ public class IoTEdgeAsyncClient {
      * @param BatchAssociateNaToNodesRequest 请求对象
      * @return CompletableFuture<BatchAssociateNaToNodesResponse>
      */
-    public CompletableFuture<BatchAssociateNaToNodesResponse> batchAssociateNaToNodesAsync(BatchAssociateNaToNodesRequest request) {
+    public CompletableFuture<BatchAssociateNaToNodesResponse> batchAssociateNaToNodesAsync(
+        BatchAssociateNaToNodesRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.batchAssociateNaToNodes);
     }
 
@@ -1669,8 +1768,10 @@ public class IoTEdgeAsyncClient {
      * @param BatchAssociateNaToNodesRequest 请求对象
      * @return AsyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>
      */
-    public AsyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodesAsyncInvoker(BatchAssociateNaToNodesRequest request) {
-        return new AsyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>(request, IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
+    public AsyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodesAsyncInvoker(
+        BatchAssociateNaToNodesRequest request) {
+        return new AsyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>(request,
+            IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
     }
 
     /**
@@ -1711,7 +1812,8 @@ public class IoTEdgeAsyncClient {
      * @param ListNaAuthorizedNodesRequest 请求对象
      * @return CompletableFuture<ListNaAuthorizedNodesResponse>
      */
-    public CompletableFuture<ListNaAuthorizedNodesResponse> listNaAuthorizedNodesAsync(ListNaAuthorizedNodesRequest request) {
+    public CompletableFuture<ListNaAuthorizedNodesResponse> listNaAuthorizedNodesAsync(
+        ListNaAuthorizedNodesRequest request) {
         return hcClient.asyncInvokeHttp(request, IoTEdgeMeta.listNaAuthorizedNodes);
     }
 
@@ -1725,8 +1827,10 @@ public class IoTEdgeAsyncClient {
      * @param ListNaAuthorizedNodesRequest 请求对象
      * @return AsyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>
      */
-    public AsyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodesAsyncInvoker(ListNaAuthorizedNodesRequest request) {
-        return new AsyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>(request, IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
+    public AsyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodesAsyncInvoker(
+        ListNaAuthorizedNodesRequest request) {
+        return new AsyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>(request,
+            IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
     }
 
     /**

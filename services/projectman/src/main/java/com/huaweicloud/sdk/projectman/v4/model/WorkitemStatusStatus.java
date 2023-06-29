@@ -121,18 +121,17 @@ public class WorkitemStatusStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkitemStatusStatus workitemStatusStatus = (WorkitemStatusStatus) o;
-        return Objects.equals(this.id, workitemStatusStatus.id) && Objects.equals(this.name, workitemStatusStatus.name)
-            && Objects.equals(this.type, workitemStatusStatus.type)
-            && Objects.equals(this.description, workitemStatusStatus.description)
-            && Objects.equals(this.parentStatusId, workitemStatusStatus.parentStatusId);
+        WorkitemStatusStatus that = (WorkitemStatusStatus) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.parentStatusId, that.parentStatusId);
     }
 
     @Override

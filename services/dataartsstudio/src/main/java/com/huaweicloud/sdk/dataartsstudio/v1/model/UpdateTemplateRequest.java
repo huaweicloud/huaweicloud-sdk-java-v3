@@ -87,17 +87,16 @@ public class UpdateTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTemplateRequest updateTemplateRequest = (UpdateTemplateRequest) o;
-        return Objects.equals(this.id, updateTemplateRequest.id)
-            && Objects.equals(this.workspace, updateTemplateRequest.workspace)
-            && Objects.equals(this.body, updateTemplateRequest.body);
+        UpdateTemplateRequest that = (UpdateTemplateRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.workspace, that.workspace)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

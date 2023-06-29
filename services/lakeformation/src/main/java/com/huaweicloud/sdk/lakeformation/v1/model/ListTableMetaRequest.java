@@ -95,22 +95,15 @@ public class ListTableMetaRequest {
             if (value == null) {
                 return null;
             }
-            TableTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableTypesEnum(value));
         }
 
         public static TableTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,22 +295,19 @@ public class ListTableMetaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableMetaRequest listTableMetaRequest = (ListTableMetaRequest) o;
-        return Objects.equals(this.instanceId, listTableMetaRequest.instanceId)
-            && Objects.equals(this.catalogName, listTableMetaRequest.catalogName)
-            && Objects.equals(this.databaseNamePattern, listTableMetaRequest.databaseNamePattern)
-            && Objects.equals(this.tableNamePattern, listTableMetaRequest.tableNamePattern)
-            && Objects.equals(this.tableTypes, listTableMetaRequest.tableTypes)
-            && Objects.equals(this.limit, listTableMetaRequest.limit)
-            && Objects.equals(this.marker, listTableMetaRequest.marker)
-            && Objects.equals(this.reversePage, listTableMetaRequest.reversePage);
+        ListTableMetaRequest that = (ListTableMetaRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseNamePattern, that.databaseNamePattern)
+            && Objects.equals(this.tableNamePattern, that.tableNamePattern)
+            && Objects.equals(this.tableTypes, that.tableTypes) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

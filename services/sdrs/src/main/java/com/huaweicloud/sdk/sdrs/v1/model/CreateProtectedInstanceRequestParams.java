@@ -108,22 +108,15 @@ public class CreateProtectedInstanceRequestParams {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TenancyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TenancyEnum(value));
         }
 
         public static TenancyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -354,26 +347,21 @@ public class CreateProtectedInstanceRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProtectedInstanceRequestParams createProtectedInstanceRequestParams =
-            (CreateProtectedInstanceRequestParams) o;
-        return Objects.equals(this.serverGroupId, createProtectedInstanceRequestParams.serverGroupId)
-            && Objects.equals(this.serverId, createProtectedInstanceRequestParams.serverId)
-            && Objects.equals(this.name, createProtectedInstanceRequestParams.name)
-            && Objects.equals(this.description, createProtectedInstanceRequestParams.description)
-            && Objects.equals(this.clusterId, createProtectedInstanceRequestParams.clusterId)
-            && Objects.equals(this.primarySubnetId, createProtectedInstanceRequestParams.primarySubnetId)
-            && Objects.equals(this.primaryIpAddress, createProtectedInstanceRequestParams.primaryIpAddress)
-            && Objects.equals(this.tags, createProtectedInstanceRequestParams.tags)
-            && Objects.equals(this.flavorRef, createProtectedInstanceRequestParams.flavorRef)
-            && Objects.equals(this.tenancy, createProtectedInstanceRequestParams.tenancy)
-            && Objects.equals(this.dedicatedHostId, createProtectedInstanceRequestParams.dedicatedHostId);
+        CreateProtectedInstanceRequestParams that = (CreateProtectedInstanceRequestParams) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.primarySubnetId, that.primarySubnetId)
+            && Objects.equals(this.primaryIpAddress, that.primaryIpAddress) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class ListAccountsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccountsRequest listAccountsRequest = (ListAccountsRequest) o;
-        return Objects.equals(this.parentId, listAccountsRequest.parentId)
-            && Objects.equals(this.limit, listAccountsRequest.limit)
-            && Objects.equals(this.marker, listAccountsRequest.marker);
+        ListAccountsRequest that = (ListAccountsRequest) obj;
+        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

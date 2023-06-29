@@ -66,16 +66,16 @@ public class ShowCloudConnectionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCloudConnectionResponse showCloudConnectionResponse = (ShowCloudConnectionResponse) o;
-        return Objects.equals(this.cloudConnection, showCloudConnectionResponse.cloudConnection)
-            && Objects.equals(this.requestId, showCloudConnectionResponse.requestId);
+        ShowCloudConnectionResponse that = (ShowCloudConnectionResponse) obj;
+        return Objects.equals(this.cloudConnection, that.cloudConnection)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

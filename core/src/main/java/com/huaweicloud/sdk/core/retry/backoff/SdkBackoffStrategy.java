@@ -68,12 +68,12 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         return new SdkBackoffStrategy();
     }
 
-    private <ResT> boolean isThrottleException(RetryContext<ResT> context) {
+    private <S> boolean isThrottleException(RetryContext<S> context) {
         return context.getStatusCode() == Constants.StatusCode.TOO_MANY_REQUEST;
     }
 
     @Override
-    public <ResT> long computeDelayBeforeNextRetry(RetryContext<ResT> context) {
+    public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
         if (isThrottleException(context)) {
             return throttlingBackoffStrategy.computeDelayBeforeNextRetry(context);
         } else {
@@ -116,7 +116,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         }
 
         @Override
-        public <ResT> long computeDelayBeforeNextRetry(RetryContext<ResT> context) {
+        public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             int expo = calculateExponentialDelay(context.getRetriesAttempted(), baseDelay, maxBackoffTime);
             return MIN_THROTTLE_DELAY + (expo / BASE_OF_EXPONENT) + random.nextInt((expo / BASE_OF_EXPONENT) + 1);
         }
@@ -152,7 +152,7 @@ public class SdkBackoffStrategy implements BackoffStrategy {
         }
 
         @Override
-        public <ResT> long computeDelayBeforeNextRetry(RetryContext<ResT> context) {
+        public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             int expo = calculateExponentialDelay(context.getRetriesAttempted(), baseDelay, maxBackoffTime);
             return MIN_RETRY_DELAY + random.nextInt(expo);
         }

@@ -78,17 +78,16 @@ public class UpdateSignatureResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSignatureResponse updateSignatureResponse = (UpdateSignatureResponse) o;
-        return Objects.equals(this.id, updateSignatureResponse.id)
-            && Objects.equals(this.signatureId, updateSignatureResponse.signatureId)
-            && Objects.equals(this.signatureName, updateSignatureResponse.signatureName);
+        UpdateSignatureResponse that = (UpdateSignatureResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.signatureId, that.signatureId)
+            && Objects.equals(this.signatureName, that.signatureName);
     }
 
     @Override

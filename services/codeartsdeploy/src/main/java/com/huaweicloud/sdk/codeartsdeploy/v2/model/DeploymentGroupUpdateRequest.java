@@ -81,22 +81,16 @@ public class DeploymentGroupUpdateRequest {
             if (value == null) {
                 return null;
             }
-            AutoConnectionTestSwitchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AutoConnectionTestSwitchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new AutoConnectionTestSwitchEnum(value));
         }
 
         public static AutoConnectionTestSwitchEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AutoConnectionTestSwitchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,18 +182,17 @@ public class DeploymentGroupUpdateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentGroupUpdateRequest deploymentGroupUpdateRequest = (DeploymentGroupUpdateRequest) o;
-        return Objects.equals(this.name, deploymentGroupUpdateRequest.name)
-            && Objects.equals(this.description, deploymentGroupUpdateRequest.description)
-            && Objects.equals(this.slaveClusterId, deploymentGroupUpdateRequest.slaveClusterId)
-            && Objects.equals(this.autoConnectionTestSwitch, deploymentGroupUpdateRequest.autoConnectionTestSwitch);
+        DeploymentGroupUpdateRequest that = (DeploymentGroupUpdateRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId)
+            && Objects.equals(this.autoConnectionTestSwitch, that.autoConnectionTestSwitch);
     }
 
     @Override

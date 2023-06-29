@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ExecutionPlanSummary
  */
-public class ExecutionPlanSummary  {
-
+public class ExecutionPlanSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_add")
-    
+    @JsonProperty(value = "resource_add")
 
     private Integer resourceAdd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_update")
-    
+    @JsonProperty(value = "resource_update")
 
     private Integer resourceUpdate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_delete")
-    
+    @JsonProperty(value = "resource_delete")
 
     private Integer resourceDelete;
 
@@ -39,9 +29,6 @@ public class ExecutionPlanSummary  {
         this.resourceAdd = resourceAdd;
         return this;
     }
-
-    
-
 
     /**
      * 新增资源数
@@ -55,15 +42,10 @@ public class ExecutionPlanSummary  {
         this.resourceAdd = resourceAdd;
     }
 
-    
-
     public ExecutionPlanSummary withResourceUpdate(Integer resourceUpdate) {
         this.resourceUpdate = resourceUpdate;
         return this;
     }
-
-    
-
 
     /**
      * 更新资源数
@@ -77,15 +59,10 @@ public class ExecutionPlanSummary  {
         this.resourceUpdate = resourceUpdate;
     }
 
-    
-
     public ExecutionPlanSummary withResourceDelete(Integer resourceDelete) {
         this.resourceDelete = resourceDelete;
         return this;
     }
-
-    
-
 
     /**
      * 删除资源数
@@ -99,25 +76,25 @@ public class ExecutionPlanSummary  {
         this.resourceDelete = resourceDelete;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlanSummary executionPlanSummary = (ExecutionPlanSummary) o;
-        return Objects.equals(this.resourceAdd, executionPlanSummary.resourceAdd) &&
-            Objects.equals(this.resourceUpdate, executionPlanSummary.resourceUpdate) &&
-            Objects.equals(this.resourceDelete, executionPlanSummary.resourceDelete);
+        ExecutionPlanSummary that = (ExecutionPlanSummary) obj;
+        return Objects.equals(this.resourceAdd, that.resourceAdd)
+            && Objects.equals(this.resourceUpdate, that.resourceUpdate)
+            && Objects.equals(this.resourceDelete, that.resourceDelete);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceAdd, resourceUpdate, resourceDelete);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +105,7 @@ public class ExecutionPlanSummary  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +116,5 @@ public class ExecutionPlanSummary  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

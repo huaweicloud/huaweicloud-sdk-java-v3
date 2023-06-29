@@ -143,20 +143,17 @@ public class DatapointForBatchMetric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatapointForBatchMetric datapointForBatchMetric = (DatapointForBatchMetric) o;
-        return Objects.equals(this.max, datapointForBatchMetric.max)
-            && Objects.equals(this.min, datapointForBatchMetric.min)
-            && Objects.equals(this.average, datapointForBatchMetric.average)
-            && Objects.equals(this.sum, datapointForBatchMetric.sum)
-            && Objects.equals(this.variance, datapointForBatchMetric.variance)
-            && Objects.equals(this.timestamp, datapointForBatchMetric.timestamp);
+        DatapointForBatchMetric that = (DatapointForBatchMetric) obj;
+        return Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.average, that.average) && Objects.equals(this.sum, that.sum)
+            && Objects.equals(this.variance, that.variance) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

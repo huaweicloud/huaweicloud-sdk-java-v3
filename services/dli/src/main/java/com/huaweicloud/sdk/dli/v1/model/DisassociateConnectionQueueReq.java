@@ -90,16 +90,16 @@ public class DisassociateConnectionQueueReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateConnectionQueueReq disassociateConnectionQueueReq = (DisassociateConnectionQueueReq) o;
-        return Objects.equals(this.queues, disassociateConnectionQueueReq.queues)
-            && Objects.equals(this.elasticResourcePools, disassociateConnectionQueueReq.elasticResourcePools);
+        DisassociateConnectionQueueReq that = (DisassociateConnectionQueueReq) obj;
+        return Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.elasticResourcePools, that.elasticResourcePools);
     }
 
     @Override

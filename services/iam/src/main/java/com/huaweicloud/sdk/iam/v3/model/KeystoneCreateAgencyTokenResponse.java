@@ -68,16 +68,15 @@ public class KeystoneCreateAgencyTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateAgencyTokenResponse keystoneCreateAgencyTokenResponse = (KeystoneCreateAgencyTokenResponse) o;
-        return Objects.equals(this.token, keystoneCreateAgencyTokenResponse.token)
-            && Objects.equals(this.xSubjectToken, keystoneCreateAgencyTokenResponse.xSubjectToken);
+        KeystoneCreateAgencyTokenResponse that = (KeystoneCreateAgencyTokenResponse) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.xSubjectToken, that.xSubjectToken);
     }
 
     @Override

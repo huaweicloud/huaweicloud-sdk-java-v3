@@ -99,18 +99,16 @@ public class LiveDetectBase64Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveDetectBase64Req liveDetectBase64Req = (LiveDetectBase64Req) o;
-        return Objects.equals(this.videoBase64, liveDetectBase64Req.videoBase64)
-            && Objects.equals(this.actions, liveDetectBase64Req.actions)
-            && Objects.equals(this.actionTime, liveDetectBase64Req.actionTime)
-            && Objects.equals(this.nodThreshold, liveDetectBase64Req.nodThreshold);
+        LiveDetectBase64Req that = (LiveDetectBase64Req) obj;
+        return Objects.equals(this.videoBase64, that.videoBase64) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.actionTime, that.actionTime) && Objects.equals(this.nodThreshold, that.nodThreshold);
     }
 
     @Override

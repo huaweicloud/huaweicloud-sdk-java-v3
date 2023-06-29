@@ -101,19 +101,17 @@ public class ListPolicyStatesByResourceIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyStatesByResourceIdRequest listPolicyStatesByResourceIdRequest =
-            (ListPolicyStatesByResourceIdRequest) o;
-        return Objects.equals(this.resourceId, listPolicyStatesByResourceIdRequest.resourceId)
-            && Objects.equals(this.complianceState, listPolicyStatesByResourceIdRequest.complianceState)
-            && Objects.equals(this.limit, listPolicyStatesByResourceIdRequest.limit)
-            && Objects.equals(this.marker, listPolicyStatesByResourceIdRequest.marker);
+        ListPolicyStatesByResourceIdRequest that = (ListPolicyStatesByResourceIdRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.complianceState, that.complianceState) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

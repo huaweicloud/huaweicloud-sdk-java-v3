@@ -77,16 +77,15 @@ public class ListFailedTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFailedTaskResponse listFailedTaskResponse = (ListFailedTaskResponse) o;
-        return Objects.equals(this.total, listFailedTaskResponse.total)
-            && Objects.equals(this.tasks, listFailedTaskResponse.tasks);
+        ListFailedTaskResponse that = (ListFailedTaskResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

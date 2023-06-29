@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAppInstanceHistoryRequest  {
-
+public class ListAppInstanceHistoryRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_instance_id")
-    
+    @JsonProperty(value = "app_instance_id")
 
     private String appInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
@@ -40,9 +29,6 @@ public class ListAppInstanceHistoryRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群ID
@@ -56,15 +42,10 @@ public class ListAppInstanceHistoryRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public ListAppInstanceHistoryRequest withAppInstanceId(String appInstanceId) {
         this.appInstanceId = appInstanceId;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例ID
@@ -78,15 +59,10 @@ public class ListAppInstanceHistoryRequest  {
         this.appInstanceId = appInstanceId;
     }
 
-    
-
     public ListAppInstanceHistoryRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 命名空间
@@ -100,25 +76,24 @@ public class ListAppInstanceHistoryRequest  {
         this.namespace = namespace;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppInstanceHistoryRequest listAppInstanceHistoryRequest = (ListAppInstanceHistoryRequest) o;
-        return Objects.equals(this.clusterId, listAppInstanceHistoryRequest.clusterId) &&
-            Objects.equals(this.appInstanceId, listAppInstanceHistoryRequest.appInstanceId) &&
-            Objects.equals(this.namespace, listAppInstanceHistoryRequest.namespace);
+        ListAppInstanceHistoryRequest that = (ListAppInstanceHistoryRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.appInstanceId, that.appInstanceId)
+            && Objects.equals(this.namespace, that.namespace);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, appInstanceId, namespace);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ListAppInstanceHistoryRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ListAppInstanceHistoryRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

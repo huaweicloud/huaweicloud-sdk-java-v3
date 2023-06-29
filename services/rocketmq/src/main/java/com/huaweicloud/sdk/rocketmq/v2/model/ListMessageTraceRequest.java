@@ -54,22 +54,15 @@ public class ListMessageTraceRequest {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,17 +146,16 @@ public class ListMessageTraceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTraceRequest listMessageTraceRequest = (ListMessageTraceRequest) o;
-        return Objects.equals(this.engine, listMessageTraceRequest.engine)
-            && Objects.equals(this.instanceId, listMessageTraceRequest.instanceId)
-            && Objects.equals(this.msgId, listMessageTraceRequest.msgId);
+        ListMessageTraceRequest that = (ListMessageTraceRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.msgId, that.msgId);
     }
 
     @Override

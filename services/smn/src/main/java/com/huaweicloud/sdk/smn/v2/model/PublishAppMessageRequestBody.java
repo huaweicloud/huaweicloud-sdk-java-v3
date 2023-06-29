@@ -77,17 +77,17 @@ public class PublishAppMessageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAppMessageRequestBody publishAppMessageRequestBody = (PublishAppMessageRequestBody) o;
-        return Objects.equals(this.message, publishAppMessageRequestBody.message)
-            && Objects.equals(this.messageStructure, publishAppMessageRequestBody.messageStructure)
-            && Objects.equals(this.timeToLive, publishAppMessageRequestBody.timeToLive);
+        PublishAppMessageRequestBody that = (PublishAppMessageRequestBody) obj;
+        return Objects.equals(this.message, that.message)
+            && Objects.equals(this.messageStructure, that.messageStructure)
+            && Objects.equals(this.timeToLive, that.timeToLive);
     }
 
     @Override

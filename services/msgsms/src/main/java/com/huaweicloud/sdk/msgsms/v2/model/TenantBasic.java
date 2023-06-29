@@ -77,17 +77,16 @@ public class TenantBasic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TenantBasic tenantBasic = (TenantBasic) o;
-        return Objects.equals(this.customerId, tenantBasic.customerId)
-            && Objects.equals(this.customerName, tenantBasic.customerName)
-            && Objects.equals(this.enterpriseName, tenantBasic.enterpriseName);
+        TenantBasic that = (TenantBasic) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.customerName, that.customerName)
+            && Objects.equals(this.enterpriseName, that.enterpriseName);
     }
 
     @Override

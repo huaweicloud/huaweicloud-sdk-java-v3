@@ -74,16 +74,15 @@ public class ResetReplicaReqPartitions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetReplicaReqPartitions resetReplicaReqPartitions = (ResetReplicaReqPartitions) o;
-        return Objects.equals(this.partition, resetReplicaReqPartitions.partition)
-            && Objects.equals(this.replicas, resetReplicaReqPartitions.replicas);
+        ResetReplicaReqPartitions that = (ResetReplicaReqPartitions) obj;
+        return Objects.equals(this.partition, that.partition) && Objects.equals(this.replicas, that.replicas);
     }
 
     @Override

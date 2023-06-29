@@ -112,18 +112,16 @@ public class UpdatePlaybookResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePlaybookResponse updatePlaybookResponse = (UpdatePlaybookResponse) o;
-        return Objects.equals(this.code, updatePlaybookResponse.code)
-            && Objects.equals(this.message, updatePlaybookResponse.message)
-            && Objects.equals(this.data, updatePlaybookResponse.data)
-            && Objects.equals(this.xRequestId, updatePlaybookResponse.xRequestId);
+        UpdatePlaybookResponse that = (UpdatePlaybookResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

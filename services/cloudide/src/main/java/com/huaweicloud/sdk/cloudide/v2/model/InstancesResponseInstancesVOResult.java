@@ -65,22 +65,15 @@ public class InstancesResponseInstancesVOResult {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchEnum(value));
         }
 
         public static ArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,16 @@ public class InstancesResponseInstancesVOResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstancesResponseInstancesVOResult instancesResponseInstancesVOResult = (InstancesResponseInstancesVOResult) o;
-        return Objects.equals(this.link, instancesResponseInstancesVOResult.link)
-            && Objects.equals(this.arch, instancesResponseInstancesVOResult.arch)
-            && Objects.equals(this.id, instancesResponseInstancesVOResult.id)
-            && Objects.equals(this._private, instancesResponseInstancesVOResult._private);
+        InstancesResponseInstancesVOResult that = (InstancesResponseInstancesVOResult) obj;
+        return Objects.equals(this.link, that.link) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.id, that.id) && Objects.equals(this._private, that._private);
     }
 
     @Override

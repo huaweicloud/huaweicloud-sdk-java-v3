@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.JobBatchDelete;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class BatchDeleteJobsRequest  {
-
+public class BatchDeleteJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private JobBatchDelete body;
 
@@ -35,9 +25,6 @@ public class BatchDeleteJobsRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。获取方法，请参见[获取集群ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)。
@@ -51,22 +38,19 @@ public class BatchDeleteJobsRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public BatchDeleteJobsRequest withBody(JobBatchDelete body) {
         this.body = body;
         return this;
     }
 
     public BatchDeleteJobsRequest withBody(Consumer<JobBatchDelete> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new JobBatchDelete();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class BatchDeleteJobsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteJobsRequest batchDeleteJobsRequest = (BatchDeleteJobsRequest) o;
-        return Objects.equals(this.clusterId, batchDeleteJobsRequest.clusterId) &&
-            Objects.equals(this.body, batchDeleteJobsRequest.body);
+        BatchDeleteJobsRequest that = (BatchDeleteJobsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class BatchDeleteJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class BatchDeleteJobsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

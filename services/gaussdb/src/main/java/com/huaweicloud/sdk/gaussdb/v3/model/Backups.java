@@ -1,80 +1,65 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlDatastore;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Backups
  */
-public class Backups  {
-
+public class Backups {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
+
     /**
      * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum BUILDING for value: "BUILDING"
          */
         public static final StatusEnum BUILDING = new StatusEnum("BUILDING");
-        
+
         /**
          * Enum COMPLETED for value: "COMPLETED"
          */
         public static final StatusEnum COMPLETED = new StatusEnum("COMPLETED");
-        
+
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StatusEnum FAILED = new StatusEnum("FAILED");
-        
+
         /**
          * Enum AVAILABLE for value: "AVAILABLE"
          */
         public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -105,25 +90,18 @@ public class Backups  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -141,32 +119,29 @@ public class Backups  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="take_up_time")
-    
+    @JsonProperty(value = "take_up_time")
 
     private Integer takeUpTime;
+
     /**
      * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum AUTO for value: "auto"
          */
         public static final TypeEnum AUTO = new TypeEnum("auto");
-        
+
         /**
          * Enum MANUAL for value: "manual"
          */
         public static final TypeEnum MANUAL = new TypeEnum("manual");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -195,25 +170,18 @@ public class Backups  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,49 +199,44 @@ public class Backups  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private MysqlDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
+
     /**
      * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
      */
     public static final class BackupLevelEnum {
 
-        
         /**
          * Enum _0 for value: "0"
          */
         public static final BackupLevelEnum _0 = new BackupLevelEnum("0");
-        
+
         /**
          * Enum _1 for value: "1"
          */
         public static final BackupLevelEnum _1 = new BackupLevelEnum("1");
-        
+
         /**
          * Enum _2 for value: "2"
          */
         public static final BackupLevelEnum _2 = new BackupLevelEnum("2");
-        
 
         private static final Map<String, BackupLevelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -303,25 +266,18 @@ public class Backups  {
 
         @JsonCreator
         public static BackupLevelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            BackupLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackupLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupLevelEnum(value));
         }
 
         public static BackupLevelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            BackupLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -339,14 +295,12 @@ public class Backups  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_level")
-    
+    @JsonProperty(value = "backup_level")
 
     private BackupLevelEnum backupLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -354,9 +308,6 @@ public class Backups  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -370,15 +321,10 @@ public class Backups  {
         this.id = id;
     }
 
-    
-
     public Backups withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 备份名称。
@@ -392,15 +338,10 @@ public class Backups  {
         this.name = name;
     }
 
-    
-
     public Backups withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -414,15 +355,10 @@ public class Backups  {
         this.beginTime = beginTime;
     }
 
-    
-
     public Backups withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -436,15 +372,10 @@ public class Backups  {
         this.endTime = endTime;
     }
 
-    
-
     public Backups withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 备份状态，取值： - BUILDING：备份中。 - COMPLETED：备份完成。 - FAILED：备份失败。 - AVAILABLE：备份可用。
@@ -458,15 +389,10 @@ public class Backups  {
         this.status = status;
     }
 
-    
-
     public Backups withTakeUpTime(Integer takeUpTime) {
         this.takeUpTime = takeUpTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份花费时间(单位：minutes)
@@ -480,15 +406,10 @@ public class Backups  {
         this.takeUpTime = takeUpTime;
     }
 
-    
-
     public Backups withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 备份类型，取值：  - auto：自动全量备份。 - manual：手动全量备份。
@@ -502,15 +423,10 @@ public class Backups  {
         this.type = type;
     }
 
-    
-
     public Backups withSize(Long size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 备份大小，(单位：MB)
@@ -524,22 +440,19 @@ public class Backups  {
         this.size = size;
     }
 
-    
-
     public Backups withDatastore(MysqlDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public Backups withDatastore(Consumer<MysqlDatastore> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new MysqlDatastore();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -553,15 +466,10 @@ public class Backups  {
         this.datastore = datastore;
     }
 
-    
-
     public Backups withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -575,15 +483,10 @@ public class Backups  {
         this.instanceId = instanceId;
     }
 
-    
-
     public Backups withBackupLevel(BackupLevelEnum backupLevel) {
         this.backupLevel = backupLevel;
         return this;
     }
-
-    
-
 
     /**
      * 备份级别。当开启一级备份开关时，返回该参数。  取值： - 0：备份正在创建中或者备份失败。 - 1：一级备份。 - 2：二级备份。
@@ -597,15 +500,10 @@ public class Backups  {
         this.backupLevel = backupLevel;
     }
 
-    
-
     public Backups withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 备份文件描述信息
@@ -619,34 +517,39 @@ public class Backups  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Backups backups = (Backups) o;
-        return Objects.equals(this.id, backups.id) &&
-            Objects.equals(this.name, backups.name) &&
-            Objects.equals(this.beginTime, backups.beginTime) &&
-            Objects.equals(this.endTime, backups.endTime) &&
-            Objects.equals(this.status, backups.status) &&
-            Objects.equals(this.takeUpTime, backups.takeUpTime) &&
-            Objects.equals(this.type, backups.type) &&
-            Objects.equals(this.size, backups.size) &&
-            Objects.equals(this.datastore, backups.datastore) &&
-            Objects.equals(this.instanceId, backups.instanceId) &&
-            Objects.equals(this.backupLevel, backups.backupLevel) &&
-            Objects.equals(this.description, backups.description);
+        Backups that = (Backups) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.takeUpTime, that.takeUpTime)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.backupLevel, that.backupLevel) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, beginTime, endTime, status, takeUpTime, type, size, datastore, instanceId, backupLevel, description);
+        return Objects.hash(id,
+            name,
+            beginTime,
+            endTime,
+            status,
+            takeUpTime,
+            type,
+            size,
+            datastore,
+            instanceId,
+            backupLevel,
+            description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -666,6 +569,7 @@ public class Backups  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -676,8 +580,5 @@ public class Backups  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

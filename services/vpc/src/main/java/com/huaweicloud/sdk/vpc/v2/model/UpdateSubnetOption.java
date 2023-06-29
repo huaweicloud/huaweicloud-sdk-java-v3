@@ -222,22 +222,18 @@ public class UpdateSubnetOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubnetOption updateSubnetOption = (UpdateSubnetOption) o;
-        return Objects.equals(this.name, updateSubnetOption.name)
-            && Objects.equals(this.description, updateSubnetOption.description)
-            && Objects.equals(this.ipv6Enable, updateSubnetOption.ipv6Enable)
-            && Objects.equals(this.dhcpEnable, updateSubnetOption.dhcpEnable)
-            && Objects.equals(this.primaryDns, updateSubnetOption.primaryDns)
-            && Objects.equals(this.secondaryDns, updateSubnetOption.secondaryDns)
-            && Objects.equals(this.dnsList, updateSubnetOption.dnsList)
-            && Objects.equals(this.extraDhcpOpts, updateSubnetOption.extraDhcpOpts);
+        UpdateSubnetOption that = (UpdateSubnetOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable) && Objects.equals(this.dhcpEnable, that.dhcpEnable)
+            && Objects.equals(this.primaryDns, that.primaryDns) && Objects.equals(this.secondaryDns, that.secondaryDns)
+            && Objects.equals(this.dnsList, that.dnsList) && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts);
     }
 
     @Override

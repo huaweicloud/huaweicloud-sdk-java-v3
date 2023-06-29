@@ -451,34 +451,28 @@ public class ConsistencyRuleDetailForOpenApi {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConsistencyRuleDetailForOpenApi consistencyRuleDetailForOpenApi = (ConsistencyRuleDetailForOpenApi) o;
-        return Objects.equals(this.id, consistencyRuleDetailForOpenApi.id)
-            && Objects.equals(this.subRuleName, consistencyRuleDetailForOpenApi.subRuleName)
-            && Objects.equals(this.type, consistencyRuleDetailForOpenApi.type)
-            && Objects.equals(this.templateId, consistencyRuleDetailForOpenApi.templateId)
-            && Objects.equals(this.connection, consistencyRuleDetailForOpenApi.connection)
-            && Objects.equals(this.connectionType, consistencyRuleDetailForOpenApi.connectionType)
-            && Objects.equals(this.databases, consistencyRuleDetailForOpenApi.databases)
-            && Objects.equals(this.sql, consistencyRuleDetailForOpenApi.sql)
-            && Objects.equals(this.tables, consistencyRuleDetailForOpenApi.tables)
-            && Objects.equals(this.referenceTables, consistencyRuleDetailForOpenApi.referenceTables)
-            && Objects.equals(this.columns, consistencyRuleDetailForOpenApi.columns)
-            && Objects.equals(this.referenceColumns, consistencyRuleDetailForOpenApi.referenceColumns)
-            && Objects.equals(this.dimension, consistencyRuleDetailForOpenApi.dimension)
-            && Objects.equals(this.queue, consistencyRuleDetailForOpenApi.queue)
-            && Objects.equals(this.regularExpression, consistencyRuleDetailForOpenApi.regularExpression)
-            && Objects.equals(this.templateArguments, consistencyRuleDetailForOpenApi.templateArguments)
-            && Objects.equals(this.weight, consistencyRuleDetailForOpenApi.weight)
-            && Objects.equals(this.calculationRange, consistencyRuleDetailForOpenApi.calculationRange)
-            && Objects.equals(this.calculationRangeSql, consistencyRuleDetailForOpenApi.calculationRangeSql)
-            && Objects.equals(this.alarmCondition, consistencyRuleDetailForOpenApi.alarmCondition);
+        ConsistencyRuleDetailForOpenApi that = (ConsistencyRuleDetailForOpenApi) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.subRuleName, that.subRuleName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.databases, that.databases) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.tables, that.tables) && Objects.equals(this.referenceTables, that.referenceTables)
+            && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.referenceColumns, that.referenceColumns)
+            && Objects.equals(this.dimension, that.dimension) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.regularExpression, that.regularExpression)
+            && Objects.equals(this.templateArguments, that.templateArguments)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.calculationRange, that.calculationRange)
+            && Objects.equals(this.calculationRangeSql, that.calculationRangeSql)
+            && Objects.equals(this.alarmCondition, that.alarmCondition);
     }
 
     @Override

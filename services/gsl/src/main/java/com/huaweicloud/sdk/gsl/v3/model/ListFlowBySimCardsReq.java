@@ -52,15 +52,15 @@ public class ListFlowBySimCardsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlowBySimCardsReq listFlowBySimCardsReq = (ListFlowBySimCardsReq) o;
-        return Objects.equals(this.iccids, listFlowBySimCardsReq.iccids);
+        ListFlowBySimCardsReq that = (ListFlowBySimCardsReq) obj;
+        return Objects.equals(this.iccids, that.iccids);
     }
 
     @Override

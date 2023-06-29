@@ -55,16 +55,15 @@ public class BalancerActiveWindow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BalancerActiveWindow balancerActiveWindow = (BalancerActiveWindow) o;
-        return Objects.equals(this.startTime, balancerActiveWindow.startTime)
-            && Objects.equals(this.stopTime, balancerActiveWindow.stopTime);
+        BalancerActiveWindow that = (BalancerActiveWindow) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.stopTime, that.stopTime);
     }
 
     @Override

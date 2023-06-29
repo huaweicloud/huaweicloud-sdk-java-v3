@@ -206,22 +206,18 @@ public class CreateCommitRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommitRequestBody createCommitRequestBody = (CreateCommitRequestBody) o;
-        return Objects.equals(this.branch, createCommitRequestBody.branch)
-            && Objects.equals(this.commitMessage, createCommitRequestBody.commitMessage)
-            && Objects.equals(this.startBranch, createCommitRequestBody.startBranch)
-            && Objects.equals(this.actions, createCommitRequestBody.actions)
-            && Objects.equals(this.authorEmail, createCommitRequestBody.authorEmail)
-            && Objects.equals(this.authorName, createCommitRequestBody.authorName)
-            && Objects.equals(this.stats, createCommitRequestBody.stats)
-            && Objects.equals(this.force, createCommitRequestBody.force);
+        CreateCommitRequestBody that = (CreateCommitRequestBody) obj;
+        return Objects.equals(this.branch, that.branch) && Objects.equals(this.commitMessage, that.commitMessage)
+            && Objects.equals(this.startBranch, that.startBranch) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.authorEmail, that.authorEmail) && Objects.equals(this.authorName, that.authorName)
+            && Objects.equals(this.stats, that.stats) && Objects.equals(this.force, that.force);
     }
 
     @Override

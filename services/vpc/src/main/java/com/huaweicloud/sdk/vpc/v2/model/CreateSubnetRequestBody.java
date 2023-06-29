@@ -43,15 +43,15 @@ public class CreateSubnetRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubnetRequestBody createSubnetRequestBody = (CreateSubnetRequestBody) o;
-        return Objects.equals(this.subnet, createSubnetRequestBody.subnet);
+        CreateSubnetRequestBody that = (CreateSubnetRequestBody) obj;
+        return Objects.equals(this.subnet, that.subnet);
     }
 
     @Override

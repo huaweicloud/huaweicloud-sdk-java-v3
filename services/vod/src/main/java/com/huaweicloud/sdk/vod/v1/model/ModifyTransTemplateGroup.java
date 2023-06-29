@@ -73,22 +73,15 @@ public class ModifyTransTemplateGroup {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,22 +306,19 @@ public class ModifyTransTemplateGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTransTemplateGroup modifyTransTemplateGroup = (ModifyTransTemplateGroup) o;
-        return Objects.equals(this.groupId, modifyTransTemplateGroup.groupId)
-            && Objects.equals(this.name, modifyTransTemplateGroup.name)
-            && Objects.equals(this.status, modifyTransTemplateGroup.status)
-            && Objects.equals(this.autoEncrypt, modifyTransTemplateGroup.autoEncrypt)
-            && Objects.equals(this.qualityInfoList, modifyTransTemplateGroup.qualityInfoList)
-            && Objects.equals(this.watermarkTemplateIds, modifyTransTemplateGroup.watermarkTemplateIds)
-            && Objects.equals(this.description, modifyTransTemplateGroup.description)
-            && Objects.equals(this.common, modifyTransTemplateGroup.common);
+        ModifyTransTemplateGroup that = (ModifyTransTemplateGroup) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.autoEncrypt, that.autoEncrypt)
+            && Objects.equals(this.qualityInfoList, that.qualityInfoList)
+            && Objects.equals(this.watermarkTemplateIds, that.watermarkTemplateIds)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.common, that.common);
     }
 
     @Override

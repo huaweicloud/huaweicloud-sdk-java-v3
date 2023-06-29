@@ -56,17 +56,15 @@ public class ShowRealnameAuthenticationReviewResultResponse extends SdkResponse 
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRealnameAuthenticationReviewResultResponse showRealnameAuthenticationReviewResultResponse =
-            (ShowRealnameAuthenticationReviewResultResponse) o;
-        return Objects.equals(this.reviewResult, showRealnameAuthenticationReviewResultResponse.reviewResult)
-            && Objects.equals(this.opinion, showRealnameAuthenticationReviewResultResponse.opinion);
+        ShowRealnameAuthenticationReviewResultResponse that = (ShowRealnameAuthenticationReviewResultResponse) obj;
+        return Objects.equals(this.reviewResult, that.reviewResult) && Objects.equals(this.opinion, that.opinion);
     }
 
     @Override

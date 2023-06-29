@@ -184,21 +184,18 @@ public class CreateVmsTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVmsTemplateRequestBody createVmsTemplateRequestBody = (CreateVmsTemplateRequestBody) o;
-        return Objects.equals(this.expirationTime, createVmsTemplateRequestBody.expirationTime)
-            && Objects.equals(this.tplName, createVmsTemplateRequestBody.tplName)
-            && Objects.equals(this.title, createVmsTemplateRequestBody.title)
-            && Objects.equals(this.reslist, createVmsTemplateRequestBody.reslist)
-            && Objects.equals(this.remarks, createVmsTemplateRequestBody.remarks)
-            && Objects.equals(this.reminders, createVmsTemplateRequestBody.reminders)
-            && Objects.equals(this.callbackurl, createVmsTemplateRequestBody.callbackurl);
+        CreateVmsTemplateRequestBody that = (CreateVmsTemplateRequestBody) obj;
+        return Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.reslist, that.reslist)
+            && Objects.equals(this.remarks, that.remarks) && Objects.equals(this.reminders, that.reminders)
+            && Objects.equals(this.callbackurl, that.callbackurl);
     }
 
     @Override

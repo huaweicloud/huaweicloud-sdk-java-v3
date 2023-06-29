@@ -187,22 +187,18 @@ public class ListReposDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListReposDetailsRequest listReposDetailsRequest = (ListReposDetailsRequest) o;
-        return Objects.equals(this.namespace, listReposDetailsRequest.namespace)
-            && Objects.equals(this.name, listReposDetailsRequest.name)
-            && Objects.equals(this.category, listReposDetailsRequest.category)
-            && Objects.equals(this.limit, listReposDetailsRequest.limit)
-            && Objects.equals(this.offset, listReposDetailsRequest.offset)
-            && Objects.equals(this.orderColumn, listReposDetailsRequest.orderColumn)
-            && Objects.equals(this.orderType, listReposDetailsRequest.orderType)
-            && Objects.equals(this.filter, listReposDetailsRequest.filter);
+        ListReposDetailsRequest that = (ListReposDetailsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.orderColumn, that.orderColumn)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

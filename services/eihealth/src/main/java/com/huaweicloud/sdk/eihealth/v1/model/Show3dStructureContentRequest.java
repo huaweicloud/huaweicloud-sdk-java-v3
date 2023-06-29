@@ -121,19 +121,17 @@ public class Show3dStructureContentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Show3dStructureContentRequest show3dStructureContentRequest = (Show3dStructureContentRequest) o;
-        return Objects.equals(this.eihealthProjectId, show3dStructureContentRequest.eihealthProjectId)
-            && Objects.equals(this.studyId, show3dStructureContentRequest.studyId)
-            && Objects.equals(this.jobId, show3dStructureContentRequest.jobId)
-            && Objects.equals(this.ligand, show3dStructureContentRequest.ligand)
-            && Objects.equals(this.receptor, show3dStructureContentRequest.receptor);
+        Show3dStructureContentRequest that = (Show3dStructureContentRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.studyId, that.studyId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.ligand, that.ligand) && Objects.equals(this.receptor, that.receptor);
     }
 
     @Override

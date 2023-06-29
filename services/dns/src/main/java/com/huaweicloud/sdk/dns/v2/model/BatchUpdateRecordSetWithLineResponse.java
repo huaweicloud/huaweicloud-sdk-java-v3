@@ -116,18 +116,16 @@ public class BatchUpdateRecordSetWithLineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateRecordSetWithLineResponse batchUpdateRecordSetWithLineResponse =
-            (BatchUpdateRecordSetWithLineResponse) o;
-        return Objects.equals(this.links, batchUpdateRecordSetWithLineResponse.links)
-            && Objects.equals(this.recordsets, batchUpdateRecordSetWithLineResponse.recordsets)
-            && Objects.equals(this.metadata, batchUpdateRecordSetWithLineResponse.metadata);
+        BatchUpdateRecordSetWithLineResponse that = (BatchUpdateRecordSetWithLineResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.recordsets, that.recordsets)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

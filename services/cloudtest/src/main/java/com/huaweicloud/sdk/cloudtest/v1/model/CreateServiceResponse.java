@@ -100,18 +100,16 @@ public class CreateServiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServiceResponse createServiceResponse = (CreateServiceResponse) o;
-        return Objects.equals(this.serviceName, createServiceResponse.serviceName)
-            && Objects.equals(this.serviceId, createServiceResponse.serviceId)
-            && Objects.equals(this.errorCode, createServiceResponse.errorCode)
-            && Objects.equals(this.errorMsg, createServiceResponse.errorMsg);
+        CreateServiceResponse that = (CreateServiceResponse) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

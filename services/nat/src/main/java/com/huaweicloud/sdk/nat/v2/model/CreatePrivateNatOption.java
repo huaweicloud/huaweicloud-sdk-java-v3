@@ -85,22 +85,15 @@ public class CreatePrivateNatOption {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -272,20 +265,18 @@ public class CreatePrivateNatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateNatOption createPrivateNatOption = (CreatePrivateNatOption) o;
-        return Objects.equals(this.name, createPrivateNatOption.name)
-            && Objects.equals(this.description, createPrivateNatOption.description)
-            && Objects.equals(this.spec, createPrivateNatOption.spec)
-            && Objects.equals(this.downlinkVpcs, createPrivateNatOption.downlinkVpcs)
-            && Objects.equals(this.tags, createPrivateNatOption.tags)
-            && Objects.equals(this.enterpriseProjectId, createPrivateNatOption.enterpriseProjectId);
+        CreatePrivateNatOption that = (CreatePrivateNatOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.downlinkVpcs, that.downlinkVpcs)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

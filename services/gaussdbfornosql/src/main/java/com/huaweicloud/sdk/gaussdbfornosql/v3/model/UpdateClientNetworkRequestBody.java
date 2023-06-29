@@ -52,15 +52,15 @@ public class UpdateClientNetworkRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateClientNetworkRequestBody updateClientNetworkRequestBody = (UpdateClientNetworkRequestBody) o;
-        return Objects.equals(this.clientNetworkRanges, updateClientNetworkRequestBody.clientNetworkRanges);
+        UpdateClientNetworkRequestBody that = (UpdateClientNetworkRequestBody) obj;
+        return Objects.equals(this.clientNetworkRanges, that.clientNetworkRanges);
     }
 
     @Override

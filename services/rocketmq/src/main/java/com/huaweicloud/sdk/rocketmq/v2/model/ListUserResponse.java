@@ -76,15 +76,15 @@ public class ListUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserResponse listUserResponse = (ListUserResponse) o;
-        return Objects.equals(this.users, listUserResponse.users) && Objects.equals(this.total, listUserResponse.total);
+        ListUserResponse that = (ListUserResponse) obj;
+        return Objects.equals(this.users, that.users) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class ListEventDetailResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
         }
 
         public static EventTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,20 +279,17 @@ public class ListEventDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventDetailResponse listEventDetailResponse = (ListEventDetailResponse) o;
-        return Objects.equals(this.eventName, listEventDetailResponse.eventName)
-            && Objects.equals(this.eventType, listEventDetailResponse.eventType)
-            && Objects.equals(this.eventUsers, listEventDetailResponse.eventUsers)
-            && Objects.equals(this.eventSources, listEventDetailResponse.eventSources)
-            && Objects.equals(this.eventInfo, listEventDetailResponse.eventInfo)
-            && Objects.equals(this.metaData, listEventDetailResponse.metaData);
+        ListEventDetailResponse that = (ListEventDetailResponse) obj;
+        return Objects.equals(this.eventName, that.eventName) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventUsers, that.eventUsers) && Objects.equals(this.eventSources, that.eventSources)
+            && Objects.equals(this.eventInfo, that.eventInfo) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

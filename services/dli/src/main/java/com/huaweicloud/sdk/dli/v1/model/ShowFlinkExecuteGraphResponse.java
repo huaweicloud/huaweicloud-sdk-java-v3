@@ -88,17 +88,16 @@ public class ShowFlinkExecuteGraphResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFlinkExecuteGraphResponse showFlinkExecuteGraphResponse = (ShowFlinkExecuteGraphResponse) o;
-        return Objects.equals(this.isSuccess, showFlinkExecuteGraphResponse.isSuccess)
-            && Objects.equals(this.message, showFlinkExecuteGraphResponse.message)
-            && Objects.equals(this.executeGraph, showFlinkExecuteGraphResponse.executeGraph);
+        ShowFlinkExecuteGraphResponse that = (ShowFlinkExecuteGraphResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.executeGraph, that.executeGraph);
     }
 
     @Override

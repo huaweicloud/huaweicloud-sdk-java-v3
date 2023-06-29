@@ -52,15 +52,15 @@ public class UpdateEpConnections {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEpConnections updateEpConnections = (UpdateEpConnections) o;
-        return Objects.equals(this.connections, updateEpConnections.connections);
+        UpdateEpConnections that = (UpdateEpConnections) obj;
+        return Objects.equals(this.connections, that.connections);
     }
 
     @Override

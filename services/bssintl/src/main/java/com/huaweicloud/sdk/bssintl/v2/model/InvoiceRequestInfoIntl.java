@@ -523,36 +523,28 @@ public class InvoiceRequestInfoIntl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InvoiceRequestInfoIntl invoiceRequestInfoIntl = (InvoiceRequestInfoIntl) o;
-        return Objects.equals(this.requestId, invoiceRequestInfoIntl.requestId)
-            && Objects.equals(this.cancelReason, invoiceRequestInfoIntl.cancelReason)
-            && Objects.equals(this.titleType, invoiceRequestInfoIntl.titleType)
-            && Objects.equals(this.channelType, invoiceRequestInfoIntl.channelType)
-            && Objects.equals(this.invoiceType, invoiceRequestInfoIntl.invoiceType)
-            && Objects.equals(this.invoiceTitle, invoiceRequestInfoIntl.invoiceTitle)
-            && Objects.equals(this.invoiceAmount, invoiceRequestInfoIntl.invoiceAmount)
-            && Objects.equals(this.invoiceMethod, invoiceRequestInfoIntl.invoiceMethod)
-            && Objects.equals(this.invoiceClass, invoiceRequestInfoIntl.invoiceClass)
-            && Objects.equals(this.invoiceState, invoiceRequestInfoIntl.invoiceState)
-            && Objects.equals(this.applyOpera, invoiceRequestInfoIntl.applyOpera)
-            && Objects.equals(this.addressInfo, invoiceRequestInfoIntl.addressInfo)
-            && Objects.equals(this.applyTime, invoiceRequestInfoIntl.applyTime)
-            && Objects.equals(this.invoiceMode, invoiceRequestInfoIntl.invoiceMode)
-            && Objects.equals(this.email, invoiceRequestInfoIntl.email)
-            && Objects.equals(this.requestMode, invoiceRequestInfoIntl.requestMode)
-            && Objects.equals(this.srcRequestId, invoiceRequestInfoIntl.srcRequestId)
-            && Objects.equals(this.salesId, invoiceRequestInfoIntl.salesId)
-            && Objects.equals(this.invoiceNo, invoiceRequestInfoIntl.invoiceNo)
-            && Objects.equals(this.tradeType, invoiceRequestInfoIntl.tradeType)
-            && Objects.equals(this.billCycle, invoiceRequestInfoIntl.billCycle)
-            && Objects.equals(this.taxList, invoiceRequestInfoIntl.taxList);
+        InvoiceRequestInfoIntl that = (InvoiceRequestInfoIntl) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.cancelReason, that.cancelReason)
+            && Objects.equals(this.titleType, that.titleType) && Objects.equals(this.channelType, that.channelType)
+            && Objects.equals(this.invoiceType, that.invoiceType)
+            && Objects.equals(this.invoiceTitle, that.invoiceTitle)
+            && Objects.equals(this.invoiceAmount, that.invoiceAmount)
+            && Objects.equals(this.invoiceMethod, that.invoiceMethod)
+            && Objects.equals(this.invoiceClass, that.invoiceClass)
+            && Objects.equals(this.invoiceState, that.invoiceState) && Objects.equals(this.applyOpera, that.applyOpera)
+            && Objects.equals(this.addressInfo, that.addressInfo) && Objects.equals(this.applyTime, that.applyTime)
+            && Objects.equals(this.invoiceMode, that.invoiceMode) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.requestMode, that.requestMode)
+            && Objects.equals(this.srcRequestId, that.srcRequestId) && Objects.equals(this.salesId, that.salesId)
+            && Objects.equals(this.invoiceNo, that.invoiceNo) && Objects.equals(this.tradeType, that.tradeType)
+            && Objects.equals(this.billCycle, that.billCycle) && Objects.equals(this.taxList, that.taxList);
     }
 
     @Override

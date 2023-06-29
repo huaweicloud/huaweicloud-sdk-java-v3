@@ -446,30 +446,27 @@ public class SearchParametersExt {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchParametersExt searchParametersExt = (SearchParametersExt) o;
-        return Objects.equals(this.attributes, searchParametersExt.attributes)
-            && Objects.equals(this.classifications, searchParametersExt.classifications)
-            && Objects.equals(this.connectionNames, searchParametersExt.connectionNames)
-            && Objects.equals(this.excludeClassifications, searchParametersExt.excludeClassifications)
-            && Objects.equals(this.excludeSecurityLevels, searchParametersExt.excludeSecurityLevels)
-            && Objects.equals(this.excludeTags, searchParametersExt.excludeTags)
-            && Objects.equals(this.includeClassificationAttributes, searchParametersExt.includeClassificationAttributes)
-            && Objects.equals(this.includeSubClassifications, searchParametersExt.includeSubClassifications)
-            && Objects.equals(this.limit, searchParametersExt.limit)
-            && Objects.equals(this.offset, searchParametersExt.offset)
-            && Objects.equals(this.order, searchParametersExt.order)
-            && Objects.equals(this.query, searchParametersExt.query)
-            && Objects.equals(this.searchNameAndDescription, searchParametersExt.searchNameAndDescription)
-            && Objects.equals(this.securityLevels, searchParametersExt.securityLevels)
-            && Objects.equals(this.termNames, searchParametersExt.termNames)
-            && Objects.equals(this.typeNames, searchParametersExt.typeNames);
+        SearchParametersExt that = (SearchParametersExt) obj;
+        return Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.classifications, that.classifications)
+            && Objects.equals(this.connectionNames, that.connectionNames)
+            && Objects.equals(this.excludeClassifications, that.excludeClassifications)
+            && Objects.equals(this.excludeSecurityLevels, that.excludeSecurityLevels)
+            && Objects.equals(this.excludeTags, that.excludeTags)
+            && Objects.equals(this.includeClassificationAttributes, that.includeClassificationAttributes)
+            && Objects.equals(this.includeSubClassifications, that.includeSubClassifications)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.searchNameAndDescription, that.searchNameAndDescription)
+            && Objects.equals(this.securityLevels, that.securityLevels)
+            && Objects.equals(this.termNames, that.termNames) && Objects.equals(this.typeNames, that.typeNames);
     }
 
     @Override

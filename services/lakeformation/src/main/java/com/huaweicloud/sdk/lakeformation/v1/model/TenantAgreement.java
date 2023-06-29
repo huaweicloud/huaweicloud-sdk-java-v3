@@ -55,16 +55,16 @@ public class TenantAgreement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TenantAgreement tenantAgreement = (TenantAgreement) o;
-        return Objects.equals(this.agreementName, tenantAgreement.agreementName)
-            && Objects.equals(this.agreementVersion, tenantAgreement.agreementVersion);
+        TenantAgreement that = (TenantAgreement) obj;
+        return Objects.equals(this.agreementName, that.agreementName)
+            && Objects.equals(this.agreementVersion, that.agreementVersion);
     }
 
     @Override

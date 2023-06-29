@@ -120,18 +120,17 @@ public class UpdateResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResourceRequest updateResourceRequest = (UpdateResourceRequest) o;
-        return Objects.equals(this.xRequestId, updateResourceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateResourceRequest.acceptLanguage)
-            && Objects.equals(this.corpId, updateResourceRequest.corpId)
-            && Objects.equals(this.body, updateResourceRequest.body);
+        UpdateResourceRequest that = (UpdateResourceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class Video {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OutputPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OutputPolicyEnum(value));
         }
 
         public static OutputPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -385,21 +378,21 @@ public class Video {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Video video = (Video) o;
-        return Objects.equals(this.outputPolicy, video.outputPolicy) && Objects.equals(this.codec, video.codec)
-            && Objects.equals(this.bitrate, video.bitrate) && Objects.equals(this.profile, video.profile)
-            && Objects.equals(this.level, video.level) && Objects.equals(this.preset, video.preset)
-            && Objects.equals(this.maxIframesInterval, video.maxIframesInterval)
-            && Objects.equals(this.bframesCount, video.bframesCount) && Objects.equals(this.frameRate, video.frameRate)
-            && Objects.equals(this.width, video.width) && Objects.equals(this.height, video.height)
-            && Objects.equals(this.blackCut, video.blackCut);
+        Video that = (Video) obj;
+        return Objects.equals(this.outputPolicy, that.outputPolicy) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.profile, that.profile)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.preset, that.preset)
+            && Objects.equals(this.maxIframesInterval, that.maxIframesInterval)
+            && Objects.equals(this.bframesCount, that.bframesCount) && Objects.equals(this.frameRate, that.frameRate)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.blackCut, that.blackCut);
     }
 
     @Override

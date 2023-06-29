@@ -187,21 +187,18 @@ public class DatabaseColumnDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseColumnDto databaseColumnDto = (DatabaseColumnDto) o;
-        return Objects.equals(this.name, databaseColumnDto.name) && Objects.equals(this.type, databaseColumnDto.type)
-            && Objects.equals(this.description, databaseColumnDto.description)
-            && Objects.equals(this.nullable, databaseColumnDto.nullable)
-            && Objects.equals(this.primary, databaseColumnDto.primary)
-            && Objects.equals(this.searchable, databaseColumnDto.searchable)
-            && Objects.equals(this.unique, databaseColumnDto.unique)
-            && Objects.equals(this.tips, databaseColumnDto.tips);
+        DatabaseColumnDto that = (DatabaseColumnDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.nullable, that.nullable)
+            && Objects.equals(this.primary, that.primary) && Objects.equals(this.searchable, that.searchable)
+            && Objects.equals(this.unique, that.unique) && Objects.equals(this.tips, that.tips);
     }
 
     @Override

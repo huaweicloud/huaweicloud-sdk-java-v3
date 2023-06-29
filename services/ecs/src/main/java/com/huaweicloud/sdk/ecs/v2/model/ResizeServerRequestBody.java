@@ -65,16 +65,15 @@ public class ResizeServerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeServerRequestBody resizeServerRequestBody = (ResizeServerRequestBody) o;
-        return Objects.equals(this.resize, resizeServerRequestBody.resize)
-            && Objects.equals(this.dryRun, resizeServerRequestBody.dryRun);
+        ResizeServerRequestBody that = (ResizeServerRequestBody) obj;
+        return Objects.equals(this.resize, that.resize) && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override

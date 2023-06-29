@@ -93,22 +93,15 @@ public class AlertRuleTemplate {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,22 +186,15 @@ public class AlertRuleTemplate {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -498,26 +484,21 @@ public class AlertRuleTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlertRuleTemplate alertRuleTemplate = (AlertRuleTemplate) o;
-        return Objects.equals(this.templateId, alertRuleTemplate.templateId)
-            && Objects.equals(this.updateTime, alertRuleTemplate.updateTime)
-            && Objects.equals(this.templateName, alertRuleTemplate.templateName)
-            && Objects.equals(this.dataSource, alertRuleTemplate.dataSource)
-            && Objects.equals(this.version, alertRuleTemplate.version)
-            && Objects.equals(this.query, alertRuleTemplate.query)
-            && Objects.equals(this.queryType, alertRuleTemplate.queryType)
-            && Objects.equals(this.severity, alertRuleTemplate.severity)
-            && Objects.equals(this.customProperties, alertRuleTemplate.customProperties)
-            && Objects.equals(this.eventGrouping, alertRuleTemplate.eventGrouping)
-            && Objects.equals(this.schedule, alertRuleTemplate.schedule)
-            && Objects.equals(this.triggers, alertRuleTemplate.triggers);
+        AlertRuleTemplate that = (AlertRuleTemplate) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.dataSource, that.dataSource)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.customProperties, that.customProperties)
+            && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.triggers, that.triggers);
     }
 
     @Override

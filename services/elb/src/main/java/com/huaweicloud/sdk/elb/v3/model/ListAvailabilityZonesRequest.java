@@ -33,15 +33,15 @@ public class ListAvailabilityZonesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailabilityZonesRequest listAvailabilityZonesRequest = (ListAvailabilityZonesRequest) o;
-        return Objects.equals(this.publicBorderGroup, listAvailabilityZonesRequest.publicBorderGroup);
+        ListAvailabilityZonesRequest that = (ListAvailabilityZonesRequest) obj;
+        return Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

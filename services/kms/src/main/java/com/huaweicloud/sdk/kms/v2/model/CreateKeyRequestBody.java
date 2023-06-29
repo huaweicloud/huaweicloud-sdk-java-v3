@@ -101,22 +101,15 @@ public class CreateKeyRequestBody {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeySpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
         }
 
         public static KeySpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class CreateKeyRequestBody {
             if (value == null) {
                 return null;
             }
-            KeyUsageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeyUsageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeyUsageEnum(value));
         }
 
         public static KeyUsageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeyUsageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,22 +256,15 @@ public class CreateKeyRequestBody {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginEnum(value));
         }
 
         public static OriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,22 +438,19 @@ public class CreateKeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeyRequestBody createKeyRequestBody = (CreateKeyRequestBody) o;
-        return Objects.equals(this.keyAlias, createKeyRequestBody.keyAlias)
-            && Objects.equals(this.keySpec, createKeyRequestBody.keySpec)
-            && Objects.equals(this.keyUsage, createKeyRequestBody.keyUsage)
-            && Objects.equals(this.keyDescription, createKeyRequestBody.keyDescription)
-            && Objects.equals(this.origin, createKeyRequestBody.origin)
-            && Objects.equals(this.enterpriseProjectId, createKeyRequestBody.enterpriseProjectId)
-            && Objects.equals(this.sequence, createKeyRequestBody.sequence)
-            && Objects.equals(this.keystoreId, createKeyRequestBody.keystoreId);
+        CreateKeyRequestBody that = (CreateKeyRequestBody) obj;
+        return Objects.equals(this.keyAlias, that.keyAlias) && Objects.equals(this.keySpec, that.keySpec)
+            && Objects.equals(this.keyUsage, that.keyUsage) && Objects.equals(this.keyDescription, that.keyDescription)
+            && Objects.equals(this.origin, that.origin)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.keystoreId, that.keystoreId);
     }
 
     @Override

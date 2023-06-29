@@ -1,60 +1,49 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListDbBackupsRequest  {
-
+public class ListDbBackupsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
+
     /**
      * 备份类型，取值：   \"auto\"：自动全量备份   \"manual\"：手动全量备份
      */
     public static final class BackupTypeEnum {
 
-        
         /**
          * Enum AUTO for value: "auto"
          */
         public static final BackupTypeEnum AUTO = new BackupTypeEnum("auto");
-        
+
         /**
          * Enum MANUAL for value: "manual"
          */
         public static final BackupTypeEnum MANUAL = new BackupTypeEnum("manual");
-        
 
         private static final Map<String, BackupTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,25 +72,18 @@ public class ListDbBackupsRequest  {
 
         @JsonCreator
         public static BackupTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupTypeEnum(value));
         }
 
         public static BackupTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -119,32 +101,27 @@ public class ListDbBackupsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
-    
+    @JsonProperty(value = "backup_type")
 
     private BackupTypeEnum backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
@@ -153,15 +130,12 @@ public class ListDbBackupsRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -170,15 +144,10 @@ public class ListDbBackupsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListDbBackupsRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -192,15 +161,10 @@ public class ListDbBackupsRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListDbBackupsRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -214,15 +178,10 @@ public class ListDbBackupsRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ListDbBackupsRequest withBackupType(BackupTypeEnum backupType) {
         this.backupType = backupType;
         return this;
     }
-
-    
-
 
     /**
      * 备份类型，取值：   \"auto\"：自动全量备份   \"manual\"：手动全量备份
@@ -236,15 +195,10 @@ public class ListDbBackupsRequest  {
         this.backupType = backupType;
     }
 
-    
-
     public ListDbBackupsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -259,15 +213,10 @@ public class ListDbBackupsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListDbBackupsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
@@ -283,15 +232,10 @@ public class ListDbBackupsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListDbBackupsRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与end_time必须同时使用。
@@ -305,15 +249,10 @@ public class ListDbBackupsRequest  {
         this.beginTime = beginTime;
     }
 
-    
-
     public ListDbBackupsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。与begin_time必须同时使用。
@@ -327,30 +266,26 @@ public class ListDbBackupsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDbBackupsRequest listDbBackupsRequest = (ListDbBackupsRequest) o;
-        return Objects.equals(this.xLanguage, listDbBackupsRequest.xLanguage) &&
-            Objects.equals(this.instanceId, listDbBackupsRequest.instanceId) &&
-            Objects.equals(this.backupId, listDbBackupsRequest.backupId) &&
-            Objects.equals(this.backupType, listDbBackupsRequest.backupType) &&
-            Objects.equals(this.offset, listDbBackupsRequest.offset) &&
-            Objects.equals(this.limit, listDbBackupsRequest.limit) &&
-            Objects.equals(this.beginTime, listDbBackupsRequest.beginTime) &&
-            Objects.equals(this.endTime, listDbBackupsRequest.endTime);
+        ListDbBackupsRequest that = (ListDbBackupsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -366,6 +301,7 @@ public class ListDbBackupsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -376,8 +312,5 @@ public class ListDbBackupsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

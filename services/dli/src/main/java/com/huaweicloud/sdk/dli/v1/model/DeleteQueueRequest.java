@@ -33,15 +33,15 @@ public class DeleteQueueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteQueueRequest deleteQueueRequest = (DeleteQueueRequest) o;
-        return Objects.equals(this.queueName, deleteQueueRequest.queueName);
+        DeleteQueueRequest that = (DeleteQueueRequest) obj;
+        return Objects.equals(this.queueName, that.queueName);
     }
 
     @Override

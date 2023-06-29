@@ -55,16 +55,15 @@ public class OperateErrorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateErrorInfo operateErrorInfo = (OperateErrorInfo) o;
-        return Objects.equals(this.workflowUrn, operateErrorInfo.workflowUrn)
-            && Objects.equals(this.errorDetail, operateErrorInfo.errorDetail);
+        OperateErrorInfo that = (OperateErrorInfo) obj;
+        return Objects.equals(this.workflowUrn, that.workflowUrn) && Objects.equals(this.errorDetail, that.errorDetail);
     }
 
     @Override

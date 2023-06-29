@@ -65,22 +65,15 @@ public class AgenciesTaskReq {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateTypeEnum(value));
         }
 
         public static OperateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class AgenciesTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgenciesTaskReq agenciesTaskReq = (AgenciesTaskReq) o;
-        return Objects.equals(this.projectId, agenciesTaskReq.projectId)
-            && Objects.equals(this.operateType, agenciesTaskReq.operateType);
+        AgenciesTaskReq that = (AgenciesTaskReq) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.operateType, that.operateType);
     }
 
     @Override

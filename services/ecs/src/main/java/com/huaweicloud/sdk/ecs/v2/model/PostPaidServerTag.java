@@ -55,15 +55,15 @@ public class PostPaidServerTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerTag postPaidServerTag = (PostPaidServerTag) o;
-        return Objects.equals(this.key, postPaidServerTag.key) && Objects.equals(this.value, postPaidServerTag.value);
+        PostPaidServerTag that = (PostPaidServerTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

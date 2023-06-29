@@ -77,17 +77,17 @@ public class ComponentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentInfo componentInfo = (ComponentInfo) o;
-        return Objects.equals(this.componentName, componentInfo.componentName)
-            && Objects.equals(this.componentType, componentInfo.componentType)
-            && Objects.equals(this.componentDesc, componentInfo.componentDesc);
+        ComponentInfo that = (ComponentInfo) obj;
+        return Objects.equals(this.componentName, that.componentName)
+            && Objects.equals(this.componentType, that.componentType)
+            && Objects.equals(this.componentDesc, that.componentDesc);
     }
 
     @Override

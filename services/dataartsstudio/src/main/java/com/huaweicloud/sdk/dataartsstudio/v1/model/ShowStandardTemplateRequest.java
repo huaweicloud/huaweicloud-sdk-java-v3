@@ -78,17 +78,16 @@ public class ShowStandardTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStandardTemplateRequest showStandardTemplateRequest = (ShowStandardTemplateRequest) o;
-        return Objects.equals(this.workspace, showStandardTemplateRequest.workspace)
-            && Objects.equals(this.limit, showStandardTemplateRequest.limit)
-            && Objects.equals(this.offset, showStandardTemplateRequest.offset);
+        ShowStandardTemplateRequest that = (ShowStandardTemplateRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

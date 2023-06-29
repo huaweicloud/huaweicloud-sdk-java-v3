@@ -74,15 +74,15 @@ public class AggTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggTag aggTag = (AggTag) o;
-        return Objects.equals(this.key, aggTag.key) && Objects.equals(this.values, aggTag.values);
+        AggTag that = (AggTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override

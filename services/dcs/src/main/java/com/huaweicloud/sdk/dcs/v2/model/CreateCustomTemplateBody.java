@@ -206,22 +206,18 @@ public class CreateCustomTemplateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomTemplateBody createCustomTemplateBody = (CreateCustomTemplateBody) o;
-        return Objects.equals(this.templateId, createCustomTemplateBody.templateId)
-            && Objects.equals(this.name, createCustomTemplateBody.name)
-            && Objects.equals(this.type, createCustomTemplateBody.type)
-            && Objects.equals(this.engine, createCustomTemplateBody.engine)
-            && Objects.equals(this.cacheMode, createCustomTemplateBody.cacheMode)
-            && Objects.equals(this.description, createCustomTemplateBody.description)
-            && Objects.equals(this.engineVersion, createCustomTemplateBody.engineVersion)
-            && Objects.equals(this.params, createCustomTemplateBody.params);
+        CreateCustomTemplateBody that = (CreateCustomTemplateBody) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.cacheMode, that.cacheMode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.params, that.params);
     }
 
     @Override

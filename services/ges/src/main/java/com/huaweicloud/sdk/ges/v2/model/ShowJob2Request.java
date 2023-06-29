@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowJob2Request  {
-
+public class ShowJob2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -34,9 +24,6 @@ public class ShowJob2Request  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -50,15 +37,10 @@ public class ShowJob2Request  {
         this.graphId = graphId;
     }
 
-    
-
     public ShowJob2Request withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * Job ID。
@@ -72,24 +54,23 @@ public class ShowJob2Request  {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJob2Request showJob2Request = (ShowJob2Request) o;
-        return Objects.equals(this.graphId, showJob2Request.graphId) &&
-            Objects.equals(this.jobId, showJob2Request.jobId);
+        ShowJob2Request that = (ShowJob2Request) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class ShowJob2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class ShowJob2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -65,16 +65,15 @@ public class UpdateFirewallRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFirewallRuleRequest updateFirewallRuleRequest = (UpdateFirewallRuleRequest) o;
-        return Objects.equals(this.firewallId, updateFirewallRuleRequest.firewallId)
-            && Objects.equals(this.body, updateFirewallRuleRequest.body);
+        UpdateFirewallRuleRequest that = (UpdateFirewallRuleRequest) obj;
+        return Objects.equals(this.firewallId, that.firewallId) && Objects.equals(this.body, that.body);
     }
 
     @Override

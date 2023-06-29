@@ -109,18 +109,17 @@ public class UpdateIgnoreRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIgnoreRuleRequest updateIgnoreRuleRequest = (UpdateIgnoreRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateIgnoreRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateIgnoreRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateIgnoreRuleRequest.ruleId)
-            && Objects.equals(this.body, updateIgnoreRuleRequest.body);
+        UpdateIgnoreRuleRequest that = (UpdateIgnoreRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -195,21 +195,19 @@ public class TemplateJobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateJobInfo templateJobInfo = (TemplateJobInfo) o;
-        return Objects.equals(this.applicationName, templateJobInfo.applicationName)
-            && Objects.equals(this.templateId, templateJobInfo.templateId)
-            && Objects.equals(this.projectName, templateJobInfo.projectName)
-            && Objects.equals(this.repoType, templateJobInfo.repoType)
-            && Objects.equals(this.properties, templateJobInfo.properties)
-            && Objects.equals(this.templateDependencies, templateJobInfo.templateDependencies)
-            && Objects.equals(this.repoInfo, templateJobInfo.repoInfo);
+        TemplateJobInfo that = (TemplateJobInfo) obj;
+        return Objects.equals(this.applicationName, that.applicationName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.repoType, that.repoType) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.templateDependencies, that.templateDependencies)
+            && Objects.equals(this.repoInfo, that.repoInfo);
     }
 
     @Override

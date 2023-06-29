@@ -55,16 +55,15 @@ public class ShowEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventRequest showEventRequest = (ShowEventRequest) o;
-        return Objects.equals(this.functionUrn, showEventRequest.functionUrn)
-            && Objects.equals(this.eventId, showEventRequest.eventId);
+        ShowEventRequest that = (ShowEventRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.eventId, that.eventId);
     }
 
     @Override

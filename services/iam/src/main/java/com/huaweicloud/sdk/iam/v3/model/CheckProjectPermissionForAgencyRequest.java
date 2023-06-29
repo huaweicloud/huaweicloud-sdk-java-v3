@@ -77,18 +77,16 @@ public class CheckProjectPermissionForAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckProjectPermissionForAgencyRequest checkProjectPermissionForAgencyRequest =
-            (CheckProjectPermissionForAgencyRequest) o;
-        return Objects.equals(this.projectId, checkProjectPermissionForAgencyRequest.projectId)
-            && Objects.equals(this.agencyId, checkProjectPermissionForAgencyRequest.agencyId)
-            && Objects.equals(this.roleId, checkProjectPermissionForAgencyRequest.roleId);
+        CheckProjectPermissionForAgencyRequest that = (CheckProjectPermissionForAgencyRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.agencyId, that.agencyId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

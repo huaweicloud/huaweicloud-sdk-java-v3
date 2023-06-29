@@ -121,18 +121,17 @@ public class UpdateRuleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleReq updateRuleReq = (UpdateRuleReq) o;
-        return Objects.equals(this.ruleName, updateRuleReq.ruleName)
-            && Objects.equals(this.description, updateRuleReq.description)
-            && Objects.equals(this.select, updateRuleReq.select) && Objects.equals(this.where, updateRuleReq.where)
-            && Objects.equals(this.active, updateRuleReq.active);
+        UpdateRuleReq that = (UpdateRuleReq) obj;
+        return Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.select, that.select) && Objects.equals(this.where, that.where)
+            && Objects.equals(this.active, that.active);
     }
 
     @Override

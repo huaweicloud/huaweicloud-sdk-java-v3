@@ -92,16 +92,16 @@ public class StartInstanceParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartInstanceParam startInstanceParam = (StartInstanceParam) o;
-        return Objects.equals(this.pluginEnableList, startInstanceParam.pluginEnableList)
-            && Objects.equals(this.pluginVars, startInstanceParam.pluginVars);
+        StartInstanceParam that = (StartInstanceParam) obj;
+        return Objects.equals(this.pluginEnableList, that.pluginEnableList)
+            && Objects.equals(this.pluginVars, that.pluginVars);
     }
 
     @Override

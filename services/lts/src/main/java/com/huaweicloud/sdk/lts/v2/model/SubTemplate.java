@@ -78,22 +78,15 @@ public class SubTemplate {
             if (value == null) {
                 return null;
             }
-            SubTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SubTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SubTypeEnum(value));
         }
 
         public static SubTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SubTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,15 +148,15 @@ public class SubTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubTemplate subTemplate = (SubTemplate) o;
-        return Objects.equals(this.subType, subTemplate.subType) && Objects.equals(this.content, subTemplate.content);
+        SubTemplate that = (SubTemplate) obj;
+        return Objects.equals(this.subType, that.subType) && Objects.equals(this.content, that.content);
     }
 
     @Override

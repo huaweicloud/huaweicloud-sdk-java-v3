@@ -141,17 +141,17 @@ public class RootDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RootDto rootDto = (RootDto) o;
-        return Objects.equals(this.id, rootDto.id) && Objects.equals(this.urn, rootDto.urn)
-            && Objects.equals(this.name, rootDto.name) && Objects.equals(this.policyTypes, rootDto.policyTypes)
-            && Objects.equals(this.createdAt, rootDto.createdAt);
+        RootDto that = (RootDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.policyTypes, that.policyTypes)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

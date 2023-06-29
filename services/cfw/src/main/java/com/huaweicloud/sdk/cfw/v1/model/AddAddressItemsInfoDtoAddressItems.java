@@ -99,18 +99,16 @@ public class AddAddressItemsInfoDtoAddressItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddAddressItemsInfoDtoAddressItems addAddressItemsInfoDtoAddressItems = (AddAddressItemsInfoDtoAddressItems) o;
-        return Objects.equals(this.name, addAddressItemsInfoDtoAddressItems.name)
-            && Objects.equals(this.addressType, addAddressItemsInfoDtoAddressItems.addressType)
-            && Objects.equals(this.address, addAddressItemsInfoDtoAddressItems.address)
-            && Objects.equals(this.description, addAddressItemsInfoDtoAddressItems.description);
+        AddAddressItemsInfoDtoAddressItems that = (AddAddressItemsInfoDtoAddressItems) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.description, that.description);
     }
 
     @Override

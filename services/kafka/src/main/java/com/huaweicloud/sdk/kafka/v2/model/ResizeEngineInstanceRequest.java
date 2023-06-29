@@ -87,17 +87,16 @@ public class ResizeEngineInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeEngineInstanceRequest resizeEngineInstanceRequest = (ResizeEngineInstanceRequest) o;
-        return Objects.equals(this.engine, resizeEngineInstanceRequest.engine)
-            && Objects.equals(this.instanceId, resizeEngineInstanceRequest.instanceId)
-            && Objects.equals(this.body, resizeEngineInstanceRequest.body);
+        ResizeEngineInstanceRequest that = (ResizeEngineInstanceRequest) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

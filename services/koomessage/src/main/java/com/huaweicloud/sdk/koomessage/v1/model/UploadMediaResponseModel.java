@@ -77,17 +77,16 @@ public class UploadMediaResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMediaResponseModel uploadMediaResponseModel = (UploadMediaResponseModel) o;
-        return Objects.equals(this.resourceType, uploadMediaResponseModel.resourceType)
-            && Objects.equals(this.resourceId, uploadMediaResponseModel.resourceId)
-            && Objects.equals(this.resourceUrl, uploadMediaResponseModel.resourceUrl);
+        UploadMediaResponseModel that = (UploadMediaResponseModel) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceUrl, that.resourceUrl);
     }
 
     @Override

@@ -193,22 +193,20 @@ public class DownloadStatisticsExcelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadStatisticsExcelRequest downloadStatisticsExcelRequest = (DownloadStatisticsExcelRequest) o;
-        return Objects.equals(this.startTime, downloadStatisticsExcelRequest.startTime)
-            && Objects.equals(this.endTime, downloadStatisticsExcelRequest.endTime)
-            && Objects.equals(this.domainName, downloadStatisticsExcelRequest.domainName)
-            && Objects.equals(this.excelLanguage, downloadStatisticsExcelRequest.excelLanguage)
-            && Objects.equals(this.serviceArea, downloadStatisticsExcelRequest.serviceArea)
-            && Objects.equals(this.interval, downloadStatisticsExcelRequest.interval)
-            && Objects.equals(this.enterpriseProjectId, downloadStatisticsExcelRequest.enterpriseProjectId)
-            && Objects.equals(this.excelType, downloadStatisticsExcelRequest.excelType);
+        DownloadStatisticsExcelRequest that = (DownloadStatisticsExcelRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.excelLanguage, that.excelLanguage)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.excelType, that.excelType);
     }
 
     @Override

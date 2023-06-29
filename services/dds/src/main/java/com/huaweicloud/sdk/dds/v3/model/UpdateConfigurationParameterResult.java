@@ -74,16 +74,16 @@ public class UpdateConfigurationParameterResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigurationParameterResult updateConfigurationParameterResult = (UpdateConfigurationParameterResult) o;
-        return Objects.equals(this.entityId, updateConfigurationParameterResult.entityId)
-            && Objects.equals(this.parameterValues, updateConfigurationParameterResult.parameterValues);
+        UpdateConfigurationParameterResult that = (UpdateConfigurationParameterResult) obj;
+        return Objects.equals(this.entityId, that.entityId)
+            && Objects.equals(this.parameterValues, that.parameterValues);
     }
 
     @Override

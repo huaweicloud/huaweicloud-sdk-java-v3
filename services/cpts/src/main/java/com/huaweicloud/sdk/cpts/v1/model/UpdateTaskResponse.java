@@ -88,17 +88,16 @@ public class UpdateTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskResponse updateTaskResponse = (UpdateTaskResponse) o;
-        return Objects.equals(this.code, updateTaskResponse.code)
-            && Objects.equals(this.message, updateTaskResponse.message)
-            && Objects.equals(this.taskInfo, updateTaskResponse.taskInfo);
+        UpdateTaskResponse that = (UpdateTaskResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.taskInfo, that.taskInfo);
     }
 
     @Override

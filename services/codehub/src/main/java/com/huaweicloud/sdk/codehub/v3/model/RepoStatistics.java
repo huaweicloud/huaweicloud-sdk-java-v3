@@ -210,22 +210,19 @@ public class RepoStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoStatistics repoStatistics = (RepoStatistics) o;
-        return Objects.equals(this.addLines, repoStatistics.addLines)
-            && Objects.equals(this.branch, repoStatistics.branch)
-            && Objects.equals(this.commitCount, repoStatistics.commitCount)
-            && Objects.equals(this.createdAt, repoStatistics.createdAt)
-            && Objects.equals(this.deleteLines, repoStatistics.deleteLines)
-            && Objects.equals(this.id, repoStatistics.id) && Objects.equals(this.projectId, repoStatistics.projectId)
-            && Objects.equals(this.updatedAt, repoStatistics.updatedAt)
-            && Objects.equals(this.userName, repoStatistics.userName);
+        RepoStatistics that = (RepoStatistics) obj;
+        return Objects.equals(this.addLines, that.addLines) && Objects.equals(this.branch, that.branch)
+            && Objects.equals(this.commitCount, that.commitCount) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.deleteLines, that.deleteLines) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

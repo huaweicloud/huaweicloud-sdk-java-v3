@@ -98,22 +98,15 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -282,22 +275,18 @@ public class CreatePrivacyRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivacyRuleResponse createPrivacyRuleResponse = (CreatePrivacyRuleResponse) o;
-        return Objects.equals(this.id, createPrivacyRuleResponse.id)
-            && Objects.equals(this.policyid, createPrivacyRuleResponse.policyid)
-            && Objects.equals(this.timestamp, createPrivacyRuleResponse.timestamp)
-            && Objects.equals(this.status, createPrivacyRuleResponse.status)
-            && Objects.equals(this.url, createPrivacyRuleResponse.url)
-            && Objects.equals(this.category, createPrivacyRuleResponse.category)
-            && Objects.equals(this.index, createPrivacyRuleResponse.index)
-            && Objects.equals(this.description, createPrivacyRuleResponse.description);
+        CreatePrivacyRuleResponse that = (CreatePrivacyRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class DeleteServiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteServiceResponse deleteServiceResponse = (DeleteServiceResponse) o;
-        return Objects.equals(this.errorCode, deleteServiceResponse.errorCode)
-            && Objects.equals(this.errorMsg, deleteServiceResponse.errorMsg);
+        DeleteServiceResponse that = (DeleteServiceResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

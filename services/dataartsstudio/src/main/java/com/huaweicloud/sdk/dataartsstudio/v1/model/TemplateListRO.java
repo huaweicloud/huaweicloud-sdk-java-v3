@@ -52,15 +52,15 @@ public class TemplateListRO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateListRO templateListRO = (TemplateListRO) o;
-        return Objects.equals(this.ids, templateListRO.ids);
+        TemplateListRO that = (TemplateListRO) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

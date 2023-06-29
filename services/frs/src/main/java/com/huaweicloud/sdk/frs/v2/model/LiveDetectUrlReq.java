@@ -99,18 +99,16 @@ public class LiveDetectUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveDetectUrlReq liveDetectUrlReq = (LiveDetectUrlReq) o;
-        return Objects.equals(this.videoUrl, liveDetectUrlReq.videoUrl)
-            && Objects.equals(this.actions, liveDetectUrlReq.actions)
-            && Objects.equals(this.actionTime, liveDetectUrlReq.actionTime)
-            && Objects.equals(this.nodThreshold, liveDetectUrlReq.nodThreshold);
+        LiveDetectUrlReq that = (LiveDetectUrlReq) obj;
+        return Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.actionTime, that.actionTime) && Objects.equals(this.nodThreshold, that.nodThreshold);
     }
 
     @Override

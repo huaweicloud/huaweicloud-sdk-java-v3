@@ -105,22 +105,15 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsEnum(value));
         }
 
         public static TlsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,22 +198,15 @@ public class UpdatePremiumHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CipherEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherEnum(value));
         }
 
         public static CipherEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -892,41 +878,32 @@ public class UpdatePremiumHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePremiumHostResponse updatePremiumHostResponse = (UpdatePremiumHostResponse) o;
-        return Objects.equals(this.id, updatePremiumHostResponse.id)
-            && Objects.equals(this.hostname, updatePremiumHostResponse.hostname)
-            && Objects.equals(this.protocol, updatePremiumHostResponse.protocol)
-            && Objects.equals(this.server, updatePremiumHostResponse.server)
-            && Objects.equals(this.proxy, updatePremiumHostResponse.proxy)
-            && Objects.equals(this.locked, updatePremiumHostResponse.locked)
-            && Objects.equals(this.timestamp, updatePremiumHostResponse.timestamp)
-            && Objects.equals(this.tls, updatePremiumHostResponse.tls)
-            && Objects.equals(this.cipher, updatePremiumHostResponse.cipher)
-            && Objects.equals(this.extend, updatePremiumHostResponse.extend)
-            && Objects.equals(this.flag, updatePremiumHostResponse.flag)
-            && Objects.equals(this.description, updatePremiumHostResponse.description)
-            && Objects.equals(this.policyid, updatePremiumHostResponse.policyid)
-            && Objects.equals(this.domainid, updatePremiumHostResponse.domainid)
-            && Objects.equals(this.projectid, updatePremiumHostResponse.projectid)
-            && Objects.equals(this.enterpriseProjectId, updatePremiumHostResponse.enterpriseProjectId)
-            && Objects.equals(this.certificateid, updatePremiumHostResponse.certificateid)
-            && Objects.equals(this.certificatename, updatePremiumHostResponse.certificatename)
-            && Objects.equals(this.protectStatus, updatePremiumHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, updatePremiumHostResponse.accessStatus)
-            && Objects.equals(this.webTag, updatePremiumHostResponse.webTag)
-            && Objects.equals(this.lbAlgorithm, updatePremiumHostResponse.lbAlgorithm)
-            && Objects.equals(this.blockPage, updatePremiumHostResponse.blockPage)
-            && Objects.equals(this.trafficMark, updatePremiumHostResponse.trafficMark)
-            && Objects.equals(this.timeoutConfig, updatePremiumHostResponse.timeoutConfig)
-            && Objects.equals(this.forwardHeaderMap, updatePremiumHostResponse.forwardHeaderMap)
-            && Objects.equals(this.accessProgress, updatePremiumHostResponse.accessProgress);
+        UpdatePremiumHostResponse that = (UpdatePremiumHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.tls, that.tls)
+            && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.extend, that.extend)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.domainid, that.domainid)
+            && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.lbAlgorithm, that.lbAlgorithm) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.trafficMark, that.trafficMark)
+            && Objects.equals(this.timeoutConfig, that.timeoutConfig)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap)
+            && Objects.equals(this.accessProgress, that.accessProgress);
     }
 
     @Override

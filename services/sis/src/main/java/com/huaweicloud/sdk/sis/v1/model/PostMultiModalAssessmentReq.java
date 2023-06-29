@@ -87,17 +87,16 @@ public class PostMultiModalAssessmentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostMultiModalAssessmentReq postMultiModalAssessmentReq = (PostMultiModalAssessmentReq) o;
-        return Objects.equals(this.config, postMultiModalAssessmentReq.config)
-            && Objects.equals(this.videoData, postMultiModalAssessmentReq.videoData)
-            && Objects.equals(this.refText, postMultiModalAssessmentReq.refText);
+        PostMultiModalAssessmentReq that = (PostMultiModalAssessmentReq) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.videoData, that.videoData)
+            && Objects.equals(this.refText, that.refText);
     }
 
     @Override

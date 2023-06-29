@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * DedicatedComputeInfo
  */
-public class DedicatedComputeInfo  {
-
+public class DedicatedComputeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus_total")
-    
+    @JsonProperty(value = "vcpus_total")
 
     private Integer vcpusTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus_used")
-    
+    @JsonProperty(value = "vcpus_used")
 
     private Integer vcpusUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram_total")
-    
+    @JsonProperty(value = "ram_total")
 
     private Integer ramTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram_used")
-    
+    @JsonProperty(value = "ram_used")
 
     private Integer ramUsed;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_num")
-    
+    @JsonProperty(value = "host_num")
 
     private Integer hostNum;
 
@@ -57,9 +44,6 @@ public class DedicatedComputeInfo  {
         this.vcpusTotal = vcpusTotal;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池中cpu总数。
@@ -73,15 +57,10 @@ public class DedicatedComputeInfo  {
         this.vcpusTotal = vcpusTotal;
     }
 
-    
-
     public DedicatedComputeInfo withVcpusUsed(Integer vcpusUsed) {
         this.vcpusUsed = vcpusUsed;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池已使用的cpu数。
@@ -95,15 +74,10 @@ public class DedicatedComputeInfo  {
         this.vcpusUsed = vcpusUsed;
     }
 
-    
-
     public DedicatedComputeInfo withRamTotal(Integer ramTotal) {
         this.ramTotal = ramTotal;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池计算内存大小, 单位GB。
@@ -117,15 +91,10 @@ public class DedicatedComputeInfo  {
         this.ramTotal = ramTotal;
     }
 
-    
-
     public DedicatedComputeInfo withRamUsed(Integer ramUsed) {
         this.ramUsed = ramUsed;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池已使用的计算内存大小，单位GB。
@@ -139,15 +108,10 @@ public class DedicatedComputeInfo  {
         this.ramUsed = ramUsed;
     }
 
-    
-
     public DedicatedComputeInfo withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池计算资源规格码。
@@ -161,15 +125,10 @@ public class DedicatedComputeInfo  {
         this.specCode = specCode;
     }
 
-    
-
     public DedicatedComputeInfo withHostNum(Integer hostNum) {
         this.hostNum = hostNum;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池计算主机数量。
@@ -183,28 +142,25 @@ public class DedicatedComputeInfo  {
         this.hostNum = hostNum;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DedicatedComputeInfo dedicatedComputeInfo = (DedicatedComputeInfo) o;
-        return Objects.equals(this.vcpusTotal, dedicatedComputeInfo.vcpusTotal) &&
-            Objects.equals(this.vcpusUsed, dedicatedComputeInfo.vcpusUsed) &&
-            Objects.equals(this.ramTotal, dedicatedComputeInfo.ramTotal) &&
-            Objects.equals(this.ramUsed, dedicatedComputeInfo.ramUsed) &&
-            Objects.equals(this.specCode, dedicatedComputeInfo.specCode) &&
-            Objects.equals(this.hostNum, dedicatedComputeInfo.hostNum);
+        DedicatedComputeInfo that = (DedicatedComputeInfo) obj;
+        return Objects.equals(this.vcpusTotal, that.vcpusTotal) && Objects.equals(this.vcpusUsed, that.vcpusUsed)
+            && Objects.equals(this.ramTotal, that.ramTotal) && Objects.equals(this.ramUsed, that.ramUsed)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.hostNum, that.hostNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vcpusTotal, vcpusUsed, ramTotal, ramUsed, specCode, hostNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,6 +174,7 @@ public class DedicatedComputeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -228,8 +185,5 @@ public class DedicatedComputeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

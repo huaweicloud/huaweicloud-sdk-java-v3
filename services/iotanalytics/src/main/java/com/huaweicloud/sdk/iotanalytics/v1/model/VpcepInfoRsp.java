@@ -123,19 +123,19 @@ public class VpcepInfoRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcepInfoRsp vpcepInfoRsp = (VpcepInfoRsp) o;
-        return Objects.equals(this.vpcepServiceId, vpcepInfoRsp.vpcepServiceId)
-            && Objects.equals(this.vpcepServiceName, vpcepInfoRsp.vpcepServiceName)
-            && Objects.equals(this.vpcepClientIp, vpcepInfoRsp.vpcepClientIp)
-            && Objects.equals(this.vpcepClientPort, vpcepInfoRsp.vpcepClientPort)
-            && Objects.equals(this.kafkaBrokerIp, vpcepInfoRsp.kafkaBrokerIp);
+        VpcepInfoRsp that = (VpcepInfoRsp) obj;
+        return Objects.equals(this.vpcepServiceId, that.vpcepServiceId)
+            && Objects.equals(this.vpcepServiceName, that.vpcepServiceName)
+            && Objects.equals(this.vpcepClientIp, that.vpcepClientIp)
+            && Objects.equals(this.vpcepClientPort, that.vpcepClientPort)
+            && Objects.equals(this.kafkaBrokerIp, that.kafkaBrokerIp);
     }
 
     @Override

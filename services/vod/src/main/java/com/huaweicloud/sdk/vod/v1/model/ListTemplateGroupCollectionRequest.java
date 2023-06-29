@@ -101,18 +101,17 @@ public class ListTemplateGroupCollectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateGroupCollectionRequest listTemplateGroupCollectionRequest = (ListTemplateGroupCollectionRequest) o;
-        return Objects.equals(this.xSdkDate, listTemplateGroupCollectionRequest.xSdkDate)
-            && Objects.equals(this.groupCollectionId, listTemplateGroupCollectionRequest.groupCollectionId)
-            && Objects.equals(this.offset, listTemplateGroupCollectionRequest.offset)
-            && Objects.equals(this.limit, listTemplateGroupCollectionRequest.limit);
+        ListTemplateGroupCollectionRequest that = (ListTemplateGroupCollectionRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.groupCollectionId, that.groupCollectionId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

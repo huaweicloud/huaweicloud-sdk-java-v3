@@ -77,17 +77,17 @@ public class ShowComponentInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentInfoRequest showComponentInfoRequest = (ShowComponentInfoRequest) o;
-        return Objects.equals(this.componentId, showComponentInfoRequest.componentId)
-            && Objects.equals(this.applicationId, showComponentInfoRequest.applicationId)
-            && Objects.equals(this.expectFields, showComponentInfoRequest.expectFields);
+        ShowComponentInfoRequest that = (ShowComponentInfoRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.expectFields, that.expectFields);
     }
 
     @Override

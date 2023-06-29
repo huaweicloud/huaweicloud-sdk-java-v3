@@ -99,18 +99,16 @@ public class ListHostDiskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostDiskRequest listHostDiskRequest = (ListHostDiskRequest) o;
-        return Objects.equals(this.clusterId, listHostDiskRequest.clusterId)
-            && Objects.equals(this.instanceName, listHostDiskRequest.instanceName)
-            && Objects.equals(this.limit, listHostDiskRequest.limit)
-            && Objects.equals(this.offset, listHostDiskRequest.offset);
+        ListHostDiskRequest that = (ListHostDiskRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

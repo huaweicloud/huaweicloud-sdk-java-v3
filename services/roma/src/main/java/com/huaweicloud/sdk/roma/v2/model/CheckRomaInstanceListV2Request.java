@@ -81,17 +81,16 @@ public class CheckRomaInstanceListV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRomaInstanceListV2Request checkRomaInstanceListV2Request = (CheckRomaInstanceListV2Request) o;
-        return Objects.equals(this.status, checkRomaInstanceListV2Request.status)
-            && Objects.equals(this.offset, checkRomaInstanceListV2Request.offset)
-            && Objects.equals(this.limit, checkRomaInstanceListV2Request.limit);
+        CheckRomaInstanceListV2Request that = (CheckRomaInstanceListV2Request) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

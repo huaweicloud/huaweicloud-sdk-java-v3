@@ -65,17 +65,16 @@ public class BatchAddEndpointServicePermissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddEndpointServicePermissionsRequest batchAddEndpointServicePermissionsRequest =
-            (BatchAddEndpointServicePermissionsRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, batchAddEndpointServicePermissionsRequest.vpcEndpointServiceId)
-            && Objects.equals(this.body, batchAddEndpointServicePermissionsRequest.body);
+        BatchAddEndpointServicePermissionsRequest that = (BatchAddEndpointServicePermissionsRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

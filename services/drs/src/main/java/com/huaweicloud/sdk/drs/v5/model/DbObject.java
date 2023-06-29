@@ -67,22 +67,15 @@ public class DbObject {
             if (value == null) {
                 return null;
             }
-            ObjectScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectScopeEnum(value));
         }
 
         public static ObjectScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,17 +184,16 @@ public class DbObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbObject dbObject = (DbObject) o;
-        return Objects.equals(this.objectScope, dbObject.objectScope)
-            && Objects.equals(this.targetRootDb, dbObject.targetRootDb)
-            && Objects.equals(this.objectInfo, dbObject.objectInfo);
+        DbObject that = (DbObject) obj;
+        return Objects.equals(this.objectScope, that.objectScope)
+            && Objects.equals(this.targetRootDb, that.targetRootDb) && Objects.equals(this.objectInfo, that.objectInfo);
     }
 
     @Override

@@ -153,20 +153,18 @@ public class ListFlavorSellPoliciesResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorSellPoliciesResult listFlavorSellPoliciesResult = (ListFlavorSellPoliciesResult) o;
-        return Objects.equals(this.id, listFlavorSellPoliciesResult.id)
-            && Objects.equals(this.flavorId, listFlavorSellPoliciesResult.flavorId)
-            && Objects.equals(this.sellStatus, listFlavorSellPoliciesResult.sellStatus)
-            && Objects.equals(this.availabilityZoneId, listFlavorSellPoliciesResult.availabilityZoneId)
-            && Objects.equals(this.sellMode, listFlavorSellPoliciesResult.sellMode)
-            && Objects.equals(this.spotOptions, listFlavorSellPoliciesResult.spotOptions);
+        ListFlavorSellPoliciesResult that = (ListFlavorSellPoliciesResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.sellStatus, that.sellStatus)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.sellMode, that.sellMode) && Objects.equals(this.spotOptions, that.spotOptions);
     }
 
     @Override

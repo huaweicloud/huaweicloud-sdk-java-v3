@@ -75,17 +75,16 @@ public class PartitionColumnStatisticsDescription {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartitionColumnStatisticsDescription partitionColumnStatisticsDescription =
-            (PartitionColumnStatisticsDescription) o;
-        return Objects.equals(this.partitionValues, partitionColumnStatisticsDescription.partitionValues)
-            && Objects.equals(this.lastAnalyzedTime, partitionColumnStatisticsDescription.lastAnalyzedTime);
+        PartitionColumnStatisticsDescription that = (PartitionColumnStatisticsDescription) obj;
+        return Objects.equals(this.partitionValues, that.partitionValues)
+            && Objects.equals(this.lastAnalyzedTime, that.lastAnalyzedTime);
     }
 
     @Override

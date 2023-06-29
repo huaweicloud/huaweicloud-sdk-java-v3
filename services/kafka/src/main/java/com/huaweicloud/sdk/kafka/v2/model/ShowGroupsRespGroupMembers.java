@@ -118,18 +118,16 @@ public class ShowGroupsRespGroupMembers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGroupsRespGroupMembers showGroupsRespGroupMembers = (ShowGroupsRespGroupMembers) o;
-        return Objects.equals(this.host, showGroupsRespGroupMembers.host)
-            && Objects.equals(this.assignment, showGroupsRespGroupMembers.assignment)
-            && Objects.equals(this.memberId, showGroupsRespGroupMembers.memberId)
-            && Objects.equals(this.clientId, showGroupsRespGroupMembers.clientId);
+        ShowGroupsRespGroupMembers that = (ShowGroupsRespGroupMembers) obj;
+        return Objects.equals(this.host, that.host) && Objects.equals(this.assignment, that.assignment)
+            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.clientId, that.clientId);
     }
 
     @Override

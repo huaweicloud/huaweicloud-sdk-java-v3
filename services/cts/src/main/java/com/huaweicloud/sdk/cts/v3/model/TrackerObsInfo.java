@@ -80,22 +80,15 @@ public class TrackerObsInfo {
             if (value == null) {
                 return null;
             }
-            CompressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompressTypeEnum(value));
         }
 
         public static CompressTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,20 +220,20 @@ public class TrackerObsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrackerObsInfo trackerObsInfo = (TrackerObsInfo) o;
-        return Objects.equals(this.bucketName, trackerObsInfo.bucketName)
-            && Objects.equals(this.filePrefixName, trackerObsInfo.filePrefixName)
-            && Objects.equals(this.isObsCreated, trackerObsInfo.isObsCreated)
-            && Objects.equals(this.bucketLifecycle, trackerObsInfo.bucketLifecycle)
-            && Objects.equals(this.compressType, trackerObsInfo.compressType)
-            && Objects.equals(this.isSortByService, trackerObsInfo.isSortByService);
+        TrackerObsInfo that = (TrackerObsInfo) obj;
+        return Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.filePrefixName, that.filePrefixName)
+            && Objects.equals(this.isObsCreated, that.isObsCreated)
+            && Objects.equals(this.bucketLifecycle, that.bucketLifecycle)
+            && Objects.equals(this.compressType, that.compressType)
+            && Objects.equals(this.isSortByService, that.isSortByService);
     }
 
     @Override

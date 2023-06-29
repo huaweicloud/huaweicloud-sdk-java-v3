@@ -77,17 +77,16 @@ public class TrackerSMNChannelConfigBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrackerSMNChannelConfigBody trackerSMNChannelConfigBody = (TrackerSMNChannelConfigBody) o;
-        return Objects.equals(this.regionId, trackerSMNChannelConfigBody.regionId)
-            && Objects.equals(this.projectId, trackerSMNChannelConfigBody.projectId)
-            && Objects.equals(this.topicUrn, trackerSMNChannelConfigBody.topicUrn);
+        TrackerSMNChannelConfigBody that = (TrackerSMNChannelConfigBody) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

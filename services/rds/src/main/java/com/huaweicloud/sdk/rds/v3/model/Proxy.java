@@ -316,22 +316,22 @@ public class Proxy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Proxy proxy = (Proxy) o;
-        return Objects.equals(this.poolId, proxy.poolId) && Objects.equals(this.status, proxy.status)
-            && Objects.equals(this.address, proxy.address) && Objects.equals(this.elbVip, proxy.elbVip)
-            && Objects.equals(this.eip, proxy.eip) && Objects.equals(this.port, proxy.port)
-            && Objects.equals(this.poolStatus, proxy.poolStatus)
-            && Objects.equals(this.delayThresholdInKilobytes, proxy.delayThresholdInKilobytes)
-            && Objects.equals(this.cpu, proxy.cpu) && Objects.equals(this.mem, proxy.mem)
-            && Objects.equals(this.nodeNum, proxy.nodeNum) && Objects.equals(this.nodes, proxy.nodes)
-            && Objects.equals(this.mode, proxy.mode);
+        Proxy that = (Proxy) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.elbVip, that.elbVip)
+            && Objects.equals(this.eip, that.eip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.poolStatus, that.poolStatus)
+            && Objects.equals(this.delayThresholdInKilobytes, that.delayThresholdInKilobytes)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.mem, that.mem)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override

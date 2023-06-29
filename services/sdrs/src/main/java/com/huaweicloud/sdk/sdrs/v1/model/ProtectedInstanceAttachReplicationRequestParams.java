@@ -55,17 +55,15 @@ public class ProtectedInstanceAttachReplicationRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectedInstanceAttachReplicationRequestParams protectedInstanceAttachReplicationRequestParams =
-            (ProtectedInstanceAttachReplicationRequestParams) o;
-        return Objects.equals(this.replicationId, protectedInstanceAttachReplicationRequestParams.replicationId)
-            && Objects.equals(this.device, protectedInstanceAttachReplicationRequestParams.device);
+        ProtectedInstanceAttachReplicationRequestParams that = (ProtectedInstanceAttachReplicationRequestParams) obj;
+        return Objects.equals(this.replicationId, that.replicationId) && Objects.equals(this.device, that.device);
     }
 
     @Override

@@ -143,20 +143,18 @@ public class ResizeInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInstanceReq resizeInstanceReq = (ResizeInstanceReq) o;
-        return Objects.equals(this.newSpecCode, resizeInstanceReq.newSpecCode)
-            && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace)
-            && Objects.equals(this.operType, resizeInstanceReq.operType)
-            && Objects.equals(this.newBrokerNum, resizeInstanceReq.newBrokerNum)
-            && Objects.equals(this.newProductId, resizeInstanceReq.newProductId)
-            && Objects.equals(this.publicipId, resizeInstanceReq.publicipId);
+        ResizeInstanceReq that = (ResizeInstanceReq) obj;
+        return Objects.equals(this.newSpecCode, that.newSpecCode)
+            && Objects.equals(this.newStorageSpace, that.newStorageSpace)
+            && Objects.equals(this.operType, that.operType) && Objects.equals(this.newBrokerNum, that.newBrokerNum)
+            && Objects.equals(this.newProductId, that.newProductId) && Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override

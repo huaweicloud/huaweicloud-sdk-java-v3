@@ -34,16 +34,15 @@ public class DeleteV2XEdgeAppByEdgeAppIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteV2XEdgeAppByEdgeAppIdResponse deleteV2XEdgeAppByEdgeAppIdResponse =
-            (DeleteV2XEdgeAppByEdgeAppIdResponse) o;
-        return Objects.equals(this.body, deleteV2XEdgeAppByEdgeAppIdResponse.body);
+        DeleteV2XEdgeAppByEdgeAppIdResponse that = (DeleteV2XEdgeAppByEdgeAppIdResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

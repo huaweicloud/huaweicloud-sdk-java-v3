@@ -55,15 +55,15 @@ public class IdHostnameEntry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdHostnameEntry idHostnameEntry = (IdHostnameEntry) o;
-        return Objects.equals(this.id, idHostnameEntry.id) && Objects.equals(this.hostname, idHostnameEntry.hostname);
+        IdHostnameEntry that = (IdHostnameEntry) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname);
     }
 
     @Override

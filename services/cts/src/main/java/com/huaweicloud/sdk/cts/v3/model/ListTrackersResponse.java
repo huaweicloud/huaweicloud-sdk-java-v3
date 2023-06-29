@@ -53,15 +53,15 @@ public class ListTrackersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTrackersResponse listTrackersResponse = (ListTrackersResponse) o;
-        return Objects.equals(this.trackers, listTrackersResponse.trackers);
+        ListTrackersResponse that = (ListTrackersResponse) obj;
+        return Objects.equals(this.trackers, that.trackers);
     }
 
     @Override

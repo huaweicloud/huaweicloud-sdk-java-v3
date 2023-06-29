@@ -118,18 +118,16 @@ public class RedisUserForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedisUserForCreation redisUserForCreation = (RedisUserForCreation) o;
-        return Objects.equals(this.name, redisUserForCreation.name)
-            && Objects.equals(this.password, redisUserForCreation.password)
-            && Objects.equals(this.databases, redisUserForCreation.databases)
-            && Objects.equals(this.privilege, redisUserForCreation.privilege);
+        RedisUserForCreation that = (RedisUserForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.databases, that.databases) && Objects.equals(this.privilege, that.privilege);
     }
 
     @Override

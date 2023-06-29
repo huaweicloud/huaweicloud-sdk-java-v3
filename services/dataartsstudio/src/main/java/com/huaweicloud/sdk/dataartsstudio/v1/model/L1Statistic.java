@@ -206,22 +206,22 @@ public class L1Statistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L1Statistic l1Statistic = (L1Statistic) o;
-        return Objects.equals(this.subjectAreaGroupName, l1Statistic.subjectAreaGroupName)
-            && Objects.equals(this.subjectAreaGroupNameEn, l1Statistic.subjectAreaGroupNameEn)
-            && Objects.equals(this.subjectAreaGroupGuid, l1Statistic.subjectAreaGroupGuid)
-            && Objects.equals(this.ordinal, l1Statistic.ordinal)
-            && Objects.equals(this.subjectAreaCount, l1Statistic.subjectAreaCount)
-            && Objects.equals(this.businessObjectCount, l1Statistic.businessObjectCount)
-            && Objects.equals(this.logicEntityCount, l1Statistic.logicEntityCount)
-            && Objects.equals(this.subjectAreaStatistics, l1Statistic.subjectAreaStatistics);
+        L1Statistic that = (L1Statistic) obj;
+        return Objects.equals(this.subjectAreaGroupName, that.subjectAreaGroupName)
+            && Objects.equals(this.subjectAreaGroupNameEn, that.subjectAreaGroupNameEn)
+            && Objects.equals(this.subjectAreaGroupGuid, that.subjectAreaGroupGuid)
+            && Objects.equals(this.ordinal, that.ordinal)
+            && Objects.equals(this.subjectAreaCount, that.subjectAreaCount)
+            && Objects.equals(this.businessObjectCount, that.businessObjectCount)
+            && Objects.equals(this.logicEntityCount, that.logicEntityCount)
+            && Objects.equals(this.subjectAreaStatistics, that.subjectAreaStatistics);
     }
 
     @Override

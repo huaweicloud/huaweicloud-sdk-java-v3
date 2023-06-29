@@ -77,17 +77,16 @@ public class ListConfigHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigHistoriesRequest listConfigHistoriesRequest = (ListConfigHistoriesRequest) o;
-        return Objects.equals(this.instanceId, listConfigHistoriesRequest.instanceId)
-            && Objects.equals(this.offset, listConfigHistoriesRequest.offset)
-            && Objects.equals(this.limit, listConfigHistoriesRequest.limit);
+        ListConfigHistoriesRequest that = (ListConfigHistoriesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class StandardReqDataByVideoAndNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandardReqDataByVideoAndNameAndId standardReqDataByVideoAndNameAndId = (StandardReqDataByVideoAndNameAndId) o;
-        return Objects.equals(this.verificationName, standardReqDataByVideoAndNameAndId.verificationName)
-            && Objects.equals(this.verificationId, standardReqDataByVideoAndNameAndId.verificationId)
-            && Objects.equals(this.video, standardReqDataByVideoAndNameAndId.video)
-            && Objects.equals(this.actions, standardReqDataByVideoAndNameAndId.actions)
-            && Objects.equals(this.nodThreshold, standardReqDataByVideoAndNameAndId.nodThreshold);
+        StandardReqDataByVideoAndNameAndId that = (StandardReqDataByVideoAndNameAndId) obj;
+        return Objects.equals(this.verificationName, that.verificationName)
+            && Objects.equals(this.verificationId, that.verificationId) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.nodThreshold, that.nodThreshold);
     }
 
     @Override

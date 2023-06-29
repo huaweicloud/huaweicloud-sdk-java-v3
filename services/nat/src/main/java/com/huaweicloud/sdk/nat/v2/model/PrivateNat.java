@@ -96,22 +96,15 @@ public class PrivateNat {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class PrivateNat {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -460,21 +446,20 @@ public class PrivateNat {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivateNat privateNat = (PrivateNat) o;
-        return Objects.equals(this.id, privateNat.id) && Objects.equals(this.projectId, privateNat.projectId)
-            && Objects.equals(this.name, privateNat.name) && Objects.equals(this.description, privateNat.description)
-            && Objects.equals(this.spec, privateNat.spec) && Objects.equals(this.status, privateNat.status)
-            && Objects.equals(this.createdAt, privateNat.createdAt)
-            && Objects.equals(this.updatedAt, privateNat.updatedAt)
-            && Objects.equals(this.downlinkVpcs, privateNat.downlinkVpcs) && Objects.equals(this.tags, privateNat.tags)
-            && Objects.equals(this.enterpriseProjectId, privateNat.enterpriseProjectId);
+        PrivateNat that = (PrivateNat) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.downlinkVpcs, that.downlinkVpcs) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

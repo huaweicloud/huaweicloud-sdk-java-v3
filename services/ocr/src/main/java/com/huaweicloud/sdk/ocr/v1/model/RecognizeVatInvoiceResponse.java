@@ -44,15 +44,15 @@ public class RecognizeVatInvoiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeVatInvoiceResponse recognizeVatInvoiceResponse = (RecognizeVatInvoiceResponse) o;
-        return Objects.equals(this.result, recognizeVatInvoiceResponse.result);
+        RecognizeVatInvoiceResponse that = (RecognizeVatInvoiceResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

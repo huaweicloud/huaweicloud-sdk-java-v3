@@ -52,15 +52,15 @@ public class VaultRemoveResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultRemoveResourceReq vaultRemoveResourceReq = (VaultRemoveResourceReq) o;
-        return Objects.equals(this.resourceIds, vaultRemoveResourceReq.resourceIds);
+        VaultRemoveResourceReq that = (VaultRemoveResourceReq) obj;
+        return Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override

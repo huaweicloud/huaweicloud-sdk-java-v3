@@ -55,16 +55,15 @@ public class RollbackApprovalRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RollbackApprovalRequest rollbackApprovalRequest = (RollbackApprovalRequest) o;
-        return Objects.equals(this.workspace, rollbackApprovalRequest.workspace)
-            && Objects.equals(this.ids, rollbackApprovalRequest.ids);
+        RollbackApprovalRequest that = (RollbackApprovalRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.ids, that.ids);
     }
 
     @Override

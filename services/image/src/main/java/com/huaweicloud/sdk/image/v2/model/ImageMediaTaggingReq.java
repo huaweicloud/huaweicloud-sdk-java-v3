@@ -143,20 +143,17 @@ public class ImageMediaTaggingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMediaTaggingReq imageMediaTaggingReq = (ImageMediaTaggingReq) o;
-        return Objects.equals(this.image, imageMediaTaggingReq.image)
-            && Objects.equals(this.url, imageMediaTaggingReq.url)
-            && Objects.equals(this.language, imageMediaTaggingReq.language)
-            && Objects.equals(this.threshold, imageMediaTaggingReq.threshold)
-            && Objects.equals(this.limit, imageMediaTaggingReq.limit)
-            && Objects.equals(this.useDefaultTags, imageMediaTaggingReq.useDefaultTags);
+        ImageMediaTaggingReq that = (ImageMediaTaggingReq) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.useDefaultTags, that.useDefaultTags);
     }
 
     @Override

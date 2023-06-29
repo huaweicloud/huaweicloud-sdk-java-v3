@@ -125,19 +125,17 @@ public class BatchShowQueueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowQueueRequest batchShowQueueRequest = (BatchShowQueueRequest) o;
-        return Objects.equals(this.instanceId, batchShowQueueRequest.instanceId)
-            && Objects.equals(this.queueName, batchShowQueueRequest.queueName)
-            && Objects.equals(this.limit, batchShowQueueRequest.limit)
-            && Objects.equals(this.marker, batchShowQueueRequest.marker)
-            && Objects.equals(this.offset, batchShowQueueRequest.offset);
+        BatchShowQueueRequest that = (BatchShowQueueRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

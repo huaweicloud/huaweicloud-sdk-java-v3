@@ -55,16 +55,15 @@ public class KeystoneRemoveUserFromGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneRemoveUserFromGroupRequest keystoneRemoveUserFromGroupRequest = (KeystoneRemoveUserFromGroupRequest) o;
-        return Objects.equals(this.groupId, keystoneRemoveUserFromGroupRequest.groupId)
-            && Objects.equals(this.userId, keystoneRemoveUserFromGroupRequest.userId);
+        KeystoneRemoveUserFromGroupRequest that = (KeystoneRemoveUserFromGroupRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

@@ -1,217 +1,177 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * JobExeResult
  */
-public class JobExeResult  {
-
+public class JobExeResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_at")
-    
+    @JsonProperty(value = "create_at")
 
     private Long createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_at")
-    
+    @JsonProperty(value = "update_at")
 
     private Long updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenant_id")
-    
+    @JsonProperty(value = "tenant_id")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private Long startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_id")
-    
+    @JsonProperty(value = "group_id")
 
     private String groupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jar_path")
-    
+    @JsonProperty(value = "jar_path")
 
     private String jarPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
 
     private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
 
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_log")
-    
+    @JsonProperty(value = "job_log")
 
     private String jobLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
 
     private Integer jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_action")
-    
+    @JsonProperty(value = "file_action")
 
     private String fileAction;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arguments")
-    
+    @JsonProperty(value = "arguments")
 
     private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hql")
-    
+    @JsonProperty(value = "hql")
 
     private String hql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_state")
-    
+    @JsonProperty(value = "job_state")
 
     private Integer jobState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_final_status")
-    
+    @JsonProperty(value = "job_final_status")
 
     private Integer jobFinalStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hive_script_path")
-    
+    @JsonProperty(value = "hive_script_path")
 
     private String hiveScriptPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="finished_step")
-    
+    @JsonProperty(value = "finished_step")
 
     private Integer finishedStep;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_main_id")
-    
+    @JsonProperty(value = "job_main_id")
 
     private String jobMainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_step_id")
-    
+    @JsonProperty(value = "job_step_id")
 
     private String jobStepId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="postpone_at")
-    
+    @JsonProperty(value = "postpone_at")
 
     private Long postponeAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step_name")
-    
+    @JsonProperty(value = "step_name")
 
     private String stepName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step_num")
-    
+    @JsonProperty(value = "step_num")
 
     private Integer stepNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_num")
-    
+    @JsonProperty(value = "task_num")
 
     private Integer taskNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_by")
-    
+    @JsonProperty(value = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spend_time")
-    
+    @JsonProperty(value = "spend_time")
 
     private Float spendTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step_seq")
-    
+    @JsonProperty(value = "step_seq")
 
     private Integer stepSeq;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
 
     private String progress;
 
@@ -219,9 +179,6 @@ public class JobExeResult  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -235,15 +192,10 @@ public class JobExeResult  {
         this.id = id;
     }
 
-    
-
     public JobExeResult withCreateAt(Long createAt) {
         this.createAt = createAt;
         return this;
     }
-
-    
-
 
     /**
      * 作业创建时间，十三位时间戳。
@@ -257,15 +209,10 @@ public class JobExeResult  {
         this.createAt = createAt;
     }
 
-    
-
     public JobExeResult withUpdateAt(Long updateAt) {
         this.updateAt = updateAt;
         return this;
     }
-
-    
-
 
     /**
      * 作业更新时间，十三位时间戳。  
@@ -279,15 +226,10 @@ public class JobExeResult  {
         this.updateAt = updateAt;
     }
 
-    
-
     public JobExeResult withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
-
-    
-
 
     /**
      * 项目编号。获取方法，请参见[获取项目ID](https://support.huaweicloud.com/api-mrs/mrs_02_0011.html)。
@@ -301,15 +243,10 @@ public class JobExeResult  {
         this.tenantId = tenantId;
     }
 
-    
-
     public JobExeResult withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -323,15 +260,10 @@ public class JobExeResult  {
         this.jobId = jobId;
     }
 
-    
-
     public JobExeResult withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称。
@@ -345,15 +277,10 @@ public class JobExeResult  {
         this.jobName = jobName;
     }
 
-    
-
     public JobExeResult withStartTime(Long startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行开始时间，十三位时间戳。
@@ -367,15 +294,10 @@ public class JobExeResult  {
         this.startTime = startTime;
     }
 
-    
-
     public JobExeResult withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行结束时间，十三位时间戳。
@@ -389,15 +311,10 @@ public class JobExeResult  {
         this.endTime = endTime;
     }
 
-    
-
     public JobExeResult withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 作业所属集群ID。
@@ -411,15 +328,10 @@ public class JobExeResult  {
         this.clusterId = clusterId;
     }
 
-    
-
     public JobExeResult withGroupId(String groupId) {
         this.groupId = groupId;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行组ID
@@ -433,15 +345,10 @@ public class JobExeResult  {
         this.groupId = groupId;
     }
 
-    
-
     public JobExeResult withJarPath(String jarPath) {
         this.jarPath = jarPath;
         return this;
     }
-
-    
-
 
     /**
      * 执行程序jar包或sql文件地址。
@@ -455,15 +362,10 @@ public class JobExeResult  {
         this.jarPath = jarPath;
     }
 
-    
-
     public JobExeResult withInput(String input) {
         this.input = input;
         return this;
     }
-
-    
-
 
     /**
      * 数据输入地址。
@@ -477,15 +379,10 @@ public class JobExeResult  {
         this.input = input;
     }
 
-    
-
     public JobExeResult withOutput(String output) {
         this.output = output;
         return this;
     }
-
-    
-
 
     /**
      * 数据输出地址。
@@ -499,15 +396,10 @@ public class JobExeResult  {
         this.output = output;
     }
 
-    
-
     public JobExeResult withJobLog(String jobLog) {
         this.jobLog = jobLog;
         return this;
     }
-
-    
-
 
     /**
      * 作业日志存储地址
@@ -521,15 +413,10 @@ public class JobExeResult  {
         this.jobLog = jobLog;
     }
 
-    
-
     public JobExeResult withJobType(Integer jobType) {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 作业类型码。  - 1：MapReduce - 2：Spark - 3：Hive Script - 4：HiveSQL（当前不支持） - 5：DistCp - 6：Spark Script - 7：Spark SQL（该接口当前不支持）
@@ -543,15 +430,10 @@ public class JobExeResult  {
         this.jobType = jobType;
     }
 
-    
-
     public JobExeResult withFileAction(String fileAction) {
         this.fileAction = fileAction;
         return this;
     }
-
-    
-
 
     /**
      * 导入导出数据。
@@ -565,15 +447,10 @@ public class JobExeResult  {
         this.fileAction = fileAction;
     }
 
-    
-
     public JobExeResult withArguments(String arguments) {
         this.arguments = arguments;
         return this;
     }
-
-    
-
 
     /**
      * 程序执行的关键参数，该参数由用户程序内的函数指定，MRS只负责参数的传入。该参数可为空。
@@ -587,15 +464,10 @@ public class JobExeResult  {
         this.arguments = arguments;
     }
 
-    
-
     public JobExeResult withHql(String hql) {
         this.hql = hql;
         return this;
     }
-
-    
-
 
     /**
      * HQL脚本语句。
@@ -609,15 +481,10 @@ public class JobExeResult  {
         this.hql = hql;
     }
 
-    
-
     public JobExeResult withJobState(Integer jobState) {
         this.jobState = jobState;
         return this;
     }
-
-    
-
 
     /**
      * 作业状态编码：  - 1：Terminated表示已终止的作业状态 - 2：Running表示运行中的作业状态 - 3：Completed表示已完成的作业状态 - 4：Abnormal表示异常的作业状态
@@ -631,15 +498,10 @@ public class JobExeResult  {
         this.jobState = jobState;
     }
 
-    
-
     public JobExeResult withJobFinalStatus(Integer jobFinalStatus) {
         this.jobFinalStatus = jobFinalStatus;
         return this;
     }
-
-    
-
 
     /**
      * 作业最终状态码。  - 0：未完成 - 1：执行错误，终止执行 - 2：执行完成并且成功 - 3：已取消
@@ -653,15 +515,10 @@ public class JobExeResult  {
         this.jobFinalStatus = jobFinalStatus;
     }
 
-    
-
     public JobExeResult withHiveScriptPath(String hiveScriptPath) {
         this.hiveScriptPath = hiveScriptPath;
         return this;
     }
-
-    
-
 
     /**
      * Hive脚本地址。
@@ -675,15 +532,10 @@ public class JobExeResult  {
         this.hiveScriptPath = hiveScriptPath;
     }
 
-    
-
     public JobExeResult withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 创建作业的用户ID。
@@ -697,15 +549,10 @@ public class JobExeResult  {
         this.createBy = createBy;
     }
 
-    
-
     public JobExeResult withFinishedStep(Integer finishedStep) {
         this.finishedStep = finishedStep;
         return this;
     }
-
-    
-
 
     /**
      * 当前已完成的步骤数。
@@ -719,15 +566,10 @@ public class JobExeResult  {
         this.finishedStep = finishedStep;
     }
 
-    
-
     public JobExeResult withJobMainId(String jobMainId) {
         this.jobMainId = jobMainId;
         return this;
     }
-
-    
-
 
     /**
      * 作业主ID。
@@ -741,15 +583,10 @@ public class JobExeResult  {
         this.jobMainId = jobMainId;
     }
 
-    
-
     public JobExeResult withJobStepId(String jobStepId) {
         this.jobStepId = jobStepId;
         return this;
     }
-
-    
-
 
     /**
      * 作业步骤ID。
@@ -763,15 +600,10 @@ public class JobExeResult  {
         this.jobStepId = jobStepId;
     }
 
-    
-
     public JobExeResult withPostponeAt(Long postponeAt) {
         this.postponeAt = postponeAt;
         return this;
     }
-
-    
-
 
     /**
      * 延迟时间，十三位时间戳。
@@ -785,15 +617,10 @@ public class JobExeResult  {
         this.postponeAt = postponeAt;
     }
 
-    
-
     public JobExeResult withStepName(String stepName) {
         this.stepName = stepName;
         return this;
     }
-
-    
-
 
     /**
      * 作业步骤名。
@@ -807,15 +634,10 @@ public class JobExeResult  {
         this.stepName = stepName;
     }
 
-    
-
     public JobExeResult withStepNum(Integer stepNum) {
         this.stepNum = stepNum;
         return this;
     }
-
-    
-
 
     /**
      * 步骤数量。
@@ -829,15 +651,10 @@ public class JobExeResult  {
         this.stepNum = stepNum;
     }
 
-    
-
     public JobExeResult withTaskNum(Integer taskNum) {
         this.taskNum = taskNum;
         return this;
     }
-
-    
-
 
     /**
      * 任务数量。
@@ -851,15 +668,10 @@ public class JobExeResult  {
         this.taskNum = taskNum;
     }
 
-    
-
     public JobExeResult withUpdateBy(String updateBy) {
         this.updateBy = updateBy;
         return this;
     }
-
-    
-
 
     /**
      * 更新作业的用户ID。
@@ -873,15 +685,10 @@ public class JobExeResult  {
         this.updateBy = updateBy;
     }
 
-    
-
     public JobExeResult withSpendTime(Float spendTime) {
         this.spendTime = spendTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行持续时间，单位：秒。
@@ -895,15 +702,10 @@ public class JobExeResult  {
         this.spendTime = spendTime;
     }
 
-    
-
     public JobExeResult withStepSeq(Integer stepSeq) {
         this.stepSeq = stepSeq;
         return this;
     }
-
-    
-
 
     /**
      * 步骤序列号。
@@ -917,15 +719,10 @@ public class JobExeResult  {
         this.stepSeq = stepSeq;
     }
 
-    
-
     public JobExeResult withProgress(String progress) {
         this.progress = progress;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行进度。
@@ -939,55 +736,71 @@ public class JobExeResult  {
         this.progress = progress;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobExeResult jobExeResult = (JobExeResult) o;
-        return Objects.equals(this.id, jobExeResult.id) &&
-            Objects.equals(this.createAt, jobExeResult.createAt) &&
-            Objects.equals(this.updateAt, jobExeResult.updateAt) &&
-            Objects.equals(this.tenantId, jobExeResult.tenantId) &&
-            Objects.equals(this.jobId, jobExeResult.jobId) &&
-            Objects.equals(this.jobName, jobExeResult.jobName) &&
-            Objects.equals(this.startTime, jobExeResult.startTime) &&
-            Objects.equals(this.endTime, jobExeResult.endTime) &&
-            Objects.equals(this.clusterId, jobExeResult.clusterId) &&
-            Objects.equals(this.groupId, jobExeResult.groupId) &&
-            Objects.equals(this.jarPath, jobExeResult.jarPath) &&
-            Objects.equals(this.input, jobExeResult.input) &&
-            Objects.equals(this.output, jobExeResult.output) &&
-            Objects.equals(this.jobLog, jobExeResult.jobLog) &&
-            Objects.equals(this.jobType, jobExeResult.jobType) &&
-            Objects.equals(this.fileAction, jobExeResult.fileAction) &&
-            Objects.equals(this.arguments, jobExeResult.arguments) &&
-            Objects.equals(this.hql, jobExeResult.hql) &&
-            Objects.equals(this.jobState, jobExeResult.jobState) &&
-            Objects.equals(this.jobFinalStatus, jobExeResult.jobFinalStatus) &&
-            Objects.equals(this.hiveScriptPath, jobExeResult.hiveScriptPath) &&
-            Objects.equals(this.createBy, jobExeResult.createBy) &&
-            Objects.equals(this.finishedStep, jobExeResult.finishedStep) &&
-            Objects.equals(this.jobMainId, jobExeResult.jobMainId) &&
-            Objects.equals(this.jobStepId, jobExeResult.jobStepId) &&
-            Objects.equals(this.postponeAt, jobExeResult.postponeAt) &&
-            Objects.equals(this.stepName, jobExeResult.stepName) &&
-            Objects.equals(this.stepNum, jobExeResult.stepNum) &&
-            Objects.equals(this.taskNum, jobExeResult.taskNum) &&
-            Objects.equals(this.updateBy, jobExeResult.updateBy) &&
-            Objects.equals(this.spendTime, jobExeResult.spendTime) &&
-            Objects.equals(this.stepSeq, jobExeResult.stepSeq) &&
-            Objects.equals(this.progress, jobExeResult.progress);
+        JobExeResult that = (JobExeResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createAt, that.createAt)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.jarPath, that.jarPath) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.jobLog, that.jobLog)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.fileAction, that.fileAction)
+            && Objects.equals(this.arguments, that.arguments) && Objects.equals(this.hql, that.hql)
+            && Objects.equals(this.jobState, that.jobState) && Objects.equals(this.jobFinalStatus, that.jobFinalStatus)
+            && Objects.equals(this.hiveScriptPath, that.hiveScriptPath) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.finishedStep, that.finishedStep) && Objects.equals(this.jobMainId, that.jobMainId)
+            && Objects.equals(this.jobStepId, that.jobStepId) && Objects.equals(this.postponeAt, that.postponeAt)
+            && Objects.equals(this.stepName, that.stepName) && Objects.equals(this.stepNum, that.stepNum)
+            && Objects.equals(this.taskNum, that.taskNum) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.spendTime, that.spendTime) && Objects.equals(this.stepSeq, that.stepSeq)
+            && Objects.equals(this.progress, that.progress);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, createAt, updateAt, tenantId, jobId, jobName, startTime, endTime, clusterId, groupId, jarPath, input, output, jobLog, jobType, fileAction, arguments, hql, jobState, jobFinalStatus, hiveScriptPath, createBy, finishedStep, jobMainId, jobStepId, postponeAt, stepName, stepNum, taskNum, updateBy, spendTime, stepSeq, progress);
+        return Objects.hash(id,
+            createAt,
+            updateAt,
+            tenantId,
+            jobId,
+            jobName,
+            startTime,
+            endTime,
+            clusterId,
+            groupId,
+            jarPath,
+            input,
+            output,
+            jobLog,
+            jobType,
+            fileAction,
+            arguments,
+            hql,
+            jobState,
+            jobFinalStatus,
+            hiveScriptPath,
+            createBy,
+            finishedStep,
+            jobMainId,
+            jobStepId,
+            postponeAt,
+            stepName,
+            stepNum,
+            taskNum,
+            updateBy,
+            spendTime,
+            stepSeq,
+            progress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1028,6 +841,7 @@ public class JobExeResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1038,8 +852,5 @@ public class JobExeResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

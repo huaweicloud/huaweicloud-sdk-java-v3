@@ -75,16 +75,16 @@ public class ListErrorLogsNewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListErrorLogsNewResponse listErrorLogsNewResponse = (ListErrorLogsNewResponse) o;
-        return Objects.equals(this.errorLogList, listErrorLogsNewResponse.errorLogList)
-            && Objects.equals(this.totalRecord, listErrorLogsNewResponse.totalRecord);
+        ListErrorLogsNewResponse that = (ListErrorLogsNewResponse) obj;
+        return Objects.equals(this.errorLogList, that.errorLogList)
+            && Objects.equals(this.totalRecord, that.totalRecord);
     }
 
     @Override

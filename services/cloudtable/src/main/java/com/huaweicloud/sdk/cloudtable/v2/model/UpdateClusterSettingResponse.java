@@ -34,15 +34,15 @@ public class UpdateClusterSettingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateClusterSettingResponse updateClusterSettingResponse = (UpdateClusterSettingResponse) o;
-        return Objects.equals(this.modifyResult, updateClusterSettingResponse.modifyResult);
+        UpdateClusterSettingResponse that = (UpdateClusterSettingResponse) obj;
+        return Objects.equals(this.modifyResult, that.modifyResult);
     }
 
     @Override

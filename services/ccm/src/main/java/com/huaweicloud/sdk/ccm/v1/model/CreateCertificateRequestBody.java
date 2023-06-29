@@ -284,23 +284,21 @@ public class CreateCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateRequestBody createCertificateRequestBody = (CreateCertificateRequestBody) o;
-        return Objects.equals(this.issuerId, createCertificateRequestBody.issuerId)
-            && Objects.equals(this.keyAlgorithm, createCertificateRequestBody.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, createCertificateRequestBody.signatureAlgorithm)
-            && Objects.equals(this.distinguishedName, createCertificateRequestBody.distinguishedName)
-            && Objects.equals(this.validity, createCertificateRequestBody.validity)
-            && Objects.equals(this.keyUsages, createCertificateRequestBody.keyUsages)
-            && Objects.equals(this.subjectAlternativeNames, createCertificateRequestBody.subjectAlternativeNames)
-            && Objects.equals(this.extendedKeyUsage, createCertificateRequestBody.extendedKeyUsage)
-            && Objects.equals(this.customizedExtension, createCertificateRequestBody.customizedExtension);
+        CreateCertificateRequestBody that = (CreateCertificateRequestBody) obj;
+        return Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.validity, that.validity) && Objects.equals(this.keyUsages, that.keyUsages)
+            && Objects.equals(this.subjectAlternativeNames, that.subjectAlternativeNames)
+            && Objects.equals(this.extendedKeyUsage, that.extendedKeyUsage)
+            && Objects.equals(this.customizedExtension, that.customizedExtension);
     }
 
     @Override

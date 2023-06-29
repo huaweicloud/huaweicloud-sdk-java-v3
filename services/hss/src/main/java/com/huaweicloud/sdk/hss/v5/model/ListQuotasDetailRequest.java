@@ -257,25 +257,21 @@ public class ListQuotasDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotasDetailRequest listQuotasDetailRequest = (ListQuotasDetailRequest) o;
-        return Objects.equals(this.region, listQuotasDetailRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listQuotasDetailRequest.enterpriseProjectId)
-            && Objects.equals(this.version, listQuotasDetailRequest.version)
-            && Objects.equals(this.category, listQuotasDetailRequest.category)
-            && Objects.equals(this.quotaStatus, listQuotasDetailRequest.quotaStatus)
-            && Objects.equals(this.usedStatus, listQuotasDetailRequest.usedStatus)
-            && Objects.equals(this.hostName, listQuotasDetailRequest.hostName)
-            && Objects.equals(this.resourceId, listQuotasDetailRequest.resourceId)
-            && Objects.equals(this.chargingMode, listQuotasDetailRequest.chargingMode)
-            && Objects.equals(this.limit, listQuotasDetailRequest.limit)
-            && Objects.equals(this.offset, listQuotasDetailRequest.offset);
+        ListQuotasDetailRequest that = (ListQuotasDetailRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.quotaStatus, that.quotaStatus) && Objects.equals(this.usedStatus, that.usedStatus)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

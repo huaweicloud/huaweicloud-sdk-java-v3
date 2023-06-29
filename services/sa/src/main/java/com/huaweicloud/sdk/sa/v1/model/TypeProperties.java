@@ -77,16 +77,16 @@ public class TypeProperties {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TypeProperties typeProperties = (TypeProperties) o;
-        return Objects.equals(this.killchain, typeProperties.killchain)
-            && Objects.equals(this.ttps, typeProperties.ttps) && Objects.equals(this.effects, typeProperties.effects);
+        TypeProperties that = (TypeProperties) obj;
+        return Objects.equals(this.killchain, that.killchain) && Objects.equals(this.ttps, that.ttps)
+            && Objects.equals(this.effects, that.effects);
     }
 
     @Override

@@ -168,18 +168,17 @@ public class NodeSpecUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeSpecUpdate nodeSpecUpdate = (NodeSpecUpdate) o;
-        return Objects.equals(this.taints, nodeSpecUpdate.taints)
-            && Objects.equals(this.k8sTags, nodeSpecUpdate.k8sTags)
-            && Objects.equals(this.userTags, nodeSpecUpdate.userTags)
-            && Objects.equals(this.initializedConditions, nodeSpecUpdate.initializedConditions);
+        NodeSpecUpdate that = (NodeSpecUpdate) obj;
+        return Objects.equals(this.taints, that.taints) && Objects.equals(this.k8sTags, that.k8sTags)
+            && Objects.equals(this.userTags, that.userTags)
+            && Objects.equals(this.initializedConditions, that.initializedConditions);
     }
 
     @Override

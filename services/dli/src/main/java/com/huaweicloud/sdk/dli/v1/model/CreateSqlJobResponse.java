@@ -103,22 +103,15 @@ public class CreateSqlJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,21 +300,18 @@ public class CreateSqlJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlJobResponse createSqlJobResponse = (CreateSqlJobResponse) o;
-        return Objects.equals(this.isSuccess, createSqlJobResponse.isSuccess)
-            && Objects.equals(this.message, createSqlJobResponse.message)
-            && Objects.equals(this.jobId, createSqlJobResponse.jobId)
-            && Objects.equals(this.jobType, createSqlJobResponse.jobType)
-            && Objects.equals(this.schema, createSqlJobResponse.schema)
-            && Objects.equals(this.rows, createSqlJobResponse.rows)
-            && Objects.equals(this.jobMode, createSqlJobResponse.jobMode);
+        CreateSqlJobResponse that = (CreateSqlJobResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.rows, that.rows)
+            && Objects.equals(this.jobMode, that.jobMode);
     }
 
     @Override

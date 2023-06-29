@@ -272,25 +272,20 @@ public class PipelineExecuteStates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineExecuteStates pipelineExecuteStates = (PipelineExecuteStates) o;
-        return Objects.equals(this.result, pipelineExecuteStates.result)
-            && Objects.equals(this.status, pipelineExecuteStates.status)
-            && Objects.equals(this.stages, pipelineExecuteStates.stages)
-            && Objects.equals(this.executor, pipelineExecuteStates.executor)
-            && Objects.equals(this.pipelineName, pipelineExecuteStates.pipelineName)
-            && Objects.equals(this.pipelineId, pipelineExecuteStates.pipelineId)
-            && Objects.equals(this.buildId, pipelineExecuteStates.buildId)
-            && Objects.equals(this.detailUrl, pipelineExecuteStates.detailUrl)
-            && Objects.equals(this.modifyUrl, pipelineExecuteStates.modifyUrl)
-            && Objects.equals(this.startTime, pipelineExecuteStates.startTime)
-            && Objects.equals(this.endTime, pipelineExecuteStates.endTime);
+        PipelineExecuteStates that = (PipelineExecuteStates) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.stages, that.stages) && Objects.equals(this.executor, that.executor)
+            && Objects.equals(this.pipelineName, that.pipelineName) && Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.buildId, that.buildId) && Objects.equals(this.detailUrl, that.detailUrl)
+            && Objects.equals(this.modifyUrl, that.modifyUrl) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

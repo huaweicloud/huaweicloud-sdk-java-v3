@@ -77,17 +77,16 @@ public class LiveDetectFaceRespResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveDetectFaceRespResult liveDetectFaceRespResult = (LiveDetectFaceRespResult) o;
-        return Objects.equals(this.alive, liveDetectFaceRespResult.alive)
-            && Objects.equals(this.confidence, liveDetectFaceRespResult.confidence)
-            && Objects.equals(this.picture, liveDetectFaceRespResult.picture);
+        LiveDetectFaceRespResult that = (LiveDetectFaceRespResult) obj;
+        return Objects.equals(this.alive, that.alive) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.picture, that.picture);
     }
 
     @Override

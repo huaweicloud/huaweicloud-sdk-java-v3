@@ -96,22 +96,15 @@ public class LinkAttributeAndElementVO {
             if (value == null) {
                 return null;
             }
-            BizTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BizTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BizTypeEnum(value));
         }
 
         public static BizTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BizTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -218,18 +211,16 @@ public class LinkAttributeAndElementVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinkAttributeAndElementVO linkAttributeAndElementVO = (LinkAttributeAndElementVO) o;
-        return Objects.equals(this.ids, linkAttributeAndElementVO.ids)
-            && Objects.equals(this.standRowId, linkAttributeAndElementVO.standRowId)
-            && Objects.equals(this.tableId, linkAttributeAndElementVO.tableId)
-            && Objects.equals(this.bizType, linkAttributeAndElementVO.bizType);
+        LinkAttributeAndElementVO that = (LinkAttributeAndElementVO) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.standRowId, that.standRowId)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.bizType, that.bizType);
     }
 
     @Override

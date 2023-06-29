@@ -54,16 +54,15 @@ public class BatchDownloadResourceStatDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDownloadResourceStatDataResponse batchDownloadResourceStatDataResponse =
-            (BatchDownloadResourceStatDataResponse) o;
-        return Objects.equals(this.metricStatistics, batchDownloadResourceStatDataResponse.metricStatistics);
+        BatchDownloadResourceStatDataResponse that = (BatchDownloadResourceStatDataResponse) obj;
+        return Objects.equals(this.metricStatistics, that.metricStatistics);
     }
 
     @Override

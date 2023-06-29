@@ -77,18 +77,16 @@ public class CreateUnscopedTokenWithIdTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUnscopedTokenWithIdTokenRequest createUnscopedTokenWithIdTokenRequest =
-            (CreateUnscopedTokenWithIdTokenRequest) o;
-        return Objects.equals(this.idpId, createUnscopedTokenWithIdTokenRequest.idpId)
-            && Objects.equals(this.protocolId, createUnscopedTokenWithIdTokenRequest.protocolId)
-            && Objects.equals(this.authorization, createUnscopedTokenWithIdTokenRequest.authorization);
+        CreateUnscopedTokenWithIdTokenRequest that = (CreateUnscopedTokenWithIdTokenRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.protocolId, that.protocolId)
+            && Objects.equals(this.authorization, that.authorization);
     }
 
     @Override

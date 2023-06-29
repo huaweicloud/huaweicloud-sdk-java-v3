@@ -115,17 +115,16 @@ public class ListTranscodeDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodeDataResponse listTranscodeDataResponse = (ListTranscodeDataResponse) o;
-        return Objects.equals(this.transcodeDataList, listTranscodeDataResponse.transcodeDataList)
-            && Objects.equals(this.summaryList, listTranscodeDataResponse.summaryList)
-            && Objects.equals(this.xRequestId, listTranscodeDataResponse.xRequestId);
+        ListTranscodeDataResponse that = (ListTranscodeDataResponse) obj;
+        return Objects.equals(this.transcodeDataList, that.transcodeDataList)
+            && Objects.equals(this.summaryList, that.summaryList) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

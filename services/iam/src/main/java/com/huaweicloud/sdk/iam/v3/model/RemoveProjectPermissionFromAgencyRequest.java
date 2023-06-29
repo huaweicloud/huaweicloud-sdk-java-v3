@@ -77,18 +77,16 @@ public class RemoveProjectPermissionFromAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveProjectPermissionFromAgencyRequest removeProjectPermissionFromAgencyRequest =
-            (RemoveProjectPermissionFromAgencyRequest) o;
-        return Objects.equals(this.projectId, removeProjectPermissionFromAgencyRequest.projectId)
-            && Objects.equals(this.agencyId, removeProjectPermissionFromAgencyRequest.agencyId)
-            && Objects.equals(this.roleId, removeProjectPermissionFromAgencyRequest.roleId);
+        RemoveProjectPermissionFromAgencyRequest that = (RemoveProjectPermissionFromAgencyRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.agencyId, that.agencyId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

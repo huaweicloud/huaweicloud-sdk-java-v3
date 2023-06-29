@@ -87,17 +87,16 @@ public class UpdateTrafficEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTrafficEventRequest updateTrafficEventRequest = (UpdateTrafficEventRequest) o;
-        return Objects.equals(this.instanceId, updateTrafficEventRequest.instanceId)
-            && Objects.equals(this.eventId, updateTrafficEventRequest.eventId)
-            && Objects.equals(this.body, updateTrafficEventRequest.body);
+        UpdateTrafficEventRequest that = (UpdateTrafficEventRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

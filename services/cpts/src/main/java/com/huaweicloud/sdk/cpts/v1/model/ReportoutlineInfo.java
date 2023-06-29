@@ -605,41 +605,31 @@ public class ReportoutlineInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportoutlineInfo reportoutlineInfo = (ReportoutlineInfo) o;
-        return Objects.equals(this.avgResponseTime, reportoutlineInfo.avgResponseTime)
-            && Objects.equals(this.branchId, reportoutlineInfo.branchId)
-            && Objects.equals(this.branchName, reportoutlineInfo.branchName)
-            && Objects.equals(this.caseRetry, reportoutlineInfo.caseRetry)
-            && Objects.equals(this.completeNum, reportoutlineInfo.completeNum)
-            && Objects.equals(this.duration, reportoutlineInfo.duration)
-            && Objects.equals(this.endTime, reportoutlineInfo.endTime)
-            && Objects.equals(this.executedNum, reportoutlineInfo.executedNum)
-            && Objects.equals(this.iterationUri, reportoutlineInfo.iterationUri)
-            && Objects.equals(this.kpiCaseCount, reportoutlineInfo.kpiCaseCount)
-            && Objects.equals(this.kpiCaseExecuteCount, reportoutlineInfo.kpiCaseExecuteCount)
-            && Objects.equals(this.kpiCasePassCount, reportoutlineInfo.kpiCasePassCount)
-            && Objects.equals(this.maxUsers, reportoutlineInfo.maxUsers)
-            && Objects.equals(this.passNum, reportoutlineInfo.passNum)
-            && Objects.equals(this.stage, reportoutlineInfo.stage)
-            && Objects.equals(this.stageName, reportoutlineInfo.stageName)
-            && Objects.equals(this.startTime, reportoutlineInfo.startTime)
-            && Objects.equals(this.successRate, reportoutlineInfo.successRate)
-            && Objects.equals(this.taskStatus, reportoutlineInfo.taskStatus)
-            && Objects.equals(this.totalNum, reportoutlineInfo.totalNum)
-            && Objects.equals(this.tps, reportoutlineInfo.tps)
-            && Objects.equals(this.versionUri, reportoutlineInfo.versionUri)
-            && Objects.equals(this.projectId, reportoutlineInfo.projectId)
-            && Objects.equals(this.serviceId, reportoutlineInfo.serviceId)
-            && Objects.equals(this.progressState, reportoutlineInfo.progressState)
-            && Objects.equals(this.createBy, reportoutlineInfo.createBy)
-            && Objects.equals(this.statusValue, reportoutlineInfo.statusValue);
+        ReportoutlineInfo that = (ReportoutlineInfo) obj;
+        return Objects.equals(this.avgResponseTime, that.avgResponseTime)
+            && Objects.equals(this.branchId, that.branchId) && Objects.equals(this.branchName, that.branchName)
+            && Objects.equals(this.caseRetry, that.caseRetry) && Objects.equals(this.completeNum, that.completeNum)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.executedNum, that.executedNum)
+            && Objects.equals(this.iterationUri, that.iterationUri)
+            && Objects.equals(this.kpiCaseCount, that.kpiCaseCount)
+            && Objects.equals(this.kpiCaseExecuteCount, that.kpiCaseExecuteCount)
+            && Objects.equals(this.kpiCasePassCount, that.kpiCasePassCount)
+            && Objects.equals(this.maxUsers, that.maxUsers) && Objects.equals(this.passNum, that.passNum)
+            && Objects.equals(this.stage, that.stage) && Objects.equals(this.stageName, that.stageName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.successRate, that.successRate)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.tps, that.tps) && Objects.equals(this.versionUri, that.versionUri)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.progressState, that.progressState) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.statusValue, that.statusValue);
     }
 
     @Override

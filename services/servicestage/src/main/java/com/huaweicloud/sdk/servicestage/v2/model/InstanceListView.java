@@ -409,30 +409,25 @@ public class InstanceListView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceListView instanceListView = (InstanceListView) o;
-        return Objects.equals(this.id, instanceListView.id)
-            && Objects.equals(this.applicationId, instanceListView.applicationId)
-            && Objects.equals(this.applicationName, instanceListView.applicationName)
-            && Objects.equals(this.componentId, instanceListView.componentId)
-            && Objects.equals(this.componentName, instanceListView.componentName)
-            && Objects.equals(this.name, instanceListView.name)
-            && Objects.equals(this.environmentId, instanceListView.environmentId)
-            && Objects.equals(this.environmentName, instanceListView.environmentName)
-            && Objects.equals(this.platformType, instanceListView.platformType)
-            && Objects.equals(this.version, instanceListView.version)
-            && Objects.equals(this.externalAccesses, instanceListView.externalAccesses)
-            && Objects.equals(this.artifacts, instanceListView.artifacts)
-            && Objects.equals(this.creator, instanceListView.creator)
-            && Objects.equals(this.createTime, instanceListView.createTime)
-            && Objects.equals(this.updateTime, instanceListView.updateTime)
-            && Objects.equals(this.statusDetail, instanceListView.statusDetail);
+        InstanceListView that = (InstanceListView) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.applicationName, that.applicationName)
+            && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.componentName, that.componentName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.environmentName, that.environmentName)
+            && Objects.equals(this.platformType, that.platformType) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.externalAccesses, that.externalAccesses)
+            && Objects.equals(this.artifacts, that.artifacts) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.statusDetail, that.statusDetail);
     }
 
     @Override

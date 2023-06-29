@@ -147,20 +147,18 @@ public class BatchShowTrafficControllersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowTrafficControllersRequest batchShowTrafficControllersRequest = (BatchShowTrafficControllersRequest) o;
-        return Objects.equals(this.instanceId, batchShowTrafficControllersRequest.instanceId)
-            && Objects.equals(this.offset, batchShowTrafficControllersRequest.offset)
-            && Objects.equals(this.limit, batchShowTrafficControllersRequest.limit)
-            && Objects.equals(this.trafficControllerId, batchShowTrafficControllersRequest.trafficControllerId)
-            && Objects.equals(this.esn, batchShowTrafficControllersRequest.esn)
-            && Objects.equals(this.status, batchShowTrafficControllersRequest.status);
+        BatchShowTrafficControllersRequest that = (BatchShowTrafficControllersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.trafficControllerId, that.trafficControllerId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

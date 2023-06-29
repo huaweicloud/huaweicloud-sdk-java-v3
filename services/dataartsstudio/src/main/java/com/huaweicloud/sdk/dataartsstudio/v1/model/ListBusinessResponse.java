@@ -34,15 +34,15 @@ public class ListBusinessResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBusinessResponse listBusinessResponse = (ListBusinessResponse) o;
-        return Objects.equals(this.data, listBusinessResponse.data);
+        ListBusinessResponse that = (ListBusinessResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

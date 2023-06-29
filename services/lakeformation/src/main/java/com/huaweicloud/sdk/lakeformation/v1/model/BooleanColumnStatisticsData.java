@@ -77,17 +77,17 @@ public class BooleanColumnStatisticsData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BooleanColumnStatisticsData booleanColumnStatisticsData = (BooleanColumnStatisticsData) o;
-        return Objects.equals(this.numberOfTrue, booleanColumnStatisticsData.numberOfTrue)
-            && Objects.equals(this.numberOfFalse, booleanColumnStatisticsData.numberOfFalse)
-            && Objects.equals(this.numberOfNull, booleanColumnStatisticsData.numberOfNull);
+        BooleanColumnStatisticsData that = (BooleanColumnStatisticsData) obj;
+        return Objects.equals(this.numberOfTrue, that.numberOfTrue)
+            && Objects.equals(this.numberOfFalse, that.numberOfFalse)
+            && Objects.equals(this.numberOfNull, that.numberOfNull);
     }
 
     @Override

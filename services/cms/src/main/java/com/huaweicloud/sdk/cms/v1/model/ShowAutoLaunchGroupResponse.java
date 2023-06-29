@@ -44,15 +44,15 @@ public class ShowAutoLaunchGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoLaunchGroupResponse showAutoLaunchGroupResponse = (ShowAutoLaunchGroupResponse) o;
-        return Objects.equals(this.autoLaunchGroup, showAutoLaunchGroupResponse.autoLaunchGroup);
+        ShowAutoLaunchGroupResponse that = (ShowAutoLaunchGroupResponse) obj;
+        return Objects.equals(this.autoLaunchGroup, that.autoLaunchGroup);
     }
 
     @Override

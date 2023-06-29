@@ -97,17 +97,16 @@ public class ExportFlinkJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportFlinkJobResponse exportFlinkJobResponse = (ExportFlinkJobResponse) o;
-        return Objects.equals(this.isSuccess, exportFlinkJobResponse.isSuccess)
-            && Objects.equals(this.message, exportFlinkJobResponse.message)
-            && Objects.equals(this.zipFile, exportFlinkJobResponse.zipFile);
+        ExportFlinkJobResponse that = (ExportFlinkJobResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.zipFile, that.zipFile);
     }
 
     @Override

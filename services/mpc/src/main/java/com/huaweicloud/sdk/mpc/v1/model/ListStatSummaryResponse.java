@@ -86,22 +86,15 @@ public class ListStatSummaryResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatTypeEnum(value));
         }
 
         public static StatTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,17 +186,16 @@ public class ListStatSummaryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatSummaryResponse listStatSummaryResponse = (ListStatSummaryResponse) o;
-        return Objects.equals(this.summary, listStatSummaryResponse.summary)
-            && Objects.equals(this.total, listStatSummaryResponse.total)
-            && Objects.equals(this.statType, listStatSummaryResponse.statType);
+        ListStatSummaryResponse that = (ListStatSummaryResponse) obj;
+        return Objects.equals(this.summary, that.summary) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.statType, that.statType);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class ParseCertificateSigningRequestRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParseCertificateSigningRequestRequestBody parseCertificateSigningRequestRequestBody =
-            (ParseCertificateSigningRequestRequestBody) o;
-        return Objects.equals(this.csr, parseCertificateSigningRequestRequestBody.csr);
+        ParseCertificateSigningRequestRequestBody that = (ParseCertificateSigningRequestRequestBody) obj;
+        return Objects.equals(this.csr, that.csr);
     }
 
     @Override

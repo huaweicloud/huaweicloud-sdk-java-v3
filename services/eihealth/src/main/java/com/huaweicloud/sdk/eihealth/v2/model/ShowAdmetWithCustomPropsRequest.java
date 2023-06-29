@@ -43,15 +43,15 @@ public class ShowAdmetWithCustomPropsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAdmetWithCustomPropsRequest showAdmetWithCustomPropsRequest = (ShowAdmetWithCustomPropsRequest) o;
-        return Objects.equals(this.body, showAdmetWithCustomPropsRequest.body);
+        ShowAdmetWithCustomPropsRequest that = (ShowAdmetWithCustomPropsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

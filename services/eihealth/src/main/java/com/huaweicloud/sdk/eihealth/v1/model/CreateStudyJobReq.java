@@ -121,19 +121,18 @@ public class CreateStudyJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStudyJobReq createStudyJobReq = (CreateStudyJobReq) o;
-        return Objects.equals(this.workflowJobId, createStudyJobReq.workflowJobId)
-            && Objects.equals(this.templateId, createStudyJobReq.templateId)
-            && Objects.equals(this.databaseName, createStudyJobReq.databaseName)
-            && Objects.equals(this.relativePath, createStudyJobReq.relativePath)
-            && Objects.equals(this.outputFileType, createStudyJobReq.outputFileType);
+        CreateStudyJobReq that = (CreateStudyJobReq) obj;
+        return Objects.equals(this.workflowJobId, that.workflowJobId)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.relativePath, that.relativePath)
+            && Objects.equals(this.outputFileType, that.outputFileType);
     }
 
     @Override

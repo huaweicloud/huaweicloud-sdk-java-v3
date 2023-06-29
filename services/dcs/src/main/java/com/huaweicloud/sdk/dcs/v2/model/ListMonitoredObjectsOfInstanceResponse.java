@@ -275,22 +275,20 @@ public class ListMonitoredObjectsOfInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitoredObjectsOfInstanceResponse listMonitoredObjectsOfInstanceResponse =
-            (ListMonitoredObjectsOfInstanceResponse) o;
-        return Objects.equals(this.router, listMonitoredObjectsOfInstanceResponse.router)
-            && Objects.equals(this.children, listMonitoredObjectsOfInstanceResponse.children)
-            && Objects.equals(this.instances, listMonitoredObjectsOfInstanceResponse.instances)
-            && Objects.equals(this.dcsClusterRedisNode, listMonitoredObjectsOfInstanceResponse.dcsClusterRedisNode)
-            && Objects.equals(this.dcsClusterProxyNode, listMonitoredObjectsOfInstanceResponse.dcsClusterProxyNode)
-            && Objects.equals(this.dcsClusterProxy2Node, listMonitoredObjectsOfInstanceResponse.dcsClusterProxy2Node)
-            && Objects.equals(this.total, listMonitoredObjectsOfInstanceResponse.total);
+        ListMonitoredObjectsOfInstanceResponse that = (ListMonitoredObjectsOfInstanceResponse) obj;
+        return Objects.equals(this.router, that.router) && Objects.equals(this.children, that.children)
+            && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.dcsClusterRedisNode, that.dcsClusterRedisNode)
+            && Objects.equals(this.dcsClusterProxyNode, that.dcsClusterProxyNode)
+            && Objects.equals(this.dcsClusterProxy2Node, that.dcsClusterProxy2Node)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

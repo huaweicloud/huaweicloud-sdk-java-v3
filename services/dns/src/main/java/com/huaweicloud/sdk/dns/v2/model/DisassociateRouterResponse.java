@@ -78,17 +78,16 @@ public class DisassociateRouterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateRouterResponse disassociateRouterResponse = (DisassociateRouterResponse) o;
-        return Objects.equals(this.routerId, disassociateRouterResponse.routerId)
-            && Objects.equals(this.routerRegion, disassociateRouterResponse.routerRegion)
-            && Objects.equals(this.status, disassociateRouterResponse.status);
+        DisassociateRouterResponse that = (DisassociateRouterResponse) obj;
+        return Objects.equals(this.routerId, that.routerId) && Objects.equals(this.routerRegion, that.routerRegion)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

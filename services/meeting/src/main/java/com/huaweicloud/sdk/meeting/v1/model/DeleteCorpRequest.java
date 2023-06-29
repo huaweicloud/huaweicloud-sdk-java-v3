@@ -79,17 +79,16 @@ public class DeleteCorpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCorpRequest deleteCorpRequest = (DeleteCorpRequest) o;
-        return Objects.equals(this.xRequestId, deleteCorpRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, deleteCorpRequest.acceptLanguage)
-            && Objects.equals(this.id, deleteCorpRequest.id);
+        DeleteCorpRequest that = (DeleteCorpRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.id, that.id);
     }
 
     @Override

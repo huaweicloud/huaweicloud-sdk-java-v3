@@ -164,19 +164,17 @@ public class RestPicLayout {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestPicLayout restPicLayout = (RestPicLayout) o;
-        return Objects.equals(this.switchTime, restPicLayout.switchTime)
-            && Objects.equals(this.picNum, restPicLayout.picNum)
-            && Objects.equals(this.layOutName, restPicLayout.layOutName)
-            && Objects.equals(this.imageType, restPicLayout.imageType) && Objects.equals(this.uuid, restPicLayout.uuid)
-            && Objects.equals(this.subscriberInPics, restPicLayout.subscriberInPics);
+        RestPicLayout that = (RestPicLayout) obj;
+        return Objects.equals(this.switchTime, that.switchTime) && Objects.equals(this.picNum, that.picNum)
+            && Objects.equals(this.layOutName, that.layOutName) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.subscriberInPics, that.subscriberInPics);
     }
 
     @Override

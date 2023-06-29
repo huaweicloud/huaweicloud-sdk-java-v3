@@ -143,20 +143,18 @@ public class InstanceSpaceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceSpaceInfo instanceSpaceInfo = (InstanceSpaceInfo) o;
-        return Objects.equals(this.totalSize, instanceSpaceInfo.totalSize)
-            && Objects.equals(this.usedSize, instanceSpaceInfo.usedSize)
-            && Objects.equals(this.dataSize, instanceSpaceInfo.dataSize)
-            && Objects.equals(this.logSize, instanceSpaceInfo.logSize)
-            && Objects.equals(this.avgDailyGrowth, instanceSpaceInfo.avgDailyGrowth)
-            && Objects.equals(this.lastResultTime, instanceSpaceInfo.lastResultTime);
+        InstanceSpaceInfo that = (InstanceSpaceInfo) obj;
+        return Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.usedSize, that.usedSize)
+            && Objects.equals(this.dataSize, that.dataSize) && Objects.equals(this.logSize, that.logSize)
+            && Objects.equals(this.avgDailyGrowth, that.avgDailyGrowth)
+            && Objects.equals(this.lastResultTime, that.lastResultTime);
     }
 
     @Override

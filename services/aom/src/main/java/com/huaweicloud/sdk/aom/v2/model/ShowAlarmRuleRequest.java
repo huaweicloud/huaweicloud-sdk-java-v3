@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowAlarmRuleRequest  {
-
+public class ShowAlarmRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_rule_id")
-    
+    @JsonProperty(value = "alarm_rule_id")
 
     private String alarmRuleId;
 
@@ -28,9 +19,6 @@ public class ShowAlarmRuleRequest  {
         this.alarmRuleId = alarmRuleId;
         return this;
     }
-
-    
-
 
     /**
      * 阈值规则ID。
@@ -44,23 +32,23 @@ public class ShowAlarmRuleRequest  {
         this.alarmRuleId = alarmRuleId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlarmRuleRequest showAlarmRuleRequest = (ShowAlarmRuleRequest) o;
-        return Objects.equals(this.alarmRuleId, showAlarmRuleRequest.alarmRuleId);
+        ShowAlarmRuleRequest that = (ShowAlarmRuleRequest) obj;
+        return Objects.equals(this.alarmRuleId, that.alarmRuleId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(alarmRuleId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ShowAlarmRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ShowAlarmRuleRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

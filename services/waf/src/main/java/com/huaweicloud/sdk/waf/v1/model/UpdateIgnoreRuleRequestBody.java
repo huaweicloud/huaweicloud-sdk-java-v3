@@ -187,20 +187,17 @@ public class UpdateIgnoreRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIgnoreRuleRequestBody updateIgnoreRuleRequestBody = (UpdateIgnoreRuleRequestBody) o;
-        return Objects.equals(this.domain, updateIgnoreRuleRequestBody.domain)
-            && Objects.equals(this.conditions, updateIgnoreRuleRequestBody.conditions)
-            && Objects.equals(this.mode, updateIgnoreRuleRequestBody.mode)
-            && Objects.equals(this.rule, updateIgnoreRuleRequestBody.rule)
-            && Objects.equals(this.advanced, updateIgnoreRuleRequestBody.advanced)
-            && Objects.equals(this.description, updateIgnoreRuleRequestBody.description);
+        UpdateIgnoreRuleRequestBody that = (UpdateIgnoreRuleRequestBody) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.rule, that.rule)
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.description, that.description);
     }
 
     @Override

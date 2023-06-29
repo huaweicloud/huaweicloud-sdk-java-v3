@@ -134,18 +134,16 @@ public class PutSourceServerBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutSourceServerBody putSourceServerBody = (PutSourceServerBody) o;
-        return Objects.equals(this.name, putSourceServerBody.name)
-            && Objects.equals(this.migprojectid, putSourceServerBody.migprojectid)
-            && Objects.equals(this.disks, putSourceServerBody.disks)
-            && Objects.equals(this.volumeGroups, putSourceServerBody.volumeGroups);
+        PutSourceServerBody that = (PutSourceServerBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.migprojectid, that.migprojectid)
+            && Objects.equals(this.disks, that.disks) && Objects.equals(this.volumeGroups, that.volumeGroups);
     }
 
     @Override

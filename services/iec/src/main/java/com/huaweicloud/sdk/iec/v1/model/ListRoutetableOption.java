@@ -143,19 +143,17 @@ public class ListRoutetableOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutetableOption listRoutetableOption = (ListRoutetableOption) o;
-        return Objects.equals(this.id, listRoutetableOption.id) && Objects.equals(this.name, listRoutetableOption.name)
-            && Objects.equals(this.vpcId, listRoutetableOption.vpcId)
-            && Objects.equals(this.domainId, listRoutetableOption.domainId)
-            && Objects.equals(this.description, listRoutetableOption.description)
-            && Objects.equals(this._default, listRoutetableOption._default);
+        ListRoutetableOption that = (ListRoutetableOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this._default, that._default);
     }
 
     @Override

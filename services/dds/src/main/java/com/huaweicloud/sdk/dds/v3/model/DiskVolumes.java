@@ -121,18 +121,17 @@ public class DiskVolumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskVolumes diskVolumes = (DiskVolumes) o;
-        return Objects.equals(this.entityId, diskVolumes.entityId)
-            && Objects.equals(this.entityName, diskVolumes.entityName)
-            && Objects.equals(this.groupType, diskVolumes.groupType) && Objects.equals(this.used, diskVolumes.used)
-            && Objects.equals(this.size, diskVolumes.size);
+        DiskVolumes that = (DiskVolumes) obj;
+        return Objects.equals(this.entityId, that.entityId) && Objects.equals(this.entityName, that.entityName)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UntagResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UntagResourceRequest untagResourceRequest = (UntagResourceRequest) o;
-        return Objects.equals(this.resourceId, untagResourceRequest.resourceId)
-            && Objects.equals(this.body, untagResourceRequest.body);
+        UntagResourceRequest that = (UntagResourceRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

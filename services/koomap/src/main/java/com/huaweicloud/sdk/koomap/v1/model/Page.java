@@ -77,16 +77,16 @@ public class Page {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Page page = (Page) o;
-        return Objects.equals(this.offset, page.offset) && Objects.equals(this.limit, page.limit)
-            && Objects.equals(this.total, page.total);
+        Page that = (Page) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

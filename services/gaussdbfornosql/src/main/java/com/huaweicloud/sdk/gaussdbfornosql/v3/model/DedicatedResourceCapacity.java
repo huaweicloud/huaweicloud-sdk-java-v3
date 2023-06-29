@@ -77,17 +77,16 @@ public class DedicatedResourceCapacity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DedicatedResourceCapacity dedicatedResourceCapacity = (DedicatedResourceCapacity) o;
-        return Objects.equals(this.vcpus, dedicatedResourceCapacity.vcpus)
-            && Objects.equals(this.ram, dedicatedResourceCapacity.ram)
-            && Objects.equals(this.volume, dedicatedResourceCapacity.volume);
+        DedicatedResourceCapacity that = (DedicatedResourceCapacity) obj;
+        return Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.volume, that.volume);
     }
 
     @Override

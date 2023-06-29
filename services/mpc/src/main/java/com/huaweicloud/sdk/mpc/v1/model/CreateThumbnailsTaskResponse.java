@@ -176,21 +176,19 @@ public class CreateThumbnailsTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateThumbnailsTaskResponse createThumbnailsTaskResponse = (CreateThumbnailsTaskResponse) o;
-        return Objects.equals(this.taskId, createThumbnailsTaskResponse.taskId)
-            && Objects.equals(this.status, createThumbnailsTaskResponse.status)
-            && Objects.equals(this.createTime, createThumbnailsTaskResponse.createTime)
-            && Objects.equals(this.output, createThumbnailsTaskResponse.output)
-            && Objects.equals(this.outputFileName, createThumbnailsTaskResponse.outputFileName)
-            && Objects.equals(this.thumbnailTime, createThumbnailsTaskResponse.thumbnailTime)
-            && Objects.equals(this.description, createThumbnailsTaskResponse.description);
+        CreateThumbnailsTaskResponse that = (CreateThumbnailsTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFileName, that.outputFileName)
+            && Objects.equals(this.thumbnailTime, that.thumbnailTime)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -77,16 +77,15 @@ public class ListAgenciesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgenciesResponse listAgenciesResponse = (ListAgenciesResponse) o;
-        return Objects.equals(this.totalCount, listAgenciesResponse.totalCount)
-            && Objects.equals(this.agencyList, listAgenciesResponse.agencyList);
+        ListAgenciesResponse that = (ListAgenciesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.agencyList, that.agencyList);
     }
 
     @Override

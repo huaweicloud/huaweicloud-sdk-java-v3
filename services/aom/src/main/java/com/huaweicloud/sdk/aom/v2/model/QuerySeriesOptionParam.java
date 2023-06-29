@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.DimensionSeries;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 参数项。
  */
-public class QuerySeriesOptionParam  {
-
+public class QuerySeriesOptionParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
+    @JsonProperty(value = "metric_name")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dimensions")
-    
+    @JsonProperty(value = "dimensions")
+
     private List<DimensionSeries> dimensions = null;
-    
+
     public QuerySeriesOptionParam withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 时间序列命名空间。 取值范围：PAAS.CONTAINER、PAAS.NODE、PAAS.SLA、PAAS.AGGR、CUSTOMMETRICS等。 PAAS.CONTAINER：应用时间序列命名空间； PAAS.NODE：节点时间序列命名空间； PAAS.SLA：SLA时间序列命名空间； PAAS.AGGR：集群时间序列命名空间； CUSTOMMETRICS：自定义时间序列命名空间。
@@ -57,15 +45,10 @@ public class QuerySeriesOptionParam  {
         this.namespace = namespace;
     }
 
-    
-
     public QuerySeriesOptionParam withMetricName(String metricName) {
         this.metricName = metricName;
         return this;
     }
-
-    
-
 
     /**
      * 时间序列名称，名称长度取值范围为1~255个字符。 取值范围： AOM提供的基础时间序列名称，cpuUsage、cpuCoreUsed等： cpuUage：cpu使用率； cpuCoreUsed：cpu内核占用； 用户上报的自定义时间序列名称。
@@ -79,16 +62,13 @@ public class QuerySeriesOptionParam  {
         this.metricName = metricName;
     }
 
-    
-
     public QuerySeriesOptionParam withDimensions(List<DimensionSeries> dimensions) {
         this.dimensions = dimensions;
         return this;
     }
 
-    
     public QuerySeriesOptionParam addDimensionsItem(DimensionSeries dimensionsItem) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         this.dimensions.add(dimensionsItem);
@@ -96,7 +76,7 @@ public class QuerySeriesOptionParam  {
     }
 
     public QuerySeriesOptionParam withDimensions(Consumer<List<DimensionSeries>> dimensionsSetter) {
-        if(this.dimensions == null) {
+        if (this.dimensions == null) {
             this.dimensions = new ArrayList<>();
         }
         dimensionsSetter.accept(this.dimensions);
@@ -115,25 +95,24 @@ public class QuerySeriesOptionParam  {
         this.dimensions = dimensions;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuerySeriesOptionParam querySeriesOptionParam = (QuerySeriesOptionParam) o;
-        return Objects.equals(this.namespace, querySeriesOptionParam.namespace) &&
-            Objects.equals(this.metricName, querySeriesOptionParam.metricName) &&
-            Objects.equals(this.dimensions, querySeriesOptionParam.dimensions);
+        QuerySeriesOptionParam that = (QuerySeriesOptionParam) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(namespace, metricName, dimensions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,6 +123,7 @@ public class QuerySeriesOptionParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -154,8 +134,5 @@ public class QuerySeriesOptionParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

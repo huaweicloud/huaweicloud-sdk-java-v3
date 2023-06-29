@@ -96,17 +96,16 @@ public class DropPartitionsInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DropPartitionsInput dropPartitionsInput = (DropPartitionsInput) o;
-        return Objects.equals(this.ifExist, dropPartitionsInput.ifExist)
-            && Objects.equals(this.deleteData, dropPartitionsInput.deleteData)
-            && Objects.equals(this.partitionValues, dropPartitionsInput.partitionValues);
+        DropPartitionsInput that = (DropPartitionsInput) obj;
+        return Objects.equals(this.ifExist, that.ifExist) && Objects.equals(this.deleteData, that.deleteData)
+            && Objects.equals(this.partitionValues, that.partitionValues);
     }
 
     @Override

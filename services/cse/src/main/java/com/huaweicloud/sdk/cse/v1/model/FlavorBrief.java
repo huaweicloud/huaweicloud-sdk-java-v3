@@ -55,16 +55,15 @@ public class FlavorBrief {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorBrief flavorBrief = (FlavorBrief) o;
-        return Objects.equals(this.flavor, flavorBrief.flavor)
-            && Objects.equals(this.description, flavorBrief.description);
+        FlavorBrief that = (FlavorBrief) obj;
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.description, that.description);
     }
 
     @Override

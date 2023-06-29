@@ -99,18 +99,17 @@ public class CreateTableReqColumn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableReqColumn createTableReqColumn = (CreateTableReqColumn) o;
-        return Objects.equals(this.columnName, createTableReqColumn.columnName)
-            && Objects.equals(this.type, createTableReqColumn.type)
-            && Objects.equals(this.description, createTableReqColumn.description)
-            && Objects.equals(this.isPartitionColumn, createTableReqColumn.isPartitionColumn);
+        CreateTableReqColumn that = (CreateTableReqColumn) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isPartitionColumn, that.isPartitionColumn);
     }
 
     @Override

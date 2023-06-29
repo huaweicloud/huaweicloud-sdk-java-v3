@@ -309,22 +309,15 @@ public class ShowInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -385,22 +378,15 @@ public class ShowInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StorageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageTypeEnum(value));
         }
 
         public static StorageTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -490,22 +476,15 @@ public class ShowInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CacheModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CacheModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CacheModeEnum(value));
         }
 
         public static CacheModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CacheModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1607,72 +1586,53 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.vpcName, showInstanceResponse.vpcName)
-            && Objects.equals(this.chargingMode, showInstanceResponse.chargingMode)
-            && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
-            && Objects.equals(this.userName, showInstanceResponse.userName)
-            && Objects.equals(this.createdAt, showInstanceResponse.createdAt)
-            && Objects.equals(this.description, showInstanceResponse.description)
-            && Objects.equals(this.securityGroupId, showInstanceResponse.securityGroupId)
-            && Objects.equals(this.securityGroupName, showInstanceResponse.securityGroupName)
-            && Objects.equals(this.maxMemory, showInstanceResponse.maxMemory)
-            && Objects.equals(this.usedMemory, showInstanceResponse.usedMemory)
-            && Objects.equals(this.capacity, showInstanceResponse.capacity)
-            && Objects.equals(this.capacityMinor, showInstanceResponse.capacityMinor)
-            && Objects.equals(this.maintainBegin, showInstanceResponse.maintainBegin)
-            && Objects.equals(this.maintainEnd, showInstanceResponse.maintainEnd)
-            && Objects.equals(this.engine, showInstanceResponse.engine)
-            && Objects.equals(this.noPasswordAccess, showInstanceResponse.noPasswordAccess)
-            && Objects.equals(this.ip, showInstanceResponse.ip)
-            && Objects.equals(this.instanceBackupPolicy, showInstanceResponse.instanceBackupPolicy)
-            && Objects.equals(this.azCodes, showInstanceResponse.azCodes)
-            && Objects.equals(this.accessUser, showInstanceResponse.accessUser)
-            && Objects.equals(this.instanceId, showInstanceResponse.instanceId)
-            && Objects.equals(this.port, showInstanceResponse.port)
-            && Objects.equals(this.userId, showInstanceResponse.userId)
-            && Objects.equals(this.name, showInstanceResponse.name)
-            && Objects.equals(this.specCode, showInstanceResponse.specCode)
-            && Objects.equals(this.subnetId, showInstanceResponse.subnetId)
-            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
-            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
-            && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
-            && Objects.equals(this.orderId, showInstanceResponse.orderId)
-            && Objects.equals(this.status, showInstanceResponse.status)
-            && Objects.equals(this.domainName, showInstanceResponse.domainName)
-            && Objects.equals(this.readonlyDomainName, showInstanceResponse.readonlyDomainName)
-            && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
-            && Objects.equals(this.publicipId, showInstanceResponse.publicipId)
-            && Objects.equals(this.publicipAddress, showInstanceResponse.publicipAddress)
-            && Objects.equals(this.enableSsl, showInstanceResponse.enableSsl)
-            && Objects.equals(this.serviceUpgrade, showInstanceResponse.serviceUpgrade)
-            && Objects.equals(this.serviceTaskId, showInstanceResponse.serviceTaskId)
-            && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.backendAddrs, showInstanceResponse.backendAddrs)
-            && Objects.equals(this.features, showInstanceResponse.features)
-            && Objects.equals(this.domainNameInfo, showInstanceResponse.domainNameInfo)
-            && Objects.equals(this.transparentClientIpEnable, showInstanceResponse.transparentClientIpEnable)
-            && Objects.equals(this.subStatus, showInstanceResponse.subStatus)
-            && Objects.equals(this.tags, showInstanceResponse.tags)
-            && Objects.equals(this.cpuType, showInstanceResponse.cpuType)
-            && Objects.equals(this.enterpriseProjectName, showInstanceResponse.enterpriseProjectName)
-            && Objects.equals(this.updateAt, showInstanceResponse.updateAt)
-            && Objects.equals(this.productType, showInstanceResponse.productType)
-            && Objects.equals(this.storageType, showInstanceResponse.storageType)
-            && Objects.equals(this.launchedAt, showInstanceResponse.launchedAt)
-            && Objects.equals(this.cacheMode, showInstanceResponse.cacheMode)
-            && Objects.equals(this.supportSlowLogFlag, showInstanceResponse.supportSlowLogFlag)
-            && Objects.equals(this.dbNumber, showInstanceResponse.dbNumber)
-            && Objects.equals(this.replicaCount, showInstanceResponse.replicaCount)
-            && Objects.equals(this.shardingCount, showInstanceResponse.shardingCount)
-            && Objects.equals(this.bandwidthInfo, showInstanceResponse.bandwidthInfo);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.securityGroupName, that.securityGroupName)
+            && Objects.equals(this.maxMemory, that.maxMemory) && Objects.equals(this.usedMemory, that.usedMemory)
+            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.capacityMinor, that.capacityMinor)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.noPasswordAccess, that.noPasswordAccess) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.instanceBackupPolicy, that.instanceBackupPolicy)
+            && Objects.equals(this.azCodes, that.azCodes) && Objects.equals(this.accessUser, that.accessUser)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.readonlyDomainName, that.readonlyDomainName)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.enableSsl, that.enableSsl)
+            && Objects.equals(this.serviceUpgrade, that.serviceUpgrade)
+            && Objects.equals(this.serviceTaskId, that.serviceTaskId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.backendAddrs, that.backendAddrs) && Objects.equals(this.features, that.features)
+            && Objects.equals(this.domainNameInfo, that.domainNameInfo)
+            && Objects.equals(this.transparentClientIpEnable, that.transparentClientIpEnable)
+            && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.cpuType, that.cpuType)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.storageType, that.storageType) && Objects.equals(this.launchedAt, that.launchedAt)
+            && Objects.equals(this.cacheMode, that.cacheMode)
+            && Objects.equals(this.supportSlowLogFlag, that.supportSlowLogFlag)
+            && Objects.equals(this.dbNumber, that.dbNumber) && Objects.equals(this.replicaCount, that.replicaCount)
+            && Objects.equals(this.shardingCount, that.shardingCount)
+            && Objects.equals(this.bandwidthInfo, that.bandwidthInfo);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class ShowMasterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMasterResponse showMasterResponse = (ShowMasterResponse) o;
-        return Objects.equals(this.error, showMasterResponse.error)
-            && Objects.equals(this.result, showMasterResponse.result)
-            && Objects.equals(this.status, showMasterResponse.status);
+        ShowMasterResponse that = (ShowMasterResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

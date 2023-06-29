@@ -1,47 +1,36 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_names")
-    
+    @JsonProperty(value = "node_names")
+
     private List<String> nodeNames = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
 
     private String orderId;
 
@@ -49,9 +38,6 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -65,16 +51,13 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public CreateGaussMySqlReadonlyNodeResponse withNodeNames(List<String> nodeNames) {
         this.nodeNames = nodeNames;
         return this;
     }
 
-    
     public CreateGaussMySqlReadonlyNodeResponse addNodeNamesItem(String nodeNamesItem) {
-        if(this.nodeNames == null) {
+        if (this.nodeNames == null) {
             this.nodeNames = new ArrayList<>();
         }
         this.nodeNames.add(nodeNamesItem);
@@ -82,7 +65,7 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
     }
 
     public CreateGaussMySqlReadonlyNodeResponse withNodeNames(Consumer<List<String>> nodeNamesSetter) {
-        if(this.nodeNames == null) {
+        if (this.nodeNames == null) {
             this.nodeNames = new ArrayList<>();
         }
         nodeNamesSetter.accept(this.nodeNames);
@@ -101,15 +84,10 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.nodeNames = nodeNames;
     }
 
-    
-
     public CreateGaussMySqlReadonlyNodeResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 创建只读节点的任务ID。  仅创建按需只读节点时会返回该参数。
@@ -123,15 +101,10 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public CreateGaussMySqlReadonlyNodeResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 订单号，创建包年包月只读节点时返回该参数。
@@ -145,26 +118,24 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGaussMySqlReadonlyNodeResponse createGaussMySqlReadonlyNodeResponse = (CreateGaussMySqlReadonlyNodeResponse) o;
-        return Objects.equals(this.instanceId, createGaussMySqlReadonlyNodeResponse.instanceId) &&
-            Objects.equals(this.nodeNames, createGaussMySqlReadonlyNodeResponse.nodeNames) &&
-            Objects.equals(this.jobId, createGaussMySqlReadonlyNodeResponse.jobId) &&
-            Objects.equals(this.orderId, createGaussMySqlReadonlyNodeResponse.orderId);
+        CreateGaussMySqlReadonlyNodeResponse that = (CreateGaussMySqlReadonlyNodeResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.nodeNames, that.nodeNames)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, nodeNames, jobId, orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -176,6 +147,7 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -186,8 +158,5 @@ public class CreateGaussMySqlReadonlyNodeResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

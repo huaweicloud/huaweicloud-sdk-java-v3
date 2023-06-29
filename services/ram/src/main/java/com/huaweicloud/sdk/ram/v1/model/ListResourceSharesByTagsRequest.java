@@ -89,17 +89,16 @@ public class ListResourceSharesByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceSharesByTagsRequest listResourceSharesByTagsRequest = (ListResourceSharesByTagsRequest) o;
-        return Objects.equals(this.limit, listResourceSharesByTagsRequest.limit)
-            && Objects.equals(this.offset, listResourceSharesByTagsRequest.offset)
-            && Objects.equals(this.body, listResourceSharesByTagsRequest.body);
+        ListResourceSharesByTagsRequest that = (ListResourceSharesByTagsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

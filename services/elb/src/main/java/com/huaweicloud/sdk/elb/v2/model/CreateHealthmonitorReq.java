@@ -91,22 +91,15 @@ public class CreateHealthmonitorReq {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -393,27 +386,21 @@ public class CreateHealthmonitorReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHealthmonitorReq createHealthmonitorReq = (CreateHealthmonitorReq) o;
-        return Objects.equals(this.tenantId, createHealthmonitorReq.tenantId)
-            && Objects.equals(this.name, createHealthmonitorReq.name)
-            && Objects.equals(this.adminStateUp, createHealthmonitorReq.adminStateUp)
-            && Objects.equals(this.monitorPort, createHealthmonitorReq.monitorPort)
-            && Objects.equals(this.timeout, createHealthmonitorReq.timeout)
-            && Objects.equals(this.type, createHealthmonitorReq.type)
-            && Objects.equals(this.expectedCodes, createHealthmonitorReq.expectedCodes)
-            && Objects.equals(this.domainName, createHealthmonitorReq.domainName)
-            && Objects.equals(this.urlPath, createHealthmonitorReq.urlPath)
-            && Objects.equals(this.httpMethod, createHealthmonitorReq.httpMethod)
-            && Objects.equals(this.delay, createHealthmonitorReq.delay)
-            && Objects.equals(this.maxRetries, createHealthmonitorReq.maxRetries)
-            && Objects.equals(this.poolId, createHealthmonitorReq.poolId);
+        CreateHealthmonitorReq that = (CreateHealthmonitorReq) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.monitorPort, that.monitorPort) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.expectedCodes, that.expectedCodes)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.urlPath, that.urlPath)
+            && Objects.equals(this.httpMethod, that.httpMethod) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override

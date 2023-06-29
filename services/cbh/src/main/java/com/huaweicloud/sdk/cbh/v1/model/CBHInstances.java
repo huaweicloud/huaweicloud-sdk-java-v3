@@ -363,26 +363,23 @@ public class CBHInstances {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CBHInstances cbHInstances = (CBHInstances) o;
-        return Objects.equals(this.flavorRef, cbHInstances.flavorRef)
-            && Objects.equals(this.instanceName, cbHInstances.instanceName)
-            && Objects.equals(this.vpcId, cbHInstances.vpcId) && Objects.equals(this.nics, cbHInstances.nics)
-            && Objects.equals(this.publicIp, cbHInstances.publicIp)
-            && Objects.equals(this.securityGroups, cbHInstances.securityGroups)
-            && Objects.equals(this.availabilityZone, cbHInstances.availabilityZone)
-            && Objects.equals(this.slaveAvailabilityZone, cbHInstances.slaveAvailabilityZone)
-            && Objects.equals(this.comment, cbHInstances.comment) && Objects.equals(this.region, cbHInstances.region)
-            && Objects.equals(this.hxPassword, cbHInstances.hxPassword)
-            && Objects.equals(this.bastionType, cbHInstances.bastionType)
-            && Objects.equals(this.ipv6Enable, cbHInstances.ipv6Enable)
-            && Objects.equals(this.enterpriseProjectId, cbHInstances.enterpriseProjectId);
+        CBHInstances that = (CBHInstances) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.slaveAvailabilityZone, that.slaveAvailabilityZone)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.hxPassword, that.hxPassword) && Objects.equals(this.bastionType, that.bastionType)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

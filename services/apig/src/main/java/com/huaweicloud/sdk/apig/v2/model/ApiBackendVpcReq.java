@@ -55,16 +55,16 @@ public class ApiBackendVpcReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiBackendVpcReq apiBackendVpcReq = (ApiBackendVpcReq) o;
-        return Objects.equals(this.vpcChannelProxyHost, apiBackendVpcReq.vpcChannelProxyHost)
-            && Objects.equals(this.vpcChannelId, apiBackendVpcReq.vpcChannelId);
+        ApiBackendVpcReq that = (ApiBackendVpcReq) obj;
+        return Objects.equals(this.vpcChannelProxyHost, that.vpcChannelProxyHost)
+            && Objects.equals(this.vpcChannelId, that.vpcChannelId);
     }
 
     @Override

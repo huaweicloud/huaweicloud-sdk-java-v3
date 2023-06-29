@@ -228,20 +228,19 @@ public class Cluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Cluster cluster = (Cluster) o;
-        return Objects.equals(this.authMode, cluster.authMode) && Objects.equals(this.enableLemon, cluster.enableLemon)
-            && Objects.equals(this.enableOpenTSDB, cluster.enableOpenTSDB)
-            && Objects.equals(this.instance, cluster.instance) && Objects.equals(this.name, cluster.name)
-            && Objects.equals(this.storageSize, cluster.storageSize)
-            && Objects.equals(this.storageType, cluster.storageType) && Objects.equals(this.vpcId, cluster.vpcId)
-            && Objects.equals(this.datastore, cluster.datastore);
+        Cluster that = (Cluster) obj;
+        return Objects.equals(this.authMode, that.authMode) && Objects.equals(this.enableLemon, that.enableLemon)
+            && Objects.equals(this.enableOpenTSDB, that.enableOpenTSDB) && Objects.equals(this.instance, that.instance)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.storageSize, that.storageSize)
+            && Objects.equals(this.storageType, that.storageType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.datastore, that.datastore);
     }
 
     @Override

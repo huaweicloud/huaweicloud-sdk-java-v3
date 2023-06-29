@@ -151,19 +151,17 @@ public class ModifyTransTemplateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTransTemplateReq modifyTransTemplateReq = (ModifyTransTemplateReq) o;
-        return Objects.equals(this.templateId, modifyTransTemplateReq.templateId)
-            && Objects.equals(this.templateName, modifyTransTemplateReq.templateName)
-            && Objects.equals(this.video, modifyTransTemplateReq.video)
-            && Objects.equals(this.audio, modifyTransTemplateReq.audio)
-            && Objects.equals(this.common, modifyTransTemplateReq.common);
+        ModifyTransTemplateReq that = (ModifyTransTemplateReq) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio)
+            && Objects.equals(this.common, that.common);
     }
 
     @Override

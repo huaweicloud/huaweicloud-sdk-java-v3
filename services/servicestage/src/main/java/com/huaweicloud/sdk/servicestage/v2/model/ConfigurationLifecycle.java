@@ -105,17 +105,16 @@ public class ConfigurationLifecycle {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationLifecycle configurationLifecycle = (ConfigurationLifecycle) o;
-        return Objects.equals(this.entrypoint, configurationLifecycle.entrypoint)
-            && Objects.equals(this.postStart, configurationLifecycle.postStart)
-            && Objects.equals(this.preStop, configurationLifecycle.preStop);
+        ConfigurationLifecycle that = (ConfigurationLifecycle) obj;
+        return Objects.equals(this.entrypoint, that.entrypoint) && Objects.equals(this.postStart, that.postStart)
+            && Objects.equals(this.preStop, that.preStop);
     }
 
     @Override

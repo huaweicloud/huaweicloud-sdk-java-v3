@@ -55,16 +55,15 @@ public class CaseDocSteps {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseDocSteps caseDocSteps = (CaseDocSteps) o;
-        return Objects.equals(this.expectResult, caseDocSteps.expectResult)
-            && Objects.equals(this.testStep, caseDocSteps.testStep);
+        CaseDocSteps that = (CaseDocSteps) obj;
+        return Objects.equals(this.expectResult, that.expectResult) && Objects.equals(this.testStep, that.testStep);
     }
 
     @Override

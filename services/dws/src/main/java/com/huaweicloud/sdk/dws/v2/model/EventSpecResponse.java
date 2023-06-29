@@ -209,22 +209,19 @@ public class EventSpecResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSpecResponse eventSpecResponse = (EventSpecResponse) o;
-        return Objects.equals(this.id, eventSpecResponse.id) && Objects.equals(this.name, eventSpecResponse.name)
-            && Objects.equals(this.displayName, eventSpecResponse.displayName)
-            && Objects.equals(this.description, eventSpecResponse.description)
-            && Objects.equals(this.subject, eventSpecResponse.subject)
-            && Objects.equals(this.category, eventSpecResponse.category)
-            && Objects.equals(this.severity, eventSpecResponse.severity)
-            && Objects.equals(this.sourceType, eventSpecResponse.sourceType)
-            && Objects.equals(this.nameSpace, eventSpecResponse.nameSpace);
+        EventSpecResponse that = (EventSpecResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.nameSpace, that.nameSpace);
     }
 
     @Override

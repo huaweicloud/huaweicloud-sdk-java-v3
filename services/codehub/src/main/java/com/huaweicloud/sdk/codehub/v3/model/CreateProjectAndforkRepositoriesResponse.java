@@ -97,18 +97,16 @@ public class CreateProjectAndforkRepositoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectAndforkRepositoriesResponse createProjectAndforkRepositoriesResponse =
-            (CreateProjectAndforkRepositoriesResponse) o;
-        return Objects.equals(this.error, createProjectAndforkRepositoriesResponse.error)
-            && Objects.equals(this.result, createProjectAndforkRepositoriesResponse.result)
-            && Objects.equals(this.status, createProjectAndforkRepositoriesResponse.status);
+        CreateProjectAndforkRepositoriesResponse that = (CreateProjectAndforkRepositoriesResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

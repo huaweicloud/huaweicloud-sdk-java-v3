@@ -77,16 +77,16 @@ public class AzInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AzInfoResp azInfoResp = (AzInfoResp) o;
-        return Objects.equals(this.code, azInfoResp.code) && Objects.equals(this.name, azInfoResp.name)
-            && Objects.equals(this.status, azInfoResp.status);
+        AzInfoResp that = (AzInfoResp) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

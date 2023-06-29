@@ -65,16 +65,15 @@ public class SecretRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecretRequestBody secretRequestBody = (SecretRequestBody) o;
-        return Objects.equals(this.workspaceId, secretRequestBody.workspaceId)
-            && Objects.equals(this.secret, secretRequestBody.secret);
+        SecretRequestBody that = (SecretRequestBody) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.secret, that.secret);
     }
 
     @Override

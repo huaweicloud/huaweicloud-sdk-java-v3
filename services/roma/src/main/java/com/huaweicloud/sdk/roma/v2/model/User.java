@@ -86,22 +86,15 @@ public class User {
             if (value == null) {
                 return null;
             }
-            RolesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RolesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RolesEnum(value));
         }
 
         public static RolesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RolesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -174,15 +167,15 @@ public class User {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        User user = (User) o;
-        return Objects.equals(this.id, user.id) && Objects.equals(this.roles, user.roles);
+        User that = (User) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.roles, that.roles);
     }
 
     @Override

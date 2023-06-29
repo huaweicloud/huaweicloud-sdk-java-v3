@@ -78,17 +78,16 @@ public class CreateSasTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSasTokenResponse createSasTokenResponse = (CreateSasTokenResponse) o;
-        return Objects.equals(this.clientId, createSasTokenResponse.clientId)
-            && Objects.equals(this.expiry, createSasTokenResponse.expiry)
-            && Objects.equals(this.signature, createSasTokenResponse.signature);
+        CreateSasTokenResponse that = (CreateSasTokenResponse) obj;
+        return Objects.equals(this.clientId, that.clientId) && Objects.equals(this.expiry, that.expiry)
+            && Objects.equals(this.signature, that.signature);
     }
 
     @Override

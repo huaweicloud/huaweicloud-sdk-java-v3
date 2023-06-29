@@ -338,28 +338,23 @@ public class ListInstanceTopicsRespTopics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceTopicsRespTopics listInstanceTopicsRespTopics = (ListInstanceTopicsRespTopics) o;
-        return Objects.equals(this.policiesOnly, listInstanceTopicsRespTopics.policiesOnly)
-            && Objects.equals(this.name, listInstanceTopicsRespTopics.name)
-            && Objects.equals(this.replication, listInstanceTopicsRespTopics.replication)
-            && Objects.equals(this.partition, listInstanceTopicsRespTopics.partition)
-            && Objects.equals(this.retentionTime, listInstanceTopicsRespTopics.retentionTime)
-            && Objects.equals(this.syncMessageFlush, listInstanceTopicsRespTopics.syncMessageFlush)
-            && Objects.equals(this.syncReplication, listInstanceTopicsRespTopics.syncReplication)
-            && Objects.equals(this.appId, listInstanceTopicsRespTopics.appId)
-            && Objects.equals(this.appName, listInstanceTopicsRespTopics.appName)
-            && Objects.equals(this.permissions, listInstanceTopicsRespTopics.permissions)
-            && Objects.equals(this.externalConfigs, listInstanceTopicsRespTopics.externalConfigs)
-            && Objects.equals(this.description, listInstanceTopicsRespTopics.description)
-            && Objects.equals(this.sensitiveWord, listInstanceTopicsRespTopics.sensitiveWord)
-            && Objects.equals(this.topicType, listInstanceTopicsRespTopics.topicType);
+        ListInstanceTopicsRespTopics that = (ListInstanceTopicsRespTopics) obj;
+        return Objects.equals(this.policiesOnly, that.policiesOnly) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.retentionTime, that.retentionTime)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.syncReplication, that.syncReplication) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.permissions, that.permissions)
+            && Objects.equals(this.externalConfigs, that.externalConfigs)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sensitiveWord, that.sensitiveWord) && Objects.equals(this.topicType, that.topicType);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class OutputObs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputObs outputObs = (OutputObs) o;
-        return Objects.equals(this.bucket, outputObs.bucket) && Objects.equals(this.path, outputObs.path);
+        OutputObs that = (OutputObs) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path);
     }
 
     @Override

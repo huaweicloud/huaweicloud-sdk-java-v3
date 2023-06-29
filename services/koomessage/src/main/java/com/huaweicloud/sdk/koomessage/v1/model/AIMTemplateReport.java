@@ -187,22 +187,18 @@ public class AIMTemplateReport {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMTemplateReport aiMTemplateReport = (AIMTemplateReport) o;
-        return Objects.equals(this.tplId, aiMTemplateReport.tplId)
-            && Objects.equals(this.startTime, aiMTemplateReport.startTime)
-            && Objects.equals(this.resolvingTimes, aiMTemplateReport.resolvingTimes)
-            && Objects.equals(this.endTime, aiMTemplateReport.endTime)
-            && Objects.equals(this.exposeUv, aiMTemplateReport.exposeUv)
-            && Objects.equals(this.exposePv, aiMTemplateReport.exposePv)
-            && Objects.equals(this.clickUv, aiMTemplateReport.clickUv)
-            && Objects.equals(this.clickPv, aiMTemplateReport.clickPv);
+        AIMTemplateReport that = (AIMTemplateReport) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.resolvingTimes, that.resolvingTimes) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.exposeUv, that.exposeUv) && Objects.equals(this.exposePv, that.exposePv)
+            && Objects.equals(this.clickUv, that.clickUv) && Objects.equals(this.clickPv, that.clickPv);
     }
 
     @Override

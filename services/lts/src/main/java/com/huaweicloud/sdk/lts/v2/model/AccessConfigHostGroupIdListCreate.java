@@ -52,15 +52,15 @@ public class AccessConfigHostGroupIdListCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigHostGroupIdListCreate accessConfigHostGroupIdListCreate = (AccessConfigHostGroupIdListCreate) o;
-        return Objects.equals(this.hostGroupIdList, accessConfigHostGroupIdListCreate.hostGroupIdList);
+        AccessConfigHostGroupIdListCreate that = (AccessConfigHostGroupIdListCreate) obj;
+        return Objects.equals(this.hostGroupIdList, that.hostGroupIdList);
     }
 
     @Override

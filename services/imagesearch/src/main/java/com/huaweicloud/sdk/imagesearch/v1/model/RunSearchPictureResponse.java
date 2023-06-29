@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.imagesearch.v1.model.SearchPictureItem;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class RunSearchPictureResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
+
     private List<SearchPictureItem> result = null;
-    
+
     public RunSearchPictureResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 搜索结果总数。
@@ -54,16 +41,13 @@ public class RunSearchPictureResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public RunSearchPictureResponse withResult(List<SearchPictureItem> result) {
         this.result = result;
         return this;
     }
 
-    
     public RunSearchPictureResponse addResultItem(SearchPictureItem resultItem) {
-        if(this.result == null) {
+        if (this.result == null) {
             this.result = new ArrayList<>();
         }
         this.result.add(resultItem);
@@ -71,7 +55,7 @@ public class RunSearchPictureResponse extends SdkResponse {
     }
 
     public RunSearchPictureResponse withResult(Consumer<List<SearchPictureItem>> resultSetter) {
-        if(this.result == null) {
+        if (this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);
@@ -90,24 +74,23 @@ public class RunSearchPictureResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunSearchPictureResponse runSearchPictureResponse = (RunSearchPictureResponse) o;
-        return Objects.equals(this.count, runSearchPictureResponse.count) &&
-            Objects.equals(this.result, runSearchPictureResponse.result);
+        RunSearchPictureResponse that = (RunSearchPictureResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.result, that.result);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, result);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class RunSearchPictureResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class RunSearchPictureResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

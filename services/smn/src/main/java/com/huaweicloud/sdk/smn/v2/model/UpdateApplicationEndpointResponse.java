@@ -34,15 +34,15 @@ public class UpdateApplicationEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApplicationEndpointResponse updateApplicationEndpointResponse = (UpdateApplicationEndpointResponse) o;
-        return Objects.equals(this.requestId, updateApplicationEndpointResponse.requestId);
+        UpdateApplicationEndpointResponse that = (UpdateApplicationEndpointResponse) obj;
+        return Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

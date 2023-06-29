@@ -75,16 +75,15 @@ public class ShowCertificatesHttpsInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificatesHttpsInfoResponse showCertificatesHttpsInfoResponse = (ShowCertificatesHttpsInfoResponse) o;
-        return Objects.equals(this.total, showCertificatesHttpsInfoResponse.total)
-            && Objects.equals(this.https, showCertificatesHttpsInfoResponse.https);
+        ShowCertificatesHttpsInfoResponse that = (ShowCertificatesHttpsInfoResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.https, that.https);
     }
 
     @Override

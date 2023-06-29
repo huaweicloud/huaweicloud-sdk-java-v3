@@ -74,16 +74,15 @@ public class TaskInstanceSpecConResourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceSpecConResourceRsp taskInstanceSpecConResourceRsp = (TaskInstanceSpecConResourceRsp) o;
-        return Objects.equals(this.limits, taskInstanceSpecConResourceRsp.limits)
-            && Objects.equals(this.requests, taskInstanceSpecConResourceRsp.requests);
+        TaskInstanceSpecConResourceRsp that = (TaskInstanceSpecConResourceRsp) obj;
+        return Objects.equals(this.limits, that.limits) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

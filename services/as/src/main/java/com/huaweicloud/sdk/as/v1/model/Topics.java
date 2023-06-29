@@ -96,16 +96,16 @@ public class Topics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Topics topics = (Topics) o;
-        return Objects.equals(this.topicUrn, topics.topicUrn) && Objects.equals(this.topicScene, topics.topicScene)
-            && Objects.equals(this.topicName, topics.topicName);
+        Topics that = (Topics) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.topicScene, that.topicScene)
+            && Objects.equals(this.topicName, that.topicName);
     }
 
     @Override

@@ -375,26 +375,22 @@ public class TestPlanDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanDetail testPlanDetail = (TestPlanDetail) o;
-        return Objects.equals(this.planId, testPlanDetail.planId) && Objects.equals(this.name, testPlanDetail.name)
-            && Objects.equals(this.startDate, testPlanDetail.startDate)
-            && Objects.equals(this.endDate, testPlanDetail.endDate)
-            && Objects.equals(this.finishDate, testPlanDetail.finishDate)
-            && Objects.equals(this.projectId, testPlanDetail.projectId)
-            && Objects.equals(this.currentStage, testPlanDetail.currentStage)
-            && Objects.equals(this.expireDay, testPlanDetail.expireDay)
-            && Objects.equals(this.creator, testPlanDetail.creator) && Objects.equals(this.owner, testPlanDetail.owner)
-            && Objects.equals(this.designStage, testPlanDetail.designStage)
-            && Objects.equals(this.executeStage, testPlanDetail.executeStage)
-            && Objects.equals(this.reportStage, testPlanDetail.reportStage)
-            && Objects.equals(this.iteration, testPlanDetail.iteration);
+        TestPlanDetail that = (TestPlanDetail) obj;
+        return Objects.equals(this.planId, that.planId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.finishDate, that.finishDate) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.currentStage, that.currentStage) && Objects.equals(this.expireDay, that.expireDay)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.designStage, that.designStage)
+            && Objects.equals(this.executeStage, that.executeStage)
+            && Objects.equals(this.reportStage, that.reportStage) && Objects.equals(this.iteration, that.iteration);
     }
 
     @Override

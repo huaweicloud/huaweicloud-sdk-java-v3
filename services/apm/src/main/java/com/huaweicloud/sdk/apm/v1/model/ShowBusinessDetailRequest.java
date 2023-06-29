@@ -57,16 +57,15 @@ public class ShowBusinessDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBusinessDetailRequest showBusinessDetailRequest = (ShowBusinessDetailRequest) o;
-        return Objects.equals(this.businessId, showBusinessDetailRequest.businessId)
-            && Objects.equals(this.xBusinessId, showBusinessDetailRequest.xBusinessId);
+        ShowBusinessDetailRequest that = (ShowBusinessDetailRequest) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.xBusinessId, that.xBusinessId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class SourceInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceInstanceBody sourceInstanceBody = (SourceInstanceBody) o;
-        return Objects.equals(this.addrs, sourceInstanceBody.addrs)
-            && Objects.equals(this.password, sourceInstanceBody.password);
+        SourceInstanceBody that = (SourceInstanceBody) obj;
+        return Objects.equals(this.addrs, that.addrs) && Objects.equals(this.password, that.password);
     }
 
     @Override

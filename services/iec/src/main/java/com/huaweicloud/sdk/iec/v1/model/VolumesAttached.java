@@ -99,17 +99,17 @@ public class VolumesAttached {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumesAttached volumesAttached = (VolumesAttached) o;
-        return Objects.equals(this.id, volumesAttached.id) && Objects.equals(this.bootIndex, volumesAttached.bootIndex)
-            && Objects.equals(this.deleteOnTermination, volumesAttached.deleteOnTermination)
-            && Objects.equals(this.device, volumesAttached.device);
+        VolumesAttached that = (VolumesAttached) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.bootIndex, that.bootIndex)
+            && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
+            && Objects.equals(this.device, that.device);
     }
 
     @Override

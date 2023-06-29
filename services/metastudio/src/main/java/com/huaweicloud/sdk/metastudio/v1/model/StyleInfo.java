@@ -89,22 +89,15 @@ public class StyleInfo {
             if (value == null) {
                 return null;
             }
-            SexEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SexEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SexEnum(value));
         }
 
         public static SexEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SexEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,22 +212,15 @@ public class StyleInfo {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -502,21 +488,20 @@ public class StyleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleInfo styleInfo = (StyleInfo) o;
-        return Objects.equals(this.name, styleInfo.name) && Objects.equals(this.description, styleInfo.description)
-            && Objects.equals(this.projectId, styleInfo.projectId) && Objects.equals(this.status, styleInfo.status)
-            && Objects.equals(this.sex, styleInfo.sex) && Objects.equals(this.tags, styleInfo.tags)
-            && Objects.equals(this.styleAssets, styleInfo.styleAssets)
-            && Objects.equals(this.extraMeta, styleInfo.extraMeta) && Objects.equals(this.styleId, styleInfo.styleId)
-            && Objects.equals(this.createTime, styleInfo.createTime)
-            && Objects.equals(this.updateTime, styleInfo.updateTime) && Objects.equals(this.state, styleInfo.state);
+        StyleInfo that = (StyleInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.styleAssets, that.styleAssets) && Objects.equals(this.extraMeta, that.extraMeta)
+            && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state);
     }
 
     @Override

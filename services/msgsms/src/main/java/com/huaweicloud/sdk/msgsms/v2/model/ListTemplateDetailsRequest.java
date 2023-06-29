@@ -345,29 +345,22 @@ public class ListTemplateDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateDetailsRequest listTemplateDetailsRequest = (ListTemplateDetailsRequest) o;
-        return Objects.equals(this.appKey, listTemplateDetailsRequest.appKey)
-            && Objects.equals(this.appName, listTemplateDetailsRequest.appName)
-            && Objects.equals(this.startTime, listTemplateDetailsRequest.startTime)
-            && Objects.equals(this.endTime, listTemplateDetailsRequest.endTime)
-            && Objects.equals(this.limit, listTemplateDetailsRequest.limit)
-            && Objects.equals(this.offset, listTemplateDetailsRequest.offset)
-            && Objects.equals(this.flowStatus, listTemplateDetailsRequest.flowStatus)
-            && Objects.equals(this.hasVariable, listTemplateDetailsRequest.hasVariable)
-            && Objects.equals(this.region, listTemplateDetailsRequest.region)
-            && Objects.equals(this.signName, listTemplateDetailsRequest.signName)
-            && Objects.equals(this.sortDir, listTemplateDetailsRequest.sortDir)
-            && Objects.equals(this.sortKey, listTemplateDetailsRequest.sortKey)
-            && Objects.equals(this.templateId, listTemplateDetailsRequest.templateId)
-            && Objects.equals(this.templateName, listTemplateDetailsRequest.templateName)
-            && Objects.equals(this.templateType, listTemplateDetailsRequest.templateType);
+        ListTemplateDetailsRequest that = (ListTemplateDetailsRequest) obj;
+        return Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.flowStatus, that.flowStatus) && Objects.equals(this.hasVariable, that.hasVariable)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.signName, that.signName)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType);
     }
 
     @Override

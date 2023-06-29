@@ -55,16 +55,15 @@ public class StartRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartRequest startRequest = (StartRequest) o;
-        return Objects.equals(this.conferenceID, startRequest.conferenceID)
-            && Objects.equals(this.password, startRequest.password);
+        StartRequest that = (StartRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.password, that.password);
     }
 
     @Override

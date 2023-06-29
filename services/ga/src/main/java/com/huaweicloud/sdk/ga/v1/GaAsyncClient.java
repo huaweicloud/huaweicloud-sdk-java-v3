@@ -618,6 +618,282 @@ public class GaAsyncClient {
     }
 
     /**
+     * 添加IP地址组中的IP网段
+     *
+     * 添加IP地址组中的IP网段。
+     * 该接口属于异步接口，接口返回后，后台的添加任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示条目添加完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIpGroupIpRequest 请求对象
+     * @return CompletableFuture<AddIpGroupIpResponse>
+     */
+    public CompletableFuture<AddIpGroupIpResponse> addIpGroupIpAsync(AddIpGroupIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.addIpGroupIp);
+    }
+
+    /**
+     * 添加IP地址组中的IP网段
+     *
+     * 添加IP地址组中的IP网段。
+     * 该接口属于异步接口，接口返回后，后台的添加任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示条目添加完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AddIpGroupIpRequest 请求对象
+     * @return AsyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse>
+     */
+    public AsyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse> addIpGroupIpAsyncInvoker(
+        AddIpGroupIpRequest request) {
+        return new AsyncInvoker<AddIpGroupIpRequest, AddIpGroupIpResponse>(request, GaMeta.addIpGroupIp, hcClient);
+    }
+
+    /**
+     * 绑定IP地址组与监听器
+     *
+     * 绑定IP地址组与监听器。
+     * 该接口属于异步接口，接口返回后，后台的绑定任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示绑定完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateListenerRequest 请求对象
+     * @return CompletableFuture<AssociateListenerResponse>
+     */
+    public CompletableFuture<AssociateListenerResponse> associateListenerAsync(AssociateListenerRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.associateListener);
+    }
+
+    /**
+     * 绑定IP地址组与监听器
+     *
+     * 绑定IP地址组与监听器。
+     * 该接口属于异步接口，接口返回后，后台的绑定任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示绑定完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateListenerRequest 请求对象
+     * @return AsyncInvoker<AssociateListenerRequest, AssociateListenerResponse>
+     */
+    public AsyncInvoker<AssociateListenerRequest, AssociateListenerResponse> associateListenerAsyncInvoker(
+        AssociateListenerRequest request) {
+        return new AsyncInvoker<AssociateListenerRequest, AssociateListenerResponse>(request, GaMeta.associateListener,
+            hcClient);
+    }
+
+    /**
+     * 创建IP地址组
+     *
+     * 创建IP地址组。
+     * 该接口属于异步接口，会先返回一个IP地址组ID，但后台的创建任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示IP地址组创建完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateIpGroupRequest 请求对象
+     * @return CompletableFuture<CreateIpGroupResponse>
+     */
+    public CompletableFuture<CreateIpGroupResponse> createIpGroupAsync(CreateIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.createIpGroup);
+    }
+
+    /**
+     * 创建IP地址组
+     *
+     * 创建IP地址组。
+     * 该接口属于异步接口，会先返回一个IP地址组ID，但后台的创建任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示IP地址组创建完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateIpGroupRequest 请求对象
+     * @return AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>
+     */
+    public AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroupAsyncInvoker(
+        CreateIpGroupRequest request) {
+        return new AsyncInvoker<CreateIpGroupRequest, CreateIpGroupResponse>(request, GaMeta.createIpGroup, hcClient);
+    }
+
+    /**
+     * 删除IP地址组
+     *
+     * 删除IP地址组。
+     * 该接口属于异步接口，接口返回后，后台的删除任务仍在执行；可以使用查询IP地址组详情接口查询状态，当查询不到该IP地址组时，表示删除完成；删除IP地址组时，若IP地址组已经绑定了监听器，则需要先解绑IP地址组与监听器，再进行删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteIpGroupRequest 请求对象
+     * @return CompletableFuture<DeleteIpGroupResponse>
+     */
+    public CompletableFuture<DeleteIpGroupResponse> deleteIpGroupAsync(DeleteIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.deleteIpGroup);
+    }
+
+    /**
+     * 删除IP地址组
+     *
+     * 删除IP地址组。
+     * 该接口属于异步接口，接口返回后，后台的删除任务仍在执行；可以使用查询IP地址组详情接口查询状态，当查询不到该IP地址组时，表示删除完成；删除IP地址组时，若IP地址组已经绑定了监听器，则需要先解绑IP地址组与监听器，再进行删除。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteIpGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>
+     */
+    public AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroupAsyncInvoker(
+        DeleteIpGroupRequest request) {
+        return new AsyncInvoker<DeleteIpGroupRequest, DeleteIpGroupResponse>(request, GaMeta.deleteIpGroup, hcClient);
+    }
+
+    /**
+     * 解绑IP地址组与监听器
+     *
+     * 解绑IP地址组与监听器。
+     * 该接口属于异步接口，接口返回后，后台的解绑任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示解绑完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateListenerRequest 请求对象
+     * @return CompletableFuture<DisassociateListenerResponse>
+     */
+    public CompletableFuture<DisassociateListenerResponse> disassociateListenerAsync(
+        DisassociateListenerRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.disassociateListener);
+    }
+
+    /**
+     * 解绑IP地址组与监听器
+     *
+     * 解绑IP地址组与监听器。
+     * 该接口属于异步接口，接口返回后，后台的解绑任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示解绑完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DisassociateListenerRequest 请求对象
+     * @return AsyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse>
+     */
+    public AsyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse> disassociateListenerAsyncInvoker(
+        DisassociateListenerRequest request) {
+        return new AsyncInvoker<DisassociateListenerRequest, DisassociateListenerResponse>(request,
+            GaMeta.disassociateListener, hcClient);
+    }
+
+    /**
+     * 查询IP地址组列表
+     *
+     * 查询IP地址组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIpGroupsRequest 请求对象
+     * @return CompletableFuture<ListIpGroupsResponse>
+     */
+    public CompletableFuture<ListIpGroupsResponse> listIpGroupsAsync(ListIpGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.listIpGroups);
+    }
+
+    /**
+     * 查询IP地址组列表
+     *
+     * 查询IP地址组列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListIpGroupsRequest 请求对象
+     * @return AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>
+     */
+    public AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroupsAsyncInvoker(
+        ListIpGroupsRequest request) {
+        return new AsyncInvoker<ListIpGroupsRequest, ListIpGroupsResponse>(request, GaMeta.listIpGroups, hcClient);
+    }
+
+    /**
+     * 删除IP地址组中的IP网段
+     *
+     * 删除IP地址组中的IP网段。
+     * 该接口属于异步接口，接口返回后，后台的删除任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示条目删除完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveIpGroupIpRequest 请求对象
+     * @return CompletableFuture<RemoveIpGroupIpResponse>
+     */
+    public CompletableFuture<RemoveIpGroupIpResponse> removeIpGroupIpAsync(RemoveIpGroupIpRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.removeIpGroupIp);
+    }
+
+    /**
+     * 删除IP地址组中的IP网段
+     *
+     * 删除IP地址组中的IP网段。
+     * 该接口属于异步接口，接口返回后，后台的删除任务仍在执行；可以使用查询IP地址组详情接口查询状态，当IP地址组状态为ACTIVE时，表示条目删除完成。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RemoveIpGroupIpRequest 请求对象
+     * @return AsyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse>
+     */
+    public AsyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> removeIpGroupIpAsyncInvoker(
+        RemoveIpGroupIpRequest request) {
+        return new AsyncInvoker<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse>(request, GaMeta.removeIpGroupIp,
+            hcClient);
+    }
+
+    /**
+     * 查询IP地址组详情
+     *
+     * 查询IP地址组详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIpGroupRequest 请求对象
+     * @return CompletableFuture<ShowIpGroupResponse>
+     */
+    public CompletableFuture<ShowIpGroupResponse> showIpGroupAsync(ShowIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.showIpGroup);
+    }
+
+    /**
+     * 查询IP地址组详情
+     *
+     * 查询IP地址组详情。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowIpGroupRequest 请求对象
+     * @return AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>
+     */
+    public AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroupAsyncInvoker(ShowIpGroupRequest request) {
+        return new AsyncInvoker<ShowIpGroupRequest, ShowIpGroupResponse>(request, GaMeta.showIpGroup, hcClient);
+    }
+
+    /**
+     * 更新IP地址组
+     *
+     * 更新IP地址组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIpGroupRequest 请求对象
+     * @return CompletableFuture<UpdateIpGroupResponse>
+     */
+    public CompletableFuture<UpdateIpGroupResponse> updateIpGroupAsync(UpdateIpGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, GaMeta.updateIpGroup);
+    }
+
+    /**
+     * 更新IP地址组
+     *
+     * 更新IP地址组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateIpGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>
+     */
+    public AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroupAsyncInvoker(
+        UpdateIpGroupRequest request) {
+        return new AsyncInvoker<UpdateIpGroupRequest, UpdateIpGroupResponse>(request, GaMeta.updateIpGroup, hcClient);
+    }
+
+    /**
      * 创建监听器
      *
      * 创建监听器。

@@ -166,21 +166,21 @@ public class ShowRoomSettingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRoomSettingResponse showRoomSettingResponse = (ShowRoomSettingResponse) o;
-        return Objects.equals(this.roomIntroduce, showRoomSettingResponse.roomIntroduce)
-            && Objects.equals(this.cropLogoId, showRoomSettingResponse.cropLogoId)
-            && Objects.equals(this.coverPictureId, showRoomSettingResponse.coverPictureId)
-            && Objects.equals(this.showAudienceMode, showRoomSettingResponse.showAudienceMode)
-            && Objects.equals(this.isRedoubleOpen, showRoomSettingResponse.isRedoubleOpen)
-            && Objects.equals(this.baseAudienceCount, showRoomSettingResponse.baseAudienceCount)
-            && Objects.equals(this.multiple, showRoomSettingResponse.multiple);
+        ShowRoomSettingResponse that = (ShowRoomSettingResponse) obj;
+        return Objects.equals(this.roomIntroduce, that.roomIntroduce)
+            && Objects.equals(this.cropLogoId, that.cropLogoId)
+            && Objects.equals(this.coverPictureId, that.coverPictureId)
+            && Objects.equals(this.showAudienceMode, that.showAudienceMode)
+            && Objects.equals(this.isRedoubleOpen, that.isRedoubleOpen)
+            && Objects.equals(this.baseAudienceCount, that.baseAudienceCount)
+            && Objects.equals(this.multiple, that.multiple);
     }
 
     @Override

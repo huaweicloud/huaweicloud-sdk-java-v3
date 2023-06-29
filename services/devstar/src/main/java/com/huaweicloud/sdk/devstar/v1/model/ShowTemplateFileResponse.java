@@ -122,19 +122,17 @@ public class ShowTemplateFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateFileResponse showTemplateFileResponse = (ShowTemplateFileResponse) o;
-        return Objects.equals(this.content, showTemplateFileResponse.content)
-            && Objects.equals(this.encoding, showTemplateFileResponse.encoding)
-            && Objects.equals(this.fileName, showTemplateFileResponse.fileName)
-            && Objects.equals(this.filePath, showTemplateFileResponse.filePath)
-            && Objects.equals(this.fileType, showTemplateFileResponse.fileType);
+        ShowTemplateFileResponse that = (ShowTemplateFileResponse) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.encoding, that.encoding)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

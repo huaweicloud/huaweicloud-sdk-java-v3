@@ -230,21 +230,19 @@ public class ContactWayInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContactWayInfoV2 contactWayInfoV2 = (ContactWayInfoV2) o;
-        return Objects.equals(this.name, contactWayInfoV2.name) && Objects.equals(this.mobile, contactWayInfoV2.mobile)
-            && Objects.equals(this.mail, contactWayInfoV2.mail) && Objects.equals(this.area, contactWayInfoV2.area)
-            && Objects.equals(this.address, contactWayInfoV2.address)
-            && Objects.equals(this.idType, contactWayInfoV2.idType)
-            && Objects.equals(this.companyName, contactWayInfoV2.companyName)
-            && Objects.equals(this.idFiles, contactWayInfoV2.idFiles)
-            && Objects.equals(this.otherWay, contactWayInfoV2.otherWay);
+        ContactWayInfoV2 that = (ContactWayInfoV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.mobile, that.mobile)
+            && Objects.equals(this.mail, that.mail) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.idType, that.idType)
+            && Objects.equals(this.companyName, that.companyName) && Objects.equals(this.idFiles, that.idFiles)
+            && Objects.equals(this.otherWay, that.otherWay);
     }
 
     @Override

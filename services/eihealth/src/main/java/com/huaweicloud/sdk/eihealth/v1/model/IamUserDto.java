@@ -55,15 +55,15 @@ public class IamUserDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IamUserDto iamUserDto = (IamUserDto) o;
-        return Objects.equals(this.id, iamUserDto.id) && Objects.equals(this.name, iamUserDto.name);
+        IamUserDto that = (IamUserDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

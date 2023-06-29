@@ -77,17 +77,16 @@ public class TestPlanDetailCreator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanDetailCreator testPlanDetailCreator = (TestPlanDetailCreator) o;
-        return Objects.equals(this.id, testPlanDetailCreator.id)
-            && Objects.equals(this.nickName, testPlanDetailCreator.nickName)
-            && Objects.equals(this.userName, testPlanDetailCreator.userName);
+        TestPlanDetailCreator that = (TestPlanDetailCreator) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nickName, that.nickName)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

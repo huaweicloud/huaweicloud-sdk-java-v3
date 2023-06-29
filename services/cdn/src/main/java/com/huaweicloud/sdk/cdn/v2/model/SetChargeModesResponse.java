@@ -144,20 +144,18 @@ public class SetChargeModesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetChargeModesResponse setChargeModesResponse = (SetChargeModesResponse) o;
-        return Objects.equals(this.chargeMode, setChargeModesResponse.chargeMode)
-            && Objects.equals(this.productType, setChargeModesResponse.productType)
-            && Objects.equals(this.effectiveTime, setChargeModesResponse.effectiveTime)
-            && Objects.equals(this.createTime, setChargeModesResponse.createTime)
-            && Objects.equals(this.serviceArea, setChargeModesResponse.serviceArea)
-            && Objects.equals(this.status, setChargeModesResponse.status);
+        SetChargeModesResponse that = (SetChargeModesResponse) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

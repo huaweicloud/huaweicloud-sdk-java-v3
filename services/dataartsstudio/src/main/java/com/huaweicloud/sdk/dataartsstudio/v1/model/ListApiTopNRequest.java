@@ -65,22 +65,15 @@ public class ListApiTopNRequest {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DlmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DlmTypeEnum(value));
         }
 
         public static DlmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DlmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class ListApiTopNRequest {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -314,22 +300,15 @@ public class ListApiTopNRequest {
             if (value == null) {
                 return null;
             }
-            OrderByEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderByEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderByEnum(value));
         }
 
         public static OrderByEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderByEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -505,23 +484,19 @@ public class ListApiTopNRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiTopNRequest listApiTopNRequest = (ListApiTopNRequest) o;
-        return Objects.equals(this.workspace, listApiTopNRequest.workspace)
-            && Objects.equals(this.dlmType, listApiTopNRequest.dlmType)
-            && Objects.equals(this.apiId, listApiTopNRequest.apiId)
-            && Objects.equals(this.instanceId, listApiTopNRequest.instanceId)
-            && Objects.equals(this.startTime, listApiTopNRequest.startTime)
-            && Objects.equals(this.endTime, listApiTopNRequest.endTime)
-            && Objects.equals(this.timeUnit, listApiTopNRequest.timeUnit)
-            && Objects.equals(this.topNum, listApiTopNRequest.topNum)
-            && Objects.equals(this.orderBy, listApiTopNRequest.orderBy);
+        ListApiTopNRequest that = (ListApiTopNRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.dlmType, that.dlmType)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.topNum, that.topNum)
+            && Objects.equals(this.orderBy, that.orderBy);
     }
 
     @Override

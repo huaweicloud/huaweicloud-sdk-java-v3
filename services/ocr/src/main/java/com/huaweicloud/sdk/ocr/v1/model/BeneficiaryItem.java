@@ -136,18 +136,18 @@ public class BeneficiaryItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BeneficiaryItem beneficiaryItem = (BeneficiaryItem) o;
-        return Objects.equals(this.beneficiaryName, beneficiaryItem.beneficiaryName)
-            && Objects.equals(this.beneficiaryType, beneficiaryItem.beneficiaryType)
-            && Objects.equals(this.beneficiaryOrder, beneficiaryItem.beneficiaryOrder)
-            && Objects.equals(this.beneficiaryShare, beneficiaryItem.beneficiaryShare);
+        BeneficiaryItem that = (BeneficiaryItem) obj;
+        return Objects.equals(this.beneficiaryName, that.beneficiaryName)
+            && Objects.equals(this.beneficiaryType, that.beneficiaryType)
+            && Objects.equals(this.beneficiaryOrder, that.beneficiaryOrder)
+            && Objects.equals(this.beneficiaryShare, that.beneficiaryShare);
     }
 
     @Override

@@ -209,23 +209,19 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.status, listInstancesRequest.status)
-            && Objects.equals(this.name, listInstancesRequest.name)
-            && Objects.equals(this.area, listInstancesRequest.area)
-            && Objects.equals(this.province, listInstancesRequest.province)
-            && Objects.equals(this.city, listInstancesRequest.city)
-            && Objects.equals(this.edgecloudId, listInstancesRequest.edgecloudId)
-            && Objects.equals(this.siteId, listInstancesRequest.siteId);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.area, that.area) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.edgecloudId, that.edgecloudId)
+            && Objects.equals(this.siteId, that.siteId);
     }
 
     @Override

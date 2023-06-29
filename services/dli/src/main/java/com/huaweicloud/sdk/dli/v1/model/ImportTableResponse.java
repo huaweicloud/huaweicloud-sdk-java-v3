@@ -100,18 +100,16 @@ public class ImportTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportTableResponse importTableResponse = (ImportTableResponse) o;
-        return Objects.equals(this.isSuccess, importTableResponse.isSuccess)
-            && Objects.equals(this.message, importTableResponse.message)
-            && Objects.equals(this.jobId, importTableResponse.jobId)
-            && Objects.equals(this.jobMode, importTableResponse.jobMode);
+        ImportTableResponse that = (ImportTableResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobMode, that.jobMode);
     }
 
     @Override

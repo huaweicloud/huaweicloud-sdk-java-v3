@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,16 +11,13 @@ import java.util.Objects;
  */
 public class CreateSessionResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="session_id")
-    
+    @JsonProperty(value = "session_id")
 
     private String sessionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="greeting")
-    
+    @JsonProperty(value = "greeting")
 
     private String greeting;
 
@@ -36,9 +25,6 @@ public class CreateSessionResponse extends SdkResponse {
         this.sessionId = sessionId;
         return this;
     }
-
-    
-
 
     /**
      * 会话标识符。
@@ -52,15 +38,10 @@ public class CreateSessionResponse extends SdkResponse {
         this.sessionId = sessionId;
     }
 
-    
-
     public CreateSessionResponse withGreeting(String greeting) {
         this.greeting = greeting;
         return this;
     }
-
-    
-
 
     /**
      * 机器人问候语。
@@ -74,24 +55,23 @@ public class CreateSessionResponse extends SdkResponse {
         this.greeting = greeting;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSessionResponse createSessionResponse = (CreateSessionResponse) o;
-        return Objects.equals(this.sessionId, createSessionResponse.sessionId) &&
-            Objects.equals(this.greeting, createSessionResponse.greeting);
+        CreateSessionResponse that = (CreateSessionResponse) obj;
+        return Objects.equals(this.sessionId, that.sessionId) && Objects.equals(this.greeting, that.greeting);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sessionId, greeting);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +81,7 @@ public class CreateSessionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +92,5 @@ public class CreateSessionResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

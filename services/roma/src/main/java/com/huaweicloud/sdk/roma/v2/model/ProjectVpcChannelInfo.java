@@ -86,22 +86,15 @@ public class ProjectVpcChannelInfo {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,22 +161,15 @@ public class ProjectVpcChannelInfo {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,15 @@ public class ProjectVpcChannelInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -377,22 +356,15 @@ public class ProjectVpcChannelInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -720,29 +692,22 @@ public class ProjectVpcChannelInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectVpcChannelInfo projectVpcChannelInfo = (ProjectVpcChannelInfo) o;
-        return Objects.equals(this.name, projectVpcChannelInfo.name)
-            && Objects.equals(this.port, projectVpcChannelInfo.port)
-            && Objects.equals(this.balanceStrategy, projectVpcChannelInfo.balanceStrategy)
-            && Objects.equals(this.memberType, projectVpcChannelInfo.memberType)
-            && Objects.equals(this.dictCode, projectVpcChannelInfo.dictCode)
-            && Objects.equals(this.createTime, projectVpcChannelInfo.createTime)
-            && Objects.equals(this.id, projectVpcChannelInfo.id)
-            && Objects.equals(this.status, projectVpcChannelInfo.status)
-            && Objects.equals(this.memberGroups, projectVpcChannelInfo.memberGroups)
-            && Objects.equals(this.instanceId, projectVpcChannelInfo.instanceId)
-            && Objects.equals(this.instanceName, projectVpcChannelInfo.instanceName)
-            && Objects.equals(this.members, projectVpcChannelInfo.members)
-            && Objects.equals(this.vpcHealthConfig, projectVpcChannelInfo.vpcHealthConfig)
-            && Objects.equals(this.microserviceInfo, projectVpcChannelInfo.microserviceInfo)
-            && Objects.equals(this.type, projectVpcChannelInfo.type);
+        ProjectVpcChannelInfo that = (ProjectVpcChannelInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo) && Objects.equals(this.type, that.type);
     }
 
     @Override

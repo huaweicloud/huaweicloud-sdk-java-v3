@@ -79,17 +79,17 @@ public class SmsTemplateVariableAttrReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsTemplateVariableAttrReq smsTemplateVariableAttrReq = (SmsTemplateVariableAttrReq) o;
-        return Objects.equals(this.variableDesc, smsTemplateVariableAttrReq.variableDesc)
-            && Objects.equals(this.variableIndex, smsTemplateVariableAttrReq.variableIndex)
-            && Objects.equals(this.variableType, smsTemplateVariableAttrReq.variableType);
+        SmsTemplateVariableAttrReq that = (SmsTemplateVariableAttrReq) obj;
+        return Objects.equals(this.variableDesc, that.variableDesc)
+            && Objects.equals(this.variableIndex, that.variableIndex)
+            && Objects.equals(this.variableType, that.variableType);
     }
 
     @Override

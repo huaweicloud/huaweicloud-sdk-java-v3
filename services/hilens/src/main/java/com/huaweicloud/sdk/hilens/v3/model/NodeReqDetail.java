@@ -288,24 +288,20 @@ public class NodeReqDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeReqDetail nodeReqDetail = (NodeReqDetail) o;
-        return Objects.equals(this.batch, nodeReqDetail.batch)
-            && Objects.equals(this.description, nodeReqDetail.description)
-            && Objects.equals(this.enableGpu, nodeReqDetail.enableGpu)
-            && Objects.equals(this.enableNpu, nodeReqDetail.enableNpu)
-            && Objects.equals(this.iamUserId, nodeReqDetail.iamUserId)
-            && Objects.equals(this.logConfigs, nodeReqDetail.logConfigs)
-            && Objects.equals(this.name, nodeReqDetail.name) && Objects.equals(this.npuType, nodeReqDetail.npuType)
-            && Objects.equals(this.tags, nodeReqDetail.tags)
-            && Objects.equals(this.workspaceId, nodeReqDetail.workspaceId)
-            && Objects.equals(this.eventValidityPeriod, nodeReqDetail.eventValidityPeriod);
+        NodeReqDetail that = (NodeReqDetail) obj;
+        return Objects.equals(this.batch, that.batch) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enableGpu, that.enableGpu) && Objects.equals(this.enableNpu, that.enableNpu)
+            && Objects.equals(this.iamUserId, that.iamUserId) && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.npuType, that.npuType)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.eventValidityPeriod, that.eventValidityPeriod);
     }
 
     @Override

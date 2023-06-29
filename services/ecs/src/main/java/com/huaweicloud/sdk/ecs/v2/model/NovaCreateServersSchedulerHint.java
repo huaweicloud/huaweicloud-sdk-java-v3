@@ -200,21 +200,18 @@ public class NovaCreateServersSchedulerHint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaCreateServersSchedulerHint novaCreateServersSchedulerHint = (NovaCreateServersSchedulerHint) o;
-        return Objects.equals(this.group, novaCreateServersSchedulerHint.group)
-            && Objects.equals(this.differentHost, novaCreateServersSchedulerHint.differentHost)
-            && Objects.equals(this.sameHost, novaCreateServersSchedulerHint.sameHost)
-            && Objects.equals(this.cidr, novaCreateServersSchedulerHint.cidr)
-            && Objects.equals(this.buildNearHostIp, novaCreateServersSchedulerHint.buildNearHostIp)
-            && Objects.equals(this.tenancy, novaCreateServersSchedulerHint.tenancy)
-            && Objects.equals(this.dedicatedHostId, novaCreateServersSchedulerHint.dedicatedHostId);
+        NovaCreateServersSchedulerHint that = (NovaCreateServersSchedulerHint) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.differentHost, that.differentHost)
+            && Objects.equals(this.sameHost, that.sameHost) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.buildNearHostIp, that.buildNearHostIp) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
     }
 
     @Override

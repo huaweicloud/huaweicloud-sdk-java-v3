@@ -56,16 +56,15 @@ public class CreateDockingJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDockingJobResponse createDockingJobResponse = (CreateDockingJobResponse) o;
-        return Objects.equals(this.id, createDockingJobResponse.id)
-            && Objects.equals(this.limitConcurrency, createDockingJobResponse.limitConcurrency);
+        CreateDockingJobResponse that = (CreateDockingJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.limitConcurrency, that.limitConcurrency);
     }
 
     @Override

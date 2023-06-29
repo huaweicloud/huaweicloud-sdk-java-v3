@@ -80,22 +80,15 @@ public class ShowSqlExecutionPlanRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,19 +198,17 @@ public class ShowSqlExecutionPlanRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlExecutionPlanRequest showSqlExecutionPlanRequest = (ShowSqlExecutionPlanRequest) o;
-        return Objects.equals(this.instanceId, showSqlExecutionPlanRequest.instanceId)
-            && Objects.equals(this.dbUserId, showSqlExecutionPlanRequest.dbUserId)
-            && Objects.equals(this.database, showSqlExecutionPlanRequest.database)
-            && Objects.equals(this.sql, showSqlExecutionPlanRequest.sql)
-            && Objects.equals(this.xLanguage, showSqlExecutionPlanRequest.xLanguage);
+        ShowSqlExecutionPlanRequest that = (ShowSqlExecutionPlanRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dbUserId, that.dbUserId)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

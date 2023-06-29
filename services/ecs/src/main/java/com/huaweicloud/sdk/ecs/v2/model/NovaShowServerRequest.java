@@ -55,16 +55,16 @@ public class NovaShowServerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaShowServerRequest novaShowServerRequest = (NovaShowServerRequest) o;
-        return Objects.equals(this.serverId, novaShowServerRequest.serverId)
-            && Objects.equals(this.openStackAPIVersion, novaShowServerRequest.openStackAPIVersion);
+        NovaShowServerRequest that = (NovaShowServerRequest) obj;
+        return Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.openStackAPIVersion, that.openStackAPIVersion);
     }
 
     @Override

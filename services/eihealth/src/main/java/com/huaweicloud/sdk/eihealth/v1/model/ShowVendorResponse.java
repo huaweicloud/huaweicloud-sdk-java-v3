@@ -56,15 +56,15 @@ public class ShowVendorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVendorResponse showVendorResponse = (ShowVendorResponse) o;
-        return Objects.equals(this.logo, showVendorResponse.logo) && Objects.equals(this.name, showVendorResponse.name);
+        ShowVendorResponse that = (ShowVendorResponse) obj;
+        return Objects.equals(this.logo, that.logo) && Objects.equals(this.name, that.name);
     }
 
     @Override

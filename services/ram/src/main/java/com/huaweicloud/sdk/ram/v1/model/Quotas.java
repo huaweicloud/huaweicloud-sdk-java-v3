@@ -121,17 +121,17 @@ public class Quotas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Quotas quotas = (Quotas) o;
-        return Objects.equals(this.type, quotas.type) && Objects.equals(this.quota, quotas.quota)
-            && Objects.equals(this.min, quotas.min) && Objects.equals(this.max, quotas.max)
-            && Objects.equals(this.used, quotas.used);
+        Quotas that = (Quotas) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

@@ -122,19 +122,18 @@ public class ShowDDosResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDDosResponse showDDosResponse = (ShowDDosResponse) o;
-        return Objects.equals(this.enableL7, showDDosResponse.enableL7)
-            && Objects.equals(this.trafficPosId, showDDosResponse.trafficPosId)
-            && Objects.equals(this.httpRequestPosId, showDDosResponse.httpRequestPosId)
-            && Objects.equals(this.cleaningAccessPosId, showDDosResponse.cleaningAccessPosId)
-            && Objects.equals(this.appTypeId, showDDosResponse.appTypeId);
+        ShowDDosResponse that = (ShowDDosResponse) obj;
+        return Objects.equals(this.enableL7, that.enableL7) && Objects.equals(this.trafficPosId, that.trafficPosId)
+            && Objects.equals(this.httpRequestPosId, that.httpRequestPosId)
+            && Objects.equals(this.cleaningAccessPosId, that.cleaningAccessPosId)
+            && Objects.equals(this.appTypeId, that.appTypeId);
     }
 
     @Override

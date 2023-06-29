@@ -100,18 +100,17 @@ public class CommitContractResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitContractResponse commitContractResponse = (CommitContractResponse) o;
-        return Objects.equals(this.contractId, commitContractResponse.contractId)
-            && Objects.equals(this.contractName, commitContractResponse.contractName)
-            && Objects.equals(this.resultCode, commitContractResponse.resultCode)
-            && Objects.equals(this.resultDescription, commitContractResponse.resultDescription);
+        CommitContractResponse that = (CommitContractResponse) obj;
+        return Objects.equals(this.contractId, that.contractId) && Objects.equals(this.contractName, that.contractName)
+            && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.resultDescription, that.resultDescription);
     }
 
     @Override

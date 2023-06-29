@@ -187,20 +187,19 @@ public class FlavorView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorView flavorView = (FlavorView) o;
-        return Objects.equals(this.flavorId, flavorView.flavorId)
-            && Objects.equals(this.storageSize, flavorView.storageSize)
-            && Objects.equals(this.numCpu, flavorView.numCpu) && Objects.equals(this.numCpuInit, flavorView.numCpuInit)
-            && Objects.equals(this.memorySize, flavorView.memorySize)
-            && Objects.equals(this.memorySizeInit, flavorView.memorySizeInit)
-            && Objects.equals(this.label, flavorView.label) && Objects.equals(this.custom, flavorView.custom);
+        FlavorView that = (FlavorView) obj;
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.storageSize, that.storageSize)
+            && Objects.equals(this.numCpu, that.numCpu) && Objects.equals(this.numCpuInit, that.numCpuInit)
+            && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.memorySizeInit, that.memorySizeInit) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.custom, that.custom);
     }
 
     @Override

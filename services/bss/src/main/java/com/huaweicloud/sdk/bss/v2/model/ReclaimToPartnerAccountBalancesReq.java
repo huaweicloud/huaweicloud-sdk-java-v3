@@ -80,17 +80,16 @@ public class ReclaimToPartnerAccountBalancesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReclaimToPartnerAccountBalancesReq reclaimToPartnerAccountBalancesReq = (ReclaimToPartnerAccountBalancesReq) o;
-        return Objects.equals(this.customerId, reclaimToPartnerAccountBalancesReq.customerId)
-            && Objects.equals(this.amount, reclaimToPartnerAccountBalancesReq.amount)
-            && Objects.equals(this.indirectPartnerId, reclaimToPartnerAccountBalancesReq.indirectPartnerId);
+        ReclaimToPartnerAccountBalancesReq that = (ReclaimToPartnerAccountBalancesReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

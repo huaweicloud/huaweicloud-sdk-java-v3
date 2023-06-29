@@ -79,17 +79,16 @@ public class SmsCountryResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsCountryResp smsCountryResp = (SmsCountryResp) o;
-        return Objects.equals(this.countryId, smsCountryResp.countryId)
-            && Objects.equals(this.countryNameEn, smsCountryResp.countryNameEn)
-            && Objects.equals(this.countryNameZh, smsCountryResp.countryNameZh);
+        SmsCountryResp that = (SmsCountryResp) obj;
+        return Objects.equals(this.countryId, that.countryId) && Objects.equals(this.countryNameEn, that.countryNameEn)
+            && Objects.equals(this.countryNameZh, that.countryNameZh);
     }
 
     @Override

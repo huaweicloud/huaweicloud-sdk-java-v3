@@ -53,16 +53,15 @@ public class ShowRecordingFileDownloadUrlsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordingFileDownloadUrlsResponse showRecordingFileDownloadUrlsResponse =
-            (ShowRecordingFileDownloadUrlsResponse) o;
-        return Objects.equals(this.recordUrls, showRecordingFileDownloadUrlsResponse.recordUrls);
+        ShowRecordingFileDownloadUrlsResponse that = (ShowRecordingFileDownloadUrlsResponse) obj;
+        return Objects.equals(this.recordUrls, that.recordUrls);
     }
 
     @Override

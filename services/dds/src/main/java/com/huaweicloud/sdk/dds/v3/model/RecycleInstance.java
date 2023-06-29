@@ -241,23 +241,20 @@ public class RecycleInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecycleInstance recycleInstance = (RecycleInstance) o;
-        return Objects.equals(this.id, recycleInstance.id) && Objects.equals(this.name, recycleInstance.name)
-            && Objects.equals(this.mode, recycleInstance.mode)
-            && Objects.equals(this.datastore, recycleInstance.datastore)
-            && Objects.equals(this.payMode, recycleInstance.payMode)
-            && Objects.equals(this.enterpriseProjectId, recycleInstance.enterpriseProjectId)
-            && Objects.equals(this.backupId, recycleInstance.backupId)
-            && Objects.equals(this.createdAt, recycleInstance.createdAt)
-            && Objects.equals(this.deletedAt, recycleInstance.deletedAt)
-            && Objects.equals(this.retainedUntil, recycleInstance.retainedUntil);
+        RecycleInstance that = (RecycleInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.payMode, that.payMode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.deletedAt, that.deletedAt) && Objects.equals(this.retainedUntil, that.retainedUntil);
     }
 
     @Override

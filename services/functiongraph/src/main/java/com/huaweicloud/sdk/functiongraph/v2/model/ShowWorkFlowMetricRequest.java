@@ -99,18 +99,16 @@ public class ShowWorkFlowMetricRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkFlowMetricRequest showWorkFlowMetricRequest = (ShowWorkFlowMetricRequest) o;
-        return Objects.equals(this.workflowUrn, showWorkFlowMetricRequest.workflowUrn)
-            && Objects.equals(this.period, showWorkFlowMetricRequest.period)
-            && Objects.equals(this.startTime, showWorkFlowMetricRequest.startTime)
-            && Objects.equals(this.endTime, showWorkFlowMetricRequest.endTime);
+        ShowWorkFlowMetricRequest that = (ShowWorkFlowMetricRequest) obj;
+        return Objects.equals(this.workflowUrn, that.workflowUrn) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

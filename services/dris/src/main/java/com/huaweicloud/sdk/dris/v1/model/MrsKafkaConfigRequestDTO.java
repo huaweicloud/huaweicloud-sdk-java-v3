@@ -178,20 +178,18 @@ public class MrsKafkaConfigRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MrsKafkaConfigRequestDTO mrsKafkaConfigRequestDTO = (MrsKafkaConfigRequestDTO) o;
-        return Objects.equals(this.userTopics, mrsKafkaConfigRequestDTO.userTopics)
-            && Objects.equals(this.brokers, mrsKafkaConfigRequestDTO.brokers)
-            && Objects.equals(this.username, mrsKafkaConfigRequestDTO.username)
-            && Objects.equals(this.authentication, mrsKafkaConfigRequestDTO.authentication)
-            && Objects.equals(this.krb5Content, mrsKafkaConfigRequestDTO.krb5Content)
-            && Objects.equals(this.keytabContent, mrsKafkaConfigRequestDTO.keytabContent);
+        MrsKafkaConfigRequestDTO that = (MrsKafkaConfigRequestDTO) obj;
+        return Objects.equals(this.userTopics, that.userTopics) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.krb5Content, that.krb5Content)
+            && Objects.equals(this.keytabContent, that.keytabContent);
     }
 
     @Override

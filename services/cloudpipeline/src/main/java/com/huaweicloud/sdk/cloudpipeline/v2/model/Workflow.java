@@ -156,17 +156,17 @@ public class Workflow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Workflow workflow = (Workflow) o;
-        return Objects.equals(this.parameter, workflow.parameter) && Objects.equals(this.source, workflow.source)
-            && Objects.equals(this.name, workflow.name) && Objects.equals(this.projectId, workflow.projectId)
-            && Objects.equals(this.projectName, workflow.projectName);
+        Workflow that = (Workflow) obj;
+        return Objects.equals(this.parameter, that.parameter) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

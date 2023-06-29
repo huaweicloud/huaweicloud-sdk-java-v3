@@ -76,22 +76,15 @@ public class AgentSearchParam {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +268,18 @@ public class AgentSearchParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentSearchParam agentSearchParam = (AgentSearchParam) o;
-        return Objects.equals(this.businessId, agentSearchParam.businessId)
-            && Objects.equals(this.envId, agentSearchParam.envId)
-            && Objects.equals(this.status, agentSearchParam.status)
-            && Objects.equals(this.region, agentSearchParam.region)
-            && Objects.equals(this.orderByStatus, agentSearchParam.orderByStatus)
-            && Objects.equals(this.page, agentSearchParam.page)
-            && Objects.equals(this.pageSize, agentSearchParam.pageSize)
-            && Objects.equals(this.keyword, agentSearchParam.keyword);
+        AgentSearchParam that = (AgentSearchParam) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.orderByStatus, that.orderByStatus) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.keyword, that.keyword);
     }
 
     @Override

@@ -140,22 +140,15 @@ public class Subnet {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -641,28 +634,27 @@ public class Subnet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Subnet subnet = (Subnet) o;
-        return Objects.equals(this.id, subnet.id) && Objects.equals(this.name, subnet.name)
-            && Objects.equals(this.description, subnet.description) && Objects.equals(this.cidr, subnet.cidr)
-            && Objects.equals(this.gatewayIp, subnet.gatewayIp) && Objects.equals(this.ipv6Enable, subnet.ipv6Enable)
-            && Objects.equals(this.cidrV6, subnet.cidrV6) && Objects.equals(this.gatewayIpV6, subnet.gatewayIpV6)
-            && Objects.equals(this.dhcpEnable, subnet.dhcpEnable) && Objects.equals(this.primaryDns, subnet.primaryDns)
-            && Objects.equals(this.secondaryDns, subnet.secondaryDns) && Objects.equals(this.dnsList, subnet.dnsList)
-            && Objects.equals(this.availabilityZone, subnet.availabilityZone)
-            && Objects.equals(this.vpcId, subnet.vpcId) && Objects.equals(this.status, subnet.status)
-            && Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId)
-            && Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId)
-            && Objects.equals(this.neutronSubnetIdV6, subnet.neutronSubnetIdV6)
-            && Objects.equals(this.extraDhcpOpts, subnet.extraDhcpOpts) && Objects.equals(this.scope, subnet.scope)
-            && Objects.equals(this.tenantId, subnet.tenantId) && Objects.equals(this.createdAt, subnet.createdAt)
-            && Objects.equals(this.updatedAt, subnet.updatedAt);
+        Subnet that = (Subnet) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.gatewayIp, that.gatewayIp) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.cidrV6, that.cidrV6) && Objects.equals(this.gatewayIpV6, that.gatewayIpV6)
+            && Objects.equals(this.dhcpEnable, that.dhcpEnable) && Objects.equals(this.primaryDns, that.primaryDns)
+            && Objects.equals(this.secondaryDns, that.secondaryDns) && Objects.equals(this.dnsList, that.dnsList)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.neutronNetworkId, that.neutronNetworkId)
+            && Objects.equals(this.neutronSubnetId, that.neutronSubnetId)
+            && Objects.equals(this.neutronSubnetIdV6, that.neutronSubnetIdV6)
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

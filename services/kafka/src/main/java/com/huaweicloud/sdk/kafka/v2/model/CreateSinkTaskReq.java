@@ -55,22 +55,15 @@ public class CreateSinkTaskReq {
             if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceTypeEnum(value));
         }
 
         public static SourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -136,22 +129,15 @@ public class CreateSinkTaskReq {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationTypeEnum(value));
         }
 
         public static DestinationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -257,18 +243,17 @@ public class CreateSinkTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSinkTaskReq createSinkTaskReq = (CreateSinkTaskReq) o;
-        return Objects.equals(this.sourceType, createSinkTaskReq.sourceType)
-            && Objects.equals(this.taskName, createSinkTaskReq.taskName)
-            && Objects.equals(this.destinationType, createSinkTaskReq.destinationType)
-            && Objects.equals(this.obsDestinationDescriptor, createSinkTaskReq.obsDestinationDescriptor);
+        CreateSinkTaskReq that = (CreateSinkTaskReq) obj;
+        return Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.destinationType, that.destinationType)
+            && Objects.equals(this.obsDestinationDescriptor, that.obsDestinationDescriptor);
     }
 
     @Override

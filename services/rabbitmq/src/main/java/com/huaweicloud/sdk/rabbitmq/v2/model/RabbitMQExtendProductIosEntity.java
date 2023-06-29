@@ -134,18 +134,16 @@ public class RabbitMQExtendProductIosEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RabbitMQExtendProductIosEntity rabbitMQExtendProductIosEntity = (RabbitMQExtendProductIosEntity) o;
-        return Objects.equals(this.ioSpec, rabbitMQExtendProductIosEntity.ioSpec)
-            && Objects.equals(this.availableZones, rabbitMQExtendProductIosEntity.availableZones)
-            && Objects.equals(this.type, rabbitMQExtendProductIosEntity.type)
-            && Objects.equals(this.unavailableZones, rabbitMQExtendProductIosEntity.unavailableZones);
+        RabbitMQExtendProductIosEntity that = (RabbitMQExtendProductIosEntity) obj;
+        return Objects.equals(this.ioSpec, that.ioSpec) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.unavailableZones, that.unavailableZones);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class CatalogLevelVOList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogLevelVOList catalogLevelVOList = (CatalogLevelVOList) o;
-        return Objects.equals(this.levels, catalogLevelVOList.levels);
+        CatalogLevelVOList that = (CatalogLevelVOList) obj;
+        return Objects.equals(this.levels, that.levels);
     }
 
     @Override

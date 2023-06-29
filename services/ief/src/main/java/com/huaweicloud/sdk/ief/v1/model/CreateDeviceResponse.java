@@ -44,15 +44,15 @@ public class CreateDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeviceResponse createDeviceResponse = (CreateDeviceResponse) o;
-        return Objects.equals(this.device, createDeviceResponse.device);
+        CreateDeviceResponse that = (CreateDeviceResponse) obj;
+        return Objects.equals(this.device, that.device);
     }
 
     @Override

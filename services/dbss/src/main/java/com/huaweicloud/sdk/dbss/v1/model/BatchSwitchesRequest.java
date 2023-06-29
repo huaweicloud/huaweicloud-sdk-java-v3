@@ -1,47 +1,39 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * BatchSwitchesRequest
  */
-public class BatchSwitchesRequest  {
-
+public class BatchSwitchesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ids")
-    
+    @JsonProperty(value = "ids")
 
     private String ids;
+
     /**
      * OFF：关闭 ON：开启
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum OFF for value: "OFF"
          */
         public static final StatusEnum OFF = new StatusEnum("OFF");
-        
+
         /**
          * Enum ON for value: "ON"
          */
         public static final StatusEnum ON = new StatusEnum("ON");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,25 +62,18 @@ public class BatchSwitchesRequest  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -106,8 +91,7 @@ public class BatchSwitchesRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
@@ -115,9 +99,6 @@ public class BatchSwitchesRequest  {
         this.ids = ids;
         return this;
     }
-
-    
-
 
     /**
      * risk id, ids 中间逗号分隔
@@ -131,15 +112,10 @@ public class BatchSwitchesRequest  {
         this.ids = ids;
     }
 
-    
-
     public BatchSwitchesRequest withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * OFF：关闭 ON：开启
@@ -153,24 +129,23 @@ public class BatchSwitchesRequest  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSwitchesRequest batchSwitchesRequest = (BatchSwitchesRequest) o;
-        return Objects.equals(this.ids, batchSwitchesRequest.ids) &&
-            Objects.equals(this.status, batchSwitchesRequest.status);
+        BatchSwitchesRequest that = (BatchSwitchesRequest) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(ids, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,6 +155,7 @@ public class BatchSwitchesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -190,8 +166,5 @@ public class BatchSwitchesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

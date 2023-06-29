@@ -99,16 +99,16 @@ public class ServerJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerJob serverJob = (ServerJob) o;
-        return Objects.equals(this.serverId, serverJob.serverId) && Objects.equals(this.jobId, serverJob.jobId)
-            && Objects.equals(this.errorCode, serverJob.errorCode) && Objects.equals(this.errorMsg, serverJob.errorMsg);
+        ServerJob that = (ServerJob) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

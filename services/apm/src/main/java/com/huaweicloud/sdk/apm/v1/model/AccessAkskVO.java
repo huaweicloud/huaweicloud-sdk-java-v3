@@ -187,19 +187,18 @@ public class AccessAkskVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessAkskVO accessAkskVO = (AccessAkskVO) o;
-        return Objects.equals(this.id, accessAkskVO.id) && Objects.equals(this.gmtCreate, accessAkskVO.gmtCreate)
-            && Objects.equals(this.gmtModify, accessAkskVO.gmtModify)
-            && Objects.equals(this.innerDomainId, accessAkskVO.innerDomainId)
-            && Objects.equals(this.ak, accessAkskVO.ak) && Objects.equals(this.sk, accessAkskVO.sk)
-            && Objects.equals(this.status, accessAkskVO.status) && Objects.equals(this.descp, accessAkskVO.descp);
+        AccessAkskVO that = (AccessAkskVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this.innerDomainId, that.innerDomainId)
+            && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.descp, that.descp);
     }
 
     @Override

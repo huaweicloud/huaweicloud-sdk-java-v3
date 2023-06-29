@@ -251,22 +251,20 @@ public class PrivateSnat {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivateSnat privateSnat = (PrivateSnat) o;
-        return Objects.equals(this.id, privateSnat.id) && Objects.equals(this.projectId, privateSnat.projectId)
-            && Objects.equals(this.gatewayId, privateSnat.gatewayId) && Objects.equals(this.cidr, privateSnat.cidr)
-            && Objects.equals(this.virsubnetId, privateSnat.virsubnetId)
-            && Objects.equals(this.description, privateSnat.description)
-            && Objects.equals(this.transitIpAssociations, privateSnat.transitIpAssociations)
-            && Objects.equals(this.createdAt, privateSnat.createdAt)
-            && Objects.equals(this.updatedAt, privateSnat.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, privateSnat.enterpriseProjectId);
+        PrivateSnat that = (PrivateSnat) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.transitIpAssociations, that.transitIpAssociations)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

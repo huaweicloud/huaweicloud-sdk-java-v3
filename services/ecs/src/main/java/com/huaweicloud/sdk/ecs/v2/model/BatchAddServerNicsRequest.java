@@ -65,16 +65,15 @@ public class BatchAddServerNicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddServerNicsRequest batchAddServerNicsRequest = (BatchAddServerNicsRequest) o;
-        return Objects.equals(this.serverId, batchAddServerNicsRequest.serverId)
-            && Objects.equals(this.body, batchAddServerNicsRequest.body);
+        BatchAddServerNicsRequest that = (BatchAddServerNicsRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

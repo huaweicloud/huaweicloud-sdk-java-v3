@@ -232,21 +232,19 @@ public class CreateResourceShareReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResourceShareReqBody createResourceShareReqBody = (CreateResourceShareReqBody) o;
-        return Objects.equals(this.name, createResourceShareReqBody.name)
-            && Objects.equals(this.description, createResourceShareReqBody.description)
-            && Objects.equals(this.allowExternalPrincipals, createResourceShareReqBody.allowExternalPrincipals)
-            && Objects.equals(this.permissionIds, createResourceShareReqBody.permissionIds)
-            && Objects.equals(this.principals, createResourceShareReqBody.principals)
-            && Objects.equals(this.resourceUrns, createResourceShareReqBody.resourceUrns)
-            && Objects.equals(this.tags, createResourceShareReqBody.tags);
+        CreateResourceShareReqBody that = (CreateResourceShareReqBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.allowExternalPrincipals, that.allowExternalPrincipals)
+            && Objects.equals(this.permissionIds, that.permissionIds)
+            && Objects.equals(this.principals, that.principals) && Objects.equals(this.resourceUrns, that.resourceUrns)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

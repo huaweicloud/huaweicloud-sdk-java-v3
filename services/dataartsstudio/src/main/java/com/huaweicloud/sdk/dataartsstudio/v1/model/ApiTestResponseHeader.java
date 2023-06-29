@@ -167,21 +167,19 @@ public class ApiTestResponseHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiTestResponseHeader apiTestResponseHeader = (ApiTestResponseHeader) o;
-        return Objects.equals(this.resultStatus, apiTestResponseHeader.resultStatus)
-            && Objects.equals(this.contentLength, apiTestResponseHeader.contentLength)
-            && Objects.equals(this.connection, apiTestResponseHeader.connection)
-            && Objects.equals(this.cacheControl, apiTestResponseHeader.cacheControl)
-            && Objects.equals(this.contentType, apiTestResponseHeader.contentType)
-            && Objects.equals(this.date, apiTestResponseHeader.date)
-            && Objects.equals(this.xRequestId, apiTestResponseHeader.xRequestId);
+        ApiTestResponseHeader that = (ApiTestResponseHeader) obj;
+        return Objects.equals(this.resultStatus, that.resultStatus)
+            && Objects.equals(this.contentLength, that.contentLength)
+            && Objects.equals(this.connection, that.connection) && Objects.equals(this.cacheControl, that.cacheControl)
+            && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

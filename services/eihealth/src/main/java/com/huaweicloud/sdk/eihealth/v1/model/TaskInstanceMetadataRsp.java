@@ -55,16 +55,15 @@ public class TaskInstanceMetadataRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceMetadataRsp taskInstanceMetadataRsp = (TaskInstanceMetadataRsp) o;
-        return Objects.equals(this.name, taskInstanceMetadataRsp.name)
-            && Objects.equals(this.namespace, taskInstanceMetadataRsp.namespace);
+        TaskInstanceMetadataRsp that = (TaskInstanceMetadataRsp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

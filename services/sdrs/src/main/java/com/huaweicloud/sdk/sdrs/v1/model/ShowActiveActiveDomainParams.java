@@ -165,20 +165,18 @@ public class ShowActiveActiveDomainParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowActiveActiveDomainParams showActiveActiveDomainParams = (ShowActiveActiveDomainParams) o;
-        return Objects.equals(this.id, showActiveActiveDomainParams.id)
-            && Objects.equals(this.name, showActiveActiveDomainParams.name)
-            && Objects.equals(this.description, showActiveActiveDomainParams.description)
-            && Objects.equals(this.soldOut, showActiveActiveDomainParams.soldOut)
-            && Objects.equals(this.localReplicationCluster, showActiveActiveDomainParams.localReplicationCluster)
-            && Objects.equals(this.remoteReplicationCluster, showActiveActiveDomainParams.remoteReplicationCluster);
+        ShowActiveActiveDomainParams that = (ShowActiveActiveDomainParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.soldOut, that.soldOut)
+            && Objects.equals(this.localReplicationCluster, that.localReplicationCluster)
+            && Objects.equals(this.remoteReplicationCluster, that.remoteReplicationCluster);
     }
 
     @Override

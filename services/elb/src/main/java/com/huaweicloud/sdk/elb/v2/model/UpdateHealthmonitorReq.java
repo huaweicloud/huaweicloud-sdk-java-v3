@@ -261,25 +261,20 @@ public class UpdateHealthmonitorReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHealthmonitorReq updateHealthmonitorReq = (UpdateHealthmonitorReq) o;
-        return Objects.equals(this.name, updateHealthmonitorReq.name)
-            && Objects.equals(this.adminStateUp, updateHealthmonitorReq.adminStateUp)
-            && Objects.equals(this.monitorPort, updateHealthmonitorReq.monitorPort)
-            && Objects.equals(this.timeout, updateHealthmonitorReq.timeout)
-            && Objects.equals(this.expectedCodes, updateHealthmonitorReq.expectedCodes)
-            && Objects.equals(this.domainName, updateHealthmonitorReq.domainName)
-            && Objects.equals(this.urlPath, updateHealthmonitorReq.urlPath)
-            && Objects.equals(this.httpMethod, updateHealthmonitorReq.httpMethod)
-            && Objects.equals(this.delay, updateHealthmonitorReq.delay)
-            && Objects.equals(this.maxRetries, updateHealthmonitorReq.maxRetries)
-            && Objects.equals(this.type, updateHealthmonitorReq.type);
+        UpdateHealthmonitorReq that = (UpdateHealthmonitorReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.monitorPort, that.monitorPort) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.expectedCodes, that.expectedCodes)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.urlPath, that.urlPath)
+            && Objects.equals(this.httpMethod, that.httpMethod) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.type, that.type);
     }
 
     @Override

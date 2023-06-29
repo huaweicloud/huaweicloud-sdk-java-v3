@@ -33,15 +33,15 @@ public class CommonCreateTaskRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonCreateTaskRsp commonCreateTaskRsp = (CommonCreateTaskRsp) o;
-        return Objects.equals(this.taskId, commonCreateTaskRsp.taskId);
+        CommonCreateTaskRsp that = (CommonCreateTaskRsp) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

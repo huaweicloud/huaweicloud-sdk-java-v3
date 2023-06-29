@@ -87,17 +87,16 @@ public class UpdateApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApiV2Request updateApiV2Request = (UpdateApiV2Request) o;
-        return Objects.equals(this.instanceId, updateApiV2Request.instanceId)
-            && Objects.equals(this.apiId, updateApiV2Request.apiId)
-            && Objects.equals(this.body, updateApiV2Request.body);
+        UpdateApiV2Request that = (UpdateApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,54 +1,43 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.ConfigurationSummary2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configurations")
-    
+    @JsonProperty(value = "configurations")
 
     private ConfigurationSummary2 configurations;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter_values")
-    
+    @JsonProperty(value = "parameter_values")
+
     private Map<String, String> parameterValues = null;
-    
+
     public ShowGaussMySqlConfigurationResponse withConfigurations(ConfigurationSummary2 configurations) {
         this.configurations = configurations;
         return this;
     }
 
-    public ShowGaussMySqlConfigurationResponse withConfigurations(Consumer<ConfigurationSummary2> configurationsSetter) {
-        if(this.configurations == null ){
+    public ShowGaussMySqlConfigurationResponse withConfigurations(
+        Consumer<ConfigurationSummary2> configurationsSetter) {
+        if (this.configurations == null) {
             this.configurations = new ConfigurationSummary2();
             configurationsSetter.accept(this.configurations);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get configurations
@@ -62,30 +51,28 @@ public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
         this.configurations = configurations;
     }
 
-    
-
     public ShowGaussMySqlConfigurationResponse withParameterValues(Map<String, String> parameterValues) {
         this.parameterValues = parameterValues;
         return this;
     }
 
-    
-
     public ShowGaussMySqlConfigurationResponse putParameterValuesItem(String key, String parameterValuesItem) {
-        if(this.parameterValues == null) {
+        if (this.parameterValues == null) {
             this.parameterValues = new HashMap<>();
         }
         this.parameterValues.put(key, parameterValuesItem);
         return this;
     }
 
-    public ShowGaussMySqlConfigurationResponse withParameterValues(Consumer<Map<String, String>> parameterValuesSetter) {
-        if(this.parameterValues == null) {
+    public ShowGaussMySqlConfigurationResponse withParameterValues(
+        Consumer<Map<String, String>> parameterValuesSetter) {
+        if (this.parameterValues == null) {
             this.parameterValues = new HashMap<>();
         }
         parameterValuesSetter.accept(this.parameterValues);
         return this;
     }
+
     /**
      * 参数名和参数值映射关系。用户可以基于默认参数模板的参数，自定义的参数值。
      * @return parameterValues
@@ -98,24 +85,24 @@ public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
         this.parameterValues = parameterValues;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlConfigurationResponse showGaussMySqlConfigurationResponse = (ShowGaussMySqlConfigurationResponse) o;
-        return Objects.equals(this.configurations, showGaussMySqlConfigurationResponse.configurations) &&
-            Objects.equals(this.parameterValues, showGaussMySqlConfigurationResponse.parameterValues);
+        ShowGaussMySqlConfigurationResponse that = (ShowGaussMySqlConfigurationResponse) obj;
+        return Objects.equals(this.configurations, that.configurations)
+            && Objects.equals(this.parameterValues, that.parameterValues);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(configurations, parameterValues);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,6 +112,7 @@ public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -135,8 +123,5 @@ public class ShowGaussMySqlConfigurationResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

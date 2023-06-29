@@ -119,18 +119,16 @@ public class ShowTakeOverTaskDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTakeOverTaskDetailsResponse showTakeOverTaskDetailsResponse = (ShowTakeOverTaskDetailsResponse) o;
-        return Objects.equals(this.total, showTakeOverTaskDetailsResponse.total)
-            && Objects.equals(this.taskId, showTakeOverTaskDetailsResponse.taskId)
-            && Objects.equals(this.taskStatus, showTakeOverTaskDetailsResponse.taskStatus)
-            && Objects.equals(this.assets, showTakeOverTaskDetailsResponse.assets);
+        ShowTakeOverTaskDetailsResponse that = (ShowTakeOverTaskDetailsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.assets, that.assets);
     }
 
     @Override

@@ -107,17 +107,16 @@ public class ListHostedDirectConnectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostedDirectConnectsResponse listHostedDirectConnectsResponse = (ListHostedDirectConnectsResponse) o;
-        return Objects.equals(this.requestId, listHostedDirectConnectsResponse.requestId)
-            && Objects.equals(this.hostedConnects, listHostedDirectConnectsResponse.hostedConnects)
-            && Objects.equals(this.pageInfo, listHostedDirectConnectsResponse.pageInfo);
+        ListHostedDirectConnectsResponse that = (ListHostedDirectConnectsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.hostedConnects, that.hostedConnects) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

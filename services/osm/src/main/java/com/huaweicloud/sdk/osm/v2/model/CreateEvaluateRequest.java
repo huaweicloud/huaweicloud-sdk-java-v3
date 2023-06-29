@@ -159,20 +159,17 @@ public class CreateEvaluateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEvaluateRequest createEvaluateRequest = (CreateEvaluateRequest) o;
-        return Objects.equals(this.xServiceKey, createEvaluateRequest.xServiceKey)
-            && Objects.equals(this.xSite, createEvaluateRequest.xSite)
-            && Objects.equals(this.xLanguage, createEvaluateRequest.xLanguage)
-            && Objects.equals(this.sessionId, createEvaluateRequest.sessionId)
-            && Objects.equals(this.requestId, createEvaluateRequest.requestId)
-            && Objects.equals(this.body, createEvaluateRequest.body);
+        CreateEvaluateRequest that = (CreateEvaluateRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.body, that.body);
     }
 
     @Override

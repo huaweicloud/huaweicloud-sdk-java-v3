@@ -118,22 +118,15 @@ public class ThirdTemplateRequestBody {
             if (value == null) {
                 return null;
             }
-            RegisterStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RegisterStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RegisterStatusEnum(value));
         }
 
         public static RegisterStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RegisterStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -475,26 +468,22 @@ public class ThirdTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThirdTemplateRequestBody thirdTemplateRequestBody = (ThirdTemplateRequestBody) o;
-        return Objects.equals(this.category, thirdTemplateRequestBody.category)
-            && Objects.equals(this.inputs, thirdTemplateRequestBody.inputs)
-            && Objects.equals(this.dynamicSourceDefinition, thirdTemplateRequestBody.dynamicSourceDefinition)
-            && Objects.equals(this.needPolicy, thirdTemplateRequestBody.needPolicy)
-            && Objects.equals(this.funcProvider, thirdTemplateRequestBody.funcProvider)
-            && Objects.equals(this.funcName, thirdTemplateRequestBody.funcName)
-            && Objects.equals(this.funcDescription, thirdTemplateRequestBody.funcDescription)
-            && Objects.equals(this.funcLink, thirdTemplateRequestBody.funcLink)
-            && Objects.equals(this.appUrn, thirdTemplateRequestBody.appUrn)
-            && Objects.equals(this.billValue, thirdTemplateRequestBody.billValue)
-            && Objects.equals(this.agency, thirdTemplateRequestBody.agency)
-            && Objects.equals(this.registerStatus, thirdTemplateRequestBody.registerStatus);
+        ThirdTemplateRequestBody that = (ThirdTemplateRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.dynamicSourceDefinition, that.dynamicSourceDefinition)
+            && Objects.equals(this.needPolicy, that.needPolicy) && Objects.equals(this.funcProvider, that.funcProvider)
+            && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.funcDescription, that.funcDescription)
+            && Objects.equals(this.funcLink, that.funcLink) && Objects.equals(this.appUrn, that.appUrn)
+            && Objects.equals(this.billValue, that.billValue) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.registerStatus, that.registerStatus);
     }
 
     @Override

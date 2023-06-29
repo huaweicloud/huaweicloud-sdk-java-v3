@@ -33,15 +33,15 @@ public class ShowFirewallRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFirewallRequest showFirewallRequest = (ShowFirewallRequest) o;
-        return Objects.equals(this.firewallId, showFirewallRequest.firewallId);
+        ShowFirewallRequest that = (ShowFirewallRequest) obj;
+        return Objects.equals(this.firewallId, that.firewallId);
     }
 
     @Override

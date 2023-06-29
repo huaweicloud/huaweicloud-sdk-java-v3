@@ -65,22 +65,16 @@ public class Regular {
             if (value == null) {
                 return null;
             }
-            RegularLossComputeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RegularLossComputeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new RegularLossComputeModeEnum(value));
         }
 
         public static RegularLossComputeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RegularLossComputeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -211,19 +205,19 @@ public class Regular {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Regular regular = (Regular) o;
-        return Objects.equals(this.l2Regularization, regular.l2Regularization)
-            && Objects.equals(this.regularLossComputeMode, regular.regularLossComputeMode)
-            && Objects.equals(this.embedL2Regularization, regular.embedL2Regularization)
-            && Objects.equals(this.wideL2Regularization, regular.wideL2Regularization)
-            && Objects.equals(this.structureL2Regularization, regular.structureL2Regularization);
+        Regular that = (Regular) obj;
+        return Objects.equals(this.l2Regularization, that.l2Regularization)
+            && Objects.equals(this.regularLossComputeMode, that.regularLossComputeMode)
+            && Objects.equals(this.embedL2Regularization, that.embedL2Regularization)
+            && Objects.equals(this.wideL2Regularization, that.wideL2Regularization)
+            && Objects.equals(this.structureL2Regularization, that.structureL2Regularization);
     }
 
     @Override

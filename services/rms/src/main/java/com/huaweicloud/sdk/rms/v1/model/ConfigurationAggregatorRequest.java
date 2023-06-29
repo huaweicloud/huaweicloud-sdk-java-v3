@@ -89,17 +89,17 @@ public class ConfigurationAggregatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationAggregatorRequest configurationAggregatorRequest = (ConfigurationAggregatorRequest) o;
-        return Objects.equals(this.aggregatorName, configurationAggregatorRequest.aggregatorName)
-            && Objects.equals(this.aggregatorType, configurationAggregatorRequest.aggregatorType)
-            && Objects.equals(this.accountAggregationSources, configurationAggregatorRequest.accountAggregationSources);
+        ConfigurationAggregatorRequest that = (ConfigurationAggregatorRequest) obj;
+        return Objects.equals(this.aggregatorName, that.aggregatorName)
+            && Objects.equals(this.aggregatorType, that.aggregatorType)
+            && Objects.equals(this.accountAggregationSources, that.accountAggregationSources);
     }
 
     @Override

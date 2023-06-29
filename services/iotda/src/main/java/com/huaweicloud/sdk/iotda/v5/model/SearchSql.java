@@ -33,15 +33,15 @@ public class SearchSql {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchSql searchSql = (SearchSql) o;
-        return Objects.equals(this.sql, searchSql.sql);
+        SearchSql that = (SearchSql) obj;
+        return Objects.equals(this.sql, that.sql);
     }
 
     @Override

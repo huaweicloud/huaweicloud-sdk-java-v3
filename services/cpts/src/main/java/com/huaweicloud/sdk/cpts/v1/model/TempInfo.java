@@ -281,21 +281,20 @@ public class TempInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TempInfo tempInfo = (TempInfo) o;
-        return Objects.equals(this.id, tempInfo.id) && Objects.equals(this.projectId, tempInfo.projectId)
-            && Objects.equals(this.name, tempInfo.name) && Objects.equals(this.description, tempInfo.description)
-            && Objects.equals(this.variables, tempInfo.variables) && Objects.equals(this.contents, tempInfo.contents)
-            && Objects.equals(this.tempType, tempInfo.tempType)
-            && Objects.equals(this.forLoopParams, tempInfo.forLoopParams)
-            && Objects.equals(this.logicController, tempInfo.logicController)
-            && Objects.equals(this.enablePre, tempInfo.enablePre);
+        TempInfo that = (TempInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.variables, that.variables) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.tempType, that.tempType) && Objects.equals(this.forLoopParams, that.forLoopParams)
+            && Objects.equals(this.logicController, that.logicController)
+            && Objects.equals(this.enablePre, that.enablePre);
     }
 
     @Override

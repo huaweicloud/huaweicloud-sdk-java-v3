@@ -77,17 +77,17 @@ public class GlobalEipInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlobalEipInfo globalEipInfo = (GlobalEipInfo) o;
-        return Objects.equals(this.globalEipId, globalEipInfo.globalEipId)
-            && Objects.equals(this.globalEipAddress, globalEipInfo.globalEipAddress)
-            && Objects.equals(this.ipVersion, globalEipInfo.ipVersion);
+        GlobalEipInfo that = (GlobalEipInfo) obj;
+        return Objects.equals(this.globalEipId, that.globalEipId)
+            && Objects.equals(this.globalEipAddress, that.globalEipAddress)
+            && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override

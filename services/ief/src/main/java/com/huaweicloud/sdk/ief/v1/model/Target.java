@@ -74,16 +74,15 @@ public class Target {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Target target = (Target) o;
-        return Objects.equals(this.extensionInfo, target.extensionInfo)
-            && Objects.equals(this.targetId, target.targetId);
+        Target that = (Target) obj;
+        return Objects.equals(this.extensionInfo, that.extensionInfo) && Objects.equals(this.targetId, that.targetId);
     }
 
     @Override

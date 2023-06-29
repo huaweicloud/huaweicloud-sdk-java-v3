@@ -75,16 +75,15 @@ public class BatchDeleteApiAclBindingV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteApiAclBindingV2Response batchDeleteApiAclBindingV2Response = (BatchDeleteApiAclBindingV2Response) o;
-        return Objects.equals(this.successCount, batchDeleteApiAclBindingV2Response.successCount)
-            && Objects.equals(this.failure, batchDeleteApiAclBindingV2Response.failure);
+        BatchDeleteApiAclBindingV2Response that = (BatchDeleteApiAclBindingV2Response) obj;
+        return Objects.equals(this.successCount, that.successCount) && Objects.equals(this.failure, that.failure);
     }
 
     @Override

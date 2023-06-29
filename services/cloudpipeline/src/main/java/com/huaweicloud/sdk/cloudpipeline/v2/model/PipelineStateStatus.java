@@ -294,25 +294,20 @@ public class PipelineStateStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineStateStatus pipelineStateStatus = (PipelineStateStatus) o;
-        return Objects.equals(this.id, pipelineStateStatus.id) && Objects.equals(this.name, pipelineStateStatus.name)
-            && Objects.equals(this.type, pipelineStateStatus.type)
-            && Objects.equals(this.startTime, pipelineStateStatus.startTime)
-            && Objects.equals(this.endTime, pipelineStateStatus.endTime)
-            && Objects.equals(this.elapsedTime, pipelineStateStatus.elapsedTime)
-            && Objects.equals(this.status, pipelineStateStatus.status)
-            && Objects.equals(this.outcome, pipelineStateStatus.outcome)
-            && Objects.equals(this.errorCode, pipelineStateStatus.errorCode)
-            && Objects.equals(this.errorMsg, pipelineStateStatus.errorMsg)
-            && Objects.equals(this.children, pipelineStateStatus.children)
-            && Objects.equals(this.detailUrl, pipelineStateStatus.detailUrl);
+        PipelineStateStatus that = (PipelineStateStatus) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.elapsedTime, that.elapsedTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.outcome, that.outcome)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.children, that.children) && Objects.equals(this.detailUrl, that.detailUrl);
     }
 
     @Override

@@ -81,22 +81,15 @@ public class CreateRequestRequest {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequestTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequestTypeEnum(value));
         }
 
         public static RequestTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,20 +230,17 @@ public class CreateRequestRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestRequest createRequestRequest = (CreateRequestRequest) o;
-        return Objects.equals(this.topn, createRequestRequest.topn)
-            && Objects.equals(this.scenario, createRequestRequest.scenario)
-            && Objects.equals(this.resubmit, createRequestRequest.resubmit)
-            && Objects.equals(this.modelId, createRequestRequest.modelId)
-            && Objects.equals(this.requestType, createRequestRequest.requestType)
-            && Objects.equals(this.body, createRequestRequest.body);
+        CreateRequestRequest that = (CreateRequestRequest) obj;
+        return Objects.equals(this.topn, that.topn) && Objects.equals(this.scenario, that.scenario)
+            && Objects.equals(this.resubmit, that.resubmit) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.requestType, that.requestType) && Objects.equals(this.body, that.body);
     }
 
     @Override

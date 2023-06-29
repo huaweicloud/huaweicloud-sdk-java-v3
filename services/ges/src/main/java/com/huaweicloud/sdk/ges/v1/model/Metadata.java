@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 元数据
  */
-public class Metadata  {
-
+public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadataPath")
-    
+    @JsonProperty(value = "metadataPath")
 
     private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createTimestamp")
-    
+    @JsonProperty(value = "createTimestamp")
 
     private String createTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lastUpdateTimestamp")
-    
+    @JsonProperty(value = "lastUpdateTimestamp")
 
     private String lastUpdateTimestamp;
 
@@ -63,9 +49,6 @@ public class Metadata  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 元数据 ID。
@@ -79,15 +62,10 @@ public class Metadata  {
         this.id = id;
     }
 
-    
-
     public Metadata withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 元数据名称。
@@ -101,15 +79,10 @@ public class Metadata  {
         this.name = name;
     }
 
-    
-
     public Metadata withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 元数据 描述。
@@ -123,15 +96,10 @@ public class Metadata  {
         this.description = description;
     }
 
-    
-
     public Metadata withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 元数据是否可用。
@@ -145,15 +113,10 @@ public class Metadata  {
         this.status = status;
     }
 
-    
-
     public Metadata withMetadataPath(String metadataPath) {
         this.metadataPath = metadataPath;
         return this;
     }
-
-    
-
 
     /**
      * 元数据对应路径。
@@ -167,15 +130,10 @@ public class Metadata  {
         this.metadataPath = metadataPath;
     }
 
-    
-
     public Metadata withCreateTimestamp(String createTimestamp) {
         this.createTimestamp = createTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 元数据创建时间戳。
@@ -189,15 +147,10 @@ public class Metadata  {
         this.createTimestamp = createTimestamp;
     }
 
-    
-
     public Metadata withLastUpdateTimestamp(String lastUpdateTimestamp) {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 元数据最后更新时间戳。
@@ -211,29 +164,27 @@ public class Metadata  {
         this.lastUpdateTimestamp = lastUpdateTimestamp;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metadata metadata = (Metadata) o;
-        return Objects.equals(this.id, metadata.id) &&
-            Objects.equals(this.name, metadata.name) &&
-            Objects.equals(this.description, metadata.description) &&
-            Objects.equals(this.status, metadata.status) &&
-            Objects.equals(this.metadataPath, metadata.metadataPath) &&
-            Objects.equals(this.createTimestamp, metadata.createTimestamp) &&
-            Objects.equals(this.lastUpdateTimestamp, metadata.lastUpdateTimestamp);
+        Metadata that = (Metadata) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.metadataPath, that.metadataPath)
+            && Objects.equals(this.createTimestamp, that.createTimestamp)
+            && Objects.equals(this.lastUpdateTimestamp, that.lastUpdateTimestamp);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, status, metadataPath, createTimestamp, lastUpdateTimestamp);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +199,7 @@ public class Metadata  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +210,5 @@ public class Metadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

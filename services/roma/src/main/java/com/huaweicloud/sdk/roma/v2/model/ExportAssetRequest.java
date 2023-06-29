@@ -65,16 +65,15 @@ public class ExportAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportAssetRequest exportAssetRequest = (ExportAssetRequest) o;
-        return Objects.equals(this.instanceId, exportAssetRequest.instanceId)
-            && Objects.equals(this.body, exportAssetRequest.body);
+        ExportAssetRequest that = (ExportAssetRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

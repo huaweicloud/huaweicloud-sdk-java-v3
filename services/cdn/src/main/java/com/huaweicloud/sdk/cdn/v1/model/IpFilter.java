@@ -55,15 +55,15 @@ public class IpFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpFilter ipFilter = (IpFilter) o;
-        return Objects.equals(this.type, ipFilter.type) && Objects.equals(this.value, ipFilter.value);
+        IpFilter that = (IpFilter) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value);
     }
 
     @Override

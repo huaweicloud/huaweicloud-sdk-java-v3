@@ -55,17 +55,15 @@ public class BatchUpdateTaskStatusResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateTaskStatusResponseBodyResult batchUpdateTaskStatusResponseBodyResult =
-            (BatchUpdateTaskStatusResponseBodyResult) o;
-        return Objects.equals(this.taskId, batchUpdateTaskStatusResponseBodyResult.taskId)
-            && Objects.equals(this.taskRunId, batchUpdateTaskStatusResponseBodyResult.taskRunId);
+        BatchUpdateTaskStatusResponseBodyResult that = (BatchUpdateTaskStatusResponseBodyResult) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskRunId, that.taskRunId);
     }
 
     @Override

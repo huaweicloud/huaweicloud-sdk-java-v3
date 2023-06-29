@@ -143,20 +143,17 @@ public class KeystoneUpdateUserOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateUserOption keystoneUpdateUserOption = (KeystoneUpdateUserOption) o;
-        return Objects.equals(this.domainId, keystoneUpdateUserOption.domainId)
-            && Objects.equals(this.name, keystoneUpdateUserOption.name)
-            && Objects.equals(this.password, keystoneUpdateUserOption.password)
-            && Objects.equals(this.enabled, keystoneUpdateUserOption.enabled)
-            && Objects.equals(this.description, keystoneUpdateUserOption.description)
-            && Objects.equals(this.pwdStatus, keystoneUpdateUserOption.pwdStatus);
+        KeystoneUpdateUserOption that = (KeystoneUpdateUserOption) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.pwdStatus, that.pwdStatus);
     }
 
     @Override

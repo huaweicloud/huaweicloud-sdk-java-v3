@@ -100,22 +100,15 @@ public class RecordForApplyDetail {
             if (value == null) {
                 return null;
             }
-            ApiApplyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiApplyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiApplyStatusEnum(value));
         }
 
         public static ApiApplyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiApplyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,22 +219,15 @@ public class RecordForApplyDetail {
             if (value == null) {
                 return null;
             }
-            ApiApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiApplyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiApplyTypeEnum(value));
         }
 
         public static ApiApplyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -535,27 +521,21 @@ public class RecordForApplyDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordForApplyDetail recordForApplyDetail = (RecordForApplyDetail) o;
-        return Objects.equals(this.id, recordForApplyDetail.id)
-            && Objects.equals(this.apiApplyStatus, recordForApplyDetail.apiApplyStatus)
-            && Objects.equals(this.apiApplyType, recordForApplyDetail.apiApplyType)
-            && Objects.equals(this.apiId, recordForApplyDetail.apiId)
-            && Objects.equals(this.apiName, recordForApplyDetail.apiName)
-            && Objects.equals(this.apiUsingTime, recordForApplyDetail.apiUsingTime)
-            && Objects.equals(this.appId, recordForApplyDetail.appId)
-            && Objects.equals(this.appName, recordForApplyDetail.appName)
-            && Objects.equals(this.applyTime, recordForApplyDetail.applyTime)
-            && Objects.equals(this.approvalTime, recordForApplyDetail.approvalTime)
-            && Objects.equals(this.approverName, recordForApplyDetail.approverName)
-            && Objects.equals(this.comment, recordForApplyDetail.comment)
-            && Objects.equals(this.userName, recordForApplyDetail.userName);
+        RecordForApplyDetail that = (RecordForApplyDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.apiApplyStatus, that.apiApplyStatus)
+            && Objects.equals(this.apiApplyType, that.apiApplyType) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.apiUsingTime, that.apiUsingTime)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.approvalTime, that.approvalTime)
+            && Objects.equals(this.approverName, that.approverName) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

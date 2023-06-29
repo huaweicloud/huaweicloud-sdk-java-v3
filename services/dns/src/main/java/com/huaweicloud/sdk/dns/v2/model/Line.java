@@ -184,18 +184,18 @@ public class Line {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Line line = (Line) o;
-        return Objects.equals(this.lineId, line.lineId) && Objects.equals(this.name, line.name)
-            && Objects.equals(this.ipSegments, line.ipSegments) && Objects.equals(this.createdAt, line.createdAt)
-            && Objects.equals(this.updatedAt, line.updatedAt) && Objects.equals(this.status, line.status)
-            && Objects.equals(this.description, line.description);
+        Line that = (Line) obj;
+        return Objects.equals(this.lineId, that.lineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ipSegments, that.ipSegments) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

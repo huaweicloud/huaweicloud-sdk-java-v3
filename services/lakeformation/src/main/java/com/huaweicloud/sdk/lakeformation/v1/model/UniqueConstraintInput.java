@@ -143,20 +143,20 @@ public class UniqueConstraintInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UniqueConstraintInput uniqueConstraintInput = (UniqueConstraintInput) o;
-        return Objects.equals(this.columnName, uniqueConstraintInput.columnName)
-            && Objects.equals(this.constraintName, uniqueConstraintInput.constraintName)
-            && Objects.equals(this.keySequence, uniqueConstraintInput.keySequence)
-            && Objects.equals(this.enableConstraint, uniqueConstraintInput.enableConstraint)
-            && Objects.equals(this.relyConstraint, uniqueConstraintInput.relyConstraint)
-            && Objects.equals(this.validateConstraint, uniqueConstraintInput.validateConstraint);
+        UniqueConstraintInput that = (UniqueConstraintInput) obj;
+        return Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

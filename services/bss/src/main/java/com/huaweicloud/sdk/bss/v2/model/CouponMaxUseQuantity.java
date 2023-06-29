@@ -77,17 +77,16 @@ public class CouponMaxUseQuantity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CouponMaxUseQuantity couponMaxUseQuantity = (CouponMaxUseQuantity) o;
-        return Objects.equals(this.couponType, couponMaxUseQuantity.couponType)
-            && Objects.equals(this.couponGroup, couponMaxUseQuantity.couponGroup)
-            && Objects.equals(this.useQuantityValue, couponMaxUseQuantity.useQuantityValue);
+        CouponMaxUseQuantity that = (CouponMaxUseQuantity) obj;
+        return Objects.equals(this.couponType, that.couponType) && Objects.equals(this.couponGroup, that.couponGroup)
+            && Objects.equals(this.useQuantityValue, that.useQuantityValue);
     }
 
     @Override

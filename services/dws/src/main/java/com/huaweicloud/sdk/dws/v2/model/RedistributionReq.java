@@ -55,16 +55,15 @@ public class RedistributionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedistributionReq redistributionReq = (RedistributionReq) o;
-        return Objects.equals(this.redisMode, redistributionReq.redisMode)
-            && Objects.equals(this.parallelJobs, redistributionReq.parallelJobs);
+        RedistributionReq that = (RedistributionReq) obj;
+        return Objects.equals(this.redisMode, that.redisMode) && Objects.equals(this.parallelJobs, that.parallelJobs);
     }
 
     @Override

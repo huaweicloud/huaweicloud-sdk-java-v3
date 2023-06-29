@@ -112,22 +112,15 @@ public class ListPortsRequest {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceOwnerEnum(value));
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,22 +193,15 @@ public class ListPortsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -511,26 +497,21 @@ public class ListPortsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortsRequest listPortsRequest = (ListPortsRequest) o;
-        return Objects.equals(this.name, listPortsRequest.name) && Objects.equals(this.id, listPortsRequest.id)
-            && Objects.equals(this.limit, listPortsRequest.limit)
-            && Objects.equals(this.adminStateUp, listPortsRequest.adminStateUp)
-            && Objects.equals(this.networkId, listPortsRequest.networkId)
-            && Objects.equals(this.macAddress, listPortsRequest.macAddress)
-            && Objects.equals(this.deviceId, listPortsRequest.deviceId)
-            && Objects.equals(this.deviceOwner, listPortsRequest.deviceOwner)
-            && Objects.equals(this.status, listPortsRequest.status)
-            && Objects.equals(this.securityGroups, listPortsRequest.securityGroups)
-            && Objects.equals(this.marker, listPortsRequest.marker)
-            && Objects.equals(this.fixedIps, listPortsRequest.fixedIps)
-            && Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId);
+        ListPortsRequest that = (ListPortsRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.macAddress, that.macAddress)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.fixedIps, that.fixedIps)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

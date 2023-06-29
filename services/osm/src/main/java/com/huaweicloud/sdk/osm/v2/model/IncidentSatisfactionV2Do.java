@@ -173,21 +173,19 @@ public class IncidentSatisfactionV2Do {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentSatisfactionV2Do incidentSatisfactionV2Do = (IncidentSatisfactionV2Do) o;
-        return Objects.equals(this.value, incidentSatisfactionV2Do.value)
-            && Objects.equals(this.satisfactionId, incidentSatisfactionV2Do.satisfactionId)
-            && Objects.equals(this.satisfactionValue, incidentSatisfactionV2Do.satisfactionValue)
-            && Objects.equals(this.satisfactionName, incidentSatisfactionV2Do.satisfactionName)
-            && Objects.equals(this.perValue, incidentSatisfactionV2Do.perValue)
-            && Objects.equals(this.satCategoryId, incidentSatisfactionV2Do.satCategoryId)
-            && Objects.equals(this.satCategoryName, incidentSatisfactionV2Do.satCategoryName);
+        IncidentSatisfactionV2Do that = (IncidentSatisfactionV2Do) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.satisfactionId, that.satisfactionId)
+            && Objects.equals(this.satisfactionValue, that.satisfactionValue)
+            && Objects.equals(this.satisfactionName, that.satisfactionName)
+            && Objects.equals(this.perValue, that.perValue) && Objects.equals(this.satCategoryId, that.satCategoryId)
+            && Objects.equals(this.satCategoryName, that.satCategoryName);
     }
 
     @Override

@@ -72,22 +72,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImagetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImagetypeEnum(value));
         }
 
         public static ImagetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -154,22 +147,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            IsregisteredEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsregisteredEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsregisteredEnum(value));
         }
 
         public static IsregisteredEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsregisteredEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -236,22 +222,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsBitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsBitEnum(value));
         }
 
         public static OsBitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,22 +303,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -466,22 +438,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PlatformEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlatformEnum(value));
         }
 
         public static PlatformEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -616,22 +581,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskFormatEnum(value));
         }
 
         public static DiskFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -724,22 +682,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberStatusEnum(value));
         }
 
         public static MemberStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -831,22 +782,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -943,22 +887,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1043,22 +980,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1136,22 +1066,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VirtualEnvTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VirtualEnvTypeEnum(value));
         }
 
         public static VirtualEnvTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1218,22 +1141,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibilityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibilityEnum(value));
         }
 
         public static VisibilityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1320,22 +1236,15 @@ public class ListImagesRequest {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchitectureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchitectureEnum(value));
         }
 
         public static ArchitectureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -2019,48 +1928,39 @@ public class ListImagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImagesRequest listImagesRequest = (ListImagesRequest) o;
-        return Objects.equals(this.imagetype, listImagesRequest.imagetype)
-            && Objects.equals(this.isregistered, listImagesRequest.isregistered)
-            && Objects.equals(this.osBit, listImagesRequest.osBit)
-            && Objects.equals(this.osType, listImagesRequest.osType)
-            && Objects.equals(this.platform, listImagesRequest.platform)
-            && Objects.equals(this.supportDiskintensive, listImagesRequest.supportDiskintensive)
-            && Objects.equals(this.supportHighperformance, listImagesRequest.supportHighperformance)
-            && Objects.equals(this.supportKvm, listImagesRequest.supportKvm)
-            && Objects.equals(this.supportKvmGpuType, listImagesRequest.supportKvmGpuType)
-            && Objects.equals(this.supportKvmInfiniband, listImagesRequest.supportKvmInfiniband)
-            && Objects.equals(this.supportLargememory, listImagesRequest.supportLargememory)
-            && Objects.equals(this.supportXen, listImagesRequest.supportXen)
-            && Objects.equals(this.supportXenGpuType, listImagesRequest.supportXenGpuType)
-            && Objects.equals(this.supportXenHana, listImagesRequest.supportXenHana)
-            && Objects.equals(this.containerFormat, listImagesRequest.containerFormat)
-            && Objects.equals(this.diskFormat, listImagesRequest.diskFormat)
-            && Objects.equals(this.enterpriseProjectId, listImagesRequest.enterpriseProjectId)
-            && Objects.equals(this.id, listImagesRequest.id) && Objects.equals(this.limit, listImagesRequest.limit)
-            && Objects.equals(this.marker, listImagesRequest.marker)
-            && Objects.equals(this.memberStatus, listImagesRequest.memberStatus)
-            && Objects.equals(this.minDisk, listImagesRequest.minDisk)
-            && Objects.equals(this.minRam, listImagesRequest.minRam)
-            && Objects.equals(this.name, listImagesRequest.name) && Objects.equals(this.owner, listImagesRequest.owner)
-            && Objects.equals(this._protected, listImagesRequest._protected)
-            && Objects.equals(this.sortDir, listImagesRequest.sortDir)
-            && Objects.equals(this.sortKey, listImagesRequest.sortKey)
-            && Objects.equals(this.status, listImagesRequest.status) && Objects.equals(this.tag, listImagesRequest.tag)
-            && Objects.equals(this.virtualEnvType, listImagesRequest.virtualEnvType)
-            && Objects.equals(this.visibility, listImagesRequest.visibility)
-            && Objects.equals(this.xSdkDate, listImagesRequest.xSdkDate)
-            && Objects.equals(this.flavorId, listImagesRequest.flavorId)
-            && Objects.equals(this.createdAt, listImagesRequest.createdAt)
-            && Objects.equals(this.updatedAt, listImagesRequest.updatedAt)
-            && Objects.equals(this.architecture, listImagesRequest.architecture);
+        ListImagesRequest that = (ListImagesRequest) obj;
+        return Objects.equals(this.imagetype, that.imagetype) && Objects.equals(this.isregistered, that.isregistered)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.supportDiskintensive, that.supportDiskintensive)
+            && Objects.equals(this.supportHighperformance, that.supportHighperformance)
+            && Objects.equals(this.supportKvm, that.supportKvm)
+            && Objects.equals(this.supportKvmGpuType, that.supportKvmGpuType)
+            && Objects.equals(this.supportKvmInfiniband, that.supportKvmInfiniband)
+            && Objects.equals(this.supportLargememory, that.supportLargememory)
+            && Objects.equals(this.supportXen, that.supportXen)
+            && Objects.equals(this.supportXenGpuType, that.supportXenGpuType)
+            && Objects.equals(this.supportXenHana, that.supportXenHana)
+            && Objects.equals(this.containerFormat, that.containerFormat)
+            && Objects.equals(this.diskFormat, that.diskFormat)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.memberStatus, that.memberStatus) && Objects.equals(this.minDisk, that.minDisk)
+            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this._protected, that._protected)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.virtualEnvType, that.virtualEnvType)
+            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.architecture, that.architecture);
     }
 
     @Override

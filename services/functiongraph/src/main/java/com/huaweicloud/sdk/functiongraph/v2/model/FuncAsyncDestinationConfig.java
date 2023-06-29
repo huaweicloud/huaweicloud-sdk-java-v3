@@ -74,16 +74,15 @@ public class FuncAsyncDestinationConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncAsyncDestinationConfig funcAsyncDestinationConfig = (FuncAsyncDestinationConfig) o;
-        return Objects.equals(this.onSuccess, funcAsyncDestinationConfig.onSuccess)
-            && Objects.equals(this.onFailure, funcAsyncDestinationConfig.onFailure);
+        FuncAsyncDestinationConfig that = (FuncAsyncDestinationConfig) obj;
+        return Objects.equals(this.onSuccess, that.onSuccess) && Objects.equals(this.onFailure, that.onFailure);
     }
 
     @Override

@@ -734,33 +734,27 @@ public class ListPoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPoolsRequest listPoolsRequest = (ListPoolsRequest) o;
-        return Objects.equals(this.marker, listPoolsRequest.marker)
-            && Objects.equals(this.limit, listPoolsRequest.limit)
-            && Objects.equals(this.pageReverse, listPoolsRequest.pageReverse)
-            && Objects.equals(this.description, listPoolsRequest.description)
-            && Objects.equals(this.adminStateUp, listPoolsRequest.adminStateUp)
-            && Objects.equals(this.healthmonitorId, listPoolsRequest.healthmonitorId)
-            && Objects.equals(this.id, listPoolsRequest.id) && Objects.equals(this.name, listPoolsRequest.name)
-            && Objects.equals(this.loadbalancerId, listPoolsRequest.loadbalancerId)
-            && Objects.equals(this.protocol, listPoolsRequest.protocol)
-            && Objects.equals(this.lbAlgorithm, listPoolsRequest.lbAlgorithm)
-            && Objects.equals(this.enterpriseProjectId, listPoolsRequest.enterpriseProjectId)
-            && Objects.equals(this.ipVersion, listPoolsRequest.ipVersion)
-            && Objects.equals(this.memberAddress, listPoolsRequest.memberAddress)
-            && Objects.equals(this.memberDeviceId, listPoolsRequest.memberDeviceId)
-            && Objects.equals(this.memberDeletionProtectionEnable, listPoolsRequest.memberDeletionProtectionEnable)
-            && Objects.equals(this.listenerId, listPoolsRequest.listenerId)
-            && Objects.equals(this.memberInstanceId, listPoolsRequest.memberInstanceId)
-            && Objects.equals(this.vpcId, listPoolsRequest.vpcId) && Objects.equals(this.type, listPoolsRequest.type)
-            && Objects.equals(this.protectionStatus, listPoolsRequest.protectionStatus);
+        ListPoolsRequest that = (ListPoolsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.healthmonitorId, that.healthmonitorId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.lbAlgorithm, that.lbAlgorithm)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.memberAddress, that.memberAddress)
+            && Objects.equals(this.memberDeviceId, that.memberDeviceId)
+            && Objects.equals(this.memberDeletionProtectionEnable, that.memberDeletionProtectionEnable)
+            && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.memberInstanceId, that.memberInstanceId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.protectionStatus, that.protectionStatus);
     }
 
     @Override

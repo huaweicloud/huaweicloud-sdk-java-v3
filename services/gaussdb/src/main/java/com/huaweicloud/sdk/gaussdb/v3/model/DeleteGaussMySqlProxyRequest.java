@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.CloseMysqlProxyRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class DeleteGaussMySqlProxyRequest  {
-
+public class DeleteGaussMySqlProxyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private CloseMysqlProxyRequestBody body;
 
@@ -42,15 +31,12 @@ public class DeleteGaussMySqlProxyRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -59,15 +45,10 @@ public class DeleteGaussMySqlProxyRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public DeleteGaussMySqlProxyRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -81,22 +62,19 @@ public class DeleteGaussMySqlProxyRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteGaussMySqlProxyRequest withBody(CloseMysqlProxyRequestBody body) {
         this.body = body;
         return this;
     }
 
     public DeleteGaussMySqlProxyRequest withBody(Consumer<CloseMysqlProxyRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CloseMysqlProxyRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -110,25 +88,24 @@ public class DeleteGaussMySqlProxyRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGaussMySqlProxyRequest deleteGaussMySqlProxyRequest = (DeleteGaussMySqlProxyRequest) o;
-        return Objects.equals(this.xLanguage, deleteGaussMySqlProxyRequest.xLanguage) &&
-            Objects.equals(this.instanceId, deleteGaussMySqlProxyRequest.instanceId) &&
-            Objects.equals(this.body, deleteGaussMySqlProxyRequest.body);
+        DeleteGaussMySqlProxyRequest that = (DeleteGaussMySqlProxyRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,6 +116,7 @@ public class DeleteGaussMySqlProxyRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -149,8 +127,5 @@ public class DeleteGaussMySqlProxyRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

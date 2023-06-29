@@ -121,19 +121,17 @@ public class ShowJobDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobDetailRequest showJobDetailRequest = (ShowJobDetailRequest) o;
-        return Objects.equals(this.jobId, showJobDetailRequest.jobId)
-            && Objects.equals(this.instanceId, showJobDetailRequest.instanceId)
-            && Objects.equals(this.limit, showJobDetailRequest.limit)
-            && Objects.equals(this.offset, showJobDetailRequest.offset)
-            && Objects.equals(this.desc, showJobDetailRequest.desc);
+        ShowJobDetailRequest that = (ShowJobDetailRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

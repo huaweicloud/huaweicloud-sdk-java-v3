@@ -199,22 +199,18 @@ public class ListMoreInstantMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMoreInstantMessagesRequest listMoreInstantMessagesRequest = (ListMoreInstantMessagesRequest) o;
-        return Objects.equals(this.caseId, listMoreInstantMessagesRequest.caseId)
-            && Objects.equals(this.createTime, listMoreInstantMessagesRequest.createTime)
-            && Objects.equals(this.type, listMoreInstantMessagesRequest.type)
-            && Objects.equals(this.groupId, listMoreInstantMessagesRequest.groupId)
-            && Objects.equals(this.limit, listMoreInstantMessagesRequest.limit)
-            && Objects.equals(this.xSite, listMoreInstantMessagesRequest.xSite)
-            && Objects.equals(this.xLanguage, listMoreInstantMessagesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listMoreInstantMessagesRequest.xTimeZone);
+        ListMoreInstantMessagesRequest that = (ListMoreInstantMessagesRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

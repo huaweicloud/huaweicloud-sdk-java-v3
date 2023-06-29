@@ -77,17 +77,16 @@ public class QuotaDetailVolumesGPSSD {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailVolumesGPSSD quotaDetailVolumesGPSSD = (QuotaDetailVolumesGPSSD) o;
-        return Objects.equals(this.inUse, quotaDetailVolumesGPSSD.inUse)
-            && Objects.equals(this.limit, quotaDetailVolumesGPSSD.limit)
-            && Objects.equals(this.reserved, quotaDetailVolumesGPSSD.reserved);
+        QuotaDetailVolumesGPSSD that = (QuotaDetailVolumesGPSSD) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

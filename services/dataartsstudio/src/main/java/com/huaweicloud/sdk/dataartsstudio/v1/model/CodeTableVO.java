@@ -357,25 +357,22 @@ public class CodeTableVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeTableVO codeTableVO = (CodeTableVO) o;
-        return Objects.equals(this.id, codeTableVO.id) && Objects.equals(this.nameEn, codeTableVO.nameEn)
-            && Objects.equals(this.nameCh, codeTableVO.nameCh) && Objects.equals(this.tbVersion, codeTableVO.tbVersion)
-            && Objects.equals(this.directoryId, codeTableVO.directoryId)
-            && Objects.equals(this.directoryPath, codeTableVO.directoryPath)
-            && Objects.equals(this.description, codeTableVO.description)
-            && Objects.equals(this.createBy, codeTableVO.createBy) && Objects.equals(this.status, codeTableVO.status)
-            && Objects.equals(this.createTime, codeTableVO.createTime)
-            && Objects.equals(this.updateTime, codeTableVO.updateTime)
-            && Objects.equals(this.approvalInfo, codeTableVO.approvalInfo)
-            && Objects.equals(this.newBiz, codeTableVO.newBiz)
-            && Objects.equals(this.codeTableFields, codeTableVO.codeTableFields);
+        CodeTableVO that = (CodeTableVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.tbVersion, that.tbVersion)
+            && Objects.equals(this.directoryId, that.directoryId)
+            && Objects.equals(this.directoryPath, that.directoryPath)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.approvalInfo, that.approvalInfo)
+            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.codeTableFields, that.codeTableFields);
     }
 
     @Override

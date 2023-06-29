@@ -77,17 +77,16 @@ public class UpdateKeyDescriptionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeyDescriptionRequestBody updateKeyDescriptionRequestBody = (UpdateKeyDescriptionRequestBody) o;
-        return Objects.equals(this.keyId, updateKeyDescriptionRequestBody.keyId)
-            && Objects.equals(this.keyDescription, updateKeyDescriptionRequestBody.keyDescription)
-            && Objects.equals(this.sequence, updateKeyDescriptionRequestBody.sequence);
+        UpdateKeyDescriptionRequestBody that = (UpdateKeyDescriptionRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keyDescription, that.keyDescription)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

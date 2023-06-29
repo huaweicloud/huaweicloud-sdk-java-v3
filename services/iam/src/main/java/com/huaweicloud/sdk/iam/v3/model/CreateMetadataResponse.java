@@ -34,15 +34,15 @@ public class CreateMetadataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMetadataResponse createMetadataResponse = (CreateMetadataResponse) o;
-        return Objects.equals(this.message, createMetadataResponse.message);
+        CreateMetadataResponse that = (CreateMetadataResponse) obj;
+        return Objects.equals(this.message, that.message);
     }
 
     @Override

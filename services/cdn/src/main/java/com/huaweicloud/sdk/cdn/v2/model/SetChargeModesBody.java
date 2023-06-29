@@ -77,17 +77,16 @@ public class SetChargeModesBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetChargeModesBody setChargeModesBody = (SetChargeModesBody) o;
-        return Objects.equals(this.chargeMode, setChargeModesBody.chargeMode)
-            && Objects.equals(this.productType, setChargeModesBody.productType)
-            && Objects.equals(this.serviceArea, setChargeModesBody.serviceArea);
+        SetChargeModesBody that = (SetChargeModesBody) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.serviceArea, that.serviceArea);
     }
 
     @Override

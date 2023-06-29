@@ -43,15 +43,15 @@ public class UpdateGroupOrResourceOwnerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGroupOrResourceOwnerRequest updateGroupOrResourceOwnerRequest = (UpdateGroupOrResourceOwnerRequest) o;
-        return Objects.equals(this.body, updateGroupOrResourceOwnerRequest.body);
+        UpdateGroupOrResourceOwnerRequest that = (UpdateGroupOrResourceOwnerRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -145,20 +145,17 @@ public class ListAppConfigsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppConfigsV2Request listAppConfigsV2Request = (ListAppConfigsV2Request) o;
-        return Objects.equals(this.instanceId, listAppConfigsV2Request.instanceId)
-            && Objects.equals(this.offset, listAppConfigsV2Request.offset)
-            && Objects.equals(this.limit, listAppConfigsV2Request.limit)
-            && Objects.equals(this.appId, listAppConfigsV2Request.appId)
-            && Objects.equals(this.configName, listAppConfigsV2Request.configName)
-            && Objects.equals(this.romaAppName, listAppConfigsV2Request.romaAppName);
+        ListAppConfigsV2Request that = (ListAppConfigsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.configName, that.configName) && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

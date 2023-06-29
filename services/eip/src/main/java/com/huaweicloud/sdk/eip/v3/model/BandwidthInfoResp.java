@@ -70,22 +70,15 @@ public class BandwidthInfoResp {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthTypeEnum(value));
         }
 
         public static BandwidthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,18 +176,18 @@ public class BandwidthInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthInfoResp bandwidthInfoResp = (BandwidthInfoResp) o;
-        return Objects.equals(this.bandwidthName, bandwidthInfoResp.bandwidthName)
-            && Objects.equals(this.bandwidthNumber, bandwidthInfoResp.bandwidthNumber)
-            && Objects.equals(this.bandwidthType, bandwidthInfoResp.bandwidthType)
-            && Objects.equals(this.bandwidthId, bandwidthInfoResp.bandwidthId);
+        BandwidthInfoResp that = (BandwidthInfoResp) obj;
+        return Objects.equals(this.bandwidthName, that.bandwidthName)
+            && Objects.equals(this.bandwidthNumber, that.bandwidthNumber)
+            && Objects.equals(this.bandwidthType, that.bandwidthType)
+            && Objects.equals(this.bandwidthId, that.bandwidthId);
     }
 
     @Override

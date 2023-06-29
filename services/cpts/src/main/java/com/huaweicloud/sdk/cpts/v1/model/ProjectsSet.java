@@ -211,20 +211,19 @@ public class ProjectsSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectsSet projectsSet = (ProjectsSet) o;
-        return Objects.equals(this.createTime, projectsSet.createTime)
-            && Objects.equals(this.updateTime, projectsSet.updateTime)
-            && Objects.equals(this.description, projectsSet.description) && Objects.equals(this.id, projectsSet.id)
-            && Objects.equals(this.name, projectsSet.name) && Objects.equals(this.source, projectsSet.source)
-            && Objects.equals(this.externalParams, projectsSet.externalParams)
-            && Objects.equals(this.variablesNoFile, projectsSet.variablesNoFile);
+        ProjectsSet that = (ProjectsSet) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.externalParams, that.externalParams)
+            && Objects.equals(this.variablesNoFile, that.variablesNoFile);
     }
 
     @Override

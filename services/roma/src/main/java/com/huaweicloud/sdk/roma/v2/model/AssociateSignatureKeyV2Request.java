@@ -65,16 +65,15 @@ public class AssociateSignatureKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateSignatureKeyV2Request associateSignatureKeyV2Request = (AssociateSignatureKeyV2Request) o;
-        return Objects.equals(this.instanceId, associateSignatureKeyV2Request.instanceId)
-            && Objects.equals(this.body, associateSignatureKeyV2Request.body);
+        AssociateSignatureKeyV2Request that = (AssociateSignatureKeyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

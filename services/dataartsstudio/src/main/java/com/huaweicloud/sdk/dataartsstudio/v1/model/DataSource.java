@@ -534,33 +534,30 @@ public class DataSource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSource dataSource = (DataSource) o;
-        return Objects.equals(this.datasourceName, dataSource.datasourceName)
-            && Objects.equals(this.datasourceType, dataSource.datasourceType)
-            && Objects.equals(this.datasourceGuid, dataSource.datasourceGuid)
-            && Objects.equals(this.datasourceQualifiedName, dataSource.datasourceQualifiedName)
-            && Objects.equals(this.obsFolderCount, dataSource.obsFolderCount)
-            && Objects.equals(this.obsFileCount, dataSource.obsFileCount)
-            && Objects.equals(this.cssIndexCount, dataSource.cssIndexCount)
-            && Objects.equals(this.cssIndexFieldCount, dataSource.cssIndexFieldCount)
-            && Objects.equals(this.namespaceCount, dataSource.namespaceCount)
-            && Objects.equals(this.gesVertexCount, dataSource.gesVertexCount)
-            && Objects.equals(this.gesEdgeCount, dataSource.gesEdgeCount)
-            && Objects.equals(this.databaseCount, dataSource.databaseCount)
-            && Objects.equals(this.streamCount, dataSource.streamCount)
-            && Objects.equals(this.tableCount, dataSource.tableCount)
-            && Objects.equals(this.dataSize, dataSource.dataSize)
-            && Objects.equals(this.databases, dataSource.databases) && Objects.equals(this.folders, dataSource.folders)
-            && Objects.equals(this.cssIndices, dataSource.cssIndices)
-            && Objects.equals(this.namespaces, dataSource.namespaces)
-            && Objects.equals(this.disStreams, dataSource.disStreams);
+        DataSource that = (DataSource) obj;
+        return Objects.equals(this.datasourceName, that.datasourceName)
+            && Objects.equals(this.datasourceType, that.datasourceType)
+            && Objects.equals(this.datasourceGuid, that.datasourceGuid)
+            && Objects.equals(this.datasourceQualifiedName, that.datasourceQualifiedName)
+            && Objects.equals(this.obsFolderCount, that.obsFolderCount)
+            && Objects.equals(this.obsFileCount, that.obsFileCount)
+            && Objects.equals(this.cssIndexCount, that.cssIndexCount)
+            && Objects.equals(this.cssIndexFieldCount, that.cssIndexFieldCount)
+            && Objects.equals(this.namespaceCount, that.namespaceCount)
+            && Objects.equals(this.gesVertexCount, that.gesVertexCount)
+            && Objects.equals(this.gesEdgeCount, that.gesEdgeCount)
+            && Objects.equals(this.databaseCount, that.databaseCount)
+            && Objects.equals(this.streamCount, that.streamCount) && Objects.equals(this.tableCount, that.tableCount)
+            && Objects.equals(this.dataSize, that.dataSize) && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.folders, that.folders) && Objects.equals(this.cssIndices, that.cssIndices)
+            && Objects.equals(this.namespaces, that.namespaces) && Objects.equals(this.disStreams, that.disStreams);
     }
 
     @Override

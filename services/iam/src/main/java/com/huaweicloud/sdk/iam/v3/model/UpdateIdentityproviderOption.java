@@ -55,16 +55,15 @@ public class UpdateIdentityproviderOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIdentityproviderOption updateIdentityproviderOption = (UpdateIdentityproviderOption) o;
-        return Objects.equals(this.description, updateIdentityproviderOption.description)
-            && Objects.equals(this.enabled, updateIdentityproviderOption.enabled);
+        UpdateIdentityproviderOption that = (UpdateIdentityproviderOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

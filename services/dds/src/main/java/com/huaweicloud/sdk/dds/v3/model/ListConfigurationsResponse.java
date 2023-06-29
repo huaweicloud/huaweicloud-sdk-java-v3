@@ -76,16 +76,16 @@ public class ListConfigurationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationsResponse listConfigurationsResponse = (ListConfigurationsResponse) o;
-        return Objects.equals(this.totalCount, listConfigurationsResponse.totalCount)
-            && Objects.equals(this.configurations, listConfigurationsResponse.configurations);
+        ListConfigurationsResponse that = (ListConfigurationsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.configurations, that.configurations);
     }
 
     @Override

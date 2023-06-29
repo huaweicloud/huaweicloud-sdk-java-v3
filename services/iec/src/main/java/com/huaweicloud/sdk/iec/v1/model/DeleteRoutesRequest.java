@@ -65,16 +65,15 @@ public class DeleteRoutesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRoutesRequest deleteRoutesRequest = (DeleteRoutesRequest) o;
-        return Objects.equals(this.routetableId, deleteRoutesRequest.routetableId)
-            && Objects.equals(this.body, deleteRoutesRequest.body);
+        DeleteRoutesRequest that = (DeleteRoutesRequest) obj;
+        return Objects.equals(this.routetableId, that.routetableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

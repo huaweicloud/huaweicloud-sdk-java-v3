@@ -45,16 +45,15 @@ public class NeutronCreateSecurityGroupRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronCreateSecurityGroupRuleResponse neutronCreateSecurityGroupRuleResponse =
-            (NeutronCreateSecurityGroupRuleResponse) o;
-        return Objects.equals(this.securityGroupRule, neutronCreateSecurityGroupRuleResponse.securityGroupRule);
+        NeutronCreateSecurityGroupRuleResponse that = (NeutronCreateSecurityGroupRuleResponse) obj;
+        return Objects.equals(this.securityGroupRule, that.securityGroupRule);
     }
 
     @Override

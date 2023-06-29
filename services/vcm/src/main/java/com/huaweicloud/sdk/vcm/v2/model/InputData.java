@@ -209,20 +209,20 @@ public class InputData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InputData inputData = (InputData) o;
-        return Objects.equals(this.bucket, inputData.bucket) && Objects.equals(this.path, inputData.path)
-            && Objects.equals(this.url, inputData.url) && Objects.equals(this.id, inputData.id)
-            && Objects.equals(this.streamName, inputData.streamName) && Objects.equals(this.nodeId, inputData.nodeId)
-            && Objects.equals(this.certificateCheck, inputData.certificateCheck)
-            && Objects.equals(this.rtspPathInResponse, inputData.rtspPathInResponse)
-            && Objects.equals(this.deviceId, inputData.deviceId);
+        InputData that = (InputData) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.streamName, that.streamName) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.certificateCheck, that.certificateCheck)
+            && Objects.equals(this.rtspPathInResponse, that.rtspPathInResponse)
+            && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

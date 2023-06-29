@@ -143,17 +143,17 @@ public class UrlObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlObject urlObject = (UrlObject) o;
-        return Objects.equals(this.id, urlObject.id) && Objects.equals(this.url, urlObject.url)
-            && Objects.equals(this.status, urlObject.status) && Objects.equals(this.createTime, urlObject.createTime)
-            && Objects.equals(this.taskId, urlObject.taskId) && Objects.equals(this.taskType, urlObject.taskType);
+        UrlObject that = (UrlObject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskType, that.taskType);
     }
 
     @Override

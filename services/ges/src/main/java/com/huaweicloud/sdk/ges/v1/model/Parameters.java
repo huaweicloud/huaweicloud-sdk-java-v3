@@ -1,74 +1,58 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.ParallelEdge;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Parameters  {
-
+public class Parameters {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaPath")
-    
+    @JsonProperty(value = "schemaPath")
 
     private String schemaPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetPath")
-    
+    @JsonProperty(value = "edgesetPath")
 
     private String edgesetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetFormat")
-    
+    @JsonProperty(value = "edgesetFormat")
 
     private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetDefaultLabel")
-    
+    @JsonProperty(value = "edgesetDefaultLabel")
 
     private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetPath")
-    
+    @JsonProperty(value = "vertexsetPath")
 
     private String vertexsetPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetFormat")
-    
+    @JsonProperty(value = "vertexsetFormat")
 
     private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetDefaultLabel")
-    
+    @JsonProperty(value = "vertexsetDefaultLabel")
 
     private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logDir")
-    
+    @JsonProperty(value = "logDir")
 
     private String logDir;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parallelEdge")
-    
+    @JsonProperty(value = "parallelEdge")
 
     private ParallelEdge parallelEdge;
 
@@ -76,9 +60,6 @@ public class Parameters  {
         this.schemaPath = schemaPath;
         return this;
     }
-
-    
-
 
     /**
      * 元数据文件OBS路径，只支持文件。
@@ -92,15 +73,10 @@ public class Parameters  {
         this.schemaPath = schemaPath;
     }
 
-    
-
     public Parameters withEdgesetPath(String edgesetPath) {
         this.edgesetPath = edgesetPath;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集文件OBS路径，只支持文件。
@@ -114,15 +90,10 @@ public class Parameters  {
         this.edgesetPath = edgesetPath;
     }
 
-    
-
     public Parameters withEdgesetFormat(String edgesetFormat) {
         this.edgesetFormat = edgesetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集格式。当前仅支持csv。  默认为csv。
@@ -136,15 +107,10 @@ public class Parameters  {
         this.edgesetFormat = edgesetFormat;
     }
 
-    
-
     public Parameters withEdgesetDefaultLabel(String edgesetDefaultLabel) {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集默认标签，当前默认为空，可以不填。
@@ -158,15 +124,10 @@ public class Parameters  {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
     }
 
-    
-
     public Parameters withVertexsetPath(String vertexsetPath) {
         this.vertexsetPath = vertexsetPath;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集OBS路径，只支持文件。
@@ -180,15 +141,10 @@ public class Parameters  {
         this.vertexsetPath = vertexsetPath;
     }
 
-    
-
     public Parameters withVertexsetFormat(String vertexsetFormat) {
         this.vertexsetFormat = vertexsetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集格式。当前仅支持csv。  默认为csv。
@@ -202,15 +158,10 @@ public class Parameters  {
         this.vertexsetFormat = vertexsetFormat;
     }
 
-    
-
     public Parameters withVertexsetDefaultLabel(String vertexsetDefaultLabel) {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集默认标签，当前默认为空，可以不填。
@@ -224,15 +175,10 @@ public class Parameters  {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
     }
 
-    
-
     public Parameters withLogDir(String logDir) {
         this.logDir = logDir;
         return this;
     }
-
-    
-
 
     /**
      * OBS日志存储目录，用于存储建图过程导入失败的数据和详细日志。
@@ -246,22 +192,19 @@ public class Parameters  {
         this.logDir = logDir;
     }
 
-    
-
     public Parameters withParallelEdge(ParallelEdge parallelEdge) {
         this.parallelEdge = parallelEdge;
         return this;
     }
 
     public Parameters withParallelEdge(Consumer<ParallelEdge> parallelEdgeSetter) {
-        if(this.parallelEdge == null ){
+        if (this.parallelEdge == null) {
             this.parallelEdge = new ParallelEdge();
             parallelEdgeSetter.accept(this.parallelEdge);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get parallelEdge
@@ -275,31 +218,37 @@ public class Parameters  {
         this.parallelEdge = parallelEdge;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Parameters parameters = (Parameters) o;
-        return Objects.equals(this.schemaPath, parameters.schemaPath) &&
-            Objects.equals(this.edgesetPath, parameters.edgesetPath) &&
-            Objects.equals(this.edgesetFormat, parameters.edgesetFormat) &&
-            Objects.equals(this.edgesetDefaultLabel, parameters.edgesetDefaultLabel) &&
-            Objects.equals(this.vertexsetPath, parameters.vertexsetPath) &&
-            Objects.equals(this.vertexsetFormat, parameters.vertexsetFormat) &&
-            Objects.equals(this.vertexsetDefaultLabel, parameters.vertexsetDefaultLabel) &&
-            Objects.equals(this.logDir, parameters.logDir) &&
-            Objects.equals(this.parallelEdge, parameters.parallelEdge);
+        Parameters that = (Parameters) obj;
+        return Objects.equals(this.schemaPath, that.schemaPath) && Objects.equals(this.edgesetPath, that.edgesetPath)
+            && Objects.equals(this.edgesetFormat, that.edgesetFormat)
+            && Objects.equals(this.edgesetDefaultLabel, that.edgesetDefaultLabel)
+            && Objects.equals(this.vertexsetPath, that.vertexsetPath)
+            && Objects.equals(this.vertexsetFormat, that.vertexsetFormat)
+            && Objects.equals(this.vertexsetDefaultLabel, that.vertexsetDefaultLabel)
+            && Objects.equals(this.logDir, that.logDir) && Objects.equals(this.parallelEdge, that.parallelEdge);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(schemaPath, edgesetPath, edgesetFormat, edgesetDefaultLabel, vertexsetPath, vertexsetFormat, vertexsetDefaultLabel, logDir, parallelEdge);
+        return Objects.hash(schemaPath,
+            edgesetPath,
+            edgesetFormat,
+            edgesetDefaultLabel,
+            vertexsetPath,
+            vertexsetFormat,
+            vertexsetDefaultLabel,
+            logDir,
+            parallelEdge);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -316,6 +265,7 @@ public class Parameters  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -326,8 +276,5 @@ public class Parameters  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

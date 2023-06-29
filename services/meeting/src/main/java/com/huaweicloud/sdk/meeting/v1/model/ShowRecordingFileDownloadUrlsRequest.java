@@ -125,20 +125,18 @@ public class ShowRecordingFileDownloadUrlsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordingFileDownloadUrlsRequest showRecordingFileDownloadUrlsRequest =
-            (ShowRecordingFileDownloadUrlsRequest) o;
-        return Objects.equals(this.confUUID, showRecordingFileDownloadUrlsRequest.confUUID)
-            && Objects.equals(this.offset, showRecordingFileDownloadUrlsRequest.offset)
-            && Objects.equals(this.limit, showRecordingFileDownloadUrlsRequest.limit)
-            && Objects.equals(this.xAuthorizationType, showRecordingFileDownloadUrlsRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, showRecordingFileDownloadUrlsRequest.xSiteId);
+        ShowRecordingFileDownloadUrlsRequest that = (ShowRecordingFileDownloadUrlsRequest) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

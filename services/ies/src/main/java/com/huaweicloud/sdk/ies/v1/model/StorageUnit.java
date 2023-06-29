@@ -142,17 +142,17 @@ public class StorageUnit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageUnit storageUnit = (StorageUnit) o;
-        return Objects.equals(this.storageType, storageUnit.storageType)
-            && Objects.equals(this.capacity, storageUnit.capacity) && Objects.equals(this.gears, storageUnit.gears)
-            && Objects.equals(this.flavorType, storageUnit.flavorType) && Objects.equals(this.count, storageUnit.count);
+        StorageUnit that = (StorageUnit) obj;
+        return Objects.equals(this.storageType, that.storageType) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.gears, that.gears) && Objects.equals(this.flavorType, that.flavorType)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

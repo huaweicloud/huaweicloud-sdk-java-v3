@@ -33,15 +33,15 @@ public class UpdateStarRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStarRequest updateStarRequest = (UpdateStarRequest) o;
-        return Objects.equals(this.assetId, updateStarRequest.assetId);
+        UpdateStarRequest that = (UpdateStarRequest) obj;
+        return Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

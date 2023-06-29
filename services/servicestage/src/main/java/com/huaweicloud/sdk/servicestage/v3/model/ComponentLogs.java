@@ -93,22 +93,15 @@ public class ComponentLogs {
             if (value == null) {
                 return null;
             }
-            HostExtendPathEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostExtendPathEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostExtendPathEnum(value));
         }
 
         public static HostExtendPathEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostExtendPathEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,17 +192,16 @@ public class ComponentLogs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentLogs componentLogs = (ComponentLogs) o;
-        return Objects.equals(this.logPath, componentLogs.logPath) && Objects.equals(this.rotate, componentLogs.rotate)
-            && Objects.equals(this.hostPath, componentLogs.hostPath)
-            && Objects.equals(this.hostExtendPath, componentLogs.hostExtendPath);
+        ComponentLogs that = (ComponentLogs) obj;
+        return Objects.equals(this.logPath, that.logPath) && Objects.equals(this.rotate, that.rotate)
+            && Objects.equals(this.hostPath, that.hostPath) && Objects.equals(this.hostExtendPath, that.hostExtendPath);
     }
 
     @Override

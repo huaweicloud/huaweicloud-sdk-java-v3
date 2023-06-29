@@ -356,23 +356,23 @@ public class StreamingErrorBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamingErrorBrokens streamingErrorBrokens = (StreamingErrorBrokens) o;
-        return Objects.equals(this.createStreamFailed, streamingErrorBrokens.createStreamFailed)
-            && Objects.equals(this.handShakeFailed, streamingErrorBrokens.handShakeFailed)
-            && Objects.equals(this.parseFileFailed, streamingErrorBrokens.parseFileFailed)
-            && Objects.equals(this.parseFlvFileFailed, streamingErrorBrokens.parseFlvFileFailed)
-            && Objects.equals(this.playFailed, streamingErrorBrokens.playFailed)
-            && Objects.equals(this.publishFailed, streamingErrorBrokens.publishFailed)
-            && Objects.equals(this.retryFailed, streamingErrorBrokens.retryFailed)
-            && Objects.equals(this.rtmpConnectFailed, streamingErrorBrokens.rtmpConnectFailed)
-            && Objects.equals(this.tcpConnectFailed, streamingErrorBrokens.tcpConnectFailed);
+        StreamingErrorBrokens that = (StreamingErrorBrokens) obj;
+        return Objects.equals(this.createStreamFailed, that.createStreamFailed)
+            && Objects.equals(this.handShakeFailed, that.handShakeFailed)
+            && Objects.equals(this.parseFileFailed, that.parseFileFailed)
+            && Objects.equals(this.parseFlvFileFailed, that.parseFlvFileFailed)
+            && Objects.equals(this.playFailed, that.playFailed)
+            && Objects.equals(this.publishFailed, that.publishFailed)
+            && Objects.equals(this.retryFailed, that.retryFailed)
+            && Objects.equals(this.rtmpConnectFailed, that.rtmpConnectFailed)
+            && Objects.equals(this.tcpConnectFailed, that.tcpConnectFailed);
     }
 
     @Override

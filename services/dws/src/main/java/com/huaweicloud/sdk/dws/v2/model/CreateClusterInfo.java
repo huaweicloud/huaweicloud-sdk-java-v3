@@ -342,27 +342,23 @@ public class CreateClusterInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterInfo createClusterInfo = (CreateClusterInfo) o;
-        return Objects.equals(this.nodeType, createClusterInfo.nodeType)
-            && Objects.equals(this.numberOfNode, createClusterInfo.numberOfNode)
-            && Objects.equals(this.subnetId, createClusterInfo.subnetId)
-            && Objects.equals(this.securityGroupId, createClusterInfo.securityGroupId)
-            && Objects.equals(this.vpcId, createClusterInfo.vpcId)
-            && Objects.equals(this.availabilityZone, createClusterInfo.availabilityZone)
-            && Objects.equals(this.port, createClusterInfo.port) && Objects.equals(this.name, createClusterInfo.name)
-            && Objects.equals(this.userName, createClusterInfo.userName)
-            && Objects.equals(this.userPwd, createClusterInfo.userPwd)
-            && Objects.equals(this.publicIp, createClusterInfo.publicIp)
-            && Objects.equals(this.numberOfCn, createClusterInfo.numberOfCn)
-            && Objects.equals(this.enterpriseProjectId, createClusterInfo.enterpriseProjectId)
-            && Objects.equals(this.tags, createClusterInfo.tags);
+        CreateClusterInfo that = (CreateClusterInfo) obj;
+        return Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.numberOfNode, that.numberOfNode)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.userPwd, that.userPwd) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.numberOfCn, that.numberOfCn)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

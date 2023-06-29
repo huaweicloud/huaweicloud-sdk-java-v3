@@ -79,17 +79,16 @@ public class ListEntitiesForPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEntitiesForPolicyRequest listEntitiesForPolicyRequest = (ListEntitiesForPolicyRequest) o;
-        return Objects.equals(this.policyId, listEntitiesForPolicyRequest.policyId)
-            && Objects.equals(this.limit, listEntitiesForPolicyRequest.limit)
-            && Objects.equals(this.marker, listEntitiesForPolicyRequest.marker);
+        ListEntitiesForPolicyRequest that = (ListEntitiesForPolicyRequest) obj;
+        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

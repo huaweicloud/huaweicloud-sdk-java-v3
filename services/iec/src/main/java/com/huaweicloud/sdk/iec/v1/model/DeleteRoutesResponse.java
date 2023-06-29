@@ -53,15 +53,15 @@ public class DeleteRoutesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRoutesResponse deleteRoutesResponse = (DeleteRoutesResponse) o;
-        return Objects.equals(this.routes, deleteRoutesResponse.routes);
+        DeleteRoutesResponse that = (DeleteRoutesResponse) obj;
+        return Objects.equals(this.routes, that.routes);
     }
 
     @Override

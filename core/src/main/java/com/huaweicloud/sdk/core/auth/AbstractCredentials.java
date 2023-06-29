@@ -40,11 +40,11 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * @param <DerivedT> derived class such as BasicCredentials and
+ * @param <T> derived class such as BasicCredentials and
  *                   GlobalCredentials
  * @author HuaweiCloud_SDK
  */
-public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<DerivedT>> implements ICredential {
+public abstract class AbstractCredentials<T extends AbstractCredentials<T>> implements ICredential {
     private String ak;
 
     private String sk;
@@ -133,7 +133,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param ak access key
      * @return DerivedT with ak set
      */
-    public DerivedT withAk(String ak) {
+    public T withAk(String ak) {
         this.ak = ak;
         return toDerivedT();
     }
@@ -142,7 +142,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param sk access secret key
      * @return DerivedT with sk set
      */
-    public DerivedT withSk(String sk) {
+    public T withSk(String sk) {
         this.sk = sk;
         return toDerivedT();
     }
@@ -151,7 +151,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param securityToken temporary token from temporary ak and sk
      * @return DerivedT with securityToken set
      */
-    public DerivedT withSecurityToken(String securityToken) {
+    public T withSecurityToken(String securityToken) {
         this.securityToken = securityToken;
         return toDerivedT();
     }
@@ -160,7 +160,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param idpId identity provider id
      * @return DerivedT with idpId set
      */
-    public DerivedT withIdpId(String idpId) {
+    public T withIdpId(String idpId) {
         this.idpId = idpId;
         return toDerivedT();
     }
@@ -169,7 +169,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param idTokenFile file path of the id token
      * @return DerivedT with idTokenFile set
      */
-    public DerivedT withIdTokenFile(String idTokenFile) {
+    public T withIdTokenFile(String idTokenFile) {
         this.idTokenFile = idTokenFile;
         return toDerivedT();
     }
@@ -178,7 +178,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param iamEndpoint optional property
      * @return DerivedT with iamEndpoint set
      */
-    public DerivedT withIamEndpoint(String iamEndpoint) {
+    public T withIamEndpoint(String iamEndpoint) {
         this.iamEndpoint = iamEndpoint;
         return toDerivedT();
     }
@@ -187,7 +187,7 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
      * @param derivedPredicate optional property, judge whether to use the DerivedAKSKSigner
      * @return DerivedT with derived set
      */
-    public DerivedT withDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
+    public T withDerivedPredicate(Function<HttpRequest, Boolean> derivedPredicate) {
         this.derivedPredicate = derivedPredicate;
         return toDerivedT();
     }
@@ -257,8 +257,8 @@ public abstract class AbstractCredentials<DerivedT extends AbstractCredentials<D
     }
     
     @SuppressWarnings("unchecked")
-    private DerivedT toDerivedT() {
-        return (DerivedT) this;
+    private T toDerivedT() {
+        return (T) this;
     }
 
     protected abstract void updateAuthTokenByIdToken(HttpClient httpClient);

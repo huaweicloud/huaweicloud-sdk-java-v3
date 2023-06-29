@@ -43,15 +43,15 @@ public class CreateInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceBody createInstanceBody = (CreateInstanceBody) o;
-        return Objects.equals(this.server, createInstanceBody.server);
+        CreateInstanceBody that = (CreateInstanceBody) obj;
+        return Objects.equals(this.server, that.server);
     }
 
     @Override

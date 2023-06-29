@@ -109,18 +109,16 @@ public class CreateClusterRolesBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterRolesBody createClusterRolesBody = (CreateClusterRolesBody) o;
-        return Objects.equals(this.flavorRef, createClusterRolesBody.flavorRef)
-            && Objects.equals(this.volume, createClusterRolesBody.volume)
-            && Objects.equals(this.type, createClusterRolesBody.type)
-            && Objects.equals(this.instanceNum, createClusterRolesBody.instanceNum);
+        CreateClusterRolesBody that = (CreateClusterRolesBody) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.instanceNum, that.instanceNum);
     }
 
     @Override

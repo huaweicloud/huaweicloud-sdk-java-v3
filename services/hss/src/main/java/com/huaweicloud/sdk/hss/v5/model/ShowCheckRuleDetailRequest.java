@@ -143,20 +143,18 @@ public class ShowCheckRuleDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCheckRuleDetailRequest showCheckRuleDetailRequest = (ShowCheckRuleDetailRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showCheckRuleDetailRequest.enterpriseProjectId)
-            && Objects.equals(this.checkName, showCheckRuleDetailRequest.checkName)
-            && Objects.equals(this.checkType, showCheckRuleDetailRequest.checkType)
-            && Objects.equals(this.checkRuleId, showCheckRuleDetailRequest.checkRuleId)
-            && Objects.equals(this.standard, showCheckRuleDetailRequest.standard)
-            && Objects.equals(this.hostId, showCheckRuleDetailRequest.hostId);
+        ShowCheckRuleDetailRequest that = (ShowCheckRuleDetailRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.checkType, that.checkType)
+            && Objects.equals(this.checkRuleId, that.checkRuleId) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

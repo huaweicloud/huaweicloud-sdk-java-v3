@@ -65,16 +65,15 @@ public class AddMemberV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddMemberV4Request addMemberV4Request = (AddMemberV4Request) o;
-        return Objects.equals(this.projectId, addMemberV4Request.projectId)
-            && Objects.equals(this.body, addMemberV4Request.body);
+        AddMemberV4Request that = (AddMemberV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

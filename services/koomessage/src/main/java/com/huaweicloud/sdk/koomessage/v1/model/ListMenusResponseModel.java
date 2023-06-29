@@ -83,16 +83,15 @@ public class ListMenusResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMenusResponseModel listMenusResponseModel = (ListMenusResponseModel) o;
-        return Objects.equals(this.data, listMenusResponseModel.data)
-            && Objects.equals(this.pageInfo, listMenusResponseModel.pageInfo);
+        ListMenusResponseModel that = (ListMenusResponseModel) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

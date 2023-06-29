@@ -190,22 +190,18 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.requestId, showJobResponse.requestId)
-            && Objects.equals(this.jobId, showJobResponse.jobId)
-            && Objects.equals(this.beginTime, showJobResponse.beginTime)
-            && Objects.equals(this.endTime, showJobResponse.endTime)
-            && Objects.equals(this.status, showJobResponse.status)
-            && Objects.equals(this.errorMsg, showJobResponse.errorMsg)
-            && Objects.equals(this.errorCode, showJobResponse.errorCode)
-            && Objects.equals(this.executeMsg, showJobResponse.executeMsg);
+        ShowJobResponse that = (ShowJobResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.executeMsg, that.executeMsg);
     }
 
     @Override

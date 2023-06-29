@@ -145,20 +145,19 @@ public class ListScalingV2PoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingV2PoliciesRequest listScalingV2PoliciesRequest = (ListScalingV2PoliciesRequest) o;
-        return Objects.equals(this.scalingResourceId, listScalingV2PoliciesRequest.scalingResourceId)
-            && Objects.equals(this.scalingPolicyName, listScalingV2PoliciesRequest.scalingPolicyName)
-            && Objects.equals(this.scalingPolicyType, listScalingV2PoliciesRequest.scalingPolicyType)
-            && Objects.equals(this.scalingPolicyId, listScalingV2PoliciesRequest.scalingPolicyId)
-            && Objects.equals(this.startNumber, listScalingV2PoliciesRequest.startNumber)
-            && Objects.equals(this.limit, listScalingV2PoliciesRequest.limit);
+        ListScalingV2PoliciesRequest that = (ListScalingV2PoliciesRequest) obj;
+        return Objects.equals(this.scalingResourceId, that.scalingResourceId)
+            && Objects.equals(this.scalingPolicyName, that.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
+            && Objects.equals(this.scalingPolicyId, that.scalingPolicyId)
+            && Objects.equals(this.startNumber, that.startNumber) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

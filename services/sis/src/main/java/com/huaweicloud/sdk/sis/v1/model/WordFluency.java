@@ -55,15 +55,15 @@ public class WordFluency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WordFluency wordFluency = (WordFluency) o;
-        return Objects.equals(this.score, wordFluency.score) && Objects.equals(this.rhythm, wordFluency.rhythm);
+        WordFluency that = (WordFluency) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.rhythm, that.rhythm);
     }
 
     @Override

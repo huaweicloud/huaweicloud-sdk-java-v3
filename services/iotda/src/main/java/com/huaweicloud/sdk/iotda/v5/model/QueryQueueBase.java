@@ -99,18 +99,17 @@ public class QueryQueueBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryQueueBase queryQueueBase = (QueryQueueBase) o;
-        return Objects.equals(this.queueId, queryQueueBase.queueId)
-            && Objects.equals(this.queueName, queryQueueBase.queueName)
-            && Objects.equals(this.createTime, queryQueueBase.createTime)
-            && Objects.equals(this.lastModifyTime, queryQueueBase.lastModifyTime);
+        QueryQueueBase that = (QueryQueueBase) obj;
+        return Objects.equals(this.queueId, that.queueId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime);
     }
 
     @Override

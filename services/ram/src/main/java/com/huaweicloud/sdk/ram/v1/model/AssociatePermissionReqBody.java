@@ -55,16 +55,15 @@ public class AssociatePermissionReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociatePermissionReqBody associatePermissionReqBody = (AssociatePermissionReqBody) o;
-        return Objects.equals(this.permissionId, associatePermissionReqBody.permissionId)
-            && Objects.equals(this.replace, associatePermissionReqBody.replace);
+        AssociatePermissionReqBody that = (AssociatePermissionReqBody) obj;
+        return Objects.equals(this.permissionId, that.permissionId) && Objects.equals(this.replace, that.replace);
     }
 
     @Override

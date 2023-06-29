@@ -121,19 +121,18 @@ public class CreateSecretRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecretRequestBody createSecretRequestBody = (CreateSecretRequestBody) o;
-        return Objects.equals(this.name, createSecretRequestBody.name)
-            && Objects.equals(this.kmsKeyId, createSecretRequestBody.kmsKeyId)
-            && Objects.equals(this.description, createSecretRequestBody.description)
-            && Objects.equals(this.secretBinary, createSecretRequestBody.secretBinary)
-            && Objects.equals(this.secretString, createSecretRequestBody.secretString);
+        CreateSecretRequestBody that = (CreateSecretRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.kmsKeyId, that.kmsKeyId)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.secretBinary, that.secretBinary)
+            && Objects.equals(this.secretString, that.secretString);
     }
 
     @Override

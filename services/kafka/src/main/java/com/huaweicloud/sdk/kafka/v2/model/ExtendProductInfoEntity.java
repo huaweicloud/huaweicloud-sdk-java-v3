@@ -340,24 +340,21 @@ public class ExtendProductInfoEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendProductInfoEntity extendProductInfoEntity = (ExtendProductInfoEntity) o;
-        return Objects.equals(this.type, extendProductInfoEntity.type)
-            && Objects.equals(this.productId, extendProductInfoEntity.productId)
-            && Objects.equals(this.ecsFlavorId, extendProductInfoEntity.ecsFlavorId)
-            && Objects.equals(this.archTypes, extendProductInfoEntity.archTypes)
-            && Objects.equals(this.chargingMode, extendProductInfoEntity.chargingMode)
-            && Objects.equals(this.ios, extendProductInfoEntity.ios)
-            && Objects.equals(this.supportFeatures, extendProductInfoEntity.supportFeatures)
-            && Objects.equals(this.properties, extendProductInfoEntity.properties)
-            && Objects.equals(this.availableZones, extendProductInfoEntity.availableZones)
-            && Objects.equals(this.unavailableZones, extendProductInfoEntity.unavailableZones);
+        ExtendProductInfoEntity that = (ExtendProductInfoEntity) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.archTypes, that.archTypes)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.ios, that.ios)
+            && Objects.equals(this.supportFeatures, that.supportFeatures)
+            && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.unavailableZones, that.unavailableZones);
     }
 
     @Override

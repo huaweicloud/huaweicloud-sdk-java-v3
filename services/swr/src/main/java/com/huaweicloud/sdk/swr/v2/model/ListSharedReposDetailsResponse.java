@@ -75,16 +75,15 @@ public class ListSharedReposDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSharedReposDetailsResponse listSharedReposDetailsResponse = (ListSharedReposDetailsResponse) o;
-        return Objects.equals(this.body, listSharedReposDetailsResponse.body)
-            && Objects.equals(this.contentRange, listSharedReposDetailsResponse.contentRange);
+        ListSharedReposDetailsResponse that = (ListSharedReposDetailsResponse) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.contentRange, that.contentRange);
     }
 
     @Override

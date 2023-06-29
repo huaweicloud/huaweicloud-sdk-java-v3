@@ -54,15 +54,15 @@ public class ListCaseCountsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseCountsResponse listCaseCountsResponse = (ListCaseCountsResponse) o;
-        return Objects.equals(this.incidentStatusCounts, listCaseCountsResponse.incidentStatusCounts);
+        ListCaseCountsResponse that = (ListCaseCountsResponse) obj;
+        return Objects.equals(this.incidentStatusCounts, that.incidentStatusCounts);
     }
 
     @Override

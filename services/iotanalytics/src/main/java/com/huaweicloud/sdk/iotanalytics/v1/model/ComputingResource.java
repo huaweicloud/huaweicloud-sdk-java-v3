@@ -209,23 +209,21 @@ public class ComputingResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputingResource computingResource = (ComputingResource) o;
-        return Objects.equals(this.computingResourceId, computingResource.computingResourceId)
-            && Objects.equals(this.computingResourceName, computingResource.computingResourceName)
-            && Objects.equals(this.description, computingResource.description)
-            && Objects.equals(this.owner, computingResource.owner)
-            && Objects.equals(this.createdTime, computingResource.createdTime)
-            && Objects.equals(this.computingResourceType, computingResource.computingResourceType)
-            && Objects.equals(this.cuCount, computingResource.cuCount)
-            && Objects.equals(this.chargingMode, computingResource.chargingMode)
-            && Objects.equals(this.resourceMode, computingResource.resourceMode);
+        ComputingResource that = (ComputingResource) obj;
+        return Objects.equals(this.computingResourceId, that.computingResourceId)
+            && Objects.equals(this.computingResourceName, that.computingResourceName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.computingResourceType, that.computingResourceType)
+            && Objects.equals(this.cuCount, that.cuCount) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceMode, that.resourceMode);
     }
 
     @Override

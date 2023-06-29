@@ -77,16 +77,15 @@ public class DeleteAccessConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAccessConfigResponse deleteAccessConfigResponse = (DeleteAccessConfigResponse) o;
-        return Objects.equals(this.result, deleteAccessConfigResponse.result)
-            && Objects.equals(this.total, deleteAccessConfigResponse.total);
+        DeleteAccessConfigResponse that = (DeleteAccessConfigResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.total, that.total);
     }
 
     @Override

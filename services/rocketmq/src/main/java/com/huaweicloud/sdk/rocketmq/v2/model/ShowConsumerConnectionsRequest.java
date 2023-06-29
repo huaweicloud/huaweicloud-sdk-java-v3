@@ -121,19 +121,17 @@ public class ShowConsumerConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsumerConnectionsRequest showConsumerConnectionsRequest = (ShowConsumerConnectionsRequest) o;
-        return Objects.equals(this.instanceId, showConsumerConnectionsRequest.instanceId)
-            && Objects.equals(this.group, showConsumerConnectionsRequest.group)
-            && Objects.equals(this.limit, showConsumerConnectionsRequest.limit)
-            && Objects.equals(this.offset, showConsumerConnectionsRequest.offset)
-            && Objects.equals(this.isDetail, showConsumerConnectionsRequest.isDetail);
+        ShowConsumerConnectionsRequest that = (ShowConsumerConnectionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.isDetail, that.isDetail);
     }
 
     @Override

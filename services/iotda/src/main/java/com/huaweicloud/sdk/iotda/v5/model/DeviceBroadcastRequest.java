@@ -123,19 +123,17 @@ public class DeviceBroadcastRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceBroadcastRequest deviceBroadcastRequest = (DeviceBroadcastRequest) o;
-        return Objects.equals(this.appId, deviceBroadcastRequest.appId)
-            && Objects.equals(this.topicFullName, deviceBroadcastRequest.topicFullName)
-            && Objects.equals(this.message, deviceBroadcastRequest.message)
-            && Objects.equals(this.ttl, deviceBroadcastRequest.ttl)
-            && Objects.equals(this.messageId, deviceBroadcastRequest.messageId);
+        DeviceBroadcastRequest that = (DeviceBroadcastRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.topicFullName, that.topicFullName)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.messageId, that.messageId);
     }
 
     @Override

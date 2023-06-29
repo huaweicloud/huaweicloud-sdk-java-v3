@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.ges.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.ges.v1.model.*;
 
 public class GesClient {
+
     protected HcClient hcClient;
 
     public GesClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class GesClient {
     public static ClientBuilder<GesClient> newBuilder() {
         return new ClientBuilder<>(GesClient::new);
     }
-
 
     /**
      * 绑定EIP(1.0.6)
@@ -153,8 +153,10 @@ public class GesClient {
      * @param CreateMetadataRequest 请求对象
      * @return SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>
      */
-    public SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataInvoker(CreateMetadataRequest request) {
-        return new SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>(request, GesMeta.createMetadata, hcClient);
+    public SyncInvoker<CreateMetadataRequest, CreateMetadataResponse> createMetadataInvoker(
+        CreateMetadataRequest request) {
+        return new SyncInvoker<CreateMetadataRequest, CreateMetadataResponse>(request, GesMeta.createMetadata,
+            hcClient);
     }
 
     /**
@@ -237,8 +239,10 @@ public class GesClient {
      * @param DeleteMetadataRequest 请求对象
      * @return SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>
      */
-    public SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse> deleteMetadataInvoker(DeleteMetadataRequest request) {
-        return new SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>(request, GesMeta.deleteMetadata, hcClient);
+    public SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse> deleteMetadataInvoker(
+        DeleteMetadataRequest request) {
+        return new SyncInvoker<DeleteMetadataRequest, DeleteMetadataResponse>(request, GesMeta.deleteMetadata,
+            hcClient);
     }
 
     /**
@@ -407,8 +411,10 @@ public class GesClient {
      * @param ListGraphBackupsRequest 请求对象
      * @return SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>
      */
-    public SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse> listGraphBackupsInvoker(ListGraphBackupsRequest request) {
-        return new SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>(request, GesMeta.listGraphBackups, hcClient);
+    public SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse> listGraphBackupsInvoker(
+        ListGraphBackupsRequest request) {
+        return new SyncInvoker<ListGraphBackupsRequest, ListGraphBackupsResponse>(request, GesMeta.listGraphBackups,
+            hcClient);
     }
 
     /**
@@ -435,8 +441,10 @@ public class GesClient {
      * @param ListGraphMetadatasRequest 请求对象
      * @return SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>
      */
-    public SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse> listGraphMetadatasInvoker(ListGraphMetadatasRequest request) {
-        return new SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>(request, GesMeta.listGraphMetadatas, hcClient);
+    public SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse> listGraphMetadatasInvoker(
+        ListGraphMetadatasRequest request) {
+        return new SyncInvoker<ListGraphMetadatasRequest, ListGraphMetadatasResponse>(request,
+            GesMeta.listGraphMetadatas, hcClient);
     }
 
     /**

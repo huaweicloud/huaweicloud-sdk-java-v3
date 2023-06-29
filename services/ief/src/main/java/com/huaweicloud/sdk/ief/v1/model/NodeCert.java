@@ -166,18 +166,18 @@ public class NodeCert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeCert nodeCert = (NodeCert) o;
-        return Objects.equals(this.id, nodeCert.id) && Objects.equals(this.name, nodeCert.name)
-            && Objects.equals(this.description, nodeCert.description)
-            && Objects.equals(this.createdAt, nodeCert.createdAt) && Objects.equals(this.nodeId, nodeCert.nodeId)
-            && Objects.equals(this.type, nodeCert.type) && Objects.equals(this.serialNum, nodeCert.serialNum);
+        NodeCert that = (NodeCert) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serialNum, that.serialNum);
     }
 
     @Override

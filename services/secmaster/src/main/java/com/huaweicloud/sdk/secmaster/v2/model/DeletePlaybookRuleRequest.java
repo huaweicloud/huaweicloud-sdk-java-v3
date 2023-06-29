@@ -77,17 +77,16 @@ public class DeletePlaybookRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePlaybookRuleRequest deletePlaybookRuleRequest = (DeletePlaybookRuleRequest) o;
-        return Objects.equals(this.workspaceId, deletePlaybookRuleRequest.workspaceId)
-            && Objects.equals(this.versionId, deletePlaybookRuleRequest.versionId)
-            && Objects.equals(this.ruleId, deletePlaybookRuleRequest.ruleId);
+        DeletePlaybookRuleRequest that = (DeletePlaybookRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

@@ -61,22 +61,15 @@ public class InstancesVO {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchEnum(value));
         }
 
         public static ArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -160,22 +153,15 @@ public class InstancesVO {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuMemoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuMemoryEnum(value));
         }
 
         public static CpuMemoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuMemoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -318,22 +304,15 @@ public class InstancesVO {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PvcQuantityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PvcQuantityEnum(value));
         }
 
         public static PvcQuantityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PvcQuantityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -461,22 +440,15 @@ public class InstancesVO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1024,37 +996,29 @@ public class InstancesVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstancesVO instancesVO = (InstancesVO) o;
-        return Objects.equals(this.arch, instancesVO.arch) && Objects.equals(this.attributes, instancesVO.attributes)
-            && Objects.equals(this.cpuMemory, instancesVO.cpuMemory)
-            && Objects.equals(this.createdTime, instancesVO.createdTime)
-            && Objects.equals(this.description, instancesVO.description)
-            && Objects.equals(this.displayName, instancesVO.displayName)
-            && Objects.equals(this.domainName, instancesVO.domainName) && Objects.equals(this.id, instancesVO.id)
-            && Objects.equals(this.isTemporary, instancesVO.isTemporary)
-            && Objects.equals(this.label, instancesVO.label) && Objects.equals(this.link, instancesVO.link)
-            && Objects.equals(this.name, instancesVO.name)
-            && Objects.equals(this.organizationId, instancesVO.organizationId)
-            && Objects.equals(this.ownerId, instancesVO.ownerId)
-            && Objects.equals(this.ownerName, instancesVO.ownerName)
-            && Objects.equals(this.platformId, instancesVO.platformId)
-            && Objects.equals(this._private, instancesVO._private)
-            && Objects.equals(this.pvcQuantity, instancesVO.pvcQuantity)
-            && Objects.equals(this.refreshInterval, instancesVO.refreshInterval)
-            && Objects.equals(this.region, instancesVO.region) && Objects.equals(this.serverMap, instancesVO.serverMap)
-            && Objects.equals(this.serverUrl, instancesVO.serverUrl)
-            && Objects.equals(this.stackId, instancesVO.stackId) && Objects.equals(this.status, instancesVO.status)
-            && Objects.equals(this.updatedTime, instancesVO.updatedTime)
-            && Objects.equals(this.visitorId, instancesVO.visitorId)
-            && Objects.equals(this.visitorName, instancesVO.visitorName)
-            && Objects.equals(this.visitorDomainName, instancesVO.visitorDomainName);
+        InstancesVO that = (InstancesVO) obj;
+        return Objects.equals(this.arch, that.arch) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.cpuMemory, that.cpuMemory) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isTemporary, that.isTemporary) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.ownerId, that.ownerId)
+            && Objects.equals(this.ownerName, that.ownerName) && Objects.equals(this.platformId, that.platformId)
+            && Objects.equals(this._private, that._private) && Objects.equals(this.pvcQuantity, that.pvcQuantity)
+            && Objects.equals(this.refreshInterval, that.refreshInterval) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.serverMap, that.serverMap) && Objects.equals(this.serverUrl, that.serverUrl)
+            && Objects.equals(this.stackId, that.stackId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.visitorId, that.visitorId)
+            && Objects.equals(this.visitorName, that.visitorName)
+            && Objects.equals(this.visitorDomainName, that.visitorDomainName);
     }
 
     @Override

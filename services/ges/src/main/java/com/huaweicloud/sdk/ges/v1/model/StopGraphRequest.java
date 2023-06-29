@@ -1,43 +1,34 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class StopGraphRequest  {
-
+public class StopGraphRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
+
     /**
      * 图actionId
      */
     public static final class ActionIdEnum {
 
-        
         /**
          * Enum STOP for value: "stop"
          */
         public static final ActionIdEnum STOP = new ActionIdEnum("stop");
-        
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +56,18 @@ public class StopGraphRequest  {
 
         @JsonCreator
         public static ActionIdEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionIdEnum(value));
         }
 
         public static ActionIdEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,8 +85,7 @@ public class StopGraphRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
 
     private ActionIdEnum actionId;
 
@@ -110,9 +93,6 @@ public class StopGraphRequest  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -126,15 +106,10 @@ public class StopGraphRequest  {
         this.graphId = graphId;
     }
 
-    
-
     public StopGraphRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
-
-    
-
 
     /**
      * 图actionId
@@ -148,24 +123,23 @@ public class StopGraphRequest  {
         this.actionId = actionId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopGraphRequest stopGraphRequest = (StopGraphRequest) o;
-        return Objects.equals(this.graphId, stopGraphRequest.graphId) &&
-            Objects.equals(this.actionId, stopGraphRequest.actionId);
+        StopGraphRequest that = (StopGraphRequest) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.actionId, that.actionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, actionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -175,6 +149,7 @@ public class StopGraphRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -185,8 +160,5 @@ public class StopGraphRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

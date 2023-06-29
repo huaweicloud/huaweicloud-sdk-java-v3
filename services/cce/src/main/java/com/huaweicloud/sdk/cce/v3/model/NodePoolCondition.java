@@ -143,20 +143,18 @@ public class NodePoolCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolCondition nodePoolCondition = (NodePoolCondition) o;
-        return Objects.equals(this.type, nodePoolCondition.type)
-            && Objects.equals(this.status, nodePoolCondition.status)
-            && Objects.equals(this.lastProbeTime, nodePoolCondition.lastProbeTime)
-            && Objects.equals(this.lastTransitTime, nodePoolCondition.lastTransitTime)
-            && Objects.equals(this.reason, nodePoolCondition.reason)
-            && Objects.equals(this.message, nodePoolCondition.message);
+        NodePoolCondition that = (NodePoolCondition) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.lastProbeTime, that.lastProbeTime)
+            && Objects.equals(this.lastTransitTime, that.lastTransitTime) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

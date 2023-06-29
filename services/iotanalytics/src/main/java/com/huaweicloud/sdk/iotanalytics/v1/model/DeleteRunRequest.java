@@ -55,15 +55,15 @@ public class DeleteRunRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRunRequest deleteRunRequest = (DeleteRunRequest) o;
-        return Objects.equals(this.jobId, deleteRunRequest.jobId) && Objects.equals(this.runId, deleteRunRequest.runId);
+        DeleteRunRequest that = (DeleteRunRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.runId, that.runId);
     }
 
     @Override

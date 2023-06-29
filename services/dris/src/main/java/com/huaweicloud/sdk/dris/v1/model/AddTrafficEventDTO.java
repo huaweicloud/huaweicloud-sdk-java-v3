@@ -395,29 +395,25 @@ public class AddTrafficEventDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTrafficEventDTO addTrafficEventDTO = (AddTrafficEventDTO) o;
-        return Objects.equals(this.eventSourceType, addTrafficEventDTO.eventSourceType)
-            && Objects.equals(this.eventSourceId, addTrafficEventDTO.eventSourceId)
-            && Objects.equals(this.eventClass, addTrafficEventDTO.eventClass)
-            && Objects.equals(this.eventType, addTrafficEventDTO.eventType)
-            && Objects.equals(this.areaCode, addTrafficEventDTO.areaCode)
-            && Objects.equals(this.eventLevel, addTrafficEventDTO.eventLevel)
-            && Objects.equals(this.eventParams, addTrafficEventDTO.eventParams)
-            && Objects.equals(this.eventPosition, addTrafficEventDTO.eventPosition)
-            && Objects.equals(this.eventDescription, addTrafficEventDTO.eventDescription)
-            && Objects.equals(this.referencePaths, addTrafficEventDTO.referencePaths)
-            && Objects.equals(this.eventPositionName, addTrafficEventDTO.eventPositionName)
-            && Objects.equals(this.startTime, addTrafficEventDTO.startTime)
-            && Objects.equals(this.endTime, addTrafficEventDTO.endTime)
-            && Objects.equals(this.note, addTrafficEventDTO.note)
-            && Objects.equals(this.eventConfidence, addTrafficEventDTO.eventConfidence);
+        AddTrafficEventDTO that = (AddTrafficEventDTO) obj;
+        return Objects.equals(this.eventSourceType, that.eventSourceType)
+            && Objects.equals(this.eventSourceId, that.eventSourceId)
+            && Objects.equals(this.eventClass, that.eventClass) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.eventLevel, that.eventLevel)
+            && Objects.equals(this.eventParams, that.eventParams)
+            && Objects.equals(this.eventPosition, that.eventPosition)
+            && Objects.equals(this.eventDescription, that.eventDescription)
+            && Objects.equals(this.referencePaths, that.referencePaths)
+            && Objects.equals(this.eventPositionName, that.eventPositionName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.note, that.note) && Objects.equals(this.eventConfidence, that.eventConfidence);
     }
 
     @Override

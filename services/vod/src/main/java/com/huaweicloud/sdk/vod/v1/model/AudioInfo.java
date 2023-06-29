@@ -84,22 +84,15 @@ public class AudioInfo {
             if (value == null) {
                 return null;
             }
-            SampleRateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SampleRateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SampleRateEnum(value));
         }
 
         public static SampleRateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SampleRateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class AudioInfo {
             if (value == null) {
                 return null;
             }
-            ChannelsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChannelsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChannelsEnum(value));
         }
 
         public static ChannelsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChannelsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,16 +252,16 @@ public class AudioInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioInfo audioInfo = (AudioInfo) o;
-        return Objects.equals(this.sampleRate, audioInfo.sampleRate) && Objects.equals(this.bitrate, audioInfo.bitrate)
-            && Objects.equals(this.channels, audioInfo.channels);
+        AudioInfo that = (AudioInfo) obj;
+        return Objects.equals(this.sampleRate, that.sampleRate) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.channels, that.channels);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class ShowMonthUsagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMonthUsagesRequest showMonthUsagesRequest = (ShowMonthUsagesRequest) o;
-        return Objects.equals(this.body, showMonthUsagesRequest.body);
+        ShowMonthUsagesRequest that = (ShowMonthUsagesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

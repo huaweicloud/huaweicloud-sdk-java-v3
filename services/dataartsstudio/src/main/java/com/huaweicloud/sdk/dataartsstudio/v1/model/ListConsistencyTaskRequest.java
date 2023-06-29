@@ -94,22 +94,15 @@ public class ListConsistencyTaskRequest {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScheduleStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheduleStatusEnum(value));
         }
 
         public static ScheduleStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -318,23 +311,19 @@ public class ListConsistencyTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConsistencyTaskRequest listConsistencyTaskRequest = (ListConsistencyTaskRequest) o;
-        return Objects.equals(this.categoryId, listConsistencyTaskRequest.categoryId)
-            && Objects.equals(this.name, listConsistencyTaskRequest.name)
-            && Objects.equals(this.scheduleStatus, listConsistencyTaskRequest.scheduleStatus)
-            && Objects.equals(this.startTime, listConsistencyTaskRequest.startTime)
-            && Objects.equals(this.endTime, listConsistencyTaskRequest.endTime)
-            && Objects.equals(this.creator, listConsistencyTaskRequest.creator)
-            && Objects.equals(this.limit, listConsistencyTaskRequest.limit)
-            && Objects.equals(this.offset, listConsistencyTaskRequest.offset)
-            && Objects.equals(this.workspace, listConsistencyTaskRequest.workspace);
+        ListConsistencyTaskRequest that = (ListConsistencyTaskRequest) obj;
+        return Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

@@ -807,45 +807,36 @@ public class CreateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestBody createRequestBody = (CreateRequestBody) o;
-        return Objects.equals(this.name, createRequestBody.name)
-            && Objects.equals(this.versionType, createRequestBody.versionType)
-            && Objects.equals(this.fabricVersion, createRequestBody.fabricVersion)
-            && Objects.equals(this.blockchainType, createRequestBody.blockchainType)
-            && Objects.equals(this.consensus, createRequestBody.consensus)
-            && Objects.equals(this.signAlgorithm, createRequestBody.signAlgorithm)
-            && Objects.equals(this.enterpriseProjectId, createRequestBody.enterpriseProjectId)
-            && Objects.equals(this.volumeType, createRequestBody.volumeType)
-            && Objects.equals(this.evsDiskType, createRequestBody.evsDiskType)
-            && Objects.equals(this.orgDiskSize, createRequestBody.orgDiskSize)
-            && Objects.equals(this.databaseType, createRequestBody.databaseType)
-            && Objects.equals(this.resourcePassword, createRequestBody.resourcePassword)
-            && Objects.equals(this.ordererNodeNumber, createRequestBody.ordererNodeNumber)
-            && Objects.equals(this.useEip, createRequestBody.useEip)
-            && Objects.equals(this.bandwidthSize, createRequestBody.bandwidthSize)
-            && Objects.equals(this.clusterType, createRequestBody.clusterType)
-            && Objects.equals(this.createNewCluster, createRequestBody.createNewCluster)
-            && Objects.equals(this.cceClusterInfo, createRequestBody.cceClusterInfo)
-            && Objects.equals(this.cceCreateInfo, createRequestBody.cceCreateInfo)
-            && Objects.equals(this.iefDeployMode, createRequestBody.iefDeployMode)
-            && Objects.equals(this.iefNodesInfo, createRequestBody.iefNodesInfo)
-            && Objects.equals(this.peerOrgs, createRequestBody.peerOrgs)
-            && Objects.equals(this.channels, createRequestBody.channels)
-            && Objects.equals(this.couchdbInfo, createRequestBody.couchdbInfo)
-            && Objects.equals(this.turboInfo, createRequestBody.turboInfo)
-            && Objects.equals(this.blockInfo, createRequestBody.blockInfo)
-            && Objects.equals(this.kafkaCreateInfo, createRequestBody.kafkaCreateInfo)
-            && Objects.equals(this.tc3Need, createRequestBody.tc3Need)
-            && Objects.equals(this.restfulApiSupport, createRequestBody.restfulApiSupport)
-            && Objects.equals(this.isInvitee, createRequestBody.isInvitee)
-            && Objects.equals(this.invitorInfos, createRequestBody.invitorInfos);
+        CreateRequestBody that = (CreateRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.versionType, that.versionType)
+            && Objects.equals(this.fabricVersion, that.fabricVersion)
+            && Objects.equals(this.blockchainType, that.blockchainType)
+            && Objects.equals(this.consensus, that.consensus) && Objects.equals(this.signAlgorithm, that.signAlgorithm)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.evsDiskType, that.evsDiskType)
+            && Objects.equals(this.orgDiskSize, that.orgDiskSize)
+            && Objects.equals(this.databaseType, that.databaseType)
+            && Objects.equals(this.resourcePassword, that.resourcePassword)
+            && Objects.equals(this.ordererNodeNumber, that.ordererNodeNumber)
+            && Objects.equals(this.useEip, that.useEip) && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.createNewCluster, that.createNewCluster)
+            && Objects.equals(this.cceClusterInfo, that.cceClusterInfo)
+            && Objects.equals(this.cceCreateInfo, that.cceCreateInfo)
+            && Objects.equals(this.iefDeployMode, that.iefDeployMode)
+            && Objects.equals(this.iefNodesInfo, that.iefNodesInfo) && Objects.equals(this.peerOrgs, that.peerOrgs)
+            && Objects.equals(this.channels, that.channels) && Objects.equals(this.couchdbInfo, that.couchdbInfo)
+            && Objects.equals(this.turboInfo, that.turboInfo) && Objects.equals(this.blockInfo, that.blockInfo)
+            && Objects.equals(this.kafkaCreateInfo, that.kafkaCreateInfo) && Objects.equals(this.tc3Need, that.tc3Need)
+            && Objects.equals(this.restfulApiSupport, that.restfulApiSupport)
+            && Objects.equals(this.isInvitee, that.isInvitee) && Objects.equals(this.invitorInfos, that.invitorInfos);
     }
 
     @Override

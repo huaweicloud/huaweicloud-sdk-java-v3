@@ -97,17 +97,16 @@ public class AddFacesByFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesByFileResponse addFacesByFileResponse = (AddFacesByFileResponse) o;
-        return Objects.equals(this.faceSetId, addFacesByFileResponse.faceSetId)
-            && Objects.equals(this.faceSetName, addFacesByFileResponse.faceSetName)
-            && Objects.equals(this.faces, addFacesByFileResponse.faces);
+        AddFacesByFileResponse that = (AddFacesByFileResponse) obj;
+        return Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.faces, that.faces);
     }
 
     @Override

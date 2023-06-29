@@ -364,26 +364,23 @@ public class CreateMyActionTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMyActionTemplateResponse createMyActionTemplateResponse = (CreateMyActionTemplateResponse) o;
-        return Objects.equals(this.templateName, createMyActionTemplateResponse.templateName)
-            && Objects.equals(this.createdAt, createMyActionTemplateResponse.createdAt)
-            && Objects.equals(this.funcPkgPath, createMyActionTemplateResponse.funcPkgPath)
-            && Objects.equals(this.funcLogoPath, createMyActionTemplateResponse.funcLogoPath)
-            && Objects.equals(this.funcHelpPath, createMyActionTemplateResponse.funcHelpPath)
-            && Objects.equals(this.funcTestReportPath, createMyActionTemplateResponse.funcTestReportPath)
-            && Objects.equals(this.funcOpensourceNoticePath, createMyActionTemplateResponse.funcOpensourceNoticePath)
-            && Objects.equals(this.funcSlaPath, createMyActionTemplateResponse.funcSlaPath)
-            && Objects.equals(this.xRequestId, createMyActionTemplateResponse.xRequestId)
-            && Objects.equals(this.connection, createMyActionTemplateResponse.connection)
-            && Objects.equals(this.contentLength, createMyActionTemplateResponse.contentLength)
-            && Objects.equals(this.date, createMyActionTemplateResponse.date);
+        CreateMyActionTemplateResponse that = (CreateMyActionTemplateResponse) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.funcPkgPath, that.funcPkgPath)
+            && Objects.equals(this.funcLogoPath, that.funcLogoPath)
+            && Objects.equals(this.funcHelpPath, that.funcHelpPath)
+            && Objects.equals(this.funcTestReportPath, that.funcTestReportPath)
+            && Objects.equals(this.funcOpensourceNoticePath, that.funcOpensourceNoticePath)
+            && Objects.equals(this.funcSlaPath, that.funcSlaPath) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

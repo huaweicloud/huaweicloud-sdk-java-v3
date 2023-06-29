@@ -119,18 +119,16 @@ public class ShowReportResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReportResponse showReportResponse = (ShowReportResponse) o;
-        return Objects.equals(this.status, showReportResponse.status)
-            && Objects.equals(this.result, showReportResponse.result)
-            && Objects.equals(this.error, showReportResponse.error)
-            && Objects.equals(this.requestId, showReportResponse.requestId);
+        ShowReportResponse that = (ShowReportResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.error, that.error) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

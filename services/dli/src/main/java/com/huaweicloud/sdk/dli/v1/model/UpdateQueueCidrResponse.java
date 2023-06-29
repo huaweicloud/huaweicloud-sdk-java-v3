@@ -56,16 +56,15 @@ public class UpdateQueueCidrResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateQueueCidrResponse updateQueueCidrResponse = (UpdateQueueCidrResponse) o;
-        return Objects.equals(this.isSuccess, updateQueueCidrResponse.isSuccess)
-            && Objects.equals(this.message, updateQueueCidrResponse.message);
+        UpdateQueueCidrResponse that = (UpdateQueueCidrResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

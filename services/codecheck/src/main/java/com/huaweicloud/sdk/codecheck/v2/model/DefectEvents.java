@@ -288,23 +288,21 @@ public class DefectEvents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefectEvents defectEvents = (DefectEvents) o;
-        return Objects.equals(this.events, defectEvents.events)
-            && Objects.equals(this.description, defectEvents.description)
-            && Objects.equals(this.fixSuggestions, defectEvents.fixSuggestions)
-            && Objects.equals(this.line, defectEvents.line) && Objects.equals(this.endLine, defectEvents.endLine)
-            && Objects.equals(this.codeContextStartLine, defectEvents.codeContextStartLine)
-            && Objects.equals(this.main, defectEvents.main) && Objects.equals(this.path, defectEvents.path)
-            && Objects.equals(this.tag, defectEvents.tag)
-            && Objects.equals(this.mainBuggyCode, defectEvents.mainBuggyCode)
-            && Objects.equals(this.codeContext, defectEvents.codeContext);
+        DefectEvents that = (DefectEvents) obj;
+        return Objects.equals(this.events, that.events) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fixSuggestions, that.fixSuggestions) && Objects.equals(this.line, that.line)
+            && Objects.equals(this.endLine, that.endLine)
+            && Objects.equals(this.codeContextStartLine, that.codeContextStartLine)
+            && Objects.equals(this.main, that.main) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.mainBuggyCode, that.mainBuggyCode)
+            && Objects.equals(this.codeContext, that.codeContext);
     }
 
     @Override

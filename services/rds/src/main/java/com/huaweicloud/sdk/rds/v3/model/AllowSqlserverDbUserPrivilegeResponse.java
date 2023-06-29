@@ -34,16 +34,15 @@ public class AllowSqlserverDbUserPrivilegeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowSqlserverDbUserPrivilegeResponse allowSqlserverDbUserPrivilegeResponse =
-            (AllowSqlserverDbUserPrivilegeResponse) o;
-        return Objects.equals(this.resp, allowSqlserverDbUserPrivilegeResponse.resp);
+        AllowSqlserverDbUserPrivilegeResponse that = (AllowSqlserverDbUserPrivilegeResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override

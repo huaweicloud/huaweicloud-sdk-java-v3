@@ -78,17 +78,16 @@ public class ListBizMetricDimensionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBizMetricDimensionsRequest listBizMetricDimensionsRequest = (ListBizMetricDimensionsRequest) o;
-        return Objects.equals(this.workspace, listBizMetricDimensionsRequest.workspace)
-            && Objects.equals(this.limit, listBizMetricDimensionsRequest.limit)
-            && Objects.equals(this.offset, listBizMetricDimensionsRequest.offset);
+        ListBizMetricDimensionsRequest that = (ListBizMetricDimensionsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

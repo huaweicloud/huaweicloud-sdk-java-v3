@@ -112,17 +112,16 @@ public class FineGrainedSnapshotDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FineGrainedSnapshotDetail fineGrainedSnapshotDetail = (FineGrainedSnapshotDetail) o;
-        return Objects.equals(this.database, fineGrainedSnapshotDetail.database)
-            && Objects.equals(this.schemaList, fineGrainedSnapshotDetail.schemaList)
-            && Objects.equals(this.tableList, fineGrainedSnapshotDetail.tableList);
+        FineGrainedSnapshotDetail that = (FineGrainedSnapshotDetail) obj;
+        return Objects.equals(this.database, that.database) && Objects.equals(this.schemaList, that.schemaList)
+            && Objects.equals(this.tableList, that.tableList);
     }
 
     @Override

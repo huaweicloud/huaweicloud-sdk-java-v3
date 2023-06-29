@@ -55,16 +55,15 @@ public class ShowRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRuleRequest showRuleRequest = (ShowRuleRequest) o;
-        return Objects.equals(this.instanceId, showRuleRequest.instanceId)
-            && Objects.equals(this.ruleId, showRuleRequest.ruleId);
+        ShowRuleRequest that = (ShowRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

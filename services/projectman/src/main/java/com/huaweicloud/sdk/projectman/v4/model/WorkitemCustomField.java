@@ -121,19 +121,17 @@ public class WorkitemCustomField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkitemCustomField workitemCustomField = (WorkitemCustomField) o;
-        return Objects.equals(this.fieldId, workitemCustomField.fieldId)
-            && Objects.equals(this.fieldName, workitemCustomField.fieldName)
-            && Objects.equals(this.fieldType, workitemCustomField.fieldType)
-            && Objects.equals(this.fieldOptionSource, workitemCustomField.fieldOptionSource)
-            && Objects.equals(this.value, workitemCustomField.value);
+        WorkitemCustomField that = (WorkitemCustomField) obj;
+        return Objects.equals(this.fieldId, that.fieldId) && Objects.equals(this.fieldName, that.fieldName)
+            && Objects.equals(this.fieldType, that.fieldType)
+            && Objects.equals(this.fieldOptionSource, that.fieldOptionSource) && Objects.equals(this.value, that.value);
     }
 
     @Override

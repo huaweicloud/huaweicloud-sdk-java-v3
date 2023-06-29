@@ -106,17 +106,16 @@ public class ListPrivateSnatsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateSnatsResponse listPrivateSnatsResponse = (ListPrivateSnatsResponse) o;
-        return Objects.equals(this.snatRules, listPrivateSnatsResponse.snatRules)
-            && Objects.equals(this.pageInfo, listPrivateSnatsResponse.pageInfo)
-            && Objects.equals(this.requestId, listPrivateSnatsResponse.requestId);
+        ListPrivateSnatsResponse that = (ListPrivateSnatsResponse) obj;
+        return Objects.equals(this.snatRules, that.snatRules) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

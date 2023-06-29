@@ -99,18 +99,17 @@ public class ListScalingConfigsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingConfigsRequest listScalingConfigsRequest = (ListScalingConfigsRequest) o;
-        return Objects.equals(this.scalingConfigurationName, listScalingConfigsRequest.scalingConfigurationName)
-            && Objects.equals(this.imageId, listScalingConfigsRequest.imageId)
-            && Objects.equals(this.startNumber, listScalingConfigsRequest.startNumber)
-            && Objects.equals(this.limit, listScalingConfigsRequest.limit);
+        ListScalingConfigsRequest that = (ListScalingConfigsRequest) obj;
+        return Objects.equals(this.scalingConfigurationName, that.scalingConfigurationName)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.startNumber, that.startNumber)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

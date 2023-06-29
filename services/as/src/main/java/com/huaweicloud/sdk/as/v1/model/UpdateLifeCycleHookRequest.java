@@ -87,17 +87,16 @@ public class UpdateLifeCycleHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLifeCycleHookRequest updateLifeCycleHookRequest = (UpdateLifeCycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, updateLifeCycleHookRequest.scalingGroupId)
-            && Objects.equals(this.lifecycleHookName, updateLifeCycleHookRequest.lifecycleHookName)
-            && Objects.equals(this.body, updateLifeCycleHookRequest.body);
+        UpdateLifeCycleHookRequest that = (UpdateLifeCycleHookRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.lifecycleHookName, that.lifecycleHookName) && Objects.equals(this.body, that.body);
     }
 
     @Override

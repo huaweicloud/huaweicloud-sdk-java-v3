@@ -83,15 +83,15 @@ public class NodeDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeDevice nodeDevice = (NodeDevice) o;
-        return Objects.equals(this.added, nodeDevice.added) && Objects.equals(this.removed, nodeDevice.removed);
+        NodeDevice that = (NodeDevice) obj;
+        return Objects.equals(this.added, that.added) && Objects.equals(this.removed, that.removed);
     }
 
     @Override

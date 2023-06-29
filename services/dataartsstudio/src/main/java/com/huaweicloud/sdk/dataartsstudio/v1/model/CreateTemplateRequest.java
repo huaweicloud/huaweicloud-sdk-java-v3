@@ -65,16 +65,15 @@ public class CreateTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemplateRequest createTemplateRequest = (CreateTemplateRequest) o;
-        return Objects.equals(this.workspace, createTemplateRequest.workspace)
-            && Objects.equals(this.body, createTemplateRequest.body);
+        CreateTemplateRequest that = (CreateTemplateRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

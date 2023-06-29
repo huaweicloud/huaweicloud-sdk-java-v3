@@ -79,22 +79,15 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignTypeEnum(value));
         }
 
         public static SignTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignAlgorithmEnum(value));
         }
 
         public static SignAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,22 +346,19 @@ public class UpdateSignatureKeyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSignatureKeyV2Response updateSignatureKeyV2Response = (UpdateSignatureKeyV2Response) o;
-        return Objects.equals(this.name, updateSignatureKeyV2Response.name)
-            && Objects.equals(this.signType, updateSignatureKeyV2Response.signType)
-            && Objects.equals(this.signKey, updateSignatureKeyV2Response.signKey)
-            && Objects.equals(this.signSecret, updateSignatureKeyV2Response.signSecret)
-            && Objects.equals(this.signAlgorithm, updateSignatureKeyV2Response.signAlgorithm)
-            && Objects.equals(this.updateTime, updateSignatureKeyV2Response.updateTime)
-            && Objects.equals(this.createTime, updateSignatureKeyV2Response.createTime)
-            && Objects.equals(this.id, updateSignatureKeyV2Response.id);
+        UpdateSignatureKeyV2Response that = (UpdateSignatureKeyV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.signType, that.signType)
+            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
+            && Objects.equals(this.signAlgorithm, that.signAlgorithm)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

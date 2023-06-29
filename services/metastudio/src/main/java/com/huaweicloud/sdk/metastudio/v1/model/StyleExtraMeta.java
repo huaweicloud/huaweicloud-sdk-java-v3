@@ -234,21 +234,20 @@ public class StyleExtraMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleExtraMeta styleExtraMeta = (StyleExtraMeta) o;
-        return Objects.equals(this.pictureModelingEnable, styleExtraMeta.pictureModelingEnable)
-            && Objects.equals(this.editEnable, styleExtraMeta.editEnable)
-            && Objects.equals(this.editEngine, styleExtraMeta.editEngine)
-            && Objects.equals(this.editValueItems, styleExtraMeta.editValueItems)
-            && Objects.equals(this.editColorItems, styleExtraMeta.editColorItems)
-            && Objects.equals(this.editComponents, styleExtraMeta.editComponents)
-            && Objects.equals(this.modellingAlgorithm, styleExtraMeta.modellingAlgorithm);
+        StyleExtraMeta that = (StyleExtraMeta) obj;
+        return Objects.equals(this.pictureModelingEnable, that.pictureModelingEnable)
+            && Objects.equals(this.editEnable, that.editEnable) && Objects.equals(this.editEngine, that.editEngine)
+            && Objects.equals(this.editValueItems, that.editValueItems)
+            && Objects.equals(this.editColorItems, that.editColorItems)
+            && Objects.equals(this.editComponents, that.editComponents)
+            && Objects.equals(this.modellingAlgorithm, that.modellingAlgorithm);
     }
 
     @Override

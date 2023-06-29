@@ -150,17 +150,16 @@ public class UpdateDataStore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataStore updateDataStore = (UpdateDataStore) o;
-        return Objects.equals(this.name, updateDataStore.name) && Objects.equals(this.tags, updateDataStore.tags)
-            && Objects.equals(this.metrics, updateDataStore.metrics)
-            && Objects.equals(this.properties, updateDataStore.properties);
+        UpdateDataStore that = (UpdateDataStore) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.properties, that.properties);
     }
 
     @Override

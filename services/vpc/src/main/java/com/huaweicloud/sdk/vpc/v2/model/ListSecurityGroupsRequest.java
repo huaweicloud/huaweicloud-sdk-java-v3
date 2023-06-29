@@ -99,18 +99,17 @@ public class ListSecurityGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityGroupsRequest listSecurityGroupsRequest = (ListSecurityGroupsRequest) o;
-        return Objects.equals(this.limit, listSecurityGroupsRequest.limit)
-            && Objects.equals(this.marker, listSecurityGroupsRequest.marker)
-            && Objects.equals(this.vpcId, listSecurityGroupsRequest.vpcId)
-            && Objects.equals(this.enterpriseProjectId, listSecurityGroupsRequest.enterpriseProjectId);
+        ListSecurityGroupsRequest that = (ListSecurityGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

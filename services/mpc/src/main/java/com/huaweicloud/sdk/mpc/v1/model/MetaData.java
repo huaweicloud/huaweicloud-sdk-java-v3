@@ -208,18 +208,18 @@ public class MetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetaData metaData = (MetaData) o;
-        return Objects.equals(this.size, metaData.size) && Objects.equals(this.durationMs, metaData.durationMs)
-            && Objects.equals(this.duration, metaData.duration) && Objects.equals(this.format, metaData.format)
-            && Objects.equals(this.bitrate, metaData.bitrate) && Objects.equals(this.video, metaData.video)
-            && Objects.equals(this.audio, metaData.audio);
+        MetaData that = (MetaData) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.durationMs, that.durationMs)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.format, that.format)
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.audio, that.audio);
     }
 
     @Override

@@ -206,22 +206,20 @@ public class PartitionInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartitionInfos partitionInfos = (PartitionInfos) o;
-        return Objects.equals(this.partitionName, partitionInfos.partitionName)
-            && Objects.equals(this.createTime, partitionInfos.createTime)
-            && Objects.equals(this.lastAccessTime, partitionInfos.lastAccessTime)
-            && Objects.equals(this.locations, partitionInfos.locations)
-            && Objects.equals(this.lastDdlTime, partitionInfos.lastDdlTime)
-            && Objects.equals(this.numRows, partitionInfos.numRows)
-            && Objects.equals(this.numFiles, partitionInfos.numFiles)
-            && Objects.equals(this.totalSize, partitionInfos.totalSize);
+        PartitionInfos that = (PartitionInfos) obj;
+        return Objects.equals(this.partitionName, that.partitionName)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastAccessTime, that.lastAccessTime)
+            && Objects.equals(this.locations, that.locations) && Objects.equals(this.lastDdlTime, that.lastDdlTime)
+            && Objects.equals(this.numRows, that.numRows) && Objects.equals(this.numFiles, that.numFiles)
+            && Objects.equals(this.totalSize, that.totalSize);
     }
 
     @Override

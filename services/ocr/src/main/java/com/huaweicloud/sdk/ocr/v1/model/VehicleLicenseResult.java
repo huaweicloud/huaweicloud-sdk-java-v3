@@ -495,36 +495,26 @@ public class VehicleLicenseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VehicleLicenseResult vehicleLicenseResult = (VehicleLicenseResult) o;
-        return Objects.equals(this.number, vehicleLicenseResult.number)
-            && Objects.equals(this.vehicleType, vehicleLicenseResult.vehicleType)
-            && Objects.equals(this.name, vehicleLicenseResult.name)
-            && Objects.equals(this.address, vehicleLicenseResult.address)
-            && Objects.equals(this.useCharacter, vehicleLicenseResult.useCharacter)
-            && Objects.equals(this.model, vehicleLicenseResult.model)
-            && Objects.equals(this.engineNo, vehicleLicenseResult.engineNo)
-            && Objects.equals(this.vin, vehicleLicenseResult.vin)
-            && Objects.equals(this.registerDate, vehicleLicenseResult.registerDate)
-            && Objects.equals(this.issueDate, vehicleLicenseResult.issueDate)
-            && Objects.equals(this.issuingAuthority, vehicleLicenseResult.issuingAuthority)
-            && Objects.equals(this.fileNo, vehicleLicenseResult.fileNo)
-            && Objects.equals(this.approvedPassengers, vehicleLicenseResult.approvedPassengers)
-            && Objects.equals(this.grossMass, vehicleLicenseResult.grossMass)
-            && Objects.equals(this.unladenMass, vehicleLicenseResult.unladenMass)
-            && Objects.equals(this.approvedLoad, vehicleLicenseResult.approvedLoad)
-            && Objects.equals(this.dimension, vehicleLicenseResult.dimension)
-            && Objects.equals(this.tractionMass, vehicleLicenseResult.tractionMass)
-            && Objects.equals(this.remarks, vehicleLicenseResult.remarks)
-            && Objects.equals(this.inspectionRecord, vehicleLicenseResult.inspectionRecord)
-            && Objects.equals(this.codeNumber, vehicleLicenseResult.codeNumber)
-            && Objects.equals(this.textLocation, vehicleLicenseResult.textLocation);
+        VehicleLicenseResult that = (VehicleLicenseResult) obj;
+        return Objects.equals(this.number, that.number) && Objects.equals(this.vehicleType, that.vehicleType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.useCharacter, that.useCharacter) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.engineNo, that.engineNo) && Objects.equals(this.vin, that.vin)
+            && Objects.equals(this.registerDate, that.registerDate) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority) && Objects.equals(this.fileNo, that.fileNo)
+            && Objects.equals(this.approvedPassengers, that.approvedPassengers)
+            && Objects.equals(this.grossMass, that.grossMass) && Objects.equals(this.unladenMass, that.unladenMass)
+            && Objects.equals(this.approvedLoad, that.approvedLoad) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.tractionMass, that.tractionMass) && Objects.equals(this.remarks, that.remarks)
+            && Objects.equals(this.inspectionRecord, that.inspectionRecord)
+            && Objects.equals(this.codeNumber, that.codeNumber) && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

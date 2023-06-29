@@ -565,37 +565,27 @@ public class CreateIndicatorDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIndicatorDetail createIndicatorDetail = (CreateIndicatorDetail) o;
-        return Objects.equals(this.dataSource, createIndicatorDetail.dataSource)
-            && Objects.equals(this.verdict, createIndicatorDetail.verdict)
-            && Objects.equals(this.confidence, createIndicatorDetail.confidence)
-            && Objects.equals(this.status, createIndicatorDetail.status)
-            && Objects.equals(this.labels, createIndicatorDetail.labels)
-            && Objects.equals(this.value, createIndicatorDetail.value)
-            && Objects.equals(this.granularMarking, createIndicatorDetail.granularMarking)
-            && Objects.equals(this.environment, createIndicatorDetail.environment)
-            && Objects.equals(this.defanged, createIndicatorDetail.defanged)
-            && Objects.equals(this.firstReportTime, createIndicatorDetail.firstReportTime)
-            && Objects.equals(this.lastReportTime, createIndicatorDetail.lastReportTime)
-            && Objects.equals(this.id, createIndicatorDetail.id)
-            && Objects.equals(this.indicatorType, createIndicatorDetail.indicatorType)
-            && Objects.equals(this.name, createIndicatorDetail.name)
-            && Objects.equals(this.dataclassId, createIndicatorDetail.dataclassId)
-            && Objects.equals(this.type, createIndicatorDetail.type)
-            && Objects.equals(this.dataObject, createIndicatorDetail.dataObject)
-            && Objects.equals(this.workspaceId, createIndicatorDetail.workspaceId)
-            && Objects.equals(this.projectId, createIndicatorDetail.projectId)
-            && Objects.equals(this.layoutId, createIndicatorDetail.layoutId)
-            && Objects.equals(this.dataclass, createIndicatorDetail.dataclass)
-            && Objects.equals(this.createTime, createIndicatorDetail.createTime)
-            && Objects.equals(this.updateTime, createIndicatorDetail.updateTime);
+        CreateIndicatorDetail that = (CreateIndicatorDetail) obj;
+        return Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.verdict, that.verdict)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.granularMarking, that.granularMarking)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.defanged, that.defanged)
+            && Objects.equals(this.firstReportTime, that.firstReportTime)
+            && Objects.equals(this.lastReportTime, that.lastReportTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.indicatorType, that.indicatorType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.layoutId, that.layoutId)
+            && Objects.equals(this.dataclass, that.dataclass) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -74,15 +74,15 @@ public class CommitList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitList commitList = (CommitList) o;
-        return Objects.equals(this.commits, commitList.commits) && Objects.equals(this.total, commitList.total);
+        CommitList that = (CommitList) obj;
+        return Objects.equals(this.commits, that.commits) && Objects.equals(this.total, that.total);
     }
 
     @Override

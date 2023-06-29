@@ -143,22 +143,15 @@ public class SignApiBindingInfo {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignTypeEnum(value));
         }
 
         public static SignTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -436,29 +429,22 @@ public class SignApiBindingInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SignApiBindingInfo signApiBindingInfo = (SignApiBindingInfo) o;
-        return Objects.equals(this.publishId, signApiBindingInfo.publishId)
-            && Objects.equals(this.apiId, signApiBindingInfo.apiId)
-            && Objects.equals(this.groupName, signApiBindingInfo.groupName)
-            && Objects.equals(this.bindingTime, signApiBindingInfo.bindingTime)
-            && Objects.equals(this.envId, signApiBindingInfo.envId)
-            && Objects.equals(this.envName, signApiBindingInfo.envName)
-            && Objects.equals(this.apiType, signApiBindingInfo.apiType)
-            && Objects.equals(this.apiName, signApiBindingInfo.apiName)
-            && Objects.equals(this.id, signApiBindingInfo.id)
-            && Objects.equals(this.apiRemark, signApiBindingInfo.apiRemark)
-            && Objects.equals(this.signId, signApiBindingInfo.signId)
-            && Objects.equals(this.signName, signApiBindingInfo.signName)
-            && Objects.equals(this.signKey, signApiBindingInfo.signKey)
-            && Objects.equals(this.signSecret, signApiBindingInfo.signSecret)
-            && Objects.equals(this.signType, signApiBindingInfo.signType);
+        SignApiBindingInfo that = (SignApiBindingInfo) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.bindingTime, that.bindingTime)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.apiType, that.apiType) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.apiRemark, that.apiRemark)
+            && Objects.equals(this.signId, that.signId) && Objects.equals(this.signName, that.signName)
+            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
+            && Objects.equals(this.signType, that.signType);
     }
 
     @Override

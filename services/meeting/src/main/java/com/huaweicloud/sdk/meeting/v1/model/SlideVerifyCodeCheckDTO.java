@@ -145,20 +145,17 @@ public class SlideVerifyCodeCheckDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlideVerifyCodeCheckDTO slideVerifyCodeCheckDTO = (SlideVerifyCodeCheckDTO) o;
-        return Objects.equals(this.user, slideVerifyCodeCheckDTO.user)
-            && Objects.equals(this.clientType, slideVerifyCodeCheckDTO.clientType)
-            && Objects.equals(this.checkType, slideVerifyCodeCheckDTO.checkType)
-            && Objects.equals(this.token, slideVerifyCodeCheckDTO.token)
-            && Objects.equals(this.pointX, slideVerifyCodeCheckDTO.pointX)
-            && Objects.equals(this.slideTime, slideVerifyCodeCheckDTO.slideTime);
+        SlideVerifyCodeCheckDTO that = (SlideVerifyCodeCheckDTO) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.clientType, that.clientType)
+            && Objects.equals(this.checkType, that.checkType) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.pointX, that.pointX) && Objects.equals(this.slideTime, that.slideTime);
     }
 
     @Override

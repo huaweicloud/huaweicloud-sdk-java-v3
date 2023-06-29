@@ -33,15 +33,15 @@ public class InterfaceAttachmentsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterfaceAttachmentsReq interfaceAttachmentsReq = (InterfaceAttachmentsReq) o;
-        return Objects.equals(this.deleteOnTermination, interfaceAttachmentsReq.deleteOnTermination);
+        InterfaceAttachmentsReq that = (InterfaceAttachmentsReq) obj;
+        return Objects.equals(this.deleteOnTermination, that.deleteOnTermination);
     }
 
     @Override

@@ -66,16 +66,15 @@ public class ShowPublicipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicipResponse showPublicipResponse = (ShowPublicipResponse) o;
-        return Objects.equals(this.requestId, showPublicipResponse.requestId)
-            && Objects.equals(this.publicip, showPublicipResponse.publicip);
+        ShowPublicipResponse that = (ShowPublicipResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.publicip, that.publicip);
     }
 
     @Override

@@ -298,26 +298,24 @@ public class RepoHook {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoHook repoHook = (RepoHook) o;
-        return Objects.equals(this.buildEvents, repoHook.buildEvents)
-            && Objects.equals(this.createdAt, repoHook.createdAt)
-            && Objects.equals(this.enableSslVerification, repoHook.enableSslVerification)
-            && Objects.equals(this.id, repoHook.id) && Objects.equals(this.issuesEvents, repoHook.issuesEvents)
-            && Objects.equals(this.mergeRequestsEvents, repoHook.mergeRequestsEvents)
-            && Objects.equals(this.noteEvents, repoHook.noteEvents)
-            && Objects.equals(this.pipelineEvents, repoHook.pipelineEvents)
-            && Objects.equals(this.projectId, repoHook.projectId)
-            && Objects.equals(this.pushEvents, repoHook.pushEvents)
-            && Objects.equals(this.repositoryUpdateEvents, repoHook.repositoryUpdateEvents)
-            && Objects.equals(this.tagPushEvents, repoHook.tagPushEvents)
-            && Objects.equals(this.wikiPageEvents, repoHook.wikiPageEvents);
+        RepoHook that = (RepoHook) obj;
+        return Objects.equals(this.buildEvents, that.buildEvents) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.enableSslVerification, that.enableSslVerification)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.issuesEvents, that.issuesEvents)
+            && Objects.equals(this.mergeRequestsEvents, that.mergeRequestsEvents)
+            && Objects.equals(this.noteEvents, that.noteEvents)
+            && Objects.equals(this.pipelineEvents, that.pipelineEvents)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pushEvents, that.pushEvents)
+            && Objects.equals(this.repositoryUpdateEvents, that.repositoryUpdateEvents)
+            && Objects.equals(this.tagPushEvents, that.tagPushEvents)
+            && Objects.equals(this.wikiPageEvents, that.wikiPageEvents);
     }
 
     @Override

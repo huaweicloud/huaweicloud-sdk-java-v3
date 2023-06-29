@@ -118,22 +118,15 @@ public class Device {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -206,22 +199,15 @@ public class Device {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OnlineStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OnlineStatusEnum(value));
         }
 
         public static OnlineStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,22 +345,15 @@ public class Device {
             if (value == null) {
                 return null;
             }
-            DeviceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceTypeEnum(value));
         }
 
         public static DeviceTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DeviceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1056,37 +1035,36 @@ public class Device {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Device device = (Device) o;
-        return Objects.equals(this.permissions, device.permissions) && Objects.equals(this.id, device.id)
-            && Objects.equals(this.deviceId, device.deviceId)
-            && Objects.equals(this.parentDeviceId, device.parentDeviceId)
-            && Objects.equals(this.parentDeviceName, device.parentDeviceName)
-            && Objects.equals(this.product, device.product) && Objects.equals(this.deviceName, device.deviceName)
-            && Objects.equals(this.instanceId, device.instanceId) && Objects.equals(this.clientId, device.clientId)
-            && Objects.equals(this.nodeId, device.nodeId) && Objects.equals(this.appName, device.appName)
-            && Objects.equals(this.status, device.status) && Objects.equals(this.onlineStatus, device.onlineStatus)
-            && Objects.equals(this.description, device.description)
-            && Objects.equals(this.authentication, device.authentication)
-            && Objects.equals(this.createdUser, device.createdUser)
-            && Objects.equals(this.lastUpdatedUser, device.lastUpdatedUser) && Objects.equals(this.tags, device.tags)
-            && Objects.equals(this.createdDatetime, device.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, device.lastUpdatedDatetime)
-            && Objects.equals(this.connectAddress, device.connectAddress)
-            && Objects.equals(this.sslConnectAddress, device.sslConnectAddress)
-            && Objects.equals(this.ipv6ConnectAddress, device.ipv6ConnectAddress)
-            && Objects.equals(this.ipv6SslConnectAddress, device.ipv6SslConnectAddress)
-            && Objects.equals(this.lastLoginDatetime, device.lastLoginDatetime)
-            && Objects.equals(this.nodeType, device.nodeType) && Objects.equals(this.deviceType, device.deviceType)
-            && Objects.equals(this.clientIp, device.clientIp) && Objects.equals(this.keepAlive, device.keepAlive)
-            && Objects.equals(this.lastActiveTime, device.lastActiveTime)
-            && Objects.equals(this.version, device.version) && Objects.equals(this.appId, device.appId);
+        Device that = (Device) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.parentDeviceId, that.parentDeviceId)
+            && Objects.equals(this.parentDeviceName, that.parentDeviceName)
+            && Objects.equals(this.product, that.product) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.sslConnectAddress, that.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, that.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, that.ipv6SslConnectAddress)
+            && Objects.equals(this.lastLoginDatetime, that.lastLoginDatetime)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.keepAlive, that.keepAlive)
+            && Objects.equals(this.lastActiveTime, that.lastActiveTime) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

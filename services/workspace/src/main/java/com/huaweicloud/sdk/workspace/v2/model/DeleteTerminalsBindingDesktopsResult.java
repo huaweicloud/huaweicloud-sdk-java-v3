@@ -77,18 +77,16 @@ public class DeleteTerminalsBindingDesktopsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTerminalsBindingDesktopsResult deleteTerminalsBindingDesktopsResult =
-            (DeleteTerminalsBindingDesktopsResult) o;
-        return Objects.equals(this.id, deleteTerminalsBindingDesktopsResult.id)
-            && Objects.equals(this.deleteResultCode, deleteTerminalsBindingDesktopsResult.deleteResultCode)
-            && Objects.equals(this.deleteResultMsg, deleteTerminalsBindingDesktopsResult.deleteResultMsg);
+        DeleteTerminalsBindingDesktopsResult that = (DeleteTerminalsBindingDesktopsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deleteResultCode, that.deleteResultCode)
+            && Objects.equals(this.deleteResultMsg, that.deleteResultMsg);
     }
 
     @Override

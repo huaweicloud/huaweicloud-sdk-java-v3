@@ -33,16 +33,15 @@ public class ShowRepositoryStatisticsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryStatisticsRequestBody showRepositoryStatisticsRequestBody =
-            (ShowRepositoryStatisticsRequestBody) o;
-        return Objects.equals(this.branchName, showRepositoryStatisticsRequestBody.branchName);
+        ShowRepositoryStatisticsRequestBody that = (ShowRepositoryStatisticsRequestBody) obj;
+        return Objects.equals(this.branchName, that.branchName);
     }
 
     @Override

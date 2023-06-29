@@ -60,7 +60,7 @@ public class ShowDomainSettingsResponse extends SdkResponse {
     }
 
     /**
-     * 域名id
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -195,7 +195,7 @@ public class ShowDomainSettingsResponse extends SdkResponse {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -207,22 +207,19 @@ public class ShowDomainSettingsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainSettingsResponse showDomainSettingsResponse = (ShowDomainSettingsResponse) o;
-        return Objects.equals(this.domainId, showDomainSettingsResponse.domainId)
-            && Objects.equals(this.loginUrl, showDomainSettingsResponse.loginUrl)
-            && Objects.equals(this.loginUsername, showDomainSettingsResponse.loginUsername)
-            && Objects.equals(this.loginPassword, showDomainSettingsResponse.loginPassword)
-            && Objects.equals(this.loginCookies, showDomainSettingsResponse.loginCookies)
-            && Objects.equals(this.verifyUrl, showDomainSettingsResponse.verifyUrl)
-            && Objects.equals(this.httpHeaders, showDomainSettingsResponse.httpHeaders)
-            && Objects.equals(this.domainName, showDomainSettingsResponse.domainName);
+        ShowDomainSettingsResponse that = (ShowDomainSettingsResponse) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.loginUrl, that.loginUrl)
+            && Objects.equals(this.loginUsername, that.loginUsername)
+            && Objects.equals(this.loginPassword, that.loginPassword)
+            && Objects.equals(this.loginCookies, that.loginCookies) && Objects.equals(this.verifyUrl, that.verifyUrl)
+            && Objects.equals(this.httpHeaders, that.httpHeaders) && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

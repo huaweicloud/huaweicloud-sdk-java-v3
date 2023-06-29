@@ -52,15 +52,15 @@ public class BatchDeleteGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteGroupReq batchDeleteGroupReq = (BatchDeleteGroupReq) o;
-        return Objects.equals(this.groupIds, batchDeleteGroupReq.groupIds);
+        BatchDeleteGroupReq that = (BatchDeleteGroupReq) obj;
+        return Objects.equals(this.groupIds, that.groupIds);
     }
 
     @Override

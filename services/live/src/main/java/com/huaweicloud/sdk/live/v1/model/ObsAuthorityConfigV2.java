@@ -55,16 +55,15 @@ public class ObsAuthorityConfigV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsAuthorityConfigV2 obsAuthorityConfigV2 = (ObsAuthorityConfigV2) o;
-        return Objects.equals(this.bucket, obsAuthorityConfigV2.bucket)
-            && Objects.equals(this.operation, obsAuthorityConfigV2.operation);
+        ObsAuthorityConfigV2 that = (ObsAuthorityConfigV2) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.operation, that.operation);
     }
 
     @Override

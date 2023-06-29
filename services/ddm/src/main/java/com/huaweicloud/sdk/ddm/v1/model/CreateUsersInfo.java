@@ -109,22 +109,15 @@ public class CreateUsersInfo {
             if (value == null) {
                 return null;
             }
-            BaseAuthorityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BaseAuthorityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BaseAuthorityEnum(value));
         }
 
         public static BaseAuthorityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BaseAuthorityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,19 +267,17 @@ public class CreateUsersInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUsersInfo createUsersInfo = (CreateUsersInfo) o;
-        return Objects.equals(this.name, createUsersInfo.name)
-            && Objects.equals(this.password, createUsersInfo.password)
-            && Objects.equals(this.baseAuthority, createUsersInfo.baseAuthority)
-            && Objects.equals(this.description, createUsersInfo.description)
-            && Objects.equals(this.databases, createUsersInfo.databases);
+        CreateUsersInfo that = (CreateUsersInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.baseAuthority, that.baseAuthority)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.databases, that.databases);
     }
 
     @Override

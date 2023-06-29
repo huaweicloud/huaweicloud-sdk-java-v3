@@ -80,22 +80,15 @@ public class DirectoryVO {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -405,24 +398,21 @@ public class DirectoryVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DirectoryVO directoryVO = (DirectoryVO) o;
-        return Objects.equals(this.name, directoryVO.name) && Objects.equals(this.description, directoryVO.description)
-            && Objects.equals(this.type, directoryVO.type) && Objects.equals(this.id, directoryVO.id)
-            && Objects.equals(this.parentId, directoryVO.parentId) && Objects.equals(this.prevId, directoryVO.prevId)
-            && Objects.equals(this.rootId, directoryVO.rootId)
-            && Objects.equals(this.qualifiedName, directoryVO.qualifiedName)
-            && Objects.equals(this.createTime, directoryVO.createTime)
-            && Objects.equals(this.updateTime, directoryVO.updateTime)
-            && Objects.equals(this.createBy, directoryVO.createBy)
-            && Objects.equals(this.updateBy, directoryVO.updateBy)
-            && Objects.equals(this.children, directoryVO.children);
+        DirectoryVO that = (DirectoryVO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.prevId, that.prevId)
+            && Objects.equals(this.rootId, that.rootId) && Objects.equals(this.qualifiedName, that.qualifiedName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.children, that.children);
     }
 
     @Override

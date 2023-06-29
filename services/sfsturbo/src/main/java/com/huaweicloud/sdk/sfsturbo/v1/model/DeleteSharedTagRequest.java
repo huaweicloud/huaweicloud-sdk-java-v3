@@ -55,16 +55,15 @@ public class DeleteSharedTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSharedTagRequest deleteSharedTagRequest = (DeleteSharedTagRequest) o;
-        return Objects.equals(this.shareId, deleteSharedTagRequest.shareId)
-            && Objects.equals(this.key, deleteSharedTagRequest.key);
+        DeleteSharedTagRequest that = (DeleteSharedTagRequest) obj;
+        return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.key, that.key);
     }
 
     @Override

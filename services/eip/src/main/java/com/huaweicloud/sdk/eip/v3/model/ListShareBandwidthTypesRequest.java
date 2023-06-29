@@ -257,25 +257,21 @@ public class ListShareBandwidthTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListShareBandwidthTypesRequest listShareBandwidthTypesRequest = (ListShareBandwidthTypesRequest) o;
-        return Objects.equals(this.fields, listShareBandwidthTypesRequest.fields)
-            && Objects.equals(this.id, listShareBandwidthTypesRequest.id)
-            && Objects.equals(this.bandwidthType, listShareBandwidthTypesRequest.bandwidthType)
-            && Objects.equals(this.nameEn, listShareBandwidthTypesRequest.nameEn)
-            && Objects.equals(this.nameZh, listShareBandwidthTypesRequest.nameZh)
-            && Objects.equals(this.publicBorderGroup, listShareBandwidthTypesRequest.publicBorderGroup)
-            && Objects.equals(this.sortKey, listShareBandwidthTypesRequest.sortKey)
-            && Objects.equals(this.sortDir, listShareBandwidthTypesRequest.sortDir)
-            && Objects.equals(this.limit, listShareBandwidthTypesRequest.limit)
-            && Objects.equals(this.marker, listShareBandwidthTypesRequest.marker)
-            && Objects.equals(this.offset, listShareBandwidthTypesRequest.offset);
+        ListShareBandwidthTypesRequest that = (ListShareBandwidthTypesRequest) obj;
+        return Objects.equals(this.fields, that.fields) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.bandwidthType, that.bandwidthType) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameZh, that.nameZh)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

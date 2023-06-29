@@ -206,22 +206,19 @@ public class ObsScanResultInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsScanResultInfo obsScanResultInfo = (ObsScanResultInfo) o;
-        return Objects.equals(this.taskId, obsScanResultInfo.taskId)
-            && Objects.equals(this.bucketId, obsScanResultInfo.bucketId)
-            && Objects.equals(this.bucketName, obsScanResultInfo.bucketName)
-            && Objects.equals(this.filePath, obsScanResultInfo.filePath)
-            && Objects.equals(this.fileName, obsScanResultInfo.fileName)
-            && Objects.equals(this.md5, obsScanResultInfo.md5)
-            && Objects.equals(this.riskLevel, obsScanResultInfo.riskLevel)
-            && Objects.equals(this.sensitiveDataType, obsScanResultInfo.sensitiveDataType);
+        ObsScanResultInfo that = (ObsScanResultInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.bucketId, that.bucketId)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.md5, that.md5)
+            && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.sensitiveDataType, that.sensitiveDataType);
     }
 
     @Override

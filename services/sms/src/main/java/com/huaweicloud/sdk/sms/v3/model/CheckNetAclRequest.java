@@ -103,18 +103,16 @@ public class CheckNetAclRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckNetAclRequest checkNetAclRequest = (CheckNetAclRequest) o;
-        return Objects.equals(this.tProjectId, checkNetAclRequest.tProjectId)
-            && Objects.equals(this.tNetworkId, checkNetAclRequest.tNetworkId)
-            && Objects.equals(this.regionId, checkNetAclRequest.regionId)
-            && Objects.equals(this.osType, checkNetAclRequest.osType);
+        CheckNetAclRequest that = (CheckNetAclRequest) obj;
+        return Objects.equals(this.tProjectId, that.tProjectId) && Objects.equals(this.tNetworkId, that.tNetworkId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.osType, that.osType);
     }
 
     @Override

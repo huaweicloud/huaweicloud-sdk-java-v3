@@ -33,15 +33,15 @@ public class ShowEnvironmentDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvironmentDetailRequest showEnvironmentDetailRequest = (ShowEnvironmentDetailRequest) o;
-        return Objects.equals(this.environmentId, showEnvironmentDetailRequest.environmentId);
+        ShowEnvironmentDetailRequest that = (ShowEnvironmentDetailRequest) obj;
+        return Objects.equals(this.environmentId, that.environmentId);
     }
 
     @Override

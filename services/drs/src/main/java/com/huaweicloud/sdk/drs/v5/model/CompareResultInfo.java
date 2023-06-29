@@ -281,21 +281,21 @@ public class CompareResultInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareResultInfo compareResultInfo = (CompareResultInfo) o;
-        return Objects.equals(this.objectsCompareOverviewInfo, compareResultInfo.objectsCompareOverviewInfo)
-            && Objects.equals(this.objectsCompareDetailInfos, compareResultInfo.objectsCompareDetailInfos)
-            && Objects.equals(this.dataCompareTaskList, compareResultInfo.dataCompareTaskList)
-            && Objects.equals(this.lineCompareOverviewInfos, compareResultInfo.lineCompareOverviewInfos)
-            && Objects.equals(this.lineCompareDetailInfos, compareResultInfo.lineCompareDetailInfos)
-            && Objects.equals(this.contentCompareOverviewInfos, compareResultInfo.contentCompareOverviewInfos)
-            && Objects.equals(this.contentCompareDetailInfos, compareResultInfo.contentCompareDetailInfos);
+        CompareResultInfo that = (CompareResultInfo) obj;
+        return Objects.equals(this.objectsCompareOverviewInfo, that.objectsCompareOverviewInfo)
+            && Objects.equals(this.objectsCompareDetailInfos, that.objectsCompareDetailInfos)
+            && Objects.equals(this.dataCompareTaskList, that.dataCompareTaskList)
+            && Objects.equals(this.lineCompareOverviewInfos, that.lineCompareOverviewInfos)
+            && Objects.equals(this.lineCompareDetailInfos, that.lineCompareDetailInfos)
+            && Objects.equals(this.contentCompareOverviewInfos, that.contentCompareOverviewInfos)
+            && Objects.equals(this.contentCompareDetailInfos, that.contentCompareDetailInfos);
     }
 
     @Override

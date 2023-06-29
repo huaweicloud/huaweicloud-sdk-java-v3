@@ -122,19 +122,17 @@ public class ListDimensionGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDimensionGroupsRequest listDimensionGroupsRequest = (ListDimensionGroupsRequest) o;
-        return Objects.equals(this.workspace, listDimensionGroupsRequest.workspace)
-            && Objects.equals(this.tableId, listDimensionGroupsRequest.tableId)
-            && Objects.equals(this.bizType, listDimensionGroupsRequest.bizType)
-            && Objects.equals(this.limit, listDimensionGroupsRequest.limit)
-            && Objects.equals(this.offset, listDimensionGroupsRequest.offset);
+        ListDimensionGroupsRequest that = (ListDimensionGroupsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.bizType, that.bizType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

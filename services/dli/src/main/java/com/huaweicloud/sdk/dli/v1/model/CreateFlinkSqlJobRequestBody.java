@@ -662,42 +662,34 @@ public class CreateFlinkSqlJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlinkSqlJobRequestBody createFlinkSqlJobRequestBody = (CreateFlinkSqlJobRequestBody) o;
-        return Objects.equals(this.name, createFlinkSqlJobRequestBody.name)
-            && Objects.equals(this.desc, createFlinkSqlJobRequestBody.desc)
-            && Objects.equals(this.templateId, createFlinkSqlJobRequestBody.templateId)
-            && Objects.equals(this.queueName, createFlinkSqlJobRequestBody.queueName)
-            && Objects.equals(this.sqlBody, createFlinkSqlJobRequestBody.sqlBody)
-            && Objects.equals(this.runMode, createFlinkSqlJobRequestBody.runMode)
-            && Objects.equals(this.cuNumber, createFlinkSqlJobRequestBody.cuNumber)
-            && Objects.equals(this.parallelNumber, createFlinkSqlJobRequestBody.parallelNumber)
-            && Objects.equals(this.checkpointEnabled, createFlinkSqlJobRequestBody.checkpointEnabled)
-            && Objects.equals(this.checkpointMode, createFlinkSqlJobRequestBody.checkpointMode)
-            && Objects.equals(this.checkpointInterval, createFlinkSqlJobRequestBody.checkpointInterval)
-            && Objects.equals(this.obsBucket, createFlinkSqlJobRequestBody.obsBucket)
-            && Objects.equals(this.logEnabled, createFlinkSqlJobRequestBody.logEnabled)
-            && Objects.equals(this.smnTopic, createFlinkSqlJobRequestBody.smnTopic)
-            && Objects.equals(this.restartWhenException, createFlinkSqlJobRequestBody.restartWhenException)
-            && Objects.equals(this.idleStateRetention, createFlinkSqlJobRequestBody.idleStateRetention)
-            && Objects.equals(this.jobType, createFlinkSqlJobRequestBody.jobType)
-            && Objects.equals(this.edgeGroupIds, createFlinkSqlJobRequestBody.edgeGroupIds)
-            && Objects.equals(this.dirtyDataStrategy, createFlinkSqlJobRequestBody.dirtyDataStrategy)
-            && Objects.equals(this.udfJarUrl, createFlinkSqlJobRequestBody.udfJarUrl)
-            && Objects.equals(this.managerCuNumber, createFlinkSqlJobRequestBody.managerCuNumber)
-            && Objects.equals(this.tmCus, createFlinkSqlJobRequestBody.tmCus)
-            && Objects.equals(this.tmSlotNum, createFlinkSqlJobRequestBody.tmSlotNum)
-            && Objects.equals(this.tags, createFlinkSqlJobRequestBody.tags)
-            && Objects.equals(this.resumeCheckpoint, createFlinkSqlJobRequestBody.resumeCheckpoint)
-            && Objects.equals(this.resumeMaxNum, createFlinkSqlJobRequestBody.resumeMaxNum)
-            && Objects.equals(this.runtimeConfig, createFlinkSqlJobRequestBody.runtimeConfig)
-            && Objects.equals(this.flinkVersion, createFlinkSqlJobRequestBody.flinkVersion);
+        CreateFlinkSqlJobRequestBody that = (CreateFlinkSqlJobRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.sqlBody, that.sqlBody) && Objects.equals(this.runMode, that.runMode)
+            && Objects.equals(this.cuNumber, that.cuNumber) && Objects.equals(this.parallelNumber, that.parallelNumber)
+            && Objects.equals(this.checkpointEnabled, that.checkpointEnabled)
+            && Objects.equals(this.checkpointMode, that.checkpointMode)
+            && Objects.equals(this.checkpointInterval, that.checkpointInterval)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.logEnabled, that.logEnabled)
+            && Objects.equals(this.smnTopic, that.smnTopic)
+            && Objects.equals(this.restartWhenException, that.restartWhenException)
+            && Objects.equals(this.idleStateRetention, that.idleStateRetention)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.edgeGroupIds, that.edgeGroupIds)
+            && Objects.equals(this.dirtyDataStrategy, that.dirtyDataStrategy)
+            && Objects.equals(this.udfJarUrl, that.udfJarUrl)
+            && Objects.equals(this.managerCuNumber, that.managerCuNumber) && Objects.equals(this.tmCus, that.tmCus)
+            && Objects.equals(this.tmSlotNum, that.tmSlotNum) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resumeCheckpoint, that.resumeCheckpoint)
+            && Objects.equals(this.resumeMaxNum, that.resumeMaxNum)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.flinkVersion, that.flinkVersion);
     }
 
     @Override

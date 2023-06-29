@@ -55,16 +55,16 @@ public class DeleteImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteImageRequest deleteImageRequest = (DeleteImageRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteImageRequest.eihealthProjectId)
-            && Objects.equals(this.imageId, deleteImageRequest.imageId);
+        DeleteImageRequest that = (DeleteImageRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

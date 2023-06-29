@@ -87,17 +87,16 @@ public class FeatureTransformation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FeatureTransformation featureTransformation = (FeatureTransformation) o;
-        return Objects.equals(this.attr, featureTransformation.attr)
-            && Objects.equals(this.discreteMethod, featureTransformation.discreteMethod)
-            && Objects.equals(this.params, featureTransformation.params);
+        FeatureTransformation that = (FeatureTransformation) obj;
+        return Objects.equals(this.attr, that.attr) && Objects.equals(this.discreteMethod, that.discreteMethod)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreateLogStreamResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogStreamResponse createLogStreamResponse = (CreateLogStreamResponse) o;
-        return Objects.equals(this.logStreamId, createLogStreamResponse.logStreamId);
+        CreateLogStreamResponse that = (CreateLogStreamResponse) obj;
+        return Objects.equals(this.logStreamId, that.logStreamId);
     }
 
     @Override

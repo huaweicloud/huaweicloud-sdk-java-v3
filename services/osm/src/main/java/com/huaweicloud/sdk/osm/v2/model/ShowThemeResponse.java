@@ -141,19 +141,17 @@ public class ShowThemeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowThemeResponse showThemeResponse = (ShowThemeResponse) o;
-        return Objects.equals(this.themes, showThemeResponse.themes)
-            && Objects.equals(this.errorCode, showThemeResponse.errorCode)
-            && Objects.equals(this.errorMsg, showThemeResponse.errorMsg)
-            && Objects.equals(this.productTypeId, showThemeResponse.productTypeId)
-            && Objects.equals(this.themeName, showThemeResponse.themeName);
+        ShowThemeResponse that = (ShowThemeResponse) obj;
+        return Objects.equals(this.themes, that.themes) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.productTypeId, that.productTypeId)
+            && Objects.equals(this.themeName, that.themeName);
     }
 
     @Override

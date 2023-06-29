@@ -175,20 +175,18 @@ public class LocationDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LocationDetail locationDetail = (LocationDetail) o;
-        return Objects.equals(this.name, locationDetail.name)
-            && Objects.equals(this.description, locationDetail.description)
-            && Objects.equals(this.country, locationDetail.country)
-            && Objects.equals(this.province, locationDetail.province) && Objects.equals(this.city, locationDetail.city)
-            && Objects.equals(this.district, locationDetail.district)
-            && Objects.equals(this.condition, locationDetail.condition);
+        LocationDetail that = (LocationDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.district, that.district)
+            && Objects.equals(this.condition, that.condition);
     }
 
     @Override

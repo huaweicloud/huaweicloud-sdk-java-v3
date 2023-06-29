@@ -84,22 +84,15 @@ public class UpdateNotificationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +159,15 @@ public class UpdateNotificationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -327,20 +313,17 @@ public class UpdateNotificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNotificationResponse updateNotificationResponse = (UpdateNotificationResponse) o;
-        return Objects.equals(this.notificationId, updateNotificationResponse.notificationId)
-            && Objects.equals(this.type, updateNotificationResponse.type)
-            && Objects.equals(this.status, updateNotificationResponse.status)
-            && Objects.equals(this.topic, updateNotificationResponse.topic)
-            && Objects.equals(this.instanceId, updateNotificationResponse.instanceId)
-            && Objects.equals(this.appId, updateNotificationResponse.appId);
+        UpdateNotificationResponse that = (UpdateNotificationResponse) obj;
+        return Objects.equals(this.notificationId, that.notificationId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

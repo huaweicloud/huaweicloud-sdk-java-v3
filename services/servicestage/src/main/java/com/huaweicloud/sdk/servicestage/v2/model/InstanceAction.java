@@ -65,16 +65,15 @@ public class InstanceAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceAction instanceAction = (InstanceAction) o;
-        return Objects.equals(this.action, instanceAction.action)
-            && Objects.equals(this.parameters, instanceAction.parameters);
+        InstanceAction that = (InstanceAction) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

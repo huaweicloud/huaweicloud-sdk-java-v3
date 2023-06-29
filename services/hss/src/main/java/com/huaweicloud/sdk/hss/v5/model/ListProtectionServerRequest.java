@@ -215,23 +215,20 @@ public class ListProtectionServerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectionServerRequest listProtectionServerRequest = (ListProtectionServerRequest) o;
-        return Objects.equals(this.region, listProtectionServerRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listProtectionServerRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, listProtectionServerRequest.offset)
-            && Objects.equals(this.limit, listProtectionServerRequest.limit)
-            && Objects.equals(this.hostName, listProtectionServerRequest.hostName)
-            && Objects.equals(this.osType, listProtectionServerRequest.osType)
-            && Objects.equals(this.hostIp, listProtectionServerRequest.hostIp)
-            && Objects.equals(this.hostStatus, listProtectionServerRequest.hostStatus)
-            && Objects.equals(this.lastDays, listProtectionServerRequest.lastDays);
+        ListProtectionServerRequest that = (ListProtectionServerRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.lastDays, that.lastDays);
     }
 
     @Override

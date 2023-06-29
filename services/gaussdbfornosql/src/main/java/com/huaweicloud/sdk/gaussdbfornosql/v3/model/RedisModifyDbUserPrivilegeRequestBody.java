@@ -96,18 +96,16 @@ public class RedisModifyDbUserPrivilegeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedisModifyDbUserPrivilegeRequestBody redisModifyDbUserPrivilegeRequestBody =
-            (RedisModifyDbUserPrivilegeRequestBody) o;
-        return Objects.equals(this.name, redisModifyDbUserPrivilegeRequestBody.name)
-            && Objects.equals(this.privilege, redisModifyDbUserPrivilegeRequestBody.privilege)
-            && Objects.equals(this.databases, redisModifyDbUserPrivilegeRequestBody.databases);
+        RedisModifyDbUserPrivilegeRequestBody that = (RedisModifyDbUserPrivilegeRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.privilege, that.privilege)
+            && Objects.equals(this.databases, that.databases);
     }
 
     @Override

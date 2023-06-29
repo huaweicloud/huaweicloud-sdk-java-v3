@@ -74,16 +74,15 @@ public class UpdateImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateImageRequest updateImageRequest = (UpdateImageRequest) o;
-        return Objects.equals(this.imageId, updateImageRequest.imageId)
-            && Objects.equals(this.body, updateImageRequest.body);
+        UpdateImageRequest that = (UpdateImageRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

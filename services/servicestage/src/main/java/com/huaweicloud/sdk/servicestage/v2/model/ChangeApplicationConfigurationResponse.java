@@ -89,18 +89,17 @@ public class ChangeApplicationConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeApplicationConfigurationResponse changeApplicationConfigurationResponse =
-            (ChangeApplicationConfigurationResponse) o;
-        return Objects.equals(this.applicationId, changeApplicationConfigurationResponse.applicationId)
-            && Objects.equals(this.environmentId, changeApplicationConfigurationResponse.environmentId)
-            && Objects.equals(this._configuration, changeApplicationConfigurationResponse._configuration);
+        ChangeApplicationConfigurationResponse that = (ChangeApplicationConfigurationResponse) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this._configuration, that._configuration);
     }
 
     @Override

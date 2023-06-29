@@ -74,16 +74,15 @@ public class EdgemgrDevicesPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgemgrDevicesPara edgemgrDevicesPara = (EdgemgrDevicesPara) o;
-        return Objects.equals(this.description, edgemgrDevicesPara.description)
-            && Objects.equals(this.attributes, edgemgrDevicesPara.attributes);
+        EdgemgrDevicesPara that = (EdgemgrDevicesPara) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

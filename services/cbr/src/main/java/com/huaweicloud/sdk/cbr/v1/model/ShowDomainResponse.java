@@ -100,18 +100,16 @@ public class ShowDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainResponse showDomainResponse = (ShowDomainResponse) o;
-        return Objects.equals(this.projectName, showDomainResponse.projectName)
-            && Objects.equals(this.projectId, showDomainResponse.projectId)
-            && Objects.equals(this.domainId, showDomainResponse.domainId)
-            && Objects.equals(this.domainName, showDomainResponse.domainName);
+        ShowDomainResponse that = (ShowDomainResponse) obj;
+        return Objects.equals(this.projectName, that.projectName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

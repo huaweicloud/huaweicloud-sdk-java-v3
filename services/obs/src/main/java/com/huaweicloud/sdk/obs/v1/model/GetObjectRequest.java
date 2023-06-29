@@ -529,37 +529,31 @@ public class GetObjectRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetObjectRequest getObjectRequest = (GetObjectRequest) o;
-        return Objects.equals(this.bucketName, getObjectRequest.bucketName)
-            && Objects.equals(this.objectKey, getObjectRequest.objectKey)
-            && Objects.equals(this.date, getObjectRequest.date)
-            && Objects.equals(this.responseContentType, getObjectRequest.responseContentType)
-            && Objects.equals(this.responseContentLanguage, getObjectRequest.responseContentLanguage)
-            && Objects.equals(this.responseExpires, getObjectRequest.responseExpires)
-            && Objects.equals(this.responseCacheControl, getObjectRequest.responseCacheControl)
-            && Objects.equals(this.responseContentDisposition, getObjectRequest.responseContentDisposition)
-            && Objects.equals(this.responseContentEncoding, getObjectRequest.responseContentEncoding)
-            && Objects.equals(this.versionId, getObjectRequest.versionId)
-            && Objects.equals(this.xImageProcess, getObjectRequest.xImageProcess)
-            && Objects.equals(this.attname, getObjectRequest.attname)
-            && Objects.equals(this.range, getObjectRequest.range)
-            && Objects.equals(this.ifModifiedSince, getObjectRequest.ifModifiedSince)
-            && Objects.equals(this.ifUnmodifiedSince, getObjectRequest.ifUnmodifiedSince)
-            && Objects.equals(this.ifMatch, getObjectRequest.ifMatch)
-            && Objects.equals(this.ifNoneMatch, getObjectRequest.ifNoneMatch)
+        GetObjectRequest that = (GetObjectRequest) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.objectKey, that.objectKey)
+            && Objects.equals(this.date, that.date)
+            && Objects.equals(this.responseContentType, that.responseContentType)
+            && Objects.equals(this.responseContentLanguage, that.responseContentLanguage)
+            && Objects.equals(this.responseExpires, that.responseExpires)
+            && Objects.equals(this.responseCacheControl, that.responseCacheControl)
+            && Objects.equals(this.responseContentDisposition, that.responseContentDisposition)
+            && Objects.equals(this.responseContentEncoding, that.responseContentEncoding)
+            && Objects.equals(this.versionId, that.versionId) && Objects.equals(this.xImageProcess, that.xImageProcess)
+            && Objects.equals(this.attname, that.attname) && Objects.equals(this.range, that.range)
+            && Objects.equals(this.ifModifiedSince, that.ifModifiedSince)
+            && Objects.equals(this.ifUnmodifiedSince, that.ifUnmodifiedSince)
+            && Objects.equals(this.ifMatch, that.ifMatch) && Objects.equals(this.ifNoneMatch, that.ifNoneMatch)
             && Objects.equals(this.xObsServerSideEncryptionCustomerAlgorithm,
-                getObjectRequest.xObsServerSideEncryptionCustomerAlgorithm)
-            && Objects.equals(this.xObsServerSideEncryptionCustomerKey,
-                getObjectRequest.xObsServerSideEncryptionCustomerKey)
-            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5,
-                getObjectRequest.xObsServerSideEncryptionCustomerKeyMD5);
+                that.xObsServerSideEncryptionCustomerAlgorithm)
+            && Objects.equals(this.xObsServerSideEncryptionCustomerKey, that.xObsServerSideEncryptionCustomerKey)
+            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5, that.xObsServerSideEncryptionCustomerKeyMD5);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListSystemEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemEventsResponse listSystemEventsResponse = (ListSystemEventsResponse) o;
-        return Objects.equals(this.count, listSystemEventsResponse.count)
-            && Objects.equals(this.systemevents, listSystemEventsResponse.systemevents);
+        ListSystemEventsResponse that = (ListSystemEventsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.systemevents, that.systemevents);
     }
 
     @Override

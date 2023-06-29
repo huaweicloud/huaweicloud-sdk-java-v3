@@ -131,17 +131,17 @@ public class Confs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Confs confs = (Confs) o;
-        return Objects.equals(this.name, confs.name) && Objects.equals(this.status, confs.status)
-            && Objects.equals(this.confContent, confs.confContent) && Objects.equals(this.setting, confs.setting)
-            && Objects.equals(this.updateAt, confs.updateAt);
+        Confs that = (Confs) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.setting, that.setting)
+            && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

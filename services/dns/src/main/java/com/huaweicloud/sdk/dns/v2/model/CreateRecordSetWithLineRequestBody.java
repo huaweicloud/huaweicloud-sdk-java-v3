@@ -275,24 +275,19 @@ public class CreateRecordSetWithLineRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRecordSetWithLineRequestBody createRecordSetWithLineRequestBody = (CreateRecordSetWithLineRequestBody) o;
-        return Objects.equals(this.name, createRecordSetWithLineRequestBody.name)
-            && Objects.equals(this.description, createRecordSetWithLineRequestBody.description)
-            && Objects.equals(this.type, createRecordSetWithLineRequestBody.type)
-            && Objects.equals(this.status, createRecordSetWithLineRequestBody.status)
-            && Objects.equals(this.ttl, createRecordSetWithLineRequestBody.ttl)
-            && Objects.equals(this.records, createRecordSetWithLineRequestBody.records)
-            && Objects.equals(this.line, createRecordSetWithLineRequestBody.line)
-            && Objects.equals(this.tags, createRecordSetWithLineRequestBody.tags)
-            && Objects.equals(this.weight, createRecordSetWithLineRequestBody.weight)
-            && Objects.equals(this.aliasTarget, createRecordSetWithLineRequestBody.aliasTarget);
+        CreateRecordSetWithLineRequestBody that = (CreateRecordSetWithLineRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.aliasTarget, that.aliasTarget);
     }
 
     @Override

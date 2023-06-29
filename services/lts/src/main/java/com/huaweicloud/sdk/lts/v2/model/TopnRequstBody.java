@@ -224,21 +224,18 @@ public class TopnRequstBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopnRequstBody topnRequstBody = (TopnRequstBody) o;
-        return Objects.equals(this.endTime, topnRequstBody.endTime)
-            && Objects.equals(this.isDesc, topnRequstBody.isDesc)
-            && Objects.equals(this.resourceType, topnRequstBody.resourceType)
-            && Objects.equals(this.sortBy, topnRequstBody.sortBy)
-            && Objects.equals(this.startTime, topnRequstBody.startTime)
-            && Objects.equals(this.topn, topnRequstBody.topn) && Objects.equals(this.filter, topnRequstBody.filter)
-            && Objects.equals(this.searchList, topnRequstBody.searchList);
+        TopnRequstBody that = (TopnRequstBody) obj;
+        return Objects.equals(this.endTime, that.endTime) && Objects.equals(this.isDesc, that.isDesc)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sortBy, that.sortBy)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.topn, that.topn)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.searchList, that.searchList);
     }
 
     @Override

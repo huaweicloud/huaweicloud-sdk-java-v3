@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.Agency;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AgenciesPrimitiveTypeHolder
  */
-public class AgenciesPrimitiveTypeHolder  {
-
+public class AgenciesPrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agencies")
-    
+    @JsonProperty(value = "agencies")
+
     private List<Agency> agencies = null;
-    
+
     public AgenciesPrimitiveTypeHolder withAgencies(List<Agency> agencies) {
         this.agencies = agencies;
         return this;
     }
 
-    
     public AgenciesPrimitiveTypeHolder addAgenciesItem(Agency agenciesItem) {
-        if(this.agencies == null) {
+        if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
         this.agencies.add(agenciesItem);
@@ -40,7 +32,7 @@ public class AgenciesPrimitiveTypeHolder  {
     }
 
     public AgenciesPrimitiveTypeHolder withAgencies(Consumer<List<Agency>> agenciesSetter) {
-        if(this.agencies == null) {
+        if (this.agencies == null) {
             this.agencies = new ArrayList<>();
         }
         agenciesSetter.accept(this.agencies);
@@ -48,7 +40,7 @@ public class AgenciesPrimitiveTypeHolder  {
     }
 
     /**
-     * 委托授权的信息。
+     * 委托授权的信息。  RFS仅在创建资源栈（触发部署）、创建执行计划、部署资源栈、删除资源栈等涉及资源操作的请求中使用委托，且该委托仅作用于与之绑定的Provider对资源的操作中。若委托中提供的权限不足，有可能导致相关资源操作失败。 
      * @return agencies
      */
     public List<Agency> getAgencies() {
@@ -59,23 +51,23 @@ public class AgenciesPrimitiveTypeHolder  {
         this.agencies = agencies;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgenciesPrimitiveTypeHolder agenciesPrimitiveTypeHolder = (AgenciesPrimitiveTypeHolder) o;
-        return Objects.equals(this.agencies, agenciesPrimitiveTypeHolder.agencies);
+        AgenciesPrimitiveTypeHolder that = (AgenciesPrimitiveTypeHolder) obj;
+        return Objects.equals(this.agencies, that.agencies);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agencies);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class AgenciesPrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class AgenciesPrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 模板版本基本信息
  */
-public class BaseTemplateVersion  {
-
+public class BaseTemplateVersion {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_name")
-    
+    @JsonProperty(value = "template_name")
 
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version_description")
-    
+    @JsonProperty(value = "version_description")
 
     private String versionDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
@@ -45,9 +34,6 @@ public class BaseTemplateVersion  {
         this.templateId = templateId;
         return this;
     }
-
-    
-
 
     /**
      * 模板的唯一ID，由模板服务随机生成
@@ -61,15 +47,10 @@ public class BaseTemplateVersion  {
         this.templateId = templateId;
     }
 
-    
-
     public BaseTemplateVersion withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
     }
-
-    
-
 
     /**
      * 用户希望创建的模板名称
@@ -83,15 +64,10 @@ public class BaseTemplateVersion  {
         this.templateName = templateName;
     }
 
-    
-
     public BaseTemplateVersion withVersionDescription(String versionDescription) {
         this.versionDescription = versionDescription;
         return this;
     }
-
-    
-
 
     /**
      * 模板版本的描述。可用于客户识别自己的模板版本
@@ -105,15 +81,10 @@ public class BaseTemplateVersion  {
         this.versionDescription = versionDescription;
     }
 
-    
-
     public BaseTemplateVersion withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 版本创建时间，格式遵循RFC3339，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
@@ -127,26 +98,25 @@ public class BaseTemplateVersion  {
         this.createTime = createTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseTemplateVersion baseTemplateVersion = (BaseTemplateVersion) o;
-        return Objects.equals(this.templateId, baseTemplateVersion.templateId) &&
-            Objects.equals(this.templateName, baseTemplateVersion.templateName) &&
-            Objects.equals(this.versionDescription, baseTemplateVersion.versionDescription) &&
-            Objects.equals(this.createTime, baseTemplateVersion.createTime);
+        BaseTemplateVersion that = (BaseTemplateVersion) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.versionDescription, that.versionDescription)
+            && Objects.equals(this.createTime, that.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateId, templateName, versionDescription, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +128,7 @@ public class BaseTemplateVersion  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +139,5 @@ public class BaseTemplateVersion  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

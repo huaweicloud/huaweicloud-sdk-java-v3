@@ -65,16 +65,15 @@ public class ExtendClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendClusterReq extendClusterReq = (ExtendClusterReq) o;
-        return Objects.equals(this.grow, extendClusterReq.grow)
-            && Objects.equals(this.isAutoPay, extendClusterReq.isAutoPay);
+        ExtendClusterReq that = (ExtendClusterReq) obj;
+        return Objects.equals(this.grow, that.grow) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

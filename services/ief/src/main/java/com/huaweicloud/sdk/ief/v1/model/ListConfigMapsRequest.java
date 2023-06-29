@@ -99,18 +99,16 @@ public class ListConfigMapsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigMapsRequest listConfigMapsRequest = (ListConfigMapsRequest) o;
-        return Objects.equals(this.iefInstanceId, listConfigMapsRequest.iefInstanceId)
-            && Objects.equals(this.name, listConfigMapsRequest.name)
-            && Objects.equals(this.limit, listConfigMapsRequest.limit)
-            && Objects.equals(this.offset, listConfigMapsRequest.offset);
+        ListConfigMapsRequest that = (ListConfigMapsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -200,21 +200,18 @@ public class AomMappingRuleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AomMappingRuleInfo aomMappingRuleInfo = (AomMappingRuleInfo) o;
-        return Objects.equals(this.clusterId, aomMappingRuleInfo.clusterId)
-            && Objects.equals(this.clusterName, aomMappingRuleInfo.clusterName)
-            && Objects.equals(this.deploymentsPrefix, aomMappingRuleInfo.deploymentsPrefix)
-            && Objects.equals(this.deployments, aomMappingRuleInfo.deployments)
-            && Objects.equals(this.namespace, aomMappingRuleInfo.namespace)
-            && Objects.equals(this.containerName, aomMappingRuleInfo.containerName)
-            && Objects.equals(this.files, aomMappingRuleInfo.files);
+        AomMappingRuleInfo that = (AomMappingRuleInfo) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.deploymentsPrefix, that.deploymentsPrefix)
+            && Objects.equals(this.deployments, that.deployments) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.containerName, that.containerName) && Objects.equals(this.files, that.files);
     }
 
     @Override

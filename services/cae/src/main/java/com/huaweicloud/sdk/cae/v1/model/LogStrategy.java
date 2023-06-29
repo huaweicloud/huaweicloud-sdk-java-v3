@@ -55,16 +55,15 @@ public class LogStrategy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogStrategy logStrategy = (LogStrategy) o;
-        return Objects.equals(this.collectPath, logStrategy.collectPath)
-            && Objects.equals(this.mountPath, logStrategy.mountPath);
+        LogStrategy that = (LogStrategy) obj;
+        return Objects.equals(this.collectPath, that.collectPath) && Objects.equals(this.mountPath, that.mountPath);
     }
 
     @Override

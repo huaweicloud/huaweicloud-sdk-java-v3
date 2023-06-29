@@ -312,23 +312,23 @@ public class Action {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Action action = (Action) o;
-        return Objects.equals(this.actionName, action.actionName)
-            && Objects.equals(this.actionAgency, action.actionAgency) && Objects.equals(this.function, action.function)
-            && Objects.equals(this.functionTemplate, action.functionTemplate)
-            && Objects.equals(this.actionTemplateName, action.actionTemplateName)
-            && Objects.equals(this.actionTemplateCategory, action.actionTemplateCategory)
-            && Objects.equals(this.actionTemplateProviderName, action.actionTemplateProviderName)
-            && Objects.equals(this.invocationMode, action.invocationMode)
-            && Objects.equals(this.timeout, action.timeout) && Objects.equals(this.payloadFilter, action.payloadFilter)
-            && Objects.equals(this.dynamicSource, action.dynamicSource) && Objects.equals(this.results, action.results);
+        Action that = (Action) obj;
+        return Objects.equals(this.actionName, that.actionName) && Objects.equals(this.actionAgency, that.actionAgency)
+            && Objects.equals(this.function, that.function)
+            && Objects.equals(this.functionTemplate, that.functionTemplate)
+            && Objects.equals(this.actionTemplateName, that.actionTemplateName)
+            && Objects.equals(this.actionTemplateCategory, that.actionTemplateCategory)
+            && Objects.equals(this.actionTemplateProviderName, that.actionTemplateProviderName)
+            && Objects.equals(this.invocationMode, that.invocationMode) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.payloadFilter, that.payloadFilter)
+            && Objects.equals(this.dynamicSource, that.dynamicSource) && Objects.equals(this.results, that.results);
     }
 
     @Override

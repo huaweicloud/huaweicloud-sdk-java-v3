@@ -78,17 +78,16 @@ public class BatchDeleteFacesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteFacesResponse batchDeleteFacesResponse = (BatchDeleteFacesResponse) o;
-        return Objects.equals(this.faceNumber, batchDeleteFacesResponse.faceNumber)
-            && Objects.equals(this.faceSetId, batchDeleteFacesResponse.faceSetId)
-            && Objects.equals(this.faceSetName, batchDeleteFacesResponse.faceSetName);
+        BatchDeleteFacesResponse that = (BatchDeleteFacesResponse) obj;
+        return Objects.equals(this.faceNumber, that.faceNumber) && Objects.equals(this.faceSetId, that.faceSetId)
+            && Objects.equals(this.faceSetName, that.faceSetName);
     }
 
     @Override

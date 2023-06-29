@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 高可用主备配置请求结构体
  */
-public class ActiveStandbyConfigDTO  {
-
+public class ActiveStandbyConfigDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="work_node")
-    
+    @JsonProperty(value = "work_node")
 
     private String workNode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="master_interface_name")
-    
+    @JsonProperty(value = "master_interface_name")
 
     private String masterInterfaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slave_interface_name")
-    
+    @JsonProperty(value = "slave_interface_name")
 
     private String slaveInterfaceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="virtual_ip_address")
-    
+    @JsonProperty(value = "virtual_ip_address")
 
     private String virtualIpAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="virtual_ipv6_address")
-    
+    @JsonProperty(value = "virtual_ipv6_address")
 
     private String virtualIpv6Address;
 
@@ -51,9 +39,6 @@ public class ActiveStandbyConfigDTO  {
         this.workNode = workNode;
         return this;
     }
-
-    
-
 
     /**
      * 当前的工作节点，主节点还是备节点在工作，初始创建时工作节点为DEFAULT节点，(DEFAULT|MASTER|SLAVE)
@@ -67,15 +52,10 @@ public class ActiveStandbyConfigDTO  {
         this.workNode = workNode;
     }
 
-    
-
     public ActiveStandbyConfigDTO withMasterInterfaceName(String masterInterfaceName) {
         this.masterInterfaceName = masterInterfaceName;
         return this;
     }
-
-    
-
 
     /**
      * 主节点网卡名称
@@ -89,15 +69,10 @@ public class ActiveStandbyConfigDTO  {
         this.masterInterfaceName = masterInterfaceName;
     }
 
-    
-
     public ActiveStandbyConfigDTO withSlaveInterfaceName(String slaveInterfaceName) {
         this.slaveInterfaceName = slaveInterfaceName;
         return this;
     }
-
-    
-
 
     /**
      * 备节点网卡名称
@@ -111,15 +86,10 @@ public class ActiveStandbyConfigDTO  {
         this.slaveInterfaceName = slaveInterfaceName;
     }
 
-    
-
     public ActiveStandbyConfigDTO withVirtualIpAddress(String virtualIpAddress) {
         this.virtualIpAddress = virtualIpAddress;
         return this;
     }
-
-    
-
 
     /**
      * 网卡ip
@@ -133,15 +103,10 @@ public class ActiveStandbyConfigDTO  {
         this.virtualIpAddress = virtualIpAddress;
     }
 
-    
-
     public ActiveStandbyConfigDTO withVirtualIpv6Address(String virtualIpv6Address) {
         this.virtualIpv6Address = virtualIpv6Address;
         return this;
     }
-
-    
-
 
     /**
      * 网卡ipv6地址
@@ -155,27 +120,27 @@ public class ActiveStandbyConfigDTO  {
         this.virtualIpv6Address = virtualIpv6Address;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActiveStandbyConfigDTO activeStandbyConfigDTO = (ActiveStandbyConfigDTO) o;
-        return Objects.equals(this.workNode, activeStandbyConfigDTO.workNode) &&
-            Objects.equals(this.masterInterfaceName, activeStandbyConfigDTO.masterInterfaceName) &&
-            Objects.equals(this.slaveInterfaceName, activeStandbyConfigDTO.slaveInterfaceName) &&
-            Objects.equals(this.virtualIpAddress, activeStandbyConfigDTO.virtualIpAddress) &&
-            Objects.equals(this.virtualIpv6Address, activeStandbyConfigDTO.virtualIpv6Address);
+        ActiveStandbyConfigDTO that = (ActiveStandbyConfigDTO) obj;
+        return Objects.equals(this.workNode, that.workNode)
+            && Objects.equals(this.masterInterfaceName, that.masterInterfaceName)
+            && Objects.equals(this.slaveInterfaceName, that.slaveInterfaceName)
+            && Objects.equals(this.virtualIpAddress, that.virtualIpAddress)
+            && Objects.equals(this.virtualIpv6Address, that.virtualIpv6Address);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(workNode, masterInterfaceName, slaveInterfaceName, virtualIpAddress, virtualIpv6Address);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +153,7 @@ public class ActiveStandbyConfigDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +164,5 @@ public class ActiveStandbyConfigDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

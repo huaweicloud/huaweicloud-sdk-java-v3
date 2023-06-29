@@ -55,16 +55,16 @@ public class CompressRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompressRules compressRules = (CompressRules) o;
-        return Objects.equals(this.compressType, compressRules.compressType)
-            && Objects.equals(this.compressFileType, compressRules.compressFileType);
+        CompressRules that = (CompressRules) obj;
+        return Objects.equals(this.compressType, that.compressType)
+            && Objects.equals(this.compressFileType, that.compressFileType);
     }
 
     @Override

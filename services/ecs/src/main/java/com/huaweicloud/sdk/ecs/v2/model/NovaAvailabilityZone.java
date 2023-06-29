@@ -105,17 +105,16 @@ public class NovaAvailabilityZone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaAvailabilityZone novaAvailabilityZone = (NovaAvailabilityZone) o;
-        return Objects.equals(this.hosts, novaAvailabilityZone.hosts)
-            && Objects.equals(this.zoneName, novaAvailabilityZone.zoneName)
-            && Objects.equals(this.zoneState, novaAvailabilityZone.zoneState);
+        NovaAvailabilityZone that = (NovaAvailabilityZone) obj;
+        return Objects.equals(this.hosts, that.hosts) && Objects.equals(this.zoneName, that.zoneName)
+            && Objects.equals(this.zoneState, that.zoneState);
     }
 
     @Override

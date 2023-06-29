@@ -75,22 +75,15 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
             if (value == null) {
                 return null;
             }
-            ExtendModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExtendModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExtendModeEnum(value));
         }
 
         public static ExtendModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExtendModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
             if (value == null) {
                 return null;
             }
-            ApiModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiModeEnum(value));
         }
 
         public static ApiModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,21 +360,18 @@ public class ImportApiDefinitionsV2RequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportApiDefinitionsV2RequestBody importApiDefinitionsV2RequestBody = (ImportApiDefinitionsV2RequestBody) o;
-        return Objects.equals(this.isCreateGroup, importApiDefinitionsV2RequestBody.isCreateGroup)
-            && Objects.equals(this.groupId, importApiDefinitionsV2RequestBody.groupId)
-            && Objects.equals(this.extendMode, importApiDefinitionsV2RequestBody.extendMode)
-            && Objects.equals(this.simpleMode, importApiDefinitionsV2RequestBody.simpleMode)
-            && Objects.equals(this.mockMode, importApiDefinitionsV2RequestBody.mockMode)
-            && Objects.equals(this.apiMode, importApiDefinitionsV2RequestBody.apiMode)
-            && Objects.equals(this.fileName, importApiDefinitionsV2RequestBody.fileName);
+        ImportApiDefinitionsV2RequestBody that = (ImportApiDefinitionsV2RequestBody) obj;
+        return Objects.equals(this.isCreateGroup, that.isCreateGroup) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.extendMode, that.extendMode) && Objects.equals(this.simpleMode, that.simpleMode)
+            && Objects.equals(this.mockMode, that.mockMode) && Objects.equals(this.apiMode, that.apiMode)
+            && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

@@ -119,18 +119,17 @@ public class StartDeployTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartDeployTaskResponse startDeployTaskResponse = (StartDeployTaskResponse) o;
-        return Objects.equals(this.id, startDeployTaskResponse.id)
-            && Objects.equals(this.taskId, startDeployTaskResponse.taskId)
-            && Objects.equals(this.jobName, startDeployTaskResponse.jobName)
-            && Objects.equals(this.appComponentList, startDeployTaskResponse.appComponentList);
+        StartDeployTaskResponse that = (StartDeployTaskResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.appComponentList, that.appComponentList);
     }
 
     @Override

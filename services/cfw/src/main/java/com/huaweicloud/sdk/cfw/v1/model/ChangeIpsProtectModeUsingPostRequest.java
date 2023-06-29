@@ -87,18 +87,16 @@ public class ChangeIpsProtectModeUsingPostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeIpsProtectModeUsingPostRequest changeIpsProtectModeUsingPostRequest =
-            (ChangeIpsProtectModeUsingPostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, changeIpsProtectModeUsingPostRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, changeIpsProtectModeUsingPostRequest.fwInstanceId)
-            && Objects.equals(this.body, changeIpsProtectModeUsingPostRequest.body);
+        ChangeIpsProtectModeUsingPostRequest that = (ChangeIpsProtectModeUsingPostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

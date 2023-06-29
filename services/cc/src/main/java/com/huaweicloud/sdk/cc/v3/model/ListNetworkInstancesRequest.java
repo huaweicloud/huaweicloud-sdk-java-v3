@@ -44,8 +44,8 @@ public class ListNetworkInstancesRequest {
     private List<String> description = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -82,22 +82,15 @@ public class ListNetworkInstancesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -440,24 +433,19 @@ public class ListNetworkInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNetworkInstancesRequest listNetworkInstancesRequest = (ListNetworkInstancesRequest) o;
-        return Objects.equals(this.limit, listNetworkInstancesRequest.limit)
-            && Objects.equals(this.marker, listNetworkInstancesRequest.marker)
-            && Objects.equals(this.id, listNetworkInstancesRequest.id)
-            && Objects.equals(this.name, listNetworkInstancesRequest.name)
-            && Objects.equals(this.description, listNetworkInstancesRequest.description)
-            && Objects.equals(this.status, listNetworkInstancesRequest.status)
-            && Objects.equals(this.type, listNetworkInstancesRequest.type)
-            && Objects.equals(this.cloudConnectionId, listNetworkInstancesRequest.cloudConnectionId)
-            && Objects.equals(this.instanceId, listNetworkInstancesRequest.instanceId)
-            && Objects.equals(this.regionId, listNetworkInstancesRequest.regionId);
+        ListNetworkInstancesRequest that = (ListNetworkInstancesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

@@ -90,16 +90,16 @@ public class ApplyCertificateToHostRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyCertificateToHostRequestBody applyCertificateToHostRequestBody = (ApplyCertificateToHostRequestBody) o;
-        return Objects.equals(this.cloudHostIds, applyCertificateToHostRequestBody.cloudHostIds)
-            && Objects.equals(this.premiumHostIds, applyCertificateToHostRequestBody.premiumHostIds);
+        ApplyCertificateToHostRequestBody that = (ApplyCertificateToHostRequestBody) obj;
+        return Objects.equals(this.cloudHostIds, that.cloudHostIds)
+            && Objects.equals(this.premiumHostIds, that.premiumHostIds);
     }
 
     @Override

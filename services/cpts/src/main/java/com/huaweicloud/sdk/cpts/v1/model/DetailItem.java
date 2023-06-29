@@ -140,18 +140,17 @@ public class DetailItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetailItem detailItem = (DetailItem) o;
-        return Objects.equals(this.caseAwId, detailItem.caseAwId)
-            && Objects.equals(this.datumType, detailItem.datumType) && Objects.equals(this.name, detailItem.name)
-            && Objects.equals(this.transactionId, detailItem.transactionId)
-            && Objects.equals(this.awList, detailItem.awList);
+        DetailItem that = (DetailItem) obj;
+        return Objects.equals(this.caseAwId, that.caseAwId) && Objects.equals(this.datumType, that.datumType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.awList, that.awList);
     }
 
     @Override

@@ -184,20 +184,18 @@ public class ConfigMapResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigMapResp configMapResp = (ConfigMapResp) o;
-        return Objects.equals(this.id, configMapResp.id) && Objects.equals(this.name, configMapResp.name)
-            && Objects.equals(this.description, configMapResp.description)
-            && Objects.equals(this.configs, configMapResp.configs)
-            && Objects.equals(this.projectId, configMapResp.projectId)
-            && Objects.equals(this.createdAt, configMapResp.createdAt)
-            && Objects.equals(this.updatedAt, configMapResp.updatedAt);
+        ConfigMapResp that = (ConfigMapResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.configs, that.configs)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

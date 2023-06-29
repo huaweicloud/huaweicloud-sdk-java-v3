@@ -53,15 +53,15 @@ public class ListCaseLabelsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseLabelsResponse listCaseLabelsResponse = (ListCaseLabelsResponse) o;
-        return Objects.equals(this.caseLabelList, listCaseLabelsResponse.caseLabelList);
+        ListCaseLabelsResponse that = (ListCaseLabelsResponse) obj;
+        return Objects.equals(this.caseLabelList, that.caseLabelList);
     }
 
     @Override

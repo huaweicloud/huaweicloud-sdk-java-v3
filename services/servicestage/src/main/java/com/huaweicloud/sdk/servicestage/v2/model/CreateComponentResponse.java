@@ -379,29 +379,22 @@ public class CreateComponentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComponentResponse createComponentResponse = (CreateComponentResponse) o;
-        return Objects.equals(this.id, createComponentResponse.id)
-            && Objects.equals(this.name, createComponentResponse.name)
-            && Objects.equals(this.status, createComponentResponse.status)
-            && Objects.equals(this.runtime, createComponentResponse.runtime)
-            && Objects.equals(this.category, createComponentResponse.category)
-            && Objects.equals(this.subCategory, createComponentResponse.subCategory)
-            && Objects.equals(this.description, createComponentResponse.description)
-            && Objects.equals(this.projectId, createComponentResponse.projectId)
-            && Objects.equals(this.applicationId, createComponentResponse.applicationId)
-            && Objects.equals(this.source, createComponentResponse.source)
-            && Objects.equals(this.build, createComponentResponse.build)
-            && Objects.equals(this.pipelineIds, createComponentResponse.pipelineIds)
-            && Objects.equals(this.createTime, createComponentResponse.createTime)
-            && Objects.equals(this.creator, createComponentResponse.creator)
-            && Objects.equals(this.updateTime, createComponentResponse.updateTime);
+        CreateComponentResponse that = (CreateComponentResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.subCategory, that.subCategory)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.pipelineIds, that.pipelineIds)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

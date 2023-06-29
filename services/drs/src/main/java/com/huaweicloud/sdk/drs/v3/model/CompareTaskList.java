@@ -107,22 +107,15 @@ public class CompareTaskList {
             if (value == null) {
                 return null;
             }
-            CompareTaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CompareTaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CompareTaskStatusEnum(value));
         }
 
         public static CompareTaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CompareTaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,19 +233,18 @@ public class CompareTaskList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareTaskList compareTaskList = (CompareTaskList) o;
-        return Objects.equals(this.compareTaskId, compareTaskList.compareTaskId)
-            && Objects.equals(this.compareType, compareTaskList.compareType)
-            && Objects.equals(this.compareTaskStatus, compareTaskList.compareTaskStatus)
-            && Objects.equals(this.createTime, compareTaskList.createTime)
-            && Objects.equals(this.endTime, compareTaskList.endTime);
+        CompareTaskList that = (CompareTaskList) obj;
+        return Objects.equals(this.compareTaskId, that.compareTaskId)
+            && Objects.equals(this.compareType, that.compareType)
+            && Objects.equals(this.compareTaskStatus, that.compareTaskStatus)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class StartConnectivityTestReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartConnectivityTestReq startConnectivityTestReq = (StartConnectivityTestReq) o;
-        return Objects.equals(this.addressAndPorts, startConnectivityTestReq.addressAndPorts);
+        StartConnectivityTestReq that = (StartConnectivityTestReq) obj;
+        return Objects.equals(this.addressAndPorts, that.addressAndPorts);
     }
 
     @Override

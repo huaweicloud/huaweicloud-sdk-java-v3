@@ -96,17 +96,17 @@ public class NodePoolSpecUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolSpecUpdate nodePoolSpecUpdate = (NodePoolSpecUpdate) o;
-        return Objects.equals(this.nodeTemplate, nodePoolSpecUpdate.nodeTemplate)
-            && Objects.equals(this.initialNodeCount, nodePoolSpecUpdate.initialNodeCount)
-            && Objects.equals(this.autoscaling, nodePoolSpecUpdate.autoscaling);
+        NodePoolSpecUpdate that = (NodePoolSpecUpdate) obj;
+        return Objects.equals(this.nodeTemplate, that.nodeTemplate)
+            && Objects.equals(this.initialNodeCount, that.initialNodeCount)
+            && Objects.equals(this.autoscaling, that.autoscaling);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class Address {
             if (value == null) {
                 return null;
             }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VersionEnum(value));
         }
 
         public static VersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            VersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class Address {
             if (value == null) {
                 return null;
             }
-            OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEXTIPSTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEXTIPSTypeEnum(value));
         }
 
         public static OsEXTIPSTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEXTIPSTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -280,18 +266,18 @@ public class Address {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Address address = (Address) o;
-        return Objects.equals(this.version, address.version) && Objects.equals(this.addr, address.addr)
-            && Objects.equals(this.osEXTIPSType, address.osEXTIPSType)
-            && Objects.equals(this.osEXTIPSMACMacAddr, address.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSPortId, address.osEXTIPSPortId);
+        Address that = (Address) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType)
+            && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSPortId, that.osEXTIPSPortId);
     }
 
     @Override

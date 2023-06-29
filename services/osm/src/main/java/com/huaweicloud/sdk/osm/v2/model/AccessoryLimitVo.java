@@ -77,17 +77,16 @@ public class AccessoryLimitVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessoryLimitVo accessoryLimitVo = (AccessoryLimitVo) o;
-        return Objects.equals(this.limitCount, accessoryLimitVo.limitCount)
-            && Objects.equals(this.limitSize, accessoryLimitVo.limitSize)
-            && Objects.equals(this.limitFileType, accessoryLimitVo.limitFileType);
+        AccessoryLimitVo that = (AccessoryLimitVo) obj;
+        return Objects.equals(this.limitCount, that.limitCount) && Objects.equals(this.limitSize, that.limitSize)
+            && Objects.equals(this.limitFileType, that.limitFileType);
     }
 
     @Override

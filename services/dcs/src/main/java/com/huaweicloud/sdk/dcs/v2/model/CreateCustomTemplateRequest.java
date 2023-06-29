@@ -43,15 +43,15 @@ public class CreateCustomTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomTemplateRequest createCustomTemplateRequest = (CreateCustomTemplateRequest) o;
-        return Objects.equals(this.body, createCustomTemplateRequest.body);
+        CreateCustomTemplateRequest that = (CreateCustomTemplateRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

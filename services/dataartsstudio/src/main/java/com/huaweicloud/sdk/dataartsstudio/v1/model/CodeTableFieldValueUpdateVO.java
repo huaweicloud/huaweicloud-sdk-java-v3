@@ -128,17 +128,16 @@ public class CodeTableFieldValueUpdateVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeTableFieldValueUpdateVO codeTableFieldValueUpdateVO = (CodeTableFieldValueUpdateVO) o;
-        return Objects.equals(this.toAdd, codeTableFieldValueUpdateVO.toAdd)
-            && Objects.equals(this.toModify, codeTableFieldValueUpdateVO.toModify)
-            && Objects.equals(this.toRemove, codeTableFieldValueUpdateVO.toRemove);
+        CodeTableFieldValueUpdateVO that = (CodeTableFieldValueUpdateVO) obj;
+        return Objects.equals(this.toAdd, that.toAdd) && Objects.equals(this.toModify, that.toModify)
+            && Objects.equals(this.toRemove, that.toRemove);
     }
 
     @Override

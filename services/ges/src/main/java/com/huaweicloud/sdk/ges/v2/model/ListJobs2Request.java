@@ -1,56 +1,42 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListJobs2Request  {
-
+public class ListJobs2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_name")
-    
+    @JsonProperty(value = "graph_name")
 
     private String graphName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
@@ -58,9 +44,6 @@ public class ListJobs2Request  {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务结束日期，当前只支持日期，不支持时间。格式为：yyyy-MM-dd，比如2019-03-27。
@@ -74,15 +57,10 @@ public class ListJobs2Request  {
         this.endTime = endTime;
     }
 
-    
-
     public ListJobs2Request withGraphName(String graphName) {
         this.graphName = graphName;
         return this;
     }
-
-    
-
 
     /**
      * 关联的图名称。
@@ -96,15 +74,10 @@ public class ListJobs2Request  {
         this.graphName = graphName;
     }
 
-    
-
     public ListJobs2Request withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页资源数量的最大值，默认为10。
@@ -118,15 +91,10 @@ public class ListJobs2Request  {
         this.limit = limit;
     }
 
-    
-
     public ListJobs2Request withOffset(String offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 本次请求的起始位置，默认为0。
@@ -140,15 +108,10 @@ public class ListJobs2Request  {
         this.offset = offset;
     }
 
-    
-
     public ListJobs2Request withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务开始日期，当前只支持日期，不支持时间。格式为：yyyy-MM-dd，比如2019-03-27。
@@ -162,15 +125,10 @@ public class ListJobs2Request  {
         this.startTime = startTime;
     }
 
-    
-
     public ListJobs2Request withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态。取值为：  - running - waiting - success - failed
@@ -184,28 +142,25 @@ public class ListJobs2Request  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobs2Request listJobs2Request = (ListJobs2Request) o;
-        return Objects.equals(this.endTime, listJobs2Request.endTime) &&
-            Objects.equals(this.graphName, listJobs2Request.graphName) &&
-            Objects.equals(this.limit, listJobs2Request.limit) &&
-            Objects.equals(this.offset, listJobs2Request.offset) &&
-            Objects.equals(this.startTime, listJobs2Request.startTime) &&
-            Objects.equals(this.status, listJobs2Request.status);
+        ListJobs2Request that = (ListJobs2Request) obj;
+        return Objects.equals(this.endTime, that.endTime) && Objects.equals(this.graphName, that.graphName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(endTime, graphName, limit, offset, startTime, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -219,6 +174,7 @@ public class ListJobs2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -229,8 +185,5 @@ public class ListJobs2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

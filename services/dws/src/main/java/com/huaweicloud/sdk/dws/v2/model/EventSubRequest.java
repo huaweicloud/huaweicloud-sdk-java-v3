@@ -253,24 +253,22 @@ public class EventSubRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSubRequest eventSubRequest = (EventSubRequest) o;
-        return Objects.equals(this.name, eventSubRequest.name)
-            && Objects.equals(this.sourceType, eventSubRequest.sourceType)
-            && Objects.equals(this.sourceId, eventSubRequest.sourceId)
-            && Objects.equals(this.category, eventSubRequest.category)
-            && Objects.equals(this.severity, eventSubRequest.severity) && Objects.equals(this.tag, eventSubRequest.tag)
-            && Objects.equals(this.enable, eventSubRequest.enable)
-            && Objects.equals(this.notificationTarget, eventSubRequest.notificationTarget)
-            && Objects.equals(this.notificationTargetName, eventSubRequest.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, eventSubRequest.notificationTargetType)
-            && Objects.equals(this.timeZone, eventSubRequest.timeZone);
+        EventSubRequest that = (EventSubRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

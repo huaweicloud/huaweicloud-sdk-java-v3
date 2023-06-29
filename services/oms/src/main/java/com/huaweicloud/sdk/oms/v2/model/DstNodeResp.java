@@ -77,16 +77,16 @@ public class DstNodeResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DstNodeResp dstNodeResp = (DstNodeResp) o;
-        return Objects.equals(this.bucket, dstNodeResp.bucket) && Objects.equals(this.region, dstNodeResp.region)
-            && Objects.equals(this.savePrefix, dstNodeResp.savePrefix);
+        DstNodeResp that = (DstNodeResp) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.savePrefix, that.savePrefix);
     }
 
     @Override

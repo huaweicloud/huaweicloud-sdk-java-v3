@@ -97,17 +97,16 @@ public class DownloadErrorlogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadErrorlogResponse downloadErrorlogResponse = (DownloadErrorlogResponse) o;
-        return Objects.equals(this.list, downloadErrorlogResponse.list)
-            && Objects.equals(this.status, downloadErrorlogResponse.status)
-            && Objects.equals(this.count, downloadErrorlogResponse.count);
+        DownloadErrorlogResponse that = (DownloadErrorlogResponse) obj;
+        return Objects.equals(this.list, that.list) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

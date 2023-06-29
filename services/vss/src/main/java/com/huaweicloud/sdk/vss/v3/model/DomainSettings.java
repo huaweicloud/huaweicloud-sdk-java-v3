@@ -54,7 +54,7 @@ public class DomainSettings {
     }
 
     /**
-     * 域名id
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -184,21 +184,19 @@ public class DomainSettings {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainSettings domainSettings = (DomainSettings) o;
-        return Objects.equals(this.domainId, domainSettings.domainId)
-            && Objects.equals(this.loginUrl, domainSettings.loginUrl)
-            && Objects.equals(this.loginUsername, domainSettings.loginUsername)
-            && Objects.equals(this.loginPassword, domainSettings.loginPassword)
-            && Objects.equals(this.loginCookies, domainSettings.loginCookies)
-            && Objects.equals(this.verifyUrl, domainSettings.verifyUrl)
-            && Objects.equals(this.httpHeaders, domainSettings.httpHeaders);
+        DomainSettings that = (DomainSettings) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.loginUrl, that.loginUrl)
+            && Objects.equals(this.loginUsername, that.loginUsername)
+            && Objects.equals(this.loginPassword, that.loginPassword)
+            && Objects.equals(this.loginCookies, that.loginCookies) && Objects.equals(this.verifyUrl, that.verifyUrl)
+            && Objects.equals(this.httpHeaders, that.httpHeaders);
     }
 
     @Override

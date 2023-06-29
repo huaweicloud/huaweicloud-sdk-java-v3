@@ -33,15 +33,15 @@ public class ShowConfigMapRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigMapRequest showConfigMapRequest = (ShowConfigMapRequest) o;
-        return Objects.equals(this.configMapId, showConfigMapRequest.configMapId);
+        ShowConfigMapRequest that = (ShowConfigMapRequest) obj;
+        return Objects.equals(this.configMapId, that.configMapId);
     }
 
     @Override

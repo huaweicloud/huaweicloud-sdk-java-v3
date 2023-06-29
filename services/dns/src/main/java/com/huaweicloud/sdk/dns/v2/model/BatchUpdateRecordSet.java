@@ -140,19 +140,17 @@ public class BatchUpdateRecordSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateRecordSet batchUpdateRecordSet = (BatchUpdateRecordSet) o;
-        return Objects.equals(this.id, batchUpdateRecordSet.id)
-            && Objects.equals(this.description, batchUpdateRecordSet.description)
-            && Objects.equals(this.ttl, batchUpdateRecordSet.ttl)
-            && Objects.equals(this.weight, batchUpdateRecordSet.weight)
-            && Objects.equals(this.records, batchUpdateRecordSet.records);
+        BatchUpdateRecordSet that = (BatchUpdateRecordSet) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

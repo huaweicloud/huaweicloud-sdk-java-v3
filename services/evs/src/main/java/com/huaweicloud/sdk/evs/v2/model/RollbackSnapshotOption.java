@@ -55,16 +55,15 @@ public class RollbackSnapshotOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RollbackSnapshotOption rollbackSnapshotOption = (RollbackSnapshotOption) o;
-        return Objects.equals(this.name, rollbackSnapshotOption.name)
-            && Objects.equals(this.volumeId, rollbackSnapshotOption.volumeId);
+        RollbackSnapshotOption that = (RollbackSnapshotOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

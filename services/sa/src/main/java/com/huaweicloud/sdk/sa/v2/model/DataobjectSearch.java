@@ -179,21 +179,18 @@ public class DataobjectSearch {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataobjectSearch dataobjectSearch = (DataobjectSearch) o;
-        return Objects.equals(this.limit, dataobjectSearch.limit)
-            && Objects.equals(this.offset, dataobjectSearch.offset)
-            && Objects.equals(this.sortBy, dataobjectSearch.sortBy)
-            && Objects.equals(this.order, dataobjectSearch.order)
-            && Objects.equals(this.fromDate, dataobjectSearch.fromDate)
-            && Objects.equals(this.toDate, dataobjectSearch.toDate)
-            && Objects.equals(this.condition, dataobjectSearch.condition);
+        DataobjectSearch that = (DataobjectSearch) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.fromDate, that.fromDate) && Objects.equals(this.toDate, that.toDate)
+            && Objects.equals(this.condition, that.condition);
     }
 
     @Override

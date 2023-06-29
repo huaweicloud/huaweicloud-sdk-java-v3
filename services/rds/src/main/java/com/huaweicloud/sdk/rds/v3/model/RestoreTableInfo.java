@@ -55,16 +55,15 @@ public class RestoreTableInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreTableInfo restoreTableInfo = (RestoreTableInfo) o;
-        return Objects.equals(this.oldName, restoreTableInfo.oldName)
-            && Objects.equals(this.newName, restoreTableInfo.newName);
+        RestoreTableInfo that = (RestoreTableInfo) obj;
+        return Objects.equals(this.oldName, that.oldName) && Objects.equals(this.newName, that.newName);
     }
 
     @Override

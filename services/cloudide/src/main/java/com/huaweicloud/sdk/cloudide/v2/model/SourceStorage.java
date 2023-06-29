@@ -96,17 +96,16 @@ public class SourceStorage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceStorage sourceStorage = (SourceStorage) o;
-        return Objects.equals(this.location, sourceStorage.location)
-            && Objects.equals(this.parameters, sourceStorage.parameters)
-            && Objects.equals(this.type, sourceStorage.type);
+        SourceStorage that = (SourceStorage) obj;
+        return Objects.equals(this.location, that.location) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

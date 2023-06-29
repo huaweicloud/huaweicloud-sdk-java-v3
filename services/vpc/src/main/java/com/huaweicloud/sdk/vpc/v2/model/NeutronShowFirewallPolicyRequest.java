@@ -33,15 +33,15 @@ public class NeutronShowFirewallPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronShowFirewallPolicyRequest neutronShowFirewallPolicyRequest = (NeutronShowFirewallPolicyRequest) o;
-        return Objects.equals(this.firewallPolicyId, neutronShowFirewallPolicyRequest.firewallPolicyId);
+        NeutronShowFirewallPolicyRequest that = (NeutronShowFirewallPolicyRequest) obj;
+        return Objects.equals(this.firewallPolicyId, that.firewallPolicyId);
     }
 
     @Override

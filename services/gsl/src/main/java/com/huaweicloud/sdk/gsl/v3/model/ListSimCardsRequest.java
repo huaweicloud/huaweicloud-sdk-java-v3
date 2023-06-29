@@ -103,22 +103,15 @@ public class ListSimCardsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,22 +196,15 @@ public class ListSimCardsRequest {
             if (value == null) {
                 return null;
             }
-            SortEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortEnum(value));
         }
 
         public static SortEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -833,40 +819,31 @@ public class ListSimCardsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSimCardsRequest listSimCardsRequest = (ListSimCardsRequest) o;
-        return Objects.equals(this.mainSearchType, listSimCardsRequest.mainSearchType)
-            && Objects.equals(this.mainSearchKey, listSimCardsRequest.mainSearchKey)
-            && Objects.equals(this.limit, listSimCardsRequest.limit)
-            && Objects.equals(this.offset, listSimCardsRequest.offset)
-            && Objects.equals(this.simStatus, listSimCardsRequest.simStatus)
-            && Objects.equals(this.deviceStatus, listSimCardsRequest.deviceStatus)
-            && Objects.equals(this.tagId, listSimCardsRequest.tagId)
-            && Objects.equals(this.simType, listSimCardsRequest.simType)
-            && Objects.equals(this.order, listSimCardsRequest.order)
-            && Objects.equals(this.sort, listSimCardsRequest.sort)
-            && Objects.equals(this.msisdn, listSimCardsRequest.msisdn)
-            && Objects.equals(this.customerAttribute1, listSimCardsRequest.customerAttribute1)
-            && Objects.equals(this.customerAttribute2, listSimCardsRequest.customerAttribute2)
-            && Objects.equals(this.customerAttribute3, listSimCardsRequest.customerAttribute3)
-            && Objects.equals(this.customerAttribute4, listSimCardsRequest.customerAttribute4)
-            && Objects.equals(this.customerAttribute5, listSimCardsRequest.customerAttribute5)
-            && Objects.equals(this.customerAttribute6, listSimCardsRequest.customerAttribute6)
-            && Objects.equals(this.minUsedFlow, listSimCardsRequest.minUsedFlow)
-            && Objects.equals(this.maxUsedFlow, listSimCardsRequest.maxUsedFlow)
-            && Objects.equals(this.minLeftFlow, listSimCardsRequest.minLeftFlow)
-            && Objects.equals(this.maxLeftFlow, listSimCardsRequest.maxLeftFlow)
-            && Objects.equals(this.realNamed, listSimCardsRequest.realNamed)
-            && Objects.equals(this.orderId, listSimCardsRequest.orderId)
-            && Objects.equals(this.filterDowntimePeriod, listSimCardsRequest.filterDowntimePeriod)
-            && Objects.equals(this.orderIds, listSimCardsRequest.orderIds)
-            && Objects.equals(this.pricePlanId, listSimCardsRequest.pricePlanId);
+        ListSimCardsRequest that = (ListSimCardsRequest) obj;
+        return Objects.equals(this.mainSearchType, that.mainSearchType)
+            && Objects.equals(this.mainSearchKey, that.mainSearchKey) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.simStatus, that.simStatus)
+            && Objects.equals(this.deviceStatus, that.deviceStatus) && Objects.equals(this.tagId, that.tagId)
+            && Objects.equals(this.simType, that.simType) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.msisdn, that.msisdn)
+            && Objects.equals(this.customerAttribute1, that.customerAttribute1)
+            && Objects.equals(this.customerAttribute2, that.customerAttribute2)
+            && Objects.equals(this.customerAttribute3, that.customerAttribute3)
+            && Objects.equals(this.customerAttribute4, that.customerAttribute4)
+            && Objects.equals(this.customerAttribute5, that.customerAttribute5)
+            && Objects.equals(this.customerAttribute6, that.customerAttribute6)
+            && Objects.equals(this.minUsedFlow, that.minUsedFlow) && Objects.equals(this.maxUsedFlow, that.maxUsedFlow)
+            && Objects.equals(this.minLeftFlow, that.minLeftFlow) && Objects.equals(this.maxLeftFlow, that.maxLeftFlow)
+            && Objects.equals(this.realNamed, that.realNamed) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.filterDowntimePeriod, that.filterDowntimePeriod)
+            && Objects.equals(this.orderIds, that.orderIds) && Objects.equals(this.pricePlanId, that.pricePlanId);
     }
 
     @Override

@@ -166,21 +166,18 @@ public class ShowAntitamperRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAntitamperRuleResponse showAntitamperRuleResponse = (ShowAntitamperRuleResponse) o;
-        return Objects.equals(this.id, showAntitamperRuleResponse.id)
-            && Objects.equals(this.policyid, showAntitamperRuleResponse.policyid)
-            && Objects.equals(this.hostname, showAntitamperRuleResponse.hostname)
-            && Objects.equals(this.url, showAntitamperRuleResponse.url)
-            && Objects.equals(this.description, showAntitamperRuleResponse.description)
-            && Objects.equals(this.status, showAntitamperRuleResponse.status)
-            && Objects.equals(this.timestamp, showAntitamperRuleResponse.timestamp);
+        ShowAntitamperRuleResponse that = (ShowAntitamperRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

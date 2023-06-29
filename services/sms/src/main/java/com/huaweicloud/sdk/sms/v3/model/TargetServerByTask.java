@@ -172,18 +172,17 @@ public class TargetServerByTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetServerByTask targetServerByTask = (TargetServerByTask) o;
-        return Objects.equals(this.btrfsList, targetServerByTask.btrfsList)
-            && Objects.equals(this.disks, targetServerByTask.disks)
-            && Objects.equals(this.name, targetServerByTask.name) && Objects.equals(this.vmId, targetServerByTask.vmId)
-            && Objects.equals(this.volumeGroups, targetServerByTask.volumeGroups);
+        TargetServerByTask that = (TargetServerByTask) obj;
+        return Objects.equals(this.btrfsList, that.btrfsList) && Objects.equals(this.disks, that.disks)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.vmId, that.vmId)
+            && Objects.equals(this.volumeGroups, that.volumeGroups);
     }
 
     @Override

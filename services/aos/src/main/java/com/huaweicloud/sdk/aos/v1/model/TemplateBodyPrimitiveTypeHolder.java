@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * TemplateBodyPrimitiveTypeHolder
  */
-public class TemplateBodyPrimitiveTypeHolder  {
-
+public class TemplateBodyPrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_body")
-    
+    @JsonProperty(value = "template_body")
 
     private String templateBody;
 
@@ -27,9 +19,6 @@ public class TemplateBodyPrimitiveTypeHolder  {
         this.templateBody = templateBody;
         return this;
     }
-
-    
-
 
     /**
      * HCL模板，描述了资源的目标状态。资源编排服务将比较此模板与当前远程资源的状态之间的区别。  template_body和template_uri 必须有且只有一个存在  *在CreateStack API中，template_body和template_uri可以都不给予*  **注意：**   * template_body中默认不应该含有任何敏感信息，资源编排服务会直接明文使用、log、展示、存储对应的template_body。如为敏感信息，建议将敏感信息通过vars_structure参数化，并设置encryption字段开启加密 
@@ -43,23 +32,23 @@ public class TemplateBodyPrimitiveTypeHolder  {
         this.templateBody = templateBody;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateBodyPrimitiveTypeHolder templateBodyPrimitiveTypeHolder = (TemplateBodyPrimitiveTypeHolder) o;
-        return Objects.equals(this.templateBody, templateBodyPrimitiveTypeHolder.templateBody);
+        TemplateBodyPrimitiveTypeHolder that = (TemplateBodyPrimitiveTypeHolder) obj;
+        return Objects.equals(this.templateBody, that.templateBody);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(templateBody);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class TemplateBodyPrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class TemplateBodyPrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

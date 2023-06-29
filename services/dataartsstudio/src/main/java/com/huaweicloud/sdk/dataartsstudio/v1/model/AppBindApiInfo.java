@@ -106,22 +106,15 @@ public class AppBindApiInfo {
             if (value == null) {
                 return null;
             }
-            RelationshipTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelationshipTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationshipTypeEnum(value));
         }
 
         public static RelationshipTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RelationshipTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -301,21 +294,20 @@ public class AppBindApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppBindApiInfo appBindApiInfo = (AppBindApiInfo) o;
-        return Objects.equals(this.id, appBindApiInfo.id) && Objects.equals(this.name, appBindApiInfo.name)
-            && Objects.equals(this.description, appBindApiInfo.description)
-            && Objects.equals(this.approvalTime, appBindApiInfo.approvalTime)
-            && Objects.equals(this.manager, appBindApiInfo.manager)
-            && Objects.equals(this.deadline, appBindApiInfo.deadline)
-            && Objects.equals(this.relationshipType, appBindApiInfo.relationshipType)
-            && Objects.equals(this.staticParams, appBindApiInfo.staticParams);
+        AppBindApiInfo that = (AppBindApiInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.approvalTime, that.approvalTime) && Objects.equals(this.manager, that.manager)
+            && Objects.equals(this.deadline, that.deadline)
+            && Objects.equals(this.relationshipType, that.relationshipType)
+            && Objects.equals(this.staticParams, that.staticParams);
     }
 
     @Override

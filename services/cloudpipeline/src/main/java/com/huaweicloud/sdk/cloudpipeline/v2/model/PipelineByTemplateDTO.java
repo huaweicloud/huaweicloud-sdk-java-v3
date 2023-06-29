@@ -118,18 +118,16 @@ public class PipelineByTemplateDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineByTemplateDTO pipelineByTemplateDTO = (PipelineByTemplateDTO) o;
-        return Objects.equals(this.name, pipelineByTemplateDTO.name)
-            && Objects.equals(this.description, pipelineByTemplateDTO.description)
-            && Objects.equals(this.isPublish, pipelineByTemplateDTO.isPublish)
-            && Objects.equals(this.sources, pipelineByTemplateDTO.sources);
+        PipelineByTemplateDTO that = (PipelineByTemplateDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.sources, that.sources);
     }
 
     @Override

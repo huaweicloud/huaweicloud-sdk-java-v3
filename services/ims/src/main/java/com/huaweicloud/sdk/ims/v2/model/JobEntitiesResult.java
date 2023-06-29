@@ -77,17 +77,16 @@ public class JobEntitiesResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobEntitiesResult jobEntitiesResult = (JobEntitiesResult) o;
-        return Objects.equals(this.imageId, jobEntitiesResult.imageId)
-            && Objects.equals(this.projectId, jobEntitiesResult.projectId)
-            && Objects.equals(this.status, jobEntitiesResult.status);
+        JobEntitiesResult that = (JobEntitiesResult) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

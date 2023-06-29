@@ -55,16 +55,15 @@ public class NodeLifecycleConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeLifecycleConfig nodeLifecycleConfig = (NodeLifecycleConfig) o;
-        return Objects.equals(this.preInstall, nodeLifecycleConfig.preInstall)
-            && Objects.equals(this.postInstall, nodeLifecycleConfig.postInstall);
+        NodeLifecycleConfig that = (NodeLifecycleConfig) obj;
+        return Objects.equals(this.preInstall, that.preInstall) && Objects.equals(this.postInstall, that.postInstall);
     }
 
     @Override

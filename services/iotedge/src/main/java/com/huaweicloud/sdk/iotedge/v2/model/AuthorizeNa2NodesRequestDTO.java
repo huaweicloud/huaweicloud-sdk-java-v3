@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * AuthorizeNa2NodesRequestDTO
  */
-public class AuthorizeNa2NodesRequestDTO  {
-
+public class AuthorizeNa2NodesRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_ids")
-    
+    @JsonProperty(value = "node_ids")
 
     private Object nodeIds;
 
@@ -27,9 +19,6 @@ public class AuthorizeNa2NodesRequestDTO  {
         this.nodeIds = nodeIds;
         return this;
     }
-
-    
-
 
     /**
      * 授权北向NA信息到边缘节点的请求结构体
@@ -43,23 +32,23 @@ public class AuthorizeNa2NodesRequestDTO  {
         this.nodeIds = nodeIds;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizeNa2NodesRequestDTO authorizeNa2NodesRequestDTO = (AuthorizeNa2NodesRequestDTO) o;
-        return Objects.equals(this.nodeIds, authorizeNa2NodesRequestDTO.nodeIds);
+        AuthorizeNa2NodesRequestDTO that = (AuthorizeNa2NodesRequestDTO) obj;
+        return Objects.equals(this.nodeIds, that.nodeIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class AuthorizeNa2NodesRequestDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class AuthorizeNa2NodesRequestDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

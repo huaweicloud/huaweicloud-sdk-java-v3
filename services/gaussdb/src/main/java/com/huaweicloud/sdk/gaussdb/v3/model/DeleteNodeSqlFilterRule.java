@@ -1,42 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SQL限流规则。
  */
-public class DeleteNodeSqlFilterRule  {
-
+public class DeleteNodeSqlFilterRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql_type")
-    
+    @JsonProperty(value = "sql_type")
 
     private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="patterns")
-    
+    @JsonProperty(value = "patterns")
+
     private List<String> patterns = null;
-    
+
     public DeleteNodeSqlFilterRule withSqlType(String sqlType) {
         this.sqlType = sqlType;
         return this;
     }
-
-    
-
 
     /**
      * Sql限流类型。  取值范围： - SELECT - UPDATE - DELETE
@@ -50,16 +40,13 @@ public class DeleteNodeSqlFilterRule  {
         this.sqlType = sqlType;
     }
 
-    
-
     public DeleteNodeSqlFilterRule withPatterns(List<String> patterns) {
         this.patterns = patterns;
         return this;
     }
 
-    
     public DeleteNodeSqlFilterRule addPatternsItem(String patternsItem) {
-        if(this.patterns == null) {
+        if (this.patterns == null) {
             this.patterns = new ArrayList<>();
         }
         this.patterns.add(patternsItem);
@@ -67,7 +54,7 @@ public class DeleteNodeSqlFilterRule  {
     }
 
     public DeleteNodeSqlFilterRule withPatterns(Consumer<List<String>> patternsSetter) {
-        if(this.patterns == null) {
+        if (this.patterns == null) {
             this.patterns = new ArrayList<>();
         }
         patternsSetter.accept(this.patterns);
@@ -86,24 +73,23 @@ public class DeleteNodeSqlFilterRule  {
         this.patterns = patterns;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNodeSqlFilterRule deleteNodeSqlFilterRule = (DeleteNodeSqlFilterRule) o;
-        return Objects.equals(this.sqlType, deleteNodeSqlFilterRule.sqlType) &&
-            Objects.equals(this.patterns, deleteNodeSqlFilterRule.patterns);
+        DeleteNodeSqlFilterRule that = (DeleteNodeSqlFilterRule) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.patterns, that.patterns);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sqlType, patterns);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class DeleteNodeSqlFilterRule  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class DeleteNodeSqlFilterRule  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

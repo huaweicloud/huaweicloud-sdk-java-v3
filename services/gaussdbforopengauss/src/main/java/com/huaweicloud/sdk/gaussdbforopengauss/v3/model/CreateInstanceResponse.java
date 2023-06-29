@@ -1,41 +1,29 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussInstanceResponse;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CreateInstanceResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
 
     private OpenGaussInstanceResponse instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
 
     private String orderId;
 
@@ -45,14 +33,13 @@ public class CreateInstanceResponse extends SdkResponse {
     }
 
     public CreateInstanceResponse withInstance(Consumer<OpenGaussInstanceResponse> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new OpenGaussInstanceResponse();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get instance
@@ -66,15 +53,10 @@ public class CreateInstanceResponse extends SdkResponse {
         this.instance = instance;
     }
 
-    
-
     public CreateInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 实例创建的任务id。  仅创建按需实例时会返回该参数。
@@ -88,15 +70,10 @@ public class CreateInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     public CreateInstanceResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 创建实例的订单ID。  仅创建包周期实例时会返回该参数。
@@ -110,25 +87,24 @@ public class CreateInstanceResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceResponse createInstanceResponse = (CreateInstanceResponse) o;
-        return Objects.equals(this.instance, createInstanceResponse.instance) &&
-            Objects.equals(this.jobId, createInstanceResponse.jobId) &&
-            Objects.equals(this.orderId, createInstanceResponse.orderId);
+        CreateInstanceResponse that = (CreateInstanceResponse) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.orderId, that.orderId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instance, jobId, orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,6 +115,7 @@ public class CreateInstanceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -149,8 +126,5 @@ public class CreateInstanceResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

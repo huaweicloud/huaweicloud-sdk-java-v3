@@ -320,24 +320,21 @@ public class OpenEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenEntity openEntity = (OpenEntity) o;
-        return Objects.equals(this.attributes, openEntity.attributes)
-            && Objects.equals(this.connection, openEntity.connection)
-            && Objects.equals(this.createTime, openEntity.createTime)
-            && Objects.equals(this.createdBy, openEntity.createdBy)
-            && Objects.equals(this.displayText, openEntity.displayText) && Objects.equals(this.guid, openEntity.guid)
-            && Objects.equals(this.relationshipAttributes, openEntity.relationshipAttributes)
-            && Objects.equals(this.typeName, openEntity.typeName)
-            && Objects.equals(this.updatedBy, openEntity.updatedBy)
-            && Objects.equals(this.updateTime, openEntity.updateTime) && Objects.equals(this.tags, openEntity.tags)
-            && Objects.equals(this.classificationNames, openEntity.classificationNames);
+        OpenEntity that = (OpenEntity) obj;
+        return Objects.equals(this.attributes, that.attributes) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.displayText, that.displayText) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.relationshipAttributes, that.relationshipAttributes)
+            && Objects.equals(this.typeName, that.typeName) && Objects.equals(this.updatedBy, that.updatedBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.classificationNames, that.classificationNames);
     }
 
     @Override

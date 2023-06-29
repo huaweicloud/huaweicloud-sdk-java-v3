@@ -83,17 +83,17 @@ public class ShowAudienceCountInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAudienceCountInfo showAudienceCountInfo = (ShowAudienceCountInfo) o;
-        return Objects.equals(this.showAudienceMode, showAudienceCountInfo.showAudienceMode)
-            && Objects.equals(this.baseAudienceCount, showAudienceCountInfo.baseAudienceCount)
-            && Objects.equals(this.multiple, showAudienceCountInfo.multiple);
+        ShowAudienceCountInfo that = (ShowAudienceCountInfo) obj;
+        return Objects.equals(this.showAudienceMode, that.showAudienceMode)
+            && Objects.equals(this.baseAudienceCount, that.baseAudienceCount)
+            && Objects.equals(this.multiple, that.multiple);
     }
 
     @Override

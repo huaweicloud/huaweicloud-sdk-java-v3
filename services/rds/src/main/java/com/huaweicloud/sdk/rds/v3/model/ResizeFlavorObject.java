@@ -55,16 +55,15 @@ public class ResizeFlavorObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeFlavorObject resizeFlavorObject = (ResizeFlavorObject) o;
-        return Objects.equals(this.specCode, resizeFlavorObject.specCode)
-            && Objects.equals(this.isAutoPay, resizeFlavorObject.isAutoPay);
+        ResizeFlavorObject that = (ResizeFlavorObject) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

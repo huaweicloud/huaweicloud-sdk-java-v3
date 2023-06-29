@@ -131,22 +131,15 @@ public class LoadbalancerResp {
             if (value == null) {
                 return null;
             }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperatingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperatingStatusEnum(value));
         }
 
         public static OperatingStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,22 +212,15 @@ public class LoadbalancerResp {
             if (value == null) {
                 return null;
             }
-            ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProvisioningStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProvisioningStatusEnum(value));
         }
 
         public static ProvisioningStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -641,31 +627,25 @@ public class LoadbalancerResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadbalancerResp loadbalancerResp = (LoadbalancerResp) o;
-        return Objects.equals(this.id, loadbalancerResp.id) && Objects.equals(this.tenantId, loadbalancerResp.tenantId)
-            && Objects.equals(this.name, loadbalancerResp.name)
-            && Objects.equals(this.description, loadbalancerResp.description)
-            && Objects.equals(this.vipSubnetId, loadbalancerResp.vipSubnetId)
-            && Objects.equals(this.vipPortId, loadbalancerResp.vipPortId)
-            && Objects.equals(this.vipAddress, loadbalancerResp.vipAddress)
-            && Objects.equals(this.listeners, loadbalancerResp.listeners)
-            && Objects.equals(this.pools, loadbalancerResp.pools)
-            && Objects.equals(this.provider, loadbalancerResp.provider)
-            && Objects.equals(this.operatingStatus, loadbalancerResp.operatingStatus)
-            && Objects.equals(this.provisioningStatus, loadbalancerResp.provisioningStatus)
-            && Objects.equals(this.adminStateUp, loadbalancerResp.adminStateUp)
-            && Objects.equals(this.createdAt, loadbalancerResp.createdAt)
-            && Objects.equals(this.updatedAt, loadbalancerResp.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, loadbalancerResp.enterpriseProjectId)
-            && Objects.equals(this.projectId, loadbalancerResp.projectId)
-            && Objects.equals(this.tags, loadbalancerResp.tags);
+        LoadbalancerResp that = (LoadbalancerResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vipSubnetId, that.vipSubnetId) && Objects.equals(this.vipPortId, that.vipPortId)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.pools, that.pools) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

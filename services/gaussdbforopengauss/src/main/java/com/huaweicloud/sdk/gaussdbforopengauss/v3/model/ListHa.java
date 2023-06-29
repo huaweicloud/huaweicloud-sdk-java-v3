@@ -1,41 +1,34 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 获取分布式/主备版实例时返回。
  */
-public class ListHa  {
+public class ListHa {
 
     /**
      * 数据库一致性类型，分布式模式实例仅有。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
      */
     public static final class ConsistencyEnum {
 
-        
         /**
          * Enum STRONG for value: "strong"
          */
         public static final ConsistencyEnum STRONG = new ConsistencyEnum("strong");
-        
+
         /**
          * Enum EVENTUAL for value: "eventual"
          */
         public static final ConsistencyEnum EVENTUAL = new ConsistencyEnum("eventual");
-        
 
         private static final Map<String, ConsistencyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,25 +57,18 @@ public class ListHa  {
 
         @JsonCreator
         public static ConsistencyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ConsistencyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistencyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyEnum(value));
         }
 
         public static ConsistencyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ConsistencyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -100,14 +86,12 @@ public class ListHa  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="consistency")
-    
+    @JsonProperty(value = "consistency")
 
     private ConsistencyEnum consistency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication_mode")
-    
+    @JsonProperty(value = "replication_mode")
 
     private String replicationMode;
 
@@ -115,9 +99,6 @@ public class ListHa  {
         this.consistency = consistency;
         return this;
     }
-
-    
-
 
     /**
      * 数据库一致性类型，分布式模式实例仅有。取值为“strong”、“eventual”，分别表示强一致性、最终一致性。
@@ -131,15 +112,10 @@ public class ListHa  {
         this.consistency = consistency;
     }
 
-    
-
     public ListHa withReplicationMode(String replicationMode) {
         this.replicationMode = replicationMode;
         return this;
     }
-
-    
-
 
     /**
      * 备机同步参数。  取值：非空。  GaussDB为 “sync” 说明： “sync”为同步模式。
@@ -153,24 +129,24 @@ public class ListHa  {
         this.replicationMode = replicationMode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHa listHa = (ListHa) o;
-        return Objects.equals(this.consistency, listHa.consistency) &&
-            Objects.equals(this.replicationMode, listHa.replicationMode);
+        ListHa that = (ListHa) obj;
+        return Objects.equals(this.consistency, that.consistency)
+            && Objects.equals(this.replicationMode, that.replicationMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(consistency, replicationMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,6 +156,7 @@ public class ListHa  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -190,8 +167,5 @@ public class ListHa  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,58 +11,48 @@ import java.util.Objects;
  */
 public class ShowClusterResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os")
-    
+    @JsonProperty(value = "os")
 
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -78,9 +60,6 @@ public class ShowClusterResponse extends SdkResponse {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID
@@ -94,15 +73,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.clusterId = clusterId;
     }
 
-    
-
     public ShowClusterResponse withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
-
-    
-
 
     /**
      * 集群名称
@@ -116,15 +90,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.clusterName = clusterName;
     }
 
-    
-
     public ShowClusterResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 集群描述
@@ -138,15 +107,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowClusterResponse withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群版本
@@ -160,15 +124,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public ShowClusterResponse withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群状态
@@ -182,15 +141,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowClusterResponse withOs(String os) {
         this.os = os;
         return this;
     }
-
-    
-
 
     /**
      * 操作系统
@@ -204,15 +158,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.os = os;
     }
 
-    
-
     public ShowClusterResponse withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 集群架构
@@ -226,15 +175,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.arch = arch;
     }
 
-    
-
     public ShowClusterResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -248,15 +192,10 @@ public class ShowClusterResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowClusterResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -270,31 +209,27 @@ public class ShowClusterResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterResponse showClusterResponse = (ShowClusterResponse) o;
-        return Objects.equals(this.clusterId, showClusterResponse.clusterId) &&
-            Objects.equals(this.clusterName, showClusterResponse.clusterName) &&
-            Objects.equals(this.description, showClusterResponse.description) &&
-            Objects.equals(this.version, showClusterResponse.version) &&
-            Objects.equals(this.state, showClusterResponse.state) &&
-            Objects.equals(this.os, showClusterResponse.os) &&
-            Objects.equals(this.arch, showClusterResponse.arch) &&
-            Objects.equals(this.createTime, showClusterResponse.createTime) &&
-            Objects.equals(this.updateTime, showClusterResponse.updateTime);
+        ShowClusterResponse that = (ShowClusterResponse) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.os, that.os)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, clusterName, description, version, state, os, arch, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -311,6 +246,7 @@ public class ShowClusterResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -321,8 +257,5 @@ public class ShowClusterResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

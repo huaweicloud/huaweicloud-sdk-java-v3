@@ -162,17 +162,17 @@ public class FrontLine {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FrontLine frontLine = (FrontLine) o;
-        return Objects.equals(this.pointList, frontLine.pointList) && Objects.equals(this.title, frontLine.title)
-            && Objects.equals(this.unit, frontLine.unit) && Objects.equals(this.precision, frontLine.precision)
-            && Objects.equals(this.dataType, frontLine.dataType) && Objects.equals(this.visible, frontLine.visible);
+        FrontLine that = (FrontLine) obj;
+        return Objects.equals(this.pointList, that.pointList) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.precision, that.precision)
+            && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.visible, that.visible);
     }
 
     @Override

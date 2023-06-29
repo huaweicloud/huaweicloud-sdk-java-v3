@@ -71,22 +71,15 @@ public class ListRuleAclsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,22 +158,15 @@ public class ListRuleAclsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -262,22 +248,15 @@ public class ListRuleAclsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -344,22 +323,15 @@ public class ListRuleAclsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            ActionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionTypeEnum(value));
         }
 
         public static ActionTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ActionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -432,22 +404,15 @@ public class ListRuleAclsUsingGetRequest {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
         }
 
         public static AddressTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -711,27 +676,22 @@ public class ListRuleAclsUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRuleAclsUsingGetRequest listRuleAclsUsingGetRequest = (ListRuleAclsUsingGetRequest) o;
-        return Objects.equals(this.objectId, listRuleAclsUsingGetRequest.objectId)
-            && Objects.equals(this.type, listRuleAclsUsingGetRequest.type)
-            && Objects.equals(this.protocol, listRuleAclsUsingGetRequest.protocol)
-            && Objects.equals(this.ip, listRuleAclsUsingGetRequest.ip)
-            && Objects.equals(this.name, listRuleAclsUsingGetRequest.name)
-            && Objects.equals(this.direction, listRuleAclsUsingGetRequest.direction)
-            && Objects.equals(this.status, listRuleAclsUsingGetRequest.status)
-            && Objects.equals(this.actionType, listRuleAclsUsingGetRequest.actionType)
-            && Objects.equals(this.addressType, listRuleAclsUsingGetRequest.addressType)
-            && Objects.equals(this.limit, listRuleAclsUsingGetRequest.limit)
-            && Objects.equals(this.offset, listRuleAclsUsingGetRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listRuleAclsUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listRuleAclsUsingGetRequest.fwInstanceId);
+        ListRuleAclsUsingGetRequest that = (ListRuleAclsUsingGetRequest) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.addressType, that.addressType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEndpointRequest deleteEndpointRequest = (DeleteEndpointRequest) o;
-        return Objects.equals(this.vpcEndpointId, deleteEndpointRequest.vpcEndpointId);
+        DeleteEndpointRequest that = (DeleteEndpointRequest) obj;
+        return Objects.equals(this.vpcEndpointId, that.vpcEndpointId);
     }
 
     @Override

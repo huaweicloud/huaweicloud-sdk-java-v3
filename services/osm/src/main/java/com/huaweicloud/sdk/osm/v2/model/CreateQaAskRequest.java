@@ -115,18 +115,16 @@ public class CreateQaAskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQaAskRequest createQaAskRequest = (CreateQaAskRequest) o;
-        return Objects.equals(this.xServiceKey, createQaAskRequest.xServiceKey)
-            && Objects.equals(this.xSite, createQaAskRequest.xSite)
-            && Objects.equals(this.xLanguage, createQaAskRequest.xLanguage)
-            && Objects.equals(this.body, createQaAskRequest.body);
+        CreateQaAskRequest that = (CreateQaAskRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

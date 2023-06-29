@@ -162,20 +162,17 @@ public class JudgementResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JudgementResult judgementResult = (JudgementResult) o;
-        return Objects.equals(this.output, judgementResult.output)
-            && Objects.equals(this.fileId, judgementResult.fileId)
-            && Objects.equals(this.imageId, judgementResult.imageId)
-            && Objects.equals(this.caseCount, judgementResult.caseCount)
-            && Objects.equals(this.executedCount, judgementResult.executedCount)
-            && Objects.equals(this.testcases, judgementResult.testcases);
+        JudgementResult that = (JudgementResult) obj;
+        return Objects.equals(this.output, that.output) && Objects.equals(this.fileId, that.fileId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.caseCount, that.caseCount)
+            && Objects.equals(this.executedCount, that.executedCount) && Objects.equals(this.testcases, that.testcases);
     }
 
     @Override

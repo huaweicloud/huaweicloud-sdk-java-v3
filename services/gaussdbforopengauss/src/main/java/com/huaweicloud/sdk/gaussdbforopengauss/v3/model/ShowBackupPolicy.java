@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 备份策略信息。
  */
-public class ShowBackupPolicy  {
-
+public class ShowBackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_days")
-    
+    @JsonProperty(value = "keep_days")
 
     private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="differential_priod")
-    
+    @JsonProperty(value = "differential_priod")
 
     private String differentialPriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="differential_period")
-    
+    @JsonProperty(value = "differential_period")
 
     private String differentialPeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rate_limit")
-    
+    @JsonProperty(value = "rate_limit")
 
     private Integer rateLimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="prefetch_block")
-    
+    @JsonProperty(value = "prefetch_block")
 
     private Integer prefetchBlock;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filesplit_size")
-    
+    @JsonProperty(value = "filesplit_size")
 
     private Integer filesplitSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_split_size")
-    
+    @JsonProperty(value = "file_split_size")
 
     private Integer fileSplitSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_standby_backup")
-    
+    @JsonProperty(value = "enable_standby_backup")
 
     private Boolean enableStandbyBackup;
 
@@ -81,9 +64,6 @@ public class ShowBackupPolicy  {
         this.keepDays = keepDays;
         return this;
     }
-
-    
-
 
     /**
      * 全量备份文件可以保存的天数。
@@ -99,15 +79,10 @@ public class ShowBackupPolicy  {
         this.keepDays = keepDays;
     }
 
-    
-
     public ShowBackupPolicy withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 全量备份时间段。自动备份将在该时间段内触发。除关闭自动备份策略外，必选。  取值范围：格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。  - HH取值必须比hh大1。 - mm和MM取值必须相同，且取值必须为00。
@@ -121,15 +96,10 @@ public class ShowBackupPolicy  {
         this.startTime = startTime;
     }
 
-    
-
     public ShowBackupPolicy withPeriod(String period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 全量备份周期配置。自动备份将在每星期指定的天进行。  取值范围：格式为逗号隔开的数字，数字代表星期。
@@ -143,15 +113,10 @@ public class ShowBackupPolicy  {
         this.period = period;
     }
 
-    
-
     public ShowBackupPolicy withDifferentialPriod(String differentialPriod) {
         this.differentialPriod = differentialPriod;
         return this;
     }
-
-    
-
 
     /**
      * 差量备份周期配置。自动差量备份将每隔周期分钟执行(废弃)。
@@ -165,15 +130,10 @@ public class ShowBackupPolicy  {
         this.differentialPriod = differentialPriod;
     }
 
-    
-
     public ShowBackupPolicy withDifferentialPeriod(String differentialPeriod) {
         this.differentialPeriod = differentialPeriod;
         return this;
     }
-
-    
-
 
     /**
      * 差量备份周期配置。自动差量备份将每隔周期分钟执行。
@@ -187,15 +147,10 @@ public class ShowBackupPolicy  {
         this.differentialPeriod = differentialPeriod;
     }
 
-    
-
     public ShowBackupPolicy withRateLimit(Integer rateLimit) {
         this.rateLimit = rateLimit;
         return this;
     }
-
-    
-
 
     /**
      * 备份时备份数据上传OBS的速度，单位为MB/s。范围为0~1024MB/s，默认75MB/s，0MB/s表示不限速。
@@ -209,15 +164,10 @@ public class ShowBackupPolicy  {
         this.rateLimit = rateLimit;
     }
 
-    
-
     public ShowBackupPolicy withPrefetchBlock(Integer prefetchBlock) {
         this.prefetchBlock = prefetchBlock;
         return this;
     }
-
-    
-
 
     /**
      * 控制差量备份时读取磁盘上表文件差量修改页面的预取页面个数，可设置范围为1~8192，默认64。
@@ -231,15 +181,10 @@ public class ShowBackupPolicy  {
         this.prefetchBlock = prefetchBlock;
     }
 
-    
-
     public ShowBackupPolicy withFilesplitSize(Integer filesplitSize) {
         this.filesplitSize = filesplitSize;
         return this;
     }
-
-    
-
 
     /**
      * 废弃。
@@ -255,15 +200,10 @@ public class ShowBackupPolicy  {
         this.filesplitSize = filesplitSize;
     }
 
-    
-
     public ShowBackupPolicy withFileSplitSize(Integer fileSplitSize) {
         this.fileSplitSize = fileSplitSize;
         return this;
     }
-
-    
-
 
     /**
      * 全量、差量备份时产生的备份文件会根据分片大小进行拆分，可设置范围为0~1024GB，设置需为4的倍数，默认4GB，0GB表示不限制大小。  取值范围：0 ~ 1024
@@ -279,15 +219,10 @@ public class ShowBackupPolicy  {
         this.fileSplitSize = fileSplitSize;
     }
 
-    
-
     public ShowBackupPolicy withEnableStandbyBackup(Boolean enableStandbyBackup) {
         this.enableStandbyBackup = enableStandbyBackup;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用备机备份。  取值范围：true|false
@@ -301,32 +236,39 @@ public class ShowBackupPolicy  {
         this.enableStandbyBackup = enableStandbyBackup;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupPolicy showBackupPolicy = (ShowBackupPolicy) o;
-        return Objects.equals(this.keepDays, showBackupPolicy.keepDays) &&
-            Objects.equals(this.startTime, showBackupPolicy.startTime) &&
-            Objects.equals(this.period, showBackupPolicy.period) &&
-            Objects.equals(this.differentialPriod, showBackupPolicy.differentialPriod) &&
-            Objects.equals(this.differentialPeriod, showBackupPolicy.differentialPeriod) &&
-            Objects.equals(this.rateLimit, showBackupPolicy.rateLimit) &&
-            Objects.equals(this.prefetchBlock, showBackupPolicy.prefetchBlock) &&
-            Objects.equals(this.filesplitSize, showBackupPolicy.filesplitSize) &&
-            Objects.equals(this.fileSplitSize, showBackupPolicy.fileSplitSize) &&
-            Objects.equals(this.enableStandbyBackup, showBackupPolicy.enableStandbyBackup);
+        ShowBackupPolicy that = (ShowBackupPolicy) obj;
+        return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.period, that.period)
+            && Objects.equals(this.differentialPriod, that.differentialPriod)
+            && Objects.equals(this.differentialPeriod, that.differentialPeriod)
+            && Objects.equals(this.rateLimit, that.rateLimit) && Objects.equals(this.prefetchBlock, that.prefetchBlock)
+            && Objects.equals(this.filesplitSize, that.filesplitSize)
+            && Objects.equals(this.fileSplitSize, that.fileSplitSize)
+            && Objects.equals(this.enableStandbyBackup, that.enableStandbyBackup);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(keepDays, startTime, period, differentialPriod, differentialPeriod, rateLimit, prefetchBlock, filesplitSize, fileSplitSize, enableStandbyBackup);
+        return Objects.hash(keepDays,
+            startTime,
+            period,
+            differentialPriod,
+            differentialPeriod,
+            rateLimit,
+            prefetchBlock,
+            filesplitSize,
+            fileSplitSize,
+            enableStandbyBackup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -344,6 +286,7 @@ public class ShowBackupPolicy  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -354,8 +297,5 @@ public class ShowBackupPolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

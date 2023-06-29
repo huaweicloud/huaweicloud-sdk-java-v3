@@ -224,18 +224,18 @@ public class Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rule rule = (Rule) o;
-        return Objects.equals(this.name, rule.name) && Objects.equals(this.description, rule.description)
-            && Objects.equals(this.conditionGroup, rule.conditionGroup) && Objects.equals(this.actions, rule.actions)
-            && Objects.equals(this.ruleType, rule.ruleType) && Objects.equals(this.status, rule.status)
-            && Objects.equals(this.appId, rule.appId) && Objects.equals(this.deviceSide, rule.deviceSide);
+        Rule that = (Rule) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.conditionGroup, that.conditionGroup) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.ruleType, that.ruleType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.deviceSide, that.deviceSide);
     }
 
     @Override

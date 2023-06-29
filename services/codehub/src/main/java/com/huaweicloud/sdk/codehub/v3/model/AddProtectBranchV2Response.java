@@ -97,17 +97,16 @@ public class AddProtectBranchV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProtectBranchV2Response addProtectBranchV2Response = (AddProtectBranchV2Response) o;
-        return Objects.equals(this.error, addProtectBranchV2Response.error)
-            && Objects.equals(this.result, addProtectBranchV2Response.result)
-            && Objects.equals(this.status, addProtectBranchV2Response.status);
+        AddProtectBranchV2Response that = (AddProtectBranchV2Response) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

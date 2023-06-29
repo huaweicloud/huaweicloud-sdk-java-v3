@@ -34,15 +34,15 @@ public class CreateRetentionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRetentionResponse createRetentionResponse = (CreateRetentionResponse) o;
-        return Objects.equals(this.id, createRetentionResponse.id);
+        CreateRetentionResponse that = (CreateRetentionResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

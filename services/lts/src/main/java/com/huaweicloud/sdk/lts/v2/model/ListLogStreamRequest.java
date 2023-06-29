@@ -55,16 +55,15 @@ public class ListLogStreamRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogStreamRequest listLogStreamRequest = (ListLogStreamRequest) o;
-        return Objects.equals(this.logGroupId, listLogStreamRequest.logGroupId)
-            && Objects.equals(this.tag, listLogStreamRequest.tag);
+        ListLogStreamRequest that = (ListLogStreamRequest) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

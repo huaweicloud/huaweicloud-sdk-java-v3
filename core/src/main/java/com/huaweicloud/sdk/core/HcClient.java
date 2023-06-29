@@ -157,12 +157,12 @@ public class HcClient implements CustomizationConfigure {
         return client;
     }
 
-    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef)
+    public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef)
             throws ServiceResponseException {
         return syncInvokeHttp(request, reqDef, new SdkExchange());
     }
 
-    public <ReqT, ResT> ResT syncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef, SdkExchange exchange)
+    public <R, S> S syncInvokeHttp(R request, HttpRequestDef<R, S> reqDef, SdkExchange exchange)
             throws ServiceResponseException {
 
         if (Objects.isNull(exchange)) {
@@ -206,12 +206,12 @@ public class HcClient implements CustomizationConfigure {
         }
     }
 
-    public <ReqT, ResT> CompletableFuture<ResT> asyncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
+    public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef) {
         return asyncInvokeHttp(request, reqDef, new SdkExchange());
     }
 
-    public <ReqT, ResT> CompletableFuture<ResT> asyncInvokeHttp(ReqT request, HttpRequestDef<ReqT, ResT> reqDef,
-                                                                SdkExchange exchange) {
+    public <R, S> CompletableFuture<S> asyncInvokeHttp(R request, HttpRequestDef<R, S> reqDef,
+                                                       SdkExchange exchange) {
 
         if (Objects.isNull(exchange)) {
             return CompletableFuture.supplyAsync(() -> {
@@ -227,7 +227,7 @@ public class HcClient implements CustomizationConfigure {
         try {
             httpRequest = buildRequest(request, reqDef);
         } catch (SdkException e) {
-            CompletableFuture<ResT> future = new CompletableFuture<>();
+            CompletableFuture<S> future = new CompletableFuture<>();
             future.completeExceptionally(e);
             return future;
         }
@@ -254,7 +254,7 @@ public class HcClient implements CustomizationConfigure {
         }, httpConfig.getExecutorService());
     }
 
-    protected <ReqT, ResT> HttpRequest buildRequest(ReqT request, HttpRequestDef<ReqT, ResT> reqDef) {
+    protected <R, S> HttpRequest buildRequest(R request, HttpRequestDef<R, S> reqDef) {
         String endpoint = this.endpoints.get(endpointIndex.intValue());
         HttpRequest.HttpRequestBuilder httpRequestBuilder = HttpRequest.newBuilder();
         httpRequestBuilder.withMethod(reqDef.getMethod())
@@ -262,7 +262,7 @@ public class HcClient implements CustomizationConfigure {
                 .withEndpoint(endpoint)
                 .withPath(reqDef.getUri());
 
-        for (Field<ReqT, ?> field : reqDef.getRequestFields()) {
+        for (Field<R, ?> field : reqDef.getRequestFields()) {
             Optional<?> reqValueOption;
             if (httpConfig.isIgnoreRequiredValidation()) {
                 reqValueOption = field.readValueNoValidation(request);
@@ -402,10 +402,10 @@ public class HcClient implements CustomizationConfigure {
         }
     }
 
-    private <T> T processTextBasedType(HttpResponse httpResponse, HttpRequestDef<?, T> reqDef)
+    private <S> S processTextBasedType(HttpResponse httpResponse, HttpRequestDef<?, S> reqDef)
             throws InstantiationException, IllegalAccessException {
 
-        T response;
+        S response;
         String stringResult = httpResponse.getBodyAsString();
         int statusCode = httpResponse.getStatusCode();
         if (SdkSerializable.class.isAssignableFrom(reqDef.getResponseType())) {
@@ -419,7 +419,7 @@ public class HcClient implements CustomizationConfigure {
             }
 
             if (reqDef.hasResponseField(String.valueOf(statusCode))) {
-                Field<T, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
+                Field<S, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
                 resTField.writeValueSafe(response,
                         JsonUtils.toObjectIgnoreUnknown(stringResult, resTField.getFieldType()),
                         resTField.getFieldType());
@@ -428,12 +428,12 @@ public class HcClient implements CustomizationConfigure {
         } else {
             // process response with body[object, map, list, string...]
             response = reqDef.getResponseType().newInstance();
-            Field<T, ?> responseField = reqDef.getResponseField(Constants.BODY);
+            Field<S, ?> responseField = reqDef.getResponseField(Constants.BODY);
             Object obj = responseToObject(stringResult, responseField);
             responseField.writeValueSafe(response, obj, responseField.getFieldType());
 
             if (reqDef.hasResponseField(String.valueOf(statusCode))) {
-                Field<T, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
+                Field<S, ?> resTField = reqDef.getResponseField(String.valueOf(statusCode));
                 resTField.writeValueSafe(response, obj, resTField.getFieldType());
             }
         }
@@ -441,10 +441,10 @@ public class HcClient implements CustomizationConfigure {
         return response;
     }
 
-    private <T> T processStreamType(HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<?, T> reqDef)
+    private <S> S processStreamType(HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<?, S> reqDef)
             throws InstantiationException, IllegalAccessException {
 
-        T response = reqDef.getResponseType().newInstance();
+        S response = reqDef.getResponseType().newInstance();
         if (response instanceof SdkStreamResponse) {
             if (Objects.nonNull(httpRequest.getProgressListener())) {
                 SimpleProgressManager progressManager = new SimpleProgressManager(
@@ -464,11 +464,11 @@ public class HcClient implements CustomizationConfigure {
         return response;
     }
 
-    private <ReqT, ResT> ResT extractResponse(
-            HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<ReqT, ResT> reqDef) {
+    private <R, S> S extractResponse(
+            HttpRequest httpRequest, HttpResponse httpResponse, HttpRequestDef<R, S> reqDef) {
 
         try {
-            ResT finalResT = HttpUtils.isTextBasedContentType(httpResponse.getContentType()) ?
+            S finalResT = HttpUtils.isTextBasedContentType(httpResponse.getContentType()) ?
                     processTextBasedType(httpResponse, reqDef) : processStreamType(httpRequest, httpResponse, reqDef);
 
             reqDef.getResponseFields().forEach(resTField -> {
@@ -492,13 +492,13 @@ public class HcClient implements CustomizationConfigure {
     }
 
     @SuppressWarnings("unchecked")
-    private <ResT> ResT deserializeSerializableResponse(Class<ResT> clazz, String string)
+    private <S> S deserializeSerializableResponse(Class<S> clazz, String string)
             throws InstantiationException, IllegalAccessException {
-        ResT instance = clazz.newInstance();
-        return ((SdkSerializable<ResT>) instance).deserialize(string);
+        S instance = clazz.newInstance();
+        return ((SdkSerializable<S>) instance).deserialize(string);
     }
 
-    public <ResT> Object responseToObject(String respBody, Field<ResT, ?> responseField) {
+    public <S> Object responseToObject(String respBody, Field<S, ?> responseField) {
         Object obj;
         if (responseField.getFieldType().isAssignableFrom(List.class)) {
             obj = JsonUtils.toListObject(respBody, responseField.getInnerContainerType());
@@ -510,7 +510,7 @@ public class HcClient implements CustomizationConfigure {
         return obj;
     }
 
-    private <ResT> void fillHeaderField(HttpResponse httpResponse, ResT wrapperResponse, Field<ResT, ?> field) {
+    private <S> void fillHeaderField(HttpResponse httpResponse, S wrapperResponse, Field<S, ?> field) {
         List<String> infos = httpResponse.getHeaders().get(field.getName());
         if (Objects.nonNull(infos) && infos.size() > 0) {
             if (field.getFieldType().isAssignableFrom(List.class)) {

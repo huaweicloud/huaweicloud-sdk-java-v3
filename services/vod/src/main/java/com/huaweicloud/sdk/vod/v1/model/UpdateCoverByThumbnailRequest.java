@@ -67,16 +67,15 @@ public class UpdateCoverByThumbnailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCoverByThumbnailRequest updateCoverByThumbnailRequest = (UpdateCoverByThumbnailRequest) o;
-        return Objects.equals(this.xSdkDate, updateCoverByThumbnailRequest.xSdkDate)
-            && Objects.equals(this.body, updateCoverByThumbnailRequest.body);
+        UpdateCoverByThumbnailRequest that = (UpdateCoverByThumbnailRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.body, that.body);
     }
 
     @Override

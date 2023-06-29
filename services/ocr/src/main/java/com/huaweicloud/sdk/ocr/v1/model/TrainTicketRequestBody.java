@@ -77,17 +77,16 @@ public class TrainTicketRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrainTicketRequestBody trainTicketRequestBody = (TrainTicketRequestBody) o;
-        return Objects.equals(this.image, trainTicketRequestBody.image)
-            && Objects.equals(this.url, trainTicketRequestBody.url)
-            && Objects.equals(this.returnTextLocation, trainTicketRequestBody.returnTextLocation);
+        TrainTicketRequestBody that = (TrainTicketRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation);
     }
 
     @Override

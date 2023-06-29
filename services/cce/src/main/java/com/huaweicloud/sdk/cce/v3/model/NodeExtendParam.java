@@ -475,35 +475,31 @@ public class NodeExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeExtendParam nodeExtendParam = (NodeExtendParam) o;
-        return Objects.equals(this.ecsPerformancetype, nodeExtendParam.ecsPerformancetype)
-            && Objects.equals(this.orderID, nodeExtendParam.orderID)
-            && Objects.equals(this.productID, nodeExtendParam.productID)
-            && Objects.equals(this.maxPods, nodeExtendParam.maxPods)
-            && Objects.equals(this.periodType, nodeExtendParam.periodType)
-            && Objects.equals(this.periodNum, nodeExtendParam.periodNum)
-            && Objects.equals(this.isAutoRenew, nodeExtendParam.isAutoRenew)
-            && Objects.equals(this.isAutoPay, nodeExtendParam.isAutoPay)
-            && Objects.equals(this.dockerLVMConfigOverride, nodeExtendParam.dockerLVMConfigOverride)
-            && Objects.equals(this.dockerBaseSize, nodeExtendParam.dockerBaseSize)
-            && Objects.equals(this.publicKey, nodeExtendParam.publicKey)
-            && Objects.equals(this.alphaCcePreInstall, nodeExtendParam.alphaCcePreInstall)
-            && Objects.equals(this.alphaCcePostInstall, nodeExtendParam.alphaCcePostInstall)
-            && Objects.equals(this.alphaCceNodeImageID, nodeExtendParam.alphaCceNodeImageID)
-            && Objects.equals(this.nicMultiqueue, nodeExtendParam.nicMultiqueue)
-            && Objects.equals(this.nicThreshold, nodeExtendParam.nicThreshold)
-            && Objects.equals(this.enterpriseProjectId, nodeExtendParam.enterpriseProjectId)
-            && Objects.equals(this.chargingMode, nodeExtendParam.chargingMode)
-            && Objects.equals(this.agencyName, nodeExtendParam.agencyName)
-            && Objects.equals(this.kubeReservedMem, nodeExtendParam.kubeReservedMem)
-            && Objects.equals(this.systemReservedMem, nodeExtendParam.systemReservedMem);
+        NodeExtendParam that = (NodeExtendParam) obj;
+        return Objects.equals(this.ecsPerformancetype, that.ecsPerformancetype)
+            && Objects.equals(this.orderID, that.orderID) && Objects.equals(this.productID, that.productID)
+            && Objects.equals(this.maxPods, that.maxPods) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.dockerLVMConfigOverride, that.dockerLVMConfigOverride)
+            && Objects.equals(this.dockerBaseSize, that.dockerBaseSize)
+            && Objects.equals(this.publicKey, that.publicKey)
+            && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
+            && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
+            && Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID)
+            && Objects.equals(this.nicMultiqueue, that.nicMultiqueue)
+            && Objects.equals(this.nicThreshold, that.nicThreshold)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.kubeReservedMem, that.kubeReservedMem)
+            && Objects.equals(this.systemReservedMem, that.systemReservedMem);
     }
 
     @Override

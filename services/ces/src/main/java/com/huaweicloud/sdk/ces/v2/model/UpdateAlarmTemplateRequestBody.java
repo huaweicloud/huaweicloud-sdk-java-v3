@@ -96,17 +96,17 @@ public class UpdateAlarmTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlarmTemplateRequestBody updateAlarmTemplateRequestBody = (UpdateAlarmTemplateRequestBody) o;
-        return Objects.equals(this.templateName, updateAlarmTemplateRequestBody.templateName)
-            && Objects.equals(this.templateDescription, updateAlarmTemplateRequestBody.templateDescription)
-            && Objects.equals(this.policies, updateAlarmTemplateRequestBody.policies);
+        UpdateAlarmTemplateRequestBody that = (UpdateAlarmTemplateRequestBody) obj;
+        return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateDescription, that.templateDescription)
+            && Objects.equals(this.policies, that.policies);
     }
 
     @Override

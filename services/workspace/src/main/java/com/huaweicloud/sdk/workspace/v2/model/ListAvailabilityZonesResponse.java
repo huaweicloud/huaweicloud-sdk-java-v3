@@ -17,19 +17,19 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "availability_zones")
 
-    private List<AvailabilityZone> availabilityZones = null;
+    private List<AvailabilityZoneInfo> availabilityZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
-    public ListAvailabilityZonesResponse withAvailabilityZones(List<AvailabilityZone> availabilityZones) {
+    public ListAvailabilityZonesResponse withAvailabilityZones(List<AvailabilityZoneInfo> availabilityZones) {
         this.availabilityZones = availabilityZones;
         return this;
     }
 
-    public ListAvailabilityZonesResponse addAvailabilityZonesItem(AvailabilityZone availabilityZonesItem) {
+    public ListAvailabilityZonesResponse addAvailabilityZonesItem(AvailabilityZoneInfo availabilityZonesItem) {
         if (this.availabilityZones == null) {
             this.availabilityZones = new ArrayList<>();
         }
@@ -38,7 +38,7 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     public ListAvailabilityZonesResponse withAvailabilityZones(
-        Consumer<List<AvailabilityZone>> availabilityZonesSetter) {
+        Consumer<List<AvailabilityZoneInfo>> availabilityZonesSetter) {
         if (this.availabilityZones == null) {
             this.availabilityZones = new ArrayList<>();
         }
@@ -50,11 +50,11 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
      * 云桌面支持的可用分区列表。
      * @return availabilityZones
      */
-    public List<AvailabilityZone> getAvailabilityZones() {
+    public List<AvailabilityZoneInfo> getAvailabilityZones() {
         return availabilityZones;
     }
 
-    public void setAvailabilityZones(List<AvailabilityZone> availabilityZones) {
+    public void setAvailabilityZones(List<AvailabilityZoneInfo> availabilityZones) {
         this.availabilityZones = availabilityZones;
     }
 
@@ -76,16 +76,16 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailabilityZonesResponse listAvailabilityZonesResponse = (ListAvailabilityZonesResponse) o;
-        return Objects.equals(this.availabilityZones, listAvailabilityZonesResponse.availabilityZones)
-            && Objects.equals(this.totalCount, listAvailabilityZonesResponse.totalCount);
+        ListAvailabilityZonesResponse that = (ListAvailabilityZonesResponse) obj;
+        return Objects.equals(this.availabilityZones, that.availabilityZones)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

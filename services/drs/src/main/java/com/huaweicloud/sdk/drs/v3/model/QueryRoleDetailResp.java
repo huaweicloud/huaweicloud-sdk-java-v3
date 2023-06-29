@@ -162,20 +162,17 @@ public class QueryRoleDetailResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryRoleDetailResp queryRoleDetailResp = (QueryRoleDetailResp) o;
-        return Objects.equals(this.role, queryRoleDetailResp.role)
-            && Objects.equals(this.comment, queryRoleDetailResp.comment)
-            && Objects.equals(this.isTransfer, queryRoleDetailResp.isTransfer)
-            && Objects.equals(this.privileges, queryRoleDetailResp.privileges)
-            && Objects.equals(this.inheritsRoles, queryRoleDetailResp.inheritsRoles)
-            && Objects.equals(this.selected, queryRoleDetailResp.selected);
+        QueryRoleDetailResp that = (QueryRoleDetailResp) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.isTransfer, that.isTransfer) && Objects.equals(this.privileges, that.privileges)
+            && Objects.equals(this.inheritsRoles, that.inheritsRoles) && Objects.equals(this.selected, that.selected);
     }
 
     @Override

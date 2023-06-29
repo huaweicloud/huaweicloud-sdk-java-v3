@@ -53,16 +53,15 @@ public class ShowConfigurationModifyHistoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationModifyHistoryResponse showConfigurationModifyHistoryResponse =
-            (ShowConfigurationModifyHistoryResponse) o;
-        return Objects.equals(this.histories, showConfigurationModifyHistoryResponse.histories);
+        ShowConfigurationModifyHistoryResponse that = (ShowConfigurationModifyHistoryResponse) obj;
+        return Objects.equals(this.histories, that.histories);
     }
 
     @Override

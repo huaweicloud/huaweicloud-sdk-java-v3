@@ -78,22 +78,15 @@ public class RestoreNewInstanceFlavorOption {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,18 +192,16 @@ public class RestoreNewInstanceFlavorOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreNewInstanceFlavorOption restoreNewInstanceFlavorOption = (RestoreNewInstanceFlavorOption) o;
-        return Objects.equals(this.type, restoreNewInstanceFlavorOption.type)
-            && Objects.equals(this.num, restoreNewInstanceFlavorOption.num)
-            && Objects.equals(this.size, restoreNewInstanceFlavorOption.size)
-            && Objects.equals(this.specCode, restoreNewInstanceFlavorOption.specCode);
+        RestoreNewInstanceFlavorOption that = (RestoreNewInstanceFlavorOption) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.specCode, that.specCode);
     }
 
     @Override

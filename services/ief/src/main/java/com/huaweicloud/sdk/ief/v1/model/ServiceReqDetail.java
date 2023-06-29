@@ -74,16 +74,15 @@ public class ServiceReqDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceReqDetail serviceReqDetail = (ServiceReqDetail) o;
-        return Objects.equals(this.metaData, serviceReqDetail.metaData)
-            && Objects.equals(this.spec, serviceReqDetail.spec);
+        ServiceReqDetail that = (ServiceReqDetail) obj;
+        return Objects.equals(this.metaData, that.metaData) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

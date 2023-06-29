@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Trigger
  */
-public class Trigger  {
-
+public class Trigger {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_name")
-    
+    @JsonProperty(value = "metric_name")
 
     private String metricName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_value")
-    
+    @JsonProperty(value = "metric_value")
 
     private String metricValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comparison_operator")
-    
+    @JsonProperty(value = "comparison_operator")
 
     private String comparisonOperator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="evaluation_periods")
-    
+    @JsonProperty(value = "evaluation_periods")
 
     private Integer evaluationPeriods;
 
@@ -45,9 +34,6 @@ public class Trigger  {
         this.metricName = metricName;
         return this;
     }
-
-    
-
 
     /**
      * 指标名称。 该触发条件会依据该名称对应指标的值来进行判断。 最大长度为64个字符。
@@ -61,15 +47,10 @@ public class Trigger  {
         this.metricName = metricName;
     }
 
-    
-
     public Trigger withMetricValue(String metricValue) {
         this.metricValue = metricValue;
         return this;
     }
-
-    
-
 
     /**
      * 指标阈值。  触发该条件的指标阈值，只允许输入整数或者带两位小数的数。
@@ -83,15 +64,10 @@ public class Trigger  {
         this.metricValue = metricValue;
     }
 
-    
-
     public Trigger withComparisonOperator(String comparisonOperator) {
         this.comparisonOperator = comparisonOperator;
         return this;
     }
-
-    
-
 
     /**
      * 指标判断逻辑运算符，包括： - LT：小于 - GT：大于 - LTOE：小于等于 - GTOE：大于等于
@@ -105,15 +81,10 @@ public class Trigger  {
         this.comparisonOperator = comparisonOperator;
     }
 
-    
-
     public Trigger withEvaluationPeriods(Integer evaluationPeriods) {
         this.evaluationPeriods = evaluationPeriods;
         return this;
     }
-
-    
-
 
     /**
      * 判断连续满足指标阈值的周期数(一个周期为5分钟)。 取值范围[1～288]
@@ -129,26 +100,25 @@ public class Trigger  {
         this.evaluationPeriods = evaluationPeriods;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Trigger trigger = (Trigger) o;
-        return Objects.equals(this.metricName, trigger.metricName) &&
-            Objects.equals(this.metricValue, trigger.metricValue) &&
-            Objects.equals(this.comparisonOperator, trigger.comparisonOperator) &&
-            Objects.equals(this.evaluationPeriods, trigger.evaluationPeriods);
+        Trigger that = (Trigger) obj;
+        return Objects.equals(this.metricName, that.metricName) && Objects.equals(this.metricValue, that.metricValue)
+            && Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.evaluationPeriods, that.evaluationPeriods);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metricName, metricValue, comparisonOperator, evaluationPeriods);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,6 +130,7 @@ public class Trigger  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -170,8 +141,5 @@ public class Trigger  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

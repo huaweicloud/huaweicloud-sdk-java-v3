@@ -87,17 +87,16 @@ public class UpdateVpcChannelV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcChannelV2Request updateVpcChannelV2Request = (UpdateVpcChannelV2Request) o;
-        return Objects.equals(this.instanceId, updateVpcChannelV2Request.instanceId)
-            && Objects.equals(this.vpcChannelId, updateVpcChannelV2Request.vpcChannelId)
-            && Objects.equals(this.body, updateVpcChannelV2Request.body);
+        UpdateVpcChannelV2Request that = (UpdateVpcChannelV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

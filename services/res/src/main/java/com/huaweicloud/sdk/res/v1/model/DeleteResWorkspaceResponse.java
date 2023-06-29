@@ -78,17 +78,16 @@ public class DeleteResWorkspaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteResWorkspaceResponse deleteResWorkspaceResponse = (DeleteResWorkspaceResponse) o;
-        return Objects.equals(this.isSuccess, deleteResWorkspaceResponse.isSuccess)
-            && Objects.equals(this.message, deleteResWorkspaceResponse.message)
-            && Objects.equals(this.errorCode, deleteResWorkspaceResponse.errorCode);
+        DeleteResWorkspaceResponse that = (DeleteResWorkspaceResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class SetDefaulTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetDefaulTemplateRequest setDefaulTemplateRequest = (SetDefaulTemplateRequest) o;
-        return Objects.equals(this.projectId, setDefaulTemplateRequest.projectId)
-            && Objects.equals(this.rulesetId, setDefaulTemplateRequest.rulesetId)
-            && Objects.equals(this.language, setDefaulTemplateRequest.language);
+        SetDefaulTemplateRequest that = (SetDefaulTemplateRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.rulesetId, that.rulesetId)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override

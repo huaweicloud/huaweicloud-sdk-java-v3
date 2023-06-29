@@ -33,15 +33,15 @@ public class Archive {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Archive archive = (Archive) o;
-        return Objects.equals(this.artifactNamespace, archive.artifactNamespace);
+        Archive that = (Archive) obj;
+        return Objects.equals(this.artifactNamespace, that.artifactNamespace);
     }
 
     @Override

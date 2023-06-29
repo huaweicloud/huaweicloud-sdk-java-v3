@@ -385,28 +385,23 @@ public class ShowReposTagResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReposTagResp showReposTagResp = (ShowReposTagResp) o;
-        return Objects.equals(this.id, showReposTagResp.id) && Objects.equals(this.repoId, showReposTagResp.repoId)
-            && Objects.equals(this.tag, showReposTagResp.tag) && Objects.equals(this.imageId, showReposTagResp.imageId)
-            && Objects.equals(this.manifest, showReposTagResp.manifest)
-            && Objects.equals(this.digest, showReposTagResp.digest)
-            && Objects.equals(this.schema, showReposTagResp.schema) && Objects.equals(this.path, showReposTagResp.path)
-            && Objects.equals(this.internalPath, showReposTagResp.internalPath)
-            && Objects.equals(this.size, showReposTagResp.size)
-            && Objects.equals(this.isTrusted, showReposTagResp.isTrusted)
-            && Objects.equals(this.created, showReposTagResp.created)
-            && Objects.equals(this.updated, showReposTagResp.updated)
-            && Objects.equals(this.deleted, showReposTagResp.deleted)
-            && Objects.equals(this.domainId, showReposTagResp.domainId)
-            && Objects.equals(this.scanned, showReposTagResp.scanned)
-            && Objects.equals(this.tagType, showReposTagResp.tagType);
+        ShowReposTagResp that = (ShowReposTagResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.repoId, that.repoId)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.manifest, that.manifest) && Objects.equals(this.digest, that.digest)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.internalPath, that.internalPath) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.isTrusted, that.isTrusted) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.deleted, that.deleted)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.scanned, that.scanned)
+            && Objects.equals(this.tagType, that.tagType);
     }
 
     @Override

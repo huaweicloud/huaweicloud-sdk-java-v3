@@ -297,26 +297,22 @@ public class DatabaseDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseDto databaseDto = (DatabaseDto) o;
-        return Objects.equals(this.id, databaseDto.id) && Objects.equals(this.name, databaseDto.name)
-            && Objects.equals(this.description, databaseDto.description)
-            && Objects.equals(this.templateId, databaseDto.templateId)
-            && Objects.equals(this.templateName, databaseDto.templateName)
-            && Objects.equals(this.creator, databaseDto.creator)
-            && Objects.equals(this.createTime, databaseDto.createTime)
-            && Objects.equals(this.updateTime, databaseDto.updateTime)
-            && Objects.equals(this.dataCount, databaseDto.dataCount)
-            && Objects.equals(this.sourceProjectName, databaseDto.sourceProjectName)
-            && Objects.equals(this.sourceProjectId, databaseDto.sourceProjectId)
-            && Objects.equals(this.sourceId, databaseDto.sourceId)
-            && Objects.equals(this.isPrefab, databaseDto.isPrefab);
+        DatabaseDto that = (DatabaseDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.dataCount, that.dataCount)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.isPrefab, that.isPrefab);
     }
 
     @Override

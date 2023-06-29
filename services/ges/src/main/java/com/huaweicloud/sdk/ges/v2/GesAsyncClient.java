@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.ges.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.ges.v2.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class GesAsyncClient {
+
     protected HcClient hcClient;
 
     public GesAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class GesAsyncClient {
     public static ClientBuilder<GesAsyncClient> newBuilder() {
         return new ClientBuilder<>(GesAsyncClient::new);
     }
-
 
     /**
      * 绑定EIP
@@ -99,7 +99,8 @@ public class GesAsyncClient {
      * @param CreateBackup2Request 请求对象
      * @return AsyncInvoker<CreateBackup2Request, CreateBackup2Response>
      */
-    public AsyncInvoker<CreateBackup2Request, CreateBackup2Response> createBackup2AsyncInvoker(CreateBackup2Request request) {
+    public AsyncInvoker<CreateBackup2Request, CreateBackup2Response> createBackup2AsyncInvoker(
+        CreateBackup2Request request) {
         return new AsyncInvoker<CreateBackup2Request, CreateBackup2Response>(request, GesMeta.createBackup2, hcClient);
     }
 
@@ -127,7 +128,8 @@ public class GesAsyncClient {
      * @param CreateGraph2Request 请求对象
      * @return AsyncInvoker<CreateGraph2Request, CreateGraph2Response>
      */
-    public AsyncInvoker<CreateGraph2Request, CreateGraph2Response> createGraph2AsyncInvoker(CreateGraph2Request request) {
+    public AsyncInvoker<CreateGraph2Request, CreateGraph2Response> createGraph2AsyncInvoker(
+        CreateGraph2Request request) {
         return new AsyncInvoker<CreateGraph2Request, CreateGraph2Response>(request, GesMeta.createGraph2, hcClient);
     }
 
@@ -155,8 +157,10 @@ public class GesAsyncClient {
      * @param CreateMetadata2Request 请求对象
      * @return AsyncInvoker<CreateMetadata2Request, CreateMetadata2Response>
      */
-    public AsyncInvoker<CreateMetadata2Request, CreateMetadata2Response> createMetadata2AsyncInvoker(CreateMetadata2Request request) {
-        return new AsyncInvoker<CreateMetadata2Request, CreateMetadata2Response>(request, GesMeta.createMetadata2, hcClient);
+    public AsyncInvoker<CreateMetadata2Request, CreateMetadata2Response> createMetadata2AsyncInvoker(
+        CreateMetadata2Request request) {
+        return new AsyncInvoker<CreateMetadata2Request, CreateMetadata2Response>(request, GesMeta.createMetadata2,
+            hcClient);
     }
 
     /**
@@ -183,7 +187,8 @@ public class GesAsyncClient {
      * @param DeleteBackup2Request 请求对象
      * @return AsyncInvoker<DeleteBackup2Request, DeleteBackup2Response>
      */
-    public AsyncInvoker<DeleteBackup2Request, DeleteBackup2Response> deleteBackup2AsyncInvoker(DeleteBackup2Request request) {
+    public AsyncInvoker<DeleteBackup2Request, DeleteBackup2Response> deleteBackup2AsyncInvoker(
+        DeleteBackup2Request request) {
         return new AsyncInvoker<DeleteBackup2Request, DeleteBackup2Response>(request, GesMeta.deleteBackup2, hcClient);
     }
 
@@ -211,7 +216,8 @@ public class GesAsyncClient {
      * @param DeleteGraph2Request 请求对象
      * @return AsyncInvoker<DeleteGraph2Request, DeleteGraph2Response>
      */
-    public AsyncInvoker<DeleteGraph2Request, DeleteGraph2Response> deleteGraph2AsyncInvoker(DeleteGraph2Request request) {
+    public AsyncInvoker<DeleteGraph2Request, DeleteGraph2Response> deleteGraph2AsyncInvoker(
+        DeleteGraph2Request request) {
         return new AsyncInvoker<DeleteGraph2Request, DeleteGraph2Response>(request, GesMeta.deleteGraph2, hcClient);
     }
 
@@ -239,8 +245,10 @@ public class GesAsyncClient {
      * @param DeleteMetadata2Request 请求对象
      * @return AsyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>
      */
-    public AsyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2AsyncInvoker(DeleteMetadata2Request request) {
-        return new AsyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>(request, GesMeta.deleteMetadata2, hcClient);
+    public AsyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response> deleteMetadata2AsyncInvoker(
+        DeleteMetadata2Request request) {
+        return new AsyncInvoker<DeleteMetadata2Request, DeleteMetadata2Response>(request, GesMeta.deleteMetadata2,
+            hcClient);
     }
 
     /**
@@ -301,7 +309,8 @@ public class GesAsyncClient {
      * @param ExpandGraph2Request 请求对象
      * @return AsyncInvoker<ExpandGraph2Request, ExpandGraph2Response>
      */
-    public AsyncInvoker<ExpandGraph2Request, ExpandGraph2Response> expandGraph2AsyncInvoker(ExpandGraph2Request request) {
+    public AsyncInvoker<ExpandGraph2Request, ExpandGraph2Response> expandGraph2AsyncInvoker(
+        ExpandGraph2Request request) {
         return new AsyncInvoker<ExpandGraph2Request, ExpandGraph2Response>(request, GesMeta.expandGraph2, hcClient);
     }
 
@@ -329,7 +338,8 @@ public class GesAsyncClient {
      * @param ExportGraph2Request 请求对象
      * @return AsyncInvoker<ExportGraph2Request, ExportGraph2Response>
      */
-    public AsyncInvoker<ExportGraph2Request, ExportGraph2Response> exportGraph2AsyncInvoker(ExportGraph2Request request) {
+    public AsyncInvoker<ExportGraph2Request, ExportGraph2Response> exportGraph2AsyncInvoker(
+        ExportGraph2Request request) {
         return new AsyncInvoker<ExportGraph2Request, ExportGraph2Response>(request, GesMeta.exportGraph2, hcClient);
     }
 
@@ -359,7 +369,8 @@ public class GesAsyncClient {
      * @param ImportGraph2Request 请求对象
      * @return AsyncInvoker<ImportGraph2Request, ImportGraph2Response>
      */
-    public AsyncInvoker<ImportGraph2Request, ImportGraph2Response> importGraph2AsyncInvoker(ImportGraph2Request request) {
+    public AsyncInvoker<ImportGraph2Request, ImportGraph2Response> importGraph2AsyncInvoker(
+        ImportGraph2Request request) {
         return new AsyncInvoker<ImportGraph2Request, ImportGraph2Response>(request, GesMeta.importGraph2, hcClient);
     }
 
@@ -387,7 +398,8 @@ public class GesAsyncClient {
      * @param ListBackups2Request 请求对象
      * @return AsyncInvoker<ListBackups2Request, ListBackups2Response>
      */
-    public AsyncInvoker<ListBackups2Request, ListBackups2Response> listBackups2AsyncInvoker(ListBackups2Request request) {
+    public AsyncInvoker<ListBackups2Request, ListBackups2Response> listBackups2AsyncInvoker(
+        ListBackups2Request request) {
         return new AsyncInvoker<ListBackups2Request, ListBackups2Response>(request, GesMeta.listBackups2, hcClient);
     }
 
@@ -415,8 +427,10 @@ public class GesAsyncClient {
      * @param ListGraphBackups2Request 请求对象
      * @return AsyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>
      */
-    public AsyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2AsyncInvoker(ListGraphBackups2Request request) {
-        return new AsyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>(request, GesMeta.listGraphBackups2, hcClient);
+    public AsyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response> listGraphBackups2AsyncInvoker(
+        ListGraphBackups2Request request) {
+        return new AsyncInvoker<ListGraphBackups2Request, ListGraphBackups2Response>(request, GesMeta.listGraphBackups2,
+            hcClient);
     }
 
     /**
@@ -499,8 +513,10 @@ public class GesAsyncClient {
      * @param ListMetadatas2Request 请求对象
      * @return AsyncInvoker<ListMetadatas2Request, ListMetadatas2Response>
      */
-    public AsyncInvoker<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2AsyncInvoker(ListMetadatas2Request request) {
-        return new AsyncInvoker<ListMetadatas2Request, ListMetadatas2Response>(request, GesMeta.listMetadatas2, hcClient);
+    public AsyncInvoker<ListMetadatas2Request, ListMetadatas2Response> listMetadatas2AsyncInvoker(
+        ListMetadatas2Request request) {
+        return new AsyncInvoker<ListMetadatas2Request, ListMetadatas2Response>(request, GesMeta.listMetadatas2,
+            hcClient);
     }
 
     /**
@@ -557,7 +573,8 @@ public class GesAsyncClient {
      * @param ResizeGraph2Request 请求对象
      * @return AsyncInvoker<ResizeGraph2Request, ResizeGraph2Response>
      */
-    public AsyncInvoker<ResizeGraph2Request, ResizeGraph2Response> resizeGraph2AsyncInvoker(ResizeGraph2Request request) {
+    public AsyncInvoker<ResizeGraph2Request, ResizeGraph2Response> resizeGraph2AsyncInvoker(
+        ResizeGraph2Request request) {
         return new AsyncInvoker<ResizeGraph2Request, ResizeGraph2Response>(request, GesMeta.resizeGraph2, hcClient);
     }
 
@@ -585,7 +602,8 @@ public class GesAsyncClient {
      * @param RestartGraph2Request 请求对象
      * @return AsyncInvoker<RestartGraph2Request, RestartGraph2Response>
      */
-    public AsyncInvoker<RestartGraph2Request, RestartGraph2Response> restartGraph2AsyncInvoker(RestartGraph2Request request) {
+    public AsyncInvoker<RestartGraph2Request, RestartGraph2Response> restartGraph2AsyncInvoker(
+        RestartGraph2Request request) {
         return new AsyncInvoker<RestartGraph2Request, RestartGraph2Response>(request, GesMeta.restartGraph2, hcClient);
     }
 
@@ -669,7 +687,8 @@ public class GesAsyncClient {
      * @param ShowMetadata2Request 请求对象
      * @return AsyncInvoker<ShowMetadata2Request, ShowMetadata2Response>
      */
-    public AsyncInvoker<ShowMetadata2Request, ShowMetadata2Response> showMetadata2AsyncInvoker(ShowMetadata2Request request) {
+    public AsyncInvoker<ShowMetadata2Request, ShowMetadata2Response> showMetadata2AsyncInvoker(
+        ShowMetadata2Request request) {
         return new AsyncInvoker<ShowMetadata2Request, ShowMetadata2Response>(request, GesMeta.showMetadata2, hcClient);
     }
 
@@ -755,7 +774,8 @@ public class GesAsyncClient {
      * @param UpgradeGraph2Request 请求对象
      * @return AsyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response>
      */
-    public AsyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response> upgradeGraph2AsyncInvoker(UpgradeGraph2Request request) {
+    public AsyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response> upgradeGraph2AsyncInvoker(
+        UpgradeGraph2Request request) {
         return new AsyncInvoker<UpgradeGraph2Request, UpgradeGraph2Response>(request, GesMeta.upgradeGraph2, hcClient);
     }
 
@@ -783,8 +803,10 @@ public class GesAsyncClient {
      * @param UploadFromObs2Request 请求对象
      * @return AsyncInvoker<UploadFromObs2Request, UploadFromObs2Response>
      */
-    public AsyncInvoker<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2AsyncInvoker(UploadFromObs2Request request) {
-        return new AsyncInvoker<UploadFromObs2Request, UploadFromObs2Response>(request, GesMeta.uploadFromObs2, hcClient);
+    public AsyncInvoker<UploadFromObs2Request, UploadFromObs2Response> uploadFromObs2AsyncInvoker(
+        UploadFromObs2Request request) {
+        return new AsyncInvoker<UploadFromObs2Request, UploadFromObs2Response>(request, GesMeta.uploadFromObs2,
+            hcClient);
     }
 
     /**
@@ -811,8 +833,10 @@ public class GesAsyncClient {
      * @param DeregisterScenes2Request 请求对象
      * @return AsyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>
      */
-    public AsyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2AsyncInvoker(DeregisterScenes2Request request) {
-        return new AsyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>(request, GesMeta.deregisterScenes2, hcClient);
+    public AsyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response> deregisterScenes2AsyncInvoker(
+        DeregisterScenes2Request request) {
+        return new AsyncInvoker<DeregisterScenes2Request, DeregisterScenes2Response>(request, GesMeta.deregisterScenes2,
+            hcClient);
     }
 
     /**
@@ -869,8 +893,10 @@ public class GesAsyncClient {
      * @param RegisterScenes2Request 请求对象
      * @return AsyncInvoker<RegisterScenes2Request, RegisterScenes2Response>
      */
-    public AsyncInvoker<RegisterScenes2Request, RegisterScenes2Response> registerScenes2AsyncInvoker(RegisterScenes2Request request) {
-        return new AsyncInvoker<RegisterScenes2Request, RegisterScenes2Response>(request, GesMeta.registerScenes2, hcClient);
+    public AsyncInvoker<RegisterScenes2Request, RegisterScenes2Response> registerScenes2AsyncInvoker(
+        RegisterScenes2Request request) {
+        return new AsyncInvoker<RegisterScenes2Request, RegisterScenes2Response>(request, GesMeta.registerScenes2,
+            hcClient);
     }
 
 }

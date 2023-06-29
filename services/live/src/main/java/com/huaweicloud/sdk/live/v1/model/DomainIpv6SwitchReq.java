@@ -55,16 +55,15 @@ public class DomainIpv6SwitchReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainIpv6SwitchReq domainIpv6SwitchReq = (DomainIpv6SwitchReq) o;
-        return Objects.equals(this.domain, domainIpv6SwitchReq.domain)
-            && Objects.equals(this.isIpv6, domainIpv6SwitchReq.isIpv6);
+        DomainIpv6SwitchReq that = (DomainIpv6SwitchReq) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.isIpv6, that.isIpv6);
     }
 
     @Override

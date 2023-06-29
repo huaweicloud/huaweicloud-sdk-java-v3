@@ -74,16 +74,15 @@ public class Resource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.namespace, resource.namespace)
-            && Objects.equals(this.dimensions, resource.dimensions);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowBandwidthPackageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBandwidthPackageRequest showBandwidthPackageRequest = (ShowBandwidthPackageRequest) o;
-        return Objects.equals(this.id, showBandwidthPackageRequest.id);
+        ShowBandwidthPackageRequest that = (ShowBandwidthPackageRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

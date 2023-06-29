@@ -55,16 +55,15 @@ public class ListCommitStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommitStatisticsRequest listCommitStatisticsRequest = (ListCommitStatisticsRequest) o;
-        return Objects.equals(this.branchName, listCommitStatisticsRequest.branchName)
-            && Objects.equals(this.repositoryId, listCommitStatisticsRequest.repositoryId);
+        ListCommitStatisticsRequest that = (ListCommitStatisticsRequest) obj;
+        return Objects.equals(this.branchName, that.branchName) && Objects.equals(this.repositoryId, that.repositoryId);
     }
 
     @Override

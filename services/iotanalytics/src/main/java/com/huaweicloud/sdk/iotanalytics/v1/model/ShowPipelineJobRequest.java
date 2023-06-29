@@ -33,15 +33,15 @@ public class ShowPipelineJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineJobRequest showPipelineJobRequest = (ShowPipelineJobRequest) o;
-        return Objects.equals(this.pipelineId, showPipelineJobRequest.pipelineId);
+        ShowPipelineJobRequest that = (ShowPipelineJobRequest) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId);
     }
 
     @Override

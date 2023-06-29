@@ -77,17 +77,16 @@ public class ShowTasklogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTasklogRequest showTasklogRequest = (ShowTasklogRequest) o;
-        return Objects.equals(this.projectId, showTasklogRequest.projectId)
-            && Objects.equals(this.taskId, showTasklogRequest.taskId)
-            && Objects.equals(this.executeId, showTasklogRequest.executeId);
+        ShowTasklogRequest that = (ShowTasklogRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.executeId, that.executeId);
     }
 
     @Override

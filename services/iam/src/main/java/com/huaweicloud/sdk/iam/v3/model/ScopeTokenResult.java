@@ -265,21 +265,18 @@ public class ScopeTokenResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopeTokenResult scopeTokenResult = (ScopeTokenResult) o;
-        return Objects.equals(this.methods, scopeTokenResult.methods)
-            && Objects.equals(this.expiresAt, scopeTokenResult.expiresAt)
-            && Objects.equals(this.catalog, scopeTokenResult.catalog)
-            && Objects.equals(this.domain, scopeTokenResult.domain)
-            && Objects.equals(this.project, scopeTokenResult.project)
-            && Objects.equals(this.roles, scopeTokenResult.roles) && Objects.equals(this.user, scopeTokenResult.user)
-            && Objects.equals(this.issuedAt, scopeTokenResult.issuedAt);
+        ScopeTokenResult that = (ScopeTokenResult) obj;
+        return Objects.equals(this.methods, that.methods) && Objects.equals(this.expiresAt, that.expiresAt)
+            && Objects.equals(this.catalog, that.catalog) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.issuedAt, that.issuedAt);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ListFeaturesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFeaturesV2Response listFeaturesV2Response = (ListFeaturesV2Response) o;
-        return Objects.equals(this.size, listFeaturesV2Response.size)
-            && Objects.equals(this.total, listFeaturesV2Response.total)
-            && Objects.equals(this.features, listFeaturesV2Response.features);
+        ListFeaturesV2Response that = (ListFeaturesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.features, that.features);
     }
 
     @Override

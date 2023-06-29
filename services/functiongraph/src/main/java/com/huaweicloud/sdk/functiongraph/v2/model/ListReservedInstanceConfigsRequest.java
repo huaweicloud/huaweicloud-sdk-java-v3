@@ -77,17 +77,16 @@ public class ListReservedInstanceConfigsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListReservedInstanceConfigsRequest listReservedInstanceConfigsRequest = (ListReservedInstanceConfigsRequest) o;
-        return Objects.equals(this.functionUrn, listReservedInstanceConfigsRequest.functionUrn)
-            && Objects.equals(this.marker, listReservedInstanceConfigsRequest.marker)
-            && Objects.equals(this.limit, listReservedInstanceConfigsRequest.limit);
+        ListReservedInstanceConfigsRequest that = (ListReservedInstanceConfigsRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

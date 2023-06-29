@@ -55,16 +55,15 @@ public class UserPropDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserPropDTO userPropDTO = (UserPropDTO) o;
-        return Objects.equals(this.propKey, userPropDTO.propKey)
-            && Objects.equals(this.propValue, userPropDTO.propValue);
+        UserPropDTO that = (UserPropDTO) obj;
+        return Objects.equals(this.propKey, that.propKey) && Objects.equals(this.propValue, that.propValue);
     }
 
     @Override

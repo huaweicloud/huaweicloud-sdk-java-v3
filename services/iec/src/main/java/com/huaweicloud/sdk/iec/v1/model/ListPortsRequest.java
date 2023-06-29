@@ -296,25 +296,20 @@ public class ListPortsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortsRequest listPortsRequest = (ListPortsRequest) o;
-        return Objects.equals(this.limit, listPortsRequest.limit)
-            && Objects.equals(this.offset, listPortsRequest.offset)
-            && Objects.equals(this.networkId, listPortsRequest.networkId)
-            && Objects.equals(this.id, listPortsRequest.id) && Objects.equals(this.name, listPortsRequest.name)
-            && Objects.equals(this.adminStateUp, listPortsRequest.adminStateUp)
-            && Objects.equals(this.fixedIps, listPortsRequest.fixedIps)
-            && Objects.equals(this.macAddress, listPortsRequest.macAddress)
-            && Objects.equals(this.deviceId, listPortsRequest.deviceId)
-            && Objects.equals(this.deviceOwner, listPortsRequest.deviceOwner)
-            && Objects.equals(this.status, listPortsRequest.status)
-            && Objects.equals(this.securityGroups, listPortsRequest.securityGroups);
+        ListPortsRequest that = (ListPortsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.fixedIps, that.fixedIps) && Objects.equals(this.macAddress, that.macAddress)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.securityGroups, that.securityGroups);
     }
 
     @Override

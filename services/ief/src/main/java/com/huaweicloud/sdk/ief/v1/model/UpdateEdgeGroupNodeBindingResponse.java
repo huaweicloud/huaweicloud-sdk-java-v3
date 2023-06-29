@@ -539,32 +539,25 @@ public class UpdateEdgeGroupNodeBindingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeGroupNodeBindingResponse updateEdgeGroupNodeBindingResponse = (UpdateEdgeGroupNodeBindingResponse) o;
-        return Objects.equals(this.id, updateEdgeGroupNodeBindingResponse.id)
-            && Objects.equals(this.name, updateEdgeGroupNodeBindingResponse.name)
-            && Objects.equals(this.description, updateEdgeGroupNodeBindingResponse.description)
-            && Objects.equals(this.createdAt, updateEdgeGroupNodeBindingResponse.createdAt)
-            && Objects.equals(this.updatedAt, updateEdgeGroupNodeBindingResponse.updatedAt)
-            && Objects.equals(this.projectId, updateEdgeGroupNodeBindingResponse.projectId)
-            && Objects.equals(this.iamRole, updateEdgeGroupNodeBindingResponse.iamRole)
-            && Objects.equals(this.cpu, updateEdgeGroupNodeBindingResponse.cpu)
-            && Objects.equals(this.memory, updateEdgeGroupNodeBindingResponse.memory)
-            && Objects.equals(this.gpuNum, updateEdgeGroupNodeBindingResponse.gpuNum)
-            && Objects.equals(this.nodes, updateEdgeGroupNodeBindingResponse.nodes)
-            && Objects.equals(this.deployments, updateEdgeGroupNodeBindingResponse.deployments)
-            && Objects.equals(this.attributes, updateEdgeGroupNodeBindingResponse.attributes)
-            && Objects.equals(this.tags, updateEdgeGroupNodeBindingResponse.tags)
-            && Objects.equals(this.successNodeAdd, updateEdgeGroupNodeBindingResponse.successNodeAdd)
-            && Objects.equals(this.successNodeDel, updateEdgeGroupNodeBindingResponse.successNodeDel)
-            && Objects.equals(this.failedNodeAdd, updateEdgeGroupNodeBindingResponse.failedNodeAdd)
-            && Objects.equals(this.failedNodeDel, updateEdgeGroupNodeBindingResponse.failedNodeDel);
+        UpdateEdgeGroupNodeBindingResponse that = (UpdateEdgeGroupNodeBindingResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.iamRole, that.iamRole) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.gpuNum, that.gpuNum)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.deployments, that.deployments)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.successNodeAdd, that.successNodeAdd)
+            && Objects.equals(this.successNodeDel, that.successNodeDel)
+            && Objects.equals(this.failedNodeAdd, that.failedNodeAdd)
+            && Objects.equals(this.failedNodeDel, that.failedNodeDel);
     }
 
     @Override

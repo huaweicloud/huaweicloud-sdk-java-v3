@@ -122,17 +122,16 @@ public class GroupTreeResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GroupTreeResponse groupTreeResponse = (GroupTreeResponse) o;
-        return Objects.equals(this.id, groupTreeResponse.id) && Objects.equals(this.name, groupTreeResponse.name)
-            && Objects.equals(this.parentId, groupTreeResponse.parentId)
-            && Objects.equals(this.children, groupTreeResponse.children);
+        GroupTreeResponse that = (GroupTreeResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.children, that.children);
     }
 
     @Override

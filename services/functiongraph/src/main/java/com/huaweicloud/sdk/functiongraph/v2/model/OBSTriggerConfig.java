@@ -118,18 +118,16 @@ public class OBSTriggerConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OBSTriggerConfig obSTriggerConfig = (OBSTriggerConfig) o;
-        return Objects.equals(this.bucket, obSTriggerConfig.bucket)
-            && Objects.equals(this.events, obSTriggerConfig.events)
-            && Objects.equals(this.prefix, obSTriggerConfig.prefix)
-            && Objects.equals(this.suffix, obSTriggerConfig.suffix);
+        OBSTriggerConfig that = (OBSTriggerConfig) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.suffix, that.suffix);
     }
 
     @Override

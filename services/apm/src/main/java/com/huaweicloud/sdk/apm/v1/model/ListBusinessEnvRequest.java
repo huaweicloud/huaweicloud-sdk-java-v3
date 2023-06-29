@@ -67,16 +67,15 @@ public class ListBusinessEnvRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBusinessEnvRequest listBusinessEnvRequest = (ListBusinessEnvRequest) o;
-        return Objects.equals(this.xBusinessId, listBusinessEnvRequest.xBusinessId)
-            && Objects.equals(this.body, listBusinessEnvRequest.body);
+        ListBusinessEnvRequest that = (ListBusinessEnvRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

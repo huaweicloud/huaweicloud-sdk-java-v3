@@ -72,22 +72,15 @@ public class TestEndPoint {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetTypeEnum(value));
         }
 
         public static NetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,22 +171,15 @@ public class TestEndPoint {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbTypeEnum(value));
         }
 
         public static DbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,22 +306,15 @@ public class TestEndPoint {
             if (value == null) {
                 return null;
             }
-            EndPointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EndPointTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EndPointTypeEnum(value));
         }
 
         public static EndPointTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EndPointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -727,30 +706,26 @@ public class TestEndPoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestEndPoint testEndPoint = (TestEndPoint) o;
-        return Objects.equals(this.id, testEndPoint.id) && Objects.equals(this.netType, testEndPoint.netType)
-            && Objects.equals(this.dbType, testEndPoint.dbType) && Objects.equals(this.ip, testEndPoint.ip)
-            && Objects.equals(this.dbPort, testEndPoint.dbPort) && Objects.equals(this.instId, testEndPoint.instId)
-            && Objects.equals(this.dbUser, testEndPoint.dbUser)
-            && Objects.equals(this.dbPassword, testEndPoint.dbPassword)
-            && Objects.equals(this.sslLink, testEndPoint.sslLink)
-            && Objects.equals(this.sslCertKey, testEndPoint.sslCertKey)
-            && Objects.equals(this.sslCertName, testEndPoint.sslCertName)
-            && Objects.equals(this.sslCertCheckSum, testEndPoint.sslCertCheckSum)
-            && Objects.equals(this.sslCertPassword, testEndPoint.sslCertPassword)
-            && Objects.equals(this.vpcId, testEndPoint.vpcId) && Objects.equals(this.subnetId, testEndPoint.subnetId)
-            && Objects.equals(this.endPointType, testEndPoint.endPointType)
-            && Objects.equals(this.region, testEndPoint.region)
-            && Objects.equals(this.projectId, testEndPoint.projectId)
-            && Objects.equals(this.dbName, testEndPoint.dbName)
-            && Objects.equals(this.kafkaSecurityConfig, testEndPoint.kafkaSecurityConfig);
+        TestEndPoint that = (TestEndPoint) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.netType, that.netType)
+            && Objects.equals(this.dbType, that.dbType) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.dbPort, that.dbPort) && Objects.equals(this.instId, that.instId)
+            && Objects.equals(this.dbUser, that.dbUser) && Objects.equals(this.dbPassword, that.dbPassword)
+            && Objects.equals(this.sslLink, that.sslLink) && Objects.equals(this.sslCertKey, that.sslCertKey)
+            && Objects.equals(this.sslCertName, that.sslCertName)
+            && Objects.equals(this.sslCertCheckSum, that.sslCertCheckSum)
+            && Objects.equals(this.sslCertPassword, that.sslCertPassword) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.endPointType, that.endPointType)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.kafkaSecurityConfig, that.kafkaSecurityConfig);
     }
 
     @Override

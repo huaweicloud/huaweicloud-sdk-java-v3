@@ -55,16 +55,15 @@ public class CreateIssueResponseV4Domain {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIssueResponseV4Domain createIssueResponseV4Domain = (CreateIssueResponseV4Domain) o;
-        return Objects.equals(this.id, createIssueResponseV4Domain.id)
-            && Objects.equals(this.name, createIssueResponseV4Domain.name);
+        CreateIssueResponseV4Domain that = (CreateIssueResponseV4Domain) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

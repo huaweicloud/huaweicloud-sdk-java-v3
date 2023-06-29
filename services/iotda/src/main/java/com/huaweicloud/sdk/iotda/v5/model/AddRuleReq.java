@@ -175,19 +175,18 @@ public class AddRuleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRuleReq addRuleReq = (AddRuleReq) o;
-        return Objects.equals(this.ruleName, addRuleReq.ruleName)
-            && Objects.equals(this.description, addRuleReq.description)
-            && Objects.equals(this.subject, addRuleReq.subject) && Objects.equals(this.appType, addRuleReq.appType)
-            && Objects.equals(this.appId, addRuleReq.appId) && Objects.equals(this.select, addRuleReq.select)
-            && Objects.equals(this.where, addRuleReq.where);
+        AddRuleReq that = (AddRuleReq) obj;
+        return Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.select, that.select)
+            && Objects.equals(this.where, that.where);
     }
 
     @Override

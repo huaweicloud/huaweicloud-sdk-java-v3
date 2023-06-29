@@ -87,17 +87,16 @@ public class ExecuteWorkflowBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteWorkflowBody executeWorkflowBody = (ExecuteWorkflowBody) o;
-        return Objects.equals(this.bucket, executeWorkflowBody.bucket)
-            && Objects.equals(this._object, executeWorkflowBody._object)
-            && Objects.equals(this.inputs, executeWorkflowBody.inputs);
+        ExecuteWorkflowBody that = (ExecuteWorkflowBody) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.inputs, that.inputs);
     }
 
     @Override

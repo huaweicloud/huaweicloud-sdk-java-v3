@@ -77,16 +77,15 @@ public class BatchShowIpcsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowIpcsResponse batchShowIpcsResponse = (BatchShowIpcsResponse) o;
-        return Objects.equals(this.count, batchShowIpcsResponse.count)
-            && Objects.equals(this.ipcs, batchShowIpcsResponse.ipcs);
+        BatchShowIpcsResponse that = (BatchShowIpcsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.ipcs, that.ipcs);
     }
 
     @Override

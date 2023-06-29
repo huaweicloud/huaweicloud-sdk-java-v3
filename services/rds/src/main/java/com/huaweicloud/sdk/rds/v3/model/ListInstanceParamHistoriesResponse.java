@@ -75,16 +75,15 @@ public class ListInstanceParamHistoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceParamHistoriesResponse listInstanceParamHistoriesResponse = (ListInstanceParamHistoriesResponse) o;
-        return Objects.equals(this.totalCount, listInstanceParamHistoriesResponse.totalCount)
-            && Objects.equals(this.histories, listInstanceParamHistoriesResponse.histories);
+        ListInstanceParamHistoriesResponse that = (ListInstanceParamHistoriesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.histories, that.histories);
     }
 
     @Override

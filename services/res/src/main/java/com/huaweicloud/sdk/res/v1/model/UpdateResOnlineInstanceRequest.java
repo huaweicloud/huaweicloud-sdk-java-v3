@@ -109,18 +109,16 @@ public class UpdateResOnlineInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResOnlineInstanceRequest updateResOnlineInstanceRequest = (UpdateResOnlineInstanceRequest) o;
-        return Objects.equals(this.jobId, updateResOnlineInstanceRequest.jobId)
-            && Objects.equals(this.resourceId, updateResOnlineInstanceRequest.resourceId)
-            && Objects.equals(this.workspaceId, updateResOnlineInstanceRequest.workspaceId)
-            && Objects.equals(this.body, updateResOnlineInstanceRequest.body);
+        UpdateResOnlineInstanceRequest that = (UpdateResOnlineInstanceRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

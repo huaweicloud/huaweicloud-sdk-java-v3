@@ -60,22 +60,15 @@ public class DeleteAutoLaunchGroupReqV2 {
             if (value == null) {
                 return null;
             }
-            DeleteInstancesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeleteInstancesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeleteInstancesEnum(value));
         }
 
         public static DeleteInstancesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeleteInstancesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,15 +108,15 @@ public class DeleteAutoLaunchGroupReqV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAutoLaunchGroupReqV2 deleteAutoLaunchGroupReqV2 = (DeleteAutoLaunchGroupReqV2) o;
-        return Objects.equals(this.deleteInstances, deleteAutoLaunchGroupReqV2.deleteInstances);
+        DeleteAutoLaunchGroupReqV2 that = (DeleteAutoLaunchGroupReqV2) obj;
+        return Objects.equals(this.deleteInstances, that.deleteInstances);
     }
 
     @Override

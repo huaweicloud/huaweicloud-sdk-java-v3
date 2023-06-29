@@ -166,18 +166,16 @@ public class HapComponentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HapComponentInfo hapComponentInfo = (HapComponentInfo) o;
-        return Objects.equals(this.permission, hapComponentInfo.permission)
-            && Objects.equals(this.page, hapComponentInfo.page)
-            && Objects.equals(this.service, hapComponentInfo.service)
-            && Objects.equals(this.data, hapComponentInfo.data);
+        HapComponentInfo that = (HapComponentInfo) obj;
+        return Objects.equals(this.permission, that.permission) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.data, that.data);
     }
 
     @Override

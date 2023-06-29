@@ -55,16 +55,15 @@ public class NotebookToolDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotebookToolDto notebookToolDto = (NotebookToolDto) o;
-        return Objects.equals(this.displayName, notebookToolDto.displayName)
-            && Objects.equals(this.profile, notebookToolDto.profile);
+        NotebookToolDto that = (NotebookToolDto) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.profile, that.profile);
     }
 
     @Override

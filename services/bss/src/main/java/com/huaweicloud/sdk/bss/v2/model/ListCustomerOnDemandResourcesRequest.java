@@ -67,17 +67,15 @@ public class ListCustomerOnDemandResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerOnDemandResourcesRequest listCustomerOnDemandResourcesRequest =
-            (ListCustomerOnDemandResourcesRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerOnDemandResourcesRequest.xLanguage)
-            && Objects.equals(this.body, listCustomerOnDemandResourcesRequest.body);
+        ListCustomerOnDemandResourcesRequest that = (ListCustomerOnDemandResourcesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

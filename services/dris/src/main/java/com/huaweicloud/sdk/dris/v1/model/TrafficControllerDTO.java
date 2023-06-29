@@ -349,28 +349,23 @@ public class TrafficControllerDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrafficControllerDTO trafficControllerDTO = (TrafficControllerDTO) o;
-        return Objects.equals(this.trafficControllerId, trafficControllerDTO.trafficControllerId)
-            && Objects.equals(this.esn, trafficControllerDTO.esn)
-            && Objects.equals(this.name, trafficControllerDTO.name)
-            && Objects.equals(this.description, trafficControllerDTO.description)
-            && Objects.equals(this.lat, trafficControllerDTO.lat) && Objects.equals(this.lon, trafficControllerDTO.lon)
-            && Objects.equals(this.ele, trafficControllerDTO.ele)
-            && Objects.equals(this.posDescription, trafficControllerDTO.posDescription)
-            && Objects.equals(this.installationMode, trafficControllerDTO.installationMode)
-            && Objects.equals(this.roadName, trafficControllerDTO.roadName)
-            && Objects.equals(this.linkId, trafficControllerDTO.linkId)
-            && Objects.equals(this.status, trafficControllerDTO.status)
-            && Objects.equals(this.lastModifiedTime, trafficControllerDTO.lastModifiedTime)
-            && Objects.equals(this.createdTime, trafficControllerDTO.createdTime)
-            && Objects.equals(this.lastOnlineTime, trafficControllerDTO.lastOnlineTime);
+        TrafficControllerDTO that = (TrafficControllerDTO) obj;
+        return Objects.equals(this.trafficControllerId, that.trafficControllerId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele) && Objects.equals(this.posDescription, that.posDescription)
+            && Objects.equals(this.installationMode, that.installationMode)
+            && Objects.equals(this.roadName, that.roadName) && Objects.equals(this.linkId, that.linkId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime);
     }
 
     @Override

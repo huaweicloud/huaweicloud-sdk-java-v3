@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class TableQaAnswers  {
-
+public class TableQaAnswers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer")
-    
+    @JsonProperty(value = "answer")
 
     private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
 
     private Double score;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="table_id")
-    
+    @JsonProperty(value = "table_id")
 
     private String tableId;
 
@@ -39,9 +29,6 @@ public class TableQaAnswers  {
         this.answer = answer;
         return this;
     }
-
-    
-
 
     /**
      * 表格问答答案。
@@ -55,15 +42,10 @@ public class TableQaAnswers  {
         this.answer = answer;
     }
 
-    
-
     public TableQaAnswers withScore(Double score) {
         this.score = score;
         return this;
     }
-
-    
-
 
     /**
      * 评分。
@@ -77,15 +59,10 @@ public class TableQaAnswers  {
         this.score = score;
     }
 
-    
-
     public TableQaAnswers withTableId(String tableId) {
         this.tableId = tableId;
         return this;
     }
-
-    
-
 
     /**
      * 表格ID。
@@ -99,25 +76,24 @@ public class TableQaAnswers  {
         this.tableId = tableId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableQaAnswers tableQaAnswers = (TableQaAnswers) o;
-        return Objects.equals(this.answer, tableQaAnswers.answer) &&
-            Objects.equals(this.score, tableQaAnswers.score) &&
-            Objects.equals(this.tableId, tableQaAnswers.tableId);
+        TableQaAnswers that = (TableQaAnswers) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.score, that.score)
+            && Objects.equals(this.tableId, that.tableId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(answer, score, tableId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class TableQaAnswers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class TableQaAnswers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

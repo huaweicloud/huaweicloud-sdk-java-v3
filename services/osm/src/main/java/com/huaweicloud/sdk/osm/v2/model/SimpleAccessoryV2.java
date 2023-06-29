@@ -55,16 +55,16 @@ public class SimpleAccessoryV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleAccessoryV2 simpleAccessoryV2 = (SimpleAccessoryV2) o;
-        return Objects.equals(this.accessoryId, simpleAccessoryV2.accessoryId)
-            && Objects.equals(this.fileActualName, simpleAccessoryV2.fileActualName);
+        SimpleAccessoryV2 that = (SimpleAccessoryV2) obj;
+        return Objects.equals(this.accessoryId, that.accessoryId)
+            && Objects.equals(this.fileActualName, that.fileActualName);
     }
 
     @Override

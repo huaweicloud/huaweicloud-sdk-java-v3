@@ -34,15 +34,15 @@ public class CountStandardsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountStandardsResponse countStandardsResponse = (CountStandardsResponse) o;
-        return Objects.equals(this.data, countStandardsResponse.data);
+        CountStandardsResponse that = (CountStandardsResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdatePropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePropertiesRequest updatePropertiesRequest = (UpdatePropertiesRequest) o;
-        return Objects.equals(this.deviceId, updatePropertiesRequest.deviceId)
-            && Objects.equals(this.instanceId, updatePropertiesRequest.instanceId)
-            && Objects.equals(this.body, updatePropertiesRequest.body);
+        UpdatePropertiesRequest that = (UpdatePropertiesRequest) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

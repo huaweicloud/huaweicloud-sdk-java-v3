@@ -194,20 +194,18 @@ public class UpdatePortalInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePortalInfoRequestBody updatePortalInfoRequestBody = (UpdatePortalInfoRequestBody) o;
-        return Objects.equals(this.changeReason, updatePortalInfoRequestBody.changeReason)
-            && Objects.equals(this.backgroundImg, updatePortalInfoRequestBody.backgroundImg)
-            && Objects.equals(this.summary, updatePortalInfoRequestBody.summary)
-            && Objects.equals(this.tels, updatePortalInfoRequestBody.tels)
-            && Objects.equals(this.fastapps, updatePortalInfoRequestBody.fastapps)
-            && Objects.equals(this.hwPubs, updatePortalInfoRequestBody.hwPubs);
+        UpdatePortalInfoRequestBody that = (UpdatePortalInfoRequestBody) obj;
+        return Objects.equals(this.changeReason, that.changeReason)
+            && Objects.equals(this.backgroundImg, that.backgroundImg) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.tels, that.tels) && Objects.equals(this.fastapps, that.fastapps)
+            && Objects.equals(this.hwPubs, that.hwPubs);
     }
 
     @Override

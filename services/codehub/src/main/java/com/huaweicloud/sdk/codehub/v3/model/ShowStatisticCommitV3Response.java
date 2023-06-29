@@ -97,17 +97,16 @@ public class ShowStatisticCommitV3Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStatisticCommitV3Response showStatisticCommitV3Response = (ShowStatisticCommitV3Response) o;
-        return Objects.equals(this.error, showStatisticCommitV3Response.error)
-            && Objects.equals(this.result, showStatisticCommitV3Response.result)
-            && Objects.equals(this.status, showStatisticCommitV3Response.status);
+        ShowStatisticCommitV3Response that = (ShowStatisticCommitV3Response) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

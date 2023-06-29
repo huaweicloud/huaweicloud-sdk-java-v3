@@ -115,17 +115,16 @@ public class ListOrderCouponsByOrderIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrderCouponsByOrderIdResponse listOrderCouponsByOrderIdResponse = (ListOrderCouponsByOrderIdResponse) o;
-        return Objects.equals(this.count, listOrderCouponsByOrderIdResponse.count)
-            && Objects.equals(this.userCoupons, listOrderCouponsByOrderIdResponse.userCoupons)
-            && Objects.equals(this.couponMaxUseQuantity, listOrderCouponsByOrderIdResponse.couponMaxUseQuantity);
+        ListOrderCouponsByOrderIdResponse that = (ListOrderCouponsByOrderIdResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.userCoupons, that.userCoupons)
+            && Objects.equals(this.couponMaxUseQuantity, that.couponMaxUseQuantity);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class CreateRequestBodyBlockInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestBodyBlockInfo createRequestBodyBlockInfo = (CreateRequestBodyBlockInfo) o;
-        return Objects.equals(this.batchTimeout, createRequestBodyBlockInfo.batchTimeout)
-            && Objects.equals(this.maxMessageCount, createRequestBodyBlockInfo.maxMessageCount)
-            && Objects.equals(this.preferredMaxbytes, createRequestBodyBlockInfo.preferredMaxbytes);
+        CreateRequestBodyBlockInfo that = (CreateRequestBodyBlockInfo) obj;
+        return Objects.equals(this.batchTimeout, that.batchTimeout)
+            && Objects.equals(this.maxMessageCount, that.maxMessageCount)
+            && Objects.equals(this.preferredMaxbytes, that.preferredMaxbytes);
     }
 
     @Override

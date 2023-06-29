@@ -77,17 +77,16 @@ public class ShowStreamPortraitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStreamPortraitRequest showStreamPortraitRequest = (ShowStreamPortraitRequest) o;
-        return Objects.equals(this.playDomain, showStreamPortraitRequest.playDomain)
-            && Objects.equals(this.stream, showStreamPortraitRequest.stream)
-            && Objects.equals(this.time, showStreamPortraitRequest.time);
+        ShowStreamPortraitRequest that = (ShowStreamPortraitRequest) obj;
+        return Objects.equals(this.playDomain, that.playDomain) && Objects.equals(this.stream, that.stream)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override

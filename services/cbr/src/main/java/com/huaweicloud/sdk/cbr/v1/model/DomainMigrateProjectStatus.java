@@ -66,22 +66,15 @@ public class DomainMigrateProjectStatus {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -255,21 +248,18 @@ public class DomainMigrateProjectStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainMigrateProjectStatus domainMigrateProjectStatus = (DomainMigrateProjectStatus) o;
-        return Objects.equals(this.status, domainMigrateProjectStatus.status)
-            && Objects.equals(this.projectId, domainMigrateProjectStatus.projectId)
-            && Objects.equals(this.projectName, domainMigrateProjectStatus.projectName)
-            && Objects.equals(this.regionId, domainMigrateProjectStatus.regionId)
-            && Objects.equals(this.progress, domainMigrateProjectStatus.progress)
-            && Objects.equals(this.failCode, domainMigrateProjectStatus.failCode)
-            && Objects.equals(this.failReason, domainMigrateProjectStatus.failReason);
+        DomainMigrateProjectStatus that = (DomainMigrateProjectStatus) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.failCode, that.failCode)
+            && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

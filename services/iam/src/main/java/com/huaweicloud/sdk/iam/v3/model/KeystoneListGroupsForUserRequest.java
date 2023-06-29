@@ -33,15 +33,15 @@ public class KeystoneListGroupsForUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListGroupsForUserRequest keystoneListGroupsForUserRequest = (KeystoneListGroupsForUserRequest) o;
-        return Objects.equals(this.userId, keystoneListGroupsForUserRequest.userId);
+        KeystoneListGroupsForUserRequest that = (KeystoneListGroupsForUserRequest) obj;
+        return Objects.equals(this.userId, that.userId);
     }
 
     @Override

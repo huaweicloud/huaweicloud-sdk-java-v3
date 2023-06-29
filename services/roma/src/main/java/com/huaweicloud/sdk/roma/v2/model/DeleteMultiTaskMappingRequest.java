@@ -77,17 +77,16 @@ public class DeleteMultiTaskMappingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMultiTaskMappingRequest deleteMultiTaskMappingRequest = (DeleteMultiTaskMappingRequest) o;
-        return Objects.equals(this.instanceId, deleteMultiTaskMappingRequest.instanceId)
-            && Objects.equals(this.taskId, deleteMultiTaskMappingRequest.taskId)
-            && Objects.equals(this.mappingId, deleteMultiTaskMappingRequest.mappingId);
+        DeleteMultiTaskMappingRequest that = (DeleteMultiTaskMappingRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.mappingId, that.mappingId);
     }
 
     @Override

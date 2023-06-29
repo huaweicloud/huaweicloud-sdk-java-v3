@@ -55,16 +55,15 @@ public class RetryBatchJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryBatchJobRequest retryBatchJobRequest = (RetryBatchJobRequest) o;
-        return Objects.equals(this.jobId, retryBatchJobRequest.jobId)
-            && Objects.equals(this.iefInstanceId, retryBatchJobRequest.iefInstanceId);
+        RetryBatchJobRequest that = (RetryBatchJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

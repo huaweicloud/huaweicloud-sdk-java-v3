@@ -121,19 +121,17 @@ public class CommandTimeTaken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommandTimeTaken commandTimeTaken = (CommandTimeTaken) o;
-        return Objects.equals(this.callsSum, commandTimeTaken.callsSum)
-            && Objects.equals(this.usecSum, commandTimeTaken.usecSum)
-            && Objects.equals(this.commandName, commandTimeTaken.commandName)
-            && Objects.equals(this.perUsec, commandTimeTaken.perUsec)
-            && Objects.equals(this.averageUsec, commandTimeTaken.averageUsec);
+        CommandTimeTaken that = (CommandTimeTaken) obj;
+        return Objects.equals(this.callsSum, that.callsSum) && Objects.equals(this.usecSum, that.usecSum)
+            && Objects.equals(this.commandName, that.commandName) && Objects.equals(this.perUsec, that.perUsec)
+            && Objects.equals(this.averageUsec, that.averageUsec);
     }
 
     @Override

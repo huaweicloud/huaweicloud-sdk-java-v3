@@ -1,54 +1,42 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.MetaData;
-import com.huaweicloud.sdk.aom.v2.model.MetricItemResultAPI;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListMetricItemsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metaData")
-    
+    @JsonProperty(value = "metaData")
 
     private MetaData metaData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metrics")
-    
+    @JsonProperty(value = "metrics")
+
     private List<MetricItemResultAPI> metrics = null;
-    
+
     public ListMetricItemsResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public ListMetricItemsResponse withMetaData(Consumer<MetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new MetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get metaData
@@ -62,16 +50,13 @@ public class ListMetricItemsResponse extends SdkResponse {
         this.metaData = metaData;
     }
 
-    
-
     public ListMetricItemsResponse withMetrics(List<MetricItemResultAPI> metrics) {
         this.metrics = metrics;
         return this;
     }
 
-    
     public ListMetricItemsResponse addMetricsItem(MetricItemResultAPI metricsItem) {
-        if(this.metrics == null) {
+        if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         this.metrics.add(metricsItem);
@@ -79,7 +64,7 @@ public class ListMetricItemsResponse extends SdkResponse {
     }
 
     public ListMetricItemsResponse withMetrics(Consumer<List<MetricItemResultAPI>> metricsSetter) {
-        if(this.metrics == null) {
+        if (this.metrics == null) {
             this.metrics = new ArrayList<>();
         }
         metricsSetter.accept(this.metrics);
@@ -98,24 +83,23 @@ public class ListMetricItemsResponse extends SdkResponse {
         this.metrics = metrics;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricItemsResponse listMetricItemsResponse = (ListMetricItemsResponse) o;
-        return Objects.equals(this.metaData, listMetricItemsResponse.metaData) &&
-            Objects.equals(this.metrics, listMetricItemsResponse.metrics);
+        ListMetricItemsResponse that = (ListMetricItemsResponse) obj;
+        return Objects.equals(this.metaData, that.metaData) && Objects.equals(this.metrics, that.metrics);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metaData, metrics);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,6 +109,7 @@ public class ListMetricItemsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -135,8 +120,5 @@ public class ListMetricItemsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

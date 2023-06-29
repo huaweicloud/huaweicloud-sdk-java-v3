@@ -128,17 +128,16 @@ public class SynthesisResultResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisResultResult synthesisResultResult = (SynthesisResultResult) o;
-        return Objects.equals(this.molecules, synthesisResultResult.molecules)
-            && Objects.equals(this.reactions, synthesisResultResult.reactions)
-            && Objects.equals(this.synthesisRoutes, synthesisResultResult.synthesisRoutes);
+        SynthesisResultResult that = (SynthesisResultResult) obj;
+        return Objects.equals(this.molecules, that.molecules) && Objects.equals(this.reactions, that.reactions)
+            && Objects.equals(this.synthesisRoutes, that.synthesisRoutes);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class ShowWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowRequest showWorkflowRequest = (ShowWorkflowRequest) o;
-        return Objects.equals(this.showParamDetail, showWorkflowRequest.showParamDetail)
-            && Objects.equals(this.eihealthProjectId, showWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.workflowId, showWorkflowRequest.workflowId);
+        ShowWorkflowRequest that = (ShowWorkflowRequest) obj;
+        return Objects.equals(this.showParamDetail, that.showParamDetail)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class PagedInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PagedInfo pagedInfo = (PagedInfo) o;
-        return Objects.equals(this.currentCount, pagedInfo.currentCount)
-            && Objects.equals(this.nextMarker, pagedInfo.nextMarker)
-            && Objects.equals(this.previousMarker, pagedInfo.previousMarker);
+        PagedInfo that = (PagedInfo) obj;
+        return Objects.equals(this.currentCount, that.currentCount) && Objects.equals(this.nextMarker, that.nextMarker)
+            && Objects.equals(this.previousMarker, that.previousMarker);
     }
 
     @Override

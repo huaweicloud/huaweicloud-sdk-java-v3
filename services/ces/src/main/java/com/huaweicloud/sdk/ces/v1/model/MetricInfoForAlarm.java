@@ -140,19 +140,18 @@ public class MetricInfoForAlarm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricInfoForAlarm metricInfoForAlarm = (MetricInfoForAlarm) o;
-        return Objects.equals(this.namespace, metricInfoForAlarm.namespace)
-            && Objects.equals(this.metricName, metricInfoForAlarm.metricName)
-            && Objects.equals(this.dimensions, metricInfoForAlarm.dimensions)
-            && Objects.equals(this.resourceGroupId, metricInfoForAlarm.resourceGroupId)
-            && Objects.equals(this.resourceGroupName, metricInfoForAlarm.resourceGroupName);
+        MetricInfoForAlarm that = (MetricInfoForAlarm) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.resourceGroupId, that.resourceGroupId)
+            && Objects.equals(this.resourceGroupName, that.resourceGroupName);
     }
 
     @Override

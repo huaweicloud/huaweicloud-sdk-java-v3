@@ -275,22 +275,20 @@ public class ApiForSign {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiForSign apiForSign = (ApiForSign) o;
-        return Objects.equals(this.authType, apiForSign.authType)
-            && Objects.equals(this.runEnvName, apiForSign.runEnvName)
-            && Objects.equals(this.groupName, apiForSign.groupName)
-            && Objects.equals(this.publishId, apiForSign.publishId) && Objects.equals(this.groupId, apiForSign.groupId)
-            && Objects.equals(this.name, apiForSign.name) && Objects.equals(this.remark, apiForSign.remark)
-            && Objects.equals(this.runEnvId, apiForSign.runEnvId) && Objects.equals(this.id, apiForSign.id)
-            && Objects.equals(this.reqUri, apiForSign.reqUri) && Objects.equals(this.type, apiForSign.type)
-            && Objects.equals(this.signatureName, apiForSign.signatureName);
+        ApiForSign that = (ApiForSign) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.runEnvName, that.runEnvName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.signatureName, that.signatureName);
     }
 
     @Override

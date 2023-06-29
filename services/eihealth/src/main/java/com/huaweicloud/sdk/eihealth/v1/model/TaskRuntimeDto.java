@@ -162,20 +162,18 @@ public class TaskRuntimeDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskRuntimeDto taskRuntimeDto = (TaskRuntimeDto) o;
-        return Objects.equals(this.taskName, taskRuntimeDto.taskName)
-            && Objects.equals(this.createTime, taskRuntimeDto.createTime)
-            && Objects.equals(this.finishTime, taskRuntimeDto.finishTime)
-            && Objects.equals(this.actualRunningTime, taskRuntimeDto.actualRunningTime)
-            && Objects.equals(this.status, taskRuntimeDto.status)
-            && Objects.equals(this.subTasks, taskRuntimeDto.subTasks);
+        TaskRuntimeDto that = (TaskRuntimeDto) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.actualRunningTime, that.actualRunningTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.subTasks, that.subTasks);
     }
 
     @Override

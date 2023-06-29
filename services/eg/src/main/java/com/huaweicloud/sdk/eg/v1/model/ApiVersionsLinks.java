@@ -55,15 +55,15 @@ public class ApiVersionsLinks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiVersionsLinks apiVersionsLinks = (ApiVersionsLinks) o;
-        return Objects.equals(this.href, apiVersionsLinks.href) && Objects.equals(this.rel, apiVersionsLinks.rel);
+        ApiVersionsLinks that = (ApiVersionsLinks) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel);
     }
 
     @Override

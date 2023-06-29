@@ -33,15 +33,15 @@ public class CheckNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckNameRequest checkNameRequest = (CheckNameRequest) o;
-        return Objects.equals(this.displayName, checkNameRequest.displayName);
+        CheckNameRequest that = (CheckNameRequest) obj;
+        return Objects.equals(this.displayName, that.displayName);
     }
 
     @Override

@@ -106,22 +106,15 @@ public class ErrorlogForLtsRequest {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LevelEnum(value));
         }
 
         public static LevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -261,20 +254,17 @@ public class ErrorlogForLtsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorlogForLtsRequest errorlogForLtsRequest = (ErrorlogForLtsRequest) o;
-        return Objects.equals(this.startTime, errorlogForLtsRequest.startTime)
-            && Objects.equals(this.endTime, errorlogForLtsRequest.endTime)
-            && Objects.equals(this.level, errorlogForLtsRequest.level)
-            && Objects.equals(this.lineNum, errorlogForLtsRequest.lineNum)
-            && Objects.equals(this.limit, errorlogForLtsRequest.limit)
-            && Objects.equals(this.searchType, errorlogForLtsRequest.searchType);
+        ErrorlogForLtsRequest that = (ErrorlogForLtsRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchType, that.searchType);
     }
 
     @Override

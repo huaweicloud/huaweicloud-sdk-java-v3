@@ -118,18 +118,18 @@ public class SubInstanceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubInstanceResult subInstanceResult = (SubInstanceResult) o;
-        return Objects.equals(this.subRuleId, subInstanceResult.subRuleId)
-            && Objects.equals(this.subInstanceInstanceId, subInstanceResult.subInstanceInstanceId)
-            && Objects.equals(this.abnormalTableStatus, subInstanceResult.abnormalTableStatus)
-            && Objects.equals(this.results, subInstanceResult.results);
+        SubInstanceResult that = (SubInstanceResult) obj;
+        return Objects.equals(this.subRuleId, that.subRuleId)
+            && Objects.equals(this.subInstanceInstanceId, that.subInstanceInstanceId)
+            && Objects.equals(this.abnormalTableStatus, that.abnormalTableStatus)
+            && Objects.equals(this.results, that.results);
     }
 
     @Override

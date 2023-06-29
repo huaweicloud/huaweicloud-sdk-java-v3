@@ -112,16 +112,16 @@ public class RolePolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RolePolicy rolePolicy = (RolePolicy) o;
-        return Objects.equals(this.depends, rolePolicy.depends) && Objects.equals(this.statement, rolePolicy.statement)
-            && Objects.equals(this.version, rolePolicy.version);
+        RolePolicy that = (RolePolicy) obj;
+        return Objects.equals(this.depends, that.depends) && Objects.equals(this.statement, that.statement)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

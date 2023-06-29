@@ -43,15 +43,15 @@ public class RegisterDmsKafkaInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterDmsKafkaInstanceRequest registerDmsKafkaInstanceRequest = (RegisterDmsKafkaInstanceRequest) o;
-        return Objects.equals(this.body, registerDmsKafkaInstanceRequest.body);
+        RegisterDmsKafkaInstanceRequest that = (RegisterDmsKafkaInstanceRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

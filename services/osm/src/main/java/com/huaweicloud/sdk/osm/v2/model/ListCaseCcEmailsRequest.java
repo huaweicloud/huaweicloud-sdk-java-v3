@@ -85,17 +85,16 @@ public class ListCaseCcEmailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseCcEmailsRequest listCaseCcEmailsRequest = (ListCaseCcEmailsRequest) o;
-        return Objects.equals(this.xSite, listCaseCcEmailsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseCcEmailsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseCcEmailsRequest.xTimeZone);
+        ListCaseCcEmailsRequest that = (ListCaseCcEmailsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

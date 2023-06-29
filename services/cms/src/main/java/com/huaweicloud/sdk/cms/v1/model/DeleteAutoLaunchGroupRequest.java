@@ -65,16 +65,15 @@ public class DeleteAutoLaunchGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAutoLaunchGroupRequest deleteAutoLaunchGroupRequest = (DeleteAutoLaunchGroupRequest) o;
-        return Objects.equals(this.autoLaunchGroupId, deleteAutoLaunchGroupRequest.autoLaunchGroupId)
-            && Objects.equals(this.body, deleteAutoLaunchGroupRequest.body);
+        DeleteAutoLaunchGroupRequest that = (DeleteAutoLaunchGroupRequest) obj;
+        return Objects.equals(this.autoLaunchGroupId, that.autoLaunchGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -129,19 +129,17 @@ public class ShowCaseExtendsParamRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCaseExtendsParamRequest showCaseExtendsParamRequest = (ShowCaseExtendsParamRequest) o;
-        return Objects.equals(this.groupId, showCaseExtendsParamRequest.groupId)
-            && Objects.equals(this.caseId, showCaseExtendsParamRequest.caseId)
-            && Objects.equals(this.xSite, showCaseExtendsParamRequest.xSite)
-            && Objects.equals(this.xLanguage, showCaseExtendsParamRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showCaseExtendsParamRequest.xTimeZone);
+        ShowCaseExtendsParamRequest that = (ShowCaseExtendsParamRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.caseId, that.caseId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

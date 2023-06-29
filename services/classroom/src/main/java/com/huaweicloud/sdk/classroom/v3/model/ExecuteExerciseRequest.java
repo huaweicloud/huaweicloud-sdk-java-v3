@@ -87,17 +87,16 @@ public class ExecuteExerciseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteExerciseRequest executeExerciseRequest = (ExecuteExerciseRequest) o;
-        return Objects.equals(this.userToken, executeExerciseRequest.userToken)
-            && Objects.equals(this.exerciseId, executeExerciseRequest.exerciseId)
-            && Objects.equals(this.body, executeExerciseRequest.body);
+        ExecuteExerciseRequest that = (ExecuteExerciseRequest) obj;
+        return Objects.equals(this.userToken, that.userToken) && Objects.equals(this.exerciseId, that.exerciseId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

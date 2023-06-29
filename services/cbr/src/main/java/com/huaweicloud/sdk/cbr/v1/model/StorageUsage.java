@@ -143,20 +143,18 @@ public class StorageUsage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageUsage storageUsage = (StorageUsage) o;
-        return Objects.equals(this.backupCount, storageUsage.backupCount)
-            && Objects.equals(this.backupSize, storageUsage.backupSize)
-            && Objects.equals(this.resourceId, storageUsage.resourceId)
-            && Objects.equals(this.resourceName, storageUsage.resourceName)
-            && Objects.equals(this.resourceType, storageUsage.resourceType)
-            && Objects.equals(this.backupSizeMultiaz, storageUsage.backupSizeMultiaz);
+        StorageUsage that = (StorageUsage) obj;
+        return Objects.equals(this.backupCount, that.backupCount) && Objects.equals(this.backupSize, that.backupSize)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.backupSizeMultiaz, that.backupSizeMultiaz);
     }
 
     @Override

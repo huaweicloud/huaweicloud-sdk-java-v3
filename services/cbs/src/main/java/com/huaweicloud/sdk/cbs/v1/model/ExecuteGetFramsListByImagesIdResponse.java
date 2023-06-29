@@ -1,48 +1,36 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ImageFrame;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "image_frames")
+
+    private List<ImageFrame> imageFrames = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_frames")
-    
-    private List<ImageFrame> imageFrames = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
@@ -51,9 +39,8 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         return this;
     }
 
-    
     public ExecuteGetFramsListByImagesIdResponse addImageFramesItem(ImageFrame imageFramesItem) {
-        if(this.imageFrames == null) {
+        if (this.imageFrames == null) {
             this.imageFrames = new ArrayList<>();
         }
         this.imageFrames.add(imageFramesItem);
@@ -61,7 +48,7 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
     }
 
     public ExecuteGetFramsListByImagesIdResponse withImageFrames(Consumer<List<ImageFrame>> imageFramesSetter) {
-        if(this.imageFrames == null) {
+        if (this.imageFrames == null) {
             this.imageFrames = new ArrayList<>();
         }
         imageFramesSetter.accept(this.imageFrames);
@@ -80,15 +67,10 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         this.imageFrames = imageFrames;
     }
 
-    
-
     public ExecuteGetFramsListByImagesIdResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
-
-    
-
 
     /**
      * 播报框总数
@@ -102,15 +84,10 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public ExecuteGetFramsListByImagesIdResponse withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 起始偏移量
@@ -124,15 +101,10 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         this.offset = offset;
     }
 
-    
-
     public ExecuteGetFramsListByImagesIdResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 本次查询数量
@@ -146,26 +118,24 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetFramsListByImagesIdResponse executeGetFramsListByImagesIdResponse = (ExecuteGetFramsListByImagesIdResponse) o;
-        return Objects.equals(this.imageFrames, executeGetFramsListByImagesIdResponse.imageFrames) &&
-            Objects.equals(this.total, executeGetFramsListByImagesIdResponse.total) &&
-            Objects.equals(this.offset, executeGetFramsListByImagesIdResponse.offset) &&
-            Objects.equals(this.count, executeGetFramsListByImagesIdResponse.count);
+        ExecuteGetFramsListByImagesIdResponse that = (ExecuteGetFramsListByImagesIdResponse) obj;
+        return Objects.equals(this.imageFrames, that.imageFrames) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.count, that.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageFrames, total, offset, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +147,7 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +158,5 @@ public class ExecuteGetFramsListByImagesIdResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -66,16 +66,15 @@ public class RecognizeShortAudioResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeShortAudioResponse recognizeShortAudioResponse = (RecognizeShortAudioResponse) o;
-        return Objects.equals(this.traceId, recognizeShortAudioResponse.traceId)
-            && Objects.equals(this.result, recognizeShortAudioResponse.result);
+        RecognizeShortAudioResponse that = (RecognizeShortAudioResponse) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.result, that.result);
     }
 
     @Override

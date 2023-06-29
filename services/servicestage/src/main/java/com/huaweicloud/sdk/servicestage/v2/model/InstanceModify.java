@@ -234,21 +234,20 @@ public class InstanceModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceModify instanceModify = (InstanceModify) o;
-        return Objects.equals(this.version, instanceModify.version)
-            && Objects.equals(this.flavorId, instanceModify.flavorId)
-            && Objects.equals(this.artifacts, instanceModify.artifacts)
-            && Objects.equals(this._configuration, instanceModify._configuration)
-            && Objects.equals(this.description, instanceModify.description)
-            && Objects.equals(this.externalAccesses, instanceModify.externalAccesses)
-            && Objects.equals(this.referResources, instanceModify.referResources);
+        InstanceModify that = (InstanceModify) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.artifacts, that.artifacts)
+            && Objects.equals(this._configuration, that._configuration)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.externalAccesses, that.externalAccesses)
+            && Objects.equals(this.referResources, that.referResources);
     }
 
     @Override

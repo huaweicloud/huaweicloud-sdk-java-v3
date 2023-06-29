@@ -140,19 +140,17 @@ public class DockingReceptorDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DockingReceptorDto dockingReceptorDto = (DockingReceptorDto) o;
-        return Objects.equals(this.receptor, dockingReceptorDto.receptor)
-            && Objects.equals(this.boundingBox, dockingReceptorDto.boundingBox)
-            && Objects.equals(this.removeIon, dockingReceptorDto.removeIon)
-            && Objects.equals(this.removeWater, dockingReceptorDto.removeWater)
-            && Objects.equals(this.removeLigand, dockingReceptorDto.removeLigand);
+        DockingReceptorDto that = (DockingReceptorDto) obj;
+        return Objects.equals(this.receptor, that.receptor) && Objects.equals(this.boundingBox, that.boundingBox)
+            && Objects.equals(this.removeIon, that.removeIon) && Objects.equals(this.removeWater, that.removeWater)
+            && Objects.equals(this.removeLigand, that.removeLigand);
     }
 
     @Override

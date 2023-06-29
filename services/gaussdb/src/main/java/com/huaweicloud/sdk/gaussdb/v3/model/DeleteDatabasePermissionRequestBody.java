@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.DeleteDatabasePermission;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 删除数据库用户的数据库权限
  */
-public class DeleteDatabasePermissionRequestBody  {
-
+public class DeleteDatabasePermissionRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
+    @JsonProperty(value = "users")
+
     private List<DeleteDatabasePermission> users = null;
-    
+
     public DeleteDatabasePermissionRequestBody withUsers(List<DeleteDatabasePermission> users) {
         this.users = users;
         return this;
     }
 
-    
     public DeleteDatabasePermissionRequestBody addUsersItem(DeleteDatabasePermission usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -40,7 +32,7 @@ public class DeleteDatabasePermissionRequestBody  {
     }
 
     public DeleteDatabasePermissionRequestBody withUsers(Consumer<List<DeleteDatabasePermission>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
@@ -59,23 +51,23 @@ public class DeleteDatabasePermissionRequestBody  {
         this.users = users;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabasePermissionRequestBody deleteDatabasePermissionRequestBody = (DeleteDatabasePermissionRequestBody) o;
-        return Objects.equals(this.users, deleteDatabasePermissionRequestBody.users);
+        DeleteDatabasePermissionRequestBody that = (DeleteDatabasePermissionRequestBody) obj;
+        return Objects.equals(this.users, that.users);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class DeleteDatabasePermissionRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class DeleteDatabasePermissionRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -119,18 +119,16 @@ public class SearchCorpAdminsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCorpAdminsResponse searchCorpAdminsResponse = (SearchCorpAdminsResponse) o;
-        return Objects.equals(this.offset, searchCorpAdminsResponse.offset)
-            && Objects.equals(this.limit, searchCorpAdminsResponse.limit)
-            && Objects.equals(this.count, searchCorpAdminsResponse.count)
-            && Objects.equals(this.data, searchCorpAdminsResponse.data);
+        SearchCorpAdminsResponse that = (SearchCorpAdminsResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.data, that.data);
     }
 
     @Override

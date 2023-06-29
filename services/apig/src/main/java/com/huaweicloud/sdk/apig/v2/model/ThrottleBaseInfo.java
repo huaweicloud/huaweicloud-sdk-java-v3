@@ -82,22 +82,15 @@ public class ThrottleBaseInfo {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -174,22 +167,15 @@ public class ThrottleBaseInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -402,24 +388,21 @@ public class ThrottleBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleBaseInfo throttleBaseInfo = (ThrottleBaseInfo) o;
-        return Objects.equals(this.appCallLimits, throttleBaseInfo.appCallLimits)
-            && Objects.equals(this.name, throttleBaseInfo.name)
-            && Objects.equals(this.timeUnit, throttleBaseInfo.timeUnit)
-            && Objects.equals(this.remark, throttleBaseInfo.remark)
-            && Objects.equals(this.apiCallLimits, throttleBaseInfo.apiCallLimits)
-            && Objects.equals(this.type, throttleBaseInfo.type)
-            && Objects.equals(this.enableAdaptiveControl, throttleBaseInfo.enableAdaptiveControl)
-            && Objects.equals(this.userCallLimits, throttleBaseInfo.userCallLimits)
-            && Objects.equals(this.timeInterval, throttleBaseInfo.timeInterval)
-            && Objects.equals(this.ipCallLimits, throttleBaseInfo.ipCallLimits);
+        ThrottleBaseInfo that = (ThrottleBaseInfo) obj;
+        return Objects.equals(this.appCallLimits, that.appCallLimits) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.apiCallLimits, that.apiCallLimits) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableAdaptiveControl, that.enableAdaptiveControl)
+            && Objects.equals(this.userCallLimits, that.userCallLimits)
+            && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.ipCallLimits, that.ipCallLimits);
     }
 
     @Override

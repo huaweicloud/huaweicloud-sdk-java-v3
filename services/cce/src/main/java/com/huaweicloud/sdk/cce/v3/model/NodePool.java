@@ -149,17 +149,17 @@ public class NodePool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePool nodePool = (NodePool) o;
-        return Objects.equals(this.kind, nodePool.kind) && Objects.equals(this.apiVersion, nodePool.apiVersion)
-            && Objects.equals(this.metadata, nodePool.metadata) && Objects.equals(this.spec, nodePool.spec)
-            && Objects.equals(this.status, nodePool.status);
+        NodePool that = (NodePool) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -188,21 +188,18 @@ public class ListEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.beginTime, listEventsRequest.beginTime)
-            && Objects.equals(this.endTime, listEventsRequest.endTime)
-            && Objects.equals(this.hostName, listEventsRequest.hostName)
-            && Objects.equals(this.eventTypes, listEventsRequest.eventTypes)
-            && Objects.equals(this.handleStatus, listEventsRequest.handleStatus)
-            && Objects.equals(this.limit, listEventsRequest.limit)
-            && Objects.equals(this.offset, listEventsRequest.offset);
+        ListEventsRequest that = (ListEventsRequest) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.eventTypes, that.eventTypes)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

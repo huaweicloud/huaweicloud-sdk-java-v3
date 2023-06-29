@@ -81,17 +81,16 @@ public class PortStatisticResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortStatisticResponseInfo portStatisticResponseInfo = (PortStatisticResponseInfo) o;
-        return Objects.equals(this.port, portStatisticResponseInfo.port)
-            && Objects.equals(this.type, portStatisticResponseInfo.type)
-            && Objects.equals(this.num, portStatisticResponseInfo.num);
+        PortStatisticResponseInfo that = (PortStatisticResponseInfo) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.num, that.num);
     }
 
     @Override

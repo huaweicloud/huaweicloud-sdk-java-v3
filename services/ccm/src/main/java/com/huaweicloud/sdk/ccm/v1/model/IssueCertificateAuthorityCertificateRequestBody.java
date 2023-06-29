@@ -111,20 +111,17 @@ public class IssueCertificateAuthorityCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueCertificateAuthorityCertificateRequestBody issueCertificateAuthorityCertificateRequestBody =
-            (IssueCertificateAuthorityCertificateRequestBody) o;
-        return Objects.equals(this.issuerId, issueCertificateAuthorityCertificateRequestBody.issuerId)
-            && Objects.equals(this.pathLength, issueCertificateAuthorityCertificateRequestBody.pathLength)
-            && Objects.equals(this.signatureAlgorithm,
-                issueCertificateAuthorityCertificateRequestBody.signatureAlgorithm)
-            && Objects.equals(this.validity, issueCertificateAuthorityCertificateRequestBody.validity);
+        IssueCertificateAuthorityCertificateRequestBody that = (IssueCertificateAuthorityCertificateRequestBody) obj;
+        return Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.pathLength, that.pathLength)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.validity, that.validity);
     }
 
     @Override

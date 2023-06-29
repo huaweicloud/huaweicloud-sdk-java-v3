@@ -77,17 +77,17 @@ public class SmnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmnInfo smnInfo = (SmnInfo) o;
-        return Objects.equals(this.notifyResult, smnInfo.notifyResult)
-            && Objects.equals(this.notifyErrorMessage, smnInfo.notifyErrorMessage)
-            && Objects.equals(this.topicName, smnInfo.topicName);
+        SmnInfo that = (SmnInfo) obj;
+        return Objects.equals(this.notifyResult, that.notifyResult)
+            && Objects.equals(this.notifyErrorMessage, that.notifyErrorMessage)
+            && Objects.equals(this.topicName, that.topicName);
     }
 
     @Override

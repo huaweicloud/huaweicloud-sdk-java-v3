@@ -245,24 +245,21 @@ public class ListServicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServicesRequest listServicesRequest = (ListServicesRequest) o;
-        return Objects.equals(this.instanceId, listServicesRequest.instanceId)
-            && Objects.equals(this.limit, listServicesRequest.limit)
-            && Objects.equals(this.serviceId, listServicesRequest.serviceId)
-            && Objects.equals(this.serviceName, listServicesRequest.serviceName)
-            && Objects.equals(this.productTemplateId, listServicesRequest.productTemplateId)
-            && Objects.equals(this.productId, listServicesRequest.productId)
-            && Objects.equals(this.createdUserName, listServicesRequest.createdUserName)
-            && Objects.equals(this.createdDateStart, listServicesRequest.createdDateStart)
-            && Objects.equals(this.createdDateEnd, listServicesRequest.createdDateEnd)
-            && Objects.equals(this.offset, listServicesRequest.offset);
+        ListServicesRequest that = (ListServicesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.productTemplateId, that.productTemplateId)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.createdUserName, that.createdUserName)
+            && Objects.equals(this.createdDateStart, that.createdDateStart)
+            && Objects.equals(this.createdDateEnd, that.createdDateEnd) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

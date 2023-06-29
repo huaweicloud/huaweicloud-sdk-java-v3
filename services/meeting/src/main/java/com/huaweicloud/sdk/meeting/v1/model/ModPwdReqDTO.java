@@ -77,16 +77,16 @@ public class ModPwdReqDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModPwdReqDTO modPwdReqDTO = (ModPwdReqDTO) o;
-        return Objects.equals(this.account, modPwdReqDTO.account) && Objects.equals(this.oldPwd, modPwdReqDTO.oldPwd)
-            && Objects.equals(this.newPwd, modPwdReqDTO.newPwd);
+        ModPwdReqDTO that = (ModPwdReqDTO) obj;
+        return Objects.equals(this.account, that.account) && Objects.equals(this.oldPwd, that.oldPwd)
+            && Objects.equals(this.newPwd, that.newPwd);
     }
 
     @Override

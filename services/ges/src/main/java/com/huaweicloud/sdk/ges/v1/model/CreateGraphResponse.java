@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,28 +11,23 @@ import java.util.Objects;
  */
 public class CreateGraphResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
@@ -48,9 +35,6 @@ public class CreateGraphResponse extends SdkResponse {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -64,15 +48,10 @@ public class CreateGraphResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateGraphResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 图名称。
@@ -86,15 +65,10 @@ public class CreateGraphResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateGraphResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -108,15 +82,10 @@ public class CreateGraphResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public CreateGraphResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -130,26 +99,24 @@ public class CreateGraphResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGraphResponse createGraphResponse = (CreateGraphResponse) o;
-        return Objects.equals(this.id, createGraphResponse.id) &&
-            Objects.equals(this.name, createGraphResponse.name) &&
-            Objects.equals(this.errorMessage, createGraphResponse.errorMessage) &&
-            Objects.equals(this.errorCode, createGraphResponse.errorCode);
+        CreateGraphResponse that = (CreateGraphResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, errorMessage, errorCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,6 +128,7 @@ public class CreateGraphResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -171,8 +139,5 @@ public class CreateGraphResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

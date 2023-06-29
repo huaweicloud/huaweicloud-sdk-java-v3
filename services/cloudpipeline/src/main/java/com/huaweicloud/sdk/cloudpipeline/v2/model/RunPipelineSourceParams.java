@@ -241,24 +241,19 @@ public class RunPipelineSourceParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineSourceParams runPipelineSourceParams = (RunPipelineSourceParams) o;
-        return Objects.equals(this.gitType, runPipelineSourceParams.gitType)
-            && Objects.equals(this.gitUrl, runPipelineSourceParams.gitUrl)
-            && Objects.equals(this.sshGitUrl, runPipelineSourceParams.sshGitUrl)
-            && Objects.equals(this.webUrl, runPipelineSourceParams.webUrl)
-            && Objects.equals(this.repoName, runPipelineSourceParams.repoName)
-            && Objects.equals(this.defaultBranch, runPipelineSourceParams.defaultBranch)
-            && Objects.equals(this.endpointId, runPipelineSourceParams.endpointId)
-            && Objects.equals(this.codehubId, runPipelineSourceParams.codehubId)
-            && Objects.equals(this.alias, runPipelineSourceParams.alias)
-            && Objects.equals(this.buildParams, runPipelineSourceParams.buildParams);
+        RunPipelineSourceParams that = (RunPipelineSourceParams) obj;
+        return Objects.equals(this.gitType, that.gitType) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.sshGitUrl, that.sshGitUrl) && Objects.equals(this.webUrl, that.webUrl)
+            && Objects.equals(this.repoName, that.repoName) && Objects.equals(this.defaultBranch, that.defaultBranch)
+            && Objects.equals(this.endpointId, that.endpointId) && Objects.equals(this.codehubId, that.codehubId)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.buildParams, that.buildParams);
     }
 
     @Override

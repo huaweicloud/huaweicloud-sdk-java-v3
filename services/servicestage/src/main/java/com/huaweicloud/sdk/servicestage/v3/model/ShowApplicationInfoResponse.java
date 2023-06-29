@@ -251,24 +251,20 @@ public class ShowApplicationInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationInfoResponse showApplicationInfoResponse = (ShowApplicationInfoResponse) o;
-        return Objects.equals(this.id, showApplicationInfoResponse.id)
-            && Objects.equals(this.name, showApplicationInfoResponse.name)
-            && Objects.equals(this.componentCount, showApplicationInfoResponse.componentCount)
-            && Objects.equals(this.creator, showApplicationInfoResponse.creator)
-            && Objects.equals(this.projectId, showApplicationInfoResponse.projectId)
-            && Objects.equals(this.enterpriseProjectId, showApplicationInfoResponse.enterpriseProjectId)
-            && Objects.equals(this.createTime, showApplicationInfoResponse.createTime)
-            && Objects.equals(this.updateTime, showApplicationInfoResponse.updateTime)
-            && Objects.equals(this.description, showApplicationInfoResponse.description)
-            && Objects.equals(this.labels, showApplicationInfoResponse.labels);
+        ShowApplicationInfoResponse that = (ShowApplicationInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.componentCount, that.componentCount) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

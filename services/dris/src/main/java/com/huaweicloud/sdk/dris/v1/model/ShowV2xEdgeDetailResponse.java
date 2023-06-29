@@ -503,33 +503,26 @@ public class ShowV2xEdgeDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowV2xEdgeDetailResponse showV2xEdgeDetailResponse = (ShowV2xEdgeDetailResponse) o;
-        return Objects.equals(this.v2xEdgeId, showV2xEdgeDetailResponse.v2xEdgeId)
-            && Objects.equals(this.name, showV2xEdgeDetailResponse.name)
-            && Objects.equals(this.description, showV2xEdgeDetailResponse.description)
-            && Objects.equals(this.esn, showV2xEdgeDetailResponse.esn)
-            && Objects.equals(this.ip, showV2xEdgeDetailResponse.ip)
-            && Objects.equals(this.port, showV2xEdgeDetailResponse.port)
-            && Objects.equals(this.hardwareType, showV2xEdgeDetailResponse.hardwareType)
-            && Objects.equals(this.positionDescription, showV2xEdgeDetailResponse.positionDescription)
-            && Objects.equals(this.location, showV2xEdgeDetailResponse.location)
-            && Objects.equals(this.cameras, showV2xEdgeDetailResponse.cameras)
-            && Objects.equals(this.radars, showV2xEdgeDetailResponse.radars)
-            && Objects.equals(this.localRsus, showV2xEdgeDetailResponse.localRsus)
-            && Objects.equals(this.edgeGeneralConfig, showV2xEdgeDetailResponse.edgeGeneralConfig)
-            && Objects.equals(this.edgeAdvanceConfig, showV2xEdgeDetailResponse.edgeAdvanceConfig)
-            && Objects.equals(this.status, showV2xEdgeDetailResponse.status)
-            && Objects.equals(this.channelStatus, showV2xEdgeDetailResponse.channelStatus)
-            && Objects.equals(this.nodeId, showV2xEdgeDetailResponse.nodeId)
-            && Objects.equals(this.createdTime, showV2xEdgeDetailResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, showV2xEdgeDetailResponse.lastModifiedTime);
+        ShowV2xEdgeDetailResponse that = (ShowV2xEdgeDetailResponse) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.hardwareType, that.hardwareType)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.cameras, that.cameras)
+            && Objects.equals(this.radars, that.radars) && Objects.equals(this.localRsus, that.localRsus)
+            && Objects.equals(this.edgeGeneralConfig, that.edgeGeneralConfig)
+            && Objects.equals(this.edgeAdvanceConfig, that.edgeAdvanceConfig)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.channelStatus, that.channelStatus)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime);
     }
 
     @Override

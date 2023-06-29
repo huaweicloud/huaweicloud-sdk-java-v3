@@ -74,16 +74,16 @@ public class IndicatorParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorParam indicatorParam = (IndicatorParam) o;
-        return Objects.equals(this.customizeParameter, indicatorParam.customizeParameter)
-            && Objects.equals(this.customizeFormula, indicatorParam.customizeFormula);
+        IndicatorParam that = (IndicatorParam) obj;
+        return Objects.equals(this.customizeParameter, that.customizeParameter)
+            && Objects.equals(this.customizeFormula, that.customizeFormula);
     }
 
     @Override

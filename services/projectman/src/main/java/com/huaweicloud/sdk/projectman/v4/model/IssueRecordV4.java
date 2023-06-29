@@ -127,16 +127,16 @@ public class IssueRecordV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueRecordV4 issueRecordV4 = (IssueRecordV4) o;
-        return Objects.equals(this.id, issueRecordV4.id) && Objects.equals(this.createdTime, issueRecordV4.createdTime)
-            && Objects.equals(this.user, issueRecordV4.user) && Objects.equals(this.details, issueRecordV4.details);
+        IssueRecordV4 that = (IssueRecordV4) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.details, that.details);
     }
 
     @Override

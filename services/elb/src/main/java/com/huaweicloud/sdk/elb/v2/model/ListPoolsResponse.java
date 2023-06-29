@@ -53,15 +53,15 @@ public class ListPoolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPoolsResponse listPoolsResponse = (ListPoolsResponse) o;
-        return Objects.equals(this.pools, listPoolsResponse.pools);
+        ListPoolsResponse that = (ListPoolsResponse) obj;
+        return Objects.equals(this.pools, that.pools);
     }
 
     @Override

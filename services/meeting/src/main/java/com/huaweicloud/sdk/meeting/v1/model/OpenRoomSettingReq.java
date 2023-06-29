@@ -165,21 +165,21 @@ public class OpenRoomSettingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenRoomSettingReq openRoomSettingReq = (OpenRoomSettingReq) o;
-        return Objects.equals(this.roomIntroduce, openRoomSettingReq.roomIntroduce)
-            && Objects.equals(this.cropLogoId, openRoomSettingReq.cropLogoId)
-            && Objects.equals(this.coverPictureId, openRoomSettingReq.coverPictureId)
-            && Objects.equals(this.showAudienceMode, openRoomSettingReq.showAudienceMode)
-            && Objects.equals(this.isRedoubleOpen, openRoomSettingReq.isRedoubleOpen)
-            && Objects.equals(this.baseAudienceCount, openRoomSettingReq.baseAudienceCount)
-            && Objects.equals(this.multiple, openRoomSettingReq.multiple);
+        OpenRoomSettingReq that = (OpenRoomSettingReq) obj;
+        return Objects.equals(this.roomIntroduce, that.roomIntroduce)
+            && Objects.equals(this.cropLogoId, that.cropLogoId)
+            && Objects.equals(this.coverPictureId, that.coverPictureId)
+            && Objects.equals(this.showAudienceMode, that.showAudienceMode)
+            && Objects.equals(this.isRedoubleOpen, that.isRedoubleOpen)
+            && Objects.equals(this.baseAudienceCount, that.baseAudienceCount)
+            && Objects.equals(this.multiple, that.multiple);
     }
 
     @Override

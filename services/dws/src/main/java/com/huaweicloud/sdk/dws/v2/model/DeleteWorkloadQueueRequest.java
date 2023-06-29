@@ -77,17 +77,17 @@ public class DeleteWorkloadQueueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteWorkloadQueueRequest deleteWorkloadQueueRequest = (DeleteWorkloadQueueRequest) o;
-        return Objects.equals(this.clusterId, deleteWorkloadQueueRequest.clusterId)
-            && Objects.equals(this.logicalClusterName, deleteWorkloadQueueRequest.logicalClusterName)
-            && Objects.equals(this.workloadQueueName, deleteWorkloadQueueRequest.workloadQueueName);
+        DeleteWorkloadQueueRequest that = (DeleteWorkloadQueueRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.logicalClusterName, that.logicalClusterName)
+            && Objects.equals(this.workloadQueueName, that.workloadQueueName);
     }
 
     @Override

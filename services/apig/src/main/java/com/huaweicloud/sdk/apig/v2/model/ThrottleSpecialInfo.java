@@ -210,23 +210,19 @@ public class ThrottleSpecialInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleSpecialInfo throttleSpecialInfo = (ThrottleSpecialInfo) o;
-        return Objects.equals(this.id, throttleSpecialInfo.id)
-            && Objects.equals(this.callLimits, throttleSpecialInfo.callLimits)
-            && Objects.equals(this.applyTime, throttleSpecialInfo.applyTime)
-            && Objects.equals(this.appName, throttleSpecialInfo.appName)
-            && Objects.equals(this.appId, throttleSpecialInfo.appId)
-            && Objects.equals(this.objectId, throttleSpecialInfo.objectId)
-            && Objects.equals(this.objectType, throttleSpecialInfo.objectType)
-            && Objects.equals(this.objectName, throttleSpecialInfo.objectName)
-            && Objects.equals(this.throttleId, throttleSpecialInfo.throttleId);
+        ThrottleSpecialInfo that = (ThrottleSpecialInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.callLimits, that.callLimits)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectName, that.objectName)
+            && Objects.equals(this.throttleId, that.throttleId);
     }
 
     @Override

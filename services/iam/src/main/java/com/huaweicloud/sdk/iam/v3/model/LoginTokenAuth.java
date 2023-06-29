@@ -43,15 +43,15 @@ public class LoginTokenAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginTokenAuth loginTokenAuth = (LoginTokenAuth) o;
-        return Objects.equals(this.securitytoken, loginTokenAuth.securitytoken);
+        LoginTokenAuth that = (LoginTokenAuth) obj;
+        return Objects.equals(this.securitytoken, that.securitytoken);
     }
 
     @Override

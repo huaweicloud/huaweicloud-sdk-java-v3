@@ -164,19 +164,18 @@ public class NewTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NewTaskInfo newTaskInfo = (NewTaskInfo) o;
-        return Objects.equals(this.name, newTaskInfo.name) && Objects.equals(this.parallel, newTaskInfo.parallel)
-            && Objects.equals(this.enableFullLink, newTaskInfo.enableFullLink)
-            && Objects.equals(this.projectId, newTaskInfo.projectId)
-            && Objects.equals(this.operateMode, newTaskInfo.operateMode)
-            && Objects.equals(this.caseIdList, newTaskInfo.caseIdList);
+        NewTaskInfo that = (NewTaskInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.parallel, that.parallel)
+            && Objects.equals(this.enableFullLink, that.enableFullLink)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.operateMode, that.operateMode)
+            && Objects.equals(this.caseIdList, that.caseIdList);
     }
 
     @Override

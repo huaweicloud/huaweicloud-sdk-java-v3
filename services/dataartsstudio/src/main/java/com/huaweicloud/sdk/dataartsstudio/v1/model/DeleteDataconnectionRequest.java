@@ -55,16 +55,16 @@ public class DeleteDataconnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDataconnectionRequest deleteDataconnectionRequest = (DeleteDataconnectionRequest) o;
-        return Objects.equals(this.workspace, deleteDataconnectionRequest.workspace)
-            && Objects.equals(this.dataConnectionId, deleteDataconnectionRequest.dataConnectionId);
+        DeleteDataconnectionRequest that = (DeleteDataconnectionRequest) obj;
+        return Objects.equals(this.workspace, that.workspace)
+            && Objects.equals(this.dataConnectionId, that.dataConnectionId);
     }
 
     @Override

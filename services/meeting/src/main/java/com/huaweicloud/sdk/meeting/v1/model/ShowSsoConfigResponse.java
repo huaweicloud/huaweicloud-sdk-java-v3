@@ -410,32 +410,27 @@ public class ShowSsoConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSsoConfigResponse showSsoConfigResponse = (ShowSsoConfigResponse) o;
-        return Objects.equals(this.enableSSO, showSsoConfigResponse.enableSSO)
-            && Objects.equals(this.domain, showSsoConfigResponse.domain)
-            && Objects.equals(this.authorizeUrl, showSsoConfigResponse.authorizeUrl)
-            && Objects.equals(this.getTokenUrl, showSsoConfigResponse.getTokenUrl)
-            && Objects.equals(this.clientId, showSsoConfigResponse.clientId)
-            && Objects.equals(this.clientSecret, showSsoConfigResponse.clientSecret)
-            && Objects.equals(this.scope, showSsoConfigResponse.scope)
-            && Objects.equals(this.accFieldName, showSsoConfigResponse.accFieldName)
-            && Objects.equals(this.getUserInfoUrl, showSsoConfigResponse.getUserInfoUrl)
-            && Objects.equals(this.oauth2ServerType, showSsoConfigResponse.oauth2ServerType)
-            && Objects.equals(this.pcSchemaUrl, showSsoConfigResponse.pcSchemaUrl)
-            && Objects.equals(this.androidSchemaUrl, showSsoConfigResponse.androidSchemaUrl)
-            && Objects.equals(this.iosSchemaUrl, showSsoConfigResponse.iosSchemaUrl)
-            && Objects.equals(this.thirdName, showSsoConfigResponse.thirdName)
-            && Objects.equals(this.thirdEmail, showSsoConfigResponse.thirdEmail)
-            && Objects.equals(this.thirdMobile, showSsoConfigResponse.thirdMobile)
-            && Objects.equals(this.thirdAccessToken, showSsoConfigResponse.thirdAccessToken)
-            && Objects.equals(this.thirdHeadImgUrl, showSsoConfigResponse.thirdHeadImgUrl);
+        ShowSsoConfigResponse that = (ShowSsoConfigResponse) obj;
+        return Objects.equals(this.enableSSO, that.enableSSO) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.authorizeUrl, that.authorizeUrl)
+            && Objects.equals(this.getTokenUrl, that.getTokenUrl) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.clientSecret, that.clientSecret) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.accFieldName, that.accFieldName)
+            && Objects.equals(this.getUserInfoUrl, that.getUserInfoUrl)
+            && Objects.equals(this.oauth2ServerType, that.oauth2ServerType)
+            && Objects.equals(this.pcSchemaUrl, that.pcSchemaUrl)
+            && Objects.equals(this.androidSchemaUrl, that.androidSchemaUrl)
+            && Objects.equals(this.iosSchemaUrl, that.iosSchemaUrl) && Objects.equals(this.thirdName, that.thirdName)
+            && Objects.equals(this.thirdEmail, that.thirdEmail) && Objects.equals(this.thirdMobile, that.thirdMobile)
+            && Objects.equals(this.thirdAccessToken, that.thirdAccessToken)
+            && Objects.equals(this.thirdHeadImgUrl, that.thirdHeadImgUrl);
     }
 
     @Override

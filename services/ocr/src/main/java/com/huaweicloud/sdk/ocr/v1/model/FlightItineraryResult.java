@@ -450,33 +450,27 @@ public class FlightItineraryResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlightItineraryResult flightItineraryResult = (FlightItineraryResult) o;
-        return Objects.equals(this.serialNumber, flightItineraryResult.serialNumber)
-            && Objects.equals(this.passengerName, flightItineraryResult.passengerName)
-            && Objects.equals(this.idNumber, flightItineraryResult.idNumber)
-            && Objects.equals(this.endorsementsRestrictions, flightItineraryResult.endorsementsRestrictions)
-            && Objects.equals(this.orderNumber, flightItineraryResult.orderNumber)
-            && Objects.equals(this.fare, flightItineraryResult.fare)
-            && Objects.equals(this.caacDevelopmentFund, flightItineraryResult.caacDevelopmentFund)
-            && Objects.equals(this.fuelSurcharge, flightItineraryResult.fuelSurcharge)
-            && Objects.equals(this.otherTaxes, flightItineraryResult.otherTaxes)
-            && Objects.equals(this.total, flightItineraryResult.total)
-            && Objects.equals(this.eTicketNumber, flightItineraryResult.eTicketNumber)
-            && Objects.equals(this.checkCode, flightItineraryResult.checkCode)
-            && Objects.equals(this.referenceInformation, flightItineraryResult.referenceInformation)
-            && Objects.equals(this.insurance, flightItineraryResult.insurance)
-            && Objects.equals(this.agentCode, flightItineraryResult.agentCode)
-            && Objects.equals(this.issueOrganization, flightItineraryResult.issueOrganization)
-            && Objects.equals(this.issueDate, flightItineraryResult.issueDate)
-            && Objects.equals(this.itineraryList, flightItineraryResult.itineraryList)
-            && Objects.equals(this.confidence, flightItineraryResult.confidence);
+        FlightItineraryResult that = (FlightItineraryResult) obj;
+        return Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.passengerName, that.passengerName) && Objects.equals(this.idNumber, that.idNumber)
+            && Objects.equals(this.endorsementsRestrictions, that.endorsementsRestrictions)
+            && Objects.equals(this.orderNumber, that.orderNumber) && Objects.equals(this.fare, that.fare)
+            && Objects.equals(this.caacDevelopmentFund, that.caacDevelopmentFund)
+            && Objects.equals(this.fuelSurcharge, that.fuelSurcharge)
+            && Objects.equals(this.otherTaxes, that.otherTaxes) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.eTicketNumber, that.eTicketNumber) && Objects.equals(this.checkCode, that.checkCode)
+            && Objects.equals(this.referenceInformation, that.referenceInformation)
+            && Objects.equals(this.insurance, that.insurance) && Objects.equals(this.agentCode, that.agentCode)
+            && Objects.equals(this.issueOrganization, that.issueOrganization)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.itineraryList, that.itineraryList)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

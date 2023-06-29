@@ -77,17 +77,16 @@ public class CreateCompareTaskResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCompareTaskResult createCompareTaskResult = (CreateCompareTaskResult) o;
-        return Objects.equals(this.compareTaskId, createCompareTaskResult.compareTaskId)
-            && Objects.equals(this.errorCode, createCompareTaskResult.errorCode)
-            && Objects.equals(this.errorMsg, createCompareTaskResult.errorMsg);
+        CreateCompareTaskResult that = (CreateCompareTaskResult) obj;
+        return Objects.equals(this.compareTaskId, that.compareTaskId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

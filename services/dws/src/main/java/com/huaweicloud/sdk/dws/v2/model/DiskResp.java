@@ -297,22 +297,21 @@ public class DiskResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskResp diskResp = (DiskResp) o;
-        return Objects.equals(this.instanceName, diskResp.instanceName)
-            && Objects.equals(this.hostName, diskResp.hostName) && Objects.equals(this.diskName, diskResp.diskName)
-            && Objects.equals(this.diskType, diskResp.diskType) && Objects.equals(this.total, diskResp.total)
-            && Objects.equals(this.used, diskResp.used) && Objects.equals(this.available, diskResp.available)
-            && Objects.equals(this.usedPercentage, diskResp.usedPercentage)
-            && Objects.equals(this.await, diskResp.await) && Objects.equals(this.svctm, diskResp.svctm)
-            && Objects.equals(this.util, diskResp.util) && Objects.equals(this.readRate, diskResp.readRate)
-            && Objects.equals(this.writeRate, diskResp.writeRate);
+        DiskResp that = (DiskResp) obj;
+        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.diskName, that.diskName) && Objects.equals(this.diskType, that.diskType)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.available, that.available)
+            && Objects.equals(this.usedPercentage, that.usedPercentage) && Objects.equals(this.await, that.await)
+            && Objects.equals(this.svctm, that.svctm) && Objects.equals(this.util, that.util)
+            && Objects.equals(this.readRate, that.readRate) && Objects.equals(this.writeRate, that.writeRate);
     }
 
     @Override

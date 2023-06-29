@@ -55,16 +55,15 @@ public class KeystoneListGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListGroupsRequest keystoneListGroupsRequest = (KeystoneListGroupsRequest) o;
-        return Objects.equals(this.domainId, keystoneListGroupsRequest.domainId)
-            && Objects.equals(this.name, keystoneListGroupsRequest.name);
+        KeystoneListGroupsRequest that = (KeystoneListGroupsRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name);
     }
 
     @Override

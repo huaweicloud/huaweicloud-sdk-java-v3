@@ -327,26 +327,20 @@ public class DeleteIgnoreRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIgnoreRuleResponse deleteIgnoreRuleResponse = (DeleteIgnoreRuleResponse) o;
-        return Objects.equals(this.id, deleteIgnoreRuleResponse.id)
-            && Objects.equals(this.policyid, deleteIgnoreRuleResponse.policyid)
-            && Objects.equals(this.timestamp, deleteIgnoreRuleResponse.timestamp)
-            && Objects.equals(this.description, deleteIgnoreRuleResponse.description)
-            && Objects.equals(this.status, deleteIgnoreRuleResponse.status)
-            && Objects.equals(this.url, deleteIgnoreRuleResponse.url)
-            && Objects.equals(this.rule, deleteIgnoreRuleResponse.rule)
-            && Objects.equals(this.mode, deleteIgnoreRuleResponse.mode)
-            && Objects.equals(this.urlLogic, deleteIgnoreRuleResponse.urlLogic)
-            && Objects.equals(this.conditions, deleteIgnoreRuleResponse.conditions)
-            && Objects.equals(this.advanced, deleteIgnoreRuleResponse.advanced)
-            && Objects.equals(this.domains, deleteIgnoreRuleResponse.domains);
+        DeleteIgnoreRuleResponse that = (DeleteIgnoreRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.rule, that.rule) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.urlLogic, that.urlLogic) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.advanced, that.advanced) && Objects.equals(this.domains, that.domains);
     }
 
     @Override

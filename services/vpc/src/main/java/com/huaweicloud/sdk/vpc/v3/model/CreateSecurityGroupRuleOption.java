@@ -253,25 +253,22 @@ public class CreateSecurityGroupRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecurityGroupRuleOption createSecurityGroupRuleOption = (CreateSecurityGroupRuleOption) o;
-        return Objects.equals(this.securityGroupId, createSecurityGroupRuleOption.securityGroupId)
-            && Objects.equals(this.description, createSecurityGroupRuleOption.description)
-            && Objects.equals(this.direction, createSecurityGroupRuleOption.direction)
-            && Objects.equals(this.ethertype, createSecurityGroupRuleOption.ethertype)
-            && Objects.equals(this.protocol, createSecurityGroupRuleOption.protocol)
-            && Objects.equals(this.multiport, createSecurityGroupRuleOption.multiport)
-            && Objects.equals(this.remoteIpPrefix, createSecurityGroupRuleOption.remoteIpPrefix)
-            && Objects.equals(this.remoteGroupId, createSecurityGroupRuleOption.remoteGroupId)
-            && Objects.equals(this.remoteAddressGroupId, createSecurityGroupRuleOption.remoteAddressGroupId)
-            && Objects.equals(this.action, createSecurityGroupRuleOption.action)
-            && Objects.equals(this.priority, createSecurityGroupRuleOption.priority);
+        CreateSecurityGroupRuleOption that = (CreateSecurityGroupRuleOption) obj;
+        return Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.ethertype, that.ethertype) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.multiport, that.multiport)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.remoteAddressGroupId, that.remoteAddressGroupId)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

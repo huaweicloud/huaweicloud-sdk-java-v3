@@ -97,16 +97,16 @@ public class CpiResultItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CpiResultItem cpiResultItem = (CpiResultItem) o;
-        return Objects.equals(this.smiles, cpiResultItem.smiles) && Objects.equals(this.props, cpiResultItem.props)
-            && Objects.equals(this.score, cpiResultItem.score);
+        CpiResultItem that = (CpiResultItem) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.props, that.props)
+            && Objects.equals(this.score, that.score);
     }
 
     @Override

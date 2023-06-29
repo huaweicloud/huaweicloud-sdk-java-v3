@@ -65,16 +65,15 @@ public class CreateInstanceBy3rdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceBy3rdRequest createInstanceBy3rdRequest = (CreateInstanceBy3rdRequest) o;
-        return Objects.equals(this.instanceLabel, createInstanceBy3rdRequest.instanceLabel)
-            && Objects.equals(this.body, createInstanceBy3rdRequest.body);
+        CreateInstanceBy3rdRequest that = (CreateInstanceBy3rdRequest) obj;
+        return Objects.equals(this.instanceLabel, that.instanceLabel) && Objects.equals(this.body, that.body);
     }
 
     @Override

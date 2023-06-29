@@ -461,32 +461,23 @@ public class ShowTemplateDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateDetailResponse showTemplateDetailResponse = (ShowTemplateDetailResponse) o;
-        return Objects.equals(this.templateId, showTemplateDetailResponse.templateId)
-            && Objects.equals(this.templateName, showTemplateDetailResponse.templateName)
-            && Objects.equals(this.templateType, showTemplateDetailResponse.templateType)
-            && Objects.equals(this.userId, showTemplateDetailResponse.userId)
-            && Objects.equals(this.userName, showTemplateDetailResponse.userName)
-            && Objects.equals(this.domainId, showTemplateDetailResponse.domainId)
-            && Objects.equals(this.domainName, showTemplateDetailResponse.domainName)
-            && Objects.equals(this.isBuildIn, showTemplateDetailResponse.isBuildIn)
-            && Objects.equals(this.region, showTemplateDetailResponse.region)
-            && Objects.equals(this.projectId, showTemplateDetailResponse.projectId)
-            && Objects.equals(this.projectName, showTemplateDetailResponse.projectName)
-            && Objects.equals(this.createTime, showTemplateDetailResponse.createTime)
-            && Objects.equals(this.lastModifyTime, showTemplateDetailResponse.lastModifyTime)
-            && Objects.equals(this.isWatch, showTemplateDetailResponse.isWatch)
-            && Objects.equals(this.description, showTemplateDetailResponse.description)
-            && Objects.equals(this.parameter, showTemplateDetailResponse.parameter)
-            && Objects.equals(this.flow, showTemplateDetailResponse.flow)
-            && Objects.equals(this.states, showTemplateDetailResponse.states);
+        ShowTemplateDetailResponse that = (ShowTemplateDetailResponse) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.isBuildIn, that.isBuildIn)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime) && Objects.equals(this.isWatch, that.isWatch)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.parameter, that.parameter)
+            && Objects.equals(this.flow, that.flow) && Objects.equals(this.states, that.states);
     }
 
     @Override

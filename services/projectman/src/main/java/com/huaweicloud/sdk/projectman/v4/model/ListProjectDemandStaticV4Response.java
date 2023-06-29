@@ -54,15 +54,15 @@ public class ListProjectDemandStaticV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectDemandStaticV4Response listProjectDemandStaticV4Response = (ListProjectDemandStaticV4Response) o;
-        return Objects.equals(this.demandStatistics, listProjectDemandStaticV4Response.demandStatistics);
+        ListProjectDemandStaticV4Response that = (ListProjectDemandStaticV4Response) obj;
+        return Objects.equals(this.demandStatistics, that.demandStatistics);
     }
 
     @Override

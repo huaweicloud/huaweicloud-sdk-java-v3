@@ -55,16 +55,15 @@ public class StartTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartTaskRequest startTaskRequest = (StartTaskRequest) o;
-        return Objects.equals(this.serviceName, startTaskRequest.serviceName)
-            && Objects.equals(this.taskId, startTaskRequest.taskId);
+        StartTaskRequest that = (StartTaskRequest) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

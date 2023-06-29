@@ -71,22 +71,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            CharacterSetServerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CharacterSetServerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CharacterSetServerEnum(value));
         }
 
         public static CharacterSetServerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CharacterSetServerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            CollationServerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CollationServerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CollationServerEnum(value));
         }
 
         public static CollationServerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CollationServerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +252,16 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            ConcurrentExecutionLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConcurrentExecutionLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ConcurrentExecutionLevelEnum(value));
         }
 
         public static ConcurrentExecutionLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConcurrentExecutionLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -353,22 +333,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            EnableTableRecycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EnableTableRecycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EnableTableRecycleEnum(value));
         }
 
         public static EnableTableRecycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EnableTableRecycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -435,22 +408,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            InsertToLoadDataEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InsertToLoadDataEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InsertToLoadDataEnum(value));
         }
 
         public static InsertToLoadDataEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InsertToLoadDataEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -547,22 +513,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            NotFromPushdownEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotFromPushdownEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotFromPushdownEnum(value));
         }
 
         public static NotFromPushdownEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotFromPushdownEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -634,22 +593,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            SqlAuditEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAuditEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAuditEnum(value));
         }
 
         public static SqlAuditEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlAuditEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -721,22 +673,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            SupportDdlBinlogHintEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportDdlBinlogHintEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportDdlBinlogHintEnum(value));
         }
 
         public static SupportDdlBinlogHintEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportDdlBinlogHintEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -809,22 +754,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            TransactionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TransactionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TransactionPolicyEnum(value));
         }
 
         public static TransactionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TransactionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -891,22 +829,15 @@ public class UpdateParametersReqValues {
             if (value == null) {
                 return null;
             }
-            UltimateOptimizeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UltimateOptimizeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UltimateOptimizeEnum(value));
         }
 
         public static UltimateOptimizeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UltimateOptimizeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1270,35 +1201,34 @@ public class UpdateParametersReqValues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateParametersReqValues updateParametersReqValues = (UpdateParametersReqValues) o;
-        return Objects.equals(this.bindTable, updateParametersReqValues.bindTable)
-            && Objects.equals(this.characterSetServer, updateParametersReqValues.characterSetServer)
-            && Objects.equals(this.collationServer, updateParametersReqValues.collationServer)
-            && Objects.equals(this.concurrentExecutionLevel, updateParametersReqValues.concurrentExecutionLevel)
-            && Objects.equals(this.connectionIdleTimeout, updateParametersReqValues.connectionIdleTimeout)
-            && Objects.equals(this.enableTableRecycle, updateParametersReqValues.enableTableRecycle)
-            && Objects.equals(this.insertToLoadData, updateParametersReqValues.insertToLoadData)
-            && Objects.equals(this.liveTransactionTimeoutOnShutdown,
-                updateParametersReqValues.liveTransactionTimeoutOnShutdown)
-            && Objects.equals(this.longQueryTime, updateParametersReqValues.longQueryTime)
-            && Objects.equals(this.maxAllowedPacket, updateParametersReqValues.maxAllowedPacket)
-            && Objects.equals(this.maxBackendConnections, updateParametersReqValues.maxBackendConnections)
-            && Objects.equals(this.maxConnections, updateParametersReqValues.maxConnections)
-            && Objects.equals(this.minBackendConnections, updateParametersReqValues.minBackendConnections)
-            && Objects.equals(this.notFromPushdown, updateParametersReqValues.notFromPushdown)
-            && Objects.equals(this.secondsBehindMaster, updateParametersReqValues.secondsBehindMaster)
-            && Objects.equals(this.sqlAudit, updateParametersReqValues.sqlAudit)
-            && Objects.equals(this.sqlExecuteTimeout, updateParametersReqValues.sqlExecuteTimeout)
-            && Objects.equals(this.supportDdlBinlogHint, updateParametersReqValues.supportDdlBinlogHint)
-            && Objects.equals(this.transactionPolicy, updateParametersReqValues.transactionPolicy)
-            && Objects.equals(this.ultimateOptimize, updateParametersReqValues.ultimateOptimize);
+        UpdateParametersReqValues that = (UpdateParametersReqValues) obj;
+        return Objects.equals(this.bindTable, that.bindTable)
+            && Objects.equals(this.characterSetServer, that.characterSetServer)
+            && Objects.equals(this.collationServer, that.collationServer)
+            && Objects.equals(this.concurrentExecutionLevel, that.concurrentExecutionLevel)
+            && Objects.equals(this.connectionIdleTimeout, that.connectionIdleTimeout)
+            && Objects.equals(this.enableTableRecycle, that.enableTableRecycle)
+            && Objects.equals(this.insertToLoadData, that.insertToLoadData)
+            && Objects.equals(this.liveTransactionTimeoutOnShutdown, that.liveTransactionTimeoutOnShutdown)
+            && Objects.equals(this.longQueryTime, that.longQueryTime)
+            && Objects.equals(this.maxAllowedPacket, that.maxAllowedPacket)
+            && Objects.equals(this.maxBackendConnections, that.maxBackendConnections)
+            && Objects.equals(this.maxConnections, that.maxConnections)
+            && Objects.equals(this.minBackendConnections, that.minBackendConnections)
+            && Objects.equals(this.notFromPushdown, that.notFromPushdown)
+            && Objects.equals(this.secondsBehindMaster, that.secondsBehindMaster)
+            && Objects.equals(this.sqlAudit, that.sqlAudit)
+            && Objects.equals(this.sqlExecuteTimeout, that.sqlExecuteTimeout)
+            && Objects.equals(this.supportDdlBinlogHint, that.supportDdlBinlogHint)
+            && Objects.equals(this.transactionPolicy, that.transactionPolicy)
+            && Objects.equals(this.ultimateOptimize, that.ultimateOptimize);
     }
 
     @Override

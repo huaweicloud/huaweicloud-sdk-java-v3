@@ -219,21 +219,19 @@ public class LoginToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginToken loginToken = (LoginToken) o;
-        return Objects.equals(this.domainId, loginToken.domainId)
-            && Objects.equals(this.expiresAt, loginToken.expiresAt) && Objects.equals(this.method, loginToken.method)
-            && Objects.equals(this.userId, loginToken.userId) && Objects.equals(this.userName, loginToken.userName)
-            && Objects.equals(this.sessionId, loginToken.sessionId)
-            && Objects.equals(this.sessionUserId, loginToken.sessionUserId)
-            && Objects.equals(this.sessionName, loginToken.sessionName)
-            && Objects.equals(this.assumedBy, loginToken.assumedBy);
+        LoginToken that = (LoginToken) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.expiresAt, that.expiresAt)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.sessionUserId, that.sessionUserId)
+            && Objects.equals(this.sessionName, that.sessionName) && Objects.equals(this.assumedBy, that.assumedBy);
     }
 
     @Override

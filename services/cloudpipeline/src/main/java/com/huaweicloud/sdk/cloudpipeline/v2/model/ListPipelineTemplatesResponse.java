@@ -119,18 +119,16 @@ public class ListPipelineTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineTemplatesResponse listPipelineTemplatesResponse = (ListPipelineTemplatesResponse) o;
-        return Objects.equals(this.offset, listPipelineTemplatesResponse.offset)
-            && Objects.equals(this.limit, listPipelineTemplatesResponse.limit)
-            && Objects.equals(this.total, listPipelineTemplatesResponse.total)
-            && Objects.equals(this.templates, listPipelineTemplatesResponse.templates);
+        ListPipelineTemplatesResponse that = (ListPipelineTemplatesResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

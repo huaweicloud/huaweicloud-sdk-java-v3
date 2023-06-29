@@ -151,20 +151,17 @@ public class SubTaskAssociatedWithTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubTaskAssociatedWithTask subTaskAssociatedWithTask = (SubTaskAssociatedWithTask) o;
-        return Objects.equals(this.id, subTaskAssociatedWithTask.id)
-            && Objects.equals(this.name, subTaskAssociatedWithTask.name)
-            && Objects.equals(this.progress, subTaskAssociatedWithTask.progress)
-            && Objects.equals(this.startDate, subTaskAssociatedWithTask.startDate)
-            && Objects.equals(this.endDate, subTaskAssociatedWithTask.endDate)
-            && Objects.equals(this.processTrace, subTaskAssociatedWithTask.processTrace);
+        SubTaskAssociatedWithTask that = (SubTaskAssociatedWithTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.processTrace, that.processTrace);
     }
 
     @Override

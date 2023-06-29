@@ -101,18 +101,16 @@ public class ListAppCodesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppCodesV2Request listAppCodesV2Request = (ListAppCodesV2Request) o;
-        return Objects.equals(this.instanceId, listAppCodesV2Request.instanceId)
-            && Objects.equals(this.appId, listAppCodesV2Request.appId)
-            && Objects.equals(this.offset, listAppCodesV2Request.offset)
-            && Objects.equals(this.limit, listAppCodesV2Request.limit);
+        ListAppCodesV2Request that = (ListAppCodesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

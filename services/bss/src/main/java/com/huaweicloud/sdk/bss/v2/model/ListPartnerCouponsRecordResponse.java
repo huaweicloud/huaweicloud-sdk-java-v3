@@ -75,16 +75,15 @@ public class ListPartnerCouponsRecordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerCouponsRecordResponse listPartnerCouponsRecordResponse = (ListPartnerCouponsRecordResponse) o;
-        return Objects.equals(this.totalCount, listPartnerCouponsRecordResponse.totalCount)
-            && Objects.equals(this.records, listPartnerCouponsRecordResponse.records);
+        ListPartnerCouponsRecordResponse that = (ListPartnerCouponsRecordResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.records, that.records);
     }
 
     @Override

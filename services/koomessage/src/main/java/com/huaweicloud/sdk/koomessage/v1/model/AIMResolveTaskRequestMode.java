@@ -184,21 +184,18 @@ public class AIMResolveTaskRequestMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMResolveTaskRequestMode aiMResolveTaskRequestMode = (AIMResolveTaskRequestMode) o;
-        return Objects.equals(this.tplId, aiMResolveTaskRequestMode.tplId)
-            && Objects.equals(this.resolveTimes, aiMResolveTaskRequestMode.resolveTimes)
-            && Objects.equals(this.aimCodeType, aiMResolveTaskRequestMode.aimCodeType)
-            && Objects.equals(this.generationType, aiMResolveTaskRequestMode.generationType)
-            && Objects.equals(this.domain, aiMResolveTaskRequestMode.domain)
-            && Objects.equals(this.expirationTime, aiMResolveTaskRequestMode.expirationTime)
-            && Objects.equals(this.params, aiMResolveTaskRequestMode.params);
+        AIMResolveTaskRequestMode that = (AIMResolveTaskRequestMode) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.resolveTimes, that.resolveTimes)
+            && Objects.equals(this.aimCodeType, that.aimCodeType)
+            && Objects.equals(this.generationType, that.generationType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
     }
 
     @Override

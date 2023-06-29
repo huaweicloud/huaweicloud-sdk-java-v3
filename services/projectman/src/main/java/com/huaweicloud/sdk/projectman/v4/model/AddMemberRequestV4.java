@@ -99,18 +99,16 @@ public class AddMemberRequestV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddMemberRequestV4 addMemberRequestV4 = (AddMemberRequestV4) o;
-        return Objects.equals(this.domainName, addMemberRequestV4.domainName)
-            && Objects.equals(this.domainId, addMemberRequestV4.domainId)
-            && Objects.equals(this.roleId, addMemberRequestV4.roleId)
-            && Objects.equals(this.userId, addMemberRequestV4.userId);
+        AddMemberRequestV4 that = (AddMemberRequestV4) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.roleId, that.roleId) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

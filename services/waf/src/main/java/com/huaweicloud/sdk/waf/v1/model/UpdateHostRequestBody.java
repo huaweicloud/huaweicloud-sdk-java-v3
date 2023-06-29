@@ -39,8 +39,8 @@ public class UpdateHostRequestBody {
     private List<CloudWafServer> server = null;
 
     /**
-    * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
-    */
+     * 配置的最低TLS版本（TLS v1.0/TLS v1.1/TLS v1.2）,默认为TLS v1.0版本，对于低于最低TLS版本的请求，将无法正常访问网站
+     */
     public static final class TlsEnum {
 
         /**
@@ -89,22 +89,15 @@ public class UpdateHostRequestBody {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsEnum(value));
         }
 
         public static TlsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,22 +182,15 @@ public class UpdateHostRequestBody {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CipherEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherEnum(value));
         }
 
         public static CipherEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -686,32 +672,24 @@ public class UpdateHostRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostRequestBody updateHostRequestBody = (UpdateHostRequestBody) o;
-        return Objects.equals(this.proxy, updateHostRequestBody.proxy)
-            && Objects.equals(this.certificateid, updateHostRequestBody.certificateid)
-            && Objects.equals(this.certificatename, updateHostRequestBody.certificatename)
-            && Objects.equals(this.server, updateHostRequestBody.server)
-            && Objects.equals(this.tls, updateHostRequestBody.tls)
-            && Objects.equals(this.cipher, updateHostRequestBody.cipher)
-            && Objects.equals(this.http2Enable, updateHostRequestBody.http2Enable)
-            && Objects.equals(this.ipv6Enable, updateHostRequestBody.ipv6Enable)
-            && Objects.equals(this.webTag, updateHostRequestBody.webTag)
-            && Objects.equals(this.exclusiveIp, updateHostRequestBody.exclusiveIp)
-            && Objects.equals(this.paidType, updateHostRequestBody.paidType)
-            && Objects.equals(this.blockPage, updateHostRequestBody.blockPage)
-            && Objects.equals(this.trafficMark, updateHostRequestBody.trafficMark)
-            && Objects.equals(this.flag, updateHostRequestBody.flag)
-            && Objects.equals(this.extend, updateHostRequestBody.extend)
-            && Objects.equals(this.circuitBreaker, updateHostRequestBody.circuitBreaker)
-            && Objects.equals(this.timeoutConfig, updateHostRequestBody.timeoutConfig)
-            && Objects.equals(this.forwardHeaderMap, updateHostRequestBody.forwardHeaderMap);
+        UpdateHostRequestBody that = (UpdateHostRequestBody) obj;
+        return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.tls, that.tls) && Objects.equals(this.cipher, that.cipher)
+            && Objects.equals(this.http2Enable, that.http2Enable) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.exclusiveIp, that.exclusiveIp)
+            && Objects.equals(this.paidType, that.paidType) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.trafficMark, that.trafficMark) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.circuitBreaker, that.circuitBreaker)
+            && Objects.equals(this.timeoutConfig, that.timeoutConfig)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class AttributeChange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttributeChange attributeChange = (AttributeChange) o;
-        return Objects.equals(this.newValue, attributeChange.newValue)
-            && Objects.equals(this.oldValue, attributeChange.oldValue)
-            && Objects.equals(this.attributeType, attributeChange.attributeType);
+        AttributeChange that = (AttributeChange) obj;
+        return Objects.equals(this.newValue, that.newValue) && Objects.equals(this.oldValue, that.oldValue)
+            && Objects.equals(this.attributeType, that.attributeType);
     }
 
     @Override

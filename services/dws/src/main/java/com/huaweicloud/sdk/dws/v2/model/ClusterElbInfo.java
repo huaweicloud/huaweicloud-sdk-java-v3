@@ -253,23 +253,20 @@ public class ClusterElbInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterElbInfo clusterElbInfo = (ClusterElbInfo) o;
-        return Objects.equals(this.id, clusterElbInfo.id) && Objects.equals(this.clusterId, clusterElbInfo.clusterId)
-            && Objects.equals(this.name, clusterElbInfo.name)
-            && Objects.equals(this.description, clusterElbInfo.description)
-            && Objects.equals(this.vipAddress, clusterElbInfo.vipAddress)
-            && Objects.equals(this.vipSubnetId, clusterElbInfo.vipSubnetId)
-            && Objects.equals(this.tenantId, clusterElbInfo.tenantId) && Objects.equals(this.type, clusterElbInfo.type)
-            && Objects.equals(this.adminStateUp, clusterElbInfo.adminStateUp)
-            && Objects.equals(this.bandwidth, clusterElbInfo.bandwidth)
-            && Objects.equals(this.vpcId, clusterElbInfo.vpcId);
+        ClusterElbInfo that = (ClusterElbInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.vipSubnetId, that.vipSubnetId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

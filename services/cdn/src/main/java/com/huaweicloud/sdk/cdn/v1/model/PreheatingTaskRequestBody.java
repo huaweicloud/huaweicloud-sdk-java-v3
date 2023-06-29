@@ -52,15 +52,15 @@ public class PreheatingTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreheatingTaskRequestBody preheatingTaskRequestBody = (PreheatingTaskRequestBody) o;
-        return Objects.equals(this.urls, preheatingTaskRequestBody.urls);
+        PreheatingTaskRequestBody that = (PreheatingTaskRequestBody) obj;
+        return Objects.equals(this.urls, that.urls);
     }
 
     @Override

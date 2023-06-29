@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListNotifiedHistoriesRequest  {
-
+public class ListNotifiedHistoriesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_sn")
-    
+    @JsonProperty(value = "event_sn")
 
     private String eventSn;
 
@@ -28,9 +19,6 @@ public class ListNotifiedHistoriesRequest  {
         this.eventSn = eventSn;
         return this;
     }
-
-    
-
 
     /**
      * 告警流水号
@@ -44,23 +32,23 @@ public class ListNotifiedHistoriesRequest  {
         this.eventSn = eventSn;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotifiedHistoriesRequest listNotifiedHistoriesRequest = (ListNotifiedHistoriesRequest) o;
-        return Objects.equals(this.eventSn, listNotifiedHistoriesRequest.eventSn);
+        ListNotifiedHistoriesRequest that = (ListNotifiedHistoriesRequest) obj;
+        return Objects.equals(this.eventSn, that.eventSn);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eventSn);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ListNotifiedHistoriesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ListNotifiedHistoriesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

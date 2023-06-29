@@ -87,17 +87,16 @@ public class SecurityContext {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityContext securityContext = (SecurityContext) o;
-        return Objects.equals(this.runAsUser, securityContext.runAsUser)
-            && Objects.equals(this.runAsGroup, securityContext.runAsGroup)
-            && Objects.equals(this.capabilities, securityContext.capabilities);
+        SecurityContext that = (SecurityContext) obj;
+        return Objects.equals(this.runAsUser, that.runAsUser) && Objects.equals(this.runAsGroup, that.runAsGroup)
+            && Objects.equals(this.capabilities, that.capabilities);
     }
 
     @Override

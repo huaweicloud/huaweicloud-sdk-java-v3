@@ -118,18 +118,18 @@ public class OrderLineItemV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderLineItemV3 orderLineItemV3 = (OrderLineItemV3) o;
-        return Objects.equals(this.orderLineItemIds, orderLineItemV3.orderLineItemIds)
-            && Objects.equals(this.discountMode, orderLineItemV3.discountMode)
-            && Objects.equals(this.discountAmount, orderLineItemV3.discountAmount)
-            && Objects.equals(this.discountRatio, orderLineItemV3.discountRatio);
+        OrderLineItemV3 that = (OrderLineItemV3) obj;
+        return Objects.equals(this.orderLineItemIds, that.orderLineItemIds)
+            && Objects.equals(this.discountMode, that.discountMode)
+            && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.discountRatio, that.discountRatio);
     }
 
     @Override

@@ -166,21 +166,20 @@ public class ShowScaleInPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScaleInPolicyResponse showScaleInPolicyResponse = (ShowScaleInPolicyResponse) o;
-        return Objects.equals(this.idleTime, showScaleInPolicyResponse.idleTime)
-            && Objects.equals(this.threshold, showScaleInPolicyResponse.threshold)
-            && Objects.equals(this.delayAfterAdd, showScaleInPolicyResponse.delayAfterAdd)
-            && Objects.equals(this.delayAfterDelete, showScaleInPolicyResponse.delayAfterDelete)
-            && Objects.equals(this.delayAfterFailure, showScaleInPolicyResponse.delayAfterFailure)
-            && Objects.equals(this.maxNodesBatchDeletion, showScaleInPolicyResponse.maxNodesBatchDeletion)
-            && Objects.equals(this.checkInterval, showScaleInPolicyResponse.checkInterval);
+        ShowScaleInPolicyResponse that = (ShowScaleInPolicyResponse) obj;
+        return Objects.equals(this.idleTime, that.idleTime) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.delayAfterAdd, that.delayAfterAdd)
+            && Objects.equals(this.delayAfterDelete, that.delayAfterDelete)
+            && Objects.equals(this.delayAfterFailure, that.delayAfterFailure)
+            && Objects.equals(this.maxNodesBatchDeletion, that.maxNodesBatchDeletion)
+            && Objects.equals(this.checkInterval, that.checkInterval);
     }
 
     @Override

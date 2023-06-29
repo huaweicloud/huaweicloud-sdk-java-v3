@@ -297,25 +297,22 @@ public class TemplateRO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateRO templateRO = (TemplateRO) o;
-        return Objects.equals(this.id, templateRO.id) && Objects.equals(this.name, templateRO.name)
-            && Objects.equals(this.directoryId, templateRO.directoryId)
-            && Objects.equals(this.dimensionId, templateRO.dimensionId)
-            && Objects.equals(this.description, templateRO.description)
-            && Objects.equals(this.sqlInfo, templateRO.sqlInfo)
-            && Objects.equals(this.resultDescription, templateRO.resultDescription)
-            && Objects.equals(this.publish, templateRO.publish)
-            && Objects.equals(this.originName, templateRO.originName)
-            && Objects.equals(this.abnormalTableTemplate, templateRO.abnormalTableTemplate)
-            && Objects.equals(this.userDefineVersionName, templateRO.userDefineVersionName)
-            && Objects.equals(this.versionNum, templateRO.versionNum) && Objects.equals(this.status, templateRO.status);
+        TemplateRO that = (TemplateRO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.dimensionId, that.dimensionId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.sqlInfo, that.sqlInfo)
+            && Objects.equals(this.resultDescription, that.resultDescription)
+            && Objects.equals(this.publish, that.publish) && Objects.equals(this.originName, that.originName)
+            && Objects.equals(this.abnormalTableTemplate, that.abnormalTableTemplate)
+            && Objects.equals(this.userDefineVersionName, that.userDefineVersionName)
+            && Objects.equals(this.versionNum, that.versionNum) && Objects.equals(this.status, that.status);
     }
 
     @Override

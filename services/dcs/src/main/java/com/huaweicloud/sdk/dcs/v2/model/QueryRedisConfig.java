@@ -165,21 +165,18 @@ public class QueryRedisConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryRedisConfig queryRedisConfig = (QueryRedisConfig) o;
-        return Objects.equals(this.paramValue, queryRedisConfig.paramValue)
-            && Objects.equals(this.valueType, queryRedisConfig.valueType)
-            && Objects.equals(this.valueRange, queryRedisConfig.valueRange)
-            && Objects.equals(this.description, queryRedisConfig.description)
-            && Objects.equals(this.defaultValue, queryRedisConfig.defaultValue)
-            && Objects.equals(this.paramName, queryRedisConfig.paramName)
-            && Objects.equals(this.paramId, queryRedisConfig.paramId);
+        QueryRedisConfig that = (QueryRedisConfig) obj;
+        return Objects.equals(this.paramValue, that.paramValue) && Objects.equals(this.valueType, that.valueType)
+            && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.paramName, that.paramName)
+            && Objects.equals(this.paramId, that.paramId);
     }
 
     @Override

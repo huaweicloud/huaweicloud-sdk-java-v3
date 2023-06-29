@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * QueryAppVersionResponseDTO
  */
-public class QueryAppVersionResponseDTO  {
-
+public class QueryAppVersionResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
 
     private Object values;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -51,9 +39,6 @@ public class QueryAppVersionResponseDTO  {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用模板ID
@@ -67,15 +52,10 @@ public class QueryAppVersionResponseDTO  {
         this.appId = appId;
     }
 
-    
-
     public QueryAppVersionResponseDTO withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -89,15 +69,10 @@ public class QueryAppVersionResponseDTO  {
         this.version = version;
     }
 
-    
-
     public QueryAppVersionResponseDTO withValues(Object values) {
         this.values = values;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本配置
@@ -111,15 +86,10 @@ public class QueryAppVersionResponseDTO  {
         this.values = values;
     }
 
-    
-
     public QueryAppVersionResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -133,15 +103,10 @@ public class QueryAppVersionResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryAppVersionResponseDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -155,27 +120,25 @@ public class QueryAppVersionResponseDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAppVersionResponseDTO queryAppVersionResponseDTO = (QueryAppVersionResponseDTO) o;
-        return Objects.equals(this.appId, queryAppVersionResponseDTO.appId) &&
-            Objects.equals(this.version, queryAppVersionResponseDTO.version) &&
-            Objects.equals(this.values, queryAppVersionResponseDTO.values) &&
-            Objects.equals(this.createTime, queryAppVersionResponseDTO.createTime) &&
-            Objects.equals(this.updateTime, queryAppVersionResponseDTO.updateTime);
+        QueryAppVersionResponseDTO that = (QueryAppVersionResponseDTO) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, version, values, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class QueryAppVersionResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class QueryAppVersionResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

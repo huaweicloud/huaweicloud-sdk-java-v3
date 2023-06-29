@@ -103,18 +103,16 @@ public class ListTriggersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTriggersRequest listTriggersRequest = (ListTriggersRequest) o;
-        return Objects.equals(this.funcUrn, listTriggersRequest.funcUrn)
-            && Objects.equals(this.offset, listTriggersRequest.offset)
-            && Objects.equals(this.limit, listTriggersRequest.limit)
-            && Objects.equals(this.sort, listTriggersRequest.sort);
+        ListTriggersRequest that = (ListTriggersRequest) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort);
     }
 
     @Override

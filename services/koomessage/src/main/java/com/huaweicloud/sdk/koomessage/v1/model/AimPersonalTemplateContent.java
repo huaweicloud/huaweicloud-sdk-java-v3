@@ -353,29 +353,23 @@ public class AimPersonalTemplateContent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimPersonalTemplateContent aimPersonalTemplateContent = (AimPersonalTemplateContent) o;
-        return Objects.equals(this.type, aimPersonalTemplateContent.type)
-            && Objects.equals(this.content, aimPersonalTemplateContent.content)
-            && Objects.equals(this.contentChild, aimPersonalTemplateContent.contentChild)
-            && Objects.equals(this.srcType, aimPersonalTemplateContent.srcType)
-            && Objects.equals(this.src, aimPersonalTemplateContent.src)
-            && Objects.equals(this.cover, aimPersonalTemplateContent.cover)
-            && Objects.equals(this.isTextTitle, aimPersonalTemplateContent.isTextTitle)
-            && Objects.equals(this.actionType, aimPersonalTemplateContent.actionType)
-            && Objects.equals(this.positionNumber, aimPersonalTemplateContent.positionNumber)
-            && Objects.equals(this.visible, aimPersonalTemplateContent.visible)
-            && Objects.equals(this.currencyDisplay, aimPersonalTemplateContent.currencyDisplay)
-            && Objects.equals(this.oppoBackground, aimPersonalTemplateContent.oppoBackground)
-            && Objects.equals(this.vivoBackground, aimPersonalTemplateContent.vivoBackground)
-            && Objects.equals(this.ratio, aimPersonalTemplateContent.ratio)
-            && Objects.equals(this.action, aimPersonalTemplateContent.action);
+        AimPersonalTemplateContent that = (AimPersonalTemplateContent) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.contentChild, that.contentChild) && Objects.equals(this.srcType, that.srcType)
+            && Objects.equals(this.src, that.src) && Objects.equals(this.cover, that.cover)
+            && Objects.equals(this.isTextTitle, that.isTextTitle) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.positionNumber, that.positionNumber) && Objects.equals(this.visible, that.visible)
+            && Objects.equals(this.currencyDisplay, that.currencyDisplay)
+            && Objects.equals(this.oppoBackground, that.oppoBackground)
+            && Objects.equals(this.vivoBackground, that.vivoBackground) && Objects.equals(this.ratio, that.ratio)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

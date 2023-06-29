@@ -77,16 +77,16 @@ public class Statistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Statistic statistic = (Statistic) o;
-        return Objects.equals(this.name, statistic.name) && Objects.equals(this.value, statistic.value)
-            && Objects.equals(this.unit, statistic.unit);
+        Statistic that = (Statistic) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override

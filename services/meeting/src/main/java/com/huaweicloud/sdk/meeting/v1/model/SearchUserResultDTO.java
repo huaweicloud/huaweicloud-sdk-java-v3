@@ -561,39 +561,28 @@ public class SearchUserResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchUserResultDTO searchUserResultDTO = (SearchUserResultDTO) o;
-        return Objects.equals(this.id, searchUserResultDTO.id)
-            && Objects.equals(this.userAccount, searchUserResultDTO.userAccount)
-            && Objects.equals(this.name, searchUserResultDTO.name)
-            && Objects.equals(this.englishName, searchUserResultDTO.englishName)
-            && Objects.equals(this.phone, searchUserResultDTO.phone)
-            && Objects.equals(this.country, searchUserResultDTO.country)
-            && Objects.equals(this.email, searchUserResultDTO.email)
-            && Objects.equals(this.vmrId, searchUserResultDTO.vmrId)
-            && Objects.equals(this.deptCode, searchUserResultDTO.deptCode)
-            && Objects.equals(this.deptNamePath, searchUserResultDTO.deptNamePath)
-            && Objects.equals(this.userType, searchUserResultDTO.userType)
-            && Objects.equals(this.adminType, searchUserResultDTO.adminType)
-            && Objects.equals(this.signature, searchUserResultDTO.signature)
-            && Objects.equals(this.title, searchUserResultDTO.title)
-            && Objects.equals(this.desc, searchUserResultDTO.desc)
-            && Objects.equals(this.status, searchUserResultDTO.status)
-            && Objects.equals(this.sortLevel, searchUserResultDTO.sortLevel)
-            && Objects.equals(this.hidePhone, searchUserResultDTO.hidePhone)
-            && Objects.equals(this.thirdAccount, searchUserResultDTO.thirdAccount)
-            && Objects.equals(this.visionAccount, searchUserResultDTO.visionAccount)
-            && Objects.equals(this.license, searchUserResultDTO.license)
-            && Objects.equals(this.activeTime, searchUserResultDTO.activeTime)
-            && Objects.equals(this.activeCodeExpireTime, searchUserResultDTO.activeCodeExpireTime)
-            && Objects.equals(this.expireTime, searchUserResultDTO.expireTime)
-            && Objects.equals(this.activeCode, searchUserResultDTO.activeCode);
+        SearchUserResultDTO that = (SearchUserResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userAccount, that.userAccount)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sortLevel, that.sortLevel) && Objects.equals(this.hidePhone, that.hidePhone)
+            && Objects.equals(this.thirdAccount, that.thirdAccount)
+            && Objects.equals(this.visionAccount, that.visionAccount) && Objects.equals(this.license, that.license)
+            && Objects.equals(this.activeTime, that.activeTime)
+            && Objects.equals(this.activeCodeExpireTime, that.activeCodeExpireTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.activeCode, that.activeCode);
     }
 
     @Override

@@ -319,29 +319,24 @@ public class OptionalDiscountRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OptionalDiscountRatingResult optionalDiscountRatingResult = (OptionalDiscountRatingResult) o;
-        return Objects.equals(this.discountId, optionalDiscountRatingResult.discountId)
-            && Objects.equals(this.amount, optionalDiscountRatingResult.amount)
-            && Objects.equals(this.officialWebsiteAmount, optionalDiscountRatingResult.officialWebsiteAmount)
-            && Objects.equals(this.discountAmount, optionalDiscountRatingResult.discountAmount)
-            && Objects.equals(this.measureId, optionalDiscountRatingResult.measureId)
-            && Objects.equals(this.discountType, optionalDiscountRatingResult.discountType)
-            && Objects.equals(this.discountName, optionalDiscountRatingResult.discountName)
-            && Objects.equals(this.bestOffer, optionalDiscountRatingResult.bestOffer)
-            && Objects.equals(this.productRatingResults, optionalDiscountRatingResult.productRatingResults)
-            && Objects.equals(this.installmentOfficialWebsiteAmount,
-                optionalDiscountRatingResult.installmentOfficialWebsiteAmount)
-            && Objects.equals(this.installmentOfficialDiscountAmount,
-                optionalDiscountRatingResult.installmentOfficialDiscountAmount)
-            && Objects.equals(this.installmentAmount, optionalDiscountRatingResult.installmentAmount)
-            && Objects.equals(this.installmentPeriodType, optionalDiscountRatingResult.installmentPeriodType);
+        OptionalDiscountRatingResult that = (OptionalDiscountRatingResult) obj;
+        return Objects.equals(this.discountId, that.discountId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.discountType, that.discountType)
+            && Objects.equals(this.discountName, that.discountName) && Objects.equals(this.bestOffer, that.bestOffer)
+            && Objects.equals(this.productRatingResults, that.productRatingResults)
+            && Objects.equals(this.installmentOfficialWebsiteAmount, that.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentOfficialDiscountAmount, that.installmentOfficialDiscountAmount)
+            && Objects.equals(this.installmentAmount, that.installmentAmount)
+            && Objects.equals(this.installmentPeriodType, that.installmentPeriodType);
     }
 
     @Override

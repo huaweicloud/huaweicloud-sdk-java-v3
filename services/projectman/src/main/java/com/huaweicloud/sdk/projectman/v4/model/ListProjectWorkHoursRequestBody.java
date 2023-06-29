@@ -225,22 +225,19 @@ public class ListProjectWorkHoursRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectWorkHoursRequestBody listProjectWorkHoursRequestBody = (ListProjectWorkHoursRequestBody) o;
-        return Objects.equals(this.projectIds, listProjectWorkHoursRequestBody.projectIds)
-            && Objects.equals(this.userIds, listProjectWorkHoursRequestBody.userIds)
-            && Objects.equals(this.workHoursTypes, listProjectWorkHoursRequestBody.workHoursTypes)
-            && Objects.equals(this.workHoursDates, listProjectWorkHoursRequestBody.workHoursDates)
-            && Objects.equals(this.beginTime, listProjectWorkHoursRequestBody.beginTime)
-            && Objects.equals(this.endTime, listProjectWorkHoursRequestBody.endTime)
-            && Objects.equals(this.offset, listProjectWorkHoursRequestBody.offset)
-            && Objects.equals(this.limit, listProjectWorkHoursRequestBody.limit);
+        ListProjectWorkHoursRequestBody that = (ListProjectWorkHoursRequestBody) obj;
+        return Objects.equals(this.projectIds, that.projectIds) && Objects.equals(this.userIds, that.userIds)
+            && Objects.equals(this.workHoursTypes, that.workHoursTypes)
+            && Objects.equals(this.workHoursDates, that.workHoursDates)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

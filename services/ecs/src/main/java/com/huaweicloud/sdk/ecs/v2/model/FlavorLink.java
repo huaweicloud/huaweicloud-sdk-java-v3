@@ -77,16 +77,16 @@ public class FlavorLink {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorLink flavorLink = (FlavorLink) o;
-        return Objects.equals(this.href, flavorLink.href) && Objects.equals(this.rel, flavorLink.rel)
-            && Objects.equals(this.type, flavorLink.type);
+        FlavorLink that = (FlavorLink) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

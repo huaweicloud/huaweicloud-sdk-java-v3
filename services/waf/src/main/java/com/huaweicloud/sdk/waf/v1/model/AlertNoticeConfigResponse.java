@@ -338,28 +338,23 @@ public class AlertNoticeConfigResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlertNoticeConfigResponse alertNoticeConfigResponse = (AlertNoticeConfigResponse) o;
-        return Objects.equals(this.id, alertNoticeConfigResponse.id)
-            && Objects.equals(this.name, alertNoticeConfigResponse.name)
-            && Objects.equals(this.enabled, alertNoticeConfigResponse.enabled)
-            && Objects.equals(this.topicUrn, alertNoticeConfigResponse.topicUrn)
-            && Objects.equals(this.sendfreq, alertNoticeConfigResponse.sendfreq)
-            && Objects.equals(this.locale, alertNoticeConfigResponse.locale)
-            && Objects.equals(this.times, alertNoticeConfigResponse.times)
-            && Objects.equals(this.threat, alertNoticeConfigResponse.threat)
-            && Objects.equals(this.preferHtml, alertNoticeConfigResponse.preferHtml)
-            && Objects.equals(this.noticeClass, alertNoticeConfigResponse.noticeClass)
-            && Objects.equals(this.nearlyExpiredTime, alertNoticeConfigResponse.nearlyExpiredTime)
-            && Objects.equals(this.isAllEnterpriseProject, alertNoticeConfigResponse.isAllEnterpriseProject)
-            && Objects.equals(this.enterpriseProjectId, alertNoticeConfigResponse.enterpriseProjectId)
-            && Objects.equals(this.updateTime, alertNoticeConfigResponse.updateTime);
+        AlertNoticeConfigResponse that = (AlertNoticeConfigResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.sendfreq, that.sendfreq) && Objects.equals(this.locale, that.locale)
+            && Objects.equals(this.times, that.times) && Objects.equals(this.threat, that.threat)
+            && Objects.equals(this.preferHtml, that.preferHtml) && Objects.equals(this.noticeClass, that.noticeClass)
+            && Objects.equals(this.nearlyExpiredTime, that.nearlyExpiredTime)
+            && Objects.equals(this.isAllEnterpriseProject, that.isAllEnterpriseProject)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

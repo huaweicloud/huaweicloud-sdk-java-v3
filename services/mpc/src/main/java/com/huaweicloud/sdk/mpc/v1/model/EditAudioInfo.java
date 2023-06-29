@@ -103,17 +103,16 @@ public class EditAudioInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EditAudioInfo editAudioInfo = (EditAudioInfo) o;
-        return Objects.equals(this.codec, editAudioInfo.codec) && Objects.equals(this.bitrate, editAudioInfo.bitrate)
-            && Objects.equals(this.sample, editAudioInfo.sample)
-            && Objects.equals(this.channels, editAudioInfo.channels);
+        EditAudioInfo that = (EditAudioInfo) obj;
+        return Objects.equals(this.codec, that.codec) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.sample, that.sample) && Objects.equals(this.channels, that.channels);
     }
 
     @Override

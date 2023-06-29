@@ -152,22 +152,15 @@ public class Node {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -280,22 +273,15 @@ public class Node {
             if (value == null) {
                 return null;
             }
-            FailPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FailPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FailPolicyEnum(value));
         }
 
         public static FailPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FailPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -592,24 +578,24 @@ public class Node {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Node node = (Node) o;
-        return Objects.equals(this.name, node.name) && Objects.equals(this.nodeType, node.nodeType)
-            && Objects.equals(this.location, node.location) && Objects.equals(this.preNodeNames, node.preNodeNames)
-            && Objects.equals(this.condition, node.condition)
-            && Objects.equals(this.nodeProperties, node.nodeProperties)
-            && Objects.equals(this.pollingInterval, node.pollingInterval)
-            && Objects.equals(this.maxExecutionTime, node.maxExecutionTime)
-            && Objects.equals(this.retryTimes, node.retryTimes)
-            && Objects.equals(this.retryInterval, node.retryInterval)
-            && Objects.equals(this.failPolicy, node.failPolicy) && Objects.equals(this.eventTrigger, node.eventTrigger)
-            && Objects.equals(this.cronTrigger, node.cronTrigger);
+        Node that = (Node) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.preNodeNames, that.preNodeNames)
+            && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.nodeProperties, that.nodeProperties)
+            && Objects.equals(this.pollingInterval, that.pollingInterval)
+            && Objects.equals(this.maxExecutionTime, that.maxExecutionTime)
+            && Objects.equals(this.retryTimes, that.retryTimes)
+            && Objects.equals(this.retryInterval, that.retryInterval)
+            && Objects.equals(this.failPolicy, that.failPolicy) && Objects.equals(this.eventTrigger, that.eventTrigger)
+            && Objects.equals(this.cronTrigger, that.cronTrigger);
     }
 
     @Override

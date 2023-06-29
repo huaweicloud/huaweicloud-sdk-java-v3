@@ -75,16 +75,15 @@ public class ListClustersDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClustersDetailsResponse listClustersDetailsResponse = (ListClustersDetailsResponse) o;
-        return Objects.equals(this.totalSize, listClustersDetailsResponse.totalSize)
-            && Objects.equals(this.clusters, listClustersDetailsResponse.clusters);
+        ListClustersDetailsResponse that = (ListClustersDetailsResponse) obj;
+        return Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.clusters, that.clusters);
     }
 
     @Override

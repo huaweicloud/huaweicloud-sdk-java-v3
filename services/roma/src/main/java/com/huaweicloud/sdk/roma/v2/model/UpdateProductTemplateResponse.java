@@ -77,22 +77,15 @@ public class UpdateProductTemplateResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,22 +290,20 @@ public class UpdateProductTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductTemplateResponse updateProductTemplateResponse = (UpdateProductTemplateResponse) o;
-        return Objects.equals(this.id, updateProductTemplateResponse.id)
-            && Objects.equals(this.name, updateProductTemplateResponse.name)
-            && Objects.equals(this.description, updateProductTemplateResponse.description)
-            && Objects.equals(this.status, updateProductTemplateResponse.status)
-            && Objects.equals(this.createdUser, updateProductTemplateResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, updateProductTemplateResponse.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, updateProductTemplateResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, updateProductTemplateResponse.lastUpdatedDatetime);
+        UpdateProductTemplateResponse that = (UpdateProductTemplateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime);
     }
 
     @Override

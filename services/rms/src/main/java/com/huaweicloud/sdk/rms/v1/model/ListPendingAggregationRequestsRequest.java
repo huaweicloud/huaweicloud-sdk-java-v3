@@ -79,18 +79,16 @@ public class ListPendingAggregationRequestsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPendingAggregationRequestsRequest listPendingAggregationRequestsRequest =
-            (ListPendingAggregationRequestsRequest) o;
-        return Objects.equals(this.accountId, listPendingAggregationRequestsRequest.accountId)
-            && Objects.equals(this.limit, listPendingAggregationRequestsRequest.limit)
-            && Objects.equals(this.marker, listPendingAggregationRequestsRequest.marker);
+        ListPendingAggregationRequestsRequest that = (ListPendingAggregationRequestsRequest) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

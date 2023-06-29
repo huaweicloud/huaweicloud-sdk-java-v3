@@ -131,19 +131,17 @@ public class UpdateTestCaseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTestCaseRequestBody updateTestCaseRequestBody = (UpdateTestCaseRequestBody) o;
-        return Objects.equals(this.name, updateTestCaseRequestBody.name)
-            && Objects.equals(this.serviceId, updateTestCaseRequestBody.serviceId)
-            && Objects.equals(this.rankId, updateTestCaseRequestBody.rankId)
-            && Objects.equals(this.testcaseNumber, updateTestCaseRequestBody.testcaseNumber)
-            && Objects.equals(this.extendInfo, updateTestCaseRequestBody.extendInfo);
+        UpdateTestCaseRequestBody that = (UpdateTestCaseRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.rankId, that.rankId) && Objects.equals(this.testcaseNumber, that.testcaseNumber)
+            && Objects.equals(this.extendInfo, that.extendInfo);
     }
 
     @Override

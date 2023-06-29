@@ -75,16 +75,15 @@ public class ListPartnerAdjustRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerAdjustRecordsResponse listPartnerAdjustRecordsResponse = (ListPartnerAdjustRecordsResponse) o;
-        return Objects.equals(this.records, listPartnerAdjustRecordsResponse.records)
-            && Objects.equals(this.totalCount, listPartnerAdjustRecordsResponse.totalCount);
+        ListPartnerAdjustRecordsResponse that = (ListPartnerAdjustRecordsResponse) obj;
+        return Objects.equals(this.records, that.records) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

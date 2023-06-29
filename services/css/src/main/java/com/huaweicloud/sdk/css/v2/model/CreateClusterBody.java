@@ -439,28 +439,23 @@ public class CreateClusterBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterBody createClusterBody = (CreateClusterBody) o;
-        return Objects.equals(this.name, createClusterBody.name)
-            && Objects.equals(this.backupStrategy, createClusterBody.backupStrategy)
-            && Objects.equals(this.roles, createClusterBody.roles) && Objects.equals(this.nics, createClusterBody.nics)
-            && Objects.equals(this.enterpriseProjectId, createClusterBody.enterpriseProjectId)
-            && Objects.equals(this.tags, createClusterBody.tags)
-            && Objects.equals(this.availabilityZone, createClusterBody.availabilityZone)
-            && Objects.equals(this.datastore, createClusterBody.datastore)
-            && Objects.equals(this.authorityEnable, createClusterBody.authorityEnable)
-            && Objects.equals(this.httpsEnable, createClusterBody.httpsEnable)
-            && Objects.equals(this.adminPwd, createClusterBody.adminPwd)
-            && Objects.equals(this.publicIPReq, createClusterBody.publicIPReq)
-            && Objects.equals(this.loadBalance, createClusterBody.loadBalance)
-            && Objects.equals(this.publicKibanaReq, createClusterBody.publicKibanaReq)
-            && Objects.equals(this.payInfo, createClusterBody.payInfo);
+        CreateClusterBody that = (CreateClusterBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.authorityEnable, that.authorityEnable)
+            && Objects.equals(this.httpsEnable, that.httpsEnable) && Objects.equals(this.adminPwd, that.adminPwd)
+            && Objects.equals(this.publicIPReq, that.publicIPReq) && Objects.equals(this.loadBalance, that.loadBalance)
+            && Objects.equals(this.publicKibanaReq, that.publicKibanaReq) && Objects.equals(this.payInfo, that.payInfo);
     }
 
     @Override

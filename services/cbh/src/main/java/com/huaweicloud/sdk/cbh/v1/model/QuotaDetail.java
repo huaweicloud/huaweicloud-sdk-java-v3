@@ -79,16 +79,16 @@ public class QuotaDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetail quotaDetail = (QuotaDetail) o;
-        return Objects.equals(this.zhCn, quotaDetail.zhCn) && Objects.equals(this.enUs, quotaDetail.enUs)
-            && Objects.equals(this.remaining, quotaDetail.remaining);
+        QuotaDetail that = (QuotaDetail) obj;
+        return Objects.equals(this.zhCn, that.zhCn) && Objects.equals(this.enUs, that.enUs)
+            && Objects.equals(this.remaining, that.remaining);
     }
 
     @Override

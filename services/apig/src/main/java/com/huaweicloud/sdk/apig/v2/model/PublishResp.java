@@ -166,19 +166,18 @@ public class PublishResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishResp publishResp = (PublishResp) o;
-        return Objects.equals(this.publishId, publishResp.publishId) && Objects.equals(this.apiId, publishResp.apiId)
-            && Objects.equals(this.apiName, publishResp.apiName) && Objects.equals(this.envId, publishResp.envId)
-            && Objects.equals(this.remark, publishResp.remark)
-            && Objects.equals(this.publishTime, publishResp.publishTime)
-            && Objects.equals(this.versionId, publishResp.versionId);
+        PublishResp that = (PublishResp) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

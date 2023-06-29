@@ -77,16 +77,15 @@ public class ListV2xEdgeAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListV2xEdgeAppResponse listV2xEdgeAppResponse = (ListV2xEdgeAppResponse) o;
-        return Objects.equals(this.count, listV2xEdgeAppResponse.count)
-            && Objects.equals(this.apps, listV2xEdgeAppResponse.apps);
+        ListV2xEdgeAppResponse that = (ListV2xEdgeAppResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.apps, that.apps);
     }
 
     @Override

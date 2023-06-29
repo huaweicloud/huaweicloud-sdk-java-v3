@@ -65,16 +65,15 @@ public class UpdateIngressEipV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIngressEipV2Request updateIngressEipV2Request = (UpdateIngressEipV2Request) o;
-        return Objects.equals(this.instanceId, updateIngressEipV2Request.instanceId)
-            && Objects.equals(this.body, updateIngressEipV2Request.body);
+        UpdateIngressEipV2Request that = (UpdateIngressEipV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

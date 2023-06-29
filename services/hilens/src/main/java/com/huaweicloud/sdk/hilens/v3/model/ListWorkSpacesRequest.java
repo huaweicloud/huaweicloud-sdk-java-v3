@@ -77,17 +77,16 @@ public class ListWorkSpacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkSpacesRequest listWorkSpacesRequest = (ListWorkSpacesRequest) o;
-        return Objects.equals(this.iamUserId, listWorkSpacesRequest.iamUserId)
-            && Objects.equals(this.offset, listWorkSpacesRequest.offset)
-            && Objects.equals(this.limit, listWorkSpacesRequest.limit);
+        ListWorkSpacesRequest that = (ListWorkSpacesRequest) obj;
+        return Objects.equals(this.iamUserId, that.iamUserId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

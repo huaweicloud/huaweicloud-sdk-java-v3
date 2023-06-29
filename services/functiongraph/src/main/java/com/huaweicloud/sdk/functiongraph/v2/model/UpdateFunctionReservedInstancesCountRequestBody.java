@@ -88,18 +88,16 @@ public class UpdateFunctionReservedInstancesCountRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionReservedInstancesCountRequestBody updateFunctionReservedInstancesCountRequestBody =
-            (UpdateFunctionReservedInstancesCountRequestBody) o;
-        return Objects.equals(this.count, updateFunctionReservedInstancesCountRequestBody.count)
-            && Objects.equals(this.idleMode, updateFunctionReservedInstancesCountRequestBody.idleMode)
-            && Objects.equals(this.tacticsConfig, updateFunctionReservedInstancesCountRequestBody.tacticsConfig);
+        UpdateFunctionReservedInstancesCountRequestBody that = (UpdateFunctionReservedInstancesCountRequestBody) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.idleMode, that.idleMode)
+            && Objects.equals(this.tacticsConfig, that.tacticsConfig);
     }
 
     @Override

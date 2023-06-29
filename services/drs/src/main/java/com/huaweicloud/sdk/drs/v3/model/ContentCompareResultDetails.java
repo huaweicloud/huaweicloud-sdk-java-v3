@@ -158,20 +158,19 @@ public class ContentCompareResultDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareResultDetails contentCompareResultDetails = (ContentCompareResultDetails) o;
-        return Objects.equals(this.sourceDbName, contentCompareResultDetails.sourceDbName)
-            && Objects.equals(this.contentCompareDetail, contentCompareResultDetails.contentCompareDetail)
-            && Objects.equals(this.contentCompareDetailCount, contentCompareResultDetails.contentCompareDetailCount)
-            && Objects.equals(this.contentUncompareDetail, contentCompareResultDetails.contentUncompareDetail)
-            && Objects.equals(this.contentUncompareDetailCount,
-                contentCompareResultDetails.contentUncompareDetailCount);
+        ContentCompareResultDetails that = (ContentCompareResultDetails) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.contentCompareDetail, that.contentCompareDetail)
+            && Objects.equals(this.contentCompareDetailCount, that.contentCompareDetailCount)
+            && Objects.equals(this.contentUncompareDetail, that.contentUncompareDetail)
+            && Objects.equals(this.contentUncompareDetailCount, that.contentUncompareDetailCount);
     }
 
     @Override

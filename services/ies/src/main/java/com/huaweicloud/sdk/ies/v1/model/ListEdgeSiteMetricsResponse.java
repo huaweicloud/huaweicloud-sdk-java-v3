@@ -53,15 +53,15 @@ public class ListEdgeSiteMetricsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeSiteMetricsResponse listEdgeSiteMetricsResponse = (ListEdgeSiteMetricsResponse) o;
-        return Objects.equals(this.metricData, listEdgeSiteMetricsResponse.metricData);
+        ListEdgeSiteMetricsResponse that = (ListEdgeSiteMetricsResponse) obj;
+        return Objects.equals(this.metricData, that.metricData);
     }
 
     @Override

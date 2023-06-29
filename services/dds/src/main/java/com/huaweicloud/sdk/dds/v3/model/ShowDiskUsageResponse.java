@@ -53,15 +53,15 @@ public class ShowDiskUsageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDiskUsageResponse showDiskUsageResponse = (ShowDiskUsageResponse) o;
-        return Objects.equals(this.volumes, showDiskUsageResponse.volumes);
+        ShowDiskUsageResponse that = (ShowDiskUsageResponse) obj;
+        return Objects.equals(this.volumes, that.volumes);
     }
 
     @Override

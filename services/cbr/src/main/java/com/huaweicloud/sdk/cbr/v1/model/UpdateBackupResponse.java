@@ -44,15 +44,15 @@ public class UpdateBackupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBackupResponse updateBackupResponse = (UpdateBackupResponse) o;
-        return Objects.equals(this.backup, updateBackupResponse.backup);
+        UpdateBackupResponse that = (UpdateBackupResponse) obj;
+        return Objects.equals(this.backup, that.backup);
     }
 
     @Override

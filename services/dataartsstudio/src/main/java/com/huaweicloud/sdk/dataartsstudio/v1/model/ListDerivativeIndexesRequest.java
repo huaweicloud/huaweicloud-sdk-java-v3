@@ -104,22 +104,15 @@ public class ListDerivativeIndexesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -448,29 +441,23 @@ public class ListDerivativeIndexesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDerivativeIndexesRequest listDerivativeIndexesRequest = (ListDerivativeIndexesRequest) o;
-        return Objects.equals(this.workspace, listDerivativeIndexesRequest.workspace)
-            && Objects.equals(this.name, listDerivativeIndexesRequest.name)
-            && Objects.equals(this.createBy, listDerivativeIndexesRequest.createBy)
-            && Objects.equals(this.approver, listDerivativeIndexesRequest.approver)
-            && Objects.equals(this.status, listDerivativeIndexesRequest.status)
-            && Objects.equals(this.dimensionId, listDerivativeIndexesRequest.dimensionId)
-            && Objects.equals(this.dimensionGroup, listDerivativeIndexesRequest.dimensionGroup)
-            && Objects.equals(this.atomicIndexId, listDerivativeIndexesRequest.atomicIndexId)
-            && Objects.equals(this.allMetrics, listDerivativeIndexesRequest.allMetrics)
-            && Objects.equals(this.dwType, listDerivativeIndexesRequest.dwType)
-            && Objects.equals(this.l3Id, listDerivativeIndexesRequest.l3Id)
-            && Objects.equals(this.beginTime, listDerivativeIndexesRequest.beginTime)
-            && Objects.equals(this.endTime, listDerivativeIndexesRequest.endTime)
-            && Objects.equals(this.limit, listDerivativeIndexesRequest.limit)
-            && Objects.equals(this.offset, listDerivativeIndexesRequest.offset);
+        ListDerivativeIndexesRequest that = (ListDerivativeIndexesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.dimensionId, that.dimensionId)
+            && Objects.equals(this.dimensionGroup, that.dimensionGroup)
+            && Objects.equals(this.atomicIndexId, that.atomicIndexId)
+            && Objects.equals(this.allMetrics, that.allMetrics) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.l3Id, that.l3Id) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

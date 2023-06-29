@@ -34,15 +34,15 @@ public class DeleteSqlserverDatabaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSqlserverDatabaseResponse deleteSqlserverDatabaseResponse = (DeleteSqlserverDatabaseResponse) o;
-        return Objects.equals(this.resp, deleteSqlserverDatabaseResponse.resp);
+        DeleteSqlserverDatabaseResponse that = (DeleteSqlserverDatabaseResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override

@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * EnableDeletionProtectionPrimitiveTypeHolder
  */
-public class EnableDeletionProtectionPrimitiveTypeHolder  {
-
+public class EnableDeletionProtectionPrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_deletion_protection")
-    
+    @JsonProperty(value = "enable_deletion_protection")
 
     private Boolean enableDeletionProtection;
 
@@ -27,9 +19,6 @@ public class EnableDeletionProtectionPrimitiveTypeHolder  {
         this.enableDeletionProtection = enableDeletionProtection;
         return this;
     }
-
-    
-
 
     /**
      * 删除保护的标识位，如果不传默认为false，即默认不开启资源栈删除保护（删除保护开启后资源栈不允许被删除）  *在UpdateStack API中，若该参数未在RequestBody中给予，则不会对资源栈的删除保护属性进行更新* 
@@ -43,23 +32,23 @@ public class EnableDeletionProtectionPrimitiveTypeHolder  {
         this.enableDeletionProtection = enableDeletionProtection;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableDeletionProtectionPrimitiveTypeHolder enableDeletionProtectionPrimitiveTypeHolder = (EnableDeletionProtectionPrimitiveTypeHolder) o;
-        return Objects.equals(this.enableDeletionProtection, enableDeletionProtectionPrimitiveTypeHolder.enableDeletionProtection);
+        EnableDeletionProtectionPrimitiveTypeHolder that = (EnableDeletionProtectionPrimitiveTypeHolder) obj;
+        return Objects.equals(this.enableDeletionProtection, that.enableDeletionProtection);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enableDeletionProtection);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class EnableDeletionProtectionPrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class EnableDeletionProtectionPrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

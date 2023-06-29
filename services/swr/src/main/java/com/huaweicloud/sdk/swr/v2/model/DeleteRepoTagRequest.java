@@ -77,17 +77,16 @@ public class DeleteRepoTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRepoTagRequest deleteRepoTagRequest = (DeleteRepoTagRequest) o;
-        return Objects.equals(this.namespace, deleteRepoTagRequest.namespace)
-            && Objects.equals(this.repository, deleteRepoTagRequest.repository)
-            && Objects.equals(this.tag, deleteRepoTagRequest.tag);
+        DeleteRepoTagRequest that = (DeleteRepoTagRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

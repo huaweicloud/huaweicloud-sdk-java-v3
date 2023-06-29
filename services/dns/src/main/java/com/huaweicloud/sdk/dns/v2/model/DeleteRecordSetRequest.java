@@ -55,16 +55,15 @@ public class DeleteRecordSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRecordSetRequest deleteRecordSetRequest = (DeleteRecordSetRequest) o;
-        return Objects.equals(this.zoneId, deleteRecordSetRequest.zoneId)
-            && Objects.equals(this.recordsetId, deleteRecordSetRequest.recordsetId);
+        DeleteRecordSetRequest that = (DeleteRecordSetRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.recordsetId, that.recordsetId);
     }
 
     @Override

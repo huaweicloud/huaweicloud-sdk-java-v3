@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.UpdateDesireds;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateDeviceRequest  {
-
+public class UpdateDeviceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateDesireds body;
 
@@ -41,9 +30,6 @@ public class UpdateDeviceRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -57,15 +43,10 @@ public class UpdateDeviceRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public UpdateDeviceRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备ID
@@ -79,22 +60,19 @@ public class UpdateDeviceRequest  {
         this.deviceId = deviceId;
     }
 
-    
-
     public UpdateDeviceRequest withBody(UpdateDesireds body) {
         this.body = body;
         return this;
     }
 
     public UpdateDeviceRequest withBody(Consumer<UpdateDesireds> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateDesireds();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class UpdateDeviceRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceRequest updateDeviceRequest = (UpdateDeviceRequest) o;
-        return Objects.equals(this.edgeNodeId, updateDeviceRequest.edgeNodeId) &&
-            Objects.equals(this.deviceId, updateDeviceRequest.deviceId) &&
-            Objects.equals(this.body, updateDeviceRequest.body);
+        UpdateDeviceRequest that = (UpdateDeviceRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, deviceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class UpdateDeviceRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class UpdateDeviceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

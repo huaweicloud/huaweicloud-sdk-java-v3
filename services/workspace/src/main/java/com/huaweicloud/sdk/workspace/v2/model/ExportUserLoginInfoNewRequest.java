@@ -169,20 +169,17 @@ public class ExportUserLoginInfoNewRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportUserLoginInfoNewRequest exportUserLoginInfoNewRequest = (ExportUserLoginInfoNewRequest) o;
-        return Objects.equals(this.startTime, exportUserLoginInfoNewRequest.startTime)
-            && Objects.equals(this.endTime, exportUserLoginInfoNewRequest.endTime)
-            && Objects.equals(this.userName, exportUserLoginInfoNewRequest.userName)
-            && Objects.equals(this.computerName, exportUserLoginInfoNewRequest.computerName)
-            && Objects.equals(this.terminalType, exportUserLoginInfoNewRequest.terminalType)
-            && Objects.equals(this.language, exportUserLoginInfoNewRequest.language);
+        ExportUserLoginInfoNewRequest that = (ExportUserLoginInfoNewRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.language, that.language);
     }
 
     @Override

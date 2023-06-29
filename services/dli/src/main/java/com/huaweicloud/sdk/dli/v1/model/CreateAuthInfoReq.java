@@ -275,26 +275,24 @@ public class CreateAuthInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthInfoReq createAuthInfoReq = (CreateAuthInfoReq) o;
-        return Objects.equals(this.authInfoName, createAuthInfoReq.authInfoName)
-            && Objects.equals(this.userName, createAuthInfoReq.userName)
-            && Objects.equals(this.password, createAuthInfoReq.password)
-            && Objects.equals(this.krb5Conf, createAuthInfoReq.krb5Conf)
-            && Objects.equals(this.keytab, createAuthInfoReq.keytab)
-            && Objects.equals(this.truststoreLocation, createAuthInfoReq.truststoreLocation)
-            && Objects.equals(this.truststorePassword, createAuthInfoReq.truststorePassword)
-            && Objects.equals(this.keystoreLocation, createAuthInfoReq.keystoreLocation)
-            && Objects.equals(this.keystorePassword, createAuthInfoReq.keystorePassword)
-            && Objects.equals(this.certificateLocation, createAuthInfoReq.certificateLocation)
-            && Objects.equals(this.datasourceType, createAuthInfoReq.datasourceType)
-            && Objects.equals(this.keyPassword, createAuthInfoReq.keyPassword);
+        CreateAuthInfoReq that = (CreateAuthInfoReq) obj;
+        return Objects.equals(this.authInfoName, that.authInfoName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.krb5Conf, that.krb5Conf)
+            && Objects.equals(this.keytab, that.keytab)
+            && Objects.equals(this.truststoreLocation, that.truststoreLocation)
+            && Objects.equals(this.truststorePassword, that.truststorePassword)
+            && Objects.equals(this.keystoreLocation, that.keystoreLocation)
+            && Objects.equals(this.keystorePassword, that.keystorePassword)
+            && Objects.equals(this.certificateLocation, that.certificateLocation)
+            && Objects.equals(this.datasourceType, that.datasourceType)
+            && Objects.equals(this.keyPassword, that.keyPassword);
     }
 
     @Override

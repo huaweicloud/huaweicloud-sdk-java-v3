@@ -241,23 +241,19 @@ public class PhysicalVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhysicalVolume physicalVolume = (PhysicalVolume) o;
-        return Objects.equals(this.deviceUse, physicalVolume.deviceUse)
-            && Objects.equals(this.fileSystem, physicalVolume.fileSystem)
-            && Objects.equals(this.index, physicalVolume.index)
-            && Objects.equals(this.mountPoint, physicalVolume.mountPoint)
-            && Objects.equals(this.name, physicalVolume.name) && Objects.equals(this.size, physicalVolume.size)
-            && Objects.equals(this.usedSize, physicalVolume.usedSize)
-            && Objects.equals(this.inodeSize, physicalVolume.inodeSize)
-            && Objects.equals(this.uuid, physicalVolume.uuid)
-            && Objects.equals(this.sizePerCluster, physicalVolume.sizePerCluster);
+        PhysicalVolume that = (PhysicalVolume) obj;
+        return Objects.equals(this.deviceUse, that.deviceUse) && Objects.equals(this.fileSystem, that.fileSystem)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.mountPoint, that.mountPoint)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.usedSize, that.usedSize) && Objects.equals(this.inodeSize, that.inodeSize)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.sizePerCluster, that.sizePerCluster);
     }
 
     @Override

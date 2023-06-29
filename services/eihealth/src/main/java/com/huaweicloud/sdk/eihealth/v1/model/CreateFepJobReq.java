@@ -176,18 +176,17 @@ public class CreateFepJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFepJobReq createFepJobReq = (CreateFepJobReq) o;
-        return Objects.equals(this.basicInfo, createFepJobReq.basicInfo)
-            && Objects.equals(this.receptor, createFepJobReq.receptor)
-            && Objects.equals(this.ligands, createFepJobReq.ligands)
-            && Objects.equals(this.graph, createFepJobReq.graph) && Objects.equals(this.params, createFepJobReq.params);
+        CreateFepJobReq that = (CreateFepJobReq) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.graph, that.graph)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

@@ -143,18 +143,16 @@ public class TransformModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformModel transformModel = (TransformModel) o;
-        return Objects.equals(this.inputs, transformModel.inputs)
-            && Objects.equals(this.expression, transformModel.expression)
-            && Objects.equals(this.outputProperty, transformModel.outputProperty)
-            && Objects.equals(this.outputs, transformModel.outputs);
+        TransformModel that = (TransformModel) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.outputProperty, that.outputProperty) && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

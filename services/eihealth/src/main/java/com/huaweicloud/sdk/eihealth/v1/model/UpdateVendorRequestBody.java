@@ -87,16 +87,15 @@ public class UpdateVendorRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVendorRequestBody updateVendorRequestBody = (UpdateVendorRequestBody) o;
-        return Objects.equals(this.file, updateVendorRequestBody.file)
-            && Objects.equals(this.name, updateVendorRequestBody.name);
+        UpdateVendorRequestBody that = (UpdateVendorRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.name, that.name);
     }
 
     @Override

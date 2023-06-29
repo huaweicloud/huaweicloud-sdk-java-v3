@@ -101,17 +101,16 @@ public class ListRtcAbnormalEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcAbnormalEventsResponse listRtcAbnormalEventsResponse = (ListRtcAbnormalEventsResponse) o;
-        return Objects.equals(this.total, listRtcAbnormalEventsResponse.total)
-            && Objects.equals(this.events, listRtcAbnormalEventsResponse.events)
-            && Objects.equals(this.xRequestId, listRtcAbnormalEventsResponse.xRequestId);
+        ListRtcAbnormalEventsResponse that = (ListRtcAbnormalEventsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -102,18 +102,17 @@ public class ListRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRulesRequest listRulesRequest = (ListRulesRequest) o;
-        return Objects.equals(this.ruleLanguages, listRulesRequest.ruleLanguages)
-            && Objects.equals(this.ruleSeverity, listRulesRequest.ruleSeverity)
-            && Objects.equals(this.offset, listRulesRequest.offset)
-            && Objects.equals(this.limit, listRulesRequest.limit);
+        ListRulesRequest that = (ListRulesRequest) obj;
+        return Objects.equals(this.ruleLanguages, that.ruleLanguages)
+            && Objects.equals(this.ruleSeverity, that.ruleSeverity) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

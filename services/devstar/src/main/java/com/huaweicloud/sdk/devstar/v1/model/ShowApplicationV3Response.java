@@ -147,22 +147,15 @@ public class ShowApplicationV3Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployTypeEnum(value));
         }
 
         public static DeployTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -571,32 +564,26 @@ public class ShowApplicationV3Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationV3Response showApplicationV3Response = (ShowApplicationV3Response) o;
-        return Objects.equals(this.id, showApplicationV3Response.id)
-            && Objects.equals(this.name, showApplicationV3Response.name)
-            && Objects.equals(this.description, showApplicationV3Response.description)
-            && Objects.equals(this.regionId, showApplicationV3Response.regionId)
-            && Objects.equals(this.regionName, showApplicationV3Response.regionName)
-            && Objects.equals(this.projectId, showApplicationV3Response.projectId)
-            && Objects.equals(this.projectName, showApplicationV3Response.projectName)
-            && Objects.equals(this.icon, showApplicationV3Response.icon)
-            && Objects.equals(this.pipelineCreationResult, showApplicationV3Response.pipelineCreationResult)
-            && Objects.equals(this.repositoryCreationResult, showApplicationV3Response.repositoryCreationResult)
-            && Objects.equals(this.environmentCreationResult, showApplicationV3Response.environmentCreationResult)
-            && Objects.equals(this.templateTypes, showApplicationV3Response.templateTypes)
-            && Objects.equals(this.templateDeployment, showApplicationV3Response.templateDeployment)
-            && Objects.equals(this.deployType, showApplicationV3Response.deployType)
-            && Objects.equals(this.creatorName, showApplicationV3Response.creatorName)
-            && Objects.equals(this.createdAt, showApplicationV3Response.createdAt)
-            && Objects.equals(this.updatedAt, showApplicationV3Response.updatedAt)
-            && Objects.equals(this.version, showApplicationV3Response.version);
+        ShowApplicationV3Response that = (ShowApplicationV3Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.icon, that.icon)
+            && Objects.equals(this.pipelineCreationResult, that.pipelineCreationResult)
+            && Objects.equals(this.repositoryCreationResult, that.repositoryCreationResult)
+            && Objects.equals(this.environmentCreationResult, that.environmentCreationResult)
+            && Objects.equals(this.templateTypes, that.templateTypes)
+            && Objects.equals(this.templateDeployment, that.templateDeployment)
+            && Objects.equals(this.deployType, that.deployType) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

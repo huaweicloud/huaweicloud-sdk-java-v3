@@ -56,17 +56,15 @@ public class DisassociateConnectionQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateConnectionQueueResponse disassociateConnectionQueueResponse =
-            (DisassociateConnectionQueueResponse) o;
-        return Objects.equals(this.isSuccess, disassociateConnectionQueueResponse.isSuccess)
-            && Objects.equals(this.message, disassociateConnectionQueueResponse.message);
+        DisassociateConnectionQueueResponse that = (DisassociateConnectionQueueResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class CreateResWorkspaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResWorkspaceRequestBody createResWorkspaceRequestBody = (CreateResWorkspaceRequestBody) o;
-        return Objects.equals(this.name, createResWorkspaceRequestBody.name)
-            && Objects.equals(this.enterpriseProjectId, createResWorkspaceRequestBody.enterpriseProjectId)
-            && Objects.equals(this.description, createResWorkspaceRequestBody.description);
+        CreateResWorkspaceRequestBody that = (CreateResWorkspaceRequestBody) obj;
+        return Objects.equals(this.name, that.name)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

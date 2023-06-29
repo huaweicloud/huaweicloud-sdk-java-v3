@@ -110,18 +110,16 @@ public class ShowMergeReportLogsOutlineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMergeReportLogsOutlineResponse showMergeReportLogsOutlineResponse = (ShowMergeReportLogsOutlineResponse) o;
-        return Objects.equals(this.code, showMergeReportLogsOutlineResponse.code)
-            && Objects.equals(this.message, showMergeReportLogsOutlineResponse.message)
-            && Objects.equals(this.extend, showMergeReportLogsOutlineResponse.extend)
-            && Objects.equals(this.result, showMergeReportLogsOutlineResponse.result);
+        ShowMergeReportLogsOutlineResponse that = (ShowMergeReportLogsOutlineResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.result, that.result);
     }
 
     @Override

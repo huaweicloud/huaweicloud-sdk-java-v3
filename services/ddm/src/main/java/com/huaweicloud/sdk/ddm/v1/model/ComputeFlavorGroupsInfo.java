@@ -140,19 +140,17 @@ public class ComputeFlavorGroupsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputeFlavorGroupsInfo computeFlavorGroupsInfo = (ComputeFlavorGroupsInfo) o;
-        return Objects.equals(this.groupType, computeFlavorGroupsInfo.groupType)
-            && Objects.equals(this.computeFlavors, computeFlavorGroupsInfo.computeFlavors)
-            && Objects.equals(this.offset, computeFlavorGroupsInfo.offset)
-            && Objects.equals(this.limit, computeFlavorGroupsInfo.limit)
-            && Objects.equals(this.total, computeFlavorGroupsInfo.total);
+        ComputeFlavorGroupsInfo that = (ComputeFlavorGroupsInfo) obj;
+        return Objects.equals(this.groupType, that.groupType)
+            && Objects.equals(this.computeFlavors, that.computeFlavors) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total);
     }
 
     @Override

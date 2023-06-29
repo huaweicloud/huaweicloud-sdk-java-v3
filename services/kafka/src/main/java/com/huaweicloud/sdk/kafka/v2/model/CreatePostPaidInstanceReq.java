@@ -67,22 +67,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,22 +148,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
         }
 
         public static EngineVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +265,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            SpecificationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecificationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecificationEnum(value));
         }
 
         public static SpecificationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecificationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -407,22 +386,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            PartitionNumEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PartitionNumEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartitionNumEnum(value));
         }
 
         public static PartitionNumEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PartitionNumEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -569,22 +541,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SaslEnabledMechanismsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SaslEnabledMechanismsEnum(value));
         }
 
         public static SaslEnabledMechanismsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SaslEnabledMechanismsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -607,8 +572,8 @@ public class CreatePostPaidInstanceReq {
     private List<SaslEnabledMechanismsEnum> saslEnabledMechanisms = null;
 
     /**
-    * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
-    */
+     * 磁盘的容量到达容量阈值后，对于消息的处理策略。  取值如下： - produce_reject：表示拒绝消息写入。 - time_base：表示自动删除最老消息。
+     */
     public static final class RetentionPolicyEnum {
 
         /**
@@ -651,22 +616,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RetentionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RetentionPolicyEnum(value));
         }
 
         public static RetentionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RetentionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -776,22 +734,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageSpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageSpecCodeEnum(value));
         }
 
         public static StorageSpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1434,47 +1385,40 @@ public class CreatePostPaidInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostPaidInstanceReq createPostPaidInstanceReq = (CreatePostPaidInstanceReq) o;
-        return Objects.equals(this.name, createPostPaidInstanceReq.name)
-            && Objects.equals(this.description, createPostPaidInstanceReq.description)
-            && Objects.equals(this.engine, createPostPaidInstanceReq.engine)
-            && Objects.equals(this.engineVersion, createPostPaidInstanceReq.engineVersion)
-            && Objects.equals(this.specification, createPostPaidInstanceReq.specification)
-            && Objects.equals(this.brokerNum, createPostPaidInstanceReq.brokerNum)
-            && Objects.equals(this.storageSpace, createPostPaidInstanceReq.storageSpace)
-            && Objects.equals(this.partitionNum, createPostPaidInstanceReq.partitionNum)
-            && Objects.equals(this.accessUser, createPostPaidInstanceReq.accessUser)
-            && Objects.equals(this.password, createPostPaidInstanceReq.password)
-            && Objects.equals(this.vpcId, createPostPaidInstanceReq.vpcId)
-            && Objects.equals(this.securityGroupId, createPostPaidInstanceReq.securityGroupId)
-            && Objects.equals(this.subnetId, createPostPaidInstanceReq.subnetId)
-            && Objects.equals(this.availableZones, createPostPaidInstanceReq.availableZones)
-            && Objects.equals(this.productId, createPostPaidInstanceReq.productId)
-            && Objects.equals(this.kafkaManagerUser, createPostPaidInstanceReq.kafkaManagerUser)
-            && Objects.equals(this.kafkaManagerPassword, createPostPaidInstanceReq.kafkaManagerPassword)
-            && Objects.equals(this.maintainBegin, createPostPaidInstanceReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, createPostPaidInstanceReq.maintainEnd)
-            && Objects.equals(this.enablePublicip, createPostPaidInstanceReq.enablePublicip)
-            && Objects.equals(this.publicBandwidth, createPostPaidInstanceReq.publicBandwidth)
-            && Objects.equals(this.publicipId, createPostPaidInstanceReq.publicipId)
-            && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
-            && Objects.equals(this.kafkaSecurityProtocol, createPostPaidInstanceReq.kafkaSecurityProtocol)
-            && Objects.equals(this.saslEnabledMechanisms, createPostPaidInstanceReq.saslEnabledMechanisms)
-            && Objects.equals(this.retentionPolicy, createPostPaidInstanceReq.retentionPolicy)
-            && Objects.equals(this.diskEncryptedEnable, createPostPaidInstanceReq.diskEncryptedEnable)
-            && Objects.equals(this.diskEncryptedKey, createPostPaidInstanceReq.diskEncryptedKey)
-            && Objects.equals(this.connectorEnable, createPostPaidInstanceReq.connectorEnable)
-            && Objects.equals(this.enableAutoTopic, createPostPaidInstanceReq.enableAutoTopic)
-            && Objects.equals(this.storageSpecCode, createPostPaidInstanceReq.storageSpecCode)
-            && Objects.equals(this.enterpriseProjectId, createPostPaidInstanceReq.enterpriseProjectId)
-            && Objects.equals(this.tags, createPostPaidInstanceReq.tags);
+        CreatePostPaidInstanceReq that = (CreatePostPaidInstanceReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.brokerNum, that.brokerNum)
+            && Objects.equals(this.storageSpace, that.storageSpace)
+            && Objects.equals(this.partitionNum, that.partitionNum) && Objects.equals(this.accessUser, that.accessUser)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.kafkaManagerUser, that.kafkaManagerUser)
+            && Objects.equals(this.kafkaManagerPassword, that.kafkaManagerPassword)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicBandwidth, that.publicBandwidth)
+            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.kafkaSecurityProtocol, that.kafkaSecurityProtocol)
+            && Objects.equals(this.saslEnabledMechanisms, that.saslEnabledMechanisms)
+            && Objects.equals(this.retentionPolicy, that.retentionPolicy)
+            && Objects.equals(this.diskEncryptedEnable, that.diskEncryptedEnable)
+            && Objects.equals(this.diskEncryptedKey, that.diskEncryptedKey)
+            && Objects.equals(this.connectorEnable, that.connectorEnable)
+            && Objects.equals(this.enableAutoTopic, that.enableAutoTopic)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

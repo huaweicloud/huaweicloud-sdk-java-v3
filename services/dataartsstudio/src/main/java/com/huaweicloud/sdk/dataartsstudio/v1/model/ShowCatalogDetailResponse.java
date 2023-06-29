@@ -232,24 +232,19 @@ public class ShowCatalogDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCatalogDetailResponse showCatalogDetailResponse = (ShowCatalogDetailResponse) o;
-        return Objects.equals(this.catalogId, showCatalogDetailResponse.catalogId)
-            && Objects.equals(this.name, showCatalogDetailResponse.name)
-            && Objects.equals(this.path, showCatalogDetailResponse.path)
-            && Objects.equals(this.catalogTotal, showCatalogDetailResponse.catalogTotal)
-            && Objects.equals(this.apiTotal, showCatalogDetailResponse.apiTotal)
-            && Objects.equals(this.description, showCatalogDetailResponse.description)
-            && Objects.equals(this.createTime, showCatalogDetailResponse.createTime)
-            && Objects.equals(this.createUser, showCatalogDetailResponse.createUser)
-            && Objects.equals(this.updateTime, showCatalogDetailResponse.updateTime)
-            && Objects.equals(this.updateUser, showCatalogDetailResponse.updateUser);
+        ShowCatalogDetailResponse that = (ShowCatalogDetailResponse) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.catalogTotal, that.catalogTotal)
+            && Objects.equals(this.apiTotal, that.apiTotal) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

@@ -209,19 +209,19 @@ public class FrontCell {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FrontCell frontCell = (FrontCell) o;
-        return Objects.equals(this.dataType, frontCell.dataType) && Objects.equals(this.function, frontCell.function)
-            && Objects.equals(this.trace, frontCell.trace) && Objects.equals(this.span, frontCell.span)
-            && Objects.equals(this.spanField, frontCell.spanField)
-            && Objects.equals(this.precision, frontCell.precision) && Objects.equals(this.text, frontCell.text)
-            && Objects.equals(this.unit, frontCell.unit) && Objects.equals(this.visible, frontCell.visible);
+        FrontCell that = (FrontCell) obj;
+        return Objects.equals(this.dataType, that.dataType) && Objects.equals(this.function, that.function)
+            && Objects.equals(this.trace, that.trace) && Objects.equals(this.span, that.span)
+            && Objects.equals(this.spanField, that.spanField) && Objects.equals(this.precision, that.precision)
+            && Objects.equals(this.text, that.text) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.visible, that.visible);
     }
 
     @Override

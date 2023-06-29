@@ -223,23 +223,21 @@ public class CycleSubConf {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CycleSubConf cycleSubConf = (CycleSubConf) o;
-        return Objects.equals(this.cycleSubConfID, cycleSubConf.cycleSubConfID)
-            && Objects.equals(this.conferenceID, cycleSubConf.conferenceID)
-            && Objects.equals(this.mediaType, cycleSubConf.mediaType)
-            && Objects.equals(this.startTime, cycleSubConf.startTime)
-            && Objects.equals(this.endTime, cycleSubConf.endTime)
-            && Objects.equals(this.isAutoRecord, cycleSubConf.isAutoRecord)
-            && Objects.equals(this.confConfigInfo, cycleSubConf.confConfigInfo)
-            && Objects.equals(this.recordAuthType, cycleSubConf.recordAuthType)
-            && Objects.equals(this.description, cycleSubConf.description);
+        CycleSubConf that = (CycleSubConf) obj;
+        return Objects.equals(this.cycleSubConfID, that.cycleSubConfID)
+            && Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.mediaType, that.mediaType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.isAutoRecord, that.isAutoRecord)
+            && Objects.equals(this.confConfigInfo, that.confConfigInfo)
+            && Objects.equals(this.recordAuthType, that.recordAuthType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

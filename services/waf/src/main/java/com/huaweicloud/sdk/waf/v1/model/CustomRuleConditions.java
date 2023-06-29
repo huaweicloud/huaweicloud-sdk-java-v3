@@ -140,19 +140,17 @@ public class CustomRuleConditions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomRuleConditions customRuleConditions = (CustomRuleConditions) o;
-        return Objects.equals(this.category, customRuleConditions.category)
-            && Objects.equals(this.index, customRuleConditions.index)
-            && Objects.equals(this.logicOperation, customRuleConditions.logicOperation)
-            && Objects.equals(this.contents, customRuleConditions.contents)
-            && Objects.equals(this.valueListId, customRuleConditions.valueListId);
+        CustomRuleConditions that = (CustomRuleConditions) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.index, that.index)
+            && Objects.equals(this.logicOperation, that.logicOperation) && Objects.equals(this.contents, that.contents)
+            && Objects.equals(this.valueListId, that.valueListId);
     }
 
     @Override

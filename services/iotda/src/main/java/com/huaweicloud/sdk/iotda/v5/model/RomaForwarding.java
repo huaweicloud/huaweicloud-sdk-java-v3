@@ -118,18 +118,16 @@ public class RomaForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RomaForwarding romaForwarding = (RomaForwarding) o;
-        return Objects.equals(this.addresses, romaForwarding.addresses)
-            && Objects.equals(this.topic, romaForwarding.topic)
-            && Objects.equals(this.username, romaForwarding.username)
-            && Objects.equals(this.password, romaForwarding.password);
+        RomaForwarding that = (RomaForwarding) obj;
+        return Objects.equals(this.addresses, that.addresses) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password);
     }
 
     @Override

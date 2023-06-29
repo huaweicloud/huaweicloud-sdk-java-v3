@@ -77,16 +77,16 @@ public class ScaleFlavors {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScaleFlavors scaleFlavors = (ScaleFlavors) o;
-        return Objects.equals(this.code, scaleFlavors.code) && Objects.equals(this.cpu, scaleFlavors.cpu)
-            && Objects.equals(this.mem, scaleFlavors.mem);
+        ScaleFlavors that = (ScaleFlavors) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.mem, that.mem);
     }
 
     @Override

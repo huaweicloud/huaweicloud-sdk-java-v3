@@ -119,19 +119,17 @@ public class UpdateTopicAccessPolicyTopicsObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTopicAccessPolicyTopicsObject updateTopicAccessPolicyTopicsObject =
-            (UpdateTopicAccessPolicyTopicsObject) o;
-        return Objects.equals(this.name, updateTopicAccessPolicyTopicsObject.name)
-            && Objects.equals(this.policies, updateTopicAccessPolicyTopicsObject.policies)
-            && Objects.equals(this.description, updateTopicAccessPolicyTopicsObject.description)
-            && Objects.equals(this.sensitiveWord, updateTopicAccessPolicyTopicsObject.sensitiveWord);
+        UpdateTopicAccessPolicyTopicsObject that = (UpdateTopicAccessPolicyTopicsObject) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.policies, that.policies)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sensitiveWord, that.sensitiveWord);
     }
 
     @Override

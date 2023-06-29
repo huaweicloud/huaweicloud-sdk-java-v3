@@ -43,16 +43,15 @@ public class UpdateAssistAuthMethodConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssistAuthMethodConfigRequest updateAssistAuthMethodConfigRequest =
-            (UpdateAssistAuthMethodConfigRequest) o;
-        return Objects.equals(this.body, updateAssistAuthMethodConfigRequest.body);
+        UpdateAssistAuthMethodConfigRequest that = (UpdateAssistAuthMethodConfigRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

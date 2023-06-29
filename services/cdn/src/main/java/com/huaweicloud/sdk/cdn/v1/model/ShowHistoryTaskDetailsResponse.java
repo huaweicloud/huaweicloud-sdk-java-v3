@@ -251,24 +251,19 @@ public class ShowHistoryTaskDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHistoryTaskDetailsResponse showHistoryTaskDetailsResponse = (ShowHistoryTaskDetailsResponse) o;
-        return Objects.equals(this.id, showHistoryTaskDetailsResponse.id)
-            && Objects.equals(this.taskType, showHistoryTaskDetailsResponse.taskType)
-            && Objects.equals(this.status, showHistoryTaskDetailsResponse.status)
-            && Objects.equals(this.urls, showHistoryTaskDetailsResponse.urls)
-            && Objects.equals(this.createTime, showHistoryTaskDetailsResponse.createTime)
-            && Objects.equals(this.processing, showHistoryTaskDetailsResponse.processing)
-            && Objects.equals(this.succeed, showHistoryTaskDetailsResponse.succeed)
-            && Objects.equals(this.failed, showHistoryTaskDetailsResponse.failed)
-            && Objects.equals(this.total, showHistoryTaskDetailsResponse.total)
-            && Objects.equals(this.fileType, showHistoryTaskDetailsResponse.fileType);
+        ShowHistoryTaskDetailsResponse that = (ShowHistoryTaskDetailsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.urls, that.urls)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.processing, that.processing)
+            && Objects.equals(this.succeed, that.succeed) && Objects.equals(this.failed, that.failed)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

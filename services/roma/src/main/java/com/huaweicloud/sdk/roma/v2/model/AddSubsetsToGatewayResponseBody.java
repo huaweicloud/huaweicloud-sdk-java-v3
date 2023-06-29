@@ -101,22 +101,15 @@ public class AddSubsetsToGatewayResponseBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,22 +182,15 @@ public class AddSubsetsToGatewayResponseBody {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OnlineStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OnlineStatusEnum(value));
         }
 
         public static OnlineStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            OnlineStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -570,30 +556,24 @@ public class AddSubsetsToGatewayResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddSubsetsToGatewayResponseBody addSubsetsToGatewayResponseBody = (AddSubsetsToGatewayResponseBody) o;
-        return Objects.equals(this.id, addSubsetsToGatewayResponseBody.id)
-            && Objects.equals(this.deviceId, addSubsetsToGatewayResponseBody.deviceId)
-            && Objects.equals(this.parentDeviceId, addSubsetsToGatewayResponseBody.parentDeviceId)
-            && Objects.equals(this.product, addSubsetsToGatewayResponseBody.product)
-            && Objects.equals(this.deviceName, addSubsetsToGatewayResponseBody.deviceName)
-            && Objects.equals(this.instanceId, addSubsetsToGatewayResponseBody.instanceId)
-            && Objects.equals(this.clientId, addSubsetsToGatewayResponseBody.clientId)
-            && Objects.equals(this.nodeId, addSubsetsToGatewayResponseBody.nodeId)
-            && Objects.equals(this.status, addSubsetsToGatewayResponseBody.status)
-            && Objects.equals(this.onlineStatus, addSubsetsToGatewayResponseBody.onlineStatus)
-            && Objects.equals(this.description, addSubsetsToGatewayResponseBody.description)
-            && Objects.equals(this.createdUser, addSubsetsToGatewayResponseBody.createdUser)
-            && Objects.equals(this.lastUpdatedUser, addSubsetsToGatewayResponseBody.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, addSubsetsToGatewayResponseBody.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, addSubsetsToGatewayResponseBody.lastUpdatedDatetime)
-            && Objects.equals(this.appId, addSubsetsToGatewayResponseBody.appId);
+        AddSubsetsToGatewayResponseBody that = (AddSubsetsToGatewayResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.parentDeviceId, that.parentDeviceId) && Objects.equals(this.product, that.product)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

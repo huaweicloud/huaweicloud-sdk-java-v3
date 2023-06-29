@@ -80,22 +80,15 @@ public class ShowTopUrlRequest {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceAreaEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceAreaEnum(value));
         }
 
         public static ServiceAreaEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class ShowTopUrlRequest {
             if (value == null) {
                 return null;
             }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatTypeEnum(value));
         }
 
         public static StatTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,20 +288,18 @@ public class ShowTopUrlRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopUrlRequest showTopUrlRequest = (ShowTopUrlRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showTopUrlRequest.enterpriseProjectId)
-            && Objects.equals(this.startTime, showTopUrlRequest.startTime)
-            && Objects.equals(this.endTime, showTopUrlRequest.endTime)
-            && Objects.equals(this.domainName, showTopUrlRequest.domainName)
-            && Objects.equals(this.serviceArea, showTopUrlRequest.serviceArea)
-            && Objects.equals(this.statType, showTopUrlRequest.statType);
+        ShowTopUrlRequest that = (ShowTopUrlRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.statType, that.statType);
     }
 
     @Override

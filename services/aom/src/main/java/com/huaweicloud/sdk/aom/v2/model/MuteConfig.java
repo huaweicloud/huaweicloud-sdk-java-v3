@@ -1,70 +1,62 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 静默规则的生效时间配置
  */
-public class MuteConfig  {
-
+public class MuteConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ends_at")
-    
+    @JsonProperty(value = "ends_at")
 
     private Long endsAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scope")
-    
+    @JsonProperty(value = "scope")
+
     private List<String> scope = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="starts_at")
-    
+    @JsonProperty(value = "starts_at")
 
     private Long startsAt;
+
     /**
      * 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum FIXED for value: "FIXED"
          */
         public static final TypeEnum FIXED = new TypeEnum("FIXED");
-        
+
         /**
          * Enum DAILY for value: "DAILY"
          */
         public static final TypeEnum DAILY = new TypeEnum("DAILY");
-        
+
         /**
          * Enum WEEKLY for value: "WEEKLY"
          */
         public static final TypeEnum WEEKLY = new TypeEnum("WEEKLY");
-        
+
         /**
          * Enum MONTHLY for value: "MONTHLY"
          */
         public static final TypeEnum MONTHLY = new TypeEnum("MONTHLY");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -95,25 +87,18 @@ public class MuteConfig  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -131,8 +116,7 @@ public class MuteConfig  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
@@ -140,9 +124,6 @@ public class MuteConfig  {
         this.endsAt = endsAt;
         return this;
     }
-
-    
-
 
     /**
      * 静默规则结束时间
@@ -158,16 +139,13 @@ public class MuteConfig  {
         this.endsAt = endsAt;
     }
 
-    
-
     public MuteConfig withScope(List<String> scope) {
         this.scope = scope;
         return this;
     }
 
-    
     public MuteConfig addScopeItem(String scopeItem) {
-        if(this.scope == null) {
+        if (this.scope == null) {
             this.scope = new ArrayList<>();
         }
         this.scope.add(scopeItem);
@@ -175,7 +153,7 @@ public class MuteConfig  {
     }
 
     public MuteConfig withScope(Consumer<List<String>> scopeSetter) {
-        if(this.scope == null) {
+        if (this.scope == null) {
             this.scope = new ArrayList<>();
         }
         scopeSetter.accept(this.scope);
@@ -194,15 +172,10 @@ public class MuteConfig  {
         this.scope = scope;
     }
 
-    
-
     public MuteConfig withStartsAt(Long startsAt) {
         this.startsAt = startsAt;
         return this;
     }
-
-    
-
 
     /**
      * 静默规则开始时间
@@ -218,15 +191,10 @@ public class MuteConfig  {
         this.startsAt = startsAt;
     }
 
-    
-
     public MuteConfig withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 静默规则生效时间种类。FIXED:固定方式统计,DAILY:按日合计,WEEKLY:按周统计,MONTHLY:按月统计
@@ -240,26 +208,24 @@ public class MuteConfig  {
         this.type = type;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MuteConfig muteConfig = (MuteConfig) o;
-        return Objects.equals(this.endsAt, muteConfig.endsAt) &&
-            Objects.equals(this.scope, muteConfig.scope) &&
-            Objects.equals(this.startsAt, muteConfig.startsAt) &&
-            Objects.equals(this.type, muteConfig.type);
+        MuteConfig that = (MuteConfig) obj;
+        return Objects.equals(this.endsAt, that.endsAt) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.startsAt, that.startsAt) && Objects.equals(this.type, that.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(endsAt, scope, startsAt, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -271,6 +237,7 @@ public class MuteConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -281,8 +248,5 @@ public class MuteConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

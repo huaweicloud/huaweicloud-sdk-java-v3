@@ -253,25 +253,20 @@ public class GetTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetTemplatesRequest getTemplatesRequest = (GetTemplatesRequest) o;
-        return Objects.equals(this.platform, getTemplatesRequest.platform)
-            && Objects.equals(this.language, getTemplatesRequest.language)
-            && Objects.equals(this.pipeline, getTemplatesRequest.pipeline)
-            && Objects.equals(this.entertype, getTemplatesRequest.entertype)
-            && Objects.equals(this.search, getTemplatesRequest.search)
-            && Objects.equals(this.dateorder, getTemplatesRequest.dateorder)
-            && Objects.equals(this.usedtimeorder, getTemplatesRequest.usedtimeorder)
-            && Objects.equals(this.type, getTemplatesRequest.type)
-            && Objects.equals(this.region, getTemplatesRequest.region)
-            && Objects.equals(this.pageNo, getTemplatesRequest.pageNo)
-            && Objects.equals(this.pageSize, getTemplatesRequest.pageSize);
+        GetTemplatesRequest that = (GetTemplatesRequest) obj;
+        return Objects.equals(this.platform, that.platform) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.pipeline, that.pipeline) && Objects.equals(this.entertype, that.entertype)
+            && Objects.equals(this.search, that.search) && Objects.equals(this.dateorder, that.dateorder)
+            && Objects.equals(this.usedtimeorder, that.usedtimeorder) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ShowDeploymentPodsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentPodsResponse showDeploymentPodsResponse = (ShowDeploymentPodsResponse) o;
-        return Objects.equals(this.count, showDeploymentPodsResponse.count)
-            && Objects.equals(this.pods, showDeploymentPodsResponse.pods);
+        ShowDeploymentPodsResponse that = (ShowDeploymentPodsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pods, that.pods);
     }
 
     @Override

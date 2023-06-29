@@ -144,19 +144,18 @@ public class PermissionSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PermissionSummary permissionSummary = (PermissionSummary) o;
-        return Objects.equals(this.id, permissionSummary.id) && Objects.equals(this.name, permissionSummary.name)
-            && Objects.equals(this.resourceType, permissionSummary.resourceType)
-            && Objects.equals(this.isResourceTypeDefault, permissionSummary.isResourceTypeDefault)
-            && Objects.equals(this.createdAt, permissionSummary.createdAt)
-            && Objects.equals(this.updatedAt, permissionSummary.updatedAt);
+        PermissionSummary that = (PermissionSummary) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.isResourceTypeDefault, that.isResourceTypeDefault)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

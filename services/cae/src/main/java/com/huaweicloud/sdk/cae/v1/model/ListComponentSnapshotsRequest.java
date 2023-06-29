@@ -103,18 +103,18 @@ public class ListComponentSnapshotsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListComponentSnapshotsRequest listComponentSnapshotsRequest = (ListComponentSnapshotsRequest) o;
-        return Objects.equals(this.componentId, listComponentSnapshotsRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, listComponentSnapshotsRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, listComponentSnapshotsRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, listComponentSnapshotsRequest.applicationId);
+        ListComponentSnapshotsRequest that = (ListComponentSnapshotsRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

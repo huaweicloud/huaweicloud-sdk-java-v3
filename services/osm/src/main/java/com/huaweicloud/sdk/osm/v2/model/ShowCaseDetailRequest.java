@@ -129,19 +129,17 @@ public class ShowCaseDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCaseDetailRequest showCaseDetailRequest = (ShowCaseDetailRequest) o;
-        return Objects.equals(this.caseId, showCaseDetailRequest.caseId)
-            && Objects.equals(this.groupId, showCaseDetailRequest.groupId)
-            && Objects.equals(this.xSite, showCaseDetailRequest.xSite)
-            && Objects.equals(this.xLanguage, showCaseDetailRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showCaseDetailRequest.xTimeZone);
+        ShowCaseDetailRequest that = (ShowCaseDetailRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

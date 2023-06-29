@@ -65,22 +65,15 @@ public class ListFlavorSellPoliciesRequest {
             if (value == null) {
                 return null;
             }
-            SellStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SellStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SellStatusEnum(value));
         }
 
         public static SellStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SellStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class ListFlavorSellPoliciesRequest {
             if (value == null) {
                 return null;
             }
-            SellModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SellModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SellModeEnum(value));
         }
 
         public static SellModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SellModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +252,15 @@ public class ListFlavorSellPoliciesRequest {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InterruptionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InterruptionPolicyEnum(value));
         }
 
         public static InterruptionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InterruptionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -501,25 +480,23 @@ public class ListFlavorSellPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorSellPoliciesRequest listFlavorSellPoliciesRequest = (ListFlavorSellPoliciesRequest) o;
-        return Objects.equals(this.flavorId, listFlavorSellPoliciesRequest.flavorId)
-            && Objects.equals(this.sellStatus, listFlavorSellPoliciesRequest.sellStatus)
-            && Objects.equals(this.sellMode, listFlavorSellPoliciesRequest.sellMode)
-            && Objects.equals(this.availabilityZoneId, listFlavorSellPoliciesRequest.availabilityZoneId)
-            && Objects.equals(this.longestSpotDurationHoursGt, listFlavorSellPoliciesRequest.longestSpotDurationHoursGt)
-            && Objects.equals(this.largestSpotDurationCountGt, listFlavorSellPoliciesRequest.largestSpotDurationCountGt)
-            && Objects.equals(this.longestSpotDurationHours, listFlavorSellPoliciesRequest.longestSpotDurationHours)
-            && Objects.equals(this.largestSpotDurationCount, listFlavorSellPoliciesRequest.largestSpotDurationCount)
-            && Objects.equals(this.interruptionPolicy, listFlavorSellPoliciesRequest.interruptionPolicy)
-            && Objects.equals(this.limit, listFlavorSellPoliciesRequest.limit)
-            && Objects.equals(this.marker, listFlavorSellPoliciesRequest.marker);
+        ListFlavorSellPoliciesRequest that = (ListFlavorSellPoliciesRequest) obj;
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.sellStatus, that.sellStatus)
+            && Objects.equals(this.sellMode, that.sellMode)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.longestSpotDurationHoursGt, that.longestSpotDurationHoursGt)
+            && Objects.equals(this.largestSpotDurationCountGt, that.largestSpotDurationCountGt)
+            && Objects.equals(this.longestSpotDurationHours, that.longestSpotDurationHours)
+            && Objects.equals(this.largestSpotDurationCount, that.largestSpotDurationCount)
+            && Objects.equals(this.interruptionPolicy, that.interruptionPolicy)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

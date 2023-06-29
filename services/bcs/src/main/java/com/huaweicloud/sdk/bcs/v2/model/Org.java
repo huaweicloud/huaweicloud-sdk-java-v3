@@ -96,16 +96,16 @@ public class Org {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Org org = (Org) o;
-        return Objects.equals(this.orgMspId, org.orgMspId) && Objects.equals(this.orgDomain, org.orgDomain)
-            && Objects.equals(this.peers, org.peers);
+        Org that = (Org) obj;
+        return Objects.equals(this.orgMspId, that.orgMspId) && Objects.equals(this.orgDomain, that.orgDomain)
+            && Objects.equals(this.peers, that.peers);
     }
 
     @Override

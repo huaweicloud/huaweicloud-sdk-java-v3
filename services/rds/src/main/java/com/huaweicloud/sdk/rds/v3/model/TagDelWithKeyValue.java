@@ -55,15 +55,15 @@ public class TagDelWithKeyValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagDelWithKeyValue tagDelWithKeyValue = (TagDelWithKeyValue) o;
-        return Objects.equals(this.key, tagDelWithKeyValue.key) && Objects.equals(this.value, tagDelWithKeyValue.value);
+        TagDelWithKeyValue that = (TagDelWithKeyValue) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

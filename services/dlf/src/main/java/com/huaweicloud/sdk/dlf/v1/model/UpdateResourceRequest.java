@@ -87,17 +87,16 @@ public class UpdateResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResourceRequest updateResourceRequest = (UpdateResourceRequest) o;
-        return Objects.equals(this.workspace, updateResourceRequest.workspace)
-            && Objects.equals(this.resourceId, updateResourceRequest.resourceId)
-            && Objects.equals(this.body, updateResourceRequest.body);
+        UpdateResourceRequest that = (UpdateResourceRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

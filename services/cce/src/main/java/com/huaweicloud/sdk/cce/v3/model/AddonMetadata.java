@@ -201,19 +201,19 @@ public class AddonMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddonMetadata addonMetadata = (AddonMetadata) o;
-        return Objects.equals(this.uid, addonMetadata.uid) && Objects.equals(this.name, addonMetadata.name)
-            && Objects.equals(this.alias, addonMetadata.alias) && Objects.equals(this.labels, addonMetadata.labels)
-            && Objects.equals(this.annotations, addonMetadata.annotations)
-            && Objects.equals(this.updateTimestamp, addonMetadata.updateTimestamp)
-            && Objects.equals(this.creationTimestamp, addonMetadata.creationTimestamp);
+        AddonMetadata that = (AddonMetadata) obj;
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override

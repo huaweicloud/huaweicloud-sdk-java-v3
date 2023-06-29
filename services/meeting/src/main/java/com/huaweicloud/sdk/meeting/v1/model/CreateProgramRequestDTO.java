@@ -74,16 +74,16 @@ public class CreateProgramRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProgramRequestDTO createProgramRequestDTO = (CreateProgramRequestDTO) o;
-        return Objects.equals(this.programName, createProgramRequestDTO.programName)
-            && Objects.equals(this.programItemList, createProgramRequestDTO.programItemList);
+        CreateProgramRequestDTO that = (CreateProgramRequestDTO) obj;
+        return Objects.equals(this.programName, that.programName)
+            && Objects.equals(this.programItemList, that.programItemList);
     }
 
     @Override

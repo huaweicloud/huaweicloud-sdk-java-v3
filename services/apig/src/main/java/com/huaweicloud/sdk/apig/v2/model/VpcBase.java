@@ -82,22 +82,15 @@ public class VpcBase {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class VpcBase {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -314,18 +300,18 @@ public class VpcBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcBase vpcBase = (VpcBase) o;
-        return Objects.equals(this.name, vpcBase.name) && Objects.equals(this.port, vpcBase.port)
-            && Objects.equals(this.balanceStrategy, vpcBase.balanceStrategy)
-            && Objects.equals(this.memberType, vpcBase.memberType) && Objects.equals(this.type, vpcBase.type)
-            && Objects.equals(this.dictCode, vpcBase.dictCode);
+        VpcBase that = (VpcBase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode);
     }
 
     @Override

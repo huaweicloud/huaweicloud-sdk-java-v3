@@ -235,24 +235,19 @@ public class ListRoutingRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutingRulesRequest listRoutingRulesRequest = (ListRoutingRulesRequest) o;
-        return Objects.equals(this.instanceId, listRoutingRulesRequest.instanceId)
-            && Objects.equals(this.resource, listRoutingRulesRequest.resource)
-            && Objects.equals(this.event, listRoutingRulesRequest.event)
-            && Objects.equals(this.appType, listRoutingRulesRequest.appType)
-            && Objects.equals(this.appId, listRoutingRulesRequest.appId)
-            && Objects.equals(this.ruleName, listRoutingRulesRequest.ruleName)
-            && Objects.equals(this.active, listRoutingRulesRequest.active)
-            && Objects.equals(this.limit, listRoutingRulesRequest.limit)
-            && Objects.equals(this.marker, listRoutingRulesRequest.marker)
-            && Objects.equals(this.offset, listRoutingRulesRequest.offset);
+        ListRoutingRulesRequest that = (ListRoutingRulesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.resource, that.resource)
+            && Objects.equals(this.event, that.event) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.active, that.active) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

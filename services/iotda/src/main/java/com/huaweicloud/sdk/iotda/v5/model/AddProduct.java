@@ -250,22 +250,21 @@ public class AddProduct {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProduct addProduct = (AddProduct) o;
-        return Objects.equals(this.productId, addProduct.productId) && Objects.equals(this.name, addProduct.name)
-            && Objects.equals(this.deviceType, addProduct.deviceType)
-            && Objects.equals(this.protocolType, addProduct.protocolType)
-            && Objects.equals(this.dataFormat, addProduct.dataFormat)
-            && Objects.equals(this.serviceCapabilities, addProduct.serviceCapabilities)
-            && Objects.equals(this.manufacturerName, addProduct.manufacturerName)
-            && Objects.equals(this.industry, addProduct.industry)
-            && Objects.equals(this.description, addProduct.description) && Objects.equals(this.appId, addProduct.appId);
+        AddProduct that = (AddProduct) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.dataFormat, that.dataFormat)
+            && Objects.equals(this.serviceCapabilities, that.serviceCapabilities)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.industry, that.industry) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

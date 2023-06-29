@@ -108,22 +108,15 @@ public class CreateMixJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class CreateMixJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StopReasonEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StopReasonEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StopReasonEnum(value));
         }
 
         public static StopReasonEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StopReasonEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -512,28 +498,21 @@ public class CreateMixJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMixJobResponse createMixJobResponse = (CreateMixJobResponse) o;
-        return Objects.equals(this.jobId, createMixJobResponse.jobId)
-            && Objects.equals(this.streamName, createMixJobResponse.streamName)
-            && Objects.equals(this.appId, createMixJobResponse.appId)
-            && Objects.equals(this.roomId, createMixJobResponse.roomId)
-            && Objects.equals(this.mixParam, createMixJobResponse.mixParam)
-            && Objects.equals(this.recordParam, createMixJobResponse.recordParam)
-            && Objects.equals(this.createTime, createMixJobResponse.createTime)
-            && Objects.equals(this.updateTime, createMixJobResponse.updateTime)
-            && Objects.equals(this.state, createMixJobResponse.state)
-            && Objects.equals(this.stopReason, createMixJobResponse.stopReason)
-            && Objects.equals(this.description, createMixJobResponse.description)
-            && Objects.equals(this.startTime, createMixJobResponse.startTime)
-            && Objects.equals(this.stopTime, createMixJobResponse.stopTime)
-            && Objects.equals(this.xRequestId, createMixJobResponse.xRequestId);
+        CreateMixJobResponse that = (CreateMixJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.streamName, that.streamName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.mixParam, that.mixParam) && Objects.equals(this.recordParam, that.recordParam)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.stopReason, that.stopReason)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.stopTime, that.stopTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

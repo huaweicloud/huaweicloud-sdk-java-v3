@@ -97,17 +97,16 @@ public class ChangeBandwidthToPeriodResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeBandwidthToPeriodResponse changeBandwidthToPeriodResponse = (ChangeBandwidthToPeriodResponse) o;
-        return Objects.equals(this.bandwidthIds, changeBandwidthToPeriodResponse.bandwidthIds)
-            && Objects.equals(this.orderId, changeBandwidthToPeriodResponse.orderId)
-            && Objects.equals(this.requestId, changeBandwidthToPeriodResponse.requestId);
+        ChangeBandwidthToPeriodResponse that = (ChangeBandwidthToPeriodResponse) obj;
+        return Objects.equals(this.bandwidthIds, that.bandwidthIds) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

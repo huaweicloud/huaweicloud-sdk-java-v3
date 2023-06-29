@@ -70,22 +70,15 @@ public class EipResource {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,25 +350,23 @@ public class EipResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipResource eipResource = (EipResource) o;
-        return Objects.equals(this.id, eipResource.id) && Objects.equals(this.publicIp, eipResource.publicIp)
-            && Objects.equals(this.status, eipResource.status)
-            && Objects.equals(this.publicIpv6, eipResource.publicIpv6)
-            && Objects.equals(this.enterpriseProjectId, eipResource.enterpriseProjectId)
-            && Objects.equals(this.deviceId, eipResource.deviceId)
-            && Objects.equals(this.deviceName, eipResource.deviceName)
-            && Objects.equals(this.deviceOwner, eipResource.deviceOwner)
-            && Objects.equals(this.associateInstanceType, eipResource.associateInstanceType)
-            && Objects.equals(this.fwInstanceName, eipResource.fwInstanceName)
-            && Objects.equals(this.fwInstanceId, eipResource.fwInstanceId)
-            && Objects.equals(this.fwEnterpriseProjectId, eipResource.fwEnterpriseProjectId);
+        EipResource that = (EipResource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.publicIpv6, that.publicIpv6)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.deviceOwner, that.deviceOwner)
+            && Objects.equals(this.associateInstanceType, that.associateInstanceType)
+            && Objects.equals(this.fwInstanceName, that.fwInstanceName)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId)
+            && Objects.equals(this.fwEnterpriseProjectId, that.fwEnterpriseProjectId);
     }
 
     @Override

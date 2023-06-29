@@ -162,20 +162,18 @@ public class VpcAttachmentCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcAttachmentCreateRequest vpcAttachmentCreateRequest = (VpcAttachmentCreateRequest) o;
-        return Objects.equals(this.vpcId, vpcAttachmentCreateRequest.vpcId)
-            && Objects.equals(this.name, vpcAttachmentCreateRequest.name)
-            && Objects.equals(this.virsubnetId, vpcAttachmentCreateRequest.virsubnetId)
-            && Objects.equals(this.description, vpcAttachmentCreateRequest.description)
-            && Objects.equals(this.autoCreateVpcRoutes, vpcAttachmentCreateRequest.autoCreateVpcRoutes)
-            && Objects.equals(this.tags, vpcAttachmentCreateRequest.tags);
+        VpcAttachmentCreateRequest that = (VpcAttachmentCreateRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.autoCreateVpcRoutes, that.autoCreateVpcRoutes)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

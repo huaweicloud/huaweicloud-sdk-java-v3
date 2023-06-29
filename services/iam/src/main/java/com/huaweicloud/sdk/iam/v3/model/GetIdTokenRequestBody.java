@@ -43,15 +43,15 @@ public class GetIdTokenRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetIdTokenRequestBody getIdTokenRequestBody = (GetIdTokenRequestBody) o;
-        return Objects.equals(this.auth, getIdTokenRequestBody.auth);
+        GetIdTokenRequestBody that = (GetIdTokenRequestBody) obj;
+        return Objects.equals(this.auth, that.auth);
     }
 
     @Override

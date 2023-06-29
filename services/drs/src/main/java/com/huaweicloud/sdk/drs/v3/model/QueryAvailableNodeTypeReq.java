@@ -71,22 +71,15 @@ public class QueryAvailableNodeTypeReq {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DbUseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DbUseTypeEnum(value));
         }
 
         public static DbUseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DbUseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class QueryAvailableNodeTypeReq {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -292,19 +278,17 @@ public class QueryAvailableNodeTypeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAvailableNodeTypeReq queryAvailableNodeTypeReq = (QueryAvailableNodeTypeReq) o;
-        return Objects.equals(this.engineType, queryAvailableNodeTypeReq.engineType)
-            && Objects.equals(this.dbUseType, queryAvailableNodeTypeReq.dbUseType)
-            && Objects.equals(this.jobDirection, queryAvailableNodeTypeReq.jobDirection)
-            && Objects.equals(this.nodeType, queryAvailableNodeTypeReq.nodeType)
-            && Objects.equals(this.multiWrite, queryAvailableNodeTypeReq.multiWrite);
+        QueryAvailableNodeTypeReq that = (QueryAvailableNodeTypeReq) obj;
+        return Objects.equals(this.engineType, that.engineType) && Objects.equals(this.dbUseType, that.dbUseType)
+            && Objects.equals(this.jobDirection, that.jobDirection) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.multiWrite, that.multiWrite);
     }
 
     @Override

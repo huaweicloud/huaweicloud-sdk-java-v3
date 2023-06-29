@@ -77,18 +77,16 @@ public class CheckDomainPermissionForAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckDomainPermissionForAgencyRequest checkDomainPermissionForAgencyRequest =
-            (CheckDomainPermissionForAgencyRequest) o;
-        return Objects.equals(this.domainId, checkDomainPermissionForAgencyRequest.domainId)
-            && Objects.equals(this.agencyId, checkDomainPermissionForAgencyRequest.agencyId)
-            && Objects.equals(this.roleId, checkDomainPermissionForAgencyRequest.roleId);
+        CheckDomainPermissionForAgencyRequest that = (CheckDomainPermissionForAgencyRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.agencyId, that.agencyId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

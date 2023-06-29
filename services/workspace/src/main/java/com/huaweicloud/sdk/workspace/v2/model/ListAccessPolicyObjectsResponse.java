@@ -17,19 +17,19 @@ public class ListAccessPolicyObjectsResponse extends SdkResponse {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "policy_objects_list")
 
-    private List<AccessPolicyObjectInfo> policyObjectsList = null;
+    private List<AccessPolicyObject> policyObjectsList = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "total")
 
     private Integer total;
 
-    public ListAccessPolicyObjectsResponse withPolicyObjectsList(List<AccessPolicyObjectInfo> policyObjectsList) {
+    public ListAccessPolicyObjectsResponse withPolicyObjectsList(List<AccessPolicyObject> policyObjectsList) {
         this.policyObjectsList = policyObjectsList;
         return this;
     }
 
-    public ListAccessPolicyObjectsResponse addPolicyObjectsListItem(AccessPolicyObjectInfo policyObjectsListItem) {
+    public ListAccessPolicyObjectsResponse addPolicyObjectsListItem(AccessPolicyObject policyObjectsListItem) {
         if (this.policyObjectsList == null) {
             this.policyObjectsList = new ArrayList<>();
         }
@@ -38,7 +38,7 @@ public class ListAccessPolicyObjectsResponse extends SdkResponse {
     }
 
     public ListAccessPolicyObjectsResponse withPolicyObjectsList(
-        Consumer<List<AccessPolicyObjectInfo>> policyObjectsListSetter) {
+        Consumer<List<AccessPolicyObject>> policyObjectsListSetter) {
         if (this.policyObjectsList == null) {
             this.policyObjectsList = new ArrayList<>();
         }
@@ -50,11 +50,11 @@ public class ListAccessPolicyObjectsResponse extends SdkResponse {
      * 查询接入策略应用对象响应。
      * @return policyObjectsList
      */
-    public List<AccessPolicyObjectInfo> getPolicyObjectsList() {
+    public List<AccessPolicyObject> getPolicyObjectsList() {
         return policyObjectsList;
     }
 
-    public void setPolicyObjectsList(List<AccessPolicyObjectInfo> policyObjectsList) {
+    public void setPolicyObjectsList(List<AccessPolicyObject> policyObjectsList) {
         this.policyObjectsList = policyObjectsList;
     }
 
@@ -76,16 +76,15 @@ public class ListAccessPolicyObjectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessPolicyObjectsResponse listAccessPolicyObjectsResponse = (ListAccessPolicyObjectsResponse) o;
-        return Objects.equals(this.policyObjectsList, listAccessPolicyObjectsResponse.policyObjectsList)
-            && Objects.equals(this.total, listAccessPolicyObjectsResponse.total);
+        ListAccessPolicyObjectsResponse that = (ListAccessPolicyObjectsResponse) obj;
+        return Objects.equals(this.policyObjectsList, that.policyObjectsList) && Objects.equals(this.total, that.total);
     }
 
     @Override

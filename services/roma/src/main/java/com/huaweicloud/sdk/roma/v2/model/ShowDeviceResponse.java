@@ -833,47 +833,36 @@ public class ShowDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceResponse showDeviceResponse = (ShowDeviceResponse) o;
-        return Objects.equals(this.permissions, showDeviceResponse.permissions)
-            && Objects.equals(this.id, showDeviceResponse.id)
-            && Objects.equals(this.deviceId, showDeviceResponse.deviceId)
-            && Objects.equals(this.parentDeviceId, showDeviceResponse.parentDeviceId)
-            && Objects.equals(this.parentDeviceName, showDeviceResponse.parentDeviceName)
-            && Objects.equals(this.product, showDeviceResponse.product)
-            && Objects.equals(this.deviceName, showDeviceResponse.deviceName)
-            && Objects.equals(this.instanceId, showDeviceResponse.instanceId)
-            && Objects.equals(this.clientId, showDeviceResponse.clientId)
-            && Objects.equals(this.nodeId, showDeviceResponse.nodeId)
-            && Objects.equals(this.appName, showDeviceResponse.appName)
-            && Objects.equals(this.status, showDeviceResponse.status)
-            && Objects.equals(this.onlineStatus, showDeviceResponse.onlineStatus)
-            && Objects.equals(this.description, showDeviceResponse.description)
-            && Objects.equals(this.authentication, showDeviceResponse.authentication)
-            && Objects.equals(this.createdUser, showDeviceResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, showDeviceResponse.lastUpdatedUser)
-            && Objects.equals(this.tags, showDeviceResponse.tags)
-            && Objects.equals(this.createdDatetime, showDeviceResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, showDeviceResponse.lastUpdatedDatetime)
-            && Objects.equals(this.connectAddress, showDeviceResponse.connectAddress)
-            && Objects.equals(this.sslConnectAddress, showDeviceResponse.sslConnectAddress)
-            && Objects.equals(this.ipv6ConnectAddress, showDeviceResponse.ipv6ConnectAddress)
-            && Objects.equals(this.ipv6SslConnectAddress, showDeviceResponse.ipv6SslConnectAddress)
-            && Objects.equals(this.lastLoginDatetime, showDeviceResponse.lastLoginDatetime)
-            && Objects.equals(this.nodeType, showDeviceResponse.nodeType)
-            && Objects.equals(this.deviceType, showDeviceResponse.deviceType)
-            && Objects.equals(this.clientIp, showDeviceResponse.clientIp)
-            && Objects.equals(this.keepAlive, showDeviceResponse.keepAlive)
-            && Objects.equals(this.lastActiveTime, showDeviceResponse.lastActiveTime)
-            && Objects.equals(this.version, showDeviceResponse.version)
-            && Objects.equals(this.appId, showDeviceResponse.appId)
-            && Objects.equals(this.pluginId, showDeviceResponse.pluginId);
+        ShowDeviceResponse that = (ShowDeviceResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.parentDeviceId, that.parentDeviceId)
+            && Objects.equals(this.parentDeviceName, that.parentDeviceName)
+            && Objects.equals(this.product, that.product) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.sslConnectAddress, that.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, that.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, that.ipv6SslConnectAddress)
+            && Objects.equals(this.lastLoginDatetime, that.lastLoginDatetime)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.keepAlive, that.keepAlive)
+            && Objects.equals(this.lastActiveTime, that.lastActiveTime) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.pluginId, that.pluginId);
     }
 
     @Override

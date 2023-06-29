@@ -99,19 +99,16 @@ public class ShowTechnicalAssetsStatisticRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTechnicalAssetsStatisticRequest showTechnicalAssetsStatisticRequest =
-            (ShowTechnicalAssetsStatisticRequest) o;
-        return Objects.equals(this.workspace, showTechnicalAssetsStatisticRequest.workspace)
-            && Objects.equals(this.tag, showTechnicalAssetsStatisticRequest.tag)
-            && Objects.equals(this.offset, showTechnicalAssetsStatisticRequest.offset)
-            && Objects.equals(this.limit, showTechnicalAssetsStatisticRequest.limit);
+        ShowTechnicalAssetsStatisticRequest that = (ShowTechnicalAssetsStatisticRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

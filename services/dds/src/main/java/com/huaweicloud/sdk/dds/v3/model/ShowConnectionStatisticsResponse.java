@@ -159,19 +159,19 @@ public class ShowConnectionStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConnectionStatisticsResponse showConnectionStatisticsResponse = (ShowConnectionStatisticsResponse) o;
-        return Objects.equals(this.totalConnections, showConnectionStatisticsResponse.totalConnections)
-            && Objects.equals(this.totalInnerConnections, showConnectionStatisticsResponse.totalInnerConnections)
-            && Objects.equals(this.totalOuterConnections, showConnectionStatisticsResponse.totalOuterConnections)
-            && Objects.equals(this.innerConnections, showConnectionStatisticsResponse.innerConnections)
-            && Objects.equals(this.outerConnections, showConnectionStatisticsResponse.outerConnections);
+        ShowConnectionStatisticsResponse that = (ShowConnectionStatisticsResponse) obj;
+        return Objects.equals(this.totalConnections, that.totalConnections)
+            && Objects.equals(this.totalInnerConnections, that.totalInnerConnections)
+            && Objects.equals(this.totalOuterConnections, that.totalOuterConnections)
+            && Objects.equals(this.innerConnections, that.innerConnections)
+            && Objects.equals(this.outerConnections, that.outerConnections);
     }
 
     @Override

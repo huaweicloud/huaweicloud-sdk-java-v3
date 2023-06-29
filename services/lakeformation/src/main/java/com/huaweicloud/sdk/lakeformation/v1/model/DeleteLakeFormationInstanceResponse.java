@@ -36,16 +36,15 @@ public class DeleteLakeFormationInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLakeFormationInstanceResponse deleteLakeFormationInstanceResponse =
-            (DeleteLakeFormationInstanceResponse) o;
-        return Objects.equals(this.xRequestId, deleteLakeFormationInstanceResponse.xRequestId);
+        DeleteLakeFormationInstanceResponse that = (DeleteLakeFormationInstanceResponse) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

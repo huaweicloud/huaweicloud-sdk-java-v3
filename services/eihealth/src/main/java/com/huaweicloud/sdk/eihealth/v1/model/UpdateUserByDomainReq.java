@@ -99,18 +99,16 @@ public class UpdateUserByDomainReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserByDomainReq updateUserByDomainReq = (UpdateUserByDomainReq) o;
-        return Objects.equals(this.password, updateUserByDomainReq.password)
-            && Objects.equals(this.mobile, updateUserByDomainReq.mobile)
-            && Objects.equals(this.areacode, updateUserByDomainReq.areacode)
-            && Objects.equals(this.email, updateUserByDomainReq.email);
+        UpdateUserByDomainReq that = (UpdateUserByDomainReq) obj;
+        return Objects.equals(this.password, that.password) && Objects.equals(this.mobile, that.mobile)
+            && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.email, that.email);
     }
 
     @Override

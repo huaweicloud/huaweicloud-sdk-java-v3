@@ -96,16 +96,16 @@ public class DeviceInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceInfos deviceInfos = (DeviceInfos) o;
-        return Objects.equals(this.relation, deviceInfos.relation) && Objects.equals(this.comment, deviceInfos.comment)
-            && Objects.equals(this.deviceIds, deviceInfos.deviceIds);
+        DeviceInfos that = (DeviceInfos) obj;
+        return Objects.equals(this.relation, that.relation) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.deviceIds, that.deviceIds);
     }
 
     @Override

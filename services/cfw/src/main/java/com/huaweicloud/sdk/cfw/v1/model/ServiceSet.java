@@ -121,17 +121,17 @@ public class ServiceSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceSet serviceSet = (ServiceSet) o;
-        return Objects.equals(this.setId, serviceSet.setId) && Objects.equals(this.name, serviceSet.name)
-            && Objects.equals(this.description, serviceSet.description)
-            && Objects.equals(this.refCount, serviceSet.refCount) && Objects.equals(this.status, serviceSet.status);
+        ServiceSet that = (ServiceSet) obj;
+        return Objects.equals(this.setId, that.setId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.refCount, that.refCount)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class CreateAgencyCustomPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAgencyCustomPolicyResponse createAgencyCustomPolicyResponse = (CreateAgencyCustomPolicyResponse) o;
-        return Objects.equals(this.role, createAgencyCustomPolicyResponse.role);
+        CreateAgencyCustomPolicyResponse that = (CreateAgencyCustomPolicyResponse) obj;
+        return Objects.equals(this.role, that.role);
     }
 
     @Override

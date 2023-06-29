@@ -44,8 +44,8 @@ public class ListDomainTrafficDetailRequest {
     private List<String> isp = null;
 
     /**
-    * 请求协议
-    */
+     * 请求协议
+     */
     public static final class ProtocolEnum {
 
         /**
@@ -88,22 +88,15 @@ public class ListDomainTrafficDetailRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,22 +184,15 @@ public class ListDomainTrafficDetailRequest {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -449,24 +435,19 @@ public class ListDomainTrafficDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainTrafficDetailRequest listDomainTrafficDetailRequest = (ListDomainTrafficDetailRequest) o;
-        return Objects.equals(this.playDomains, listDomainTrafficDetailRequest.playDomains)
-            && Objects.equals(this.app, listDomainTrafficDetailRequest.app)
-            && Objects.equals(this.stream, listDomainTrafficDetailRequest.stream)
-            && Objects.equals(this.region, listDomainTrafficDetailRequest.region)
-            && Objects.equals(this.isp, listDomainTrafficDetailRequest.isp)
-            && Objects.equals(this.protocol, listDomainTrafficDetailRequest.protocol)
-            && Objects.equals(this.interval, listDomainTrafficDetailRequest.interval)
-            && Objects.equals(this.startTime, listDomainTrafficDetailRequest.startTime)
-            && Objects.equals(this.endTime, listDomainTrafficDetailRequest.endTime)
-            && Objects.equals(this.serviceType, listDomainTrafficDetailRequest.serviceType);
+        ListDomainTrafficDetailRequest that = (ListDomainTrafficDetailRequest) obj;
+        return Objects.equals(this.playDomains, that.playDomains) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.interval, that.interval) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.serviceType, that.serviceType);
     }
 
     @Override

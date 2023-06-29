@@ -33,15 +33,15 @@ public class ModifyReadAndWriteStrategyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyReadAndWriteStrategyReq modifyReadAndWriteStrategyReq = (ModifyReadAndWriteStrategyReq) o;
-        return Objects.equals(this.readWeight, modifyReadAndWriteStrategyReq.readWeight);
+        ModifyReadAndWriteStrategyReq that = (ModifyReadAndWriteStrategyReq) obj;
+        return Objects.equals(this.readWeight, that.readWeight);
     }
 
     @Override

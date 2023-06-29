@@ -33,15 +33,15 @@ public class DeleteDomainHttpsCertRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainHttpsCertRequest deleteDomainHttpsCertRequest = (DeleteDomainHttpsCertRequest) o;
-        return Objects.equals(this.domain, deleteDomainHttpsCertRequest.domain);
+        DeleteDomainHttpsCertRequest that = (DeleteDomainHttpsCertRequest) obj;
+        return Objects.equals(this.domain, that.domain);
     }
 
     @Override

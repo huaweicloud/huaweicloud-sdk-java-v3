@@ -95,22 +95,15 @@ public class User {
             if (value == null) {
                 return null;
             }
-            DefaultTopicPermEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefaultTopicPermEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultTopicPermEnum(value));
         }
 
         public static DefaultTopicPermEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefaultTopicPermEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class User {
             if (value == null) {
                 return null;
             }
-            DefaultGroupPermEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefaultGroupPermEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultGroupPermEnum(value));
         }
 
         public static DefaultGroupPermEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefaultGroupPermEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -393,19 +379,19 @@ public class User {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        User user = (User) o;
-        return Objects.equals(this.accessKey, user.accessKey) && Objects.equals(this.secretKey, user.secretKey)
-            && Objects.equals(this.whiteRemoteAddress, user.whiteRemoteAddress)
-            && Objects.equals(this.admin, user.admin) && Objects.equals(this.defaultTopicPerm, user.defaultTopicPerm)
-            && Objects.equals(this.defaultGroupPerm, user.defaultGroupPerm)
-            && Objects.equals(this.topicPerms, user.topicPerms) && Objects.equals(this.groupPerms, user.groupPerms);
+        User that = (User) obj;
+        return Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.secretKey, that.secretKey)
+            && Objects.equals(this.whiteRemoteAddress, that.whiteRemoteAddress)
+            && Objects.equals(this.admin, that.admin) && Objects.equals(this.defaultTopicPerm, that.defaultTopicPerm)
+            && Objects.equals(this.defaultGroupPerm, that.defaultGroupPerm)
+            && Objects.equals(this.topicPerms, that.topicPerms) && Objects.equals(this.groupPerms, that.groupPerms);
     }
 
     @Override

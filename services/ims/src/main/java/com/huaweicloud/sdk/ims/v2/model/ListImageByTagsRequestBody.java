@@ -63,22 +63,15 @@ public class ListImageByTagsRequestBody {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,23 +367,19 @@ public class ListImageByTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageByTagsRequestBody listImageByTagsRequestBody = (ListImageByTagsRequestBody) o;
-        return Objects.equals(this.action, listImageByTagsRequestBody.action)
-            && Objects.equals(this.tags, listImageByTagsRequestBody.tags)
-            && Objects.equals(this.tagsAny, listImageByTagsRequestBody.tagsAny)
-            && Objects.equals(this.notTags, listImageByTagsRequestBody.notTags)
-            && Objects.equals(this.notTagsAny, listImageByTagsRequestBody.notTagsAny)
-            && Objects.equals(this.limit, listImageByTagsRequestBody.limit)
-            && Objects.equals(this.offset, listImageByTagsRequestBody.offset)
-            && Objects.equals(this.matches, listImageByTagsRequestBody.matches)
-            && Objects.equals(this.withoutAnyTag, listImageByTagsRequestBody.withoutAnyTag);
+        ListImageByTagsRequestBody that = (ListImageByTagsRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tagsAny, that.tagsAny) && Objects.equals(this.notTags, that.notTags)
+            && Objects.equals(this.notTagsAny, that.notTagsAny) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.matches, that.matches)
+            && Objects.equals(this.withoutAnyTag, that.withoutAnyTag);
     }
 
     @Override

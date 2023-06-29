@@ -99,17 +99,17 @@ public class AddressInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddressInfo addressInfo = (AddressInfo) o;
-        return Objects.equals(this.addr, addressInfo.addr) && Objects.equals(this.version, addressInfo.version)
-            && Objects.equals(this.osEXTIPSMACMacAddr, addressInfo.osEXTIPSMACMacAddr)
-            && Objects.equals(this.osEXTIPSType, addressInfo.osEXTIPSType);
+        AddressInfo that = (AddressInfo) obj;
+        return Objects.equals(this.addr, that.addr) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.osEXTIPSMACMacAddr, that.osEXTIPSMACMacAddr)
+            && Objects.equals(this.osEXTIPSType, that.osEXTIPSType);
     }
 
     @Override

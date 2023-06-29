@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.DatastoreResult;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 参数模板信息。
  */
-public class ConfigurationSummary2  {
-
+public class ConfigurationSummary2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private DatastoreResult datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
@@ -58,9 +45,6 @@ public class ConfigurationSummary2  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数组ID。
@@ -74,15 +58,10 @@ public class ConfigurationSummary2  {
         this.id = id;
     }
 
-    
-
     public ConfigurationSummary2 withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数组名称。
@@ -96,15 +75,10 @@ public class ConfigurationSummary2  {
         this.name = name;
     }
 
-    
-
     public ConfigurationSummary2 withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数组描述。
@@ -118,22 +92,19 @@ public class ConfigurationSummary2  {
         this.description = description;
     }
 
-    
-
     public ConfigurationSummary2 withDatastore(DatastoreResult datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public ConfigurationSummary2 withDatastore(Consumer<DatastoreResult> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new DatastoreResult();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -147,15 +118,10 @@ public class ConfigurationSummary2  {
         this.datastore = datastore;
     }
 
-    
-
     public ConfigurationSummary2 withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量。
@@ -169,15 +135,10 @@ public class ConfigurationSummary2  {
         this.created = created;
     }
 
-    
-
     public ConfigurationSummary2 withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量。
@@ -191,28 +152,25 @@ public class ConfigurationSummary2  {
         this.updated = updated;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationSummary2 configurationSummary2 = (ConfigurationSummary2) o;
-        return Objects.equals(this.id, configurationSummary2.id) &&
-            Objects.equals(this.name, configurationSummary2.name) &&
-            Objects.equals(this.description, configurationSummary2.description) &&
-            Objects.equals(this.datastore, configurationSummary2.datastore) &&
-            Objects.equals(this.created, configurationSummary2.created) &&
-            Objects.equals(this.updated, configurationSummary2.updated);
+        ConfigurationSummary2 that = (ConfigurationSummary2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, datastore, created, updated);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,6 +184,7 @@ public class ConfigurationSummary2  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -236,8 +195,5 @@ public class ConfigurationSummary2  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

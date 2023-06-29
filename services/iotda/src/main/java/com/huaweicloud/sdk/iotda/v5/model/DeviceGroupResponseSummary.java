@@ -121,19 +121,17 @@ public class DeviceGroupResponseSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceGroupResponseSummary deviceGroupResponseSummary = (DeviceGroupResponseSummary) o;
-        return Objects.equals(this.groupId, deviceGroupResponseSummary.groupId)
-            && Objects.equals(this.name, deviceGroupResponseSummary.name)
-            && Objects.equals(this.description, deviceGroupResponseSummary.description)
-            && Objects.equals(this.superGroupId, deviceGroupResponseSummary.superGroupId)
-            && Objects.equals(this.groupType, deviceGroupResponseSummary.groupType);
+        DeviceGroupResponseSummary that = (DeviceGroupResponseSummary) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.superGroupId, that.superGroupId) && Objects.equals(this.groupType, that.groupType);
     }
 
     @Override

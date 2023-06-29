@@ -66,15 +66,15 @@ public class RetryNextflowJobRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryNextflowJobRequestBody retryNextflowJobRequestBody = (RetryNextflowJobRequestBody) o;
-        return Objects.equals(this.params, retryNextflowJobRequestBody.params);
+        RetryNextflowJobRequestBody that = (RetryNextflowJobRequestBody) obj;
+        return Objects.equals(this.params, that.params);
     }
 
     @Override

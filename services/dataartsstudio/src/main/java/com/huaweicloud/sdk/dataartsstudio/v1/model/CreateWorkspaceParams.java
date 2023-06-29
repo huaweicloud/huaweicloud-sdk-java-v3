@@ -121,19 +121,17 @@ public class CreateWorkspaceParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWorkspaceParams createWorkspaceParams = (CreateWorkspaceParams) o;
-        return Objects.equals(this.badRecordLocationName, createWorkspaceParams.badRecordLocationName)
-            && Objects.equals(this.description, createWorkspaceParams.description)
-            && Objects.equals(this.epsId, createWorkspaceParams.epsId)
-            && Objects.equals(this.jobLogLocationName, createWorkspaceParams.jobLogLocationName)
-            && Objects.equals(this.name, createWorkspaceParams.name);
+        CreateWorkspaceParams that = (CreateWorkspaceParams) obj;
+        return Objects.equals(this.badRecordLocationName, that.badRecordLocationName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.jobLogLocationName, that.jobLogLocationName) && Objects.equals(this.name, that.name);
     }
 
     @Override

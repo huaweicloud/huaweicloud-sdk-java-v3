@@ -55,15 +55,15 @@ public class TelModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TelModel telModel = (TelModel) o;
-        return Objects.equals(this.tel, telModel.tel) && Objects.equals(this.usage, telModel.usage);
+        TelModel that = (TelModel) obj;
+        return Objects.equals(this.tel, that.tel) && Objects.equals(this.usage, that.usage);
     }
 
     @Override

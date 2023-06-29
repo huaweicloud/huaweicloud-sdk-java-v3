@@ -77,16 +77,16 @@ public class DiscardInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiscardInfo discardInfo = (DiscardInfo) o;
-        return Objects.equals(this.type, discardInfo.type) && Objects.equals(this.count, discardInfo.count)
-            && Objects.equals(this.totalTime, discardInfo.totalTime);
+        DiscardInfo that = (DiscardInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.totalTime, that.totalTime);
     }
 
     @Override

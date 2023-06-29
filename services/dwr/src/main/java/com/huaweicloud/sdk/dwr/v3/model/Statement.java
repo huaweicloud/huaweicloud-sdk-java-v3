@@ -90,15 +90,15 @@ public class Statement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Statement statement = (Statement) o;
-        return Objects.equals(this.action, statement.action) && Objects.equals(this.resource, statement.resource);
+        Statement that = (Statement) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.resource, that.resource);
     }
 
     @Override

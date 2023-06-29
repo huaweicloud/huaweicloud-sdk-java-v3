@@ -283,26 +283,23 @@ public class PeriodProductInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodProductInfo periodProductInfo = (PeriodProductInfo) o;
-        return Objects.equals(this.id, periodProductInfo.id)
-            && Objects.equals(this.cloudServiceType, periodProductInfo.cloudServiceType)
-            && Objects.equals(this.resourceType, periodProductInfo.resourceType)
-            && Objects.equals(this.resourceSpec, periodProductInfo.resourceSpec)
-            && Objects.equals(this.region, periodProductInfo.region)
-            && Objects.equals(this.availableZone, periodProductInfo.availableZone)
-            && Objects.equals(this.resourceSize, periodProductInfo.resourceSize)
-            && Objects.equals(this.sizeMeasureId, periodProductInfo.sizeMeasureId)
-            && Objects.equals(this.periodType, periodProductInfo.periodType)
-            && Objects.equals(this.periodNum, periodProductInfo.periodNum)
-            && Objects.equals(this.subscriptionNum, periodProductInfo.subscriptionNum)
-            && Objects.equals(this.feeInstallmentMode, periodProductInfo.feeInstallmentMode);
+        PeriodProductInfo that = (PeriodProductInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpec, that.resourceSpec) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availableZone, that.availableZone)
+            && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.sizeMeasureId, that.sizeMeasureId)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.subscriptionNum, that.subscriptionNum)
+            && Objects.equals(this.feeInstallmentMode, that.feeInstallmentMode);
     }
 
     @Override

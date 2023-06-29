@@ -83,22 +83,15 @@ public class PostSourceServerBody {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class PostSourceServerBody {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FirmwareEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FirmwareEnum(value));
         }
 
         public static FirmwareEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,22 +308,15 @@ public class PostSourceServerBody {
             if (value == null) {
                 return null;
             }
-            BootLoaderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BootLoaderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BootLoaderEnum(value));
         }
 
         public static BootLoaderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BootLoaderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -448,22 +427,15 @@ public class PostSourceServerBody {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationCycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationCycleEnum(value));
         }
 
         public static MigrationCycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -590,22 +562,15 @@ public class PostSourceServerBody {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1194,42 +1159,33 @@ public class PostSourceServerBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostSourceServerBody postSourceServerBody = (PostSourceServerBody) o;
-        return Objects.equals(this.id, postSourceServerBody.id) && Objects.equals(this.ip, postSourceServerBody.ip)
-            && Objects.equals(this.name, postSourceServerBody.name)
-            && Objects.equals(this.hostname, postSourceServerBody.hostname)
-            && Objects.equals(this.osType, postSourceServerBody.osType)
-            && Objects.equals(this.osVersion, postSourceServerBody.osVersion)
-            && Objects.equals(this.virtualizationType, postSourceServerBody.virtualizationType)
-            && Objects.equals(this.linuxBlockCheck, postSourceServerBody.linuxBlockCheck)
-            && Objects.equals(this.firmware, postSourceServerBody.firmware)
-            && Objects.equals(this.cpuQuantity, postSourceServerBody.cpuQuantity)
-            && Objects.equals(this.memory, postSourceServerBody.memory)
-            && Objects.equals(this.disks, postSourceServerBody.disks)
-            && Objects.equals(this.btrfsList, postSourceServerBody.btrfsList)
-            && Objects.equals(this.networks, postSourceServerBody.networks)
-            && Objects.equals(this.domainId, postSourceServerBody.domainId)
-            && Objects.equals(this.hasRsync, postSourceServerBody.hasRsync)
-            && Objects.equals(this.paravirtualization, postSourceServerBody.paravirtualization)
-            && Objects.equals(this.rawDevices, postSourceServerBody.rawDevices)
-            && Objects.equals(this.driverFiles, postSourceServerBody.driverFiles)
-            && Objects.equals(this.systemServices, postSourceServerBody.systemServices)
-            && Objects.equals(this.accountRights, postSourceServerBody.accountRights)
-            && Objects.equals(this.bootLoader, postSourceServerBody.bootLoader)
-            && Objects.equals(this.systemDir, postSourceServerBody.systemDir)
-            && Objects.equals(this.volumeGroups, postSourceServerBody.volumeGroups)
-            && Objects.equals(this.agentVersion, postSourceServerBody.agentVersion)
-            && Objects.equals(this.kernelVersion, postSourceServerBody.kernelVersion)
-            && Objects.equals(this.migrationCycle, postSourceServerBody.migrationCycle)
-            && Objects.equals(this.state, postSourceServerBody.state)
-            && Objects.equals(this.oemSystem, postSourceServerBody.oemSystem);
+        PostSourceServerBody that = (PostSourceServerBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.virtualizationType, that.virtualizationType)
+            && Objects.equals(this.linuxBlockCheck, that.linuxBlockCheck)
+            && Objects.equals(this.firmware, that.firmware) && Objects.equals(this.cpuQuantity, that.cpuQuantity)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.disks, that.disks)
+            && Objects.equals(this.btrfsList, that.btrfsList) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.hasRsync, that.hasRsync)
+            && Objects.equals(this.paravirtualization, that.paravirtualization)
+            && Objects.equals(this.rawDevices, that.rawDevices) && Objects.equals(this.driverFiles, that.driverFiles)
+            && Objects.equals(this.systemServices, that.systemServices)
+            && Objects.equals(this.accountRights, that.accountRights)
+            && Objects.equals(this.bootLoader, that.bootLoader) && Objects.equals(this.systemDir, that.systemDir)
+            && Objects.equals(this.volumeGroups, that.volumeGroups)
+            && Objects.equals(this.agentVersion, that.agentVersion)
+            && Objects.equals(this.kernelVersion, that.kernelVersion)
+            && Objects.equals(this.migrationCycle, that.migrationCycle) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.oemSystem, that.oemSystem);
     }
 
     @Override

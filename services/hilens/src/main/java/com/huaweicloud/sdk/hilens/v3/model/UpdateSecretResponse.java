@@ -66,16 +66,15 @@ public class UpdateSecretResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecretResponse updateSecretResponse = (UpdateSecretResponse) o;
-        return Objects.equals(this.workspaceId, updateSecretResponse.workspaceId)
-            && Objects.equals(this.secret, updateSecretResponse.secret);
+        UpdateSecretResponse that = (UpdateSecretResponse) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.secret, that.secret);
     }
 
     @Override

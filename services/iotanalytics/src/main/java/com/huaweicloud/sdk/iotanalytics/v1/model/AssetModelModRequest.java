@@ -112,17 +112,16 @@ public class AssetModelModRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetModelModRequest assetModelModRequest = (AssetModelModRequest) o;
-        return Objects.equals(this.displayName, assetModelModRequest.displayName)
-            && Objects.equals(this.properties, assetModelModRequest.properties)
-            && Objects.equals(this.analyses, assetModelModRequest.analyses);
+        AssetModelModRequest that = (AssetModelModRequest) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.analyses, that.analyses);
     }
 
     @Override

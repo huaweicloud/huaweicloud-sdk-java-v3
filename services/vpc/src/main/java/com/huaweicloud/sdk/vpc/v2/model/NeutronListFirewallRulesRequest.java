@@ -216,21 +216,18 @@ public class NeutronListFirewallRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListFirewallRulesRequest neutronListFirewallRulesRequest = (NeutronListFirewallRulesRequest) o;
-        return Objects.equals(this.marker, neutronListFirewallRulesRequest.marker)
-            && Objects.equals(this.limit, neutronListFirewallRulesRequest.limit)
-            && Objects.equals(this.id, neutronListFirewallRulesRequest.id)
-            && Objects.equals(this.name, neutronListFirewallRulesRequest.name)
-            && Objects.equals(this.description, neutronListFirewallRulesRequest.description)
-            && Objects.equals(this.action, neutronListFirewallRulesRequest.action)
-            && Objects.equals(this.tenantId, neutronListFirewallRulesRequest.tenantId);
+        NeutronListFirewallRulesRequest that = (NeutronListFirewallRulesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

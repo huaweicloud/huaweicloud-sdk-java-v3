@@ -145,20 +145,17 @@ public class RunSyncCommandJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunSyncCommandJob runSyncCommandJob = (RunSyncCommandJob) o;
-        return Objects.equals(this.phoneId, runSyncCommandJob.phoneId)
-            && Objects.equals(this.jobId, runSyncCommandJob.jobId)
-            && Objects.equals(this.status, runSyncCommandJob.status)
-            && Objects.equals(this.errorCode, runSyncCommandJob.errorCode)
-            && Objects.equals(this.errorMsg, runSyncCommandJob.errorMsg)
-            && Objects.equals(this.executeMsg, runSyncCommandJob.executeMsg);
+        RunSyncCommandJob that = (RunSyncCommandJob) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.executeMsg, that.executeMsg);
     }
 
     @Override

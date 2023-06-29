@@ -33,15 +33,15 @@ public class MigrateServerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateServerOption migrateServerOption = (MigrateServerOption) o;
-        return Objects.equals(this.dedicatedHostId, migrateServerOption.dedicatedHostId);
+        MigrateServerOption that = (MigrateServerOption) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
     }
 
     @Override

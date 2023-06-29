@@ -55,15 +55,15 @@ public class FileCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileCreate fileCreate = (FileCreate) o;
-        return Objects.equals(this.message, fileCreate.message) && Objects.equals(this.content, fileCreate.content);
+        FileCreate that = (FileCreate) obj;
+        return Objects.equals(this.message, that.message) && Objects.equals(this.content, that.content);
     }
 
     @Override

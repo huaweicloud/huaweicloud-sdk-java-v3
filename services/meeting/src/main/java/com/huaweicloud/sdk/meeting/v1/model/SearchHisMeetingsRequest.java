@@ -237,24 +237,20 @@ public class SearchHisMeetingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchHisMeetingsRequest searchHisMeetingsRequest = (SearchHisMeetingsRequest) o;
-        return Objects.equals(this.userUUID, searchHisMeetingsRequest.userUUID)
-            && Objects.equals(this.offset, searchHisMeetingsRequest.offset)
-            && Objects.equals(this.limit, searchHisMeetingsRequest.limit)
-            && Objects.equals(this.searchKey, searchHisMeetingsRequest.searchKey)
-            && Objects.equals(this.queryAll, searchHisMeetingsRequest.queryAll)
-            && Objects.equals(this.startDate, searchHisMeetingsRequest.startDate)
-            && Objects.equals(this.endDate, searchHisMeetingsRequest.endDate)
-            && Objects.equals(this.sortType, searchHisMeetingsRequest.sortType)
-            && Objects.equals(this.xAuthorizationType, searchHisMeetingsRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, searchHisMeetingsRequest.xSiteId);
+        SearchHisMeetingsRequest that = (SearchHisMeetingsRequest) obj;
+        return Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.queryAll, that.queryAll) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

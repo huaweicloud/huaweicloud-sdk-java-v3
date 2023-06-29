@@ -200,21 +200,19 @@ public class UpdateNodeReqDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNodeReqDetail updateNodeReqDetail = (UpdateNodeReqDetail) o;
-        return Objects.equals(this.description, updateNodeReqDetail.description)
-            && Objects.equals(this.logConfigs, updateNodeReqDetail.logConfigs)
-            && Objects.equals(this.tags, updateNodeReqDetail.tags)
-            && Objects.equals(this.eventValidityPeriod, updateNodeReqDetail.eventValidityPeriod)
-            && Objects.equals(this.enableGpu, updateNodeReqDetail.enableGpu)
-            && Objects.equals(this.enableNpu, updateNodeReqDetail.enableNpu)
-            && Objects.equals(this.npuType, updateNodeReqDetail.npuType);
+        UpdateNodeReqDetail that = (UpdateNodeReqDetail) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.eventValidityPeriod, that.eventValidityPeriod)
+            && Objects.equals(this.enableGpu, that.enableGpu) && Objects.equals(this.enableNpu, that.enableNpu)
+            && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

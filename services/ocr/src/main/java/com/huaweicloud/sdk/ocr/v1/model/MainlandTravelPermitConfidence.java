@@ -363,30 +363,24 @@ public class MainlandTravelPermitConfidence {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MainlandTravelPermitConfidence mainlandTravelPermitConfidence = (MainlandTravelPermitConfidence) o;
-        return Objects.equals(this.name, mainlandTravelPermitConfidence.name)
-            && Objects.equals(this.nameEn, mainlandTravelPermitConfidence.nameEn)
-            && Objects.equals(this.birthDate, mainlandTravelPermitConfidence.birthDate)
-            && Objects.equals(this.sex, mainlandTravelPermitConfidence.sex)
-            && Objects.equals(this.validPeriod, mainlandTravelPermitConfidence.validPeriod)
-            && Objects.equals(this.issuingAuthority, mainlandTravelPermitConfidence.issuingAuthority)
-            && Objects.equals(this.number, mainlandTravelPermitConfidence.number)
-            && Objects.equals(this.issuePlace, mainlandTravelPermitConfidence.issuePlace)
-            && Objects.equals(this.issueTimes, mainlandTravelPermitConfidence.issueTimes)
-            && Objects.equals(this.type, mainlandTravelPermitConfidence.type)
-            && Objects.equals(this.side, mainlandTravelPermitConfidence.side)
-            && Objects.equals(this.idName, mainlandTravelPermitConfidence.idName)
-            && Objects.equals(this.idNumber, mainlandTravelPermitConfidence.idNumber)
-            && Objects.equals(this.machineCode1, mainlandTravelPermitConfidence.machineCode1)
-            && Objects.equals(this.machineCode2, mainlandTravelPermitConfidence.machineCode2)
-            && Objects.equals(this.machineCode3, mainlandTravelPermitConfidence.machineCode3);
+        MainlandTravelPermitConfidence that = (MainlandTravelPermitConfidence) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.birthDate, that.birthDate) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.validPeriod, that.validPeriod)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.issuePlace, that.issuePlace) && Objects.equals(this.issueTimes, that.issueTimes)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.side, that.side)
+            && Objects.equals(this.idName, that.idName) && Objects.equals(this.idNumber, that.idNumber)
+            && Objects.equals(this.machineCode1, that.machineCode1)
+            && Objects.equals(this.machineCode2, that.machineCode2)
+            && Objects.equals(this.machineCode3, that.machineCode3);
     }
 
     @Override

@@ -646,42 +646,29 @@ public class IQueryUserCouponsResultV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IQueryUserCouponsResultV2 iqueryUserCouponsResultV2 = (IQueryUserCouponsResultV2) o;
-        return Objects.equals(this.couponId, iqueryUserCouponsResultV2.couponId)
-            && Objects.equals(this.couponCode, iqueryUserCouponsResultV2.couponCode)
-            && Objects.equals(this.status, iqueryUserCouponsResultV2.status)
-            && Objects.equals(this.customerId, iqueryUserCouponsResultV2.customerId)
-            && Objects.equals(this.couponType, iqueryUserCouponsResultV2.couponType)
-            && Objects.equals(this.measureId, iqueryUserCouponsResultV2.measureId)
-            && Objects.equals(this.faceValue, iqueryUserCouponsResultV2.faceValue)
-            && Objects.equals(this.validTime, iqueryUserCouponsResultV2.validTime)
-            && Objects.equals(this.expireTime, iqueryUserCouponsResultV2.expireTime)
-            && Objects.equals(this.orderId, iqueryUserCouponsResultV2.orderId)
-            && Objects.equals(this.promotionPlanId, iqueryUserCouponsResultV2.promotionPlanId)
-            && Objects.equals(this.planName, iqueryUserCouponsResultV2.planName)
-            && Objects.equals(this.planDesc, iqueryUserCouponsResultV2.planDesc)
-            && Objects.equals(this.mediaType, iqueryUserCouponsResultV2.mediaType)
-            && Objects.equals(this.fetchMethod, iqueryUserCouponsResultV2.fetchMethod)
-            && Objects.equals(this.useLimits, iqueryUserCouponsResultV2.useLimits)
-            && Objects.equals(this.activeTime, iqueryUserCouponsResultV2.activeTime)
-            && Objects.equals(this.reserveTime, iqueryUserCouponsResultV2.reserveTime)
-            && Objects.equals(this.promotionId, iqueryUserCouponsResultV2.promotionId)
-            && Objects.equals(this.createTime, iqueryUserCouponsResultV2.createTime)
-            && Objects.equals(this.couponVersion, iqueryUserCouponsResultV2.couponVersion)
-            && Objects.equals(this.balance, iqueryUserCouponsResultV2.balance)
-            && Objects.equals(this.lockOrderId, iqueryUserCouponsResultV2.lockOrderId)
-            && Objects.equals(this.couponUsage, iqueryUserCouponsResultV2.couponUsage)
-            && Objects.equals(this.isFrozen, iqueryUserCouponsResultV2.isFrozen)
-            && Objects.equals(this.currency, iqueryUserCouponsResultV2.currency)
-            && Objects.equals(this.extendParam1, iqueryUserCouponsResultV2.extendParam1)
-            && Objects.equals(this.sourceId, iqueryUserCouponsResultV2.sourceId);
+        IQueryUserCouponsResultV2 that = (IQueryUserCouponsResultV2) obj;
+        return Objects.equals(this.couponId, that.couponId) && Objects.equals(this.couponCode, that.couponCode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.couponType, that.couponType) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.faceValue, that.faceValue) && Objects.equals(this.validTime, that.validTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId)
+            && Objects.equals(this.planName, that.planName) && Objects.equals(this.planDesc, that.planDesc)
+            && Objects.equals(this.mediaType, that.mediaType) && Objects.equals(this.fetchMethod, that.fetchMethod)
+            && Objects.equals(this.useLimits, that.useLimits) && Objects.equals(this.activeTime, that.activeTime)
+            && Objects.equals(this.reserveTime, that.reserveTime) && Objects.equals(this.promotionId, that.promotionId)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.couponVersion, that.couponVersion) && Objects.equals(this.balance, that.balance)
+            && Objects.equals(this.lockOrderId, that.lockOrderId) && Objects.equals(this.couponUsage, that.couponUsage)
+            && Objects.equals(this.isFrozen, that.isFrozen) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.extendParam1, that.extendParam1) && Objects.equals(this.sourceId, that.sourceId);
     }
 
     @Override

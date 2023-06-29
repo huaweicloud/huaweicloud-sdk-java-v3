@@ -226,21 +226,19 @@ public class OrderAlertIncidentContent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderAlertIncidentContent orderAlertIncidentContent = (OrderAlertIncidentContent) o;
-        return Objects.equals(this.title, orderAlertIncidentContent.title)
-            && Objects.equals(this.typeCategory, orderAlertIncidentContent.typeCategory)
-            && Objects.equals(this.evidenceList, orderAlertIncidentContent.evidenceList)
-            && Objects.equals(this.noteList, orderAlertIncidentContent.noteList)
-            && Objects.equals(this.attachmentList, orderAlertIncidentContent.attachmentList)
-            && Objects.equals(this.incidentType, orderAlertIncidentContent.incidentType)
-            && Objects.equals(this.description, orderAlertIncidentContent.description);
+        OrderAlertIncidentContent that = (OrderAlertIncidentContent) obj;
+        return Objects.equals(this.title, that.title) && Objects.equals(this.typeCategory, that.typeCategory)
+            && Objects.equals(this.evidenceList, that.evidenceList) && Objects.equals(this.noteList, that.noteList)
+            && Objects.equals(this.attachmentList, that.attachmentList)
+            && Objects.equals(this.incidentType, that.incidentType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

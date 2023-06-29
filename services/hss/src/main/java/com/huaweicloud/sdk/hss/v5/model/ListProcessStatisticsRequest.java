@@ -103,18 +103,17 @@ public class ListProcessStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProcessStatisticsRequest listProcessStatisticsRequest = (ListProcessStatisticsRequest) o;
-        return Objects.equals(this.path, listProcessStatisticsRequest.path)
-            && Objects.equals(this.enterpriseProjectId, listProcessStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listProcessStatisticsRequest.limit)
-            && Objects.equals(this.offset, listProcessStatisticsRequest.offset);
+        ListProcessStatisticsRequest that = (ListProcessStatisticsRequest) obj;
+        return Objects.equals(this.path, that.path)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

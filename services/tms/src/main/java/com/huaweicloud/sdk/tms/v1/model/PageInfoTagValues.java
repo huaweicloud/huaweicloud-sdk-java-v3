@@ -55,16 +55,15 @@ public class PageInfoTagValues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoTagValues pageInfoTagValues = (PageInfoTagValues) o;
-        return Objects.equals(this.nextMarker, pageInfoTagValues.nextMarker)
-            && Objects.equals(this.currentCount, pageInfoTagValues.currentCount);
+        PageInfoTagValues that = (PageInfoTagValues) obj;
+        return Objects.equals(this.nextMarker, that.nextMarker) && Objects.equals(this.currentCount, that.currentCount);
     }
 
     @Override

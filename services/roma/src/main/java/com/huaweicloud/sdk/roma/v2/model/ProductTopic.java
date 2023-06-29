@@ -70,22 +70,15 @@ public class ProductTopic {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,20 +222,17 @@ public class ProductTopic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductTopic productTopic = (ProductTopic) o;
-        return Objects.equals(this.productId, productTopic.productId)
-            && Objects.equals(this.topicId, productTopic.topicId)
-            && Objects.equals(this.permission, productTopic.permission)
-            && Objects.equals(this.topicName, productTopic.topicName)
-            && Objects.equals(this.version, productTopic.version)
-            && Objects.equals(this.description, productTopic.description);
+        ProductTopic that = (ProductTopic) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description);
     }
 
     @Override

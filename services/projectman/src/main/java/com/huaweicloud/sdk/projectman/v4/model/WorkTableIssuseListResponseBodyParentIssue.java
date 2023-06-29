@@ -55,17 +55,15 @@ public class WorkTableIssuseListResponseBodyParentIssue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkTableIssuseListResponseBodyParentIssue workTableIssuseListResponseBodyParentIssue =
-            (WorkTableIssuseListResponseBodyParentIssue) o;
-        return Objects.equals(this.id, workTableIssuseListResponseBodyParentIssue.id)
-            && Objects.equals(this.subject, workTableIssuseListResponseBodyParentIssue.subject);
+        WorkTableIssuseListResponseBodyParentIssue that = (WorkTableIssuseListResponseBodyParentIssue) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.subject, that.subject);
     }
 
     @Override

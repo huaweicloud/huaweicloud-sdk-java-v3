@@ -55,15 +55,15 @@ public class IntegerRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IntegerRange integerRange = (IntegerRange) o;
-        return Objects.equals(this.max, integerRange.max) && Objects.equals(this.min, integerRange.min);
+        IntegerRange that = (IntegerRange) obj;
+        return Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class AttachPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachPolicyRequest attachPolicyRequest = (AttachPolicyRequest) o;
-        return Objects.equals(this.policyId, attachPolicyRequest.policyId)
-            && Objects.equals(this.body, attachPolicyRequest.body);
+        AttachPolicyRequest that = (AttachPolicyRequest) obj;
+        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

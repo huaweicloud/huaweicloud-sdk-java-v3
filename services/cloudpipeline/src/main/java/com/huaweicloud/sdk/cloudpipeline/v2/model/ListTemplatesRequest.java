@@ -169,21 +169,18 @@ public class ListTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplatesRequest listTemplatesRequest = (ListTemplatesRequest) o;
-        return Objects.equals(this.templateType, listTemplatesRequest.templateType)
-            && Objects.equals(this.isBuildIn, listTemplatesRequest.isBuildIn)
-            && Objects.equals(this.offset, listTemplatesRequest.offset)
-            && Objects.equals(this.limit, listTemplatesRequest.limit)
-            && Objects.equals(this.name, listTemplatesRequest.name)
-            && Objects.equals(this.sort, listTemplatesRequest.sort)
-            && Objects.equals(this.asc, listTemplatesRequest.asc);
+        ListTemplatesRequest that = (ListTemplatesRequest) obj;
+        return Objects.equals(this.templateType, that.templateType) && Objects.equals(this.isBuildIn, that.isBuildIn)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.asc, that.asc);
     }
 
     @Override

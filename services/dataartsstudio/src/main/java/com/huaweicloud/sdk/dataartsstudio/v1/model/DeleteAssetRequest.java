@@ -55,16 +55,15 @@ public class DeleteAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAssetRequest deleteAssetRequest = (DeleteAssetRequest) o;
-        return Objects.equals(this.workspace, deleteAssetRequest.workspace)
-            && Objects.equals(this.guid, deleteAssetRequest.guid);
+        DeleteAssetRequest that = (DeleteAssetRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.guid, that.guid);
     }
 
     @Override

@@ -213,22 +213,18 @@ public class ListWorkflowsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowsResponse listWorkflowsResponse = (ListWorkflowsResponse) o;
-        return Objects.equals(this.count, listWorkflowsResponse.count)
-            && Objects.equals(this.graphs, listWorkflowsResponse.graphs)
-            && Objects.equals(this.nextOffset, listWorkflowsResponse.nextOffset)
-            && Objects.equals(this.isTruncated, listWorkflowsResponse.isTruncated)
-            && Objects.equals(this.xRequestId, listWorkflowsResponse.xRequestId)
-            && Objects.equals(this.connection, listWorkflowsResponse.connection)
-            && Objects.equals(this.contentLength, listWorkflowsResponse.contentLength)
-            && Objects.equals(this.date, listWorkflowsResponse.date);
+        ListWorkflowsResponse that = (ListWorkflowsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.graphs, that.graphs)
+            && Objects.equals(this.nextOffset, that.nextOffset) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

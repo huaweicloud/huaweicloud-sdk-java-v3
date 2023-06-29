@@ -65,16 +65,15 @@ public class UpdateDomainKeyChainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainKeyChainRequest updateDomainKeyChainRequest = (UpdateDomainKeyChainRequest) o;
-        return Objects.equals(this.domain, updateDomainKeyChainRequest.domain)
-            && Objects.equals(this.body, updateDomainKeyChainRequest.body);
+        UpdateDomainKeyChainRequest that = (UpdateDomainKeyChainRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.body, that.body);
     }
 
     @Override

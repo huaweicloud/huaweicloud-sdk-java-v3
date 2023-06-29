@@ -72,22 +72,15 @@ public class JobNodeSpecInfo {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeTypeEnum(value));
         }
 
         public static NodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -127,15 +120,15 @@ public class JobNodeSpecInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobNodeSpecInfo jobNodeSpecInfo = (JobNodeSpecInfo) o;
-        return Objects.equals(this.nodeType, jobNodeSpecInfo.nodeType);
+        JobNodeSpecInfo that = (JobNodeSpecInfo) obj;
+        return Objects.equals(this.nodeType, that.nodeType);
     }
 
     @Override

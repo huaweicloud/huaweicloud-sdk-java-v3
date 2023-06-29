@@ -201,22 +201,18 @@ public class CreateConsumerGroupOrBatchDeleteConsumerGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConsumerGroupOrBatchDeleteConsumerGroupReq createConsumerGroupOrBatchDeleteConsumerGroupReq =
-            (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) o;
-        return Objects.equals(this.groups, createConsumerGroupOrBatchDeleteConsumerGroupReq.groups)
-            && Objects.equals(this.enabled, createConsumerGroupOrBatchDeleteConsumerGroupReq.enabled)
-            && Objects.equals(this.broadcast, createConsumerGroupOrBatchDeleteConsumerGroupReq.broadcast)
-            && Objects.equals(this.brokers, createConsumerGroupOrBatchDeleteConsumerGroupReq.brokers)
-            && Objects.equals(this.name, createConsumerGroupOrBatchDeleteConsumerGroupReq.name)
-            && Objects.equals(this.retryMaxTime, createConsumerGroupOrBatchDeleteConsumerGroupReq.retryMaxTime)
-            && Objects.equals(this.fromBeginning, createConsumerGroupOrBatchDeleteConsumerGroupReq.fromBeginning);
+        CreateConsumerGroupOrBatchDeleteConsumerGroupReq that = (CreateConsumerGroupOrBatchDeleteConsumerGroupReq) obj;
+        return Objects.equals(this.groups, that.groups) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.broadcast, that.broadcast) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.retryMaxTime, that.retryMaxTime)
+            && Objects.equals(this.fromBeginning, that.fromBeginning);
     }
 
     @Override

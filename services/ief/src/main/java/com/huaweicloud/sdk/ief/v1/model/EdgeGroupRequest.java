@@ -172,19 +172,17 @@ public class EdgeGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeGroupRequest edgeGroupRequest = (EdgeGroupRequest) o;
-        return Objects.equals(this.name, edgeGroupRequest.name)
-            && Objects.equals(this.description, edgeGroupRequest.description)
-            && Objects.equals(this.nodeIds, edgeGroupRequest.nodeIds)
-            && Objects.equals(this.tags, edgeGroupRequest.tags)
-            && Objects.equals(this.deviceIds, edgeGroupRequest.deviceIds);
+        EdgeGroupRequest that = (EdgeGroupRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.deviceIds, that.deviceIds);
     }
 
     @Override

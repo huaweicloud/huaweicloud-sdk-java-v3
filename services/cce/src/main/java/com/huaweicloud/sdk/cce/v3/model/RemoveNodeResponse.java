@@ -119,17 +119,16 @@ public class RemoveNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveNodeResponse removeNodeResponse = (RemoveNodeResponse) o;
-        return Objects.equals(this.apiVersion, removeNodeResponse.apiVersion)
-            && Objects.equals(this.kind, removeNodeResponse.kind) && Objects.equals(this.spec, removeNodeResponse.spec)
-            && Objects.equals(this.status, removeNodeResponse.status);
+        RemoveNodeResponse that = (RemoveNodeResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.status, that.status);
     }
 
     @Override

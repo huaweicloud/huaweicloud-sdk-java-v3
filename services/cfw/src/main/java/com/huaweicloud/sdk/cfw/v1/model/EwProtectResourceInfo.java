@@ -143,20 +143,20 @@ public class EwProtectResourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EwProtectResourceInfo ewProtectResourceInfo = (EwProtectResourceInfo) o;
-        return Objects.equals(this.protectedResourceType, ewProtectResourceInfo.protectedResourceType)
-            && Objects.equals(this.protectedResourceName, ewProtectResourceInfo.protectedResourceName)
-            && Objects.equals(this.protectedResourceId, ewProtectResourceInfo.protectedResourceId)
-            && Objects.equals(this.protectedResourceNatName, ewProtectResourceInfo.protectedResourceNatName)
-            && Objects.equals(this.protectedResourceNatId, ewProtectResourceInfo.protectedResourceNatId)
-            && Objects.equals(this.protectedResourceProjectId, ewProtectResourceInfo.protectedResourceProjectId);
+        EwProtectResourceInfo that = (EwProtectResourceInfo) obj;
+        return Objects.equals(this.protectedResourceType, that.protectedResourceType)
+            && Objects.equals(this.protectedResourceName, that.protectedResourceName)
+            && Objects.equals(this.protectedResourceId, that.protectedResourceId)
+            && Objects.equals(this.protectedResourceNatName, that.protectedResourceNatName)
+            && Objects.equals(this.protectedResourceNatId, that.protectedResourceNatId)
+            && Objects.equals(this.protectedResourceProjectId, that.protectedResourceProjectId);
     }
 
     @Override

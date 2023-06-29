@@ -220,21 +220,19 @@ public class Association {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Association association = (Association) o;
-        return Objects.equals(this.id, association.id) && Objects.equals(this.routeTableId, association.routeTableId)
-            && Objects.equals(this.attachmentId, association.attachmentId)
-            && Objects.equals(this.resourceType, association.resourceType)
-            && Objects.equals(this.resourceId, association.resourceId) && Objects.equals(this.state, association.state)
-            && Objects.equals(this.createdAt, association.createdAt)
-            && Objects.equals(this.updatedAt, association.updatedAt)
-            && Objects.equals(this.routePolicy, association.routePolicy);
+        Association that = (Association) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.routeTableId, that.routeTableId)
+            && Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.routePolicy, that.routePolicy);
     }
 
     @Override

@@ -78,16 +78,16 @@ public class ListSystemSecurityPoliciesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemSecurityPoliciesResponse listSystemSecurityPoliciesResponse = (ListSystemSecurityPoliciesResponse) o;
-        return Objects.equals(this.systemSecurityPolicies, listSystemSecurityPoliciesResponse.systemSecurityPolicies)
-            && Objects.equals(this.requestId, listSystemSecurityPoliciesResponse.requestId);
+        ListSystemSecurityPoliciesResponse that = (ListSystemSecurityPoliciesResponse) obj;
+        return Objects.equals(this.systemSecurityPolicies, that.systemSecurityPolicies)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

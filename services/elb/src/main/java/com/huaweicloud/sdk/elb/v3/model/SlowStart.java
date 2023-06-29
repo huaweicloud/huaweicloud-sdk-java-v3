@@ -57,15 +57,15 @@ public class SlowStart {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowStart slowStart = (SlowStart) o;
-        return Objects.equals(this.enable, slowStart.enable) && Objects.equals(this.duration, slowStart.duration);
+        SlowStart that = (SlowStart) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

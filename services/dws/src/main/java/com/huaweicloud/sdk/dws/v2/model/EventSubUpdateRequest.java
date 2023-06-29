@@ -231,24 +231,21 @@ public class EventSubUpdateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSubUpdateRequest eventSubUpdateRequest = (EventSubUpdateRequest) o;
-        return Objects.equals(this.name, eventSubUpdateRequest.name)
-            && Objects.equals(this.sourceType, eventSubUpdateRequest.sourceType)
-            && Objects.equals(this.sourceId, eventSubUpdateRequest.sourceId)
-            && Objects.equals(this.category, eventSubUpdateRequest.category)
-            && Objects.equals(this.severity, eventSubUpdateRequest.severity)
-            && Objects.equals(this.tag, eventSubUpdateRequest.tag)
-            && Objects.equals(this.enable, eventSubUpdateRequest.enable)
-            && Objects.equals(this.notificationTarget, eventSubUpdateRequest.notificationTarget)
-            && Objects.equals(this.notificationTargetName, eventSubUpdateRequest.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, eventSubUpdateRequest.notificationTargetType);
+        EventSubUpdateRequest that = (EventSubUpdateRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType);
     }
 
     @Override

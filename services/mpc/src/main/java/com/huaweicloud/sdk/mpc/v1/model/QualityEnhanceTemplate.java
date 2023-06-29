@@ -87,17 +87,17 @@ public class QualityEnhanceTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityEnhanceTemplate qualityEnhanceTemplate = (QualityEnhanceTemplate) o;
-        return Objects.equals(this.templateName, qualityEnhanceTemplate.templateName)
-            && Objects.equals(this.templateDescription, qualityEnhanceTemplate.templateDescription)
-            && Objects.equals(this.video, qualityEnhanceTemplate.video);
+        QualityEnhanceTemplate that = (QualityEnhanceTemplate) obj;
+        return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateDescription, that.templateDescription)
+            && Objects.equals(this.video, that.video);
     }
 
     @Override

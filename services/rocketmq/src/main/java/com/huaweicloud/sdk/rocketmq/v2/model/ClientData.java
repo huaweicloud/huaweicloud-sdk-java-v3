@@ -140,18 +140,17 @@ public class ClientData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClientData clientData = (ClientData) o;
-        return Objects.equals(this.language, clientData.language) && Objects.equals(this.version, clientData.version)
-            && Objects.equals(this.clientId, clientData.clientId)
-            && Objects.equals(this.clientAddr, clientData.clientAddr)
-            && Objects.equals(this.subscriptions, clientData.subscriptions);
+        ClientData that = (ClientData) obj;
+        return Objects.equals(this.language, that.language) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.clientAddr, that.clientAddr)
+            && Objects.equals(this.subscriptions, that.subscriptions);
     }
 
     @Override

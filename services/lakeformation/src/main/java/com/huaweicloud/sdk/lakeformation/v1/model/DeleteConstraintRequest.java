@@ -121,19 +121,17 @@ public class DeleteConstraintRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConstraintRequest deleteConstraintRequest = (DeleteConstraintRequest) o;
-        return Objects.equals(this.instanceId, deleteConstraintRequest.instanceId)
-            && Objects.equals(this.catalogName, deleteConstraintRequest.catalogName)
-            && Objects.equals(this.databaseName, deleteConstraintRequest.databaseName)
-            && Objects.equals(this.tableName, deleteConstraintRequest.tableName)
-            && Objects.equals(this.constraintName, deleteConstraintRequest.constraintName);
+        DeleteConstraintRequest that = (DeleteConstraintRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.constraintName, that.constraintName);
     }
 
     @Override

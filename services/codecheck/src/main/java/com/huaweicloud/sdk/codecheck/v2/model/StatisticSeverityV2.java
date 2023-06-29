@@ -99,18 +99,16 @@ public class StatisticSeverityV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticSeverityV2 statisticSeverityV2 = (StatisticSeverityV2) o;
-        return Objects.equals(this.critical, statisticSeverityV2.critical)
-            && Objects.equals(this.major, statisticSeverityV2.major)
-            && Objects.equals(this.minor, statisticSeverityV2.minor)
-            && Objects.equals(this.suggestion, statisticSeverityV2.suggestion);
+        StatisticSeverityV2 that = (StatisticSeverityV2) obj;
+        return Objects.equals(this.critical, that.critical) && Objects.equals(this.major, that.major)
+            && Objects.equals(this.minor, that.minor) && Objects.equals(this.suggestion, that.suggestion);
     }
 
     @Override

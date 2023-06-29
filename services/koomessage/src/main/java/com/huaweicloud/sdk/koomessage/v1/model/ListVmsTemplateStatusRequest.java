@@ -191,22 +191,18 @@ public class ListVmsTemplateStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVmsTemplateStatusRequest listVmsTemplateStatusRequest = (ListVmsTemplateStatusRequest) o;
-        return Objects.equals(this.tplId, listVmsTemplateStatusRequest.tplId)
-            && Objects.equals(this.tplName, listVmsTemplateStatusRequest.tplName)
-            && Objects.equals(this.tplType, listVmsTemplateStatusRequest.tplType)
-            && Objects.equals(this.hasParam, listVmsTemplateStatusRequest.hasParam)
-            && Objects.equals(this.beginTime, listVmsTemplateStatusRequest.beginTime)
-            && Objects.equals(this.endTime, listVmsTemplateStatusRequest.endTime)
-            && Objects.equals(this.offset, listVmsTemplateStatusRequest.offset)
-            && Objects.equals(this.limit, listVmsTemplateStatusRequest.limit);
+        ListVmsTemplateStatusRequest that = (ListVmsTemplateStatusRequest) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.tplType, that.tplType) && Objects.equals(this.hasParam, that.hasParam)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

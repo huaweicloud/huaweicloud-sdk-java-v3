@@ -65,16 +65,15 @@ public class CreateEncryptdatasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEncryptdatasRequest createEncryptdatasRequest = (CreateEncryptdatasRequest) o;
-        return Objects.equals(this.iefInstanceId, createEncryptdatasRequest.iefInstanceId)
-            && Objects.equals(this.body, createEncryptdatasRequest.body);
+        CreateEncryptdatasRequest that = (CreateEncryptdatasRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

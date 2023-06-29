@@ -323,19 +323,19 @@ public class Tags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Tags tags = (Tags) o;
-        return Objects.equals(this.tags, tags.tags) && Objects.equals(this.tagsAny, tags.tagsAny)
-            && Objects.equals(this.notTags, tags.notTags) && Objects.equals(this.notTagsAny, tags.notTagsAny)
-            && Objects.equals(this.limit, tags.limit) && Objects.equals(this.offset, tags.offset)
-            && Objects.equals(this.action, tags.action) && Objects.equals(this.matches, tags.matches)
-            && Objects.equals(this.console, tags.console) && Objects.equals(this.sorted, tags.sorted);
+        Tags that = (Tags) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.tagsAny, that.tagsAny)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.notTagsAny, that.notTagsAny)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.matches, that.matches)
+            && Objects.equals(this.console, that.console) && Objects.equals(this.sorted, that.sorted);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class WafProductInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WafProductInfo wafProductInfo = (WafProductInfo) o;
-        return Objects.equals(this.resourceSpecCode, wafProductInfo.resourceSpecCode)
-            && Objects.equals(this.periodType, wafProductInfo.periodType)
-            && Objects.equals(this.periodNum, wafProductInfo.periodNum);
+        WafProductInfo that = (WafProductInfo) obj;
+        return Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum);
     }
 
     @Override

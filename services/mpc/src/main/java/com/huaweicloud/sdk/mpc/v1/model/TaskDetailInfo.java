@@ -96,22 +96,15 @@ public class TaskDetailInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -424,24 +417,20 @@ public class TaskDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDetailInfo taskDetailInfo = (TaskDetailInfo) o;
-        return Objects.equals(this.taskId, taskDetailInfo.taskId) && Objects.equals(this.status, taskDetailInfo.status)
-            && Objects.equals(this.createTime, taskDetailInfo.createTime)
-            && Objects.equals(this.startTime, taskDetailInfo.startTime)
-            && Objects.equals(this.endTime, taskDetailInfo.endTime) && Objects.equals(this.input, taskDetailInfo.input)
-            && Objects.equals(this.output, taskDetailInfo.output)
-            && Objects.equals(this.userData, taskDetailInfo.userData)
-            && Objects.equals(this.errorCode, taskDetailInfo.errorCode)
-            && Objects.equals(this.description, taskDetailInfo.description)
-            && Objects.equals(this.mediaDetail, taskDetailInfo.mediaDetail)
-            && Objects.equals(this.xcodeError, taskDetailInfo.xcodeError);
+        TaskDetailInfo that = (TaskDetailInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.mediaDetail, that.mediaDetail) && Objects.equals(this.xcodeError, that.xcodeError);
     }
 
     @Override

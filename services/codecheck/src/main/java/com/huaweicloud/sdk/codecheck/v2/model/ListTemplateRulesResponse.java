@@ -75,16 +75,15 @@ public class ListTemplateRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateRulesResponse listTemplateRulesResponse = (ListTemplateRulesResponse) o;
-        return Objects.equals(this.info, listTemplateRulesResponse.info)
-            && Objects.equals(this.total, listTemplateRulesResponse.total);
+        ListTemplateRulesResponse that = (ListTemplateRulesResponse) obj;
+        return Objects.equals(this.info, that.info) && Objects.equals(this.total, that.total);
     }
 
     @Override

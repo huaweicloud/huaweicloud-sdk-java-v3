@@ -231,23 +231,21 @@ public class CustomerConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerConfig customerConfig = (CustomerConfig) o;
-        return Objects.equals(this.failureRemind, customerConfig.failureRemind)
-            && Objects.equals(this.clusterName, customerConfig.clusterName)
-            && Objects.equals(this.serviceProvider, customerConfig.serviceProvider)
-            && Objects.equals(this.localDisk, customerConfig.localDisk) && Objects.equals(this.ssl, customerConfig.ssl)
-            && Objects.equals(this.createFrom, customerConfig.createFrom)
-            && Objects.equals(this.resourceId, customerConfig.resourceId)
-            && Objects.equals(this.flavorType, customerConfig.flavorType)
-            && Objects.equals(this.workSpaceId, customerConfig.workSpaceId)
-            && Objects.equals(this.trial, customerConfig.trial);
+        CustomerConfig that = (CustomerConfig) obj;
+        return Objects.equals(this.failureRemind, that.failureRemind)
+            && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.serviceProvider, that.serviceProvider)
+            && Objects.equals(this.localDisk, that.localDisk) && Objects.equals(this.ssl, that.ssl)
+            && Objects.equals(this.createFrom, that.createFrom) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.flavorType, that.flavorType) && Objects.equals(this.workSpaceId, that.workSpaceId)
+            && Objects.equals(this.trial, that.trial);
     }
 
     @Override

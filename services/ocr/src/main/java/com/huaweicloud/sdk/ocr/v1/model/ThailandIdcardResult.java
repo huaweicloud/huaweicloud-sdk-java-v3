@@ -567,38 +567,30 @@ public class ThailandIdcardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThailandIdcardResult thailandIdcardResult = (ThailandIdcardResult) o;
-        return Objects.equals(this.type, thailandIdcardResult.type)
-            && Objects.equals(this.nameEn, thailandIdcardResult.nameEn)
-            && Objects.equals(this.refNumber, thailandIdcardResult.refNumber)
-            && Objects.equals(this.side, thailandIdcardResult.side)
-            && Objects.equals(this.idNumber, thailandIdcardResult.idNumber)
-            && Objects.equals(this.nameTh, thailandIdcardResult.nameTh)
-            && Objects.equals(this.firstNameEn, thailandIdcardResult.firstNameEn)
-            && Objects.equals(this.lastNameEn, thailandIdcardResult.lastNameEn)
-            && Objects.equals(this.dateOfBirthTh, thailandIdcardResult.dateOfBirthTh)
-            && Objects.equals(this.dateOfBirthEn, thailandIdcardResult.dateOfBirthEn)
-            && Objects.equals(this.religionTh, thailandIdcardResult.religionTh)
-            && Objects.equals(this.addressTh, thailandIdcardResult.addressTh)
-            && Objects.equals(this.dateOfIssueTh, thailandIdcardResult.dateOfIssueTh)
-            && Objects.equals(this.dateOfIssueEn, thailandIdcardResult.dateOfIssueEn)
-            && Objects.equals(this.dateOfExpiryTh, thailandIdcardResult.dateOfExpiryTh)
-            && Objects.equals(this.dateOfExpiryEn, thailandIdcardResult.dateOfExpiryEn)
-            && Objects.equals(this.serialNumber, thailandIdcardResult.serialNumber)
-            && Objects.equals(this.cardNumber, thailandIdcardResult.cardNumber)
-            && Objects.equals(this.laserNumber, thailandIdcardResult.laserNumber)
-            && Objects.equals(this.confidence, thailandIdcardResult.confidence)
-            && Objects.equals(this.portraitImage, thailandIdcardResult.portraitImage)
-            && Objects.equals(this.portraitLocation, thailandIdcardResult.portraitLocation)
-            && Objects.equals(this.idcardType, thailandIdcardResult.idcardType)
-            && Objects.equals(this.textLocation, thailandIdcardResult.textLocation);
+        ThailandIdcardResult that = (ThailandIdcardResult) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.refNumber, that.refNumber) && Objects.equals(this.side, that.side)
+            && Objects.equals(this.idNumber, that.idNumber) && Objects.equals(this.nameTh, that.nameTh)
+            && Objects.equals(this.firstNameEn, that.firstNameEn) && Objects.equals(this.lastNameEn, that.lastNameEn)
+            && Objects.equals(this.dateOfBirthTh, that.dateOfBirthTh)
+            && Objects.equals(this.dateOfBirthEn, that.dateOfBirthEn)
+            && Objects.equals(this.religionTh, that.religionTh) && Objects.equals(this.addressTh, that.addressTh)
+            && Objects.equals(this.dateOfIssueTh, that.dateOfIssueTh)
+            && Objects.equals(this.dateOfIssueEn, that.dateOfIssueEn)
+            && Objects.equals(this.dateOfExpiryTh, that.dateOfExpiryTh)
+            && Objects.equals(this.dateOfExpiryEn, that.dateOfExpiryEn)
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.cardNumber, that.cardNumber)
+            && Objects.equals(this.laserNumber, that.laserNumber) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.portraitLocation, that.portraitLocation)
+            && Objects.equals(this.idcardType, that.idcardType) && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

@@ -55,17 +55,15 @@ public class ShowDetailOfSubscriptionTargetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailOfSubscriptionTargetRequest showDetailOfSubscriptionTargetRequest =
-            (ShowDetailOfSubscriptionTargetRequest) o;
-        return Objects.equals(this.subscriptionId, showDetailOfSubscriptionTargetRequest.subscriptionId)
-            && Objects.equals(this.targetId, showDetailOfSubscriptionTargetRequest.targetId);
+        ShowDetailOfSubscriptionTargetRequest that = (ShowDetailOfSubscriptionTargetRequest) obj;
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId);
     }
 
     @Override

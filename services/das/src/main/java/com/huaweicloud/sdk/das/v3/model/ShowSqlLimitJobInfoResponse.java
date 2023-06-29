@@ -72,22 +72,15 @@ public class ShowSqlLimitJobInfoResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobStatusEnum(value));
         }
 
         public static JobStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,17 +159,16 @@ public class ShowSqlLimitJobInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlLimitJobInfoResponse showSqlLimitJobInfoResponse = (ShowSqlLimitJobInfoResponse) o;
-        return Objects.equals(this.jobId, showSqlLimitJobInfoResponse.jobId)
-            && Objects.equals(this.jobStatus, showSqlLimitJobInfoResponse.jobStatus)
-            && Objects.equals(this.failReason, showSqlLimitJobInfoResponse.failReason);
+        ShowSqlLimitJobInfoResponse that = (ShowSqlLimitJobInfoResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobStatus, that.jobStatus)
+            && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

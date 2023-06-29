@@ -91,16 +91,15 @@ public class ListVpcPeeringsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcPeeringsResponse listVpcPeeringsResponse = (ListVpcPeeringsResponse) o;
-        return Objects.equals(this.peerings, listVpcPeeringsResponse.peerings)
-            && Objects.equals(this.peeringsLinks, listVpcPeeringsResponse.peeringsLinks);
+        ListVpcPeeringsResponse that = (ListVpcPeeringsResponse) obj;
+        return Objects.equals(this.peerings, that.peerings) && Objects.equals(this.peeringsLinks, that.peeringsLinks);
     }
 
     @Override

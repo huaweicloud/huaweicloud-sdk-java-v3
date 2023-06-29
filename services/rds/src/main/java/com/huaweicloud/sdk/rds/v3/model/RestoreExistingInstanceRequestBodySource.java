@@ -66,22 +66,15 @@ public class RestoreExistingInstanceRequestBodySource {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -242,21 +235,18 @@ public class RestoreExistingInstanceRequestBodySource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreExistingInstanceRequestBodySource restoreExistingInstanceRequestBodySource =
-            (RestoreExistingInstanceRequestBodySource) o;
-        return Objects.equals(this.instanceId, restoreExistingInstanceRequestBodySource.instanceId)
-            && Objects.equals(this.type, restoreExistingInstanceRequestBodySource.type)
-            && Objects.equals(this.backupId, restoreExistingInstanceRequestBodySource.backupId)
-            && Objects.equals(this.restoreTime, restoreExistingInstanceRequestBodySource.restoreTime)
-            && Objects.equals(this.databaseName, restoreExistingInstanceRequestBodySource.databaseName)
-            && Objects.equals(this.restoreAllDatabase, restoreExistingInstanceRequestBodySource.restoreAllDatabase);
+        RestoreExistingInstanceRequestBodySource that = (RestoreExistingInstanceRequestBodySource) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.restoreTime, that.restoreTime)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.restoreAllDatabase, that.restoreAllDatabase);
     }
 
     @Override

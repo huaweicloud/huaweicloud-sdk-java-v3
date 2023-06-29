@@ -43,15 +43,15 @@ public class CreateAcceptanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAcceptanceRequest createAcceptanceRequest = (CreateAcceptanceRequest) o;
-        return Objects.equals(this.body, createAcceptanceRequest.body);
+        CreateAcceptanceRequest that = (CreateAcceptanceRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

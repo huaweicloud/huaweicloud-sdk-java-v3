@@ -79,17 +79,16 @@ public class AimPersonalTemplateParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimPersonalTemplateParam aimPersonalTemplateParam = (AimPersonalTemplateParam) o;
-        return Objects.equals(this.type, aimPersonalTemplateParam.type)
-            && Objects.equals(this.name, aimPersonalTemplateParam.name)
-            && Objects.equals(this.example, aimPersonalTemplateParam.example);
+        AimPersonalTemplateParam that = (AimPersonalTemplateParam) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.example, that.example);
     }
 
     @Override

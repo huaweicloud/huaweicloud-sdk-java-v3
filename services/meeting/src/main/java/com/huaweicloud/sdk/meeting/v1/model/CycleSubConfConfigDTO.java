@@ -134,19 +134,19 @@ public class CycleSubConfConfigDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CycleSubConfConfigDTO cycleSubConfConfigDTO = (CycleSubConfConfigDTO) o;
-        return Objects.equals(this.callInRestriction, cycleSubConfConfigDTO.callInRestriction)
-            && Objects.equals(this.audienceCallInRestriction, cycleSubConfConfigDTO.audienceCallInRestriction)
-            && Objects.equals(this.allowGuestStartConf, cycleSubConfConfigDTO.allowGuestStartConf)
-            && Objects.equals(this.enableWaitingRoom, cycleSubConfConfigDTO.enableWaitingRoom)
-            && Objects.equals(this.showAudienceCountInfo, cycleSubConfConfigDTO.showAudienceCountInfo);
+        CycleSubConfConfigDTO that = (CycleSubConfConfigDTO) obj;
+        return Objects.equals(this.callInRestriction, that.callInRestriction)
+            && Objects.equals(this.audienceCallInRestriction, that.audienceCallInRestriction)
+            && Objects.equals(this.allowGuestStartConf, that.allowGuestStartConf)
+            && Objects.equals(this.enableWaitingRoom, that.enableWaitingRoom)
+            && Objects.equals(this.showAudienceCountInfo, that.showAudienceCountInfo);
     }
 
     @Override

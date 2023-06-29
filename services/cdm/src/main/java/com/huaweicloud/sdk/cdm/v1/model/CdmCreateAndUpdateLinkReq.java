@@ -52,15 +52,15 @@ public class CdmCreateAndUpdateLinkReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmCreateAndUpdateLinkReq cdmCreateAndUpdateLinkReq = (CdmCreateAndUpdateLinkReq) o;
-        return Objects.equals(this.links, cdmCreateAndUpdateLinkReq.links);
+        CdmCreateAndUpdateLinkReq that = (CdmCreateAndUpdateLinkReq) obj;
+        return Objects.equals(this.links, that.links);
     }
 
     @Override

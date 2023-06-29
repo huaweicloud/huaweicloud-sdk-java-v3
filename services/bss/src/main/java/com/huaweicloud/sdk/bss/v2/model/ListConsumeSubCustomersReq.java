@@ -81,17 +81,16 @@ public class ListConsumeSubCustomersReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConsumeSubCustomersReq listConsumeSubCustomersReq = (ListConsumeSubCustomersReq) o;
-        return Objects.equals(this.billCycle, listConsumeSubCustomersReq.billCycle)
-            && Objects.equals(this.offset, listConsumeSubCustomersReq.offset)
-            && Objects.equals(this.limit, listConsumeSubCustomersReq.limit);
+        ListConsumeSubCustomersReq that = (ListConsumeSubCustomersReq) obj;
+        return Objects.equals(this.billCycle, that.billCycle) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

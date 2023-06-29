@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库用户备注信息。
  */
-public class UpdateDatabaseUserComment  {
-
+public class UpdateDatabaseUserComment {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
@@ -39,9 +29,6 @@ public class UpdateDatabaseUserComment  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户名。
@@ -55,15 +42,10 @@ public class UpdateDatabaseUserComment  {
         this.name = name;
     }
 
-    
-
     public UpdateDatabaseUserComment withHost(String host) {
         this.host = host;
         return this;
     }
-
-    
-
 
     /**
      * 主机地址。
@@ -77,15 +59,10 @@ public class UpdateDatabaseUserComment  {
         this.host = host;
     }
 
-    
-
     public UpdateDatabaseUserComment withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户备注,长度不能超过512个字符，不能包含回车和特殊字符!<\"='>&。  该字段只针对新版本的实例生效，必须大于等于指定的内核版本-2.0.13.0，如果不符合内核版本要求，参考升级内核版本升级至最新。
@@ -99,25 +76,24 @@ public class UpdateDatabaseUserComment  {
         this.comment = comment;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseUserComment updateDatabaseUserComment = (UpdateDatabaseUserComment) o;
-        return Objects.equals(this.name, updateDatabaseUserComment.name) &&
-            Objects.equals(this.host, updateDatabaseUserComment.host) &&
-            Objects.equals(this.comment, updateDatabaseUserComment.comment);
+        UpdateDatabaseUserComment that = (UpdateDatabaseUserComment) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.comment, that.comment);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, host, comment);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class UpdateDatabaseUserComment  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class UpdateDatabaseUserComment  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

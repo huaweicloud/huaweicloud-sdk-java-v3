@@ -121,17 +121,17 @@ public class QuotaDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDto quotaDto = (QuotaDto) o;
-        return Objects.equals(this.type, quotaDto.type) && Objects.equals(this.quota, quotaDto.quota)
-            && Objects.equals(this.min, quotaDto.min) && Objects.equals(this.max, quotaDto.max)
-            && Objects.equals(this.used, quotaDto.used);
+        QuotaDto that = (QuotaDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

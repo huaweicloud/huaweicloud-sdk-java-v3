@@ -125,19 +125,18 @@ public class CreateComputingResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComputingResourceReq createComputingResourceReq = (CreateComputingResourceReq) o;
-        return Objects.equals(this.availabilityZoneId, createComputingResourceReq.availabilityZoneId)
-            && Objects.equals(this.specCode, createComputingResourceReq.specCode)
-            && Objects.equals(this.count, createComputingResourceReq.count)
-            && Objects.equals(this.dataDiskSpecCode, createComputingResourceReq.dataDiskSpecCode)
-            && Objects.equals(this.dataDiskSize, createComputingResourceReq.dataDiskSize);
+        CreateComputingResourceReq that = (CreateComputingResourceReq) obj;
+        return Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.dataDiskSpecCode, that.dataDiskSpecCode)
+            && Objects.equals(this.dataDiskSize, that.dataDiskSize);
     }
 
     @Override

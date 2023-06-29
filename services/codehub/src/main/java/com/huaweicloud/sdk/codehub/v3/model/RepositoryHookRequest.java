@@ -118,18 +118,16 @@ public class RepositoryHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepositoryHookRequest repositoryHookRequest = (RepositoryHookRequest) o;
-        return Objects.equals(this.hookUrl, repositoryHookRequest.hookUrl)
-            && Objects.equals(this.service, repositoryHookRequest.service)
-            && Objects.equals(this.token, repositoryHookRequest.token)
-            && Objects.equals(this.hookEvents, repositoryHookRequest.hookEvents);
+        RepositoryHookRequest that = (RepositoryHookRequest) obj;
+        return Objects.equals(this.hookUrl, that.hookUrl) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.token, that.token) && Objects.equals(this.hookEvents, that.hookEvents);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class ListInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceRequest listInstanceRequest = (ListInstanceRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listInstanceRequest.enterpriseProjectId)
-            && Objects.equals(this.page, listInstanceRequest.page)
-            && Objects.equals(this.pagesize, listInstanceRequest.pagesize)
-            && Objects.equals(this.instancename, listInstanceRequest.instancename);
+        ListInstanceRequest that = (ListInstanceRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.instancename, that.instancename);
     }
 
     @Override

@@ -79,22 +79,15 @@ public class DatabaseInput {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OwnerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerTypeEnum(value));
         }
 
         public static OwnerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,22 +319,19 @@ public class DatabaseInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseInput databaseInput = (DatabaseInput) o;
-        return Objects.equals(this.databaseName, databaseInput.databaseName)
-            && Objects.equals(this.owner, databaseInput.owner)
-            && Objects.equals(this.ownerType, databaseInput.ownerType)
-            && Objects.equals(this.description, databaseInput.description)
-            && Objects.equals(this.location, databaseInput.location)
-            && Objects.equals(this.parameters, databaseInput.parameters)
-            && Objects.equals(this.tableLocationList, databaseInput.tableLocationList)
-            && Objects.equals(this.functionLocationList, databaseInput.functionLocationList);
+        DatabaseInput that = (DatabaseInput) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.tableLocationList, that.tableLocationList)
+            && Objects.equals(this.functionLocationList, that.functionLocationList);
     }
 
     @Override

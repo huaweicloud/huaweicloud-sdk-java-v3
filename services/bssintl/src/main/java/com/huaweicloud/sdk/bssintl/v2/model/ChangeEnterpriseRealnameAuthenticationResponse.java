@@ -34,16 +34,15 @@ public class ChangeEnterpriseRealnameAuthenticationResponse extends SdkResponse 
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEnterpriseRealnameAuthenticationResponse changeEnterpriseRealnameAuthenticationResponse =
-            (ChangeEnterpriseRealnameAuthenticationResponse) o;
-        return Objects.equals(this.isReview, changeEnterpriseRealnameAuthenticationResponse.isReview);
+        ChangeEnterpriseRealnameAuthenticationResponse that = (ChangeEnterpriseRealnameAuthenticationResponse) obj;
+        return Objects.equals(this.isReview, that.isReview);
     }
 
     @Override

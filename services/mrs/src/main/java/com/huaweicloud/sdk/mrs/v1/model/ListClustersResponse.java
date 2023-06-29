@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.Cluster;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListClustersResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterTotal")
-    
+    @JsonProperty(value = "clusterTotal")
 
     private Integer clusterTotal;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusters")
-    
+    @JsonProperty(value = "clusters")
+
     private List<Cluster> clusters = null;
-    
+
     public ListClustersResponse withClusterTotal(Integer clusterTotal) {
         this.clusterTotal = clusterTotal;
         return this;
     }
-
-    
-
 
     /**
      * 集群列表总数。
@@ -54,16 +41,13 @@ public class ListClustersResponse extends SdkResponse {
         this.clusterTotal = clusterTotal;
     }
 
-    
-
     public ListClustersResponse withClusters(List<Cluster> clusters) {
         this.clusters = clusters;
         return this;
     }
 
-    
     public ListClustersResponse addClustersItem(Cluster clustersItem) {
-        if(this.clusters == null) {
+        if (this.clusters == null) {
             this.clusters = new ArrayList<>();
         }
         this.clusters.add(clustersItem);
@@ -71,7 +55,7 @@ public class ListClustersResponse extends SdkResponse {
     }
 
     public ListClustersResponse withClusters(Consumer<List<Cluster>> clustersSetter) {
-        if(this.clusters == null) {
+        if (this.clusters == null) {
             this.clusters = new ArrayList<>();
         }
         clustersSetter.accept(this.clusters);
@@ -90,24 +74,23 @@ public class ListClustersResponse extends SdkResponse {
         this.clusters = clusters;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClustersResponse listClustersResponse = (ListClustersResponse) o;
-        return Objects.equals(this.clusterTotal, listClustersResponse.clusterTotal) &&
-            Objects.equals(this.clusters, listClustersResponse.clusters);
+        ListClustersResponse that = (ListClustersResponse) obj;
+        return Objects.equals(this.clusterTotal, that.clusterTotal) && Objects.equals(this.clusters, that.clusters);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterTotal, clusters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListClustersResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListClustersResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

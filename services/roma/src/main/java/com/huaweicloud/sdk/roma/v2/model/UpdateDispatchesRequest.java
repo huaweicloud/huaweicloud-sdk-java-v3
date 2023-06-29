@@ -109,18 +109,16 @@ public class UpdateDispatchesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDispatchesRequest updateDispatchesRequest = (UpdateDispatchesRequest) o;
-        return Objects.equals(this.instanceId, updateDispatchesRequest.instanceId)
-            && Objects.equals(this.taskId, updateDispatchesRequest.taskId)
-            && Objects.equals(this.dispatchId, updateDispatchesRequest.dispatchId)
-            && Objects.equals(this.body, updateDispatchesRequest.body);
+        UpdateDispatchesRequest that = (UpdateDispatchesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.dispatchId, that.dispatchId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class AssociateDomainV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateDomainV2Request associateDomainV2Request = (AssociateDomainV2Request) o;
-        return Objects.equals(this.instanceId, associateDomainV2Request.instanceId)
-            && Objects.equals(this.groupId, associateDomainV2Request.groupId)
-            && Objects.equals(this.body, associateDomainV2Request.body);
+        AssociateDomainV2Request that = (AssociateDomainV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

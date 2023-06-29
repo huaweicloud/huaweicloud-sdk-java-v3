@@ -1,41 +1,31 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.LinkedEntity;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class RunEntityLinkingResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entities")
-    
+    @JsonProperty(value = "entities")
+
     private List<LinkedEntity> entities = null;
-    
+
     public RunEntityLinkingResponse withEntities(List<LinkedEntity> entities) {
         this.entities = entities;
         return this;
     }
 
-    
     public RunEntityLinkingResponse addEntitiesItem(LinkedEntity entitiesItem) {
-        if(this.entities == null) {
+        if (this.entities == null) {
             this.entities = new ArrayList<>();
         }
         this.entities.add(entitiesItem);
@@ -43,7 +33,7 @@ public class RunEntityLinkingResponse extends SdkResponse {
     }
 
     public RunEntityLinkingResponse withEntities(Consumer<List<LinkedEntity>> entitiesSetter) {
-        if(this.entities == null) {
+        if (this.entities == null) {
             this.entities = new ArrayList<>();
         }
         entitiesSetter.accept(this.entities);
@@ -62,23 +52,23 @@ public class RunEntityLinkingResponse extends SdkResponse {
         this.entities = entities;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunEntityLinkingResponse runEntityLinkingResponse = (RunEntityLinkingResponse) o;
-        return Objects.equals(this.entities, runEntityLinkingResponse.entities);
+        RunEntityLinkingResponse that = (RunEntityLinkingResponse) obj;
+        return Objects.equals(this.entities, that.entities);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(entities);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,6 +77,7 @@ public class RunEntityLinkingResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -97,8 +88,5 @@ public class RunEntityLinkingResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

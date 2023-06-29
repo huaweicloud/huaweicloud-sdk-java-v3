@@ -54,15 +54,15 @@ public class ListVolumeTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVolumeTagsResponse listVolumeTagsResponse = (ListVolumeTagsResponse) o;
-        return Objects.equals(this.tags, listVolumeTagsResponse.tags);
+        ListVolumeTagsResponse that = (ListVolumeTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

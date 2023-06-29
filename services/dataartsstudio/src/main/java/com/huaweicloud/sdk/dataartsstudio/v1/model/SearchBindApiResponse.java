@@ -75,16 +75,15 @@ public class SearchBindApiResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchBindApiResponse searchBindApiResponse = (SearchBindApiResponse) o;
-        return Objects.equals(this.total, searchBindApiResponse.total)
-            && Objects.equals(this.records, searchBindApiResponse.records);
+        SearchBindApiResponse that = (SearchBindApiResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override

@@ -588,36 +588,27 @@ public class VaultCreateResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultCreateResource vaultCreateResource = (VaultCreateResource) o;
-        return Objects.equals(this.billing, vaultCreateResource.billing)
-            && Objects.equals(this.description, vaultCreateResource.description)
-            && Objects.equals(this.id, vaultCreateResource.id) && Objects.equals(this.name, vaultCreateResource.name)
-            && Objects.equals(this.projectId, vaultCreateResource.projectId)
-            && Objects.equals(this.providerId, vaultCreateResource.providerId)
-            && Objects.equals(this.resources, vaultCreateResource.resources)
-            && Objects.equals(this.tags, vaultCreateResource.tags)
-            && Objects.equals(this.enterpriseProjectId, vaultCreateResource.enterpriseProjectId)
-            && Objects.equals(this.autoBind, vaultCreateResource.autoBind)
-            && Objects.equals(this.bindRules, vaultCreateResource.bindRules)
-            && Objects.equals(this.userId, vaultCreateResource.userId)
-            && Objects.equals(this.createdAt, vaultCreateResource.createdAt)
-            && Objects.equals(this.autoExpand, vaultCreateResource.autoExpand)
-            && Objects.equals(this.smnNotify, vaultCreateResource.smnNotify)
-            && Objects.equals(this.threshold, vaultCreateResource.threshold)
-            && Objects.equals(this.errText, vaultCreateResource.errText)
-            && Objects.equals(this.retCode, vaultCreateResource.retCode)
-            && Objects.equals(this.orders, vaultCreateResource.orders)
-            && Objects.equals(this.backupNamePrefix, vaultCreateResource.backupNamePrefix)
-            && Objects.equals(this.demandBilling, vaultCreateResource.demandBilling)
-            && Objects.equals(this.cbcDeleteCount, vaultCreateResource.cbcDeleteCount)
-            && Objects.equals(this.frozen, vaultCreateResource.frozen);
+        VaultCreateResource that = (VaultCreateResource) obj;
+        return Objects.equals(this.billing, that.billing) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.providerId, that.providerId)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.errText, that.errText)
+            && Objects.equals(this.retCode, that.retCode) && Objects.equals(this.orders, that.orders)
+            && Objects.equals(this.backupNamePrefix, that.backupNamePrefix)
+            && Objects.equals(this.demandBilling, that.demandBilling)
+            && Objects.equals(this.cbcDeleteCount, that.cbcDeleteCount) && Objects.equals(this.frozen, that.frozen);
     }
 
     @Override

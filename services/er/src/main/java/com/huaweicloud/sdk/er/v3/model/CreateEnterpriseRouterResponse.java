@@ -90,17 +90,16 @@ public class CreateEnterpriseRouterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnterpriseRouterResponse createEnterpriseRouterResponse = (CreateEnterpriseRouterResponse) o;
-        return Objects.equals(this.instance, createEnterpriseRouterResponse.instance)
-            && Objects.equals(this.requestId, createEnterpriseRouterResponse.requestId)
-            && Objects.equals(this.xClientToken, createEnterpriseRouterResponse.xClientToken);
+        CreateEnterpriseRouterResponse that = (CreateEnterpriseRouterResponse) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.xClientToken, that.xClientToken);
     }
 
     @Override

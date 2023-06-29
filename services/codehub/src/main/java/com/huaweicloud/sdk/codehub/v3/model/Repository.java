@@ -33,15 +33,15 @@ public class Repository {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Repository repository = (Repository) o;
-        return Objects.equals(this.repositoryUuid, repository.repositoryUuid);
+        Repository that = (Repository) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid);
     }
 
     @Override

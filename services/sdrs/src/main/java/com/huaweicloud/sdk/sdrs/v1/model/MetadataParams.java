@@ -35,15 +35,15 @@ public class MetadataParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataParams metadataParams = (MetadataParams) o;
-        return Objects.equals(this.systemFrozen, metadataParams.systemFrozen);
+        MetadataParams that = (MetadataParams) obj;
+        return Objects.equals(this.systemFrozen, that.systemFrozen);
     }
 
     @Override

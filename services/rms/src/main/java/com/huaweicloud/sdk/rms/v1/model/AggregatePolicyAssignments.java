@@ -109,18 +109,17 @@ public class AggregatePolicyAssignments {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregatePolicyAssignments aggregatePolicyAssignments = (AggregatePolicyAssignments) o;
-        return Objects.equals(this.policyAssignmentId, aggregatePolicyAssignments.policyAssignmentId)
-            && Objects.equals(this.policyAssignmentName, aggregatePolicyAssignments.policyAssignmentName)
-            && Objects.equals(this.compliance, aggregatePolicyAssignments.compliance)
-            && Objects.equals(this.accountId, aggregatePolicyAssignments.accountId);
+        AggregatePolicyAssignments that = (AggregatePolicyAssignments) obj;
+        return Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.compliance, that.compliance) && Objects.equals(this.accountId, that.accountId);
     }
 
     @Override

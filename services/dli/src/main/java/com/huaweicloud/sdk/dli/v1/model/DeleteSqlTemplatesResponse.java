@@ -56,16 +56,15 @@ public class DeleteSqlTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSqlTemplatesResponse deleteSqlTemplatesResponse = (DeleteSqlTemplatesResponse) o;
-        return Objects.equals(this.isSuccess, deleteSqlTemplatesResponse.isSuccess)
-            && Objects.equals(this.message, deleteSqlTemplatesResponse.message);
+        DeleteSqlTemplatesResponse that = (DeleteSqlTemplatesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

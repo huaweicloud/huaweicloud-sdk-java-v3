@@ -34,15 +34,15 @@ public class UpdateDbUserCommentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDbUserCommentResponse updateDbUserCommentResponse = (UpdateDbUserCommentResponse) o;
-        return Objects.equals(this.resp, updateDbUserCommentResponse.resp);
+        UpdateDbUserCommentResponse that = (UpdateDbUserCommentResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override

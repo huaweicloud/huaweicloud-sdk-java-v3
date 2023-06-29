@@ -99,18 +99,16 @@ public class StartResJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartResJobRequest startResJobRequest = (StartResJobRequest) o;
-        return Objects.equals(this.workspaceId, startResJobRequest.workspaceId)
-            && Objects.equals(this.resourceId, startResJobRequest.resourceId)
-            && Objects.equals(this.jobId, startResJobRequest.jobId)
-            && Objects.equals(this.action, startResJobRequest.action);
+        StartResJobRequest that = (StartResJobRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.action, that.action);
     }
 
     @Override

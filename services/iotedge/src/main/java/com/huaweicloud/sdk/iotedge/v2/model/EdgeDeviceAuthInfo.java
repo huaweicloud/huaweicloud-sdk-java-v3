@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 设备接入类型（已废弃）
  */
-public class EdgeDeviceAuthInfo  {
-
+public class EdgeDeviceAuthInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
 
     private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secret")
-    
+    @JsonProperty(value = "secret")
 
     private String secret;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fingerprint")
-    
+    @JsonProperty(value = "fingerprint")
 
     private String fingerprint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="secure_access")
-    
+    @JsonProperty(value = "secure_access")
 
     private Boolean secureAccess;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timeout")
-    
+    @JsonProperty(value = "timeout")
 
     private Integer timeout;
 
@@ -51,9 +39,6 @@ public class EdgeDeviceAuthInfo  {
         this.authType = authType;
         return this;
     }
-
-    
-
 
     /**
      * 鉴权类型。支持密钥认证接入(SECRET)和证书认证接入(CERTIFICATES)两种方式。使用密钥认证接入方式(SECRET)填写secret字段，使用证书认证接入方式(CERTIFICATES)填写fingerprint字段，不填写auth_type默认为密钥认证接入方式(SECRET)
@@ -67,15 +52,10 @@ public class EdgeDeviceAuthInfo  {
         this.authType = authType;
     }
 
-    
-
     public EdgeDeviceAuthInfo withSecret(String secret) {
         this.secret = secret;
         return this;
     }
-
-    
-
 
     /**
      * 设备密钥，认证类型使用密钥认证接入(SECRET)可填写该字段。注意：NB设备密钥由于协议特殊性，只支持十六进制密钥接入；修改设备、查询设备及查询设备列表接口不返回该参数。
@@ -89,15 +69,10 @@ public class EdgeDeviceAuthInfo  {
         this.secret = secret;
     }
 
-    
-
     public EdgeDeviceAuthInfo withFingerprint(String fingerprint) {
         this.fingerprint = fingerprint;
         return this;
     }
-
-    
-
 
     /**
      * 证书指纹，认证类型使用证书认证接入(CERTIFICATES)可填写该字段，注册设备时不填写该字段则取第一次设备接入时的证书指纹。注意：指纹只能为40位十六进制字符串或者64位十六进制字符串；修改设备、查询设备及查询设备列表接口不返回该参数。
@@ -111,15 +86,10 @@ public class EdgeDeviceAuthInfo  {
         this.fingerprint = fingerprint;
     }
 
-    
-
     public EdgeDeviceAuthInfo withSecureAccess(Boolean secureAccess) {
         this.secureAccess = secureAccess;
         return this;
     }
-
-    
-
 
     /**
      * 指设备是否通过安全协议方式接入，默认值为true。 - true：通过安全协议方式接入。 - false：通过非安全协议方式接入。 
@@ -133,15 +103,10 @@ public class EdgeDeviceAuthInfo  {
         this.secureAccess = secureAccess;
     }
 
-    
-
     public EdgeDeviceAuthInfo withTimeout(Integer timeout) {
         this.timeout = timeout;
         return this;
     }
-
-    
-
 
     /**
      * 设备验证码的有效时间，单位：秒，默认值：0 若设备在有效时间内未接入物联网平台并激活，则平台会删除该设备的注册信息。若设置为“0”，则表示设备验证码不会失效（建议填写为“0”）。注意：只有注册设备接口或者修改设备接口修改timeout时返回该参数。 
@@ -157,27 +122,25 @@ public class EdgeDeviceAuthInfo  {
         this.timeout = timeout;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeDeviceAuthInfo edgeDeviceAuthInfo = (EdgeDeviceAuthInfo) o;
-        return Objects.equals(this.authType, edgeDeviceAuthInfo.authType) &&
-            Objects.equals(this.secret, edgeDeviceAuthInfo.secret) &&
-            Objects.equals(this.fingerprint, edgeDeviceAuthInfo.fingerprint) &&
-            Objects.equals(this.secureAccess, edgeDeviceAuthInfo.secureAccess) &&
-            Objects.equals(this.timeout, edgeDeviceAuthInfo.timeout);
+        EdgeDeviceAuthInfo that = (EdgeDeviceAuthInfo) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.secret, that.secret)
+            && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.secureAccess, that.secureAccess) && Objects.equals(this.timeout, that.timeout);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(authType, secret, fingerprint, secureAccess, timeout);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -190,6 +153,7 @@ public class EdgeDeviceAuthInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -200,8 +164,5 @@ public class EdgeDeviceAuthInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

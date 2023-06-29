@@ -77,16 +77,16 @@ public class GpuInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GpuInfo gpuInfo = (GpuInfo) o;
-        return Objects.equals(this.name, gpuInfo.name) && Objects.equals(this.type, gpuInfo.type)
-            && Objects.equals(this.capacity, gpuInfo.capacity);
+        GpuInfo that = (GpuInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.capacity, that.capacity);
     }
 
     @Override

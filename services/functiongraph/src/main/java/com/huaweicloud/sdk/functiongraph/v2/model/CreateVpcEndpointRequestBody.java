@@ -99,18 +99,16 @@ public class CreateVpcEndpointRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcEndpointRequestBody createVpcEndpointRequestBody = (CreateVpcEndpointRequestBody) o;
-        return Objects.equals(this.flavor, createVpcEndpointRequestBody.flavor)
-            && Objects.equals(this.xrole, createVpcEndpointRequestBody.xrole)
-            && Objects.equals(this.vpcId, createVpcEndpointRequestBody.vpcId)
-            && Objects.equals(this.subnetId, createVpcEndpointRequestBody.subnetId);
+        CreateVpcEndpointRequestBody that = (CreateVpcEndpointRequestBody) obj;
+        return Objects.equals(this.flavor, that.flavor) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateScaleOutPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScaleOutPolicyRequest updateScaleOutPolicyRequest = (UpdateScaleOutPolicyRequest) o;
-        return Objects.equals(this.id, updateScaleOutPolicyRequest.id)
-            && Objects.equals(this.body, updateScaleOutPolicyRequest.body);
+        UpdateScaleOutPolicyRequest that = (UpdateScaleOutPolicyRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.body, that.body);
     }
 
     @Override

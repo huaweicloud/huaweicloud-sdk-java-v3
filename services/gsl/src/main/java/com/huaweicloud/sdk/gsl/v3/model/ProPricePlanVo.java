@@ -363,30 +363,24 @@ public class ProPricePlanVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProPricePlanVo proPricePlanVo = (ProPricePlanVo) o;
-        return Objects.equals(this.pricePlanId, proPricePlanVo.pricePlanId)
-            && Objects.equals(this.pricePlanName, proPricePlanVo.pricePlanName)
-            && Objects.equals(this.description, proPricePlanVo.description)
-            && Objects.equals(this.flowTotal, proPricePlanVo.flowTotal)
-            && Objects.equals(this.packageType, proPricePlanVo.packageType)
-            && Objects.equals(this.period, proPricePlanVo.period)
-            && Objects.equals(this.periodType, proPricePlanVo.periodType)
-            && Objects.equals(this.effectType, proPricePlanVo.effectType)
-            && Objects.equals(this.silentPeriodDay, proPricePlanVo.silentPeriodDay)
-            && Objects.equals(this.silentPeriodUnit, proPricePlanVo.silentPeriodUnit)
-            && Objects.equals(this.autoRenew, proPricePlanVo.autoRenew)
-            && Objects.equals(this.locationDesc, proPricePlanVo.locationDesc)
-            && Objects.equals(this.locationType, proPricePlanVo.locationType)
-            && Objects.equals(this.simType, proPricePlanVo.simType)
-            && Objects.equals(this.carrierType, proPricePlanVo.carrierType)
-            && Objects.equals(this.price, proPricePlanVo.price);
+        ProPricePlanVo that = (ProPricePlanVo) obj;
+        return Objects.equals(this.pricePlanId, that.pricePlanId)
+            && Objects.equals(this.pricePlanName, that.pricePlanName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.flowTotal, that.flowTotal)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.effectType, that.effectType)
+            && Objects.equals(this.silentPeriodDay, that.silentPeriodDay)
+            && Objects.equals(this.silentPeriodUnit, that.silentPeriodUnit)
+            && Objects.equals(this.autoRenew, that.autoRenew) && Objects.equals(this.locationDesc, that.locationDesc)
+            && Objects.equals(this.locationType, that.locationType) && Objects.equals(this.simType, that.simType)
+            && Objects.equals(this.carrierType, that.carrierType) && Objects.equals(this.price, that.price);
     }
 
     @Override

@@ -210,20 +210,17 @@ public class ListQueryHttpCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueryHttpCodeRequest listQueryHttpCodeRequest = (ListQueryHttpCodeRequest) o;
-        return Objects.equals(this.playDomains, listQueryHttpCodeRequest.playDomains)
-            && Objects.equals(this.code, listQueryHttpCodeRequest.code)
-            && Objects.equals(this.region, listQueryHttpCodeRequest.region)
-            && Objects.equals(this.isp, listQueryHttpCodeRequest.isp)
-            && Objects.equals(this.startTime, listQueryHttpCodeRequest.startTime)
-            && Objects.equals(this.endTime, listQueryHttpCodeRequest.endTime);
+        ListQueryHttpCodeRequest that = (ListQueryHttpCodeRequest) obj;
+        return Objects.equals(this.playDomains, that.playDomains) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

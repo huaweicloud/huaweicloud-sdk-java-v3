@@ -55,16 +55,15 @@ public class InitialDesired {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InitialDesired initialDesired = (InitialDesired) o;
-        return Objects.equals(this.serviceId, initialDesired.serviceId)
-            && Objects.equals(this.desired, initialDesired.desired);
+        InitialDesired that = (InitialDesired) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.desired, that.desired);
     }
 
     @Override

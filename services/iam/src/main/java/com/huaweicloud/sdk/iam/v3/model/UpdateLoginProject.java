@@ -55,16 +55,16 @@ public class UpdateLoginProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLoginProject updateLoginProject = (UpdateLoginProject) o;
-        return Objects.equals(this.enabled, updateLoginProject.enabled)
-            && Objects.equals(this.verificationMethod, updateLoginProject.verificationMethod);
+        UpdateLoginProject that = (UpdateLoginProject) obj;
+        return Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.verificationMethod, that.verificationMethod);
     }
 
     @Override

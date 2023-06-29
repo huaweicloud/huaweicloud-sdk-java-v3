@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,16 +11,13 @@ import java.util.Objects;
  */
 public class ShowInstanceMonitorExtendResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="monitor_switch")
-    
+    @JsonProperty(value = "monitor_switch")
 
     private Boolean monitorSwitch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private Integer period;
 
@@ -36,9 +25,6 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         this.monitorSwitch = monitorSwitch;
         return this;
     }
-
-    
-
 
     /**
      * 实例秒级监控开关。  - true，表示开启。 - false，表示关闭。
@@ -52,15 +38,10 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         this.monitorSwitch = monitorSwitch;
     }
 
-    
-
     public ShowInstanceMonitorExtendResponse withPeriod(Integer period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 采集周期，仅在monitor_switch为true时返回。  - 1：采集周期为1s。 - 5：采集周期为5s。
@@ -74,24 +55,23 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         this.period = period;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceMonitorExtendResponse showInstanceMonitorExtendResponse = (ShowInstanceMonitorExtendResponse) o;
-        return Objects.equals(this.monitorSwitch, showInstanceMonitorExtendResponse.monitorSwitch) &&
-            Objects.equals(this.period, showInstanceMonitorExtendResponse.period);
+        ShowInstanceMonitorExtendResponse that = (ShowInstanceMonitorExtendResponse) obj;
+        return Objects.equals(this.monitorSwitch, that.monitorSwitch) && Objects.equals(this.period, that.period);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(monitorSwitch, period);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +81,7 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +92,5 @@ public class ShowInstanceMonitorExtendResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

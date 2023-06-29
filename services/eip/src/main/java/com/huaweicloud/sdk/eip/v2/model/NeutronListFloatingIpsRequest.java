@@ -233,24 +233,20 @@ public class NeutronListFloatingIpsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListFloatingIpsRequest neutronListFloatingIpsRequest = (NeutronListFloatingIpsRequest) o;
-        return Objects.equals(this.limit, neutronListFloatingIpsRequest.limit)
-            && Objects.equals(this.marker, neutronListFloatingIpsRequest.marker)
-            && Objects.equals(this.pageReverse, neutronListFloatingIpsRequest.pageReverse)
-            && Objects.equals(this.id, neutronListFloatingIpsRequest.id)
-            && Objects.equals(this.floatingIpAddress, neutronListFloatingIpsRequest.floatingIpAddress)
-            && Objects.equals(this.routerId, neutronListFloatingIpsRequest.routerId)
-            && Objects.equals(this.portId, neutronListFloatingIpsRequest.portId)
-            && Objects.equals(this.fixedIpAddress, neutronListFloatingIpsRequest.fixedIpAddress)
-            && Objects.equals(this.tenantId, neutronListFloatingIpsRequest.tenantId)
-            && Objects.equals(this.floatingNetworkId, neutronListFloatingIpsRequest.floatingNetworkId);
+        NeutronListFloatingIpsRequest that = (NeutronListFloatingIpsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.fixedIpAddress, that.fixedIpAddress) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.floatingNetworkId, that.floatingNetworkId);
     }
 
     @Override

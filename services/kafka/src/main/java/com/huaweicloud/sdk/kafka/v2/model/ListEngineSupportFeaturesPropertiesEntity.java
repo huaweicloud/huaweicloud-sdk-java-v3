@@ -99,19 +99,16 @@ public class ListEngineSupportFeaturesPropertiesEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEngineSupportFeaturesPropertiesEntity listEngineSupportFeaturesPropertiesEntity =
-            (ListEngineSupportFeaturesPropertiesEntity) o;
-        return Objects.equals(this.maxTask, listEngineSupportFeaturesPropertiesEntity.maxTask)
-            && Objects.equals(this.minTask, listEngineSupportFeaturesPropertiesEntity.minTask)
-            && Objects.equals(this.maxNode, listEngineSupportFeaturesPropertiesEntity.maxNode)
-            && Objects.equals(this.minNode, listEngineSupportFeaturesPropertiesEntity.minNode);
+        ListEngineSupportFeaturesPropertiesEntity that = (ListEngineSupportFeaturesPropertiesEntity) obj;
+        return Objects.equals(this.maxTask, that.maxTask) && Objects.equals(this.minTask, that.minTask)
+            && Objects.equals(this.maxNode, that.maxNode) && Objects.equals(this.minNode, that.minNode);
     }
 
     @Override

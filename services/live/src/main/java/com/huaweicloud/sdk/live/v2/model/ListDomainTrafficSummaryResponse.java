@@ -77,16 +77,15 @@ public class ListDomainTrafficSummaryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainTrafficSummaryResponse listDomainTrafficSummaryResponse = (ListDomainTrafficSummaryResponse) o;
-        return Objects.equals(this.trafficList, listDomainTrafficSummaryResponse.trafficList)
-            && Objects.equals(this.xRequestId, listDomainTrafficSummaryResponse.xRequestId);
+        ListDomainTrafficSummaryResponse that = (ListDomainTrafficSummaryResponse) obj;
+        return Objects.equals(this.trafficList, that.trafficList) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -94,22 +94,15 @@ public class ListAreaDetailRequest {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IntervalEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntervalEnum(value));
         }
 
         public static IntervalEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -372,24 +365,19 @@ public class ListAreaDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAreaDetailRequest listAreaDetailRequest = (ListAreaDetailRequest) o;
-        return Objects.equals(this.startTime, listAreaDetailRequest.startTime)
-            && Objects.equals(this.endTime, listAreaDetailRequest.endTime)
-            && Objects.equals(this.playDomains, listAreaDetailRequest.playDomains)
-            && Objects.equals(this.app, listAreaDetailRequest.app)
-            && Objects.equals(this.stream, listAreaDetailRequest.stream)
-            && Objects.equals(this.interval, listAreaDetailRequest.interval)
-            && Objects.equals(this.isp, listAreaDetailRequest.isp)
-            && Objects.equals(this.area, listAreaDetailRequest.area)
-            && Objects.equals(this.metric, listAreaDetailRequest.metric)
-            && Objects.equals(this.protocol, listAreaDetailRequest.protocol);
+        ListAreaDetailRequest that = (ListAreaDetailRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.playDomains, that.playDomains) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.metric, that.metric) && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

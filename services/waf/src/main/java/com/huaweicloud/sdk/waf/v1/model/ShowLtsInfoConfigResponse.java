@@ -110,18 +110,16 @@ public class ShowLtsInfoConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLtsInfoConfigResponse showLtsInfoConfigResponse = (ShowLtsInfoConfigResponse) o;
-        return Objects.equals(this.id, showLtsInfoConfigResponse.id)
-            && Objects.equals(this.enabled, showLtsInfoConfigResponse.enabled)
-            && Objects.equals(this.ltsIdInfo, showLtsInfoConfigResponse.ltsIdInfo)
-            && Objects.equals(this.enabale, showLtsInfoConfigResponse.enabale);
+        ShowLtsInfoConfigResponse that = (ShowLtsInfoConfigResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.ltsIdInfo, that.ltsIdInfo) && Objects.equals(this.enabale, that.enabale);
     }
 
     @Override

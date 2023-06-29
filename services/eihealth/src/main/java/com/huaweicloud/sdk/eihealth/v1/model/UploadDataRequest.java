@@ -201,21 +201,19 @@ public class UploadDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadDataRequest uploadDataRequest = (UploadDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, uploadDataRequest.eihealthProjectId)
-            && Objects.equals(this.targetFolder, uploadDataRequest.targetFolder)
-            && Objects.equals(this.partNumber, uploadDataRequest.partNumber)
-            && Objects.equals(this.totalPart, uploadDataRequest.totalPart)
-            && Objects.equals(this.multipartId, uploadDataRequest.multipartId)
-            && Objects.equals(this.fileName, uploadDataRequest.fileName)
-            && Objects.equals(this.md5, uploadDataRequest.md5) && Objects.equals(this.body, uploadDataRequest.body);
+        UploadDataRequest that = (UploadDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.targetFolder, that.targetFolder) && Objects.equals(this.partNumber, that.partNumber)
+            && Objects.equals(this.totalPart, that.totalPart) && Objects.equals(this.multipartId, that.multipartId)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.md5, that.md5)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

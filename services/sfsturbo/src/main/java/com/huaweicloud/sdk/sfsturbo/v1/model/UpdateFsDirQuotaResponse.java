@@ -122,19 +122,17 @@ public class UpdateFsDirQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFsDirQuotaResponse updateFsDirQuotaResponse = (UpdateFsDirQuotaResponse) o;
-        return Objects.equals(this.path, updateFsDirQuotaResponse.path)
-            && Objects.equals(this.capacity, updateFsDirQuotaResponse.capacity)
-            && Objects.equals(this.inode, updateFsDirQuotaResponse.inode)
-            && Objects.equals(this.usedCapacity, updateFsDirQuotaResponse.usedCapacity)
-            && Objects.equals(this.usedInode, updateFsDirQuotaResponse.usedInode);
+        UpdateFsDirQuotaResponse that = (UpdateFsDirQuotaResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.inode, that.inode) && Objects.equals(this.usedCapacity, that.usedCapacity)
+            && Objects.equals(this.usedInode, that.usedInode);
     }
 
     @Override

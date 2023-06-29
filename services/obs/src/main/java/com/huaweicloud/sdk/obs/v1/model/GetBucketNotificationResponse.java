@@ -199,21 +199,18 @@ public class GetBucketNotificationResponse extends SdkXmlResponse<GetBucketNotif
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetBucketNotificationResponse getBucketNotificationResponse = (GetBucketNotificationResponse) o;
-        return Objects.equals(this.notificationConfiguration, getBucketNotificationResponse.notificationConfiguration)
-            && Objects.equals(this.xObsId2, getBucketNotificationResponse.xObsId2)
-            && Objects.equals(this.xObsRequestId, getBucketNotificationResponse.xObsRequestId)
-            && Objects.equals(this.etag, getBucketNotificationResponse.etag)
-            && Objects.equals(this.connection, getBucketNotificationResponse.connection)
-            && Objects.equals(this.contentLength, getBucketNotificationResponse.contentLength)
-            && Objects.equals(this.date, getBucketNotificationResponse.date);
+        GetBucketNotificationResponse that = (GetBucketNotificationResponse) obj;
+        return Objects.equals(this.notificationConfiguration, that.notificationConfiguration)
+            && Objects.equals(this.xObsId2, that.xObsId2) && Objects.equals(this.xObsRequestId, that.xObsRequestId)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

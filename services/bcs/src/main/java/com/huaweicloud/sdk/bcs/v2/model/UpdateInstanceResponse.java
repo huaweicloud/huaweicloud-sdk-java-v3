@@ -34,15 +34,15 @@ public class UpdateInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceResponse updateInstanceResponse = (UpdateInstanceResponse) o;
-        return Objects.equals(this.operationId, updateInstanceResponse.operationId);
+        UpdateInstanceResponse that = (UpdateInstanceResponse) obj;
+        return Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

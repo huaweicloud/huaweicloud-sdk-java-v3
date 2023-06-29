@@ -112,17 +112,16 @@ public class UpdateInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceRequestBody updateInstanceRequestBody = (UpdateInstanceRequestBody) o;
-        return Objects.equals(this.nodeOrgs, updateInstanceRequestBody.nodeOrgs)
-            && Objects.equals(this.publicips, updateInstanceRequestBody.publicips)
-            && Objects.equals(this.isDeleteOrg, updateInstanceRequestBody.isDeleteOrg);
+        UpdateInstanceRequestBody that = (UpdateInstanceRequestBody) obj;
+        return Objects.equals(this.nodeOrgs, that.nodeOrgs) && Objects.equals(this.publicips, that.publicips)
+            && Objects.equals(this.isDeleteOrg, that.isDeleteOrg);
     }
 
     @Override

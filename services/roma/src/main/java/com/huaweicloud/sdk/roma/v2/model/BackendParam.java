@@ -71,22 +71,15 @@ public class BackendParam {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocationEnum(value));
         }
 
         public static LocationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class BackendParam {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginEnum(value));
         }
 
         public static OriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -336,18 +322,18 @@ public class BackendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendParam backendParam = (BackendParam) o;
-        return Objects.equals(this.name, backendParam.name) && Objects.equals(this.location, backendParam.location)
-            && Objects.equals(this.origin, backendParam.origin) && Objects.equals(this.value, backendParam.value)
-            && Objects.equals(this.remark, backendParam.remark) && Objects.equals(this.id, backendParam.id)
-            && Objects.equals(this.reqParamId, backendParam.reqParamId);
+        BackendParam that = (BackendParam) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.origin, that.origin) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.reqParamId, that.reqParamId);
     }
 
     @Override

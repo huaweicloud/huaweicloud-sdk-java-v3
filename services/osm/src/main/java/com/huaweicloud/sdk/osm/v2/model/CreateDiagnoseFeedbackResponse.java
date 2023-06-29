@@ -56,16 +56,15 @@ public class CreateDiagnoseFeedbackResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDiagnoseFeedbackResponse createDiagnoseFeedbackResponse = (CreateDiagnoseFeedbackResponse) o;
-        return Objects.equals(this.errorCode, createDiagnoseFeedbackResponse.errorCode)
-            && Objects.equals(this.errorMsg, createDiagnoseFeedbackResponse.errorMsg);
+        CreateDiagnoseFeedbackResponse that = (CreateDiagnoseFeedbackResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

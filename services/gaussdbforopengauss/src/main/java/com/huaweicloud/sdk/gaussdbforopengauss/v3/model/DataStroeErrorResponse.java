@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * DataStroeErrorResponse
  */
-public class DataStroeErrorResponse  {
-
+public class DataStroeErrorResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
@@ -33,9 +24,6 @@ public class DataStroeErrorResponse  {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 错误码
@@ -49,15 +37,10 @@ public class DataStroeErrorResponse  {
         this.errorCode = errorCode;
     }
 
-    
-
     public DataStroeErrorResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 错误消息。
@@ -71,24 +54,23 @@ public class DataStroeErrorResponse  {
         this.errorMsg = errorMsg;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataStroeErrorResponse dataStroeErrorResponse = (DataStroeErrorResponse) o;
-        return Objects.equals(this.errorCode, dataStroeErrorResponse.errorCode) &&
-            Objects.equals(this.errorMsg, dataStroeErrorResponse.errorMsg);
+        DataStroeErrorResponse that = (DataStroeErrorResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class DataStroeErrorResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class DataStroeErrorResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

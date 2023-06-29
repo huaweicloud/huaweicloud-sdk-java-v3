@@ -77,16 +77,15 @@ public class ListApplicationsV6Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationsV6Response listApplicationsV6Response = (ListApplicationsV6Response) o;
-        return Objects.equals(this.applications, listApplicationsV6Response.applications)
-            && Objects.equals(this.count, listApplicationsV6Response.count);
+        ListApplicationsV6Response that = (ListApplicationsV6Response) obj;
+        return Objects.equals(this.applications, that.applications) && Objects.equals(this.count, that.count);
     }
 
     @Override

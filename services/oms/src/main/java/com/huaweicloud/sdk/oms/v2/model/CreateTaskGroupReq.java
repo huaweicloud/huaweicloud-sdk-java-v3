@@ -104,22 +104,15 @@ public class CreateTaskGroupReq {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -220,22 +213,15 @@ public class CreateTaskGroupReq {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectOverwriteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectOverwriteModeEnum(value));
         }
 
         public static ObjectOverwriteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -308,22 +294,15 @@ public class CreateTaskGroupReq {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistencyCheckEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyCheckEnum(value));
         }
 
         public static ConsistencyCheckEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -660,29 +639,26 @@ public class CreateTaskGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskGroupReq createTaskGroupReq = (CreateTaskGroupReq) o;
-        return Objects.equals(this.srcNode, createTaskGroupReq.srcNode)
-            && Objects.equals(this.description, createTaskGroupReq.description)
-            && Objects.equals(this.dstNode, createTaskGroupReq.dstNode)
-            && Objects.equals(this.enableMetadataMigration, createTaskGroupReq.enableMetadataMigration)
-            && Objects.equals(this.enableFailedObjectRecording, createTaskGroupReq.enableFailedObjectRecording)
-            && Objects.equals(this.enableRestore, createTaskGroupReq.enableRestore)
-            && Objects.equals(this.enableKms, createTaskGroupReq.enableKms)
-            && Objects.equals(this.taskType, createTaskGroupReq.taskType)
-            && Objects.equals(this.bandwidthPolicy, createTaskGroupReq.bandwidthPolicy)
-            && Objects.equals(this.smnConfig, createTaskGroupReq.smnConfig)
-            && Objects.equals(this.sourceCdn, createTaskGroupReq.sourceCdn)
-            && Objects.equals(this.migrateSince, createTaskGroupReq.migrateSince)
-            && Objects.equals(this.objectOverwriteMode, createTaskGroupReq.objectOverwriteMode)
-            && Objects.equals(this.consistencyCheck, createTaskGroupReq.consistencyCheck)
-            && Objects.equals(this.enableRequesterPays, createTaskGroupReq.enableRequesterPays);
+        CreateTaskGroupReq that = (CreateTaskGroupReq) obj;
+        return Objects.equals(this.srcNode, that.srcNode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.dstNode, that.dstNode)
+            && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
+            && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
+            && Objects.equals(this.enableRestore, that.enableRestore) && Objects.equals(this.enableKms, that.enableKms)
+            && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
+            && Objects.equals(this.smnConfig, that.smnConfig) && Objects.equals(this.sourceCdn, that.sourceCdn)
+            && Objects.equals(this.migrateSince, that.migrateSince)
+            && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
+            && Objects.equals(this.consistencyCheck, that.consistencyCheck)
+            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
     }
 
     @Override

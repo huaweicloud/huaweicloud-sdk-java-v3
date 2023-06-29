@@ -195,20 +195,19 @@ public class ListResResourceSpecResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResResourceSpecResponse listResResourceSpecResponse = (ListResResourceSpecResponse) o;
-        return Objects.equals(this.offlineSpec, listResResourceSpecResponse.offlineSpec)
-            && Objects.equals(this.nearlineSpec, listResResourceSpecResponse.nearlineSpec)
-            && Objects.equals(this.deepLearningSpec, listResResourceSpecResponse.deepLearningSpec)
-            && Objects.equals(this.isSuccess, listResResourceSpecResponse.isSuccess)
-            && Objects.equals(this.message, listResResourceSpecResponse.message)
-            && Objects.equals(this.errorCode, listResResourceSpecResponse.errorCode);
+        ListResResourceSpecResponse that = (ListResResourceSpecResponse) obj;
+        return Objects.equals(this.offlineSpec, that.offlineSpec)
+            && Objects.equals(this.nearlineSpec, that.nearlineSpec)
+            && Objects.equals(this.deepLearningSpec, that.deepLearningSpec)
+            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

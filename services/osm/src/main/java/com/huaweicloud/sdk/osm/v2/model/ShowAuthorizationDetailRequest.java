@@ -129,19 +129,17 @@ public class ShowAuthorizationDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuthorizationDetailRequest showAuthorizationDetailRequest = (ShowAuthorizationDetailRequest) o;
-        return Objects.equals(this.authorizationId, showAuthorizationDetailRequest.authorizationId)
-            && Objects.equals(this.groupId, showAuthorizationDetailRequest.groupId)
-            && Objects.equals(this.xSite, showAuthorizationDetailRequest.xSite)
-            && Objects.equals(this.xLanguage, showAuthorizationDetailRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showAuthorizationDetailRequest.xTimeZone);
+        ShowAuthorizationDetailRequest that = (ShowAuthorizationDetailRequest) obj;
+        return Objects.equals(this.authorizationId, that.authorizationId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

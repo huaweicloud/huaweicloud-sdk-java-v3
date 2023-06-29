@@ -99,18 +99,16 @@ public class SystemSecurityPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SystemSecurityPolicy systemSecurityPolicy = (SystemSecurityPolicy) o;
-        return Objects.equals(this.name, systemSecurityPolicy.name)
-            && Objects.equals(this.protocols, systemSecurityPolicy.protocols)
-            && Objects.equals(this.ciphers, systemSecurityPolicy.ciphers)
-            && Objects.equals(this.projectId, systemSecurityPolicy.projectId);
+        SystemSecurityPolicy that = (SystemSecurityPolicy) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.protocols, that.protocols)
+            && Objects.equals(this.ciphers, that.ciphers) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

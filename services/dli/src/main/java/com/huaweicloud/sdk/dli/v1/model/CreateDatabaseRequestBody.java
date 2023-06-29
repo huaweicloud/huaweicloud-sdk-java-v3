@@ -118,18 +118,18 @@ public class CreateDatabaseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseRequestBody createDatabaseRequestBody = (CreateDatabaseRequestBody) o;
-        return Objects.equals(this.databaseName, createDatabaseRequestBody.databaseName)
-            && Objects.equals(this.description, createDatabaseRequestBody.description)
-            && Objects.equals(this.enterpriseProjectId, createDatabaseRequestBody.enterpriseProjectId)
-            && Objects.equals(this.tags, createDatabaseRequestBody.tags);
+        CreateDatabaseRequestBody that = (CreateDatabaseRequestBody) obj;
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

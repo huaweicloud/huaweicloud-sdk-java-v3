@@ -99,18 +99,16 @@ public class UnSupportedItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnSupportedItem unSupportedItem = (UnSupportedItem) o;
-        return Objects.equals(this.reason, unSupportedItem.reason)
-            && Objects.equals(this.suggestion, unSupportedItem.suggestion)
-            && Objects.equals(this.lineNumber, unSupportedItem.lineNumber)
-            && Objects.equals(this.position, unSupportedItem.position);
+        UnSupportedItem that = (UnSupportedItem) obj;
+        return Objects.equals(this.reason, that.reason) && Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.lineNumber, that.lineNumber) && Objects.equals(this.position, that.position);
     }
 
     @Override

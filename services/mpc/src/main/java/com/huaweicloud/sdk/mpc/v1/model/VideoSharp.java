@@ -79,17 +79,16 @@ public class VideoSharp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoSharp videoSharp = (VideoSharp) o;
-        return Objects.equals(this.name, videoSharp.name)
-            && Objects.equals(this.executionOrder, videoSharp.executionOrder)
-            && Objects.equals(this.amount, videoSharp.amount);
+        VideoSharp that = (VideoSharp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.executionOrder, that.executionOrder)
+            && Objects.equals(this.amount, that.amount);
     }
 
     @Override

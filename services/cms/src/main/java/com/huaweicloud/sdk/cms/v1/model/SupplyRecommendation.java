@@ -101,18 +101,17 @@ public class SupplyRecommendation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SupplyRecommendation supplyRecommendation = (SupplyRecommendation) o;
-        return Objects.equals(this.flavorId, supplyRecommendation.flavorId)
-            && Objects.equals(this.regionId, supplyRecommendation.regionId)
-            && Objects.equals(this.availabilityZoneId, supplyRecommendation.availabilityZoneId)
-            && Objects.equals(this.score, supplyRecommendation.score);
+        SupplyRecommendation that = (SupplyRecommendation) obj;
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.score, that.score);
     }
 
     @Override

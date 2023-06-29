@@ -77,17 +77,16 @@ public class ResetPasswordRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPasswordRequestBody resetPasswordRequestBody = (ResetPasswordRequestBody) o;
-        return Objects.equals(this.userPwd, resetPasswordRequestBody.userPwd)
-            && Objects.equals(this.userName, resetPasswordRequestBody.userName)
-            && Objects.equals(this.dbName, resetPasswordRequestBody.dbName);
+        ResetPasswordRequestBody that = (ResetPasswordRequestBody) obj;
+        return Objects.equals(this.userPwd, that.userPwd) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.dbName, that.dbName);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ShareInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShareInfo shareInfo = (ShareInfo) o;
-        return Objects.equals(this.shareCount, shareInfo.shareCount)
-            && Objects.equals(this.acceptCount, shareInfo.acceptCount)
-            && Objects.equals(this.processStatus, shareInfo.processStatus);
+        ShareInfo that = (ShareInfo) obj;
+        return Objects.equals(this.shareCount, that.shareCount) && Objects.equals(this.acceptCount, that.acceptCount)
+            && Objects.equals(this.processStatus, that.processStatus);
     }
 
     @Override

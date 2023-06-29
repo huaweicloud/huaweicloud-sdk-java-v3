@@ -188,22 +188,18 @@ public class SearchCatalogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCatalogsRequest searchCatalogsRequest = (SearchCatalogsRequest) o;
-        return Objects.equals(this.workspace, searchCatalogsRequest.workspace)
-            && Objects.equals(this.name, searchCatalogsRequest.name)
-            && Objects.equals(this.createBy, searchCatalogsRequest.createBy)
-            && Objects.equals(this.owner, searchCatalogsRequest.owner)
-            && Objects.equals(this.beginTime, searchCatalogsRequest.beginTime)
-            && Objects.equals(this.endTime, searchCatalogsRequest.endTime)
-            && Objects.equals(this.limit, searchCatalogsRequest.limit)
-            && Objects.equals(this.offset, searchCatalogsRequest.offset);
+        SearchCatalogsRequest that = (SearchCatalogsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

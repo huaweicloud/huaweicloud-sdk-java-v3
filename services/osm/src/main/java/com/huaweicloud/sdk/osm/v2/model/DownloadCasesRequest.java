@@ -424,30 +424,24 @@ public class DownloadCasesRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadCasesRequest downloadCasesRequest = (DownloadCasesRequest) o;
-        return Objects.equals(this.language, downloadCasesRequest.language)
-            && Objects.equals(this.timezone, downloadCasesRequest.timezone)
-            && Objects.equals(this.incidentId, downloadCasesRequest.incidentId)
-            && Objects.equals(this.queryStartTime, downloadCasesRequest.queryStartTime)
-            && Objects.equals(this.queryEndTime, downloadCasesRequest.queryEndTime)
-            && Objects.equals(this.xCustomerName, downloadCasesRequest.xCustomerName)
-            && Objects.equals(this.searchKey, downloadCasesRequest.searchKey)
-            && Objects.equals(this.status, downloadCasesRequest.status)
-            && Objects.equals(this.customerId, downloadCasesRequest.customerId)
-            && Objects.equals(this.tenantSourceIdList, downloadCasesRequest.tenantSourceIdList)
-            && Objects.equals(this.subCustomerId, downloadCasesRequest.subCustomerId)
-            && Objects.equals(this.offset, downloadCasesRequest.offset)
-            && Objects.equals(this.limit, downloadCasesRequest.limit)
-            && Objects.equals(this.xSite, downloadCasesRequest.xSite)
-            && Objects.equals(this.xLanguage, downloadCasesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, downloadCasesRequest.xTimeZone);
+        DownloadCasesRequest that = (DownloadCasesRequest) obj;
+        return Objects.equals(this.language, that.language) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.queryStartTime, that.queryStartTime)
+            && Objects.equals(this.queryEndTime, that.queryEndTime)
+            && Objects.equals(this.xCustomerName, that.xCustomerName) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.tenantSourceIdList, that.tenantSourceIdList)
+            && Objects.equals(this.subCustomerId, that.subCustomerId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

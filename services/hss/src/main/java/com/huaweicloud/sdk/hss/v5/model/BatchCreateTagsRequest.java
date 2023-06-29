@@ -87,17 +87,16 @@ public class BatchCreateTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateTagsRequest batchCreateTagsRequest = (BatchCreateTagsRequest) o;
-        return Objects.equals(this.resourceType, batchCreateTagsRequest.resourceType)
-            && Objects.equals(this.resourceId, batchCreateTagsRequest.resourceId)
-            && Objects.equals(this.body, batchCreateTagsRequest.body);
+        BatchCreateTagsRequest that = (BatchCreateTagsRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

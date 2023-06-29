@@ -43,16 +43,15 @@ public class CreateProjectAndforkRepositoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectAndforkRepositoriesRequest createProjectAndforkRepositoriesRequest =
-            (CreateProjectAndforkRepositoriesRequest) o;
-        return Objects.equals(this.body, createProjectAndforkRepositoriesRequest.body);
+        CreateProjectAndforkRepositoriesRequest that = (CreateProjectAndforkRepositoriesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -75,17 +75,15 @@ public class ListCertificateAuthorityObsBucketResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificateAuthorityObsBucketResponse listCertificateAuthorityObsBucketResponse =
-            (ListCertificateAuthorityObsBucketResponse) o;
-        return Objects.equals(this.total, listCertificateAuthorityObsBucketResponse.total)
-            && Objects.equals(this.obsBuckets, listCertificateAuthorityObsBucketResponse.obsBuckets);
+        ListCertificateAuthorityObsBucketResponse that = (ListCertificateAuthorityObsBucketResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.obsBuckets, that.obsBuckets);
     }
 
     @Override

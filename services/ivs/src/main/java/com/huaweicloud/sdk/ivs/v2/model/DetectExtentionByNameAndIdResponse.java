@@ -76,16 +76,15 @@ public class DetectExtentionByNameAndIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectExtentionByNameAndIdResponse detectExtentionByNameAndIdResponse = (DetectExtentionByNameAndIdResponse) o;
-        return Objects.equals(this.meta, detectExtentionByNameAndIdResponse.meta)
-            && Objects.equals(this.result, detectExtentionByNameAndIdResponse.result);
+        DetectExtentionByNameAndIdResponse that = (DetectExtentionByNameAndIdResponse) obj;
+        return Objects.equals(this.meta, that.meta) && Objects.equals(this.result, that.result);
     }
 
     @Override

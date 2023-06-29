@@ -99,18 +99,16 @@ public class CheckRecordIssueCountsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRecordIssueCountsInfo checkRecordIssueCountsInfo = (CheckRecordIssueCountsInfo) o;
-        return Objects.equals(this.critical, checkRecordIssueCountsInfo.critical)
-            && Objects.equals(this.serious, checkRecordIssueCountsInfo.serious)
-            && Objects.equals(this.normal, checkRecordIssueCountsInfo.normal)
-            && Objects.equals(this.prompt, checkRecordIssueCountsInfo.prompt);
+        CheckRecordIssueCountsInfo that = (CheckRecordIssueCountsInfo) obj;
+        return Objects.equals(this.critical, that.critical) && Objects.equals(this.serious, that.serious)
+            && Objects.equals(this.normal, that.normal) && Objects.equals(this.prompt, that.prompt);
     }
 
     @Override

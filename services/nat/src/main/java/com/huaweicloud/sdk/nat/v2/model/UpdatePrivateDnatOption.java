@@ -86,22 +86,15 @@ public class UpdatePrivateDnatOption {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,21 +246,20 @@ public class UpdatePrivateDnatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateDnatOption updatePrivateDnatOption = (UpdatePrivateDnatOption) o;
-        return Objects.equals(this.description, updatePrivateDnatOption.description)
-            && Objects.equals(this.transitIpId, updatePrivateDnatOption.transitIpId)
-            && Objects.equals(this.networkInterfaceId, updatePrivateDnatOption.networkInterfaceId)
-            && Objects.equals(this.privateIpAddress, updatePrivateDnatOption.privateIpAddress)
-            && Objects.equals(this.protocol, updatePrivateDnatOption.protocol)
-            && Objects.equals(this.internalServicePort, updatePrivateDnatOption.internalServicePort)
-            && Objects.equals(this.transitServicePort, updatePrivateDnatOption.transitServicePort);
+        UpdatePrivateDnatOption that = (UpdatePrivateDnatOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.transitServicePort, that.transitServicePort);
     }
 
     @Override

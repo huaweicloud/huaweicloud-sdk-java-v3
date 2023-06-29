@@ -44,15 +44,15 @@ public class EnableKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableKeyResponse enableKeyResponse = (EnableKeyResponse) o;
-        return Objects.equals(this.keyInfo, enableKeyResponse.keyInfo);
+        EnableKeyResponse that = (EnableKeyResponse) obj;
+        return Objects.equals(this.keyInfo, that.keyInfo);
     }
 
     @Override

@@ -165,19 +165,19 @@ public class DataSummaryRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSummaryRsp dataSummaryRsp = (DataSummaryRsp) o;
-        return Objects.equals(this.path, dataSummaryRsp.path) && Objects.equals(this.name, dataSummaryRsp.name)
-            && Objects.equals(this.type, dataSummaryRsp.type) && Objects.equals(this.size, dataSummaryRsp.size)
-            && Objects.equals(this.createTime, dataSummaryRsp.createTime)
-            && Objects.equals(this.allowedOperate, dataSummaryRsp.allowedOperate)
-            && Objects.equals(this.deletable, dataSummaryRsp.deletable);
+        DataSummaryRsp that = (DataSummaryRsp) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.allowedOperate, that.allowedOperate)
+            && Objects.equals(this.deletable, that.deletable);
     }
 
     @Override

@@ -83,22 +83,15 @@ public class TaskSettings {
             if (value == null) {
                 return null;
             }
-            TaskPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskPeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskPeriodEnum(value));
         }
 
         public static TaskPeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,18 +196,16 @@ public class TaskSettings {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskSettings taskSettings = (TaskSettings) o;
-        return Objects.equals(this.timer, taskSettings.timer)
-            && Objects.equals(this.triggerTime, taskSettings.triggerTime)
-            && Objects.equals(this.taskPeriod, taskSettings.taskPeriod)
-            && Objects.equals(this.taskConfig, taskSettings.taskConfig);
+        TaskSettings that = (TaskSettings) obj;
+        return Objects.equals(this.timer, that.timer) && Objects.equals(this.triggerTime, that.triggerTime)
+            && Objects.equals(this.taskPeriod, that.taskPeriod) && Objects.equals(this.taskConfig, that.taskConfig);
     }
 
     @Override

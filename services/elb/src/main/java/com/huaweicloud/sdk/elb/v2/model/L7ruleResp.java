@@ -85,22 +85,15 @@ public class L7ruleResp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,22 +306,19 @@ public class L7ruleResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L7ruleResp l7ruleResp = (L7ruleResp) o;
-        return Objects.equals(this.id, l7ruleResp.id)
-            && Objects.equals(this.provisioningStatus, l7ruleResp.provisioningStatus)
-            && Objects.equals(this.tenantId, l7ruleResp.tenantId)
-            && Objects.equals(this.projectId, l7ruleResp.projectId)
-            && Objects.equals(this.adminStateUp, l7ruleResp.adminStateUp) && Objects.equals(this.type, l7ruleResp.type)
-            && Objects.equals(this.compareType, l7ruleResp.compareType)
-            && Objects.equals(this.invert, l7ruleResp.invert) && Objects.equals(this.key, l7ruleResp.key)
-            && Objects.equals(this.value, l7ruleResp.value);
+        L7ruleResp that = (L7ruleResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.invert, that.invert)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

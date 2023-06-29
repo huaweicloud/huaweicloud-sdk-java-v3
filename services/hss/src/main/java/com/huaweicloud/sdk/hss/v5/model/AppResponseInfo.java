@@ -191,22 +191,19 @@ public class AppResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppResponseInfo appResponseInfo = (AppResponseInfo) o;
-        return Objects.equals(this.agentId, appResponseInfo.agentId)
-            && Objects.equals(this.hostId, appResponseInfo.hostId)
-            && Objects.equals(this.hostName, appResponseInfo.hostName)
-            && Objects.equals(this.hostIp, appResponseInfo.hostIp)
-            && Objects.equals(this.appName, appResponseInfo.appName)
-            && Objects.equals(this.version, appResponseInfo.version)
-            && Objects.equals(this.updateTime, appResponseInfo.updateTime)
-            && Objects.equals(this.recentScanTime, appResponseInfo.recentScanTime);
+        AppResponseInfo that = (AppResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

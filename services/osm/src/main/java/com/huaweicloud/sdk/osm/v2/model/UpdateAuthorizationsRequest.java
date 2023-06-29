@@ -161,20 +161,18 @@ public class UpdateAuthorizationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuthorizationsRequest updateAuthorizationsRequest = (UpdateAuthorizationsRequest) o;
-        return Objects.equals(this.authorizationId, updateAuthorizationsRequest.authorizationId)
-            && Objects.equals(this.actionId, updateAuthorizationsRequest.actionId)
-            && Objects.equals(this.xSite, updateAuthorizationsRequest.xSite)
-            && Objects.equals(this.xLanguage, updateAuthorizationsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, updateAuthorizationsRequest.xTimeZone)
-            && Objects.equals(this.body, updateAuthorizationsRequest.body);
+        UpdateAuthorizationsRequest that = (UpdateAuthorizationsRequest) obj;
+        return Objects.equals(this.authorizationId, that.authorizationId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

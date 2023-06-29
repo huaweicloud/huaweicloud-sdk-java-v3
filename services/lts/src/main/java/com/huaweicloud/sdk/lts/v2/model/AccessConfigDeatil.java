@@ -152,18 +152,16 @@ public class AccessConfigDeatil {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigDeatil accessConfigDeatil = (AccessConfigDeatil) o;
-        return Objects.equals(this.paths, accessConfigDeatil.paths)
-            && Objects.equals(this.blackPaths, accessConfigDeatil.blackPaths)
-            && Objects.equals(this.format, accessConfigDeatil.format)
-            && Objects.equals(this.windowsLogInfo, accessConfigDeatil.windowsLogInfo);
+        AccessConfigDeatil that = (AccessConfigDeatil) obj;
+        return Objects.equals(this.paths, that.paths) && Objects.equals(this.blackPaths, that.blackPaths)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.windowsLogInfo, that.windowsLogInfo);
     }
 
     @Override

@@ -198,20 +198,19 @@ public class QualityEnhanceVideo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityEnhanceVideo qualityEnhanceVideo = (QualityEnhanceVideo) o;
-        return Objects.equals(this.videoDenoise, qualityEnhanceVideo.videoDenoise)
-            && Objects.equals(this.videoSharp, qualityEnhanceVideo.videoSharp)
-            && Objects.equals(this.videoContrast, qualityEnhanceVideo.videoContrast)
-            && Objects.equals(this.videoSuperresolution, qualityEnhanceVideo.videoSuperresolution)
-            && Objects.equals(this.videoDeblock, qualityEnhanceVideo.videoDeblock)
-            && Objects.equals(this.videoSaturation, qualityEnhanceVideo.videoSaturation);
+        QualityEnhanceVideo that = (QualityEnhanceVideo) obj;
+        return Objects.equals(this.videoDenoise, that.videoDenoise) && Objects.equals(this.videoSharp, that.videoSharp)
+            && Objects.equals(this.videoContrast, that.videoContrast)
+            && Objects.equals(this.videoSuperresolution, that.videoSuperresolution)
+            && Objects.equals(this.videoDeblock, that.videoDeblock)
+            && Objects.equals(this.videoSaturation, that.videoSaturation);
     }
 
     @Override

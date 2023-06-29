@@ -77,22 +77,15 @@ public class ListGroupsForDomainRequest {
             if (value == null) {
                 return null;
             }
-            GroupSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GroupSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GroupSourceEnum(value));
         }
 
         public static GroupSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GroupSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,19 +210,17 @@ public class ListGroupsForDomainRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupsForDomainRequest listGroupsForDomainRequest = (ListGroupsForDomainRequest) o;
-        return Objects.equals(this.instanceId, listGroupsForDomainRequest.instanceId)
-            && Objects.equals(this.groupSource, listGroupsForDomainRequest.groupSource)
-            && Objects.equals(this.limit, listGroupsForDomainRequest.limit)
-            && Objects.equals(this.marker, listGroupsForDomainRequest.marker)
-            && Objects.equals(this.reversePage, listGroupsForDomainRequest.reversePage);
+        ListGroupsForDomainRequest that = (ListGroupsForDomainRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupSource, that.groupSource)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

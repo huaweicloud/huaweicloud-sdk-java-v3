@@ -43,15 +43,15 @@ public class RestartInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartInstanceReq restartInstanceReq = (RestartInstanceReq) o;
-        return Objects.equals(this.restart, restartInstanceReq.restart);
+        RestartInstanceReq that = (RestartInstanceReq) obj;
+        return Objects.equals(this.restart, that.restart);
     }
 
     @Override

@@ -77,18 +77,16 @@ public class ShowImageWatermarkWithImageByAddressRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageWatermarkWithImageByAddressRequestBody showImageWatermarkWithImageByAddressRequestBody =
-            (ShowImageWatermarkWithImageByAddressRequestBody) o;
-        return Objects.equals(this.regionId, showImageWatermarkWithImageByAddressRequestBody.regionId)
-            && Objects.equals(this.srcFile, showImageWatermarkWithImageByAddressRequestBody.srcFile)
-            && Objects.equals(this.imageWatermark, showImageWatermarkWithImageByAddressRequestBody.imageWatermark);
+        ShowImageWatermarkWithImageByAddressRequestBody that = (ShowImageWatermarkWithImageByAddressRequestBody) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.srcFile, that.srcFile)
+            && Objects.equals(this.imageWatermark, that.imageWatermark);
     }
 
     @Override

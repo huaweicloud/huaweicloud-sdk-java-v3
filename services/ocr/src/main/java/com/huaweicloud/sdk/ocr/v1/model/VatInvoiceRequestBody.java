@@ -99,18 +99,17 @@ public class VatInvoiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VatInvoiceRequestBody vatInvoiceRequestBody = (VatInvoiceRequestBody) o;
-        return Objects.equals(this.image, vatInvoiceRequestBody.image)
-            && Objects.equals(this.url, vatInvoiceRequestBody.url)
-            && Objects.equals(this.advancedMode, vatInvoiceRequestBody.advancedMode)
-            && Objects.equals(this.returnTextLocation, vatInvoiceRequestBody.returnTextLocation);
+        VatInvoiceRequestBody that = (VatInvoiceRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.advancedMode, that.advancedMode)
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation);
     }
 
     @Override

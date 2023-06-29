@@ -77,17 +77,16 @@ public class ProtectableAgentStatusResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectableAgentStatusResource protectableAgentStatusResource = (ProtectableAgentStatusResource) o;
-        return Objects.equals(this.resourceId, protectableAgentStatusResource.resourceId)
-            && Objects.equals(this.resourceName, protectableAgentStatusResource.resourceName)
-            && Objects.equals(this.resourceType, protectableAgentStatusResource.resourceType);
+        ProtectableAgentStatusResource that = (ProtectableAgentStatusResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

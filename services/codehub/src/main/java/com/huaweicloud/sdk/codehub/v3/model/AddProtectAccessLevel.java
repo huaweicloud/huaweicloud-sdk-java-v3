@@ -66,22 +66,15 @@ public class AddProtectAccessLevel {
             if (value == null) {
                 return null;
             }
-            PushAccessLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PushAccessLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PushAccessLevelEnum(value));
         }
 
         public static PushAccessLevelEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PushAccessLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -154,22 +147,15 @@ public class AddProtectAccessLevel {
             if (value == null) {
                 return null;
             }
-            MergeAccessLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MergeAccessLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MergeAccessLevelEnum(value));
         }
 
         public static MergeAccessLevelEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            MergeAccessLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,16 +212,16 @@ public class AddProtectAccessLevel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProtectAccessLevel addProtectAccessLevel = (AddProtectAccessLevel) o;
-        return Objects.equals(this.pushAccessLevel, addProtectAccessLevel.pushAccessLevel)
-            && Objects.equals(this.mergeAccessLevel, addProtectAccessLevel.mergeAccessLevel);
+        AddProtectAccessLevel that = (AddProtectAccessLevel) obj;
+        return Objects.equals(this.pushAccessLevel, that.pushAccessLevel)
+            && Objects.equals(this.mergeAccessLevel, that.mergeAccessLevel);
     }
 
     @Override

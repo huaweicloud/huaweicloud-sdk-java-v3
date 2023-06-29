@@ -191,22 +191,19 @@ public class ListAutoLaunchsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoLaunchsRequest listAutoLaunchsRequest = (ListAutoLaunchsRequest) o;
-        return Objects.equals(this.hostId, listAutoLaunchsRequest.hostId)
-            && Objects.equals(this.hostName, listAutoLaunchsRequest.hostName)
-            && Objects.equals(this.name, listAutoLaunchsRequest.name)
-            && Objects.equals(this.hostIp, listAutoLaunchsRequest.hostIp)
-            && Objects.equals(this.type, listAutoLaunchsRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listAutoLaunchsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listAutoLaunchsRequest.limit)
-            && Objects.equals(this.offset, listAutoLaunchsRequest.offset);
+        ListAutoLaunchsRequest that = (ListAutoLaunchsRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

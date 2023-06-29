@@ -187,21 +187,20 @@ public class JobRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobRecords jobRecords = (JobRecords) o;
-        return Objects.equals(this.name, jobRecords.name) && Objects.equals(this.autoScore, jobRecords.autoScore)
-            && Objects.equals(this.casePassCount, jobRecords.casePassCount)
-            && Objects.equals(this.exeCaseCount, jobRecords.exeCaseCount)
-            && Objects.equals(this.codeLine, jobRecords.codeLine)
-            && Objects.equals(this.commitTime, jobRecords.commitTime)
-            && Objects.equals(this.complexityFileAvg, jobRecords.complexityFileAvg)
-            && Objects.equals(this.autoScoreUsingTime, jobRecords.autoScoreUsingTime);
+        JobRecords that = (JobRecords) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.autoScore, that.autoScore)
+            && Objects.equals(this.casePassCount, that.casePassCount)
+            && Objects.equals(this.exeCaseCount, that.exeCaseCount) && Objects.equals(this.codeLine, that.codeLine)
+            && Objects.equals(this.commitTime, that.commitTime)
+            && Objects.equals(this.complexityFileAvg, that.complexityFileAvg)
+            && Objects.equals(this.autoScoreUsingTime, that.autoScoreUsingTime);
     }
 
     @Override

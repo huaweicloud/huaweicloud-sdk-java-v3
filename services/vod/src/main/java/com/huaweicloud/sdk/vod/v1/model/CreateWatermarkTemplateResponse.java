@@ -56,16 +56,15 @@ public class CreateWatermarkTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWatermarkTemplateResponse createWatermarkTemplateResponse = (CreateWatermarkTemplateResponse) o;
-        return Objects.equals(this.id, createWatermarkTemplateResponse.id)
-            && Objects.equals(this.uploadUrl, createWatermarkTemplateResponse.uploadUrl);
+        CreateWatermarkTemplateResponse that = (CreateWatermarkTemplateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.uploadUrl, that.uploadUrl);
     }
 
     @Override

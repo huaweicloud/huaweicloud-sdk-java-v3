@@ -57,15 +57,15 @@ public class NetConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetConfig netConfig = (NetConfig) o;
-        return Objects.equals(this.vpcId, netConfig.vpcId) && Objects.equals(this.nicNum, netConfig.nicNum);
+        NetConfig that = (NetConfig) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.nicNum, that.nicNum);
     }
 
     @Override

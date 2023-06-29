@@ -52,22 +52,15 @@ public class LanguageEnum {
         if (value == null) {
             return null;
         }
-        LanguageEnum result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new LanguageEnum(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
     }
 
     public static LanguageEnum valueOf(String value) {
         if (value == null) {
             return null;
         }
-        LanguageEnum result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

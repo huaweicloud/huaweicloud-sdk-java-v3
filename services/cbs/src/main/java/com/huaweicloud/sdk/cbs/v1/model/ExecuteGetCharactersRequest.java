@@ -1,62 +1,47 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ExecuteGetCharactersRequest  {
-
+public class ExecuteGetCharactersRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="train_status")
-    
+    @JsonProperty(value = "train_status")
 
     private Integer trainStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_name")
-    
+    @JsonProperty(value = "character_name")
 
     private String characterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="support_interact")
-    
+    @JsonProperty(value = "support_interact")
 
     private Boolean supportInteract;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gender")
-    
+    @JsonProperty(value = "gender")
 
     private String gender;
 
@@ -64,9 +49,6 @@ public class ExecuteGetCharactersRequest  {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * Get offset
@@ -80,15 +62,10 @@ public class ExecuteGetCharactersRequest  {
         this.offset = offset;
     }
 
-    
-
     public ExecuteGetCharactersRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * Get limit
@@ -102,15 +79,10 @@ public class ExecuteGetCharactersRequest  {
         this.limit = limit;
     }
 
-    
-
     public ExecuteGetCharactersRequest withType(Integer type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 形象类型： 0：预制形象 1：用户自定义形象
@@ -124,15 +96,10 @@ public class ExecuteGetCharactersRequest  {
         this.type = type;
     }
 
-    
-
     public ExecuteGetCharactersRequest withTrainStatus(Integer trainStatus) {
         this.trainStatus = trainStatus;
         return this;
     }
-
-    
-
 
     /**
      * 训练状态： 0：预处理 1：训练中 2：训练成功 3：训练失败 4：预览视频生成中
@@ -146,15 +113,10 @@ public class ExecuteGetCharactersRequest  {
         this.trainStatus = trainStatus;
     }
 
-    
-
     public ExecuteGetCharactersRequest withCharacterName(String characterName) {
         this.characterName = characterName;
         return this;
     }
-
-    
-
 
     /**
      * Get characterName
@@ -168,15 +130,10 @@ public class ExecuteGetCharactersRequest  {
         this.characterName = characterName;
     }
 
-    
-
     public ExecuteGetCharactersRequest withSupportInteract(Boolean supportInteract) {
         this.supportInteract = supportInteract;
         return this;
     }
-
-    
-
 
     /**
      * 是否只获取支持交互式的数字人；默认：false 获取全部
@@ -190,15 +147,10 @@ public class ExecuteGetCharactersRequest  {
         this.supportInteract = supportInteract;
     }
 
-    
-
     public ExecuteGetCharactersRequest withGender(String gender) {
         this.gender = gender;
         return this;
     }
-
-    
-
 
     /**
      * 性别
@@ -212,29 +164,26 @@ public class ExecuteGetCharactersRequest  {
         this.gender = gender;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetCharactersRequest executeGetCharactersRequest = (ExecuteGetCharactersRequest) o;
-        return Objects.equals(this.offset, executeGetCharactersRequest.offset) &&
-            Objects.equals(this.limit, executeGetCharactersRequest.limit) &&
-            Objects.equals(this.type, executeGetCharactersRequest.type) &&
-            Objects.equals(this.trainStatus, executeGetCharactersRequest.trainStatus) &&
-            Objects.equals(this.characterName, executeGetCharactersRequest.characterName) &&
-            Objects.equals(this.supportInteract, executeGetCharactersRequest.supportInteract) &&
-            Objects.equals(this.gender, executeGetCharactersRequest.gender);
+        ExecuteGetCharactersRequest that = (ExecuteGetCharactersRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.trainStatus, that.trainStatus)
+            && Objects.equals(this.characterName, that.characterName)
+            && Objects.equals(this.supportInteract, that.supportInteract) && Objects.equals(this.gender, that.gender);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(offset, limit, type, trainStatus, characterName, supportInteract, gender);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -249,6 +198,7 @@ public class ExecuteGetCharactersRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -259,8 +209,5 @@ public class ExecuteGetCharactersRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

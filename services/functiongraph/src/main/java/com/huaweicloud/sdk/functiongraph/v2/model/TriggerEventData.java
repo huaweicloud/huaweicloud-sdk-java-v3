@@ -75,22 +75,15 @@ public class TriggerEventData {
             if (value == null) {
                 return null;
             }
-            PollingUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PollingUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PollingUnitEnum(value));
         }
 
         public static PollingUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PollingUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,17 @@ public class TriggerEventData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TriggerEventData triggerEventData = (TriggerEventData) o;
-        return Objects.equals(this.isSerial, triggerEventData.isSerial)
-            && Objects.equals(this.maxFetchBytes, triggerEventData.maxFetchBytes)
-            && Objects.equals(this.pollingInterval, triggerEventData.pollingInterval)
-            && Objects.equals(this.pollingUnit, triggerEventData.pollingUnit);
+        TriggerEventData that = (TriggerEventData) obj;
+        return Objects.equals(this.isSerial, that.isSerial) && Objects.equals(this.maxFetchBytes, that.maxFetchBytes)
+            && Objects.equals(this.pollingInterval, that.pollingInterval)
+            && Objects.equals(this.pollingUnit, that.pollingUnit);
     }
 
     @Override

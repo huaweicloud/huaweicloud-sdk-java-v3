@@ -97,17 +97,16 @@ public class ShowDetailsOfAppAclResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAppAclResponse showDetailsOfAppAclResponse = (ShowDetailsOfAppAclResponse) o;
-        return Objects.equals(this.appId, showDetailsOfAppAclResponse.appId)
-            && Objects.equals(this.appAclType, showDetailsOfAppAclResponse.appAclType)
-            && Objects.equals(this.appAclValues, showDetailsOfAppAclResponse.appAclValues);
+        ShowDetailsOfAppAclResponse that = (ShowDetailsOfAppAclResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appAclType, that.appAclType)
+            && Objects.equals(this.appAclValues, that.appAclValues);
     }
 
     @Override

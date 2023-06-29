@@ -1,69 +1,53 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.LeftRightPosition;
-import com.huaweicloud.sdk.cbs.v1.model.Time;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ImageFrame  {
-
+public class ImageFrame {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frame_resolution_type")
-    
+    @JsonProperty(value = "frame_resolution_type")
 
     private Integer frameResolutionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_frame_position")
-    
+    @JsonProperty(value = "image_frame_position")
 
     private LeftRightPosition imageFramePosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_position")
-    
+    @JsonProperty(value = "image_position")
 
     private LeftRightPosition imagePosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution_type")
-    
+    @JsonProperty(value = "resolution_type")
 
     private Integer resolutionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
 
     private String url;
 
@@ -71,9 +55,6 @@ public class ImageFrame  {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -87,15 +68,10 @@ public class ImageFrame  {
         this.createTime = createTime;
     }
 
-    
-
     public ImageFrame withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -109,15 +85,10 @@ public class ImageFrame  {
         this.updateTime = updateTime;
     }
 
-    
-
     public ImageFrame withFrameResolutionType(Integer frameResolutionType) {
         this.frameResolutionType = frameResolutionType;
         return this;
     }
-
-    
-
 
     /**
      * 0: 16/9 1: 4/3 2: 3/4
@@ -131,15 +102,10 @@ public class ImageFrame  {
         this.frameResolutionType = frameResolutionType;
     }
 
-    
-
     public ImageFrame withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 
@@ -153,22 +119,19 @@ public class ImageFrame  {
         this.id = id;
     }
 
-    
-
     public ImageFrame withImageFramePosition(LeftRightPosition imageFramePosition) {
         this.imageFramePosition = imageFramePosition;
         return this;
     }
 
     public ImageFrame withImageFramePosition(Consumer<LeftRightPosition> imageFramePositionSetter) {
-        if(this.imageFramePosition == null ){
+        if (this.imageFramePosition == null) {
             this.imageFramePosition = new LeftRightPosition();
             imageFramePositionSetter.accept(this.imageFramePosition);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get imageFramePosition
@@ -182,22 +145,19 @@ public class ImageFrame  {
         this.imageFramePosition = imageFramePosition;
     }
 
-    
-
     public ImageFrame withImagePosition(LeftRightPosition imagePosition) {
         this.imagePosition = imagePosition;
         return this;
     }
 
     public ImageFrame withImagePosition(Consumer<LeftRightPosition> imagePositionSetter) {
-        if(this.imagePosition == null ){
+        if (this.imagePosition == null) {
             this.imagePosition = new LeftRightPosition();
             imagePositionSetter.accept(this.imagePosition);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get imagePosition
@@ -211,15 +171,10 @@ public class ImageFrame  {
         this.imagePosition = imagePosition;
     }
 
-    
-
     public ImageFrame withResolutionType(Integer resolutionType) {
         this.resolutionType = resolutionType;
         return this;
     }
-
-    
-
 
     /**
      * 横版：0 竖版：1
@@ -233,15 +188,10 @@ public class ImageFrame  {
         this.resolutionType = resolutionType;
     }
 
-    
-
     public ImageFrame withUrl(String url) {
         this.url = url;
         return this;
     }
-
-    
-
 
     /**
      * 
@@ -255,30 +205,34 @@ public class ImageFrame  {
         this.url = url;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageFrame imageFrame = (ImageFrame) o;
-        return Objects.equals(this.createTime, imageFrame.createTime) &&
-            Objects.equals(this.updateTime, imageFrame.updateTime) &&
-            Objects.equals(this.frameResolutionType, imageFrame.frameResolutionType) &&
-            Objects.equals(this.id, imageFrame.id) &&
-            Objects.equals(this.imageFramePosition, imageFrame.imageFramePosition) &&
-            Objects.equals(this.imagePosition, imageFrame.imagePosition) &&
-            Objects.equals(this.resolutionType, imageFrame.resolutionType) &&
-            Objects.equals(this.url, imageFrame.url);
+        ImageFrame that = (ImageFrame) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.frameResolutionType, that.frameResolutionType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.imageFramePosition, that.imageFramePosition)
+            && Objects.equals(this.imagePosition, that.imagePosition)
+            && Objects.equals(this.resolutionType, that.resolutionType) && Objects.equals(this.url, that.url);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, updateTime, frameResolutionType, id, imageFramePosition, imagePosition, resolutionType, url);
+        return Objects.hash(createTime,
+            updateTime,
+            frameResolutionType,
+            id,
+            imageFramePosition,
+            imagePosition,
+            resolutionType,
+            url);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -294,6 +248,7 @@ public class ImageFrame  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -304,8 +259,5 @@ public class ImageFrame  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -341,28 +341,26 @@ public class PassportResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PassportResult passportResult = (PassportResult) o;
-        return Objects.equals(this.passportType, passportResult.passportType)
-            && Objects.equals(this.countryCode, passportResult.countryCode)
-            && Objects.equals(this.passportNumber, passportResult.passportNumber)
-            && Objects.equals(this.nationality, passportResult.nationality)
-            && Objects.equals(this.surname, passportResult.surname)
-            && Objects.equals(this.givenName, passportResult.givenName) && Objects.equals(this.sex, passportResult.sex)
-            && Objects.equals(this.dateOfBirth, passportResult.dateOfBirth)
-            && Objects.equals(this.dateOfExpiry, passportResult.dateOfExpiry)
-            && Objects.equals(this.dateOfIssue, passportResult.dateOfIssue)
-            && Objects.equals(this.placeOfBirth, passportResult.placeOfBirth)
-            && Objects.equals(this.placeOfIssue, passportResult.placeOfIssue)
-            && Objects.equals(this.issuingAuthority, passportResult.issuingAuthority)
-            && Objects.equals(this.confidence, passportResult.confidence)
-            && Objects.equals(this.extraInfo, passportResult.extraInfo);
+        PassportResult that = (PassportResult) obj;
+        return Objects.equals(this.passportType, that.passportType)
+            && Objects.equals(this.countryCode, that.countryCode)
+            && Objects.equals(this.passportNumber, that.passportNumber)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.surname, that.surname)
+            && Objects.equals(this.givenName, that.givenName) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.dateOfBirth, that.dateOfBirth)
+            && Objects.equals(this.dateOfExpiry, that.dateOfExpiry)
+            && Objects.equals(this.dateOfIssue, that.dateOfIssue)
+            && Objects.equals(this.placeOfBirth, that.placeOfBirth)
+            && Objects.equals(this.placeOfIssue, that.placeOfIssue)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.extraInfo, that.extraInfo);
     }
 
     @Override

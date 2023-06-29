@@ -128,17 +128,16 @@ public class TextDetectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TextDetectionReq textDetectionReq = (TextDetectionReq) o;
-        return Objects.equals(this.categories, textDetectionReq.categories)
-            && Objects.equals(this.whiteGlossaries, textDetectionReq.whiteGlossaries)
-            && Objects.equals(this.items, textDetectionReq.items);
+        TextDetectionReq that = (TextDetectionReq) obj;
+        return Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.whiteGlossaries, that.whiteGlossaries) && Objects.equals(this.items, that.items);
     }
 
     @Override

@@ -502,34 +502,27 @@ public class ShowTaskInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInfoResponse showTaskInfoResponse = (ShowTaskInfoResponse) o;
-        return Objects.equals(this.id, showTaskInfoResponse.id) && Objects.equals(this.name, showTaskInfoResponse.name)
-            && Objects.equals(this.description, showTaskInfoResponse.description)
-            && Objects.equals(this.userId, showTaskInfoResponse.userId)
-            && Objects.equals(this.createTime, showTaskInfoResponse.createTime)
-            && Objects.equals(this.projectId, showTaskInfoResponse.projectId)
-            && Objects.equals(this.dirId, showTaskInfoResponse.dirId)
-            && Objects.equals(this.scheduleConfig, showTaskInfoResponse.scheduleConfig)
-            && Objects.equals(this.parameterConfig, showTaskInfoResponse.parameterConfig)
-            && Objects.equals(this.updateTime, showTaskInfoResponse.updateTime)
-            && Objects.equals(this.userName, showTaskInfoResponse.userName)
-            && Objects.equals(this.path, showTaskInfoResponse.path)
-            && Objects.equals(this.lastRunTime, showTaskInfoResponse.lastRunTime)
-            && Objects.equals(this.startTime, showTaskInfoResponse.startTime)
-            && Objects.equals(this.endTime, showTaskInfoResponse.endTime)
-            && Objects.equals(this.nextRunTime, showTaskInfoResponse.nextRunTime)
-            && Objects.equals(this.dutyPerson, showTaskInfoResponse.dutyPerson)
-            && Objects.equals(this.updateType, showTaskInfoResponse.updateType)
-            && Objects.equals(this.dataSourceType, showTaskInfoResponse.dataSourceType)
-            && Objects.equals(this.taskConfig, showTaskInfoResponse.taskConfig)
-            && Objects.equals(this.dataSourceWorkspaceId, showTaskInfoResponse.dataSourceWorkspaceId);
+        ShowTaskInfoResponse that = (ShowTaskInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.dirId, that.dirId) && Objects.equals(this.scheduleConfig, that.scheduleConfig)
+            && Objects.equals(this.parameterConfig, that.parameterConfig)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.lastRunTime, that.lastRunTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.nextRunTime, that.nextRunTime) && Objects.equals(this.dutyPerson, that.dutyPerson)
+            && Objects.equals(this.updateType, that.updateType)
+            && Objects.equals(this.dataSourceType, that.dataSourceType)
+            && Objects.equals(this.taskConfig, that.taskConfig)
+            && Objects.equals(this.dataSourceWorkspaceId, that.dataSourceWorkspaceId);
     }
 
     @Override

@@ -214,22 +214,18 @@ public class ListMyActionTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMyActionTemplateResponse listMyActionTemplateResponse = (ListMyActionTemplateResponse) o;
-        return Objects.equals(this.count, listMyActionTemplateResponse.count)
-            && Objects.equals(this.actionTemplates, listMyActionTemplateResponse.actionTemplates)
-            && Objects.equals(this.offset, listMyActionTemplateResponse.offset)
-            && Objects.equals(this.isTruncated, listMyActionTemplateResponse.isTruncated)
-            && Objects.equals(this.xRequestId, listMyActionTemplateResponse.xRequestId)
-            && Objects.equals(this.connection, listMyActionTemplateResponse.connection)
-            && Objects.equals(this.contentLength, listMyActionTemplateResponse.contentLength)
-            && Objects.equals(this.date, listMyActionTemplateResponse.date);
+        ListMyActionTemplateResponse that = (ListMyActionTemplateResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.actionTemplates, that.actionTemplates)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

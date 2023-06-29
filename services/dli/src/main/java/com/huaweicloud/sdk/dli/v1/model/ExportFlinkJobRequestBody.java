@@ -96,17 +96,16 @@ public class ExportFlinkJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportFlinkJobRequestBody exportFlinkJobRequestBody = (ExportFlinkJobRequestBody) o;
-        return Objects.equals(this.obsDir, exportFlinkJobRequestBody.obsDir)
-            && Objects.equals(this.isSelected, exportFlinkJobRequestBody.isSelected)
-            && Objects.equals(this.jobSelected, exportFlinkJobRequestBody.jobSelected);
+        ExportFlinkJobRequestBody that = (ExportFlinkJobRequestBody) obj;
+        return Objects.equals(this.obsDir, that.obsDir) && Objects.equals(this.isSelected, that.isSelected)
+            && Objects.equals(this.jobSelected, that.jobSelected);
     }
 
     @Override

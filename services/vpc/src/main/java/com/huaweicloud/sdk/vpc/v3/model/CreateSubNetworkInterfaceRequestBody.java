@@ -67,17 +67,16 @@ public class CreateSubNetworkInterfaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubNetworkInterfaceRequestBody createSubNetworkInterfaceRequestBody =
-            (CreateSubNetworkInterfaceRequestBody) o;
-        return Objects.equals(this.dryRun, createSubNetworkInterfaceRequestBody.dryRun)
-            && Objects.equals(this.subNetworkInterface, createSubNetworkInterfaceRequestBody.subNetworkInterface);
+        CreateSubNetworkInterfaceRequestBody that = (CreateSubNetworkInterfaceRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.subNetworkInterface, that.subNetworkInterface);
     }
 
     @Override

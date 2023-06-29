@@ -33,15 +33,15 @@ public class ListTopicDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicDetailsRequest listTopicDetailsRequest = (ListTopicDetailsRequest) o;
-        return Objects.equals(this.topicUrn, listTopicDetailsRequest.topicUrn);
+        ListTopicDetailsRequest that = (ListTopicDetailsRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

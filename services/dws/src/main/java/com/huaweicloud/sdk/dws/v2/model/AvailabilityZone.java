@@ -99,17 +99,17 @@ public class AvailabilityZone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailabilityZone availabilityZone = (AvailabilityZone) o;
-        return Objects.equals(this.code, availabilityZone.code) && Objects.equals(this.name, availabilityZone.name)
-            && Objects.equals(this.status, availabilityZone.status)
-            && Objects.equals(this.publicBorderGroup, availabilityZone.publicBorderGroup);
+        AvailabilityZone that = (AvailabilityZone) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

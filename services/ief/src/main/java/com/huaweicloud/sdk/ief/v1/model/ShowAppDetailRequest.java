@@ -55,16 +55,15 @@ public class ShowAppDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppDetailRequest showAppDetailRequest = (ShowAppDetailRequest) o;
-        return Objects.equals(this.iefInstanceId, showAppDetailRequest.iefInstanceId)
-            && Objects.equals(this.appId, showAppDetailRequest.appId);
+        ShowAppDetailRequest that = (ShowAppDetailRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

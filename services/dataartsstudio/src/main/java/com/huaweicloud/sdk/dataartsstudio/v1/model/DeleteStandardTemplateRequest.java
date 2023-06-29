@@ -55,16 +55,15 @@ public class DeleteStandardTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteStandardTemplateRequest deleteStandardTemplateRequest = (DeleteStandardTemplateRequest) o;
-        return Objects.equals(this.workspace, deleteStandardTemplateRequest.workspace)
-            && Objects.equals(this.ids, deleteStandardTemplateRequest.ids);
+        DeleteStandardTemplateRequest that = (DeleteStandardTemplateRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.ids, that.ids);
     }
 
     @Override

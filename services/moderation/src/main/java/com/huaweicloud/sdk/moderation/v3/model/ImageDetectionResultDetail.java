@@ -224,22 +224,18 @@ public class ImageDetectionResultDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionResultDetail imageDetectionResultDetail = (ImageDetectionResultDetail) o;
-        return Objects.equals(this.suggestion, imageDetectionResultDetail.suggestion)
-            && Objects.equals(this.category, imageDetectionResultDetail.category)
-            && Objects.equals(this.confidence, imageDetectionResultDetail.confidence)
-            && Objects.equals(this.faceLocation, imageDetectionResultDetail.faceLocation)
-            && Objects.equals(this.qrLocation, imageDetectionResultDetail.qrLocation)
-            && Objects.equals(this.qrContent, imageDetectionResultDetail.qrContent)
-            && Objects.equals(this.segments, imageDetectionResultDetail.segments)
-            && Objects.equals(this.label, imageDetectionResultDetail.label);
+        ImageDetectionResultDetail that = (ImageDetectionResultDetail) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.faceLocation, that.faceLocation)
+            && Objects.equals(this.qrLocation, that.qrLocation) && Objects.equals(this.qrContent, that.qrContent)
+            && Objects.equals(this.segments, that.segments) && Objects.equals(this.label, that.label);
     }
 
     @Override

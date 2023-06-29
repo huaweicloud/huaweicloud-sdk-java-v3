@@ -186,21 +186,19 @@ public class ShowAlarmTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlarmTemplateResponse showAlarmTemplateResponse = (ShowAlarmTemplateResponse) o;
-        return Objects.equals(this.templateId, showAlarmTemplateResponse.templateId)
-            && Objects.equals(this.templateName, showAlarmTemplateResponse.templateName)
-            && Objects.equals(this.templateType, showAlarmTemplateResponse.templateType)
-            && Objects.equals(this.createTime, showAlarmTemplateResponse.createTime)
-            && Objects.equals(this.templateDescription, showAlarmTemplateResponse.templateDescription)
-            && Objects.equals(this.associationAlarmTotal, showAlarmTemplateResponse.associationAlarmTotal)
-            && Objects.equals(this.policies, showAlarmTemplateResponse.policies);
+        ShowAlarmTemplateResponse that = (ShowAlarmTemplateResponse) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.templateDescription, that.templateDescription)
+            && Objects.equals(this.associationAlarmTotal, that.associationAlarmTotal)
+            && Objects.equals(this.policies, that.policies);
     }
 
     @Override

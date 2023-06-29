@@ -115,17 +115,16 @@ public class ListAlarmWhiteListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmWhiteListResponse listAlarmWhiteListResponse = (ListAlarmWhiteListResponse) o;
-        return Objects.equals(this.totalNum, listAlarmWhiteListResponse.totalNum)
-            && Objects.equals(this.eventTypeList, listAlarmWhiteListResponse.eventTypeList)
-            && Objects.equals(this.dataList, listAlarmWhiteListResponse.dataList);
+        ListAlarmWhiteListResponse that = (ListAlarmWhiteListResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.eventTypeList, that.eventTypeList)
+            && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

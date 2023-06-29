@@ -77,17 +77,16 @@ public class RestorePoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestorePoint restorePoint = (RestorePoint) o;
-        return Objects.equals(this.backRef, restorePoint.backRef)
-            && Objects.equals(this.restoreTime, restorePoint.restoreTime)
-            && Objects.equals(this.clusterId, restorePoint.clusterId);
+        RestorePoint that = (RestorePoint) obj;
+        return Objects.equals(this.backRef, that.backRef) && Objects.equals(this.restoreTime, that.restoreTime)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

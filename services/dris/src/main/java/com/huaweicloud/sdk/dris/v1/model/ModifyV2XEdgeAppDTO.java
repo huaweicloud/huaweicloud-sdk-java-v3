@@ -33,15 +33,15 @@ public class ModifyV2XEdgeAppDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyV2XEdgeAppDTO modifyV2XEdgeAppDTO = (ModifyV2XEdgeAppDTO) o;
-        return Objects.equals(this.appVersion, modifyV2XEdgeAppDTO.appVersion);
+        ModifyV2XEdgeAppDTO that = (ModifyV2XEdgeAppDTO) obj;
+        return Objects.equals(this.appVersion, that.appVersion);
     }
 
     @Override

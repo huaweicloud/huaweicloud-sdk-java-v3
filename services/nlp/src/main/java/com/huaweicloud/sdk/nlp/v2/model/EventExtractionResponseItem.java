@@ -1,63 +1,54 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.EventExtractionResponseItemArgument;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * events数据结构
  */
-public class EventExtractionResponseItem  {
-
+public class EventExtractionResponseItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="argument")
-    
+    @JsonProperty(value = "argument")
+
     private List<EventExtractionResponseItemArgument> argument = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_trigger")
-    
+    @JsonProperty(value = "event_trigger")
 
     private String eventTrigger;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="event_type")
-    
+    @JsonProperty(value = "event_type")
 
     private String eventType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_span")
-    
+    @JsonProperty(value = "trigger_span")
+
     private List<Integer> triggerSpan = null;
-    
+
     public EventExtractionResponseItem withArgument(List<EventExtractionResponseItemArgument> argument) {
         this.argument = argument;
         return this;
     }
 
-    
     public EventExtractionResponseItem addArgumentItem(EventExtractionResponseItemArgument argumentItem) {
-        if(this.argument == null) {
+        if (this.argument == null) {
             this.argument = new ArrayList<>();
         }
         this.argument.add(argumentItem);
         return this;
     }
 
-    public EventExtractionResponseItem withArgument(Consumer<List<EventExtractionResponseItemArgument>> argumentSetter) {
-        if(this.argument == null) {
+    public EventExtractionResponseItem withArgument(
+        Consumer<List<EventExtractionResponseItemArgument>> argumentSetter) {
+        if (this.argument == null) {
             this.argument = new ArrayList<>();
         }
         argumentSetter.accept(this.argument);
@@ -76,15 +67,10 @@ public class EventExtractionResponseItem  {
         this.argument = argument;
     }
 
-    
-
     public EventExtractionResponseItem withEventTrigger(String eventTrigger) {
         this.eventTrigger = eventTrigger;
         return this;
     }
-
-    
-
 
     /**
      * 事件触发词。触发词是事件描述中最能代表事件发生的词汇，决定事件类别的重要特征。
@@ -98,15 +84,10 @@ public class EventExtractionResponseItem  {
         this.eventTrigger = eventTrigger;
     }
 
-    
-
     public EventExtractionResponseItem withEventType(String eventType) {
         this.eventType = eventType;
         return this;
     }
-
-    
-
 
     /**
      * 事件类型。
@@ -120,16 +101,13 @@ public class EventExtractionResponseItem  {
         this.eventType = eventType;
     }
 
-    
-
     public EventExtractionResponseItem withTriggerSpan(List<Integer> triggerSpan) {
         this.triggerSpan = triggerSpan;
         return this;
     }
 
-    
     public EventExtractionResponseItem addTriggerSpanItem(Integer triggerSpanItem) {
-        if(this.triggerSpan == null) {
+        if (this.triggerSpan == null) {
             this.triggerSpan = new ArrayList<>();
         }
         this.triggerSpan.add(triggerSpanItem);
@@ -137,7 +115,7 @@ public class EventExtractionResponseItem  {
     }
 
     public EventExtractionResponseItem withTriggerSpan(Consumer<List<Integer>> triggerSpanSetter) {
-        if(this.triggerSpan == null) {
+        if (this.triggerSpan == null) {
             this.triggerSpan = new ArrayList<>();
         }
         triggerSpanSetter.accept(this.triggerSpan);
@@ -156,26 +134,24 @@ public class EventExtractionResponseItem  {
         this.triggerSpan = triggerSpan;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventExtractionResponseItem eventExtractionResponseItem = (EventExtractionResponseItem) o;
-        return Objects.equals(this.argument, eventExtractionResponseItem.argument) &&
-            Objects.equals(this.eventTrigger, eventExtractionResponseItem.eventTrigger) &&
-            Objects.equals(this.eventType, eventExtractionResponseItem.eventType) &&
-            Objects.equals(this.triggerSpan, eventExtractionResponseItem.triggerSpan);
+        EventExtractionResponseItem that = (EventExtractionResponseItem) obj;
+        return Objects.equals(this.argument, that.argument) && Objects.equals(this.eventTrigger, that.eventTrigger)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.triggerSpan, that.triggerSpan);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(argument, eventTrigger, eventType, triggerSpan);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -187,6 +163,7 @@ public class EventExtractionResponseItem  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -197,8 +174,5 @@ public class EventExtractionResponseItem  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

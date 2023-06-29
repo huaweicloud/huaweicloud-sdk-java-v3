@@ -605,39 +605,33 @@ public class AlarmDataVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmDataVO alarmDataVO = (AlarmDataVO) o;
-        return Objects.equals(this.id, alarmDataVO.id) && Objects.equals(this.gmtCreate, alarmDataVO.gmtCreate)
-            && Objects.equals(this.regionAlarmEventId, alarmDataVO.regionAlarmEventId)
-            && Objects.equals(this.businessName, alarmDataVO.businessName)
-            && Objects.equals(this.appName, alarmDataVO.appName)
-            && Objects.equals(this.versionNumber, alarmDataVO.versionNumber)
-            && Objects.equals(this.alarmRuleType, alarmDataVO.alarmRuleType)
-            && Objects.equals(this.gmtModify, alarmDataVO.gmtModify)
-            && Objects.equals(this.processUnit, alarmDataVO.processUnit)
-            && Objects.equals(this.region, alarmDataVO.region)
-            && Objects.equals(this.instanceId, alarmDataVO.instanceId)
-            && Objects.equals(this.ipAddress, alarmDataVO.ipAddress)
-            && Objects.equals(this.instanceName, alarmDataVO.instanceName)
-            && Objects.equals(this.envId, alarmDataVO.envId) && Objects.equals(this.businessId, alarmDataVO.businessId)
-            && Objects.equals(this.templateId, alarmDataVO.templateId)
-            && Objects.equals(this.alarmRuleId, alarmDataVO.alarmRuleId)
-            && Objects.equals(this.monitorItemId, alarmDataVO.monitorItemId)
-            && Objects.equals(this.collectorId, alarmDataVO.collectorId)
-            && Objects.equals(this.collectorName, alarmDataVO.collectorName)
-            && Objects.equals(this.alarmRuleName, alarmDataVO.alarmRuleName)
-            && Objects.equals(this.alarmRuleExpression, alarmDataVO.alarmRuleExpression)
-            && Objects.equals(this.alarmFirstTime, alarmDataVO.alarmFirstTime)
-            && Objects.equals(this.alarmLastTime, alarmDataVO.alarmLastTime)
-            && Objects.equals(this.alarmLevel, alarmDataVO.alarmLevel)
-            && Objects.equals(this.restrainKey, alarmDataVO.restrainKey)
-            && Objects.equals(this.status, alarmDataVO.status);
+        AlarmDataVO that = (AlarmDataVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.regionAlarmEventId, that.regionAlarmEventId)
+            && Objects.equals(this.businessName, that.businessName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.versionNumber, that.versionNumber)
+            && Objects.equals(this.alarmRuleType, that.alarmRuleType) && Objects.equals(this.gmtModify, that.gmtModify)
+            && Objects.equals(this.processUnit, that.processUnit) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.alarmRuleId, that.alarmRuleId)
+            && Objects.equals(this.monitorItemId, that.monitorItemId)
+            && Objects.equals(this.collectorId, that.collectorId)
+            && Objects.equals(this.collectorName, that.collectorName)
+            && Objects.equals(this.alarmRuleName, that.alarmRuleName)
+            && Objects.equals(this.alarmRuleExpression, that.alarmRuleExpression)
+            && Objects.equals(this.alarmFirstTime, that.alarmFirstTime)
+            && Objects.equals(this.alarmLastTime, that.alarmLastTime)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.restrainKey, that.restrainKey)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

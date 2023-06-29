@@ -55,16 +55,16 @@ public class UpdateRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoute updateRoute = (UpdateRoute) o;
-        return Objects.equals(this.attachmentId, updateRoute.attachmentId)
-            && Objects.equals(this.isBlackhole, updateRoute.isBlackhole);
+        UpdateRoute that = (UpdateRoute) obj;
+        return Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.isBlackhole, that.isBlackhole);
     }
 
     @Override

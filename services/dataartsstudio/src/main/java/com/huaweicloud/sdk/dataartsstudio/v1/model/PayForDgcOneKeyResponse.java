@@ -56,16 +56,15 @@ public class PayForDgcOneKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PayForDgcOneKeyResponse payForDgcOneKeyResponse = (PayForDgcOneKeyResponse) o;
-        return Objects.equals(this.orderId, payForDgcOneKeyResponse.orderId)
-            && Objects.equals(this.resourceId, payForDgcOneKeyResponse.resourceId);
+        PayForDgcOneKeyResponse that = (PayForDgcOneKeyResponse) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

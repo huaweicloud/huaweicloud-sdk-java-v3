@@ -92,22 +92,15 @@ public class ThumbTask {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,21 +367,20 @@ public class ThumbTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThumbTask thumbTask = (ThumbTask) o;
-        return Objects.equals(this.taskId, thumbTask.taskId) && Objects.equals(this.status, thumbTask.status)
-            && Objects.equals(this.createTime, thumbTask.createTime) && Objects.equals(this.endTime, thumbTask.endTime)
-            && Objects.equals(this.input, thumbTask.input) && Objects.equals(this.output, thumbTask.output)
-            && Objects.equals(this.outputFileName, thumbTask.outputFileName)
-            && Objects.equals(this.userData, thumbTask.userData)
-            && Objects.equals(this.description, thumbTask.description)
-            && Objects.equals(this.thumbnailInfo, thumbTask.thumbnailInfo);
+        ThumbTask that = (ThumbTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.outputFileName, that.outputFileName) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.thumbnailInfo, that.thumbnailInfo);
     }
 
     @Override

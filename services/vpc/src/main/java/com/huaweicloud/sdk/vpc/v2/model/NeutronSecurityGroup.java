@@ -208,21 +208,18 @@ public class NeutronSecurityGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronSecurityGroup neutronSecurityGroup = (NeutronSecurityGroup) o;
-        return Objects.equals(this.description, neutronSecurityGroup.description)
-            && Objects.equals(this.id, neutronSecurityGroup.id) && Objects.equals(this.name, neutronSecurityGroup.name)
-            && Objects.equals(this.securityGroupRules, neutronSecurityGroup.securityGroupRules)
-            && Objects.equals(this.tenantId, neutronSecurityGroup.tenantId)
-            && Objects.equals(this.projectId, neutronSecurityGroup.projectId)
-            && Objects.equals(this.createdAt, neutronSecurityGroup.createdAt)
-            && Objects.equals(this.updatedAt, neutronSecurityGroup.updatedAt);
+        NeutronSecurityGroup that = (NeutronSecurityGroup) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.securityGroupRules, that.securityGroupRules)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

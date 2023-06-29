@@ -55,15 +55,15 @@ public class Nodes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nodes nodes = (Nodes) o;
-        return Objects.equals(this.id, nodes.id) && Objects.equals(this.status, nodes.status);
+        Nodes that = (Nodes) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
     }
 
     @Override

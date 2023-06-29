@@ -105,16 +105,16 @@ public class Backend {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Backend backend = (Backend) o;
-        return Objects.equals(this.ip, backend.ip) && Objects.equals(this.port, backend.port)
-            && Objects.equals(this.healthCheck, backend.healthCheck);
+        Backend that = (Backend) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.healthCheck, that.healthCheck);
     }
 
     @Override

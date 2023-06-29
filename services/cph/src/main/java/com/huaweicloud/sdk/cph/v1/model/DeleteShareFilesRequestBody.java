@@ -90,16 +90,15 @@ public class DeleteShareFilesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteShareFilesRequestBody deleteShareFilesRequestBody = (DeleteShareFilesRequestBody) o;
-        return Objects.equals(this.serverIds, deleteShareFilesRequestBody.serverIds)
-            && Objects.equals(this.filePaths, deleteShareFilesRequestBody.filePaths);
+        DeleteShareFilesRequestBody that = (DeleteShareFilesRequestBody) obj;
+        return Objects.equals(this.serverIds, that.serverIds) && Objects.equals(this.filePaths, that.filePaths);
     }
 
     @Override

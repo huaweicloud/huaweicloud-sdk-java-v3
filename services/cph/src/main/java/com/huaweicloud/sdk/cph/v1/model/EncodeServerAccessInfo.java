@@ -169,21 +169,18 @@ public class EncodeServerAccessInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncodeServerAccessInfo encodeServerAccessInfo = (EncodeServerAccessInfo) o;
-        return Objects.equals(this.listenPort, encodeServerAccessInfo.listenPort)
-            && Objects.equals(this.accessIp, encodeServerAccessInfo.accessIp)
-            && Objects.equals(this.intranetIp, encodeServerAccessInfo.intranetIp)
-            && Objects.equals(this.publicIp, encodeServerAccessInfo.publicIp)
-            && Objects.equals(this.serverIp, encodeServerAccessInfo.serverIp)
-            && Objects.equals(this.accessPort, encodeServerAccessInfo.accessPort)
-            && Objects.equals(this.type, encodeServerAccessInfo.type);
+        EncodeServerAccessInfo that = (EncodeServerAccessInfo) obj;
+        return Objects.equals(this.listenPort, that.listenPort) && Objects.equals(this.accessIp, that.accessIp)
+            && Objects.equals(this.intranetIp, that.intranetIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.serverIp, that.serverIp) && Objects.equals(this.accessPort, that.accessPort)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

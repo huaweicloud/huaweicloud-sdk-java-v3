@@ -65,16 +65,15 @@ public class UpdatePodDeployment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePodDeployment updatePodDeployment = (UpdatePodDeployment) o;
-        return Objects.equals(this.replicas, updatePodDeployment.replicas)
-            && Objects.equals(this.template, updatePodDeployment.template);
+        UpdatePodDeployment that = (UpdatePodDeployment) obj;
+        return Objects.equals(this.replicas, that.replicas) && Objects.equals(this.template, that.template);
     }
 
     @Override

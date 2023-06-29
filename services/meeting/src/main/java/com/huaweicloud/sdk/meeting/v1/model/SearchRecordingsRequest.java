@@ -235,24 +235,20 @@ public class SearchRecordingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchRecordingsRequest searchRecordingsRequest = (SearchRecordingsRequest) o;
-        return Objects.equals(this.userUUID, searchRecordingsRequest.userUUID)
-            && Objects.equals(this.offset, searchRecordingsRequest.offset)
-            && Objects.equals(this.limit, searchRecordingsRequest.limit)
-            && Objects.equals(this.queryAll, searchRecordingsRequest.queryAll)
-            && Objects.equals(this.searchKey, searchRecordingsRequest.searchKey)
-            && Objects.equals(this.startDate, searchRecordingsRequest.startDate)
-            && Objects.equals(this.endDate, searchRecordingsRequest.endDate)
-            && Objects.equals(this.sortType, searchRecordingsRequest.sortType)
-            && Objects.equals(this.xAuthorizationType, searchRecordingsRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, searchRecordingsRequest.xSiteId);
+        SearchRecordingsRequest that = (SearchRecordingsRequest) obj;
+        return Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.queryAll, that.queryAll)
+            && Objects.equals(this.searchKey, that.searchKey) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

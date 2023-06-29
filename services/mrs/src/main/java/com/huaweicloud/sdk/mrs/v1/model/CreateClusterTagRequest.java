@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.CreateTagReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class CreateClusterTagRequest  {
-
+public class CreateClusterTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private CreateTagReq body;
 
@@ -35,9 +25,6 @@ public class CreateClusterTagRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。
@@ -51,22 +38,19 @@ public class CreateClusterTagRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public CreateClusterTagRequest withBody(CreateTagReq body) {
         this.body = body;
         return this;
     }
 
     public CreateClusterTagRequest withBody(Consumer<CreateTagReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateTagReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class CreateClusterTagRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterTagRequest createClusterTagRequest = (CreateClusterTagRequest) o;
-        return Objects.equals(this.clusterId, createClusterTagRequest.clusterId) &&
-            Objects.equals(this.body, createClusterTagRequest.body);
+        CreateClusterTagRequest that = (CreateClusterTagRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class CreateClusterTagRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class CreateClusterTagRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

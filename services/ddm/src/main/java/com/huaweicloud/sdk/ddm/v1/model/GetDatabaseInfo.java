@@ -184,21 +184,18 @@ public class GetDatabaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDatabaseInfo getDatabaseInfo = (GetDatabaseInfo) o;
-        return Objects.equals(this.name, getDatabaseInfo.name)
-            && Objects.equals(this.shardMode, getDatabaseInfo.shardMode)
-            && Objects.equals(this.shardNumber, getDatabaseInfo.shardNumber)
-            && Objects.equals(this.status, getDatabaseInfo.status)
-            && Objects.equals(this.created, getDatabaseInfo.created)
-            && Objects.equals(this.usedRds, getDatabaseInfo.usedRds)
-            && Objects.equals(this.shardUnit, getDatabaseInfo.shardUnit);
+        GetDatabaseInfo that = (GetDatabaseInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.shardMode, that.shardMode)
+            && Objects.equals(this.shardNumber, that.shardNumber) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.usedRds, that.usedRds)
+            && Objects.equals(this.shardUnit, that.shardUnit);
     }
 
     @Override

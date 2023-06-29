@@ -87,17 +87,16 @@ public class BatchEnableMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchEnableMembersRequest batchEnableMembersRequest = (BatchEnableMembersRequest) o;
-        return Objects.equals(this.instanceId, batchEnableMembersRequest.instanceId)
-            && Objects.equals(this.vpcChannelId, batchEnableMembersRequest.vpcChannelId)
-            && Objects.equals(this.body, batchEnableMembersRequest.body);
+        BatchEnableMembersRequest that = (BatchEnableMembersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

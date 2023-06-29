@@ -55,17 +55,16 @@ public class ListRolesForGroupOnEnterpriseProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRolesForGroupOnEnterpriseProjectRequest listRolesForGroupOnEnterpriseProjectRequest =
-            (ListRolesForGroupOnEnterpriseProjectRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listRolesForGroupOnEnterpriseProjectRequest.enterpriseProjectId)
-            && Objects.equals(this.groupId, listRolesForGroupOnEnterpriseProjectRequest.groupId);
+        ListRolesForGroupOnEnterpriseProjectRequest that = (ListRolesForGroupOnEnterpriseProjectRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

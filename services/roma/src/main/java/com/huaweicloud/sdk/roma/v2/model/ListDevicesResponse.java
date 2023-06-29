@@ -189,21 +189,20 @@ public class ListDevicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesResponse listDevicesResponse = (ListDevicesResponse) o;
-        return Objects.equals(this.total, listDevicesResponse.total)
-            && Objects.equals(this.size, listDevicesResponse.size)
-            && Objects.equals(this.connectAddress, listDevicesResponse.connectAddress)
-            && Objects.equals(this.sslConnectAddress, listDevicesResponse.sslConnectAddress)
-            && Objects.equals(this.ipv6ConnectAddress, listDevicesResponse.ipv6ConnectAddress)
-            && Objects.equals(this.ipv6SslConnectAddress, listDevicesResponse.ipv6SslConnectAddress)
-            && Objects.equals(this.items, listDevicesResponse.items);
+        ListDevicesResponse that = (ListDevicesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.sslConnectAddress, that.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, that.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, that.ipv6SslConnectAddress)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

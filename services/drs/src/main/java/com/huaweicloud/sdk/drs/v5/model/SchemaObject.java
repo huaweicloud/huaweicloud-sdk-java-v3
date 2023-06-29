@@ -118,16 +118,16 @@ public class SchemaObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchemaObject schemaObject = (SchemaObject) o;
-        return Objects.equals(this.syncType, schemaObject.syncType) && Objects.equals(this.name, schemaObject.name)
-            && Objects.equals(this.all, schemaObject.all) && Objects.equals(this.tables, schemaObject.tables);
+        SchemaObject that = (SchemaObject) obj;
+        return Objects.equals(this.syncType, that.syncType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.all, that.all) && Objects.equals(this.tables, that.tables);
     }
 
     @Override

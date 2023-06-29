@@ -55,16 +55,16 @@ public class ShowRepositoryNameExistRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryNameExistRequest showRepositoryNameExistRequest = (ShowRepositoryNameExistRequest) o;
-        return Objects.equals(this.projectUuid, showRepositoryNameExistRequest.projectUuid)
-            && Objects.equals(this.repositoryName, showRepositoryNameExistRequest.repositoryName);
+        ShowRepositoryNameExistRequest that = (ShowRepositoryNameExistRequest) obj;
+        return Objects.equals(this.projectUuid, that.projectUuid)
+            && Objects.equals(this.repositoryName, that.repositoryName);
     }
 
     @Override

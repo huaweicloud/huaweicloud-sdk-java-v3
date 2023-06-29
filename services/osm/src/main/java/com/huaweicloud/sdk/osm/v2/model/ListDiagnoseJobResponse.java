@@ -88,22 +88,15 @@ public class ListDiagnoseJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -295,21 +288,18 @@ public class ListDiagnoseJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDiagnoseJobResponse listDiagnoseJobResponse = (ListDiagnoseJobResponse) o;
-        return Objects.equals(this.status, listDiagnoseJobResponse.status)
-            && Objects.equals(this.errorCode, listDiagnoseJobResponse.errorCode)
-            && Objects.equals(this.errorMsg, listDiagnoseJobResponse.errorMsg)
-            && Objects.equals(this.jobId, listDiagnoseJobResponse.jobId)
-            && Objects.equals(this.domainId, listDiagnoseJobResponse.domainId)
-            && Objects.equals(this.itemsResult, listDiagnoseJobResponse.itemsResult)
-            && Objects.equals(this.createTime, listDiagnoseJobResponse.createTime);
+        ListDiagnoseJobResponse that = (ListDiagnoseJobResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.itemsResult, that.itemsResult)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

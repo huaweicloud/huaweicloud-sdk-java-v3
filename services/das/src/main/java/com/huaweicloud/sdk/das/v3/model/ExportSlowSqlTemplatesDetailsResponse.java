@@ -76,17 +76,16 @@ public class ExportSlowSqlTemplatesDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportSlowSqlTemplatesDetailsResponse exportSlowSqlTemplatesDetailsResponse =
-            (ExportSlowSqlTemplatesDetailsResponse) o;
-        return Objects.equals(this.slowSqlTemplates, exportSlowSqlTemplatesDetailsResponse.slowSqlTemplates)
-            && Objects.equals(this.totalCount, exportSlowSqlTemplatesDetailsResponse.totalCount);
+        ExportSlowSqlTemplatesDetailsResponse that = (ExportSlowSqlTemplatesDetailsResponse) obj;
+        return Objects.equals(this.slowSqlTemplates, that.slowSqlTemplates)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class TestCaseExecuteBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestCaseExecuteBean testCaseExecuteBean = (TestCaseExecuteBean) o;
-        return Objects.equals(this.testcaseId, testCaseExecuteBean.testcaseId)
-            && Objects.equals(this.executeId, testCaseExecuteBean.executeId)
-            && Objects.equals(this.resultId, testCaseExecuteBean.resultId)
-            && Objects.equals(this.startTime, testCaseExecuteBean.startTime);
+        TestCaseExecuteBean that = (TestCaseExecuteBean) obj;
+        return Objects.equals(this.testcaseId, that.testcaseId) && Objects.equals(this.executeId, that.executeId)
+            && Objects.equals(this.resultId, that.resultId) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

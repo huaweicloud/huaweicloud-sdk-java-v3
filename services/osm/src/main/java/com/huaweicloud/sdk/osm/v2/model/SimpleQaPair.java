@@ -77,16 +77,16 @@ public class SimpleQaPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleQaPair simpleQaPair = (SimpleQaPair) o;
-        return Objects.equals(this.question, simpleQaPair.question) && Objects.equals(this.domain, simpleQaPair.domain)
-            && Objects.equals(this.qaPairId, simpleQaPair.qaPairId);
+        SimpleQaPair that = (SimpleQaPair) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.qaPairId, that.qaPairId);
     }
 
     @Override

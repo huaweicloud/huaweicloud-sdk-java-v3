@@ -87,16 +87,16 @@ public class AddTagsResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTagsResponse addTagsResponse = (AddTagsResponse) o;
-        return Objects.equals(this.name, addTagsResponse.name) && Objects.equals(this.message, addTagsResponse.message)
-            && Objects.equals(this.commit, addTagsResponse.commit);
+        AddTagsResponse that = (AddTagsResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.commit, that.commit);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class ResourceLimit {
             if (value == null) {
                 return null;
             }
-            CpuLimitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CpuLimitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CpuLimitEnum(value));
         }
 
         public static CpuLimitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CpuLimitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -154,22 +147,15 @@ public class ResourceLimit {
             if (value == null) {
                 return null;
             }
-            MemoryLimitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemoryLimitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemoryLimitEnum(value));
         }
 
         public static MemoryLimitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemoryLimitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,16 +212,15 @@ public class ResourceLimit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceLimit resourceLimit = (ResourceLimit) o;
-        return Objects.equals(this.cpuLimit, resourceLimit.cpuLimit)
-            && Objects.equals(this.memoryLimit, resourceLimit.memoryLimit);
+        ResourceLimit that = (ResourceLimit) obj;
+        return Objects.equals(this.cpuLimit, that.cpuLimit) && Objects.equals(this.memoryLimit, that.memoryLimit);
     }
 
     @Override

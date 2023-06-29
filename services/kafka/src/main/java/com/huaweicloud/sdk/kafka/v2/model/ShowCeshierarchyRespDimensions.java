@@ -188,19 +188,17 @@ public class ShowCeshierarchyRespDimensions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCeshierarchyRespDimensions showCeshierarchyRespDimensions = (ShowCeshierarchyRespDimensions) o;
-        return Objects.equals(this.name, showCeshierarchyRespDimensions.name)
-            && Objects.equals(this.metrics, showCeshierarchyRespDimensions.metrics)
-            && Objects.equals(this.keyName, showCeshierarchyRespDimensions.keyName)
-            && Objects.equals(this.dimRouter, showCeshierarchyRespDimensions.dimRouter)
-            && Objects.equals(this.children, showCeshierarchyRespDimensions.children);
+        ShowCeshierarchyRespDimensions that = (ShowCeshierarchyRespDimensions) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.metrics, that.metrics)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.dimRouter, that.dimRouter)
+            && Objects.equals(this.children, that.children);
     }
 
     @Override

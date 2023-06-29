@@ -110,18 +110,16 @@ public class CreateResIntelligentSceneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResIntelligentSceneResponse createResIntelligentSceneResponse = (CreateResIntelligentSceneResponse) o;
-        return Objects.equals(this.isSuccess, createResIntelligentSceneResponse.isSuccess)
-            && Objects.equals(this.message, createResIntelligentSceneResponse.message)
-            && Objects.equals(this.errorCode, createResIntelligentSceneResponse.errorCode)
-            && Objects.equals(this.scene, createResIntelligentSceneResponse.scene);
+        CreateResIntelligentSceneResponse that = (CreateResIntelligentSceneResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.scene, that.scene);
     }
 
     @Override

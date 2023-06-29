@@ -1,55 +1,39 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ChatAnswers;
-import com.huaweicloud.sdk.cbs.v1.model.QaBotAnswers;
-import com.huaweicloud.sdk.cbs.v1.model.TaskBotAnswers;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ExecuteSessionResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reply_type")
-    
+    @JsonProperty(value = "reply_type")
 
     private Integer replyType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_answers")
-    
+    @JsonProperty(value = "qabot_answers")
 
     private QaBotAnswers qabotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chat_answers")
-    
+    @JsonProperty(value = "chat_answers")
 
     private ChatAnswers chatAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="taskbot_answers")
-    
+    @JsonProperty(value = "taskbot_answers")
 
     private TaskBotAnswers taskbotAnswers;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
 
     private String requestId;
 
@@ -57,9 +41,6 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.replyType = replyType;
         return this;
     }
-
-    
-
 
     /**
      * 回复类型： 0   问答型机器人回复。 1   任务型机器人回复。 2   闲聊回复。
@@ -73,22 +54,19 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.replyType = replyType;
     }
 
-    
-
     public ExecuteSessionResponse withQabotAnswers(QaBotAnswers qabotAnswers) {
         this.qabotAnswers = qabotAnswers;
         return this;
     }
 
     public ExecuteSessionResponse withQabotAnswers(Consumer<QaBotAnswers> qabotAnswersSetter) {
-        if(this.qabotAnswers == null ){
+        if (this.qabotAnswers == null) {
             this.qabotAnswers = new QaBotAnswers();
             qabotAnswersSetter.accept(this.qabotAnswers);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get qabotAnswers
@@ -102,22 +80,19 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.qabotAnswers = qabotAnswers;
     }
 
-    
-
     public ExecuteSessionResponse withChatAnswers(ChatAnswers chatAnswers) {
         this.chatAnswers = chatAnswers;
         return this;
     }
 
     public ExecuteSessionResponse withChatAnswers(Consumer<ChatAnswers> chatAnswersSetter) {
-        if(this.chatAnswers == null ){
+        if (this.chatAnswers == null) {
             this.chatAnswers = new ChatAnswers();
             chatAnswersSetter.accept(this.chatAnswers);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chatAnswers
@@ -131,22 +106,19 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.chatAnswers = chatAnswers;
     }
 
-    
-
     public ExecuteSessionResponse withTaskbotAnswers(TaskBotAnswers taskbotAnswers) {
         this.taskbotAnswers = taskbotAnswers;
         return this;
     }
 
     public ExecuteSessionResponse withTaskbotAnswers(Consumer<TaskBotAnswers> taskbotAnswersSetter) {
-        if(this.taskbotAnswers == null ){
+        if (this.taskbotAnswers == null) {
             this.taskbotAnswers = new TaskBotAnswers();
             taskbotAnswersSetter.accept(this.taskbotAnswers);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get taskbotAnswers
@@ -160,15 +132,10 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.taskbotAnswers = taskbotAnswers;
     }
 
-    
-
     public ExecuteSessionResponse withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
-
-    
-
 
     /**
      * 请求ID。
@@ -182,27 +149,26 @@ public class ExecuteSessionResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteSessionResponse executeSessionResponse = (ExecuteSessionResponse) o;
-        return Objects.equals(this.replyType, executeSessionResponse.replyType) &&
-            Objects.equals(this.qabotAnswers, executeSessionResponse.qabotAnswers) &&
-            Objects.equals(this.chatAnswers, executeSessionResponse.chatAnswers) &&
-            Objects.equals(this.taskbotAnswers, executeSessionResponse.taskbotAnswers) &&
-            Objects.equals(this.requestId, executeSessionResponse.requestId);
+        ExecuteSessionResponse that = (ExecuteSessionResponse) obj;
+        return Objects.equals(this.replyType, that.replyType) && Objects.equals(this.qabotAnswers, that.qabotAnswers)
+            && Objects.equals(this.chatAnswers, that.chatAnswers)
+            && Objects.equals(this.taskbotAnswers, that.taskbotAnswers)
+            && Objects.equals(this.requestId, that.requestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(replyType, qabotAnswers, chatAnswers, taskbotAnswers, requestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -215,6 +181,7 @@ public class ExecuteSessionResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -225,8 +192,5 @@ public class ExecuteSessionResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

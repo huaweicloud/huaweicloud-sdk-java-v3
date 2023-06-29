@@ -1,79 +1,69 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * CreateEdgeApplicationRequestDTO
  */
-public class CreateEdgeApplicationRequestDTO  {
-
+public class CreateEdgeApplicationRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_name")
-    
+    @JsonProperty(value = "edge_app_name")
 
     private String edgeAppName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
+
     /**
      * 功能类型,分为数据处理（DATA_PROCESSING）、协议解析（PROTOCOL_PARSING）、IT集成（ON_PREMISE_INTEGRATION）和混合应用（COMPOSITE_APPLICATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用，混合应用可同时实现数据处理和协议解析。
      */
     public static final class FunctionTypeEnum {
 
-        
         /**
          * Enum DATA_PROCESSING for value: "DATA_PROCESSING"
          */
         public static final FunctionTypeEnum DATA_PROCESSING = new FunctionTypeEnum("DATA_PROCESSING");
-        
+
         /**
          * Enum PROTOCOL_PARSING for value: "PROTOCOL_PARSING"
          */
         public static final FunctionTypeEnum PROTOCOL_PARSING = new FunctionTypeEnum("PROTOCOL_PARSING");
-        
+
         /**
          * Enum ON_PREMISE_INTEGRATION for value: "ON_PREMISE_INTEGRATION"
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
-        
+
         /**
          * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
          */
         public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
-        
+
         /**
          * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
          */
         public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
-        
+
         /**
          * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
-        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -106,25 +96,18 @@ public class CreateEdgeApplicationRequestDTO  {
 
         @JsonCreator
         public static FunctionTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FunctionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FunctionTypeEnum(value));
         }
 
         public static FunctionTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,14 +125,12 @@ public class CreateEdgeApplicationRequestDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_type")
-    
+    @JsonProperty(value = "function_type")
 
     private FunctionTypeEnum functionType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="protocol")
-    
+    @JsonProperty(value = "protocol")
 
     private String protocol;
 
@@ -157,9 +138,6 @@ public class CreateEdgeApplicationRequestDTO  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -173,15 +151,10 @@ public class CreateEdgeApplicationRequestDTO  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public CreateEdgeApplicationRequestDTO withEdgeAppName(String edgeAppName) {
         this.edgeAppName = edgeAppName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -195,15 +168,10 @@ public class CreateEdgeApplicationRequestDTO  {
         this.edgeAppName = edgeAppName;
     }
 
-    
-
     public CreateEdgeApplicationRequestDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -217,15 +185,10 @@ public class CreateEdgeApplicationRequestDTO  {
         this.description = description;
     }
 
-    
-
     public CreateEdgeApplicationRequestDTO withFunctionType(FunctionTypeEnum functionType) {
         this.functionType = functionType;
         return this;
     }
-
-    
-
 
     /**
      * 功能类型,分为数据处理（DATA_PROCESSING）、协议解析（PROTOCOL_PARSING）、IT集成（ON_PREMISE_INTEGRATION）和混合应用（COMPOSITE_APPLICATION），数据默认为DATA_PROCESSING，数据处理模块可以传输消息，协议解析为驱动类型，IT集成为部署南向3rdIA使用，混合应用可同时实现数据处理和协议解析。
@@ -239,15 +202,10 @@ public class CreateEdgeApplicationRequestDTO  {
         this.functionType = functionType;
     }
 
-    
-
     public CreateEdgeApplicationRequestDTO withProtocol(String protocol) {
         this.protocol = protocol;
         return this;
     }
-
-    
-
 
     /**
      * 驱动协议类型OPCUA|Modbus-TCP
@@ -261,27 +219,25 @@ public class CreateEdgeApplicationRequestDTO  {
         this.protocol = protocol;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationRequestDTO createEdgeApplicationRequestDTO = (CreateEdgeApplicationRequestDTO) o;
-        return Objects.equals(this.edgeAppId, createEdgeApplicationRequestDTO.edgeAppId) &&
-            Objects.equals(this.edgeAppName, createEdgeApplicationRequestDTO.edgeAppName) &&
-            Objects.equals(this.description, createEdgeApplicationRequestDTO.description) &&
-            Objects.equals(this.functionType, createEdgeApplicationRequestDTO.functionType) &&
-            Objects.equals(this.protocol, createEdgeApplicationRequestDTO.protocol);
+        CreateEdgeApplicationRequestDTO that = (CreateEdgeApplicationRequestDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.edgeAppName, that.edgeAppName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.functionType, that.functionType) && Objects.equals(this.protocol, that.protocol);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeAppId, edgeAppName, description, functionType, protocol);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -294,6 +250,7 @@ public class CreateEdgeApplicationRequestDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -304,8 +261,5 @@ public class CreateEdgeApplicationRequestDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 只读节点权重信息
  */
-public class ModifyProxyWeightReadonlyNode  {
-
+public class ModifyProxyWeightReadonlyNode {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="weight")
-    
+    @JsonProperty(value = "weight")
 
     private Integer weight;
 
@@ -33,9 +24,6 @@ public class ModifyProxyWeightReadonlyNode  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 只读节点ID
@@ -49,15 +37,10 @@ public class ModifyProxyWeightReadonlyNode  {
         this.id = id;
     }
 
-    
-
     public ModifyProxyWeightReadonlyNode withWeight(Integer weight) {
         this.weight = weight;
         return this;
     }
-
-    
-
 
     /**
      * 只读节点权重
@@ -71,24 +54,23 @@ public class ModifyProxyWeightReadonlyNode  {
         this.weight = weight;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyProxyWeightReadonlyNode modifyProxyWeightReadonlyNode = (ModifyProxyWeightReadonlyNode) o;
-        return Objects.equals(this.id, modifyProxyWeightReadonlyNode.id) &&
-            Objects.equals(this.weight, modifyProxyWeightReadonlyNode.weight);
+        ModifyProxyWeightReadonlyNode that = (ModifyProxyWeightReadonlyNode) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.weight, that.weight);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, weight);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ModifyProxyWeightReadonlyNode  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ModifyProxyWeightReadonlyNode  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

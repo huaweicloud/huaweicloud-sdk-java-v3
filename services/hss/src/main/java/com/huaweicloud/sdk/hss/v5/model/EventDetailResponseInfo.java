@@ -255,25 +255,20 @@ public class EventDetailResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventDetailResponseInfo eventDetailResponseInfo = (EventDetailResponseInfo) o;
-        return Objects.equals(this.agentId, eventDetailResponseInfo.agentId)
-            && Objects.equals(this.processPid, eventDetailResponseInfo.processPid)
-            && Objects.equals(this.isParent, eventDetailResponseInfo.isParent)
-            && Objects.equals(this.fileHash, eventDetailResponseInfo.fileHash)
-            && Objects.equals(this.filePath, eventDetailResponseInfo.filePath)
-            && Objects.equals(this.fileAttr, eventDetailResponseInfo.fileAttr)
-            && Objects.equals(this.privateIp, eventDetailResponseInfo.privateIp)
-            && Objects.equals(this.loginIp, eventDetailResponseInfo.loginIp)
-            && Objects.equals(this.loginUserName, eventDetailResponseInfo.loginUserName)
-            && Objects.equals(this.keyword, eventDetailResponseInfo.keyword)
-            && Objects.equals(this.hash, eventDetailResponseInfo.hash);
+        EventDetailResponseInfo that = (EventDetailResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.processPid, that.processPid)
+            && Objects.equals(this.isParent, that.isParent) && Objects.equals(this.fileHash, that.fileHash)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.fileAttr, that.fileAttr)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.loginIp, that.loginIp)
+            && Objects.equals(this.loginUserName, that.loginUserName) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.hash, that.hash);
     }
 
     @Override

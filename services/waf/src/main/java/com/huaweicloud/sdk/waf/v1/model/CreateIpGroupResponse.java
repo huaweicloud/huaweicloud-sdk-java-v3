@@ -185,21 +185,18 @@ public class CreateIpGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIpGroupResponse createIpGroupResponse = (CreateIpGroupResponse) o;
-        return Objects.equals(this.id, createIpGroupResponse.id)
-            && Objects.equals(this.name, createIpGroupResponse.name)
-            && Objects.equals(this.ips, createIpGroupResponse.ips)
-            && Objects.equals(this.size, createIpGroupResponse.size)
-            && Objects.equals(this.rules, createIpGroupResponse.rules)
-            && Objects.equals(this.description, createIpGroupResponse.description)
-            && Objects.equals(this.timestamp, createIpGroupResponse.timestamp);
+        CreateIpGroupResponse that = (CreateIpGroupResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

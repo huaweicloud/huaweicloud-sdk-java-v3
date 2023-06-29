@@ -57,16 +57,15 @@ public class ShowProjectDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectDetailRequest showProjectDetailRequest = (ShowProjectDetailRequest) o;
-        return Objects.equals(this.xRepoAuth, showProjectDetailRequest.xRepoAuth)
-            && Objects.equals(this.cloneUrl, showProjectDetailRequest.cloneUrl);
+        ShowProjectDetailRequest that = (ShowProjectDetailRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.cloneUrl, that.cloneUrl);
     }
 
     @Override

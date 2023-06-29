@@ -55,16 +55,15 @@ public class ShowResourceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceInfoRequest showResourceInfoRequest = (ShowResourceInfoRequest) o;
-        return Objects.equals(this.resourceName, showResourceInfoRequest.resourceName)
-            && Objects.equals(this.group, showResourceInfoRequest.group);
+        ShowResourceInfoRequest that = (ShowResourceInfoRequest) obj;
+        return Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.group, that.group);
     }
 
     @Override

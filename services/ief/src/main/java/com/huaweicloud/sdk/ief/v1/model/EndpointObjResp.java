@@ -250,24 +250,19 @@ public class EndpointObjResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointObjResp endpointObjResp = (EndpointObjResp) o;
-        return Objects.equals(this.createdAt, endpointObjResp.createdAt)
-            && Objects.equals(this.description, endpointObjResp.description)
-            && Objects.equals(this.id, endpointObjResp.id)
-            && Objects.equals(this.iefInstanceId, endpointObjResp.iefInstanceId)
-            && Objects.equals(this.isShared, endpointObjResp.isShared)
-            && Objects.equals(this.name, endpointObjResp.name)
-            && Objects.equals(this.projectId, endpointObjResp.projectId)
-            && Objects.equals(this.properties, endpointObjResp.properties)
-            && Objects.equals(this.type, endpointObjResp.type)
-            && Objects.equals(this.updatedAt, endpointObjResp.updatedAt);
+        EndpointObjResp that = (EndpointObjResp) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.isShared, that.isShared) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

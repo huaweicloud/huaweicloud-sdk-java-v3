@@ -75,16 +75,15 @@ public class ListShareFilesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListShareFilesResponse listShareFilesResponse = (ListShareFilesResponse) o;
-        return Objects.equals(this.requestId, listShareFilesResponse.requestId)
-            && Objects.equals(this.jobs, listShareFilesResponse.jobs);
+        ListShareFilesResponse that = (ListShareFilesResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

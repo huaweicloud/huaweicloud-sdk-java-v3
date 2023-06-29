@@ -53,15 +53,15 @@ public class ListDatastoreVersionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatastoreVersionsResponse listDatastoreVersionsResponse = (ListDatastoreVersionsResponse) o;
-        return Objects.equals(this.versions, listDatastoreVersionsResponse.versions);
+        ListDatastoreVersionsResponse that = (ListDatastoreVersionsResponse) obj;
+        return Objects.equals(this.versions, that.versions);
     }
 
     @Override

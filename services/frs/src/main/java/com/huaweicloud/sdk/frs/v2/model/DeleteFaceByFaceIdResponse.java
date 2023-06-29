@@ -78,17 +78,16 @@ public class DeleteFaceByFaceIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFaceByFaceIdResponse deleteFaceByFaceIdResponse = (DeleteFaceByFaceIdResponse) o;
-        return Objects.equals(this.faceNumber, deleteFaceByFaceIdResponse.faceNumber)
-            && Objects.equals(this.faceSetId, deleteFaceByFaceIdResponse.faceSetId)
-            && Objects.equals(this.faceSetName, deleteFaceByFaceIdResponse.faceSetName);
+        DeleteFaceByFaceIdResponse that = (DeleteFaceByFaceIdResponse) obj;
+        return Objects.equals(this.faceNumber, that.faceNumber) && Objects.equals(this.faceSetId, that.faceSetId)
+            && Objects.equals(this.faceSetName, that.faceSetName);
     }
 
     @Override

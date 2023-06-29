@@ -89,17 +89,16 @@ public class UpdateProductTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductTemplateRequest updateProductTemplateRequest = (UpdateProductTemplateRequest) o;
-        return Objects.equals(this.instanceId, updateProductTemplateRequest.instanceId)
-            && Objects.equals(this.productTemplateId, updateProductTemplateRequest.productTemplateId)
-            && Objects.equals(this.body, updateProductTemplateRequest.body);
+        UpdateProductTemplateRequest that = (UpdateProductTemplateRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.productTemplateId, that.productTemplateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -59,15 +59,15 @@ public class TaskRunInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskRunInfo taskRunInfo = (TaskRunInfo) o;
-        return Objects.equals(this.id, taskRunInfo.id) && Objects.equals(this.runType, taskRunInfo.runType);
+        TaskRunInfo that = (TaskRunInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.runType, that.runType);
     }
 
     @Override

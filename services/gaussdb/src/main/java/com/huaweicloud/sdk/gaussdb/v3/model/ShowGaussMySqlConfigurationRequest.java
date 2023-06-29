@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowGaussMySqlConfigurationRequest  {
-
+public class ShowGaussMySqlConfigurationRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_id")
-    
+    @JsonProperty(value = "configuration_id")
 
     private String configurationId;
 
@@ -35,15 +25,12 @@ public class ShowGaussMySqlConfigurationRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -52,15 +39,10 @@ public class ShowGaussMySqlConfigurationRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowGaussMySqlConfigurationRequest withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板ID。
@@ -74,24 +56,24 @@ public class ShowGaussMySqlConfigurationRequest  {
         this.configurationId = configurationId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlConfigurationRequest showGaussMySqlConfigurationRequest = (ShowGaussMySqlConfigurationRequest) o;
-        return Objects.equals(this.xLanguage, showGaussMySqlConfigurationRequest.xLanguage) &&
-            Objects.equals(this.configurationId, showGaussMySqlConfigurationRequest.configurationId);
+        ShowGaussMySqlConfigurationRequest that = (ShowGaussMySqlConfigurationRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.configurationId, that.configurationId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, configurationId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +83,7 @@ public class ShowGaussMySqlConfigurationRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +94,5 @@ public class ShowGaussMySqlConfigurationRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

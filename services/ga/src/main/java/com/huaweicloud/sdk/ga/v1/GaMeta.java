@@ -719,6 +719,277 @@ public class GaMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> addIpGroupIp = genForaddIpGroupIp();
+
+    private static HttpRequestDef<AddIpGroupIpRequest, AddIpGroupIpResponse> genForaddIpGroupIp() {
+        // basic
+        HttpRequestDef.Builder<AddIpGroupIpRequest, AddIpGroupIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AddIpGroupIpRequest.class, AddIpGroupIpResponse.class)
+                .withName("AddIpGroupIp")
+                .withUri("/v1/ip-groups/{ip_group_id}/add-ips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AddIpGroupIpRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+        builder.<AddIpGroupIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AddIpGroupIpRequestBody.class),
+            f -> f.withMarshaller(AddIpGroupIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<AssociateListenerRequest, AssociateListenerResponse> associateListener =
+        genForassociateListener();
+
+    private static HttpRequestDef<AssociateListenerRequest, AssociateListenerResponse> genForassociateListener() {
+        // basic
+        HttpRequestDef.Builder<AssociateListenerRequest, AssociateListenerResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, AssociateListenerRequest.class, AssociateListenerResponse.class)
+                .withName("AssociateListener")
+                .withUri("/v1/ip-groups/{ip_group_id}/associate-listener")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(AssociateListenerRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+        builder.<AssociateListenerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(AssociateListenerRequestBody.class),
+            f -> f.withMarshaller(AssociateListenerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> createIpGroup =
+        genForcreateIpGroup();
+
+    private static HttpRequestDef<CreateIpGroupRequest, CreateIpGroupResponse> genForcreateIpGroup() {
+        // basic
+        HttpRequestDef.Builder<CreateIpGroupRequest, CreateIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateIpGroupRequest.class, CreateIpGroupResponse.class)
+                .withName("CreateIpGroup")
+                .withUri("/v1/ip-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<CreateIpGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(CreateIpGroupRequestBody.class),
+            f -> f.withMarshaller(CreateIpGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> deleteIpGroup =
+        genFordeleteIpGroup();
+
+    private static HttpRequestDef<DeleteIpGroupRequest, DeleteIpGroupResponse> genFordeleteIpGroup() {
+        // basic
+        HttpRequestDef.Builder<DeleteIpGroupRequest, DeleteIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteIpGroupRequest.class, DeleteIpGroupResponse.class)
+                .withName("DeleteIpGroup")
+                .withUri("/v1/ip-groups/{ip_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteIpGroupRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DisassociateListenerRequest, DisassociateListenerResponse> disassociateListener =
+        genFordisassociateListener();
+
+    private static HttpRequestDef<DisassociateListenerRequest, DisassociateListenerResponse> genFordisassociateListener() {
+        // basic
+        HttpRequestDef.Builder<DisassociateListenerRequest, DisassociateListenerResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, DisassociateListenerRequest.class, DisassociateListenerResponse.class)
+            .withName("DisassociateListener")
+            .withUri("/v1/ip-groups/{ip_group_id}/disassociate-listener")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DisassociateListenerRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+        builder.<DisassociateListenerRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(DisassociateListenerRequestBody.class),
+            f -> f.withMarshaller(DisassociateListenerRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> listIpGroups = genForlistIpGroups();
+
+    private static HttpRequestDef<ListIpGroupsRequest, ListIpGroupsResponse> genForlistIpGroups() {
+        // basic
+        HttpRequestDef.Builder<ListIpGroupsRequest, ListIpGroupsResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ListIpGroupsRequest.class, ListIpGroupsResponse.class)
+                .withName("ListIpGroups")
+                .withUri("/v1/ip-groups")
+                .withContentType("application/json");
+
+        // requests
+        builder.<Integer>withRequestField("limit",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(Integer.class),
+            f -> f.withMarshaller(ListIpGroupsRequest::getLimit, (req, v) -> {
+                req.setLimit(v);
+            }));
+        builder.<String>withRequestField("marker",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpGroupsRequest::getMarker, (req, v) -> {
+                req.setMarker(v);
+            }));
+        builder.<String>withRequestField("listener_id",
+            LocationType.Query,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ListIpGroupsRequest::getListenerId, (req, v) -> {
+                req.setListenerId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> removeIpGroupIp =
+        genForremoveIpGroupIp();
+
+    private static HttpRequestDef<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> genForremoveIpGroupIp() {
+        // basic
+        HttpRequestDef.Builder<RemoveIpGroupIpRequest, RemoveIpGroupIpResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, RemoveIpGroupIpRequest.class, RemoveIpGroupIpResponse.class)
+                .withName("RemoveIpGroupIp")
+                .withUri("/v1/ip-groups/{ip_group_id}/remove-ips")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(RemoveIpGroupIpRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+        builder.<RemoveIpGroupIpRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(RemoveIpGroupIpRequestBody.class),
+            f -> f.withMarshaller(RemoveIpGroupIpRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> showIpGroup = genForshowIpGroup();
+
+    private static HttpRequestDef<ShowIpGroupRequest, ShowIpGroupResponse> genForshowIpGroup() {
+        // basic
+        HttpRequestDef.Builder<ShowIpGroupRequest, ShowIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowIpGroupRequest.class, ShowIpGroupResponse.class)
+                .withName("ShowIpGroup")
+                .withUri("/v1/ip-groups/{ip_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowIpGroupRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> updateIpGroup =
+        genForupdateIpGroup();
+
+    private static HttpRequestDef<UpdateIpGroupRequest, UpdateIpGroupResponse> genForupdateIpGroup() {
+        // basic
+        HttpRequestDef.Builder<UpdateIpGroupRequest, UpdateIpGroupResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, UpdateIpGroupRequest.class, UpdateIpGroupResponse.class)
+                .withName("UpdateIpGroup")
+                .withUri("/v1/ip-groups/{ip_group_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("ip_group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateIpGroupRequest::getIpGroupId, (req, v) -> {
+                req.setIpGroupId(v);
+            }));
+        builder.<UpdateIpGroupRequestBody>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(UpdateIpGroupRequestBody.class),
+            f -> f.withMarshaller(UpdateIpGroupRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<CreateListenerRequest, CreateListenerResponse> createListener =
         genForcreateListener();
 

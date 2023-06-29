@@ -53,15 +53,15 @@ public class ShowKafkaProjectTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowKafkaProjectTagsResponse showKafkaProjectTagsResponse = (ShowKafkaProjectTagsResponse) o;
-        return Objects.equals(this.tags, showKafkaProjectTagsResponse.tags);
+        ShowKafkaProjectTagsResponse that = (ShowKafkaProjectTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

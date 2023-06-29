@@ -69,22 +69,15 @@ public class SumTableView {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ViewTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewTypeEnum(value));
         }
 
         public static ViewTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +159,15 @@ public class SumTableView {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableDirectionEnum(value));
         }
 
         public static TableDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,22 +445,20 @@ public class SumTableView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SumTableView sumTableView = (SumTableView) o;
-        return Objects.equals(this.viewType, sumTableView.viewType)
-            && Objects.equals(this.collectorName, sumTableView.collectorName)
-            && Objects.equals(this.metricSet, sumTableView.metricSet) && Objects.equals(this.title, sumTableView.title)
-            && Objects.equals(this.tableDirection, sumTableView.tableDirection)
-            && Objects.equals(this.groupBy, sumTableView.groupBy) && Objects.equals(this.filter, sumTableView.filter)
-            && Objects.equals(this.fieldItemList, sumTableView.fieldItemList)
-            && Objects.equals(this.span, sumTableView.span) && Objects.equals(this.spanField, sumTableView.spanField)
-            && Objects.equals(this.orderBy, sumTableView.orderBy) && Objects.equals(this.latest, sumTableView.latest);
+        SumTableView that = (SumTableView) obj;
+        return Objects.equals(this.viewType, that.viewType) && Objects.equals(this.collectorName, that.collectorName)
+            && Objects.equals(this.metricSet, that.metricSet) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.tableDirection, that.tableDirection) && Objects.equals(this.groupBy, that.groupBy)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.fieldItemList, that.fieldItemList)
+            && Objects.equals(this.span, that.span) && Objects.equals(this.spanField, that.spanField)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.latest, that.latest);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class FreezePubResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezePubResponseModel freezePubResponseModel = (FreezePubResponseModel) o;
-        return Objects.equals(this.data, freezePubResponseModel.data);
+        FreezePubResponseModel that = (FreezePubResponseModel) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

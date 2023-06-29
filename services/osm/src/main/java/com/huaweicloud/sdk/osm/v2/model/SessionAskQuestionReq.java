@@ -186,21 +186,19 @@ public class SessionAskQuestionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SessionAskQuestionReq sessionAskQuestionReq = (SessionAskQuestionReq) o;
-        return Objects.equals(this.question, sessionAskQuestionReq.question)
-            && Objects.equals(this.domain, sessionAskQuestionReq.domain)
-            && Objects.equals(this.top, sessionAskQuestionReq.top)
-            && Objects.equals(this.themes, sessionAskQuestionReq.themes)
-            && Objects.equals(this.sourceQaPairId, sessionAskQuestionReq.sourceQaPairId)
-            && Objects.equals(this.chatEnable, sessionAskQuestionReq.chatEnable)
-            && Objects.equals(this.productTypeId, sessionAskQuestionReq.productTypeId);
+        SessionAskQuestionReq that = (SessionAskQuestionReq) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.themes, that.themes)
+            && Objects.equals(this.sourceQaPairId, that.sourceQaPairId)
+            && Objects.equals(this.chatEnable, that.chatEnable)
+            && Objects.equals(this.productTypeId, that.productTypeId);
     }
 
     @Override

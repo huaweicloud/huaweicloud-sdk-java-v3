@@ -165,18 +165,18 @@ public class ActionResources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionResources actionResources = (ActionResources) o;
-        return Objects.equals(this.resourceId, actionResources.resourceId)
-            && Objects.equals(this.resourceDetail, actionResources.resourceDetail)
-            && Objects.equals(this.resourceName, actionResources.resourceName)
-            && Objects.equals(this.tags, actionResources.tags) && Objects.equals(this.sysTags, actionResources.sysTags);
+        ActionResources that = (ActionResources) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceDetail, that.resourceDetail)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

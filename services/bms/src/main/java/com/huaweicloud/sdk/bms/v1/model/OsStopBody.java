@@ -43,15 +43,15 @@ public class OsStopBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsStopBody osStopBody = (OsStopBody) o;
-        return Objects.equals(this.osStop, osStopBody.osStop);
+        OsStopBody that = (OsStopBody) obj;
+        return Objects.equals(this.osStop, that.osStop);
     }
 
     @Override

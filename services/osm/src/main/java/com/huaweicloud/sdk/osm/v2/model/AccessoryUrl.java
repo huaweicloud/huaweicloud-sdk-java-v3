@@ -55,16 +55,16 @@ public class AccessoryUrl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessoryUrl accessoryUrl = (AccessoryUrl) o;
-        return Objects.equals(this.accessoryId, accessoryUrl.accessoryId)
-            && Objects.equals(this.accessoryUrl, accessoryUrl.accessoryUrl);
+        AccessoryUrl that = (AccessoryUrl) obj;
+        return Objects.equals(this.accessoryId, that.accessoryId)
+            && Objects.equals(this.accessoryUrl, that.accessoryUrl);
     }
 
     @Override

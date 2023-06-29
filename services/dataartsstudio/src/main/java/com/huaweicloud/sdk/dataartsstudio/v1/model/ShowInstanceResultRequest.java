@@ -55,16 +55,15 @@ public class ShowInstanceResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResultRequest showInstanceResultRequest = (ShowInstanceResultRequest) o;
-        return Objects.equals(this.instanceId, showInstanceResultRequest.instanceId)
-            && Objects.equals(this.workspace, showInstanceResultRequest.workspace);
+        ShowInstanceResultRequest that = (ShowInstanceResultRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

@@ -275,26 +275,20 @@ public class MysqlSlowLogDetailsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlSlowLogDetailsItem mysqlSlowLogDetailsItem = (MysqlSlowLogDetailsItem) o;
-        return Objects.equals(this.count, mysqlSlowLogDetailsItem.count)
-            && Objects.equals(this.time, mysqlSlowLogDetailsItem.time)
-            && Objects.equals(this.lockTime, mysqlSlowLogDetailsItem.lockTime)
-            && Objects.equals(this.rowsSent, mysqlSlowLogDetailsItem.rowsSent)
-            && Objects.equals(this.rowsExamined, mysqlSlowLogDetailsItem.rowsExamined)
-            && Objects.equals(this.database, mysqlSlowLogDetailsItem.database)
-            && Objects.equals(this.users, mysqlSlowLogDetailsItem.users)
-            && Objects.equals(this.querySample, mysqlSlowLogDetailsItem.querySample)
-            && Objects.equals(this.type, mysqlSlowLogDetailsItem.type)
-            && Objects.equals(this.startTime, mysqlSlowLogDetailsItem.startTime)
-            && Objects.equals(this.clientIp, mysqlSlowLogDetailsItem.clientIp)
-            && Objects.equals(this.lineNum, mysqlSlowLogDetailsItem.lineNum);
+        MysqlSlowLogDetailsItem that = (MysqlSlowLogDetailsItem) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.rowsSent, that.rowsSent)
+            && Objects.equals(this.rowsExamined, that.rowsExamined) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.users, that.users) && Objects.equals(this.querySample, that.querySample)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.clientIp, that.clientIp) && Objects.equals(this.lineNum, that.lineNum);
     }
 
     @Override

@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.NodeSqlFilterRule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 节点级别的SQL限流规则。
  */
-public class NodeSqlFilterRuleInfo  {
-
+public class NodeSqlFilterRuleInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rules")
-    
+    @JsonProperty(value = "rules")
+
     private List<NodeSqlFilterRule> rules = null;
-    
+
     public NodeSqlFilterRuleInfo withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID
@@ -51,16 +40,13 @@ public class NodeSqlFilterRuleInfo  {
         this.nodeId = nodeId;
     }
 
-    
-
     public NodeSqlFilterRuleInfo withRules(List<NodeSqlFilterRule> rules) {
         this.rules = rules;
         return this;
     }
 
-    
     public NodeSqlFilterRuleInfo addRulesItem(NodeSqlFilterRule rulesItem) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         this.rules.add(rulesItem);
@@ -68,7 +54,7 @@ public class NodeSqlFilterRuleInfo  {
     }
 
     public NodeSqlFilterRuleInfo withRules(Consumer<List<NodeSqlFilterRule>> rulesSetter) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
@@ -87,24 +73,23 @@ public class NodeSqlFilterRuleInfo  {
         this.rules = rules;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeSqlFilterRuleInfo nodeSqlFilterRuleInfo = (NodeSqlFilterRuleInfo) o;
-        return Objects.equals(this.nodeId, nodeSqlFilterRuleInfo.nodeId) &&
-            Objects.equals(this.rules, nodeSqlFilterRuleInfo.rules);
+        NodeSqlFilterRuleInfo that = (NodeSqlFilterRuleInfo) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.rules, that.rules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, rules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +99,7 @@ public class NodeSqlFilterRuleInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +110,5 @@ public class NodeSqlFilterRuleInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

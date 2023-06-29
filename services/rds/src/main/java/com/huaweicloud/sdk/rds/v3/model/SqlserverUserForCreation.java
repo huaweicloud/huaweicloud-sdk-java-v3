@@ -55,16 +55,15 @@ public class SqlserverUserForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlserverUserForCreation sqlserverUserForCreation = (SqlserverUserForCreation) o;
-        return Objects.equals(this.name, sqlserverUserForCreation.name)
-            && Objects.equals(this.password, sqlserverUserForCreation.password);
+        SqlserverUserForCreation that = (SqlserverUserForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password);
     }
 
     @Override

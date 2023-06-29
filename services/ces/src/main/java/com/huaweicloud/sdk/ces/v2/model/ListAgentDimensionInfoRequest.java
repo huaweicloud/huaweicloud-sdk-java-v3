@@ -83,22 +83,15 @@ public class ListAgentDimensionInfoRequest {
             if (value == null) {
                 return null;
             }
-            DimNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DimNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DimNameEnum(value));
         }
 
         public static DimNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DimNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,19 +218,17 @@ public class ListAgentDimensionInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgentDimensionInfoRequest listAgentDimensionInfoRequest = (ListAgentDimensionInfoRequest) o;
-        return Objects.equals(this.instanceId, listAgentDimensionInfoRequest.instanceId)
-            && Objects.equals(this.dimName, listAgentDimensionInfoRequest.dimName)
-            && Objects.equals(this.dimValue, listAgentDimensionInfoRequest.dimValue)
-            && Objects.equals(this.offset, listAgentDimensionInfoRequest.offset)
-            && Objects.equals(this.limit, listAgentDimensionInfoRequest.limit);
+        ListAgentDimensionInfoRequest that = (ListAgentDimensionInfoRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dimName, that.dimName)
+            && Objects.equals(this.dimValue, that.dimValue) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

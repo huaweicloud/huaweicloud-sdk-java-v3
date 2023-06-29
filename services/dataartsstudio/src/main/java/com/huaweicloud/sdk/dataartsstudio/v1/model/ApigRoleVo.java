@@ -99,17 +99,16 @@ public class ApigRoleVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigRoleVo apigRoleVo = (ApigRoleVo) o;
-        return Objects.equals(this.roleId, apigRoleVo.roleId) && Objects.equals(this.roleCode, apigRoleVo.roleCode)
-            && Objects.equals(this.roleName, apigRoleVo.roleName)
-            && Objects.equals(this.description, apigRoleVo.description);
+        ApigRoleVo that = (ApigRoleVo) obj;
+        return Objects.equals(this.roleId, that.roleId) && Objects.equals(this.roleCode, that.roleCode)
+            && Objects.equals(this.roleName, that.roleName) && Objects.equals(this.description, that.description);
     }
 
     @Override

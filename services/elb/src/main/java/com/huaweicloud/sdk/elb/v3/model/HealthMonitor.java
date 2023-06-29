@@ -414,28 +414,25 @@ public class HealthMonitor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthMonitor healthMonitor = (HealthMonitor) o;
-        return Objects.equals(this.adminStateUp, healthMonitor.adminStateUp)
-            && Objects.equals(this.delay, healthMonitor.delay)
-            && Objects.equals(this.domainName, healthMonitor.domainName)
-            && Objects.equals(this.expectedCodes, healthMonitor.expectedCodes)
-            && Objects.equals(this.httpMethod, healthMonitor.httpMethod) && Objects.equals(this.id, healthMonitor.id)
-            && Objects.equals(this.maxRetries, healthMonitor.maxRetries)
-            && Objects.equals(this.maxRetriesDown, healthMonitor.maxRetriesDown)
-            && Objects.equals(this.monitorPort, healthMonitor.monitorPort)
-            && Objects.equals(this.name, healthMonitor.name) && Objects.equals(this.pools, healthMonitor.pools)
-            && Objects.equals(this.projectId, healthMonitor.projectId)
-            && Objects.equals(this.timeout, healthMonitor.timeout) && Objects.equals(this.type, healthMonitor.type)
-            && Objects.equals(this.urlPath, healthMonitor.urlPath)
-            && Objects.equals(this.createdAt, healthMonitor.createdAt)
-            && Objects.equals(this.updatedAt, healthMonitor.updatedAt);
+        HealthMonitor that = (HealthMonitor) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.expectedCodes, that.expectedCodes)
+            && Objects.equals(this.httpMethod, that.httpMethod) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.maxRetries, that.maxRetries)
+            && Objects.equals(this.maxRetriesDown, that.maxRetriesDown)
+            && Objects.equals(this.monitorPort, that.monitorPort) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.pools, that.pools) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.urlPath, that.urlPath) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

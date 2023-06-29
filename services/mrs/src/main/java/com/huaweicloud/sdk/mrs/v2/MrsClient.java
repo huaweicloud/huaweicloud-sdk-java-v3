@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.mrs.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.mrs.v2.model.*;
 
 public class MrsClient {
+
     protected HcClient hcClient;
 
     public MrsClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class MrsClient {
     public static ClientBuilder<MrsClient> newBuilder() {
         return new ClientBuilder<>(MrsClient::new);
     }
-
 
     /**
      * 批量删除作业
@@ -41,8 +41,10 @@ public class MrsClient {
      * @param BatchDeleteJobsRequest 请求对象
      * @return SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
      */
-    public SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsInvoker(BatchDeleteJobsRequest request) {
-        return new SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, MrsMeta.batchDeleteJobs, hcClient);
+    public SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsInvoker(
+        BatchDeleteJobsRequest request) {
+        return new SyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, MrsMeta.batchDeleteJobs,
+            hcClient);
     }
 
     /**
@@ -117,8 +119,10 @@ public class MrsClient {
      * @param CreateExecuteJobRequest 请求对象
      * @return SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>
      */
-    public SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse> createExecuteJobInvoker(CreateExecuteJobRequest request) {
-        return new SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>(request, MrsMeta.createExecuteJob, hcClient);
+    public SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse> createExecuteJobInvoker(
+        CreateExecuteJobRequest request) {
+        return new SyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>(request, MrsMeta.createExecuteJob,
+            hcClient);
     }
 
     /**
@@ -181,8 +185,10 @@ public class MrsClient {
      * @param ShowAgencyMappingRequest 请求对象
      * @return SyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>
      */
-    public SyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse> showAgencyMappingInvoker(ShowAgencyMappingRequest request) {
-        return new SyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>(request, MrsMeta.showAgencyMapping, hcClient);
+    public SyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse> showAgencyMappingInvoker(
+        ShowAgencyMappingRequest request) {
+        return new SyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>(request, MrsMeta.showAgencyMapping,
+            hcClient);
     }
 
     /**
@@ -209,8 +215,10 @@ public class MrsClient {
      * @param ShowAutoScalingPolicyRequest 请求对象
      * @return SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>
      */
-    public SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyInvoker(ShowAutoScalingPolicyRequest request) {
-        return new SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request, MrsMeta.showAutoScalingPolicy, hcClient);
+    public SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyInvoker(
+        ShowAutoScalingPolicyRequest request) {
+        return new SyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request,
+            MrsMeta.showAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -237,8 +245,10 @@ public class MrsClient {
      * @param ShowJobExeListNewRequest 请求对象
      * @return SyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>
      */
-    public SyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse> showJobExeListNewInvoker(ShowJobExeListNewRequest request) {
-        return new SyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>(request, MrsMeta.showJobExeListNew, hcClient);
+    public SyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse> showJobExeListNewInvoker(
+        ShowJobExeListNewRequest request) {
+        return new SyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>(request, MrsMeta.showJobExeListNew,
+            hcClient);
     }
 
     /**
@@ -265,8 +275,10 @@ public class MrsClient {
      * @param ShowSingleJobExeRequest 请求对象
      * @return SyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>
      */
-    public SyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse> showSingleJobExeInvoker(ShowSingleJobExeRequest request) {
-        return new SyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>(request, MrsMeta.showSingleJobExe, hcClient);
+    public SyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse> showSingleJobExeInvoker(
+        ShowSingleJobExeRequest request) {
+        return new SyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>(request, MrsMeta.showSingleJobExe,
+            hcClient);
     }
 
     /**
@@ -293,8 +305,10 @@ public class MrsClient {
      * @param ShowSqlResultWithJobRequest 请求对象
      * @return SyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>
      */
-    public SyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse> showSqlResultWithJobInvoker(ShowSqlResultWithJobRequest request) {
-        return new SyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>(request, MrsMeta.showSqlResultWithJob, hcClient);
+    public SyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse> showSqlResultWithJobInvoker(
+        ShowSqlResultWithJobRequest request) {
+        return new SyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>(request,
+            MrsMeta.showSqlResultWithJob, hcClient);
     }
 
     /**
@@ -349,8 +363,10 @@ public class MrsClient {
      * @param UpdateAgencyMappingRequest 请求对象
      * @return SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>
      */
-    public SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse> updateAgencyMappingInvoker(UpdateAgencyMappingRequest request) {
-        return new SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>(request, MrsMeta.updateAgencyMapping, hcClient);
+    public SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse> updateAgencyMappingInvoker(
+        UpdateAgencyMappingRequest request) {
+        return new SyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>(request,
+            MrsMeta.updateAgencyMapping, hcClient);
     }
 
     /**
@@ -377,8 +393,10 @@ public class MrsClient {
      * @param UpdateClusterNameRequest 请求对象
      * @return SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>
      */
-    public SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameInvoker(UpdateClusterNameRequest request) {
-        return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName, hcClient);
+    public SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameInvoker(
+        UpdateClusterNameRequest request) {
+        return new SyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName,
+            hcClient);
     }
 
     /**
@@ -405,8 +423,10 @@ public class MrsClient {
      * @param ShowHdfsFileListRequest 请求对象
      * @return SyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>
      */
-    public SyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse> showHdfsFileListInvoker(ShowHdfsFileListRequest request) {
-        return new SyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>(request, MrsMeta.showHdfsFileList, hcClient);
+    public SyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse> showHdfsFileListInvoker(
+        ShowHdfsFileListRequest request) {
+        return new SyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>(request, MrsMeta.showHdfsFileList,
+            hcClient);
     }
 
     /**

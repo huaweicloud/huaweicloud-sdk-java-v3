@@ -77,17 +77,16 @@ public class SubscriptionUsedInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionUsedInfo subscriptionUsedInfo = (SubscriptionUsedInfo) o;
-        return Objects.equals(this.resourceId, subscriptionUsedInfo.resourceId)
-            && Objects.equals(this.owner, subscriptionUsedInfo.owner)
-            && Objects.equals(this.description, subscriptionUsedInfo.description);
+        SubscriptionUsedInfo that = (SubscriptionUsedInfo) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

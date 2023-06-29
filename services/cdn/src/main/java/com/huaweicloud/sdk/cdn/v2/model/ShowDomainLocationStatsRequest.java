@@ -259,25 +259,20 @@ public class ShowDomainLocationStatsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainLocationStatsRequest showDomainLocationStatsRequest = (ShowDomainLocationStatsRequest) o;
-        return Objects.equals(this.action, showDomainLocationStatsRequest.action)
-            && Objects.equals(this.startTime, showDomainLocationStatsRequest.startTime)
-            && Objects.equals(this.endTime, showDomainLocationStatsRequest.endTime)
-            && Objects.equals(this.domainName, showDomainLocationStatsRequest.domainName)
-            && Objects.equals(this.statType, showDomainLocationStatsRequest.statType)
-            && Objects.equals(this.interval, showDomainLocationStatsRequest.interval)
-            && Objects.equals(this.country, showDomainLocationStatsRequest.country)
-            && Objects.equals(this.province, showDomainLocationStatsRequest.province)
-            && Objects.equals(this.isp, showDomainLocationStatsRequest.isp)
-            && Objects.equals(this.groupBy, showDomainLocationStatsRequest.groupBy)
-            && Objects.equals(this.enterpriseProjectId, showDomainLocationStatsRequest.enterpriseProjectId);
+        ShowDomainLocationStatsRequest that = (ShowDomainLocationStatsRequest) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.statType, that.statType) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.groupBy, that.groupBy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

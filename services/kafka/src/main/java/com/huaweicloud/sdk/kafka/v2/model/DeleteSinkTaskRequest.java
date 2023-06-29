@@ -55,16 +55,15 @@ public class DeleteSinkTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSinkTaskRequest deleteSinkTaskRequest = (DeleteSinkTaskRequest) o;
-        return Objects.equals(this.connectorId, deleteSinkTaskRequest.connectorId)
-            && Objects.equals(this.taskId, deleteSinkTaskRequest.taskId);
+        DeleteSinkTaskRequest that = (DeleteSinkTaskRequest) obj;
+        return Objects.equals(this.connectorId, that.connectorId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

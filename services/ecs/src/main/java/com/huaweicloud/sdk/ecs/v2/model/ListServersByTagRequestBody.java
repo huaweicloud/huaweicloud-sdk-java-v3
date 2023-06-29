@@ -194,20 +194,17 @@ public class ListServersByTagRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServersByTagRequestBody listServersByTagRequestBody = (ListServersByTagRequestBody) o;
-        return Objects.equals(this.action, listServersByTagRequestBody.action)
-            && Objects.equals(this.limit, listServersByTagRequestBody.limit)
-            && Objects.equals(this.offset, listServersByTagRequestBody.offset)
-            && Objects.equals(this.tags, listServersByTagRequestBody.tags)
-            && Objects.equals(this.notTags, listServersByTagRequestBody.notTags)
-            && Objects.equals(this.matches, listServersByTagRequestBody.matches);
+        ListServersByTagRequestBody that = (ListServersByTagRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.matches, that.matches);
     }
 
     @Override

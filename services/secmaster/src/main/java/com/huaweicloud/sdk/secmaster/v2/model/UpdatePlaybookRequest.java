@@ -87,17 +87,16 @@ public class UpdatePlaybookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePlaybookRequest updatePlaybookRequest = (UpdatePlaybookRequest) o;
-        return Objects.equals(this.workspaceId, updatePlaybookRequest.workspaceId)
-            && Objects.equals(this.playbookId, updatePlaybookRequest.playbookId)
-            && Objects.equals(this.body, updatePlaybookRequest.body);
+        UpdatePlaybookRequest that = (UpdatePlaybookRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

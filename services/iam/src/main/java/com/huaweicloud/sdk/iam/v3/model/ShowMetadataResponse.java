@@ -188,22 +188,18 @@ public class ShowMetadataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetadataResponse showMetadataResponse = (ShowMetadataResponse) o;
-        return Objects.equals(this.id, showMetadataResponse.id)
-            && Objects.equals(this.idpId, showMetadataResponse.idpId)
-            && Objects.equals(this.entityId, showMetadataResponse.entityId)
-            && Objects.equals(this.protocolId, showMetadataResponse.protocolId)
-            && Objects.equals(this.domainId, showMetadataResponse.domainId)
-            && Objects.equals(this.xaccountType, showMetadataResponse.xaccountType)
-            && Objects.equals(this.updateTime, showMetadataResponse.updateTime)
-            && Objects.equals(this.data, showMetadataResponse.data);
+        ShowMetadataResponse that = (ShowMetadataResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.idpId, that.idpId)
+            && Objects.equals(this.entityId, that.entityId) && Objects.equals(this.protocolId, that.protocolId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.xaccountType, that.xaccountType)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.data, that.data);
     }
 
     @Override

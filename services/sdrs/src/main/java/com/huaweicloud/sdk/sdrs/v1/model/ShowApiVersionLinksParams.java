@@ -55,16 +55,15 @@ public class ShowApiVersionLinksParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApiVersionLinksParams showApiVersionLinksParams = (ShowApiVersionLinksParams) o;
-        return Objects.equals(this.rel, showApiVersionLinksParams.rel)
-            && Objects.equals(this.href, showApiVersionLinksParams.href);
+        ShowApiVersionLinksParams that = (ShowApiVersionLinksParams) obj;
+        return Objects.equals(this.rel, that.rel) && Objects.equals(this.href, that.href);
     }
 
     @Override

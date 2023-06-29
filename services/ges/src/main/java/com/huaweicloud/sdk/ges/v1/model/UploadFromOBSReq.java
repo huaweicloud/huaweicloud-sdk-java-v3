@@ -1,44 +1,33 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.EncryptionReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UploadFromOBSReq
  */
-public class UploadFromOBSReq  {
-
+public class UploadFromOBSReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metadataPath")
-    
+    @JsonProperty(value = "metadataPath")
 
     private String metadataPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encryption")
-    
+    @JsonProperty(value = "encryption")
 
     private EncryptionReq encryption;
 
@@ -46,9 +35,6 @@ public class UploadFromOBSReq  {
         this.metadataPath = metadataPath;
         return this;
     }
-
-    
-
 
     /**
      * 元数据存储地址。
@@ -62,15 +48,10 @@ public class UploadFromOBSReq  {
         this.metadataPath = metadataPath;
     }
 
-    
-
     public UploadFromOBSReq withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 元数据的名字。
@@ -84,15 +65,10 @@ public class UploadFromOBSReq  {
         this.name = name;
     }
 
-    
-
     public UploadFromOBSReq withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 对元数据的描述。
@@ -106,22 +82,19 @@ public class UploadFromOBSReq  {
         this.description = description;
     }
 
-    
-
     public UploadFromOBSReq withEncryption(EncryptionReq encryption) {
         this.encryption = encryption;
         return this;
     }
 
     public UploadFromOBSReq withEncryption(Consumer<EncryptionReq> encryptionSetter) {
-        if(this.encryption == null ){
+        if (this.encryption == null) {
             this.encryption = new EncryptionReq();
             encryptionSetter.accept(this.encryption);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get encryption
@@ -135,26 +108,24 @@ public class UploadFromOBSReq  {
         this.encryption = encryption;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadFromOBSReq uploadFromOBSReq = (UploadFromOBSReq) o;
-        return Objects.equals(this.metadataPath, uploadFromOBSReq.metadataPath) &&
-            Objects.equals(this.name, uploadFromOBSReq.name) &&
-            Objects.equals(this.description, uploadFromOBSReq.description) &&
-            Objects.equals(this.encryption, uploadFromOBSReq.encryption);
+        UploadFromOBSReq that = (UploadFromOBSReq) obj;
+        return Objects.equals(this.metadataPath, that.metadataPath) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.encryption, that.encryption);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metadataPath, name, description, encryption);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,6 +137,7 @@ public class UploadFromOBSReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -176,8 +148,5 @@ public class UploadFromOBSReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

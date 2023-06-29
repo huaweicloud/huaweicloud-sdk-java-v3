@@ -112,17 +112,16 @@ public class SubscriptionUpdateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionUpdateReq subscriptionUpdateReq = (SubscriptionUpdateReq) o;
-        return Objects.equals(this.description, subscriptionUpdateReq.description)
-            && Objects.equals(this.sources, subscriptionUpdateReq.sources)
-            && Objects.equals(this.targets, subscriptionUpdateReq.targets);
+        SubscriptionUpdateReq that = (SubscriptionUpdateReq) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.targets, that.targets);
     }
 
     @Override

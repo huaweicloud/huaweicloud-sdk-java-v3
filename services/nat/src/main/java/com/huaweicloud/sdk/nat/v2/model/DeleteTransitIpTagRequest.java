@@ -55,16 +55,15 @@ public class DeleteTransitIpTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTransitIpTagRequest deleteTransitIpTagRequest = (DeleteTransitIpTagRequest) o;
-        return Objects.equals(this.key, deleteTransitIpTagRequest.key)
-            && Objects.equals(this.resourceId, deleteTransitIpTagRequest.resourceId);
+        DeleteTransitIpTagRequest that = (DeleteTransitIpTagRequest) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

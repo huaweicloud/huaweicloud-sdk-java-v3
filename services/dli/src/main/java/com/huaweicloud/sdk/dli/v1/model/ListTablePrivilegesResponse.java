@@ -120,18 +120,16 @@ public class ListTablePrivilegesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTablePrivilegesResponse listTablePrivilegesResponse = (ListTablePrivilegesResponse) o;
-        return Objects.equals(this.isSuccess, listTablePrivilegesResponse.isSuccess)
-            && Objects.equals(this.message, listTablePrivilegesResponse.message)
-            && Objects.equals(this.userName, listTablePrivilegesResponse.userName)
-            && Objects.equals(this.privileges, listTablePrivilegesResponse.privileges);
+        ListTablePrivilegesResponse that = (ListTablePrivilegesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

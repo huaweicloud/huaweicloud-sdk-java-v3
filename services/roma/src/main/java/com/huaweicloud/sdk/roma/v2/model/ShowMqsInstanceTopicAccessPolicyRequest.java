@@ -99,19 +99,16 @@ public class ShowMqsInstanceTopicAccessPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMqsInstanceTopicAccessPolicyRequest showMqsInstanceTopicAccessPolicyRequest =
-            (ShowMqsInstanceTopicAccessPolicyRequest) o;
-        return Objects.equals(this.instanceId, showMqsInstanceTopicAccessPolicyRequest.instanceId)
-            && Objects.equals(this.topicName, showMqsInstanceTopicAccessPolicyRequest.topicName)
-            && Objects.equals(this.offset, showMqsInstanceTopicAccessPolicyRequest.offset)
-            && Objects.equals(this.limit, showMqsInstanceTopicAccessPolicyRequest.limit);
+        ShowMqsInstanceTopicAccessPolicyRequest that = (ShowMqsInstanceTopicAccessPolicyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

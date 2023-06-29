@@ -127,19 +127,17 @@ public class ListPortStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortStatisticsRequest listPortStatisticsRequest = (ListPortStatisticsRequest) o;
-        return Objects.equals(this.port, listPortStatisticsRequest.port)
-            && Objects.equals(this.type, listPortStatisticsRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listPortStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listPortStatisticsRequest.limit)
-            && Objects.equals(this.offset, listPortStatisticsRequest.offset);
+        ListPortStatisticsRequest that = (ListPortStatisticsRequest) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -89,22 +89,15 @@ public class ApiAuthRelations {
             if (value == null) {
                 return null;
             }
-            AuthRoleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthRoleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthRoleEnum(value));
         }
 
         public static AuthRoleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthRoleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class ApiAuthRelations {
             if (value == null) {
                 return null;
             }
-            AuthTunnelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTunnelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTunnelEnum(value));
         }
 
         public static AuthTunnelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTunnelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -435,23 +421,21 @@ public class ApiAuthRelations {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAuthRelations apiAuthRelations = (ApiAuthRelations) o;
-        return Objects.equals(this.apiId, apiAuthRelations.apiId)
-            && Objects.equals(this.authResult, apiAuthRelations.authResult)
-            && Objects.equals(this.authTime, apiAuthRelations.authTime) && Objects.equals(this.id, apiAuthRelations.id)
-            && Objects.equals(this.appId, apiAuthRelations.appId)
-            && Objects.equals(this.authRole, apiAuthRelations.authRole)
-            && Objects.equals(this.authTunnel, apiAuthRelations.authTunnel)
-            && Objects.equals(this.authWhitelist, apiAuthRelations.authWhitelist)
-            && Objects.equals(this.authBlacklist, apiAuthRelations.authBlacklist)
-            && Objects.equals(this.visitParams, apiAuthRelations.visitParams);
+        ApiAuthRelations that = (ApiAuthRelations) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.authResult, that.authResult)
+            && Objects.equals(this.authTime, that.authTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.authRole, that.authRole)
+            && Objects.equals(this.authTunnel, that.authTunnel)
+            && Objects.equals(this.authWhitelist, that.authWhitelist)
+            && Objects.equals(this.authBlacklist, that.authBlacklist)
+            && Objects.equals(this.visitParams, that.visitParams);
     }
 
     @Override

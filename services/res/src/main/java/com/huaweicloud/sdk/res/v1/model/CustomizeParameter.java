@@ -101,18 +101,16 @@ public class CustomizeParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomizeParameter customizeParameter = (CustomizeParameter) o;
-        return Objects.equals(this.alias, customizeParameter.alias)
-            && Objects.equals(this.behaviorType, customizeParameter.behaviorType)
-            && Objects.equals(this.threshold, customizeParameter.threshold)
-            && Objects.equals(this.deduplication, customizeParameter.deduplication);
+        CustomizeParameter that = (CustomizeParameter) obj;
+        return Objects.equals(this.alias, that.alias) && Objects.equals(this.behaviorType, that.behaviorType)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.deduplication, that.deduplication);
     }
 
     @Override

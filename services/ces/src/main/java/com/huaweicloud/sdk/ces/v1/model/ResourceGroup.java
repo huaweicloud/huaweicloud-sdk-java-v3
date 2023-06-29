@@ -96,17 +96,16 @@ public class ResourceGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceGroup resourceGroup = (ResourceGroup) o;
-        return Objects.equals(this.namespace, resourceGroup.namespace)
-            && Objects.equals(this.dimensions, resourceGroup.dimensions)
-            && Objects.equals(this.status, resourceGroup.status);
+        ResourceGroup that = (ResourceGroup) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

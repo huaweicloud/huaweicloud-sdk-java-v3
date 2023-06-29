@@ -52,15 +52,15 @@ public class ContainerNetworkUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerNetworkUpdate containerNetworkUpdate = (ContainerNetworkUpdate) o;
-        return Objects.equals(this.cidrs, containerNetworkUpdate.cidrs);
+        ContainerNetworkUpdate that = (ContainerNetworkUpdate) obj;
+        return Objects.equals(this.cidrs, that.cidrs);
     }
 
     @Override

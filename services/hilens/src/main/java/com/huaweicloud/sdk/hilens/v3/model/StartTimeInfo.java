@@ -156,18 +156,17 @@ public class StartTimeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartTimeInfo startTimeInfo = (StartTimeInfo) o;
-        return Objects.equals(this.startTime, startTimeInfo.startTime)
-            && Objects.equals(this.frequency, startTimeInfo.frequency) && Objects.equals(this.mode, startTimeInfo.mode)
-            && Objects.equals(this.dayTimeFrame, startTimeInfo.dayTimeFrame)
-            && Objects.equals(this.singleTimeFrame, startTimeInfo.singleTimeFrame);
+        StartTimeInfo that = (StartTimeInfo) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.dayTimeFrame, that.dayTimeFrame)
+            && Objects.equals(this.singleTimeFrame, that.singleTimeFrame);
     }
 
     @Override

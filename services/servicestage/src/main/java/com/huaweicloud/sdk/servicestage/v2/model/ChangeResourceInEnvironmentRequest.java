@@ -65,16 +65,15 @@ public class ChangeResourceInEnvironmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeResourceInEnvironmentRequest changeResourceInEnvironmentRequest = (ChangeResourceInEnvironmentRequest) o;
-        return Objects.equals(this.environmentId, changeResourceInEnvironmentRequest.environmentId)
-            && Objects.equals(this.body, changeResourceInEnvironmentRequest.body);
+        ChangeResourceInEnvironmentRequest that = (ChangeResourceInEnvironmentRequest) obj;
+        return Objects.equals(this.environmentId, that.environmentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

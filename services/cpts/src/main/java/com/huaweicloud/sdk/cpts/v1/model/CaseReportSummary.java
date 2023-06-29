@@ -74,16 +74,16 @@ public class CaseReportSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseReportSummary caseReportSummary = (CaseReportSummary) o;
-        return Objects.equals(this.caseAwInfoList, caseReportSummary.caseAwInfoList)
-            && Objects.equals(this.errMessage, caseReportSummary.errMessage);
+        CaseReportSummary that = (CaseReportSummary) obj;
+        return Objects.equals(this.caseAwInfoList, that.caseAwInfoList)
+            && Objects.equals(this.errMessage, that.errMessage);
     }
 
     @Override

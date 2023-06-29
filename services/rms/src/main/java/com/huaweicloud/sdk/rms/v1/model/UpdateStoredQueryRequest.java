@@ -65,16 +65,15 @@ public class UpdateStoredQueryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStoredQueryRequest updateStoredQueryRequest = (UpdateStoredQueryRequest) o;
-        return Objects.equals(this.queryId, updateStoredQueryRequest.queryId)
-            && Objects.equals(this.body, updateStoredQueryRequest.body);
+        UpdateStoredQueryRequest that = (UpdateStoredQueryRequest) obj;
+        return Objects.equals(this.queryId, that.queryId) && Objects.equals(this.body, that.body);
     }
 
     @Override

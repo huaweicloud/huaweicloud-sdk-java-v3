@@ -33,15 +33,15 @@ public class DeleteIkThesaurusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIkThesaurusRequest deleteIkThesaurusRequest = (DeleteIkThesaurusRequest) o;
-        return Objects.equals(this.clusterId, deleteIkThesaurusRequest.clusterId);
+        DeleteIkThesaurusRequest that = (DeleteIkThesaurusRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

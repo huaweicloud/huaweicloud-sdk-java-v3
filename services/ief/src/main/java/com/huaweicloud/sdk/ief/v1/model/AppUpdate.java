@@ -55,15 +55,15 @@ public class AppUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppUpdate appUpdate = (AppUpdate) o;
-        return Objects.equals(this.alias, appUpdate.alias) && Objects.equals(this.description, appUpdate.description);
+        AppUpdate that = (AppUpdate) obj;
+        return Objects.equals(this.alias, that.alias) && Objects.equals(this.description, that.description);
     }
 
     @Override

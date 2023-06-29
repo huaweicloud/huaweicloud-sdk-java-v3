@@ -272,23 +272,21 @@ public class ImageDetailRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetailRsp imageDetailRsp = (ImageDetailRsp) o;
-        return Objects.equals(this.name, imageDetailRsp.name) && Objects.equals(this.id, imageDetailRsp.id)
-            && Objects.equals(this.type, imageDetailRsp.type) && Objects.equals(this.chipType, imageDetailRsp.chipType)
-            && Objects.equals(this.description, imageDetailRsp.description)
-            && Objects.equals(this.tags, imageDetailRsp.tags)
-            && Objects.equals(this.createTime, imageDetailRsp.createTime)
-            && Objects.equals(this.updateTime, imageDetailRsp.updateTime)
-            && Objects.equals(this.sourceProjectName, imageDetailRsp.sourceProjectName)
-            && Objects.equals(this.sourceProjectId, imageDetailRsp.sourceProjectId)
-            && Objects.equals(this.sourceResourceId, imageDetailRsp.sourceResourceId);
+        ImageDetailRsp that = (ImageDetailRsp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.chipType, that.chipType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId);
     }
 
     @Override

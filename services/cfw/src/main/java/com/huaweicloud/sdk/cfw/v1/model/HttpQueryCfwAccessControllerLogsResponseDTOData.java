@@ -99,18 +99,16 @@ public class HttpQueryCfwAccessControllerLogsResponseDTOData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpQueryCfwAccessControllerLogsResponseDTOData httpQueryCfwAccessControllerLogsResponseDTOData =
-            (HttpQueryCfwAccessControllerLogsResponseDTOData) o;
-        return Objects.equals(this.total, httpQueryCfwAccessControllerLogsResponseDTOData.total)
-            && Objects.equals(this.limit, httpQueryCfwAccessControllerLogsResponseDTOData.limit)
-            && Objects.equals(this.records, httpQueryCfwAccessControllerLogsResponseDTOData.records);
+        HttpQueryCfwAccessControllerLogsResponseDTOData that = (HttpQueryCfwAccessControllerLogsResponseDTOData) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

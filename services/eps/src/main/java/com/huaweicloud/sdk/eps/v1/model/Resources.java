@@ -165,21 +165,19 @@ public class Resources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resources resources = (Resources) o;
-        return Objects.equals(this.enterpriseProjectId, resources.enterpriseProjectId)
-            && Objects.equals(this.projectId, resources.projectId)
-            && Objects.equals(this.projectName, resources.projectName)
-            && Objects.equals(this.resourceDetail, resources.resourceDetail)
-            && Objects.equals(this.resourceId, resources.resourceId)
-            && Objects.equals(this.resourceName, resources.resourceName)
-            && Objects.equals(this.resourceType, resources.resourceType);
+        Resources that = (Resources) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.resourceDetail, that.resourceDetail)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

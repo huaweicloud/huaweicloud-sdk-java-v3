@@ -43,15 +43,15 @@ public class ServiceConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceConfig serviceConfig = (ServiceConfig) o;
-        return Objects.equals(this.common, serviceConfig.common);
+        ServiceConfig that = (ServiceConfig) obj;
+        return Objects.equals(this.common, that.common);
     }
 
     @Override

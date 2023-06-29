@@ -313,26 +313,21 @@ public class StandElementValueVOList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandElementValueVOList standElementValueVOList = (StandElementValueVOList) o;
-        return Objects.equals(this.values, standElementValueVOList.values)
-            && Objects.equals(this.id, standElementValueVOList.id)
-            && Objects.equals(this.directoryId, standElementValueVOList.directoryId)
-            && Objects.equals(this.directoryPath, standElementValueVOList.directoryPath)
-            && Objects.equals(this.rowId, standElementValueVOList.rowId)
-            && Objects.equals(this.status, standElementValueVOList.status)
-            && Objects.equals(this.approvalInfo, standElementValueVOList.approvalInfo)
-            && Objects.equals(this.newBiz, standElementValueVOList.newBiz)
-            && Objects.equals(this.createBy, standElementValueVOList.createBy)
-            && Objects.equals(this.updateBy, standElementValueVOList.updateBy)
-            && Objects.equals(this.createTime, standElementValueVOList.createTime)
-            && Objects.equals(this.updateTime, standElementValueVOList.updateTime);
+        StandElementValueVOList that = (StandElementValueVOList) obj;
+        return Objects.equals(this.values, that.values) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.directoryId, that.directoryId)
+            && Objects.equals(this.directoryPath, that.directoryPath) && Objects.equals(this.rowId, that.rowId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.approvalInfo, that.approvalInfo)
+            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

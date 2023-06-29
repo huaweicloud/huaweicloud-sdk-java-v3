@@ -88,17 +88,16 @@ public class ShowApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationResponse showApplicationResponse = (ShowApplicationResponse) o;
-        return Objects.equals(this.apiVersion, showApplicationResponse.apiVersion)
-            && Objects.equals(this.kind, showApplicationResponse.kind)
-            && Objects.equals(this.metadata, showApplicationResponse.metadata);
+        ShowApplicationResponse that = (ShowApplicationResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

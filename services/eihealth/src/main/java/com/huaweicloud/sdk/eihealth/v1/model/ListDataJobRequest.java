@@ -309,27 +309,22 @@ public class ListDataJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataJobRequest listDataJobRequest = (ListDataJobRequest) o;
-        return Objects.equals(this.creator, listDataJobRequest.creator)
-            && Objects.equals(this.eihealthProjectId, listDataJobRequest.eihealthProjectId)
-            && Objects.equals(this.fromTime, listDataJobRequest.fromTime)
-            && Objects.equals(this.limit, listDataJobRequest.limit)
-            && Objects.equals(this.name, listDataJobRequest.name)
-            && Objects.equals(this.offset, listDataJobRequest.offset)
-            && Objects.equals(this.status, listDataJobRequest.status)
-            && Objects.equals(this.toTime, listDataJobRequest.toTime)
-            && Objects.equals(this.type, listDataJobRequest.type)
-            && Objects.equals(this.finishFromTime, listDataJobRequest.finishFromTime)
-            && Objects.equals(this.finishToTime, listDataJobRequest.finishToTime)
-            && Objects.equals(this.sortDir, listDataJobRequest.sortDir)
-            && Objects.equals(this.sortKey, listDataJobRequest.sortKey);
+        ListDataJobRequest that = (ListDataJobRequest) obj;
+        return Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.fromTime, that.fromTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.toTime, that.toTime)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.finishFromTime, that.finishFromTime)
+            && Objects.equals(this.finishToTime, that.finishToTime) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey);
     }
 
     @Override

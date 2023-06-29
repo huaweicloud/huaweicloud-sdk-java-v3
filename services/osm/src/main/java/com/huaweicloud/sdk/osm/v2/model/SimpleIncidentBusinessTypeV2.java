@@ -99,18 +99,18 @@ public class SimpleIncidentBusinessTypeV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleIncidentBusinessTypeV2 simpleIncidentBusinessTypeV2 = (SimpleIncidentBusinessTypeV2) o;
-        return Objects.equals(this.businessTypeId, simpleIncidentBusinessTypeV2.businessTypeId)
-            && Objects.equals(this.businessTypeName, simpleIncidentBusinessTypeV2.businessTypeName)
-            && Objects.equals(this.caseType, simpleIncidentBusinessTypeV2.caseType)
-            && Objects.equals(this.canUseSupportPlan, simpleIncidentBusinessTypeV2.canUseSupportPlan);
+        SimpleIncidentBusinessTypeV2 that = (SimpleIncidentBusinessTypeV2) obj;
+        return Objects.equals(this.businessTypeId, that.businessTypeId)
+            && Objects.equals(this.businessTypeName, that.businessTypeName)
+            && Objects.equals(this.caseType, that.caseType)
+            && Objects.equals(this.canUseSupportPlan, that.canUseSupportPlan);
     }
 
     @Override

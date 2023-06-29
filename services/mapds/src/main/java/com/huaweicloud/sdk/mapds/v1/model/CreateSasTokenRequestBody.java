@@ -55,16 +55,15 @@ public class CreateSasTokenRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSasTokenRequestBody createSasTokenRequestBody = (CreateSasTokenRequestBody) o;
-        return Objects.equals(this.keytype, createSasTokenRequestBody.keytype)
-            && Objects.equals(this.expiry, createSasTokenRequestBody.expiry);
+        CreateSasTokenRequestBody that = (CreateSasTokenRequestBody) obj;
+        return Objects.equals(this.keytype, that.keytype) && Objects.equals(this.expiry, that.expiry);
     }
 
     @Override

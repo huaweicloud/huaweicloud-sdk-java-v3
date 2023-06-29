@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * TaurusSwitchoverRequest
  */
-public class TaurusSwitchoverRequest  {
-
+public class TaurusSwitchoverRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
@@ -27,9 +19,6 @@ public class TaurusSwitchoverRequest  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 只读节点ID，倒换后为主节点。
@@ -43,23 +32,23 @@ public class TaurusSwitchoverRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaurusSwitchoverRequest taurusSwitchoverRequest = (TaurusSwitchoverRequest) o;
-        return Objects.equals(this.nodeId, taurusSwitchoverRequest.nodeId);
+        TaurusSwitchoverRequest that = (TaurusSwitchoverRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class TaurusSwitchoverRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class TaurusSwitchoverRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

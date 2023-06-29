@@ -55,15 +55,15 @@ public class MfaRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MfaRsp mfaRsp = (MfaRsp) o;
-        return Objects.equals(this.method, mfaRsp.method) && Objects.equals(this.info, mfaRsp.info);
+        MfaRsp that = (MfaRsp) obj;
+        return Objects.equals(this.method, that.method) && Objects.equals(this.info, that.info);
     }
 
     @Override

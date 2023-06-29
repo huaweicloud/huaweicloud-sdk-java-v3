@@ -175,21 +175,18 @@ public class ListSelfPrivilegesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSelfPrivilegesRequest listSelfPrivilegesRequest = (ListSelfPrivilegesRequest) o;
-        return Objects.equals(this.authorization, listSelfPrivilegesRequest.authorization)
-            && Objects.equals(this.xSdkDate, listSelfPrivilegesRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listSelfPrivilegesRequest.xProjectId)
-            && Objects.equals(this.xAppUserId, listSelfPrivilegesRequest.xAppUserId)
-            && Objects.equals(this.limit, listSelfPrivilegesRequest.limit)
-            && Objects.equals(this.offset, listSelfPrivilegesRequest.offset)
-            && Objects.equals(this.privilegeType, listSelfPrivilegesRequest.privilegeType);
+        ListSelfPrivilegesRequest that = (ListSelfPrivilegesRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.privilegeType, that.privilegeType);
     }
 
     @Override

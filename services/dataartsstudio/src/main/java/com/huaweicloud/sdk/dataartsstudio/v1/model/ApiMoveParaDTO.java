@@ -74,16 +74,15 @@ public class ApiMoveParaDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiMoveParaDTO apiMoveParaDTO = (ApiMoveParaDTO) o;
-        return Objects.equals(this.targetPid, apiMoveParaDTO.targetPid)
-            && Objects.equals(this.apis, apiMoveParaDTO.apis);
+        ApiMoveParaDTO that = (ApiMoveParaDTO) obj;
+        return Objects.equals(this.targetPid, that.targetPid) && Objects.equals(this.apis, that.apis);
     }
 
     @Override

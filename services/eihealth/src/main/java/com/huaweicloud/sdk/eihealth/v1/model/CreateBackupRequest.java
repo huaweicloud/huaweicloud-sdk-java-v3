@@ -65,16 +65,15 @@ public class CreateBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBackupRequest createBackupRequest = (CreateBackupRequest) o;
-        return Objects.equals(this.eihealthProjectId, createBackupRequest.eihealthProjectId)
-            && Objects.equals(this.body, createBackupRequest.body);
+        CreateBackupRequest that = (CreateBackupRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

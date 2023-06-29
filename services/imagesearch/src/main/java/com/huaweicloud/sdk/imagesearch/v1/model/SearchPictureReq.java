@@ -1,62 +1,48 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.imagesearch.v1.model.SearchBoxDetail;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SearchPictureReq
  */
-public class SearchPictureReq  {
-
+public class SearchPictureReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file")
-    
+    @JsonProperty(value = "file")
 
     private String file;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
 
     private Object tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_crop")
-    
+    @JsonProperty(value = "is_crop")
 
     private Boolean isCrop;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="box")
-    
+    @JsonProperty(value = "box")
 
     private SearchBoxDetail box;
 
@@ -64,9 +50,6 @@ public class SearchPictureReq  {
         this.file = file;
         return this;
     }
-
-    
-
 
     /**
      * 图片文件Base64编码字符串，仅支持JPEG/JPG/PNG/BMP格式，图片最小边不小于100px，最大边不超过2048px。该参数与path二选一，如果两个参数都存在，则以file为主。 
@@ -80,15 +63,10 @@ public class SearchPictureReq  {
         this.file = file;
     }
 
-    
-
     public SearchPictureReq withPath(String path) {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * 图片的URL路径，图片库中的图片索引ID。该参数与file二选一，如果两个参数都存在，则以file为主。 
@@ -102,15 +80,10 @@ public class SearchPictureReq  {
         this.path = path;
     }
 
-    
-
     public SearchPictureReq withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 返回被检索图像的数量，取值为1~100的整数，默认为10。
@@ -126,15 +99,10 @@ public class SearchPictureReq  {
         this.limit = limit;
     }
 
-    
-
     public SearchPictureReq withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量，指定搜索结果返回起始位置，取值为大于或等于0的整数，默认为0。
@@ -149,15 +117,10 @@ public class SearchPictureReq  {
         this.offset = offset;
     }
 
-    
-
     public SearchPictureReq withTags(Object tags) {
         this.tags = tags;
         return this;
     }
-
-    
-
 
     /**
      * 图片自定义标签，最多不超过10个，格式为key：value对。 标签名（key）添加方式：   - 登录管理控制台，单击“创建实例”，自定义标签名。   - 登录管理控制台，在“实例管理”页签，单击实例名称，进入“基础信息”页添加自定义标签。 使用图片标签搜索时该参数必选。
@@ -171,15 +134,10 @@ public class SearchPictureReq  {
         this.tags = tags;
     }
 
-    
-
     public SearchPictureReq withIsCrop(Boolean isCrop) {
         this.isCrop = isCrop;
         return this;
     }
-
-    
-
 
     /**
      * 是否用图片中指定区域（参数box）进行搜索。默认为false，该参数目前仅对某些特定模型有效，其他模型暂不支持目标检测。 - true：用图片中指定区域（参数box）进行搜索。 - false：用全图进行搜索。
@@ -193,22 +151,19 @@ public class SearchPictureReq  {
         this.isCrop = isCrop;
     }
 
-    
-
     public SearchPictureReq withBox(SearchBoxDetail box) {
         this.box = box;
         return this;
     }
 
     public SearchPictureReq withBox(Consumer<SearchBoxDetail> boxSetter) {
-        if(this.box == null ){
+        if (this.box == null) {
             this.box = new SearchBoxDetail();
             boxSetter.accept(this.box);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get box
@@ -222,29 +177,26 @@ public class SearchPictureReq  {
         this.box = box;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchPictureReq searchPictureReq = (SearchPictureReq) o;
-        return Objects.equals(this.file, searchPictureReq.file) &&
-            Objects.equals(this.path, searchPictureReq.path) &&
-            Objects.equals(this.limit, searchPictureReq.limit) &&
-            Objects.equals(this.offset, searchPictureReq.offset) &&
-            Objects.equals(this.tags, searchPictureReq.tags) &&
-            Objects.equals(this.isCrop, searchPictureReq.isCrop) &&
-            Objects.equals(this.box, searchPictureReq.box);
+        SearchPictureReq that = (SearchPictureReq) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.isCrop, that.isCrop)
+            && Objects.equals(this.box, that.box);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(file, path, limit, offset, tags, isCrop, box);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -259,6 +211,7 @@ public class SearchPictureReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -269,8 +222,5 @@ public class SearchPictureReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

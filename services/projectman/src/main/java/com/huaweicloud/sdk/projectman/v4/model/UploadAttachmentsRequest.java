@@ -87,17 +87,16 @@ public class UploadAttachmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAttachmentsRequest uploadAttachmentsRequest = (UploadAttachmentsRequest) o;
-        return Objects.equals(this.projectId, uploadAttachmentsRequest.projectId)
-            && Objects.equals(this.issueId, uploadAttachmentsRequest.issueId)
-            && Objects.equals(this.body, uploadAttachmentsRequest.body);
+        UploadAttachmentsRequest that = (UploadAttachmentsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

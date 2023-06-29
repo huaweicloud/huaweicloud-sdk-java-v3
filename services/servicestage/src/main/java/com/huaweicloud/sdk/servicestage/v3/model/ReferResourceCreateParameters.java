@@ -33,15 +33,15 @@ public class ReferResourceCreateParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReferResourceCreateParameters referResourceCreateParameters = (ReferResourceCreateParameters) o;
-        return Objects.equals(this.namespace, referResourceCreateParameters.namespace);
+        ReferResourceCreateParameters that = (ReferResourceCreateParameters) obj;
+        return Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

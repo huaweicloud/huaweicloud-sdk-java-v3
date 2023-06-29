@@ -101,18 +101,16 @@ public class ListJobInfoDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobInfoDetailRequest listJobInfoDetailRequest = (ListJobInfoDetailRequest) o;
-        return Objects.equals(this.xLanguage, listJobInfoDetailRequest.xLanguage)
-            && Objects.equals(this.instanceId, listJobInfoDetailRequest.instanceId)
-            && Objects.equals(this.startTime, listJobInfoDetailRequest.startTime)
-            && Objects.equals(this.endTime, listJobInfoDetailRequest.endTime);
+        ListJobInfoDetailRequest that = (ListJobInfoDetailRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

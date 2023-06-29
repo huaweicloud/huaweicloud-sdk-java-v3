@@ -87,17 +87,16 @@ public class DisablePropagationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisablePropagationRequest disablePropagationRequest = (DisablePropagationRequest) o;
-        return Objects.equals(this.erId, disablePropagationRequest.erId)
-            && Objects.equals(this.routeTableId, disablePropagationRequest.routeTableId)
-            && Objects.equals(this.body, disablePropagationRequest.body);
+        DisablePropagationRequest that = (DisablePropagationRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.routeTableId, that.routeTableId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

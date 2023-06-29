@@ -254,23 +254,19 @@ public class DebugCaseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugCaseResult debugCaseResult = (DebugCaseResult) o;
-        return Objects.equals(this.body, debugCaseResult.body)
-            && Objects.equals(this.errorReason, debugCaseResult.errorReason)
-            && Objects.equals(this.header, debugCaseResult.header) && Objects.equals(this.name, debugCaseResult.name)
-            && Objects.equals(this.responseTime, debugCaseResult.responseTime)
-            && Objects.equals(this.result, debugCaseResult.result)
-            && Objects.equals(this.returnBody, debugCaseResult.returnBody)
-            && Objects.equals(this.returnHeader, debugCaseResult.returnHeader)
-            && Objects.equals(this.statusCode, debugCaseResult.statusCode)
-            && Objects.equals(this.url, debugCaseResult.url);
+        DebugCaseResult that = (DebugCaseResult) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.errorReason, that.errorReason)
+            && Objects.equals(this.header, that.header) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.responseTime, that.responseTime) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.returnBody, that.returnBody) && Objects.equals(this.returnHeader, that.returnHeader)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.url, that.url);
     }
 
     @Override

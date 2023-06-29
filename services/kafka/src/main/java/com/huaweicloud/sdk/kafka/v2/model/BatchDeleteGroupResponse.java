@@ -76,16 +76,15 @@ public class BatchDeleteGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteGroupResponse batchDeleteGroupResponse = (BatchDeleteGroupResponse) o;
-        return Objects.equals(this.failedGroups, batchDeleteGroupResponse.failedGroups)
-            && Objects.equals(this.total, batchDeleteGroupResponse.total);
+        BatchDeleteGroupResponse that = (BatchDeleteGroupResponse) obj;
+        return Objects.equals(this.failedGroups, that.failedGroups) && Objects.equals(this.total, that.total);
     }
 
     @Override

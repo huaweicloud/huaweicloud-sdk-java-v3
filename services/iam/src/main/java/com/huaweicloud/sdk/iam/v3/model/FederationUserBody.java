@@ -118,17 +118,16 @@ public class FederationUserBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FederationUserBody federationUserBody = (FederationUserBody) o;
-        return Objects.equals(this.osFederation, federationUserBody.osFederation)
-            && Objects.equals(this.domain, federationUserBody.domain) && Objects.equals(this.id, federationUserBody.id)
-            && Objects.equals(this.name, federationUserBody.name);
+        FederationUserBody that = (FederationUserBody) obj;
+        return Objects.equals(this.osFederation, that.osFederation) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

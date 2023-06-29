@@ -53,15 +53,15 @@ public class ShowDatabaseWaterMarkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseWaterMarkResponse showDatabaseWaterMarkResponse = (ShowDatabaseWaterMarkResponse) o;
-        return Objects.equals(this.watermarks, showDatabaseWaterMarkResponse.watermarks);
+        ShowDatabaseWaterMarkResponse that = (ShowDatabaseWaterMarkResponse) obj;
+        return Objects.equals(this.watermarks, that.watermarks);
     }
 
     @Override

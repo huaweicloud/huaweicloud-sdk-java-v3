@@ -143,20 +143,18 @@ public class KeystoreDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoreDetails keystoreDetails = (KeystoreDetails) o;
-        return Objects.equals(this.keystoreId, keystoreDetails.keystoreId)
-            && Objects.equals(this.domainId, keystoreDetails.domainId)
-            && Objects.equals(this.keystoreAlias, keystoreDetails.keystoreAlias)
-            && Objects.equals(this.keystoreType, keystoreDetails.keystoreType)
-            && Objects.equals(this.hsmClusterId, keystoreDetails.hsmClusterId)
-            && Objects.equals(this.createTime, keystoreDetails.createTime);
+        KeystoreDetails that = (KeystoreDetails) obj;
+        return Objects.equals(this.keystoreId, that.keystoreId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.keystoreAlias, that.keystoreAlias)
+            && Objects.equals(this.keystoreType, that.keystoreType)
+            && Objects.equals(this.hsmClusterId, that.hsmClusterId) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

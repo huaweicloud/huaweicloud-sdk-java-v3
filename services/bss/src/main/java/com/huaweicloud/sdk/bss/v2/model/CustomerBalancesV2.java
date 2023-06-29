@@ -122,19 +122,17 @@ public class CustomerBalancesV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerBalancesV2 customerBalancesV2 = (CustomerBalancesV2) o;
-        return Objects.equals(this.customerId, customerBalancesV2.customerId)
-            && Objects.equals(this.debtAmount, customerBalancesV2.debtAmount)
-            && Objects.equals(this.amount, customerBalancesV2.amount)
-            && Objects.equals(this.currency, customerBalancesV2.currency)
-            && Objects.equals(this.measureId, customerBalancesV2.measureId);
+        CustomerBalancesV2 that = (CustomerBalancesV2) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override

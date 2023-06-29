@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlUpdateInstanceNameRequest
  */
-public class MysqlUpdateInstanceNameRequest  {
-
+public class MysqlUpdateInstanceNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
@@ -27,9 +19,6 @@ public class MysqlUpdateInstanceNameRequest  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。  用于表示实例的名称，同一租户下，同类型的实例名可重名。取值范围：4~64个字符之间，必须以字母开头，区分大小写，可以包含字母、数字、中划线或者下划线，不能包含其他的特殊字符。
@@ -43,23 +32,23 @@ public class MysqlUpdateInstanceNameRequest  {
         this.name = name;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlUpdateInstanceNameRequest mysqlUpdateInstanceNameRequest = (MysqlUpdateInstanceNameRequest) o;
-        return Objects.equals(this.name, mysqlUpdateInstanceNameRequest.name);
+        MysqlUpdateInstanceNameRequest that = (MysqlUpdateInstanceNameRequest) obj;
+        return Objects.equals(this.name, that.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class MysqlUpdateInstanceNameRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class MysqlUpdateInstanceNameRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

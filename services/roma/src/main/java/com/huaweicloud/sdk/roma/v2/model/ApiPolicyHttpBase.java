@@ -65,22 +65,15 @@ public class ApiPolicyHttpBase {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ApiPolicyHttpBase {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -361,21 +347,18 @@ public class ApiPolicyHttpBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyHttpBase apiPolicyHttpBase = (ApiPolicyHttpBase) o;
-        return Objects.equals(this.urlDomain, apiPolicyHttpBase.urlDomain)
-            && Objects.equals(this.reqProtocol, apiPolicyHttpBase.reqProtocol)
-            && Objects.equals(this.reqMethod, apiPolicyHttpBase.reqMethod)
-            && Objects.equals(this.reqUri, apiPolicyHttpBase.reqUri)
-            && Objects.equals(this.timeout, apiPolicyHttpBase.timeout)
-            && Objects.equals(this.enableClientSsl, apiPolicyHttpBase.enableClientSsl)
-            && Objects.equals(this.retryCount, apiPolicyHttpBase.retryCount);
+        ApiPolicyHttpBase that = (ApiPolicyHttpBase) obj;
+        return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.enableClientSsl, that.enableClientSsl)
+            && Objects.equals(this.retryCount, that.retryCount);
     }
 
     @Override

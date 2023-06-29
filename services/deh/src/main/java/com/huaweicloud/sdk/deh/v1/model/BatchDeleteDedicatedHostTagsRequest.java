@@ -65,17 +65,15 @@ public class BatchDeleteDedicatedHostTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteDedicatedHostTagsRequest batchDeleteDedicatedHostTagsRequest =
-            (BatchDeleteDedicatedHostTagsRequest) o;
-        return Objects.equals(this.dedicatedHostId, batchDeleteDedicatedHostTagsRequest.dedicatedHostId)
-            && Objects.equals(this.body, batchDeleteDedicatedHostTagsRequest.body);
+        BatchDeleteDedicatedHostTagsRequest that = (BatchDeleteDedicatedHostTagsRequest) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.body, that.body);
     }
 
     @Override

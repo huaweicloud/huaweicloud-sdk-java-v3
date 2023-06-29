@@ -84,16 +84,15 @@ public class ListPoliciesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPoliciesResponse listPoliciesResponse = (ListPoliciesResponse) o;
-        return Objects.equals(this.policies, listPoliciesResponse.policies)
-            && Objects.equals(this.pageInfo, listPoliciesResponse.pageInfo);
+        ListPoliciesResponse that = (ListPoliciesResponse) obj;
+        return Objects.equals(this.policies, that.policies) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

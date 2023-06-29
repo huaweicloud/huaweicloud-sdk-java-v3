@@ -96,17 +96,16 @@ public class CloneDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloneDataReq cloneDataReq = (CloneDataReq) o;
-        return Objects.equals(this.overwrite, cloneDataReq.overwrite)
-            && Objects.equals(this.subPaths, cloneDataReq.subPaths)
-            && Objects.equals(this.targetFolder, cloneDataReq.targetFolder);
+        CloneDataReq that = (CloneDataReq) obj;
+        return Objects.equals(this.overwrite, that.overwrite) && Objects.equals(this.subPaths, that.subPaths)
+            && Objects.equals(this.targetFolder, that.targetFolder);
     }
 
     @Override

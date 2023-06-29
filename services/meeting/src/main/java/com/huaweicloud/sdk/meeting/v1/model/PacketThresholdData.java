@@ -107,18 +107,17 @@ public class PacketThresholdData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PacketThresholdData packetThresholdData = (PacketThresholdData) o;
-        return Objects.equals(this.receiving, packetThresholdData.receiving)
-            && Objects.equals(this.receivingDefault, packetThresholdData.receivingDefault)
-            && Objects.equals(this.sending, packetThresholdData.sending)
-            && Objects.equals(this.sendingDefault, packetThresholdData.sendingDefault);
+        PacketThresholdData that = (PacketThresholdData) obj;
+        return Objects.equals(this.receiving, that.receiving)
+            && Objects.equals(this.receivingDefault, that.receivingDefault)
+            && Objects.equals(this.sending, that.sending) && Objects.equals(this.sendingDefault, that.sendingDefault);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class UpdateRecurringMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecurringMeetingResponse updateRecurringMeetingResponse = (UpdateRecurringMeetingResponse) o;
-        return Objects.equals(this.body, updateRecurringMeetingResponse.body);
+        UpdateRecurringMeetingResponse that = (UpdateRecurringMeetingResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -169,21 +169,18 @@ public class ListSubscriptionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubscriptionsRequest listSubscriptionsRequest = (ListSubscriptionsRequest) o;
-        return Objects.equals(this.channelId, listSubscriptionsRequest.channelId)
-            && Objects.equals(this.offset, listSubscriptionsRequest.offset)
-            && Objects.equals(this.limit, listSubscriptionsRequest.limit)
-            && Objects.equals(this.sort, listSubscriptionsRequest.sort)
-            && Objects.equals(this.name, listSubscriptionsRequest.name)
-            && Objects.equals(this.fuzzyName, listSubscriptionsRequest.fuzzyName)
-            && Objects.equals(this.connectionId, listSubscriptionsRequest.connectionId);
+        ListSubscriptionsRequest that = (ListSubscriptionsRequest) obj;
+        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
+            && Objects.equals(this.connectionId, that.connectionId);
     }
 
     @Override

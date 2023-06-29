@@ -193,21 +193,18 @@ public class ListPlaybookActionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookActionsResponse listPlaybookActionsResponse = (ListPlaybookActionsResponse) o;
-        return Objects.equals(this.code, listPlaybookActionsResponse.code)
-            && Objects.equals(this.message, listPlaybookActionsResponse.message)
-            && Objects.equals(this.total, listPlaybookActionsResponse.total)
-            && Objects.equals(this.size, listPlaybookActionsResponse.size)
-            && Objects.equals(this.page, listPlaybookActionsResponse.page)
-            && Objects.equals(this.data, listPlaybookActionsResponse.data)
-            && Objects.equals(this.xRequestId, listPlaybookActionsResponse.xRequestId);
+        ListPlaybookActionsResponse that = (ListPlaybookActionsResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

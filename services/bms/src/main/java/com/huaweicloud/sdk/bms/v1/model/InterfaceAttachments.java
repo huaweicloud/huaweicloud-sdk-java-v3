@@ -70,22 +70,15 @@ public class InterfaceAttachments {
             if (value == null) {
                 return null;
             }
-            PortStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PortStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PortStateEnum(value));
         }
 
         public static PortStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PortStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -273,21 +266,18 @@ public class InterfaceAttachments {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterfaceAttachments interfaceAttachments = (InterfaceAttachments) o;
-        return Objects.equals(this.portState, interfaceAttachments.portState)
-            && Objects.equals(this.fixedIps, interfaceAttachments.fixedIps)
-            && Objects.equals(this.netId, interfaceAttachments.netId)
-            && Objects.equals(this.portId, interfaceAttachments.portId)
-            && Objects.equals(this.macAddr, interfaceAttachments.macAddr)
-            && Objects.equals(this.driverMode, interfaceAttachments.driverMode)
-            && Objects.equals(this.pciAddress, interfaceAttachments.pciAddress);
+        InterfaceAttachments that = (InterfaceAttachments) obj;
+        return Objects.equals(this.portState, that.portState) && Objects.equals(this.fixedIps, that.fixedIps)
+            && Objects.equals(this.netId, that.netId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.macAddr, that.macAddr) && Objects.equals(this.driverMode, that.driverMode)
+            && Objects.equals(this.pciAddress, that.pciAddress);
     }
 
     @Override

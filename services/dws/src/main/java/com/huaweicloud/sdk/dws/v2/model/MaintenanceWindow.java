@@ -77,17 +77,16 @@ public class MaintenanceWindow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MaintenanceWindow maintenanceWindow = (MaintenanceWindow) o;
-        return Objects.equals(this.day, maintenanceWindow.day)
-            && Objects.equals(this.startTime, maintenanceWindow.startTime)
-            && Objects.equals(this.endTime, maintenanceWindow.endTime);
+        MaintenanceWindow that = (MaintenanceWindow) obj;
+        return Objects.equals(this.day, that.day) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

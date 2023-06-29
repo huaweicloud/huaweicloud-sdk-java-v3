@@ -99,18 +99,16 @@ public class AddDeployKeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeployKeyRequestBody addDeployKeyRequestBody = (AddDeployKeyRequestBody) o;
-        return Objects.equals(this.application, addDeployKeyRequestBody.application)
-            && Objects.equals(this.canPush, addDeployKeyRequestBody.canPush)
-            && Objects.equals(this.key, addDeployKeyRequestBody.key)
-            && Objects.equals(this.keyTitle, addDeployKeyRequestBody.keyTitle);
+        AddDeployKeyRequestBody that = (AddDeployKeyRequestBody) obj;
+        return Objects.equals(this.application, that.application) && Objects.equals(this.canPush, that.canPush)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.keyTitle, that.keyTitle);
     }
 
     @Override

@@ -169,21 +169,18 @@ public class ListProjectsV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectsV4Request listProjectsV4Request = (ListProjectsV4Request) o;
-        return Objects.equals(this.offset, listProjectsV4Request.offset)
-            && Objects.equals(this.limit, listProjectsV4Request.limit)
-            && Objects.equals(this.search, listProjectsV4Request.search)
-            && Objects.equals(this.projectType, listProjectsV4Request.projectType)
-            && Objects.equals(this.sort, listProjectsV4Request.sort)
-            && Objects.equals(this.archive, listProjectsV4Request.archive)
-            && Objects.equals(this.queryType, listProjectsV4Request.queryType);
+        ListProjectsV4Request that = (ListProjectsV4Request) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.search, that.search) && Objects.equals(this.projectType, that.projectType)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.archive, that.archive)
+            && Objects.equals(this.queryType, that.queryType);
     }
 
     @Override

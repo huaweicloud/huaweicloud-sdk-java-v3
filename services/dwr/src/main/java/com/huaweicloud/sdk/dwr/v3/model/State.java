@@ -74,22 +74,15 @@ public class State {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -316,20 +309,20 @@ public class State {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        State state = (State) o;
-        return Objects.equals(this.start, state.start) && Objects.equals(this.type, state.type)
-            && Objects.equals(this.payloadFilterIn, state.payloadFilterIn)
-            && Objects.equals(this.payloadFilterOut, state.payloadFilterOut)
-            && Objects.equals(this.stateName, state.stateName) && Objects.equals(this.actionMode, state.actionMode)
-            && Objects.equals(this.actions, state.actions) && Objects.equals(this.nextState, state.nextState)
-            && Objects.equals(this.timeDelay, state.timeDelay);
+        State that = (State) obj;
+        return Objects.equals(this.start, that.start) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.payloadFilterIn, that.payloadFilterIn)
+            && Objects.equals(this.payloadFilterOut, that.payloadFilterOut)
+            && Objects.equals(this.stateName, that.stateName) && Objects.equals(this.actionMode, that.actionMode)
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.nextState, that.nextState)
+            && Objects.equals(this.timeDelay, that.timeDelay);
     }
 
     @Override

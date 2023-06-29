@@ -77,16 +77,16 @@ public class WordInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WordInfo wordInfo = (WordInfo) o;
-        return Objects.equals(this.startTime, wordInfo.startTime) && Objects.equals(this.endTime, wordInfo.endTime)
-            && Objects.equals(this.word, wordInfo.word);
+        WordInfo that = (WordInfo) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.word, that.word);
     }
 
     @Override

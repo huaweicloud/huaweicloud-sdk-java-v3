@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.aos.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
-import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.aos.v1.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+
+import java.util.concurrent.CompletableFuture;
 
 public class AosAsyncClient {
+
     protected HcClient hcClient;
 
     public AosAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class AosAsyncClient {
     public static ClientBuilder<AosAsyncClient> newBuilder() {
         return new ClientBuilder<>(AosAsyncClient::new);
     }
-
 
     /**
      * 执行执行计划
@@ -77,8 +77,10 @@ public class AosAsyncClient {
      * @param ApplyExecutionPlanRequest 请求对象
      * @return AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse>
      */
-    public AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> applyExecutionPlanAsyncInvoker(ApplyExecutionPlanRequest request) {
-        return new AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse>(request, AosMeta.applyExecutionPlan, hcClient);
+    public AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse> applyExecutionPlanAsyncInvoker(
+        ApplyExecutionPlanRequest request) {
+        return new AsyncInvoker<ApplyExecutionPlanRequest, ApplyExecutionPlanResponse>(request,
+            AosMeta.applyExecutionPlan, hcClient);
     }
 
     /**
@@ -133,8 +135,10 @@ public class AosAsyncClient {
      * @param CreateExecutionPlanRequest 请求对象
      * @return AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse>
      */
-    public AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse> createExecutionPlanAsyncInvoker(CreateExecutionPlanRequest request) {
-        return new AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse>(request, AosMeta.createExecutionPlan, hcClient);
+    public AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse> createExecutionPlanAsyncInvoker(
+        CreateExecutionPlanRequest request) {
+        return new AsyncInvoker<CreateExecutionPlanRequest, CreateExecutionPlanResponse>(request,
+            AosMeta.createExecutionPlan, hcClient);
     }
 
     /**
@@ -169,8 +173,10 @@ public class AosAsyncClient {
      * @param DeleteExecutionPlanRequest 请求对象
      * @return AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>
      */
-    public AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlanAsyncInvoker(DeleteExecutionPlanRequest request) {
-        return new AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>(request, AosMeta.deleteExecutionPlan, hcClient);
+    public AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse> deleteExecutionPlanAsyncInvoker(
+        DeleteExecutionPlanRequest request) {
+        return new AsyncInvoker<DeleteExecutionPlanRequest, DeleteExecutionPlanResponse>(request,
+            AosMeta.deleteExecutionPlan, hcClient);
     }
 
     /**
@@ -233,7 +239,8 @@ public class AosAsyncClient {
      * @param EstimateExecutionPlanPriceRequest 请求对象
      * @return CompletableFuture<EstimateExecutionPlanPriceResponse>
      */
-    public CompletableFuture<EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsync(EstimateExecutionPlanPriceRequest request) {
+    public CompletableFuture<EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsync(
+        EstimateExecutionPlanPriceRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.estimateExecutionPlanPrice);
     }
 
@@ -297,8 +304,10 @@ public class AosAsyncClient {
      * @param EstimateExecutionPlanPriceRequest 请求对象
      * @return AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse>
      */
-    public AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsyncInvoker(EstimateExecutionPlanPriceRequest request) {
-        return new AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse>(request, AosMeta.estimateExecutionPlanPrice, hcClient);
+    public AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse> estimateExecutionPlanPriceAsyncInvoker(
+        EstimateExecutionPlanPriceRequest request) {
+        return new AsyncInvoker<EstimateExecutionPlanPriceRequest, EstimateExecutionPlanPriceResponse>(request,
+            AosMeta.estimateExecutionPlanPrice, hcClient);
     }
 
     /**
@@ -333,8 +342,10 @@ public class AosAsyncClient {
      * @param GetExecutionPlanRequest 请求对象
      * @return AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>
      */
-    public AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlanAsyncInvoker(GetExecutionPlanRequest request) {
-        return new AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>(request, AosMeta.getExecutionPlan, hcClient);
+    public AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse> getExecutionPlanAsyncInvoker(
+        GetExecutionPlanRequest request) {
+        return new AsyncInvoker<GetExecutionPlanRequest, GetExecutionPlanResponse>(request, AosMeta.getExecutionPlan,
+            hcClient);
     }
 
     /**
@@ -353,7 +364,8 @@ public class AosAsyncClient {
      * @param GetExecutionPlanMetadataRequest 请求对象
      * @return CompletableFuture<GetExecutionPlanMetadataResponse>
      */
-    public CompletableFuture<GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsync(GetExecutionPlanMetadataRequest request) {
+    public CompletableFuture<GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsync(
+        GetExecutionPlanMetadataRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.getExecutionPlanMetadata);
     }
 
@@ -373,8 +385,10 @@ public class AosAsyncClient {
      * @param GetExecutionPlanMetadataRequest 请求对象
      * @return AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse>
      */
-    public AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsyncInvoker(GetExecutionPlanMetadataRequest request) {
-        return new AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse>(request, AosMeta.getExecutionPlanMetadata, hcClient);
+    public AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse> getExecutionPlanMetadataAsyncInvoker(
+        GetExecutionPlanMetadataRequest request) {
+        return new AsyncInvoker<GetExecutionPlanMetadataRequest, GetExecutionPlanMetadataResponse>(request,
+            AosMeta.getExecutionPlanMetadata, hcClient);
     }
 
     /**
@@ -419,8 +433,10 @@ public class AosAsyncClient {
      * @param ListExecutionPlansRequest 请求对象
      * @return AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>
      */
-    public AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlansAsyncInvoker(ListExecutionPlansRequest request) {
-        return new AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>(request, AosMeta.listExecutionPlans, hcClient);
+    public AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse> listExecutionPlansAsyncInvoker(
+        ListExecutionPlansRequest request) {
+        return new AsyncInvoker<ListExecutionPlansRequest, ListExecutionPlansResponse>(request,
+            AosMeta.listExecutionPlans, hcClient);
     }
 
     /**
@@ -459,8 +475,10 @@ public class AosAsyncClient {
      * @param ContinueDeployStackRequest 请求对象
      * @return AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>
      */
-    public AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStackAsyncInvoker(ContinueDeployStackRequest request) {
-        return new AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>(request, AosMeta.continueDeployStack, hcClient);
+    public AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse> continueDeployStackAsyncInvoker(
+        ContinueDeployStackRequest request) {
+        return new AsyncInvoker<ContinueDeployStackRequest, ContinueDeployStackResponse>(request,
+            AosMeta.continueDeployStack, hcClient);
     }
 
     /**
@@ -480,7 +498,8 @@ public class AosAsyncClient {
      * @param ContinueRollbackStackRequest 请求对象
      * @return CompletableFuture<ContinueRollbackStackResponse>
      */
-    public CompletableFuture<ContinueRollbackStackResponse> continueRollbackStackAsync(ContinueRollbackStackRequest request) {
+    public CompletableFuture<ContinueRollbackStackResponse> continueRollbackStackAsync(
+        ContinueRollbackStackRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.continueRollbackStack);
     }
 
@@ -501,8 +520,10 @@ public class AosAsyncClient {
      * @param ContinueRollbackStackRequest 请求对象
      * @return AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>
      */
-    public AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStackAsyncInvoker(ContinueRollbackStackRequest request) {
-        return new AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>(request, AosMeta.continueRollbackStack, hcClient);
+    public AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse> continueRollbackStackAsyncInvoker(
+        ContinueRollbackStackRequest request) {
+        return new AsyncInvoker<ContinueRollbackStackRequest, ContinueRollbackStackResponse>(request,
+            AosMeta.continueRollbackStack, hcClient);
     }
 
     /**
@@ -711,8 +732,10 @@ public class AosAsyncClient {
      * @param GetStackMetadataRequest 请求对象
      * @return AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>
      */
-    public AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadataAsyncInvoker(GetStackMetadataRequest request) {
-        return new AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>(request, AosMeta.getStackMetadata, hcClient);
+    public AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse> getStackMetadataAsyncInvoker(
+        GetStackMetadataRequest request) {
+        return new AsyncInvoker<GetStackMetadataRequest, GetStackMetadataResponse>(request, AosMeta.getStackMetadata,
+            hcClient);
     }
 
     /**
@@ -753,8 +776,10 @@ public class AosAsyncClient {
      * @param GetStackTemplateRequest 请求对象
      * @return AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>
      */
-    public AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplateAsyncInvoker(GetStackTemplateRequest request) {
-        return new AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>(request, AosMeta.getStackTemplate, hcClient);
+    public AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse> getStackTemplateAsyncInvoker(
+        GetStackTemplateRequest request) {
+        return new AsyncInvoker<GetStackTemplateRequest, GetStackTemplateResponse>(request, AosMeta.getStackTemplate,
+            hcClient);
     }
 
     /**
@@ -797,8 +822,10 @@ public class AosAsyncClient {
      * @param ListStackEventsRequest 请求对象
      * @return AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>
      */
-    public AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse> listStackEventsAsyncInvoker(ListStackEventsRequest request) {
-        return new AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>(request, AosMeta.listStackEvents, hcClient);
+    public AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse> listStackEventsAsyncInvoker(
+        ListStackEventsRequest request) {
+        return new AsyncInvoker<ListStackEventsRequest, ListStackEventsResponse>(request, AosMeta.listStackEvents,
+            hcClient);
     }
 
     /**
@@ -847,8 +874,10 @@ public class AosAsyncClient {
      * @param ListStackOutputsRequest 请求对象
      * @return AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>
      */
-    public AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse> listStackOutputsAsyncInvoker(ListStackOutputsRequest request) {
-        return new AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>(request, AosMeta.listStackOutputs, hcClient);
+    public AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse> listStackOutputsAsyncInvoker(
+        ListStackOutputsRequest request) {
+        return new AsyncInvoker<ListStackOutputsRequest, ListStackOutputsResponse>(request, AosMeta.listStackOutputs,
+            hcClient);
     }
 
     /**
@@ -858,7 +887,9 @@ public class AosAsyncClient {
      * 
      * 此API用于列举资源栈中当前管理的所有资源的信息
      * 
-     * 对于非终态的资源栈（状态以&#x60;IN_PROGRESS&#x60;结尾），不返回资源属性。非终态状态包括但不限于以下状态：
+     * 当资源栈处于非终态时，仅输出资源栈下资源的简要信息，包含逻辑资源名称（logical_resource_name），逻辑资源类型（logical_resource_type），物理资源id（physical_resource_id），物理资源名称（physical_resource_name），资源状态（status）等信息；当资源栈处于终态时，将额外输出具体信息，如资源属性（resource_attributes）
+     * 
+     * 非终态包括但不限于以下状态：
      *   * 正在部署（DEPLOYMENT_IN_PROGRESS）
      *   * 正在删除（DELETION_IN_PROGRESS）
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
@@ -879,7 +910,9 @@ public class AosAsyncClient {
      * 
      * 此API用于列举资源栈中当前管理的所有资源的信息
      * 
-     * 对于非终态的资源栈（状态以&#x60;IN_PROGRESS&#x60;结尾），不返回资源属性。非终态状态包括但不限于以下状态：
+     * 当资源栈处于非终态时，仅输出资源栈下资源的简要信息，包含逻辑资源名称（logical_resource_name），逻辑资源类型（logical_resource_type），物理资源id（physical_resource_id），物理资源名称（physical_resource_name），资源状态（status）等信息；当资源栈处于终态时，将额外输出具体信息，如资源属性（resource_attributes）
+     * 
+     * 非终态包括但不限于以下状态：
      *   * 正在部署（DEPLOYMENT_IN_PROGRESS）
      *   * 正在删除（DELETION_IN_PROGRESS）
      *   * 正在回滚（ROLLBACK_IN_PROGRESS）
@@ -889,8 +922,10 @@ public class AosAsyncClient {
      * @param ListStackResourcesRequest 请求对象
      * @return AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>
      */
-    public AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse> listStackResourcesAsyncInvoker(ListStackResourcesRequest request) {
-        return new AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>(request, AosMeta.listStackResources, hcClient);
+    public AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse> listStackResourcesAsyncInvoker(
+        ListStackResourcesRequest request) {
+        return new AsyncInvoker<ListStackResourcesRequest, ListStackResourcesResponse>(request,
+            AosMeta.listStackResources, hcClient);
     }
 
     /**
@@ -993,7 +1028,8 @@ public class AosAsyncClient {
      * @param ParseTemplateVariablesRequest 请求对象
      * @return CompletableFuture<ParseTemplateVariablesResponse>
      */
-    public CompletableFuture<ParseTemplateVariablesResponse> parseTemplateVariablesAsync(ParseTemplateVariablesRequest request) {
+    public CompletableFuture<ParseTemplateVariablesResponse> parseTemplateVariablesAsync(
+        ParseTemplateVariablesRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.parseTemplateVariables);
     }
 
@@ -1013,8 +1049,10 @@ public class AosAsyncClient {
      * @param ParseTemplateVariablesRequest 请求对象
      * @return AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>
      */
-    public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(ParseTemplateVariablesRequest request) {
-        return new AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>(request, AosMeta.parseTemplateVariables, hcClient);
+    public AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse> parseTemplateVariablesAsyncInvoker(
+        ParseTemplateVariablesRequest request) {
+        return new AsyncInvoker<ParseTemplateVariablesRequest, ParseTemplateVariablesResponse>(request,
+            AosMeta.parseTemplateVariables, hcClient);
     }
 
     /**
@@ -1051,8 +1089,10 @@ public class AosAsyncClient {
      * @param DeleteTemplateRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>
      */
-    public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(DeleteTemplateRequest request) {
-        return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, AosMeta.deleteTemplate, hcClient);
+    public AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse> deleteTemplateAsyncInvoker(
+        DeleteTemplateRequest request) {
+        return new AsyncInvoker<DeleteTemplateRequest, DeleteTemplateResponse>(request, AosMeta.deleteTemplate,
+            hcClient);
     }
 
     /**
@@ -1072,7 +1112,8 @@ public class AosAsyncClient {
      * @param DeleteTemplateVersionRequest 请求对象
      * @return CompletableFuture<DeleteTemplateVersionResponse>
      */
-    public CompletableFuture<DeleteTemplateVersionResponse> deleteTemplateVersionAsync(DeleteTemplateVersionRequest request) {
+    public CompletableFuture<DeleteTemplateVersionResponse> deleteTemplateVersionAsync(
+        DeleteTemplateVersionRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.deleteTemplateVersion);
     }
 
@@ -1093,8 +1134,61 @@ public class AosAsyncClient {
      * @param DeleteTemplateVersionRequest 请求对象
      * @return AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse>
      */
-    public AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> deleteTemplateVersionAsyncInvoker(DeleteTemplateVersionRequest request) {
-        return new AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse>(request, AosMeta.deleteTemplateVersion, hcClient);
+    public AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse> deleteTemplateVersionAsyncInvoker(
+        DeleteTemplateVersionRequest request) {
+        return new AsyncInvoker<DeleteTemplateVersionRequest, DeleteTemplateVersionResponse>(request,
+            AosMeta.deleteTemplateVersion, hcClient);
+    }
+
+    /**
+     * 列举模板版本
+     *
+     * 列举模板版本信息（ListTemplateVersions）
+     * 
+     * 此API用于列举模板下所有的模板版本信息
+     * 
+     *   * 默认按照生成时间排序，最早生成的模板排列在最前面
+     *   * 注意：目前返回全量模板版本信息，即不支持分页
+     *   * 如果没有任何模板版本，则返回空list
+     *   * 若template_name和template_id同时存在，则模板服务会检查是否两个匹配
+     *   * 若模板不存在则返回404
+     * 
+     * ListTemplateVersions返回的信息只包含模板版本摘要信息（具体摘要信息见ListTemplateVersionsResponseBody），若用户需要了解模板版本内容，请调用ShowTemplateVersionContent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplateVersionsRequest 请求对象
+     * @return CompletableFuture<ListTemplateVersionsResponse>
+     */
+    public CompletableFuture<ListTemplateVersionsResponse> listTemplateVersionsAsync(
+        ListTemplateVersionsRequest request) {
+        return hcClient.asyncInvokeHttp(request, AosMeta.listTemplateVersions);
+    }
+
+    /**
+     * 列举模板版本
+     *
+     * 列举模板版本信息（ListTemplateVersions）
+     * 
+     * 此API用于列举模板下所有的模板版本信息
+     * 
+     *   * 默认按照生成时间排序，最早生成的模板排列在最前面
+     *   * 注意：目前返回全量模板版本信息，即不支持分页
+     *   * 如果没有任何模板版本，则返回空list
+     *   * 若template_name和template_id同时存在，则模板服务会检查是否两个匹配
+     *   * 若模板不存在则返回404
+     * 
+     * ListTemplateVersions返回的信息只包含模板版本摘要信息（具体摘要信息见ListTemplateVersionsResponseBody），若用户需要了解模板版本内容，请调用ShowTemplateVersionContent
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListTemplateVersionsRequest 请求对象
+     * @return AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse>
+     */
+    public AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse> listTemplateVersionsAsyncInvoker(
+        ListTemplateVersionsRequest request) {
+        return new AsyncInvoker<ListTemplateVersionsRequest, ListTemplateVersionsResponse>(request,
+            AosMeta.listTemplateVersions, hcClient);
     }
 
     /**
@@ -1139,7 +1233,8 @@ public class AosAsyncClient {
      * @param ListTemplatesRequest 请求对象
      * @return AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>
      */
-    public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(ListTemplatesRequest request) {
+    public AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse> listTemplatesAsyncInvoker(
+        ListTemplatesRequest request) {
         return new AsyncInvoker<ListTemplatesRequest, ListTemplatesResponse>(request, AosMeta.listTemplates, hcClient);
     }
 
@@ -1159,7 +1254,8 @@ public class AosAsyncClient {
      * @param ShowTemplateMetadataRequest 请求对象
      * @return CompletableFuture<ShowTemplateMetadataResponse>
      */
-    public CompletableFuture<ShowTemplateMetadataResponse> showTemplateMetadataAsync(ShowTemplateMetadataRequest request) {
+    public CompletableFuture<ShowTemplateMetadataResponse> showTemplateMetadataAsync(
+        ShowTemplateMetadataRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.showTemplateMetadata);
     }
 
@@ -1179,8 +1275,10 @@ public class AosAsyncClient {
      * @param ShowTemplateMetadataRequest 请求对象
      * @return AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse>
      */
-    public AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> showTemplateMetadataAsyncInvoker(ShowTemplateMetadataRequest request) {
-        return new AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse>(request, AosMeta.showTemplateMetadata, hcClient);
+    public AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse> showTemplateMetadataAsyncInvoker(
+        ShowTemplateMetadataRequest request) {
+        return new AsyncInvoker<ShowTemplateMetadataRequest, ShowTemplateMetadataResponse>(request,
+            AosMeta.showTemplateMetadata, hcClient);
     }
 
     /**
@@ -1200,7 +1298,8 @@ public class AosAsyncClient {
      * @param ShowTemplateVersionContentRequest 请求对象
      * @return CompletableFuture<ShowTemplateVersionContentResponse>
      */
-    public CompletableFuture<ShowTemplateVersionContentResponse> showTemplateVersionContentAsync(ShowTemplateVersionContentRequest request) {
+    public CompletableFuture<ShowTemplateVersionContentResponse> showTemplateVersionContentAsync(
+        ShowTemplateVersionContentRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.showTemplateVersionContent);
     }
 
@@ -1221,8 +1320,10 @@ public class AosAsyncClient {
      * @param ShowTemplateVersionContentRequest 请求对象
      * @return AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse>
      */
-    public AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> showTemplateVersionContentAsyncInvoker(ShowTemplateVersionContentRequest request) {
-        return new AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse>(request, AosMeta.showTemplateVersionContent, hcClient);
+    public AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse> showTemplateVersionContentAsyncInvoker(
+        ShowTemplateVersionContentRequest request) {
+        return new AsyncInvoker<ShowTemplateVersionContentRequest, ShowTemplateVersionContentResponse>(request,
+            AosMeta.showTemplateVersionContent, hcClient);
     }
 
     /**
@@ -1241,7 +1342,8 @@ public class AosAsyncClient {
      * @param ShowTemplateVersionMetadataRequest 请求对象
      * @return CompletableFuture<ShowTemplateVersionMetadataResponse>
      */
-    public CompletableFuture<ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsync(ShowTemplateVersionMetadataRequest request) {
+    public CompletableFuture<ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsync(
+        ShowTemplateVersionMetadataRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.showTemplateVersionMetadata);
     }
 
@@ -1261,8 +1363,10 @@ public class AosAsyncClient {
      * @param ShowTemplateVersionMetadataRequest 请求对象
      * @return AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse>
      */
-    public AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsyncInvoker(ShowTemplateVersionMetadataRequest request) {
-        return new AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse>(request, AosMeta.showTemplateVersionMetadata, hcClient);
+    public AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse> showTemplateVersionMetadataAsyncInvoker(
+        ShowTemplateVersionMetadataRequest request) {
+        return new AsyncInvoker<ShowTemplateVersionMetadataRequest, ShowTemplateVersionMetadataResponse>(request,
+            AosMeta.showTemplateVersionMetadata, hcClient);
     }
 
     /**
@@ -1279,7 +1383,8 @@ public class AosAsyncClient {
      * @param UpdateTemplateMetadataRequest 请求对象
      * @return CompletableFuture<UpdateTemplateMetadataResponse>
      */
-    public CompletableFuture<UpdateTemplateMetadataResponse> updateTemplateMetadataAsync(UpdateTemplateMetadataRequest request) {
+    public CompletableFuture<UpdateTemplateMetadataResponse> updateTemplateMetadataAsync(
+        UpdateTemplateMetadataRequest request) {
         return hcClient.asyncInvokeHttp(request, AosMeta.updateTemplateMetadata);
     }
 
@@ -1297,8 +1402,10 @@ public class AosAsyncClient {
      * @param UpdateTemplateMetadataRequest 请求对象
      * @return AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse>
      */
-    public AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> updateTemplateMetadataAsyncInvoker(UpdateTemplateMetadataRequest request) {
-        return new AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse>(request, AosMeta.updateTemplateMetadata, hcClient);
+    public AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse> updateTemplateMetadataAsyncInvoker(
+        UpdateTemplateMetadataRequest request) {
+        return new AsyncInvoker<UpdateTemplateMetadataRequest, UpdateTemplateMetadataResponse>(request,
+            AosMeta.updateTemplateMetadata, hcClient);
     }
 
 }

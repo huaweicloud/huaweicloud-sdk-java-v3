@@ -101,18 +101,16 @@ public class OperateHistorySession {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateHistorySession operateHistorySession = (OperateHistorySession) o;
-        return Objects.equals(this.duration, operateHistorySession.duration)
-            && Objects.equals(this.sessionId, operateHistorySession.sessionId)
-            && Objects.equals(this.startTime, operateHistorySession.startTime)
-            && Objects.equals(this.endTime, operateHistorySession.endTime);
+        OperateHistorySession that = (OperateHistorySession) obj;
+        return Objects.equals(this.duration, that.duration) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

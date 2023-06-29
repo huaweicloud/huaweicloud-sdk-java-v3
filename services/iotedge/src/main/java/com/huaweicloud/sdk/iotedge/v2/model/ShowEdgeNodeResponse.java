@@ -1,236 +1,191 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDisplayDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.DeviceDataRecord;
-import com.huaweicloud.sdk.iotedge.v2.model.HaConfigDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.Nic;
-import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowEdgeNodeResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "log_configs")
+
+    private List<LogConfigDTO> logConfigs = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_configs")
-    
-    private List<LogConfigDTO> logConfigs = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_config")
-    
+    @JsonProperty(value = "ha_config")
 
     private HaConfigDTO haConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_id")
-    
+    @JsonProperty(value = "product_id")
 
     private String productId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_name")
-    
+    @JsonProperty(value = "product_name")
 
     private String productName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_spec_types")
-    
+    @JsonProperty(value = "resource_spec_types")
+
     private List<String> resourceSpecTypes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ips")
-    
+    @JsonProperty(value = "ips")
+
     private List<String> ips = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="software_version")
-    
+    @JsonProperty(value = "software_version")
 
     private String softwareVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_name")
-    
+    @JsonProperty(value = "os_name")
 
     private String osName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_name")
-    
+    @JsonProperty(value = "host_name")
 
     private String hostName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nics")
-    
+    @JsonProperty(value = "nics")
+
     private List<Nic> nics = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="specification")
-    
+    @JsonProperty(value = "specification")
 
     private String specification;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ai_card_type")
-    
+    @JsonProperty(value = "ai_card_type")
 
     private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="npu_library_path")
-    
+    @JsonProperty(value = "npu_library_path")
 
     private String npuLibraryPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_version")
-    
+    @JsonProperty(value = "container_version")
 
     private String containerVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_level")
-    
+    @JsonProperty(value = "security_level")
 
     private String securityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reliability_level")
-    
+    @JsonProperty(value = "reliability_level")
 
     private String reliabilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_period")
-    
+    @JsonProperty(value = "storage_period")
 
     private Integer storagePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="base_path")
-    
+    @JsonProperty(value = "base_path")
 
     private BasePathDTO basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hardware_model")
-    
+    @JsonProperty(value = "hardware_model")
 
     private String hardwareModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offline_cache_configs")
-    
+    @JsonProperty(value = "offline_cache_configs")
 
     private OfflineCacheConfigsDTO offlineCacheConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_auth_info")
-    
+    @JsonProperty(value = "device_auth_info")
 
     private DeviceAuthInfoDisplayDTO deviceAuthInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_data_format")
-    
+    @JsonProperty(value = "device_data_format")
 
     private String deviceDataFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="automatic_upgrade")
-    
+    @JsonProperty(value = "automatic_upgrade")
 
     private String automaticUpgrade;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_data_record")
-    
+    @JsonProperty(value = "device_data_record")
 
     private DeviceDataRecord deviceDataRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_report")
-    
+    @JsonProperty(value = "metric_report")
 
     private String metricReport;
 
@@ -239,9 +194,8 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         return this;
     }
 
-    
     public ShowEdgeNodeResponse addLogConfigsItem(LogConfigDTO logConfigsItem) {
-        if(this.logConfigs == null) {
+        if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
         this.logConfigs.add(logConfigsItem);
@@ -249,7 +203,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
 
     public ShowEdgeNodeResponse withLogConfigs(Consumer<List<LogConfigDTO>> logConfigsSetter) {
-        if(this.logConfigs == null) {
+        if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
         logConfigsSetter.accept(this.logConfigs);
@@ -268,22 +222,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.logConfigs = logConfigs;
     }
 
-    
-
     public ShowEdgeNodeResponse withHaConfig(HaConfigDTO haConfig) {
         this.haConfig = haConfig;
         return this;
     }
 
     public ShowEdgeNodeResponse withHaConfig(Consumer<HaConfigDTO> haConfigSetter) {
-        if(this.haConfig == null ){
+        if (this.haConfig == null) {
             this.haConfig = new HaConfigDTO();
             haConfigSetter.accept(this.haConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get haConfig
@@ -297,15 +248,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.haConfig = haConfig;
     }
 
-    
-
     public ShowEdgeNodeResponse withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点Id
@@ -319,15 +265,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public ShowEdgeNodeResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
@@ -341,15 +282,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowEdgeNodeResponse withProductId(String productId) {
         this.productId = productId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点关联的产品ID，用于唯一标识一个产品模型。
@@ -363,15 +299,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.productId = productId;
     }
 
-    
-
     public ShowEdgeNodeResponse withProductName(String productName) {
         this.productName = productName;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点关联的产品名称。
@@ -385,15 +316,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.productName = productName;
     }
 
-    
-
     public ShowEdgeNodeResponse withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间id，对应IOTDA云服务接口参数中的app_id。
@@ -407,16 +333,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.spaceId = spaceId;
     }
 
-    
-
     public ShowEdgeNodeResponse withResourceSpecTypes(List<String> resourceSpecTypes) {
         this.resourceSpecTypes = resourceSpecTypes;
         return this;
     }
 
-    
     public ShowEdgeNodeResponse addResourceSpecTypesItem(String resourceSpecTypesItem) {
-        if(this.resourceSpecTypes == null) {
+        if (this.resourceSpecTypes == null) {
             this.resourceSpecTypes = new ArrayList<>();
         }
         this.resourceSpecTypes.add(resourceSpecTypesItem);
@@ -424,7 +347,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
 
     public ShowEdgeNodeResponse withResourceSpecTypes(Consumer<List<String>> resourceSpecTypesSetter) {
-        if(this.resourceSpecTypes == null) {
+        if (this.resourceSpecTypes == null) {
             this.resourceSpecTypes = new ArrayList<>();
         }
         resourceSpecTypesSetter.accept(this.resourceSpecTypes);
@@ -443,16 +366,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.resourceSpecTypes = resourceSpecTypes;
     }
 
-    
-
     public ShowEdgeNodeResponse withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
     public ShowEdgeNodeResponse addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -460,7 +380,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
 
     public ShowEdgeNodeResponse withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
@@ -479,16 +399,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.resourceIds = resourceIds;
     }
 
-    
-
     public ShowEdgeNodeResponse withIps(List<String> ips) {
         this.ips = ips;
         return this;
     }
 
-    
     public ShowEdgeNodeResponse addIpsItem(String ipsItem) {
-        if(this.ips == null) {
+        if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
         this.ips.add(ipsItem);
@@ -496,7 +413,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
 
     public ShowEdgeNodeResponse withIps(Consumer<List<String>> ipsSetter) {
-        if(this.ips == null) {
+        if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
         ipsSetter.accept(this.ips);
@@ -515,15 +432,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.ips = ips;
     }
 
-    
-
     public ShowEdgeNodeResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点名称
@@ -537,15 +449,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowEdgeNodeResponse withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点状态
@@ -559,15 +466,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public ShowEdgeNodeResponse withSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
         return this;
     }
-
-    
-
 
     /**
      * 边缘应用id，只允许数字、英文小写、中划线，切必须以字母或数字结尾
@@ -581,15 +483,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.softwareVersion = softwareVersion;
     }
 
-    
-
     public ShowEdgeNodeResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点创建时间
@@ -603,15 +500,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowEdgeNodeResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点更新时间
@@ -625,15 +517,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ShowEdgeNodeResponse withOsName(String osName) {
         this.osName = osName;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点操作系统名称
@@ -647,15 +534,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.osName = osName;
     }
 
-    
-
     public ShowEdgeNodeResponse withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点操作系统架构
@@ -669,15 +551,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.arch = arch;
     }
 
-    
-
     public ShowEdgeNodeResponse withHostName(String hostName) {
         this.hostName = hostName;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点主机名
@@ -691,16 +568,13 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.hostName = hostName;
     }
 
-    
-
     public ShowEdgeNodeResponse withNics(List<Nic> nics) {
         this.nics = nics;
         return this;
     }
 
-    
     public ShowEdgeNodeResponse addNicsItem(Nic nicsItem) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         this.nics.add(nicsItem);
@@ -708,7 +582,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
     }
 
     public ShowEdgeNodeResponse withNics(Consumer<List<Nic>> nicsSetter) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -727,15 +601,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.nics = nics;
     }
 
-    
-
     public ShowEdgeNodeResponse withSpecification(String specification) {
         this.specification = specification;
         return this;
     }
-
-    
-
 
     /**
      * 网络规格，如4 cores | 3867 MB
@@ -749,15 +618,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.specification = specification;
     }
 
-    
-
     public ShowEdgeNodeResponse withAiCardType(String aiCardType) {
         this.aiCardType = aiCardType;
         return this;
     }
-
-    
-
 
     /**
      * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
@@ -771,15 +635,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.aiCardType = aiCardType;
     }
 
-    
-
     public ShowEdgeNodeResponse withNpuLibraryPath(String npuLibraryPath) {
         this.npuLibraryPath = npuLibraryPath;
         return this;
     }
-
-    
-
 
     /**
      * npu驱动动态库路径
@@ -793,15 +652,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.npuLibraryPath = npuLibraryPath;
     }
 
-    
-
     public ShowEdgeNodeResponse withContainerVersion(String containerVersion) {
         this.containerVersion = containerVersion;
         return this;
     }
-
-    
-
 
     /**
      * 容器运行时版本
@@ -815,15 +669,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.containerVersion = containerVersion;
     }
 
-    
-
     public ShowEdgeNodeResponse withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点所属资源类型：advanced|standard
@@ -837,15 +686,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.type = type;
     }
 
-    
-
     public ShowEdgeNodeResponse withSecurityLevel(String securityLevel) {
         this.securityLevel = securityLevel;
         return this;
     }
-
-    
-
 
     /**
      * 节点的安全等级，MEDIUM边缘节数据上报不进行加密，HIGH对数据上报进行加密。
@@ -859,15 +703,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.securityLevel = securityLevel;
     }
 
-    
-
     public ShowEdgeNodeResponse withReliabilityLevel(String reliabilityLevel) {
         this.reliabilityLevel = reliabilityLevel;
         return this;
     }
-
-    
-
 
     /**
      * 节点的可靠性等级。
@@ -881,15 +720,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.reliabilityLevel = reliabilityLevel;
     }
 
-    
-
     public ShowEdgeNodeResponse withStoragePeriod(Integer storagePeriod) {
         this.storagePeriod = storagePeriod;
         return this;
     }
-
-    
-
 
     /**
      * 节点的存储周期，默认0天，取值范围0~7天，0天则不存储。
@@ -905,22 +739,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.storagePeriod = storagePeriod;
     }
 
-    
-
     public ShowEdgeNodeResponse withBasePath(BasePathDTO basePath) {
         this.basePath = basePath;
         return this;
     }
 
     public ShowEdgeNodeResponse withBasePath(Consumer<BasePathDTO> basePathSetter) {
-        if(this.basePath == null ){
+        if (this.basePath == null) {
             this.basePath = new BasePathDTO();
             basePathSetter.accept(this.basePath);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get basePath
@@ -934,15 +765,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.basePath = basePath;
     }
 
-    
-
     public ShowEdgeNodeResponse withHardwareModel(String hardwareModel) {
         this.hardwareModel = hardwareModel;
         return this;
     }
-
-    
-
 
     /**
      * 注册节点网关配置
@@ -956,22 +782,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.hardwareModel = hardwareModel;
     }
 
-    
-
     public ShowEdgeNodeResponse withOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
         this.offlineCacheConfigs = offlineCacheConfigs;
         return this;
     }
 
     public ShowEdgeNodeResponse withOfflineCacheConfigs(Consumer<OfflineCacheConfigsDTO> offlineCacheConfigsSetter) {
-        if(this.offlineCacheConfigs == null ){
+        if (this.offlineCacheConfigs == null) {
             this.offlineCacheConfigs = new OfflineCacheConfigsDTO();
             offlineCacheConfigsSetter.accept(this.offlineCacheConfigs);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get offlineCacheConfigs
@@ -985,22 +808,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.offlineCacheConfigs = offlineCacheConfigs;
     }
 
-    
-
     public ShowEdgeNodeResponse withDeviceAuthInfo(DeviceAuthInfoDisplayDTO deviceAuthInfo) {
         this.deviceAuthInfo = deviceAuthInfo;
         return this;
     }
 
     public ShowEdgeNodeResponse withDeviceAuthInfo(Consumer<DeviceAuthInfoDisplayDTO> deviceAuthInfoSetter) {
-        if(this.deviceAuthInfo == null ){
+        if (this.deviceAuthInfo == null) {
             this.deviceAuthInfo = new DeviceAuthInfoDisplayDTO();
             deviceAuthInfoSetter.accept(this.deviceAuthInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get deviceAuthInfo
@@ -1014,15 +834,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.deviceAuthInfo = deviceAuthInfo;
     }
 
-    
-
     public ShowEdgeNodeResponse withDeviceDataFormat(String deviceDataFormat) {
         this.deviceDataFormat = deviceDataFormat;
         return this;
     }
-
-    
-
 
     /**
      * 节点使用的数据格式，默认为iotda物模型1.0格式，可以选择属性平铺数据格式flat_json
@@ -1036,15 +851,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.deviceDataFormat = deviceDataFormat;
     }
 
-    
-
     public ShowEdgeNodeResponse withAutomaticUpgrade(String automaticUpgrade) {
         this.automaticUpgrade = automaticUpgrade;
         return this;
     }
-
-    
-
 
     /**
      * 自动升级系统应用的节点开关，默认为关闭：OFF，IMMEDIATE表示节点开关打开
@@ -1058,22 +868,19 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.automaticUpgrade = automaticUpgrade;
     }
 
-    
-
     public ShowEdgeNodeResponse withDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
         this.deviceDataRecord = deviceDataRecord;
         return this;
     }
 
     public ShowEdgeNodeResponse withDeviceDataRecord(Consumer<DeviceDataRecord> deviceDataRecordSetter) {
-        if(this.deviceDataRecord == null ){
+        if (this.deviceDataRecord == null) {
             this.deviceDataRecord = new DeviceDataRecord();
             deviceDataRecordSetter.accept(this.deviceDataRecord);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get deviceDataRecord
@@ -1087,15 +894,10 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.deviceDataRecord = deviceDataRecord;
     }
 
-    
-
     public ShowEdgeNodeResponse withMetricReport(String metricReport) {
         this.metricReport = metricReport;
         return this;
     }
-
-    
-
 
     /**
      * omagent监控运维工具是否上报指标
@@ -1109,57 +911,81 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         this.metricReport = metricReport;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeNodeResponse showEdgeNodeResponse = (ShowEdgeNodeResponse) o;
-        return Objects.equals(this.logConfigs, showEdgeNodeResponse.logConfigs) &&
-            Objects.equals(this.haConfig, showEdgeNodeResponse.haConfig) &&
-            Objects.equals(this.edgeNodeId, showEdgeNodeResponse.edgeNodeId) &&
-            Objects.equals(this.instanceId, showEdgeNodeResponse.instanceId) &&
-            Objects.equals(this.productId, showEdgeNodeResponse.productId) &&
-            Objects.equals(this.productName, showEdgeNodeResponse.productName) &&
-            Objects.equals(this.spaceId, showEdgeNodeResponse.spaceId) &&
-            Objects.equals(this.resourceSpecTypes, showEdgeNodeResponse.resourceSpecTypes) &&
-            Objects.equals(this.resourceIds, showEdgeNodeResponse.resourceIds) &&
-            Objects.equals(this.ips, showEdgeNodeResponse.ips) &&
-            Objects.equals(this.name, showEdgeNodeResponse.name) &&
-            Objects.equals(this.state, showEdgeNodeResponse.state) &&
-            Objects.equals(this.softwareVersion, showEdgeNodeResponse.softwareVersion) &&
-            Objects.equals(this.createTime, showEdgeNodeResponse.createTime) &&
-            Objects.equals(this.updateTime, showEdgeNodeResponse.updateTime) &&
-            Objects.equals(this.osName, showEdgeNodeResponse.osName) &&
-            Objects.equals(this.arch, showEdgeNodeResponse.arch) &&
-            Objects.equals(this.hostName, showEdgeNodeResponse.hostName) &&
-            Objects.equals(this.nics, showEdgeNodeResponse.nics) &&
-            Objects.equals(this.specification, showEdgeNodeResponse.specification) &&
-            Objects.equals(this.aiCardType, showEdgeNodeResponse.aiCardType) &&
-            Objects.equals(this.npuLibraryPath, showEdgeNodeResponse.npuLibraryPath) &&
-            Objects.equals(this.containerVersion, showEdgeNodeResponse.containerVersion) &&
-            Objects.equals(this.type, showEdgeNodeResponse.type) &&
-            Objects.equals(this.securityLevel, showEdgeNodeResponse.securityLevel) &&
-            Objects.equals(this.reliabilityLevel, showEdgeNodeResponse.reliabilityLevel) &&
-            Objects.equals(this.storagePeriod, showEdgeNodeResponse.storagePeriod) &&
-            Objects.equals(this.basePath, showEdgeNodeResponse.basePath) &&
-            Objects.equals(this.hardwareModel, showEdgeNodeResponse.hardwareModel) &&
-            Objects.equals(this.offlineCacheConfigs, showEdgeNodeResponse.offlineCacheConfigs) &&
-            Objects.equals(this.deviceAuthInfo, showEdgeNodeResponse.deviceAuthInfo) &&
-            Objects.equals(this.deviceDataFormat, showEdgeNodeResponse.deviceDataFormat) &&
-            Objects.equals(this.automaticUpgrade, showEdgeNodeResponse.automaticUpgrade) &&
-            Objects.equals(this.deviceDataRecord, showEdgeNodeResponse.deviceDataRecord) &&
-            Objects.equals(this.metricReport, showEdgeNodeResponse.metricReport);
+        ShowEdgeNodeResponse that = (ShowEdgeNodeResponse) obj;
+        return Objects.equals(this.logConfigs, that.logConfigs) && Objects.equals(this.haConfig, that.haConfig)
+            && Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.spaceId, that.spaceId)
+            && Objects.equals(this.resourceSpecTypes, that.resourceSpecTypes)
+            && Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.ips, that.ips)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.softwareVersion, that.softwareVersion)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.specification, that.specification)
+            && Objects.equals(this.aiCardType, that.aiCardType)
+            && Objects.equals(this.npuLibraryPath, that.npuLibraryPath)
+            && Objects.equals(this.containerVersion, that.containerVersion) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.securityLevel, that.securityLevel)
+            && Objects.equals(this.reliabilityLevel, that.reliabilityLevel)
+            && Objects.equals(this.storagePeriod, that.storagePeriod) && Objects.equals(this.basePath, that.basePath)
+            && Objects.equals(this.hardwareModel, that.hardwareModel)
+            && Objects.equals(this.offlineCacheConfigs, that.offlineCacheConfigs)
+            && Objects.equals(this.deviceAuthInfo, that.deviceAuthInfo)
+            && Objects.equals(this.deviceDataFormat, that.deviceDataFormat)
+            && Objects.equals(this.automaticUpgrade, that.automaticUpgrade)
+            && Objects.equals(this.deviceDataRecord, that.deviceDataRecord)
+            && Objects.equals(this.metricReport, that.metricReport);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(logConfigs, haConfig, edgeNodeId, instanceId, productId, productName, spaceId, resourceSpecTypes, resourceIds, ips, name, state, softwareVersion, createTime, updateTime, osName, arch, hostName, nics, specification, aiCardType, npuLibraryPath, containerVersion, type, securityLevel, reliabilityLevel, storagePeriod, basePath, hardwareModel, offlineCacheConfigs, deviceAuthInfo, deviceDataFormat, automaticUpgrade, deviceDataRecord, metricReport);
+        return Objects.hash(logConfigs,
+            haConfig,
+            edgeNodeId,
+            instanceId,
+            productId,
+            productName,
+            spaceId,
+            resourceSpecTypes,
+            resourceIds,
+            ips,
+            name,
+            state,
+            softwareVersion,
+            createTime,
+            updateTime,
+            osName,
+            arch,
+            hostName,
+            nics,
+            specification,
+            aiCardType,
+            npuLibraryPath,
+            containerVersion,
+            type,
+            securityLevel,
+            reliabilityLevel,
+            storagePeriod,
+            basePath,
+            hardwareModel,
+            offlineCacheConfigs,
+            deviceAuthInfo,
+            deviceDataFormat,
+            automaticUpgrade,
+            deviceDataRecord,
+            metricReport);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1202,6 +1028,7 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1212,8 +1039,5 @@ public class ShowEdgeNodeResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

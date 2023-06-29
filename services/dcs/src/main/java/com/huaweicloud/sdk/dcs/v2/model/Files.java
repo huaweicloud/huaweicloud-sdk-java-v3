@@ -77,16 +77,16 @@ public class Files {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Files files = (Files) o;
-        return Objects.equals(this.fileName, files.fileName) && Objects.equals(this.size, files.size)
-            && Objects.equals(this.updateAt, files.updateAt);
+        Files that = (Files) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

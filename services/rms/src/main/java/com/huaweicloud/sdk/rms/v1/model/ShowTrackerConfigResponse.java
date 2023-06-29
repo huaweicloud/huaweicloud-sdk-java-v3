@@ -97,17 +97,16 @@ public class ShowTrackerConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTrackerConfigResponse showTrackerConfigResponse = (ShowTrackerConfigResponse) o;
-        return Objects.equals(this.channel, showTrackerConfigResponse.channel)
-            && Objects.equals(this.selector, showTrackerConfigResponse.selector)
-            && Objects.equals(this.agencyName, showTrackerConfigResponse.agencyName);
+        ShowTrackerConfigResponse that = (ShowTrackerConfigResponse) obj;
+        return Objects.equals(this.channel, that.channel) && Objects.equals(this.selector, that.selector)
+            && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override

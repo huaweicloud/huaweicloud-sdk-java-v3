@@ -87,22 +87,15 @@ public class SwitchoverResp {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobDirectionEnum(value));
         }
 
         public static JobDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -294,22 +287,19 @@ public class SwitchoverResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchoverResp switchoverResp = (SwitchoverResp) o;
-        return Objects.equals(this.jobId, switchoverResp.jobId)
-            && Objects.equals(this.updatedAt, switchoverResp.updatedAt)
-            && Objects.equals(this.sourceDb, switchoverResp.sourceDb)
-            && Objects.equals(this.targetDb, switchoverResp.targetDb)
-            && Objects.equals(this.jobDirection, switchoverResp.jobDirection)
-            && Objects.equals(this.isTargetReadonly, switchoverResp.isTargetReadonly)
-            && Objects.equals(this.errorMsg, switchoverResp.errorMsg)
-            && Objects.equals(this.errorCode, switchoverResp.errorCode);
+        SwitchoverResp that = (SwitchoverResp) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.sourceDb, that.sourceDb) && Objects.equals(this.targetDb, that.targetDb)
+            && Objects.equals(this.jobDirection, that.jobDirection)
+            && Objects.equals(this.isTargetReadonly, that.isTargetReadonly)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

@@ -99,18 +99,18 @@ public class AllowUserBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowUserBody allowUserBody = (AllowUserBody) o;
-        return Objects.equals(this.manageAccesskey, allowUserBody.manageAccesskey)
-            && Objects.equals(this.manageEmail, allowUserBody.manageEmail)
-            && Objects.equals(this.manageMobile, allowUserBody.manageMobile)
-            && Objects.equals(this.managePassword, allowUserBody.managePassword);
+        AllowUserBody that = (AllowUserBody) obj;
+        return Objects.equals(this.manageAccesskey, that.manageAccesskey)
+            && Objects.equals(this.manageEmail, that.manageEmail)
+            && Objects.equals(this.manageMobile, that.manageMobile)
+            && Objects.equals(this.managePassword, that.managePassword);
     }
 
     @Override

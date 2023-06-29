@@ -99,16 +99,16 @@ public class EventSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSchema eventSchema = (EventSchema) o;
-        return Objects.equals(this.component, eventSchema.component) && Objects.equals(this.verb, eventSchema.verb)
-            && Objects.equals(this._object, eventSchema._object) && Objects.equals(this.data, eventSchema.data);
+        EventSchema that = (EventSchema) obj;
+        return Objects.equals(this.component, that.component) && Objects.equals(this.verb, that.verb)
+            && Objects.equals(this._object, that._object) && Objects.equals(this.data, that.data);
     }
 
     @Override

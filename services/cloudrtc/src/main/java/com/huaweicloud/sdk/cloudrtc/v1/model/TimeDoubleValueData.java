@@ -57,16 +57,15 @@ public class TimeDoubleValueData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeDoubleValueData timeDoubleValueData = (TimeDoubleValueData) o;
-        return Objects.equals(this.time, timeDoubleValueData.time)
-            && Objects.equals(this.value, timeDoubleValueData.value);
+        TimeDoubleValueData that = (TimeDoubleValueData) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.value, that.value);
     }
 
     @Override

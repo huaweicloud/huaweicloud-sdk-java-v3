@@ -87,17 +87,16 @@ public class UpdateLinkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLinkRequest updateLinkRequest = (UpdateLinkRequest) o;
-        return Objects.equals(this.clusterId, updateLinkRequest.clusterId)
-            && Objects.equals(this.linkName, updateLinkRequest.linkName)
-            && Objects.equals(this.body, updateLinkRequest.body);
+        UpdateLinkRequest that = (UpdateLinkRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.linkName, that.linkName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

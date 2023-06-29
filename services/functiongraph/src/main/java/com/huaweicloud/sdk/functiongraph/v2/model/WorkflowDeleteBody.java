@@ -52,15 +52,15 @@ public class WorkflowDeleteBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowDeleteBody workflowDeleteBody = (WorkflowDeleteBody) o;
-        return Objects.equals(this.workflowUrns, workflowDeleteBody.workflowUrns);
+        WorkflowDeleteBody that = (WorkflowDeleteBody) obj;
+        return Objects.equals(this.workflowUrns, that.workflowUrns);
     }
 
     @Override

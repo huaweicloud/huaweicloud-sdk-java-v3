@@ -77,17 +77,16 @@ public class ShowEdgeApplicationVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeApplicationVersionRequest showEdgeApplicationVersionRequest = (ShowEdgeApplicationVersionRequest) o;
-        return Objects.equals(this.instanceId, showEdgeApplicationVersionRequest.instanceId)
-            && Objects.equals(this.edgeAppId, showEdgeApplicationVersionRequest.edgeAppId)
-            && Objects.equals(this.version, showEdgeApplicationVersionRequest.version);
+        ShowEdgeApplicationVersionRequest that = (ShowEdgeApplicationVersionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

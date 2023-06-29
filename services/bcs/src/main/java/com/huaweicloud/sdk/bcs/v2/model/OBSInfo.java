@@ -55,15 +55,15 @@ public class OBSInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OBSInfo obSInfo = (OBSInfo) o;
-        return Objects.equals(this.name, obSInfo.name) && Objects.equals(this.addr, obSInfo.addr);
+        OBSInfo that = (OBSInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.addr, that.addr);
     }
 
     @Override

@@ -94,22 +94,15 @@ public class ResourceType {
         if (value == null) {
             return null;
         }
-        ResourceType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new ResourceType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceType(value));
     }
 
     public static ResourceType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        ResourceType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

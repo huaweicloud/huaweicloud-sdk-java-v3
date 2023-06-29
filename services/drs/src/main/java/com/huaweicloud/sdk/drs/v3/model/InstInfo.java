@@ -66,22 +66,15 @@ public class InstInfo {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineTypeEnum(value));
         }
 
         public static EngineTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class InstInfo {
             if (value == null) {
                 return null;
             }
-            InstTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstTypeEnum(value));
         }
 
         public static InstTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -239,22 +225,15 @@ public class InstInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -401,18 +380,18 @@ public class InstInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstInfo instInfo = (InstInfo) o;
-        return Objects.equals(this.engineType, instInfo.engineType) && Objects.equals(this.instType, instInfo.instType)
-            && Objects.equals(this.ip, instInfo.ip) && Objects.equals(this.publicIp, instInfo.publicIp)
-            && Objects.equals(this.startTime, instInfo.startTime) && Objects.equals(this.status, instInfo.status)
-            && Objects.equals(this.volumeSize, instInfo.volumeSize);
+        InstInfo that = (InstInfo) obj;
+        return Objects.equals(this.engineType, that.engineType) && Objects.equals(this.instType, that.instType)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volumeSize, that.volumeSize);
     }
 
     @Override

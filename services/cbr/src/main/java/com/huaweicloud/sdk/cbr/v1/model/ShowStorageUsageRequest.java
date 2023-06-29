@@ -76,22 +76,15 @@ public class ShowStorageUsageRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,18 +175,16 @@ public class ShowStorageUsageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStorageUsageRequest showStorageUsageRequest = (ShowStorageUsageRequest) o;
-        return Objects.equals(this.limit, showStorageUsageRequest.limit)
-            && Objects.equals(this.offset, showStorageUsageRequest.offset)
-            && Objects.equals(this.resourceId, showStorageUsageRequest.resourceId)
-            && Objects.equals(this.resourceType, showStorageUsageRequest.resourceType);
+        ShowStorageUsageRequest that = (ShowStorageUsageRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

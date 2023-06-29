@@ -100,22 +100,15 @@ public class ListReplicationsRequest {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -316,24 +309,22 @@ public class ListReplicationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListReplicationsRequest listReplicationsRequest = (ListReplicationsRequest) o;
-        return Objects.equals(this.serverGroupId, listReplicationsRequest.serverGroupId)
-            && Objects.equals(this.serverGroupIds, listReplicationsRequest.serverGroupIds)
-            && Objects.equals(this.protectedInstanceId, listReplicationsRequest.protectedInstanceId)
-            && Objects.equals(this.protectedInstanceIds, listReplicationsRequest.protectedInstanceIds)
-            && Objects.equals(this.name, listReplicationsRequest.name)
-            && Objects.equals(this.status, listReplicationsRequest.status)
-            && Objects.equals(this.limit, listReplicationsRequest.limit)
-            && Objects.equals(this.offset, listReplicationsRequest.offset)
-            && Objects.equals(this.queryType, listReplicationsRequest.queryType)
-            && Objects.equals(this.availabilityZone, listReplicationsRequest.availabilityZone);
+        ListReplicationsRequest that = (ListReplicationsRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.serverGroupIds, that.serverGroupIds)
+            && Objects.equals(this.protectedInstanceId, that.protectedInstanceId)
+            && Objects.equals(this.protectedInstanceIds, that.protectedInstanceIds)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.queryType, that.queryType)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

@@ -165,21 +165,18 @@ public class ListAllTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllTablesRequest listAllTablesRequest = (ListAllTablesRequest) o;
-        return Objects.equals(this.databaseName, listAllTablesRequest.databaseName)
-            && Objects.equals(this.currentPage, listAllTablesRequest.currentPage)
-            && Objects.equals(this.keyword, listAllTablesRequest.keyword)
-            && Objects.equals(this.pageSize, listAllTablesRequest.pageSize)
-            && Objects.equals(this.tableType, listAllTablesRequest.tableType)
-            && Objects.equals(this.withDetail, listAllTablesRequest.withDetail)
-            && Objects.equals(this.withPriv, listAllTablesRequest.withPriv);
+        ListAllTablesRequest that = (ListAllTablesRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.currentPage, that.currentPage) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.withDetail, that.withDetail) && Objects.equals(this.withPriv, that.withPriv);
     }
 
     @Override

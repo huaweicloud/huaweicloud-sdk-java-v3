@@ -77,16 +77,16 @@ public class ColumnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnInfo columnInfo = (ColumnInfo) o;
-        return Objects.equals(this.columnName, columnInfo.columnName)
-            && Objects.equals(this.description, columnInfo.description) && Objects.equals(this.type, columnInfo.type);
+        ColumnInfo that = (ColumnInfo) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

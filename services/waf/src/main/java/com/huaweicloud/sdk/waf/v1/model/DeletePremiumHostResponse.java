@@ -282,25 +282,20 @@ public class DeletePremiumHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePremiumHostResponse deletePremiumHostResponse = (DeletePremiumHostResponse) o;
-        return Objects.equals(this.id, deletePremiumHostResponse.id)
-            && Objects.equals(this.hostname, deletePremiumHostResponse.hostname)
-            && Objects.equals(this.extend, deletePremiumHostResponse.extend)
-            && Objects.equals(this.region, deletePremiumHostResponse.region)
-            && Objects.equals(this.flag, deletePremiumHostResponse.flag)
-            && Objects.equals(this.description, deletePremiumHostResponse.description)
-            && Objects.equals(this.policyid, deletePremiumHostResponse.policyid)
-            && Objects.equals(this.protectStatus, deletePremiumHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, deletePremiumHostResponse.accessStatus)
-            && Objects.equals(this.webTag, deletePremiumHostResponse.webTag)
-            && Objects.equals(this.hostId, deletePremiumHostResponse.hostId);
+        DeletePremiumHostResponse that = (DeletePremiumHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.hostId, that.hostId);
     }
 
     @Override

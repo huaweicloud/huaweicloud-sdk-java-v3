@@ -189,21 +189,18 @@ public class ListAppsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsV2Request listAppsV2Request = (ListAppsV2Request) o;
-        return Objects.equals(this.instanceId, listAppsV2Request.instanceId)
-            && Objects.equals(this.offset, listAppsV2Request.offset)
-            && Objects.equals(this.limit, listAppsV2Request.limit) && Objects.equals(this.id, listAppsV2Request.id)
-            && Objects.equals(this.name, listAppsV2Request.name)
-            && Objects.equals(this.status, listAppsV2Request.status)
-            && Objects.equals(this.appKey, listAppsV2Request.appKey)
-            && Objects.equals(this.preciseSearch, listAppsV2Request.preciseSearch);
+        ListAppsV2Request that = (ListAppsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

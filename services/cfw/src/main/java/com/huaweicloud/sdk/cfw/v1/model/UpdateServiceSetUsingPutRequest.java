@@ -109,18 +109,17 @@ public class UpdateServiceSetUsingPutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServiceSetUsingPutRequest updateServiceSetUsingPutRequest = (UpdateServiceSetUsingPutRequest) o;
-        return Objects.equals(this.setId, updateServiceSetUsingPutRequest.setId)
-            && Objects.equals(this.enterpriseProjectId, updateServiceSetUsingPutRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, updateServiceSetUsingPutRequest.fwInstanceId)
-            && Objects.equals(this.body, updateServiceSetUsingPutRequest.body);
+        UpdateServiceSetUsingPutRequest that = (UpdateServiceSetUsingPutRequest) obj;
+        return Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

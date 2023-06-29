@@ -343,27 +343,23 @@ public class ListApisV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisV2Request listApisV2Request = (ListApisV2Request) o;
-        return Objects.equals(this.instanceId, listApisV2Request.instanceId)
-            && Objects.equals(this.offset, listApisV2Request.offset)
-            && Objects.equals(this.limit, listApisV2Request.limit) && Objects.equals(this.id, listApisV2Request.id)
-            && Objects.equals(this.name, listApisV2Request.name)
-            && Objects.equals(this.groupId, listApisV2Request.groupId)
-            && Objects.equals(this.reqProtocol, listApisV2Request.reqProtocol)
-            && Objects.equals(this.reqMethod, listApisV2Request.reqMethod)
-            && Objects.equals(this.reqUri, listApisV2Request.reqUri)
-            && Objects.equals(this.authType, listApisV2Request.authType)
-            && Objects.equals(this.envId, listApisV2Request.envId) && Objects.equals(this.type, listApisV2Request.type)
-            && Objects.equals(this.preciseSearch, listApisV2Request.preciseSearch)
-            && Objects.equals(this.vpcChannelId, listApisV2Request.vpcChannelId)
-            && Objects.equals(this.vpcChannelName, listApisV2Request.vpcChannelName);
+        ListApisV2Request that = (ListApisV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.reqProtocol, that.reqProtocol) && Objects.equals(this.reqMethod, that.reqMethod)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.preciseSearch, that.preciseSearch)
+            && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.vpcChannelName, that.vpcChannelName);
     }
 
     @Override

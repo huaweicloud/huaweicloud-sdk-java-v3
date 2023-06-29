@@ -74,16 +74,15 @@ public class PlainMoleculeItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlainMoleculeItem plainMoleculeItem = (PlainMoleculeItem) o;
-        return Objects.equals(this.smiles, plainMoleculeItem.smiles)
-            && Objects.equals(this.props, plainMoleculeItem.props);
+        PlainMoleculeItem that = (PlainMoleculeItem) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.props, that.props);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class CreateIssueResponseV4Tracker {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIssueResponseV4Tracker createIssueResponseV4Tracker = (CreateIssueResponseV4Tracker) o;
-        return Objects.equals(this.id, createIssueResponseV4Tracker.id)
-            && Objects.equals(this.name, createIssueResponseV4Tracker.name);
+        CreateIssueResponseV4Tracker that = (CreateIssueResponseV4Tracker) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

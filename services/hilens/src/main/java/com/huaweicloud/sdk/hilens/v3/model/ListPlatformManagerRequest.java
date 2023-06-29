@@ -121,19 +121,17 @@ public class ListPlatformManagerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlatformManagerRequest listPlatformManagerRequest = (ListPlatformManagerRequest) o;
-        return Objects.equals(this.id, listPlatformManagerRequest.id)
-            && Objects.equals(this.deviceType, listPlatformManagerRequest.deviceType)
-            && Objects.equals(this.type, listPlatformManagerRequest.type)
-            && Objects.equals(this.offset, listPlatformManagerRequest.offset)
-            && Objects.equals(this.limit, listPlatformManagerRequest.limit);
+        ListPlatformManagerRequest that = (ListPlatformManagerRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

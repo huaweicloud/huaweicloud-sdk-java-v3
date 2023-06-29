@@ -118,17 +118,16 @@ public class AddonTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddonTemplate addonTemplate = (AddonTemplate) o;
-        return Objects.equals(this.kind, addonTemplate.kind)
-            && Objects.equals(this.apiVersion, addonTemplate.apiVersion)
-            && Objects.equals(this.metadata, addonTemplate.metadata) && Objects.equals(this.spec, addonTemplate.spec);
+        AddonTemplate that = (AddonTemplate) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

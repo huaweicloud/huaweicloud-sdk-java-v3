@@ -81,17 +81,17 @@ public class SimpleTimerType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleTimerType simpleTimerType = (SimpleTimerType) o;
-        return Objects.equals(this.startTime, simpleTimerType.startTime)
-            && Objects.equals(this.repeatInterval, simpleTimerType.repeatInterval)
-            && Objects.equals(this.repeatCount, simpleTimerType.repeatCount);
+        SimpleTimerType that = (SimpleTimerType) obj;
+        return Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.repeatInterval, that.repeatInterval)
+            && Objects.equals(this.repeatCount, that.repeatCount);
     }
 
     @Override

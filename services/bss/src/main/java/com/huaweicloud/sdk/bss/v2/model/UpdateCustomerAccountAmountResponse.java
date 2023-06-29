@@ -34,16 +34,15 @@ public class UpdateCustomerAccountAmountResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomerAccountAmountResponse updateCustomerAccountAmountResponse =
-            (UpdateCustomerAccountAmountResponse) o;
-        return Objects.equals(this.transferId, updateCustomerAccountAmountResponse.transferId);
+        UpdateCustomerAccountAmountResponse that = (UpdateCustomerAccountAmountResponse) obj;
+        return Objects.equals(this.transferId, that.transferId);
     }
 
     @Override

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,10 +11,8 @@ import java.util.Objects;
  */
 public class ExpandGraph2Response extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -30,9 +20,6 @@ public class ExpandGraph2Response extends SdkResponse {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 扩副本任务ID。请求失败时字段为空。
@@ -46,23 +33,23 @@ public class ExpandGraph2Response extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandGraph2Response expandGraph2Response = (ExpandGraph2Response) o;
-        return Objects.equals(this.jobId, expandGraph2Response.jobId);
+        ExpandGraph2Response that = (ExpandGraph2Response) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,6 +58,7 @@ public class ExpandGraph2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class ExpandGraph2Response extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -231,24 +231,19 @@ public class QueryResourceResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryResourceResultDTO queryResourceResultDTO = (QueryResourceResultDTO) o;
-        return Objects.equals(this.id, queryResourceResultDTO.id)
-            && Objects.equals(this.type, queryResourceResultDTO.type)
-            && Objects.equals(this.typeId, queryResourceResultDTO.typeId)
-            && Objects.equals(this.typeDesc, queryResourceResultDTO.typeDesc)
-            && Objects.equals(this.vmrMode, queryResourceResultDTO.vmrMode)
-            && Objects.equals(this.count, queryResourceResultDTO.count)
-            && Objects.equals(this.expireDate, queryResourceResultDTO.expireDate)
-            && Objects.equals(this.orderId, queryResourceResultDTO.orderId)
-            && Objects.equals(this.status, queryResourceResultDTO.status)
-            && Objects.equals(this.editable, queryResourceResultDTO.editable);
+        QueryResourceResultDTO that = (QueryResourceResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.typeId, that.typeId) && Objects.equals(this.typeDesc, that.typeDesc)
+            && Objects.equals(this.vmrMode, that.vmrMode) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.expireDate, that.expireDate) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.editable, that.editable);
     }
 
     @Override

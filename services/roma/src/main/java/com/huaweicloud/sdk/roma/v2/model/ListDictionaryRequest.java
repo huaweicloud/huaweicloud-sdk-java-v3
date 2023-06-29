@@ -143,20 +143,17 @@ public class ListDictionaryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDictionaryRequest listDictionaryRequest = (ListDictionaryRequest) o;
-        return Objects.equals(this.instanceId, listDictionaryRequest.instanceId)
-            && Objects.equals(this.offset, listDictionaryRequest.offset)
-            && Objects.equals(this.limit, listDictionaryRequest.limit)
-            && Objects.equals(this.parentCode, listDictionaryRequest.parentCode)
-            && Objects.equals(this.code, listDictionaryRequest.code)
-            && Objects.equals(this.name, listDictionaryRequest.name);
+        ListDictionaryRequest that = (ListDictionaryRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.parentCode, that.parentCode)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name);
     }
 
     @Override

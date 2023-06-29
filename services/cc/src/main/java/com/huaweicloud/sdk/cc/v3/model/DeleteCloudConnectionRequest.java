@@ -33,15 +33,15 @@ public class DeleteCloudConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCloudConnectionRequest deleteCloudConnectionRequest = (DeleteCloudConnectionRequest) o;
-        return Objects.equals(this.id, deleteCloudConnectionRequest.id);
+        DeleteCloudConnectionRequest that = (DeleteCloudConnectionRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

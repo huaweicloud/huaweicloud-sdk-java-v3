@@ -144,20 +144,18 @@ public class DelegatedAdministratorDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DelegatedAdministratorDto delegatedAdministratorDto = (DelegatedAdministratorDto) o;
-        return Objects.equals(this.delegationEnabledAt, delegatedAdministratorDto.delegationEnabledAt)
-            && Objects.equals(this.accountId, delegatedAdministratorDto.accountId)
-            && Objects.equals(this.accountUrn, delegatedAdministratorDto.accountUrn)
-            && Objects.equals(this.joinMethod, delegatedAdministratorDto.joinMethod)
-            && Objects.equals(this.joinedAt, delegatedAdministratorDto.joinedAt)
-            && Objects.equals(this.accountName, delegatedAdministratorDto.accountName);
+        DelegatedAdministratorDto that = (DelegatedAdministratorDto) obj;
+        return Objects.equals(this.delegationEnabledAt, that.delegationEnabledAt)
+            && Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountUrn, that.accountUrn)
+            && Objects.equals(this.joinMethod, that.joinMethod) && Objects.equals(this.joinedAt, that.joinedAt)
+            && Objects.equals(this.accountName, that.accountName);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class DeptBasicDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeptBasicDTO deptBasicDTO = (DeptBasicDTO) o;
-        return Objects.equals(this.deptCode, deptBasicDTO.deptCode) && Objects.equals(this.corpId, deptBasicDTO.corpId)
-            && Objects.equals(this.deptName, deptBasicDTO.deptName)
-            && Objects.equals(this.deptNamePath, deptBasicDTO.deptNamePath)
-            && Objects.equals(this.parentDeptCode, deptBasicDTO.parentDeptCode);
+        DeptBasicDTO that = (DeptBasicDTO) obj;
+        return Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.corpId, that.corpId)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.parentDeptCode, that.parentDeptCode);
     }
 
     @Override

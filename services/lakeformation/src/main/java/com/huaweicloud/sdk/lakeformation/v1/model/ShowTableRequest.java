@@ -99,18 +99,16 @@ public class ShowTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTableRequest showTableRequest = (ShowTableRequest) o;
-        return Objects.equals(this.instanceId, showTableRequest.instanceId)
-            && Objects.equals(this.catalogName, showTableRequest.catalogName)
-            && Objects.equals(this.databaseName, showTableRequest.databaseName)
-            && Objects.equals(this.tableName, showTableRequest.tableName);
+        ShowTableRequest that = (ShowTableRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

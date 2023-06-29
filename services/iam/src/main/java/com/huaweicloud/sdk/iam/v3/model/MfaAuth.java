@@ -74,15 +74,15 @@ public class MfaAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MfaAuth mfaAuth = (MfaAuth) o;
-        return Objects.equals(this.identity, mfaAuth.identity) && Objects.equals(this.scope, mfaAuth.scope);
+        MfaAuth that = (MfaAuth) obj;
+        return Objects.equals(this.identity, that.identity) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

@@ -264,24 +264,20 @@ public class EdgeSiteDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeSiteDetail edgeSiteDetail = (EdgeSiteDetail) o;
-        return Objects.equals(this.id, edgeSiteDetail.id) && Objects.equals(this.domainId, edgeSiteDetail.domainId)
-            && Objects.equals(this.name, edgeSiteDetail.name)
-            && Objects.equals(this.description, edgeSiteDetail.description)
-            && Objects.equals(this.regionId, edgeSiteDetail.regionId)
-            && Objects.equals(this.projectId, edgeSiteDetail.projectId)
-            && Objects.equals(this.availabilityZoneId, edgeSiteDetail.availabilityZoneId)
-            && Objects.equals(this.status, edgeSiteDetail.status)
-            && Objects.equals(this.location, edgeSiteDetail.location)
-            && Objects.equals(this.createdAt, edgeSiteDetail.createdAt)
-            && Objects.equals(this.updatedAt, edgeSiteDetail.updatedAt);
+        EdgeSiteDetail that = (EdgeSiteDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

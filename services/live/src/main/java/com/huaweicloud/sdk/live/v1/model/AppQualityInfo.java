@@ -74,16 +74,15 @@ public class AppQualityInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppQualityInfo appQualityInfo = (AppQualityInfo) o;
-        return Objects.equals(this.appName, appQualityInfo.appName)
-            && Objects.equals(this.qualityInfo, appQualityInfo.qualityInfo);
+        AppQualityInfo that = (AppQualityInfo) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.qualityInfo, that.qualityInfo);
     }
 
     @Override

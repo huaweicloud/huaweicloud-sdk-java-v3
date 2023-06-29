@@ -65,16 +65,15 @@ public class PostTranscriberJobs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostTranscriberJobs postTranscriberJobs = (PostTranscriberJobs) o;
-        return Objects.equals(this.config, postTranscriberJobs.config)
-            && Objects.equals(this.dataUrl, postTranscriberJobs.dataUrl);
+        PostTranscriberJobs that = (PostTranscriberJobs) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.dataUrl, that.dataUrl);
     }
 
     @Override

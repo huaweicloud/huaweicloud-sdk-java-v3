@@ -88,17 +88,16 @@ public class ShowTempResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTempResponse showTempResponse = (ShowTempResponse) o;
-        return Objects.equals(this.code, showTempResponse.code)
-            && Objects.equals(this.message, showTempResponse.message)
-            && Objects.equals(this.tempInfo, showTempResponse.tempInfo);
+        ShowTempResponse that = (ShowTempResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.tempInfo, that.tempInfo);
     }
 
     @Override

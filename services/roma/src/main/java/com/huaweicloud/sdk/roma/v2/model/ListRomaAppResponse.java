@@ -101,17 +101,16 @@ public class ListRomaAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRomaAppResponse listRomaAppResponse = (ListRomaAppResponse) o;
-        return Objects.equals(this.total, listRomaAppResponse.total)
-            && Objects.equals(this.size, listRomaAppResponse.size)
-            && Objects.equals(this.apps, listRomaAppResponse.apps);
+        ListRomaAppResponse that = (ListRomaAppResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.apps, that.apps);
     }
 
     @Override

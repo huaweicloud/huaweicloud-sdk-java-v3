@@ -1,53 +1,44 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Event2alarmRuleBodyTriggerPolicies
  */
-public class Event2alarmRuleBodyTriggerPolicies  {
-
+public class Event2alarmRuleBodyTriggerPolicies {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private Integer id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
+
     /**
      * 触发类型
      */
     public static final class TriggerTypeEnum {
 
-        
         /**
          * Enum ACCUMULATIVE for value: "accumulative"
          */
         public static final TriggerTypeEnum ACCUMULATIVE = new TriggerTypeEnum("accumulative");
-        
+
         /**
          * Enum NOTIFICATION for value: "notification"
          */
         public static final TriggerTypeEnum NOTIFICATION = new TriggerTypeEnum("notification");
-        
 
         private static final Map<String, TriggerTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,25 +67,18 @@ public class Event2alarmRuleBodyTriggerPolicies  {
 
         @JsonCreator
         public static TriggerTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeEnum(value));
         }
 
         public static TriggerTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -112,32 +96,27 @@ public class Event2alarmRuleBodyTriggerPolicies  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_type")
-    
+    @JsonProperty(value = "trigger_type")
 
     private TriggerTypeEnum triggerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private Integer period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="operator")
-    
+    @JsonProperty(value = "operator")
 
     private String operator;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
 
     private String level;
 
@@ -145,9 +124,6 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 自增编号
@@ -163,15 +139,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.id = id;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 事件名称
@@ -185,15 +156,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.name = name;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withTriggerType(TriggerTypeEnum triggerType) {
         this.triggerType = triggerType;
         return this;
     }
-
-    
-
 
     /**
      * 触发类型
@@ -207,15 +173,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.triggerType = triggerType;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withPeriod(Integer period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 触发周期
@@ -231,15 +192,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.period = period;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withOperator(String operator) {
         this.operator = operator;
         return this;
     }
-
-    
-
 
     /**
      * 比较符
@@ -253,15 +209,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.operator = operator;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 触发次数
@@ -277,15 +228,10 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.count = count;
     }
 
-    
-
     public Event2alarmRuleBodyTriggerPolicies withLevel(String level) {
         this.level = level;
         return this;
     }
-
-    
-
 
     /**
      * 告警等级
@@ -299,29 +245,26 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         this.level = level;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event2alarmRuleBodyTriggerPolicies event2alarmRuleBodyTriggerPolicies = (Event2alarmRuleBodyTriggerPolicies) o;
-        return Objects.equals(this.id, event2alarmRuleBodyTriggerPolicies.id) &&
-            Objects.equals(this.name, event2alarmRuleBodyTriggerPolicies.name) &&
-            Objects.equals(this.triggerType, event2alarmRuleBodyTriggerPolicies.triggerType) &&
-            Objects.equals(this.period, event2alarmRuleBodyTriggerPolicies.period) &&
-            Objects.equals(this.operator, event2alarmRuleBodyTriggerPolicies.operator) &&
-            Objects.equals(this.count, event2alarmRuleBodyTriggerPolicies.count) &&
-            Objects.equals(this.level, event2alarmRuleBodyTriggerPolicies.level);
+        Event2alarmRuleBodyTriggerPolicies that = (Event2alarmRuleBodyTriggerPolicies) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.triggerType, that.triggerType) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.level, that.level);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, triggerType, period, operator, count, level);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -336,6 +279,7 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -346,8 +290,5 @@ public class Event2alarmRuleBodyTriggerPolicies  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

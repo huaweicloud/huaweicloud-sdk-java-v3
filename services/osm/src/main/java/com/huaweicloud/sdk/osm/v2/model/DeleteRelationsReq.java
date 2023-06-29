@@ -55,16 +55,15 @@ public class DeleteRelationsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRelationsReq deleteRelationsReq = (DeleteRelationsReq) o;
-        return Objects.equals(this.relatedId, deleteRelationsReq.relatedId)
-            && Objects.equals(this.groupId, deleteRelationsReq.groupId);
+        DeleteRelationsReq that = (DeleteRelationsReq) obj;
+        return Objects.equals(this.relatedId, that.relatedId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

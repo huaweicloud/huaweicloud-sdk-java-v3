@@ -74,16 +74,15 @@ public class CompareObjectInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareObjectInfo compareObjectInfo = (CompareObjectInfo) o;
-        return Objects.equals(this.dbName, compareObjectInfo.dbName)
-            && Objects.equals(this.tableName, compareObjectInfo.tableName);
+        CompareObjectInfo that = (CompareObjectInfo) obj;
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

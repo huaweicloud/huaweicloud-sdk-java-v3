@@ -55,16 +55,15 @@ public class DeleteVersionAliasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVersionAliasRequest deleteVersionAliasRequest = (DeleteVersionAliasRequest) o;
-        return Objects.equals(this.functionUrn, deleteVersionAliasRequest.functionUrn)
-            && Objects.equals(this.aliasName, deleteVersionAliasRequest.aliasName);
+        DeleteVersionAliasRequest that = (DeleteVersionAliasRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.aliasName, that.aliasName);
     }
 
     @Override

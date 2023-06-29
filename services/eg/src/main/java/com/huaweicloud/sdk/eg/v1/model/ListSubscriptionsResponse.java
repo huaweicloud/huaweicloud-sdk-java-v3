@@ -101,17 +101,16 @@ public class ListSubscriptionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubscriptionsResponse listSubscriptionsResponse = (ListSubscriptionsResponse) o;
-        return Objects.equals(this.total, listSubscriptionsResponse.total)
-            && Objects.equals(this.size, listSubscriptionsResponse.size)
-            && Objects.equals(this.items, listSubscriptionsResponse.items);
+        ListSubscriptionsResponse that = (ListSubscriptionsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

@@ -302,22 +302,15 @@ public class ApiPolicyMockCreate {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusCodeEnum(value));
         }
 
         public static StatusCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -389,22 +382,15 @@ public class ApiPolicyMockCreate {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -615,22 +601,19 @@ public class ApiPolicyMockCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyMockCreate apiPolicyMockCreate = (ApiPolicyMockCreate) o;
-        return Objects.equals(this.resultContent, apiPolicyMockCreate.resultContent)
-            && Objects.equals(this.statusCode, apiPolicyMockCreate.statusCode)
-            && Objects.equals(this.header, apiPolicyMockCreate.header)
-            && Objects.equals(this.effectMode, apiPolicyMockCreate.effectMode)
-            && Objects.equals(this.name, apiPolicyMockCreate.name)
-            && Objects.equals(this.backendParams, apiPolicyMockCreate.backendParams)
-            && Objects.equals(this.conditions, apiPolicyMockCreate.conditions)
-            && Objects.equals(this.authorizerId, apiPolicyMockCreate.authorizerId);
+        ApiPolicyMockCreate that = (ApiPolicyMockCreate) obj;
+        return Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.header, that.header)
+            && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

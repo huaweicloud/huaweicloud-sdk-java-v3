@@ -60,22 +60,15 @@ public class DbObjectSpaceInfo {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,18 @@ public class DbObjectSpaceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbObjectSpaceInfo dbObjectSpaceInfo = (DbObjectSpaceInfo) o;
-        return Objects.equals(this.objectType, dbObjectSpaceInfo.objectType)
-            && Objects.equals(this.objectName, dbObjectSpaceInfo.objectName)
-            && Objects.equals(this.objectId, dbObjectSpaceInfo.objectId)
-            && Objects.equals(this.usedSize, dbObjectSpaceInfo.usedSize)
-            && Objects.equals(this.dataSize, dbObjectSpaceInfo.dataSize)
-            && Objects.equals(this.indexSize, dbObjectSpaceInfo.indexSize)
-            && Objects.equals(this.estimatedRows, dbObjectSpaceInfo.estimatedRows);
+        DbObjectSpaceInfo that = (DbObjectSpaceInfo) obj;
+        return Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectName, that.objectName)
+            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.usedSize, that.usedSize)
+            && Objects.equals(this.dataSize, that.dataSize) && Objects.equals(this.indexSize, that.indexSize)
+            && Objects.equals(this.estimatedRows, that.estimatedRows);
     }
 
     @Override

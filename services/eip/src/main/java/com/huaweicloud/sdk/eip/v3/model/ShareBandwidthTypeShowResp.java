@@ -187,22 +187,19 @@ public class ShareBandwidthTypeShowResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShareBandwidthTypeShowResp shareBandwidthTypeShowResp = (ShareBandwidthTypeShowResp) o;
-        return Objects.equals(this.id, shareBandwidthTypeShowResp.id)
-            && Objects.equals(this.bandwidthType, shareBandwidthTypeShowResp.bandwidthType)
-            && Objects.equals(this.publicBorderGroup, shareBandwidthTypeShowResp.publicBorderGroup)
-            && Objects.equals(this.createdAt, shareBandwidthTypeShowResp.createdAt)
-            && Objects.equals(this.updatedAt, shareBandwidthTypeShowResp.updatedAt)
-            && Objects.equals(this.nameEn, shareBandwidthTypeShowResp.nameEn)
-            && Objects.equals(this.nameZh, shareBandwidthTypeShowResp.nameZh)
-            && Objects.equals(this.description, shareBandwidthTypeShowResp.description);
+        ShareBandwidthTypeShowResp that = (ShareBandwidthTypeShowResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.bandwidthType, that.bandwidthType)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.nameZh, that.nameZh)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

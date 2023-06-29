@@ -125,22 +125,15 @@ public class ShowProtectionGroupParams {
             if (value == null) {
                 return null;
             }
-            ProtectedStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectedStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectedStatusEnum(value));
         }
 
         public static ProtectedStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectedStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,22 +212,15 @@ public class ShowProtectionGroupParams {
             if (value == null) {
                 return null;
             }
-            ReplicationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplicationStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplicationStatusEnum(value));
         }
 
         public static ReplicationStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReplicationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,22 +293,15 @@ public class ShowProtectionGroupParams {
             if (value == null) {
                 return null;
             }
-            HealthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HealthStatusEnum(value));
         }
 
         public static HealthStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -419,22 +398,15 @@ public class ShowProtectionGroupParams {
             if (value == null) {
                 return null;
             }
-            ProtectionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionTypeEnum(value));
         }
 
         public static ProtectionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -894,39 +866,33 @@ public class ShowProtectionGroupParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProtectionGroupParams showProtectionGroupParams = (ShowProtectionGroupParams) o;
-        return Objects.equals(this.id, showProtectionGroupParams.id)
-            && Objects.equals(this.name, showProtectionGroupParams.name)
-            && Objects.equals(this.description, showProtectionGroupParams.description)
-            && Objects.equals(this.status, showProtectionGroupParams.status)
-            && Objects.equals(this.progress, showProtectionGroupParams.progress)
-            && Objects.equals(this.sourceAvailabilityZone, showProtectionGroupParams.sourceAvailabilityZone)
-            && Objects.equals(this.targetAvailabilityZone, showProtectionGroupParams.targetAvailabilityZone)
-            && Objects.equals(this.domainId, showProtectionGroupParams.domainId)
-            && Objects.equals(this.domainName, showProtectionGroupParams.domainName)
-            && Objects.equals(this.priorityStation, showProtectionGroupParams.priorityStation)
-            && Objects.equals(this.protectedInstanceNum, showProtectionGroupParams.protectedInstanceNum)
-            && Objects.equals(this.replicationNum, showProtectionGroupParams.replicationNum)
-            && Objects.equals(this.disasterRecoveryDrillNum, showProtectionGroupParams.disasterRecoveryDrillNum)
-            && Objects.equals(this.protectedStatus, showProtectionGroupParams.protectedStatus)
-            && Objects.equals(this.replicationStatus, showProtectionGroupParams.replicationStatus)
-            && Objects.equals(this.healthStatus, showProtectionGroupParams.healthStatus)
-            && Objects.equals(this.sourceVpcId, showProtectionGroupParams.sourceVpcId)
-            && Objects.equals(this.targetVpcId, showProtectionGroupParams.targetVpcId)
-            && Objects.equals(this.testVpcId, showProtectionGroupParams.testVpcId)
-            && Objects.equals(this.drType, showProtectionGroupParams.drType)
-            && Objects.equals(this.createdAt, showProtectionGroupParams.createdAt)
-            && Objects.equals(this.updatedAt, showProtectionGroupParams.updatedAt)
-            && Objects.equals(this.protectionType, showProtectionGroupParams.protectionType)
-            && Objects.equals(this.replicationModel, showProtectionGroupParams.replicationModel)
-            && Objects.equals(this.serverType, showProtectionGroupParams.serverType);
+        ShowProtectionGroupParams that = (ShowProtectionGroupParams) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.sourceAvailabilityZone, that.sourceAvailabilityZone)
+            && Objects.equals(this.targetAvailabilityZone, that.targetAvailabilityZone)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.priorityStation, that.priorityStation)
+            && Objects.equals(this.protectedInstanceNum, that.protectedInstanceNum)
+            && Objects.equals(this.replicationNum, that.replicationNum)
+            && Objects.equals(this.disasterRecoveryDrillNum, that.disasterRecoveryDrillNum)
+            && Objects.equals(this.protectedStatus, that.protectedStatus)
+            && Objects.equals(this.replicationStatus, that.replicationStatus)
+            && Objects.equals(this.healthStatus, that.healthStatus)
+            && Objects.equals(this.sourceVpcId, that.sourceVpcId) && Objects.equals(this.targetVpcId, that.targetVpcId)
+            && Objects.equals(this.testVpcId, that.testVpcId) && Objects.equals(this.drType, that.drType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.protectionType, that.protectionType)
+            && Objects.equals(this.replicationModel, that.replicationModel)
+            && Objects.equals(this.serverType, that.serverType);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class CreateGeoipRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGeoipRuleRequest createGeoipRuleRequest = (CreateGeoipRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createGeoipRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, createGeoipRuleRequest.policyId)
-            && Objects.equals(this.body, createGeoipRuleRequest.body);
+        CreateGeoipRuleRequest that = (CreateGeoipRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

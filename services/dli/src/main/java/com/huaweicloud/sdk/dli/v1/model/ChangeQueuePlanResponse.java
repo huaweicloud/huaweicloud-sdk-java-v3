@@ -100,18 +100,16 @@ public class ChangeQueuePlanResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeQueuePlanResponse changeQueuePlanResponse = (ChangeQueuePlanResponse) o;
-        return Objects.equals(this.queueName, changeQueuePlanResponse.queueName)
-            && Objects.equals(this.planId, changeQueuePlanResponse.planId)
-            && Objects.equals(this.isSuccess, changeQueuePlanResponse.isSuccess)
-            && Objects.equals(this.message, changeQueuePlanResponse.message);
+        ChangeQueuePlanResponse that = (ChangeQueuePlanResponse) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.planId, that.planId)
+            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

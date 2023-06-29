@@ -55,16 +55,15 @@ public class TracksInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TracksInfo tracksInfo = (TracksInfo) o;
-        return Objects.equals(this.channelLayout, tracksInfo.channelLayout)
-            && Objects.equals(this.language, tracksInfo.language);
+        TracksInfo that = (TracksInfo) obj;
+        return Objects.equals(this.channelLayout, that.channelLayout) && Objects.equals(this.language, that.language);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class VideoTaggingMediaTaskInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoTaggingMediaTaskInput videoTaggingMediaTaskInput = (VideoTaggingMediaTaskInput) o;
-        return Objects.equals(this.type, videoTaggingMediaTaskInput.type)
-            && Objects.equals(this.data, videoTaggingMediaTaskInput.data);
+        VideoTaggingMediaTaskInput that = (VideoTaggingMediaTaskInput) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.data, that.data);
     }
 
     @Override

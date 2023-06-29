@@ -77,16 +77,16 @@ public class Constraint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Constraint constraint = (Constraint) o;
-        return Objects.equals(this.type, constraint.type) && Objects.equals(this.value, constraint.value)
-            && Objects.equals(this.errormsg, constraint.errormsg);
+        Constraint that = (Constraint) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.errormsg, that.errormsg);
     }
 
     @Override

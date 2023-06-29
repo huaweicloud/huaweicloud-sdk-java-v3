@@ -231,23 +231,21 @@ public class OrderRefundInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderRefundInfoV2 orderRefundInfoV2 = (OrderRefundInfoV2) o;
-        return Objects.equals(this.id, orderRefundInfoV2.id) && Objects.equals(this.amount, orderRefundInfoV2.amount)
-            && Objects.equals(this.measureId, orderRefundInfoV2.measureId)
-            && Objects.equals(this.customerId, orderRefundInfoV2.customerId)
-            && Objects.equals(this.resourceTypeCode, orderRefundInfoV2.resourceTypeCode)
-            && Objects.equals(this.serviceTypeCode, orderRefundInfoV2.serviceTypeCode)
-            && Objects.equals(this.resourceTypeName, orderRefundInfoV2.resourceTypeName)
-            && Objects.equals(this.serviceTypeName, orderRefundInfoV2.serviceTypeName)
-            && Objects.equals(this.regionCode, orderRefundInfoV2.regionCode)
-            && Objects.equals(this.baseOrderId, orderRefundInfoV2.baseOrderId);
+        OrderRefundInfoV2 that = (OrderRefundInfoV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.baseOrderId, that.baseOrderId);
     }
 
     @Override

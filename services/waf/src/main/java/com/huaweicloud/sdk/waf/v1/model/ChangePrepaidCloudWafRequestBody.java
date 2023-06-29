@@ -184,21 +184,19 @@ public class ChangePrepaidCloudWafRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePrepaidCloudWafRequestBody changePrepaidCloudWafRequestBody = (ChangePrepaidCloudWafRequestBody) o;
-        return Objects.equals(this.projectId, changePrepaidCloudWafRequestBody.projectId)
-            && Objects.equals(this.isAutoPay, changePrepaidCloudWafRequestBody.isAutoPay)
-            && Objects.equals(this.wafProductInfo, changePrepaidCloudWafRequestBody.wafProductInfo)
-            && Objects.equals(this.domainExpackProductInfo, changePrepaidCloudWafRequestBody.domainExpackProductInfo)
-            && Objects.equals(this.bandwidthExpackProductInfo,
-                changePrepaidCloudWafRequestBody.bandwidthExpackProductInfo)
-            && Objects.equals(this.ruleExpackProductInfo, changePrepaidCloudWafRequestBody.ruleExpackProductInfo);
+        ChangePrepaidCloudWafRequestBody that = (ChangePrepaidCloudWafRequestBody) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.wafProductInfo, that.wafProductInfo)
+            && Objects.equals(this.domainExpackProductInfo, that.domainExpackProductInfo)
+            && Objects.equals(this.bandwidthExpackProductInfo, that.bandwidthExpackProductInfo)
+            && Objects.equals(this.ruleExpackProductInfo, that.ruleExpackProductInfo);
     }
 
     @Override

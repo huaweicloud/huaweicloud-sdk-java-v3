@@ -140,19 +140,17 @@ public class BatchListMetricDataRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListMetricDataRequestBody batchListMetricDataRequestBody = (BatchListMetricDataRequestBody) o;
-        return Objects.equals(this.metrics, batchListMetricDataRequestBody.metrics)
-            && Objects.equals(this.period, batchListMetricDataRequestBody.period)
-            && Objects.equals(this.filter, batchListMetricDataRequestBody.filter)
-            && Objects.equals(this.from, batchListMetricDataRequestBody.from)
-            && Objects.equals(this.to, batchListMetricDataRequestBody.to);
+        BatchListMetricDataRequestBody that = (BatchListMetricDataRequestBody) obj;
+        return Objects.equals(this.metrics, that.metrics) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to);
     }
 
     @Override

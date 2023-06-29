@@ -121,18 +121,17 @@ public class Desktop {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Desktop desktop = (Desktop) o;
-        return Objects.equals(this.userName, desktop.userName) && Objects.equals(this.userEmail, desktop.userEmail)
-            && Objects.equals(this.userGroup, desktop.userGroup)
-            && Objects.equals(this.computerName, desktop.computerName)
-            && Objects.equals(this.desktopNamePrefix, desktop.desktopNamePrefix);
+        Desktop that = (Desktop) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userEmail, that.userEmail)
+            && Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.desktopNamePrefix, that.desktopNamePrefix);
     }
 
     @Override

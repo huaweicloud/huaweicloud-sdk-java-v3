@@ -56,17 +56,16 @@ public class CreateDocWatermarkByAddressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDocWatermarkByAddressResponse createDocWatermarkByAddressResponse =
-            (CreateDocWatermarkByAddressResponse) o;
-        return Objects.equals(this.regionId, createDocWatermarkByAddressResponse.regionId)
-            && Objects.equals(this.watermarkedFile, createDocWatermarkByAddressResponse.watermarkedFile);
+        CreateDocWatermarkByAddressResponse that = (CreateDocWatermarkByAddressResponse) obj;
+        return Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.watermarkedFile, that.watermarkedFile);
     }
 
     @Override

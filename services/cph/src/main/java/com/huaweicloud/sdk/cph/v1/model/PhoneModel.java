@@ -287,24 +287,21 @@ public class PhoneModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneModel phoneModel = (PhoneModel) o;
-        return Objects.equals(this.serverModelName, phoneModel.serverModelName)
-            && Objects.equals(this.phoneModelName, phoneModel.phoneModelName)
-            && Objects.equals(this.status, phoneModel.status) && Objects.equals(this.cpu, phoneModel.cpu)
-            && Objects.equals(this.memory, phoneModel.memory) && Objects.equals(this.disk, phoneModel.disk)
-            && Objects.equals(this.resolution, phoneModel.resolution)
-            && Objects.equals(this.extendSpec, phoneModel.extendSpec)
-            && Objects.equals(this.specCode, phoneModel.specCode)
-            && Objects.equals(this.phoneCapacity, phoneModel.phoneCapacity)
-            && Objects.equals(this.imageLabel, phoneModel.imageLabel)
-            && Objects.equals(this.productType, phoneModel.productType);
+        PhoneModel that = (PhoneModel) obj;
+        return Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.resolution, that.resolution)
+            && Objects.equals(this.extendSpec, that.extendSpec) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.phoneCapacity, that.phoneCapacity)
+            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.productType, that.productType);
     }
 
     @Override

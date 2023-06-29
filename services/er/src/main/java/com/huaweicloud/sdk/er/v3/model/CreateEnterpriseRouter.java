@@ -83,22 +83,15 @@ public class CreateEnterpriseRouter {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -348,24 +341,21 @@ public class CreateEnterpriseRouter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnterpriseRouter createEnterpriseRouter = (CreateEnterpriseRouter) o;
-        return Objects.equals(this.name, createEnterpriseRouter.name)
-            && Objects.equals(this.description, createEnterpriseRouter.description)
-            && Objects.equals(this.asn, createEnterpriseRouter.asn)
-            && Objects.equals(this.enterpriseProjectId, createEnterpriseRouter.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, createEnterpriseRouter.chargeMode)
-            && Objects.equals(this.tags, createEnterpriseRouter.tags)
-            && Objects.equals(this.enableDefaultPropagation, createEnterpriseRouter.enableDefaultPropagation)
-            && Objects.equals(this.enableDefaultAssociation, createEnterpriseRouter.enableDefaultAssociation)
-            && Objects.equals(this.availabilityZoneIds, createEnterpriseRouter.availabilityZoneIds)
-            && Objects.equals(this.autoAcceptSharedAttachments, createEnterpriseRouter.autoAcceptSharedAttachments);
+        CreateEnterpriseRouter that = (CreateEnterpriseRouter) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.asn, that.asn) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enableDefaultPropagation, that.enableDefaultPropagation)
+            && Objects.equals(this.enableDefaultAssociation, that.enableDefaultAssociation)
+            && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.autoAcceptSharedAttachments, that.autoAcceptSharedAttachments);
     }
 
     @Override

@@ -70,22 +70,15 @@ public class CreateLoadBalancerBandwidthOption {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class CreateLoadBalancerBandwidthOption {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShareTypeEnum(value));
         }
 
         public static ShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,20 +290,17 @@ public class CreateLoadBalancerBandwidthOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadBalancerBandwidthOption createLoadBalancerBandwidthOption = (CreateLoadBalancerBandwidthOption) o;
-        return Objects.equals(this.name, createLoadBalancerBandwidthOption.name)
-            && Objects.equals(this.size, createLoadBalancerBandwidthOption.size)
-            && Objects.equals(this.chargeMode, createLoadBalancerBandwidthOption.chargeMode)
-            && Objects.equals(this.shareType, createLoadBalancerBandwidthOption.shareType)
-            && Objects.equals(this.billingInfo, createLoadBalancerBandwidthOption.billingInfo)
-            && Objects.equals(this.id, createLoadBalancerBandwidthOption.id);
+        CreateLoadBalancerBandwidthOption that = (CreateLoadBalancerBandwidthOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.id, that.id);
     }
 
     @Override

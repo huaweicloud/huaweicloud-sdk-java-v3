@@ -272,22 +272,20 @@ public class VersionRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionRsp versionRsp = (VersionRsp) o;
-        return Objects.equals(this.version, versionRsp.version) && Objects.equals(this.publisher, versionRsp.publisher)
-            && Objects.equals(this.description, versionRsp.description)
-            && Objects.equals(this.summary, versionRsp.summary) && Objects.equals(this.license, versionRsp.license)
-            && Objects.equals(this.status, versionRsp.status)
-            && Objects.equals(this.failedReason, versionRsp.failedReason)
-            && Objects.equals(this.labels, versionRsp.labels) && Objects.equals(this.picture, versionRsp.picture)
-            && Objects.equals(this.createTime, versionRsp.createTime)
-            && Objects.equals(this.updateTime, versionRsp.updateTime);
+        VersionRsp that = (VersionRsp) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.publisher, that.publisher)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.license, that.license) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.picture, that.picture) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

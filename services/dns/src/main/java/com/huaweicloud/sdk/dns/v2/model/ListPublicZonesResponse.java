@@ -115,17 +115,16 @@ public class ListPublicZonesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicZonesResponse listPublicZonesResponse = (ListPublicZonesResponse) o;
-        return Objects.equals(this.links, listPublicZonesResponse.links)
-            && Objects.equals(this.zones, listPublicZonesResponse.zones)
-            && Objects.equals(this.metadata, listPublicZonesResponse.metadata);
+        ListPublicZonesResponse that = (ListPublicZonesResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.zones, that.zones)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

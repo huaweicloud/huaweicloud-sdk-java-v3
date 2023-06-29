@@ -76,22 +76,15 @@ public class MicroServiceInfoCCE {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkloadTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WorkloadTypeEnum(value));
         }
 
         public static WorkloadTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,21 +246,18 @@ public class MicroServiceInfoCCE {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCCE microServiceInfoCCE = (MicroServiceInfoCCE) o;
-        return Objects.equals(this.clusterId, microServiceInfoCCE.clusterId)
-            && Objects.equals(this.namespace, microServiceInfoCCE.namespace)
-            && Objects.equals(this.workloadType, microServiceInfoCCE.workloadType)
-            && Objects.equals(this.appName, microServiceInfoCCE.appName)
-            && Objects.equals(this.labelKey, microServiceInfoCCE.labelKey)
-            && Objects.equals(this.labelValue, microServiceInfoCCE.labelValue)
-            && Objects.equals(this.clusterName, microServiceInfoCCE.clusterName);
+        MicroServiceInfoCCE that = (MicroServiceInfoCCE) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.workloadType, that.workloadType) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.labelKey, that.labelKey) && Objects.equals(this.labelValue, that.labelValue)
+            && Objects.equals(this.clusterName, that.clusterName);
     }
 
     @Override

@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ConfirmIaConfigRequestBody;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ConfirmIaConfigsRequestBody
  */
-public class ConfirmIaConfigsRequestBody  {
-
+public class ConfirmIaConfigsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configs")
-    
+    @JsonProperty(value = "configs")
+
     private List<ConfirmIaConfigRequestBody> configs = null;
-    
+
     public ConfirmIaConfigsRequestBody withConfigs(List<ConfirmIaConfigRequestBody> configs) {
         this.configs = configs;
         return this;
     }
 
-    
     public ConfirmIaConfigsRequestBody addConfigsItem(ConfirmIaConfigRequestBody configsItem) {
-        if(this.configs == null) {
+        if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
         this.configs.add(configsItem);
@@ -40,7 +32,7 @@ public class ConfirmIaConfigsRequestBody  {
     }
 
     public ConfirmIaConfigsRequestBody withConfigs(Consumer<List<ConfirmIaConfigRequestBody>> configsSetter) {
-        if(this.configs == null) {
+        if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
         configsSetter.accept(this.configs);
@@ -59,23 +51,23 @@ public class ConfirmIaConfigsRequestBody  {
         this.configs = configs;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmIaConfigsRequestBody confirmIaConfigsRequestBody = (ConfirmIaConfigsRequestBody) o;
-        return Objects.equals(this.configs, confirmIaConfigsRequestBody.configs);
+        ConfirmIaConfigsRequestBody that = (ConfirmIaConfigsRequestBody) obj;
+        return Objects.equals(this.configs, that.configs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(configs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class ConfirmIaConfigsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class ConfirmIaConfigsRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

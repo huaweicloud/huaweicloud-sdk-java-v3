@@ -54,16 +54,15 @@ public class CreateAndStartRandomClusterJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAndStartRandomClusterJobResponse createAndStartRandomClusterJobResponse =
-            (CreateAndStartRandomClusterJobResponse) o;
-        return Objects.equals(this.submissions, createAndStartRandomClusterJobResponse.submissions);
+        CreateAndStartRandomClusterJobResponse that = (CreateAndStartRandomClusterJobResponse) obj;
+        return Objects.equals(this.submissions, that.submissions);
     }
 
     @Override

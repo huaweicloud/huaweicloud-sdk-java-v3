@@ -65,17 +65,15 @@ public class BatchCreateDeletePrivateNatTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateDeletePrivateNatTagsRequest batchCreateDeletePrivateNatTagsRequest =
-            (BatchCreateDeletePrivateNatTagsRequest) o;
-        return Objects.equals(this.resourceId, batchCreateDeletePrivateNatTagsRequest.resourceId)
-            && Objects.equals(this.body, batchCreateDeletePrivateNatTagsRequest.body);
+        BatchCreateDeletePrivateNatTagsRequest that = (BatchCreateDeletePrivateNatTagsRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

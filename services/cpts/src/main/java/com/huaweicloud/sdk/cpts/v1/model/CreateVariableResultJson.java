@@ -35,15 +35,15 @@ public class CreateVariableResultJson {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVariableResultJson createVariableResultJson = (CreateVariableResultJson) o;
-        return Objects.equals(this.variableId, createVariableResultJson.variableId);
+        CreateVariableResultJson that = (CreateVariableResultJson) obj;
+        return Objects.equals(this.variableId, that.variableId);
     }
 
     @Override

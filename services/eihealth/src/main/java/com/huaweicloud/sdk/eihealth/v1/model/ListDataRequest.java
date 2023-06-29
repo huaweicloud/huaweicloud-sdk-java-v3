@@ -191,21 +191,18 @@ public class ListDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataRequest listDataRequest = (ListDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, listDataRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listDataRequest.limit) && Objects.equals(this.offset, listDataRequest.offset)
-            && Objects.equals(this.path, listDataRequest.path)
-            && Objects.equals(this.searchKey, listDataRequest.searchKey)
-            && Objects.equals(this.sortDir, listDataRequest.sortDir)
-            && Objects.equals(this.sortKey, listDataRequest.sortKey)
-            && Objects.equals(this.marker, listDataRequest.marker);
+        ListDataRequest that = (ListDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.searchKey, that.searchKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

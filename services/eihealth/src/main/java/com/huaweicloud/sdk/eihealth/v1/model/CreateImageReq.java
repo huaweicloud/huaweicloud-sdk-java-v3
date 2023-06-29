@@ -121,17 +121,17 @@ public class CreateImageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageReq createImageReq = (CreateImageReq) o;
-        return Objects.equals(this.description, createImageReq.description)
-            && Objects.equals(this.name, createImageReq.name) && Objects.equals(this.tag, createImageReq.tag)
-            && Objects.equals(this.type, createImageReq.type) && Objects.equals(this.chipType, createImageReq.chipType);
+        CreateImageReq that = (CreateImageReq) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.chipType, that.chipType);
     }
 
     @Override

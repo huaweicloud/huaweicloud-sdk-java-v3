@@ -39,8 +39,8 @@ public class TemplateQuery {
     private List<String> sortDir = null;
 
     /**
-    * 标签： - all：全部 - new：最新 - hot：热门 - recommend：推荐 
-    */
+     * 标签： - all：全部 - new：最新 - hot：热门 - recommend：推荐 
+     */
     public static final class LabelEnum {
 
         /**
@@ -95,22 +95,15 @@ public class TemplateQuery {
             if (value == null) {
                 return null;
             }
-            LabelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LabelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LabelEnum(value));
         }
 
         public static LabelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LabelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -634,28 +627,23 @@ public class TemplateQuery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateQuery templateQuery = (TemplateQuery) o;
-        return Objects.equals(this.category, templateQuery.category)
-            && Objects.equals(this.keyword, templateQuery.keyword)
-            && Objects.equals(this.sortKey, templateQuery.sortKey)
-            && Objects.equals(this.sortDir, templateQuery.sortDir) && Objects.equals(this.label, templateQuery.label)
-            && Objects.equals(this.myTemplates, templateQuery.myTemplates)
-            && Objects.equals(this.status, templateQuery.status)
-            && Objects.equals(this.statusArray, templateQuery.statusArray)
-            && Objects.equals(this.hasNotices, templateQuery.hasNotices)
-            && Objects.equals(this.productshorts, templateQuery.productshorts)
-            && Objects.equals(this.offset, templateQuery.offset) && Objects.equals(this.limit, templateQuery.limit)
-            && Objects.equals(this.tagIds, templateQuery.tagIds) && Objects.equals(this.types, templateQuery.types)
-            && Objects.equals(this.isStatic, templateQuery.isStatic)
-            && Objects.equals(this.platformSource, templateQuery.platformSource)
-            && Objects.equals(this.tagNames, templateQuery.tagNames);
+        TemplateQuery that = (TemplateQuery) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.myTemplates, that.myTemplates)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.statusArray, that.statusArray)
+            && Objects.equals(this.hasNotices, that.hasNotices)
+            && Objects.equals(this.productshorts, that.productshorts) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.tagIds, that.tagIds)
+            && Objects.equals(this.types, that.types) && Objects.equals(this.isStatic, that.isStatic)
+            && Objects.equals(this.platformSource, that.platformSource) && Objects.equals(this.tagNames, that.tagNames);
     }
 
     @Override

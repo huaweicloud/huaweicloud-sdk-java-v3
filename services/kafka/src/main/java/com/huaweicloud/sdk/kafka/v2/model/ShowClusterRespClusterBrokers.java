@@ -165,21 +165,18 @@ public class ShowClusterRespClusterBrokers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterRespClusterBrokers showClusterRespClusterBrokers = (ShowClusterRespClusterBrokers) o;
-        return Objects.equals(this.host, showClusterRespClusterBrokers.host)
-            && Objects.equals(this.port, showClusterRespClusterBrokers.port)
-            && Objects.equals(this.brokerId, showClusterRespClusterBrokers.brokerId)
-            && Objects.equals(this.isController, showClusterRespClusterBrokers.isController)
-            && Objects.equals(this.version, showClusterRespClusterBrokers.version)
-            && Objects.equals(this.registerTime, showClusterRespClusterBrokers.registerTime)
-            && Objects.equals(this.isHealth, showClusterRespClusterBrokers.isHealth);
+        ShowClusterRespClusterBrokers that = (ShowClusterRespClusterBrokers) obj;
+        return Objects.equals(this.host, that.host) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.brokerId, that.brokerId) && Objects.equals(this.isController, that.isController)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.isHealth, that.isHealth);
     }
 
     @Override

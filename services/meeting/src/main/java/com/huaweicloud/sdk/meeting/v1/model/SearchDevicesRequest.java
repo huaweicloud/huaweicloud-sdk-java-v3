@@ -191,22 +191,19 @@ public class SearchDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDevicesRequest searchDevicesRequest = (SearchDevicesRequest) o;
-        return Objects.equals(this.xRequestId, searchDevicesRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchDevicesRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchDevicesRequest.offset)
-            && Objects.equals(this.limit, searchDevicesRequest.limit)
-            && Objects.equals(this.searchKey, searchDevicesRequest.searchKey)
-            && Objects.equals(this.model, searchDevicesRequest.model)
-            && Objects.equals(this.deptCode, searchDevicesRequest.deptCode)
-            && Objects.equals(this.enableSubDept, searchDevicesRequest.enableSubDept);
+        SearchDevicesRequest that = (SearchDevicesRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.enableSubDept, that.enableSubDept);
     }
 
     @Override

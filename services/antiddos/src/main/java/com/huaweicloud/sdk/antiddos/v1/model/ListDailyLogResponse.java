@@ -75,16 +75,15 @@ public class ListDailyLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDailyLogResponse listDailyLogResponse = (ListDailyLogResponse) o;
-        return Objects.equals(this.total, listDailyLogResponse.total)
-            && Objects.equals(this.logs, listDailyLogResponse.logs);
+        ListDailyLogResponse that = (ListDailyLogResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.logs, that.logs);
     }
 
     @Override

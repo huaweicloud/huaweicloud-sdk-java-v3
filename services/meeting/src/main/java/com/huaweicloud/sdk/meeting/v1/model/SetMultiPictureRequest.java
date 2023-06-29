@@ -89,17 +89,17 @@ public class SetMultiPictureRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetMultiPictureRequest setMultiPictureRequest = (SetMultiPictureRequest) o;
-        return Objects.equals(this.conferenceID, setMultiPictureRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, setMultiPictureRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, setMultiPictureRequest.body);
+        SetMultiPictureRequest that = (SetMultiPictureRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

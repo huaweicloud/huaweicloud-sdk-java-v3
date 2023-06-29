@@ -99,18 +99,16 @@ public class BusinessEnvRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessEnvRequest businessEnvRequest = (BusinessEnvRequest) o;
-        return Objects.equals(this.businessId, businessEnvRequest.businessId)
-            && Objects.equals(this.region, businessEnvRequest.region)
-            && Objects.equals(this.startTime, businessEnvRequest.startTime)
-            && Objects.equals(this.endTime, businessEnvRequest.endTime);
+        BusinessEnvRequest that = (BusinessEnvRequest) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

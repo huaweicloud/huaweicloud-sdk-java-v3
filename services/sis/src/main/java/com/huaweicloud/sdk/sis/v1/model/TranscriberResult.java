@@ -105,17 +105,16 @@ public class TranscriberResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscriberResult transcriberResult = (TranscriberResult) o;
-        return Objects.equals(this.text, transcriberResult.text)
-            && Objects.equals(this.analysisInfo, transcriberResult.analysisInfo)
-            && Objects.equals(this.wordInfo, transcriberResult.wordInfo);
+        TranscriberResult that = (TranscriberResult) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.analysisInfo, that.analysisInfo)
+            && Objects.equals(this.wordInfo, that.wordInfo);
     }
 
     @Override

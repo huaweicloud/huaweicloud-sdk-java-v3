@@ -39,8 +39,8 @@ public class ListBandwidthPackagesRequest {
     private List<String> name = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -77,22 +77,15 @@ public class ListBandwidthPackagesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -364,22 +357,19 @@ public class ListBandwidthPackagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthPackagesRequest listBandwidthPackagesRequest = (ListBandwidthPackagesRequest) o;
-        return Objects.equals(this.limit, listBandwidthPackagesRequest.limit)
-            && Objects.equals(this.marker, listBandwidthPackagesRequest.marker)
-            && Objects.equals(this.id, listBandwidthPackagesRequest.id)
-            && Objects.equals(this.name, listBandwidthPackagesRequest.name)
-            && Objects.equals(this.status, listBandwidthPackagesRequest.status)
-            && Objects.equals(this.enterpriseProjectId, listBandwidthPackagesRequest.enterpriseProjectId)
-            && Objects.equals(this.billingMode, listBandwidthPackagesRequest.billingMode)
-            && Objects.equals(this.resourceId, listBandwidthPackagesRequest.resourceId);
+        ListBandwidthPackagesRequest that = (ListBandwidthPackagesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.billingMode, that.billingMode) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

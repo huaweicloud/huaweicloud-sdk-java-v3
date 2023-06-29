@@ -21,7 +21,7 @@ public class ListDomainsRequest {
     private String domainId;
 
     /**
-     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * 网站域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
      */
     public static final class AuthStatusEnum {
 
@@ -83,22 +83,15 @@ public class ListDomainsRequest {
             if (value == null) {
                 return null;
             }
-            AuthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthStatusEnum(value));
         }
 
         public static AuthStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -136,7 +129,7 @@ public class ListDomainsRequest {
     }
 
     /**
-     * 域名ID
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -153,7 +146,7 @@ public class ListDomainsRequest {
     }
 
     /**
-     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * 网站域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
      * @return authStatus
      */
     public AuthStatusEnum getAuthStatus() {
@@ -203,18 +196,16 @@ public class ListDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainsRequest listDomainsRequest = (ListDomainsRequest) o;
-        return Objects.equals(this.domainId, listDomainsRequest.domainId)
-            && Objects.equals(this.authStatus, listDomainsRequest.authStatus)
-            && Objects.equals(this.offset, listDomainsRequest.offset)
-            && Objects.equals(this.limit, listDomainsRequest.limit);
+        ListDomainsRequest that = (ListDomainsRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.authStatus, that.authStatus)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

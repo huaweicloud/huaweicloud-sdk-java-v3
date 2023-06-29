@@ -272,24 +272,21 @@ public class WorkflowListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowListDto workflowListDto = (WorkflowListDto) o;
-        return Objects.equals(this.id, workflowListDto.id) && Objects.equals(this.name, workflowListDto.name)
-            && Objects.equals(this.version, workflowListDto.version)
-            && Objects.equals(this.summary, workflowListDto.summary)
-            && Objects.equals(this.description, workflowListDto.description)
-            && Objects.equals(this.labels, workflowListDto.labels)
-            && Objects.equals(this.createTime, workflowListDto.createTime)
-            && Objects.equals(this.updateTime, workflowListDto.updateTime)
-            && Objects.equals(this.userName, workflowListDto.userName)
-            && Objects.equals(this.sourceProjectName, workflowListDto.sourceProjectName)
-            && Objects.equals(this.sourceResourceId, workflowListDto.sourceResourceId);
+        WorkflowListDto that = (WorkflowListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId);
     }
 
     @Override

@@ -348,27 +348,21 @@ public class CreateSubnetOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubnetOption createSubnetOption = (CreateSubnetOption) o;
-        return Objects.equals(this.name, createSubnetOption.name)
-            && Objects.equals(this.description, createSubnetOption.description)
-            && Objects.equals(this.cidr, createSubnetOption.cidr)
-            && Objects.equals(this.vpcId, createSubnetOption.vpcId)
-            && Objects.equals(this.gatewayIp, createSubnetOption.gatewayIp)
-            && Objects.equals(this.ipv6Enable, createSubnetOption.ipv6Enable)
-            && Objects.equals(this.dhcpEnable, createSubnetOption.dhcpEnable)
-            && Objects.equals(this.primaryDns, createSubnetOption.primaryDns)
-            && Objects.equals(this.secondaryDns, createSubnetOption.secondaryDns)
-            && Objects.equals(this.dnsList, createSubnetOption.dnsList)
-            && Objects.equals(this.availabilityZone, createSubnetOption.availabilityZone)
-            && Objects.equals(this.extraDhcpOpts, createSubnetOption.extraDhcpOpts)
-            && Objects.equals(this.tags, createSubnetOption.tags);
+        CreateSubnetOption that = (CreateSubnetOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.gatewayIp, that.gatewayIp) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.dhcpEnable, that.dhcpEnable) && Objects.equals(this.primaryDns, that.primaryDns)
+            && Objects.equals(this.secondaryDns, that.secondaryDns) && Objects.equals(this.dnsList, that.dnsList)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.extraDhcpOpts, that.extraDhcpOpts) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

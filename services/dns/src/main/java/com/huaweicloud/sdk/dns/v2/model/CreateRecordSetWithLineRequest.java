@@ -65,16 +65,15 @@ public class CreateRecordSetWithLineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRecordSetWithLineRequest createRecordSetWithLineRequest = (CreateRecordSetWithLineRequest) o;
-        return Objects.equals(this.zoneId, createRecordSetWithLineRequest.zoneId)
-            && Objects.equals(this.body, createRecordSetWithLineRequest.body);
+        CreateRecordSetWithLineRequest that = (CreateRecordSetWithLineRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.body, that.body);
     }
 
     @Override

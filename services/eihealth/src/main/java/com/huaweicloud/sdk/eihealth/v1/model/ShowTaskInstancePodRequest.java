@@ -121,19 +121,17 @@ public class ShowTaskInstancePodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInstancePodRequest showTaskInstancePodRequest = (ShowTaskInstancePodRequest) o;
-        return Objects.equals(this.eihealthProjectId, showTaskInstancePodRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showTaskInstancePodRequest.jobId)
-            && Objects.equals(this.taskName, showTaskInstancePodRequest.taskName)
-            && Objects.equals(this.taskIndex, showTaskInstancePodRequest.taskIndex)
-            && Objects.equals(this.instanceName, showTaskInstancePodRequest.instanceName);
+        ShowTaskInstancePodRequest that = (ShowTaskInstancePodRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskIndex, that.taskIndex)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override

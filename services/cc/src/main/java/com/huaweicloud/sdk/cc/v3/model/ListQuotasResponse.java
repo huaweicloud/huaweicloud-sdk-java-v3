@@ -75,16 +75,15 @@ public class ListQuotasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotasResponse listQuotasResponse = (ListQuotasResponse) o;
-        return Objects.equals(this.quotas, listQuotasResponse.quotas)
-            && Objects.equals(this.requestId, listQuotasResponse.requestId);
+        ListQuotasResponse that = (ListQuotasResponse) obj;
+        return Objects.equals(this.quotas, that.quotas) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

@@ -353,25 +353,25 @@ public class ChannelDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelDetail channelDetail = (ChannelDetail) o;
-        return Objects.equals(this.httpForwarding, channelDetail.httpForwarding)
-            && Objects.equals(this.disForwarding, channelDetail.disForwarding)
-            && Objects.equals(this.obsForwarding, channelDetail.obsForwarding)
-            && Objects.equals(this.amqpForwarding, channelDetail.amqpForwarding)
-            && Objects.equals(this.dmsKafkaForwarding, channelDetail.dmsKafkaForwarding)
-            && Objects.equals(this.romaForwarding, channelDetail.romaForwarding)
-            && Objects.equals(this.mysqlForwarding, channelDetail.mysqlForwarding)
-            && Objects.equals(this.influxdbForwarding, channelDetail.influxdbForwarding)
-            && Objects.equals(this.functiongraphForwarding, channelDetail.functiongraphForwarding)
-            && Objects.equals(this.mrsKafkaForwarding, channelDetail.mrsKafkaForwarding)
-            && Objects.equals(this.dmsRocketmqForwarding, channelDetail.dmsRocketmqForwarding);
+        ChannelDetail that = (ChannelDetail) obj;
+        return Objects.equals(this.httpForwarding, that.httpForwarding)
+            && Objects.equals(this.disForwarding, that.disForwarding)
+            && Objects.equals(this.obsForwarding, that.obsForwarding)
+            && Objects.equals(this.amqpForwarding, that.amqpForwarding)
+            && Objects.equals(this.dmsKafkaForwarding, that.dmsKafkaForwarding)
+            && Objects.equals(this.romaForwarding, that.romaForwarding)
+            && Objects.equals(this.mysqlForwarding, that.mysqlForwarding)
+            && Objects.equals(this.influxdbForwarding, that.influxdbForwarding)
+            && Objects.equals(this.functiongraphForwarding, that.functiongraphForwarding)
+            && Objects.equals(this.mrsKafkaForwarding, that.mrsKafkaForwarding)
+            && Objects.equals(this.dmsRocketmqForwarding, that.dmsRocketmqForwarding);
     }
 
     @Override

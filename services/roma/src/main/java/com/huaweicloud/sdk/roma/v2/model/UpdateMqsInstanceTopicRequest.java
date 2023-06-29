@@ -65,16 +65,15 @@ public class UpdateMqsInstanceTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMqsInstanceTopicRequest updateMqsInstanceTopicRequest = (UpdateMqsInstanceTopicRequest) o;
-        return Objects.equals(this.instanceId, updateMqsInstanceTopicRequest.instanceId)
-            && Objects.equals(this.body, updateMqsInstanceTopicRequest.body);
+        UpdateMqsInstanceTopicRequest that = (UpdateMqsInstanceTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

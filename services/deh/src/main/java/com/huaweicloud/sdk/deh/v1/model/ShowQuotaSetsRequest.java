@@ -55,16 +55,15 @@ public class ShowQuotaSetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQuotaSetsRequest showQuotaSetsRequest = (ShowQuotaSetsRequest) o;
-        return Objects.equals(this.tenantId, showQuotaSetsRequest.tenantId)
-            && Objects.equals(this.resource, showQuotaSetsRequest.resource);
+        ShowQuotaSetsRequest that = (ShowQuotaSetsRequest) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.resource, that.resource);
     }
 
     @Override

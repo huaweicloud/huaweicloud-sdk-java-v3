@@ -102,18 +102,16 @@ public class ListProjectWorkHoursTypeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectWorkHoursTypeRequest listProjectWorkHoursTypeRequest = (ListProjectWorkHoursTypeRequest) o;
-        return Objects.equals(this.projectId, listProjectWorkHoursTypeRequest.projectId)
-            && Objects.equals(this.limit, listProjectWorkHoursTypeRequest.limit)
-            && Objects.equals(this.offset, listProjectWorkHoursTypeRequest.offset)
-            && Objects.equals(this.status, listProjectWorkHoursTypeRequest.status);
+        ListProjectWorkHoursTypeRequest that = (ListProjectWorkHoursTypeRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class BatchDeleteListenerTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteListenerTagsRequest batchDeleteListenerTagsRequest = (BatchDeleteListenerTagsRequest) o;
-        return Objects.equals(this.listenerId, batchDeleteListenerTagsRequest.listenerId)
-            && Objects.equals(this.body, batchDeleteListenerTagsRequest.body);
+        BatchDeleteListenerTagsRequest that = (BatchDeleteListenerTagsRequest) obj;
+        return Objects.equals(this.listenerId, that.listenerId) && Objects.equals(this.body, that.body);
     }
 
     @Override

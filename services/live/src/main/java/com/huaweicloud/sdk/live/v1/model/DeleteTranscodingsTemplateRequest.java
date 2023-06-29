@@ -55,16 +55,15 @@ public class DeleteTranscodingsTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTranscodingsTemplateRequest deleteTranscodingsTemplateRequest = (DeleteTranscodingsTemplateRequest) o;
-        return Objects.equals(this.domain, deleteTranscodingsTemplateRequest.domain)
-            && Objects.equals(this.appName, deleteTranscodingsTemplateRequest.appName);
+        DeleteTranscodingsTemplateRequest that = (DeleteTranscodingsTemplateRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName);
     }
 
     @Override

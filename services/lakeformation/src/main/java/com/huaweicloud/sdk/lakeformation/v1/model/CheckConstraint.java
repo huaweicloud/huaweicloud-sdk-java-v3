@@ -209,23 +209,22 @@ public class CheckConstraint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckConstraint checkConstraint = (CheckConstraint) o;
-        return Objects.equals(this.catalogName, checkConstraint.catalogName)
-            && Objects.equals(this.databaseName, checkConstraint.databaseName)
-            && Objects.equals(this.tableName, checkConstraint.tableName)
-            && Objects.equals(this.columnName, checkConstraint.columnName)
-            && Objects.equals(this.constraintName, checkConstraint.constraintName)
-            && Objects.equals(this.checkExpression, checkConstraint.checkExpression)
-            && Objects.equals(this.enableConstraint, checkConstraint.enableConstraint)
-            && Objects.equals(this.relyConstraint, checkConstraint.relyConstraint)
-            && Objects.equals(this.validateConstraint, checkConstraint.validateConstraint);
+        CheckConstraint that = (CheckConstraint) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.checkExpression, that.checkExpression)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

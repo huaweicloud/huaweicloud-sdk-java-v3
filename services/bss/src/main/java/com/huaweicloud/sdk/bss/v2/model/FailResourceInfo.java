@@ -77,17 +77,16 @@ public class FailResourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailResourceInfo failResourceInfo = (FailResourceInfo) o;
-        return Objects.equals(this.errorCode, failResourceInfo.errorCode)
-            && Objects.equals(this.errorMsg, failResourceInfo.errorMsg)
-            && Objects.equals(this.resourceId, failResourceInfo.resourceId);
+        FailResourceInfo that = (FailResourceInfo) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

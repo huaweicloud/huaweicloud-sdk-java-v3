@@ -77,16 +77,16 @@ public class Function {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Function function = (Function) o;
-        return Objects.equals(this.name, function.name) && Objects.equals(this.operation, function.operation)
-            && Objects.equals(this.metadata, function.metadata);
+        Function that = (Function) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.operation, that.operation)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

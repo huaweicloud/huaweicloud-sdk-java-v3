@@ -55,15 +55,15 @@ public class TimeSpanDT {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeSpanDT timeSpanDT = (TimeSpanDT) o;
-        return Objects.equals(this.from, timeSpanDT.from) && Objects.equals(this.to, timeSpanDT.to);
+        TimeSpanDT that = (TimeSpanDT) obj;
+        return Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
     }
 
     @Override

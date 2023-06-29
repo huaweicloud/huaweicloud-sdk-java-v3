@@ -88,17 +88,16 @@ public class ShowIncidentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIncidentResponse showIncidentResponse = (ShowIncidentResponse) o;
-        return Objects.equals(this.code, showIncidentResponse.code)
-            && Objects.equals(this.message, showIncidentResponse.message)
-            && Objects.equals(this.data, showIncidentResponse.data);
+        ShowIncidentResponse that = (ShowIncidentResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

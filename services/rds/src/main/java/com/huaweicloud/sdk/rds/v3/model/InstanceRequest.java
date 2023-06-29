@@ -687,39 +687,29 @@ public class InstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceRequest instanceRequest = (InstanceRequest) o;
-        return Objects.equals(this.name, instanceRequest.name)
-            && Objects.equals(this.datastore, instanceRequest.datastore) && Objects.equals(this.ha, instanceRequest.ha)
-            && Objects.equals(this.configurationId, instanceRequest.configurationId)
-            && Objects.equals(this.port, instanceRequest.port)
-            && Objects.equals(this.password, instanceRequest.password)
-            && Objects.equals(this.backupStrategy, instanceRequest.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, instanceRequest.enterpriseProjectId)
-            && Objects.equals(this.diskEncryptionId, instanceRequest.diskEncryptionId)
-            && Objects.equals(this.flavorRef, instanceRequest.flavorRef)
-            && Objects.equals(this.volume, instanceRequest.volume)
-            && Objects.equals(this.region, instanceRequest.region)
-            && Objects.equals(this.availabilityZone, instanceRequest.availabilityZone)
-            && Objects.equals(this.vpcId, instanceRequest.vpcId)
-            && Objects.equals(this.subnetId, instanceRequest.subnetId)
-            && Objects.equals(this.dataVip, instanceRequest.dataVip)
-            && Objects.equals(this.securityGroupId, instanceRequest.securityGroupId)
-            && Objects.equals(this.chargeInfo, instanceRequest.chargeInfo)
-            && Objects.equals(this.timeZone, instanceRequest.timeZone)
-            && Objects.equals(this.dsspoolId, instanceRequest.dsspoolId)
-            && Objects.equals(this.replicaOfId, instanceRequest.replicaOfId)
-            && Objects.equals(this.restorePoint, instanceRequest.restorePoint)
-            && Objects.equals(this.collation, instanceRequest.collation)
-            && Objects.equals(this.tags, instanceRequest.tags)
-            && Objects.equals(this.unchangeableParam, instanceRequest.unchangeableParam)
-            && Objects.equals(this.dryRun, instanceRequest.dryRun) && Objects.equals(this.count, instanceRequest.count);
+        InstanceRequest that = (InstanceRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.ha, that.ha) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.dataVip, that.dataVip) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.replicaOfId, that.replicaOfId)
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
+            && Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.count, that.count);
     }
 
     @Override

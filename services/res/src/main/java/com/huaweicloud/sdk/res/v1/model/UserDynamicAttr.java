@@ -74,16 +74,16 @@ public class UserDynamicAttr {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserDynamicAttr userDynamicAttr = (UserDynamicAttr) o;
-        return Objects.equals(this.userInterestedAttrs, userDynamicAttr.userInterestedAttrs)
-            && Objects.equals(this.userInterestedActionType, userDynamicAttr.userInterestedActionType);
+        UserDynamicAttr that = (UserDynamicAttr) obj;
+        return Objects.equals(this.userInterestedAttrs, that.userInterestedAttrs)
+            && Objects.equals(this.userInterestedActionType, that.userInterestedActionType);
     }
 
     @Override

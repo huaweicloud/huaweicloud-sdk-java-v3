@@ -119,18 +119,16 @@ public class CreatePostPaidVaultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostPaidVaultResponse createPostPaidVaultResponse = (CreatePostPaidVaultResponse) o;
-        return Objects.equals(this.orders, createPostPaidVaultResponse.orders)
-            && Objects.equals(this.retCode, createPostPaidVaultResponse.retCode)
-            && Objects.equals(this.errText, createPostPaidVaultResponse.errText)
-            && Objects.equals(this.errorCode, createPostPaidVaultResponse.errorCode);
+        CreatePostPaidVaultResponse that = (CreatePostPaidVaultResponse) obj;
+        return Objects.equals(this.orders, that.orders) && Objects.equals(this.retCode, that.retCode)
+            && Objects.equals(this.errText, that.errText) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

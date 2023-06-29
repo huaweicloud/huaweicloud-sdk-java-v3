@@ -352,28 +352,23 @@ public class DeleteHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHostResponse deleteHostResponse = (DeleteHostResponse) o;
-        return Objects.equals(this.id, deleteHostResponse.id) && Objects.equals(this.hostid, deleteHostResponse.hostid)
-            && Objects.equals(this.description, deleteHostResponse.description)
-            && Objects.equals(this.type, deleteHostResponse.type)
-            && Objects.equals(this.proxy, deleteHostResponse.proxy)
-            && Objects.equals(this.flag, deleteHostResponse.flag)
-            && Objects.equals(this.hostname, deleteHostResponse.hostname)
-            && Objects.equals(this.accessCode, deleteHostResponse.accessCode)
-            && Objects.equals(this.policyid, deleteHostResponse.policyid)
-            && Objects.equals(this.timestamp, deleteHostResponse.timestamp)
-            && Objects.equals(this.protectStatus, deleteHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, deleteHostResponse.accessStatus)
-            && Objects.equals(this.exclusiveIp, deleteHostResponse.exclusiveIp)
-            && Objects.equals(this.paidType, deleteHostResponse.paidType)
-            && Objects.equals(this.webTag, deleteHostResponse.webTag);
+        DeleteHostResponse that = (DeleteHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
+            && Objects.equals(this.webTag, that.webTag);
     }
 
     @Override

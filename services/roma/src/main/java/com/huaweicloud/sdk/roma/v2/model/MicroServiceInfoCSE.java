@@ -165,21 +165,18 @@ public class MicroServiceInfoCSE {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCSE microServiceInfoCSE = (MicroServiceInfoCSE) o;
-        return Objects.equals(this.engineId, microServiceInfoCSE.engineId)
-            && Objects.equals(this.serviceId, microServiceInfoCSE.serviceId)
-            && Objects.equals(this.engineName, microServiceInfoCSE.engineName)
-            && Objects.equals(this.serviceName, microServiceInfoCSE.serviceName)
-            && Objects.equals(this.registerAddress, microServiceInfoCSE.registerAddress)
-            && Objects.equals(this.cseAppId, microServiceInfoCSE.cseAppId)
-            && Objects.equals(this.version, microServiceInfoCSE.version);
+        MicroServiceInfoCSE that = (MicroServiceInfoCSE) obj;
+        return Objects.equals(this.engineId, that.engineId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.engineName, that.engineName) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.registerAddress, that.registerAddress)
+            && Objects.equals(this.cseAppId, that.cseAppId) && Objects.equals(this.version, that.version);
     }
 
     @Override

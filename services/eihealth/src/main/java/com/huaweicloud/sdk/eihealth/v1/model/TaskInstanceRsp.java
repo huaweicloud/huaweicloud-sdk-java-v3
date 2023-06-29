@@ -105,17 +105,16 @@ public class TaskInstanceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInstanceRsp taskInstanceRsp = (TaskInstanceRsp) o;
-        return Objects.equals(this.status, taskInstanceRsp.status)
-            && Objects.equals(this.metadata, taskInstanceRsp.metadata)
-            && Objects.equals(this.spec, taskInstanceRsp.spec);
+        TaskInstanceRsp that = (TaskInstanceRsp) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.spec, that.spec);
     }
 
     @Override

@@ -92,22 +92,15 @@ public class PPTAssetMeta {
             if (value == null) {
                 return null;
             }
-            PptAnalysisStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PptAnalysisStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PptAnalysisStatusEnum(value));
         }
 
         public static PptAnalysisStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PptAnalysisStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,17 +219,17 @@ public class PPTAssetMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PPTAssetMeta ppTAssetMeta = (PPTAssetMeta) o;
-        return Objects.equals(this.autoAnalysis, ppTAssetMeta.autoAnalysis)
-            && Objects.equals(this.pptAnalysisStatus, ppTAssetMeta.pptAnalysisStatus)
-            && Objects.equals(this.pageCount, ppTAssetMeta.pageCount) && Objects.equals(this.pages, ppTAssetMeta.pages);
+        PPTAssetMeta that = (PPTAssetMeta) obj;
+        return Objects.equals(this.autoAnalysis, that.autoAnalysis)
+            && Objects.equals(this.pptAnalysisStatus, that.pptAnalysisStatus)
+            && Objects.equals(this.pageCount, that.pageCount) && Objects.equals(this.pages, that.pages);
     }
 
     @Override

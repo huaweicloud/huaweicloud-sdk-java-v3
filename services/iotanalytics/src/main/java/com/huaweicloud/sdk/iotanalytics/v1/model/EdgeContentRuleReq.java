@@ -74,16 +74,15 @@ public class EdgeContentRuleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeContentRuleReq edgeContentRuleReq = (EdgeContentRuleReq) o;
-        return Objects.equals(this.appId, edgeContentRuleReq.appId)
-            && Objects.equals(this.products, edgeContentRuleReq.products);
+        EdgeContentRuleReq that = (EdgeContentRuleReq) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.products, that.products);
     }
 
     @Override

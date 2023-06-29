@@ -136,6 +136,11 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -160,6 +165,7 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -185,22 +191,15 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -299,22 +298,15 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -491,22 +483,15 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1233,53 +1218,38 @@ public class UpdateFunctionMaxInstanceConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionMaxInstanceConfigResponse updateFunctionMaxInstanceConfigResponse =
-            (UpdateFunctionMaxInstanceConfigResponse) o;
-        return Objects.equals(this.funcUrn, updateFunctionMaxInstanceConfigResponse.funcUrn)
-            && Objects.equals(this.funcName, updateFunctionMaxInstanceConfigResponse.funcName)
-            && Objects.equals(this.domainId, updateFunctionMaxInstanceConfigResponse.domainId)
-            && Objects.equals(this.namespace, updateFunctionMaxInstanceConfigResponse.namespace)
-            && Objects.equals(this.projectName, updateFunctionMaxInstanceConfigResponse.projectName)
-            && Objects.equals(this._package, updateFunctionMaxInstanceConfigResponse._package)
-            && Objects.equals(this.runtime, updateFunctionMaxInstanceConfigResponse.runtime)
-            && Objects.equals(this.timeout, updateFunctionMaxInstanceConfigResponse.timeout)
-            && Objects.equals(this.handler, updateFunctionMaxInstanceConfigResponse.handler)
-            && Objects.equals(this.memorySize, updateFunctionMaxInstanceConfigResponse.memorySize)
-            && Objects.equals(this.cpu, updateFunctionMaxInstanceConfigResponse.cpu)
-            && Objects.equals(this.codeType, updateFunctionMaxInstanceConfigResponse.codeType)
-            && Objects.equals(this.codeUrl, updateFunctionMaxInstanceConfigResponse.codeUrl)
-            && Objects.equals(this.codeFilename, updateFunctionMaxInstanceConfigResponse.codeFilename)
-            && Objects.equals(this.codeSize, updateFunctionMaxInstanceConfigResponse.codeSize)
-            && Objects.equals(this.userData, updateFunctionMaxInstanceConfigResponse.userData)
-            && Objects.equals(this.encryptedUserData, updateFunctionMaxInstanceConfigResponse.encryptedUserData)
-            && Objects.equals(this.digest, updateFunctionMaxInstanceConfigResponse.digest)
-            && Objects.equals(this.version, updateFunctionMaxInstanceConfigResponse.version)
-            && Objects.equals(this.imageName, updateFunctionMaxInstanceConfigResponse.imageName)
-            && Objects.equals(this.xrole, updateFunctionMaxInstanceConfigResponse.xrole)
-            && Objects.equals(this.appXrole, updateFunctionMaxInstanceConfigResponse.appXrole)
-            && Objects.equals(this.description, updateFunctionMaxInstanceConfigResponse.description)
-            && Objects.equals(this.lastModified, updateFunctionMaxInstanceConfigResponse.lastModified)
-            && Objects.equals(this.funcVpc, updateFunctionMaxInstanceConfigResponse.funcVpc)
-            && Objects.equals(this.mountConfig, updateFunctionMaxInstanceConfigResponse.mountConfig)
-            && Objects.equals(this.strategyConfig, updateFunctionMaxInstanceConfigResponse.strategyConfig)
-            && Objects.equals(this.dependencies, updateFunctionMaxInstanceConfigResponse.dependencies)
-            && Objects.equals(this.initializerHandler, updateFunctionMaxInstanceConfigResponse.initializerHandler)
-            && Objects.equals(this.initializerTimeout, updateFunctionMaxInstanceConfigResponse.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, updateFunctionMaxInstanceConfigResponse.enterpriseProjectId)
-            && Objects.equals(this.longTime, updateFunctionMaxInstanceConfigResponse.longTime)
-            && Objects.equals(this.logGroupId, updateFunctionMaxInstanceConfigResponse.logGroupId)
-            && Objects.equals(this.logStreamId, updateFunctionMaxInstanceConfigResponse.logStreamId)
-            && Objects.equals(this.type, updateFunctionMaxInstanceConfigResponse.type)
-            && Objects.equals(this.enableDynamicMemory, updateFunctionMaxInstanceConfigResponse.enableDynamicMemory)
-            && Objects.equals(this.isStatefulFunction, updateFunctionMaxInstanceConfigResponse.isStatefulFunction)
-            && Objects.equals(this.domainNames, updateFunctionMaxInstanceConfigResponse.domainNames);
+        UpdateFunctionMaxInstanceConfigResponse that = (UpdateFunctionMaxInstanceConfigResponse) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData)
+            && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.funcVpc, that.funcVpc)
+            && Objects.equals(this.mountConfig, that.mountConfig)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.dependencies, that.dependencies)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.longTime, that.longTime) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.domainNames, that.domainNames);
     }
 
     @Override

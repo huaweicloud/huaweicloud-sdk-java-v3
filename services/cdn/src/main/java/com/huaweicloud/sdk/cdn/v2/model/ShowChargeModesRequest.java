@@ -77,17 +77,16 @@ public class ShowChargeModesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowChargeModesRequest showChargeModesRequest = (ShowChargeModesRequest) o;
-        return Objects.equals(this.productType, showChargeModesRequest.productType)
-            && Objects.equals(this.status, showChargeModesRequest.status)
-            && Objects.equals(this.serviceArea, showChargeModesRequest.serviceArea);
+        ShowChargeModesRequest that = (ShowChargeModesRequest) obj;
+        return Objects.equals(this.productType, that.productType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.serviceArea, that.serviceArea);
     }
 
     @Override

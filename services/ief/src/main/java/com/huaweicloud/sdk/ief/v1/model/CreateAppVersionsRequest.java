@@ -87,17 +87,16 @@ public class CreateAppVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppVersionsRequest createAppVersionsRequest = (CreateAppVersionsRequest) o;
-        return Objects.equals(this.iefInstanceId, createAppVersionsRequest.iefInstanceId)
-            && Objects.equals(this.appId, createAppVersionsRequest.appId)
-            && Objects.equals(this.body, createAppVersionsRequest.body);
+        CreateAppVersionsRequest that = (CreateAppVersionsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

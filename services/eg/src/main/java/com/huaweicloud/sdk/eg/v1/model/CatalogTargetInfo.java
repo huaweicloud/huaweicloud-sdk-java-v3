@@ -83,22 +83,15 @@ public class CatalogTargetInfo {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,21 +281,18 @@ public class CatalogTargetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogTargetInfo catalogTargetInfo = (CatalogTargetInfo) o;
-        return Objects.equals(this.id, catalogTargetInfo.id) && Objects.equals(this.name, catalogTargetInfo.name)
-            && Objects.equals(this.label, catalogTargetInfo.label)
-            && Objects.equals(this.description, catalogTargetInfo.description)
-            && Objects.equals(this.providerType, catalogTargetInfo.providerType)
-            && Objects.equals(this.parameters, catalogTargetInfo.parameters)
-            && Objects.equals(this.createdTime, catalogTargetInfo.createdTime)
-            && Objects.equals(this.updatedTime, catalogTargetInfo.updatedTime);
+        CatalogTargetInfo that = (CatalogTargetInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.label, that.label) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

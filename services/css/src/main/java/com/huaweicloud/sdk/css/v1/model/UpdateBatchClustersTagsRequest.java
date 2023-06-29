@@ -87,17 +87,16 @@ public class UpdateBatchClustersTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBatchClustersTagsRequest updateBatchClustersTagsRequest = (UpdateBatchClustersTagsRequest) o;
-        return Objects.equals(this.clusterId, updateBatchClustersTagsRequest.clusterId)
-            && Objects.equals(this.resourceType, updateBatchClustersTagsRequest.resourceType)
-            && Objects.equals(this.body, updateBatchClustersTagsRequest.body);
+        UpdateBatchClustersTagsRequest that = (UpdateBatchClustersTagsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

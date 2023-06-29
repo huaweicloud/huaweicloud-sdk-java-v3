@@ -75,16 +75,15 @@ public class ShowExtremumInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtremumInfoResponse showExtremumInfoResponse = (ShowExtremumInfoResponse) o;
-        return Objects.equals(this.maximum, showExtremumInfoResponse.maximum)
-            && Objects.equals(this.minimum, showExtremumInfoResponse.minimum);
+        ShowExtremumInfoResponse that = (ShowExtremumInfoResponse) obj;
+        return Objects.equals(this.maximum, that.maximum) && Objects.equals(this.minimum, that.minimum);
     }
 
     @Override

@@ -57,16 +57,15 @@ public class CreateLogGroupParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogGroupParams createLogGroupParams = (CreateLogGroupParams) o;
-        return Objects.equals(this.logGroupName, createLogGroupParams.logGroupName)
-            && Objects.equals(this.ttlInDays, createLogGroupParams.ttlInDays);
+        CreateLogGroupParams that = (CreateLogGroupParams) obj;
+        return Objects.equals(this.logGroupName, that.logGroupName) && Objects.equals(this.ttlInDays, that.ttlInDays);
     }
 
     @Override

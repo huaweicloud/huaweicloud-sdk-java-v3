@@ -65,22 +65,15 @@ public class PrepaidUpdateOption {
             if (value == null) {
                 return null;
             }
-            ChangeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChangeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChangeModeEnum(value));
         }
 
         public static ChangeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChangeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class PrepaidUpdateOption {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,18 +246,16 @@ public class PrepaidUpdateOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrepaidUpdateOption prepaidUpdateOption = (PrepaidUpdateOption) o;
-        return Objects.equals(this.autoPay, prepaidUpdateOption.autoPay)
-            && Objects.equals(this.changeMode, prepaidUpdateOption.changeMode)
-            && Objects.equals(this.periodNum, prepaidUpdateOption.periodNum)
-            && Objects.equals(this.periodType, prepaidUpdateOption.periodType);
+        PrepaidUpdateOption that = (PrepaidUpdateOption) obj;
+        return Objects.equals(this.autoPay, that.autoPay) && Objects.equals(this.changeMode, that.changeMode)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.periodType, that.periodType);
     }
 
     @Override

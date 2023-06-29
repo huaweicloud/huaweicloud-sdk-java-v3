@@ -53,15 +53,15 @@ public class ShowAuditlogDownloadLinkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditlogDownloadLinkResponse showAuditlogDownloadLinkResponse = (ShowAuditlogDownloadLinkResponse) o;
-        return Objects.equals(this.links, showAuditlogDownloadLinkResponse.links);
+        ShowAuditlogDownloadLinkResponse that = (ShowAuditlogDownloadLinkResponse) obj;
+        return Objects.equals(this.links, that.links);
     }
 
     @Override

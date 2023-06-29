@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 点数据
  */
-public class VertexsetPath  {
-
+public class VertexsetPath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log")
-    
+    @JsonProperty(value = "log")
 
     private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cause")
-    
+    @JsonProperty(value = "cause")
 
     private String cause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalLines")
-    
+    @JsonProperty(value = "totalLines")
 
     private Long totalLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failedLines")
-    
+    @JsonProperty(value = "failedLines")
 
     private Long failedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="successfulLines")
-    
+    @JsonProperty(value = "successfulLines")
 
     private Long successfulLines;
 
@@ -63,9 +49,6 @@ public class VertexsetPath  {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件路径
@@ -79,15 +62,10 @@ public class VertexsetPath  {
         this.path = path;
     }
 
-    
-
     public VertexsetPath withLog(String log) {
         this.log = log;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件导入日志存储文件
@@ -101,15 +79,10 @@ public class VertexsetPath  {
         this.log = log;
     }
 
-    
-
     public VertexsetPath withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * - OBS文件导入状态。 - success：完全成功 - failed：完全失败 - partFailed：部分成功
@@ -123,15 +96,10 @@ public class VertexsetPath  {
         this.status = status;
     }
 
-    
-
     public VertexsetPath withCause(String cause) {
         this.cause = cause;
         return this;
     }
-
-    
-
 
     /**
      * 导入失败原因
@@ -145,15 +113,10 @@ public class VertexsetPath  {
         this.cause = cause;
     }
 
-    
-
     public VertexsetPath withTotalLines(Long totalLines) {
         this.totalLines = totalLines;
         return this;
     }
-
-    
-
 
     /**
      * 导入总行数。其值为-1时表示当前版本没有返回该字段。
@@ -167,15 +130,10 @@ public class VertexsetPath  {
         this.totalLines = totalLines;
     }
 
-    
-
     public VertexsetPath withFailedLines(Long failedLines) {
         this.failedLines = failedLines;
         return this;
     }
-
-    
-
 
     /**
      * 导入失败行数。其值为-1时表示当前版本没有返回该字段。
@@ -189,15 +147,10 @@ public class VertexsetPath  {
         this.failedLines = failedLines;
     }
 
-    
-
     public VertexsetPath withSuccessfulLines(Long successfulLines) {
         this.successfulLines = successfulLines;
         return this;
     }
-
-    
-
 
     /**
      * 导出成功行数。其值为-1时表示当前版本没有返回该字段。
@@ -211,29 +164,26 @@ public class VertexsetPath  {
         this.successfulLines = successfulLines;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VertexsetPath vertexsetPath = (VertexsetPath) o;
-        return Objects.equals(this.path, vertexsetPath.path) &&
-            Objects.equals(this.log, vertexsetPath.log) &&
-            Objects.equals(this.status, vertexsetPath.status) &&
-            Objects.equals(this.cause, vertexsetPath.cause) &&
-            Objects.equals(this.totalLines, vertexsetPath.totalLines) &&
-            Objects.equals(this.failedLines, vertexsetPath.failedLines) &&
-            Objects.equals(this.successfulLines, vertexsetPath.successfulLines);
+        VertexsetPath that = (VertexsetPath) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.cause, that.cause)
+            && Objects.equals(this.totalLines, that.totalLines) && Objects.equals(this.failedLines, that.failedLines)
+            && Objects.equals(this.successfulLines, that.successfulLines);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, log, status, cause, totalLines, failedLines, successfulLines);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class VertexsetPath  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class VertexsetPath  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -74,16 +74,15 @@ public class AlarmActions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmActions alarmActions = (AlarmActions) o;
-        return Objects.equals(this.type, alarmActions.type)
-            && Objects.equals(this.notificationList, alarmActions.notificationList);
+        AlarmActions that = (AlarmActions) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.notificationList, that.notificationList);
     }
 
     @Override

@@ -83,17 +83,16 @@ public class ListDiagnoseRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDiagnoseRecordsRequest listDiagnoseRecordsRequest = (ListDiagnoseRecordsRequest) o;
-        return Objects.equals(this.pageSize, listDiagnoseRecordsRequest.pageSize)
-            && Objects.equals(this.pageNo, listDiagnoseRecordsRequest.pageNo)
-            && Objects.equals(this.type, listDiagnoseRecordsRequest.type);
+        ListDiagnoseRecordsRequest that = (ListDiagnoseRecordsRequest) obj;
+        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNo, that.pageNo)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

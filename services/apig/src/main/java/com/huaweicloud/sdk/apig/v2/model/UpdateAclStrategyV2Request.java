@@ -87,17 +87,16 @@ public class UpdateAclStrategyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAclStrategyV2Request updateAclStrategyV2Request = (UpdateAclStrategyV2Request) o;
-        return Objects.equals(this.instanceId, updateAclStrategyV2Request.instanceId)
-            && Objects.equals(this.aclId, updateAclStrategyV2Request.aclId)
-            && Objects.equals(this.body, updateAclStrategyV2Request.body);
+        UpdateAclStrategyV2Request that = (UpdateAclStrategyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.aclId, that.aclId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

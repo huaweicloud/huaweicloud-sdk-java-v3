@@ -91,22 +91,15 @@ public class ListDedicatedHostsRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -407,28 +400,21 @@ public class ListDedicatedHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDedicatedHostsRequest listDedicatedHostsRequest = (ListDedicatedHostsRequest) o;
-        return Objects.equals(this.dedicatedHostId, listDedicatedHostsRequest.dedicatedHostId)
-            && Objects.equals(this.name, listDedicatedHostsRequest.name)
-            && Objects.equals(this.hostType, listDedicatedHostsRequest.hostType)
-            && Objects.equals(this.hostTypeName, listDedicatedHostsRequest.hostTypeName)
-            && Objects.equals(this.flavor, listDedicatedHostsRequest.flavor)
-            && Objects.equals(this.state, listDedicatedHostsRequest.state)
-            && Objects.equals(this.tenant, listDedicatedHostsRequest.tenant)
-            && Objects.equals(this.availabilityZone, listDedicatedHostsRequest.availabilityZone)
-            && Objects.equals(this.limit, listDedicatedHostsRequest.limit)
-            && Objects.equals(this.marker, listDedicatedHostsRequest.marker)
-            && Objects.equals(this.tags, listDedicatedHostsRequest.tags)
-            && Objects.equals(this.instanceUuid, listDedicatedHostsRequest.instanceUuid)
-            && Objects.equals(this.releasedAt, listDedicatedHostsRequest.releasedAt)
-            && Objects.equals(this.changesSince, listDedicatedHostsRequest.changesSince);
+        ListDedicatedHostsRequest that = (ListDedicatedHostsRequest) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.hostType, that.hostType) && Objects.equals(this.hostTypeName, that.hostTypeName)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.tenant, that.tenant) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.instanceUuid, that.instanceUuid)
+            && Objects.equals(this.releasedAt, that.releasedAt) && Objects.equals(this.changesSince, that.changesSince);
     }
 
     @Override

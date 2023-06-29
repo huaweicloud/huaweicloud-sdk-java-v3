@@ -33,15 +33,15 @@ public class ShowMigrationProjectDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrationProjectDetailRequest showMigrationProjectDetailRequest = (ShowMigrationProjectDetailRequest) o;
-        return Objects.equals(this.migrationProjectId, showMigrationProjectDetailRequest.migrationProjectId);
+        ShowMigrationProjectDetailRequest that = (ShowMigrationProjectDetailRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId);
     }
 
     @Override

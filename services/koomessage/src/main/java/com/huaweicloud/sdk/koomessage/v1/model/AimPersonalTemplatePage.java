@@ -74,16 +74,15 @@ public class AimPersonalTemplatePage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimPersonalTemplatePage aimPersonalTemplatePage = (AimPersonalTemplatePage) o;
-        return Objects.equals(this.pageOrder, aimPersonalTemplatePage.pageOrder)
-            && Objects.equals(this.contents, aimPersonalTemplatePage.contents);
+        AimPersonalTemplatePage that = (AimPersonalTemplatePage) obj;
+        return Objects.equals(this.pageOrder, that.pageOrder) && Objects.equals(this.contents, that.contents);
     }
 
     @Override

@@ -127,18 +127,16 @@ public class ListInstancesGroupResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesGroupResult listInstancesGroupResult = (ListInstancesGroupResult) o;
-        return Objects.equals(this.id, listInstancesGroupResult.id)
-            && Objects.equals(this.status, listInstancesGroupResult.status)
-            && Objects.equals(this.volume, listInstancesGroupResult.volume)
-            && Objects.equals(this.nodes, listInstancesGroupResult.nodes);
+        ListInstancesGroupResult that = (ListInstancesGroupResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

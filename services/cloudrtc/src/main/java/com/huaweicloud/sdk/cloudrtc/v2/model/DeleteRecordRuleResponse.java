@@ -36,15 +36,15 @@ public class DeleteRecordRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRecordRuleResponse deleteRecordRuleResponse = (DeleteRecordRuleResponse) o;
-        return Objects.equals(this.xRequestId, deleteRecordRuleResponse.xRequestId);
+        DeleteRecordRuleResponse that = (DeleteRecordRuleResponse) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

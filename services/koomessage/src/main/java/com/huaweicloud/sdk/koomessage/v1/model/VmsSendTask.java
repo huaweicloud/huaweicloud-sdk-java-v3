@@ -297,24 +297,21 @@ public class VmsSendTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VmsSendTask vmsSendTask = (VmsSendTask) o;
-        return Objects.equals(this.taskId, vmsSendTask.taskId) && Objects.equals(this.taskName, vmsSendTask.taskName)
-            && Objects.equals(this.taskState, vmsSendTask.taskState) && Objects.equals(this.tplId, vmsSendTask.tplId)
-            && Objects.equals(this.tplName, vmsSendTask.tplName) && Objects.equals(this.operator, vmsSendTask.operator)
-            && Objects.equals(this.createTime, vmsSendTask.createTime)
-            && Objects.equals(this.sendTime, vmsSendTask.sendTime)
-            && Objects.equals(this.totalCount, vmsSendTask.totalCount)
-            && Objects.equals(this.successCount, vmsSendTask.successCount)
-            && Objects.equals(this.failedCount, vmsSendTask.failedCount)
-            && Objects.equals(this.timeoutCount, vmsSendTask.timeoutCount)
-            && Objects.equals(this.exdata, vmsSendTask.exdata);
+        VmsSendTask that = (VmsSendTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskState, that.taskState) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.sendTime, that.sendTime)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.successCount, that.successCount)
+            && Objects.equals(this.failedCount, that.failedCount)
+            && Objects.equals(this.timeoutCount, that.timeoutCount) && Objects.equals(this.exdata, that.exdata);
     }
 
     @Override

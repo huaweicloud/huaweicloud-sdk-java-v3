@@ -263,24 +263,20 @@ public class VideoJobResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoJobResponse videoJobResponse = (VideoJobResponse) o;
-        return Objects.equals(this.id, videoJobResponse.id) && Objects.equals(this.name, videoJobResponse.name)
-            && Objects.equals(this.description, videoJobResponse.description)
-            && Objects.equals(this.state, videoJobResponse.state)
-            && Objects.equals(this.createdAt, videoJobResponse.createdAt)
-            && Objects.equals(this.updatedAt, videoJobResponse.updatedAt)
-            && Objects.equals(this.input, videoJobResponse.input)
-            && Objects.equals(this.serviceConfig, videoJobResponse.serviceConfig)
-            && Objects.equals(this.output, videoJobResponse.output)
-            && Objects.equals(this.hostingResult, videoJobResponse.hostingResult)
-            && Objects.equals(this.serviceVersion, videoJobResponse.serviceVersion);
+        VideoJobResponse that = (VideoJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.serviceConfig, that.serviceConfig)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.hostingResult, that.hostingResult)
+            && Objects.equals(this.serviceVersion, that.serviceVersion);
     }
 
     @Override

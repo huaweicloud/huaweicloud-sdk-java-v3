@@ -65,16 +65,15 @@ public class ListIssuesV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuesV4Request listIssuesV4Request = (ListIssuesV4Request) o;
-        return Objects.equals(this.projectId, listIssuesV4Request.projectId)
-            && Objects.equals(this.body, listIssuesV4Request.body);
+        ListIssuesV4Request that = (ListIssuesV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

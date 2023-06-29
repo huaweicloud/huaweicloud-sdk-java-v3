@@ -43,15 +43,15 @@ public class CreateVpcResourceTagRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcResourceTagRequestBody createVpcResourceTagRequestBody = (CreateVpcResourceTagRequestBody) o;
-        return Objects.equals(this.tag, createVpcResourceTagRequestBody.tag);
+        CreateVpcResourceTagRequestBody that = (CreateVpcResourceTagRequestBody) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

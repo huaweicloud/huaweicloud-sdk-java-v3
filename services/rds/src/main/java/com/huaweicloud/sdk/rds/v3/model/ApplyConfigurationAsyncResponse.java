@@ -100,18 +100,17 @@ public class ApplyConfigurationAsyncResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyConfigurationAsyncResponse applyConfigurationAsyncResponse = (ApplyConfigurationAsyncResponse) o;
-        return Objects.equals(this.configurationId, applyConfigurationAsyncResponse.configurationId)
-            && Objects.equals(this.configurationName, applyConfigurationAsyncResponse.configurationName)
-            && Objects.equals(this.success, applyConfigurationAsyncResponse.success)
-            && Objects.equals(this.jobId, applyConfigurationAsyncResponse.jobId);
+        ApplyConfigurationAsyncResponse that = (ApplyConfigurationAsyncResponse) obj;
+        return Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.configurationName, that.configurationName)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

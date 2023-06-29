@@ -65,16 +65,15 @@ public class BatchDeleteClusterCnRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteClusterCnRequest batchDeleteClusterCnRequest = (BatchDeleteClusterCnRequest) o;
-        return Objects.equals(this.clusterId, batchDeleteClusterCnRequest.clusterId)
-            && Objects.equals(this.body, batchDeleteClusterCnRequest.body);
+        BatchDeleteClusterCnRequest that = (BatchDeleteClusterCnRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class ShowRecyclePolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecyclePolicyRequest showRecyclePolicyRequest = (ShowRecyclePolicyRequest) o;
-        return Objects.equals(this.xLanguage, showRecyclePolicyRequest.xLanguage);
+        ShowRecyclePolicyRequest that = (ShowRecyclePolicyRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

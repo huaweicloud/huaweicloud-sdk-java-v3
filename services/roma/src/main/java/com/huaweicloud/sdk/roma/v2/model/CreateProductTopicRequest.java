@@ -89,17 +89,16 @@ public class CreateProductTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProductTopicRequest createProductTopicRequest = (CreateProductTopicRequest) o;
-        return Objects.equals(this.instanceId, createProductTopicRequest.instanceId)
-            && Objects.equals(this.productId, createProductTopicRequest.productId)
-            && Objects.equals(this.body, createProductTopicRequest.body);
+        CreateProductTopicRequest that = (CreateProductTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

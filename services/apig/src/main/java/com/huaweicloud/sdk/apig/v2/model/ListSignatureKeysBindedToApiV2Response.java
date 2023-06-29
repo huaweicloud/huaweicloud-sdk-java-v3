@@ -97,18 +97,16 @@ public class ListSignatureKeysBindedToApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSignatureKeysBindedToApiV2Response listSignatureKeysBindedToApiV2Response =
-            (ListSignatureKeysBindedToApiV2Response) o;
-        return Objects.equals(this.size, listSignatureKeysBindedToApiV2Response.size)
-            && Objects.equals(this.total, listSignatureKeysBindedToApiV2Response.total)
-            && Objects.equals(this.bindings, listSignatureKeysBindedToApiV2Response.bindings);
+        ListSignatureKeysBindedToApiV2Response that = (ListSignatureKeysBindedToApiV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.bindings, that.bindings);
     }
 
     @Override

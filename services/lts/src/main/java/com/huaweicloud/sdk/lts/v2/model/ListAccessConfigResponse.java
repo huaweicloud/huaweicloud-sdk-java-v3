@@ -77,16 +77,15 @@ public class ListAccessConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessConfigResponse listAccessConfigResponse = (ListAccessConfigResponse) o;
-        return Objects.equals(this.result, listAccessConfigResponse.result)
-            && Objects.equals(this.total, listAccessConfigResponse.total);
+        ListAccessConfigResponse that = (ListAccessConfigResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.total, that.total);
     }
 
     @Override

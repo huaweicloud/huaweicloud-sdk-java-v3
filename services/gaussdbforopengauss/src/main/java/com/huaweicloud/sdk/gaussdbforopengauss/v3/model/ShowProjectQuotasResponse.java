@@ -1,29 +1,19 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ProjectQuotasResult;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowProjectQuotasResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quotas")
-    
+    @JsonProperty(value = "quotas")
 
     private ProjectQuotasResult quotas;
 
@@ -33,14 +23,13 @@ public class ShowProjectQuotasResponse extends SdkResponse {
     }
 
     public ShowProjectQuotasResponse withQuotas(Consumer<ProjectQuotasResult> quotasSetter) {
-        if(this.quotas == null ){
+        if (this.quotas == null) {
             this.quotas = new ProjectQuotasResult();
             quotasSetter.accept(this.quotas);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get quotas
@@ -54,23 +43,23 @@ public class ShowProjectQuotasResponse extends SdkResponse {
         this.quotas = quotas;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectQuotasResponse showProjectQuotasResponse = (ShowProjectQuotasResponse) o;
-        return Objects.equals(this.quotas, showProjectQuotasResponse.quotas);
+        ShowProjectQuotasResponse that = (ShowProjectQuotasResponse) obj;
+        return Objects.equals(this.quotas, that.quotas);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quotas);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -79,6 +68,7 @@ public class ShowProjectQuotasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -89,8 +79,5 @@ public class ShowProjectQuotasResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -97,22 +97,15 @@ public class UpdateRomaAppResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RolesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RolesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RolesEnum(value));
         }
 
         public static RolesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RolesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -391,25 +384,20 @@ public class UpdateRomaAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRomaAppResponse updateRomaAppResponse = (UpdateRomaAppResponse) o;
-        return Objects.equals(this.id, updateRomaAppResponse.id)
-            && Objects.equals(this.name, updateRomaAppResponse.name)
-            && Objects.equals(this.remark, updateRomaAppResponse.remark)
-            && Objects.equals(this.roles, updateRomaAppResponse.roles)
-            && Objects.equals(this.createTime, updateRomaAppResponse.createTime)
-            && Objects.equals(this.updateTime, updateRomaAppResponse.updateTime)
-            && Objects.equals(this.createdUser, updateRomaAppResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, updateRomaAppResponse.lastUpdatedUser)
-            && Objects.equals(this.owner, updateRomaAppResponse.owner)
-            && Objects.equals(this.key, updateRomaAppResponse.key)
-            && Objects.equals(this.favorite, updateRomaAppResponse.favorite);
+        UpdateRomaAppResponse that = (UpdateRomaAppResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.favorite, that.favorite);
     }
 
     @Override

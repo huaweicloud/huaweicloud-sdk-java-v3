@@ -55,16 +55,15 @@ public class DeleteVpcEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVpcEndpointRequest deleteVpcEndpointRequest = (DeleteVpcEndpointRequest) o;
-        return Objects.equals(this.vpcId, deleteVpcEndpointRequest.vpcId)
-            && Objects.equals(this.subnetId, deleteVpcEndpointRequest.subnetId);
+        DeleteVpcEndpointRequest that = (DeleteVpcEndpointRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId);
     }
 
     @Override

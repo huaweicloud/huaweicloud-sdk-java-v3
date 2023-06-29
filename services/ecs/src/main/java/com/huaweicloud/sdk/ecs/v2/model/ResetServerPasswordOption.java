@@ -55,16 +55,16 @@ public class ResetServerPasswordOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetServerPasswordOption resetServerPasswordOption = (ResetServerPasswordOption) o;
-        return Objects.equals(this.newPassword, resetServerPasswordOption.newPassword)
-            && Objects.equals(this.isCheckPassword, resetServerPasswordOption.isCheckPassword);
+        ResetServerPasswordOption that = (ResetServerPasswordOption) obj;
+        return Objects.equals(this.newPassword, that.newPassword)
+            && Objects.equals(this.isCheckPassword, that.isCheckPassword);
     }
 
     @Override

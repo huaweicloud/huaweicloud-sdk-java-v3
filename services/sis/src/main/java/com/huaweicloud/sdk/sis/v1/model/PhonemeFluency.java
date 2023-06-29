@@ -55,15 +55,15 @@ public class PhonemeFluency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhonemeFluency phonemeFluency = (PhonemeFluency) o;
-        return Objects.equals(this.score, phonemeFluency.score) && Objects.equals(this.rhythm, phonemeFluency.rhythm);
+        PhonemeFluency that = (PhonemeFluency) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.rhythm, that.rhythm);
     }
 
     @Override

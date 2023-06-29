@@ -91,17 +91,16 @@ public class PackagesListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackagesListRequestBody packagesListRequestBody = (PackagesListRequestBody) o;
-        return Objects.equals(this.filter, packagesListRequestBody.filter)
-            && Objects.equals(this.pageSize, packagesListRequestBody.pageSize)
-            && Objects.equals(this.startIndex, packagesListRequestBody.startIndex);
+        PackagesListRequestBody that = (PackagesListRequestBody) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.startIndex, that.startIndex);
     }
 
     @Override

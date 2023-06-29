@@ -127,18 +127,16 @@ public class AnalysisRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnalysisRequest analysisRequest = (AnalysisRequest) o;
-        return Objects.equals(this.name, analysisRequest.name)
-            && Objects.equals(this.transform, analysisRequest.transform)
-            && Objects.equals(this.aggregate, analysisRequest.aggregate)
-            && Objects.equals(this.stream, analysisRequest.stream);
+        AnalysisRequest that = (AnalysisRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.transform, that.transform)
+            && Objects.equals(this.aggregate, that.aggregate) && Objects.equals(this.stream, that.stream);
     }
 
     @Override

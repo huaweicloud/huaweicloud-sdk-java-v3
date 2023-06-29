@@ -119,18 +119,16 @@ public class ListUpComingWebinarsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUpComingWebinarsResponse listUpComingWebinarsResponse = (ListUpComingWebinarsResponse) o;
-        return Objects.equals(this.offset, listUpComingWebinarsResponse.offset)
-            && Objects.equals(this.limit, listUpComingWebinarsResponse.limit)
-            && Objects.equals(this.count, listUpComingWebinarsResponse.count)
-            && Objects.equals(this.data, listUpComingWebinarsResponse.data);
+        ListUpComingWebinarsResponse that = (ListUpComingWebinarsResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.data, that.data);
     }
 
     @Override

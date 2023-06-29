@@ -33,15 +33,15 @@ public class NetworkInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkInfo networkInfo = (NetworkInfo) o;
-        return Objects.equals(this.networkType, networkInfo.networkType);
+        NetworkInfo that = (NetworkInfo) obj;
+        return Objects.equals(this.networkType, that.networkType);
     }
 
     @Override

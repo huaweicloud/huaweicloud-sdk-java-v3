@@ -208,20 +208,19 @@ public class AnswerQaPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnswerQaPair answerQaPair = (AnswerQaPair) o;
-        return Objects.equals(this.score, answerQaPair.score) && Objects.equals(this.answer, answerQaPair.answer)
-            && Objects.equals(this.domain, answerQaPair.domain) && Objects.equals(this.link, answerQaPair.link)
-            && Objects.equals(this.question, answerQaPair.question)
-            && Objects.equals(this.qaPairId, answerQaPair.qaPairId)
-            && Objects.equals(this.relevanceDetails, answerQaPair.relevanceDetails)
-            && Objects.equals(this.taskComplete, answerQaPair.taskComplete);
+        AnswerQaPair that = (AnswerQaPair) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.answer, that.answer)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.link, that.link)
+            && Objects.equals(this.question, that.question) && Objects.equals(this.qaPairId, that.qaPairId)
+            && Objects.equals(this.relevanceDetails, that.relevanceDetails)
+            && Objects.equals(this.taskComplete, that.taskComplete);
     }
 
     @Override

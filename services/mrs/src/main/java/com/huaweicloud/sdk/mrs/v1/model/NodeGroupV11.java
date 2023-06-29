@@ -1,74 +1,58 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.AutoScalingPolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * NodeGroupV11
  */
-public class NodeGroupV11  {
-
+public class NodeGroupV11 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_size")
-    
+    @JsonProperty(value = "node_size")
 
     private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="root_volume_size")
-    
+    @JsonProperty(value = "root_volume_size")
 
     private String rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="root_volume_type")
-    
+    @JsonProperty(value = "root_volume_type")
 
     private String rootVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_type")
-    
+    @JsonProperty(value = "data_volume_type")
 
     private String dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_count")
-    
+    @JsonProperty(value = "data_volume_count")
 
     private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_size")
-    
+    @JsonProperty(value = "data_volume_size")
 
     private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_scaling_policy")
-    
+    @JsonProperty(value = "auto_scaling_policy")
 
     private AutoScalingPolicy autoScalingPolicy;
 
@@ -76,9 +60,6 @@ public class NodeGroupV11  {
         this.groupName = groupName;
         return this;
     }
-
-    
-
 
     /**
      * 节点组名。 - master_node_default_group - core_node_analysis_group - core_node_streaming_group - task_node_analysis_group - task_node_streaming_group
@@ -92,15 +73,10 @@ public class NodeGroupV11  {
         this.groupName = groupName;
     }
 
-    
-
     public NodeGroupV11 withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 节点数量，取值范围0～500，Core与Task节点总数最大为500个。
@@ -116,15 +92,10 @@ public class NodeGroupV11  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public NodeGroupV11 withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点的实例规格，例如：c3.4xlarge.2.linux.bigdata。MRS当前支持主机规格的配型由CPU+内存+Disk共同决定。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。 该参数建议从MRS控制台的集群创建页面获取对应区域对应版本所支持的规格。
@@ -138,15 +109,10 @@ public class NodeGroupV11  {
         this.nodeSize = nodeSize;
     }
 
-    
-
     public NodeGroupV11 withRootVolumeSize(String rootVolumeSize) {
         this.rootVolumeSize = rootVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统磁盘存储大小。
@@ -160,15 +126,10 @@ public class NodeGroupV11  {
         this.rootVolumeSize = rootVolumeSize;
     }
 
-    
-
     public NodeGroupV11 withRootVolumeType(String rootVolumeType) {
         this.rootVolumeType = rootVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
@@ -182,15 +143,10 @@ public class NodeGroupV11  {
         this.rootVolumeType = rootVolumeType;
     }
 
-    
-
     public NodeGroupV11 withDataVolumeType(String dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。 - SATA：普通IO - SAS：高IO - SSD：超高IO - GPSSD：通用型SSD
@@ -204,15 +160,10 @@ public class NodeGroupV11  {
         this.dataVolumeType = dataVolumeType;
     }
 
-    
-
     public NodeGroupV11 withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储数目 取值范围：0～10。
@@ -226,15 +177,10 @@ public class NodeGroupV11  {
         this.dataVolumeCount = dataVolumeCount;
     }
 
-    
-
     public NodeGroupV11 withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储大小 取值范围：100GB～32000GB。
@@ -248,22 +194,19 @@ public class NodeGroupV11  {
         this.dataVolumeSize = dataVolumeSize;
     }
 
-    
-
     public NodeGroupV11 withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
     public NodeGroupV11 withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
-        if(this.autoScalingPolicy == null ){
+        if (this.autoScalingPolicy == null) {
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get autoScalingPolicy
@@ -277,31 +220,37 @@ public class NodeGroupV11  {
         this.autoScalingPolicy = autoScalingPolicy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeGroupV11 nodeGroupV11 = (NodeGroupV11) o;
-        return Objects.equals(this.groupName, nodeGroupV11.groupName) &&
-            Objects.equals(this.nodeNum, nodeGroupV11.nodeNum) &&
-            Objects.equals(this.nodeSize, nodeGroupV11.nodeSize) &&
-            Objects.equals(this.rootVolumeSize, nodeGroupV11.rootVolumeSize) &&
-            Objects.equals(this.rootVolumeType, nodeGroupV11.rootVolumeType) &&
-            Objects.equals(this.dataVolumeType, nodeGroupV11.dataVolumeType) &&
-            Objects.equals(this.dataVolumeCount, nodeGroupV11.dataVolumeCount) &&
-            Objects.equals(this.dataVolumeSize, nodeGroupV11.dataVolumeSize) &&
-            Objects.equals(this.autoScalingPolicy, nodeGroupV11.autoScalingPolicy);
+        NodeGroupV11 that = (NodeGroupV11) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.nodeSize, that.nodeSize) && Objects.equals(this.rootVolumeSize, that.rootVolumeSize)
+            && Objects.equals(this.rootVolumeType, that.rootVolumeType)
+            && Objects.equals(this.dataVolumeType, that.dataVolumeType)
+            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount)
+            && Objects.equals(this.dataVolumeSize, that.dataVolumeSize)
+            && Objects.equals(this.autoScalingPolicy, that.autoScalingPolicy);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, nodeNum, nodeSize, rootVolumeSize, rootVolumeType, dataVolumeType, dataVolumeCount, dataVolumeSize, autoScalingPolicy);
+        return Objects.hash(groupName,
+            nodeNum,
+            nodeSize,
+            rootVolumeSize,
+            rootVolumeType,
+            dataVolumeType,
+            dataVolumeCount,
+            dataVolumeSize,
+            autoScalingPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -318,6 +267,7 @@ public class NodeGroupV11  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -328,8 +278,5 @@ public class NodeGroupV11  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

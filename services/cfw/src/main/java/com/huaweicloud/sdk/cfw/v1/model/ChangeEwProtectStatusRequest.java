@@ -87,17 +87,16 @@ public class ChangeEwProtectStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEwProtectStatusRequest changeEwProtectStatusRequest = (ChangeEwProtectStatusRequest) o;
-        return Objects.equals(this.enterpriseProjectId, changeEwProtectStatusRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, changeEwProtectStatusRequest.fwInstanceId)
-            && Objects.equals(this.body, changeEwProtectStatusRequest.body);
+        ChangeEwProtectStatusRequest that = (ChangeEwProtectStatusRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

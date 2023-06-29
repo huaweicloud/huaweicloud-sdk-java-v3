@@ -100,17 +100,16 @@ public class AppCodeBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppCodeBaseInfo appCodeBaseInfo = (AppCodeBaseInfo) o;
-        return Objects.equals(this.appCode, appCodeBaseInfo.appCode) && Objects.equals(this.id, appCodeBaseInfo.id)
-            && Objects.equals(this.appId, appCodeBaseInfo.appId)
-            && Objects.equals(this.createTime, appCodeBaseInfo.createTime);
+        AppCodeBaseInfo that = (AppCodeBaseInfo) obj;
+        return Objects.equals(this.appCode, that.appCode) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

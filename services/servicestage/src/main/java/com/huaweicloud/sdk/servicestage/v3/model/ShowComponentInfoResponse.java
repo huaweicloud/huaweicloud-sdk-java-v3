@@ -1,17 +1,12 @@
 package com.huaweicloud.sdk.servicestage.v3.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import com.huaweicloud.sdk.core.SdkResponse;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.function.Consumer;
 
@@ -26,11 +21,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workload_name")
-
-    private String workloadName;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "description")
 
     private String description;
@@ -39,11 +29,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
     @JsonProperty(value = "labels")
 
     private List<Label> labels = null;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "pod_labels")
-
-    private List<Label> podLabels = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "runtime_stack")
@@ -136,205 +121,9 @@ public class ShowComponentInfoResponse extends SdkResponse {
     private Mesher mesher;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "enable_sermant_injection")
-
-    private Boolean enableSermantInjection;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "deploy_strategy")
 
     private DeployStrategy deployStrategy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "host_aliases")
-
-    private List<HostAlias> hostAliases = null;
-
-    /**
-    * Gets or Sets dnsPolicy
-    */
-    public static final class DnsPolicyEnum {
-
-        /**
-         * Enum DEFAULT for value: "Default"
-         */
-        public static final DnsPolicyEnum DEFAULT = new DnsPolicyEnum("Default");
-
-        /**
-         * Enum CLUSTERFIRST for value: "ClusterFirst"
-         */
-        public static final DnsPolicyEnum CLUSTERFIRST = new DnsPolicyEnum("ClusterFirst");
-
-        /**
-         * Enum CLUSTERFIRSTWITHHOSTNET for value: "ClusterFirstWithHostNet"
-         */
-        public static final DnsPolicyEnum CLUSTERFIRSTWITHHOSTNET = new DnsPolicyEnum("ClusterFirstWithHostNet");
-
-        /**
-         * Enum NONE for value: "None"
-         */
-        public static final DnsPolicyEnum NONE = new DnsPolicyEnum("None");
-
-        private static final Map<String, DnsPolicyEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, DnsPolicyEnum> createStaticFields() {
-            Map<String, DnsPolicyEnum> map = new HashMap<>();
-            map.put("Default", DEFAULT);
-            map.put("ClusterFirst", CLUSTERFIRST);
-            map.put("ClusterFirstWithHostNet", CLUSTERFIRSTWITHHOSTNET);
-            map.put("None", NONE);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        DnsPolicyEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static DnsPolicyEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            DnsPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DnsPolicyEnum(value);
-            }
-            return result;
-        }
-
-        public static DnsPolicyEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            DnsPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof DnsPolicyEnum) {
-                return this.value.equals(((DnsPolicyEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_policy")
-
-    private DnsPolicyEnum dnsPolicy;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "dns_config")
-
-    private DnsConfig dnsConfig;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "security_context")
-
-    private SecurityContext securityContext;
-
-    /**
-     * Gets or Sets workloadKind
-     */
-    public static final class WorkloadKindEnum {
-
-        /**
-         * Enum DEPLOYMENT for value: "deployment"
-         */
-        public static final WorkloadKindEnum DEPLOYMENT = new WorkloadKindEnum("deployment");
-
-        /**
-         * Enum STATEFULSET for value: "statefulset"
-         */
-        public static final WorkloadKindEnum STATEFULSET = new WorkloadKindEnum("statefulset");
-
-        private static final Map<String, WorkloadKindEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, WorkloadKindEnum> createStaticFields() {
-            Map<String, WorkloadKindEnum> map = new HashMap<>();
-            map.put("deployment", DEPLOYMENT);
-            map.put("statefulset", STATEFULSET);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        WorkloadKindEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static WorkloadKindEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            WorkloadKindEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkloadKindEnum(value);
-            }
-            return result;
-        }
-
-        public static WorkloadKindEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            WorkloadKindEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof WorkloadKindEnum) {
-                return this.value.equals(((WorkloadKindEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "workload_kind")
-
-    private WorkloadKindEnum workloadKind;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "jvm_opts")
@@ -403,23 +192,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
         this.name = name;
     }
 
-    public ShowComponentInfoResponse withWorkloadName(String workloadName) {
-        this.workloadName = workloadName;
-        return this;
-    }
-
-    /**
-     * Get workloadName
-     * @return workloadName
-     */
-    public String getWorkloadName() {
-        return workloadName;
-    }
-
-    public void setWorkloadName(String workloadName) {
-        this.workloadName = workloadName;
-    }
-
     public ShowComponentInfoResponse withDescription(String description) {
         this.description = description;
         return this;
@@ -468,39 +240,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
 
     public void setLabels(List<Label> labels) {
         this.labels = labels;
-    }
-
-    public ShowComponentInfoResponse withPodLabels(List<Label> podLabels) {
-        this.podLabels = podLabels;
-        return this;
-    }
-
-    public ShowComponentInfoResponse addPodLabelsItem(Label podLabelsItem) {
-        if (this.podLabels == null) {
-            this.podLabels = new ArrayList<>();
-        }
-        this.podLabels.add(podLabelsItem);
-        return this;
-    }
-
-    public ShowComponentInfoResponse withPodLabels(Consumer<List<Label>> podLabelsSetter) {
-        if (this.podLabels == null) {
-            this.podLabels = new ArrayList<>();
-        }
-        podLabelsSetter.accept(this.podLabels);
-        return this;
-    }
-
-    /**
-     * Get podLabels
-     * @return podLabels
-     */
-    public List<Label> getPodLabels() {
-        return podLabels;
-    }
-
-    public void setPodLabels(List<Label> podLabels) {
-        this.podLabels = podLabels;
     }
 
     public ShowComponentInfoResponse withRuntimeStack(RuntimeStack runtimeStack) {
@@ -904,23 +643,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
         this.mesher = mesher;
     }
 
-    public ShowComponentInfoResponse withEnableSermantInjection(Boolean enableSermantInjection) {
-        this.enableSermantInjection = enableSermantInjection;
-        return this;
-    }
-
-    /**
-     * Get enableSermantInjection
-     * @return enableSermantInjection
-     */
-    public Boolean getEnableSermantInjection() {
-        return enableSermantInjection;
-    }
-
-    public void setEnableSermantInjection(Boolean enableSermantInjection) {
-        this.enableSermantInjection = enableSermantInjection;
-    }
-
     public ShowComponentInfoResponse withDeployStrategy(DeployStrategy deployStrategy) {
         this.deployStrategy = deployStrategy;
         return this;
@@ -945,125 +667,6 @@ public class ShowComponentInfoResponse extends SdkResponse {
 
     public void setDeployStrategy(DeployStrategy deployStrategy) {
         this.deployStrategy = deployStrategy;
-    }
-
-    public ShowComponentInfoResponse withHostAliases(List<HostAlias> hostAliases) {
-        this.hostAliases = hostAliases;
-        return this;
-    }
-
-    public ShowComponentInfoResponse addHostAliasesItem(HostAlias hostAliasesItem) {
-        if (this.hostAliases == null) {
-            this.hostAliases = new ArrayList<>();
-        }
-        this.hostAliases.add(hostAliasesItem);
-        return this;
-    }
-
-    public ShowComponentInfoResponse withHostAliases(Consumer<List<HostAlias>> hostAliasesSetter) {
-        if (this.hostAliases == null) {
-            this.hostAliases = new ArrayList<>();
-        }
-        hostAliasesSetter.accept(this.hostAliases);
-        return this;
-    }
-
-    /**
-     * Get hostAliases
-     * @return hostAliases
-     */
-    public List<HostAlias> getHostAliases() {
-        return hostAliases;
-    }
-
-    public void setHostAliases(List<HostAlias> hostAliases) {
-        this.hostAliases = hostAliases;
-    }
-
-    public ShowComponentInfoResponse withDnsPolicy(DnsPolicyEnum dnsPolicy) {
-        this.dnsPolicy = dnsPolicy;
-        return this;
-    }
-
-    /**
-     * Get dnsPolicy
-     * @return dnsPolicy
-     */
-    public DnsPolicyEnum getDnsPolicy() {
-        return dnsPolicy;
-    }
-
-    public void setDnsPolicy(DnsPolicyEnum dnsPolicy) {
-        this.dnsPolicy = dnsPolicy;
-    }
-
-    public ShowComponentInfoResponse withDnsConfig(DnsConfig dnsConfig) {
-        this.dnsConfig = dnsConfig;
-        return this;
-    }
-
-    public ShowComponentInfoResponse withDnsConfig(Consumer<DnsConfig> dnsConfigSetter) {
-        if (this.dnsConfig == null) {
-            this.dnsConfig = new DnsConfig();
-            dnsConfigSetter.accept(this.dnsConfig);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get dnsConfig
-     * @return dnsConfig
-     */
-    public DnsConfig getDnsConfig() {
-        return dnsConfig;
-    }
-
-    public void setDnsConfig(DnsConfig dnsConfig) {
-        this.dnsConfig = dnsConfig;
-    }
-
-    public ShowComponentInfoResponse withSecurityContext(SecurityContext securityContext) {
-        this.securityContext = securityContext;
-        return this;
-    }
-
-    public ShowComponentInfoResponse withSecurityContext(Consumer<SecurityContext> securityContextSetter) {
-        if (this.securityContext == null) {
-            this.securityContext = new SecurityContext();
-            securityContextSetter.accept(this.securityContext);
-        }
-
-        return this;
-    }
-
-    /**
-     * Get securityContext
-     * @return securityContext
-     */
-    public SecurityContext getSecurityContext() {
-        return securityContext;
-    }
-
-    public void setSecurityContext(SecurityContext securityContext) {
-        this.securityContext = securityContext;
-    }
-
-    public ShowComponentInfoResponse withWorkloadKind(WorkloadKindEnum workloadKind) {
-        this.workloadKind = workloadKind;
-        return this;
-    }
-
-    /**
-     * Get workloadKind
-     * @return workloadKind
-     */
-    public WorkloadKindEnum getWorkloadKind() {
-        return workloadKind;
-    }
-
-    public void setWorkloadKind(WorkloadKindEnum workloadKind) {
-        this.workloadKind = workloadKind;
     }
 
     public ShowComponentInfoResponse withJvmOpts(String jvmOpts) {
@@ -1332,63 +935,39 @@ public class ShowComponentInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowComponentInfoResponse showComponentInfoResponse = (ShowComponentInfoResponse) o;
-        return Objects.equals(this.name, showComponentInfoResponse.name)
-            && Objects.equals(this.workloadName, showComponentInfoResponse.workloadName)
-            && Objects.equals(this.description, showComponentInfoResponse.description)
-            && Objects.equals(this.labels, showComponentInfoResponse.labels)
-            && Objects.equals(this.podLabels, showComponentInfoResponse.podLabels)
-            && Objects.equals(this.runtimeStack, showComponentInfoResponse.runtimeStack)
-            && Objects.equals(this.source, showComponentInfoResponse.source)
-            && Objects.equals(this.build, showComponentInfoResponse.build)
-            && Objects.equals(this.environmentId, showComponentInfoResponse.environmentId)
-            && Objects.equals(this.applicationId, showComponentInfoResponse.applicationId)
-            && Objects.equals(this.limitCpu, showComponentInfoResponse.limitCpu)
-            && Objects.equals(this.limitMemory, showComponentInfoResponse.limitMemory)
-            && Objects.equals(this.requestCpu, showComponentInfoResponse.requestCpu)
-            && Objects.equals(this.requestMemory, showComponentInfoResponse.requestMemory)
-            && Objects.equals(this.replica, showComponentInfoResponse.replica)
-            && Objects.equals(this.version, showComponentInfoResponse.version)
-            && Objects.equals(this.envs, showComponentInfoResponse.envs)
-            && Objects.equals(this.storages, showComponentInfoResponse.storages)
-            && Objects.equals(this.command, showComponentInfoResponse.command)
-            && Objects.equals(this.postStart, showComponentInfoResponse.postStart)
-            && Objects.equals(this.preStop, showComponentInfoResponse.preStop)
-            && Objects.equals(this.timezone, showComponentInfoResponse.timezone)
-            && Objects.equals(this.mesher, showComponentInfoResponse.mesher)
-            && Objects.equals(this.enableSermantInjection, showComponentInfoResponse.enableSermantInjection)
-            && Objects.equals(this.deployStrategy, showComponentInfoResponse.deployStrategy)
-            && Objects.equals(this.hostAliases, showComponentInfoResponse.hostAliases)
-            && Objects.equals(this.dnsPolicy, showComponentInfoResponse.dnsPolicy)
-            && Objects.equals(this.dnsConfig, showComponentInfoResponse.dnsConfig)
-            && Objects.equals(this.securityContext, showComponentInfoResponse.securityContext)
-            && Objects.equals(this.workloadKind, showComponentInfoResponse.workloadKind)
-            && Objects.equals(this.jvmOpts, showComponentInfoResponse.jvmOpts)
-            && Objects.equals(this.tomcatOpts, showComponentInfoResponse.tomcatOpts)
-            && Objects.equals(this.logs, showComponentInfoResponse.logs)
-            && Objects.equals(this.customMetric, showComponentInfoResponse.customMetric)
-            && Objects.equals(this.affinity, showComponentInfoResponse.affinity)
-            && Objects.equals(this.antiAffinity, showComponentInfoResponse.antiAffinity)
-            && Objects.equals(this.livenessProbe, showComponentInfoResponse.livenessProbe)
-            && Objects.equals(this.readinessProbe, showComponentInfoResponse.readinessProbe)
-            && Objects.equals(this.referResources, showComponentInfoResponse.referResources)
-            && Objects.equals(this.status, showComponentInfoResponse.status);
+        ShowComponentInfoResponse that = (ShowComponentInfoResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.runtimeStack, that.runtimeStack)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.build, that.build)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.limitCpu, that.limitCpu)
+            && Objects.equals(this.limitMemory, that.limitMemory) && Objects.equals(this.requestCpu, that.requestCpu)
+            && Objects.equals(this.requestMemory, that.requestMemory) && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.envs, that.envs)
+            && Objects.equals(this.storages, that.storages) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.postStart, that.postStart) && Objects.equals(this.preStop, that.preStop)
+            && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.mesher, that.mesher)
+            && Objects.equals(this.deployStrategy, that.deployStrategy) && Objects.equals(this.jvmOpts, that.jvmOpts)
+            && Objects.equals(this.tomcatOpts, that.tomcatOpts) && Objects.equals(this.logs, that.logs)
+            && Objects.equals(this.customMetric, that.customMetric) && Objects.equals(this.affinity, that.affinity)
+            && Objects.equals(this.antiAffinity, that.antiAffinity)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.referResources, that.referResources) && Objects.equals(this.status, that.status);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name,
-            workloadName,
             description,
             labels,
-            podLabels,
             runtimeStack,
             source,
             build,
@@ -1407,13 +986,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
             preStop,
             timezone,
             mesher,
-            enableSermantInjection,
             deployStrategy,
-            hostAliases,
-            dnsPolicy,
-            dnsConfig,
-            securityContext,
-            workloadKind,
             jvmOpts,
             tomcatOpts,
             logs,
@@ -1431,10 +1004,8 @@ public class ShowComponentInfoResponse extends SdkResponse {
         StringBuilder sb = new StringBuilder();
         sb.append("class ShowComponentInfoResponse {\n");
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    workloadName: ").append(toIndentedString(workloadName)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
         sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
-        sb.append("    podLabels: ").append(toIndentedString(podLabels)).append("\n");
         sb.append("    runtimeStack: ").append(toIndentedString(runtimeStack)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    build: ").append(toIndentedString(build)).append("\n");
@@ -1453,13 +1024,7 @@ public class ShowComponentInfoResponse extends SdkResponse {
         sb.append("    preStop: ").append(toIndentedString(preStop)).append("\n");
         sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
         sb.append("    mesher: ").append(toIndentedString(mesher)).append("\n");
-        sb.append("    enableSermantInjection: ").append(toIndentedString(enableSermantInjection)).append("\n");
         sb.append("    deployStrategy: ").append(toIndentedString(deployStrategy)).append("\n");
-        sb.append("    hostAliases: ").append(toIndentedString(hostAliases)).append("\n");
-        sb.append("    dnsPolicy: ").append(toIndentedString(dnsPolicy)).append("\n");
-        sb.append("    dnsConfig: ").append(toIndentedString(dnsConfig)).append("\n");
-        sb.append("    securityContext: ").append(toIndentedString(securityContext)).append("\n");
-        sb.append("    workloadKind: ").append(toIndentedString(workloadKind)).append("\n");
         sb.append("    jvmOpts: ").append(toIndentedString(jvmOpts)).append("\n");
         sb.append("    tomcatOpts: ").append(toIndentedString(tomcatOpts)).append("\n");
         sb.append("    logs: ").append(toIndentedString(logs)).append("\n");

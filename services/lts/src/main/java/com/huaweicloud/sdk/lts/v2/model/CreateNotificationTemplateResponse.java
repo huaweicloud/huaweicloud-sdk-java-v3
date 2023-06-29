@@ -84,22 +84,15 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LocaleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocaleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocaleEnum(value));
         }
 
         public static LocaleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocaleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -261,20 +254,17 @@ public class CreateNotificationTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNotificationTemplateResponse createNotificationTemplateResponse = (CreateNotificationTemplateResponse) o;
-        return Objects.equals(this.name, createNotificationTemplateResponse.name)
-            && Objects.equals(this.type, createNotificationTemplateResponse.type)
-            && Objects.equals(this.desc, createNotificationTemplateResponse.desc)
-            && Objects.equals(this.source, createNotificationTemplateResponse.source)
-            && Objects.equals(this.locale, createNotificationTemplateResponse.locale)
-            && Objects.equals(this.templates, createNotificationTemplateResponse.templates);
+        CreateNotificationTemplateResponse that = (CreateNotificationTemplateResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.locale, that.locale) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

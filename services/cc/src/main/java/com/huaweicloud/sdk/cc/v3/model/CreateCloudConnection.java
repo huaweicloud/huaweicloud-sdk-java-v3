@@ -77,17 +77,16 @@ public class CreateCloudConnection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudConnection createCloudConnection = (CreateCloudConnection) o;
-        return Objects.equals(this.name, createCloudConnection.name)
-            && Objects.equals(this.description, createCloudConnection.description)
-            && Objects.equals(this.enterpriseProjectId, createCloudConnection.enterpriseProjectId);
+        CreateCloudConnection that = (CreateCloudConnection) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

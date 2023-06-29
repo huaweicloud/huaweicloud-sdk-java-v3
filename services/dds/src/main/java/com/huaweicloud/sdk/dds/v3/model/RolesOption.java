@@ -55,16 +55,15 @@ public class RolesOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RolesOption rolesOption = (RolesOption) o;
-        return Objects.equals(this.roleDbName, rolesOption.roleDbName)
-            && Objects.equals(this.roleName, rolesOption.roleName);
+        RolesOption that = (RolesOption) obj;
+        return Objects.equals(this.roleDbName, that.roleDbName) && Objects.equals(this.roleName, that.roleName);
     }
 
     @Override

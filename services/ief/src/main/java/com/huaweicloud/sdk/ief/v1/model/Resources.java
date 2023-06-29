@@ -74,15 +74,15 @@ public class Resources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resources resources = (Resources) o;
-        return Objects.equals(this.limits, resources.limits) && Objects.equals(this.requests, resources.requests);
+        Resources that = (Resources) obj;
+        return Objects.equals(this.limits, that.limits) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

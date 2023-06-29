@@ -119,22 +119,15 @@ public class NatGatewayUpdateSnatRuleResponseBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -403,28 +396,22 @@ public class NatGatewayUpdateSnatRuleResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NatGatewayUpdateSnatRuleResponseBody natGatewayUpdateSnatRuleResponseBody =
-            (NatGatewayUpdateSnatRuleResponseBody) o;
-        return Objects.equals(this.id, natGatewayUpdateSnatRuleResponseBody.id)
-            && Objects.equals(this.tenantId, natGatewayUpdateSnatRuleResponseBody.tenantId)
-            && Objects.equals(this.natGatewayId, natGatewayUpdateSnatRuleResponseBody.natGatewayId)
-            && Objects.equals(this.sourceType, natGatewayUpdateSnatRuleResponseBody.sourceType)
-            && Objects.equals(this.cidr, natGatewayUpdateSnatRuleResponseBody.cidr)
-            && Objects.equals(this.floatingIpId, natGatewayUpdateSnatRuleResponseBody.floatingIpId)
-            && Objects.equals(this.description, natGatewayUpdateSnatRuleResponseBody.description)
-            && Objects.equals(this.status, natGatewayUpdateSnatRuleResponseBody.status)
-            && Objects.equals(this.createdAt, natGatewayUpdateSnatRuleResponseBody.createdAt)
-            && Objects.equals(this.networkId, natGatewayUpdateSnatRuleResponseBody.networkId)
-            && Objects.equals(this.adminStateUp, natGatewayUpdateSnatRuleResponseBody.adminStateUp)
-            && Objects.equals(this.floatingIpAddress, natGatewayUpdateSnatRuleResponseBody.floatingIpAddress)
-            && Objects.equals(this.publicIpAddress, natGatewayUpdateSnatRuleResponseBody.publicIpAddress);
+        NatGatewayUpdateSnatRuleResponseBody that = (NatGatewayUpdateSnatRuleResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.networkId, that.networkId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.publicIpAddress, that.publicIpAddress);
     }
 
     @Override

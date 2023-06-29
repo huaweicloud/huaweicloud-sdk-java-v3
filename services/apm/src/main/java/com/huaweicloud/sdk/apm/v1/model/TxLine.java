@@ -165,18 +165,18 @@ public class TxLine {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TxLine txLine = (TxLine) o;
-        return Objects.equals(this.txFromNode, txLine.txFromNode) && Objects.equals(this.txToNode, txLine.txToNode)
-            && Objects.equals(this.invokeCount, txLine.invokeCount) && Objects.equals(this.rt, txLine.rt)
-            && Objects.equals(this.errorCount, txLine.errorCount) && Objects.equals(this.type, txLine.type)
-            && Objects.equals(this.direction, txLine.direction);
+        TxLine that = (TxLine) obj;
+        return Objects.equals(this.txFromNode, that.txFromNode) && Objects.equals(this.txToNode, that.txToNode)
+            && Objects.equals(this.invokeCount, that.invokeCount) && Objects.equals(this.rt, that.rt)
+            && Objects.equals(this.errorCount, that.errorCount) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.direction, that.direction);
     }
 
     @Override

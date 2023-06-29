@@ -165,20 +165,20 @@ public class AlarmSubRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmSubRequest alarmSubRequest = (AlarmSubRequest) o;
-        return Objects.equals(this.name, alarmSubRequest.name) && Objects.equals(this.enable, alarmSubRequest.enable)
-            && Objects.equals(this.alarmLevel, alarmSubRequest.alarmLevel)
-            && Objects.equals(this.notificationTarget, alarmSubRequest.notificationTarget)
-            && Objects.equals(this.notificationTargetName, alarmSubRequest.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, alarmSubRequest.notificationTargetType)
-            && Objects.equals(this.timeZone, alarmSubRequest.timeZone);
+        AlarmSubRequest that = (AlarmSubRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

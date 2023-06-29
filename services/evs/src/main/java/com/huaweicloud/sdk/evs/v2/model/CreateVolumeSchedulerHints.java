@@ -33,15 +33,15 @@ public class CreateVolumeSchedulerHints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeSchedulerHints createVolumeSchedulerHints = (CreateVolumeSchedulerHints) o;
-        return Objects.equals(this.dedicatedStorageId, createVolumeSchedulerHints.dedicatedStorageId);
+        CreateVolumeSchedulerHints that = (CreateVolumeSchedulerHints) obj;
+        return Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId);
     }
 
     @Override

@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class VideoConfig  {
-
+public class VideoConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="background_id")
-    
+    @JsonProperty(value = "background_id")
 
     private String backgroundId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logo_id")
-    
+    @JsonProperty(value = "logo_id")
 
     private String logoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="show_subtitles")
-    
+    @JsonProperty(value = "show_subtitles")
 
     private Boolean showSubtitles;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution_type")
-    
+    @JsonProperty(value = "resolution_type")
 
     private Integer resolutionType;
 
@@ -45,9 +34,6 @@ public class VideoConfig  {
         this.backgroundId = backgroundId;
         return this;
     }
-
-    
-
 
     /**
      * 背景id
@@ -61,15 +47,10 @@ public class VideoConfig  {
         this.backgroundId = backgroundId;
     }
 
-    
-
     public VideoConfig withLogoId(String logoId) {
         this.logoId = logoId;
         return this;
     }
-
-    
-
 
     /**
      * 图标id
@@ -83,15 +64,10 @@ public class VideoConfig  {
         this.logoId = logoId;
     }
 
-    
-
     public VideoConfig withShowSubtitles(Boolean showSubtitles) {
         this.showSubtitles = showSubtitles;
         return this;
     }
-
-    
-
 
     /**
      * 是否显示字幕 默认：false
@@ -105,15 +81,10 @@ public class VideoConfig  {
         this.showSubtitles = showSubtitles;
     }
 
-    
-
     public VideoConfig withResolutionType(Integer resolutionType) {
         this.resolutionType = resolutionType;
         return this;
     }
-
-    
-
 
     /**
      * 画面分辨率： 0: 宽屏landscape（默认） 1: 竖屏portrait
@@ -127,26 +98,25 @@ public class VideoConfig  {
         this.resolutionType = resolutionType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoConfig videoConfig = (VideoConfig) o;
-        return Objects.equals(this.backgroundId, videoConfig.backgroundId) &&
-            Objects.equals(this.logoId, videoConfig.logoId) &&
-            Objects.equals(this.showSubtitles, videoConfig.showSubtitles) &&
-            Objects.equals(this.resolutionType, videoConfig.resolutionType);
+        VideoConfig that = (VideoConfig) obj;
+        return Objects.equals(this.backgroundId, that.backgroundId) && Objects.equals(this.logoId, that.logoId)
+            && Objects.equals(this.showSubtitles, that.showSubtitles)
+            && Objects.equals(this.resolutionType, that.resolutionType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backgroundId, logoId, showSubtitles, resolutionType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +128,7 @@ public class VideoConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +139,5 @@ public class VideoConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

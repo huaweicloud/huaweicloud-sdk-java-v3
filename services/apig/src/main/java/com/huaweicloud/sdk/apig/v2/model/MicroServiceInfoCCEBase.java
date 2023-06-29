@@ -76,22 +76,15 @@ public class MicroServiceInfoCCEBase {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkloadTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WorkloadTypeEnum(value));
         }
 
         public static WorkloadTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,20 +224,17 @@ public class MicroServiceInfoCCEBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCCEBase microServiceInfoCCEBase = (MicroServiceInfoCCEBase) o;
-        return Objects.equals(this.clusterId, microServiceInfoCCEBase.clusterId)
-            && Objects.equals(this.namespace, microServiceInfoCCEBase.namespace)
-            && Objects.equals(this.workloadType, microServiceInfoCCEBase.workloadType)
-            && Objects.equals(this.appName, microServiceInfoCCEBase.appName)
-            && Objects.equals(this.labelKey, microServiceInfoCCEBase.labelKey)
-            && Objects.equals(this.labelValue, microServiceInfoCCEBase.labelValue);
+        MicroServiceInfoCCEBase that = (MicroServiceInfoCCEBase) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.workloadType, that.workloadType) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.labelKey, that.labelKey) && Objects.equals(this.labelValue, that.labelValue);
     }
 
     @Override

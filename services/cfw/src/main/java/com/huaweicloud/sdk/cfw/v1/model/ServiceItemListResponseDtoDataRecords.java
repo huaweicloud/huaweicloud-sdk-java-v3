@@ -143,21 +143,17 @@ public class ServiceItemListResponseDtoDataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceItemListResponseDtoDataRecords serviceItemListResponseDtoDataRecords =
-            (ServiceItemListResponseDtoDataRecords) o;
-        return Objects.equals(this.itemId, serviceItemListResponseDtoDataRecords.itemId)
-            && Objects.equals(this.protocol, serviceItemListResponseDtoDataRecords.protocol)
-            && Objects.equals(this.sourcePort, serviceItemListResponseDtoDataRecords.sourcePort)
-            && Objects.equals(this.destPort, serviceItemListResponseDtoDataRecords.destPort)
-            && Objects.equals(this.name, serviceItemListResponseDtoDataRecords.name)
-            && Objects.equals(this.description, serviceItemListResponseDtoDataRecords.description);
+        ServiceItemListResponseDtoDataRecords that = (ServiceItemListResponseDtoDataRecords) obj;
+        return Objects.equals(this.itemId, that.itemId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -84,16 +84,16 @@ public class ListCaseCcEmailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseCcEmailsResponse listCaseCcEmailsResponse = (ListCaseCcEmailsResponse) o;
-        return Objects.equals(this.ccEmailInfo, listCaseCcEmailsResponse.ccEmailInfo)
-            && Objects.equals(this.mcEmailInfos, listCaseCcEmailsResponse.mcEmailInfos);
+        ListCaseCcEmailsResponse that = (ListCaseCcEmailsResponse) obj;
+        return Objects.equals(this.ccEmailInfo, that.ccEmailInfo)
+            && Objects.equals(this.mcEmailInfos, that.mcEmailInfos);
     }
 
     @Override

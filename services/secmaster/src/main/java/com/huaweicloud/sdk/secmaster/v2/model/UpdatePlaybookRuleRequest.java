@@ -109,18 +109,16 @@ public class UpdatePlaybookRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePlaybookRuleRequest updatePlaybookRuleRequest = (UpdatePlaybookRuleRequest) o;
-        return Objects.equals(this.workspaceId, updatePlaybookRuleRequest.workspaceId)
-            && Objects.equals(this.versionId, updatePlaybookRuleRequest.versionId)
-            && Objects.equals(this.ruleId, updatePlaybookRuleRequest.ruleId)
-            && Objects.equals(this.body, updatePlaybookRuleRequest.body);
+        UpdatePlaybookRuleRequest that = (UpdatePlaybookRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

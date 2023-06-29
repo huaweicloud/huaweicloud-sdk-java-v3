@@ -99,18 +99,16 @@ public class ListRuleErrorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRuleErrorsRequest listRuleErrorsRequest = (ListRuleErrorsRequest) o;
-        return Objects.equals(this.iefInstanceId, listRuleErrorsRequest.iefInstanceId)
-            && Objects.equals(this.ruleId, listRuleErrorsRequest.ruleId)
-            && Objects.equals(this.limit, listRuleErrorsRequest.limit)
-            && Objects.equals(this.offset, listRuleErrorsRequest.offset);
+        ListRuleErrorsRequest that = (ListRuleErrorsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

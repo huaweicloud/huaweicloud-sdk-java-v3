@@ -67,16 +67,15 @@ public class SaveMonitorItemConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SaveMonitorItemConfigRequest saveMonitorItemConfigRequest = (SaveMonitorItemConfigRequest) o;
-        return Objects.equals(this.xBusinessId, saveMonitorItemConfigRequest.xBusinessId)
-            && Objects.equals(this.body, saveMonitorItemConfigRequest.body);
+        SaveMonitorItemConfigRequest that = (SaveMonitorItemConfigRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

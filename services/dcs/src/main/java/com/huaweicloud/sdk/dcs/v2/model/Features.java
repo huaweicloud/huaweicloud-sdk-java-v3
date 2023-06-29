@@ -77,17 +77,17 @@ public class Features {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Features features = (Features) o;
-        return Objects.equals(this.supportAcl, features.supportAcl)
-            && Objects.equals(this.supportTransparentClientIp, features.supportTransparentClientIp)
-            && Objects.equals(this.supportSsl, features.supportSsl);
+        Features that = (Features) obj;
+        return Objects.equals(this.supportAcl, that.supportAcl)
+            && Objects.equals(this.supportTransparentClientIp, that.supportTransparentClientIp)
+            && Objects.equals(this.supportSsl, that.supportSsl);
     }
 
     @Override

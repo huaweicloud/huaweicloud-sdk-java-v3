@@ -127,17 +127,17 @@ public class CacheConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CacheConfig cacheConfig = (CacheConfig) o;
-        return Objects.equals(this.ignoreUrlParameter, cacheConfig.ignoreUrlParameter)
-            && Objects.equals(this.followOrigin, cacheConfig.followOrigin)
-            && Objects.equals(this.compress, cacheConfig.compress) && Objects.equals(this.rules, cacheConfig.rules);
+        CacheConfig that = (CacheConfig) obj;
+        return Objects.equals(this.ignoreUrlParameter, that.ignoreUrlParameter)
+            && Objects.equals(this.followOrigin, that.followOrigin) && Objects.equals(this.compress, that.compress)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

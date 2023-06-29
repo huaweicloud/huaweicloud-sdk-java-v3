@@ -198,20 +198,19 @@ public class CreateOptmJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOptmJobReq createOptmJobReq = (CreateOptmJobReq) o;
-        return Objects.equals(this.basicInfo, createOptmJobReq.basicInfo)
-            && Objects.equals(this.smiles, createOptmJobReq.smiles)
-            && Objects.equals(this.bindingSite, createOptmJobReq.bindingSite)
-            && Objects.equals(this.weakConstraints, createOptmJobReq.weakConstraints)
-            && Objects.equals(this.strongConstraints, createOptmJobReq.strongConstraints)
-            && Objects.equals(this.numTrials, createOptmJobReq.numTrials);
+        CreateOptmJobReq that = (CreateOptmJobReq) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.bindingSite, that.bindingSite)
+            && Objects.equals(this.weakConstraints, that.weakConstraints)
+            && Objects.equals(this.strongConstraints, that.strongConstraints)
+            && Objects.equals(this.numTrials, that.numTrials);
     }
 
     @Override

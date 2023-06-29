@@ -65,16 +65,15 @@ public class UpdateScalingGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScalingGroupRequest updateScalingGroupRequest = (UpdateScalingGroupRequest) o;
-        return Objects.equals(this.scalingGroupId, updateScalingGroupRequest.scalingGroupId)
-            && Objects.equals(this.body, updateScalingGroupRequest.body);
+        UpdateScalingGroupRequest that = (UpdateScalingGroupRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

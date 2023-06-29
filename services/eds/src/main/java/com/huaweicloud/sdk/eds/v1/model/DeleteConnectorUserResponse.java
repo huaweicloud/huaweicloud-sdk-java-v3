@@ -78,17 +78,16 @@ public class DeleteConnectorUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConnectorUserResponse deleteConnectorUserResponse = (DeleteConnectorUserResponse) o;
-        return Objects.equals(this.userName, deleteConnectorUserResponse.userName)
-            && Objects.equals(this.resultCode, deleteConnectorUserResponse.resultCode)
-            && Objects.equals(this.resultDescription, deleteConnectorUserResponse.resultDescription);
+        DeleteConnectorUserResponse that = (DeleteConnectorUserResponse) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.resultCode, that.resultCode)
+            && Objects.equals(this.resultDescription, that.resultDescription);
     }
 
     @Override

@@ -118,18 +118,17 @@ public class ModifyApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyApplicationRequestBody modifyApplicationRequestBody = (ModifyApplicationRequestBody) o;
-        return Objects.equals(this.id, modifyApplicationRequestBody.id)
-            && Objects.equals(this.description, modifyApplicationRequestBody.description)
-            && Objects.equals(this.descriptionEn, modifyApplicationRequestBody.descriptionEn)
-            && Objects.equals(this.appUserList, modifyApplicationRequestBody.appUserList);
+        ModifyApplicationRequestBody that = (ModifyApplicationRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.descriptionEn, that.descriptionEn)
+            && Objects.equals(this.appUserList, that.appUserList);
     }
 
     @Override

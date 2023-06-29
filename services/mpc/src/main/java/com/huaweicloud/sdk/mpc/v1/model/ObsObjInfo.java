@@ -99,16 +99,16 @@ public class ObsObjInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsObjInfo obsObjInfo = (ObsObjInfo) o;
-        return Objects.equals(this.bucket, obsObjInfo.bucket) && Objects.equals(this.location, obsObjInfo.location)
-            && Objects.equals(this._object, obsObjInfo._object) && Objects.equals(this.fileName, obsObjInfo.fileName);
+        ObsObjInfo that = (ObsObjInfo) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.location, that.location)
+            && Objects.equals(this._object, that._object) && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

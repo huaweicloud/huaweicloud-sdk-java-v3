@@ -121,19 +121,17 @@ public class ApprovalMergeRequestApproversItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApprovalMergeRequestApproversItem approvalMergeRequestApproversItem = (ApprovalMergeRequestApproversItem) o;
-        return Objects.equals(this.id, approvalMergeRequestApproversItem.id)
-            && Objects.equals(this.name, approvalMergeRequestApproversItem.name)
-            && Objects.equals(this.nickName, approvalMergeRequestApproversItem.nickName)
-            && Objects.equals(this.state, approvalMergeRequestApproversItem.state)
-            && Objects.equals(this.username, approvalMergeRequestApproversItem.username);
+        ApprovalMergeRequestApproversItem that = (ApprovalMergeRequestApproversItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.username, that.username);
     }
 
     @Override

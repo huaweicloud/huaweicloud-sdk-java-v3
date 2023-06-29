@@ -75,16 +75,15 @@ public class ListCloudPhoneModelsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudPhoneModelsResponse listCloudPhoneModelsResponse = (ListCloudPhoneModelsResponse) o;
-        return Objects.equals(this.requestId, listCloudPhoneModelsResponse.requestId)
-            && Objects.equals(this.phoneModels, listCloudPhoneModelsResponse.phoneModels);
+        ListCloudPhoneModelsResponse that = (ListCloudPhoneModelsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.phoneModels, that.phoneModels);
     }
 
     @Override

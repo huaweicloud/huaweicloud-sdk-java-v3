@@ -35,15 +35,15 @@ public class DownUpTimeForSimCardReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownUpTimeForSimCardReq downUpTimeForSimCardReq = (DownUpTimeForSimCardReq) o;
-        return Objects.equals(this.downUpSwitch, downUpTimeForSimCardReq.downUpSwitch);
+        DownUpTimeForSimCardReq that = (DownUpTimeForSimCardReq) obj;
+        return Objects.equals(this.downUpSwitch, that.downUpSwitch);
     }
 
     @Override

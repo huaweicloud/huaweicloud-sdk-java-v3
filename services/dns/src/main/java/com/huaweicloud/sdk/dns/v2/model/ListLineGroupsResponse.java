@@ -84,16 +84,15 @@ public class ListLineGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLineGroupsResponse listLineGroupsResponse = (ListLineGroupsResponse) o;
-        return Objects.equals(this.linegroups, listLineGroupsResponse.linegroups)
-            && Objects.equals(this.metadata, listLineGroupsResponse.metadata);
+        ListLineGroupsResponse that = (ListLineGroupsResponse) obj;
+        return Objects.equals(this.linegroups, that.linegroups) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

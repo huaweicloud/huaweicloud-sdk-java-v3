@@ -329,26 +329,20 @@ public class ShowStructTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStructTemplateResponse showStructTemplateResponse = (ShowStructTemplateResponse) o;
-        return Objects.equals(this.demoFields, showStructTemplateResponse.demoFields)
-            && Objects.equals(this.tagFields, showStructTemplateResponse.tagFields)
-            && Objects.equals(this.demoLog, showStructTemplateResponse.demoLog)
-            && Objects.equals(this.demoLabel, showStructTemplateResponse.demoLabel)
-            && Objects.equals(this.id, showStructTemplateResponse.id)
-            && Objects.equals(this.logGroupId, showStructTemplateResponse.logGroupId)
-            && Objects.equals(this.rule, showStructTemplateResponse.rule)
-            && Objects.equals(this.clusterInfo, showStructTemplateResponse.clusterInfo)
-            && Objects.equals(this.logStreamId, showStructTemplateResponse.logStreamId)
-            && Objects.equals(this.projectId, showStructTemplateResponse.projectId)
-            && Objects.equals(this.templateName, showStructTemplateResponse.templateName)
-            && Objects.equals(this.regex, showStructTemplateResponse.regex);
+        ShowStructTemplateResponse that = (ShowStructTemplateResponse) obj;
+        return Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.tagFields, that.tagFields)
+            && Objects.equals(this.demoLog, that.demoLog) && Objects.equals(this.demoLabel, that.demoLabel)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.rule, that.rule) && Objects.equals(this.clusterInfo, that.clusterInfo)
+            && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.regex, that.regex);
     }
 
     @Override

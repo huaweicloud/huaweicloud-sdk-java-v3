@@ -80,22 +80,15 @@ public class ListServicePermissionsDetailsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class ListServicePermissionsDetailsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,21 +291,18 @@ public class ListServicePermissionsDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServicePermissionsDetailsRequest listServicePermissionsDetailsRequest =
-            (ListServicePermissionsDetailsRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, listServicePermissionsDetailsRequest.vpcEndpointServiceId)
-            && Objects.equals(this.permission, listServicePermissionsDetailsRequest.permission)
-            && Objects.equals(this.limit, listServicePermissionsDetailsRequest.limit)
-            && Objects.equals(this.offset, listServicePermissionsDetailsRequest.offset)
-            && Objects.equals(this.sortKey, listServicePermissionsDetailsRequest.sortKey)
-            && Objects.equals(this.sortDir, listServicePermissionsDetailsRequest.sortDir);
+        ListServicePermissionsDetailsRequest that = (ListServicePermissionsDetailsRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

@@ -165,21 +165,18 @@ public class BankcardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BankcardResult bankcardResult = (BankcardResult) o;
-        return Objects.equals(this.bankName, bankcardResult.bankName)
-            && Objects.equals(this.cardNumber, bankcardResult.cardNumber)
-            && Objects.equals(this.issueDate, bankcardResult.issueDate)
-            && Objects.equals(this.expiryDate, bankcardResult.expiryDate)
-            && Objects.equals(this.type, bankcardResult.type)
-            && Objects.equals(this.confidence, bankcardResult.confidence)
-            && Objects.equals(this.textLocation, bankcardResult.textLocation);
+        BankcardResult that = (BankcardResult) obj;
+        return Objects.equals(this.bankName, that.bankName) && Objects.equals(this.cardNumber, that.cardNumber)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListDDosStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDDosStatusResponse listDDosStatusResponse = (ListDDosStatusResponse) o;
-        return Objects.equals(this.total, listDDosStatusResponse.total)
-            && Objects.equals(this.ddosStatus, listDDosStatusResponse.ddosStatus);
+        ListDDosStatusResponse that = (ListDDosStatusResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.ddosStatus, that.ddosStatus);
     }
 
     @Override

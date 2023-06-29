@@ -90,16 +90,15 @@ public class AttrValueRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttrValueRules attrValueRules = (AttrValueRules) o;
-        return Objects.equals(this.attrValuesA, attrValueRules.attrValuesA)
-            && Objects.equals(this.attrValuesB, attrValueRules.attrValuesB);
+        AttrValueRules that = (AttrValueRules) obj;
+        return Objects.equals(this.attrValuesA, that.attrValuesA) && Objects.equals(this.attrValuesB, that.attrValuesB);
     }
 
     @Override

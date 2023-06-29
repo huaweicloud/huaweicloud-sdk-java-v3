@@ -43,15 +43,15 @@ public class CreateGenerationTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGenerationTaskRequest createGenerationTaskRequest = (CreateGenerationTaskRequest) o;
-        return Objects.equals(this.body, createGenerationTaskRequest.body);
+        CreateGenerationTaskRequest that = (CreateGenerationTaskRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

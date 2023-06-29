@@ -73,22 +73,15 @@ public class RespDedicatedHost {
             if (value == null) {
                 return null;
             }
-            AutoPlacementEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AutoPlacementEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AutoPlacementEnum(value));
         }
 
         public static AutoPlacementEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AutoPlacementEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class RespDedicatedHost {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -534,29 +520,25 @@ public class RespDedicatedHost {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespDedicatedHost respDedicatedHost = (RespDedicatedHost) o;
-        return Objects.equals(this.dedicatedHostId, respDedicatedHost.dedicatedHostId)
-            && Objects.equals(this.name, respDedicatedHost.name)
-            && Objects.equals(this.autoPlacement, respDedicatedHost.autoPlacement)
-            && Objects.equals(this.availabilityZone, respDedicatedHost.availabilityZone)
-            && Objects.equals(this.projectId, respDedicatedHost.projectId)
-            && Objects.equals(this.hostProperties, respDedicatedHost.hostProperties)
-            && Objects.equals(this.state, respDedicatedHost.state)
-            && Objects.equals(this.availableVcpus, respDedicatedHost.availableVcpus)
-            && Objects.equals(this.availableMemory, respDedicatedHost.availableMemory)
-            && Objects.equals(this.allocatedAt, respDedicatedHost.allocatedAt)
-            && Objects.equals(this.releasedAt, respDedicatedHost.releasedAt)
-            && Objects.equals(this.instanceTotal, respDedicatedHost.instanceTotal)
-            && Objects.equals(this.instanceUuids, respDedicatedHost.instanceUuids)
-            && Objects.equals(this.tags, respDedicatedHost.tags)
-            && Objects.equals(this.sysTags, respDedicatedHost.sysTags);
+        RespDedicatedHost that = (RespDedicatedHost) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.autoPlacement, that.autoPlacement)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.hostProperties, that.hostProperties) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.availableVcpus, that.availableVcpus)
+            && Objects.equals(this.availableMemory, that.availableMemory)
+            && Objects.equals(this.allocatedAt, that.allocatedAt) && Objects.equals(this.releasedAt, that.releasedAt)
+            && Objects.equals(this.instanceTotal, that.instanceTotal)
+            && Objects.equals(this.instanceUuids, that.instanceUuids) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowObjectUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowObjectUserRequest showObjectUserRequest = (ShowObjectUserRequest) o;
-        return Objects.equals(this._object, showObjectUserRequest._object);
+        ShowObjectUserRequest that = (ShowObjectUserRequest) obj;
+        return Objects.equals(this._object, that._object);
     }
 
     @Override

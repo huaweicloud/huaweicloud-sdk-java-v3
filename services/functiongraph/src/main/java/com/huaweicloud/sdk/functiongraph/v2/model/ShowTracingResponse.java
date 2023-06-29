@@ -56,16 +56,15 @@ public class ShowTracingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTracingResponse showTracingResponse = (ShowTracingResponse) o;
-        return Objects.equals(this.tracingAk, showTracingResponse.tracingAk)
-            && Objects.equals(this.tracingSk, showTracingResponse.tracingSk);
+        ShowTracingResponse that = (ShowTracingResponse) obj;
+        return Objects.equals(this.tracingAk, that.tracingAk) && Objects.equals(this.tracingSk, that.tracingSk);
     }
 
     @Override

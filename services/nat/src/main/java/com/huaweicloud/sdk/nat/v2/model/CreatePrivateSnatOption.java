@@ -140,19 +140,17 @@ public class CreatePrivateSnatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateSnatOption createPrivateSnatOption = (CreatePrivateSnatOption) o;
-        return Objects.equals(this.gatewayId, createPrivateSnatOption.gatewayId)
-            && Objects.equals(this.cidr, createPrivateSnatOption.cidr)
-            && Objects.equals(this.virsubnetId, createPrivateSnatOption.virsubnetId)
-            && Objects.equals(this.description, createPrivateSnatOption.description)
-            && Objects.equals(this.transitIpIds, createPrivateSnatOption.transitIpIds);
+        CreatePrivateSnatOption that = (CreatePrivateSnatOption) obj;
+        return Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.transitIpIds, that.transitIpIds);
     }
 
     @Override

@@ -188,26 +188,21 @@ public class OrganizationPolicyAssignmentDetailedStatusResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrganizationPolicyAssignmentDetailedStatusResponse organizationPolicyAssignmentDetailedStatusResponse =
-            (OrganizationPolicyAssignmentDetailedStatusResponse) o;
-        return Objects.equals(this.domainId, organizationPolicyAssignmentDetailedStatusResponse.domainId)
-            && Objects.equals(this.policyAssignmentId,
-                organizationPolicyAssignmentDetailedStatusResponse.policyAssignmentId)
-            && Objects.equals(this.policyAssignmentName,
-                organizationPolicyAssignmentDetailedStatusResponse.policyAssignmentName)
-            && Objects.equals(this.memberAccountPolicyAssignmentStatus,
-                organizationPolicyAssignmentDetailedStatusResponse.memberAccountPolicyAssignmentStatus)
-            && Objects.equals(this.errorCode, organizationPolicyAssignmentDetailedStatusResponse.errorCode)
-            && Objects.equals(this.errorMessage, organizationPolicyAssignmentDetailedStatusResponse.errorMessage)
-            && Objects.equals(this.createdAt, organizationPolicyAssignmentDetailedStatusResponse.createdAt)
-            && Objects.equals(this.updatedAt, organizationPolicyAssignmentDetailedStatusResponse.updatedAt);
+        OrganizationPolicyAssignmentDetailedStatusResponse that =
+            (OrganizationPolicyAssignmentDetailedStatusResponse) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.memberAccountPolicyAssignmentStatus, that.memberAccountPolicyAssignmentStatus)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

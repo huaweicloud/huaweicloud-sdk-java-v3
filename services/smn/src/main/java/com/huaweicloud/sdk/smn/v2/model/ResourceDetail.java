@@ -99,18 +99,17 @@ public class ResourceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceDetail resourceDetail = (ResourceDetail) o;
-        return Objects.equals(this.enterpriseProjectId, resourceDetail.enterpriseProjectId)
-            && Objects.equals(this.detailId, resourceDetail.detailId)
-            && Objects.equals(this.topicUrn, resourceDetail.topicUrn)
-            && Objects.equals(this.displayName, resourceDetail.displayName);
+        ResourceDetail that = (ResourceDetail) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.detailId, that.detailId) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.displayName, that.displayName);
     }
 
     @Override

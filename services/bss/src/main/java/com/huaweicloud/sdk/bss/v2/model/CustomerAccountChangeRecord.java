@@ -231,24 +231,23 @@ public class CustomerAccountChangeRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerAccountChangeRecord customerAccountChangeRecord = (CustomerAccountChangeRecord) o;
-        return Objects.equals(this.accountChangeId, customerAccountChangeRecord.accountChangeId)
-            && Objects.equals(this.tradeDetailType, customerAccountChangeRecord.tradeDetailType)
-            && Objects.equals(this.tradeTime, customerAccountChangeRecord.tradeTime)
-            && Objects.equals(this.tradeId, customerAccountChangeRecord.tradeId)
-            && Objects.equals(this.changeAmount, customerAccountChangeRecord.changeAmount)
-            && Objects.equals(this.balanceAfterChange, customerAccountChangeRecord.balanceAfterChange)
-            && Objects.equals(this.revenueExpenseType, customerAccountChangeRecord.revenueExpenseType)
-            && Objects.equals(this.billCycle, customerAccountChangeRecord.billCycle)
-            && Objects.equals(this.paymentChannelId, customerAccountChangeRecord.paymentChannelId)
-            && Objects.equals(this.paymentChannelNo, customerAccountChangeRecord.paymentChannelNo);
+        CustomerAccountChangeRecord that = (CustomerAccountChangeRecord) obj;
+        return Objects.equals(this.accountChangeId, that.accountChangeId)
+            && Objects.equals(this.tradeDetailType, that.tradeDetailType)
+            && Objects.equals(this.tradeTime, that.tradeTime) && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.changeAmount, that.changeAmount)
+            && Objects.equals(this.balanceAfterChange, that.balanceAfterChange)
+            && Objects.equals(this.revenueExpenseType, that.revenueExpenseType)
+            && Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.paymentChannelId, that.paymentChannelId)
+            && Objects.equals(this.paymentChannelNo, that.paymentChannelNo);
     }
 
     @Override

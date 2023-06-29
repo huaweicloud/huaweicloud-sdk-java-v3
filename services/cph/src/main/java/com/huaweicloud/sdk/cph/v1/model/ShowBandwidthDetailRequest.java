@@ -59,16 +59,15 @@ public class ShowBandwidthDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBandwidthDetailRequest showBandwidthDetailRequest = (ShowBandwidthDetailRequest) o;
-        return Objects.equals(this.offset, showBandwidthDetailRequest.offset)
-            && Objects.equals(this.limit, showBandwidthDetailRequest.limit);
+        ShowBandwidthDetailRequest that = (ShowBandwidthDetailRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

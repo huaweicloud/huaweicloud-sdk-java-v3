@@ -99,16 +99,16 @@ public class PlaybookInfoRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookInfoRef playbookInfoRef = (PlaybookInfoRef) o;
-        return Objects.equals(this.id, playbookInfoRef.id) && Objects.equals(this.versionId, playbookInfoRef.versionId)
-            && Objects.equals(this.name, playbookInfoRef.name) && Objects.equals(this.version, playbookInfoRef.version);
+        PlaybookInfoRef that = (PlaybookInfoRef) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version);
     }
 
     @Override

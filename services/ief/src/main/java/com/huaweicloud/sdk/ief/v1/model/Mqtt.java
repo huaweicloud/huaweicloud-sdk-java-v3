@@ -77,16 +77,16 @@ public class Mqtt {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Mqtt mqtt = (Mqtt) o;
-        return Objects.equals(this.bindAddr, mqtt.bindAddr) && Objects.equals(this.port, mqtt.port)
-            && Objects.equals(this.type, mqtt.type);
+        Mqtt that = (Mqtt) obj;
+        return Objects.equals(this.bindAddr, that.bindAddr) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

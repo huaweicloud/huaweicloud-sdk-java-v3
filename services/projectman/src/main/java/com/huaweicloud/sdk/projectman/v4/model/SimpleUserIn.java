@@ -77,16 +77,16 @@ public class SimpleUserIn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleUserIn simpleUserIn = (SimpleUserIn) o;
-        return Objects.equals(this.id, simpleUserIn.id) && Objects.equals(this.identifier, simpleUserIn.identifier)
-            && Objects.equals(this.name, simpleUserIn.name);
+        SimpleUserIn that = (SimpleUserIn) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

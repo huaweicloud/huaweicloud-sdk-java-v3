@@ -184,21 +184,18 @@ public class CreatePublicZoneReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePublicZoneReq createPublicZoneReq = (CreatePublicZoneReq) o;
-        return Objects.equals(this.name, createPublicZoneReq.name)
-            && Objects.equals(this.description, createPublicZoneReq.description)
-            && Objects.equals(this.zoneType, createPublicZoneReq.zoneType)
-            && Objects.equals(this.email, createPublicZoneReq.email)
-            && Objects.equals(this.ttl, createPublicZoneReq.ttl)
-            && Objects.equals(this.enterpriseProjectId, createPublicZoneReq.enterpriseProjectId)
-            && Objects.equals(this.tags, createPublicZoneReq.tags);
+        CreatePublicZoneReq that = (CreatePublicZoneReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBackupRequest updateBackupRequest = (UpdateBackupRequest) o;
-        return Objects.equals(this.backupId, updateBackupRequest.backupId)
-            && Objects.equals(this.body, updateBackupRequest.body);
+        UpdateBackupRequest that = (UpdateBackupRequest) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

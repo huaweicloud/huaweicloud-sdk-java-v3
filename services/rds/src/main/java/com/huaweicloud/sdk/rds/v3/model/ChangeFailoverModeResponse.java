@@ -78,17 +78,17 @@ public class ChangeFailoverModeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeFailoverModeResponse changeFailoverModeResponse = (ChangeFailoverModeResponse) o;
-        return Objects.equals(this.instanceId, changeFailoverModeResponse.instanceId)
-            && Objects.equals(this.replicationMode, changeFailoverModeResponse.replicationMode)
-            && Objects.equals(this.workflowId, changeFailoverModeResponse.workflowId);
+        ChangeFailoverModeResponse that = (ChangeFailoverModeResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.replicationMode, that.replicationMode)
+            && Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

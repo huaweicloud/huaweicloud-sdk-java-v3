@@ -85,22 +85,15 @@ public class ProjectVpcCreate {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class ProjectVpcCreate {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -440,22 +426,20 @@ public class ProjectVpcCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectVpcCreate projectVpcCreate = (ProjectVpcCreate) o;
-        return Objects.equals(this.name, projectVpcCreate.name) && Objects.equals(this.port, projectVpcCreate.port)
-            && Objects.equals(this.balanceStrategy, projectVpcCreate.balanceStrategy)
-            && Objects.equals(this.memberType, projectVpcCreate.memberType)
-            && Objects.equals(this.dictCode, projectVpcCreate.dictCode)
-            && Objects.equals(this.memberGroups, projectVpcCreate.memberGroups)
-            && Objects.equals(this.members, projectVpcCreate.members)
-            && Objects.equals(this.vpcHealthConfig, projectVpcCreate.vpcHealthConfig)
-            && Objects.equals(this.instanceIds, projectVpcCreate.instanceIds);
+        ProjectVpcCreate that = (ProjectVpcCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.dictCode, that.dictCode)
+            && Objects.equals(this.memberGroups, that.memberGroups) && Objects.equals(this.members, that.members)
+            && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig)
+            && Objects.equals(this.instanceIds, that.instanceIds);
     }
 
     @Override

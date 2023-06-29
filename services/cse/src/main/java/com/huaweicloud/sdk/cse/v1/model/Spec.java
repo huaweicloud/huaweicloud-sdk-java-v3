@@ -77,22 +77,15 @@ public class Spec {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecTypeEnum(value));
         }
 
         public static SpecTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -329,19 +322,19 @@ public class Spec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Spec spec = (Spec) o;
-        return Objects.equals(this.id, spec.id) && Objects.equals(this.engineId, spec.engineId)
-            && Objects.equals(this.specType, spec.specType) && Objects.equals(this.cluster, spec.cluster)
-            && Objects.equals(this.clusterId, spec.clusterId) && Objects.equals(this.clusterNodes, spec.clusterNodes)
-            && Objects.equals(this.flavor, spec.flavor) && Objects.equals(this.region, spec.region)
-            && Objects.equals(this.version, spec.version) && Objects.equals(this.extendParam, spec.extendParam);
+        Spec that = (Spec) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.engineId, that.engineId)
+            && Objects.equals(this.specType, that.specType) && Objects.equals(this.cluster, that.cluster)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterNodes, that.clusterNodes)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override

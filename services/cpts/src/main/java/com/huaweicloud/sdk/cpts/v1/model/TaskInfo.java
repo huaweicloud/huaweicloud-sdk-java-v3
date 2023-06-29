@@ -297,22 +297,21 @@ public class TaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfo taskInfo = (TaskInfo) o;
-        return Objects.equals(this.benchConcurrent, taskInfo.benchConcurrent)
-            && Objects.equals(this.caseList, taskInfo.caseList) && Objects.equals(this.createTime, taskInfo.createTime)
-            && Objects.equals(this.description, taskInfo.description) && Objects.equals(this.name, taskInfo.name)
-            && Objects.equals(this.operateMode, taskInfo.operateMode)
-            && Objects.equals(this.projectId, taskInfo.projectId)
-            && Objects.equals(this.relatedTempRunningData, taskInfo.relatedTempRunningData)
-            && Objects.equals(this.runStatus, taskInfo.runStatus)
-            && Objects.equals(this.updateTime, taskInfo.updateTime) && Objects.equals(this.parallel, taskInfo.parallel);
+        TaskInfo that = (TaskInfo) obj;
+        return Objects.equals(this.benchConcurrent, that.benchConcurrent)
+            && Objects.equals(this.caseList, that.caseList) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.operateMode, that.operateMode) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.relatedTempRunningData, that.relatedTempRunningData)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.parallel, that.parallel);
     }
 
     @Override

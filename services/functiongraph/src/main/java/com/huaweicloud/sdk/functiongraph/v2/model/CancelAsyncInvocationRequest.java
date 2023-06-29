@@ -65,16 +65,15 @@ public class CancelAsyncInvocationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelAsyncInvocationRequest cancelAsyncInvocationRequest = (CancelAsyncInvocationRequest) o;
-        return Objects.equals(this.functionUrn, cancelAsyncInvocationRequest.functionUrn)
-            && Objects.equals(this.body, cancelAsyncInvocationRequest.body);
+        CancelAsyncInvocationRequest that = (CancelAsyncInvocationRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

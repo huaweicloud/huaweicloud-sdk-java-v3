@@ -848,46 +848,39 @@ public class SimDeviceVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimDeviceVO simDeviceVO = (SimDeviceVO) o;
-        return Objects.equals(this.simCardId, simDeviceVO.simCardId)
-            && Objects.equals(this.accountId, simDeviceVO.accountId) && Objects.equals(this.cid, simDeviceVO.cid)
-            && Objects.equals(this.simPoolId, simDeviceVO.simPoolId) && Objects.equals(this.imei, simDeviceVO.imei)
-            && Objects.equals(this.simStatus, simDeviceVO.simStatus)
-            && Objects.equals(this.deviceStatus, simDeviceVO.deviceStatus)
-            && Objects.equals(this.deviceModel, simDeviceVO.deviceModel)
-            && Objects.equals(this.actDate, simDeviceVO.actDate)
-            && Objects.equals(this.deviceStatusDate, simDeviceVO.deviceStatusDate)
-            && Objects.equals(this.nodeId, simDeviceVO.nodeId) && Objects.equals(this.iccid, simDeviceVO.iccid)
-            && Objects.equals(this.networkType, simDeviceVO.networkType) && Objects.equals(this.dbm, simDeviceVO.dbm)
-            && Objects.equals(this.signalLevel, simDeviceVO.signalLevel)
-            && Objects.equals(this.simType, simDeviceVO.simType) && Objects.equals(this.tagNames, simDeviceVO.tagNames)
-            && Objects.equals(this.orderId, simDeviceVO.orderId)
-            && Objects.equals(this.expireTime, simDeviceVO.expireTime)
-            && Objects.equals(this.pricePlanName, simDeviceVO.pricePlanName)
-            && Objects.equals(this.simPricePlanId, simDeviceVO.simPricePlanId)
-            && Objects.equals(this.flowLeft, simDeviceVO.flowLeft)
-            && Objects.equals(this.flowUsed, simDeviceVO.flowUsed)
-            && Objects.equals(this.operatorStatus, simDeviceVO.operatorStatus)
-            && Objects.equals(this.msisdn, simDeviceVO.msisdn) && Objects.equals(this.imsi, simDeviceVO.imsi)
-            && Objects.equals(this.customerAttribute1, simDeviceVO.customerAttribute1)
-            && Objects.equals(this.customerAttribute2, simDeviceVO.customerAttribute2)
-            && Objects.equals(this.customerAttribute3, simDeviceVO.customerAttribute3)
-            && Objects.equals(this.customerAttribute4, simDeviceVO.customerAttribute4)
-            && Objects.equals(this.customerAttribute5, simDeviceVO.customerAttribute5)
-            && Objects.equals(this.customerAttribute6, simDeviceVO.customerAttribute6)
-            && Objects.equals(this.realNamed, simDeviceVO.realNamed)
-            && Objects.equals(this.cutNetFlag, simDeviceVO.cutNetFlag)
-            && Objects.equals(this.exceedCutNetFlag, simDeviceVO.exceedCutNetFlag)
-            && Objects.equals(this.exceedCutNetQuota, simDeviceVO.exceedCutNetQuota)
-            && Objects.equals(this.imeiBindRemainTimes, simDeviceVO.imeiBindRemainTimes)
-            && Objects.equals(this.speedValue, simDeviceVO.speedValue);
+        SimDeviceVO that = (SimDeviceVO) obj;
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.cid, that.cid) && Objects.equals(this.simPoolId, that.simPoolId)
+            && Objects.equals(this.imei, that.imei) && Objects.equals(this.simStatus, that.simStatus)
+            && Objects.equals(this.deviceStatus, that.deviceStatus)
+            && Objects.equals(this.deviceModel, that.deviceModel) && Objects.equals(this.actDate, that.actDate)
+            && Objects.equals(this.deviceStatusDate, that.deviceStatusDate) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.iccid, that.iccid) && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.dbm, that.dbm) && Objects.equals(this.signalLevel, that.signalLevel)
+            && Objects.equals(this.simType, that.simType) && Objects.equals(this.tagNames, that.tagNames)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.pricePlanName, that.pricePlanName)
+            && Objects.equals(this.simPricePlanId, that.simPricePlanId) && Objects.equals(this.flowLeft, that.flowLeft)
+            && Objects.equals(this.flowUsed, that.flowUsed) && Objects.equals(this.operatorStatus, that.operatorStatus)
+            && Objects.equals(this.msisdn, that.msisdn) && Objects.equals(this.imsi, that.imsi)
+            && Objects.equals(this.customerAttribute1, that.customerAttribute1)
+            && Objects.equals(this.customerAttribute2, that.customerAttribute2)
+            && Objects.equals(this.customerAttribute3, that.customerAttribute3)
+            && Objects.equals(this.customerAttribute4, that.customerAttribute4)
+            && Objects.equals(this.customerAttribute5, that.customerAttribute5)
+            && Objects.equals(this.customerAttribute6, that.customerAttribute6)
+            && Objects.equals(this.realNamed, that.realNamed) && Objects.equals(this.cutNetFlag, that.cutNetFlag)
+            && Objects.equals(this.exceedCutNetFlag, that.exceedCutNetFlag)
+            && Objects.equals(this.exceedCutNetQuota, that.exceedCutNetQuota)
+            && Objects.equals(this.imeiBindRemainTimes, that.imeiBindRemainTimes)
+            && Objects.equals(this.speedValue, that.speedValue);
     }
 
     @Override

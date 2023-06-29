@@ -121,19 +121,17 @@ public class ListBackgroundTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackgroundTaskRequest listBackgroundTaskRequest = (ListBackgroundTaskRequest) o;
-        return Objects.equals(this.instanceId, listBackgroundTaskRequest.instanceId)
-            && Objects.equals(this.offset, listBackgroundTaskRequest.offset)
-            && Objects.equals(this.limit, listBackgroundTaskRequest.limit)
-            && Objects.equals(this.startTime, listBackgroundTaskRequest.startTime)
-            && Objects.equals(this.endTime, listBackgroundTaskRequest.endTime);
+        ListBackgroundTaskRequest that = (ListBackgroundTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

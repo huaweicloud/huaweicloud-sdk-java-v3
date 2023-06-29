@@ -34,15 +34,15 @@ public class ValidateSqlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateSqlResponse validateSqlResponse = (ValidateSqlResponse) o;
-        return Objects.equals(this.valid, validateSqlResponse.valid);
+        ValidateSqlResponse that = (ValidateSqlResponse) obj;
+        return Objects.equals(this.valid, that.valid);
     }
 
     @Override

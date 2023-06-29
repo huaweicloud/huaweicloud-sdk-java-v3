@@ -89,22 +89,15 @@ public class MaterialComponentInfo {
             if (value == null) {
                 return null;
             }
-            ComponentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ComponentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComponentTypeEnum(value));
         }
 
         public static ComponentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ComponentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,17 +176,17 @@ public class MaterialComponentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MaterialComponentInfo materialComponentInfo = (MaterialComponentInfo) o;
-        return Objects.equals(this.componentName, materialComponentInfo.componentName)
-            && Objects.equals(this.componentType, materialComponentInfo.componentType)
-            && Objects.equals(this.componentDesc, materialComponentInfo.componentDesc);
+        MaterialComponentInfo that = (MaterialComponentInfo) obj;
+        return Objects.equals(this.componentName, that.componentName)
+            && Objects.equals(this.componentType, that.componentType)
+            && Objects.equals(this.componentDesc, that.componentDesc);
     }
 
     @Override

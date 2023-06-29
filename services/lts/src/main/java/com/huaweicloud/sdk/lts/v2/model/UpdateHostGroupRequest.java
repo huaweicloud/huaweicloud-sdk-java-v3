@@ -43,15 +43,15 @@ public class UpdateHostGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostGroupRequest updateHostGroupRequest = (UpdateHostGroupRequest) o;
-        return Objects.equals(this.body, updateHostGroupRequest.body);
+        UpdateHostGroupRequest that = (UpdateHostGroupRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

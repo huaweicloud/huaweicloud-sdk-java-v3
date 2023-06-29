@@ -58,16 +58,15 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.limit, listInstancesRequest.limit);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

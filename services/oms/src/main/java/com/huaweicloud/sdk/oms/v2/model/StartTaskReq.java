@@ -187,20 +187,19 @@ public class StartTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartTaskReq startTaskReq = (StartTaskReq) o;
-        return Objects.equals(this.srcAk, startTaskReq.srcAk) && Objects.equals(this.srcSk, startTaskReq.srcSk)
-            && Objects.equals(this.srcSecurityToken, startTaskReq.srcSecurityToken)
-            && Objects.equals(this.dstAk, startTaskReq.dstAk) && Objects.equals(this.dstSk, startTaskReq.dstSk)
-            && Objects.equals(this.dstSecurityToken, startTaskReq.dstSecurityToken)
-            && Objects.equals(this.sourceCdnAuthenticationKey, startTaskReq.sourceCdnAuthenticationKey)
-            && Objects.equals(this.migrateFailedObject, startTaskReq.migrateFailedObject);
+        StartTaskReq that = (StartTaskReq) obj;
+        return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.srcSecurityToken, that.srcSecurityToken) && Objects.equals(this.dstAk, that.dstAk)
+            && Objects.equals(this.dstSk, that.dstSk) && Objects.equals(this.dstSecurityToken, that.dstSecurityToken)
+            && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey)
+            && Objects.equals(this.migrateFailedObject, that.migrateFailedObject);
     }
 
     @Override

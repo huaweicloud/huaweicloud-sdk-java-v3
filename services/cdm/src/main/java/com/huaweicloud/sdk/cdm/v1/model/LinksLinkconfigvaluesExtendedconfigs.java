@@ -55,17 +55,15 @@ public class LinksLinkconfigvaluesExtendedconfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinksLinkconfigvaluesExtendedconfigs linksLinkconfigvaluesExtendedconfigs =
-            (LinksLinkconfigvaluesExtendedconfigs) o;
-        return Objects.equals(this.name, linksLinkconfigvaluesExtendedconfigs.name)
-            && Objects.equals(this.value, linksLinkconfigvaluesExtendedconfigs.value);
+        LinksLinkconfigvaluesExtendedconfigs that = (LinksLinkconfigvaluesExtendedconfigs) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

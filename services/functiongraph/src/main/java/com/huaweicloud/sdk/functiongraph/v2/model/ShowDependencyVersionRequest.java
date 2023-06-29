@@ -55,16 +55,15 @@ public class ShowDependencyVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDependencyVersionRequest showDependencyVersionRequest = (ShowDependencyVersionRequest) o;
-        return Objects.equals(this.dependId, showDependencyVersionRequest.dependId)
-            && Objects.equals(this.version, showDependencyVersionRequest.version);
+        ShowDependencyVersionRequest that = (ShowDependencyVersionRequest) obj;
+        return Objects.equals(this.dependId, that.dependId) && Objects.equals(this.version, that.version);
     }
 
     @Override

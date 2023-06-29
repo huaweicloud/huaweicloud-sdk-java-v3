@@ -111,18 +111,16 @@ public class EnablePropagationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnablePropagationRequest enablePropagationRequest = (EnablePropagationRequest) o;
-        return Objects.equals(this.xClientToken, enablePropagationRequest.xClientToken)
-            && Objects.equals(this.erId, enablePropagationRequest.erId)
-            && Objects.equals(this.routeTableId, enablePropagationRequest.routeTableId)
-            && Objects.equals(this.body, enablePropagationRequest.body);
+        EnablePropagationRequest that = (EnablePropagationRequest) obj;
+        return Objects.equals(this.xClientToken, that.xClientToken) && Objects.equals(this.erId, that.erId)
+            && Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

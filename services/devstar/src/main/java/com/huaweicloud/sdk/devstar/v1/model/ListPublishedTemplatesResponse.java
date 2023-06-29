@@ -77,16 +77,15 @@ public class ListPublishedTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublishedTemplatesResponse listPublishedTemplatesResponse = (ListPublishedTemplatesResponse) o;
-        return Objects.equals(this.count, listPublishedTemplatesResponse.count)
-            && Objects.equals(this.templates, listPublishedTemplatesResponse.templates);
+        ListPublishedTemplatesResponse that = (ListPublishedTemplatesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

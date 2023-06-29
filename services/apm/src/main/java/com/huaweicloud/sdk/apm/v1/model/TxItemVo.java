@@ -231,21 +231,20 @@ public class TxItemVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TxItemVo txItemVo = (TxItemVo) o;
-        return Objects.equals(this.appName, txItemVo.appName) && Objects.equals(this.envName, txItemVo.envName)
-            && Objects.equals(this.txDisplayName, txItemVo.txDisplayName)
-            && Objects.equals(this.businessId, txItemVo.businessId) && Objects.equals(this.envId, txItemVo.envId)
-            && Objects.equals(this.appId, txItemVo.appId) && Objects.equals(this.txName, txItemVo.txName)
-            && Objects.equals(this.invokeCount, txItemVo.invokeCount)
-            && Objects.equals(this.totalTime, txItemVo.totalTime)
-            && Objects.equals(this.errorCount, txItemVo.errorCount);
+        TxItemVo that = (TxItemVo) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.txDisplayName, that.txDisplayName)
+            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.txName, that.txName)
+            && Objects.equals(this.invokeCount, that.invokeCount) && Objects.equals(this.totalTime, that.totalTime)
+            && Objects.equals(this.errorCount, that.errorCount);
     }
 
     @Override

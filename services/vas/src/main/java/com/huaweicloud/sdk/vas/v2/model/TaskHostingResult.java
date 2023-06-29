@@ -43,15 +43,15 @@ public class TaskHostingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskHostingResult taskHostingResult = (TaskHostingResult) o;
-        return Objects.equals(this.hostingResult, taskHostingResult.hostingResult);
+        TaskHostingResult that = (TaskHostingResult) obj;
+        return Objects.equals(this.hostingResult, that.hostingResult);
     }
 
     @Override

@@ -121,16 +121,16 @@ public class TemplateCddl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateCddl templateCddl = (TemplateCddl) o;
-        return Objects.equals(this.flow, templateCddl.flow) && Objects.equals(this.states, templateCddl.states)
-            && Objects.equals(this.workflow, templateCddl.workflow);
+        TemplateCddl that = (TemplateCddl) obj;
+        return Objects.equals(this.flow, that.flow) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.workflow, that.workflow);
     }
 
     @Override

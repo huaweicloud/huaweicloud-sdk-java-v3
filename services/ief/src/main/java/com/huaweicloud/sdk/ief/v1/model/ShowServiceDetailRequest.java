@@ -55,16 +55,15 @@ public class ShowServiceDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServiceDetailRequest showServiceDetailRequest = (ShowServiceDetailRequest) o;
-        return Objects.equals(this.serviceId, showServiceDetailRequest.serviceId)
-            && Objects.equals(this.iefInstanceId, showServiceDetailRequest.iefInstanceId);
+        ShowServiceDetailRequest that = (ShowServiceDetailRequest) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

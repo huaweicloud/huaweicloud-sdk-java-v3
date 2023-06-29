@@ -60,22 +60,15 @@ public class ListTracesRequest {
             if (value == null) {
                 return null;
             }
-            TraceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TraceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TraceTypeEnum(value));
         }
 
         public static TraceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TraceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -208,22 +201,15 @@ public class ListTracesRequest {
             if (value == null) {
                 return null;
             }
-            TraceRatingEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TraceRatingEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TraceRatingEnum(value));
         }
 
         public static TraceRatingEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TraceRatingEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -490,26 +476,21 @@ public class ListTracesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTracesRequest listTracesRequest = (ListTracesRequest) o;
-        return Objects.equals(this.traceType, listTracesRequest.traceType)
-            && Objects.equals(this.limit, listTracesRequest.limit) && Objects.equals(this.from, listTracesRequest.from)
-            && Objects.equals(this.next, listTracesRequest.next) && Objects.equals(this.to, listTracesRequest.to)
-            && Objects.equals(this.trackerName, listTracesRequest.trackerName)
-            && Objects.equals(this.serviceType, listTracesRequest.serviceType)
-            && Objects.equals(this.user, listTracesRequest.user)
-            && Objects.equals(this.resourceId, listTracesRequest.resourceId)
-            && Objects.equals(this.resourceName, listTracesRequest.resourceName)
-            && Objects.equals(this.resourceType, listTracesRequest.resourceType)
-            && Objects.equals(this.traceId, listTracesRequest.traceId)
-            && Objects.equals(this.traceName, listTracesRequest.traceName)
-            && Objects.equals(this.traceRating, listTracesRequest.traceRating);
+        ListTracesRequest that = (ListTracesRequest) obj;
+        return Objects.equals(this.traceType, that.traceType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.next, that.next)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.trackerName, that.trackerName)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.traceId, that.traceId)
+            && Objects.equals(this.traceName, that.traceName) && Objects.equals(this.traceRating, that.traceRating);
     }
 
     @Override

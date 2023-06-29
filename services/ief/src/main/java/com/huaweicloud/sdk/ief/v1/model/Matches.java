@@ -55,15 +55,15 @@ public class Matches {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Matches matches = (Matches) o;
-        return Objects.equals(this.key, matches.key) && Objects.equals(this.value, matches.value);
+        Matches that = (Matches) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

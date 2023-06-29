@@ -44,16 +44,15 @@ public class CreateCloudServiceCustomPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudServiceCustomPolicyRequest createCloudServiceCustomPolicyRequest =
-            (CreateCloudServiceCustomPolicyRequest) o;
-        return Objects.equals(this.body, createCloudServiceCustomPolicyRequest.body);
+        CreateCloudServiceCustomPolicyRequest that = (CreateCloudServiceCustomPolicyRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class CreateFlinkSqlJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlinkSqlJobResponse createFlinkSqlJobResponse = (CreateFlinkSqlJobResponse) o;
-        return Objects.equals(this.isSuccess, createFlinkSqlJobResponse.isSuccess)
-            && Objects.equals(this.message, createFlinkSqlJobResponse.message)
-            && Objects.equals(this.job, createFlinkSqlJobResponse.job);
+        CreateFlinkSqlJobResponse that = (CreateFlinkSqlJobResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.job, that.job);
     }
 
     @Override

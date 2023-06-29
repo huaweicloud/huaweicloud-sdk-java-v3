@@ -97,17 +97,16 @@ public class ListRepoMembersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRepoMembersResponse listRepoMembersResponse = (ListRepoMembersResponse) o;
-        return Objects.equals(this.error, listRepoMembersResponse.error)
-            && Objects.equals(this.result, listRepoMembersResponse.result)
-            && Objects.equals(this.status, listRepoMembersResponse.status);
+        ListRepoMembersResponse that = (ListRepoMembersResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

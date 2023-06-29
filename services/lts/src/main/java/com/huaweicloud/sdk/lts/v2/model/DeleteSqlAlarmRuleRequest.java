@@ -33,15 +33,15 @@ public class DeleteSqlAlarmRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSqlAlarmRuleRequest deleteSqlAlarmRuleRequest = (DeleteSqlAlarmRuleRequest) o;
-        return Objects.equals(this.sqlAlarmRuleId, deleteSqlAlarmRuleRequest.sqlAlarmRuleId);
+        DeleteSqlAlarmRuleRequest that = (DeleteSqlAlarmRuleRequest) obj;
+        return Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteNamespacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNamespacesRequest deleteNamespacesRequest = (DeleteNamespacesRequest) o;
-        return Objects.equals(this.namespace, deleteNamespacesRequest.namespace);
+        DeleteNamespacesRequest that = (DeleteNamespacesRequest) obj;
+        return Objects.equals(this.namespace, that.namespace);
     }
 
     @Override

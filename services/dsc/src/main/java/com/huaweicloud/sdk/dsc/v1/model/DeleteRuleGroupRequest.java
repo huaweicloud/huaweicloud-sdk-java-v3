@@ -33,15 +33,15 @@ public class DeleteRuleGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRuleGroupRequest deleteRuleGroupRequest = (DeleteRuleGroupRequest) o;
-        return Objects.equals(this.groupId, deleteRuleGroupRequest.groupId);
+        DeleteRuleGroupRequest that = (DeleteRuleGroupRequest) obj;
+        return Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

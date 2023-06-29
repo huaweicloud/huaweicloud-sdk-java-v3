@@ -66,16 +66,15 @@ public class ShowRouteTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRouteTableResponse showRouteTableResponse = (ShowRouteTableResponse) o;
-        return Objects.equals(this.routeTable, showRouteTableResponse.routeTable)
-            && Objects.equals(this.requestId, showRouteTableResponse.requestId);
+        ShowRouteTableResponse that = (ShowRouteTableResponse) obj;
+        return Objects.equals(this.routeTable, that.routeTable) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

@@ -79,22 +79,15 @@ public class BatchBandwidthResp {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -132,8 +125,8 @@ public class BatchBandwidthResp {
     private List<PublicipInfoResp> publicipInfo = null;
 
     /**
-    * 功能说明：带宽类型，标识是否是共享带宽  取值范围：WHOLE，PER  WHOLE表示共享带宽；PER，表示独享带宽
-    */
+     * 功能说明：带宽类型，标识是否是共享带宽  取值范围：WHOLE，PER  WHOLE表示共享带宽；PER，表示独享带宽
+     */
     public static final class ShareTypeEnum {
 
         /**
@@ -176,22 +169,15 @@ public class BatchBandwidthResp {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShareTypeEnum(value));
         }
 
         public static ShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -268,22 +254,15 @@ public class BatchBandwidthResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -514,24 +493,21 @@ public class BatchBandwidthResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchBandwidthResp batchBandwidthResp = (BatchBandwidthResp) o;
-        return Objects.equals(this.bandwidthType, batchBandwidthResp.bandwidthType)
-            && Objects.equals(this.billingInfo, batchBandwidthResp.billingInfo)
-            && Objects.equals(this.chargeMode, batchBandwidthResp.chargeMode)
-            && Objects.equals(this.id, batchBandwidthResp.id) && Objects.equals(this.name, batchBandwidthResp.name)
-            && Objects.equals(this.publicipInfo, batchBandwidthResp.publicipInfo)
-            && Objects.equals(this.shareType, batchBandwidthResp.shareType)
-            && Objects.equals(this.size, batchBandwidthResp.size)
-            && Objects.equals(this.tenantId, batchBandwidthResp.tenantId)
-            && Objects.equals(this.status, batchBandwidthResp.status)
-            && Objects.equals(this.publicBorderGroup, batchBandwidthResp.publicBorderGroup);
+        BatchBandwidthResp that = (BatchBandwidthResp) obj;
+        return Objects.equals(this.bandwidthType, that.bandwidthType)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.publicipInfo, that.publicipInfo) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateVaultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVaultRequest updateVaultRequest = (UpdateVaultRequest) o;
-        return Objects.equals(this.vaultId, updateVaultRequest.vaultId)
-            && Objects.equals(this.body, updateVaultRequest.body);
+        UpdateVaultRequest that = (UpdateVaultRequest) obj;
+        return Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.body, that.body);
     }
 
     @Override

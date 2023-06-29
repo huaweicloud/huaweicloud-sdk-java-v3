@@ -136,22 +136,15 @@ public class ListAccessControlLogsRequest {
             if (value == null) {
                 return null;
             }
-            LogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTypeEnum(value));
         }
 
         public static LogTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -451,30 +444,23 @@ public class ListAccessControlLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessControlLogsRequest listAccessControlLogsRequest = (ListAccessControlLogsRequest) o;
-        return Objects.equals(this.fwInstanceId, listAccessControlLogsRequest.fwInstanceId)
-            && Objects.equals(this.ruleId, listAccessControlLogsRequest.ruleId)
-            && Objects.equals(this.startTime, listAccessControlLogsRequest.startTime)
-            && Objects.equals(this.endTime, listAccessControlLogsRequest.endTime)
-            && Objects.equals(this.srcIp, listAccessControlLogsRequest.srcIp)
-            && Objects.equals(this.srcPort, listAccessControlLogsRequest.srcPort)
-            && Objects.equals(this.dstIp, listAccessControlLogsRequest.dstIp)
-            && Objects.equals(this.dstPort, listAccessControlLogsRequest.dstPort)
-            && Objects.equals(this.protocol, listAccessControlLogsRequest.protocol)
-            && Objects.equals(this.app, listAccessControlLogsRequest.app)
-            && Objects.equals(this.logId, listAccessControlLogsRequest.logId)
-            && Objects.equals(this.nextDate, listAccessControlLogsRequest.nextDate)
-            && Objects.equals(this.offset, listAccessControlLogsRequest.offset)
-            && Objects.equals(this.limit, listAccessControlLogsRequest.limit)
-            && Objects.equals(this.logType, listAccessControlLogsRequest.logType)
-            && Objects.equals(this.enterpriseProjectId, listAccessControlLogsRequest.enterpriseProjectId);
+        ListAccessControlLogsRequest that = (ListAccessControlLogsRequest) obj;
+        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.dstIp, that.dstIp) && Objects.equals(this.dstPort, that.dstPort)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.logId, that.logId) && Objects.equals(this.nextDate, that.nextDate)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.logType, that.logType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

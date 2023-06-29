@@ -184,21 +184,18 @@ public class UpdateResSceneRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResSceneRequestBody updateResSceneRequestBody = (UpdateResSceneRequestBody) o;
-        return Objects.equals(this.category, updateResSceneRequestBody.category)
-            && Objects.equals(this.datasourceId, updateResSceneRequestBody.datasourceId)
-            && Objects.equals(this.dsConfig, updateResSceneRequestBody.dsConfig)
-            && Objects.equals(this.sceneName, updateResSceneRequestBody.sceneName)
-            && Objects.equals(this.specsConfig, updateResSceneRequestBody.specsConfig)
-            && Objects.equals(this.type, updateResSceneRequestBody.type)
-            && Objects.equals(this.serviceType, updateResSceneRequestBody.serviceType);
+        UpdateResSceneRequestBody that = (UpdateResSceneRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.dsConfig, that.dsConfig) && Objects.equals(this.sceneName, that.sceneName)
+            && Objects.equals(this.specsConfig, that.specsConfig) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serviceType, that.serviceType);
     }
 
     @Override

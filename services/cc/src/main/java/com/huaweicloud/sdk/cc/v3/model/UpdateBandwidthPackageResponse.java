@@ -66,16 +66,16 @@ public class UpdateBandwidthPackageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthPackageResponse updateBandwidthPackageResponse = (UpdateBandwidthPackageResponse) o;
-        return Objects.equals(this.bandwidthPackage, updateBandwidthPackageResponse.bandwidthPackage)
-            && Objects.equals(this.requestId, updateBandwidthPackageResponse.requestId);
+        UpdateBandwidthPackageResponse that = (UpdateBandwidthPackageResponse) obj;
+        return Objects.equals(this.bandwidthPackage, that.bandwidthPackage)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

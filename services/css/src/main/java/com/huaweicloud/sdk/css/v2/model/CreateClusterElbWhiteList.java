@@ -55,16 +55,16 @@ public class CreateClusterElbWhiteList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterElbWhiteList createClusterElbWhiteList = (CreateClusterElbWhiteList) o;
-        return Objects.equals(this.enableWhiteList, createClusterElbWhiteList.enableWhiteList)
-            && Objects.equals(this.whiteList, createClusterElbWhiteList.whiteList);
+        CreateClusterElbWhiteList that = (CreateClusterElbWhiteList) obj;
+        return Objects.equals(this.enableWhiteList, that.enableWhiteList)
+            && Objects.equals(this.whiteList, that.whiteList);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class UpdateVirtualGatewayRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVirtualGatewayRequestBody updateVirtualGatewayRequestBody = (UpdateVirtualGatewayRequestBody) o;
-        return Objects.equals(this.virtualGateway, updateVirtualGatewayRequestBody.virtualGateway);
+        UpdateVirtualGatewayRequestBody that = (UpdateVirtualGatewayRequestBody) obj;
+        return Objects.equals(this.virtualGateway, that.virtualGateway);
     }
 
     @Override

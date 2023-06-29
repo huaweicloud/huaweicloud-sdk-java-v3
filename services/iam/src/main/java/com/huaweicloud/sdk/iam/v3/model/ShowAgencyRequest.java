@@ -33,15 +33,15 @@ public class ShowAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAgencyRequest showAgencyRequest = (ShowAgencyRequest) o;
-        return Objects.equals(this.agencyId, showAgencyRequest.agencyId);
+        ShowAgencyRequest that = (ShowAgencyRequest) obj;
+        return Objects.equals(this.agencyId, that.agencyId);
     }
 
     @Override

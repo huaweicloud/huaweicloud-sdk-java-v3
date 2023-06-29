@@ -115,17 +115,17 @@ public class SearchApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchApplicationResponse searchApplicationResponse = (SearchApplicationResponse) o;
-        return Objects.equals(this.appInfoList, searchApplicationResponse.appInfoList)
-            && Objects.equals(this.appTotalCount, searchApplicationResponse.appTotalCount)
-            && Objects.equals(this.appInfoMap, searchApplicationResponse.appInfoMap);
+        SearchApplicationResponse that = (SearchApplicationResponse) obj;
+        return Objects.equals(this.appInfoList, that.appInfoList)
+            && Objects.equals(this.appTotalCount, that.appTotalCount)
+            && Objects.equals(this.appInfoMap, that.appInfoMap);
     }
 
     @Override

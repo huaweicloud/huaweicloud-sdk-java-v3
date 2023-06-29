@@ -43,16 +43,15 @@ public class UpdatePermanentAccessKeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePermanentAccessKeyRequestBody updatePermanentAccessKeyRequestBody =
-            (UpdatePermanentAccessKeyRequestBody) o;
-        return Objects.equals(this.credential, updatePermanentAccessKeyRequestBody.credential);
+        UpdatePermanentAccessKeyRequestBody that = (UpdatePermanentAccessKeyRequestBody) obj;
+        return Objects.equals(this.credential, that.credential);
     }
 
     @Override

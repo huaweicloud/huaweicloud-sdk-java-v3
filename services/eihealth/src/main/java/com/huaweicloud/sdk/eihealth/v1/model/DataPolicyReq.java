@@ -33,15 +33,15 @@ public class DataPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataPolicyReq dataPolicyReq = (DataPolicyReq) o;
-        return Objects.equals(this.deletePolicy, dataPolicyReq.deletePolicy);
+        DataPolicyReq that = (DataPolicyReq) obj;
+        return Objects.equals(this.deletePolicy, that.deletePolicy);
     }
 
     @Override

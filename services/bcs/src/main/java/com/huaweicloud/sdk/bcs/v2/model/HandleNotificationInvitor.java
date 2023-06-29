@@ -99,18 +99,18 @@ public class HandleNotificationInvitor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandleNotificationInvitor handleNotificationInvitor = (HandleNotificationInvitor) o;
-        return Objects.equals(this.invitorBcsId, handleNotificationInvitor.invitorBcsId)
-            && Objects.equals(this.invitorBcsName, handleNotificationInvitor.invitorBcsName)
-            && Objects.equals(this.invitorProjectId, handleNotificationInvitor.invitorProjectId)
-            && Objects.equals(this.invitorUserId, handleNotificationInvitor.invitorUserId);
+        HandleNotificationInvitor that = (HandleNotificationInvitor) obj;
+        return Objects.equals(this.invitorBcsId, that.invitorBcsId)
+            && Objects.equals(this.invitorBcsName, that.invitorBcsName)
+            && Objects.equals(this.invitorProjectId, that.invitorProjectId)
+            && Objects.equals(this.invitorUserId, that.invitorUserId);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class StandardReqDataByNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StandardReqDataByNameAndId standardReqDataByNameAndId = (StandardReqDataByNameAndId) o;
-        return Objects.equals(this.verificationName, standardReqDataByNameAndId.verificationName)
-            && Objects.equals(this.verificationId, standardReqDataByNameAndId.verificationId)
-            && Objects.equals(this.faceImage, standardReqDataByNameAndId.faceImage);
+        StandardReqDataByNameAndId that = (StandardReqDataByNameAndId) obj;
+        return Objects.equals(this.verificationName, that.verificationName)
+            && Objects.equals(this.verificationId, that.verificationId)
+            && Objects.equals(this.faceImage, that.faceImage);
     }
 
     @Override

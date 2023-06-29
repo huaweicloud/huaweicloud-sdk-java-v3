@@ -55,16 +55,15 @@ public class DeleteDomainMappingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainMappingRequest deleteDomainMappingRequest = (DeleteDomainMappingRequest) o;
-        return Objects.equals(this.pullDomain, deleteDomainMappingRequest.pullDomain)
-            && Objects.equals(this.pushDomain, deleteDomainMappingRequest.pushDomain);
+        DeleteDomainMappingRequest that = (DeleteDomainMappingRequest) obj;
+        return Objects.equals(this.pullDomain, that.pullDomain) && Objects.equals(this.pushDomain, that.pushDomain);
     }
 
     @Override

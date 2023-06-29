@@ -241,23 +241,19 @@ public class SingleBackgroundTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SingleBackgroundTask singleBackgroundTask = (SingleBackgroundTask) o;
-        return Objects.equals(this.id, singleBackgroundTask.id) && Objects.equals(this.name, singleBackgroundTask.name)
-            && Objects.equals(this.details, singleBackgroundTask.details)
-            && Objects.equals(this.userName, singleBackgroundTask.userName)
-            && Objects.equals(this.userId, singleBackgroundTask.userId)
-            && Objects.equals(this.params, singleBackgroundTask.params)
-            && Objects.equals(this.status, singleBackgroundTask.status)
-            && Objects.equals(this.createdAt, singleBackgroundTask.createdAt)
-            && Objects.equals(this.updatedAt, singleBackgroundTask.updatedAt)
-            && Objects.equals(this.enableShow, singleBackgroundTask.enableShow);
+        SingleBackgroundTask that = (SingleBackgroundTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.details, that.details) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.enableShow, that.enableShow);
     }
 
     @Override

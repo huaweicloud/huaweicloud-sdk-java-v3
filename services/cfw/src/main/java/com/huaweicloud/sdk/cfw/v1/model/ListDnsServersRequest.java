@@ -99,18 +99,17 @@ public class ListDnsServersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDnsServersRequest listDnsServersRequest = (ListDnsServersRequest) o;
-        return Objects.equals(this.limit, listDnsServersRequest.limit)
-            && Objects.equals(this.offset, listDnsServersRequest.offset)
-            && Objects.equals(this.fwInstanceId, listDnsServersRequest.fwInstanceId)
-            && Objects.equals(this.enterpriseProjectId, listDnsServersRequest.enterpriseProjectId);
+        ListDnsServersRequest that = (ListDnsServersRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

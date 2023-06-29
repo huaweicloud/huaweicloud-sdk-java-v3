@@ -55,16 +55,16 @@ public class User {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        User user = (User) o;
-        return Objects.equals(this.clientCertificateData, user.clientCertificateData)
-            && Objects.equals(this.clientKeyData, user.clientKeyData);
+        User that = (User) obj;
+        return Objects.equals(this.clientCertificateData, that.clientCertificateData)
+            && Objects.equals(this.clientKeyData, that.clientKeyData);
     }
 
     @Override

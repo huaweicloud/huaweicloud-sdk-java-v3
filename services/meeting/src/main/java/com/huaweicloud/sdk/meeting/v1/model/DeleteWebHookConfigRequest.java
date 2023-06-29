@@ -33,15 +33,15 @@ public class DeleteWebHookConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteWebHookConfigRequest deleteWebHookConfigRequest = (DeleteWebHookConfigRequest) o;
-        return Objects.equals(this.id, deleteWebHookConfigRequest.id);
+        DeleteWebHookConfigRequest that = (DeleteWebHookConfigRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

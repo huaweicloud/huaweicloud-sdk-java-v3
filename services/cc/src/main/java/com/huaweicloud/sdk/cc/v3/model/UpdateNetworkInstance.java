@@ -96,17 +96,16 @@ public class UpdateNetworkInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNetworkInstance updateNetworkInstance = (UpdateNetworkInstance) o;
-        return Objects.equals(this.name, updateNetworkInstance.name)
-            && Objects.equals(this.description, updateNetworkInstance.description)
-            && Objects.equals(this.cidrs, updateNetworkInstance.cidrs);
+        UpdateNetworkInstance that = (UpdateNetworkInstance) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cidrs, that.cidrs);
     }
 
     @Override

@@ -137,22 +137,15 @@ public class StatisticsAPI {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CycleEnum(value));
         }
 
         public static CycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -562,34 +555,28 @@ public class StatisticsAPI {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticsAPI statisticsAPI = (StatisticsAPI) o;
-        return Objects.equals(this.maxLatency, statisticsAPI.maxLatency)
-            && Objects.equals(this.avgLatency, statisticsAPI.avgLatency)
-            && Objects.equals(this.reqCount, statisticsAPI.reqCount)
-            && Objects.equals(this.reqCount2xx, statisticsAPI.reqCount2xx)
-            && Objects.equals(this.reqCount4xx, statisticsAPI.reqCount4xx)
-            && Objects.equals(this.reqCount5xx, statisticsAPI.reqCount5xx)
-            && Objects.equals(this.reqCountError, statisticsAPI.reqCountError)
-            && Objects.equals(this.maxInnerLatency, statisticsAPI.maxInnerLatency)
-            && Objects.equals(this.avgInnerLatency, statisticsAPI.avgInnerLatency)
-            && Objects.equals(this.maxBackendLatency, statisticsAPI.maxBackendLatency)
-            && Objects.equals(this.avgBackendLatency, statisticsAPI.avgBackendLatency)
-            && Objects.equals(this.outputThroughput, statisticsAPI.outputThroughput)
-            && Objects.equals(this.inputThroughput, statisticsAPI.inputThroughput)
-            && Objects.equals(this.currentMinute, statisticsAPI.currentMinute)
-            && Objects.equals(this.cycle, statisticsAPI.cycle) && Objects.equals(this.apiId, statisticsAPI.apiId)
-            && Objects.equals(this.groupId, statisticsAPI.groupId)
-            && Objects.equals(this.provider, statisticsAPI.provider)
-            && Objects.equals(this.reqTime, statisticsAPI.reqTime)
-            && Objects.equals(this.registerTime, statisticsAPI.registerTime)
-            && Objects.equals(this.status, statisticsAPI.status);
+        StatisticsAPI that = (StatisticsAPI) obj;
+        return Objects.equals(this.maxLatency, that.maxLatency) && Objects.equals(this.avgLatency, that.avgLatency)
+            && Objects.equals(this.reqCount, that.reqCount) && Objects.equals(this.reqCount2xx, that.reqCount2xx)
+            && Objects.equals(this.reqCount4xx, that.reqCount4xx) && Objects.equals(this.reqCount5xx, that.reqCount5xx)
+            && Objects.equals(this.reqCountError, that.reqCountError)
+            && Objects.equals(this.maxInnerLatency, that.maxInnerLatency)
+            && Objects.equals(this.avgInnerLatency, that.avgInnerLatency)
+            && Objects.equals(this.maxBackendLatency, that.maxBackendLatency)
+            && Objects.equals(this.avgBackendLatency, that.avgBackendLatency)
+            && Objects.equals(this.outputThroughput, that.outputThroughput)
+            && Objects.equals(this.inputThroughput, that.inputThroughput)
+            && Objects.equals(this.currentMinute, that.currentMinute) && Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.reqTime, that.reqTime)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -143,20 +143,18 @@ public class ListBandwidthTimelineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthTimelineRequest listBandwidthTimelineRequest = (ListBandwidthTimelineRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listBandwidthTimelineRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listBandwidthTimelineRequest.from)
-            && Objects.equals(this.to, listBandwidthTimelineRequest.to)
-            && Objects.equals(this.hosts, listBandwidthTimelineRequest.hosts)
-            && Objects.equals(this.instances, listBandwidthTimelineRequest.instances)
-            && Objects.equals(this.groupBy, listBandwidthTimelineRequest.groupBy);
+        ListBandwidthTimelineRequest that = (ListBandwidthTimelineRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.groupBy, that.groupBy);
     }
 
     @Override

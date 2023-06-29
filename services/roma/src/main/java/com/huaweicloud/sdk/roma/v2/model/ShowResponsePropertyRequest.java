@@ -103,18 +103,16 @@ public class ShowResponsePropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResponsePropertyRequest showResponsePropertyRequest = (ShowResponsePropertyRequest) o;
-        return Objects.equals(this.instanceId, showResponsePropertyRequest.instanceId)
-            && Objects.equals(this.serviceId, showResponsePropertyRequest.serviceId)
-            && Objects.equals(this.commandId, showResponsePropertyRequest.commandId)
-            && Objects.equals(this.propertyId, showResponsePropertyRequest.propertyId);
+        ShowResponsePropertyRequest that = (ShowResponsePropertyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.propertyId, that.propertyId);
     }
 
     @Override

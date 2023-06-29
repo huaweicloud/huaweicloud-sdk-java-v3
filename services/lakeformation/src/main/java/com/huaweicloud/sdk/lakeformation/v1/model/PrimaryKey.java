@@ -210,23 +210,21 @@ public class PrimaryKey {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrimaryKey primaryKey = (PrimaryKey) o;
-        return Objects.equals(this.catalogName, primaryKey.catalogName)
-            && Objects.equals(this.columnName, primaryKey.columnName)
-            && Objects.equals(this.databaseName, primaryKey.databaseName)
-            && Objects.equals(this.tableName, primaryKey.tableName)
-            && Objects.equals(this.primaryKeyName, primaryKey.primaryKeyName)
-            && Objects.equals(this.enableConstraint, primaryKey.enableConstraint)
-            && Objects.equals(this.keySequence, primaryKey.keySequence)
-            && Objects.equals(this.relyConstraint, primaryKey.relyConstraint)
-            && Objects.equals(this.validateConstraint, primaryKey.validateConstraint);
+        PrimaryKey that = (PrimaryKey) obj;
+        return Objects.equals(this.catalogName, that.catalogName) && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.primaryKeyName, that.primaryKeyName)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

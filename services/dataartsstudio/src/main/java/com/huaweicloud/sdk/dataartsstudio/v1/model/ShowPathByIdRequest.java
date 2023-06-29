@@ -99,18 +99,16 @@ public class ShowPathByIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPathByIdRequest showPathByIdRequest = (ShowPathByIdRequest) o;
-        return Objects.equals(this.workspace, showPathByIdRequest.workspace)
-            && Objects.equals(this.catalogId, showPathByIdRequest.catalogId)
-            && Objects.equals(this.limit, showPathByIdRequest.limit)
-            && Objects.equals(this.offset, showPathByIdRequest.offset);
+        ShowPathByIdRequest that = (ShowPathByIdRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.catalogId, that.catalogId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

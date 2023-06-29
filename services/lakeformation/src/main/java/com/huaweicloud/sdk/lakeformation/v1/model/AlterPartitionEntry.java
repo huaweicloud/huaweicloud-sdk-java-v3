@@ -83,16 +83,16 @@ public class AlterPartitionEntry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlterPartitionEntry alterPartitionEntry = (AlterPartitionEntry) o;
-        return Objects.equals(this.partition, alterPartitionEntry.partition)
-            && Objects.equals(this.partitionValues, alterPartitionEntry.partitionValues);
+        AlterPartitionEntry that = (AlterPartitionEntry) obj;
+        return Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.partitionValues, that.partitionValues);
     }
 
     @Override

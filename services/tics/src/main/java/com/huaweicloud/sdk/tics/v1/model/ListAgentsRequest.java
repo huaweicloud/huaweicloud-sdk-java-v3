@@ -103,18 +103,16 @@ public class ListAgentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgentsRequest listAgentsRequest = (ListAgentsRequest) o;
-        return Objects.equals(this.limit, listAgentsRequest.limit)
-            && Objects.equals(this.offset, listAgentsRequest.offset)
-            && Objects.equals(this.agentName, listAgentsRequest.agentName)
-            && Objects.equals(this.leagueName, listAgentsRequest.leagueName);
+        ListAgentsRequest that = (ListAgentsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.agentName, that.agentName) && Objects.equals(this.leagueName, that.leagueName);
     }
 
     @Override

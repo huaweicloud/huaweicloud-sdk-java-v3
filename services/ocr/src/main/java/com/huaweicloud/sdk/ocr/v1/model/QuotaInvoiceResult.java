@@ -121,19 +121,17 @@ public class QuotaInvoiceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaInvoiceResult quotaInvoiceResult = (QuotaInvoiceResult) o;
-        return Objects.equals(this.number, quotaInvoiceResult.number)
-            && Objects.equals(this.code, quotaInvoiceResult.code)
-            && Objects.equals(this.location, quotaInvoiceResult.location)
-            && Objects.equals(this.amount, quotaInvoiceResult.amount)
-            && Objects.equals(this.confidence, quotaInvoiceResult.confidence);
+        QuotaInvoiceResult that = (QuotaInvoiceResult) obj;
+        return Objects.equals(this.number, that.number) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

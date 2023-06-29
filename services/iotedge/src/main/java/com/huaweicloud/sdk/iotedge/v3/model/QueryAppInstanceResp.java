@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * QueryAppInstanceResp
  */
-public class QueryAppInstanceResp  {
-
+public class QueryAppInstanceResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_version")
-    
+    @JsonProperty(value = "app_version")
 
     private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_description")
-    
+    @JsonProperty(value = "status_description")
 
     private String statusDescription;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
 
     private Object values;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -81,9 +64,6 @@ public class QueryAppInstanceResp  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例ID
@@ -97,15 +77,10 @@ public class QueryAppInstanceResp  {
         this.id = id;
     }
 
-    
-
     public QueryAppInstanceResp withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群命名空间
@@ -119,15 +94,10 @@ public class QueryAppInstanceResp  {
         this.namespace = namespace;
     }
 
-    
-
     public QueryAppInstanceResp withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例版本
@@ -141,15 +111,10 @@ public class QueryAppInstanceResp  {
         this.version = version;
     }
 
-    
-
     public QueryAppInstanceResp withAppId(String appId) {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -163,15 +128,10 @@ public class QueryAppInstanceResp  {
         this.appId = appId;
     }
 
-    
-
     public QueryAppInstanceResp withAppVersion(String appVersion) {
         this.appVersion = appVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -185,15 +145,10 @@ public class QueryAppInstanceResp  {
         this.appVersion = appVersion;
     }
 
-    
-
     public QueryAppInstanceResp withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例状态
@@ -207,15 +162,10 @@ public class QueryAppInstanceResp  {
         this.status = status;
     }
 
-    
-
     public QueryAppInstanceResp withStatusDescription(String statusDescription) {
         this.statusDescription = statusDescription;
         return this;
     }
-
-    
-
 
     /**
      * 状态描述
@@ -229,15 +179,10 @@ public class QueryAppInstanceResp  {
         this.statusDescription = statusDescription;
     }
 
-    
-
     public QueryAppInstanceResp withValues(Object values) {
         this.values = values;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例chart配置
@@ -251,15 +196,10 @@ public class QueryAppInstanceResp  {
         this.values = values;
     }
 
-    
-
     public QueryAppInstanceResp withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -273,15 +213,10 @@ public class QueryAppInstanceResp  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryAppInstanceResp withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次更新时间
@@ -295,32 +230,29 @@ public class QueryAppInstanceResp  {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAppInstanceResp queryAppInstanceResp = (QueryAppInstanceResp) o;
-        return Objects.equals(this.id, queryAppInstanceResp.id) &&
-            Objects.equals(this.namespace, queryAppInstanceResp.namespace) &&
-            Objects.equals(this.version, queryAppInstanceResp.version) &&
-            Objects.equals(this.appId, queryAppInstanceResp.appId) &&
-            Objects.equals(this.appVersion, queryAppInstanceResp.appVersion) &&
-            Objects.equals(this.status, queryAppInstanceResp.status) &&
-            Objects.equals(this.statusDescription, queryAppInstanceResp.statusDescription) &&
-            Objects.equals(this.values, queryAppInstanceResp.values) &&
-            Objects.equals(this.createTime, queryAppInstanceResp.createTime) &&
-            Objects.equals(this.updateTime, queryAppInstanceResp.updateTime);
+        QueryAppInstanceResp that = (QueryAppInstanceResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusDescription, that.statusDescription)
+            && Objects.equals(this.values, that.values) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, namespace, version, appId, appVersion, status, statusDescription, values, createTime, updateTime);
+        return Objects
+            .hash(id, namespace, version, appId, appVersion, status, statusDescription, values, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -338,6 +270,7 @@ public class QueryAppInstanceResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -348,8 +281,5 @@ public class QueryAppInstanceResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

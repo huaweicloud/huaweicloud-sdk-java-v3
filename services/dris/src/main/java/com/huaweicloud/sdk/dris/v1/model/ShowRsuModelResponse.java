@@ -145,20 +145,19 @@ public class ShowRsuModelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRsuModelResponse showRsuModelResponse = (ShowRsuModelResponse) o;
-        return Objects.equals(this.rsuModelId, showRsuModelResponse.rsuModelId)
-            && Objects.equals(this.name, showRsuModelResponse.name)
-            && Objects.equals(this.manufacturerName, showRsuModelResponse.manufacturerName)
-            && Objects.equals(this.description, showRsuModelResponse.description)
-            && Objects.equals(this.lastModifiedTime, showRsuModelResponse.lastModifiedTime)
-            && Objects.equals(this.createdTime, showRsuModelResponse.createdTime);
+        ShowRsuModelResponse that = (ShowRsuModelResponse) obj;
+        return Objects.equals(this.rsuModelId, that.rsuModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

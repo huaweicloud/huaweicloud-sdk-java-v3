@@ -24,8 +24,8 @@ public class PolicyStatement {
     private List<String> action = null;
 
     /**
-    * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
-    */
+     * 作用。包含两种：允许（Allow）和拒绝（Deny），既有Allow又有Deny的授权语句时，遵循Deny优先的原则。
+     */
     public static final class EffectEnum {
 
         /**
@@ -68,22 +68,15 @@ public class PolicyStatement {
             if (value == null) {
                 return null;
             }
-            EffectEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectEnum(value));
         }
 
         public static EffectEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -216,18 +209,16 @@ public class PolicyStatement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyStatement policyStatement = (PolicyStatement) o;
-        return Objects.equals(this.action, policyStatement.action)
-            && Objects.equals(this.effect, policyStatement.effect)
-            && Objects.equals(this.condition, policyStatement.condition)
-            && Objects.equals(this.resource, policyStatement.resource);
+        PolicyStatement that = (PolicyStatement) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.effect, that.effect)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.resource, that.resource);
     }
 
     @Override

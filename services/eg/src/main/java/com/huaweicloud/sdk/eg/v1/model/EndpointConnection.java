@@ -143,19 +143,18 @@ public class EndpointConnection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointConnection endpointConnection = (EndpointConnection) o;
-        return Objects.equals(this.endpointServiceId, endpointConnection.endpointServiceId)
-            && Objects.equals(this.endpointServiceName, endpointConnection.endpointServiceName)
-            && Objects.equals(this.markerId, endpointConnection.markerId)
-            && Objects.equals(this.id, endpointConnection.id) && Objects.equals(this.ip, endpointConnection.ip)
-            && Objects.equals(this.createdTime, endpointConnection.createdTime);
+        EndpointConnection that = (EndpointConnection) obj;
+        return Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.markerId, that.markerId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

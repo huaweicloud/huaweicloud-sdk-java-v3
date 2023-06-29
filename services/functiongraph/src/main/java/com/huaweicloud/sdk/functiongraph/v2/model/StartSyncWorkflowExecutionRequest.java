@@ -65,16 +65,15 @@ public class StartSyncWorkflowExecutionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartSyncWorkflowExecutionRequest startSyncWorkflowExecutionRequest = (StartSyncWorkflowExecutionRequest) o;
-        return Objects.equals(this.workflowId, startSyncWorkflowExecutionRequest.workflowId)
-            && Objects.equals(this.body, startSyncWorkflowExecutionRequest.body);
+        StartSyncWorkflowExecutionRequest that = (StartSyncWorkflowExecutionRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.body, that.body);
     }
 
     @Override

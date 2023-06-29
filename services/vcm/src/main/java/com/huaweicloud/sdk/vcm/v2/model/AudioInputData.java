@@ -77,16 +77,16 @@ public class AudioInputData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioInputData audioInputData = (AudioInputData) o;
-        return Objects.equals(this.bucket, audioInputData.bucket) && Objects.equals(this.path, audioInputData.path)
-            && Objects.equals(this.url, audioInputData.url);
+        AudioInputData that = (AudioInputData) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

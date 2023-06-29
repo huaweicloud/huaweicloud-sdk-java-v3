@@ -54,22 +54,15 @@ public class SinkFGParameters {
             if (value == null) {
                 return null;
             }
-            InvokeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InvokeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvokeTypeEnum(value));
         }
 
         public static InvokeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InvokeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,16 +146,16 @@ public class SinkFGParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SinkFGParameters sinkFGParameters = (SinkFGParameters) o;
-        return Objects.equals(this.invokeType, sinkFGParameters.invokeType)
-            && Objects.equals(this.urn, sinkFGParameters.urn) && Objects.equals(this.agency, sinkFGParameters.agency);
+        SinkFGParameters that = (SinkFGParameters) obj;
+        return Objects.equals(this.invokeType, that.invokeType) && Objects.equals(this.urn, that.urn)
+            && Objects.equals(this.agency, that.agency);
     }
 
     @Override

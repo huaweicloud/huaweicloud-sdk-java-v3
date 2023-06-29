@@ -77,17 +77,16 @@ public class TlsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TlsConfig tlsConfig = (TlsConfig) o;
-        return Objects.equals(this.certPem, tlsConfig.certPem)
-            && Objects.equals(this.certStartTime, tlsConfig.certStartTime)
-            && Objects.equals(this.certEndTime, tlsConfig.certEndTime);
+        TlsConfig that = (TlsConfig) obj;
+        return Objects.equals(this.certPem, that.certPem) && Objects.equals(this.certStartTime, that.certStartTime)
+            && Objects.equals(this.certEndTime, that.certEndTime);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class ExtensionSearchUserInputParamCustomizeForDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionSearchUserInputParamCustomizeForDetail extensionSearchUserInputParamCustomizeForDetail =
-            (ExtensionSearchUserInputParamCustomizeForDetail) o;
-        return Objects.equals(this.ids, extensionSearchUserInputParamCustomizeForDetail.ids);
+        ExtensionSearchUserInputParamCustomizeForDetail that = (ExtensionSearchUserInputParamCustomizeForDetail) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

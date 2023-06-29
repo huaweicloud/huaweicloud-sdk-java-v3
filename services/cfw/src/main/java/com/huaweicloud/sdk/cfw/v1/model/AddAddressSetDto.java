@@ -75,22 +75,15 @@ public class AddAddressSetDto {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddressTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddressTypeEnum(value));
         }
 
         public static AddressTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AddressTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,16 @@ public class AddAddressSetDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddAddressSetDto addAddressSetDto = (AddAddressSetDto) o;
-        return Objects.equals(this.objectId, addAddressSetDto.objectId)
-            && Objects.equals(this.name, addAddressSetDto.name)
-            && Objects.equals(this.description, addAddressSetDto.description)
-            && Objects.equals(this.addressType, addAddressSetDto.addressType);
+        AddAddressSetDto that = (AddAddressSetDto) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.addressType, that.addressType);
     }
 
     @Override

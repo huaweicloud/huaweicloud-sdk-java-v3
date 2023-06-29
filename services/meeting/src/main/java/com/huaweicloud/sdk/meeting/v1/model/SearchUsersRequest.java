@@ -108,22 +108,15 @@ public class SearchUsersRequest {
             if (value == null) {
                 return null;
             }
-            AdminTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AdminTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdminTypeEnum(value));
         }
 
         public static AdminTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AdminTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -424,28 +417,22 @@ public class SearchUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchUsersRequest searchUsersRequest = (SearchUsersRequest) o;
-        return Objects.equals(this.xRequestId, searchUsersRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchUsersRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchUsersRequest.offset)
-            && Objects.equals(this.limit, searchUsersRequest.limit)
-            && Objects.equals(this.searchKey, searchUsersRequest.searchKey)
-            && Objects.equals(this.sortField, searchUsersRequest.sortField)
-            && Objects.equals(this.isAsc, searchUsersRequest.isAsc)
-            && Objects.equals(this.deptCode, searchUsersRequest.deptCode)
-            && Objects.equals(this.enableSubDept, searchUsersRequest.enableSubDept)
-            && Objects.equals(this.adminType, searchUsersRequest.adminType)
-            && Objects.equals(this.enableRoom, searchUsersRequest.enableRoom)
-            && Objects.equals(this.userType, searchUsersRequest.userType)
-            && Objects.equals(this.status, searchUsersRequest.status)
-            && Objects.equals(this.containsUnActive, searchUsersRequest.containsUnActive);
+        SearchUsersRequest that = (SearchUsersRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.sortField, that.sortField) && Objects.equals(this.isAsc, that.isAsc)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.enableSubDept, that.enableSubDept)
+            && Objects.equals(this.adminType, that.adminType) && Objects.equals(this.enableRoom, that.enableRoom)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.containsUnActive, that.containsUnActive);
     }
 
     @Override

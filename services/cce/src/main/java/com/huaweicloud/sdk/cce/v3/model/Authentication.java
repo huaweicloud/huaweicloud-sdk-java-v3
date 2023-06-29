@@ -65,16 +65,16 @@ public class Authentication {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Authentication authentication = (Authentication) o;
-        return Objects.equals(this.mode, authentication.mode)
-            && Objects.equals(this.authenticatingProxy, authentication.authenticatingProxy);
+        Authentication that = (Authentication) obj;
+        return Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.authenticatingProxy, that.authenticatingProxy);
     }
 
     @Override

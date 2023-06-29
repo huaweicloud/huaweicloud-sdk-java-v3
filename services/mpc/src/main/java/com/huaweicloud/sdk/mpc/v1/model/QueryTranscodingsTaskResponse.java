@@ -98,22 +98,15 @@ public class QueryTranscodingsTaskResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -600,31 +593,24 @@ public class QueryTranscodingsTaskResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryTranscodingsTaskResponse queryTranscodingsTaskResponse = (QueryTranscodingsTaskResponse) o;
-        return Objects.equals(this.taskId, queryTranscodingsTaskResponse.taskId)
-            && Objects.equals(this.status, queryTranscodingsTaskResponse.status)
-            && Objects.equals(this.createTime, queryTranscodingsTaskResponse.createTime)
-            && Objects.equals(this.endTime, queryTranscodingsTaskResponse.endTime)
-            && Objects.equals(this.transTemplateId, queryTranscodingsTaskResponse.transTemplateId)
-            && Objects.equals(this.input, queryTranscodingsTaskResponse.input)
-            && Objects.equals(this.output, queryTranscodingsTaskResponse.output)
-            && Objects.equals(this.outputFileName, queryTranscodingsTaskResponse.outputFileName)
-            && Objects.equals(this.userData, queryTranscodingsTaskResponse.userData)
-            && Objects.equals(this.errorCode, queryTranscodingsTaskResponse.errorCode)
-            && Objects.equals(this.description, queryTranscodingsTaskResponse.description)
-            && Objects.equals(this.tips, queryTranscodingsTaskResponse.tips)
-            && Objects.equals(this.transcodeDetail, queryTranscodingsTaskResponse.transcodeDetail)
-            && Objects.equals(this.thumbnailOutput, queryTranscodingsTaskResponse.thumbnailOutput)
-            && Objects.equals(this.thumbnailOutputname, queryTranscodingsTaskResponse.thumbnailOutputname)
-            && Objects.equals(this.picInfo, queryTranscodingsTaskResponse.picInfo)
-            && Objects.equals(this.avParameters, queryTranscodingsTaskResponse.avParameters);
+        QueryTranscodingsTaskResponse that = (QueryTranscodingsTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.transTemplateId, that.transTemplateId) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.outputFileName, that.outputFileName)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tips, that.tips)
+            && Objects.equals(this.transcodeDetail, that.transcodeDetail)
+            && Objects.equals(this.thumbnailOutput, that.thumbnailOutput)
+            && Objects.equals(this.thumbnailOutputname, that.thumbnailOutputname)
+            && Objects.equals(this.picInfo, that.picInfo) && Objects.equals(this.avParameters, that.avParameters);
     }
 
     @Override

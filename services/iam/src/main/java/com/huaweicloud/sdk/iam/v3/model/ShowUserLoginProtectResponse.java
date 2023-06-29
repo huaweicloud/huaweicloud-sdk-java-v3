@@ -44,15 +44,15 @@ public class ShowUserLoginProtectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserLoginProtectResponse showUserLoginProtectResponse = (ShowUserLoginProtectResponse) o;
-        return Objects.equals(this.loginProtect, showUserLoginProtectResponse.loginProtect);
+        ShowUserLoginProtectResponse that = (ShowUserLoginProtectResponse) obj;
+        return Objects.equals(this.loginProtect, that.loginProtect);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class AppCodeCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppCodeCreate appCodeCreate = (AppCodeCreate) o;
-        return Objects.equals(this.appCode, appCodeCreate.appCode);
+        AppCodeCreate that = (AppCodeCreate) obj;
+        return Objects.equals(this.appCode, that.appCode);
     }
 
     @Override

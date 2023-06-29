@@ -156,19 +156,17 @@ public class ListLoadbalancersByTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoadbalancersByTagsRequestBody listLoadbalancersByTagsRequestBody = (ListLoadbalancersByTagsRequestBody) o;
-        return Objects.equals(this.offset, listLoadbalancersByTagsRequestBody.offset)
-            && Objects.equals(this.limit, listLoadbalancersByTagsRequestBody.limit)
-            && Objects.equals(this.action, listLoadbalancersByTagsRequestBody.action)
-            && Objects.equals(this.matches, listLoadbalancersByTagsRequestBody.matches)
-            && Objects.equals(this.tags, listLoadbalancersByTagsRequestBody.tags);
+        ListLoadbalancersByTagsRequestBody that = (ListLoadbalancersByTagsRequestBody) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.matches, that.matches)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -77,18 +77,17 @@ public class DeleteAddressItemUsingDeleteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAddressItemUsingDeleteRequest deleteAddressItemUsingDeleteRequest =
-            (DeleteAddressItemUsingDeleteRequest) o;
-        return Objects.equals(this.itemId, deleteAddressItemUsingDeleteRequest.itemId)
-            && Objects.equals(this.enterpriseProjectId, deleteAddressItemUsingDeleteRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, deleteAddressItemUsingDeleteRequest.fwInstanceId);
+        DeleteAddressItemUsingDeleteRequest that = (DeleteAddressItemUsingDeleteRequest) obj;
+        return Objects.equals(this.itemId, that.itemId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

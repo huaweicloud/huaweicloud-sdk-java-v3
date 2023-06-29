@@ -168,21 +168,18 @@ public class ListTemplateRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateRulesRequest listTemplateRulesRequest = (ListTemplateRulesRequest) o;
-        return Objects.equals(this.projectId, listTemplateRulesRequest.projectId)
-            && Objects.equals(this.rulesetId, listTemplateRulesRequest.rulesetId)
-            && Objects.equals(this.types, listTemplateRulesRequest.types)
-            && Objects.equals(this.languages, listTemplateRulesRequest.languages)
-            && Objects.equals(this.tags, listTemplateRulesRequest.tags)
-            && Objects.equals(this.offset, listTemplateRulesRequest.offset)
-            && Objects.equals(this.limit, listTemplateRulesRequest.limit);
+        ListTemplateRulesRequest that = (ListTemplateRulesRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.rulesetId, that.rulesetId)
+            && Objects.equals(this.types, that.types) && Objects.equals(this.languages, that.languages)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

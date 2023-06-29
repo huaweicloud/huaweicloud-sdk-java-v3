@@ -103,18 +103,16 @@ public class ListDestinationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDestinationsRequest listDestinationsRequest = (ListDestinationsRequest) o;
-        return Objects.equals(this.instanceId, listDestinationsRequest.instanceId)
-            && Objects.equals(this.ruleId, listDestinationsRequest.ruleId)
-            && Objects.equals(this.limit, listDestinationsRequest.limit)
-            && Objects.equals(this.offset, listDestinationsRequest.offset);
+        ListDestinationsRequest that = (ListDestinationsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

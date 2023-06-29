@@ -54,22 +54,15 @@ public class ListGroupsRequest {
             if (value == null) {
                 return null;
             }
-            UnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UnitEnum(value));
         }
 
         public static UnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -223,19 +216,17 @@ public class ListGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupsRequest listGroupsRequest = (ListGroupsRequest) o;
-        return Objects.equals(this.unit, listGroupsRequest.unit) && Objects.equals(this.type, listGroupsRequest.type)
-            && Objects.equals(this.groupId, listGroupsRequest.groupId)
-            && Objects.equals(this.name, listGroupsRequest.name)
-            && Objects.equals(this.offset, listGroupsRequest.offset)
-            && Objects.equals(this.limit, listGroupsRequest.limit);
+        ListGroupsRequest that = (ListGroupsRequest) obj;
+        return Objects.equals(this.unit, that.unit) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

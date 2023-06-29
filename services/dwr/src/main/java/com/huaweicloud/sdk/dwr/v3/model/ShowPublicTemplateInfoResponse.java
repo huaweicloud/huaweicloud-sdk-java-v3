@@ -134,19 +134,17 @@ public class ShowPublicTemplateInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicTemplateInfoResponse showPublicTemplateInfoResponse = (ShowPublicTemplateInfoResponse) o;
-        return Objects.equals(this.providedActions, showPublicTemplateInfoResponse.providedActions)
-            && Objects.equals(this.xRequestId, showPublicTemplateInfoResponse.xRequestId)
-            && Objects.equals(this.connection, showPublicTemplateInfoResponse.connection)
-            && Objects.equals(this.contentLength, showPublicTemplateInfoResponse.contentLength)
-            && Objects.equals(this.date, showPublicTemplateInfoResponse.date);
+        ShowPublicTemplateInfoResponse that = (ShowPublicTemplateInfoResponse) obj;
+        return Objects.equals(this.providedActions, that.providedActions)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

@@ -285,23 +285,19 @@ public class ListEngineProductsEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEngineProductsEntity listEngineProductsEntity = (ListEngineProductsEntity) o;
-        return Objects.equals(this.type, listEngineProductsEntity.type)
-            && Objects.equals(this.productId, listEngineProductsEntity.productId)
-            && Objects.equals(this.ecsFlavorId, listEngineProductsEntity.ecsFlavorId)
-            && Objects.equals(this.billingCode, listEngineProductsEntity.billingCode)
-            && Objects.equals(this.archTypes, listEngineProductsEntity.archTypes)
-            && Objects.equals(this.chargingMode, listEngineProductsEntity.chargingMode)
-            && Objects.equals(this.ios, listEngineProductsEntity.ios)
-            && Objects.equals(this.supportFeatures, listEngineProductsEntity.supportFeatures)
-            && Objects.equals(this.properties, listEngineProductsEntity.properties);
+        ListEngineProductsEntity that = (ListEngineProductsEntity) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.billingCode, that.billingCode)
+            && Objects.equals(this.archTypes, that.archTypes) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.ios, that.ios) && Objects.equals(this.supportFeatures, that.supportFeatures)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

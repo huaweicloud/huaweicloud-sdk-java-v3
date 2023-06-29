@@ -1,41 +1,31 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.Stack;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListStacksResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stacks")
-    
+    @JsonProperty(value = "stacks")
+
     private List<Stack> stacks = null;
-    
+
     public ListStacksResponse withStacks(List<Stack> stacks) {
         this.stacks = stacks;
         return this;
     }
 
-    
     public ListStacksResponse addStacksItem(Stack stacksItem) {
-        if(this.stacks == null) {
+        if (this.stacks == null) {
             this.stacks = new ArrayList<>();
         }
         this.stacks.add(stacksItem);
@@ -43,7 +33,7 @@ public class ListStacksResponse extends SdkResponse {
     }
 
     public ListStacksResponse withStacks(Consumer<List<Stack>> stacksSetter) {
-        if(this.stacks == null) {
+        if (this.stacks == null) {
             this.stacks = new ArrayList<>();
         }
         stacksSetter.accept(this.stacks);
@@ -62,23 +52,23 @@ public class ListStacksResponse extends SdkResponse {
         this.stacks = stacks;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStacksResponse listStacksResponse = (ListStacksResponse) o;
-        return Objects.equals(this.stacks, listStacksResponse.stacks);
+        ListStacksResponse that = (ListStacksResponse) obj;
+        return Objects.equals(this.stacks, that.stacks);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(stacks);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,6 +77,7 @@ public class ListStacksResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -97,8 +88,5 @@ public class ListStacksResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -83,17 +83,16 @@ public class ListCloudPhoneModelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudPhoneModelsRequest listCloudPhoneModelsRequest = (ListCloudPhoneModelsRequest) o;
-        return Objects.equals(this.status, listCloudPhoneModelsRequest.status)
-            && Objects.equals(this.offset, listCloudPhoneModelsRequest.offset)
-            && Objects.equals(this.limit, listCloudPhoneModelsRequest.limit);
+        ListCloudPhoneModelsRequest that = (ListCloudPhoneModelsRequest) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

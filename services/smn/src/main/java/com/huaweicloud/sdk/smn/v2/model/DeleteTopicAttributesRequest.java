@@ -33,15 +33,15 @@ public class DeleteTopicAttributesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTopicAttributesRequest deleteTopicAttributesRequest = (DeleteTopicAttributesRequest) o;
-        return Objects.equals(this.topicUrn, deleteTopicAttributesRequest.topicUrn);
+        DeleteTopicAttributesRequest that = (DeleteTopicAttributesRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

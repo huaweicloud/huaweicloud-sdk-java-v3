@@ -55,15 +55,15 @@ public class CloneServerBrief {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloneServerBrief cloneServerBrief = (CloneServerBrief) o;
-        return Objects.equals(this.vmId, cloneServerBrief.vmId) && Objects.equals(this.name, cloneServerBrief.name);
+        CloneServerBrief that = (CloneServerBrief) obj;
+        return Objects.equals(this.vmId, that.vmId) && Objects.equals(this.name, that.name);
     }
 
     @Override

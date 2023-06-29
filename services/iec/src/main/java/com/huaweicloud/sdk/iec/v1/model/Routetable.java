@@ -184,19 +184,18 @@ public class Routetable {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Routetable routetable = (Routetable) o;
-        return Objects.equals(this.id, routetable.id) && Objects.equals(this.name, routetable.name)
-            && Objects.equals(this.subnets, routetable.subnets) && Objects.equals(this.vpcId, routetable.vpcId)
-            && Objects.equals(this.domainId, routetable.domainId)
-            && Objects.equals(this.description, routetable.description)
-            && Objects.equals(this._default, routetable._default);
+        Routetable that = (Routetable) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.subnets, that.subnets) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this._default, that._default);
     }
 
     @Override

@@ -99,16 +99,16 @@ public class SubtitleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubtitleInfo subtitleInfo = (SubtitleInfo) o;
-        return Objects.equals(this.url, subtitleInfo.url) && Objects.equals(this.id, subtitleInfo.id)
-            && Objects.equals(this.type, subtitleInfo.type) && Objects.equals(this.language, subtitleInfo.language);
+        SubtitleInfo that = (SubtitleInfo) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.language, that.language);
     }
 
     @Override

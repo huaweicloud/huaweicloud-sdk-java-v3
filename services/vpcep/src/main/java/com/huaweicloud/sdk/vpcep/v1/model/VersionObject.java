@@ -69,22 +69,15 @@ public class VersionObject {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class VersionObject {
             if (value == null) {
                 return null;
             }
-            IdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IdEnum(value));
         }
 
         public static IdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -321,19 +307,17 @@ public class VersionObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionObject versionObject = (VersionObject) o;
-        return Objects.equals(this.status, versionObject.status) && Objects.equals(this.id, versionObject.id)
-            && Objects.equals(this.updated, versionObject.updated)
-            && Objects.equals(this.version, versionObject.version)
-            && Objects.equals(this.minVersion, versionObject.minVersion)
-            && Objects.equals(this.links, versionObject.links);
+        VersionObject that = (VersionObject) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.minVersion, that.minVersion) && Objects.equals(this.links, that.links);
     }
 
     @Override

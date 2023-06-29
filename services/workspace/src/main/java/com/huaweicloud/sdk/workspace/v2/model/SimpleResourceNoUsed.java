@@ -26,7 +26,7 @@ public class SimpleResourceNoUsed {
     }
 
     /**
-     * 资源类别。 general_instances：普通桌面 ram：内存 cores：CPU volumes：磁盘数量 volume_gigabytes：磁盘容量 gpu_instances：GPU桌面 deh：云办公主机 users：用户 policy_groups: 策略组 Cores: CPU(配额工具使用)
+     * 资源类别。 general_instances：普通桌面 Memory：内存 cores：CPU volumes：磁盘数量 volume_gigabytes：磁盘容量 gpu_instances：GPU桌面 deh：云办公主机 users：用户 policy_groups: 策略组 Cores: CPU(配额工具使用)
      * @return type
      */
     public String getType() {
@@ -57,16 +57,15 @@ public class SimpleResourceNoUsed {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleResourceNoUsed simpleResourceNoUsed = (SimpleResourceNoUsed) o;
-        return Objects.equals(this.type, simpleResourceNoUsed.type)
-            && Objects.equals(this.quota, simpleResourceNoUsed.quota);
+        SimpleResourceNoUsed that = (SimpleResourceNoUsed) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ListServerGroupsPageInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServerGroupsPageInfoResult listServerGroupsPageInfoResult = (ListServerGroupsPageInfoResult) o;
-        return Objects.equals(this.nextMarker, listServerGroupsPageInfoResult.nextMarker);
+        ListServerGroupsPageInfoResult that = (ListServerGroupsPageInfoResult) obj;
+        return Objects.equals(this.nextMarker, that.nextMarker);
     }
 
     @Override

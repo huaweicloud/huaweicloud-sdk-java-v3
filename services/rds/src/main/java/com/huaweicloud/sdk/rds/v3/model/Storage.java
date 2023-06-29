@@ -114,16 +114,16 @@ public class Storage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Storage storage = (Storage) o;
-        return Objects.equals(this.name, storage.name) && Objects.equals(this.azStatus, storage.azStatus)
-            && Objects.equals(this.supportComputeGroupType, storage.supportComputeGroupType);
+        Storage that = (Storage) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.supportComputeGroupType, that.supportComputeGroupType);
     }
 
     @Override

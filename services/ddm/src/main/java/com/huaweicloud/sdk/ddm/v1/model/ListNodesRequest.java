@@ -80,17 +80,16 @@ public class ListNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNodesRequest listNodesRequest = (ListNodesRequest) o;
-        return Objects.equals(this.instanceId, listNodesRequest.instanceId)
-            && Objects.equals(this.offset, listNodesRequest.offset)
-            && Objects.equals(this.limit, listNodesRequest.limit);
+        ListNodesRequest that = (ListNodesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

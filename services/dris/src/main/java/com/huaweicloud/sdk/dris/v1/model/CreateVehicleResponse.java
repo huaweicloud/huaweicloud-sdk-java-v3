@@ -387,31 +387,24 @@ public class CreateVehicleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVehicleResponse createVehicleResponse = (CreateVehicleResponse) o;
-        return Objects.equals(this.vehicleId, createVehicleResponse.vehicleId)
-            && Objects.equals(this.plateNo, createVehicleResponse.plateNo)
-            && Objects.equals(this.vin, createVehicleResponse.vin)
-            && Objects.equals(this.obuId, createVehicleResponse.obuId)
-            && Objects.equals(this.imei, createVehicleResponse.imei)
-            && Objects.equals(this.brand, createVehicleResponse.brand)
-            && Objects.equals(this.model, createVehicleResponse.model)
-            && Objects.equals(this.style, createVehicleResponse.style)
-            && Objects.equals(this.fuelType, createVehicleResponse.fuelType)
-            && Objects.equals(this.color, createVehicleResponse.color)
-            && Objects.equals(this.plateColor, createVehicleResponse.plateColor)
-            && Objects.equals(this.accessType, createVehicleResponse.accessType)
-            && Objects.equals(this.description, createVehicleResponse.description)
-            && Objects.equals(this.lastModifiedTime, createVehicleResponse.lastModifiedTime)
-            && Objects.equals(this.createdTime, createVehicleResponse.createdTime)
-            && Objects.equals(this.lastOnlineTime, createVehicleResponse.lastOnlineTime)
-            && Objects.equals(this.status, createVehicleResponse.status);
+        CreateVehicleResponse that = (CreateVehicleResponse) obj;
+        return Objects.equals(this.vehicleId, that.vehicleId) && Objects.equals(this.plateNo, that.plateNo)
+            && Objects.equals(this.vin, that.vin) && Objects.equals(this.obuId, that.obuId)
+            && Objects.equals(this.imei, that.imei) && Objects.equals(this.brand, that.brand)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.fuelType, that.fuelType) && Objects.equals(this.color, that.color)
+            && Objects.equals(this.plateColor, that.plateColor) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

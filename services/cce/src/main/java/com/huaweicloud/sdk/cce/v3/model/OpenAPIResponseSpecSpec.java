@@ -65,16 +65,15 @@ public class OpenAPIResponseSpecSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenAPIResponseSpecSpec openAPIResponseSpecSpec = (OpenAPIResponseSpecSpec) o;
-        return Objects.equals(this.eip, openAPIResponseSpecSpec.eip)
-            && Objects.equals(this.isDynamic, openAPIResponseSpecSpec.isDynamic);
+        OpenAPIResponseSpecSpec that = (OpenAPIResponseSpecSpec) obj;
+        return Objects.equals(this.eip, that.eip) && Objects.equals(this.isDynamic, that.isDynamic);
     }
 
     @Override

@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ExecuteGetVideosListRequest  {
-
+public class ExecuteGetVideosListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
@@ -40,9 +29,6 @@ public class ExecuteGetVideosListRequest  {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 范围：大于等于1 默认：10
@@ -56,15 +42,10 @@ public class ExecuteGetVideosListRequest  {
         this.limit = limit;
     }
 
-    
-
     public ExecuteGetVideosListRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 长度小于63
@@ -78,15 +59,10 @@ public class ExecuteGetVideosListRequest  {
         this.name = name;
     }
 
-    
-
     public ExecuteGetVideosListRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 范围：大于等于0 默认：0
@@ -100,25 +76,24 @@ public class ExecuteGetVideosListRequest  {
         this.offset = offset;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetVideosListRequest executeGetVideosListRequest = (ExecuteGetVideosListRequest) o;
-        return Objects.equals(this.limit, executeGetVideosListRequest.limit) &&
-            Objects.equals(this.name, executeGetVideosListRequest.name) &&
-            Objects.equals(this.offset, executeGetVideosListRequest.offset);
+        ExecuteGetVideosListRequest that = (ExecuteGetVideosListRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(limit, name, offset);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ExecuteGetVideosListRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ExecuteGetVideosListRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

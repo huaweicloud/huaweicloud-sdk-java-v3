@@ -65,16 +65,15 @@ public class RegisterServerMonitorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterServerMonitorRequest registerServerMonitorRequest = (RegisterServerMonitorRequest) o;
-        return Objects.equals(this.serverId, registerServerMonitorRequest.serverId)
-            && Objects.equals(this.body, registerServerMonitorRequest.body);
+        RegisterServerMonitorRequest that = (RegisterServerMonitorRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

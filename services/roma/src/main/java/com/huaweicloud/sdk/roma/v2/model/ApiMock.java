@@ -315,22 +315,15 @@ public class ApiMock {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusCodeEnum(value));
         }
 
         public static StatusCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -406,22 +399,15 @@ public class ApiMock {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -619,19 +605,19 @@ public class ApiMock {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiMock apiMock = (ApiMock) o;
-        return Objects.equals(this.remark, apiMock.remark) && Objects.equals(this.resultContent, apiMock.resultContent)
-            && Objects.equals(this.version, apiMock.version) && Objects.equals(this.authorizerId, apiMock.authorizerId)
-            && Objects.equals(this.statusCode, apiMock.statusCode) && Objects.equals(this.header, apiMock.header)
-            && Objects.equals(this.id, apiMock.id) && Objects.equals(this.registerTime, apiMock.registerTime)
-            && Objects.equals(this.status, apiMock.status) && Objects.equals(this.updateTime, apiMock.updateTime);
+        ApiMock that = (ApiMock) obj;
+        return Objects.equals(this.remark, that.remark) && Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.header, that.header)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -84,16 +84,15 @@ public class DownloadKieResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadKieResponse downloadKieResponse = (DownloadKieResponse) o;
-        return Objects.equals(this.metadata, downloadKieResponse.metadata)
-            && Objects.equals(this.data, downloadKieResponse.data);
+        DownloadKieResponse that = (DownloadKieResponse) obj;
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.data, that.data);
     }
 
     @Override

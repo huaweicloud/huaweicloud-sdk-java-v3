@@ -86,22 +86,15 @@ public class ShowEngineJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,22 +184,15 @@ public class ShowEngineJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -462,25 +448,20 @@ public class ShowEngineJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEngineJobResponse showEngineJobResponse = (ShowEngineJobResponse) o;
-        return Objects.equals(this.id, showEngineJobResponse.id)
-            && Objects.equals(this.engineId, showEngineJobResponse.engineId)
-            && Objects.equals(this.type, showEngineJobResponse.type)
-            && Objects.equals(this.description, showEngineJobResponse.description)
-            && Objects.equals(this.status, showEngineJobResponse.status)
-            && Objects.equals(this.scheduling, showEngineJobResponse.scheduling)
-            && Objects.equals(this.createUser, showEngineJobResponse.createUser)
-            && Objects.equals(this.startTime, showEngineJobResponse.startTime)
-            && Objects.equals(this.endTime, showEngineJobResponse.endTime)
-            && Objects.equals(this.context, showEngineJobResponse.context)
-            && Objects.equals(this.tasks, showEngineJobResponse.tasks);
+        ShowEngineJobResponse that = (ShowEngineJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.engineId, that.engineId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.scheduling, that.scheduling)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.context, that.context)
+            && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

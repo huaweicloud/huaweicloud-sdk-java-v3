@@ -197,18 +197,18 @@ public class Endpoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Endpoint endpoint = (Endpoint) o;
-        return Objects.equals(this.serviceId, endpoint.serviceId) && Objects.equals(this.regionId, endpoint.regionId)
-            && Objects.equals(this.links, endpoint.links) && Objects.equals(this.id, endpoint.id)
-            && Objects.equals(this._interface, endpoint._interface) && Objects.equals(this.region, endpoint.region)
-            && Objects.equals(this.url, endpoint.url) && Objects.equals(this.enabled, endpoint.enabled);
+        Endpoint that = (Endpoint) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.id, that.id)
+            && Objects.equals(this._interface, that._interface) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowDetailsOfAclPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAclPolicyV2Request showDetailsOfAclPolicyV2Request = (ShowDetailsOfAclPolicyV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfAclPolicyV2Request.instanceId)
-            && Objects.equals(this.aclId, showDetailsOfAclPolicyV2Request.aclId);
+        ShowDetailsOfAclPolicyV2Request that = (ShowDetailsOfAclPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.aclId, that.aclId);
     }
 
     @Override

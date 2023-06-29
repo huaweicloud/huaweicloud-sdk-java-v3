@@ -109,16 +109,16 @@ public class Env {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Env env = (Env) o;
-        return Objects.equals(this.name, env.name) && Objects.equals(this.value, env.value)
-            && Objects.equals(this.valueFrom, env.valueFrom) && Objects.equals(this.fieldPath, env.fieldPath);
+        Env that = (Env) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.valueFrom, that.valueFrom) && Objects.equals(this.fieldPath, that.fieldPath);
     }
 
     @Override

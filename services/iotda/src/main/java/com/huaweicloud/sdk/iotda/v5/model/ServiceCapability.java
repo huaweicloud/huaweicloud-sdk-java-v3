@@ -216,21 +216,18 @@ public class ServiceCapability {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceCapability serviceCapability = (ServiceCapability) o;
-        return Objects.equals(this.serviceId, serviceCapability.serviceId)
-            && Objects.equals(this.serviceType, serviceCapability.serviceType)
-            && Objects.equals(this.properties, serviceCapability.properties)
-            && Objects.equals(this.commands, serviceCapability.commands)
-            && Objects.equals(this.events, serviceCapability.events)
-            && Objects.equals(this.description, serviceCapability.description)
-            && Objects.equals(this.option, serviceCapability.option);
+        ServiceCapability that = (ServiceCapability) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.properties, that.properties) && Objects.equals(this.commands, that.commands)
+            && Objects.equals(this.events, that.events) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.option, that.option);
     }
 
     @Override

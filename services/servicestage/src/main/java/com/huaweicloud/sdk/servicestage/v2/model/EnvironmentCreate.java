@@ -222,21 +222,20 @@ public class EnvironmentCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentCreate environmentCreate = (EnvironmentCreate) o;
-        return Objects.equals(this.name, environmentCreate.name) && Objects.equals(this.alias, environmentCreate.alias)
-            && Objects.equals(this.description, environmentCreate.description)
-            && Objects.equals(this.enterpriseProjectId, environmentCreate.enterpriseProjectId)
-            && Objects.equals(this.chargeMode, environmentCreate.chargeMode)
-            && Objects.equals(this.vpcId, environmentCreate.vpcId)
-            && Objects.equals(this.baseResources, environmentCreate.baseResources)
-            && Objects.equals(this.optionalResources, environmentCreate.optionalResources);
+        EnvironmentCreate that = (EnvironmentCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.baseResources, that.baseResources)
+            && Objects.equals(this.optionalResources, that.optionalResources);
     }
 
     @Override

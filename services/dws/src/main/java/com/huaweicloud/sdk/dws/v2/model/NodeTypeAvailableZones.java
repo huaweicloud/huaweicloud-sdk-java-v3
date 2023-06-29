@@ -55,16 +55,15 @@ public class NodeTypeAvailableZones {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTypeAvailableZones nodeTypeAvailableZones = (NodeTypeAvailableZones) o;
-        return Objects.equals(this.code, nodeTypeAvailableZones.code)
-            && Objects.equals(this.status, nodeTypeAvailableZones.status);
+        NodeTypeAvailableZones that = (NodeTypeAvailableZones) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.status, that.status);
     }
 
     @Override

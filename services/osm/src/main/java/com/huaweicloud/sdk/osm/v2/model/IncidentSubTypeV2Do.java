@@ -99,17 +99,17 @@ public class IncidentSubTypeV2Do {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentSubTypeV2Do incidentSubTypeV2Do = (IncidentSubTypeV2Do) o;
-        return Objects.equals(this.incidentSubTypeId, incidentSubTypeV2Do.incidentSubTypeId)
-            && Objects.equals(this.incidentSubTypeName, incidentSubTypeV2Do.incidentSubTypeName)
-            && Objects.equals(this.incidentProductCategoryList, incidentSubTypeV2Do.incidentProductCategoryList);
+        IncidentSubTypeV2Do that = (IncidentSubTypeV2Do) obj;
+        return Objects.equals(this.incidentSubTypeId, that.incidentSubTypeId)
+            && Objects.equals(this.incidentSubTypeName, that.incidentSubTypeName)
+            && Objects.equals(this.incidentProductCategoryList, that.incidentProductCategoryList);
     }
 
     @Override

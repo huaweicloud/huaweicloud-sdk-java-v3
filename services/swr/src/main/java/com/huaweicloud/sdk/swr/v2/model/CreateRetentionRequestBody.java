@@ -74,16 +74,15 @@ public class CreateRetentionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRetentionRequestBody createRetentionRequestBody = (CreateRetentionRequestBody) o;
-        return Objects.equals(this.algorithm, createRetentionRequestBody.algorithm)
-            && Objects.equals(this.rules, createRetentionRequestBody.rules);
+        CreateRetentionRequestBody that = (CreateRetentionRequestBody) obj;
+        return Objects.equals(this.algorithm, that.algorithm) && Objects.equals(this.rules, that.rules);
     }
 
     @Override

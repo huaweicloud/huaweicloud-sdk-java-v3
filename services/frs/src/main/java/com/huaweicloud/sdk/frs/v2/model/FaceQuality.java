@@ -121,17 +121,17 @@ public class FaceQuality {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceQuality faceQuality = (FaceQuality) o;
-        return Objects.equals(this.totalScore, faceQuality.totalScore) && Objects.equals(this.blur, faceQuality.blur)
-            && Objects.equals(this.pose, faceQuality.pose) && Objects.equals(this.occlusion, faceQuality.occlusion)
-            && Objects.equals(this.illumination, faceQuality.illumination);
+        FaceQuality that = (FaceQuality) obj;
+        return Objects.equals(this.totalScore, that.totalScore) && Objects.equals(this.blur, that.blur)
+            && Objects.equals(this.pose, that.pose) && Objects.equals(this.occlusion, that.occlusion)
+            && Objects.equals(this.illumination, that.illumination);
     }
 
     @Override

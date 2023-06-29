@@ -96,17 +96,16 @@ public class ImageDetectionResultAdDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionResultAdDetail imageDetectionResultAdDetail = (ImageDetectionResultAdDetail) o;
-        return Objects.equals(this.confidence, imageDetectionResultAdDetail.confidence)
-            && Objects.equals(this.label, imageDetectionResultAdDetail.label)
-            && Objects.equals(this.hitContexts, imageDetectionResultAdDetail.hitContexts);
+        ImageDetectionResultAdDetail that = (ImageDetectionResultAdDetail) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.hitContexts, that.hitContexts);
     }
 
     @Override

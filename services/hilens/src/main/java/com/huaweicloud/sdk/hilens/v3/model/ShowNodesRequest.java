@@ -231,23 +231,19 @@ public class ShowNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNodesRequest showNodesRequest = (ShowNodesRequest) o;
-        return Objects.equals(this.offset, showNodesRequest.offset)
-            && Objects.equals(this.limit, showNodesRequest.limit) && Objects.equals(this.name, showNodesRequest.name)
-            && Objects.equals(this.workspaceId, showNodesRequest.workspaceId)
-            && Objects.equals(this.appName, showNodesRequest.appName)
-            && Objects.equals(this.tags, showNodesRequest.tags)
-            && Objects.equals(this.provider, showNodesRequest.provider)
-            && Objects.equals(this.clusterId, showNodesRequest.clusterId)
-            && Objects.equals(this.status, showNodesRequest.status)
-            && Objects.equals(this.activeStatus, showNodesRequest.activeStatus);
+        ShowNodesRequest that = (ShowNodesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.activeStatus, that.activeStatus);
     }
 
     @Override

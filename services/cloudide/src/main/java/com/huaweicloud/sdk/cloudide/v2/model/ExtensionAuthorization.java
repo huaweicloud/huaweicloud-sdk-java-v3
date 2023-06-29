@@ -81,22 +81,15 @@ public class ExtensionAuthorization {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,18 +180,17 @@ public class ExtensionAuthorization {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionAuthorization extensionAuthorization = (ExtensionAuthorization) o;
-        return Objects.equals(this.extensionVersion, extensionAuthorization.extensionVersion)
-            && Objects.equals(this.identifier, extensionAuthorization.identifier)
-            && Objects.equals(this.instanceId, extensionAuthorization.instanceId)
-            && Objects.equals(this.status, extensionAuthorization.status);
+        ExtensionAuthorization that = (ExtensionAuthorization) obj;
+        return Objects.equals(this.extensionVersion, that.extensionVersion)
+            && Objects.equals(this.identifier, that.identifier) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

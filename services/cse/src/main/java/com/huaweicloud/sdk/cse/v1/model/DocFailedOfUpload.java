@@ -99,17 +99,16 @@ public class DocFailedOfUpload {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DocFailedOfUpload docFailedOfUpload = (DocFailedOfUpload) o;
-        return Objects.equals(this.key, docFailedOfUpload.key) && Objects.equals(this.labels, docFailedOfUpload.labels)
-            && Objects.equals(this.errorCode, docFailedOfUpload.errorCode)
-            && Objects.equals(this.errorMessage, docFailedOfUpload.errorMessage);
+        DocFailedOfUpload that = (DocFailedOfUpload) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

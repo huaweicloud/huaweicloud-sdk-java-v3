@@ -55,16 +55,15 @@ public class ServiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceRequestBody serviceRequestBody = (ServiceRequestBody) o;
-        return Objects.equals(this.serviceName, serviceRequestBody.serviceName)
-            && Objects.equals(this.serverHost, serviceRequestBody.serverHost);
+        ServiceRequestBody that = (ServiceRequestBody) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serverHost, that.serverHost);
     }
 
     @Override

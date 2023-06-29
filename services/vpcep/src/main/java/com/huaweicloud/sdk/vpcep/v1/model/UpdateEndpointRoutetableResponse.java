@@ -91,16 +91,15 @@ public class UpdateEndpointRoutetableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointRoutetableResponse updateEndpointRoutetableResponse = (UpdateEndpointRoutetableResponse) o;
-        return Objects.equals(this.routetables, updateEndpointRoutetableResponse.routetables)
-            && Objects.equals(this.error, updateEndpointRoutetableResponse.error);
+        UpdateEndpointRoutetableResponse that = (UpdateEndpointRoutetableResponse) obj;
+        return Objects.equals(this.routetables, that.routetables) && Objects.equals(this.error, that.error);
     }
 
     @Override

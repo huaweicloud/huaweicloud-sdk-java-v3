@@ -144,19 +144,17 @@ public class ListAimTemplateReportsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplateReportsRequestBody listAimTemplateReportsRequestBody = (ListAimTemplateReportsRequestBody) o;
-        return Objects.equals(this.tplIds, listAimTemplateReportsRequestBody.tplIds)
-            && Objects.equals(this.beginTime, listAimTemplateReportsRequestBody.beginTime)
-            && Objects.equals(this.endTime, listAimTemplateReportsRequestBody.endTime)
-            && Objects.equals(this.offset, listAimTemplateReportsRequestBody.offset)
-            && Objects.equals(this.limit, listAimTemplateReportsRequestBody.limit);
+        ListAimTemplateReportsRequestBody that = (ListAimTemplateReportsRequestBody) obj;
+        return Objects.equals(this.tplIds, that.tplIds) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -90,16 +90,16 @@ public class TacticsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TacticsConfig tacticsConfig = (TacticsConfig) o;
-        return Objects.equals(this.cronConfigs, tacticsConfig.cronConfigs)
-            && Objects.equals(this.metricConfigs, tacticsConfig.metricConfigs);
+        TacticsConfig that = (TacticsConfig) obj;
+        return Objects.equals(this.cronConfigs, that.cronConfigs)
+            && Objects.equals(this.metricConfigs, that.metricConfigs);
     }
 
     @Override

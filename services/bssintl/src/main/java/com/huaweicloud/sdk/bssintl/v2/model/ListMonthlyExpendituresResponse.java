@@ -317,27 +317,23 @@ public class ListMonthlyExpendituresResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonthlyExpendituresResponse listMonthlyExpendituresResponse = (ListMonthlyExpendituresResponse) o;
-        return Objects.equals(this.errorCode, listMonthlyExpendituresResponse.errorCode)
-            && Objects.equals(this.errorMsg, listMonthlyExpendituresResponse.errorMsg)
-            && Objects.equals(this.currency, listMonthlyExpendituresResponse.currency)
-            && Objects.equals(this.totalCount, listMonthlyExpendituresResponse.totalCount)
-            && Objects.equals(this.totalAmount, listMonthlyExpendituresResponse.totalAmount)
-            && Objects.equals(this.debtAmount, listMonthlyExpendituresResponse.debtAmount)
-            && Objects.equals(this.couponAmount, listMonthlyExpendituresResponse.couponAmount)
-            && Objects.equals(this.cashcouponAmount, listMonthlyExpendituresResponse.cashcouponAmount)
-            && Objects.equals(this.storedcardAmount, listMonthlyExpendituresResponse.storedcardAmount)
-            && Objects.equals(this.debitAmount, listMonthlyExpendituresResponse.debitAmount)
-            && Objects.equals(this.creditAmount, listMonthlyExpendituresResponse.creditAmount)
-            && Objects.equals(this.measureId, listMonthlyExpendituresResponse.measureId)
-            && Objects.equals(this.billSums, listMonthlyExpendituresResponse.billSums);
+        ListMonthlyExpendituresResponse that = (ListMonthlyExpendituresResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.currency, that.currency) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.totalAmount, that.totalAmount) && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.couponAmount, that.couponAmount)
+            && Objects.equals(this.cashcouponAmount, that.cashcouponAmount)
+            && Objects.equals(this.storedcardAmount, that.storedcardAmount)
+            && Objects.equals(this.debitAmount, that.debitAmount)
+            && Objects.equals(this.creditAmount, that.creditAmount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.billSums, that.billSums);
     }
 
     @Override

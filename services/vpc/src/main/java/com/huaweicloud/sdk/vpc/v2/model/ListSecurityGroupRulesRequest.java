@@ -77,17 +77,16 @@ public class ListSecurityGroupRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityGroupRulesRequest listSecurityGroupRulesRequest = (ListSecurityGroupRulesRequest) o;
-        return Objects.equals(this.marker, listSecurityGroupRulesRequest.marker)
-            && Objects.equals(this.limit, listSecurityGroupRulesRequest.limit)
-            && Objects.equals(this.securityGroupId, listSecurityGroupRulesRequest.securityGroupId);
+        ListSecurityGroupRulesRequest that = (ListSecurityGroupRulesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

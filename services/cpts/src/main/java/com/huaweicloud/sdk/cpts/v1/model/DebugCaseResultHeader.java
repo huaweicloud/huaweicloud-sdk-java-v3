@@ -77,17 +77,16 @@ public class DebugCaseResultHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugCaseResultHeader debugCaseResultHeader = (DebugCaseResultHeader) o;
-        return Objects.equals(this.connection, debugCaseResultHeader.connection)
-            && Objects.equals(this.contentType, debugCaseResultHeader.contentType)
-            && Objects.equals(this.host, debugCaseResultHeader.host);
+        DebugCaseResultHeader that = (DebugCaseResultHeader) obj;
+        return Objects.equals(this.connection, that.connection) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.host, that.host);
     }
 
     @Override

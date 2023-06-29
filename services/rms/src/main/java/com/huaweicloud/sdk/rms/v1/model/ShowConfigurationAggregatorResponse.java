@@ -178,23 +178,20 @@ public class ShowConfigurationAggregatorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationAggregatorResponse showConfigurationAggregatorResponse =
-            (ShowConfigurationAggregatorResponse) o;
-        return Objects.equals(this.aggregatorName, showConfigurationAggregatorResponse.aggregatorName)
-            && Objects.equals(this.aggregatorId, showConfigurationAggregatorResponse.aggregatorId)
-            && Objects.equals(this.aggregatorUrn, showConfigurationAggregatorResponse.aggregatorUrn)
-            && Objects.equals(this.aggregatorType, showConfigurationAggregatorResponse.aggregatorType)
-            && Objects.equals(this.accountAggregationSources,
-                showConfigurationAggregatorResponse.accountAggregationSources)
-            && Objects.equals(this.updatedAt, showConfigurationAggregatorResponse.updatedAt)
-            && Objects.equals(this.createdAt, showConfigurationAggregatorResponse.createdAt);
+        ShowConfigurationAggregatorResponse that = (ShowConfigurationAggregatorResponse) obj;
+        return Objects.equals(this.aggregatorName, that.aggregatorName)
+            && Objects.equals(this.aggregatorId, that.aggregatorId)
+            && Objects.equals(this.aggregatorUrn, that.aggregatorUrn)
+            && Objects.equals(this.aggregatorType, that.aggregatorType)
+            && Objects.equals(this.accountAggregationSources, that.accountAggregationSources)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

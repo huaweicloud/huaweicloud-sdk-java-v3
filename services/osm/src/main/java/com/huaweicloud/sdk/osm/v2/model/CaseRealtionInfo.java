@@ -77,17 +77,17 @@ public class CaseRealtionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseRealtionInfo caseRealtionInfo = (CaseRealtionInfo) o;
-        return Objects.equals(this.caseId, caseRealtionInfo.caseId)
-            && Objects.equals(this.simpleDescription, caseRealtionInfo.simpleDescription)
-            && Objects.equals(this.userName, caseRealtionInfo.userName);
+        CaseRealtionInfo that = (CaseRealtionInfo) obj;
+        return Objects.equals(this.caseId, that.caseId)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

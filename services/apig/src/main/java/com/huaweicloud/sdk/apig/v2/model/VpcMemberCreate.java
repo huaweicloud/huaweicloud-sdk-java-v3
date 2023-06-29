@@ -52,15 +52,15 @@ public class VpcMemberCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcMemberCreate vpcMemberCreate = (VpcMemberCreate) o;
-        return Objects.equals(this.members, vpcMemberCreate.members);
+        VpcMemberCreate that = (VpcMemberCreate) obj;
+        return Objects.equals(this.members, that.members);
     }
 
     @Override

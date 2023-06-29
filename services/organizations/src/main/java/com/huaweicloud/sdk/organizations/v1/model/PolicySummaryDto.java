@@ -143,18 +143,17 @@ public class PolicySummaryDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicySummaryDto policySummaryDto = (PolicySummaryDto) o;
-        return Objects.equals(this.isBuiltin, policySummaryDto.isBuiltin)
-            && Objects.equals(this.description, policySummaryDto.description)
-            && Objects.equals(this.id, policySummaryDto.id) && Objects.equals(this.urn, policySummaryDto.urn)
-            && Objects.equals(this.name, policySummaryDto.name) && Objects.equals(this.type, policySummaryDto.type);
+        PolicySummaryDto that = (PolicySummaryDto) obj;
+        return Objects.equals(this.isBuiltin, that.isBuiltin) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type);
     }
 
     @Override

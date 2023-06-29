@@ -99,18 +99,16 @@ public class ShowTenantMetricRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTenantMetricRequest showTenantMetricRequest = (ShowTenantMetricRequest) o;
-        return Objects.equals(this.period, showTenantMetricRequest.period)
-            && Objects.equals(this.startTime, showTenantMetricRequest.startTime)
-            && Objects.equals(this.endTime, showTenantMetricRequest.endTime)
-            && Objects.equals(this.metricType, showTenantMetricRequest.metricType);
+        ShowTenantMetricRequest that = (ShowTenantMetricRequest) obj;
+        return Objects.equals(this.period, that.period) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metricType, that.metricType);
     }
 
     @Override

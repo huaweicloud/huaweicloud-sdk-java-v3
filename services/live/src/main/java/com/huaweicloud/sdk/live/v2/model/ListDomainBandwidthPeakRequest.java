@@ -44,8 +44,8 @@ public class ListDomainBandwidthPeakRequest {
     private List<String> isp = null;
 
     /**
-    * 请求协议
-    */
+     * 请求协议
+     */
     public static final class ProtocolEnum {
 
         /**
@@ -88,22 +88,15 @@ public class ListDomainBandwidthPeakRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,22 +179,15 @@ public class ListDomainBandwidthPeakRequest {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -425,23 +411,19 @@ public class ListDomainBandwidthPeakRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainBandwidthPeakRequest listDomainBandwidthPeakRequest = (ListDomainBandwidthPeakRequest) o;
-        return Objects.equals(this.playDomains, listDomainBandwidthPeakRequest.playDomains)
-            && Objects.equals(this.app, listDomainBandwidthPeakRequest.app)
-            && Objects.equals(this.stream, listDomainBandwidthPeakRequest.stream)
-            && Objects.equals(this.region, listDomainBandwidthPeakRequest.region)
-            && Objects.equals(this.isp, listDomainBandwidthPeakRequest.isp)
-            && Objects.equals(this.protocol, listDomainBandwidthPeakRequest.protocol)
-            && Objects.equals(this.startTime, listDomainBandwidthPeakRequest.startTime)
-            && Objects.equals(this.endTime, listDomainBandwidthPeakRequest.endTime)
-            && Objects.equals(this.serviceType, listDomainBandwidthPeakRequest.serviceType);
+        ListDomainBandwidthPeakRequest that = (ListDomainBandwidthPeakRequest) obj;
+        return Objects.equals(this.playDomains, that.playDomains) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.isp, that.isp) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.serviceType, that.serviceType);
     }
 
     @Override

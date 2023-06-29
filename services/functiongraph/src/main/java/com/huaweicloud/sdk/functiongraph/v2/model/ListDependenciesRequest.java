@@ -165,21 +165,18 @@ public class ListDependenciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDependenciesRequest listDependenciesRequest = (ListDependenciesRequest) o;
-        return Objects.equals(this.marker, listDependenciesRequest.marker)
-            && Objects.equals(this.maxitems, listDependenciesRequest.maxitems)
-            && Objects.equals(this.ispublic, listDependenciesRequest.ispublic)
-            && Objects.equals(this.dependencyType, listDependenciesRequest.dependencyType)
-            && Objects.equals(this.runtime, listDependenciesRequest.runtime)
-            && Objects.equals(this.name, listDependenciesRequest.name)
-            && Objects.equals(this.limit, listDependenciesRequest.limit);
+        ListDependenciesRequest that = (ListDependenciesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.maxitems, that.maxitems)
+            && Objects.equals(this.ispublic, that.ispublic) && Objects.equals(this.dependencyType, that.dependencyType)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

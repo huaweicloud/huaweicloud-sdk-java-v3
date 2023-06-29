@@ -77,17 +77,16 @@ public class ListFilesByQueryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFilesByQueryRequest listFilesByQueryRequest = (ListFilesByQueryRequest) o;
-        return Objects.equals(this.repoId, listFilesByQueryRequest.repoId)
-            && Objects.equals(this.filePath, listFilesByQueryRequest.filePath)
-            && Objects.equals(this.ref, listFilesByQueryRequest.ref);
+        ListFilesByQueryRequest that = (ListFilesByQueryRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.ref, that.ref);
     }
 
     @Override

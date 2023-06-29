@@ -75,16 +75,15 @@ public class ListMemberJobRecordsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMemberJobRecordsResponse listMemberJobRecordsResponse = (ListMemberJobRecordsResponse) o;
-        return Objects.equals(this.records, listMemberJobRecordsResponse.records)
-            && Objects.equals(this.total, listMemberJobRecordsResponse.total);
+        ListMemberJobRecordsResponse that = (ListMemberJobRecordsResponse) obj;
+        return Objects.equals(this.records, that.records) && Objects.equals(this.total, that.total);
     }
 
     @Override

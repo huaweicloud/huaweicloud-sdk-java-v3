@@ -149,20 +149,17 @@ public class ListCommandsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommandsRequest listCommandsRequest = (ListCommandsRequest) o;
-        return Objects.equals(this.instanceId, listCommandsRequest.instanceId)
-            && Objects.equals(this.serviceId, listCommandsRequest.serviceId)
-            && Objects.equals(this.limit, listCommandsRequest.limit)
-            && Objects.equals(this.commandId, listCommandsRequest.commandId)
-            && Objects.equals(this.commandName, listCommandsRequest.commandName)
-            && Objects.equals(this.offset, listCommandsRequest.offset);
+        ListCommandsRequest that = (ListCommandsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.commandName, that.commandName) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

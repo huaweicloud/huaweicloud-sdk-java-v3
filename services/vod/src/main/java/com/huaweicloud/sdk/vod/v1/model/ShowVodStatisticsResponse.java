@@ -97,17 +97,16 @@ public class ShowVodStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVodStatisticsResponse showVodStatisticsResponse = (ShowVodStatisticsResponse) o;
-        return Objects.equals(this.startTime, showVodStatisticsResponse.startTime)
-            && Objects.equals(this.interval, showVodStatisticsResponse.interval)
-            && Objects.equals(this.sampleData, showVodStatisticsResponse.sampleData);
+        ShowVodStatisticsResponse that = (ShowVodStatisticsResponse) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.sampleData, that.sampleData);
     }
 
     @Override

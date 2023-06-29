@@ -139,22 +139,15 @@ public class DomainsWithPort {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceAreaEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceAreaEnum(value));
         }
 
         public static ServiceAreaEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -589,35 +582,30 @@ public class DomainsWithPort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainsWithPort domainsWithPort = (DomainsWithPort) o;
-        return Objects.equals(this.id, domainsWithPort.id)
-            && Objects.equals(this.domainName, domainsWithPort.domainName)
-            && Objects.equals(this.businessType, domainsWithPort.businessType)
-            && Objects.equals(this.userDomainId, domainsWithPort.userDomainId)
-            && Objects.equals(this.domainStatus, domainsWithPort.domainStatus)
-            && Objects.equals(this.cname, domainsWithPort.cname)
-            && Objects.equals(this.sources, domainsWithPort.sources)
-            && Objects.equals(this.domainOriginHost, domainsWithPort.domainOriginHost)
-            && Objects.equals(this.httpsStatus, domainsWithPort.httpsStatus)
-            && Objects.equals(this.createTime, domainsWithPort.createTime)
-            && Objects.equals(this.modifyTime, domainsWithPort.modifyTime)
-            && Objects.equals(this.disabled, domainsWithPort.disabled)
-            && Objects.equals(this.locked, domainsWithPort.locked)
-            && Objects.equals(this.autoRefreshPreheat, domainsWithPort.autoRefreshPreheat)
-            && Objects.equals(this.serviceArea, domainsWithPort.serviceArea)
-            && Objects.equals(this.rangeStatus, domainsWithPort.rangeStatus)
-            && Objects.equals(this.followStatus, domainsWithPort.followStatus)
-            && Objects.equals(this.originStatus, domainsWithPort.originStatus)
-            && Objects.equals(this.bannedReason, domainsWithPort.bannedReason)
-            && Objects.equals(this.lockedReason, domainsWithPort.lockedReason)
-            && Objects.equals(this.enterpriseProjectId, domainsWithPort.enterpriseProjectId);
+        DomainsWithPort that = (DomainsWithPort) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.userDomainId, that.userDomainId)
+            && Objects.equals(this.domainStatus, that.domainStatus) && Objects.equals(this.cname, that.cname)
+            && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.domainOriginHost, that.domainOriginHost)
+            && Objects.equals(this.httpsStatus, that.httpsStatus) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.modifyTime, that.modifyTime) && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.autoRefreshPreheat, that.autoRefreshPreheat)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.rangeStatus, that.rangeStatus)
+            && Objects.equals(this.followStatus, that.followStatus)
+            && Objects.equals(this.originStatus, that.originStatus)
+            && Objects.equals(this.bannedReason, that.bannedReason)
+            && Objects.equals(this.lockedReason, that.lockedReason)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

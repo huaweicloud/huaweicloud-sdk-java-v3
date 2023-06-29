@@ -43,15 +43,15 @@ public class CreateLineGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLineGroupRequest createLineGroupRequest = (CreateLineGroupRequest) o;
-        return Objects.equals(this.body, createLineGroupRequest.body);
+        CreateLineGroupRequest that = (CreateLineGroupRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

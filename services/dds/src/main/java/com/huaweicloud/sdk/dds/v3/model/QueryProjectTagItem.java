@@ -74,16 +74,15 @@ public class QueryProjectTagItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryProjectTagItem queryProjectTagItem = (QueryProjectTagItem) o;
-        return Objects.equals(this.key, queryProjectTagItem.key)
-            && Objects.equals(this.values, queryProjectTagItem.values);
+        QueryProjectTagItem that = (QueryProjectTagItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override

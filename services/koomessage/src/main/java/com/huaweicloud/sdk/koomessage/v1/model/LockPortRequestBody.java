@@ -140,19 +140,17 @@ public class LockPortRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LockPortRequestBody lockPortRequestBody = (LockPortRequestBody) o;
-        return Objects.equals(this.pubId, lockPortRequestBody.pubId)
-            && Objects.equals(this.port, lockPortRequestBody.port)
-            && Objects.equals(this.province, lockPortRequestBody.province)
-            && Objects.equals(this.sign, lockPortRequestBody.sign)
-            && Objects.equals(this.extPortId, lockPortRequestBody.extPortId);
+        LockPortRequestBody that = (LockPortRequestBody) obj;
+        return Objects.equals(this.pubId, that.pubId) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.sign, that.sign)
+            && Objects.equals(this.extPortId, that.extPortId);
     }
 
     @Override

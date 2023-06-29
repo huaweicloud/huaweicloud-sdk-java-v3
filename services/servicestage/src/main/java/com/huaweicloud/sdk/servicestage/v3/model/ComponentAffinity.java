@@ -63,22 +63,15 @@ public class ComponentAffinity {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KindEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KindEnum(value));
         }
 
         public static KindEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class ComponentAffinity {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
         }
 
         public static ConditionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -278,18 +264,16 @@ public class ComponentAffinity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentAffinity componentAffinity = (ComponentAffinity) o;
-        return Objects.equals(this.kind, componentAffinity.kind)
-            && Objects.equals(this.condition, componentAffinity.condition)
-            && Objects.equals(this.weight, componentAffinity.weight)
-            && Objects.equals(this.matchExpressions, componentAffinity.matchExpressions);
+        ComponentAffinity that = (ComponentAffinity) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.matchExpressions, that.matchExpressions);
     }
 
     @Override

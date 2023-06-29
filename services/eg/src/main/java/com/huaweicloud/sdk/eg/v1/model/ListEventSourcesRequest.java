@@ -86,22 +86,15 @@ public class ListEventSourcesRequest {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +272,18 @@ public class ListEventSourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventSourcesRequest listEventSourcesRequest = (ListEventSourcesRequest) o;
-        return Objects.equals(this.channelId, listEventSourcesRequest.channelId)
-            && Objects.equals(this.offset, listEventSourcesRequest.offset)
-            && Objects.equals(this.limit, listEventSourcesRequest.limit)
-            && Objects.equals(this.sort, listEventSourcesRequest.sort)
-            && Objects.equals(this.providerType, listEventSourcesRequest.providerType)
-            && Objects.equals(this.name, listEventSourcesRequest.name)
-            && Objects.equals(this.fuzzyName, listEventSourcesRequest.fuzzyName)
-            && Objects.equals(this.fuzzyLabel, listEventSourcesRequest.fuzzyLabel);
+        ListEventSourcesRequest that = (ListEventSourcesRequest) obj;
+        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.fuzzyName, that.fuzzyName) && Objects.equals(this.fuzzyLabel, that.fuzzyLabel);
     }
 
     @Override

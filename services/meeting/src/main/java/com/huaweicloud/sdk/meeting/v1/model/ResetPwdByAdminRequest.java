@@ -89,17 +89,16 @@ public class ResetPwdByAdminRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPwdByAdminRequest resetPwdByAdminRequest = (ResetPwdByAdminRequest) o;
-        return Objects.equals(this.xRequestID, resetPwdByAdminRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, resetPwdByAdminRequest.acceptLanguage)
-            && Objects.equals(this.body, resetPwdByAdminRequest.body);
+        ResetPwdByAdminRequest that = (ResetPwdByAdminRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

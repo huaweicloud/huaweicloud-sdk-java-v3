@@ -34,16 +34,15 @@ public class ShowSignedLatestPublishedAgreementResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSignedLatestPublishedAgreementResponse showSignedLatestPublishedAgreementResponse =
-            (ShowSignedLatestPublishedAgreementResponse) o;
-        return Objects.equals(this.isSignedLatest, showSignedLatestPublishedAgreementResponse.isSignedLatest);
+        ShowSignedLatestPublishedAgreementResponse that = (ShowSignedLatestPublishedAgreementResponse) obj;
+        return Objects.equals(this.isSignedLatest, that.isSignedLatest);
     }
 
     @Override

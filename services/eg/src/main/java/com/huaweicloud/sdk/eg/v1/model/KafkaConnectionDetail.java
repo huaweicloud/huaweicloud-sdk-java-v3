@@ -91,22 +91,15 @@ public class KafkaConnectionDetail {
             if (value == null) {
                 return null;
             }
-            AcksEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AcksEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AcksEnum(value));
         }
 
         public static AcksEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AcksEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,20 +224,17 @@ public class KafkaConnectionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaConnectionDetail kafkaConnectionDetail = (KafkaConnectionDetail) o;
-        return Objects.equals(this.instanceId, kafkaConnectionDetail.instanceId)
-            && Objects.equals(this.addr, kafkaConnectionDetail.addr)
-            && Objects.equals(this.saslSsl, kafkaConnectionDetail.saslSsl)
-            && Objects.equals(this.username, kafkaConnectionDetail.username)
-            && Objects.equals(this.password, kafkaConnectionDetail.password)
-            && Objects.equals(this.acks, kafkaConnectionDetail.acks);
+        KafkaConnectionDetail that = (KafkaConnectionDetail) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.saslSsl, that.saslSsl) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.acks, that.acks);
     }
 
     @Override

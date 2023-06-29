@@ -77,16 +77,15 @@ public class ListQueryHttpCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueryHttpCodeResponse listQueryHttpCodeResponse = (ListQueryHttpCodeResponse) o;
-        return Objects.equals(this.dataSeries, listQueryHttpCodeResponse.dataSeries)
-            && Objects.equals(this.xRequestId, listQueryHttpCodeResponse.xRequestId);
+        ListQueryHttpCodeResponse that = (ListQueryHttpCodeResponse) obj;
+        return Objects.equals(this.dataSeries, that.dataSeries) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -125,19 +125,17 @@ public class BatchShowRadarsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowRadarsRequest batchShowRadarsRequest = (BatchShowRadarsRequest) o;
-        return Objects.equals(this.instanceId, batchShowRadarsRequest.instanceId)
-            && Objects.equals(this.esn, batchShowRadarsRequest.esn)
-            && Objects.equals(this.offset, batchShowRadarsRequest.offset)
-            && Objects.equals(this.limit, batchShowRadarsRequest.limit)
-            && Objects.equals(this.status, batchShowRadarsRequest.status);
+        BatchShowRadarsRequest that = (BatchShowRadarsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

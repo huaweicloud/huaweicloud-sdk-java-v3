@@ -120,19 +120,17 @@ public class ShowCustomerAccountBalancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomerAccountBalancesResponse showCustomerAccountBalancesResponse =
-            (ShowCustomerAccountBalancesResponse) o;
-        return Objects.equals(this.accountBalances, showCustomerAccountBalancesResponse.accountBalances)
-            && Objects.equals(this.debtAmount, showCustomerAccountBalancesResponse.debtAmount)
-            && Objects.equals(this.measureId, showCustomerAccountBalancesResponse.measureId)
-            && Objects.equals(this.currency, showCustomerAccountBalancesResponse.currency);
+        ShowCustomerAccountBalancesResponse that = (ShowCustomerAccountBalancesResponse) obj;
+        return Objects.equals(this.accountBalances, that.accountBalances)
+            && Objects.equals(this.debtAmount, that.debtAmount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.currency, that.currency);
     }
 
     @Override

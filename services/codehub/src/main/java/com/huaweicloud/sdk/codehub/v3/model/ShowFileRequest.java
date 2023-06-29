@@ -77,16 +77,16 @@ public class ShowFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFileRequest showFileRequest = (ShowFileRequest) o;
-        return Objects.equals(this.repoId, showFileRequest.repoId)
-            && Objects.equals(this.filePath, showFileRequest.filePath) && Objects.equals(this.ref, showFileRequest.ref);
+        ShowFileRequest that = (ShowFileRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.ref, that.ref);
     }
 
     @Override

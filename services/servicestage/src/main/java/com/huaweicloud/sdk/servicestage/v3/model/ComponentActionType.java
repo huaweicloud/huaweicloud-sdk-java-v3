@@ -88,22 +88,15 @@ public class ComponentActionType {
         if (value == null) {
             return null;
         }
-        ComponentActionType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new ComponentActionType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComponentActionType(value));
     }
 
     public static ComponentActionType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        ComponentActionType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

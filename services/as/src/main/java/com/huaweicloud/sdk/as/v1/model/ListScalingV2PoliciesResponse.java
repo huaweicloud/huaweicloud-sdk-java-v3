@@ -121,18 +121,16 @@ public class ListScalingV2PoliciesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingV2PoliciesResponse listScalingV2PoliciesResponse = (ListScalingV2PoliciesResponse) o;
-        return Objects.equals(this.totalNumber, listScalingV2PoliciesResponse.totalNumber)
-            && Objects.equals(this.startNumber, listScalingV2PoliciesResponse.startNumber)
-            && Objects.equals(this.limit, listScalingV2PoliciesResponse.limit)
-            && Objects.equals(this.scalingPolicies, listScalingV2PoliciesResponse.scalingPolicies);
+        ListScalingV2PoliciesResponse that = (ListScalingV2PoliciesResponse) obj;
+        return Objects.equals(this.totalNumber, that.totalNumber) && Objects.equals(this.startNumber, that.startNumber)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.scalingPolicies, that.scalingPolicies);
     }
 
     @Override

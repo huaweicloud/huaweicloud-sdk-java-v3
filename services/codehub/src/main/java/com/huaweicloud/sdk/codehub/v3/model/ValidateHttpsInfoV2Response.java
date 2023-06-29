@@ -88,17 +88,16 @@ public class ValidateHttpsInfoV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateHttpsInfoV2Response validateHttpsInfoV2Response = (ValidateHttpsInfoV2Response) o;
-        return Objects.equals(this.error, validateHttpsInfoV2Response.error)
-            && Objects.equals(this.result, validateHttpsInfoV2Response.result)
-            && Objects.equals(this.status, validateHttpsInfoV2Response.status);
+        ValidateHttpsInfoV2Response that = (ValidateHttpsInfoV2Response) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

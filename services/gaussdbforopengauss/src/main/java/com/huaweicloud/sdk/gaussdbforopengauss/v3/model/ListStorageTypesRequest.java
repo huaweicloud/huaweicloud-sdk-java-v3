@@ -1,54 +1,44 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListStorageTypesRequest  {
-
+public class ListStorageTypesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
+
     /**
      * 实例类型： enterprise(企业版)， centralization_standard(主备版)，不区分大小写。
      */
     public static final class HaModeEnum {
 
-        
         /**
          * Enum ENTERPRISE for value: "enterprise"
          */
         public static final HaModeEnum ENTERPRISE = new HaModeEnum("enterprise");
-        
+
         /**
          * Enum CENTRALIZATION_STANDARD for value: "centralization_standard"
          */
         public static final HaModeEnum CENTRALIZATION_STANDARD = new HaModeEnum("centralization_standard");
-        
 
         private static final Map<String, HaModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -77,25 +67,18 @@ public class ListStorageTypesRequest  {
 
         @JsonCreator
         public static HaModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HaModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HaModeEnum(value));
         }
 
         public static HaModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            HaModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -113,8 +96,7 @@ public class ListStorageTypesRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_mode")
-    
+    @JsonProperty(value = "ha_mode")
 
     private HaModeEnum haMode;
 
@@ -123,15 +105,12 @@ public class ListStorageTypesRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -140,15 +119,10 @@ public class ListStorageTypesRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListStorageTypesRequest withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本号。
@@ -162,15 +136,10 @@ public class ListStorageTypesRequest  {
         this.version = version;
     }
 
-    
-
     public ListStorageTypesRequest withHaMode(HaModeEnum haMode) {
         this.haMode = haMode;
         return this;
     }
-
-    
-
 
     /**
      * 实例类型： enterprise(企业版)， centralization_standard(主备版)，不区分大小写。
@@ -184,25 +153,24 @@ public class ListStorageTypesRequest  {
         this.haMode = haMode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStorageTypesRequest listStorageTypesRequest = (ListStorageTypesRequest) o;
-        return Objects.equals(this.xLanguage, listStorageTypesRequest.xLanguage) &&
-            Objects.equals(this.version, listStorageTypesRequest.version) &&
-            Objects.equals(this.haMode, listStorageTypesRequest.haMode);
+        ListStorageTypesRequest that = (ListStorageTypesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.haMode, that.haMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, version, haMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -213,6 +181,7 @@ public class ListStorageTypesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -223,8 +192,5 @@ public class ListStorageTypesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

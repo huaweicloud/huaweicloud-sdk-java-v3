@@ -90,16 +90,15 @@ public class DownloadSlowlogRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadSlowlogRequestBody downloadSlowlogRequestBody = (DownloadSlowlogRequestBody) o;
-        return Objects.equals(this.fileNameList, downloadSlowlogRequestBody.fileNameList)
-            && Objects.equals(this.nodeIdList, downloadSlowlogRequestBody.nodeIdList);
+        DownloadSlowlogRequestBody that = (DownloadSlowlogRequestBody) obj;
+        return Objects.equals(this.fileNameList, that.fileNameList) && Objects.equals(this.nodeIdList, that.nodeIdList);
     }
 
     @Override

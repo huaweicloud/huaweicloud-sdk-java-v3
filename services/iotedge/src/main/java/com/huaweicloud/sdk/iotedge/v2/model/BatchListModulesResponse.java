@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.EdgeModuleDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class BatchListModulesResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
 
     private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="modules")
-    
+    @JsonProperty(value = "modules")
+
     private List<EdgeModuleDTO> modules = null;
-    
+
     public BatchListModulesResponse withCount(Long count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数
@@ -63,22 +48,19 @@ public class BatchListModulesResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public BatchListModulesResponse withPageInfo(PageInfoDTO pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public BatchListModulesResponse withPageInfo(Consumer<PageInfoDTO> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDTO();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get pageInfo
@@ -92,16 +74,13 @@ public class BatchListModulesResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    
-
     public BatchListModulesResponse withModules(List<EdgeModuleDTO> modules) {
         this.modules = modules;
         return this;
     }
 
-    
     public BatchListModulesResponse addModulesItem(EdgeModuleDTO modulesItem) {
-        if(this.modules == null) {
+        if (this.modules == null) {
             this.modules = new ArrayList<>();
         }
         this.modules.add(modulesItem);
@@ -109,7 +88,7 @@ public class BatchListModulesResponse extends SdkResponse {
     }
 
     public BatchListModulesResponse withModules(Consumer<List<EdgeModuleDTO>> modulesSetter) {
-        if(this.modules == null) {
+        if (this.modules == null) {
             this.modules = new ArrayList<>();
         }
         modulesSetter.accept(this.modules);
@@ -128,25 +107,24 @@ public class BatchListModulesResponse extends SdkResponse {
         this.modules = modules;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListModulesResponse batchListModulesResponse = (BatchListModulesResponse) o;
-        return Objects.equals(this.count, batchListModulesResponse.count) &&
-            Objects.equals(this.pageInfo, batchListModulesResponse.pageInfo) &&
-            Objects.equals(this.modules, batchListModulesResponse.modules);
+        BatchListModulesResponse that = (BatchListModulesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.modules, that.modules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, pageInfo, modules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,6 +135,7 @@ public class BatchListModulesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -167,8 +146,5 @@ public class BatchListModulesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

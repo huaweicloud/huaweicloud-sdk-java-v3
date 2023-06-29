@@ -150,19 +150,17 @@ public class DeleteNodePoolResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNodePoolResponse deleteNodePoolResponse = (DeleteNodePoolResponse) o;
-        return Objects.equals(this.kind, deleteNodePoolResponse.kind)
-            && Objects.equals(this.apiVersion, deleteNodePoolResponse.apiVersion)
-            && Objects.equals(this.metadata, deleteNodePoolResponse.metadata)
-            && Objects.equals(this.spec, deleteNodePoolResponse.spec)
-            && Objects.equals(this.status, deleteNodePoolResponse.status);
+        DeleteNodePoolResponse that = (DeleteNodePoolResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

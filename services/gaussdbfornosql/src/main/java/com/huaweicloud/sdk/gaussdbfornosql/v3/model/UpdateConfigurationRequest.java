@@ -65,16 +65,15 @@ public class UpdateConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigurationRequest updateConfigurationRequest = (UpdateConfigurationRequest) o;
-        return Objects.equals(this.configId, updateConfigurationRequest.configId)
-            && Objects.equals(this.body, updateConfigurationRequest.body);
+        UpdateConfigurationRequest that = (UpdateConfigurationRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.body, that.body);
     }
 
     @Override

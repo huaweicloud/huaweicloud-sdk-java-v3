@@ -103,18 +103,16 @@ public class ShowProjectReleaseFilesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectReleaseFilesRequest showProjectReleaseFilesRequest = (ShowProjectReleaseFilesRequest) o;
-        return Objects.equals(this.fileName, showProjectReleaseFilesRequest.fileName)
-            && Objects.equals(this.limit, showProjectReleaseFilesRequest.limit)
-            && Objects.equals(this.offset, showProjectReleaseFilesRequest.offset)
-            && Objects.equals(this.projectId, showProjectReleaseFilesRequest.projectId);
+        ShowProjectReleaseFilesRequest that = (ShowProjectReleaseFilesRequest) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

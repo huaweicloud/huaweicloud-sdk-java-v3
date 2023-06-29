@@ -74,16 +74,15 @@ public class AccessConfigFormat {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigFormat accessConfigFormat = (AccessConfigFormat) o;
-        return Objects.equals(this.single, accessConfigFormat.single)
-            && Objects.equals(this.multi, accessConfigFormat.multi);
+        AccessConfigFormat that = (AccessConfigFormat) obj;
+        return Objects.equals(this.single, that.single) && Objects.equals(this.multi, that.multi);
     }
 
     @Override

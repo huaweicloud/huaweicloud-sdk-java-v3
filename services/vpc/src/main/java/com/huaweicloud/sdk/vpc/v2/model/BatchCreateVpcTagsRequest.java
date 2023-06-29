@@ -65,16 +65,15 @@ public class BatchCreateVpcTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateVpcTagsRequest batchCreateVpcTagsRequest = (BatchCreateVpcTagsRequest) o;
-        return Objects.equals(this.vpcId, batchCreateVpcTagsRequest.vpcId)
-            && Objects.equals(this.body, batchCreateVpcTagsRequest.body);
+        BatchCreateVpcTagsRequest that = (BatchCreateVpcTagsRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.body, that.body);
     }
 
     @Override

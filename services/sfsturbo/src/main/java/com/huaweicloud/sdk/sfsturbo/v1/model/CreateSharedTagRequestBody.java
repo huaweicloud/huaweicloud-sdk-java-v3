@@ -43,15 +43,15 @@ public class CreateSharedTagRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSharedTagRequestBody createSharedTagRequestBody = (CreateSharedTagRequestBody) o;
-        return Objects.equals(this.tag, createSharedTagRequestBody.tag);
+        CreateSharedTagRequestBody that = (CreateSharedTagRequestBody) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

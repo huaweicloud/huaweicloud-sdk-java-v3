@@ -33,15 +33,15 @@ public class ChangeSecurityGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeSecurityGroupReq changeSecurityGroupReq = (ChangeSecurityGroupReq) o;
-        return Objects.equals(this.securityGroupIds, changeSecurityGroupReq.securityGroupIds);
+        ChangeSecurityGroupReq that = (ChangeSecurityGroupReq) obj;
+        return Objects.equals(this.securityGroupIds, that.securityGroupIds);
     }
 
     @Override

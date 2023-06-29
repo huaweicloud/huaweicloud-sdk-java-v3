@@ -55,16 +55,15 @@ public class RestChairTokenReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestChairTokenReqBody restChairTokenReqBody = (RestChairTokenReqBody) o;
-        return Objects.equals(this.applyChair, restChairTokenReqBody.applyChair)
-            && Objects.equals(this.chairmanPwd, restChairTokenReqBody.chairmanPwd);
+        RestChairTokenReqBody that = (RestChairTokenReqBody) obj;
+        return Objects.equals(this.applyChair, that.applyChair) && Objects.equals(this.chairmanPwd, that.chairmanPwd);
     }
 
     @Override

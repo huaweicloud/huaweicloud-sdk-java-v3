@@ -87,17 +87,17 @@ public class ChangeEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEventRequest changeEventRequest = (ChangeEventRequest) o;
-        return Objects.equals(this.region, changeEventRequest.region)
-            && Objects.equals(this.enterpriseProjectId, changeEventRequest.enterpriseProjectId)
-            && Objects.equals(this.body, changeEventRequest.body);
+        ChangeEventRequest that = (ChangeEventRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

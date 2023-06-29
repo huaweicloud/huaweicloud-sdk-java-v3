@@ -79,17 +79,16 @@ public class ImageMainObjectDetectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMainObjectDetectionReq imageMainObjectDetectionReq = (ImageMainObjectDetectionReq) o;
-        return Objects.equals(this.image, imageMainObjectDetectionReq.image)
-            && Objects.equals(this.url, imageMainObjectDetectionReq.url)
-            && Objects.equals(this.threshold, imageMainObjectDetectionReq.threshold);
+        ImageMainObjectDetectionReq that = (ImageMainObjectDetectionReq) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.threshold, that.threshold);
     }
 
     @Override

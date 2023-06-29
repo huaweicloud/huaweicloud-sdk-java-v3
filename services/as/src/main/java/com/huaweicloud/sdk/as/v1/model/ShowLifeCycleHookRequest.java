@@ -55,16 +55,16 @@ public class ShowLifeCycleHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLifeCycleHookRequest showLifeCycleHookRequest = (ShowLifeCycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, showLifeCycleHookRequest.scalingGroupId)
-            && Objects.equals(this.lifecycleHookName, showLifeCycleHookRequest.lifecycleHookName);
+        ShowLifeCycleHookRequest that = (ShowLifeCycleHookRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.lifecycleHookName, that.lifecycleHookName);
     }
 
     @Override

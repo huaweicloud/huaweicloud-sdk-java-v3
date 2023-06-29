@@ -65,17 +65,16 @@ public class RecognizeThailandLicensePlateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeThailandLicensePlateRequest recognizeThailandLicensePlateRequest =
-            (RecognizeThailandLicensePlateRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeThailandLicensePlateRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeThailandLicensePlateRequest.body);
+        RecognizeThailandLicensePlateRequest that = (RecognizeThailandLicensePlateRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

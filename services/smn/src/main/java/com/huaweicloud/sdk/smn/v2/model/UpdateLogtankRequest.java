@@ -87,17 +87,16 @@ public class UpdateLogtankRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLogtankRequest updateLogtankRequest = (UpdateLogtankRequest) o;
-        return Objects.equals(this.topicUrn, updateLogtankRequest.topicUrn)
-            && Objects.equals(this.logtankId, updateLogtankRequest.logtankId)
-            && Objects.equals(this.body, updateLogtankRequest.body);
+        UpdateLogtankRequest that = (UpdateLogtankRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.logtankId, that.logtankId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

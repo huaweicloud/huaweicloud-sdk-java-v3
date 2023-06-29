@@ -39,8 +39,8 @@ public class ListPublicipsRequest {
     private List<String> fields = null;
 
     /**
-    * 排序，形式为\"sort_key=id\"  支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group
-    */
+     * 排序，形式为\"sort_key=id\"  支持字段：id/public_ip_address/public_ipv6_address/ip_version/created_at/updated_at/public_border_group
+     */
     public static final class SortKeyEnum {
 
         /**
@@ -113,22 +113,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,22 +188,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -238,8 +224,8 @@ public class ListPublicipsRequest {
     private List<String> id = null;
 
     /**
-    * Gets or Sets ipVersion
-    */
+     * Gets or Sets ipVersion
+     */
     public static final class IpVersionEnum {
 
         /**
@@ -282,22 +268,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -390,22 +369,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -428,8 +400,8 @@ public class ListPublicipsRequest {
     private List<TypeEnum> type = null;
 
     /**
-    * Gets or Sets networkType
-    */
+     * Gets or Sets networkType
+     */
     public static final class NetworkTypeEnum {
 
         /**
@@ -496,22 +468,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetworkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkTypeEnum(value));
         }
 
         public static NetworkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -539,8 +504,8 @@ public class ListPublicipsRequest {
     private List<String> publicipPoolName = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -595,22 +560,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -713,8 +671,8 @@ public class ListPublicipsRequest {
     private List<Integer> bandwidthSize = null;
 
     /**
-    * Gets or Sets bandwidthShareType
-    */
+     * Gets or Sets bandwidthShareType
+     */
     public static final class BandwidthShareTypeEnum {
 
         /**
@@ -757,22 +715,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            BandwidthShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthShareTypeEnum(value));
         }
 
         public static BandwidthShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -795,8 +746,8 @@ public class ListPublicipsRequest {
     private List<BandwidthShareTypeEnum> bandwidthShareType = null;
 
     /**
-    * Gets or Sets bandwidthChargeMode
-    */
+     * Gets or Sets bandwidthChargeMode
+     */
     public static final class BandwidthChargeModeEnum {
 
         /**
@@ -845,22 +796,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            BandwidthChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthChargeModeEnum(value));
         }
 
         public static BandwidthChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -888,8 +832,8 @@ public class ListPublicipsRequest {
     private List<String> billingInfo = null;
 
     /**
-    * 根据订单模式过滤,   取值范围：YEARLY_MONTHLY、PAY_PER_USE
-    */
+     * 根据订单模式过滤,   取值范围：YEARLY_MONTHLY、PAY_PER_USE
+     */
     public static final class BillingModeEnum {
 
         /**
@@ -932,22 +876,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BillingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BillingModeEnum(value));
         }
 
         public static BillingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BillingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1032,22 +969,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            AssociateInstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssociateInstanceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssociateInstanceTypeEnum(value));
         }
 
         public static AssociateInstanceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssociateInstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -2275,55 +2205,46 @@ public class ListPublicipsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipsRequest listPublicipsRequest = (ListPublicipsRequest) o;
-        return Objects.equals(this.marker, listPublicipsRequest.marker)
-            && Objects.equals(this.offset, listPublicipsRequest.offset)
-            && Objects.equals(this.limit, listPublicipsRequest.limit)
-            && Objects.equals(this.fields, listPublicipsRequest.fields)
-            && Objects.equals(this.sortKey, listPublicipsRequest.sortKey)
-            && Objects.equals(this.sortDir, listPublicipsRequest.sortDir)
-            && Objects.equals(this.id, listPublicipsRequest.id)
-            && Objects.equals(this.ipVersion, listPublicipsRequest.ipVersion)
-            && Objects.equals(this.publicIpAddress, listPublicipsRequest.publicIpAddress)
-            && Objects.equals(this.publicIpAddressLike, listPublicipsRequest.publicIpAddressLike)
-            && Objects.equals(this.publicIpv6Address, listPublicipsRequest.publicIpv6Address)
-            && Objects.equals(this.publicIpv6AddressLike, listPublicipsRequest.publicIpv6AddressLike)
-            && Objects.equals(this.type, listPublicipsRequest.type)
-            && Objects.equals(this.networkType, listPublicipsRequest.networkType)
-            && Objects.equals(this.publicipPoolName, listPublicipsRequest.publicipPoolName)
-            && Objects.equals(this.status, listPublicipsRequest.status)
-            && Objects.equals(this.aliasLike, listPublicipsRequest.aliasLike)
-            && Objects.equals(this.alias, listPublicipsRequest.alias)
-            && Objects.equals(this.description, listPublicipsRequest.description)
-            && Objects.equals(this.vnicPrivateIpAddress, listPublicipsRequest.vnicPrivateIpAddress)
-            && Objects.equals(this.vnicPrivateIpAddressLike, listPublicipsRequest.vnicPrivateIpAddressLike)
-            && Objects.equals(this.vnicDeviceId, listPublicipsRequest.vnicDeviceId)
-            && Objects.equals(this.vnicDeviceOwner, listPublicipsRequest.vnicDeviceOwner)
-            && Objects.equals(this.vnicVpcId, listPublicipsRequest.vnicVpcId)
-            && Objects.equals(this.vnicPortId, listPublicipsRequest.vnicPortId)
-            && Objects.equals(this.vnicDeviceOwnerPrefixlike, listPublicipsRequest.vnicDeviceOwnerPrefixlike)
-            && Objects.equals(this.vnicInstanceType, listPublicipsRequest.vnicInstanceType)
-            && Objects.equals(this.vnicInstanceId, listPublicipsRequest.vnicInstanceId)
-            && Objects.equals(this.bandwidthId, listPublicipsRequest.bandwidthId)
-            && Objects.equals(this.bandwidthName, listPublicipsRequest.bandwidthName)
-            && Objects.equals(this.bandwidthNameLike, listPublicipsRequest.bandwidthNameLike)
-            && Objects.equals(this.bandwidthSize, listPublicipsRequest.bandwidthSize)
-            && Objects.equals(this.bandwidthShareType, listPublicipsRequest.bandwidthShareType)
-            && Objects.equals(this.bandwidthChargeMode, listPublicipsRequest.bandwidthChargeMode)
-            && Objects.equals(this.billingInfo, listPublicipsRequest.billingInfo)
-            && Objects.equals(this.billingMode, listPublicipsRequest.billingMode)
-            && Objects.equals(this.associateInstanceType, listPublicipsRequest.associateInstanceType)
-            && Objects.equals(this.associateInstanceId, listPublicipsRequest.associateInstanceId)
-            && Objects.equals(this.enterpriseProjectId, listPublicipsRequest.enterpriseProjectId)
-            && Objects.equals(this.publicBorderGroup, listPublicipsRequest.publicBorderGroup)
-            && Objects.equals(this.allowShareBandwidthTypeAny, listPublicipsRequest.allowShareBandwidthTypeAny);
+        ListPublicipsRequest that = (ListPublicipsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.fields, that.fields)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.publicIpAddressLike, that.publicIpAddressLike)
+            && Objects.equals(this.publicIpv6Address, that.publicIpv6Address)
+            && Objects.equals(this.publicIpv6AddressLike, that.publicIpv6AddressLike)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.publicipPoolName, that.publicipPoolName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.aliasLike, that.aliasLike) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vnicPrivateIpAddress, that.vnicPrivateIpAddress)
+            && Objects.equals(this.vnicPrivateIpAddressLike, that.vnicPrivateIpAddressLike)
+            && Objects.equals(this.vnicDeviceId, that.vnicDeviceId)
+            && Objects.equals(this.vnicDeviceOwner, that.vnicDeviceOwner)
+            && Objects.equals(this.vnicVpcId, that.vnicVpcId) && Objects.equals(this.vnicPortId, that.vnicPortId)
+            && Objects.equals(this.vnicDeviceOwnerPrefixlike, that.vnicDeviceOwnerPrefixlike)
+            && Objects.equals(this.vnicInstanceType, that.vnicInstanceType)
+            && Objects.equals(this.vnicInstanceId, that.vnicInstanceId)
+            && Objects.equals(this.bandwidthId, that.bandwidthId)
+            && Objects.equals(this.bandwidthName, that.bandwidthName)
+            && Objects.equals(this.bandwidthNameLike, that.bandwidthNameLike)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.bandwidthShareType, that.bandwidthShareType)
+            && Objects.equals(this.bandwidthChargeMode, that.bandwidthChargeMode)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.associateInstanceType, that.associateInstanceType)
+            && Objects.equals(this.associateInstanceId, that.associateInstanceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.allowShareBandwidthTypeAny, that.allowShareBandwidthTypeAny);
     }
 
     @Override

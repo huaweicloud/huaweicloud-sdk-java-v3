@@ -1,39 +1,30 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.DeleteMuteRuleName;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class DeleteMuteRulesRequest  {
-
+public class DeleteMuteRulesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<DeleteMuteRuleName> body = null;
-    
+
     public DeleteMuteRulesRequest withBody(List<DeleteMuteRuleName> body) {
         this.body = body;
         return this;
     }
 
-    
     public DeleteMuteRulesRequest addBodyItem(DeleteMuteRuleName bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -41,7 +32,7 @@ public class DeleteMuteRulesRequest  {
     }
 
     public DeleteMuteRulesRequest withBody(Consumer<List<DeleteMuteRuleName>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
@@ -60,23 +51,23 @@ public class DeleteMuteRulesRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMuteRulesRequest deleteMuteRulesRequest = (DeleteMuteRulesRequest) o;
-        return Objects.equals(this.body, deleteMuteRulesRequest.body);
+        DeleteMuteRulesRequest that = (DeleteMuteRulesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -85,6 +76,7 @@ public class DeleteMuteRulesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -95,8 +87,5 @@ public class DeleteMuteRulesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

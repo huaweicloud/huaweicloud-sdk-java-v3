@@ -471,34 +471,27 @@ public class DeleteInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteInstanceResponse deleteInstanceResponse = (DeleteInstanceResponse) o;
-        return Objects.equals(this.id, deleteInstanceResponse.id)
-            && Objects.equals(this.instancename, deleteInstanceResponse.instancename)
-            && Objects.equals(this.region, deleteInstanceResponse.region)
-            && Objects.equals(this.zone, deleteInstanceResponse.zone)
-            && Objects.equals(this.arch, deleteInstanceResponse.arch)
-            && Objects.equals(this.cpuFlavor, deleteInstanceResponse.cpuFlavor)
-            && Objects.equals(this.vpcId, deleteInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, deleteInstanceResponse.subnetId)
-            && Objects.equals(this.serviceIp, deleteInstanceResponse.serviceIp)
-            && Objects.equals(this.securityGroupIds, deleteInstanceResponse.securityGroupIds)
-            && Objects.equals(this.status, deleteInstanceResponse.status)
-            && Objects.equals(this.runStatus, deleteInstanceResponse.runStatus)
-            && Objects.equals(this.accessStatus, deleteInstanceResponse.accessStatus)
-            && Objects.equals(this.upgradable, deleteInstanceResponse.upgradable)
-            && Objects.equals(this.cloudServiceType, deleteInstanceResponse.cloudServiceType)
-            && Objects.equals(this.resourceType, deleteInstanceResponse.resourceType)
-            && Objects.equals(this.resourceSpecCode, deleteInstanceResponse.resourceSpecCode)
-            && Objects.equals(this.specification, deleteInstanceResponse.specification)
-            && Objects.equals(this.serverId, deleteInstanceResponse.serverId)
-            && Objects.equals(this.createTime, deleteInstanceResponse.createTime);
+        DeleteInstanceResponse that = (DeleteInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instancename, that.instancename)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.zone, that.zone)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.serviceIp, that.serviceIp)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.upgradable, that.upgradable)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

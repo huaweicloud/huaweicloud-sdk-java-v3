@@ -295,26 +295,21 @@ public class ShowRecordingDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordingDetailResponse showRecordingDetailResponse = (ShowRecordingDetailResponse) o;
-        return Objects.equals(this.confUUID, showRecordingDetailResponse.confUUID)
-            && Objects.equals(this.confID, showRecordingDetailResponse.confID)
-            && Objects.equals(this.url, showRecordingDetailResponse.url)
-            && Objects.equals(this.rcdTime, showRecordingDetailResponse.rcdTime)
-            && Objects.equals(this.rcdSize, showRecordingDetailResponse.rcdSize)
-            && Objects.equals(this.subject, showRecordingDetailResponse.subject)
-            && Objects.equals(this.scheduserName, showRecordingDetailResponse.scheduserName)
-            && Objects.equals(this.startTime, showRecordingDetailResponse.startTime)
-            && Objects.equals(this.isDecodeFinish, showRecordingDetailResponse.isDecodeFinish)
-            && Objects.equals(this.decodeEndTime, showRecordingDetailResponse.decodeEndTime)
-            && Objects.equals(this.available, showRecordingDetailResponse.available)
-            && Objects.equals(this.recordAuthType, showRecordingDetailResponse.recordAuthType);
+        ShowRecordingDetailResponse that = (ShowRecordingDetailResponse) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.confID, that.confID)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.rcdTime, that.rcdTime)
+            && Objects.equals(this.rcdSize, that.rcdSize) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.scheduserName, that.scheduserName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.isDecodeFinish, that.isDecodeFinish)
+            && Objects.equals(this.decodeEndTime, that.decodeEndTime) && Objects.equals(this.available, that.available)
+            && Objects.equals(this.recordAuthType, that.recordAuthType);
     }
 
     @Override

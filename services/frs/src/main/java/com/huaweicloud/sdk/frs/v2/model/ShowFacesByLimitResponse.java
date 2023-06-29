@@ -97,17 +97,16 @@ public class ShowFacesByLimitResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFacesByLimitResponse showFacesByLimitResponse = (ShowFacesByLimitResponse) o;
-        return Objects.equals(this.faceSetId, showFacesByLimitResponse.faceSetId)
-            && Objects.equals(this.faceSetName, showFacesByLimitResponse.faceSetName)
-            && Objects.equals(this.faces, showFacesByLimitResponse.faces);
+        ShowFacesByLimitResponse that = (ShowFacesByLimitResponse) obj;
+        return Objects.equals(this.faceSetId, that.faceSetId) && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.faces, that.faces);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class MasterInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MasterInstance masterInstance = (MasterInstance) o;
-        return Objects.equals(this.instanceId, masterInstance.instanceId)
-            && Objects.equals(this.region, masterInstance.region)
-            && Objects.equals(this.projectId, masterInstance.projectId)
-            && Objects.equals(this.projectName, masterInstance.projectName);
+        MasterInstance that = (MasterInstance) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

@@ -180,20 +180,17 @@ public class UpdateTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskRequestBody updateTaskRequestBody = (UpdateTaskRequestBody) o;
-        return Objects.equals(this.name, updateTaskRequestBody.name)
-            && Objects.equals(this.description, updateTaskRequestBody.description)
-            && Objects.equals(this.timing, updateTaskRequestBody.timing)
-            && Objects.equals(this.input, updateTaskRequestBody.input)
-            && Objects.equals(this.output, updateTaskRequestBody.output)
-            && Objects.equals(this.serviceConfig, updateTaskRequestBody.serviceConfig);
+        UpdateTaskRequestBody that = (UpdateTaskRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.timing, that.timing) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.serviceConfig, that.serviceConfig);
     }
 
     @Override

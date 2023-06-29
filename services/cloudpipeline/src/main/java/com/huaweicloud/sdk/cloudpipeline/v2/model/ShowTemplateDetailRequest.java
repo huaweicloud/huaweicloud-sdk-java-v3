@@ -77,17 +77,16 @@ public class ShowTemplateDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateDetailRequest showTemplateDetailRequest = (ShowTemplateDetailRequest) o;
-        return Objects.equals(this.templateId, showTemplateDetailRequest.templateId)
-            && Objects.equals(this.templateType, showTemplateDetailRequest.templateType)
-            && Objects.equals(this.source, showTemplateDetailRequest.source);
+        ShowTemplateDetailRequest that = (ShowTemplateDetailRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.source, that.source);
     }
 
     @Override

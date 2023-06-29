@@ -46,17 +46,15 @@ public class ShowDomainItemLocationDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainItemLocationDetailsResponse showDomainItemLocationDetailsResponse =
-            (ShowDomainItemLocationDetailsResponse) o;
-        return Objects.equals(this.domainItemLocationDetails,
-            showDomainItemLocationDetailsResponse.domainItemLocationDetails);
+        ShowDomainItemLocationDetailsResponse that = (ShowDomainItemLocationDetailsResponse) obj;
+        return Objects.equals(this.domainItemLocationDetails, that.domainItemLocationDetails);
     }
 
     @Override

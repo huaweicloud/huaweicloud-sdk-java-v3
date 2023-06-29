@@ -79,22 +79,15 @@ public class DiskIntargetServer {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceUseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceUseEnum(value));
         }
 
         public static DeviceUseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -232,18 +225,17 @@ public class DiskIntargetServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskIntargetServer diskIntargetServer = (DiskIntargetServer) o;
-        return Objects.equals(this.name, diskIntargetServer.name) && Objects.equals(this.size, diskIntargetServer.size)
-            && Objects.equals(this.deviceUse, diskIntargetServer.deviceUse)
-            && Objects.equals(this.usedSize, diskIntargetServer.usedSize)
-            && Objects.equals(this.physicalVolumes, diskIntargetServer.physicalVolumes);
+        DiskIntargetServer that = (DiskIntargetServer) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.deviceUse, that.deviceUse) && Objects.equals(this.usedSize, that.usedSize)
+            && Objects.equals(this.physicalVolumes, that.physicalVolumes);
     }
 
     @Override

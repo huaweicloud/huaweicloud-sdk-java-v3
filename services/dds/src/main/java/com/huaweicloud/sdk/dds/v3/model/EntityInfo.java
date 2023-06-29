@@ -55,16 +55,15 @@ public class EntityInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntityInfo entityInfo = (EntityInfo) o;
-        return Objects.equals(this.entityId, entityInfo.entityId)
-            && Objects.equals(this.entityName, entityInfo.entityName);
+        EntityInfo that = (EntityInfo) obj;
+        return Objects.equals(this.entityId, that.entityId) && Objects.equals(this.entityName, that.entityName);
     }
 
     @Override

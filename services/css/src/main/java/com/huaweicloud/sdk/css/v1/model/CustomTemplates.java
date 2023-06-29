@@ -99,17 +99,16 @@ public class CustomTemplates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomTemplates customTemplates = (CustomTemplates) o;
-        return Objects.equals(this.id, customTemplates.id) && Objects.equals(this.name, customTemplates.name)
-            && Objects.equals(this.confContent, customTemplates.confContent)
-            && Objects.equals(this.desc, customTemplates.desc);
+        CustomTemplates that = (CustomTemplates) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.confContent, that.confContent) && Objects.equals(this.desc, that.desc);
     }
 
     @Override

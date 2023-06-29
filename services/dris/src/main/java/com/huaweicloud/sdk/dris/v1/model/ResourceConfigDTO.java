@@ -107,16 +107,16 @@ public class ResourceConfigDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceConfigDTO resourceConfigDTO = (ResourceConfigDTO) o;
-        return Objects.equals(this.cpu, resourceConfigDTO.cpu) && Objects.equals(this.memory, resourceConfigDTO.memory)
-            && Objects.equals(this.gpu, resourceConfigDTO.gpu) && Objects.equals(this.npu, resourceConfigDTO.npu);
+        ResourceConfigDTO that = (ResourceConfigDTO) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.gpu, that.gpu) && Objects.equals(this.npu, that.npu);
     }
 
     @Override

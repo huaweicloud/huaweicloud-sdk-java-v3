@@ -55,15 +55,15 @@ public class TagsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagsInfo tagsInfo = (TagsInfo) o;
-        return Objects.equals(this.key, tagsInfo.key) && Objects.equals(this.value, tagsInfo.value);
+        TagsInfo that = (TagsInfo) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

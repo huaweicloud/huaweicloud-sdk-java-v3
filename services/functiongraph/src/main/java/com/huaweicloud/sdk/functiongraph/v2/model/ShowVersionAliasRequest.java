@@ -55,16 +55,15 @@ public class ShowVersionAliasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVersionAliasRequest showVersionAliasRequest = (ShowVersionAliasRequest) o;
-        return Objects.equals(this.functionUrn, showVersionAliasRequest.functionUrn)
-            && Objects.equals(this.aliasName, showVersionAliasRequest.aliasName);
+        ShowVersionAliasRequest that = (ShowVersionAliasRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.aliasName, that.aliasName);
     }
 
     @Override

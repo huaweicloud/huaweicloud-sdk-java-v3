@@ -55,17 +55,15 @@ public class WorkTableIssuseListResponseBodyPriority {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkTableIssuseListResponseBodyPriority workTableIssuseListResponseBodyPriority =
-            (WorkTableIssuseListResponseBodyPriority) o;
-        return Objects.equals(this.id, workTableIssuseListResponseBodyPriority.id)
-            && Objects.equals(this.name, workTableIssuseListResponseBodyPriority.name);
+        WorkTableIssuseListResponseBodyPriority that = (WorkTableIssuseListResponseBodyPriority) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

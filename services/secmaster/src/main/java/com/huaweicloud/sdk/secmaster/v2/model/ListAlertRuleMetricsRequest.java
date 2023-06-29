@@ -33,15 +33,15 @@ public class ListAlertRuleMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertRuleMetricsRequest listAlertRuleMetricsRequest = (ListAlertRuleMetricsRequest) o;
-        return Objects.equals(this.workspaceId, listAlertRuleMetricsRequest.workspaceId);
+        ListAlertRuleMetricsRequest that = (ListAlertRuleMetricsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

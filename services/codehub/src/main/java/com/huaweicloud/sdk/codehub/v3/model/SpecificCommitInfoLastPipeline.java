@@ -121,19 +121,17 @@ public class SpecificCommitInfoLastPipeline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpecificCommitInfoLastPipeline specificCommitInfoLastPipeline = (SpecificCommitInfoLastPipeline) o;
-        return Objects.equals(this.id, specificCommitInfoLastPipeline.id)
-            && Objects.equals(this.sha, specificCommitInfoLastPipeline.sha)
-            && Objects.equals(this.ref, specificCommitInfoLastPipeline.ref)
-            && Objects.equals(this.status, specificCommitInfoLastPipeline.status)
-            && Objects.equals(this.webUrl, specificCommitInfoLastPipeline.webUrl);
+        SpecificCommitInfoLastPipeline that = (SpecificCommitInfoLastPipeline) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.sha, that.sha)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.webUrl, that.webUrl);
     }
 
     @Override

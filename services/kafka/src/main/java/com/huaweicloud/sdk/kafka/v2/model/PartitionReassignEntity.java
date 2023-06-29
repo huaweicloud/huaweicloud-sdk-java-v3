@@ -134,18 +134,17 @@ public class PartitionReassignEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartitionReassignEntity partitionReassignEntity = (PartitionReassignEntity) o;
-        return Objects.equals(this.topic, partitionReassignEntity.topic)
-            && Objects.equals(this.brokers, partitionReassignEntity.brokers)
-            && Objects.equals(this.replicationFactor, partitionReassignEntity.replicationFactor)
-            && Objects.equals(this.assignment, partitionReassignEntity.assignment);
+        PartitionReassignEntity that = (PartitionReassignEntity) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.replicationFactor, that.replicationFactor)
+            && Objects.equals(this.assignment, that.assignment);
     }
 
     @Override

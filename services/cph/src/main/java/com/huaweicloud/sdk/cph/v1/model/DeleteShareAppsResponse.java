@@ -75,16 +75,15 @@ public class DeleteShareAppsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteShareAppsResponse deleteShareAppsResponse = (DeleteShareAppsResponse) o;
-        return Objects.equals(this.requestId, deleteShareAppsResponse.requestId)
-            && Objects.equals(this.jobs, deleteShareAppsResponse.jobs);
+        DeleteShareAppsResponse that = (DeleteShareAppsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

@@ -44,16 +44,15 @@ public class CreateCcRuleRequestBodyActionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCcRuleRequestBodyActionDetail createCcRuleRequestBodyActionDetail =
-            (CreateCcRuleRequestBodyActionDetail) o;
-        return Objects.equals(this.response, createCcRuleRequestBodyActionDetail.response);
+        CreateCcRuleRequestBodyActionDetail that = (CreateCcRuleRequestBodyActionDetail) obj;
+        return Objects.equals(this.response, that.response);
     }
 
     @Override

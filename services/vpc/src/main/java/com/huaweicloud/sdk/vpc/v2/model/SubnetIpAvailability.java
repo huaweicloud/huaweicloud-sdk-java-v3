@@ -143,20 +143,17 @@ public class SubnetIpAvailability {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubnetIpAvailability subnetIpAvailability = (SubnetIpAvailability) o;
-        return Objects.equals(this.usedIps, subnetIpAvailability.usedIps)
-            && Objects.equals(this.subnetId, subnetIpAvailability.subnetId)
-            && Objects.equals(this.subnetName, subnetIpAvailability.subnetName)
-            && Objects.equals(this.ipVersion, subnetIpAvailability.ipVersion)
-            && Objects.equals(this.cidr, subnetIpAvailability.cidr)
-            && Objects.equals(this.totalIps, subnetIpAvailability.totalIps);
+        SubnetIpAvailability that = (SubnetIpAvailability) obj;
+        return Objects.equals(this.usedIps, that.usedIps) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.totalIps, that.totalIps);
     }
 
     @Override

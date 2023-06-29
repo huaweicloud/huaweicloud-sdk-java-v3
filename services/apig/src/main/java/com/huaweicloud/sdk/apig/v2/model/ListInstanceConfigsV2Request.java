@@ -57,16 +57,15 @@ public class ListInstanceConfigsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceConfigsV2Request listInstanceConfigsV2Request = (ListInstanceConfigsV2Request) o;
-        return Objects.equals(this.offset, listInstanceConfigsV2Request.offset)
-            && Objects.equals(this.limit, listInstanceConfigsV2Request.limit);
+        ListInstanceConfigsV2Request that = (ListInstanceConfigsV2Request) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

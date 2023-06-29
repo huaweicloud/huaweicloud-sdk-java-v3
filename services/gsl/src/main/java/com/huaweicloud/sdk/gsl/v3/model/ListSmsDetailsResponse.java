@@ -124,18 +124,16 @@ public class ListSmsDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSmsDetailsResponse listSmsDetailsResponse = (ListSmsDetailsResponse) o;
-        return Objects.equals(this.limit, listSmsDetailsResponse.limit)
-            && Objects.equals(this.offset, listSmsDetailsResponse.offset)
-            && Objects.equals(this.count, listSmsDetailsResponse.count)
-            && Objects.equals(this.smsDetails, listSmsDetailsResponse.smsDetails);
+        ListSmsDetailsResponse that = (ListSmsDetailsResponse) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.smsDetails, that.smsDetails);
     }
 
     @Override

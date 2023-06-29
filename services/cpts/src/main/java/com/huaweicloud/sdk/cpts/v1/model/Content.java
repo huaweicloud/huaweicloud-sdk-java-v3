@@ -67,15 +67,15 @@ public class Content {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Content content = (Content) o;
-        return Objects.equals(this.contentType, content.contentType) && Objects.equals(this.content, content.content);
+        Content that = (Content) obj;
+        return Objects.equals(this.contentType, that.contentType) && Objects.equals(this.content, that.content);
     }
 
     @Override

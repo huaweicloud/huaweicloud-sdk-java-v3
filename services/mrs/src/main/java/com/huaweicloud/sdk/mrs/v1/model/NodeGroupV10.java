@@ -1,123 +1,104 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * NodeGroupV10
  */
-public class NodeGroupV10  {
-
+public class NodeGroupV10 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="GroupName")
-    
+    @JsonProperty(value = "GroupName")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NodeNum")
-    
+    @JsonProperty(value = "NodeNum")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NodeSize")
-    
+    @JsonProperty(value = "NodeSize")
 
     private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NodeSpecId")
-    
+    @JsonProperty(value = "NodeSpecId")
 
     private String nodeSpecId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="VmProductId")
-    
+    @JsonProperty(value = "VmProductId")
 
     private String vmProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="VmSpecCode")
-    
+    @JsonProperty(value = "VmSpecCode")
 
     private String vmSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="NodeProductId")
-    
+    @JsonProperty(value = "NodeProductId")
 
     private String nodeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="RootVolumeSize")
-    
+    @JsonProperty(value = "RootVolumeSize")
 
     private Integer rootVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="RootVolumeProductId")
-    
+    @JsonProperty(value = "RootVolumeProductId")
 
     private String rootVolumeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="RootVolumeType")
-    
+    @JsonProperty(value = "RootVolumeType")
 
     private String rootVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="RootVolumeResourceSpecCode")
-    
+    @JsonProperty(value = "RootVolumeResourceSpecCode")
 
     private String rootVolumeResourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="RootVolumeResourceType")
-    
+    @JsonProperty(value = "RootVolumeResourceType")
 
     private String rootVolumeResourceType;
+
     /**
      * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  - SATA：普通IO - SAS：高IO - SSD：超高IO
      */
     public static final class DataVolumeTypeEnum {
 
-        
         /**
          * Enum SATA for value: "SATA"
          */
         public static final DataVolumeTypeEnum SATA = new DataVolumeTypeEnum("SATA");
-        
+
         /**
          * Enum SAS for value: "SAS"
          */
         public static final DataVolumeTypeEnum SAS = new DataVolumeTypeEnum("SAS");
-        
+
         /**
          * Enum SSD for value: "SSD"
          */
         public static final DataVolumeTypeEnum SSD = new DataVolumeTypeEnum("SSD");
-        
+
         /**
          * Enum GPSSD for value: "GPSSD"
          */
         public static final DataVolumeTypeEnum GPSSD = new DataVolumeTypeEnum("GPSSD");
-        
 
         private static final Map<String, DataVolumeTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -148,25 +129,18 @@ public class NodeGroupV10  {
 
         @JsonCreator
         public static DataVolumeTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataVolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataVolumeTypeEnum(value));
         }
 
         public static DataVolumeTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,38 +158,32 @@ public class NodeGroupV10  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeType")
-    
+    @JsonProperty(value = "DataVolumeType")
 
     private DataVolumeTypeEnum dataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeCount")
-    
+    @JsonProperty(value = "DataVolumeCount")
 
     private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeSize")
-    
+    @JsonProperty(value = "DataVolumeSize")
 
     private Integer dataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeProductId")
-    
+    @JsonProperty(value = "DataVolumeProductId")
 
     private String dataVolumeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeResourceSpecCode")
-    
+    @JsonProperty(value = "DataVolumeResourceSpecCode")
 
     private String dataVolumeResourceSpecCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="DataVolumeResourceType")
-    
+    @JsonProperty(value = "DataVolumeResourceType")
 
     private String dataVolumeResourceType;
 
@@ -223,9 +191,6 @@ public class NodeGroupV10  {
         this.groupName = groupName;
         return this;
     }
-
-    
-
 
     /**
      * 节点组名。
@@ -239,15 +204,10 @@ public class NodeGroupV10  {
         this.groupName = groupName;
     }
 
-    
-
     public NodeGroupV10 withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 节点数量，取值范围0～500，Master节点和Core节点数量至少为1，Core与Task节点总数最大为500个。
@@ -263,15 +223,10 @@ public class NodeGroupV10  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public NodeGroupV10 withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点的实例规格。
@@ -285,15 +240,10 @@ public class NodeGroupV10  {
         this.nodeSize = nodeSize;
     }
 
-    
-
     public NodeGroupV10 withNodeSpecId(String nodeSpecId) {
         this.nodeSpecId = nodeSpecId;
         return this;
     }
-
-    
-
 
     /**
      * 节点实例规格ID。
@@ -307,15 +257,10 @@ public class NodeGroupV10  {
         this.nodeSpecId = nodeSpecId;
     }
 
-    
-
     public NodeGroupV10 withVmProductId(String vmProductId) {
         this.vmProductId = vmProductId;
         return this;
     }
-
-    
-
 
     /**
      * 节点虚拟机产品ID。
@@ -329,15 +274,10 @@ public class NodeGroupV10  {
         this.vmProductId = vmProductId;
     }
 
-    
-
     public NodeGroupV10 withVmSpecCode(String vmSpecCode) {
         this.vmSpecCode = vmSpecCode;
         return this;
     }
-
-    
-
 
     /**
      * 节点虚拟机产品规格。
@@ -351,15 +291,10 @@ public class NodeGroupV10  {
         this.vmSpecCode = vmSpecCode;
     }
 
-    
-
     public NodeGroupV10 withNodeProductId(String nodeProductId) {
         this.nodeProductId = nodeProductId;
         return this;
     }
-
-    
-
 
     /**
      * 节点实例产品ID。
@@ -373,15 +308,10 @@ public class NodeGroupV10  {
         this.nodeProductId = nodeProductId;
     }
 
-    
-
     public NodeGroupV10 withRootVolumeSize(Integer rootVolumeSize) {
         this.rootVolumeSize = rootVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统盘大小，不可配置，默认为40GB。
@@ -397,15 +327,10 @@ public class NodeGroupV10  {
         this.rootVolumeSize = rootVolumeSize;
     }
 
-    
-
     public NodeGroupV10 withRootVolumeProductId(String rootVolumeProductId) {
         this.rootVolumeProductId = rootVolumeProductId;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统盘的产品ID。
@@ -419,15 +344,10 @@ public class NodeGroupV10  {
         this.rootVolumeProductId = rootVolumeProductId;
     }
 
-    
-
     public NodeGroupV10 withRootVolumeType(String rootVolumeType) {
         this.rootVolumeType = rootVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统盘的类型。
@@ -441,15 +361,10 @@ public class NodeGroupV10  {
         this.rootVolumeType = rootVolumeType;
     }
 
-    
-
     public NodeGroupV10 withRootVolumeResourceSpecCode(String rootVolumeResourceSpecCode) {
         this.rootVolumeResourceSpecCode = rootVolumeResourceSpecCode;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统盘产品规格。
@@ -463,15 +378,10 @@ public class NodeGroupV10  {
         this.rootVolumeResourceSpecCode = rootVolumeResourceSpecCode;
     }
 
-    
-
     public NodeGroupV10 withRootVolumeResourceType(String rootVolumeResourceType) {
         this.rootVolumeResourceType = rootVolumeResourceType;
         return this;
     }
-
-    
-
 
     /**
      * 节点系统盘产品类型。
@@ -485,15 +395,10 @@ public class NodeGroupV10  {
         this.rootVolumeResourceType = rootVolumeResourceType;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeType(DataVolumeTypeEnum dataVolumeType) {
         this.dataVolumeType = dataVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储类别，目前支持SATA、SAS和SSD。  - SATA：普通IO - SAS：高IO - SSD：超高IO
@@ -507,15 +412,10 @@ public class NodeGroupV10  {
         this.dataVolumeType = dataVolumeType;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储数目。
@@ -531,15 +431,10 @@ public class NodeGroupV10  {
         this.dataVolumeCount = dataVolumeCount;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeSize(Integer dataVolumeSize) {
         this.dataVolumeSize = dataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储大小。
@@ -553,15 +448,10 @@ public class NodeGroupV10  {
         this.dataVolumeSize = dataVolumeSize;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeProductId(String dataVolumeProductId) {
         this.dataVolumeProductId = dataVolumeProductId;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘的产品ID。
@@ -575,15 +465,10 @@ public class NodeGroupV10  {
         this.dataVolumeProductId = dataVolumeProductId;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeResourceSpecCode(String dataVolumeResourceSpecCode) {
         this.dataVolumeResourceSpecCode = dataVolumeResourceSpecCode;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘的产品规格。
@@ -597,15 +482,10 @@ public class NodeGroupV10  {
         this.dataVolumeResourceSpecCode = dataVolumeResourceSpecCode;
     }
 
-    
-
     public NodeGroupV10 withDataVolumeResourceType(String dataVolumeResourceType) {
         this.dataVolumeResourceType = dataVolumeResourceType;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘的产品类型。
@@ -619,40 +499,54 @@ public class NodeGroupV10  {
         this.dataVolumeResourceType = dataVolumeResourceType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeGroupV10 nodeGroupV10 = (NodeGroupV10) o;
-        return Objects.equals(this.groupName, nodeGroupV10.groupName) &&
-            Objects.equals(this.nodeNum, nodeGroupV10.nodeNum) &&
-            Objects.equals(this.nodeSize, nodeGroupV10.nodeSize) &&
-            Objects.equals(this.nodeSpecId, nodeGroupV10.nodeSpecId) &&
-            Objects.equals(this.vmProductId, nodeGroupV10.vmProductId) &&
-            Objects.equals(this.vmSpecCode, nodeGroupV10.vmSpecCode) &&
-            Objects.equals(this.nodeProductId, nodeGroupV10.nodeProductId) &&
-            Objects.equals(this.rootVolumeSize, nodeGroupV10.rootVolumeSize) &&
-            Objects.equals(this.rootVolumeProductId, nodeGroupV10.rootVolumeProductId) &&
-            Objects.equals(this.rootVolumeType, nodeGroupV10.rootVolumeType) &&
-            Objects.equals(this.rootVolumeResourceSpecCode, nodeGroupV10.rootVolumeResourceSpecCode) &&
-            Objects.equals(this.rootVolumeResourceType, nodeGroupV10.rootVolumeResourceType) &&
-            Objects.equals(this.dataVolumeType, nodeGroupV10.dataVolumeType) &&
-            Objects.equals(this.dataVolumeCount, nodeGroupV10.dataVolumeCount) &&
-            Objects.equals(this.dataVolumeSize, nodeGroupV10.dataVolumeSize) &&
-            Objects.equals(this.dataVolumeProductId, nodeGroupV10.dataVolumeProductId) &&
-            Objects.equals(this.dataVolumeResourceSpecCode, nodeGroupV10.dataVolumeResourceSpecCode) &&
-            Objects.equals(this.dataVolumeResourceType, nodeGroupV10.dataVolumeResourceType);
+        NodeGroupV10 that = (NodeGroupV10) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.nodeSize, that.nodeSize) && Objects.equals(this.nodeSpecId, that.nodeSpecId)
+            && Objects.equals(this.vmProductId, that.vmProductId) && Objects.equals(this.vmSpecCode, that.vmSpecCode)
+            && Objects.equals(this.nodeProductId, that.nodeProductId)
+            && Objects.equals(this.rootVolumeSize, that.rootVolumeSize)
+            && Objects.equals(this.rootVolumeProductId, that.rootVolumeProductId)
+            && Objects.equals(this.rootVolumeType, that.rootVolumeType)
+            && Objects.equals(this.rootVolumeResourceSpecCode, that.rootVolumeResourceSpecCode)
+            && Objects.equals(this.rootVolumeResourceType, that.rootVolumeResourceType)
+            && Objects.equals(this.dataVolumeType, that.dataVolumeType)
+            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount)
+            && Objects.equals(this.dataVolumeSize, that.dataVolumeSize)
+            && Objects.equals(this.dataVolumeProductId, that.dataVolumeProductId)
+            && Objects.equals(this.dataVolumeResourceSpecCode, that.dataVolumeResourceSpecCode)
+            && Objects.equals(this.dataVolumeResourceType, that.dataVolumeResourceType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, nodeNum, nodeSize, nodeSpecId, vmProductId, vmSpecCode, nodeProductId, rootVolumeSize, rootVolumeProductId, rootVolumeType, rootVolumeResourceSpecCode, rootVolumeResourceType, dataVolumeType, dataVolumeCount, dataVolumeSize, dataVolumeProductId, dataVolumeResourceSpecCode, dataVolumeResourceType);
+        return Objects.hash(groupName,
+            nodeNum,
+            nodeSize,
+            nodeSpecId,
+            vmProductId,
+            vmSpecCode,
+            nodeProductId,
+            rootVolumeSize,
+            rootVolumeProductId,
+            rootVolumeType,
+            rootVolumeResourceSpecCode,
+            rootVolumeResourceType,
+            dataVolumeType,
+            dataVolumeCount,
+            dataVolumeSize,
+            dataVolumeProductId,
+            dataVolumeResourceSpecCode,
+            dataVolumeResourceType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -678,6 +572,7 @@ public class NodeGroupV10  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -688,8 +583,5 @@ public class NodeGroupV10  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

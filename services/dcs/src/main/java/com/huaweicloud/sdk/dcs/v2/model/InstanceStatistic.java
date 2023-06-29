@@ -209,23 +209,19 @@ public class InstanceStatistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceStatistic instanceStatistic = (InstanceStatistic) o;
-        return Objects.equals(this.inputKbps, instanceStatistic.inputKbps)
-            && Objects.equals(this.outputKbps, instanceStatistic.outputKbps)
-            && Objects.equals(this.instanceId, instanceStatistic.instanceId)
-            && Objects.equals(this.keys, instanceStatistic.keys)
-            && Objects.equals(this.usedMemory, instanceStatistic.usedMemory)
-            && Objects.equals(this.maxMemory, instanceStatistic.maxMemory)
-            && Objects.equals(this.cmdGetCount, instanceStatistic.cmdGetCount)
-            && Objects.equals(this.cmdSetCount, instanceStatistic.cmdSetCount)
-            && Objects.equals(this.usedCpu, instanceStatistic.usedCpu);
+        InstanceStatistic that = (InstanceStatistic) obj;
+        return Objects.equals(this.inputKbps, that.inputKbps) && Objects.equals(this.outputKbps, that.outputKbps)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.keys, that.keys)
+            && Objects.equals(this.usedMemory, that.usedMemory) && Objects.equals(this.maxMemory, that.maxMemory)
+            && Objects.equals(this.cmdGetCount, that.cmdGetCount) && Objects.equals(this.cmdSetCount, that.cmdSetCount)
+            && Objects.equals(this.usedCpu, that.usedCpu);
     }
 
     @Override

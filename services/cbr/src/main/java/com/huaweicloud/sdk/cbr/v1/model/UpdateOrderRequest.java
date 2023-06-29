@@ -65,16 +65,15 @@ public class UpdateOrderRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateOrderRequest updateOrderRequest = (UpdateOrderRequest) o;
-        return Objects.equals(this.orderId, updateOrderRequest.orderId)
-            && Objects.equals(this.body, updateOrderRequest.body);
+        UpdateOrderRequest that = (UpdateOrderRequest) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.body, that.body);
     }
 
     @Override

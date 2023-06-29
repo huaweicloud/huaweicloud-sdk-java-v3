@@ -43,15 +43,15 @@ public class UpdateVolumeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVolumeRequestBody updateVolumeRequestBody = (UpdateVolumeRequestBody) o;
-        return Objects.equals(this.volume, updateVolumeRequestBody.volume);
+        UpdateVolumeRequestBody that = (UpdateVolumeRequestBody) obj;
+        return Objects.equals(this.volume, that.volume);
     }
 
     @Override

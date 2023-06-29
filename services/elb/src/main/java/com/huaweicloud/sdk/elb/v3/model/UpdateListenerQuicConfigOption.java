@@ -55,16 +55,16 @@ public class UpdateListenerQuicConfigOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateListenerQuicConfigOption updateListenerQuicConfigOption = (UpdateListenerQuicConfigOption) o;
-        return Objects.equals(this.quicListenerId, updateListenerQuicConfigOption.quicListenerId)
-            && Objects.equals(this.enableQuicUpgrade, updateListenerQuicConfigOption.enableQuicUpgrade);
+        UpdateListenerQuicConfigOption that = (UpdateListenerQuicConfigOption) obj;
+        return Objects.equals(this.quicListenerId, that.quicListenerId)
+            && Objects.equals(this.enableQuicUpgrade, that.enableQuicUpgrade);
     }
 
     @Override

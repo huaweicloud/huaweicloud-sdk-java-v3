@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 用户的权限属性。
  */
-public class GaussDBforOpenGaussUserForListAttributes  {
-
+public class GaussDBforOpenGaussUserForListAttributes {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolsuper")
-    
+    @JsonProperty(value = "rolsuper")
 
     private Boolean rolsuper;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolinherit")
-    
+    @JsonProperty(value = "rolinherit")
 
     private Boolean rolinherit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolcreaterole")
-    
+    @JsonProperty(value = "rolcreaterole")
 
     private Boolean rolcreaterole;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolcreatedb")
-    
+    @JsonProperty(value = "rolcreatedb")
 
     private Boolean rolcreatedb;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolcanlogin")
-    
+    @JsonProperty(value = "rolcanlogin")
 
     private Boolean rolcanlogin;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolconnlimit")
-    
+    @JsonProperty(value = "rolconnlimit")
 
     private Integer rolconnlimit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolreplication")
-    
+    @JsonProperty(value = "rolreplication")
 
     private Boolean rolreplication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rolbypassrls")
-    
+    @JsonProperty(value = "rolbypassrls")
 
     private Boolean rolbypassrls;
 
@@ -69,9 +54,6 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolsuper = rolsuper;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否具有超级用户权限，取值为“true”或“false”。
@@ -85,15 +67,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolsuper = rolsuper;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolinherit(Boolean rolinherit) {
         this.rolinherit = rolinherit;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否自动继承其所属角色的权限，取值为“true”或“false”。
@@ -107,15 +84,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolinherit = rolinherit;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolcreaterole(Boolean rolcreaterole) {
         this.rolcreaterole = rolcreaterole;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否支持创建其他子用户，取值为“true”或“false”。
@@ -129,15 +101,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolcreaterole = rolcreaterole;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolcreatedb(Boolean rolcreatedb) {
         this.rolcreatedb = rolcreatedb;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否可以创建数据库，取值为“true”或“false”。
@@ -151,15 +118,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolcreatedb = rolcreatedb;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolcanlogin(Boolean rolcanlogin) {
         this.rolcanlogin = rolcanlogin;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否可以登录数据库，取值为“true”或“false”。
@@ -173,15 +135,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolcanlogin = rolcanlogin;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolconnlimit(Integer rolconnlimit) {
         this.rolconnlimit = rolconnlimit;
         return this;
     }
-
-    
-
 
     /**
      * 用户连接实例的最大并发连接数。-1表示没有限制。
@@ -195,15 +152,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolconnlimit = rolconnlimit;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolreplication(Boolean rolreplication) {
         this.rolreplication = rolreplication;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否属于复制角色，取值为“true”或“false”。
@@ -217,15 +169,10 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolreplication = rolreplication;
     }
 
-    
-
     public GaussDBforOpenGaussUserForListAttributes withRolbypassrls(Boolean rolbypassrls) {
         this.rolbypassrls = rolbypassrls;
         return this;
     }
-
-    
-
 
     /**
      * 用户是否绕过每个行级安全策略，取值为“true”或“false”。
@@ -239,30 +186,35 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         this.rolbypassrls = rolbypassrls;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussUserForListAttributes gaussDBforOpenGaussUserForListAttributes = (GaussDBforOpenGaussUserForListAttributes) o;
-        return Objects.equals(this.rolsuper, gaussDBforOpenGaussUserForListAttributes.rolsuper) &&
-            Objects.equals(this.rolinherit, gaussDBforOpenGaussUserForListAttributes.rolinherit) &&
-            Objects.equals(this.rolcreaterole, gaussDBforOpenGaussUserForListAttributes.rolcreaterole) &&
-            Objects.equals(this.rolcreatedb, gaussDBforOpenGaussUserForListAttributes.rolcreatedb) &&
-            Objects.equals(this.rolcanlogin, gaussDBforOpenGaussUserForListAttributes.rolcanlogin) &&
-            Objects.equals(this.rolconnlimit, gaussDBforOpenGaussUserForListAttributes.rolconnlimit) &&
-            Objects.equals(this.rolreplication, gaussDBforOpenGaussUserForListAttributes.rolreplication) &&
-            Objects.equals(this.rolbypassrls, gaussDBforOpenGaussUserForListAttributes.rolbypassrls);
+        GaussDBforOpenGaussUserForListAttributes that = (GaussDBforOpenGaussUserForListAttributes) obj;
+        return Objects.equals(this.rolsuper, that.rolsuper) && Objects.equals(this.rolinherit, that.rolinherit)
+            && Objects.equals(this.rolcreaterole, that.rolcreaterole)
+            && Objects.equals(this.rolcreatedb, that.rolcreatedb) && Objects.equals(this.rolcanlogin, that.rolcanlogin)
+            && Objects.equals(this.rolconnlimit, that.rolconnlimit)
+            && Objects.equals(this.rolreplication, that.rolreplication)
+            && Objects.equals(this.rolbypassrls, that.rolbypassrls);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(rolsuper, rolinherit, rolcreaterole, rolcreatedb, rolcanlogin, rolconnlimit, rolreplication, rolbypassrls);
+        return Objects.hash(rolsuper,
+            rolinherit,
+            rolcreaterole,
+            rolcreatedb,
+            rolcanlogin,
+            rolconnlimit,
+            rolreplication,
+            rolbypassrls);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +230,7 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +241,5 @@ public class GaussDBforOpenGaussUserForListAttributes  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

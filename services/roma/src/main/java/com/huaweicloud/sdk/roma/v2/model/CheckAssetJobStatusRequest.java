@@ -55,16 +55,15 @@ public class CheckAssetJobStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAssetJobStatusRequest checkAssetJobStatusRequest = (CheckAssetJobStatusRequest) o;
-        return Objects.equals(this.instanceId, checkAssetJobStatusRequest.instanceId)
-            && Objects.equals(this.jobId, checkAssetJobStatusRequest.jobId);
+        CheckAssetJobStatusRequest that = (CheckAssetJobStatusRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

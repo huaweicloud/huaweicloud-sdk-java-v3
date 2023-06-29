@@ -43,15 +43,15 @@ public class Action {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Action action = (Action) o;
-        return Objects.equals(this.functionRef, action.functionRef);
+        Action that = (Action) obj;
+        return Objects.equals(this.functionRef, that.functionRef);
     }
 
     @Override

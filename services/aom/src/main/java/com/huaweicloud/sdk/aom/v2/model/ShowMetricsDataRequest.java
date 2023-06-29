@@ -1,53 +1,45 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.QueryMetricDataParam;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ShowMetricsDataRequest  {
+public class ShowMetricsDataRequest {
 
     /**
      * 用于对查询到的监控数据进行断点插值，默认值为-1。 -1：断点处使用-1进行表示。 0 ：断点处使用0进行表示。 null：断点处使用null进行表示。 average：断点处使用前后邻近的有效数据的平均值进行表示，如果不存在有效数据则使用null进行表示。
      */
     public static final class FillValueEnum {
 
-        
         /**
          * Enum _1 for value: "-1"
          */
         public static final FillValueEnum _1 = new FillValueEnum("-1");
-        
+
         /**
          * Enum _0 for value: "0"
          */
         public static final FillValueEnum _0 = new FillValueEnum("0");
-        
+
         /**
          * Enum NULL for value: "null"
          */
         public static final FillValueEnum NULL = new FillValueEnum("null");
-        
+
         /**
          * Enum AVERAGE for value: "average"
          */
         public static final FillValueEnum AVERAGE = new FillValueEnum("average");
-        
 
         private static final Map<String, FillValueEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,25 +70,18 @@ public class ShowMetricsDataRequest  {
 
         @JsonCreator
         public static FillValueEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FillValueEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FillValueEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FillValueEnum(value));
         }
 
         public static FillValueEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FillValueEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -114,14 +99,12 @@ public class ShowMetricsDataRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fillValue")
-    
+    @JsonProperty(value = "fillValue")
 
     private FillValueEnum fillValue;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private QueryMetricDataParam body;
 
@@ -129,9 +112,6 @@ public class ShowMetricsDataRequest  {
         this.fillValue = fillValue;
         return this;
     }
-
-    
-
 
     /**
      * 用于对查询到的监控数据进行断点插值，默认值为-1。 -1：断点处使用-1进行表示。 0 ：断点处使用0进行表示。 null：断点处使用null进行表示。 average：断点处使用前后邻近的有效数据的平均值进行表示，如果不存在有效数据则使用null进行表示。
@@ -145,22 +125,19 @@ public class ShowMetricsDataRequest  {
         this.fillValue = fillValue;
     }
 
-    
-
     public ShowMetricsDataRequest withBody(QueryMetricDataParam body) {
         this.body = body;
         return this;
     }
 
     public ShowMetricsDataRequest withBody(Consumer<QueryMetricDataParam> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new QueryMetricDataParam();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -174,24 +151,23 @@ public class ShowMetricsDataRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetricsDataRequest showMetricsDataRequest = (ShowMetricsDataRequest) o;
-        return Objects.equals(this.fillValue, showMetricsDataRequest.fillValue) &&
-            Objects.equals(this.body, showMetricsDataRequest.body);
+        ShowMetricsDataRequest that = (ShowMetricsDataRequest) obj;
+        return Objects.equals(this.fillValue, that.fillValue) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(fillValue, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -201,6 +177,7 @@ public class ShowMetricsDataRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -211,8 +188,5 @@ public class ShowMetricsDataRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

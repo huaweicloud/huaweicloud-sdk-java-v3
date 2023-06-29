@@ -167,18 +167,18 @@ public class NetWork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetWork netWork = (NetWork) o;
-        return Objects.equals(this.name, netWork.name) && Objects.equals(this.ip, netWork.ip)
-            && Objects.equals(this.netmask, netWork.netmask) && Objects.equals(this.gateway, netWork.gateway)
-            && Objects.equals(this.mtu, netWork.mtu) && Objects.equals(this.mac, netWork.mac)
-            && Objects.equals(this.id, netWork.id);
+        NetWork that = (NetWork) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.netmask, that.netmask) && Objects.equals(this.gateway, that.gateway)
+            && Objects.equals(this.mtu, that.mtu) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

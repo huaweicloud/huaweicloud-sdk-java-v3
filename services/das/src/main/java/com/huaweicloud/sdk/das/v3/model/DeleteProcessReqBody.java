@@ -118,18 +118,16 @@ public class DeleteProcessReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProcessReqBody deleteProcessReqBody = (DeleteProcessReqBody) o;
-        return Objects.equals(this.dbUserId, deleteProcessReqBody.dbUserId)
-            && Objects.equals(this.processIds, deleteProcessReqBody.processIds)
-            && Objects.equals(this.user, deleteProcessReqBody.user)
-            && Objects.equals(this.database, deleteProcessReqBody.database);
+        DeleteProcessReqBody that = (DeleteProcessReqBody) obj;
+        return Objects.equals(this.dbUserId, that.dbUserId) && Objects.equals(this.processIds, that.processIds)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.database, that.database);
     }
 
     @Override

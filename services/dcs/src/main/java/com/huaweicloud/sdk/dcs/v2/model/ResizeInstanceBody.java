@@ -39,8 +39,8 @@ public class ResizeInstanceBody {
     private List<String> reservedIp = null;
 
     /**
-    * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
-    */
+     * 变更类型，Redis 4.0或者5.0主备实例进行副本数变更时必选。 - createReplication: 添加副本 - deleteReplication: 删除副本 
+     */
     public static final class ChangeTypeEnum {
 
         /**
@@ -83,22 +83,15 @@ public class ResizeInstanceBody {
             if (value == null) {
                 return null;
             }
-            ChangeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChangeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChangeTypeEnum(value));
         }
 
         public static ChangeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChangeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -329,22 +322,19 @@ public class ResizeInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInstanceBody resizeInstanceBody = (ResizeInstanceBody) o;
-        return Objects.equals(this.specCode, resizeInstanceBody.specCode)
-            && Objects.equals(this.newCapacity, resizeInstanceBody.newCapacity)
-            && Objects.equals(this.bssParam, resizeInstanceBody.bssParam)
-            && Objects.equals(this.reservedIp, resizeInstanceBody.reservedIp)
-            && Objects.equals(this.changeType, resizeInstanceBody.changeType)
-            && Objects.equals(this.availableZones, resizeInstanceBody.availableZones)
-            && Objects.equals(this.nodeList, resizeInstanceBody.nodeList)
-            && Objects.equals(this.executeImmediately, resizeInstanceBody.executeImmediately);
+        ResizeInstanceBody that = (ResizeInstanceBody) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.newCapacity, that.newCapacity)
+            && Objects.equals(this.bssParam, that.bssParam) && Objects.equals(this.reservedIp, that.reservedIp)
+            && Objects.equals(this.changeType, that.changeType)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.nodeList, that.nodeList)
+            && Objects.equals(this.executeImmediately, that.executeImmediately);
     }
 
     @Override

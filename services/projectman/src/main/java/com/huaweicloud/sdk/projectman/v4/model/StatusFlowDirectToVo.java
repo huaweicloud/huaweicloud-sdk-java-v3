@@ -165,21 +165,18 @@ public class StatusFlowDirectToVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatusFlowDirectToVo statusFlowDirectToVo = (StatusFlowDirectToVo) o;
-        return Objects.equals(this.parentName, statusFlowDirectToVo.parentName)
-            && Objects.equals(this.parentType, statusFlowDirectToVo.parentType)
-            && Objects.equals(this.statusId, statusFlowDirectToVo.statusId)
-            && Objects.equals(this.name, statusFlowDirectToVo.name)
-            && Objects.equals(this.statusType, statusFlowDirectToVo.statusType)
-            && Objects.equals(this.enabled, statusFlowDirectToVo.enabled)
-            && Objects.equals(this.parentId, statusFlowDirectToVo.parentId);
+        StatusFlowDirectToVo that = (StatusFlowDirectToVo) obj;
+        return Objects.equals(this.parentName, that.parentName) && Objects.equals(this.parentType, that.parentType)
+            && Objects.equals(this.statusId, that.statusId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.statusType, that.statusType) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

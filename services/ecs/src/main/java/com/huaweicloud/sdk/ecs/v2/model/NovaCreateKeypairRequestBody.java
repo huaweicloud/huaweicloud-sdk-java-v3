@@ -43,15 +43,15 @@ public class NovaCreateKeypairRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaCreateKeypairRequestBody novaCreateKeypairRequestBody = (NovaCreateKeypairRequestBody) o;
-        return Objects.equals(this.keypair, novaCreateKeypairRequestBody.keypair);
+        NovaCreateKeypairRequestBody that = (NovaCreateKeypairRequestBody) obj;
+        return Objects.equals(this.keypair, that.keypair);
     }
 
     @Override

@@ -1,97 +1,77 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ReplyRatesTotal  {
-
+public class ReplyRatesTotal {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="question_count")
-    
+    @JsonProperty(value = "question_count")
 
     private Long questionCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="direct_count")
-    
+    @JsonProperty(value = "direct_count")
 
     private Long directCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recommend_count")
-    
+    @JsonProperty(value = "recommend_count")
 
     private Long recommendCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notmatch_count")
-    
+    @JsonProperty(value = "notmatch_count")
 
     private Long notmatchCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="direct_rate")
-    
+    @JsonProperty(value = "direct_rate")
 
     private Double directRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recommend_rate")
-    
+    @JsonProperty(value = "recommend_rate")
 
     private Double recommendRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notmatch_rate")
-    
+    @JsonProperty(value = "notmatch_rate")
 
     private Double notmatchRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dialog_count")
-    
+    @JsonProperty(value = "dialog_count")
 
     private Long dialogCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dialog_rate")
-    
+    @JsonProperty(value = "dialog_rate")
 
     private Double dialogRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invalid_count")
-    
+    @JsonProperty(value = "invalid_count")
 
     private Long invalidCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="invalid_rate")
-    
+    @JsonProperty(value = "invalid_rate")
 
     private Double invalidRate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chat_count")
-    
+    @JsonProperty(value = "chat_count")
 
     private Long chatCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chat_rate")
-    
+    @JsonProperty(value = "chat_rate")
 
     private Double chatRate;
 
@@ -99,9 +79,6 @@ public class ReplyRatesTotal  {
         this.questionCount = questionCount;
         return this;
     }
-
-    
-
 
     /**
      * 用户提问总数。
@@ -115,15 +92,10 @@ public class ReplyRatesTotal  {
         this.questionCount = questionCount;
     }
 
-    
-
     public ReplyRatesTotal withDirectCount(Long directCount) {
         this.directCount = directCount;
         return this;
     }
-
-    
-
 
     /**
      * 直接回答个数。
@@ -137,15 +109,10 @@ public class ReplyRatesTotal  {
         this.directCount = directCount;
     }
 
-    
-
     public ReplyRatesTotal withRecommendCount(Long recommendCount) {
         this.recommendCount = recommendCount;
         return this;
     }
-
-    
-
 
     /**
      * 推荐回答个数。
@@ -159,15 +126,10 @@ public class ReplyRatesTotal  {
         this.recommendCount = recommendCount;
     }
 
-    
-
     public ReplyRatesTotal withNotmatchCount(Long notmatchCount) {
         this.notmatchCount = notmatchCount;
         return this;
     }
-
-    
-
 
     /**
      * 未匹配个数。
@@ -181,15 +143,10 @@ public class ReplyRatesTotal  {
         this.notmatchCount = notmatchCount;
     }
 
-    
-
     public ReplyRatesTotal withDirectRate(Double directRate) {
         this.directRate = directRate;
         return this;
     }
-
-    
-
 
     /**
      * 直接回答比率，保留小数点后三位。
@@ -203,15 +160,10 @@ public class ReplyRatesTotal  {
         this.directRate = directRate;
     }
 
-    
-
     public ReplyRatesTotal withRecommendRate(Double recommendRate) {
         this.recommendRate = recommendRate;
         return this;
     }
-
-    
-
 
     /**
      * 推荐回答比率，保留小数点后三位。
@@ -225,15 +177,10 @@ public class ReplyRatesTotal  {
         this.recommendRate = recommendRate;
     }
 
-    
-
     public ReplyRatesTotal withNotmatchRate(Double notmatchRate) {
         this.notmatchRate = notmatchRate;
         return this;
     }
-
-    
-
 
     /**
      * 未匹配比率，保留小数点后三位。
@@ -247,15 +194,10 @@ public class ReplyRatesTotal  {
         this.notmatchRate = notmatchRate;
     }
 
-    
-
     public ReplyRatesTotal withDialogCount(Long dialogCount) {
         this.dialogCount = dialogCount;
         return this;
     }
-
-    
-
 
     /**
      * 多轮对话次数。
@@ -269,15 +211,10 @@ public class ReplyRatesTotal  {
         this.dialogCount = dialogCount;
     }
 
-    
-
     public ReplyRatesTotal withDialogRate(Double dialogRate) {
         this.dialogRate = dialogRate;
         return this;
     }
-
-    
-
 
     /**
      * 多轮对话比例。
@@ -291,15 +228,10 @@ public class ReplyRatesTotal  {
         this.dialogRate = dialogRate;
     }
 
-    
-
     public ReplyRatesTotal withInvalidCount(Long invalidCount) {
         this.invalidCount = invalidCount;
         return this;
     }
-
-    
-
 
     /**
      * 无效问题次数。
@@ -313,15 +245,10 @@ public class ReplyRatesTotal  {
         this.invalidCount = invalidCount;
     }
 
-    
-
     public ReplyRatesTotal withInvalidRate(Double invalidRate) {
         this.invalidRate = invalidRate;
         return this;
     }
-
-    
-
 
     /**
      * 无效问题比例。
@@ -335,15 +262,10 @@ public class ReplyRatesTotal  {
         this.invalidRate = invalidRate;
     }
 
-    
-
     public ReplyRatesTotal withChatCount(Long chatCount) {
         this.chatCount = chatCount;
         return this;
     }
-
-    
-
 
     /**
      * 闲聊匹配次数。
@@ -357,15 +279,10 @@ public class ReplyRatesTotal  {
         this.chatCount = chatCount;
     }
 
-    
-
     public ReplyRatesTotal withChatRate(Double chatRate) {
         this.chatRate = chatRate;
         return this;
     }
-
-    
-
 
     /**
      * 闲聊比例。
@@ -379,35 +296,45 @@ public class ReplyRatesTotal  {
         this.chatRate = chatRate;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplyRatesTotal replyRatesTotal = (ReplyRatesTotal) o;
-        return Objects.equals(this.questionCount, replyRatesTotal.questionCount) &&
-            Objects.equals(this.directCount, replyRatesTotal.directCount) &&
-            Objects.equals(this.recommendCount, replyRatesTotal.recommendCount) &&
-            Objects.equals(this.notmatchCount, replyRatesTotal.notmatchCount) &&
-            Objects.equals(this.directRate, replyRatesTotal.directRate) &&
-            Objects.equals(this.recommendRate, replyRatesTotal.recommendRate) &&
-            Objects.equals(this.notmatchRate, replyRatesTotal.notmatchRate) &&
-            Objects.equals(this.dialogCount, replyRatesTotal.dialogCount) &&
-            Objects.equals(this.dialogRate, replyRatesTotal.dialogRate) &&
-            Objects.equals(this.invalidCount, replyRatesTotal.invalidCount) &&
-            Objects.equals(this.invalidRate, replyRatesTotal.invalidRate) &&
-            Objects.equals(this.chatCount, replyRatesTotal.chatCount) &&
-            Objects.equals(this.chatRate, replyRatesTotal.chatRate);
+        ReplyRatesTotal that = (ReplyRatesTotal) obj;
+        return Objects.equals(this.questionCount, that.questionCount)
+            && Objects.equals(this.directCount, that.directCount)
+            && Objects.equals(this.recommendCount, that.recommendCount)
+            && Objects.equals(this.notmatchCount, that.notmatchCount)
+            && Objects.equals(this.directRate, that.directRate)
+            && Objects.equals(this.recommendRate, that.recommendRate)
+            && Objects.equals(this.notmatchRate, that.notmatchRate)
+            && Objects.equals(this.dialogCount, that.dialogCount) && Objects.equals(this.dialogRate, that.dialogRate)
+            && Objects.equals(this.invalidCount, that.invalidCount)
+            && Objects.equals(this.invalidRate, that.invalidRate) && Objects.equals(this.chatCount, that.chatCount)
+            && Objects.equals(this.chatRate, that.chatRate);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(questionCount, directCount, recommendCount, notmatchCount, directRate, recommendRate, notmatchRate, dialogCount, dialogRate, invalidCount, invalidRate, chatCount, chatRate);
+        return Objects.hash(questionCount,
+            directCount,
+            recommendCount,
+            notmatchCount,
+            directRate,
+            recommendRate,
+            notmatchRate,
+            dialogCount,
+            dialogRate,
+            invalidCount,
+            invalidRate,
+            chatCount,
+            chatRate);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -428,6 +355,7 @@ public class ReplyRatesTotal  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -438,8 +366,5 @@ public class ReplyRatesTotal  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -123,18 +123,17 @@ public class AuthInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthInfo authInfo = (AuthInfo) o;
-        return Objects.equals(this.authType, authInfo.authType) && Objects.equals(this.secret, authInfo.secret)
-            && Objects.equals(this.fingerprint, authInfo.fingerprint)
-            && Objects.equals(this.secureAccess, authInfo.secureAccess)
-            && Objects.equals(this.timeout, authInfo.timeout);
+        AuthInfo that = (AuthInfo) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.secret, that.secret)
+            && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.secureAccess, that.secureAccess) && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

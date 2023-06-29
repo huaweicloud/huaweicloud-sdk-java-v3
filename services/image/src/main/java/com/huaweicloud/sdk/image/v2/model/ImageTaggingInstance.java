@@ -65,16 +65,15 @@ public class ImageTaggingInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageTaggingInstance imageTaggingInstance = (ImageTaggingInstance) o;
-        return Objects.equals(this.boundingBox, imageTaggingInstance.boundingBox)
-            && Objects.equals(this.confidence, imageTaggingInstance.confidence);
+        ImageTaggingInstance that = (ImageTaggingInstance) obj;
+        return Objects.equals(this.boundingBox, that.boundingBox) && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

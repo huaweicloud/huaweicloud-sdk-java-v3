@@ -90,16 +90,15 @@ public class DataobjectSearchCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataobjectSearchCondition dataobjectSearchCondition = (DataobjectSearchCondition) o;
-        return Objects.equals(this.conditions, dataobjectSearchCondition.conditions)
-            && Objects.equals(this.logics, dataobjectSearchCondition.logics);
+        DataobjectSearchCondition that = (DataobjectSearchCondition) obj;
+        return Objects.equals(this.conditions, that.conditions) && Objects.equals(this.logics, that.logics);
     }
 
     @Override

@@ -96,16 +96,16 @@ public class UserAgentFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserAgentFilter userAgentFilter = (UserAgentFilter) o;
-        return Objects.equals(this.type, userAgentFilter.type) && Objects.equals(this.value, userAgentFilter.value)
-            && Objects.equals(this.uaList, userAgentFilter.uaList);
+        UserAgentFilter that = (UserAgentFilter) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.uaList, that.uaList);
     }
 
     @Override

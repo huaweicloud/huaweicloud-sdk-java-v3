@@ -90,16 +90,15 @@ public class LifecycleEntrypoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LifecycleEntrypoint lifecycleEntrypoint = (LifecycleEntrypoint) o;
-        return Objects.equals(this.command, lifecycleEntrypoint.command)
-            && Objects.equals(this.args, lifecycleEntrypoint.args);
+        LifecycleEntrypoint that = (LifecycleEntrypoint) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args);
     }
 
     @Override

@@ -263,25 +263,23 @@ public class HttpsDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpsDetail httpsDetail = (HttpsDetail) o;
-        return Objects.equals(this.domainId, httpsDetail.domainId)
-            && Objects.equals(this.domainName, httpsDetail.domainName)
-            && Objects.equals(this.certName, httpsDetail.certName)
-            && Objects.equals(this.certificate, httpsDetail.certificate)
-            && Objects.equals(this.privateKey, httpsDetail.privateKey)
-            && Objects.equals(this.certificateType, httpsDetail.certificateType)
-            && Objects.equals(this.expirationTime, httpsDetail.expirationTime)
-            && Objects.equals(this.httpsStatus, httpsDetail.httpsStatus)
-            && Objects.equals(this.forceRedirectHttps, httpsDetail.forceRedirectHttps)
-            && Objects.equals(this.forceRedirectConfig, httpsDetail.forceRedirectConfig)
-            && Objects.equals(this.http2, httpsDetail.http2);
+        HttpsDetail that = (HttpsDetail) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.certName, that.certName) && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.expirationTime, that.expirationTime)
+            && Objects.equals(this.httpsStatus, that.httpsStatus)
+            && Objects.equals(this.forceRedirectHttps, that.forceRedirectHttps)
+            && Objects.equals(this.forceRedirectConfig, that.forceRedirectConfig)
+            && Objects.equals(this.http2, that.http2);
     }
 
     @Override

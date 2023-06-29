@@ -74,16 +74,16 @@ public class AutoscanConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoscanConfigRequest autoscanConfigRequest = (AutoscanConfigRequest) o;
-        return Objects.equals(this.enableAutoScan, autoscanConfigRequest.enableAutoScan)
-            && Objects.equals(this.scheduleAt, autoscanConfigRequest.scheduleAt);
+        AutoscanConfigRequest that = (AutoscanConfigRequest) obj;
+        return Objects.equals(this.enableAutoScan, that.enableAutoScan)
+            && Objects.equals(this.scheduleAt, that.scheduleAt);
     }
 
     @Override

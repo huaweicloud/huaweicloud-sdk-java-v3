@@ -77,17 +77,16 @@ public class ResizeFlavorReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeFlavorReq resizeFlavorReq = (ResizeFlavorReq) o;
-        return Objects.equals(this.specCode, resizeFlavorReq.specCode)
-            && Objects.equals(this.groupId, resizeFlavorReq.groupId)
-            && Objects.equals(this.isAutoPay, resizeFlavorReq.isAutoPay);
+        ResizeFlavorReq that = (ResizeFlavorReq) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

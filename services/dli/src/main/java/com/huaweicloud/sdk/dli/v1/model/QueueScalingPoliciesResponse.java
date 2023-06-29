@@ -121,19 +121,18 @@ public class QueueScalingPoliciesResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueueScalingPoliciesResponse queueScalingPoliciesResponse = (QueueScalingPoliciesResponse) o;
-        return Objects.equals(this.priority, queueScalingPoliciesResponse.priority)
-            && Objects.equals(this.impactStartTime, queueScalingPoliciesResponse.impactStartTime)
-            && Objects.equals(this.impactStopTime, queueScalingPoliciesResponse.impactStopTime)
-            && Objects.equals(this.minCu, queueScalingPoliciesResponse.minCu)
-            && Objects.equals(this.maxCu, queueScalingPoliciesResponse.maxCu);
+        QueueScalingPoliciesResponse that = (QueueScalingPoliciesResponse) obj;
+        return Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.impactStartTime, that.impactStartTime)
+            && Objects.equals(this.impactStopTime, that.impactStopTime) && Objects.equals(this.minCu, that.minCu)
+            && Objects.equals(this.maxCu, that.maxCu);
     }
 
     @Override

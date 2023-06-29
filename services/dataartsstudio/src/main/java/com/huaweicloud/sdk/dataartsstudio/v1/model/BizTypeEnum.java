@@ -208,22 +208,15 @@ public class BizTypeEnum {
         if (value == null) {
             return null;
         }
-        BizTypeEnum result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new BizTypeEnum(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BizTypeEnum(value));
     }
 
     public static BizTypeEnum valueOf(String value) {
         if (value == null) {
             return null;
         }
-        BizTypeEnum result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

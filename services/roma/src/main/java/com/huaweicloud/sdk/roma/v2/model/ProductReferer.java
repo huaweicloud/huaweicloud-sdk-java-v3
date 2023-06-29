@@ -98,22 +98,15 @@ public class ProductReferer {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class ProductReferer {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,20 +312,18 @@ public class ProductReferer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductReferer productReferer = (ProductReferer) o;
-        return Objects.equals(this.productId, productReferer.productId)
-            && Objects.equals(this.productName, productReferer.productName)
-            && Objects.equals(this.manufacturerId, productReferer.manufacturerId)
-            && Objects.equals(this.model, productReferer.model)
-            && Objects.equals(this.protocolType, productReferer.protocolType)
-            && Objects.equals(this.productType, productReferer.productType);
+        ProductReferer that = (ProductReferer) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.manufacturerId, that.manufacturerId) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.productType, that.productType);
     }
 
     @Override

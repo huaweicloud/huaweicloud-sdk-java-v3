@@ -121,19 +121,17 @@ public class ListWhiteblackipRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWhiteblackipRuleRequest listWhiteblackipRuleRequest = (ListWhiteblackipRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listWhiteblackipRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, listWhiteblackipRuleRequest.policyId)
-            && Objects.equals(this.page, listWhiteblackipRuleRequest.page)
-            && Objects.equals(this.pagesize, listWhiteblackipRuleRequest.pagesize)
-            && Objects.equals(this.name, listWhiteblackipRuleRequest.name);
+        ListWhiteblackipRuleRequest that = (ListWhiteblackipRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize) && Objects.equals(this.name, that.name);
     }
 
     @Override

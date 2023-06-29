@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 函数流节点执行详细信息
  */
-public class ExecutionResultList  {
-
+public class ExecutionResultList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_execution_id")
-    
+    @JsonProperty(value = "function_execution_id")
 
     private String functionExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
 
     private Object output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
@@ -57,9 +44,6 @@ public class ExecutionResultList  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 流程节点ID。
@@ -73,15 +57,10 @@ public class ExecutionResultList  {
         this.nodeId = nodeId;
     }
 
-    
-
     public ExecutionResultList withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 节点开始执行时间。
@@ -97,15 +76,10 @@ public class ExecutionResultList  {
         this.beginTime = beginTime;
     }
 
-    
-
     public ExecutionResultList withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 节点执行结束时间。
@@ -121,15 +95,10 @@ public class ExecutionResultList  {
         this.endTime = endTime;
     }
 
-    
-
     public ExecutionResultList withFunctionExecutionId(String functionExecutionId) {
         this.functionExecutionId = functionExecutionId;
         return this;
     }
-
-    
-
 
     /**
      * FunctionGraph的执行id。
@@ -143,15 +112,10 @@ public class ExecutionResultList  {
         this.functionExecutionId = functionExecutionId;
     }
 
-    
-
     public ExecutionResultList withOutput(Object output) {
         this.output = output;
         return this;
     }
-
-    
-
 
     /**
      * 节点输出。
@@ -165,15 +129,10 @@ public class ExecutionResultList  {
         this.output = output;
     }
 
-    
-
     public ExecutionResultList withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 节点状态。
@@ -187,28 +146,26 @@ public class ExecutionResultList  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionResultList executionResultList = (ExecutionResultList) o;
-        return Objects.equals(this.nodeId, executionResultList.nodeId) &&
-            Objects.equals(this.beginTime, executionResultList.beginTime) &&
-            Objects.equals(this.endTime, executionResultList.endTime) &&
-            Objects.equals(this.functionExecutionId, executionResultList.functionExecutionId) &&
-            Objects.equals(this.output, executionResultList.output) &&
-            Objects.equals(this.status, executionResultList.status);
+        ExecutionResultList that = (ExecutionResultList) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.functionExecutionId, that.functionExecutionId)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, beginTime, endTime, functionExecutionId, output, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -222,6 +179,7 @@ public class ExecutionResultList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -232,8 +190,5 @@ public class ExecutionResultList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

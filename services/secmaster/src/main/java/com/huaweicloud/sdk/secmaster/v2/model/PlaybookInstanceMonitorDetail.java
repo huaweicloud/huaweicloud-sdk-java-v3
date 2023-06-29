@@ -293,25 +293,25 @@ public class PlaybookInstanceMonitorDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookInstanceMonitorDetail playbookInstanceMonitorDetail = (PlaybookInstanceMonitorDetail) o;
-        return Objects.equals(this.totalInstanceRunNum, playbookInstanceMonitorDetail.totalInstanceRunNum)
-            && Objects.equals(this.scheduleInstanceRunNum, playbookInstanceMonitorDetail.scheduleInstanceRunNum)
-            && Objects.equals(this.eventInstanceRunNum, playbookInstanceMonitorDetail.eventInstanceRunNum)
-            && Objects.equals(this.averageRunTime, playbookInstanceMonitorDetail.averageRunTime)
-            && Objects.equals(this.minRunTimeInstance, playbookInstanceMonitorDetail.minRunTimeInstance)
-            && Objects.equals(this.maxRunTimeInstance, playbookInstanceMonitorDetail.maxRunTimeInstance)
-            && Objects.equals(this.totalInstanceNum, playbookInstanceMonitorDetail.totalInstanceNum)
-            && Objects.equals(this.successInstanceNum, playbookInstanceMonitorDetail.successInstanceNum)
-            && Objects.equals(this.failInstanceNum, playbookInstanceMonitorDetail.failInstanceNum)
-            && Objects.equals(this.terminateInstanceNum, playbookInstanceMonitorDetail.terminateInstanceNum)
-            && Objects.equals(this.runningInstanceNum, playbookInstanceMonitorDetail.runningInstanceNum);
+        PlaybookInstanceMonitorDetail that = (PlaybookInstanceMonitorDetail) obj;
+        return Objects.equals(this.totalInstanceRunNum, that.totalInstanceRunNum)
+            && Objects.equals(this.scheduleInstanceRunNum, that.scheduleInstanceRunNum)
+            && Objects.equals(this.eventInstanceRunNum, that.eventInstanceRunNum)
+            && Objects.equals(this.averageRunTime, that.averageRunTime)
+            && Objects.equals(this.minRunTimeInstance, that.minRunTimeInstance)
+            && Objects.equals(this.maxRunTimeInstance, that.maxRunTimeInstance)
+            && Objects.equals(this.totalInstanceNum, that.totalInstanceNum)
+            && Objects.equals(this.successInstanceNum, that.successInstanceNum)
+            && Objects.equals(this.failInstanceNum, that.failInstanceNum)
+            && Objects.equals(this.terminateInstanceNum, that.terminateInstanceNum)
+            && Objects.equals(this.runningInstanceNum, that.runningInstanceNum);
     }
 
     @Override

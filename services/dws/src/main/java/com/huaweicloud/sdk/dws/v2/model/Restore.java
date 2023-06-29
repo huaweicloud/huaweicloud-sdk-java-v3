@@ -199,20 +199,19 @@ public class Restore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Restore restore = (Restore) o;
-        return Objects.equals(this.name, restore.name) && Objects.equals(this.subnetId, restore.subnetId)
-            && Objects.equals(this.securityGroupId, restore.securityGroupId)
-            && Objects.equals(this.vpcId, restore.vpcId)
-            && Objects.equals(this.availabilityZone, restore.availabilityZone)
-            && Objects.equals(this.port, restore.port) && Objects.equals(this.publicIp, restore.publicIp)
-            && Objects.equals(this.enterpriseProjectId, restore.enterpriseProjectId);
+        Restore that = (Restore) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -118,18 +118,17 @@ public class ContainerConfigsDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerConfigsDTO containerConfigsDTO = (ContainerConfigsDTO) o;
-        return Objects.equals(this.privileged, containerConfigsDTO.privileged)
-            && Objects.equals(this.hostNetwork, containerConfigsDTO.hostNetwork)
-            && Objects.equals(this.restartPolicy, containerConfigsDTO.restartPolicy)
-            && Objects.equals(this.containerPortList, containerConfigsDTO.containerPortList);
+        ContainerConfigsDTO that = (ContainerConfigsDTO) obj;
+        return Objects.equals(this.privileged, that.privileged) && Objects.equals(this.hostNetwork, that.hostNetwork)
+            && Objects.equals(this.restartPolicy, that.restartPolicy)
+            && Objects.equals(this.containerPortList, that.containerPortList);
     }
 
     @Override

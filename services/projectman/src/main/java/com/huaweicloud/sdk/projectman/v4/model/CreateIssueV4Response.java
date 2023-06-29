@@ -633,35 +633,26 @@ public class CreateIssueV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIssueV4Response createIssueV4Response = (CreateIssueV4Response) o;
-        return Objects.equals(this.actualWorkHours, createIssueV4Response.actualWorkHours)
-            && Objects.equals(this.assignedCcUser, createIssueV4Response.assignedCcUser)
-            && Objects.equals(this.assignedUser, createIssueV4Response.assignedUser)
-            && Objects.equals(this.beginTime, createIssueV4Response.beginTime)
-            && Objects.equals(this.creator, createIssueV4Response.creator)
-            && Objects.equals(this.customFields, createIssueV4Response.customFields)
-            && Objects.equals(this.newCustomFields, createIssueV4Response.newCustomFields)
-            && Objects.equals(this.developer, createIssueV4Response.developer)
-            && Objects.equals(this.domain, createIssueV4Response.domain)
-            && Objects.equals(this.doneRatio, createIssueV4Response.doneRatio)
-            && Objects.equals(this.endTime, createIssueV4Response.endTime)
-            && Objects.equals(this.expectedWorkHours, createIssueV4Response.expectedWorkHours)
-            && Objects.equals(this.id, createIssueV4Response.id)
-            && Objects.equals(this.project, createIssueV4Response.project)
-            && Objects.equals(this.iteration, createIssueV4Response.iteration)
-            && Objects.equals(this.module, createIssueV4Response.module)
-            && Objects.equals(this.parentIssue, createIssueV4Response.parentIssue)
-            && Objects.equals(this.priority, createIssueV4Response.priority)
-            && Objects.equals(this.severity, createIssueV4Response.severity)
-            && Objects.equals(this.status, createIssueV4Response.status)
-            && Objects.equals(this.tracker, createIssueV4Response.tracker);
+        CreateIssueV4Response that = (CreateIssueV4Response) obj;
+        return Objects.equals(this.actualWorkHours, that.actualWorkHours)
+            && Objects.equals(this.assignedCcUser, that.assignedCcUser)
+            && Objects.equals(this.assignedUser, that.assignedUser) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.customFields, that.customFields)
+            && Objects.equals(this.newCustomFields, that.newCustomFields)
+            && Objects.equals(this.developer, that.developer) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.doneRatio, that.doneRatio) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.iteration, that.iteration)
+            && Objects.equals(this.module, that.module) && Objects.equals(this.parentIssue, that.parentIssue)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tracker, that.tracker);
     }
 
     @Override

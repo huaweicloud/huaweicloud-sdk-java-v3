@@ -65,16 +65,15 @@ public class CheckApisV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckApisV2Request checkApisV2Request = (CheckApisV2Request) o;
-        return Objects.equals(this.instanceId, checkApisV2Request.instanceId)
-            && Objects.equals(this.body, checkApisV2Request.body);
+        CheckApisV2Request that = (CheckApisV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -231,24 +231,20 @@ public class GetDeviceAlarmArrayObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDeviceAlarmArrayObject getDeviceAlarmArrayObject = (GetDeviceAlarmArrayObject) o;
-        return Objects.equals(this.id, getDeviceAlarmArrayObject.id)
-            && Objects.equals(this.name, getDeviceAlarmArrayObject.name)
-            && Objects.equals(this.alarmId, getDeviceAlarmArrayObject.alarmId)
-            && Objects.equals(this.level, getDeviceAlarmArrayObject.level)
-            && Objects.equals(this.platform, getDeviceAlarmArrayObject.platform)
-            && Objects.equals(this.impact, getDeviceAlarmArrayObject.impact)
-            && Objects.equals(this.detail, getDeviceAlarmArrayObject.detail)
-            && Objects.equals(this.reason, getDeviceAlarmArrayObject.reason)
-            && Objects.equals(this.dealSuggestion, getDeviceAlarmArrayObject.dealSuggestion)
-            && Objects.equals(this.createTime, getDeviceAlarmArrayObject.createTime);
+        GetDeviceAlarmArrayObject that = (GetDeviceAlarmArrayObject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.impact, that.impact)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.dealSuggestion, that.dealSuggestion)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

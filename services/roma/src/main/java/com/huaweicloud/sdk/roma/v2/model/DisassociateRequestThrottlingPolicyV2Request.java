@@ -55,17 +55,16 @@ public class DisassociateRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateRequestThrottlingPolicyV2Request disassociateRequestThrottlingPolicyV2Request =
-            (DisassociateRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, disassociateRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.throttleBindingId, disassociateRequestThrottlingPolicyV2Request.throttleBindingId);
+        DisassociateRequestThrottlingPolicyV2Request that = (DisassociateRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.throttleBindingId, that.throttleBindingId);
     }
 
     @Override

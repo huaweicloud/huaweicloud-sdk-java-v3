@@ -77,17 +77,17 @@ public class ScalingPolicyV2MetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingPolicyV2MetaData scalingPolicyV2MetaData = (ScalingPolicyV2MetaData) o;
-        return Objects.equals(this.metadataBandwidthShareType, scalingPolicyV2MetaData.metadataBandwidthShareType)
-            && Objects.equals(this.metadataEipId, scalingPolicyV2MetaData.metadataEipId)
-            && Objects.equals(this.metadataEipAddress, scalingPolicyV2MetaData.metadataEipAddress);
+        ScalingPolicyV2MetaData that = (ScalingPolicyV2MetaData) obj;
+        return Objects.equals(this.metadataBandwidthShareType, that.metadataBandwidthShareType)
+            && Objects.equals(this.metadataEipId, that.metadataEipId)
+            && Objects.equals(this.metadataEipAddress, that.metadataEipAddress);
     }
 
     @Override

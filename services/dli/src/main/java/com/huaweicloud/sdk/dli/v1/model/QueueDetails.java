@@ -517,36 +517,29 @@ public class QueueDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueueDetails queueDetails = (QueueDetails) o;
-        return Objects.equals(this.queueId, queueDetails.queueId)
-            && Objects.equals(this.queueName, queueDetails.queueName)
-            && Objects.equals(this.description, queueDetails.description)
-            && Objects.equals(this.owner, queueDetails.owner)
-            && Objects.equals(this.createTime, queueDetails.createTime)
-            && Objects.equals(this.queueType, queueDetails.queueType)
-            && Objects.equals(this.cuCount, queueDetails.cuCount)
-            && Objects.equals(this.chargingMode, queueDetails.chargingMode)
-            && Objects.equals(this.resourceId, queueDetails.resourceId)
-            && Objects.equals(this.enterpriseProjectId, queueDetails.enterpriseProjectId)
-            && Objects.equals(this.cidrInVpc, queueDetails.cidrInVpc)
-            && Objects.equals(this.cidrInMgntsubnet, queueDetails.cidrInMgntsubnet)
-            && Objects.equals(this.cidrInSubnet, queueDetails.cidrInSubnet)
-            && Objects.equals(this.resourceMode, queueDetails.resourceMode)
-            && Objects.equals(this.platform, queueDetails.platform)
-            && Objects.equals(this.isRestarting, queueDetails.isRestarting)
-            && Objects.equals(this.labels, queueDetails.labels) && Objects.equals(this.feature, queueDetails.feature)
-            && Objects.equals(this.resourceType, queueDetails.resourceType)
-            && Objects.equals(this.cuSpec, queueDetails.cuSpec)
-            && Objects.equals(this.cuScaleOutLimit, queueDetails.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, queueDetails.cuScaleInLimit)
-            && Objects.equals(this.elasticResourcePoolName, queueDetails.elasticResourcePoolName);
+        QueueDetails that = (QueueDetails) obj;
+        return Objects.equals(this.queueId, that.queueId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.queueType, that.queueType)
+            && Objects.equals(this.cuCount, that.cuCount) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.cidrInVpc, that.cidrInVpc)
+            && Objects.equals(this.cidrInMgntsubnet, that.cidrInMgntsubnet)
+            && Objects.equals(this.cidrInSubnet, that.cidrInSubnet)
+            && Objects.equals(this.resourceMode, that.resourceMode) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.isRestarting, that.isRestarting) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.feature, that.feature) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.cuSpec, that.cuSpec) && Objects.equals(this.cuScaleOutLimit, that.cuScaleOutLimit)
+            && Objects.equals(this.cuScaleInLimit, that.cuScaleInLimit)
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName);
     }
 
     @Override

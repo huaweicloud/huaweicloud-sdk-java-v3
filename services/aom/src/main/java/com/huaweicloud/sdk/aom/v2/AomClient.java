@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.aom.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.aom.v2.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 
 public class AomClient {
+
     protected HcClient hcClient;
 
     public AomClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class AomClient {
     public static ClientBuilder<AomClient> newBuilder() {
         return new ClientBuilder<>(AomClient::new);
     }
-
 
     /**
      * 新增告警行动规则
@@ -97,8 +97,10 @@ public class AomClient {
      * @param AddEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>
      */
-    public SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleInvoker(AddEvent2alarmRuleRequest request) {
-        return new SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request, AomMeta.addEvent2alarmRule, hcClient);
+    public SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleInvoker(
+        AddEvent2alarmRuleRequest request) {
+        return new SyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request,
+            AomMeta.addEvent2alarmRule, hcClient);
     }
 
     /**
@@ -167,7 +169,8 @@ public class AomClient {
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return AddOrUpdateServiceDiscoveryRulesResponse
      */
-    public AddOrUpdateServiceDiscoveryRulesResponse addOrUpdateServiceDiscoveryRules(AddOrUpdateServiceDiscoveryRulesRequest request) {
+    public AddOrUpdateServiceDiscoveryRulesResponse addOrUpdateServiceDiscoveryRules(
+        AddOrUpdateServiceDiscoveryRulesRequest request) {
         return hcClient.syncInvokeHttp(request, AomMeta.addOrUpdateServiceDiscoveryRules);
     }
 
@@ -181,8 +184,10 @@ public class AomClient {
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>
      */
-    public SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesInvoker(AddOrUpdateServiceDiscoveryRulesRequest request) {
-        return new SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>(request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
+    public SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesInvoker(
+        AddOrUpdateServiceDiscoveryRulesRequest request) {
+        return new SyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>(
+            request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -237,8 +242,10 @@ public class AomClient {
      * @param DeleteActionRuleRequest 请求对象
      * @return SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>
      */
-    public SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleInvoker(DeleteActionRuleRequest request) {
-        return new SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule, hcClient);
+    public SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleInvoker(
+        DeleteActionRuleRequest request) {
+        return new SyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule,
+            hcClient);
     }
 
     /**
@@ -265,8 +272,10 @@ public class AomClient {
      * @param DeleteAlarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>
      */
-    public SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRuleInvoker(DeleteAlarmRuleRequest request) {
-        return new SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>(request, AomMeta.deleteAlarmRule, hcClient);
+    public SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRuleInvoker(
+        DeleteAlarmRuleRequest request) {
+        return new SyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>(request, AomMeta.deleteAlarmRule,
+            hcClient);
     }
 
     /**
@@ -293,8 +302,10 @@ public class AomClient {
      * @param DeleteAlarmRulesRequest 请求对象
      * @return SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>
      */
-    public SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesInvoker(DeleteAlarmRulesRequest request) {
-        return new SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>(request, AomMeta.deleteAlarmRules, hcClient);
+    public SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesInvoker(
+        DeleteAlarmRulesRequest request) {
+        return new SyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>(request, AomMeta.deleteAlarmRules,
+            hcClient);
     }
 
     /**
@@ -321,8 +332,10 @@ public class AomClient {
      * @param DeleteEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>
      */
-    public SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleInvoker(DeleteEvent2alarmRuleRequest request) {
-        return new SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request, AomMeta.deleteEvent2alarmRule, hcClient);
+    public SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleInvoker(
+        DeleteEvent2alarmRuleRequest request) {
+        return new SyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request,
+            AomMeta.deleteEvent2alarmRule, hcClient);
     }
 
     /**
@@ -349,8 +362,10 @@ public class AomClient {
      * @param DeleteMuteRulesRequest 请求对象
      * @return SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>
      */
-    public SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesInvoker(DeleteMuteRulesRequest request) {
-        return new SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules, hcClient);
+    public SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesInvoker(
+        DeleteMuteRulesRequest request) {
+        return new SyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules,
+            hcClient);
     }
 
     /**
@@ -377,8 +392,10 @@ public class AomClient {
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>
      */
-    public SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesInvoker(DeleteserviceDiscoveryRulesRequest request) {
-        return new SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>(request, AomMeta.deleteserviceDiscoveryRules, hcClient);
+    public SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesInvoker(
+        DeleteserviceDiscoveryRulesRequest request) {
+        return new SyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>(request,
+            AomMeta.deleteserviceDiscoveryRules, hcClient);
     }
 
     /**
@@ -405,8 +422,10 @@ public class AomClient {
      * @param ListActionRuleRequest 请求对象
      * @return SyncInvoker<ListActionRuleRequest, ListActionRuleResponse>
      */
-    public SyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleInvoker(ListActionRuleRequest request) {
-        return new SyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule, hcClient);
+    public SyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleInvoker(
+        ListActionRuleRequest request) {
+        return new SyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule,
+            hcClient);
     }
 
     /**
@@ -461,8 +480,10 @@ public class AomClient {
      * @param ListEvent2alarmRuleRequest 请求对象
      * @return SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>
      */
-    public SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleInvoker(ListEvent2alarmRuleRequest request) {
-        return new SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request, AomMeta.listEvent2alarmRule, hcClient);
+    public SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleInvoker(
+        ListEvent2alarmRuleRequest request) {
+        return new SyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request,
+            AomMeta.listEvent2alarmRule, hcClient);
     }
 
     /**
@@ -545,8 +566,10 @@ public class AomClient {
      * @param ListMetricItemsRequest 请求对象
      * @return SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>
      */
-    public SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsInvoker(ListMetricItemsRequest request) {
-        return new SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>(request, AomMeta.listMetricItems, hcClient);
+    public SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsInvoker(
+        ListMetricItemsRequest request) {
+        return new SyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>(request, AomMeta.listMetricItems,
+            hcClient);
     }
 
     /**
@@ -601,8 +624,10 @@ public class AomClient {
      * @param ListNotifiedHistoriesRequest 请求对象
      * @return SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>
      */
-    public SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesInvoker(ListNotifiedHistoriesRequest request) {
-        return new SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request, AomMeta.listNotifiedHistories, hcClient);
+    public SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesInvoker(
+        ListNotifiedHistoriesRequest request) {
+        return new SyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request,
+            AomMeta.listNotifiedHistories, hcClient);
     }
 
     /**
@@ -685,8 +710,10 @@ public class AomClient {
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>
      */
-    public SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesInvoker(ListServiceDiscoveryRulesRequest request) {
-        return new SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>(request, AomMeta.listServiceDiscoveryRules, hcClient);
+    public SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesInvoker(
+        ListServiceDiscoveryRulesRequest request) {
+        return new SyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>(request,
+            AomMeta.listServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -741,8 +768,10 @@ public class AomClient {
      * @param ShowActionRuleRequest 请求对象
      * @return SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>
      */
-    public SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleInvoker(ShowActionRuleRequest request) {
-        return new SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule, hcClient);
+    public SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleInvoker(
+        ShowActionRuleRequest request) {
+        return new SyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule,
+            hcClient);
     }
 
     /**
@@ -797,8 +826,10 @@ public class AomClient {
      * @param ShowMetricsDataRequest 请求对象
      * @return SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>
      */
-    public SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsDataInvoker(ShowMetricsDataRequest request) {
-        return new SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>(request, AomMeta.showMetricsData, hcClient);
+    public SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsDataInvoker(
+        ShowMetricsDataRequest request) {
+        return new SyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>(request, AomMeta.showMetricsData,
+            hcClient);
     }
 
     /**
@@ -825,8 +856,10 @@ public class AomClient {
      * @param UpdateActionRuleRequest 请求对象
      * @return SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>
      */
-    public SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleInvoker(UpdateActionRuleRequest request) {
-        return new SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule, hcClient);
+    public SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleInvoker(
+        UpdateActionRuleRequest request) {
+        return new SyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule,
+            hcClient);
     }
 
     /**
@@ -853,8 +886,10 @@ public class AomClient {
      * @param UpdateAlarmRuleRequest 请求对象
      * @return SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>
      */
-    public SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRuleInvoker(UpdateAlarmRuleRequest request) {
-        return new SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>(request, AomMeta.updateAlarmRule, hcClient);
+    public SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRuleInvoker(
+        UpdateAlarmRuleRequest request) {
+        return new SyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>(request, AomMeta.updateAlarmRule,
+            hcClient);
     }
 
     /**
@@ -881,8 +916,10 @@ public class AomClient {
      * @param UpdateEventRuleRequest 请求对象
      * @return SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>
      */
-    public SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleInvoker(UpdateEventRuleRequest request) {
-        return new SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule, hcClient);
+    public SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleInvoker(
+        UpdateEventRuleRequest request) {
+        return new SyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule,
+            hcClient);
     }
 
     /**
@@ -909,8 +946,10 @@ public class AomClient {
      * @param UpdateMuteRuleRequest 请求对象
      * @return SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>
      */
-    public SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleInvoker(UpdateMuteRuleRequest request) {
-        return new SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule, hcClient);
+    public SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleInvoker(
+        UpdateMuteRuleRequest request) {
+        return new SyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule,
+            hcClient);
     }
 
     /**
@@ -937,8 +976,10 @@ public class AomClient {
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
      */
-    public SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetInvoker(ListInstantQueryAomPromGetRequest request) {
-        return new SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>(request, AomMeta.listInstantQueryAomPromGet, hcClient);
+    public SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetInvoker(
+        ListInstantQueryAomPromGetRequest request) {
+        return new SyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>(request,
+            AomMeta.listInstantQueryAomPromGet, hcClient);
     }
 
     /**
@@ -965,8 +1006,10 @@ public class AomClient {
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>
      */
-    public SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostInvoker(ListInstantQueryAomPromPostRequest request) {
-        return new SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>(request, AomMeta.listInstantQueryAomPromPost, hcClient);
+    public SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostInvoker(
+        ListInstantQueryAomPromPostRequest request) {
+        return new SyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>(request,
+            AomMeta.listInstantQueryAomPromPost, hcClient);
     }
 
     /**
@@ -993,8 +1036,10 @@ public class AomClient {
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
      */
-    public SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetInvoker(ListLabelValuesAomPromGetRequest request) {
-        return new SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>(request, AomMeta.listLabelValuesAomPromGet, hcClient);
+    public SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetInvoker(
+        ListLabelValuesAomPromGetRequest request) {
+        return new SyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>(request,
+            AomMeta.listLabelValuesAomPromGet, hcClient);
     }
 
     /**
@@ -1021,8 +1066,10 @@ public class AomClient {
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
      */
-    public SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGetInvoker(ListLabelsAomPromGetRequest request) {
-        return new SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>(request, AomMeta.listLabelsAomPromGet, hcClient);
+    public SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGetInvoker(
+        ListLabelsAomPromGetRequest request) {
+        return new SyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>(request,
+            AomMeta.listLabelsAomPromGet, hcClient);
     }
 
     /**
@@ -1049,8 +1096,10 @@ public class AomClient {
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
      */
-    public SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPostInvoker(ListLabelsAomPromPostRequest request) {
-        return new SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>(request, AomMeta.listLabelsAomPromPost, hcClient);
+    public SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPostInvoker(
+        ListLabelsAomPromPostRequest request) {
+        return new SyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>(request,
+            AomMeta.listLabelsAomPromPost, hcClient);
     }
 
     /**
@@ -1077,8 +1126,10 @@ public class AomClient {
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
      */
-    public SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGetInvoker(ListMetadataAomPromGetRequest request) {
-        return new SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request, AomMeta.listMetadataAomPromGet, hcClient);
+    public SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGetInvoker(
+        ListMetadataAomPromGetRequest request) {
+        return new SyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request,
+            AomMeta.listMetadataAomPromGet, hcClient);
     }
 
     /**
@@ -1105,8 +1156,10 @@ public class AomClient {
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
      */
-    public SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetInvoker(ListRangeQueryAomPromGetRequest request) {
-        return new SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>(request, AomMeta.listRangeQueryAomPromGet, hcClient);
+    public SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetInvoker(
+        ListRangeQueryAomPromGetRequest request) {
+        return new SyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>(request,
+            AomMeta.listRangeQueryAomPromGet, hcClient);
     }
 
     /**
@@ -1133,8 +1186,10 @@ public class AomClient {
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>
      */
-    public SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostInvoker(ListRangeQueryAomPromPostRequest request) {
-        return new SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>(request, AomMeta.listRangeQueryAomPromPost, hcClient);
+    public SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostInvoker(
+        ListRangeQueryAomPromPostRequest request) {
+        return new SyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>(request,
+            AomMeta.listRangeQueryAomPromPost, hcClient);
     }
 
 }

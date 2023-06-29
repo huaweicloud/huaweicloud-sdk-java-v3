@@ -100,17 +100,16 @@ public class BucketDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BucketDetail bucketDetail = (BucketDetail) o;
-        return Objects.equals(this.id, bucketDetail.id) && Objects.equals(this.name, bucketDetail.name)
-            && Objects.equals(this.creationDate, bucketDetail.creationDate)
-            && Objects.equals(this.location, bucketDetail.location);
+        BucketDetail that = (BucketDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creationDate, that.creationDate) && Objects.equals(this.location, that.location);
     }
 
     @Override

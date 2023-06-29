@@ -250,24 +250,19 @@ public class ShowImageHighresolutionMattingTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageHighresolutionMattingTaskResponse showImageHighresolutionMattingTaskResponse =
-            (ShowImageHighresolutionMattingTaskResponse) o;
-        return Objects.equals(this.taskId, showImageHighresolutionMattingTaskResponse.taskId)
-            && Objects.equals(this.createTime, showImageHighresolutionMattingTaskResponse.createTime)
-            && Objects.equals(this.updateTime, showImageHighresolutionMattingTaskResponse.updateTime)
-            && Objects.equals(this.state, showImageHighresolutionMattingTaskResponse.state)
-            && Objects.equals(this.input, showImageHighresolutionMattingTaskResponse.input)
-            && Objects.equals(this.output, showImageHighresolutionMattingTaskResponse.output)
-            && Objects.equals(this.config, showImageHighresolutionMattingTaskResponse.config)
-            && Objects.equals(this.callback, showImageHighresolutionMattingTaskResponse.callback)
-            && Objects.equals(this.xRequestId, showImageHighresolutionMattingTaskResponse.xRequestId);
+        ShowImageHighresolutionMattingTaskResponse that = (ShowImageHighresolutionMattingTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.config, that.config) && Objects.equals(this.callback, that.callback)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

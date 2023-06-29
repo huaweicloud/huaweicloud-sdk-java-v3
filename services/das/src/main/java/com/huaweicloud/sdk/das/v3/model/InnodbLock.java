@@ -231,21 +231,19 @@ public class InnodbLock {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InnodbLock innodbLock = (InnodbLock) o;
-        return Objects.equals(this.lockId, innodbLock.lockId) && Objects.equals(this.lockTrxId, innodbLock.lockTrxId)
-            && Objects.equals(this.lockMode, innodbLock.lockMode) && Objects.equals(this.lockType, innodbLock.lockType)
-            && Objects.equals(this.lockTable, innodbLock.lockTable)
-            && Objects.equals(this.lockIndex, innodbLock.lockIndex)
-            && Objects.equals(this.lockSpace, innodbLock.lockSpace)
-            && Objects.equals(this.lockPage, innodbLock.lockPage) && Objects.equals(this.lockRec, innodbLock.lockRec)
-            && Objects.equals(this.lockData, innodbLock.lockData);
+        InnodbLock that = (InnodbLock) obj;
+        return Objects.equals(this.lockId, that.lockId) && Objects.equals(this.lockTrxId, that.lockTrxId)
+            && Objects.equals(this.lockMode, that.lockMode) && Objects.equals(this.lockType, that.lockType)
+            && Objects.equals(this.lockTable, that.lockTable) && Objects.equals(this.lockIndex, that.lockIndex)
+            && Objects.equals(this.lockSpace, that.lockSpace) && Objects.equals(this.lockPage, that.lockPage)
+            && Objects.equals(this.lockRec, that.lockRec) && Objects.equals(this.lockData, that.lockData);
     }
 
     @Override

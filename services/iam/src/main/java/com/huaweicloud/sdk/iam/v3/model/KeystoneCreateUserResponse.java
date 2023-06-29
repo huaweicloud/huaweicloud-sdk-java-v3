@@ -44,15 +44,15 @@ public class KeystoneCreateUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateUserResponse keystoneCreateUserResponse = (KeystoneCreateUserResponse) o;
-        return Objects.equals(this.user, keystoneCreateUserResponse.user);
+        KeystoneCreateUserResponse that = (KeystoneCreateUserResponse) obj;
+        return Objects.equals(this.user, that.user);
     }
 
     @Override

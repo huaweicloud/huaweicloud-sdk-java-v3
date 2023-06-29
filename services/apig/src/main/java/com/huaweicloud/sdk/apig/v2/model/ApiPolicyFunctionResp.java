@@ -68,22 +68,15 @@ public class ApiPolicyFunctionResp {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InvocationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvocationTypeEnum(value));
         }
 
         public static InvocationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,22 +143,15 @@ public class ApiPolicyFunctionResp {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetworkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkTypeEnum(value));
         }
 
         public static NetworkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -252,22 +238,15 @@ public class ApiPolicyFunctionResp {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -547,26 +526,21 @@ public class ApiPolicyFunctionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyFunctionResp apiPolicyFunctionResp = (ApiPolicyFunctionResp) o;
-        return Objects.equals(this.functionUrn, apiPolicyFunctionResp.functionUrn)
-            && Objects.equals(this.invocationType, apiPolicyFunctionResp.invocationType)
-            && Objects.equals(this.networkType, apiPolicyFunctionResp.networkType)
-            && Objects.equals(this.version, apiPolicyFunctionResp.version)
-            && Objects.equals(this.aliasUrn, apiPolicyFunctionResp.aliasUrn)
-            && Objects.equals(this.timeout, apiPolicyFunctionResp.timeout)
-            && Objects.equals(this.id, apiPolicyFunctionResp.id)
-            && Objects.equals(this.effectMode, apiPolicyFunctionResp.effectMode)
-            && Objects.equals(this.name, apiPolicyFunctionResp.name)
-            && Objects.equals(this.backendParams, apiPolicyFunctionResp.backendParams)
-            && Objects.equals(this.conditions, apiPolicyFunctionResp.conditions)
-            && Objects.equals(this.authorizerId, apiPolicyFunctionResp.authorizerId);
+        ApiPolicyFunctionResp that = (ApiPolicyFunctionResp) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn)
+            && Objects.equals(this.invocationType, that.invocationType)
+            && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.aliasUrn, that.aliasUrn) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.effectMode, that.effectMode)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

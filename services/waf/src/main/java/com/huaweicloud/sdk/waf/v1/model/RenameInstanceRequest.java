@@ -87,17 +87,16 @@ public class RenameInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RenameInstanceRequest renameInstanceRequest = (RenameInstanceRequest) o;
-        return Objects.equals(this.enterpriseProjectId, renameInstanceRequest.enterpriseProjectId)
-            && Objects.equals(this.instanceId, renameInstanceRequest.instanceId)
-            && Objects.equals(this.body, renameInstanceRequest.body);
+        RenameInstanceRequest that = (RenameInstanceRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

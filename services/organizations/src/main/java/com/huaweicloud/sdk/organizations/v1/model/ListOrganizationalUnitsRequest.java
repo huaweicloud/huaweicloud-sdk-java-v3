@@ -79,17 +79,16 @@ public class ListOrganizationalUnitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrganizationalUnitsRequest listOrganizationalUnitsRequest = (ListOrganizationalUnitsRequest) o;
-        return Objects.equals(this.parentId, listOrganizationalUnitsRequest.parentId)
-            && Objects.equals(this.limit, listOrganizationalUnitsRequest.limit)
-            && Objects.equals(this.marker, listOrganizationalUnitsRequest.marker);
+        ListOrganizationalUnitsRequest that = (ListOrganizationalUnitsRequest) obj;
+        return Objects.equals(this.parentId, that.parentId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

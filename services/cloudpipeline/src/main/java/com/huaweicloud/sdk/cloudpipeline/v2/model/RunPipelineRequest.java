@@ -87,17 +87,16 @@ public class RunPipelineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineRequest runPipelineRequest = (RunPipelineRequest) o;
-        return Objects.equals(this.projectId, runPipelineRequest.projectId)
-            && Objects.equals(this.pipelineId, runPipelineRequest.pipelineId)
-            && Objects.equals(this.body, runPipelineRequest.body);
+        RunPipelineRequest that = (RunPipelineRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

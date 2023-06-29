@@ -118,18 +118,16 @@ public class NodeExecutionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeExecutionDetail nodeExecutionDetail = (NodeExecutionDetail) o;
-        return Objects.equals(this.nodeId, nodeExecutionDetail.nodeId)
-            && Objects.equals(this.nodeName, nodeExecutionDetail.nodeName)
-            && Objects.equals(this.executionId, nodeExecutionDetail.executionId)
-            && Objects.equals(this.executions, nodeExecutionDetail.executions);
+        NodeExecutionDetail that = (NodeExecutionDetail) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.nodeName, that.nodeName)
+            && Objects.equals(this.executionId, that.executionId) && Objects.equals(this.executions, that.executions);
     }
 
     @Override

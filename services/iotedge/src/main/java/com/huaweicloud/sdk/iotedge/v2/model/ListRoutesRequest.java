@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListRoutesRequest  {
-
+public class ListRoutesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parsed")
-    
+    @JsonProperty(value = "parsed")
 
     private Boolean parsed;
 
@@ -34,9 +24,6 @@ public class ListRoutesRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -50,15 +37,10 @@ public class ListRoutesRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public ListRoutesRequest withParsed(Boolean parsed) {
         this.parsed = parsed;
         return this;
     }
-
-    
-
 
     /**
      * 是否解析路由
@@ -72,24 +54,23 @@ public class ListRoutesRequest  {
         this.parsed = parsed;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutesRequest listRoutesRequest = (ListRoutesRequest) o;
-        return Objects.equals(this.edgeNodeId, listRoutesRequest.edgeNodeId) &&
-            Objects.equals(this.parsed, listRoutesRequest.parsed);
+        ListRoutesRequest that = (ListRoutesRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.parsed, that.parsed);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, parsed);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class ListRoutesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class ListRoutesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

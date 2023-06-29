@@ -213,23 +213,19 @@ public class PhoneAccessInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneAccessInfo phoneAccessInfo = (PhoneAccessInfo) o;
-        return Objects.equals(this.type, phoneAccessInfo.type)
-            && Objects.equals(this.deviceIp, phoneAccessInfo.deviceIp)
-            && Objects.equals(this.phoneIp, phoneAccessInfo.phoneIp)
-            && Objects.equals(this.listenPort, phoneAccessInfo.listenPort)
-            && Objects.equals(this.accessIp, phoneAccessInfo.accessIp)
-            && Objects.equals(this.publicIp, phoneAccessInfo.publicIp)
-            && Objects.equals(this.intranetIp, phoneAccessInfo.intranetIp)
-            && Objects.equals(this.serverIp, phoneAccessInfo.serverIp)
-            && Objects.equals(this.accessPort, phoneAccessInfo.accessPort);
+        PhoneAccessInfo that = (PhoneAccessInfo) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.deviceIp, that.deviceIp)
+            && Objects.equals(this.phoneIp, that.phoneIp) && Objects.equals(this.listenPort, that.listenPort)
+            && Objects.equals(this.accessIp, that.accessIp) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.intranetIp, that.intranetIp) && Objects.equals(this.serverIp, that.serverIp)
+            && Objects.equals(this.accessPort, that.accessPort);
     }
 
     @Override

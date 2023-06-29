@@ -1,109 +1,85 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.DataSource;
-import com.huaweicloud.sdk.ges.v1.model.EncryptionReq;
-import com.huaweicloud.sdk.ges.v1.model.LtsOperationTraceReq;
-import com.huaweicloud.sdk.ges.v1.model.PublicIp;
-import com.huaweicloud.sdk.ges.v1.model.SysTagsRes;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Graph  {
-
+public class Graph {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphSizeTypeIndex")
-    
+    @JsonProperty(value = "graphSizeTypeIndex")
 
     private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataSource")
-    
+    @JsonProperty(value = "dataSource")
 
     private DataSource dataSource;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpcId")
-    
+    @JsonProperty(value = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetId")
-    
+    @JsonProperty(value = "subnetId")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securityGroupId")
-    
+    @JsonProperty(value = "securityGroupId")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicIp")
-    
+    @JsonProperty(value = "publicIp")
 
     private PublicIp publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableMultiAz")
-    
+    @JsonProperty(value = "enableMultiAz")
 
     private Boolean enableMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encryption")
-    
+    @JsonProperty(value = "encryption")
 
     private EncryptionReq encryption;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ltsOperationTrace")
-    
+    @JsonProperty(value = "ltsOperationTrace")
 
     private LtsOperationTraceReq ltsOperationTrace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<SysTagsRes> sysTags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableRBAC")
-    
+    @JsonProperty(value = "enableRBAC")
 
     private Boolean enableRBAC;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableFullTextIndex")
-    
+    @JsonProperty(value = "enableFullTextIndex")
 
     private Boolean enableFullTextIndex;
 
@@ -111,9 +87,6 @@ public class Graph  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 图名称（输入长度在4位到50位之间，必须以字母开头，可以包含字母、数字或者下划线，不能包含其他的特殊字符）。
@@ -127,15 +100,10 @@ public class Graph  {
         this.name = name;
     }
 
-    
-
     public Graph withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
-
-    
-
 
     /**
      * 图规模类型索引。 - 0：一万边 - 1：百万边 - 2：千万边 - 3：一亿边 - 4：十亿边 - 5：百亿边 - 401：十亿增强边
@@ -149,15 +117,10 @@ public class Graph  {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 
-    
-
     public Graph withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 图实例CPU架构类型，取值为x86_64和aarch64。默认取x86_64。 - x86_64：X64 64位架构。 - aarch64：ARM 64位架构。
@@ -171,22 +134,19 @@ public class Graph  {
         this.arch = arch;
     }
 
-    
-
     public Graph withDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         return this;
     }
 
     public Graph withDataSource(Consumer<DataSource> dataSourceSetter) {
-        if(this.dataSource == null ){
+        if (this.dataSource == null) {
             this.dataSource = new DataSource();
             dataSourceSetter.accept(this.dataSource);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get dataSource
@@ -200,15 +160,10 @@ public class Graph  {
         this.dataSource = dataSource;
     }
 
-    
-
     public Graph withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      *   虚拟私有云ID。
@@ -222,15 +177,10 @@ public class Graph  {
         this.vpcId = vpcId;
     }
 
-    
-
     public Graph withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 指定虚拟私有云下的子网ID。
@@ -244,15 +194,10 @@ public class Graph  {
         this.subnetId = subnetId;
     }
 
-    
-
     public Graph withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -266,22 +211,19 @@ public class Graph  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public Graph withPublicIp(PublicIp publicIp) {
         this.publicIp = publicIp;
         return this;
     }
 
     public Graph withPublicIp(Consumer<PublicIp> publicIpSetter) {
-        if(this.publicIp == null ){
+        if (this.publicIp == null) {
             this.publicIp = new PublicIp();
             publicIpSetter.accept(this.publicIp);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get publicIp
@@ -295,15 +237,10 @@ public class Graph  {
         this.publicIp = publicIp;
     }
 
-    
-
     public Graph withEnableMultiAz(Boolean enableMultiAz) {
         this.enableMultiAz = enableMultiAz;
         return this;
     }
-
-    
-
 
     /**
      * 创建的图是否支持跨可用区（AZ），默认值是false，如果设置为true，系统将会把图中的ECS建在两个可用区中。  如果创建图时，不加该参数，则会将图中的ECS都建在一个可用区中。
@@ -317,22 +254,19 @@ public class Graph  {
         this.enableMultiAz = enableMultiAz;
     }
 
-    
-
     public Graph withEncryption(EncryptionReq encryption) {
         this.encryption = encryption;
         return this;
     }
 
     public Graph withEncryption(Consumer<EncryptionReq> encryptionSetter) {
-        if(this.encryption == null ){
+        if (this.encryption == null) {
             this.encryption = new EncryptionReq();
             encryptionSetter.accept(this.encryption);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get encryption
@@ -346,22 +280,19 @@ public class Graph  {
         this.encryption = encryption;
     }
 
-    
-
     public Graph withLtsOperationTrace(LtsOperationTraceReq ltsOperationTrace) {
         this.ltsOperationTrace = ltsOperationTrace;
         return this;
     }
 
     public Graph withLtsOperationTrace(Consumer<LtsOperationTraceReq> ltsOperationTraceSetter) {
-        if(this.ltsOperationTrace == null ){
+        if (this.ltsOperationTrace == null) {
             this.ltsOperationTrace = new LtsOperationTraceReq();
             ltsOperationTraceSetter.accept(this.ltsOperationTrace);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get ltsOperationTrace
@@ -375,16 +306,13 @@ public class Graph  {
         this.ltsOperationTrace = ltsOperationTrace;
     }
 
-    
-
     public Graph withSysTags(List<SysTagsRes> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public Graph addSysTagsItem(SysTagsRes sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -392,7 +320,7 @@ public class Graph  {
     }
 
     public Graph withSysTags(Consumer<List<SysTagsRes>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
@@ -411,15 +339,10 @@ public class Graph  {
         this.sysTags = sysTags;
     }
 
-    
-
     public Graph withEnableRBAC(Boolean enableRBAC) {
         this.enableRBAC = enableRBAC;
         return this;
     }
-
-    
-
 
     /**
      * 创建的图是否启用细粒度权限控制，默认不启用，值为false。如果设置为true，创建的图所有用户都没有权限，需要调用业务面细粒度权限控制API进行授权操作才可以访问图。
@@ -433,15 +356,10 @@ public class Graph  {
         this.enableRBAC = enableRBAC;
     }
 
-    
-
     public Graph withEnableFullTextIndex(Boolean enableFullTextIndex) {
         this.enableFullTextIndex = enableFullTextIndex;
         return this;
     }
-
-    
-
 
     /**
      * 创建的图是否开启全文索引控制，默认不启用，值为false。如果设置为true，十亿增强版-规格版图支持全文索引，创建图时会创建云搜索服务集群。 >开启全文索引功能。如果CSS服务已经部署，图实例会自动创建CSS集群，图创建时间较长。如果CSS服务没有部署则图创建失败。
@@ -455,36 +373,44 @@ public class Graph  {
         this.enableFullTextIndex = enableFullTextIndex;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Graph graph = (Graph) o;
-        return Objects.equals(this.name, graph.name) &&
-            Objects.equals(this.graphSizeTypeIndex, graph.graphSizeTypeIndex) &&
-            Objects.equals(this.arch, graph.arch) &&
-            Objects.equals(this.dataSource, graph.dataSource) &&
-            Objects.equals(this.vpcId, graph.vpcId) &&
-            Objects.equals(this.subnetId, graph.subnetId) &&
-            Objects.equals(this.securityGroupId, graph.securityGroupId) &&
-            Objects.equals(this.publicIp, graph.publicIp) &&
-            Objects.equals(this.enableMultiAz, graph.enableMultiAz) &&
-            Objects.equals(this.encryption, graph.encryption) &&
-            Objects.equals(this.ltsOperationTrace, graph.ltsOperationTrace) &&
-            Objects.equals(this.sysTags, graph.sysTags) &&
-            Objects.equals(this.enableRBAC, graph.enableRBAC) &&
-            Objects.equals(this.enableFullTextIndex, graph.enableFullTextIndex);
+        Graph that = (Graph) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.graphSizeTypeIndex, that.graphSizeTypeIndex)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.dataSource, that.dataSource)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.enableMultiAz, that.enableMultiAz)
+            && Objects.equals(this.encryption, that.encryption)
+            && Objects.equals(this.ltsOperationTrace, that.ltsOperationTrace)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.enableRBAC, that.enableRBAC)
+            && Objects.equals(this.enableFullTextIndex, that.enableFullTextIndex);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, graphSizeTypeIndex, arch, dataSource, vpcId, subnetId, securityGroupId, publicIp, enableMultiAz, encryption, ltsOperationTrace, sysTags, enableRBAC, enableFullTextIndex);
+        return Objects.hash(name,
+            graphSizeTypeIndex,
+            arch,
+            dataSource,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            publicIp,
+            enableMultiAz,
+            encryption,
+            ltsOperationTrace,
+            sysTags,
+            enableRBAC,
+            enableFullTextIndex);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -506,6 +432,7 @@ public class Graph  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -516,8 +443,5 @@ public class Graph  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -165,21 +165,18 @@ public class ShowErrorLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowErrorLogRequest showErrorLogRequest = (ShowErrorLogRequest) o;
-        return Objects.equals(this.instanceId, showErrorLogRequest.instanceId)
-            && Objects.equals(this.startTime, showErrorLogRequest.startTime)
-            && Objects.equals(this.endTime, showErrorLogRequest.endTime)
-            && Objects.equals(this.nodeId, showErrorLogRequest.nodeId)
-            && Objects.equals(this.type, showErrorLogRequest.type)
-            && Objects.equals(this.offset, showErrorLogRequest.offset)
-            && Objects.equals(this.limit, showErrorLogRequest.limit);
+        ShowErrorLogRequest that = (ShowErrorLogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

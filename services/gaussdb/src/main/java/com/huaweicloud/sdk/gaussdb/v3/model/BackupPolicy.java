@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 备份策略信息。
  */
-public class BackupPolicy  {
-
+public class BackupPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keep_days")
-    
+    @JsonProperty(value = "keep_days")
 
     private Integer keepDays;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period")
-    
+    @JsonProperty(value = "period")
 
     private String period;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="retention_num_backup_level1")
-    
+    @JsonProperty(value = "retention_num_backup_level1")
 
     private Integer retentionNumBackupLevel1;
 
@@ -45,9 +34,6 @@ public class BackupPolicy  {
         this.keepDays = keepDays;
         return this;
     }
-
-    
-
 
     /**
      * 指定已生成的备份文件可以保存的天数。取值范围：1～732。
@@ -63,15 +49,10 @@ public class BackupPolicy  {
         this.keepDays = keepDays;
     }
 
-    
-
     public BackupPolicy withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份时间段。自动备份将在该时间段内触发。 取值范围：格式必须为hh:mm-HH:MM且有效，当前时间指UTC时间。
@@ -85,15 +66,10 @@ public class BackupPolicy  {
         this.startTime = startTime;
     }
 
-    
-
     public BackupPolicy withPeriod(String period) {
         this.period = period;
         return this;
     }
-
-    
-
 
     /**
      * 备份周期配置。自动备份将在每星期指定的天进行。 取值范围：格式为逗号隔开的数字，数字代表星期。
@@ -107,15 +83,10 @@ public class BackupPolicy  {
         this.period = period;
     }
 
-    
-
     public BackupPolicy withRetentionNumBackupLevel1(Integer retentionNumBackupLevel1) {
         this.retentionNumBackupLevel1 = retentionNumBackupLevel1;
         return this;
     }
-
-    
-
 
     /**
      * 一级备份保留数量。当一级备份开关开启时，返回此参数。
@@ -129,26 +100,25 @@ public class BackupPolicy  {
         this.retentionNumBackupLevel1 = retentionNumBackupLevel1;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupPolicy backupPolicy = (BackupPolicy) o;
-        return Objects.equals(this.keepDays, backupPolicy.keepDays) &&
-            Objects.equals(this.startTime, backupPolicy.startTime) &&
-            Objects.equals(this.period, backupPolicy.period) &&
-            Objects.equals(this.retentionNumBackupLevel1, backupPolicy.retentionNumBackupLevel1);
+        BackupPolicy that = (BackupPolicy) obj;
+        return Objects.equals(this.keepDays, that.keepDays) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.period, that.period)
+            && Objects.equals(this.retentionNumBackupLevel1, that.retentionNumBackupLevel1);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keepDays, startTime, period, retentionNumBackupLevel1);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,6 +130,7 @@ public class BackupPolicy  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -170,8 +141,5 @@ public class BackupPolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -33,15 +33,15 @@ public class DeleteComputingResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteComputingResourceRequest deleteComputingResourceRequest = (DeleteComputingResourceRequest) o;
-        return Objects.equals(this.computingResourceId, deleteComputingResourceRequest.computingResourceId);
+        DeleteComputingResourceRequest that = (DeleteComputingResourceRequest) obj;
+        return Objects.equals(this.computingResourceId, that.computingResourceId);
     }
 
     @Override

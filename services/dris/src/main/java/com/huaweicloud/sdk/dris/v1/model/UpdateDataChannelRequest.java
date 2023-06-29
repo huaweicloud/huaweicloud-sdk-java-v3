@@ -87,17 +87,16 @@ public class UpdateDataChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataChannelRequest updateDataChannelRequest = (UpdateDataChannelRequest) o;
-        return Objects.equals(this.instanceId, updateDataChannelRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, updateDataChannelRequest.v2xEdgeId)
-            && Objects.equals(this.body, updateDataChannelRequest.body);
+        UpdateDataChannelRequest that = (UpdateDataChannelRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

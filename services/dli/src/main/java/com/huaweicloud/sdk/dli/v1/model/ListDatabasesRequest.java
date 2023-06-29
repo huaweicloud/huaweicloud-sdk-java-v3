@@ -121,19 +121,17 @@ public class ListDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabasesRequest listDatabasesRequest = (ListDatabasesRequest) o;
-        return Objects.equals(this.keyword, listDatabasesRequest.keyword)
-            && Objects.equals(this.limit, listDatabasesRequest.limit)
-            && Objects.equals(this.offset, listDatabasesRequest.offset)
-            && Objects.equals(this.tags, listDatabasesRequest.tags)
-            && Objects.equals(this.withPriv, listDatabasesRequest.withPriv);
+        ListDatabasesRequest that = (ListDatabasesRequest) obj;
+        return Objects.equals(this.keyword, that.keyword) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.withPriv, that.withPriv);
     }
 
     @Override

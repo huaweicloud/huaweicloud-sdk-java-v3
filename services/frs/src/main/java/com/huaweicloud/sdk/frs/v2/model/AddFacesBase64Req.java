@@ -99,18 +99,17 @@ public class AddFacesBase64Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesBase64Req addFacesBase64Req = (AddFacesBase64Req) o;
-        return Objects.equals(this.imageBase64, addFacesBase64Req.imageBase64)
-            && Objects.equals(this.externalFields, addFacesBase64Req.externalFields)
-            && Objects.equals(this.externalImageId, addFacesBase64Req.externalImageId)
-            && Objects.equals(this.single, addFacesBase64Req.single);
+        AddFacesBase64Req that = (AddFacesBase64Req) obj;
+        return Objects.equals(this.imageBase64, that.imageBase64)
+            && Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.externalImageId, that.externalImageId) && Objects.equals(this.single, that.single);
     }
 
     @Override

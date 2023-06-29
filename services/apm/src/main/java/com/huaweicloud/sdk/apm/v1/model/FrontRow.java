@@ -118,16 +118,16 @@ public class FrontRow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FrontRow frontRow = (FrontRow) o;
-        return Objects.equals(this.cellList, frontRow.cellList) && Objects.equals(this.filter, frontRow.filter)
-            && Objects.equals(this.header, frontRow.header) && Objects.equals(this.txId, frontRow.txId);
+        FrontRow that = (FrontRow) obj;
+        return Objects.equals(this.cellList, that.cellList) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.header, that.header) && Objects.equals(this.txId, that.txId);
     }
 
     @Override

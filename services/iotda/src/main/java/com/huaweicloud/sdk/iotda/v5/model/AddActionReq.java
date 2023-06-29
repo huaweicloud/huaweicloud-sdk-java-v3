@@ -87,16 +87,16 @@ public class AddActionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddActionReq addActionReq = (AddActionReq) o;
-        return Objects.equals(this.ruleId, addActionReq.ruleId) && Objects.equals(this.channel, addActionReq.channel)
-            && Objects.equals(this.channelDetail, addActionReq.channelDetail);
+        AddActionReq that = (AddActionReq) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.channel, that.channel)
+            && Objects.equals(this.channelDetail, that.channelDetail);
     }
 
     @Override

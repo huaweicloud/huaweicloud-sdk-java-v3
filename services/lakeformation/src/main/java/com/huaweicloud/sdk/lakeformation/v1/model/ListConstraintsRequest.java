@@ -104,22 +104,15 @@ public class ListConstraintsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,21 +264,18 @@ public class ListConstraintsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConstraintsRequest listConstraintsRequest = (ListConstraintsRequest) o;
-        return Objects.equals(this.instanceId, listConstraintsRequest.instanceId)
-            && Objects.equals(this.catalogName, listConstraintsRequest.catalogName)
-            && Objects.equals(this.databaseName, listConstraintsRequest.databaseName)
-            && Objects.equals(this.tableName, listConstraintsRequest.tableName)
-            && Objects.equals(this.type, listConstraintsRequest.type)
-            && Objects.equals(this.parentDb, listConstraintsRequest.parentDb)
-            && Objects.equals(this.parentTbl, listConstraintsRequest.parentTbl);
+        ListConstraintsRequest that = (ListConstraintsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.parentDb, that.parentDb)
+            && Objects.equals(this.parentTbl, that.parentTbl);
     }
 
     @Override

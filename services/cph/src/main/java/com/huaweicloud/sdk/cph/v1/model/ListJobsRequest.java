@@ -103,17 +103,16 @@ public class ListJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobsRequest listJobsRequest = (ListJobsRequest) o;
-        return Objects.equals(this.requestId, listJobsRequest.requestId)
-            && Objects.equals(this.requestIds, listJobsRequest.requestIds)
-            && Objects.equals(this.offset, listJobsRequest.offset) && Objects.equals(this.limit, listJobsRequest.limit);
+        ListJobsRequest that = (ListJobsRequest) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.requestIds, that.requestIds)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class SetCPUThresholdData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetCPUThresholdData setCPUThresholdData = (SetCPUThresholdData) o;
-        return Objects.equals(this.cpu, setCPUThresholdData.cpu);
+        SetCPUThresholdData that = (SetCPUThresholdData) obj;
+        return Objects.equals(this.cpu, that.cpu);
     }
 
     @Override

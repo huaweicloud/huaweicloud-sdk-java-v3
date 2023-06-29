@@ -74,16 +74,15 @@ public class RepoListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoListInfo repoListInfo = (RepoListInfo) o;
-        return Objects.equals(this.repositorys, repoListInfo.repositorys)
-            && Objects.equals(this.total, repoListInfo.total);
+        RepoListInfo that = (RepoListInfo) obj;
+        return Objects.equals(this.repositorys, that.repositorys) && Objects.equals(this.total, that.total);
     }
 
     @Override

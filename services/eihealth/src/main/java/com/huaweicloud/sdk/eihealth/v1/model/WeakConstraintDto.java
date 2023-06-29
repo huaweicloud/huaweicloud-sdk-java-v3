@@ -149,17 +149,17 @@ public class WeakConstraintDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeakConstraintDto weakConstraintDto = (WeakConstraintDto) o;
-        return Objects.equals(this.name, weakConstraintDto.name) && Objects.equals(this.type, weakConstraintDto.type)
-            && Objects.equals(this.bool, weakConstraintDto.bool) && Objects.equals(this.range, weakConstraintDto.range)
-            && Objects.equals(this.struct, weakConstraintDto.struct);
+        WeakConstraintDto that = (WeakConstraintDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.bool, that.bool) && Objects.equals(this.range, that.range)
+            && Objects.equals(this.struct, that.struct);
     }
 
     @Override

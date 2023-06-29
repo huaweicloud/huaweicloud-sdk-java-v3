@@ -310,25 +310,20 @@ public class TemplateParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateParam templateParam = (TemplateParam) o;
-        return Objects.equals(this.required, templateParam.required)
-            && Objects.equals(this.visible, templateParam.visible) && Objects.equals(this.name, templateParam.name)
-            && Objects.equals(this.value, templateParam.value)
-            && Objects.equals(this.description, templateParam.description)
-            && Objects.equals(this.paramtype, templateParam.paramtype)
-            && Objects.equals(this.displayType, templateParam.displayType)
-            && Objects.equals(this.displayName, templateParam.displayName)
-            && Objects.equals(this.isStatic, templateParam.isStatic)
-            && Objects.equals(this.isDefault, templateParam.isDefault)
-            && Objects.equals(this.limits, templateParam.limits)
-            && Objects.equals(this.constraints, templateParam.constraints);
+        TemplateParam that = (TemplateParam) obj;
+        return Objects.equals(this.required, that.required) && Objects.equals(this.visible, that.visible)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.paramtype, that.paramtype)
+            && Objects.equals(this.displayType, that.displayType) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.isStatic, that.isStatic) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.limits, that.limits) && Objects.equals(this.constraints, that.constraints);
     }
 
     @Override

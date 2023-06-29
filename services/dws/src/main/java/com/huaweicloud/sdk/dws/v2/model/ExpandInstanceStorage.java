@@ -33,15 +33,15 @@ public class ExpandInstanceStorage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandInstanceStorage expandInstanceStorage = (ExpandInstanceStorage) o;
-        return Objects.equals(this.newSize, expandInstanceStorage.newSize);
+        ExpandInstanceStorage that = (ExpandInstanceStorage) obj;
+        return Objects.equals(this.newSize, that.newSize);
     }
 
     @Override

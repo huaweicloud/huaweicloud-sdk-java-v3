@@ -35,7 +35,7 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 域名总数
+     * 网站域名总数
      * minimum: 0
      * maximum: 1000
      * @return total
@@ -54,7 +54,7 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 一级域名总数
+     * 网站一级域名总数
      * minimum: 0
      * maximum: 1000
      * @return topLevelDomainNum
@@ -89,7 +89,7 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     /**
-     * 域名列表
+     * 网站域名列表
      * @return domains
      */
     public List<DomainItem> getDomains() {
@@ -101,17 +101,16 @@ public class ListDomainsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainsResponse listDomainsResponse = (ListDomainsResponse) o;
-        return Objects.equals(this.total, listDomainsResponse.total)
-            && Objects.equals(this.topLevelDomainNum, listDomainsResponse.topLevelDomainNum)
-            && Objects.equals(this.domains, listDomainsResponse.domains);
+        ListDomainsResponse that = (ListDomainsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.topLevelDomainNum, that.topLevelDomainNum)
+            && Objects.equals(this.domains, that.domains);
     }
 
     @Override

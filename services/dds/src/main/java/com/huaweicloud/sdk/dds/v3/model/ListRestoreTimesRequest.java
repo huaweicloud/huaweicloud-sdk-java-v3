@@ -79,17 +79,16 @@ public class ListRestoreTimesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRestoreTimesRequest listRestoreTimesRequest = (ListRestoreTimesRequest) o;
-        return Objects.equals(this.xLanguage, listRestoreTimesRequest.xLanguage)
-            && Objects.equals(this.instanceId, listRestoreTimesRequest.instanceId)
-            && Objects.equals(this.date, listRestoreTimesRequest.date);
+        ListRestoreTimesRequest that = (ListRestoreTimesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.date, that.date);
     }
 
     @Override

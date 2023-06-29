@@ -426,32 +426,26 @@ public class CambodianIdCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CambodianIdCardResult cambodianIdCardResult = (CambodianIdCardResult) o;
-        return Objects.equals(this.idNumber, cambodianIdCardResult.idNumber)
-            && Objects.equals(this.nameKh, cambodianIdCardResult.nameKh)
-            && Objects.equals(this.nameEn, cambodianIdCardResult.nameEn)
-            && Objects.equals(this.birthDate, cambodianIdCardResult.birthDate)
-            && Objects.equals(this.sex, cambodianIdCardResult.sex)
-            && Objects.equals(this.height, cambodianIdCardResult.height)
-            && Objects.equals(this.birthPlace, cambodianIdCardResult.birthPlace)
-            && Objects.equals(this.address, cambodianIdCardResult.address)
-            && Objects.equals(this.issueDate, cambodianIdCardResult.issueDate)
-            && Objects.equals(this.expiryDate, cambodianIdCardResult.expiryDate)
-            && Objects.equals(this.description, cambodianIdCardResult.description)
-            && Objects.equals(this.machineCode1, cambodianIdCardResult.machineCode1)
-            && Objects.equals(this.machineCode2, cambodianIdCardResult.machineCode2)
-            && Objects.equals(this.machineCode3, cambodianIdCardResult.machineCode3)
-            && Objects.equals(this.portraitImage, cambodianIdCardResult.portraitImage)
-            && Objects.equals(this.portraitLocation, cambodianIdCardResult.portraitLocation)
-            && Objects.equals(this.idcardType, cambodianIdCardResult.idcardType)
-            && Objects.equals(this.confidence, cambodianIdCardResult.confidence);
+        CambodianIdCardResult that = (CambodianIdCardResult) obj;
+        return Objects.equals(this.idNumber, that.idNumber) && Objects.equals(this.nameKh, that.nameKh)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.birthPlace, that.birthPlace) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.machineCode1, that.machineCode1)
+            && Objects.equals(this.machineCode2, that.machineCode2)
+            && Objects.equals(this.machineCode3, that.machineCode3)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.portraitLocation, that.portraitLocation)
+            && Objects.equals(this.idcardType, that.idcardType) && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

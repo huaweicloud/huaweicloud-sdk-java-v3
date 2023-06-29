@@ -233,23 +233,19 @@ public class ShowPublicActionListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicActionListResponse showPublicActionListResponse = (ShowPublicActionListResponse) o;
-        return Objects.equals(this.count, showPublicActionListResponse.count)
-            && Objects.equals(this.actionTemplates, showPublicActionListResponse.actionTemplates)
-            && Objects.equals(this.total, showPublicActionListResponse.total)
-            && Objects.equals(this.isTruncated, showPublicActionListResponse.isTruncated)
-            && Objects.equals(this.offset, showPublicActionListResponse.offset)
-            && Objects.equals(this.xRequestId, showPublicActionListResponse.xRequestId)
-            && Objects.equals(this.connection, showPublicActionListResponse.connection)
-            && Objects.equals(this.contentLength, showPublicActionListResponse.contentLength)
-            && Objects.equals(this.date, showPublicActionListResponse.date);
+        ShowPublicActionListResponse that = (ShowPublicActionListResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.actionTemplates, that.actionTemplates)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

@@ -283,26 +283,21 @@ public class ListAppChangeHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppChangeHistoriesRequest listAppChangeHistoriesRequest = (ListAppChangeHistoriesRequest) o;
-        return Objects.equals(this.hostId, listAppChangeHistoriesRequest.hostId)
-            && Objects.equals(this.hostIp, listAppChangeHistoriesRequest.hostIp)
-            && Objects.equals(this.hostName, listAppChangeHistoriesRequest.hostName)
-            && Objects.equals(this.appName, listAppChangeHistoriesRequest.appName)
-            && Objects.equals(this.variationType, listAppChangeHistoriesRequest.variationType)
-            && Objects.equals(this.enterpriseProjectId, listAppChangeHistoriesRequest.enterpriseProjectId)
-            && Objects.equals(this.sortKey, listAppChangeHistoriesRequest.sortKey)
-            && Objects.equals(this.sortDir, listAppChangeHistoriesRequest.sortDir)
-            && Objects.equals(this.limit, listAppChangeHistoriesRequest.limit)
-            && Objects.equals(this.offset, listAppChangeHistoriesRequest.offset)
-            && Objects.equals(this.startTime, listAppChangeHistoriesRequest.startTime)
-            && Objects.equals(this.endTime, listAppChangeHistoriesRequest.endTime);
+        ListAppChangeHistoriesRequest that = (ListAppChangeHistoriesRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.variationType, that.variationType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

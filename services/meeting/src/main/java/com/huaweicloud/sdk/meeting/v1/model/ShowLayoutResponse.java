@@ -99,17 +99,16 @@ public class ShowLayoutResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLayoutResponse showLayoutResponse = (ShowLayoutResponse) o;
-        return Objects.equals(this.returnCode, showLayoutResponse.returnCode)
-            && Objects.equals(this.returnDesc, showLayoutResponse.returnDesc)
-            && Objects.equals(this.picLayouts, showLayoutResponse.picLayouts);
+        ShowLayoutResponse that = (ShowLayoutResponse) obj;
+        return Objects.equals(this.returnCode, that.returnCode) && Objects.equals(this.returnDesc, that.returnDesc)
+            && Objects.equals(this.picLayouts, that.picLayouts);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class UpdateApiGroupV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -498,31 +491,23 @@ public class UpdateApiGroupV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApiGroupV2Response updateApiGroupV2Response = (UpdateApiGroupV2Response) o;
-        return Objects.equals(this.id, updateApiGroupV2Response.id)
-            && Objects.equals(this.name, updateApiGroupV2Response.name)
-            && Objects.equals(this.status, updateApiGroupV2Response.status)
-            && Objects.equals(this.slDomain, updateApiGroupV2Response.slDomain)
-            && Objects.equals(this.registerTime, updateApiGroupV2Response.registerTime)
-            && Objects.equals(this.updateTime, updateApiGroupV2Response.updateTime)
-            && Objects.equals(this.onSellStatus, updateApiGroupV2Response.onSellStatus)
-            && Objects.equals(this.urlDomains, updateApiGroupV2Response.urlDomains)
-            && Objects.equals(this.slDomains, updateApiGroupV2Response.slDomains)
-            && Objects.equals(this.remark, updateApiGroupV2Response.remark)
-            && Objects.equals(this.callLimits, updateApiGroupV2Response.callLimits)
-            && Objects.equals(this.timeInterval, updateApiGroupV2Response.timeInterval)
-            && Objects.equals(this.timeUnit, updateApiGroupV2Response.timeUnit)
-            && Objects.equals(this.isDefault, updateApiGroupV2Response.isDefault)
-            && Objects.equals(this.version, updateApiGroupV2Response.version)
-            && Objects.equals(this.romaAppId, updateApiGroupV2Response.romaAppId)
-            && Objects.equals(this.romaAppName, updateApiGroupV2Response.romaAppName);
+        UpdateApiGroupV2Response that = (UpdateApiGroupV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.slDomain, that.slDomain)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.onSellStatus, that.onSellStatus) && Objects.equals(this.urlDomains, that.urlDomains)
+            && Objects.equals(this.slDomains, that.slDomains) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.callLimits, that.callLimits) && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

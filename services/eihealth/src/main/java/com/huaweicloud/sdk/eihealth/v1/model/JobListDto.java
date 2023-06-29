@@ -431,26 +431,24 @@ public class JobListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobListDto jobListDto = (JobListDto) o;
-        return Objects.equals(this.id, jobListDto.id) && Objects.equals(this.name, jobListDto.name)
-            && Objects.equals(this.description, jobListDto.description)
-            && Objects.equals(this.labels, jobListDto.labels) && Objects.equals(this.priority, jobListDto.priority)
-            && Objects.equals(this.timeout, jobListDto.timeout) && Objects.equals(this.outputDir, jobListDto.outputDir)
-            && Objects.equals(this.status, jobListDto.status) && Objects.equals(this.createTime, jobListDto.createTime)
-            && Objects.equals(this.finishTime, jobListDto.finishTime)
-            && Objects.equals(this.failedMessage, jobListDto.failedMessage)
-            && Objects.equals(this.failedReason, jobListDto.failedReason)
-            && Objects.equals(this.userName, jobListDto.userName) && Objects.equals(this.toolInfo, jobListDto.toolInfo)
-            && Objects.equals(this.ioAccId, jobListDto.ioAccId)
-            && Objects.equals(this.ioAccExpectedUsage, jobListDto.ioAccExpectedUsage)
-            && Objects.equals(this.stillRunningTasks, jobListDto.stillRunningTasks);
+        JobListDto that = (JobListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.toolInfo, that.toolInfo) && Objects.equals(this.ioAccId, that.ioAccId)
+            && Objects.equals(this.ioAccExpectedUsage, that.ioAccExpectedUsage)
+            && Objects.equals(this.stillRunningTasks, that.stillRunningTasks);
     }
 
     @Override

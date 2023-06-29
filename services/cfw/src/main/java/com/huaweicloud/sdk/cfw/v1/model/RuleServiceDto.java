@@ -143,19 +143,18 @@ public class RuleServiceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleServiceDto ruleServiceDto = (RuleServiceDto) o;
-        return Objects.equals(this.type, ruleServiceDto.type) && Objects.equals(this.protocol, ruleServiceDto.protocol)
-            && Objects.equals(this.sourcePort, ruleServiceDto.sourcePort)
-            && Objects.equals(this.destPort, ruleServiceDto.destPort)
-            && Objects.equals(this.serviceSetId, ruleServiceDto.serviceSetId)
-            && Objects.equals(this.serviceSetName, ruleServiceDto.serviceSetName);
+        RuleServiceDto that = (RuleServiceDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
+            && Objects.equals(this.serviceSetId, that.serviceSetId)
+            && Objects.equals(this.serviceSetName, that.serviceSetName);
     }
 
     @Override

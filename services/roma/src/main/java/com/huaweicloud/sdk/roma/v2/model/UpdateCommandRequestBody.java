@@ -55,16 +55,15 @@ public class UpdateCommandRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCommandRequestBody updateCommandRequestBody = (UpdateCommandRequestBody) o;
-        return Objects.equals(this.name, updateCommandRequestBody.name)
-            && Objects.equals(this.description, updateCommandRequestBody.description);
+        UpdateCommandRequestBody that = (UpdateCommandRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

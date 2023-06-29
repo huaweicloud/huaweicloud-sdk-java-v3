@@ -55,16 +55,15 @@ public class ShowAddonInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAddonInstanceRequest showAddonInstanceRequest = (ShowAddonInstanceRequest) o;
-        return Objects.equals(this.id, showAddonInstanceRequest.id)
-            && Objects.equals(this.clusterId, showAddonInstanceRequest.clusterId);
+        ShowAddonInstanceRequest that = (ShowAddonInstanceRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

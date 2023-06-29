@@ -77,17 +77,16 @@ public class SelectedSetAlarmTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SelectedSetAlarmTaskReq selectedSetAlarmTaskReq = (SelectedSetAlarmTaskReq) o;
-        return Objects.equals(this.jobId, selectedSetAlarmTaskReq.jobId)
-            && Objects.equals(this.status, selectedSetAlarmTaskReq.status)
-            && Objects.equals(this.engineType, selectedSetAlarmTaskReq.engineType);
+        SelectedSetAlarmTaskReq that = (SelectedSetAlarmTaskReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.engineType, that.engineType);
     }
 
     @Override

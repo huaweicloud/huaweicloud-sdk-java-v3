@@ -196,22 +196,19 @@ public class ListProPricePlansRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProPricePlansRequest listProPricePlansRequest = (ListProPricePlansRequest) o;
-        return Objects.equals(this.limit, listProPricePlansRequest.limit)
-            && Objects.equals(this.offset, listProPricePlansRequest.offset)
-            && Objects.equals(this.mainSearchKey, listProPricePlansRequest.mainSearchKey)
-            && Objects.equals(this.flowTotal, listProPricePlansRequest.flowTotal)
-            && Objects.equals(this.networkType, listProPricePlansRequest.networkType)
-            && Objects.equals(this.locationType, listProPricePlansRequest.locationType)
-            && Objects.equals(this.carrierType, listProPricePlansRequest.carrierType)
-            && Objects.equals(this.countryType, listProPricePlansRequest.countryType);
+        ListProPricePlansRequest that = (ListProPricePlansRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.mainSearchKey, that.mainSearchKey) && Objects.equals(this.flowTotal, that.flowTotal)
+            && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.locationType, that.locationType)
+            && Objects.equals(this.carrierType, that.carrierType) && Objects.equals(this.countryType, that.countryType);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class CharListIem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CharListIem charListIem = (CharListIem) o;
-        return Objects.equals(this._char, charListIem._char)
-            && Objects.equals(this.charConfidence, charListIem.charConfidence)
-            && Objects.equals(this.charLocation, charListIem.charLocation);
+        CharListIem that = (CharListIem) obj;
+        return Objects.equals(this._char, that._char) && Objects.equals(this.charConfidence, that.charConfidence)
+            && Objects.equals(this.charLocation, that.charLocation);
     }
 
     @Override

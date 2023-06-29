@@ -65,15 +65,15 @@ public class CustomProp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomProp customProp = (CustomProp) o;
-        return Objects.equals(this.id, customProp.id) && Objects.equals(this.propDefinition, customProp.propDefinition);
+        CustomProp that = (CustomProp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.propDefinition, that.propDefinition);
     }
 
     @Override

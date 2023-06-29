@@ -77,17 +77,16 @@ public class DomainOriginHost {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainOriginHost domainOriginHost = (DomainOriginHost) o;
-        return Objects.equals(this.domainId, domainOriginHost.domainId)
-            && Objects.equals(this.originHostType, domainOriginHost.originHostType)
-            && Objects.equals(this.customizeDomain, domainOriginHost.customizeDomain);
+        DomainOriginHost that = (DomainOriginHost) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.originHostType, that.originHostType)
+            && Objects.equals(this.customizeDomain, that.customizeDomain);
     }
 
     @Override

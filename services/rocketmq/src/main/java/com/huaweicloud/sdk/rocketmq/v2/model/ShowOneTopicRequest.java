@@ -55,16 +55,15 @@ public class ShowOneTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOneTopicRequest showOneTopicRequest = (ShowOneTopicRequest) o;
-        return Objects.equals(this.instanceId, showOneTopicRequest.instanceId)
-            && Objects.equals(this.topic, showOneTopicRequest.topic);
+        ShowOneTopicRequest that = (ShowOneTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ListResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourcesRequest listResourcesRequest = (ListResourcesRequest) o;
-        return Objects.equals(this.workspace, listResourcesRequest.workspace);
+        ListResourcesRequest that = (ListResourcesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

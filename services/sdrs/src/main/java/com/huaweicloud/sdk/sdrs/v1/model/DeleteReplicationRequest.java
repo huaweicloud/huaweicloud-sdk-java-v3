@@ -65,16 +65,15 @@ public class DeleteReplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteReplicationRequest deleteReplicationRequest = (DeleteReplicationRequest) o;
-        return Objects.equals(this.replicationId, deleteReplicationRequest.replicationId)
-            && Objects.equals(this.body, deleteReplicationRequest.body);
+        DeleteReplicationRequest that = (DeleteReplicationRequest) obj;
+        return Objects.equals(this.replicationId, that.replicationId) && Objects.equals(this.body, that.body);
     }
 
     @Override

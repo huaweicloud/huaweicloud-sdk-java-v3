@@ -79,22 +79,15 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -179,22 +172,15 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -504,26 +490,20 @@ public class ShowDetailOfSubscriptionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailOfSubscriptionResponse showDetailOfSubscriptionResponse = (ShowDetailOfSubscriptionResponse) o;
-        return Objects.equals(this.id, showDetailOfSubscriptionResponse.id)
-            && Objects.equals(this.name, showDetailOfSubscriptionResponse.name)
-            && Objects.equals(this.description, showDetailOfSubscriptionResponse.description)
-            && Objects.equals(this.type, showDetailOfSubscriptionResponse.type)
-            && Objects.equals(this.status, showDetailOfSubscriptionResponse.status)
-            && Objects.equals(this.channelId, showDetailOfSubscriptionResponse.channelId)
-            && Objects.equals(this.channelName, showDetailOfSubscriptionResponse.channelName)
-            && Objects.equals(this.used, showDetailOfSubscriptionResponse.used)
-            && Objects.equals(this.sources, showDetailOfSubscriptionResponse.sources)
-            && Objects.equals(this.targets, showDetailOfSubscriptionResponse.targets)
-            && Objects.equals(this.createdTime, showDetailOfSubscriptionResponse.createdTime)
-            && Objects.equals(this.updatedTime, showDetailOfSubscriptionResponse.updatedTime);
+        ShowDetailOfSubscriptionResponse that = (ShowDetailOfSubscriptionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.channelId, that.channelId)
+            && Objects.equals(this.channelName, that.channelName) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

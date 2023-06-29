@@ -143,18 +143,18 @@ public class MountComponent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MountComponent mountComponent = (MountComponent) o;
-        return Objects.equals(this.envId, mountComponent.envId) && Objects.equals(this.envName, mountComponent.envName)
-            && Objects.equals(this.appId, mountComponent.appId) && Objects.equals(this.appName, mountComponent.appName)
-            && Objects.equals(this.componentId, mountComponent.componentId)
-            && Objects.equals(this.componentName, mountComponent.componentName);
+        MountComponent that = (MountComponent) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.componentName, that.componentName);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class RegisterServerAutoRecoveryRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterServerAutoRecoveryRequestBody registerServerAutoRecoveryRequestBody =
-            (RegisterServerAutoRecoveryRequestBody) o;
-        return Objects.equals(this.supportAutoRecovery, registerServerAutoRecoveryRequestBody.supportAutoRecovery);
+        RegisterServerAutoRecoveryRequestBody that = (RegisterServerAutoRecoveryRequestBody) obj;
+        return Objects.equals(this.supportAutoRecovery, that.supportAutoRecovery);
     }
 
     @Override

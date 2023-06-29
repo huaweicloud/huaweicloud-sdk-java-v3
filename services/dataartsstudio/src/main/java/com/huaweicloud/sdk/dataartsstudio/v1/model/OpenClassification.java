@@ -166,21 +166,18 @@ public class OpenClassification {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenClassification openClassification = (OpenClassification) o;
-        return Objects.equals(this.name, openClassification.name)
-            && Objects.equals(this.description, openClassification.description)
-            && Objects.equals(this.createUser, openClassification.createUser)
-            && Objects.equals(this.createTime, openClassification.createTime)
-            && Objects.equals(this.updateTime, openClassification.updateTime)
-            && Objects.equals(this.updateUser, openClassification.updateUser)
-            && Objects.equals(this.guid, openClassification.guid);
+        OpenClassification that = (OpenClassification) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser)
+            && Objects.equals(this.guid, that.guid);
     }
 
     @Override

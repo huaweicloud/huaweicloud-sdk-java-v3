@@ -75,22 +75,15 @@ public class UpdateFunctionCodeRequestBody {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,20 +274,18 @@ public class UpdateFunctionCodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionCodeRequestBody updateFunctionCodeRequestBody = (UpdateFunctionCodeRequestBody) o;
-        return Objects.equals(this.codeType, updateFunctionCodeRequestBody.codeType)
-            && Objects.equals(this.codeUrl, updateFunctionCodeRequestBody.codeUrl)
-            && Objects.equals(this.codeFilename, updateFunctionCodeRequestBody.codeFilename)
-            && Objects.equals(this.funcCode, updateFunctionCodeRequestBody.funcCode)
-            && Objects.equals(this.dependList, updateFunctionCodeRequestBody.dependList)
-            && Objects.equals(this.dependVersionList, updateFunctionCodeRequestBody.dependVersionList);
+        UpdateFunctionCodeRequestBody that = (UpdateFunctionCodeRequestBody) obj;
+        return Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.funcCode, that.funcCode)
+            && Objects.equals(this.dependList, that.dependList)
+            && Objects.equals(this.dependVersionList, that.dependVersionList);
     }
 
     @Override

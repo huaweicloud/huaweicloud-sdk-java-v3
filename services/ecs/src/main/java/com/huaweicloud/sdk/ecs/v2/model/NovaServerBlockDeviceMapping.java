@@ -72,22 +72,15 @@ public class NovaServerBlockDeviceMapping {
             if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceTypeEnum(value));
         }
 
         public static SourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class NovaServerBlockDeviceMapping {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationTypeEnum(value));
         }
 
         public static DestinationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,23 +360,20 @@ public class NovaServerBlockDeviceMapping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServerBlockDeviceMapping novaServerBlockDeviceMapping = (NovaServerBlockDeviceMapping) o;
-        return Objects.equals(this.sourceType, novaServerBlockDeviceMapping.sourceType)
-            && Objects.equals(this.destinationType, novaServerBlockDeviceMapping.destinationType)
-            && Objects.equals(this.guestFormat, novaServerBlockDeviceMapping.guestFormat)
-            && Objects.equals(this.deviceName, novaServerBlockDeviceMapping.deviceName)
-            && Objects.equals(this.deleteOnTermination, novaServerBlockDeviceMapping.deleteOnTermination)
-            && Objects.equals(this.bootIndex, novaServerBlockDeviceMapping.bootIndex)
-            && Objects.equals(this.uuid, novaServerBlockDeviceMapping.uuid)
-            && Objects.equals(this.volumeSize, novaServerBlockDeviceMapping.volumeSize)
-            && Objects.equals(this.volumeType, novaServerBlockDeviceMapping.volumeType);
+        NovaServerBlockDeviceMapping that = (NovaServerBlockDeviceMapping) obj;
+        return Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.destinationType, that.destinationType)
+            && Objects.equals(this.guestFormat, that.guestFormat) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
+            && Objects.equals(this.bootIndex, that.bootIndex) && Objects.equals(this.uuid, that.uuid)
+            && Objects.equals(this.volumeSize, that.volumeSize) && Objects.equals(this.volumeType, that.volumeType);
     }
 
     @Override

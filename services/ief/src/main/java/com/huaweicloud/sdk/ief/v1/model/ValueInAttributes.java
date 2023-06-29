@@ -87,17 +87,16 @@ public class ValueInAttributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueInAttributes valueInAttributes = (ValueInAttributes) o;
-        return Objects.equals(this.value, valueInAttributes.value)
-            && Objects.equals(this.optional, valueInAttributes.optional)
-            && Objects.equals(this.metadata, valueInAttributes.metadata);
+        ValueInAttributes that = (ValueInAttributes) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.optional, that.optional)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

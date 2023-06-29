@@ -96,17 +96,16 @@ public class AgentDeleteParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentDeleteParam agentDeleteParam = (AgentDeleteParam) o;
-        return Objects.equals(this.instanceList, agentDeleteParam.instanceList)
-            && Objects.equals(this.region, agentDeleteParam.region)
-            && Objects.equals(this.businessId, agentDeleteParam.businessId);
+        AgentDeleteParam that = (AgentDeleteParam) obj;
+        return Objects.equals(this.instanceList, that.instanceList) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.businessId, that.businessId);
     }
 
     @Override

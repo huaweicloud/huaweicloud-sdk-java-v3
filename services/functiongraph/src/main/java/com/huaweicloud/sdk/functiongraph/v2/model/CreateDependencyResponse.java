@@ -276,26 +276,20 @@ public class CreateDependencyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDependencyResponse createDependencyResponse = (CreateDependencyResponse) o;
-        return Objects.equals(this.id, createDependencyResponse.id)
-            && Objects.equals(this.owner, createDependencyResponse.owner)
-            && Objects.equals(this.link, createDependencyResponse.link)
-            && Objects.equals(this.runtime, createDependencyResponse.runtime)
-            && Objects.equals(this.etag, createDependencyResponse.etag)
-            && Objects.equals(this.size, createDependencyResponse.size)
-            && Objects.equals(this.name, createDependencyResponse.name)
-            && Objects.equals(this.description, createDependencyResponse.description)
-            && Objects.equals(this.fileName, createDependencyResponse.fileName)
-            && Objects.equals(this.version, createDependencyResponse.version)
-            && Objects.equals(this.depId, createDependencyResponse.depId)
-            && Objects.equals(this.lastModified, createDependencyResponse.lastModified);
+        CreateDependencyResponse that = (CreateDependencyResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.link, that.link) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.depId, that.depId) && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override

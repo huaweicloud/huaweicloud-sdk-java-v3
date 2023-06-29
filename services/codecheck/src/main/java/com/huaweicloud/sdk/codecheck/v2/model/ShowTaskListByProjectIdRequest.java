@@ -80,17 +80,16 @@ public class ShowTaskListByProjectIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskListByProjectIdRequest showTaskListByProjectIdRequest = (ShowTaskListByProjectIdRequest) o;
-        return Objects.equals(this.projectId, showTaskListByProjectIdRequest.projectId)
-            && Objects.equals(this.offset, showTaskListByProjectIdRequest.offset)
-            && Objects.equals(this.limit, showTaskListByProjectIdRequest.limit);
+        ShowTaskListByProjectIdRequest that = (ShowTaskListByProjectIdRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

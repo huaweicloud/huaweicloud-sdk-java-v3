@@ -100,17 +100,17 @@ public class ShowDiagnosisTaskDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDiagnosisTaskDetailsResponse showDiagnosisTaskDetailsResponse = (ShowDiagnosisTaskDetailsResponse) o;
-        return Objects.equals(this.abnormalItemSum, showDiagnosisTaskDetailsResponse.abnormalItemSum)
-            && Objects.equals(this.failedItemSum, showDiagnosisTaskDetailsResponse.failedItemSum)
-            && Objects.equals(this.diagnosisNodeReportList, showDiagnosisTaskDetailsResponse.diagnosisNodeReportList);
+        ShowDiagnosisTaskDetailsResponse that = (ShowDiagnosisTaskDetailsResponse) obj;
+        return Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
+            && Objects.equals(this.failedItemSum, that.failedItemSum)
+            && Objects.equals(this.diagnosisNodeReportList, that.diagnosisNodeReportList);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteAuthInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAuthInfoRequest deleteAuthInfoRequest = (DeleteAuthInfoRequest) o;
-        return Objects.equals(this.authInfoName, deleteAuthInfoRequest.authInfoName);
+        DeleteAuthInfoRequest that = (DeleteAuthInfoRequest) obj;
+        return Objects.equals(this.authInfoName, that.authInfoName);
     }
 
     @Override

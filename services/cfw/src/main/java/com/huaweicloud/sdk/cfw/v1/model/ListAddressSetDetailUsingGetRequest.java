@@ -77,18 +77,17 @@ public class ListAddressSetDetailUsingGetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAddressSetDetailUsingGetRequest listAddressSetDetailUsingGetRequest =
-            (ListAddressSetDetailUsingGetRequest) o;
-        return Objects.equals(this.setId, listAddressSetDetailUsingGetRequest.setId)
-            && Objects.equals(this.enterpriseProjectId, listAddressSetDetailUsingGetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listAddressSetDetailUsingGetRequest.fwInstanceId);
+        ListAddressSetDetailUsingGetRequest that = (ListAddressSetDetailUsingGetRequest) obj;
+        return Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

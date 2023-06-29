@@ -66,16 +66,15 @@ public class UpdateDirectConnectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDirectConnectResponse updateDirectConnectResponse = (UpdateDirectConnectResponse) o;
-        return Objects.equals(this.requestId, updateDirectConnectResponse.requestId)
-            && Objects.equals(this.directConnect, updateDirectConnectResponse.directConnect);
+        UpdateDirectConnectResponse that = (UpdateDirectConnectResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.directConnect, that.directConnect);
     }
 
     @Override

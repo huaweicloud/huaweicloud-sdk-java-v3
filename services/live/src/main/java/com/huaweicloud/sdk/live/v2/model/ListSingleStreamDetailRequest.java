@@ -121,19 +121,17 @@ public class ListSingleStreamDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSingleStreamDetailRequest listSingleStreamDetailRequest = (ListSingleStreamDetailRequest) o;
-        return Objects.equals(this.publishDomain, listSingleStreamDetailRequest.publishDomain)
-            && Objects.equals(this.app, listSingleStreamDetailRequest.app)
-            && Objects.equals(this.stream, listSingleStreamDetailRequest.stream)
-            && Objects.equals(this.startTime, listSingleStreamDetailRequest.startTime)
-            && Objects.equals(this.endTime, listSingleStreamDetailRequest.endTime);
+        ListSingleStreamDetailRequest that = (ListSingleStreamDetailRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

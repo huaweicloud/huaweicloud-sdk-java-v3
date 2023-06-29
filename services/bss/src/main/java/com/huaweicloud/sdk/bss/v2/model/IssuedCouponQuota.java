@@ -383,30 +383,25 @@ public class IssuedCouponQuota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssuedCouponQuota issuedCouponQuota = (IssuedCouponQuota) o;
-        return Objects.equals(this.quotaId, issuedCouponQuota.quotaId)
-            && Objects.equals(this.quotaType, issuedCouponQuota.quotaType)
-            && Objects.equals(this.createTime, issuedCouponQuota.createTime)
-            && Objects.equals(this.lastUpdateTime, issuedCouponQuota.lastUpdateTime)
-            && Objects.equals(this.quotaValue, issuedCouponQuota.quotaValue)
-            && Objects.equals(this.quotaStatus, issuedCouponQuota.quotaStatus)
-            && Objects.equals(this.balance, issuedCouponQuota.balance)
-            && Objects.equals(this.measureId, issuedCouponQuota.measureId)
-            && Objects.equals(this.currency, issuedCouponQuota.currency)
-            && Objects.equals(this.effectiveTime, issuedCouponQuota.effectiveTime)
-            && Objects.equals(this.expireTime, issuedCouponQuota.expireTime)
-            && Objects.equals(this.limitInfos, issuedCouponQuota.limitInfos)
-            && Objects.equals(this.indirectPartnerId, issuedCouponQuota.indirectPartnerId)
-            && Objects.equals(this.indirectPartnerAccountName, issuedCouponQuota.indirectPartnerAccountName)
-            && Objects.equals(this.indirectPartnerName, issuedCouponQuota.indirectPartnerName)
-            && Objects.equals(this.parentQuotaId, issuedCouponQuota.parentQuotaId);
+        IssuedCouponQuota that = (IssuedCouponQuota) obj;
+        return Objects.equals(this.quotaId, that.quotaId) && Objects.equals(this.quotaType, that.quotaType)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.quotaValue, that.quotaValue) && Objects.equals(this.quotaStatus, that.quotaStatus)
+            && Objects.equals(this.balance, that.balance) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.currency, that.currency) && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.limitInfos, that.limitInfos)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.indirectPartnerAccountName, that.indirectPartnerAccountName)
+            && Objects.equals(this.indirectPartnerName, that.indirectPartnerName)
+            && Objects.equals(this.parentQuotaId, that.parentQuotaId);
     }
 
     @Override

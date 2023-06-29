@@ -1,105 +1,83 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.ProbeDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * UpdateEdgeAppVersionDTO
  */
-public class UpdateEdgeAppVersionDTO  {
-
+public class UpdateEdgeAppVersionDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_multi_instance")
-    
+    @JsonProperty(value = "deploy_multi_instance")
 
     private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_settings")
-    
+    @JsonProperty(value = "container_settings")
 
     private ContainerSettingsDTO containerSettings;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="liveness_probe")
-    
+    @JsonProperty(value = "liveness_probe")
 
     private ProbeDTO livenessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="readiness_probe")
-    
+    @JsonProperty(value = "readiness_probe")
 
     private ProbeDTO readinessProbe;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sdk_version")
-    
+    @JsonProperty(value = "sdk_version")
 
     private String sdkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private Object arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="command")
-    
+    @JsonProperty(value = "command")
 
     private Object command;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="args")
-    
+    @JsonProperty(value = "args")
 
     private Object args;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="outputs")
-    
+    @JsonProperty(value = "outputs")
 
     private Object outputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="inputs")
-    
+    @JsonProperty(value = "inputs")
 
     private Object inputs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="services")
-    
+    @JsonProperty(value = "services")
 
     private Object services;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tpl_id")
-    
+    @JsonProperty(value = "tpl_id")
 
     private String tplId;
 
@@ -107,9 +85,6 @@ public class UpdateEdgeAppVersionDTO  {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -123,15 +98,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.description = description;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -145,15 +115,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.deployType = deployType;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withDeployMultiInstance(Boolean deployMultiInstance) {
         this.deployMultiInstance = deployMultiInstance;
         return this;
     }
-
-    
-
 
     /**
      * 是否允许部署多实例
@@ -167,22 +132,19 @@ public class UpdateEdgeAppVersionDTO  {
         this.deployMultiInstance = deployMultiInstance;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withContainerSettings(ContainerSettingsDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
     }
 
     public UpdateEdgeAppVersionDTO withContainerSettings(Consumer<ContainerSettingsDTO> containerSettingsSetter) {
-        if(this.containerSettings == null ){
+        if (this.containerSettings == null) {
             this.containerSettings = new ContainerSettingsDTO();
             containerSettingsSetter.accept(this.containerSettings);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get containerSettings
@@ -196,22 +158,19 @@ public class UpdateEdgeAppVersionDTO  {
         this.containerSettings = containerSettings;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withLivenessProbe(ProbeDTO livenessProbe) {
         this.livenessProbe = livenessProbe;
         return this;
     }
 
     public UpdateEdgeAppVersionDTO withLivenessProbe(Consumer<ProbeDTO> livenessProbeSetter) {
-        if(this.livenessProbe == null ){
+        if (this.livenessProbe == null) {
             this.livenessProbe = new ProbeDTO();
             livenessProbeSetter.accept(this.livenessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get livenessProbe
@@ -225,22 +184,19 @@ public class UpdateEdgeAppVersionDTO  {
         this.livenessProbe = livenessProbe;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withReadinessProbe(ProbeDTO readinessProbe) {
         this.readinessProbe = readinessProbe;
         return this;
     }
 
     public UpdateEdgeAppVersionDTO withReadinessProbe(Consumer<ProbeDTO> readinessProbeSetter) {
-        if(this.readinessProbe == null ){
+        if (this.readinessProbe == null) {
             this.readinessProbe = new ProbeDTO();
             readinessProbeSetter.accept(this.readinessProbe);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get readinessProbe
@@ -254,15 +210,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.readinessProbe = readinessProbe;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withSdkVersion(String sdkVersion) {
         this.sdkVersion = sdkVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用集成的边缘SDK版本
@@ -276,15 +227,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.sdkVersion = sdkVersion;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withArch(Object arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 架构
@@ -298,15 +244,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.arch = arch;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withCommand(Object command) {
         this.command = command;
         return this;
     }
-
-    
-
 
     /**
      * 启动命令
@@ -320,15 +261,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.command = command;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withArgs(Object args) {
         this.args = args;
         return this;
     }
-
-    
-
 
     /**
      * 启动参数
@@ -342,15 +278,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.args = args;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withOutputs(Object outputs) {
         this.outputs = outputs;
         return this;
     }
-
-    
-
 
     /**
      * 应用输出路由端点
@@ -364,15 +295,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.outputs = outputs;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withInputs(Object inputs) {
         this.inputs = inputs;
         return this;
     }
-
-    
-
 
     /**
      * 应用输入路由
@@ -386,15 +312,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.inputs = inputs;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withServices(Object services) {
         this.services = services;
         return this;
     }
-
-    
-
 
     /**
      * 应用实现的服务列表
@@ -408,15 +329,10 @@ public class UpdateEdgeAppVersionDTO  {
         this.services = services;
     }
 
-    
-
     public UpdateEdgeAppVersionDTO withTplId(String tplId) {
         this.tplId = tplId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id
@@ -430,36 +346,44 @@ public class UpdateEdgeAppVersionDTO  {
         this.tplId = tplId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeAppVersionDTO updateEdgeAppVersionDTO = (UpdateEdgeAppVersionDTO) o;
-        return Objects.equals(this.description, updateEdgeAppVersionDTO.description) &&
-            Objects.equals(this.deployType, updateEdgeAppVersionDTO.deployType) &&
-            Objects.equals(this.deployMultiInstance, updateEdgeAppVersionDTO.deployMultiInstance) &&
-            Objects.equals(this.containerSettings, updateEdgeAppVersionDTO.containerSettings) &&
-            Objects.equals(this.livenessProbe, updateEdgeAppVersionDTO.livenessProbe) &&
-            Objects.equals(this.readinessProbe, updateEdgeAppVersionDTO.readinessProbe) &&
-            Objects.equals(this.sdkVersion, updateEdgeAppVersionDTO.sdkVersion) &&
-            Objects.equals(this.arch, updateEdgeAppVersionDTO.arch) &&
-            Objects.equals(this.command, updateEdgeAppVersionDTO.command) &&
-            Objects.equals(this.args, updateEdgeAppVersionDTO.args) &&
-            Objects.equals(this.outputs, updateEdgeAppVersionDTO.outputs) &&
-            Objects.equals(this.inputs, updateEdgeAppVersionDTO.inputs) &&
-            Objects.equals(this.services, updateEdgeAppVersionDTO.services) &&
-            Objects.equals(this.tplId, updateEdgeAppVersionDTO.tplId);
+        UpdateEdgeAppVersionDTO that = (UpdateEdgeAppVersionDTO) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deployMultiInstance, that.deployMultiInstance)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.sdkVersion, that.sdkVersion) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.services, that.services) && Objects.equals(this.tplId, that.tplId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(description, deployType, deployMultiInstance, containerSettings, livenessProbe, readinessProbe, sdkVersion, arch, command, args, outputs, inputs, services, tplId);
+        return Objects.hash(description,
+            deployType,
+            deployMultiInstance,
+            containerSettings,
+            livenessProbe,
+            readinessProbe,
+            sdkVersion,
+            arch,
+            command,
+            args,
+            outputs,
+            inputs,
+            services,
+            tplId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -481,6 +405,7 @@ public class UpdateEdgeAppVersionDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -491,8 +416,5 @@ public class UpdateEdgeAppVersionDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

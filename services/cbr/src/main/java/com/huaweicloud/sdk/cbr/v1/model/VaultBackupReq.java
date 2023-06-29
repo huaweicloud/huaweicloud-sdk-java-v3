@@ -43,15 +43,15 @@ public class VaultBackupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultBackupReq vaultBackupReq = (VaultBackupReq) o;
-        return Objects.equals(this.checkpoint, vaultBackupReq.checkpoint);
+        VaultBackupReq that = (VaultBackupReq) obj;
+        return Objects.equals(this.checkpoint, that.checkpoint);
     }
 
     @Override

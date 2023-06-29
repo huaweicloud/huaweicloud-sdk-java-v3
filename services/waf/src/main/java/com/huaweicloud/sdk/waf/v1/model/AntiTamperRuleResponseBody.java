@@ -165,21 +165,18 @@ public class AntiTamperRuleResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AntiTamperRuleResponseBody antiTamperRuleResponseBody = (AntiTamperRuleResponseBody) o;
-        return Objects.equals(this.id, antiTamperRuleResponseBody.id)
-            && Objects.equals(this.policyid, antiTamperRuleResponseBody.policyid)
-            && Objects.equals(this.timestamp, antiTamperRuleResponseBody.timestamp)
-            && Objects.equals(this.description, antiTamperRuleResponseBody.description)
-            && Objects.equals(this.status, antiTamperRuleResponseBody.status)
-            && Objects.equals(this.hostname, antiTamperRuleResponseBody.hostname)
-            && Objects.equals(this.url, antiTamperRuleResponseBody.url);
+        AntiTamperRuleResponseBody that = (AntiTamperRuleResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

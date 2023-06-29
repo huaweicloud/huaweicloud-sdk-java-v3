@@ -168,20 +168,17 @@ public class ListOverviewsClassificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOverviewsClassificationResponse listOverviewsClassificationResponse =
-            (ListOverviewsClassificationResponse) o;
-        return Objects.equals(this.domain, listOverviewsClassificationResponse.domain)
-            && Objects.equals(this.attackType, listOverviewsClassificationResponse.attackType)
-            && Objects.equals(this.ip, listOverviewsClassificationResponse.ip)
-            && Objects.equals(this.url, listOverviewsClassificationResponse.url)
-            && Objects.equals(this.geo, listOverviewsClassificationResponse.geo);
+        ListOverviewsClassificationResponse that = (ListOverviewsClassificationResponse) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.attackType, that.attackType)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.geo, that.geo);
     }
 
     @Override

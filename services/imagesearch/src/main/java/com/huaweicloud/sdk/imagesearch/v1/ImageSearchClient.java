@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.imagesearch.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.imagesearch.v1.model.*;
 
 public class ImageSearchClient {
+
     protected HcClient hcClient;
 
     public ImageSearchClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class ImageSearchClient {
     public static ClientBuilder<ImageSearchClient> newBuilder() {
         return new ClientBuilder<>(ImageSearchClient::new);
     }
-
 
     /**
      * 添加图片
@@ -48,7 +48,8 @@ public class ImageSearchClient {
      * @return SyncInvoker<RunAddPictureRequest, RunAddPictureResponse>
      */
     public SyncInvoker<RunAddPictureRequest, RunAddPictureResponse> runAddPictureInvoker(RunAddPictureRequest request) {
-        return new SyncInvoker<RunAddPictureRequest, RunAddPictureResponse>(request, ImageSearchMeta.runAddPicture, hcClient);
+        return new SyncInvoker<RunAddPictureRequest, RunAddPictureResponse>(request, ImageSearchMeta.runAddPicture,
+            hcClient);
     }
 
     /**
@@ -75,8 +76,10 @@ public class ImageSearchClient {
      * @param RunCheckPictureRequest 请求对象
      * @return SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse>
      */
-    public SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse> runCheckPictureInvoker(RunCheckPictureRequest request) {
-        return new SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse>(request, ImageSearchMeta.runCheckPicture, hcClient);
+    public SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse> runCheckPictureInvoker(
+        RunCheckPictureRequest request) {
+        return new SyncInvoker<RunCheckPictureRequest, RunCheckPictureResponse>(request,
+            ImageSearchMeta.runCheckPicture, hcClient);
     }
 
     /**
@@ -103,8 +106,10 @@ public class ImageSearchClient {
      * @param RunCreateInstanceRequest 请求对象
      * @return SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse>
      */
-    public SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse> runCreateInstanceInvoker(RunCreateInstanceRequest request) {
-        return new SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse>(request, ImageSearchMeta.runCreateInstance, hcClient);
+    public SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse> runCreateInstanceInvoker(
+        RunCreateInstanceRequest request) {
+        return new SyncInvoker<RunCreateInstanceRequest, RunCreateInstanceResponse>(request,
+            ImageSearchMeta.runCreateInstance, hcClient);
     }
 
     /**
@@ -131,8 +136,10 @@ public class ImageSearchClient {
      * @param RunDeleteInstanceRequest 请求对象
      * @return SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse>
      */
-    public SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse> runDeleteInstanceInvoker(RunDeleteInstanceRequest request) {
-        return new SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse>(request, ImageSearchMeta.runDeleteInstance, hcClient);
+    public SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse> runDeleteInstanceInvoker(
+        RunDeleteInstanceRequest request) {
+        return new SyncInvoker<RunDeleteInstanceRequest, RunDeleteInstanceResponse>(request,
+            ImageSearchMeta.runDeleteInstance, hcClient);
     }
 
     /**
@@ -159,8 +166,10 @@ public class ImageSearchClient {
      * @param RunDeletePictureRequest 请求对象
      * @return SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse>
      */
-    public SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse> runDeletePictureInvoker(RunDeletePictureRequest request) {
-        return new SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse>(request, ImageSearchMeta.runDeletePicture, hcClient);
+    public SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse> runDeletePictureInvoker(
+        RunDeletePictureRequest request) {
+        return new SyncInvoker<RunDeletePictureRequest, RunDeletePictureResponse>(request,
+            ImageSearchMeta.runDeletePicture, hcClient);
     }
 
     /**
@@ -187,8 +196,10 @@ public class ImageSearchClient {
      * @param RunModifyPictureRequest 请求对象
      * @return SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse>
      */
-    public SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse> runModifyPictureInvoker(RunModifyPictureRequest request) {
-        return new SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse>(request, ImageSearchMeta.runModifyPicture, hcClient);
+    public SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse> runModifyPictureInvoker(
+        RunModifyPictureRequest request) {
+        return new SyncInvoker<RunModifyPictureRequest, RunModifyPictureResponse>(request,
+            ImageSearchMeta.runModifyPicture, hcClient);
     }
 
     /**
@@ -215,8 +226,10 @@ public class ImageSearchClient {
      * @param RunQueryInstanceRequest 请求对象
      * @return SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse>
      */
-    public SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse> runQueryInstanceInvoker(RunQueryInstanceRequest request) {
-        return new SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse>(request, ImageSearchMeta.runQueryInstance, hcClient);
+    public SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse> runQueryInstanceInvoker(
+        RunQueryInstanceRequest request) {
+        return new SyncInvoker<RunQueryInstanceRequest, RunQueryInstanceResponse>(request,
+            ImageSearchMeta.runQueryInstance, hcClient);
     }
 
     /**
@@ -243,8 +256,10 @@ public class ImageSearchClient {
      * @param RunSearchPictureRequest 请求对象
      * @return SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse>
      */
-    public SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse> runSearchPictureInvoker(RunSearchPictureRequest request) {
-        return new SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse>(request, ImageSearchMeta.runSearchPicture, hcClient);
+    public SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse> runSearchPictureInvoker(
+        RunSearchPictureRequest request) {
+        return new SyncInvoker<RunSearchPictureRequest, RunSearchPictureResponse>(request,
+            ImageSearchMeta.runSearchPicture, hcClient);
     }
 
 }

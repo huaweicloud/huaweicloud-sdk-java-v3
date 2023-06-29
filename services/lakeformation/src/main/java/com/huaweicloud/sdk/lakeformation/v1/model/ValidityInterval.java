@@ -83,16 +83,16 @@ public class ValidityInterval {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidityInterval validityInterval = (ValidityInterval) o;
-        return Objects.equals(this.days, validityInterval.days) && Objects.equals(this.hours, validityInterval.hours)
-            && Objects.equals(this.minutes, validityInterval.minutes);
+        ValidityInterval that = (ValidityInterval) obj;
+        return Objects.equals(this.days, that.days) && Objects.equals(this.hours, that.hours)
+            && Objects.equals(this.minutes, that.minutes);
     }
 
     @Override

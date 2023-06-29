@@ -78,17 +78,16 @@ public class UpdateResDatastructResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResDatastructResponse updateResDatastructResponse = (UpdateResDatastructResponse) o;
-        return Objects.equals(this.isSuccess, updateResDatastructResponse.isSuccess)
-            && Objects.equals(this.message, updateResDatastructResponse.message)
-            && Objects.equals(this.errorCode, updateResDatastructResponse.errorCode);
+        UpdateResDatastructResponse that = (UpdateResDatastructResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class BatchUpdateServersNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateServersNameRequestBody batchUpdateServersNameRequestBody = (BatchUpdateServersNameRequestBody) o;
-        return Objects.equals(this.name, batchUpdateServersNameRequestBody.name)
-            && Objects.equals(this.dryRun, batchUpdateServersNameRequestBody.dryRun)
-            && Objects.equals(this.servers, batchUpdateServersNameRequestBody.servers);
+        BatchUpdateServersNameRequestBody that = (BatchUpdateServersNameRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.servers, that.servers);
     }
 
     @Override

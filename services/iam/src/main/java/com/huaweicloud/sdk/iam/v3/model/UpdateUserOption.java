@@ -253,25 +253,20 @@ public class UpdateUserOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserOption updateUserOption = (UpdateUserOption) o;
-        return Objects.equals(this.accessMode, updateUserOption.accessMode)
-            && Objects.equals(this.name, updateUserOption.name)
-            && Objects.equals(this.password, updateUserOption.password)
-            && Objects.equals(this.email, updateUserOption.email)
-            && Objects.equals(this.areacode, updateUserOption.areacode)
-            && Objects.equals(this.phone, updateUserOption.phone)
-            && Objects.equals(this.enabled, updateUserOption.enabled)
-            && Objects.equals(this.pwdStatus, updateUserOption.pwdStatus)
-            && Objects.equals(this.xuserType, updateUserOption.xuserType)
-            && Objects.equals(this.xuserId, updateUserOption.xuserId)
-            && Objects.equals(this.description, updateUserOption.description);
+        UpdateUserOption that = (UpdateUserOption) obj;
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.pwdStatus, that.pwdStatus)
+            && Objects.equals(this.xuserType, that.xuserType) && Objects.equals(this.xuserId, that.xuserId)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

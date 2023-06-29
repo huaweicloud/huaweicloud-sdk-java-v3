@@ -55,17 +55,15 @@ public class ListMonitoredObjectsOfInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitoredObjectsOfInstanceRequest listMonitoredObjectsOfInstanceRequest =
-            (ListMonitoredObjectsOfInstanceRequest) o;
-        return Objects.equals(this.instanceId, listMonitoredObjectsOfInstanceRequest.instanceId)
-            && Objects.equals(this.dimName, listMonitoredObjectsOfInstanceRequest.dimName);
+        ListMonitoredObjectsOfInstanceRequest that = (ListMonitoredObjectsOfInstanceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dimName, that.dimName);
     }
 
     @Override

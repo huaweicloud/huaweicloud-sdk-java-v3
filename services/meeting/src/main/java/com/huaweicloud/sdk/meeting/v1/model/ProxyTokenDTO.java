@@ -143,20 +143,20 @@ public class ProxyTokenDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProxyTokenDTO proxyTokenDTO = (ProxyTokenDTO) o;
-        return Objects.equals(this.accessToken, proxyTokenDTO.accessToken)
-            && Objects.equals(this.longAccessToken, proxyTokenDTO.longAccessToken)
-            && Objects.equals(this.validPeriod, proxyTokenDTO.validPeriod)
-            && Objects.equals(this.middleEndUrl, proxyTokenDTO.middleEndUrl)
-            && Objects.equals(this.middleEndInnerUrl, proxyTokenDTO.middleEndInnerUrl)
-            && Objects.equals(this.enableRerouting, proxyTokenDTO.enableRerouting);
+        ProxyTokenDTO that = (ProxyTokenDTO) obj;
+        return Objects.equals(this.accessToken, that.accessToken)
+            && Objects.equals(this.longAccessToken, that.longAccessToken)
+            && Objects.equals(this.validPeriod, that.validPeriod)
+            && Objects.equals(this.middleEndUrl, that.middleEndUrl)
+            && Objects.equals(this.middleEndInnerUrl, that.middleEndInnerUrl)
+            && Objects.equals(this.enableRerouting, that.enableRerouting);
     }
 
     @Override

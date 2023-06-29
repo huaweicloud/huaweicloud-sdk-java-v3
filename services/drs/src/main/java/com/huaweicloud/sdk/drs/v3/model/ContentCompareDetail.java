@@ -126,22 +126,15 @@ public class ContentCompareDetail {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LineCompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LineCompareResultEnum(value));
         }
 
         public static LineCompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,22 +234,15 @@ public class ContentCompareDetail {
             if (value == null) {
                 return null;
             }
-            ContentCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContentCompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentCompareResultEnum(value));
         }
 
         public static ContentCompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ContentCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -454,24 +440,23 @@ public class ContentCompareDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareDetail contentCompareDetail = (ContentCompareDetail) o;
-        return Objects.equals(this.sourceDbName, contentCompareDetail.sourceDbName)
-            && Objects.equals(this.targetDbName, contentCompareDetail.targetDbName)
-            && Objects.equals(this.sourceTableName, contentCompareDetail.sourceTableName)
-            && Objects.equals(this.targetTableName, contentCompareDetail.targetTableName)
-            && Objects.equals(this.sourceRowNum, contentCompareDetail.sourceRowNum)
-            && Objects.equals(this.targetRowNum, contentCompareDetail.targetRowNum)
-            && Objects.equals(this.diffRowNum, contentCompareDetail.diffRowNum)
-            && Objects.equals(this.lineCompareResult, contentCompareDetail.lineCompareResult)
-            && Objects.equals(this.contentCompareResult, contentCompareDetail.contentCompareResult)
-            && Objects.equals(this.message, contentCompareDetail.message);
+        ContentCompareDetail that = (ContentCompareDetail) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.targetDbName, that.targetDbName)
+            && Objects.equals(this.sourceTableName, that.sourceTableName)
+            && Objects.equals(this.targetTableName, that.targetTableName)
+            && Objects.equals(this.sourceRowNum, that.sourceRowNum)
+            && Objects.equals(this.targetRowNum, that.targetRowNum) && Objects.equals(this.diffRowNum, that.diffRowNum)
+            && Objects.equals(this.lineCompareResult, that.lineCompareResult)
+            && Objects.equals(this.contentCompareResult, that.contentCompareResult)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

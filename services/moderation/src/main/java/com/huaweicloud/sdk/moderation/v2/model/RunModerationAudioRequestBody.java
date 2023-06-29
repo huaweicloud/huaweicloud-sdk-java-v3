@@ -127,18 +127,16 @@ public class RunModerationAudioRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunModerationAudioRequestBody runModerationAudioRequestBody = (RunModerationAudioRequestBody) o;
-        return Objects.equals(this.data, runModerationAudioRequestBody.data)
-            && Objects.equals(this.url, runModerationAudioRequestBody.url)
-            && Objects.equals(this.config, runModerationAudioRequestBody.config)
-            && Objects.equals(this.categories, runModerationAudioRequestBody.categories);
+        RunModerationAudioRequestBody that = (RunModerationAudioRequestBody) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.config, that.config) && Objects.equals(this.categories, that.categories);
     }
 
     @Override

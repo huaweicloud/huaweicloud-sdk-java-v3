@@ -77,17 +77,16 @@ public class ComponentAffinityMatchExpressions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentAffinityMatchExpressions componentAffinityMatchExpressions = (ComponentAffinityMatchExpressions) o;
-        return Objects.equals(this.key, componentAffinityMatchExpressions.key)
-            && Objects.equals(this.value, componentAffinityMatchExpressions.value)
-            && Objects.equals(this.operation, componentAffinityMatchExpressions.operation);
+        ComponentAffinityMatchExpressions that = (ComponentAffinityMatchExpressions) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.operation, that.operation);
     }
 
     @Override

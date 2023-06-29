@@ -70,22 +70,15 @@ public class ImportFileReq {
             if (value == null) {
                 return null;
             }
-            SameNamePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SameNamePolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SameNamePolicyEnum(value));
         }
 
         public static SameNamePolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SameNamePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,18 +196,17 @@ public class ImportFileReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportFileReq importFileReq = (ImportFileReq) o;
-        return Objects.equals(this.path, importFileReq.path) && Objects.equals(this.params, importFileReq.params)
-            && Objects.equals(this.sameNamePolicy, importFileReq.sameNamePolicy)
-            && Objects.equals(this.jobsParam, importFileReq.jobsParam)
-            && Objects.equals(this.executeUser, importFileReq.executeUser);
+        ImportFileReq that = (ImportFileReq) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.sameNamePolicy, that.sameNamePolicy)
+            && Objects.equals(this.jobsParam, that.jobsParam) && Objects.equals(this.executeUser, that.executeUser);
     }
 
     @Override

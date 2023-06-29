@@ -65,17 +65,15 @@ public class CreateOrDeletePublishRecordForApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrDeletePublishRecordForApiV2Request createOrDeletePublishRecordForApiV2Request =
-            (CreateOrDeletePublishRecordForApiV2Request) o;
-        return Objects.equals(this.instanceId, createOrDeletePublishRecordForApiV2Request.instanceId)
-            && Objects.equals(this.body, createOrDeletePublishRecordForApiV2Request.body);
+        CreateOrDeletePublishRecordForApiV2Request that = (CreateOrDeletePublishRecordForApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,56 +1,42 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListStackEventsRequest  {
-
+public class ListStackEventsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Client-Request-Id")
-    
+    @JsonProperty(value = "Client-Request-Id")
 
     private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_name")
-    
+    @JsonProperty(value = "stack_name")
 
     private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_id")
-    
+    @JsonProperty(value = "stack_id")
 
     private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deployment_id")
-    
+    @JsonProperty(value = "deployment_id")
 
     private String deploymentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="filter")
-    
+    @JsonProperty(value = "filter")
 
     private String filter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="field")
-    
+    @JsonProperty(value = "field")
 
     private String field;
 
@@ -58,9 +44,6 @@ public class ListStackEventsRequest  {
         this.clientRequestId = clientRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -74,15 +57,10 @@ public class ListStackEventsRequest  {
         this.clientRequestId = clientRequestId;
     }
 
-    
-
     public ListStackEventsRequest withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -96,15 +74,10 @@ public class ListStackEventsRequest  {
         this.stackName = stackName;
     }
 
-    
-
     public ListStackEventsRequest withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
@@ -118,15 +91,10 @@ public class ListStackEventsRequest  {
         this.stackId = stackId;
     }
 
-    
-
     public ListStackEventsRequest withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
         return this;
     }
-
-    
-
 
     /**
      * 标识部署的唯一Id，此Id由资源编排服务在触发部署、回滚等操作时生成，为UUID。
@@ -140,15 +108,10 @@ public class ListStackEventsRequest  {
         this.deploymentId = deploymentId;
     }
 
-    
-
     public ListStackEventsRequest withFilter(String filter) {
         this.filter = filter;
         return this;
     }
-
-    
-
 
     /**
      * 过滤条件  * 与（AND）运算符使用逗号（，）定义 * 或（OR）运算符使用竖线（|）定义，OR运算符优先级高于AND运算符 * 不支持括号 * 过滤运算符仅支持等号（==） * 过滤参数名及其值仅支持包含大小写英文、数字和下划线 * 过滤条件中禁止使用分号，若有分号，则此条过滤会被忽略 * 一个过滤参数仅能与一个与条件相关，一个与条件中的多个或条件仅能与一个过滤参数相关 
@@ -162,15 +125,10 @@ public class ListStackEventsRequest  {
         this.filter = filter;
     }
 
-    
-
     public ListStackEventsRequest withField(String field) {
         this.field = field;
         return this;
     }
-
-    
-
 
     /**
      * 选择的属性名称  * 属性名仅支持包含大小写英文、数字和下划线 * 多个属性名称之间以逗号（，）分隔 
@@ -184,28 +142,26 @@ public class ListStackEventsRequest  {
         this.field = field;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStackEventsRequest listStackEventsRequest = (ListStackEventsRequest) o;
-        return Objects.equals(this.clientRequestId, listStackEventsRequest.clientRequestId) &&
-            Objects.equals(this.stackName, listStackEventsRequest.stackName) &&
-            Objects.equals(this.stackId, listStackEventsRequest.stackId) &&
-            Objects.equals(this.deploymentId, listStackEventsRequest.deploymentId) &&
-            Objects.equals(this.filter, listStackEventsRequest.filter) &&
-            Objects.equals(this.field, listStackEventsRequest.field);
+        ListStackEventsRequest that = (ListStackEventsRequest) obj;
+        return Objects.equals(this.clientRequestId, that.clientRequestId)
+            && Objects.equals(this.stackName, that.stackName) && Objects.equals(this.stackId, that.stackId)
+            && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.field, that.field);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientRequestId, stackName, stackId, deploymentId, filter, field);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -219,6 +175,7 @@ public class ListStackEventsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -229,8 +186,5 @@ public class ListStackEventsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

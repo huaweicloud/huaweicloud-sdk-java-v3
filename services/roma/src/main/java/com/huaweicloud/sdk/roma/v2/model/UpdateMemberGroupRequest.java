@@ -109,18 +109,16 @@ public class UpdateMemberGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMemberGroupRequest updateMemberGroupRequest = (UpdateMemberGroupRequest) o;
-        return Objects.equals(this.instanceId, updateMemberGroupRequest.instanceId)
-            && Objects.equals(this.vpcChannelId, updateMemberGroupRequest.vpcChannelId)
-            && Objects.equals(this.memberGroupId, updateMemberGroupRequest.memberGroupId)
-            && Objects.equals(this.body, updateMemberGroupRequest.body);
+        UpdateMemberGroupRequest that = (UpdateMemberGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.memberGroupId, that.memberGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

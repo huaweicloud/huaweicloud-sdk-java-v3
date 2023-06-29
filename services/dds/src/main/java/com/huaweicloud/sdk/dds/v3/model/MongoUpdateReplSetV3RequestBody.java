@@ -33,15 +33,15 @@ public class MongoUpdateReplSetV3RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MongoUpdateReplSetV3RequestBody mongoUpdateReplSetV3RequestBody = (MongoUpdateReplSetV3RequestBody) o;
-        return Objects.equals(this.name, mongoUpdateReplSetV3RequestBody.name);
+        MongoUpdateReplSetV3RequestBody that = (MongoUpdateReplSetV3RequestBody) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

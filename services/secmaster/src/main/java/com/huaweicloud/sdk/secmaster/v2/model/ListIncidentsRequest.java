@@ -65,16 +65,15 @@ public class ListIncidentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIncidentsRequest listIncidentsRequest = (ListIncidentsRequest) o;
-        return Objects.equals(this.workspaceId, listIncidentsRequest.workspaceId)
-            && Objects.equals(this.body, listIncidentsRequest.body);
+        ListIncidentsRequest that = (ListIncidentsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

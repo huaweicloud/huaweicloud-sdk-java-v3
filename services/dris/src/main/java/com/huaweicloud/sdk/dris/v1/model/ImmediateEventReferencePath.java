@@ -76,16 +76,15 @@ public class ImmediateEventReferencePath {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImmediateEventReferencePath immediateEventReferencePath = (ImmediateEventReferencePath) o;
-        return Objects.equals(this.activePath, immediateEventReferencePath.activePath)
-            && Objects.equals(this.pathRadius, immediateEventReferencePath.pathRadius);
+        ImmediateEventReferencePath that = (ImmediateEventReferencePath) obj;
+        return Objects.equals(this.activePath, that.activePath) && Objects.equals(this.pathRadius, that.pathRadius);
     }
 
     @Override

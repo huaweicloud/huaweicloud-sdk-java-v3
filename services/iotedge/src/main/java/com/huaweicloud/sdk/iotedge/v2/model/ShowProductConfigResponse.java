@@ -1,57 +1,43 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowProductConfigResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_id")
-    
+    @JsonProperty(value = "service_id")
 
     private String serviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_type")
-    
+    @JsonProperty(value = "service_type")
 
     private String serviceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private List<Object> properties = null;
-    
+
     public ShowProductConfigResponse withServiceId(String serviceId) {
         this.serviceId = serviceId;
         return this;
     }
-
-    
-
 
     /**
      * 服务id
@@ -65,15 +51,10 @@ public class ShowProductConfigResponse extends SdkResponse {
         this.serviceId = serviceId;
     }
 
-    
-
     public ShowProductConfigResponse withServiceType(String serviceType) {
         this.serviceType = serviceType;
         return this;
     }
-
-    
-
 
     /**
      * 服务类型
@@ -87,15 +68,10 @@ public class ShowProductConfigResponse extends SdkResponse {
         this.serviceType = serviceType;
     }
 
-    
-
     public ShowProductConfigResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -109,16 +85,13 @@ public class ShowProductConfigResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowProductConfigResponse withProperties(List<Object> properties) {
         this.properties = properties;
         return this;
     }
 
-    
     public ShowProductConfigResponse addPropertiesItem(Object propertiesItem) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
         this.properties.add(propertiesItem);
@@ -126,7 +99,7 @@ public class ShowProductConfigResponse extends SdkResponse {
     }
 
     public ShowProductConfigResponse withProperties(Consumer<List<Object>> propertiesSetter) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
         propertiesSetter.accept(this.properties);
@@ -145,26 +118,24 @@ public class ShowProductConfigResponse extends SdkResponse {
         this.properties = properties;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProductConfigResponse showProductConfigResponse = (ShowProductConfigResponse) o;
-        return Objects.equals(this.serviceId, showProductConfigResponse.serviceId) &&
-            Objects.equals(this.serviceType, showProductConfigResponse.serviceType) &&
-            Objects.equals(this.description, showProductConfigResponse.description) &&
-            Objects.equals(this.properties, showProductConfigResponse.properties);
+        ShowProductConfigResponse that = (ShowProductConfigResponse) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.properties, that.properties);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(serviceId, serviceType, description, properties);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -176,6 +147,7 @@ public class ShowProductConfigResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -186,8 +158,5 @@ public class ShowProductConfigResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

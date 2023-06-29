@@ -121,19 +121,17 @@ public class ResponseCodeSum {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponseCodeSum responseCodeSum = (ResponseCodeSum) o;
-        return Objects.equals(this.sum1xx, responseCodeSum.sum1xx)
-            && Objects.equals(this.sum2xx, responseCodeSum.sum2xx)
-            && Objects.equals(this.sum3xx, responseCodeSum.sum3xx)
-            && Objects.equals(this.sum4xx, responseCodeSum.sum4xx)
-            && Objects.equals(this.sum5xx, responseCodeSum.sum5xx);
+        ResponseCodeSum that = (ResponseCodeSum) obj;
+        return Objects.equals(this.sum1xx, that.sum1xx) && Objects.equals(this.sum2xx, that.sum2xx)
+            && Objects.equals(this.sum3xx, that.sum3xx) && Objects.equals(this.sum4xx, that.sum4xx)
+            && Objects.equals(this.sum5xx, that.sum5xx);
     }
 
     @Override

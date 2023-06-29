@@ -77,16 +77,15 @@ public class ListAccessInfosResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessInfosResponse listAccessInfosResponse = (ListAccessInfosResponse) o;
-        return Objects.equals(this.accessInfos, listAccessInfosResponse.accessInfos)
-            && Objects.equals(this.total, listAccessInfosResponse.total);
+        ListAccessInfosResponse that = (ListAccessInfosResponse) obj;
+        return Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.total, that.total);
     }
 
     @Override

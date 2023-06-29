@@ -125,19 +125,17 @@ public class ListProductsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRequest listProductsRequest = (ListProductsRequest) o;
-        return Objects.equals(this.instanceId, listProductsRequest.instanceId)
-            && Objects.equals(this.limit, listProductsRequest.limit)
-            && Objects.equals(this.marker, listProductsRequest.marker)
-            && Objects.equals(this.appId, listProductsRequest.appId)
-            && Objects.equals(this.offset, listProductsRequest.offset);
+        ListProductsRequest that = (ListProductsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

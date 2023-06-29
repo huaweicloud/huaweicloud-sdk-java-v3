@@ -209,23 +209,19 @@ public class LogConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogConfiguration logConfiguration = (LogConfiguration) o;
-        return Objects.equals(this.id, logConfiguration.id)
-            && Objects.equals(this.clusterId, logConfiguration.clusterId)
-            && Objects.equals(this.obsBucket, logConfiguration.obsBucket)
-            && Objects.equals(this.agency, logConfiguration.agency)
-            && Objects.equals(this.updateAt, logConfiguration.updateAt)
-            && Objects.equals(this.basePath, logConfiguration.basePath)
-            && Objects.equals(this.autoEnable, logConfiguration.autoEnable)
-            && Objects.equals(this.period, logConfiguration.period)
-            && Objects.equals(this.logSwitch, logConfiguration.logSwitch);
+        LogConfiguration that = (LogConfiguration) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.basePath, that.basePath)
+            && Objects.equals(this.autoEnable, that.autoEnable) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.logSwitch, that.logSwitch);
     }
 
     @Override

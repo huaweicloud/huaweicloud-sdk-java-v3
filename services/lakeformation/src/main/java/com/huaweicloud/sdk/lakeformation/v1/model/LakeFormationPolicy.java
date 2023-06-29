@@ -91,22 +91,15 @@ public class LakeFormationPolicy {
             if (value == null) {
                 return null;
             }
-            PrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrincipalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalTypeEnum(value));
         }
 
         public static PrincipalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,22 +184,15 @@ public class LakeFormationPolicy {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrincipalSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalSourceEnum(value));
         }
 
         public static PrincipalSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -402,22 +388,15 @@ public class LakeFormationPolicy {
             if (value == null) {
                 return null;
             }
-            PermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionsEnum(value));
         }
 
         public static PermissionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -440,8 +419,8 @@ public class LakeFormationPolicy {
     private List<PermissionsEnum> permissions = null;
 
     /**
-    * Gets or Sets grantAblePermissions
-    */
+     * Gets or Sets grantAblePermissions
+     */
     public static final class GrantAblePermissionsEnum {
 
         /**
@@ -598,22 +577,15 @@ public class LakeFormationPolicy {
             if (value == null) {
                 return null;
             }
-            GrantAblePermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GrantAblePermissionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GrantAblePermissionsEnum(value));
         }
 
         public static GrantAblePermissionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GrantAblePermissionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -935,27 +907,24 @@ public class LakeFormationPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LakeFormationPolicy lakeFormationPolicy = (LakeFormationPolicy) o;
-        return Objects.equals(this.projectId, lakeFormationPolicy.projectId)
-            && Objects.equals(this.instanceId, lakeFormationPolicy.instanceId)
-            && Objects.equals(this.principalType, lakeFormationPolicy.principalType)
-            && Objects.equals(this.principalSource, lakeFormationPolicy.principalSource)
-            && Objects.equals(this.principalName, lakeFormationPolicy.principalName)
-            && Objects.equals(this.resource, lakeFormationPolicy.resource)
-            && Objects.equals(this.resourceName, lakeFormationPolicy.resourceName)
-            && Objects.equals(this.permissions, lakeFormationPolicy.permissions)
-            && Objects.equals(this.grantAblePermissions, lakeFormationPolicy.grantAblePermissions)
-            && Objects.equals(this.createdTime, lakeFormationPolicy.createdTime)
-            && Objects.equals(this.condition, lakeFormationPolicy.condition)
-            && Objects.equals(this.obligation, lakeFormationPolicy.obligation)
-            && Objects.equals(this.authorizationPaths, lakeFormationPolicy.authorizationPaths);
+        LakeFormationPolicy that = (LakeFormationPolicy) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.principalType, that.principalType)
+            && Objects.equals(this.principalSource, that.principalSource)
+            && Objects.equals(this.principalName, that.principalName) && Objects.equals(this.resource, that.resource)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.permissions, that.permissions)
+            && Objects.equals(this.grantAblePermissions, that.grantAblePermissions)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.obligation, that.obligation)
+            && Objects.equals(this.authorizationPaths, that.authorizationPaths);
     }
 
     @Override

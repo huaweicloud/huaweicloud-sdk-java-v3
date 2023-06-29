@@ -165,21 +165,19 @@ public class AccountChangeRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccountChangeRecord accountChangeRecord = (AccountChangeRecord) o;
-        return Objects.equals(this.accountChangeId, accountChangeRecord.accountChangeId)
-            && Objects.equals(this.tradeDetailType, accountChangeRecord.tradeDetailType)
-            && Objects.equals(this.tradeTime, accountChangeRecord.tradeTime)
-            && Objects.equals(this.tradeId, accountChangeRecord.tradeId)
-            && Objects.equals(this.changeAmount, accountChangeRecord.changeAmount)
-            && Objects.equals(this.balanceAfterChange, accountChangeRecord.balanceAfterChange)
-            && Objects.equals(this.type, accountChangeRecord.type);
+        AccountChangeRecord that = (AccountChangeRecord) obj;
+        return Objects.equals(this.accountChangeId, that.accountChangeId)
+            && Objects.equals(this.tradeDetailType, that.tradeDetailType)
+            && Objects.equals(this.tradeTime, that.tradeTime) && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.changeAmount, that.changeAmount)
+            && Objects.equals(this.balanceAfterChange, that.balanceAfterChange) && Objects.equals(this.type, that.type);
     }
 
     @Override

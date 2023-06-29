@@ -56,16 +56,15 @@ public class EncryptDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDataResponse encryptDataResponse = (EncryptDataResponse) o;
-        return Objects.equals(this.keyId, encryptDataResponse.keyId)
-            && Objects.equals(this.cipherText, encryptDataResponse.cipherText);
+        EncryptDataResponse that = (EncryptDataResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.cipherText, that.cipherText);
     }
 
     @Override

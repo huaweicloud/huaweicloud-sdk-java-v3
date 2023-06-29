@@ -135,19 +135,17 @@ public class UpdateMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMeetingRequest updateMeetingRequest = (UpdateMeetingRequest) o;
-        return Objects.equals(this.conferenceID, updateMeetingRequest.conferenceID)
-            && Objects.equals(this.userUUID, updateMeetingRequest.userUUID)
-            && Objects.equals(this.xAuthorizationType, updateMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, updateMeetingRequest.xSiteId)
-            && Objects.equals(this.body, updateMeetingRequest.body);
+        UpdateMeetingRequest that = (UpdateMeetingRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class CleanLimitDict {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CleanLimitDict cleanLimitDict = (CleanLimitDict) o;
-        return Objects.equals(this.cleaningAccessPosId, cleanLimitDict.cleaningAccessPosId)
-            && Objects.equals(this.newConnectionLimited, cleanLimitDict.newConnectionLimited)
-            && Objects.equals(this.totalConnectionLimited, cleanLimitDict.totalConnectionLimited);
+        CleanLimitDict that = (CleanLimitDict) obj;
+        return Objects.equals(this.cleaningAccessPosId, that.cleaningAccessPosId)
+            && Objects.equals(this.newConnectionLimited, that.newConnectionLimited)
+            && Objects.equals(this.totalConnectionLimited, that.totalConnectionLimited);
     }
 
     @Override

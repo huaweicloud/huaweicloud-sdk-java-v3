@@ -34,15 +34,15 @@ public class ListDerivativeIndexesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDerivativeIndexesResponse listDerivativeIndexesResponse = (ListDerivativeIndexesResponse) o;
-        return Objects.equals(this.data, listDerivativeIndexesResponse.data);
+        ListDerivativeIndexesResponse that = (ListDerivativeIndexesResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

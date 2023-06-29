@@ -378,23 +378,20 @@ public class VersionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionDetail versionDetail = (VersionDetail) o;
-        return Objects.equals(this.version, versionDetail.version)
-            && Objects.equals(this.imageUrl, versionDetail.imageUrl) && Objects.equals(this.envs, versionDetail.envs)
-            && Objects.equals(this.volumes, versionDetail.volumes)
-            && Objects.equals(this.configs, versionDetail.configs)
-            && Objects.equals(this.resources, versionDetail.resources) && Objects.equals(this.arch, versionDetail.arch)
-            && Objects.equals(this.command, versionDetail.command) && Objects.equals(this.args, versionDetail.args)
-            && Objects.equals(this.livenessProbe, versionDetail.livenessProbe)
-            && Objects.equals(this.readinessProbe, versionDetail.readinessProbe)
-            && Objects.equals(this.npuType, versionDetail.npuType);
+        VersionDetail that = (VersionDetail) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.envs, that.envs) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.configs, that.configs) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.args, that.args) && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

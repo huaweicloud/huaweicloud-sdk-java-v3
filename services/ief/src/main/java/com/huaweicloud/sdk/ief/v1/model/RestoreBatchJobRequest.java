@@ -55,16 +55,15 @@ public class RestoreBatchJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreBatchJobRequest restoreBatchJobRequest = (RestoreBatchJobRequest) o;
-        return Objects.equals(this.jobId, restoreBatchJobRequest.jobId)
-            && Objects.equals(this.iefInstanceId, restoreBatchJobRequest.iefInstanceId);
+        RestoreBatchJobRequest that = (RestoreBatchJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

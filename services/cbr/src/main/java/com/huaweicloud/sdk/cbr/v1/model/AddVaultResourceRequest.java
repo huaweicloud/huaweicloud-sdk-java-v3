@@ -65,16 +65,15 @@ public class AddVaultResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddVaultResourceRequest addVaultResourceRequest = (AddVaultResourceRequest) o;
-        return Objects.equals(this.vaultId, addVaultResourceRequest.vaultId)
-            && Objects.equals(this.body, addVaultResourceRequest.body);
+        AddVaultResourceRequest that = (AddVaultResourceRequest) obj;
+        return Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.body, that.body);
     }
 
     @Override

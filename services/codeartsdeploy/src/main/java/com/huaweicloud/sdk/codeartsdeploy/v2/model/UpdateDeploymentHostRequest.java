@@ -87,17 +87,16 @@ public class UpdateDeploymentHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeploymentHostRequest updateDeploymentHostRequest = (UpdateDeploymentHostRequest) o;
-        return Objects.equals(this.groupId, updateDeploymentHostRequest.groupId)
-            && Objects.equals(this.hostId, updateDeploymentHostRequest.hostId)
-            && Objects.equals(this.body, updateDeploymentHostRequest.body);
+        UpdateDeploymentHostRequest that = (UpdateDeploymentHostRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

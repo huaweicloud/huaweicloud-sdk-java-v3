@@ -209,20 +209,19 @@ public class IdcardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdcardResult idcardResult = (IdcardResult) o;
-        return Objects.equals(this.name, idcardResult.name) && Objects.equals(this.number, idcardResult.number)
-            && Objects.equals(this.sex, idcardResult.sex) && Objects.equals(this.birth, idcardResult.birth)
-            && Objects.equals(this.ethnicity, idcardResult.ethnicity)
-            && Objects.equals(this.address, idcardResult.address) && Objects.equals(this.issue, idcardResult.issue)
-            && Objects.equals(this.validFrom, idcardResult.validFrom)
-            && Objects.equals(this.validTo, idcardResult.validTo);
+        IdcardResult that = (IdcardResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.birth, that.birth)
+            && Objects.equals(this.ethnicity, that.ethnicity) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.issue, that.issue) && Objects.equals(this.validFrom, that.validFrom)
+            && Objects.equals(this.validTo, that.validTo);
     }
 
     @Override

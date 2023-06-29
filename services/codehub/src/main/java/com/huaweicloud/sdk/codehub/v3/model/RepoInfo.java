@@ -253,21 +253,20 @@ public class RepoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoInfo repoInfo = (RepoInfo) o;
-        return Objects.equals(this.createAt, repoInfo.createAt) && Objects.equals(this.groupName, repoInfo.groupName)
-            && Objects.equals(this.httpUrl, repoInfo.httpUrl) && Objects.equals(this.id, repoInfo.id)
-            && Objects.equals(this.name, repoInfo.name) && Objects.equals(this.projectId, repoInfo.projectId)
-            && Objects.equals(this.projectIsDelete, repoInfo.projectIsDelete)
-            && Objects.equals(this.repoId, repoInfo.repoId) && Objects.equals(this.sshUrl, repoInfo.sshUrl)
-            && Objects.equals(this.visibilityLevel, repoInfo.visibilityLevel)
-            && Objects.equals(this.webUrl, repoInfo.webUrl);
+        RepoInfo that = (RepoInfo) obj;
+        return Objects.equals(this.createAt, that.createAt) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.httpUrl, that.httpUrl) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectIsDelete, that.projectIsDelete) && Objects.equals(this.repoId, that.repoId)
+            && Objects.equals(this.sshUrl, that.sshUrl) && Objects.equals(this.visibilityLevel, that.visibilityLevel)
+            && Objects.equals(this.webUrl, that.webUrl);
     }
 
     @Override

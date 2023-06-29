@@ -268,23 +268,20 @@ public class EngineReference {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineReference engineReference = (EngineReference) o;
-        return Objects.equals(this.vpc, engineReference.vpc) && Objects.equals(this.azList, engineReference.azList)
-            && Objects.equals(this.networkId, engineReference.networkId)
-            && Objects.equals(this.subnetCidr, engineReference.subnetCidr)
-            && Objects.equals(this.subnetCidrV6, engineReference.subnetCidrV6)
-            && Objects.equals(this.subnetGateway, engineReference.subnetGateway)
-            && Objects.equals(this.publicIpId, engineReference.publicIpId)
-            && Objects.equals(this.serviceLimit, engineReference.serviceLimit)
-            && Objects.equals(this.instanceLimit, engineReference.instanceLimit)
-            && Objects.equals(this.inputs, engineReference.inputs);
+        EngineReference that = (EngineReference) obj;
+        return Objects.equals(this.vpc, that.vpc) && Objects.equals(this.azList, that.azList)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.subnetCidrV6, that.subnetCidrV6)
+            && Objects.equals(this.subnetGateway, that.subnetGateway)
+            && Objects.equals(this.publicIpId, that.publicIpId) && Objects.equals(this.serviceLimit, that.serviceLimit)
+            && Objects.equals(this.instanceLimit, that.instanceLimit) && Objects.equals(this.inputs, that.inputs);
     }
 
     @Override

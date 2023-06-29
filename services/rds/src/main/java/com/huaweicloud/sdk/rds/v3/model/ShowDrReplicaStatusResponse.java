@@ -100,18 +100,18 @@ public class ShowDrReplicaStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDrReplicaStatusResponse showDrReplicaStatusResponse = (ShowDrReplicaStatusResponse) o;
-        return Objects.equals(this.replicaState, showDrReplicaStatusResponse.replicaState)
-            && Objects.equals(this.walWriteReceiveDelayInMb, showDrReplicaStatusResponse.walWriteReceiveDelayInMb)
-            && Objects.equals(this.walWriteReplayDelayInMb, showDrReplicaStatusResponse.walWriteReplayDelayInMb)
-            && Objects.equals(this.walReceiveReplayDelayInMs, showDrReplicaStatusResponse.walReceiveReplayDelayInMs);
+        ShowDrReplicaStatusResponse that = (ShowDrReplicaStatusResponse) obj;
+        return Objects.equals(this.replicaState, that.replicaState)
+            && Objects.equals(this.walWriteReceiveDelayInMb, that.walWriteReceiveDelayInMb)
+            && Objects.equals(this.walWriteReplayDelayInMb, that.walWriteReplayDelayInMb)
+            && Objects.equals(this.walReceiveReplayDelayInMs, that.walReceiveReplayDelayInMs);
     }
 
     @Override

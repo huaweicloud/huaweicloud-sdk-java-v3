@@ -122,19 +122,17 @@ public class DeleteDatabaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabaseResponse deleteDatabaseResponse = (DeleteDatabaseResponse) o;
-        return Objects.equals(this.isSuccess, deleteDatabaseResponse.isSuccess)
-            && Objects.equals(this.message, deleteDatabaseResponse.message)
-            && Objects.equals(this.jobId, deleteDatabaseResponse.jobId)
-            && Objects.equals(this.jobMode, deleteDatabaseResponse.jobMode)
-            && Objects.equals(this.jobType, deleteDatabaseResponse.jobType);
+        DeleteDatabaseResponse that = (DeleteDatabaseResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobMode, that.jobMode)
+            && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

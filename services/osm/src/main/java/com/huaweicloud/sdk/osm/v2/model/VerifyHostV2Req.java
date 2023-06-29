@@ -101,17 +101,16 @@ public class VerifyHostV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VerifyHostV2Req verifyHostV2Req = (VerifyHostV2Req) o;
-        return Objects.equals(this.port, verifyHostV2Req.port) && Objects.equals(this.account, verifyHostV2Req.account)
-            && Objects.equals(this.password, verifyHostV2Req.password)
-            && Objects.equals(this.groupId, verifyHostV2Req.groupId);
+        VerifyHostV2Req that = (VerifyHostV2Req) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

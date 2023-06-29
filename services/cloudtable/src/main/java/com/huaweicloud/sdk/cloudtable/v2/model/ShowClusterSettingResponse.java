@@ -75,16 +75,16 @@ public class ShowClusterSettingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterSettingResponse showClusterSettingResponse = (ShowClusterSettingResponse) o;
-        return Objects.equals(this.parmStatus, showClusterSettingResponse.parmStatus)
-            && Objects.equals(this.parameterInfo, showClusterSettingResponse.parameterInfo);
+        ShowClusterSettingResponse that = (ShowClusterSettingResponse) obj;
+        return Objects.equals(this.parmStatus, that.parmStatus)
+            && Objects.equals(this.parameterInfo, that.parameterInfo);
     }
 
     @Override

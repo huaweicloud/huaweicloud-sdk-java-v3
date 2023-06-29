@@ -55,16 +55,16 @@ public class PrivateKeyVerify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivateKeyVerify privateKeyVerify = (PrivateKeyVerify) o;
-        return Objects.equals(this.repositoryUuid, privateKeyVerify.repositoryUuid)
-            && Objects.equals(this.privateKey, privateKeyVerify.privateKey);
+        PrivateKeyVerify that = (PrivateKeyVerify) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid)
+            && Objects.equals(this.privateKey, that.privateKey);
     }
 
     @Override

@@ -97,17 +97,17 @@ public class ListMessageTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTemplatesResponse listMessageTemplatesResponse = (ListMessageTemplatesResponse) o;
-        return Objects.equals(this.requestId, listMessageTemplatesResponse.requestId)
-            && Objects.equals(this.messageTemplateCount, listMessageTemplatesResponse.messageTemplateCount)
-            && Objects.equals(this.messageTemplates, listMessageTemplatesResponse.messageTemplates);
+        ListMessageTemplatesResponse that = (ListMessageTemplatesResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.messageTemplateCount, that.messageTemplateCount)
+            && Objects.equals(this.messageTemplates, that.messageTemplates);
     }
 
     @Override

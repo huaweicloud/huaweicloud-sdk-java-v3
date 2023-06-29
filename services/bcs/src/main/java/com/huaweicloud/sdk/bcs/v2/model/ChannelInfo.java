@@ -152,17 +152,16 @@ public class ChannelInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelInfo channelInfo = (ChannelInfo) o;
-        return Objects.equals(this.name, channelInfo.name) && Objects.equals(this.orgNames, channelInfo.orgNames)
-            && Objects.equals(this.orgNameHash, channelInfo.orgNameHash)
-            && Objects.equals(this.peers, channelInfo.peers);
+        ChannelInfo that = (ChannelInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.orgNames, that.orgNames)
+            && Objects.equals(this.orgNameHash, that.orgNameHash) && Objects.equals(this.peers, that.peers);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 计费类型信息，支持包年包月和按需，默认为按需。
  */
-public class MysqlInstanceChargeInfo  {
-
+public class MysqlInstanceChargeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_mode")
-    
+    @JsonProperty(value = "charge_mode")
 
     private String chargeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
 
     private String orderId;
 
@@ -33,9 +24,6 @@ public class MysqlInstanceChargeInfo  {
         this.chargeMode = chargeMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式。
@@ -49,15 +37,10 @@ public class MysqlInstanceChargeInfo  {
         this.chargeMode = chargeMode;
     }
 
-    
-
     public MysqlInstanceChargeInfo withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 订单号。
@@ -71,24 +54,23 @@ public class MysqlInstanceChargeInfo  {
         this.orderId = orderId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlInstanceChargeInfo mysqlInstanceChargeInfo = (MysqlInstanceChargeInfo) o;
-        return Objects.equals(this.chargeMode, mysqlInstanceChargeInfo.chargeMode) &&
-            Objects.equals(this.orderId, mysqlInstanceChargeInfo.orderId);
+        MysqlInstanceChargeInfo that = (MysqlInstanceChargeInfo) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.orderId, that.orderId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(chargeMode, orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class MysqlInstanceChargeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class MysqlInstanceChargeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

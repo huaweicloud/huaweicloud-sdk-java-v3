@@ -55,15 +55,15 @@ public class DomainInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainInfo domainInfo = (DomainInfo) o;
-        return Objects.equals(this.id, domainInfo.id) && Objects.equals(this.name, domainInfo.name);
+        DomainInfo that = (DomainInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

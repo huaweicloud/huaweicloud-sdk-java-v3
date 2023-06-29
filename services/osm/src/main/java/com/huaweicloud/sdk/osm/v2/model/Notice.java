@@ -103,16 +103,16 @@ public class Notice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Notice notice = (Notice) o;
-        return Objects.equals(this.id, notice.id) && Objects.equals(this.content, notice.content)
-            && Objects.equals(this.createTime, notice.createTime) && Objects.equals(this.updateTime, notice.updateTime);
+        Notice that = (Notice) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

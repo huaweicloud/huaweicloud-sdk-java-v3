@@ -143,18 +143,18 @@ public class Chart {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Chart chart = (Chart) o;
-        return Objects.equals(this.date, chart.date) && Objects.equals(this.finishedNum, chart.finishedNum)
-            && Objects.equals(this.iterationId, chart.iterationId)
-            && Objects.equals(this.projectNumId, chart.projectNumId)
-            && Objects.equals(this.remainingNum, chart.remainingNum) && Objects.equals(this.total, chart.total);
+        Chart that = (Chart) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.finishedNum, that.finishedNum)
+            && Objects.equals(this.iterationId, that.iterationId)
+            && Objects.equals(this.projectNumId, that.projectNumId)
+            && Objects.equals(this.remainingNum, that.remainingNum) && Objects.equals(this.total, that.total);
     }
 
     @Override

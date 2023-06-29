@@ -84,22 +84,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +159,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PublishTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PublishTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishTypeEnum(value));
         }
 
         public static PublishTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PublishTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -268,22 +254,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequestTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequestTypeEnum(value));
         }
 
         public static RequestTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RequestTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -421,22 +400,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -509,22 +481,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -597,22 +562,15 @@ public class ShowApiResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DebugStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DebugStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DebugStatusEnum(value));
         }
 
         public static DebugStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DebugStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1050,31 +1008,26 @@ public class ShowApiResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApiResponse showApiResponse = (ShowApiResponse) o;
-        return Objects.equals(this.id, showApiResponse.id) && Objects.equals(this.name, showApiResponse.name)
-            && Objects.equals(this.groupId, showApiResponse.groupId)
-            && Objects.equals(this.description, showApiResponse.description)
-            && Objects.equals(this.protocol, showApiResponse.protocol)
-            && Objects.equals(this.publishType, showApiResponse.publishType)
-            && Objects.equals(this.logFlag, showApiResponse.logFlag) && Objects.equals(this.path, showApiResponse.path)
-            && Objects.equals(this.host, showApiResponse.host) && Objects.equals(this.hosts, showApiResponse.hosts)
-            && Objects.equals(this.requestType, showApiResponse.requestType)
-            && Objects.equals(this.createUser, showApiResponse.createUser)
-            && Objects.equals(this.createTime, showApiResponse.createTime)
-            && Objects.equals(this.updateTime, showApiResponse.updateTime)
-            && Objects.equals(this.manager, showApiResponse.manager)
-            && Objects.equals(this.status, showApiResponse.status) && Objects.equals(this.type, showApiResponse.type)
-            && Objects.equals(this.debugStatus, showApiResponse.debugStatus)
-            && Objects.equals(this.requestParas, showApiResponse.requestParas)
-            && Objects.equals(this.datasourceConfig, showApiResponse.datasourceConfig)
-            && Objects.equals(this.backendConfig, showApiResponse.backendConfig);
+        ShowApiResponse that = (ShowApiResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.publishType, that.publishType)
+            && Objects.equals(this.logFlag, that.logFlag) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.requestType, that.requestType) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.manager, that.manager) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.debugStatus, that.debugStatus)
+            && Objects.equals(this.requestParas, that.requestParas)
+            && Objects.equals(this.datasourceConfig, that.datasourceConfig)
+            && Objects.equals(this.backendConfig, that.backendConfig);
     }
 
     @Override

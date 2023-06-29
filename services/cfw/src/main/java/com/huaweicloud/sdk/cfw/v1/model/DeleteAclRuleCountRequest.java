@@ -87,17 +87,16 @@ public class DeleteAclRuleCountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAclRuleCountRequest deleteAclRuleCountRequest = (DeleteAclRuleCountRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteAclRuleCountRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, deleteAclRuleCountRequest.fwInstanceId)
-            && Objects.equals(this.body, deleteAclRuleCountRequest.body);
+        DeleteAclRuleCountRequest that = (DeleteAclRuleCountRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

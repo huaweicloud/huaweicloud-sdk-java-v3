@@ -77,17 +77,16 @@ public class ShowWhiteBlackIpRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWhiteBlackIpRuleRequest showWhiteBlackIpRuleRequest = (ShowWhiteBlackIpRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showWhiteBlackIpRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, showWhiteBlackIpRuleRequest.policyId)
-            && Objects.equals(this.ruleId, showWhiteBlackIpRuleRequest.ruleId);
+        ShowWhiteBlackIpRuleRequest that = (ShowWhiteBlackIpRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

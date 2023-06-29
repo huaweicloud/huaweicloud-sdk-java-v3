@@ -162,17 +162,17 @@ public class PeerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeerInfo peerInfo = (PeerInfo) o;
-        return Objects.equals(this.name, peerInfo.name) && Objects.equals(this.nodeCnt, peerInfo.nodeCnt)
-            && Objects.equals(this.status, peerInfo.status) && Objects.equals(this.statusDetail, peerInfo.statusDetail)
-            && Objects.equals(this.pvcName, peerInfo.pvcName) && Objects.equals(this.address, peerInfo.address);
+        PeerInfo that = (PeerInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nodeCnt, that.nodeCnt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.statusDetail, that.statusDetail)
+            && Objects.equals(this.pvcName, that.pvcName) && Objects.equals(this.address, that.address);
     }
 
     @Override

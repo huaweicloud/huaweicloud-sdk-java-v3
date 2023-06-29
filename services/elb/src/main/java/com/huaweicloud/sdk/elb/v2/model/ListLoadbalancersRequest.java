@@ -364,30 +364,25 @@ public class ListLoadbalancersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoadbalancersRequest listLoadbalancersRequest = (ListLoadbalancersRequest) o;
-        return Objects.equals(this.limit, listLoadbalancersRequest.limit)
-            && Objects.equals(this.marker, listLoadbalancersRequest.marker)
-            && Objects.equals(this.pageReverse, listLoadbalancersRequest.pageReverse)
-            && Objects.equals(this.id, listLoadbalancersRequest.id)
-            && Objects.equals(this.description, listLoadbalancersRequest.description)
-            && Objects.equals(this.name, listLoadbalancersRequest.name)
-            && Objects.equals(this.operatingStatus, listLoadbalancersRequest.operatingStatus)
-            && Objects.equals(this.provisioningStatus, listLoadbalancersRequest.provisioningStatus)
-            && Objects.equals(this.vipAddress, listLoadbalancersRequest.vipAddress)
-            && Objects.equals(this.vipPortId, listLoadbalancersRequest.vipPortId)
-            && Objects.equals(this.vipSubnetId, listLoadbalancersRequest.vipSubnetId)
-            && Objects.equals(this.vpcId, listLoadbalancersRequest.vpcId)
-            && Objects.equals(this.enterpriseProjectId, listLoadbalancersRequest.enterpriseProjectId)
-            && Objects.equals(this.adminStateUp, listLoadbalancersRequest.adminStateUp)
-            && Objects.equals(this.memberAddress, listLoadbalancersRequest.memberAddress)
-            && Objects.equals(this.memberDeviceId, listLoadbalancersRequest.memberDeviceId);
+        ListLoadbalancersRequest that = (ListLoadbalancersRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.vipPortId, that.vipPortId)
+            && Objects.equals(this.vipSubnetId, that.vipSubnetId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.memberAddress, that.memberAddress)
+            && Objects.equals(this.memberDeviceId, that.memberDeviceId);
     }
 
     @Override

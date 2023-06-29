@@ -350,24 +350,21 @@ public class NotebookEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotebookEntity notebookEntity = (NotebookEntity) o;
-        return Objects.equals(this.id, notebookEntity.id) && Objects.equals(this.name, notebookEntity.name)
-            && Objects.equals(this.description, notebookEntity.description)
-            && Objects.equals(this.creator, notebookEntity.creator) && Objects.equals(this.url, notebookEntity.url)
-            && Objects.equals(this.flavor, notebookEntity.flavor) && Objects.equals(this.status, notebookEntity.status)
-            && Objects.equals(this.image, notebookEntity.image)
-            && Objects.equals(this.storages, notebookEntity.storages)
-            && Objects.equals(this.createTime, notebookEntity.createTime)
-            && Objects.equals(this.updateTime, notebookEntity.updateTime)
-            && Objects.equals(this.failedMessage, notebookEntity.failedMessage)
-            && Objects.equals(this.events, notebookEntity.events);
+        NotebookEntity that = (NotebookEntity) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.storages, that.storages) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.failedMessage, that.failedMessage) && Objects.equals(this.events, that.events);
     }
 
     @Override

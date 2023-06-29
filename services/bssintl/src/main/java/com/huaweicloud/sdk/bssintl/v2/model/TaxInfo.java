@@ -99,17 +99,16 @@ public class TaxInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaxInfo taxInfo = (TaxInfo) o;
-        return Objects.equals(this.taxClass, taxInfo.taxClass) && Objects.equals(this.taxRate, taxInfo.taxRate)
-            && Objects.equals(this.subTaxClass, taxInfo.subTaxClass)
-            && Objects.equals(this.taxAmount, taxInfo.taxAmount);
+        TaxInfo that = (TaxInfo) obj;
+        return Objects.equals(this.taxClass, that.taxClass) && Objects.equals(this.taxRate, that.taxRate)
+            && Objects.equals(this.subTaxClass, that.subTaxClass) && Objects.equals(this.taxAmount, that.taxAmount);
     }
 
     @Override

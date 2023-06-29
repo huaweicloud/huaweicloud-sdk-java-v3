@@ -149,20 +149,18 @@ public class ShowThemeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowThemeRequest showThemeRequest = (ShowThemeRequest) o;
-        return Objects.equals(this.xServiceKey, showThemeRequest.xServiceKey)
-            && Objects.equals(this.xSite, showThemeRequest.xSite)
-            && Objects.equals(this.xLanguage, showThemeRequest.xLanguage)
-            && Objects.equals(this.productTypeId, showThemeRequest.productTypeId)
-            && Objects.equals(this.productTypeName, showThemeRequest.productTypeName)
-            && Objects.equals(this.productTypeShortName, showThemeRequest.productTypeShortName);
+        ShowThemeRequest that = (ShowThemeRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.productTypeId, that.productTypeId)
+            && Objects.equals(this.productTypeName, that.productTypeName)
+            && Objects.equals(this.productTypeShortName, that.productTypeShortName);
     }
 
     @Override

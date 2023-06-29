@@ -74,16 +74,15 @@ public class AclApiBindingCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclApiBindingCreate aclApiBindingCreate = (AclApiBindingCreate) o;
-        return Objects.equals(this.aclId, aclApiBindingCreate.aclId)
-            && Objects.equals(this.publishIds, aclApiBindingCreate.publishIds);
+        AclApiBindingCreate that = (AclApiBindingCreate) obj;
+        return Objects.equals(this.aclId, that.aclId) && Objects.equals(this.publishIds, that.publishIds);
     }
 
     @Override

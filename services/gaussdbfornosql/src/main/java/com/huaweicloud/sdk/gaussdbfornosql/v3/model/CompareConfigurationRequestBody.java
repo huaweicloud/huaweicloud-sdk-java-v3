@@ -55,16 +55,16 @@ public class CompareConfigurationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareConfigurationRequestBody compareConfigurationRequestBody = (CompareConfigurationRequestBody) o;
-        return Objects.equals(this.sourceConfigurationId, compareConfigurationRequestBody.sourceConfigurationId)
-            && Objects.equals(this.targetConfigurationId, compareConfigurationRequestBody.targetConfigurationId);
+        CompareConfigurationRequestBody that = (CompareConfigurationRequestBody) obj;
+        return Objects.equals(this.sourceConfigurationId, that.sourceConfigurationId)
+            && Objects.equals(this.targetConfigurationId, that.targetConfigurationId);
     }
 
     @Override

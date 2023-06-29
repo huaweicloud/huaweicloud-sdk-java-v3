@@ -131,22 +131,15 @@ public class LdApiScript {
             if (value == null) {
                 return null;
             }
-            DsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DsTypeEnum(value));
         }
 
         public static DsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +367,21 @@ public class LdApiScript {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiScript ldApiScript = (LdApiScript) o;
-        return Objects.equals(this.dsId, ldApiScript.dsId) && Objects.equals(this.dsName, ldApiScript.dsName)
-            && Objects.equals(this.dsType, ldApiScript.dsType) && Objects.equals(this.type, ldApiScript.type)
-            && Objects.equals(this.objectName, ldApiScript.objectName)
-            && Objects.equals(this.content, ldApiScript.content)
-            && Objects.equals(this.enableResultPaging, ldApiScript.enableResultPaging)
-            && Objects.equals(this.enablePreparestatement, ldApiScript.enablePreparestatement)
-            && Objects.equals(this.createdTime, ldApiScript.createdTime)
-            && Objects.equals(this.modifiedTime, ldApiScript.modifiedTime);
+        LdApiScript that = (LdApiScript) obj;
+        return Objects.equals(this.dsId, that.dsId) && Objects.equals(this.dsName, that.dsName)
+            && Objects.equals(this.dsType, that.dsType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.objectName, that.objectName) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.enableResultPaging, that.enableResultPaging)
+            && Objects.equals(this.enablePreparestatement, that.enablePreparestatement)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime);
     }
 
     @Override

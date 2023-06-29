@@ -1,57 +1,45 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建作业时的步骤参数
  */
-public class Step  {
-
+public class Step {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private Map<String, String> input = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ignore_error")
-    
+    @JsonProperty(value = "ignore_error")
 
     private Boolean ignoreError;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -59,9 +47,6 @@ public class Step  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 步骤id。
@@ -75,15 +60,10 @@ public class Step  {
         this.id = id;
     }
 
-    
-
     public Step withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 步骤名称。
@@ -97,15 +77,10 @@ public class Step  {
         this.name = name;
     }
 
-    
-
     public Step withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 步骤类型。
@@ -119,17 +94,13 @@ public class Step  {
         this.type = type;
     }
 
-    
-
     public Step withInput(Map<String, String> input) {
         this.input = input;
         return this;
     }
 
-    
-
     public Step putInputItem(String key, String inputItem) {
-        if(this.input == null) {
+        if (this.input == null) {
             this.input = new HashMap<>();
         }
         this.input.put(key, inputItem);
@@ -137,12 +108,13 @@ public class Step  {
     }
 
     public Step withInput(Consumer<Map<String, String>> inputSetter) {
-        if(this.input == null) {
+        if (this.input == null) {
             this.input = new HashMap<>();
         }
         inputSetter.accept(this.input);
         return this;
     }
+
     /**
      * 步骤参数。
      * @return input
@@ -155,15 +127,10 @@ public class Step  {
         this.input = input;
     }
 
-    
-
     public Step withIgnoreError(Boolean ignoreError) {
         this.ignoreError = ignoreError;
         return this;
     }
-
-    
-
 
     /**
      * 是否自动忽略错误。
@@ -177,15 +144,10 @@ public class Step  {
         this.ignoreError = ignoreError;
     }
 
-    
-
     public Step withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 步骤说明。
@@ -199,28 +161,25 @@ public class Step  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Step step = (Step) o;
-        return Objects.equals(this.id, step.id) &&
-            Objects.equals(this.name, step.name) &&
-            Objects.equals(this.type, step.type) &&
-            Objects.equals(this.input, step.input) &&
-            Objects.equals(this.ignoreError, step.ignoreError) &&
-            Objects.equals(this.description, step.description);
+        Step that = (Step) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.ignoreError, that.ignoreError) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, type, input, ignoreError, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -234,6 +193,7 @@ public class Step  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -244,8 +204,5 @@ public class Step  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -65,22 +65,15 @@ public class VideoTagginginference {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,19 @@ public class VideoTagginginference {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoTagginginference videoTagginginference = (VideoTagginginference) o;
-        return Objects.equals(this.videoTitle, videoTagginginference.videoTitle)
-            && Objects.equals(this.language, videoTagginginference.language)
-            && Objects.equals(this.useCelebrity, videoTagginginference.useCelebrity)
-            && Objects.equals(this.useLandmark, videoTagginginference.useLandmark)
-            && Objects.equals(this.useLogo, videoTagginginference.useLogo)
-            && Objects.equals(this.useOcr, videoTagginginference.useOcr)
-            && Objects.equals(this.useSis, videoTagginginference.useSis)
-            && Objects.equals(this.useTagging, videoTagginginference.useTagging);
+        VideoTagginginference that = (VideoTagginginference) obj;
+        return Objects.equals(this.videoTitle, that.videoTitle) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.useCelebrity, that.useCelebrity)
+            && Objects.equals(this.useLandmark, that.useLandmark) && Objects.equals(this.useLogo, that.useLogo)
+            && Objects.equals(this.useOcr, that.useOcr) && Objects.equals(this.useSis, that.useSis)
+            && Objects.equals(this.useTagging, that.useTagging);
     }
 
     @Override

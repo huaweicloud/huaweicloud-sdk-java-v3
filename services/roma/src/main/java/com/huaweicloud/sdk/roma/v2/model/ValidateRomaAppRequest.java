@@ -99,18 +99,16 @@ public class ValidateRomaAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateRomaAppRequest validateRomaAppRequest = (ValidateRomaAppRequest) o;
-        return Objects.equals(this.instanceId, validateRomaAppRequest.instanceId)
-            && Objects.equals(this.name, validateRomaAppRequest.name)
-            && Objects.equals(this.id, validateRomaAppRequest.id)
-            && Objects.equals(this.key, validateRomaAppRequest.key);
+        ValidateRomaAppRequest that = (ValidateRomaAppRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key);
     }
 
     @Override

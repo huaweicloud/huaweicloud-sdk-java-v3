@@ -99,18 +99,18 @@ public class RequestWorkspace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RequestWorkspace requestWorkspace = (RequestWorkspace) o;
-        return Objects.equals(this.name, requestWorkspace.name)
-            && Objects.equals(this.enterpriseProjectId, requestWorkspace.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, requestWorkspace.enterpriseProjectName)
-            && Objects.equals(this.description, requestWorkspace.description);
+        RequestWorkspace that = (RequestWorkspace) obj;
+        return Objects.equals(this.name, that.name)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

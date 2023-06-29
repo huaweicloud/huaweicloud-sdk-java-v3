@@ -223,22 +223,19 @@ public class CreateDashBoardResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDashBoardResponse createDashBoardResponse = (CreateDashBoardResponse) o;
-        return Objects.equals(this.charts, createDashBoardResponse.charts)
-            && Objects.equals(this.filters, createDashBoardResponse.filters)
-            && Objects.equals(this.groupName, createDashBoardResponse.groupName)
-            && Objects.equals(this.id, createDashBoardResponse.id)
-            && Objects.equals(this.lastUpdateTime, createDashBoardResponse.lastUpdateTime)
-            && Objects.equals(this.projectId, createDashBoardResponse.projectId)
-            && Objects.equals(this.title, createDashBoardResponse.title)
-            && Objects.equals(this.useSystemTemplate, createDashBoardResponse.useSystemTemplate);
+        CreateDashBoardResponse that = (CreateDashBoardResponse) obj;
+        return Objects.equals(this.charts, that.charts) && Objects.equals(this.filters, that.filters)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.useSystemTemplate, that.useSystemTemplate);
     }
 
     @Override

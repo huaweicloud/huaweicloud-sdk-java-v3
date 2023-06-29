@@ -97,17 +97,16 @@ public class ShowResourceMetricDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceMetricDataResponse showResourceMetricDataResponse = (ShowResourceMetricDataResponse) o;
-        return Objects.equals(this.dataPoints, showResourceMetricDataResponse.dataPoints)
-            && Objects.equals(this.metricName, showResourceMetricDataResponse.metricName)
-            && Objects.equals(this.resourceId, showResourceMetricDataResponse.resourceId);
+        ShowResourceMetricDataResponse that = (ShowResourceMetricDataResponse) obj;
+        return Objects.equals(this.dataPoints, that.dataPoints) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

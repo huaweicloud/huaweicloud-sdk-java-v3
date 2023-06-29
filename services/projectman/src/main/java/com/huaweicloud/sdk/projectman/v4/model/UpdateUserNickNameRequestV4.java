@@ -33,15 +33,15 @@ public class UpdateUserNickNameRequestV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserNickNameRequestV4 updateUserNickNameRequestV4 = (UpdateUserNickNameRequestV4) o;
-        return Objects.equals(this.nickName, updateUserNickNameRequestV4.nickName);
+        UpdateUserNickNameRequestV4 that = (UpdateUserNickNameRequestV4) obj;
+        return Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

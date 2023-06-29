@@ -55,16 +55,15 @@ public class ListTaskRulesetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskRulesetRequest listTaskRulesetRequest = (ListTaskRulesetRequest) o;
-        return Objects.equals(this.projectId, listTaskRulesetRequest.projectId)
-            && Objects.equals(this.taskId, listTaskRulesetRequest.taskId);
+        ListTaskRulesetRequest that = (ListTaskRulesetRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

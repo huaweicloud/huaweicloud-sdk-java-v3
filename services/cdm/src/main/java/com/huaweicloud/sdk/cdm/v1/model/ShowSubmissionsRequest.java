@@ -55,16 +55,15 @@ public class ShowSubmissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubmissionsRequest showSubmissionsRequest = (ShowSubmissionsRequest) o;
-        return Objects.equals(this.clusterId, showSubmissionsRequest.clusterId)
-            && Objects.equals(this.jname, showSubmissionsRequest.jname);
+        ShowSubmissionsRequest that = (ShowSubmissionsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jname, that.jname);
     }
 
     @Override

@@ -89,17 +89,16 @@ public class SendSlideVerifyCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendSlideVerifyCodeRequest sendSlideVerifyCodeRequest = (SendSlideVerifyCodeRequest) o;
-        return Objects.equals(this.xRequestID, sendSlideVerifyCodeRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, sendSlideVerifyCodeRequest.acceptLanguage)
-            && Objects.equals(this.body, sendSlideVerifyCodeRequest.body);
+        SendSlideVerifyCodeRequest that = (SendSlideVerifyCodeRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

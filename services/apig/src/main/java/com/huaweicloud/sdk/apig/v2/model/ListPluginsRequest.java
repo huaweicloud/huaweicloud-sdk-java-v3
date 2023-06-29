@@ -189,22 +189,19 @@ public class ListPluginsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPluginsRequest listPluginsRequest = (ListPluginsRequest) o;
-        return Objects.equals(this.instanceId, listPluginsRequest.instanceId)
-            && Objects.equals(this.offset, listPluginsRequest.offset)
-            && Objects.equals(this.limit, listPluginsRequest.limit)
-            && Objects.equals(this.pluginType, listPluginsRequest.pluginType)
-            && Objects.equals(this.pluginScope, listPluginsRequest.pluginScope)
-            && Objects.equals(this.pluginId, listPluginsRequest.pluginId)
-            && Objects.equals(this.pluginName, listPluginsRequest.pluginName)
-            && Objects.equals(this.preciseSearch, listPluginsRequest.preciseSearch);
+        ListPluginsRequest that = (ListPluginsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.pluginType, that.pluginType)
+            && Objects.equals(this.pluginScope, that.pluginScope) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

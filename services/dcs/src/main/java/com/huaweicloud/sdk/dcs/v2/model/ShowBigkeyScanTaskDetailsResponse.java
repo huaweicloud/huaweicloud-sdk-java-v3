@@ -86,22 +86,15 @@ public class ShowBigkeyScanTaskDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -168,22 +161,15 @@ public class ShowBigkeyScanTaskDetailsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ScanTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScanTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScanTypeEnum(value));
         }
 
         public static ScanTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScanTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -400,23 +386,19 @@ public class ShowBigkeyScanTaskDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBigkeyScanTaskDetailsResponse showBigkeyScanTaskDetailsResponse = (ShowBigkeyScanTaskDetailsResponse) o;
-        return Objects.equals(this.id, showBigkeyScanTaskDetailsResponse.id)
-            && Objects.equals(this.instanceId, showBigkeyScanTaskDetailsResponse.instanceId)
-            && Objects.equals(this.status, showBigkeyScanTaskDetailsResponse.status)
-            && Objects.equals(this.scanType, showBigkeyScanTaskDetailsResponse.scanType)
-            && Objects.equals(this.createdAt, showBigkeyScanTaskDetailsResponse.createdAt)
-            && Objects.equals(this.startedAt, showBigkeyScanTaskDetailsResponse.startedAt)
-            && Objects.equals(this.finishedAt, showBigkeyScanTaskDetailsResponse.finishedAt)
-            && Objects.equals(this.num, showBigkeyScanTaskDetailsResponse.num)
-            && Objects.equals(this.keys, showBigkeyScanTaskDetailsResponse.keys);
+        ShowBigkeyScanTaskDetailsResponse that = (ShowBigkeyScanTaskDetailsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.scanType, that.scanType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.startedAt, that.startedAt)
+            && Objects.equals(this.finishedAt, that.finishedAt) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.keys, that.keys);
     }
 
     @Override

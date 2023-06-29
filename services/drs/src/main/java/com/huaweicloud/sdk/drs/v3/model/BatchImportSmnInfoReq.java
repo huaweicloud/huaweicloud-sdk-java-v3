@@ -83,16 +83,15 @@ public class BatchImportSmnInfoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchImportSmnInfoReq batchImportSmnInfoReq = (BatchImportSmnInfoReq) o;
-        return Objects.equals(this.jobs, batchImportSmnInfoReq.jobs)
-            && Objects.equals(this.alarmNotifyInfo, batchImportSmnInfoReq.alarmNotifyInfo);
+        BatchImportSmnInfoReq that = (BatchImportSmnInfoReq) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.alarmNotifyInfo, that.alarmNotifyInfo);
     }
 
     @Override

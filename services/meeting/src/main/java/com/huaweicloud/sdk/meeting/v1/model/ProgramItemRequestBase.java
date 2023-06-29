@@ -55,16 +55,15 @@ public class ProgramItemRequestBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProgramItemRequestBase programItemRequestBase = (ProgramItemRequestBase) o;
-        return Objects.equals(this.materialId, programItemRequestBase.materialId)
-            && Objects.equals(this.playTime, programItemRequestBase.playTime);
+        ProgramItemRequestBase that = (ProgramItemRequestBase) obj;
+        return Objects.equals(this.materialId, that.materialId) && Objects.equals(this.playTime, that.playTime);
     }
 
     @Override

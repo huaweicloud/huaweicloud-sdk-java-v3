@@ -55,16 +55,15 @@ public class CreateEventsResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEventsResponseBody createEventsResponseBody = (CreateEventsResponseBody) o;
-        return Objects.equals(this.eventId, createEventsResponseBody.eventId)
-            && Objects.equals(this.eventName, createEventsResponseBody.eventName);
+        CreateEventsResponseBody that = (CreateEventsResponseBody) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.eventName, that.eventName);
     }
 
     @Override

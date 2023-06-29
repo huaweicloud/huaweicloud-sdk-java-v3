@@ -206,22 +206,20 @@ public class JobProgressInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobProgressInfo jobProgressInfo = (JobProgressInfo) o;
-        return Objects.equals(this.progress, jobProgressInfo.progress)
-            && Objects.equals(this.incrTransDelay, jobProgressInfo.incrTransDelay)
-            && Objects.equals(this.incrTransDelayMillis, jobProgressInfo.incrTransDelayMillis)
-            && Objects.equals(this.taskMode, jobProgressInfo.taskMode)
-            && Objects.equals(this.transferStatus, jobProgressInfo.transferStatus)
-            && Objects.equals(this.processTime, jobProgressInfo.processTime)
-            && Objects.equals(this.remainingTime, jobProgressInfo.remainingTime)
-            && Objects.equals(this.progressMap, jobProgressInfo.progressMap);
+        JobProgressInfo that = (JobProgressInfo) obj;
+        return Objects.equals(this.progress, that.progress) && Objects.equals(this.incrTransDelay, that.incrTransDelay)
+            && Objects.equals(this.incrTransDelayMillis, that.incrTransDelayMillis)
+            && Objects.equals(this.taskMode, that.taskMode) && Objects.equals(this.transferStatus, that.transferStatus)
+            && Objects.equals(this.processTime, that.processTime)
+            && Objects.equals(this.remainingTime, that.remainingTime)
+            && Objects.equals(this.progressMap, that.progressMap);
     }
 
     @Override

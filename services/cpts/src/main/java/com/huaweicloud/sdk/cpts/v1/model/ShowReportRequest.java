@@ -83,17 +83,16 @@ public class ShowReportRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReportRequest showReportRequest = (ShowReportRequest) o;
-        return Objects.equals(this.taskRunId, showReportRequest.taskRunId)
-            && Objects.equals(this.caseRunId, showReportRequest.caseRunId)
-            && Objects.equals(this.brokensLimitCount, showReportRequest.brokensLimitCount);
+        ShowReportRequest that = (ShowReportRequest) obj;
+        return Objects.equals(this.taskRunId, that.taskRunId) && Objects.equals(this.caseRunId, that.caseRunId)
+            && Objects.equals(this.brokensLimitCount, that.brokensLimitCount);
     }
 
     @Override

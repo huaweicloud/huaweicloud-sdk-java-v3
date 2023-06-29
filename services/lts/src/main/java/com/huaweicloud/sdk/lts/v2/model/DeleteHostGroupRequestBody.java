@@ -52,15 +52,15 @@ public class DeleteHostGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHostGroupRequestBody deleteHostGroupRequestBody = (DeleteHostGroupRequestBody) o;
-        return Objects.equals(this.hostGroupIdList, deleteHostGroupRequestBody.hostGroupIdList);
+        DeleteHostGroupRequestBody that = (DeleteHostGroupRequestBody) obj;
+        return Objects.equals(this.hostGroupIdList, that.hostGroupIdList);
     }
 
     @Override

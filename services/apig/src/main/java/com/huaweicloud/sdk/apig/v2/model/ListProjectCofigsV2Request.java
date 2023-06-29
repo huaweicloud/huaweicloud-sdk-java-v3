@@ -79,17 +79,16 @@ public class ListProjectCofigsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectCofigsV2Request listProjectCofigsV2Request = (ListProjectCofigsV2Request) o;
-        return Objects.equals(this.instanceId, listProjectCofigsV2Request.instanceId)
-            && Objects.equals(this.offset, listProjectCofigsV2Request.offset)
-            && Objects.equals(this.limit, listProjectCofigsV2Request.limit);
+        ListProjectCofigsV2Request that = (ListProjectCofigsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

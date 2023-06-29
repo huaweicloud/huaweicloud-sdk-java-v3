@@ -200,21 +200,19 @@ public class DbScanResultInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbScanResultInfo dbScanResultInfo = (DbScanResultInfo) o;
-        return Objects.equals(this.taskId, dbScanResultInfo.taskId)
-            && Objects.equals(this.dbName, dbScanResultInfo.dbName)
-            && Objects.equals(this.tableId, dbScanResultInfo.tableId)
-            && Objects.equals(this.tableName, dbScanResultInfo.tableName)
-            && Objects.equals(this.riskLevel, dbScanResultInfo.riskLevel)
-            && Objects.equals(this.sensitiveDataType, dbScanResultInfo.sensitiveDataType)
-            && Objects.equals(this.matchInfo, dbScanResultInfo.matchInfo);
+        DbScanResultInfo that = (DbScanResultInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.tableId, that.tableId) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.sensitiveDataType, that.sensitiveDataType)
+            && Objects.equals(this.matchInfo, that.matchInfo);
     }
 
     @Override

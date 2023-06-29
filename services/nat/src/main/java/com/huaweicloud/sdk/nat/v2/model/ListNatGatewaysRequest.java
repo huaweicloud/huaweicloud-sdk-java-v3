@@ -106,22 +106,15 @@ public class ListNatGatewaysRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -144,8 +137,8 @@ public class ListNatGatewaysRequest {
     private List<StatusEnum> status = null;
 
     /**
-    * Gets or Sets spec
-    */
+     * Gets or Sets spec
+     */
     public static final class SpecEnum {
 
         /**
@@ -200,22 +193,15 @@ public class ListNatGatewaysRequest {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecEnum(value));
         }
 
         public static SpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -479,25 +465,20 @@ public class ListNatGatewaysRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNatGatewaysRequest listNatGatewaysRequest = (ListNatGatewaysRequest) o;
-        return Objects.equals(this.id, listNatGatewaysRequest.id)
-            && Objects.equals(this.enterpriseProjectId, listNatGatewaysRequest.enterpriseProjectId)
-            && Objects.equals(this.description, listNatGatewaysRequest.description)
-            && Objects.equals(this.createdAt, listNatGatewaysRequest.createdAt)
-            && Objects.equals(this.name, listNatGatewaysRequest.name)
-            && Objects.equals(this.status, listNatGatewaysRequest.status)
-            && Objects.equals(this.spec, listNatGatewaysRequest.spec)
-            && Objects.equals(this.adminStateUp, listNatGatewaysRequest.adminStateUp)
-            && Objects.equals(this.internalNetworkId, listNatGatewaysRequest.internalNetworkId)
-            && Objects.equals(this.routerId, listNatGatewaysRequest.routerId)
-            && Objects.equals(this.limit, listNatGatewaysRequest.limit);
+        ListNatGatewaysRequest that = (ListNatGatewaysRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.internalNetworkId, that.internalNetworkId)
+            && Objects.equals(this.routerId, that.routerId) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

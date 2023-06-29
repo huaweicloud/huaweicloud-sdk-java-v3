@@ -121,19 +121,17 @@ public class ContainerNodeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerNodeInfo containerNodeInfo = (ContainerNodeInfo) o;
-        return Objects.equals(this.hostId, containerNodeInfo.hostId)
-            && Objects.equals(this.hostName, containerNodeInfo.hostName)
-            && Objects.equals(this.hostStatus, containerNodeInfo.hostStatus)
-            && Objects.equals(this.agentStatus, containerNodeInfo.agentStatus)
-            && Objects.equals(this.protectStatus, containerNodeInfo.protectStatus);
+        ContainerNodeInfo that = (ContainerNodeInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

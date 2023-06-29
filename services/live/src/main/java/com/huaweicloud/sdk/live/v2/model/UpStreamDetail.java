@@ -201,20 +201,20 @@ public class UpStreamDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpStreamDetail upStreamDetail = (UpStreamDetail) o;
-        return Objects.equals(this.time, upStreamDetail.time) && Objects.equals(this.fps, upStreamDetail.fps)
-            && Objects.equals(this.rate, upStreamDetail.rate) && Objects.equals(this.delay, upStreamDetail.delay)
-            && Objects.equals(this.gopDuration, upStreamDetail.gopDuration)
-            && Objects.equals(this.lastVideoPts, upStreamDetail.lastVideoPts)
-            && Objects.equals(this.lastAudioPts, upStreamDetail.lastAudioPts)
-            && Objects.equals(this.lastVideoAudioPtsDiff, upStreamDetail.lastVideoAudioPtsDiff);
+        UpStreamDetail that = (UpStreamDetail) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.fps, that.fps)
+            && Objects.equals(this.rate, that.rate) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.gopDuration, that.gopDuration)
+            && Objects.equals(this.lastVideoPts, that.lastVideoPts)
+            && Objects.equals(this.lastAudioPts, that.lastAudioPts)
+            && Objects.equals(this.lastVideoAudioPtsDiff, that.lastVideoAudioPtsDiff);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class ListGroupsForEnterpriseProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupsForEnterpriseProjectRequest listGroupsForEnterpriseProjectRequest =
-            (ListGroupsForEnterpriseProjectRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listGroupsForEnterpriseProjectRequest.enterpriseProjectId);
+        ListGroupsForEnterpriseProjectRequest that = (ListGroupsForEnterpriseProjectRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

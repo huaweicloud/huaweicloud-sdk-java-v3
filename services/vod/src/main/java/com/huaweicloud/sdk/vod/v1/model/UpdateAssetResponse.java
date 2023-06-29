@@ -119,18 +119,17 @@ public class UpdateAssetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetResponse updateAssetResponse = (UpdateAssetResponse) o;
-        return Objects.equals(this.assetId, updateAssetResponse.assetId)
-            && Objects.equals(this.videoUploadUrl, updateAssetResponse.videoUploadUrl)
-            && Objects.equals(this.coverUploadUrl, updateAssetResponse.coverUploadUrl)
-            && Objects.equals(this.subtitleUploadUrls, updateAssetResponse.subtitleUploadUrls);
+        UpdateAssetResponse that = (UpdateAssetResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.videoUploadUrl, that.videoUploadUrl)
+            && Objects.equals(this.coverUploadUrl, that.coverUploadUrl)
+            && Objects.equals(this.subtitleUploadUrls, that.subtitleUploadUrls);
     }
 
     @Override

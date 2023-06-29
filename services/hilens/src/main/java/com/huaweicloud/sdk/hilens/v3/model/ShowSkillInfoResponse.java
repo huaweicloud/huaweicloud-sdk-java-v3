@@ -1015,55 +1015,38 @@ public class ShowSkillInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSkillInfoResponse showSkillInfoResponse = (ShowSkillInfoResponse) o;
-        return Objects.equals(this.subScenes, showSkillInfoResponse.subScenes)
-            && Objects.equals(this.appTemplateId, showSkillInfoResponse.appTemplateId)
-            && Objects.equals(this.icon, showSkillInfoResponse.icon)
-            && Objects.equals(this.versionNum, showSkillInfoResponse.versionNum)
-            && Objects.equals(this.description, showSkillInfoResponse.description)
-            && Objects.equals(this.productInfo, showSkillInfoResponse.productInfo)
-            && Objects.equals(this.type, showSkillInfoResponse.type)
-            && Objects.equals(this.platform, showSkillInfoResponse.platform)
-            && Objects.equals(this.selfDevFlag, showSkillInfoResponse.selfDevFlag)
-            && Objects.equals(this.measureType, showSkillInfoResponse.measureType)
-            && Objects.equals(this.approvalResult, showSkillInfoResponse.approvalResult)
-            && Objects.equals(this.updateTime, showSkillInfoResponse.updateTime)
-            && Objects.equals(this.channelLimit, showSkillInfoResponse.channelLimit)
-            && Objects.equals(this.publishTime, showSkillInfoResponse.publishTime)
-            && Objects.equals(this.resourceStepSize, showSkillInfoResponse.resourceStepSize)
-            && Objects.equals(this.approvalTime, showSkillInfoResponse.approvalTime)
-            && Objects.equals(this.cloudServiceType, showSkillInfoResponse.cloudServiceType)
-            && Objects.equals(this.summary, showSkillInfoResponse.summary)
-            && Objects.equals(this.testStatus, showSkillInfoResponse.testStatus)
-            && Objects.equals(this.chip, showSkillInfoResponse.chip)
-            && Objects.equals(this.isVerifyModel, showSkillInfoResponse.isVerifyModel)
-            && Objects.equals(this.format, showSkillInfoResponse.format)
-            && Objects.equals(this.resourceType, showSkillInfoResponse.resourceType)
-            && Objects.equals(this.version, showSkillInfoResponse.version)
-            && Objects.equals(this.measureUnit, showSkillInfoResponse.measureUnit)
-            && Objects.equals(this.tags, showSkillInfoResponse.tags)
-            && Objects.equals(this.size, showSkillInfoResponse.size)
-            && Objects.equals(this.testResult, showSkillInfoResponse.testResult)
-            && Objects.equals(this.installTimes, showSkillInfoResponse.installTimes)
-            && Objects.equals(this.privacyPolicy, showSkillInfoResponse.privacyPolicy)
-            && Objects.equals(this.name, showSkillInfoResponse.name)
-            && Objects.equals(this.scenes, showSkillInfoResponse.scenes)
-            && Objects.equals(this.chargeModel, showSkillInfoResponse.chargeModel)
-            && Objects.equals(this.resourceSpecCode, showSkillInfoResponse.resourceSpecCode)
-            && Objects.equals(this.skillId, showSkillInfoResponse.skillId)
-            && Objects.equals(this.developer, showSkillInfoResponse.developer)
-            && Objects.equals(this.mainScenes, showSkillInfoResponse.mainScenes)
-            && Objects.equals(this.deviceTypes, showSkillInfoResponse.deviceTypes)
-            && Objects.equals(this.status, showSkillInfoResponse.status)
-            && Objects.equals(this.versions, showSkillInfoResponse.versions)
-            && Objects.equals(this.xRequestId, showSkillInfoResponse.xRequestId);
+        ShowSkillInfoResponse that = (ShowSkillInfoResponse) obj;
+        return Objects.equals(this.subScenes, that.subScenes) && Objects.equals(this.appTemplateId, that.appTemplateId)
+            && Objects.equals(this.icon, that.icon) && Objects.equals(this.versionNum, that.versionNum)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.productInfo, that.productInfo)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.selfDevFlag, that.selfDevFlag) && Objects.equals(this.measureType, that.measureType)
+            && Objects.equals(this.approvalResult, that.approvalResult)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.channelLimit, that.channelLimit)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.resourceStepSize, that.resourceStepSize)
+            && Objects.equals(this.approvalTime, that.approvalTime)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.testStatus, that.testStatus)
+            && Objects.equals(this.chip, that.chip) && Objects.equals(this.isVerifyModel, that.isVerifyModel)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.measureUnit, that.measureUnit)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.testResult, that.testResult) && Objects.equals(this.installTimes, that.installTimes)
+            && Objects.equals(this.privacyPolicy, that.privacyPolicy) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.scenes, that.scenes) && Objects.equals(this.chargeModel, that.chargeModel)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.skillId, that.skillId) && Objects.equals(this.developer, that.developer)
+            && Objects.equals(this.mainScenes, that.mainScenes) && Objects.equals(this.deviceTypes, that.deviceTypes)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -78,17 +78,16 @@ public class UpdateResSceneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResSceneResponse updateResSceneResponse = (UpdateResSceneResponse) o;
-        return Objects.equals(this.isSuccess, updateResSceneResponse.isSuccess)
-            && Objects.equals(this.message, updateResSceneResponse.message)
-            && Objects.equals(this.errorCode, updateResSceneResponse.errorCode);
+        UpdateResSceneResponse that = (UpdateResSceneResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

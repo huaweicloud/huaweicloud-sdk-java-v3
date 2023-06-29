@@ -1,41 +1,34 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * volume信息。
  */
-public class OpenGaussVolume  {
+public class OpenGaussVolume {
 
     /**
      * 磁盘类型。  仅支持ULTRAHIGH和ESSD，区分大小写，分别表示SSD和急速云盘。
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum ULTRAHIGH for value: "ULTRAHIGH"
          */
         public static final TypeEnum ULTRAHIGH = new TypeEnum("ULTRAHIGH");
-        
+
         /**
          * Enum ESSD for value: "ESSD"
          */
         public static final TypeEnum ESSD = new TypeEnum("ESSD");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,25 +57,18 @@ public class OpenGaussVolume  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -100,14 +86,12 @@ public class OpenGaussVolume  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Integer size;
 
@@ -115,9 +99,6 @@ public class OpenGaussVolume  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘类型。  仅支持ULTRAHIGH和ESSD，区分大小写，分别表示SSD和急速云盘。
@@ -131,15 +112,10 @@ public class OpenGaussVolume  {
         this.type = type;
     }
 
-    
-
     public OpenGaussVolume withSize(Integer size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘大小。例如：该参数填写为“40”，表示为创建的实例分配40GB的磁盘空间。  取值范围：（分片数*40GB）~（分片数*16TB），且大小只能为分片数*40的整数倍。
@@ -153,24 +129,23 @@ public class OpenGaussVolume  {
         this.size = size;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussVolume openGaussVolume = (OpenGaussVolume) o;
-        return Objects.equals(this.type, openGaussVolume.type) &&
-            Objects.equals(this.size, openGaussVolume.size);
+        OpenGaussVolume that = (OpenGaussVolume) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,6 +155,7 @@ public class OpenGaussVolume  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -190,8 +166,5 @@ public class OpenGaussVolume  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

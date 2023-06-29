@@ -55,15 +55,15 @@ public class TagKeyValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagKeyValue tagKeyValue = (TagKeyValue) o;
-        return Objects.equals(this.key, tagKeyValue.key) && Objects.equals(this.value, tagKeyValue.value);
+        TagKeyValue that = (TagKeyValue) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -122,19 +122,18 @@ public class ShowDefaultConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDefaultConfigResponse showDefaultConfigResponse = (ShowDefaultConfigResponse) o;
-        return Objects.equals(this.enableL7, showDefaultConfigResponse.enableL7)
-            && Objects.equals(this.trafficPosId, showDefaultConfigResponse.trafficPosId)
-            && Objects.equals(this.httpRequestPosId, showDefaultConfigResponse.httpRequestPosId)
-            && Objects.equals(this.cleaningAccessPosId, showDefaultConfigResponse.cleaningAccessPosId)
-            && Objects.equals(this.appTypeId, showDefaultConfigResponse.appTypeId);
+        ShowDefaultConfigResponse that = (ShowDefaultConfigResponse) obj;
+        return Objects.equals(this.enableL7, that.enableL7) && Objects.equals(this.trafficPosId, that.trafficPosId)
+            && Objects.equals(this.httpRequestPosId, that.httpRequestPosId)
+            && Objects.equals(this.cleaningAccessPosId, that.cleaningAccessPosId)
+            && Objects.equals(this.appTypeId, that.appTypeId);
     }
 
     @Override

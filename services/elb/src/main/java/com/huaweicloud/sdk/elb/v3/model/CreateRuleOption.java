@@ -206,20 +206,19 @@ public class CreateRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRuleOption createRuleOption = (CreateRuleOption) o;
-        return Objects.equals(this.adminStateUp, createRuleOption.adminStateUp)
-            && Objects.equals(this.compareType, createRuleOption.compareType)
-            && Objects.equals(this.key, createRuleOption.key) && Objects.equals(this.value, createRuleOption.value)
-            && Objects.equals(this.projectId, createRuleOption.projectId)
-            && Objects.equals(this.type, createRuleOption.type) && Objects.equals(this.invert, createRuleOption.invert)
-            && Objects.equals(this.conditions, createRuleOption.conditions);
+        CreateRuleOption that = (CreateRuleOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.invert, that.invert)
+            && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override

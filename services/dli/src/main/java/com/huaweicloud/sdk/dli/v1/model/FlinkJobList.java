@@ -74,15 +74,15 @@ public class FlinkJobList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlinkJobList flinkJobList = (FlinkJobList) o;
-        return Objects.equals(this.totalCount, flinkJobList.totalCount) && Objects.equals(this.jobs, flinkJobList.jobs);
+        FlinkJobList that = (FlinkJobList) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

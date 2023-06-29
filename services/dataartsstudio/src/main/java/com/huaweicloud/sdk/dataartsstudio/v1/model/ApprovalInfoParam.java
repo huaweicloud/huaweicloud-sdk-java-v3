@@ -74,15 +74,15 @@ public class ApprovalInfoParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApprovalInfoParam approvalInfoParam = (ApprovalInfoParam) o;
-        return Objects.equals(this.ids, approvalInfoParam.ids) && Objects.equals(this.msg, approvalInfoParam.msg);
+        ApprovalInfoParam that = (ApprovalInfoParam) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.msg, that.msg);
     }
 
     @Override

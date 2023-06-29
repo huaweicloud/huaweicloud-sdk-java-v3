@@ -77,17 +77,16 @@ public class PropertyFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyFilter propertyFilter = (PropertyFilter) o;
-        return Objects.equals(this.propertyName, propertyFilter.propertyName)
-            && Objects.equals(this.operator, propertyFilter.operator)
-            && Objects.equals(this.value, propertyFilter.value);
+        PropertyFilter that = (PropertyFilter) obj;
+        return Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteDeployKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeployKeyV2Request deleteDeployKeyV2Request = (DeleteDeployKeyV2Request) o;
-        return Objects.equals(this.keyId, deleteDeployKeyV2Request.keyId)
-            && Objects.equals(this.repositoryId, deleteDeployKeyV2Request.repositoryId);
+        DeleteDeployKeyV2Request that = (DeleteDeployKeyV2Request) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.repositoryId, that.repositoryId);
     }
 
     @Override

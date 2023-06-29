@@ -209,23 +209,19 @@ public class ShowTaskInstanceMetricDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInstanceMetricDataRequest showTaskInstanceMetricDataRequest = (ShowTaskInstanceMetricDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, showTaskInstanceMetricDataRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showTaskInstanceMetricDataRequest.jobId)
-            && Objects.equals(this.taskName, showTaskInstanceMetricDataRequest.taskName)
-            && Objects.equals(this.taskIndex, showTaskInstanceMetricDataRequest.taskIndex)
-            && Objects.equals(this.instanceName, showTaskInstanceMetricDataRequest.instanceName)
-            && Objects.equals(this.fromTime, showTaskInstanceMetricDataRequest.fromTime)
-            && Objects.equals(this.toTime, showTaskInstanceMetricDataRequest.toTime)
-            && Objects.equals(this.method, showTaskInstanceMetricDataRequest.method)
-            && Objects.equals(this.metricName, showTaskInstanceMetricDataRequest.metricName);
+        ShowTaskInstanceMetricDataRequest that = (ShowTaskInstanceMetricDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskIndex, that.taskIndex)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.fromTime, that.fromTime)
+            && Objects.equals(this.toTime, that.toTime) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.metricName, that.metricName);
     }
 
     @Override

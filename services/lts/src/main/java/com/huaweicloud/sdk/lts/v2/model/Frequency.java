@@ -78,22 +78,15 @@ public class Frequency {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class Frequency {
             if (value == null) {
                 return null;
             }
-            FixedRateUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FixedRateUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FixedRateUnitEnum(value));
         }
 
         public static FixedRateUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FixedRateUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,19 +312,17 @@ public class Frequency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Frequency frequency = (Frequency) o;
-        return Objects.equals(this.type, frequency.type) && Objects.equals(this.cronExpr, frequency.cronExpr)
-            && Objects.equals(this.hourOfDay, frequency.hourOfDay)
-            && Objects.equals(this.dayOfWeek, frequency.dayOfWeek)
-            && Objects.equals(this.fixedRate, frequency.fixedRate)
-            && Objects.equals(this.fixedRateUnit, frequency.fixedRateUnit);
+        Frequency that = (Frequency) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.cronExpr, that.cronExpr)
+            && Objects.equals(this.hourOfDay, that.hourOfDay) && Objects.equals(this.dayOfWeek, that.dayOfWeek)
+            && Objects.equals(this.fixedRate, that.fixedRate) && Objects.equals(this.fixedRateUnit, that.fixedRateUnit);
     }
 
     @Override

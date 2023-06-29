@@ -33,15 +33,15 @@ public class UpdateSubscriptionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubscriptionRequestBody updateSubscriptionRequestBody = (UpdateSubscriptionRequestBody) o;
-        return Objects.equals(this.remark, updateSubscriptionRequestBody.remark);
+        UpdateSubscriptionRequestBody that = (UpdateSubscriptionRequestBody) obj;
+        return Objects.equals(this.remark, that.remark);
     }
 
     @Override

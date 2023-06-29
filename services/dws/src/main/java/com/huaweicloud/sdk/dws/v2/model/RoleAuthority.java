@@ -74,15 +74,15 @@ public class RoleAuthority {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoleAuthority roleAuthority = (RoleAuthority) o;
-        return Objects.equals(this.role, roleAuthority.role) && Objects.equals(this.rightList, roleAuthority.rightList);
+        RoleAuthority that = (RoleAuthority) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.rightList, that.rightList);
     }
 
     @Override

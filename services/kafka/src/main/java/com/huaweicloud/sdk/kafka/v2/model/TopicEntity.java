@@ -209,22 +209,21 @@ public class TopicEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicEntity topicEntity = (TopicEntity) o;
-        return Objects.equals(this.policiesOnly, topicEntity.policiesOnly)
-            && Objects.equals(this.name, topicEntity.name) && Objects.equals(this.replication, topicEntity.replication)
-            && Objects.equals(this.partition, topicEntity.partition)
-            && Objects.equals(this.retentionTime, topicEntity.retentionTime)
-            && Objects.equals(this.syncReplication, topicEntity.syncReplication)
-            && Objects.equals(this.syncMessageFlush, topicEntity.syncMessageFlush)
-            && Objects.equals(this.externalConfigs, topicEntity.externalConfigs)
-            && Objects.equals(this.topicType, topicEntity.topicType);
+        TopicEntity that = (TopicEntity) obj;
+        return Objects.equals(this.policiesOnly, that.policiesOnly) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.retentionTime, that.retentionTime)
+            && Objects.equals(this.syncReplication, that.syncReplication)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.externalConfigs, that.externalConfigs)
+            && Objects.equals(this.topicType, that.topicType);
     }
 
     @Override

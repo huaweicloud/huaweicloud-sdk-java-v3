@@ -77,17 +77,16 @@ public class CloudBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudBaseInfo cloudBaseInfo = (CloudBaseInfo) o;
-        return Objects.equals(this.region, cloudBaseInfo.region)
-            && Objects.equals(this.projectId, cloudBaseInfo.projectId)
-            && Objects.equals(this.azCode, cloudBaseInfo.azCode);
+        CloudBaseInfo that = (CloudBaseInfo) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.azCode, that.azCode);
     }
 
     @Override

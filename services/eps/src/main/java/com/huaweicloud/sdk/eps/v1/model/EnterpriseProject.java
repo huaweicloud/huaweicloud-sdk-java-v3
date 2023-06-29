@@ -77,17 +77,16 @@ public class EnterpriseProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnterpriseProject enterpriseProject = (EnterpriseProject) o;
-        return Objects.equals(this.name, enterpriseProject.name)
-            && Objects.equals(this.description, enterpriseProject.description)
-            && Objects.equals(this.type, enterpriseProject.type);
+        EnterpriseProject that = (EnterpriseProject) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

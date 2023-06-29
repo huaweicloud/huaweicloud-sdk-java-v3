@@ -53,15 +53,15 @@ public class UploadMetaDataByUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMetaDataByUrlResponse uploadMetaDataByUrlResponse = (UploadMetaDataByUrlResponse) o;
-        return Objects.equals(this.uploadAssets, uploadMetaDataByUrlResponse.uploadAssets);
+        UploadMetaDataByUrlResponse that = (UploadMetaDataByUrlResponse) obj;
+        return Objects.equals(this.uploadAssets, that.uploadAssets);
     }
 
     @Override

@@ -99,16 +99,16 @@ public class Operator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Operator operator = (Operator) o;
-        return Objects.equals(this.id, operator.id) && Objects.equals(this.name, operator.name)
-            && Objects.equals(this.i18nName, operator.i18nName) && Objects.equals(this.sa, operator.sa);
+        Operator that = (Operator) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.i18nName, that.i18nName) && Objects.equals(this.sa, that.sa);
     }
 
     @Override

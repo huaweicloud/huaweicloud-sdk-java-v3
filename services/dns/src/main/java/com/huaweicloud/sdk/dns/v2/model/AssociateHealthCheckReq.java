@@ -33,15 +33,15 @@ public class AssociateHealthCheckReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateHealthCheckReq associateHealthCheckReq = (AssociateHealthCheckReq) o;
-        return Objects.equals(this.healthCheckId, associateHealthCheckReq.healthCheckId);
+        AssociateHealthCheckReq that = (AssociateHealthCheckReq) obj;
+        return Objects.equals(this.healthCheckId, that.healthCheckId);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class ShowCertKeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertKeyResponse showCertKeyResponse = (ShowCertKeyResponse) o;
-        return Objects.equals(this.cert, showCertKeyResponse.cert)
-            && Objects.equals(this.privateKey, showCertKeyResponse.privateKey);
+        ShowCertKeyResponse that = (ShowCertKeyResponse) obj;
+        return Objects.equals(this.cert, that.cert) && Objects.equals(this.privateKey, that.privateKey);
     }
 
     @Override

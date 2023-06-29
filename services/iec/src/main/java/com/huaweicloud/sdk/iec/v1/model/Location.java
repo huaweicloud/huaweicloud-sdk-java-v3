@@ -86,22 +86,15 @@ public class Location {
             if (value == null) {
                 return null;
             }
-            OperatorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperatorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperatorEnum(value));
         }
 
         public static OperatorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperatorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,19 +268,19 @@ public class Location {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Location location = (Location) o;
-        return Objects.equals(this.siteId, location.siteId) && Objects.equals(this.area, location.area)
-            && Objects.equals(this.province, location.province) && Objects.equals(this.city, location.city)
-            && Objects.equals(this.operator, location.operator) && Objects.equals(this.poolId, location.poolId)
-            && Objects.equals(this.stackCount, location.stackCount)
-            && Objects.equals(this.cityShortName, location.cityShortName);
+        Location that = (Location) obj;
+        return Objects.equals(this.siteId, that.siteId) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.stackCount, that.stackCount)
+            && Objects.equals(this.cityShortName, that.cityShortName);
     }
 
     @Override

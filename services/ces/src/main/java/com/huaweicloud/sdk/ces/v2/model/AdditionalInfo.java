@@ -77,17 +77,16 @@ public class AdditionalInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdditionalInfo additionalInfo = (AdditionalInfo) o;
-        return Objects.equals(this.resourceId, additionalInfo.resourceId)
-            && Objects.equals(this.resourceName, additionalInfo.resourceName)
-            && Objects.equals(this.eventId, additionalInfo.eventId);
+        AdditionalInfo that = (AdditionalInfo) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.eventId, that.eventId);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ShowResourceByIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceByIdRequest showResourceByIdRequest = (ShowResourceByIdRequest) o;
-        return Objects.equals(this.provider, showResourceByIdRequest.provider)
-            && Objects.equals(this.type, showResourceByIdRequest.type)
-            && Objects.equals(this.resourceId, showResourceByIdRequest.resourceId);
+        ShowResourceByIdRequest that = (ShowResourceByIdRequest) obj;
+        return Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

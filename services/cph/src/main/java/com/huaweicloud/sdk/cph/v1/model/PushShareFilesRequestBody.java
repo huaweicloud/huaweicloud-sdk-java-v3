@@ -96,17 +96,16 @@ public class PushShareFilesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushShareFilesRequestBody pushShareFilesRequestBody = (PushShareFilesRequestBody) o;
-        return Objects.equals(this.bucketName, pushShareFilesRequestBody.bucketName)
-            && Objects.equals(this.objectPath, pushShareFilesRequestBody.objectPath)
-            && Objects.equals(this.serverIds, pushShareFilesRequestBody.serverIds);
+        PushShareFilesRequestBody that = (PushShareFilesRequestBody) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.objectPath, that.objectPath)
+            && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

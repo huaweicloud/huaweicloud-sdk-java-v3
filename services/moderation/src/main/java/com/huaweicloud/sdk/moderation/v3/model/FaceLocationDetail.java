@@ -99,18 +99,17 @@ public class FaceLocationDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceLocationDetail faceLocationDetail = (FaceLocationDetail) o;
-        return Objects.equals(this.topLeftX, faceLocationDetail.topLeftX)
-            && Objects.equals(this.topLeftY, faceLocationDetail.topLeftY)
-            && Objects.equals(this.bottomRightX, faceLocationDetail.bottomRightX)
-            && Objects.equals(this.bottomRightY, faceLocationDetail.bottomRightY);
+        FaceLocationDetail that = (FaceLocationDetail) obj;
+        return Objects.equals(this.topLeftX, that.topLeftX) && Objects.equals(this.topLeftY, that.topLeftY)
+            && Objects.equals(this.bottomRightX, that.bottomRightX)
+            && Objects.equals(this.bottomRightY, that.bottomRightY);
     }
 
     @Override

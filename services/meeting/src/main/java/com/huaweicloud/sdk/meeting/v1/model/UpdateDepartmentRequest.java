@@ -111,18 +111,17 @@ public class UpdateDepartmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDepartmentRequest updateDepartmentRequest = (UpdateDepartmentRequest) o;
-        return Objects.equals(this.xRequestId, updateDepartmentRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateDepartmentRequest.acceptLanguage)
-            && Objects.equals(this.deptCode, updateDepartmentRequest.deptCode)
-            && Objects.equals(this.body, updateDepartmentRequest.body);
+        UpdateDepartmentRequest that = (UpdateDepartmentRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

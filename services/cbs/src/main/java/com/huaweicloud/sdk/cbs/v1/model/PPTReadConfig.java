@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Resolution;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class PPTReadConfig  {
-
+public class PPTReadConfig {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_content")
-    
+    @JsonProperty(value = "read_content")
 
     private String readContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution")
-    
+    @JsonProperty(value = "resolution")
 
     private Resolution resolution;
 
@@ -40,9 +30,6 @@ public class PPTReadConfig  {
         this.readContent = readContent;
         return this;
     }
-
-    
-
 
     /**
      * 播报内容，长度为3~2500
@@ -56,15 +43,10 @@ public class PPTReadConfig  {
         this.readContent = readContent;
     }
 
-    
-
     public PPTReadConfig withImageId(String imageId) {
         this.imageId = imageId;
         return this;
     }
-
-    
-
 
     /**
      * PPT转化有的图片id
@@ -78,22 +60,19 @@ public class PPTReadConfig  {
         this.imageId = imageId;
     }
 
-    
-
     public PPTReadConfig withResolution(Resolution resolution) {
         this.resolution = resolution;
         return this;
     }
 
     public PPTReadConfig withResolution(Consumer<Resolution> resolutionSetter) {
-        if(this.resolution == null ){
+        if (this.resolution == null) {
             this.resolution = new Resolution();
             resolutionSetter.accept(this.resolution);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get resolution
@@ -107,25 +86,24 @@ public class PPTReadConfig  {
         this.resolution = resolution;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PPTReadConfig ppTReadConfig = (PPTReadConfig) o;
-        return Objects.equals(this.readContent, ppTReadConfig.readContent) &&
-            Objects.equals(this.imageId, ppTReadConfig.imageId) &&
-            Objects.equals(this.resolution, ppTReadConfig.resolution);
+        PPTReadConfig that = (PPTReadConfig) obj;
+        return Objects.equals(this.readContent, that.readContent) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.resolution, that.resolution);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(readContent, imageId, resolution);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +114,7 @@ public class PPTReadConfig  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +125,5 @@ public class PPTReadConfig  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

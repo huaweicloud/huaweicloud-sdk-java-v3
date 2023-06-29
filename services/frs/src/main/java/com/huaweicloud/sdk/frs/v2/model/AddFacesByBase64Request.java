@@ -87,17 +87,16 @@ public class AddFacesByBase64Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesByBase64Request addFacesByBase64Request = (AddFacesByBase64Request) o;
-        return Objects.equals(this.enterpriseProjectId, addFacesByBase64Request.enterpriseProjectId)
-            && Objects.equals(this.faceSetName, addFacesByBase64Request.faceSetName)
-            && Objects.equals(this.body, addFacesByBase64Request.body);
+        AddFacesByBase64Request that = (AddFacesByBase64Request) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.body, that.body);
     }
 
     @Override

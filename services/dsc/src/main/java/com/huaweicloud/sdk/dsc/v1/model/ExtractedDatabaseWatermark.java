@@ -113,17 +113,16 @@ public class ExtractedDatabaseWatermark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtractedDatabaseWatermark extractedDatabaseWatermark = (ExtractedDatabaseWatermark) o;
-        return Objects.equals(this.watermarkKey, extractedDatabaseWatermark.watermarkKey)
-            && Objects.equals(this.columns, extractedDatabaseWatermark.columns)
-            && Objects.equals(this.data, extractedDatabaseWatermark.data);
+        ExtractedDatabaseWatermark that = (ExtractedDatabaseWatermark) obj;
+        return Objects.equals(this.watermarkKey, that.watermarkKey) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

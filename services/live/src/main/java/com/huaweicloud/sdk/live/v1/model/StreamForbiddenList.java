@@ -77,17 +77,16 @@ public class StreamForbiddenList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamForbiddenList streamForbiddenList = (StreamForbiddenList) o;
-        return Objects.equals(this.appName, streamForbiddenList.appName)
-            && Objects.equals(this.streamName, streamForbiddenList.streamName)
-            && Objects.equals(this.resumeTime, streamForbiddenList.resumeTime);
+        StreamForbiddenList that = (StreamForbiddenList) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.streamName, that.streamName)
+            && Objects.equals(this.resumeTime, that.resumeTime);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class ChargeInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChargeInfoResult chargeInfoResult = (ChargeInfoResult) o;
-        return Objects.equals(this.chargeMode, chargeInfoResult.chargeMode)
-            && Objects.equals(this.periodType, chargeInfoResult.periodType)
-            && Objects.equals(this.periodNum, chargeInfoResult.periodNum)
-            && Objects.equals(this.isAutoRenew, chargeInfoResult.isAutoRenew)
-            && Objects.equals(this.isAutoPay, chargeInfoResult.isAutoPay);
+        ChargeInfoResult that = (ChargeInfoResult) obj;
+        return Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

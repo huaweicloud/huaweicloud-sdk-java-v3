@@ -33,15 +33,15 @@ public class ShowPublicZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicZoneRequest showPublicZoneRequest = (ShowPublicZoneRequest) o;
-        return Objects.equals(this.zoneId, showPublicZoneRequest.zoneId);
+        ShowPublicZoneRequest that = (ShowPublicZoneRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId);
     }
 
     @Override

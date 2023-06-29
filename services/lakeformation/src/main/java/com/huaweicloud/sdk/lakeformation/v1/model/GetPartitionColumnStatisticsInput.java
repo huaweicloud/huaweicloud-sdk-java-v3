@@ -113,17 +113,17 @@ public class GetPartitionColumnStatisticsInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetPartitionColumnStatisticsInput getPartitionColumnStatisticsInput = (GetPartitionColumnStatisticsInput) o;
-        return Objects.equals(this.aggregateStatics, getPartitionColumnStatisticsInput.aggregateStatics)
-            && Objects.equals(this.columnNames, getPartitionColumnStatisticsInput.columnNames)
-            && Objects.equals(this.partitionValuesList, getPartitionColumnStatisticsInput.partitionValuesList);
+        GetPartitionColumnStatisticsInput that = (GetPartitionColumnStatisticsInput) obj;
+        return Objects.equals(this.aggregateStatics, that.aggregateStatics)
+            && Objects.equals(this.columnNames, that.columnNames)
+            && Objects.equals(this.partitionValuesList, that.partitionValuesList);
     }
 
     @Override

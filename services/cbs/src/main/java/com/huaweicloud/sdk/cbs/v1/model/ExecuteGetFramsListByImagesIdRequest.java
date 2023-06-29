@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ExecuteGetFramsListByImagesIdRequest  {
-
+public class ExecuteGetFramsListByImagesIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -40,9 +29,6 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         this.imageId = imageId;
         return this;
     }
-
-    
-
 
     /**
      * 图片id
@@ -56,15 +42,10 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public ExecuteGetFramsListByImagesIdRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量，默认为零
@@ -78,15 +59,10 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         this.offset = offset;
     }
 
-    
-
     public ExecuteGetFramsListByImagesIdRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 分页限制数
@@ -100,25 +76,24 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteGetFramsListByImagesIdRequest executeGetFramsListByImagesIdRequest = (ExecuteGetFramsListByImagesIdRequest) o;
-        return Objects.equals(this.imageId, executeGetFramsListByImagesIdRequest.imageId) &&
-            Objects.equals(this.offset, executeGetFramsListByImagesIdRequest.offset) &&
-            Objects.equals(this.limit, executeGetFramsListByImagesIdRequest.limit);
+        ExecuteGetFramsListByImagesIdRequest that = (ExecuteGetFramsListByImagesIdRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ExecuteGetFramsListByImagesIdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

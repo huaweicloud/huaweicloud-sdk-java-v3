@@ -143,20 +143,17 @@ public class PostgresqlListDatabase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlListDatabase postgresqlListDatabase = (PostgresqlListDatabase) o;
-        return Objects.equals(this.name, postgresqlListDatabase.name)
-            && Objects.equals(this.owner, postgresqlListDatabase.owner)
-            && Objects.equals(this.characterSet, postgresqlListDatabase.characterSet)
-            && Objects.equals(this.collateSet, postgresqlListDatabase.collateSet)
-            && Objects.equals(this.size, postgresqlListDatabase.size)
-            && Objects.equals(this.comment, postgresqlListDatabase.comment);
+        PostgresqlListDatabase that = (PostgresqlListDatabase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.characterSet, that.characterSet) && Objects.equals(this.collateSet, that.collateSet)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.comment, that.comment);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class QueryLtsStructLogParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryLtsStructLogParams queryLtsStructLogParams = (QueryLtsStructLogParams) o;
-        return Objects.equals(this.startTime, queryLtsStructLogParams.startTime)
-            && Objects.equals(this.endTime, queryLtsStructLogParams.endTime)
-            && Objects.equals(this.sqlExpression, queryLtsStructLogParams.sqlExpression)
-            && Objects.equals(this.originalContent, queryLtsStructLogParams.originalContent);
+        QueryLtsStructLogParams that = (QueryLtsStructLogParams) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.sqlExpression, that.sqlExpression)
+            && Objects.equals(this.originalContent, that.originalContent);
     }
 
     @Override

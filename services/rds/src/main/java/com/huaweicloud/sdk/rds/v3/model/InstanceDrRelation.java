@@ -105,17 +105,17 @@ public class InstanceDrRelation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceDrRelation instanceDrRelation = (InstanceDrRelation) o;
-        return Objects.equals(this.instanceId, instanceDrRelation.instanceId)
-            && Objects.equals(this.masterInstance, instanceDrRelation.masterInstance)
-            && Objects.equals(this.slaveInstances, instanceDrRelation.slaveInstances);
+        InstanceDrRelation that = (InstanceDrRelation) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.masterInstance, that.masterInstance)
+            && Objects.equals(this.slaveInstances, that.slaveInstances);
     }
 
     @Override

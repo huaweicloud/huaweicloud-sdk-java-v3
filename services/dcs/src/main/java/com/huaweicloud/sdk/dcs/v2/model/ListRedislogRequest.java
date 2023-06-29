@@ -99,18 +99,16 @@ public class ListRedislogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRedislogRequest listRedislogRequest = (ListRedislogRequest) o;
-        return Objects.equals(this.instanceId, listRedislogRequest.instanceId)
-            && Objects.equals(this.offset, listRedislogRequest.offset)
-            && Objects.equals(this.limit, listRedislogRequest.limit)
-            && Objects.equals(this.logType, listRedislogRequest.logType);
+        ListRedislogRequest that = (ListRedislogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.logType, that.logType);
     }
 
     @Override

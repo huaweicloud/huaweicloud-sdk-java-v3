@@ -87,17 +87,16 @@ public class ResetMessageOffsetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetMessageOffsetRequest resetMessageOffsetRequest = (ResetMessageOffsetRequest) o;
-        return Objects.equals(this.instanceId, resetMessageOffsetRequest.instanceId)
-            && Objects.equals(this.group, resetMessageOffsetRequest.group)
-            && Objects.equals(this.body, resetMessageOffsetRequest.body);
+        ResetMessageOffsetRequest that = (ResetMessageOffsetRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

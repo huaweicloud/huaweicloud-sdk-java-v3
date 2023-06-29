@@ -55,16 +55,16 @@ public class DurationStrategies {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DurationStrategies durationStrategies = (DurationStrategies) o;
-        return Objects.equals(this.strategy, durationStrategies.strategy)
-            && Objects.equals(this.estimatedUpgradeDuration, durationStrategies.estimatedUpgradeDuration);
+        DurationStrategies that = (DurationStrategies) obj;
+        return Objects.equals(this.strategy, that.strategy)
+            && Objects.equals(this.estimatedUpgradeDuration, that.estimatedUpgradeDuration);
     }
 
     @Override

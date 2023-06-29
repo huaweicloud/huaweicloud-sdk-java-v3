@@ -75,22 +75,15 @@ public class CreateLocation {
             if (value == null) {
                 return null;
             }
-            CountryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CountryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CountryEnum(value));
         }
 
         public static CountryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CountryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -251,19 +244,18 @@ public class CreateLocation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLocation createLocation = (CreateLocation) o;
-        return Objects.equals(this.name, createLocation.name) && Objects.equals(this.province, createLocation.province)
-            && Objects.equals(this.city, createLocation.city) && Objects.equals(this.district, createLocation.district)
-            && Objects.equals(this.country, createLocation.country)
-            && Objects.equals(this.condition, createLocation.condition)
-            && Objects.equals(this.description, createLocation.description);
+        CreateLocation that = (CreateLocation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.province, that.province)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.district, that.district)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

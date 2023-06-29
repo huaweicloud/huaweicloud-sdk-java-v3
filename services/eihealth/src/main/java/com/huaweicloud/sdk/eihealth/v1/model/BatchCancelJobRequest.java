@@ -89,17 +89,16 @@ public class BatchCancelJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCancelJobRequest batchCancelJobRequest = (BatchCancelJobRequest) o;
-        return Objects.equals(this.xForce, batchCancelJobRequest.xForce)
-            && Objects.equals(this.eihealthProjectId, batchCancelJobRequest.eihealthProjectId)
-            && Objects.equals(this.body, batchCancelJobRequest.body);
+        BatchCancelJobRequest that = (BatchCancelJobRequest) obj;
+        return Objects.equals(this.xForce, that.xForce)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

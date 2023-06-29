@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class EntitySentimentReq  {
-
+public class EntitySentimentReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="entity")
-    
+    @JsonProperty(value = "entity")
 
     private String entity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private Integer type;
 
@@ -39,9 +29,6 @@ public class EntitySentimentReq  {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 请求文本。文本编码要求为utf-8，仅支持中文实体情感分析。 限定content+entity长度为512以内，长度超过512时，只检测前512个字符。 
@@ -55,15 +42,10 @@ public class EntitySentimentReq  {
         this.content = content;
     }
 
-    
-
     public EntitySentimentReq withEntity(String entity) {
         this.entity = entity;
         return this;
     }
-
-    
-
 
     /**
      * 请求实体。文本编码要求为utf-8.仅支持中文实体情感分析。 限定content+entity长度为512以内，长度超过512时，只检测前512个字符。
@@ -77,15 +59,10 @@ public class EntitySentimentReq  {
         this.entity = entity;
     }
 
-    
-
     public EntitySentimentReq withType(Integer type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 取值如下： 3 金融领域
@@ -99,25 +76,24 @@ public class EntitySentimentReq  {
         this.type = type;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EntitySentimentReq entitySentimentReq = (EntitySentimentReq) o;
-        return Objects.equals(this.content, entitySentimentReq.content) &&
-            Objects.equals(this.entity, entitySentimentReq.entity) &&
-            Objects.equals(this.type, entitySentimentReq.type);
+        EntitySentimentReq that = (EntitySentimentReq) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.entity, that.entity)
+            && Objects.equals(this.type, that.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, entity, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class EntitySentimentReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class EntitySentimentReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

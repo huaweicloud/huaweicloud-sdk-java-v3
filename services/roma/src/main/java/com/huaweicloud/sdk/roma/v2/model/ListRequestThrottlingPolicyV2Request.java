@@ -145,21 +145,17 @@ public class ListRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestThrottlingPolicyV2Request listRequestThrottlingPolicyV2Request =
-            (ListRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, listRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.offset, listRequestThrottlingPolicyV2Request.offset)
-            && Objects.equals(this.limit, listRequestThrottlingPolicyV2Request.limit)
-            && Objects.equals(this.id, listRequestThrottlingPolicyV2Request.id)
-            && Objects.equals(this.name, listRequestThrottlingPolicyV2Request.name)
-            && Objects.equals(this.preciseSearch, listRequestThrottlingPolicyV2Request.preciseSearch);
+        ListRequestThrottlingPolicyV2Request that = (ListRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

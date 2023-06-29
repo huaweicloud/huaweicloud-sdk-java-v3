@@ -97,17 +97,16 @@ public class ListClusterCnResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterCnResponse listClusterCnResponse = (ListClusterCnResponse) o;
-        return Objects.equals(this.minNum, listClusterCnResponse.minNum)
-            && Objects.equals(this.maxNum, listClusterCnResponse.maxNum)
-            && Objects.equals(this.instances, listClusterCnResponse.instances);
+        ListClusterCnResponse that = (ListClusterCnResponse) obj;
+        return Objects.equals(this.minNum, that.minNum) && Objects.equals(this.maxNum, that.maxNum)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

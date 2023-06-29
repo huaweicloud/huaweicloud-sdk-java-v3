@@ -392,28 +392,26 @@ public class BtrfsFileSystem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BtrfsFileSystem btrfsFileSystem = (BtrfsFileSystem) o;
-        return Objects.equals(this.name, btrfsFileSystem.name) && Objects.equals(this.label, btrfsFileSystem.label)
-            && Objects.equals(this.uuid, btrfsFileSystem.uuid) && Objects.equals(this.device, btrfsFileSystem.device)
-            && Objects.equals(this.size, btrfsFileSystem.size)
-            && Objects.equals(this.nodesize, btrfsFileSystem.nodesize)
-            && Objects.equals(this.sectorsize, btrfsFileSystem.sectorsize)
-            && Objects.equals(this.dataProfile, btrfsFileSystem.dataProfile)
-            && Objects.equals(this.systemProfile, btrfsFileSystem.systemProfile)
-            && Objects.equals(this.metadataProfile, btrfsFileSystem.metadataProfile)
-            && Objects.equals(this.globalReserve1, btrfsFileSystem.globalReserve1)
-            && Objects.equals(this.gVolUsedSize, btrfsFileSystem.gVolUsedSize)
-            && Objects.equals(this.defaultSubvolid, btrfsFileSystem.defaultSubvolid)
-            && Objects.equals(this.defaultSubvolName, btrfsFileSystem.defaultSubvolName)
-            && Objects.equals(this.defaultSubvolMountpath, btrfsFileSystem.defaultSubvolMountpath)
-            && Objects.equals(this.subvolumn, btrfsFileSystem.subvolumn);
+        BtrfsFileSystem that = (BtrfsFileSystem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.device, that.device)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.nodesize, that.nodesize)
+            && Objects.equals(this.sectorsize, that.sectorsize) && Objects.equals(this.dataProfile, that.dataProfile)
+            && Objects.equals(this.systemProfile, that.systemProfile)
+            && Objects.equals(this.metadataProfile, that.metadataProfile)
+            && Objects.equals(this.globalReserve1, that.globalReserve1)
+            && Objects.equals(this.gVolUsedSize, that.gVolUsedSize)
+            && Objects.equals(this.defaultSubvolid, that.defaultSubvolid)
+            && Objects.equals(this.defaultSubvolName, that.defaultSubvolName)
+            && Objects.equals(this.defaultSubvolMountpath, that.defaultSubvolMountpath)
+            && Objects.equals(this.subvolumn, that.subvolumn);
     }
 
     @Override

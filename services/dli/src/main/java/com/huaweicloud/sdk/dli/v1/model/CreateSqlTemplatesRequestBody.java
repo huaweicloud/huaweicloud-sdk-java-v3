@@ -99,18 +99,16 @@ public class CreateSqlTemplatesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlTemplatesRequestBody createSqlTemplatesRequestBody = (CreateSqlTemplatesRequestBody) o;
-        return Objects.equals(this.sql, createSqlTemplatesRequestBody.sql)
-            && Objects.equals(this.sqlName, createSqlTemplatesRequestBody.sqlName)
-            && Objects.equals(this.description, createSqlTemplatesRequestBody.description)
-            && Objects.equals(this.group, createSqlTemplatesRequestBody.group);
+        CreateSqlTemplatesRequestBody that = (CreateSqlTemplatesRequestBody) obj;
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.sqlName, that.sqlName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.group, that.group);
     }
 
     @Override

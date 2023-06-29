@@ -99,18 +99,16 @@ public class ListDeviceTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceTemplatesRequest listDeviceTemplatesRequest = (ListDeviceTemplatesRequest) o;
-        return Objects.equals(this.iefInstanceId, listDeviceTemplatesRequest.iefInstanceId)
-            && Objects.equals(this.name, listDeviceTemplatesRequest.name)
-            && Objects.equals(this.offset, listDeviceTemplatesRequest.offset)
-            && Objects.equals(this.limit, listDeviceTemplatesRequest.limit);
+        ListDeviceTemplatesRequest that = (ListDeviceTemplatesRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

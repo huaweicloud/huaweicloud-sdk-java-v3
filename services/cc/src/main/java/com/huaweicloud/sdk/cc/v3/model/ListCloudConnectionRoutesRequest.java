@@ -180,20 +180,17 @@ public class ListCloudConnectionRoutesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudConnectionRoutesRequest listCloudConnectionRoutesRequest = (ListCloudConnectionRoutesRequest) o;
-        return Objects.equals(this.limit, listCloudConnectionRoutesRequest.limit)
-            && Objects.equals(this.marker, listCloudConnectionRoutesRequest.marker)
-            && Objects.equals(this.id, listCloudConnectionRoutesRequest.id)
-            && Objects.equals(this.cloudConnectionId, listCloudConnectionRoutesRequest.cloudConnectionId)
-            && Objects.equals(this.instanceId, listCloudConnectionRoutesRequest.instanceId)
-            && Objects.equals(this.regionId, listCloudConnectionRoutesRequest.regionId);
+        ListCloudConnectionRoutesRequest that = (ListCloudConnectionRoutesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

@@ -121,17 +121,17 @@ public class Pipelines {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Pipelines pipelines = (Pipelines) o;
-        return Objects.equals(this.name, pipelines.name) && Objects.equals(this.status, pipelines.status)
-            && Objects.equals(this.keepAlive, pipelines.keepAlive) && Objects.equals(this.events, pipelines.events)
-            && Objects.equals(this.updateAt, pipelines.updateAt);
+        Pipelines that = (Pipelines) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.keepAlive, that.keepAlive) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class ValidationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidationResult validationResult = (ValidationResult) o;
-        return Objects.equals(this.linkConfig, validationResult.linkConfig);
+        ValidationResult that = (ValidationResult) obj;
+        return Objects.equals(this.linkConfig, that.linkConfig);
     }
 
     @Override

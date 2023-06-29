@@ -52,15 +52,15 @@ public class EncryptDataNodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDataNodeReq encryptDataNodeReq = (EncryptDataNodeReq) o;
-        return Objects.equals(this.encryptDatas, encryptDataNodeReq.encryptDatas);
+        EncryptDataNodeReq that = (EncryptDataNodeReq) obj;
+        return Objects.equals(this.encryptDatas, that.encryptDatas);
     }
 
     @Override

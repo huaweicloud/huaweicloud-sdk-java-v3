@@ -65,16 +65,15 @@ public class CreateScalingNotificationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingNotificationRequest createScalingNotificationRequest = (CreateScalingNotificationRequest) o;
-        return Objects.equals(this.scalingGroupId, createScalingNotificationRequest.scalingGroupId)
-            && Objects.equals(this.body, createScalingNotificationRequest.body);
+        CreateScalingNotificationRequest that = (CreateScalingNotificationRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

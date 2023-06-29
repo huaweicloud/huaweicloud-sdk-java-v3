@@ -74,16 +74,16 @@ public class ObjectTypeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObjectTypeInfo objectTypeInfo = (ObjectTypeInfo) o;
-        return Objects.equals(this.isSelectAllObjectsType, objectTypeInfo.isSelectAllObjectsType)
-            && Objects.equals(this.objectsTypeList, objectTypeInfo.objectsTypeList);
+        ObjectTypeInfo that = (ObjectTypeInfo) obj;
+        return Objects.equals(this.isSelectAllObjectsType, that.isSelectAllObjectsType)
+            && Objects.equals(this.objectsTypeList, that.objectsTypeList);
     }
 
     @Override

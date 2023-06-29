@@ -216,23 +216,19 @@ public class ModifyTrafficControllerRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTrafficControllerRequestDTO modifyTrafficControllerRequestDTO = (ModifyTrafficControllerRequestDTO) o;
-        return Objects.equals(this.name, modifyTrafficControllerRequestDTO.name)
-            && Objects.equals(this.description, modifyTrafficControllerRequestDTO.description)
-            && Objects.equals(this.lat, modifyTrafficControllerRequestDTO.lat)
-            && Objects.equals(this.lon, modifyTrafficControllerRequestDTO.lon)
-            && Objects.equals(this.ele, modifyTrafficControllerRequestDTO.ele)
-            && Objects.equals(this.posDescription, modifyTrafficControllerRequestDTO.posDescription)
-            && Objects.equals(this.installationMode, modifyTrafficControllerRequestDTO.installationMode)
-            && Objects.equals(this.roadName, modifyTrafficControllerRequestDTO.roadName)
-            && Objects.equals(this.linkId, modifyTrafficControllerRequestDTO.linkId);
+        ModifyTrafficControllerRequestDTO that = (ModifyTrafficControllerRequestDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon)
+            && Objects.equals(this.ele, that.ele) && Objects.equals(this.posDescription, that.posDescription)
+            && Objects.equals(this.installationMode, that.installationMode)
+            && Objects.equals(this.roadName, that.roadName) && Objects.equals(this.linkId, that.linkId);
     }
 
     @Override

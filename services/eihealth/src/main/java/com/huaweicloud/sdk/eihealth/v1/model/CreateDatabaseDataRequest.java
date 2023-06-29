@@ -87,17 +87,16 @@ public class CreateDatabaseDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseDataRequest createDatabaseDataRequest = (CreateDatabaseDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, createDatabaseDataRequest.eihealthProjectId)
-            && Objects.equals(this.databaseId, createDatabaseDataRequest.databaseId)
-            && Objects.equals(this.body, createDatabaseDataRequest.body);
+        CreateDatabaseDataRequest that = (CreateDatabaseDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.databaseId, that.databaseId) && Objects.equals(this.body, that.body);
     }
 
     @Override

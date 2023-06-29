@@ -61,22 +61,15 @@ public class PolicyAssignment {
             if (value == null) {
                 return null;
             }
-            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PolicyAssignmentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyAssignmentTypeEnum(value));
         }
 
         public static PolicyAssignmentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PolicyAssignmentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -414,26 +407,22 @@ public class PolicyAssignment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyAssignment policyAssignment = (PolicyAssignment) o;
-        return Objects.equals(this.policyAssignmentType, policyAssignment.policyAssignmentType)
-            && Objects.equals(this.id, policyAssignment.id) && Objects.equals(this.name, policyAssignment.name)
-            && Objects.equals(this.description, policyAssignment.description)
-            && Objects.equals(this.policyFilter, policyAssignment.policyFilter)
-            && Objects.equals(this.period, policyAssignment.period)
-            && Objects.equals(this.state, policyAssignment.state)
-            && Objects.equals(this.created, policyAssignment.created)
-            && Objects.equals(this.updated, policyAssignment.updated)
-            && Objects.equals(this.policyDefinitionId, policyAssignment.policyDefinitionId)
-            && Objects.equals(this.customPolicy, policyAssignment.customPolicy)
-            && Objects.equals(this.parameters, policyAssignment.parameters)
-            && Objects.equals(this.createdBy, policyAssignment.createdBy);
+        PolicyAssignment that = (PolicyAssignment) obj;
+        return Objects.equals(this.policyAssignmentType, that.policyAssignmentType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyFilter, that.policyFilter) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.customPolicy, that.customPolicy) && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.createdBy, that.createdBy);
     }
 
     @Override

@@ -194,22 +194,18 @@ public class ShowDeploymentJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentJobsResponse showDeploymentJobsResponse = (ShowDeploymentJobsResponse) o;
-        return Objects.equals(this.id, showDeploymentJobsResponse.id)
-            && Objects.equals(this.jobId, showDeploymentJobsResponse.jobId)
-            && Objects.equals(this.status, showDeploymentJobsResponse.status)
-            && Objects.equals(this.address, showDeploymentJobsResponse.address)
-            && Objects.equals(this.deployParameters, showDeploymentJobsResponse.deployParameters)
-            && Objects.equals(this.time, showDeploymentJobsResponse.time)
-            && Objects.equals(this.creatorName, showDeploymentJobsResponse.creatorName)
-            && Objects.equals(this.createdTime, showDeploymentJobsResponse.createdTime);
+        ShowDeploymentJobsResponse that = (ShowDeploymentJobsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.deployParameters, that.deployParameters) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

@@ -111,17 +111,17 @@ public class UpdateCorpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCorpRequest updateCorpRequest = (UpdateCorpRequest) o;
-        return Objects.equals(this.xRequestId, updateCorpRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateCorpRequest.acceptLanguage)
-            && Objects.equals(this.id, updateCorpRequest.id) && Objects.equals(this.body, updateCorpRequest.body);
+        UpdateCorpRequest that = (UpdateCorpRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

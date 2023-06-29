@@ -34,15 +34,15 @@ public class ShowSha256Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSha256Response showSha256Response = (ShowSha256Response) o;
-        return Objects.equals(this.value, showSha256Response.value);
+        ShowSha256Response that = (ShowSha256Response) obj;
+        return Objects.equals(this.value, that.value);
     }
 
     @Override

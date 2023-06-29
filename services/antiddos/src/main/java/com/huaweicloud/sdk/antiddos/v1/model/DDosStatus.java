@@ -187,22 +187,21 @@ public class DDosStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DDosStatus ddosStatus = (DDosStatus) o;
-        return Objects.equals(this.floatingIpId, ddosStatus.floatingIpId)
-            && Objects.equals(this.floatingIpAddress, ddosStatus.floatingIpAddress)
-            && Objects.equals(this.networkType, ddosStatus.networkType)
-            && Objects.equals(this.status, ddosStatus.status)
-            && Objects.equals(this.blackholeEndtime, ddosStatus.blackholeEndtime)
-            && Objects.equals(this.protectType, ddosStatus.protectType)
-            && Objects.equals(this.trafficThreshold, ddosStatus.trafficThreshold)
-            && Objects.equals(this.httpThreshold, ddosStatus.httpThreshold);
+        DDosStatus that = (DDosStatus) obj;
+        return Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.blackholeEndtime, that.blackholeEndtime)
+            && Objects.equals(this.protectType, that.protectType)
+            && Objects.equals(this.trafficThreshold, that.trafficThreshold)
+            && Objects.equals(this.httpThreshold, that.httpThreshold);
     }
 
     @Override

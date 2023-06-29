@@ -231,24 +231,22 @@ public class BandwidthInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthInfo bandwidthInfo = (BandwidthInfo) o;
-        return Objects.equals(this.beginTime, bandwidthInfo.beginTime)
-            && Objects.equals(this.endTime, bandwidthInfo.endTime)
-            && Objects.equals(this.currentTime, bandwidthInfo.currentTime)
-            && Objects.equals(this.bandwidth, bandwidthInfo.bandwidth)
-            && Objects.equals(this.nextExpandTime, bandwidthInfo.nextExpandTime)
-            && Objects.equals(this.expandCount, bandwidthInfo.expandCount)
-            && Objects.equals(this.expandEffectTime, bandwidthInfo.expandEffectTime)
-            && Objects.equals(this.expandIntervalTime, bandwidthInfo.expandIntervalTime)
-            && Objects.equals(this.maxExpandCount, bandwidthInfo.maxExpandCount)
-            && Objects.equals(this.taskRunning, bandwidthInfo.taskRunning);
+        BandwidthInfo that = (BandwidthInfo) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.currentTime, that.currentTime) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.nextExpandTime, that.nextExpandTime)
+            && Objects.equals(this.expandCount, that.expandCount)
+            && Objects.equals(this.expandEffectTime, that.expandEffectTime)
+            && Objects.equals(this.expandIntervalTime, that.expandIntervalTime)
+            && Objects.equals(this.maxExpandCount, that.maxExpandCount)
+            && Objects.equals(this.taskRunning, that.taskRunning);
     }
 
     @Override

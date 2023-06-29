@@ -65,22 +65,15 @@ public class PrepaidChangeChargeModeOption {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,19 +198,17 @@ public class PrepaidChangeChargeModeOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrepaidChangeChargeModeOption prepaidChangeChargeModeOption = (PrepaidChangeChargeModeOption) o;
-        return Objects.equals(this.includePublicip, prepaidChangeChargeModeOption.includePublicip)
-            && Objects.equals(this.periodType, prepaidChangeChargeModeOption.periodType)
-            && Objects.equals(this.periodNum, prepaidChangeChargeModeOption.periodNum)
-            && Objects.equals(this.autoRenew, prepaidChangeChargeModeOption.autoRenew)
-            && Objects.equals(this.autoPay, prepaidChangeChargeModeOption.autoPay);
+        PrepaidChangeChargeModeOption that = (PrepaidChangeChargeModeOption) obj;
+        return Objects.equals(this.includePublicip, that.includePublicip)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.autoRenew, that.autoRenew) && Objects.equals(this.autoPay, that.autoPay);
     }
 
     @Override

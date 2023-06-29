@@ -89,17 +89,16 @@ public class CreatePostgresqlDbUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostgresqlDbUserRequest createPostgresqlDbUserRequest = (CreatePostgresqlDbUserRequest) o;
-        return Objects.equals(this.xLanguage, createPostgresqlDbUserRequest.xLanguage)
-            && Objects.equals(this.instanceId, createPostgresqlDbUserRequest.instanceId)
-            && Objects.equals(this.body, createPostgresqlDbUserRequest.body);
+        CreatePostgresqlDbUserRequest that = (CreatePostgresqlDbUserRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

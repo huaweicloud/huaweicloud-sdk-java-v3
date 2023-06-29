@@ -81,17 +81,16 @@ public class TaskPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskPolicy taskPolicy = (TaskPolicy) o;
-        return Objects.equals(this.scheduleTime, taskPolicy.scheduleTime)
-            && Objects.equals(this.retryCount, taskPolicy.retryCount)
-            && Objects.equals(this.retryInterval, taskPolicy.retryInterval);
+        TaskPolicy that = (TaskPolicy) obj;
+        return Objects.equals(this.scheduleTime, that.scheduleTime) && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.retryInterval, that.retryInterval);
     }
 
     @Override

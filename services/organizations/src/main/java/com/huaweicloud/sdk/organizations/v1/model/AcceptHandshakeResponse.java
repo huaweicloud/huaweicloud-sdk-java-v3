@@ -44,15 +44,15 @@ public class AcceptHandshakeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceptHandshakeResponse acceptHandshakeResponse = (AcceptHandshakeResponse) o;
-        return Objects.equals(this.handshake, acceptHandshakeResponse.handshake);
+        AcceptHandshakeResponse that = (AcceptHandshakeResponse) obj;
+        return Objects.equals(this.handshake, that.handshake);
     }
 
     @Override

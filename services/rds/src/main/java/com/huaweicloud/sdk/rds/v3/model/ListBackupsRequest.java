@@ -87,22 +87,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupTypeEnum(value));
         }
 
         public static BackupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,22 +279,18 @@ public class ListBackupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupsRequest listBackupsRequest = (ListBackupsRequest) o;
-        return Objects.equals(this.xLanguage, listBackupsRequest.xLanguage)
-            && Objects.equals(this.instanceId, listBackupsRequest.instanceId)
-            && Objects.equals(this.backupId, listBackupsRequest.backupId)
-            && Objects.equals(this.backupType, listBackupsRequest.backupType)
-            && Objects.equals(this.offset, listBackupsRequest.offset)
-            && Objects.equals(this.limit, listBackupsRequest.limit)
-            && Objects.equals(this.beginTime, listBackupsRequest.beginTime)
-            && Objects.equals(this.endTime, listBackupsRequest.endTime);
+        ListBackupsRequest that = (ListBackupsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

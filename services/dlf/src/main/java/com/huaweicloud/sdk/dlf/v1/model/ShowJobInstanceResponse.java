@@ -207,22 +207,18 @@ public class ShowJobInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobInstanceResponse showJobInstanceResponse = (ShowJobInstanceResponse) o;
-        return Objects.equals(this.status, showJobInstanceResponse.status)
-            && Objects.equals(this.planTime, showJobInstanceResponse.planTime)
-            && Objects.equals(this.startTime, showJobInstanceResponse.startTime)
-            && Objects.equals(this.endTime, showJobInstanceResponse.endTime)
-            && Objects.equals(this.executeTime, showJobInstanceResponse.executeTime)
-            && Objects.equals(this.instancesId, showJobInstanceResponse.instancesId)
-            && Objects.equals(this.total, showJobInstanceResponse.total)
-            && Objects.equals(this.nodes, showJobInstanceResponse.nodes);
+        ShowJobInstanceResponse that = (ShowJobInstanceResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.planTime, that.planTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.executeTime, that.executeTime) && Objects.equals(this.instancesId, that.instancesId)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.nodes, that.nodes);
     }
 
     @Override

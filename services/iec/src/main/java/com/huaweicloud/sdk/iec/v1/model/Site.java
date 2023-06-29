@@ -316,21 +316,21 @@ public class Site {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Site site = (Site) o;
-        return Objects.equals(this.id, site.id) && Objects.equals(this.name, site.name)
-            && Objects.equals(this.city, site.city) && Objects.equals(this.i18nCity, site.i18nCity)
-            && Objects.equals(this.province, site.province) && Objects.equals(this.i18nProvince, site.i18nProvince)
-            && Objects.equals(this.area, site.area) && Objects.equals(this.i18nArea, site.i18nArea)
-            && Objects.equals(this.country, site.country) && Objects.equals(this.i18nCountry, site.i18nCountry)
-            && Objects.equals(this.status, site.status) && Objects.equals(this.pools, site.pools)
-            && Objects.equals(this.cityShortName, site.cityShortName);
+        Site that = (Site) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.i18nCity, that.i18nCity)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.i18nProvince, that.i18nProvince)
+            && Objects.equals(this.area, that.area) && Objects.equals(this.i18nArea, that.i18nArea)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.i18nCountry, that.i18nCountry)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.pools, that.pools)
+            && Objects.equals(this.cityShortName, that.cityShortName);
     }
 
     @Override

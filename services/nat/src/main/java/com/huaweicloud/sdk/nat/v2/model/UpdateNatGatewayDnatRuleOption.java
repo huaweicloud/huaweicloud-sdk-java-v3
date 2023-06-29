@@ -86,22 +86,15 @@ public class UpdateNatGatewayDnatRuleOption {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -323,24 +316,22 @@ public class UpdateNatGatewayDnatRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewayDnatRuleOption updateNatGatewayDnatRuleOption = (UpdateNatGatewayDnatRuleOption) o;
-        return Objects.equals(this.natGatewayId, updateNatGatewayDnatRuleOption.natGatewayId)
-            && Objects.equals(this.description, updateNatGatewayDnatRuleOption.description)
-            && Objects.equals(this.portId, updateNatGatewayDnatRuleOption.portId)
-            && Objects.equals(this.privateIp, updateNatGatewayDnatRuleOption.privateIp)
-            && Objects.equals(this.protocol, updateNatGatewayDnatRuleOption.protocol)
-            && Objects.equals(this.floatingIpId, updateNatGatewayDnatRuleOption.floatingIpId)
-            && Objects.equals(this.internalServicePort, updateNatGatewayDnatRuleOption.internalServicePort)
-            && Objects.equals(this.externalServicePort, updateNatGatewayDnatRuleOption.externalServicePort)
-            && Objects.equals(this.internalServicePortRange, updateNatGatewayDnatRuleOption.internalServicePortRange)
-            && Objects.equals(this.externalServicePortRange, updateNatGatewayDnatRuleOption.externalServicePortRange);
+        UpdateNatGatewayDnatRuleOption that = (UpdateNatGatewayDnatRuleOption) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.externalServicePort, that.externalServicePort)
+            && Objects.equals(this.internalServicePortRange, that.internalServicePortRange)
+            && Objects.equals(this.externalServicePortRange, that.externalServicePortRange);
     }
 
     @Override

@@ -121,19 +121,18 @@ public class ScalingInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingInstance scalingInstance = (ScalingInstance) o;
-        return Objects.equals(this.instanceName, scalingInstance.instanceName)
-            && Objects.equals(this.instanceId, scalingInstance.instanceId)
-            && Objects.equals(this.failedReason, scalingInstance.failedReason)
-            && Objects.equals(this.failedDetails, scalingInstance.failedDetails)
-            && Objects.equals(this.instanceConfig, scalingInstance.instanceConfig);
+        ScalingInstance that = (ScalingInstance) obj;
+        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.failedDetails, that.failedDetails)
+            && Objects.equals(this.instanceConfig, that.instanceConfig);
     }
 
     @Override

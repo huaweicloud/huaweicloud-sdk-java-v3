@@ -136,19 +136,16 @@ public class ImageHighresolutionMattingRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageHighresolutionMattingRequestBody imageHighresolutionMattingRequestBody =
-            (ImageHighresolutionMattingRequestBody) o;
-        return Objects.equals(this.input, imageHighresolutionMattingRequestBody.input)
-            && Objects.equals(this.output, imageHighresolutionMattingRequestBody.output)
-            && Objects.equals(this.callback, imageHighresolutionMattingRequestBody.callback)
-            && Objects.equals(this.config, imageHighresolutionMattingRequestBody.config);
+        ImageHighresolutionMattingRequestBody that = (ImageHighresolutionMattingRequestBody) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.callback, that.callback) && Objects.equals(this.config, that.config);
     }
 
     @Override

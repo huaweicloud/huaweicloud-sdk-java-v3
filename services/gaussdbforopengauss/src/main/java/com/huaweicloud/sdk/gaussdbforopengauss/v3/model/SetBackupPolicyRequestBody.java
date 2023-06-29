@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BackupPolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SetBackupPolicyRequestBody
  */
-public class SetBackupPolicyRequestBody  {
-
+public class SetBackupPolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_policy")
-    
+    @JsonProperty(value = "backup_policy")
 
     private BackupPolicy backupPolicy;
 
@@ -30,14 +22,13 @@ public class SetBackupPolicyRequestBody  {
     }
 
     public SetBackupPolicyRequestBody withBackupPolicy(Consumer<BackupPolicy> backupPolicySetter) {
-        if(this.backupPolicy == null ){
+        if (this.backupPolicy == null) {
             this.backupPolicy = new BackupPolicy();
             backupPolicySetter.accept(this.backupPolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupPolicy
@@ -51,23 +42,23 @@ public class SetBackupPolicyRequestBody  {
         this.backupPolicy = backupPolicy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBackupPolicyRequestBody setBackupPolicyRequestBody = (SetBackupPolicyRequestBody) o;
-        return Objects.equals(this.backupPolicy, setBackupPolicyRequestBody.backupPolicy);
+        SetBackupPolicyRequestBody that = (SetBackupPolicyRequestBody) obj;
+        return Objects.equals(this.backupPolicy, that.backupPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(backupPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class SetBackupPolicyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class SetBackupPolicyRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

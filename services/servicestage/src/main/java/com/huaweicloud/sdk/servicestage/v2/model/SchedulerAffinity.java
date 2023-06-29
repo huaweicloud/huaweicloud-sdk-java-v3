@@ -128,16 +128,16 @@ public class SchedulerAffinity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SchedulerAffinity schedulerAffinity = (SchedulerAffinity) o;
-        return Objects.equals(this.az, schedulerAffinity.az) && Objects.equals(this.node, schedulerAffinity.node)
-            && Objects.equals(this.application, schedulerAffinity.application);
+        SchedulerAffinity that = (SchedulerAffinity) obj;
+        return Objects.equals(this.az, that.az) && Objects.equals(this.node, that.node)
+            && Objects.equals(this.application, that.application);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class EnvVariableCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvVariableCreate envVariableCreate = (EnvVariableCreate) o;
-        return Objects.equals(this.variableValue, envVariableCreate.variableValue)
-            && Objects.equals(this.envId, envVariableCreate.envId)
-            && Objects.equals(this.groupId, envVariableCreate.groupId)
-            && Objects.equals(this.variableName, envVariableCreate.variableName);
+        EnvVariableCreate that = (EnvVariableCreate) obj;
+        return Objects.equals(this.variableValue, that.variableValue) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.variableName, that.variableName);
     }
 
     @Override

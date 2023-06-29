@@ -62,22 +62,15 @@ public class JudgementTaskRequestBody {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class JudgementTaskRequestBody {
             if (value == null) {
                 return null;
             }
-            RuntimeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeTypeEnum(value));
         }
 
         public static RuntimeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -277,22 +263,15 @@ public class JudgementTaskRequestBody {
             if (value == null) {
                 return null;
             }
-            OutputTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OutputTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OutputTypeEnum(value));
         }
 
         public static OutputTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OutputTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -474,22 +453,18 @@ public class JudgementTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JudgementTaskRequestBody judgementTaskRequestBody = (JudgementTaskRequestBody) o;
-        return Objects.equals(this.notifyUrl, judgementTaskRequestBody.notifyUrl)
-            && Objects.equals(this.codeType, judgementTaskRequestBody.codeType)
-            && Objects.equals(this.sourceCode, judgementTaskRequestBody.sourceCode)
-            && Objects.equals(this.description, judgementTaskRequestBody.description)
-            && Objects.equals(this.runtimeType, judgementTaskRequestBody.runtimeType)
-            && Objects.equals(this.timeout, judgementTaskRequestBody.timeout)
-            && Objects.equals(this.outputType, judgementTaskRequestBody.outputType)
-            && Objects.equals(this.testcases, judgementTaskRequestBody.testcases);
+        JudgementTaskRequestBody that = (JudgementTaskRequestBody) obj;
+        return Objects.equals(this.notifyUrl, that.notifyUrl) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.sourceCode, that.sourceCode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.runtimeType, that.runtimeType) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputType, that.outputType) && Objects.equals(this.testcases, that.testcases);
     }
 
     @Override

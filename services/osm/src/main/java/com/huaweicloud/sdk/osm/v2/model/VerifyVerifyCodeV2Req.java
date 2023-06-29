@@ -147,20 +147,17 @@ public class VerifyVerifyCodeV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VerifyVerifyCodeV2Req verifyVerifyCodeV2Req = (VerifyVerifyCodeV2Req) o;
-        return Objects.equals(this.verifyCode, verifyVerifyCodeV2Req.verifyCode)
-            && Objects.equals(this.contactValue, verifyVerifyCodeV2Req.contactValue)
-            && Objects.equals(this.contactWay, verifyVerifyCodeV2Req.contactWay)
-            && Objects.equals(this.areaCode, verifyVerifyCodeV2Req.areaCode)
-            && Objects.equals(this.xCustomerId, verifyVerifyCodeV2Req.xCustomerId)
-            && Objects.equals(this.customerId, verifyVerifyCodeV2Req.customerId);
+        VerifyVerifyCodeV2Req that = (VerifyVerifyCodeV2Req) obj;
+        return Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.contactValue, that.contactValue)
+            && Objects.equals(this.contactWay, that.contactWay) && Objects.equals(this.areaCode, that.areaCode)
+            && Objects.equals(this.xCustomerId, that.xCustomerId) && Objects.equals(this.customerId, that.customerId);
     }
 
     @Override

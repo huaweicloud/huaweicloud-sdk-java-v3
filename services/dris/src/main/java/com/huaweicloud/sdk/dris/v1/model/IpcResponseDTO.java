@@ -129,22 +129,15 @@ public class IpcResponseDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -420,26 +413,23 @@ public class IpcResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpcResponseDTO ipcResponseDTO = (IpcResponseDTO) o;
-        return Objects.equals(this.cameraId, ipcResponseDTO.cameraId)
-            && Objects.equals(this.v2xEdgeId, ipcResponseDTO.v2xEdgeId)
-            && Objects.equals(this.name, ipcResponseDTO.name) && Objects.equals(this.crossId, ipcResponseDTO.crossId)
-            && Objects.equals(this.focalType, ipcResponseDTO.focalType)
-            && Objects.equals(this.parentConnectCode, ipcResponseDTO.parentConnectCode)
-            && Objects.equals(this.connectCode, ipcResponseDTO.connectCode)
-            && Objects.equals(this.description, ipcResponseDTO.description)
-            && Objects.equals(this.esn, ipcResponseDTO.esn) && Objects.equals(this.ip, ipcResponseDTO.ip)
-            && Objects.equals(this.status, ipcResponseDTO.status)
-            && Objects.equals(this.createdTime, ipcResponseDTO.createdTime)
-            && Objects.equals(this.lastModifiedTime, ipcResponseDTO.lastModifiedTime)
-            && Objects.equals(this.lastOnlineTime, ipcResponseDTO.lastOnlineTime);
+        IpcResponseDTO that = (IpcResponseDTO) obj;
+        return Objects.equals(this.cameraId, that.cameraId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.crossId, that.crossId)
+            && Objects.equals(this.focalType, that.focalType)
+            && Objects.equals(this.parentConnectCode, that.parentConnectCode)
+            && Objects.equals(this.connectCode, that.connectCode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime);
     }
 
     @Override

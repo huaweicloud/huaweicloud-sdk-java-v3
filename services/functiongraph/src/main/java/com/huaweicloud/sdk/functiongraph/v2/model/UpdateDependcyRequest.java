@@ -65,16 +65,15 @@ public class UpdateDependcyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDependcyRequest updateDependcyRequest = (UpdateDependcyRequest) o;
-        return Objects.equals(this.dependId, updateDependcyRequest.dependId)
-            && Objects.equals(this.body, updateDependcyRequest.body);
+        UpdateDependcyRequest that = (UpdateDependcyRequest) obj;
+        return Objects.equals(this.dependId, that.dependId) && Objects.equals(this.body, that.body);
     }
 
     @Override

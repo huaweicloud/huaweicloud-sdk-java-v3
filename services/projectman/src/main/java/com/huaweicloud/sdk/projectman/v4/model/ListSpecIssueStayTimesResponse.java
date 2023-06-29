@@ -135,18 +135,16 @@ public class ListSpecIssueStayTimesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpecIssueStayTimesResponse listSpecIssueStayTimesResponse = (ListSpecIssueStayTimesResponse) o;
-        return Objects.equals(this.fails, listSpecIssueStayTimesResponse.fails)
-            && Objects.equals(this.data, listSpecIssueStayTimesResponse.data)
-            && Objects.equals(this.totalStayTime, listSpecIssueStayTimesResponse.totalStayTime)
-            && Objects.equals(this.total, listSpecIssueStayTimesResponse.total);
+        ListSpecIssueStayTimesResponse that = (ListSpecIssueStayTimesResponse) obj;
+        return Objects.equals(this.fails, that.fails) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.totalStayTime, that.totalStayTime) && Objects.equals(this.total, that.total);
     }
 
     @Override

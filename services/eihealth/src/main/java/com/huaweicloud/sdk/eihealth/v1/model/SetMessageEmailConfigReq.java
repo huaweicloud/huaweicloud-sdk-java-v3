@@ -143,20 +143,17 @@ public class SetMessageEmailConfigReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetMessageEmailConfigReq setMessageEmailConfigReq = (SetMessageEmailConfigReq) o;
-        return Objects.equals(this.server, setMessageEmailConfigReq.server)
-            && Objects.equals(this.subjectPrefix, setMessageEmailConfigReq.subjectPrefix)
-            && Objects.equals(this.userName, setMessageEmailConfigReq.userName)
-            && Objects.equals(this.password, setMessageEmailConfigReq.password)
-            && Objects.equals(this.email, setMessageEmailConfigReq.email)
-            && Objects.equals(this.language, setMessageEmailConfigReq.language);
+        SetMessageEmailConfigReq that = (SetMessageEmailConfigReq) obj;
+        return Objects.equals(this.server, that.server) && Objects.equals(this.subjectPrefix, that.subjectPrefix)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.language, that.language);
     }
 
     @Override

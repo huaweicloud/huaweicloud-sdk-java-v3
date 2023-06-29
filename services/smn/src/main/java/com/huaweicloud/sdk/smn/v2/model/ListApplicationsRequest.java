@@ -99,18 +99,16 @@ public class ListApplicationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationsRequest listApplicationsRequest = (ListApplicationsRequest) o;
-        return Objects.equals(this.offset, listApplicationsRequest.offset)
-            && Objects.equals(this.limit, listApplicationsRequest.limit)
-            && Objects.equals(this.name, listApplicationsRequest.name)
-            && Objects.equals(this.platform, listApplicationsRequest.platform);
+        ListApplicationsRequest that = (ListApplicationsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.platform, that.platform);
     }
 
     @Override

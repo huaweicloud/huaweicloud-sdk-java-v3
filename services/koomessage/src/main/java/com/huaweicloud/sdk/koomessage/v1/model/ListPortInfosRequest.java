@@ -216,23 +216,19 @@ public class ListPortInfosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortInfosRequest listPortInfosRequest = (ListPortInfosRequest) o;
-        return Objects.equals(this.type, listPortInfosRequest.type)
-            && Objects.equals(this.port, listPortInfosRequest.port)
-            && Objects.equals(this.portType, listPortInfosRequest.portType)
-            && Objects.equals(this.signSearch, listPortInfosRequest.signSearch)
-            && Objects.equals(this.offset, listPortInfosRequest.offset)
-            && Objects.equals(this.limit, listPortInfosRequest.limit)
-            && Objects.equals(this.startTime, listPortInfosRequest.startTime)
-            && Objects.equals(this.endTime, listPortInfosRequest.endTime)
-            && Objects.equals(this.pubName, listPortInfosRequest.pubName);
+        ListPortInfosRequest that = (ListPortInfosRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.portType, that.portType) && Objects.equals(this.signSearch, that.signSearch)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.pubName, that.pubName);
     }
 
     @Override

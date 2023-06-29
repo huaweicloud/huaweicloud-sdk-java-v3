@@ -105,22 +105,15 @@ public class MigprojectsResponseBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -381,27 +374,22 @@ public class MigprojectsResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigprojectsResponseBody migprojectsResponseBody = (MigprojectsResponseBody) o;
-        return Objects.equals(this.id, migprojectsResponseBody.id)
-            && Objects.equals(this.name, migprojectsResponseBody.name)
-            && Objects.equals(this.usePublicIp, migprojectsResponseBody.usePublicIp)
-            && Objects.equals(this.isdefault, migprojectsResponseBody.isdefault)
-            && Objects.equals(this.startTargetServer, migprojectsResponseBody.startTargetServer)
-            && Objects.equals(this.region, migprojectsResponseBody.region)
-            && Objects.equals(this.speedLimit, migprojectsResponseBody.speedLimit)
-            && Objects.equals(this.existServer, migprojectsResponseBody.existServer)
-            && Objects.equals(this.description, migprojectsResponseBody.description)
-            && Objects.equals(this.type, migprojectsResponseBody.type)
-            && Objects.equals(this.enterpriseProject, migprojectsResponseBody.enterpriseProject)
-            && Objects.equals(this.syncing, migprojectsResponseBody.syncing)
-            && Objects.equals(this.startNetworkCheck, migprojectsResponseBody.startNetworkCheck);
+        MigprojectsResponseBody that = (MigprojectsResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.usePublicIp, that.usePublicIp) && Objects.equals(this.isdefault, that.isdefault)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.enterpriseProject, that.enterpriseProject)
+            && Objects.equals(this.syncing, that.syncing)
+            && Objects.equals(this.startNetworkCheck, that.startNetworkCheck);
     }
 
     @Override

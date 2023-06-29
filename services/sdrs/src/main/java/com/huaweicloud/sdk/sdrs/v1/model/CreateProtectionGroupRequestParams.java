@@ -84,22 +84,15 @@ public class CreateProtectionGroupRequestParams {
             if (value == null) {
                 return null;
             }
-            DrTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DrTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DrTypeEnum(value));
         }
 
         public static DrTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DrTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -241,21 +234,19 @@ public class CreateProtectionGroupRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProtectionGroupRequestParams createProtectionGroupRequestParams = (CreateProtectionGroupRequestParams) o;
-        return Objects.equals(this.name, createProtectionGroupRequestParams.name)
-            && Objects.equals(this.description, createProtectionGroupRequestParams.description)
-            && Objects.equals(this.sourceAvailabilityZone, createProtectionGroupRequestParams.sourceAvailabilityZone)
-            && Objects.equals(this.targetAvailabilityZone, createProtectionGroupRequestParams.targetAvailabilityZone)
-            && Objects.equals(this.domainId, createProtectionGroupRequestParams.domainId)
-            && Objects.equals(this.sourceVpcId, createProtectionGroupRequestParams.sourceVpcId)
-            && Objects.equals(this.drType, createProtectionGroupRequestParams.drType);
+        CreateProtectionGroupRequestParams that = (CreateProtectionGroupRequestParams) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceAvailabilityZone, that.sourceAvailabilityZone)
+            && Objects.equals(this.targetAvailabilityZone, that.targetAvailabilityZone)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.sourceVpcId, that.sourceVpcId)
+            && Objects.equals(this.drType, that.drType);
     }
 
     @Override

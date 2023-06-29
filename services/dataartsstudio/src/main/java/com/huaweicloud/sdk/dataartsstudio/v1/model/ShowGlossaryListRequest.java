@@ -231,24 +231,19 @@ public class ShowGlossaryListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGlossaryListRequest showGlossaryListRequest = (ShowGlossaryListRequest) o;
-        return Objects.equals(this.workspace, showGlossaryListRequest.workspace)
-            && Objects.equals(this.type, showGlossaryListRequest.type)
-            && Objects.equals(this.name, showGlossaryListRequest.name)
-            && Objects.equals(this.createUser, showGlossaryListRequest.createUser)
-            && Objects.equals(this.start, showGlossaryListRequest.start)
-            && Objects.equals(this.end, showGlossaryListRequest.end)
-            && Objects.equals(this.limit, showGlossaryListRequest.limit)
-            && Objects.equals(this.offset, showGlossaryListRequest.offset)
-            && Objects.equals(this.sortBy, showGlossaryListRequest.sortBy)
-            && Objects.equals(this.sortOrder, showGlossaryListRequest.sortOrder);
+        ShowGlossaryListRequest that = (ShowGlossaryListRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.end, that.end)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortBy, that.sortBy) && Objects.equals(this.sortOrder, that.sortOrder);
     }
 
     @Override

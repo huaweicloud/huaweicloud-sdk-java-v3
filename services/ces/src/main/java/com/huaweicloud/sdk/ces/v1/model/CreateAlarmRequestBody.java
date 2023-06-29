@@ -104,22 +104,15 @@ public class CreateAlarmRequestBody {
             if (value == null) {
                 return null;
             }
-            AlarmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AlarmTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AlarmTypeEnum(value));
         }
 
         public static AlarmTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AlarmTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -433,26 +426,23 @@ public class CreateAlarmRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlarmRequestBody createAlarmRequestBody = (CreateAlarmRequestBody) o;
-        return Objects.equals(this.alarmName, createAlarmRequestBody.alarmName)
-            && Objects.equals(this.alarmDescription, createAlarmRequestBody.alarmDescription)
-            && Objects.equals(this.metric, createAlarmRequestBody.metric)
-            && Objects.equals(this.condition, createAlarmRequestBody.condition)
-            && Objects.equals(this.alarmEnabled, createAlarmRequestBody.alarmEnabled)
-            && Objects.equals(this.alarmActionEnabled, createAlarmRequestBody.alarmActionEnabled)
-            && Objects.equals(this.alarmLevel, createAlarmRequestBody.alarmLevel)
-            && Objects.equals(this.alarmType, createAlarmRequestBody.alarmType)
-            && Objects.equals(this.alarmActions, createAlarmRequestBody.alarmActions)
-            && Objects.equals(this.insufficientdataActions, createAlarmRequestBody.insufficientdataActions)
-            && Objects.equals(this.okActions, createAlarmRequestBody.okActions)
-            && Objects.equals(this.enterpriseProjectId, createAlarmRequestBody.enterpriseProjectId);
+        CreateAlarmRequestBody that = (CreateAlarmRequestBody) obj;
+        return Objects.equals(this.alarmName, that.alarmName)
+            && Objects.equals(this.alarmDescription, that.alarmDescription) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.alarmEnabled, that.alarmEnabled)
+            && Objects.equals(this.alarmActionEnabled, that.alarmActionEnabled)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.alarmType, that.alarmType)
+            && Objects.equals(this.alarmActions, that.alarmActions)
+            && Objects.equals(this.insufficientdataActions, that.insufficientdataActions)
+            && Objects.equals(this.okActions, that.okActions)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class UpdateDataIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataIpResponse updateDataIpResponse = (UpdateDataIpResponse) o;
-        return Objects.equals(this.workflowId, updateDataIpResponse.workflowId);
+        UpdateDataIpResponse that = (UpdateDataIpResponse) obj;
+        return Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

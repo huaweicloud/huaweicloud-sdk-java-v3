@@ -99,18 +99,17 @@ public class BindMfaDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindMfaDevice bindMfaDevice = (BindMfaDevice) o;
-        return Objects.equals(this.userId, bindMfaDevice.userId)
-            && Objects.equals(this.serialNumber, bindMfaDevice.serialNumber)
-            && Objects.equals(this.authenticationCodeFirst, bindMfaDevice.authenticationCodeFirst)
-            && Objects.equals(this.authenticationCodeSecond, bindMfaDevice.authenticationCodeSecond);
+        BindMfaDevice that = (BindMfaDevice) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.authenticationCodeFirst, that.authenticationCodeFirst)
+            && Objects.equals(this.authenticationCodeSecond, that.authenticationCodeSecond);
     }
 
     @Override

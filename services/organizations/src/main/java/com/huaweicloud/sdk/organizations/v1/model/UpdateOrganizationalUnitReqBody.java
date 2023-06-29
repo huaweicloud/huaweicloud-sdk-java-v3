@@ -33,15 +33,15 @@ public class UpdateOrganizationalUnitReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateOrganizationalUnitReqBody updateOrganizationalUnitReqBody = (UpdateOrganizationalUnitReqBody) o;
-        return Objects.equals(this.name, updateOrganizationalUnitReqBody.name);
+        UpdateOrganizationalUnitReqBody that = (UpdateOrganizationalUnitReqBody) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -95,22 +95,15 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,26 +380,21 @@ public class CreateEdgeApplicationVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationVersionResponse createEdgeApplicationVersionResponse =
-            (CreateEdgeApplicationVersionResponse) o;
-        return Objects.equals(this.edgeAppId, createEdgeApplicationVersionResponse.edgeAppId)
-            && Objects.equals(this.version, createEdgeApplicationVersionResponse.version)
-            && Objects.equals(this.description, createEdgeApplicationVersionResponse.description)
-            && Objects.equals(this.createdTime, createEdgeApplicationVersionResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, createEdgeApplicationVersionResponse.lastModifiedTime)
-            && Objects.equals(this.state, createEdgeApplicationVersionResponse.state)
-            && Objects.equals(this.command, createEdgeApplicationVersionResponse.command)
-            && Objects.equals(this.args, createEdgeApplicationVersionResponse.args)
-            && Objects.equals(this.containerSettings, createEdgeApplicationVersionResponse.containerSettings)
-            && Objects.equals(this.publishTime, createEdgeApplicationVersionResponse.publishTime)
-            && Objects.equals(this.offShelfTime, createEdgeApplicationVersionResponse.offShelfTime);
+        CreateEdgeApplicationVersionResponse that = (CreateEdgeApplicationVersionResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.offShelfTime, that.offShelfTime);
     }
 
     @Override

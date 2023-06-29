@@ -287,22 +287,22 @@ public class Share {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Share share = (Share) o;
-        return Objects.equals(this.availabilityZone, share.availabilityZone)
-            && Objects.equals(this.description, share.description)
-            && Objects.equals(this.enterpriseProjectId, share.enterpriseProjectId)
-            && Objects.equals(this.metadata, share.metadata) && Objects.equals(this.name, share.name)
-            && Objects.equals(this.securityGroupId, share.securityGroupId)
-            && Objects.equals(this.shareProto, share.shareProto) && Objects.equals(this.shareType, share.shareType)
-            && Objects.equals(this.size, share.size) && Objects.equals(this.subnetId, share.subnetId)
-            && Objects.equals(this.vpcId, share.vpcId) && Objects.equals(this.backupId, share.backupId);
+        Share that = (Share) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.shareProto, that.shareProto) && Objects.equals(this.shareType, that.shareType)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.backupId, that.backupId);
     }
 
     @Override

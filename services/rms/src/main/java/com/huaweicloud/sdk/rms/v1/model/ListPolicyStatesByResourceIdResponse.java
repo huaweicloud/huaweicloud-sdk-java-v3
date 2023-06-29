@@ -84,17 +84,15 @@ public class ListPolicyStatesByResourceIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyStatesByResourceIdResponse listPolicyStatesByResourceIdResponse =
-            (ListPolicyStatesByResourceIdResponse) o;
-        return Objects.equals(this.value, listPolicyStatesByResourceIdResponse.value)
-            && Objects.equals(this.pageInfo, listPolicyStatesByResourceIdResponse.pageInfo);
+        ListPolicyStatesByResourceIdResponse that = (ListPolicyStatesByResourceIdResponse) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

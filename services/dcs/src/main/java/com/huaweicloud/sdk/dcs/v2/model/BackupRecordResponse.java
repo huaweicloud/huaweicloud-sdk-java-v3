@@ -85,22 +85,15 @@ public class BackupRecordResponse {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackupTypeEnum(value));
         }
 
         public static BackupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -216,22 +209,15 @@ public class BackupRecordResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -480,27 +466,21 @@ public class BackupRecordResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupRecordResponse backupRecordResponse = (BackupRecordResponse) o;
-        return Objects.equals(this.backupId, backupRecordResponse.backupId)
-            && Objects.equals(this.period, backupRecordResponse.period)
-            && Objects.equals(this.backupName, backupRecordResponse.backupName)
-            && Objects.equals(this.instanceId, backupRecordResponse.instanceId)
-            && Objects.equals(this.size, backupRecordResponse.size)
-            && Objects.equals(this.backupType, backupRecordResponse.backupType)
-            && Objects.equals(this.createdAt, backupRecordResponse.createdAt)
-            && Objects.equals(this.updatedAt, backupRecordResponse.updatedAt)
-            && Objects.equals(this.progress, backupRecordResponse.progress)
-            && Objects.equals(this.errorCode, backupRecordResponse.errorCode)
-            && Objects.equals(this.remark, backupRecordResponse.remark)
-            && Objects.equals(this.status, backupRecordResponse.status)
-            && Objects.equals(this.isSupportRestore, backupRecordResponse.isSupportRestore);
+        BackupRecordResponse that = (BackupRecordResponse) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.backupName, that.backupName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.isSupportRestore, that.isSupportRestore);
     }
 
     @Override

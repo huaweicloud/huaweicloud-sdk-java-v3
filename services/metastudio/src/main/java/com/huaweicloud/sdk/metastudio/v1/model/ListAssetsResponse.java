@@ -77,16 +77,15 @@ public class ListAssetsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetsResponse listAssetsResponse = (ListAssetsResponse) o;
-        return Objects.equals(this.count, listAssetsResponse.count)
-            && Objects.equals(this.assets, listAssetsResponse.assets);
+        ListAssetsResponse that = (ListAssetsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.assets, that.assets);
     }
 
     @Override

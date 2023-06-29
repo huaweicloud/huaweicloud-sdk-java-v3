@@ -231,24 +231,23 @@ public class ContentCompareDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareDetailInfo contentCompareDetailInfo = (ContentCompareDetailInfo) o;
-        return Objects.equals(this.sourceDb, contentCompareDetailInfo.sourceDb)
-            && Objects.equals(this.targetDb, contentCompareDetailInfo.targetDb)
-            && Objects.equals(this.sourceTableName, contentCompareDetailInfo.sourceTableName)
-            && Objects.equals(this.targetTableName, contentCompareDetailInfo.targetTableName)
-            && Objects.equals(this.sourceRowNum, contentCompareDetailInfo.sourceRowNum)
-            && Objects.equals(this.targetRowNum, contentCompareDetailInfo.targetRowNum)
-            && Objects.equals(this.differenceRowNum, contentCompareDetailInfo.differenceRowNum)
-            && Objects.equals(this.lineCompareResult, contentCompareDetailInfo.lineCompareResult)
-            && Objects.equals(this.contentCompareResult, contentCompareDetailInfo.contentCompareResult)
-            && Objects.equals(this.message, contentCompareDetailInfo.message);
+        ContentCompareDetailInfo that = (ContentCompareDetailInfo) obj;
+        return Objects.equals(this.sourceDb, that.sourceDb) && Objects.equals(this.targetDb, that.targetDb)
+            && Objects.equals(this.sourceTableName, that.sourceTableName)
+            && Objects.equals(this.targetTableName, that.targetTableName)
+            && Objects.equals(this.sourceRowNum, that.sourceRowNum)
+            && Objects.equals(this.targetRowNum, that.targetRowNum)
+            && Objects.equals(this.differenceRowNum, that.differenceRowNum)
+            && Objects.equals(this.lineCompareResult, that.lineCompareResult)
+            && Objects.equals(this.contentCompareResult, that.contentCompareResult)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListPartnerBalancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerBalancesResponse listPartnerBalancesResponse = (ListPartnerBalancesResponse) o;
-        return Objects.equals(this.accountBalances, listPartnerBalancesResponse.accountBalances);
+        ListPartnerBalancesResponse that = (ListPartnerBalancesResponse) obj;
+        return Objects.equals(this.accountBalances, that.accountBalances);
     }
 
     @Override

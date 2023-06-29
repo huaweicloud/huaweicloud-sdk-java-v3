@@ -55,16 +55,16 @@ public class DeleteResDatasourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteResDatasourceRequest deleteResDatasourceRequest = (DeleteResDatasourceRequest) o;
-        return Objects.equals(this.workspaceId, deleteResDatasourceRequest.workspaceId)
-            && Objects.equals(this.datasourceId, deleteResDatasourceRequest.datasourceId);
+        DeleteResDatasourceRequest that = (DeleteResDatasourceRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.datasourceId, that.datasourceId);
     }
 
     @Override

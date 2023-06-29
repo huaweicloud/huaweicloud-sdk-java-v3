@@ -75,16 +75,15 @@ public class ListCommonPoolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCommonPoolsResponse listCommonPoolsResponse = (ListCommonPoolsResponse) o;
-        return Objects.equals(this.commonPools, listCommonPoolsResponse.commonPools)
-            && Objects.equals(this.requestId, listCommonPoolsResponse.requestId);
+        ListCommonPoolsResponse that = (ListCommonPoolsResponse) obj;
+        return Objects.equals(this.commonPools, that.commonPools) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

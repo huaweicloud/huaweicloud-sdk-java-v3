@@ -33,15 +33,15 @@ public class ShowPrivateZoneNameServerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateZoneNameServerRequest showPrivateZoneNameServerRequest = (ShowPrivateZoneNameServerRequest) o;
-        return Objects.equals(this.zoneId, showPrivateZoneNameServerRequest.zoneId);
+        ShowPrivateZoneNameServerRequest that = (ShowPrivateZoneNameServerRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId);
     }
 
     @Override

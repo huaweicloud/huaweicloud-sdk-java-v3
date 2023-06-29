@@ -140,18 +140,17 @@ public class ScopedTokenUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopedTokenUser scopedTokenUser = (ScopedTokenUser) o;
-        return Objects.equals(this.domain, scopedTokenUser.domain)
-            && Objects.equals(this.osFederation, scopedTokenUser.osFederation)
-            && Objects.equals(this.id, scopedTokenUser.id) && Objects.equals(this.name, scopedTokenUser.name)
-            && Objects.equals(this.passwordExpiresAt, scopedTokenUser.passwordExpiresAt);
+        ScopedTokenUser that = (ScopedTokenUser) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.osFederation, that.osFederation)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
     }
 
     @Override

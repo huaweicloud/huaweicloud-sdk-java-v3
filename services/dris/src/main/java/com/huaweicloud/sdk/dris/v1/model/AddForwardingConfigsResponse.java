@@ -97,17 +97,17 @@ public class AddForwardingConfigsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddForwardingConfigsResponse addForwardingConfigsResponse = (AddForwardingConfigsResponse) o;
-        return Objects.equals(this.forwardingType, addForwardingConfigsResponse.forwardingType)
-            && Objects.equals(this.kafkaConfig, addForwardingConfigsResponse.kafkaConfig)
-            && Objects.equals(this.mrsKafkaConfig, addForwardingConfigsResponse.mrsKafkaConfig);
+        AddForwardingConfigsResponse that = (AddForwardingConfigsResponse) obj;
+        return Objects.equals(this.forwardingType, that.forwardingType)
+            && Objects.equals(this.kafkaConfig, that.kafkaConfig)
+            && Objects.equals(this.mrsKafkaConfig, that.mrsKafkaConfig);
     }
 
     @Override

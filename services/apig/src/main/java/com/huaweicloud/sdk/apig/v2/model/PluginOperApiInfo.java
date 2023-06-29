@@ -74,16 +74,15 @@ public class PluginOperApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginOperApiInfo pluginOperApiInfo = (PluginOperApiInfo) o;
-        return Objects.equals(this.envId, pluginOperApiInfo.envId)
-            && Objects.equals(this.apiIds, pluginOperApiInfo.apiIds);
+        PluginOperApiInfo that = (PluginOperApiInfo) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.apiIds, that.apiIds);
     }
 
     @Override

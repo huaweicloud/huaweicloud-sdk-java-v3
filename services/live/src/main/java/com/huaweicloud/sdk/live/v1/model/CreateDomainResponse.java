@@ -67,22 +67,15 @@ public class CreateDomainResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainTypeEnum(value));
         }
 
         public static DomainTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class CreateDomainResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +249,15 @@ public class CreateDomainResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceAreaEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceAreaEnum(value));
         }
 
         public static ServiceAreaEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,23 +438,20 @@ public class CreateDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDomainResponse createDomainResponse = (CreateDomainResponse) o;
-        return Objects.equals(this.domain, createDomainResponse.domain)
-            && Objects.equals(this.domainType, createDomainResponse.domainType)
-            && Objects.equals(this.domainCname, createDomainResponse.domainCname)
-            && Objects.equals(this.region, createDomainResponse.region)
-            && Objects.equals(this.status, createDomainResponse.status)
-            && Objects.equals(this.createTime, createDomainResponse.createTime)
-            && Objects.equals(this.statusDescribe, createDomainResponse.statusDescribe)
-            && Objects.equals(this.serviceArea, createDomainResponse.serviceArea)
-            && Objects.equals(this.enterpriseProjectId, createDomainResponse.enterpriseProjectId);
+        CreateDomainResponse that = (CreateDomainResponse) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.domainCname, that.domainCname) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.statusDescribe, that.statusDescribe)
+            && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowDedicatedHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDedicatedHostResponse showDedicatedHostResponse = (ShowDedicatedHostResponse) o;
-        return Objects.equals(this.dedicatedHost, showDedicatedHostResponse.dedicatedHost);
+        ShowDedicatedHostResponse that = (ShowDedicatedHostResponse) obj;
+        return Objects.equals(this.dedicatedHost, that.dedicatedHost);
     }
 
     @Override

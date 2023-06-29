@@ -367,20 +367,20 @@ public class AppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppReq appReq = (AppReq) o;
-        return Objects.equals(this.name, appReq.name) && Objects.equals(this.version, appReq.version)
-            && Objects.equals(this.summary, appReq.summary) && Objects.equals(this.description, appReq.description)
-            && Objects.equals(this.labels, appReq.labels) && Objects.equals(this.image, appReq.image)
-            && Objects.equals(this.commands, appReq.commands) && Objects.equals(this.resources, appReq.resources)
-            && Objects.equals(this.inputs, appReq.inputs) && Objects.equals(this.outputs, appReq.outputs)
-            && Objects.equals(this.nodeLabels, appReq.nodeLabels) && Objects.equals(this.icon, appReq.icon);
+        AppReq that = (AppReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.commands, that.commands) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.inputs, that.inputs) && Objects.equals(this.outputs, that.outputs)
+            && Objects.equals(this.nodeLabels, that.nodeLabels) && Objects.equals(this.icon, that.icon);
     }
 
     @Override

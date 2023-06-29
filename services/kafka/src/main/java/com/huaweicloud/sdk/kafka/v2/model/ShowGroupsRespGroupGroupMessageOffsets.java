@@ -121,20 +121,18 @@ public class ShowGroupsRespGroupGroupMessageOffsets {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGroupsRespGroupGroupMessageOffsets showGroupsRespGroupGroupMessageOffsets =
-            (ShowGroupsRespGroupGroupMessageOffsets) o;
-        return Objects.equals(this.partition, showGroupsRespGroupGroupMessageOffsets.partition)
-            && Objects.equals(this.lag, showGroupsRespGroupGroupMessageOffsets.lag)
-            && Objects.equals(this.topic, showGroupsRespGroupGroupMessageOffsets.topic)
-            && Objects.equals(this.messageCurrentOffset, showGroupsRespGroupGroupMessageOffsets.messageCurrentOffset)
-            && Objects.equals(this.messageLogEndOffset, showGroupsRespGroupGroupMessageOffsets.messageLogEndOffset);
+        ShowGroupsRespGroupGroupMessageOffsets that = (ShowGroupsRespGroupGroupMessageOffsets) obj;
+        return Objects.equals(this.partition, that.partition) && Objects.equals(this.lag, that.lag)
+            && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.messageCurrentOffset, that.messageCurrentOffset)
+            && Objects.equals(this.messageLogEndOffset, that.messageLogEndOffset);
     }
 
     @Override

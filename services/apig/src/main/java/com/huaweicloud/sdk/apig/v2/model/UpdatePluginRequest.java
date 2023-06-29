@@ -87,17 +87,16 @@ public class UpdatePluginRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePluginRequest updatePluginRequest = (UpdatePluginRequest) o;
-        return Objects.equals(this.instanceId, updatePluginRequest.instanceId)
-            && Objects.equals(this.pluginId, updatePluginRequest.pluginId)
-            && Objects.equals(this.body, updatePluginRequest.body);
+        UpdatePluginRequest that = (UpdatePluginRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

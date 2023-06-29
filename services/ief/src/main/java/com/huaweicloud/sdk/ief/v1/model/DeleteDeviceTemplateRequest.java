@@ -55,16 +55,16 @@ public class DeleteDeviceTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeviceTemplateRequest deleteDeviceTemplateRequest = (DeleteDeviceTemplateRequest) o;
-        return Objects.equals(this.iefInstanceId, deleteDeviceTemplateRequest.iefInstanceId)
-            && Objects.equals(this.deviceTemplateId, deleteDeviceTemplateRequest.deviceTemplateId);
+        DeleteDeviceTemplateRequest that = (DeleteDeviceTemplateRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.deviceTemplateId, that.deviceTemplateId);
     }
 
     @Override

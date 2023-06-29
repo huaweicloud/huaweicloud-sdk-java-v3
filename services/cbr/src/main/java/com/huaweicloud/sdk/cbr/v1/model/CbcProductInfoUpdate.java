@@ -101,18 +101,17 @@ public class CbcProductInfoUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CbcProductInfoUpdate cbcProductInfoUpdate = (CbcProductInfoUpdate) o;
-        return Objects.equals(this.productId, cbcProductInfoUpdate.productId)
-            && Objects.equals(this.resourceSize, cbcProductInfoUpdate.resourceSize)
-            && Objects.equals(this.resourceSizeMeasureId, cbcProductInfoUpdate.resourceSizeMeasureId)
-            && Objects.equals(this.resourceSpecCode, cbcProductInfoUpdate.resourceSpecCode);
+        CbcProductInfoUpdate that = (CbcProductInfoUpdate) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.resourceSizeMeasureId, that.resourceSizeMeasureId)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override

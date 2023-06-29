@@ -66,22 +66,15 @@ public class OutputPolicy {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OutputPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OutputPolicyEnum(value));
         }
 
         public static OutputPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OutputPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -121,15 +114,15 @@ public class OutputPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputPolicy outputPolicy = (OutputPolicy) o;
-        return Objects.equals(this.outputPolicy, outputPolicy.outputPolicy);
+        OutputPolicy that = (OutputPolicy) obj;
+        return Objects.equals(this.outputPolicy, that.outputPolicy);
     }
 
     @Override

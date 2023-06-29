@@ -80,22 +80,15 @@ public class CreateListenerReq {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,22 +227,15 @@ public class CreateListenerReq {
             if (value == null) {
                 return null;
             }
-            TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsCiphersPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsCiphersPolicyEnum(value));
         }
 
         public static TlsCiphersPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsCiphersPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -555,29 +541,26 @@ public class CreateListenerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateListenerReq createListenerReq = (CreateListenerReq) o;
-        return Objects.equals(this.loadbalancerId, createListenerReq.loadbalancerId)
-            && Objects.equals(this.protocol, createListenerReq.protocol)
-            && Objects.equals(this.protocolPort, createListenerReq.protocolPort)
-            && Objects.equals(this.tenantId, createListenerReq.tenantId)
-            && Objects.equals(this.name, createListenerReq.name)
-            && Objects.equals(this.description, createListenerReq.description)
-            && Objects.equals(this.adminStateUp, createListenerReq.adminStateUp)
-            && Objects.equals(this.connectionLimit, createListenerReq.connectionLimit)
-            && Objects.equals(this.http2Enable, createListenerReq.http2Enable)
-            && Objects.equals(this.defaultPoolId, createListenerReq.defaultPoolId)
-            && Objects.equals(this.defaultTlsContainerRef, createListenerReq.defaultTlsContainerRef)
-            && Objects.equals(this.clientCaTlsContainerRef, createListenerReq.clientCaTlsContainerRef)
-            && Objects.equals(this.sniContainerRefs, createListenerReq.sniContainerRefs)
-            && Objects.equals(this.insertHeaders, createListenerReq.insertHeaders)
-            && Objects.equals(this.tlsCiphersPolicy, createListenerReq.tlsCiphersPolicy);
+        CreateListenerReq that = (CreateListenerReq) obj;
+        return Objects.equals(this.loadbalancerId, that.loadbalancerId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.connectionLimit, that.connectionLimit)
+            && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.defaultPoolId, that.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.sniContainerRefs, that.sniContainerRefs)
+            && Objects.equals(this.insertHeaders, that.insertHeaders)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy);
     }
 
     @Override

@@ -89,17 +89,16 @@ public class SendVeriCodeForChangePwdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendVeriCodeForChangePwdRequest sendVeriCodeForChangePwdRequest = (SendVeriCodeForChangePwdRequest) o;
-        return Objects.equals(this.xRequestID, sendVeriCodeForChangePwdRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, sendVeriCodeForChangePwdRequest.acceptLanguage)
-            && Objects.equals(this.body, sendVeriCodeForChangePwdRequest.body);
+        SendVeriCodeForChangePwdRequest that = (SendVeriCodeForChangePwdRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

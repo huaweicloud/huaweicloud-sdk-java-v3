@@ -77,17 +77,17 @@ public class ListParseDomainDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListParseDomainDetailsRequest listParseDomainDetailsRequest = (ListParseDomainDetailsRequest) o;
-        return Objects.equals(this.domainName, listParseDomainDetailsRequest.domainName)
-            && Objects.equals(this.enterpriseProjectId, listParseDomainDetailsRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listParseDomainDetailsRequest.fwInstanceId);
+        ListParseDomainDetailsRequest that = (ListParseDomainDetailsRequest) obj;
+        return Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

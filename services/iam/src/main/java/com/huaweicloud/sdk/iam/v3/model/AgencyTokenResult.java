@@ -296,22 +296,19 @@ public class AgencyTokenResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyTokenResult agencyTokenResult = (AgencyTokenResult) o;
-        return Objects.equals(this.methods, agencyTokenResult.methods)
-            && Objects.equals(this.expiresAt, agencyTokenResult.expiresAt)
-            && Objects.equals(this.issuedAt, agencyTokenResult.issuedAt)
-            && Objects.equals(this.assumedBy, agencyTokenResult.assumedBy)
-            && Objects.equals(this.catalog, agencyTokenResult.catalog)
-            && Objects.equals(this.domain, agencyTokenResult.domain)
-            && Objects.equals(this.project, agencyTokenResult.project)
-            && Objects.equals(this.roles, agencyTokenResult.roles) && Objects.equals(this.user, agencyTokenResult.user);
+        AgencyTokenResult that = (AgencyTokenResult) obj;
+        return Objects.equals(this.methods, that.methods) && Objects.equals(this.expiresAt, that.expiresAt)
+            && Objects.equals(this.issuedAt, that.issuedAt) && Objects.equals(this.assumedBy, that.assumedBy)
+            && Objects.equals(this.catalog, that.catalog) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.user, that.user);
     }
 
     @Override

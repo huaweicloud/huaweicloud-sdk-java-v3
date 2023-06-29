@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.CreateInstallCmdRequestDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class CreateInstallCmdRequest  {
-
+public class CreateInstallCmdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private CreateInstallCmdRequestDTO body;
 
@@ -41,9 +30,6 @@ public class CreateInstallCmdRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -57,15 +43,10 @@ public class CreateInstallCmdRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public CreateInstallCmdRequest withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 节点架构
@@ -79,22 +60,19 @@ public class CreateInstallCmdRequest  {
         this.arch = arch;
     }
 
-    
-
     public CreateInstallCmdRequest withBody(CreateInstallCmdRequestDTO body) {
         this.body = body;
         return this;
     }
 
     public CreateInstallCmdRequest withBody(Consumer<CreateInstallCmdRequestDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateInstallCmdRequestDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class CreateInstallCmdRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstallCmdRequest createInstallCmdRequest = (CreateInstallCmdRequest) o;
-        return Objects.equals(this.edgeNodeId, createInstallCmdRequest.edgeNodeId) &&
-            Objects.equals(this.arch, createInstallCmdRequest.arch) &&
-            Objects.equals(this.body, createInstallCmdRequest.body);
+        CreateInstallCmdRequest that = (CreateInstallCmdRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, arch, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class CreateInstallCmdRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class CreateInstallCmdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

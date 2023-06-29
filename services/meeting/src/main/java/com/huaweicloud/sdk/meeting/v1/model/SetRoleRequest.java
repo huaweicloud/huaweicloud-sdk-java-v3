@@ -111,18 +111,18 @@ public class SetRoleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRoleRequest setRoleRequest = (SetRoleRequest) o;
-        return Objects.equals(this.conferenceID, setRoleRequest.conferenceID)
-            && Objects.equals(this.participantID, setRoleRequest.participantID)
-            && Objects.equals(this.xConferenceAuthorization, setRoleRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, setRoleRequest.body);
+        SetRoleRequest that = (SetRoleRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

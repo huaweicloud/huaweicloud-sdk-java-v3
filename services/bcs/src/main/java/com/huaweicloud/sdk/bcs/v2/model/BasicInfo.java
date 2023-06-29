@@ -721,44 +721,37 @@ public class BasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicInfo basicInfo = (BasicInfo) o;
-        return Objects.equals(this.id, basicInfo.id) && Objects.equals(this.name, basicInfo.name)
-            && Objects.equals(this.version, basicInfo.version)
-            && Objects.equals(this.serviceType, basicInfo.serviceType)
-            && Objects.equals(this.purchaseType, basicInfo.purchaseType)
-            && Objects.equals(this.signAlgorithm, basicInfo.signAlgorithm)
-            && Objects.equals(this.consensus, basicInfo.consensus)
-            && Objects.equals(this.chargingMode, basicInfo.chargingMode)
-            && Objects.equals(this.versionType, basicInfo.versionType)
-            && Objects.equals(this.databaseType, basicInfo.databaseType)
-            && Objects.equals(this.clusterId, basicInfo.clusterId)
-            && Objects.equals(this.clusterName, basicInfo.clusterName)
-            && Objects.equals(this.clusterType, basicInfo.clusterType)
-            && Objects.equals(this.clusterAz, basicInfo.clusterAz)
-            && Objects.equals(this.createdTime, basicInfo.createdTime)
-            && Objects.equals(this.deployType, basicInfo.deployType)
-            && Objects.equals(this.orderFadeEnabled, basicInfo.orderFadeEnabled)
-            && Objects.equals(this.isCrossRegion, basicInfo.isCrossRegion)
-            && Objects.equals(this.isSupportRollback, basicInfo.isSupportRollback)
-            && Objects.equals(this.isSupportRestful, basicInfo.isSupportRestful)
-            && Objects.equals(this.isSupportTc3, basicInfo.isSupportTc3)
-            && Objects.equals(this.isOldService, basicInfo.isOldService)
-            && Objects.equals(this.oldServiceVersion, basicInfo.oldServiceVersion)
-            && Objects.equals(this.agentPortalAddrs, basicInfo.agentPortalAddrs)
-            && Objects.equals(this.status, basicInfo.status)
-            && Objects.equals(this.processStatus, basicInfo.processStatus)
-            && Objects.equals(this.orderStatus, basicInfo.orderStatus)
-            && Objects.equals(this.orderFadeCache, basicInfo.orderFadeCache)
-            && Objects.equals(this.deployStatus, basicInfo.deployStatus)
-            && Objects.equals(this.blockInfo, basicInfo.blockInfo)
-            && Objects.equals(this.clusterPlatformType, basicInfo.clusterPlatformType);
+        BasicInfo that = (BasicInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.purchaseType, that.purchaseType)
+            && Objects.equals(this.signAlgorithm, that.signAlgorithm) && Objects.equals(this.consensus, that.consensus)
+            && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.versionType, that.versionType)
+            && Objects.equals(this.databaseType, that.databaseType) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.clusterAz, that.clusterAz) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.orderFadeEnabled, that.orderFadeEnabled)
+            && Objects.equals(this.isCrossRegion, that.isCrossRegion)
+            && Objects.equals(this.isSupportRollback, that.isSupportRollback)
+            && Objects.equals(this.isSupportRestful, that.isSupportRestful)
+            && Objects.equals(this.isSupportTc3, that.isSupportTc3)
+            && Objects.equals(this.isOldService, that.isOldService)
+            && Objects.equals(this.oldServiceVersion, that.oldServiceVersion)
+            && Objects.equals(this.agentPortalAddrs, that.agentPortalAddrs) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.processStatus, that.processStatus)
+            && Objects.equals(this.orderStatus, that.orderStatus)
+            && Objects.equals(this.orderFadeCache, that.orderFadeCache)
+            && Objects.equals(this.deployStatus, that.deployStatus) && Objects.equals(this.blockInfo, that.blockInfo)
+            && Objects.equals(this.clusterPlatformType, that.clusterPlatformType);
     }
 
     @Override

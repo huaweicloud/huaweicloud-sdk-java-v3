@@ -1,50 +1,40 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.EdgesetPath;
-import com.huaweicloud.sdk.ges.v1.model.SchemaPath;
-import com.huaweicloud.sdk.ges.v1.model.VertexsetPath;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 任务详情
  */
-public class JobDetail  {
-
+public class JobDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaPath")
-    
+    @JsonProperty(value = "schemaPath")
+
     private List<SchemaPath> schemaPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetPath")
-    
+    @JsonProperty(value = "edgesetPath")
+
     private List<EdgesetPath> edgesetPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetPath")
-    
+    @JsonProperty(value = "vertexsetPath")
+
     private List<VertexsetPath> vertexsetPath = null;
-    
+
     public JobDetail withSchemaPath(List<SchemaPath> schemaPath) {
         this.schemaPath = schemaPath;
         return this;
     }
 
-    
     public JobDetail addSchemaPathItem(SchemaPath schemaPathItem) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         this.schemaPath.add(schemaPathItem);
@@ -52,7 +42,7 @@ public class JobDetail  {
     }
 
     public JobDetail withSchemaPath(Consumer<List<SchemaPath>> schemaPathSetter) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         schemaPathSetter.accept(this.schemaPath);
@@ -71,16 +61,13 @@ public class JobDetail  {
         this.schemaPath = schemaPath;
     }
 
-    
-
     public JobDetail withEdgesetPath(List<EdgesetPath> edgesetPath) {
         this.edgesetPath = edgesetPath;
         return this;
     }
 
-    
     public JobDetail addEdgesetPathItem(EdgesetPath edgesetPathItem) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         this.edgesetPath.add(edgesetPathItem);
@@ -88,7 +75,7 @@ public class JobDetail  {
     }
 
     public JobDetail withEdgesetPath(Consumer<List<EdgesetPath>> edgesetPathSetter) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         edgesetPathSetter.accept(this.edgesetPath);
@@ -107,16 +94,13 @@ public class JobDetail  {
         this.edgesetPath = edgesetPath;
     }
 
-    
-
     public JobDetail withVertexsetPath(List<VertexsetPath> vertexsetPath) {
         this.vertexsetPath = vertexsetPath;
         return this;
     }
 
-    
     public JobDetail addVertexsetPathItem(VertexsetPath vertexsetPathItem) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         this.vertexsetPath.add(vertexsetPathItem);
@@ -124,7 +108,7 @@ public class JobDetail  {
     }
 
     public JobDetail withVertexsetPath(Consumer<List<VertexsetPath>> vertexsetPathSetter) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         vertexsetPathSetter.accept(this.vertexsetPath);
@@ -143,25 +127,24 @@ public class JobDetail  {
         this.vertexsetPath = vertexsetPath;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDetail jobDetail = (JobDetail) o;
-        return Objects.equals(this.schemaPath, jobDetail.schemaPath) &&
-            Objects.equals(this.edgesetPath, jobDetail.edgesetPath) &&
-            Objects.equals(this.vertexsetPath, jobDetail.vertexsetPath);
+        JobDetail that = (JobDetail) obj;
+        return Objects.equals(this.schemaPath, that.schemaPath) && Objects.equals(this.edgesetPath, that.edgesetPath)
+            && Objects.equals(this.vertexsetPath, that.vertexsetPath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(schemaPath, edgesetPath, vertexsetPath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -172,6 +155,7 @@ public class JobDetail  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -182,8 +166,5 @@ public class JobDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

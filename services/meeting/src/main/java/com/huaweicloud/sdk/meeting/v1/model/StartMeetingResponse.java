@@ -56,16 +56,15 @@ public class StartMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartMeetingResponse startMeetingResponse = (StartMeetingResponse) o;
-        return Objects.equals(this.uuid, startMeetingResponse.uuid)
-            && Objects.equals(this.regionIP, startMeetingResponse.regionIP);
+        StartMeetingResponse that = (StartMeetingResponse) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.regionIP, that.regionIP);
     }
 
     @Override

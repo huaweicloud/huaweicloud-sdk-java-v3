@@ -1,68 +1,52 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowGaussMySqlBackupListRequest  {
-
+public class ShowGaussMySqlBackupListRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_type")
-    
+    @JsonProperty(value = "backup_type")
 
     private String backupType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
@@ -71,15 +55,12 @@ public class ShowGaussMySqlBackupListRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -88,15 +69,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -110,15 +86,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -132,15 +103,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.backupId = backupId;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withBackupType(String backupType) {
         this.backupType = backupType;
         return this;
     }
-
-    
-
 
     /**
      * 备份类型，取值：  - \"auto\"：自动全量备份。 - \"manual\"：手动全量备份。
@@ -154,15 +120,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.backupType = backupType;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -176,15 +137,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
@@ -198,15 +154,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询开始时间，格式为“yyyy-mm-ddThh:mm:ssZ”。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -220,15 +171,10 @@ public class ShowGaussMySqlBackupListRequest  {
         this.beginTime = beginTime;
     }
 
-    
-
     public ShowGaussMySqlBackupListRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询结束时间，格式为“yyyy-mm-ddThh:mm:ssZ”，且大于查询开始时间。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -242,30 +188,26 @@ public class ShowGaussMySqlBackupListRequest  {
         this.endTime = endTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlBackupListRequest showGaussMySqlBackupListRequest = (ShowGaussMySqlBackupListRequest) o;
-        return Objects.equals(this.xLanguage, showGaussMySqlBackupListRequest.xLanguage) &&
-            Objects.equals(this.instanceId, showGaussMySqlBackupListRequest.instanceId) &&
-            Objects.equals(this.backupId, showGaussMySqlBackupListRequest.backupId) &&
-            Objects.equals(this.backupType, showGaussMySqlBackupListRequest.backupType) &&
-            Objects.equals(this.offset, showGaussMySqlBackupListRequest.offset) &&
-            Objects.equals(this.limit, showGaussMySqlBackupListRequest.limit) &&
-            Objects.equals(this.beginTime, showGaussMySqlBackupListRequest.beginTime) &&
-            Objects.equals(this.endTime, showGaussMySqlBackupListRequest.endTime);
+        ShowGaussMySqlBackupListRequest that = (ShowGaussMySqlBackupListRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, backupId, backupType, offset, limit, beginTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -281,6 +223,7 @@ public class ShowGaussMySqlBackupListRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -291,8 +234,5 @@ public class ShowGaussMySqlBackupListRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

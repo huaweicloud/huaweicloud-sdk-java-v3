@@ -77,17 +77,16 @@ public class DeleteClustersTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteClustersTagsRequest deleteClustersTagsRequest = (DeleteClustersTagsRequest) o;
-        return Objects.equals(this.clusterId, deleteClustersTagsRequest.clusterId)
-            && Objects.equals(this.resourceType, deleteClustersTagsRequest.resourceType)
-            && Objects.equals(this.key, deleteClustersTagsRequest.key);
+        DeleteClustersTagsRequest that = (DeleteClustersTagsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.key, that.key);
     }
 
     @Override

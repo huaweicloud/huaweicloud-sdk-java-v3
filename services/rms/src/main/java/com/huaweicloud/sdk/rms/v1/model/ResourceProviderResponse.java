@@ -118,18 +118,17 @@ public class ResourceProviderResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceProviderResponse resourceProviderResponse = (ResourceProviderResponse) o;
-        return Objects.equals(this.provider, resourceProviderResponse.provider)
-            && Objects.equals(this.displayName, resourceProviderResponse.displayName)
-            && Objects.equals(this.categoryDisplayName, resourceProviderResponse.categoryDisplayName)
-            && Objects.equals(this.resourceTypes, resourceProviderResponse.resourceTypes);
+        ResourceProviderResponse that = (ResourceProviderResponse) obj;
+        return Objects.equals(this.provider, that.provider) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.categoryDisplayName, that.categoryDisplayName)
+            && Objects.equals(this.resourceTypes, that.resourceTypes);
     }
 
     @Override

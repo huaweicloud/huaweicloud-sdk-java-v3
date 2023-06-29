@@ -74,16 +74,15 @@ public class CreateDeploymentJobsParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeploymentJobsParams createDeploymentJobsParams = (CreateDeploymentJobsParams) o;
-        return Objects.equals(this.function, createDeploymentJobsParams.function)
-            && Objects.equals(this.cci, createDeploymentJobsParams.cci);
+        CreateDeploymentJobsParams that = (CreateDeploymentJobsParams) obj;
+        return Objects.equals(this.function, that.function) && Objects.equals(this.cci, that.cci);
     }
 
     @Override

@@ -165,20 +165,18 @@ public class JobInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobInstance jobInstance = (JobInstance) o;
-        return Objects.equals(this.jobName, jobInstance.jobName) && Objects.equals(this.status, jobInstance.status)
-            && Objects.equals(this.planTime, jobInstance.planTime)
-            && Objects.equals(this.startTime, jobInstance.startTime)
-            && Objects.equals(this.endTime, jobInstance.endTime)
-            && Objects.equals(this.executeTime, jobInstance.executeTime)
-            && Objects.equals(this.instancesId, jobInstance.instancesId);
+        JobInstance that = (JobInstance) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.planTime, that.planTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.executeTime, that.executeTime)
+            && Objects.equals(this.instancesId, that.instancesId);
     }
 
     @Override

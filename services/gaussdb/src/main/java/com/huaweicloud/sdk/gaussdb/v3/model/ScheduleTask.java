@@ -1,91 +1,72 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ScheduleTask
  */
-public class ScheduleTask  {
-
+public class ScheduleTask {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_status")
-    
+    @JsonProperty(value = "instance_status")
 
     private String instanceStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_status")
-    
+    @JsonProperty(value = "job_status")
 
     private String jobStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_type")
-    
+    @JsonProperty(value = "datastore_type")
 
     private String datastoreType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="target_config")
-    
+    @JsonProperty(value = "target_config")
 
     private Object targetConfig;
 
@@ -93,9 +74,6 @@ public class ScheduleTask  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -109,15 +87,10 @@ public class ScheduleTask  {
         this.jobId = jobId;
     }
 
-    
-
     public ScheduleTask withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -131,15 +104,10 @@ public class ScheduleTask  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ScheduleTask withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。
@@ -153,15 +121,10 @@ public class ScheduleTask  {
         this.instanceName = instanceName;
     }
 
-    
-
     public ScheduleTask withInstanceStatus(String instanceStatus) {
         this.instanceStatus = instanceStatus;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。 取值： - 值为“createfail”，表示实例创建失败。 - 值为“creating”，表示实例创建中。 - 值为“normal”，表示实例正常。 - 值为“abnormal”，表示实例异常。 - 值为“deleted”，表示实例已删除。
@@ -175,15 +138,10 @@ public class ScheduleTask  {
         this.instanceStatus = instanceStatus;
     }
 
-    
-
     public ScheduleTask withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 租户在某一region下的project ID。
@@ -197,15 +155,10 @@ public class ScheduleTask  {
         this.projectId = projectId;
     }
 
-    
-
     public ScheduleTask withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。取值有：    - \"CreateGaussDBforMySQLInstance\"表示创建实例。    - \"RestoreGaussDBforMySQLNewInstance\"表示恢复新实例。    - \"AddGaussDBforMySQLNodes\"表示添加节点。    - \"DeleteGaussDBforMySQLNode\"表示删除节点。    - \"RebootGaussDBforMySQLInstance\"表示重启实例。    - \"ModifyGaussDBforMySQLPort\"表示修改实例端口。    - \"ModifyGaussDBforMySQLSecurityGroup\"表示修改实例安全组。    - \"ResizeGaussDBforMySQLFlavor\"表示实例规格变更。    - \"SwitchoverGaussDBforMySQLMasterNode\"表示只读升主。    - \"GaussDBforMySQLBindEIP\"表示绑定弹性公网IP。    - \"GaussDBforMySQLUnbindEIP\"表示解绑弹性公网IP。    - \"RenameGaussDBforMySQLInstance\"表示修改实例名称。    - \"DeleteGaussDBforMySQLInstance\"表示删除实例集群。    - \"UpgradeGaussDBforMySQLDatabaseVersion\"表示版本升级。    - \"EnlargeGaussDBforMySQLProxy\"表示实例的数据库代理节点扩容。    - \"OpenGaussDBforMySQLProxy\"表示开启实例的数据库代理。    - \"CloseGaussDBforMySQLProxy\"表示关闭实例的数据库代理。    - \"GaussdbforMySQLModifyProxyIp\"表示修改数据库代理ip。    - \"ScaleGaussDBforMySQLProxy\"表示实例的数据库代理节点规格变更。    - \"GaussDBforMySQLModifyInstanceMetricExtend\"表示实例秒级监控。    - \"GaussDBforMySQLModifyInstanceDataVip\"表示修改实例数据Vip。    - \"GaussDBforMySQLSwitchSSL\"表示切换实例SSL开关。    - \"GaussDBforMySQLModifyProxyConsist\"表示修改代理一致性。    - \"GaussDBforMySQLModifyProxyWeight\"表示修改代理权重。
@@ -219,15 +172,10 @@ public class ScheduleTask  {
         this.jobName = jobName;
     }
 
-    
-
     public ScheduleTask withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 说明：创建时返回值为空，数据库实例创建成功后该值不为空
@@ -241,15 +189,10 @@ public class ScheduleTask  {
         this.createTime = createTime;
     }
 
-    
-
     public ScheduleTask withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务开始时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 说明：创建时返回值为空，数据库实例创建成功后该值不为空
@@ -263,15 +206,10 @@ public class ScheduleTask  {
         this.startTime = startTime;
     }
 
-    
-
     public ScheduleTask withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务结束时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 说明：创建时返回值为空，数据库实例创建成功后该值不为空
@@ -285,15 +223,10 @@ public class ScheduleTask  {
         this.endTime = endTime;
     }
 
-    
-
     public ScheduleTask withJobStatus(String jobStatus) {
         this.jobStatus = jobStatus;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行状态。 取值： - 值为“Pending”，表示延时任务，未执行。 - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。
@@ -307,15 +240,10 @@ public class ScheduleTask  {
         this.jobStatus = jobStatus;
     }
 
-    
-
     public ScheduleTask withDatastoreType(String datastoreType) {
         this.datastoreType = datastoreType;
         return this;
     }
-
-    
-
 
     /**
      * 数据库类型。
@@ -329,15 +257,10 @@ public class ScheduleTask  {
         this.datastoreType = datastoreType;
     }
 
-    
-
     public ScheduleTask withTargetConfig(Object targetConfig) {
         this.targetConfig = targetConfig;
         return this;
     }
-
-    
-
 
     /**
      * 实例配置相关信息，比如规格等。
@@ -351,34 +274,41 @@ public class ScheduleTask  {
         this.targetConfig = targetConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScheduleTask scheduleTask = (ScheduleTask) o;
-        return Objects.equals(this.jobId, scheduleTask.jobId) &&
-            Objects.equals(this.instanceId, scheduleTask.instanceId) &&
-            Objects.equals(this.instanceName, scheduleTask.instanceName) &&
-            Objects.equals(this.instanceStatus, scheduleTask.instanceStatus) &&
-            Objects.equals(this.projectId, scheduleTask.projectId) &&
-            Objects.equals(this.jobName, scheduleTask.jobName) &&
-            Objects.equals(this.createTime, scheduleTask.createTime) &&
-            Objects.equals(this.startTime, scheduleTask.startTime) &&
-            Objects.equals(this.endTime, scheduleTask.endTime) &&
-            Objects.equals(this.jobStatus, scheduleTask.jobStatus) &&
-            Objects.equals(this.datastoreType, scheduleTask.datastoreType) &&
-            Objects.equals(this.targetConfig, scheduleTask.targetConfig);
+        ScheduleTask that = (ScheduleTask) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceStatus, that.instanceStatus)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.jobStatus, that.jobStatus)
+            && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.targetConfig, that.targetConfig);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, instanceId, instanceName, instanceStatus, projectId, jobName, createTime, startTime, endTime, jobStatus, datastoreType, targetConfig);
+        return Objects.hash(jobId,
+            instanceId,
+            instanceName,
+            instanceStatus,
+            projectId,
+            jobName,
+            createTime,
+            startTime,
+            endTime,
+            jobStatus,
+            datastoreType,
+            targetConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,6 +328,7 @@ public class ScheduleTask  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -408,8 +339,5 @@ public class ScheduleTask  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

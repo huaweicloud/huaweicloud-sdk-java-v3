@@ -118,18 +118,16 @@ public class LifecycleProcessParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LifecycleProcessParameter lifecycleProcessParameter = (LifecycleProcessParameter) o;
-        return Objects.equals(this.command, lifecycleProcessParameter.command)
-            && Objects.equals(this.host, lifecycleProcessParameter.host)
-            && Objects.equals(this.port, lifecycleProcessParameter.port)
-            && Objects.equals(this.path, lifecycleProcessParameter.path);
+        LifecycleProcessParameter that = (LifecycleProcessParameter) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.path, that.path);
     }
 
     @Override

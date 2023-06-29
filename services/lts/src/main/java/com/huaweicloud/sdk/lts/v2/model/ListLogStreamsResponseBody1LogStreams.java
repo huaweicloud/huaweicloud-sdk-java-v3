@@ -144,20 +144,18 @@ public class ListLogStreamsResponseBody1LogStreams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogStreamsResponseBody1LogStreams listLogStreamsResponseBody1LogStreams =
-            (ListLogStreamsResponseBody1LogStreams) o;
-        return Objects.equals(this.creationTime, listLogStreamsResponseBody1LogStreams.creationTime)
-            && Objects.equals(this.logStreamId, listLogStreamsResponseBody1LogStreams.logStreamId)
-            && Objects.equals(this.logStreamName, listLogStreamsResponseBody1LogStreams.logStreamName)
-            && Objects.equals(this.tag, listLogStreamsResponseBody1LogStreams.tag)
-            && Objects.equals(this.filterCount, listLogStreamsResponseBody1LogStreams.filterCount);
+        ListLogStreamsResponseBody1LogStreams that = (ListLogStreamsResponseBody1LogStreams) obj;
+        return Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.filterCount, that.filterCount);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ShowPartitionMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartitionMessageResponse showPartitionMessageResponse = (ShowPartitionMessageResponse) o;
-        return Objects.equals(this.message, showPartitionMessageResponse.message);
+        ShowPartitionMessageResponse that = (ShowPartitionMessageResponse) obj;
+        return Objects.equals(this.message, that.message);
     }
 
     @Override

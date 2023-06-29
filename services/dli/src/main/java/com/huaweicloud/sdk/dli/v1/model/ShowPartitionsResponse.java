@@ -88,17 +88,16 @@ public class ShowPartitionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartitionsResponse showPartitionsResponse = (ShowPartitionsResponse) o;
-        return Objects.equals(this.isSuccess, showPartitionsResponse.isSuccess)
-            && Objects.equals(this.message, showPartitionsResponse.message)
-            && Objects.equals(this.partitions, showPartitionsResponse.partitions);
+        ShowPartitionsResponse that = (ShowPartitionsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.partitions, that.partitions);
     }
 
     @Override

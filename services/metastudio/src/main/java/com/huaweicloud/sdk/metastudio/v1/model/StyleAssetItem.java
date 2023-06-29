@@ -65,22 +65,15 @@ public class StyleAssetItem {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetTypeEnum(value));
         }
 
         public static AssetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class StyleAssetItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleAssetItem styleAssetItem = (StyleAssetItem) o;
-        return Objects.equals(this.assetId, styleAssetItem.assetId)
-            && Objects.equals(this.assetType, styleAssetItem.assetType)
-            && Objects.equals(this.coverUrl, styleAssetItem.coverUrl);
+        StyleAssetItem that = (StyleAssetItem) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetType, that.assetType)
+            && Objects.equals(this.coverUrl, that.coverUrl);
     }
 
     @Override

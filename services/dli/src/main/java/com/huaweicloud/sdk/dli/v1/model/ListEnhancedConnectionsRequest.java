@@ -121,19 +121,17 @@ public class ListEnhancedConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnhancedConnectionsRequest listEnhancedConnectionsRequest = (ListEnhancedConnectionsRequest) o;
-        return Objects.equals(this.limit, listEnhancedConnectionsRequest.limit)
-            && Objects.equals(this.name, listEnhancedConnectionsRequest.name)
-            && Objects.equals(this.offset, listEnhancedConnectionsRequest.offset)
-            && Objects.equals(this.status, listEnhancedConnectionsRequest.status)
-            && Objects.equals(this.tags, listEnhancedConnectionsRequest.tags);
+        ListEnhancedConnectionsRequest that = (ListEnhancedConnectionsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

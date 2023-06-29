@@ -66,22 +66,15 @@ public class CreateSqlLimitRulesRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,17 +164,16 @@ public class CreateSqlLimitRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlLimitRulesRequest createSqlLimitRulesRequest = (CreateSqlLimitRulesRequest) o;
-        return Objects.equals(this.instanceId, createSqlLimitRulesRequest.instanceId)
-            && Objects.equals(this.xLanguage, createSqlLimitRulesRequest.xLanguage)
-            && Objects.equals(this.body, createSqlLimitRulesRequest.body);
+        CreateSqlLimitRulesRequest that = (CreateSqlLimitRulesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

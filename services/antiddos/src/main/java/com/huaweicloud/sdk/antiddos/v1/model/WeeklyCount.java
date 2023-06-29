@@ -121,19 +121,19 @@ public class WeeklyCount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeeklyCount weeklyCount = (WeeklyCount) o;
-        return Objects.equals(this.ddosInterceptTimes, weeklyCount.ddosInterceptTimes)
-            && Objects.equals(this.ddosBlackholeTimes, weeklyCount.ddosBlackholeTimes)
-            && Objects.equals(this.maxAttackBps, weeklyCount.maxAttackBps)
-            && Objects.equals(this.maxAttackConns, weeklyCount.maxAttackConns)
-            && Objects.equals(this.periodStartDate, weeklyCount.periodStartDate);
+        WeeklyCount that = (WeeklyCount) obj;
+        return Objects.equals(this.ddosInterceptTimes, that.ddosInterceptTimes)
+            && Objects.equals(this.ddosBlackholeTimes, that.ddosBlackholeTimes)
+            && Objects.equals(this.maxAttackBps, that.maxAttackBps)
+            && Objects.equals(this.maxAttackConns, that.maxAttackConns)
+            && Objects.equals(this.periodStartDate, that.periodStartDate);
     }
 
     @Override

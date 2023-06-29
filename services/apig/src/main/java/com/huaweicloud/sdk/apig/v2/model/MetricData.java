@@ -165,18 +165,18 @@ public class MetricData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricData metricData = (MetricData) o;
-        return Objects.equals(this.average, metricData.average) && Objects.equals(this.max, metricData.max)
-            && Objects.equals(this.min, metricData.min) && Objects.equals(this.sum, metricData.sum)
-            && Objects.equals(this.variance, metricData.variance)
-            && Objects.equals(this.timestamp, metricData.timestamp) && Objects.equals(this.unit, metricData.unit);
+        MetricData that = (MetricData) obj;
+        return Objects.equals(this.average, that.average) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.min, that.min) && Objects.equals(this.sum, that.sum)
+            && Objects.equals(this.variance, that.variance) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override

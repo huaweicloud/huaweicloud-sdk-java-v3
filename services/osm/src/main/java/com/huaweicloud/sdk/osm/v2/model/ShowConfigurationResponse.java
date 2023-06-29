@@ -100,18 +100,16 @@ public class ShowConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationResponse showConfigurationResponse = (ShowConfigurationResponse) o;
-        return Objects.equals(this.configKey, showConfigurationResponse.configKey)
-            && Objects.equals(this.configValue, showConfigurationResponse.configValue)
-            && Objects.equals(this.errorCode, showConfigurationResponse.errorCode)
-            && Objects.equals(this.errorMsg, showConfigurationResponse.errorMsg);
+        ShowConfigurationResponse that = (ShowConfigurationResponse) obj;
+        return Objects.equals(this.configKey, that.configKey) && Objects.equals(this.configValue, that.configValue)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

@@ -140,19 +140,17 @@ public class NovaServerInterfaceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServerInterfaceDetail novaServerInterfaceDetail = (NovaServerInterfaceDetail) o;
-        return Objects.equals(this.fixedIps, novaServerInterfaceDetail.fixedIps)
-            && Objects.equals(this.macAddr, novaServerInterfaceDetail.macAddr)
-            && Objects.equals(this.netId, novaServerInterfaceDetail.netId)
-            && Objects.equals(this.portId, novaServerInterfaceDetail.portId)
-            && Objects.equals(this.portState, novaServerInterfaceDetail.portState);
+        NovaServerInterfaceDetail that = (NovaServerInterfaceDetail) obj;
+        return Objects.equals(this.fixedIps, that.fixedIps) && Objects.equals(this.macAddr, that.macAddr)
+            && Objects.equals(this.netId, that.netId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.portState, that.portState);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class Initial {
             if (value == null) {
                 return null;
             }
-            InitialMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InitialMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InitialMethodEnum(value));
         }
 
         public static InitialMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InitialMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,18 +210,17 @@ public class Initial {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Initial initial = (Initial) o;
-        return Objects.equals(this.initialMethod, initial.initialMethod)
-            && Objects.equals(this.meanValue, initial.meanValue)
-            && Objects.equals(this.standardDeviation, initial.standardDeviation)
-            && Objects.equals(this.minValue, initial.minValue) && Objects.equals(this.maxValue, initial.maxValue);
+        Initial that = (Initial) obj;
+        return Objects.equals(this.initialMethod, that.initialMethod) && Objects.equals(this.meanValue, that.meanValue)
+            && Objects.equals(this.standardDeviation, that.standardDeviation)
+            && Objects.equals(this.minValue, that.minValue) && Objects.equals(this.maxValue, that.maxValue);
     }
 
     @Override

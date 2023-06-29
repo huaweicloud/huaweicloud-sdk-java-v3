@@ -763,34 +763,31 @@ public class Workitems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Workitems workitems = (Workitems) o;
-        return Objects.equals(this.id, workitems.id) && Objects.equals(this.description, workitems.description)
-            && Objects.equals(this.actualWorkHours, workitems.actualWorkHours)
-            && Objects.equals(this.assignedUser, workitems.assignedUser)
-            && Objects.equals(this.author, workitems.author) && Objects.equals(this.beginTime, workitems.beginTime)
-            && Objects.equals(this.createdTime, workitems.createdTime) && Objects.equals(this.tags, workitems.tags)
-            && Objects.equals(this.developer, workitems.developer)
-            && Objects.equals(this.assignedCcUser, workitems.assignedCcUser)
-            && Objects.equals(this.discoverVersion, workitems.discoverVersion)
-            && Objects.equals(this.endTime, workitems.endTime) && Objects.equals(this.doneRatio, workitems.doneRatio)
-            && Objects.equals(this.expectedWorkHours, workitems.expectedWorkHours)
-            && Objects.equals(this.order, workitems.order)
-            && Objects.equals(this.parentWorkItemId, workitems.parentWorkItemId)
-            && Objects.equals(this.releaseVersion, workitems.releaseVersion)
-            && Objects.equals(this.storyPoint, workitems.storyPoint) && Objects.equals(this.domain, workitems.domain)
-            && Objects.equals(this.iteration, workitems.iteration) && Objects.equals(this.module, workitems.module)
-            && Objects.equals(this.priority, workitems.priority) && Objects.equals(this.severity, workitems.severity)
-            && Objects.equals(this.status, workitems.status) && Objects.equals(this.subject, workitems.subject)
-            && Objects.equals(this.updatedTime, workitems.updatedTime)
-            && Objects.equals(this.sequence, workitems.sequence) && Objects.equals(this.important, workitems.important)
-            && Objects.equals(this.customFields, workitems.customFields);
+        Workitems that = (Workitems) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.actualWorkHours, that.actualWorkHours)
+            && Objects.equals(this.assignedUser, that.assignedUser) && Objects.equals(this.author, that.author)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.developer, that.developer)
+            && Objects.equals(this.assignedCcUser, that.assignedCcUser)
+            && Objects.equals(this.discoverVersion, that.discoverVersion) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.doneRatio, that.doneRatio)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.parentWorkItemId, that.parentWorkItemId)
+            && Objects.equals(this.releaseVersion, that.releaseVersion)
+            && Objects.equals(this.storyPoint, that.storyPoint) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.iteration, that.iteration) && Objects.equals(this.module, that.module)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.important, that.important) && Objects.equals(this.customFields, that.customFields);
     }
 
     @Override

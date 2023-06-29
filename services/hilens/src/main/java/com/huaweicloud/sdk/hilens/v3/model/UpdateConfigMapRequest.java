@@ -65,16 +65,15 @@ public class UpdateConfigMapRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigMapRequest updateConfigMapRequest = (UpdateConfigMapRequest) o;
-        return Objects.equals(this.configMapId, updateConfigMapRequest.configMapId)
-            && Objects.equals(this.body, updateConfigMapRequest.body);
+        UpdateConfigMapRequest that = (UpdateConfigMapRequest) obj;
+        return Objects.equals(this.configMapId, that.configMapId) && Objects.equals(this.body, that.body);
     }
 
     @Override

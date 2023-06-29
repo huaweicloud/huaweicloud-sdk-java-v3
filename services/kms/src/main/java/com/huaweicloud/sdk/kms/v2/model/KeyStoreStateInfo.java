@@ -55,16 +55,16 @@ public class KeyStoreStateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyStoreStateInfo keyStoreStateInfo = (KeyStoreStateInfo) o;
-        return Objects.equals(this.keystoreId, keyStoreStateInfo.keystoreId)
-            && Objects.equals(this.keystoreState, keyStoreStateInfo.keystoreState);
+        KeyStoreStateInfo that = (KeyStoreStateInfo) obj;
+        return Objects.equals(this.keystoreId, that.keystoreId)
+            && Objects.equals(this.keystoreState, that.keystoreState);
     }
 
     @Override

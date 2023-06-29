@@ -121,17 +121,17 @@ public class VolumeDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeDTO volumeDTO = (VolumeDTO) o;
-        return Objects.equals(this.name, volumeDTO.name) && Objects.equals(this.type, volumeDTO.type)
-            && Objects.equals(this.source, volumeDTO.source) && Objects.equals(this.destination, volumeDTO.destination)
-            && Objects.equals(this.readOnly, volumeDTO.readOnly);
+        VolumeDTO that = (VolumeDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.readOnly, that.readOnly);
     }
 
     @Override

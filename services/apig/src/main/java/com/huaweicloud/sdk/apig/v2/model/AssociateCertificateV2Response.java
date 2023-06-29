@@ -83,22 +83,15 @@ public class AssociateCertificateV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -283,23 +276,19 @@ public class AssociateCertificateV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateCertificateV2Response associateCertificateV2Response = (AssociateCertificateV2Response) o;
-        return Objects.equals(this.urlDomain, associateCertificateV2Response.urlDomain)
-            && Objects.equals(this.id, associateCertificateV2Response.id)
-            && Objects.equals(this.status, associateCertificateV2Response.status)
-            && Objects.equals(this.minSslVersion, associateCertificateV2Response.minSslVersion)
-            && Objects.equals(this.isHttpRedirectToHttps, associateCertificateV2Response.isHttpRedirectToHttps)
-            && Objects.equals(this.verifiedClientCertificateEnabled,
-                associateCertificateV2Response.verifiedClientCertificateEnabled)
-            && Objects.equals(this.sslName, associateCertificateV2Response.sslName)
-            && Objects.equals(this.sslId, associateCertificateV2Response.sslId);
+        AssociateCertificateV2Response that = (AssociateCertificateV2Response) obj;
+        return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.minSslVersion, that.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
+            && Objects.equals(this.sslName, that.sslName) && Objects.equals(this.sslId, that.sslId);
     }
 
     @Override

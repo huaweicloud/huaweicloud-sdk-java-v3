@@ -665,40 +665,29 @@ public class CreateRestoreInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRestoreInstanceRequestBody createRestoreInstanceRequestBody = (CreateRestoreInstanceRequestBody) o;
-        return Objects.equals(this.name, createRestoreInstanceRequestBody.name)
-            && Objects.equals(this.datastore, createRestoreInstanceRequestBody.datastore)
-            && Objects.equals(this.ha, createRestoreInstanceRequestBody.ha)
-            && Objects.equals(this.configurationId, createRestoreInstanceRequestBody.configurationId)
-            && Objects.equals(this.port, createRestoreInstanceRequestBody.port)
-            && Objects.equals(this.password, createRestoreInstanceRequestBody.password)
-            && Objects.equals(this.backupStrategy, createRestoreInstanceRequestBody.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, createRestoreInstanceRequestBody.enterpriseProjectId)
-            && Objects.equals(this.diskEncryptionId, createRestoreInstanceRequestBody.diskEncryptionId)
-            && Objects.equals(this.flavorRef, createRestoreInstanceRequestBody.flavorRef)
-            && Objects.equals(this.volume, createRestoreInstanceRequestBody.volume)
-            && Objects.equals(this.region, createRestoreInstanceRequestBody.region)
-            && Objects.equals(this.availabilityZone, createRestoreInstanceRequestBody.availabilityZone)
-            && Objects.equals(this.vpcId, createRestoreInstanceRequestBody.vpcId)
-            && Objects.equals(this.subnetId, createRestoreInstanceRequestBody.subnetId)
-            && Objects.equals(this.dataVip, createRestoreInstanceRequestBody.dataVip)
-            && Objects.equals(this.securityGroupId, createRestoreInstanceRequestBody.securityGroupId)
-            && Objects.equals(this.chargeInfo, createRestoreInstanceRequestBody.chargeInfo)
-            && Objects.equals(this.timeZone, createRestoreInstanceRequestBody.timeZone)
-            && Objects.equals(this.dsspoolId, createRestoreInstanceRequestBody.dsspoolId)
-            && Objects.equals(this.replicaOfId, createRestoreInstanceRequestBody.replicaOfId)
-            && Objects.equals(this.restorePoint, createRestoreInstanceRequestBody.restorePoint)
-            && Objects.equals(this.collation, createRestoreInstanceRequestBody.collation)
-            && Objects.equals(this.tags, createRestoreInstanceRequestBody.tags)
-            && Objects.equals(this.unchangeableParam, createRestoreInstanceRequestBody.unchangeableParam)
-            && Objects.equals(this.dryRun, createRestoreInstanceRequestBody.dryRun);
+        CreateRestoreInstanceRequestBody that = (CreateRestoreInstanceRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.ha, that.ha) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.dataVip, that.dataVip) && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.dsspoolId, that.dsspoolId) && Objects.equals(this.replicaOfId, that.replicaOfId)
+            && Objects.equals(this.restorePoint, that.restorePoint) && Objects.equals(this.collation, that.collation)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.unchangeableParam, that.unchangeableParam)
+            && Objects.equals(this.dryRun, that.dryRun);
     }
 
     @Override

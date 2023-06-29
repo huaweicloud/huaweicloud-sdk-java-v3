@@ -33,15 +33,15 @@ public class ShowOpenIdConnectConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOpenIdConnectConfigRequest showOpenIdConnectConfigRequest = (ShowOpenIdConnectConfigRequest) o;
-        return Objects.equals(this.idpId, showOpenIdConnectConfigRequest.idpId);
+        ShowOpenIdConnectConfigRequest that = (ShowOpenIdConnectConfigRequest) obj;
+        return Objects.equals(this.idpId, that.idpId);
     }
 
     @Override

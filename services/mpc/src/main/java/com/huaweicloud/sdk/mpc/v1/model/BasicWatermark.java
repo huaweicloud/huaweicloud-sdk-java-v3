@@ -121,18 +121,17 @@ public class BasicWatermark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicWatermark basicWatermark = (BasicWatermark) o;
-        return Objects.equals(this.dx, basicWatermark.dx) && Objects.equals(this.dy, basicWatermark.dy)
-            && Objects.equals(this.referpos, basicWatermark.referpos)
-            && Objects.equals(this.timelineStart, basicWatermark.timelineStart)
-            && Objects.equals(this.timelineDuration, basicWatermark.timelineDuration);
+        BasicWatermark that = (BasicWatermark) obj;
+        return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration);
     }
 
     @Override

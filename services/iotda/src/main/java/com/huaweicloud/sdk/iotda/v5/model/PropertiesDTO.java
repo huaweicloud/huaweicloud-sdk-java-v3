@@ -96,17 +96,17 @@ public class PropertiesDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertiesDTO propertiesDTO = (PropertiesDTO) o;
-        return Objects.equals(this.correlationData, propertiesDTO.correlationData)
-            && Objects.equals(this.responseTopic, propertiesDTO.responseTopic)
-            && Objects.equals(this.userProperties, propertiesDTO.userProperties);
+        PropertiesDTO that = (PropertiesDTO) obj;
+        return Objects.equals(this.correlationData, that.correlationData)
+            && Objects.equals(this.responseTopic, that.responseTopic)
+            && Objects.equals(this.userProperties, that.userProperties);
     }
 
     @Override

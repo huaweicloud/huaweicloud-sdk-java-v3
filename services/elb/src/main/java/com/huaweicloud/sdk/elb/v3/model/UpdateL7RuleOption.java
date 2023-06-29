@@ -162,19 +162,18 @@ public class UpdateL7RuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7RuleOption updateL7RuleOption = (UpdateL7RuleOption) o;
-        return Objects.equals(this.adminStateUp, updateL7RuleOption.adminStateUp)
-            && Objects.equals(this.compareType, updateL7RuleOption.compareType)
-            && Objects.equals(this.invert, updateL7RuleOption.invert)
-            && Objects.equals(this.key, updateL7RuleOption.key) && Objects.equals(this.value, updateL7RuleOption.value)
-            && Objects.equals(this.conditions, updateL7RuleOption.conditions);
+        UpdateL7RuleOption that = (UpdateL7RuleOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.invert, that.invert)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override

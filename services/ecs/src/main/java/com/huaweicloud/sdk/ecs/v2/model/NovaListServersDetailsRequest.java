@@ -159,22 +159,15 @@ public class NovaListServersDetailsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,22 +306,15 @@ public class NovaListServersDetailsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -584,27 +570,21 @@ public class NovaListServersDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaListServersDetailsRequest novaListServersDetailsRequest = (NovaListServersDetailsRequest) o;
-        return Objects.equals(this.changesSince, novaListServersDetailsRequest.changesSince)
-            && Objects.equals(this.flavor, novaListServersDetailsRequest.flavor)
-            && Objects.equals(this.image, novaListServersDetailsRequest.image)
-            && Objects.equals(this.ip, novaListServersDetailsRequest.ip)
-            && Objects.equals(this.limit, novaListServersDetailsRequest.limit)
-            && Objects.equals(this.marker, novaListServersDetailsRequest.marker)
-            && Objects.equals(this.name, novaListServersDetailsRequest.name)
-            && Objects.equals(this.notTags, novaListServersDetailsRequest.notTags)
-            && Objects.equals(this.reservationId, novaListServersDetailsRequest.reservationId)
-            && Objects.equals(this.sortKey, novaListServersDetailsRequest.sortKey)
-            && Objects.equals(this.status, novaListServersDetailsRequest.status)
-            && Objects.equals(this.tags, novaListServersDetailsRequest.tags)
-            && Objects.equals(this.openStackAPIVersion, novaListServersDetailsRequest.openStackAPIVersion);
+        NovaListServersDetailsRequest that = (NovaListServersDetailsRequest) obj;
+        return Objects.equals(this.changesSince, that.changesSince) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.notTags, that.notTags)
+            && Objects.equals(this.reservationId, that.reservationId) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.openStackAPIVersion, that.openStackAPIVersion);
     }
 
     @Override

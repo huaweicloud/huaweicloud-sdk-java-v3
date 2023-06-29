@@ -65,22 +65,15 @@ public class CreateL7ruleReqInPolicy {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,17 @@ public class CreateL7ruleReqInPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateL7ruleReqInPolicy createL7ruleReqInPolicy = (CreateL7ruleReqInPolicy) o;
-        return Objects.equals(this.adminStateUp, createL7ruleReqInPolicy.adminStateUp)
-            && Objects.equals(this.type, createL7ruleReqInPolicy.type)
-            && Objects.equals(this.compareType, createL7ruleReqInPolicy.compareType)
-            && Objects.equals(this.key, createL7ruleReqInPolicy.key)
-            && Objects.equals(this.value, createL7ruleReqInPolicy.value)
-            && Objects.equals(this.invert, createL7ruleReqInPolicy.invert);
+        CreateL7ruleReqInPolicy that = (CreateL7ruleReqInPolicy) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.invert, that.invert);
     }
 
     @Override

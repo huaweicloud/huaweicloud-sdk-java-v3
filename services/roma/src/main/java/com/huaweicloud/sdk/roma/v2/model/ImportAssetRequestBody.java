@@ -65,15 +65,15 @@ public class ImportAssetRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportAssetRequestBody importAssetRequestBody = (ImportAssetRequestBody) o;
-        return Objects.equals(this.importAssetRequestBody, importAssetRequestBody.importAssetRequestBody);
+        ImportAssetRequestBody that = (ImportAssetRequestBody) obj;
+        return Objects.equals(this.importAssetRequestBody, that.importAssetRequestBody);
     }
 
     @Override

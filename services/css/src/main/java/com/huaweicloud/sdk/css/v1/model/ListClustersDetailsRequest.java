@@ -55,16 +55,15 @@ public class ListClustersDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClustersDetailsRequest listClustersDetailsRequest = (ListClustersDetailsRequest) o;
-        return Objects.equals(this.start, listClustersDetailsRequest.start)
-            && Objects.equals(this.limit, listClustersDetailsRequest.limit);
+        ListClustersDetailsRequest that = (ListClustersDetailsRequest) obj;
+        return Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

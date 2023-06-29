@@ -99,18 +99,16 @@ public class IssueRecordV4User {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueRecordV4User issueRecordV4User = (IssueRecordV4User) o;
-        return Objects.equals(this.userNumId, issueRecordV4User.userNumId)
-            && Objects.equals(this.userName, issueRecordV4User.userName)
-            && Objects.equals(this.nickName, issueRecordV4User.nickName)
-            && Objects.equals(this.userId, issueRecordV4User.userId);
+        IssueRecordV4User that = (IssueRecordV4User) obj;
+        return Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

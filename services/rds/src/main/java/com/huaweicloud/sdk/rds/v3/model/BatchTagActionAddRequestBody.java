@@ -74,16 +74,15 @@ public class BatchTagActionAddRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchTagActionAddRequestBody batchTagActionAddRequestBody = (BatchTagActionAddRequestBody) o;
-        return Objects.equals(this.action, batchTagActionAddRequestBody.action)
-            && Objects.equals(this.tags, batchTagActionAddRequestBody.tags);
+        BatchTagActionAddRequestBody that = (BatchTagActionAddRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

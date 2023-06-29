@@ -43,15 +43,15 @@ public class DecryptDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DecryptDataRequest decryptDataRequest = (DecryptDataRequest) o;
-        return Objects.equals(this.body, decryptDataRequest.body);
+        DecryptDataRequest that = (DecryptDataRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

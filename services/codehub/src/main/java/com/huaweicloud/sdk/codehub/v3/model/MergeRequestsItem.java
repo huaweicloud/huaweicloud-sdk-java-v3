@@ -347,27 +347,23 @@ public class MergeRequestsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeRequestsItem mergeRequestsItem = (MergeRequestsItem) o;
-        return Objects.equals(this.author, mergeRequestsItem.author)
-            && Objects.equals(this.closedAt, mergeRequestsItem.closedAt)
-            && Objects.equals(this.createdAt, mergeRequestsItem.createdAt)
-            && Objects.equals(this.description, mergeRequestsItem.description)
-            && Objects.equals(this.devcloudSourceBranch, mergeRequestsItem.devcloudSourceBranch)
-            && Objects.equals(this.id, mergeRequestsItem.id) && Objects.equals(this.iid, mergeRequestsItem.iid)
-            && Objects.equals(this.mergeRequestAssigneeList, mergeRequestsItem.mergeRequestAssigneeList)
-            && Objects.equals(this.mergeStatus, mergeRequestsItem.mergeStatus)
-            && Objects.equals(this.sourceBranch, mergeRequestsItem.sourceBranch)
-            && Objects.equals(this.state, mergeRequestsItem.state)
-            && Objects.equals(this.targetBranch, mergeRequestsItem.targetBranch)
-            && Objects.equals(this.title, mergeRequestsItem.title)
-            && Objects.equals(this.updatedAt, mergeRequestsItem.updatedAt);
+        MergeRequestsItem that = (MergeRequestsItem) obj;
+        return Objects.equals(this.author, that.author) && Objects.equals(this.closedAt, that.closedAt)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.devcloudSourceBranch, that.devcloudSourceBranch) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.iid, that.iid)
+            && Objects.equals(this.mergeRequestAssigneeList, that.mergeRequestAssigneeList)
+            && Objects.equals(this.mergeStatus, that.mergeStatus)
+            && Objects.equals(this.sourceBranch, that.sourceBranch) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.targetBranch, that.targetBranch) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

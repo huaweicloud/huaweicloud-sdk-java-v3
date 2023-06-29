@@ -107,18 +107,18 @@ public class ListenerInsertHeaders {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListenerInsertHeaders listenerInsertHeaders = (ListenerInsertHeaders) o;
-        return Objects.equals(this.xForwardedELBIP, listenerInsertHeaders.xForwardedELBIP)
-            && Objects.equals(this.xForwardedPort, listenerInsertHeaders.xForwardedPort)
-            && Objects.equals(this.xForwardedForPort, listenerInsertHeaders.xForwardedForPort)
-            && Objects.equals(this.xForwardedHost, listenerInsertHeaders.xForwardedHost);
+        ListenerInsertHeaders that = (ListenerInsertHeaders) obj;
+        return Objects.equals(this.xForwardedELBIP, that.xForwardedELBIP)
+            && Objects.equals(this.xForwardedPort, that.xForwardedPort)
+            && Objects.equals(this.xForwardedForPort, that.xForwardedForPort)
+            && Objects.equals(this.xForwardedHost, that.xForwardedHost);
     }
 
     @Override

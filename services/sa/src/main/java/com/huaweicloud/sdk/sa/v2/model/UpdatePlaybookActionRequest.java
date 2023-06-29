@@ -109,18 +109,16 @@ public class UpdatePlaybookActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePlaybookActionRequest updatePlaybookActionRequest = (UpdatePlaybookActionRequest) o;
-        return Objects.equals(this.workspaceId, updatePlaybookActionRequest.workspaceId)
-            && Objects.equals(this.versionId, updatePlaybookActionRequest.versionId)
-            && Objects.equals(this.actionId, updatePlaybookActionRequest.actionId)
-            && Objects.equals(this.body, updatePlaybookActionRequest.body);
+        UpdatePlaybookActionRequest that = (UpdatePlaybookActionRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

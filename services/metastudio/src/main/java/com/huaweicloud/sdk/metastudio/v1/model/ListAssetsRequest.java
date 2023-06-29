@@ -115,22 +115,15 @@ public class ListAssetsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,22 +196,15 @@ public class ListAssetsRequest {
             if (value == null) {
                 return null;
             }
-            AssetSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetSourceEnum(value));
         }
 
         public static AssetSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -602,32 +588,24 @@ public class ListAssetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetsRequest listAssetsRequest = (ListAssetsRequest) o;
-        return Objects.equals(this.authorization, listAssetsRequest.authorization)
-            && Objects.equals(this.xSdkDate, listAssetsRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, listAssetsRequest.xAppUserId)
-            && Objects.equals(this.limit, listAssetsRequest.limit)
-            && Objects.equals(this.offset, listAssetsRequest.offset)
-            && Objects.equals(this.name, listAssetsRequest.name) && Objects.equals(this.tag, listAssetsRequest.tag)
-            && Objects.equals(this.startTime, listAssetsRequest.startTime)
-            && Objects.equals(this.endTime, listAssetsRequest.endTime)
-            && Objects.equals(this.assetType, listAssetsRequest.assetType)
-            && Objects.equals(this.sortKey, listAssetsRequest.sortKey)
-            && Objects.equals(this.sortDir, listAssetsRequest.sortDir)
-            && Objects.equals(this.assetSource, listAssetsRequest.assetSource)
-            && Objects.equals(this.assetState, listAssetsRequest.assetState)
-            && Objects.equals(this.styleId, listAssetsRequest.styleId)
-            && Objects.equals(this.renderEngine, listAssetsRequest.renderEngine)
-            && Objects.equals(this.sex, listAssetsRequest.sex)
-            && Objects.equals(this.lanuage, listAssetsRequest.lanuage)
-            && Objects.equals(this.systemProperty, listAssetsRequest.systemProperty);
+        ListAssetsRequest that = (ListAssetsRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.assetType, that.assetType)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.assetSource, that.assetSource) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.styleId, that.styleId) && Objects.equals(this.renderEngine, that.renderEngine)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.lanuage, that.lanuage)
+            && Objects.equals(this.systemProperty, that.systemProperty);
     }
 
     @Override

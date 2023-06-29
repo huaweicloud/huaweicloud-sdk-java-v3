@@ -81,18 +81,16 @@ public class ShowMultiAccountTransferAmountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMultiAccountTransferAmountRequest showMultiAccountTransferAmountRequest =
-            (ShowMultiAccountTransferAmountRequest) o;
-        return Objects.equals(this.balanceType, showMultiAccountTransferAmountRequest.balanceType)
-            && Objects.equals(this.offset, showMultiAccountTransferAmountRequest.offset)
-            && Objects.equals(this.limit, showMultiAccountTransferAmountRequest.limit);
+        ShowMultiAccountTransferAmountRequest that = (ShowMultiAccountTransferAmountRequest) obj;
+        return Objects.equals(this.balanceType, that.balanceType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

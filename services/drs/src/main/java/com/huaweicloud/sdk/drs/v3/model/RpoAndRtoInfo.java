@@ -99,17 +99,16 @@ public class RpoAndRtoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RpoAndRtoInfo rpoAndRtoInfo = (RpoAndRtoInfo) o;
-        return Objects.equals(this.checkPoint, rpoAndRtoInfo.checkPoint)
-            && Objects.equals(this.delay, rpoAndRtoInfo.delay) && Objects.equals(this.gtidSet, rpoAndRtoInfo.gtidSet)
-            && Objects.equals(this.time, rpoAndRtoInfo.time);
+        RpoAndRtoInfo that = (RpoAndRtoInfo) obj;
+        return Objects.equals(this.checkPoint, that.checkPoint) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.gtidSet, that.gtidSet) && Objects.equals(this.time, that.time);
     }
 
     @Override

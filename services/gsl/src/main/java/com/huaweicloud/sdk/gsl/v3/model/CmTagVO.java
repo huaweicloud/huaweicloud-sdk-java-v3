@@ -77,16 +77,16 @@ public class CmTagVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CmTagVO cmTagVO = (CmTagVO) o;
-        return Objects.equals(this.id, cmTagVO.id) && Objects.equals(this.tagName, cmTagVO.tagName)
-            && Objects.equals(this.status, cmTagVO.status);
+        CmTagVO that = (CmTagVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tagName, that.tagName)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

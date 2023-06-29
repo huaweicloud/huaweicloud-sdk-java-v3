@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.mrs.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.mrs.v2.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class MrsAsyncClient {
+
     protected HcClient hcClient;
 
     public MrsAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class MrsAsyncClient {
     public static ClientBuilder<MrsAsyncClient> newBuilder() {
         return new ClientBuilder<>(MrsAsyncClient::new);
     }
-
 
     /**
      * 批量删除作业
@@ -43,8 +43,10 @@ public class MrsAsyncClient {
      * @param BatchDeleteJobsRequest 请求对象
      * @return AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>
      */
-    public AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsAsyncInvoker(BatchDeleteJobsRequest request) {
-        return new AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, MrsMeta.batchDeleteJobs, hcClient);
+    public AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse> batchDeleteJobsAsyncInvoker(
+        BatchDeleteJobsRequest request) {
+        return new AsyncInvoker<BatchDeleteJobsRequest, BatchDeleteJobsResponse>(request, MrsMeta.batchDeleteJobs,
+            hcClient);
     }
 
     /**
@@ -79,7 +81,8 @@ public class MrsAsyncClient {
      * @param CreateClusterRequest 请求对象
      * @return AsyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
-    public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(CreateClusterRequest request) {
+    public AsyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterAsyncInvoker(
+        CreateClusterRequest request) {
         return new AsyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, MrsMeta.createCluster, hcClient);
     }
 
@@ -119,8 +122,10 @@ public class MrsAsyncClient {
      * @param CreateExecuteJobRequest 请求对象
      * @return AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>
      */
-    public AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse> createExecuteJobAsyncInvoker(CreateExecuteJobRequest request) {
-        return new AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>(request, MrsMeta.createExecuteJob, hcClient);
+    public AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse> createExecuteJobAsyncInvoker(
+        CreateExecuteJobRequest request) {
+        return new AsyncInvoker<CreateExecuteJobRequest, CreateExecuteJobResponse>(request, MrsMeta.createExecuteJob,
+            hcClient);
     }
 
     /**
@@ -183,8 +188,10 @@ public class MrsAsyncClient {
      * @param ShowAgencyMappingRequest 请求对象
      * @return AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>
      */
-    public AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse> showAgencyMappingAsyncInvoker(ShowAgencyMappingRequest request) {
-        return new AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>(request, MrsMeta.showAgencyMapping, hcClient);
+    public AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse> showAgencyMappingAsyncInvoker(
+        ShowAgencyMappingRequest request) {
+        return new AsyncInvoker<ShowAgencyMappingRequest, ShowAgencyMappingResponse>(request, MrsMeta.showAgencyMapping,
+            hcClient);
     }
 
     /**
@@ -197,7 +204,8 @@ public class MrsAsyncClient {
      * @param ShowAutoScalingPolicyRequest 请求对象
      * @return CompletableFuture<ShowAutoScalingPolicyResponse>
      */
-    public CompletableFuture<ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsync(ShowAutoScalingPolicyRequest request) {
+    public CompletableFuture<ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsync(
+        ShowAutoScalingPolicyRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.showAutoScalingPolicy);
     }
 
@@ -211,8 +219,10 @@ public class MrsAsyncClient {
      * @param ShowAutoScalingPolicyRequest 请求对象
      * @return AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>
      */
-    public AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsyncInvoker(ShowAutoScalingPolicyRequest request) {
-        return new AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request, MrsMeta.showAutoScalingPolicy, hcClient);
+    public AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse> showAutoScalingPolicyAsyncInvoker(
+        ShowAutoScalingPolicyRequest request) {
+        return new AsyncInvoker<ShowAutoScalingPolicyRequest, ShowAutoScalingPolicyResponse>(request,
+            MrsMeta.showAutoScalingPolicy, hcClient);
     }
 
     /**
@@ -239,8 +249,10 @@ public class MrsAsyncClient {
      * @param ShowJobExeListNewRequest 请求对象
      * @return AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>
      */
-    public AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse> showJobExeListNewAsyncInvoker(ShowJobExeListNewRequest request) {
-        return new AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>(request, MrsMeta.showJobExeListNew, hcClient);
+    public AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse> showJobExeListNewAsyncInvoker(
+        ShowJobExeListNewRequest request) {
+        return new AsyncInvoker<ShowJobExeListNewRequest, ShowJobExeListNewResponse>(request, MrsMeta.showJobExeListNew,
+            hcClient);
     }
 
     /**
@@ -267,8 +279,10 @@ public class MrsAsyncClient {
      * @param ShowSingleJobExeRequest 请求对象
      * @return AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>
      */
-    public AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse> showSingleJobExeAsyncInvoker(ShowSingleJobExeRequest request) {
-        return new AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>(request, MrsMeta.showSingleJobExe, hcClient);
+    public AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse> showSingleJobExeAsyncInvoker(
+        ShowSingleJobExeRequest request) {
+        return new AsyncInvoker<ShowSingleJobExeRequest, ShowSingleJobExeResponse>(request, MrsMeta.showSingleJobExe,
+            hcClient);
     }
 
     /**
@@ -281,7 +295,8 @@ public class MrsAsyncClient {
      * @param ShowSqlResultWithJobRequest 请求对象
      * @return CompletableFuture<ShowSqlResultWithJobResponse>
      */
-    public CompletableFuture<ShowSqlResultWithJobResponse> showSqlResultWithJobAsync(ShowSqlResultWithJobRequest request) {
+    public CompletableFuture<ShowSqlResultWithJobResponse> showSqlResultWithJobAsync(
+        ShowSqlResultWithJobRequest request) {
         return hcClient.asyncInvokeHttp(request, MrsMeta.showSqlResultWithJob);
     }
 
@@ -295,8 +310,10 @@ public class MrsAsyncClient {
      * @param ShowSqlResultWithJobRequest 请求对象
      * @return AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>
      */
-    public AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse> showSqlResultWithJobAsyncInvoker(ShowSqlResultWithJobRequest request) {
-        return new AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>(request, MrsMeta.showSqlResultWithJob, hcClient);
+    public AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse> showSqlResultWithJobAsyncInvoker(
+        ShowSqlResultWithJobRequest request) {
+        return new AsyncInvoker<ShowSqlResultWithJobRequest, ShowSqlResultWithJobResponse>(request,
+            MrsMeta.showSqlResultWithJob, hcClient);
     }
 
     /**
@@ -351,8 +368,10 @@ public class MrsAsyncClient {
      * @param UpdateAgencyMappingRequest 请求对象
      * @return AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>
      */
-    public AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse> updateAgencyMappingAsyncInvoker(UpdateAgencyMappingRequest request) {
-        return new AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>(request, MrsMeta.updateAgencyMapping, hcClient);
+    public AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse> updateAgencyMappingAsyncInvoker(
+        UpdateAgencyMappingRequest request) {
+        return new AsyncInvoker<UpdateAgencyMappingRequest, UpdateAgencyMappingResponse>(request,
+            MrsMeta.updateAgencyMapping, hcClient);
     }
 
     /**
@@ -379,8 +398,10 @@ public class MrsAsyncClient {
      * @param UpdateClusterNameRequest 请求对象
      * @return AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>
      */
-    public AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameAsyncInvoker(UpdateClusterNameRequest request) {
-        return new AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName, hcClient);
+    public AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse> updateClusterNameAsyncInvoker(
+        UpdateClusterNameRequest request) {
+        return new AsyncInvoker<UpdateClusterNameRequest, UpdateClusterNameResponse>(request, MrsMeta.updateClusterName,
+            hcClient);
     }
 
     /**
@@ -407,8 +428,10 @@ public class MrsAsyncClient {
      * @param ShowHdfsFileListRequest 请求对象
      * @return AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>
      */
-    public AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse> showHdfsFileListAsyncInvoker(ShowHdfsFileListRequest request) {
-        return new AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>(request, MrsMeta.showHdfsFileList, hcClient);
+    public AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse> showHdfsFileListAsyncInvoker(
+        ShowHdfsFileListRequest request) {
+        return new AsyncInvoker<ShowHdfsFileListRequest, ShowHdfsFileListResponse>(request, MrsMeta.showHdfsFileList,
+            hcClient);
     }
 
     /**
@@ -491,7 +514,8 @@ public class MrsAsyncClient {
      * @param ShowSqlResultRequest 请求对象
      * @return AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse>
      */
-    public AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse> showSqlResultAsyncInvoker(ShowSqlResultRequest request) {
+    public AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse> showSqlResultAsyncInvoker(
+        ShowSqlResultRequest request) {
         return new AsyncInvoker<ShowSqlResultRequest, ShowSqlResultResponse>(request, MrsMeta.showSqlResult, hcClient);
     }
 

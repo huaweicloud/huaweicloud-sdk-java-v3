@@ -52,22 +52,15 @@ public class BatchOperateJobStatus {
         if (value == null) {
             return null;
         }
-        BatchOperateJobStatus result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new BatchOperateJobStatus(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BatchOperateJobStatus(value));
     }
 
     public static BatchOperateJobStatus valueOf(String value) {
         if (value == null) {
             return null;
         }
-        BatchOperateJobStatus result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

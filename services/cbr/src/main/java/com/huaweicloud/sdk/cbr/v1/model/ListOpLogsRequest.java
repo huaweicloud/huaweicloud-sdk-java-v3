@@ -111,22 +111,15 @@ public class ListOpLogsRequest {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypeEnum(value));
         }
 
         public static OperationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,22 +230,15 @@ public class ListOpLogsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -496,26 +482,21 @@ public class ListOpLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOpLogsRequest listOpLogsRequest = (ListOpLogsRequest) o;
-        return Objects.equals(this.endTime, listOpLogsRequest.endTime)
-            && Objects.equals(this.limit, listOpLogsRequest.limit)
-            && Objects.equals(this.offset, listOpLogsRequest.offset)
-            && Objects.equals(this.operationType, listOpLogsRequest.operationType)
-            && Objects.equals(this.providerId, listOpLogsRequest.providerId)
-            && Objects.equals(this.resourceId, listOpLogsRequest.resourceId)
-            && Objects.equals(this.resourceName, listOpLogsRequest.resourceName)
-            && Objects.equals(this.startTime, listOpLogsRequest.startTime)
-            && Objects.equals(this.status, listOpLogsRequest.status)
-            && Objects.equals(this.vaultId, listOpLogsRequest.vaultId)
-            && Objects.equals(this.vaultName, listOpLogsRequest.vaultName)
-            && Objects.equals(this.enterpriseProjectId, listOpLogsRequest.enterpriseProjectId);
+        ListOpLogsRequest that = (ListOpLogsRequest) obj;
+        return Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.vaultName, that.vaultName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

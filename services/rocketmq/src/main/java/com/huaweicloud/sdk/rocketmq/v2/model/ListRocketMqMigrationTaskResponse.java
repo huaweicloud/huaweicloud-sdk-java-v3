@@ -75,16 +75,15 @@ public class ListRocketMqMigrationTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRocketMqMigrationTaskResponse listRocketMqMigrationTaskResponse = (ListRocketMqMigrationTaskResponse) o;
-        return Objects.equals(this.total, listRocketMqMigrationTaskResponse.total)
-            && Objects.equals(this.task, listRocketMqMigrationTaskResponse.task);
+        ListRocketMqMigrationTaskResponse that = (ListRocketMqMigrationTaskResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.task, that.task);
     }
 
     @Override

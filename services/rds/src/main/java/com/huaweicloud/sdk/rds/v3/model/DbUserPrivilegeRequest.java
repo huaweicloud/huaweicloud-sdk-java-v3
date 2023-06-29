@@ -96,17 +96,17 @@ public class DbUserPrivilegeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbUserPrivilegeRequest dbUserPrivilegeRequest = (DbUserPrivilegeRequest) o;
-        return Objects.equals(this.userName, dbUserPrivilegeRequest.userName)
-            && Objects.equals(this.authorizationType, dbUserPrivilegeRequest.authorizationType)
-            && Objects.equals(this.privileges, dbUserPrivilegeRequest.privileges);
+        DbUserPrivilegeRequest that = (DbUserPrivilegeRequest) obj;
+        return Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.authorizationType, that.authorizationType)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

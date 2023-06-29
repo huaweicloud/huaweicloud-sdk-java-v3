@@ -52,15 +52,15 @@ public class AgentAddPathReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentAddPathReq agentAddPathReq = (AgentAddPathReq) o;
-        return Objects.equals(this.addPath, agentAddPathReq.addPath);
+        AgentAddPathReq that = (AgentAddPathReq) obj;
+        return Objects.equals(this.addPath, that.addPath);
     }
 
     @Override

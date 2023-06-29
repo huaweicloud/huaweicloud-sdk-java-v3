@@ -77,22 +77,15 @@ public class ScalingAllPolicyDetail {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingResourceTypeEnum(value));
         }
 
         public static ScalingResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,22 +158,15 @@ public class ScalingAllPolicyDetail {
             if (value == null) {
                 return null;
             }
-            PolicyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PolicyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyStatusEnum(value));
         }
 
         public static PolicyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PolicyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,22 +239,15 @@ public class ScalingAllPolicyDetail {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingPolicyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingPolicyTypeEnum(value));
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -575,27 +554,24 @@ public class ScalingAllPolicyDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScalingAllPolicyDetail scalingAllPolicyDetail = (ScalingAllPolicyDetail) o;
-        return Objects.equals(this.scalingPolicyName, scalingAllPolicyDetail.scalingPolicyName)
-            && Objects.equals(this.scalingPolicyId, scalingAllPolicyDetail.scalingPolicyId)
-            && Objects.equals(this.scalingResourceId, scalingAllPolicyDetail.scalingResourceId)
-            && Objects.equals(this.scalingResourceType, scalingAllPolicyDetail.scalingResourceType)
-            && Objects.equals(this.policyStatus, scalingAllPolicyDetail.policyStatus)
-            && Objects.equals(this.scalingPolicyType, scalingAllPolicyDetail.scalingPolicyType)
-            && Objects.equals(this.alarmId, scalingAllPolicyDetail.alarmId)
-            && Objects.equals(this.scheduledPolicy, scalingAllPolicyDetail.scheduledPolicy)
-            && Objects.equals(this.scalingPolicyAction, scalingAllPolicyDetail.scalingPolicyAction)
-            && Objects.equals(this.coolDownTime, scalingAllPolicyDetail.coolDownTime)
-            && Objects.equals(this.createTime, scalingAllPolicyDetail.createTime)
-            && Objects.equals(this.metaData, scalingAllPolicyDetail.metaData)
-            && Objects.equals(this.description, scalingAllPolicyDetail.description);
+        ScalingAllPolicyDetail that = (ScalingAllPolicyDetail) obj;
+        return Objects.equals(this.scalingPolicyName, that.scalingPolicyName)
+            && Objects.equals(this.scalingPolicyId, that.scalingPolicyId)
+            && Objects.equals(this.scalingResourceId, that.scalingResourceId)
+            && Objects.equals(this.scalingResourceType, that.scalingResourceType)
+            && Objects.equals(this.policyStatus, that.policyStatus)
+            && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.scheduledPolicy, that.scheduledPolicy)
+            && Objects.equals(this.scalingPolicyAction, that.scalingPolicyAction)
+            && Objects.equals(this.coolDownTime, that.coolDownTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.metaData, that.metaData) && Objects.equals(this.description, that.description);
     }
 
     @Override

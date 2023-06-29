@@ -124,19 +124,17 @@ public class InvokeFunctionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InvokeFunctionResponse invokeFunctionResponse = (InvokeFunctionResponse) o;
-        return Objects.equals(this.requestId, invokeFunctionResponse.requestId)
-            && Objects.equals(this.result, invokeFunctionResponse.result)
-            && Objects.equals(this.log, invokeFunctionResponse.log)
-            && Objects.equals(this.status, invokeFunctionResponse.status)
-            && Objects.equals(this.xCffRequestId, invokeFunctionResponse.xCffRequestId);
+        InvokeFunctionResponse that = (InvokeFunctionResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.log, that.log) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.xCffRequestId, that.xCffRequestId);
     }
 
     @Override

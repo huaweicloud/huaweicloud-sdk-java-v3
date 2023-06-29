@@ -152,19 +152,18 @@ public class DeleteTransferResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTransferResponse deleteTransferResponse = (DeleteTransferResponse) o;
-        return Objects.equals(this.logGroupId, deleteTransferResponse.logGroupId)
-            && Objects.equals(this.logGroupName, deleteTransferResponse.logGroupName)
-            && Objects.equals(this.logStreams, deleteTransferResponse.logStreams)
-            && Objects.equals(this.logTransferId, deleteTransferResponse.logTransferId)
-            && Objects.equals(this.logTransferInfo, deleteTransferResponse.logTransferInfo);
+        DeleteTransferResponse that = (DeleteTransferResponse) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreams, that.logStreams)
+            && Objects.equals(this.logTransferId, that.logTransferId)
+            && Objects.equals(this.logTransferInfo, that.logTransferInfo);
     }
 
     @Override

@@ -1,43 +1,34 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowGaussMySqlProjectQuotasRequest  {
-
+public class ShowGaussMySqlProjectQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
+
     /**
      * 功能说明：根据type过滤查询指定类型的配额。  取值范围：instance
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum INSTANCE for value: "instance"
          */
         public static final TypeEnum INSTANCE = new TypeEnum("instance");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +56,18 @@ public class ShowGaussMySqlProjectQuotasRequest  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,8 +85,7 @@ public class ShowGaussMySqlProjectQuotasRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
@@ -111,15 +94,12 @@ public class ShowGaussMySqlProjectQuotasRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -128,15 +108,10 @@ public class ShowGaussMySqlProjectQuotasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowGaussMySqlProjectQuotasRequest withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 功能说明：根据type过滤查询指定类型的配额。  取值范围：instance
@@ -150,24 +125,23 @@ public class ShowGaussMySqlProjectQuotasRequest  {
         this.type = type;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlProjectQuotasRequest showGaussMySqlProjectQuotasRequest = (ShowGaussMySqlProjectQuotasRequest) o;
-        return Objects.equals(this.xLanguage, showGaussMySqlProjectQuotasRequest.xLanguage) &&
-            Objects.equals(this.type, showGaussMySqlProjectQuotasRequest.type);
+        ShowGaussMySqlProjectQuotasRequest that = (ShowGaussMySqlProjectQuotasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.type, that.type);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, type);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +151,7 @@ public class ShowGaussMySqlProjectQuotasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +162,5 @@ public class ShowGaussMySqlProjectQuotasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -574,39 +574,30 @@ public class ApigCommodityOrder {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigCommodityOrder apigCommodityOrder = (ApigCommodityOrder) o;
-        return Objects.equals(this.projectId, apigCommodityOrder.projectId)
-            && Objects.equals(this.orderId, apigCommodityOrder.orderId)
-            && Objects.equals(this.regionId, apigCommodityOrder.regionId)
-            && Objects.equals(this.resourceId, apigCommodityOrder.resourceId)
-            && Objects.equals(this.resourceName, apigCommodityOrder.resourceName)
-            && Objects.equals(this.subscriptionId, apigCommodityOrder.subscriptionId)
-            && Objects.equals(this.resourceType, apigCommodityOrder.resourceType)
-            && Objects.equals(this.resourceSpecCode, apigCommodityOrder.resourceSpecCode)
-            && Objects.equals(this.productId, apigCommodityOrder.productId)
-            && Objects.equals(this.orderType, apigCommodityOrder.orderType)
-            && Objects.equals(this.chargeType, apigCommodityOrder.chargeType)
-            && Objects.equals(this.isAutoRenew, apigCommodityOrder.isAutoRenew)
-            && Objects.equals(this.status, apigCommodityOrder.status)
-            && Objects.equals(this.vpcId, apigCommodityOrder.vpcId)
-            && Objects.equals(this.securityGroupId, apigCommodityOrder.securityGroupId)
-            && Objects.equals(this.epsId, apigCommodityOrder.epsId)
-            && Objects.equals(this.effectiveTime, apigCommodityOrder.effectiveTime)
-            && Objects.equals(this.expireDays, apigCommodityOrder.expireDays)
-            && Objects.equals(this.expireTime, apigCommodityOrder.expireTime)
-            && Objects.equals(this.lockCheckEndpoint, apigCommodityOrder.lockCheckEndpoint)
-            && Objects.equals(this.createUser, apigCommodityOrder.createUser)
-            && Objects.equals(this.createTime, apigCommodityOrder.createTime)
-            && Objects.equals(this.domainId, apigCommodityOrder.domainId)
-            && Objects.equals(this.isTrialOrder, apigCommodityOrder.isTrialOrder)
-            && Objects.equals(this.workSpaceMode, apigCommodityOrder.workSpaceMode);
+        ApigCommodityOrder that = (ApigCommodityOrder) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.subscriptionId, that.subscriptionId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.orderType, that.orderType)
+            && Objects.equals(this.chargeType, that.chargeType) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireDays, that.expireDays) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.lockCheckEndpoint, that.lockCheckEndpoint)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.isTrialOrder, that.isTrialOrder)
+            && Objects.equals(this.workSpaceMode, that.workSpaceMode);
     }
 
     @Override

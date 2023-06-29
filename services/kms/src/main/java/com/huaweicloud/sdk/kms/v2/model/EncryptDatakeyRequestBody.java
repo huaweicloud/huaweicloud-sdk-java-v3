@@ -99,18 +99,17 @@ public class EncryptDatakeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDatakeyRequestBody encryptDatakeyRequestBody = (EncryptDatakeyRequestBody) o;
-        return Objects.equals(this.keyId, encryptDatakeyRequestBody.keyId)
-            && Objects.equals(this.plainText, encryptDatakeyRequestBody.plainText)
-            && Objects.equals(this.datakeyPlainLength, encryptDatakeyRequestBody.datakeyPlainLength)
-            && Objects.equals(this.sequence, encryptDatakeyRequestBody.sequence);
+        EncryptDatakeyRequestBody that = (EncryptDatakeyRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.plainText, that.plainText)
+            && Objects.equals(this.datakeyPlainLength, that.datakeyPlainLength)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

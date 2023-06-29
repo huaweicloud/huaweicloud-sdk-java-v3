@@ -341,27 +341,23 @@ public class IdDocumentItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdDocumentItem idDocumentItem = (IdDocumentItem) o;
-        return Objects.equals(this.countryRegion, idDocumentItem.countryRegion)
-            && Objects.equals(this.idType, idDocumentItem.idType) && Objects.equals(this.side, idDocumentItem.side)
-            && Objects.equals(this.firstName, idDocumentItem.firstName)
-            && Objects.equals(this.lastName, idDocumentItem.lastName) && Objects.equals(this.sex, idDocumentItem.sex)
-            && Objects.equals(this.nationality, idDocumentItem.nationality)
-            && Objects.equals(this.birthDate, idDocumentItem.birthDate)
-            && Objects.equals(this.issueDate, idDocumentItem.issueDate)
-            && Objects.equals(this.expiryDate, idDocumentItem.expiryDate)
-            && Objects.equals(this.documentNumber, idDocumentItem.documentNumber)
-            && Objects.equals(this.address, idDocumentItem.address)
-            && Objects.equals(this.issuingAuthority, idDocumentItem.issuingAuthority)
-            && Objects.equals(this.portraitImage, idDocumentItem.portraitImage)
-            && Objects.equals(this.confidence, idDocumentItem.confidence);
+        IdDocumentItem that = (IdDocumentItem) obj;
+        return Objects.equals(this.countryRegion, that.countryRegion) && Objects.equals(this.idType, that.idType)
+            && Objects.equals(this.side, that.side) && Objects.equals(this.firstName, that.firstName)
+            && Objects.equals(this.lastName, that.lastName) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.documentNumber, that.documentNumber) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class ShowProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectRequest showProjectRequest = (ShowProjectRequest) o;
-        return Objects.equals(this.testSuiteId, showProjectRequest.testSuiteId);
+        ShowProjectRequest that = (ShowProjectRequest) obj;
+        return Objects.equals(this.testSuiteId, that.testSuiteId);
     }
 
     @Override

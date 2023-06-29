@@ -134,17 +134,17 @@ public class ThumbnailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThumbnailInfo thumbnailInfo = (ThumbnailInfo) o;
-        return Objects.equals(this.sample, thumbnailInfo.sample) && Objects.equals(this.dots, thumbnailInfo.dots)
-            && Objects.equals(this.execDesc, thumbnailInfo.execDesc)
-            && Objects.equals(this.thumbnailStatus, thumbnailInfo.thumbnailStatus);
+        ThumbnailInfo that = (ThumbnailInfo) obj;
+        return Objects.equals(this.sample, that.sample) && Objects.equals(this.dots, that.dots)
+            && Objects.equals(this.execDesc, that.execDesc)
+            && Objects.equals(this.thumbnailStatus, that.thumbnailStatus);
     }
 
     @Override

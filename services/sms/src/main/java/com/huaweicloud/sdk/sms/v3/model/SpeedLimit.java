@@ -52,15 +52,15 @@ public class SpeedLimit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpeedLimit speedLimit = (SpeedLimit) o;
-        return Objects.equals(this.speedLimit, speedLimit.speedLimit);
+        SpeedLimit that = (SpeedLimit) obj;
+        return Objects.equals(this.speedLimit, that.speedLimit);
     }
 
     @Override

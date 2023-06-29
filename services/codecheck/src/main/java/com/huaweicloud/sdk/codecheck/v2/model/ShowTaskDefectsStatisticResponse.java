@@ -75,16 +75,15 @@ public class ShowTaskDefectsStatisticResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskDefectsStatisticResponse showTaskDefectsStatisticResponse = (ShowTaskDefectsStatisticResponse) o;
-        return Objects.equals(this.severity, showTaskDefectsStatisticResponse.severity)
-            && Objects.equals(this.status, showTaskDefectsStatisticResponse.status);
+        ShowTaskDefectsStatisticResponse that = (ShowTaskDefectsStatisticResponse) obj;
+        return Objects.equals(this.severity, that.severity) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -149,19 +149,17 @@ public class ListRtcRoomListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRoomListResponse listRtcRoomListResponse = (ListRtcRoomListResponse) o;
-        return Objects.equals(this.total, listRtcRoomListResponse.total)
-            && Objects.equals(this.limit, listRtcRoomListResponse.limit)
-            && Objects.equals(this.offset, listRtcRoomListResponse.offset)
-            && Objects.equals(this.roomInfoList, listRtcRoomListResponse.roomInfoList)
-            && Objects.equals(this.xRequestId, listRtcRoomListResponse.xRequestId);
+        ListRtcRoomListResponse that = (ListRtcRoomListResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.roomInfoList, that.roomInfoList)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

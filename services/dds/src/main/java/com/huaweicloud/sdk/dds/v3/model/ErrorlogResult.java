@@ -99,17 +99,16 @@ public class ErrorlogResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorlogResult errorlogResult = (ErrorlogResult) o;
-        return Objects.equals(this.nodeName, errorlogResult.nodeName)
-            && Objects.equals(this.level, errorlogResult.level) && Objects.equals(this.time, errorlogResult.time)
-            && Objects.equals(this.content, errorlogResult.content);
+        ErrorlogResult that = (ErrorlogResult) obj;
+        return Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.content, that.content);
     }
 
     @Override

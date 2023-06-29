@@ -957,53 +957,40 @@ public class InstanceListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceListInfo instanceListInfo = (InstanceListInfo) o;
-        return Objects.equals(this.publicipId, instanceListInfo.publicipId)
-            && Objects.equals(this.vpcName, instanceListInfo.vpcName)
-            && Objects.equals(this.chargingMode, instanceListInfo.chargingMode)
-            && Objects.equals(this.vpcId, instanceListInfo.vpcId)
-            && Objects.equals(this.subnetId, instanceListInfo.subnetId)
-            && Objects.equals(this.securityGroupId, instanceListInfo.securityGroupId)
-            && Objects.equals(this.createdAt, instanceListInfo.createdAt)
-            && Objects.equals(this.updatedAt, instanceListInfo.updatedAt)
-            && Objects.equals(this.enableSsl, instanceListInfo.enableSsl)
-            && Objects.equals(this.maxMemory, instanceListInfo.maxMemory)
-            && Objects.equals(this.usedMemory, instanceListInfo.usedMemory)
-            && Objects.equals(this.publicipAddress, instanceListInfo.publicipAddress)
-            && Objects.equals(this.capacity, instanceListInfo.capacity)
-            && Objects.equals(this.capacityMinor, instanceListInfo.capacityMinor)
-            && Objects.equals(this.orderId, instanceListInfo.orderId)
-            && Objects.equals(this.maintainBegin, instanceListInfo.maintainBegin)
-            && Objects.equals(this.maintainEnd, instanceListInfo.maintainEnd)
-            && Objects.equals(this.engine, instanceListInfo.engine)
-            && Objects.equals(this.engineVersion, instanceListInfo.engineVersion)
-            && Objects.equals(this.serviceUpgrade, instanceListInfo.serviceUpgrade)
-            && Objects.equals(this.noPasswordAccess, instanceListInfo.noPasswordAccess)
-            && Objects.equals(this.serviceTaskId, instanceListInfo.serviceTaskId)
-            && Objects.equals(this.ip, instanceListInfo.ip)
-            && Objects.equals(this.accessUser, instanceListInfo.accessUser)
-            && Objects.equals(this.instanceId, instanceListInfo.instanceId)
-            && Objects.equals(this.enablePublicip, instanceListInfo.enablePublicip)
-            && Objects.equals(this.port, instanceListInfo.port) && Objects.equals(this.userId, instanceListInfo.userId)
-            && Objects.equals(this.userName, instanceListInfo.userName)
-            && Objects.equals(this.domainName, instanceListInfo.domainName)
-            && Objects.equals(this.readonlyDomainName, instanceListInfo.readonlyDomainName)
-            && Objects.equals(this.name, instanceListInfo.name)
-            && Objects.equals(this.specCode, instanceListInfo.specCode)
-            && Objects.equals(this.status, instanceListInfo.status) && Objects.equals(this.tags, instanceListInfo.tags)
-            && Objects.equals(this.enterpriseProjectId, instanceListInfo.enterpriseProjectId)
-            && Objects.equals(this.description, instanceListInfo.description)
-            && Objects.equals(this.cpuType, instanceListInfo.cpuType)
-            && Objects.equals(this.azCodes, instanceListInfo.azCodes)
-            && Objects.equals(this.features, instanceListInfo.features)
-            && Objects.equals(this.subStatus, instanceListInfo.subStatus);
+        InstanceListInfo that = (InstanceListInfo) obj;
+        return Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.vpcName, that.vpcName)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enableSsl, that.enableSsl) && Objects.equals(this.maxMemory, that.maxMemory)
+            && Objects.equals(this.usedMemory, that.usedMemory)
+            && Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.capacityMinor, that.capacityMinor)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.serviceUpgrade, that.serviceUpgrade)
+            && Objects.equals(this.noPasswordAccess, that.noPasswordAccess)
+            && Objects.equals(this.serviceTaskId, that.serviceTaskId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.accessUser, that.accessUser) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.enablePublicip, that.enablePublicip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.readonlyDomainName, that.readonlyDomainName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cpuType, that.cpuType)
+            && Objects.equals(this.azCodes, that.azCodes) && Objects.equals(this.features, that.features)
+            && Objects.equals(this.subStatus, that.subStatus);
     }
 
     @Override

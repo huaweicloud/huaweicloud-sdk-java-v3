@@ -57,16 +57,15 @@ public class VideoDeblock {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoDeblock videoDeblock = (VideoDeblock) o;
-        return Objects.equals(this.name, videoDeblock.name)
-            && Objects.equals(this.executionOrder, videoDeblock.executionOrder);
+        VideoDeblock that = (VideoDeblock) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.executionOrder, that.executionOrder);
     }
 
     @Override

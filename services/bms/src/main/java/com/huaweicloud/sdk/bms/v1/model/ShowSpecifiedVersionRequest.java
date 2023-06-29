@@ -33,15 +33,15 @@ public class ShowSpecifiedVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSpecifiedVersionRequest showSpecifiedVersionRequest = (ShowSpecifiedVersionRequest) o;
-        return Objects.equals(this.apiVersion, showSpecifiedVersionRequest.apiVersion);
+        ShowSpecifiedVersionRequest that = (ShowSpecifiedVersionRequest) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion);
     }
 
     @Override

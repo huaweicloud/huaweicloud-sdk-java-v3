@@ -66,16 +66,16 @@ public class MergeTableColumnStatisticInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeTableColumnStatisticInput mergeTableColumnStatisticInput = (MergeTableColumnStatisticInput) o;
-        return Objects.equals(this.merge, mergeTableColumnStatisticInput.merge)
-            && Objects.equals(this.tableColumnStatistics, mergeTableColumnStatisticInput.tableColumnStatistics);
+        MergeTableColumnStatisticInput that = (MergeTableColumnStatisticInput) obj;
+        return Objects.equals(this.merge, that.merge)
+            && Objects.equals(this.tableColumnStatistics, that.tableColumnStatistics);
     }
 
     @Override

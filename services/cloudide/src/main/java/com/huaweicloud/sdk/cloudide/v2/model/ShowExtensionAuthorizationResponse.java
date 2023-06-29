@@ -56,16 +56,15 @@ public class ShowExtensionAuthorizationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtensionAuthorizationResponse showExtensionAuthorizationResponse = (ShowExtensionAuthorizationResponse) o;
-        return Objects.equals(this.result, showExtensionAuthorizationResponse.result)
-            && Objects.equals(this.status, showExtensionAuthorizationResponse.status);
+        ShowExtensionAuthorizationResponse that = (ShowExtensionAuthorizationResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

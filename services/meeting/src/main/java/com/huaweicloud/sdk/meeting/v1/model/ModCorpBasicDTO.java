@@ -165,19 +165,18 @@ public class ModCorpBasicDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModCorpBasicDTO modCorpBasicDTO = (ModCorpBasicDTO) o;
-        return Objects.equals(this.name, modCorpBasicDTO.name) && Objects.equals(this.phone, modCorpBasicDTO.phone)
-            && Objects.equals(this.country, modCorpBasicDTO.country) && Objects.equals(this.fax, modCorpBasicDTO.fax)
-            && Objects.equals(this.email, modCorpBasicDTO.email)
-            && Objects.equals(this.address, modCorpBasicDTO.address)
-            && Objects.equals(this.description, modCorpBasicDTO.description);
+        ModCorpBasicDTO that = (ModCorpBasicDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.fax, that.fax)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

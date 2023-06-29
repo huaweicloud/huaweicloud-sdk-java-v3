@@ -319,28 +319,23 @@ public class ExitEntryPermitConfidence {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExitEntryPermitConfidence exitEntryPermitConfidence = (ExitEntryPermitConfidence) o;
-        return Objects.equals(this.name, exitEntryPermitConfidence.name)
-            && Objects.equals(this.nameEn, exitEntryPermitConfidence.nameEn)
-            && Objects.equals(this.birthDate, exitEntryPermitConfidence.birthDate)
-            && Objects.equals(this.sex, exitEntryPermitConfidence.sex)
-            && Objects.equals(this.number, exitEntryPermitConfidence.number)
-            && Objects.equals(this.validPeriod, exitEntryPermitConfidence.validPeriod)
-            && Objects.equals(this.issuingAuthority, exitEntryPermitConfidence.issuingAuthority)
-            && Objects.equals(this.issuePlace, exitEntryPermitConfidence.issuePlace)
-            && Objects.equals(this.machineCode, exitEntryPermitConfidence.machineCode)
-            && Objects.equals(this.type, exitEntryPermitConfidence.type)
-            && Objects.equals(this.side, exitEntryPermitConfidence.side)
-            && Objects.equals(this.endorsementInfoHk, exitEntryPermitConfidence.endorsementInfoHk)
-            && Objects.equals(this.endorsementInfoMo, exitEntryPermitConfidence.endorsementInfoMo)
-            && Objects.equals(this.endorsementInfoTw, exitEntryPermitConfidence.endorsementInfoTw);
+        ExitEntryPermitConfidence that = (ExitEntryPermitConfidence) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.birthDate, that.birthDate) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.validPeriod, that.validPeriod)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.issuePlace, that.issuePlace) && Objects.equals(this.machineCode, that.machineCode)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.side, that.side)
+            && Objects.equals(this.endorsementInfoHk, that.endorsementInfoHk)
+            && Objects.equals(this.endorsementInfoMo, that.endorsementInfoMo)
+            && Objects.equals(this.endorsementInfoTw, that.endorsementInfoTw);
     }
 
     @Override

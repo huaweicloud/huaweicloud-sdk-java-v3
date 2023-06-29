@@ -54,15 +54,15 @@ public class BatchDeleteInstanceTopicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteInstanceTopicResponse batchDeleteInstanceTopicResponse = (BatchDeleteInstanceTopicResponse) o;
-        return Objects.equals(this.topics, batchDeleteInstanceTopicResponse.topics);
+        BatchDeleteInstanceTopicResponse that = (BatchDeleteInstanceTopicResponse) obj;
+        return Objects.equals(this.topics, that.topics);
     }
 
     @Override

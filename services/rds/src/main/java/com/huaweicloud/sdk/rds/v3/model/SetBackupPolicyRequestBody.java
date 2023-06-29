@@ -65,16 +65,16 @@ public class SetBackupPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBackupPolicyRequestBody setBackupPolicyRequestBody = (SetBackupPolicyRequestBody) o;
-        return Objects.equals(this.backupPolicy, setBackupPolicyRequestBody.backupPolicy)
-            && Objects.equals(this.reserveBackups, setBackupPolicyRequestBody.reserveBackups);
+        SetBackupPolicyRequestBody that = (SetBackupPolicyRequestBody) obj;
+        return Objects.equals(this.backupPolicy, that.backupPolicy)
+            && Objects.equals(this.reserveBackups, that.reserveBackups);
     }
 
     @Override

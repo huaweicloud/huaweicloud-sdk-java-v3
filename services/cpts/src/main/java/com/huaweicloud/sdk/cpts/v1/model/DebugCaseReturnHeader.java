@@ -121,19 +121,18 @@ public class DebugCaseReturnHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugCaseReturnHeader debugCaseReturnHeader = (DebugCaseReturnHeader) o;
-        return Objects.equals(this.connection, debugCaseReturnHeader.connection)
-            && Objects.equals(this.contentLength, debugCaseReturnHeader.contentLength)
-            && Objects.equals(this.contentType, debugCaseReturnHeader.contentType)
-            && Objects.equals(this.date, debugCaseReturnHeader.date)
-            && Objects.equals(this.vary, debugCaseReturnHeader.vary);
+        DebugCaseReturnHeader that = (DebugCaseReturnHeader) obj;
+        return Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength)
+            && Objects.equals(this.contentType, that.contentType) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.vary, that.vary);
     }
 
     @Override

@@ -121,18 +121,16 @@ public class CreatePlaybookActionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookActionResponse createPlaybookActionResponse = (CreatePlaybookActionResponse) o;
-        return Objects.equals(this.code, createPlaybookActionResponse.code)
-            && Objects.equals(this.message, createPlaybookActionResponse.message)
-            && Objects.equals(this.data, createPlaybookActionResponse.data)
-            && Objects.equals(this.xRequestId, createPlaybookActionResponse.xRequestId);
+        CreatePlaybookActionResponse that = (CreatePlaybookActionResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

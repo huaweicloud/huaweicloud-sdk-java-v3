@@ -77,16 +77,15 @@ public class ListTemplateGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateGroupResponse listTemplateGroupResponse = (ListTemplateGroupResponse) o;
-        return Objects.equals(this.templateGroupList, listTemplateGroupResponse.templateGroupList)
-            && Objects.equals(this.total, listTemplateGroupResponse.total);
+        ListTemplateGroupResponse that = (ListTemplateGroupResponse) obj;
+        return Objects.equals(this.templateGroupList, that.templateGroupList) && Objects.equals(this.total, that.total);
     }
 
     @Override

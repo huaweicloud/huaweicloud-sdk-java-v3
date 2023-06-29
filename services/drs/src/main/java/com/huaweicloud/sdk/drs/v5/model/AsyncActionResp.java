@@ -77,16 +77,16 @@ public class AsyncActionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncActionResp asyncActionResp = (AsyncActionResp) o;
-        return Objects.equals(this.queryId, asyncActionResp.queryId) && Objects.equals(this.id, asyncActionResp.id)
-            && Objects.equals(this.name, asyncActionResp.name);
+        AsyncActionResp that = (AsyncActionResp) obj;
+        return Objects.equals(this.queryId, that.queryId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

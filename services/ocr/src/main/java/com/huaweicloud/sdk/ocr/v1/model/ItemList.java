@@ -275,22 +275,21 @@ public class ItemList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItemList itemList = (ItemList) o;
-        return Objects.equals(this.name, itemList.name) && Objects.equals(this.specification, itemList.specification)
-            && Objects.equals(this.unit, itemList.unit) && Objects.equals(this.quantity, itemList.quantity)
-            && Objects.equals(this.unitPrice, itemList.unitPrice)
-            && Objects.equals(this.licensePlateNumber, itemList.licensePlateNumber)
-            && Objects.equals(this.amount, itemList.amount) && Objects.equals(this.taxRate, itemList.taxRate)
-            && Objects.equals(this.tax, itemList.tax) && Objects.equals(this.endDate, itemList.endDate)
-            && Objects.equals(this.startDate, itemList.startDate)
-            && Objects.equals(this.vehicleType, itemList.vehicleType);
+        ItemList that = (ItemList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.specification, that.specification)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.quantity, that.quantity)
+            && Objects.equals(this.unitPrice, that.unitPrice)
+            && Objects.equals(this.licensePlateNumber, that.licensePlateNumber)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.taxRate, that.taxRate)
+            && Objects.equals(this.tax, that.tax) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.vehicleType, that.vehicleType);
     }
 
     @Override

@@ -96,16 +96,16 @@ public class Expression {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Expression expression = (Expression) o;
-        return Objects.equals(this.formula, expression.formula) && Objects.equals(this.formulas, expression.formulas)
-            && Objects.equals(this.timeRange, expression.timeRange);
+        Expression that = (Expression) obj;
+        return Objects.equals(this.formula, that.formula) && Objects.equals(this.formulas, that.formulas)
+            && Objects.equals(this.timeRange, that.timeRange);
     }
 
     @Override

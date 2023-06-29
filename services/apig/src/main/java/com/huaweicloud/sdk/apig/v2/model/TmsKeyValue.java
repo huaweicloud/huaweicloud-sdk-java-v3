@@ -55,15 +55,15 @@ public class TmsKeyValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TmsKeyValue tmsKeyValue = (TmsKeyValue) o;
-        return Objects.equals(this.key, tmsKeyValue.key) && Objects.equals(this.value, tmsKeyValue.value);
+        TmsKeyValue that = (TmsKeyValue) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

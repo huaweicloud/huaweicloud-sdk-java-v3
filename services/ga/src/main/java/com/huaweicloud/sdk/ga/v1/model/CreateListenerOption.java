@@ -200,21 +200,18 @@ public class CreateListenerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateListenerOption createListenerOption = (CreateListenerOption) o;
-        return Objects.equals(this.name, createListenerOption.name)
-            && Objects.equals(this.description, createListenerOption.description)
-            && Objects.equals(this.protocol, createListenerOption.protocol)
-            && Objects.equals(this.portRanges, createListenerOption.portRanges)
-            && Objects.equals(this.clientAffinity, createListenerOption.clientAffinity)
-            && Objects.equals(this.acceleratorId, createListenerOption.acceleratorId)
-            && Objects.equals(this.tags, createListenerOption.tags);
+        CreateListenerOption that = (CreateListenerOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.portRanges, that.portRanges)
+            && Objects.equals(this.clientAffinity, that.clientAffinity)
+            && Objects.equals(this.acceleratorId, that.acceleratorId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class PrivacyComplianceSubtype {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivacyComplianceSubtype privacyComplianceSubtype = (PrivacyComplianceSubtype) o;
-        return Objects.equals(this.desc, privacyComplianceSubtype.desc)
-            && Objects.equals(this.checkerRules, privacyComplianceSubtype.checkerRules);
+        PrivacyComplianceSubtype that = (PrivacyComplianceSubtype) obj;
+        return Objects.equals(this.desc, that.desc) && Objects.equals(this.checkerRules, that.checkerRules);
     }
 
     @Override

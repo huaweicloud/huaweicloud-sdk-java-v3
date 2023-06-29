@@ -44,16 +44,15 @@ public class CreateTemporaryAccessKeyByTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemporaryAccessKeyByTokenRequest createTemporaryAccessKeyByTokenRequest =
-            (CreateTemporaryAccessKeyByTokenRequest) o;
-        return Objects.equals(this.body, createTemporaryAccessKeyByTokenRequest.body);
+        CreateTemporaryAccessKeyByTokenRequest that = (CreateTemporaryAccessKeyByTokenRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

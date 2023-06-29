@@ -33,15 +33,15 @@ public class ShowBucketStorageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBucketStorageRequest showBucketStorageRequest = (ShowBucketStorageRequest) o;
-        return Objects.equals(this.eihealthProjectId, showBucketStorageRequest.eihealthProjectId);
+        ShowBucketStorageRequest that = (ShowBucketStorageRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

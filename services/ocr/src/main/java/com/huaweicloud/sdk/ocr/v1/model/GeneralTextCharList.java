@@ -96,17 +96,16 @@ public class GeneralTextCharList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTextCharList generalTextCharList = (GeneralTextCharList) o;
-        return Objects.equals(this._char, generalTextCharList._char)
-            && Objects.equals(this.charLocation, generalTextCharList.charLocation)
-            && Objects.equals(this.charConfidence, generalTextCharList.charConfidence);
+        GeneralTextCharList that = (GeneralTextCharList) obj;
+        return Objects.equals(this._char, that._char) && Objects.equals(this.charLocation, that.charLocation)
+            && Objects.equals(this.charConfidence, that.charConfidence);
     }
 
     @Override

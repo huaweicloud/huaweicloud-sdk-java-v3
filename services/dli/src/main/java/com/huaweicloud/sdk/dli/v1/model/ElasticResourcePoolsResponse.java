@@ -466,33 +466,25 @@ public class ElasticResourcePoolsResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ElasticResourcePoolsResponse elasticResourcePoolsResponse = (ElasticResourcePoolsResponse) o;
-        return Objects.equals(this.updateTime, elasticResourcePoolsResponse.updateTime)
-            && Objects.equals(this.queues, elasticResourcePoolsResponse.queues)
-            && Objects.equals(this.owner, elasticResourcePoolsResponse.owner)
-            && Objects.equals(this.elasticResourcePoolName, elasticResourcePoolsResponse.elasticResourcePoolName)
-            && Objects.equals(this.description, elasticResourcePoolsResponse.description)
-            && Objects.equals(this.maxCu, elasticResourcePoolsResponse.maxCu)
-            && Objects.equals(this.minCu, elasticResourcePoolsResponse.minCu)
-            && Objects.equals(this.actualCu, elasticResourcePoolsResponse.actualCu)
-            && Objects.equals(this.cidrInVpc, elasticResourcePoolsResponse.cidrInVpc)
-            && Objects.equals(this.createTime, elasticResourcePoolsResponse.createTime)
-            && Objects.equals(this.currentCu, elasticResourcePoolsResponse.currentCu)
-            && Objects.equals(this.status, elasticResourcePoolsResponse.status)
-            && Objects.equals(this.resourceId, elasticResourcePoolsResponse.resourceId)
-            && Objects.equals(this.failReason, elasticResourcePoolsResponse.failReason)
-            && Objects.equals(this.enterpriseProjectId, elasticResourcePoolsResponse.enterpriseProjectId)
-            && Objects.equals(this.prepayCu, elasticResourcePoolsResponse.prepayCu)
-            && Objects.equals(this.chargingMode, elasticResourcePoolsResponse.chargingMode)
-            && Objects.equals(this.manager, elasticResourcePoolsResponse.manager)
-            && Objects.equals(this.label, elasticResourcePoolsResponse.label);
+        ElasticResourcePoolsResponse that = (ElasticResourcePoolsResponse) obj;
+        return Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.maxCu, that.maxCu)
+            && Objects.equals(this.minCu, that.minCu) && Objects.equals(this.actualCu, that.actualCu)
+            && Objects.equals(this.cidrInVpc, that.cidrInVpc) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.currentCu, that.currentCu) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.prepayCu, that.prepayCu) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.manager, that.manager) && Objects.equals(this.label, that.label);
     }
 
     @Override

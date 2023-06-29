@@ -191,22 +191,18 @@ public class ListOtaPackageInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOtaPackageInfoRequest listOtaPackageInfoRequest = (ListOtaPackageInfoRequest) o;
-        return Objects.equals(this.instanceId, listOtaPackageInfoRequest.instanceId)
-            && Objects.equals(this.appId, listOtaPackageInfoRequest.appId)
-            && Objects.equals(this.packageType, listOtaPackageInfoRequest.packageType)
-            && Objects.equals(this.productId, listOtaPackageInfoRequest.productId)
-            && Objects.equals(this.version, listOtaPackageInfoRequest.version)
-            && Objects.equals(this.limit, listOtaPackageInfoRequest.limit)
-            && Objects.equals(this.marker, listOtaPackageInfoRequest.marker)
-            && Objects.equals(this.offset, listOtaPackageInfoRequest.offset);
+        ListOtaPackageInfoRequest that = (ListOtaPackageInfoRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

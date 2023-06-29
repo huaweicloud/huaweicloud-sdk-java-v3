@@ -135,6 +135,11 @@ public class ListFunctionResult {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -159,6 +164,7 @@ public class ListFunctionResult {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -184,22 +190,15 @@ public class ListFunctionResult {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -303,22 +302,15 @@ public class ListFunctionResult {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -490,22 +482,15 @@ public class ListFunctionResult {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1214,52 +1199,38 @@ public class ListFunctionResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionResult listFunctionResult = (ListFunctionResult) o;
-        return Objects.equals(this.funcUrn, listFunctionResult.funcUrn)
-            && Objects.equals(this.funcName, listFunctionResult.funcName)
-            && Objects.equals(this.domainId, listFunctionResult.domainId)
-            && Objects.equals(this.namespace, listFunctionResult.namespace)
-            && Objects.equals(this.projectName, listFunctionResult.projectName)
-            && Objects.equals(this._package, listFunctionResult._package)
-            && Objects.equals(this.runtime, listFunctionResult.runtime)
-            && Objects.equals(this.timeout, listFunctionResult.timeout)
-            && Objects.equals(this.handler, listFunctionResult.handler)
-            && Objects.equals(this.memorySize, listFunctionResult.memorySize)
-            && Objects.equals(this.gpuMemory, listFunctionResult.gpuMemory)
-            && Objects.equals(this.cpu, listFunctionResult.cpu)
-            && Objects.equals(this.codeType, listFunctionResult.codeType)
-            && Objects.equals(this.codeUrl, listFunctionResult.codeUrl)
-            && Objects.equals(this.codeFilename, listFunctionResult.codeFilename)
-            && Objects.equals(this.codeSize, listFunctionResult.codeSize)
-            && Objects.equals(this.userData, listFunctionResult.userData)
-            && Objects.equals(this.encryptedUserData, listFunctionResult.encryptedUserData)
-            && Objects.equals(this.digest, listFunctionResult.digest)
-            && Objects.equals(this.version, listFunctionResult.version)
-            && Objects.equals(this.imageName, listFunctionResult.imageName)
-            && Objects.equals(this.xrole, listFunctionResult.xrole)
-            && Objects.equals(this.appXrole, listFunctionResult.appXrole)
-            && Objects.equals(this.description, listFunctionResult.description)
-            && Objects.equals(this.lastModified, listFunctionResult.lastModified)
-            && Objects.equals(this.funcVpcId, listFunctionResult.funcVpcId)
-            && Objects.equals(this.strategyConfig, listFunctionResult.strategyConfig)
-            && Objects.equals(this.extendConfig, listFunctionResult.extendConfig)
-            && Objects.equals(this.initializerHandler, listFunctionResult.initializerHandler)
-            && Objects.equals(this.initializerTimeout, listFunctionResult.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, listFunctionResult.enterpriseProjectId)
-            && Objects.equals(this.longTime, listFunctionResult.longTime)
-            && Objects.equals(this.logGroupId, listFunctionResult.logGroupId)
-            && Objects.equals(this.logStreamId, listFunctionResult.logStreamId)
-            && Objects.equals(this.type, listFunctionResult.type)
-            && Objects.equals(this.failCount, listFunctionResult.failCount)
-            && Objects.equals(this.isBridgeFunction, listFunctionResult.isBridgeFunction)
-            && Objects.equals(this.bindBridgeFuncUrns, listFunctionResult.bindBridgeFuncUrns);
+        ListFunctionResult that = (ListFunctionResult) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
+            && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData)
+            && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.funcVpcId, that.funcVpcId)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.extendConfig, that.extendConfig)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.longTime, that.longTime) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.failCount, that.failCount)
+            && Objects.equals(this.isBridgeFunction, that.isBridgeFunction)
+            && Objects.equals(this.bindBridgeFuncUrns, that.bindBridgeFuncUrns);
     }
 
     @Override

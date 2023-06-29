@@ -311,26 +311,20 @@ public class ShowPipleineStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipleineStatusResponse showPipleineStatusResponse = (ShowPipleineStatusResponse) o;
-        return Objects.equals(this.pipelineId, showPipleineStatusResponse.pipelineId)
-            && Objects.equals(this.pipelineName, showPipleineStatusResponse.pipelineName)
-            && Objects.equals(this.executor, showPipleineStatusResponse.executor)
-            && Objects.equals(this.buildId, showPipleineStatusResponse.buildId)
-            && Objects.equals(this.startTime, showPipleineStatusResponse.startTime)
-            && Objects.equals(this.endTime, showPipleineStatusResponse.endTime)
-            && Objects.equals(this.parameters, showPipleineStatusResponse.parameters)
-            && Objects.equals(this.states, showPipleineStatusResponse.states)
-            && Objects.equals(this.elapsedTime, showPipleineStatusResponse.elapsedTime)
-            && Objects.equals(this.status, showPipleineStatusResponse.status)
-            && Objects.equals(this.outcome, showPipleineStatusResponse.outcome)
-            && Objects.equals(this.detailUrl, showPipleineStatusResponse.detailUrl);
+        ShowPipleineStatusResponse that = (ShowPipleineStatusResponse) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.pipelineName, that.pipelineName)
+            && Objects.equals(this.executor, that.executor) && Objects.equals(this.buildId, that.buildId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.elapsedTime, that.elapsedTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.outcome, that.outcome) && Objects.equals(this.detailUrl, that.detailUrl);
     }
 
     @Override

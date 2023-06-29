@@ -103,18 +103,18 @@ public class DeleteComponentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteComponentRequest deleteComponentRequest = (DeleteComponentRequest) o;
-        return Objects.equals(this.componentId, deleteComponentRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, deleteComponentRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, deleteComponentRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, deleteComponentRequest.applicationId);
+        DeleteComponentRequest that = (DeleteComponentRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

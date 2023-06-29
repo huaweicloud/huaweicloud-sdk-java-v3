@@ -167,19 +167,19 @@ public class InsurantItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InsurantItem insurantItem = (InsurantItem) o;
-        return Objects.equals(this.insurantName, insurantItem.insurantName)
-            && Objects.equals(this.insurantSex, insurantItem.insurantSex)
-            && Objects.equals(this.insurantBirthday, insurantItem.insurantBirthday)
-            && Objects.equals(this.insurantIdType, insurantItem.insurantIdType)
-            && Objects.equals(this.insurantIdNumber, insurantItem.insurantIdNumber);
+        InsurantItem that = (InsurantItem) obj;
+        return Objects.equals(this.insurantName, that.insurantName)
+            && Objects.equals(this.insurantSex, that.insurantSex)
+            && Objects.equals(this.insurantBirthday, that.insurantBirthday)
+            && Objects.equals(this.insurantIdType, that.insurantIdType)
+            && Objects.equals(this.insurantIdNumber, that.insurantIdNumber);
     }
 
     @Override

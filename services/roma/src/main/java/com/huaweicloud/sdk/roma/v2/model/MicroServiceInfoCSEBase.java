@@ -55,16 +55,15 @@ public class MicroServiceInfoCSEBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCSEBase microServiceInfoCSEBase = (MicroServiceInfoCSEBase) o;
-        return Objects.equals(this.engineId, microServiceInfoCSEBase.engineId)
-            && Objects.equals(this.serviceId, microServiceInfoCSEBase.serviceId);
+        MicroServiceInfoCSEBase that = (MicroServiceInfoCSEBase) obj;
+        return Objects.equals(this.engineId, that.engineId) && Objects.equals(this.serviceId, that.serviceId);
     }
 
     @Override

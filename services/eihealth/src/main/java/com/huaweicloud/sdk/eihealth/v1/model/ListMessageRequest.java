@@ -169,21 +169,18 @@ public class ListMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageRequest listMessageRequest = (ListMessageRequest) o;
-        return Objects.equals(this.eihealthProjectName, listMessageRequest.eihealthProjectName)
-            && Objects.equals(this.limit, listMessageRequest.limit)
-            && Objects.equals(this.messageType, listMessageRequest.messageType)
-            && Objects.equals(this.offset, listMessageRequest.offset)
-            && Objects.equals(this.operator, listMessageRequest.operator)
-            && Objects.equals(this.resourceType, listMessageRequest.resourceType)
-            && Objects.equals(this.status, listMessageRequest.status);
+        ListMessageRequest that = (ListMessageRequest) obj;
+        return Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.messageType, that.messageType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status);
     }
 
     @Override

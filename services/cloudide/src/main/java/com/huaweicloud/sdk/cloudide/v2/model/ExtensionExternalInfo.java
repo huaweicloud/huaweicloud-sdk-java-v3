@@ -188,22 +188,18 @@ public class ExtensionExternalInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionExternalInfo extensionExternalInfo = (ExtensionExternalInfo) o;
-        return Objects.equals(this.extensionId, extensionExternalInfo.extensionId)
-            && Objects.equals(this.repoUrl, extensionExternalInfo.repoUrl)
-            && Objects.equals(this.helpPage, extensionExternalInfo.helpPage)
-            && Objects.equals(this.website, extensionExternalInfo.website)
-            && Objects.equals(this.issueLink, extensionExternalInfo.issueLink)
-            && Objects.equals(this.showPreviews, extensionExternalInfo.showPreviews)
-            && Objects.equals(this.createdAt, extensionExternalInfo.createdAt)
-            && Objects.equals(this.updatedAt, extensionExternalInfo.updatedAt);
+        ExtensionExternalInfo that = (ExtensionExternalInfo) obj;
+        return Objects.equals(this.extensionId, that.extensionId) && Objects.equals(this.repoUrl, that.repoUrl)
+            && Objects.equals(this.helpPage, that.helpPage) && Objects.equals(this.website, that.website)
+            && Objects.equals(this.issueLink, that.issueLink) && Objects.equals(this.showPreviews, that.showPreviews)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

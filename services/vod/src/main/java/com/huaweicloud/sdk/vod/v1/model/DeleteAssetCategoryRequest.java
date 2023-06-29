@@ -58,16 +58,15 @@ public class DeleteAssetCategoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAssetCategoryRequest deleteAssetCategoryRequest = (DeleteAssetCategoryRequest) o;
-        return Objects.equals(this.xSdkDate, deleteAssetCategoryRequest.xSdkDate)
-            && Objects.equals(this.id, deleteAssetCategoryRequest.id);
+        DeleteAssetCategoryRequest that = (DeleteAssetCategoryRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.id, that.id);
     }
 
     @Override

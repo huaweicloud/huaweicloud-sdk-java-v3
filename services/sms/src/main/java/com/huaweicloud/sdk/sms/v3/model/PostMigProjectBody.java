@@ -100,22 +100,15 @@ public class PostMigProjectBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,26 +352,22 @@ public class PostMigProjectBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostMigProjectBody postMigProjectBody = (PostMigProjectBody) o;
-        return Objects.equals(this.name, postMigProjectBody.name)
-            && Objects.equals(this.description, postMigProjectBody.description)
-            && Objects.equals(this.isdefault, postMigProjectBody.isdefault)
-            && Objects.equals(this.region, postMigProjectBody.region)
-            && Objects.equals(this.startTargetServer, postMigProjectBody.startTargetServer)
-            && Objects.equals(this.speedLimit, postMigProjectBody.speedLimit)
-            && Objects.equals(this.usePublicIp, postMigProjectBody.usePublicIp)
-            && Objects.equals(this.existServer, postMigProjectBody.existServer)
-            && Objects.equals(this.type, postMigProjectBody.type)
-            && Objects.equals(this.enterpriseProject, postMigProjectBody.enterpriseProject)
-            && Objects.equals(this.syncing, postMigProjectBody.syncing)
-            && Objects.equals(this.startNetworckCheck, postMigProjectBody.startNetworckCheck);
+        PostMigProjectBody that = (PostMigProjectBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isdefault, that.isdefault) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.startTargetServer, that.startTargetServer)
+            && Objects.equals(this.speedLimit, that.speedLimit) && Objects.equals(this.usePublicIp, that.usePublicIp)
+            && Objects.equals(this.existServer, that.existServer) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProject, that.enterpriseProject)
+            && Objects.equals(this.syncing, that.syncing)
+            && Objects.equals(this.startNetworckCheck, that.startNetworckCheck);
     }
 
     @Override

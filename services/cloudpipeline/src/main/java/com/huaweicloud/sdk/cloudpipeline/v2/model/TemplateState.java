@@ -360,27 +360,25 @@ public class TemplateState {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateState templateState = (TemplateState) o;
-        return Objects.equals(this.type, templateState.type) && Objects.equals(this.name, templateState.name)
-            && Objects.equals(this.moduleOrTemplateId, templateState.moduleOrTemplateId)
-            && Objects.equals(this.moduleOrTemplateName, templateState.moduleOrTemplateName)
-            && Objects.equals(this.displayName, templateState.displayName)
-            && Objects.equals(this.dslMethod, templateState.dslMethod)
-            && Objects.equals(this.parameters, templateState.parameters)
-            && Objects.equals(this.isManualExecution, templateState.isManualExecution)
-            && Objects.equals(this.jobParameterValidate, templateState.jobParameterValidate)
-            && Objects.equals(this.isShowCodehubUrl, templateState.isShowCodehubUrl)
-            && Objects.equals(this.isExecute, templateState.isExecute)
-            && Objects.equals(this.jobId, templateState.jobId) && Objects.equals(this.jobName, templateState.jobName)
-            && Objects.equals(this.projectId, templateState.projectId)
-            && Objects.equals(this.executionMode, templateState.executionMode);
+        TemplateState that = (TemplateState) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.moduleOrTemplateId, that.moduleOrTemplateId)
+            && Objects.equals(this.moduleOrTemplateName, that.moduleOrTemplateName)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.dslMethod, that.dslMethod)
+            && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.isManualExecution, that.isManualExecution)
+            && Objects.equals(this.jobParameterValidate, that.jobParameterValidate)
+            && Objects.equals(this.isShowCodehubUrl, that.isShowCodehubUrl)
+            && Objects.equals(this.isExecute, that.isExecute) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.executionMode, that.executionMode);
     }
 
     @Override

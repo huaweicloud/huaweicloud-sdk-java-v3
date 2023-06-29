@@ -143,20 +143,17 @@ public class ListEndpointsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointsRequest listEndpointsRequest = (ListEndpointsRequest) o;
-        return Objects.equals(this.iefInstanceId, listEndpointsRequest.iefInstanceId)
-            && Objects.equals(this.name, listEndpointsRequest.name)
-            && Objects.equals(this.type, listEndpointsRequest.type)
-            && Objects.equals(this.isShared, listEndpointsRequest.isShared)
-            && Objects.equals(this.limit, listEndpointsRequest.limit)
-            && Objects.equals(this.offset, listEndpointsRequest.offset);
+        ListEndpointsRequest that = (ListEndpointsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.isShared, that.isShared)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

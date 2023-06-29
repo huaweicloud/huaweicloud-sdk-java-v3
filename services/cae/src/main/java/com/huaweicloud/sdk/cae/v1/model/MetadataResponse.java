@@ -207,20 +207,18 @@ public class MetadataResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataResponse metadataResponse = (MetadataResponse) o;
-        return Objects.equals(this.annotations, metadataResponse.annotations)
-            && Objects.equals(this.createdAt, metadataResponse.createdAt)
-            && Objects.equals(this.id, metadataResponse.id) && Objects.equals(this.jodId, metadataResponse.jodId)
-            && Objects.equals(this.name, metadataResponse.name) && Objects.equals(this.status, metadataResponse.status)
-            && Objects.equals(this.type, metadataResponse.type)
-            && Objects.equals(this.updatedAt, metadataResponse.updatedAt);
+        MetadataResponse that = (MetadataResponse) obj;
+        return Objects.equals(this.annotations, that.annotations) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.jodId, that.jodId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

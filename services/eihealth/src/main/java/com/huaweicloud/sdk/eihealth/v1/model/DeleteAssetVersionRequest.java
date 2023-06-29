@@ -55,16 +55,15 @@ public class DeleteAssetVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAssetVersionRequest deleteAssetVersionRequest = (DeleteAssetVersionRequest) o;
-        return Objects.equals(this.assetId, deleteAssetVersionRequest.assetId)
-            && Objects.equals(this.version, deleteAssetVersionRequest.version);
+        DeleteAssetVersionRequest that = (DeleteAssetVersionRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.version, that.version);
     }
 
     @Override

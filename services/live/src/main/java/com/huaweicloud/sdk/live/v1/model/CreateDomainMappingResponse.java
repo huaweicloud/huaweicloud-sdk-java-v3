@@ -56,16 +56,15 @@ public class CreateDomainMappingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDomainMappingResponse createDomainMappingResponse = (CreateDomainMappingResponse) o;
-        return Objects.equals(this.pullDomain, createDomainMappingResponse.pullDomain)
-            && Objects.equals(this.pushDomain, createDomainMappingResponse.pushDomain);
+        CreateDomainMappingResponse that = (CreateDomainMappingResponse) obj;
+        return Objects.equals(this.pullDomain, that.pullDomain) && Objects.equals(this.pushDomain, that.pushDomain);
     }
 
     @Override

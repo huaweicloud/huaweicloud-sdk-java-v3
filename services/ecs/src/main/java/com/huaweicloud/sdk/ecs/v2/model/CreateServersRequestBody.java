@@ -65,16 +65,15 @@ public class CreateServersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServersRequestBody createServersRequestBody = (CreateServersRequestBody) o;
-        return Objects.equals(this.dryRun, createServersRequestBody.dryRun)
-            && Objects.equals(this.server, createServersRequestBody.server);
+        CreateServersRequestBody that = (CreateServersRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.server, that.server);
     }
 
     @Override

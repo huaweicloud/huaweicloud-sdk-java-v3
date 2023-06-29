@@ -77,17 +77,16 @@ public class PrepaidOptions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrepaidOptions prepaidOptions = (PrepaidOptions) o;
-        return Objects.equals(this.orderId, prepaidOptions.orderId)
-            && Objects.equals(this.productId, prepaidOptions.productId)
-            && Objects.equals(this.payMode, prepaidOptions.payMode);
+        PrepaidOptions that = (PrepaidOptions) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.payMode, that.payMode);
     }
 
     @Override

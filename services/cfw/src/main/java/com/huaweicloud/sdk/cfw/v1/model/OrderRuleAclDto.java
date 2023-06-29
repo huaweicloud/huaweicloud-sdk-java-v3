@@ -55,16 +55,15 @@ public class OrderRuleAclDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderRuleAclDto orderRuleAclDto = (OrderRuleAclDto) o;
-        return Objects.equals(this.destRuleId, orderRuleAclDto.destRuleId)
-            && Objects.equals(this.top, orderRuleAclDto.top);
+        OrderRuleAclDto that = (OrderRuleAclDto) obj;
+        return Objects.equals(this.destRuleId, that.destRuleId) && Objects.equals(this.top, that.top);
     }
 
     @Override

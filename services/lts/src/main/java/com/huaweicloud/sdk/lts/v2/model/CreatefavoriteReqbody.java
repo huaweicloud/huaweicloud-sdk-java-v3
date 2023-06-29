@@ -165,21 +165,20 @@ public class CreatefavoriteReqbody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatefavoriteReqbody createfavoriteReqbody = (CreatefavoriteReqbody) o;
-        return Objects.equals(this.epsId, createfavoriteReqbody.epsId)
-            && Objects.equals(this.favoriteResourceId, createfavoriteReqbody.favoriteResourceId)
-            && Objects.equals(this.favoriteResourceType, createfavoriteReqbody.favoriteResourceType)
-            && Objects.equals(this.logGroupId, createfavoriteReqbody.logGroupId)
-            && Objects.equals(this.logGroupName, createfavoriteReqbody.logGroupName)
-            && Objects.equals(this.logStreamId, createfavoriteReqbody.logStreamId)
-            && Objects.equals(this.logStreamName, createfavoriteReqbody.logStreamName);
+        CreatefavoriteReqbody that = (CreatefavoriteReqbody) obj;
+        return Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.favoriteResourceId, that.favoriteResourceId)
+            && Objects.equals(this.favoriteResourceType, that.favoriteResourceType)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override

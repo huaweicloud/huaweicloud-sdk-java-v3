@@ -83,22 +83,15 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,22 +175,15 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            FlavorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FlavorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FlavorEnum(value));
         }
 
         public static FlavorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FlavorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +255,15 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -411,22 +390,15 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -565,22 +537,16 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            EngineAdditionalActionsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineAdditionalActionsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new EngineAdditionalActionsEnum(value));
         }
 
         public static EngineAdditionalActionsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineAdditionalActionsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -603,8 +569,8 @@ public class EngineSimpleInfo {
     private List<EngineAdditionalActionsEnum> engineAdditionalActions = null;
 
     /**
-    * 微服务引擎专享版应用部署类型
-    */
+     * 微服务引擎专享版应用部署类型
+     */
     public static final class SpecTypeEnum {
 
         /**
@@ -653,22 +619,15 @@ public class EngineSimpleInfo {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SpecTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SpecTypeEnum(value));
         }
 
         public static SpecTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SpecTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1180,38 +1139,32 @@ public class EngineSimpleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineSimpleInfo engineSimpleInfo = (EngineSimpleInfo) o;
-        return Objects.equals(this.id, engineSimpleInfo.id) && Objects.equals(this.name, engineSimpleInfo.name)
-            && Objects.equals(this.enterprisProjectId, engineSimpleInfo.enterprisProjectId)
-            && Objects.equals(this.enterpriseProjectName, engineSimpleInfo.enterpriseProjectName)
-            && Objects.equals(this.type, engineSimpleInfo.type)
-            && Objects.equals(this.description, engineSimpleInfo.description)
-            && Objects.equals(this.flavor, engineSimpleInfo.flavor)
-            && Objects.equals(this.payment, engineSimpleInfo.payment)
-            && Objects.equals(this.authType, engineSimpleInfo.authType)
-            && Objects.equals(this.status, engineSimpleInfo.status)
-            && Objects.equals(this.externalAddress, engineSimpleInfo.externalAddress)
-            && Objects.equals(this.serviceEndpoint, engineSimpleInfo.serviceEndpoint)
-            && Objects.equals(this.publicAddress, engineSimpleInfo.publicAddress)
-            && Objects.equals(this.publicServiceEndpoint, engineSimpleInfo.publicServiceEndpoint)
-            && Objects.equals(this.totalInstance, engineSimpleInfo.totalInstance)
-            && Objects.equals(this.usedInstance, engineSimpleInfo.usedInstance)
-            && Objects.equals(this.availableInstance, engineSimpleInfo.availableInstance)
-            && Objects.equals(this.version, engineSimpleInfo.version)
-            && Objects.equals(this.latestVersion, engineSimpleInfo.latestVersion)
-            && Objects.equals(this.createTime, engineSimpleInfo.createTime)
-            && Objects.equals(this.dueTo, engineSimpleInfo.dueTo)
-            && Objects.equals(this.latestJobId, engineSimpleInfo.latestJobId)
-            && Objects.equals(this.engineAdditionalActions, engineSimpleInfo.engineAdditionalActions)
-            && Objects.equals(this.specType, engineSimpleInfo.specType)
-            && Objects.equals(this.reference, engineSimpleInfo.reference);
+        EngineSimpleInfo that = (EngineSimpleInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enterprisProjectId, that.enterprisProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.payment, that.payment)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.externalAddress, that.externalAddress)
+            && Objects.equals(this.serviceEndpoint, that.serviceEndpoint)
+            && Objects.equals(this.publicAddress, that.publicAddress)
+            && Objects.equals(this.publicServiceEndpoint, that.publicServiceEndpoint)
+            && Objects.equals(this.totalInstance, that.totalInstance)
+            && Objects.equals(this.usedInstance, that.usedInstance)
+            && Objects.equals(this.availableInstance, that.availableInstance)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.latestVersion, that.latestVersion)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.dueTo, that.dueTo)
+            && Objects.equals(this.latestJobId, that.latestJobId)
+            && Objects.equals(this.engineAdditionalActions, that.engineAdditionalActions)
+            && Objects.equals(this.specType, that.specType) && Objects.equals(this.reference, that.reference);
     }
 
     @Override

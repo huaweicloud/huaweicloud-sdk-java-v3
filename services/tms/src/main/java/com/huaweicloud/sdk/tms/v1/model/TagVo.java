@@ -55,15 +55,15 @@ public class TagVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagVo tagVo = (TagVo) o;
-        return Objects.equals(this.key, tagVo.key) && Objects.equals(this.value, tagVo.value);
+        TagVo that = (TagVo) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

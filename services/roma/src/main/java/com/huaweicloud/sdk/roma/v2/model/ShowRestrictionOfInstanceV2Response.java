@@ -75,17 +75,16 @@ public class ShowRestrictionOfInstanceV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRestrictionOfInstanceV2Response showRestrictionOfInstanceV2Response =
-            (ShowRestrictionOfInstanceV2Response) o;
-        return Objects.equals(this.restrictCidrs, showRestrictionOfInstanceV2Response.restrictCidrs)
-            && Objects.equals(this.resourceSubnetCidr, showRestrictionOfInstanceV2Response.resourceSubnetCidr);
+        ShowRestrictionOfInstanceV2Response that = (ShowRestrictionOfInstanceV2Response) obj;
+        return Objects.equals(this.restrictCidrs, that.restrictCidrs)
+            && Objects.equals(this.resourceSubnetCidr, that.resourceSubnetCidr);
     }
 
     @Override

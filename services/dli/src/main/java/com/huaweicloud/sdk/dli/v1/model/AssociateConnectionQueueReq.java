@@ -90,16 +90,16 @@ public class AssociateConnectionQueueReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateConnectionQueueReq associateConnectionQueueReq = (AssociateConnectionQueueReq) o;
-        return Objects.equals(this.queues, associateConnectionQueueReq.queues)
-            && Objects.equals(this.elasticResourcePools, associateConnectionQueueReq.elasticResourcePools);
+        AssociateConnectionQueueReq that = (AssociateConnectionQueueReq) obj;
+        return Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.elasticResourcePools, that.elasticResourcePools);
     }
 
     @Override

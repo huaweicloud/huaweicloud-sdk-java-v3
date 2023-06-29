@@ -429,24 +429,22 @@ public class ContainerDef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerDef containerDef = (ContainerDef) o;
-        return Objects.equals(this.name, containerDef.name) && Objects.equals(this.imageUrl, containerDef.imageUrl)
-            && Objects.equals(this.args, containerDef.args) && Objects.equals(this.command, containerDef.command)
-            && Objects.equals(this.resources, containerDef.resources) && Objects.equals(this.envs, containerDef.envs)
-            && Objects.equals(this.ports, containerDef.ports)
-            && Objects.equals(this.privileged, containerDef.privileged)
-            && Objects.equals(this.runAsUser, containerDef.runAsUser)
-            && Objects.equals(this.readinessProbe, containerDef.readinessProbe)
-            && Objects.equals(this.livenessProbe, containerDef.livenessProbe)
-            && Objects.equals(this.version, containerDef.version) && Objects.equals(this.volumes, containerDef.volumes)
-            && Objects.equals(this.npuType, containerDef.npuType);
+        ContainerDef that = (ContainerDef) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.args, that.args) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.envs, that.envs)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.privileged, that.privileged)
+            && Objects.equals(this.runAsUser, that.runAsUser)
+            && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.livenessProbe, that.livenessProbe) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.volumes, that.volumes) && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

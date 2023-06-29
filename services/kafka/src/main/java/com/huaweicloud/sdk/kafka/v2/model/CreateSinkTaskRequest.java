@@ -65,16 +65,15 @@ public class CreateSinkTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSinkTaskRequest createSinkTaskRequest = (CreateSinkTaskRequest) o;
-        return Objects.equals(this.connectorId, createSinkTaskRequest.connectorId)
-            && Objects.equals(this.body, createSinkTaskRequest.body);
+        CreateSinkTaskRequest that = (CreateSinkTaskRequest) obj;
+        return Objects.equals(this.connectorId, that.connectorId) && Objects.equals(this.body, that.body);
     }
 
     @Override

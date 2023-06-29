@@ -75,16 +75,15 @@ public class ShowPriceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPriceResponse showPriceResponse = (ShowPriceResponse) o;
-        return Objects.equals(this.prices, showPriceResponse.prices)
-            && Objects.equals(this.status, showPriceResponse.status);
+        ShowPriceResponse that = (ShowPriceResponse) obj;
+        return Objects.equals(this.prices, that.prices) && Objects.equals(this.status, that.status);
     }
 
     @Override

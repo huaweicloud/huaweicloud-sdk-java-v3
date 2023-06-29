@@ -97,17 +97,17 @@ public class ShowVpcepConnectionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVpcepConnectionResponse showVpcepConnectionResponse = (ShowVpcepConnectionResponse) o;
-        return Objects.equals(this.connections, showVpcepConnectionResponse.connections)
-            && Objects.equals(this.vpcepUpdateSwitch, showVpcepConnectionResponse.vpcepUpdateSwitch)
-            && Objects.equals(this.totalCount, showVpcepConnectionResponse.totalCount);
+        ShowVpcepConnectionResponse that = (ShowVpcepConnectionResponse) obj;
+        return Objects.equals(this.connections, that.connections)
+            && Objects.equals(this.vpcepUpdateSwitch, that.vpcepUpdateSwitch)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

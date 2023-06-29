@@ -101,17 +101,16 @@ public class ListSubsetsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubsetsResponse listSubsetsResponse = (ListSubsetsResponse) o;
-        return Objects.equals(this.total, listSubsetsResponse.total)
-            && Objects.equals(this.size, listSubsetsResponse.size)
-            && Objects.equals(this.items, listSubsetsResponse.items);
+        ListSubsetsResponse that = (ListSubsetsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

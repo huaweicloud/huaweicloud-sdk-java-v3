@@ -52,15 +52,15 @@ public class UploadMetaDataByUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMetaDataByUrlReq uploadMetaDataByUrlReq = (UploadMetaDataByUrlReq) o;
-        return Objects.equals(this.uploadMetadatas, uploadMetaDataByUrlReq.uploadMetadatas);
+        UploadMetaDataByUrlReq that = (UploadMetaDataByUrlReq) obj;
+        return Objects.equals(this.uploadMetadatas, that.uploadMetadatas);
     }
 
     @Override

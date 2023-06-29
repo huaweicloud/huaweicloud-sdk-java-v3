@@ -78,17 +78,16 @@ public class ShowEvsQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEvsQuotaResponse showEvsQuotaResponse = (ShowEvsQuotaResponse) o;
-        return Objects.equals(this.total, showEvsQuotaResponse.total)
-            && Objects.equals(this.usage, showEvsQuotaResponse.usage)
-            && Objects.equals(this.unit, showEvsQuotaResponse.unit);
+        ShowEvsQuotaResponse that = (ShowEvsQuotaResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.usage, that.usage)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override

@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.aom.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
-import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.aom.v2.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+
+import java.util.concurrent.CompletableFuture;
 
 public class AomAsyncClient {
+
     protected HcClient hcClient;
 
     public AomAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class AomAsyncClient {
     public static ClientBuilder<AomAsyncClient> newBuilder() {
         return new ClientBuilder<>(AomAsyncClient::new);
     }
-
 
     /**
      * 新增告警行动规则
@@ -43,7 +43,8 @@ public class AomAsyncClient {
      * @param AddActionRuleRequest 请求对象
      * @return AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse>
      */
-    public AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse> addActionRuleAsyncInvoker(AddActionRuleRequest request) {
+    public AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse> addActionRuleAsyncInvoker(
+        AddActionRuleRequest request) {
         return new AsyncInvoker<AddActionRuleRequest, AddActionRuleResponse>(request, AomMeta.addActionRule, hcClient);
     }
 
@@ -71,7 +72,8 @@ public class AomAsyncClient {
      * @param AddAlarmRuleRequest 请求对象
      * @return AsyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>
      */
-    public AsyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRuleAsyncInvoker(AddAlarmRuleRequest request) {
+    public AsyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse> addAlarmRuleAsyncInvoker(
+        AddAlarmRuleRequest request) {
         return new AsyncInvoker<AddAlarmRuleRequest, AddAlarmRuleResponse>(request, AomMeta.addAlarmRule, hcClient);
     }
 
@@ -99,8 +101,10 @@ public class AomAsyncClient {
      * @param AddEvent2alarmRuleRequest 请求对象
      * @return AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>
      */
-    public AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleAsyncInvoker(AddEvent2alarmRuleRequest request) {
-        return new AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request, AomMeta.addEvent2alarmRule, hcClient);
+    public AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse> addEvent2alarmRuleAsyncInvoker(
+        AddEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<AddEvent2alarmRuleRequest, AddEvent2alarmRuleResponse>(request,
+            AomMeta.addEvent2alarmRule, hcClient);
     }
 
     /**
@@ -127,7 +131,8 @@ public class AomAsyncClient {
      * @param AddMetricDataRequest 请求对象
      * @return AsyncInvoker<AddMetricDataRequest, AddMetricDataResponse>
      */
-    public AsyncInvoker<AddMetricDataRequest, AddMetricDataResponse> addMetricDataAsyncInvoker(AddMetricDataRequest request) {
+    public AsyncInvoker<AddMetricDataRequest, AddMetricDataResponse> addMetricDataAsyncInvoker(
+        AddMetricDataRequest request) {
         return new AsyncInvoker<AddMetricDataRequest, AddMetricDataResponse>(request, AomMeta.addMetricData, hcClient);
     }
 
@@ -155,7 +160,8 @@ public class AomAsyncClient {
      * @param AddMuteRulesRequest 请求对象
      * @return AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>
      */
-    public AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRulesAsyncInvoker(AddMuteRulesRequest request) {
+    public AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse> addMuteRulesAsyncInvoker(
+        AddMuteRulesRequest request) {
         return new AsyncInvoker<AddMuteRulesRequest, AddMuteRulesResponse>(request, AomMeta.addMuteRules, hcClient);
     }
 
@@ -169,7 +175,8 @@ public class AomAsyncClient {
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<AddOrUpdateServiceDiscoveryRulesResponse>
      */
-    public CompletableFuture<AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesAsync(AddOrUpdateServiceDiscoveryRulesRequest request) {
+    public CompletableFuture<AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesAsync(
+        AddOrUpdateServiceDiscoveryRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.addOrUpdateServiceDiscoveryRules);
     }
 
@@ -183,8 +190,10 @@ public class AomAsyncClient {
      * @param AddOrUpdateServiceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>
      */
-    public AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesAsyncInvoker(AddOrUpdateServiceDiscoveryRulesRequest request) {
-        return new AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>(request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
+    public AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse> addOrUpdateServiceDiscoveryRulesAsyncInvoker(
+        AddOrUpdateServiceDiscoveryRulesRequest request) {
+        return new AsyncInvoker<AddOrUpdateServiceDiscoveryRulesRequest, AddOrUpdateServiceDiscoveryRulesResponse>(
+            request, AomMeta.addOrUpdateServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -239,8 +248,10 @@ public class AomAsyncClient {
      * @param DeleteActionRuleRequest 请求对象
      * @return AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>
      */
-    public AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleAsyncInvoker(DeleteActionRuleRequest request) {
-        return new AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule, hcClient);
+    public AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse> deleteActionRuleAsyncInvoker(
+        DeleteActionRuleRequest request) {
+        return new AsyncInvoker<DeleteActionRuleRequest, DeleteActionRuleResponse>(request, AomMeta.deleteActionRule,
+            hcClient);
     }
 
     /**
@@ -267,8 +278,10 @@ public class AomAsyncClient {
      * @param DeleteAlarmRuleRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>
      */
-    public AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRuleAsyncInvoker(DeleteAlarmRuleRequest request) {
-        return new AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>(request, AomMeta.deleteAlarmRule, hcClient);
+    public AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse> deleteAlarmRuleAsyncInvoker(
+        DeleteAlarmRuleRequest request) {
+        return new AsyncInvoker<DeleteAlarmRuleRequest, DeleteAlarmRuleResponse>(request, AomMeta.deleteAlarmRule,
+            hcClient);
     }
 
     /**
@@ -295,8 +308,10 @@ public class AomAsyncClient {
      * @param DeleteAlarmRulesRequest 请求对象
      * @return AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>
      */
-    public AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesAsyncInvoker(DeleteAlarmRulesRequest request) {
-        return new AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>(request, AomMeta.deleteAlarmRules, hcClient);
+    public AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse> deleteAlarmRulesAsyncInvoker(
+        DeleteAlarmRulesRequest request) {
+        return new AsyncInvoker<DeleteAlarmRulesRequest, DeleteAlarmRulesResponse>(request, AomMeta.deleteAlarmRules,
+            hcClient);
     }
 
     /**
@@ -309,7 +324,8 @@ public class AomAsyncClient {
      * @param DeleteEvent2alarmRuleRequest 请求对象
      * @return CompletableFuture<DeleteEvent2alarmRuleResponse>
      */
-    public CompletableFuture<DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsync(DeleteEvent2alarmRuleRequest request) {
+    public CompletableFuture<DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsync(
+        DeleteEvent2alarmRuleRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.deleteEvent2alarmRule);
     }
 
@@ -323,8 +339,10 @@ public class AomAsyncClient {
      * @param DeleteEvent2alarmRuleRequest 请求对象
      * @return AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>
      */
-    public AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsyncInvoker(DeleteEvent2alarmRuleRequest request) {
-        return new AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request, AomMeta.deleteEvent2alarmRule, hcClient);
+    public AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse> deleteEvent2alarmRuleAsyncInvoker(
+        DeleteEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<DeleteEvent2alarmRuleRequest, DeleteEvent2alarmRuleResponse>(request,
+            AomMeta.deleteEvent2alarmRule, hcClient);
     }
 
     /**
@@ -351,8 +369,10 @@ public class AomAsyncClient {
      * @param DeleteMuteRulesRequest 请求对象
      * @return AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>
      */
-    public AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesAsyncInvoker(DeleteMuteRulesRequest request) {
-        return new AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules, hcClient);
+    public AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse> deleteMuteRulesAsyncInvoker(
+        DeleteMuteRulesRequest request) {
+        return new AsyncInvoker<DeleteMuteRulesRequest, DeleteMuteRulesResponse>(request, AomMeta.deleteMuteRules,
+            hcClient);
     }
 
     /**
@@ -365,7 +385,8 @@ public class AomAsyncClient {
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<DeleteserviceDiscoveryRulesResponse>
      */
-    public CompletableFuture<DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesAsync(DeleteserviceDiscoveryRulesRequest request) {
+    public CompletableFuture<DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesAsync(
+        DeleteserviceDiscoveryRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.deleteserviceDiscoveryRules);
     }
 
@@ -379,8 +400,10 @@ public class AomAsyncClient {
      * @param DeleteserviceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>
      */
-    public AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesAsyncInvoker(DeleteserviceDiscoveryRulesRequest request) {
-        return new AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>(request, AomMeta.deleteserviceDiscoveryRules, hcClient);
+    public AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse> deleteserviceDiscoveryRulesAsyncInvoker(
+        DeleteserviceDiscoveryRulesRequest request) {
+        return new AsyncInvoker<DeleteserviceDiscoveryRulesRequest, DeleteserviceDiscoveryRulesResponse>(request,
+            AomMeta.deleteserviceDiscoveryRules, hcClient);
     }
 
     /**
@@ -407,8 +430,10 @@ public class AomAsyncClient {
      * @param ListActionRuleRequest 请求对象
      * @return AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse>
      */
-    public AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleAsyncInvoker(ListActionRuleRequest request) {
-        return new AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule, hcClient);
+    public AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse> listActionRuleAsyncInvoker(
+        ListActionRuleRequest request) {
+        return new AsyncInvoker<ListActionRuleRequest, ListActionRuleResponse>(request, AomMeta.listActionRule,
+            hcClient);
     }
 
     /**
@@ -435,7 +460,8 @@ public class AomAsyncClient {
      * @param ListAlarmRuleRequest 请求对象
      * @return AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>
      */
-    public AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRuleAsyncInvoker(ListAlarmRuleRequest request) {
+    public AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse> listAlarmRuleAsyncInvoker(
+        ListAlarmRuleRequest request) {
         return new AsyncInvoker<ListAlarmRuleRequest, ListAlarmRuleResponse>(request, AomMeta.listAlarmRule, hcClient);
     }
 
@@ -463,8 +489,10 @@ public class AomAsyncClient {
      * @param ListEvent2alarmRuleRequest 请求对象
      * @return AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>
      */
-    public AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleAsyncInvoker(ListEvent2alarmRuleRequest request) {
-        return new AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request, AomMeta.listEvent2alarmRule, hcClient);
+    public AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse> listEvent2alarmRuleAsyncInvoker(
+        ListEvent2alarmRuleRequest request) {
+        return new AsyncInvoker<ListEvent2alarmRuleRequest, ListEvent2alarmRuleResponse>(request,
+            AomMeta.listEvent2alarmRule, hcClient);
     }
 
     /**
@@ -519,7 +547,8 @@ public class AomAsyncClient {
      * @param ListLogItemsRequest 请求对象
      * @return AsyncInvoker<ListLogItemsRequest, ListLogItemsResponse>
      */
-    public AsyncInvoker<ListLogItemsRequest, ListLogItemsResponse> listLogItemsAsyncInvoker(ListLogItemsRequest request) {
+    public AsyncInvoker<ListLogItemsRequest, ListLogItemsResponse> listLogItemsAsyncInvoker(
+        ListLogItemsRequest request) {
         return new AsyncInvoker<ListLogItemsRequest, ListLogItemsResponse>(request, AomMeta.listLogItems, hcClient);
     }
 
@@ -547,8 +576,10 @@ public class AomAsyncClient {
      * @param ListMetricItemsRequest 请求对象
      * @return AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>
      */
-    public AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsAsyncInvoker(ListMetricItemsRequest request) {
-        return new AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>(request, AomMeta.listMetricItems, hcClient);
+    public AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse> listMetricItemsAsyncInvoker(
+        ListMetricItemsRequest request) {
+        return new AsyncInvoker<ListMetricItemsRequest, ListMetricItemsResponse>(request, AomMeta.listMetricItems,
+            hcClient);
     }
 
     /**
@@ -575,7 +606,8 @@ public class AomAsyncClient {
      * @param ListMuteRuleRequest 请求对象
      * @return AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>
      */
-    public AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRuleAsyncInvoker(ListMuteRuleRequest request) {
+    public AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse> listMuteRuleAsyncInvoker(
+        ListMuteRuleRequest request) {
         return new AsyncInvoker<ListMuteRuleRequest, ListMuteRuleResponse>(request, AomMeta.listMuteRule, hcClient);
     }
 
@@ -589,7 +621,8 @@ public class AomAsyncClient {
      * @param ListNotifiedHistoriesRequest 请求对象
      * @return CompletableFuture<ListNotifiedHistoriesResponse>
      */
-    public CompletableFuture<ListNotifiedHistoriesResponse> listNotifiedHistoriesAsync(ListNotifiedHistoriesRequest request) {
+    public CompletableFuture<ListNotifiedHistoriesResponse> listNotifiedHistoriesAsync(
+        ListNotifiedHistoriesRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listNotifiedHistories);
     }
 
@@ -603,8 +636,10 @@ public class AomAsyncClient {
      * @param ListNotifiedHistoriesRequest 请求对象
      * @return AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>
      */
-    public AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesAsyncInvoker(ListNotifiedHistoriesRequest request) {
-        return new AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request, AomMeta.listNotifiedHistories, hcClient);
+    public AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse> listNotifiedHistoriesAsyncInvoker(
+        ListNotifiedHistoriesRequest request) {
+        return new AsyncInvoker<ListNotifiedHistoriesRequest, ListNotifiedHistoriesResponse>(request,
+            AomMeta.listNotifiedHistories, hcClient);
     }
 
     /**
@@ -673,7 +708,8 @@ public class AomAsyncClient {
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return CompletableFuture<ListServiceDiscoveryRulesResponse>
      */
-    public CompletableFuture<ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesAsync(ListServiceDiscoveryRulesRequest request) {
+    public CompletableFuture<ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesAsync(
+        ListServiceDiscoveryRulesRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listServiceDiscoveryRules);
     }
 
@@ -687,8 +723,10 @@ public class AomAsyncClient {
      * @param ListServiceDiscoveryRulesRequest 请求对象
      * @return AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>
      */
-    public AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesAsyncInvoker(ListServiceDiscoveryRulesRequest request) {
-        return new AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>(request, AomMeta.listServiceDiscoveryRules, hcClient);
+    public AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse> listServiceDiscoveryRulesAsyncInvoker(
+        ListServiceDiscoveryRulesRequest request) {
+        return new AsyncInvoker<ListServiceDiscoveryRulesRequest, ListServiceDiscoveryRulesResponse>(request,
+            AomMeta.listServiceDiscoveryRules, hcClient);
     }
 
     /**
@@ -743,8 +781,10 @@ public class AomAsyncClient {
      * @param ShowActionRuleRequest 请求对象
      * @return AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>
      */
-    public AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleAsyncInvoker(ShowActionRuleRequest request) {
-        return new AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule, hcClient);
+    public AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse> showActionRuleAsyncInvoker(
+        ShowActionRuleRequest request) {
+        return new AsyncInvoker<ShowActionRuleRequest, ShowActionRuleResponse>(request, AomMeta.showActionRule,
+            hcClient);
     }
 
     /**
@@ -771,7 +811,8 @@ public class AomAsyncClient {
      * @param ShowAlarmRuleRequest 请求对象
      * @return AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>
      */
-    public AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRuleAsyncInvoker(ShowAlarmRuleRequest request) {
+    public AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse> showAlarmRuleAsyncInvoker(
+        ShowAlarmRuleRequest request) {
         return new AsyncInvoker<ShowAlarmRuleRequest, ShowAlarmRuleResponse>(request, AomMeta.showAlarmRule, hcClient);
     }
 
@@ -799,8 +840,10 @@ public class AomAsyncClient {
      * @param ShowMetricsDataRequest 请求对象
      * @return AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>
      */
-    public AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsDataAsyncInvoker(ShowMetricsDataRequest request) {
-        return new AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>(request, AomMeta.showMetricsData, hcClient);
+    public AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse> showMetricsDataAsyncInvoker(
+        ShowMetricsDataRequest request) {
+        return new AsyncInvoker<ShowMetricsDataRequest, ShowMetricsDataResponse>(request, AomMeta.showMetricsData,
+            hcClient);
     }
 
     /**
@@ -827,8 +870,10 @@ public class AomAsyncClient {
      * @param UpdateActionRuleRequest 请求对象
      * @return AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>
      */
-    public AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleAsyncInvoker(UpdateActionRuleRequest request) {
-        return new AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule, hcClient);
+    public AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse> updateActionRuleAsyncInvoker(
+        UpdateActionRuleRequest request) {
+        return new AsyncInvoker<UpdateActionRuleRequest, UpdateActionRuleResponse>(request, AomMeta.updateActionRule,
+            hcClient);
     }
 
     /**
@@ -855,8 +900,10 @@ public class AomAsyncClient {
      * @param UpdateAlarmRuleRequest 请求对象
      * @return AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>
      */
-    public AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRuleAsyncInvoker(UpdateAlarmRuleRequest request) {
-        return new AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>(request, AomMeta.updateAlarmRule, hcClient);
+    public AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse> updateAlarmRuleAsyncInvoker(
+        UpdateAlarmRuleRequest request) {
+        return new AsyncInvoker<UpdateAlarmRuleRequest, UpdateAlarmRuleResponse>(request, AomMeta.updateAlarmRule,
+            hcClient);
     }
 
     /**
@@ -883,8 +930,10 @@ public class AomAsyncClient {
      * @param UpdateEventRuleRequest 请求对象
      * @return AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>
      */
-    public AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleAsyncInvoker(UpdateEventRuleRequest request) {
-        return new AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule, hcClient);
+    public AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse> updateEventRuleAsyncInvoker(
+        UpdateEventRuleRequest request) {
+        return new AsyncInvoker<UpdateEventRuleRequest, UpdateEventRuleResponse>(request, AomMeta.updateEventRule,
+            hcClient);
     }
 
     /**
@@ -911,8 +960,10 @@ public class AomAsyncClient {
      * @param UpdateMuteRuleRequest 请求对象
      * @return AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>
      */
-    public AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleAsyncInvoker(UpdateMuteRuleRequest request) {
-        return new AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule, hcClient);
+    public AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse> updateMuteRuleAsyncInvoker(
+        UpdateMuteRuleRequest request) {
+        return new AsyncInvoker<UpdateMuteRuleRequest, UpdateMuteRuleResponse>(request, AomMeta.updateMuteRule,
+            hcClient);
     }
 
     /**
@@ -925,7 +976,8 @@ public class AomAsyncClient {
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return CompletableFuture<ListInstantQueryAomPromGetResponse>
      */
-    public CompletableFuture<ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetAsync(ListInstantQueryAomPromGetRequest request) {
+    public CompletableFuture<ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetAsync(
+        ListInstantQueryAomPromGetRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listInstantQueryAomPromGet);
     }
 
@@ -939,8 +991,10 @@ public class AomAsyncClient {
      * @param ListInstantQueryAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>
      */
-    public AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetAsyncInvoker(ListInstantQueryAomPromGetRequest request) {
-        return new AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>(request, AomMeta.listInstantQueryAomPromGet, hcClient);
+    public AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse> listInstantQueryAomPromGetAsyncInvoker(
+        ListInstantQueryAomPromGetRequest request) {
+        return new AsyncInvoker<ListInstantQueryAomPromGetRequest, ListInstantQueryAomPromGetResponse>(request,
+            AomMeta.listInstantQueryAomPromGet, hcClient);
     }
 
     /**
@@ -953,7 +1007,8 @@ public class AomAsyncClient {
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return CompletableFuture<ListInstantQueryAomPromPostResponse>
      */
-    public CompletableFuture<ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostAsync(ListInstantQueryAomPromPostRequest request) {
+    public CompletableFuture<ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostAsync(
+        ListInstantQueryAomPromPostRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listInstantQueryAomPromPost);
     }
 
@@ -967,8 +1022,10 @@ public class AomAsyncClient {
      * @param ListInstantQueryAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>
      */
-    public AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostAsyncInvoker(ListInstantQueryAomPromPostRequest request) {
-        return new AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>(request, AomMeta.listInstantQueryAomPromPost, hcClient);
+    public AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse> listInstantQueryAomPromPostAsyncInvoker(
+        ListInstantQueryAomPromPostRequest request) {
+        return new AsyncInvoker<ListInstantQueryAomPromPostRequest, ListInstantQueryAomPromPostResponse>(request,
+            AomMeta.listInstantQueryAomPromPost, hcClient);
     }
 
     /**
@@ -981,7 +1038,8 @@ public class AomAsyncClient {
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return CompletableFuture<ListLabelValuesAomPromGetResponse>
      */
-    public CompletableFuture<ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetAsync(ListLabelValuesAomPromGetRequest request) {
+    public CompletableFuture<ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetAsync(
+        ListLabelValuesAomPromGetRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listLabelValuesAomPromGet);
     }
 
@@ -995,8 +1053,10 @@ public class AomAsyncClient {
      * @param ListLabelValuesAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>
      */
-    public AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetAsyncInvoker(ListLabelValuesAomPromGetRequest request) {
-        return new AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>(request, AomMeta.listLabelValuesAomPromGet, hcClient);
+    public AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse> listLabelValuesAomPromGetAsyncInvoker(
+        ListLabelValuesAomPromGetRequest request) {
+        return new AsyncInvoker<ListLabelValuesAomPromGetRequest, ListLabelValuesAomPromGetResponse>(request,
+            AomMeta.listLabelValuesAomPromGet, hcClient);
     }
 
     /**
@@ -1009,7 +1069,8 @@ public class AomAsyncClient {
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return CompletableFuture<ListLabelsAomPromGetResponse>
      */
-    public CompletableFuture<ListLabelsAomPromGetResponse> listLabelsAomPromGetAsync(ListLabelsAomPromGetRequest request) {
+    public CompletableFuture<ListLabelsAomPromGetResponse> listLabelsAomPromGetAsync(
+        ListLabelsAomPromGetRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listLabelsAomPromGet);
     }
 
@@ -1023,8 +1084,10 @@ public class AomAsyncClient {
      * @param ListLabelsAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>
      */
-    public AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGetAsyncInvoker(ListLabelsAomPromGetRequest request) {
-        return new AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>(request, AomMeta.listLabelsAomPromGet, hcClient);
+    public AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse> listLabelsAomPromGetAsyncInvoker(
+        ListLabelsAomPromGetRequest request) {
+        return new AsyncInvoker<ListLabelsAomPromGetRequest, ListLabelsAomPromGetResponse>(request,
+            AomMeta.listLabelsAomPromGet, hcClient);
     }
 
     /**
@@ -1037,7 +1100,8 @@ public class AomAsyncClient {
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return CompletableFuture<ListLabelsAomPromPostResponse>
      */
-    public CompletableFuture<ListLabelsAomPromPostResponse> listLabelsAomPromPostAsync(ListLabelsAomPromPostRequest request) {
+    public CompletableFuture<ListLabelsAomPromPostResponse> listLabelsAomPromPostAsync(
+        ListLabelsAomPromPostRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listLabelsAomPromPost);
     }
 
@@ -1051,8 +1115,10 @@ public class AomAsyncClient {
      * @param ListLabelsAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>
      */
-    public AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPostAsyncInvoker(ListLabelsAomPromPostRequest request) {
-        return new AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>(request, AomMeta.listLabelsAomPromPost, hcClient);
+    public AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse> listLabelsAomPromPostAsyncInvoker(
+        ListLabelsAomPromPostRequest request) {
+        return new AsyncInvoker<ListLabelsAomPromPostRequest, ListLabelsAomPromPostResponse>(request,
+            AomMeta.listLabelsAomPromPost, hcClient);
     }
 
     /**
@@ -1065,7 +1131,8 @@ public class AomAsyncClient {
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return CompletableFuture<ListMetadataAomPromGetResponse>
      */
-    public CompletableFuture<ListMetadataAomPromGetResponse> listMetadataAomPromGetAsync(ListMetadataAomPromGetRequest request) {
+    public CompletableFuture<ListMetadataAomPromGetResponse> listMetadataAomPromGetAsync(
+        ListMetadataAomPromGetRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listMetadataAomPromGet);
     }
 
@@ -1079,8 +1146,10 @@ public class AomAsyncClient {
      * @param ListMetadataAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>
      */
-    public AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGetAsyncInvoker(ListMetadataAomPromGetRequest request) {
-        return new AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request, AomMeta.listMetadataAomPromGet, hcClient);
+    public AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse> listMetadataAomPromGetAsyncInvoker(
+        ListMetadataAomPromGetRequest request) {
+        return new AsyncInvoker<ListMetadataAomPromGetRequest, ListMetadataAomPromGetResponse>(request,
+            AomMeta.listMetadataAomPromGet, hcClient);
     }
 
     /**
@@ -1093,7 +1162,8 @@ public class AomAsyncClient {
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return CompletableFuture<ListRangeQueryAomPromGetResponse>
      */
-    public CompletableFuture<ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetAsync(ListRangeQueryAomPromGetRequest request) {
+    public CompletableFuture<ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetAsync(
+        ListRangeQueryAomPromGetRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listRangeQueryAomPromGet);
     }
 
@@ -1107,8 +1177,10 @@ public class AomAsyncClient {
      * @param ListRangeQueryAomPromGetRequest 请求对象
      * @return AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>
      */
-    public AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetAsyncInvoker(ListRangeQueryAomPromGetRequest request) {
-        return new AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>(request, AomMeta.listRangeQueryAomPromGet, hcClient);
+    public AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse> listRangeQueryAomPromGetAsyncInvoker(
+        ListRangeQueryAomPromGetRequest request) {
+        return new AsyncInvoker<ListRangeQueryAomPromGetRequest, ListRangeQueryAomPromGetResponse>(request,
+            AomMeta.listRangeQueryAomPromGet, hcClient);
     }
 
     /**
@@ -1121,7 +1193,8 @@ public class AomAsyncClient {
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return CompletableFuture<ListRangeQueryAomPromPostResponse>
      */
-    public CompletableFuture<ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostAsync(ListRangeQueryAomPromPostRequest request) {
+    public CompletableFuture<ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostAsync(
+        ListRangeQueryAomPromPostRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listRangeQueryAomPromPost);
     }
 
@@ -1135,8 +1208,10 @@ public class AomAsyncClient {
      * @param ListRangeQueryAomPromPostRequest 请求对象
      * @return AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>
      */
-    public AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostAsyncInvoker(ListRangeQueryAomPromPostRequest request) {
-        return new AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>(request, AomMeta.listRangeQueryAomPromPost, hcClient);
+    public AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse> listRangeQueryAomPromPostAsyncInvoker(
+        ListRangeQueryAomPromPostRequest request) {
+        return new AsyncInvoker<ListRangeQueryAomPromPostRequest, ListRangeQueryAomPromPostResponse>(request,
+            AomMeta.listRangeQueryAomPromPost, hcClient);
     }
 
 }

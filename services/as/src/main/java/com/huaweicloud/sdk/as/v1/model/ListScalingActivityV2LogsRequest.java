@@ -120,22 +120,15 @@ public class ListScalingActivityV2LogsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -208,22 +201,15 @@ public class ListScalingActivityV2LogsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -384,22 +370,18 @@ public class ListScalingActivityV2LogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingActivityV2LogsRequest listScalingActivityV2LogsRequest = (ListScalingActivityV2LogsRequest) o;
-        return Objects.equals(this.scalingGroupId, listScalingActivityV2LogsRequest.scalingGroupId)
-            && Objects.equals(this.logId, listScalingActivityV2LogsRequest.logId)
-            && Objects.equals(this.startTime, listScalingActivityV2LogsRequest.startTime)
-            && Objects.equals(this.endTime, listScalingActivityV2LogsRequest.endTime)
-            && Objects.equals(this.startNumber, listScalingActivityV2LogsRequest.startNumber)
-            && Objects.equals(this.limit, listScalingActivityV2LogsRequest.limit)
-            && Objects.equals(this.type, listScalingActivityV2LogsRequest.type)
-            && Objects.equals(this.status, listScalingActivityV2LogsRequest.status);
+        ListScalingActivityV2LogsRequest that = (ListScalingActivityV2LogsRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.startNumber, that.startNumber) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status);
     }
 
     @Override

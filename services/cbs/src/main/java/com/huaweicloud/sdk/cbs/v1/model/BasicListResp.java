@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class BasicListResp  {
-
+public class BasicListResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
 
     private Integer quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
@@ -45,9 +34,6 @@ public class BasicListResp  {
         this.quota = quota;
         return this;
     }
-
-    
-
 
     /**
      * 配额
@@ -61,15 +47,10 @@ public class BasicListResp  {
         this.quota = quota;
     }
 
-    
-
     public BasicListResp withTotal(Integer total) {
         this.total = total;
         return this;
     }
-
-    
-
 
     /**
      * 总数
@@ -83,15 +64,10 @@ public class BasicListResp  {
         this.total = total;
     }
 
-    
-
     public BasicListResp withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 偏移
@@ -105,15 +81,10 @@ public class BasicListResp  {
         this.offset = offset;
     }
 
-    
-
     public BasicListResp withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 返回数量
@@ -127,26 +98,24 @@ public class BasicListResp  {
         this.count = count;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicListResp basicListResp = (BasicListResp) o;
-        return Objects.equals(this.quota, basicListResp.quota) &&
-            Objects.equals(this.total, basicListResp.total) &&
-            Objects.equals(this.offset, basicListResp.offset) &&
-            Objects.equals(this.count, basicListResp.count);
+        BasicListResp that = (BasicListResp) obj;
+        return Objects.equals(this.quota, that.quota) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.count, that.count);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(quota, total, offset, count);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class BasicListResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class BasicListResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

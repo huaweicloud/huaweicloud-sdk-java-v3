@@ -33,15 +33,15 @@ public class ListConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConnectionsRequest listConnectionsRequest = (ListConnectionsRequest) o;
-        return Objects.equals(this.workspace, listConnectionsRequest.workspace);
+        ListConnectionsRequest that = (ListConnectionsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

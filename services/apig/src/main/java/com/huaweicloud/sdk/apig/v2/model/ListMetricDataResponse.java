@@ -53,15 +53,15 @@ public class ListMetricDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricDataResponse listMetricDataResponse = (ListMetricDataResponse) o;
-        return Objects.equals(this.datapoints, listMetricDataResponse.datapoints);
+        ListMetricDataResponse that = (ListMetricDataResponse) obj;
+        return Objects.equals(this.datapoints, that.datapoints);
     }
 
     @Override

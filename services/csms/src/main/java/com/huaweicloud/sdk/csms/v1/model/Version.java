@@ -87,17 +87,17 @@ public class Version {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Version version = (Version) o;
-        return Objects.equals(this.versionMetadata, version.versionMetadata)
-            && Objects.equals(this.secretBinary, version.secretBinary)
-            && Objects.equals(this.secretString, version.secretString);
+        Version that = (Version) obj;
+        return Objects.equals(this.versionMetadata, that.versionMetadata)
+            && Objects.equals(this.secretBinary, that.secretBinary)
+            && Objects.equals(this.secretString, that.secretString);
     }
 
     @Override

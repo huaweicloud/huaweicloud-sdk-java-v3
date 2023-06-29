@@ -134,18 +134,17 @@ public class UpdateVirtualGateway {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVirtualGateway updateVirtualGateway = (UpdateVirtualGateway) o;
-        return Objects.equals(this.name, updateVirtualGateway.name)
-            && Objects.equals(this.description, updateVirtualGateway.description)
-            && Objects.equals(this.localEpGroup, updateVirtualGateway.localEpGroup)
-            && Objects.equals(this.localEpGroupIpv6, updateVirtualGateway.localEpGroupIpv6);
+        UpdateVirtualGateway that = (UpdateVirtualGateway) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.localEpGroup, that.localEpGroup)
+            && Objects.equals(this.localEpGroupIpv6, that.localEpGroupIpv6);
     }
 
     @Override

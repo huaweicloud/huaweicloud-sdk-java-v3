@@ -502,34 +502,26 @@ public class RestScheduleConfDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestScheduleConfDTO restScheduleConfDTO = (RestScheduleConfDTO) o;
-        return Objects.equals(this.startTime, restScheduleConfDTO.startTime)
-            && Objects.equals(this.length, restScheduleConfDTO.length)
-            && Objects.equals(this.subject, restScheduleConfDTO.subject)
-            && Objects.equals(this.mediaTypes, restScheduleConfDTO.mediaTypes)
-            && Objects.equals(this.groupuri, restScheduleConfDTO.groupuri)
-            && Objects.equals(this.attendees, restScheduleConfDTO.attendees)
-            && Objects.equals(this.isAutoRecord, restScheduleConfDTO.isAutoRecord)
-            && Objects.equals(this.encryptMode, restScheduleConfDTO.encryptMode)
-            && Objects.equals(this.language, restScheduleConfDTO.language)
-            && Objects.equals(this.timeZoneID, restScheduleConfDTO.timeZoneID)
-            && Objects.equals(this.recordType, restScheduleConfDTO.recordType)
-            && Objects.equals(this.liveAddress, restScheduleConfDTO.liveAddress)
-            && Objects.equals(this.auxAddress, restScheduleConfDTO.auxAddress)
-            && Objects.equals(this.recordAuxStream, restScheduleConfDTO.recordAuxStream)
-            && Objects.equals(this.confConfigInfo, restScheduleConfDTO.confConfigInfo)
-            && Objects.equals(this.recordAuthType, restScheduleConfDTO.recordAuthType)
-            && Objects.equals(this.vmrFlag, restScheduleConfDTO.vmrFlag)
-            && Objects.equals(this.cycleParams, restScheduleConfDTO.cycleParams)
-            && Objects.equals(this.vmrID, restScheduleConfDTO.vmrID)
-            && Objects.equals(this.concurrentParticipants, restScheduleConfDTO.concurrentParticipants);
+        RestScheduleConfDTO that = (RestScheduleConfDTO) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.length, that.length)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.mediaTypes, that.mediaTypes)
+            && Objects.equals(this.groupuri, that.groupuri) && Objects.equals(this.attendees, that.attendees)
+            && Objects.equals(this.isAutoRecord, that.isAutoRecord)
+            && Objects.equals(this.encryptMode, that.encryptMode) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.timeZoneID, that.timeZoneID) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.liveAddress, that.liveAddress) && Objects.equals(this.auxAddress, that.auxAddress)
+            && Objects.equals(this.recordAuxStream, that.recordAuxStream)
+            && Objects.equals(this.confConfigInfo, that.confConfigInfo)
+            && Objects.equals(this.recordAuthType, that.recordAuthType) && Objects.equals(this.vmrFlag, that.vmrFlag)
+            && Objects.equals(this.cycleParams, that.cycleParams) && Objects.equals(this.vmrID, that.vmrID)
+            && Objects.equals(this.concurrentParticipants, that.concurrentParticipants);
     }
 
     @Override

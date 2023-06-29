@@ -94,22 +94,15 @@ public class ApplyWorkspaceReq {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessModeEnum(value));
         }
 
         public static AccessModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -303,22 +296,20 @@ public class ApplyWorkspaceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyWorkspaceReq applyWorkspaceReq = (ApplyWorkspaceReq) o;
-        return Objects.equals(this.adDomains, applyWorkspaceReq.adDomains)
-            && Objects.equals(this.enterpriseId, applyWorkspaceReq.enterpriseId)
-            && Objects.equals(this.vpcId, applyWorkspaceReq.vpcId)
-            && Objects.equals(this.subnetIds, applyWorkspaceReq.subnetIds)
-            && Objects.equals(this.manageSubnetCidr, applyWorkspaceReq.manageSubnetCidr)
-            && Objects.equals(this.accessMode, applyWorkspaceReq.accessMode)
-            && Objects.equals(this.dedicatedSubnets, applyWorkspaceReq.dedicatedSubnets)
-            && Objects.equals(this.isSendEmail, applyWorkspaceReq.isSendEmail);
+        ApplyWorkspaceReq that = (ApplyWorkspaceReq) obj;
+        return Objects.equals(this.adDomains, that.adDomains) && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.manageSubnetCidr, that.manageSubnetCidr)
+            && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
+            && Objects.equals(this.isSendEmail, that.isSendEmail);
     }
 
     @Override

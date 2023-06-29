@@ -165,19 +165,18 @@ public class Attachment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attachment attachment = (Attachment) o;
-        return Objects.equals(this.attachedAt, attachment.attachedAt)
-            && Objects.equals(this.attachmentId, attachment.attachmentId)
-            && Objects.equals(this.device, attachment.device) && Objects.equals(this.hostName, attachment.hostName)
-            && Objects.equals(this.id, attachment.id) && Objects.equals(this.serverId, attachment.serverId)
-            && Objects.equals(this.volumeId, attachment.volumeId);
+        Attachment that = (Attachment) obj;
+        return Objects.equals(this.attachedAt, that.attachedAt) && Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.device, that.device) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

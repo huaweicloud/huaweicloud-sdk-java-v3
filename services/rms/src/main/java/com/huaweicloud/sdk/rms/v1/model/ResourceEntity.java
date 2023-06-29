@@ -376,26 +376,22 @@ public class ResourceEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceEntity resourceEntity = (ResourceEntity) o;
-        return Objects.equals(this.id, resourceEntity.id) && Objects.equals(this.name, resourceEntity.name)
-            && Objects.equals(this.provider, resourceEntity.provider) && Objects.equals(this.type, resourceEntity.type)
-            && Objects.equals(this.regionId, resourceEntity.regionId)
-            && Objects.equals(this.projectId, resourceEntity.projectId)
-            && Objects.equals(this.projectName, resourceEntity.projectName)
-            && Objects.equals(this.epId, resourceEntity.epId) && Objects.equals(this.epName, resourceEntity.epName)
-            && Objects.equals(this.checksum, resourceEntity.checksum)
-            && Objects.equals(this.created, resourceEntity.created)
-            && Objects.equals(this.updated, resourceEntity.updated)
-            && Objects.equals(this.provisioningState, resourceEntity.provisioningState)
-            && Objects.equals(this.tags, resourceEntity.tags)
-            && Objects.equals(this.properties, resourceEntity.properties);
+        ResourceEntity that = (ResourceEntity) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.epId, that.epId)
+            && Objects.equals(this.epName, that.epName) && Objects.equals(this.checksum, that.checksum)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.provisioningState, that.provisioningState) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

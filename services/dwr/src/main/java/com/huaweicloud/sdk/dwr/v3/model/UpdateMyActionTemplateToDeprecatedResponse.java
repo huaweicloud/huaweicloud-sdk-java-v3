@@ -58,17 +58,16 @@ public class UpdateMyActionTemplateToDeprecatedResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMyActionTemplateToDeprecatedResponse updateMyActionTemplateToDeprecatedResponse =
-            (UpdateMyActionTemplateToDeprecatedResponse) o;
-        return Objects.equals(this.xRequestId, updateMyActionTemplateToDeprecatedResponse.xRequestId)
-            && Objects.equals(this.contentLength, updateMyActionTemplateToDeprecatedResponse.contentLength);
+        UpdateMyActionTemplateToDeprecatedResponse that = (UpdateMyActionTemplateToDeprecatedResponse) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.contentLength, that.contentLength);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class ShowEventDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventDetailRequest showEventDetailRequest = (ShowEventDetailRequest) o;
-        return Objects.equals(this.traceId, showEventDetailRequest.traceId)
-            && Objects.equals(this.spanId, showEventDetailRequest.spanId)
-            && Objects.equals(this.eventId, showEventDetailRequest.eventId)
-            && Objects.equals(this.envId, showEventDetailRequest.envId);
+        ShowEventDetailRequest that = (ShowEventDetailRequest) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.spanId, that.spanId)
+            && Objects.equals(this.eventId, that.eventId) && Objects.equals(this.envId, that.envId);
     }
 
     @Override

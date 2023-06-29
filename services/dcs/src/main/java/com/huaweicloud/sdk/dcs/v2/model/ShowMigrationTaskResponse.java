@@ -89,22 +89,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationTypeEnum(value));
         }
 
         public static MigrationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -255,22 +241,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationMethodEnum(value));
         }
 
         public static MigrationMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -347,22 +326,15 @@ public class ShowMigrationTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NetworkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NetworkTypeEnum(value));
         }
 
         public static NetworkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NetworkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -653,27 +625,23 @@ public class ShowMigrationTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrationTaskResponse showMigrationTaskResponse = (ShowMigrationTaskResponse) o;
-        return Objects.equals(this.taskId, showMigrationTaskResponse.taskId)
-            && Objects.equals(this.taskName, showMigrationTaskResponse.taskName)
-            && Objects.equals(this.description, showMigrationTaskResponse.description)
-            && Objects.equals(this.status, showMigrationTaskResponse.status)
-            && Objects.equals(this.migrationType, showMigrationTaskResponse.migrationType)
-            && Objects.equals(this.migrationMethod, showMigrationTaskResponse.migrationMethod)
-            && Objects.equals(this.ecsTenantPrivateIp, showMigrationTaskResponse.ecsTenantPrivateIp)
-            && Objects.equals(this.backupFiles, showMigrationTaskResponse.backupFiles)
-            && Objects.equals(this.networkType, showMigrationTaskResponse.networkType)
-            && Objects.equals(this.sourceInstance, showMigrationTaskResponse.sourceInstance)
-            && Objects.equals(this.targetInstance, showMigrationTaskResponse.targetInstance)
-            && Objects.equals(this.createdAt, showMigrationTaskResponse.createdAt)
-            && Objects.equals(this.updatedAt, showMigrationTaskResponse.updatedAt);
+        ShowMigrationTaskResponse that = (ShowMigrationTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.migrationType, that.migrationType)
+            && Objects.equals(this.migrationMethod, that.migrationMethod)
+            && Objects.equals(this.ecsTenantPrivateIp, that.ecsTenantPrivateIp)
+            && Objects.equals(this.backupFiles, that.backupFiles) && Objects.equals(this.networkType, that.networkType)
+            && Objects.equals(this.sourceInstance, that.sourceInstance)
+            && Objects.equals(this.targetInstance, that.targetInstance)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

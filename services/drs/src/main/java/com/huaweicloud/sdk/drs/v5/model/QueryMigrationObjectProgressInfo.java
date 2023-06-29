@@ -166,20 +166,19 @@ public class QueryMigrationObjectProgressInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryMigrationObjectProgressInfo queryMigrationObjectProgressInfo = (QueryMigrationObjectProgressInfo) o;
-        return Objects.equals(this.migrationObjectOverview, queryMigrationObjectProgressInfo.migrationObjectOverview)
-            && Objects.equals(this.createTime, queryMigrationObjectProgressInfo.createTime)
-            && Objects.equals(this.fullStartTime, queryMigrationObjectProgressInfo.fullStartTime)
-            && Objects.equals(this.fullCompleteTime, queryMigrationObjectProgressInfo.fullCompleteTime)
-            && Objects.equals(this.incrStartTime, queryMigrationObjectProgressInfo.incrStartTime)
-            && Objects.equals(this.endTime, queryMigrationObjectProgressInfo.endTime);
+        QueryMigrationObjectProgressInfo that = (QueryMigrationObjectProgressInfo) obj;
+        return Objects.equals(this.migrationObjectOverview, that.migrationObjectOverview)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.fullStartTime, that.fullStartTime)
+            && Objects.equals(this.fullCompleteTime, that.fullCompleteTime)
+            && Objects.equals(this.incrStartTime, that.incrStartTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class ShowDomainFullConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainFullConfigRequest showDomainFullConfigRequest = (ShowDomainFullConfigRequest) o;
-        return Objects.equals(this.domainName, showDomainFullConfigRequest.domainName)
-            && Objects.equals(this.enterpriseProjectId, showDomainFullConfigRequest.enterpriseProjectId);
+        ShowDomainFullConfigRequest that = (ShowDomainFullConfigRequest) obj;
+        return Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

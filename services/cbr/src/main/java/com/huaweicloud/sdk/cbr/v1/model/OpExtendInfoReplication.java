@@ -231,24 +231,24 @@ public class OpExtendInfoReplication {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoReplication opExtendInfoReplication = (OpExtendInfoReplication) o;
-        return Objects.equals(this.destinationBackupId, opExtendInfoReplication.destinationBackupId)
-            && Objects.equals(this.destinationCheckpointId, opExtendInfoReplication.destinationCheckpointId)
-            && Objects.equals(this.destinationProjectId, opExtendInfoReplication.destinationProjectId)
-            && Objects.equals(this.destinationRegion, opExtendInfoReplication.destinationRegion)
-            && Objects.equals(this.sourceBackupId, opExtendInfoReplication.sourceBackupId)
-            && Objects.equals(this.sourceCheckpointId, opExtendInfoReplication.sourceCheckpointId)
-            && Objects.equals(this.sourceProjectId, opExtendInfoReplication.sourceProjectId)
-            && Objects.equals(this.sourceRegion, opExtendInfoReplication.sourceRegion)
-            && Objects.equals(this.sourceBackupName, opExtendInfoReplication.sourceBackupName)
-            && Objects.equals(this.destinationBackupName, opExtendInfoReplication.destinationBackupName);
+        OpExtendInfoReplication that = (OpExtendInfoReplication) obj;
+        return Objects.equals(this.destinationBackupId, that.destinationBackupId)
+            && Objects.equals(this.destinationCheckpointId, that.destinationCheckpointId)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.sourceBackupId, that.sourceBackupId)
+            && Objects.equals(this.sourceCheckpointId, that.sourceCheckpointId)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceRegion, that.sourceRegion)
+            && Objects.equals(this.sourceBackupName, that.sourceBackupName)
+            && Objects.equals(this.destinationBackupName, that.destinationBackupName);
     }
 
     @Override

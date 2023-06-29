@@ -67,16 +67,15 @@ public class UpdateQualityEnhanceTemplateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateQualityEnhanceTemplateReq updateQualityEnhanceTemplateReq = (UpdateQualityEnhanceTemplateReq) o;
-        return Objects.equals(this.templateId, updateQualityEnhanceTemplateReq.templateId)
-            && Objects.equals(this.template, updateQualityEnhanceTemplateReq.template);
+        UpdateQualityEnhanceTemplateReq that = (UpdateQualityEnhanceTemplateReq) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.template, that.template);
     }
 
     @Override

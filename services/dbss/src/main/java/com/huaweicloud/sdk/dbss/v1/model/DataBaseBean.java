@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.DataBase;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DataBaseBean
  */
-public class DataBaseBean  {
-
+public class DataBaseBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
 
     private DataBase database;
 
@@ -30,14 +22,13 @@ public class DataBaseBean  {
     }
 
     public DataBaseBean withDatabase(Consumer<DataBase> databaseSetter) {
-        if(this.database == null ){
+        if (this.database == null) {
             this.database = new DataBase();
             databaseSetter.accept(this.database);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get database
@@ -51,23 +42,23 @@ public class DataBaseBean  {
         this.database = database;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataBaseBean dataBaseBean = (DataBaseBean) o;
-        return Objects.equals(this.database, dataBaseBean.database);
+        DataBaseBean that = (DataBaseBean) obj;
+        return Objects.equals(this.database, that.database);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(database);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class DataBaseBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class DataBaseBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

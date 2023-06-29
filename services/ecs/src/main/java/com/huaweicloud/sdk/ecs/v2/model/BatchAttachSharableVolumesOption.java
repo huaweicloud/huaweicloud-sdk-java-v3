@@ -55,16 +55,15 @@ public class BatchAttachSharableVolumesOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAttachSharableVolumesOption batchAttachSharableVolumesOption = (BatchAttachSharableVolumesOption) o;
-        return Objects.equals(this.serverId, batchAttachSharableVolumesOption.serverId)
-            && Objects.equals(this.device, batchAttachSharableVolumesOption.device);
+        BatchAttachSharableVolumesOption that = (BatchAttachSharableVolumesOption) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.device, that.device);
     }
 
     @Override

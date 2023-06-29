@@ -55,16 +55,15 @@ public class ShowSecretRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecretRequest showSecretRequest = (ShowSecretRequest) o;
-        return Objects.equals(this.iefInstanceId, showSecretRequest.iefInstanceId)
-            && Objects.equals(this.secretId, showSecretRequest.secretId);
+        ShowSecretRequest that = (ShowSecretRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.secretId, that.secretId);
     }
 
     @Override

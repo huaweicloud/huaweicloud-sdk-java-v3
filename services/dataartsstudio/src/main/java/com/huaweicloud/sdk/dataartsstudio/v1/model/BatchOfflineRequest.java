@@ -65,16 +65,15 @@ public class BatchOfflineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchOfflineRequest batchOfflineRequest = (BatchOfflineRequest) o;
-        return Objects.equals(this.workspace, batchOfflineRequest.workspace)
-            && Objects.equals(this.body, batchOfflineRequest.body);
+        BatchOfflineRequest that = (BatchOfflineRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

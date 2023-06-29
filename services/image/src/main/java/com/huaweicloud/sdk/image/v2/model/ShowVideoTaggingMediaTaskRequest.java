@@ -33,15 +33,15 @@ public class ShowVideoTaggingMediaTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVideoTaggingMediaTaskRequest showVideoTaggingMediaTaskRequest = (ShowVideoTaggingMediaTaskRequest) o;
-        return Objects.equals(this.taskId, showVideoTaggingMediaTaskRequest.taskId);
+        ShowVideoTaggingMediaTaskRequest that = (ShowVideoTaggingMediaTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

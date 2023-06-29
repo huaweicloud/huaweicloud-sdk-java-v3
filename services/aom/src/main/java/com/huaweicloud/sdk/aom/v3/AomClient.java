@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.aom.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.aom.v3.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 
 public class AomClient {
+
     protected HcClient hcClient;
 
     public AomClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class AomClient {
     public static ClientBuilder<AomClient> newBuilder() {
         return new ClientBuilder<>(AomClient::new);
     }
-
 
     /**
      * 新增应用
@@ -69,8 +69,10 @@ public class AomClient {
      * @param CreateComponentRequest 请求对象
      * @return SyncInvoker<CreateComponentRequest, CreateComponentResponse>
      */
-    public SyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentInvoker(CreateComponentRequest request) {
-        return new SyncInvoker<CreateComponentRequest, CreateComponentResponse>(request, AomMeta.createComponent, hcClient);
+    public SyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentInvoker(
+        CreateComponentRequest request) {
+        return new SyncInvoker<CreateComponentRequest, CreateComponentResponse>(request, AomMeta.createComponent,
+            hcClient);
     }
 
     /**
@@ -153,8 +155,10 @@ public class AomClient {
      * @param DeleteComponentRequest 请求对象
      * @return SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
      */
-    public SyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentInvoker(DeleteComponentRequest request) {
-        return new SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request, AomMeta.deleteComponent, hcClient);
+    public SyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentInvoker(
+        DeleteComponentRequest request) {
+        return new SyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request, AomMeta.deleteComponent,
+            hcClient);
     }
 
     /**
@@ -209,8 +213,10 @@ public class AomClient {
      * @param ListResourceUnderNodeRequest 请求对象
      * @return SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>
      */
-    public SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNodeInvoker(ListResourceUnderNodeRequest request) {
-        return new SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>(request, AomMeta.listResourceUnderNode, hcClient);
+    public SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNodeInvoker(
+        ListResourceUnderNodeRequest request) {
+        return new SyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>(request,
+            AomMeta.listResourceUnderNode, hcClient);
     }
 
     /**
@@ -321,8 +327,10 @@ public class AomClient {
      * @param ShowComponentByNameRequest 请求对象
      * @return SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>
      */
-    public SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByNameInvoker(ShowComponentByNameRequest request) {
-        return new SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>(request, AomMeta.showComponentByName, hcClient);
+    public SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByNameInvoker(
+        ShowComponentByNameRequest request) {
+        return new SyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>(request,
+            AomMeta.showComponentByName, hcClient);
     }
 
     /**
@@ -433,8 +441,10 @@ public class AomClient {
      * @param UpdateComponentRequest 请求对象
      * @return SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>
      */
-    public SyncInvoker<UpdateComponentRequest, UpdateComponentResponse> updateComponentInvoker(UpdateComponentRequest request) {
-        return new SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>(request, AomMeta.updateComponent, hcClient);
+    public SyncInvoker<UpdateComponentRequest, UpdateComponentResponse> updateComponentInvoker(
+        UpdateComponentRequest request) {
+        return new SyncInvoker<UpdateComponentRequest, UpdateComponentResponse>(request, AomMeta.updateComponent,
+            hcClient);
     }
 
     /**

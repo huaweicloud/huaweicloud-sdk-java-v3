@@ -66,16 +66,15 @@ public class BatchDeleteIpListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteIpListResponse batchDeleteIpListResponse = (BatchDeleteIpListResponse) o;
-        return Objects.equals(this.ipgroup, batchDeleteIpListResponse.ipgroup)
-            && Objects.equals(this.requestId, batchDeleteIpListResponse.requestId);
+        BatchDeleteIpListResponse that = (BatchDeleteIpListResponse) obj;
+        return Objects.equals(this.ipgroup, that.ipgroup) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

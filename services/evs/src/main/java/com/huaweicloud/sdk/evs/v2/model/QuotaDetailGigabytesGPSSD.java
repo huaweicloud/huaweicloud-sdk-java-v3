@@ -77,17 +77,16 @@ public class QuotaDetailGigabytesGPSSD {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetailGigabytesGPSSD quotaDetailGigabytesGPSSD = (QuotaDetailGigabytesGPSSD) o;
-        return Objects.equals(this.inUse, quotaDetailGigabytesGPSSD.inUse)
-            && Objects.equals(this.limit, quotaDetailGigabytesGPSSD.limit)
-            && Objects.equals(this.reserved, quotaDetailGigabytesGPSSD.reserved);
+        QuotaDetailGigabytesGPSSD that = (QuotaDetailGigabytesGPSSD) obj;
+        return Objects.equals(this.inUse, that.inUse) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.reserved, that.reserved);
     }
 
     @Override

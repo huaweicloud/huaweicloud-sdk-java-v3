@@ -55,17 +55,16 @@ public class UploadAimTemplateMaterialResponseMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAimTemplateMaterialResponseMode uploadAimTemplateMaterialResponseMode =
-            (UploadAimTemplateMaterialResponseMode) o;
-        return Objects.equals(this.materialId, uploadAimTemplateMaterialResponseMode.materialId)
-            && Objects.equals(this.aimResourceId, uploadAimTemplateMaterialResponseMode.aimResourceId);
+        UploadAimTemplateMaterialResponseMode that = (UploadAimTemplateMaterialResponseMode) obj;
+        return Objects.equals(this.materialId, that.materialId)
+            && Objects.equals(this.aimResourceId, that.aimResourceId);
     }
 
     @Override

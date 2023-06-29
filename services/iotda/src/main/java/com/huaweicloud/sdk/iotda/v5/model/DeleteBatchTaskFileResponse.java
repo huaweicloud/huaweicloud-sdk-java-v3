@@ -34,15 +34,15 @@ public class DeleteBatchTaskFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBatchTaskFileResponse deleteBatchTaskFileResponse = (DeleteBatchTaskFileResponse) o;
-        return Objects.equals(this.body, deleteBatchTaskFileResponse.body);
+        DeleteBatchTaskFileResponse that = (DeleteBatchTaskFileResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

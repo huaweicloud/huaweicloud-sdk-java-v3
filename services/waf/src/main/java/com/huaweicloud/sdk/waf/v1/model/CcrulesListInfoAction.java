@@ -73,22 +73,15 @@ public class CcrulesListInfoAction {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,16 +152,15 @@ public class CcrulesListInfoAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CcrulesListInfoAction ccrulesListInfoAction = (CcrulesListInfoAction) o;
-        return Objects.equals(this.category, ccrulesListInfoAction.category)
-            && Objects.equals(this.detail, ccrulesListInfoAction.detail);
+        CcrulesListInfoAction that = (CcrulesListInfoAction) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

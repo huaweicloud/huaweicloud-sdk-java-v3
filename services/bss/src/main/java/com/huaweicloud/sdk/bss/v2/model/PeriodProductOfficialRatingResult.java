@@ -144,21 +144,19 @@ public class PeriodProductOfficialRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodProductOfficialRatingResult periodProductOfficialRatingResult = (PeriodProductOfficialRatingResult) o;
-        return Objects.equals(this.id, periodProductOfficialRatingResult.id)
-            && Objects.equals(this.productId, periodProductOfficialRatingResult.productId)
-            && Objects.equals(this.officialWebsiteAmount, periodProductOfficialRatingResult.officialWebsiteAmount)
-            && Objects.equals(this.measureId, periodProductOfficialRatingResult.measureId)
-            && Objects.equals(this.installmentOfficialWebsiteAmount,
-                periodProductOfficialRatingResult.installmentOfficialWebsiteAmount)
-            && Objects.equals(this.installmentPeriodType, periodProductOfficialRatingResult.installmentPeriodType);
+        PeriodProductOfficialRatingResult that = (PeriodProductOfficialRatingResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.installmentOfficialWebsiteAmount, that.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentPeriodType, that.installmentPeriodType);
     }
 
     @Override

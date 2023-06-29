@@ -33,15 +33,15 @@ public class RebootType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RebootType rebootType = (RebootType) o;
-        return Objects.equals(this.type, rebootType.type);
+        RebootType that = (RebootType) obj;
+        return Objects.equals(this.type, that.type);
     }
 
     @Override

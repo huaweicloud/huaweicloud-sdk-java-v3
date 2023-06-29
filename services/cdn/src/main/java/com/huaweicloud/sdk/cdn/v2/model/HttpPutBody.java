@@ -209,23 +209,22 @@ public class HttpPutBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpPutBody httpPutBody = (HttpPutBody) o;
-        return Objects.equals(this.httpsStatus, httpPutBody.httpsStatus)
-            && Objects.equals(this.certificateName, httpPutBody.certificateName)
-            && Objects.equals(this.certificateValue, httpPutBody.certificateValue)
-            && Objects.equals(this.privateKey, httpPutBody.privateKey)
-            && Objects.equals(this.certificateSource, httpPutBody.certificateSource)
-            && Objects.equals(this.certificateType, httpPutBody.certificateType)
-            && Objects.equals(this.http2Status, httpPutBody.http2Status)
-            && Objects.equals(this.tlsVersion, httpPutBody.tlsVersion)
-            && Objects.equals(this.ocspStaplingStatus, httpPutBody.ocspStaplingStatus);
+        HttpPutBody that = (HttpPutBody) obj;
+        return Objects.equals(this.httpsStatus, that.httpsStatus)
+            && Objects.equals(this.certificateName, that.certificateName)
+            && Objects.equals(this.certificateValue, that.certificateValue)
+            && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.certificateSource, that.certificateSource)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.http2Status, that.http2Status) && Objects.equals(this.tlsVersion, that.tlsVersion)
+            && Objects.equals(this.ocspStaplingStatus, that.ocspStaplingStatus);
     }
 
     @Override

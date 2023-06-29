@@ -1,58 +1,43 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.Backup;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListBackupsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backupCount")
-    
+    @JsonProperty(value = "backupCount")
 
     private Integer backupCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backupList")
-    
+    @JsonProperty(value = "backupList")
+
     private List<Backup> backupList = null;
-    
+
     public ListBackupsResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -66,15 +51,10 @@ public class ListBackupsResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public ListBackupsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -88,15 +68,10 @@ public class ListBackupsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ListBackupsResponse withBackupCount(Integer backupCount) {
         this.backupCount = backupCount;
         return this;
     }
-
-    
-
 
     /**
      * 备份总个数。请求失败时，字段为空。
@@ -110,16 +85,13 @@ public class ListBackupsResponse extends SdkResponse {
         this.backupCount = backupCount;
     }
 
-    
-
     public ListBackupsResponse withBackupList(List<Backup> backupList) {
         this.backupList = backupList;
         return this;
     }
 
-    
     public ListBackupsResponse addBackupListItem(Backup backupListItem) {
-        if(this.backupList == null) {
+        if (this.backupList == null) {
             this.backupList = new ArrayList<>();
         }
         this.backupList.add(backupListItem);
@@ -127,7 +99,7 @@ public class ListBackupsResponse extends SdkResponse {
     }
 
     public ListBackupsResponse withBackupList(Consumer<List<Backup>> backupListSetter) {
-        if(this.backupList == null) {
+        if (this.backupList == null) {
             this.backupList = new ArrayList<>();
         }
         backupListSetter.accept(this.backupList);
@@ -146,26 +118,24 @@ public class ListBackupsResponse extends SdkResponse {
         this.backupList = backupList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupsResponse listBackupsResponse = (ListBackupsResponse) o;
-        return Objects.equals(this.errorMessage, listBackupsResponse.errorMessage) &&
-            Objects.equals(this.errorCode, listBackupsResponse.errorCode) &&
-            Objects.equals(this.backupCount, listBackupsResponse.backupCount) &&
-            Objects.equals(this.backupList, listBackupsResponse.backupList);
+        ListBackupsResponse that = (ListBackupsResponse) obj;
+        return Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.backupCount, that.backupCount) && Objects.equals(this.backupList, that.backupList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorMessage, errorCode, backupCount, backupList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +147,7 @@ public class ListBackupsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +158,5 @@ public class ListBackupsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

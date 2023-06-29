@@ -55,16 +55,15 @@ public class BatchDeleteGroupRespFailedGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteGroupRespFailedGroups batchDeleteGroupRespFailedGroups = (BatchDeleteGroupRespFailedGroups) o;
-        return Objects.equals(this.groupId, batchDeleteGroupRespFailedGroups.groupId)
-            && Objects.equals(this.errorMessage, batchDeleteGroupRespFailedGroups.errorMessage);
+        BatchDeleteGroupRespFailedGroups that = (BatchDeleteGroupRespFailedGroups) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

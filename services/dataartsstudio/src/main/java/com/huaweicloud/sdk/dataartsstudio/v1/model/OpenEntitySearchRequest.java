@@ -442,29 +442,24 @@ public class OpenEntitySearchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenEntitySearchRequest openEntitySearchRequest = (OpenEntitySearchRequest) o;
-        return Objects.equals(this.query, openEntitySearchRequest.query)
-            && Objects.equals(this.typeNames, openEntitySearchRequest.typeNames)
-            && Objects.equals(this.connectionNames, openEntitySearchRequest.connectionNames)
-            && Objects.equals(this.searchAllAttributes, openEntitySearchRequest.searchAllAttributes)
-            && Objects.equals(this.tags, openEntitySearchRequest.tags)
-            && Objects.equals(this.limit, openEntitySearchRequest.limit)
-            && Objects.equals(this.offset, openEntitySearchRequest.offset)
-            && Objects.equals(this.attributes, openEntitySearchRequest.attributes)
-            && Objects.equals(this.filterCriteria, openEntitySearchRequest.filterCriteria)
-            && Objects.equals(this.timeRange, openEntitySearchRequest.timeRange)
-            && Objects.equals(this.scrollId, openEntitySearchRequest.scrollId)
-            && Objects.equals(this.securityLevels, openEntitySearchRequest.securityLevels)
-            && Objects.equals(this.isImport, openEntitySearchRequest.isImport)
-            && Objects.equals(this.classifications, openEntitySearchRequest.classifications)
-            && Objects.equals(this.description, openEntitySearchRequest.description);
+        OpenEntitySearchRequest that = (OpenEntitySearchRequest) obj;
+        return Objects.equals(this.query, that.query) && Objects.equals(this.typeNames, that.typeNames)
+            && Objects.equals(this.connectionNames, that.connectionNames)
+            && Objects.equals(this.searchAllAttributes, that.searchAllAttributes)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.filterCriteria, that.filterCriteria)
+            && Objects.equals(this.timeRange, that.timeRange) && Objects.equals(this.scrollId, that.scrollId)
+            && Objects.equals(this.securityLevels, that.securityLevels) && Objects.equals(this.isImport, that.isImport)
+            && Objects.equals(this.classifications, that.classifications)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class CheckTaskJobsItemsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTaskJobsItemsBody checkTaskJobsItemsBody = (CheckTaskJobsItemsBody) o;
-        return Objects.equals(this.jobId, checkTaskJobsItemsBody.jobId)
-            && Objects.equals(this.status, checkTaskJobsItemsBody.status)
-            && Objects.equals(this.createTime, checkTaskJobsItemsBody.createTime)
-            && Objects.equals(this.updateTime, checkTaskJobsItemsBody.updateTime);
+        CheckTaskJobsItemsBody that = (CheckTaskJobsItemsBody) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

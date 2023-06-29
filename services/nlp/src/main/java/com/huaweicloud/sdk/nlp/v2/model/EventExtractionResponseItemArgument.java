@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 事件元素
  */
-public class EventExtractionResponseItemArgument  {
-
+public class EventExtractionResponseItemArgument {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="role")
-    
+    @JsonProperty(value = "role")
 
     private String role;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="span")
-    
+    @JsonProperty(value = "span")
+
     private List<Integer> span = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="word")
-    
+    @JsonProperty(value = "word")
 
     private String word;
 
@@ -40,9 +32,6 @@ public class EventExtractionResponseItemArgument  {
         this.role = role;
         return this;
     }
-
-    
-
 
     /**
      * 元素角色。元素角色指的是事件元素在事件中扮演的角色，是事件元素与事件的语义关系。
@@ -56,16 +45,13 @@ public class EventExtractionResponseItemArgument  {
         this.role = role;
     }
 
-    
-
     public EventExtractionResponseItemArgument withSpan(List<Integer> span) {
         this.span = span;
         return this;
     }
 
-    
     public EventExtractionResponseItemArgument addSpanItem(Integer spanItem) {
-        if(this.span == null) {
+        if (this.span == null) {
             this.span = new ArrayList<>();
         }
         this.span.add(spanItem);
@@ -73,7 +59,7 @@ public class EventExtractionResponseItemArgument  {
     }
 
     public EventExtractionResponseItemArgument withSpan(Consumer<List<Integer>> spanSetter) {
-        if(this.span == null) {
+        if (this.span == null) {
             this.span = new ArrayList<>();
         }
         spanSetter.accept(this.span);
@@ -92,15 +78,10 @@ public class EventExtractionResponseItemArgument  {
         this.span = span;
     }
 
-    
-
     public EventExtractionResponseItemArgument withWord(String word) {
         this.word = word;
         return this;
     }
-
-    
-
 
     /**
      * 实体文本。
@@ -114,25 +95,24 @@ public class EventExtractionResponseItemArgument  {
         this.word = word;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventExtractionResponseItemArgument eventExtractionResponseItemArgument = (EventExtractionResponseItemArgument) o;
-        return Objects.equals(this.role, eventExtractionResponseItemArgument.role) &&
-            Objects.equals(this.span, eventExtractionResponseItemArgument.span) &&
-            Objects.equals(this.word, eventExtractionResponseItemArgument.word);
+        EventExtractionResponseItemArgument that = (EventExtractionResponseItemArgument) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.span, that.span)
+            && Objects.equals(this.word, that.word);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(role, span, word);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -143,6 +123,7 @@ public class EventExtractionResponseItemArgument  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -153,8 +134,5 @@ public class EventExtractionResponseItemArgument  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -118,16 +118,16 @@ public class TokenCatalog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TokenCatalog tokenCatalog = (TokenCatalog) o;
-        return Objects.equals(this.type, tokenCatalog.type) && Objects.equals(this.id, tokenCatalog.id)
-            && Objects.equals(this.name, tokenCatalog.name) && Objects.equals(this.endpoints, tokenCatalog.endpoints);
+        TokenCatalog that = (TokenCatalog) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.endpoints, that.endpoints);
     }
 
     @Override

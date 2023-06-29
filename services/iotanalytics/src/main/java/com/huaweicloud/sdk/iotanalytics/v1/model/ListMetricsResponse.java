@@ -91,16 +91,15 @@ public class ListMetricsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricsResponse listMetricsResponse = (ListMetricsResponse) o;
-        return Objects.equals(this.timestamps, listMetricsResponse.timestamps)
-            && Objects.equals(this.metrics, listMetricsResponse.metrics);
+        ListMetricsResponse that = (ListMetricsResponse) obj;
+        return Objects.equals(this.timestamps, that.timestamps) && Objects.equals(this.metrics, that.metrics);
     }
 
     @Override

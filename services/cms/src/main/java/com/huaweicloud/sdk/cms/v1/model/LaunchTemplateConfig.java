@@ -83,16 +83,16 @@ public class LaunchTemplateConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LaunchTemplateConfig launchTemplateConfig = (LaunchTemplateConfig) o;
-        return Objects.equals(this.launchTemplate, launchTemplateConfig.launchTemplate)
-            && Objects.equals(this.overrides, launchTemplateConfig.overrides);
+        LaunchTemplateConfig that = (LaunchTemplateConfig) obj;
+        return Objects.equals(this.launchTemplate, that.launchTemplate)
+            && Objects.equals(this.overrides, that.overrides);
     }
 
     @Override

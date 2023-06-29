@@ -253,23 +253,20 @@ public class AIMSendDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMSendDetail aiMSendDetail = (AIMSendDetail) o;
-        return Objects.equals(this.msgId, aiMSendDetail.msgId) && Objects.equals(this.taskId, aiMSendDetail.taskId)
-            && Objects.equals(this.taskName, aiMSendDetail.taskName) && Objects.equals(this.tplId, aiMSendDetail.tplId)
-            && Objects.equals(this.tplName, aiMSendDetail.tplName)
-            && Objects.equals(this.custFlag, aiMSendDetail.custFlag)
-            && Objects.equals(this.sendAccount, aiMSendDetail.sendAccount)
-            && Objects.equals(this.sendStatus, aiMSendDetail.sendStatus)
-            && Objects.equals(this.sendTime, aiMSendDetail.sendTime)
-            && Objects.equals(this.receiveTime, aiMSendDetail.receiveTime)
-            && Objects.equals(this.resultCode, aiMSendDetail.resultCode);
+        AIMSendDetail that = (AIMSendDetail) obj;
+        return Objects.equals(this.msgId, that.msgId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.custFlag, that.custFlag)
+            && Objects.equals(this.sendAccount, that.sendAccount) && Objects.equals(this.sendStatus, that.sendStatus)
+            && Objects.equals(this.sendTime, that.sendTime) && Objects.equals(this.receiveTime, that.receiveTime)
+            && Objects.equals(this.resultCode, that.resultCode);
     }
 
     @Override

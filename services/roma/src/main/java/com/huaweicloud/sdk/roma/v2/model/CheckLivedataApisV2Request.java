@@ -65,16 +65,15 @@ public class CheckLivedataApisV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckLivedataApisV2Request checkLivedataApisV2Request = (CheckLivedataApisV2Request) o;
-        return Objects.equals(this.instanceId, checkLivedataApisV2Request.instanceId)
-            && Objects.equals(this.body, checkLivedataApisV2Request.body);
+        CheckLivedataApisV2Request that = (CheckLivedataApisV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

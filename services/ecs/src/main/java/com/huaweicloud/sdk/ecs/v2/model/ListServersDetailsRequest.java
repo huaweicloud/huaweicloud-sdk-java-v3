@@ -277,26 +277,21 @@ public class ListServersDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServersDetailsRequest listServersDetailsRequest = (ListServersDetailsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listServersDetailsRequest.enterpriseProjectId)
-            && Objects.equals(this.flavor, listServersDetailsRequest.flavor)
-            && Objects.equals(this.ip, listServersDetailsRequest.ip)
-            && Objects.equals(this.limit, listServersDetailsRequest.limit)
-            && Objects.equals(this.name, listServersDetailsRequest.name)
-            && Objects.equals(this.notTags, listServersDetailsRequest.notTags)
-            && Objects.equals(this.offset, listServersDetailsRequest.offset)
-            && Objects.equals(this.reservationId, listServersDetailsRequest.reservationId)
-            && Objects.equals(this.status, listServersDetailsRequest.status)
-            && Objects.equals(this.tags, listServersDetailsRequest.tags)
-            && Objects.equals(this.ipEq, listServersDetailsRequest.ipEq)
-            && Objects.equals(this.serverId, listServersDetailsRequest.serverId);
+        ListServersDetailsRequest that = (ListServersDetailsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.reservationId, that.reservationId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.ipEq, that.ipEq)
+            && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

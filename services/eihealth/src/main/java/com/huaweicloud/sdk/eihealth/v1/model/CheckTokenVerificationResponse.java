@@ -138,18 +138,16 @@ public class CheckTokenVerificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTokenVerificationResponse checkTokenVerificationResponse = (CheckTokenVerificationResponse) o;
-        return Objects.equals(this.expiresTime, checkTokenVerificationResponse.expiresTime)
-            && Objects.equals(this.project, checkTokenVerificationResponse.project)
-            && Objects.equals(this.roles, checkTokenVerificationResponse.roles)
-            && Objects.equals(this.user, checkTokenVerificationResponse.user);
+        CheckTokenVerificationResponse that = (CheckTokenVerificationResponse) obj;
+        return Objects.equals(this.expiresTime, that.expiresTime) && Objects.equals(this.project, that.project)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.user, that.user);
     }
 
     @Override

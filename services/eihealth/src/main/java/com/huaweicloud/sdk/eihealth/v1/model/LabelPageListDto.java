@@ -140,18 +140,17 @@ public class LabelPageListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LabelPageListDto labelPageListDto = (LabelPageListDto) o;
-        return Objects.equals(this.id, labelPageListDto.id) && Objects.equals(this.name, labelPageListDto.name)
-            && Objects.equals(this.feature, labelPageListDto.feature)
-            && Objects.equals(this.labels, labelPageListDto.labels)
-            && Objects.equals(this.creator, labelPageListDto.creator);
+        LabelPageListDto that = (LabelPageListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.feature, that.feature) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.creator, that.creator);
     }
 
     @Override

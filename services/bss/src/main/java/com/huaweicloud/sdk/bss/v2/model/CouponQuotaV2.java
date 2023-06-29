@@ -295,26 +295,21 @@ public class CouponQuotaV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CouponQuotaV2 couponQuotaV2 = (CouponQuotaV2) o;
-        return Objects.equals(this.quotaId, couponQuotaV2.quotaId)
-            && Objects.equals(this.quotaType, couponQuotaV2.quotaType)
-            && Objects.equals(this.createTime, couponQuotaV2.createTime)
-            && Objects.equals(this.lastUpdateTime, couponQuotaV2.lastUpdateTime)
-            && Objects.equals(this.quotaValue, couponQuotaV2.quotaValue)
-            && Objects.equals(this.quotaStatus, couponQuotaV2.quotaStatus)
-            && Objects.equals(this.balance, couponQuotaV2.balance)
-            && Objects.equals(this.measureId, couponQuotaV2.measureId)
-            && Objects.equals(this.currency, couponQuotaV2.currency)
-            && Objects.equals(this.effectiveTime, couponQuotaV2.effectiveTime)
-            && Objects.equals(this.expireTime, couponQuotaV2.expireTime)
-            && Objects.equals(this.limitInfos, couponQuotaV2.limitInfos);
+        CouponQuotaV2 that = (CouponQuotaV2) obj;
+        return Objects.equals(this.quotaId, that.quotaId) && Objects.equals(this.quotaType, that.quotaType)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.quotaValue, that.quotaValue) && Objects.equals(this.quotaStatus, that.quotaStatus)
+            && Objects.equals(this.balance, that.balance) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.currency, that.currency) && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.limitInfos, that.limitInfos);
     }
 
     @Override

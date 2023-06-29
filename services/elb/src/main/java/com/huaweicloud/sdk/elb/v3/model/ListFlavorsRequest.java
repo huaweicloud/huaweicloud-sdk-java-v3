@@ -218,20 +218,18 @@ public class ListFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.marker, listFlavorsRequest.marker)
-            && Objects.equals(this.limit, listFlavorsRequest.limit)
-            && Objects.equals(this.pageReverse, listFlavorsRequest.pageReverse)
-            && Objects.equals(this.id, listFlavorsRequest.id) && Objects.equals(this.name, listFlavorsRequest.name)
-            && Objects.equals(this.type, listFlavorsRequest.type)
-            && Objects.equals(this.shared, listFlavorsRequest.shared);
+        ListFlavorsRequest that = (ListFlavorsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.shared, that.shared);
     }
 
     @Override

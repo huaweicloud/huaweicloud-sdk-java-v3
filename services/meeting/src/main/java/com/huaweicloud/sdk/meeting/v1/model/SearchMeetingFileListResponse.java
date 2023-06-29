@@ -119,18 +119,16 @@ public class SearchMeetingFileListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchMeetingFileListResponse searchMeetingFileListResponse = (SearchMeetingFileListResponse) o;
-        return Objects.equals(this.offset, searchMeetingFileListResponse.offset)
-            && Objects.equals(this.limit, searchMeetingFileListResponse.limit)
-            && Objects.equals(this.count, searchMeetingFileListResponse.count)
-            && Objects.equals(this.data, searchMeetingFileListResponse.data);
+        SearchMeetingFileListResponse that = (SearchMeetingFileListResponse) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.data, that.data);
     }
 
     @Override

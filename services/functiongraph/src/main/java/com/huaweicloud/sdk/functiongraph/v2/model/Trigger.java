@@ -84,22 +84,15 @@ public class Trigger {
             if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeEnum(value));
         }
 
         public static TriggerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,17 +202,16 @@ public class Trigger {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Trigger trigger = (Trigger) o;
-        return Objects.equals(this.triggerName, trigger.triggerName)
-            && Objects.equals(this.triggerType, trigger.triggerType) && Objects.equals(this.enabled, trigger.enabled)
-            && Objects.equals(this.triggerConfig, trigger.triggerConfig);
+        Trigger that = (Trigger) obj;
+        return Objects.equals(this.triggerName, that.triggerName) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.triggerConfig, that.triggerConfig);
     }
 
     @Override

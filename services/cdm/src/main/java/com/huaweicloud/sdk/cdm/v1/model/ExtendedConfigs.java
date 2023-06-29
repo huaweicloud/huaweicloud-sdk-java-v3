@@ -55,15 +55,15 @@ public class ExtendedConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendedConfigs extendedConfigs = (ExtendedConfigs) o;
-        return Objects.equals(this.name, extendedConfigs.name) && Objects.equals(this.value, extendedConfigs.value);
+        ExtendedConfigs that = (ExtendedConfigs) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

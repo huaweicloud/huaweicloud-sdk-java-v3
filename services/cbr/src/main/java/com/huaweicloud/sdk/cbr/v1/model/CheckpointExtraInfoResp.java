@@ -77,17 +77,16 @@ public class CheckpointExtraInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointExtraInfoResp checkpointExtraInfoResp = (CheckpointExtraInfoResp) o;
-        return Objects.equals(this.name, checkpointExtraInfoResp.name)
-            && Objects.equals(this.description, checkpointExtraInfoResp.description)
-            && Objects.equals(this.retentionDuration, checkpointExtraInfoResp.retentionDuration);
+        CheckpointExtraInfoResp that = (CheckpointExtraInfoResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.retentionDuration, that.retentionDuration);
     }
 
     @Override

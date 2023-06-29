@@ -91,22 +91,15 @@ public class GlanceCreateImageMetadataRequestBody {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskFormatEnum(value));
         }
 
         public static DiskFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -330,24 +323,20 @@ public class GlanceCreateImageMetadataRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceCreateImageMetadataRequestBody glanceCreateImageMetadataRequestBody =
-            (GlanceCreateImageMetadataRequestBody) o;
-        return Objects.equals(this.osVersion, glanceCreateImageMetadataRequestBody.osVersion)
-            && Objects.equals(this.containerFormat, glanceCreateImageMetadataRequestBody.containerFormat)
-            && Objects.equals(this.diskFormat, glanceCreateImageMetadataRequestBody.diskFormat)
-            && Objects.equals(this.minDisk, glanceCreateImageMetadataRequestBody.minDisk)
-            && Objects.equals(this.minRam, glanceCreateImageMetadataRequestBody.minRam)
-            && Objects.equals(this.name, glanceCreateImageMetadataRequestBody.name)
-            && Objects.equals(this._protected, glanceCreateImageMetadataRequestBody._protected)
-            && Objects.equals(this.tags, glanceCreateImageMetadataRequestBody.tags)
-            && Objects.equals(this.visibility, glanceCreateImageMetadataRequestBody.visibility);
+        GlanceCreateImageMetadataRequestBody that = (GlanceCreateImageMetadataRequestBody) obj;
+        return Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.containerFormat, that.containerFormat)
+            && Objects.equals(this.diskFormat, that.diskFormat) && Objects.equals(this.minDisk, that.minDisk)
+            && Objects.equals(this.minRam, that.minRam) && Objects.equals(this.name, that.name)
+            && Objects.equals(this._protected, that._protected) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.visibility, that.visibility);
     }
 
     @Override

@@ -66,16 +66,15 @@ public class ListVpcProtectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcProtectsResponse listVpcProtectsResponse = (ListVpcProtectsResponse) o;
-        return Objects.equals(this.traceId, listVpcProtectsResponse.traceId)
-            && Objects.equals(this.data, listVpcProtectsResponse.data);
+        ListVpcProtectsResponse that = (ListVpcProtectsResponse) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.data, that.data);
     }
 
     @Override

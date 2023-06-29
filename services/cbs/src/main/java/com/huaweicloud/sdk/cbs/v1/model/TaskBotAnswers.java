@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.SkillResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class TaskBotAnswers  {
-
+public class TaskBotAnswers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer")
-    
+    @JsonProperty(value = "answer")
 
     private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="skill_id")
-    
+    @JsonProperty(value = "skill_id")
 
     private String skillId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="skill_responses")
-    
+    @JsonProperty(value = "skill_responses")
+
     private List<SkillResponse> skillResponses = null;
-    
+
     public TaskBotAnswers withAnswer(String answer) {
         this.answer = answer;
         return this;
     }
-
-    
-
 
     /**
      * 答案。
@@ -57,15 +45,10 @@ public class TaskBotAnswers  {
         this.answer = answer;
     }
 
-    
-
     public TaskBotAnswers withSkillId(String skillId) {
         this.skillId = skillId;
         return this;
     }
-
-    
-
 
     /**
      * 技能ID。
@@ -79,16 +62,13 @@ public class TaskBotAnswers  {
         this.skillId = skillId;
     }
 
-    
-
     public TaskBotAnswers withSkillResponses(List<SkillResponse> skillResponses) {
         this.skillResponses = skillResponses;
         return this;
     }
 
-    
     public TaskBotAnswers addSkillResponsesItem(SkillResponse skillResponsesItem) {
-        if(this.skillResponses == null) {
+        if (this.skillResponses == null) {
             this.skillResponses = new ArrayList<>();
         }
         this.skillResponses.add(skillResponsesItem);
@@ -96,7 +76,7 @@ public class TaskBotAnswers  {
     }
 
     public TaskBotAnswers withSkillResponses(Consumer<List<SkillResponse>> skillResponsesSetter) {
-        if(this.skillResponses == null) {
+        if (this.skillResponses == null) {
             this.skillResponses = new ArrayList<>();
         }
         skillResponsesSetter.accept(this.skillResponses);
@@ -115,25 +95,24 @@ public class TaskBotAnswers  {
         this.skillResponses = skillResponses;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBotAnswers taskBotAnswers = (TaskBotAnswers) o;
-        return Objects.equals(this.answer, taskBotAnswers.answer) &&
-            Objects.equals(this.skillId, taskBotAnswers.skillId) &&
-            Objects.equals(this.skillResponses, taskBotAnswers.skillResponses);
+        TaskBotAnswers that = (TaskBotAnswers) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.skillId, that.skillId)
+            && Objects.equals(this.skillResponses, that.skillResponses);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(answer, skillId, skillResponses);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,6 +123,7 @@ public class TaskBotAnswers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -154,8 +134,5 @@ public class TaskBotAnswers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

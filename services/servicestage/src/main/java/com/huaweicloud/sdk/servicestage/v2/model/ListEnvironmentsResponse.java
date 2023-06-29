@@ -75,16 +75,15 @@ public class ListEnvironmentsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvironmentsResponse listEnvironmentsResponse = (ListEnvironmentsResponse) o;
-        return Objects.equals(this.count, listEnvironmentsResponse.count)
-            && Objects.equals(this.environments, listEnvironmentsResponse.environments);
+        ListEnvironmentsResponse that = (ListEnvironmentsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.environments, that.environments);
     }
 
     @Override

@@ -1,42 +1,31 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.PostMultiGainedSegmentResponseItem;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class RunMultiGrainedSegmentResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "result")
+
+    private List<PostMultiGainedSegmentResponseItem> result = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
-    private List<PostMultiGainedSegmentResponseItem> result = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
@@ -45,9 +34,8 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         return this;
     }
 
-    
     public RunMultiGrainedSegmentResponse addResultItem(PostMultiGainedSegmentResponseItem resultItem) {
-        if(this.result == null) {
+        if (this.result == null) {
             this.result = new ArrayList<>();
         }
         this.result.add(resultItem);
@@ -55,7 +43,7 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
     }
 
     public RunMultiGrainedSegmentResponse withResult(Consumer<List<PostMultiGainedSegmentResponseItem>> resultSetter) {
-        if(this.result == null) {
+        if (this.result == null) {
             this.result = new ArrayList<>();
         }
         resultSetter.accept(this.result);
@@ -74,15 +62,10 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     public RunMultiGrainedSegmentResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误码，具体请参见错误码。调用成功时无此字段。
@@ -96,15 +79,10 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public RunMultiGrainedSegmentResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误信息。调用成功时无此字段。
@@ -118,25 +96,24 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunMultiGrainedSegmentResponse runMultiGrainedSegmentResponse = (RunMultiGrainedSegmentResponse) o;
-        return Objects.equals(this.result, runMultiGrainedSegmentResponse.result) &&
-            Objects.equals(this.errorCode, runMultiGrainedSegmentResponse.errorCode) &&
-            Objects.equals(this.errorMsg, runMultiGrainedSegmentResponse.errorMsg);
+        RunMultiGrainedSegmentResponse that = (RunMultiGrainedSegmentResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,6 +124,7 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -157,8 +135,5 @@ public class RunMultiGrainedSegmentResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

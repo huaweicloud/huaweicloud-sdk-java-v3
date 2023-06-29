@@ -71,22 +71,15 @@ public class UpdateProductTopicResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -232,20 +225,17 @@ public class UpdateProductTopicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductTopicResponse updateProductTopicResponse = (UpdateProductTopicResponse) o;
-        return Objects.equals(this.productId, updateProductTopicResponse.productId)
-            && Objects.equals(this.topicId, updateProductTopicResponse.topicId)
-            && Objects.equals(this.permission, updateProductTopicResponse.permission)
-            && Objects.equals(this.topicName, updateProductTopicResponse.topicName)
-            && Objects.equals(this.version, updateProductTopicResponse.version)
-            && Objects.equals(this.description, updateProductTopicResponse.description);
+        UpdateProductTopicResponse that = (UpdateProductTopicResponse) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.permission, that.permission) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description);
     }
 
     @Override

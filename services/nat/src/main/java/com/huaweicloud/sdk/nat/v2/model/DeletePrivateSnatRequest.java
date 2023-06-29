@@ -33,15 +33,15 @@ public class DeletePrivateSnatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePrivateSnatRequest deletePrivateSnatRequest = (DeletePrivateSnatRequest) o;
-        return Objects.equals(this.snatRuleId, deletePrivateSnatRequest.snatRuleId);
+        DeletePrivateSnatRequest that = (DeletePrivateSnatRequest) obj;
+        return Objects.equals(this.snatRuleId, that.snatRuleId);
     }
 
     @Override

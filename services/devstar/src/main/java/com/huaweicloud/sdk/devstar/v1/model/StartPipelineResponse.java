@@ -66,22 +66,15 @@ public class StartPipelineResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResultEnum(value));
         }
 
         public static ResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -138,16 +131,15 @@ public class StartPipelineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartPipelineResponse startPipelineResponse = (StartPipelineResponse) o;
-        return Objects.equals(this.id, startPipelineResponse.id)
-            && Objects.equals(this.result, startPipelineResponse.result);
+        StartPipelineResponse that = (StartPipelineResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.result, that.result);
     }
 
     @Override

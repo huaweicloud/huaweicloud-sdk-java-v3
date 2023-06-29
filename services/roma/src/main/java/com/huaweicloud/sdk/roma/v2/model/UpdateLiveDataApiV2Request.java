@@ -87,17 +87,16 @@ public class UpdateLiveDataApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLiveDataApiV2Request updateLiveDataApiV2Request = (UpdateLiveDataApiV2Request) o;
-        return Objects.equals(this.instanceId, updateLiveDataApiV2Request.instanceId)
-            && Objects.equals(this.ldApiId, updateLiveDataApiV2Request.ldApiId)
-            && Objects.equals(this.body, updateLiveDataApiV2Request.body);
+        UpdateLiveDataApiV2Request that = (UpdateLiveDataApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

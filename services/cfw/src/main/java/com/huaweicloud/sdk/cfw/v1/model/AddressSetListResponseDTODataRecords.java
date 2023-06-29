@@ -121,20 +121,17 @@ public class AddressSetListResponseDTODataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddressSetListResponseDTODataRecords addressSetListResponseDTODataRecords =
-            (AddressSetListResponseDTODataRecords) o;
-        return Objects.equals(this.setId, addressSetListResponseDTODataRecords.setId)
-            && Objects.equals(this.refCount, addressSetListResponseDTODataRecords.refCount)
-            && Objects.equals(this.description, addressSetListResponseDTODataRecords.description)
-            && Objects.equals(this.name, addressSetListResponseDTODataRecords.name)
-            && Objects.equals(this.addressType, addressSetListResponseDTODataRecords.addressType);
+        AddressSetListResponseDTODataRecords that = (AddressSetListResponseDTODataRecords) obj;
+        return Objects.equals(this.setId, that.setId) && Objects.equals(this.refCount, that.refCount)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.addressType, that.addressType);
     }
 
     @Override

@@ -1,43 +1,35 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.BindEIPRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class AttachEipRequest  {
+public class AttachEipRequest {
 
     /**
      * 语言
      */
     public static final class XLanguageEnum {
 
-        
         /**
          * Enum ZH_CN for value: "zh-cn"
          */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
+
         /**
          * Enum EN_US for value: "en-us"
          */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +58,18 @@ public class AttachEipRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,26 +87,22 @@ public class AttachEipRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private BindEIPRequestBody body;
 
@@ -130,15 +111,12 @@ public class AttachEipRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -147,15 +125,10 @@ public class AttachEipRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public AttachEipRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID，严格匹配UUID规则。
@@ -169,15 +142,10 @@ public class AttachEipRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public AttachEipRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID
@@ -191,22 +159,19 @@ public class AttachEipRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public AttachEipRequest withBody(BindEIPRequestBody body) {
         this.body = body;
         return this;
     }
 
     public AttachEipRequest withBody(Consumer<BindEIPRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BindEIPRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -220,26 +185,24 @@ public class AttachEipRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachEipRequest attachEipRequest = (AttachEipRequest) o;
-        return Objects.equals(this.xLanguage, attachEipRequest.xLanguage) &&
-            Objects.equals(this.instanceId, attachEipRequest.instanceId) &&
-            Objects.equals(this.nodeId, attachEipRequest.nodeId) &&
-            Objects.equals(this.body, attachEipRequest.body);
+        AttachEipRequest that = (AttachEipRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, nodeId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -251,6 +214,7 @@ public class AttachEipRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -261,8 +225,5 @@ public class AttachEipRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

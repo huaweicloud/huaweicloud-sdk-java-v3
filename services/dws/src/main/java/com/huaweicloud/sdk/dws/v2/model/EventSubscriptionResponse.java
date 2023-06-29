@@ -341,29 +341,23 @@ public class EventSubscriptionResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSubscriptionResponse eventSubscriptionResponse = (EventSubscriptionResponse) o;
-        return Objects.equals(this.id, eventSubscriptionResponse.id)
-            && Objects.equals(this.name, eventSubscriptionResponse.name)
-            && Objects.equals(this.sourceType, eventSubscriptionResponse.sourceType)
-            && Objects.equals(this.sourceId, eventSubscriptionResponse.sourceId)
-            && Objects.equals(this.category, eventSubscriptionResponse.category)
-            && Objects.equals(this.severity, eventSubscriptionResponse.severity)
-            && Objects.equals(this.tag, eventSubscriptionResponse.tag)
-            && Objects.equals(this.enable, eventSubscriptionResponse.enable)
-            && Objects.equals(this.projectId, eventSubscriptionResponse.projectId)
-            && Objects.equals(this.nameSpace, eventSubscriptionResponse.nameSpace)
-            && Objects.equals(this.notificationTarget, eventSubscriptionResponse.notificationTarget)
-            && Objects.equals(this.notificationTargetName, eventSubscriptionResponse.notificationTargetName)
-            && Objects.equals(this.notificationTargetType, eventSubscriptionResponse.notificationTargetType)
-            && Objects.equals(this.language, eventSubscriptionResponse.language)
-            && Objects.equals(this.timeZone, eventSubscriptionResponse.timeZone);
+        EventSubscriptionResponse that = (EventSubscriptionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.notificationTarget, that.notificationTarget)
+            && Objects.equals(this.notificationTargetName, that.notificationTargetName)
+            && Objects.equals(this.notificationTargetType, that.notificationTargetType)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

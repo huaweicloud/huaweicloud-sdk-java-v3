@@ -77,17 +77,17 @@ public class LtsIdInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LtsIdInfo ltsIdInfo = (LtsIdInfo) o;
-        return Objects.equals(this.ltsGroupId, ltsIdInfo.ltsGroupId)
-            && Objects.equals(this.ltsAccessStreamID, ltsIdInfo.ltsAccessStreamID)
-            && Objects.equals(this.ltsAttackStreamID, ltsIdInfo.ltsAttackStreamID);
+        LtsIdInfo that = (LtsIdInfo) obj;
+        return Objects.equals(this.ltsGroupId, that.ltsGroupId)
+            && Objects.equals(this.ltsAccessStreamID, that.ltsAccessStreamID)
+            && Objects.equals(this.ltsAttackStreamID, that.ltsAttackStreamID);
     }
 
     @Override

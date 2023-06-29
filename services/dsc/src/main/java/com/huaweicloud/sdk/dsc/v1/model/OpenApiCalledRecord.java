@@ -209,23 +209,20 @@ public class OpenApiCalledRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenApiCalledRecord openApiCalledRecord = (OpenApiCalledRecord) o;
-        return Objects.equals(this.userName, openApiCalledRecord.userName)
-            && Objects.equals(this.userId, openApiCalledRecord.userId)
-            && Objects.equals(this.domainName, openApiCalledRecord.domainName)
-            && Objects.equals(this.domainId, openApiCalledRecord.domainId)
-            && Objects.equals(this.requestUrl, openApiCalledRecord.requestUrl)
-            && Objects.equals(this.requestMethod, openApiCalledRecord.requestMethod)
-            && Objects.equals(this.responseCode, openApiCalledRecord.responseCode)
-            && Objects.equals(this.failReason, openApiCalledRecord.failReason)
-            && Objects.equals(this.timestamp, openApiCalledRecord.timestamp);
+        OpenApiCalledRecord that = (OpenApiCalledRecord) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.requestUrl, that.requestUrl)
+            && Objects.equals(this.requestMethod, that.requestMethod)
+            && Objects.equals(this.responseCode, that.responseCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

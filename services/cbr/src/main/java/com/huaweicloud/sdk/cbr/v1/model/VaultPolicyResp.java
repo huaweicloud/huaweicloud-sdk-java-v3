@@ -77,17 +77,16 @@ public class VaultPolicyResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultPolicyResp vaultPolicyResp = (VaultPolicyResp) o;
-        return Objects.equals(this.destinationVaultId, vaultPolicyResp.destinationVaultId)
-            && Objects.equals(this.policyId, vaultPolicyResp.policyId)
-            && Objects.equals(this.vaultId, vaultPolicyResp.vaultId);
+        VaultPolicyResp that = (VaultPolicyResp) obj;
+        return Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

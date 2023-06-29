@@ -74,16 +74,16 @@ public class TopicAssignment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicAssignment topicAssignment = (TopicAssignment) o;
-        return Objects.equals(this.partition, topicAssignment.partition)
-            && Objects.equals(this.partitionBrokers, topicAssignment.partitionBrokers);
+        TopicAssignment that = (TopicAssignment) obj;
+        return Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.partitionBrokers, that.partitionBrokers);
     }
 
     @Override

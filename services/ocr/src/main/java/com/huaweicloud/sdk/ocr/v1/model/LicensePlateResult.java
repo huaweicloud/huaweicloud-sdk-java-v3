@@ -118,18 +118,17 @@ public class LicensePlateResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LicensePlateResult licensePlateResult = (LicensePlateResult) o;
-        return Objects.equals(this.plateNumber, licensePlateResult.plateNumber)
-            && Objects.equals(this.plateColor, licensePlateResult.plateColor)
-            && Objects.equals(this.plateLocation, licensePlateResult.plateLocation)
-            && Objects.equals(this.confidence, licensePlateResult.confidence);
+        LicensePlateResult that = (LicensePlateResult) obj;
+        return Objects.equals(this.plateNumber, that.plateNumber) && Objects.equals(this.plateColor, that.plateColor)
+            && Objects.equals(this.plateLocation, that.plateLocation)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

@@ -192,22 +192,19 @@ public class ListHistoryWebinarsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryWebinarsRequest listHistoryWebinarsRequest = (ListHistoryWebinarsRequest) o;
-        return Objects.equals(this.xRequestId, listHistoryWebinarsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, listHistoryWebinarsRequest.acceptLanguage)
-            && Objects.equals(this.offset, listHistoryWebinarsRequest.offset)
-            && Objects.equals(this.limit, listHistoryWebinarsRequest.limit)
-            && Objects.equals(this.searchKey, listHistoryWebinarsRequest.searchKey)
-            && Objects.equals(this.sortType, listHistoryWebinarsRequest.sortType)
-            && Objects.equals(this.startTime, listHistoryWebinarsRequest.startTime)
-            && Objects.equals(this.endTime, listHistoryWebinarsRequest.endTime);
+        ListHistoryWebinarsRequest that = (ListHistoryWebinarsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.sortType, that.sortType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

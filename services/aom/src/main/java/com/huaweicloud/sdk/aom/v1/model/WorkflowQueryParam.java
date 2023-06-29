@@ -1,93 +1,75 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询工作流列表。
  */
-public class WorkflowQueryParam  {
-
+public class WorkflowQueryParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search")
-    
+    @JsonProperty(value = "search")
 
     private String search;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private Map<String, String> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page")
-    
+    @JsonProperty(value = "page")
 
     private Integer page;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Integer size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_field")
-    
+    @JsonProperty(value = "sort_field")
 
     private String sortField;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_type")
-    
+    @JsonProperty(value = "sort_type")
 
     private String sortType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_time_start")
-    
+    @JsonProperty(value = "search_time_start")
 
     private Long searchTimeStart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="search_time_end")
-    
+    @JsonProperty(value = "search_time_end")
 
     private Long searchTimeEnd;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
@@ -95,9 +77,6 @@ public class WorkflowQueryParam  {
         this.search = search;
         return this;
     }
-
-    
-
 
     /**
      * 搜索内容，可以针对工作流名称和描述内容进行搜索。
@@ -111,15 +90,10 @@ public class WorkflowQueryParam  {
         this.search = search;
     }
 
-    
-
     public WorkflowQueryParam withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 工作流分类，可以取值[\"cron\",\"event\",\"manual\"]。
@@ -133,17 +107,13 @@ public class WorkflowQueryParam  {
         this.type = type;
     }
 
-    
-
     public WorkflowQueryParam withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
     public WorkflowQueryParam putTagsItem(String key, String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         this.tags.put(key, tagsItem);
@@ -151,12 +121,13 @@ public class WorkflowQueryParam  {
     }
 
     public WorkflowQueryParam withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
+
     /**
      * 工作流标签，最多支持10个。
      * @return tags
@@ -169,15 +140,10 @@ public class WorkflowQueryParam  {
         this.tags = tags;
     }
 
-    
-
     public WorkflowQueryParam withPage(Integer page) {
         this.page = page;
         return this;
     }
-
-    
-
 
     /**
      * 查询当前的页数，默认值为0。
@@ -193,15 +159,10 @@ public class WorkflowQueryParam  {
         this.page = page;
     }
 
-    
-
     public WorkflowQueryParam withSize(Integer size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 查询当前页的大小，默认值为10。
@@ -217,15 +178,10 @@ public class WorkflowQueryParam  {
         this.size = size;
     }
 
-    
-
     public WorkflowQueryParam withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目id。
@@ -239,15 +195,10 @@ public class WorkflowQueryParam  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public WorkflowQueryParam withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 工作流创建人。
@@ -261,15 +212,10 @@ public class WorkflowQueryParam  {
         this.createBy = createBy;
     }
 
-    
-
     public WorkflowQueryParam withSortField(String sortField) {
         this.sortField = sortField;
         return this;
     }
-
-    
-
 
     /**
      * 排序字段，取值[\"create_time\"，\"last_execution_start_time\"，\"update_time\"]。
@@ -283,15 +229,10 @@ public class WorkflowQueryParam  {
         this.sortField = sortField;
     }
 
-    
-
     public WorkflowQueryParam withSortType(String sortType) {
         this.sortType = sortType;
         return this;
     }
-
-    
-
 
     /**
      * 排序类型，取值[\"ASC\"，\"DESC\"]。
@@ -305,15 +246,10 @@ public class WorkflowQueryParam  {
         this.sortType = sortType;
     }
 
-    
-
     public WorkflowQueryParam withSearchTimeStart(Long searchTimeStart) {
         this.searchTimeStart = searchTimeStart;
         return this;
     }
-
-    
-
 
     /**
      * 时间范围查询的开始时间。
@@ -329,15 +265,10 @@ public class WorkflowQueryParam  {
         this.searchTimeStart = searchTimeStart;
     }
 
-    
-
     public WorkflowQueryParam withSearchTimeEnd(Long searchTimeEnd) {
         this.searchTimeEnd = searchTimeEnd;
         return this;
     }
-
-    
-
 
     /**
      * 时间范围查询的结束时间。
@@ -353,15 +284,10 @@ public class WorkflowQueryParam  {
         this.searchTimeEnd = searchTimeEnd;
     }
 
-    
-
     public WorkflowQueryParam withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务的状态 [\"success\",\"fail\",\"executing\",\"cancel\",\"waitExecute\",\"waitApproval\",\"approvalFailed\",\"pausing\",\"canceling\"]
@@ -375,34 +301,41 @@ public class WorkflowQueryParam  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowQueryParam workflowQueryParam = (WorkflowQueryParam) o;
-        return Objects.equals(this.search, workflowQueryParam.search) &&
-            Objects.equals(this.type, workflowQueryParam.type) &&
-            Objects.equals(this.tags, workflowQueryParam.tags) &&
-            Objects.equals(this.page, workflowQueryParam.page) &&
-            Objects.equals(this.size, workflowQueryParam.size) &&
-            Objects.equals(this.enterpriseProjectId, workflowQueryParam.enterpriseProjectId) &&
-            Objects.equals(this.createBy, workflowQueryParam.createBy) &&
-            Objects.equals(this.sortField, workflowQueryParam.sortField) &&
-            Objects.equals(this.sortType, workflowQueryParam.sortType) &&
-            Objects.equals(this.searchTimeStart, workflowQueryParam.searchTimeStart) &&
-            Objects.equals(this.searchTimeEnd, workflowQueryParam.searchTimeEnd) &&
-            Objects.equals(this.status, workflowQueryParam.status);
+        WorkflowQueryParam that = (WorkflowQueryParam) obj;
+        return Objects.equals(this.search, that.search) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.sortField, that.sortField)
+            && Objects.equals(this.sortType, that.sortType)
+            && Objects.equals(this.searchTimeStart, that.searchTimeStart)
+            && Objects.equals(this.searchTimeEnd, that.searchTimeEnd) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(search, type, tags, page, size, enterpriseProjectId, createBy, sortField, sortType, searchTimeStart, searchTimeEnd, status);
+        return Objects.hash(search,
+            type,
+            tags,
+            page,
+            size,
+            enterpriseProjectId,
+            createBy,
+            sortField,
+            sortType,
+            searchTimeStart,
+            searchTimeEnd,
+            status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -422,6 +355,7 @@ public class WorkflowQueryParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -432,8 +366,5 @@ public class WorkflowQueryParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -158,19 +158,17 @@ public class ListStoragePoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStoragePoolsRequest listStoragePoolsRequest = (ListStoragePoolsRequest) o;
-        return Objects.equals(this.limit, listStoragePoolsRequest.limit)
-            && Objects.equals(this.marker, listStoragePoolsRequest.marker)
-            && Objects.equals(this.sortKey, listStoragePoolsRequest.sortKey)
-            && Objects.equals(this.sortDir, listStoragePoolsRequest.sortDir)
-            && Objects.equals(this.edgeSiteId, listStoragePoolsRequest.edgeSiteId);
+        ListStoragePoolsRequest that = (ListStoragePoolsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.edgeSiteId, that.edgeSiteId);
     }
 
     @Override

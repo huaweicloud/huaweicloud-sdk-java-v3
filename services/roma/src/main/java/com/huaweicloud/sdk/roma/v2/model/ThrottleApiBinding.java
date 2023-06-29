@@ -72,22 +72,15 @@ public class ThrottleApiBinding {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -210,19 +203,17 @@ public class ThrottleApiBinding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleApiBinding throttleApiBinding = (ThrottleApiBinding) o;
-        return Objects.equals(this.publishId, throttleApiBinding.publishId)
-            && Objects.equals(this.scope, throttleApiBinding.scope)
-            && Objects.equals(this.strategyId, throttleApiBinding.strategyId)
-            && Objects.equals(this.applyTime, throttleApiBinding.applyTime)
-            && Objects.equals(this.id, throttleApiBinding.id);
+        ThrottleApiBinding that = (ThrottleApiBinding) obj;
+        return Objects.equals(this.publishId, that.publishId) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.strategyId, that.strategyId) && Objects.equals(this.applyTime, that.applyTime)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

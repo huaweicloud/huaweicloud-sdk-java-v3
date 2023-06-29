@@ -321,28 +321,22 @@ public class DataClassTypeDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataClassTypeDetailInfo dataClassTypeDetailInfo = (DataClassTypeDetailInfo) o;
-        return Objects.equals(this.id, dataClassTypeDetailInfo.id)
-            && Objects.equals(this.parentName, dataClassTypeDetailInfo.parentName)
-            && Objects.equals(this.parentBusinessCode, dataClassTypeDetailInfo.parentBusinessCode)
-            && Objects.equals(this.name, dataClassTypeDetailInfo.name)
-            && Objects.equals(this.businessCode, dataClassTypeDetailInfo.businessCode)
-            && Objects.equals(this.description, dataClassTypeDetailInfo.description)
-            && Objects.equals(this.workspaceId, dataClassTypeDetailInfo.workspaceId)
-            && Objects.equals(this.projectId, dataClassTypeDetailInfo.projectId)
-            && Objects.equals(this.enabled, dataClassTypeDetailInfo.enabled)
-            && Objects.equals(this.isBuiltIn, dataClassTypeDetailInfo.isBuiltIn)
-            && Objects.equals(this.layoutId, dataClassTypeDetailInfo.layoutId)
-            && Objects.equals(this.layoutName, dataClassTypeDetailInfo.layoutName)
-            && Objects.equals(this.dataclassId, dataClassTypeDetailInfo.dataclassId)
-            && Objects.equals(this.sla, dataClassTypeDetailInfo.sla);
+        DataClassTypeDetailInfo that = (DataClassTypeDetailInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.parentName, that.parentName)
+            && Objects.equals(this.parentBusinessCode, that.parentBusinessCode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.businessCode, that.businessCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.isBuiltIn, that.isBuiltIn) && Objects.equals(this.layoutId, that.layoutId)
+            && Objects.equals(this.layoutName, that.layoutName) && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.sla, that.sla);
     }
 
     @Override

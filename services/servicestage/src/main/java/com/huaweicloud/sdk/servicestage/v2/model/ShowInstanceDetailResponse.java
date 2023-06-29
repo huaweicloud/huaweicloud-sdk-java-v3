@@ -404,29 +404,24 @@ public class ShowInstanceDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceDetailResponse showInstanceDetailResponse = (ShowInstanceDetailResponse) o;
-        return Objects.equals(this.id, showInstanceDetailResponse.id)
-            && Objects.equals(this.name, showInstanceDetailResponse.name)
-            && Objects.equals(this.description, showInstanceDetailResponse.description)
-            && Objects.equals(this.environmentId, showInstanceDetailResponse.environmentId)
-            && Objects.equals(this.platformType, showInstanceDetailResponse.platformType)
-            && Objects.equals(this.flavorId, showInstanceDetailResponse.flavorId)
-            && Objects.equals(this.artifacts, showInstanceDetailResponse.artifacts)
-            && Objects.equals(this.version, showInstanceDetailResponse.version)
-            && Objects.equals(this._configuration, showInstanceDetailResponse._configuration)
-            && Objects.equals(this.creator, showInstanceDetailResponse.creator)
-            && Objects.equals(this.createTime, showInstanceDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showInstanceDetailResponse.updateTime)
-            && Objects.equals(this.externalAccesses, showInstanceDetailResponse.externalAccesses)
-            && Objects.equals(this.referResources, showInstanceDetailResponse.referResources)
-            && Objects.equals(this.statusDetail, showInstanceDetailResponse.statusDetail);
+        ShowInstanceDetailResponse that = (ShowInstanceDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.platformType, that.platformType) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.artifacts, that.artifacts) && Objects.equals(this.version, that.version)
+            && Objects.equals(this._configuration, that._configuration) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.externalAccesses, that.externalAccesses)
+            && Objects.equals(this.referResources, that.referResources)
+            && Objects.equals(this.statusDetail, that.statusDetail);
     }
 
     @Override

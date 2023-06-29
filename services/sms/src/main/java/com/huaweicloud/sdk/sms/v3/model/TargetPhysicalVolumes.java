@@ -71,22 +71,15 @@ public class TargetPhysicalVolumes {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceUseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceUseEnum(value));
         }
 
         public static DeviceUseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceUseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -351,25 +344,20 @@ public class TargetPhysicalVolumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetPhysicalVolumes targetPhysicalVolumes = (TargetPhysicalVolumes) o;
-        return Objects.equals(this.id, targetPhysicalVolumes.id)
-            && Objects.equals(this.deviceUse, targetPhysicalVolumes.deviceUse)
-            && Objects.equals(this.fileSystem, targetPhysicalVolumes.fileSystem)
-            && Objects.equals(this.index, targetPhysicalVolumes.index)
-            && Objects.equals(this.mountPoint, targetPhysicalVolumes.mountPoint)
-            && Objects.equals(this.name, targetPhysicalVolumes.name)
-            && Objects.equals(this.size, targetPhysicalVolumes.size)
-            && Objects.equals(this.usedSize, targetPhysicalVolumes.usedSize)
-            && Objects.equals(this.uuid, targetPhysicalVolumes.uuid)
-            && Objects.equals(this.relationName, targetPhysicalVolumes.relationName)
-            && Objects.equals(this.freeSize, targetPhysicalVolumes.freeSize);
+        TargetPhysicalVolumes that = (TargetPhysicalVolumes) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceUse, that.deviceUse)
+            && Objects.equals(this.fileSystem, that.fileSystem) && Objects.equals(this.index, that.index)
+            && Objects.equals(this.mountPoint, that.mountPoint) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.usedSize, that.usedSize)
+            && Objects.equals(this.uuid, that.uuid) && Objects.equals(this.relationName, that.relationName)
+            && Objects.equals(this.freeSize, that.freeSize);
     }
 
     @Override

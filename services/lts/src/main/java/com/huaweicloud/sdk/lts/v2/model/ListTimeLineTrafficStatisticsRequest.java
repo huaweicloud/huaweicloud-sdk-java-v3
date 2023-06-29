@@ -65,17 +65,15 @@ public class ListTimeLineTrafficStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTimeLineTrafficStatisticsRequest listTimeLineTrafficStatisticsRequest =
-            (ListTimeLineTrafficStatisticsRequest) o;
-        return Objects.equals(this.timezone, listTimeLineTrafficStatisticsRequest.timezone)
-            && Objects.equals(this.body, listTimeLineTrafficStatisticsRequest.body);
+        ListTimeLineTrafficStatisticsRequest that = (ListTimeLineTrafficStatisticsRequest) obj;
+        return Objects.equals(this.timezone, that.timezone) && Objects.equals(this.body, that.body);
     }
 
     @Override

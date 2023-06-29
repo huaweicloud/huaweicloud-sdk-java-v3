@@ -231,23 +231,20 @@ public class RuleListItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleListItem ruleListItem = (RuleListItem) o;
-        return Objects.equals(this.ruleSet, ruleListItem.ruleSet) && Objects.equals(this.ruleId, ruleListItem.ruleId)
-            && Objects.equals(this.ruleLanguage, ruleListItem.ruleLanguage)
-            && Objects.equals(this.ruleName, ruleListItem.ruleName)
-            && Objects.equals(this.ruleSeverity, ruleListItem.ruleSeverity)
-            && Objects.equals(this.ruleTages, ruleListItem.ruleTages)
-            && Objects.equals(this.rightExample, ruleListItem.rightExample)
-            && Objects.equals(this.errorExample, ruleListItem.errorExample)
-            && Objects.equals(this.reviseOpinion, ruleListItem.reviseOpinion)
-            && Objects.equals(this.ruleDesc, ruleListItem.ruleDesc);
+        RuleListItem that = (RuleListItem) obj;
+        return Objects.equals(this.ruleSet, that.ruleSet) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.ruleLanguage, that.ruleLanguage) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleSeverity, that.ruleSeverity) && Objects.equals(this.ruleTages, that.ruleTages)
+            && Objects.equals(this.rightExample, that.rightExample)
+            && Objects.equals(this.errorExample, that.errorExample)
+            && Objects.equals(this.reviseOpinion, that.reviseOpinion) && Objects.equals(this.ruleDesc, that.ruleDesc);
     }
 
     @Override

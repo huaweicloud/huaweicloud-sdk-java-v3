@@ -1,69 +1,55 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.AppRulesSpec;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 服务参数。
  */
-public class AppRules  {
-
+public class AppRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createTime")
-    
+    @JsonProperty(value = "createTime")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable")
-    
+    @JsonProperty(value = "enable")
 
     private Boolean enable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eventName")
-    
+    @JsonProperty(value = "eventName")
 
     private String eventName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostid")
-    
+    @JsonProperty(value = "hostid")
+
     private List<String> hostid = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="projectid")
-    
+    @JsonProperty(value = "projectid")
 
     private String projectid;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec")
-    
+    @JsonProperty(value = "spec")
 
     private AppRulesSpec spec;
 
@@ -71,9 +57,6 @@ public class AppRules  {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 规则创建时间(创建时不传,修改时传查询返回的createTime)。
@@ -87,15 +70,10 @@ public class AppRules  {
         this.createTime = createTime;
     }
 
-    
-
     public AppRules withEnable(Boolean enable) {
         this.enable = enable;
         return this;
     }
-
-    
-
 
     /**
      * true、false 规则是否启用。
@@ -109,15 +87,10 @@ public class AppRules  {
         this.enable = enable;
     }
 
-    
-
     public AppRules withEventName(String eventName) {
         this.eventName = eventName;
         return this;
     }
-
-    
-
 
     /**
      * aom_inventory_rules_event 规则事件名称,对于服务发现固定 为\"aom_inventory_rules_event\"。
@@ -131,16 +104,13 @@ public class AppRules  {
         this.eventName = eventName;
     }
 
-    
-
     public AppRules withHostid(List<String> hostid) {
         this.hostid = hostid;
         return this;
     }
 
-    
     public AppRules addHostidItem(String hostidItem) {
-        if(this.hostid == null) {
+        if (this.hostid == null) {
             this.hostid = new ArrayList<>();
         }
         this.hostid.add(hostidItem);
@@ -148,7 +118,7 @@ public class AppRules  {
     }
 
     public AppRules withHostid(Consumer<List<String>> hostidSetter) {
-        if(this.hostid == null) {
+        if (this.hostid == null) {
             this.hostid = new ArrayList<>();
         }
         hostidSetter.accept(this.hostid);
@@ -167,15 +137,10 @@ public class AppRules  {
         this.hostid = hostid;
     }
 
-    
-
     public AppRules withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 创建时填空，修改时填规则ID。
@@ -189,15 +154,10 @@ public class AppRules  {
         this.id = id;
     }
 
-    
-
     public AppRules withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 规则名称。 字符长度小于64位,以小写字母(a-z)开头,只能包含0-9/a-z/-,不能以-结尾。
@@ -211,15 +171,10 @@ public class AppRules  {
         this.name = name;
     }
 
-    
-
     public AppRules withProjectid(String projectid) {
         this.projectid = projectid;
         return this;
     }
-
-    
-
 
     /**
      * 租户从IAM申请到的projectid,一般为32位字符串。
@@ -233,22 +188,19 @@ public class AppRules  {
         this.projectid = projectid;
     }
 
-    
-
     public AppRules withSpec(AppRulesSpec spec) {
         this.spec = spec;
         return this;
     }
 
     public AppRules withSpec(Consumer<AppRulesSpec> specSetter) {
-        if(this.spec == null ){
+        if (this.spec == null) {
             this.spec = new AppRulesSpec();
             specSetter.accept(this.spec);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get spec
@@ -262,30 +214,26 @@ public class AppRules  {
         this.spec = spec;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppRules appRules = (AppRules) o;
-        return Objects.equals(this.createTime, appRules.createTime) &&
-            Objects.equals(this.enable, appRules.enable) &&
-            Objects.equals(this.eventName, appRules.eventName) &&
-            Objects.equals(this.hostid, appRules.hostid) &&
-            Objects.equals(this.id, appRules.id) &&
-            Objects.equals(this.name, appRules.name) &&
-            Objects.equals(this.projectid, appRules.projectid) &&
-            Objects.equals(this.spec, appRules.spec);
+        AppRules that = (AppRules) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.eventName, that.eventName) && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectid, that.projectid) && Objects.equals(this.spec, that.spec);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(createTime, enable, eventName, hostid, id, name, projectid, spec);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -301,6 +249,7 @@ public class AppRules  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -311,8 +260,5 @@ public class AppRules  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

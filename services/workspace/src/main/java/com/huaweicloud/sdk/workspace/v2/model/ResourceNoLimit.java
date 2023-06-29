@@ -36,7 +36,7 @@ public class ResourceNoLimit {
     }
 
     /**
-     * 资源类别。 general_instances：普通桌面 ram：内存 cores：CPU volumes：磁盘数量 volume_gigabytes：磁盘容量 gpu_instances：GPU桌面 deh：云办公主机 users：用户 policy_groups: 策略组 Cores: CPU(配额工具使用)
+     * 资源类别。 general_instances：普通桌面 Memory：内存 cores：CPU volumes：磁盘数量 volume_gigabytes：磁盘容量 gpu_instances：GPU桌面 deh：云办公主机 users：用户 policy_groups: 策略组 Cores: CPU(配额工具使用)
      * @return type
      */
     public String getType() {
@@ -103,16 +103,16 @@ public class ResourceNoLimit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceNoLimit resourceNoLimit = (ResourceNoLimit) o;
-        return Objects.equals(this.type, resourceNoLimit.type) && Objects.equals(this.quota, resourceNoLimit.quota)
-            && Objects.equals(this.used, resourceNoLimit.used) && Objects.equals(this.unit, resourceNoLimit.unit);
+        ResourceNoLimit that = (ResourceNoLimit) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

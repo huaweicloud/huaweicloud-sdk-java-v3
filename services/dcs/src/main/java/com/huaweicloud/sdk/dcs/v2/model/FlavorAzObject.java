@@ -134,17 +134,16 @@ public class FlavorAzObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorAzObject flavorAzObject = (FlavorAzObject) o;
-        return Objects.equals(this.capacity, flavorAzObject.capacity) && Objects.equals(this.unit, flavorAzObject.unit)
-            && Objects.equals(this.availableZones, flavorAzObject.availableZones)
-            && Objects.equals(this.azCodes, flavorAzObject.azCodes);
+        FlavorAzObject that = (FlavorAzObject) obj;
+        return Objects.equals(this.capacity, that.capacity) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.azCodes, that.azCodes);
     }
 
     @Override

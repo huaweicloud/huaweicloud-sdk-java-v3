@@ -74,16 +74,15 @@ public class AddPartitionInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddPartitionInput addPartitionInput = (AddPartitionInput) o;
-        return Objects.equals(this.ifNotExist, addPartitionInput.ifNotExist)
-            && Objects.equals(this.partitions, addPartitionInput.partitions);
+        AddPartitionInput that = (AddPartitionInput) obj;
+        return Objects.equals(this.ifNotExist, that.ifNotExist) && Objects.equals(this.partitions, that.partitions);
     }
 
     @Override

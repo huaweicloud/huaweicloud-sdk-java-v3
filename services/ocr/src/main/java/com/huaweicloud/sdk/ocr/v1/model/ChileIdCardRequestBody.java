@@ -55,16 +55,15 @@ public class ChileIdCardRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChileIdCardRequestBody chileIdCardRequestBody = (ChileIdCardRequestBody) o;
-        return Objects.equals(this.image, chileIdCardRequestBody.image)
-            && Objects.equals(this.url, chileIdCardRequestBody.url);
+        ChileIdCardRequestBody that = (ChileIdCardRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
     }
 
     @Override

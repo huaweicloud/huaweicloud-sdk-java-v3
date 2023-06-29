@@ -87,16 +87,16 @@ public class ScopeProjectOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopeProjectOption scopeProjectOption = (ScopeProjectOption) o;
-        return Objects.equals(this.id, scopeProjectOption.id) && Objects.equals(this.name, scopeProjectOption.name)
-            && Objects.equals(this.domain, scopeProjectOption.domain);
+        ScopeProjectOption that = (ScopeProjectOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class DetailViewItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetailViewItem detailViewItem = (DetailViewItem) o;
-        return Objects.equals(this.function, detailViewItem.function) && Objects.equals(this.as, detailViewItem.as);
+        DetailViewItem that = (DetailViewItem) obj;
+        return Objects.equals(this.function, that.function) && Objects.equals(this.as, that.as);
     }
 
     @Override

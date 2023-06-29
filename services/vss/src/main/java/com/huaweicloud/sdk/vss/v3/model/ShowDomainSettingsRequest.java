@@ -21,7 +21,7 @@ public class ShowDomainSettingsRequest {
     }
 
     /**
-     * 域名ID
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -33,15 +33,15 @@ public class ShowDomainSettingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainSettingsRequest showDomainSettingsRequest = (ShowDomainSettingsRequest) o;
-        return Objects.equals(this.domainId, showDomainSettingsRequest.domainId);
+        ShowDomainSettingsRequest that = (ShowDomainSettingsRequest) obj;
+        return Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

@@ -149,20 +149,17 @@ public class ShowDevicesInGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDevicesInGroupRequest showDevicesInGroupRequest = (ShowDevicesInGroupRequest) o;
-        return Objects.equals(this.instanceId, showDevicesInGroupRequest.instanceId)
-            && Objects.equals(this.groupId, showDevicesInGroupRequest.groupId)
-            && Objects.equals(this.limit, showDevicesInGroupRequest.limit)
-            && Objects.equals(this.productName, showDevicesInGroupRequest.productName)
-            && Objects.equals(this.deviceName, showDevicesInGroupRequest.deviceName)
-            && Objects.equals(this.offset, showDevicesInGroupRequest.offset);
+        ShowDevicesInGroupRequest that = (ShowDevicesInGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

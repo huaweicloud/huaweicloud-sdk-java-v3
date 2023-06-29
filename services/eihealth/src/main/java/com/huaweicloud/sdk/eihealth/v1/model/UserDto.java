@@ -87,16 +87,16 @@ public class UserDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserDto userDto = (UserDto) o;
-        return Objects.equals(this.domain, userDto.domain) && Objects.equals(this.id, userDto.id)
-            && Objects.equals(this.name, userDto.name);
+        UserDto that = (UserDto) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

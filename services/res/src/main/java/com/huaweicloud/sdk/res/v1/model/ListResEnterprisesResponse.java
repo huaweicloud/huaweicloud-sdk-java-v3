@@ -120,18 +120,17 @@ public class ListResEnterprisesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResEnterprisesResponse listResEnterprisesResponse = (ListResEnterprisesResponse) o;
-        return Objects.equals(this.enterpriseProjects, listResEnterprisesResponse.enterpriseProjects)
-            && Objects.equals(this.isSuccess, listResEnterprisesResponse.isSuccess)
-            && Objects.equals(this.message, listResEnterprisesResponse.message)
-            && Objects.equals(this.errorCode, listResEnterprisesResponse.errorCode);
+        ListResEnterprisesResponse that = (ListResEnterprisesResponse) obj;
+        return Objects.equals(this.enterpriseProjects, that.enterpriseProjects)
+            && Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

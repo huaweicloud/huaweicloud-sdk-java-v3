@@ -65,16 +65,15 @@ public class ExpandShareRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandShareRequest expandShareRequest = (ExpandShareRequest) o;
-        return Objects.equals(this.shareId, expandShareRequest.shareId)
-            && Objects.equals(this.body, expandShareRequest.body);
+        ExpandShareRequest that = (ExpandShareRequest) obj;
+        return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

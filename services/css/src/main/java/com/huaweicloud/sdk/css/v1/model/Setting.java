@@ -143,19 +143,18 @@ public class Setting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Setting setting = (Setting) o;
-        return Objects.equals(this.workers, setting.workers) && Objects.equals(this.batchSize, setting.batchSize)
-            && Objects.equals(this.batchDelayMs, setting.batchDelayMs)
-            && Objects.equals(this.queueType, setting.queueType)
-            && Objects.equals(this.queueCheckPointWrites, setting.queueCheckPointWrites)
-            && Objects.equals(this.queueMaxBytesMb, setting.queueMaxBytesMb);
+        Setting that = (Setting) obj;
+        return Objects.equals(this.workers, that.workers) && Objects.equals(this.batchSize, that.batchSize)
+            && Objects.equals(this.batchDelayMs, that.batchDelayMs) && Objects.equals(this.queueType, that.queueType)
+            && Objects.equals(this.queueCheckPointWrites, that.queueCheckPointWrites)
+            && Objects.equals(this.queueMaxBytesMb, that.queueMaxBytesMb);
     }
 
     @Override

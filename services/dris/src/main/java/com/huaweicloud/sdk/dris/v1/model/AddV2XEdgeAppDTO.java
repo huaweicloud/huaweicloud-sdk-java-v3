@@ -55,16 +55,15 @@ public class AddV2XEdgeAppDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddV2XEdgeAppDTO addV2XEdgeAppDTO = (AddV2XEdgeAppDTO) o;
-        return Objects.equals(this.edgeAppId, addV2XEdgeAppDTO.edgeAppId)
-            && Objects.equals(this.appVersion, addV2XEdgeAppDTO.appVersion);
+        AddV2XEdgeAppDTO that = (AddV2XEdgeAppDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.appVersion, that.appVersion);
     }
 
     @Override

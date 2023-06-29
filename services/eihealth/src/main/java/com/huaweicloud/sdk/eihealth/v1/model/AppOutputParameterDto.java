@@ -200,21 +200,18 @@ public class AppOutputParameterDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppOutputParameterDto appOutputParameterDto = (AppOutputParameterDto) o;
-        return Objects.equals(this.name, appOutputParameterDto.name)
-            && Objects.equals(this.description, appOutputParameterDto.description)
-            && Objects.equals(this.required, appOutputParameterDto.required)
-            && Objects.equals(this.type, appOutputParameterDto.type)
-            && Objects.equals(this.pattern, appOutputParameterDto.pattern)
-            && Objects.equals(this.values, appOutputParameterDto.values)
-            && Objects.equals(this._enum, appOutputParameterDto._enum);
+        AppOutputParameterDto that = (AppOutputParameterDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.pattern, that.pattern) && Objects.equals(this.values, that.values)
+            && Objects.equals(this._enum, that._enum);
     }
 
     @Override

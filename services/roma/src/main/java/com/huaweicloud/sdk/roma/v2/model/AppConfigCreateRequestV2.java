@@ -66,22 +66,15 @@ public class AppConfigCreateRequestV2 {
             if (value == null) {
                 return null;
             }
-            ConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConfigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfigTypeEnum(value));
         }
 
         public static ConfigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConfigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,18 +180,16 @@ public class AppConfigCreateRequestV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppConfigCreateRequestV2 appConfigCreateRequestV2 = (AppConfigCreateRequestV2) o;
-        return Objects.equals(this.configType, appConfigCreateRequestV2.configType)
-            && Objects.equals(this.configValue, appConfigCreateRequestV2.configValue)
-            && Objects.equals(this.description, appConfigCreateRequestV2.description)
-            && Objects.equals(this.configName, appConfigCreateRequestV2.configName);
+        AppConfigCreateRequestV2 that = (AppConfigCreateRequestV2) obj;
+        return Objects.equals(this.configType, that.configType) && Objects.equals(this.configValue, that.configValue)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.configName, that.configName);
     }
 
     @Override

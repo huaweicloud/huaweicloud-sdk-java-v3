@@ -44,15 +44,15 @@ public class KeystoneCreateMappingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateMappingResponse keystoneCreateMappingResponse = (KeystoneCreateMappingResponse) o;
-        return Objects.equals(this.mapping, keystoneCreateMappingResponse.mapping);
+        KeystoneCreateMappingResponse that = (KeystoneCreateMappingResponse) obj;
+        return Objects.equals(this.mapping, that.mapping);
     }
 
     @Override

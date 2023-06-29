@@ -99,18 +99,17 @@ public class AccessConfigQueryLogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigQueryLogInfo accessConfigQueryLogInfo = (AccessConfigQueryLogInfo) o;
-        return Objects.equals(this.logGroupId, accessConfigQueryLogInfo.logGroupId)
-            && Objects.equals(this.logStreamId, accessConfigQueryLogInfo.logStreamId)
-            && Objects.equals(this.logGroupName, accessConfigQueryLogInfo.logGroupName)
-            && Objects.equals(this.logStreamName, accessConfigQueryLogInfo.logStreamName);
+        AccessConfigQueryLogInfo that = (AccessConfigQueryLogInfo) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override

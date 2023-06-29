@@ -57,16 +57,15 @@ public class DomainMigrate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainMigrate domainMigrate = (DomainMigrate) o;
-        return Objects.equals(this.allRegions, domainMigrate.allRegions)
-            && Objects.equals(this.reservation, domainMigrate.reservation);
+        DomainMigrate that = (DomainMigrate) obj;
+        return Objects.equals(this.allRegions, that.allRegions) && Objects.equals(this.reservation, that.reservation);
     }
 
     @Override

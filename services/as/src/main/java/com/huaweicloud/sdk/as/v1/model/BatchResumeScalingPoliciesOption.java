@@ -24,8 +24,8 @@ public class BatchResumeScalingPoliciesOption {
     private List<String> scalingPolicyId = null;
 
     /**
-    * 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。
-    */
+     * 是否强制删除伸缩策略。默认为no，可选值为yes或no。只有action为delete时，该字段才生效。
+     */
     public static final class ForceDeleteEnum {
 
         /**
@@ -68,22 +68,15 @@ public class BatchResumeScalingPoliciesOption {
             if (value == null) {
                 return null;
             }
-            ForceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ForceDeleteEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ForceDeleteEnum(value));
         }
 
         public static ForceDeleteEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ForceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -144,22 +137,15 @@ public class BatchResumeScalingPoliciesOption {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,18 +257,17 @@ public class BatchResumeScalingPoliciesOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchResumeScalingPoliciesOption batchResumeScalingPoliciesOption = (BatchResumeScalingPoliciesOption) o;
-        return Objects.equals(this.scalingPolicyId, batchResumeScalingPoliciesOption.scalingPolicyId)
-            && Objects.equals(this.forceDelete, batchResumeScalingPoliciesOption.forceDelete)
-            && Objects.equals(this.action, batchResumeScalingPoliciesOption.action)
-            && Objects.equals(this.deleteAlarm, batchResumeScalingPoliciesOption.deleteAlarm);
+        BatchResumeScalingPoliciesOption that = (BatchResumeScalingPoliciesOption) obj;
+        return Objects.equals(this.scalingPolicyId, that.scalingPolicyId)
+            && Objects.equals(this.forceDelete, that.forceDelete) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.deleteAlarm, that.deleteAlarm);
     }
 
     @Override

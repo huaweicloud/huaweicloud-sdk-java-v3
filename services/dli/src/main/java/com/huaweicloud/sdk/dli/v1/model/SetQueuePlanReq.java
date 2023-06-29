@@ -113,22 +113,15 @@ public class SetQueuePlanReq {
             if (value == null) {
                 return null;
             }
-            RepeatDayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RepeatDayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RepeatDayEnum(value));
         }
 
         public static RepeatDayEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RepeatDayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -323,22 +316,19 @@ public class SetQueuePlanReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetQueuePlanReq setQueuePlanReq = (SetQueuePlanReq) o;
-        return Objects.equals(this.planName, setQueuePlanReq.planName)
-            && Objects.equals(this.targetCu, setQueuePlanReq.targetCu)
-            && Objects.equals(this.startHour, setQueuePlanReq.startHour)
-            && Objects.equals(this.startMinute, setQueuePlanReq.startMinute)
-            && Objects.equals(this.repeatDay, setQueuePlanReq.repeatDay)
-            && Objects.equals(this.validDateBegin, setQueuePlanReq.validDateBegin)
-            && Objects.equals(this.validDateEnd, setQueuePlanReq.validDateEnd)
-            && Objects.equals(this.activate, setQueuePlanReq.activate);
+        SetQueuePlanReq that = (SetQueuePlanReq) obj;
+        return Objects.equals(this.planName, that.planName) && Objects.equals(this.targetCu, that.targetCu)
+            && Objects.equals(this.startHour, that.startHour) && Objects.equals(this.startMinute, that.startMinute)
+            && Objects.equals(this.repeatDay, that.repeatDay)
+            && Objects.equals(this.validDateBegin, that.validDateBegin)
+            && Objects.equals(this.validDateEnd, that.validDateEnd) && Objects.equals(this.activate, that.activate);
     }
 
     @Override

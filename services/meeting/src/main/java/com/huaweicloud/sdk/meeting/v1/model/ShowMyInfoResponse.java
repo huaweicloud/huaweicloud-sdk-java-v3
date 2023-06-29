@@ -652,40 +652,28 @@ public class ShowMyInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMyInfoResponse showMyInfoResponse = (ShowMyInfoResponse) o;
-        return Objects.equals(this.id, showMyInfoResponse.id)
-            && Objects.equals(this.userAccount, showMyInfoResponse.userAccount)
-            && Objects.equals(this.name, showMyInfoResponse.name)
-            && Objects.equals(this.englishName, showMyInfoResponse.englishName)
-            && Objects.equals(this.phone, showMyInfoResponse.phone)
-            && Objects.equals(this.country, showMyInfoResponse.country)
-            && Objects.equals(this.email, showMyInfoResponse.email)
-            && Objects.equals(this.sipNum, showMyInfoResponse.sipNum)
-            && Objects.equals(this.vmrList, showMyInfoResponse.vmrList)
-            && Objects.equals(this.deptCode, showMyInfoResponse.deptCode)
-            && Objects.equals(this.deptName, showMyInfoResponse.deptName)
-            && Objects.equals(this.deptNamePath, showMyInfoResponse.deptNamePath)
-            && Objects.equals(this.userType, showMyInfoResponse.userType)
-            && Objects.equals(this.adminType, showMyInfoResponse.adminType)
-            && Objects.equals(this.signature, showMyInfoResponse.signature)
-            && Objects.equals(this.title, showMyInfoResponse.title)
-            && Objects.equals(this.desc, showMyInfoResponse.desc) && Objects.equals(this.corp, showMyInfoResponse.corp)
-            && Objects.equals(this.function, showMyInfoResponse.function)
-            && Objects.equals(this.devType, showMyInfoResponse.devType)
-            && Objects.equals(this.status, showMyInfoResponse.status)
-            && Objects.equals(this.sortLevel, showMyInfoResponse.sortLevel)
-            && Objects.equals(this.hidePhone, showMyInfoResponse.hidePhone)
-            && Objects.equals(this.visionAccount, showMyInfoResponse.visionAccount)
-            && Objects.equals(this.thirdAccount, showMyInfoResponse.thirdAccount)
-            && Objects.equals(this.license, showMyInfoResponse.license)
-            && Objects.equals(this.activeTime, showMyInfoResponse.activeTime);
+        ShowMyInfoResponse that = (ShowMyInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userAccount, that.userAccount)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.sipNum, that.sipNum)
+            && Objects.equals(this.vmrList, that.vmrList) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.corp, that.corp)
+            && Objects.equals(this.function, that.function) && Objects.equals(this.devType, that.devType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.hidePhone, that.hidePhone) && Objects.equals(this.visionAccount, that.visionAccount)
+            && Objects.equals(this.thirdAccount, that.thirdAccount) && Objects.equals(this.license, that.license)
+            && Objects.equals(this.activeTime, that.activeTime);
     }
 
     @Override

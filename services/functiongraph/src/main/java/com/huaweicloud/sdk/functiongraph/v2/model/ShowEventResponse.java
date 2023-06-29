@@ -101,17 +101,16 @@ public class ShowEventResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventResponse showEventResponse = (ShowEventResponse) o;
-        return Objects.equals(this.id, showEventResponse.id) && Objects.equals(this.name, showEventResponse.name)
-            && Objects.equals(this.content, showEventResponse.content)
-            && Objects.equals(this.lastModified, showEventResponse.lastModified);
+        ShowEventResponse that = (ShowEventResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.lastModified, that.lastModified);
     }
 
     @Override

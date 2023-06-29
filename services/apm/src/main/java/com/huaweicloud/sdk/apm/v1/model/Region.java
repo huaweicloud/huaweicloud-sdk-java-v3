@@ -121,17 +121,17 @@ public class Region {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Region region = (Region) o;
-        return Objects.equals(this.regionId, region.regionId) && Objects.equals(this.regionName, region.regionName)
-            && Objects.equals(this.region, region.region) && Objects.equals(this.projectId, region.projectId)
-            && Objects.equals(this.status, region.status);
+        Region that = (Region) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

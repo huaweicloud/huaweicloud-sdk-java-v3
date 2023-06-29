@@ -248,21 +248,18 @@ public class CountAllResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountAllResourcesRequest countAllResourcesRequest = (CountAllResourcesRequest) o;
-        return Objects.equals(this.id, countAllResourcesRequest.id)
-            && Objects.equals(this.name, countAllResourcesRequest.name)
-            && Objects.equals(this.type, countAllResourcesRequest.type)
-            && Objects.equals(this.regionId, countAllResourcesRequest.regionId)
-            && Objects.equals(this.epId, countAllResourcesRequest.epId)
-            && Objects.equals(this.projectId, countAllResourcesRequest.projectId)
-            && Objects.equals(this.tags, countAllResourcesRequest.tags);
+        CountAllResourcesRequest that = (CountAllResourcesRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.epId, that.epId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

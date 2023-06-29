@@ -118,17 +118,16 @@ public class UpdateVpcOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcOption updateVpcOption = (UpdateVpcOption) o;
-        return Objects.equals(this.name, updateVpcOption.name)
-            && Objects.equals(this.description, updateVpcOption.description)
-            && Objects.equals(this.cidr, updateVpcOption.cidr) && Objects.equals(this.routes, updateVpcOption.routes);
+        UpdateVpcOption that = (UpdateVpcOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.routes, that.routes);
     }
 
     @Override

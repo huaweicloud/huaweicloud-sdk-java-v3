@@ -88,22 +88,15 @@ public class CreateQaFeedbacksRequest {
             if (value == null) {
                 return null;
             }
-            FeedbackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FeedbackTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FeedbackTypeEnum(value));
         }
 
         public static FeedbackTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FeedbackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,19 +224,17 @@ public class CreateQaFeedbacksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQaFeedbacksRequest createQaFeedbacksRequest = (CreateQaFeedbacksRequest) o;
-        return Objects.equals(this.xServiceKey, createQaFeedbacksRequest.xServiceKey)
-            && Objects.equals(this.xSite, createQaFeedbacksRequest.xSite)
-            && Objects.equals(this.xLanguage, createQaFeedbacksRequest.xLanguage)
-            && Objects.equals(this.feedbackType, createQaFeedbacksRequest.feedbackType)
-            && Objects.equals(this.body, createQaFeedbacksRequest.body);
+        CreateQaFeedbacksRequest that = (CreateQaFeedbacksRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.feedbackType, that.feedbackType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

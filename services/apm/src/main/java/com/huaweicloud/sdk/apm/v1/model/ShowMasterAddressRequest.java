@@ -33,15 +33,15 @@ public class ShowMasterAddressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMasterAddressRequest showMasterAddressRequest = (ShowMasterAddressRequest) o;
-        return Objects.equals(this.regionName, showMasterAddressRequest.regionName);
+        ShowMasterAddressRequest that = (ShowMasterAddressRequest) obj;
+        return Objects.equals(this.regionName, that.regionName);
     }
 
     @Override

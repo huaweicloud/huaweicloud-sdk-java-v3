@@ -131,19 +131,17 @@ public class UpdateTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTableRequest updateTableRequest = (UpdateTableRequest) o;
-        return Objects.equals(this.instanceId, updateTableRequest.instanceId)
-            && Objects.equals(this.catalogName, updateTableRequest.catalogName)
-            && Objects.equals(this.databaseName, updateTableRequest.databaseName)
-            && Objects.equals(this.tableName, updateTableRequest.tableName)
-            && Objects.equals(this.body, updateTableRequest.body);
+        UpdateTableRequest that = (UpdateTableRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

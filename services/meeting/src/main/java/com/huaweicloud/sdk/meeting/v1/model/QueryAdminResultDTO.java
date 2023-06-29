@@ -165,21 +165,18 @@ public class QueryAdminResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAdminResultDTO queryAdminResultDTO = (QueryAdminResultDTO) o;
-        return Objects.equals(this.id, queryAdminResultDTO.id)
-            && Objects.equals(this.account, queryAdminResultDTO.account)
-            && Objects.equals(this.name, queryAdminResultDTO.name)
-            && Objects.equals(this.adminType, queryAdminResultDTO.adminType)
-            && Objects.equals(this.email, queryAdminResultDTO.email)
-            && Objects.equals(this.phone, queryAdminResultDTO.phone)
-            && Objects.equals(this.country, queryAdminResultDTO.country);
+        QueryAdminResultDTO that = (QueryAdminResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country);
     }
 
     @Override

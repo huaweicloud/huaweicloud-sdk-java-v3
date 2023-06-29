@@ -99,18 +99,18 @@ public class CreateTestSuitByRepoFileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTestSuitByRepoFileInfo createTestSuitByRepoFileInfo = (CreateTestSuitByRepoFileInfo) o;
-        return Objects.equals(this.testsuiteName, createTestSuitByRepoFileInfo.testsuiteName)
-            && Objects.equals(this.repositoryId, createTestSuitByRepoFileInfo.repositoryId)
-            && Objects.equals(this.repositoryBranch, createTestSuitByRepoFileInfo.repositoryBranch)
-            && Objects.equals(this.filePath, createTestSuitByRepoFileInfo.filePath);
+        CreateTestSuitByRepoFileInfo that = (CreateTestSuitByRepoFileInfo) obj;
+        return Objects.equals(this.testsuiteName, that.testsuiteName)
+            && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.repositoryBranch, that.repositoryBranch)
+            && Objects.equals(this.filePath, that.filePath);
     }
 
     @Override

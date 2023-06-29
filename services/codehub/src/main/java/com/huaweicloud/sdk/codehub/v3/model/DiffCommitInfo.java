@@ -191,20 +191,18 @@ public class DiffCommitInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiffCommitInfo diffCommitInfo = (DiffCommitInfo) o;
-        return Objects.equals(this.oldPath, diffCommitInfo.oldPath)
-            && Objects.equals(this.newPath, diffCommitInfo.newPath) && Objects.equals(this.aMode, diffCommitInfo.aMode)
-            && Objects.equals(this.bMode, diffCommitInfo.bMode) && Objects.equals(this.newFile, diffCommitInfo.newFile)
-            && Objects.equals(this.renamedFile, diffCommitInfo.renamedFile)
-            && Objects.equals(this.deletedFile, diffCommitInfo.deletedFile)
-            && Objects.equals(this.diff, diffCommitInfo.diff);
+        DiffCommitInfo that = (DiffCommitInfo) obj;
+        return Objects.equals(this.oldPath, that.oldPath) && Objects.equals(this.newPath, that.newPath)
+            && Objects.equals(this.aMode, that.aMode) && Objects.equals(this.bMode, that.bMode)
+            && Objects.equals(this.newFile, that.newFile) && Objects.equals(this.renamedFile, that.renamedFile)
+            && Objects.equals(this.deletedFile, that.deletedFile) && Objects.equals(this.diff, that.diff);
     }
 
     @Override

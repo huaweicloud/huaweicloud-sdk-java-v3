@@ -121,19 +121,17 @@ public class ListSubfilesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubfilesRequest listSubfilesRequest = (ListSubfilesRequest) o;
-        return Objects.equals(this.repositoryUuid, listSubfilesRequest.repositoryUuid)
-            && Objects.equals(this.branchName, listSubfilesRequest.branchName)
-            && Objects.equals(this.path, listSubfilesRequest.path)
-            && Objects.equals(this.offset, listSubfilesRequest.offset)
-            && Objects.equals(this.limit, listSubfilesRequest.limit);
+        ListSubfilesRequest that = (ListSubfilesRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid)
+            && Objects.equals(this.branchName, that.branchName) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

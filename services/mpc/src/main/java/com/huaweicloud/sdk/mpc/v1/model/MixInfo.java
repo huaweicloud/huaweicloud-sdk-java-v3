@@ -83,15 +83,15 @@ public class MixInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MixInfo mixInfo = (MixInfo) o;
-        return Objects.equals(this.inputs, mixInfo.inputs) && Objects.equals(this.layout, mixInfo.layout);
+        MixInfo that = (MixInfo) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.layout, that.layout);
     }
 
     @Override

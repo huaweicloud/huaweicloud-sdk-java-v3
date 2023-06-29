@@ -90,22 +90,15 @@ public class DiskInfo {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeTypeEnum(value));
         }
 
         public static VolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class DiskInfo {
             if (value == null) {
                 return null;
             }
-            DiskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskTypeEnum(value));
         }
 
         public static DiskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -360,19 +346,19 @@ public class DiskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiskInfo diskInfo = (DiskInfo) o;
-        return Objects.equals(this.size, diskInfo.size) && Objects.equals(this.volumeType, diskInfo.volumeType)
-            && Objects.equals(this.diskType, diskInfo.diskType)
-            && Objects.equals(this.dedicatedStorageId, diskInfo.dedicatedStorageId)
-            && Objects.equals(this.dataDiskImageId, diskInfo.dataDiskImageId)
-            && Objects.equals(this.snapshotId, diskInfo.snapshotId) && Objects.equals(this.metadata, diskInfo.metadata);
+        DiskInfo that = (DiskInfo) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.diskType, that.diskType)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.dataDiskImageId, that.dataDiskImageId)
+            && Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

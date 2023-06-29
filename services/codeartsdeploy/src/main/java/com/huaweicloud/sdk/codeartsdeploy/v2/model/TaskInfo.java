@@ -98,22 +98,15 @@ public class TaskInfo {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,7 +298,7 @@ public class TaskInfo {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -876,38 +869,33 @@ public class TaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfo taskInfo = (TaskInfo) o;
-        return Objects.equals(this.taskId, taskInfo.taskId) && Objects.equals(this.name, taskInfo.name)
-            && Objects.equals(this.projectId, taskInfo.projectId)
-            && Objects.equals(this.projectName, taskInfo.projectName)
-            && Objects.equals(this.deploySystem, taskInfo.deploySystem)
-            && Objects.equals(this.createTime, taskInfo.createTime)
-            && Objects.equals(this.updateTime, taskInfo.updateTime) && Objects.equals(this.state, taskInfo.state)
-            && Objects.equals(this.executionTime, taskInfo.executionTime)
-            && Objects.equals(this.description, taskInfo.description)
-            && Objects.equals(this.isDefautPermission, taskInfo.isDefautPermission)
-            && Objects.equals(this.templateId, taskInfo.templateId) && Objects.equals(this.owner, taskInfo.owner)
-            && Objects.equals(this.nickName, taskInfo.nickName) && Objects.equals(this.ownerId, taskInfo.ownerId)
-            && Objects.equals(this.tenantId, taskInfo.tenantId) && Objects.equals(this.tenantName, taskInfo.tenantName)
-            && Objects.equals(this.slaveClusterId, taskInfo.slaveClusterId)
-            && Objects.equals(this.isCare, taskInfo.isCare) && Objects.equals(this.canModify, taskInfo.canModify)
-            && Objects.equals(this.canDelete, taskInfo.canDelete) && Objects.equals(this.canView, taskInfo.canView)
-            && Objects.equals(this.canExecute, taskInfo.canExecute) && Objects.equals(this.canCopy, taskInfo.canCopy)
-            && Objects.equals(this.canManage, taskInfo.canManage)
-            && Objects.equals(this.appComponentList, taskInfo.appComponentList)
-            && Objects.equals(this.roleId, taskInfo.roleId) && Objects.equals(this.id, taskInfo.id)
-            && Objects.equals(this.releaseId, taskInfo.releaseId) && Objects.equals(this.duration, taskInfo.duration)
-            && Objects.equals(this.executionState, taskInfo.executionState)
-            && Objects.equals(this.executorId, taskInfo.executorId)
-            && Objects.equals(this.executorNickName, taskInfo.executorNickName)
-            && Objects.equals(this.steps, taskInfo.steps);
+        TaskInfo that = (TaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.deploySystem, that.deploySystem) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.executionTime, that.executionTime)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isDefautPermission, that.isDefautPermission)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.ownerId, that.ownerId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.tenantName, that.tenantName)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.isCare, that.isCare)
+            && Objects.equals(this.canModify, that.canModify) && Objects.equals(this.canDelete, that.canDelete)
+            && Objects.equals(this.canView, that.canView) && Objects.equals(this.canExecute, that.canExecute)
+            && Objects.equals(this.canCopy, that.canCopy) && Objects.equals(this.canManage, that.canManage)
+            && Objects.equals(this.appComponentList, that.appComponentList) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.releaseId, that.releaseId)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.executionState, that.executionState)
+            && Objects.equals(this.executorId, that.executorId)
+            && Objects.equals(this.executorNickName, that.executorNickName) && Objects.equals(this.steps, that.steps);
     }
 
     @Override

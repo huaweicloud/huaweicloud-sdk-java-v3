@@ -479,28 +479,22 @@ public class ShowBlockchainDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBlockchainDetailResponse showBlockchainDetailResponse = (ShowBlockchainDetailResponse) o;
-        return Objects.equals(this.basicInfo, showBlockchainDetailResponse.basicInfo)
-            && Objects.equals(this.channels, showBlockchainDetailResponse.channels)
-            && Objects.equals(this.peerInfo, showBlockchainDetailResponse.peerInfo)
-            && Objects.equals(this.lightPeerInfo, showBlockchainDetailResponse.lightPeerInfo)
-            && Objects.equals(this.ordererInfo, showBlockchainDetailResponse.ordererInfo)
-            && Objects.equals(this.couchDbInfo, showBlockchainDetailResponse.couchDbInfo)
-            && Objects.equals(this.dmsKafkaInfo, showBlockchainDetailResponse.dmsKafkaInfo)
-            && Objects.equals(this.iefInfo, showBlockchainDetailResponse.iefInfo)
-            && Objects.equals(this.sfsInfo, showBlockchainDetailResponse.sfsInfo)
-            && Objects.equals(this.agentInfo, showBlockchainDetailResponse.agentInfo)
-            && Objects.equals(this.restapiInfo, showBlockchainDetailResponse.restapiInfo)
-            && Objects.equals(this.evsPvcInfo, showBlockchainDetailResponse.evsPvcInfo)
-            && Objects.equals(this.tc3TaskserverInfo, showBlockchainDetailResponse.tc3TaskserverInfo)
-            && Objects.equals(this.obsBucketInfo, showBlockchainDetailResponse.obsBucketInfo);
+        ShowBlockchainDetailResponse that = (ShowBlockchainDetailResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.channels, that.channels)
+            && Objects.equals(this.peerInfo, that.peerInfo) && Objects.equals(this.lightPeerInfo, that.lightPeerInfo)
+            && Objects.equals(this.ordererInfo, that.ordererInfo) && Objects.equals(this.couchDbInfo, that.couchDbInfo)
+            && Objects.equals(this.dmsKafkaInfo, that.dmsKafkaInfo) && Objects.equals(this.iefInfo, that.iefInfo)
+            && Objects.equals(this.sfsInfo, that.sfsInfo) && Objects.equals(this.agentInfo, that.agentInfo)
+            && Objects.equals(this.restapiInfo, that.restapiInfo) && Objects.equals(this.evsPvcInfo, that.evsPvcInfo)
+            && Objects.equals(this.tc3TaskserverInfo, that.tc3TaskserverInfo)
+            && Objects.equals(this.obsBucketInfo, that.obsBucketInfo);
     }
 
     @Override

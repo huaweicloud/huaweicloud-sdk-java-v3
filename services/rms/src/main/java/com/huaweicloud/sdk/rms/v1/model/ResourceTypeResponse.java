@@ -206,22 +206,19 @@ public class ResourceTypeResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceTypeResponse resourceTypeResponse = (ResourceTypeResponse) o;
-        return Objects.equals(this.name, resourceTypeResponse.name)
-            && Objects.equals(this.displayName, resourceTypeResponse.displayName)
-            && Objects.equals(this.global, resourceTypeResponse.global)
-            && Objects.equals(this.regions, resourceTypeResponse.regions)
-            && Objects.equals(this.consoleEndpointId, resourceTypeResponse.consoleEndpointId)
-            && Objects.equals(this.consoleListUrl, resourceTypeResponse.consoleListUrl)
-            && Objects.equals(this.consoleDetailUrl, resourceTypeResponse.consoleDetailUrl)
-            && Objects.equals(this.track, resourceTypeResponse.track);
+        ResourceTypeResponse that = (ResourceTypeResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.global, that.global) && Objects.equals(this.regions, that.regions)
+            && Objects.equals(this.consoleEndpointId, that.consoleEndpointId)
+            && Objects.equals(this.consoleListUrl, that.consoleListUrl)
+            && Objects.equals(this.consoleDetailUrl, that.consoleDetailUrl) && Objects.equals(this.track, that.track);
     }
 
     @Override

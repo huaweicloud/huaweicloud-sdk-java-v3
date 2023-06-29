@@ -106,17 +106,16 @@ public class CountDevicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountDevicesResponse countDevicesResponse = (CountDevicesResponse) o;
-        return Objects.equals(this.productTemplates, countDevicesResponse.productTemplates)
-            && Objects.equals(this.products, countDevicesResponse.products)
-            && Objects.equals(this.devices, countDevicesResponse.devices);
+        CountDevicesResponse that = (CountDevicesResponse) obj;
+        return Objects.equals(this.productTemplates, that.productTemplates)
+            && Objects.equals(this.products, that.products) && Objects.equals(this.devices, that.devices);
     }
 
     @Override

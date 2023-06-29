@@ -77,17 +77,16 @@ public class ListBucketsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBucketsRequest listBucketsRequest = (ListBucketsRequest) o;
-        return Objects.equals(this.added, listBucketsRequest.added)
-            && Objects.equals(this.offset, listBucketsRequest.offset)
-            && Objects.equals(this.limit, listBucketsRequest.limit);
+        ListBucketsRequest that = (ListBucketsRequest) obj;
+        return Objects.equals(this.added, that.added) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -333,27 +333,21 @@ public class ExtendsParamV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendsParamV2 extendsParamV2 = (ExtendsParamV2) o;
-        return Objects.equals(this.tips, extendsParamV2.tips) && Objects.equals(this.required, extendsParamV2.required)
-            && Objects.equals(this.length, extendsParamV2.length)
-            && Objects.equals(this.language, extendsParamV2.language)
-            && Objects.equals(this.paramKey, extendsParamV2.paramKey)
-            && Objects.equals(this.paramName, extendsParamV2.paramName)
-            && Objects.equals(this.paramType, extendsParamV2.paramType)
-            && Objects.equals(this.paramDesc, extendsParamV2.paramDesc)
-            && Objects.equals(this.defaultValue, extendsParamV2.defaultValue)
-            && Objects.equals(this.maxValue, extendsParamV2.maxValue)
-            && Objects.equals(this.minValue, extendsParamV2.minValue)
-            && Objects.equals(this.selectItem, extendsParamV2.selectItem)
-            && Objects.equals(this.isShow, extendsParamV2.isShow)
-            && Objects.equals(this.isSensitive, extendsParamV2.isSensitive);
+        ExtendsParamV2 that = (ExtendsParamV2) obj;
+        return Objects.equals(this.tips, that.tips) && Objects.equals(this.required, that.required)
+            && Objects.equals(this.length, that.length) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.paramKey, that.paramKey) && Objects.equals(this.paramName, that.paramName)
+            && Objects.equals(this.paramType, that.paramType) && Objects.equals(this.paramDesc, that.paramDesc)
+            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.maxValue, that.maxValue)
+            && Objects.equals(this.minValue, that.minValue) && Objects.equals(this.selectItem, that.selectItem)
+            && Objects.equals(this.isShow, that.isShow) && Objects.equals(this.isSensitive, that.isSensitive);
     }
 
     @Override

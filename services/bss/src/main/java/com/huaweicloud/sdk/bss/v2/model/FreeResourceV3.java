@@ -121,19 +121,18 @@ public class FreeResourceV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreeResourceV3 freeResourceV3 = (FreeResourceV3) o;
-        return Objects.equals(this.freeResourceId, freeResourceV3.freeResourceId)
-            && Objects.equals(this.usageTypeName, freeResourceV3.usageTypeName)
-            && Objects.equals(this.amount, freeResourceV3.amount)
-            && Objects.equals(this.originalAmount, freeResourceV3.originalAmount)
-            && Objects.equals(this.measureId, freeResourceV3.measureId);
+        FreeResourceV3 that = (FreeResourceV3) obj;
+        return Objects.equals(this.freeResourceId, that.freeResourceId)
+            && Objects.equals(this.usageTypeName, that.usageTypeName) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.originalAmount, that.originalAmount)
+            && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override

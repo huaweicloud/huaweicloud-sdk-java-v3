@@ -88,17 +88,16 @@ public class DeleteRepositoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRepositoryResponse deleteRepositoryResponse = (DeleteRepositoryResponse) o;
-        return Objects.equals(this.error, deleteRepositoryResponse.error)
-            && Objects.equals(this.result, deleteRepositoryResponse.result)
-            && Objects.equals(this.status, deleteRepositoryResponse.status);
+        DeleteRepositoryResponse that = (DeleteRepositoryResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

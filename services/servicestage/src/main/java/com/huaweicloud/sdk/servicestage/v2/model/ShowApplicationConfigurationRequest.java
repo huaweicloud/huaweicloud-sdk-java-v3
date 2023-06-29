@@ -55,17 +55,16 @@ public class ShowApplicationConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplicationConfigurationRequest showApplicationConfigurationRequest =
-            (ShowApplicationConfigurationRequest) o;
-        return Objects.equals(this.applicationId, showApplicationConfigurationRequest.applicationId)
-            && Objects.equals(this.environmentId, showApplicationConfigurationRequest.environmentId);
+        ShowApplicationConfigurationRequest that = (ShowApplicationConfigurationRequest) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.environmentId, that.environmentId);
     }
 
     @Override

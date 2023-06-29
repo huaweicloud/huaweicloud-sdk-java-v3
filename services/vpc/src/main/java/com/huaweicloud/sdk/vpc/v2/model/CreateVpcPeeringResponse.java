@@ -44,15 +44,15 @@ public class CreateVpcPeeringResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcPeeringResponse createVpcPeeringResponse = (CreateVpcPeeringResponse) o;
-        return Objects.equals(this.peering, createVpcPeeringResponse.peering);
+        CreateVpcPeeringResponse that = (CreateVpcPeeringResponse) obj;
+        return Objects.equals(this.peering, that.peering);
     }
 
     @Override

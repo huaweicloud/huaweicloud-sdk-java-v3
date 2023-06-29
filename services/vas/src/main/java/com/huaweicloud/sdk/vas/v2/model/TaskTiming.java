@@ -75,22 +75,15 @@ public class TaskTiming {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -319,18 +312,18 @@ public class TaskTiming {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskTiming taskTiming = (TaskTiming) o;
-        return Objects.equals(this.type, taskTiming.type) && Objects.equals(this.timezone, taskTiming.timezone)
-            && Objects.equals(this.daysOfWeek, taskTiming.daysOfWeek)
-            && Objects.equals(this.daysOfMonth, taskTiming.daysOfMonth) && Objects.equals(this.date, taskTiming.date)
-            && Objects.equals(this.periods, taskTiming.periods) && Objects.equals(this.frequency, taskTiming.frequency);
+        TaskTiming that = (TaskTiming) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.daysOfWeek, that.daysOfWeek) && Objects.equals(this.daysOfMonth, that.daysOfMonth)
+            && Objects.equals(this.date, that.date) && Objects.equals(this.periods, that.periods)
+            && Objects.equals(this.frequency, that.frequency);
     }
 
     @Override

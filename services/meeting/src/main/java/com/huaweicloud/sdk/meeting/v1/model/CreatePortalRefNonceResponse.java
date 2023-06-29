@@ -34,15 +34,15 @@ public class CreatePortalRefNonceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortalRefNonceResponse createPortalRefNonceResponse = (CreatePortalRefNonceResponse) o;
-        return Objects.equals(this.nonce, createPortalRefNonceResponse.nonce);
+        CreatePortalRefNonceResponse that = (CreatePortalRefNonceResponse) obj;
+        return Objects.equals(this.nonce, that.nonce);
     }
 
     @Override

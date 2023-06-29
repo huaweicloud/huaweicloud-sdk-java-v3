@@ -79,17 +79,16 @@ public class VideoSaturation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoSaturation videoSaturation = (VideoSaturation) o;
-        return Objects.equals(this.name, videoSaturation.name)
-            && Objects.equals(this.executionOrder, videoSaturation.executionOrder)
-            && Objects.equals(this.saturation, videoSaturation.saturation);
+        VideoSaturation that = (VideoSaturation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.executionOrder, that.executionOrder)
+            && Objects.equals(this.saturation, that.saturation);
     }
 
     @Override

@@ -480,34 +480,26 @@ public class ShowDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceResponse showDeviceResponse = (ShowDeviceResponse) o;
-        return Objects.equals(this.appId, showDeviceResponse.appId)
-            && Objects.equals(this.appName, showDeviceResponse.appName)
-            && Objects.equals(this.deviceId, showDeviceResponse.deviceId)
-            && Objects.equals(this.nodeId, showDeviceResponse.nodeId)
-            && Objects.equals(this.gatewayId, showDeviceResponse.gatewayId)
-            && Objects.equals(this.deviceName, showDeviceResponse.deviceName)
-            && Objects.equals(this.nodeType, showDeviceResponse.nodeType)
-            && Objects.equals(this.description, showDeviceResponse.description)
-            && Objects.equals(this.fwVersion, showDeviceResponse.fwVersion)
-            && Objects.equals(this.swVersion, showDeviceResponse.swVersion)
-            && Objects.equals(this.deviceSdkVersion, showDeviceResponse.deviceSdkVersion)
-            && Objects.equals(this.authInfo, showDeviceResponse.authInfo)
-            && Objects.equals(this.productId, showDeviceResponse.productId)
-            && Objects.equals(this.productName, showDeviceResponse.productName)
-            && Objects.equals(this.status, showDeviceResponse.status)
-            && Objects.equals(this.createTime, showDeviceResponse.createTime)
-            && Objects.equals(this.connectionStatusUpdateTime, showDeviceResponse.connectionStatusUpdateTime)
-            && Objects.equals(this.activeTime, showDeviceResponse.activeTime)
-            && Objects.equals(this.tags, showDeviceResponse.tags)
-            && Objects.equals(this.extensionInfo, showDeviceResponse.extensionInfo);
+        ShowDeviceResponse that = (ShowDeviceResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.fwVersion, that.fwVersion) && Objects.equals(this.swVersion, that.swVersion)
+            && Objects.equals(this.deviceSdkVersion, that.deviceSdkVersion)
+            && Objects.equals(this.authInfo, that.authInfo) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.productName, that.productName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.connectionStatusUpdateTime, that.connectionStatusUpdateTime)
+            && Objects.equals(this.activeTime, that.activeTime) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.extensionInfo, that.extensionInfo);
     }
 
     @Override

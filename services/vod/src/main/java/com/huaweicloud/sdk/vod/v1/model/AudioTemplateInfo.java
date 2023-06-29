@@ -77,17 +77,16 @@ public class AudioTemplateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioTemplateInfo audioTemplateInfo = (AudioTemplateInfo) o;
-        return Objects.equals(this.sampleRate, audioTemplateInfo.sampleRate)
-            && Objects.equals(this.bitrate, audioTemplateInfo.bitrate)
-            && Objects.equals(this.channels, audioTemplateInfo.channels);
+        AudioTemplateInfo that = (AudioTemplateInfo) obj;
+        return Objects.equals(this.sampleRate, that.sampleRate) && Objects.equals(this.bitrate, that.bitrate)
+            && Objects.equals(this.channels, that.channels);
     }
 
     @Override

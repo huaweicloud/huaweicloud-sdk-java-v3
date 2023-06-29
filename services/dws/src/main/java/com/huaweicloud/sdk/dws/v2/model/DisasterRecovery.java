@@ -429,31 +429,30 @@ public class DisasterRecovery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisasterRecovery disasterRecovery = (DisasterRecovery) o;
-        return Objects.equals(this.id, disasterRecovery.id) && Objects.equals(this.status, disasterRecovery.status)
-            && Objects.equals(this.name, disasterRecovery.name) && Objects.equals(this.drType, disasterRecovery.drType)
-            && Objects.equals(this.primaryClusterId, disasterRecovery.primaryClusterId)
-            && Objects.equals(this.primaryClusterName, disasterRecovery.primaryClusterName)
-            && Objects.equals(this.standbyClusterId, disasterRecovery.standbyClusterId)
-            && Objects.equals(this.standbyClusterName, disasterRecovery.standbyClusterName)
-            && Objects.equals(this.primaryClusterRole, disasterRecovery.primaryClusterRole)
-            && Objects.equals(this.standbyClusterRole, disasterRecovery.standbyClusterRole)
-            && Objects.equals(this.primaryClusterStatus, disasterRecovery.primaryClusterStatus)
-            && Objects.equals(this.standbyClusterStatus, disasterRecovery.standbyClusterStatus)
-            && Objects.equals(this.primaryClusterRegion, disasterRecovery.primaryClusterRegion)
-            && Objects.equals(this.standbyClusterRegion, disasterRecovery.standbyClusterRegion)
-            && Objects.equals(this.primaryClusterProjectId, disasterRecovery.primaryClusterProjectId)
-            && Objects.equals(this.standbyClusterProjectId, disasterRecovery.standbyClusterProjectId)
-            && Objects.equals(this.lastDisasterTime, disasterRecovery.lastDisasterTime)
-            && Objects.equals(this.startTime, disasterRecovery.startTime)
-            && Objects.equals(this.createTime, disasterRecovery.createTime);
+        DisasterRecovery that = (DisasterRecovery) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.drType, that.drType)
+            && Objects.equals(this.primaryClusterId, that.primaryClusterId)
+            && Objects.equals(this.primaryClusterName, that.primaryClusterName)
+            && Objects.equals(this.standbyClusterId, that.standbyClusterId)
+            && Objects.equals(this.standbyClusterName, that.standbyClusterName)
+            && Objects.equals(this.primaryClusterRole, that.primaryClusterRole)
+            && Objects.equals(this.standbyClusterRole, that.standbyClusterRole)
+            && Objects.equals(this.primaryClusterStatus, that.primaryClusterStatus)
+            && Objects.equals(this.standbyClusterStatus, that.standbyClusterStatus)
+            && Objects.equals(this.primaryClusterRegion, that.primaryClusterRegion)
+            && Objects.equals(this.standbyClusterRegion, that.standbyClusterRegion)
+            && Objects.equals(this.primaryClusterProjectId, that.primaryClusterProjectId)
+            && Objects.equals(this.standbyClusterProjectId, that.standbyClusterProjectId)
+            && Objects.equals(this.lastDisasterTime, that.lastDisasterTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

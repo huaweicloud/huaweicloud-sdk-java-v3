@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.AutoScalingPolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AutoScalingPolicyV2
  */
-public class AutoScalingPolicyV2  {
-
+public class AutoScalingPolicyV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_group_name")
-    
+    @JsonProperty(value = "node_group_name")
 
     private String nodeGroupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_pool_name")
-    
+    @JsonProperty(value = "resource_pool_name")
 
     private String resourcePoolName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_scaling_policy")
-    
+    @JsonProperty(value = "auto_scaling_policy")
 
     private AutoScalingPolicy autoScalingPolicy;
 
@@ -40,9 +30,6 @@ public class AutoScalingPolicyV2  {
         this.nodeGroupName = nodeGroupName;
         return this;
     }
-
-    
-
 
     /**
      * 节点组名称。
@@ -56,15 +43,10 @@ public class AutoScalingPolicyV2  {
         this.nodeGroupName = nodeGroupName;
     }
 
-    
-
     public AutoScalingPolicyV2 withResourcePoolName(String resourcePoolName) {
         this.resourcePoolName = resourcePoolName;
         return this;
     }
-
-    
-
 
     /**
      * 资源计划名称
@@ -78,22 +60,19 @@ public class AutoScalingPolicyV2  {
         this.resourcePoolName = resourcePoolName;
     }
 
-    
-
     public AutoScalingPolicyV2 withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
     public AutoScalingPolicyV2 withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
-        if(this.autoScalingPolicy == null ){
+        if (this.autoScalingPolicy == null) {
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get autoScalingPolicy
@@ -107,25 +86,25 @@ public class AutoScalingPolicyV2  {
         this.autoScalingPolicy = autoScalingPolicy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoScalingPolicyV2 autoScalingPolicyV2 = (AutoScalingPolicyV2) o;
-        return Objects.equals(this.nodeGroupName, autoScalingPolicyV2.nodeGroupName) &&
-            Objects.equals(this.resourcePoolName, autoScalingPolicyV2.resourcePoolName) &&
-            Objects.equals(this.autoScalingPolicy, autoScalingPolicyV2.autoScalingPolicy);
+        AutoScalingPolicyV2 that = (AutoScalingPolicyV2) obj;
+        return Objects.equals(this.nodeGroupName, that.nodeGroupName)
+            && Objects.equals(this.resourcePoolName, that.resourcePoolName)
+            && Objects.equals(this.autoScalingPolicy, that.autoScalingPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeGroupName, resourcePoolName, autoScalingPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +115,7 @@ public class AutoScalingPolicyV2  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +126,5 @@ public class AutoScalingPolicyV2  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -60,22 +60,15 @@ public class BssParamForCreateVolume {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class BssParamForCreateVolume {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoPayEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoPayEnum(value));
         }
 
         public static IsAutoPayEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoPayEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,22 +210,15 @@ public class BssParamForCreateVolume {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoRenewEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
         }
 
         public static IsAutoRenewEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -311,22 +290,15 @@ public class BssParamForCreateVolume {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -434,19 +406,17 @@ public class BssParamForCreateVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BssParamForCreateVolume bssParamForCreateVolume = (BssParamForCreateVolume) o;
-        return Objects.equals(this.chargingMode, bssParamForCreateVolume.chargingMode)
-            && Objects.equals(this.isAutoPay, bssParamForCreateVolume.isAutoPay)
-            && Objects.equals(this.isAutoRenew, bssParamForCreateVolume.isAutoRenew)
-            && Objects.equals(this.periodNum, bssParamForCreateVolume.periodNum)
-            && Objects.equals(this.periodType, bssParamForCreateVolume.periodType);
+        BssParamForCreateVolume that = (BssParamForCreateVolume) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.isAutoPay, that.isAutoPay)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.periodType, that.periodType);
     }
 
     @Override

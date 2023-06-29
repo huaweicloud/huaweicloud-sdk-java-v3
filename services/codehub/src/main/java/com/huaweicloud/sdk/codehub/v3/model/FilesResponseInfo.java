@@ -187,21 +187,18 @@ public class FilesResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilesResponseInfo filesResponseInfo = (FilesResponseInfo) o;
-        return Objects.equals(this.fileName, filesResponseInfo.fileName)
-            && Objects.equals(this.filePath, filesResponseInfo.filePath)
-            && Objects.equals(this.size, filesResponseInfo.size)
-            && Objects.equals(this.encoding, filesResponseInfo.encoding)
-            && Objects.equals(this.ref, filesResponseInfo.ref) && Objects.equals(this.blobId, filesResponseInfo.blobId)
-            && Objects.equals(this.fileType, filesResponseInfo.fileType)
-            && Objects.equals(this.content, filesResponseInfo.content);
+        FilesResponseInfo that = (FilesResponseInfo) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.encoding, that.encoding)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.blobId, that.blobId)
+            && Objects.equals(this.fileType, that.fileType) && Objects.equals(this.content, that.content);
     }
 
     @Override

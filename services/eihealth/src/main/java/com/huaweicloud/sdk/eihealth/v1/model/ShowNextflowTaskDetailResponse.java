@@ -367,28 +367,22 @@ public class ShowNextflowTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowTaskDetailResponse showNextflowTaskDetailResponse = (ShowNextflowTaskDetailResponse) o;
-        return Objects.equals(this.id, showNextflowTaskDetailResponse.id)
-            && Objects.equals(this.command, showNextflowTaskDetailResponse.command)
-            && Objects.equals(this.status, showNextflowTaskDetailResponse.status)
-            && Objects.equals(this.errorAction, showNextflowTaskDetailResponse.errorAction)
-            && Objects.equals(this.exit, showNextflowTaskDetailResponse.exit)
-            && Objects.equals(this.workDir, showNextflowTaskDetailResponse.workDir)
-            && Objects.equals(this.environment, showNextflowTaskDetailResponse.environment)
-            && Objects.equals(this.module, showNextflowTaskDetailResponse.module)
-            && Objects.equals(this.container, showNextflowTaskDetailResponse.container)
-            && Objects.equals(this.attempt, showNextflowTaskDetailResponse.attempt)
-            && Objects.equals(this.scratch, showNextflowTaskDetailResponse.scratch)
-            && Objects.equals(this.executionTime, showNextflowTaskDetailResponse.executionTime)
-            && Objects.equals(this.resourceRequested, showNextflowTaskDetailResponse.resourceRequested)
-            && Objects.equals(this.resourceUsage, showNextflowTaskDetailResponse.resourceUsage);
+        ShowNextflowTaskDetailResponse that = (ShowNextflowTaskDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorAction, that.errorAction)
+            && Objects.equals(this.exit, that.exit) && Objects.equals(this.workDir, that.workDir)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.module, that.module)
+            && Objects.equals(this.container, that.container) && Objects.equals(this.attempt, that.attempt)
+            && Objects.equals(this.scratch, that.scratch) && Objects.equals(this.executionTime, that.executionTime)
+            && Objects.equals(this.resourceRequested, that.resourceRequested)
+            && Objects.equals(this.resourceUsage, that.resourceUsage);
     }
 
     @Override

@@ -1,79 +1,62 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SearchScriptsRequestBody
  */
-public class SearchScriptsRequestBody  {
-
+public class SearchScriptsRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_default")
-    
+    @JsonProperty(value = "is_default")
 
     private String isDefault;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_id")
-    
+    @JsonProperty(value = "script_id")
 
     private String scriptId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_num")
-    
+    @JsonProperty(value = "page_num")
 
     private Integer pageNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
 
     private Integer pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_by_column")
-    
+    @JsonProperty(value = "order_by_column")
 
     private String orderByColumn;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sort_order")
-    
+    @JsonProperty(value = "sort_order")
 
     private String sortOrder;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -81,9 +64,6 @@ public class SearchScriptsRequestBody  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 查询接收的参数，版本管理时，name为脚本名称（版本管理查询时name不能为空），脚本管理页面查询时，name为接收模糊查询的参数，name是null，表示查询所有默认脚本。
@@ -97,15 +77,10 @@ public class SearchScriptsRequestBody  {
         this.name = name;
     }
 
-    
-
     public SearchScriptsRequestBody withIsDefault(String isDefault) {
         this.isDefault = isDefault;
         return this;
     }
-
-    
-
 
     /**
      * 查询规则，如果是类型为default，则为模糊查询和脚本管理主页展示，no_default为版本管理。
@@ -119,15 +94,10 @@ public class SearchScriptsRequestBody  {
         this.isDefault = isDefault;
     }
 
-    
-
     public SearchScriptsRequestBody withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 创建人，默认按照创建人搜索脚本。
@@ -141,15 +111,10 @@ public class SearchScriptsRequestBody  {
         this.createBy = createBy;
     }
 
-    
-
     public SearchScriptsRequestBody withScriptId(String scriptId) {
         this.scriptId = scriptId;
         return this;
     }
-
-    
-
 
     /**
      * 版本管理时需要查询的脚本id。
@@ -163,15 +128,10 @@ public class SearchScriptsRequestBody  {
         this.scriptId = scriptId;
     }
 
-    
-
     public SearchScriptsRequestBody withPageNum(Integer pageNum) {
         this.pageNum = pageNum;
         return this;
     }
-
-    
-
 
     /**
      * page_num为正整数。
@@ -187,15 +147,10 @@ public class SearchScriptsRequestBody  {
         this.pageNum = pageNum;
     }
 
-    
-
     public SearchScriptsRequestBody withPageSize(Integer pageSize) {
         this.pageSize = pageSize;
         return this;
     }
-
-    
-
 
     /**
      * 每页显示的条数，默认值是10。
@@ -211,15 +166,10 @@ public class SearchScriptsRequestBody  {
         this.pageSize = pageSize;
     }
 
-    
-
     public SearchScriptsRequestBody withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 项目id。
@@ -233,15 +183,10 @@ public class SearchScriptsRequestBody  {
         this.projectId = projectId;
     }
 
-    
-
     public SearchScriptsRequestBody withOrderByColumn(String orderByColumn) {
         this.orderByColumn = orderByColumn;
         return this;
     }
-
-    
-
 
     /**
      * 需要排序的字段(默认为更新时间),支持字段有name,create_time和update_time。
@@ -255,15 +200,10 @@ public class SearchScriptsRequestBody  {
         this.orderByColumn = orderByColumn;
     }
 
-    
-
     public SearchScriptsRequestBody withSortOrder(String sortOrder) {
         this.sortOrder = sortOrder;
         return this;
     }
-
-    
-
 
     /**
      * 排序规则(默认降序) 传入升序或降序，升序：ASC，降序：DESC。
@@ -277,15 +217,10 @@ public class SearchScriptsRequestBody  {
         this.sortOrder = sortOrder;
     }
 
-    
-
     public SearchScriptsRequestBody withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目id，根据企业项目id搜索。
@@ -299,32 +234,37 @@ public class SearchScriptsRequestBody  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchScriptsRequestBody searchScriptsRequestBody = (SearchScriptsRequestBody) o;
-        return Objects.equals(this.name, searchScriptsRequestBody.name) &&
-            Objects.equals(this.isDefault, searchScriptsRequestBody.isDefault) &&
-            Objects.equals(this.createBy, searchScriptsRequestBody.createBy) &&
-            Objects.equals(this.scriptId, searchScriptsRequestBody.scriptId) &&
-            Objects.equals(this.pageNum, searchScriptsRequestBody.pageNum) &&
-            Objects.equals(this.pageSize, searchScriptsRequestBody.pageSize) &&
-            Objects.equals(this.projectId, searchScriptsRequestBody.projectId) &&
-            Objects.equals(this.orderByColumn, searchScriptsRequestBody.orderByColumn) &&
-            Objects.equals(this.sortOrder, searchScriptsRequestBody.sortOrder) &&
-            Objects.equals(this.enterpriseProjectId, searchScriptsRequestBody.enterpriseProjectId);
+        SearchScriptsRequestBody that = (SearchScriptsRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.scriptId, that.scriptId)
+            && Objects.equals(this.pageNum, that.pageNum) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.orderByColumn, that.orderByColumn)
+            && Objects.equals(this.sortOrder, that.sortOrder)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, isDefault, createBy, scriptId, pageNum, pageSize, projectId, orderByColumn, sortOrder, enterpriseProjectId);
+        return Objects.hash(name,
+            isDefault,
+            createBy,
+            scriptId,
+            pageNum,
+            pageSize,
+            projectId,
+            orderByColumn,
+            sortOrder,
+            enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -342,6 +282,7 @@ public class SearchScriptsRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -352,8 +293,5 @@ public class SearchScriptsRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

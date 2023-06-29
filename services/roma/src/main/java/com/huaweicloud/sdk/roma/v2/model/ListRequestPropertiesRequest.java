@@ -173,21 +173,18 @@ public class ListRequestPropertiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestPropertiesRequest listRequestPropertiesRequest = (ListRequestPropertiesRequest) o;
-        return Objects.equals(this.instanceId, listRequestPropertiesRequest.instanceId)
-            && Objects.equals(this.serviceId, listRequestPropertiesRequest.serviceId)
-            && Objects.equals(this.commandId, listRequestPropertiesRequest.commandId)
-            && Objects.equals(this.limit, listRequestPropertiesRequest.limit)
-            && Objects.equals(this.requestId, listRequestPropertiesRequest.requestId)
-            && Objects.equals(this.requestName, listRequestPropertiesRequest.requestName)
-            && Objects.equals(this.offset, listRequestPropertiesRequest.offset);
+        ListRequestPropertiesRequest that = (ListRequestPropertiesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.requestName, that.requestName)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

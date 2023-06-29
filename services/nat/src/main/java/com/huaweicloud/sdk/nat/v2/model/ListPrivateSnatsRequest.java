@@ -386,25 +386,21 @@ public class ListPrivateSnatsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateSnatsRequest listPrivateSnatsRequest = (ListPrivateSnatsRequest) o;
-        return Objects.equals(this.limit, listPrivateSnatsRequest.limit)
-            && Objects.equals(this.marker, listPrivateSnatsRequest.marker)
-            && Objects.equals(this.pageReverse, listPrivateSnatsRequest.pageReverse)
-            && Objects.equals(this.id, listPrivateSnatsRequest.id)
-            && Objects.equals(this.description, listPrivateSnatsRequest.description)
-            && Objects.equals(this.gatewayId, listPrivateSnatsRequest.gatewayId)
-            && Objects.equals(this.cidr, listPrivateSnatsRequest.cidr)
-            && Objects.equals(this.virsubnetId, listPrivateSnatsRequest.virsubnetId)
-            && Objects.equals(this.transitIpId, listPrivateSnatsRequest.transitIpId)
-            && Objects.equals(this.transitIpAddress, listPrivateSnatsRequest.transitIpAddress)
-            && Objects.equals(this.enterpriseProjectId, listPrivateSnatsRequest.enterpriseProjectId);
+        ListPrivateSnatsRequest that = (ListPrivateSnatsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.transitIpId, that.transitIpId)
+            && Objects.equals(this.transitIpAddress, that.transitIpAddress)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

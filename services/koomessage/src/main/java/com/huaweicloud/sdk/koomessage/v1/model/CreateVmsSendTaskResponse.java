@@ -88,17 +88,16 @@ public class CreateVmsSendTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVmsSendTaskResponse createVmsSendTaskResponse = (CreateVmsSendTaskResponse) o;
-        return Objects.equals(this.status, createVmsSendTaskResponse.status)
-            && Objects.equals(this.message, createVmsSendTaskResponse.message)
-            && Objects.equals(this.data, createVmsSendTaskResponse.data);
+        CreateVmsSendTaskResponse that = (CreateVmsSendTaskResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

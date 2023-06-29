@@ -33,15 +33,15 @@ public class ShowLoadBalancerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLoadBalancerRequest showLoadBalancerRequest = (ShowLoadBalancerRequest) o;
-        return Objects.equals(this.loadbalancerId, showLoadBalancerRequest.loadbalancerId);
+        ShowLoadBalancerRequest that = (ShowLoadBalancerRequest) obj;
+        return Objects.equals(this.loadbalancerId, that.loadbalancerId);
     }
 
     @Override

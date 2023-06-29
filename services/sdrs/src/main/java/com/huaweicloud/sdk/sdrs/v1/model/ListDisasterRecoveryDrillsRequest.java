@@ -146,20 +146,17 @@ public class ListDisasterRecoveryDrillsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDisasterRecoveryDrillsRequest listDisasterRecoveryDrillsRequest = (ListDisasterRecoveryDrillsRequest) o;
-        return Objects.equals(this.serverGroupId, listDisasterRecoveryDrillsRequest.serverGroupId)
-            && Objects.equals(this.name, listDisasterRecoveryDrillsRequest.name)
-            && Objects.equals(this.status, listDisasterRecoveryDrillsRequest.status)
-            && Objects.equals(this.drillVpcId, listDisasterRecoveryDrillsRequest.drillVpcId)
-            && Objects.equals(this.limit, listDisasterRecoveryDrillsRequest.limit)
-            && Objects.equals(this.offset, listDisasterRecoveryDrillsRequest.offset);
+        ListDisasterRecoveryDrillsRequest that = (ListDisasterRecoveryDrillsRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.drillVpcId, that.drillVpcId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

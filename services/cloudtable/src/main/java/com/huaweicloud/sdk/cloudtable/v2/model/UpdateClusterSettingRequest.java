@@ -12,12 +12,7 @@ import java.util.function.Consumer;
 public class UpdateClusterSettingRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "projectId")
-
-    private String projectId;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "clusterId")
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
@@ -30,23 +25,6 @@ public class UpdateClusterSettingRequest {
     @JsonProperty(value = "body")
 
     private HbaseModifySettingV2Req body;
-
-    public UpdateClusterSettingRequest withProjectId(String projectId) {
-        this.projectId = projectId;
-        return this;
-    }
-
-    /**
-     * 租户ID
-     * @return projectId
-     */
-    public String getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(String projectId) {
-        this.projectId = projectId;
-    }
 
     public UpdateClusterSettingRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
@@ -111,30 +89,27 @@ public class UpdateClusterSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateClusterSettingRequest updateClusterSettingRequest = (UpdateClusterSettingRequest) o;
-        return Objects.equals(this.projectId, updateClusterSettingRequest.projectId)
-            && Objects.equals(this.clusterId, updateClusterSettingRequest.clusterId)
-            && Objects.equals(this.xLanguage, updateClusterSettingRequest.xLanguage)
-            && Objects.equals(this.body, updateClusterSettingRequest.body);
+        UpdateClusterSettingRequest that = (UpdateClusterSettingRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, clusterId, xLanguage, body);
+        return Objects.hash(clusterId, xLanguage, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class UpdateClusterSettingRequest {\n");
-        sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
         sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
         sb.append("    xLanguage: ").append(toIndentedString(xLanguage)).append("\n");
         sb.append("    body: ").append(toIndentedString(body)).append("\n");

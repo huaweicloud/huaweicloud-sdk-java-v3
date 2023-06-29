@@ -143,20 +143,19 @@ public class QueryDeviceTypeResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDeviceTypeResultDTO queryDeviceTypeResultDTO = (QueryDeviceTypeResultDTO) o;
-        return Objects.equals(this.type, queryDeviceTypeResultDTO.type)
-            && Objects.equals(this.model, queryDeviceTypeResultDTO.model)
-            && Objects.equals(this.enableActiveCode, queryDeviceTypeResultDTO.enableActiveCode)
-            && Objects.equals(this.resolution, queryDeviceTypeResultDTO.resolution)
-            && Objects.equals(this.supportProjectionCode, queryDeviceTypeResultDTO.supportProjectionCode)
-            && Objects.equals(this.supportSVC, queryDeviceTypeResultDTO.supportSVC);
+        QueryDeviceTypeResultDTO that = (QueryDeviceTypeResultDTO) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.enableActiveCode, that.enableActiveCode)
+            && Objects.equals(this.resolution, that.resolution)
+            && Objects.equals(this.supportProjectionCode, that.supportProjectionCode)
+            && Objects.equals(this.supportSVC, that.supportSVC);
     }
 
     @Override

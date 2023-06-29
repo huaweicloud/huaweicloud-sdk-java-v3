@@ -77,17 +77,16 @@ public class ShowApplyHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowApplyHistoryRequest showApplyHistoryRequest = (ShowApplyHistoryRequest) o;
-        return Objects.equals(this.configId, showApplyHistoryRequest.configId)
-            && Objects.equals(this.offset, showApplyHistoryRequest.offset)
-            && Objects.equals(this.limit, showApplyHistoryRequest.limit);
+        ShowApplyHistoryRequest that = (ShowApplyHistoryRequest) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

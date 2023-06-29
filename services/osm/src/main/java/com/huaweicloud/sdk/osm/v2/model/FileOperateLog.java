@@ -187,22 +187,18 @@ public class FileOperateLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileOperateLog fileOperateLog = (FileOperateLog) o;
-        return Objects.equals(this.duration, fileOperateLog.duration)
-            && Objects.equals(this.operateTime, fileOperateLog.operateTime)
-            && Objects.equals(this.operateType, fileOperateLog.operateType)
-            && Objects.equals(this.fileName, fileOperateLog.fileName)
-            && Objects.equals(this.fromPath, fileOperateLog.fromPath)
-            && Objects.equals(this.toPath, fileOperateLog.toPath)
-            && Objects.equals(this.fileSize, fileOperateLog.fileSize)
-            && Objects.equals(this.operResult, fileOperateLog.operResult);
+        FileOperateLog that = (FileOperateLog) obj;
+        return Objects.equals(this.duration, that.duration) && Objects.equals(this.operateTime, that.operateTime)
+            && Objects.equals(this.operateType, that.operateType) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fromPath, that.fromPath) && Objects.equals(this.toPath, that.toPath)
+            && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.operResult, that.operResult);
     }
 
     @Override

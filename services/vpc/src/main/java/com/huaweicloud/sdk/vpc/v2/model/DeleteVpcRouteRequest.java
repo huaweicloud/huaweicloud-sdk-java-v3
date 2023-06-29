@@ -33,15 +33,15 @@ public class DeleteVpcRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteVpcRouteRequest deleteVpcRouteRequest = (DeleteVpcRouteRequest) o;
-        return Objects.equals(this.routeId, deleteVpcRouteRequest.routeId);
+        DeleteVpcRouteRequest that = (DeleteVpcRouteRequest) obj;
+        return Objects.equals(this.routeId, that.routeId);
     }
 
     @Override

@@ -143,20 +143,18 @@ public class ListPremiumHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPremiumHostRequest listPremiumHostRequest = (ListPremiumHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listPremiumHostRequest.enterpriseProjectId)
-            && Objects.equals(this.page, listPremiumHostRequest.page)
-            && Objects.equals(this.pagesize, listPremiumHostRequest.pagesize)
-            && Objects.equals(this.hostname, listPremiumHostRequest.hostname)
-            && Objects.equals(this.policyname, listPremiumHostRequest.policyname)
-            && Objects.equals(this.protectStatus, listPremiumHostRequest.protectStatus);
+        ListPremiumHostRequest that = (ListPremiumHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.policyname, that.policyname)
+            && Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

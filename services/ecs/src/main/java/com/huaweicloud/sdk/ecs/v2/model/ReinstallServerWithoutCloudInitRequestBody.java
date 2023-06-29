@@ -45,16 +45,15 @@ public class ReinstallServerWithoutCloudInitRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallServerWithoutCloudInitRequestBody reinstallServerWithoutCloudInitRequestBody =
-            (ReinstallServerWithoutCloudInitRequestBody) o;
-        return Objects.equals(this.osReinstall, reinstallServerWithoutCloudInitRequestBody.osReinstall);
+        ReinstallServerWithoutCloudInitRequestBody that = (ReinstallServerWithoutCloudInitRequestBody) obj;
+        return Objects.equals(this.osReinstall, that.osReinstall);
     }
 
     @Override

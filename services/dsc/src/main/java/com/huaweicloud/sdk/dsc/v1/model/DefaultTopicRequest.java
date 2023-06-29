@@ -99,18 +99,16 @@ public class DefaultTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefaultTopicRequest defaultTopicRequest = (DefaultTopicRequest) o;
-        return Objects.equals(this.id, defaultTopicRequest.id)
-            && Objects.equals(this.projectId, defaultTopicRequest.projectId)
-            && Objects.equals(this.status, defaultTopicRequest.status)
-            && Objects.equals(this.topicUrn, defaultTopicRequest.topicUrn);
+        DefaultTopicRequest that = (DefaultTopicRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

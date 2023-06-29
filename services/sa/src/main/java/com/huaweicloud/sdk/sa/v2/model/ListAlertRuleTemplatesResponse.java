@@ -101,17 +101,16 @@ public class ListAlertRuleTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertRuleTemplatesResponse listAlertRuleTemplatesResponse = (ListAlertRuleTemplatesResponse) o;
-        return Objects.equals(this.count, listAlertRuleTemplatesResponse.count)
-            && Objects.equals(this.records, listAlertRuleTemplatesResponse.records)
-            && Objects.equals(this.xRequestId, listAlertRuleTemplatesResponse.xRequestId);
+        ListAlertRuleTemplatesResponse that = (ListAlertRuleTemplatesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

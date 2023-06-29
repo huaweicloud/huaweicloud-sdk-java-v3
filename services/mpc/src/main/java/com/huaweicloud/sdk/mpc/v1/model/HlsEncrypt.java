@@ -99,16 +99,16 @@ public class HlsEncrypt {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HlsEncrypt hlsEncrypt = (HlsEncrypt) o;
-        return Objects.equals(this.key, hlsEncrypt.key) && Objects.equals(this.url, hlsEncrypt.url)
-            && Objects.equals(this.iv, hlsEncrypt.iv) && Objects.equals(this.algorithm, hlsEncrypt.algorithm);
+        HlsEncrypt that = (HlsEncrypt) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.iv, that.iv) && Objects.equals(this.algorithm, that.algorithm);
     }
 
     @Override

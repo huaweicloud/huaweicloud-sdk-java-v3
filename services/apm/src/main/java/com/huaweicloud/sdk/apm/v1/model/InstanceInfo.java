@@ -341,28 +341,25 @@ public class InstanceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceInfo instanceInfo = (InstanceInfo) o;
-        return Objects.equals(this.instanceId, instanceInfo.instanceId)
-            && Objects.equals(this.businessName, instanceInfo.businessName)
-            && Objects.equals(this.businessId, instanceInfo.businessId)
-            && Objects.equals(this.appName, instanceInfo.appName)
-            && Objects.equals(this.hostName, instanceInfo.hostName)
-            && Objects.equals(this.instanceName, instanceInfo.instanceName)
-            && Objects.equals(this.ipAddress, instanceInfo.ipAddress) && Objects.equals(this.envId, instanceInfo.envId)
-            && Objects.equals(this.agentVersion, instanceInfo.agentVersion)
-            && Objects.equals(this.lastHeartbeat, instanceInfo.lastHeartbeat)
-            && Objects.equals(this.registerTime, instanceInfo.registerTime)
-            && Objects.equals(this.lastModifyUserId, instanceInfo.lastModifyUserId)
-            && Objects.equals(this.instanceStatus, instanceInfo.instanceStatus)
-            && Objects.equals(this.lastModifyUserName, instanceInfo.lastModifyUserName)
-            && Objects.equals(this.lastModifyTime, instanceInfo.lastModifyTime);
+        InstanceInfo that = (InstanceInfo) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.businessName, that.businessName)
+            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.agentVersion, that.agentVersion)
+            && Objects.equals(this.lastHeartbeat, that.lastHeartbeat)
+            && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.lastModifyUserId, that.lastModifyUserId)
+            && Objects.equals(this.instanceStatus, that.instanceStatus)
+            && Objects.equals(this.lastModifyUserName, that.lastModifyUserName)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime);
     }
 
     @Override

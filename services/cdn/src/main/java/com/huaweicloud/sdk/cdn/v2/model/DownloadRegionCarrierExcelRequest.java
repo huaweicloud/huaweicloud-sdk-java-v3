@@ -237,24 +237,20 @@ public class DownloadRegionCarrierExcelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadRegionCarrierExcelRequest downloadRegionCarrierExcelRequest = (DownloadRegionCarrierExcelRequest) o;
-        return Objects.equals(this.startTime, downloadRegionCarrierExcelRequest.startTime)
-            && Objects.equals(this.endTime, downloadRegionCarrierExcelRequest.endTime)
-            && Objects.equals(this.domainName, downloadRegionCarrierExcelRequest.domainName)
-            && Objects.equals(this.interval, downloadRegionCarrierExcelRequest.interval)
-            && Objects.equals(this.country, downloadRegionCarrierExcelRequest.country)
-            && Objects.equals(this.excelLanguage, downloadRegionCarrierExcelRequest.excelLanguage)
-            && Objects.equals(this.enterpriseProjectId, downloadRegionCarrierExcelRequest.enterpriseProjectId)
-            && Objects.equals(this.excelType, downloadRegionCarrierExcelRequest.excelType)
-            && Objects.equals(this.region, downloadRegionCarrierExcelRequest.region)
-            && Objects.equals(this.carrier, downloadRegionCarrierExcelRequest.carrier);
+        DownloadRegionCarrierExcelRequest that = (DownloadRegionCarrierExcelRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.excelLanguage, that.excelLanguage)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.excelType, that.excelType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.carrier, that.carrier);
     }
 
     @Override

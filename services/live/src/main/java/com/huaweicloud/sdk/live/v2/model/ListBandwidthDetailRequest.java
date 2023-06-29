@@ -49,8 +49,8 @@ public class ListBandwidthDetailRequest {
     private List<String> isp = null;
 
     /**
-    * 请求协议
-    */
+     * 请求协议
+     */
     public static final class ProtocolEnum {
 
         /**
@@ -93,22 +93,15 @@ public class ListBandwidthDetailRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,22 +174,15 @@ public class ListBandwidthDetailRequest {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IntervalEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntervalEnum(value));
         }
 
         public static IntervalEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +265,15 @@ public class ListBandwidthDetailRequest {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -570,25 +549,20 @@ public class ListBandwidthDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthDetailRequest listBandwidthDetailRequest = (ListBandwidthDetailRequest) o;
-        return Objects.equals(this.playDomains, listBandwidthDetailRequest.playDomains)
-            && Objects.equals(this.app, listBandwidthDetailRequest.app)
-            && Objects.equals(this.stream, listBandwidthDetailRequest.stream)
-            && Objects.equals(this.country, listBandwidthDetailRequest.country)
-            && Objects.equals(this.region, listBandwidthDetailRequest.region)
-            && Objects.equals(this.isp, listBandwidthDetailRequest.isp)
-            && Objects.equals(this.protocol, listBandwidthDetailRequest.protocol)
-            && Objects.equals(this.interval, listBandwidthDetailRequest.interval)
-            && Objects.equals(this.startTime, listBandwidthDetailRequest.startTime)
-            && Objects.equals(this.endTime, listBandwidthDetailRequest.endTime)
-            && Objects.equals(this.serviceType, listBandwidthDetailRequest.serviceType);
+        ListBandwidthDetailRequest that = (ListBandwidthDetailRequest) obj;
+        return Objects.equals(this.playDomains, that.playDomains) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.serviceType, that.serviceType);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class PermissionHostDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PermissionHostDetail permissionHostDetail = (PermissionHostDetail) o;
-        return Objects.equals(this.canView, permissionHostDetail.canView)
-            && Objects.equals(this.canEdit, permissionHostDetail.canEdit)
-            && Objects.equals(this.canDelete, permissionHostDetail.canDelete)
-            && Objects.equals(this.canAddHost, permissionHostDetail.canAddHost)
-            && Objects.equals(this.canConnectionTest, permissionHostDetail.canConnectionTest);
+        PermissionHostDetail that = (PermissionHostDetail) obj;
+        return Objects.equals(this.canView, that.canView) && Objects.equals(this.canEdit, that.canEdit)
+            && Objects.equals(this.canDelete, that.canDelete) && Objects.equals(this.canAddHost, that.canAddHost)
+            && Objects.equals(this.canConnectionTest, that.canConnectionTest);
     }
 
     @Override

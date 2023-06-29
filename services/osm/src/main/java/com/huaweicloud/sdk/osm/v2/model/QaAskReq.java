@@ -34,8 +34,8 @@ public class QaAskReq {
     private List<RelationTheme> themes = null;
 
     /**
-    * - PORTAL:  - INCIDENT:  
-    */
+     * - PORTAL:  - INCIDENT:  
+     */
     public static final class SourceEnum {
 
         /**
@@ -78,22 +78,15 @@ public class QaAskReq {
             if (value == null) {
                 return null;
             }
-            SourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceEnum(value));
         }
 
         public static SourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -312,21 +305,21 @@ public class QaAskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaAskReq qaAskReq = (QaAskReq) o;
-        return Objects.equals(this.question, qaAskReq.question) && Objects.equals(this.top, qaAskReq.top)
-            && Objects.equals(this.themes, qaAskReq.themes) && Objects.equals(this.source, qaAskReq.source)
-            && Objects.equals(this.sessionId, qaAskReq.sessionId)
-            && Objects.equals(this.sourceQaPairId, qaAskReq.sourceQaPairId)
-            && Objects.equals(this.alternativeAnswerEnable, qaAskReq.alternativeAnswerEnable)
-            && Objects.equals(this.productTypeId, qaAskReq.productTypeId)
-            && Objects.equals(this.specifyNodeId, qaAskReq.specifyNodeId);
+        QaAskReq that = (QaAskReq) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.top, that.top)
+            && Objects.equals(this.themes, that.themes) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.sourceQaPairId, that.sourceQaPairId)
+            && Objects.equals(this.alternativeAnswerEnable, that.alternativeAnswerEnable)
+            && Objects.equals(this.productTypeId, that.productTypeId)
+            && Objects.equals(this.specifyNodeId, that.specifyNodeId);
     }
 
     @Override

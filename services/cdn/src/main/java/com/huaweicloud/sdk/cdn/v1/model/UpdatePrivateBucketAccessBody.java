@@ -33,15 +33,15 @@ public class UpdatePrivateBucketAccessBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateBucketAccessBody updatePrivateBucketAccessBody = (UpdatePrivateBucketAccessBody) o;
-        return Objects.equals(this.status, updatePrivateBucketAccessBody.status);
+        UpdatePrivateBucketAccessBody that = (UpdatePrivateBucketAccessBody) obj;
+        return Objects.equals(this.status, that.status);
     }
 
     @Override

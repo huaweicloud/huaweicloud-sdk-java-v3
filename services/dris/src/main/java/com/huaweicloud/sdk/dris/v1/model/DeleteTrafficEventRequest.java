@@ -55,16 +55,15 @@ public class DeleteTrafficEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTrafficEventRequest deleteTrafficEventRequest = (DeleteTrafficEventRequest) o;
-        return Objects.equals(this.instanceId, deleteTrafficEventRequest.instanceId)
-            && Objects.equals(this.eventId, deleteTrafficEventRequest.eventId);
+        DeleteTrafficEventRequest that = (DeleteTrafficEventRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.eventId, that.eventId);
     }
 
     @Override

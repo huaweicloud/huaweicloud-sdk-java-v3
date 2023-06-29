@@ -167,19 +167,17 @@ public class SetQosThresholdReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetQosThresholdReq setQosThresholdReq = (SetQosThresholdReq) o;
-        return Objects.equals(this.latency, setQosThresholdReq.latency)
-            && Objects.equals(this.jitter, setQosThresholdReq.jitter)
-            && Objects.equals(this.packetLoss, setQosThresholdReq.packetLoss)
-            && Objects.equals(this.clientCpuMax, setQosThresholdReq.clientCpuMax)
-            && Objects.equals(this.systemCpuMax, setQosThresholdReq.systemCpuMax);
+        SetQosThresholdReq that = (SetQosThresholdReq) obj;
+        return Objects.equals(this.latency, that.latency) && Objects.equals(this.jitter, that.jitter)
+            && Objects.equals(this.packetLoss, that.packetLoss) && Objects.equals(this.clientCpuMax, that.clientCpuMax)
+            && Objects.equals(this.systemCpuMax, that.systemCpuMax);
     }
 
     @Override

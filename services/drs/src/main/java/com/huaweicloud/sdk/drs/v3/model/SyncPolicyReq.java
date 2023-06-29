@@ -71,22 +71,15 @@ public class SyncPolicyReq {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConflictPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConflictPolicyEnum(value));
         }
 
         public static ConflictPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConflictPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class SyncPolicyReq {
             if (value == null) {
                 return null;
             }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterDdlPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterDdlPolicyEnum(value));
         }
 
         public static FilterDdlPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterDdlPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -251,22 +237,15 @@ public class SyncPolicyReq {
             if (value == null) {
                 return null;
             }
-            TopicPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TopicPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TopicPolicyEnum(value));
         }
 
         public static TopicPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TopicPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -350,22 +329,15 @@ public class SyncPolicyReq {
             if (value == null) {
                 return null;
             }
-            PartitionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PartitionPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartitionPolicyEnum(value));
         }
 
         public static PartitionPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PartitionPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -432,22 +404,15 @@ public class SyncPolicyReq {
             if (value == null) {
                 return null;
             }
-            KafkaDataFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KafkaDataFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KafkaDataFormatEnum(value));
         }
 
         public static KafkaDataFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KafkaDataFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -755,29 +720,25 @@ public class SyncPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncPolicyReq syncPolicyReq = (SyncPolicyReq) o;
-        return Objects.equals(this.jobId, syncPolicyReq.jobId)
-            && Objects.equals(this.conflictPolicy, syncPolicyReq.conflictPolicy)
-            && Objects.equals(this.filterDdlPolicy, syncPolicyReq.filterDdlPolicy)
-            && Objects.equals(this.ddlTrans, syncPolicyReq.ddlTrans)
-            && Objects.equals(this.indexTrans, syncPolicyReq.indexTrans)
-            && Objects.equals(this.topicPolicy, syncPolicyReq.topicPolicy)
-            && Objects.equals(this.topic, syncPolicyReq.topic)
-            && Objects.equals(this.partitionPolicy, syncPolicyReq.partitionPolicy)
-            && Objects.equals(this.kafkaDataFormat, syncPolicyReq.kafkaDataFormat)
-            && Objects.equals(this.topicNameFormat, syncPolicyReq.topicNameFormat)
-            && Objects.equals(this.partitionsNum, syncPolicyReq.partitionsNum)
-            && Objects.equals(this.replicationFactor, syncPolicyReq.replicationFactor)
-            && Objects.equals(this.isFillMaterializedView, syncPolicyReq.isFillMaterializedView)
-            && Objects.equals(this.exportSnapshot, syncPolicyReq.exportSnapshot)
-            && Objects.equals(this.slotName, syncPolicyReq.slotName);
+        SyncPolicyReq that = (SyncPolicyReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.conflictPolicy, that.conflictPolicy)
+            && Objects.equals(this.filterDdlPolicy, that.filterDdlPolicy)
+            && Objects.equals(this.ddlTrans, that.ddlTrans) && Objects.equals(this.indexTrans, that.indexTrans)
+            && Objects.equals(this.topicPolicy, that.topicPolicy) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.partitionPolicy, that.partitionPolicy)
+            && Objects.equals(this.kafkaDataFormat, that.kafkaDataFormat)
+            && Objects.equals(this.topicNameFormat, that.topicNameFormat)
+            && Objects.equals(this.partitionsNum, that.partitionsNum)
+            && Objects.equals(this.replicationFactor, that.replicationFactor)
+            && Objects.equals(this.isFillMaterializedView, that.isFillMaterializedView)
+            && Objects.equals(this.exportSnapshot, that.exportSnapshot) && Objects.equals(this.slotName, that.slotName);
     }
 
     @Override

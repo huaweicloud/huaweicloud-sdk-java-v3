@@ -118,18 +118,16 @@ public class BackupPlan {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupPlan backupPlan = (BackupPlan) o;
-        return Objects.equals(this.timezoneOffset, backupPlan.timezoneOffset)
-            && Objects.equals(this.backupAt, backupPlan.backupAt)
-            && Objects.equals(this.periodType, backupPlan.periodType)
-            && Objects.equals(this.beginAt, backupPlan.beginAt);
+        BackupPlan that = (BackupPlan) obj;
+        return Objects.equals(this.timezoneOffset, that.timezoneOffset) && Objects.equals(this.backupAt, that.backupAt)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.beginAt, that.beginAt);
     }
 
     @Override

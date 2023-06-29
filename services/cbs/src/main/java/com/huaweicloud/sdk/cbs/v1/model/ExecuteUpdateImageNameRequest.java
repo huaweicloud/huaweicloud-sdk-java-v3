@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.UpdateImageNameReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ExecuteUpdateImageNameRequest  {
-
+public class ExecuteUpdateImageNameRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_id")
-    
+    @JsonProperty(value = "image_id")
 
     private String imageId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateImageNameReq body;
 
@@ -35,9 +25,6 @@ public class ExecuteUpdateImageNameRequest  {
         this.imageId = imageId;
         return this;
     }
-
-    
-
 
     /**
      * 图片id
@@ -51,22 +38,19 @@ public class ExecuteUpdateImageNameRequest  {
         this.imageId = imageId;
     }
 
-    
-
     public ExecuteUpdateImageNameRequest withBody(UpdateImageNameReq body) {
         this.body = body;
         return this;
     }
 
     public ExecuteUpdateImageNameRequest withBody(Consumer<UpdateImageNameReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateImageNameReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ExecuteUpdateImageNameRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteUpdateImageNameRequest executeUpdateImageNameRequest = (ExecuteUpdateImageNameRequest) o;
-        return Objects.equals(this.imageId, executeUpdateImageNameRequest.imageId) &&
-            Objects.equals(this.body, executeUpdateImageNameRequest.body);
+        ExecuteUpdateImageNameRequest that = (ExecuteUpdateImageNameRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ExecuteUpdateImageNameRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ExecuteUpdateImageNameRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

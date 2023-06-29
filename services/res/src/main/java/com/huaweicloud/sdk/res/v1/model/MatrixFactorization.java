@@ -83,17 +83,17 @@ public class MatrixFactorization {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MatrixFactorization matrixFactorization = (MatrixFactorization) o;
-        return Objects.equals(this.implicitVectorRank, matrixFactorization.implicitVectorRank)
-            && Objects.equals(this.regularParam, matrixFactorization.regularParam)
-            && Objects.equals(this.maxIteratorNum, matrixFactorization.maxIteratorNum);
+        MatrixFactorization that = (MatrixFactorization) obj;
+        return Objects.equals(this.implicitVectorRank, that.implicitVectorRank)
+            && Objects.equals(this.regularParam, that.regularParam)
+            && Objects.equals(this.maxIteratorNum, that.maxIteratorNum);
     }
 
     @Override

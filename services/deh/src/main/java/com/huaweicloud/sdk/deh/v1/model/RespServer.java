@@ -322,20 +322,20 @@ public class RespServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespServer respServer = (RespServer) o;
-        return Objects.equals(this.addresses, respServer.addresses) && Objects.equals(this.created, respServer.created)
-            && Objects.equals(this.flavor, respServer.flavor) && Objects.equals(this.id, respServer.id)
-            && Objects.equals(this.name, respServer.name) && Objects.equals(this.status, respServer.status)
-            && Objects.equals(this.tenantId, respServer.tenantId) && Objects.equals(this.updated, respServer.updated)
-            && Objects.equals(this.userId, respServer.userId) && Objects.equals(this.taskState, respServer.taskState)
-            && Objects.equals(this.image, respServer.image) && Objects.equals(this.metadata, respServer.metadata);
+        RespServer that = (RespServer) obj;
+        return Objects.equals(this.addresses, that.addresses) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.taskState, that.taskState)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

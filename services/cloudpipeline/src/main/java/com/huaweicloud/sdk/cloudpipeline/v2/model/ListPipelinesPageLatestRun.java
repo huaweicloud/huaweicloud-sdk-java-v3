@@ -317,26 +317,22 @@ public class ListPipelinesPageLatestRun {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelinesPageLatestRun listPipelinesPageLatestRun = (ListPipelinesPageLatestRun) o;
-        return Objects.equals(this.pipelineId, listPipelinesPageLatestRun.pipelineId)
-            && Objects.equals(this.pipelineRunId, listPipelinesPageLatestRun.pipelineRunId)
-            && Objects.equals(this.executorId, listPipelinesPageLatestRun.executorId)
-            && Objects.equals(this.executorName, listPipelinesPageLatestRun.executorName)
-            && Objects.equals(this.stageStatusList, listPipelinesPageLatestRun.stageStatusList)
-            && Objects.equals(this.status, listPipelinesPageLatestRun.status)
-            && Objects.equals(this.runNumber, listPipelinesPageLatestRun.runNumber)
-            && Objects.equals(this.triggerType, listPipelinesPageLatestRun.triggerType)
-            && Objects.equals(this.buildParams, listPipelinesPageLatestRun.buildParams)
-            && Objects.equals(this.artifactParams, listPipelinesPageLatestRun.artifactParams)
-            && Objects.equals(this.startTime, listPipelinesPageLatestRun.startTime)
-            && Objects.equals(this.endTime, listPipelinesPageLatestRun.endTime);
+        ListPipelinesPageLatestRun that = (ListPipelinesPageLatestRun) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.pipelineRunId, that.pipelineRunId)
+            && Objects.equals(this.executorId, that.executorId) && Objects.equals(this.executorName, that.executorName)
+            && Objects.equals(this.stageStatusList, that.stageStatusList) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runNumber, that.runNumber) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.buildParams, that.buildParams)
+            && Objects.equals(this.artifactParams, that.artifactParams)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

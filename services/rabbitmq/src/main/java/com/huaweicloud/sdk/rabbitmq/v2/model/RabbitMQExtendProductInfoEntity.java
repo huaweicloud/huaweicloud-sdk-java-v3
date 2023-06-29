@@ -343,24 +343,21 @@ public class RabbitMQExtendProductInfoEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RabbitMQExtendProductInfoEntity rabbitMQExtendProductInfoEntity = (RabbitMQExtendProductInfoEntity) o;
-        return Objects.equals(this.type, rabbitMQExtendProductInfoEntity.type)
-            && Objects.equals(this.productId, rabbitMQExtendProductInfoEntity.productId)
-            && Objects.equals(this.ecsFlavorId, rabbitMQExtendProductInfoEntity.ecsFlavorId)
-            && Objects.equals(this.archTypes, rabbitMQExtendProductInfoEntity.archTypes)
-            && Objects.equals(this.chargingMode, rabbitMQExtendProductInfoEntity.chargingMode)
-            && Objects.equals(this.ios, rabbitMQExtendProductInfoEntity.ios)
-            && Objects.equals(this.properties, rabbitMQExtendProductInfoEntity.properties)
-            && Objects.equals(this.availableZones, rabbitMQExtendProductInfoEntity.availableZones)
-            && Objects.equals(this.unavailableZones, rabbitMQExtendProductInfoEntity.unavailableZones)
-            && Objects.equals(this.supportFeatures, rabbitMQExtendProductInfoEntity.supportFeatures);
+        RabbitMQExtendProductInfoEntity that = (RabbitMQExtendProductInfoEntity) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.archTypes, that.archTypes)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.ios, that.ios)
+            && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.unavailableZones, that.unavailableZones)
+            && Objects.equals(this.supportFeatures, that.supportFeatures);
     }
 
     @Override

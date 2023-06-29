@@ -75,16 +75,15 @@ public class CreateLinkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLinkResponse createLinkResponse = (CreateLinkResponse) o;
-        return Objects.equals(this.name, createLinkResponse.name)
-            && Objects.equals(this.validationResult, createLinkResponse.validationResult);
+        CreateLinkResponse that = (CreateLinkResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.validationResult, that.validationResult);
     }
 
     @Override

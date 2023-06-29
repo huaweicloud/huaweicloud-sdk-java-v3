@@ -114,6 +114,11 @@ public class CreateFunctionRequestBody {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -138,6 +143,7 @@ public class CreateFunctionRequestBody {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -163,22 +169,15 @@ public class CreateFunctionRequestBody {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -287,22 +286,15 @@ public class CreateFunctionRequestBody {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -419,22 +411,15 @@ public class CreateFunctionRequestBody {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -910,37 +895,29 @@ public class CreateFunctionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionRequestBody createFunctionRequestBody = (CreateFunctionRequestBody) o;
-        return Objects.equals(this.funcName, createFunctionRequestBody.funcName)
-            && Objects.equals(this._package, createFunctionRequestBody._package)
-            && Objects.equals(this.runtime, createFunctionRequestBody.runtime)
-            && Objects.equals(this.timeout, createFunctionRequestBody.timeout)
-            && Objects.equals(this.handler, createFunctionRequestBody.handler)
-            && Objects.equals(this.dependVersionList, createFunctionRequestBody.dependVersionList)
-            && Objects.equals(this.funcVpc, createFunctionRequestBody.funcVpc)
-            && Objects.equals(this.memorySize, createFunctionRequestBody.memorySize)
-            && Objects.equals(this.gpuMemory, createFunctionRequestBody.gpuMemory)
-            && Objects.equals(this.codeType, createFunctionRequestBody.codeType)
-            && Objects.equals(this.codeUrl, createFunctionRequestBody.codeUrl)
-            && Objects.equals(this.codeFilename, createFunctionRequestBody.codeFilename)
-            && Objects.equals(this.userData, createFunctionRequestBody.userData)
-            && Objects.equals(this.xrole, createFunctionRequestBody.xrole)
-            && Objects.equals(this.appXrole, createFunctionRequestBody.appXrole)
-            && Objects.equals(this.description, createFunctionRequestBody.description)
-            && Objects.equals(this.funcCode, createFunctionRequestBody.funcCode)
-            && Objects.equals(this.initializerHandler, createFunctionRequestBody.initializerHandler)
-            && Objects.equals(this.initializerTimeout, createFunctionRequestBody.initializerTimeout)
-            && Objects.equals(this.enterpriseProjectId, createFunctionRequestBody.enterpriseProjectId)
-            && Objects.equals(this.type, createFunctionRequestBody.type)
-            && Objects.equals(this.logConfig, createFunctionRequestBody.logConfig)
-            && Objects.equals(this.networkController, createFunctionRequestBody.networkController);
+        CreateFunctionRequestBody that = (CreateFunctionRequestBody) obj;
+        return Objects.equals(this.funcName, that.funcName) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.handler, that.handler)
+            && Objects.equals(this.dependVersionList, that.dependVersionList)
+            && Objects.equals(this.funcVpc, that.funcVpc) && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.gpuMemory, that.gpuMemory) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.funcCode, that.funcCode)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.logConfig, that.logConfig)
+            && Objects.equals(this.networkController, that.networkController);
     }
 
     @Override

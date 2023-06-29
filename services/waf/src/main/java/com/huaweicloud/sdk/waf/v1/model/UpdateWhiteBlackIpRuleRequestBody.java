@@ -121,19 +121,17 @@ public class UpdateWhiteBlackIpRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWhiteBlackIpRuleRequestBody updateWhiteBlackIpRuleRequestBody = (UpdateWhiteBlackIpRuleRequestBody) o;
-        return Objects.equals(this.name, updateWhiteBlackIpRuleRequestBody.name)
-            && Objects.equals(this.addr, updateWhiteBlackIpRuleRequestBody.addr)
-            && Objects.equals(this.description, updateWhiteBlackIpRuleRequestBody.description)
-            && Objects.equals(this.white, updateWhiteBlackIpRuleRequestBody.white)
-            && Objects.equals(this.ipGroupId, updateWhiteBlackIpRuleRequestBody.ipGroupId);
+        UpdateWhiteBlackIpRuleRequestBody that = (UpdateWhiteBlackIpRuleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.white, that.white)
+            && Objects.equals(this.ipGroupId, that.ipGroupId);
     }
 
     @Override

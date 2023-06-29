@@ -148,6 +148,11 @@ public class CreateInstanceBody {
 
     private Object renameCommands;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "template_id")
+
+    private String templateId;
+
     public CreateInstanceBody withName(String name) {
         this.name = name;
         return this;
@@ -657,42 +662,51 @@ public class CreateInstanceBody {
         this.renameCommands = renameCommands;
     }
 
+    public CreateInstanceBody withTemplateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    /**
+     * 参数模板ID
+     * @return templateId
+     */
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceBody createInstanceBody = (CreateInstanceBody) o;
-        return Objects.equals(this.name, createInstanceBody.name)
-            && Objects.equals(this.engine, createInstanceBody.engine)
-            && Objects.equals(this.engineVersion, createInstanceBody.engineVersion)
-            && Objects.equals(this.capacity, createInstanceBody.capacity)
-            && Objects.equals(this.specCode, createInstanceBody.specCode)
-            && Objects.equals(this.azCodes, createInstanceBody.azCodes)
-            && Objects.equals(this.vpcId, createInstanceBody.vpcId)
-            && Objects.equals(this.subnetId, createInstanceBody.subnetId)
-            && Objects.equals(this.securityGroupId, createInstanceBody.securityGroupId)
-            && Objects.equals(this.publicipId, createInstanceBody.publicipId)
-            && Objects.equals(this.enterpriseProjectId, createInstanceBody.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, createInstanceBody.enterpriseProjectName)
-            && Objects.equals(this.description, createInstanceBody.description)
-            && Objects.equals(this.enableSsl, createInstanceBody.enableSsl)
-            && Objects.equals(this.privateIp, createInstanceBody.privateIp)
-            && Objects.equals(this.instanceNum, createInstanceBody.instanceNum)
-            && Objects.equals(this.maintainBegin, createInstanceBody.maintainBegin)
-            && Objects.equals(this.maintainEnd, createInstanceBody.maintainEnd)
-            && Objects.equals(this.password, createInstanceBody.password)
-            && Objects.equals(this.noPasswordAccess, createInstanceBody.noPasswordAccess)
-            && Objects.equals(this.bssParam, createInstanceBody.bssParam)
-            && Objects.equals(this.instanceBackupPolicy, createInstanceBody.instanceBackupPolicy)
-            && Objects.equals(this.tags, createInstanceBody.tags)
-            && Objects.equals(this.accessUser, createInstanceBody.accessUser)
-            && Objects.equals(this.enablePublicip, createInstanceBody.enablePublicip)
-            && Objects.equals(this.port, createInstanceBody.port)
-            && Objects.equals(this.renameCommands, createInstanceBody.renameCommands);
+        CreateInstanceBody that = (CreateInstanceBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azCodes, that.azCodes)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.enableSsl, that.enableSsl)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.instanceNum, that.instanceNum)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.noPasswordAccess, that.noPasswordAccess)
+            && Objects.equals(this.bssParam, that.bssParam)
+            && Objects.equals(this.instanceBackupPolicy, that.instanceBackupPolicy)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.accessUser, that.accessUser)
+            && Objects.equals(this.enablePublicip, that.enablePublicip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.renameCommands, that.renameCommands)
+            && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override
@@ -723,7 +737,8 @@ public class CreateInstanceBody {
             accessUser,
             enablePublicip,
             port,
-            renameCommands);
+            renameCommands,
+            templateId);
     }
 
     @Override
@@ -757,6 +772,7 @@ public class CreateInstanceBody {
         sb.append("    enablePublicip: ").append(toIndentedString(enablePublicip)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    renameCommands: ").append(toIndentedString(renameCommands)).append("\n");
+        sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

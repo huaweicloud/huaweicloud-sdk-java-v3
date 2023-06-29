@@ -288,20 +288,20 @@ public class Source {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Source source = (Source) o;
-        return Objects.equals(this.codehubName, source.codehubName) && Objects.equals(this.branches, source.branches)
-            && Objects.equals(this.scmType, source.scmType) && Objects.equals(this.hookFlag, source.hookFlag)
-            && Objects.equals(this.branch, source.branch) && Objects.equals(this.gitUrl, source.gitUrl)
-            && Objects.equals(this.codehubId, source.codehubId) && Objects.equals(this.webUrl, source.webUrl)
-            && Objects.equals(this.branchList, source.branchList) && Objects.equals(this.initId, source.initId)
-            && Objects.equals(this.disable, source.disable);
+        Source that = (Source) obj;
+        return Objects.equals(this.codehubName, that.codehubName) && Objects.equals(this.branches, that.branches)
+            && Objects.equals(this.scmType, that.scmType) && Objects.equals(this.hookFlag, that.hookFlag)
+            && Objects.equals(this.branch, that.branch) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.codehubId, that.codehubId) && Objects.equals(this.webUrl, that.webUrl)
+            && Objects.equals(this.branchList, that.branchList) && Objects.equals(this.initId, that.initId)
+            && Objects.equals(this.disable, that.disable);
     }
 
     @Override

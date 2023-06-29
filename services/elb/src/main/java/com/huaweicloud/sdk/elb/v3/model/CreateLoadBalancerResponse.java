@@ -110,18 +110,17 @@ public class CreateLoadBalancerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadBalancerResponse createLoadBalancerResponse = (CreateLoadBalancerResponse) o;
-        return Objects.equals(this.loadbalancer, createLoadBalancerResponse.loadbalancer)
-            && Objects.equals(this.loadbalancerId, createLoadBalancerResponse.loadbalancerId)
-            && Objects.equals(this.orderId, createLoadBalancerResponse.orderId)
-            && Objects.equals(this.requestId, createLoadBalancerResponse.requestId);
+        CreateLoadBalancerResponse that = (CreateLoadBalancerResponse) obj;
+        return Objects.equals(this.loadbalancer, that.loadbalancer)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

@@ -99,17 +99,16 @@ public class EndpointCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointCreateReq endpointCreateReq = (EndpointCreateReq) o;
-        return Objects.equals(this.name, endpointCreateReq.name) && Objects.equals(this.vpcId, endpointCreateReq.vpcId)
-            && Objects.equals(this.subnetId, endpointCreateReq.subnetId)
-            && Objects.equals(this.description, endpointCreateReq.description);
+        EndpointCreateReq that = (EndpointCreateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.description, that.description);
     }
 
     @Override

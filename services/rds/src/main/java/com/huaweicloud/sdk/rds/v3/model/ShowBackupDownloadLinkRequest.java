@@ -57,16 +57,15 @@ public class ShowBackupDownloadLinkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupDownloadLinkRequest showBackupDownloadLinkRequest = (ShowBackupDownloadLinkRequest) o;
-        return Objects.equals(this.xLanguage, showBackupDownloadLinkRequest.xLanguage)
-            && Objects.equals(this.backupId, showBackupDownloadLinkRequest.backupId);
+        ShowBackupDownloadLinkRequest that = (ShowBackupDownloadLinkRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.backupId, that.backupId);
     }
 
     @Override

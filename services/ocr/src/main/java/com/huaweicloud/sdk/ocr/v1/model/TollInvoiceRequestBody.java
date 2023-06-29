@@ -77,17 +77,16 @@ public class TollInvoiceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TollInvoiceRequestBody tollInvoiceRequestBody = (TollInvoiceRequestBody) o;
-        return Objects.equals(this.image, tollInvoiceRequestBody.image)
-            && Objects.equals(this.url, tollInvoiceRequestBody.url)
-            && Objects.equals(this.returnTextLocation, tollInvoiceRequestBody.returnTextLocation);
+        TollInvoiceRequestBody that = (TollInvoiceRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class ModifyDbUserPrivilegeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyDbUserPrivilegeRequest modifyDbUserPrivilegeRequest = (ModifyDbUserPrivilegeRequest) o;
-        return Objects.equals(this.instanceId, modifyDbUserPrivilegeRequest.instanceId)
-            && Objects.equals(this.body, modifyDbUserPrivilegeRequest.body);
+        ModifyDbUserPrivilegeRequest that = (ModifyDbUserPrivilegeRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

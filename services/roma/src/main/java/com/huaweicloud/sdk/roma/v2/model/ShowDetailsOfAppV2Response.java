@@ -77,22 +77,15 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CreatorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CreatorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CreatorEnum(value));
         }
 
         public static CreatorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CreatorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,15 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -255,22 +241,15 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -485,25 +464,20 @@ public class ShowDetailsOfAppV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfAppV2Response showDetailsOfAppV2Response = (ShowDetailsOfAppV2Response) o;
-        return Objects.equals(this.id, showDetailsOfAppV2Response.id)
-            && Objects.equals(this.name, showDetailsOfAppV2Response.name)
-            && Objects.equals(this.remark, showDetailsOfAppV2Response.remark)
-            && Objects.equals(this.creator, showDetailsOfAppV2Response.creator)
-            && Objects.equals(this.updateTime, showDetailsOfAppV2Response.updateTime)
-            && Objects.equals(this.appKey, showDetailsOfAppV2Response.appKey)
-            && Objects.equals(this.appSecret, showDetailsOfAppV2Response.appSecret)
-            && Objects.equals(this.registerTime, showDetailsOfAppV2Response.registerTime)
-            && Objects.equals(this.status, showDetailsOfAppV2Response.status)
-            && Objects.equals(this.appType, showDetailsOfAppV2Response.appType)
-            && Objects.equals(this.romaAppType, showDetailsOfAppV2Response.romaAppType);
+        ShowDetailsOfAppV2Response that = (ShowDetailsOfAppV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.appSecret, that.appSecret) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.romaAppType, that.romaAppType);
     }
 
     @Override

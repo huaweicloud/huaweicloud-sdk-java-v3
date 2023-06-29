@@ -52,15 +52,15 @@ public class QueryDbParamsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDbParamsResp queryDbParamsResp = (QueryDbParamsResp) o;
-        return Objects.equals(this.params, queryDbParamsResp.params);
+        QueryDbParamsResp that = (QueryDbParamsResp) obj;
+        return Objects.equals(this.params, that.params);
     }
 
     @Override

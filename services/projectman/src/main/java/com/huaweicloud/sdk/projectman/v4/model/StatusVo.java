@@ -55,15 +55,15 @@ public class StatusVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatusVo statusVo = (StatusVo) o;
-        return Objects.equals(this.id, statusVo.id) && Objects.equals(this.name, statusVo.name);
+        StatusVo that = (StatusVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowSecurityGroupRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecurityGroupRuleRequest showSecurityGroupRuleRequest = (ShowSecurityGroupRuleRequest) o;
-        return Objects.equals(this.securityGroupRuleId, showSecurityGroupRuleRequest.securityGroupRuleId);
+        ShowSecurityGroupRuleRequest that = (ShowSecurityGroupRuleRequest) obj;
+        return Objects.equals(this.securityGroupRuleId, that.securityGroupRuleId);
     }
 
     @Override

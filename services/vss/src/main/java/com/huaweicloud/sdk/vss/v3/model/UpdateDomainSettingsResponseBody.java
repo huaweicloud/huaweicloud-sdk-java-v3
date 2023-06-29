@@ -59,7 +59,7 @@ public class UpdateDomainSettingsResponseBody {
     }
 
     /**
-     * 域名id
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -194,7 +194,7 @@ public class UpdateDomainSettingsResponseBody {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -206,22 +206,19 @@ public class UpdateDomainSettingsResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainSettingsResponseBody updateDomainSettingsResponseBody = (UpdateDomainSettingsResponseBody) o;
-        return Objects.equals(this.domainId, updateDomainSettingsResponseBody.domainId)
-            && Objects.equals(this.loginUrl, updateDomainSettingsResponseBody.loginUrl)
-            && Objects.equals(this.loginUsername, updateDomainSettingsResponseBody.loginUsername)
-            && Objects.equals(this.loginPassword, updateDomainSettingsResponseBody.loginPassword)
-            && Objects.equals(this.loginCookies, updateDomainSettingsResponseBody.loginCookies)
-            && Objects.equals(this.verifyUrl, updateDomainSettingsResponseBody.verifyUrl)
-            && Objects.equals(this.httpHeaders, updateDomainSettingsResponseBody.httpHeaders)
-            && Objects.equals(this.domainName, updateDomainSettingsResponseBody.domainName);
+        UpdateDomainSettingsResponseBody that = (UpdateDomainSettingsResponseBody) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.loginUrl, that.loginUrl)
+            && Objects.equals(this.loginUsername, that.loginUsername)
+            && Objects.equals(this.loginPassword, that.loginPassword)
+            && Objects.equals(this.loginCookies, that.loginCookies) && Objects.equals(this.verifyUrl, that.verifyUrl)
+            && Objects.equals(this.httpHeaders, that.httpHeaders) && Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

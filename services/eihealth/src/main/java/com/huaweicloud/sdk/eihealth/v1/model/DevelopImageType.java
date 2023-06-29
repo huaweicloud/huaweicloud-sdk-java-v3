@@ -52,22 +52,15 @@ public class DevelopImageType {
         if (value == null) {
             return null;
         }
-        DevelopImageType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new DevelopImageType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DevelopImageType(value));
     }
 
     public static DevelopImageType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        DevelopImageType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

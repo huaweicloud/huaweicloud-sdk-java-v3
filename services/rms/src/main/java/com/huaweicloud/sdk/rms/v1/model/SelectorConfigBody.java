@@ -74,16 +74,16 @@ public class SelectorConfigBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SelectorConfigBody selectorConfigBody = (SelectorConfigBody) o;
-        return Objects.equals(this.allSupported, selectorConfigBody.allSupported)
-            && Objects.equals(this.resourceTypes, selectorConfigBody.resourceTypes);
+        SelectorConfigBody that = (SelectorConfigBody) obj;
+        return Objects.equals(this.allSupported, that.allSupported)
+            && Objects.equals(this.resourceTypes, that.resourceTypes);
     }
 
     @Override

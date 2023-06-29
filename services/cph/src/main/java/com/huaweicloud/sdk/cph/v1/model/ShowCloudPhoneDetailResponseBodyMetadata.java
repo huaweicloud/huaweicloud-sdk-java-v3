@@ -55,17 +55,15 @@ public class ShowCloudPhoneDetailResponseBodyMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCloudPhoneDetailResponseBodyMetadata showCloudPhoneDetailResponseBodyMetadata =
-            (ShowCloudPhoneDetailResponseBodyMetadata) o;
-        return Objects.equals(this.orderId, showCloudPhoneDetailResponseBodyMetadata.orderId)
-            && Objects.equals(this.productId, showCloudPhoneDetailResponseBodyMetadata.productId);
+        ShowCloudPhoneDetailResponseBodyMetadata that = (ShowCloudPhoneDetailResponseBodyMetadata) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.productId, that.productId);
     }
 
     @Override

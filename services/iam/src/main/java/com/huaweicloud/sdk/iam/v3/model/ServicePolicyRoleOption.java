@@ -131,19 +131,17 @@ public class ServicePolicyRoleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServicePolicyRoleOption servicePolicyRoleOption = (ServicePolicyRoleOption) o;
-        return Objects.equals(this.displayName, servicePolicyRoleOption.displayName)
-            && Objects.equals(this.type, servicePolicyRoleOption.type)
-            && Objects.equals(this.description, servicePolicyRoleOption.description)
-            && Objects.equals(this.descriptionCn, servicePolicyRoleOption.descriptionCn)
-            && Objects.equals(this.policy, servicePolicyRoleOption.policy);
+        ServicePolicyRoleOption that = (ServicePolicyRoleOption) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.descriptionCn, that.descriptionCn) && Objects.equals(this.policy, that.policy);
     }
 
     @Override

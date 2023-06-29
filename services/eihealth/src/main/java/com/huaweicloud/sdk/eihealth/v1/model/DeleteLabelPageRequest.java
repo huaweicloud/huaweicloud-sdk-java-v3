@@ -55,16 +55,16 @@ public class DeleteLabelPageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLabelPageRequest deleteLabelPageRequest = (DeleteLabelPageRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteLabelPageRequest.eihealthProjectId)
-            && Objects.equals(this.labelPageId, deleteLabelPageRequest.labelPageId);
+        DeleteLabelPageRequest that = (DeleteLabelPageRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.labelPageId, that.labelPageId);
     }
 
     @Override

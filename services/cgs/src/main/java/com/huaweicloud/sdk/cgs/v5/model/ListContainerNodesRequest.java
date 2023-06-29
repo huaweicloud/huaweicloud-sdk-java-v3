@@ -103,18 +103,16 @@ public class ListContainerNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListContainerNodesRequest listContainerNodesRequest = (ListContainerNodesRequest) o;
-        return Objects.equals(this.hostName, listContainerNodesRequest.hostName)
-            && Objects.equals(this.agentStatus, listContainerNodesRequest.agentStatus)
-            && Objects.equals(this.limit, listContainerNodesRequest.limit)
-            && Objects.equals(this.offset, listContainerNodesRequest.offset);
+        ListContainerNodesRequest that = (ListContainerNodesRequest) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

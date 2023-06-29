@@ -197,21 +197,19 @@ public class StudyRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StudyRsp studyRsp = (StudyRsp) o;
-        return Objects.equals(this.name, studyRsp.name) && Objects.equals(this.id, studyRsp.id)
-            && Objects.equals(this.eihealthProjectName, studyRsp.eihealthProjectName)
-            && Objects.equals(this.eihealthProjectId, studyRsp.eihealthProjectId)
-            && Objects.equals(this.description, studyRsp.description)
-            && Objects.equals(this.createTime, studyRsp.createTime)
-            && Objects.equals(this.updateTime, studyRsp.updateTime)
-            && Objects.equals(this.latestJob, studyRsp.latestJob);
+        StudyRsp that = (StudyRsp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.latestJob, that.latestJob);
     }
 
     @Override

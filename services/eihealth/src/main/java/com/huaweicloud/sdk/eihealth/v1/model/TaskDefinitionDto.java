@@ -255,23 +255,20 @@ public class TaskDefinitionDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDefinitionDto taskDefinitionDto = (TaskDefinitionDto) o;
-        return Objects.equals(this.taskName, taskDefinitionDto.taskName)
-            && Objects.equals(this.displayName, taskDefinitionDto.displayName)
-            && Objects.equals(this.outputDir, taskDefinitionDto.outputDir)
-            && Objects.equals(this.wholeOutputDir, taskDefinitionDto.wholeOutputDir)
-            && Objects.equals(this.ioAccType, taskDefinitionDto.ioAccType)
-            && Objects.equals(this.resources, taskDefinitionDto.resources)
-            && Objects.equals(this.location, taskDefinitionDto.location)
-            && Objects.equals(this.inputs, taskDefinitionDto.inputs)
-            && Objects.equals(this.appInfo, taskDefinitionDto.appInfo);
+        TaskDefinitionDto that = (TaskDefinitionDto) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.wholeOutputDir, that.wholeOutputDir)
+            && Objects.equals(this.ioAccType, that.ioAccType) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.appInfo, that.appInfo);
     }
 
     @Override

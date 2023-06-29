@@ -209,23 +209,19 @@ public class ListPrivateZonesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivateZonesRequest listPrivateZonesRequest = (ListPrivateZonesRequest) o;
-        return Objects.equals(this.type, listPrivateZonesRequest.type)
-            && Objects.equals(this.limit, listPrivateZonesRequest.limit)
-            && Objects.equals(this.marker, listPrivateZonesRequest.marker)
-            && Objects.equals(this.offset, listPrivateZonesRequest.offset)
-            && Objects.equals(this.tags, listPrivateZonesRequest.tags)
-            && Objects.equals(this.name, listPrivateZonesRequest.name)
-            && Objects.equals(this.status, listPrivateZonesRequest.status)
-            && Objects.equals(this.searchMode, listPrivateZonesRequest.searchMode)
-            && Objects.equals(this.enterpriseProjectId, listPrivateZonesRequest.enterpriseProjectId);
+        ListPrivateZonesRequest that = (ListPrivateZonesRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.searchMode, that.searchMode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

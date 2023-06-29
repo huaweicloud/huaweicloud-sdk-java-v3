@@ -84,22 +84,15 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,22 +274,16 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            IsIncluSpecialThrottleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsIncluSpecialThrottleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new IsIncluSpecialThrottleEnum(value));
         }
 
         public static IsIncluSpecialThrottleEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IsIncluSpecialThrottleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -570,30 +550,24 @@ public class CreateRequestThrottlingPolicyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestThrottlingPolicyV2Response createRequestThrottlingPolicyV2Response =
-            (CreateRequestThrottlingPolicyV2Response) o;
-        return Objects.equals(this.appCallLimits, createRequestThrottlingPolicyV2Response.appCallLimits)
-            && Objects.equals(this.name, createRequestThrottlingPolicyV2Response.name)
-            && Objects.equals(this.timeUnit, createRequestThrottlingPolicyV2Response.timeUnit)
-            && Objects.equals(this.remark, createRequestThrottlingPolicyV2Response.remark)
-            && Objects.equals(this.apiCallLimits, createRequestThrottlingPolicyV2Response.apiCallLimits)
-            && Objects.equals(this.type, createRequestThrottlingPolicyV2Response.type)
-            && Objects.equals(this.enableAdaptiveControl, createRequestThrottlingPolicyV2Response.enableAdaptiveControl)
-            && Objects.equals(this.userCallLimits, createRequestThrottlingPolicyV2Response.userCallLimits)
-            && Objects.equals(this.timeInterval, createRequestThrottlingPolicyV2Response.timeInterval)
-            && Objects.equals(this.ipCallLimits, createRequestThrottlingPolicyV2Response.ipCallLimits)
-            && Objects.equals(this.id, createRequestThrottlingPolicyV2Response.id)
-            && Objects.equals(this.bindNum, createRequestThrottlingPolicyV2Response.bindNum)
-            && Objects.equals(this.isIncluSpecialThrottle,
-                createRequestThrottlingPolicyV2Response.isIncluSpecialThrottle)
-            && Objects.equals(this.createTime, createRequestThrottlingPolicyV2Response.createTime);
+        CreateRequestThrottlingPolicyV2Response that = (CreateRequestThrottlingPolicyV2Response) obj;
+        return Objects.equals(this.appCallLimits, that.appCallLimits) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.apiCallLimits, that.apiCallLimits) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enableAdaptiveControl, that.enableAdaptiveControl)
+            && Objects.equals(this.userCallLimits, that.userCallLimits)
+            && Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.ipCallLimits, that.ipCallLimits) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.bindNum, that.bindNum)
+            && Objects.equals(this.isIncluSpecialThrottle, that.isIncluSpecialThrottle)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

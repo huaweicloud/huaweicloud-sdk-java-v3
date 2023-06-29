@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowGaussMySqlQuotasRequest  {
-
+public class ShowGaussMySqlQuotasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_name")
-    
+    @JsonProperty(value = "enterprise_project_name")
 
     private String enterpriseProjectName;
 
@@ -47,15 +35,12 @@ public class ShowGaussMySqlQuotasRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -64,15 +49,10 @@ public class ShowGaussMySqlQuotasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowGaussMySqlQuotasRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。  取值范围：0 - 10000
@@ -86,15 +66,10 @@ public class ShowGaussMySqlQuotasRequest  {
         this.offset = offset;
     }
 
-    
-
     public ShowGaussMySqlQuotasRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为10，不能为负数，最小值为1，最大值为100。
@@ -108,15 +83,10 @@ public class ShowGaussMySqlQuotasRequest  {
         this.limit = limit;
     }
 
-    
-
     public ShowGaussMySqlQuotasRequest withEnterpriseProjectName(String enterpriseProjectName) {
         this.enterpriseProjectName = enterpriseProjectName;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目名称。
@@ -130,26 +100,25 @@ public class ShowGaussMySqlQuotasRequest  {
         this.enterpriseProjectName = enterpriseProjectName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGaussMySqlQuotasRequest showGaussMySqlQuotasRequest = (ShowGaussMySqlQuotasRequest) o;
-        return Objects.equals(this.xLanguage, showGaussMySqlQuotasRequest.xLanguage) &&
-            Objects.equals(this.offset, showGaussMySqlQuotasRequest.offset) &&
-            Objects.equals(this.limit, showGaussMySqlQuotasRequest.limit) &&
-            Objects.equals(this.enterpriseProjectName, showGaussMySqlQuotasRequest.enterpriseProjectName);
+        ShowGaussMySqlQuotasRequest that = (ShowGaussMySqlQuotasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, offset, limit, enterpriseProjectName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,6 +130,7 @@ public class ShowGaussMySqlQuotasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -171,8 +141,5 @@ public class ShowGaussMySqlQuotasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

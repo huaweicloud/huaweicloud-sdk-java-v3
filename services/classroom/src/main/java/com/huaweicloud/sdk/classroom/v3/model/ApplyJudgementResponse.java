@@ -34,15 +34,15 @@ public class ApplyJudgementResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyJudgementResponse applyJudgementResponse = (ApplyJudgementResponse) o;
-        return Objects.equals(this.judgementId, applyJudgementResponse.judgementId);
+        ApplyJudgementResponse that = (ApplyJudgementResponse) obj;
+        return Objects.equals(this.judgementId, that.judgementId);
     }
 
     @Override

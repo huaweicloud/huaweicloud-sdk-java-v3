@@ -101,18 +101,16 @@ public class LoginTokenSecurityToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginTokenSecurityToken loginTokenSecurityToken = (LoginTokenSecurityToken) o;
-        return Objects.equals(this.access, loginTokenSecurityToken.access)
-            && Objects.equals(this.secret, loginTokenSecurityToken.secret)
-            && Objects.equals(this.id, loginTokenSecurityToken.id)
-            && Objects.equals(this.durationSeconds, loginTokenSecurityToken.durationSeconds);
+        LoginTokenSecurityToken that = (LoginTokenSecurityToken) obj;
+        return Objects.equals(this.access, that.access) && Objects.equals(this.secret, that.secret)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.durationSeconds, that.durationSeconds);
     }
 
     @Override

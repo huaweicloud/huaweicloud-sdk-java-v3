@@ -56,17 +56,16 @@ public class ShowSubNetworkInterfacesQuantityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubNetworkInterfacesQuantityResponse showSubNetworkInterfacesQuantityResponse =
-            (ShowSubNetworkInterfacesQuantityResponse) o;
-        return Objects.equals(this.requestId, showSubNetworkInterfacesQuantityResponse.requestId)
-            && Objects.equals(this.subNetworkInterfaces, showSubNetworkInterfacesQuantityResponse.subNetworkInterfaces);
+        ShowSubNetworkInterfacesQuantityResponse that = (ShowSubNetworkInterfacesQuantityResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.subNetworkInterfaces, that.subNetworkInterfaces);
     }
 
     @Override

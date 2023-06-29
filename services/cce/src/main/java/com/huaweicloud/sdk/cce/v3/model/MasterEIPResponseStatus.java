@@ -55,16 +55,16 @@ public class MasterEIPResponseStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MasterEIPResponseStatus masterEIPResponseStatus = (MasterEIPResponseStatus) o;
-        return Objects.equals(this.privateEndpoint, masterEIPResponseStatus.privateEndpoint)
-            && Objects.equals(this.publicEndpoint, masterEIPResponseStatus.publicEndpoint);
+        MasterEIPResponseStatus that = (MasterEIPResponseStatus) obj;
+        return Objects.equals(this.privateEndpoint, that.privateEndpoint)
+            && Objects.equals(this.publicEndpoint, that.publicEndpoint);
     }
 
     @Override

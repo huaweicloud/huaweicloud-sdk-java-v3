@@ -87,17 +87,16 @@ public class UpdateRuleActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleActionRequest updateRuleActionRequest = (UpdateRuleActionRequest) o;
-        return Objects.equals(this.instanceId, updateRuleActionRequest.instanceId)
-            && Objects.equals(this.actionId, updateRuleActionRequest.actionId)
-            && Objects.equals(this.body, updateRuleActionRequest.body);
+        UpdateRuleActionRequest that = (UpdateRuleActionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

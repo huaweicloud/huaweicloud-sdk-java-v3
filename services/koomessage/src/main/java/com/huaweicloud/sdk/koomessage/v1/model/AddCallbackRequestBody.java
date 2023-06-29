@@ -55,16 +55,15 @@ public class AddCallbackRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCallbackRequestBody addCallbackRequestBody = (AddCallbackRequestBody) o;
-        return Objects.equals(this.callbackUrl, addCallbackRequestBody.callbackUrl)
-            && Objects.equals(this.urlType, addCallbackRequestBody.urlType);
+        AddCallbackRequestBody that = (AddCallbackRequestBody) obj;
+        return Objects.equals(this.callbackUrl, that.callbackUrl) && Objects.equals(this.urlType, that.urlType);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowDiffCommitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDiffCommitRequest showDiffCommitRequest = (ShowDiffCommitRequest) o;
-        return Objects.equals(this.repoId, showDiffCommitRequest.repoId)
-            && Objects.equals(this.sha, showDiffCommitRequest.sha);
+        ShowDiffCommitRequest that = (ShowDiffCommitRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.sha, that.sha);
     }
 
     @Override

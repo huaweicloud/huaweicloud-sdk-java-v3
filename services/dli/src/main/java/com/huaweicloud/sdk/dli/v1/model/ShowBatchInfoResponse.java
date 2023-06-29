@@ -383,30 +383,22 @@ public class ShowBatchInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchInfoResponse showBatchInfoResponse = (ShowBatchInfoResponse) o;
-        return Objects.equals(this.id, showBatchInfoResponse.id)
-            && Objects.equals(this.state, showBatchInfoResponse.state)
-            && Objects.equals(this.appId, showBatchInfoResponse.appId)
-            && Objects.equals(this.log, showBatchInfoResponse.log)
-            && Objects.equals(this.scType, showBatchInfoResponse.scType)
-            && Objects.equals(this.clusterName, showBatchInfoResponse.clusterName)
-            && Objects.equals(this.createTime, showBatchInfoResponse.createTime)
-            && Objects.equals(this.name, showBatchInfoResponse.name)
-            && Objects.equals(this.owner, showBatchInfoResponse.owner)
-            && Objects.equals(this.proxyUser, showBatchInfoResponse.proxyUser)
-            && Objects.equals(this.kind, showBatchInfoResponse.kind)
-            && Objects.equals(this.queue, showBatchInfoResponse.queue)
-            && Objects.equals(this.image, showBatchInfoResponse.image)
-            && Objects.equals(this.updateTime, showBatchInfoResponse.updateTime)
-            && Objects.equals(this.feature, showBatchInfoResponse.feature)
-            && Objects.equals(this.sparkVersion, showBatchInfoResponse.sparkVersion);
+        ShowBatchInfoResponse that = (ShowBatchInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.scType, that.scType) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.proxyUser, that.proxyUser)
+            && Objects.equals(this.kind, that.kind) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.feature, that.feature) && Objects.equals(this.sparkVersion, that.sparkVersion);
     }
 
     @Override

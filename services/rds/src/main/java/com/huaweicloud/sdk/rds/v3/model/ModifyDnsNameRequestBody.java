@@ -33,15 +33,15 @@ public class ModifyDnsNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyDnsNameRequestBody modifyDnsNameRequestBody = (ModifyDnsNameRequestBody) o;
-        return Objects.equals(this.dnsName, modifyDnsNameRequestBody.dnsName);
+        ModifyDnsNameRequestBody that = (ModifyDnsNameRequestBody) obj;
+        return Objects.equals(this.dnsName, that.dnsName);
     }
 
     @Override

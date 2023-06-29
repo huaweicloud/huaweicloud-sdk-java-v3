@@ -74,16 +74,15 @@ public class IvsStandardByNameAndIdRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IvsStandardByNameAndIdRequestBody ivsStandardByNameAndIdRequestBody = (IvsStandardByNameAndIdRequestBody) o;
-        return Objects.equals(this.meta, ivsStandardByNameAndIdRequestBody.meta)
-            && Objects.equals(this.data, ivsStandardByNameAndIdRequestBody.data);
+        IvsStandardByNameAndIdRequestBody that = (IvsStandardByNameAndIdRequestBody) obj;
+        return Objects.equals(this.meta, that.meta) && Objects.equals(this.data, that.data);
     }
 
     @Override

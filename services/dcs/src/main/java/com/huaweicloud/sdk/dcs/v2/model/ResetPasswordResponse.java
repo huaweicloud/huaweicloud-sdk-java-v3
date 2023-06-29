@@ -78,17 +78,16 @@ public class ResetPasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPasswordResponse resetPasswordResponse = (ResetPasswordResponse) o;
-        return Objects.equals(this.retryTimesLeft, resetPasswordResponse.retryTimesLeft)
-            && Objects.equals(this.lockTime, resetPasswordResponse.lockTime)
-            && Objects.equals(this.lockTimeLeft, resetPasswordResponse.lockTimeLeft);
+        ResetPasswordResponse that = (ResetPasswordResponse) obj;
+        return Objects.equals(this.retryTimesLeft, that.retryTimesLeft) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.lockTimeLeft, that.lockTimeLeft);
     }
 
     @Override

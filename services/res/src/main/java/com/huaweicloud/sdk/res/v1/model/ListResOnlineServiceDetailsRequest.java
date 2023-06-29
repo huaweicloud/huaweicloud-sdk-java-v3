@@ -77,17 +77,16 @@ public class ListResOnlineServiceDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResOnlineServiceDetailsRequest listResOnlineServiceDetailsRequest = (ListResOnlineServiceDetailsRequest) o;
-        return Objects.equals(this.workspaceId, listResOnlineServiceDetailsRequest.workspaceId)
-            && Objects.equals(this.resourceId, listResOnlineServiceDetailsRequest.resourceId)
-            && Objects.equals(this.category, listResOnlineServiceDetailsRequest.category);
+        ListResOnlineServiceDetailsRequest that = (ListResOnlineServiceDetailsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override

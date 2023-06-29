@@ -54,22 +54,15 @@ public class AccelerateIp {
             if (value == null) {
                 return null;
             }
-            IpTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpTypeEnum(value));
         }
 
         public static IpTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IpTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,16 +146,16 @@ public class AccelerateIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccelerateIp accelerateIp = (AccelerateIp) o;
-        return Objects.equals(this.ipType, accelerateIp.ipType)
-            && Objects.equals(this.ipAddress, accelerateIp.ipAddress) && Objects.equals(this.area, accelerateIp.area);
+        AccelerateIp that = (AccelerateIp) obj;
+        return Objects.equals(this.ipType, that.ipType) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.area, that.area);
     }
 
     @Override

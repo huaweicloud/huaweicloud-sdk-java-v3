@@ -178,19 +178,17 @@ public class LoadBalancerStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancerStatus loadBalancerStatus = (LoadBalancerStatus) o;
-        return Objects.equals(this.name, loadBalancerStatus.name)
-            && Objects.equals(this.provisioningStatus, loadBalancerStatus.provisioningStatus)
-            && Objects.equals(this.listeners, loadBalancerStatus.listeners)
-            && Objects.equals(this.pools, loadBalancerStatus.pools) && Objects.equals(this.id, loadBalancerStatus.id)
-            && Objects.equals(this.operatingStatus, loadBalancerStatus.operatingStatus);
+        LoadBalancerStatus that = (LoadBalancerStatus) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.pools, that.pools)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.operatingStatus, that.operatingStatus);
     }
 
     @Override

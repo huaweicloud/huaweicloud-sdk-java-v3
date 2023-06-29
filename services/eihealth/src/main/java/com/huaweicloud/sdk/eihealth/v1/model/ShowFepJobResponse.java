@@ -208,20 +208,17 @@ public class ShowFepJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFepJobResponse showFepJobResponse = (ShowFepJobResponse) o;
-        return Objects.equals(this.basicInfo, showFepJobResponse.basicInfo)
-            && Objects.equals(this.receptor, showFepJobResponse.receptor)
-            && Objects.equals(this.ligands, showFepJobResponse.ligands)
-            && Objects.equals(this.graph, showFepJobResponse.graph)
-            && Objects.equals(this.params, showFepJobResponse.params)
-            && Objects.equals(this.jobResult, showFepJobResponse.jobResult);
+        ShowFepJobResponse that = (ShowFepJobResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.receptor, that.receptor)
+            && Objects.equals(this.ligands, that.ligands) && Objects.equals(this.graph, that.graph)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.jobResult, that.jobResult);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class OriginRequestHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OriginRequestHeader originRequestHeader = (OriginRequestHeader) o;
-        return Objects.equals(this.name, originRequestHeader.name)
-            && Objects.equals(this.value, originRequestHeader.value)
-            && Objects.equals(this.action, originRequestHeader.action);
+        OriginRequestHeader that = (OriginRequestHeader) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

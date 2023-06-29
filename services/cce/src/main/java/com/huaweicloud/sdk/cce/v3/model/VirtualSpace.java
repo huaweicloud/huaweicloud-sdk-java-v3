@@ -118,17 +118,16 @@ public class VirtualSpace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VirtualSpace virtualSpace = (VirtualSpace) o;
-        return Objects.equals(this.name, virtualSpace.name) && Objects.equals(this.size, virtualSpace.size)
-            && Objects.equals(this.lvmConfig, virtualSpace.lvmConfig)
-            && Objects.equals(this.runtimeConfig, virtualSpace.runtimeConfig);
+        VirtualSpace that = (VirtualSpace) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.lvmConfig, that.lvmConfig) && Objects.equals(this.runtimeConfig, that.runtimeConfig);
     }
 
     @Override

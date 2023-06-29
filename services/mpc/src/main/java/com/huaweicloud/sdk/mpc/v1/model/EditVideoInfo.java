@@ -72,22 +72,15 @@ public class EditVideoInfo {
             if (value == null) {
                 return null;
             }
-            ReferenceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReferenceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReferenceEnum(value));
         }
 
         public static ReferenceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReferenceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class EditVideoInfo {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodecEnum(value));
         }
 
         public static CodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -322,18 +308,17 @@ public class EditVideoInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EditVideoInfo editVideoInfo = (EditVideoInfo) o;
-        return Objects.equals(this.reference, editVideoInfo.reference)
-            && Objects.equals(this.width, editVideoInfo.width) && Objects.equals(this.height, editVideoInfo.height)
-            && Objects.equals(this.codec, editVideoInfo.codec) && Objects.equals(this.bitrate, editVideoInfo.bitrate)
-            && Objects.equals(this.frameRate, editVideoInfo.frameRate);
+        EditVideoInfo that = (EditVideoInfo) obj;
+        return Objects.equals(this.reference, that.reference) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.bitrate, that.bitrate) && Objects.equals(this.frameRate, that.frameRate);
     }
 
     @Override

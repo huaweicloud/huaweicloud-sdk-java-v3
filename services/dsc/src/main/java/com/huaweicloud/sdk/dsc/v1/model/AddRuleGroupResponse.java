@@ -56,16 +56,15 @@ public class AddRuleGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRuleGroupResponse addRuleGroupResponse = (AddRuleGroupResponse) o;
-        return Objects.equals(this.msg, addRuleGroupResponse.msg)
-            && Objects.equals(this.status, addRuleGroupResponse.status);
+        AddRuleGroupResponse that = (AddRuleGroupResponse) obj;
+        return Objects.equals(this.msg, that.msg) && Objects.equals(this.status, that.status);
     }
 
     @Override

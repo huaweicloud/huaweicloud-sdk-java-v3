@@ -44,15 +44,15 @@ public class ShowPolicyAndInstanceQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPolicyAndInstanceQuotaResponse showPolicyAndInstanceQuotaResponse = (ShowPolicyAndInstanceQuotaResponse) o;
-        return Objects.equals(this.quotas, showPolicyAndInstanceQuotaResponse.quotas);
+        ShowPolicyAndInstanceQuotaResponse that = (ShowPolicyAndInstanceQuotaResponse) obj;
+        return Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

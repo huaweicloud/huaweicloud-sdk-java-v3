@@ -99,18 +99,17 @@ public class PropertyReferenceModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyReferenceModel propertyReferenceModel = (PropertyReferenceModel) o;
-        return Objects.equals(this.type, propertyReferenceModel.type)
-            && Objects.equals(this.assetModelId, propertyReferenceModel.assetModelId)
-            && Objects.equals(this.assetModelName, propertyReferenceModel.assetModelName)
-            && Objects.equals(this.propertyName, propertyReferenceModel.propertyName);
+        PropertyReferenceModel that = (PropertyReferenceModel) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.assetModelId, that.assetModelId)
+            && Objects.equals(this.assetModelName, that.assetModelName)
+            && Objects.equals(this.propertyName, that.propertyName);
     }
 
     @Override

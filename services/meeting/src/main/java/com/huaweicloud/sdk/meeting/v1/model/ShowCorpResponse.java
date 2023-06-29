@@ -159,18 +159,17 @@ public class ShowCorpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpResponse showCorpResponse = (ShowCorpResponse) o;
-        return Objects.equals(this.basicInfo, showCorpResponse.basicInfo)
-            && Objects.equals(this.adminInfo, showCorpResponse.adminInfo)
-            && Objects.equals(this.resInfo, showCorpResponse.resInfo)
-            && Objects.equals(this.groupDTO, showCorpResponse.groupDTO) && Objects.equals(this.id, showCorpResponse.id);
+        ShowCorpResponse that = (ShowCorpResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.adminInfo, that.adminInfo)
+            && Objects.equals(this.resInfo, that.resInfo) && Objects.equals(this.groupDTO, that.groupDTO)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

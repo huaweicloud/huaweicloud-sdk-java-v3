@@ -75,22 +75,15 @@ public class SourceServerResponse {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,22 +220,15 @@ public class SourceServerResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -333,22 +319,15 @@ public class SourceServerResponse {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationCycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationCycleEnum(value));
         }
 
         public static MigrationCycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -507,21 +486,18 @@ public class SourceServerResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceServerResponse sourceServerResponse = (SourceServerResponse) o;
-        return Objects.equals(this.id, sourceServerResponse.id) && Objects.equals(this.ip, sourceServerResponse.ip)
-            && Objects.equals(this.name, sourceServerResponse.name)
-            && Objects.equals(this.osType, sourceServerResponse.osType)
-            && Objects.equals(this.osVersion, sourceServerResponse.osVersion)
-            && Objects.equals(this.oemSystem, sourceServerResponse.oemSystem)
-            && Objects.equals(this.state, sourceServerResponse.state)
-            && Objects.equals(this.migrationCycle, sourceServerResponse.migrationCycle);
+        SourceServerResponse that = (SourceServerResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.oemSystem, that.oemSystem)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.migrationCycle, that.migrationCycle);
     }
 
     @Override

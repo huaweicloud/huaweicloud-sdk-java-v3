@@ -143,20 +143,18 @@ public class ResourceIdentifier {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceIdentifier resourceIdentifier = (ResourceIdentifier) o;
-        return Objects.equals(this.resourceId, resourceIdentifier.resourceId)
-            && Objects.equals(this.resourceName, resourceIdentifier.resourceName)
-            && Objects.equals(this.provider, resourceIdentifier.provider)
-            && Objects.equals(this.type, resourceIdentifier.type)
-            && Objects.equals(this.sourceAccountId, resourceIdentifier.sourceAccountId)
-            && Objects.equals(this.regionId, resourceIdentifier.regionId);
+        ResourceIdentifier that = (ResourceIdentifier) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.sourceAccountId, that.sourceAccountId)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

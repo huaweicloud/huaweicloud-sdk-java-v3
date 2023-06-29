@@ -96,17 +96,16 @@ public class JobContentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobContentInfo jobContentInfo = (JobContentInfo) o;
-        return Objects.equals(this.targetType, jobContentInfo.targetType)
-            && Objects.equals(this.targets, jobContentInfo.targets)
-            && Objects.equals(this.taskData, jobContentInfo.taskData);
+        JobContentInfo that = (JobContentInfo) obj;
+        return Objects.equals(this.targetType, that.targetType) && Objects.equals(this.targets, that.targets)
+            && Objects.equals(this.taskData, that.taskData);
     }
 
     @Override

@@ -57,16 +57,16 @@ public class ShowLayoutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLayoutRequest showLayoutRequest = (ShowLayoutRequest) o;
-        return Objects.equals(this.conferenceID, showLayoutRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, showLayoutRequest.xConferenceAuthorization);
+        ShowLayoutRequest that = (ShowLayoutRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

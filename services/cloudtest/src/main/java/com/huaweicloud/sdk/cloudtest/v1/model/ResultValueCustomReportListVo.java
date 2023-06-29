@@ -153,20 +153,17 @@ public class ResultValueCustomReportListVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResultValueCustomReportListVo resultValueCustomReportListVo = (ResultValueCustomReportListVo) o;
-        return Objects.equals(this.total, resultValueCustomReportListVo.total)
-            && Objects.equals(this.value, resultValueCustomReportListVo.value)
-            && Objects.equals(this.reason, resultValueCustomReportListVo.reason)
-            && Objects.equals(this.pageSize, resultValueCustomReportListVo.pageSize)
-            && Objects.equals(this.pageNo, resultValueCustomReportListVo.pageNo)
-            && Objects.equals(this.hasMore, resultValueCustomReportListVo.hasMore);
+        ResultValueCustomReportListVo that = (ResultValueCustomReportListVo) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.hasMore, that.hasMore);
     }
 
     @Override

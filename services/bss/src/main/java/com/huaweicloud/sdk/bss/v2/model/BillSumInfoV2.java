@@ -317,27 +317,25 @@ public class BillSumInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BillSumInfoV2 billSumInfoV2 = (BillSumInfoV2) o;
-        return Objects.equals(this.customerId, billSumInfoV2.customerId)
-            && Objects.equals(this.cloudServiceType, billSumInfoV2.cloudServiceType)
-            && Objects.equals(this.cloudServiceTypeName, billSumInfoV2.cloudServiceTypeName)
-            && Objects.equals(this.billType, billSumInfoV2.billType)
-            && Objects.equals(this.chargeMode, billSumInfoV2.chargeMode)
-            && Objects.equals(this.amount, billSumInfoV2.amount)
-            && Objects.equals(this.debtAmount, billSumInfoV2.debtAmount)
-            && Objects.equals(this.adjustmentAmount, billSumInfoV2.adjustmentAmount)
-            && Objects.equals(this.discountAmount, billSumInfoV2.discountAmount)
-            && Objects.equals(this.measureId, billSumInfoV2.measureId)
-            && Objects.equals(this.accountDetails, billSumInfoV2.accountDetails)
-            && Objects.equals(this.resourceTypeCode, billSumInfoV2.resourceTypeCode)
-            && Objects.equals(this.resourceTypeName, billSumInfoV2.resourceTypeName);
+        BillSumInfoV2 that = (BillSumInfoV2) obj;
+        return Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.cloudServiceTypeName, that.cloudServiceTypeName)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.adjustmentAmount, that.adjustmentAmount)
+            && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.accountDetails, that.accountDetails)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName);
     }
 
     @Override

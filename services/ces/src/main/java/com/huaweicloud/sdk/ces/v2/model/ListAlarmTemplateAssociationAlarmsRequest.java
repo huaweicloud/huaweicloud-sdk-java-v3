@@ -81,18 +81,16 @@ public class ListAlarmTemplateAssociationAlarmsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmTemplateAssociationAlarmsRequest listAlarmTemplateAssociationAlarmsRequest =
-            (ListAlarmTemplateAssociationAlarmsRequest) o;
-        return Objects.equals(this.templateId, listAlarmTemplateAssociationAlarmsRequest.templateId)
-            && Objects.equals(this.offset, listAlarmTemplateAssociationAlarmsRequest.offset)
-            && Objects.equals(this.limit, listAlarmTemplateAssociationAlarmsRequest.limit);
+        ListAlarmTemplateAssociationAlarmsRequest that = (ListAlarmTemplateAssociationAlarmsRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

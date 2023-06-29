@@ -55,16 +55,16 @@ public class KeystoneUpdatePasswordOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdatePasswordOption keystoneUpdatePasswordOption = (KeystoneUpdatePasswordOption) o;
-        return Objects.equals(this.password, keystoneUpdatePasswordOption.password)
-            && Objects.equals(this.originalPassword, keystoneUpdatePasswordOption.originalPassword);
+        KeystoneUpdatePasswordOption that = (KeystoneUpdatePasswordOption) obj;
+        return Objects.equals(this.password, that.password)
+            && Objects.equals(this.originalPassword, that.originalPassword);
     }
 
     @Override

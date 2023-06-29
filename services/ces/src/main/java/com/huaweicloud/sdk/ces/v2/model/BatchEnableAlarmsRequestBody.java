@@ -74,16 +74,15 @@ public class BatchEnableAlarmsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchEnableAlarmsRequestBody batchEnableAlarmsRequestBody = (BatchEnableAlarmsRequestBody) o;
-        return Objects.equals(this.alarmIds, batchEnableAlarmsRequestBody.alarmIds)
-            && Objects.equals(this.alarmEnabled, batchEnableAlarmsRequestBody.alarmEnabled);
+        BatchEnableAlarmsRequestBody that = (BatchEnableAlarmsRequestBody) obj;
+        return Objects.equals(this.alarmIds, that.alarmIds) && Objects.equals(this.alarmEnabled, that.alarmEnabled);
     }
 
     @Override

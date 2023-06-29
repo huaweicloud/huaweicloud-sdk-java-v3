@@ -78,17 +78,16 @@ public class UpdateFaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFaceResponse updateFaceResponse = (UpdateFaceResponse) o;
-        return Objects.equals(this.faceNumber, updateFaceResponse.faceNumber)
-            && Objects.equals(this.faceSetId, updateFaceResponse.faceSetId)
-            && Objects.equals(this.faceSetName, updateFaceResponse.faceSetName);
+        UpdateFaceResponse that = (UpdateFaceResponse) obj;
+        return Objects.equals(this.faceNumber, that.faceNumber) && Objects.equals(this.faceSetId, that.faceSetId)
+            && Objects.equals(this.faceSetName, that.faceSetName);
     }
 
     @Override

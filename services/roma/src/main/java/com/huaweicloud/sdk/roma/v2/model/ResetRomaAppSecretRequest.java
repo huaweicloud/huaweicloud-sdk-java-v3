@@ -87,17 +87,16 @@ public class ResetRomaAppSecretRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetRomaAppSecretRequest resetRomaAppSecretRequest = (ResetRomaAppSecretRequest) o;
-        return Objects.equals(this.appId, resetRomaAppSecretRequest.appId)
-            && Objects.equals(this.instanceId, resetRomaAppSecretRequest.instanceId)
-            && Objects.equals(this.body, resetRomaAppSecretRequest.body);
+        ResetRomaAppSecretRequest that = (ResetRomaAppSecretRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

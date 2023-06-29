@@ -83,22 +83,15 @@ public class ListEventTargetRequest {
             if (value == null) {
                 return null;
             }
-            SupportTypesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportTypesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportTypesEnum(value));
         }
 
         public static SupportTypesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportTypesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,19 +219,17 @@ public class ListEventTargetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventTargetRequest listEventTargetRequest = (ListEventTargetRequest) o;
-        return Objects.equals(this.offset, listEventTargetRequest.offset)
-            && Objects.equals(this.limit, listEventTargetRequest.limit)
-            && Objects.equals(this.sort, listEventTargetRequest.sort)
-            && Objects.equals(this.fuzzyLabel, listEventTargetRequest.fuzzyLabel)
-            && Objects.equals(this.supportTypes, listEventTargetRequest.supportTypes);
+        ListEventTargetRequest that = (ListEventTargetRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.fuzzyLabel, that.fuzzyLabel)
+            && Objects.equals(this.supportTypes, that.supportTypes);
     }
 
     @Override

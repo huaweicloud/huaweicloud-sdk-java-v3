@@ -282,23 +282,23 @@ public class ReportOutline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportOutline reportOutline = (ReportOutline) o;
-        return Objects.equals(this.coreIndex, reportOutline.coreIndex)
-            && Objects.equals(this.exceptionResponseSum, reportOutline.exceptionResponseSum)
-            && Objects.equals(this.networkTraffic, reportOutline.networkTraffic)
-            && Objects.equals(this.responseCodeSum, reportOutline.responseCodeSum)
-            && Objects.equals(this.taskBasicAttribute, reportOutline.taskBasicAttribute)
-            && Objects.equals(this.taskBasicExecutionData, reportOutline.taskBasicExecutionData)
-            && Objects.equals(this.responseCodeDetails, reportOutline.responseCodeDetails)
-            && Objects.equals(this.slaStatistic, reportOutline.slaStatistic)
-            && Objects.equals(this.streamingMedia, reportOutline.streamingMedia);
+        ReportOutline that = (ReportOutline) obj;
+        return Objects.equals(this.coreIndex, that.coreIndex)
+            && Objects.equals(this.exceptionResponseSum, that.exceptionResponseSum)
+            && Objects.equals(this.networkTraffic, that.networkTraffic)
+            && Objects.equals(this.responseCodeSum, that.responseCodeSum)
+            && Objects.equals(this.taskBasicAttribute, that.taskBasicAttribute)
+            && Objects.equals(this.taskBasicExecutionData, that.taskBasicExecutionData)
+            && Objects.equals(this.responseCodeDetails, that.responseCodeDetails)
+            && Objects.equals(this.slaStatistic, that.slaStatistic)
+            && Objects.equals(this.streamingMedia, that.streamingMedia);
     }
 
     @Override

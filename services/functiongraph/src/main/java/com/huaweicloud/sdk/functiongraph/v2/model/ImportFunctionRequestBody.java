@@ -121,19 +121,17 @@ public class ImportFunctionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportFunctionRequestBody importFunctionRequestBody = (ImportFunctionRequestBody) o;
-        return Objects.equals(this.funcName, importFunctionRequestBody.funcName)
-            && Objects.equals(this.fileName, importFunctionRequestBody.fileName)
-            && Objects.equals(this.fileType, importFunctionRequestBody.fileType)
-            && Objects.equals(this.fileCode, importFunctionRequestBody.fileCode)
-            && Objects.equals(this._package, importFunctionRequestBody._package);
+        ImportFunctionRequestBody that = (ImportFunctionRequestBody) obj;
+        return Objects.equals(this.funcName, that.funcName) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileType, that.fileType) && Objects.equals(this.fileCode, that.fileCode)
+            && Objects.equals(this._package, that._package);
     }
 
     @Override

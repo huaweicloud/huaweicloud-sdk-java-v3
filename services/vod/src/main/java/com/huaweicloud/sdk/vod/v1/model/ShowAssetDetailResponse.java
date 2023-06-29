@@ -159,19 +159,18 @@ public class ShowAssetDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetDetailResponse showAssetDetailResponse = (ShowAssetDetailResponse) o;
-        return Objects.equals(this.assetId, showAssetDetailResponse.assetId)
-            && Objects.equals(this.baseInfo, showAssetDetailResponse.baseInfo)
-            && Objects.equals(this.transcodeInfo, showAssetDetailResponse.transcodeInfo)
-            && Objects.equals(this.thumbnailInfo, showAssetDetailResponse.thumbnailInfo)
-            && Objects.equals(this.reviewInfo, showAssetDetailResponse.reviewInfo);
+        ShowAssetDetailResponse that = (ShowAssetDetailResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.transcodeInfo, that.transcodeInfo)
+            && Objects.equals(this.thumbnailInfo, that.thumbnailInfo)
+            && Objects.equals(this.reviewInfo, that.reviewInfo);
     }
 
     @Override

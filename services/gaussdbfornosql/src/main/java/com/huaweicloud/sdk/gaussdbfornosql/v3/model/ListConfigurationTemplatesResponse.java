@@ -76,16 +76,15 @@ public class ListConfigurationTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationTemplatesResponse listConfigurationTemplatesResponse = (ListConfigurationTemplatesResponse) o;
-        return Objects.equals(this.count, listConfigurationTemplatesResponse.count)
-            && Objects.equals(this.configurations, listConfigurationTemplatesResponse.configurations);
+        ListConfigurationTemplatesResponse that = (ListConfigurationTemplatesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.configurations, that.configurations);
     }
 
     @Override

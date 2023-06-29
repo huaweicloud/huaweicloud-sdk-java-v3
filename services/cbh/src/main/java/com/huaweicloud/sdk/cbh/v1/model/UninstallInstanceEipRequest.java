@@ -65,16 +65,15 @@ public class UninstallInstanceEipRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UninstallInstanceEipRequest uninstallInstanceEipRequest = (UninstallInstanceEipRequest) o;
-        return Objects.equals(this.serverId, uninstallInstanceEipRequest.serverId)
-            && Objects.equals(this.body, uninstallInstanceEipRequest.body);
+        UninstallInstanceEipRequest that = (UninstallInstanceEipRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

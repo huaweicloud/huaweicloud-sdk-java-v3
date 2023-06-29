@@ -66,22 +66,15 @@ public class BandWidth {
             if (value == null) {
                 return null;
             }
-            SharetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SharetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SharetypeEnum(value));
         }
 
         public static SharetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SharetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class BandWidth {
             if (value == null) {
                 return null;
             }
-            ChargemodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargemodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargemodeEnum(value));
         }
 
         public static ChargemodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargemodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,17 +267,17 @@ public class BandWidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandWidth bandWidth = (BandWidth) o;
-        return Objects.equals(this.name, bandWidth.name) && Objects.equals(this.sharetype, bandWidth.sharetype)
-            && Objects.equals(this.id, bandWidth.id) && Objects.equals(this.size, bandWidth.size)
-            && Objects.equals(this.chargemode, bandWidth.chargemode);
+        BandWidth that = (BandWidth) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.sharetype, that.sharetype)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.chargemode, that.chargemode);
     }
 
     @Override

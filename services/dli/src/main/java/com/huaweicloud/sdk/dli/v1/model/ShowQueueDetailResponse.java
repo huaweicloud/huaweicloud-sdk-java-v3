@@ -408,32 +408,25 @@ public class ShowQueueDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQueueDetailResponse showQueueDetailResponse = (ShowQueueDetailResponse) o;
-        return Objects.equals(this.isSuccess, showQueueDetailResponse.isSuccess)
-            && Objects.equals(this.message, showQueueDetailResponse.message)
-            && Objects.equals(this.queueId, showQueueDetailResponse.queueId)
-            && Objects.equals(this.queueName, showQueueDetailResponse.queueName)
-            && Objects.equals(this.description, showQueueDetailResponse.description)
-            && Objects.equals(this.owner, showQueueDetailResponse.owner)
-            && Objects.equals(this.createTime, showQueueDetailResponse.createTime)
-            && Objects.equals(this.queueType, showQueueDetailResponse.queueType)
-            && Objects.equals(this.cuCount, showQueueDetailResponse.cuCount)
-            && Objects.equals(this.chargingMode, showQueueDetailResponse.chargingMode)
-            && Objects.equals(this.resourceId, showQueueDetailResponse.resourceId)
-            && Objects.equals(this.resourceMode, showQueueDetailResponse.resourceMode)
-            && Objects.equals(this.enterpriseProjectId, showQueueDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.resourceType, showQueueDetailResponse.resourceType)
-            && Objects.equals(this.cuSpec, showQueueDetailResponse.cuSpec)
-            && Objects.equals(this.cuScaleOutLimit, showQueueDetailResponse.cuScaleOutLimit)
-            && Objects.equals(this.cuScaleInLimit, showQueueDetailResponse.cuScaleInLimit)
-            && Objects.equals(this.elasticResourcePoolName, showQueueDetailResponse.elasticResourcePoolName);
+        ShowQueueDetailResponse that = (ShowQueueDetailResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.queueId, that.queueId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.queueType, that.queueType)
+            && Objects.equals(this.cuCount, that.cuCount) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceMode, that.resourceMode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.cuSpec, that.cuSpec)
+            && Objects.equals(this.cuScaleOutLimit, that.cuScaleOutLimit)
+            && Objects.equals(this.cuScaleInLimit, that.cuScaleInLimit)
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName);
     }
 
     @Override

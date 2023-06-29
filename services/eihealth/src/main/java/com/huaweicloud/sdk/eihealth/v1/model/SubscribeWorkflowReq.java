@@ -99,18 +99,17 @@ public class SubscribeWorkflowReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscribeWorkflowReq subscribeWorkflowReq = (SubscribeWorkflowReq) o;
-        return Objects.equals(this.assetId, subscribeWorkflowReq.assetId)
-            && Objects.equals(this.assetVersion, subscribeWorkflowReq.assetVersion)
-            && Objects.equals(this.destinationWorkflowName, subscribeWorkflowReq.destinationWorkflowName)
-            && Objects.equals(this.destinationWorkflowVersion, subscribeWorkflowReq.destinationWorkflowVersion);
+        SubscribeWorkflowReq that = (SubscribeWorkflowReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetVersion, that.assetVersion)
+            && Objects.equals(this.destinationWorkflowName, that.destinationWorkflowName)
+            && Objects.equals(this.destinationWorkflowVersion, that.destinationWorkflowVersion);
     }
 
     @Override

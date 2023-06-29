@@ -65,16 +65,15 @@ public class KeystoneCreateAgencyTokenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateAgencyTokenRequest keystoneCreateAgencyTokenRequest = (KeystoneCreateAgencyTokenRequest) o;
-        return Objects.equals(this.nocatalog, keystoneCreateAgencyTokenRequest.nocatalog)
-            && Objects.equals(this.body, keystoneCreateAgencyTokenRequest.body);
+        KeystoneCreateAgencyTokenRequest that = (KeystoneCreateAgencyTokenRequest) obj;
+        return Objects.equals(this.nocatalog, that.nocatalog) && Objects.equals(this.body, that.body);
     }
 
     @Override

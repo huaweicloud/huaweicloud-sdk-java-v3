@@ -60,22 +60,15 @@ public class ListProvidersRequest {
             if (value == null) {
                 return null;
             }
-            LocaleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LocaleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LocaleEnum(value));
         }
 
         public static LocaleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LocaleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,16 @@ public class ListProvidersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProvidersRequest listProvidersRequest = (ListProvidersRequest) o;
-        return Objects.equals(this.locale, listProvidersRequest.locale)
-            && Objects.equals(this.limit, listProvidersRequest.limit)
-            && Objects.equals(this.offset, listProvidersRequest.offset)
-            && Objects.equals(this.provider, listProvidersRequest.provider);
+        ListProvidersRequest that = (ListProvidersRequest) obj;
+        return Objects.equals(this.locale, that.locale) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.provider, that.provider);
     }
 
     @Override

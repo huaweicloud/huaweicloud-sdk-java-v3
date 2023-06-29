@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.CreateStackRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class CreateStackRequest  {
-
+public class CreateStackRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Client-Request-Id")
-    
+    @JsonProperty(value = "Client-Request-Id")
 
     private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private CreateStackRequestBody body;
 
@@ -35,9 +25,6 @@ public class CreateStackRequest  {
         this.clientRequestId = clientRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -51,22 +38,19 @@ public class CreateStackRequest  {
         this.clientRequestId = clientRequestId;
     }
 
-    
-
     public CreateStackRequest withBody(CreateStackRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateStackRequest withBody(Consumer<CreateStackRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateStackRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class CreateStackRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStackRequest createStackRequest = (CreateStackRequest) o;
-        return Objects.equals(this.clientRequestId, createStackRequest.clientRequestId) &&
-            Objects.equals(this.body, createStackRequest.body);
+        CreateStackRequest that = (CreateStackRequest) obj;
+        return Objects.equals(this.clientRequestId, that.clientRequestId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientRequestId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class CreateStackRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class CreateStackRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

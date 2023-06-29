@@ -77,16 +77,16 @@ public class FeatureToggleV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FeatureToggleV2 featureToggleV2 = (FeatureToggleV2) o;
-        return Objects.equals(this.name, featureToggleV2.name) && Objects.equals(this.enable, featureToggleV2.enable)
-            && Objects.equals(this.config, featureToggleV2.config);
+        FeatureToggleV2 that = (FeatureToggleV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.enable, that.enable)
+            && Objects.equals(this.config, that.config);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdateDataPathPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataPathPolicyRequest updateDataPathPolicyRequest = (UpdateDataPathPolicyRequest) o;
-        return Objects.equals(this.eihealthProjectId, updateDataPathPolicyRequest.eihealthProjectId)
-            && Objects.equals(this.path, updateDataPathPolicyRequest.path)
-            && Objects.equals(this.body, updateDataPathPolicyRequest.body);
+        UpdateDataPathPolicyRequest that = (UpdateDataPathPolicyRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

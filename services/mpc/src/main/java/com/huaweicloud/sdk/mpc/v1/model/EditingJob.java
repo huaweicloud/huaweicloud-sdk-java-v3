@@ -350,23 +350,21 @@ public class EditingJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EditingJob editingJob = (EditingJob) o;
-        return Objects.equals(this.taskId, editingJob.taskId) && Objects.equals(this.status, editingJob.status)
-            && Objects.equals(this.createTime, editingJob.createTime)
-            && Objects.equals(this.startTime, editingJob.startTime) && Objects.equals(this.endTime, editingJob.endTime)
-            && Objects.equals(this.errorCode, editingJob.errorCode)
-            && Objects.equals(this.description, editingJob.description)
-            && Objects.equals(this.userData, editingJob.userData) && Objects.equals(this.jobId, editingJob.jobId)
-            && Objects.equals(this.editType, editingJob.editType) && Objects.equals(this.output, editingJob.output)
-            && Objects.equals(this.editTaskReq, editingJob.editTaskReq)
-            && Objects.equals(this.outputFileInfo, editingJob.outputFileInfo);
+        EditingJob that = (EditingJob) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.editType, that.editType)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.editTaskReq, that.editTaskReq)
+            && Objects.equals(this.outputFileInfo, that.outputFileInfo);
     }
 
     @Override

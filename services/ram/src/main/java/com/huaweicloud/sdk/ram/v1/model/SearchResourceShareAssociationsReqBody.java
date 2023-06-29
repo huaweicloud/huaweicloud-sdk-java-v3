@@ -68,22 +68,15 @@ public class SearchResourceShareAssociationsReqBody {
             if (value == null) {
                 return null;
             }
-            AssociationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssociationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssociationTypeEnum(value));
         }
 
         public static AssociationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssociationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,23 +299,20 @@ public class SearchResourceShareAssociationsReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResourceShareAssociationsReqBody searchResourceShareAssociationsReqBody =
-            (SearchResourceShareAssociationsReqBody) o;
-        return Objects.equals(this.associationStatus, searchResourceShareAssociationsReqBody.associationStatus)
-            && Objects.equals(this.associationType, searchResourceShareAssociationsReqBody.associationType)
-            && Objects.equals(this.limit, searchResourceShareAssociationsReqBody.limit)
-            && Objects.equals(this.marker, searchResourceShareAssociationsReqBody.marker)
-            && Objects.equals(this.principal, searchResourceShareAssociationsReqBody.principal)
-            && Objects.equals(this.resourceUrn, searchResourceShareAssociationsReqBody.resourceUrn)
-            && Objects.equals(this.resourceShareIds, searchResourceShareAssociationsReqBody.resourceShareIds)
-            && Objects.equals(this.resourceIds, searchResourceShareAssociationsReqBody.resourceIds);
+        SearchResourceShareAssociationsReqBody that = (SearchResourceShareAssociationsReqBody) obj;
+        return Objects.equals(this.associationStatus, that.associationStatus)
+            && Objects.equals(this.associationType, that.associationType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.principal, that.principal)
+            && Objects.equals(this.resourceUrn, that.resourceUrn)
+            && Objects.equals(this.resourceShareIds, that.resourceShareIds)
+            && Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override

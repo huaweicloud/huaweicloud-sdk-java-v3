@@ -651,43 +651,35 @@ public class ShowTaskDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskDetailResponse showTaskDetailResponse = (ShowTaskDetailResponse) o;
-        return Objects.equals(this.taskId, showTaskDetailResponse.taskId)
-            && Objects.equals(this.taskName, showTaskDetailResponse.taskName)
-            && Objects.equals(this.creatorId, showTaskDetailResponse.creatorId)
-            && Objects.equals(this.gitUrl, showTaskDetailResponse.gitUrl)
-            && Objects.equals(this.gitBranch, showTaskDetailResponse.gitBranch)
-            && Objects.equals(this.lastCheckTime, showTaskDetailResponse.lastCheckTime)
-            && Objects.equals(this.codeLineTotal, showTaskDetailResponse.codeLineTotal)
-            && Objects.equals(this.codeLine, showTaskDetailResponse.codeLine)
-            && Objects.equals(this.codeQuality, showTaskDetailResponse.codeQuality)
-            && Objects.equals(this.issueCount, showTaskDetailResponse.issueCount)
-            && Objects.equals(this.riskCoefficient, showTaskDetailResponse.riskCoefficient)
-            && Objects.equals(this.duplicationRatio, showTaskDetailResponse.duplicationRatio)
-            && Objects.equals(this.complexityCount, showTaskDetailResponse.complexityCount)
-            && Objects.equals(this.duplicatedLines, showTaskDetailResponse.duplicatedLines)
-            && Objects.equals(this.commentLines, showTaskDetailResponse.commentLines)
-            && Objects.equals(this.commentRatio, showTaskDetailResponse.commentRatio)
-            && Objects.equals(this.duplicatedBlocks, showTaskDetailResponse.duplicatedBlocks)
-            && Objects.equals(this.lastExecTime, showTaskDetailResponse.lastExecTime)
-            && Objects.equals(this.checkType, showTaskDetailResponse.checkType)
-            && Objects.equals(this.createdAt, showTaskDetailResponse.createdAt)
-            && Objects.equals(this.cyclomaticComplexityPerMethod, showTaskDetailResponse.cyclomaticComplexityPerMethod)
-            && Objects.equals(this.cyclomaticComplexityPerFile, showTaskDetailResponse.cyclomaticComplexityPerFile)
-            && Objects.equals(this.criticalCount, showTaskDetailResponse.criticalCount)
-            && Objects.equals(this.majorCount, showTaskDetailResponse.majorCount)
-            && Objects.equals(this.minorCount, showTaskDetailResponse.minorCount)
-            && Objects.equals(this.suggestionCount, showTaskDetailResponse.suggestionCount)
-            && Objects.equals(this.isAccess, showTaskDetailResponse.isAccess)
-            && Objects.equals(this.triggerType, showTaskDetailResponse.triggerType)
-            && Objects.equals(this.fileDuplicationRatio, showTaskDetailResponse.fileDuplicationRatio);
+        ShowTaskDetailResponse that = (ShowTaskDetailResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.lastCheckTime, that.lastCheckTime)
+            && Objects.equals(this.codeLineTotal, that.codeLineTotal) && Objects.equals(this.codeLine, that.codeLine)
+            && Objects.equals(this.codeQuality, that.codeQuality) && Objects.equals(this.issueCount, that.issueCount)
+            && Objects.equals(this.riskCoefficient, that.riskCoefficient)
+            && Objects.equals(this.duplicationRatio, that.duplicationRatio)
+            && Objects.equals(this.complexityCount, that.complexityCount)
+            && Objects.equals(this.duplicatedLines, that.duplicatedLines)
+            && Objects.equals(this.commentLines, that.commentLines)
+            && Objects.equals(this.commentRatio, that.commentRatio)
+            && Objects.equals(this.duplicatedBlocks, that.duplicatedBlocks)
+            && Objects.equals(this.lastExecTime, that.lastExecTime) && Objects.equals(this.checkType, that.checkType)
+            && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.cyclomaticComplexityPerMethod, that.cyclomaticComplexityPerMethod)
+            && Objects.equals(this.cyclomaticComplexityPerFile, that.cyclomaticComplexityPerFile)
+            && Objects.equals(this.criticalCount, that.criticalCount)
+            && Objects.equals(this.majorCount, that.majorCount) && Objects.equals(this.minorCount, that.minorCount)
+            && Objects.equals(this.suggestionCount, that.suggestionCount)
+            && Objects.equals(this.isAccess, that.isAccess) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.fileDuplicationRatio, that.fileDuplicationRatio);
     }
 
     @Override

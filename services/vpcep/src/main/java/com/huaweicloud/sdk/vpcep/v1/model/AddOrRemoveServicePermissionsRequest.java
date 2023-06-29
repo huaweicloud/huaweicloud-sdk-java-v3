@@ -66,17 +66,16 @@ public class AddOrRemoveServicePermissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddOrRemoveServicePermissionsRequest addOrRemoveServicePermissionsRequest =
-            (AddOrRemoveServicePermissionsRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, addOrRemoveServicePermissionsRequest.vpcEndpointServiceId)
-            && Objects.equals(this.body, addOrRemoveServicePermissionsRequest.body);
+        AddOrRemoveServicePermissionsRequest that = (AddOrRemoveServicePermissionsRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

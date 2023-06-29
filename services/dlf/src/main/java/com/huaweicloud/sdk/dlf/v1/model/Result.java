@@ -99,16 +99,16 @@ public class Result {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Result result = (Result) o;
-        return Objects.equals(this.message, result.message) && Objects.equals(this.rowCount, result.rowCount)
-            && Objects.equals(this.rows, result.rows) && Objects.equals(this.schema, result.schema);
+        Result that = (Result) obj;
+        return Objects.equals(this.message, that.message) && Objects.equals(this.rowCount, that.rowCount)
+            && Objects.equals(this.rows, that.rows) && Objects.equals(this.schema, that.schema);
     }
 
     @Override

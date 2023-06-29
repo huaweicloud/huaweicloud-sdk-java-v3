@@ -120,18 +120,16 @@ public class CreateExtractTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateExtractTaskReq createExtractTaskReq = (CreateExtractTaskReq) o;
-        return Objects.equals(this.input, createExtractTaskReq.input)
-            && Objects.equals(this.output, createExtractTaskReq.output)
-            && Objects.equals(this.userData, createExtractTaskReq.userData)
-            && Objects.equals(this.sync, createExtractTaskReq.sync);
+        CreateExtractTaskReq that = (CreateExtractTaskReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.sync, that.sync);
     }
 
     @Override

@@ -71,22 +71,15 @@ public class CoditionResp {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionTypeEnum(value));
         }
 
         public static ConditionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class CoditionResp {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionOriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionOriginEnum(value));
         }
 
         public static ConditionOriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -330,20 +316,20 @@ public class CoditionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CoditionResp coditionResp = (CoditionResp) o;
-        return Objects.equals(this.reqParamName, coditionResp.reqParamName)
-            && Objects.equals(this.conditionType, coditionResp.conditionType)
-            && Objects.equals(this.conditionOrigin, coditionResp.conditionOrigin)
-            && Objects.equals(this.conditionValue, coditionResp.conditionValue)
-            && Objects.equals(this.id, coditionResp.id) && Objects.equals(this.reqParamId, coditionResp.reqParamId)
-            && Objects.equals(this.reqParamLocation, coditionResp.reqParamLocation);
+        CoditionResp that = (CoditionResp) obj;
+        return Objects.equals(this.reqParamName, that.reqParamName)
+            && Objects.equals(this.conditionType, that.conditionType)
+            && Objects.equals(this.conditionOrigin, that.conditionOrigin)
+            && Objects.equals(this.conditionValue, that.conditionValue) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.reqParamId, that.reqParamId)
+            && Objects.equals(this.reqParamLocation, that.reqParamLocation);
     }
 
     @Override

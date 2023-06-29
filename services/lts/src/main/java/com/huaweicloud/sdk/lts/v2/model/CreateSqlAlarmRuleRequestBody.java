@@ -100,22 +100,15 @@ public class CreateSqlAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAlarmLevelEnum(value));
         }
 
         public static SqlAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -429,27 +422,25 @@ public class CreateSqlAlarmRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSqlAlarmRuleRequestBody createSqlAlarmRuleRequestBody = (CreateSqlAlarmRuleRequestBody) o;
-        return Objects.equals(this.sqlAlarmRuleName, createSqlAlarmRuleRequestBody.sqlAlarmRuleName)
-            && Objects.equals(this.sqlAlarmRuleDescription, createSqlAlarmRuleRequestBody.sqlAlarmRuleDescription)
-            && Objects.equals(this.sqlRequests, createSqlAlarmRuleRequestBody.sqlRequests)
-            && Objects.equals(this.frequency, createSqlAlarmRuleRequestBody.frequency)
-            && Objects.equals(this.conditionExpression, createSqlAlarmRuleRequestBody.conditionExpression)
-            && Objects.equals(this.sqlAlarmLevel, createSqlAlarmRuleRequestBody.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, createSqlAlarmRuleRequestBody.sqlAlarmSend)
-            && Objects.equals(this.domainId, createSqlAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, createSqlAlarmRuleRequestBody.notificationSaveRule)
-            && Objects.equals(this.triggerConditionCount, createSqlAlarmRuleRequestBody.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency, createSqlAlarmRuleRequestBody.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, createSqlAlarmRuleRequestBody.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, createSqlAlarmRuleRequestBody.recoveryPolicy);
+        CreateSqlAlarmRuleRequestBody that = (CreateSqlAlarmRuleRequestBody) obj;
+        return Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+            && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
+            && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.conditionExpression, that.conditionExpression)
+            && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
+            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.notificationSaveRule, that.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

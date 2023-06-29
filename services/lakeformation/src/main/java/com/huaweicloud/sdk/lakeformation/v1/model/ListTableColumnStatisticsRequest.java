@@ -131,19 +131,17 @@ public class ListTableColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableColumnStatisticsRequest listTableColumnStatisticsRequest = (ListTableColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, listTableColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, listTableColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, listTableColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, listTableColumnStatisticsRequest.tableName)
-            && Objects.equals(this.body, listTableColumnStatisticsRequest.body);
+        ListTableColumnStatisticsRequest that = (ListTableColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

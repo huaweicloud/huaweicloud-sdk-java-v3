@@ -99,18 +99,17 @@ public class PerformanceResourcesRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PerformanceResourcesRsp performanceResourcesRsp = (PerformanceResourcesRsp) o;
-        return Objects.equals(this.id, performanceResourcesRsp.id)
-            && Objects.equals(this.name, performanceResourcesRsp.name)
-            && Objects.equals(this.runningJobCount, performanceResourcesRsp.runningJobCount)
-            && Objects.equals(this.schedulable, performanceResourcesRsp.schedulable);
+        PerformanceResourcesRsp that = (PerformanceResourcesRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.runningJobCount, that.runningJobCount)
+            && Objects.equals(this.schedulable, that.schedulable);
     }
 
     @Override

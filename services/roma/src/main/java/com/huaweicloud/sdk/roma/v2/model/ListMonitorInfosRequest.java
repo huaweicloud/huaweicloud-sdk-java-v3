@@ -104,22 +104,15 @@ public class ListMonitorInfosRequest {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecuteStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecuteStatusEnum(value));
         }
 
         public static ExecuteStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecuteStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -231,19 +224,17 @@ public class ListMonitorInfosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitorInfosRequest listMonitorInfosRequest = (ListMonitorInfosRequest) o;
-        return Objects.equals(this.instanceId, listMonitorInfosRequest.instanceId)
-            && Objects.equals(this.offset, listMonitorInfosRequest.offset)
-            && Objects.equals(this.limit, listMonitorInfosRequest.limit)
-            && Objects.equals(this.taskName, listMonitorInfosRequest.taskName)
-            && Objects.equals(this.executeStatus, listMonitorInfosRequest.executeStatus);
+        ListMonitorInfosRequest that = (ListMonitorInfosRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.executeStatus, that.executeStatus);
     }
 
     @Override

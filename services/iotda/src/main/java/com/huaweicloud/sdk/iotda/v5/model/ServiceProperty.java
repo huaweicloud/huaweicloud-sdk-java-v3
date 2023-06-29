@@ -294,24 +294,21 @@ public class ServiceProperty {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceProperty serviceProperty = (ServiceProperty) o;
-        return Objects.equals(this.propertyName, serviceProperty.propertyName)
-            && Objects.equals(this.dataType, serviceProperty.dataType)
-            && Objects.equals(this.required, serviceProperty.required)
-            && Objects.equals(this.enumList, serviceProperty.enumList) && Objects.equals(this.min, serviceProperty.min)
-            && Objects.equals(this.max, serviceProperty.max)
-            && Objects.equals(this.maxLength, serviceProperty.maxLength)
-            && Objects.equals(this.step, serviceProperty.step) && Objects.equals(this.unit, serviceProperty.unit)
-            && Objects.equals(this.method, serviceProperty.method)
-            && Objects.equals(this.description, serviceProperty.description)
-            && Objects.equals(this.defaultValue, serviceProperty.defaultValue);
+        ServiceProperty that = (ServiceProperty) obj;
+        return Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.enumList, that.enumList)
+            && Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.maxLength, that.maxLength) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.defaultValue, that.defaultValue);
     }
 
     @Override

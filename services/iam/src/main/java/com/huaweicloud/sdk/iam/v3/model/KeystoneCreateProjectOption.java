@@ -99,18 +99,16 @@ public class KeystoneCreateProjectOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateProjectOption keystoneCreateProjectOption = (KeystoneCreateProjectOption) o;
-        return Objects.equals(this.name, keystoneCreateProjectOption.name)
-            && Objects.equals(this.parentId, keystoneCreateProjectOption.parentId)
-            && Objects.equals(this.domainId, keystoneCreateProjectOption.domainId)
-            && Objects.equals(this.description, keystoneCreateProjectOption.description);
+        KeystoneCreateProjectOption that = (KeystoneCreateProjectOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.description, that.description);
     }
 
     @Override

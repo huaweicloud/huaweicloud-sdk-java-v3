@@ -124,22 +124,15 @@ public class WorkspaceVO {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -443,25 +436,22 @@ public class WorkspaceVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkspaceVO workspaceVO = (WorkspaceVO) o;
-        return Objects.equals(this.id, workspaceVO.id) && Objects.equals(this.name, workspaceVO.name)
-            && Objects.equals(this.description, workspaceVO.description)
-            && Objects.equals(this.isPhysical, workspaceVO.isPhysical)
-            && Objects.equals(this.frequent, workspaceVO.frequent) && Objects.equals(this.top, workspaceVO.top)
-            && Objects.equals(this.level, workspaceVO.level) && Objects.equals(this.dwType, workspaceVO.dwType)
-            && Objects.equals(this.createTime, workspaceVO.createTime)
-            && Objects.equals(this.updateTime, workspaceVO.updateTime)
-            && Objects.equals(this.createBy, workspaceVO.createBy)
-            && Objects.equals(this.updateBy, workspaceVO.updateBy) && Objects.equals(this.type, workspaceVO.type)
-            && Objects.equals(this.bizCatalogIds, workspaceVO.bizCatalogIds)
-            && Objects.equals(this.databases, workspaceVO.databases);
+        WorkspaceVO that = (WorkspaceVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isPhysical, that.isPhysical)
+            && Objects.equals(this.frequent, that.frequent) && Objects.equals(this.top, that.top)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.bizCatalogIds, that.bizCatalogIds)
+            && Objects.equals(this.databases, that.databases);
     }
 
     @Override

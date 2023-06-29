@@ -77,16 +77,15 @@ public class ListAppStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppStatisticsResponse listAppStatisticsResponse = (ListAppStatisticsResponse) o;
-        return Objects.equals(this.totalNum, listAppStatisticsResponse.totalNum)
-            && Objects.equals(this.dataList, listAppStatisticsResponse.dataList);
+        ListAppStatisticsResponse that = (ListAppStatisticsResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

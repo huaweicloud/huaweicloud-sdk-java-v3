@@ -96,17 +96,16 @@ public class CreateDiagnosisTaskBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDiagnosisTaskBody createDiagnosisTaskBody = (CreateDiagnosisTaskBody) o;
-        return Objects.equals(this.beginTime, createDiagnosisTaskBody.beginTime)
-            && Objects.equals(this.endTime, createDiagnosisTaskBody.endTime)
-            && Objects.equals(this.nodeIpList, createDiagnosisTaskBody.nodeIpList);
+        CreateDiagnosisTaskBody that = (CreateDiagnosisTaskBody) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.nodeIpList, that.nodeIpList);
     }
 
     @Override

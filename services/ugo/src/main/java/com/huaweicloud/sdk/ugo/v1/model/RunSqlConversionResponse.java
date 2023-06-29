@@ -97,17 +97,17 @@ public class RunSqlConversionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunSqlConversionResponse runSqlConversionResponse = (RunSqlConversionResponse) o;
-        return Objects.equals(this.isSupportConversion, runSqlConversionResponse.isSupportConversion)
-            && Objects.equals(this.convertedSqlStatement, runSqlConversionResponse.convertedSqlStatement)
-            && Objects.equals(this.unsupportedItems, runSqlConversionResponse.unsupportedItems);
+        RunSqlConversionResponse that = (RunSqlConversionResponse) obj;
+        return Objects.equals(this.isSupportConversion, that.isSupportConversion)
+            && Objects.equals(this.convertedSqlStatement, that.convertedSqlStatement)
+            && Objects.equals(this.unsupportedItems, that.unsupportedItems);
     }
 
     @Override

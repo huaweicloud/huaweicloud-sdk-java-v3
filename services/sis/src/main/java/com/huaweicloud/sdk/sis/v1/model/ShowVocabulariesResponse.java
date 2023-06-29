@@ -75,16 +75,15 @@ public class ShowVocabulariesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVocabulariesResponse showVocabulariesResponse = (ShowVocabulariesResponse) o;
-        return Objects.equals(this.count, showVocabulariesResponse.count)
-            && Objects.equals(this.result, showVocabulariesResponse.result);
+        ShowVocabulariesResponse that = (ShowVocabulariesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.result, that.result);
     }
 
     @Override

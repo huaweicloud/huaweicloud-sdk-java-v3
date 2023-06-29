@@ -65,16 +65,15 @@ public class ResumeScalingPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResumeScalingPolicyRequest resumeScalingPolicyRequest = (ResumeScalingPolicyRequest) o;
-        return Objects.equals(this.scalingPolicyId, resumeScalingPolicyRequest.scalingPolicyId)
-            && Objects.equals(this.body, resumeScalingPolicyRequest.body);
+        ResumeScalingPolicyRequest that = (ResumeScalingPolicyRequest) obj;
+        return Objects.equals(this.scalingPolicyId, that.scalingPolicyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

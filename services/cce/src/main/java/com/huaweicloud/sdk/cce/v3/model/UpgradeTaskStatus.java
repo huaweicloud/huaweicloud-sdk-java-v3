@@ -77,17 +77,16 @@ public class UpgradeTaskStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeTaskStatus upgradeTaskStatus = (UpgradeTaskStatus) o;
-        return Objects.equals(this.phase, upgradeTaskStatus.phase)
-            && Objects.equals(this.progress, upgradeTaskStatus.progress)
-            && Objects.equals(this.completionTime, upgradeTaskStatus.completionTime);
+        UpgradeTaskStatus that = (UpgradeTaskStatus) obj;
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.completionTime, that.completionTime);
     }
 
     @Override

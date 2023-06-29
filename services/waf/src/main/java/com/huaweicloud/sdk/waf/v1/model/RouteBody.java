@@ -96,16 +96,16 @@ public class RouteBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteBody routeBody = (RouteBody) o;
-        return Objects.equals(this.cname, routeBody.cname) && Objects.equals(this.name, routeBody.name)
-            && Objects.equals(this.servers, routeBody.servers);
+        RouteBody that = (RouteBody) obj;
+        return Objects.equals(this.cname, that.cname) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.servers, that.servers);
     }
 
     @Override

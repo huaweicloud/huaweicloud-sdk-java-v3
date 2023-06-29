@@ -77,16 +77,16 @@ public class OfferPage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OfferPage offerPage = (OfferPage) o;
-        return Objects.equals(this.page, offerPage.page) && Objects.equals(this.size, offerPage.size)
-            && Objects.equals(this.offerName, offerPage.offerName);
+        OfferPage that = (OfferPage) obj;
+        return Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.offerName, that.offerName);
     }
 
     @Override

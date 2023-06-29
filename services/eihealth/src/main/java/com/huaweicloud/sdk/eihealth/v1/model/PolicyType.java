@@ -52,22 +52,15 @@ public class PolicyType {
         if (value == null) {
             return null;
         }
-        PolicyType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new PolicyType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyType(value));
     }
 
     public static PolicyType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        PolicyType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

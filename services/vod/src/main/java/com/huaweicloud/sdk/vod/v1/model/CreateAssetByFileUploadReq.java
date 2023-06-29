@@ -93,22 +93,15 @@ public class CreateAssetByFileUploadReq {
             if (value == null) {
                 return null;
             }
-            CoverTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CoverTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CoverTypeEnum(value));
         }
 
         public static CoverTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CoverTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -190,22 +183,15 @@ public class CreateAssetByFileUploadReq {
             if (value == null) {
                 return null;
             }
-            AutoPublishEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AutoPublishEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AutoPublishEnum(value));
         }
 
         public static AutoPublishEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AutoPublishEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -581,31 +567,24 @@ public class CreateAssetByFileUploadReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAssetByFileUploadReq createAssetByFileUploadReq = (CreateAssetByFileUploadReq) o;
-        return Objects.equals(this.title, createAssetByFileUploadReq.title)
-            && Objects.equals(this.description, createAssetByFileUploadReq.description)
-            && Objects.equals(this.videoName, createAssetByFileUploadReq.videoName)
-            && Objects.equals(this.videoType, createAssetByFileUploadReq.videoType)
-            && Objects.equals(this.categoryId, createAssetByFileUploadReq.categoryId)
-            && Objects.equals(this.videoMd5, createAssetByFileUploadReq.videoMd5)
-            && Objects.equals(this.coverType, createAssetByFileUploadReq.coverType)
-            && Objects.equals(this.coverMd5, createAssetByFileUploadReq.coverMd5)
-            && Objects.equals(this.subtitles, createAssetByFileUploadReq.subtitles)
-            && Objects.equals(this.tags, createAssetByFileUploadReq.tags)
-            && Objects.equals(this.autoPublish, createAssetByFileUploadReq.autoPublish)
-            && Objects.equals(this.templateGroupName, createAssetByFileUploadReq.templateGroupName)
-            && Objects.equals(this.autoEncrypt, createAssetByFileUploadReq.autoEncrypt)
-            && Objects.equals(this.autoPreheat, createAssetByFileUploadReq.autoPreheat)
-            && Objects.equals(this.thumbnail, createAssetByFileUploadReq.thumbnail)
-            && Objects.equals(this.review, createAssetByFileUploadReq.review)
-            && Objects.equals(this.workflowName, createAssetByFileUploadReq.workflowName);
+        CreateAssetByFileUploadReq that = (CreateAssetByFileUploadReq) obj;
+        return Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.videoName, that.videoName) && Objects.equals(this.videoType, that.videoType)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.videoMd5, that.videoMd5)
+            && Objects.equals(this.coverType, that.coverType) && Objects.equals(this.coverMd5, that.coverMd5)
+            && Objects.equals(this.subtitles, that.subtitles) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.autoPublish, that.autoPublish)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.autoPreheat, that.autoPreheat)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.review, that.review)
+            && Objects.equals(this.workflowName, that.workflowName);
     }
 
     @Override

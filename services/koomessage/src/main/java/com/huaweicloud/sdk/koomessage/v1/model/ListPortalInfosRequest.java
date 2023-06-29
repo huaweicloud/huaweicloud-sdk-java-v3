@@ -148,20 +148,17 @@ public class ListPortalInfosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortalInfosRequest listPortalInfosRequest = (ListPortalInfosRequest) o;
-        return Objects.equals(this.pubName, listPortalInfosRequest.pubName)
-            && Objects.equals(this.beginTime, listPortalInfosRequest.beginTime)
-            && Objects.equals(this.endTime, listPortalInfosRequest.endTime)
-            && Objects.equals(this.state, listPortalInfosRequest.state)
-            && Objects.equals(this.limit, listPortalInfosRequest.limit)
-            && Objects.equals(this.offset, listPortalInfosRequest.offset);
+        ListPortalInfosRequest that = (ListPortalInfosRequest) obj;
+        return Objects.equals(this.pubName, that.pubName) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

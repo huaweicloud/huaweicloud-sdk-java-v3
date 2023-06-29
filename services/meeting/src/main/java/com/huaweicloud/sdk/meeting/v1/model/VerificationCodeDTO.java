@@ -77,17 +77,17 @@ public class VerificationCodeDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VerificationCodeDTO verificationCodeDTO = (VerificationCodeDTO) o;
-        return Objects.equals(this.contact, verificationCodeDTO.contact)
-            && Objects.equals(this.verificationCode, verificationCodeDTO.verificationCode)
-            && Objects.equals(this.country, verificationCodeDTO.country);
+        VerificationCodeDTO that = (VerificationCodeDTO) obj;
+        return Objects.equals(this.contact, that.contact)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.country, that.country);
     }
 
     @Override

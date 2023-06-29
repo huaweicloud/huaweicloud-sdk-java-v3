@@ -84,16 +84,15 @@ public class ListRacksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRacksResponse listRacksResponse = (ListRacksResponse) o;
-        return Objects.equals(this.racks, listRacksResponse.racks)
-            && Objects.equals(this.pageInfo, listRacksResponse.pageInfo);
+        ListRacksResponse that = (ListRacksResponse) obj;
+        return Objects.equals(this.racks, that.racks) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

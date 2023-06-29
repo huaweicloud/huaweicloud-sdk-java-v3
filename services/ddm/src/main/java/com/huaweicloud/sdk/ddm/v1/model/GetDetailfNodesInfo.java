@@ -77,16 +77,16 @@ public class GetDetailfNodesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDetailfNodesInfo getDetailfNodesInfo = (GetDetailfNodesInfo) o;
-        return Objects.equals(this.status, getDetailfNodesInfo.status)
-            && Objects.equals(this.port, getDetailfNodesInfo.port) && Objects.equals(this.ip, getDetailfNodesInfo.ip);
+        GetDetailfNodesInfo that = (GetDetailfNodesInfo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.ip, that.ip);
     }
 
     @Override

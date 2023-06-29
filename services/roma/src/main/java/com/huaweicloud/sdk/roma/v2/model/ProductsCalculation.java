@@ -59,16 +59,16 @@ public class ProductsCalculation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductsCalculation productsCalculation = (ProductsCalculation) o;
-        return Objects.equals(this.normalProductsNumbers, productsCalculation.normalProductsNumbers)
-            && Objects.equals(this.gatewayProductsNumbers, productsCalculation.gatewayProductsNumbers);
+        ProductsCalculation that = (ProductsCalculation) obj;
+        return Objects.equals(this.normalProductsNumbers, that.normalProductsNumbers)
+            && Objects.equals(this.gatewayProductsNumbers, that.gatewayProductsNumbers);
     }
 
     @Override

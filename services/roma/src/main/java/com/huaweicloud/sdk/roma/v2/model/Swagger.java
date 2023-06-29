@@ -55,15 +55,15 @@ public class Swagger {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Swagger swagger = (Swagger) o;
-        return Objects.equals(this.id, swagger.id) && Objects.equals(this.result, swagger.result);
+        Swagger that = (Swagger) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.result, that.result);
     }
 
     @Override

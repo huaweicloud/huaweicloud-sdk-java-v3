@@ -321,26 +321,20 @@ public class CreateAimPersonalTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAimPersonalTemplateRequestBody createAimPersonalTemplateRequestBody =
-            (CreateAimPersonalTemplateRequestBody) o;
-        return Objects.equals(this.cardId, createAimPersonalTemplateRequestBody.cardId)
-            && Objects.equals(this.tplName, createAimPersonalTemplateRequestBody.tplName)
-            && Objects.equals(this.scene, createAimPersonalTemplateRequestBody.scene)
-            && Objects.equals(this.useId, createAimPersonalTemplateRequestBody.useId)
-            && Objects.equals(this.subType, createAimPersonalTemplateRequestBody.subType)
-            && Objects.equals(this.smsExample, createAimPersonalTemplateRequestBody.smsExample)
-            && Objects.equals(this.smsSigns, createAimPersonalTemplateRequestBody.smsSigns)
-            && Objects.equals(this.smsTemplate, createAimPersonalTemplateRequestBody.smsTemplate)
-            && Objects.equals(this.pages, createAimPersonalTemplateRequestBody.pages)
-            && Objects.equals(this.params, createAimPersonalTemplateRequestBody.params)
-            && Objects.equals(this.factorys, createAimPersonalTemplateRequestBody.factorys);
+        CreateAimPersonalTemplateRequestBody that = (CreateAimPersonalTemplateRequestBody) obj;
+        return Objects.equals(this.cardId, that.cardId) && Objects.equals(this.tplName, that.tplName)
+            && Objects.equals(this.scene, that.scene) && Objects.equals(this.useId, that.useId)
+            && Objects.equals(this.subType, that.subType) && Objects.equals(this.smsExample, that.smsExample)
+            && Objects.equals(this.smsSigns, that.smsSigns) && Objects.equals(this.smsTemplate, that.smsTemplate)
+            && Objects.equals(this.pages, that.pages) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.factorys, that.factorys);
     }
 
     @Override

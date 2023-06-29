@@ -514,32 +514,26 @@ public class ClientSpanInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClientSpanInfo clientSpanInfo = (ClientSpanInfo) o;
-        return Objects.equals(this.globalTraceId, clientSpanInfo.globalTraceId)
-            && Objects.equals(this.globalPath, clientSpanInfo.globalPath)
-            && Objects.equals(this.traceId, clientSpanInfo.traceId)
-            && Objects.equals(this.spanId, clientSpanInfo.spanId) && Objects.equals(this.envId, clientSpanInfo.envId)
-            && Objects.equals(this.instanceId, clientSpanInfo.instanceId)
-            && Objects.equals(this.appId, clientSpanInfo.appId) && Objects.equals(this.bizId, clientSpanInfo.bizId)
-            && Objects.equals(this.domainId, clientSpanInfo.domainId)
-            && Objects.equals(this.source, clientSpanInfo.source)
-            && Objects.equals(this.realSource, clientSpanInfo.realSource)
-            && Objects.equals(this.startTime, clientSpanInfo.startTime)
-            && Objects.equals(this.timeUsed, clientSpanInfo.timeUsed) && Objects.equals(this.code, clientSpanInfo.code)
-            && Objects.equals(this.className, clientSpanInfo.className)
-            && Objects.equals(this.isAsync, clientSpanInfo.isAsync) && Objects.equals(this.tags, clientSpanInfo.tags)
-            && Objects.equals(this.hasError, clientSpanInfo.hasError)
-            && Objects.equals(this.errorReasons, clientSpanInfo.errorReasons)
-            && Objects.equals(this.type, clientSpanInfo.type)
-            && Objects.equals(this.httpMethod, clientSpanInfo.httpMethod)
-            && Objects.equals(this.bizCode, clientSpanInfo.bizCode);
+        ClientSpanInfo that = (ClientSpanInfo) obj;
+        return Objects.equals(this.globalTraceId, that.globalTraceId)
+            && Objects.equals(this.globalPath, that.globalPath) && Objects.equals(this.traceId, that.traceId)
+            && Objects.equals(this.spanId, that.spanId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.realSource, that.realSource)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeUsed, that.timeUsed)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.isAsync, that.isAsync) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.hasError, that.hasError) && Objects.equals(this.errorReasons, that.errorReasons)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.httpMethod, that.httpMethod)
+            && Objects.equals(this.bizCode, that.bizCode);
     }
 
     @Override

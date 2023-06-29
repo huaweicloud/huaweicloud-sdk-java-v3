@@ -95,22 +95,15 @@ public class PluginInfo {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginTypeEnum(value));
         }
 
         public static PluginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class PluginInfo {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginScopeEnum(value));
         }
 
         public static PluginScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -365,21 +351,18 @@ public class PluginInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginInfo pluginInfo = (PluginInfo) o;
-        return Objects.equals(this.pluginId, pluginInfo.pluginId)
-            && Objects.equals(this.pluginName, pluginInfo.pluginName)
-            && Objects.equals(this.pluginType, pluginInfo.pluginType)
-            && Objects.equals(this.pluginScope, pluginInfo.pluginScope)
-            && Objects.equals(this.pluginContent, pluginInfo.pluginContent)
-            && Objects.equals(this.remark, pluginInfo.remark) && Objects.equals(this.createTime, pluginInfo.createTime)
-            && Objects.equals(this.updateTime, pluginInfo.updateTime);
+        PluginInfo that = (PluginInfo) obj;
+        return Objects.equals(this.pluginId, that.pluginId) && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.pluginType, that.pluginType) && Objects.equals(this.pluginScope, that.pluginScope)
+            && Objects.equals(this.pluginContent, that.pluginContent) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

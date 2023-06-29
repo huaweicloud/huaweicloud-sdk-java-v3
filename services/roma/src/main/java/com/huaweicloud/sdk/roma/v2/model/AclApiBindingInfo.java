@@ -122,18 +122,17 @@ public class AclApiBindingInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclApiBindingInfo aclApiBindingInfo = (AclApiBindingInfo) o;
-        return Objects.equals(this.id, aclApiBindingInfo.id) && Objects.equals(this.apiId, aclApiBindingInfo.apiId)
-            && Objects.equals(this.envId, aclApiBindingInfo.envId)
-            && Objects.equals(this.aclId, aclApiBindingInfo.aclId)
-            && Objects.equals(this.createTime, aclApiBindingInfo.createTime);
+        AclApiBindingInfo that = (AclApiBindingInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.aclId, that.aclId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

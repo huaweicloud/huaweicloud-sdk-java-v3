@@ -295,20 +295,20 @@ public class Agent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Agent agent = (Agent) o;
-        return Objects.equals(this.createdAt, agent.createdAt) && Objects.equals(this.updatedAt, agent.updatedAt)
-            && Objects.equals(this.agentId, agent.agentId) && Objects.equals(this.agentVersion, agent.agentVersion)
-            && Objects.equals(this.agentType, agent.agentType) && Objects.equals(this.hostName, agent.hostName)
-            && Objects.equals(this.hostNickname, agent.hostNickname) && Objects.equals(this.hostIp, agent.hostIp)
-            && Objects.equals(this.hostOs, agent.hostOs) && Objects.equals(this.status, agent.status)
-            && Objects.equals(this.lastActiveTime, agent.lastActiveTime) && Objects.equals(this.paths, agent.paths);
+        Agent that = (Agent) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentVersion, that.agentVersion)
+            && Objects.equals(this.agentType, that.agentType) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostNickname, that.hostNickname) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.hostOs, that.hostOs) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.lastActiveTime, that.lastActiveTime) && Objects.equals(this.paths, that.paths);
     }
 
     @Override

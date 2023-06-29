@@ -77,17 +77,16 @@ public class TimeBoundary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeBoundary timeBoundary = (TimeBoundary) o;
-        return Objects.equals(this.startTime, timeBoundary.startTime)
-            && Objects.equals(this.endTime, timeBoundary.endTime)
-            && Objects.equals(this.timeZone, timeBoundary.timeZone);
+        TimeBoundary that = (TimeBoundary) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

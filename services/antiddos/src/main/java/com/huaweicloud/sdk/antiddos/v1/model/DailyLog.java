@@ -143,18 +143,18 @@ public class DailyLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DailyLog dailyLog = (DailyLog) o;
-        return Objects.equals(this.startTime, dailyLog.startTime) && Objects.equals(this.endTime, dailyLog.endTime)
-            && Objects.equals(this.status, dailyLog.status) && Objects.equals(this.triggerBps, dailyLog.triggerBps)
-            && Objects.equals(this.triggerPps, dailyLog.triggerPps)
-            && Objects.equals(this.triggerHttpPps, dailyLog.triggerHttpPps);
+        DailyLog that = (DailyLog) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerBps, that.triggerBps)
+            && Objects.equals(this.triggerPps, that.triggerPps)
+            && Objects.equals(this.triggerHttpPps, that.triggerHttpPps);
     }
 
     @Override

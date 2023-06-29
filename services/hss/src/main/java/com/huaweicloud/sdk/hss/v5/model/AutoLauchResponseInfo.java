@@ -235,24 +235,19 @@ public class AutoLauchResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoLauchResponseInfo autoLauchResponseInfo = (AutoLauchResponseInfo) o;
-        return Objects.equals(this.agentId, autoLauchResponseInfo.agentId)
-            && Objects.equals(this.hostId, autoLauchResponseInfo.hostId)
-            && Objects.equals(this.hostName, autoLauchResponseInfo.hostName)
-            && Objects.equals(this.hostIp, autoLauchResponseInfo.hostIp)
-            && Objects.equals(this.name, autoLauchResponseInfo.name)
-            && Objects.equals(this.type, autoLauchResponseInfo.type)
-            && Objects.equals(this.path, autoLauchResponseInfo.path)
-            && Objects.equals(this.hash, autoLauchResponseInfo.hash)
-            && Objects.equals(this.runUser, autoLauchResponseInfo.runUser)
-            && Objects.equals(this.recentScanTime, autoLauchResponseInfo.recentScanTime);
+        AutoLauchResponseInfo that = (AutoLauchResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.hash, that.hash)
+            && Objects.equals(this.runUser, that.runUser) && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

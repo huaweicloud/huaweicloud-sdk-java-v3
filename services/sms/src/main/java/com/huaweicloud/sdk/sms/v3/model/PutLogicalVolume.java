@@ -79,17 +79,16 @@ public class PutLogicalVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutLogicalVolume putLogicalVolume = (PutLogicalVolume) o;
-        return Objects.equals(this.id, putLogicalVolume.id)
-            && Objects.equals(this.needMigration, putLogicalVolume.needMigration)
-            && Objects.equals(this.adjustSize, putLogicalVolume.adjustSize);
+        PutLogicalVolume that = (PutLogicalVolume) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.needMigration, that.needMigration)
+            && Objects.equals(this.adjustSize, that.adjustSize);
     }
 
     @Override

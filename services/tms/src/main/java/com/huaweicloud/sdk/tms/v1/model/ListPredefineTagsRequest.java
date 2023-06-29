@@ -85,22 +85,15 @@ public class ListPredefineTagsRequest {
             if (value == null) {
                 return null;
             }
-            OrderMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderMethodEnum(value));
         }
 
         public static OrderMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,20 +220,17 @@ public class ListPredefineTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPredefineTagsRequest listPredefineTagsRequest = (ListPredefineTagsRequest) o;
-        return Objects.equals(this.key, listPredefineTagsRequest.key)
-            && Objects.equals(this.value, listPredefineTagsRequest.value)
-            && Objects.equals(this.limit, listPredefineTagsRequest.limit)
-            && Objects.equals(this.marker, listPredefineTagsRequest.marker)
-            && Objects.equals(this.orderField, listPredefineTagsRequest.orderField)
-            && Objects.equals(this.orderMethod, listPredefineTagsRequest.orderMethod);
+        ListPredefineTagsRequest that = (ListPredefineTagsRequest) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.orderField, that.orderField) && Objects.equals(this.orderMethod, that.orderMethod);
     }
 
     @Override

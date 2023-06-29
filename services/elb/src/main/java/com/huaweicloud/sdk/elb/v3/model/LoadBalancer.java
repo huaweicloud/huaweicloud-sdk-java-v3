@@ -179,8 +179,8 @@ public class LoadBalancer {
     private List<String> elbVirsubnetIds = null;
 
     /**
-    * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
-    */
+     * 下联面子网类型 - ipv4：ipv4 - dualstack：双栈
+     */
     public static final class ElbVirsubnetTypeEnum {
 
         /**
@@ -223,22 +223,15 @@ public class LoadBalancer {
             if (value == null) {
                 return null;
             }
-            ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ElbVirsubnetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ElbVirsubnetTypeEnum(value));
         }
 
         public static ElbVirsubnetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ElbVirsubnetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,22 +333,15 @@ public class LoadBalancer {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1243,51 +1229,46 @@ public class LoadBalancer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancer loadBalancer = (LoadBalancer) o;
-        return Objects.equals(this.id, loadBalancer.id) && Objects.equals(this.description, loadBalancer.description)
-            && Objects.equals(this.provisioningStatus, loadBalancer.provisioningStatus)
-            && Objects.equals(this.adminStateUp, loadBalancer.adminStateUp)
-            && Objects.equals(this.provider, loadBalancer.provider) && Objects.equals(this.pools, loadBalancer.pools)
-            && Objects.equals(this.listeners, loadBalancer.listeners)
-            && Objects.equals(this.operatingStatus, loadBalancer.operatingStatus)
-            && Objects.equals(this.name, loadBalancer.name) && Objects.equals(this.projectId, loadBalancer.projectId)
-            && Objects.equals(this.vipSubnetCidrId, loadBalancer.vipSubnetCidrId)
-            && Objects.equals(this.vipAddress, loadBalancer.vipAddress)
-            && Objects.equals(this.vipPortId, loadBalancer.vipPortId) && Objects.equals(this.tags, loadBalancer.tags)
-            && Objects.equals(this.createdAt, loadBalancer.createdAt)
-            && Objects.equals(this.updatedAt, loadBalancer.updatedAt)
-            && Objects.equals(this.guaranteed, loadBalancer.guaranteed)
-            && Objects.equals(this.vpcId, loadBalancer.vpcId) && Objects.equals(this.eips, loadBalancer.eips)
-            && Objects.equals(this.ipv6VipAddress, loadBalancer.ipv6VipAddress)
-            && Objects.equals(this.ipv6VipVirsubnetId, loadBalancer.ipv6VipVirsubnetId)
-            && Objects.equals(this.ipv6VipPortId, loadBalancer.ipv6VipPortId)
-            && Objects.equals(this.availabilityZoneList, loadBalancer.availabilityZoneList)
-            && Objects.equals(this.enterpriseProjectId, loadBalancer.enterpriseProjectId)
-            && Objects.equals(this.billingInfo, loadBalancer.billingInfo)
-            && Objects.equals(this.l4FlavorId, loadBalancer.l4FlavorId)
-            && Objects.equals(this.l4ScaleFlavorId, loadBalancer.l4ScaleFlavorId)
-            && Objects.equals(this.l7FlavorId, loadBalancer.l7FlavorId)
-            && Objects.equals(this.l7ScaleFlavorId, loadBalancer.l7ScaleFlavorId)
-            && Objects.equals(this.publicips, loadBalancer.publicips)
-            && Objects.equals(this.globalEips, loadBalancer.globalEips)
-            && Objects.equals(this.elbVirsubnetIds, loadBalancer.elbVirsubnetIds)
-            && Objects.equals(this.elbVirsubnetType, loadBalancer.elbVirsubnetType)
-            && Objects.equals(this.ipTargetEnable, loadBalancer.ipTargetEnable)
-            && Objects.equals(this.frozenScene, loadBalancer.frozenScene)
-            && Objects.equals(this.ipv6Bandwidth, loadBalancer.ipv6Bandwidth)
-            && Objects.equals(this.deletionProtectionEnable, loadBalancer.deletionProtectionEnable)
-            && Objects.equals(this.autoscaling, loadBalancer.autoscaling)
-            && Objects.equals(this.publicBorderGroup, loadBalancer.publicBorderGroup)
-            && Objects.equals(this.wafFailureAction, loadBalancer.wafFailureAction)
-            && Objects.equals(this.protectionStatus, loadBalancer.protectionStatus)
-            && Objects.equals(this.protectionReason, loadBalancer.protectionReason);
+        LoadBalancer that = (LoadBalancer) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.pools, that.pools) && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.operatingStatus, that.operatingStatus) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.vipSubnetCidrId, that.vipSubnetCidrId)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.vipPortId, that.vipPortId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.guaranteed, that.guaranteed)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.eips, that.eips)
+            && Objects.equals(this.ipv6VipAddress, that.ipv6VipAddress)
+            && Objects.equals(this.ipv6VipVirsubnetId, that.ipv6VipVirsubnetId)
+            && Objects.equals(this.ipv6VipPortId, that.ipv6VipPortId)
+            && Objects.equals(this.availabilityZoneList, that.availabilityZoneList)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.billingInfo, that.billingInfo) && Objects.equals(this.l4FlavorId, that.l4FlavorId)
+            && Objects.equals(this.l4ScaleFlavorId, that.l4ScaleFlavorId)
+            && Objects.equals(this.l7FlavorId, that.l7FlavorId)
+            && Objects.equals(this.l7ScaleFlavorId, that.l7ScaleFlavorId)
+            && Objects.equals(this.publicips, that.publicips) && Objects.equals(this.globalEips, that.globalEips)
+            && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds)
+            && Objects.equals(this.elbVirsubnetType, that.elbVirsubnetType)
+            && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
+            && Objects.equals(this.frozenScene, that.frozenScene)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.wafFailureAction, that.wafFailureAction)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override

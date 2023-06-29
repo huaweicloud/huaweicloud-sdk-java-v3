@@ -144,20 +144,18 @@ public class AssociatedPermission {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociatedPermission associatedPermission = (AssociatedPermission) o;
-        return Objects.equals(this.permissionId, associatedPermission.permissionId)
-            && Objects.equals(this.permissionName, associatedPermission.permissionName)
-            && Objects.equals(this.resourceType, associatedPermission.resourceType)
-            && Objects.equals(this.status, associatedPermission.status)
-            && Objects.equals(this.createdAt, associatedPermission.createdAt)
-            && Objects.equals(this.updatedAt, associatedPermission.updatedAt);
+        AssociatedPermission that = (AssociatedPermission) obj;
+        return Objects.equals(this.permissionId, that.permissionId)
+            && Objects.equals(this.permissionName, that.permissionName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

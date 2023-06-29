@@ -103,18 +103,16 @@ public class UploadProcessJsonDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadProcessJsonDetail uploadProcessJsonDetail = (UploadProcessJsonDetail) o;
-        return Objects.equals(this.id, uploadProcessJsonDetail.id)
-            && Objects.equals(this.name, uploadProcessJsonDetail.name)
-            && Objects.equals(this.status, uploadProcessJsonDetail.status)
-            && Objects.equals(this.cause, uploadProcessJsonDetail.cause);
+        UploadProcessJsonDetail that = (UploadProcessJsonDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.cause, that.cause);
     }
 
     @Override

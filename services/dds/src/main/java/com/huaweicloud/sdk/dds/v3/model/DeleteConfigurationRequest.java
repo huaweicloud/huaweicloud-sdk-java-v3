@@ -33,15 +33,15 @@ public class DeleteConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConfigurationRequest deleteConfigurationRequest = (DeleteConfigurationRequest) o;
-        return Objects.equals(this.configId, deleteConfigurationRequest.configId);
+        DeleteConfigurationRequest that = (DeleteConfigurationRequest) obj;
+        return Objects.equals(this.configId, that.configId);
     }
 
     @Override

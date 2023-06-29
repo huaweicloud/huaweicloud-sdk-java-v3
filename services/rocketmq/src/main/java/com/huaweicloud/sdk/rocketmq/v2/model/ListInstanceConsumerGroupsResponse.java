@@ -164,20 +164,18 @@ public class ListInstanceConsumerGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceConsumerGroupsResponse listInstanceConsumerGroupsResponse = (ListInstanceConsumerGroupsResponse) o;
-        return Objects.equals(this.total, listInstanceConsumerGroupsResponse.total)
-            && Objects.equals(this.groups, listInstanceConsumerGroupsResponse.groups)
-            && Objects.equals(this.max, listInstanceConsumerGroupsResponse.max)
-            && Objects.equals(this.remaining, listInstanceConsumerGroupsResponse.remaining)
-            && Objects.equals(this.nextOffset, listInstanceConsumerGroupsResponse.nextOffset)
-            && Objects.equals(this.previousOffset, listInstanceConsumerGroupsResponse.previousOffset);
+        ListInstanceConsumerGroupsResponse that = (ListInstanceConsumerGroupsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.groups, that.groups)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.remaining, that.remaining)
+            && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset);
     }
 
     @Override

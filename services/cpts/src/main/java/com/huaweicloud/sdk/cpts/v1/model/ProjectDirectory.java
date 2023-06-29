@@ -165,20 +165,18 @@ public class ProjectDirectory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectDirectory projectDirectory = (ProjectDirectory) o;
-        return Objects.equals(this.id, projectDirectory.id) && Objects.equals(this.name, projectDirectory.name)
-            && Objects.equals(this.status, projectDirectory.status)
-            && Objects.equals(this.createTime, projectDirectory.createTime)
-            && Objects.equals(this.updateTime, projectDirectory.updateTime)
-            && Objects.equals(this.parentId, projectDirectory.parentId)
-            && Objects.equals(this.type, projectDirectory.type);
+        ProjectDirectory that = (ProjectDirectory) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

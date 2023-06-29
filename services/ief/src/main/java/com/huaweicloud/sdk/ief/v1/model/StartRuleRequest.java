@@ -55,16 +55,15 @@ public class StartRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartRuleRequest startRuleRequest = (StartRuleRequest) o;
-        return Objects.equals(this.iefInstanceId, startRuleRequest.iefInstanceId)
-            && Objects.equals(this.ruleId, startRuleRequest.ruleId);
+        StartRuleRequest that = (StartRuleRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

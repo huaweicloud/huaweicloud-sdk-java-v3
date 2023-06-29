@@ -70,22 +70,15 @@ public class ListDatasourceTablesRequest {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,17 @@ public class ListDatasourceTablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatasourceTablesRequest listDatasourceTablesRequest = (ListDatasourceTablesRequest) o;
-        return Objects.equals(this.instanceId, listDatasourceTablesRequest.instanceId)
-            && Objects.equals(this.datasourceId, listDatasourceTablesRequest.datasourceId)
-            && Objects.equals(this.position, listDatasourceTablesRequest.position)
-            && Objects.equals(this.dbName, listDatasourceTablesRequest.dbName)
-            && Objects.equals(this.dbSchema, listDatasourceTablesRequest.dbSchema)
-            && Objects.equals(this.filter, listDatasourceTablesRequest.filter);
+        ListDatasourceTablesRequest that = (ListDatasourceTablesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.dbSchema, that.dbSchema) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

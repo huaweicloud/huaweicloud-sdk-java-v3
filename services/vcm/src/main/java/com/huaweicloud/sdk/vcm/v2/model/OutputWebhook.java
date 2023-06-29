@@ -77,16 +77,16 @@ public class OutputWebhook {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputWebhook outputWebhook = (OutputWebhook) o;
-        return Objects.equals(this.url, outputWebhook.url) && Objects.equals(this.headers, outputWebhook.headers)
-            && Objects.equals(this.dataCategory, outputWebhook.dataCategory);
+        OutputWebhook that = (OutputWebhook) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.headers, that.headers)
+            && Objects.equals(this.dataCategory, that.dataCategory);
     }
 
     @Override

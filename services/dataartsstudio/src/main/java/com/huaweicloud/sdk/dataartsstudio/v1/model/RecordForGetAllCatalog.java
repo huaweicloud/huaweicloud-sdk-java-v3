@@ -80,22 +80,15 @@ public class RecordForGetAllCatalog {
             if (value == null) {
                 return null;
             }
-            ApiCatalogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiCatalogTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiCatalogTypeEnum(value));
         }
 
         public static ApiCatalogTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiCatalogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -291,23 +284,19 @@ public class RecordForGetAllCatalog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordForGetAllCatalog recordForGetAllCatalog = (RecordForGetAllCatalog) o;
-        return Objects.equals(this.catalogId, recordForGetAllCatalog.catalogId)
-            && Objects.equals(this.pid, recordForGetAllCatalog.pid)
-            && Objects.equals(this.name, recordForGetAllCatalog.name)
-            && Objects.equals(this.description, recordForGetAllCatalog.description)
-            && Objects.equals(this.apiCatalogType, recordForGetAllCatalog.apiCatalogType)
-            && Objects.equals(this.createTime, recordForGetAllCatalog.createTime)
-            && Objects.equals(this.createUser, recordForGetAllCatalog.createUser)
-            && Objects.equals(this.updateTime, recordForGetAllCatalog.updateTime)
-            && Objects.equals(this.updateUser, recordForGetAllCatalog.updateUser);
+        RecordForGetAllCatalog that = (RecordForGetAllCatalog) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.pid, that.pid)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.apiCatalogType, that.apiCatalogType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

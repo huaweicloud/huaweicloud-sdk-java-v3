@@ -71,22 +71,15 @@ public class SubscriptionTarget {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderTypeEnum(value));
         }
 
         public static ProviderTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,20 +259,18 @@ public class SubscriptionTarget {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionTarget subscriptionTarget = (SubscriptionTarget) o;
-        return Objects.equals(this.id, subscriptionTarget.id) && Objects.equals(this.name, subscriptionTarget.name)
-            && Objects.equals(this.providerType, subscriptionTarget.providerType)
-            && Objects.equals(this.connectionId, subscriptionTarget.connectionId)
-            && Objects.equals(this.detail, subscriptionTarget.detail)
-            && Objects.equals(this.kafkaDetail, subscriptionTarget.kafkaDetail)
-            && Objects.equals(this.transform, subscriptionTarget.transform);
+        SubscriptionTarget that = (SubscriptionTarget) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.kafkaDetail, that.kafkaDetail) && Objects.equals(this.transform, that.transform);
     }
 
     @Override

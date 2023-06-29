@@ -110,18 +110,18 @@ public class UpdateEdgeNodeDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeNodeDeviceResponse updateEdgeNodeDeviceResponse = (UpdateEdgeNodeDeviceResponse) o;
-        return Objects.equals(this.deleteConnector, updateEdgeNodeDeviceResponse.deleteConnector)
-            && Objects.equals(this.deployConnector, updateEdgeNodeDeviceResponse.deployConnector)
-            && Objects.equals(this.deploymentId, updateEdgeNodeDeviceResponse.deploymentId)
-            && Objects.equals(this.updateDevices, updateEdgeNodeDeviceResponse.updateDevices);
+        UpdateEdgeNodeDeviceResponse that = (UpdateEdgeNodeDeviceResponse) obj;
+        return Objects.equals(this.deleteConnector, that.deleteConnector)
+            && Objects.equals(this.deployConnector, that.deployConnector)
+            && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.updateDevices, that.updateDevices);
     }
 
     @Override

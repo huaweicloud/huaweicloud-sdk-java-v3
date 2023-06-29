@@ -74,15 +74,15 @@ public class CatalogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogInfo catalogInfo = (CatalogInfo) o;
-        return Objects.equals(this.databases, catalogInfo.databases) && Objects.equals(this.name, catalogInfo.name);
+        CatalogInfo that = (CatalogInfo) obj;
+        return Objects.equals(this.databases, that.databases) && Objects.equals(this.name, that.name);
     }
 
     @Override

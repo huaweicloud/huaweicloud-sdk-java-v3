@@ -121,18 +121,17 @@ public class AsyncUpdateJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncUpdateJobResp asyncUpdateJobResp = (AsyncUpdateJobResp) o;
-        return Objects.equals(this.id, asyncUpdateJobResp.id) && Objects.equals(this.name, asyncUpdateJobResp.name)
-            && Objects.equals(this.status, asyncUpdateJobResp.status)
-            && Objects.equals(this.errorCode, asyncUpdateJobResp.errorCode)
-            && Objects.equals(this.errorMsg, asyncUpdateJobResp.errorMsg);
+        AsyncUpdateJobResp that = (AsyncUpdateJobResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

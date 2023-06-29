@@ -185,20 +185,18 @@ public class RespHostProperty {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespHostProperty respHostProperty = (RespHostProperty) o;
-        return Objects.equals(this.hostType, respHostProperty.hostType)
-            && Objects.equals(this.hostTypeName, respHostProperty.hostTypeName)
-            && Objects.equals(this.vcpus, respHostProperty.vcpus) && Objects.equals(this.cores, respHostProperty.cores)
-            && Objects.equals(this.sockets, respHostProperty.sockets)
-            && Objects.equals(this.memory, respHostProperty.memory)
-            && Objects.equals(this.availableInstanceCapacities, respHostProperty.availableInstanceCapacities);
+        RespHostProperty that = (RespHostProperty) obj;
+        return Objects.equals(this.hostType, that.hostType) && Objects.equals(this.hostTypeName, that.hostTypeName)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.cores, that.cores)
+            && Objects.equals(this.sockets, that.sockets) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.availableInstanceCapacities, that.availableInstanceCapacities);
     }
 
     @Override

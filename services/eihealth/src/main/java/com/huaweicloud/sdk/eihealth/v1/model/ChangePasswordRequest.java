@@ -65,16 +65,15 @@ public class ChangePasswordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePasswordRequest changePasswordRequest = (ChangePasswordRequest) o;
-        return Objects.equals(this.userId, changePasswordRequest.userId)
-            && Objects.equals(this.body, changePasswordRequest.body);
+        ChangePasswordRequest that = (ChangePasswordRequest) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -106,22 +106,15 @@ public class CreateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class CreateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -490,27 +476,21 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointResponse createEndpointResponse = (CreateEndpointResponse) o;
-        return Objects.equals(this.id, createEndpointResponse.id)
-            && Objects.equals(this.name, createEndpointResponse.name)
-            && Objects.equals(this.vpcId, createEndpointResponse.vpcId)
-            && Objects.equals(this.subnetId, createEndpointResponse.subnetId)
-            && Objects.equals(this.domain, createEndpointResponse.domain)
-            && Objects.equals(this.description, createEndpointResponse.description)
-            && Objects.equals(this.status, createEndpointResponse.status)
-            && Objects.equals(this.type, createEndpointResponse.type)
-            && Objects.equals(this.scalable, createEndpointResponse.scalable)
-            && Objects.equals(this.createdTime, createEndpointResponse.createdTime)
-            && Objects.equals(this.updatedTime, createEndpointResponse.updatedTime)
-            && Objects.equals(this.endpoints, createEndpointResponse.endpoints)
-            && Objects.equals(this.xRequestId, createEndpointResponse.xRequestId);
+        CreateEndpointResponse that = (CreateEndpointResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.scalable, that.scalable) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.endpoints, that.endpoints)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

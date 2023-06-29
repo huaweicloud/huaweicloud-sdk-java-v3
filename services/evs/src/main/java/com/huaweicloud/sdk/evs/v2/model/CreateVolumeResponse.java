@@ -97,17 +97,16 @@ public class CreateVolumeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeResponse createVolumeResponse = (CreateVolumeResponse) o;
-        return Objects.equals(this.jobId, createVolumeResponse.jobId)
-            && Objects.equals(this.orderId, createVolumeResponse.orderId)
-            && Objects.equals(this.volumeIds, createVolumeResponse.volumeIds);
+        CreateVolumeResponse that = (CreateVolumeResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.volumeIds, that.volumeIds);
     }
 
     @Override

@@ -209,23 +209,22 @@ public class DefaultConstraint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefaultConstraint defaultConstraint = (DefaultConstraint) o;
-        return Objects.equals(this.catalogName, defaultConstraint.catalogName)
-            && Objects.equals(this.databaseName, defaultConstraint.databaseName)
-            && Objects.equals(this.tableName, defaultConstraint.tableName)
-            && Objects.equals(this.columnName, defaultConstraint.columnName)
-            && Objects.equals(this.constraintName, defaultConstraint.constraintName)
-            && Objects.equals(this.defaultValue, defaultConstraint.defaultValue)
-            && Objects.equals(this.enableConstraint, defaultConstraint.enableConstraint)
-            && Objects.equals(this.relyConstraint, defaultConstraint.relyConstraint)
-            && Objects.equals(this.validateConstraint, defaultConstraint.validateConstraint);
+        DefaultConstraint that = (DefaultConstraint) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

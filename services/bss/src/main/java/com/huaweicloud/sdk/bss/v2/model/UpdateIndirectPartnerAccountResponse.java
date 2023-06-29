@@ -34,16 +34,15 @@ public class UpdateIndirectPartnerAccountResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndirectPartnerAccountResponse updateIndirectPartnerAccountResponse =
-            (UpdateIndirectPartnerAccountResponse) o;
-        return Objects.equals(this.transferId, updateIndirectPartnerAccountResponse.transferId);
+        UpdateIndirectPartnerAccountResponse that = (UpdateIndirectPartnerAccountResponse) obj;
+        return Objects.equals(this.transferId, that.transferId);
     }
 
     @Override

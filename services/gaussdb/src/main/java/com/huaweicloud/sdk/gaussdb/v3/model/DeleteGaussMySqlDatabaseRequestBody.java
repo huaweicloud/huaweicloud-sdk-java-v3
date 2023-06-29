@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 删除数据库请求体。
  */
-public class DeleteGaussMySqlDatabaseRequestBody  {
-
+public class DeleteGaussMySqlDatabaseRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="databases")
-    
+    @JsonProperty(value = "databases")
+
     private List<String> databases = null;
-    
+
     public DeleteGaussMySqlDatabaseRequestBody withDatabases(List<String> databases) {
         this.databases = databases;
         return this;
     }
 
-    
     public DeleteGaussMySqlDatabaseRequestBody addDatabasesItem(String databasesItem) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         this.databases.add(databasesItem);
@@ -39,7 +32,7 @@ public class DeleteGaussMySqlDatabaseRequestBody  {
     }
 
     public DeleteGaussMySqlDatabaseRequestBody withDatabases(Consumer<List<String>> databasesSetter) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);
@@ -58,23 +51,23 @@ public class DeleteGaussMySqlDatabaseRequestBody  {
         this.databases = databases;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGaussMySqlDatabaseRequestBody deleteGaussMySqlDatabaseRequestBody = (DeleteGaussMySqlDatabaseRequestBody) o;
-        return Objects.equals(this.databases, deleteGaussMySqlDatabaseRequestBody.databases);
+        DeleteGaussMySqlDatabaseRequestBody that = (DeleteGaussMySqlDatabaseRequestBody) obj;
+        return Objects.equals(this.databases, that.databases);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(databases);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class DeleteGaussMySqlDatabaseRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class DeleteGaussMySqlDatabaseRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -121,18 +121,17 @@ public class UpdateL7ruleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7ruleReq updateL7ruleReq = (UpdateL7ruleReq) o;
-        return Objects.equals(this.compareType, updateL7ruleReq.compareType)
-            && Objects.equals(this.adminStateUp, updateL7ruleReq.adminStateUp)
-            && Objects.equals(this.invert, updateL7ruleReq.invert) && Objects.equals(this.key, updateL7ruleReq.key)
-            && Objects.equals(this.value, updateL7ruleReq.value);
+        UpdateL7ruleReq that = (UpdateL7ruleReq) obj;
+        return Objects.equals(this.compareType, that.compareType)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.invert, that.invert)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

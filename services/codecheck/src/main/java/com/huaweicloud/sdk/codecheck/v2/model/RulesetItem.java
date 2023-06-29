@@ -253,24 +253,22 @@ public class RulesetItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RulesetItem rulesetItem = (RulesetItem) o;
-        return Objects.equals(this.templateId, rulesetItem.templateId)
-            && Objects.equals(this.language, rulesetItem.language)
-            && Objects.equals(this.templateName, rulesetItem.templateName)
-            && Objects.equals(this.creatorId, rulesetItem.creatorId)
-            && Objects.equals(this.creatorName, rulesetItem.creatorName)
-            && Objects.equals(this.templateCreateTime, rulesetItem.templateCreateTime)
-            && Objects.equals(this.isUsed, rulesetItem.isUsed) && Objects.equals(this.ruleIds, rulesetItem.ruleIds)
-            && Objects.equals(this.isDefault, rulesetItem.isDefault)
-            && Objects.equals(this.isDevcloudProjectDefault, rulesetItem.isDevcloudProjectDefault)
-            && Objects.equals(this.isDefaultTemplate, rulesetItem.isDefaultTemplate);
+        RulesetItem that = (RulesetItem) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.templateCreateTime, that.templateCreateTime)
+            && Objects.equals(this.isUsed, that.isUsed) && Objects.equals(this.ruleIds, that.ruleIds)
+            && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.isDevcloudProjectDefault, that.isDevcloudProjectDefault)
+            && Objects.equals(this.isDefaultTemplate, that.isDefaultTemplate);
     }
 
     @Override

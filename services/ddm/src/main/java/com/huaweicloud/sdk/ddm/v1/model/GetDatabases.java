@@ -165,18 +165,18 @@ public class GetDatabases {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDatabases getDatabases = (GetDatabases) o;
-        return Objects.equals(this.dbslot, getDatabases.dbslot) && Objects.equals(this.name, getDatabases.name)
-            && Objects.equals(this.status, getDatabases.status) && Objects.equals(this.created, getDatabases.created)
-            && Objects.equals(this.updated, getDatabases.updated) && Objects.equals(this.id, getDatabases.id)
-            && Objects.equals(this.idName, getDatabases.idName);
+        GetDatabases that = (GetDatabases) obj;
+        return Objects.equals(this.dbslot, that.dbslot) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.idName, that.idName);
     }
 
     @Override

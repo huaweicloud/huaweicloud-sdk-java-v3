@@ -693,45 +693,33 @@ public class QosParticipantInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosParticipantInfo qosParticipantInfo = (QosParticipantInfo) o;
-        return Objects.equals(this.confUUID, qosParticipantInfo.confUUID)
-            && Objects.equals(this.conferenceID, qosParticipantInfo.conferenceID)
-            && Objects.equals(this.participantID, qosParticipantInfo.participantID)
-            && Objects.equals(this.userUUID, qosParticipantInfo.userUUID)
-            && Objects.equals(this.displayName, qosParticipantInfo.displayName)
-            && Objects.equals(this.deptName, qosParticipantInfo.deptName)
-            && Objects.equals(this.terminalType, qosParticipantInfo.terminalType)
-            && Objects.equals(this.role, qosParticipantInfo.role)
-            && Objects.equals(this.ipAddress, qosParticipantInfo.ipAddress)
-            && Objects.equals(this.country, qosParticipantInfo.country)
-            && Objects.equals(this.province, qosParticipantInfo.province)
-            && Objects.equals(this.city, qosParticipantInfo.city)
-            && Objects.equals(this.appVersion, qosParticipantInfo.appVersion)
-            && Objects.equals(this.joinTime, qosParticipantInfo.joinTime)
-            && Objects.equals(this.leftTime, qosParticipantInfo.leftTime)
-            && Objects.equals(this.systemInfo, qosParticipantInfo.systemInfo)
-            && Objects.equals(this.networkType, qosParticipantInfo.networkType)
-            && Objects.equals(this.alarm, qosParticipantInfo.alarm)
-            && Objects.equals(this.audioAlarmSend, qosParticipantInfo.audioAlarmSend)
-            && Objects.equals(this.videoAlarmSend, qosParticipantInfo.videoAlarmSend)
-            && Objects.equals(this.screenAlarmSend, qosParticipantInfo.screenAlarmSend)
-            && Objects.equals(this.audioAlarmRec, qosParticipantInfo.audioAlarmRec)
-            && Objects.equals(this.videoAlarmRec, qosParticipantInfo.videoAlarmRec)
-            && Objects.equals(this.screenAlarmRec, qosParticipantInfo.screenAlarmRec)
-            && Objects.equals(this.cpuAlarm, qosParticipantInfo.cpuAlarm)
-            && Objects.equals(this.microphoneInfo, qosParticipantInfo.microphoneInfo)
-            && Objects.equals(this.speakerInfo, qosParticipantInfo.speakerInfo)
-            && Objects.equals(this.cameraInfo, qosParticipantInfo.cameraInfo)
-            && Objects.equals(this.dataCenter, qosParticipantInfo.dataCenter)
-            && Objects.equals(this.leftReason, qosParticipantInfo.leftReason)
-            && Objects.equals(this.existQos, qosParticipantInfo.existQos);
+        QosParticipantInfo that = (QosParticipantInfo) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.participantID, that.participantID) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.terminalType, that.terminalType) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.joinTime, that.joinTime)
+            && Objects.equals(this.leftTime, that.leftTime) && Objects.equals(this.systemInfo, that.systemInfo)
+            && Objects.equals(this.networkType, that.networkType) && Objects.equals(this.alarm, that.alarm)
+            && Objects.equals(this.audioAlarmSend, that.audioAlarmSend)
+            && Objects.equals(this.videoAlarmSend, that.videoAlarmSend)
+            && Objects.equals(this.screenAlarmSend, that.screenAlarmSend)
+            && Objects.equals(this.audioAlarmRec, that.audioAlarmRec)
+            && Objects.equals(this.videoAlarmRec, that.videoAlarmRec)
+            && Objects.equals(this.screenAlarmRec, that.screenAlarmRec) && Objects.equals(this.cpuAlarm, that.cpuAlarm)
+            && Objects.equals(this.microphoneInfo, that.microphoneInfo)
+            && Objects.equals(this.speakerInfo, that.speakerInfo) && Objects.equals(this.cameraInfo, that.cameraInfo)
+            && Objects.equals(this.dataCenter, that.dataCenter) && Objects.equals(this.leftReason, that.leftReason)
+            && Objects.equals(this.existQos, that.existQos);
     }
 
     @Override

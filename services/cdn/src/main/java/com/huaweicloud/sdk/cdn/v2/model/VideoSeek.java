@@ -99,18 +99,18 @@ public class VideoSeek {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoSeek videoSeek = (VideoSeek) o;
-        return Objects.equals(this.enableVideoSeek, videoSeek.enableVideoSeek)
-            && Objects.equals(this.enableFlvByTimeSeek, videoSeek.enableFlvByTimeSeek)
-            && Objects.equals(this.startParameter, videoSeek.startParameter)
-            && Objects.equals(this.endParameter, videoSeek.endParameter);
+        VideoSeek that = (VideoSeek) obj;
+        return Objects.equals(this.enableVideoSeek, that.enableVideoSeek)
+            && Objects.equals(this.enableFlvByTimeSeek, that.enableFlvByTimeSeek)
+            && Objects.equals(this.startParameter, that.startParameter)
+            && Objects.equals(this.endParameter, that.endParameter);
     }
 
     @Override

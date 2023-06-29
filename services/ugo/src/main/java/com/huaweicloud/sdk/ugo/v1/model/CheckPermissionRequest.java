@@ -33,15 +33,15 @@ public class CheckPermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckPermissionRequest checkPermissionRequest = (CheckPermissionRequest) o;
-        return Objects.equals(this.migrationProjectId, checkPermissionRequest.migrationProjectId);
+        CheckPermissionRequest that = (CheckPermissionRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId);
     }
 
     @Override

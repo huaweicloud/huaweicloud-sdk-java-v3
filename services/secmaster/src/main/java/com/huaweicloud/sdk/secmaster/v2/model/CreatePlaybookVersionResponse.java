@@ -112,18 +112,16 @@ public class CreatePlaybookVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookVersionResponse createPlaybookVersionResponse = (CreatePlaybookVersionResponse) o;
-        return Objects.equals(this.code, createPlaybookVersionResponse.code)
-            && Objects.equals(this.message, createPlaybookVersionResponse.message)
-            && Objects.equals(this.data, createPlaybookVersionResponse.data)
-            && Objects.equals(this.xRequestId, createPlaybookVersionResponse.xRequestId);
+        CreatePlaybookVersionResponse that = (CreatePlaybookVersionResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

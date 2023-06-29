@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * GaussDBforOpenGaussCreateSchemaReq
  */
-public class GaussDBforOpenGaussCreateSchemaReq  {
-
+public class GaussDBforOpenGaussCreateSchemaReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="owner")
-    
+    @JsonProperty(value = "owner")
 
     private String owner;
 
@@ -33,9 +24,6 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * schema名称。  schema名称在1到63个字符之间，由字母、数字、或下划线组成，不能包含其他特殊字符，不能以“pg”和数字开头，且不能和GaussDB 模板库和已存在的schema重名。 GaussDB 模板库包括postgres， template0 ，template1。  已存在的schema包括public，information_schema。
@@ -49,15 +37,10 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         this.name = name;
     }
 
-    
-
     public GaussDBforOpenGaussCreateSchemaReq withOwner(String owner) {
         this.owner = owner;
         return this;
     }
-
-    
-
 
     /**
      * 数据库属主用户。  数据库属主名称在1到63个字符之间，不能以“pg”和数字开头，不能和系统用户名称相同。  系统用户包括“rdsAdmin”,“ rdsMetric”, “rdsBackup”, “rdsRepl”。
@@ -71,24 +54,23 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         this.owner = owner;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussCreateSchemaReq gaussDBforOpenGaussCreateSchemaReq = (GaussDBforOpenGaussCreateSchemaReq) o;
-        return Objects.equals(this.name, gaussDBforOpenGaussCreateSchemaReq.name) &&
-            Objects.equals(this.owner, gaussDBforOpenGaussCreateSchemaReq.owner);
+        GaussDBforOpenGaussCreateSchemaReq that = (GaussDBforOpenGaussCreateSchemaReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.owner, that.owner);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, owner);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class GaussDBforOpenGaussCreateSchemaReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -43,15 +43,15 @@ public class CreateVpcAttachmentBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcAttachmentBody createVpcAttachmentBody = (CreateVpcAttachmentBody) o;
-        return Objects.equals(this.vpcAttachment, createVpcAttachmentBody.vpcAttachment);
+        CreateVpcAttachmentBody that = (CreateVpcAttachmentBody) obj;
+        return Objects.equals(this.vpcAttachment, that.vpcAttachment);
     }
 
     @Override

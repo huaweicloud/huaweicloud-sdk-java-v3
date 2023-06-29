@@ -88,22 +88,15 @@ public class CreateGrantRequestBody {
             if (value == null) {
                 return null;
             }
-            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GranteePrincipalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GranteePrincipalTypeEnum(value));
         }
 
         public static GranteePrincipalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GranteePrincipalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,21 +259,19 @@ public class CreateGrantRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGrantRequestBody createGrantRequestBody = (CreateGrantRequestBody) o;
-        return Objects.equals(this.keyId, createGrantRequestBody.keyId)
-            && Objects.equals(this.granteePrincipal, createGrantRequestBody.granteePrincipal)
-            && Objects.equals(this.operations, createGrantRequestBody.operations)
-            && Objects.equals(this.name, createGrantRequestBody.name)
-            && Objects.equals(this.retiringPrincipal, createGrantRequestBody.retiringPrincipal)
-            && Objects.equals(this.granteePrincipalType, createGrantRequestBody.granteePrincipalType)
-            && Objects.equals(this.sequence, createGrantRequestBody.sequence);
+        CreateGrantRequestBody that = (CreateGrantRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.granteePrincipal, that.granteePrincipal)
+            && Objects.equals(this.operations, that.operations) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.retiringPrincipal, that.retiringPrincipal)
+            && Objects.equals(this.granteePrincipalType, that.granteePrincipalType)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

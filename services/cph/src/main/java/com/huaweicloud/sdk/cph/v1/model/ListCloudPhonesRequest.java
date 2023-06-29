@@ -151,20 +151,17 @@ public class ListCloudPhonesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudPhonesRequest listCloudPhonesRequest = (ListCloudPhonesRequest) o;
-        return Objects.equals(this.offset, listCloudPhonesRequest.offset)
-            && Objects.equals(this.limit, listCloudPhonesRequest.limit)
-            && Objects.equals(this.phoneName, listCloudPhonesRequest.phoneName)
-            && Objects.equals(this.serverId, listCloudPhonesRequest.serverId)
-            && Objects.equals(this.status, listCloudPhonesRequest.status)
-            && Objects.equals(this.type, listCloudPhonesRequest.type);
+        ListCloudPhonesRequest that = (ListCloudPhonesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.phoneName, that.phoneName) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type);
     }
 
     @Override

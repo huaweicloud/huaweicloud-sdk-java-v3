@@ -155,19 +155,17 @@ public class CreateFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFileRequest createFileRequest = (CreateFileRequest) o;
-        return Objects.equals(this.xRepoAuth, createFileRequest.xRepoAuth)
-            && Objects.equals(this.namespace, createFileRequest.namespace)
-            && Objects.equals(this.project, createFileRequest.project)
-            && Objects.equals(this.path, createFileRequest.path) && Objects.equals(this.ref, createFileRequest.ref)
-            && Objects.equals(this.body, createFileRequest.body);
+        CreateFileRequest that = (CreateFileRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.body, that.body);
     }
 
     @Override

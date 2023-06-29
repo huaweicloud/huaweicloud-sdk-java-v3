@@ -162,20 +162,17 @@ public class TrendQueryDataResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrendQueryDataResp trendQueryDataResp = (TrendQueryDataResp) o;
-        return Objects.equals(this.queryTime, trendQueryDataResp.queryTime)
-            && Objects.equals(this.indicatorName, trendQueryDataResp.indicatorName)
-            && Objects.equals(this.objectId, trendQueryDataResp.objectId)
-            && Objects.equals(this.unit, trendQueryDataResp.unit)
-            && Objects.equals(this.subObjectId, trendQueryDataResp.subObjectId)
-            && Objects.equals(this.dataPoints, trendQueryDataResp.dataPoints);
+        TrendQueryDataResp that = (TrendQueryDataResp) obj;
+        return Objects.equals(this.queryTime, that.queryTime) && Objects.equals(this.indicatorName, that.indicatorName)
+            && Objects.equals(this.objectId, that.objectId) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.subObjectId, that.subObjectId) && Objects.equals(this.dataPoints, that.dataPoints);
     }
 
     @Override

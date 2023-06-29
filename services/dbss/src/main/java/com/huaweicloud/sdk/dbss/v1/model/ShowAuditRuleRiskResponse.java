@@ -1,108 +1,86 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.RuleRiskInfoBeanSchemas;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowAuditRuleRiskResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_id")
-    
+    @JsonProperty(value = "rule_id")
 
     private String ruleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rule_name")
-    
+    @JsonProperty(value = "rule_name")
 
     private String ruleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemas")
-    
+    @JsonProperty(value = "schemas")
+
     private List<RuleRiskInfoBeanSchemas> schemas = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rank")
-    
+    @JsonProperty(value = "rank")
 
     private Integer rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ignore_case")
-    
+    @JsonProperty(value = "ignore_case")
 
     private Boolean ignoreCase;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="risk_level")
-    
+    @JsonProperty(value = "risk_level")
 
     private String riskLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_ids")
-    
+    @JsonProperty(value = "db_ids")
 
     private String dbIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_symbol")
-    
+    @JsonProperty(value = "execution_symbol")
 
     private String executionSymbol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_time")
-    
+    @JsonProperty(value = "execution_time")
 
     private Integer executionTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="affect_symbol")
-    
+    @JsonProperty(value = "affect_symbol")
 
     private String affectSymbol;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="affect_rows")
-    
+    @JsonProperty(value = "affect_rows")
 
     private Integer affectRows;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="client_ips")
-    
+    @JsonProperty(value = "client_ips")
 
     private String clientIps;
 
@@ -110,9 +88,6 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.ruleId = ruleId;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则ID
@@ -126,15 +101,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.ruleId = ruleId;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withRuleName(String ruleName) {
         this.ruleName = ruleName;
         return this;
     }
-
-    
-
 
     /**
      * 风险名称
@@ -148,15 +118,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.ruleName = ruleName;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则状态 枚举值：  OFF  ON
@@ -170,15 +135,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withAction(String action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 操作集合, 中间逗号分隔 LOGIN CREATE_TABLE CREATE_TABLESPACE DROP_TABLE DROP_TABLESPACE DELETE INSERT INSERT_SELECT SELECT SELECT_FOR_UPDATE UPDATE CREATE_USER DROP_USER GRANT OPERATE ALL
@@ -192,16 +152,13 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.action = action;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withSchemas(List<RuleRiskInfoBeanSchemas> schemas) {
         this.schemas = schemas;
         return this;
     }
 
-    
     public ShowAuditRuleRiskResponse addSchemasItem(RuleRiskInfoBeanSchemas schemasItem) {
-        if(this.schemas == null) {
+        if (this.schemas == null) {
             this.schemas = new ArrayList<>();
         }
         this.schemas.add(schemasItem);
@@ -209,7 +166,7 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
     }
 
     public ShowAuditRuleRiskResponse withSchemas(Consumer<List<RuleRiskInfoBeanSchemas>> schemasSetter) {
-        if(this.schemas == null) {
+        if (this.schemas == null) {
             this.schemas = new ArrayList<>();
         }
         schemasSetter.accept(this.schemas);
@@ -228,15 +185,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.schemas = schemas;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withRank(Integer rank) {
         this.rank = rank;
         return this;
     }
-
-    
-
 
     /**
      * 风险规则优先级
@@ -250,15 +202,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.rank = rank;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withIgnoreCase(Boolean ignoreCase) {
         this.ignoreCase = ignoreCase;
         return this;
     }
-
-    
-
 
     /**
      * 是否忽略大小写
@@ -272,15 +219,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.ignoreCase = ignoreCase;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
         return this;
     }
-
-    
-
 
     /**
      * 风险级别 枚举值：  LOW  MEDIUM  HIGH  NO_RISK
@@ -294,15 +236,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.riskLevel = riskLevel;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withDbIds(String dbIds) {
         this.dbIds = dbIds;
         return this;
     }
-
-    
-
 
     /**
      * 数据库id，中间逗号分隔（单个id 小于256位）
@@ -316,15 +253,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.dbIds = dbIds;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withExecutionSymbol(String executionSymbol) {
         this.executionSymbol = executionSymbol;
         return this;
     }
-
-    
-
 
     /**
      * 执行时长对执行时长阈值的关系 枚举值：  GREATER  EQUAL  LESS  GREATER_EQUAL  LESS_EQUAL  NO_MATCH
@@ -338,15 +270,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.executionSymbol = executionSymbol;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withExecutionTime(Integer executionTime) {
         this.executionTime = executionTime;
         return this;
     }
-
-    
-
 
     /**
      * 设定的执行时长阈值
@@ -360,15 +287,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.executionTime = executionTime;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withAffectSymbol(String affectSymbol) {
         this.affectSymbol = affectSymbol;
         return this;
     }
-
-    
-
 
     /**
      * 影响行数对行数阈值的关系：  枚举值：  GREATER  EQUAL  LESS  GREATER_EQUAL  LESS_EQUAL  NO_MATCH
@@ -382,15 +304,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.affectSymbol = affectSymbol;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withAffectRows(Integer affectRows) {
         this.affectRows = affectRows;
         return this;
     }
-
-    
-
 
     /**
      * 设定的影响行数阈值
@@ -404,15 +321,10 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.affectRows = affectRows;
     }
 
-    
-
     public ShowAuditRuleRiskResponse withClientIps(String clientIps) {
         this.clientIps = clientIps;
         return this;
     }
-
-    
-
 
     /**
      * 客户端IP段: IP-IP格式，或IP/XX 格式。 各个IP段使用逗号连接
@@ -426,36 +338,43 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         this.clientIps = clientIps;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditRuleRiskResponse showAuditRuleRiskResponse = (ShowAuditRuleRiskResponse) o;
-        return Objects.equals(this.ruleId, showAuditRuleRiskResponse.ruleId) &&
-            Objects.equals(this.ruleName, showAuditRuleRiskResponse.ruleName) &&
-            Objects.equals(this.status, showAuditRuleRiskResponse.status) &&
-            Objects.equals(this.action, showAuditRuleRiskResponse.action) &&
-            Objects.equals(this.schemas, showAuditRuleRiskResponse.schemas) &&
-            Objects.equals(this.rank, showAuditRuleRiskResponse.rank) &&
-            Objects.equals(this.ignoreCase, showAuditRuleRiskResponse.ignoreCase) &&
-            Objects.equals(this.riskLevel, showAuditRuleRiskResponse.riskLevel) &&
-            Objects.equals(this.dbIds, showAuditRuleRiskResponse.dbIds) &&
-            Objects.equals(this.executionSymbol, showAuditRuleRiskResponse.executionSymbol) &&
-            Objects.equals(this.executionTime, showAuditRuleRiskResponse.executionTime) &&
-            Objects.equals(this.affectSymbol, showAuditRuleRiskResponse.affectSymbol) &&
-            Objects.equals(this.affectRows, showAuditRuleRiskResponse.affectRows) &&
-            Objects.equals(this.clientIps, showAuditRuleRiskResponse.clientIps);
+        ShowAuditRuleRiskResponse that = (ShowAuditRuleRiskResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.schemas, that.schemas) && Objects.equals(this.rank, that.rank)
+            && Objects.equals(this.ignoreCase, that.ignoreCase) && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.dbIds, that.dbIds) && Objects.equals(this.executionSymbol, that.executionSymbol)
+            && Objects.equals(this.executionTime, that.executionTime)
+            && Objects.equals(this.affectSymbol, that.affectSymbol) && Objects.equals(this.affectRows, that.affectRows)
+            && Objects.equals(this.clientIps, that.clientIps);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(ruleId, ruleName, status, action, schemas, rank, ignoreCase, riskLevel, dbIds, executionSymbol, executionTime, affectSymbol, affectRows, clientIps);
+        return Objects.hash(ruleId,
+            ruleName,
+            status,
+            action,
+            schemas,
+            rank,
+            ignoreCase,
+            riskLevel,
+            dbIds,
+            executionSymbol,
+            executionTime,
+            affectSymbol,
+            affectRows,
+            clientIps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -477,6 +396,7 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -487,8 +407,5 @@ public class ShowAuditRuleRiskResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

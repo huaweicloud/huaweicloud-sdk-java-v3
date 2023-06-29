@@ -100,18 +100,18 @@ public class ShowSyncPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSyncPolicyRequest showSyncPolicyRequest = (ShowSyncPolicyRequest) o;
-        return Objects.equals(this.instanceId, showSyncPolicyRequest.instanceId)
-            && Objects.equals(this.lastKnownVersion, showSyncPolicyRequest.lastKnownVersion)
-            && Objects.equals(this.supportsPolicyDeltas, showSyncPolicyRequest.supportsPolicyDeltas)
-            && Objects.equals(this.isReturnPolicyData, showSyncPolicyRequest.isReturnPolicyData);
+        ShowSyncPolicyRequest that = (ShowSyncPolicyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.lastKnownVersion, that.lastKnownVersion)
+            && Objects.equals(this.supportsPolicyDeltas, that.supportsPolicyDeltas)
+            && Objects.equals(this.isReturnPolicyData, that.isReturnPolicyData);
     }
 
     @Override

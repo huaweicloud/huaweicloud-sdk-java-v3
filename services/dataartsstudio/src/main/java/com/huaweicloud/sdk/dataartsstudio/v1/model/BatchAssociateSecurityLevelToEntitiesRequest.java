@@ -65,17 +65,15 @@ public class BatchAssociateSecurityLevelToEntitiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAssociateSecurityLevelToEntitiesRequest batchAssociateSecurityLevelToEntitiesRequest =
-            (BatchAssociateSecurityLevelToEntitiesRequest) o;
-        return Objects.equals(this.workspace, batchAssociateSecurityLevelToEntitiesRequest.workspace)
-            && Objects.equals(this.body, batchAssociateSecurityLevelToEntitiesRequest.body);
+        BatchAssociateSecurityLevelToEntitiesRequest that = (BatchAssociateSecurityLevelToEntitiesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

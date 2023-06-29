@@ -43,16 +43,15 @@ public class SearchResourceShareCountByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResourceShareCountByTagsRequest searchResourceShareCountByTagsRequest =
-            (SearchResourceShareCountByTagsRequest) o;
-        return Objects.equals(this.body, searchResourceShareCountByTagsRequest.body);
+        SearchResourceShareCountByTagsRequest that = (SearchResourceShareCountByTagsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

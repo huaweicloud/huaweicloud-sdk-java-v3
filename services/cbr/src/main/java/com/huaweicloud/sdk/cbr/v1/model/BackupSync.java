@@ -187,22 +187,18 @@ public class BackupSync {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupSync backupSync = (BackupSync) o;
-        return Objects.equals(this.backupId, backupSync.backupId)
-            && Objects.equals(this.backupName, backupSync.backupName)
-            && Objects.equals(this.bucketName, backupSync.bucketName)
-            && Objects.equals(this.imagePath, backupSync.imagePath)
-            && Objects.equals(this.resourceId, backupSync.resourceId)
-            && Objects.equals(this.resourceName, backupSync.resourceName)
-            && Objects.equals(this.resourceType, backupSync.resourceType)
-            && Objects.equals(this.createdAt, backupSync.createdAt);
+        BackupSync that = (BackupSync) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupName, that.backupName)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.imagePath, that.imagePath)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

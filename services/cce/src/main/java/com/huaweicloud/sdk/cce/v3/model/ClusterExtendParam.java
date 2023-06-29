@@ -341,29 +341,26 @@ public class ClusterExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterExtendParam clusterExtendParam = (ClusterExtendParam) o;
-        return Objects.equals(this.clusterAZ, clusterExtendParam.clusterAZ)
-            && Objects.equals(this.dssMasterVolumes, clusterExtendParam.dssMasterVolumes)
-            && Objects.equals(this.enterpriseProjectId, clusterExtendParam.enterpriseProjectId)
-            && Objects.equals(this.kubeProxyMode, clusterExtendParam.kubeProxyMode)
-            && Objects.equals(this.clusterExternalIP, clusterExtendParam.clusterExternalIP)
-            && Objects.equals(this.alphaCceFixPoolMask, clusterExtendParam.alphaCceFixPoolMask)
-            && Objects.equals(this.decMasterFlavor, clusterExtendParam.decMasterFlavor)
-            && Objects.equals(this.dockerUmaskMode, clusterExtendParam.dockerUmaskMode)
-            && Objects.equals(this.kubernetesIoCpuManagerPolicy, clusterExtendParam.kubernetesIoCpuManagerPolicy)
-            && Objects.equals(this.orderID, clusterExtendParam.orderID)
-            && Objects.equals(this.periodType, clusterExtendParam.periodType)
-            && Objects.equals(this.periodNum, clusterExtendParam.periodNum)
-            && Objects.equals(this.isAutoRenew, clusterExtendParam.isAutoRenew)
-            && Objects.equals(this.isAutoPay, clusterExtendParam.isAutoPay)
-            && Objects.equals(this.upgradefrom, clusterExtendParam.upgradefrom);
+        ClusterExtendParam that = (ClusterExtendParam) obj;
+        return Objects.equals(this.clusterAZ, that.clusterAZ)
+            && Objects.equals(this.dssMasterVolumes, that.dssMasterVolumes)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.kubeProxyMode, that.kubeProxyMode)
+            && Objects.equals(this.clusterExternalIP, that.clusterExternalIP)
+            && Objects.equals(this.alphaCceFixPoolMask, that.alphaCceFixPoolMask)
+            && Objects.equals(this.decMasterFlavor, that.decMasterFlavor)
+            && Objects.equals(this.dockerUmaskMode, that.dockerUmaskMode)
+            && Objects.equals(this.kubernetesIoCpuManagerPolicy, that.kubernetesIoCpuManagerPolicy)
+            && Objects.equals(this.orderID, that.orderID) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum) && Objects.equals(this.isAutoRenew, that.isAutoRenew)
+            && Objects.equals(this.isAutoPay, that.isAutoPay) && Objects.equals(this.upgradefrom, that.upgradefrom);
     }
 
     @Override

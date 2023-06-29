@@ -99,18 +99,17 @@ public class QualificationCategory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualificationCategory qualificationCategory = (QualificationCategory) o;
-        return Objects.equals(this.category, qualificationCategory.category)
-            && Objects.equals(this.initialIssueDate, qualificationCategory.initialIssueDate)
-            && Objects.equals(this.issueDate, qualificationCategory.issueDate)
-            && Objects.equals(this.expiryDate, qualificationCategory.expiryDate);
+        QualificationCategory that = (QualificationCategory) obj;
+        return Objects.equals(this.category, that.category)
+            && Objects.equals(this.initialIssueDate, that.initialIssueDate)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.expiryDate, that.expiryDate);
     }
 
     @Override

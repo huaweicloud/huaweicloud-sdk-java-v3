@@ -127,18 +127,17 @@ public class ShowImageByTagsResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageByTagsResource showImageByTagsResource = (ShowImageByTagsResource) o;
-        return Objects.equals(this.resourceId, showImageByTagsResource.resourceId)
-            && Objects.equals(this.resourceDetail, showImageByTagsResource.resourceDetail)
-            && Objects.equals(this.tags, showImageByTagsResource.tags)
-            && Objects.equals(this.resourceName, showImageByTagsResource.resourceName);
+        ShowImageByTagsResource that = (ShowImageByTagsResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowEventStreamingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventStreamingRequest showEventStreamingRequest = (ShowEventStreamingRequest) o;
-        return Objects.equals(this.eventstreamingId, showEventStreamingRequest.eventstreamingId);
+        ShowEventStreamingRequest that = (ShowEventStreamingRequest) obj;
+        return Objects.equals(this.eventstreamingId, that.eventstreamingId);
     }
 
     @Override

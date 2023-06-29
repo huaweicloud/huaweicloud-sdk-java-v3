@@ -44,15 +44,15 @@ public class CreateEnterpriseProjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnterpriseProjectResponse createEnterpriseProjectResponse = (CreateEnterpriseProjectResponse) o;
-        return Objects.equals(this.enterpriseProject, createEnterpriseProjectResponse.enterpriseProject);
+        CreateEnterpriseProjectResponse that = (CreateEnterpriseProjectResponse) obj;
+        return Objects.equals(this.enterpriseProject, that.enterpriseProject);
     }
 
     @Override

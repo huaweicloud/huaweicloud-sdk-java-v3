@@ -77,16 +77,16 @@ public class Job {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Job job = (Job) o;
-        return Objects.equals(this.name, job.name) && Objects.equals(this.path, job.path)
-            && Objects.equals(this.params, job.params);
+        Job that = (Job) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

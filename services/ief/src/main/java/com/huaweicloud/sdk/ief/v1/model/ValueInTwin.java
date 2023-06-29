@@ -96,17 +96,16 @@ public class ValueInTwin {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueInTwin valueInTwin = (ValueInTwin) o;
-        return Objects.equals(this.excepted, valueInTwin.excepted)
-            && Objects.equals(this.optional, valueInTwin.optional)
-            && Objects.equals(this.metadata, valueInTwin.metadata);
+        ValueInTwin that = (ValueInTwin) obj;
+        return Objects.equals(this.excepted, that.excepted) && Objects.equals(this.optional, that.optional)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

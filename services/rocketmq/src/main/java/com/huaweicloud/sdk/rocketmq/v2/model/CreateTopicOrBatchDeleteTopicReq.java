@@ -85,22 +85,15 @@ public class CreateTopicOrBatchDeleteTopicReq {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,19 +238,17 @@ public class CreateTopicOrBatchDeleteTopicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicOrBatchDeleteTopicReq createTopicOrBatchDeleteTopicReq = (CreateTopicOrBatchDeleteTopicReq) o;
-        return Objects.equals(this.name, createTopicOrBatchDeleteTopicReq.name)
-            && Objects.equals(this.brokers, createTopicOrBatchDeleteTopicReq.brokers)
-            && Objects.equals(this.queueNum, createTopicOrBatchDeleteTopicReq.queueNum)
-            && Objects.equals(this.permission, createTopicOrBatchDeleteTopicReq.permission)
-            && Objects.equals(this.topics, createTopicOrBatchDeleteTopicReq.topics);
+        CreateTopicOrBatchDeleteTopicReq that = (CreateTopicOrBatchDeleteTopicReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.queueNum, that.queueNum) && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.topics, that.topics);
     }
 
     @Override

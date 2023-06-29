@@ -169,22 +169,15 @@ public class UpdateGatewayResponseTypeV2Request {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResponseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResponseTypeEnum(value));
         }
 
         public static ResponseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,19 +299,17 @@ public class UpdateGatewayResponseTypeV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGatewayResponseTypeV2Request updateGatewayResponseTypeV2Request = (UpdateGatewayResponseTypeV2Request) o;
-        return Objects.equals(this.instanceId, updateGatewayResponseTypeV2Request.instanceId)
-            && Objects.equals(this.groupId, updateGatewayResponseTypeV2Request.groupId)
-            && Objects.equals(this.responseId, updateGatewayResponseTypeV2Request.responseId)
-            && Objects.equals(this.responseType, updateGatewayResponseTypeV2Request.responseType)
-            && Objects.equals(this.body, updateGatewayResponseTypeV2Request.body);
+        UpdateGatewayResponseTypeV2Request that = (UpdateGatewayResponseTypeV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.responseType, that.responseType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

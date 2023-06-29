@@ -77,17 +77,16 @@ public class ShowCustomRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCustomRuleRequest showCustomRuleRequest = (ShowCustomRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showCustomRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, showCustomRuleRequest.policyId)
-            && Objects.equals(this.ruleId, showCustomRuleRequest.ruleId);
+        ShowCustomRuleRequest that = (ShowCustomRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

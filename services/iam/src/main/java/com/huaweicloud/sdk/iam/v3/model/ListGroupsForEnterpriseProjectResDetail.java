@@ -121,20 +121,17 @@ public class ListGroupsForEnterpriseProjectResDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupsForEnterpriseProjectResDetail listGroupsForEnterpriseProjectResDetail =
-            (ListGroupsForEnterpriseProjectResDetail) o;
-        return Objects.equals(this.createTime, listGroupsForEnterpriseProjectResDetail.createTime)
-            && Objects.equals(this.description, listGroupsForEnterpriseProjectResDetail.description)
-            && Objects.equals(this.domainId, listGroupsForEnterpriseProjectResDetail.domainId)
-            && Objects.equals(this.id, listGroupsForEnterpriseProjectResDetail.id)
-            && Objects.equals(this.name, listGroupsForEnterpriseProjectResDetail.name);
+        ListGroupsForEnterpriseProjectResDetail that = (ListGroupsForEnterpriseProjectResDetail) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

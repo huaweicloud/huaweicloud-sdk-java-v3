@@ -33,15 +33,15 @@ public class EnableSignatureRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableSignatureRequest enableSignatureRequest = (EnableSignatureRequest) o;
-        return Objects.equals(this.id, enableSignatureRequest.id);
+        EnableSignatureRequest that = (EnableSignatureRequest) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

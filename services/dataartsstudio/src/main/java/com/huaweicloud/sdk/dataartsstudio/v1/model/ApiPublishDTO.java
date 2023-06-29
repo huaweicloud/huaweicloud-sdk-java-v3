@@ -124,22 +124,15 @@ public class ApiPublishDTO {
             if (value == null) {
                 return null;
             }
-            ApiStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiStatusEnum(value));
         }
 
         public static ApiStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -212,22 +205,15 @@ public class ApiPublishDTO {
             if (value == null) {
                 return null;
             }
-            ApiDebugEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiDebugEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiDebugEnum(value));
         }
 
         public static ApiDebugEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiDebugEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -352,19 +338,17 @@ public class ApiPublishDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPublishDTO apiPublishDTO = (ApiPublishDTO) o;
-        return Objects.equals(this.id, apiPublishDTO.id) && Objects.equals(this.apiId, apiPublishDTO.apiId)
-            && Objects.equals(this.instanceId, apiPublishDTO.instanceId)
-            && Objects.equals(this.instanceName, apiPublishDTO.instanceName)
-            && Objects.equals(this.apiStatus, apiPublishDTO.apiStatus)
-            && Objects.equals(this.apiDebug, apiPublishDTO.apiDebug);
+        ApiPublishDTO that = (ApiPublishDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.apiStatus, that.apiStatus) && Objects.equals(this.apiDebug, that.apiDebug);
     }
 
     @Override

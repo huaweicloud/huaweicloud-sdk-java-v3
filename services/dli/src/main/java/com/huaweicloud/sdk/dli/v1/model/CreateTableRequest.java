@@ -65,16 +65,15 @@ public class CreateTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableRequest createTableRequest = (CreateTableRequest) o;
-        return Objects.equals(this.databaseName, createTableRequest.databaseName)
-            && Objects.equals(this.body, createTableRequest.body);
+        CreateTableRequest that = (CreateTableRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.body, that.body);
     }
 
     @Override

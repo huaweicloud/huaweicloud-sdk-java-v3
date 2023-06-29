@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 规格信息。
  */
-public class ListFlavorInfo  {
-
+public class ListFlavorInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpu")
-    
+    @JsonProperty(value = "vcpu")
 
     private Integer vcpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mem")
-    
+    @JsonProperty(value = "mem")
 
     private Integer mem;
 
@@ -33,9 +24,6 @@ public class ListFlavorInfo  {
         this.vcpu = vcpu;
         return this;
     }
-
-    
-
 
     /**
      * cpu核数。
@@ -49,15 +37,10 @@ public class ListFlavorInfo  {
         this.vcpu = vcpu;
     }
 
-    
-
     public ListFlavorInfo withMem(Integer mem) {
         this.mem = mem;
         return this;
     }
-
-    
-
 
     /**
      * 内存大小。
@@ -71,24 +54,23 @@ public class ListFlavorInfo  {
         this.mem = mem;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorInfo listFlavorInfo = (ListFlavorInfo) o;
-        return Objects.equals(this.vcpu, listFlavorInfo.vcpu) &&
-            Objects.equals(this.mem, listFlavorInfo.mem);
+        ListFlavorInfo that = (ListFlavorInfo) obj;
+        return Objects.equals(this.vcpu, that.vcpu) && Objects.equals(this.mem, that.mem);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vcpu, mem);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ListFlavorInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ListFlavorInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,17 +77,16 @@ public class DeletePrivacyRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePrivacyRuleRequest deletePrivacyRuleRequest = (DeletePrivacyRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deletePrivacyRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, deletePrivacyRuleRequest.policyId)
-            && Objects.equals(this.ruleId, deletePrivacyRuleRequest.ruleId);
+        DeletePrivacyRuleRequest that = (DeletePrivacyRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

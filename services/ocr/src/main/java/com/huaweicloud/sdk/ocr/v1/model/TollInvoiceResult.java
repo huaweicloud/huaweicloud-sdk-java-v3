@@ -253,23 +253,20 @@ public class TollInvoiceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TollInvoiceResult tollInvoiceResult = (TollInvoiceResult) o;
-        return Objects.equals(this.code, tollInvoiceResult.code)
-            && Objects.equals(this.number, tollInvoiceResult.number)
-            && Objects.equals(this.entry, tollInvoiceResult.entry) && Objects.equals(this.exit, tollInvoiceResult.exit)
-            && Objects.equals(this.amount, tollInvoiceResult.amount)
-            && Objects.equals(this.cashier, tollInvoiceResult.cashier)
-            && Objects.equals(this.vehicleType, tollInvoiceResult.vehicleType)
-            && Objects.equals(this.date, tollInvoiceResult.date) && Objects.equals(this.time, tollInvoiceResult.time)
-            && Objects.equals(this.confidence, tollInvoiceResult.confidence)
-            && Objects.equals(this.textLocation, tollInvoiceResult.textLocation);
+        TollInvoiceResult that = (TollInvoiceResult) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.entry, that.entry) && Objects.equals(this.exit, that.exit)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.cashier, that.cashier)
+            && Objects.equals(this.vehicleType, that.vehicleType) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

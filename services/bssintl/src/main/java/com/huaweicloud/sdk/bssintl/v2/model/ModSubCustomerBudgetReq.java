@@ -101,18 +101,17 @@ public class ModSubCustomerBudgetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModSubCustomerBudgetReq modSubCustomerBudgetReq = (ModSubCustomerBudgetReq) o;
-        return Objects.equals(this.customerId, modSubCustomerBudgetReq.customerId)
-            && Objects.equals(this.budgetAmount, modSubCustomerBudgetReq.budgetAmount)
-            && Objects.equals(this.cancelPartnerFrozen, modSubCustomerBudgetReq.cancelPartnerFrozen)
-            && Objects.equals(this.indirectPartnerId, modSubCustomerBudgetReq.indirectPartnerId);
+        ModSubCustomerBudgetReq that = (ModSubCustomerBudgetReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.budgetAmount, that.budgetAmount)
+            && Objects.equals(this.cancelPartnerFrozen, that.cancelPartnerFrozen)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

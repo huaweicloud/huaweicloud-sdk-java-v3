@@ -187,20 +187,18 @@ public class TaskProgress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskProgress taskProgress = (TaskProgress) o;
-        return Objects.equals(this.total, taskProgress.total)
-            && Objects.equals(this.processing, taskProgress.processing)
-            && Objects.equals(this.success, taskProgress.success) && Objects.equals(this.fail, taskProgress.fail)
-            && Objects.equals(this.waitting, taskProgress.waitting)
-            && Objects.equals(this.failWaitRetry, taskProgress.failWaitRetry)
-            && Objects.equals(this.stopped, taskProgress.stopped) && Objects.equals(this.removed, taskProgress.removed);
+        TaskProgress that = (TaskProgress) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.processing, that.processing)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.fail, that.fail)
+            && Objects.equals(this.waitting, that.waitting) && Objects.equals(this.failWaitRetry, that.failWaitRetry)
+            && Objects.equals(this.stopped, that.stopped) && Objects.equals(this.removed, that.removed);
     }
 
     @Override

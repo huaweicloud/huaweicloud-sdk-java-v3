@@ -65,22 +65,15 @@ public class ListFlavorsRequest {
             if (value == null) {
                 return null;
             }
-            EngineNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineNameEnum(value));
         }
 
         public static EngineNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class ListFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsRequest listFlavorsRequest = (ListFlavorsRequest) o;
-        return Objects.equals(this.region, listFlavorsRequest.region)
-            && Objects.equals(this.engineName, listFlavorsRequest.engineName);
+        ListFlavorsRequest that = (ListFlavorsRequest) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.engineName, that.engineName);
     }
 
     @Override

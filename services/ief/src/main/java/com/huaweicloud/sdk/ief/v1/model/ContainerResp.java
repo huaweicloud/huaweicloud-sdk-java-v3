@@ -539,29 +539,24 @@ public class ContainerResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerResp containerResp = (ContainerResp) o;
-        return Objects.equals(this.args, containerResp.args) && Objects.equals(this.command, containerResp.command)
-            && Objects.equals(this.name, containerResp.name) && Objects.equals(this.envs, containerResp.envs)
-            && Objects.equals(this.imageUrl, containerResp.imageUrl)
-            && Objects.equals(this.version, containerResp.version)
-            && Objects.equals(this.livenessProbe, containerResp.livenessProbe)
-            && Objects.equals(this.readinessProbe, containerResp.readinessProbe)
-            && Objects.equals(this.ports, containerResp.ports)
-            && Objects.equals(this.resources, containerResp.resources)
-            && Objects.equals(this.volumes, containerResp.volumes)
-            && Objects.equals(this.restarts, containerResp.restarts)
-            && Objects.equals(this.message, containerResp.message) && Objects.equals(this.reason, containerResp.reason)
-            && Objects.equals(this.isReady, containerResp.isReady)
-            && Objects.equals(this.privileged, containerResp.privileged)
-            && Objects.equals(this.containerId, containerResp.containerId)
-            && Objects.equals(this.state, containerResp.state) && Objects.equals(this.npuType, containerResp.npuType);
+        ContainerResp that = (ContainerResp) obj;
+        return Objects.equals(this.args, that.args) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.envs, that.envs)
+            && Objects.equals(this.imageUrl, that.imageUrl) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.restarts, that.restarts) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.isReady, that.isReady)
+            && Objects.equals(this.privileged, that.privileged) && Objects.equals(this.containerId, that.containerId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.npuType, that.npuType);
     }
 
     @Override

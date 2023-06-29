@@ -74,16 +74,15 @@ public class QuotaLimitInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaLimitInfo quotaLimitInfo = (QuotaLimitInfo) o;
-        return Objects.equals(this.limitKey, quotaLimitInfo.limitKey)
-            && Objects.equals(this.limitValues, quotaLimitInfo.limitValues);
+        QuotaLimitInfo that = (QuotaLimitInfo) obj;
+        return Objects.equals(this.limitKey, that.limitKey) && Objects.equals(this.limitValues, that.limitValues);
     }
 
     @Override

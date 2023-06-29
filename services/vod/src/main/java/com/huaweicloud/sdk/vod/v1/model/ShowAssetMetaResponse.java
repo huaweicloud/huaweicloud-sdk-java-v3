@@ -97,17 +97,16 @@ public class ShowAssetMetaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetMetaResponse showAssetMetaResponse = (ShowAssetMetaResponse) o;
-        return Objects.equals(this.assetInfoArray, showAssetMetaResponse.assetInfoArray)
-            && Objects.equals(this.isTruncated, showAssetMetaResponse.isTruncated)
-            && Objects.equals(this.total, showAssetMetaResponse.total);
+        ShowAssetMetaResponse that = (ShowAssetMetaResponse) obj;
+        return Objects.equals(this.assetInfoArray, that.assetInfoArray)
+            && Objects.equals(this.isTruncated, that.isTruncated) && Objects.equals(this.total, that.total);
     }
 
     @Override

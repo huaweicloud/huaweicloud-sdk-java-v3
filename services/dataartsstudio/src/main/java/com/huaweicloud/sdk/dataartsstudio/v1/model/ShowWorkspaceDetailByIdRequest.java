@@ -55,16 +55,15 @@ public class ShowWorkspaceDetailByIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkspaceDetailByIdRequest showWorkspaceDetailByIdRequest = (ShowWorkspaceDetailByIdRequest) o;
-        return Objects.equals(this.workspace, showWorkspaceDetailByIdRequest.workspace)
-            && Objects.equals(this.modelId, showWorkspaceDetailByIdRequest.modelId);
+        ShowWorkspaceDetailByIdRequest that = (ShowWorkspaceDetailByIdRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.modelId, that.modelId);
     }
 
     @Override

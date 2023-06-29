@@ -55,16 +55,15 @@ public class ShowRepositoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryRequest showRepositoryRequest = (ShowRepositoryRequest) o;
-        return Objects.equals(this.namespace, showRepositoryRequest.namespace)
-            && Objects.equals(this.repository, showRepositoryRequest.repository);
+        ShowRepositoryRequest that = (ShowRepositoryRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository);
     }
 
     @Override

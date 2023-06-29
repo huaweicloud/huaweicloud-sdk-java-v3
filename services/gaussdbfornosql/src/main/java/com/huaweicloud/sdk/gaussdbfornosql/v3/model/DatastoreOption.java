@@ -77,16 +77,16 @@ public class DatastoreOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatastoreOption datastoreOption = (DatastoreOption) o;
-        return Objects.equals(this.type, datastoreOption.type) && Objects.equals(this.version, datastoreOption.version)
-            && Objects.equals(this.storageEngine, datastoreOption.storageEngine);
+        DatastoreOption that = (DatastoreOption) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.storageEngine, that.storageEngine);
     }
 
     @Override

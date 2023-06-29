@@ -320,28 +320,21 @@ public class ModifyApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyApplicationResponse modifyApplicationResponse = (ModifyApplicationResponse) o;
-        return Objects.equals(this.id, modifyApplicationResponse.id)
-            && Objects.equals(this.projectId, modifyApplicationResponse.projectId)
-            && Objects.equals(this.markForDelete, modifyApplicationResponse.markForDelete)
-            && Objects.equals(this.createBy, modifyApplicationResponse.createBy)
-            && Objects.equals(this.createTime, modifyApplicationResponse.createTime)
-            && Objects.equals(this.updateBy, modifyApplicationResponse.updateBy)
-            && Objects.equals(this.updateTime, modifyApplicationResponse.updateTime)
-            && Objects.equals(this.nameCn, modifyApplicationResponse.nameCn)
-            && Objects.equals(this.nameEn, modifyApplicationResponse.nameEn)
-            && Objects.equals(this.descCn, modifyApplicationResponse.descCn)
-            && Objects.equals(this.descEn, modifyApplicationResponse.descEn)
-            && Objects.equals(this.databaseType, modifyApplicationResponse.databaseType)
-            && Objects.equals(this.environment, modifyApplicationResponse.environment)
-            && Objects.equals(this.versions, modifyApplicationResponse.versions);
+        ModifyApplicationResponse that = (ModifyApplicationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.markForDelete, that.markForDelete) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.nameCn, that.nameCn)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.descCn, that.descCn)
+            && Objects.equals(this.descEn, that.descEn) && Objects.equals(this.databaseType, that.databaseType)
+            && Objects.equals(this.environment, that.environment) && Objects.equals(this.versions, that.versions);
     }
 
     @Override

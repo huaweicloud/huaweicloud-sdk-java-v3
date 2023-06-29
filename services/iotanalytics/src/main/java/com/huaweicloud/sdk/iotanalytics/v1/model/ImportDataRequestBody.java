@@ -253,25 +253,22 @@ public class ImportDataRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportDataRequestBody importDataRequestBody = (ImportDataRequestBody) o;
-        return Objects.equals(this.dataPath, importDataRequestBody.dataPath)
-            && Objects.equals(this.dataType, importDataRequestBody.dataType)
-            && Objects.equals(this.tableId, importDataRequestBody.tableId)
-            && Objects.equals(this.withColumnHeader, importDataRequestBody.withColumnHeader)
-            && Objects.equals(this.delimiter, importDataRequestBody.delimiter)
-            && Objects.equals(this.quoteChar, importDataRequestBody.quoteChar)
-            && Objects.equals(this.escapeChar, importDataRequestBody.escapeChar)
-            && Objects.equals(this.dateFormat, importDataRequestBody.dateFormat)
-            && Objects.equals(this.badRecordsPath, importDataRequestBody.badRecordsPath)
-            && Objects.equals(this.timestampFormat, importDataRequestBody.timestampFormat)
-            && Objects.equals(this.computingResourceId, importDataRequestBody.computingResourceId);
+        ImportDataRequestBody that = (ImportDataRequestBody) obj;
+        return Objects.equals(this.dataPath, that.dataPath) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.quoteChar, that.quoteChar)
+            && Objects.equals(this.escapeChar, that.escapeChar) && Objects.equals(this.dateFormat, that.dateFormat)
+            && Objects.equals(this.badRecordsPath, that.badRecordsPath)
+            && Objects.equals(this.timestampFormat, that.timestampFormat)
+            && Objects.equals(this.computingResourceId, that.computingResourceId);
     }
 
     @Override

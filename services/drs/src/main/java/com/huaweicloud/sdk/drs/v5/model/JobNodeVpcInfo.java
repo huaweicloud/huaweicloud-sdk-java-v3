@@ -99,18 +99,17 @@ public class JobNodeVpcInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobNodeVpcInfo jobNodeVpcInfo = (JobNodeVpcInfo) o;
-        return Objects.equals(this.vpcId, jobNodeVpcInfo.vpcId)
-            && Objects.equals(this.subnetId, jobNodeVpcInfo.subnetId)
-            && Objects.equals(this.customNodeIp, jobNodeVpcInfo.customNodeIp)
-            && Objects.equals(this.securityGroupId, jobNodeVpcInfo.securityGroupId);
+        JobNodeVpcInfo that = (JobNodeVpcInfo) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.customNodeIp, that.customNodeIp)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

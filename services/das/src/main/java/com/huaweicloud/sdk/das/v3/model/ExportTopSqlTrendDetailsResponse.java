@@ -98,17 +98,17 @@ public class ExportTopSqlTrendDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportTopSqlTrendDetailsResponse exportTopSqlTrendDetailsResponse = (ExportTopSqlTrendDetailsResponse) o;
-        return Objects.equals(this.intervalMillis, exportTopSqlTrendDetailsResponse.intervalMillis)
-            && Objects.equals(this.topSqlTrendItems, exportTopSqlTrendDetailsResponse.topSqlTrendItems)
-            && Objects.equals(this.totalCount, exportTopSqlTrendDetailsResponse.totalCount);
+        ExportTopSqlTrendDetailsResponse that = (ExportTopSqlTrendDetailsResponse) obj;
+        return Objects.equals(this.intervalMillis, that.intervalMillis)
+            && Objects.equals(this.topSqlTrendItems, that.topSqlTrendItems)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

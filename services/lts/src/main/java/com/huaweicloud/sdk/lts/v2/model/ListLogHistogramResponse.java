@@ -78,17 +78,16 @@ public class ListLogHistogramResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogHistogramResponse listLogHistogramResponse = (ListLogHistogramResponse) o;
-        return Objects.equals(this.histogram, listLogHistogramResponse.histogram)
-            && Objects.equals(this.count, listLogHistogramResponse.count)
-            && Objects.equals(this.isQueryComplete, listLogHistogramResponse.isQueryComplete);
+        ListLogHistogramResponse that = (ListLogHistogramResponse) obj;
+        return Objects.equals(this.histogram, that.histogram) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.isQueryComplete, that.isQueryComplete);
     }
 
     @Override

@@ -134,18 +134,16 @@ public class RunSyncCommandRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunSyncCommandRequestBody runSyncCommandRequestBody = (RunSyncCommandRequestBody) o;
-        return Objects.equals(this.command, runSyncCommandRequestBody.command)
-            && Objects.equals(this.content, runSyncCommandRequestBody.content)
-            && Objects.equals(this.phoneIds, runSyncCommandRequestBody.phoneIds)
-            && Objects.equals(this.serverIds, runSyncCommandRequestBody.serverIds);
+        RunSyncCommandRequestBody that = (RunSyncCommandRequestBody) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.phoneIds, that.phoneIds) && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

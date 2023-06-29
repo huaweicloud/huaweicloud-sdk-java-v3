@@ -231,24 +231,19 @@ public class ShowCommitsByRepoIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCommitsByRepoIdRequest showCommitsByRepoIdRequest = (ShowCommitsByRepoIdRequest) o;
-        return Objects.equals(this.author, showCommitsByRepoIdRequest.author)
-            && Objects.equals(this.beginDate, showCommitsByRepoIdRequest.beginDate)
-            && Objects.equals(this.endDate, showCommitsByRepoIdRequest.endDate)
-            && Objects.equals(this.message, showCommitsByRepoIdRequest.message)
-            && Objects.equals(this.pageIndex, showCommitsByRepoIdRequest.pageIndex)
-            && Objects.equals(this.pageSize, showCommitsByRepoIdRequest.pageSize)
-            && Objects.equals(this.path, showCommitsByRepoIdRequest.path)
-            && Objects.equals(this.refName, showCommitsByRepoIdRequest.refName)
-            && Objects.equals(this.repositoryId, showCommitsByRepoIdRequest.repositoryId)
-            && Objects.equals(this.statFormat, showCommitsByRepoIdRequest.statFormat);
+        ShowCommitsByRepoIdRequest that = (ShowCommitsByRepoIdRequest) obj;
+        return Objects.equals(this.author, that.author) && Objects.equals(this.beginDate, that.beginDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.pageIndex, that.pageIndex) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.refName, that.refName)
+            && Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.statFormat, that.statFormat);
     }
 
     @Override

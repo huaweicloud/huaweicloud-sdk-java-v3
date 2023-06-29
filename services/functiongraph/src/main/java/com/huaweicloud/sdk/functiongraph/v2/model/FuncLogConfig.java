@@ -99,18 +99,16 @@ public class FuncLogConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncLogConfig funcLogConfig = (FuncLogConfig) o;
-        return Objects.equals(this.groupName, funcLogConfig.groupName)
-            && Objects.equals(this.groupId, funcLogConfig.groupId)
-            && Objects.equals(this.streamName, funcLogConfig.streamName)
-            && Objects.equals(this.streamId, funcLogConfig.streamId);
+        FuncLogConfig that = (FuncLogConfig) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.streamName, that.streamName) && Objects.equals(this.streamId, that.streamId);
     }
 
     @Override

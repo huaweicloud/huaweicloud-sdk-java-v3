@@ -65,16 +65,15 @@ public class UpdateRecordRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordRuleRequest updateRecordRuleRequest = (UpdateRecordRuleRequest) o;
-        return Objects.equals(this.id, updateRecordRuleRequest.id)
-            && Objects.equals(this.body, updateRecordRuleRequest.body);
+        UpdateRecordRuleRequest that = (UpdateRecordRuleRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.body, that.body);
     }
 
     @Override

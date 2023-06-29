@@ -55,15 +55,15 @@ public class ClusterLinks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterLinks clusterLinks = (ClusterLinks) o;
-        return Objects.equals(this.rel, clusterLinks.rel) && Objects.equals(this.href, clusterLinks.href);
+        ClusterLinks that = (ClusterLinks) obj;
+        return Objects.equals(this.rel, that.rel) && Objects.equals(this.href, that.href);
     }
 
     @Override

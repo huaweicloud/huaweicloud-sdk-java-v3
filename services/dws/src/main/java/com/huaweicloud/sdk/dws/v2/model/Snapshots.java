@@ -209,19 +209,19 @@ public class Snapshots {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Snapshots snapshots = (Snapshots) o;
-        return Objects.equals(this.id, snapshots.id) && Objects.equals(this.name, snapshots.name)
-            && Objects.equals(this.description, snapshots.description)
-            && Objects.equals(this.started, snapshots.started) && Objects.equals(this.finished, snapshots.finished)
-            && Objects.equals(this.size, snapshots.size) && Objects.equals(this.status, snapshots.status)
-            && Objects.equals(this.type, snapshots.type) && Objects.equals(this.clusterId, snapshots.clusterId);
+        Snapshots that = (Snapshots) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.started, that.started)
+            && Objects.equals(this.finished, that.finished) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

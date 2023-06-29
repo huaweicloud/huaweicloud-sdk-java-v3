@@ -75,16 +75,15 @@ public class ListDssPoolsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDssPoolsResponse listDssPoolsResponse = (ListDssPoolsResponse) o;
-        return Objects.equals(this.pools, listDssPoolsResponse.pools)
-            && Objects.equals(this.count, listDssPoolsResponse.count);
+        ListDssPoolsResponse that = (ListDssPoolsResponse) obj;
+        return Objects.equals(this.pools, that.pools) && Objects.equals(this.count, that.count);
     }
 
     @Override

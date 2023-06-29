@@ -143,20 +143,18 @@ public class MetricOpenSearchParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricOpenSearchParams metricOpenSearchParams = (MetricOpenSearchParams) o;
-        return Objects.equals(this.architectureGuid, metricOpenSearchParams.architectureGuid)
-            && Objects.equals(this.query, metricOpenSearchParams.query)
-            && Objects.equals(this.limit, metricOpenSearchParams.limit)
-            && Objects.equals(this.offset, metricOpenSearchParams.offset)
-            && Objects.equals(this.searchNameDescription, metricOpenSearchParams.searchNameDescription)
-            && Objects.equals(this.includeSubArchitecture, metricOpenSearchParams.includeSubArchitecture);
+        MetricOpenSearchParams that = (MetricOpenSearchParams) obj;
+        return Objects.equals(this.architectureGuid, that.architectureGuid) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.searchNameDescription, that.searchNameDescription)
+            && Objects.equals(this.includeSubArchitecture, that.includeSubArchitecture);
     }
 
     @Override

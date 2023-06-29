@@ -87,17 +87,16 @@ public class UpdateDatasourceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatasourceInfoRequest updateDatasourceInfoRequest = (UpdateDatasourceInfoRequest) o;
-        return Objects.equals(this.instanceId, updateDatasourceInfoRequest.instanceId)
-            && Objects.equals(this.datasourceId, updateDatasourceInfoRequest.datasourceId)
-            && Objects.equals(this.body, updateDatasourceInfoRequest.body);
+        UpdateDatasourceInfoRequest that = (UpdateDatasourceInfoRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

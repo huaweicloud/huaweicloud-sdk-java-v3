@@ -77,17 +77,16 @@ public class KeystoneUpdateGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateGroupOption keystoneUpdateGroupOption = (KeystoneUpdateGroupOption) o;
-        return Objects.equals(this.description, keystoneUpdateGroupOption.description)
-            && Objects.equals(this.domainId, keystoneUpdateGroupOption.domainId)
-            && Objects.equals(this.name, keystoneUpdateGroupOption.name);
+        KeystoneUpdateGroupOption that = (KeystoneUpdateGroupOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

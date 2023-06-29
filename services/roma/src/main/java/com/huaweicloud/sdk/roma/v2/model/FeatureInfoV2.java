@@ -234,22 +234,15 @@ public class FeatureInfoV2 {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NameEnum(value));
         }
 
         public static NameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -394,18 +387,17 @@ public class FeatureInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FeatureInfoV2 featureInfoV2 = (FeatureInfoV2) o;
-        return Objects.equals(this.id, featureInfoV2.id) && Objects.equals(this.name, featureInfoV2.name)
-            && Objects.equals(this.enable, featureInfoV2.enable) && Objects.equals(this.config, featureInfoV2.config)
-            && Objects.equals(this.instanceId, featureInfoV2.instanceId)
-            && Objects.equals(this.updateTime, featureInfoV2.updateTime);
+        FeatureInfoV2 that = (FeatureInfoV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

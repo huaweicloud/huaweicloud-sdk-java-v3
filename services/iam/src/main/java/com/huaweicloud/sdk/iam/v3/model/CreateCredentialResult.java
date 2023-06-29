@@ -143,20 +143,17 @@ public class CreateCredentialResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCredentialResult createCredentialResult = (CreateCredentialResult) o;
-        return Objects.equals(this.createTime, createCredentialResult.createTime)
-            && Objects.equals(this.access, createCredentialResult.access)
-            && Objects.equals(this.secret, createCredentialResult.secret)
-            && Objects.equals(this.status, createCredentialResult.status)
-            && Objects.equals(this.userId, createCredentialResult.userId)
-            && Objects.equals(this.description, createCredentialResult.description);
+        CreateCredentialResult that = (CreateCredentialResult) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.access, that.access)
+            && Objects.equals(this.secret, that.secret) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.description, that.description);
     }
 
     @Override

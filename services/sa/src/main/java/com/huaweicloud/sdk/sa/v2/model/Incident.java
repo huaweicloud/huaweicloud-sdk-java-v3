@@ -1018,44 +1018,39 @@ public class Incident {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Incident incident = (Incident) o;
-        return Objects.equals(this.version, incident.version) && Objects.equals(this.environment, incident.environment)
-            && Objects.equals(this.datasource, incident.datasource)
-            && Objects.equals(this.firstObservedTime, incident.firstObservedTime)
-            && Objects.equals(this.lastObservedTime, incident.lastObservedTime)
-            && Objects.equals(this.createTime, incident.createTime)
-            && Objects.equals(this.arriveTime, incident.arriveTime) && Objects.equals(this.title, incident.title)
-            && Objects.equals(this.description, incident.description)
-            && Objects.equals(this.sourceUrl, incident.sourceUrl) && Objects.equals(this.count, incident.count)
-            && Objects.equals(this.confidence, incident.confidence)
-            && Objects.equals(this.serverity, incident.serverity)
-            && Objects.equals(this.criticality, incident.criticality)
-            && Objects.equals(this.incidentType, incident.incidentType)
-            && Objects.equals(this.networkList, incident.networkList)
-            && Objects.equals(this.resourceList, incident.resourceList)
-            && Objects.equals(this.remediation, incident.remediation)
-            && Objects.equals(this.verificationState, incident.verificationState)
-            && Objects.equals(this.handleStatus, incident.handleStatus) && Objects.equals(this.sla, incident.sla)
-            && Objects.equals(this.updateTime, incident.updateTime)
-            && Objects.equals(this.closeTime, incident.closeTime) && Objects.equals(this.chopPhase, incident.chopPhase)
-            && Objects.equals(this.ipdrrPhase, incident.ipdrrPhase)
-            && Objects.equals(this.ppdrPhase, incident.ppdrPhase)
-            && Objects.equals(this.simulation, incident.simulation) && Objects.equals(this.actor, incident.actor)
-            && Objects.equals(this.owner, incident.owner) && Objects.equals(this.cteator, incident.cteator)
-            && Objects.equals(this.closeReason, incident.closeReason)
-            && Objects.equals(this.closeComment, incident.closeComment)
-            && Objects.equals(this.malware, incident.malware) && Objects.equals(this.systemInfo, incident.systemInfo)
-            && Objects.equals(this.process, incident.process) && Objects.equals(this.userInfo, incident.userInfo)
-            && Objects.equals(this.fileInfo, incident.fileInfo)
-            && Objects.equals(this.systemIncidentTable, incident.systemIncidentTable)
-            && Objects.equals(this.id, incident.id) && Objects.equals(this.workspaceId, incident.workspaceId);
+        Incident that = (Incident) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
+            && Objects.equals(this.datasource, that.datasource)
+            && Objects.equals(this.firstObservedTime, that.firstObservedTime)
+            && Objects.equals(this.lastObservedTime, that.lastObservedTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceUrl, that.sourceUrl) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.serverity, that.serverity)
+            && Objects.equals(this.criticality, that.criticality)
+            && Objects.equals(this.incidentType, that.incidentType)
+            && Objects.equals(this.networkList, that.networkList)
+            && Objects.equals(this.resourceList, that.resourceList)
+            && Objects.equals(this.remediation, that.remediation)
+            && Objects.equals(this.verificationState, that.verificationState)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.sla, that.sla)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.closeTime, that.closeTime)
+            && Objects.equals(this.chopPhase, that.chopPhase) && Objects.equals(this.ipdrrPhase, that.ipdrrPhase)
+            && Objects.equals(this.ppdrPhase, that.ppdrPhase) && Objects.equals(this.simulation, that.simulation)
+            && Objects.equals(this.actor, that.actor) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.cteator, that.cteator) && Objects.equals(this.closeReason, that.closeReason)
+            && Objects.equals(this.closeComment, that.closeComment) && Objects.equals(this.malware, that.malware)
+            && Objects.equals(this.systemInfo, that.systemInfo) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.userInfo, that.userInfo) && Objects.equals(this.fileInfo, that.fileInfo)
+            && Objects.equals(this.systemIncidentTable, that.systemIncidentTable) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

@@ -130,17 +130,16 @@ public class LastAssetPropertyValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LastAssetPropertyValueRequest lastAssetPropertyValueRequest = (LastAssetPropertyValueRequest) o;
-        return Objects.equals(this.tags, lastAssetPropertyValueRequest.tags)
-            && Objects.equals(this.propertyFilter, lastAssetPropertyValueRequest.propertyFilter)
-            && Objects.equals(this.propertyNames, lastAssetPropertyValueRequest.propertyNames);
+        LastAssetPropertyValueRequest that = (LastAssetPropertyValueRequest) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.propertyFilter, that.propertyFilter)
+            && Objects.equals(this.propertyNames, that.propertyNames);
     }
 
     @Override

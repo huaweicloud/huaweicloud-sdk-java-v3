@@ -316,27 +316,22 @@ public class CreateInstanceDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceDetail createInstanceDetail = (CreateInstanceDetail) o;
-        return Objects.equals(this.name, createInstanceDetail.name)
-            && Objects.equals(this.flavorId, createInstanceDetail.flavorId)
-            && Objects.equals(this.nodeNum, createInstanceDetail.nodeNum)
-            && Objects.equals(this.engineId, createInstanceDetail.engineId)
-            && Objects.equals(this.enterpriseProjectId, createInstanceDetail.enterpriseProjectId)
-            && Objects.equals(this.availableZones, createInstanceDetail.availableZones)
-            && Objects.equals(this.vpcId, createInstanceDetail.vpcId)
-            && Objects.equals(this.securityGroupId, createInstanceDetail.securityGroupId)
-            && Objects.equals(this.subnetId, createInstanceDetail.subnetId)
-            && Objects.equals(this.paramGroupId, createInstanceDetail.paramGroupId)
-            && Objects.equals(this.timeZone, createInstanceDetail.timeZone)
-            && Objects.equals(this.adminUserName, createInstanceDetail.adminUserName)
-            && Objects.equals(this.adminUserPassword, createInstanceDetail.adminUserPassword);
+        CreateInstanceDetail that = (CreateInstanceDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.engineId, that.engineId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.paramGroupId, that.paramGroupId)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.adminUserName, that.adminUserName)
+            && Objects.equals(this.adminUserPassword, that.adminUserPassword);
     }
 
     @Override

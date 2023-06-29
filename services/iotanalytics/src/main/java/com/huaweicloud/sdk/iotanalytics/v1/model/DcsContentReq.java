@@ -123,18 +123,18 @@ public class DcsContentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DcsContentReq dcsContentReq = (DcsContentReq) o;
-        return Objects.equals(this.endpointServiceId, dcsContentReq.endpointServiceId)
-            && Objects.equals(this.endpointServiceName, dcsContentReq.endpointServiceName)
-            && Objects.equals(this.port, dcsContentReq.port) && Objects.equals(this.dcsType, dcsContentReq.dcsType)
-            && Objects.equals(this.password, dcsContentReq.password);
+        DcsContentReq that = (DcsContentReq) obj;
+        return Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.dcsType, that.dcsType)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

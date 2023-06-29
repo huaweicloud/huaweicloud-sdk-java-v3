@@ -831,39 +831,35 @@ public class ConfigsGetBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigsGetBody configsGetBody = (ConfigsGetBody) o;
-        return Objects.equals(this.originRequestHeader, configsGetBody.originRequestHeader)
-            && Objects.equals(this.httpResponseHeader, configsGetBody.httpResponseHeader)
-            && Objects.equals(this.urlAuth, configsGetBody.urlAuth) && Objects.equals(this.https, configsGetBody.https)
-            && Objects.equals(this.sources, configsGetBody.sources)
-            && Objects.equals(this.originProtocol, configsGetBody.originProtocol)
-            && Objects.equals(this.originFollow302Status, configsGetBody.originFollow302Status)
-            && Objects.equals(this.cacheRules, configsGetBody.cacheRules)
-            && Objects.equals(this.ipFilter, configsGetBody.ipFilter)
-            && Objects.equals(this.referer, configsGetBody.referer)
-            && Objects.equals(this.forceRedirect, configsGetBody.forceRedirect)
-            && Objects.equals(this.compress, configsGetBody.compress)
-            && Objects.equals(this.cacheUrlParameterFilter, configsGetBody.cacheUrlParameterFilter)
-            && Objects.equals(this.ipv6Accelerate, configsGetBody.ipv6Accelerate)
-            && Objects.equals(this.errorCodeCache, configsGetBody.errorCodeCache)
-            && Objects.equals(this.originRangeStatus, configsGetBody.originRangeStatus)
-            && Objects.equals(this.userAgentFilter, configsGetBody.userAgentFilter)
-            && Objects.equals(this.originRequestUrlRewrite, configsGetBody.originRequestUrlRewrite)
-            && Objects.equals(this.flexibleOrigin, configsGetBody.flexibleOrigin)
-            && Objects.equals(this.sliceEtagStatus, configsGetBody.sliceEtagStatus)
-            && Objects.equals(this.originReceiveTimeout, configsGetBody.originReceiveTimeout)
-            && Objects.equals(this.remoteAuth, configsGetBody.remoteAuth)
-            && Objects.equals(this.websocket, configsGetBody.websocket)
-            && Objects.equals(this.videoSeek, configsGetBody.videoSeek)
-            && Objects.equals(this.requestLimitRules, configsGetBody.requestLimitRules)
-            && Objects.equals(this.errorCodeRedirectRules, configsGetBody.errorCodeRedirectRules);
+        ConfigsGetBody that = (ConfigsGetBody) obj;
+        return Objects.equals(this.originRequestHeader, that.originRequestHeader)
+            && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
+            && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.originProtocol, that.originProtocol)
+            && Objects.equals(this.originFollow302Status, that.originFollow302Status)
+            && Objects.equals(this.cacheRules, that.cacheRules) && Objects.equals(this.ipFilter, that.ipFilter)
+            && Objects.equals(this.referer, that.referer) && Objects.equals(this.forceRedirect, that.forceRedirect)
+            && Objects.equals(this.compress, that.compress)
+            && Objects.equals(this.cacheUrlParameterFilter, that.cacheUrlParameterFilter)
+            && Objects.equals(this.ipv6Accelerate, that.ipv6Accelerate)
+            && Objects.equals(this.errorCodeCache, that.errorCodeCache)
+            && Objects.equals(this.originRangeStatus, that.originRangeStatus)
+            && Objects.equals(this.userAgentFilter, that.userAgentFilter)
+            && Objects.equals(this.originRequestUrlRewrite, that.originRequestUrlRewrite)
+            && Objects.equals(this.flexibleOrigin, that.flexibleOrigin)
+            && Objects.equals(this.sliceEtagStatus, that.sliceEtagStatus)
+            && Objects.equals(this.originReceiveTimeout, that.originReceiveTimeout)
+            && Objects.equals(this.remoteAuth, that.remoteAuth) && Objects.equals(this.websocket, that.websocket)
+            && Objects.equals(this.videoSeek, that.videoSeek)
+            && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
     }
 
     @Override

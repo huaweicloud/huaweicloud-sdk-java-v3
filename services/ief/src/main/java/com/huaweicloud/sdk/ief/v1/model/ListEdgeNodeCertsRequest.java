@@ -99,18 +99,16 @@ public class ListEdgeNodeCertsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeNodeCertsRequest listEdgeNodeCertsRequest = (ListEdgeNodeCertsRequest) o;
-        return Objects.equals(this.nodeId, listEdgeNodeCertsRequest.nodeId)
-            && Objects.equals(this.iefInstanceId, listEdgeNodeCertsRequest.iefInstanceId)
-            && Objects.equals(this.limit, listEdgeNodeCertsRequest.limit)
-            && Objects.equals(this.offset, listEdgeNodeCertsRequest.offset);
+        ListEdgeNodeCertsRequest that = (ListEdgeNodeCertsRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

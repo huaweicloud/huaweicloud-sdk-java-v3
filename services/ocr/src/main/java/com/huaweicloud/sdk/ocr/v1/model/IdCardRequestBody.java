@@ -165,20 +165,19 @@ public class IdCardRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdCardRequestBody idCardRequestBody = (IdCardRequestBody) o;
-        return Objects.equals(this.image, idCardRequestBody.image) && Objects.equals(this.url, idCardRequestBody.url)
-            && Objects.equals(this.side, idCardRequestBody.side)
-            && Objects.equals(this.returnVerification, idCardRequestBody.returnVerification)
-            && Objects.equals(this.returnTextLocation, idCardRequestBody.returnTextLocation)
-            && Objects.equals(this.detectReproduce, idCardRequestBody.detectReproduce)
-            && Objects.equals(this.detectCopy, idCardRequestBody.detectCopy);
+        IdCardRequestBody that = (IdCardRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.side, that.side) && Objects.equals(this.returnVerification, that.returnVerification)
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation)
+            && Objects.equals(this.detectReproduce, that.detectReproduce)
+            && Objects.equals(this.detectCopy, that.detectCopy);
     }
 
     @Override

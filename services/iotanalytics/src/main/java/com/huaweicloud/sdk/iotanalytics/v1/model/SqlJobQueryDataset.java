@@ -112,17 +112,16 @@ public class SqlJobQueryDataset {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlJobQueryDataset sqlJobQueryDataset = (SqlJobQueryDataset) o;
-        return Objects.equals(this.sqlType, sqlJobQueryDataset.sqlType)
-            && Objects.equals(this.schema, sqlJobQueryDataset.schema)
-            && Objects.equals(this.rows, sqlJobQueryDataset.rows);
+        SqlJobQueryDataset that = (SqlJobQueryDataset) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.rows, that.rows);
     }
 
     @Override

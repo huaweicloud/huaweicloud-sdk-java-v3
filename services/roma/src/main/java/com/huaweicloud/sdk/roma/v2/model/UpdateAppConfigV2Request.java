@@ -109,18 +109,16 @@ public class UpdateAppConfigV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAppConfigV2Request updateAppConfigV2Request = (UpdateAppConfigV2Request) o;
-        return Objects.equals(this.instanceId, updateAppConfigV2Request.instanceId)
-            && Objects.equals(this.appId, updateAppConfigV2Request.appId)
-            && Objects.equals(this.appConfigId, updateAppConfigV2Request.appConfigId)
-            && Objects.equals(this.body, updateAppConfigV2Request.body);
+        UpdateAppConfigV2Request that = (UpdateAppConfigV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appConfigId, that.appConfigId) && Objects.equals(this.body, that.body);
     }
 
     @Override

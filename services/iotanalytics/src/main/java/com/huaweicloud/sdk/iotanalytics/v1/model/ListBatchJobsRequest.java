@@ -167,21 +167,18 @@ public class ListBatchJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBatchJobsRequest listBatchJobsRequest = (ListBatchJobsRequest) o;
-        return Objects.equals(this.offset, listBatchJobsRequest.offset)
-            && Objects.equals(this.limit, listBatchJobsRequest.limit)
-            && Objects.equals(this.hasSchedule, listBatchJobsRequest.hasSchedule)
-            && Objects.equals(this.jobName, listBatchJobsRequest.jobName)
-            && Objects.equals(this.scheduleStatus, listBatchJobsRequest.scheduleStatus)
-            && Objects.equals(this.orderBy, listBatchJobsRequest.orderBy)
-            && Objects.equals(this.order, listBatchJobsRequest.order);
+        ListBatchJobsRequest that = (ListBatchJobsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.hasSchedule, that.hasSchedule) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override

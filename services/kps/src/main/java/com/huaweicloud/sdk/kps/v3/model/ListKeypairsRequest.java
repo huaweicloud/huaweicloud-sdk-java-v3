@@ -55,16 +55,15 @@ public class ListKeypairsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListKeypairsRequest listKeypairsRequest = (ListKeypairsRequest) o;
-        return Objects.equals(this.limit, listKeypairsRequest.limit)
-            && Objects.equals(this.marker, listKeypairsRequest.marker);
+        ListKeypairsRequest that = (ListKeypairsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

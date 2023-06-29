@@ -121,17 +121,17 @@ public class LogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogInfo logInfo = (LogInfo) o;
-        return Objects.equals(this.displayName, logInfo.displayName) && Objects.equals(this.log, logInfo.log)
-            && Objects.equals(this.level, logInfo.level) && Objects.equals(this.analysis, logInfo.analysis)
-            && Objects.equals(this.faq, logInfo.faq);
+        LogInfo that = (LogInfo) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.analysis, that.analysis)
+            && Objects.equals(this.faq, that.faq);
     }
 
     @Override

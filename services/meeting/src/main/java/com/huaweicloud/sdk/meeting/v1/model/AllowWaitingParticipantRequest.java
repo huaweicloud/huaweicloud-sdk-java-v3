@@ -89,17 +89,17 @@ public class AllowWaitingParticipantRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowWaitingParticipantRequest allowWaitingParticipantRequest = (AllowWaitingParticipantRequest) o;
-        return Objects.equals(this.conferenceID, allowWaitingParticipantRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, allowWaitingParticipantRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, allowWaitingParticipantRequest.body);
+        AllowWaitingParticipantRequest that = (AllowWaitingParticipantRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

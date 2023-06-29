@@ -56,17 +56,15 @@ public class ListAvailableDisasterClustersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableDisasterClustersResponse listAvailableDisasterClustersResponse =
-            (ListAvailableDisasterClustersResponse) o;
-        return Objects.equals(this.disasterRecoveryClusters,
-            listAvailableDisasterClustersResponse.disasterRecoveryClusters);
+        ListAvailableDisasterClustersResponse that = (ListAvailableDisasterClustersResponse) obj;
+        return Objects.equals(this.disasterRecoveryClusters, that.disasterRecoveryClusters);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class SecurityGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityGroupRequest securityGroupRequest = (SecurityGroupRequest) o;
-        return Objects.equals(this.securityGroupId, securityGroupRequest.securityGroupId);
+        SecurityGroupRequest that = (SecurityGroupRequest) obj;
+        return Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

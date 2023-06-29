@@ -177,21 +177,20 @@ public class NetworkCheckInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkCheckInfoRequestBody networkCheckInfoRequestBody = (NetworkCheckInfoRequestBody) o;
-        return Objects.equals(this.networkDelay, networkCheckInfoRequestBody.networkDelay)
-            && Objects.equals(this.networkJitter, networkCheckInfoRequestBody.networkJitter)
-            && Objects.equals(this.migrationSpeed, networkCheckInfoRequestBody.migrationSpeed)
-            && Objects.equals(this.lossPercentage, networkCheckInfoRequestBody.lossPercentage)
-            && Objects.equals(this.cpuUsage, networkCheckInfoRequestBody.cpuUsage)
-            && Objects.equals(this.memUsage, networkCheckInfoRequestBody.memUsage)
-            && Objects.equals(this.evaluationResult, networkCheckInfoRequestBody.evaluationResult);
+        NetworkCheckInfoRequestBody that = (NetworkCheckInfoRequestBody) obj;
+        return Objects.equals(this.networkDelay, that.networkDelay)
+            && Objects.equals(this.networkJitter, that.networkJitter)
+            && Objects.equals(this.migrationSpeed, that.migrationSpeed)
+            && Objects.equals(this.lossPercentage, that.lossPercentage) && Objects.equals(this.cpuUsage, that.cpuUsage)
+            && Objects.equals(this.memUsage, that.memUsage)
+            && Objects.equals(this.evaluationResult, that.evaluationResult);
     }
 
     @Override

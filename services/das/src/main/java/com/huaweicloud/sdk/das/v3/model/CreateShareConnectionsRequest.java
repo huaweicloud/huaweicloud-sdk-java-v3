@@ -67,16 +67,15 @@ public class CreateShareConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateShareConnectionsRequest createShareConnectionsRequest = (CreateShareConnectionsRequest) o;
-        return Objects.equals(this.xLanguage, createShareConnectionsRequest.xLanguage)
-            && Objects.equals(this.body, createShareConnectionsRequest.body);
+        CreateShareConnectionsRequest that = (CreateShareConnectionsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

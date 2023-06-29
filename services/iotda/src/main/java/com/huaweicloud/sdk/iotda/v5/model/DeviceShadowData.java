@@ -118,18 +118,16 @@ public class DeviceShadowData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceShadowData deviceShadowData = (DeviceShadowData) o;
-        return Objects.equals(this.serviceId, deviceShadowData.serviceId)
-            && Objects.equals(this.desired, deviceShadowData.desired)
-            && Objects.equals(this.reported, deviceShadowData.reported)
-            && Objects.equals(this.version, deviceShadowData.version);
+        DeviceShadowData that = (DeviceShadowData) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.desired, that.desired)
+            && Objects.equals(this.reported, that.reported) && Objects.equals(this.version, that.version);
     }
 
     @Override

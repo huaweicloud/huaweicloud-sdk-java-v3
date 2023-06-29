@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,16 +11,13 @@ import java.util.Objects;
  */
 public class TagLaborResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
 
     private String requestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_time")
-    
+    @JsonProperty(value = "updated_time")
 
     private String updatedTime;
 
@@ -36,9 +25,6 @@ public class TagLaborResponse extends SdkResponse {
         this.requestId = requestId;
         return this;
     }
-
-    
-
 
     /**
      * 调用成功时的返回请求ID。  调用失败时无此字段。
@@ -52,15 +38,10 @@ public class TagLaborResponse extends SdkResponse {
         this.requestId = requestId;
     }
 
-    
-
     public TagLaborResponse withUpdatedTime(String updatedTime) {
         this.updatedTime = updatedTime;
         return this;
     }
-
-    
-
 
     /**
      * 转人工的时间。格式为“yyyy-MM-dd THH:mm:ssZ”。其中，T指某个时间的开始；Z指UTC时间。  调用失败时无此字段。
@@ -74,24 +55,23 @@ public class TagLaborResponse extends SdkResponse {
         this.updatedTime = updatedTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagLaborResponse tagLaborResponse = (TagLaborResponse) o;
-        return Objects.equals(this.requestId, tagLaborResponse.requestId) &&
-            Objects.equals(this.updatedTime, tagLaborResponse.updatedTime);
+        TagLaborResponse that = (TagLaborResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.updatedTime, that.updatedTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(requestId, updatedTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -101,6 +81,7 @@ public class TagLaborResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -111,8 +92,5 @@ public class TagLaborResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

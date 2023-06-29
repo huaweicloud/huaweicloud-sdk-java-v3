@@ -97,17 +97,16 @@ public class ListAppQuotaBindableAppsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuotaBindableAppsResponse listAppQuotaBindableAppsResponse = (ListAppQuotaBindableAppsResponse) o;
-        return Objects.equals(this.size, listAppQuotaBindableAppsResponse.size)
-            && Objects.equals(this.total, listAppQuotaBindableAppsResponse.total)
-            && Objects.equals(this.apps, listAppQuotaBindableAppsResponse.apps);
+        ListAppQuotaBindableAppsResponse that = (ListAppQuotaBindableAppsResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apps, that.apps);
     }
 
     @Override

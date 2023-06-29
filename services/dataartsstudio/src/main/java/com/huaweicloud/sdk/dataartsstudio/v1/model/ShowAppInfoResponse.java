@@ -124,22 +124,15 @@ public class ShowAppInfoResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -332,23 +325,19 @@ public class ShowAppInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppInfoResponse showAppInfoResponse = (ShowAppInfoResponse) o;
-        return Objects.equals(this.id, showAppInfoResponse.id) && Objects.equals(this.name, showAppInfoResponse.name)
-            && Objects.equals(this.description, showAppInfoResponse.description)
-            && Objects.equals(this.appKey, showAppInfoResponse.appKey)
-            && Objects.equals(this.appSecret, showAppInfoResponse.appSecret)
-            && Objects.equals(this.registerTime, showAppInfoResponse.registerTime)
-            && Objects.equals(this.updateTime, showAppInfoResponse.updateTime)
-            && Objects.equals(this.createUser, showAppInfoResponse.createUser)
-            && Objects.equals(this.updateUser, showAppInfoResponse.updateUser)
-            && Objects.equals(this.appType, showAppInfoResponse.appType);
+        ShowAppInfoResponse that = (ShowAppInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.appSecret, that.appSecret) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.updateUser, that.updateUser) && Objects.equals(this.appType, that.appType);
     }
 
     @Override

@@ -45,16 +45,15 @@ public class KeystoneShowIdentityProviderResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowIdentityProviderResponse keystoneShowIdentityProviderResponse =
-            (KeystoneShowIdentityProviderResponse) o;
-        return Objects.equals(this.identityProvider, keystoneShowIdentityProviderResponse.identityProvider);
+        KeystoneShowIdentityProviderResponse that = (KeystoneShowIdentityProviderResponse) obj;
+        return Objects.equals(this.identityProvider, that.identityProvider);
     }
 
     @Override

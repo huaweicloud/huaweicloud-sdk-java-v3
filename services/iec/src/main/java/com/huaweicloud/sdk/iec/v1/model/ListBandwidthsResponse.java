@@ -75,16 +75,15 @@ public class ListBandwidthsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthsResponse listBandwidthsResponse = (ListBandwidthsResponse) o;
-        return Objects.equals(this.bandwidths, listBandwidthsResponse.bandwidths)
-            && Objects.equals(this.count, listBandwidthsResponse.count);
+        ListBandwidthsResponse that = (ListBandwidthsResponse) obj;
+        return Objects.equals(this.bandwidths, that.bandwidths) && Objects.equals(this.count, that.count);
     }
 
     @Override

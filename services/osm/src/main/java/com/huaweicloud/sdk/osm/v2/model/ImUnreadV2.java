@@ -81,16 +81,16 @@ public class ImUnreadV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImUnreadV2 imUnreadV2 = (ImUnreadV2) o;
-        return Objects.equals(this.status, imUnreadV2.status) && Objects.equals(this.incidentId, imUnreadV2.incidentId)
-            && Objects.equals(this.unreadNum, imUnreadV2.unreadNum);
+        ImUnreadV2 that = (ImUnreadV2) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.unreadNum, that.unreadNum);
     }
 
     @Override

@@ -89,18 +89,16 @@ public class CreateCloudPersistentVolumeClaimsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudPersistentVolumeClaimsRequest createCloudPersistentVolumeClaimsRequest =
-            (CreateCloudPersistentVolumeClaimsRequest) o;
-        return Objects.equals(this.namespace, createCloudPersistentVolumeClaimsRequest.namespace)
-            && Objects.equals(this.xClusterID, createCloudPersistentVolumeClaimsRequest.xClusterID)
-            && Objects.equals(this.body, createCloudPersistentVolumeClaimsRequest.body);
+        CreateCloudPersistentVolumeClaimsRequest that = (CreateCloudPersistentVolumeClaimsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.xClusterID, that.xClusterID)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

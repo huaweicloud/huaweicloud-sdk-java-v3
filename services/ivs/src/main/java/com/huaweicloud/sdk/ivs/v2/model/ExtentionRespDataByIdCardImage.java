@@ -109,18 +109,18 @@ public class ExtentionRespDataByIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtentionRespDataByIdCardImage extentionRespDataByIdCardImage = (ExtentionRespDataByIdCardImage) o;
-        return Objects.equals(this.verificationResult, extentionRespDataByIdCardImage.verificationResult)
-            && Objects.equals(this.verificationMessage, extentionRespDataByIdCardImage.verificationMessage)
-            && Objects.equals(this.verificationCode, extentionRespDataByIdCardImage.verificationCode)
-            && Objects.equals(this.idcardResult, extentionRespDataByIdCardImage.idcardResult);
+        ExtentionRespDataByIdCardImage that = (ExtentionRespDataByIdCardImage) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.idcardResult, that.idcardResult);
     }
 
     @Override

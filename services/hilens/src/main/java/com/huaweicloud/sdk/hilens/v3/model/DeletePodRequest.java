@@ -77,17 +77,16 @@ public class DeletePodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePodRequest deletePodRequest = (DeletePodRequest) o;
-        return Objects.equals(this.deploymentId, deletePodRequest.deploymentId)
-            && Objects.equals(this.forceDelete, deletePodRequest.forceDelete)
-            && Objects.equals(this.podId, deletePodRequest.podId);
+        DeletePodRequest that = (DeletePodRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.forceDelete, that.forceDelete) && Objects.equals(this.podId, that.podId);
     }
 
     @Override

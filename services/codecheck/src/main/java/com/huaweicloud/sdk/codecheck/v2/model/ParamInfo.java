@@ -165,19 +165,18 @@ public class ParamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamInfo paramInfo = (ParamInfo) o;
-        return Objects.equals(this.url, paramInfo.url) && Objects.equals(this.branch, paramInfo.branch)
-            && Objects.equals(this.language, paramInfo.language)
-            && Objects.equals(this.excludeDir, paramInfo.excludeDir) && Objects.equals(this.encode, paramInfo.encode)
-            && Objects.equals(this.compileConfig, paramInfo.compileConfig)
-            && Objects.equals(this.ruleTemplate, paramInfo.ruleTemplate);
+        ParamInfo that = (ParamInfo) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.branch, that.branch)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.excludeDir, that.excludeDir)
+            && Objects.equals(this.encode, that.encode) && Objects.equals(this.compileConfig, that.compileConfig)
+            && Objects.equals(this.ruleTemplate, that.ruleTemplate);
     }
 
     @Override

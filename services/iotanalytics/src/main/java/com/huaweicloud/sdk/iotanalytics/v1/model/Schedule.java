@@ -228,21 +228,21 @@ public class Schedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Schedule schedule = (Schedule) o;
-        return Objects.equals(this.startTime, schedule.startTime) && Objects.equals(this.endTime, schedule.endTime)
-            && Objects.equals(this.cronExpression, schedule.cronExpression)
-            && Objects.equals(this.computingResourceId, schedule.computingResourceId)
-            && Objects.equals(this.enable, schedule.enable) && Objects.equals(this.conf, schedule.conf)
-            && Objects.equals(this.scheduleStatus, schedule.scheduleStatus)
-            && Objects.equals(this.nextFireTime, schedule.nextFireTime)
-            && Objects.equals(this.prevFireTime, schedule.prevFireTime);
+        Schedule that = (Schedule) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.cronExpression, that.cronExpression)
+            && Objects.equals(this.computingResourceId, that.computingResourceId)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.conf, that.conf)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus)
+            && Objects.equals(this.nextFireTime, that.nextFireTime)
+            && Objects.equals(this.prevFireTime, that.prevFireTime);
     }
 
     @Override

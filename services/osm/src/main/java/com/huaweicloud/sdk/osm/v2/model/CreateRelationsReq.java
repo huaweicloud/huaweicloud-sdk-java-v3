@@ -74,16 +74,15 @@ public class CreateRelationsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRelationsReq createRelationsReq = (CreateRelationsReq) o;
-        return Objects.equals(this.relatedIdList, createRelationsReq.relatedIdList)
-            && Objects.equals(this.groupId, createRelationsReq.groupId);
+        CreateRelationsReq that = (CreateRelationsReq) obj;
+        return Objects.equals(this.relatedIdList, that.relatedIdList) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

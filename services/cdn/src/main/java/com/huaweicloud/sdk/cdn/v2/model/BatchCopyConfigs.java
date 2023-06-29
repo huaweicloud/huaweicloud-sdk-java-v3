@@ -96,17 +96,16 @@ public class BatchCopyConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCopyConfigs batchCopyConfigs = (BatchCopyConfigs) o;
-        return Objects.equals(this.targetDomain, batchCopyConfigs.targetDomain)
-            && Objects.equals(this.sourceDomain, batchCopyConfigs.sourceDomain)
-            && Objects.equals(this.configList, batchCopyConfigs.configList);
+        BatchCopyConfigs that = (BatchCopyConfigs) obj;
+        return Objects.equals(this.targetDomain, that.targetDomain)
+            && Objects.equals(this.sourceDomain, that.sourceDomain) && Objects.equals(this.configList, that.configList);
     }
 
     @Override

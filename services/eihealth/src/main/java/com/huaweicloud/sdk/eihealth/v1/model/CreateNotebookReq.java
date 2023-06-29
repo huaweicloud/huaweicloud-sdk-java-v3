@@ -158,18 +158,17 @@ public class CreateNotebookReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNotebookReq createNotebookReq = (CreateNotebookReq) o;
-        return Objects.equals(this.description, createNotebookReq.description)
-            && Objects.equals(this.storages, createNotebookReq.storages)
-            && Objects.equals(this.flavor, createNotebookReq.flavor)
-            && Objects.equals(this.image, createNotebookReq.image) && Objects.equals(this.name, createNotebookReq.name);
+        CreateNotebookReq that = (CreateNotebookReq) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.storages, that.storages)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowHealthmonitorsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHealthmonitorsResponse showHealthmonitorsResponse = (ShowHealthmonitorsResponse) o;
-        return Objects.equals(this.healthmonitor, showHealthmonitorsResponse.healthmonitor);
+        ShowHealthmonitorsResponse that = (ShowHealthmonitorsResponse) obj;
+        return Objects.equals(this.healthmonitor, that.healthmonitor);
     }
 
     @Override

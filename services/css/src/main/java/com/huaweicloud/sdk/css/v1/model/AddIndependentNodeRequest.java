@@ -87,17 +87,16 @@ public class AddIndependentNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddIndependentNodeRequest addIndependentNodeRequest = (AddIndependentNodeRequest) o;
-        return Objects.equals(this.clusterId, addIndependentNodeRequest.clusterId)
-            && Objects.equals(this.type, addIndependentNodeRequest.type)
-            && Objects.equals(this.body, addIndependentNodeRequest.body);
+        AddIndependentNodeRequest that = (AddIndependentNodeRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

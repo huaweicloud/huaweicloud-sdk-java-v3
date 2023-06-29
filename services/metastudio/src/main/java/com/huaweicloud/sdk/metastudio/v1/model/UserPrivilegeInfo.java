@@ -77,22 +77,15 @@ public class UserPrivilegeInfo {
             if (value == null) {
                 return null;
             }
-            PrivilegeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrivilegeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrivilegeEnum(value));
         }
 
         public static PrivilegeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrivilegeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,17 +164,16 @@ public class UserPrivilegeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserPrivilegeInfo userPrivilegeInfo = (UserPrivilegeInfo) o;
-        return Objects.equals(this.tenantId, userPrivilegeInfo.tenantId)
-            && Objects.equals(this.privilege, userPrivilegeInfo.privilege)
-            && Objects.equals(this.expireTime, userPrivilegeInfo.expireTime);
+        UserPrivilegeInfo that = (UserPrivilegeInfo) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.privilege, that.privilege)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

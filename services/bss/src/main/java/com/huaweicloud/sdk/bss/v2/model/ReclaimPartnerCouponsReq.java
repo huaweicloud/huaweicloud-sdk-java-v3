@@ -55,16 +55,16 @@ public class ReclaimPartnerCouponsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReclaimPartnerCouponsReq reclaimPartnerCouponsReq = (ReclaimPartnerCouponsReq) o;
-        return Objects.equals(this.couponId, reclaimPartnerCouponsReq.couponId)
-            && Objects.equals(this.indirectPartnerId, reclaimPartnerCouponsReq.indirectPartnerId);
+        ReclaimPartnerCouponsReq that = (ReclaimPartnerCouponsReq) obj;
+        return Objects.equals(this.couponId, that.couponId)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

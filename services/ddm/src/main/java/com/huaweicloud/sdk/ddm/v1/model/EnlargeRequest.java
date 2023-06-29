@@ -99,18 +99,16 @@ public class EnlargeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeRequest enlargeRequest = (EnlargeRequest) o;
-        return Objects.equals(this.flavorId, enlargeRequest.flavorId)
-            && Objects.equals(this.nodeNumber, enlargeRequest.nodeNumber)
-            && Objects.equals(this.groupId, enlargeRequest.groupId)
-            && Objects.equals(this.isAutoPay, enlargeRequest.isAutoPay);
+        EnlargeRequest that = (EnlargeRequest) obj;
+        return Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.nodeNumber, that.nodeNumber)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

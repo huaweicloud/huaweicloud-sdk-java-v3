@@ -167,18 +167,16 @@ public class ShowTenantMetricResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTenantMetricResponse showTenantMetricResponse = (ShowTenantMetricResponse) o;
-        return Objects.equals(this.count, showTenantMetricResponse.count)
-            && Objects.equals(this.duration, showTenantMetricResponse.duration)
-            && Objects.equals(this.failCount, showTenantMetricResponse.failCount)
-            && Objects.equals(this.runningCount, showTenantMetricResponse.runningCount);
+        ShowTenantMetricResponse that = (ShowTenantMetricResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.failCount, that.failCount) && Objects.equals(this.runningCount, that.runningCount);
     }
 
     @Override

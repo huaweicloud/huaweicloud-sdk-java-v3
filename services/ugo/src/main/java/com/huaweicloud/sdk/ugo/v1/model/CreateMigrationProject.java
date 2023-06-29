@@ -118,18 +118,18 @@ public class CreateMigrationProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMigrationProject createMigrationProject = (CreateMigrationProject) o;
-        return Objects.equals(this.migrationProjectName, createMigrationProject.migrationProjectName)
-            && Objects.equals(this.evaluationProjectId, createMigrationProject.evaluationProjectId)
-            && Objects.equals(this.targetDbInfo, createMigrationProject.targetDbInfo)
-            && Objects.equals(this.openGaussConfig, createMigrationProject.openGaussConfig);
+        CreateMigrationProject that = (CreateMigrationProject) obj;
+        return Objects.equals(this.migrationProjectName, that.migrationProjectName)
+            && Objects.equals(this.evaluationProjectId, that.evaluationProjectId)
+            && Objects.equals(this.targetDbInfo, that.targetDbInfo)
+            && Objects.equals(this.openGaussConfig, that.openGaussConfig);
     }
 
     @Override

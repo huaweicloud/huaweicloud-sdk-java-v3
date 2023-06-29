@@ -34,15 +34,15 @@ public class UpdateDatabaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseResponse updateDatabaseResponse = (UpdateDatabaseResponse) o;
-        return Objects.equals(this.resp, updateDatabaseResponse.resp);
+        UpdateDatabaseResponse that = (UpdateDatabaseResponse) obj;
+        return Objects.equals(this.resp, that.resp);
     }
 
     @Override

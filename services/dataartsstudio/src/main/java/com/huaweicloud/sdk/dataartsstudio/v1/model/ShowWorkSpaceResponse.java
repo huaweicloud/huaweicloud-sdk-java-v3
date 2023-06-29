@@ -367,30 +367,23 @@ public class ShowWorkSpaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkSpaceResponse showWorkSpaceResponse = (ShowWorkSpaceResponse) o;
-        return Objects.equals(this.badRecordLocationName, showWorkSpaceResponse.badRecordLocationName)
-            && Objects.equals(this.description, showWorkSpaceResponse.description)
-            && Objects.equals(this.epsId, showWorkSpaceResponse.epsId)
-            && Objects.equals(this.jobLogLocationName, showWorkSpaceResponse.jobLogLocationName)
-            && Objects.equals(this.name, showWorkSpaceResponse.name)
-            && Objects.equals(this.id, showWorkSpaceResponse.id)
-            && Objects.equals(this.isDefault, showWorkSpaceResponse.isDefault)
-            && Objects.equals(this.ownerName, showWorkSpaceResponse.ownerName)
-            && Objects.equals(this.projectId, showWorkSpaceResponse.projectId)
-            && Objects.equals(this.domainId, showWorkSpaceResponse.domainId)
-            && Objects.equals(this.instanceId, showWorkSpaceResponse.instanceId)
-            && Objects.equals(this.createTime, showWorkSpaceResponse.createTime)
-            && Objects.equals(this.createUser, showWorkSpaceResponse.createUser)
-            && Objects.equals(this.memberNum, showWorkSpaceResponse.memberNum)
-            && Objects.equals(this.updateTime, showWorkSpaceResponse.updateTime)
-            && Objects.equals(this.updateUser, showWorkSpaceResponse.updateUser);
+        ShowWorkSpaceResponse that = (ShowWorkSpaceResponse) obj;
+        return Objects.equals(this.badRecordLocationName, that.badRecordLocationName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.jobLogLocationName, that.jobLogLocationName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.ownerName, that.ownerName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.memberNum, that.memberNum) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

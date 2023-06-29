@@ -34,15 +34,15 @@ public class UpdateScalingGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScalingGroupResponse updateScalingGroupResponse = (UpdateScalingGroupResponse) o;
-        return Objects.equals(this.scalingGroupId, updateScalingGroupResponse.scalingGroupId);
+        UpdateScalingGroupResponse that = (UpdateScalingGroupResponse) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId);
     }
 
     @Override

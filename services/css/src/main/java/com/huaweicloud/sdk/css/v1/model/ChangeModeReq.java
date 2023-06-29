@@ -77,17 +77,16 @@ public class ChangeModeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeModeReq changeModeReq = (ChangeModeReq) o;
-        return Objects.equals(this.authorityEnable, changeModeReq.authorityEnable)
-            && Objects.equals(this.adminPwd, changeModeReq.adminPwd)
-            && Objects.equals(this.httpsEnable, changeModeReq.httpsEnable);
+        ChangeModeReq that = (ChangeModeReq) obj;
+        return Objects.equals(this.authorityEnable, that.authorityEnable)
+            && Objects.equals(this.adminPwd, that.adminPwd) && Objects.equals(this.httpsEnable, that.httpsEnable);
     }
 
     @Override

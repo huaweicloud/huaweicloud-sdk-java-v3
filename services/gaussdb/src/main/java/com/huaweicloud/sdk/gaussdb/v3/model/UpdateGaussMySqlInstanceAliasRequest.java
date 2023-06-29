@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.ModifyAliasRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateGaussMySqlInstanceAliasRequest  {
-
+public class UpdateGaussMySqlInstanceAliasRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ModifyAliasRequest body;
 
@@ -42,15 +31,12 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -59,15 +45,10 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public UpdateGaussMySqlInstanceAliasRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 租户在某一project下的实例ID。
@@ -81,22 +62,19 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateGaussMySqlInstanceAliasRequest withBody(ModifyAliasRequest body) {
         this.body = body;
         return this;
     }
 
     public UpdateGaussMySqlInstanceAliasRequest withBody(Consumer<ModifyAliasRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ModifyAliasRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -110,25 +88,24 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGaussMySqlInstanceAliasRequest updateGaussMySqlInstanceAliasRequest = (UpdateGaussMySqlInstanceAliasRequest) o;
-        return Objects.equals(this.xLanguage, updateGaussMySqlInstanceAliasRequest.xLanguage) &&
-            Objects.equals(this.instanceId, updateGaussMySqlInstanceAliasRequest.instanceId) &&
-            Objects.equals(this.body, updateGaussMySqlInstanceAliasRequest.body);
+        UpdateGaussMySqlInstanceAliasRequest that = (UpdateGaussMySqlInstanceAliasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,6 +116,7 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -149,8 +127,5 @@ public class UpdateGaussMySqlInstanceAliasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

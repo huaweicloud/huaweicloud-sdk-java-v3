@@ -29,8 +29,8 @@ public class ListEditingJobRequest {
     private List<String> jobId = null;
 
     /**
-    * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
-    */
+     * 任务执行状态。  取值如下： - INIT：初始状态 - WAITING：待启动 - PREPROCESSING：处理中 - SUCCEED：处理成功 - FAILED：处理失败 - CANCELED：已取消
+     */
     public static final class StatusEnum {
 
         /**
@@ -97,22 +97,15 @@ public class ListEditingJobRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -296,21 +289,18 @@ public class ListEditingJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEditingJobRequest listEditingJobRequest = (ListEditingJobRequest) o;
-        return Objects.equals(this.xLanguage, listEditingJobRequest.xLanguage)
-            && Objects.equals(this.jobId, listEditingJobRequest.jobId)
-            && Objects.equals(this.status, listEditingJobRequest.status)
-            && Objects.equals(this.startTime, listEditingJobRequest.startTime)
-            && Objects.equals(this.endTime, listEditingJobRequest.endTime)
-            && Objects.equals(this.page, listEditingJobRequest.page)
-            && Objects.equals(this.size, listEditingJobRequest.size);
+        ListEditingJobRequest that = (ListEditingJobRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

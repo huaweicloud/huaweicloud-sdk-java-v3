@@ -179,19 +179,17 @@ public class FaceSearchUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceSearchUrlReq faceSearchUrlReq = (FaceSearchUrlReq) o;
-        return Objects.equals(this.filter, faceSearchUrlReq.filter) && Objects.equals(this.topN, faceSearchUrlReq.topN)
-            && Objects.equals(this.imageUrl, faceSearchUrlReq.imageUrl)
-            && Objects.equals(this.returnFields, faceSearchUrlReq.returnFields)
-            && Objects.equals(this.threshold, faceSearchUrlReq.threshold)
-            && Objects.equals(this.sort, faceSearchUrlReq.sort);
+        FaceSearchUrlReq that = (FaceSearchUrlReq) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.topN, that.topN)
+            && Objects.equals(this.imageUrl, that.imageUrl) && Objects.equals(this.returnFields, that.returnFields)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.sort, that.sort);
     }
 
     @Override

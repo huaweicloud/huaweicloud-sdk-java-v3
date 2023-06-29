@@ -55,16 +55,15 @@ public class ListServiceDescribeDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceDescribeDetailsRequest listServiceDescribeDetailsRequest = (ListServiceDescribeDetailsRequest) o;
-        return Objects.equals(this.endpointServiceName, listServiceDescribeDetailsRequest.endpointServiceName)
-            && Objects.equals(this.id, listServiceDescribeDetailsRequest.id);
+        ListServiceDescribeDetailsRequest that = (ListServiceDescribeDetailsRequest) obj;
+        return Objects.equals(this.endpointServiceName, that.endpointServiceName) && Objects.equals(this.id, that.id);
     }
 
     @Override

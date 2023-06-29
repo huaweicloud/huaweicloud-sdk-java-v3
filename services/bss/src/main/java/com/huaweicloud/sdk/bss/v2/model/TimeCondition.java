@@ -79,17 +79,16 @@ public class TimeCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeCondition timeCondition = (TimeCondition) o;
-        return Objects.equals(this.timeMeasureId, timeCondition.timeMeasureId)
-            && Objects.equals(this.beginTime, timeCondition.beginTime)
-            && Objects.equals(this.endTime, timeCondition.endTime);
+        TimeCondition that = (TimeCondition) obj;
+        return Objects.equals(this.timeMeasureId, that.timeMeasureId) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

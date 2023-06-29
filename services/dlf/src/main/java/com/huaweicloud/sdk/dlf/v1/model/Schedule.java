@@ -67,22 +67,15 @@ public class Schedule {
             if (value == null) {
                 return null;
             }
-            ScheTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScheTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheTypeEnum(value));
         }
 
         public static ScheTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScheTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,16 +177,16 @@ public class Schedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Schedule schedule = (Schedule) o;
-        return Objects.equals(this.scheType, schedule.scheType) && Objects.equals(this.cron, schedule.cron)
-            && Objects.equals(this.event, schedule.event);
+        Schedule that = (Schedule) obj;
+        return Objects.equals(this.scheType, that.scheType) && Objects.equals(this.cron, that.cron)
+            && Objects.equals(this.event, that.event);
     }
 
     @Override

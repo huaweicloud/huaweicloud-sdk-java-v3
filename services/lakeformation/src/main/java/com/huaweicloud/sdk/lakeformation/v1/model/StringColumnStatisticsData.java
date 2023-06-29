@@ -121,24 +121,28 @@ public class StringColumnStatisticsData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StringColumnStatisticsData stringColumnStatisticsData = (StringColumnStatisticsData) o;
-        return Objects.equals(this.averageLength, stringColumnStatisticsData.averageLength)
-            && Objects.equals(this.maximumLength, stringColumnStatisticsData.maximumLength)
-            && Objects.equals(this.numberOfNull, stringColumnStatisticsData.numberOfNull)
-            && Objects.equals(this.numberOfDistinctValue, stringColumnStatisticsData.numberOfDistinctValue)
-            && Objects.equals(this.bitVector, stringColumnStatisticsData.bitVector);
+        StringColumnStatisticsData that = (StringColumnStatisticsData) obj;
+        return Objects.equals(this.averageLength, that.averageLength)
+            && Objects.equals(this.maximumLength, that.maximumLength)
+            && Objects.equals(this.numberOfNull, that.numberOfNull)
+            && Objects.equals(this.numberOfDistinctValue, that.numberOfDistinctValue)
+            && java.util.Arrays.equals(this.bitVector, that.bitVector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(averageLength, maximumLength, numberOfNull, numberOfDistinctValue, bitVector);
+        return Objects.hash(averageLength,
+            maximumLength,
+            numberOfNull,
+            numberOfDistinctValue,
+            java.util.Arrays.hashCode(bitVector));
     }
 
     @Override

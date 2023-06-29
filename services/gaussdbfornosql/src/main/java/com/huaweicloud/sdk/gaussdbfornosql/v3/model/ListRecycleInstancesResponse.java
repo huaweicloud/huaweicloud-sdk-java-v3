@@ -75,16 +75,15 @@ public class ListRecycleInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecycleInstancesResponse listRecycleInstancesResponse = (ListRecycleInstancesResponse) o;
-        return Objects.equals(this.totalCount, listRecycleInstancesResponse.totalCount)
-            && Objects.equals(this.instances, listRecycleInstancesResponse.instances);
+        ListRecycleInstancesResponse that = (ListRecycleInstancesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.instances, that.instances);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ShowSpanSearchResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSpanSearchResponse showSpanSearchResponse = (ShowSpanSearchResponse) o;
-        return Objects.equals(this.total, showSpanSearchResponse.total)
-            && Objects.equals(this.spanInfoList, showSpanSearchResponse.spanInfoList);
+        ShowSpanSearchResponse that = (ShowSpanSearchResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.spanInfoList, that.spanInfoList);
     }
 
     @Override

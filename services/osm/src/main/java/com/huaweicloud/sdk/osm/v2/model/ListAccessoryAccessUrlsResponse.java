@@ -53,15 +53,15 @@ public class ListAccessoryAccessUrlsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessoryAccessUrlsResponse listAccessoryAccessUrlsResponse = (ListAccessoryAccessUrlsResponse) o;
-        return Objects.equals(this.accessoryUrls, listAccessoryAccessUrlsResponse.accessoryUrls);
+        ListAccessoryAccessUrlsResponse that = (ListAccessoryAccessUrlsResponse) obj;
+        return Objects.equals(this.accessoryUrls, that.accessoryUrls);
     }
 
     @Override

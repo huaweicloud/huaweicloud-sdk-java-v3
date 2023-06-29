@@ -84,22 +84,15 @@ public class UpdatePremiumHostRequestBody {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsEnum(value));
         }
 
         public static TlsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,22 +177,15 @@ public class UpdatePremiumHostRequestBody {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CipherEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherEnum(value));
         }
 
         public static CipherEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -648,31 +634,24 @@ public class UpdatePremiumHostRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePremiumHostRequestBody updatePremiumHostRequestBody = (UpdatePremiumHostRequestBody) o;
-        return Objects.equals(this.proxy, updatePremiumHostRequestBody.proxy)
-            && Objects.equals(this.certificateid, updatePremiumHostRequestBody.certificateid)
-            && Objects.equals(this.certificatename, updatePremiumHostRequestBody.certificatename)
-            && Objects.equals(this.tls, updatePremiumHostRequestBody.tls)
-            && Objects.equals(this.cipher, updatePremiumHostRequestBody.cipher)
-            && Objects.equals(this.mode, updatePremiumHostRequestBody.mode)
-            && Objects.equals(this.locked, updatePremiumHostRequestBody.locked)
-            && Objects.equals(this.protectStatus, updatePremiumHostRequestBody.protectStatus)
-            && Objects.equals(this.accessStatus, updatePremiumHostRequestBody.accessStatus)
-            && Objects.equals(this.timestamp, updatePremiumHostRequestBody.timestamp)
-            && Objects.equals(this.poolIds, updatePremiumHostRequestBody.poolIds)
-            && Objects.equals(this.blockPage, updatePremiumHostRequestBody.blockPage)
-            && Objects.equals(this.trafficMark, updatePremiumHostRequestBody.trafficMark)
-            && Objects.equals(this.circuitBreaker, updatePremiumHostRequestBody.circuitBreaker)
-            && Objects.equals(this.timeoutConfig, updatePremiumHostRequestBody.timeoutConfig)
-            && Objects.equals(this.flag, updatePremiumHostRequestBody.flag)
-            && Objects.equals(this.forwardHeaderMap, updatePremiumHostRequestBody.forwardHeaderMap);
+        UpdatePremiumHostRequestBody that = (UpdatePremiumHostRequestBody) obj;
+        return Objects.equals(this.proxy, that.proxy) && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.tls, that.tls)
+            && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.poolIds, that.poolIds) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.trafficMark, that.trafficMark)
+            && Objects.equals(this.circuitBreaker, that.circuitBreaker)
+            && Objects.equals(this.timeoutConfig, that.timeoutConfig) && Objects.equals(this.flag, that.flag)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

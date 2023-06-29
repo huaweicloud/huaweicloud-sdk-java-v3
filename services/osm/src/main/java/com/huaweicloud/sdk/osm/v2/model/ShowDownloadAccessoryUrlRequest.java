@@ -95,22 +95,15 @@ public class ShowDownloadAccessoryUrlRequest {
             if (value == null) {
                 return null;
             }
-            RelationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationTypeEnum(value));
         }
 
         public static RelationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RelationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -211,18 +204,17 @@ public class ShowDownloadAccessoryUrlRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDownloadAccessoryUrlRequest showDownloadAccessoryUrlRequest = (ShowDownloadAccessoryUrlRequest) o;
-        return Objects.equals(this.accessoryId, showDownloadAccessoryUrlRequest.accessoryId)
-            && Objects.equals(this.relationType, showDownloadAccessoryUrlRequest.relationType)
-            && Objects.equals(this.relationId, showDownloadAccessoryUrlRequest.relationId)
-            && Objects.equals(this.incidentId, showDownloadAccessoryUrlRequest.incidentId);
+        ShowDownloadAccessoryUrlRequest that = (ShowDownloadAccessoryUrlRequest) obj;
+        return Objects.equals(this.accessoryId, that.accessoryId)
+            && Objects.equals(this.relationType, that.relationType) && Objects.equals(this.relationId, that.relationId)
+            && Objects.equals(this.incidentId, that.incidentId);
     }
 
     @Override

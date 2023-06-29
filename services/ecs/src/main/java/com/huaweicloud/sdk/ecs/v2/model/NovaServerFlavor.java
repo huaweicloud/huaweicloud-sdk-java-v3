@@ -246,21 +246,19 @@ public class NovaServerFlavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServerFlavor novaServerFlavor = (NovaServerFlavor) o;
-        return Objects.equals(this.id, novaServerFlavor.id) && Objects.equals(this.links, novaServerFlavor.links)
-            && Objects.equals(this.vcpus, novaServerFlavor.vcpus) && Objects.equals(this.ram, novaServerFlavor.ram)
-            && Objects.equals(this.disk, novaServerFlavor.disk)
-            && Objects.equals(this.ephemeral, novaServerFlavor.ephemeral)
-            && Objects.equals(this.swap, novaServerFlavor.swap)
-            && Objects.equals(this.originalName, novaServerFlavor.originalName)
-            && Objects.equals(this.extraSpecs, novaServerFlavor.extraSpecs);
+        NovaServerFlavor that = (NovaServerFlavor) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.ephemeral, that.ephemeral)
+            && Objects.equals(this.swap, that.swap) && Objects.equals(this.originalName, that.originalName)
+            && Objects.equals(this.extraSpecs, that.extraSpecs);
     }
 
     @Override

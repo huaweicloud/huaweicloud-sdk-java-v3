@@ -85,17 +85,16 @@ public class ListCustomersRegionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomersRegionsRequest listCustomersRegionsRequest = (ListCustomersRegionsRequest) o;
-        return Objects.equals(this.xSite, listCustomersRegionsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCustomersRegionsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCustomersRegionsRequest.xTimeZone);
+        ListCustomersRegionsRequest that = (ListCustomersRegionsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

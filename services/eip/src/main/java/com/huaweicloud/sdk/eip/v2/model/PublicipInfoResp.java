@@ -80,22 +80,15 @@ public class PublicipInfoResp {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,19 +196,18 @@ public class PublicipInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicipInfoResp publicipInfoResp = (PublicipInfoResp) o;
-        return Objects.equals(this.publicipAddress, publicipInfoResp.publicipAddress)
-            && Objects.equals(this.publicipId, publicipInfoResp.publicipId)
-            && Objects.equals(this.publicipType, publicipInfoResp.publicipType)
-            && Objects.equals(this.publicipv6Address, publicipInfoResp.publicipv6Address)
-            && Objects.equals(this.ipVersion, publicipInfoResp.ipVersion);
+        PublicipInfoResp that = (PublicipInfoResp) obj;
+        return Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.publicipType, that.publicipType)
+            && Objects.equals(this.publicipv6Address, that.publicipv6Address)
+            && Objects.equals(this.ipVersion, that.ipVersion);
     }
 
     @Override

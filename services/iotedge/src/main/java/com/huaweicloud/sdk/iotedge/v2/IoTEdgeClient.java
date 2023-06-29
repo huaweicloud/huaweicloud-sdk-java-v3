@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.iotedge.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.iotedge.v2.model.*;
 
 public class IoTEdgeClient {
+
     protected HcClient hcClient;
 
     public IoTEdgeClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class IoTEdgeClient {
     public static ClientBuilder<IoTEdgeClient> newBuilder() {
         return new ClientBuilder<>(IoTEdgeClient::new);
     }
-
 
     /**
      * 创建边缘节点
@@ -41,8 +41,10 @@ public class IoTEdgeClient {
      * @param CreateEdgeNodeRequest 请求对象
      * @return SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>
      */
-    public SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNodeInvoker(CreateEdgeNodeRequest request) {
-        return new SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>(request, IoTEdgeMeta.createEdgeNode, hcClient);
+    public SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse> createEdgeNodeInvoker(
+        CreateEdgeNodeRequest request) {
+        return new SyncInvoker<CreateEdgeNodeRequest, CreateEdgeNodeResponse>(request, IoTEdgeMeta.createEdgeNode,
+            hcClient);
     }
 
     /**
@@ -69,8 +71,10 @@ public class IoTEdgeClient {
      * @param CreateInstallCmdRequest 请求对象
      * @return SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>
      */
-    public SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdInvoker(CreateInstallCmdRequest request) {
-        return new SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request, IoTEdgeMeta.createInstallCmd, hcClient);
+    public SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse> createInstallCmdInvoker(
+        CreateInstallCmdRequest request) {
+        return new SyncInvoker<CreateInstallCmdRequest, CreateInstallCmdResponse>(request, IoTEdgeMeta.createInstallCmd,
+            hcClient);
     }
 
     /**
@@ -97,8 +101,10 @@ public class IoTEdgeClient {
      * @param DeleteEdgeNodeRequest 请求对象
      * @return SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>
      */
-    public SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNodeInvoker(DeleteEdgeNodeRequest request) {
-        return new SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>(request, IoTEdgeMeta.deleteEdgeNode, hcClient);
+    public SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse> deleteEdgeNodeInvoker(
+        DeleteEdgeNodeRequest request) {
+        return new SyncInvoker<DeleteEdgeNodeRequest, DeleteEdgeNodeResponse>(request, IoTEdgeMeta.deleteEdgeNode,
+            hcClient);
     }
 
     /**
@@ -126,7 +132,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>
      */
     public SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse> listEdgeNodesInvoker(ListEdgeNodesRequest request) {
-        return new SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>(request, IoTEdgeMeta.listEdgeNodes, hcClient);
+        return new SyncInvoker<ListEdgeNodesRequest, ListEdgeNodesResponse>(request, IoTEdgeMeta.listEdgeNodes,
+            hcClient);
     }
 
     /**
@@ -265,8 +272,10 @@ public class IoTEdgeClient {
      * @param ShowProductConfigRequest 请求对象
      * @return SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>
      */
-    public SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfigInvoker(ShowProductConfigRequest request) {
-        return new SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>(request, IoTEdgeMeta.showProductConfig, hcClient);
+    public SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse> showProductConfigInvoker(
+        ShowProductConfigRequest request) {
+        return new SyncInvoker<ShowProductConfigRequest, ShowProductConfigResponse>(request,
+            IoTEdgeMeta.showProductConfig, hcClient);
     }
 
     /**
@@ -321,8 +330,10 @@ public class IoTEdgeClient {
      * @param BatchListEdgeAppsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>
      */
-    public SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeAppsInvoker(BatchListEdgeAppsRequest request) {
-        return new SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>(request, IoTEdgeMeta.batchListEdgeApps, hcClient);
+    public SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse> batchListEdgeAppsInvoker(
+        BatchListEdgeAppsRequest request) {
+        return new SyncInvoker<BatchListEdgeAppsRequest, BatchListEdgeAppsResponse>(request,
+            IoTEdgeMeta.batchListEdgeApps, hcClient);
     }
 
     /**
@@ -350,7 +361,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>
      */
     public SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse> createEdgeAppInvoker(CreateEdgeAppRequest request) {
-        return new SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, IoTEdgeMeta.createEdgeApp, hcClient);
+        return new SyncInvoker<CreateEdgeAppRequest, CreateEdgeAppResponse>(request, IoTEdgeMeta.createEdgeApp,
+            hcClient);
     }
 
     /**
@@ -378,7 +390,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>
      */
     public SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse> deleteEdgeAppInvoker(DeleteEdgeAppRequest request) {
-        return new SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, IoTEdgeMeta.deleteEdgeApp, hcClient);
+        return new SyncInvoker<DeleteEdgeAppRequest, DeleteEdgeAppResponse>(request, IoTEdgeMeta.deleteEdgeApp,
+            hcClient);
     }
 
     /**
@@ -433,8 +446,10 @@ public class IoTEdgeClient {
      * @param BatchListEdgeAppVersionsRequest 请求对象
      * @return SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>
      */
-    public SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsInvoker(BatchListEdgeAppVersionsRequest request) {
-        return new SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>(request, IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
+    public SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse> batchListEdgeAppVersionsInvoker(
+        BatchListEdgeAppVersionsRequest request) {
+        return new SyncInvoker<BatchListEdgeAppVersionsRequest, BatchListEdgeAppVersionsResponse>(request,
+            IoTEdgeMeta.batchListEdgeAppVersions, hcClient);
     }
 
     /**
@@ -447,7 +462,8 @@ public class IoTEdgeClient {
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return CreateEdgeApplicationVersionResponse
      */
-    public CreateEdgeApplicationVersionResponse createEdgeApplicationVersion(CreateEdgeApplicationVersionRequest request) {
+    public CreateEdgeApplicationVersionResponse createEdgeApplicationVersion(
+        CreateEdgeApplicationVersionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTEdgeMeta.createEdgeApplicationVersion);
     }
 
@@ -461,8 +477,10 @@ public class IoTEdgeClient {
      * @param CreateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>
      */
-    public SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionInvoker(CreateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request, IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
+    public SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse> createEdgeApplicationVersionInvoker(
+        CreateEdgeApplicationVersionRequest request) {
+        return new SyncInvoker<CreateEdgeApplicationVersionRequest, CreateEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.createEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -475,7 +493,8 @@ public class IoTEdgeClient {
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return DeleteEdgeApplicationVersionResponse
      */
-    public DeleteEdgeApplicationVersionResponse deleteEdgeApplicationVersion(DeleteEdgeApplicationVersionRequest request) {
+    public DeleteEdgeApplicationVersionResponse deleteEdgeApplicationVersion(
+        DeleteEdgeApplicationVersionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTEdgeMeta.deleteEdgeApplicationVersion);
     }
 
@@ -489,8 +508,10 @@ public class IoTEdgeClient {
      * @param DeleteEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>
      */
-    public SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionInvoker(DeleteEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request, IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
+    public SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse> deleteEdgeApplicationVersionInvoker(
+        DeleteEdgeApplicationVersionRequest request) {
+        return new SyncInvoker<DeleteEdgeApplicationVersionRequest, DeleteEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.deleteEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -517,8 +538,10 @@ public class IoTEdgeClient {
      * @param ShowEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>
      */
-    public SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionInvoker(ShowEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request, IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
+    public SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse> showEdgeApplicationVersionInvoker(
+        ShowEdgeApplicationVersionRequest request) {
+        return new SyncInvoker<ShowEdgeApplicationVersionRequest, ShowEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.showEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -531,7 +554,8 @@ public class IoTEdgeClient {
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return UpdateEdgeApplicationVersionResponse
      */
-    public UpdateEdgeApplicationVersionResponse updateEdgeApplicationVersion(UpdateEdgeApplicationVersionRequest request) {
+    public UpdateEdgeApplicationVersionResponse updateEdgeApplicationVersion(
+        UpdateEdgeApplicationVersionRequest request) {
         return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateEdgeApplicationVersion);
     }
 
@@ -545,8 +569,10 @@ public class IoTEdgeClient {
      * @param UpdateEdgeApplicationVersionRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>
      */
-    public SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionInvoker(UpdateEdgeApplicationVersionRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request, IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
+    public SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse> updateEdgeApplicationVersionInvoker(
+        UpdateEdgeApplicationVersionRequest request) {
+        return new SyncInvoker<UpdateEdgeApplicationVersionRequest, UpdateEdgeApplicationVersionResponse>(request,
+            IoTEdgeMeta.updateEdgeApplicationVersion, hcClient);
     }
 
     /**
@@ -559,7 +585,8 @@ public class IoTEdgeClient {
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return UpdateEdgeApplicationVersionStateResponse
      */
-    public UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionState(UpdateEdgeApplicationVersionStateRequest request) {
+    public UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionState(
+        UpdateEdgeApplicationVersionStateRequest request) {
         return hcClient.syncInvokeHttp(request, IoTEdgeMeta.updateEdgeApplicationVersionState);
     }
 
@@ -573,8 +600,10 @@ public class IoTEdgeClient {
      * @param UpdateEdgeApplicationVersionStateRequest 请求对象
      * @return SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>
      */
-    public SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateInvoker(UpdateEdgeApplicationVersionStateRequest request) {
-        return new SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
+    public SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse> updateEdgeApplicationVersionStateInvoker(
+        UpdateEdgeApplicationVersionStateRequest request) {
+        return new SyncInvoker<UpdateEdgeApplicationVersionStateRequest, UpdateEdgeApplicationVersionStateResponse>(
+            request, IoTEdgeMeta.updateEdgeApplicationVersionState, hcClient);
     }
 
     /**
@@ -602,7 +631,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>
      */
     public SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse> batchListDcDsInvoker(BatchListDcDsRequest request) {
-        return new SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs, hcClient);
+        return new SyncInvoker<BatchListDcDsRequest, BatchListDcDsResponse>(request, IoTEdgeMeta.batchListDcDs,
+            hcClient);
     }
 
     /**
@@ -713,8 +743,10 @@ public class IoTEdgeClient {
      * @param SynchronizeDcConfigsRequest 请求对象
      * @return SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>
      */
-    public SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsInvoker(SynchronizeDcConfigsRequest request) {
-        return new SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request, IoTEdgeMeta.synchronizeDcConfigs, hcClient);
+    public SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse> synchronizeDcConfigsInvoker(
+        SynchronizeDcConfigsRequest request) {
+        return new SyncInvoker<SynchronizeDcConfigsRequest, SynchronizeDcConfigsResponse>(request,
+            IoTEdgeMeta.synchronizeDcConfigs, hcClient);
     }
 
     /**
@@ -769,8 +801,10 @@ public class IoTEdgeClient {
      * @param BatchListDcDevicesRequest 请求对象
      * @return SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>
      */
-    public SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesInvoker(BatchListDcDevicesRequest request) {
-        return new SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request, IoTEdgeMeta.batchListDcDevices, hcClient);
+    public SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse> batchListDcDevicesInvoker(
+        BatchListDcDevicesRequest request) {
+        return new SyncInvoker<BatchListDcDevicesRequest, BatchListDcDevicesResponse>(request,
+            IoTEdgeMeta.batchListDcDevices, hcClient);
     }
 
     /**
@@ -797,8 +831,10 @@ public class IoTEdgeClient {
      * @param BatchListDcPointsRequest 请求对象
      * @return SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>
      */
-    public SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsInvoker(BatchListDcPointsRequest request) {
-        return new SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request, IoTEdgeMeta.batchListDcPoints, hcClient);
+    public SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse> batchListDcPointsInvoker(
+        BatchListDcPointsRequest request) {
+        return new SyncInvoker<BatchListDcPointsRequest, BatchListDcPointsResponse>(request,
+            IoTEdgeMeta.batchListDcPoints, hcClient);
     }
 
     /**
@@ -826,7 +862,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<CreateDcPointRequest, CreateDcPointResponse>
      */
     public SyncInvoker<CreateDcPointRequest, CreateDcPointResponse> createDcPointInvoker(CreateDcPointRequest request) {
-        return new SyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint, hcClient);
+        return new SyncInvoker<CreateDcPointRequest, CreateDcPointResponse>(request, IoTEdgeMeta.createDcPoint,
+            hcClient);
     }
 
     /**
@@ -854,7 +891,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>
      */
     public SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse> deleteDcPointInvoker(DeleteDcPointRequest request) {
-        return new SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint, hcClient);
+        return new SyncInvoker<DeleteDcPointRequest, DeleteDcPointResponse>(request, IoTEdgeMeta.deleteDcPoint,
+            hcClient);
     }
 
     /**
@@ -910,7 +948,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>
      */
     public SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse> updateDcPointInvoker(UpdateDcPointRequest request) {
-        return new SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint, hcClient);
+        return new SyncInvoker<UpdateDcPointRequest, UpdateDcPointResponse>(request, IoTEdgeMeta.updateDcPoint,
+            hcClient);
     }
 
     /**
@@ -937,8 +976,10 @@ public class IoTEdgeClient {
      * @param CreateExternalEntityRequest 请求对象
      * @return SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>
      */
-    public SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntityInvoker(CreateExternalEntityRequest request) {
-        return new SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>(request, IoTEdgeMeta.createExternalEntity, hcClient);
+    public SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse> createExternalEntityInvoker(
+        CreateExternalEntityRequest request) {
+        return new SyncInvoker<CreateExternalEntityRequest, CreateExternalEntityResponse>(request,
+            IoTEdgeMeta.createExternalEntity, hcClient);
     }
 
     /**
@@ -965,8 +1006,10 @@ public class IoTEdgeClient {
      * @param DeleteExternalEntityRequest 请求对象
      * @return SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>
      */
-    public SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntityInvoker(DeleteExternalEntityRequest request) {
-        return new SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>(request, IoTEdgeMeta.deleteExternalEntity, hcClient);
+    public SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse> deleteExternalEntityInvoker(
+        DeleteExternalEntityRequest request) {
+        return new SyncInvoker<DeleteExternalEntityRequest, DeleteExternalEntityResponse>(request,
+            IoTEdgeMeta.deleteExternalEntity, hcClient);
     }
 
     /**
@@ -993,8 +1036,10 @@ public class IoTEdgeClient {
      * @param ListExternalEntityRequest 请求对象
      * @return SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>
      */
-    public SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityInvoker(ListExternalEntityRequest request) {
-        return new SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request, IoTEdgeMeta.listExternalEntity, hcClient);
+    public SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse> listExternalEntityInvoker(
+        ListExternalEntityRequest request) {
+        return new SyncInvoker<ListExternalEntityRequest, ListExternalEntityResponse>(request,
+            IoTEdgeMeta.listExternalEntity, hcClient);
     }
 
     /**
@@ -1021,8 +1066,10 @@ public class IoTEdgeClient {
      * @param UpdateExternalEntityRequest 请求对象
      * @return SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>
      */
-    public SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntityInvoker(UpdateExternalEntityRequest request) {
-        return new SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>(request, IoTEdgeMeta.updateExternalEntity, hcClient);
+    public SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse> updateExternalEntityInvoker(
+        UpdateExternalEntityRequest request) {
+        return new SyncInvoker<UpdateExternalEntityRequest, UpdateExternalEntityResponse>(request,
+            IoTEdgeMeta.updateExternalEntity, hcClient);
     }
 
     /**
@@ -1049,8 +1096,10 @@ public class IoTEdgeClient {
      * @param BatchListModulesRequest 请求对象
      * @return SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>
      */
-    public SyncInvoker<BatchListModulesRequest, BatchListModulesResponse> batchListModulesInvoker(BatchListModulesRequest request) {
-        return new SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>(request, IoTEdgeMeta.batchListModules, hcClient);
+    public SyncInvoker<BatchListModulesRequest, BatchListModulesResponse> batchListModulesInvoker(
+        BatchListModulesRequest request) {
+        return new SyncInvoker<BatchListModulesRequest, BatchListModulesResponse>(request, IoTEdgeMeta.batchListModules,
+            hcClient);
     }
 
     /**
@@ -1189,8 +1238,10 @@ public class IoTEdgeClient {
      * @param UpdateModuleStateRequest 请求对象
      * @return SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>
      */
-    public SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateInvoker(UpdateModuleStateRequest request) {
-        return new SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request, IoTEdgeMeta.updateModuleState, hcClient);
+    public SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse> updateModuleStateInvoker(
+        UpdateModuleStateRequest request) {
+        return new SyncInvoker<UpdateModuleStateRequest, UpdateModuleStateResponse>(request,
+            IoTEdgeMeta.updateModuleState, hcClient);
     }
 
     /**
@@ -1273,8 +1324,10 @@ public class IoTEdgeClient {
      * @param AddGeneralOtTemplateRequest 请求对象
      * @return SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>
      */
-    public SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateInvoker(AddGeneralOtTemplateRequest request) {
-        return new SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request, IoTEdgeMeta.addGeneralOtTemplate, hcClient);
+    public SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse> addGeneralOtTemplateInvoker(
+        AddGeneralOtTemplateRequest request) {
+        return new SyncInvoker<AddGeneralOtTemplateRequest, AddGeneralOtTemplateResponse>(request,
+            IoTEdgeMeta.addGeneralOtTemplate, hcClient);
     }
 
     /**
@@ -1301,8 +1354,10 @@ public class IoTEdgeClient {
      * @param AddOtTemplatesRequest 请求对象
      * @return SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>
      */
-    public SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesInvoker(AddOtTemplatesRequest request) {
-        return new SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates, hcClient);
+    public SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse> addOtTemplatesInvoker(
+        AddOtTemplatesRequest request) {
+        return new SyncInvoker<AddOtTemplatesRequest, AddOtTemplatesResponse>(request, IoTEdgeMeta.addOtTemplates,
+            hcClient);
     }
 
     /**
@@ -1329,8 +1384,10 @@ public class IoTEdgeClient {
      * @param BatchListOtTemplatesRequest 请求对象
      * @return SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>
      */
-    public SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesInvoker(BatchListOtTemplatesRequest request) {
-        return new SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request, IoTEdgeMeta.batchListOtTemplates, hcClient);
+    public SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse> batchListOtTemplatesInvoker(
+        BatchListOtTemplatesRequest request) {
+        return new SyncInvoker<BatchListOtTemplatesRequest, BatchListOtTemplatesResponse>(request,
+            IoTEdgeMeta.batchListOtTemplates, hcClient);
     }
 
     /**
@@ -1357,8 +1414,10 @@ public class IoTEdgeClient {
      * @param DeleteOtTemplateRequest 请求对象
      * @return SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>
      */
-    public SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateInvoker(DeleteOtTemplateRequest request) {
-        return new SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate, hcClient);
+    public SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse> deleteOtTemplateInvoker(
+        DeleteOtTemplateRequest request) {
+        return new SyncInvoker<DeleteOtTemplateRequest, DeleteOtTemplateResponse>(request, IoTEdgeMeta.deleteOtTemplate,
+            hcClient);
     }
 
     /**
@@ -1385,8 +1444,10 @@ public class IoTEdgeClient {
      * @param ShowOtTemplateRequest 请求对象
      * @return SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>
      */
-    public SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateInvoker(ShowOtTemplateRequest request) {
-        return new SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate, hcClient);
+    public SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse> showOtTemplateInvoker(
+        ShowOtTemplateRequest request) {
+        return new SyncInvoker<ShowOtTemplateRequest, ShowOtTemplateResponse>(request, IoTEdgeMeta.showOtTemplate,
+            hcClient);
     }
 
     /**
@@ -1441,8 +1502,10 @@ public class IoTEdgeClient {
      * @param ShowPointTemplateRequest 请求对象
      * @return SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>
      */
-    public SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateInvoker(ShowPointTemplateRequest request) {
-        return new SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request, IoTEdgeMeta.showPointTemplate, hcClient);
+    public SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse> showPointTemplateInvoker(
+        ShowPointTemplateRequest request) {
+        return new SyncInvoker<ShowPointTemplateRequest, ShowPointTemplateResponse>(request,
+            IoTEdgeMeta.showPointTemplate, hcClient);
     }
 
     /**
@@ -1497,8 +1560,10 @@ public class IoTEdgeClient {
      * @param BatchConfirmConfigsNewRequest 请求对象
      * @return SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>
      */
-    public SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNewInvoker(BatchConfirmConfigsNewRequest request) {
-        return new SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>(request, IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
+    public SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse> batchConfirmConfigsNewInvoker(
+        BatchConfirmConfigsNewRequest request) {
+        return new SyncInvoker<BatchConfirmConfigsNewRequest, BatchConfirmConfigsNewResponse>(request,
+            IoTEdgeMeta.batchConfirmConfigsNew, hcClient);
     }
 
     /**
@@ -1525,8 +1590,10 @@ public class IoTEdgeClient {
      * @param BatchImportConfigsRequest 请求对象
      * @return SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>
      */
-    public SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigsInvoker(BatchImportConfigsRequest request) {
-        return new SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>(request, IoTEdgeMeta.batchImportConfigs, hcClient);
+    public SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse> batchImportConfigsInvoker(
+        BatchImportConfigsRequest request) {
+        return new SyncInvoker<BatchImportConfigsRequest, BatchImportConfigsResponse>(request,
+            IoTEdgeMeta.batchImportConfigs, hcClient);
     }
 
     /**
@@ -1553,8 +1620,10 @@ public class IoTEdgeClient {
      * @param DeleteIaConfigRequest 请求对象
      * @return SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>
      */
-    public SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfigInvoker(DeleteIaConfigRequest request) {
-        return new SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>(request, IoTEdgeMeta.deleteIaConfig, hcClient);
+    public SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse> deleteIaConfigInvoker(
+        DeleteIaConfigRequest request) {
+        return new SyncInvoker<DeleteIaConfigRequest, DeleteIaConfigResponse>(request, IoTEdgeMeta.deleteIaConfig,
+            hcClient);
     }
 
     /**
@@ -1582,7 +1651,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>
      */
     public SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse> listIaConfigsInvoker(ListIaConfigsRequest request) {
-        return new SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>(request, IoTEdgeMeta.listIaConfigs, hcClient);
+        return new SyncInvoker<ListIaConfigsRequest, ListIaConfigsResponse>(request, IoTEdgeMeta.listIaConfigs,
+            hcClient);
     }
 
     /**
@@ -1637,8 +1707,10 @@ public class IoTEdgeClient {
      * @param UpdateIaConfigRequest 请求对象
      * @return SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>
      */
-    public SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfigInvoker(UpdateIaConfigRequest request) {
-        return new SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>(request, IoTEdgeMeta.updateIaConfig, hcClient);
+    public SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse> updateIaConfigInvoker(
+        UpdateIaConfigRequest request) {
+        return new SyncInvoker<UpdateIaConfigRequest, UpdateIaConfigResponse>(request, IoTEdgeMeta.updateIaConfig,
+            hcClient);
     }
 
     /**
@@ -1667,8 +1739,10 @@ public class IoTEdgeClient {
      * @param BatchAssociateNaToNodesRequest 请求对象
      * @return SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>
      */
-    public SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodesInvoker(BatchAssociateNaToNodesRequest request) {
-        return new SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>(request, IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
+    public SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse> batchAssociateNaToNodesInvoker(
+        BatchAssociateNaToNodesRequest request) {
+        return new SyncInvoker<BatchAssociateNaToNodesRequest, BatchAssociateNaToNodesResponse>(request,
+            IoTEdgeMeta.batchAssociateNaToNodes, hcClient);
     }
 
     /**
@@ -1723,8 +1797,10 @@ public class IoTEdgeClient {
      * @param ListNaAuthorizedNodesRequest 请求对象
      * @return SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>
      */
-    public SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodesInvoker(ListNaAuthorizedNodesRequest request) {
-        return new SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>(request, IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
+    public SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse> listNaAuthorizedNodesInvoker(
+        ListNaAuthorizedNodesRequest request) {
+        return new SyncInvoker<ListNaAuthorizedNodesRequest, ListNaAuthorizedNodesResponse>(request,
+            IoTEdgeMeta.listNaAuthorizedNodes, hcClient);
     }
 
     /**

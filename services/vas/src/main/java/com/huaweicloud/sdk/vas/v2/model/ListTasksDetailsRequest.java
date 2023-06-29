@@ -148,22 +148,15 @@ public class ListTasksDetailsRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,22 +267,15 @@ public class ListTasksDetailsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -500,24 +486,20 @@ public class ListTasksDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksDetailsRequest listTasksDetailsRequest = (ListTasksDetailsRequest) o;
-        return Objects.equals(this.serviceName, listTasksDetailsRequest.serviceName)
-            && Objects.equals(this.serviceVersion, listTasksDetailsRequest.serviceVersion)
-            && Objects.equals(this.state, listTasksDetailsRequest.state)
-            && Objects.equals(this.nameLike, listTasksDetailsRequest.nameLike)
-            && Objects.equals(this.idLike, listTasksDetailsRequest.idLike)
-            && Objects.equals(this.createdSince, listTasksDetailsRequest.createdSince)
-            && Objects.equals(this.createdUntil, listTasksDetailsRequest.createdUntil)
-            && Objects.equals(this.order, listTasksDetailsRequest.order)
-            && Objects.equals(this.offset, listTasksDetailsRequest.offset)
-            && Objects.equals(this.limit, listTasksDetailsRequest.limit);
+        ListTasksDetailsRequest that = (ListTasksDetailsRequest) obj;
+        return Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.serviceVersion, that.serviceVersion) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.nameLike, that.nameLike) && Objects.equals(this.idLike, that.idLike)
+            && Objects.equals(this.createdSince, that.createdSince)
+            && Objects.equals(this.createdUntil, that.createdUntil) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

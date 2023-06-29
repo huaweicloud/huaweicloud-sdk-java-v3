@@ -96,17 +96,17 @@ public class CreateFaceSetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFaceSetReq createFaceSetReq = (CreateFaceSetReq) o;
-        return Objects.equals(this.externalFields, createFaceSetReq.externalFields)
-            && Objects.equals(this.faceSetName, createFaceSetReq.faceSetName)
-            && Objects.equals(this.faceSetCapacity, createFaceSetReq.faceSetCapacity);
+        CreateFaceSetReq that = (CreateFaceSetReq) obj;
+        return Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.faceSetName, that.faceSetName)
+            && Objects.equals(this.faceSetCapacity, that.faceSetCapacity);
     }
 
     @Override

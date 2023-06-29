@@ -57,15 +57,15 @@ public class SearchQaPairsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQaPairsReq searchQaPairsReq = (SearchQaPairsReq) o;
-        return Objects.equals(this.domain, searchQaPairsReq.domain) && Objects.equals(this.top, searchQaPairsReq.top);
+        SearchQaPairsReq that = (SearchQaPairsReq) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.top, that.top);
     }
 
     @Override

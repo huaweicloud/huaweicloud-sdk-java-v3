@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListIaConfigsRequest  {
-
+public class ListIaConfigsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ia_id")
-    
+    @JsonProperty(value = "ia_id")
 
     private String iaId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -46,9 +34,6 @@ public class ListIaConfigsRequest  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -62,15 +47,10 @@ public class ListIaConfigsRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public ListIaConfigsRequest withIaId(String iaId) {
         this.iaId = iaId;
         return this;
     }
-
-    
-
 
     /**
      * 边侧第三方应用的模块ID
@@ -84,15 +64,10 @@ public class ListIaConfigsRequest  {
         this.iaId = iaId;
     }
 
-    
-
     public ListIaConfigsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -108,15 +83,10 @@ public class ListIaConfigsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListIaConfigsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，取值范围为非负整数，默认值为10
@@ -132,26 +102,24 @@ public class ListIaConfigsRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIaConfigsRequest listIaConfigsRequest = (ListIaConfigsRequest) o;
-        return Objects.equals(this.nodeId, listIaConfigsRequest.nodeId) &&
-            Objects.equals(this.iaId, listIaConfigsRequest.iaId) &&
-            Objects.equals(this.offset, listIaConfigsRequest.offset) &&
-            Objects.equals(this.limit, listIaConfigsRequest.limit);
+        ListIaConfigsRequest that = (ListIaConfigsRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iaId, that.iaId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, iaId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -163,6 +131,7 @@ public class ListIaConfigsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -173,8 +142,5 @@ public class ListIaConfigsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

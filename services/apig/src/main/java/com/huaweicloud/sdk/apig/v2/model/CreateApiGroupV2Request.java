@@ -65,16 +65,15 @@ public class CreateApiGroupV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApiGroupV2Request createApiGroupV2Request = (CreateApiGroupV2Request) o;
-        return Objects.equals(this.instanceId, createApiGroupV2Request.instanceId)
-            && Objects.equals(this.body, createApiGroupV2Request.body);
+        CreateApiGroupV2Request that = (CreateApiGroupV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

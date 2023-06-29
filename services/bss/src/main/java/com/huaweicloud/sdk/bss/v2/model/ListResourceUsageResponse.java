@@ -185,21 +185,20 @@ public class ListResourceUsageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceUsageResponse listResourceUsageResponse = (ListResourceUsageResponse) o;
-        return Objects.equals(this.actualDays, listResourceUsageResponse.actualDays)
-            && Objects.equals(this.bandWidth, listResourceUsageResponse.bandWidth)
-            && Objects.equals(this.monthlyGuaranteedBandWidth, listResourceUsageResponse.monthlyGuaranteedBandWidth)
-            && Objects.equals(this.monthlyPeakBandWidth, listResourceUsageResponse.monthlyPeakBandWidth)
-            && Objects.equals(this.bandWidthMeasureId, listResourceUsageResponse.bandWidthMeasureId)
-            && Objects.equals(this.totalCount, listResourceUsageResponse.totalCount)
-            && Objects.equals(this.usageInfoList, listResourceUsageResponse.usageInfoList);
+        ListResourceUsageResponse that = (ListResourceUsageResponse) obj;
+        return Objects.equals(this.actualDays, that.actualDays) && Objects.equals(this.bandWidth, that.bandWidth)
+            && Objects.equals(this.monthlyGuaranteedBandWidth, that.monthlyGuaranteedBandWidth)
+            && Objects.equals(this.monthlyPeakBandWidth, that.monthlyPeakBandWidth)
+            && Objects.equals(this.bandWidthMeasureId, that.bandWidthMeasureId)
+            && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.usageInfoList, that.usageInfoList);
     }
 
     @Override

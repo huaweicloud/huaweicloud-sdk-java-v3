@@ -188,22 +188,18 @@ public class CreateWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWorkflowResponse createWorkflowResponse = (CreateWorkflowResponse) o;
-        return Objects.equals(this.enableStreamResponse, createWorkflowResponse.enableStreamResponse)
-            && Objects.equals(this.id, createWorkflowResponse.id)
-            && Objects.equals(this.workflowUrn, createWorkflowResponse.workflowUrn)
-            && Objects.equals(this.name, createWorkflowResponse.name)
-            && Objects.equals(this.description, createWorkflowResponse.description)
-            && Objects.equals(this.createdTime, createWorkflowResponse.createdTime)
-            && Objects.equals(this.updatedTime, createWorkflowResponse.updatedTime)
-            && Objects.equals(this.createdBy, createWorkflowResponse.createdBy);
+        CreateWorkflowResponse that = (CreateWorkflowResponse) obj;
+        return Objects.equals(this.enableStreamResponse, that.enableStreamResponse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.workflowUrn, that.workflowUrn) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdBy, that.createdBy);
     }
 
     @Override

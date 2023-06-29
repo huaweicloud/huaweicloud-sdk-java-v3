@@ -52,16 +52,15 @@ public class UpdateCloudPhonePropertyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCloudPhonePropertyRequestBody updateCloudPhonePropertyRequestBody =
-            (UpdateCloudPhonePropertyRequestBody) o;
-        return Objects.equals(this.phones, updateCloudPhonePropertyRequestBody.phones);
+        UpdateCloudPhonePropertyRequestBody that = (UpdateCloudPhonePropertyRequestBody) obj;
+        return Objects.equals(this.phones, that.phones);
     }
 
     @Override

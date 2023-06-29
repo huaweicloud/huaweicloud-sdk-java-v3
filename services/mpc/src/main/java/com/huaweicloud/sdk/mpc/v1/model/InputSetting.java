@@ -71,22 +71,15 @@ public class InputSetting {
             if (value == null) {
                 return null;
             }
-            AudioPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioPolicyEnum(value));
         }
 
         public static AudioPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,16 +162,16 @@ public class InputSetting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InputSetting inputSetting = (InputSetting) o;
-        return Objects.equals(this.input, inputSetting.input) && Objects.equals(this.paneId, inputSetting.paneId)
-            && Objects.equals(this.audioPolicy, inputSetting.audioPolicy);
+        InputSetting that = (InputSetting) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.paneId, that.paneId)
+            && Objects.equals(this.audioPolicy, that.audioPolicy);
     }
 
     @Override

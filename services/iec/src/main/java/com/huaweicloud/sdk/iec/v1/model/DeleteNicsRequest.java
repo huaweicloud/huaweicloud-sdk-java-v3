@@ -65,16 +65,15 @@ public class DeleteNicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNicsRequest deleteNicsRequest = (DeleteNicsRequest) o;
-        return Objects.equals(this.instanceId, deleteNicsRequest.instanceId)
-            && Objects.equals(this.body, deleteNicsRequest.body);
+        DeleteNicsRequest that = (DeleteNicsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

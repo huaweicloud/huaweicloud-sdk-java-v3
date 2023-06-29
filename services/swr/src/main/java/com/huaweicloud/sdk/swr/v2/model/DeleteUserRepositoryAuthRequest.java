@@ -96,17 +96,16 @@ public class DeleteUserRepositoryAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteUserRepositoryAuthRequest deleteUserRepositoryAuthRequest = (DeleteUserRepositoryAuthRequest) o;
-        return Objects.equals(this.namespace, deleteUserRepositoryAuthRequest.namespace)
-            && Objects.equals(this.repository, deleteUserRepositoryAuthRequest.repository)
-            && Objects.equals(this.body, deleteUserRepositoryAuthRequest.body);
+        DeleteUserRepositoryAuthRequest that = (DeleteUserRepositoryAuthRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

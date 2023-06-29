@@ -55,15 +55,15 @@ public class ResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponseInfo responseInfo = (ResponseInfo) o;
-        return Objects.equals(this.status, responseInfo.status) && Objects.equals(this.body, responseInfo.body);
+        ResponseInfo that = (ResponseInfo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.body, that.body);
     }
 
     @Override

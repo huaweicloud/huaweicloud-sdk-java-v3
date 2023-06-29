@@ -87,17 +87,16 @@ public class CreateSourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSourceRequest createSourceRequest = (CreateSourceRequest) o;
-        return Objects.equals(this.instanceId, createSourceRequest.instanceId)
-            && Objects.equals(this.ruleId, createSourceRequest.ruleId)
-            && Objects.equals(this.body, createSourceRequest.body);
+        CreateSourceRequest that = (CreateSourceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

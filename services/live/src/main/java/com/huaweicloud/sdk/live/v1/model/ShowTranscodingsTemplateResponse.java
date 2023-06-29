@@ -98,17 +98,16 @@ public class ShowTranscodingsTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTranscodingsTemplateResponse showTranscodingsTemplateResponse = (ShowTranscodingsTemplateResponse) o;
-        return Objects.equals(this.total, showTranscodingsTemplateResponse.total)
-            && Objects.equals(this.domain, showTranscodingsTemplateResponse.domain)
-            && Objects.equals(this.templates, showTranscodingsTemplateResponse.templates);
+        ShowTranscodingsTemplateResponse that = (ShowTranscodingsTemplateResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.templates, that.templates);
     }
 
     @Override

@@ -96,16 +96,16 @@ public class VulnItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulnItem vulnItem = (VulnItem) o;
-        return Objects.equals(this.desc, vulnItem.desc) && Objects.equals(this.riskLevel, vulnItem.riskLevel)
-            && Objects.equals(this.vulnRules, vulnItem.vulnRules);
+        VulnItem that = (VulnItem) obj;
+        return Objects.equals(this.desc, that.desc) && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.vulnRules, that.vulnRules);
     }
 
     @Override

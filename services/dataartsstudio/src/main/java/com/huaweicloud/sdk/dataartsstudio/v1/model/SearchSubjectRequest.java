@@ -104,22 +104,15 @@ public class SearchSubjectRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -338,24 +331,19 @@ public class SearchSubjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchSubjectRequest searchSubjectRequest = (SearchSubjectRequest) o;
-        return Objects.equals(this.workspace, searchSubjectRequest.workspace)
-            && Objects.equals(this.name, searchSubjectRequest.name)
-            && Objects.equals(this.createBy, searchSubjectRequest.createBy)
-            && Objects.equals(this.owner, searchSubjectRequest.owner)
-            && Objects.equals(this.status, searchSubjectRequest.status)
-            && Objects.equals(this.beginTime, searchSubjectRequest.beginTime)
-            && Objects.equals(this.endTime, searchSubjectRequest.endTime)
-            && Objects.equals(this.limit, searchSubjectRequest.limit)
-            && Objects.equals(this.offset, searchSubjectRequest.offset)
-            && Objects.equals(this.parentId, searchSubjectRequest.parentId);
+        SearchSubjectRequest that = (SearchSubjectRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

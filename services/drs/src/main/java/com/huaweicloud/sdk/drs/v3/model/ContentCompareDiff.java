@@ -134,18 +134,18 @@ public class ContentCompareDiff {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareDiff contentCompareDiff = (ContentCompareDiff) o;
-        return Objects.equals(this.targetSelectSql, contentCompareDiff.targetSelectSql)
-            && Objects.equals(this.sourceSelectSql, contentCompareDiff.sourceSelectSql)
-            && Objects.equals(this.sourceKeyValue, contentCompareDiff.sourceKeyValue)
-            && Objects.equals(this.targetKeyValue, contentCompareDiff.targetKeyValue);
+        ContentCompareDiff that = (ContentCompareDiff) obj;
+        return Objects.equals(this.targetSelectSql, that.targetSelectSql)
+            && Objects.equals(this.sourceSelectSql, that.sourceSelectSql)
+            && Objects.equals(this.sourceKeyValue, that.sourceKeyValue)
+            && Objects.equals(this.targetKeyValue, that.targetKeyValue);
     }
 
     @Override

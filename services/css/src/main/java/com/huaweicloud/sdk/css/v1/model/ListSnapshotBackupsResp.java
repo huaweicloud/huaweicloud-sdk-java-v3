@@ -505,36 +505,27 @@ public class ListSnapshotBackupsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotBackupsResp listSnapshotBackupsResp = (ListSnapshotBackupsResp) o;
-        return Objects.equals(this.created, listSnapshotBackupsResp.created)
-            && Objects.equals(this.datastore, listSnapshotBackupsResp.datastore)
-            && Objects.equals(this.description, listSnapshotBackupsResp.description)
-            && Objects.equals(this.id, listSnapshotBackupsResp.id)
-            && Objects.equals(this.clusterId, listSnapshotBackupsResp.clusterId)
-            && Objects.equals(this.clusterName, listSnapshotBackupsResp.clusterName)
-            && Objects.equals(this.name, listSnapshotBackupsResp.name)
-            && Objects.equals(this.status, listSnapshotBackupsResp.status)
-            && Objects.equals(this.updated, listSnapshotBackupsResp.updated)
-            && Objects.equals(this.backupType, listSnapshotBackupsResp.backupType)
-            && Objects.equals(this.backupMethod, listSnapshotBackupsResp.backupMethod)
-            && Objects.equals(this.backupExpectedStartTime, listSnapshotBackupsResp.backupExpectedStartTime)
-            && Objects.equals(this.backupKeepDay, listSnapshotBackupsResp.backupKeepDay)
-            && Objects.equals(this.backupPeriod, listSnapshotBackupsResp.backupPeriod)
-            && Objects.equals(this.indices, listSnapshotBackupsResp.indices)
-            && Objects.equals(this.totalShards, listSnapshotBackupsResp.totalShards)
-            && Objects.equals(this.failedShards, listSnapshotBackupsResp.failedShards)
-            && Objects.equals(this.version, listSnapshotBackupsResp.version)
-            && Objects.equals(this.restoreStatus, listSnapshotBackupsResp.restoreStatus)
-            && Objects.equals(this.startTime, listSnapshotBackupsResp.startTime)
-            && Objects.equals(this.endTime, listSnapshotBackupsResp.endTime)
-            && Objects.equals(this.bucketName, listSnapshotBackupsResp.bucketName);
+        ListSnapshotBackupsResp that = (ListSnapshotBackupsResp) obj;
+        return Objects.equals(this.created, that.created) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.backupType, that.backupType)
+            && Objects.equals(this.backupMethod, that.backupMethod)
+            && Objects.equals(this.backupExpectedStartTime, that.backupExpectedStartTime)
+            && Objects.equals(this.backupKeepDay, that.backupKeepDay)
+            && Objects.equals(this.backupPeriod, that.backupPeriod) && Objects.equals(this.indices, that.indices)
+            && Objects.equals(this.totalShards, that.totalShards)
+            && Objects.equals(this.failedShards, that.failedShards) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.restoreStatus, that.restoreStatus) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override

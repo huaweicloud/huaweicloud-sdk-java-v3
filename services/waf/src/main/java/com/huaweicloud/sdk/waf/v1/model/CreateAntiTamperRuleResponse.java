@@ -144,20 +144,17 @@ public class CreateAntiTamperRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAntiTamperRuleResponse createAntiTamperRuleResponse = (CreateAntiTamperRuleResponse) o;
-        return Objects.equals(this.id, createAntiTamperRuleResponse.id)
-            && Objects.equals(this.policyid, createAntiTamperRuleResponse.policyid)
-            && Objects.equals(this.hostname, createAntiTamperRuleResponse.hostname)
-            && Objects.equals(this.url, createAntiTamperRuleResponse.url)
-            && Objects.equals(this.description, createAntiTamperRuleResponse.description)
-            && Objects.equals(this.status, createAntiTamperRuleResponse.status);
+        CreateAntiTamperRuleResponse that = (CreateAntiTamperRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status);
     }
 
     @Override

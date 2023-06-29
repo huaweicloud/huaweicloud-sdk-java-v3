@@ -140,18 +140,17 @@ public class EncryptDataNodes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDataNodes encryptDataNodes = (EncryptDataNodes) o;
-        return Objects.equals(this.id, encryptDataNodes.id) && Objects.equals(this.state, encryptDataNodes.state)
-            && Objects.equals(this.name, encryptDataNodes.name)
-            && Objects.equals(this.hostName, encryptDataNodes.hostName)
-            && Objects.equals(this.hostIps, encryptDataNodes.hostIps);
+        EncryptDataNodes that = (EncryptDataNodes) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIps, that.hostIps);
     }
 
     @Override

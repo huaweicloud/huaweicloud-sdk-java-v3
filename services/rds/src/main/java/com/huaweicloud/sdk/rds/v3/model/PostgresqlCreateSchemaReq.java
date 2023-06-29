@@ -55,16 +55,15 @@ public class PostgresqlCreateSchemaReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlCreateSchemaReq postgresqlCreateSchemaReq = (PostgresqlCreateSchemaReq) o;
-        return Objects.equals(this.schemaName, postgresqlCreateSchemaReq.schemaName)
-            && Objects.equals(this.owner, postgresqlCreateSchemaReq.owner);
+        PostgresqlCreateSchemaReq that = (PostgresqlCreateSchemaReq) obj;
+        return Objects.equals(this.schemaName, that.schemaName) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

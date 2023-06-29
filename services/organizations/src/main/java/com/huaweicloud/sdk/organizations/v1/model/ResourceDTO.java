@@ -96,17 +96,16 @@ public class ResourceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceDTO resourceDTO = (ResourceDTO) o;
-        return Objects.equals(this.resourceId, resourceDTO.resourceId)
-            && Objects.equals(this.resourceName, resourceDTO.resourceName)
-            && Objects.equals(this.tags, resourceDTO.tags);
+        ResourceDTO that = (ResourceDTO) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

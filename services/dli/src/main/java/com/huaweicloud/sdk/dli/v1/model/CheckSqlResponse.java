@@ -78,17 +78,16 @@ public class CheckSqlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckSqlResponse checkSqlResponse = (CheckSqlResponse) o;
-        return Objects.equals(this.isSuccess, checkSqlResponse.isSuccess)
-            && Objects.equals(this.message, checkSqlResponse.message)
-            && Objects.equals(this.jobType, checkSqlResponse.jobType);
+        CheckSqlResponse that = (CheckSqlResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

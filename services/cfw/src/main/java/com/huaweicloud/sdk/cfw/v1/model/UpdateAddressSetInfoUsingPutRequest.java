@@ -109,19 +109,17 @@ public class UpdateAddressSetInfoUsingPutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAddressSetInfoUsingPutRequest updateAddressSetInfoUsingPutRequest =
-            (UpdateAddressSetInfoUsingPutRequest) o;
-        return Objects.equals(this.setId, updateAddressSetInfoUsingPutRequest.setId)
-            && Objects.equals(this.enterpriseProjectId, updateAddressSetInfoUsingPutRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, updateAddressSetInfoUsingPutRequest.fwInstanceId)
-            && Objects.equals(this.body, updateAddressSetInfoUsingPutRequest.body);
+        UpdateAddressSetInfoUsingPutRequest that = (UpdateAddressSetInfoUsingPutRequest) obj;
+        return Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -177,21 +177,18 @@ public class ListMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessagesRequest listMessagesRequest = (ListMessagesRequest) o;
-        return Objects.equals(this.caseId, listMessagesRequest.caseId)
-            && Objects.equals(this.groupId, listMessagesRequest.groupId)
-            && Objects.equals(this.offset, listMessagesRequest.offset)
-            && Objects.equals(this.limit, listMessagesRequest.limit)
-            && Objects.equals(this.xSite, listMessagesRequest.xSite)
-            && Objects.equals(this.xLanguage, listMessagesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listMessagesRequest.xTimeZone);
+        ListMessagesRequest that = (ListMessagesRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 搜索结果详情。
  */
-public class SearchPictureItem  {
-
+public class SearchPictureItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sim")
-    
+    @JsonProperty(value = "sim")
 
     private Float sim;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
 
     private Object tags;
 
@@ -39,9 +29,6 @@ public class SearchPictureItem  {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * 被搜索图片的路径。
@@ -55,15 +42,10 @@ public class SearchPictureItem  {
         this.path = path;
     }
 
-    
-
     public SearchPictureItem withSim(Float sim) {
         this.sim = sim;
         return this;
     }
-
-    
-
 
     /**
      * 查询图片和被搜索图片的相似度，值越接近1表示越相似。
@@ -77,15 +59,10 @@ public class SearchPictureItem  {
         this.sim = sim;
     }
 
-    
-
     public SearchPictureItem withTags(Object tags) {
         this.tags = tags;
         return this;
     }
-
-    
-
 
     /**
      * 自定义的标签名称和标签内容。
@@ -99,25 +76,24 @@ public class SearchPictureItem  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchPictureItem searchPictureItem = (SearchPictureItem) o;
-        return Objects.equals(this.path, searchPictureItem.path) &&
-            Objects.equals(this.sim, searchPictureItem.sim) &&
-            Objects.equals(this.tags, searchPictureItem.tags);
+        SearchPictureItem that = (SearchPictureItem) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.sim, that.sim)
+            && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, sim, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class SearchPictureItem  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class SearchPictureItem  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

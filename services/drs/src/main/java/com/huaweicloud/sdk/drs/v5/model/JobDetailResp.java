@@ -718,35 +718,29 @@ public class JobDetailResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobDetailResp jobDetailResp = (JobDetailResp) o;
-        return Objects.equals(this.id, jobDetailResp.id) && Objects.equals(this.status, jobDetailResp.status)
-            && Objects.equals(this.createTime, jobDetailResp.createTime)
-            && Objects.equals(this.totalCount, jobDetailResp.totalCount)
-            && Objects.equals(this.masterJobId, jobDetailResp.masterJobId)
-            && Objects.equals(this.baseInfo, jobDetailResp.baseInfo)
-            && Objects.equals(this.sourceEndpoint, jobDetailResp.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, jobDetailResp.targetEndpoint)
-            && Objects.equals(this.alarmNotify, jobDetailResp.alarmNotify)
-            && Objects.equals(this.speedLimit, jobDetailResp.speedLimit)
-            && Objects.equals(this.userMigration, jobDetailResp.userMigration)
-            && Objects.equals(this.policyConfig, jobDetailResp.policyConfig)
-            && Objects.equals(this.dbParam, jobDetailResp.dbParam)
-            && Objects.equals(this.tuningParams, jobDetailResp.tuningParams)
-            && Objects.equals(this.periodOrder, jobDetailResp.periodOrder)
-            && Objects.equals(this.nodeInfo, jobDetailResp.nodeInfo) && Objects.equals(this.logs, jobDetailResp.logs)
-            && Objects.equals(this.networkResults, jobDetailResp.networkResults)
-            && Objects.equals(this.precheckResult, jobDetailResp.precheckResult)
-            && Objects.equals(this.progressInfo, jobDetailResp.progressInfo)
-            && Objects.equals(this.migrationObjectProgressInfo, jobDetailResp.migrationObjectProgressInfo)
-            && Objects.equals(this.metrics, jobDetailResp.metrics)
-            && Objects.equals(this.compareResult, jobDetailResp.compareResult);
+        JobDetailResp that = (JobDetailResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.masterJobId, that.masterJobId) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint)
+            && Objects.equals(this.alarmNotify, that.alarmNotify) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.userMigration, that.userMigration)
+            && Objects.equals(this.policyConfig, that.policyConfig) && Objects.equals(this.dbParam, that.dbParam)
+            && Objects.equals(this.tuningParams, that.tuningParams)
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo)
+            && Objects.equals(this.logs, that.logs) && Objects.equals(this.networkResults, that.networkResults)
+            && Objects.equals(this.precheckResult, that.precheckResult)
+            && Objects.equals(this.progressInfo, that.progressInfo)
+            && Objects.equals(this.migrationObjectProgressInfo, that.migrationObjectProgressInfo)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.compareResult, that.compareResult);
     }
 
     @Override

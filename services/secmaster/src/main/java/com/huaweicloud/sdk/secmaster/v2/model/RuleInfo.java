@@ -77,16 +77,16 @@ public class RuleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleInfo ruleInfo = (RuleInfo) o;
-        return Objects.equals(this.id, ruleInfo.id) && Objects.equals(this.projectId, ruleInfo.projectId)
-            && Objects.equals(this.rule, ruleInfo.rule);
+        RuleInfo that = (RuleInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.rule, that.rule);
     }
 
     @Override

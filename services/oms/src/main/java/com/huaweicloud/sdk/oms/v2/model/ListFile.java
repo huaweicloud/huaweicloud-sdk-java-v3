@@ -55,16 +55,15 @@ public class ListFile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFile listFile = (ListFile) o;
-        return Objects.equals(this.listFileKey, listFile.listFileKey)
-            && Objects.equals(this.obsBucket, listFile.obsBucket);
+        ListFile that = (ListFile) obj;
+        return Objects.equals(this.listFileKey, that.listFileKey) && Objects.equals(this.obsBucket, that.obsBucket);
     }
 
     @Override

@@ -119,18 +119,17 @@ public class ShowBigkeyAutoscanConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBigkeyAutoscanConfigResponse showBigkeyAutoscanConfigResponse = (ShowBigkeyAutoscanConfigResponse) o;
-        return Objects.equals(this.instanceId, showBigkeyAutoscanConfigResponse.instanceId)
-            && Objects.equals(this.enableAutoScan, showBigkeyAutoscanConfigResponse.enableAutoScan)
-            && Objects.equals(this.scheduleAt, showBigkeyAutoscanConfigResponse.scheduleAt)
-            && Objects.equals(this.updatedAt, showBigkeyAutoscanConfigResponse.updatedAt);
+        ShowBigkeyAutoscanConfigResponse that = (ShowBigkeyAutoscanConfigResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.enableAutoScan, that.enableAutoScan)
+            && Objects.equals(this.scheduleAt, that.scheduleAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

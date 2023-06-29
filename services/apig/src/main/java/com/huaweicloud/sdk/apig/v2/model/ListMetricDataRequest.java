@@ -65,22 +65,15 @@ public class ListMetricDataRequest {
             if (value == null) {
                 return null;
             }
-            DimEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DimEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DimEnum(value));
         }
 
         public static DimEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DimEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class ListMetricDataRequest {
             if (value == null) {
                 return null;
             }
-            MetricNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MetricNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MetricNameEnum(value));
         }
 
         public static MetricNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MetricNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,22 +274,15 @@ public class ListMetricDataRequest {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -388,22 +367,15 @@ public class ListMetricDataRequest {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterEnum(value));
         }
 
         public static FilterEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -545,21 +517,18 @@ public class ListMetricDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetricDataRequest listMetricDataRequest = (ListMetricDataRequest) o;
-        return Objects.equals(this.instanceId, listMetricDataRequest.instanceId)
-            && Objects.equals(this.dim, listMetricDataRequest.dim)
-            && Objects.equals(this.metricName, listMetricDataRequest.metricName)
-            && Objects.equals(this.from, listMetricDataRequest.from)
-            && Objects.equals(this.to, listMetricDataRequest.to)
-            && Objects.equals(this.period, listMetricDataRequest.period)
-            && Objects.equals(this.filter, listMetricDataRequest.filter);
+        ListMetricDataRequest that = (ListMetricDataRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.dim, that.dim)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override

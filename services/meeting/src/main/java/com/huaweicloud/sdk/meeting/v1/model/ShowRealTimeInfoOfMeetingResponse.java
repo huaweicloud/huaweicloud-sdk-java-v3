@@ -122,17 +122,16 @@ public class ShowRealTimeInfoOfMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRealTimeInfoOfMeetingResponse showRealTimeInfoOfMeetingResponse = (ShowRealTimeInfoOfMeetingResponse) o;
-        return Objects.equals(this.attendees, showRealTimeInfoOfMeetingResponse.attendees)
-            && Objects.equals(this.participants, showRealTimeInfoOfMeetingResponse.participants)
-            && Objects.equals(this.confInfo, showRealTimeInfoOfMeetingResponse.confInfo);
+        ShowRealTimeInfoOfMeetingResponse that = (ShowRealTimeInfoOfMeetingResponse) obj;
+        return Objects.equals(this.attendees, that.attendees) && Objects.equals(this.participants, that.participants)
+            && Objects.equals(this.confInfo, that.confInfo);
     }
 
     @Override

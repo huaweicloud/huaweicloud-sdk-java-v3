@@ -57,16 +57,16 @@ public class ShowCorpResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpResourceRequest showCorpResourceRequest = (ShowCorpResourceRequest) o;
-        return Objects.equals(this.xRequestId, showCorpResourceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showCorpResourceRequest.acceptLanguage);
+        ShowCorpResourceRequest that = (ShowCorpResourceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage);
     }
 
     @Override

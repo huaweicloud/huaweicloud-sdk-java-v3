@@ -55,16 +55,15 @@ public class DeleteLogtankRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLogtankRequest deleteLogtankRequest = (DeleteLogtankRequest) o;
-        return Objects.equals(this.topicUrn, deleteLogtankRequest.topicUrn)
-            && Objects.equals(this.logtankId, deleteLogtankRequest.logtankId);
+        DeleteLogtankRequest that = (DeleteLogtankRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.logtankId, that.logtankId);
     }
 
     @Override

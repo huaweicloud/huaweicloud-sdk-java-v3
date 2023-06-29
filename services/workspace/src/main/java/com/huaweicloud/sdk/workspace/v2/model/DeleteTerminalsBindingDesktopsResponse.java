@@ -56,16 +56,15 @@ public class DeleteTerminalsBindingDesktopsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTerminalsBindingDesktopsResponse deleteTerminalsBindingDesktopsResponse =
-            (DeleteTerminalsBindingDesktopsResponse) o;
-        return Objects.equals(this.resultList, deleteTerminalsBindingDesktopsResponse.resultList);
+        DeleteTerminalsBindingDesktopsResponse that = (DeleteTerminalsBindingDesktopsResponse) obj;
+        return Objects.equals(this.resultList, that.resultList);
     }
 
     @Override

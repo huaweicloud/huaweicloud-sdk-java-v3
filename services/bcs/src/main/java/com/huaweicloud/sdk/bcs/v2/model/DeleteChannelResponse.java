@@ -34,15 +34,15 @@ public class DeleteChannelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteChannelResponse deleteChannelResponse = (DeleteChannelResponse) o;
-        return Objects.equals(this.operationId, deleteChannelResponse.operationId);
+        DeleteChannelResponse that = (DeleteChannelResponse) obj;
+        return Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class SearchQosParticipantDetailRequest {
             if (value == null) {
                 return null;
             }
-            ConfTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConfTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfTypeEnum(value));
         }
 
         public static ConfTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConfTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class SearchQosParticipantDetailRequest {
             if (value == null) {
                 return null;
             }
-            QosTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QosTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QosTypeEnum(value));
         }
 
         public static QosTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QosTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,18 +256,16 @@ public class SearchQosParticipantDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQosParticipantDetailRequest searchQosParticipantDetailRequest = (SearchQosParticipantDetailRequest) o;
-        return Objects.equals(this.confUUID, searchQosParticipantDetailRequest.confUUID)
-            && Objects.equals(this.confType, searchQosParticipantDetailRequest.confType)
-            && Objects.equals(this.participantID, searchQosParticipantDetailRequest.participantID)
-            && Objects.equals(this.qosType, searchQosParticipantDetailRequest.qosType);
+        SearchQosParticipantDetailRequest that = (SearchQosParticipantDetailRequest) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.confType, that.confType)
+            && Objects.equals(this.participantID, that.participantID) && Objects.equals(this.qosType, that.qosType);
     }
 
     @Override

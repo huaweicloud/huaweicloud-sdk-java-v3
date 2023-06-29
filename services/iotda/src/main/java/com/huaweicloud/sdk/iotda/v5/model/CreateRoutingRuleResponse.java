@@ -220,23 +220,19 @@ public class CreateRoutingRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRoutingRuleResponse createRoutingRuleResponse = (CreateRoutingRuleResponse) o;
-        return Objects.equals(this.ruleId, createRoutingRuleResponse.ruleId)
-            && Objects.equals(this.ruleName, createRoutingRuleResponse.ruleName)
-            && Objects.equals(this.description, createRoutingRuleResponse.description)
-            && Objects.equals(this.subject, createRoutingRuleResponse.subject)
-            && Objects.equals(this.appType, createRoutingRuleResponse.appType)
-            && Objects.equals(this.appId, createRoutingRuleResponse.appId)
-            && Objects.equals(this.select, createRoutingRuleResponse.select)
-            && Objects.equals(this.where, createRoutingRuleResponse.where)
-            && Objects.equals(this.active, createRoutingRuleResponse.active);
+        CreateRoutingRuleResponse that = (CreateRoutingRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.select, that.select) && Objects.equals(this.where, that.where)
+            && Objects.equals(this.active, that.active);
     }
 
     @Override

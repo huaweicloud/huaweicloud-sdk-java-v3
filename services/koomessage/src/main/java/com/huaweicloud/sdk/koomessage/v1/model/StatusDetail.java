@@ -77,16 +77,16 @@ public class StatusDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatusDetail statusDetail = (StatusDetail) o;
-        return Objects.equals(this.carrier, statusDetail.carrier) && Objects.equals(this.status, statusDetail.status)
-            && Objects.equals(this.desc, statusDetail.desc);
+        StatusDetail that = (StatusDetail) obj;
+        return Objects.equals(this.carrier, that.carrier) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

@@ -140,18 +140,18 @@ public class FirewallPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FirewallPolicy firewallPolicy = (FirewallPolicy) o;
-        return Objects.equals(this.id, firewallPolicy.id) && Objects.equals(this.name, firewallPolicy.name)
-            && Objects.equals(this.firewallRules, firewallPolicy.firewallRules)
-            && Objects.equals(this.insertAfter, firewallPolicy.insertAfter)
-            && Objects.equals(this.insertBefore, firewallPolicy.insertBefore);
+        FirewallPolicy that = (FirewallPolicy) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.firewallRules, that.firewallRules)
+            && Objects.equals(this.insertAfter, that.insertAfter)
+            && Objects.equals(this.insertBefore, that.insertBefore);
     }
 
     @Override

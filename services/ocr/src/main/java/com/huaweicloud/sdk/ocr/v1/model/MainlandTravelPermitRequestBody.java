@@ -99,18 +99,17 @@ public class MainlandTravelPermitRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MainlandTravelPermitRequestBody mainlandTravelPermitRequestBody = (MainlandTravelPermitRequestBody) o;
-        return Objects.equals(this.image, mainlandTravelPermitRequestBody.image)
-            && Objects.equals(this.url, mainlandTravelPermitRequestBody.url)
-            && Objects.equals(this.returnPortraitImage, mainlandTravelPermitRequestBody.returnPortraitImage)
-            && Objects.equals(this.returnPortraitLocation, mainlandTravelPermitRequestBody.returnPortraitLocation);
+        MainlandTravelPermitRequestBody that = (MainlandTravelPermitRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
+            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation);
     }
 
     @Override

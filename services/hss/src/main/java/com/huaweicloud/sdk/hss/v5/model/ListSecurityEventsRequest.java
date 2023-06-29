@@ -366,29 +366,23 @@ public class ListSecurityEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityEventsRequest listSecurityEventsRequest = (ListSecurityEventsRequest) o;
-        return Objects.equals(this.region, listSecurityEventsRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listSecurityEventsRequest.enterpriseProjectId)
-            && Objects.equals(this.lastDays, listSecurityEventsRequest.lastDays)
-            && Objects.equals(this.hostName, listSecurityEventsRequest.hostName)
-            && Objects.equals(this.hostId, listSecurityEventsRequest.hostId)
-            && Objects.equals(this.privateIp, listSecurityEventsRequest.privateIp)
-            && Objects.equals(this.containerName, listSecurityEventsRequest.containerName)
-            && Objects.equals(this.offset, listSecurityEventsRequest.offset)
-            && Objects.equals(this.limit, listSecurityEventsRequest.limit)
-            && Objects.equals(this.eventTypes, listSecurityEventsRequest.eventTypes)
-            && Objects.equals(this.handleStatus, listSecurityEventsRequest.handleStatus)
-            && Objects.equals(this.severity, listSecurityEventsRequest.severity)
-            && Objects.equals(this.category, listSecurityEventsRequest.category)
-            && Objects.equals(this.beginTime, listSecurityEventsRequest.beginTime)
-            && Objects.equals(this.endTime, listSecurityEventsRequest.endTime);
+        ListSecurityEventsRequest that = (ListSecurityEventsRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.lastDays, that.lastDays) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.containerName, that.containerName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.eventTypes, that.eventTypes)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

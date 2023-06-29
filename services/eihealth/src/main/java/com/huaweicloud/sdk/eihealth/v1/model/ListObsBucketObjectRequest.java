@@ -125,19 +125,17 @@ public class ListObsBucketObjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListObsBucketObjectRequest listObsBucketObjectRequest = (ListObsBucketObjectRequest) o;
-        return Objects.equals(this.bucketName, listObsBucketObjectRequest.bucketName)
-            && Objects.equals(this.limit, listObsBucketObjectRequest.limit)
-            && Objects.equals(this.offset, listObsBucketObjectRequest.offset)
-            && Objects.equals(this.path, listObsBucketObjectRequest.path)
-            && Objects.equals(this.searchKey, listObsBucketObjectRequest.searchKey);
+        ListObsBucketObjectRequest that = (ListObsBucketObjectRequest) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

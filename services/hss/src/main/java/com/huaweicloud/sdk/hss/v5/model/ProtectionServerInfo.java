@@ -443,33 +443,28 @@ public class ProtectionServerInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectionServerInfo protectionServerInfo = (ProtectionServerInfo) o;
-        return Objects.equals(this.hostId, protectionServerInfo.hostId)
-            && Objects.equals(this.agentId, protectionServerInfo.agentId)
-            && Objects.equals(this.hostName, protectionServerInfo.hostName)
-            && Objects.equals(this.hostIp, protectionServerInfo.hostIp)
-            && Objects.equals(this.privateIp, protectionServerInfo.privateIp)
-            && Objects.equals(this.osType, protectionServerInfo.osType)
-            && Objects.equals(this.osName, protectionServerInfo.osName)
-            && Objects.equals(this.hostStatus, protectionServerInfo.hostStatus)
-            && Objects.equals(this.ransomProtectionStatus, protectionServerInfo.ransomProtectionStatus)
-            && Objects.equals(this.protectStatus, protectionServerInfo.protectStatus)
-            && Objects.equals(this.groupId, protectionServerInfo.groupId)
-            && Objects.equals(this.groupName, protectionServerInfo.groupName)
-            && Objects.equals(this.protectPolicyId, protectionServerInfo.protectPolicyId)
-            && Objects.equals(this.protectPolicyName, protectionServerInfo.protectPolicyName)
-            && Objects.equals(this.backupError, protectionServerInfo.backupError)
-            && Objects.equals(this.backupProtectionStatus, protectionServerInfo.backupProtectionStatus)
-            && Objects.equals(this.countProtectEvent, protectionServerInfo.countProtectEvent)
-            && Objects.equals(this.countBackuped, protectionServerInfo.countBackuped)
-            && Objects.equals(this.agentStatus, protectionServerInfo.agentStatus);
+        ProtectionServerInfo that = (ProtectionServerInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.agentId, that.agentId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.ransomProtectionStatus, that.ransomProtectionStatus)
+            && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.protectPolicyId, that.protectPolicyId)
+            && Objects.equals(this.protectPolicyName, that.protectPolicyName)
+            && Objects.equals(this.backupError, that.backupError)
+            && Objects.equals(this.backupProtectionStatus, that.backupProtectionStatus)
+            && Objects.equals(this.countProtectEvent, that.countProtectEvent)
+            && Objects.equals(this.countBackuped, that.countBackuped)
+            && Objects.equals(this.agentStatus, that.agentStatus);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class SearchDwByTypeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDwByTypeRequest searchDwByTypeRequest = (SearchDwByTypeRequest) o;
-        return Objects.equals(this.workspace, searchDwByTypeRequest.workspace)
-            && Objects.equals(this.forceRefresh, searchDwByTypeRequest.forceRefresh)
-            && Objects.equals(this.dwType, searchDwByTypeRequest.dwType)
-            && Objects.equals(this.limit, searchDwByTypeRequest.limit)
-            && Objects.equals(this.offset, searchDwByTypeRequest.offset);
+        SearchDwByTypeRequest that = (SearchDwByTypeRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.forceRefresh, that.forceRefresh)
+            && Objects.equals(this.dwType, that.dwType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

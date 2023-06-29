@@ -87,17 +87,16 @@ public class CreateRetentionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRetentionRequest createRetentionRequest = (CreateRetentionRequest) o;
-        return Objects.equals(this.namespace, createRetentionRequest.namespace)
-            && Objects.equals(this.repository, createRetentionRequest.repository)
-            && Objects.equals(this.body, createRetentionRequest.body);
+        CreateRetentionRequest that = (CreateRetentionRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

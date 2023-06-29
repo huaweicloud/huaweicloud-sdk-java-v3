@@ -125,19 +125,17 @@ public class StopMixJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopMixJobRequest stopMixJobRequest = (StopMixJobRequest) o;
-        return Objects.equals(this.authorization, stopMixJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, stopMixJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, stopMixJobRequest.xProjectId)
-            && Objects.equals(this.appId, stopMixJobRequest.appId)
-            && Objects.equals(this.jobId, stopMixJobRequest.jobId);
+        StopMixJobRequest that = (StopMixJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

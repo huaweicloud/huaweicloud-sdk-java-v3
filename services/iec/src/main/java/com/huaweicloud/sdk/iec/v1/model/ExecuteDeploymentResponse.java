@@ -122,19 +122,17 @@ public class ExecuteDeploymentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteDeploymentResponse executeDeploymentResponse = (ExecuteDeploymentResponse) o;
-        return Objects.equals(this.id, executeDeploymentResponse.id)
-            && Objects.equals(this.name, executeDeploymentResponse.name)
-            && Objects.equals(this.deploymentId, executeDeploymentResponse.deploymentId)
-            && Objects.equals(this.status, executeDeploymentResponse.status)
-            && Objects.equals(this.jobId, executeDeploymentResponse.jobId);
+        ExecuteDeploymentResponse that = (ExecuteDeploymentResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

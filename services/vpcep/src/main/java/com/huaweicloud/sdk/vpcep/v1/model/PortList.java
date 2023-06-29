@@ -64,22 +64,15 @@ public class PortList {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,16 +146,16 @@ public class PortList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortList portList = (PortList) o;
-        return Objects.equals(this.clientPort, portList.clientPort)
-            && Objects.equals(this.serverPort, portList.serverPort) && Objects.equals(this.protocol, portList.protocol);
+        PortList that = (PortList) obj;
+        return Objects.equals(this.clientPort, that.clientPort) && Objects.equals(this.serverPort, that.serverPort)
+            && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

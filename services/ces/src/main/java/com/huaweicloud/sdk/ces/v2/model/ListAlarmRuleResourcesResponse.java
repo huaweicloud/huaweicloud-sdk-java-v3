@@ -77,16 +77,15 @@ public class ListAlarmRuleResourcesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmRuleResourcesResponse listAlarmRuleResourcesResponse = (ListAlarmRuleResourcesResponse) o;
-        return Objects.equals(this.resources, listAlarmRuleResourcesResponse.resources)
-            && Objects.equals(this.count, listAlarmRuleResourcesResponse.count);
+        ListAlarmRuleResourcesResponse that = (ListAlarmRuleResourcesResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.count, that.count);
     }
 
     @Override

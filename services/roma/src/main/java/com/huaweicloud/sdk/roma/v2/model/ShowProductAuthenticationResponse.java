@@ -56,16 +56,15 @@ public class ShowProductAuthenticationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProductAuthenticationResponse showProductAuthenticationResponse = (ShowProductAuthenticationResponse) o;
-        return Objects.equals(this.userName, showProductAuthenticationResponse.userName)
-            && Objects.equals(this.password, showProductAuthenticationResponse.password);
+        ShowProductAuthenticationResponse that = (ShowProductAuthenticationResponse) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

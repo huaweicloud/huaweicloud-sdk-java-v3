@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 应用镜像列表信息
  */
-public class QueryAppImageResponseDTO  {
-
+public class QueryAppImageResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_namespace")
-    
+    @JsonProperty(value = "image_namespace")
 
     private String imageNamespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag")
-    
+    @JsonProperty(value = "tag")
 
     private String tag;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="digest")
-    
+    @JsonProperty(value = "digest")
 
     private String digest;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
@@ -51,9 +39,6 @@ public class QueryAppImageResponseDTO  {
         this.imageNamespace = imageNamespace;
         return this;
     }
-
-    
-
 
     /**
      * 镜像组织
@@ -67,15 +52,10 @@ public class QueryAppImageResponseDTO  {
         this.imageNamespace = imageNamespace;
     }
 
-    
-
     public QueryAppImageResponseDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 镜像仓库名称
@@ -89,15 +69,10 @@ public class QueryAppImageResponseDTO  {
         this.name = name;
     }
 
-    
-
     public QueryAppImageResponseDTO withTag(String tag) {
         this.tag = tag;
         return this;
     }
-
-    
-
 
     /**
      * 镜像tag
@@ -111,15 +86,10 @@ public class QueryAppImageResponseDTO  {
         this.tag = tag;
     }
 
-    
-
     public QueryAppImageResponseDTO withDigest(String digest) {
         this.digest = digest;
         return this;
     }
-
-    
-
 
     /**
      * 镜像摘要
@@ -133,15 +103,10 @@ public class QueryAppImageResponseDTO  {
         this.digest = digest;
     }
 
-    
-
     public QueryAppImageResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -155,27 +120,25 @@ public class QueryAppImageResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAppImageResponseDTO queryAppImageResponseDTO = (QueryAppImageResponseDTO) o;
-        return Objects.equals(this.imageNamespace, queryAppImageResponseDTO.imageNamespace) &&
-            Objects.equals(this.name, queryAppImageResponseDTO.name) &&
-            Objects.equals(this.tag, queryAppImageResponseDTO.tag) &&
-            Objects.equals(this.digest, queryAppImageResponseDTO.digest) &&
-            Objects.equals(this.createTime, queryAppImageResponseDTO.createTime);
+        QueryAppImageResponseDTO that = (QueryAppImageResponseDTO) obj;
+        return Objects.equals(this.imageNamespace, that.imageNamespace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.digest, that.digest)
+            && Objects.equals(this.createTime, that.createTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(imageNamespace, name, tag, digest, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class QueryAppImageResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class QueryAppImageResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

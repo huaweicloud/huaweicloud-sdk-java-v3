@@ -53,16 +53,15 @@ public class BatchUpdatePoliciesPriorityRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdatePoliciesPriorityRequestBody batchUpdatePoliciesPriorityRequestBody =
-            (BatchUpdatePoliciesPriorityRequestBody) o;
-        return Objects.equals(this.l7policies, batchUpdatePoliciesPriorityRequestBody.l7policies);
+        BatchUpdatePoliciesPriorityRequestBody that = (BatchUpdatePoliciesPriorityRequestBody) obj;
+        return Objects.equals(this.l7policies, that.l7policies);
     }
 
     @Override

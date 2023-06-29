@@ -77,17 +77,16 @@ public class DeleteAppConfigV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAppConfigV2Request deleteAppConfigV2Request = (DeleteAppConfigV2Request) o;
-        return Objects.equals(this.instanceId, deleteAppConfigV2Request.instanceId)
-            && Objects.equals(this.appId, deleteAppConfigV2Request.appId)
-            && Objects.equals(this.appConfigId, deleteAppConfigV2Request.appConfigId);
+        DeleteAppConfigV2Request that = (DeleteAppConfigV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appConfigId, that.appConfigId);
     }
 
     @Override

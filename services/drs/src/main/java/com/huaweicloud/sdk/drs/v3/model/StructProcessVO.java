@@ -143,19 +143,17 @@ public class StructProcessVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructProcessVO structProcessVO = (StructProcessVO) o;
-        return Objects.equals(this.type, structProcessVO.type) && Objects.equals(this.status, structProcessVO.status)
-            && Objects.equals(this.srcCount, structProcessVO.srcCount)
-            && Objects.equals(this.dstCount, structProcessVO.dstCount)
-            && Objects.equals(this.startTime, structProcessVO.startTime)
-            && Objects.equals(this.endTime, structProcessVO.endTime);
+        StructProcessVO that = (StructProcessVO) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.srcCount, that.srcCount) && Objects.equals(this.dstCount, that.dstCount)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

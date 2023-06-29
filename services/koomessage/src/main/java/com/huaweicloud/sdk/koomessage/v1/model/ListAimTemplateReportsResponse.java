@@ -84,16 +84,16 @@ public class ListAimTemplateReportsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplateReportsResponse listAimTemplateReportsResponse = (ListAimTemplateReportsResponse) o;
-        return Objects.equals(this.templateReports, listAimTemplateReportsResponse.templateReports)
-            && Objects.equals(this.pageInfo, listAimTemplateReportsResponse.pageInfo);
+        ListAimTemplateReportsResponse that = (ListAimTemplateReportsResponse) obj;
+        return Objects.equals(this.templateReports, that.templateReports)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

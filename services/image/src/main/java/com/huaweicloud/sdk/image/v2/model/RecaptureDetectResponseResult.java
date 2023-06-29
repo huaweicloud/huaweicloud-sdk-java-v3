@@ -118,18 +118,16 @@ public class RecaptureDetectResponseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecaptureDetectResponseResult recaptureDetectResponseResult = (RecaptureDetectResponseResult) o;
-        return Objects.equals(this.suggestion, recaptureDetectResponseResult.suggestion)
-            && Objects.equals(this.category, recaptureDetectResponseResult.category)
-            && Objects.equals(this.score, recaptureDetectResponseResult.score)
-            && Objects.equals(this.detail, recaptureDetectResponseResult.detail);
+        RecaptureDetectResponseResult that = (RecaptureDetectResponseResult) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

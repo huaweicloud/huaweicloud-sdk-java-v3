@@ -75,16 +75,16 @@ public class ShowSqlExecutionPlanResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlExecutionPlanResponse showSqlExecutionPlanResponse = (ShowSqlExecutionPlanResponse) o;
-        return Objects.equals(this.executionPlans, showSqlExecutionPlanResponse.executionPlans)
-            && Objects.equals(this.errorMessage, showSqlExecutionPlanResponse.errorMessage);
+        ShowSqlExecutionPlanResponse that = (ShowSqlExecutionPlanResponse) obj;
+        return Objects.equals(this.executionPlans, that.executionPlans)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

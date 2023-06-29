@@ -33,15 +33,15 @@ public class DeleteAimPersonalTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAimPersonalTemplateRequest deleteAimPersonalTemplateRequest = (DeleteAimPersonalTemplateRequest) o;
-        return Objects.equals(this.tplId, deleteAimPersonalTemplateRequest.tplId);
+        DeleteAimPersonalTemplateRequest that = (DeleteAimPersonalTemplateRequest) obj;
+        return Objects.equals(this.tplId, that.tplId);
     }
 
     @Override

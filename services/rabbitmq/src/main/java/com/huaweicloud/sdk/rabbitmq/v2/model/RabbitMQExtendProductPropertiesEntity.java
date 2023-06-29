@@ -187,23 +187,21 @@ public class RabbitMQExtendProductPropertiesEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RabbitMQExtendProductPropertiesEntity rabbitMQExtendProductPropertiesEntity =
-            (RabbitMQExtendProductPropertiesEntity) o;
-        return Objects.equals(this.maxBroker, rabbitMQExtendProductPropertiesEntity.maxBroker)
-            && Objects.equals(this.maxStoragePerNode, rabbitMQExtendProductPropertiesEntity.maxStoragePerNode)
-            && Objects.equals(this.minBroker, rabbitMQExtendProductPropertiesEntity.minBroker)
-            && Objects.equals(this.minStoragePerNode, rabbitMQExtendProductPropertiesEntity.minStoragePerNode)
-            && Objects.equals(this.maxConnectionPerBroker, rabbitMQExtendProductPropertiesEntity.maxConnectionPerBroker)
-            && Objects.equals(this.stepLength, rabbitMQExtendProductPropertiesEntity.stepLength)
-            && Objects.equals(this.productAlias, rabbitMQExtendProductPropertiesEntity.productAlias)
-            && Objects.equals(this.maxQueuePerBroker, rabbitMQExtendProductPropertiesEntity.maxQueuePerBroker);
+        RabbitMQExtendProductPropertiesEntity that = (RabbitMQExtendProductPropertiesEntity) obj;
+        return Objects.equals(this.maxBroker, that.maxBroker)
+            && Objects.equals(this.maxStoragePerNode, that.maxStoragePerNode)
+            && Objects.equals(this.minBroker, that.minBroker)
+            && Objects.equals(this.minStoragePerNode, that.minStoragePerNode)
+            && Objects.equals(this.maxConnectionPerBroker, that.maxConnectionPerBroker)
+            && Objects.equals(this.stepLength, that.stepLength) && Objects.equals(this.productAlias, that.productAlias)
+            && Objects.equals(this.maxQueuePerBroker, that.maxQueuePerBroker);
     }
 
     @Override

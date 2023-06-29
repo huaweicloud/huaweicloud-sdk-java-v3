@@ -77,17 +77,16 @@ public class ListCriteriasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCriteriasRequest listCriteriasRequest = (ListCriteriasRequest) o;
-        return Objects.equals(this.groupId, listCriteriasRequest.groupId)
-            && Objects.equals(this.topicId, listCriteriasRequest.topicId)
-            && Objects.equals(this.searchType, listCriteriasRequest.searchType);
+        ListCriteriasRequest that = (ListCriteriasRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.searchType, that.searchType);
     }
 
     @Override

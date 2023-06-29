@@ -99,18 +99,16 @@ public class ShowStatisticCommitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStatisticCommitRequest showStatisticCommitRequest = (ShowStatisticCommitRequest) o;
-        return Objects.equals(this.repositoryId, showStatisticCommitRequest.repositoryId)
-            && Objects.equals(this.refName, showStatisticCommitRequest.refName)
-            && Objects.equals(this.beginDate, showStatisticCommitRequest.beginDate)
-            && Objects.equals(this.endDate, showStatisticCommitRequest.endDate);
+        ShowStatisticCommitRequest that = (ShowStatisticCommitRequest) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.refName, that.refName)
+            && Objects.equals(this.beginDate, that.beginDate) && Objects.equals(this.endDate, that.endDate);
     }
 
     @Override

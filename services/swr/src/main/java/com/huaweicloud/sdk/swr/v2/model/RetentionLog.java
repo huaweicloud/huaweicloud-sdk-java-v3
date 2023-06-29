@@ -165,18 +165,18 @@ public class RetentionLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetentionLog retentionLog = (RetentionLog) o;
-        return Objects.equals(this.createdAt, retentionLog.createdAt) && Objects.equals(this.id, retentionLog.id)
-            && Objects.equals(this.namespace, retentionLog.namespace) && Objects.equals(this.repo, retentionLog.repo)
-            && Objects.equals(this.retentionId, retentionLog.retentionId)
-            && Objects.equals(this.ruleType, retentionLog.ruleType) && Objects.equals(this.tag, retentionLog.tag);
+        RetentionLog that = (RetentionLog) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repo, that.repo)
+            && Objects.equals(this.retentionId, that.retentionId) && Objects.equals(this.ruleType, that.ruleType)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

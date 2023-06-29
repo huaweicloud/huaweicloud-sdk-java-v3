@@ -129,19 +129,17 @@ public class RevokeMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RevokeMessageRequest revokeMessageRequest = (RevokeMessageRequest) o;
-        return Objects.equals(this.caseId, revokeMessageRequest.caseId)
-            && Objects.equals(this.messageId, revokeMessageRequest.messageId)
-            && Objects.equals(this.xSite, revokeMessageRequest.xSite)
-            && Objects.equals(this.xLanguage, revokeMessageRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, revokeMessageRequest.xTimeZone);
+        RevokeMessageRequest that = (RevokeMessageRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

@@ -203,18 +203,17 @@ public class SearchResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResult searchResult = (SearchResult) o;
-        return Objects.equals(this.smiles, searchResult.smiles)
-            && Objects.equals(this.databases, searchResult.databases) && Objects.equals(this.topN, searchResult.topN)
-            && Objects.equals(this.propNames, searchResult.propNames) && Objects.equals(this.query, searchResult.query)
-            && Objects.equals(this.result, searchResult.result);
+        SearchResult that = (SearchResult) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.databases, that.databases)
+            && Objects.equals(this.topN, that.topN) && Objects.equals(this.propNames, that.propNames)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.result, that.result);
     }
 
     @Override

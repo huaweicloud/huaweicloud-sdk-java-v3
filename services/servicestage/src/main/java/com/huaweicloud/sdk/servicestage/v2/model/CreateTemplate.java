@@ -140,18 +140,17 @@ public class CreateTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemplate createTemplate = (CreateTemplate) o;
-        return Objects.equals(this.name, createTemplate.name)
-            && Objects.equals(this.isServicestage, createTemplate.isServicestage)
-            && Objects.equals(this.desc, createTemplate.desc) && Objects.equals(this.obsUrl, createTemplate.obsUrl)
-            && Objects.equals(this.tags, createTemplate.tags);
+        CreateTemplate that = (CreateTemplate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.isServicestage, that.isServicestage)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.obsUrl, that.obsUrl)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

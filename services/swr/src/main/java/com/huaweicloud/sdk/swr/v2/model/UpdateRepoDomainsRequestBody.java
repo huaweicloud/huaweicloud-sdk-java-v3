@@ -77,17 +77,16 @@ public class UpdateRepoDomainsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRepoDomainsRequestBody updateRepoDomainsRequestBody = (UpdateRepoDomainsRequestBody) o;
-        return Objects.equals(this.permit, updateRepoDomainsRequestBody.permit)
-            && Objects.equals(this.deadline, updateRepoDomainsRequestBody.deadline)
-            && Objects.equals(this.description, updateRepoDomainsRequestBody.description);
+        UpdateRepoDomainsRequestBody that = (UpdateRepoDomainsRequestBody) obj;
+        return Objects.equals(this.permit, that.permit) && Objects.equals(this.deadline, that.deadline)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

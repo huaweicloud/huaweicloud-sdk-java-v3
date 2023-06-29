@@ -97,17 +97,16 @@ public class ListAimCallbacksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimCallbacksResponse listAimCallbacksResponse = (ListAimCallbacksResponse) o;
-        return Objects.equals(this.status, listAimCallbacksResponse.status)
-            && Objects.equals(this.message, listAimCallbacksResponse.message)
-            && Objects.equals(this.data, listAimCallbacksResponse.data);
+        ListAimCallbacksResponse that = (ListAimCallbacksResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

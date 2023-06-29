@@ -33,15 +33,15 @@ public class ShowNatGatewayRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNatGatewayRequest showNatGatewayRequest = (ShowNatGatewayRequest) o;
-        return Objects.equals(this.natGatewayId, showNatGatewayRequest.natGatewayId);
+        ShowNatGatewayRequest that = (ShowNatGatewayRequest) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId);
     }
 
     @Override

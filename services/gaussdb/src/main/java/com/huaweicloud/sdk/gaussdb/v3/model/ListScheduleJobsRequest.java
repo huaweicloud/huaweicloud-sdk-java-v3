@@ -1,68 +1,52 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListScheduleJobsRequest  {
-
+public class ListScheduleJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private String offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private String limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
@@ -71,15 +55,12 @@ public class ListScheduleJobsRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -88,15 +69,10 @@ public class ListScheduleJobsRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListScheduleJobsRequest withOffset(String offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为1，必须为数字，不能为负数。
@@ -110,15 +86,10 @@ public class ListScheduleJobsRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListScheduleJobsRequest withLimit(String limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为10
@@ -132,15 +103,10 @@ public class ListScheduleJobsRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListScheduleJobsRequest withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行状态。 取值： - 值为“Running”，表示任务正在执行。 - 值为“Completed”，表示任务执行成功。 - 值为“Failed”，表示任务执行失败。 - 值为“Pending”，表示任务未执行。
@@ -154,15 +120,10 @@ public class ListScheduleJobsRequest  {
         this.status = status;
     }
 
-    
-
     public ListScheduleJobsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 起始时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -176,15 +137,10 @@ public class ListScheduleJobsRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public ListScheduleJobsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 结束时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。 其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。 说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -198,15 +154,10 @@ public class ListScheduleJobsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public ListScheduleJobsRequest withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -220,15 +171,10 @@ public class ListScheduleJobsRequest  {
         this.jobId = jobId;
     }
 
-    
-
     public ListScheduleJobsRequest withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 任务调度类型。
@@ -242,30 +188,26 @@ public class ListScheduleJobsRequest  {
         this.jobName = jobName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScheduleJobsRequest listScheduleJobsRequest = (ListScheduleJobsRequest) o;
-        return Objects.equals(this.xLanguage, listScheduleJobsRequest.xLanguage) &&
-            Objects.equals(this.offset, listScheduleJobsRequest.offset) &&
-            Objects.equals(this.limit, listScheduleJobsRequest.limit) &&
-            Objects.equals(this.status, listScheduleJobsRequest.status) &&
-            Objects.equals(this.startTime, listScheduleJobsRequest.startTime) &&
-            Objects.equals(this.endTime, listScheduleJobsRequest.endTime) &&
-            Objects.equals(this.jobId, listScheduleJobsRequest.jobId) &&
-            Objects.equals(this.jobName, listScheduleJobsRequest.jobName);
+        ListScheduleJobsRequest that = (ListScheduleJobsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, offset, limit, status, startTime, endTime, jobId, jobName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -281,6 +223,7 @@ public class ListScheduleJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -291,8 +234,5 @@ public class ListScheduleJobsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

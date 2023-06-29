@@ -121,22 +121,15 @@ public class TicsApproveLogVo {
             if (value == null) {
                 return null;
             }
-            PartnerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PartnerStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PartnerStatusEnum(value));
         }
 
         public static PartnerStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PartnerStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -442,28 +435,21 @@ public class TicsApproveLogVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TicsApproveLogVo ticsApproveLogVo = (TicsApproveLogVo) o;
-        return Objects.equals(this.createTime, ticsApproveLogVo.createTime)
-            && Objects.equals(this.creatorId, ticsApproveLogVo.creatorId)
-            && Objects.equals(this.creatorName, ticsApproveLogVo.creatorName)
-            && Objects.equals(this.domainAlias, ticsApproveLogVo.domainAlias)
-            && Objects.equals(this.domainName, ticsApproveLogVo.domainName)
-            && Objects.equals(this.league, ticsApproveLogVo.league)
-            && Objects.equals(this.leagueId, ticsApproveLogVo.leagueId)
-            && Objects.equals(this.leagueName, ticsApproveLogVo.leagueName)
-            && Objects.equals(this.partnerId, ticsApproveLogVo.partnerId)
-            && Objects.equals(this.partnerStatus, ticsApproveLogVo.partnerStatus)
-            && Objects.equals(this.partners, ticsApproveLogVo.partners)
-            && Objects.equals(this.updateId, ticsApproveLogVo.updateId)
-            && Objects.equals(this.updateName, ticsApproveLogVo.updateName)
-            && Objects.equals(this.updateTime, ticsApproveLogVo.updateTime);
+        TicsApproveLogVo that = (TicsApproveLogVo) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.domainAlias, that.domainAlias)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.league, that.league)
+            && Objects.equals(this.leagueId, that.leagueId) && Objects.equals(this.leagueName, that.leagueName)
+            && Objects.equals(this.partnerId, that.partnerId) && Objects.equals(this.partnerStatus, that.partnerStatus)
+            && Objects.equals(this.partners, that.partners) && Objects.equals(this.updateId, that.updateId)
+            && Objects.equals(this.updateName, that.updateName) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class ShowDeviceDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceDetailRequest showDeviceDetailRequest = (ShowDeviceDetailRequest) o;
-        return Objects.equals(this.xRequestId, showDeviceDetailRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showDeviceDetailRequest.acceptLanguage)
-            && Objects.equals(this.sn, showDeviceDetailRequest.sn);
+        ShowDeviceDetailRequest that = (ShowDeviceDetailRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.sn, that.sn);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class Authentification {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Authentification authentification = (Authentification) o;
-        return Objects.equals(this.recordName, authentification.recordName)
-            && Objects.equals(this.recordType, authentification.recordType)
-            && Objects.equals(this.recordValue, authentification.recordValue)
-            && Objects.equals(this.domain, authentification.domain);
+        Authentification that = (Authentification) obj;
+        return Objects.equals(this.recordName, that.recordName) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.recordValue, that.recordValue) && Objects.equals(this.domain, that.domain);
     }
 
     @Override

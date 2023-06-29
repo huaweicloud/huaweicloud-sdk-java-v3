@@ -121,19 +121,17 @@ public class DeleteDatabaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabaseRequest deleteDatabaseRequest = (DeleteDatabaseRequest) o;
-        return Objects.equals(this.instanceId, deleteDatabaseRequest.instanceId)
-            && Objects.equals(this.catalogName, deleteDatabaseRequest.catalogName)
-            && Objects.equals(this.databaseName, deleteDatabaseRequest.databaseName)
-            && Objects.equals(this.deleteData, deleteDatabaseRequest.deleteData)
-            && Objects.equals(this.cascade, deleteDatabaseRequest.cascade);
+        DeleteDatabaseRequest that = (DeleteDatabaseRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.deleteData, that.deleteData)
+            && Objects.equals(this.cascade, that.cascade);
     }
 
     @Override

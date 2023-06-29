@@ -341,27 +341,22 @@ public class EventResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventResponse eventResponse = (EventResponse) o;
-        return Objects.equals(this.category, eventResponse.category)
-            && Objects.equals(this.description, eventResponse.description)
-            && Objects.equals(this.eventId, eventResponse.eventId) && Objects.equals(this.name, eventResponse.name)
-            && Objects.equals(this.displayName, eventResponse.displayName)
-            && Objects.equals(this.nameSpace, eventResponse.nameSpace)
-            && Objects.equals(this.severity, eventResponse.severity)
-            && Objects.equals(this.sourceType, eventResponse.sourceType)
-            && Objects.equals(this.occurTime, eventResponse.occurTime)
-            && Objects.equals(this.projectId, eventResponse.projectId)
-            && Objects.equals(this.sourceId, eventResponse.sourceId)
-            && Objects.equals(this.sourceName, eventResponse.sourceName)
-            && Objects.equals(this.status, eventResponse.status) && Objects.equals(this.subject, eventResponse.subject)
-            && Objects.equals(this.context, eventResponse.context);
+        EventResponse that = (EventResponse) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.eventId, that.eventId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.occurTime, that.occurTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.context, that.context);
     }
 
     @Override

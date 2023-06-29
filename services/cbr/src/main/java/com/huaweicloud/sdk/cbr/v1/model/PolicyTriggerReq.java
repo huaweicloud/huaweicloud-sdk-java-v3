@@ -43,15 +43,15 @@ public class PolicyTriggerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyTriggerReq policyTriggerReq = (PolicyTriggerReq) o;
-        return Objects.equals(this.properties, policyTriggerReq.properties);
+        PolicyTriggerReq that = (PolicyTriggerReq) obj;
+        return Objects.equals(this.properties, that.properties);
     }
 
     @Override

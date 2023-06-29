@@ -184,21 +184,18 @@ public class DmsKafkaForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DmsKafkaForwarding dmsKafkaForwarding = (DmsKafkaForwarding) o;
-        return Objects.equals(this.regionName, dmsKafkaForwarding.regionName)
-            && Objects.equals(this.projectId, dmsKafkaForwarding.projectId)
-            && Objects.equals(this.addresses, dmsKafkaForwarding.addresses)
-            && Objects.equals(this.topic, dmsKafkaForwarding.topic)
-            && Objects.equals(this.username, dmsKafkaForwarding.username)
-            && Objects.equals(this.password, dmsKafkaForwarding.password)
-            && Objects.equals(this.mechanism, dmsKafkaForwarding.mechanism);
+        DmsKafkaForwarding that = (DmsKafkaForwarding) obj;
+        return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.mechanism, that.mechanism);
     }
 
     @Override

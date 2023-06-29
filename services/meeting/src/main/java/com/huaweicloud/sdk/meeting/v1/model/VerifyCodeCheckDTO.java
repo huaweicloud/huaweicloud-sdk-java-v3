@@ -55,15 +55,15 @@ public class VerifyCodeCheckDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VerifyCodeCheckDTO verifyCodeCheckDTO = (VerifyCodeCheckDTO) o;
-        return Objects.equals(this.user, verifyCodeCheckDTO.user) && Objects.equals(this.code, verifyCodeCheckDTO.code);
+        VerifyCodeCheckDTO that = (VerifyCodeCheckDTO) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.code, that.code);
     }
 
     @Override

@@ -1,44 +1,35 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.UpgradeGraphReq;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpgradeGraphRequest  {
-
+public class UpgradeGraphRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
+
     /**
      * 图actionId
      */
     public static final class ActionIdEnum {
 
-        
         /**
          * Enum UPGRADE for value: "upgrade"
          */
         public static final ActionIdEnum UPGRADE = new ActionIdEnum("upgrade");
-        
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +57,18 @@ public class UpgradeGraphRequest  {
 
         @JsonCreator
         public static ActionIdEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionIdEnum(value));
         }
 
         public static ActionIdEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,14 +86,12 @@ public class UpgradeGraphRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
 
     private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpgradeGraphReq body;
 
@@ -117,9 +99,6 @@ public class UpgradeGraphRequest  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -133,15 +112,10 @@ public class UpgradeGraphRequest  {
         this.graphId = graphId;
     }
 
-    
-
     public UpgradeGraphRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
-
-    
-
 
     /**
      * 图actionId
@@ -155,22 +129,19 @@ public class UpgradeGraphRequest  {
         this.actionId = actionId;
     }
 
-    
-
     public UpgradeGraphRequest withBody(UpgradeGraphReq body) {
         this.body = body;
         return this;
     }
 
     public UpgradeGraphRequest withBody(Consumer<UpgradeGraphReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpgradeGraphReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -184,25 +155,24 @@ public class UpgradeGraphRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeGraphRequest upgradeGraphRequest = (UpgradeGraphRequest) o;
-        return Objects.equals(this.graphId, upgradeGraphRequest.graphId) &&
-            Objects.equals(this.actionId, upgradeGraphRequest.actionId) &&
-            Objects.equals(this.body, upgradeGraphRequest.body);
+        UpgradeGraphRequest that = (UpgradeGraphRequest) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, actionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -213,6 +183,7 @@ public class UpgradeGraphRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -223,8 +194,5 @@ public class UpgradeGraphRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

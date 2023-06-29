@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadImageRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ExecuteUploadImageRequest  {
-
+public class ExecuteUploadImageRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_id")
-    
+    @JsonProperty(value = "video_id")
 
     private String videoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ExecuteUploadImageRequestBody body;
 
@@ -41,9 +30,6 @@ public class ExecuteUploadImageRequest  {
         this.videoId = videoId;
         return this;
     }
-
-    
-
 
     /**
      * 视频id
@@ -57,15 +43,10 @@ public class ExecuteUploadImageRequest  {
         this.videoId = videoId;
     }
 
-    
-
     public ExecuteUploadImageRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 图片名
@@ -79,22 +60,19 @@ public class ExecuteUploadImageRequest  {
         this.name = name;
     }
 
-    
-
     public ExecuteUploadImageRequest withBody(ExecuteUploadImageRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ExecuteUploadImageRequest withBody(Consumer<ExecuteUploadImageRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ExecuteUploadImageRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class ExecuteUploadImageRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteUploadImageRequest executeUploadImageRequest = (ExecuteUploadImageRequest) o;
-        return Objects.equals(this.videoId, executeUploadImageRequest.videoId) &&
-            Objects.equals(this.name, executeUploadImageRequest.name) &&
-            Objects.equals(this.body, executeUploadImageRequest.body);
+        ExecuteUploadImageRequest that = (ExecuteUploadImageRequest) obj;
+        return Objects.equals(this.videoId, that.videoId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(videoId, name, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class ExecuteUploadImageRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class ExecuteUploadImageRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

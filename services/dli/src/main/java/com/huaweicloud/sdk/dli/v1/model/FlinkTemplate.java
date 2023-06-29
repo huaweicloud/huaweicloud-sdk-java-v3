@@ -121,18 +121,17 @@ public class FlinkTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlinkTemplate flinkTemplate = (FlinkTemplate) o;
-        return Objects.equals(this.templateId, flinkTemplate.templateId)
-            && Objects.equals(this.name, flinkTemplate.name) && Objects.equals(this.desc, flinkTemplate.desc)
-            && Objects.equals(this.createTime, flinkTemplate.createTime)
-            && Objects.equals(this.jobType, flinkTemplate.jobType);
+        FlinkTemplate that = (FlinkTemplate) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

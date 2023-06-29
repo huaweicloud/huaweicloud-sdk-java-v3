@@ -127,18 +127,16 @@ public class ValueInTwinResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueInTwinResponse valueInTwinResponse = (ValueInTwinResponse) o;
-        return Objects.equals(this.excepted, valueInTwinResponse.excepted)
-            && Objects.equals(this.actual, valueInTwinResponse.actual)
-            && Objects.equals(this.metadata, valueInTwinResponse.metadata)
-            && Objects.equals(this.optional, valueInTwinResponse.optional);
+        ValueInTwinResponse that = (ValueInTwinResponse) obj;
+        return Objects.equals(this.excepted, that.excepted) && Objects.equals(this.actual, that.actual)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.optional, that.optional);
     }
 
     @Override

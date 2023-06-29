@@ -70,22 +70,15 @@ public class DeleteDatabaseRequest {
             if (value == null) {
                 return null;
             }
-            DeleteRdsDataEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeleteRdsDataEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeleteRdsDataEnum(value));
         }
 
         public static DeleteRdsDataEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeleteRdsDataEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class DeleteDatabaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabaseRequest deleteDatabaseRequest = (DeleteDatabaseRequest) o;
-        return Objects.equals(this.instanceId, deleteDatabaseRequest.instanceId)
-            && Objects.equals(this.ddmDbname, deleteDatabaseRequest.ddmDbname)
-            && Objects.equals(this.deleteRdsData, deleteDatabaseRequest.deleteRdsData);
+        DeleteDatabaseRequest that = (DeleteDatabaseRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ddmDbname, that.ddmDbname)
+            && Objects.equals(this.deleteRdsData, that.deleteRdsData);
     }
 
     @Override

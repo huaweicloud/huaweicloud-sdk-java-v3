@@ -117,22 +117,15 @@ public class CompareJobInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -366,23 +359,20 @@ public class CompareJobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareJobInfo compareJobInfo = (CompareJobInfo) o;
-        return Objects.equals(this.id, compareJobInfo.id) && Objects.equals(this.type, compareJobInfo.type)
-            && Objects.equals(this.startTime, compareJobInfo.startTime)
-            && Objects.equals(this.endTime, compareJobInfo.endTime)
-            && Objects.equals(this.status, compareJobInfo.status)
-            && Objects.equals(this.computeType, compareJobInfo.computeType)
-            && Objects.equals(this.exportStatus, compareJobInfo.exportStatus)
-            && Objects.equals(this.reportRemainSeconds, compareJobInfo.reportRemainSeconds)
-            && Objects.equals(this.compareJobTag, compareJobInfo.compareJobTag)
-            && Objects.equals(this.errorMsg, compareJobInfo.errorMsg);
+        CompareJobInfo that = (CompareJobInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.computeType, that.computeType)
+            && Objects.equals(this.exportStatus, that.exportStatus)
+            && Objects.equals(this.reportRemainSeconds, that.reportRemainSeconds)
+            && Objects.equals(this.compareJobTag, that.compareJobTag) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

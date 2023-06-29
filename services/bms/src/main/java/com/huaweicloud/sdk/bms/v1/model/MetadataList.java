@@ -55,22 +55,15 @@ public class MetadataList {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargingModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargingModeEnum(value));
         }
 
         public static ChargingModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargingModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -163,22 +156,15 @@ public class MetadataList {
             if (value == null) {
                 return null;
             }
-            MeteringImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MeteringImagetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MeteringImagetypeEnum(value));
         }
 
         public static MeteringImagetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MeteringImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,22 +256,15 @@ public class MetadataList {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,22 +336,15 @@ public class MetadataList {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsBitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsBitEnum(value));
         }
 
         public static OsBitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -635,28 +607,25 @@ public class MetadataList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetadataList metadataList = (MetadataList) o;
-        return Objects.equals(this.chargingMode, metadataList.chargingMode)
-            && Objects.equals(this.meteringOrderId, metadataList.meteringOrderId)
-            && Objects.equals(this.meteringProductId, metadataList.meteringProductId)
-            && Objects.equals(this.vpcId, metadataList.vpcId)
-            && Objects.equals(this.meteringImageId, metadataList.meteringImageId)
-            && Objects.equals(this.meteringImagetype, metadataList.meteringImagetype)
-            && Objects.equals(this.baremetalPortIDList, metadataList.baremetalPortIDList)
-            && Objects.equals(this.meteringResourcespeccode, metadataList.meteringResourcespeccode)
-            && Objects.equals(this.meteringResourcetype, metadataList.meteringResourcetype)
-            && Objects.equals(this.imageName, metadataList.imageName)
-            && Objects.equals(this.opSvcUserid, metadataList.opSvcUserid)
-            && Objects.equals(this.osType, metadataList.osType)
-            && Objects.equals(this.bmsSupportEvs, metadataList.bmsSupportEvs)
-            && Objects.equals(this.osBit, metadataList.osBit);
+        MetadataList that = (MetadataList) obj;
+        return Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.meteringOrderId, that.meteringOrderId)
+            && Objects.equals(this.meteringProductId, that.meteringProductId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.meteringImageId, that.meteringImageId)
+            && Objects.equals(this.meteringImagetype, that.meteringImagetype)
+            && Objects.equals(this.baremetalPortIDList, that.baremetalPortIDList)
+            && Objects.equals(this.meteringResourcespeccode, that.meteringResourcespeccode)
+            && Objects.equals(this.meteringResourcetype, that.meteringResourcetype)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.opSvcUserid, that.opSvcUserid)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.bmsSupportEvs, that.bmsSupportEvs)
+            && Objects.equals(this.osBit, that.osBit);
     }
 
     @Override

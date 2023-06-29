@@ -297,27 +297,26 @@ public class StatusStatistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatusStatistic statusStatistic = (StatusStatistic) o;
-        return Objects.equals(this.payingCount, statusStatistic.payingCount)
-            && Objects.equals(this.freezingCount, statusStatistic.freezingCount)
-            && Objects.equals(this.migratingCount, statusStatistic.migratingCount)
-            && Objects.equals(this.flushingCount, statusStatistic.flushingCount)
-            && Objects.equals(this.upgradingCount, statusStatistic.upgradingCount)
-            && Objects.equals(this.restoringCount, statusStatistic.restoringCount)
-            && Objects.equals(this.extendingCount, statusStatistic.extendingCount)
-            && Objects.equals(this.creatingCount, statusStatistic.creatingCount)
-            && Objects.equals(this.runningCount, statusStatistic.runningCount)
-            && Objects.equals(this.errorCount, statusStatistic.errorCount)
-            && Objects.equals(this.frozenCount, statusStatistic.frozenCount)
-            && Objects.equals(this.createfailedCount, statusStatistic.createfailedCount)
-            && Objects.equals(this.restartingCount, statusStatistic.restartingCount);
+        StatusStatistic that = (StatusStatistic) obj;
+        return Objects.equals(this.payingCount, that.payingCount)
+            && Objects.equals(this.freezingCount, that.freezingCount)
+            && Objects.equals(this.migratingCount, that.migratingCount)
+            && Objects.equals(this.flushingCount, that.flushingCount)
+            && Objects.equals(this.upgradingCount, that.upgradingCount)
+            && Objects.equals(this.restoringCount, that.restoringCount)
+            && Objects.equals(this.extendingCount, that.extendingCount)
+            && Objects.equals(this.creatingCount, that.creatingCount)
+            && Objects.equals(this.runningCount, that.runningCount) && Objects.equals(this.errorCount, that.errorCount)
+            && Objects.equals(this.frozenCount, that.frozenCount)
+            && Objects.equals(this.createfailedCount, that.createfailedCount)
+            && Objects.equals(this.restartingCount, that.restartingCount);
     }
 
     @Override

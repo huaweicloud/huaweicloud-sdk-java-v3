@@ -75,22 +75,15 @@ public class DeploymentGroup {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEnum(value));
         }
 
         public static OsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,7 +160,7 @@ public class DeploymentGroup {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -247,20 +240,18 @@ public class DeploymentGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentGroup deploymentGroup = (DeploymentGroup) o;
-        return Objects.equals(this.name, deploymentGroup.name)
-            && Objects.equals(this.regionName, deploymentGroup.regionName)
-            && Objects.equals(this.projectId, deploymentGroup.projectId) && Objects.equals(this.os, deploymentGroup.os)
-            && Objects.equals(this.slaveClusterId, deploymentGroup.slaveClusterId)
-            && Objects.equals(this.description, deploymentGroup.description)
-            && Objects.equals(this.isProxyMode, deploymentGroup.isProxyMode);
+        DeploymentGroup that = (DeploymentGroup) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.os, that.os)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isProxyMode, that.isProxyMode);
     }
 
     @Override

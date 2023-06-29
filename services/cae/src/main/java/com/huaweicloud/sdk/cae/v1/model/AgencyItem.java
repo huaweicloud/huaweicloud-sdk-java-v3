@@ -54,22 +54,15 @@ public class AgencyItem {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NameEnum(value));
         }
 
         public static NameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -109,15 +102,15 @@ public class AgencyItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyItem agencyItem = (AgencyItem) o;
-        return Objects.equals(this.name, agencyItem.name);
+        AgencyItem that = (AgencyItem) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

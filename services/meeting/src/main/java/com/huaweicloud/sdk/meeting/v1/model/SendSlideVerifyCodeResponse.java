@@ -122,19 +122,17 @@ public class SendSlideVerifyCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendSlideVerifyCodeResponse sendSlideVerifyCodeResponse = (SendSlideVerifyCodeResponse) o;
-        return Objects.equals(this.shadowImage, sendSlideVerifyCodeResponse.shadowImage)
-            && Objects.equals(this.cutImage, sendSlideVerifyCodeResponse.cutImage)
-            && Objects.equals(this.pointY, sendSlideVerifyCodeResponse.pointY)
-            && Objects.equals(this.token, sendSlideVerifyCodeResponse.token)
-            && Objects.equals(this.expire, sendSlideVerifyCodeResponse.expire);
+        SendSlideVerifyCodeResponse that = (SendSlideVerifyCodeResponse) obj;
+        return Objects.equals(this.shadowImage, that.shadowImage) && Objects.equals(this.cutImage, that.cutImage)
+            && Objects.equals(this.pointY, that.pointY) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.expire, that.expire);
     }
 
     @Override

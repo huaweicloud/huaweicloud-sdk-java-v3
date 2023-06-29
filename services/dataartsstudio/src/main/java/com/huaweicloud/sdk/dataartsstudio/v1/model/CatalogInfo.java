@@ -33,15 +33,15 @@ public class CatalogInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogInfo catalogInfo = (CatalogInfo) o;
-        return Objects.equals(this.guid, catalogInfo.guid);
+        CatalogInfo that = (CatalogInfo) obj;
+        return Objects.equals(this.guid, that.guid);
     }
 
     @Override

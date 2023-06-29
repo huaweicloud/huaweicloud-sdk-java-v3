@@ -80,17 +80,15 @@ public class ListDomainNotAddedProjectsV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainNotAddedProjectsV4Response listDomainNotAddedProjectsV4Response =
-            (ListDomainNotAddedProjectsV4Response) o;
-        return Objects.equals(this.projects, listDomainNotAddedProjectsV4Response.projects)
-            && Objects.equals(this.total, listDomainNotAddedProjectsV4Response.total);
+        ListDomainNotAddedProjectsV4Response that = (ListDomainNotAddedProjectsV4Response) obj;
+        return Objects.equals(this.projects, that.projects) && Objects.equals(this.total, that.total);
     }
 
     @Override

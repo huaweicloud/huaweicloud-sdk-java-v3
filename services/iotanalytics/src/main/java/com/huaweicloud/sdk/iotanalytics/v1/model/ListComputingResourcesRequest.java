@@ -79,17 +79,16 @@ public class ListComputingResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListComputingResourcesRequest listComputingResourcesRequest = (ListComputingResourcesRequest) o;
-        return Objects.equals(this.computingResourceName, listComputingResourcesRequest.computingResourceName)
-            && Objects.equals(this.offset, listComputingResourcesRequest.offset)
-            && Objects.equals(this.limit, listComputingResourcesRequest.limit);
+        ListComputingResourcesRequest that = (ListComputingResourcesRequest) obj;
+        return Objects.equals(this.computingResourceName, that.computingResourceName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

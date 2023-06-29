@@ -165,19 +165,17 @@ public class KafkaContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaContentRsp kafkaContentRsp = (KafkaContentRsp) o;
-        return Objects.equals(this.connectionType, kafkaContentRsp.connectionType)
-            && Objects.equals(this.instanceId, kafkaContentRsp.instanceId)
-            && Objects.equals(this.vpcepInfos, kafkaContentRsp.vpcepInfos)
-            && Objects.equals(this.brokerInfos, kafkaContentRsp.brokerInfos)
-            && Objects.equals(this.authInfo, kafkaContentRsp.authInfo);
+        KafkaContentRsp that = (KafkaContentRsp) obj;
+        return Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcepInfos, that.vpcepInfos)
+            && Objects.equals(this.brokerInfos, that.brokerInfos) && Objects.equals(this.authInfo, that.authInfo);
     }
 
     @Override

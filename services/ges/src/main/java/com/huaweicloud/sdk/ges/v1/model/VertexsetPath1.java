@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * VertexsetPath1
  */
-public class VertexsetPath1  {
-
+public class VertexsetPath1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
@@ -39,9 +29,6 @@ public class VertexsetPath1  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 导入OBS文件对应的jobId。
@@ -55,15 +42,10 @@ public class VertexsetPath1  {
         this.jobId = jobId;
     }
 
-    
-
     public VertexsetPath1 withPath(String path) {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * OBS存储路径，不包含OBS Endpoint。
@@ -77,15 +59,10 @@ public class VertexsetPath1  {
         this.path = path;
     }
 
-    
-
     public VertexsetPath1 withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件导入状态。  - success：完全导入成功 - partiallyFailed：部分失败 - failed：完全导入失败
@@ -99,25 +76,24 @@ public class VertexsetPath1  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VertexsetPath1 vertexsetPath1 = (VertexsetPath1) o;
-        return Objects.equals(this.jobId, vertexsetPath1.jobId) &&
-            Objects.equals(this.path, vertexsetPath1.path) &&
-            Objects.equals(this.status, vertexsetPath1.status);
+        VertexsetPath1 that = (VertexsetPath1) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, path, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class VertexsetPath1  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class VertexsetPath1  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

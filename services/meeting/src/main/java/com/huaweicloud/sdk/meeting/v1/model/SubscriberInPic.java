@@ -96,17 +96,16 @@ public class SubscriberInPic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriberInPic subscriberInPic = (SubscriberInPic) o;
-        return Objects.equals(this.index, subscriberInPic.index)
-            && Objects.equals(this.subscriber, subscriberInPic.subscriber)
-            && Objects.equals(this.isAssistStream, subscriberInPic.isAssistStream);
+        SubscriberInPic that = (SubscriberInPic) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.subscriber, that.subscriber)
+            && Objects.equals(this.isAssistStream, that.isAssistStream);
     }
 
     @Override

@@ -187,21 +187,18 @@ public class OpenAttendeeEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenAttendeeEntity openAttendeeEntity = (OpenAttendeeEntity) o;
-        return Objects.equals(this.appId, openAttendeeEntity.appId)
-            && Objects.equals(this.userAccount, openAttendeeEntity.userAccount)
-            && Objects.equals(this.userName, openAttendeeEntity.userName)
-            && Objects.equals(this.deptName, openAttendeeEntity.deptName)
-            && Objects.equals(this.phone, openAttendeeEntity.phone)
-            && Objects.equals(this.email, openAttendeeEntity.email) && Objects.equals(this.sms, openAttendeeEntity.sms)
-            && Objects.equals(this.isHardTerminal, openAttendeeEntity.isHardTerminal);
+        OpenAttendeeEntity that = (OpenAttendeeEntity) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.userAccount, that.userAccount)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.sms, that.sms) && Objects.equals(this.isHardTerminal, that.isHardTerminal);
     }
 
     @Override

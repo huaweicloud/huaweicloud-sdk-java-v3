@@ -66,16 +66,15 @@ public class UpdateL7PolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7PolicyResponse updateL7PolicyResponse = (UpdateL7PolicyResponse) o;
-        return Objects.equals(this.requestId, updateL7PolicyResponse.requestId)
-            && Objects.equals(this.l7policy, updateL7PolicyResponse.l7policy);
+        UpdateL7PolicyResponse that = (UpdateL7PolicyResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.l7policy, that.l7policy);
     }
 
     @Override

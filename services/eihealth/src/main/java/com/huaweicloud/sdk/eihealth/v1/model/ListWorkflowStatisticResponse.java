@@ -100,18 +100,17 @@ public class ListWorkflowStatisticResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowStatisticResponse listWorkflowStatisticResponse = (ListWorkflowStatisticResponse) o;
-        return Objects.equals(this.appCount, listWorkflowStatisticResponse.appCount)
-            && Objects.equals(this.workflowCount, listWorkflowStatisticResponse.workflowCount)
-            && Objects.equals(this.jobCount, listWorkflowStatisticResponse.jobCount)
-            && Objects.equals(this.succeedJobCount, listWorkflowStatisticResponse.succeedJobCount);
+        ListWorkflowStatisticResponse that = (ListWorkflowStatisticResponse) obj;
+        return Objects.equals(this.appCount, that.appCount) && Objects.equals(this.workflowCount, that.workflowCount)
+            && Objects.equals(this.jobCount, that.jobCount)
+            && Objects.equals(this.succeedJobCount, that.succeedJobCount);
     }
 
     @Override

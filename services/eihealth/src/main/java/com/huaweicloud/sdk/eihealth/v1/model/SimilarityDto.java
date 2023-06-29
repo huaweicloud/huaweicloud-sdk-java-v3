@@ -52,15 +52,15 @@ public class SimilarityDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimilarityDto similarityDto = (SimilarityDto) o;
-        return Objects.equals(this.ligandIds, similarityDto.ligandIds);
+        SimilarityDto that = (SimilarityDto) obj;
+        return Objects.equals(this.ligandIds, that.ligandIds);
     }
 
     @Override

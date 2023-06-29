@@ -55,16 +55,16 @@ public class DownloadDataJobLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadDataJobLogRequest downloadDataJobLogRequest = (DownloadDataJobLogRequest) o;
-        return Objects.equals(this.eihealthProjectId, downloadDataJobLogRequest.eihealthProjectId)
-            && Objects.equals(this.dataJobId, downloadDataJobLogRequest.dataJobId);
+        DownloadDataJobLogRequest that = (DownloadDataJobLogRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.dataJobId, that.dataJobId);
     }
 
     @Override

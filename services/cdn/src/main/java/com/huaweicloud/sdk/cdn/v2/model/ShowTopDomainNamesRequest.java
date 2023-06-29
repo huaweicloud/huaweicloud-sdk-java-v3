@@ -147,20 +147,18 @@ public class ShowTopDomainNamesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopDomainNamesRequest showTopDomainNamesRequest = (ShowTopDomainNamesRequest) o;
-        return Objects.equals(this.startTime, showTopDomainNamesRequest.startTime)
-            && Objects.equals(this.endTime, showTopDomainNamesRequest.endTime)
-            && Objects.equals(this.statType, showTopDomainNamesRequest.statType)
-            && Objects.equals(this.serviceArea, showTopDomainNamesRequest.serviceArea)
-            && Objects.equals(this.limit, showTopDomainNamesRequest.limit)
-            && Objects.equals(this.enterpriseProjectId, showTopDomainNamesRequest.enterpriseProjectId);
+        ShowTopDomainNamesRequest that = (ShowTopDomainNamesRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.statType, that.statType) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

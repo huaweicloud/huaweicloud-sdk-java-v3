@@ -56,16 +56,15 @@ public class ShowNewTaskStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNewTaskStatusResponse showNewTaskStatusResponse = (ShowNewTaskStatusResponse) o;
-        return Objects.equals(this.taskStatus, showNewTaskStatusResponse.taskStatus)
-            && Objects.equals(this.taskMsg, showNewTaskStatusResponse.taskMsg);
+        ShowNewTaskStatusResponse that = (ShowNewTaskStatusResponse) obj;
+        return Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.taskMsg, that.taskMsg);
     }
 
     @Override

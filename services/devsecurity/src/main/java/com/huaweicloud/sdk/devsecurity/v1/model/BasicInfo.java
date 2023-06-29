@@ -323,24 +323,21 @@ public class BasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasicInfo basicInfo = (BasicInfo) o;
-        return Objects.equals(this.appName, basicInfo.appName)
-            && Objects.equals(this.packageName, basicInfo.packageName)
-            && Objects.equals(this.fileSize, basicInfo.fileSize)
-            && Objects.equals(this.versionCode, basicInfo.versionCode) && Objects.equals(this.minSdk, basicInfo.minSdk)
-            && Objects.equals(this.targetSdk, basicInfo.targetSdk) && Objects.equals(this.sha1, basicInfo.sha1)
-            && Objects.equals(this.sha256, basicInfo.sha256) && Objects.equals(this.md5, basicInfo.md5)
-            && Objects.equals(this.issuer, basicInfo.issuer) && Objects.equals(this.owner, basicInfo.owner)
-            && Objects.equals(this.effectiveDate, basicInfo.effectiveDate)
-            && Objects.equals(this.algorithm, basicInfo.algorithm)
-            && Objects.equals(this.publicKey, basicInfo.publicKey);
+        BasicInfo that = (BasicInfo) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.packageName, that.packageName)
+            && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.versionCode, that.versionCode)
+            && Objects.equals(this.minSdk, that.minSdk) && Objects.equals(this.targetSdk, that.targetSdk)
+            && Objects.equals(this.sha1, that.sha1) && Objects.equals(this.sha256, that.sha256)
+            && Objects.equals(this.md5, that.md5) && Objects.equals(this.issuer, that.issuer)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.effectiveDate, that.effectiveDate)
+            && Objects.equals(this.algorithm, that.algorithm) && Objects.equals(this.publicKey, that.publicKey);
     }
 
     @Override

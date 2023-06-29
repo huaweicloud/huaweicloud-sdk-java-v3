@@ -165,21 +165,18 @@ public class UpdateCertificateOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCertificateOption updateCertificateOption = (UpdateCertificateOption) o;
-        return Objects.equals(this.certificate, updateCertificateOption.certificate)
-            && Objects.equals(this.description, updateCertificateOption.description)
-            && Objects.equals(this.name, updateCertificateOption.name)
-            && Objects.equals(this.privateKey, updateCertificateOption.privateKey)
-            && Objects.equals(this.domain, updateCertificateOption.domain)
-            && Objects.equals(this.encCertificate, updateCertificateOption.encCertificate)
-            && Objects.equals(this.encPrivateKey, updateCertificateOption.encPrivateKey);
+        UpdateCertificateOption that = (UpdateCertificateOption) obj;
+        return Objects.equals(this.certificate, that.certificate) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.encCertificate, that.encCertificate)
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
     }
 
     @Override

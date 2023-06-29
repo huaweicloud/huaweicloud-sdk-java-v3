@@ -55,16 +55,15 @@ public class DeleteProductRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteProductRequest deleteProductRequest = (DeleteProductRequest) o;
-        return Objects.equals(this.productId, deleteProductRequest.productId)
-            && Objects.equals(this.iefInstanceId, deleteProductRequest.iefInstanceId);
+        DeleteProductRequest that = (DeleteProductRequest) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

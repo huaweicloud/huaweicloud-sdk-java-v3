@@ -77,17 +77,16 @@ public class CreateVmsTaskResponseMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVmsTaskResponseMode createVmsTaskResponseMode = (CreateVmsTaskResponseMode) o;
-        return Objects.equals(this.retCode, createVmsTaskResponseMode.retCode)
-            && Objects.equals(this.taskId, createVmsTaskResponseMode.taskId)
-            && Objects.equals(this.desc, createVmsTaskResponseMode.desc);
+        CreateVmsTaskResponseMode that = (CreateVmsTaskResponseMode) obj;
+        return Objects.equals(this.retCode, that.retCode) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

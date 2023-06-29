@@ -187,21 +187,18 @@ public class ShowEventDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEventDataRequest showEventDataRequest = (ShowEventDataRequest) o;
-        return Objects.equals(this.namespace, showEventDataRequest.namespace)
-            && Objects.equals(this.dim0, showEventDataRequest.dim0)
-            && Objects.equals(this.dim1, showEventDataRequest.dim1)
-            && Objects.equals(this.dim2, showEventDataRequest.dim2)
-            && Objects.equals(this.dim3, showEventDataRequest.dim3)
-            && Objects.equals(this.type, showEventDataRequest.type)
-            && Objects.equals(this.from, showEventDataRequest.from) && Objects.equals(this.to, showEventDataRequest.to);
+        ShowEventDataRequest that = (ShowEventDataRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dim0, that.dim0)
+            && Objects.equals(this.dim1, that.dim1) && Objects.equals(this.dim2, that.dim2)
+            && Objects.equals(this.dim3, that.dim3) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to);
     }
 
     @Override

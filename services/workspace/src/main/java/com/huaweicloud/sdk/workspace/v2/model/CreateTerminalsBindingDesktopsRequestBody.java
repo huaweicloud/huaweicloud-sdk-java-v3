@@ -53,16 +53,15 @@ public class CreateTerminalsBindingDesktopsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTerminalsBindingDesktopsRequestBody createTerminalsBindingDesktopsRequestBody =
-            (CreateTerminalsBindingDesktopsRequestBody) o;
-        return Objects.equals(this.bindList, createTerminalsBindingDesktopsRequestBody.bindList);
+        CreateTerminalsBindingDesktopsRequestBody that = (CreateTerminalsBindingDesktopsRequestBody) obj;
+        return Objects.equals(this.bindList, that.bindList);
     }
 
     @Override

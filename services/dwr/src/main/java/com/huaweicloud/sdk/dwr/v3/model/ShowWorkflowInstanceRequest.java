@@ -55,16 +55,15 @@ public class ShowWorkflowInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowInstanceRequest showWorkflowInstanceRequest = (ShowWorkflowInstanceRequest) o;
-        return Objects.equals(this.executionName, showWorkflowInstanceRequest.executionName)
-            && Objects.equals(this.graphName, showWorkflowInstanceRequest.graphName);
+        ShowWorkflowInstanceRequest that = (ShowWorkflowInstanceRequest) obj;
+        return Objects.equals(this.executionName, that.executionName) && Objects.equals(this.graphName, that.graphName);
     }
 
     @Override

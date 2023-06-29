@@ -118,18 +118,16 @@ public class ShowTableUsersRespPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTableUsersRespPrivilege showTableUsersRespPrivilege = (ShowTableUsersRespPrivilege) o;
-        return Objects.equals(this.isAdmin, showTableUsersRespPrivilege.isAdmin)
-            && Objects.equals(this._object, showTableUsersRespPrivilege._object)
-            && Objects.equals(this.privileges, showTableUsersRespPrivilege.privileges)
-            && Objects.equals(this.userName, showTableUsersRespPrivilege.userName);
+        ShowTableUsersRespPrivilege that = (ShowTableUsersRespPrivilege) obj;
+        return Objects.equals(this.isAdmin, that.isAdmin) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.privileges, that.privileges) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

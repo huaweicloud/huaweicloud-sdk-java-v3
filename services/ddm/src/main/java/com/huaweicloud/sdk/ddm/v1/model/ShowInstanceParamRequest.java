@@ -104,18 +104,16 @@ public class ShowInstanceParamRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceParamRequest showInstanceParamRequest = (ShowInstanceParamRequest) o;
-        return Objects.equals(this.instanceId, showInstanceParamRequest.instanceId)
-            && Objects.equals(this.offset, showInstanceParamRequest.offset)
-            && Objects.equals(this.limit, showInstanceParamRequest.limit)
-            && Objects.equals(this.xLanguage, showInstanceParamRequest.xLanguage);
+        ShowInstanceParamRequest that = (ShowInstanceParamRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

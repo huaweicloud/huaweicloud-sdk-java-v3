@@ -96,16 +96,16 @@ public class OsVersionResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsVersionResponse osVersionResponse = (OsVersionResponse) o;
-        return Objects.equals(this.status, osVersionResponse.status) && Objects.equals(this.id, osVersionResponse.id)
-            && Objects.equals(this.links, osVersionResponse.links);
+        OsVersionResponse that = (OsVersionResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.links, that.links);
     }
 
     @Override

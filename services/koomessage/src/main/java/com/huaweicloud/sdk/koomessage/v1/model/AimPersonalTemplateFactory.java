@@ -57,16 +57,15 @@ public class AimPersonalTemplateFactory {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimPersonalTemplateFactory aimPersonalTemplateFactory = (AimPersonalTemplateFactory) o;
-        return Objects.equals(this.factoryType, aimPersonalTemplateFactory.factoryType)
-            && Objects.equals(this.state, aimPersonalTemplateFactory.state);
+        AimPersonalTemplateFactory that = (AimPersonalTemplateFactory) obj;
+        return Objects.equals(this.factoryType, that.factoryType) && Objects.equals(this.state, that.state);
     }
 
     @Override

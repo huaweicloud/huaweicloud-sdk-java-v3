@@ -77,17 +77,16 @@ public class ListSubscriptionsByTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest = (ListSubscriptionsByTopicRequest) o;
-        return Objects.equals(this.topicUrn, listSubscriptionsByTopicRequest.topicUrn)
-            && Objects.equals(this.offset, listSubscriptionsByTopicRequest.offset)
-            && Objects.equals(this.limit, listSubscriptionsByTopicRequest.limit);
+        ListSubscriptionsByTopicRequest that = (ListSubscriptionsByTopicRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

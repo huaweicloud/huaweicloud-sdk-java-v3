@@ -77,17 +77,16 @@ public class GetArchiveConfigRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetArchiveConfigRsp getArchiveConfigRsp = (GetArchiveConfigRsp) o;
-        return Objects.equals(this.regionId, getArchiveConfigRsp.regionId)
-            && Objects.equals(this.currentRegion, getArchiveConfigRsp.currentRegion)
-            && Objects.equals(this.bucketName, getArchiveConfigRsp.bucketName);
+        GetArchiveConfigRsp that = (GetArchiveConfigRsp) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.currentRegion, that.currentRegion)
+            && Objects.equals(this.bucketName, that.bucketName);
     }
 
     @Override

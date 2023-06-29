@@ -166,21 +166,18 @@ public class CreateAccountStatusDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAccountStatusDto createAccountStatusDto = (CreateAccountStatusDto) o;
-        return Objects.equals(this.accountId, createAccountStatusDto.accountId)
-            && Objects.equals(this.accountName, createAccountStatusDto.accountName)
-            && Objects.equals(this.completedAt, createAccountStatusDto.completedAt)
-            && Objects.equals(this.createdAt, createAccountStatusDto.createdAt)
-            && Objects.equals(this.id, createAccountStatusDto.id)
-            && Objects.equals(this.state, createAccountStatusDto.state)
-            && Objects.equals(this.failureReason, createAccountStatusDto.failureReason);
+        CreateAccountStatusDto that = (CreateAccountStatusDto) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountName, that.accountName)
+            && Objects.equals(this.completedAt, that.completedAt) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.failureReason, that.failureReason);
     }
 
     @Override

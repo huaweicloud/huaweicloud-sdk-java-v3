@@ -87,17 +87,16 @@ public class CreateDatasourceReqDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatasourceReqDTO createDatasourceReqDTO = (CreateDatasourceReqDTO) o;
-        return Objects.equals(this.name, createDatasourceReqDTO.name)
-            && Objects.equals(this.type, createDatasourceReqDTO.type)
-            && Objects.equals(this.content, createDatasourceReqDTO.content);
+        CreateDatasourceReqDTO that = (CreateDatasourceReqDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override

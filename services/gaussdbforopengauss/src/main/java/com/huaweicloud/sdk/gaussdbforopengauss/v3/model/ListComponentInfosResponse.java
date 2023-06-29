@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.Nodes;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListComponentInfosResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "nodes")
+
+    private List<Nodes> nodes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
-    private List<Nodes> nodes = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
@@ -39,9 +29,8 @@ public class ListComponentInfosResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListComponentInfosResponse addNodesItem(Nodes nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -49,7 +38,7 @@ public class ListComponentInfosResponse extends SdkResponse {
     }
 
     public ListComponentInfosResponse withNodes(Consumer<List<Nodes>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -68,15 +57,10 @@ public class ListComponentInfosResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
-    
-
     public ListComponentInfosResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数。
@@ -90,24 +74,23 @@ public class ListComponentInfosResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListComponentInfosResponse listComponentInfosResponse = (ListComponentInfosResponse) o;
-        return Objects.equals(this.nodes, listComponentInfosResponse.nodes) &&
-            Objects.equals(this.totalCount, listComponentInfosResponse.totalCount);
+        ListComponentInfosResponse that = (ListComponentInfosResponse) obj;
+        return Objects.equals(this.nodes, that.nodes) && Objects.equals(this.totalCount, that.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodes, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListComponentInfosResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListComponentInfosResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

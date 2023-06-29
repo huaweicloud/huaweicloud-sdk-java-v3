@@ -56,16 +56,15 @@ public class UpdateTableOwnerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTableOwnerResponse updateTableOwnerResponse = (UpdateTableOwnerResponse) o;
-        return Objects.equals(this.isSuccess, updateTableOwnerResponse.isSuccess)
-            && Objects.equals(this.message, updateTableOwnerResponse.message);
+        UpdateTableOwnerResponse that = (UpdateTableOwnerResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message);
     }
 
     @Override

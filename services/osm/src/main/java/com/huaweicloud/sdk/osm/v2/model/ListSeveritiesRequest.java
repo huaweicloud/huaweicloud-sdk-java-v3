@@ -129,19 +129,17 @@ public class ListSeveritiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSeveritiesRequest listSeveritiesRequest = (ListSeveritiesRequest) o;
-        return Objects.equals(this.productCategoryId, listSeveritiesRequest.productCategoryId)
-            && Objects.equals(this.businessTypeId, listSeveritiesRequest.businessTypeId)
-            && Objects.equals(this.xSite, listSeveritiesRequest.xSite)
-            && Objects.equals(this.xLanguage, listSeveritiesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listSeveritiesRequest.xTimeZone);
+        ListSeveritiesRequest that = (ListSeveritiesRequest) obj;
+        return Objects.equals(this.productCategoryId, that.productCategoryId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

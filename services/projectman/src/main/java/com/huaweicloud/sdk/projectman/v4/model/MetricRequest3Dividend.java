@@ -583,40 +583,39 @@ public class MetricRequest3Dividend {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricRequest3Dividend metricRequest3Dividend = (MetricRequest3Dividend) o;
-        return Objects.equals(this.onTime, metricRequest3Dividend.onTime)
-            && Objects.equals(this.customField16, metricRequest3Dividend.customField16)
-            && Objects.equals(this.customField17, metricRequest3Dividend.customField17)
-            && Objects.equals(this.customField18, metricRequest3Dividend.customField18)
-            && Objects.equals(this.customField19, metricRequest3Dividend.customField19)
-            && Objects.equals(this.customField20, metricRequest3Dividend.customField20)
-            && Objects.equals(this.customField21, metricRequest3Dividend.customField21)
-            && Objects.equals(this.customField22, metricRequest3Dividend.customField22)
-            && Objects.equals(this.customField23, metricRequest3Dividend.customField23)
-            && Objects.equals(this.customField24, metricRequest3Dividend.customField24)
-            && Objects.equals(this.customField25, metricRequest3Dividend.customField25)
-            && Objects.equals(this.customField26, metricRequest3Dividend.customField26)
-            && Objects.equals(this.customField27, metricRequest3Dividend.customField27)
-            && Objects.equals(this.customField28, metricRequest3Dividend.customField28)
-            && Objects.equals(this.customField29, metricRequest3Dividend.customField29)
-            && Objects.equals(this.customField30, metricRequest3Dividend.customField30)
-            && Objects.equals(this.customField31, metricRequest3Dividend.customField31)
-            && Objects.equals(this.customField32, metricRequest3Dividend.customField32)
-            && Objects.equals(this.customField33, metricRequest3Dividend.customField33)
-            && Objects.equals(this.customField34, metricRequest3Dividend.customField34)
-            && Objects.equals(this.customField35, metricRequest3Dividend.customField35)
-            && Objects.equals(this.customField36, metricRequest3Dividend.customField36)
-            && Objects.equals(this.customField37, metricRequest3Dividend.customField37)
-            && Objects.equals(this.customField38, metricRequest3Dividend.customField38)
-            && Objects.equals(this.customField39, metricRequest3Dividend.customField39)
-            && Objects.equals(this.customField40, metricRequest3Dividend.customField40);
+        MetricRequest3Dividend that = (MetricRequest3Dividend) obj;
+        return Objects.equals(this.onTime, that.onTime) && Objects.equals(this.customField16, that.customField16)
+            && Objects.equals(this.customField17, that.customField17)
+            && Objects.equals(this.customField18, that.customField18)
+            && Objects.equals(this.customField19, that.customField19)
+            && Objects.equals(this.customField20, that.customField20)
+            && Objects.equals(this.customField21, that.customField21)
+            && Objects.equals(this.customField22, that.customField22)
+            && Objects.equals(this.customField23, that.customField23)
+            && Objects.equals(this.customField24, that.customField24)
+            && Objects.equals(this.customField25, that.customField25)
+            && Objects.equals(this.customField26, that.customField26)
+            && Objects.equals(this.customField27, that.customField27)
+            && Objects.equals(this.customField28, that.customField28)
+            && Objects.equals(this.customField29, that.customField29)
+            && Objects.equals(this.customField30, that.customField30)
+            && Objects.equals(this.customField31, that.customField31)
+            && Objects.equals(this.customField32, that.customField32)
+            && Objects.equals(this.customField33, that.customField33)
+            && Objects.equals(this.customField34, that.customField34)
+            && Objects.equals(this.customField35, that.customField35)
+            && Objects.equals(this.customField36, that.customField36)
+            && Objects.equals(this.customField37, that.customField37)
+            && Objects.equals(this.customField38, that.customField38)
+            && Objects.equals(this.customField39, that.customField39)
+            && Objects.equals(this.customField40, that.customField40);
     }
 
     @Override

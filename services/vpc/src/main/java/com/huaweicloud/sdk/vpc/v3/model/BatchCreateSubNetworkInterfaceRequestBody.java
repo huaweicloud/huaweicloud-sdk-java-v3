@@ -91,18 +91,17 @@ public class BatchCreateSubNetworkInterfaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateSubNetworkInterfaceRequestBody batchCreateSubNetworkInterfaceRequestBody =
-            (BatchCreateSubNetworkInterfaceRequestBody) o;
-        return Objects.equals(this.dryRun, batchCreateSubNetworkInterfaceRequestBody.dryRun)
-            && Objects.equals(this.subNetworkInterface, batchCreateSubNetworkInterfaceRequestBody.subNetworkInterface)
-            && Objects.equals(this.count, batchCreateSubNetworkInterfaceRequestBody.count);
+        BatchCreateSubNetworkInterfaceRequestBody that = (BatchCreateSubNetworkInterfaceRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.subNetworkInterface, that.subNetworkInterface)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

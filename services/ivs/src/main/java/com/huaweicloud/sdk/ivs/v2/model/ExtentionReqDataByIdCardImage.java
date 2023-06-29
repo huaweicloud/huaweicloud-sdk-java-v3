@@ -55,16 +55,16 @@ public class ExtentionReqDataByIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtentionReqDataByIdCardImage extentionReqDataByIdCardImage = (ExtentionReqDataByIdCardImage) o;
-        return Objects.equals(this.idcardImage1, extentionReqDataByIdCardImage.idcardImage1)
-            && Objects.equals(this.idcardImage2, extentionReqDataByIdCardImage.idcardImage2);
+        ExtentionReqDataByIdCardImage that = (ExtentionReqDataByIdCardImage) obj;
+        return Objects.equals(this.idcardImage1, that.idcardImage1)
+            && Objects.equals(this.idcardImage2, that.idcardImage2);
     }
 
     @Override

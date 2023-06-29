@@ -63,15 +63,15 @@ public class UploadKieRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadKieRequestBody uploadKieRequestBody = (UploadKieRequestBody) o;
-        return Objects.equals(this.uploadFile, uploadKieRequestBody.uploadFile);
+        UploadKieRequestBody that = (UploadKieRequestBody) obj;
+        return Objects.equals(this.uploadFile, that.uploadFile);
     }
 
     @Override

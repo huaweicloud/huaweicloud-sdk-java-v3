@@ -144,19 +144,17 @@ public class AssociateVmrRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateVmrRequest associateVmrRequest = (AssociateVmrRequest) o;
-        return Objects.equals(this.xRequestId, associateVmrRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, associateVmrRequest.acceptLanguage)
-            && Objects.equals(this.account, associateVmrRequest.account)
-            && Objects.equals(this.accountType, associateVmrRequest.accountType)
-            && Objects.equals(this.body, associateVmrRequest.body);
+        AssociateVmrRequest that = (AssociateVmrRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

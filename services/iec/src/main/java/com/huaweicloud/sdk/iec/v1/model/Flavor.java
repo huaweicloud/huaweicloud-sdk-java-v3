@@ -175,18 +175,18 @@ public class Flavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flavor flavor = (Flavor) o;
-        return Objects.equals(this.id, flavor.id) && Objects.equals(this.name, flavor.name)
-            && Objects.equals(this.disk, flavor.disk) && Objects.equals(this.ram, flavor.ram)
-            && Objects.equals(this.vcpus, flavor.vcpus) && Objects.equals(this.osExtraSpecs, flavor.osExtraSpecs)
-            && Objects.equals(this.osFlavorAccessIsPublic, flavor.osFlavorAccessIsPublic);
+        Flavor that = (Flavor) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.osExtraSpecs, that.osExtraSpecs)
+            && Objects.equals(this.osFlavorAccessIsPublic, that.osFlavorAccessIsPublic);
     }
 
     @Override

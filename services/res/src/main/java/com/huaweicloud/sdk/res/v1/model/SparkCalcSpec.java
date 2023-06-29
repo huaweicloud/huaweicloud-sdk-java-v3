@@ -121,19 +121,19 @@ public class SparkCalcSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SparkCalcSpec sparkCalcSpec = (SparkCalcSpec) o;
-        return Objects.equals(this.driverMemory, sparkCalcSpec.driverMemory)
-            && Objects.equals(this.driverCores, sparkCalcSpec.driverCores)
-            && Objects.equals(this.executorMemory, sparkCalcSpec.executorMemory)
-            && Objects.equals(this.executorCores, sparkCalcSpec.executorCores)
-            && Objects.equals(this.numExecutors, sparkCalcSpec.numExecutors);
+        SparkCalcSpec that = (SparkCalcSpec) obj;
+        return Objects.equals(this.driverMemory, that.driverMemory)
+            && Objects.equals(this.driverCores, that.driverCores)
+            && Objects.equals(this.executorMemory, that.executorMemory)
+            && Objects.equals(this.executorCores, that.executorCores)
+            && Objects.equals(this.numExecutors, that.numExecutors);
     }
 
     @Override

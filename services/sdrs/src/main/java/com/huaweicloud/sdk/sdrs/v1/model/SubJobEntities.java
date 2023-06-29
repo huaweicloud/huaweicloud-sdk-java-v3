@@ -143,20 +143,18 @@ public class SubJobEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubJobEntities subJobEntities = (SubJobEntities) o;
-        return Objects.equals(this.replicationPairId, subJobEntities.replicationPairId)
-            && Objects.equals(this.volumeIds, subJobEntities.volumeIds)
-            && Objects.equals(this.serverGroupId, subJobEntities.serverGroupId)
-            && Objects.equals(this.protectedInstanceId, subJobEntities.protectedInstanceId)
-            && Objects.equals(this.nativeServerId, subJobEntities.nativeServerId)
-            && Objects.equals(this.nicId, subJobEntities.nicId);
+        SubJobEntities that = (SubJobEntities) obj;
+        return Objects.equals(this.replicationPairId, that.replicationPairId)
+            && Objects.equals(this.volumeIds, that.volumeIds) && Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.protectedInstanceId, that.protectedInstanceId)
+            && Objects.equals(this.nativeServerId, that.nativeServerId) && Objects.equals(this.nicId, that.nicId);
     }
 
     @Override

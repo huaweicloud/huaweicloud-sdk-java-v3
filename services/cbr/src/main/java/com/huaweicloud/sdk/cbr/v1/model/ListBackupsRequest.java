@@ -75,22 +75,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            ImageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImageTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageTypeEnum(value));
         }
 
         public static ImageTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -198,22 +191,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,22 +312,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -424,22 +403,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            OwnTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OwnTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnTypeEnum(value));
         }
 
         public static OwnTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OwnTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -512,22 +484,15 @@ public class ListBackupsRequest {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberStatusEnum(value));
         }
 
         public static MemberStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -961,37 +926,28 @@ public class ListBackupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupsRequest listBackupsRequest = (ListBackupsRequest) o;
-        return Objects.equals(this.checkpointId, listBackupsRequest.checkpointId)
-            && Objects.equals(this.dec, listBackupsRequest.dec)
-            && Objects.equals(this.endTime, listBackupsRequest.endTime)
-            && Objects.equals(this.imageType, listBackupsRequest.imageType)
-            && Objects.equals(this.limit, listBackupsRequest.limit)
-            && Objects.equals(this.marker, listBackupsRequest.marker)
-            && Objects.equals(this.name, listBackupsRequest.name)
-            && Objects.equals(this.offset, listBackupsRequest.offset)
-            && Objects.equals(this.resourceAz, listBackupsRequest.resourceAz)
-            && Objects.equals(this.resourceId, listBackupsRequest.resourceId)
-            && Objects.equals(this.resourceName, listBackupsRequest.resourceName)
-            && Objects.equals(this.resourceType, listBackupsRequest.resourceType)
-            && Objects.equals(this.sort, listBackupsRequest.sort)
-            && Objects.equals(this.startTime, listBackupsRequest.startTime)
-            && Objects.equals(this.status, listBackupsRequest.status)
-            && Objects.equals(this.vaultId, listBackupsRequest.vaultId)
-            && Objects.equals(this.enterpriseProjectId, listBackupsRequest.enterpriseProjectId)
-            && Objects.equals(this.ownType, listBackupsRequest.ownType)
-            && Objects.equals(this.memberStatus, listBackupsRequest.memberStatus)
-            && Objects.equals(this.parentId, listBackupsRequest.parentId)
-            && Objects.equals(this.usedPercent, listBackupsRequest.usedPercent)
-            && Objects.equals(this.showReplication, listBackupsRequest.showReplication)
-            && Objects.equals(this.incremental, listBackupsRequest.incremental);
+        ListBackupsRequest that = (ListBackupsRequest) obj;
+        return Objects.equals(this.checkpointId, that.checkpointId) && Objects.equals(this.dec, that.dec)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.resourceAz, that.resourceAz) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ownType, that.ownType) && Objects.equals(this.memberStatus, that.memberStatus)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.usedPercent, that.usedPercent)
+            && Objects.equals(this.showReplication, that.showReplication)
+            && Objects.equals(this.incremental, that.incremental);
     }
 
     @Override

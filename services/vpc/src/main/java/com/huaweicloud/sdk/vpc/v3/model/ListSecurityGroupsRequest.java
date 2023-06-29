@@ -194,20 +194,18 @@ public class ListSecurityGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSecurityGroupsRequest listSecurityGroupsRequest = (ListSecurityGroupsRequest) o;
-        return Objects.equals(this.limit, listSecurityGroupsRequest.limit)
-            && Objects.equals(this.marker, listSecurityGroupsRequest.marker)
-            && Objects.equals(this.id, listSecurityGroupsRequest.id)
-            && Objects.equals(this.name, listSecurityGroupsRequest.name)
-            && Objects.equals(this.description, listSecurityGroupsRequest.description)
-            && Objects.equals(this.enterpriseProjectId, listSecurityGroupsRequest.enterpriseProjectId);
+        ListSecurityGroupsRequest that = (ListSecurityGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -1,44 +1,34 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 命名实体识别post请求体
  */
-public class PostDomainNerRequest  {
-
+public class PostDomainNerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
+
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +56,18 @@ public class PostDomainNerRequest  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,31 +85,29 @@ public class PostDomainNerRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
+
     /**
      * 支持的领域类型，目前支持通用（general）领域、商务（business）领域、娱乐（entertainment）领域，默认为general。
      */
     public static final class DomainEnum {
 
-        
         /**
          * Enum GENERAL for value: "general"
          */
         public static final DomainEnum GENERAL = new DomainEnum("general");
-        
+
         /**
          * Enum BUSINESS for value: "business"
          */
         public static final DomainEnum BUSINESS = new DomainEnum("business");
-        
+
         /**
          * Enum ENTERTAINMENT for value: "entertainment"
          */
         public static final DomainEnum ENTERTAINMENT = new DomainEnum("entertainment");
-        
 
         private static final Map<String, DomainEnum> STATIC_FIELDS = createStaticFields();
 
@@ -156,25 +137,18 @@ public class PostDomainNerRequest  {
 
         @JsonCreator
         public static DomainEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DomainEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainEnum(value));
         }
 
         public static DomainEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            DomainEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -192,8 +166,7 @@ public class PostDomainNerRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private DomainEnum domain;
 
@@ -201,9 +174,6 @@ public class PostDomainNerRequest  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分析文本，长度为1~512，文本编码为UTF-8。
@@ -217,15 +187,10 @@ public class PostDomainNerRequest  {
         this.text = text;
     }
 
-    
-
     public PostDomainNerRequest withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 支持的文本语言类型，目前只支持中文，默认为zh。
@@ -239,15 +204,10 @@ public class PostDomainNerRequest  {
         this.lang = lang;
     }
 
-    
-
     public PostDomainNerRequest withDomain(DomainEnum domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 支持的领域类型，目前支持通用（general）领域、商务（business）领域、娱乐（entertainment）领域，默认为general。
@@ -261,25 +221,24 @@ public class PostDomainNerRequest  {
         this.domain = domain;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostDomainNerRequest postDomainNerRequest = (PostDomainNerRequest) o;
-        return Objects.equals(this.text, postDomainNerRequest.text) &&
-            Objects.equals(this.lang, postDomainNerRequest.lang) &&
-            Objects.equals(this.domain, postDomainNerRequest.domain);
+        PostDomainNerRequest that = (PostDomainNerRequest) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.lang, that.lang)
+            && Objects.equals(this.domain, that.domain);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, lang, domain);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -290,6 +249,7 @@ public class PostDomainNerRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -300,8 +260,5 @@ public class PostDomainNerRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -83,16 +83,16 @@ public class Calculation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Calculation calculation = (Calculation) o;
-        return Objects.equals(this.neverConnected, calculation.neverConnected)
-            && Objects.equals(this.online, calculation.online) && Objects.equals(this.offline, calculation.offline);
+        Calculation that = (Calculation) obj;
+        return Objects.equals(this.neverConnected, that.neverConnected) && Objects.equals(this.online, that.online)
+            && Objects.equals(this.offline, that.offline);
     }
 
     @Override

@@ -72,22 +72,15 @@ public class ListMessageTraceRespTrace {
             if (value == null) {
                 return null;
             }
-            TraceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TraceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TraceTypeEnum(value));
         }
 
         public static TraceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TraceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -236,22 +229,15 @@ public class ListMessageTraceRespTrace {
             if (value == null) {
                 return null;
             }
-            MsgTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MsgTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MsgTypeEnum(value));
         }
 
         public static MsgTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MsgTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,22 +310,15 @@ public class ListMessageTraceRespTrace {
             if (value == null) {
                 return null;
             }
-            TransactionStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TransactionStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TransactionStateEnum(value));
         }
 
         public static TransactionStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TransactionStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -712,34 +691,26 @@ public class ListMessageTraceRespTrace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTraceRespTrace listMessageTraceRespTrace = (ListMessageTraceRespTrace) o;
-        return Objects.equals(this.success, listMessageTraceRespTrace.success)
-            && Objects.equals(this.traceType, listMessageTraceRespTrace.traceType)
-            && Objects.equals(this.timestamp, listMessageTraceRespTrace.timestamp)
-            && Objects.equals(this.groupName, listMessageTraceRespTrace.groupName)
-            && Objects.equals(this.costTime, listMessageTraceRespTrace.costTime)
-            && Objects.equals(this.requestId, listMessageTraceRespTrace.requestId)
-            && Objects.equals(this.consumeStatus, listMessageTraceRespTrace.consumeStatus)
-            && Objects.equals(this.topic, listMessageTraceRespTrace.topic)
-            && Objects.equals(this.msgId, listMessageTraceRespTrace.msgId)
-            && Objects.equals(this.offsetMsgId, listMessageTraceRespTrace.offsetMsgId)
-            && Objects.equals(this.tags, listMessageTraceRespTrace.tags)
-            && Objects.equals(this.keys, listMessageTraceRespTrace.keys)
-            && Objects.equals(this.storeHost, listMessageTraceRespTrace.storeHost)
-            && Objects.equals(this.clientHost, listMessageTraceRespTrace.clientHost)
-            && Objects.equals(this.retryTimes, listMessageTraceRespTrace.retryTimes)
-            && Objects.equals(this.bodyLength, listMessageTraceRespTrace.bodyLength)
-            && Objects.equals(this.msgType, listMessageTraceRespTrace.msgType)
-            && Objects.equals(this.transactionState, listMessageTraceRespTrace.transactionState)
-            && Objects.equals(this.transactionId, listMessageTraceRespTrace.transactionId)
-            && Objects.equals(this.fromTransactionCheck, listMessageTraceRespTrace.fromTransactionCheck);
+        ListMessageTraceRespTrace that = (ListMessageTraceRespTrace) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.traceType, that.traceType)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.costTime, that.costTime) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.consumeStatus, that.consumeStatus) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.msgId, that.msgId) && Objects.equals(this.offsetMsgId, that.offsetMsgId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.keys, that.keys)
+            && Objects.equals(this.storeHost, that.storeHost) && Objects.equals(this.clientHost, that.clientHost)
+            && Objects.equals(this.retryTimes, that.retryTimes) && Objects.equals(this.bodyLength, that.bodyLength)
+            && Objects.equals(this.msgType, that.msgType)
+            && Objects.equals(this.transactionState, that.transactionState)
+            && Objects.equals(this.transactionId, that.transactionId)
+            && Objects.equals(this.fromTransactionCheck, that.fromTransactionCheck);
     }
 
     @Override

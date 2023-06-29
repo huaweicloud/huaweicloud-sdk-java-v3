@@ -188,22 +188,19 @@ public class AddCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddCertificateResponse addCertificateResponse = (AddCertificateResponse) o;
-        return Objects.equals(this.certificateId, addCertificateResponse.certificateId)
-            && Objects.equals(this.cnName, addCertificateResponse.cnName)
-            && Objects.equals(this.owner, addCertificateResponse.owner)
-            && Objects.equals(this.status, addCertificateResponse.status)
-            && Objects.equals(this.verifyCode, addCertificateResponse.verifyCode)
-            && Objects.equals(this.createDate, addCertificateResponse.createDate)
-            && Objects.equals(this.effectiveDate, addCertificateResponse.effectiveDate)
-            && Objects.equals(this.expiryDate, addCertificateResponse.expiryDate);
+        AddCertificateResponse that = (AddCertificateResponse) obj;
+        return Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.cnName, that.cnName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.verifyCode, that.verifyCode) && Objects.equals(this.createDate, that.createDate)
+            && Objects.equals(this.effectiveDate, that.effectiveDate)
+            && Objects.equals(this.expiryDate, that.expiryDate);
     }
 
     @Override

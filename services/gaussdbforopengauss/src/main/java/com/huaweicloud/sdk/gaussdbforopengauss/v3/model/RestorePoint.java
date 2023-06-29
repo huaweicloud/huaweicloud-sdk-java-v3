@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * RestorePoint
  */
-public class RestorePoint  {
-
+public class RestorePoint {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_id")
-    
+    @JsonProperty(value = "backup_id")
 
     private String backupId;
 
@@ -33,9 +24,6 @@ public class RestorePoint  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 源实例ID。
@@ -49,15 +37,10 @@ public class RestorePoint  {
         this.instanceId = instanceId;
     }
 
-    
-
     public RestorePoint withBackupId(String backupId) {
         this.backupId = backupId;
         return this;
     }
-
-    
-
 
     /**
      * 用于恢复的备份ID。
@@ -71,24 +54,23 @@ public class RestorePoint  {
         this.backupId = backupId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestorePoint restorePoint = (RestorePoint) o;
-        return Objects.equals(this.instanceId, restorePoint.instanceId) &&
-            Objects.equals(this.backupId, restorePoint.backupId);
+        RestorePoint that = (RestorePoint) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.backupId, that.backupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, backupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class RestorePoint  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class RestorePoint  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.InstanceInfoResult;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * TaskDetailResult
  */
-public class TaskDetailResult  {
-
+public class TaskDetailResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_info")
-    
+    @JsonProperty(value = "instance_info")
 
     private InstanceInfoResult instanceInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="process")
-    
+    @JsonProperty(value = "process")
 
     private String process;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fail_reason")
-    
+    @JsonProperty(value = "fail_reason")
 
     private String failReason;
 
@@ -60,14 +47,13 @@ public class TaskDetailResult  {
     }
 
     public TaskDetailResult withInstanceInfo(Consumer<InstanceInfoResult> instanceInfoSetter) {
-        if(this.instanceInfo == null ){
+        if (this.instanceInfo == null) {
             this.instanceInfo = new InstanceInfoResult();
             instanceInfoSetter.accept(this.instanceInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get instanceInfo
@@ -81,15 +67,10 @@ public class TaskDetailResult  {
         this.instanceInfo = instanceInfo;
     }
 
-    
-
     public TaskDetailResult withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -103,15 +84,10 @@ public class TaskDetailResult  {
         this.jobId = jobId;
     }
 
-    
-
     public TaskDetailResult withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。
@@ -125,15 +101,10 @@ public class TaskDetailResult  {
         this.name = name;
     }
 
-    
-
     public TaskDetailResult withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态。
@@ -147,15 +118,10 @@ public class TaskDetailResult  {
         this.status = status;
     }
 
-    
-
     public TaskDetailResult withProcess(String process) {
         this.process = process;
         return this;
     }
-
-    
-
 
     /**
      * 任务进度，单位：%。
@@ -169,15 +135,10 @@ public class TaskDetailResult  {
         this.process = process;
     }
 
-    
-
     public TaskDetailResult withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
-
-    
-
 
     /**
      * 失败原因。
@@ -191,28 +152,25 @@ public class TaskDetailResult  {
         this.failReason = failReason;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDetailResult taskDetailResult = (TaskDetailResult) o;
-        return Objects.equals(this.instanceInfo, taskDetailResult.instanceInfo) &&
-            Objects.equals(this.jobId, taskDetailResult.jobId) &&
-            Objects.equals(this.name, taskDetailResult.name) &&
-            Objects.equals(this.status, taskDetailResult.status) &&
-            Objects.equals(this.process, taskDetailResult.process) &&
-            Objects.equals(this.failReason, taskDetailResult.failReason);
+        TaskDetailResult that = (TaskDetailResult) obj;
+        return Objects.equals(this.instanceInfo, that.instanceInfo) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.process, that.process) && Objects.equals(this.failReason, that.failReason);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceInfo, jobId, name, status, process, failReason);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,6 +184,7 @@ public class TaskDetailResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -236,8 +195,5 @@ public class TaskDetailResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

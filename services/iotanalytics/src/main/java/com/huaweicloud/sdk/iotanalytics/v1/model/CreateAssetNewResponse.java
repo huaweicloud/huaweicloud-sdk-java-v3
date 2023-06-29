@@ -393,29 +393,23 @@ public class CreateAssetNewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAssetNewResponse createAssetNewResponse = (CreateAssetNewResponse) o;
-        return Objects.equals(this.assetId, createAssetNewResponse.assetId)
-            && Objects.equals(this.assetModelId, createAssetNewResponse.assetModelId)
-            && Objects.equals(this.assetModelName, createAssetNewResponse.assetModelName)
-            && Objects.equals(this.name, createAssetNewResponse.name)
-            && Objects.equals(this.displayName, createAssetNewResponse.displayName)
-            && Objects.equals(this.properties, createAssetNewResponse.properties)
-            && Objects.equals(this.analyses, createAssetNewResponse.analyses)
-            && Objects.equals(this.root, createAssetNewResponse.root)
-            && Objects.equals(this.parent, createAssetNewResponse.parent)
-            && Objects.equals(this.children, createAssetNewResponse.children)
-            && Objects.equals(this.state, createAssetNewResponse.state)
-            && Objects.equals(this.publishState, createAssetNewResponse.publishState)
-            && Objects.equals(this.createdTime, createAssetNewResponse.createdTime)
-            && Objects.equals(this.modifiedTime, createAssetNewResponse.modifiedTime)
-            && Objects.equals(this.publishedTime, createAssetNewResponse.publishedTime);
+        CreateAssetNewResponse that = (CreateAssetNewResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetModelId, that.assetModelId)
+            && Objects.equals(this.assetModelName, that.assetModelName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.analyses, that.analyses) && Objects.equals(this.root, that.root)
+            && Objects.equals(this.parent, that.parent) && Objects.equals(this.children, that.children)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.publishState, that.publishState)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime)
+            && Objects.equals(this.publishedTime, that.publishedTime);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CreateIpGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIpGroupRequestBody createIpGroupRequestBody = (CreateIpGroupRequestBody) o;
-        return Objects.equals(this.name, createIpGroupRequestBody.name)
-            && Objects.equals(this.ips, createIpGroupRequestBody.ips)
-            && Objects.equals(this.description, createIpGroupRequestBody.description);
+        CreateIpGroupRequestBody that = (CreateIpGroupRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.ips, that.ips)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

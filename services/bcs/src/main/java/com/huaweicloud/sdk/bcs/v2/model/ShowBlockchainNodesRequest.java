@@ -33,15 +33,15 @@ public class ShowBlockchainNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBlockchainNodesRequest showBlockchainNodesRequest = (ShowBlockchainNodesRequest) o;
-        return Objects.equals(this.blockchainId, showBlockchainNodesRequest.blockchainId);
+        ShowBlockchainNodesRequest that = (ShowBlockchainNodesRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId);
     }
 
     @Override

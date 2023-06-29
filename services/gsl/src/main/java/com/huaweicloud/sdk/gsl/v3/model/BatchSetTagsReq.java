@@ -112,17 +112,16 @@ public class BatchSetTagsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSetTagsReq batchSetTagsReq = (BatchSetTagsReq) o;
-        return Objects.equals(this.fileTempId, batchSetTagsReq.fileTempId)
-            && Objects.equals(this.simCardIds, batchSetTagsReq.simCardIds)
-            && Objects.equals(this.tagIds, batchSetTagsReq.tagIds);
+        BatchSetTagsReq that = (BatchSetTagsReq) obj;
+        return Objects.equals(this.fileTempId, that.fileTempId) && Objects.equals(this.simCardIds, that.simCardIds)
+            && Objects.equals(this.tagIds, that.tagIds);
     }
 
     @Override

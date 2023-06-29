@@ -139,18 +139,17 @@ public class BatchStartOrStopTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStartOrStopTasksResponse batchStartOrStopTasksResponse = (BatchStartOrStopTasksResponse) o;
-        return Objects.equals(this.successCount, batchStartOrStopTasksResponse.successCount)
-            && Objects.equals(this.failureCount, batchStartOrStopTasksResponse.failureCount)
-            && Objects.equals(this.failure, batchStartOrStopTasksResponse.failure)
-            && Objects.equals(this.success, batchStartOrStopTasksResponse.success);
+        BatchStartOrStopTasksResponse that = (BatchStartOrStopTasksResponse) obj;
+        return Objects.equals(this.successCount, that.successCount)
+            && Objects.equals(this.failureCount, that.failureCount) && Objects.equals(this.failure, that.failure)
+            && Objects.equals(this.success, that.success);
     }
 
     @Override

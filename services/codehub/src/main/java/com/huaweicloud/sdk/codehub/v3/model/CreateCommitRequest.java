@@ -65,16 +65,15 @@ public class CreateCommitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommitRequest createCommitRequest = (CreateCommitRequest) o;
-        return Objects.equals(this.repoId, createCommitRequest.repoId)
-            && Objects.equals(this.body, createCommitRequest.body);
+        CreateCommitRequest that = (CreateCommitRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.body, that.body);
     }
 
     @Override

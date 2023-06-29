@@ -78,17 +78,16 @@ public class UploadBatchTaskFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadBatchTaskFileResponse uploadBatchTaskFileResponse = (UploadBatchTaskFileResponse) o;
-        return Objects.equals(this.fileId, uploadBatchTaskFileResponse.fileId)
-            && Objects.equals(this.fileName, uploadBatchTaskFileResponse.fileName)
-            && Objects.equals(this.uploadTime, uploadBatchTaskFileResponse.uploadTime);
+        UploadBatchTaskFileResponse that = (UploadBatchTaskFileResponse) obj;
+        return Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.uploadTime, that.uploadTime);
     }
 
     @Override

@@ -143,18 +143,17 @@ public class LogConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogConfig logConfig = (LogConfig) o;
-        return Objects.equals(this.component, logConfig.component) && Objects.equals(this.level, logConfig.level)
-            && Objects.equals(this.rotateNum, logConfig.rotateNum)
-            && Objects.equals(this.rotatePeriod, logConfig.rotatePeriod) && Objects.equals(this.size, logConfig.size)
-            && Objects.equals(this.type, logConfig.type);
+        LogConfig that = (LogConfig) obj;
+        return Objects.equals(this.component, that.component) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.rotateNum, that.rotateNum) && Objects.equals(this.rotatePeriod, that.rotatePeriod)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type);
     }
 
     @Override

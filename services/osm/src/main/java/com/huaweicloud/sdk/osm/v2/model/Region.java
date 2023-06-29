@@ -55,15 +55,15 @@ public class Region {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Region region = (Region) o;
-        return Objects.equals(this.regionId, region.regionId) && Objects.equals(this.regionName, region.regionName);
+        Region that = (Region) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.regionName, that.regionName);
     }
 
     @Override

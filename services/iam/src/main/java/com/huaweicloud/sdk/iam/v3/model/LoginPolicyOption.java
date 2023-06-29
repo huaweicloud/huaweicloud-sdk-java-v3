@@ -165,21 +165,21 @@ public class LoginPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginPolicyOption loginPolicyOption = (LoginPolicyOption) o;
-        return Objects.equals(this.accountValidityPeriod, loginPolicyOption.accountValidityPeriod)
-            && Objects.equals(this.customInfoForLogin, loginPolicyOption.customInfoForLogin)
-            && Objects.equals(this.lockoutDuration, loginPolicyOption.lockoutDuration)
-            && Objects.equals(this.loginFailedTimes, loginPolicyOption.loginFailedTimes)
-            && Objects.equals(this.periodWithLoginFailures, loginPolicyOption.periodWithLoginFailures)
-            && Objects.equals(this.sessionTimeout, loginPolicyOption.sessionTimeout)
-            && Objects.equals(this.showRecentLoginInfo, loginPolicyOption.showRecentLoginInfo);
+        LoginPolicyOption that = (LoginPolicyOption) obj;
+        return Objects.equals(this.accountValidityPeriod, that.accountValidityPeriod)
+            && Objects.equals(this.customInfoForLogin, that.customInfoForLogin)
+            && Objects.equals(this.lockoutDuration, that.lockoutDuration)
+            && Objects.equals(this.loginFailedTimes, that.loginFailedTimes)
+            && Objects.equals(this.periodWithLoginFailures, that.periodWithLoginFailures)
+            && Objects.equals(this.sessionTimeout, that.sessionTimeout)
+            && Objects.equals(this.showRecentLoginInfo, that.showRecentLoginInfo);
     }
 
     @Override

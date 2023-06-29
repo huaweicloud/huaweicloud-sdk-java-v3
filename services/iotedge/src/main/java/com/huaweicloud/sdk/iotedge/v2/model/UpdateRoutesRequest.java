@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.CreateRouterReqDTO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateRoutesRequest  {
-
+public class UpdateRoutesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
+
     private List<CreateRouterReqDTO> body = null;
-    
+
     public UpdateRoutesRequest withEdgeNodeId(String edgeNodeId) {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -52,16 +40,13 @@ public class UpdateRoutesRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public UpdateRoutesRequest withBody(List<CreateRouterReqDTO> body) {
         this.body = body;
         return this;
     }
 
-    
     public UpdateRoutesRequest addBodyItem(CreateRouterReqDTO bodyItem) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         this.body.add(bodyItem);
@@ -69,7 +54,7 @@ public class UpdateRoutesRequest  {
     }
 
     public UpdateRoutesRequest withBody(Consumer<List<CreateRouterReqDTO>> bodySetter) {
-        if(this.body == null) {
+        if (this.body == null) {
             this.body = new ArrayList<>();
         }
         bodySetter.accept(this.body);
@@ -88,24 +73,23 @@ public class UpdateRoutesRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoutesRequest updateRoutesRequest = (UpdateRoutesRequest) o;
-        return Objects.equals(this.edgeNodeId, updateRoutesRequest.edgeNodeId) &&
-            Objects.equals(this.body, updateRoutesRequest.body);
+        UpdateRoutesRequest that = (UpdateRoutesRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -115,6 +99,7 @@ public class UpdateRoutesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -125,8 +110,5 @@ public class UpdateRoutesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

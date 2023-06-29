@@ -87,16 +87,16 @@ public class PwdPasswordUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PwdPasswordUser pwdPasswordUser = (PwdPasswordUser) o;
-        return Objects.equals(this.domain, pwdPasswordUser.domain) && Objects.equals(this.name, pwdPasswordUser.name)
-            && Objects.equals(this.password, pwdPasswordUser.password);
+        PwdPasswordUser that = (PwdPasswordUser) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

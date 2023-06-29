@@ -166,22 +166,18 @@ public class UpdateAntiTamperRuleRefreshResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAntiTamperRuleRefreshResponse updateAntiTamperRuleRefreshResponse =
-            (UpdateAntiTamperRuleRefreshResponse) o;
-        return Objects.equals(this.id, updateAntiTamperRuleRefreshResponse.id)
-            && Objects.equals(this.policyid, updateAntiTamperRuleRefreshResponse.policyid)
-            && Objects.equals(this.hostname, updateAntiTamperRuleRefreshResponse.hostname)
-            && Objects.equals(this.url, updateAntiTamperRuleRefreshResponse.url)
-            && Objects.equals(this.description, updateAntiTamperRuleRefreshResponse.description)
-            && Objects.equals(this.status, updateAntiTamperRuleRefreshResponse.status)
-            && Objects.equals(this.timestamp, updateAntiTamperRuleRefreshResponse.timestamp);
+        UpdateAntiTamperRuleRefreshResponse that = (UpdateAntiTamperRuleRefreshResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

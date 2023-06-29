@@ -803,52 +803,42 @@ public class QualityTaskRuleDetailForOpenApi {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityTaskRuleDetailForOpenApi qualityTaskRuleDetailForOpenApi = (QualityTaskRuleDetailForOpenApi) o;
-        return Objects.equals(this.id, qualityTaskRuleDetailForOpenApi.id)
-            && Objects.equals(this.subRuleName, qualityTaskRuleDetailForOpenApi.subRuleName)
-            && Objects.equals(this.type, qualityTaskRuleDetailForOpenApi.type)
-            && Objects.equals(this.templateId, qualityTaskRuleDetailForOpenApi.templateId)
-            && Objects.equals(this.connection, qualityTaskRuleDetailForOpenApi.connection)
-            && Objects.equals(this.connectionType, qualityTaskRuleDetailForOpenApi.connectionType)
-            && Objects.equals(this.databases, qualityTaskRuleDetailForOpenApi.databases)
-            && Objects.equals(this.sql, qualityTaskRuleDetailForOpenApi.sql)
-            && Objects.equals(this.tables, qualityTaskRuleDetailForOpenApi.tables)
-            && Objects.equals(this.referenceTables, qualityTaskRuleDetailForOpenApi.referenceTables)
-            && Objects.equals(this.columns, qualityTaskRuleDetailForOpenApi.columns)
-            && Objects.equals(this.referenceColumns, qualityTaskRuleDetailForOpenApi.referenceColumns)
-            && Objects.equals(this.ignoreError, qualityTaskRuleDetailForOpenApi.ignoreError)
-            && Objects.equals(this.dimension, qualityTaskRuleDetailForOpenApi.dimension)
-            && Objects.equals(this.queue, qualityTaskRuleDetailForOpenApi.queue)
-            && Objects.equals(this.regularExpression, qualityTaskRuleDetailForOpenApi.regularExpression)
-            && Objects.equals(this.templateArguments, qualityTaskRuleDetailForOpenApi.templateArguments)
-            && Objects.equals(this.weight, qualityTaskRuleDetailForOpenApi.weight)
-            && Objects.equals(this.calculationRange, qualityTaskRuleDetailForOpenApi.calculationRange)
-            && Objects.equals(this.calculationRangeSql, qualityTaskRuleDetailForOpenApi.calculationRangeSql)
-            && Objects.equals(this.alarmCondition, qualityTaskRuleDetailForOpenApi.alarmCondition)
-            && Objects.equals(this.exportAbnormalTable, qualityTaskRuleDetailForOpenApi.exportAbnormalTable)
-            && Objects.equals(this.abnormalTableDatabase, qualityTaskRuleDetailForOpenApi.abnormalTableDatabase)
-            && Objects.equals(this.abnormalTableSchema, qualityTaskRuleDetailForOpenApi.abnormalTableSchema)
-            && Objects.equals(this.abnormalTable, qualityTaskRuleDetailForOpenApi.abnormalTable)
-            && Objects.equals(this.abnormalTablePrefix, qualityTaskRuleDetailForOpenApi.abnormalTablePrefix)
-            && Objects.equals(this.abnormalTableSuffix, qualityTaskRuleDetailForOpenApi.abnormalTableSuffix)
-            && Objects.equals(this.abnormalTableColumns, qualityTaskRuleDetailForOpenApi.abnormalTableColumns)
-            && Objects.equals(this.abnormalTableSql, qualityTaskRuleDetailForOpenApi.abnormalTableSql)
-            && Objects.equals(this.abnormalTableOutConfig, qualityTaskRuleDetailForOpenApi.abnormalTableOutConfig)
-            && Objects.equals(this.abnormalTableIncludeNullValue,
-                qualityTaskRuleDetailForOpenApi.abnormalTableIncludeNullValue)
-            && Objects.equals(this.abnormalTableOutDataNumber,
-                qualityTaskRuleDetailForOpenApi.abnormalTableOutDataNumber)
-            && Objects.equals(this.scoreSwitch, qualityTaskRuleDetailForOpenApi.scoreSwitch)
-            && Objects.equals(this.scoreSchema, qualityTaskRuleDetailForOpenApi.scoreSchema)
-            && Objects.equals(this.scoreTable, qualityTaskRuleDetailForOpenApi.scoreTable)
-            && Objects.equals(this.scoreExpression, qualityTaskRuleDetailForOpenApi.scoreExpression);
+        QualityTaskRuleDetailForOpenApi that = (QualityTaskRuleDetailForOpenApi) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.subRuleName, that.subRuleName)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.databases, that.databases) && Objects.equals(this.sql, that.sql)
+            && Objects.equals(this.tables, that.tables) && Objects.equals(this.referenceTables, that.referenceTables)
+            && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.referenceColumns, that.referenceColumns)
+            && Objects.equals(this.ignoreError, that.ignoreError) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.queue, that.queue) && Objects.equals(this.regularExpression, that.regularExpression)
+            && Objects.equals(this.templateArguments, that.templateArguments)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.calculationRange, that.calculationRange)
+            && Objects.equals(this.calculationRangeSql, that.calculationRangeSql)
+            && Objects.equals(this.alarmCondition, that.alarmCondition)
+            && Objects.equals(this.exportAbnormalTable, that.exportAbnormalTable)
+            && Objects.equals(this.abnormalTableDatabase, that.abnormalTableDatabase)
+            && Objects.equals(this.abnormalTableSchema, that.abnormalTableSchema)
+            && Objects.equals(this.abnormalTable, that.abnormalTable)
+            && Objects.equals(this.abnormalTablePrefix, that.abnormalTablePrefix)
+            && Objects.equals(this.abnormalTableSuffix, that.abnormalTableSuffix)
+            && Objects.equals(this.abnormalTableColumns, that.abnormalTableColumns)
+            && Objects.equals(this.abnormalTableSql, that.abnormalTableSql)
+            && Objects.equals(this.abnormalTableOutConfig, that.abnormalTableOutConfig)
+            && Objects.equals(this.abnormalTableIncludeNullValue, that.abnormalTableIncludeNullValue)
+            && Objects.equals(this.abnormalTableOutDataNumber, that.abnormalTableOutDataNumber)
+            && Objects.equals(this.scoreSwitch, that.scoreSwitch) && Objects.equals(this.scoreSchema, that.scoreSchema)
+            && Objects.equals(this.scoreTable, that.scoreTable)
+            && Objects.equals(this.scoreExpression, that.scoreExpression);
     }
 
     @Override

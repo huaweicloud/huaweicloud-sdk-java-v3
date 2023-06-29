@@ -67,16 +67,16 @@ public class UpdateInterRegionBandwidthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInterRegionBandwidthResponse updateInterRegionBandwidthResponse = (UpdateInterRegionBandwidthResponse) o;
-        return Objects.equals(this.interRegionBandwidth, updateInterRegionBandwidthResponse.interRegionBandwidth)
-            && Objects.equals(this.requestId, updateInterRegionBandwidthResponse.requestId);
+        UpdateInterRegionBandwidthResponse that = (UpdateInterRegionBandwidthResponse) obj;
+        return Objects.equals(this.interRegionBandwidth, that.interRegionBandwidth)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

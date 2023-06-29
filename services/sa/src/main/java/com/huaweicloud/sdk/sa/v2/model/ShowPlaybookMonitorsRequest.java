@@ -121,19 +121,18 @@ public class ShowPlaybookMonitorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookMonitorsRequest showPlaybookMonitorsRequest = (ShowPlaybookMonitorsRequest) o;
-        return Objects.equals(this.workspaceId, showPlaybookMonitorsRequest.workspaceId)
-            && Objects.equals(this.playbookId, showPlaybookMonitorsRequest.playbookId)
-            && Objects.equals(this.startTime, showPlaybookMonitorsRequest.startTime)
-            && Objects.equals(this.versionQueryType, showPlaybookMonitorsRequest.versionQueryType)
-            && Objects.equals(this.endTime, showPlaybookMonitorsRequest.endTime);
+        ShowPlaybookMonitorsRequest that = (ShowPlaybookMonitorsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.versionQueryType, that.versionQueryType)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -241,24 +241,23 @@ public class AddProtectResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProtectResponse addProtectResponse = (AddProtectResponse) o;
-        return Objects.equals(this.name, addProtectResponse.name)
-            && Objects.equals(this.commit, addProtectResponse.commit)
-            && Objects.equals(this._protected, addProtectResponse._protected)
-            && Objects.equals(this.developersCanPush, addProtectResponse.developersCanPush)
-            && Objects.equals(this.developersCanMerge, addProtectResponse.developersCanMerge)
-            && Objects.equals(this.masterCanPush, addProtectResponse.masterCanPush)
-            && Objects.equals(this.masterCanMerge, addProtectResponse.masterCanMerge)
-            && Objects.equals(this.noOneCanPush, addProtectResponse.noOneCanPush)
-            && Objects.equals(this.noOneCanMerge, addProtectResponse.noOneCanMerge)
-            && Objects.equals(this.inAnOpenedMergeRequest, addProtectResponse.inAnOpenedMergeRequest);
+        AddProtectResponse that = (AddProtectResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.commit, that.commit)
+            && Objects.equals(this._protected, that._protected)
+            && Objects.equals(this.developersCanPush, that.developersCanPush)
+            && Objects.equals(this.developersCanMerge, that.developersCanMerge)
+            && Objects.equals(this.masterCanPush, that.masterCanPush)
+            && Objects.equals(this.masterCanMerge, that.masterCanMerge)
+            && Objects.equals(this.noOneCanPush, that.noOneCanPush)
+            && Objects.equals(this.noOneCanMerge, that.noOneCanMerge)
+            && Objects.equals(this.inAnOpenedMergeRequest, that.inAnOpenedMergeRequest);
     }
 
     @Override

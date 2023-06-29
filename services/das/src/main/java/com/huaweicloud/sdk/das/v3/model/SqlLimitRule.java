@@ -99,17 +99,16 @@ public class SqlLimitRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlLimitRule sqlLimitRule = (SqlLimitRule) o;
-        return Objects.equals(this.id, sqlLimitRule.id) && Objects.equals(this.sqlType, sqlLimitRule.sqlType)
-            && Objects.equals(this.pattern, sqlLimitRule.pattern)
-            && Objects.equals(this.maxConcurrency, sqlLimitRule.maxConcurrency);
+        SqlLimitRule that = (SqlLimitRule) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.sqlType, that.sqlType)
+            && Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class ImportDatabaseDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportDatabaseDataRequest importDatabaseDataRequest = (ImportDatabaseDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, importDatabaseDataRequest.eihealthProjectId)
-            && Objects.equals(this.databaseId, importDatabaseDataRequest.databaseId)
-            && Objects.equals(this.body, importDatabaseDataRequest.body);
+        ImportDatabaseDataRequest that = (ImportDatabaseDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.databaseId, that.databaseId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class AddBlackWhiteListUsingPostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddBlackWhiteListUsingPostRequest addBlackWhiteListUsingPostRequest = (AddBlackWhiteListUsingPostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, addBlackWhiteListUsingPostRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, addBlackWhiteListUsingPostRequest.fwInstanceId)
-            && Objects.equals(this.body, addBlackWhiteListUsingPostRequest.body);
+        AddBlackWhiteListUsingPostRequest that = (AddBlackWhiteListUsingPostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -257,21 +257,18 @@ public class DataMaskPolicyItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataMaskPolicyItem dataMaskPolicyItem = (DataMaskPolicyItem) o;
-        return Objects.equals(this.accesses, dataMaskPolicyItem.accesses)
-            && Objects.equals(this.conditions, dataMaskPolicyItem.conditions)
-            && Objects.equals(this.dataMaskInfo, dataMaskPolicyItem.dataMaskInfo)
-            && Objects.equals(this.delegateAdmin, dataMaskPolicyItem.delegateAdmin)
-            && Objects.equals(this.groups, dataMaskPolicyItem.groups)
-            && Objects.equals(this.roles, dataMaskPolicyItem.roles)
-            && Objects.equals(this.users, dataMaskPolicyItem.users);
+        DataMaskPolicyItem that = (DataMaskPolicyItem) obj;
+        return Objects.equals(this.accesses, that.accesses) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.dataMaskInfo, that.dataMaskInfo)
+            && Objects.equals(this.delegateAdmin, that.delegateAdmin) && Objects.equals(this.groups, that.groups)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.users, that.users);
     }
 
     @Override

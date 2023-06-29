@@ -143,20 +143,17 @@ public class RecurrenceSchedule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecurrenceSchedule recurrenceSchedule = (RecurrenceSchedule) o;
-        return Objects.equals(this.dayOfMonth, recurrenceSchedule.dayOfMonth)
-            && Objects.equals(this.dayOfWeek, recurrenceSchedule.dayOfWeek)
-            && Objects.equals(this.hour, recurrenceSchedule.hour)
-            && Objects.equals(this.minute, recurrenceSchedule.minute)
-            && Objects.equals(this.month, recurrenceSchedule.month)
-            && Objects.equals(this.year, recurrenceSchedule.year);
+        RecurrenceSchedule that = (RecurrenceSchedule) obj;
+        return Objects.equals(this.dayOfMonth, that.dayOfMonth) && Objects.equals(this.dayOfWeek, that.dayOfWeek)
+            && Objects.equals(this.hour, that.hour) && Objects.equals(this.minute, that.minute)
+            && Objects.equals(this.month, that.month) && Objects.equals(this.year, that.year);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class WorkloadResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkloadResource workloadResource = (WorkloadResource) o;
-        return Objects.equals(this.resourceName, workloadResource.resourceName)
-            && Objects.equals(this.resourceValue, workloadResource.resourceValue);
+        WorkloadResource that = (WorkloadResource) obj;
+        return Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceValue, that.resourceValue);
     }
 
     @Override

@@ -123,19 +123,17 @@ public class ListDeploymentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeploymentsRequest listDeploymentsRequest = (ListDeploymentsRequest) o;
-        return Objects.equals(this.offset, listDeploymentsRequest.offset)
-            && Objects.equals(this.limit, listDeploymentsRequest.limit)
-            && Objects.equals(this.status, listDeploymentsRequest.status)
-            && Objects.equals(this.id, listDeploymentsRequest.id)
-            && Objects.equals(this.edgecloudId, listDeploymentsRequest.edgecloudId);
+        ListDeploymentsRequest that = (ListDeploymentsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.edgecloudId, that.edgecloudId);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteSingleInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSingleInstanceRequest deleteSingleInstanceRequest = (DeleteSingleInstanceRequest) o;
-        return Objects.equals(this.instanceId, deleteSingleInstanceRequest.instanceId);
+        DeleteSingleInstanceRequest that = (DeleteSingleInstanceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

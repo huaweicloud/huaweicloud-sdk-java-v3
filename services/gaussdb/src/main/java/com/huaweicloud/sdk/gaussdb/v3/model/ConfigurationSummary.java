@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 参数模板信息。
  */
-public class ConfigurationSummary  {
-
+public class ConfigurationSummary {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_version_name")
-    
+    @JsonProperty(value = "datastore_version_name")
 
     private String datastoreVersionName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore_name")
-    
+    @JsonProperty(value = "datastore_name")
 
     private String datastoreName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user_defined")
-    
+    @JsonProperty(value = "user_defined")
 
     private Boolean userDefined;
 
@@ -69,9 +54,6 @@ public class ConfigurationSummary  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数组ID。
@@ -85,15 +67,10 @@ public class ConfigurationSummary  {
         this.id = id;
     }
 
-    
-
     public ConfigurationSummary withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数组名称。
@@ -107,15 +84,10 @@ public class ConfigurationSummary  {
         this.name = name;
     }
 
-    
-
     public ConfigurationSummary withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数组描述。
@@ -129,15 +101,10 @@ public class ConfigurationSummary  {
         this.description = description;
     }
 
-    
-
     public ConfigurationSummary withDatastoreVersionName(String datastoreVersionName) {
         this.datastoreVersionName = datastoreVersionName;
         return this;
     }
-
-    
-
 
     /**
      * 引擎版本。
@@ -151,15 +118,10 @@ public class ConfigurationSummary  {
         this.datastoreVersionName = datastoreVersionName;
     }
 
-    
-
     public ConfigurationSummary withDatastoreName(String datastoreName) {
         this.datastoreName = datastoreName;
         return this;
     }
-
-    
-
 
     /**
      * 引擎名。
@@ -173,15 +135,10 @@ public class ConfigurationSummary  {
         this.datastoreName = datastoreName;
     }
 
-    
-
     public ConfigurationSummary withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -195,15 +152,10 @@ public class ConfigurationSummary  {
         this.created = created;
     }
 
-    
-
     public ConfigurationSummary withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式为\"yyyy-MM-ddTHH:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。
@@ -217,15 +169,10 @@ public class ConfigurationSummary  {
         this.updated = updated;
     }
 
-    
-
     public ConfigurationSummary withUserDefined(Boolean userDefined) {
         this.userDefined = userDefined;
         return this;
     }
-
-    
-
 
     /**
      * 是否是用户自定义参数模板：  - false，表示为系统默认参数模板。 - true，表示为用户自定义参数模板。
@@ -239,30 +186,27 @@ public class ConfigurationSummary  {
         this.userDefined = userDefined;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationSummary configurationSummary = (ConfigurationSummary) o;
-        return Objects.equals(this.id, configurationSummary.id) &&
-            Objects.equals(this.name, configurationSummary.name) &&
-            Objects.equals(this.description, configurationSummary.description) &&
-            Objects.equals(this.datastoreVersionName, configurationSummary.datastoreVersionName) &&
-            Objects.equals(this.datastoreName, configurationSummary.datastoreName) &&
-            Objects.equals(this.created, configurationSummary.created) &&
-            Objects.equals(this.updated, configurationSummary.updated) &&
-            Objects.equals(this.userDefined, configurationSummary.userDefined);
+        ConfigurationSummary that = (ConfigurationSummary) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.userDefined, that.userDefined);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, datastoreVersionName, datastoreName, created, updated, userDefined);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +222,7 @@ public class ConfigurationSummary  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +233,5 @@ public class ConfigurationSummary  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

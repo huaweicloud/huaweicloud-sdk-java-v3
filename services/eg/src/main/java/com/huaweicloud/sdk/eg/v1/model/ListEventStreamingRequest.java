@@ -59,16 +59,15 @@ public class ListEventStreamingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventStreamingRequest listEventStreamingRequest = (ListEventStreamingRequest) o;
-        return Objects.equals(this.offset, listEventStreamingRequest.offset)
-            && Objects.equals(this.limit, listEventStreamingRequest.limit);
+        ListEventStreamingRequest that = (ListEventStreamingRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -1,54 +1,42 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.MetaData;
-import com.huaweicloud.sdk.aom.v2.model.QueryAlarmResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListAlarmRuleResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="meta_data")
-    
+    @JsonProperty(value = "meta_data")
 
     private MetaData metaData;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="thresholds")
-    
+    @JsonProperty(value = "thresholds")
+
     private List<QueryAlarmResult> thresholds = null;
-    
+
     public ListAlarmRuleResponse withMetaData(MetaData metaData) {
         this.metaData = metaData;
         return this;
     }
 
     public ListAlarmRuleResponse withMetaData(Consumer<MetaData> metaDataSetter) {
-        if(this.metaData == null ){
+        if (this.metaData == null) {
             this.metaData = new MetaData();
             metaDataSetter.accept(this.metaData);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get metaData
@@ -62,16 +50,13 @@ public class ListAlarmRuleResponse extends SdkResponse {
         this.metaData = metaData;
     }
 
-    
-
     public ListAlarmRuleResponse withThresholds(List<QueryAlarmResult> thresholds) {
         this.thresholds = thresholds;
         return this;
     }
 
-    
     public ListAlarmRuleResponse addThresholdsItem(QueryAlarmResult thresholdsItem) {
-        if(this.thresholds == null) {
+        if (this.thresholds == null) {
             this.thresholds = new ArrayList<>();
         }
         this.thresholds.add(thresholdsItem);
@@ -79,7 +64,7 @@ public class ListAlarmRuleResponse extends SdkResponse {
     }
 
     public ListAlarmRuleResponse withThresholds(Consumer<List<QueryAlarmResult>> thresholdsSetter) {
-        if(this.thresholds == null) {
+        if (this.thresholds == null) {
             this.thresholds = new ArrayList<>();
         }
         thresholdsSetter.accept(this.thresholds);
@@ -98,24 +83,23 @@ public class ListAlarmRuleResponse extends SdkResponse {
         this.thresholds = thresholds;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmRuleResponse listAlarmRuleResponse = (ListAlarmRuleResponse) o;
-        return Objects.equals(this.metaData, listAlarmRuleResponse.metaData) &&
-            Objects.equals(this.thresholds, listAlarmRuleResponse.thresholds);
+        ListAlarmRuleResponse that = (ListAlarmRuleResponse) obj;
+        return Objects.equals(this.metaData, that.metaData) && Objects.equals(this.thresholds, that.thresholds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(metaData, thresholds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -125,6 +109,7 @@ public class ListAlarmRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -135,8 +120,5 @@ public class ListAlarmRuleResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

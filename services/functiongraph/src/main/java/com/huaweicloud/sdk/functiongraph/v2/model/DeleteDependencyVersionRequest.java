@@ -55,16 +55,15 @@ public class DeleteDependencyVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDependencyVersionRequest deleteDependencyVersionRequest = (DeleteDependencyVersionRequest) o;
-        return Objects.equals(this.dependId, deleteDependencyVersionRequest.dependId)
-            && Objects.equals(this.version, deleteDependencyVersionRequest.version);
+        DeleteDependencyVersionRequest that = (DeleteDependencyVersionRequest) obj;
+        return Objects.equals(this.dependId, that.dependId) && Objects.equals(this.version, that.version);
     }
 
     @Override

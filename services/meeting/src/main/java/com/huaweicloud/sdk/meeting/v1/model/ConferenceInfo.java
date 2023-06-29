@@ -254,22 +254,15 @@ public class ConferenceInfo {
             if (value == null) {
                 return null;
             }
-            RoleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RoleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleEnum(value));
         }
 
         public static RoleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RoleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -351,22 +344,15 @@ public class ConferenceInfo {
             if (value == null) {
                 return null;
             }
-            ConfModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConfModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfModeEnum(value));
         }
 
         public static ConfModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConfModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1290,59 +1276,47 @@ public class ConferenceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConferenceInfo conferenceInfo = (ConferenceInfo) o;
-        return Objects.equals(this.conferenceID, conferenceInfo.conferenceID)
-            && Objects.equals(this.subject, conferenceInfo.subject) && Objects.equals(this.size, conferenceInfo.size)
-            && Objects.equals(this.timeZoneID, conferenceInfo.timeZoneID)
-            && Objects.equals(this.startTime, conferenceInfo.startTime)
-            && Objects.equals(this.endTime, conferenceInfo.endTime)
-            && Objects.equals(this.mediaTypes, conferenceInfo.mediaTypes)
-            && Objects.equals(this.conferenceState, conferenceInfo.conferenceState)
-            && Objects.equals(this.language, conferenceInfo.language)
-            && Objects.equals(this.accessNumber, conferenceInfo.accessNumber)
-            && Objects.equals(this.passwordEntry, conferenceInfo.passwordEntry)
-            && Objects.equals(this.userUUID, conferenceInfo.userUUID)
-            && Objects.equals(this.scheduserName, conferenceInfo.scheduserName)
-            && Objects.equals(this.conferenceType, conferenceInfo.conferenceType)
-            && Objects.equals(this.confType, conferenceInfo.confType)
-            && Objects.equals(this.cycleParams, conferenceInfo.cycleParams)
-            && Objects.equals(this.isAutoMute, conferenceInfo.isAutoMute)
-            && Objects.equals(this.isAutoRecord, conferenceInfo.isAutoRecord)
-            && Objects.equals(this.chairJoinUri, conferenceInfo.chairJoinUri)
-            && Objects.equals(this.guestJoinUri, conferenceInfo.guestJoinUri)
-            && Objects.equals(this.audienceJoinUri, conferenceInfo.audienceJoinUri)
-            && Objects.equals(this.recordType, conferenceInfo.recordType)
-            && Objects.equals(this.auxAddress, conferenceInfo.auxAddress)
-            && Objects.equals(this.liveAddress, conferenceInfo.liveAddress)
-            && Objects.equals(this.recordAuxStream, conferenceInfo.recordAuxStream)
-            && Objects.equals(this.recordAuthType, conferenceInfo.recordAuthType)
-            && Objects.equals(this.liveUrl, conferenceInfo.liveUrl)
-            && Objects.equals(this.confConfigInfo, conferenceInfo.confConfigInfo)
-            && Objects.equals(this.vmrFlag, conferenceInfo.vmrFlag)
-            && Objects.equals(this.isHasRecordFile, conferenceInfo.isHasRecordFile)
-            && Objects.equals(this.vmrConferenceID, conferenceInfo.vmrConferenceID)
-            && Objects.equals(this.confUUID, conferenceInfo.confUUID)
-            && Objects.equals(this.partAttendeeInfo, conferenceInfo.partAttendeeInfo)
-            && Objects.equals(this.terminlCount, conferenceInfo.terminlCount)
-            && Objects.equals(this.normalCount, conferenceInfo.normalCount)
-            && Objects.equals(this.deptName, conferenceInfo.deptName)
-            && Objects.equals(this.vmrID, conferenceInfo.vmrID) && Objects.equals(this.role, conferenceInfo.role)
-            && Objects.equals(this.webinar, conferenceInfo.webinar)
-            && Objects.equals(this.onlineAttendeeAmount, conferenceInfo.onlineAttendeeAmount)
-            && Objects.equals(this.multiStreamFlag, conferenceInfo.multiStreamFlag)
-            && Objects.equals(this.confMode, conferenceInfo.confMode)
-            && Objects.equals(this.scheduleVmr, conferenceInfo.scheduleVmr)
-            && Objects.equals(this.concurrentParticipants, conferenceInfo.concurrentParticipants)
-            && Objects.equals(this.picDisplay, conferenceInfo.picDisplay)
-            && Objects.equals(this.subConfs, conferenceInfo.subConfs)
-            && Objects.equals(this.cycleSubConfID, conferenceInfo.cycleSubConfID);
+        ConferenceInfo that = (ConferenceInfo) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.timeZoneID, that.timeZoneID)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.mediaTypes, that.mediaTypes)
+            && Objects.equals(this.conferenceState, that.conferenceState)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.accessNumber, that.accessNumber)
+            && Objects.equals(this.passwordEntry, that.passwordEntry) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.conferenceType, that.conferenceType) && Objects.equals(this.confType, that.confType)
+            && Objects.equals(this.cycleParams, that.cycleParams) && Objects.equals(this.isAutoMute, that.isAutoMute)
+            && Objects.equals(this.isAutoRecord, that.isAutoRecord)
+            && Objects.equals(this.chairJoinUri, that.chairJoinUri)
+            && Objects.equals(this.guestJoinUri, that.guestJoinUri)
+            && Objects.equals(this.audienceJoinUri, that.audienceJoinUri)
+            && Objects.equals(this.recordType, that.recordType) && Objects.equals(this.auxAddress, that.auxAddress)
+            && Objects.equals(this.liveAddress, that.liveAddress)
+            && Objects.equals(this.recordAuxStream, that.recordAuxStream)
+            && Objects.equals(this.recordAuthType, that.recordAuthType) && Objects.equals(this.liveUrl, that.liveUrl)
+            && Objects.equals(this.confConfigInfo, that.confConfigInfo) && Objects.equals(this.vmrFlag, that.vmrFlag)
+            && Objects.equals(this.isHasRecordFile, that.isHasRecordFile)
+            && Objects.equals(this.vmrConferenceID, that.vmrConferenceID)
+            && Objects.equals(this.confUUID, that.confUUID)
+            && Objects.equals(this.partAttendeeInfo, that.partAttendeeInfo)
+            && Objects.equals(this.terminlCount, that.terminlCount)
+            && Objects.equals(this.normalCount, that.normalCount) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.vmrID, that.vmrID) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.webinar, that.webinar)
+            && Objects.equals(this.onlineAttendeeAmount, that.onlineAttendeeAmount)
+            && Objects.equals(this.multiStreamFlag, that.multiStreamFlag)
+            && Objects.equals(this.confMode, that.confMode) && Objects.equals(this.scheduleVmr, that.scheduleVmr)
+            && Objects.equals(this.concurrentParticipants, that.concurrentParticipants)
+            && Objects.equals(this.picDisplay, that.picDisplay) && Objects.equals(this.subConfs, that.subConfs)
+            && Objects.equals(this.cycleSubConfID, that.cycleSubConfID);
     }
 
     @Override

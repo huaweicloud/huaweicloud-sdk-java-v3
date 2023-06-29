@@ -74,15 +74,15 @@ public class CoverageSite {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CoverageSite coverageSite = (CoverageSite) o;
-        return Objects.equals(this.site, coverageSite.site) && Objects.equals(this.demands, coverageSite.demands);
+        CoverageSite that = (CoverageSite) obj;
+        return Objects.equals(this.site, that.site) && Objects.equals(this.demands, that.demands);
     }
 
     @Override

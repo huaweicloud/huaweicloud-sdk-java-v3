@@ -55,22 +55,15 @@ public class CreateApplicationRequestBody {
             if (value == null) {
                 return null;
             }
-            ApiVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiVersionEnum(value));
         }
 
         public static ApiVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -131,22 +124,15 @@ public class CreateApplicationRequestBody {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KindEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KindEnum(value));
         }
 
         public static KindEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -234,17 +220,16 @@ public class CreateApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationRequestBody createApplicationRequestBody = (CreateApplicationRequestBody) o;
-        return Objects.equals(this.apiVersion, createApplicationRequestBody.apiVersion)
-            && Objects.equals(this.kind, createApplicationRequestBody.kind)
-            && Objects.equals(this.metadata, createApplicationRequestBody.metadata);
+        CreateApplicationRequestBody that = (CreateApplicationRequestBody) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

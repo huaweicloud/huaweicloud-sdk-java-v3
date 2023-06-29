@@ -272,23 +272,22 @@ public class TemplateRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateRsp templateRsp = (TemplateRsp) o;
-        return Objects.equals(this.id, templateRsp.id) && Objects.equals(this.name, templateRsp.name)
-            && Objects.equals(this.description, templateRsp.description)
-            && Objects.equals(this.sourceProjectName, templateRsp.sourceProjectName)
-            && Objects.equals(this.sourceProjectId, templateRsp.sourceProjectId)
-            && Objects.equals(this.sourceTemplateId, templateRsp.sourceTemplateId)
-            && Objects.equals(this.creator, templateRsp.creator) && Objects.equals(this.columns, templateRsp.columns)
-            && Objects.equals(this.createTime, templateRsp.createTime)
-            && Objects.equals(this.primaryKey, templateRsp.primaryKey)
-            && Objects.equals(this.isPrefab, templateRsp.isPrefab);
+        TemplateRsp that = (TemplateRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceTemplateId, that.sourceTemplateId)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.primaryKey, that.primaryKey)
+            && Objects.equals(this.isPrefab, that.isPrefab);
     }
 
     @Override

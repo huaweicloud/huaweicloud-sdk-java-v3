@@ -56,16 +56,15 @@ public class SetQosThresholdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetQosThresholdResponse setQosThresholdResponse = (SetQosThresholdResponse) o;
-        return Objects.equals(this.code, setQosThresholdResponse.code)
-            && Objects.equals(this.message, setQosThresholdResponse.message);
+        SetQosThresholdResponse that = (SetQosThresholdResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message);
     }
 
     @Override

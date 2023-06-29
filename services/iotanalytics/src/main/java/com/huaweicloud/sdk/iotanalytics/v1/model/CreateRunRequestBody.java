@@ -74,16 +74,16 @@ public class CreateRunRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRunRequestBody createRunRequestBody = (CreateRunRequestBody) o;
-        return Objects.equals(this.computingResourceId, createRunRequestBody.computingResourceId)
-            && Objects.equals(this.conf, createRunRequestBody.conf);
+        CreateRunRequestBody that = (CreateRunRequestBody) obj;
+        return Objects.equals(this.computingResourceId, that.computingResourceId)
+            && Objects.equals(this.conf, that.conf);
     }
 
     @Override

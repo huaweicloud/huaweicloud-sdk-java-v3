@@ -329,28 +329,23 @@ public class QueryResRecordsDetailReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryResRecordsDetailReq queryResRecordsDetailReq = (QueryResRecordsDetailReq) o;
-        return Objects.equals(this.cycle, queryResRecordsDetailReq.cycle)
-            && Objects.equals(this.cloudServiceType, queryResRecordsDetailReq.cloudServiceType)
-            && Objects.equals(this.resourceType, queryResRecordsDetailReq.resourceType)
-            && Objects.equals(this.region, queryResRecordsDetailReq.region)
-            && Objects.equals(this.resInstanceId, queryResRecordsDetailReq.resInstanceId)
-            && Objects.equals(this.chargeMode, queryResRecordsDetailReq.chargeMode)
-            && Objects.equals(this.billType, queryResRecordsDetailReq.billType)
-            && Objects.equals(this.enterpriseProjectId, queryResRecordsDetailReq.enterpriseProjectId)
-            && Objects.equals(this.includeZeroRecord, queryResRecordsDetailReq.includeZeroRecord)
-            && Objects.equals(this.offset, queryResRecordsDetailReq.offset)
-            && Objects.equals(this.limit, queryResRecordsDetailReq.limit)
-            && Objects.equals(this.method, queryResRecordsDetailReq.method)
-            && Objects.equals(this.subCustomerId, queryResRecordsDetailReq.subCustomerId)
-            && Objects.equals(this.statisticType, queryResRecordsDetailReq.statisticType);
+        QueryResRecordsDetailReq that = (QueryResRecordsDetailReq) obj;
+        return Objects.equals(this.cycle, that.cycle) && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.resInstanceId, that.resInstanceId)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.billType, that.billType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
+            && Objects.equals(this.statisticType, that.statisticType);
     }
 
     @Override

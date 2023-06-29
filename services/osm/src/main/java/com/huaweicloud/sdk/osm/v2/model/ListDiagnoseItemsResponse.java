@@ -97,17 +97,16 @@ public class ListDiagnoseItemsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDiagnoseItemsResponse listDiagnoseItemsResponse = (ListDiagnoseItemsResponse) o;
-        return Objects.equals(this.errorCode, listDiagnoseItemsResponse.errorCode)
-            && Objects.equals(this.errorMsg, listDiagnoseItemsResponse.errorMsg)
-            && Objects.equals(this.itemResults, listDiagnoseItemsResponse.itemResults);
+        ListDiagnoseItemsResponse that = (ListDiagnoseItemsResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.itemResults, that.itemResults);
     }
 
     @Override

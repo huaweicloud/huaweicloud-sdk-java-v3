@@ -231,23 +231,21 @@ public class ColumnObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnObject columnObject = (ColumnObject) o;
-        return Objects.equals(this.syncType, columnObject.syncType)
-            && Objects.equals(this.primaryKeyForDataFiltering, columnObject.primaryKeyForDataFiltering)
-            && Objects.equals(this.indexForDataFiltering, columnObject.indexForDataFiltering)
-            && Objects.equals(this.name, columnObject.name) && Objects.equals(this.type, columnObject.type)
-            && Objects.equals(this.primaryKeyForColumnFiltering, columnObject.primaryKeyForColumnFiltering)
-            && Objects.equals(this.filtered, columnObject.filtered)
-            && Objects.equals(this.additional, columnObject.additional)
-            && Objects.equals(this.operationType, columnObject.operationType)
-            && Objects.equals(this.value, columnObject.value);
+        ColumnObject that = (ColumnObject) obj;
+        return Objects.equals(this.syncType, that.syncType)
+            && Objects.equals(this.primaryKeyForDataFiltering, that.primaryKeyForDataFiltering)
+            && Objects.equals(this.indexForDataFiltering, that.indexForDataFiltering)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.primaryKeyForColumnFiltering, that.primaryKeyForColumnFiltering)
+            && Objects.equals(this.filtered, that.filtered) && Objects.equals(this.additional, that.additional)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.value, that.value);
     }
 
     @Override

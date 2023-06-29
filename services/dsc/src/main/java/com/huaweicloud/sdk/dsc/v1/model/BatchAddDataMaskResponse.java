@@ -54,15 +54,15 @@ public class BatchAddDataMaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddDataMaskResponse batchAddDataMaskResponse = (BatchAddDataMaskResponse) o;
-        return Objects.equals(this.maskedData, batchAddDataMaskResponse.maskedData);
+        BatchAddDataMaskResponse that = (BatchAddDataMaskResponse) obj;
+        return Objects.equals(this.maskedData, that.maskedData);
     }
 
     @Override

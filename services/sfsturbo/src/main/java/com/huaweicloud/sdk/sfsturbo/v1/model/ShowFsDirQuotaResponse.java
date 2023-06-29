@@ -122,19 +122,17 @@ public class ShowFsDirQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFsDirQuotaResponse showFsDirQuotaResponse = (ShowFsDirQuotaResponse) o;
-        return Objects.equals(this.path, showFsDirQuotaResponse.path)
-            && Objects.equals(this.capacity, showFsDirQuotaResponse.capacity)
-            && Objects.equals(this.inode, showFsDirQuotaResponse.inode)
-            && Objects.equals(this.usedCapacity, showFsDirQuotaResponse.usedCapacity)
-            && Objects.equals(this.usedInode, showFsDirQuotaResponse.usedInode);
+        ShowFsDirQuotaResponse that = (ShowFsDirQuotaResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.inode, that.inode) && Objects.equals(this.usedCapacity, that.usedCapacity)
+            && Objects.equals(this.usedInode, that.usedInode);
     }
 
     @Override

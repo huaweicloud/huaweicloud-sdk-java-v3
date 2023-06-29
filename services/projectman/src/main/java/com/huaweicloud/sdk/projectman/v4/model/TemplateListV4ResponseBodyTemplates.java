@@ -121,20 +121,17 @@ public class TemplateListV4ResponseBodyTemplates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateListV4ResponseBodyTemplates templateListV4ResponseBodyTemplates =
-            (TemplateListV4ResponseBodyTemplates) o;
-        return Objects.equals(this.id, templateListV4ResponseBodyTemplates.id)
-            && Objects.equals(this.projectId, templateListV4ResponseBodyTemplates.projectId)
-            && Objects.equals(this.trackerId, templateListV4ResponseBodyTemplates.trackerId)
-            && Objects.equals(this.description, templateListV4ResponseBodyTemplates.description)
-            && Objects.equals(this.issueFieldConfig, templateListV4ResponseBodyTemplates.issueFieldConfig);
+        TemplateListV4ResponseBodyTemplates that = (TemplateListV4ResponseBodyTemplates) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.trackerId, that.trackerId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.issueFieldConfig, that.issueFieldConfig);
     }
 
     @Override

@@ -97,17 +97,17 @@ public class ListVerificationProgressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVerificationProgressResponse listVerificationProgressResponse = (ListVerificationProgressResponse) o;
-        return Objects.equals(this.totalObjectsCount, listVerificationProgressResponse.totalObjectsCount)
-            && Objects.equals(this.completedObjectsCount, listVerificationProgressResponse.completedObjectsCount)
-            && Objects.equals(this.objectsList, listVerificationProgressResponse.objectsList);
+        ListVerificationProgressResponse that = (ListVerificationProgressResponse) obj;
+        return Objects.equals(this.totalObjectsCount, that.totalObjectsCount)
+            && Objects.equals(this.completedObjectsCount, that.completedObjectsCount)
+            && Objects.equals(this.objectsList, that.objectsList);
     }
 
     @Override

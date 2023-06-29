@@ -43,15 +43,15 @@ public class CountCertResourceInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountCertResourceInstancesRequest countCertResourceInstancesRequest = (CountCertResourceInstancesRequest) o;
-        return Objects.equals(this.body, countCertResourceInstancesRequest.body);
+        CountCertResourceInstancesRequest that = (CountCertResourceInstancesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

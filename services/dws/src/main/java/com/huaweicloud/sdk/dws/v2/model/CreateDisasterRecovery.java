@@ -165,21 +165,20 @@ public class CreateDisasterRecovery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDisasterRecovery createDisasterRecovery = (CreateDisasterRecovery) o;
-        return Objects.equals(this.name, createDisasterRecovery.name)
-            && Objects.equals(this.drType, createDisasterRecovery.drType)
-            && Objects.equals(this.primaryClusterId, createDisasterRecovery.primaryClusterId)
-            && Objects.equals(this.standbyClusterId, createDisasterRecovery.standbyClusterId)
-            && Objects.equals(this.drSyncPeriod, createDisasterRecovery.drSyncPeriod)
-            && Objects.equals(this.primaryObsBucket, createDisasterRecovery.primaryObsBucket)
-            && Objects.equals(this.standbyObsBucket, createDisasterRecovery.standbyObsBucket);
+        CreateDisasterRecovery that = (CreateDisasterRecovery) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.drType, that.drType)
+            && Objects.equals(this.primaryClusterId, that.primaryClusterId)
+            && Objects.equals(this.standbyClusterId, that.standbyClusterId)
+            && Objects.equals(this.drSyncPeriod, that.drSyncPeriod)
+            && Objects.equals(this.primaryObsBucket, that.primaryObsBucket)
+            && Objects.equals(this.standbyObsBucket, that.standbyObsBucket);
     }
 
     @Override

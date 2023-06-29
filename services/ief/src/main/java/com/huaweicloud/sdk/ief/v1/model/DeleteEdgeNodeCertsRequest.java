@@ -77,17 +77,16 @@ public class DeleteEdgeNodeCertsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteEdgeNodeCertsRequest deleteEdgeNodeCertsRequest = (DeleteEdgeNodeCertsRequest) o;
-        return Objects.equals(this.nodeId, deleteEdgeNodeCertsRequest.nodeId)
-            && Objects.equals(this.certId, deleteEdgeNodeCertsRequest.certId)
-            && Objects.equals(this.iefInstanceId, deleteEdgeNodeCertsRequest.iefInstanceId);
+        DeleteEdgeNodeCertsRequest that = (DeleteEdgeNodeCertsRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.certId, that.certId)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class MrsKafkaForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MrsKafkaForwarding mrsKafkaForwarding = (MrsKafkaForwarding) o;
-        return Objects.equals(this.addresses, mrsKafkaForwarding.addresses)
-            && Objects.equals(this.topic, mrsKafkaForwarding.topic)
-            && Objects.equals(this.kerberosAuthentication, mrsKafkaForwarding.kerberosAuthentication);
+        MrsKafkaForwarding that = (MrsKafkaForwarding) obj;
+        return Objects.equals(this.addresses, that.addresses) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.kerberosAuthentication, that.kerberosAuthentication);
     }
 
     @Override

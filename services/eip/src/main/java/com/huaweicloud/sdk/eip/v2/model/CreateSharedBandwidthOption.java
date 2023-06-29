@@ -75,22 +75,15 @@ public class CreateSharedBandwidthOption {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,19 @@ public class CreateSharedBandwidthOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSharedBandwidthOption createSharedBandwidthOption = (CreateSharedBandwidthOption) o;
-        return Objects.equals(this.enterpriseProjectId, createSharedBandwidthOption.enterpriseProjectId)
-            && Objects.equals(this.name, createSharedBandwidthOption.name)
-            && Objects.equals(this.size, createSharedBandwidthOption.size)
-            && Objects.equals(this.chargeMode, createSharedBandwidthOption.chargeMode)
-            && Objects.equals(this.publicBorderGroup, createSharedBandwidthOption.publicBorderGroup)
-            && Objects.equals(this.bandwidthType, createSharedBandwidthOption.bandwidthType);
+        CreateSharedBandwidthOption that = (CreateSharedBandwidthOption) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.bandwidthType, that.bandwidthType);
     }
 
     @Override

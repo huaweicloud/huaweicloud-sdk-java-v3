@@ -166,21 +166,18 @@ public class UpdateCatalogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCatalogResponse updateCatalogResponse = (UpdateCatalogResponse) o;
-        return Objects.equals(this.catalogId, updateCatalogResponse.catalogId)
-            && Objects.equals(this.name, updateCatalogResponse.name)
-            && Objects.equals(this.description, updateCatalogResponse.description)
-            && Objects.equals(this.createTime, updateCatalogResponse.createTime)
-            && Objects.equals(this.createUser, updateCatalogResponse.createUser)
-            && Objects.equals(this.updateTime, updateCatalogResponse.updateTime)
-            && Objects.equals(this.updateUser, updateCatalogResponse.updateUser);
+        UpdateCatalogResponse that = (UpdateCatalogResponse) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class CheckPutEventsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckPutEventsResult checkPutEventsResult = (CheckPutEventsResult) o;
-        return Objects.equals(this.channelId, checkPutEventsResult.channelId)
-            && Objects.equals(this.sourceName, checkPutEventsResult.sourceName)
-            && Objects.equals(this.checkResult, checkPutEventsResult.checkResult)
-            && Objects.equals(this.checkDetail, checkPutEventsResult.checkDetail);
+        CheckPutEventsResult that = (CheckPutEventsResult) obj;
+        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.sourceName, that.sourceName)
+            && Objects.equals(this.checkResult, that.checkResult) && Objects.equals(this.checkDetail, that.checkDetail);
     }
 
     @Override

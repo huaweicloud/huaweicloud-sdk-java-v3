@@ -99,18 +99,18 @@ public class IndicatorInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorInfo indicatorInfo = (IndicatorInfo) o;
-        return Objects.equals(this.indicatorName, indicatorInfo.indicatorName)
-            && Objects.equals(this.pluginName, indicatorInfo.pluginName)
-            && Objects.equals(this.defaultCollectRate, indicatorInfo.defaultCollectRate)
-            && Objects.equals(this.supportDatastoreVersion, indicatorInfo.supportDatastoreVersion);
+        IndicatorInfo that = (IndicatorInfo) obj;
+        return Objects.equals(this.indicatorName, that.indicatorName)
+            && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.defaultCollectRate, that.defaultCollectRate)
+            && Objects.equals(this.supportDatastoreVersion, that.supportDatastoreVersion);
     }
 
     @Override

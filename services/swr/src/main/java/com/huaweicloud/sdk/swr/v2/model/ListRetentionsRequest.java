@@ -55,16 +55,15 @@ public class ListRetentionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRetentionsRequest listRetentionsRequest = (ListRetentionsRequest) o;
-        return Objects.equals(this.namespace, listRetentionsRequest.namespace)
-            && Objects.equals(this.repository, listRetentionsRequest.repository);
+        ListRetentionsRequest that = (ListRetentionsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository);
     }
 
     @Override

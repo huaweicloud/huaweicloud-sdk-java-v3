@@ -191,22 +191,19 @@ public class ListVulHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVulHostsRequest listVulHostsRequest = (ListVulHostsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listVulHostsRequest.enterpriseProjectId)
-            && Objects.equals(this.vulId, listVulHostsRequest.vulId)
-            && Objects.equals(this.type, listVulHostsRequest.type)
-            && Objects.equals(this.hostName, listVulHostsRequest.hostName)
-            && Objects.equals(this.hostIp, listVulHostsRequest.hostIp)
-            && Objects.equals(this.status, listVulHostsRequest.status)
-            && Objects.equals(this.limit, listVulHostsRequest.limit)
-            && Objects.equals(this.offset, listVulHostsRequest.offset);
+        ListVulHostsRequest that = (ListVulHostsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.vulId, that.vulId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

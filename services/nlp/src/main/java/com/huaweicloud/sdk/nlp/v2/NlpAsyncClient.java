@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.nlp.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.nlp.v2.model.*;
 
+import java.util.concurrent.CompletableFuture;
+
 public class NlpAsyncClient {
+
     protected HcClient hcClient;
 
     public NlpAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class NlpAsyncClient {
     public static ClientBuilder<NlpAsyncClient> newBuilder() {
         return new ClientBuilder<>(NlpAsyncClient::new, "BasicCredentials");
     }
-
 
     /**
      * 属性级情感分析
@@ -45,8 +45,10 @@ public class NlpAsyncClient {
      * @param RunAspectSentimentRequest 请求对象
      * @return AsyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>
      */
-    public AsyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentimentAsyncInvoker(RunAspectSentimentRequest request) {
-        return new AsyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>(request, NlpMeta.runAspectSentiment, hcClient);
+    public AsyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentimentAsyncInvoker(
+        RunAspectSentimentRequest request) {
+        return new AsyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>(request,
+            NlpMeta.runAspectSentiment, hcClient);
     }
 
     /**
@@ -60,7 +62,8 @@ public class NlpAsyncClient {
      * @param RunAspectSentimentAdvanceRequest 请求对象
      * @return CompletableFuture<RunAspectSentimentAdvanceResponse>
      */
-    public CompletableFuture<RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceAsync(RunAspectSentimentAdvanceRequest request) {
+    public CompletableFuture<RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceAsync(
+        RunAspectSentimentAdvanceRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runAspectSentimentAdvance);
     }
 
@@ -75,8 +78,10 @@ public class NlpAsyncClient {
      * @param RunAspectSentimentAdvanceRequest 请求对象
      * @return AsyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>
      */
-    public AsyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceAsyncInvoker(RunAspectSentimentAdvanceRequest request) {
-        return new AsyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>(request, NlpMeta.runAspectSentimentAdvance, hcClient);
+    public AsyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceAsyncInvoker(
+        RunAspectSentimentAdvanceRequest request) {
+        return new AsyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>(request,
+            NlpMeta.runAspectSentimentAdvance, hcClient);
     }
 
     /**
@@ -105,8 +110,10 @@ public class NlpAsyncClient {
      * @param RunClassificationRequest 请求对象
      * @return AsyncInvoker<RunClassificationRequest, RunClassificationResponse>
      */
-    public AsyncInvoker<RunClassificationRequest, RunClassificationResponse> runClassificationAsyncInvoker(RunClassificationRequest request) {
-        return new AsyncInvoker<RunClassificationRequest, RunClassificationResponse>(request, NlpMeta.runClassification, hcClient);
+    public AsyncInvoker<RunClassificationRequest, RunClassificationResponse> runClassificationAsyncInvoker(
+        RunClassificationRequest request) {
+        return new AsyncInvoker<RunClassificationRequest, RunClassificationResponse>(request, NlpMeta.runClassification,
+            hcClient);
     }
 
     /**
@@ -120,7 +127,8 @@ public class NlpAsyncClient {
      * @param RunConstituencyParserRequest 请求对象
      * @return CompletableFuture<RunConstituencyParserResponse>
      */
-    public CompletableFuture<RunConstituencyParserResponse> runConstituencyParserAsync(RunConstituencyParserRequest request) {
+    public CompletableFuture<RunConstituencyParserResponse> runConstituencyParserAsync(
+        RunConstituencyParserRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runConstituencyParser);
     }
 
@@ -135,8 +143,10 @@ public class NlpAsyncClient {
      * @param RunConstituencyParserRequest 请求对象
      * @return AsyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>
      */
-    public AsyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserAsyncInvoker(RunConstituencyParserRequest request) {
-        return new AsyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request, NlpMeta.runConstituencyParser, hcClient);
+    public AsyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserAsyncInvoker(
+        RunConstituencyParserRequest request) {
+        return new AsyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request,
+            NlpMeta.runConstituencyParser, hcClient);
     }
 
     /**
@@ -165,8 +175,10 @@ public class NlpAsyncClient {
      * @param RunDependencyParserRequest 请求对象
      * @return AsyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>
      */
-    public AsyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParserAsyncInvoker(RunDependencyParserRequest request) {
-        return new AsyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>(request, NlpMeta.runDependencyParser, hcClient);
+    public AsyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParserAsyncInvoker(
+        RunDependencyParserRequest request) {
+        return new AsyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>(request,
+            NlpMeta.runDependencyParser, hcClient);
     }
 
     /**
@@ -180,7 +192,8 @@ public class NlpAsyncClient {
      * @param RunDocClassificationRequest 请求对象
      * @return CompletableFuture<RunDocClassificationResponse>
      */
-    public CompletableFuture<RunDocClassificationResponse> runDocClassificationAsync(RunDocClassificationRequest request) {
+    public CompletableFuture<RunDocClassificationResponse> runDocClassificationAsync(
+        RunDocClassificationRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runDocClassification);
     }
 
@@ -195,8 +208,10 @@ public class NlpAsyncClient {
      * @param RunDocClassificationRequest 请求对象
      * @return AsyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>
      */
-    public AsyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassificationAsyncInvoker(RunDocClassificationRequest request) {
-        return new AsyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>(request, NlpMeta.runDocClassification, hcClient);
+    public AsyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassificationAsyncInvoker(
+        RunDocClassificationRequest request) {
+        return new AsyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>(request,
+            NlpMeta.runDocClassification, hcClient);
     }
 
     /**
@@ -225,8 +240,10 @@ public class NlpAsyncClient {
      * @param RunDomainSentimentRequest 请求对象
      * @return AsyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>
      */
-    public AsyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentimentAsyncInvoker(RunDomainSentimentRequest request) {
-        return new AsyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>(request, NlpMeta.runDomainSentiment, hcClient);
+    public AsyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentimentAsyncInvoker(
+        RunDomainSentimentRequest request) {
+        return new AsyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>(request,
+            NlpMeta.runDomainSentiment, hcClient);
     }
 
     /**
@@ -255,8 +272,10 @@ public class NlpAsyncClient {
      * @param RunEntityLinkingRequest 请求对象
      * @return AsyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>
      */
-    public AsyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinkingAsyncInvoker(RunEntityLinkingRequest request) {
-        return new AsyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>(request, NlpMeta.runEntityLinking, hcClient);
+    public AsyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinkingAsyncInvoker(
+        RunEntityLinkingRequest request) {
+        return new AsyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>(request, NlpMeta.runEntityLinking,
+            hcClient);
     }
 
     /**
@@ -285,8 +304,10 @@ public class NlpAsyncClient {
      * @param RunEntitySentimentRequest 请求对象
      * @return AsyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>
      */
-    public AsyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentimentAsyncInvoker(RunEntitySentimentRequest request) {
-        return new AsyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>(request, NlpMeta.runEntitySentiment, hcClient);
+    public AsyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentimentAsyncInvoker(
+        RunEntitySentimentRequest request) {
+        return new AsyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>(request,
+            NlpMeta.runEntitySentiment, hcClient);
     }
 
     /**
@@ -317,8 +338,10 @@ public class NlpAsyncClient {
      * @param RunEventExtractionRequest 请求对象
      * @return AsyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>
      */
-    public AsyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtractionAsyncInvoker(RunEventExtractionRequest request) {
-        return new AsyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>(request, NlpMeta.runEventExtraction, hcClient);
+    public AsyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtractionAsyncInvoker(
+        RunEventExtractionRequest request) {
+        return new AsyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>(request,
+            NlpMeta.runEventExtraction, hcClient);
     }
 
     /**
@@ -347,8 +370,10 @@ public class NlpAsyncClient {
      * @param RunFileTranslationRequest 请求对象
      * @return AsyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>
      */
-    public AsyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslationAsyncInvoker(RunFileTranslationRequest request) {
-        return new AsyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>(request, NlpMeta.runFileTranslation, hcClient);
+    public AsyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslationAsyncInvoker(
+        RunFileTranslationRequest request) {
+        return new AsyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>(request,
+            NlpMeta.runFileTranslation, hcClient);
     }
 
     /**
@@ -361,7 +386,8 @@ public class NlpAsyncClient {
      * @param RunGetFileTranslationResultRequest 请求对象
      * @return CompletableFuture<RunGetFileTranslationResultResponse>
      */
-    public CompletableFuture<RunGetFileTranslationResultResponse> runGetFileTranslationResultAsync(RunGetFileTranslationResultRequest request) {
+    public CompletableFuture<RunGetFileTranslationResultResponse> runGetFileTranslationResultAsync(
+        RunGetFileTranslationResultRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runGetFileTranslationResult);
     }
 
@@ -375,8 +401,10 @@ public class NlpAsyncClient {
      * @param RunGetFileTranslationResultRequest 请求对象
      * @return AsyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>
      */
-    public AsyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResultAsyncInvoker(RunGetFileTranslationResultRequest request) {
-        return new AsyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>(request, NlpMeta.runGetFileTranslationResult, hcClient);
+    public AsyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResultAsyncInvoker(
+        RunGetFileTranslationResultRequest request) {
+        return new AsyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>(request,
+            NlpMeta.runGetFileTranslationResult, hcClient);
     }
 
     /**
@@ -405,8 +433,10 @@ public class NlpAsyncClient {
      * @param RunKeywordExtractRequest 请求对象
      * @return AsyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>
      */
-    public AsyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtractAsyncInvoker(RunKeywordExtractRequest request) {
-        return new AsyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>(request, NlpMeta.runKeywordExtract, hcClient);
+    public AsyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtractAsyncInvoker(
+        RunKeywordExtractRequest request) {
+        return new AsyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>(request, NlpMeta.runKeywordExtract,
+            hcClient);
     }
 
     /**
@@ -420,7 +450,8 @@ public class NlpAsyncClient {
      * @param RunLanguageDetectionRequest 请求对象
      * @return CompletableFuture<RunLanguageDetectionResponse>
      */
-    public CompletableFuture<RunLanguageDetectionResponse> runLanguageDetectionAsync(RunLanguageDetectionRequest request) {
+    public CompletableFuture<RunLanguageDetectionResponse> runLanguageDetectionAsync(
+        RunLanguageDetectionRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runLanguageDetection);
     }
 
@@ -435,8 +466,10 @@ public class NlpAsyncClient {
      * @param RunLanguageDetectionRequest 请求对象
      * @return AsyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>
      */
-    public AsyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetectionAsyncInvoker(RunLanguageDetectionRequest request) {
-        return new AsyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>(request, NlpMeta.runLanguageDetection, hcClient);
+    public AsyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetectionAsyncInvoker(
+        RunLanguageDetectionRequest request) {
+        return new AsyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>(request,
+            NlpMeta.runLanguageDetection, hcClient);
     }
 
     /**
@@ -450,7 +483,8 @@ public class NlpAsyncClient {
      * @param RunMultiGrainedSegmentRequest 请求对象
      * @return CompletableFuture<RunMultiGrainedSegmentResponse>
      */
-    public CompletableFuture<RunMultiGrainedSegmentResponse> runMultiGrainedSegmentAsync(RunMultiGrainedSegmentRequest request) {
+    public CompletableFuture<RunMultiGrainedSegmentResponse> runMultiGrainedSegmentAsync(
+        RunMultiGrainedSegmentRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runMultiGrainedSegment);
     }
 
@@ -465,8 +499,10 @@ public class NlpAsyncClient {
      * @param RunMultiGrainedSegmentRequest 请求对象
      * @return AsyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>
      */
-    public AsyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegmentAsyncInvoker(RunMultiGrainedSegmentRequest request) {
-        return new AsyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>(request, NlpMeta.runMultiGrainedSegment, hcClient);
+    public AsyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegmentAsyncInvoker(
+        RunMultiGrainedSegmentRequest request) {
+        return new AsyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>(request,
+            NlpMeta.runMultiGrainedSegment, hcClient);
     }
 
     /**
@@ -525,7 +561,8 @@ public class NlpAsyncClient {
      * @param RunNerDomainRequest 请求对象
      * @return AsyncInvoker<RunNerDomainRequest, RunNerDomainResponse>
      */
-    public AsyncInvoker<RunNerDomainRequest, RunNerDomainResponse> runNerDomainAsyncInvoker(RunNerDomainRequest request) {
+    public AsyncInvoker<RunNerDomainRequest, RunNerDomainResponse> runNerDomainAsyncInvoker(
+        RunNerDomainRequest request) {
         return new AsyncInvoker<RunNerDomainRequest, RunNerDomainResponse>(request, NlpMeta.runNerDomain, hcClient);
     }
 
@@ -615,8 +652,10 @@ public class NlpAsyncClient {
      * @param RunSemanticParserRequest 请求对象
      * @return AsyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>
      */
-    public AsyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParserAsyncInvoker(RunSemanticParserRequest request) {
-        return new AsyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>(request, NlpMeta.runSemanticParser, hcClient);
+    public AsyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParserAsyncInvoker(
+        RunSemanticParserRequest request) {
+        return new AsyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>(request, NlpMeta.runSemanticParser,
+            hcClient);
     }
 
     /**
@@ -630,7 +669,8 @@ public class NlpAsyncClient {
      * @param RunSentenceEmbeddingRequest 请求对象
      * @return CompletableFuture<RunSentenceEmbeddingResponse>
      */
-    public CompletableFuture<RunSentenceEmbeddingResponse> runSentenceEmbeddingAsync(RunSentenceEmbeddingRequest request) {
+    public CompletableFuture<RunSentenceEmbeddingResponse> runSentenceEmbeddingAsync(
+        RunSentenceEmbeddingRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runSentenceEmbedding);
     }
 
@@ -645,8 +685,10 @@ public class NlpAsyncClient {
      * @param RunSentenceEmbeddingRequest 请求对象
      * @return AsyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>
      */
-    public AsyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbeddingAsyncInvoker(RunSentenceEmbeddingRequest request) {
-        return new AsyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>(request, NlpMeta.runSentenceEmbedding, hcClient);
+    public AsyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbeddingAsyncInvoker(
+        RunSentenceEmbeddingRequest request) {
+        return new AsyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>(request,
+            NlpMeta.runSentenceEmbedding, hcClient);
     }
 
     /**
@@ -675,7 +717,8 @@ public class NlpAsyncClient {
      * @param RunSentimentRequest 请求对象
      * @return AsyncInvoker<RunSentimentRequest, RunSentimentResponse>
      */
-    public AsyncInvoker<RunSentimentRequest, RunSentimentResponse> runSentimentAsyncInvoker(RunSentimentRequest request) {
+    public AsyncInvoker<RunSentimentRequest, RunSentimentResponse> runSentimentAsyncInvoker(
+        RunSentimentRequest request) {
         return new AsyncInvoker<RunSentimentRequest, RunSentimentResponse>(request, NlpMeta.runSentiment, hcClient);
     }
 
@@ -735,8 +778,10 @@ public class NlpAsyncClient {
      * @param RunSummaryDomainRequest 请求对象
      * @return AsyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>
      */
-    public AsyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomainAsyncInvoker(RunSummaryDomainRequest request) {
-        return new AsyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>(request, NlpMeta.runSummaryDomain, hcClient);
+    public AsyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomainAsyncInvoker(
+        RunSummaryDomainRequest request) {
+        return new AsyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>(request, NlpMeta.runSummaryDomain,
+            hcClient);
     }
 
     /**
@@ -765,8 +810,10 @@ public class NlpAsyncClient {
      * @param RunTextSimilarityRequest 请求对象
      * @return AsyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>
      */
-    public AsyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarityAsyncInvoker(RunTextSimilarityRequest request) {
-        return new AsyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>(request, NlpMeta.runTextSimilarity, hcClient);
+    public AsyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarityAsyncInvoker(
+        RunTextSimilarityRequest request) {
+        return new AsyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>(request, NlpMeta.runTextSimilarity,
+            hcClient);
     }
 
     /**
@@ -780,7 +827,8 @@ public class NlpAsyncClient {
      * @param RunTextSimilarityAdvanceRequest 请求对象
      * @return CompletableFuture<RunTextSimilarityAdvanceResponse>
      */
-    public CompletableFuture<RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceAsync(RunTextSimilarityAdvanceRequest request) {
+    public CompletableFuture<RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceAsync(
+        RunTextSimilarityAdvanceRequest request) {
         return hcClient.asyncInvokeHttp(request, NlpMeta.runTextSimilarityAdvance);
     }
 
@@ -795,8 +843,10 @@ public class NlpAsyncClient {
      * @param RunTextSimilarityAdvanceRequest 请求对象
      * @return AsyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>
      */
-    public AsyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceAsyncInvoker(RunTextSimilarityAdvanceRequest request) {
-        return new AsyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>(request, NlpMeta.runTextSimilarityAdvance, hcClient);
+    public AsyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceAsyncInvoker(
+        RunTextSimilarityAdvanceRequest request) {
+        return new AsyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>(request,
+            NlpMeta.runTextSimilarityAdvance, hcClient);
     }
 
     /**
@@ -825,8 +875,10 @@ public class NlpAsyncClient {
      * @param RunTextTranslationRequest 请求对象
      * @return AsyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>
      */
-    public AsyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslationAsyncInvoker(RunTextTranslationRequest request) {
-        return new AsyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>(request, NlpMeta.runTextTranslation, hcClient);
+    public AsyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslationAsyncInvoker(
+        RunTextTranslationRequest request) {
+        return new AsyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>(request,
+            NlpMeta.runTextTranslation, hcClient);
     }
 
 }

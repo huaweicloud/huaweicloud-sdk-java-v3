@@ -94,22 +94,15 @@ public class ResourceResp {
             if (value == null) {
                 return null;
             }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectStatusEnum(value));
         }
 
         public static ProtectStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,20 +290,18 @@ public class ResourceResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceResp resourceResp = (ResourceResp) o;
-        return Objects.equals(this.extraInfo, resourceResp.extraInfo) && Objects.equals(this.id, resourceResp.id)
-            && Objects.equals(this.name, resourceResp.name)
-            && Objects.equals(this.protectStatus, resourceResp.protectStatus)
-            && Objects.equals(this.size, resourceResp.size) && Objects.equals(this.type, resourceResp.type)
-            && Objects.equals(this.backupSize, resourceResp.backupSize)
-            && Objects.equals(this.backupCount, resourceResp.backupCount);
+        ResourceResp that = (ResourceResp) obj;
+        return Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.backupSize, that.backupSize) && Objects.equals(this.backupCount, that.backupCount);
     }
 
     @Override

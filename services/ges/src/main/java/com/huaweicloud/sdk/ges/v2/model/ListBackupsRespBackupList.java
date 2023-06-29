@@ -1,121 +1,97 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ListBackupsRespBackupList
  */
-public class ListBackupsRespBackupList  {
-
+public class ListBackupsRespBackupList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_method")
-    
+    @JsonProperty(value = "backup_method")
 
     private String backupMethod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_name")
-    
+    @JsonProperty(value = "graph_name")
 
     private String graphName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_status")
-    
+    @JsonProperty(value = "graph_status")
 
     private String graphStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_size_type_index")
-    
+    @JsonProperty(value = "graph_size_type_index")
 
     private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_store_version")
-    
+    @JsonProperty(value = "data_store_version")
 
     private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_timestamp")
-    
+    @JsonProperty(value = "start_timestamp")
 
     private Long startTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_timestamp")
-    
+    @JsonProperty(value = "end_timestamp")
 
     private Long endTimestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Long size;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
 
     private Long duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
@@ -123,9 +99,6 @@ public class ListBackupsRespBackupList  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 备份ID。
@@ -139,15 +112,10 @@ public class ListBackupsRespBackupList  {
         this.id = id;
     }
 
-    
-
     public ListBackupsRespBackupList withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 备份名称。
@@ -161,15 +129,10 @@ public class ListBackupsRespBackupList  {
         this.name = name;
     }
 
-    
-
     public ListBackupsRespBackupList withBackupMethod(String backupMethod) {
         this.backupMethod = backupMethod;
         return this;
     }
-
-    
-
 
     /**
      * 备份方法，取值为auto或manual。
@@ -183,15 +146,10 @@ public class ListBackupsRespBackupList  {
         this.backupMethod = backupMethod;
     }
 
-    
-
     public ListBackupsRespBackupList withGraphId(String graphId) {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图ID。
@@ -205,15 +163,10 @@ public class ListBackupsRespBackupList  {
         this.graphId = graphId;
     }
 
-    
-
     public ListBackupsRespBackupList withGraphName(String graphName) {
         this.graphName = graphName;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图Name。
@@ -227,15 +180,10 @@ public class ListBackupsRespBackupList  {
         this.graphName = graphName;
     }
 
-    
-
     public ListBackupsRespBackupList withGraphStatus(String graphStatus) {
         this.graphStatus = graphStatus;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图状态。
@@ -249,15 +197,10 @@ public class ListBackupsRespBackupList  {
         this.graphStatus = graphStatus;
     }
 
-    
-
     public ListBackupsRespBackupList withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图规格。
@@ -271,15 +214,10 @@ public class ListBackupsRespBackupList  {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 
-    
-
     public ListBackupsRespBackupList withDataStoreVersion(String dataStoreVersion) {
         this.dataStoreVersion = dataStoreVersion;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图版本。
@@ -293,15 +231,10 @@ public class ListBackupsRespBackupList  {
         this.dataStoreVersion = dataStoreVersion;
     }
 
-    
-
     public ListBackupsRespBackupList withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 备份关联的图CPU架构。
@@ -315,15 +248,10 @@ public class ListBackupsRespBackupList  {
         this.arch = arch;
     }
 
-    
-
     public ListBackupsRespBackupList withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 备份状态。  - backing_up：备份中 - success：备份成功 - failed：备份失败
@@ -337,15 +265,10 @@ public class ListBackupsRespBackupList  {
         this.status = status;
     }
 
-    
-
     public ListBackupsRespBackupList withStartTimestamp(Long startTimestamp) {
         this.startTimestamp = startTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 备份开始时间戳。
@@ -359,15 +282,10 @@ public class ListBackupsRespBackupList  {
         this.startTimestamp = startTimestamp;
     }
 
-    
-
     public ListBackupsRespBackupList withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份开始时间。
@@ -381,15 +299,10 @@ public class ListBackupsRespBackupList  {
         this.startTime = startTime;
     }
 
-    
-
     public ListBackupsRespBackupList withEndTimestamp(Long endTimestamp) {
         this.endTimestamp = endTimestamp;
         return this;
     }
-
-    
-
 
     /**
      * 备份结束时间戳。
@@ -403,15 +316,10 @@ public class ListBackupsRespBackupList  {
         this.endTimestamp = endTimestamp;
     }
 
-    
-
     public ListBackupsRespBackupList withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 备份结束时间。
@@ -425,15 +333,10 @@ public class ListBackupsRespBackupList  {
         this.endTime = endTime;
     }
 
-    
-
     public ListBackupsRespBackupList withSize(Long size) {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * 备份文件大小，单位为MB。
@@ -447,15 +350,10 @@ public class ListBackupsRespBackupList  {
         this.size = size;
     }
 
-    
-
     public ListBackupsRespBackupList withDuration(Long duration) {
         this.duration = duration;
         return this;
     }
-
-    
-
 
     /**
      * 备份时间，单位为秒。
@@ -469,15 +367,10 @@ public class ListBackupsRespBackupList  {
         this.duration = duration;
     }
 
-    
-
     public ListBackupsRespBackupList withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 是否加密。true表示加密，默认值为\"false\"，不加密。
@@ -491,39 +384,47 @@ public class ListBackupsRespBackupList  {
         this.encrypted = encrypted;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupsRespBackupList listBackupsRespBackupList = (ListBackupsRespBackupList) o;
-        return Objects.equals(this.id, listBackupsRespBackupList.id) &&
-            Objects.equals(this.name, listBackupsRespBackupList.name) &&
-            Objects.equals(this.backupMethod, listBackupsRespBackupList.backupMethod) &&
-            Objects.equals(this.graphId, listBackupsRespBackupList.graphId) &&
-            Objects.equals(this.graphName, listBackupsRespBackupList.graphName) &&
-            Objects.equals(this.graphStatus, listBackupsRespBackupList.graphStatus) &&
-            Objects.equals(this.graphSizeTypeIndex, listBackupsRespBackupList.graphSizeTypeIndex) &&
-            Objects.equals(this.dataStoreVersion, listBackupsRespBackupList.dataStoreVersion) &&
-            Objects.equals(this.arch, listBackupsRespBackupList.arch) &&
-            Objects.equals(this.status, listBackupsRespBackupList.status) &&
-            Objects.equals(this.startTimestamp, listBackupsRespBackupList.startTimestamp) &&
-            Objects.equals(this.startTime, listBackupsRespBackupList.startTime) &&
-            Objects.equals(this.endTimestamp, listBackupsRespBackupList.endTimestamp) &&
-            Objects.equals(this.endTime, listBackupsRespBackupList.endTime) &&
-            Objects.equals(this.size, listBackupsRespBackupList.size) &&
-            Objects.equals(this.duration, listBackupsRespBackupList.duration) &&
-            Objects.equals(this.encrypted, listBackupsRespBackupList.encrypted);
+        ListBackupsRespBackupList that = (ListBackupsRespBackupList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backupMethod, that.backupMethod) && Objects.equals(this.graphId, that.graphId)
+            && Objects.equals(this.graphName, that.graphName) && Objects.equals(this.graphStatus, that.graphStatus)
+            && Objects.equals(this.graphSizeTypeIndex, that.graphSizeTypeIndex)
+            && Objects.equals(this.dataStoreVersion, that.dataStoreVersion) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTimestamp, that.startTimestamp)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTimestamp, that.endTimestamp)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.encrypted, that.encrypted);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, backupMethod, graphId, graphName, graphStatus, graphSizeTypeIndex, dataStoreVersion, arch, status, startTimestamp, startTime, endTimestamp, endTime, size, duration, encrypted);
+        return Objects.hash(id,
+            name,
+            backupMethod,
+            graphId,
+            graphName,
+            graphStatus,
+            graphSizeTypeIndex,
+            dataStoreVersion,
+            arch,
+            status,
+            startTimestamp,
+            startTime,
+            endTimestamp,
+            endTime,
+            size,
+            duration,
+            encrypted);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,6 +449,7 @@ public class ListBackupsRespBackupList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -558,8 +460,5 @@ public class ListBackupsRespBackupList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

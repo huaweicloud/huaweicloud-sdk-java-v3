@@ -57,16 +57,15 @@ public class ListEnterpriseOrganizationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseOrganizationsRequest listEnterpriseOrganizationsRequest = (ListEnterpriseOrganizationsRequest) o;
-        return Objects.equals(this.recursiveQuery, listEnterpriseOrganizationsRequest.recursiveQuery)
-            && Objects.equals(this.parentId, listEnterpriseOrganizationsRequest.parentId);
+        ListEnterpriseOrganizationsRequest that = (ListEnterpriseOrganizationsRequest) obj;
+        return Objects.equals(this.recursiveQuery, that.recursiveQuery) && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

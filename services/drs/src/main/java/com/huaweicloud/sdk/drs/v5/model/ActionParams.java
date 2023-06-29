@@ -224,22 +224,20 @@ public class ActionParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionParams actionParams = (ActionParams) o;
-        return Objects.equals(this.endpoints, actionParams.endpoints)
-            && Objects.equals(this.precheckMode, actionParams.precheckMode)
-            && Objects.equals(this.skipPrecheckInfo, actionParams.skipPrecheckInfo)
-            && Objects.equals(this.pauseMode, actionParams.pauseMode)
-            && Objects.equals(this.startTime, actionParams.startTime)
-            && Objects.equals(this.compareTaskParam, actionParams.compareTaskParam)
-            && Objects.equals(this.isSyncReEdit, actionParams.isSyncReEdit)
-            && Objects.equals(this.forceDelete, actionParams.forceDelete);
+        ActionParams that = (ActionParams) obj;
+        return Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.precheckMode, that.precheckMode)
+            && Objects.equals(this.skipPrecheckInfo, that.skipPrecheckInfo)
+            && Objects.equals(this.pauseMode, that.pauseMode) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.compareTaskParam, that.compareTaskParam)
+            && Objects.equals(this.isSyncReEdit, that.isSyncReEdit)
+            && Objects.equals(this.forceDelete, that.forceDelete);
     }
 
     @Override

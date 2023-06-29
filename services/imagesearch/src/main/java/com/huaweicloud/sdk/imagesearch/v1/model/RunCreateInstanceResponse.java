@@ -1,106 +1,93 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class RunCreateInstanceResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="desc")
-    
+    @JsonProperty(value = "desc")
 
     private String desc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="registerDate")
-    
+    @JsonProperty(value = "registerDate")
 
     private Long registerDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expiredDate")
-    
+    @JsonProperty(value = "expiredDate")
 
     private Long expiredDate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
 
     private Integer level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-        /**
+
+    /**
      * 实例的状态，有以下状态信息：   - NORMAL：正常。   - ARREARAGE：欠费。   - CREATION：创建中。   - CREATION_FAILD：创建失败。   - DELETING：删除中。   - DELETING_FAILED：删除失败。   - ABNORMAL：异常。
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum NORMAL for value: "NORMAL"
          */
         public static final StatusEnum NORMAL = new StatusEnum("NORMAL");
-        
+
         /**
          * Enum ARREARAGE for value: "ARREARAGE"
          */
         public static final StatusEnum ARREARAGE = new StatusEnum("ARREARAGE");
-        
+
         /**
          * Enum CREATION for value: "CREATION"
          */
         public static final StatusEnum CREATION = new StatusEnum("CREATION");
-        
+
         /**
          * Enum CREATION_FAILD for value: "CREATION_FAILD"
          */
         public static final StatusEnum CREATION_FAILD = new StatusEnum("CREATION_FAILD");
-        
+
         /**
          * Enum DELETING for value: "DELETING"
          */
         public static final StatusEnum DELETING = new StatusEnum("DELETING");
-        
+
         /**
          * Enum DELETING_FAILED for value: "DELETING_FAILED"
          */
         public static final StatusEnum DELETING_FAILED = new StatusEnum("DELETING_FAILED");
-        
+
         /**
          * Enum ABNORMAL for value: "ABNORMAL"
          */
         public static final StatusEnum ABNORMAL = new StatusEnum("ABNORMAL");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -134,25 +121,18 @@ public class RunCreateInstanceResponse extends SdkResponse {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,14 +150,12 @@ public class RunCreateInstanceResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceName")
-    
+    @JsonProperty(value = "instanceName")
 
     private String instanceName;
 
@@ -185,9 +163,6 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 模型展示名或领域名称。
@@ -201,15 +176,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.domain = domain;
     }
 
-    
-
     public RunCreateInstanceResponse withDesc(String desc) {
         this.desc = desc;
         return this;
     }
-
-    
-
 
     /**
      * 描述。
@@ -223,15 +193,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.desc = desc;
     }
 
-    
-
     public RunCreateInstanceResponse withRegisterDate(Long registerDate) {
         this.registerDate = registerDate;
         return this;
     }
-
-    
-
 
     /**
      * 注册时间。
@@ -245,15 +210,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.registerDate = registerDate;
     }
 
-    
-
     public RunCreateInstanceResponse withExpiredDate(Long expiredDate) {
         this.expiredDate = expiredDate;
         return this;
     }
-
-    
-
 
     /**
      * 过期时间，-1表示永不过期。
@@ -267,15 +227,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.expiredDate = expiredDate;
     }
 
-    
-
     public RunCreateInstanceResponse withLevel(Integer level) {
         this.level = level;
         return this;
     }
-
-    
-
 
     /**
      * 规格，即实例的图片数量规格，默认为30000000（单位：张）。
@@ -289,16 +244,13 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.level = level;
     }
 
-    
-
     public RunCreateInstanceResponse withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public RunCreateInstanceResponse addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -306,7 +258,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
     }
 
     public RunCreateInstanceResponse withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -325,15 +277,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    
-
     public RunCreateInstanceResponse withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例的状态，有以下状态信息：   - NORMAL：正常。   - ARREARAGE：欠费。   - CREATION：创建中。   - CREATION_FAILD：创建失败。   - DELETING：删除中。   - DELETING_FAILED：删除失败。   - ABNORMAL：异常。
@@ -347,15 +294,10 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public RunCreateInstanceResponse withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。
@@ -369,30 +311,27 @@ public class RunCreateInstanceResponse extends SdkResponse {
         this.instanceName = instanceName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunCreateInstanceResponse runCreateInstanceResponse = (RunCreateInstanceResponse) o;
-        return Objects.equals(this.domain, runCreateInstanceResponse.domain) &&
-            Objects.equals(this.desc, runCreateInstanceResponse.desc) &&
-            Objects.equals(this.registerDate, runCreateInstanceResponse.registerDate) &&
-            Objects.equals(this.expiredDate, runCreateInstanceResponse.expiredDate) &&
-            Objects.equals(this.level, runCreateInstanceResponse.level) &&
-            Objects.equals(this.tags, runCreateInstanceResponse.tags) &&
-            Objects.equals(this.status, runCreateInstanceResponse.status) &&
-            Objects.equals(this.instanceName, runCreateInstanceResponse.instanceName);
+        RunCreateInstanceResponse that = (RunCreateInstanceResponse) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.registerDate, that.registerDate)
+            && Objects.equals(this.expiredDate, that.expiredDate) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(domain, desc, registerDate, expiredDate, level, tags, status, instanceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -408,6 +347,7 @@ public class RunCreateInstanceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -418,8 +358,5 @@ public class RunCreateInstanceResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

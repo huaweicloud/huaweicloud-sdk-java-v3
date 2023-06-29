@@ -33,15 +33,15 @@ public class ListLabelPageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLabelPageRequest listLabelPageRequest = (ListLabelPageRequest) o;
-        return Objects.equals(this.eihealthProjectId, listLabelPageRequest.eihealthProjectId);
+        ListLabelPageRequest that = (ListLabelPageRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

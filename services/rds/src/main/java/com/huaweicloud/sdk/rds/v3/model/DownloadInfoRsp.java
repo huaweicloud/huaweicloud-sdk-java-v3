@@ -55,16 +55,15 @@ public class DownloadInfoRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadInfoRsp downloadInfoRsp = (DownloadInfoRsp) o;
-        return Objects.equals(this.downloadLink, downloadInfoRsp.downloadLink)
-            && Objects.equals(this.category, downloadInfoRsp.category);
+        DownloadInfoRsp that = (DownloadInfoRsp) obj;
+        return Objects.equals(this.downloadLink, that.downloadLink) && Objects.equals(this.category, that.category);
     }
 
     @Override

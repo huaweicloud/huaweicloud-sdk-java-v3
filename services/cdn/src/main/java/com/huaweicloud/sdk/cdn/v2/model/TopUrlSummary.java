@@ -121,18 +121,17 @@ public class TopUrlSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopUrlSummary topUrlSummary = (TopUrlSummary) o;
-        return Objects.equals(this.url, topUrlSummary.url) && Objects.equals(this.value, topUrlSummary.value)
-            && Objects.equals(this.startTime, topUrlSummary.startTime)
-            && Objects.equals(this.endTime, topUrlSummary.endTime)
-            && Objects.equals(this.statType, topUrlSummary.statType);
+        TopUrlSummary that = (TopUrlSummary) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.statType, that.statType);
     }
 
     @Override

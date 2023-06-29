@@ -66,16 +66,15 @@ public class UpdateCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCertificateResponse updateCertificateResponse = (UpdateCertificateResponse) o;
-        return Objects.equals(this.requestId, updateCertificateResponse.requestId)
-            && Objects.equals(this.certificate, updateCertificateResponse.certificate);
+        UpdateCertificateResponse that = (UpdateCertificateResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.certificate, that.certificate);
     }
 
     @Override

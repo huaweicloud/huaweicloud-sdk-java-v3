@@ -99,18 +99,17 @@ public class IvsStandardByVideoAndIdCardImageResponseBodyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IvsStandardByVideoAndIdCardImageResponseBodyResult ivsStandardByVideoAndIdCardImageResponseBodyResult =
-            (IvsStandardByVideoAndIdCardImageResponseBodyResult) o;
-        return Objects.equals(this.serviceName, ivsStandardByVideoAndIdCardImageResponseBodyResult.serviceName)
-            && Objects.equals(this.count, ivsStandardByVideoAndIdCardImageResponseBodyResult.count)
-            && Objects.equals(this.respData, ivsStandardByVideoAndIdCardImageResponseBodyResult.respData);
+        IvsStandardByVideoAndIdCardImageResponseBodyResult that =
+            (IvsStandardByVideoAndIdCardImageResponseBodyResult) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.respData, that.respData);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ActivateNodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActivateNodeRequestBody activateNodeRequestBody = (ActivateNodeRequestBody) o;
-        return Objects.equals(this.orderId, activateNodeRequestBody.orderId)
-            && Objects.equals(this.cpuOrderId, activateNodeRequestBody.cpuOrderId)
-            && Objects.equals(this.npuGpuOrderId, activateNodeRequestBody.npuGpuOrderId);
+        ActivateNodeRequestBody that = (ActivateNodeRequestBody) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.cpuOrderId, that.cpuOrderId)
+            && Objects.equals(this.npuGpuOrderId, that.npuGpuOrderId);
     }
 
     @Override

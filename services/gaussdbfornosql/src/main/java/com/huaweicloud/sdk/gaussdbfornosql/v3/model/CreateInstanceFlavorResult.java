@@ -99,18 +99,16 @@ public class CreateInstanceFlavorResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceFlavorResult createInstanceFlavorResult = (CreateInstanceFlavorResult) o;
-        return Objects.equals(this.num, createInstanceFlavorResult.num)
-            && Objects.equals(this.storage, createInstanceFlavorResult.storage)
-            && Objects.equals(this.size, createInstanceFlavorResult.size)
-            && Objects.equals(this.specCode, createInstanceFlavorResult.specCode);
+        CreateInstanceFlavorResult that = (CreateInstanceFlavorResult) obj;
+        return Objects.equals(this.num, that.num) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.specCode, that.specCode);
     }
 
     @Override

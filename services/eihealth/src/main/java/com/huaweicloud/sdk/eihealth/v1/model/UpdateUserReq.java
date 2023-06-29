@@ -99,17 +99,16 @@ public class UpdateUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserReq updateUserReq = (UpdateUserReq) o;
-        return Objects.equals(this.mobile, updateUserReq.mobile)
-            && Objects.equals(this.areacode, updateUserReq.areacode) && Objects.equals(this.email, updateUserReq.email)
-            && Objects.equals(this.ticket, updateUserReq.ticket);
+        UpdateUserReq that = (UpdateUserReq) obj;
+        return Objects.equals(this.mobile, that.mobile) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.ticket, that.ticket);
     }
 
     @Override

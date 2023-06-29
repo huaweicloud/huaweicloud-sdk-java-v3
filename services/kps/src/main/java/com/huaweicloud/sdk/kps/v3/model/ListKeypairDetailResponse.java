@@ -44,15 +44,15 @@ public class ListKeypairDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListKeypairDetailResponse listKeypairDetailResponse = (ListKeypairDetailResponse) o;
-        return Objects.equals(this.keypair, listKeypairDetailResponse.keypair);
+        ListKeypairDetailResponse that = (ListKeypairDetailResponse) obj;
+        return Objects.equals(this.keypair, that.keypair);
     }
 
     @Override

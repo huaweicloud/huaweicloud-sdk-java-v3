@@ -119,18 +119,16 @@ public class ShowDliAgencyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDliAgencyResponse showDliAgencyResponse = (ShowDliAgencyResponse) o;
-        return Objects.equals(this.isSuccess, showDliAgencyResponse.isSuccess)
-            && Objects.equals(this.message, showDliAgencyResponse.message)
-            && Objects.equals(this.version, showDliAgencyResponse.version)
-            && Objects.equals(this.currentRoles, showDliAgencyResponse.currentRoles);
+        ShowDliAgencyResponse that = (ShowDliAgencyResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.currentRoles, that.currentRoles);
     }
 
     @Override

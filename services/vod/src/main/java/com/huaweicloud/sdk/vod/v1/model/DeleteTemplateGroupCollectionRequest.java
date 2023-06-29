@@ -57,17 +57,16 @@ public class DeleteTemplateGroupCollectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTemplateGroupCollectionRequest deleteTemplateGroupCollectionRequest =
-            (DeleteTemplateGroupCollectionRequest) o;
-        return Objects.equals(this.xSdkDate, deleteTemplateGroupCollectionRequest.xSdkDate)
-            && Objects.equals(this.groupCollectionId, deleteTemplateGroupCollectionRequest.groupCollectionId);
+        DeleteTemplateGroupCollectionRequest that = (DeleteTemplateGroupCollectionRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.groupCollectionId, that.groupCollectionId);
     }
 
     @Override

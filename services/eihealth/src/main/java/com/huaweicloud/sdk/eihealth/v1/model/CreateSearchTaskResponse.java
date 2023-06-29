@@ -34,15 +34,15 @@ public class CreateSearchTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSearchTaskResponse createSearchTaskResponse = (CreateSearchTaskResponse) o;
-        return Objects.equals(this.body, createSearchTaskResponse.body);
+        CreateSearchTaskResponse that = (CreateSearchTaskResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

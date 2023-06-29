@@ -55,15 +55,15 @@ public class FuncCode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncCode funcCode = (FuncCode) o;
-        return Objects.equals(this.file, funcCode.file) && Objects.equals(this.link, funcCode.link);
+        FuncCode that = (FuncCode) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.link, that.link);
     }
 
     @Override

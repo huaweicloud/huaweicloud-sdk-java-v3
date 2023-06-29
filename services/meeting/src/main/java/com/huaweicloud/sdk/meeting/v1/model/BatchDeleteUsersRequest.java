@@ -122,18 +122,17 @@ public class BatchDeleteUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteUsersRequest batchDeleteUsersRequest = (BatchDeleteUsersRequest) o;
-        return Objects.equals(this.xRequestId, batchDeleteUsersRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, batchDeleteUsersRequest.acceptLanguage)
-            && Objects.equals(this.accountType, batchDeleteUsersRequest.accountType)
-            && Objects.equals(this.body, batchDeleteUsersRequest.body);
+        BatchDeleteUsersRequest that = (BatchDeleteUsersRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

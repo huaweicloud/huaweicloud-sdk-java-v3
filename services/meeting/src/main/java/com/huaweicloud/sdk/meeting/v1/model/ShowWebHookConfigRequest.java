@@ -55,16 +55,15 @@ public class ShowWebHookConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWebHookConfigRequest showWebHookConfigRequest = (ShowWebHookConfigRequest) o;
-        return Objects.equals(this.corpId, showWebHookConfigRequest.corpId)
-            && Objects.equals(this.spId, showWebHookConfigRequest.spId);
+        ShowWebHookConfigRequest that = (ShowWebHookConfigRequest) obj;
+        return Objects.equals(this.corpId, that.corpId) && Objects.equals(this.spId, that.spId);
     }
 
     @Override

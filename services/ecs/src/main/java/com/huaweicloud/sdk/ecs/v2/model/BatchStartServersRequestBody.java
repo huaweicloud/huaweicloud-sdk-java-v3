@@ -43,15 +43,15 @@ public class BatchStartServersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStartServersRequestBody batchStartServersRequestBody = (BatchStartServersRequestBody) o;
-        return Objects.equals(this.osStart, batchStartServersRequestBody.osStart);
+        BatchStartServersRequestBody that = (BatchStartServersRequestBody) obj;
+        return Objects.equals(this.osStart, that.osStart);
     }
 
     @Override

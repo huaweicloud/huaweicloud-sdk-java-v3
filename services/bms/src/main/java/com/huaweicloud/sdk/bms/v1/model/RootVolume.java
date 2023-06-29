@@ -67,22 +67,15 @@ public class RootVolume {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
         }
 
         public static VolumetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class RootVolume {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterTypeEnum(value));
         }
 
         public static ClusterTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,17 +245,16 @@ public class RootVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RootVolume rootVolume = (RootVolume) o;
-        return Objects.equals(this.volumetype, rootVolume.volumetype) && Objects.equals(this.size, rootVolume.size)
-            && Objects.equals(this.clusterId, rootVolume.clusterId)
-            && Objects.equals(this.clusterType, rootVolume.clusterType);
+        RootVolume that = (RootVolume) obj;
+        return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterType, that.clusterType);
     }
 
     @Override

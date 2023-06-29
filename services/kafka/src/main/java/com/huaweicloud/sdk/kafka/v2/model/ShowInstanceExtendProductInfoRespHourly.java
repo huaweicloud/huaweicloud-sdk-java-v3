@@ -97,18 +97,16 @@ public class ShowInstanceExtendProductInfoRespHourly {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceExtendProductInfoRespHourly showInstanceExtendProductInfoRespHourly =
-            (ShowInstanceExtendProductInfoRespHourly) o;
-        return Objects.equals(this.name, showInstanceExtendProductInfoRespHourly.name)
-            && Objects.equals(this.version, showInstanceExtendProductInfoRespHourly.version)
-            && Objects.equals(this.values, showInstanceExtendProductInfoRespHourly.values);
+        ShowInstanceExtendProductInfoRespHourly that = (ShowInstanceExtendProductInfoRespHourly) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

@@ -99,16 +99,16 @@ public class MetricConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricConfig metricConfig = (MetricConfig) o;
-        return Objects.equals(this.name, metricConfig.name) && Objects.equals(this.type, metricConfig.type)
-            && Objects.equals(this.threshold, metricConfig.threshold) && Objects.equals(this.min, metricConfig.min);
+        MetricConfig that = (MetricConfig) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.min, that.min);
     }
 
     @Override

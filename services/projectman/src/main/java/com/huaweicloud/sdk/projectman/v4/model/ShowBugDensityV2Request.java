@@ -65,16 +65,15 @@ public class ShowBugDensityV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBugDensityV2Request showBugDensityV2Request = (ShowBugDensityV2Request) o;
-        return Objects.equals(this.projectId, showBugDensityV2Request.projectId)
-            && Objects.equals(this.body, showBugDensityV2Request.body);
+        ShowBugDensityV2Request that = (ShowBugDensityV2Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

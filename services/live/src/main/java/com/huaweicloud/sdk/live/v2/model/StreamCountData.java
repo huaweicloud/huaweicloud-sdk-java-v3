@@ -57,15 +57,15 @@ public class StreamCountData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamCountData streamCountData = (StreamCountData) o;
-        return Objects.equals(this.value, streamCountData.value) && Objects.equals(this.time, streamCountData.time);
+        StreamCountData that = (StreamCountData) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.time, that.time);
     }
 
     @Override

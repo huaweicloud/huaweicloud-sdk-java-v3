@@ -81,16 +81,15 @@ public class DownloadKeystoreRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadKeystoreRequest downloadKeystoreRequest = (DownloadKeystoreRequest) o;
-        return Objects.equals(this.fileName, downloadKeystoreRequest.fileName)
-            && Objects.equals(this.domainId, downloadKeystoreRequest.domainId);
+        DownloadKeystoreRequest that = (DownloadKeystoreRequest) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

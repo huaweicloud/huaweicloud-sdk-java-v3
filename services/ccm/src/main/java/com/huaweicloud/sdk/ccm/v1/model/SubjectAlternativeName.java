@@ -55,16 +55,15 @@ public class SubjectAlternativeName {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubjectAlternativeName subjectAlternativeName = (SubjectAlternativeName) o;
-        return Objects.equals(this.type, subjectAlternativeName.type)
-            && Objects.equals(this.value, subjectAlternativeName.value);
+        SubjectAlternativeName that = (SubjectAlternativeName) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value);
     }
 
     @Override

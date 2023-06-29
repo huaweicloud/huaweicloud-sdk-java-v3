@@ -99,18 +99,16 @@ public class PackageExerciseJudgeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackageExerciseJudgeRequestBody packageExerciseJudgeRequestBody = (PackageExerciseJudgeRequestBody) o;
-        return Objects.equals(this.notifyUrl, packageExerciseJudgeRequestBody.notifyUrl)
-            && Objects.equals(this.timeout, packageExerciseJudgeRequestBody.timeout)
-            && Objects.equals(this.outputType, packageExerciseJudgeRequestBody.outputType)
-            && Objects.equals(this.codeAnswer, packageExerciseJudgeRequestBody.codeAnswer);
+        PackageExerciseJudgeRequestBody that = (PackageExerciseJudgeRequestBody) obj;
+        return Objects.equals(this.notifyUrl, that.notifyUrl) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputType, that.outputType) && Objects.equals(this.codeAnswer, that.codeAnswer);
     }
 
     @Override

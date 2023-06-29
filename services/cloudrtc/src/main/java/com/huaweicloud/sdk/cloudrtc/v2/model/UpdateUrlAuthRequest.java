@@ -135,19 +135,17 @@ public class UpdateUrlAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUrlAuthRequest updateUrlAuthRequest = (UpdateUrlAuthRequest) o;
-        return Objects.equals(this.authorization, updateUrlAuthRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateUrlAuthRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, updateUrlAuthRequest.xProjectId)
-            && Objects.equals(this.appId, updateUrlAuthRequest.appId)
-            && Objects.equals(this.body, updateUrlAuthRequest.body);
+        UpdateUrlAuthRequest that = (UpdateUrlAuthRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

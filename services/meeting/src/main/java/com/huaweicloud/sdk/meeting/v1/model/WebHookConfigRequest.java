@@ -121,19 +121,17 @@ public class WebHookConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebHookConfigRequest webHookConfigRequest = (WebHookConfigRequest) o;
-        return Objects.equals(this.corpId, webHookConfigRequest.corpId)
-            && Objects.equals(this.spId, webHookConfigRequest.spId)
-            && Objects.equals(this.subscriberId, webHookConfigRequest.subscriberId)
-            && Objects.equals(this.subscriberKey, webHookConfigRequest.subscriberKey)
-            && Objects.equals(this.url, webHookConfigRequest.url);
+        WebHookConfigRequest that = (WebHookConfigRequest) obj;
+        return Objects.equals(this.corpId, that.corpId) && Objects.equals(this.spId, that.spId)
+            && Objects.equals(this.subscriberId, that.subscriberId)
+            && Objects.equals(this.subscriberKey, that.subscriberKey) && Objects.equals(this.url, that.url);
     }
 
     @Override

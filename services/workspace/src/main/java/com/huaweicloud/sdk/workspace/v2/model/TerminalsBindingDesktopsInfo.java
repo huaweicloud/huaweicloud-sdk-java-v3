@@ -99,18 +99,16 @@ public class TerminalsBindingDesktopsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TerminalsBindingDesktopsInfo terminalsBindingDesktopsInfo = (TerminalsBindingDesktopsInfo) o;
-        return Objects.equals(this.id, terminalsBindingDesktopsInfo.id)
-            && Objects.equals(this.mac, terminalsBindingDesktopsInfo.mac)
-            && Objects.equals(this.desktopName, terminalsBindingDesktopsInfo.desktopName)
-            && Objects.equals(this.description, terminalsBindingDesktopsInfo.description);
+        TerminalsBindingDesktopsInfo that = (TerminalsBindingDesktopsInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.description, that.description);
     }
 
     @Override

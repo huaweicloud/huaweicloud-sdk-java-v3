@@ -87,17 +87,16 @@ public class UpdateWorkSpaceUserOrGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkSpaceUserOrGroupRequest updateWorkSpaceUserOrGroupRequest = (UpdateWorkSpaceUserOrGroupRequest) o;
-        return Objects.equals(this.workspaceId, updateWorkSpaceUserOrGroupRequest.workspaceId)
-            && Objects.equals(this.userId, updateWorkSpaceUserOrGroupRequest.userId)
-            && Objects.equals(this.body, updateWorkSpaceUserOrGroupRequest.body);
+        UpdateWorkSpaceUserOrGroupRequest that = (UpdateWorkSpaceUserOrGroupRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

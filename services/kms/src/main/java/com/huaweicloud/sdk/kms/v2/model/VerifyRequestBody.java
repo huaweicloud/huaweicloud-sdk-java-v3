@@ -126,22 +126,15 @@ public class VerifyRequestBody {
             if (value == null) {
                 return null;
             }
-            SigningAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SigningAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SigningAlgorithmEnum(value));
         }
 
         public static SigningAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SigningAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -208,22 +201,15 @@ public class VerifyRequestBody {
             if (value == null) {
                 return null;
             }
-            MessageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MessageTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MessageTypeEnum(value));
         }
 
         public static MessageTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MessageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -353,20 +339,18 @@ public class VerifyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VerifyRequestBody verifyRequestBody = (VerifyRequestBody) o;
-        return Objects.equals(this.keyId, verifyRequestBody.keyId)
-            && Objects.equals(this.message, verifyRequestBody.message)
-            && Objects.equals(this.signature, verifyRequestBody.signature)
-            && Objects.equals(this.signingAlgorithm, verifyRequestBody.signingAlgorithm)
-            && Objects.equals(this.messageType, verifyRequestBody.messageType)
-            && Objects.equals(this.sequence, verifyRequestBody.sequence);
+        VerifyRequestBody that = (VerifyRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.signature, that.signature)
+            && Objects.equals(this.signingAlgorithm, that.signingAlgorithm)
+            && Objects.equals(this.messageType, that.messageType) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

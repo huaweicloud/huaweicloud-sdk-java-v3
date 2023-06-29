@@ -55,20 +55,20 @@ public class Decimal {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Decimal decimal = (Decimal) o;
-        return Objects.equals(this.scale, decimal.scale) && Objects.equals(this.unscaled, decimal.unscaled);
+        Decimal that = (Decimal) obj;
+        return Objects.equals(this.scale, that.scale) && java.util.Arrays.equals(this.unscaled, that.unscaled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(scale, unscaled);
+        return Objects.hash(scale, java.util.Arrays.hashCode(unscaled));
     }
 
     @Override

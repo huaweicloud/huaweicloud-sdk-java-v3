@@ -87,17 +87,16 @@ public class UpdateCatalogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCatalogRequest updateCatalogRequest = (UpdateCatalogRequest) o;
-        return Objects.equals(this.instanceId, updateCatalogRequest.instanceId)
-            && Objects.equals(this.catalogName, updateCatalogRequest.catalogName)
-            && Objects.equals(this.body, updateCatalogRequest.body);
+        UpdateCatalogRequest that = (UpdateCatalogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,60 +1,50 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.ResourceInstanceTagRequestMatches;
-import com.huaweicloud.sdk.dbss.v1.model.TagKeyValuesBean;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ResourceInstanceTagRequest
  */
-public class ResourceInstanceTagRequest  {
-
+public class ResourceInstanceTagRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="matches")
-    
+    @JsonProperty(value = "matches")
+
     private List<ResourceInstanceTagRequestMatches> matches = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags")
-    
+    @JsonProperty(value = "not_tags")
+
     private List<TagKeyValuesBean> notTags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<TagKeyValuesBean> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags_any")
-    
+    @JsonProperty(value = "tags_any")
+
     private List<TagKeyValuesBean> tagsAny = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="not_tags_any")
-    
+    @JsonProperty(value = "not_tags_any")
+
     private List<TagKeyValuesBean> notTagsAny = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
 
     private TagKeyValuesBean sysTags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="without_any_tag")
-    
+    @JsonProperty(value = "without_any_tag")
 
     private Boolean withoutAnyTag;
 
@@ -63,9 +53,8 @@ public class ResourceInstanceTagRequest  {
         return this;
     }
 
-    
     public ResourceInstanceTagRequest addMatchesItem(ResourceInstanceTagRequestMatches matchesItem) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         this.matches.add(matchesItem);
@@ -73,7 +62,7 @@ public class ResourceInstanceTagRequest  {
     }
 
     public ResourceInstanceTagRequest withMatches(Consumer<List<ResourceInstanceTagRequestMatches>> matchesSetter) {
-        if(this.matches == null) {
+        if (this.matches == null) {
             this.matches = new ArrayList<>();
         }
         matchesSetter.accept(this.matches);
@@ -92,16 +81,13 @@ public class ResourceInstanceTagRequest  {
         this.matches = matches;
     }
 
-    
-
     public ResourceInstanceTagRequest withNotTags(List<TagKeyValuesBean> notTags) {
         this.notTags = notTags;
         return this;
     }
 
-    
     public ResourceInstanceTagRequest addNotTagsItem(TagKeyValuesBean notTagsItem) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         this.notTags.add(notTagsItem);
@@ -109,7 +95,7 @@ public class ResourceInstanceTagRequest  {
     }
 
     public ResourceInstanceTagRequest withNotTags(Consumer<List<TagKeyValuesBean>> notTagsSetter) {
-        if(this.notTags == null) {
+        if (this.notTags == null) {
             this.notTags = new ArrayList<>();
         }
         notTagsSetter.accept(this.notTags);
@@ -128,16 +114,13 @@ public class ResourceInstanceTagRequest  {
         this.notTags = notTags;
     }
 
-    
-
     public ResourceInstanceTagRequest withTags(List<TagKeyValuesBean> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ResourceInstanceTagRequest addTagsItem(TagKeyValuesBean tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -145,7 +128,7 @@ public class ResourceInstanceTagRequest  {
     }
 
     public ResourceInstanceTagRequest withTags(Consumer<List<TagKeyValuesBean>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -164,16 +147,13 @@ public class ResourceInstanceTagRequest  {
         this.tags = tags;
     }
 
-    
-
     public ResourceInstanceTagRequest withTagsAny(List<TagKeyValuesBean> tagsAny) {
         this.tagsAny = tagsAny;
         return this;
     }
 
-    
     public ResourceInstanceTagRequest addTagsAnyItem(TagKeyValuesBean tagsAnyItem) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         this.tagsAny.add(tagsAnyItem);
@@ -181,7 +161,7 @@ public class ResourceInstanceTagRequest  {
     }
 
     public ResourceInstanceTagRequest withTagsAny(Consumer<List<TagKeyValuesBean>> tagsAnySetter) {
-        if(this.tagsAny == null) {
+        if (this.tagsAny == null) {
             this.tagsAny = new ArrayList<>();
         }
         tagsAnySetter.accept(this.tagsAny);
@@ -200,16 +180,13 @@ public class ResourceInstanceTagRequest  {
         this.tagsAny = tagsAny;
     }
 
-    
-
     public ResourceInstanceTagRequest withNotTagsAny(List<TagKeyValuesBean> notTagsAny) {
         this.notTagsAny = notTagsAny;
         return this;
     }
 
-    
     public ResourceInstanceTagRequest addNotTagsAnyItem(TagKeyValuesBean notTagsAnyItem) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         this.notTagsAny.add(notTagsAnyItem);
@@ -217,7 +194,7 @@ public class ResourceInstanceTagRequest  {
     }
 
     public ResourceInstanceTagRequest withNotTagsAny(Consumer<List<TagKeyValuesBean>> notTagsAnySetter) {
-        if(this.notTagsAny == null) {
+        if (this.notTagsAny == null) {
             this.notTagsAny = new ArrayList<>();
         }
         notTagsAnySetter.accept(this.notTagsAny);
@@ -236,22 +213,19 @@ public class ResourceInstanceTagRequest  {
         this.notTagsAny = notTagsAny;
     }
 
-    
-
     public ResourceInstanceTagRequest withSysTags(TagKeyValuesBean sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
     public ResourceInstanceTagRequest withSysTags(Consumer<TagKeyValuesBean> sysTagsSetter) {
-        if(this.sysTags == null ){
+        if (this.sysTags == null) {
             this.sysTags = new TagKeyValuesBean();
             sysTagsSetter.accept(this.sysTags);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get sysTags
@@ -265,15 +239,10 @@ public class ResourceInstanceTagRequest  {
         this.sysTags = sysTags;
     }
 
-    
-
     public ResourceInstanceTagRequest withWithoutAnyTag(Boolean withoutAnyTag) {
         this.withoutAnyTag = withoutAnyTag;
         return this;
     }
-
-    
-
 
     /**
      * 不包含任意一个标签，该字段为true时查询所有不带标签的资源，此时忽略 “tags”、“tags_any”、“not_tags”、“not_tags_any”字段
@@ -287,29 +256,26 @@ public class ResourceInstanceTagRequest  {
         this.withoutAnyTag = withoutAnyTag;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceInstanceTagRequest resourceInstanceTagRequest = (ResourceInstanceTagRequest) o;
-        return Objects.equals(this.matches, resourceInstanceTagRequest.matches) &&
-            Objects.equals(this.notTags, resourceInstanceTagRequest.notTags) &&
-            Objects.equals(this.tags, resourceInstanceTagRequest.tags) &&
-            Objects.equals(this.tagsAny, resourceInstanceTagRequest.tagsAny) &&
-            Objects.equals(this.notTagsAny, resourceInstanceTagRequest.notTagsAny) &&
-            Objects.equals(this.sysTags, resourceInstanceTagRequest.sysTags) &&
-            Objects.equals(this.withoutAnyTag, resourceInstanceTagRequest.withoutAnyTag);
+        ResourceInstanceTagRequest that = (ResourceInstanceTagRequest) obj;
+        return Objects.equals(this.matches, that.matches) && Objects.equals(this.notTags, that.notTags)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.tagsAny, that.tagsAny)
+            && Objects.equals(this.notTagsAny, that.notTagsAny) && Objects.equals(this.sysTags, that.sysTags)
+            && Objects.equals(this.withoutAnyTag, that.withoutAnyTag);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(matches, notTags, tags, tagsAny, notTagsAny, sysTags, withoutAnyTag);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -324,6 +290,7 @@ public class ResourceInstanceTagRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -334,8 +301,5 @@ public class ResourceInstanceTagRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

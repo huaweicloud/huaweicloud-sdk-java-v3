@@ -370,29 +370,22 @@ public class DeletePublicZoneResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePublicZoneResponse deletePublicZoneResponse = (DeletePublicZoneResponse) o;
-        return Objects.equals(this.id, deletePublicZoneResponse.id)
-            && Objects.equals(this.name, deletePublicZoneResponse.name)
-            && Objects.equals(this.description, deletePublicZoneResponse.description)
-            && Objects.equals(this.email, deletePublicZoneResponse.email)
-            && Objects.equals(this.zoneType, deletePublicZoneResponse.zoneType)
-            && Objects.equals(this.ttl, deletePublicZoneResponse.ttl)
-            && Objects.equals(this.serial, deletePublicZoneResponse.serial)
-            && Objects.equals(this.status, deletePublicZoneResponse.status)
-            && Objects.equals(this.recordNum, deletePublicZoneResponse.recordNum)
-            && Objects.equals(this.poolId, deletePublicZoneResponse.poolId)
-            && Objects.equals(this.projectId, deletePublicZoneResponse.projectId)
-            && Objects.equals(this.createdAt, deletePublicZoneResponse.createdAt)
-            && Objects.equals(this.updatedAt, deletePublicZoneResponse.updatedAt)
-            && Objects.equals(this.masters, deletePublicZoneResponse.masters)
-            && Objects.equals(this.links, deletePublicZoneResponse.links);
+        DeletePublicZoneResponse that = (DeletePublicZoneResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.serial, that.serial) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.recordNum, that.recordNum) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.masters, that.masters)
+            && Objects.equals(this.links, that.links);
     }
 
     @Override

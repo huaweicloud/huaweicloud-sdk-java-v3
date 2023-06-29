@@ -143,20 +143,17 @@ public class ListFirmwaresRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFirmwaresRequest listFirmwaresRequest = (ListFirmwaresRequest) o;
-        return Objects.equals(this.deviceType, listFirmwaresRequest.deviceType)
-            && Objects.equals(this.arch, listFirmwaresRequest.arch)
-            && Objects.equals(this.osName, listFirmwaresRequest.osName)
-            && Objects.equals(this.osVersion, listFirmwaresRequest.osVersion)
-            && Objects.equals(this.offset, listFirmwaresRequest.offset)
-            && Objects.equals(this.limit, listFirmwaresRequest.limit);
+        ListFirmwaresRequest that = (ListFirmwaresRequest) obj;
+        return Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.osName, that.osName) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

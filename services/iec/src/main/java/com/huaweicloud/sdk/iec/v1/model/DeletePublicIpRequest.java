@@ -33,15 +33,15 @@ public class DeletePublicIpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePublicIpRequest deletePublicIpRequest = (DeletePublicIpRequest) o;
-        return Objects.equals(this.publicipId, deletePublicIpRequest.publicipId);
+        DeletePublicIpRequest that = (DeletePublicIpRequest) obj;
+        return Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override

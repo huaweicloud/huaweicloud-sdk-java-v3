@@ -231,24 +231,23 @@ public class OsExtraSpecs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsExtraSpecs osExtraSpecs = (OsExtraSpecs) o;
-        return Objects.equals(this.condOperationStatus, osExtraSpecs.condOperationStatus)
-            && Objects.equals(this.ecsGeneration, osExtraSpecs.ecsGeneration)
-            && Objects.equals(this.ecsPerformancetype, osExtraSpecs.ecsPerformancetype)
-            && Objects.equals(this.ecsVirtualizationEnvTypes, osExtraSpecs.ecsVirtualizationEnvTypes)
-            && Objects.equals(this.infoCpuName, osExtraSpecs.infoCpuName)
-            && Objects.equals(this.infoGpuName, osExtraSpecs.infoGpuName)
-            && Objects.equals(this.pciPassthroughAlias, osExtraSpecs.pciPassthroughAlias)
-            && Objects.equals(this.pciPassthroughEnableGpu, osExtraSpecs.pciPassthroughEnableGpu)
-            && Objects.equals(this.pciPassthroughGpuSpecs, osExtraSpecs.pciPassthroughGpuSpecs)
-            && Objects.equals(this.resourceType, osExtraSpecs.resourceType);
+        OsExtraSpecs that = (OsExtraSpecs) obj;
+        return Objects.equals(this.condOperationStatus, that.condOperationStatus)
+            && Objects.equals(this.ecsGeneration, that.ecsGeneration)
+            && Objects.equals(this.ecsPerformancetype, that.ecsPerformancetype)
+            && Objects.equals(this.ecsVirtualizationEnvTypes, that.ecsVirtualizationEnvTypes)
+            && Objects.equals(this.infoCpuName, that.infoCpuName) && Objects.equals(this.infoGpuName, that.infoGpuName)
+            && Objects.equals(this.pciPassthroughAlias, that.pciPassthroughAlias)
+            && Objects.equals(this.pciPassthroughEnableGpu, that.pciPassthroughEnableGpu)
+            && Objects.equals(this.pciPassthroughGpuSpecs, that.pciPassthroughGpuSpecs)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

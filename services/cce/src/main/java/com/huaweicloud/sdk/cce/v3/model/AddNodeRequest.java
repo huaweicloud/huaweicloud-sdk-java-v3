@@ -65,16 +65,15 @@ public class AddNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddNodeRequest addNodeRequest = (AddNodeRequest) o;
-        return Objects.equals(this.clusterId, addNodeRequest.clusterId)
-            && Objects.equals(this.body, addNodeRequest.body);
+        AddNodeRequest that = (AddNodeRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

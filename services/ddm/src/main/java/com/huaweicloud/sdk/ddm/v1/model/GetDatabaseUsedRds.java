@@ -99,17 +99,16 @@ public class GetDatabaseUsedRds {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetDatabaseUsedRds getDatabaseUsedRds = (GetDatabaseUsedRds) o;
-        return Objects.equals(this.id, getDatabaseUsedRds.id) && Objects.equals(this.name, getDatabaseUsedRds.name)
-            && Objects.equals(this.status, getDatabaseUsedRds.status)
-            && Objects.equals(this.errorMsg, getDatabaseUsedRds.errorMsg);
+        GetDatabaseUsedRds that = (GetDatabaseUsedRds) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

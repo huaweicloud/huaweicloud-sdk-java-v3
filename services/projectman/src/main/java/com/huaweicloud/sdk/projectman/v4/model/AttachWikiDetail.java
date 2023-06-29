@@ -184,21 +184,18 @@ public class AttachWikiDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachWikiDetail attachWikiDetail = (AttachWikiDetail) o;
-        return Objects.equals(this.issueId, attachWikiDetail.issueId)
-            && Objects.equals(this.wikiTitle, attachWikiDetail.wikiTitle)
-            && Objects.equals(this.wikiAuthor, attachWikiDetail.wikiAuthor)
-            && Objects.equals(this.project, attachWikiDetail.project)
-            && Objects.equals(this.createdDate, attachWikiDetail.createdDate)
-            && Objects.equals(this.wikiId, attachWikiDetail.wikiId)
-            && Objects.equals(this.region, attachWikiDetail.region);
+        AttachWikiDetail that = (AttachWikiDetail) obj;
+        return Objects.equals(this.issueId, that.issueId) && Objects.equals(this.wikiTitle, that.wikiTitle)
+            && Objects.equals(this.wikiAuthor, that.wikiAuthor) && Objects.equals(this.project, that.project)
+            && Objects.equals(this.createdDate, that.createdDate) && Objects.equals(this.wikiId, that.wikiId)
+            && Objects.equals(this.region, that.region);
     }
 
     @Override

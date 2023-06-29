@@ -55,16 +55,15 @@ public class UpadateIpGroupIpOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpadateIpGroupIpOption upadateIpGroupIpOption = (UpadateIpGroupIpOption) o;
-        return Objects.equals(this.ip, upadateIpGroupIpOption.ip)
-            && Objects.equals(this.description, upadateIpGroupIpOption.description);
+        UpadateIpGroupIpOption that = (UpadateIpGroupIpOption) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.description, that.description);
     }
 
     @Override

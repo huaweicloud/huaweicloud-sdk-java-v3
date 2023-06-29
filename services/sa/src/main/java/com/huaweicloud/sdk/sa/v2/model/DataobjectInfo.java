@@ -187,20 +187,18 @@ public class DataobjectInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataobjectInfo dataobjectInfo = (DataobjectInfo) o;
-        return Objects.equals(this.id, dataobjectInfo.id) && Objects.equals(this.createTime, dataobjectInfo.createTime)
-            && Objects.equals(this.updateTime, dataobjectInfo.updateTime)
-            && Objects.equals(this.projectId, dataobjectInfo.projectId)
-            && Objects.equals(this.dataclassId, dataobjectInfo.dataclassId)
-            && Objects.equals(this.name, dataobjectInfo.name) && Objects.equals(this.type, dataobjectInfo.type)
-            && Objects.equals(this.content, dataobjectInfo.content);
+        DataobjectInfo that = (DataobjectInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.content, that.content);
     }
 
     @Override

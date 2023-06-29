@@ -326,21 +326,21 @@ public class Event {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event event = (Event) o;
-        return Objects.equals(this.id, event.id) && Objects.equals(this.name, event.name)
-            && Objects.equals(this.projectId, event.projectId) && Objects.equals(this.createdAt, event.createdAt)
-            && Objects.equals(this.updatedAt, event.updatedAt) && Objects.equals(this.description, event.description)
-            && Objects.equals(this.inUsing, event.inUsing) && Objects.equals(this.events, event.events)
-            && Objects.equals(this.target, event.target) && Objects.equals(this.targetResource, event.targetResource)
-            && Objects.equals(this.successMessages, event.successMessages)
-            && Objects.equals(this.failMessages, event.failMessages) && Objects.equals(this.deleteAt, event.deleteAt);
+        Event that = (Event) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.inUsing, that.inUsing) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.target, that.target) && Objects.equals(this.targetResource, that.targetResource)
+            && Objects.equals(this.successMessages, that.successMessages)
+            && Objects.equals(this.failMessages, that.failMessages) && Objects.equals(this.deleteAt, that.deleteAt);
     }
 
     @Override

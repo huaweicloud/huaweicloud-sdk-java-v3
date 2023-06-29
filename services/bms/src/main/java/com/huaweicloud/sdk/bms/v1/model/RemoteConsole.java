@@ -55,15 +55,15 @@ public class RemoteConsole {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoteConsole remoteConsole = (RemoteConsole) o;
-        return Objects.equals(this.protocol, remoteConsole.protocol) && Objects.equals(this.type, remoteConsole.type);
+        RemoteConsole that = (RemoteConsole) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.type, that.type);
     }
 
     @Override

@@ -99,17 +99,16 @@ public class ToolInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ToolInfoDto toolInfoDto = (ToolInfoDto) o;
-        return Objects.equals(this.toolId, toolInfoDto.toolId) && Objects.equals(this.toolName, toolInfoDto.toolName)
-            && Objects.equals(this.toolVersion, toolInfoDto.toolVersion)
-            && Objects.equals(this.toolType, toolInfoDto.toolType);
+        ToolInfoDto that = (ToolInfoDto) obj;
+        return Objects.equals(this.toolId, that.toolId) && Objects.equals(this.toolName, that.toolName)
+            && Objects.equals(this.toolVersion, that.toolVersion) && Objects.equals(this.toolType, that.toolType);
     }
 
     @Override

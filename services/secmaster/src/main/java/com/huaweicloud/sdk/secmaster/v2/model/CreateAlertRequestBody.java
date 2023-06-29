@@ -43,15 +43,15 @@ public class CreateAlertRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertRequestBody createAlertRequestBody = (CreateAlertRequestBody) o;
-        return Objects.equals(this.dataObject, createAlertRequestBody.dataObject);
+        CreateAlertRequestBody that = (CreateAlertRequestBody) obj;
+        return Objects.equals(this.dataObject, that.dataObject);
     }
 
     @Override

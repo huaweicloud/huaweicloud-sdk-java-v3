@@ -77,17 +77,16 @@ public class DBSInstanceHostInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DBSInstanceHostInfoResult dbSInstanceHostInfoResult = (DBSInstanceHostInfoResult) o;
-        return Objects.equals(this.id, dbSInstanceHostInfoResult.id)
-            && Objects.equals(this.host, dbSInstanceHostInfoResult.host)
-            && Objects.equals(this.hostName, dbSInstanceHostInfoResult.hostName);
+        DBSInstanceHostInfoResult that = (DBSInstanceHostInfoResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.hostName, that.hostName);
     }
 
     @Override

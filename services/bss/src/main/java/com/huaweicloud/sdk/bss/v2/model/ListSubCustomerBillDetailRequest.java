@@ -395,31 +395,26 @@ public class ListSubCustomerBillDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubCustomerBillDetailRequest listSubCustomerBillDetailRequest = (ListSubCustomerBillDetailRequest) o;
-        return Objects.equals(this.xLanguage, listSubCustomerBillDetailRequest.xLanguage)
-            && Objects.equals(this.billCycle, listSubCustomerBillDetailRequest.billCycle)
-            && Objects.equals(this.customerId, listSubCustomerBillDetailRequest.customerId)
-            && Objects.equals(this.serviceTypeCode, listSubCustomerBillDetailRequest.serviceTypeCode)
-            && Objects.equals(this.regionCode, listSubCustomerBillDetailRequest.regionCode)
-            && Objects.equals(this.chargingMode, listSubCustomerBillDetailRequest.chargingMode)
-            && Objects.equals(this.billDetailType, listSubCustomerBillDetailRequest.billDetailType)
-            && Objects.equals(this.resourceId, listSubCustomerBillDetailRequest.resourceId)
-            && Objects.equals(this.resourceName, listSubCustomerBillDetailRequest.resourceName)
-            && Objects.equals(this.tradeId, listSubCustomerBillDetailRequest.tradeId)
-            && Objects.equals(this.accountManagerId, listSubCustomerBillDetailRequest.accountManagerId)
-            && Objects.equals(this.associationType, listSubCustomerBillDetailRequest.associationType)
-            && Objects.equals(this.offset, listSubCustomerBillDetailRequest.offset)
-            && Objects.equals(this.limit, listSubCustomerBillDetailRequest.limit)
-            && Objects.equals(this.indirectPartnerId, listSubCustomerBillDetailRequest.indirectPartnerId)
-            && Objects.equals(this.billDateBegin, listSubCustomerBillDetailRequest.billDateBegin)
-            && Objects.equals(this.billDateEnd, listSubCustomerBillDetailRequest.billDateEnd);
+        ListSubCustomerBillDetailRequest that = (ListSubCustomerBillDetailRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.billDetailType, that.billDetailType)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.accountManagerId, that.accountManagerId)
+            && Objects.equals(this.associationType, that.associationType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.billDateBegin, that.billDateBegin)
+            && Objects.equals(this.billDateEnd, that.billDateEnd);
     }
 
     @Override

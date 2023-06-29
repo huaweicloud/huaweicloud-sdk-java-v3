@@ -121,18 +121,16 @@ public class ListPlaybookApprovesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookApprovesResponse listPlaybookApprovesResponse = (ListPlaybookApprovesResponse) o;
-        return Objects.equals(this.code, listPlaybookApprovesResponse.code)
-            && Objects.equals(this.message, listPlaybookApprovesResponse.message)
-            && Objects.equals(this.data, listPlaybookApprovesResponse.data)
-            && Objects.equals(this.xRequestId, listPlaybookApprovesResponse.xRequestId);
+        ListPlaybookApprovesResponse that = (ListPlaybookApprovesResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

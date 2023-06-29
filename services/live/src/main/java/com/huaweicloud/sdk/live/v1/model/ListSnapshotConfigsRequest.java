@@ -102,18 +102,16 @@ public class ListSnapshotConfigsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotConfigsRequest listSnapshotConfigsRequest = (ListSnapshotConfigsRequest) o;
-        return Objects.equals(this.domain, listSnapshotConfigsRequest.domain)
-            && Objects.equals(this.appName, listSnapshotConfigsRequest.appName)
-            && Objects.equals(this.limit, listSnapshotConfigsRequest.limit)
-            && Objects.equals(this.offset, listSnapshotConfigsRequest.offset);
+        ListSnapshotConfigsRequest that = (ListSnapshotConfigsRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

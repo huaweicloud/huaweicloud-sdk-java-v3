@@ -35,15 +35,15 @@ public class ResetNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetNodeResponse resetNodeResponse = (ResetNodeResponse) o;
-        return Objects.equals(this.jobid, resetNodeResponse.jobid);
+        ResetNodeResponse that = (ResetNodeResponse) obj;
+        return Objects.equals(this.jobid, that.jobid);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class CustomizeFormula {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomizeFormula customizeFormula = (CustomizeFormula) o;
-        return Objects.equals(this.alias, customizeFormula.alias)
-            && Objects.equals(this.formula, customizeFormula.formula);
+        CustomizeFormula that = (CustomizeFormula) obj;
+        return Objects.equals(this.alias, that.alias) && Objects.equals(this.formula, that.formula);
     }
 
     @Override

@@ -430,31 +430,23 @@ public class UpdateDeploymentUsingPatchResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeploymentUsingPatchResponse updateDeploymentUsingPatchResponse = (UpdateDeploymentUsingPatchResponse) o;
-        return Objects.equals(this.template, updateDeploymentUsingPatchResponse.template)
-            && Objects.equals(this.reason, updateDeploymentUsingPatchResponse.reason)
-            && Objects.equals(this.readyReplicas, updateDeploymentUsingPatchResponse.readyReplicas)
-            && Objects.equals(this.replicas, updateDeploymentUsingPatchResponse.replicas)
-            && Objects.equals(this.description, updateDeploymentUsingPatchResponse.description)
-            && Objects.equals(this.createdAt, updateDeploymentUsingPatchResponse.createdAt)
-            && Objects.equals(this.source, updateDeploymentUsingPatchResponse.source)
-            && Objects.equals(this.apiVersion, updateDeploymentUsingPatchResponse.apiVersion)
-            && Objects.equals(this.nodeIds, updateDeploymentUsingPatchResponse.nodeIds)
-            && Objects.equals(this.clusterId, updateDeploymentUsingPatchResponse.clusterId)
-            && Objects.equals(this.updatedAt, updateDeploymentUsingPatchResponse.updatedAt)
-            && Objects.equals(this.projectId, updateDeploymentUsingPatchResponse.projectId)
-            && Objects.equals(this.name, updateDeploymentUsingPatchResponse.name)
-            && Objects.equals(this.id, updateDeploymentUsingPatchResponse.id)
-            && Objects.equals(this.state, updateDeploymentUsingPatchResponse.state)
-            && Objects.equals(this.nodeNum, updateDeploymentUsingPatchResponse.nodeNum)
-            && Objects.equals(this.result, updateDeploymentUsingPatchResponse.result);
+        UpdateDeploymentUsingPatchResponse that = (UpdateDeploymentUsingPatchResponse) obj;
+        return Objects.equals(this.template, that.template) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.readyReplicas, that.readyReplicas) && Objects.equals(this.replicas, that.replicas)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

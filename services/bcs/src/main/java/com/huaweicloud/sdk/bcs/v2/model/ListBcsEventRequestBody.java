@@ -149,19 +149,17 @@ public class ListBcsEventRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBcsEventRequestBody listBcsEventRequestBody = (ListBcsEventRequestBody) o;
-        return Objects.equals(this.timeRange, listBcsEventRequestBody.timeRange)
-            && Objects.equals(this.step, listBcsEventRequestBody.step)
-            && Objects.equals(this.search, listBcsEventRequestBody.search)
-            && Objects.equals(this.metadataRelation, listBcsEventRequestBody.metadataRelation)
-            && Objects.equals(this.sort, listBcsEventRequestBody.sort);
+        ListBcsEventRequestBody that = (ListBcsEventRequestBody) obj;
+        return Objects.equals(this.timeRange, that.timeRange) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.search, that.search) && Objects.equals(this.metadataRelation, that.metadataRelation)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override

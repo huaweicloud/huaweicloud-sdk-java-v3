@@ -75,22 +75,15 @@ public class ListFeedbackOptionRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class ListFeedbackOptionRequest {
             if (value == null) {
                 return null;
             }
-            FeedbackSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FeedbackSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FeedbackSourceEnum(value));
         }
 
         public static FeedbackSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FeedbackSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,19 +272,17 @@ public class ListFeedbackOptionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFeedbackOptionRequest listFeedbackOptionRequest = (ListFeedbackOptionRequest) o;
-        return Objects.equals(this.xServiceKey, listFeedbackOptionRequest.xServiceKey)
-            && Objects.equals(this.xSite, listFeedbackOptionRequest.xSite)
-            && Objects.equals(this.xLanguage, listFeedbackOptionRequest.xLanguage)
-            && Objects.equals(this.status, listFeedbackOptionRequest.status)
-            && Objects.equals(this.feedbackSource, listFeedbackOptionRequest.feedbackSource);
+        ListFeedbackOptionRequest that = (ListFeedbackOptionRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.feedbackSource, that.feedbackSource);
     }
 
     @Override

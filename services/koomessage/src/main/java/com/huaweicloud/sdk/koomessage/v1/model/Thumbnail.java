@@ -231,23 +231,19 @@ public class Thumbnail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Thumbnail thumbnail = (Thumbnail) o;
-        return Objects.equals(this.id, thumbnail.id) && Objects.equals(this.createdAt, thumbnail.createdAt)
-            && Objects.equals(this.isPrimary, thumbnail.isPrimary)
-            && Objects.equals(this.resourceType, thumbnail.resourceType)
-            && Objects.equals(this.fileName, thumbnail.fileName)
-            && Objects.equals(this.aimResourceId, thumbnail.aimResourceId)
-            && Objects.equals(this.obsObjectKey, thumbnail.obsObjectKey)
-            && Objects.equals(this.imageRate, thumbnail.imageRate)
-            && Objects.equals(this.isAutoGen, thumbnail.isAutoGen)
-            && Objects.equals(this.description, thumbnail.description);
+        Thumbnail that = (Thumbnail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.isPrimary, that.isPrimary) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.aimResourceId, that.aimResourceId)
+            && Objects.equals(this.obsObjectKey, that.obsObjectKey) && Objects.equals(this.imageRate, that.imageRate)
+            && Objects.equals(this.isAutoGen, that.isAutoGen) && Objects.equals(this.description, that.description);
     }
 
     @Override

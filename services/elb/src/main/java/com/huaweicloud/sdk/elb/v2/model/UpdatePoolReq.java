@@ -131,19 +131,18 @@ public class UpdatePoolReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePoolReq updatePoolReq = (UpdatePoolReq) o;
-        return Objects.equals(this.lbAlgorithm, updatePoolReq.lbAlgorithm)
-            && Objects.equals(this.name, updatePoolReq.name)
-            && Objects.equals(this.description, updatePoolReq.description)
-            && Objects.equals(this.adminStateUp, updatePoolReq.adminStateUp)
-            && Objects.equals(this.sessionPersistence, updatePoolReq.sessionPersistence);
+        UpdatePoolReq that = (UpdatePoolReq) obj;
+        return Objects.equals(this.lbAlgorithm, that.lbAlgorithm) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.sessionPersistence, that.sessionPersistence);
     }
 
     @Override

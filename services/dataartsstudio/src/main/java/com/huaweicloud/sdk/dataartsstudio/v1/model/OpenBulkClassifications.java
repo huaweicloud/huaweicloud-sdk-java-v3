@@ -83,16 +83,15 @@ public class OpenBulkClassifications {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenBulkClassifications openBulkClassifications = (OpenBulkClassifications) o;
-        return Objects.equals(this.guids, openBulkClassifications.guids)
-            && Objects.equals(this.classification, openBulkClassifications.classification);
+        OpenBulkClassifications that = (OpenBulkClassifications) obj;
+        return Objects.equals(this.guids, that.guids) && Objects.equals(this.classification, that.classification);
     }
 
     @Override

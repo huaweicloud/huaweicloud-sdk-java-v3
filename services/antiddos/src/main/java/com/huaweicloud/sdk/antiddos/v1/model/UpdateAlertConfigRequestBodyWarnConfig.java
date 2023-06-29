@@ -187,23 +187,20 @@ public class UpdateAlertConfigRequestBodyWarnConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAlertConfigRequestBodyWarnConfig updateAlertConfigRequestBodyWarnConfig =
-            (UpdateAlertConfigRequestBodyWarnConfig) o;
-        return Objects.equals(this.antiDDoS, updateAlertConfigRequestBodyWarnConfig.antiDDoS)
-            && Objects.equals(this.backDoors, updateAlertConfigRequestBodyWarnConfig.backDoors)
-            && Objects.equals(this.bruceForce, updateAlertConfigRequestBodyWarnConfig.bruceForce)
-            && Objects.equals(this.highPrivilege, updateAlertConfigRequestBodyWarnConfig.highPrivilege)
-            && Objects.equals(this.remoteLogin, updateAlertConfigRequestBodyWarnConfig.remoteLogin)
-            && Objects.equals(this.sendFrequency, updateAlertConfigRequestBodyWarnConfig.sendFrequency)
-            && Objects.equals(this.waf, updateAlertConfigRequestBodyWarnConfig.waf)
-            && Objects.equals(this.weakPassword, updateAlertConfigRequestBodyWarnConfig.weakPassword);
+        UpdateAlertConfigRequestBodyWarnConfig that = (UpdateAlertConfigRequestBodyWarnConfig) obj;
+        return Objects.equals(this.antiDDoS, that.antiDDoS) && Objects.equals(this.backDoors, that.backDoors)
+            && Objects.equals(this.bruceForce, that.bruceForce)
+            && Objects.equals(this.highPrivilege, that.highPrivilege)
+            && Objects.equals(this.remoteLogin, that.remoteLogin)
+            && Objects.equals(this.sendFrequency, that.sendFrequency) && Objects.equals(this.waf, that.waf)
+            && Objects.equals(this.weakPassword, that.weakPassword);
     }
 
     @Override

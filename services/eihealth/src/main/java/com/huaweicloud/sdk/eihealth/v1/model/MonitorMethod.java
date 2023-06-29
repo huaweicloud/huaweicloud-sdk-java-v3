@@ -58,22 +58,15 @@ public class MonitorMethod {
         if (value == null) {
             return null;
         }
-        MonitorMethod result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new MonitorMethod(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MonitorMethod(value));
     }
 
     public static MonitorMethod valueOf(String value) {
         if (value == null) {
             return null;
         }
-        MonitorMethod result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

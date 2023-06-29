@@ -187,22 +187,21 @@ public class NotNullConstraint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotNullConstraint notNullConstraint = (NotNullConstraint) o;
-        return Objects.equals(this.catalogName, notNullConstraint.catalogName)
-            && Objects.equals(this.databaseName, notNullConstraint.databaseName)
-            && Objects.equals(this.tableName, notNullConstraint.tableName)
-            && Objects.equals(this.columnName, notNullConstraint.columnName)
-            && Objects.equals(this.constraintName, notNullConstraint.constraintName)
-            && Objects.equals(this.enableConstraint, notNullConstraint.enableConstraint)
-            && Objects.equals(this.relyConstraint, notNullConstraint.relyConstraint)
-            && Objects.equals(this.validateConstraint, notNullConstraint.validateConstraint);
+        NotNullConstraint that = (NotNullConstraint) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.constraintName, that.constraintName)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

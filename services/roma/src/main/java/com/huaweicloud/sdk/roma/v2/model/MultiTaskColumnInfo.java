@@ -77,17 +77,16 @@ public class MultiTaskColumnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskColumnInfo multiTaskColumnInfo = (MultiTaskColumnInfo) o;
-        return Objects.equals(this.fieldName, multiTaskColumnInfo.fieldName)
-            && Objects.equals(this.fieldType, multiTaskColumnInfo.fieldType)
-            && Objects.equals(this.fieldLength, multiTaskColumnInfo.fieldLength);
+        MultiTaskColumnInfo that = (MultiTaskColumnInfo) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.fieldType, that.fieldType)
+            && Objects.equals(this.fieldLength, that.fieldLength);
     }
 
     @Override

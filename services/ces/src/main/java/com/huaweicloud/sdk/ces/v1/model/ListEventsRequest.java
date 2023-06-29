@@ -60,22 +60,15 @@ public class ListEventsRequest {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
         }
 
         public static EventTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,19 +218,17 @@ public class ListEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.eventType, listEventsRequest.eventType)
-            && Objects.equals(this.eventName, listEventsRequest.eventName)
-            && Objects.equals(this.from, listEventsRequest.from) && Objects.equals(this.to, listEventsRequest.to)
-            && Objects.equals(this.start, listEventsRequest.start)
-            && Objects.equals(this.limit, listEventsRequest.limit);
+        ListEventsRequest that = (ListEventsRequest) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.eventName, that.eventName)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

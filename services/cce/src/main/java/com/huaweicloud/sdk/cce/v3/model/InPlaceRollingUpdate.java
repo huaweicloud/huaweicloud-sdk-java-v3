@@ -33,15 +33,15 @@ public class InPlaceRollingUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InPlaceRollingUpdate inPlaceRollingUpdate = (InPlaceRollingUpdate) o;
-        return Objects.equals(this.userDefinedStep, inPlaceRollingUpdate.userDefinedStep);
+        InPlaceRollingUpdate that = (InPlaceRollingUpdate) obj;
+        return Objects.equals(this.userDefinedStep, that.userDefinedStep);
     }
 
     @Override

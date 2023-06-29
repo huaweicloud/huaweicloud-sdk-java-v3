@@ -109,18 +109,16 @@ public class UpdateRepoDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRepoDomainsRequest updateRepoDomainsRequest = (UpdateRepoDomainsRequest) o;
-        return Objects.equals(this.namespace, updateRepoDomainsRequest.namespace)
-            && Objects.equals(this.repository, updateRepoDomainsRequest.repository)
-            && Objects.equals(this.accessDomain, updateRepoDomainsRequest.accessDomain)
-            && Objects.equals(this.body, updateRepoDomainsRequest.body);
+        UpdateRepoDomainsRequest that = (UpdateRepoDomainsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.accessDomain, that.accessDomain) && Objects.equals(this.body, that.body);
     }
 
     @Override

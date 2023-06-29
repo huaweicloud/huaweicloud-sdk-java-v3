@@ -53,15 +53,15 @@ public class ShowSpecificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSpecificationResponse showSpecificationResponse = (ShowSpecificationResponse) o;
-        return Objects.equals(this.orderInfos, showSpecificationResponse.orderInfos);
+        ShowSpecificationResponse that = (ShowSpecificationResponse) obj;
+        return Objects.equals(this.orderInfos, that.orderInfos);
     }
 
     @Override

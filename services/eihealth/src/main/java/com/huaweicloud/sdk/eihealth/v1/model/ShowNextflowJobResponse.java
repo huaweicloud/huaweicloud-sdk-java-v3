@@ -455,31 +455,26 @@ public class ShowNextflowJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowJobResponse showNextflowJobResponse = (ShowNextflowJobResponse) o;
-        return Objects.equals(this.id, showNextflowJobResponse.id)
-            && Objects.equals(this.name, showNextflowJobResponse.name)
-            && Objects.equals(this.description, showNextflowJobResponse.description)
-            && Objects.equals(this.labels, showNextflowJobResponse.labels)
-            && Objects.equals(this.status, showNextflowJobResponse.status)
-            && Objects.equals(this.hasIgnoreFailedTasks, showNextflowJobResponse.hasIgnoreFailedTasks)
-            && Objects.equals(this.createTime, showNextflowJobResponse.createTime)
-            && Objects.equals(this.finishTime, showNextflowJobResponse.finishTime)
-            && Objects.equals(this.failedMessage, showNextflowJobResponse.failedMessage)
-            && Objects.equals(this.failedReason, showNextflowJobResponse.failedReason)
-            && Objects.equals(this.workflowName, showNextflowJobResponse.workflowName)
-            && Objects.equals(this.workflowId, showNextflowJobResponse.workflowId)
-            && Objects.equals(this.commandLine, showNextflowJobResponse.commandLine)
-            && Objects.equals(this.params, showNextflowJobResponse.params)
-            && Objects.equals(this.nextflowParameters, showNextflowJobResponse.nextflowParameters)
-            && Objects.equals(this.configFiles, showNextflowJobResponse.configFiles)
-            && Objects.equals(this.configContext, showNextflowJobResponse.configContext);
+        ShowNextflowJobResponse that = (ShowNextflowJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.hasIgnoreFailedTasks, that.hasIgnoreFailedTasks)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.workflowId, that.workflowId)
+            && Objects.equals(this.commandLine, that.commandLine) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.nextflowParameters, that.nextflowParameters)
+            && Objects.equals(this.configFiles, that.configFiles)
+            && Objects.equals(this.configContext, that.configContext);
     }
 
     @Override

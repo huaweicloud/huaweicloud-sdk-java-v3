@@ -77,18 +77,16 @@ public class DeleteSpecialThrottlingConfigurationV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSpecialThrottlingConfigurationV2Request deleteSpecialThrottlingConfigurationV2Request =
-            (DeleteSpecialThrottlingConfigurationV2Request) o;
-        return Objects.equals(this.instanceId, deleteSpecialThrottlingConfigurationV2Request.instanceId)
-            && Objects.equals(this.throttleId, deleteSpecialThrottlingConfigurationV2Request.throttleId)
-            && Objects.equals(this.strategyId, deleteSpecialThrottlingConfigurationV2Request.strategyId);
+        DeleteSpecialThrottlingConfigurationV2Request that = (DeleteSpecialThrottlingConfigurationV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.throttleId, that.throttleId)
+            && Objects.equals(this.strategyId, that.strategyId);
     }
 
     @Override

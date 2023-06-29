@@ -52,15 +52,15 @@ public class DeleteAccessConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAccessConfigRequestBody deleteAccessConfigRequestBody = (DeleteAccessConfigRequestBody) o;
-        return Objects.equals(this.accessConfigIdList, deleteAccessConfigRequestBody.accessConfigIdList);
+        DeleteAccessConfigRequestBody that = (DeleteAccessConfigRequestBody) obj;
+        return Objects.equals(this.accessConfigIdList, that.accessConfigIdList);
     }
 
     @Override

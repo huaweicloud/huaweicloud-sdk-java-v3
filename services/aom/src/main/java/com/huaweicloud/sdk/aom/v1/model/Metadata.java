@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 任务节点元数据。
  */
-public class Metadata  {
-
+public class Metadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration")
-    
+    @JsonProperty(value = "configuration")
+
     private Map<String, Object> _configuration = null;
-    
+
     public Metadata withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点类型。
@@ -51,17 +40,13 @@ public class Metadata  {
         this.type = type;
     }
 
-    
-
     public Metadata withConfiguration(Map<String, Object> _configuration) {
         this._configuration = _configuration;
         return this;
     }
 
-    
-
     public Metadata putConfigurationItem(String key, Object _configurationItem) {
-        if(this._configuration == null) {
+        if (this._configuration == null) {
             this._configuration = new HashMap<>();
         }
         this._configuration.put(key, _configurationItem);
@@ -69,12 +54,13 @@ public class Metadata  {
     }
 
     public Metadata withConfiguration(Consumer<Map<String, Object>> _configurationSetter) {
-        if(this._configuration == null) {
+        if (this._configuration == null) {
             this._configuration = new HashMap<>();
         }
         _configurationSetter.accept(this._configuration);
         return this;
     }
+
     /**
      * 配置信息。
      * @return _configuration
@@ -87,24 +73,23 @@ public class Metadata  {
         this._configuration = _configuration;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metadata metadata = (Metadata) o;
-        return Objects.equals(this.type, metadata.type) &&
-            Objects.equals(this._configuration, metadata._configuration);
+        Metadata that = (Metadata) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this._configuration, that._configuration);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, _configuration);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +99,7 @@ public class Metadata  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +110,5 @@ public class Metadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,16 @@ public class OrgPropertyDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrgPropertyDTO orgPropertyDTO = (OrgPropertyDTO) o;
-        return Objects.equals(this.propertyKey, orgPropertyDTO.propertyKey)
-            && Objects.equals(this.propertyValue, orgPropertyDTO.propertyValue);
+        OrgPropertyDTO that = (OrgPropertyDTO) obj;
+        return Objects.equals(this.propertyKey, that.propertyKey)
+            && Objects.equals(this.propertyValue, that.propertyValue);
     }
 
     @Override

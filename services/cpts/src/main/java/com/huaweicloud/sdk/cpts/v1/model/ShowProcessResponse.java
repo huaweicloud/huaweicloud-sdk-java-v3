@@ -110,18 +110,16 @@ public class ShowProcessResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProcessResponse showProcessResponse = (ShowProcessResponse) o;
-        return Objects.equals(this.code, showProcessResponse.code)
-            && Objects.equals(this.message, showProcessResponse.message)
-            && Objects.equals(this.json, showProcessResponse.json)
-            && Objects.equals(this.extend, showProcessResponse.extend);
+        ShowProcessResponse that = (ShowProcessResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.json, that.json) && Objects.equals(this.extend, that.extend);
     }
 
     @Override

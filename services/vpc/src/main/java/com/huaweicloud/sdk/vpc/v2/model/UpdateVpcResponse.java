@@ -44,15 +44,15 @@ public class UpdateVpcResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcResponse updateVpcResponse = (UpdateVpcResponse) o;
-        return Objects.equals(this.vpc, updateVpcResponse.vpc);
+        UpdateVpcResponse that = (UpdateVpcResponse) obj;
+        return Objects.equals(this.vpc, that.vpc);
     }
 
     @Override

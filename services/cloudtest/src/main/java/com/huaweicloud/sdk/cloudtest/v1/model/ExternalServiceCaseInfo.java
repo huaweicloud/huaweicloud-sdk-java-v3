@@ -244,23 +244,19 @@ public class ExternalServiceCaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalServiceCaseInfo externalServiceCaseInfo = (ExternalServiceCaseInfo) o;
-        return Objects.equals(this.description, externalServiceCaseInfo.description)
-            && Objects.equals(this.preparation, externalServiceCaseInfo.preparation)
-            && Objects.equals(this.steps, externalServiceCaseInfo.steps)
-            && Objects.equals(this.labelList, externalServiceCaseInfo.labelList)
-            && Objects.equals(this.moduleId, externalServiceCaseInfo.moduleId)
-            && Objects.equals(this.testVersionId, externalServiceCaseInfo.testVersionId)
-            && Objects.equals(this.fixVersionId, externalServiceCaseInfo.fixVersionId)
-            && Objects.equals(this.assignedId, externalServiceCaseInfo.assignedId)
-            && Objects.equals(this.issueId, externalServiceCaseInfo.issueId);
+        ExternalServiceCaseInfo that = (ExternalServiceCaseInfo) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.preparation, that.preparation)
+            && Objects.equals(this.steps, that.steps) && Objects.equals(this.labelList, that.labelList)
+            && Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.testVersionId, that.testVersionId)
+            && Objects.equals(this.fixVersionId, that.fixVersionId) && Objects.equals(this.assignedId, that.assignedId)
+            && Objects.equals(this.issueId, that.issueId);
     }
 
     @Override

@@ -227,19 +227,18 @@ public class TemplateGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateGroup templateGroup = (TemplateGroup) o;
-        return Objects.equals(this.groupId, templateGroup.groupId) && Objects.equals(this.name, templateGroup.name)
-            && Objects.equals(this.templateIds, templateGroup.templateIds)
-            && Objects.equals(this.videos, templateGroup.videos) && Objects.equals(this.audio, templateGroup.audio)
-            && Objects.equals(this.videoCommon, templateGroup.videoCommon)
-            && Objects.equals(this.common, templateGroup.common);
+        TemplateGroup that = (TemplateGroup) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.templateIds, that.templateIds) && Objects.equals(this.videos, that.videos)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.videoCommon, that.videoCommon)
+            && Objects.equals(this.common, that.common);
     }
 
     @Override

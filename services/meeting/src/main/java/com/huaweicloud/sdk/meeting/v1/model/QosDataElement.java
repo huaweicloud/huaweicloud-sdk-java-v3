@@ -99,17 +99,16 @@ public class QosDataElement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosDataElement qosDataElement = (QosDataElement) o;
-        return Objects.equals(this.time, qosDataElement.time) && Objects.equals(this.value, qosDataElement.value)
-            && Objects.equals(this.alarm, qosDataElement.alarm)
-            && Objects.equals(this.threshold, qosDataElement.threshold);
+        QosDataElement that = (QosDataElement) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.alarm, that.alarm) && Objects.equals(this.threshold, that.threshold);
     }
 
     @Override

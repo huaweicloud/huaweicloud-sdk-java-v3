@@ -235,24 +235,21 @@ public class ListProjectVpcChannelsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectVpcChannelsV2Request listProjectVpcChannelsV2Request = (ListProjectVpcChannelsV2Request) o;
-        return Objects.equals(this.offset, listProjectVpcChannelsV2Request.offset)
-            && Objects.equals(this.limit, listProjectVpcChannelsV2Request.limit)
-            && Objects.equals(this.id, listProjectVpcChannelsV2Request.id)
-            && Objects.equals(this.name, listProjectVpcChannelsV2Request.name)
-            && Objects.equals(this.preciseSearch, listProjectVpcChannelsV2Request.preciseSearch)
-            && Objects.equals(this.memberHost, listProjectVpcChannelsV2Request.memberHost)
-            && Objects.equals(this.memberPort, listProjectVpcChannelsV2Request.memberPort)
-            && Objects.equals(this.memberGroupName, listProjectVpcChannelsV2Request.memberGroupName)
-            && Objects.equals(this.memberGroupId, listProjectVpcChannelsV2Request.memberGroupId)
-            && Objects.equals(this.membersReturn, listProjectVpcChannelsV2Request.membersReturn);
+        ListProjectVpcChannelsV2Request that = (ListProjectVpcChannelsV2Request) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.preciseSearch, that.preciseSearch)
+            && Objects.equals(this.memberHost, that.memberHost) && Objects.equals(this.memberPort, that.memberPort)
+            && Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.membersReturn, that.membersReturn);
     }
 
     @Override

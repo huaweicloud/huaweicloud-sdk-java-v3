@@ -118,18 +118,16 @@ public class FilterTagResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilterTagResource filterTagResource = (FilterTagResource) o;
-        return Objects.equals(this.resourceId, filterTagResource.resourceId)
-            && Objects.equals(this.resourceName, filterTagResource.resourceName)
-            && Objects.equals(this.resourceDetail, filterTagResource.resourceDetail)
-            && Objects.equals(this.tags, filterTagResource.tags);
+        FilterTagResource that = (FilterTagResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class ChangeShareNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeShareNameRequest changeShareNameRequest = (ChangeShareNameRequest) o;
-        return Objects.equals(this.shareId, changeShareNameRequest.shareId)
-            && Objects.equals(this.body, changeShareNameRequest.body);
+        ChangeShareNameRequest that = (ChangeShareNameRequest) obj;
+        return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

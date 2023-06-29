@@ -212,23 +212,19 @@ public class ApigDataSourceView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigDataSourceView apigDataSourceView = (ApigDataSourceView) o;
-        return Objects.equals(this.dwName, apigDataSourceView.dwName)
-            && Objects.equals(this.dwType, apigDataSourceView.dwType)
-            && Objects.equals(this.createUser, apigDataSourceView.createUser)
-            && Objects.equals(this.createTime, apigDataSourceView.createTime)
-            && Objects.equals(this.agentId, apigDataSourceView.agentId)
-            && Objects.equals(this.agentName, apigDataSourceView.agentName)
-            && Objects.equals(this.dwId, apigDataSourceView.dwId)
-            && Objects.equals(this.qualifiedName, apigDataSourceView.qualifiedName)
-            && Objects.equals(this.description, apigDataSourceView.description);
+        ApigDataSourceView that = (ApigDataSourceView) obj;
+        return Objects.equals(this.dwName, that.dwName) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentName, that.agentName)
+            && Objects.equals(this.dwId, that.dwId) && Objects.equals(this.qualifiedName, that.qualifiedName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

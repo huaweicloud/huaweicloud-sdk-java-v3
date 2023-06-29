@@ -97,17 +97,16 @@ public class ShowFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFileResponse showFileResponse = (ShowFileResponse) o;
-        return Objects.equals(this.error, showFileResponse.error)
-            && Objects.equals(this.result, showFileResponse.result)
-            && Objects.equals(this.status, showFileResponse.status);
+        ShowFileResponse that = (ShowFileResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

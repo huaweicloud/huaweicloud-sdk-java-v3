@@ -33,15 +33,15 @@ public class DeleteConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConnectionRequest deleteConnectionRequest = (DeleteConnectionRequest) o;
-        return Objects.equals(this.connectionId, deleteConnectionRequest.connectionId);
+        DeleteConnectionRequest that = (DeleteConnectionRequest) obj;
+        return Objects.equals(this.connectionId, that.connectionId);
     }
 
     @Override

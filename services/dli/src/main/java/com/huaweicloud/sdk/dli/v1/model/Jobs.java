@@ -143,17 +143,17 @@ public class Jobs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Jobs jobs = (Jobs) o;
-        return Objects.equals(this.jobId, jobs.jobId) && Objects.equals(this.status, jobs.status)
-            && Objects.equals(this.createTime, jobs.createTime) && Objects.equals(this.exceptions, jobs.exceptions)
-            && Objects.equals(this.metrics, jobs.metrics) && Objects.equals(this.plan, jobs.plan);
+        Jobs that = (Jobs) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.exceptions, that.exceptions)
+            && Objects.equals(this.metrics, that.metrics) && Objects.equals(this.plan, that.plan);
     }
 
     @Override

@@ -74,15 +74,15 @@ public class AreaRegion {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AreaRegion areaRegion = (AreaRegion) o;
-        return Objects.equals(this.area, areaRegion.area) && Objects.equals(this.regions, areaRegion.regions);
+        AreaRegion that = (AreaRegion) obj;
+        return Objects.equals(this.area, that.area) && Objects.equals(this.regions, that.regions);
     }
 
     @Override

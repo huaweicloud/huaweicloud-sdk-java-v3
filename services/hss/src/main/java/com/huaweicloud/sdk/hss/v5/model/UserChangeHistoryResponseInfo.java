@@ -301,27 +301,23 @@ public class UserChangeHistoryResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserChangeHistoryResponseInfo userChangeHistoryResponseInfo = (UserChangeHistoryResponseInfo) o;
-        return Objects.equals(this.agentId, userChangeHistoryResponseInfo.agentId)
-            && Objects.equals(this.changeType, userChangeHistoryResponseInfo.changeType)
-            && Objects.equals(this.hostId, userChangeHistoryResponseInfo.hostId)
-            && Objects.equals(this.hostName, userChangeHistoryResponseInfo.hostName)
-            && Objects.equals(this.privateIp, userChangeHistoryResponseInfo.privateIp)
-            && Objects.equals(this.loginPermission, userChangeHistoryResponseInfo.loginPermission)
-            && Objects.equals(this.rootPermission, userChangeHistoryResponseInfo.rootPermission)
-            && Objects.equals(this.userGroupName, userChangeHistoryResponseInfo.userGroupName)
-            && Objects.equals(this.userHomeDir, userChangeHistoryResponseInfo.userHomeDir)
-            && Objects.equals(this.shell, userChangeHistoryResponseInfo.shell)
-            && Objects.equals(this.userName, userChangeHistoryResponseInfo.userName)
-            && Objects.equals(this.expireTime, userChangeHistoryResponseInfo.expireTime)
-            && Objects.equals(this.recentScanTime, userChangeHistoryResponseInfo.recentScanTime);
+        UserChangeHistoryResponseInfo that = (UserChangeHistoryResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.changeType, that.changeType)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.loginPermission, that.loginPermission)
+            && Objects.equals(this.rootPermission, that.rootPermission)
+            && Objects.equals(this.userGroupName, that.userGroupName)
+            && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.shell, that.shell)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

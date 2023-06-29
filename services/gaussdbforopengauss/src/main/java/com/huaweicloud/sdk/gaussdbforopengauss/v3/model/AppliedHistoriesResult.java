@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * AppliedHistoriesResult
  */
-public class AppliedHistoriesResult  {
-
+public class AppliedHistoriesResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_result")
-    
+    @JsonProperty(value = "apply_result")
 
     private String applyResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="applied_at")
-    
+    @JsonProperty(value = "applied_at")
 
     private String appliedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
@@ -51,9 +39,6 @@ public class AppliedHistoriesResult  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -67,15 +52,10 @@ public class AppliedHistoriesResult  {
         this.instanceId = instanceId;
     }
 
-    
-
     public AppliedHistoriesResult withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。
@@ -89,15 +69,10 @@ public class AppliedHistoriesResult  {
         this.instanceName = instanceName;
     }
 
-    
-
     public AppliedHistoriesResult withApplyResult(String applyResult) {
         this.applyResult = applyResult;
         return this;
     }
-
-    
-
 
     /**
      * 应用状态 (SUCCESS | FAILED)。
@@ -111,15 +86,10 @@ public class AppliedHistoriesResult  {
         this.applyResult = applyResult;
     }
 
-    
-
     public AppliedHistoriesResult withAppliedAt(String appliedAt) {
         this.appliedAt = appliedAt;
         return this;
     }
-
-    
-
 
     /**
      * 应用时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -133,15 +103,10 @@ public class AppliedHistoriesResult  {
         this.appliedAt = appliedAt;
     }
 
-    
-
     public AppliedHistoriesResult withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 失败原因错误码，如DBS.280005。
@@ -155,27 +120,25 @@ public class AppliedHistoriesResult  {
         this.errorCode = errorCode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppliedHistoriesResult appliedHistoriesResult = (AppliedHistoriesResult) o;
-        return Objects.equals(this.instanceId, appliedHistoriesResult.instanceId) &&
-            Objects.equals(this.instanceName, appliedHistoriesResult.instanceName) &&
-            Objects.equals(this.applyResult, appliedHistoriesResult.applyResult) &&
-            Objects.equals(this.appliedAt, appliedHistoriesResult.appliedAt) &&
-            Objects.equals(this.errorCode, appliedHistoriesResult.errorCode);
+        AppliedHistoriesResult that = (AppliedHistoriesResult) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.applyResult, that.applyResult) && Objects.equals(this.appliedAt, that.appliedAt)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, instanceName, applyResult, appliedAt, errorCode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class AppliedHistoriesResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class AppliedHistoriesResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

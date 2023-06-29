@@ -29,8 +29,8 @@ public class GetHostListFilter {
     private List<String> hostIpList = null;
 
     /**
-    * 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
-    */
+     * 主机状态。可以根据主机状态进行过滤。 uninstall:未安装 running:运行 offline:离线 error:异常 plugin error:插件错误 installing:安装中 install-fail:安装失败 upgrading:升级中 upgrading-transient:升级中 upgrade failed:升级失败 upgrade-fail:升级失败 uninstalling:卸载中 uninstalling-transient:卸载中 authentication error:鉴权失败
+     */
     public static final class HostStatusEnum {
 
         /**
@@ -145,22 +145,15 @@ public class GetHostListFilter {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostStatusEnum(value));
         }
 
         public static HostStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,18 +281,16 @@ public class GetHostListFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHostListFilter getHostListFilter = (GetHostListFilter) o;
-        return Objects.equals(this.hostNameList, getHostListFilter.hostNameList)
-            && Objects.equals(this.hostIpList, getHostListFilter.hostIpList)
-            && Objects.equals(this.hostStatus, getHostListFilter.hostStatus)
-            && Objects.equals(this.hostVersion, getHostListFilter.hostVersion);
+        GetHostListFilter that = (GetHostListFilter) obj;
+        return Objects.equals(this.hostNameList, that.hostNameList) && Objects.equals(this.hostIpList, that.hostIpList)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.hostVersion, that.hostVersion);
     }
 
     @Override

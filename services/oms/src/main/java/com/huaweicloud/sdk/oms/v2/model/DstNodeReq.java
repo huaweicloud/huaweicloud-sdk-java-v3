@@ -143,18 +143,17 @@ public class DstNodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DstNodeReq dstNodeReq = (DstNodeReq) o;
-        return Objects.equals(this.ak, dstNodeReq.ak) && Objects.equals(this.sk, dstNodeReq.sk)
-            && Objects.equals(this.securityToken, dstNodeReq.securityToken)
-            && Objects.equals(this.bucket, dstNodeReq.bucket) && Objects.equals(this.savePrefix, dstNodeReq.savePrefix)
-            && Objects.equals(this.region, dstNodeReq.region);
+        DstNodeReq that = (DstNodeReq) obj;
+        return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.securityToken, that.securityToken) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.savePrefix, that.savePrefix) && Objects.equals(this.region, that.region);
     }
 
     @Override

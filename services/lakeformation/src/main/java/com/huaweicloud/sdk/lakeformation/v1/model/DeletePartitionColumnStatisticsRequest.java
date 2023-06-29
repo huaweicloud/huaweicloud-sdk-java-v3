@@ -162,21 +162,18 @@ public class DeletePartitionColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePartitionColumnStatisticsRequest deletePartitionColumnStatisticsRequest =
-            (DeletePartitionColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, deletePartitionColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, deletePartitionColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, deletePartitionColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, deletePartitionColumnStatisticsRequest.tableName)
-            && Objects.equals(this.partitionValues, deletePartitionColumnStatisticsRequest.partitionValues)
-            && Objects.equals(this.columnName, deletePartitionColumnStatisticsRequest.columnName);
+        DeletePartitionColumnStatisticsRequest that = (DeletePartitionColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.partitionValues, that.partitionValues)
+            && Objects.equals(this.columnName, that.columnName);
     }
 
     @Override

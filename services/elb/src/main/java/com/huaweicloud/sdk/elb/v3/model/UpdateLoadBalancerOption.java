@@ -133,22 +133,15 @@ public class UpdateLoadBalancerOption {
             if (value == null) {
                 return null;
             }
-            WafFailureActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WafFailureActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WafFailureActionEnum(value));
         }
 
         public static WafFailureActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WafFailureActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -215,22 +208,15 @@ public class UpdateLoadBalancerOption {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -590,31 +576,29 @@ public class UpdateLoadBalancerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLoadBalancerOption updateLoadBalancerOption = (UpdateLoadBalancerOption) o;
-        return Objects.equals(this.name, updateLoadBalancerOption.name)
-            && Objects.equals(this.adminStateUp, updateLoadBalancerOption.adminStateUp)
-            && Objects.equals(this.description, updateLoadBalancerOption.description)
-            && Objects.equals(this.ipv6VipVirsubnetId, updateLoadBalancerOption.ipv6VipVirsubnetId)
-            && Objects.equals(this.vipSubnetCidrId, updateLoadBalancerOption.vipSubnetCidrId)
-            && Objects.equals(this.vipAddress, updateLoadBalancerOption.vipAddress)
-            && Objects.equals(this.l4FlavorId, updateLoadBalancerOption.l4FlavorId)
-            && Objects.equals(this.l7FlavorId, updateLoadBalancerOption.l7FlavorId)
-            && Objects.equals(this.ipv6Bandwidth, updateLoadBalancerOption.ipv6Bandwidth)
-            && Objects.equals(this.ipTargetEnable, updateLoadBalancerOption.ipTargetEnable)
-            && Objects.equals(this.elbVirsubnetIds, updateLoadBalancerOption.elbVirsubnetIds)
-            && Objects.equals(this.deletionProtectionEnable, updateLoadBalancerOption.deletionProtectionEnable)
-            && Objects.equals(this.prepaidOptions, updateLoadBalancerOption.prepaidOptions)
-            && Objects.equals(this.autoscaling, updateLoadBalancerOption.autoscaling)
-            && Objects.equals(this.wafFailureAction, updateLoadBalancerOption.wafFailureAction)
-            && Objects.equals(this.protectionStatus, updateLoadBalancerOption.protectionStatus)
-            && Objects.equals(this.protectionReason, updateLoadBalancerOption.protectionReason);
+        UpdateLoadBalancerOption that = (UpdateLoadBalancerOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipv6VipVirsubnetId, that.ipv6VipVirsubnetId)
+            && Objects.equals(this.vipSubnetCidrId, that.vipSubnetCidrId)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.l4FlavorId, that.l4FlavorId)
+            && Objects.equals(this.l7FlavorId, that.l7FlavorId)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.ipTargetEnable, that.ipTargetEnable)
+            && Objects.equals(this.elbVirsubnetIds, that.elbVirsubnetIds)
+            && Objects.equals(this.deletionProtectionEnable, that.deletionProtectionEnable)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions)
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.wafFailureAction, that.wafFailureAction)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason);
     }
 
     @Override

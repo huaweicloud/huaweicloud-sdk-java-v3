@@ -77,17 +77,16 @@ public class ListNextflowTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNextflowTaskRequest listNextflowTaskRequest = (ListNextflowTaskRequest) o;
-        return Objects.equals(this.eihealthProjectId, listNextflowTaskRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, listNextflowTaskRequest.jobId)
-            && Objects.equals(this.searchKey, listNextflowTaskRequest.searchKey);
+        ListNextflowTaskRequest that = (ListNextflowTaskRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

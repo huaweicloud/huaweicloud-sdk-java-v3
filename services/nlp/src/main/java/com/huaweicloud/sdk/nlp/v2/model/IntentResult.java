@@ -1,45 +1,35 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.Slot;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class IntentResult  {
-
+public class IntentResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Float confidence;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="label")
-    
+    @JsonProperty(value = "label")
 
     private String label;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slots")
-    
+    @JsonProperty(value = "slots")
+
     private List<Slot> slots = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
 
@@ -47,9 +37,6 @@ public class IntentResult  {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 标签label的置信度。
@@ -63,15 +50,10 @@ public class IntentResult  {
         this.confidence = confidence;
     }
 
-    
-
     public IntentResult withLabel(String label) {
         this.label = label;
         return this;
     }
-
-    
-
 
     /**
      * 文本的意图标签。标签共有以下9类，取值如下： weather：天气 time：报时 news：新闻 joke：笑话 translation：翻译 notification：提醒 alarm：闹钟 music：音乐 other：其它
@@ -85,16 +67,13 @@ public class IntentResult  {
         this.label = label;
     }
 
-    
-
     public IntentResult withSlots(List<Slot> slots) {
         this.slots = slots;
         return this;
     }
 
-    
     public IntentResult addSlotsItem(Slot slotsItem) {
-        if(this.slots == null) {
+        if (this.slots == null) {
             this.slots = new ArrayList<>();
         }
         this.slots.add(slotsItem);
@@ -102,7 +81,7 @@ public class IntentResult  {
     }
 
     public IntentResult withSlots(Consumer<List<Slot>> slotsSetter) {
-        if(this.slots == null) {
+        if (this.slots == null) {
             this.slots = new ArrayList<>();
         }
         slotsSetter.accept(this.slots);
@@ -121,15 +100,10 @@ public class IntentResult  {
         this.slots = slots;
     }
 
-    
-
     public IntentResult withText(String text) {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 返回待分析文本。
@@ -143,26 +117,24 @@ public class IntentResult  {
         this.text = text;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IntentResult intentResult = (IntentResult) o;
-        return Objects.equals(this.confidence, intentResult.confidence) &&
-            Objects.equals(this.label, intentResult.label) &&
-            Objects.equals(this.slots, intentResult.slots) &&
-            Objects.equals(this.text, intentResult.text);
+        IntentResult that = (IntentResult) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.slots, that.slots) && Objects.equals(this.text, that.text);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(confidence, label, slots, text);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +146,7 @@ public class IntentResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +157,5 @@ public class IntentResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

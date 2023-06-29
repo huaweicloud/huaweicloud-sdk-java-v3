@@ -79,17 +79,16 @@ public class SearchDepartmentByNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDepartmentByNameRequest searchDepartmentByNameRequest = (SearchDepartmentByNameRequest) o;
-        return Objects.equals(this.xRequestId, searchDepartmentByNameRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchDepartmentByNameRequest.acceptLanguage)
-            && Objects.equals(this.deptName, searchDepartmentByNameRequest.deptName);
+        SearchDepartmentByNameRequest that = (SearchDepartmentByNameRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.deptName, that.deptName);
     }
 
     @Override

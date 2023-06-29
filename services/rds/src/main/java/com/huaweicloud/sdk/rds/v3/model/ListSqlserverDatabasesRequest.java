@@ -145,20 +145,17 @@ public class ListSqlserverDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSqlserverDatabasesRequest listSqlserverDatabasesRequest = (ListSqlserverDatabasesRequest) o;
-        return Objects.equals(this.xLanguage, listSqlserverDatabasesRequest.xLanguage)
-            && Objects.equals(this.instanceId, listSqlserverDatabasesRequest.instanceId)
-            && Objects.equals(this.page, listSqlserverDatabasesRequest.page)
-            && Objects.equals(this.limit, listSqlserverDatabasesRequest.limit)
-            && Objects.equals(this.dbName, listSqlserverDatabasesRequest.dbName)
-            && Objects.equals(this.recoverModel, listSqlserverDatabasesRequest.recoverModel);
+        ListSqlserverDatabasesRequest that = (ListSqlserverDatabasesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.recoverModel, that.recoverModel);
     }
 
     @Override

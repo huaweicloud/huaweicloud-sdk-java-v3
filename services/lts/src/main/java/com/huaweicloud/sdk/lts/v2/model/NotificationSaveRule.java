@@ -63,22 +63,15 @@ public class NotificationSaveRule {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,18 +193,16 @@ public class NotificationSaveRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotificationSaveRule notificationSaveRule = (NotificationSaveRule) o;
-        return Objects.equals(this.language, notificationSaveRule.language)
-            && Objects.equals(this.timezone, notificationSaveRule.timezone)
-            && Objects.equals(this.userName, notificationSaveRule.userName)
-            && Objects.equals(this.topics, notificationSaveRule.topics);
+        NotificationSaveRule that = (NotificationSaveRule) obj;
+        return Objects.equals(this.language, that.language) && Objects.equals(this.timezone, that.timezone)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.topics, that.topics);
     }
 
     @Override

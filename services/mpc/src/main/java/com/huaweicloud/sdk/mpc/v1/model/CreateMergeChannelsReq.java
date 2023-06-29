@@ -43,15 +43,15 @@ public class CreateMergeChannelsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMergeChannelsReq createMergeChannelsReq = (CreateMergeChannelsReq) o;
-        return Objects.equals(this.multiAudio, createMergeChannelsReq.multiAudio);
+        CreateMergeChannelsReq that = (CreateMergeChannelsReq) obj;
+        return Objects.equals(this.multiAudio, that.multiAudio);
     }
 
     @Override

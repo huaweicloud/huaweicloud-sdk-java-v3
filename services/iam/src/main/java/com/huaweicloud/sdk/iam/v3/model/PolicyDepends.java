@@ -55,16 +55,15 @@ public class PolicyDepends {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyDepends policyDepends = (PolicyDepends) o;
-        return Objects.equals(this.catalog, policyDepends.catalog)
-            && Objects.equals(this.displayName, policyDepends.displayName);
+        PolicyDepends that = (PolicyDepends) obj;
+        return Objects.equals(this.catalog, that.catalog) && Objects.equals(this.displayName, that.displayName);
     }
 
     @Override

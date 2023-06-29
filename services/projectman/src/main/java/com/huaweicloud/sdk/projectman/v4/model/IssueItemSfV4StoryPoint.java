@@ -55,16 +55,15 @@ public class IssueItemSfV4StoryPoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueItemSfV4StoryPoint issueItemSfV4StoryPoint = (IssueItemSfV4StoryPoint) o;
-        return Objects.equals(this.id, issueItemSfV4StoryPoint.id)
-            && Objects.equals(this.name, issueItemSfV4StoryPoint.name);
+        IssueItemSfV4StoryPoint that = (IssueItemSfV4StoryPoint) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

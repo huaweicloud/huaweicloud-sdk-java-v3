@@ -33,15 +33,15 @@ public class ShowVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVersionRequest showVersionRequest = (ShowVersionRequest) o;
-        return Objects.equals(this.versionId, showVersionRequest.versionId);
+        ShowVersionRequest that = (ShowVersionRequest) obj;
+        return Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

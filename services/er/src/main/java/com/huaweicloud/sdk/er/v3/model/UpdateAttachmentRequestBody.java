@@ -43,15 +43,15 @@ public class UpdateAttachmentRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAttachmentRequestBody updateAttachmentRequestBody = (UpdateAttachmentRequestBody) o;
-        return Objects.equals(this.attachment, updateAttachmentRequestBody.attachment);
+        UpdateAttachmentRequestBody that = (UpdateAttachmentRequestBody) obj;
+        return Objects.equals(this.attachment, that.attachment);
     }
 
     @Override

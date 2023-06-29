@@ -100,18 +100,16 @@ public class ShowPartitionEndMessageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartitionEndMessageResponse showPartitionEndMessageResponse = (ShowPartitionEndMessageResponse) o;
-        return Objects.equals(this.topic, showPartitionEndMessageResponse.topic)
-            && Objects.equals(this.partition, showPartitionEndMessageResponse.partition)
-            && Objects.equals(this.offset, showPartitionEndMessageResponse.offset)
-            && Objects.equals(this.timestamp, showPartitionEndMessageResponse.timestamp);
+        ShowPartitionEndMessageResponse that = (ShowPartitionEndMessageResponse) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

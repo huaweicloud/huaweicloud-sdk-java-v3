@@ -202,18 +202,18 @@ public class TaskDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDto taskDto = (TaskDto) o;
-        return Objects.equals(this.taskName, taskDto.taskName) && Objects.equals(this.appId, taskDto.appId)
-            && Objects.equals(this.displayName, taskDto.displayName)
-            && Objects.equals(this.outputDir, taskDto.outputDir) && Objects.equals(this.resources, taskDto.resources)
-            && Objects.equals(this.location, taskDto.location) && Objects.equals(this.inputs, taskDto.inputs);
+        TaskDto that = (TaskDto) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.outputDir, that.outputDir)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.inputs, that.inputs);
     }
 
     @Override

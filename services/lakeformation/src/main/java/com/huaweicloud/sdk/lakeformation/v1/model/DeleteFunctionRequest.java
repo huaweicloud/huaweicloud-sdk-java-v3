@@ -99,18 +99,17 @@ public class DeleteFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFunctionRequest deleteFunctionRequest = (DeleteFunctionRequest) o;
-        return Objects.equals(this.instanceId, deleteFunctionRequest.instanceId)
-            && Objects.equals(this.catalogName, deleteFunctionRequest.catalogName)
-            && Objects.equals(this.databaseName, deleteFunctionRequest.databaseName)
-            && Objects.equals(this.functionName, deleteFunctionRequest.functionName);
+        DeleteFunctionRequest that = (DeleteFunctionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.functionName, that.functionName);
     }
 
     @Override

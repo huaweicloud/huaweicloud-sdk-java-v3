@@ -140,19 +140,17 @@ public class CreateSnapshotOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSnapshotOption createSnapshotOption = (CreateSnapshotOption) o;
-        return Objects.equals(this.volumeId, createSnapshotOption.volumeId)
-            && Objects.equals(this.force, createSnapshotOption.force)
-            && Objects.equals(this.metadata, createSnapshotOption.metadata)
-            && Objects.equals(this.description, createSnapshotOption.description)
-            && Objects.equals(this.name, createSnapshotOption.name);
+        CreateSnapshotOption that = (CreateSnapshotOption) obj;
+        return Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.force, that.force)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -118,17 +118,16 @@ public class EngineGroupsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineGroupsInfo engineGroupsInfo = (EngineGroupsInfo) o;
-        return Objects.equals(this.id, engineGroupsInfo.id) && Objects.equals(this.name, engineGroupsInfo.name)
-            && Objects.equals(this.version, engineGroupsInfo.version)
-            && Objects.equals(this.supportAzs, engineGroupsInfo.supportAzs);
+        EngineGroupsInfo that = (EngineGroupsInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.supportAzs, that.supportAzs);
     }
 
     @Override

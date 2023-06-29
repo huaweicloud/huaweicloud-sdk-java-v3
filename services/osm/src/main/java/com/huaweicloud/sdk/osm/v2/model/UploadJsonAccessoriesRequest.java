@@ -117,18 +117,16 @@ public class UploadJsonAccessoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadJsonAccessoriesRequest uploadJsonAccessoriesRequest = (UploadJsonAccessoriesRequest) o;
-        return Objects.equals(this.xSite, uploadJsonAccessoriesRequest.xSite)
-            && Objects.equals(this.xLanguage, uploadJsonAccessoriesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, uploadJsonAccessoriesRequest.xTimeZone)
-            && Objects.equals(this.body, uploadJsonAccessoriesRequest.body);
+        UploadJsonAccessoriesRequest that = (UploadJsonAccessoriesRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone) && Objects.equals(this.body, that.body);
     }
 
     @Override

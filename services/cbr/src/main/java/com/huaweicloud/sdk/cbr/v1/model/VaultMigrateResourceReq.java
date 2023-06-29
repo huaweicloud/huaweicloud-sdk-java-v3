@@ -74,16 +74,16 @@ public class VaultMigrateResourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultMigrateResourceReq vaultMigrateResourceReq = (VaultMigrateResourceReq) o;
-        return Objects.equals(this.destinationVaultId, vaultMigrateResourceReq.destinationVaultId)
-            && Objects.equals(this.resourceIds, vaultMigrateResourceReq.resourceIds);
+        VaultMigrateResourceReq that = (VaultMigrateResourceReq) obj;
+        return Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override

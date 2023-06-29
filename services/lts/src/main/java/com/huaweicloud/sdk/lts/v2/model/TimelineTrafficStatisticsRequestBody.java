@@ -143,21 +143,17 @@ public class TimelineTrafficStatisticsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimelineTrafficStatisticsRequestBody timelineTrafficStatisticsRequestBody =
-            (TimelineTrafficStatisticsRequestBody) o;
-        return Objects.equals(this.startTime, timelineTrafficStatisticsRequestBody.startTime)
-            && Objects.equals(this.endTime, timelineTrafficStatisticsRequestBody.endTime)
-            && Objects.equals(this.period, timelineTrafficStatisticsRequestBody.period)
-            && Objects.equals(this.resourceType, timelineTrafficStatisticsRequestBody.resourceType)
-            && Objects.equals(this.searchType, timelineTrafficStatisticsRequestBody.searchType)
-            && Objects.equals(this.resourceId, timelineTrafficStatisticsRequestBody.resourceId);
+        TimelineTrafficStatisticsRequestBody that = (TimelineTrafficStatisticsRequestBody) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.searchType, that.searchType) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

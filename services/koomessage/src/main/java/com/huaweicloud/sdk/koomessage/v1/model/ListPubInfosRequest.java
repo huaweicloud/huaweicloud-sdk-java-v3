@@ -194,22 +194,18 @@ public class ListPubInfosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPubInfosRequest listPubInfosRequest = (ListPubInfosRequest) o;
-        return Objects.equals(this.pubName, listPubInfosRequest.pubName)
-            && Objects.equals(this.state, listPubInfosRequest.state)
-            && Objects.equals(this.startTime, listPubInfosRequest.startTime)
-            && Objects.equals(this.offset, listPubInfosRequest.offset)
-            && Objects.equals(this.limit, listPubInfosRequest.limit)
-            && Objects.equals(this.endTime, listPubInfosRequest.endTime)
-            && Objects.equals(this.industry, listPubInfosRequest.industry)
-            && Objects.equals(this.approveState, listPubInfosRequest.approveState);
+        ListPubInfosRequest that = (ListPubInfosRequest) obj;
+        return Objects.equals(this.pubName, that.pubName) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.industry, that.industry) && Objects.equals(this.approveState, that.approveState);
     }
 
     @Override

@@ -143,20 +143,17 @@ public class ShowDirectoryTreeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDirectoryTreeRequest showDirectoryTreeRequest = (ShowDirectoryTreeRequest) o;
-        return Objects.equals(this.workspace, showDirectoryTreeRequest.workspace)
-            && Objects.equals(this.category, showDirectoryTreeRequest.category)
-            && Objects.equals(this.directoryId, showDirectoryTreeRequest.directoryId)
-            && Objects.equals(this.name, showDirectoryTreeRequest.name)
-            && Objects.equals(this.offset, showDirectoryTreeRequest.offset)
-            && Objects.equals(this.limit, showDirectoryTreeRequest.limit);
+        ShowDirectoryTreeRequest that = (ShowDirectoryTreeRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -102,18 +102,16 @@ public class ShowTranscodingsTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTranscodingsTemplateRequest showTranscodingsTemplateRequest = (ShowTranscodingsTemplateRequest) o;
-        return Objects.equals(this.domain, showTranscodingsTemplateRequest.domain)
-            && Objects.equals(this.appName, showTranscodingsTemplateRequest.appName)
-            && Objects.equals(this.page, showTranscodingsTemplateRequest.page)
-            && Objects.equals(this.size, showTranscodingsTemplateRequest.size);
+        ShowTranscodingsTemplateRequest that = (ShowTranscodingsTemplateRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size);
     }
 
     @Override

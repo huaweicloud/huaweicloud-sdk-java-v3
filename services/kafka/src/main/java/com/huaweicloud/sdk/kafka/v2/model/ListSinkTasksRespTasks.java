@@ -143,20 +143,18 @@ public class ListSinkTasksRespTasks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSinkTasksRespTasks listSinkTasksRespTasks = (ListSinkTasksRespTasks) o;
-        return Objects.equals(this.taskId, listSinkTasksRespTasks.taskId)
-            && Objects.equals(this.taskName, listSinkTasksRespTasks.taskName)
-            && Objects.equals(this.destinationType, listSinkTasksRespTasks.destinationType)
-            && Objects.equals(this.createTime, listSinkTasksRespTasks.createTime)
-            && Objects.equals(this.status, listSinkTasksRespTasks.status)
-            && Objects.equals(this.topics, listSinkTasksRespTasks.topics);
+        ListSinkTasksRespTasks that = (ListSinkTasksRespTasks) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.destinationType, that.destinationType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.topics, that.topics);
     }
 
     @Override

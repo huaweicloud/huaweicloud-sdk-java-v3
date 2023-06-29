@@ -77,17 +77,16 @@ public class ListMonitoredObjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitoredObjectsRequest listMonitoredObjectsRequest = (ListMonitoredObjectsRequest) o;
-        return Objects.equals(this.dimName, listMonitoredObjectsRequest.dimName)
-            && Objects.equals(this.offset, listMonitoredObjectsRequest.offset)
-            && Objects.equals(this.limit, listMonitoredObjectsRequest.limit);
+        ListMonitoredObjectsRequest that = (ListMonitoredObjectsRequest) obj;
+        return Objects.equals(this.dimName, that.dimName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

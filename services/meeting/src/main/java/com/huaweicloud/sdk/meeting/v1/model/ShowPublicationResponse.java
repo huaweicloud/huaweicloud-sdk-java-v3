@@ -110,22 +110,15 @@ public class ShowPublicationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PublishStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PublishStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishStatusEnum(value));
         }
 
         public static PublishStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PublishStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -415,26 +408,21 @@ public class ShowPublicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicationResponse showPublicationResponse = (ShowPublicationResponse) o;
-        return Objects.equals(this.id, showPublicationResponse.id)
-            && Objects.equals(this.lastUpdatedBy, showPublicationResponse.lastUpdatedBy)
-            && Objects.equals(this.createTime, showPublicationResponse.createTime)
-            && Objects.equals(this.updateTime, showPublicationResponse.updateTime)
-            && Objects.equals(this.publishName, showPublicationResponse.publishName)
-            && Objects.equals(this.publishScope, showPublicationResponse.publishScope)
-            && Objects.equals(this.startTime, showPublicationResponse.startTime)
-            && Objects.equals(this.endTime, showPublicationResponse.endTime)
-            && Objects.equals(this.publishStatus, showPublicationResponse.publishStatus)
-            && Objects.equals(this.programList, showPublicationResponse.programList)
-            && Objects.equals(this.deptList, showPublicationResponse.deptList)
-            && Objects.equals(this.deviceList, showPublicationResponse.deviceList);
+        ShowPublicationResponse that = (ShowPublicationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lastUpdatedBy, that.lastUpdatedBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.publishName, that.publishName)
+            && Objects.equals(this.publishScope, that.publishScope) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.publishStatus, that.publishStatus)
+            && Objects.equals(this.programList, that.programList) && Objects.equals(this.deptList, that.deptList)
+            && Objects.equals(this.deviceList, that.deviceList);
     }
 
     @Override

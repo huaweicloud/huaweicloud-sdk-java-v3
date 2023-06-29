@@ -66,16 +66,16 @@ public class AssociateBandwidthPackageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateBandwidthPackageResponse associateBandwidthPackageResponse = (AssociateBandwidthPackageResponse) o;
-        return Objects.equals(this.bandwidthPackage, associateBandwidthPackageResponse.bandwidthPackage)
-            && Objects.equals(this.requestId, associateBandwidthPackageResponse.requestId);
+        AssociateBandwidthPackageResponse that = (AssociateBandwidthPackageResponse) obj;
+        return Objects.equals(this.bandwidthPackage, that.bandwidthPackage)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

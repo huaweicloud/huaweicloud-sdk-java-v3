@@ -81,17 +81,16 @@ public class ListProjectMembersV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectMembersV4Request listProjectMembersV4Request = (ListProjectMembersV4Request) o;
-        return Objects.equals(this.projectId, listProjectMembersV4Request.projectId)
-            && Objects.equals(this.offset, listProjectMembersV4Request.offset)
-            && Objects.equals(this.limit, listProjectMembersV4Request.limit);
+        ListProjectMembersV4Request that = (ListProjectMembersV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

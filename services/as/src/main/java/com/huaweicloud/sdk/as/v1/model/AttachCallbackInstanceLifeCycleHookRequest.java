@@ -65,17 +65,15 @@ public class AttachCallbackInstanceLifeCycleHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachCallbackInstanceLifeCycleHookRequest attachCallbackInstanceLifeCycleHookRequest =
-            (AttachCallbackInstanceLifeCycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, attachCallbackInstanceLifeCycleHookRequest.scalingGroupId)
-            && Objects.equals(this.body, attachCallbackInstanceLifeCycleHookRequest.body);
+        AttachCallbackInstanceLifeCycleHookRequest that = (AttachCallbackInstanceLifeCycleHookRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

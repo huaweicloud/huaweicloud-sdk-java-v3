@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ComponentAmbV11
  */
-public class ComponentAmbV11  {
-
+public class ComponentAmbV11 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_name")
-    
+    @JsonProperty(value = "component_name")
 
     private String componentName;
 
@@ -27,9 +19,6 @@ public class ComponentAmbV11  {
         this.componentName = componentName;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -43,23 +32,23 @@ public class ComponentAmbV11  {
         this.componentName = componentName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentAmbV11 componentAmbV11 = (ComponentAmbV11) o;
-        return Objects.equals(this.componentName, componentAmbV11.componentName);
+        ComponentAmbV11 that = (ComponentAmbV11) obj;
+        return Objects.equals(this.componentName, that.componentName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(componentName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ComponentAmbV11  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ComponentAmbV11  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

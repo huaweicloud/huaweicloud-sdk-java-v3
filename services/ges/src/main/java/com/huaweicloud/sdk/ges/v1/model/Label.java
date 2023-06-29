@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * GES 元数据中lable类型
  */
-public class Label  {
-
+public class Label {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
 
     private Object properties;
 
@@ -33,9 +24,6 @@ public class Label  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Label名称。
@@ -49,15 +37,10 @@ public class Label  {
         this.name = name;
     }
 
-    
-
     public Label withProperties(Object properties) {
         this.properties = properties;
         return this;
     }
-
-    
-
 
     /**
      * 属性Map
@@ -71,24 +54,23 @@ public class Label  {
         this.properties = properties;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Label label = (Label) o;
-        return Objects.equals(this.name, label.name) &&
-            Objects.equals(this.properties, label.properties);
+        Label that = (Label) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.properties, that.properties);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, properties);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class Label  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class Label  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -76,16 +76,16 @@ public class ListRpoStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRpoStatisticsResponse listRpoStatisticsResponse = (ListRpoStatisticsResponse) o;
-        return Objects.equals(this.resourceRpoStatistics, listRpoStatisticsResponse.resourceRpoStatistics)
-            && Objects.equals(this.count, listRpoStatisticsResponse.count);
+        ListRpoStatisticsResponse that = (ListRpoStatisticsResponse) obj;
+        return Objects.equals(this.resourceRpoStatistics, that.resourceRpoStatistics)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

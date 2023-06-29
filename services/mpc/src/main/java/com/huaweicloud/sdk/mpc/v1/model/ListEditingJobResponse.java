@@ -77,16 +77,15 @@ public class ListEditingJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEditingJobResponse listEditingJobResponse = (ListEditingJobResponse) o;
-        return Objects.equals(this.total, listEditingJobResponse.total)
-            && Objects.equals(this.jobs, listEditingJobResponse.jobs);
+        ListEditingJobResponse that = (ListEditingJobResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

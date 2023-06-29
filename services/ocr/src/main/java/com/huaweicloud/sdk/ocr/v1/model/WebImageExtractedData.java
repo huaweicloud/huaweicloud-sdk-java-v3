@@ -74,16 +74,15 @@ public class WebImageExtractedData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WebImageExtractedData webImageExtractedData = (WebImageExtractedData) o;
-        return Objects.equals(this.contactInfo, webImageExtractedData.contactInfo)
-            && Objects.equals(this.imageSize, webImageExtractedData.imageSize);
+        WebImageExtractedData that = (WebImageExtractedData) obj;
+        return Objects.equals(this.contactInfo, that.contactInfo) && Objects.equals(this.imageSize, that.imageSize);
     }
 
     @Override

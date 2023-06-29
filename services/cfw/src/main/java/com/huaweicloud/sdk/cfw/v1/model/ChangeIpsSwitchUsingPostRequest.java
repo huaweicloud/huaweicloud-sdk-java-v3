@@ -87,17 +87,16 @@ public class ChangeIpsSwitchUsingPostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeIpsSwitchUsingPostRequest changeIpsSwitchUsingPostRequest = (ChangeIpsSwitchUsingPostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, changeIpsSwitchUsingPostRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, changeIpsSwitchUsingPostRequest.fwInstanceId)
-            && Objects.equals(this.body, changeIpsSwitchUsingPostRequest.body);
+        ChangeIpsSwitchUsingPostRequest that = (ChangeIpsSwitchUsingPostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

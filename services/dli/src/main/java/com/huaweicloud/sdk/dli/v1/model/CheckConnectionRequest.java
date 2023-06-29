@@ -65,16 +65,15 @@ public class CheckConnectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckConnectionRequest checkConnectionRequest = (CheckConnectionRequest) o;
-        return Objects.equals(this.queueName, checkConnectionRequest.queueName)
-            && Objects.equals(this.body, checkConnectionRequest.body);
+        CheckConnectionRequest that = (CheckConnectionRequest) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.body, that.body);
     }
 
     @Override

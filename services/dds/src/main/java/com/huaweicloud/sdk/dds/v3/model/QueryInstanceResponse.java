@@ -674,41 +674,30 @@ public class QueryInstanceResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryInstanceResponse queryInstanceResponse = (QueryInstanceResponse) o;
-        return Objects.equals(this.id, queryInstanceResponse.id)
-            && Objects.equals(this.name, queryInstanceResponse.name)
-            && Objects.equals(this.remark, queryInstanceResponse.remark)
-            && Objects.equals(this.status, queryInstanceResponse.status)
-            && Objects.equals(this.port, queryInstanceResponse.port)
-            && Objects.equals(this.mode, queryInstanceResponse.mode)
-            && Objects.equals(this.region, queryInstanceResponse.region)
-            && Objects.equals(this.datastore, queryInstanceResponse.datastore)
-            && Objects.equals(this.engine, queryInstanceResponse.engine)
-            && Objects.equals(this.created, queryInstanceResponse.created)
-            && Objects.equals(this.updated, queryInstanceResponse.updated)
-            && Objects.equals(this.dbUserName, queryInstanceResponse.dbUserName)
-            && Objects.equals(this.ssl, queryInstanceResponse.ssl)
-            && Objects.equals(this.vpcId, queryInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, queryInstanceResponse.subnetId)
-            && Objects.equals(this.securityGroupId, queryInstanceResponse.securityGroupId)
-            && Objects.equals(this.backupStrategy, queryInstanceResponse.backupStrategy)
-            && Objects.equals(this.payMode, queryInstanceResponse.payMode)
-            && Objects.equals(this.maintenanceWindow, queryInstanceResponse.maintenanceWindow)
-            && Objects.equals(this.groups, queryInstanceResponse.groups)
-            && Objects.equals(this.diskEncryptionId, queryInstanceResponse.diskEncryptionId)
-            && Objects.equals(this.enterpriseProjectId, queryInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.timeZone, queryInstanceResponse.timeZone)
-            && Objects.equals(this.dssPoolId, queryInstanceResponse.dssPoolId)
-            && Objects.equals(this.actions, queryInstanceResponse.actions)
-            && Objects.equals(this.orderId, queryInstanceResponse.orderId)
-            && Objects.equals(this.tags, queryInstanceResponse.tags);
+        QueryInstanceResponse that = (QueryInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.dbUserName, that.dbUserName)
+            && Objects.equals(this.ssl, that.ssl) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.payMode, that.payMode)
+            && Objects.equals(this.maintenanceWindow, that.maintenanceWindow)
+            && Objects.equals(this.groups, that.groups) && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.dssPoolId, that.dssPoolId)
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

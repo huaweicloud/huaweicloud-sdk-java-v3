@@ -121,17 +121,17 @@ public class Event {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event event = (Event) o;
-        return Objects.equals(this.eventType, event.eventType) && Objects.equals(this.channel, event.channel)
-            && Objects.equals(this.failPolicy, event.failPolicy) && Objects.equals(this.concurrent, event.concurrent)
-            && Objects.equals(this.readPolicy, event.readPolicy);
+        Event that = (Event) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.channel, that.channel)
+            && Objects.equals(this.failPolicy, that.failPolicy) && Objects.equals(this.concurrent, that.concurrent)
+            && Objects.equals(this.readPolicy, that.readPolicy);
     }
 
     @Override

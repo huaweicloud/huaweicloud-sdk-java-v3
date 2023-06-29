@@ -87,17 +87,16 @@ public class AddFacesByFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesByFileRequest addFacesByFileRequest = (AddFacesByFileRequest) o;
-        return Objects.equals(this.enterpriseProjectId, addFacesByFileRequest.enterpriseProjectId)
-            && Objects.equals(this.faceSetName, addFacesByFileRequest.faceSetName)
-            && Objects.equals(this.body, addFacesByFileRequest.body);
+        AddFacesByFileRequest that = (AddFacesByFileRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.faceSetName, that.faceSetName) && Objects.equals(this.body, that.body);
     }
 
     @Override

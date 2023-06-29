@@ -254,24 +254,20 @@ public class ListMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMembersRequest listMembersRequest = (ListMembersRequest) o;
-        return Objects.equals(this.poolId, listMembersRequest.poolId)
-            && Objects.equals(this.limit, listMembersRequest.limit)
-            && Objects.equals(this.marker, listMembersRequest.marker)
-            && Objects.equals(this.pageReverse, listMembersRequest.pageReverse)
-            && Objects.equals(this.id, listMembersRequest.id) && Objects.equals(this.name, listMembersRequest.name)
-            && Objects.equals(this.address, listMembersRequest.address)
-            && Objects.equals(this.protocolPort, listMembersRequest.protocolPort)
-            && Objects.equals(this.subnetId, listMembersRequest.subnetId)
-            && Objects.equals(this.adminStateUp, listMembersRequest.adminStateUp)
-            && Objects.equals(this.weight, listMembersRequest.weight);
+        ListMembersRequest that = (ListMembersRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.weight, that.weight);
     }
 
     @Override

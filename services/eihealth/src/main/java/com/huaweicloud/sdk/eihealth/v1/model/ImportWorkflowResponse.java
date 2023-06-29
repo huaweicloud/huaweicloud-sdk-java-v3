@@ -97,17 +97,16 @@ public class ImportWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportWorkflowResponse importWorkflowResponse = (ImportWorkflowResponse) o;
-        return Objects.equals(this.id, importWorkflowResponse.id)
-            && Objects.equals(this.importWorkflowStatus, importWorkflowResponse.importWorkflowStatus)
-            && Objects.equals(this.importAppResults, importWorkflowResponse.importAppResults);
+        ImportWorkflowResponse that = (ImportWorkflowResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.importWorkflowStatus, that.importWorkflowStatus)
+            && Objects.equals(this.importAppResults, that.importAppResults);
     }
 
     @Override

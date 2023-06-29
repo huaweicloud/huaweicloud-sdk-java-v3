@@ -83,17 +83,16 @@ public class PlaybookStatisticDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PlaybookStatisticDetail playbookStatisticDetail = (PlaybookStatisticDetail) o;
-        return Objects.equals(this.unapprovedNum, playbookStatisticDetail.unapprovedNum)
-            && Objects.equals(this.disabledNum, playbookStatisticDetail.disabledNum)
-            && Objects.equals(this.enabledNum, playbookStatisticDetail.enabledNum);
+        PlaybookStatisticDetail that = (PlaybookStatisticDetail) obj;
+        return Objects.equals(this.unapprovedNum, that.unapprovedNum)
+            && Objects.equals(this.disabledNum, that.disabledNum) && Objects.equals(this.enabledNum, that.enabledNum);
     }
 
     @Override

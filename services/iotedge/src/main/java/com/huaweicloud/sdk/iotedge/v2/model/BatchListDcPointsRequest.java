@@ -1,68 +1,52 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class BatchListDcPointsRequest  {
-
+public class BatchListDcPointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ds_id")
-    
+    @JsonProperty(value = "ds_id")
 
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="point_id")
-    
+    @JsonProperty(value = "point_id")
 
     private String pointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property")
-    
+    @JsonProperty(value = "property")
 
     private String property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -70,9 +54,6 @@ public class BatchListDcPointsRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -86,15 +67,10 @@ public class BatchListDcPointsRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public BatchListDcPointsRequest withDsId(String dsId) {
         this.dsId = dsId;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源id，创建数据源配置时设置，节点下唯一。
@@ -108,15 +84,10 @@ public class BatchListDcPointsRequest  {
         this.dsId = dsId;
     }
 
-    
-
     public BatchListDcPointsRequest withPointId(String pointId) {
         this.pointId = pointId;
         return this;
     }
-
-    
-
 
     /**
      * 采集点位表id，创建点位表时设置，数据源下唯一。
@@ -130,15 +101,10 @@ public class BatchListDcPointsRequest  {
         this.pointId = pointId;
     }
 
-    
-
     public BatchListDcPointsRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 点位名称，允许中、数字、英文大小写、下划线、中划线、#%()*特殊字符.模糊查询
@@ -152,15 +118,10 @@ public class BatchListDcPointsRequest  {
         this.name = name;
     }
 
-    
-
     public BatchListDcPointsRequest withProperty(String property) {
         this.property = property;
         return this;
     }
-
-    
-
 
     /**
      * 属性，允许中、数字、英文大小写、下划线、中划线，精确查询
@@ -174,15 +135,10 @@ public class BatchListDcPointsRequest  {
         this.property = property;
     }
 
-    
-
     public BatchListDcPointsRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备标识，精确查询
@@ -196,15 +152,10 @@ public class BatchListDcPointsRequest  {
         this.deviceId = deviceId;
     }
 
-    
-
     public BatchListDcPointsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -220,15 +171,10 @@ public class BatchListDcPointsRequest  {
         this.offset = offset;
     }
 
-    
-
     public BatchListDcPointsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000
@@ -244,30 +190,26 @@ public class BatchListDcPointsRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListDcPointsRequest batchListDcPointsRequest = (BatchListDcPointsRequest) o;
-        return Objects.equals(this.edgeNodeId, batchListDcPointsRequest.edgeNodeId) &&
-            Objects.equals(this.dsId, batchListDcPointsRequest.dsId) &&
-            Objects.equals(this.pointId, batchListDcPointsRequest.pointId) &&
-            Objects.equals(this.name, batchListDcPointsRequest.name) &&
-            Objects.equals(this.property, batchListDcPointsRequest.property) &&
-            Objects.equals(this.deviceId, batchListDcPointsRequest.deviceId) &&
-            Objects.equals(this.offset, batchListDcPointsRequest.offset) &&
-            Objects.equals(this.limit, batchListDcPointsRequest.limit);
+        BatchListDcPointsRequest that = (BatchListDcPointsRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
+            && Objects.equals(this.pointId, that.pointId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.property, that.property) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, dsId, pointId, name, property, deviceId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -283,6 +225,7 @@ public class BatchListDcPointsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -293,8 +236,5 @@ public class BatchListDcPointsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

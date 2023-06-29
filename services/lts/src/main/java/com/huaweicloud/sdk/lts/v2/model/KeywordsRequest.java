@@ -97,22 +97,15 @@ public class KeywordsRequest {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
         }
 
         public static ConditionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class KeywordsRequest {
             if (value == null) {
                 return null;
             }
-            SearchTimeRangeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SearchTimeRangeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SearchTimeRangeUnitEnum(value));
         }
 
         public static SearchTimeRangeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SearchTimeRangeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -378,23 +364,20 @@ public class KeywordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeywordsRequest keywordsRequest = (KeywordsRequest) o;
-        return Objects.equals(this.logStreamId, keywordsRequest.logStreamId)
-            && Objects.equals(this.logStreamName, keywordsRequest.logStreamName)
-            && Objects.equals(this.logGroupId, keywordsRequest.logGroupId)
-            && Objects.equals(this.logGroupName, keywordsRequest.logGroupName)
-            && Objects.equals(this.keywords, keywordsRequest.keywords)
-            && Objects.equals(this.condition, keywordsRequest.condition)
-            && Objects.equals(this.number, keywordsRequest.number)
-            && Objects.equals(this.searchTimeRange, keywordsRequest.searchTimeRange)
-            && Objects.equals(this.searchTimeRangeUnit, keywordsRequest.searchTimeRangeUnit);
+        KeywordsRequest that = (KeywordsRequest) obj;
+        return Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.searchTimeRange, that.searchTimeRange)
+            && Objects.equals(this.searchTimeRangeUnit, that.searchTimeRangeUnit);
     }
 
     @Override

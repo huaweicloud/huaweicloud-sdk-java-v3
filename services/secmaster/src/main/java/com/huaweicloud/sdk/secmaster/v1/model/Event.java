@@ -737,32 +737,32 @@ public class Event {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event event = (Event) o;
-        return Objects.equals(this.version, event.version) && Objects.equals(this.environment, event.environment)
-            && Objects.equals(this.dataSource, event.dataSource)
-            && Objects.equals(this.firstObservedTime, event.firstObservedTime)
-            && Objects.equals(this.lastObservedTime, event.lastObservedTime)
-            && Objects.equals(this.createTime, event.createTime) && Objects.equals(this.arriveTime, event.arriveTime)
-            && Objects.equals(this.eventId, event.eventId) && Objects.equals(this.title, event.title)
-            && Objects.equals(this.description, event.description) && Objects.equals(this.sourceUrl, event.sourceUrl)
-            && Objects.equals(this.count, event.count) && Objects.equals(this.confidence, event.confidence)
-            && Objects.equals(this.severity, event.severity) && Objects.equals(this.criticality, event.criticality)
-            && Objects.equals(this.type, event.type) && Objects.equals(this.compliance, event.compliance)
-            && Objects.equals(this.network, event.network)
-            && Objects.equals(this.vulnerabilityPatch, event.vulnerabilityPatch)
-            && Objects.equals(this.malware, event.malware) && Objects.equals(this.threatIntel, event.threatIntel)
-            && Objects.equals(this.resource, event.resource) && Objects.equals(this.remediation, event.remediation)
-            && Objects.equals(this.dataSourceFields, event.dataSourceFields)
-            && Objects.equals(this.verificationState, event.verificationState)
-            && Objects.equals(this.handleStatus, event.handleStatus) && Objects.equals(this.phase, event.phase)
-            && Objects.equals(this.sla, event.sla);
+        Event that = (Event) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.environment, that.environment)
+            && Objects.equals(this.dataSource, that.dataSource)
+            && Objects.equals(this.firstObservedTime, that.firstObservedTime)
+            && Objects.equals(this.lastObservedTime, that.lastObservedTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.arriveTime, that.arriveTime)
+            && Objects.equals(this.eventId, that.eventId) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.sourceUrl, that.sourceUrl)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.criticality, that.criticality)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.compliance, that.compliance)
+            && Objects.equals(this.network, that.network)
+            && Objects.equals(this.vulnerabilityPatch, that.vulnerabilityPatch)
+            && Objects.equals(this.malware, that.malware) && Objects.equals(this.threatIntel, that.threatIntel)
+            && Objects.equals(this.resource, that.resource) && Objects.equals(this.remediation, that.remediation)
+            && Objects.equals(this.dataSourceFields, that.dataSourceFields)
+            && Objects.equals(this.verificationState, that.verificationState)
+            && Objects.equals(this.handleStatus, that.handleStatus) && Objects.equals(this.phase, that.phase)
+            && Objects.equals(this.sla, that.sla);
     }
 
     @Override

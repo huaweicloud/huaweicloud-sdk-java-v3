@@ -99,18 +99,16 @@ public class CreateRepoMemberResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRepoMemberResult createRepoMemberResult = (CreateRepoMemberResult) o;
-        return Objects.equals(this.id, createRepoMemberResult.id)
-            && Objects.equals(this.message, createRepoMemberResult.message)
-            && Objects.equals(this.name, createRepoMemberResult.name)
-            && Objects.equals(this.status, createRepoMemberResult.status);
+        CreateRepoMemberResult that = (CreateRepoMemberResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status);
     }
 
     @Override

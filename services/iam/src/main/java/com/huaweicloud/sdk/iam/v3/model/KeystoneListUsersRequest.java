@@ -99,18 +99,16 @@ public class KeystoneListUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListUsersRequest keystoneListUsersRequest = (KeystoneListUsersRequest) o;
-        return Objects.equals(this.domainId, keystoneListUsersRequest.domainId)
-            && Objects.equals(this.enabled, keystoneListUsersRequest.enabled)
-            && Objects.equals(this.name, keystoneListUsersRequest.name)
-            && Objects.equals(this.passwordExpiresAt, keystoneListUsersRequest.passwordExpiresAt);
+        KeystoneListUsersRequest that = (KeystoneListUsersRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
     }
 
     @Override

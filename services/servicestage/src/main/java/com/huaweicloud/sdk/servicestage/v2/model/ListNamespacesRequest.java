@@ -35,15 +35,15 @@ public class ListNamespacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNamespacesRequest listNamespacesRequest = (ListNamespacesRequest) o;
-        return Objects.equals(this.xRepoAuth, listNamespacesRequest.xRepoAuth);
+        ListNamespacesRequest that = (ListNamespacesRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth);
     }
 
     @Override

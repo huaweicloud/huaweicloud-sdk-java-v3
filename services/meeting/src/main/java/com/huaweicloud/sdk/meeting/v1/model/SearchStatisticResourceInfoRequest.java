@@ -70,22 +70,15 @@ public class SearchStatisticResourceInfoRequest {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -174,22 +167,15 @@ public class SearchStatisticResourceInfoRequest {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -314,20 +300,17 @@ public class SearchStatisticResourceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchStatisticResourceInfoRequest searchStatisticResourceInfoRequest = (SearchStatisticResourceInfoRequest) o;
-        return Objects.equals(this.offset, searchStatisticResourceInfoRequest.offset)
-            && Objects.equals(this.limit, searchStatisticResourceInfoRequest.limit)
-            && Objects.equals(this.timeUnit, searchStatisticResourceInfoRequest.timeUnit)
-            && Objects.equals(this.startTime, searchStatisticResourceInfoRequest.startTime)
-            && Objects.equals(this.endTime, searchStatisticResourceInfoRequest.endTime)
-            && Objects.equals(this.category, searchStatisticResourceInfoRequest.category);
+        SearchStatisticResourceInfoRequest that = (SearchStatisticResourceInfoRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.category, that.category);
     }
 
     @Override

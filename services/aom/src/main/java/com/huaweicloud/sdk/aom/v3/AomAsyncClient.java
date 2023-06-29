@@ -1,13 +1,14 @@
 package com.huaweicloud.sdk.aom.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
-import com.huaweicloud.sdk.core.ClientBuilder;
-import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
-import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
 import com.huaweicloud.sdk.aom.v3.model.*;
+import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
+import com.huaweicloud.sdk.core.invoker.AsyncInvoker;
+
+import java.util.concurrent.CompletableFuture;
 
 public class AomAsyncClient {
+
     protected HcClient hcClient;
 
     public AomAsyncClient(HcClient hcClient) {
@@ -17,7 +18,6 @@ public class AomAsyncClient {
     public static ClientBuilder<AomAsyncClient> newBuilder() {
         return new ClientBuilder<>(AomAsyncClient::new);
     }
-
 
     /**
      * 新增应用
@@ -71,8 +71,10 @@ public class AomAsyncClient {
      * @param CreateComponentRequest 请求对象
      * @return AsyncInvoker<CreateComponentRequest, CreateComponentResponse>
      */
-    public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(CreateComponentRequest request) {
-        return new AsyncInvoker<CreateComponentRequest, CreateComponentResponse>(request, AomMeta.createComponent, hcClient);
+    public AsyncInvoker<CreateComponentRequest, CreateComponentResponse> createComponentAsyncInvoker(
+        CreateComponentRequest request) {
+        return new AsyncInvoker<CreateComponentRequest, CreateComponentResponse>(request, AomMeta.createComponent,
+            hcClient);
     }
 
     /**
@@ -155,8 +157,10 @@ public class AomAsyncClient {
      * @param DeleteComponentRequest 请求对象
      * @return AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>
      */
-    public AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentAsyncInvoker(DeleteComponentRequest request) {
-        return new AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request, AomMeta.deleteComponent, hcClient);
+    public AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse> deleteComponentAsyncInvoker(
+        DeleteComponentRequest request) {
+        return new AsyncInvoker<DeleteComponentRequest, DeleteComponentResponse>(request, AomMeta.deleteComponent,
+            hcClient);
     }
 
     /**
@@ -197,7 +201,8 @@ public class AomAsyncClient {
      * @param ListResourceUnderNodeRequest 请求对象
      * @return CompletableFuture<ListResourceUnderNodeResponse>
      */
-    public CompletableFuture<ListResourceUnderNodeResponse> listResourceUnderNodeAsync(ListResourceUnderNodeRequest request) {
+    public CompletableFuture<ListResourceUnderNodeResponse> listResourceUnderNodeAsync(
+        ListResourceUnderNodeRequest request) {
         return hcClient.asyncInvokeHttp(request, AomMeta.listResourceUnderNode);
     }
 
@@ -211,8 +216,10 @@ public class AomAsyncClient {
      * @param ListResourceUnderNodeRequest 请求对象
      * @return AsyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>
      */
-    public AsyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNodeAsyncInvoker(ListResourceUnderNodeRequest request) {
-        return new AsyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>(request, AomMeta.listResourceUnderNode, hcClient);
+    public AsyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse> listResourceUnderNodeAsyncInvoker(
+        ListResourceUnderNodeRequest request) {
+        return new AsyncInvoker<ListResourceUnderNodeRequest, ListResourceUnderNodeResponse>(request,
+            AomMeta.listResourceUnderNode, hcClient);
     }
 
     /**
@@ -267,7 +274,8 @@ public class AomAsyncClient {
      * @param ShowAppByNameRequest 请求对象
      * @return AsyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse>
      */
-    public AsyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse> showAppByNameAsyncInvoker(ShowAppByNameRequest request) {
+    public AsyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse> showAppByNameAsyncInvoker(
+        ShowAppByNameRequest request) {
         return new AsyncInvoker<ShowAppByNameRequest, ShowAppByNameResponse>(request, AomMeta.showAppByName, hcClient);
     }
 
@@ -295,7 +303,8 @@ public class AomAsyncClient {
      * @param ShowComponentRequest 请求对象
      * @return AsyncInvoker<ShowComponentRequest, ShowComponentResponse>
      */
-    public AsyncInvoker<ShowComponentRequest, ShowComponentResponse> showComponentAsyncInvoker(ShowComponentRequest request) {
+    public AsyncInvoker<ShowComponentRequest, ShowComponentResponse> showComponentAsyncInvoker(
+        ShowComponentRequest request) {
         return new AsyncInvoker<ShowComponentRequest, ShowComponentResponse>(request, AomMeta.showComponent, hcClient);
     }
 
@@ -323,8 +332,10 @@ public class AomAsyncClient {
      * @param ShowComponentByNameRequest 请求对象
      * @return AsyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>
      */
-    public AsyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByNameAsyncInvoker(ShowComponentByNameRequest request) {
-        return new AsyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>(request, AomMeta.showComponentByName, hcClient);
+    public AsyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse> showComponentByNameAsyncInvoker(
+        ShowComponentByNameRequest request) {
+        return new AsyncInvoker<ShowComponentByNameRequest, ShowComponentByNameResponse>(request,
+            AomMeta.showComponentByName, hcClient);
     }
 
     /**
@@ -379,7 +390,8 @@ public class AomAsyncClient {
      * @param ShowEnvByNameRequest 请求对象
      * @return AsyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse>
      */
-    public AsyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByNameAsyncInvoker(ShowEnvByNameRequest request) {
+    public AsyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse> showEnvByNameAsyncInvoker(
+        ShowEnvByNameRequest request) {
         return new AsyncInvoker<ShowEnvByNameRequest, ShowEnvByNameResponse>(request, AomMeta.showEnvByName, hcClient);
     }
 
@@ -435,8 +447,10 @@ public class AomAsyncClient {
      * @param UpdateComponentRequest 请求对象
      * @return AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse>
      */
-    public AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse> updateComponentAsyncInvoker(UpdateComponentRequest request) {
-        return new AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse>(request, AomMeta.updateComponent, hcClient);
+    public AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse> updateComponentAsyncInvoker(
+        UpdateComponentRequest request) {
+        return new AsyncInvoker<UpdateComponentRequest, UpdateComponentResponse>(request, AomMeta.updateComponent,
+            hcClient);
     }
 
     /**

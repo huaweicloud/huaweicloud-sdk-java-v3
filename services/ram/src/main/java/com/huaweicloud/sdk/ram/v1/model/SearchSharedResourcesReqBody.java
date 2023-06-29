@@ -44,8 +44,8 @@ public class SearchSharedResourcesReqBody {
     private List<String> resourceUrns = null;
 
     /**
-    * 指定资源共享实例的所有者（self或者other-accounts）。
-    */
+     * 指定资源共享实例的所有者（self或者other-accounts）。
+     */
     public static final class ResourceOwnerEnum {
 
         /**
@@ -88,22 +88,15 @@ public class SearchSharedResourcesReqBody {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceOwnerEnum(value));
         }
 
         public static ResourceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -344,23 +337,21 @@ public class SearchSharedResourcesReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchSharedResourcesReqBody searchSharedResourcesReqBody = (SearchSharedResourcesReqBody) o;
-        return Objects.equals(this.limit, searchSharedResourcesReqBody.limit)
-            && Objects.equals(this.marker, searchSharedResourcesReqBody.marker)
-            && Objects.equals(this.principal, searchSharedResourcesReqBody.principal)
-            && Objects.equals(this.resourceIds, searchSharedResourcesReqBody.resourceIds)
-            && Objects.equals(this.resourceUrns, searchSharedResourcesReqBody.resourceUrns)
-            && Objects.equals(this.resourceOwner, searchSharedResourcesReqBody.resourceOwner)
-            && Objects.equals(this.resourceShareIds, searchSharedResourcesReqBody.resourceShareIds)
-            && Objects.equals(this.resourceRegion, searchSharedResourcesReqBody.resourceRegion)
-            && Objects.equals(this.resourceType, searchSharedResourcesReqBody.resourceType);
+        SearchSharedResourcesReqBody that = (SearchSharedResourcesReqBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.principal, that.principal) && Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.resourceUrns, that.resourceUrns)
+            && Objects.equals(this.resourceOwner, that.resourceOwner)
+            && Objects.equals(this.resourceShareIds, that.resourceShareIds)
+            && Objects.equals(this.resourceRegion, that.resourceRegion)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

@@ -99,18 +99,18 @@ public class DataSyncStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataSyncStatistics dataSyncStatistics = (DataSyncStatistics) o;
-        return Objects.equals(this.abnormalCount, dataSyncStatistics.abnormalCount)
-            && Objects.equals(this.runningCount, dataSyncStatistics.runningCount)
-            && Objects.equals(this.typeTwoWayCount, dataSyncStatistics.typeTwoWayCount)
-            && Objects.equals(this.typeUnidirectionalCount, dataSyncStatistics.typeUnidirectionalCount);
+        DataSyncStatistics that = (DataSyncStatistics) obj;
+        return Objects.equals(this.abnormalCount, that.abnormalCount)
+            && Objects.equals(this.runningCount, that.runningCount)
+            && Objects.equals(this.typeTwoWayCount, that.typeTwoWayCount)
+            && Objects.equals(this.typeUnidirectionalCount, that.typeUnidirectionalCount);
     }
 
     @Override

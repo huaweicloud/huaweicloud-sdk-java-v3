@@ -118,18 +118,16 @@ public class CreateDataImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataImage createDataImage = (CreateDataImage) o;
-        return Objects.equals(this.name, createDataImage.name)
-            && Objects.equals(this.volumeId, createDataImage.volumeId)
-            && Objects.equals(this.description, createDataImage.description)
-            && Objects.equals(this.tags, createDataImage.tags);
+        CreateDataImage that = (CreateDataImage) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

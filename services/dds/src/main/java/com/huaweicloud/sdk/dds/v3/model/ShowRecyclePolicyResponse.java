@@ -44,15 +44,15 @@ public class ShowRecyclePolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecyclePolicyResponse showRecyclePolicyResponse = (ShowRecyclePolicyResponse) o;
-        return Objects.equals(this.recyclePolicy, showRecyclePolicyResponse.recyclePolicy);
+        ShowRecyclePolicyResponse that = (ShowRecyclePolicyResponse) obj;
+        return Objects.equals(this.recyclePolicy, that.recyclePolicy);
     }
 
     @Override

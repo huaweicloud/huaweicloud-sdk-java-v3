@@ -141,19 +141,18 @@ public class ListEnvInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvInstancesResponse listEnvInstancesResponse = (ListEnvInstancesResponse) o;
-        return Objects.equals(this.instanceInfoList, listEnvInstancesResponse.instanceInfoList)
-            && Objects.equals(this.totalCount, listEnvInstancesResponse.totalCount)
-            && Objects.equals(this.onlineCount, listEnvInstancesResponse.onlineCount)
-            && Objects.equals(this.offlineCount, listEnvInstancesResponse.offlineCount)
-            && Objects.equals(this.disableCount, listEnvInstancesResponse.disableCount);
+        ListEnvInstancesResponse that = (ListEnvInstancesResponse) obj;
+        return Objects.equals(this.instanceInfoList, that.instanceInfoList)
+            && Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.onlineCount, that.onlineCount)
+            && Objects.equals(this.offlineCount, that.offlineCount)
+            && Objects.equals(this.disableCount, that.disableCount);
     }
 
     @Override

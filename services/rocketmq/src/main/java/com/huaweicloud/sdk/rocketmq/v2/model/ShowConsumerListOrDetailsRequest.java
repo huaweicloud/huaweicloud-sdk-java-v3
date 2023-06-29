@@ -124,19 +124,17 @@ public class ShowConsumerListOrDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsumerListOrDetailsRequest showConsumerListOrDetailsRequest = (ShowConsumerListOrDetailsRequest) o;
-        return Objects.equals(this.instanceId, showConsumerListOrDetailsRequest.instanceId)
-            && Objects.equals(this.group, showConsumerListOrDetailsRequest.group)
-            && Objects.equals(this.topic, showConsumerListOrDetailsRequest.topic)
-            && Objects.equals(this.limit, showConsumerListOrDetailsRequest.limit)
-            && Objects.equals(this.offset, showConsumerListOrDetailsRequest.offset);
+        ShowConsumerListOrDetailsRequest that = (ShowConsumerListOrDetailsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

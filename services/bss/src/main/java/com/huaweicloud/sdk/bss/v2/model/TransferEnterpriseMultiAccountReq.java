@@ -121,19 +121,17 @@ public class TransferEnterpriseMultiAccountReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransferEnterpriseMultiAccountReq transferEnterpriseMultiAccountReq = (TransferEnterpriseMultiAccountReq) o;
-        return Objects.equals(this.customerId, transferEnterpriseMultiAccountReq.customerId)
-            && Objects.equals(this.amount, transferEnterpriseMultiAccountReq.amount)
-            && Objects.equals(this.transId, transferEnterpriseMultiAccountReq.transId)
-            && Objects.equals(this.balanceType, transferEnterpriseMultiAccountReq.balanceType)
-            && Objects.equals(this.expireTime, transferEnterpriseMultiAccountReq.expireTime);
+        TransferEnterpriseMultiAccountReq that = (TransferEnterpriseMultiAccountReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.transId, that.transId) && Objects.equals(this.balanceType, that.balanceType)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

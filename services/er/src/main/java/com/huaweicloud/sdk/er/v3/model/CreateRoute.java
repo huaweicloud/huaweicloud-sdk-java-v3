@@ -77,17 +77,17 @@ public class CreateRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRoute createRoute = (CreateRoute) o;
-        return Objects.equals(this.destination, createRoute.destination)
-            && Objects.equals(this.attachmentId, createRoute.attachmentId)
-            && Objects.equals(this.isBlackhole, createRoute.isBlackhole);
+        CreateRoute that = (CreateRoute) obj;
+        return Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.attachmentId, that.attachmentId)
+            && Objects.equals(this.isBlackhole, that.isBlackhole);
     }
 
     @Override

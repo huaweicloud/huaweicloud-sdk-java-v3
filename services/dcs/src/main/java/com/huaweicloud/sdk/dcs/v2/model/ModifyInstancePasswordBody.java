@@ -55,16 +55,15 @@ public class ModifyInstancePasswordBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyInstancePasswordBody modifyInstancePasswordBody = (ModifyInstancePasswordBody) o;
-        return Objects.equals(this.oldPassword, modifyInstancePasswordBody.oldPassword)
-            && Objects.equals(this.newPassword, modifyInstancePasswordBody.newPassword);
+        ModifyInstancePasswordBody that = (ModifyInstancePasswordBody) obj;
+        return Objects.equals(this.oldPassword, that.oldPassword) && Objects.equals(this.newPassword, that.newPassword);
     }
 
     @Override

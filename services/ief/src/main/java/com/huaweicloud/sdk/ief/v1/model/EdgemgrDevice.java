@@ -313,23 +313,20 @@ public class EdgemgrDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgemgrDevice edgemgrDevice = (EdgemgrDevice) o;
-        return Objects.equals(this.id, edgemgrDevice.id) && Objects.equals(this.name, edgemgrDevice.name)
-            && Objects.equals(this.accessProtocol, edgemgrDevice.accessProtocol)
-            && Objects.equals(this.description, edgemgrDevice.description)
-            && Objects.equals(this.attributes, edgemgrDevice.attributes)
-            && Objects.equals(this.twin, edgemgrDevice.twin) && Objects.equals(this.projectId, edgemgrDevice.projectId)
-            && Objects.equals(this.createdAt, edgemgrDevice.createdAt)
-            && Objects.equals(this.updatedAt, edgemgrDevice.updatedAt)
-            && Objects.equals(this.propertyVisitors, edgemgrDevice.propertyVisitors)
-            && Objects.equals(this.tags, edgemgrDevice.tags);
+        EdgemgrDevice that = (EdgemgrDevice) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.accessProtocol, that.accessProtocol)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.twin, that.twin) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.propertyVisitors, that.propertyVisitors) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

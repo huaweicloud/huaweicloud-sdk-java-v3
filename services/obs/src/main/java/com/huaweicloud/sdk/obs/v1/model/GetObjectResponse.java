@@ -424,31 +424,29 @@ public class GetObjectResponse extends SdkStreamResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetObjectResponse getObjectResponse = (GetObjectResponse) o;
-        return Objects.equals(this.xObsId2, getObjectResponse.xObsId2)
-            && Objects.equals(this.xObsRequestId, getObjectResponse.xObsRequestId)
-            && Objects.equals(this.xObsServerSideEncryption, getObjectResponse.xObsServerSideEncryption)
-            && Objects.equals(this.xObsObjectType, getObjectResponse.xObsObjectType)
-            && Objects.equals(this.xObsNextAppendPosition, getObjectResponse.xObsNextAppendPosition)
-            && Objects.equals(this.connection, getObjectResponse.connection)
-            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5,
-                getObjectResponse.xObsServerSideEncryptionCustomerKeyMD5)
-            && Objects.equals(this.xObsExpiration, getObjectResponse.xObsExpiration)
-            && Objects.equals(this.date, getObjectResponse.date) && Objects.equals(this.etag, getObjectResponse.etag)
+        GetObjectResponse that = (GetObjectResponse) obj;
+        return Objects.equals(this.xObsId2, that.xObsId2) && Objects.equals(this.xObsRequestId, that.xObsRequestId)
+            && Objects.equals(this.xObsServerSideEncryption, that.xObsServerSideEncryption)
+            && Objects.equals(this.xObsObjectType, that.xObsObjectType)
+            && Objects.equals(this.xObsNextAppendPosition, that.xObsNextAppendPosition)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.xObsServerSideEncryptionCustomerKeyMD5, that.xObsServerSideEncryptionCustomerKeyMD5)
+            && Objects.equals(this.xObsExpiration, that.xObsExpiration) && Objects.equals(this.date, that.date)
+            && Objects.equals(this.etag, that.etag)
             && Objects.equals(this.xObsServerSideEncryptionCustomerAlgorithm,
-                getObjectResponse.xObsServerSideEncryptionCustomerAlgorithm)
-            && Objects.equals(this.xObsServerSideEncryptionKmsKeyId, getObjectResponse.xObsServerSideEncryptionKmsKeyId)
-            && Objects.equals(this.contentLength, getObjectResponse.contentLength)
-            && Objects.equals(this.xObsWebsiteRedirectLocation, getObjectResponse.xObsWebsiteRedirectLocation)
-            && Objects.equals(this.xObsDeleteMarker, getObjectResponse.xObsDeleteMarker)
-            && Objects.equals(this.xObsVersionId, getObjectResponse.xObsVersionId);
+                that.xObsServerSideEncryptionCustomerAlgorithm)
+            && Objects.equals(this.xObsServerSideEncryptionKmsKeyId, that.xObsServerSideEncryptionKmsKeyId)
+            && Objects.equals(this.contentLength, that.contentLength)
+            && Objects.equals(this.xObsWebsiteRedirectLocation, that.xObsWebsiteRedirectLocation)
+            && Objects.equals(this.xObsDeleteMarker, that.xObsDeleteMarker)
+            && Objects.equals(this.xObsVersionId, that.xObsVersionId);
     }
 
     @Override

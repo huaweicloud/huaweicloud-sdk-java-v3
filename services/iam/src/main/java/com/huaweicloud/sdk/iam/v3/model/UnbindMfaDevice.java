@@ -77,17 +77,17 @@ public class UnbindMfaDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnbindMfaDevice unbindMfaDevice = (UnbindMfaDevice) o;
-        return Objects.equals(this.userId, unbindMfaDevice.userId)
-            && Objects.equals(this.authenticationCode, unbindMfaDevice.authenticationCode)
-            && Objects.equals(this.serialNumber, unbindMfaDevice.serialNumber);
+        UnbindMfaDevice that = (UnbindMfaDevice) obj;
+        return Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.authenticationCode, that.authenticationCode)
+            && Objects.equals(this.serialNumber, that.serialNumber);
     }
 
     @Override

@@ -409,31 +409,25 @@ public class ListVolumesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVolumesRequest listVolumesRequest = (ListVolumesRequest) o;
-        return Objects.equals(this.marker, listVolumesRequest.marker)
-            && Objects.equals(this.name, listVolumesRequest.name)
-            && Objects.equals(this.limit, listVolumesRequest.limit)
-            && Objects.equals(this.sortKey, listVolumesRequest.sortKey)
-            && Objects.equals(this.offset, listVolumesRequest.offset)
-            && Objects.equals(this.sortDir, listVolumesRequest.sortDir)
-            && Objects.equals(this.status, listVolumesRequest.status)
-            && Objects.equals(this.metadata, listVolumesRequest.metadata)
-            && Objects.equals(this.availabilityZone, listVolumesRequest.availabilityZone)
-            && Objects.equals(this.multiattach, listVolumesRequest.multiattach)
-            && Objects.equals(this.serviceType, listVolumesRequest.serviceType)
-            && Objects.equals(this.dedicatedStorageId, listVolumesRequest.dedicatedStorageId)
-            && Objects.equals(this.dedicatedStorageName, listVolumesRequest.dedicatedStorageName)
-            && Objects.equals(this.volumeTypeId, listVolumesRequest.volumeTypeId)
-            && Objects.equals(this.id, listVolumesRequest.id) && Objects.equals(this.ids, listVolumesRequest.ids)
-            && Objects.equals(this.enterpriseProjectId, listVolumesRequest.enterpriseProjectId)
-            && Objects.equals(this.serverId, listVolumesRequest.serverId);
+        ListVolumesRequest that = (ListVolumesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.multiattach, that.multiattach) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
+            && Objects.equals(this.volumeTypeId, that.volumeTypeId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.ids, that.ids) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

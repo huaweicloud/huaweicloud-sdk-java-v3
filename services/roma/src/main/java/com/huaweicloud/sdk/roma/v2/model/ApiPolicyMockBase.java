@@ -299,22 +299,15 @@ public class ApiPolicyMockBase {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusCodeEnum(value));
         }
 
         public static StatusCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -393,17 +386,16 @@ public class ApiPolicyMockBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyMockBase apiPolicyMockBase = (ApiPolicyMockBase) o;
-        return Objects.equals(this.resultContent, apiPolicyMockBase.resultContent)
-            && Objects.equals(this.statusCode, apiPolicyMockBase.statusCode)
-            && Objects.equals(this.header, apiPolicyMockBase.header);
+        ApiPolicyMockBase that = (ApiPolicyMockBase) obj;
+        return Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.header, that.header);
     }
 
     @Override

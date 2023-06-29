@@ -65,16 +65,16 @@ public class CreatePrepaidCloudWafRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrepaidCloudWafRequest createPrepaidCloudWafRequest = (CreatePrepaidCloudWafRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createPrepaidCloudWafRequest.enterpriseProjectId)
-            && Objects.equals(this.body, createPrepaidCloudWafRequest.body);
+        CreatePrepaidCloudWafRequest that = (CreatePrepaidCloudWafRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

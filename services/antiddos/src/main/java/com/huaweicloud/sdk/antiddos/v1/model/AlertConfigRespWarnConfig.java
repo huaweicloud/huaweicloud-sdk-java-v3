@@ -187,22 +187,20 @@ public class AlertConfigRespWarnConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlertConfigRespWarnConfig alertConfigRespWarnConfig = (AlertConfigRespWarnConfig) o;
-        return Objects.equals(this.antiDDoS, alertConfigRespWarnConfig.antiDDoS)
-            && Objects.equals(this.backDoors, alertConfigRespWarnConfig.backDoors)
-            && Objects.equals(this.bruceForce, alertConfigRespWarnConfig.bruceForce)
-            && Objects.equals(this.highPrivilege, alertConfigRespWarnConfig.highPrivilege)
-            && Objects.equals(this.remoteLogin, alertConfigRespWarnConfig.remoteLogin)
-            && Objects.equals(this.sendFrequency, alertConfigRespWarnConfig.sendFrequency)
-            && Objects.equals(this.waf, alertConfigRespWarnConfig.waf)
-            && Objects.equals(this.weakPassword, alertConfigRespWarnConfig.weakPassword);
+        AlertConfigRespWarnConfig that = (AlertConfigRespWarnConfig) obj;
+        return Objects.equals(this.antiDDoS, that.antiDDoS) && Objects.equals(this.backDoors, that.backDoors)
+            && Objects.equals(this.bruceForce, that.bruceForce)
+            && Objects.equals(this.highPrivilege, that.highPrivilege)
+            && Objects.equals(this.remoteLogin, that.remoteLogin)
+            && Objects.equals(this.sendFrequency, that.sendFrequency) && Objects.equals(this.waf, that.waf)
+            && Objects.equals(this.weakPassword, that.weakPassword);
     }
 
     @Override

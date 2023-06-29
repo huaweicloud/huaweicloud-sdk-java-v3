@@ -55,16 +55,15 @@ public class SaslPlainAuthInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SaslPlainAuthInfo saslPlainAuthInfo = (SaslPlainAuthInfo) o;
-        return Objects.equals(this.username, saslPlainAuthInfo.username)
-            && Objects.equals(this.password, saslPlainAuthInfo.password);
+        SaslPlainAuthInfo that = (SaslPlainAuthInfo) obj;
+        return Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class UpdateFollow302SwitchResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFollow302SwitchResponse updateFollow302SwitchResponse = (UpdateFollow302SwitchResponse) o;
-        return Objects.equals(this.followStatus, updateFollow302SwitchResponse.followStatus);
+        UpdateFollow302SwitchResponse that = (UpdateFollow302SwitchResponse) obj;
+        return Objects.equals(this.followStatus, that.followStatus);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class CreateMyActionTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMyActionTemplateRequest createMyActionTemplateRequest = (CreateMyActionTemplateRequest) o;
-        return Objects.equals(this.templateName, createMyActionTemplateRequest.templateName)
-            && Objects.equals(this.body, createMyActionTemplateRequest.body);
+        CreateMyActionTemplateRequest that = (CreateMyActionTemplateRequest) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.body, that.body);
     }
 
     @Override

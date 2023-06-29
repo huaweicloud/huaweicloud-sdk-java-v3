@@ -55,16 +55,15 @@ public class DeleteSubscriptionTargetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSubscriptionTargetRequest deleteSubscriptionTargetRequest = (DeleteSubscriptionTargetRequest) o;
-        return Objects.equals(this.subscriptionId, deleteSubscriptionTargetRequest.subscriptionId)
-            && Objects.equals(this.targetId, deleteSubscriptionTargetRequest.targetId);
+        DeleteSubscriptionTargetRequest that = (DeleteSubscriptionTargetRequest) obj;
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.targetId, that.targetId);
     }
 
     @Override

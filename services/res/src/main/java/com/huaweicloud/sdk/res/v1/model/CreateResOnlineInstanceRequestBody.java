@@ -153,20 +153,17 @@ public class CreateResOnlineInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResOnlineInstanceRequestBody createResOnlineInstanceRequestBody = (CreateResOnlineInstanceRequestBody) o;
-        return Objects.equals(this.jobName, createResOnlineInstanceRequestBody.jobName)
-            && Objects.equals(this.description, createResOnlineInstanceRequestBody.description)
-            && Objects.equals(this.category, createResOnlineInstanceRequestBody.category)
-            && Objects.equals(this.jobType, createResOnlineInstanceRequestBody.jobType)
-            && Objects.equals(this.jobConfig, createResOnlineInstanceRequestBody.jobConfig)
-            && Objects.equals(this.topicUrn, createResOnlineInstanceRequestBody.topicUrn);
+        CreateResOnlineInstanceRequestBody that = (CreateResOnlineInstanceRequestBody) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.jobConfig, that.jobConfig) && Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

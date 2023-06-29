@@ -52,15 +52,15 @@ public class RestartEncodeServerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartEncodeServerRequestBody restartEncodeServerRequestBody = (RestartEncodeServerRequestBody) o;
-        return Objects.equals(this.encodeServerIds, restartEncodeServerRequestBody.encodeServerIds);
+        RestartEncodeServerRequestBody that = (RestartEncodeServerRequestBody) obj;
+        return Objects.equals(this.encodeServerIds, that.encodeServerIds);
     }
 
     @Override

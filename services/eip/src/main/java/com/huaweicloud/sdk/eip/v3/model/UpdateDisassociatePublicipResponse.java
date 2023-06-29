@@ -66,16 +66,15 @@ public class UpdateDisassociatePublicipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDisassociatePublicipResponse updateDisassociatePublicipResponse = (UpdateDisassociatePublicipResponse) o;
-        return Objects.equals(this.requestId, updateDisassociatePublicipResponse.requestId)
-            && Objects.equals(this.publicip, updateDisassociatePublicipResponse.publicip);
+        UpdateDisassociatePublicipResponse that = (UpdateDisassociatePublicipResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.publicip, that.publicip);
     }
 
     @Override

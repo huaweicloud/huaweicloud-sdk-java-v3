@@ -85,22 +85,15 @@ public class ExportSlowSqlTemplatesDetailsRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,23 +264,18 @@ public class ExportSlowSqlTemplatesDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportSlowSqlTemplatesDetailsRequest exportSlowSqlTemplatesDetailsRequest =
-            (ExportSlowSqlTemplatesDetailsRequest) o;
-        return Objects.equals(this.instanceId, exportSlowSqlTemplatesDetailsRequest.instanceId)
-            && Objects.equals(this.startAt, exportSlowSqlTemplatesDetailsRequest.startAt)
-            && Objects.equals(this.endAt, exportSlowSqlTemplatesDetailsRequest.endAt)
-            && Objects.equals(this.datastoreType, exportSlowSqlTemplatesDetailsRequest.datastoreType)
-            && Objects.equals(this.dbName, exportSlowSqlTemplatesDetailsRequest.dbName)
-            && Objects.equals(this.xLanguage, exportSlowSqlTemplatesDetailsRequest.xLanguage)
-            && Objects.equals(this.offset, exportSlowSqlTemplatesDetailsRequest.offset)
-            && Objects.equals(this.limit, exportSlowSqlTemplatesDetailsRequest.limit);
+        ExportSlowSqlTemplatesDetailsRequest that = (ExportSlowSqlTemplatesDetailsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.startAt, that.startAt)
+            && Objects.equals(this.endAt, that.endAt) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

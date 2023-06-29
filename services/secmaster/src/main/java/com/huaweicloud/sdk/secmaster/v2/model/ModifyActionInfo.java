@@ -121,19 +121,17 @@ public class ModifyActionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyActionInfo modifyActionInfo = (ModifyActionInfo) o;
-        return Objects.equals(this.name, modifyActionInfo.name)
-            && Objects.equals(this.description, modifyActionInfo.description)
-            && Objects.equals(this.actionType, modifyActionInfo.actionType)
-            && Objects.equals(this.actionId, modifyActionInfo.actionId)
-            && Objects.equals(this.sortOrder, modifyActionInfo.sortOrder);
+        ModifyActionInfo that = (ModifyActionInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.actionType, that.actionType) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.sortOrder, that.sortOrder);
     }
 
     @Override

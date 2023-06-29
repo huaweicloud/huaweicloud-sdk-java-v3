@@ -99,18 +99,16 @@ public class RouteTableRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteTableRoute routeTableRoute = (RouteTableRoute) o;
-        return Objects.equals(this.type, routeTableRoute.type)
-            && Objects.equals(this.destination, routeTableRoute.destination)
-            && Objects.equals(this.nexthop, routeTableRoute.nexthop)
-            && Objects.equals(this.description, routeTableRoute.description);
+        RouteTableRoute that = (RouteTableRoute) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.description, that.description);
     }
 
     @Override

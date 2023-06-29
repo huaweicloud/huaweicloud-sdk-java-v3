@@ -1,55 +1,45 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ImportPointsRequestBody;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ImportPointsRequest  {
-
+public class ImportPointsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ds_id")
-    
+    @JsonProperty(value = "ds_id")
 
     private String dsId;
+
     /**
      * 该字段PARTIAL则增量覆盖，已有点位更新，新增点位插入;该字段为COMPLETE则全量覆盖，则删除数据源下所有点位，插入当前导入所有点位
      */
     public static final class UpdateTypeEnum {
 
-        
         /**
          * Enum PARTIAL for value: "PARTIAL"
          */
         public static final UpdateTypeEnum PARTIAL = new UpdateTypeEnum("PARTIAL");
-        
+
         /**
          * Enum COMPLETE for value: "COMPLETE"
          */
         public static final UpdateTypeEnum COMPLETE = new UpdateTypeEnum("COMPLETE");
-        
 
         private static final Map<String, UpdateTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -78,25 +68,18 @@ public class ImportPointsRequest  {
 
         @JsonCreator
         public static UpdateTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            UpdateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UpdateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UpdateTypeEnum(value));
         }
 
         public static UpdateTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            UpdateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -114,14 +97,12 @@ public class ImportPointsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_type")
-    
+    @JsonProperty(value = "update_type")
 
     private UpdateTypeEnum updateType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ImportPointsRequestBody body;
 
@@ -129,9 +110,6 @@ public class ImportPointsRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -145,15 +123,10 @@ public class ImportPointsRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public ImportPointsRequest withDsId(String dsId) {
         this.dsId = dsId;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源id，创建数据源配置时设置，节点下唯一。
@@ -167,15 +140,10 @@ public class ImportPointsRequest  {
         this.dsId = dsId;
     }
 
-    
-
     public ImportPointsRequest withUpdateType(UpdateTypeEnum updateType) {
         this.updateType = updateType;
         return this;
     }
-
-    
-
 
     /**
      * 该字段PARTIAL则增量覆盖，已有点位更新，新增点位插入;该字段为COMPLETE则全量覆盖，则删除数据源下所有点位，插入当前导入所有点位
@@ -189,22 +157,19 @@ public class ImportPointsRequest  {
         this.updateType = updateType;
     }
 
-    
-
     public ImportPointsRequest withBody(ImportPointsRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ImportPointsRequest withBody(Consumer<ImportPointsRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ImportPointsRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -218,26 +183,24 @@ public class ImportPointsRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportPointsRequest importPointsRequest = (ImportPointsRequest) o;
-        return Objects.equals(this.edgeNodeId, importPointsRequest.edgeNodeId) &&
-            Objects.equals(this.dsId, importPointsRequest.dsId) &&
-            Objects.equals(this.updateType, importPointsRequest.updateType) &&
-            Objects.equals(this.body, importPointsRequest.body);
+        ImportPointsRequest that = (ImportPointsRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
+            && Objects.equals(this.updateType, that.updateType) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, dsId, updateType, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -249,6 +212,7 @@ public class ImportPointsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -259,8 +223,5 @@ public class ImportPointsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

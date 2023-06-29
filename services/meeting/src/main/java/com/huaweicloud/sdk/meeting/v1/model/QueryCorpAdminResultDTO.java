@@ -197,22 +197,18 @@ public class QueryCorpAdminResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCorpAdminResultDTO queryCorpAdminResultDTO = (QueryCorpAdminResultDTO) o;
-        return Objects.equals(this.id, queryCorpAdminResultDTO.id)
-            && Objects.equals(this.account, queryCorpAdminResultDTO.account)
-            && Objects.equals(this.name, queryCorpAdminResultDTO.name)
-            && Objects.equals(this.adminType, queryCorpAdminResultDTO.adminType)
-            && Objects.equals(this.email, queryCorpAdminResultDTO.email)
-            && Objects.equals(this.phone, queryCorpAdminResultDTO.phone)
-            && Objects.equals(this.country, queryCorpAdminResultDTO.country)
-            && Objects.equals(this.dept, queryCorpAdminResultDTO.dept);
+        QueryCorpAdminResultDTO that = (QueryCorpAdminResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.dept, that.dept);
     }
 
     @Override

@@ -115,17 +115,16 @@ public class ShowBatchTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchTaskResponse showBatchTaskResponse = (ShowBatchTaskResponse) o;
-        return Objects.equals(this.batchtask, showBatchTaskResponse.batchtask)
-            && Objects.equals(this.taskDetails, showBatchTaskResponse.taskDetails)
-            && Objects.equals(this.page, showBatchTaskResponse.page);
+        ShowBatchTaskResponse that = (ShowBatchTaskResponse) obj;
+        return Objects.equals(this.batchtask, that.batchtask) && Objects.equals(this.taskDetails, that.taskDetails)
+            && Objects.equals(this.page, that.page);
     }
 
     @Override

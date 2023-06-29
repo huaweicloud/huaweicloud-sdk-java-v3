@@ -96,17 +96,16 @@ public class CommonCreateTaskReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonCreateTaskReq commonCreateTaskReq = (CommonCreateTaskReq) o;
-        return Objects.equals(this.input, commonCreateTaskReq.input)
-            && Objects.equals(this.output, commonCreateTaskReq.output)
-            && Objects.equals(this.userData, commonCreateTaskReq.userData);
+        CommonCreateTaskReq that = (CommonCreateTaskReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.userData, that.userData);
     }
 
     @Override

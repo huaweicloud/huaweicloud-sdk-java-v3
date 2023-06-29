@@ -462,25 +462,24 @@ public class VaultGet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultGet vaultGet = (VaultGet) o;
-        return Objects.equals(this.billing, vaultGet.billing) && Objects.equals(this.description, vaultGet.description)
-            && Objects.equals(this.id, vaultGet.id) && Objects.equals(this.name, vaultGet.name)
-            && Objects.equals(this.projectId, vaultGet.projectId)
-            && Objects.equals(this.providerId, vaultGet.providerId)
-            && Objects.equals(this.resources, vaultGet.resources) && Objects.equals(this.tags, vaultGet.tags)
-            && Objects.equals(this.enterpriseProjectId, vaultGet.enterpriseProjectId)
-            && Objects.equals(this.autoBind, vaultGet.autoBind) && Objects.equals(this.bindRules, vaultGet.bindRules)
-            && Objects.equals(this.userId, vaultGet.userId) && Objects.equals(this.createdAt, vaultGet.createdAt)
-            && Objects.equals(this.autoExpand, vaultGet.autoExpand)
-            && Objects.equals(this.smnNotify, vaultGet.smnNotify) && Objects.equals(this.threshold, vaultGet.threshold)
-            && Objects.equals(this.updatedAt, vaultGet.updatedAt) && Objects.equals(this.version, vaultGet.version);
+        VaultGet that = (VaultGet) obj;
+        return Objects.equals(this.billing, that.billing) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.providerId, that.providerId)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.autoBind, that.autoBind) && Objects.equals(this.bindRules, that.bindRules)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.autoExpand, that.autoExpand) && Objects.equals(this.smnNotify, that.smnNotify)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

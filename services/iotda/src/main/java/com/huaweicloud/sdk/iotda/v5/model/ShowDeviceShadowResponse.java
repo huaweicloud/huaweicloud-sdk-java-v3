@@ -75,16 +75,15 @@ public class ShowDeviceShadowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceShadowResponse showDeviceShadowResponse = (ShowDeviceShadowResponse) o;
-        return Objects.equals(this.deviceId, showDeviceShadowResponse.deviceId)
-            && Objects.equals(this.shadow, showDeviceShadowResponse.shadow);
+        ShowDeviceShadowResponse that = (ShowDeviceShadowResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.shadow, that.shadow);
     }
 
     @Override

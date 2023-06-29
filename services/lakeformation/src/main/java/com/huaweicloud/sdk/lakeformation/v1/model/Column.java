@@ -77,16 +77,16 @@ public class Column {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Column column = (Column) o;
-        return Objects.equals(this.columnType, column.columnType) && Objects.equals(this.columnName, column.columnName)
-            && Objects.equals(this.comment, column.comment);
+        Column that = (Column) obj;
+        return Objects.equals(this.columnType, that.columnType) && Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.comment, that.comment);
     }
 
     @Override

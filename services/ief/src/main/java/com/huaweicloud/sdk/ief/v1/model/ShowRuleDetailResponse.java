@@ -44,15 +44,15 @@ public class ShowRuleDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRuleDetailResponse showRuleDetailResponse = (ShowRuleDetailResponse) o;
-        return Objects.equals(this.rule, showRuleDetailResponse.rule);
+        ShowRuleDetailResponse that = (ShowRuleDetailResponse) obj;
+        return Objects.equals(this.rule, that.rule);
     }
 
     @Override

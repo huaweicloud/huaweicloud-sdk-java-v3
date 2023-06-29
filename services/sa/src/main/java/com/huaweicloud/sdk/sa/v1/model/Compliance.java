@@ -121,18 +121,17 @@ public class Compliance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Compliance compliance = (Compliance) o;
-        return Objects.equals(this.checkitemId, compliance.checkitemId)
-            && Objects.equals(this.checkpointId, compliance.checkpointId)
-            && Objects.equals(this.specId, compliance.specId) && Objects.equals(this.status, compliance.status)
-            && Objects.equals(this.properties, compliance.properties);
+        Compliance that = (Compliance) obj;
+        return Objects.equals(this.checkitemId, that.checkitemId)
+            && Objects.equals(this.checkpointId, that.checkpointId) && Objects.equals(this.specId, that.specId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.properties, that.properties);
     }
 
     @Override

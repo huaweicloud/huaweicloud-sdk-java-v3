@@ -44,15 +44,15 @@ public class StartDisasterRecoveryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartDisasterRecoveryResponse startDisasterRecoveryResponse = (StartDisasterRecoveryResponse) o;
-        return Objects.equals(this.disasterRecovery, startDisasterRecoveryResponse.disasterRecovery);
+        StartDisasterRecoveryResponse that = (StartDisasterRecoveryResponse) obj;
+        return Objects.equals(this.disasterRecovery, that.disasterRecovery);
     }
 
     @Override

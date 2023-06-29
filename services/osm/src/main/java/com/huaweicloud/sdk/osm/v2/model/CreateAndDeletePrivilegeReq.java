@@ -55,16 +55,15 @@ public class CreateAndDeletePrivilegeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAndDeletePrivilegeReq createAndDeletePrivilegeReq = (CreateAndDeletePrivilegeReq) o;
-        return Objects.equals(this.operation, createAndDeletePrivilegeReq.operation)
-            && Objects.equals(this.privilege, createAndDeletePrivilegeReq.privilege);
+        CreateAndDeletePrivilegeReq that = (CreateAndDeletePrivilegeReq) obj;
+        return Objects.equals(this.operation, that.operation) && Objects.equals(this.privilege, that.privilege);
     }
 
     @Override

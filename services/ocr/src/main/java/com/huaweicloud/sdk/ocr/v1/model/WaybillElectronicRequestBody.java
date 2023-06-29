@@ -55,16 +55,15 @@ public class WaybillElectronicRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WaybillElectronicRequestBody waybillElectronicRequestBody = (WaybillElectronicRequestBody) o;
-        return Objects.equals(this.image, waybillElectronicRequestBody.image)
-            && Objects.equals(this.url, waybillElectronicRequestBody.url);
+        WaybillElectronicRequestBody that = (WaybillElectronicRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
     }
 
     @Override

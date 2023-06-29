@@ -74,16 +74,16 @@ public class ConfigurationProbes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationProbes configurationProbes = (ConfigurationProbes) o;
-        return Objects.equals(this.livenessProbe, configurationProbes.livenessProbe)
-            && Objects.equals(this.readinessProbe, configurationProbes.readinessProbe);
+        ConfigurationProbes that = (ConfigurationProbes) obj;
+        return Objects.equals(this.livenessProbe, that.livenessProbe)
+            && Objects.equals(this.readinessProbe, that.readinessProbe);
     }
 
     @Override

@@ -63,22 +63,15 @@ public class ListVolumesResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KindEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KindEnum(value));
         }
 
         public static KindEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KindEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,17 +166,16 @@ public class ListVolumesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVolumesResponse listVolumesResponse = (ListVolumesResponse) o;
-        return Objects.equals(this.apiVersion, listVolumesResponse.apiVersion)
-            && Objects.equals(this.kind, listVolumesResponse.kind)
-            && Objects.equals(this.items, listVolumesResponse.items);
+        ListVolumesResponse that = (ListVolumesResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

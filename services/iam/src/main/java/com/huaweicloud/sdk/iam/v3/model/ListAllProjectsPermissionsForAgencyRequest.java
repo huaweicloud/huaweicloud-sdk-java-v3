@@ -55,17 +55,15 @@ public class ListAllProjectsPermissionsForAgencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAllProjectsPermissionsForAgencyRequest listAllProjectsPermissionsForAgencyRequest =
-            (ListAllProjectsPermissionsForAgencyRequest) o;
-        return Objects.equals(this.agencyId, listAllProjectsPermissionsForAgencyRequest.agencyId)
-            && Objects.equals(this.domainId, listAllProjectsPermissionsForAgencyRequest.domainId);
+        ListAllProjectsPermissionsForAgencyRequest that = (ListAllProjectsPermissionsForAgencyRequest) obj;
+        return Objects.equals(this.agencyId, that.agencyId) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

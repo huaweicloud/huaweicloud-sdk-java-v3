@@ -184,19 +184,18 @@ public class RuleItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleItem ruleItem = (RuleItem) o;
-        return Objects.equals(this.ruleId, ruleItem.ruleId) && Objects.equals(this.ruleLanguage, ruleItem.ruleLanguage)
-            && Objects.equals(this.ruleName, ruleItem.ruleName)
-            && Objects.equals(this.ruleSeverity, ruleItem.ruleSeverity)
-            && Objects.equals(this.ruleTages, ruleItem.ruleTages) && Objects.equals(this.checked, ruleItem.checked)
-            && Objects.equals(this.ruleConfigList, ruleItem.ruleConfigList);
+        RuleItem that = (RuleItem) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleLanguage, that.ruleLanguage)
+            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.ruleSeverity, that.ruleSeverity)
+            && Objects.equals(this.ruleTages, that.ruleTages) && Objects.equals(this.checked, that.checked)
+            && Objects.equals(this.ruleConfigList, that.ruleConfigList);
     }
 
     @Override

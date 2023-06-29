@@ -105,16 +105,16 @@ public class MappingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MappingResult mappingResult = (MappingResult) o;
-        return Objects.equals(this.id, mappingResult.id) && Objects.equals(this.links, mappingResult.links)
-            && Objects.equals(this.rules, mappingResult.rules);
+        MappingResult that = (MappingResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

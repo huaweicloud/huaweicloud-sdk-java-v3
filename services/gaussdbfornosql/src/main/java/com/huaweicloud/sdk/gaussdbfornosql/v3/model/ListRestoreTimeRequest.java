@@ -121,19 +121,17 @@ public class ListRestoreTimeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRestoreTimeRequest listRestoreTimeRequest = (ListRestoreTimeRequest) o;
-        return Objects.equals(this.instanceId, listRestoreTimeRequest.instanceId)
-            && Objects.equals(this.startTime, listRestoreTimeRequest.startTime)
-            && Objects.equals(this.endTime, listRestoreTimeRequest.endTime)
-            && Objects.equals(this.offset, listRestoreTimeRequest.offset)
-            && Objects.equals(this.limit, listRestoreTimeRequest.limit);
+        ListRestoreTimeRequest that = (ListRestoreTimeRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

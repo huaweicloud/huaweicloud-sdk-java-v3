@@ -65,16 +65,15 @@ public class BatchDeleteDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteDataRequest batchDeleteDataRequest = (BatchDeleteDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, batchDeleteDataRequest.eihealthProjectId)
-            && Objects.equals(this.body, batchDeleteDataRequest.body);
+        BatchDeleteDataRequest that = (BatchDeleteDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

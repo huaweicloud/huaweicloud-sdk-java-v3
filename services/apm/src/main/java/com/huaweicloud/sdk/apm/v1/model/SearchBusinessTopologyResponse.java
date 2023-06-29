@@ -176,19 +176,18 @@ public class SearchBusinessTopologyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchBusinessTopologyResponse searchBusinessTopologyResponse = (SearchBusinessTopologyResponse) o;
-        return Objects.equals(this.nodeList, searchBusinessTopologyResponse.nodeList)
-            && Objects.equals(this.lineList, searchBusinessTopologyResponse.lineList)
-            && Objects.equals(this.collectorConfig, searchBusinessTopologyResponse.collectorConfig)
-            && Objects.equals(this.realStartTime, searchBusinessTopologyResponse.realStartTime)
-            && Objects.equals(this.realEndTime, searchBusinessTopologyResponse.realEndTime);
+        SearchBusinessTopologyResponse that = (SearchBusinessTopologyResponse) obj;
+        return Objects.equals(this.nodeList, that.nodeList) && Objects.equals(this.lineList, that.lineList)
+            && Objects.equals(this.collectorConfig, that.collectorConfig)
+            && Objects.equals(this.realStartTime, that.realStartTime)
+            && Objects.equals(this.realEndTime, that.realEndTime);
     }
 
     @Override

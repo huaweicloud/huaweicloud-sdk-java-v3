@@ -45,8 +45,8 @@ public class Vpc {
     private List<Route> routes = null;
 
     /**
-    * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
-    */
+     * 功能说明：虚拟私有云的状态 取值范围： - CREATING：创建中 - OK：创建成功
+     */
     public static final class StatusEnum {
 
         /**
@@ -95,22 +95,15 @@ public class Vpc {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -339,20 +332,20 @@ public class Vpc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Vpc vpc = (Vpc) o;
-        return Objects.equals(this.id, vpc.id) && Objects.equals(this.name, vpc.name)
-            && Objects.equals(this.cidr, vpc.cidr) && Objects.equals(this.description, vpc.description)
-            && Objects.equals(this.routes, vpc.routes) && Objects.equals(this.status, vpc.status)
-            && Objects.equals(this.enterpriseProjectId, vpc.enterpriseProjectId)
-            && Objects.equals(this.tenantId, vpc.tenantId) && Objects.equals(this.createdAt, vpc.createdAt)
-            && Objects.equals(this.updatedAt, vpc.updatedAt);
+        Vpc that = (Vpc) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.routes, that.routes) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

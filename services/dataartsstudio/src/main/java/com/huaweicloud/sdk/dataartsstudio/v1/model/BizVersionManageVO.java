@@ -188,22 +188,18 @@ public class BizVersionManageVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BizVersionManageVO bizVersionManageVO = (BizVersionManageVO) o;
-        return Objects.equals(this.id, bizVersionManageVO.id)
-            && Objects.equals(this.bizType, bizVersionManageVO.bizType)
-            && Objects.equals(this.bizId, bizVersionManageVO.bizId)
-            && Objects.equals(this.bizInfo, bizVersionManageVO.bizInfo)
-            && Objects.equals(this.status, bizVersionManageVO.status)
-            && Objects.equals(this.bizVersion, bizVersionManageVO.bizVersion)
-            && Objects.equals(this.createTime, bizVersionManageVO.createTime)
-            && Objects.equals(this.updateTime, bizVersionManageVO.updateTime);
+        BizVersionManageVO that = (BizVersionManageVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.bizInfo, that.bizInfo)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.bizVersion, that.bizVersion)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

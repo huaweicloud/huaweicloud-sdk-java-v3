@@ -53,15 +53,15 @@ public class ShowRabbitMqTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRabbitMqTagsResponse showRabbitMqTagsResponse = (ShowRabbitMqTagsResponse) o;
-        return Objects.equals(this.tags, showRabbitMqTagsResponse.tags);
+        ShowRabbitMqTagsResponse that = (ShowRabbitMqTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

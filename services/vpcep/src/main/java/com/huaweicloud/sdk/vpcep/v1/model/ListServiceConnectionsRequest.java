@@ -80,22 +80,15 @@ public class ListServiceConnectionsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class ListServiceConnectionsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -349,22 +335,18 @@ public class ListServiceConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceConnectionsRequest listServiceConnectionsRequest = (ListServiceConnectionsRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, listServiceConnectionsRequest.vpcEndpointServiceId)
-            && Objects.equals(this.id, listServiceConnectionsRequest.id)
-            && Objects.equals(this.markerId, listServiceConnectionsRequest.markerId)
-            && Objects.equals(this.status, listServiceConnectionsRequest.status)
-            && Objects.equals(this.sortKey, listServiceConnectionsRequest.sortKey)
-            && Objects.equals(this.sortDir, listServiceConnectionsRequest.sortDir)
-            && Objects.equals(this.limit, listServiceConnectionsRequest.limit)
-            && Objects.equals(this.offset, listServiceConnectionsRequest.offset);
+        ListServiceConnectionsRequest that = (ListServiceConnectionsRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.markerId, that.markerId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

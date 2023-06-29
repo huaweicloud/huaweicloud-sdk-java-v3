@@ -176,23 +176,21 @@ public class ListFunctionAsyncInvokeConfigResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionAsyncInvokeConfigResult listFunctionAsyncInvokeConfigResult =
-            (ListFunctionAsyncInvokeConfigResult) o;
-        return Objects.equals(this.funcUrn, listFunctionAsyncInvokeConfigResult.funcUrn)
-            && Objects.equals(this.maxAsyncEventAgeInSeconds,
-                listFunctionAsyncInvokeConfigResult.maxAsyncEventAgeInSeconds)
-            && Objects.equals(this.maxAsyncRetryAttempts, listFunctionAsyncInvokeConfigResult.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, listFunctionAsyncInvokeConfigResult.destinationConfig)
-            && Objects.equals(this.createdTime, listFunctionAsyncInvokeConfigResult.createdTime)
-            && Objects.equals(this.lastModified, listFunctionAsyncInvokeConfigResult.lastModified)
-            && Objects.equals(this.enableAsyncStatusLog, listFunctionAsyncInvokeConfigResult.enableAsyncStatusLog);
+        ListFunctionAsyncInvokeConfigResult that = (ListFunctionAsyncInvokeConfigResult) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn)
+            && Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, that.destinationConfig)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModified, that.lastModified)
+            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog);
     }
 
     @Override

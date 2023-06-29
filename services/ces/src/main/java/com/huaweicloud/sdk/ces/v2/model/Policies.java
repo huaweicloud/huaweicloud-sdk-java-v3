@@ -100,22 +100,15 @@ public class Policies {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,22 +253,15 @@ public class Policies {
             if (value == null) {
                 return null;
             }
-            SuppressDurationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuppressDurationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuppressDurationEnum(value));
         }
 
         public static SuppressDurationEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            SuppressDurationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -491,22 +477,21 @@ public class Policies {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Policies policies = (Policies) o;
-        return Objects.equals(this.namespace, policies.namespace)
-            && Objects.equals(this.dimensionName, policies.dimensionName)
-            && Objects.equals(this.metricName, policies.metricName) && Objects.equals(this.period, policies.period)
-            && Objects.equals(this.filter, policies.filter)
-            && Objects.equals(this.comparisonOperator, policies.comparisonOperator)
-            && Objects.equals(this.value, policies.value) && Objects.equals(this.unit, policies.unit)
-            && Objects.equals(this.count, policies.count) && Objects.equals(this.alarmLevel, policies.alarmLevel)
-            && Objects.equals(this.suppressDuration, policies.suppressDuration);
+        Policies that = (Policies) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensionName, that.dimensionName)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.suppressDuration, that.suppressDuration);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class NoSqlEpsQuotaTotal {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoSqlEpsQuotaTotal noSqlEpsQuotaTotal = (NoSqlEpsQuotaTotal) o;
-        return Objects.equals(this.instance, noSqlEpsQuotaTotal.instance)
-            && Objects.equals(this.vcpus, noSqlEpsQuotaTotal.vcpus) && Objects.equals(this.ram, noSqlEpsQuotaTotal.ram);
+        NoSqlEpsQuotaTotal that = (NoSqlEpsQuotaTotal) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.ram, that.ram);
     }
 
     @Override

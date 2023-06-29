@@ -60,22 +60,15 @@ public class CreateDestinationRequestBody {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DestinationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DestinationTypeEnum(value));
         }
 
         public static DestinationTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DestinationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -315,24 +308,19 @@ public class CreateDestinationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDestinationRequestBody createDestinationRequestBody = (CreateDestinationRequestBody) o;
-        return Objects.equals(this.destinationType, createDestinationRequestBody.destinationType)
-            && Objects.equals(this.appId, createDestinationRequestBody.appId)
-            && Objects.equals(this.destinationName, createDestinationRequestBody.destinationName)
-            && Objects.equals(this.topic, createDestinationRequestBody.topic)
-            && Objects.equals(this.server, createDestinationRequestBody.server)
-            && Objects.equals(this.token, createDestinationRequestBody.token)
-            && Objects.equals(this.tag, createDestinationRequestBody.tag)
-            && Objects.equals(this.mqsSaslSsl, createDestinationRequestBody.mqsSaslSsl)
-            && Objects.equals(this.userName, createDestinationRequestBody.userName)
-            && Objects.equals(this.password, createDestinationRequestBody.password);
+        CreateDestinationRequestBody that = (CreateDestinationRequestBody) obj;
+        return Objects.equals(this.destinationType, that.destinationType) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.destinationName, that.destinationName) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.server, that.server) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.mqsSaslSsl, that.mqsSaslSsl)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

@@ -1,180 +1,145 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.BasePathDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.DeviceAuthInfoDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.DeviceDataRecord;
-import com.huaweicloud.sdk.iotedge.v2.model.EdgeAppInstanceDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.LogConfigDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.OfflineCacheConfigsDTO;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建边缘节点请求结构体。
  */
-public class EdgeNodeCreation  {
-
+public class EdgeNodeCreation {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="verify_code")
-    
+    @JsonProperty(value = "verify_code")
 
     private String verifyCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_out")
-    
+    @JsonProperty(value = "time_out")
 
     private Integer timeOut;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
 
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_level")
-    
+    @JsonProperty(value = "security_level")
 
     private String securityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="reliability_level")
-    
+    @JsonProperty(value = "reliability_level")
 
     private String reliabilityLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="storage_period")
-    
+    @JsonProperty(value = "storage_period")
 
     private Integer storagePeriod;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ai_card_type")
-    
+    @JsonProperty(value = "ai_card_type")
 
     private String aiCardType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="npu_library_path")
-    
+    @JsonProperty(value = "npu_library_path")
 
     private String npuLibraryPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="base_path")
-    
+    @JsonProperty(value = "base_path")
 
     private BasePathDTO basePath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log_configs")
-    
+    @JsonProperty(value = "log_configs")
+
     private List<LogConfigDTO> logConfigs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apps")
-    
+    @JsonProperty(value = "apps")
+
     private List<EdgeAppInstanceDTO> apps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="network_access_point")
-    
+    @JsonProperty(value = "network_access_point")
 
     private String networkAccessPoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hardware_model")
-    
+    @JsonProperty(value = "hardware_model")
 
     private String hardwareModel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offline_cache_configs")
-    
+    @JsonProperty(value = "offline_cache_configs")
 
     private OfflineCacheConfigsDTO offlineCacheConfigs;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_auth_info")
-    
+    @JsonProperty(value = "device_auth_info")
 
     private DeviceAuthInfoDTO deviceAuthInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_data_format")
-    
+    @JsonProperty(value = "device_data_format")
 
     private String deviceDataFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="automatic_upgrade")
-    
+    @JsonProperty(value = "automatic_upgrade")
 
     private String automaticUpgrade;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_data_record")
-    
+    @JsonProperty(value = "device_data_record")
 
     private DeviceDataRecord deviceDataRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="metric_report")
-    
+    @JsonProperty(value = "metric_report")
 
     private String metricReport;
 
@@ -182,9 +147,6 @@ public class EdgeNodeCreation  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -198,15 +160,10 @@ public class EdgeNodeCreation  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public EdgeNodeCreation withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点名称，只允许中、数字、英文大小写、中划线、下划线
@@ -220,15 +177,10 @@ public class EdgeNodeCreation  {
         this.name = name;
     }
 
-    
-
     public EdgeNodeCreation withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点所属资源类型：advanced|standard
@@ -242,15 +194,10 @@ public class EdgeNodeCreation  {
         this.type = type;
     }
 
-    
-
     public EdgeNodeCreation withVerifyCode(String verifyCode) {
         this.verifyCode = verifyCode;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点注册使用的验证码，如果不输入则平台随机生成。
@@ -264,15 +211,10 @@ public class EdgeNodeCreation  {
         this.verifyCode = verifyCode;
     }
 
-    
-
     public EdgeNodeCreation withTimeOut(Integer timeOut) {
         this.timeOut = timeOut;
         return this;
     }
-
-    
-
 
     /**
      * 验证码的有效时间单位秒，默认1800秒，范围为1~864000，过期后平台会随机生成。
@@ -288,15 +230,10 @@ public class EdgeNodeCreation  {
         this.timeOut = timeOut;
     }
 
-    
-
     public EdgeNodeCreation withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 系统架构。包括：arm64，arm32，x86_64。
@@ -310,15 +247,10 @@ public class EdgeNodeCreation  {
         this.arch = arch;
     }
 
-    
-
     public EdgeNodeCreation withOsType(String osType) {
         this.osType = osType;
         return this;
     }
-
-    
-
 
     /**
      * 系统类型。包括：generalLinux通用系统，openHarmony。
@@ -332,15 +264,10 @@ public class EdgeNodeCreation  {
         this.osType = osType;
     }
 
-    
-
     public EdgeNodeCreation withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
@@ -354,15 +281,10 @@ public class EdgeNodeCreation  {
         this.instanceId = instanceId;
     }
 
-    
-
     public EdgeNodeCreation withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间id，对应IOTDA云服务接口参数中的app_id。
@@ -376,16 +298,13 @@ public class EdgeNodeCreation  {
         this.spaceId = spaceId;
     }
 
-    
-
     public EdgeNodeCreation withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
     public EdgeNodeCreation addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -393,7 +312,7 @@ public class EdgeNodeCreation  {
     }
 
     public EdgeNodeCreation withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
@@ -412,15 +331,10 @@ public class EdgeNodeCreation  {
         this.resourceIds = resourceIds;
     }
 
-    
-
     public EdgeNodeCreation withSecurityLevel(String securityLevel) {
         this.securityLevel = securityLevel;
         return this;
     }
-
-    
-
 
     /**
      * 节点的安全等级，MEDIUM表示本地明文存储，HIGH表示本地加密存储。
@@ -434,15 +348,10 @@ public class EdgeNodeCreation  {
         this.securityLevel = securityLevel;
     }
 
-    
-
     public EdgeNodeCreation withReliabilityLevel(String reliabilityLevel) {
         this.reliabilityLevel = reliabilityLevel;
         return this;
     }
-
-    
-
 
     /**
      * 节点的可靠性等级。
@@ -456,15 +365,10 @@ public class EdgeNodeCreation  {
         this.reliabilityLevel = reliabilityLevel;
     }
 
-    
-
     public EdgeNodeCreation withStoragePeriod(Integer storagePeriod) {
         this.storagePeriod = storagePeriod;
         return this;
     }
-
-    
-
 
     /**
      * 节点的存储周期，默认0天，取值范围0~7天，0天则不存储。
@@ -480,15 +384,10 @@ public class EdgeNodeCreation  {
         this.storagePeriod = storagePeriod;
     }
 
-    
-
     public EdgeNodeCreation withAiCardType(String aiCardType) {
         this.aiCardType = aiCardType;
         return this;
     }
-
-    
-
 
     /**
      * AI加速卡类型，如华为昇腾AI加速卡NPU、图像处理加速卡GPU。
@@ -502,15 +401,10 @@ public class EdgeNodeCreation  {
         this.aiCardType = aiCardType;
     }
 
-    
-
     public EdgeNodeCreation withNpuLibraryPath(String npuLibraryPath) {
         this.npuLibraryPath = npuLibraryPath;
         return this;
     }
-
-    
-
 
     /**
      * npu驱动动态库路径
@@ -524,22 +418,19 @@ public class EdgeNodeCreation  {
         this.npuLibraryPath = npuLibraryPath;
     }
 
-    
-
     public EdgeNodeCreation withBasePath(BasePathDTO basePath) {
         this.basePath = basePath;
         return this;
     }
 
     public EdgeNodeCreation withBasePath(Consumer<BasePathDTO> basePathSetter) {
-        if(this.basePath == null ){
+        if (this.basePath == null) {
             this.basePath = new BasePathDTO();
             basePathSetter.accept(this.basePath);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get basePath
@@ -553,16 +444,13 @@ public class EdgeNodeCreation  {
         this.basePath = basePath;
     }
 
-    
-
     public EdgeNodeCreation withLogConfigs(List<LogConfigDTO> logConfigs) {
         this.logConfigs = logConfigs;
         return this;
     }
 
-    
     public EdgeNodeCreation addLogConfigsItem(LogConfigDTO logConfigsItem) {
-        if(this.logConfigs == null) {
+        if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
         this.logConfigs.add(logConfigsItem);
@@ -570,7 +458,7 @@ public class EdgeNodeCreation  {
     }
 
     public EdgeNodeCreation withLogConfigs(Consumer<List<LogConfigDTO>> logConfigsSetter) {
-        if(this.logConfigs == null) {
+        if (this.logConfigs == null) {
             this.logConfigs = new ArrayList<>();
         }
         logConfigsSetter.accept(this.logConfigs);
@@ -589,16 +477,13 @@ public class EdgeNodeCreation  {
         this.logConfigs = logConfigs;
     }
 
-    
-
     public EdgeNodeCreation withApps(List<EdgeAppInstanceDTO> apps) {
         this.apps = apps;
         return this;
     }
 
-    
     public EdgeNodeCreation addAppsItem(EdgeAppInstanceDTO appsItem) {
-        if(this.apps == null) {
+        if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
         this.apps.add(appsItem);
@@ -606,7 +491,7 @@ public class EdgeNodeCreation  {
     }
 
     public EdgeNodeCreation withApps(Consumer<List<EdgeAppInstanceDTO>> appsSetter) {
-        if(this.apps == null) {
+        if (this.apps == null) {
             this.apps = new ArrayList<>();
         }
         appsSetter.accept(this.apps);
@@ -625,15 +510,10 @@ public class EdgeNodeCreation  {
         this.apps = apps;
     }
 
-    
-
     public EdgeNodeCreation withNetworkAccessPoint(String networkAccessPoint) {
         this.networkAccessPoint = networkAccessPoint;
         return this;
     }
-
-    
-
 
     /**
      * 网络接入方式类型
@@ -647,15 +527,10 @@ public class EdgeNodeCreation  {
         this.networkAccessPoint = networkAccessPoint;
     }
 
-    
-
     public EdgeNodeCreation withHardwareModel(String hardwareModel) {
         this.hardwareModel = hardwareModel;
         return this;
     }
-
-    
-
 
     /**
      * 网关型号
@@ -669,22 +544,19 @@ public class EdgeNodeCreation  {
         this.hardwareModel = hardwareModel;
     }
 
-    
-
     public EdgeNodeCreation withOfflineCacheConfigs(OfflineCacheConfigsDTO offlineCacheConfigs) {
         this.offlineCacheConfigs = offlineCacheConfigs;
         return this;
     }
 
     public EdgeNodeCreation withOfflineCacheConfigs(Consumer<OfflineCacheConfigsDTO> offlineCacheConfigsSetter) {
-        if(this.offlineCacheConfigs == null ){
+        if (this.offlineCacheConfigs == null) {
             this.offlineCacheConfigs = new OfflineCacheConfigsDTO();
             offlineCacheConfigsSetter.accept(this.offlineCacheConfigs);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get offlineCacheConfigs
@@ -698,22 +570,19 @@ public class EdgeNodeCreation  {
         this.offlineCacheConfigs = offlineCacheConfigs;
     }
 
-    
-
     public EdgeNodeCreation withDeviceAuthInfo(DeviceAuthInfoDTO deviceAuthInfo) {
         this.deviceAuthInfo = deviceAuthInfo;
         return this;
     }
 
     public EdgeNodeCreation withDeviceAuthInfo(Consumer<DeviceAuthInfoDTO> deviceAuthInfoSetter) {
-        if(this.deviceAuthInfo == null ){
+        if (this.deviceAuthInfo == null) {
             this.deviceAuthInfo = new DeviceAuthInfoDTO();
             deviceAuthInfoSetter.accept(this.deviceAuthInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get deviceAuthInfo
@@ -727,15 +596,10 @@ public class EdgeNodeCreation  {
         this.deviceAuthInfo = deviceAuthInfo;
     }
 
-    
-
     public EdgeNodeCreation withDeviceDataFormat(String deviceDataFormat) {
         this.deviceDataFormat = deviceDataFormat;
         return this;
     }
-
-    
-
 
     /**
      * 节点使用的数据格式，默认为iotda物模型1.0格式，可以选择属性平铺数据格式flat_json
@@ -749,15 +613,10 @@ public class EdgeNodeCreation  {
         this.deviceDataFormat = deviceDataFormat;
     }
 
-    
-
     public EdgeNodeCreation withAutomaticUpgrade(String automaticUpgrade) {
         this.automaticUpgrade = automaticUpgrade;
         return this;
     }
-
-    
-
 
     /**
      * 自动升级系统应用的节点开关，默认为关闭：OFF，IMMEDIATE表示节点开关打开
@@ -771,22 +630,19 @@ public class EdgeNodeCreation  {
         this.automaticUpgrade = automaticUpgrade;
     }
 
-    
-
     public EdgeNodeCreation withDeviceDataRecord(DeviceDataRecord deviceDataRecord) {
         this.deviceDataRecord = deviceDataRecord;
         return this;
     }
 
     public EdgeNodeCreation withDeviceDataRecord(Consumer<DeviceDataRecord> deviceDataRecordSetter) {
-        if(this.deviceDataRecord == null ){
+        if (this.deviceDataRecord == null) {
             this.deviceDataRecord = new DeviceDataRecord();
             deviceDataRecordSetter.accept(this.deviceDataRecord);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get deviceDataRecord
@@ -800,15 +656,10 @@ public class EdgeNodeCreation  {
         this.deviceDataRecord = deviceDataRecord;
     }
 
-    
-
     public EdgeNodeCreation withMetricReport(String metricReport) {
         this.metricReport = metricReport;
         return this;
     }
-
-    
-
 
     /**
      * omagent监控运维工具是否上报指标
@@ -822,48 +673,66 @@ public class EdgeNodeCreation  {
         this.metricReport = metricReport;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNodeCreation edgeNodeCreation = (EdgeNodeCreation) o;
-        return Objects.equals(this.edgeNodeId, edgeNodeCreation.edgeNodeId) &&
-            Objects.equals(this.name, edgeNodeCreation.name) &&
-            Objects.equals(this.type, edgeNodeCreation.type) &&
-            Objects.equals(this.verifyCode, edgeNodeCreation.verifyCode) &&
-            Objects.equals(this.timeOut, edgeNodeCreation.timeOut) &&
-            Objects.equals(this.arch, edgeNodeCreation.arch) &&
-            Objects.equals(this.osType, edgeNodeCreation.osType) &&
-            Objects.equals(this.instanceId, edgeNodeCreation.instanceId) &&
-            Objects.equals(this.spaceId, edgeNodeCreation.spaceId) &&
-            Objects.equals(this.resourceIds, edgeNodeCreation.resourceIds) &&
-            Objects.equals(this.securityLevel, edgeNodeCreation.securityLevel) &&
-            Objects.equals(this.reliabilityLevel, edgeNodeCreation.reliabilityLevel) &&
-            Objects.equals(this.storagePeriod, edgeNodeCreation.storagePeriod) &&
-            Objects.equals(this.aiCardType, edgeNodeCreation.aiCardType) &&
-            Objects.equals(this.npuLibraryPath, edgeNodeCreation.npuLibraryPath) &&
-            Objects.equals(this.basePath, edgeNodeCreation.basePath) &&
-            Objects.equals(this.logConfigs, edgeNodeCreation.logConfigs) &&
-            Objects.equals(this.apps, edgeNodeCreation.apps) &&
-            Objects.equals(this.networkAccessPoint, edgeNodeCreation.networkAccessPoint) &&
-            Objects.equals(this.hardwareModel, edgeNodeCreation.hardwareModel) &&
-            Objects.equals(this.offlineCacheConfigs, edgeNodeCreation.offlineCacheConfigs) &&
-            Objects.equals(this.deviceAuthInfo, edgeNodeCreation.deviceAuthInfo) &&
-            Objects.equals(this.deviceDataFormat, edgeNodeCreation.deviceDataFormat) &&
-            Objects.equals(this.automaticUpgrade, edgeNodeCreation.automaticUpgrade) &&
-            Objects.equals(this.deviceDataRecord, edgeNodeCreation.deviceDataRecord) &&
-            Objects.equals(this.metricReport, edgeNodeCreation.metricReport);
+        EdgeNodeCreation that = (EdgeNodeCreation) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.verifyCode, that.verifyCode)
+            && Objects.equals(this.timeOut, that.timeOut) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.securityLevel, that.securityLevel)
+            && Objects.equals(this.reliabilityLevel, that.reliabilityLevel)
+            && Objects.equals(this.storagePeriod, that.storagePeriod)
+            && Objects.equals(this.aiCardType, that.aiCardType)
+            && Objects.equals(this.npuLibraryPath, that.npuLibraryPath) && Objects.equals(this.basePath, that.basePath)
+            && Objects.equals(this.logConfigs, that.logConfigs) && Objects.equals(this.apps, that.apps)
+            && Objects.equals(this.networkAccessPoint, that.networkAccessPoint)
+            && Objects.equals(this.hardwareModel, that.hardwareModel)
+            && Objects.equals(this.offlineCacheConfigs, that.offlineCacheConfigs)
+            && Objects.equals(this.deviceAuthInfo, that.deviceAuthInfo)
+            && Objects.equals(this.deviceDataFormat, that.deviceDataFormat)
+            && Objects.equals(this.automaticUpgrade, that.automaticUpgrade)
+            && Objects.equals(this.deviceDataRecord, that.deviceDataRecord)
+            && Objects.equals(this.metricReport, that.metricReport);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, type, verifyCode, timeOut, arch, osType, instanceId, spaceId, resourceIds, securityLevel, reliabilityLevel, storagePeriod, aiCardType, npuLibraryPath, basePath, logConfigs, apps, networkAccessPoint, hardwareModel, offlineCacheConfigs, deviceAuthInfo, deviceDataFormat, automaticUpgrade, deviceDataRecord, metricReport);
+        return Objects.hash(edgeNodeId,
+            name,
+            type,
+            verifyCode,
+            timeOut,
+            arch,
+            osType,
+            instanceId,
+            spaceId,
+            resourceIds,
+            securityLevel,
+            reliabilityLevel,
+            storagePeriod,
+            aiCardType,
+            npuLibraryPath,
+            basePath,
+            logConfigs,
+            apps,
+            networkAccessPoint,
+            hardwareModel,
+            offlineCacheConfigs,
+            deviceAuthInfo,
+            deviceDataFormat,
+            automaticUpgrade,
+            deviceDataRecord,
+            metricReport);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -897,6 +766,7 @@ public class EdgeNodeCreation  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -907,8 +777,5 @@ public class EdgeNodeCreation  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

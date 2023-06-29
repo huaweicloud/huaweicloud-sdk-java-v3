@@ -1,67 +1,54 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class BatchListEdgeAppsRequest  {
-
+public class BatchListEdgeAppsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
+
     /**
      * 应用id搜索关键字
      */
     public static final class AppTypeEnum {
 
-        
         /**
          * Enum SYSTEM_REQUIRED for value: "SYSTEM_REQUIRED"
          */
         public static final AppTypeEnum SYSTEM_REQUIRED = new AppTypeEnum("SYSTEM_REQUIRED");
-        
+
         /**
          * Enum SYSTEM_OPTIONAL for value: "SYSTEM_OPTIONAL"
          */
         public static final AppTypeEnum SYSTEM_OPTIONAL = new AppTypeEnum("SYSTEM_OPTIONAL");
-        
+
         /**
          * Enum USER for value: "USER"
          */
         public static final AppTypeEnum USER = new AppTypeEnum("USER");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -91,25 +78,18 @@ public class BatchListEdgeAppsRequest  {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -127,46 +107,44 @@ public class BatchListEdgeAppsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private AppTypeEnum appType;
+
     /**
      * 功能类型
      */
     public static final class FunctionTypeEnum {
 
-        
         /**
          * Enum DATA_PROCESSING for value: "DATA_PROCESSING"
          */
         public static final FunctionTypeEnum DATA_PROCESSING = new FunctionTypeEnum("DATA_PROCESSING");
-        
+
         /**
          * Enum PROTOCOL_PARSING for value: "PROTOCOL_PARSING"
          */
         public static final FunctionTypeEnum PROTOCOL_PARSING = new FunctionTypeEnum("PROTOCOL_PARSING");
-        
+
         /**
          * Enum ON_PREMISE_INTEGRATION for value: "ON_PREMISE_INTEGRATION"
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
-        
+
         /**
          * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
          */
         public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
-        
+
         /**
          * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
          */
         public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
-        
+
         /**
          * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
-        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -199,25 +177,18 @@ public class BatchListEdgeAppsRequest  {
 
         @JsonCreator
         public static FunctionTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FunctionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FunctionTypeEnum(value));
         }
 
         public static FunctionTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -235,8 +206,7 @@ public class BatchListEdgeAppsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_type")
-    
+    @JsonProperty(value = "function_type")
 
     private FunctionTypeEnum functionType;
 
@@ -244,9 +214,6 @@ public class BatchListEdgeAppsRequest  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID搜索关键字
@@ -260,15 +227,10 @@ public class BatchListEdgeAppsRequest  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public BatchListEdgeAppsRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -284,15 +246,10 @@ public class BatchListEdgeAppsRequest  {
         this.offset = offset;
     }
 
-    
-
     public BatchListEdgeAppsRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000
@@ -308,15 +265,10 @@ public class BatchListEdgeAppsRequest  {
         this.limit = limit;
     }
 
-    
-
     public BatchListEdgeAppsRequest withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用id搜索关键字
@@ -330,15 +282,10 @@ public class BatchListEdgeAppsRequest  {
         this.appType = appType;
     }
 
-    
-
     public BatchListEdgeAppsRequest withFunctionType(FunctionTypeEnum functionType) {
         this.functionType = functionType;
         return this;
     }
-
-    
-
 
     /**
      * 功能类型
@@ -352,27 +299,25 @@ public class BatchListEdgeAppsRequest  {
         this.functionType = functionType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListEdgeAppsRequest batchListEdgeAppsRequest = (BatchListEdgeAppsRequest) o;
-        return Objects.equals(this.edgeAppId, batchListEdgeAppsRequest.edgeAppId) &&
-            Objects.equals(this.offset, batchListEdgeAppsRequest.offset) &&
-            Objects.equals(this.limit, batchListEdgeAppsRequest.limit) &&
-            Objects.equals(this.appType, batchListEdgeAppsRequest.appType) &&
-            Objects.equals(this.functionType, batchListEdgeAppsRequest.functionType);
+        BatchListEdgeAppsRequest that = (BatchListEdgeAppsRequest) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.functionType, that.functionType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeAppId, offset, limit, appType, functionType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -385,6 +330,7 @@ public class BatchListEdgeAppsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -395,8 +341,5 @@ public class BatchListEdgeAppsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,15 @@ public class FaceCompareUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceCompareUrlReq faceCompareUrlReq = (FaceCompareUrlReq) o;
-        return Objects.equals(this.image1Url, faceCompareUrlReq.image1Url)
-            && Objects.equals(this.image2Url, faceCompareUrlReq.image2Url);
+        FaceCompareUrlReq that = (FaceCompareUrlReq) obj;
+        return Objects.equals(this.image1Url, that.image1Url) && Objects.equals(this.image2Url, that.image2Url);
     }
 
     @Override

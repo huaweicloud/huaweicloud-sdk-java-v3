@@ -55,17 +55,15 @@ public class UpdateLoadbalancerAutoscalingOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLoadbalancerAutoscalingOption updateLoadbalancerAutoscalingOption =
-            (UpdateLoadbalancerAutoscalingOption) o;
-        return Objects.equals(this.enable, updateLoadbalancerAutoscalingOption.enable)
-            && Objects.equals(this.minL7FlavorId, updateLoadbalancerAutoscalingOption.minL7FlavorId);
+        UpdateLoadbalancerAutoscalingOption that = (UpdateLoadbalancerAutoscalingOption) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.minL7FlavorId, that.minL7FlavorId);
     }
 
     @Override

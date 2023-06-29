@@ -29,8 +29,8 @@ public class ListThumbnailsTaskRequest {
     private List<String> taskId = null;
 
     /**
-    * 任务状态。  取值如下： - WAITING: 等待启动 - PROCESSING：截图中 - SUCCEEDED：截图成功 - FAILED：截图失败 - CANCELED：已删除 
-    */
+     * 任务状态。  取值如下： - WAITING: 等待启动 - PROCESSING：截图中 - SUCCEEDED：截图成功 - FAILED：截图失败 - CANCELED：已删除 
+     */
     public static final class StatusEnum {
 
         /**
@@ -91,22 +91,15 @@ public class ListThumbnailsTaskRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -290,21 +283,18 @@ public class ListThumbnailsTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListThumbnailsTaskRequest listThumbnailsTaskRequest = (ListThumbnailsTaskRequest) o;
-        return Objects.equals(this.xLanguage, listThumbnailsTaskRequest.xLanguage)
-            && Objects.equals(this.taskId, listThumbnailsTaskRequest.taskId)
-            && Objects.equals(this.status, listThumbnailsTaskRequest.status)
-            && Objects.equals(this.startTime, listThumbnailsTaskRequest.startTime)
-            && Objects.equals(this.endTime, listThumbnailsTaskRequest.endTime)
-            && Objects.equals(this.page, listThumbnailsTaskRequest.page)
-            && Objects.equals(this.size, listThumbnailsTaskRequest.size);
+        ListThumbnailsTaskRequest that = (ListThumbnailsTaskRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

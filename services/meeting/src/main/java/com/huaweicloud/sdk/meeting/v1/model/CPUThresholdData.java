@@ -59,16 +59,15 @@ public class CPUThresholdData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CPUThresholdData cpUThresholdData = (CPUThresholdData) o;
-        return Objects.equals(this.cpu, cpUThresholdData.cpu)
-            && Objects.equals(this.cpuDefault, cpUThresholdData.cpuDefault);
+        CPUThresholdData that = (CPUThresholdData) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDefault, that.cpuDefault);
     }
 
     @Override

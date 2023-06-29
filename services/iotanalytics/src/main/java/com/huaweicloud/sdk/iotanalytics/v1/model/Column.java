@@ -99,17 +99,16 @@ public class Column {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Column column = (Column) o;
-        return Objects.equals(this.columnName, column.columnName)
-            && Objects.equals(this.description, column.description) && Objects.equals(this.type, column.type)
-            && Objects.equals(this.isPartitionColumn, column.isPartitionColumn);
+        Column that = (Column) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.isPartitionColumn, that.isPartitionColumn);
     }
 
     @Override

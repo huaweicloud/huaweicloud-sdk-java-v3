@@ -66,16 +66,15 @@ public class ShowInstanceStatusInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceStatusInfoResponse showInstanceStatusInfoResponse = (ShowInstanceStatusInfoResponse) o;
-        return Objects.equals(this.result, showInstanceStatusInfoResponse.result)
-            && Objects.equals(this.status, showInstanceStatusInfoResponse.status);
+        ShowInstanceStatusInfoResponse that = (ShowInstanceStatusInfoResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

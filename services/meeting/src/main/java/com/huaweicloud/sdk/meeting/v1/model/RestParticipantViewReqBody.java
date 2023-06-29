@@ -55,16 +55,15 @@ public class RestParticipantViewReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestParticipantViewReqBody restParticipantViewReqBody = (RestParticipantViewReqBody) o;
-        return Objects.equals(this.viewType, restParticipantViewReqBody.viewType)
-            && Objects.equals(this.participantID, restParticipantViewReqBody.participantID);
+        RestParticipantViewReqBody that = (RestParticipantViewReqBody) obj;
+        return Objects.equals(this.viewType, that.viewType) && Objects.equals(this.participantID, that.participantID);
     }
 
     @Override

@@ -57,16 +57,16 @@ public class ProtectionServerInfoBackupError {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectionServerInfoBackupError protectionServerInfoBackupError = (ProtectionServerInfoBackupError) o;
-        return Objects.equals(this.errorCode, protectionServerInfoBackupError.errorCode)
-            && Objects.equals(this.errorDescription, protectionServerInfoBackupError.errorDescription);
+        ProtectionServerInfoBackupError that = (ProtectionServerInfoBackupError) obj;
+        return Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorDescription, that.errorDescription);
     }
 
     @Override

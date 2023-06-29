@@ -77,17 +77,16 @@ public class DeleteHooksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHooksRequest deleteHooksRequest = (DeleteHooksRequest) o;
-        return Objects.equals(this.groupName, deleteHooksRequest.groupName)
-            && Objects.equals(this.hookId, deleteHooksRequest.hookId)
-            && Objects.equals(this.repositoryName, deleteHooksRequest.repositoryName);
+        DeleteHooksRequest that = (DeleteHooksRequest) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.hookId, that.hookId)
+            && Objects.equals(this.repositoryName, that.repositoryName);
     }
 
     @Override

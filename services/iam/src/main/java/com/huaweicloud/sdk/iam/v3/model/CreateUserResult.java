@@ -407,31 +407,23 @@ public class CreateUserResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserResult createUserResult = (CreateUserResult) o;
-        return Objects.equals(this.accessMode, createUserResult.accessMode)
-            && Objects.equals(this.status, createUserResult.status)
-            && Objects.equals(this.pwdStatus, createUserResult.pwdStatus)
-            && Objects.equals(this.xuserId, createUserResult.xuserId)
-            && Objects.equals(this.xuserType, createUserResult.xuserType)
-            && Objects.equals(this.description, createUserResult.description)
-            && Objects.equals(this.name, createUserResult.name) && Objects.equals(this.phone, createUserResult.phone)
-            && Objects.equals(this.isDomainOwner, createUserResult.isDomainOwner)
-            && Objects.equals(this.domainId, createUserResult.domainId)
-            && Objects.equals(this.enabled, createUserResult.enabled)
-            && Objects.equals(this.areacode, createUserResult.areacode)
-            && Objects.equals(this.email, createUserResult.email)
-            && Objects.equals(this.createTime, createUserResult.createTime)
-            && Objects.equals(this.xdomainId, createUserResult.xdomainId)
-            && Objects.equals(this.xdomainType, createUserResult.xdomainType)
-            && Objects.equals(this.id, createUserResult.id)
-            && Objects.equals(this.passwordExpiresAt, createUserResult.passwordExpiresAt);
+        CreateUserResult that = (CreateUserResult) obj;
+        return Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.xuserId, that.xuserId)
+            && Objects.equals(this.xuserType, that.xuserType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.isDomainOwner, that.isDomainOwner) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.areacode, that.areacode)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.xdomainId, that.xdomainId) && Objects.equals(this.xdomainType, that.xdomainType)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt);
     }
 
     @Override

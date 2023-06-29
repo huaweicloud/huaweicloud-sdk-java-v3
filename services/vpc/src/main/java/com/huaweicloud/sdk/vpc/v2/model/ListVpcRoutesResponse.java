@@ -91,16 +91,15 @@ public class ListVpcRoutesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVpcRoutesResponse listVpcRoutesResponse = (ListVpcRoutesResponse) o;
-        return Objects.equals(this.routes, listVpcRoutesResponse.routes)
-            && Objects.equals(this.routesLinks, listVpcRoutesResponse.routesLinks);
+        ListVpcRoutesResponse that = (ListVpcRoutesResponse) obj;
+        return Objects.equals(this.routes, that.routes) && Objects.equals(this.routesLinks, that.routesLinks);
     }
 
     @Override

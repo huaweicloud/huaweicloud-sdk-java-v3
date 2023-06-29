@@ -87,17 +87,16 @@ public class UpdateDeviceTwinRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceTwinRequest updateDeviceTwinRequest = (UpdateDeviceTwinRequest) o;
-        return Objects.equals(this.iefInstanceId, updateDeviceTwinRequest.iefInstanceId)
-            && Objects.equals(this.deviceId, updateDeviceTwinRequest.deviceId)
-            && Objects.equals(this.body, updateDeviceTwinRequest.body);
+        UpdateDeviceTwinRequest that = (UpdateDeviceTwinRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

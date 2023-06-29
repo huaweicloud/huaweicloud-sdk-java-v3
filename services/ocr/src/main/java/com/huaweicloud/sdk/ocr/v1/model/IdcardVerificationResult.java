@@ -99,18 +99,16 @@ public class IdcardVerificationResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdcardVerificationResult idcardVerificationResult = (IdcardVerificationResult) o;
-        return Objects.equals(this.validNumber, idcardVerificationResult.validNumber)
-            && Objects.equals(this.validBirth, idcardVerificationResult.validBirth)
-            && Objects.equals(this.validSex, idcardVerificationResult.validSex)
-            && Objects.equals(this.validDate, idcardVerificationResult.validDate);
+        IdcardVerificationResult that = (IdcardVerificationResult) obj;
+        return Objects.equals(this.validNumber, that.validNumber) && Objects.equals(this.validBirth, that.validBirth)
+            && Objects.equals(this.validSex, that.validSex) && Objects.equals(this.validDate, that.validDate);
     }
 
     @Override

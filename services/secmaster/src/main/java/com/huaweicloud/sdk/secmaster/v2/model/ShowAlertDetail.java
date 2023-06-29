@@ -254,23 +254,20 @@ public class ShowAlertDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertDetail showAlertDetail = (ShowAlertDetail) o;
-        return Objects.equals(this.dataObject, showAlertDetail.dataObject)
-            && Objects.equals(this.createTime, showAlertDetail.createTime)
-            && Objects.equals(this.updateTime, showAlertDetail.updateTime)
-            && Objects.equals(this.projectId, showAlertDetail.projectId)
-            && Objects.equals(this.workspaceId, showAlertDetail.workspaceId)
-            && Objects.equals(this.id, showAlertDetail.id) && Objects.equals(this.type, showAlertDetail.type)
-            && Objects.equals(this.version, showAlertDetail.version)
-            && Objects.equals(this.formatVersion, showAlertDetail.formatVersion)
-            && Objects.equals(this.dataclassRef, showAlertDetail.dataclassRef);
+        ShowAlertDetail that = (ShowAlertDetail) obj;
+        return Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.formatVersion, that.formatVersion)
+            && Objects.equals(this.dataclassRef, that.dataclassRef);
     }
 
     @Override

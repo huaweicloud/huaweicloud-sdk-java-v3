@@ -65,16 +65,15 @@ public class UpdateVpcPeeringRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcPeeringRequest updateVpcPeeringRequest = (UpdateVpcPeeringRequest) o;
-        return Objects.equals(this.peeringId, updateVpcPeeringRequest.peeringId)
-            && Objects.equals(this.body, updateVpcPeeringRequest.body);
+        UpdateVpcPeeringRequest that = (UpdateVpcPeeringRequest) obj;
+        return Objects.equals(this.peeringId, that.peeringId) && Objects.equals(this.body, that.body);
     }
 
     @Override

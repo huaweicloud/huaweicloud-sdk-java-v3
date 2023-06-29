@@ -121,19 +121,17 @@ public class ActionResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionResult actionResult = (ActionResult) o;
-        return Objects.equals(this.match, actionResult.match)
-            && Objects.equals(this.retryInterval, actionResult.retryInterval)
-            && Objects.equals(this.maxRetry, actionResult.maxRetry)
-            && Objects.equals(this.nextState, actionResult.nextState)
-            && Objects.equals(this.isTerminal, actionResult.isTerminal);
+        ActionResult that = (ActionResult) obj;
+        return Objects.equals(this.match, that.match) && Objects.equals(this.retryInterval, that.retryInterval)
+            && Objects.equals(this.maxRetry, that.maxRetry) && Objects.equals(this.nextState, that.nextState)
+            && Objects.equals(this.isTerminal, that.isTerminal);
     }
 
     @Override

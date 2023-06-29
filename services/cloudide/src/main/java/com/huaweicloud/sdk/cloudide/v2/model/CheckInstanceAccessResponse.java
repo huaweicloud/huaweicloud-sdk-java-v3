@@ -56,16 +56,15 @@ public class CheckInstanceAccessResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckInstanceAccessResponse checkInstanceAccessResponse = (CheckInstanceAccessResponse) o;
-        return Objects.equals(this.result, checkInstanceAccessResponse.result)
-            && Objects.equals(this.status, checkInstanceAccessResponse.status);
+        CheckInstanceAccessResponse that = (CheckInstanceAccessResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

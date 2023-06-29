@@ -120,18 +120,18 @@ public class CreateInterRegionBandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInterRegionBandwidth createInterRegionBandwidth = (CreateInterRegionBandwidth) o;
-        return Objects.equals(this.cloudConnectionId, createInterRegionBandwidth.cloudConnectionId)
-            && Objects.equals(this.bandwidthPackageId, createInterRegionBandwidth.bandwidthPackageId)
-            && Objects.equals(this.bandwidth, createInterRegionBandwidth.bandwidth)
-            && Objects.equals(this.interRegionIds, createInterRegionBandwidth.interRegionIds);
+        CreateInterRegionBandwidth that = (CreateInterRegionBandwidth) obj;
+        return Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.bandwidthPackageId, that.bandwidthPackageId)
+            && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.interRegionIds, that.interRegionIds);
     }
 
     @Override

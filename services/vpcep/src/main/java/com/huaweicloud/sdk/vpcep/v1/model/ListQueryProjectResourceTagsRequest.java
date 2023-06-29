@@ -33,16 +33,15 @@ public class ListQueryProjectResourceTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueryProjectResourceTagsRequest listQueryProjectResourceTagsRequest =
-            (ListQueryProjectResourceTagsRequest) o;
-        return Objects.equals(this.resourceType, listQueryProjectResourceTagsRequest.resourceType);
+        ListQueryProjectResourceTagsRequest that = (ListQueryProjectResourceTagsRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

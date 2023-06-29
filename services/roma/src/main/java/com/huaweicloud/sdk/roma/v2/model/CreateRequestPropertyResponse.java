@@ -106,22 +106,15 @@ public class CreateRequestPropertyResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataTypeEnum(value));
         }
 
         public static DataTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class CreateRequestPropertyResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RequiredEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequiredEnum(value));
         }
 
         public static RequiredEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            RequiredEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -471,26 +457,20 @@ public class CreateRequestPropertyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestPropertyResponse createRequestPropertyResponse = (CreateRequestPropertyResponse) o;
-        return Objects.equals(this.propertyId, createRequestPropertyResponse.propertyId)
-            && Objects.equals(this.propertyName, createRequestPropertyResponse.propertyName)
-            && Objects.equals(this.description, createRequestPropertyResponse.description)
-            && Objects.equals(this.dataType, createRequestPropertyResponse.dataType)
-            && Objects.equals(this.required, createRequestPropertyResponse.required)
-            && Objects.equals(this.min, createRequestPropertyResponse.min)
-            && Objects.equals(this.max, createRequestPropertyResponse.max)
-            && Objects.equals(this.step, createRequestPropertyResponse.step)
-            && Objects.equals(this.maxLength, createRequestPropertyResponse.maxLength)
-            && Objects.equals(this.unit, createRequestPropertyResponse.unit)
-            && Objects.equals(this.enumList, createRequestPropertyResponse.enumList)
-            && Objects.equals(this.enumDict, createRequestPropertyResponse.enumDict);
+        CreateRequestPropertyResponse that = (CreateRequestPropertyResponse) obj;
+        return Objects.equals(this.propertyId, that.propertyId) && Objects.equals(this.propertyName, that.propertyName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.maxLength, that.maxLength) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.enumList, that.enumList) && Objects.equals(this.enumDict, that.enumDict);
     }
 
     @Override

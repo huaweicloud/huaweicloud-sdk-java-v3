@@ -281,22 +281,20 @@ public class ExtractTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtractTask extractTask = (ExtractTask) o;
-        return Objects.equals(this.taskId, extractTask.taskId) && Objects.equals(this.status, extractTask.status)
-            && Objects.equals(this.createTime, extractTask.createTime)
-            && Objects.equals(this.startTime, extractTask.startTime)
-            && Objects.equals(this.endTime, extractTask.endTime)
-            && Objects.equals(this.errorCode, extractTask.errorCode)
-            && Objects.equals(this.description, extractTask.description)
-            && Objects.equals(this.userData, extractTask.userData) && Objects.equals(this.input, extractTask.input)
-            && Objects.equals(this.output, extractTask.output) && Objects.equals(this.metadata, extractTask.metadata);
+        ExtractTask that = (ExtractTask) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

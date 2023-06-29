@@ -169,21 +169,19 @@ public class PeriodProductRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodProductRatingResult periodProductRatingResult = (PeriodProductRatingResult) o;
-        return Objects.equals(this.id, periodProductRatingResult.id)
-            && Objects.equals(this.productId, periodProductRatingResult.productId)
-            && Objects.equals(this.amount, periodProductRatingResult.amount)
-            && Objects.equals(this.officialWebsiteAmount, periodProductRatingResult.officialWebsiteAmount)
-            && Objects.equals(this.discountAmount, periodProductRatingResult.discountAmount)
-            && Objects.equals(this.measureId, periodProductRatingResult.measureId)
-            && Objects.equals(this.limit, periodProductRatingResult.limit);
+        PeriodProductRatingResult that = (PeriodProductRatingResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

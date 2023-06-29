@@ -146,20 +146,17 @@ public class CheckRulesetParametersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRulesetParametersRequest checkRulesetParametersRequest = (CheckRulesetParametersRequest) o;
-        return Objects.equals(this.projectId, checkRulesetParametersRequest.projectId)
-            && Objects.equals(this.taskId, checkRulesetParametersRequest.taskId)
-            && Objects.equals(this.rulesetId, checkRulesetParametersRequest.rulesetId)
-            && Objects.equals(this.language, checkRulesetParametersRequest.language)
-            && Objects.equals(this.offset, checkRulesetParametersRequest.offset)
-            && Objects.equals(this.limit, checkRulesetParametersRequest.limit);
+        CheckRulesetParametersRequest that = (CheckRulesetParametersRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.rulesetId, that.rulesetId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -100,22 +100,15 @@ public class TextWatermark {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BaseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BaseEnum(value));
         }
 
         public static BaseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,21 +286,19 @@ public class TextWatermark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TextWatermark textWatermark = (TextWatermark) o;
-        return Objects.equals(this.dx, textWatermark.dx) && Objects.equals(this.dy, textWatermark.dy)
-            && Objects.equals(this.referpos, textWatermark.referpos)
-            && Objects.equals(this.timelineStart, textWatermark.timelineStart)
-            && Objects.equals(this.timelineDuration, textWatermark.timelineDuration)
-            && Objects.equals(this.fontName, textWatermark.fontName)
-            && Objects.equals(this.fontSize, textWatermark.fontSize)
-            && Objects.equals(this.fontColor, textWatermark.fontColor) && Objects.equals(this.base, textWatermark.base);
+        TextWatermark that = (TextWatermark) obj;
+        return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration)
+            && Objects.equals(this.fontName, that.fontName) && Objects.equals(this.fontSize, that.fontSize)
+            && Objects.equals(this.fontColor, that.fontColor) && Objects.equals(this.base, that.base);
     }
 
     @Override

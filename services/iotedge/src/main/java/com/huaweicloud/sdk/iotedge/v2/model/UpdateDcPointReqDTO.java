@@ -1,56 +1,43 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ProcessingConfigDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 更新点位表请求结构体
  */
-public class UpdateDcPointReqDTO  {
-
+public class UpdateDcPointReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="collection_config")
-    
+    @JsonProperty(value = "collection_config")
 
     private Object collectionConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property")
-    
+    @JsonProperty(value = "property")
 
     private String property;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_type")
-    
+    @JsonProperty(value = "data_type")
 
     private String dataType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="processing_config")
-    
+    @JsonProperty(value = "processing_config")
 
     private ProcessingConfigDTO processingConfig;
 
@@ -58,9 +45,6 @@ public class UpdateDcPointReqDTO  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 点位名称，允许中、数字、英文大小写、下划线、中划线、#%()*特殊字符
@@ -74,15 +58,10 @@ public class UpdateDcPointReqDTO  {
         this.name = name;
     }
 
-    
-
     public UpdateDcPointReqDTO withCollectionConfig(Object collectionConfig) {
         this.collectionConfig = collectionConfig;
         return this;
     }
-
-    
-
 
     /**
      * 点位采集配置
@@ -96,15 +75,10 @@ public class UpdateDcPointReqDTO  {
         this.collectionConfig = collectionConfig;
     }
 
-    
-
     public UpdateDcPointReqDTO withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备id
@@ -118,15 +92,10 @@ public class UpdateDcPointReqDTO  {
         this.deviceId = deviceId;
     }
 
-    
-
     public UpdateDcPointReqDTO withProperty(String property) {
         this.property = property;
         return this;
     }
-
-    
-
 
     /**
      * 属性，允许中、数字、英文大小写、下划线、中划线
@@ -140,15 +109,10 @@ public class UpdateDcPointReqDTO  {
         this.property = property;
     }
 
-    
-
     public UpdateDcPointReqDTO withDataType(String dataType) {
         this.dataType = dataType;
         return this;
     }
-
-    
-
 
     /**
      * 点位数据类型
@@ -162,22 +126,19 @@ public class UpdateDcPointReqDTO  {
         this.dataType = dataType;
     }
 
-    
-
     public UpdateDcPointReqDTO withProcessingConfig(ProcessingConfigDTO processingConfig) {
         this.processingConfig = processingConfig;
         return this;
     }
 
     public UpdateDcPointReqDTO withProcessingConfig(Consumer<ProcessingConfigDTO> processingConfigSetter) {
-        if(this.processingConfig == null ){
+        if (this.processingConfig == null) {
             this.processingConfig = new ProcessingConfigDTO();
             processingConfigSetter.accept(this.processingConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get processingConfig
@@ -191,28 +152,26 @@ public class UpdateDcPointReqDTO  {
         this.processingConfig = processingConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDcPointReqDTO updateDcPointReqDTO = (UpdateDcPointReqDTO) o;
-        return Objects.equals(this.name, updateDcPointReqDTO.name) &&
-            Objects.equals(this.collectionConfig, updateDcPointReqDTO.collectionConfig) &&
-            Objects.equals(this.deviceId, updateDcPointReqDTO.deviceId) &&
-            Objects.equals(this.property, updateDcPointReqDTO.property) &&
-            Objects.equals(this.dataType, updateDcPointReqDTO.dataType) &&
-            Objects.equals(this.processingConfig, updateDcPointReqDTO.processingConfig);
+        UpdateDcPointReqDTO that = (UpdateDcPointReqDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.collectionConfig, that.collectionConfig)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.property, that.property)
+            && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.processingConfig, that.processingConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, collectionConfig, deviceId, property, dataType, processingConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,6 +185,7 @@ public class UpdateDcPointReqDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -236,8 +196,5 @@ public class UpdateDcPointReqDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

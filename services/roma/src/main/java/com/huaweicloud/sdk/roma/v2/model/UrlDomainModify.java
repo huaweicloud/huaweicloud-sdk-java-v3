@@ -60,22 +60,15 @@ public class UrlDomainModify {
             if (value == null) {
                 return null;
             }
-            MinSslVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MinSslVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MinSslVersionEnum(value));
         }
 
         public static MinSslVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MinSslVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -115,15 +108,15 @@ public class UrlDomainModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlDomainModify urlDomainModify = (UrlDomainModify) o;
-        return Objects.equals(this.minSslVersion, urlDomainModify.minSslVersion);
+        UrlDomainModify that = (UrlDomainModify) obj;
+        return Objects.equals(this.minSslVersion, that.minSslVersion);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CreateSkillOrderFrom {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSkillOrderFrom createSkillOrderFrom = (CreateSkillOrderFrom) o;
-        return Objects.equals(this.skillId, createSkillOrderFrom.skillId)
-            && Objects.equals(this.amount, createSkillOrderFrom.amount)
-            && Objects.equals(this.commissionFlag, createSkillOrderFrom.commissionFlag);
+        CreateSkillOrderFrom that = (CreateSkillOrderFrom) obj;
+        return Objects.equals(this.skillId, that.skillId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.commissionFlag, that.commissionFlag);
     }
 
     @Override

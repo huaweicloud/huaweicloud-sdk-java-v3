@@ -33,15 +33,15 @@ public class CommitSyntaxConversionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitSyntaxConversionRequest commitSyntaxConversionRequest = (CommitSyntaxConversionRequest) o;
-        return Objects.equals(this.migrationProjectId, commitSyntaxConversionRequest.migrationProjectId);
+        CommitSyntaxConversionRequest that = (CommitSyntaxConversionRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId);
     }
 
     @Override

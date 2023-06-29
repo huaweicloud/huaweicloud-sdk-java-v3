@@ -55,16 +55,15 @@ public class DeleteNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNodeRequest deleteNodeRequest = (DeleteNodeRequest) o;
-        return Objects.equals(this.nodeId, deleteNodeRequest.nodeId)
-            && Objects.equals(this.forceDelete, deleteNodeRequest.forceDelete);
+        DeleteNodeRequest that = (DeleteNodeRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.forceDelete, that.forceDelete);
     }
 
     @Override

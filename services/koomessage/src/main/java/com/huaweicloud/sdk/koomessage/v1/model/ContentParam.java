@@ -99,18 +99,17 @@ public class ContentParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentParam contentParam = (ContentParam) o;
-        return Objects.equals(this.paramName, contentParam.paramName)
-            && Objects.equals(this.contentType, contentParam.contentType)
-            && Objects.equals(this.contentSource, contentParam.contentSource)
-            && Objects.equals(this.contentDetail, contentParam.contentDetail);
+        ContentParam that = (ContentParam) obj;
+        return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.contentSource, that.contentSource)
+            && Objects.equals(this.contentDetail, that.contentDetail);
     }
 
     @Override

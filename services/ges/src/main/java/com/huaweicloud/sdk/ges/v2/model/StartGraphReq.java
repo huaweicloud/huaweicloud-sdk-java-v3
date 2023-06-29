@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 启动图请求体
  */
-public class StartGraphReq  {
-
+public class StartGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_backup_id")
-    
+    @JsonProperty(value = "graph_backup_id")
 
     private String graphBackupId;
 
@@ -27,9 +19,6 @@ public class StartGraphReq  {
         this.graphBackupId = graphBackupId;
         return this;
     }
-
-    
-
 
     /**
      * 启动图时关联的备份ID，设置此参数时，表示从备份进行启动；如果为空，表示从上次关闭图时的状态启动。
@@ -43,23 +32,23 @@ public class StartGraphReq  {
         this.graphBackupId = graphBackupId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartGraphReq startGraphReq = (StartGraphReq) o;
-        return Objects.equals(this.graphBackupId, startGraphReq.graphBackupId);
+        StartGraphReq that = (StartGraphReq) obj;
+        return Objects.equals(this.graphBackupId, that.graphBackupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphBackupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class StartGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class StartGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

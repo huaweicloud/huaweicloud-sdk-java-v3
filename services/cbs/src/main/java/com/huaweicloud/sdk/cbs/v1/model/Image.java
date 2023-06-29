@@ -1,69 +1,53 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ImageFrame;
-import com.huaweicloud.sdk.cbs.v1.model.Time;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Image
  */
-public class Image  {
-
+public class Image {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_frame")
-    
+    @JsonProperty(value = "image_frame")
 
     private ImageFrame imageFrame;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_url")
-    
+    @JsonProperty(value = "image_url")
 
     private String imageUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private Integer type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution_type")
-    
+    @JsonProperty(value = "resolution_type")
 
     private Integer resolutionType;
 
@@ -71,9 +55,6 @@ public class Image  {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -87,15 +68,10 @@ public class Image  {
         this.createTime = createTime;
     }
 
-    
-
     public Image withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -109,15 +85,10 @@ public class Image  {
         this.updateTime = updateTime;
     }
 
-    
-
     public Image withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * Get id
@@ -131,22 +102,19 @@ public class Image  {
         this.id = id;
     }
 
-    
-
     public Image withImageFrame(ImageFrame imageFrame) {
         this.imageFrame = imageFrame;
         return this;
     }
 
     public Image withImageFrame(Consumer<ImageFrame> imageFrameSetter) {
-        if(this.imageFrame == null ){
+        if (this.imageFrame == null) {
             this.imageFrame = new ImageFrame();
             imageFrameSetter.accept(this.imageFrame);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get imageFrame
@@ -160,15 +128,10 @@ public class Image  {
         this.imageFrame = imageFrame;
     }
 
-    
-
     public Image withImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
     }
-
-    
-
 
     /**
      * 图片的obs路径
@@ -182,15 +145,10 @@ public class Image  {
         this.imageUrl = imageUrl;
     }
 
-    
-
     public Image withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Get name
@@ -204,15 +162,10 @@ public class Image  {
         this.name = name;
     }
 
-    
-
     public Image withType(Integer type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 0：背景图 1：图标 2：系统背景
@@ -226,15 +179,10 @@ public class Image  {
         this.type = type;
     }
 
-    
-
     public Image withResolutionType(Integer resolutionType) {
         this.resolutionType = resolutionType;
         return this;
     }
-
-    
-
 
     /**
      * 横竖屏模式。0：横版1：竖版
@@ -248,30 +196,26 @@ public class Image  {
         this.resolutionType = resolutionType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Image image = (Image) o;
-        return Objects.equals(this.createTime, image.createTime) &&
-            Objects.equals(this.updateTime, image.updateTime) &&
-            Objects.equals(this.id, image.id) &&
-            Objects.equals(this.imageFrame, image.imageFrame) &&
-            Objects.equals(this.imageUrl, image.imageUrl) &&
-            Objects.equals(this.name, image.name) &&
-            Objects.equals(this.type, image.type) &&
-            Objects.equals(this.resolutionType, image.resolutionType);
+        Image that = (Image) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.imageFrame, that.imageFrame)
+            && Objects.equals(this.imageUrl, that.imageUrl) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.resolutionType, that.resolutionType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(createTime, updateTime, id, imageFrame, imageUrl, name, type, resolutionType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -287,6 +231,7 @@ public class Image  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -297,8 +242,5 @@ public class Image  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -143,18 +143,17 @@ public class LabelRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LabelRsp labelRsp = (LabelRsp) o;
-        return Objects.equals(this.id, labelRsp.id) && Objects.equals(this.name, labelRsp.name)
-            && Objects.equals(this.description, labelRsp.description) && Objects.equals(this.creator, labelRsp.creator)
-            && Objects.equals(this.createTime, labelRsp.createTime)
-            && Objects.equals(this.updateTime, labelRsp.updateTime);
+        LabelRsp that = (LabelRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

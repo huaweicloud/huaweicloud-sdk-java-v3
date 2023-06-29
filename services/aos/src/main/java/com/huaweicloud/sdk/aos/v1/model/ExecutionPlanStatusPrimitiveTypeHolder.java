@@ -1,56 +1,49 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * ExecutionPlanStatusPrimitiveTypeHolder
  */
-public class ExecutionPlanStatusPrimitiveTypeHolder  {
+public class ExecutionPlanStatusPrimitiveTypeHolder {
 
     /**
      * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum CREATION_IN_PROGRESS for value: "CREATION_IN_PROGRESS"
          */
         public static final StatusEnum CREATION_IN_PROGRESS = new StatusEnum("CREATION_IN_PROGRESS");
-        
+
         /**
          * Enum CREATION_FAILED for value: "CREATION_FAILED"
          */
         public static final StatusEnum CREATION_FAILED = new StatusEnum("CREATION_FAILED");
-        
+
         /**
          * Enum AVAILABLE for value: "AVAILABLE"
          */
         public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
-        
+
         /**
          * Enum APPLY_IN_PROGRESS for value: "APPLY_IN_PROGRESS"
          */
         public static final StatusEnum APPLY_IN_PROGRESS = new StatusEnum("APPLY_IN_PROGRESS");
-        
+
         /**
          * Enum APPLIED for value: "APPLIED"
          */
         public static final StatusEnum APPLIED = new StatusEnum("APPLIED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,25 +75,18 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -118,8 +104,7 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
@@ -127,9 +112,6 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
@@ -143,23 +125,23 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlanStatusPrimitiveTypeHolder executionPlanStatusPrimitiveTypeHolder = (ExecutionPlanStatusPrimitiveTypeHolder) o;
-        return Objects.equals(this.status, executionPlanStatusPrimitiveTypeHolder.status);
+        ExecutionPlanStatusPrimitiveTypeHolder that = (ExecutionPlanStatusPrimitiveTypeHolder) obj;
+        return Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -168,6 +150,7 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -178,8 +161,5 @@ public class ExecutionPlanStatusPrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

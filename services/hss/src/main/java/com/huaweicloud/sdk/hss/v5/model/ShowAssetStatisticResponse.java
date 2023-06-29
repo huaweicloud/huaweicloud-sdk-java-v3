@@ -228,23 +228,21 @@ public class ShowAssetStatisticResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetStatisticResponse showAssetStatisticResponse = (ShowAssetStatisticResponse) o;
-        return Objects.equals(this.accountNum, showAssetStatisticResponse.accountNum)
-            && Objects.equals(this.portNum, showAssetStatisticResponse.portNum)
-            && Objects.equals(this.processNum, showAssetStatisticResponse.processNum)
-            && Objects.equals(this.appNum, showAssetStatisticResponse.appNum)
-            && Objects.equals(this.autoLaunchNum, showAssetStatisticResponse.autoLaunchNum)
-            && Objects.equals(this.webFrameworkNum, showAssetStatisticResponse.webFrameworkNum)
-            && Objects.equals(this.webSiteNum, showAssetStatisticResponse.webSiteNum)
-            && Objects.equals(this.jarPackageNum, showAssetStatisticResponse.jarPackageNum)
-            && Objects.equals(this.kernelModuleNum, showAssetStatisticResponse.kernelModuleNum);
+        ShowAssetStatisticResponse that = (ShowAssetStatisticResponse) obj;
+        return Objects.equals(this.accountNum, that.accountNum) && Objects.equals(this.portNum, that.portNum)
+            && Objects.equals(this.processNum, that.processNum) && Objects.equals(this.appNum, that.appNum)
+            && Objects.equals(this.autoLaunchNum, that.autoLaunchNum)
+            && Objects.equals(this.webFrameworkNum, that.webFrameworkNum)
+            && Objects.equals(this.webSiteNum, that.webSiteNum)
+            && Objects.equals(this.jarPackageNum, that.jarPackageNum)
+            && Objects.equals(this.kernelModuleNum, that.kernelModuleNum);
     }
 
     @Override

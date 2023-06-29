@@ -65,16 +65,15 @@ public class UpdateEventSourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEventSourceRequest updateEventSourceRequest = (UpdateEventSourceRequest) o;
-        return Objects.equals(this.sourceId, updateEventSourceRequest.sourceId)
-            && Objects.equals(this.body, updateEventSourceRequest.body);
+        UpdateEventSourceRequest that = (UpdateEventSourceRequest) obj;
+        return Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

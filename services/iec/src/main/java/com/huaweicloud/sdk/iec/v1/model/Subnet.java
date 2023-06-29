@@ -109,22 +109,15 @@ public class Subnet {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -426,23 +419,22 @@ public class Subnet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Subnet subnet = (Subnet) o;
-        return Objects.equals(this.id, subnet.id) && Objects.equals(this.name, subnet.name)
-            && Objects.equals(this.cidr, subnet.cidr) && Objects.equals(this.dnsList, subnet.dnsList)
-            && Objects.equals(this.gatewayIp, subnet.gatewayIp) && Objects.equals(this.dhcpEnable, subnet.dhcpEnable)
-            && Objects.equals(this.primaryDns, subnet.primaryDns)
-            && Objects.equals(this.secondaryDns, subnet.secondaryDns) && Objects.equals(this.status, subnet.status)
-            && Objects.equals(this.vpcId, subnet.vpcId) && Objects.equals(this.siteId, subnet.siteId)
-            && Objects.equals(this.siteInfo, subnet.siteInfo)
-            && Objects.equals(this.neutronNetworkId, subnet.neutronNetworkId)
-            && Objects.equals(this.neutronSubnetId, subnet.neutronSubnetId);
+        Subnet that = (Subnet) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.dnsList, that.dnsList)
+            && Objects.equals(this.gatewayIp, that.gatewayIp) && Objects.equals(this.dhcpEnable, that.dhcpEnable)
+            && Objects.equals(this.primaryDns, that.primaryDns) && Objects.equals(this.secondaryDns, that.secondaryDns)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.siteInfo, that.siteInfo)
+            && Objects.equals(this.neutronNetworkId, that.neutronNetworkId)
+            && Objects.equals(this.neutronSubnetId, that.neutronSubnetId);
     }
 
     @Override

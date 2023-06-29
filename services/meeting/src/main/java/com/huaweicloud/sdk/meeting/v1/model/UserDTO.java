@@ -426,24 +426,23 @@ public class UserDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserDTO userDTO = (UserDTO) o;
-        return Objects.equals(this.id, userDTO.id) && Objects.equals(this.statusCode, userDTO.statusCode)
-            && Objects.equals(this.account, userDTO.account) && Objects.equals(this.name, userDTO.name)
-            && Objects.equals(this.englishName, userDTO.englishName) && Objects.equals(this.email, userDTO.email)
-            && Objects.equals(this.phone, userDTO.phone) && Objects.equals(this.deptName, userDTO.deptName)
-            && Objects.equals(this.number, userDTO.number) && Objects.equals(this.updateTime, userDTO.updateTime)
-            && Objects.equals(this.isHardTerminal, userDTO.isHardTerminal) && Objects.equals(this.vmrId, userDTO.vmrId)
-            && Objects.equals(this.signature, userDTO.signature) && Objects.equals(this.title, userDTO.title)
-            && Objects.equals(this.description, userDTO.description)
-            && Objects.equals(this.hidePhone, userDTO.hidePhone) && Objects.equals(this.type, userDTO.type)
-            && Objects.equals(this.deptCodes, userDTO.deptCodes);
+        UserDTO that = (UserDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.statusCode, that.statusCode)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.englishName, that.englishName) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.isHardTerminal, that.isHardTerminal) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.hidePhone, that.hidePhone)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.deptCodes, that.deptCodes);
     }
 
     @Override

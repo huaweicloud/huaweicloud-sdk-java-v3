@@ -209,23 +209,21 @@ public class WaybillElectronicResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WaybillElectronicResult waybillElectronicResult = (WaybillElectronicResult) o;
-        return Objects.equals(this.code, waybillElectronicResult.code)
-            && Objects.equals(this.receiverName, waybillElectronicResult.receiverName)
-            && Objects.equals(this.receiverPhone, waybillElectronicResult.receiverPhone)
-            && Objects.equals(this.receiverAddress, waybillElectronicResult.receiverAddress)
-            && Objects.equals(this.senderName, waybillElectronicResult.senderName)
-            && Objects.equals(this.senderPhone, waybillElectronicResult.senderPhone)
-            && Objects.equals(this.senderAddress, waybillElectronicResult.senderAddress)
-            && Objects.equals(this.waybillNumber, waybillElectronicResult.waybillNumber)
-            && Objects.equals(this.confidence, waybillElectronicResult.confidence);
+        WaybillElectronicResult that = (WaybillElectronicResult) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.receiverName, that.receiverName)
+            && Objects.equals(this.receiverPhone, that.receiverPhone)
+            && Objects.equals(this.receiverAddress, that.receiverAddress)
+            && Objects.equals(this.senderName, that.senderName) && Objects.equals(this.senderPhone, that.senderPhone)
+            && Objects.equals(this.senderAddress, that.senderAddress)
+            && Objects.equals(this.waybillNumber, that.waybillNumber)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

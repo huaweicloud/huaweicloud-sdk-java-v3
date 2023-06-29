@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListLabelsAomPromPostResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data")
-    
+    @JsonProperty(value = "data")
+
     private List<String> data = null;
-    
+
     public ListLabelsAomPromPostResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 响应状态。
@@ -53,16 +41,13 @@ public class ListLabelsAomPromPostResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ListLabelsAomPromPostResponse withData(List<String> data) {
         this.data = data;
         return this;
     }
 
-    
     public ListLabelsAomPromPostResponse addDataItem(String dataItem) {
-        if(this.data == null) {
+        if (this.data == null) {
             this.data = new ArrayList<>();
         }
         this.data.add(dataItem);
@@ -70,7 +55,7 @@ public class ListLabelsAomPromPostResponse extends SdkResponse {
     }
 
     public ListLabelsAomPromPostResponse withData(Consumer<List<String>> dataSetter) {
-        if(this.data == null) {
+        if (this.data == null) {
             this.data = new ArrayList<>();
         }
         dataSetter.accept(this.data);
@@ -89,24 +74,23 @@ public class ListLabelsAomPromPostResponse extends SdkResponse {
         this.data = data;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLabelsAomPromPostResponse listLabelsAomPromPostResponse = (ListLabelsAomPromPostResponse) o;
-        return Objects.equals(this.status, listLabelsAomPromPostResponse.status) &&
-            Objects.equals(this.data, listLabelsAomPromPostResponse.data);
+        ListLabelsAomPromPostResponse that = (ListLabelsAomPromPostResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.data, that.data);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, data);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -116,6 +100,7 @@ public class ListLabelsAomPromPostResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -126,8 +111,5 @@ public class ListLabelsAomPromPostResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -235,24 +235,21 @@ public class ListUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsersRequest listUsersRequest = (ListUsersRequest) o;
-        return Objects.equals(this.hostId, listUsersRequest.hostId)
-            && Objects.equals(this.userName, listUsersRequest.userName)
-            && Objects.equals(this.hostName, listUsersRequest.hostName)
-            && Objects.equals(this.privateIp, listUsersRequest.privateIp)
-            && Objects.equals(this.loginPermission, listUsersRequest.loginPermission)
-            && Objects.equals(this.rootPermission, listUsersRequest.rootPermission)
-            && Objects.equals(this.userGroup, listUsersRequest.userGroup)
-            && Objects.equals(this.enterpriseProjectId, listUsersRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listUsersRequest.limit)
-            && Objects.equals(this.offset, listUsersRequest.offset);
+        ListUsersRequest that = (ListUsersRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.loginPermission, that.loginPermission)
+            && Objects.equals(this.rootPermission, that.rootPermission)
+            && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -89,22 +89,15 @@ public class UpdateRoleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PrincipalSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PrincipalSourceEnum(value));
         }
 
         public static PrincipalSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PrincipalSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,17 +171,16 @@ public class UpdateRoleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoleResponse updateRoleResponse = (UpdateRoleResponse) o;
-        return Objects.equals(this.roleName, updateRoleResponse.roleName)
-            && Objects.equals(this.description, updateRoleResponse.description)
-            && Objects.equals(this.principalSource, updateRoleResponse.principalSource);
+        UpdateRoleResponse that = (UpdateRoleResponse) obj;
+        return Objects.equals(this.roleName, that.roleName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.principalSource, that.principalSource);
     }
 
     @Override

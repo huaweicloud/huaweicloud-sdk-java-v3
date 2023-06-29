@@ -43,15 +43,15 @@ public class UpdateL7ruleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7ruleRequestBody updateL7ruleRequestBody = (UpdateL7ruleRequestBody) o;
-        return Objects.equals(this.rule, updateL7ruleRequestBody.rule);
+        UpdateL7ruleRequestBody that = (UpdateL7ruleRequestBody) obj;
+        return Objects.equals(this.rule, that.rule);
     }
 
     @Override

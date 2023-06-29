@@ -33,15 +33,15 @@ public class PreoccupyIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreoccupyIp preoccupyIp = (PreoccupyIp) o;
-        return Objects.equals(this.total, preoccupyIp.total);
+        PreoccupyIp that = (PreoccupyIp) obj;
+        return Objects.equals(this.total, that.total);
     }
 
     @Override

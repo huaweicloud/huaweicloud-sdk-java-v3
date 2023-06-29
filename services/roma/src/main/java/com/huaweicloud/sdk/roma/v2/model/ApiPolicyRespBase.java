@@ -39,8 +39,8 @@ public class ApiPolicyRespBase {
     private List<BackendParam> backendParams = null;
 
     /**
-    * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-    */
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     */
     public static final class EffectModeEnum {
 
         /**
@@ -83,22 +83,15 @@ public class ApiPolicyRespBase {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,19 +253,18 @@ public class ApiPolicyRespBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyRespBase apiPolicyRespBase = (ApiPolicyRespBase) o;
-        return Objects.equals(this.id, apiPolicyRespBase.id) && Objects.equals(this.name, apiPolicyRespBase.name)
-            && Objects.equals(this.conditions, apiPolicyRespBase.conditions)
-            && Objects.equals(this.backendParams, apiPolicyRespBase.backendParams)
-            && Objects.equals(this.effectMode, apiPolicyRespBase.effectMode)
-            && Objects.equals(this.authorizerId, apiPolicyRespBase.authorizerId);
+        ApiPolicyRespBase that = (ApiPolicyRespBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

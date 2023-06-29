@@ -216,18 +216,18 @@ public class QaPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaPair qaPair = (QaPair) o;
-        return Objects.equals(this.domain, qaPair.domain) && Objects.equals(this.link, qaPair.link)
-            && Objects.equals(this.question, qaPair.question) && Objects.equals(this.answers, qaPair.answers)
-            && Objects.equals(this.qaPairId, qaPair.qaPairId) && Objects.equals(this.exQuestions, qaPair.exQuestions)
-            && Objects.equals(this.relatedQuestionIds, qaPair.relatedQuestionIds);
+        QaPair that = (QaPair) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.link, that.link)
+            && Objects.equals(this.question, that.question) && Objects.equals(this.answers, that.answers)
+            && Objects.equals(this.qaPairId, that.qaPairId) && Objects.equals(this.exQuestions, that.exQuestions)
+            && Objects.equals(this.relatedQuestionIds, that.relatedQuestionIds);
     }
 
     @Override

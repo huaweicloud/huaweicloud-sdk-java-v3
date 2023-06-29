@@ -189,23 +189,18 @@ public class ListApisUnbindedToAclPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisUnbindedToAclPolicyV2Request listApisUnbindedToAclPolicyV2Request =
-            (ListApisUnbindedToAclPolicyV2Request) o;
-        return Objects.equals(this.instanceId, listApisUnbindedToAclPolicyV2Request.instanceId)
-            && Objects.equals(this.offset, listApisUnbindedToAclPolicyV2Request.offset)
-            && Objects.equals(this.limit, listApisUnbindedToAclPolicyV2Request.limit)
-            && Objects.equals(this.aclId, listApisUnbindedToAclPolicyV2Request.aclId)
-            && Objects.equals(this.apiId, listApisUnbindedToAclPolicyV2Request.apiId)
-            && Objects.equals(this.apiName, listApisUnbindedToAclPolicyV2Request.apiName)
-            && Objects.equals(this.envId, listApisUnbindedToAclPolicyV2Request.envId)
-            && Objects.equals(this.groupId, listApisUnbindedToAclPolicyV2Request.groupId);
+        ListApisUnbindedToAclPolicyV2Request that = (ListApisUnbindedToAclPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.aclId, that.aclId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

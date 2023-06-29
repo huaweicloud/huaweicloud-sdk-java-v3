@@ -99,18 +99,17 @@ public class ListMessageTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMessageTemplatesRequest listMessageTemplatesRequest = (ListMessageTemplatesRequest) o;
-        return Objects.equals(this.offset, listMessageTemplatesRequest.offset)
-            && Objects.equals(this.limit, listMessageTemplatesRequest.limit)
-            && Objects.equals(this.messageTemplateName, listMessageTemplatesRequest.messageTemplateName)
-            && Objects.equals(this.protocol, listMessageTemplatesRequest.protocol);
+        ListMessageTemplatesRequest that = (ListMessageTemplatesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.messageTemplateName, that.messageTemplateName)
+            && Objects.equals(this.protocol, that.protocol);
     }
 
     @Override

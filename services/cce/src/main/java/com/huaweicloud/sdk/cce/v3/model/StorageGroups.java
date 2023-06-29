@@ -134,18 +134,17 @@ public class StorageGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageGroups storageGroups = (StorageGroups) o;
-        return Objects.equals(this.name, storageGroups.name)
-            && Objects.equals(this.cceManaged, storageGroups.cceManaged)
-            && Objects.equals(this.selectorNames, storageGroups.selectorNames)
-            && Objects.equals(this.virtualSpaces, storageGroups.virtualSpaces);
+        StorageGroups that = (StorageGroups) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.cceManaged, that.cceManaged)
+            && Objects.equals(this.selectorNames, that.selectorNames)
+            && Objects.equals(this.virtualSpaces, that.virtualSpaces);
     }
 
     @Override

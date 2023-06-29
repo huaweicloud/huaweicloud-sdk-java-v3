@@ -156,19 +156,17 @@ public class StorageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageInfo storageInfo = (StorageInfo) o;
-        return Objects.equals(this.phoneId, storageInfo.phoneId)
-            && Objects.equals(this.includeFiles, storageInfo.includeFiles)
-            && Objects.equals(this.excludeFiles, storageInfo.excludeFiles)
-            && Objects.equals(this.bucketName, storageInfo.bucketName)
-            && Objects.equals(this.objectPath, storageInfo.objectPath);
+        StorageInfo that = (StorageInfo) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.includeFiles, that.includeFiles)
+            && Objects.equals(this.excludeFiles, that.excludeFiles) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.objectPath, that.objectPath);
     }
 
     @Override

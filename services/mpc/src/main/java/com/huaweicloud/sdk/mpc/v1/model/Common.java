@@ -105,16 +105,16 @@ public class Common {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Common common = (Common) o;
-        return Objects.equals(this.pvc, common.pvc) && Objects.equals(this.hlsInterval, common.hlsInterval)
-            && Objects.equals(this.dashInterval, common.dashInterval) && Objects.equals(this.packType, common.packType);
+        Common that = (Common) obj;
+        return Objects.equals(this.pvc, that.pvc) && Objects.equals(this.hlsInterval, that.hlsInterval)
+            && Objects.equals(this.dashInterval, that.dashInterval) && Objects.equals(this.packType, that.packType);
     }
 
     @Override

@@ -246,23 +246,20 @@ public class CreateTasksRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTasksRequestBody createTasksRequestBody = (CreateTasksRequestBody) o;
-        return Objects.equals(this.name, createTasksRequestBody.name)
-            && Objects.equals(this.description, createTasksRequestBody.description)
-            && Objects.equals(this.serviceVersion, createTasksRequestBody.serviceVersion)
-            && Objects.equals(this.edgePoolId, createTasksRequestBody.edgePoolId)
-            && Objects.equals(this.resourceOrderId, createTasksRequestBody.resourceOrderId)
-            && Objects.equals(this.timing, createTasksRequestBody.timing)
-            && Objects.equals(this.input, createTasksRequestBody.input)
-            && Objects.equals(this.output, createTasksRequestBody.output)
-            && Objects.equals(this.serviceConfig, createTasksRequestBody.serviceConfig);
+        CreateTasksRequestBody that = (CreateTasksRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.serviceVersion, that.serviceVersion)
+            && Objects.equals(this.edgePoolId, that.edgePoolId)
+            && Objects.equals(this.resourceOrderId, that.resourceOrderId) && Objects.equals(this.timing, that.timing)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.serviceConfig, that.serviceConfig);
     }
 
     @Override

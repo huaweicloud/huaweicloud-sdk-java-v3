@@ -77,16 +77,16 @@ public class ExtDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtDevice extDevice = (ExtDevice) o;
-        return Objects.equals(this.source, extDevice.source) && Objects.equals(this.destination, extDevice.destination)
-            && Objects.equals(this.cgroupPermissions, extDevice.cgroupPermissions);
+        ExtDevice that = (ExtDevice) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.cgroupPermissions, that.cgroupPermissions);
     }
 
     @Override

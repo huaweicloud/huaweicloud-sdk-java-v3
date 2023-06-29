@@ -69,22 +69,15 @@ public class Execution {
             if (value == null) {
                 return null;
             }
-            ExecutionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecutionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecutionTypeEnum(value));
         }
 
         public static ExecutionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecutionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -174,22 +167,15 @@ public class Execution {
             if (value == null) {
                 return null;
             }
-            ExecutionStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecutionStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecutionStateEnum(value));
         }
 
         public static ExecutionStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecutionStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -336,21 +322,19 @@ public class Execution {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Execution execution = (Execution) o;
-        return Objects.equals(this.graphUrn, execution.graphUrn)
-            && Objects.equals(this.executionUrn, execution.executionUrn)
-            && Objects.equals(this.startedAt, execution.startedAt)
-            && Objects.equals(this.executionType, execution.executionType)
-            && Objects.equals(this.stoppedAt, execution.stoppedAt)
-            && Objects.equals(this.executionState, execution.executionState)
-            && Objects.equals(this.executionName, execution.executionName);
+        Execution that = (Execution) obj;
+        return Objects.equals(this.graphUrn, that.graphUrn) && Objects.equals(this.executionUrn, that.executionUrn)
+            && Objects.equals(this.startedAt, that.startedAt) && Objects.equals(this.executionType, that.executionType)
+            && Objects.equals(this.stoppedAt, that.stoppedAt)
+            && Objects.equals(this.executionState, that.executionState)
+            && Objects.equals(this.executionName, that.executionName);
     }
 
     @Override

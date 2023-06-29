@@ -77,17 +77,16 @@ public class RestoreInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreInfo restoreInfo = (RestoreInfo) o;
-        return Objects.equals(this.phoneId, restoreInfo.phoneId)
-            && Objects.equals(this.bucketName, restoreInfo.bucketName)
-            && Objects.equals(this.objectPath, restoreInfo.objectPath);
+        RestoreInfo that = (RestoreInfo) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.objectPath, that.objectPath);
     }
 
     @Override

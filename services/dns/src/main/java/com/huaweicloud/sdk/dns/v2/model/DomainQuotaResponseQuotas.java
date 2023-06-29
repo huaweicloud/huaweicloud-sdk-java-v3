@@ -99,18 +99,16 @@ public class DomainQuotaResponseQuotas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainQuotaResponseQuotas domainQuotaResponseQuotas = (DomainQuotaResponseQuotas) o;
-        return Objects.equals(this.quotaKey, domainQuotaResponseQuotas.quotaKey)
-            && Objects.equals(this.quotaLimit, domainQuotaResponseQuotas.quotaLimit)
-            && Objects.equals(this.used, domainQuotaResponseQuotas.used)
-            && Objects.equals(this.unit, domainQuotaResponseQuotas.unit);
+        DomainQuotaResponseQuotas that = (DomainQuotaResponseQuotas) obj;
+        return Objects.equals(this.quotaKey, that.quotaKey) && Objects.equals(this.quotaLimit, that.quotaLimit)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

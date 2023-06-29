@@ -253,25 +253,22 @@ public class ListSnapshotsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotsRequest listSnapshotsRequest = (ListSnapshotsRequest) o;
-        return Objects.equals(this.offset, listSnapshotsRequest.offset)
-            && Objects.equals(this.limit, listSnapshotsRequest.limit)
-            && Objects.equals(this.name, listSnapshotsRequest.name)
-            && Objects.equals(this.status, listSnapshotsRequest.status)
-            && Objects.equals(this.volumeId, listSnapshotsRequest.volumeId)
-            && Objects.equals(this.availabilityZone, listSnapshotsRequest.availabilityZone)
-            && Objects.equals(this.id, listSnapshotsRequest.id)
-            && Objects.equals(this.dedicatedStorageName, listSnapshotsRequest.dedicatedStorageName)
-            && Objects.equals(this.dedicatedStorageId, listSnapshotsRequest.dedicatedStorageId)
-            && Objects.equals(this.serviceType, listSnapshotsRequest.serviceType)
-            && Objects.equals(this.enterpriseProjectId, listSnapshotsRequest.enterpriseProjectId);
+        ListSnapshotsRequest that = (ListSnapshotsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.dedicatedStorageName, that.dedicatedStorageName)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

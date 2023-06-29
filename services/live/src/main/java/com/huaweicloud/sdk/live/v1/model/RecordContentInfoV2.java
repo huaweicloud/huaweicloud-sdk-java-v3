@@ -88,22 +88,15 @@ public class RecordContentInfoV2 {
             if (value == null) {
                 return null;
             }
-            RecordFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordFormatEnum(value));
         }
 
         public static RecordFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,22 +175,15 @@ public class RecordContentInfoV2 {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordTypeEnum(value));
         }
 
         public static RecordTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -474,26 +460,20 @@ public class RecordContentInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordContentInfoV2 recordContentInfoV2 = (RecordContentInfoV2) o;
-        return Objects.equals(this.publishDomain, recordContentInfoV2.publishDomain)
-            && Objects.equals(this.fileName, recordContentInfoV2.fileName)
-            && Objects.equals(this.app, recordContentInfoV2.app)
-            && Objects.equals(this.stream, recordContentInfoV2.stream)
-            && Objects.equals(this.recordFormat, recordContentInfoV2.recordFormat)
-            && Objects.equals(this.recordType, recordContentInfoV2.recordType)
-            && Objects.equals(this.obsAddr, recordContentInfoV2.obsAddr)
-            && Objects.equals(this.vodInfo, recordContentInfoV2.vodInfo)
-            && Objects.equals(this.downloadUrl, recordContentInfoV2.downloadUrl)
-            && Objects.equals(this.startTime, recordContentInfoV2.startTime)
-            && Objects.equals(this.endTime, recordContentInfoV2.endTime)
-            && Objects.equals(this.duration, recordContentInfoV2.duration);
+        RecordContentInfoV2 that = (RecordContentInfoV2) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.stream, that.stream)
+            && Objects.equals(this.recordFormat, that.recordFormat) && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.obsAddr, that.obsAddr) && Objects.equals(this.vodInfo, that.vodInfo)
+            && Objects.equals(this.downloadUrl, that.downloadUrl) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

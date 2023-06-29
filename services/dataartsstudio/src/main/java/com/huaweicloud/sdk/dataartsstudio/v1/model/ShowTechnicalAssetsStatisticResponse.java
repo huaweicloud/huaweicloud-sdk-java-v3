@@ -76,17 +76,16 @@ public class ShowTechnicalAssetsStatisticResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTechnicalAssetsStatisticResponse showTechnicalAssetsStatisticResponse =
-            (ShowTechnicalAssetsStatisticResponse) o;
-        return Objects.equals(this.count, showTechnicalAssetsStatisticResponse.count)
-            && Objects.equals(this.datasourceStatistics, showTechnicalAssetsStatisticResponse.datasourceStatistics);
+        ShowTechnicalAssetsStatisticResponse that = (ShowTechnicalAssetsStatisticResponse) obj;
+        return Objects.equals(this.count, that.count)
+            && Objects.equals(this.datasourceStatistics, that.datasourceStatistics);
     }
 
     @Override

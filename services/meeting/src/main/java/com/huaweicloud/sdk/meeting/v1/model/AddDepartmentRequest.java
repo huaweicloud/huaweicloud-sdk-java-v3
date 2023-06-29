@@ -89,17 +89,16 @@ public class AddDepartmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDepartmentRequest addDepartmentRequest = (AddDepartmentRequest) o;
-        return Objects.equals(this.xRequestId, addDepartmentRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addDepartmentRequest.acceptLanguage)
-            && Objects.equals(this.body, addDepartmentRequest.body);
+        AddDepartmentRequest that = (AddDepartmentRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

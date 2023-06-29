@@ -43,15 +43,15 @@ public class CreateDocWatermarkByAddressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDocWatermarkByAddressRequest createDocWatermarkByAddressRequest = (CreateDocWatermarkByAddressRequest) o;
-        return Objects.equals(this.body, createDocWatermarkByAddressRequest.body);
+        CreateDocWatermarkByAddressRequest that = (CreateDocWatermarkByAddressRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -101,17 +101,16 @@ public class ListTranscodingTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodingTaskResponse listTranscodingTaskResponse = (ListTranscodingTaskResponse) o;
-        return Objects.equals(this.taskArray, listTranscodingTaskResponse.taskArray)
-            && Objects.equals(this.isTruncated, listTranscodingTaskResponse.isTruncated)
-            && Objects.equals(this.total, listTranscodingTaskResponse.total);
+        ListTranscodingTaskResponse that = (ListTranscodingTaskResponse) obj;
+        return Objects.equals(this.taskArray, that.taskArray) && Objects.equals(this.isTruncated, that.isTruncated)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

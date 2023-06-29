@@ -99,18 +99,16 @@ public class CreateOrDeleteDeviceInGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOrDeleteDeviceInGroupRequest createOrDeleteDeviceInGroupRequest = (CreateOrDeleteDeviceInGroupRequest) o;
-        return Objects.equals(this.instanceId, createOrDeleteDeviceInGroupRequest.instanceId)
-            && Objects.equals(this.groupId, createOrDeleteDeviceInGroupRequest.groupId)
-            && Objects.equals(this.actionId, createOrDeleteDeviceInGroupRequest.actionId)
-            && Objects.equals(this.deviceId, createOrDeleteDeviceInGroupRequest.deviceId);
+        CreateOrDeleteDeviceInGroupRequest that = (CreateOrDeleteDeviceInGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

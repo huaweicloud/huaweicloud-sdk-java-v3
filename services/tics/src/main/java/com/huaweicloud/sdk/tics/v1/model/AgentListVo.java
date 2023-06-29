@@ -194,22 +194,15 @@ public class AgentListVo {
             if (value == null) {
                 return null;
             }
-            DeployStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployStatusEnum(value));
         }
 
         public static DeployStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -282,22 +275,15 @@ public class AgentListVo {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployTypeEnum(value));
         }
 
         public static DeployTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -615,29 +601,26 @@ public class AgentListVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentListVo agentListVo = (AgentListVo) o;
-        return Objects.equals(this.agentId, agentListVo.agentId)
-            && Objects.equals(this.agentName, agentListVo.agentName)
-            && Objects.equals(this.createTime, agentListVo.createTime)
-            && Objects.equals(this.creatorDomainId, agentListVo.creatorDomainId)
-            && Objects.equals(this.creatorUserName, agentListVo.creatorUserName)
-            && Objects.equals(this.deployStatus, agentListVo.deployStatus)
-            && Objects.equals(this.deployType, agentListVo.deployType)
-            && Objects.equals(this.deploymentEventInformation, agentListVo.deploymentEventInformation)
-            && Objects.equals(this.enableDelete, agentListVo.enableDelete)
-            && Objects.equals(this.enableUpgrade, agentListVo.enableUpgrade)
-            && Objects.equals(this.imageVersion, agentListVo.imageVersion)
-            && Objects.equals(this.isHighAvail, agentListVo.isHighAvail)
-            && Objects.equals(this.leagueId, agentListVo.leagueId)
-            && Objects.equals(this.leagueName, agentListVo.leagueName)
-            && Objects.equals(this.leagueVersion, agentListVo.leagueVersion);
+        AgentListVo that = (AgentListVo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.agentName, that.agentName)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.creatorDomainId, that.creatorDomainId)
+            && Objects.equals(this.creatorUserName, that.creatorUserName)
+            && Objects.equals(this.deployStatus, that.deployStatus) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deploymentEventInformation, that.deploymentEventInformation)
+            && Objects.equals(this.enableDelete, that.enableDelete)
+            && Objects.equals(this.enableUpgrade, that.enableUpgrade)
+            && Objects.equals(this.imageVersion, that.imageVersion)
+            && Objects.equals(this.isHighAvail, that.isHighAvail) && Objects.equals(this.leagueId, that.leagueId)
+            && Objects.equals(this.leagueName, that.leagueName)
+            && Objects.equals(this.leagueVersion, that.leagueVersion);
     }
 
     @Override

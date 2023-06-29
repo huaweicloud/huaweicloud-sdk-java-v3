@@ -954,56 +954,47 @@ public class MonthlyBillRes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MonthlyBillRes monthlyBillRes = (MonthlyBillRes) o;
-        return Objects.equals(this.cycle, monthlyBillRes.cycle)
-            && Objects.equals(this.billDate, monthlyBillRes.billDate)
-            && Objects.equals(this.billType, monthlyBillRes.billType)
-            && Objects.equals(this.customerId, monthlyBillRes.customerId)
-            && Objects.equals(this.region, monthlyBillRes.region)
-            && Objects.equals(this.regionName, monthlyBillRes.regionName)
-            && Objects.equals(this.cloudServiceType, monthlyBillRes.cloudServiceType)
-            && Objects.equals(this.resourceTypeCode, monthlyBillRes.resourceTypeCode)
-            && Objects.equals(this.cloudServiceTypeName, monthlyBillRes.cloudServiceTypeName)
-            && Objects.equals(this.resourceTypeName, monthlyBillRes.resourceTypeName)
-            && Objects.equals(this.resInstanceId, monthlyBillRes.resInstanceId)
-            && Objects.equals(this.resourceName, monthlyBillRes.resourceName)
-            && Objects.equals(this.resourceTag, monthlyBillRes.resourceTag)
-            && Objects.equals(this.skuCode, monthlyBillRes.skuCode)
-            && Objects.equals(this.enterpriseProjectId, monthlyBillRes.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, monthlyBillRes.enterpriseProjectName)
-            && Objects.equals(this.chargeMode, monthlyBillRes.chargeMode)
-            && Objects.equals(this.consumeAmount, monthlyBillRes.consumeAmount)
-            && Objects.equals(this.cashAmount, monthlyBillRes.cashAmount)
-            && Objects.equals(this.creditAmount, monthlyBillRes.creditAmount)
-            && Objects.equals(this.couponAmount, monthlyBillRes.couponAmount)
-            && Objects.equals(this.flexipurchaseCouponAmount, monthlyBillRes.flexipurchaseCouponAmount)
-            && Objects.equals(this.storedCardAmount, monthlyBillRes.storedCardAmount)
-            && Objects.equals(this.bonusAmount, monthlyBillRes.bonusAmount)
-            && Objects.equals(this.debtAmount, monthlyBillRes.debtAmount)
-            && Objects.equals(this.adjustmentAmount, monthlyBillRes.adjustmentAmount)
-            && Objects.equals(this.officialAmount, monthlyBillRes.officialAmount)
-            && Objects.equals(this.discountAmount, monthlyBillRes.discountAmount)
-            && Objects.equals(this.measureId, monthlyBillRes.measureId)
-            && Objects.equals(this.periodType, monthlyBillRes.periodType)
-            && Objects.equals(this.rootResourceId, monthlyBillRes.rootResourceId)
-            && Objects.equals(this.parentResourceId, monthlyBillRes.parentResourceId)
-            && Objects.equals(this.tradeId, monthlyBillRes.tradeId)
-            && Objects.equals(this.productSpecDesc, monthlyBillRes.productSpecDesc)
-            && Objects.equals(this.subServiceTypeCode, monthlyBillRes.subServiceTypeCode)
-            && Objects.equals(this.subServiceTypeName, monthlyBillRes.subServiceTypeName)
-            && Objects.equals(this.subResourceTypeCode, monthlyBillRes.subResourceTypeCode)
-            && Objects.equals(this.subResourceTypeName, monthlyBillRes.subResourceTypeName)
-            && Objects.equals(this.subResourceId, monthlyBillRes.subResourceId)
-            && Objects.equals(this.subResourceName, monthlyBillRes.subResourceName)
-            && Objects.equals(this.preOrderId, monthlyBillRes.preOrderId)
-            && Objects.equals(this.azCodeInfos, monthlyBillRes.azCodeInfos);
+        MonthlyBillRes that = (MonthlyBillRes) obj;
+        return Objects.equals(this.cycle, that.cycle) && Objects.equals(this.billDate, that.billDate)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.cloudServiceTypeName, that.cloudServiceTypeName)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.resInstanceId, that.resInstanceId)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceTag, that.resourceTag) && Objects.equals(this.skuCode, that.skuCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.consumeAmount, that.consumeAmount)
+            && Objects.equals(this.cashAmount, that.cashAmount) && Objects.equals(this.creditAmount, that.creditAmount)
+            && Objects.equals(this.couponAmount, that.couponAmount)
+            && Objects.equals(this.flexipurchaseCouponAmount, that.flexipurchaseCouponAmount)
+            && Objects.equals(this.storedCardAmount, that.storedCardAmount)
+            && Objects.equals(this.bonusAmount, that.bonusAmount) && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.adjustmentAmount, that.adjustmentAmount)
+            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.discountAmount, that.discountAmount)
+            && Objects.equals(this.measureId, that.measureId) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.rootResourceId, that.rootResourceId)
+            && Objects.equals(this.parentResourceId, that.parentResourceId)
+            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.productSpecDesc, that.productSpecDesc)
+            && Objects.equals(this.subServiceTypeCode, that.subServiceTypeCode)
+            && Objects.equals(this.subServiceTypeName, that.subServiceTypeName)
+            && Objects.equals(this.subResourceTypeCode, that.subResourceTypeCode)
+            && Objects.equals(this.subResourceTypeName, that.subResourceTypeName)
+            && Objects.equals(this.subResourceId, that.subResourceId)
+            && Objects.equals(this.subResourceName, that.subResourceName)
+            && Objects.equals(this.preOrderId, that.preOrderId) && Objects.equals(this.azCodeInfos, that.azCodeInfos);
     }
 
     @Override

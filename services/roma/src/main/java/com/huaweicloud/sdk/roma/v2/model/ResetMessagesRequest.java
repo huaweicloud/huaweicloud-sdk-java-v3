@@ -60,22 +60,15 @@ public class ResetMessagesRequest {
             if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionIdEnum(value));
         }
 
         public static ActionIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -163,17 +156,16 @@ public class ResetMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetMessagesRequest resetMessagesRequest = (ResetMessagesRequest) o;
-        return Objects.equals(this.instanceId, resetMessagesRequest.instanceId)
-            && Objects.equals(this.actionId, resetMessagesRequest.actionId)
-            && Objects.equals(this.body, resetMessagesRequest.body);
+        ResetMessagesRequest that = (ResetMessagesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

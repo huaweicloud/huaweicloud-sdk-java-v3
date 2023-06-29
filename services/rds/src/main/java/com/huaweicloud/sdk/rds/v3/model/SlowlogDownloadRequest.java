@@ -33,15 +33,15 @@ public class SlowlogDownloadRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowlogDownloadRequest slowlogDownloadRequest = (SlowlogDownloadRequest) o;
-        return Objects.equals(this.fileName, slowlogDownloadRequest.fileName);
+        SlowlogDownloadRequest that = (SlowlogDownloadRequest) obj;
+        return Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

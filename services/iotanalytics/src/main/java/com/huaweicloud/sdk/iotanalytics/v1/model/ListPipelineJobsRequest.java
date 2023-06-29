@@ -191,22 +191,21 @@ public class ListPipelineJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelineJobsRequest listPipelineJobsRequest = (ListPipelineJobsRequest) o;
-        return Objects.equals(this.dataStoreId, listPipelineJobsRequest.dataStoreId)
-            && Objects.equals(this.dataStoreGroupId, listPipelineJobsRequest.dataStoreGroupId)
-            && Objects.equals(this.dataSourceId, listPipelineJobsRequest.dataSourceId)
-            && Objects.equals(this.pipelineName, listPipelineJobsRequest.pipelineName)
-            && Objects.equals(this.operatorClassName, listPipelineJobsRequest.operatorClassName)
-            && Objects.equals(this.offset, listPipelineJobsRequest.offset)
-            && Objects.equals(this.limit, listPipelineJobsRequest.limit)
-            && Objects.equals(this.syncStatus, listPipelineJobsRequest.syncStatus);
+        ListPipelineJobsRequest that = (ListPipelineJobsRequest) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId)
+            && Objects.equals(this.dataStoreGroupId, that.dataStoreGroupId)
+            && Objects.equals(this.dataSourceId, that.dataSourceId)
+            && Objects.equals(this.pipelineName, that.pipelineName)
+            && Objects.equals(this.operatorClassName, that.operatorClassName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.syncStatus, that.syncStatus);
     }
 
     @Override

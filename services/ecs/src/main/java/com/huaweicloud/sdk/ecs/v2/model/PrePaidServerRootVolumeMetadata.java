@@ -59,16 +59,16 @@ public class PrePaidServerRootVolumeMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerRootVolumeMetadata prePaidServerRootVolumeMetadata = (PrePaidServerRootVolumeMetadata) o;
-        return Objects.equals(this.systemEncrypted, prePaidServerRootVolumeMetadata.systemEncrypted)
-            && Objects.equals(this.systemCmkid, prePaidServerRootVolumeMetadata.systemCmkid);
+        PrePaidServerRootVolumeMetadata that = (PrePaidServerRootVolumeMetadata) obj;
+        return Objects.equals(this.systemEncrypted, that.systemEncrypted)
+            && Objects.equals(this.systemCmkid, that.systemCmkid);
     }
 
     @Override

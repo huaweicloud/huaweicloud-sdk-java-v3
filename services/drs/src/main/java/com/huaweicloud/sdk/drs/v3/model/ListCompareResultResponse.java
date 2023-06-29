@@ -206,21 +206,20 @@ public class ListCompareResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCompareResultResponse listCompareResultResponse = (ListCompareResultResponse) o;
-        return Objects.equals(this.jobId, listCompareResultResponse.jobId)
-            && Objects.equals(this.objectLevelCompareResults, listCompareResultResponse.objectLevelCompareResults)
-            && Objects.equals(this.lineCompareResults, listCompareResultResponse.lineCompareResults)
-            && Objects.equals(this.contentCompareResults, listCompareResultResponse.contentCompareResults)
-            && Objects.equals(this.compareTaskListResults, listCompareResultResponse.compareTaskListResults)
-            && Objects.equals(this.errorCode, listCompareResultResponse.errorCode)
-            && Objects.equals(this.errorMsg, listCompareResultResponse.errorMsg);
+        ListCompareResultResponse that = (ListCompareResultResponse) obj;
+        return Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.objectLevelCompareResults, that.objectLevelCompareResults)
+            && Objects.equals(this.lineCompareResults, that.lineCompareResults)
+            && Objects.equals(this.contentCompareResults, that.contentCompareResults)
+            && Objects.equals(this.compareTaskListResults, that.compareTaskListResults)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

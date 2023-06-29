@@ -43,15 +43,15 @@ public class CreateVpcRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcRouteRequest createVpcRouteRequest = (CreateVpcRouteRequest) o;
-        return Objects.equals(this.body, createVpcRouteRequest.body);
+        CreateVpcRouteRequest that = (CreateVpcRouteRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

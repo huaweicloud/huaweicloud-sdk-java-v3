@@ -55,16 +55,15 @@ public class DeleteSignatureKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSignatureKeyV2Request deleteSignatureKeyV2Request = (DeleteSignatureKeyV2Request) o;
-        return Objects.equals(this.instanceId, deleteSignatureKeyV2Request.instanceId)
-            && Objects.equals(this.signId, deleteSignatureKeyV2Request.signId);
+        DeleteSignatureKeyV2Request that = (DeleteSignatureKeyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.signId, that.signId);
     }
 
     @Override

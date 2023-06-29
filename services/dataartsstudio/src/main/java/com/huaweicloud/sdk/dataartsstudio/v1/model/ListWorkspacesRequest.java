@@ -65,22 +65,15 @@ public class ListWorkspacesRequest {
             if (value == null) {
                 return null;
             }
-            WorkspaceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkspaceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WorkspaceTypeEnum(value));
         }
 
         public static WorkspaceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WorkspaceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -204,19 +197,17 @@ public class ListWorkspacesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkspacesRequest listWorkspacesRequest = (ListWorkspacesRequest) o;
-        return Objects.equals(this.workspace, listWorkspacesRequest.workspace)
-            && Objects.equals(this.workspaceType, listWorkspacesRequest.workspaceType)
-            && Objects.equals(this.limit, listWorkspacesRequest.limit)
-            && Objects.equals(this.offset, listWorkspacesRequest.offset)
-            && Objects.equals(this.dwType, listWorkspacesRequest.dwType);
+        ListWorkspacesRequest that = (ListWorkspacesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.workspaceType, that.workspaceType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.dwType, that.dwType);
     }
 
     @Override

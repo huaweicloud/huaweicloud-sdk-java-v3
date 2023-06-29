@@ -56,16 +56,15 @@ public class AddVmsCallBackResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddVmsCallBackResponse addVmsCallBackResponse = (AddVmsCallBackResponse) o;
-        return Objects.equals(this.status, addVmsCallBackResponse.status)
-            && Objects.equals(this.message, addVmsCallBackResponse.message);
+        AddVmsCallBackResponse that = (AddVmsCallBackResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message);
     }
 
     @Override

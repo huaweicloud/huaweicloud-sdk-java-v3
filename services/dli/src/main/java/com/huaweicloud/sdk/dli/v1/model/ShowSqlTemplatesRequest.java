@@ -33,15 +33,15 @@ public class ShowSqlTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlTemplatesRequest showSqlTemplatesRequest = (ShowSqlTemplatesRequest) o;
-        return Objects.equals(this.keyword, showSqlTemplatesRequest.keyword);
+        ShowSqlTemplatesRequest that = (ShowSqlTemplatesRequest) obj;
+        return Objects.equals(this.keyword, that.keyword);
     }
 
     @Override

@@ -165,21 +165,18 @@ public class ListDeploymentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeploymentsRequest listDeploymentsRequest = (ListDeploymentsRequest) o;
-        return Objects.equals(this.iefInstanceId, listDeploymentsRequest.iefInstanceId)
-            && Objects.equals(this.limit, listDeploymentsRequest.limit)
-            && Objects.equals(this.offset, listDeploymentsRequest.offset)
-            && Objects.equals(this.sort, listDeploymentsRequest.sort)
-            && Objects.equals(this.name, listDeploymentsRequest.name)
-            && Objects.equals(this.nodeId, listDeploymentsRequest.nodeId)
-            && Objects.equals(this.groupId, listDeploymentsRequest.groupId);
+        ListDeploymentsRequest that = (ListDeploymentsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

@@ -112,17 +112,16 @@ public class CloseProtectionInfoRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloseProtectionInfoRequestInfo closeProtectionInfoRequestInfo = (CloseProtectionInfoRequestInfo) o;
-        return Objects.equals(this.hostIdList, closeProtectionInfoRequestInfo.hostIdList)
-            && Objects.equals(this.agentIdList, closeProtectionInfoRequestInfo.agentIdList)
-            && Objects.equals(this.closeProtectionType, closeProtectionInfoRequestInfo.closeProtectionType);
+        CloseProtectionInfoRequestInfo that = (CloseProtectionInfoRequestInfo) obj;
+        return Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.agentIdList, that.agentIdList)
+            && Objects.equals(this.closeProtectionType, that.closeProtectionType);
     }
 
     @Override

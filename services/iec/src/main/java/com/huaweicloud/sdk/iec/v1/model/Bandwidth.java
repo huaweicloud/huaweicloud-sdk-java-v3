@@ -57,22 +57,15 @@ public class Bandwidth {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthTypeEnum(value));
         }
 
         public static BandwidthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -133,22 +126,15 @@ public class Bandwidth {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,8 +182,8 @@ public class Bandwidth {
     private List<PublicipInfo> publicipInfo = null;
 
     /**
-    * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
-    */
+     * 共享带宽类型，标识是否是共享带宽。  取值范围：  - WHOLE：共享带宽
+     */
     public static final class ShareTypeEnum {
 
         /**
@@ -234,22 +220,15 @@ public class Bandwidth {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShareTypeEnum(value));
         }
 
         public static ShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -331,22 +310,15 @@ public class Bandwidth {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -644,23 +616,22 @@ public class Bandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Bandwidth bandwidth = (Bandwidth) o;
-        return Objects.equals(this.bandwidthType, bandwidth.bandwidthType)
-            && Objects.equals(this.chargeMode, bandwidth.chargeMode)
-            && Objects.equals(this.createTime, bandwidth.createTime) && Objects.equals(this.id, bandwidth.id)
-            && Objects.equals(this.name, bandwidth.name) && Objects.equals(this.operator, bandwidth.operator)
-            && Objects.equals(this.publicipInfo, bandwidth.publicipInfo)
-            && Objects.equals(this.shareType, bandwidth.shareType) && Objects.equals(this.siteId, bandwidth.siteId)
-            && Objects.equals(this.siteInfo, bandwidth.siteInfo) && Objects.equals(this.size, bandwidth.size)
-            && Objects.equals(this.status, bandwidth.status) && Objects.equals(this.updateTime, bandwidth.updateTime)
-            && Objects.equals(this.poolId, bandwidth.poolId);
+        Bandwidth that = (Bandwidth) obj;
+        return Objects.equals(this.bandwidthType, that.bandwidthType)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.publicipInfo, that.publicipInfo)
+            && Objects.equals(this.shareType, that.shareType) && Objects.equals(this.siteId, that.siteId)
+            && Objects.equals(this.siteInfo, that.siteInfo) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override

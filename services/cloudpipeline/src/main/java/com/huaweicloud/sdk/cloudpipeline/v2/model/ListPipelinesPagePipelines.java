@@ -219,23 +219,19 @@ public class ListPipelinesPagePipelines {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipelinesPagePipelines listPipelinesPagePipelines = (ListPipelinesPagePipelines) o;
-        return Objects.equals(this.pipelineId, listPipelinesPagePipelines.pipelineId)
-            && Objects.equals(this.name, listPipelinesPagePipelines.name)
-            && Objects.equals(this.projectId, listPipelinesPagePipelines.projectId)
-            && Objects.equals(this.componentId, listPipelinesPagePipelines.componentId)
-            && Objects.equals(this.isPublish, listPipelinesPagePipelines.isPublish)
-            && Objects.equals(this.isCollect, listPipelinesPagePipelines.isCollect)
-            && Objects.equals(this.manifestVersion, listPipelinesPagePipelines.manifestVersion)
-            && Objects.equals(this.createTime, listPipelinesPagePipelines.createTime)
-            && Objects.equals(this.latestRun, listPipelinesPagePipelines.latestRun);
+        ListPipelinesPagePipelines that = (ListPipelinesPagePipelines) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.isPublish, that.isPublish) && Objects.equals(this.isCollect, that.isCollect)
+            && Objects.equals(this.manifestVersion, that.manifestVersion)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.latestRun, that.latestRun);
     }
 
     @Override

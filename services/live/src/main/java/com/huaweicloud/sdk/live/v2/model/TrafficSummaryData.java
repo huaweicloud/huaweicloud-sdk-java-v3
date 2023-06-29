@@ -57,16 +57,15 @@ public class TrafficSummaryData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrafficSummaryData trafficSummaryData = (TrafficSummaryData) o;
-        return Objects.equals(this.value, trafficSummaryData.value)
-            && Objects.equals(this.domain, trafficSummaryData.domain);
+        TrafficSummaryData that = (TrafficSummaryData) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.domain, that.domain);
     }
 
     @Override

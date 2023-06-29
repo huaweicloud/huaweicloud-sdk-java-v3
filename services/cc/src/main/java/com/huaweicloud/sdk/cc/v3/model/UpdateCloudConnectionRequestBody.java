@@ -43,15 +43,15 @@ public class UpdateCloudConnectionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCloudConnectionRequestBody updateCloudConnectionRequestBody = (UpdateCloudConnectionRequestBody) o;
-        return Objects.equals(this.cloudConnection, updateCloudConnectionRequestBody.cloudConnection);
+        UpdateCloudConnectionRequestBody that = (UpdateCloudConnectionRequestBody) obj;
+        return Objects.equals(this.cloudConnection, that.cloudConnection);
     }
 
     @Override

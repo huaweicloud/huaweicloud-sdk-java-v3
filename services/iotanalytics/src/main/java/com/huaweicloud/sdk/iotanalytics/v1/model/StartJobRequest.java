@@ -103,17 +103,16 @@ public class StartJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartJobRequest startJobRequest = (StartJobRequest) o;
-        return Objects.equals(this.jobId, startJobRequest.jobId)
-            && Objects.equals(this.parallel, startJobRequest.parallel) && Objects.equals(this.rtu, startJobRequest.rtu)
-            && Objects.equals(this.resumeSavepoint, startJobRequest.resumeSavepoint);
+        StartJobRequest that = (StartJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.parallel, that.parallel)
+            && Objects.equals(this.rtu, that.rtu) && Objects.equals(this.resumeSavepoint, that.resumeSavepoint);
     }
 
     @Override

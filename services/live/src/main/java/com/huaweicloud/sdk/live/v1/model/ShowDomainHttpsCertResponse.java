@@ -55,22 +55,15 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CertificateFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CertificateFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CertificateFormatEnum(value));
         }
 
         public static CertificateFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CertificateFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,18 +169,18 @@ public class ShowDomainHttpsCertResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainHttpsCertResponse showDomainHttpsCertResponse = (ShowDomainHttpsCertResponse) o;
-        return Objects.equals(this.certificateFormat, showDomainHttpsCertResponse.certificateFormat)
-            && Objects.equals(this.certificate, showDomainHttpsCertResponse.certificate)
-            && Objects.equals(this.certificateKey, showDomainHttpsCertResponse.certificateKey)
-            && Objects.equals(this.forceRedirect, showDomainHttpsCertResponse.forceRedirect);
+        ShowDomainHttpsCertResponse that = (ShowDomainHttpsCertResponse) obj;
+        return Objects.equals(this.certificateFormat, that.certificateFormat)
+            && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.certificateKey, that.certificateKey)
+            && Objects.equals(this.forceRedirect, that.forceRedirect);
     }
 
     @Override

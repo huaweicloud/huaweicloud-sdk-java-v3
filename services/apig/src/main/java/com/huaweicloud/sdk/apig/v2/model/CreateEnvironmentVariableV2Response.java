@@ -122,20 +122,17 @@ public class CreateEnvironmentVariableV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnvironmentVariableV2Response createEnvironmentVariableV2Response =
-            (CreateEnvironmentVariableV2Response) o;
-        return Objects.equals(this.variableValue, createEnvironmentVariableV2Response.variableValue)
-            && Objects.equals(this.envId, createEnvironmentVariableV2Response.envId)
-            && Objects.equals(this.groupId, createEnvironmentVariableV2Response.groupId)
-            && Objects.equals(this.variableName, createEnvironmentVariableV2Response.variableName)
-            && Objects.equals(this.id, createEnvironmentVariableV2Response.id);
+        CreateEnvironmentVariableV2Response that = (CreateEnvironmentVariableV2Response) obj;
+        return Objects.equals(this.variableValue, that.variableValue) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.variableName, that.variableName)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

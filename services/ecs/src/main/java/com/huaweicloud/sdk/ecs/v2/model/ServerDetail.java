@@ -1204,55 +1204,48 @@ public class ServerDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerDetail serverDetail = (ServerDetail) o;
-        return Objects.equals(this.status, serverDetail.status) && Objects.equals(this.updated, serverDetail.updated)
-            && Objects.equals(this.autoTerminateTime, serverDetail.autoTerminateTime)
-            && Objects.equals(this.hostId, serverDetail.hostId)
-            && Objects.equals(this.osEXTSRVATTRHost, serverDetail.osEXTSRVATTRHost)
-            && Objects.equals(this.addresses, serverDetail.addresses)
-            && Objects.equals(this.keyName, serverDetail.keyName) && Objects.equals(this.image, serverDetail.image)
-            && Objects.equals(this.osEXTSTSTaskState, serverDetail.osEXTSTSTaskState)
-            && Objects.equals(this.osEXTSTSVmState, serverDetail.osEXTSTSVmState)
-            && Objects.equals(this.osEXTSRVATTRInstanceName, serverDetail.osEXTSRVATTRInstanceName)
-            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, serverDetail.osEXTSRVATTRHypervisorHostname)
-            && Objects.equals(this.flavor, serverDetail.flavor) && Objects.equals(this.id, serverDetail.id)
-            && Objects.equals(this.securityGroups, serverDetail.securityGroups)
-            && Objects.equals(this.osEXTAZAvailabilityZone, serverDetail.osEXTAZAvailabilityZone)
-            && Objects.equals(this.userId, serverDetail.userId) && Objects.equals(this.name, serverDetail.name)
-            && Objects.equals(this.created, serverDetail.created)
-            && Objects.equals(this.tenantId, serverDetail.tenantId)
-            && Objects.equals(this.osDCFDiskConfig, serverDetail.osDCFDiskConfig)
-            && Objects.equals(this.accessIPv4, serverDetail.accessIPv4)
-            && Objects.equals(this.accessIPv6, serverDetail.accessIPv6)
-            && Objects.equals(this.fault, serverDetail.fault) && Objects.equals(this.progress, serverDetail.progress)
-            && Objects.equals(this.osEXTSTSPowerState, serverDetail.osEXTSTSPowerState)
-            && Objects.equals(this.configDrive, serverDetail.configDrive)
-            && Objects.equals(this.metadata, serverDetail.metadata)
-            && Objects.equals(this.osSRVUSGLaunchedAt, serverDetail.osSRVUSGLaunchedAt)
-            && Objects.equals(this.osSRVUSGTerminatedAt, serverDetail.osSRVUSGTerminatedAt)
-            && Objects.equals(this.osExtendedVolumesVolumesAttached, serverDetail.osExtendedVolumesVolumesAttached)
-            && Objects.equals(this.description, serverDetail.description)
-            && Objects.equals(this.hostStatus, serverDetail.hostStatus)
-            && Objects.equals(this.osEXTSRVATTRHostname, serverDetail.osEXTSRVATTRHostname)
-            && Objects.equals(this.osEXTSRVATTRReservationId, serverDetail.osEXTSRVATTRReservationId)
-            && Objects.equals(this.osEXTSRVATTRLaunchIndex, serverDetail.osEXTSRVATTRLaunchIndex)
-            && Objects.equals(this.osEXTSRVATTRKernelId, serverDetail.osEXTSRVATTRKernelId)
-            && Objects.equals(this.osEXTSRVATTRRamdiskId, serverDetail.osEXTSRVATTRRamdiskId)
-            && Objects.equals(this.osEXTSRVATTRRootDeviceName, serverDetail.osEXTSRVATTRRootDeviceName)
-            && Objects.equals(this.osEXTSRVATTRUserData, serverDetail.osEXTSRVATTRUserData)
-            && Objects.equals(this.locked, serverDetail.locked) && Objects.equals(this.tags, serverDetail.tags)
-            && Objects.equals(this.osSchedulerHints, serverDetail.osSchedulerHints)
-            && Objects.equals(this.enterpriseProjectId, serverDetail.enterpriseProjectId)
-            && Objects.equals(this.sysTags, serverDetail.sysTags)
-            && Objects.equals(this.cpuOptions, serverDetail.cpuOptions)
-            && Objects.equals(this.hypervisor, serverDetail.hypervisor);
+        ServerDetail that = (ServerDetail) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.autoTerminateTime, that.autoTerminateTime)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.osEXTSRVATTRHost, that.osEXTSRVATTRHost)
+            && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.keyName, that.keyName)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.osEXTSTSTaskState, that.osEXTSTSTaskState)
+            && Objects.equals(this.osEXTSTSVmState, that.osEXTSTSVmState)
+            && Objects.equals(this.osEXTSRVATTRInstanceName, that.osEXTSRVATTRInstanceName)
+            && Objects.equals(this.osEXTSRVATTRHypervisorHostname, that.osEXTSRVATTRHypervisorHostname)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.osEXTAZAvailabilityZone, that.osEXTAZAvailabilityZone)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.osDCFDiskConfig, that.osDCFDiskConfig)
+            && Objects.equals(this.accessIPv4, that.accessIPv4) && Objects.equals(this.accessIPv6, that.accessIPv6)
+            && Objects.equals(this.fault, that.fault) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.osEXTSTSPowerState, that.osEXTSTSPowerState)
+            && Objects.equals(this.configDrive, that.configDrive) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.osSRVUSGLaunchedAt, that.osSRVUSGLaunchedAt)
+            && Objects.equals(this.osSRVUSGTerminatedAt, that.osSRVUSGTerminatedAt)
+            && Objects.equals(this.osExtendedVolumesVolumesAttached, that.osExtendedVolumesVolumesAttached)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.osEXTSRVATTRHostname, that.osEXTSRVATTRHostname)
+            && Objects.equals(this.osEXTSRVATTRReservationId, that.osEXTSRVATTRReservationId)
+            && Objects.equals(this.osEXTSRVATTRLaunchIndex, that.osEXTSRVATTRLaunchIndex)
+            && Objects.equals(this.osEXTSRVATTRKernelId, that.osEXTSRVATTRKernelId)
+            && Objects.equals(this.osEXTSRVATTRRamdiskId, that.osEXTSRVATTRRamdiskId)
+            && Objects.equals(this.osEXTSRVATTRRootDeviceName, that.osEXTSRVATTRRootDeviceName)
+            && Objects.equals(this.osEXTSRVATTRUserData, that.osEXTSRVATTRUserData)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.osSchedulerHints, that.osSchedulerHints)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.cpuOptions, that.cpuOptions)
+            && Objects.equals(this.hypervisor, that.hypervisor);
     }
 
     @Override

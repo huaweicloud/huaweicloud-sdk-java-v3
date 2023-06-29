@@ -96,17 +96,17 @@ public class GeneralTextResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTextResult generalTextResult = (GeneralTextResult) o;
-        return Objects.equals(this.direction, generalTextResult.direction)
-            && Objects.equals(this.wordsBlockCount, generalTextResult.wordsBlockCount)
-            && Objects.equals(this.wordsBlockList, generalTextResult.wordsBlockList);
+        GeneralTextResult that = (GeneralTextResult) obj;
+        return Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.wordsBlockCount, that.wordsBlockCount)
+            && Objects.equals(this.wordsBlockList, that.wordsBlockList);
     }
 
     @Override

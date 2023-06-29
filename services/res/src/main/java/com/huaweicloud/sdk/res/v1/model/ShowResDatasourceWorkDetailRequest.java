@@ -77,17 +77,16 @@ public class ShowResDatasourceWorkDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResDatasourceWorkDetailRequest showResDatasourceWorkDetailRequest = (ShowResDatasourceWorkDetailRequest) o;
-        return Objects.equals(this.workspaceId, showResDatasourceWorkDetailRequest.workspaceId)
-            && Objects.equals(this.resourceId, showResDatasourceWorkDetailRequest.resourceId)
-            && Objects.equals(this.type, showResDatasourceWorkDetailRequest.type);
+        ShowResDatasourceWorkDetailRequest that = (ShowResDatasourceWorkDetailRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

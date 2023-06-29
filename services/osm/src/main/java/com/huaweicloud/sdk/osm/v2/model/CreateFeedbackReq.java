@@ -79,17 +79,16 @@ public class CreateFeedbackReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFeedbackReq createFeedbackReq = (CreateFeedbackReq) o;
-        return Objects.equals(this.type, createFeedbackReq.type)
-            && Objects.equals(this.content, createFeedbackReq.content)
-            && Objects.equals(this.isHelpful, createFeedbackReq.isHelpful);
+        CreateFeedbackReq that = (CreateFeedbackReq) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.isHelpful, that.isHelpful);
     }
 
     @Override

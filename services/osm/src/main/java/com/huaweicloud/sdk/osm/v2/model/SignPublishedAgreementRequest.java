@@ -141,19 +141,17 @@ public class SignPublishedAgreementRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SignPublishedAgreementRequest signPublishedAgreementRequest = (SignPublishedAgreementRequest) o;
-        return Objects.equals(this.id, signPublishedAgreementRequest.id)
-            && Objects.equals(this.xSite, signPublishedAgreementRequest.xSite)
-            && Objects.equals(this.xLanguage, signPublishedAgreementRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, signPublishedAgreementRequest.xTimeZone)
-            && Objects.equals(this.body, signPublishedAgreementRequest.body);
+        SignPublishedAgreementRequest that = (SignPublishedAgreementRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -202,18 +202,18 @@ public class Product {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Product product = (Product) o;
-        return Objects.equals(this.id, product.id) && Objects.equals(this.name, product.name)
-            && Objects.equals(this.description, product.description)
-            && Objects.equals(this.attributes, product.attributes) && Objects.equals(this.projectId, product.projectId)
-            && Objects.equals(this.createdAt, product.createdAt) && Objects.equals(this.tags, product.tags);
+        Product that = (Product) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

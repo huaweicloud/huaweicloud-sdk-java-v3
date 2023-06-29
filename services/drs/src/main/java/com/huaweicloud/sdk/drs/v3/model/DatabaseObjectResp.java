@@ -99,18 +99,16 @@ public class DatabaseObjectResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseObjectResp databaseObjectResp = (DatabaseObjectResp) o;
-        return Objects.equals(this.jobId, databaseObjectResp.jobId)
-            && Objects.equals(this.status, databaseObjectResp.status)
-            && Objects.equals(this.errorCode, databaseObjectResp.errorCode)
-            && Objects.equals(this.errorMsg, databaseObjectResp.errorMsg);
+        DatabaseObjectResp that = (DatabaseObjectResp) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

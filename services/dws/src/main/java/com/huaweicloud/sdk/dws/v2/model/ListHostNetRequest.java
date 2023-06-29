@@ -99,18 +99,16 @@ public class ListHostNetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostNetRequest listHostNetRequest = (ListHostNetRequest) o;
-        return Objects.equals(this.clusterId, listHostNetRequest.clusterId)
-            && Objects.equals(this.instanceName, listHostNetRequest.instanceName)
-            && Objects.equals(this.limit, listHostNetRequest.limit)
-            && Objects.equals(this.offset, listHostNetRequest.offset);
+        ListHostNetRequest that = (ListHostNetRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

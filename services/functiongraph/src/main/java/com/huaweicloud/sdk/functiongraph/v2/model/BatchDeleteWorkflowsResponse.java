@@ -91,16 +91,15 @@ public class BatchDeleteWorkflowsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteWorkflowsResponse batchDeleteWorkflowsResponse = (BatchDeleteWorkflowsResponse) o;
-        return Objects.equals(this.success, batchDeleteWorkflowsResponse.success)
-            && Objects.equals(this.fail, batchDeleteWorkflowsResponse.fail);
+        BatchDeleteWorkflowsResponse that = (BatchDeleteWorkflowsResponse) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.fail, that.fail);
     }
 
     @Override

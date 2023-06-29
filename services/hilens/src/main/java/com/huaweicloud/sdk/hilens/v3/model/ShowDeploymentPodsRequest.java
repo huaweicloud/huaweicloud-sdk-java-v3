@@ -165,21 +165,18 @@ public class ShowDeploymentPodsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeploymentPodsRequest showDeploymentPodsRequest = (ShowDeploymentPodsRequest) o;
-        return Objects.equals(this.clusterId, showDeploymentPodsRequest.clusterId)
-            && Objects.equals(this.nodeId, showDeploymentPodsRequest.nodeId)
-            && Objects.equals(this.provider, showDeploymentPodsRequest.provider)
-            && Objects.equals(this.deploymentId, showDeploymentPodsRequest.deploymentId)
-            && Objects.equals(this.workspaceId, showDeploymentPodsRequest.workspaceId)
-            && Objects.equals(this.offset, showDeploymentPodsRequest.offset)
-            && Objects.equals(this.limit, showDeploymentPodsRequest.limit);
+        ShowDeploymentPodsRequest that = (ShowDeploymentPodsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -66,16 +66,16 @@ public class UpdateTransferRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTransferRequestBody updateTransferRequestBody = (UpdateTransferRequestBody) o;
-        return Objects.equals(this.logTransferId, updateTransferRequestBody.logTransferId)
-            && Objects.equals(this.logTransferInfo, updateTransferRequestBody.logTransferInfo);
+        UpdateTransferRequestBody that = (UpdateTransferRequestBody) obj;
+        return Objects.equals(this.logTransferId, that.logTransferId)
+            && Objects.equals(this.logTransferInfo, that.logTransferInfo);
     }
 
     @Override

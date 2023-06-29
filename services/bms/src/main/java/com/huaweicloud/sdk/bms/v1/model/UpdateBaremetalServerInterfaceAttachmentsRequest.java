@@ -89,18 +89,16 @@ public class UpdateBaremetalServerInterfaceAttachmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBaremetalServerInterfaceAttachmentsRequest updateBaremetalServerInterfaceAttachmentsRequest =
-            (UpdateBaremetalServerInterfaceAttachmentsRequest) o;
-        return Objects.equals(this.portId, updateBaremetalServerInterfaceAttachmentsRequest.portId)
-            && Objects.equals(this.serverId, updateBaremetalServerInterfaceAttachmentsRequest.serverId)
-            && Objects.equals(this.body, updateBaremetalServerInterfaceAttachmentsRequest.body);
+        UpdateBaremetalServerInterfaceAttachmentsRequest that = (UpdateBaremetalServerInterfaceAttachmentsRequest) obj;
+        return Objects.equals(this.portId, that.portId) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

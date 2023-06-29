@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.Flavor;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListFlavorsResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "flavors")
+
+    private List<Flavor> flavors = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavors")
-    
-    private List<Flavor> flavors = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private Integer total;
 
@@ -39,9 +29,8 @@ public class ListFlavorsResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListFlavorsResponse addFlavorsItem(Flavor flavorsItem) {
-        if(this.flavors == null) {
+        if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
         this.flavors.add(flavorsItem);
@@ -49,7 +38,7 @@ public class ListFlavorsResponse extends SdkResponse {
     }
 
     public ListFlavorsResponse withFlavors(Consumer<List<Flavor>> flavorsSetter) {
-        if(this.flavors == null) {
+        if (this.flavors == null) {
             this.flavors = new ArrayList<>();
         }
         flavorsSetter.accept(this.flavors);
@@ -68,15 +57,10 @@ public class ListFlavorsResponse extends SdkResponse {
         this.flavors = flavors;
     }
 
-    
-
     public ListFlavorsResponse withTotal(Integer total) {
         this.total = total;
         return this;
     }
-
-    
-
 
     /**
      * 查询的记录总数
@@ -90,24 +74,23 @@ public class ListFlavorsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsResponse listFlavorsResponse = (ListFlavorsResponse) o;
-        return Objects.equals(this.flavors, listFlavorsResponse.flavors) &&
-            Objects.equals(this.total, listFlavorsResponse.total);
+        ListFlavorsResponse that = (ListFlavorsResponse) obj;
+        return Objects.equals(this.flavors, that.flavors) && Objects.equals(this.total, that.total);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(flavors, total);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListFlavorsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListFlavorsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

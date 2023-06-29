@@ -87,17 +87,16 @@ public class MigrateNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateNodeRequest migrateNodeRequest = (MigrateNodeRequest) o;
-        return Objects.equals(this.clusterId, migrateNodeRequest.clusterId)
-            && Objects.equals(this.targetClusterId, migrateNodeRequest.targetClusterId)
-            && Objects.equals(this.body, migrateNodeRequest.body);
+        MigrateNodeRequest that = (MigrateNodeRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.targetClusterId, that.targetClusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

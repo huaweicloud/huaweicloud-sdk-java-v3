@@ -99,22 +99,15 @@ public class ProtectablesResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -303,20 +296,18 @@ public class ProtectablesResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectablesResp protectablesResp = (ProtectablesResp) o;
-        return Objects.equals(this.children, protectablesResp.children)
-            && Objects.equals(this.detail, protectablesResp.detail) && Objects.equals(this.id, protectablesResp.id)
-            && Objects.equals(this.name, protectablesResp.name)
-            && Objects.equals(this.protectable, protectablesResp.protectable)
-            && Objects.equals(this.size, protectablesResp.size) && Objects.equals(this.status, protectablesResp.status)
-            && Objects.equals(this.type, protectablesResp.type);
+        ProtectablesResp that = (ProtectablesResp) obj;
+        return Objects.equals(this.children, that.children) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.protectable, that.protectable) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type);
     }
 
     @Override

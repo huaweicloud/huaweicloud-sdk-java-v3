@@ -275,26 +275,20 @@ public class CreateTriggerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTriggerRequestBody createTriggerRequestBody = (CreateTriggerRequestBody) o;
-        return Objects.equals(this.action, createTriggerRequestBody.action)
-            && Objects.equals(this.appType, createTriggerRequestBody.appType)
-            && Objects.equals(this.application, createTriggerRequestBody.application)
-            && Objects.equals(this.clusterId, createTriggerRequestBody.clusterId)
-            && Objects.equals(this.clusterName, createTriggerRequestBody.clusterName)
-            && Objects.equals(this.clusterNs, createTriggerRequestBody.clusterNs)
-            && Objects.equals(this.condition, createTriggerRequestBody.condition)
-            && Objects.equals(this.container, createTriggerRequestBody.container)
-            && Objects.equals(this.enable, createTriggerRequestBody.enable)
-            && Objects.equals(this.name, createTriggerRequestBody.name)
-            && Objects.equals(this.triggerMode, createTriggerRequestBody.triggerMode)
-            && Objects.equals(this.triggerType, createTriggerRequestBody.triggerType);
+        CreateTriggerRequestBody that = (CreateTriggerRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.application, that.application) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterNs, that.clusterNs)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.container, that.container)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.triggerMode, that.triggerMode) && Objects.equals(this.triggerType, that.triggerType);
     }
 
     @Override

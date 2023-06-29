@@ -101,18 +101,16 @@ public class ListDbUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDbUsersRequest listDbUsersRequest = (ListDbUsersRequest) o;
-        return Objects.equals(this.xLanguage, listDbUsersRequest.xLanguage)
-            && Objects.equals(this.instanceId, listDbUsersRequest.instanceId)
-            && Objects.equals(this.page, listDbUsersRequest.page)
-            && Objects.equals(this.limit, listDbUsersRequest.limit);
+        ListDbUsersRequest that = (ListDbUsersRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -1,42 +1,34 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListEpsQuotasRequest  {
+public class ListEpsQuotasRequest {
 
     /**
      * 语言, 默认值为en-us。
      */
     public static final class XLanguageEnum {
 
-        
         /**
          * Enum ZH_CN for value: "zh-cn"
          */
         public static final XLanguageEnum ZH_CN = new XLanguageEnum("zh-cn");
-        
+
         /**
          * Enum EN_US for value: "en-us"
          */
         public static final XLanguageEnum EN_US = new XLanguageEnum("en-us");
-        
 
         private static final Map<String, XLanguageEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +57,18 @@ public class ListEpsQuotasRequest  {
 
         @JsonCreator
         public static XLanguageEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,26 +86,22 @@ public class ListEpsQuotasRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private XLanguageEnum xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
@@ -129,15 +110,12 @@ public class ListEpsQuotasRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言, 默认值为en-us。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public XLanguageEnum getXLanguage() {
         return xLanguage;
     }
@@ -146,15 +124,10 @@ public class ListEpsQuotasRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ListEpsQuotasRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 索引位置，偏移量。从第一条数据偏移offset条数据后开始查询，默认为0（偏移0条数据，表示从第一条数据开始查询），必须为数字，不能为负数。
@@ -168,15 +141,10 @@ public class ListEpsQuotasRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListEpsQuotasRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询记录数。默认为100，不能为负数，最小值为1，最大值为100。
@@ -190,15 +158,10 @@ public class ListEpsQuotasRequest  {
         this.limit = limit;
     }
 
-    
-
     public ListEpsQuotasRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。 - 对于未开通企业多项目服务的用户，不传该参数。 - 对于已开通企业多项目服务的用户，不传该参数时，表示为default企业项目。
@@ -212,26 +175,25 @@ public class ListEpsQuotasRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEpsQuotasRequest listEpsQuotasRequest = (ListEpsQuotasRequest) o;
-        return Objects.equals(this.xLanguage, listEpsQuotasRequest.xLanguage) &&
-            Objects.equals(this.offset, listEpsQuotasRequest.offset) &&
-            Objects.equals(this.limit, listEpsQuotasRequest.limit) &&
-            Objects.equals(this.enterpriseProjectId, listEpsQuotasRequest.enterpriseProjectId);
+        ListEpsQuotasRequest that = (ListEpsQuotasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, offset, limit, enterpriseProjectId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -243,6 +205,7 @@ public class ListEpsQuotasRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -253,8 +216,5 @@ public class ListEpsQuotasRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

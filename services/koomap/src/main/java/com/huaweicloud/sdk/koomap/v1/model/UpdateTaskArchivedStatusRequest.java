@@ -55,16 +55,15 @@ public class UpdateTaskArchivedStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskArchivedStatusRequest updateTaskArchivedStatusRequest = (UpdateTaskArchivedStatusRequest) o;
-        return Objects.equals(this.taskId, updateTaskArchivedStatusRequest.taskId)
-            && Objects.equals(this.archived, updateTaskArchivedStatusRequest.archived);
+        UpdateTaskArchivedStatusRequest that = (UpdateTaskArchivedStatusRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.archived, that.archived);
     }
 
     @Override

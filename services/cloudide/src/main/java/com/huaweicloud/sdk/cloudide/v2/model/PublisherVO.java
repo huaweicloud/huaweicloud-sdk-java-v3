@@ -565,32 +565,26 @@ public class PublisherVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublisherVO publisherVO = (PublisherVO) o;
-        return Objects.equals(this.codeRepo, publisherVO.codeRepo)
-            && Objects.equals(this.createdTime, publisherVO.createdTime)
-            && Objects.equals(this.description, publisherVO.description)
-            && Objects.equals(this.eamapInfo, publisherVO.eamapInfo) && Objects.equals(this.email, publisherVO.email)
-            && Objects.equals(this.espaseGroup, publisherVO.espaseGroup)
-            && Objects.equals(this.extensionCount, publisherVO.extensionCount)
-            && Objects.equals(this.id, publisherVO.id) && Objects.equals(this.identifier, publisherVO.identifier)
-            && Objects.equals(this.isOpen, publisherVO.isOpen) && Objects.equals(this.isOrg, publisherVO.isOrg)
-            && Objects.equals(this.logoUrl, publisherVO.logoUrl)
-            && Objects.equals(this.memberCount, publisherVO.memberCount) && Objects.equals(this.name, publisherVO.name)
-            && Objects.equals(this.official, publisherVO.official) && Objects.equals(this.owners, publisherVO.owners)
-            && Objects.equals(this.publisherReview, publisherVO.publisherReview)
-            && Objects.equals(this.role, publisherVO.role) && Objects.equals(this.status, publisherVO.status)
-            && Objects.equals(this.suiteCount, publisherVO.suiteCount)
-            && Objects.equals(this.supportUrl, publisherVO.supportUrl)
-            && Objects.equals(this.systemReview, publisherVO.systemReview)
-            && Objects.equals(this.updatedTime, publisherVO.updatedTime)
-            && Objects.equals(this.webUrl, publisherVO.webUrl);
+        PublisherVO that = (PublisherVO) obj;
+        return Objects.equals(this.codeRepo, that.codeRepo) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.eamapInfo, that.eamapInfo)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.espaseGroup, that.espaseGroup)
+            && Objects.equals(this.extensionCount, that.extensionCount) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.identifier, that.identifier) && Objects.equals(this.isOpen, that.isOpen)
+            && Objects.equals(this.isOrg, that.isOrg) && Objects.equals(this.logoUrl, that.logoUrl)
+            && Objects.equals(this.memberCount, that.memberCount) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.official, that.official) && Objects.equals(this.owners, that.owners)
+            && Objects.equals(this.publisherReview, that.publisherReview) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.suiteCount, that.suiteCount)
+            && Objects.equals(this.supportUrl, that.supportUrl) && Objects.equals(this.systemReview, that.systemReview)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.webUrl, that.webUrl);
     }
 
     @Override

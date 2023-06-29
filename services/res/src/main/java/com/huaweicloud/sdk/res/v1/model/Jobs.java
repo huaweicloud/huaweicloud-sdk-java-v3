@@ -307,21 +307,21 @@ public class Jobs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Jobs jobs = (Jobs) o;
-        return Objects.equals(this.category, jobs.category) && Objects.equals(this.configInfo, jobs.configInfo)
-            && Objects.equals(this.description, jobs.description) && Objects.equals(this.jobId, jobs.jobId)
-            && Objects.equals(this.jobName, jobs.jobName) && Objects.equals(this.jobType, jobs.jobType)
-            && Objects.equals(this.nextScheduleTime, jobs.nextScheduleTime)
-            && Objects.equals(this.platform, jobs.platform) && Objects.equals(this.resourceId, jobs.resourceId)
-            && Objects.equals(this.schedule, jobs.schedule) && Objects.equals(this.status, jobs.status)
-            && Objects.equals(this.workspaceId, jobs.workspaceId) && Objects.equals(this.jobConfig, jobs.jobConfig);
+        Jobs that = (Jobs) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.configInfo, that.configInfo)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.nextScheduleTime, that.nextScheduleTime)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.schedule, that.schedule) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.jobConfig, that.jobConfig);
     }
 
     @Override

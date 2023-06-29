@@ -87,17 +87,16 @@ public class UpdateEdgeNodeDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeNodeDeviceRequest updateEdgeNodeDeviceRequest = (UpdateEdgeNodeDeviceRequest) o;
-        return Objects.equals(this.nodeId, updateEdgeNodeDeviceRequest.nodeId)
-            && Objects.equals(this.iefInstanceId, updateEdgeNodeDeviceRequest.iefInstanceId)
-            && Objects.equals(this.body, updateEdgeNodeDeviceRequest.body);
+        UpdateEdgeNodeDeviceRequest that = (UpdateEdgeNodeDeviceRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -110,18 +110,16 @@ public class UpdateAgentHealthStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAgentHealthStatusResponse updateAgentHealthStatusResponse = (UpdateAgentHealthStatusResponse) o;
-        return Objects.equals(this.code, updateAgentHealthStatusResponse.code)
-            && Objects.equals(this.message, updateAgentHealthStatusResponse.message)
-            && Objects.equals(this.extend, updateAgentHealthStatusResponse.extend)
-            && Objects.equals(this.result, updateAgentHealthStatusResponse.result);
+        UpdateAgentHealthStatusResponse that = (UpdateAgentHealthStatusResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.result, that.result);
     }
 
     @Override

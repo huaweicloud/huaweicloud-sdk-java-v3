@@ -34,15 +34,15 @@ public class TableColumnStatisticsDescription {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableColumnStatisticsDescription tableColumnStatisticsDescription = (TableColumnStatisticsDescription) o;
-        return Objects.equals(this.lastAnalyzedTime, tableColumnStatisticsDescription.lastAnalyzedTime);
+        TableColumnStatisticsDescription that = (TableColumnStatisticsDescription) obj;
+        return Objects.equals(this.lastAnalyzedTime, that.lastAnalyzedTime);
     }
 
     @Override

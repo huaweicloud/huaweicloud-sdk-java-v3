@@ -98,17 +98,16 @@ public class ShowMeetingFileListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMeetingFileListRequest showMeetingFileListRequest = (ShowMeetingFileListRequest) o;
-        return Objects.equals(this.xRequestId, showMeetingFileListRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showMeetingFileListRequest.acceptLanguage)
-            && Objects.equals(this.body, showMeetingFileListRequest.body);
+        ShowMeetingFileListRequest that = (ShowMeetingFileListRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

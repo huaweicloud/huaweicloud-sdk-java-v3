@@ -121,17 +121,17 @@ public class EtlBasicParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EtlBasicParameter etlBasicParameter = (EtlBasicParameter) o;
-        return Objects.equals(this.userFeatures, etlBasicParameter.userFeatures)
-            && Objects.equals(this.itemFeatures, etlBasicParameter.itemFeatures)
-            && Objects.equals(this.rankEtlFilter, etlBasicParameter.rankEtlFilter);
+        EtlBasicParameter that = (EtlBasicParameter) obj;
+        return Objects.equals(this.userFeatures, that.userFeatures)
+            && Objects.equals(this.itemFeatures, that.itemFeatures)
+            && Objects.equals(this.rankEtlFilter, that.rankEtlFilter);
     }
 
     @Override

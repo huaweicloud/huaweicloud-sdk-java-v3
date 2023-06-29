@@ -211,24 +211,20 @@ public class UpdateLakeFormationInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLakeFormationInstanceResponse updateLakeFormationInstanceResponse =
-            (UpdateLakeFormationInstanceResponse) o;
-        return Objects.equals(this.instanceId, updateLakeFormationInstanceResponse.instanceId)
-            && Objects.equals(this.name, updateLakeFormationInstanceResponse.name)
-            && Objects.equals(this.description, updateLakeFormationInstanceResponse.description)
-            && Objects.equals(this.enterpriseProjectId, updateLakeFormationInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.shared, updateLakeFormationInstanceResponse.shared)
-            && Objects.equals(this.createTime, updateLakeFormationInstanceResponse.createTime)
-            && Objects.equals(this.updateTime, updateLakeFormationInstanceResponse.updateTime)
-            && Objects.equals(this.status, updateLakeFormationInstanceResponse.status)
-            && Objects.equals(this.inRecycleBin, updateLakeFormationInstanceResponse.inRecycleBin);
+        UpdateLakeFormationInstanceResponse that = (UpdateLakeFormationInstanceResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.shared, that.shared) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.inRecycleBin, that.inRecycleBin);
     }
 
     @Override

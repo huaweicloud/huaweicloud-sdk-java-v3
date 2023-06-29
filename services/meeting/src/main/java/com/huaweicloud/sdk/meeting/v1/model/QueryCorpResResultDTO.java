@@ -43,15 +43,15 @@ public class QueryCorpResResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCorpResResultDTO queryCorpResResultDTO = (QueryCorpResResultDTO) o;
-        return Objects.equals(this.corpVcRes, queryCorpResResultDTO.corpVcRes);
+        QueryCorpResResultDTO that = (QueryCorpResResultDTO) obj;
+        return Objects.equals(this.corpVcRes, that.corpVcRes);
     }
 
     @Override

@@ -70,22 +70,15 @@ public class QaFeedbackReq {
             if (value == null) {
                 return null;
             }
-            QaPairSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QaPairSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QaPairSourceEnum(value));
         }
 
         public static QaPairSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QaPairSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class QaFeedbackReq {
             if (value == null) {
                 return null;
             }
-            FeedbackSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FeedbackSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FeedbackSourceEnum(value));
         }
 
         public static FeedbackSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FeedbackSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -368,23 +354,21 @@ public class QaFeedbackReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QaFeedbackReq qaFeedbackReq = (QaFeedbackReq) o;
-        return Objects.equals(this.question, qaFeedbackReq.question)
-            && Objects.equals(this.feedbackId, qaFeedbackReq.feedbackId)
-            && Objects.equals(this.qaPairSource, qaFeedbackReq.qaPairSource)
-            && Objects.equals(this.feedbackOptionId, qaFeedbackReq.feedbackOptionId)
-            && Objects.equals(this.feedbackDescription, qaFeedbackReq.feedbackDescription)
-            && Objects.equals(this.qaPairId, qaFeedbackReq.qaPairId)
-            && Objects.equals(this.requestId, qaFeedbackReq.requestId)
-            && Objects.equals(this.feedbackSource, qaFeedbackReq.feedbackSource)
-            && Objects.equals(this.flowNodeId, qaFeedbackReq.flowNodeId);
+        QaFeedbackReq that = (QaFeedbackReq) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.feedbackId, that.feedbackId)
+            && Objects.equals(this.qaPairSource, that.qaPairSource)
+            && Objects.equals(this.feedbackOptionId, that.feedbackOptionId)
+            && Objects.equals(this.feedbackDescription, that.feedbackDescription)
+            && Objects.equals(this.qaPairId, that.qaPairId) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.feedbackSource, that.feedbackSource)
+            && Objects.equals(this.flowNodeId, that.flowNodeId);
     }
 
     @Override

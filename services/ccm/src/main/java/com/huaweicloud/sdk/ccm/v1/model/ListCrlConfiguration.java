@@ -123,19 +123,17 @@ public class ListCrlConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCrlConfiguration listCrlConfiguration = (ListCrlConfiguration) o;
-        return Objects.equals(this.enabled, listCrlConfiguration.enabled)
-            && Objects.equals(this.crlName, listCrlConfiguration.crlName)
-            && Objects.equals(this.obsBucketName, listCrlConfiguration.obsBucketName)
-            && Objects.equals(this.validDays, listCrlConfiguration.validDays)
-            && Objects.equals(this.crlDisPoint, listCrlConfiguration.crlDisPoint);
+        ListCrlConfiguration that = (ListCrlConfiguration) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.crlName, that.crlName)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.validDays, that.validDays)
+            && Objects.equals(this.crlDisPoint, that.crlDisPoint);
     }
 
     @Override

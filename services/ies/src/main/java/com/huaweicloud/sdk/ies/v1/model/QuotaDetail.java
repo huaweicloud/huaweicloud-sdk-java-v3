@@ -77,16 +77,16 @@ public class QuotaDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaDetail quotaDetail = (QuotaDetail) o;
-        return Objects.equals(this.type, quotaDetail.type) && Objects.equals(this.quota, quotaDetail.quota)
-            && Objects.equals(this.used, quotaDetail.used);
+        QuotaDetail that = (QuotaDetail) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

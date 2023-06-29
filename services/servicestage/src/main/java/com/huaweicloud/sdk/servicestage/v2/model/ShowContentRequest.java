@@ -123,18 +123,17 @@ public class ShowContentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowContentRequest showContentRequest = (ShowContentRequest) o;
-        return Objects.equals(this.xRepoAuth, showContentRequest.xRepoAuth)
-            && Objects.equals(this.namespace, showContentRequest.namespace)
-            && Objects.equals(this.project, showContentRequest.project)
-            && Objects.equals(this.path, showContentRequest.path) && Objects.equals(this.ref, showContentRequest.ref);
+        ShowContentRequest that = (ShowContentRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.ref, that.ref);
     }
 
     @Override

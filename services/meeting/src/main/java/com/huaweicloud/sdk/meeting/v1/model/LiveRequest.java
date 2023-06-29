@@ -89,17 +89,17 @@ public class LiveRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveRequest liveRequest = (LiveRequest) o;
-        return Objects.equals(this.conferenceID, liveRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, liveRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, liveRequest.body);
+        LiveRequest that = (LiveRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

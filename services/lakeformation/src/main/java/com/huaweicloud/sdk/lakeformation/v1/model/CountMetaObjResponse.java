@@ -166,21 +166,21 @@ public class CountMetaObjResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountMetaObjResponse countMetaObjResponse = (CountMetaObjResponse) o;
-        return Objects.equals(this.totalCount, countMetaObjResponse.totalCount)
-            && Objects.equals(this.functionsCount, countMetaObjResponse.functionsCount)
-            && Objects.equals(this.catalogsCount, countMetaObjResponse.catalogsCount)
-            && Objects.equals(this.databasesCount, countMetaObjResponse.databasesCount)
-            && Objects.equals(this.tablesCount, countMetaObjResponse.tablesCount)
-            && Objects.equals(this.partitionsCount, countMetaObjResponse.partitionsCount)
-            && Objects.equals(this.indexesCount, countMetaObjResponse.indexesCount);
+        CountMetaObjResponse that = (CountMetaObjResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.functionsCount, that.functionsCount)
+            && Objects.equals(this.catalogsCount, that.catalogsCount)
+            && Objects.equals(this.databasesCount, that.databasesCount)
+            && Objects.equals(this.tablesCount, that.tablesCount)
+            && Objects.equals(this.partitionsCount, that.partitionsCount)
+            && Objects.equals(this.indexesCount, that.indexesCount);
     }
 
     @Override

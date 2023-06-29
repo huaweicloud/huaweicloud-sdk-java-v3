@@ -80,22 +80,15 @@ public class AvailableZones {
             if (value == null) {
                 return null;
             }
-            ResourceAvailabilityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceAvailabilityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceAvailabilityEnum(value));
         }
 
         public static ResourceAvailabilityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceAvailabilityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,17 +196,17 @@ public class AvailableZones {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailableZones availableZones = (AvailableZones) o;
-        return Objects.equals(this.code, availableZones.code) && Objects.equals(this.port, availableZones.port)
-            && Objects.equals(this.name, availableZones.name) && Objects.equals(this.id, availableZones.id)
-            && Objects.equals(this.resourceAvailability, availableZones.resourceAvailability);
+        AvailableZones that = (AvailableZones) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.resourceAvailability, that.resourceAvailability);
     }
 
     @Override

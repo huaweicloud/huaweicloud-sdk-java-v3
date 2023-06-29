@@ -90,16 +90,15 @@ public class SecurityContextCapabilities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityContextCapabilities securityContextCapabilities = (SecurityContextCapabilities) o;
-        return Objects.equals(this.add, securityContextCapabilities.add)
-            && Objects.equals(this.drop, securityContextCapabilities.drop);
+        SecurityContextCapabilities that = (SecurityContextCapabilities) obj;
+        return Objects.equals(this.add, that.add) && Objects.equals(this.drop, that.drop);
     }
 
     @Override

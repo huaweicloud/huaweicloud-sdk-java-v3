@@ -290,25 +290,22 @@ public class SmsTemplateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsTemplateReq smsTemplateReq = (SmsTemplateReq) o;
-        return Objects.equals(this.appId, smsTemplateReq.appId)
-            && Objects.equals(this.brackets, smsTemplateReq.brackets)
-            && Objects.equals(this.region, smsTemplateReq.region)
-            && Objects.equals(this.sendCountry, smsTemplateReq.sendCountry)
-            && Objects.equals(this.signId, smsTemplateReq.signId)
-            && Objects.equals(this.templateContent, smsTemplateReq.templateContent)
-            && Objects.equals(this.templateDesc, smsTemplateReq.templateDesc)
-            && Objects.equals(this.templateName, smsTemplateReq.templateName)
-            && Objects.equals(this.templateType, smsTemplateReq.templateType)
-            && Objects.equals(this.universalTemplate, smsTemplateReq.universalTemplate)
-            && Objects.equals(this.variableAttributes, smsTemplateReq.variableAttributes);
+        SmsTemplateReq that = (SmsTemplateReq) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.brackets, that.brackets)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.sendCountry, that.sendCountry)
+            && Objects.equals(this.signId, that.signId) && Objects.equals(this.templateContent, that.templateContent)
+            && Objects.equals(this.templateDesc, that.templateDesc)
+            && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.universalTemplate, that.universalTemplate)
+            && Objects.equals(this.variableAttributes, that.variableAttributes);
     }
 
     @Override

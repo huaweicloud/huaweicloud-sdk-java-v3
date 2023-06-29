@@ -99,17 +99,16 @@ public class CheckPutEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckPutEventsResponse checkPutEventsResponse = (CheckPutEventsResponse) o;
-        return Objects.equals(this.failedCount, checkPutEventsResponse.failedCount)
-            && Objects.equals(this.sources, checkPutEventsResponse.sources)
-            && Objects.equals(this.xRequestId, checkPutEventsResponse.xRequestId);
+        CheckPutEventsResponse that = (CheckPutEventsResponse) obj;
+        return Objects.equals(this.failedCount, that.failedCount) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

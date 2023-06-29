@@ -176,21 +176,18 @@ public class UpdateWhiteblackipRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWhiteblackipRuleResponse updateWhiteblackipRuleResponse = (UpdateWhiteblackipRuleResponse) o;
-        return Objects.equals(this.id, updateWhiteblackipRuleResponse.id)
-            && Objects.equals(this.name, updateWhiteblackipRuleResponse.name)
-            && Objects.equals(this.policyid, updateWhiteblackipRuleResponse.policyid)
-            && Objects.equals(this.addr, updateWhiteblackipRuleResponse.addr)
-            && Objects.equals(this.description, updateWhiteblackipRuleResponse.description)
-            && Objects.equals(this.white, updateWhiteblackipRuleResponse.white)
-            && Objects.equals(this.ipGroup, updateWhiteblackipRuleResponse.ipGroup);
+        UpdateWhiteblackipRuleResponse that = (UpdateWhiteblackipRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.white, that.white)
+            && Objects.equals(this.ipGroup, that.ipGroup);
     }
 
     @Override

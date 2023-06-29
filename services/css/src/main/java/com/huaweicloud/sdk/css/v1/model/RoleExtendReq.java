@@ -74,15 +74,15 @@ public class RoleExtendReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoleExtendReq roleExtendReq = (RoleExtendReq) o;
-        return Objects.equals(this.grow, roleExtendReq.grow) && Objects.equals(this.isAutoPay, roleExtendReq.isAutoPay);
+        RoleExtendReq that = (RoleExtendReq) obj;
+        return Objects.equals(this.grow, that.grow) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

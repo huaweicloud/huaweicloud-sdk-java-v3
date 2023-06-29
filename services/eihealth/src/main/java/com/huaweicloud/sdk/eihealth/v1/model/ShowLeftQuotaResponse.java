@@ -78,17 +78,16 @@ public class ShowLeftQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLeftQuotaResponse showLeftQuotaResponse = (ShowLeftQuotaResponse) o;
-        return Objects.equals(this.quantity, showLeftQuotaResponse.quantity)
-            && Objects.equals(this.cpu, showLeftQuotaResponse.cpu)
-            && Objects.equals(this.ram, showLeftQuotaResponse.ram);
+        ShowLeftQuotaResponse that = (ShowLeftQuotaResponse) obj;
+        return Objects.equals(this.quantity, that.quantity) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.ram, that.ram);
     }
 
     @Override

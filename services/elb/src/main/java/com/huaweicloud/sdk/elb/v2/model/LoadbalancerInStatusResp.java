@@ -39,8 +39,8 @@ public class LoadbalancerInStatusResp {
     private List<PoolsInStatusResp> pools = null;
 
     /**
-    * 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
-    */
+     * 负载均衡器的操作状态；该字段为预留字段，暂未启用。默认为ONLINE。
+     */
     public static final class OperatingStatusEnum {
 
         /**
@@ -101,22 +101,15 @@ public class LoadbalancerInStatusResp {
             if (value == null) {
                 return null;
             }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperatingStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperatingStatusEnum(value));
         }
 
         public static OperatingStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperatingStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,22 +182,15 @@ public class LoadbalancerInStatusResp {
             if (value == null) {
                 return null;
             }
-            ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProvisioningStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProvisioningStatusEnum(value));
         }
 
         public static ProvisioningStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProvisioningStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -361,20 +347,18 @@ public class LoadbalancerInStatusResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadbalancerInStatusResp loadbalancerInStatusResp = (LoadbalancerInStatusResp) o;
-        return Objects.equals(this.name, loadbalancerInStatusResp.name)
-            && Objects.equals(this.id, loadbalancerInStatusResp.id)
-            && Objects.equals(this.listeners, loadbalancerInStatusResp.listeners)
-            && Objects.equals(this.pools, loadbalancerInStatusResp.pools)
-            && Objects.equals(this.operatingStatus, loadbalancerInStatusResp.operatingStatus)
-            && Objects.equals(this.provisioningStatus, loadbalancerInStatusResp.provisioningStatus);
+        LoadbalancerInStatusResp that = (LoadbalancerInStatusResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.pools, that.pools)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus);
     }
 
     @Override

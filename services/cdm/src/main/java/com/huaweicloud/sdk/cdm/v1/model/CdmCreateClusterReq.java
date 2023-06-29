@@ -109,18 +109,16 @@ public class CdmCreateClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmCreateClusterReq cdmCreateClusterReq = (CdmCreateClusterReq) o;
-        return Objects.equals(this.cluster, cdmCreateClusterReq.cluster)
-            && Objects.equals(this.autoRemind, cdmCreateClusterReq.autoRemind)
-            && Objects.equals(this.phoneNum, cdmCreateClusterReq.phoneNum)
-            && Objects.equals(this.email, cdmCreateClusterReq.email);
+        CdmCreateClusterReq that = (CdmCreateClusterReq) obj;
+        return Objects.equals(this.cluster, that.cluster) && Objects.equals(this.autoRemind, that.autoRemind)
+            && Objects.equals(this.phoneNum, that.phoneNum) && Objects.equals(this.email, that.email);
     }
 
     @Override

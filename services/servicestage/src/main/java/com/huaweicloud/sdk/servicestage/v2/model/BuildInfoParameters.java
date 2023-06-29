@@ -121,19 +121,18 @@ public class BuildInfoParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BuildInfoParameters buildInfoParameters = (BuildInfoParameters) o;
-        return Objects.equals(this.buildCmd, buildInfoParameters.buildCmd)
-            && Objects.equals(this.dockerfilePath, buildInfoParameters.dockerfilePath)
-            && Objects.equals(this.artifactNamespace, buildInfoParameters.artifactNamespace)
-            && Objects.equals(this.clusterId, buildInfoParameters.clusterId)
-            && Objects.equals(this.nodeLabelSelector, buildInfoParameters.nodeLabelSelector);
+        BuildInfoParameters that = (BuildInfoParameters) obj;
+        return Objects.equals(this.buildCmd, that.buildCmd) && Objects.equals(this.dockerfilePath, that.dockerfilePath)
+            && Objects.equals(this.artifactNamespace, that.artifactNamespace)
+            && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.nodeLabelSelector, that.nodeLabelSelector);
     }
 
     @Override

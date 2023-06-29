@@ -65,16 +65,15 @@ public class CreateApplicationEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationEndpointRequest createApplicationEndpointRequest = (CreateApplicationEndpointRequest) o;
-        return Objects.equals(this.applicationUrn, createApplicationEndpointRequest.applicationUrn)
-            && Objects.equals(this.body, createApplicationEndpointRequest.body);
+        CreateApplicationEndpointRequest that = (CreateApplicationEndpointRequest) obj;
+        return Objects.equals(this.applicationUrn, that.applicationUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

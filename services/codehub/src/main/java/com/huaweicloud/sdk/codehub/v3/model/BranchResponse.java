@@ -74,16 +74,15 @@ public class BranchResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BranchResponse branchResponse = (BranchResponse) o;
-        return Objects.equals(this.branches, branchResponse.branches)
-            && Objects.equals(this.total, branchResponse.total);
+        BranchResponse that = (BranchResponse) obj;
+        return Objects.equals(this.branches, that.branches) && Objects.equals(this.total, that.total);
     }
 
     @Override

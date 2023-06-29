@@ -212,23 +212,19 @@ public class ShowAllInstancesBackupsNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAllInstancesBackupsNewRequest showAllInstancesBackupsNewRequest = (ShowAllInstancesBackupsNewRequest) o;
-        return Objects.equals(this.instanceId, showAllInstancesBackupsNewRequest.instanceId)
-            && Objects.equals(this.datastoreType, showAllInstancesBackupsNewRequest.datastoreType)
-            && Objects.equals(this.backupId, showAllInstancesBackupsNewRequest.backupId)
-            && Objects.equals(this.backupType, showAllInstancesBackupsNewRequest.backupType)
-            && Objects.equals(this.type, showAllInstancesBackupsNewRequest.type)
-            && Objects.equals(this.limit, showAllInstancesBackupsNewRequest.limit)
-            && Objects.equals(this.offset, showAllInstancesBackupsNewRequest.offset)
-            && Objects.equals(this.beginTime, showAllInstancesBackupsNewRequest.beginTime)
-            && Objects.equals(this.endTime, showAllInstancesBackupsNewRequest.endTime);
+        ShowAllInstancesBackupsNewRequest that = (ShowAllInstancesBackupsNewRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.backupType, that.backupType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

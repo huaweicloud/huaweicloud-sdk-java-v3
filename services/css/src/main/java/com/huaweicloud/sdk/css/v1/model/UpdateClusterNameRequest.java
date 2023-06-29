@@ -65,16 +65,15 @@ public class UpdateClusterNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateClusterNameRequest updateClusterNameRequest = (UpdateClusterNameRequest) o;
-        return Objects.equals(this.clusterId, updateClusterNameRequest.clusterId)
-            && Objects.equals(this.body, updateClusterNameRequest.body);
+        UpdateClusterNameRequest that = (UpdateClusterNameRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -103,22 +103,15 @@ public class PreviewJobResultResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -329,22 +322,18 @@ public class PreviewJobResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreviewJobResultResponse previewJobResultResponse = (PreviewJobResultResponse) o;
-        return Objects.equals(this.isSuccess, previewJobResultResponse.isSuccess)
-            && Objects.equals(this.message, previewJobResultResponse.message)
-            && Objects.equals(this.jobId, previewJobResultResponse.jobId)
-            && Objects.equals(this.jobType, previewJobResultResponse.jobType)
-            && Objects.equals(this.rowCount, previewJobResultResponse.rowCount)
-            && Objects.equals(this.inputSize, previewJobResultResponse.inputSize)
-            && Objects.equals(this.schema, previewJobResultResponse.schema)
-            && Objects.equals(this.rows, previewJobResultResponse.rows);
+        PreviewJobResultResponse that = (PreviewJobResultResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.rowCount, that.rowCount) && Objects.equals(this.inputSize, that.inputSize)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.rows, that.rows);
     }
 
     @Override

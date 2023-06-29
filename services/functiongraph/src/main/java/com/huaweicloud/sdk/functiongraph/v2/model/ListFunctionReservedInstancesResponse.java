@@ -107,18 +107,16 @@ public class ListFunctionReservedInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionReservedInstancesResponse listFunctionReservedInstancesResponse =
-            (ListFunctionReservedInstancesResponse) o;
-        return Objects.equals(this.reservedinstances, listFunctionReservedInstancesResponse.reservedinstances)
-            && Objects.equals(this.pageInfo, listFunctionReservedInstancesResponse.pageInfo)
-            && Objects.equals(this.count, listFunctionReservedInstancesResponse.count);
+        ListFunctionReservedInstancesResponse that = (ListFunctionReservedInstancesResponse) obj;
+        return Objects.equals(this.reservedinstances, that.reservedinstances)
+            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.count, that.count);
     }
 
     @Override

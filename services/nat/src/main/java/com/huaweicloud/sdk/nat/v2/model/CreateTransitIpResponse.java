@@ -66,16 +66,15 @@ public class CreateTransitIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransitIpResponse createTransitIpResponse = (CreateTransitIpResponse) o;
-        return Objects.equals(this.transitIp, createTransitIpResponse.transitIp)
-            && Objects.equals(this.requestId, createTransitIpResponse.requestId);
+        CreateTransitIpResponse that = (CreateTransitIpResponse) obj;
+        return Objects.equals(this.transitIp, that.transitIp) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

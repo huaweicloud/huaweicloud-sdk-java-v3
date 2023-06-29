@@ -351,29 +351,23 @@ public class PerformanceResourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PerformanceResourceRsp performanceResourceRsp = (PerformanceResourceRsp) o;
-        return Objects.equals(this.id, performanceResourceRsp.id)
-            && Objects.equals(this.resourceId, performanceResourceRsp.resourceId)
-            && Objects.equals(this.name, performanceResourceRsp.name)
-            && Objects.equals(this.spec, performanceResourceRsp.spec)
-            && Objects.equals(this.availabilityZoneId, performanceResourceRsp.availabilityZoneId)
-            && Objects.equals(this.space, performanceResourceRsp.space)
-            && Objects.equals(this.freeSpace, performanceResourceRsp.freeSpace)
-            && Objects.equals(this.chargeMode, performanceResourceRsp.chargeMode)
-            && Objects.equals(this.periodNum, performanceResourceRsp.periodNum)
-            && Objects.equals(this.runningJobCount, performanceResourceRsp.runningJobCount)
-            && Objects.equals(this.jobQuota, performanceResourceRsp.jobQuota)
-            && Objects.equals(this.createTime, performanceResourceRsp.createTime)
-            && Objects.equals(this.failureReason, performanceResourceRsp.failureReason)
-            && Objects.equals(this.status, performanceResourceRsp.status)
-            && Objects.equals(this.schedulable, performanceResourceRsp.schedulable);
+        PerformanceResourceRsp that = (PerformanceResourceRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.space, that.space) && Objects.equals(this.freeSpace, that.freeSpace)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.runningJobCount, that.runningJobCount)
+            && Objects.equals(this.jobQuota, that.jobQuota) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.failureReason, that.failureReason) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.schedulable, that.schedulable);
     }
 
     @Override

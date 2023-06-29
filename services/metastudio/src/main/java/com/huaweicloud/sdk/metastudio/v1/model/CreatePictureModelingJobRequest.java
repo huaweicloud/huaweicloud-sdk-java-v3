@@ -161,20 +161,17 @@ public class CreatePictureModelingJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePictureModelingJobRequest createPictureModelingJobRequest = (CreatePictureModelingJobRequest) o;
-        return Objects.equals(this.authorization, createPictureModelingJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, createPictureModelingJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createPictureModelingJobRequest.xProjectId)
-            && Objects.equals(this.xAppUserId, createPictureModelingJobRequest.xAppUserId)
-            && Objects.equals(this.xUserPrivilege, createPictureModelingJobRequest.xUserPrivilege)
-            && Objects.equals(this.body, createPictureModelingJobRequest.body);
+        CreatePictureModelingJobRequest that = (CreatePictureModelingJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.xUserPrivilege, that.xUserPrivilege) && Objects.equals(this.body, that.body);
     }
 
     @Override

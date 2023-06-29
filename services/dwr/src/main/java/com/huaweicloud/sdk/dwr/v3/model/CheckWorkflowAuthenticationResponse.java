@@ -81,22 +81,15 @@ public class CheckWorkflowAuthenticationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AgencyDurationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AgencyDurationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AgencyDurationEnum(value));
         }
 
         public static AgencyDurationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AgencyDurationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,22 +188,15 @@ public class CheckWorkflowAuthenticationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RoleRemarkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RoleRemarkTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RoleRemarkTypeEnum(value));
         }
 
         public static RoleRemarkTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RoleRemarkTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -493,29 +479,24 @@ public class CheckWorkflowAuthenticationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckWorkflowAuthenticationResponse checkWorkflowAuthenticationResponse =
-            (CheckWorkflowAuthenticationResponse) o;
-        return Objects.equals(this.createTime, checkWorkflowAuthenticationResponse.createTime)
-            && Objects.equals(this.lastModifyTime, checkWorkflowAuthenticationResponse.lastModifyTime)
-            && Objects.equals(this.agencyId, checkWorkflowAuthenticationResponse.agencyId)
-            && Objects.equals(this.agencyName, checkWorkflowAuthenticationResponse.agencyName)
-            && Objects.equals(this.agencyDuration, checkWorkflowAuthenticationResponse.agencyDuration)
-            && Objects.equals(this.trustDomainName, checkWorkflowAuthenticationResponse.trustDomainName)
-            && Objects.equals(this.roleId, checkWorkflowAuthenticationResponse.roleId)
-            && Objects.equals(this.roleDependentByFunction, checkWorkflowAuthenticationResponse.roleDependentByFunction)
-            && Objects.equals(this.roleRemarkName, checkWorkflowAuthenticationResponse.roleRemarkName)
-            && Objects.equals(this.roleRemarkType, checkWorkflowAuthenticationResponse.roleRemarkType)
-            && Objects.equals(this.xRequestId, checkWorkflowAuthenticationResponse.xRequestId)
-            && Objects.equals(this.connection, checkWorkflowAuthenticationResponse.connection)
-            && Objects.equals(this.contentLength, checkWorkflowAuthenticationResponse.contentLength)
-            && Objects.equals(this.date, checkWorkflowAuthenticationResponse.date);
+        CheckWorkflowAuthenticationResponse that = (CheckWorkflowAuthenticationResponse) obj;
+        return Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime) && Objects.equals(this.agencyId, that.agencyId)
+            && Objects.equals(this.agencyName, that.agencyName)
+            && Objects.equals(this.agencyDuration, that.agencyDuration)
+            && Objects.equals(this.trustDomainName, that.trustDomainName) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.roleDependentByFunction, that.roleDependentByFunction)
+            && Objects.equals(this.roleRemarkName, that.roleRemarkName)
+            && Objects.equals(this.roleRemarkType, that.roleRemarkType)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

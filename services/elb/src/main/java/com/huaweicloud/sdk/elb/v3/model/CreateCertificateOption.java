@@ -95,22 +95,15 @@ public class CreateCertificateOption {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -335,25 +328,22 @@ public class CreateCertificateOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateOption createCertificateOption = (CreateCertificateOption) o;
-        return Objects.equals(this.adminStateUp, createCertificateOption.adminStateUp)
-            && Objects.equals(this.certificate, createCertificateOption.certificate)
-            && Objects.equals(this.description, createCertificateOption.description)
-            && Objects.equals(this.domain, createCertificateOption.domain)
-            && Objects.equals(this.name, createCertificateOption.name)
-            && Objects.equals(this.privateKey, createCertificateOption.privateKey)
-            && Objects.equals(this.projectId, createCertificateOption.projectId)
-            && Objects.equals(this.type, createCertificateOption.type)
-            && Objects.equals(this.enterpriseProjectId, createCertificateOption.enterpriseProjectId)
-            && Objects.equals(this.encCertificate, createCertificateOption.encCertificate)
-            && Objects.equals(this.encPrivateKey, createCertificateOption.encPrivateKey);
+        CreateCertificateOption that = (CreateCertificateOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.encCertificate, that.encCertificate)
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
     }
 
     @Override

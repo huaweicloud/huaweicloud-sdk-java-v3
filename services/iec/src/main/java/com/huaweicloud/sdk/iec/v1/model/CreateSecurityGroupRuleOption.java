@@ -70,22 +70,15 @@ public class CreateSecurityGroupRuleOption {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -146,22 +139,15 @@ public class CreateSecurityGroupRuleOption {
             if (value == null) {
                 return null;
             }
-            EthertypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EthertypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EthertypeEnum(value));
         }
 
         public static EthertypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EthertypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -406,25 +392,22 @@ public class CreateSecurityGroupRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecurityGroupRuleOption createSecurityGroupRuleOption = (CreateSecurityGroupRuleOption) o;
-        return Objects.equals(this.description, createSecurityGroupRuleOption.description)
-            && Objects.equals(this.securityGroupId, createSecurityGroupRuleOption.securityGroupId)
-            && Objects.equals(this.direction, createSecurityGroupRuleOption.direction)
-            && Objects.equals(this.ethertype, createSecurityGroupRuleOption.ethertype)
-            && Objects.equals(this.protocol, createSecurityGroupRuleOption.protocol)
-            && Objects.equals(this.portRangeMin, createSecurityGroupRuleOption.portRangeMin)
-            && Objects.equals(this.portRangeMax, createSecurityGroupRuleOption.portRangeMax)
-            && Objects.equals(this.remoteGroupId, createSecurityGroupRuleOption.remoteGroupId)
-            && Objects.equals(this.remoteIpPrefix, createSecurityGroupRuleOption.remoteIpPrefix)
-            && Objects.equals(this.action, createSecurityGroupRuleOption.action)
-            && Objects.equals(this.priority, createSecurityGroupRuleOption.priority);
+        CreateSecurityGroupRuleOption that = (CreateSecurityGroupRuleOption) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.ethertype, that.ethertype)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.portRangeMin, that.portRangeMin)
+            && Objects.equals(this.portRangeMax, that.portRangeMax)
+            && Objects.equals(this.remoteGroupId, that.remoteGroupId)
+            && Objects.equals(this.remoteIpPrefix, that.remoteIpPrefix) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override

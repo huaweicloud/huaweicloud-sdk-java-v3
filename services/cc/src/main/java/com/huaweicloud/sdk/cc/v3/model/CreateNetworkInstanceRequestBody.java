@@ -43,15 +43,15 @@ public class CreateNetworkInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNetworkInstanceRequestBody createNetworkInstanceRequestBody = (CreateNetworkInstanceRequestBody) o;
-        return Objects.equals(this.networkInstance, createNetworkInstanceRequestBody.networkInstance);
+        CreateNetworkInstanceRequestBody that = (CreateNetworkInstanceRequestBody) obj;
+        return Objects.equals(this.networkInstance, that.networkInstance);
     }
 
     @Override

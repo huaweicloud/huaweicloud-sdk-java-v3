@@ -134,18 +134,16 @@ public class ConstructDisasterRecoveryInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConstructDisasterRecoveryInstance constructDisasterRecoveryInstance = (ConstructDisasterRecoveryInstance) o;
-        return Objects.equals(this.id, constructDisasterRecoveryInstance.id)
-            && Objects.equals(this.regionCode, constructDisasterRecoveryInstance.regionCode)
-            && Objects.equals(this.subnetCidrs, constructDisasterRecoveryInstance.subnetCidrs)
-            && Objects.equals(this.nodeIps, constructDisasterRecoveryInstance.nodeIps);
+        ConstructDisasterRecoveryInstance that = (ConstructDisasterRecoveryInstance) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.subnetCidrs, that.subnetCidrs) && Objects.equals(this.nodeIps, that.nodeIps);
     }
 
     @Override

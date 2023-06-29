@@ -69,22 +69,15 @@ public class ThumbnailPara {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -352,21 +345,19 @@ public class ThumbnailPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThumbnailPara thumbnailPara = (ThumbnailPara) o;
-        return Objects.equals(this.type, thumbnailPara.type) && Objects.equals(this.time, thumbnailPara.time)
-            && Objects.equals(this.startTime, thumbnailPara.startTime)
-            && Objects.equals(this.duration, thumbnailPara.duration) && Objects.equals(this.dots, thumbnailPara.dots)
-            && Objects.equals(this.outputFilename, thumbnailPara.outputFilename)
-            && Objects.equals(this.format, thumbnailPara.format) && Objects.equals(this.width, thumbnailPara.width)
-            && Objects.equals(this.height, thumbnailPara.height)
-            && Objects.equals(this.maxLength, thumbnailPara.maxLength);
+        ThumbnailPara that = (ThumbnailPara) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.dots, that.dots) && Objects.equals(this.outputFilename, that.outputFilename)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.maxLength, that.maxLength);
     }
 
     @Override

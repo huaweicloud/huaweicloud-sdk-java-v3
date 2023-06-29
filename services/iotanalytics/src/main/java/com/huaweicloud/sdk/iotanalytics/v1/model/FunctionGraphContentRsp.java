@@ -165,21 +165,18 @@ public class FunctionGraphContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FunctionGraphContentRsp functionGraphContentRsp = (FunctionGraphContentRsp) o;
-        return Objects.equals(this.functionName, functionGraphContentRsp.functionName)
-            && Objects.equals(this.origUrl, functionGraphContentRsp.origUrl)
-            && Objects.equals(this.finalUrl, functionGraphContentRsp.finalUrl)
-            && Objects.equals(this.verifyBody, functionGraphContentRsp.verifyBody)
-            && Objects.equals(this.ak, functionGraphContentRsp.ak)
-            && Objects.equals(this.sk, functionGraphContentRsp.sk)
-            && Objects.equals(this.projectId, functionGraphContentRsp.projectId);
+        FunctionGraphContentRsp that = (FunctionGraphContentRsp) obj;
+        return Objects.equals(this.functionName, that.functionName) && Objects.equals(this.origUrl, that.origUrl)
+            && Objects.equals(this.finalUrl, that.finalUrl) && Objects.equals(this.verifyBody, that.verifyBody)
+            && Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

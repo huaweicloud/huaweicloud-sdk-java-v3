@@ -99,18 +99,17 @@ public class OutputWithModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputWithModel outputWithModel = (OutputWithModel) o;
-        return Objects.equals(this.name, outputWithModel.name)
-            && Objects.equals(this.outputAssetModelId, outputWithModel.outputAssetModelId)
-            && Objects.equals(this.outputAssetModelName, outputWithModel.outputAssetModelName)
-            && Objects.equals(this.outputProperty, outputWithModel.outputProperty);
+        OutputWithModel that = (OutputWithModel) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.outputAssetModelId, that.outputAssetModelId)
+            && Objects.equals(this.outputAssetModelName, that.outputAssetModelName)
+            && Objects.equals(this.outputProperty, that.outputProperty);
     }
 
     @Override

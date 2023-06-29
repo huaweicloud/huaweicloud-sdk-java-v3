@@ -55,15 +55,15 @@ public class MediaTypes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MediaTypes mediaTypes = (MediaTypes) o;
-        return Objects.equals(this.base, mediaTypes.base) && Objects.equals(this.type, mediaTypes.type);
+        MediaTypes that = (MediaTypes) obj;
+        return Objects.equals(this.base, that.base) && Objects.equals(this.type, that.type);
     }
 
     @Override

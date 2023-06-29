@@ -96,17 +96,16 @@ public class ShowDatabaseUsersPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseUsersPrivilege showDatabaseUsersPrivilege = (ShowDatabaseUsersPrivilege) o;
-        return Objects.equals(this.isAdmin, showDatabaseUsersPrivilege.isAdmin)
-            && Objects.equals(this.userName, showDatabaseUsersPrivilege.userName)
-            && Objects.equals(this.privileges, showDatabaseUsersPrivilege.privileges);
+        ShowDatabaseUsersPrivilege that = (ShowDatabaseUsersPrivilege) obj;
+        return Objects.equals(this.isAdmin, that.isAdmin) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

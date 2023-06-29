@@ -90,18 +90,17 @@ public class ShowAggregateComplianceDetailsByPolicyAssignmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregateComplianceDetailsByPolicyAssignmentRequest showAggregateComplianceDetailsByPolicyAssignmentRequest =
-            (ShowAggregateComplianceDetailsByPolicyAssignmentRequest) o;
-        return Objects.equals(this.limit, showAggregateComplianceDetailsByPolicyAssignmentRequest.limit)
-            && Objects.equals(this.marker, showAggregateComplianceDetailsByPolicyAssignmentRequest.marker)
-            && Objects.equals(this.body, showAggregateComplianceDetailsByPolicyAssignmentRequest.body);
+        ShowAggregateComplianceDetailsByPolicyAssignmentRequest that =
+            (ShowAggregateComplianceDetailsByPolicyAssignmentRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

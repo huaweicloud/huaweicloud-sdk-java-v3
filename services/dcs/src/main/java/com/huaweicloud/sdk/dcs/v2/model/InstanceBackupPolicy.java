@@ -131,19 +131,17 @@ public class InstanceBackupPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceBackupPolicy instanceBackupPolicy = (InstanceBackupPolicy) o;
-        return Objects.equals(this.backupPolicyId, instanceBackupPolicy.backupPolicyId)
-            && Objects.equals(this.createdAt, instanceBackupPolicy.createdAt)
-            && Objects.equals(this.updatedAt, instanceBackupPolicy.updatedAt)
-            && Objects.equals(this.policy, instanceBackupPolicy.policy)
-            && Objects.equals(this.tenantId, instanceBackupPolicy.tenantId);
+        InstanceBackupPolicy that = (InstanceBackupPolicy) obj;
+        return Objects.equals(this.backupPolicyId, that.backupPolicyId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.policy, that.policy) && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

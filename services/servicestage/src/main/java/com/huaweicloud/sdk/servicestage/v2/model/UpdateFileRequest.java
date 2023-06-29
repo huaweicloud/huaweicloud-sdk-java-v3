@@ -155,19 +155,17 @@ public class UpdateFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFileRequest updateFileRequest = (UpdateFileRequest) o;
-        return Objects.equals(this.xRepoAuth, updateFileRequest.xRepoAuth)
-            && Objects.equals(this.namespace, updateFileRequest.namespace)
-            && Objects.equals(this.project, updateFileRequest.project)
-            && Objects.equals(this.path, updateFileRequest.path) && Objects.equals(this.ref, updateFileRequest.ref)
-            && Objects.equals(this.body, updateFileRequest.body);
+        UpdateFileRequest that = (UpdateFileRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.ref, that.ref) && Objects.equals(this.body, that.body);
     }
 
     @Override

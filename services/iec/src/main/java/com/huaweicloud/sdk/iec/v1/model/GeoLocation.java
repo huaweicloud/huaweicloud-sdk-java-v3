@@ -209,21 +209,19 @@ public class GeoLocation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeoLocation geoLocation = (GeoLocation) o;
-        return Objects.equals(this.id, geoLocation.id) && Objects.equals(this.area, geoLocation.area)
-            && Objects.equals(this.city, geoLocation.city) && Objects.equals(this.country, geoLocation.country)
-            && Objects.equals(this.i18nArea, geoLocation.i18nArea)
-            && Objects.equals(this.i18nCity, geoLocation.i18nCity)
-            && Objects.equals(this.i18nCountry, geoLocation.i18nCountry)
-            && Objects.equals(this.i18nProvince, geoLocation.i18nProvince)
-            && Objects.equals(this.province, geoLocation.province);
+        GeoLocation that = (GeoLocation) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.area, that.area)
+            && Objects.equals(this.city, that.city) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.i18nArea, that.i18nArea) && Objects.equals(this.i18nCity, that.i18nCity)
+            && Objects.equals(this.i18nCountry, that.i18nCountry)
+            && Objects.equals(this.i18nProvince, that.i18nProvince) && Objects.equals(this.province, that.province);
     }
 
     @Override

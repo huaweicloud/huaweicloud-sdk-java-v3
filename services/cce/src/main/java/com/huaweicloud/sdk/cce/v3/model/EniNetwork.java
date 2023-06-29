@@ -96,17 +96,16 @@ public class EniNetwork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EniNetwork eniNetwork = (EniNetwork) o;
-        return Objects.equals(this.eniSubnetId, eniNetwork.eniSubnetId)
-            && Objects.equals(this.eniSubnetCIDR, eniNetwork.eniSubnetCIDR)
-            && Objects.equals(this.subnets, eniNetwork.subnets);
+        EniNetwork that = (EniNetwork) obj;
+        return Objects.equals(this.eniSubnetId, that.eniSubnetId)
+            && Objects.equals(this.eniSubnetCIDR, that.eniSubnetCIDR) && Objects.equals(this.subnets, that.subnets);
     }
 
     @Override

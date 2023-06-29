@@ -39,8 +39,8 @@ public class ApiPolicyHttpResp {
     private List<BackendParam> backendParams = null;
 
     /**
-    * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
-    */
+     * 关联的策略组合模式： - ALL：满足全部条件 - ANY：满足任一条件
+     */
     public static final class EffectModeEnum {
 
         /**
@@ -83,22 +83,15 @@ public class ApiPolicyHttpResp {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class ApiPolicyHttpResp {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,22 +279,15 @@ public class ApiPolicyHttpResp {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -658,28 +637,24 @@ public class ApiPolicyHttpResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyHttpResp apiPolicyHttpResp = (ApiPolicyHttpResp) o;
-        return Objects.equals(this.id, apiPolicyHttpResp.id) && Objects.equals(this.name, apiPolicyHttpResp.name)
-            && Objects.equals(this.conditions, apiPolicyHttpResp.conditions)
-            && Objects.equals(this.backendParams, apiPolicyHttpResp.backendParams)
-            && Objects.equals(this.effectMode, apiPolicyHttpResp.effectMode)
-            && Objects.equals(this.authorizerId, apiPolicyHttpResp.authorizerId)
-            && Objects.equals(this.urlDomain, apiPolicyHttpResp.urlDomain)
-            && Objects.equals(this.reqProtocol, apiPolicyHttpResp.reqProtocol)
-            && Objects.equals(this.reqMethod, apiPolicyHttpResp.reqMethod)
-            && Objects.equals(this.reqUri, apiPolicyHttpResp.reqUri)
-            && Objects.equals(this.timeout, apiPolicyHttpResp.timeout)
-            && Objects.equals(this.enableClientSsl, apiPolicyHttpResp.enableClientSsl)
-            && Objects.equals(this.retryCount, apiPolicyHttpResp.retryCount)
-            && Objects.equals(this.vpcChannelInfo, apiPolicyHttpResp.vpcChannelInfo)
-            && Objects.equals(this.vpcChannelStatus, apiPolicyHttpResp.vpcChannelStatus);
+        ApiPolicyHttpResp that = (ApiPolicyHttpResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.reqProtocol, that.reqProtocol)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.enableClientSsl, that.enableClientSsl)
+            && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.vpcChannelInfo, that.vpcChannelInfo)
+            && Objects.equals(this.vpcChannelStatus, that.vpcChannelStatus);
     }
 
     @Override

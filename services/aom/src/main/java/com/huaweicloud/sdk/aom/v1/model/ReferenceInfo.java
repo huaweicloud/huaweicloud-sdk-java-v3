@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 脚本版本或文件包版本引用的作业详情。
  */
-public class ReferenceInfo  {
-
+public class ReferenceInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
@@ -33,9 +24,6 @@ public class ReferenceInfo  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -49,15 +37,10 @@ public class ReferenceInfo  {
         this.jobId = jobId;
     }
 
-    
-
     public ReferenceInfo withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称。
@@ -71,24 +54,23 @@ public class ReferenceInfo  {
         this.jobName = jobName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReferenceInfo referenceInfo = (ReferenceInfo) o;
-        return Objects.equals(this.jobId, referenceInfo.jobId) &&
-            Objects.equals(this.jobName, referenceInfo.jobName);
+        ReferenceInfo that = (ReferenceInfo) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, jobName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ReferenceInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ReferenceInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

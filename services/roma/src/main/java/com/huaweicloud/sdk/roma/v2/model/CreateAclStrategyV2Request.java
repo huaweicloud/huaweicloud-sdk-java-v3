@@ -65,16 +65,15 @@ public class CreateAclStrategyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAclStrategyV2Request createAclStrategyV2Request = (CreateAclStrategyV2Request) o;
-        return Objects.equals(this.instanceId, createAclStrategyV2Request.instanceId)
-            && Objects.equals(this.body, createAclStrategyV2Request.body);
+        CreateAclStrategyV2Request that = (CreateAclStrategyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowIpInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIpInfoRequest showIpInfoRequest = (ShowIpInfoRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showIpInfoRequest.enterpriseProjectId)
-            && Objects.equals(this.ips, showIpInfoRequest.ips);
+        ShowIpInfoRequest that = (ShowIpInfoRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.ips, that.ips);
     }
 
     @Override

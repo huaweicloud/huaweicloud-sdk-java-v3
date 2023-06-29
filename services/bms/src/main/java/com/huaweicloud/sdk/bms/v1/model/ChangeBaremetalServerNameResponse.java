@@ -44,15 +44,15 @@ public class ChangeBaremetalServerNameResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeBaremetalServerNameResponse changeBaremetalServerNameResponse = (ChangeBaremetalServerNameResponse) o;
-        return Objects.equals(this.server, changeBaremetalServerNameResponse.server);
+        ChangeBaremetalServerNameResponse that = (ChangeBaremetalServerNameResponse) obj;
+        return Objects.equals(this.server, that.server);
     }
 
     @Override

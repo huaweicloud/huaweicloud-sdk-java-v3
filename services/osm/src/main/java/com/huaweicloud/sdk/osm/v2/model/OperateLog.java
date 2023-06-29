@@ -55,15 +55,15 @@ public class OperateLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateLog operateLog = (OperateLog) o;
-        return Objects.equals(this.oper, operateLog.oper) && Objects.equals(this.operateTime, operateLog.operateTime);
+        OperateLog that = (OperateLog) obj;
+        return Objects.equals(this.oper, that.oper) && Objects.equals(this.operateTime, that.operateTime);
     }
 
     @Override

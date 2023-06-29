@@ -55,16 +55,15 @@ public class UpdateWebHookConfigStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWebHookConfigStatusRequest updateWebHookConfigStatusRequest = (UpdateWebHookConfigStatusRequest) o;
-        return Objects.equals(this.id, updateWebHookConfigStatusRequest.id)
-            && Objects.equals(this.status, updateWebHookConfigStatusRequest.status);
+        UpdateWebHookConfigStatusRequest that = (UpdateWebHookConfigStatusRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
     }
 
     @Override

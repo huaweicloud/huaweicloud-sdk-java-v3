@@ -89,17 +89,16 @@ public class CreateProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectRequest createProjectRequest = (CreateProjectRequest) o;
-        return Objects.equals(this.xRepoAuth, createProjectRequest.xRepoAuth)
-            && Objects.equals(this.namespace, createProjectRequest.namespace)
-            && Objects.equals(this.body, createProjectRequest.body);
+        CreateProjectRequest that = (CreateProjectRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -84,16 +84,15 @@ public class BatchShowQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowQueueResponse batchShowQueueResponse = (BatchShowQueueResponse) o;
-        return Objects.equals(this.queues, batchShowQueueResponse.queues)
-            && Objects.equals(this.page, batchShowQueueResponse.page);
+        BatchShowQueueResponse that = (BatchShowQueueResponse) obj;
+        return Objects.equals(this.queues, that.queues) && Objects.equals(this.page, that.page);
     }
 
     @Override

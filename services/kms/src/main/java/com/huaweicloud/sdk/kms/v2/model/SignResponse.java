@@ -56,15 +56,15 @@ public class SignResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SignResponse signResponse = (SignResponse) o;
-        return Objects.equals(this.keyId, signResponse.keyId) && Objects.equals(this.signature, signResponse.signature);
+        SignResponse that = (SignResponse) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.signature, that.signature);
     }
 
     @Override

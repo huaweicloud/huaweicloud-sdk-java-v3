@@ -77,16 +77,16 @@ public class NodeBandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeBandwidth nodeBandwidth = (NodeBandwidth) o;
-        return Objects.equals(this.chargemode, nodeBandwidth.chargemode)
-            && Objects.equals(this.size, nodeBandwidth.size) && Objects.equals(this.sharetype, nodeBandwidth.sharetype);
+        NodeBandwidth that = (NodeBandwidth) obj;
+        return Objects.equals(this.chargemode, that.chargemode) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.sharetype, that.sharetype);
     }
 
     @Override

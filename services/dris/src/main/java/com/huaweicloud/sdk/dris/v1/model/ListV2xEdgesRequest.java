@@ -103,18 +103,16 @@ public class ListV2xEdgesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListV2xEdgesRequest listV2xEdgesRequest = (ListV2xEdgesRequest) o;
-        return Objects.equals(this.instanceId, listV2xEdgesRequest.instanceId)
-            && Objects.equals(this.offset, listV2xEdgesRequest.offset)
-            && Objects.equals(this.limit, listV2xEdgesRequest.limit)
-            && Objects.equals(this.status, listV2xEdgesRequest.status);
+        ListV2xEdgesRequest that = (ListV2xEdgesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.status, that.status);
     }
 
     @Override

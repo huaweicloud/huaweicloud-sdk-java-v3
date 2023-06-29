@@ -99,18 +99,17 @@ public class ResizeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInfo resizeInfo = (ResizeInfo) o;
-        return Objects.equals(this.targetNodeNum, resizeInfo.targetNodeNum)
-            && Objects.equals(this.originNodeNum, resizeInfo.originNodeNum)
-            && Objects.equals(this.resizeStatus, resizeInfo.resizeStatus)
-            && Objects.equals(this.startTime, resizeInfo.startTime);
+        ResizeInfo that = (ResizeInfo) obj;
+        return Objects.equals(this.targetNodeNum, that.targetNodeNum)
+            && Objects.equals(this.originNodeNum, that.originNodeNum)
+            && Objects.equals(this.resizeStatus, that.resizeStatus) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

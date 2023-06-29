@@ -99,17 +99,16 @@ public class ListResourceByFilterTagResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceByFilterTagResponse listResourceByFilterTagResponse = (ListResourceByFilterTagResponse) o;
-        return Objects.equals(this.resources, listResourceByFilterTagResponse.resources)
-            && Objects.equals(this.requestId, listResourceByFilterTagResponse.requestId)
-            && Objects.equals(this.totalCount, listResourceByFilterTagResponse.totalCount);
+        ListResourceByFilterTagResponse that = (ListResourceByFilterTagResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

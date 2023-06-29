@@ -66,22 +66,15 @@ public class AudioProcess {
             if (value == null) {
                 return null;
             }
-            VolumeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeEnum(value));
         }
 
         public static VolumeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,16 +138,15 @@ public class AudioProcess {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioProcess audioProcess = (AudioProcess) o;
-        return Objects.equals(this.volume, audioProcess.volume)
-            && Objects.equals(this.volumeExpr, audioProcess.volumeExpr);
+        AudioProcess that = (AudioProcess) obj;
+        return Objects.equals(this.volume, that.volume) && Objects.equals(this.volumeExpr, that.volumeExpr);
     }
 
     @Override

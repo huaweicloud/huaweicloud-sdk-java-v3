@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,40 +11,33 @@ import java.util.Objects;
  */
 public class ShowAppResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_type")
-    
+    @JsonProperty(value = "provider_type")
 
     private String providerType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -60,9 +45,6 @@ public class ShowAppResponse extends SdkResponse {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用模板ID
@@ -76,15 +58,10 @@ public class ShowAppResponse extends SdkResponse {
         this.appId = appId;
     }
 
-    
-
     public ShowAppResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -98,15 +75,10 @@ public class ShowAppResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowAppResponse withAppType(String appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型
@@ -120,15 +92,10 @@ public class ShowAppResponse extends SdkResponse {
         this.appType = appType;
     }
 
-    
-
     public ShowAppResponse withProviderType(String providerType) {
         this.providerType = providerType;
         return this;
     }
-
-    
-
 
     /**
      * 应用来源
@@ -142,15 +109,10 @@ public class ShowAppResponse extends SdkResponse {
         this.providerType = providerType;
     }
 
-    
-
     public ShowAppResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -164,15 +126,10 @@ public class ShowAppResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ShowAppResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -186,28 +143,25 @@ public class ShowAppResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppResponse showAppResponse = (ShowAppResponse) o;
-        return Objects.equals(this.appId, showAppResponse.appId) &&
-            Objects.equals(this.description, showAppResponse.description) &&
-            Objects.equals(this.appType, showAppResponse.appType) &&
-            Objects.equals(this.providerType, showAppResponse.providerType) &&
-            Objects.equals(this.createTime, showAppResponse.createTime) &&
-            Objects.equals(this.updateTime, showAppResponse.updateTime);
+        ShowAppResponse that = (ShowAppResponse) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.appType, that.appType) && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, description, appType, providerType, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -221,6 +175,7 @@ public class ShowAppResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -231,8 +186,5 @@ public class ShowAppResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

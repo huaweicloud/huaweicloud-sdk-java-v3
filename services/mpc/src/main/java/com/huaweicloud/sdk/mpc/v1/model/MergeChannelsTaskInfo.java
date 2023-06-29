@@ -215,22 +215,19 @@ public class MergeChannelsTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeChannelsTaskInfo mergeChannelsTaskInfo = (MergeChannelsTaskInfo) o;
-        return Objects.equals(this.taskId, mergeChannelsTaskInfo.taskId)
-            && Objects.equals(this.status, mergeChannelsTaskInfo.status)
-            && Objects.equals(this.createTime, mergeChannelsTaskInfo.createTime)
-            && Objects.equals(this.endTime, mergeChannelsTaskInfo.endTime)
-            && Objects.equals(this.output, mergeChannelsTaskInfo.output)
-            && Objects.equals(this.description, mergeChannelsTaskInfo.description)
-            && Objects.equals(this.audioFiles, mergeChannelsTaskInfo.audioFiles)
-            && Objects.equals(this.outputFilename, mergeChannelsTaskInfo.outputFilename);
+        MergeChannelsTaskInfo that = (MergeChannelsTaskInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.audioFiles, that.audioFiles)
+            && Objects.equals(this.outputFilename, that.outputFilename);
     }
 
     @Override

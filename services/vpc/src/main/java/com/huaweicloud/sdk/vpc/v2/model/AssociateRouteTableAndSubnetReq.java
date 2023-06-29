@@ -90,16 +90,15 @@ public class AssociateRouteTableAndSubnetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateRouteTableAndSubnetReq associateRouteTableAndSubnetReq = (AssociateRouteTableAndSubnetReq) o;
-        return Objects.equals(this.associate, associateRouteTableAndSubnetReq.associate)
-            && Objects.equals(this.disassociate, associateRouteTableAndSubnetReq.disassociate);
+        AssociateRouteTableAndSubnetReq that = (AssociateRouteTableAndSubnetReq) obj;
+        return Objects.equals(this.associate, that.associate) && Objects.equals(this.disassociate, that.disassociate);
     }
 
     @Override

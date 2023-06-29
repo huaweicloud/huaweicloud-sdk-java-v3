@@ -72,22 +72,15 @@ public class Common {
             if (value == null) {
                 return null;
             }
-            PvcEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PvcEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PvcEnum(value));
         }
 
         public static PvcEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PvcEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,22 +158,15 @@ public class Common {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoCodecEnum(value));
         }
 
         public static VideoCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,22 +245,15 @@ public class Common {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioCodecEnum(value));
         }
 
         public static AudioCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -387,17 +366,17 @@ public class Common {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Common common = (Common) o;
-        return Objects.equals(this.pvc, common.pvc) && Objects.equals(this.pvcVersion, common.pvcVersion)
-            && Objects.equals(this.videoCodec, common.videoCodec) && Objects.equals(this.audioCodec, common.audioCodec)
-            && Objects.equals(this.hlsInterval, common.hlsInterval);
+        Common that = (Common) obj;
+        return Objects.equals(this.pvc, that.pvc) && Objects.equals(this.pvcVersion, that.pvcVersion)
+            && Objects.equals(this.videoCodec, that.videoCodec) && Objects.equals(this.audioCodec, that.audioCodec)
+            && Objects.equals(this.hlsInterval, that.hlsInterval);
     }
 
     @Override

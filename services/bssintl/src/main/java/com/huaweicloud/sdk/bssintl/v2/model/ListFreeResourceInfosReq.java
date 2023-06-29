@@ -193,22 +193,19 @@ public class ListFreeResourceInfosReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFreeResourceInfosReq listFreeResourceInfosReq = (ListFreeResourceInfosReq) o;
-        return Objects.equals(this.regionCode, listFreeResourceInfosReq.regionCode)
-            && Objects.equals(this.orderId, listFreeResourceInfosReq.orderId)
-            && Objects.equals(this.productId, listFreeResourceInfosReq.productId)
-            && Objects.equals(this.productName, listFreeResourceInfosReq.productName)
-            && Objects.equals(this.enterpriseProjectId, listFreeResourceInfosReq.enterpriseProjectId)
-            && Objects.equals(this.status, listFreeResourceInfosReq.status)
-            && Objects.equals(this.offset, listFreeResourceInfosReq.offset)
-            && Objects.equals(this.limit, listFreeResourceInfosReq.limit);
+        ListFreeResourceInfosReq that = (ListFreeResourceInfosReq) obj;
+        return Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

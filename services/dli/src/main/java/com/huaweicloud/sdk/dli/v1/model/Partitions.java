@@ -74,16 +74,16 @@ public class Partitions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Partitions partitions = (Partitions) o;
-        return Objects.equals(this.totalCount, partitions.totalCount)
-            && Objects.equals(this.partitionInfos, partitions.partitionInfos);
+        Partitions that = (Partitions) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.partitionInfos, that.partitionInfos);
     }
 
     @Override

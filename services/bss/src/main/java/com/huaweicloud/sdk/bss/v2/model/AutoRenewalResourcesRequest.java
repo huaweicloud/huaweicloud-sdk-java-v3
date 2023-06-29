@@ -33,15 +33,15 @@ public class AutoRenewalResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoRenewalResourcesRequest autoRenewalResourcesRequest = (AutoRenewalResourcesRequest) o;
-        return Objects.equals(this.resourceId, autoRenewalResourcesRequest.resourceId);
+        AutoRenewalResourcesRequest that = (AutoRenewalResourcesRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

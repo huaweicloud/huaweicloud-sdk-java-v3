@@ -103,22 +103,15 @@ public class Product {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class Product {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -650,27 +636,25 @@ public class Product {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Product product = (Product) o;
-        return Objects.equals(this.permissions, product.permissions) && Objects.equals(this.id, product.id)
-            && Objects.equals(this.productSerial, product.productSerial) && Objects.equals(this.appId, product.appId)
-            && Objects.equals(this.name, product.name) && Objects.equals(this.manufacturerId, product.manufacturerId)
-            && Objects.equals(this.manufacturerName, product.manufacturerName)
-            && Objects.equals(this.model, product.model) && Objects.equals(this.productType, product.productType)
-            && Objects.equals(this.description, product.description)
-            && Objects.equals(this.protocolType, product.protocolType)
-            && Objects.equals(this.deviceType, product.deviceType) && Objects.equals(this.version, product.version)
-            && Objects.equals(this.createdUser, product.createdUser)
-            && Objects.equals(this.lastUpdatedUser, product.lastUpdatedUser)
-            && Objects.equals(this.authentication, product.authentication)
-            && Objects.equals(this.createdDatetime, product.createdDatetime)
-            && Objects.equals(this.appName, product.appName) && Objects.equals(this.dataFormat, product.dataFormat);
+        Product that = (Product) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.productSerial, that.productSerial) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.manufacturerId, that.manufacturerId)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.protocolType, that.protocolType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdDatetime, that.createdDatetime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.dataFormat, that.dataFormat);
     }
 
     @Override

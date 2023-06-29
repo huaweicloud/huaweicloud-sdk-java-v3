@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateAppInstanceRequestDTO
  */
-public class CreateAppInstanceRequestDTO  {
-
+public class CreateAppInstanceRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_version")
-    
+    @JsonProperty(value = "app_version")
 
     private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
 
     private Object values;
 
@@ -51,9 +39,6 @@ public class CreateAppInstanceRequestDTO  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例ID
@@ -67,15 +52,10 @@ public class CreateAppInstanceRequestDTO  {
         this.id = id;
     }
 
-    
-
     public CreateAppInstanceRequestDTO withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群命名空间
@@ -89,15 +69,10 @@ public class CreateAppInstanceRequestDTO  {
         this.namespace = namespace;
     }
 
-    
-
     public CreateAppInstanceRequestDTO withAppId(String appId) {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -111,15 +86,10 @@ public class CreateAppInstanceRequestDTO  {
         this.appId = appId;
     }
 
-    
-
     public CreateAppInstanceRequestDTO withAppVersion(String appVersion) {
         this.appVersion = appVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -133,15 +103,10 @@ public class CreateAppInstanceRequestDTO  {
         this.appVersion = appVersion;
     }
 
-    
-
     public CreateAppInstanceRequestDTO withValues(Object values) {
         this.values = values;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例chart配置
@@ -155,27 +120,25 @@ public class CreateAppInstanceRequestDTO  {
         this.values = values;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppInstanceRequestDTO createAppInstanceRequestDTO = (CreateAppInstanceRequestDTO) o;
-        return Objects.equals(this.id, createAppInstanceRequestDTO.id) &&
-            Objects.equals(this.namespace, createAppInstanceRequestDTO.namespace) &&
-            Objects.equals(this.appId, createAppInstanceRequestDTO.appId) &&
-            Objects.equals(this.appVersion, createAppInstanceRequestDTO.appVersion) &&
-            Objects.equals(this.values, createAppInstanceRequestDTO.values);
+        CreateAppInstanceRequestDTO that = (CreateAppInstanceRequestDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.values, that.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, namespace, appId, appVersion, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class CreateAppInstanceRequestDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class CreateAppInstanceRequestDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

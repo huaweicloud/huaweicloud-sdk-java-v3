@@ -128,18 +128,17 @@ public class CreatePrePaidPublicipRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrePaidPublicipRequestBody createPrePaidPublicipRequestBody = (CreatePrePaidPublicipRequestBody) o;
-        return Objects.equals(this.publicip, createPrePaidPublicipRequestBody.publicip)
-            && Objects.equals(this.bandwidth, createPrePaidPublicipRequestBody.bandwidth)
-            && Objects.equals(this.extendParam, createPrePaidPublicipRequestBody.extendParam)
-            && Objects.equals(this.enterpriseProjectId, createPrePaidPublicipRequestBody.enterpriseProjectId);
+        CreatePrePaidPublicipRequestBody that = (CreatePrePaidPublicipRequestBody) obj;
+        return Objects.equals(this.publicip, that.publicip) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

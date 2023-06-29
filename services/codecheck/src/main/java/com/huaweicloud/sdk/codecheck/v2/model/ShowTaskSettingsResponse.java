@@ -75,16 +75,15 @@ public class ShowTaskSettingsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskSettingsResponse showTaskSettingsResponse = (ShowTaskSettingsResponse) o;
-        return Objects.equals(this.info, showTaskSettingsResponse.info)
-            && Objects.equals(this.total, showTaskSettingsResponse.total);
+        ShowTaskSettingsResponse that = (ShowTaskSettingsResponse) obj;
+        return Objects.equals(this.info, that.info) && Objects.equals(this.total, that.total);
     }
 
     @Override

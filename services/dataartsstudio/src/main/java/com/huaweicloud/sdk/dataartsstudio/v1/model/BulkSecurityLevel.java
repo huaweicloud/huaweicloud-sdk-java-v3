@@ -74,16 +74,15 @@ public class BulkSecurityLevel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BulkSecurityLevel bulkSecurityLevel = (BulkSecurityLevel) o;
-        return Objects.equals(this.guids, bulkSecurityLevel.guids)
-            && Objects.equals(this.securityLevel, bulkSecurityLevel.securityLevel);
+        BulkSecurityLevel that = (BulkSecurityLevel) obj;
+        return Objects.equals(this.guids, that.guids) && Objects.equals(this.securityLevel, that.securityLevel);
     }
 
     @Override

@@ -252,24 +252,21 @@ public class DebugLiveDataApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugLiveDataApiV2Response debugLiveDataApiV2Response = (DebugLiveDataApiV2Response) o;
-        return Objects.equals(this.testStatusCode, debugLiveDataApiV2Response.testStatusCode)
-            && Objects.equals(this.testRequest, debugLiveDataApiV2Response.testRequest)
-            && Objects.equals(this.testUsedTime, debugLiveDataApiV2Response.testUsedTime)
-            && Objects.equals(this.testOperator, debugLiveDataApiV2Response.testOperator)
-            && Objects.equals(this.testResponse, debugLiveDataApiV2Response.testResponse)
-            && Objects.equals(this.testMethod, debugLiveDataApiV2Response.testMethod)
-            && Objects.equals(this.testId, debugLiveDataApiV2Response.testId)
-            && Objects.equals(this.testDate, debugLiveDataApiV2Response.testDate)
-            && Objects.equals(this.ldApiId, debugLiveDataApiV2Response.ldApiId)
-            && Objects.equals(this.debugLog, debugLiveDataApiV2Response.debugLog);
+        DebugLiveDataApiV2Response that = (DebugLiveDataApiV2Response) obj;
+        return Objects.equals(this.testStatusCode, that.testStatusCode)
+            && Objects.equals(this.testRequest, that.testRequest)
+            && Objects.equals(this.testUsedTime, that.testUsedTime)
+            && Objects.equals(this.testOperator, that.testOperator)
+            && Objects.equals(this.testResponse, that.testResponse) && Objects.equals(this.testMethod, that.testMethod)
+            && Objects.equals(this.testId, that.testId) && Objects.equals(this.testDate, that.testDate)
+            && Objects.equals(this.ldApiId, that.ldApiId) && Objects.equals(this.debugLog, that.debugLog);
     }
 
     @Override

@@ -148,19 +148,17 @@ public class ListAccessoryAccessUrlsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAccessoryAccessUrlsRequest listAccessoryAccessUrlsRequest = (ListAccessoryAccessUrlsRequest) o;
-        return Objects.equals(this.groupId, listAccessoryAccessUrlsRequest.groupId)
-            && Objects.equals(this.accessoryIds, listAccessoryAccessUrlsRequest.accessoryIds)
-            && Objects.equals(this.xSite, listAccessoryAccessUrlsRequest.xSite)
-            && Objects.equals(this.xLanguage, listAccessoryAccessUrlsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listAccessoryAccessUrlsRequest.xTimeZone);
+        ListAccessoryAccessUrlsRequest that = (ListAccessoryAccessUrlsRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.accessoryIds, that.accessoryIds)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

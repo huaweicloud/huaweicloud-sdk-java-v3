@@ -110,18 +110,16 @@ public class ListFunctionAsyncInvokeConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionAsyncInvokeConfigResponse listFunctionAsyncInvokeConfigResponse =
-            (ListFunctionAsyncInvokeConfigResponse) o;
-        return Objects.equals(this.asyncInvokeConfigs, listFunctionAsyncInvokeConfigResponse.asyncInvokeConfigs)
-            && Objects.equals(this.count, listFunctionAsyncInvokeConfigResponse.count)
-            && Objects.equals(this.pageInfo, listFunctionAsyncInvokeConfigResponse.pageInfo);
+        ListFunctionAsyncInvokeConfigResponse that = (ListFunctionAsyncInvokeConfigResponse) obj;
+        return Objects.equals(this.asyncInvokeConfigs, that.asyncInvokeConfigs)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

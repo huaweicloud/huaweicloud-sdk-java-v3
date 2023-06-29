@@ -55,16 +55,16 @@ public class DeleteNextflowWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNextflowWorkflowRequest deleteNextflowWorkflowRequest = (DeleteNextflowWorkflowRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteNextflowWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.workflowId, deleteNextflowWorkflowRequest.workflowId);
+        DeleteNextflowWorkflowRequest that = (DeleteNextflowWorkflowRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

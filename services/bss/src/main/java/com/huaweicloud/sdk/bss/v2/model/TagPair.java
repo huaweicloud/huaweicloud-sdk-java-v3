@@ -55,15 +55,15 @@ public class TagPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagPair tagPair = (TagPair) o;
-        return Objects.equals(this.tagKey, tagPair.tagKey) && Objects.equals(this.tagValue, tagPair.tagValue);
+        TagPair that = (TagPair) obj;
+        return Objects.equals(this.tagKey, that.tagKey) && Objects.equals(this.tagValue, that.tagValue);
     }
 
     @Override

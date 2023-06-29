@@ -899,49 +899,39 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
-        return Objects.equals(this.publicEndpoint, showClusterDetailResponse.publicEndpoint)
-            && Objects.equals(this.instances, showClusterDetailResponse.instances)
-            && Objects.equals(this.securityGroupId, showClusterDetailResponse.securityGroupId)
-            && Objects.equals(this.subnetId, showClusterDetailResponse.subnetId)
-            && Objects.equals(this.vpcId, showClusterDetailResponse.vpcId)
-            && Objects.equals(this.customerConfig, showClusterDetailResponse.customerConfig)
-            && Objects.equals(this.datastore, showClusterDetailResponse.datastore)
-            && Objects.equals(this.isAutoOff, showClusterDetailResponse.isAutoOff)
-            && Objects.equals(this.publicEndpointDomainName, showClusterDetailResponse.publicEndpointDomainName)
-            && Objects.equals(this.bakExpectedStartTime, showClusterDetailResponse.bakExpectedStartTime)
-            && Objects.equals(this.bakKeepDay, showClusterDetailResponse.bakKeepDay)
-            && Objects.equals(this.maintainWindow, showClusterDetailResponse.maintainWindow)
-            && Objects.equals(this.recentEvent, showClusterDetailResponse.recentEvent)
-            && Objects.equals(this.flavorName, showClusterDetailResponse.flavorName)
-            && Objects.equals(this.azName, showClusterDetailResponse.azName)
-            && Objects.equals(this.endpointDomainName, showClusterDetailResponse.endpointDomainName)
-            && Objects.equals(this.publicEndpointStatus, showClusterDetailResponse.publicEndpointStatus)
-            && Objects.equals(this.isScheduleBootOff, showClusterDetailResponse.isScheduleBootOff)
-            && Objects.equals(this.namespace, showClusterDetailResponse.namespace)
-            && Objects.equals(this.eipId, showClusterDetailResponse.eipId)
-            && Objects.equals(this.failedReasons, showClusterDetailResponse.failedReasons)
-            && Objects.equals(this.dbuser, showClusterDetailResponse.dbuser)
-            && Objects.equals(this.links, showClusterDetailResponse.links)
-            && Objects.equals(this.clusterMode, showClusterDetailResponse.clusterMode)
-            && Objects.equals(this.task, showClusterDetailResponse.task)
-            && Objects.equals(this.created, showClusterDetailResponse.created)
-            && Objects.equals(this.statusDetail, showClusterDetailResponse.statusDetail)
-            && Objects.equals(this.configStatus, showClusterDetailResponse.configStatus)
-            && Objects.equals(this.actionProgress, showClusterDetailResponse.actionProgress)
-            && Objects.equals(this.name, showClusterDetailResponse.name)
-            && Objects.equals(this.id, showClusterDetailResponse.id)
-            && Objects.equals(this.isFrozen, showClusterDetailResponse.isFrozen)
-            && Objects.equals(this.actions, showClusterDetailResponse.actions)
-            && Objects.equals(this.updated, showClusterDetailResponse.updated)
-            && Objects.equals(this.status, showClusterDetailResponse.status);
+        ShowClusterDetailResponse that = (ShowClusterDetailResponse) obj;
+        return Objects.equals(this.publicEndpoint, that.publicEndpoint)
+            && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.customerConfig, that.customerConfig)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.isAutoOff, that.isAutoOff)
+            && Objects.equals(this.publicEndpointDomainName, that.publicEndpointDomainName)
+            && Objects.equals(this.bakExpectedStartTime, that.bakExpectedStartTime)
+            && Objects.equals(this.bakKeepDay, that.bakKeepDay)
+            && Objects.equals(this.maintainWindow, that.maintainWindow)
+            && Objects.equals(this.recentEvent, that.recentEvent) && Objects.equals(this.flavorName, that.flavorName)
+            && Objects.equals(this.azName, that.azName)
+            && Objects.equals(this.endpointDomainName, that.endpointDomainName)
+            && Objects.equals(this.publicEndpointStatus, that.publicEndpointStatus)
+            && Objects.equals(this.isScheduleBootOff, that.isScheduleBootOff)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.eipId, that.eipId)
+            && Objects.equals(this.failedReasons, that.failedReasons) && Objects.equals(this.dbuser, that.dbuser)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.clusterMode, that.clusterMode)
+            && Objects.equals(this.task, that.task) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.statusDetail, that.statusDetail)
+            && Objects.equals(this.configStatus, that.configStatus)
+            && Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.isFrozen, that.isFrozen)
+            && Objects.equals(this.actions, that.actions) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

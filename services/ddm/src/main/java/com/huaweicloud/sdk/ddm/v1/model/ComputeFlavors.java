@@ -319,25 +319,22 @@ public class ComputeFlavors {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputeFlavors computeFlavors = (ComputeFlavors) o;
-        return Objects.equals(this.id, computeFlavors.id) && Objects.equals(this.typeCode, computeFlavors.typeCode)
-            && Objects.equals(this.code, computeFlavors.code) && Objects.equals(this.iaasCode, computeFlavors.iaasCode)
-            && Objects.equals(this.cpu, computeFlavors.cpu) && Objects.equals(this.mem, computeFlavors.mem)
-            && Objects.equals(this.maxConnections, computeFlavors.maxConnections)
-            && Objects.equals(this.serverType, computeFlavors.serverType)
-            && Objects.equals(this.architecture, computeFlavors.architecture)
-            && Objects.equals(this.azStatus, computeFlavors.azStatus)
-            && Objects.equals(this.regionStatus, computeFlavors.regionStatus)
-            && Objects.equals(this.groupType, computeFlavors.groupType)
-            && Objects.equals(this.dbType, computeFlavors.dbType)
-            && Objects.equals(this.extendFields, computeFlavors.extendFields);
+        ComputeFlavors that = (ComputeFlavors) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.typeCode, that.typeCode)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.iaasCode, that.iaasCode)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.mem, that.mem)
+            && Objects.equals(this.maxConnections, that.maxConnections)
+            && Objects.equals(this.serverType, that.serverType) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.azStatus, that.azStatus) && Objects.equals(this.regionStatus, that.regionStatus)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.dbType, that.dbType)
+            && Objects.equals(this.extendFields, that.extendFields);
     }
 
     @Override

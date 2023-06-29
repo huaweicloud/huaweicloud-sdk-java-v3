@@ -76,16 +76,16 @@ public class ListFreeResourceInfosResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFreeResourceInfosResponse listFreeResourceInfosResponse = (ListFreeResourceInfosResponse) o;
-        return Objects.equals(this.freeResourcePackages, listFreeResourceInfosResponse.freeResourcePackages)
-            && Objects.equals(this.totalCount, listFreeResourceInfosResponse.totalCount);
+        ListFreeResourceInfosResponse that = (ListFreeResourceInfosResponse) obj;
+        return Objects.equals(this.freeResourcePackages, that.freeResourcePackages)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

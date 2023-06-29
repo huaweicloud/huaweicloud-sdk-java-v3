@@ -96,17 +96,16 @@ public class CreateUserRepositoryAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserRepositoryAuthRequest createUserRepositoryAuthRequest = (CreateUserRepositoryAuthRequest) o;
-        return Objects.equals(this.namespace, createUserRepositoryAuthRequest.namespace)
-            && Objects.equals(this.repository, createUserRepositoryAuthRequest.repository)
-            && Objects.equals(this.body, createUserRepositoryAuthRequest.body);
+        CreateUserRepositoryAuthRequest that = (CreateUserRepositoryAuthRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

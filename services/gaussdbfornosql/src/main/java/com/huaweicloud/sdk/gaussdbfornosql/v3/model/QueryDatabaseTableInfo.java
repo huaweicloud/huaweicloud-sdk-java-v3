@@ -74,16 +74,15 @@ public class QueryDatabaseTableInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryDatabaseTableInfo queryDatabaseTableInfo = (QueryDatabaseTableInfo) o;
-        return Objects.equals(this.databaseName, queryDatabaseTableInfo.databaseName)
-            && Objects.equals(this.tableNames, queryDatabaseTableInfo.tableNames);
+        QueryDatabaseTableInfo that = (QueryDatabaseTableInfo) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableNames, that.tableNames);
     }
 
     @Override

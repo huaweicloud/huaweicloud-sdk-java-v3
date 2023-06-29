@@ -408,31 +408,28 @@ public class ListListenersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListListenersRequest listListenersRequest = (ListListenersRequest) o;
-        return Objects.equals(this.limit, listListenersRequest.limit)
-            && Objects.equals(this.marker, listListenersRequest.marker)
-            && Objects.equals(this.pageReverse, listListenersRequest.pageReverse)
-            && Objects.equals(this.id, listListenersRequest.id) && Objects.equals(this.name, listListenersRequest.name)
-            && Objects.equals(this.description, listListenersRequest.description)
-            && Objects.equals(this.loadbalancerId, listListenersRequest.loadbalancerId)
-            && Objects.equals(this.connectionLimit, listListenersRequest.connectionLimit)
-            && Objects.equals(this.adminStateUp, listListenersRequest.adminStateUp)
-            && Objects.equals(this.defaultPoolId, listListenersRequest.defaultPoolId)
-            && Objects.equals(this.defaultTlsContainerRef, listListenersRequest.defaultTlsContainerRef)
-            && Objects.equals(this.clientCaTlsContainerRef, listListenersRequest.clientCaTlsContainerRef)
-            && Objects.equals(this.protocol, listListenersRequest.protocol)
-            && Objects.equals(this.protocolPort, listListenersRequest.protocolPort)
-            && Objects.equals(this.tlsCiphersPolicy, listListenersRequest.tlsCiphersPolicy)
-            && Objects.equals(this.tlsContainerId, listListenersRequest.tlsContainerId)
-            && Objects.equals(this.http2Enable, listListenersRequest.http2Enable)
-            && Objects.equals(this.enterpriseProjectId, listListenersRequest.enterpriseProjectId);
+        ListListenersRequest that = (ListListenersRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.connectionLimit, that.connectionLimit)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.defaultPoolId, that.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy)
+            && Objects.equals(this.tlsContainerId, that.tlsContainerId)
+            && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

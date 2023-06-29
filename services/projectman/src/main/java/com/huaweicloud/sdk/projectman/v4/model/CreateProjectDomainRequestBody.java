@@ -33,15 +33,15 @@ public class CreateProjectDomainRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectDomainRequestBody createProjectDomainRequestBody = (CreateProjectDomainRequestBody) o;
-        return Objects.equals(this.domainName, createProjectDomainRequestBody.domainName);
+        CreateProjectDomainRequestBody that = (CreateProjectDomainRequestBody) obj;
+        return Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

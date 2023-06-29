@@ -105,22 +105,15 @@ public class ListRunsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -337,24 +330,20 @@ public class ListRunsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRunsRequest listRunsRequest = (ListRunsRequest) o;
-        return Objects.equals(this.offset, listRunsRequest.offset) && Objects.equals(this.limit, listRunsRequest.limit)
-            && Objects.equals(this.startTime, listRunsRequest.startTime)
-            && Objects.equals(this.endTime, listRunsRequest.endTime)
-            && Objects.equals(this.sqlPattern, listRunsRequest.sqlPattern)
-            && Objects.equals(this.sqlType, listRunsRequest.sqlType)
-            && Objects.equals(this.jobType, listRunsRequest.jobType)
-            && Objects.equals(this.status, listRunsRequest.status)
-            && Objects.equals(this.orderBy, listRunsRequest.orderBy)
-            && Objects.equals(this.order, listRunsRequest.order)
-            && Objects.equals(this.jobName, listRunsRequest.jobName);
+        ListRunsRequest that = (ListRunsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.sqlPattern, that.sqlPattern) && Objects.equals(this.sqlType, that.sqlType)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.jobName, that.jobName);
     }
 
     @Override

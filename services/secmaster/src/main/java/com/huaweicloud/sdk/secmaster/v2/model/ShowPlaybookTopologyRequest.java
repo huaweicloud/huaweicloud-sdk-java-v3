@@ -55,16 +55,15 @@ public class ShowPlaybookTopologyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookTopologyRequest showPlaybookTopologyRequest = (ShowPlaybookTopologyRequest) o;
-        return Objects.equals(this.workspaceId, showPlaybookTopologyRequest.workspaceId)
-            && Objects.equals(this.instanceId, showPlaybookTopologyRequest.instanceId);
+        ShowPlaybookTopologyRequest that = (ShowPlaybookTopologyRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

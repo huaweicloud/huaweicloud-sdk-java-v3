@@ -89,17 +89,16 @@ public class UpdatePwdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePwdRequest updatePwdRequest = (UpdatePwdRequest) o;
-        return Objects.equals(this.xRequestID, updatePwdRequest.xRequestID)
-            && Objects.equals(this.acceptLanguage, updatePwdRequest.acceptLanguage)
-            && Objects.equals(this.body, updatePwdRequest.body);
+        UpdatePwdRequest that = (UpdatePwdRequest) obj;
+        return Objects.equals(this.xRequestID, that.xRequestID)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ResourceGroupTagRelation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceGroupTagRelation resourceGroupTagRelation = (ResourceGroupTagRelation) o;
-        return Objects.equals(this.key, resourceGroupTagRelation.key)
-            && Objects.equals(this.value, resourceGroupTagRelation.value);
+        ResourceGroupTagRelation that = (ResourceGroupTagRelation) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

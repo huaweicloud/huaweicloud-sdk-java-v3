@@ -106,22 +106,15 @@ public class UpdateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class UpdateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -466,26 +452,20 @@ public class UpdateEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointResponse updateEndpointResponse = (UpdateEndpointResponse) o;
-        return Objects.equals(this.id, updateEndpointResponse.id)
-            && Objects.equals(this.name, updateEndpointResponse.name)
-            && Objects.equals(this.vpcId, updateEndpointResponse.vpcId)
-            && Objects.equals(this.subnetId, updateEndpointResponse.subnetId)
-            && Objects.equals(this.domain, updateEndpointResponse.domain)
-            && Objects.equals(this.description, updateEndpointResponse.description)
-            && Objects.equals(this.status, updateEndpointResponse.status)
-            && Objects.equals(this.type, updateEndpointResponse.type)
-            && Objects.equals(this.scalable, updateEndpointResponse.scalable)
-            && Objects.equals(this.createdTime, updateEndpointResponse.createdTime)
-            && Objects.equals(this.updatedTime, updateEndpointResponse.updatedTime)
-            && Objects.equals(this.endpoints, updateEndpointResponse.endpoints);
+        UpdateEndpointResponse that = (UpdateEndpointResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.scalable, that.scalable) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.endpoints, that.endpoints);
     }
 
     @Override

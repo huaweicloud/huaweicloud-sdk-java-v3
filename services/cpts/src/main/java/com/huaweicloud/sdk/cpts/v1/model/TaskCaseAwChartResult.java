@@ -105,17 +105,16 @@ public class TaskCaseAwChartResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskCaseAwChartResult taskCaseAwChartResult = (TaskCaseAwChartResult) o;
-        return Objects.equals(this.brokenList, taskCaseAwChartResult.brokenList)
-            && Objects.equals(this.errMessage, taskCaseAwChartResult.errMessage)
-            && Objects.equals(this.respTimeRange, taskCaseAwChartResult.respTimeRange);
+        TaskCaseAwChartResult that = (TaskCaseAwChartResult) obj;
+        return Objects.equals(this.brokenList, that.brokenList) && Objects.equals(this.errMessage, that.errMessage)
+            && Objects.equals(this.respTimeRange, that.respTimeRange);
     }
 
     @Override

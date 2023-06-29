@@ -140,18 +140,17 @@ public class CreatePtrReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePtrReq createPtrReq = (CreatePtrReq) o;
-        return Objects.equals(this.ptrdname, createPtrReq.ptrdname)
-            && Objects.equals(this.description, createPtrReq.description) && Objects.equals(this.ttl, createPtrReq.ttl)
-            && Objects.equals(this.enterpriseProjectId, createPtrReq.enterpriseProjectId)
-            && Objects.equals(this.tags, createPtrReq.tags);
+        CreatePtrReq that = (CreatePtrReq) obj;
+        return Objects.equals(this.ptrdname, that.ptrdname) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class AddOrModifyAttributeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddOrModifyAttributeReq addOrModifyAttributeReq = (AddOrModifyAttributeReq) o;
-        return Objects.equals(this.custAttrName, addOrModifyAttributeReq.custAttrName);
+        AddOrModifyAttributeReq that = (AddOrModifyAttributeReq) obj;
+        return Objects.equals(this.custAttrName, that.custAttrName);
     }
 
     @Override

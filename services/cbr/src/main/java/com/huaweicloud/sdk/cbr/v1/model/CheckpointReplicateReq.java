@@ -43,15 +43,15 @@ public class CheckpointReplicateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointReplicateReq checkpointReplicateReq = (CheckpointReplicateReq) o;
-        return Objects.equals(this.replicate, checkpointReplicateReq.replicate);
+        CheckpointReplicateReq that = (CheckpointReplicateReq) obj;
+        return Objects.equals(this.replicate, that.replicate);
     }
 
     @Override

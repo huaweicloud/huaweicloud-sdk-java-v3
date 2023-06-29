@@ -75,16 +75,15 @@ public class ListRelationDbResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationDbResponse listRelationDbResponse = (ListRelationDbResponse) o;
-        return Objects.equals(this.total, listRelationDbResponse.total)
-            && Objects.equals(this.dbList, listRelationDbResponse.dbList);
+        ListRelationDbResponse that = (ListRelationDbResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.dbList, that.dbList);
     }
 
     @Override

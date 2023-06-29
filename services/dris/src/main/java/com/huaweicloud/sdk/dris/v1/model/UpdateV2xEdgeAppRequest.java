@@ -109,18 +109,16 @@ public class UpdateV2xEdgeAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateV2xEdgeAppRequest updateV2xEdgeAppRequest = (UpdateV2xEdgeAppRequest) o;
-        return Objects.equals(this.edgeAppId, updateV2xEdgeAppRequest.edgeAppId)
-            && Objects.equals(this.instanceId, updateV2xEdgeAppRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, updateV2xEdgeAppRequest.v2xEdgeId)
-            && Objects.equals(this.body, updateV2xEdgeAppRequest.body);
+        UpdateV2xEdgeAppRequest that = (UpdateV2xEdgeAppRequest) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.body, that.body);
     }
 
     @Override

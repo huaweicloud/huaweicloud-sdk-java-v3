@@ -33,15 +33,15 @@ public class NeutronDeleteFloatingIpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronDeleteFloatingIpRequest neutronDeleteFloatingIpRequest = (NeutronDeleteFloatingIpRequest) o;
-        return Objects.equals(this.floatingipId, neutronDeleteFloatingIpRequest.floatingipId);
+        NeutronDeleteFloatingIpRequest that = (NeutronDeleteFloatingIpRequest) obj;
+        return Objects.equals(this.floatingipId, that.floatingipId);
     }
 
     @Override

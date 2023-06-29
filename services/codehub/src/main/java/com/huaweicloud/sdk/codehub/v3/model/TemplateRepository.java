@@ -316,26 +316,22 @@ public class TemplateRepository {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateRepository templateRepository = (TemplateRepository) o;
-        return Objects.equals(this.id, templateRepository.id) && Objects.equals(this.name, templateRepository.name)
-            && Objects.equals(this.templateName, templateRepository.templateName)
-            && Objects.equals(this.tags, templateRepository.tags)
-            && Objects.equals(this.description, templateRepository.description)
-            && Objects.equals(this.briefIntroduction, templateRepository.briefIntroduction)
-            && Objects.equals(this.autoPendingPipelines, templateRepository.autoPendingPipelines)
-            && Objects.equals(this.language, templateRepository.language)
-            && Objects.equals(this.createdAt, templateRepository.createdAt)
-            && Objects.equals(this.usedTimes, templateRepository.usedTimes)
-            && Objects.equals(this.likedTimes, templateRepository.likedTimes)
-            && Objects.equals(this.creatorName, templateRepository.creatorName)
-            && Objects.equals(this.httpsUrl, templateRepository.httpsUrl);
+        TemplateRepository that = (TemplateRepository) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.briefIntroduction, that.briefIntroduction)
+            && Objects.equals(this.autoPendingPipelines, that.autoPendingPipelines)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.usedTimes, that.usedTimes) && Objects.equals(this.likedTimes, that.likedTimes)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.httpsUrl, that.httpsUrl);
     }
 
     @Override

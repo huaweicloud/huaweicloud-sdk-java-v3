@@ -55,16 +55,15 @@ public class LastUpdatedUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LastUpdatedUser lastUpdatedUser = (LastUpdatedUser) o;
-        return Objects.equals(this.userId, lastUpdatedUser.userId)
-            && Objects.equals(this.userName, lastUpdatedUser.userName);
+        LastUpdatedUser that = (LastUpdatedUser) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

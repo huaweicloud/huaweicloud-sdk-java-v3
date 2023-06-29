@@ -143,18 +143,17 @@ public class CreateKieReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKieReq createKieReq = (CreateKieReq) o;
-        return Objects.equals(this.id, createKieReq.id) && Objects.equals(this.key, createKieReq.key)
-            && Objects.equals(this.labels, createKieReq.labels) && Objects.equals(this.value, createKieReq.value)
-            && Objects.equals(this.valueType, createKieReq.valueType)
-            && Objects.equals(this.status, createKieReq.status);
+        CreateKieReq that = (CreateKieReq) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.valueType, that.valueType) && Objects.equals(this.status, that.status);
     }
 
     @Override

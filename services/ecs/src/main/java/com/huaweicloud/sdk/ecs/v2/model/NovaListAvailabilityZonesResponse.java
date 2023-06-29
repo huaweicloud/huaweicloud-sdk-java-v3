@@ -55,15 +55,15 @@ public class NovaListAvailabilityZonesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaListAvailabilityZonesResponse novaListAvailabilityZonesResponse = (NovaListAvailabilityZonesResponse) o;
-        return Objects.equals(this.availabilityZoneInfo, novaListAvailabilityZonesResponse.availabilityZoneInfo);
+        NovaListAvailabilityZonesResponse that = (NovaListAvailabilityZonesResponse) obj;
+        return Objects.equals(this.availabilityZoneInfo, that.availabilityZoneInfo);
     }
 
     @Override

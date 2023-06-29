@@ -262,19 +262,19 @@ public class Flavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flavor flavor = (Flavor) o;
-        return Objects.equals(this.id, flavor.id) && Objects.equals(this.vcpus, flavor.vcpus)
-            && Objects.equals(this.ram, flavor.ram) && Objects.equals(this.specCode, flavor.specCode)
-            && Objects.equals(this.instanceMode, flavor.instanceMode) && Objects.equals(this.azStatus, flavor.azStatus)
-            && Objects.equals(this.azDesc, flavor.azDesc) && Objects.equals(this.versionName, flavor.versionName)
-            && Objects.equals(this.groupType, flavor.groupType);
+        Flavor that = (Flavor) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.instanceMode, that.instanceMode) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.azDesc, that.azDesc) && Objects.equals(this.versionName, that.versionName)
+            && Objects.equals(this.groupType, that.groupType);
     }
 
     @Override

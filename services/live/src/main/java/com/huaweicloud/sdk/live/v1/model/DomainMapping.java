@@ -55,16 +55,15 @@ public class DomainMapping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainMapping domainMapping = (DomainMapping) o;
-        return Objects.equals(this.pullDomain, domainMapping.pullDomain)
-            && Objects.equals(this.pushDomain, domainMapping.pushDomain);
+        DomainMapping that = (DomainMapping) obj;
+        return Objects.equals(this.pullDomain, that.pullDomain) && Objects.equals(this.pushDomain, that.pushDomain);
     }
 
     @Override

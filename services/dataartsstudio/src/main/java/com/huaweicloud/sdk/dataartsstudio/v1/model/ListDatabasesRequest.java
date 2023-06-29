@@ -99,18 +99,16 @@ public class ListDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabasesRequest listDatabasesRequest = (ListDatabasesRequest) o;
-        return Objects.equals(this.workspace, listDatabasesRequest.workspace)
-            && Objects.equals(this.connectionId, listDatabasesRequest.connectionId)
-            && Objects.equals(this.limit, listDatabasesRequest.limit)
-            && Objects.equals(this.offset, listDatabasesRequest.offset);
+        ListDatabasesRequest that = (ListDatabasesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.connectionId, that.connectionId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

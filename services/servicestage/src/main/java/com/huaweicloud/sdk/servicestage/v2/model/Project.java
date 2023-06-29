@@ -77,16 +77,16 @@ public class Project {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Project project = (Project) o;
-        return Objects.equals(this.id, project.id) && Objects.equals(this.name, project.name)
-            && Objects.equals(this.cloneUrl, project.cloneUrl);
+        Project that = (Project) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cloneUrl, that.cloneUrl);
     }
 
     @Override

@@ -106,17 +106,16 @@ public class ListListenersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListListenersResponse listListenersResponse = (ListListenersResponse) o;
-        return Objects.equals(this.requestId, listListenersResponse.requestId)
-            && Objects.equals(this.pageInfo, listListenersResponse.pageInfo)
-            && Objects.equals(this.listeners, listListenersResponse.listeners);
+        ListListenersResponse that = (ListListenersResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.listeners, that.listeners);
     }
 
     @Override

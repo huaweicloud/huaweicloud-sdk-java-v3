@@ -701,35 +701,33 @@ public class JobConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobConfig jobConfig = (JobConfig) o;
-        return Objects.equals(this.nearlineRecallParam, jobConfig.nearlineRecallParam)
-            && Objects.equals(this.maxRecommendedNum, jobConfig.maxRecommendedNum)
-            && Objects.equals(this.matchFeaturePairs, jobConfig.matchFeaturePairs)
-            && Objects.equals(this.striping, jobConfig.striping) && Objects.equals(this.matchType, jobConfig.matchType)
-            && Objects.equals(this.matrixFactorization, jobConfig.matrixFactorization)
-            && Objects.equals(this.behaviorFrequencys, jobConfig.behaviorFrequencys)
-            && Objects.equals(this.filePath, jobConfig.filePath) && Objects.equals(this.ucbParam, jobConfig.ucbParam)
-            && Objects.equals(this.behaviorGravity, jobConfig.behaviorGravity)
-            && Objects.equals(this.category, jobConfig.category)
-            && Objects.equals(this.behaviorLogic, jobConfig.behaviorLogic)
-            && Objects.equals(this.featuresEngineering, jobConfig.featuresEngineering)
-            && Objects.equals(this.sampleParam, jobConfig.sampleParam)
-            && Objects.equals(this.deepLearningParameters, jobConfig.deepLearningParameters)
-            && Objects.equals(this.algorithmSpecifyParameters, jobConfig.algorithmSpecifyParameters)
-            && Objects.equals(this.loadWidetable, jobConfig.loadWidetable)
-            && Objects.equals(this.loadProfile, jobConfig.loadProfile)
-            && Objects.equals(this.saveMode, jobConfig.saveMode)
-            && Objects.equals(this.indicators, jobConfig.indicators)
-            && Objects.equals(this.offlineRankJobName, jobConfig.offlineRankJobName)
-            && Objects.equals(this.updateInterval, jobConfig.updateInterval)
-            && Objects.equals(this.optimizer, jobConfig.optimizer) && Objects.equals(this.flows, jobConfig.flows);
+        JobConfig that = (JobConfig) obj;
+        return Objects.equals(this.nearlineRecallParam, that.nearlineRecallParam)
+            && Objects.equals(this.maxRecommendedNum, that.maxRecommendedNum)
+            && Objects.equals(this.matchFeaturePairs, that.matchFeaturePairs)
+            && Objects.equals(this.striping, that.striping) && Objects.equals(this.matchType, that.matchType)
+            && Objects.equals(this.matrixFactorization, that.matrixFactorization)
+            && Objects.equals(this.behaviorFrequencys, that.behaviorFrequencys)
+            && Objects.equals(this.filePath, that.filePath) && Objects.equals(this.ucbParam, that.ucbParam)
+            && Objects.equals(this.behaviorGravity, that.behaviorGravity)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.behaviorLogic, that.behaviorLogic)
+            && Objects.equals(this.featuresEngineering, that.featuresEngineering)
+            && Objects.equals(this.sampleParam, that.sampleParam)
+            && Objects.equals(this.deepLearningParameters, that.deepLearningParameters)
+            && Objects.equals(this.algorithmSpecifyParameters, that.algorithmSpecifyParameters)
+            && Objects.equals(this.loadWidetable, that.loadWidetable)
+            && Objects.equals(this.loadProfile, that.loadProfile) && Objects.equals(this.saveMode, that.saveMode)
+            && Objects.equals(this.indicators, that.indicators)
+            && Objects.equals(this.offlineRankJobName, that.offlineRankJobName)
+            && Objects.equals(this.updateInterval, that.updateInterval)
+            && Objects.equals(this.optimizer, that.optimizer) && Objects.equals(this.flows, that.flows);
     }
 
     @Override

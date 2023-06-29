@@ -33,15 +33,15 @@ public class FailoverRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailoverRequest failoverRequest = (FailoverRequest) o;
-        return Objects.equals(this.force, failoverRequest.force);
+        FailoverRequest that = (FailoverRequest) obj;
+        return Objects.equals(this.force, that.force);
     }
 
     @Override

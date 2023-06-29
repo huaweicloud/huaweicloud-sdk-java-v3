@@ -169,21 +169,18 @@ public class ShowHistoryTaskDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHistoryTaskDetailsRequest showHistoryTaskDetailsRequest = (ShowHistoryTaskDetailsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showHistoryTaskDetailsRequest.enterpriseProjectId)
-            && Objects.equals(this.historyTasksId, showHistoryTaskDetailsRequest.historyTasksId)
-            && Objects.equals(this.pageSize, showHistoryTaskDetailsRequest.pageSize)
-            && Objects.equals(this.pageNumber, showHistoryTaskDetailsRequest.pageNumber)
-            && Objects.equals(this.status, showHistoryTaskDetailsRequest.status)
-            && Objects.equals(this.url, showHistoryTaskDetailsRequest.url)
-            && Objects.equals(this.createTime, showHistoryTaskDetailsRequest.createTime);
+        ShowHistoryTaskDetailsRequest that = (ShowHistoryTaskDetailsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.historyTasksId, that.historyTasksId) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.pageNumber, that.pageNumber) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

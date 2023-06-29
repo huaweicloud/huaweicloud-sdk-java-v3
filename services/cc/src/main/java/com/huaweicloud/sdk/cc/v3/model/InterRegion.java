@@ -99,17 +99,17 @@ public class InterRegion {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterRegion interRegion = (InterRegion) o;
-        return Objects.equals(this.id, interRegion.id) && Objects.equals(this.projectId, interRegion.projectId)
-            && Objects.equals(this.localRegionId, interRegion.localRegionId)
-            && Objects.equals(this.remoteRegionId, interRegion.remoteRegionId);
+        InterRegion that = (InterRegion) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.localRegionId, that.localRegionId)
+            && Objects.equals(this.remoteRegionId, that.remoteRegionId);
     }
 
     @Override

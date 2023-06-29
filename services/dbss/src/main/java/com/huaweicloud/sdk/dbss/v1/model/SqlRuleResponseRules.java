@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SqlRuleResponseRules
  */
-public class SqlRuleResponseRules  {
-
+public class SqlRuleResponseRules {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="risk_level")
-    
+    @JsonProperty(value = "risk_level")
 
     private String riskLevel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rank")
-    
+    @JsonProperty(value = "rank")
 
     private Integer rank;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="feature")
-    
+    @JsonProperty(value = "feature")
 
     private String feature;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regex")
-    
+    @JsonProperty(value = "regex")
 
     private String regex;
 
@@ -69,9 +54,6 @@ public class SqlRuleResponseRules  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * SQL规则ID
@@ -85,15 +67,10 @@ public class SqlRuleResponseRules  {
         this.id = id;
     }
 
-    
-
     public SqlRuleResponseRules withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * SQL规则名称
@@ -107,15 +84,10 @@ public class SqlRuleResponseRules  {
         this.name = name;
     }
 
-    
-
     public SqlRuleResponseRules withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 规则的状态：  ON  OFF
@@ -129,15 +101,10 @@ public class SqlRuleResponseRules  {
         this.status = status;
     }
 
-    
-
     public SqlRuleResponseRules withRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel;
         return this;
     }
-
-    
-
 
     /**
      * 风险级别  HIGH  MEDIUM  LOW
@@ -151,15 +118,10 @@ public class SqlRuleResponseRules  {
         this.riskLevel = riskLevel;
     }
 
-    
-
     public SqlRuleResponseRules withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 类型
@@ -173,15 +135,10 @@ public class SqlRuleResponseRules  {
         this.type = type;
     }
 
-    
-
     public SqlRuleResponseRules withRank(Integer rank) {
         this.rank = rank;
         return this;
     }
-
-    
-
 
     /**
      * 等级
@@ -195,15 +152,10 @@ public class SqlRuleResponseRules  {
         this.rank = rank;
     }
 
-    
-
     public SqlRuleResponseRules withFeature(String feature) {
         this.feature = feature;
         return this;
     }
-
-    
-
 
     /**
      * SQL命令特征
@@ -217,15 +169,10 @@ public class SqlRuleResponseRules  {
         this.feature = feature;
     }
 
-    
-
     public SqlRuleResponseRules withRegex(String regex) {
         this.regex = regex;
         return this;
     }
-
-    
-
 
     /**
      * 正则表达式
@@ -239,30 +186,26 @@ public class SqlRuleResponseRules  {
         this.regex = regex;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlRuleResponseRules sqlRuleResponseRules = (SqlRuleResponseRules) o;
-        return Objects.equals(this.id, sqlRuleResponseRules.id) &&
-            Objects.equals(this.name, sqlRuleResponseRules.name) &&
-            Objects.equals(this.status, sqlRuleResponseRules.status) &&
-            Objects.equals(this.riskLevel, sqlRuleResponseRules.riskLevel) &&
-            Objects.equals(this.type, sqlRuleResponseRules.type) &&
-            Objects.equals(this.rank, sqlRuleResponseRules.rank) &&
-            Objects.equals(this.feature, sqlRuleResponseRules.feature) &&
-            Objects.equals(this.regex, sqlRuleResponseRules.regex);
+        SqlRuleResponseRules that = (SqlRuleResponseRules) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.rank, that.rank)
+            && Objects.equals(this.feature, that.feature) && Objects.equals(this.regex, that.regex);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, status, riskLevel, type, rank, feature, regex);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +221,7 @@ public class SqlRuleResponseRules  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +232,5 @@ public class SqlRuleResponseRules  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

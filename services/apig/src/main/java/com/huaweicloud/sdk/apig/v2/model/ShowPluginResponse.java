@@ -96,22 +96,15 @@ public class ShowPluginResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginTypeEnum(value));
         }
 
         public static PluginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class ShowPluginResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginScopeEnum(value));
         }
 
         public static PluginScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -366,22 +352,18 @@ public class ShowPluginResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPluginResponse showPluginResponse = (ShowPluginResponse) o;
-        return Objects.equals(this.pluginId, showPluginResponse.pluginId)
-            && Objects.equals(this.pluginName, showPluginResponse.pluginName)
-            && Objects.equals(this.pluginType, showPluginResponse.pluginType)
-            && Objects.equals(this.pluginScope, showPluginResponse.pluginScope)
-            && Objects.equals(this.pluginContent, showPluginResponse.pluginContent)
-            && Objects.equals(this.remark, showPluginResponse.remark)
-            && Objects.equals(this.createTime, showPluginResponse.createTime)
-            && Objects.equals(this.updateTime, showPluginResponse.updateTime);
+        ShowPluginResponse that = (ShowPluginResponse) obj;
+        return Objects.equals(this.pluginId, that.pluginId) && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.pluginType, that.pluginType) && Objects.equals(this.pluginScope, that.pluginScope)
+            && Objects.equals(this.pluginContent, that.pluginContent) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

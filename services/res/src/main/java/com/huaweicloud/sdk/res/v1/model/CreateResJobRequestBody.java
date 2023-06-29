@@ -184,21 +184,18 @@ public class CreateResJobRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResJobRequestBody createResJobRequestBody = (CreateResJobRequestBody) o;
-        return Objects.equals(this.category, createResJobRequestBody.category)
-            && Objects.equals(this.description, createResJobRequestBody.description)
-            && Objects.equals(this.jobConfig, createResJobRequestBody.jobConfig)
-            && Objects.equals(this.execConfig, createResJobRequestBody.execConfig)
-            && Objects.equals(this.jobName, createResJobRequestBody.jobName)
-            && Objects.equals(this.jobType, createResJobRequestBody.jobType)
-            && Objects.equals(this.schedule, createResJobRequestBody.schedule);
+        CreateResJobRequestBody that = (CreateResJobRequestBody) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.jobConfig, that.jobConfig) && Objects.equals(this.execConfig, that.execConfig)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

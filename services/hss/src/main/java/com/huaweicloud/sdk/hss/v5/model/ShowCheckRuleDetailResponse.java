@@ -142,19 +142,17 @@ public class ShowCheckRuleDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCheckRuleDetailResponse showCheckRuleDetailResponse = (ShowCheckRuleDetailResponse) o;
-        return Objects.equals(this.description, showCheckRuleDetailResponse.description)
-            && Objects.equals(this.reference, showCheckRuleDetailResponse.reference)
-            && Objects.equals(this.audit, showCheckRuleDetailResponse.audit)
-            && Objects.equals(this.remediation, showCheckRuleDetailResponse.remediation)
-            && Objects.equals(this.checkInfoList, showCheckRuleDetailResponse.checkInfoList);
+        ShowCheckRuleDetailResponse that = (ShowCheckRuleDetailResponse) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.reference, that.reference)
+            && Objects.equals(this.audit, that.audit) && Objects.equals(this.remediation, that.remediation)
+            && Objects.equals(this.checkInfoList, that.checkInfoList);
     }
 
     @Override

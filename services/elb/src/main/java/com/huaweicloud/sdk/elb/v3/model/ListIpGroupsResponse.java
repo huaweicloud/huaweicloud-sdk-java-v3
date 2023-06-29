@@ -106,17 +106,16 @@ public class ListIpGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpGroupsResponse listIpGroupsResponse = (ListIpGroupsResponse) o;
-        return Objects.equals(this.ipgroups, listIpGroupsResponse.ipgroups)
-            && Objects.equals(this.requestId, listIpGroupsResponse.requestId)
-            && Objects.equals(this.pageInfo, listIpGroupsResponse.pageInfo);
+        ListIpGroupsResponse that = (ListIpGroupsResponse) obj;
+        return Objects.equals(this.ipgroups, that.ipgroups) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UploadTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadTemplateRequest uploadTemplateRequest = (UploadTemplateRequest) o;
-        return Objects.equals(this.eihealthProjectId, uploadTemplateRequest.eihealthProjectId)
-            && Objects.equals(this.body, uploadTemplateRequest.body);
+        UploadTemplateRequest that = (UploadTemplateRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

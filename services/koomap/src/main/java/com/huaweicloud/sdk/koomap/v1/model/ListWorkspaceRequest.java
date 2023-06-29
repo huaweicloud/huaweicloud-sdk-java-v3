@@ -169,21 +169,19 @@ public class ListWorkspaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkspaceRequest listWorkspaceRequest = (ListWorkspaceRequest) o;
-        return Objects.equals(this.workspaceName, listWorkspaceRequest.workspaceName)
-            && Objects.equals(this.workspaceType, listWorkspaceRequest.workspaceType)
-            && Objects.equals(this.createTimeStart, listWorkspaceRequest.createTimeStart)
-            && Objects.equals(this.createTimeEnd, listWorkspaceRequest.createTimeEnd)
-            && Objects.equals(this.offset, listWorkspaceRequest.offset)
-            && Objects.equals(this.limit, listWorkspaceRequest.limit)
-            && Objects.equals(this.star, listWorkspaceRequest.star);
+        ListWorkspaceRequest that = (ListWorkspaceRequest) obj;
+        return Objects.equals(this.workspaceName, that.workspaceName)
+            && Objects.equals(this.workspaceType, that.workspaceType)
+            && Objects.equals(this.createTimeStart, that.createTimeStart)
+            && Objects.equals(this.createTimeEnd, that.createTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.star, that.star);
     }
 
     @Override

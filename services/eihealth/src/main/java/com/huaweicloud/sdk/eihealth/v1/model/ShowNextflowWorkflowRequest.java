@@ -55,16 +55,16 @@ public class ShowNextflowWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowWorkflowRequest showNextflowWorkflowRequest = (ShowNextflowWorkflowRequest) o;
-        return Objects.equals(this.eihealthProjectId, showNextflowWorkflowRequest.eihealthProjectId)
-            && Objects.equals(this.workflowId, showNextflowWorkflowRequest.workflowId);
+        ShowNextflowWorkflowRequest that = (ShowNextflowWorkflowRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

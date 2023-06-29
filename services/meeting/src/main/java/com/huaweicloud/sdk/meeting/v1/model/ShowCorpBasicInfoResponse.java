@@ -298,27 +298,22 @@ public class ShowCorpBasicInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCorpBasicInfoResponse showCorpBasicInfoResponse = (ShowCorpBasicInfoResponse) o;
-        return Objects.equals(this.id, showCorpBasicInfoResponse.id)
-            && Objects.equals(this.name, showCorpBasicInfoResponse.name)
-            && Objects.equals(this.address, showCorpBasicInfoResponse.address)
-            && Objects.equals(this.adminName, showCorpBasicInfoResponse.adminName)
-            && Objects.equals(this.account, showCorpBasicInfoResponse.account)
-            && Objects.equals(this.phone, showCorpBasicInfoResponse.phone)
-            && Objects.equals(this.country, showCorpBasicInfoResponse.country)
-            && Objects.equals(this.email, showCorpBasicInfoResponse.email)
-            && Objects.equals(this.enableSMS, showCorpBasicInfoResponse.enableSMS)
-            && Objects.equals(this.enableCloudDisk, showCorpBasicInfoResponse.enableCloudDisk)
-            && Objects.equals(this.enablePstn, showCorpBasicInfoResponse.enablePstn)
-            && Objects.equals(this.autoUserCreate, showCorpBasicInfoResponse.autoUserCreate)
-            && Objects.equals(this.corpType, showCorpBasicInfoResponse.corpType);
+        ShowCorpBasicInfoResponse that = (ShowCorpBasicInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.adminName, that.adminName)
+            && Objects.equals(this.account, that.account) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.enableSMS, that.enableSMS)
+            && Objects.equals(this.enableCloudDisk, that.enableCloudDisk)
+            && Objects.equals(this.enablePstn, that.enablePstn)
+            && Objects.equals(this.autoUserCreate, that.autoUserCreate) && Objects.equals(this.corpType, that.corpType);
     }
 
     @Override

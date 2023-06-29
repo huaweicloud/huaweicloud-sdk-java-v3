@@ -140,19 +140,17 @@ public class CreateSendSmsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSendSmsReq createSendSmsReq = (CreateSendSmsReq) o;
-        return Objects.equals(this.templateId, createSendSmsReq.templateId)
-            && Objects.equals(this.smsContent, createSendSmsReq.smsContent)
-            && Objects.equals(this.cids, createSendSmsReq.cids)
-            && Objects.equals(this.orderId, createSendSmsReq.orderId)
-            && Objects.equals(this.fileTempId, createSendSmsReq.fileTempId);
+        CreateSendSmsReq that = (CreateSendSmsReq) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.smsContent, that.smsContent)
+            && Objects.equals(this.cids, that.cids) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.fileTempId, that.fileTempId);
     }
 
     @Override

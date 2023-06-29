@@ -275,25 +275,22 @@ public class IncidentInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentInfoV2 incidentInfoV2 = (IncidentInfoV2) o;
-        return Objects.equals(this.xcustomerId, incidentInfoV2.xcustomerId)
-            && Objects.equals(this.xcustomerName, incidentInfoV2.xcustomerName)
-            && Objects.equals(this.status, incidentInfoV2.status)
-            && Objects.equals(this.incidentId, incidentInfoV2.incidentId)
-            && Objects.equals(this.businessTypeName, incidentInfoV2.businessTypeName)
-            && Objects.equals(this.incidentTypeName, incidentInfoV2.incidentTypeName)
-            && Objects.equals(this.customerId, incidentInfoV2.customerId)
-            && Objects.equals(this.dcName, incidentInfoV2.dcName)
-            && Objects.equals(this.simpleDescription, incidentInfoV2.simpleDescription)
-            && Objects.equals(this.createTime, incidentInfoV2.createTime)
-            && Objects.equals(this.labelList, incidentInfoV2.labelList);
+        IncidentInfoV2 that = (IncidentInfoV2) obj;
+        return Objects.equals(this.xcustomerId, that.xcustomerId)
+            && Objects.equals(this.xcustomerName, that.xcustomerName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.businessTypeName, that.businessTypeName)
+            && Objects.equals(this.incidentTypeName, that.incidentTypeName)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.dcName, that.dcName)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.labelList, that.labelList);
     }
 
     @Override

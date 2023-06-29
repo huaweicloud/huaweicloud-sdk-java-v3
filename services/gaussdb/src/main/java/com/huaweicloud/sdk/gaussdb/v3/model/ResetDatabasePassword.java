@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 数据库用户名密码信息。
  */
-public class ResetDatabasePassword  {
-
+public class ResetDatabasePassword {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
 
     private String password;
 
@@ -39,9 +29,6 @@ public class ResetDatabasePassword  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户名。
@@ -55,15 +42,10 @@ public class ResetDatabasePassword  {
         this.name = name;
     }
 
-    
-
     public ResetDatabasePassword withHost(String host) {
         this.host = host;
         return this;
     }
-
-    
-
 
     /**
      * 主机地址。
@@ -77,15 +59,10 @@ public class ResetDatabasePassword  {
         this.host = host;
     }
 
-    
-
     public ResetDatabasePassword withPassword(String password) {
         this.password = password;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户密码，非空，至少包含以下字符中的三种：大写字母、小写字母、数字和特殊符号~!@#$%^*-_=+?,()&组成，长度8~32个字符。建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险
@@ -99,25 +76,24 @@ public class ResetDatabasePassword  {
         this.password = password;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetDatabasePassword resetDatabasePassword = (ResetDatabasePassword) o;
-        return Objects.equals(this.name, resetDatabasePassword.name) &&
-            Objects.equals(this.host, resetDatabasePassword.host) &&
-            Objects.equals(this.password, resetDatabasePassword.password);
+        ResetDatabasePassword that = (ResetDatabasePassword) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.password, that.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, host, password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ResetDatabasePassword  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ResetDatabasePassword  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

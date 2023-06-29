@@ -55,16 +55,15 @@ public class ServerKeypair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerKeypair serverKeypair = (ServerKeypair) o;
-        return Objects.equals(this.serverId, serverKeypair.serverId)
-            && Objects.equals(this.keypairName, serverKeypair.keypairName);
+        ServerKeypair that = (ServerKeypair) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.keypairName, that.keypairName);
     }
 
     @Override

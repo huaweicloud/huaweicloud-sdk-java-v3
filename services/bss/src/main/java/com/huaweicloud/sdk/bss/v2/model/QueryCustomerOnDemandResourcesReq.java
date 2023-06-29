@@ -256,24 +256,21 @@ public class QueryCustomerOnDemandResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCustomerOnDemandResourcesReq queryCustomerOnDemandResourcesReq = (QueryCustomerOnDemandResourcesReq) o;
-        return Objects.equals(this.customerId, queryCustomerOnDemandResourcesReq.customerId)
-            && Objects.equals(this.regionCode, queryCustomerOnDemandResourcesReq.regionCode)
-            && Objects.equals(this.serviceTypeCode, queryCustomerOnDemandResourcesReq.serviceTypeCode)
-            && Objects.equals(this.resourceIds, queryCustomerOnDemandResourcesReq.resourceIds)
-            && Objects.equals(this.effectiveTimeBegin, queryCustomerOnDemandResourcesReq.effectiveTimeBegin)
-            && Objects.equals(this.effectiveTimeEnd, queryCustomerOnDemandResourcesReq.effectiveTimeEnd)
-            && Objects.equals(this.offset, queryCustomerOnDemandResourcesReq.offset)
-            && Objects.equals(this.limit, queryCustomerOnDemandResourcesReq.limit)
-            && Objects.equals(this.status, queryCustomerOnDemandResourcesReq.status)
-            && Objects.equals(this.indirectPartnerId, queryCustomerOnDemandResourcesReq.indirectPartnerId);
+        QueryCustomerOnDemandResourcesReq that = (QueryCustomerOnDemandResourcesReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.effectiveTimeBegin, that.effectiveTimeBegin)
+            && Objects.equals(this.effectiveTimeEnd, that.effectiveTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

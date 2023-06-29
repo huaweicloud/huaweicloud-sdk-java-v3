@@ -77,17 +77,17 @@ public class MemberInvitee {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberInvitee memberInvitee = (MemberInvitee) o;
-        return Objects.equals(this.inviteeBcsId, memberInvitee.inviteeBcsId)
-            && Objects.equals(this.inviteeUserId, memberInvitee.inviteeUserId)
-            && Objects.equals(this.inviteeUsername, memberInvitee.inviteeUsername);
+        MemberInvitee that = (MemberInvitee) obj;
+        return Objects.equals(this.inviteeBcsId, that.inviteeBcsId)
+            && Objects.equals(this.inviteeUserId, that.inviteeUserId)
+            && Objects.equals(this.inviteeUsername, that.inviteeUsername);
     }
 
     @Override

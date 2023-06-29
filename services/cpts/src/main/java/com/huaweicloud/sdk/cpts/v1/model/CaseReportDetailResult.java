@@ -65,16 +65,15 @@ public class CaseReportDetailResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseReportDetailResult caseReportDetailResult = (CaseReportDetailResult) o;
-        return Objects.equals(this.detail, caseReportDetailResult.detail)
-            && Objects.equals(this.errMessage, caseReportDetailResult.errMessage);
+        CaseReportDetailResult that = (CaseReportDetailResult) obj;
+        return Objects.equals(this.detail, that.detail) && Objects.equals(this.errMessage, that.errMessage);
     }
 
     @Override

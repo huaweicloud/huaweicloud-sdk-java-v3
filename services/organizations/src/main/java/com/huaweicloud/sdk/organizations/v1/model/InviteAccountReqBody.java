@@ -105,17 +105,16 @@ public class InviteAccountReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InviteAccountReqBody inviteAccountReqBody = (InviteAccountReqBody) o;
-        return Objects.equals(this.target, inviteAccountReqBody.target)
-            && Objects.equals(this.notes, inviteAccountReqBody.notes)
-            && Objects.equals(this.tags, inviteAccountReqBody.tags);
+        InviteAccountReqBody that = (InviteAccountReqBody) obj;
+        return Objects.equals(this.target, that.target) && Objects.equals(this.notes, that.notes)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -168,21 +168,18 @@ public class KeystoneListProjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListProjectsRequest keystoneListProjectsRequest = (KeystoneListProjectsRequest) o;
-        return Objects.equals(this.domainId, keystoneListProjectsRequest.domainId)
-            && Objects.equals(this.name, keystoneListProjectsRequest.name)
-            && Objects.equals(this.parentId, keystoneListProjectsRequest.parentId)
-            && Objects.equals(this.enabled, keystoneListProjectsRequest.enabled)
-            && Objects.equals(this.isDomain, keystoneListProjectsRequest.isDomain)
-            && Objects.equals(this.page, keystoneListProjectsRequest.page)
-            && Objects.equals(this.perPage, keystoneListProjectsRequest.perPage);
+        KeystoneListProjectsRequest that = (KeystoneListProjectsRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.isDomain, that.isDomain) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.perPage, that.perPage);
     }
 
     @Override

@@ -149,18 +149,17 @@ public class ImageDetectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionReq imageDetectionReq = (ImageDetectionReq) o;
-        return Objects.equals(this.eventType, imageDetectionReq.eventType)
-            && Objects.equals(this.categories, imageDetectionReq.categories)
-            && Objects.equals(this.imageTextConfig, imageDetectionReq.imageTextConfig)
-            && Objects.equals(this.url, imageDetectionReq.url) && Objects.equals(this.image, imageDetectionReq.image);
+        ImageDetectionReq that = (ImageDetectionReq) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.imageTextConfig, that.imageTextConfig) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.image, that.image);
     }
 
     @Override

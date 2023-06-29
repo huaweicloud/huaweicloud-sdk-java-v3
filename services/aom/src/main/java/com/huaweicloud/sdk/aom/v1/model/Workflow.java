@@ -1,258 +1,217 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.Node;
-import com.huaweicloud.sdk.aom.v1.model.Parameter;
-import com.huaweicloud.sdk.aom.v1.model.Step;
-import com.huaweicloud.sdk.aom.v1.model.WorkFlowModel;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 变更服务工作流工作流元数据。
  */
-public class Workflow  {
-
+public class Workflow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private Map<String, String> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private Long createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_by")
-    
+    @JsonProperty(value = "create_by")
 
     private String createBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private Long updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_by")
-    
+    @JsonProperty(value = "update_by")
 
     private String updateBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_name")
-    
+    @JsonProperty(value = "template_name")
 
     private String templateName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_id")
-    
+    @JsonProperty(value = "template_id")
 
     private String templateId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
+
     private Map<String, Object> input = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_execution_id")
-    
+    @JsonProperty(value = "last_execution_id")
 
     private String lastExecutionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="citation_urns")
-    
+    @JsonProperty(value = "citation_urns")
+
     private List<String> citationUrns = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_execution_end_time")
-    
+    @JsonProperty(value = "last_execution_end_time")
 
     private Long lastExecutionEndTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_execution_start_time")
-    
+    @JsonProperty(value = "last_execution_start_time")
 
     private Long lastExecutionStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quote")
-    
+    @JsonProperty(value = "quote")
+
     private List<String> quote = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_scenario")
-    
+    @JsonProperty(value = "service_scenario")
 
     private String serviceScenario;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="service_name")
-    
+    @JsonProperty(value = "service_name")
 
     private String serviceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_type")
-    
+    @JsonProperty(value = "task_type")
 
     private String taskType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="task_status")
-    
+    @JsonProperty(value = "task_status")
 
     private String taskStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<Node> nodes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edit_time")
-    
+    @JsonProperty(value = "edit_time")
 
     private Long editTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_action_rules")
-    
+    @JsonProperty(value = "execution_action_rules")
+
     private List<String> executionActionRules = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_permission")
-    
+    @JsonProperty(value = "execution_permission")
+
     private List<String> executionPermission = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="global_parameters")
-    
+    @JsonProperty(value = "global_parameters")
+
     private List<Parameter> globalParameters = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_delete")
-    
+    @JsonProperty(value = "is_delete")
 
     private Boolean isDelete;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="steps")
-    
+    @JsonProperty(value = "steps")
+
     private List<Step> steps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
 
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_id")
-    
+    @JsonProperty(value = "trigger_id")
 
     private String triggerId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trigger_status")
-    
+    @JsonProperty(value = "trigger_status")
 
     private String triggerStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approve_id")
-    
+    @JsonProperty(value = "approve_id")
 
     private String approveId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="template_i18n")
-    
+    @JsonProperty(value = "template_i18n")
 
     private WorkFlowModel templateI18n;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_execute_by")
-    
+    @JsonProperty(value = "last_execute_by")
 
     private String lastExecuteBy;
 
@@ -260,9 +219,6 @@ public class Workflow  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 工作流id，唯一标识，根据project_id和workflow_name生成。
@@ -276,15 +232,10 @@ public class Workflow  {
         this.id = id;
     }
 
-    
-
     public Workflow withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 工作流名称。
@@ -298,15 +249,10 @@ public class Workflow  {
         this.name = name;
     }
 
-    
-
     public Workflow withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 工作流类型，可以为cron、manual
@@ -320,15 +266,10 @@ public class Workflow  {
         this.type = type;
     }
 
-    
-
     public Workflow withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 工作流描述信息。
@@ -342,17 +283,13 @@ public class Workflow  {
         this.description = description;
     }
 
-    
-
     public Workflow withTags(Map<String, String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
-
     public Workflow putTagsItem(String key, String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         this.tags.put(key, tagsItem);
@@ -360,12 +297,13 @@ public class Workflow  {
     }
 
     public Workflow withTags(Consumer<Map<String, String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new HashMap<>();
         }
         tagsSetter.accept(this.tags);
         return this;
     }
+
     /**
      * 标签键和值列表，标签键值对数量范围是0至20。
      * @return tags
@@ -378,15 +316,10 @@ public class Workflow  {
         this.tags = tags;
     }
 
-    
-
     public Workflow withCreateTime(Long createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 工作流创建时间，为utc时间毫秒数。
@@ -402,15 +335,10 @@ public class Workflow  {
         this.createTime = createTime;
     }
 
-    
-
     public Workflow withCreateBy(String createBy) {
         this.createBy = createBy;
         return this;
     }
-
-    
-
 
     /**
      * 工作流创人，从接口调用传入的token中获取。
@@ -424,15 +352,10 @@ public class Workflow  {
         this.createBy = createBy;
     }
 
-    
-
     public Workflow withUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 工作流更新时间，为utc时间毫秒数。
@@ -448,15 +371,10 @@ public class Workflow  {
         this.updateTime = updateTime;
     }
 
-    
-
     public Workflow withUpdateBy(String updateBy) {
         this.updateBy = updateBy;
         return this;
     }
-
-    
-
 
     /**
      * 工作流更新人，从接口调用传入的token中获取。
@@ -470,15 +388,10 @@ public class Workflow  {
         this.updateBy = updateBy;
     }
 
-    
-
     public Workflow withTemplateName(String templateName) {
         this.templateName = templateName;
         return this;
     }
-
-    
-
 
     /**
      * 模板名称。
@@ -492,15 +405,10 @@ public class Workflow  {
         this.templateName = templateName;
     }
 
-    
-
     public Workflow withTemplateId(String templateId) {
         this.templateId = templateId;
         return this;
     }
-
-    
-
 
     /**
      * 模板id
@@ -514,17 +422,13 @@ public class Workflow  {
         this.templateId = templateId;
     }
 
-    
-
     public Workflow withInput(Map<String, Object> input) {
         this.input = input;
         return this;
     }
 
-    
-
     public Workflow putInputItem(String key, Object inputItem) {
-        if(this.input == null) {
+        if (this.input == null) {
             this.input = new HashMap<>();
         }
         this.input.put(key, inputItem);
@@ -532,12 +436,13 @@ public class Workflow  {
     }
 
     public Workflow withInput(Consumer<Map<String, Object>> inputSetter) {
-        if(this.input == null) {
+        if (this.input == null) {
             this.input = new HashMap<>();
         }
         inputSetter.accept(this.input);
         return this;
     }
+
     /**
      * 任务执行时需要的参数列表。
      * @return input
@@ -550,15 +455,10 @@ public class Workflow  {
         this.input = input;
     }
 
-    
-
     public Workflow withLastExecutionId(String lastExecutionId) {
         this.lastExecutionId = lastExecutionId;
         return this;
     }
-
-    
-
 
     /**
      * 最近一次执行id，也是工作流id
@@ -572,15 +472,10 @@ public class Workflow  {
         this.lastExecutionId = lastExecutionId;
     }
 
-    
-
     public Workflow withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态，包含success，fail,executing
@@ -594,16 +489,13 @@ public class Workflow  {
         this.status = status;
     }
 
-    
-
     public Workflow withCitationUrns(List<String> citationUrns) {
         this.citationUrns = citationUrns;
         return this;
     }
 
-    
     public Workflow addCitationUrnsItem(String citationUrnsItem) {
-        if(this.citationUrns == null) {
+        if (this.citationUrns == null) {
             this.citationUrns = new ArrayList<>();
         }
         this.citationUrns.add(citationUrnsItem);
@@ -611,7 +503,7 @@ public class Workflow  {
     }
 
     public Workflow withCitationUrns(Consumer<List<String>> citationUrnsSetter) {
-        if(this.citationUrns == null) {
+        if (this.citationUrns == null) {
             this.citationUrns = new ArrayList<>();
         }
         citationUrnsSetter.accept(this.citationUrns);
@@ -630,15 +522,10 @@ public class Workflow  {
         this.citationUrns = citationUrns;
     }
 
-    
-
     public Workflow withLastExecutionEndTime(Long lastExecutionEndTime) {
         this.lastExecutionEndTime = lastExecutionEndTime;
         return this;
     }
-
-    
-
 
     /**
      * 最近一次执行结束时间，为utc时间毫秒数
@@ -654,15 +541,10 @@ public class Workflow  {
         this.lastExecutionEndTime = lastExecutionEndTime;
     }
 
-    
-
     public Workflow withLastExecutionStartTime(Long lastExecutionStartTime) {
         this.lastExecutionStartTime = lastExecutionStartTime;
         return this;
     }
-
-    
-
 
     /**
      * 最近一次执行开始时间，为utc时间毫秒数
@@ -678,16 +560,13 @@ public class Workflow  {
         this.lastExecutionStartTime = lastExecutionStartTime;
     }
 
-    
-
     public Workflow withQuote(List<String> quote) {
         this.quote = quote;
         return this;
     }
 
-    
     public Workflow addQuoteItem(String quoteItem) {
-        if(this.quote == null) {
+        if (this.quote == null) {
             this.quote = new ArrayList<>();
         }
         this.quote.add(quoteItem);
@@ -695,7 +574,7 @@ public class Workflow  {
     }
 
     public Workflow withQuote(Consumer<List<String>> quoteSetter) {
-        if(this.quote == null) {
+        if (this.quote == null) {
             this.quote = new ArrayList<>();
         }
         quoteSetter.accept(this.quote);
@@ -714,15 +593,10 @@ public class Workflow  {
         this.quote = quote;
     }
 
-    
-
     public Workflow withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称
@@ -736,15 +610,10 @@ public class Workflow  {
         this.jobName = jobName;
     }
 
-    
-
     public Workflow withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业id
@@ -758,15 +627,10 @@ public class Workflow  {
         this.jobId = jobId;
     }
 
-    
-
     public Workflow withServiceScenario(String serviceScenario) {
         this.serviceScenario = serviceScenario;
         return this;
     }
-
-    
-
 
     /**
      * 服务场景分类
@@ -780,15 +644,10 @@ public class Workflow  {
         this.serviceScenario = serviceScenario;
     }
 
-    
-
     public Workflow withServiceName(String serviceName) {
         this.serviceName = serviceName;
         return this;
     }
-
-    
-
 
     /**
      * 服务名称
@@ -802,15 +661,10 @@ public class Workflow  {
         this.serviceName = serviceName;
     }
 
-    
-
     public Workflow withTaskType(String taskType) {
         this.taskType = taskType;
         return this;
     }
-
-    
-
 
     /**
      * 任务类型
@@ -824,15 +678,10 @@ public class Workflow  {
         this.taskType = taskType;
     }
 
-    
-
     public Workflow withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * functiongraph返回的PROJECT_ID
@@ -846,15 +695,10 @@ public class Workflow  {
         this.projectId = projectId;
     }
 
-    
-
     public Workflow withWorkflowId(String workflowId) {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * functiongraph返回的WORKFLOW_ID
@@ -868,15 +712,10 @@ public class Workflow  {
         this.workflowId = workflowId;
     }
 
-    
-
     public Workflow withTaskStatus(String taskStatus) {
         this.taskStatus = taskStatus;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态
@@ -890,16 +729,13 @@ public class Workflow  {
         this.taskStatus = taskStatus;
     }
 
-    
-
     public Workflow withNodes(List<Node> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public Workflow addNodesItem(Node nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -907,7 +743,7 @@ public class Workflow  {
     }
 
     public Workflow withNodes(Consumer<List<Node>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -926,15 +762,10 @@ public class Workflow  {
         this.nodes = nodes;
     }
 
-    
-
     public Workflow withEditTime(Long editTime) {
         this.editTime = editTime;
         return this;
     }
-
-    
-
 
     /**
      * 编辑时间
@@ -950,16 +781,13 @@ public class Workflow  {
         this.editTime = editTime;
     }
 
-    
-
     public Workflow withExecutionActionRules(List<String> executionActionRules) {
         this.executionActionRules = executionActionRules;
         return this;
     }
 
-    
     public Workflow addExecutionActionRulesItem(String executionActionRulesItem) {
-        if(this.executionActionRules == null) {
+        if (this.executionActionRules == null) {
             this.executionActionRules = new ArrayList<>();
         }
         this.executionActionRules.add(executionActionRulesItem);
@@ -967,7 +795,7 @@ public class Workflow  {
     }
 
     public Workflow withExecutionActionRules(Consumer<List<String>> executionActionRulesSetter) {
-        if(this.executionActionRules == null) {
+        if (this.executionActionRules == null) {
             this.executionActionRules = new ArrayList<>();
         }
         executionActionRulesSetter.accept(this.executionActionRules);
@@ -986,16 +814,13 @@ public class Workflow  {
         this.executionActionRules = executionActionRules;
     }
 
-    
-
     public Workflow withExecutionPermission(List<String> executionPermission) {
         this.executionPermission = executionPermission;
         return this;
     }
 
-    
     public Workflow addExecutionPermissionItem(String executionPermissionItem) {
-        if(this.executionPermission == null) {
+        if (this.executionPermission == null) {
             this.executionPermission = new ArrayList<>();
         }
         this.executionPermission.add(executionPermissionItem);
@@ -1003,7 +828,7 @@ public class Workflow  {
     }
 
     public Workflow withExecutionPermission(Consumer<List<String>> executionPermissionSetter) {
-        if(this.executionPermission == null) {
+        if (this.executionPermission == null) {
             this.executionPermission = new ArrayList<>();
         }
         executionPermissionSetter.accept(this.executionPermission);
@@ -1022,16 +847,13 @@ public class Workflow  {
         this.executionPermission = executionPermission;
     }
 
-    
-
     public Workflow withGlobalParameters(List<Parameter> globalParameters) {
         this.globalParameters = globalParameters;
         return this;
     }
 
-    
     public Workflow addGlobalParametersItem(Parameter globalParametersItem) {
-        if(this.globalParameters == null) {
+        if (this.globalParameters == null) {
             this.globalParameters = new ArrayList<>();
         }
         this.globalParameters.add(globalParametersItem);
@@ -1039,7 +861,7 @@ public class Workflow  {
     }
 
     public Workflow withGlobalParameters(Consumer<List<Parameter>> globalParametersSetter) {
-        if(this.globalParameters == null) {
+        if (this.globalParameters == null) {
             this.globalParameters = new ArrayList<>();
         }
         globalParametersSetter.accept(this.globalParameters);
@@ -1058,15 +880,10 @@ public class Workflow  {
         this.globalParameters = globalParameters;
     }
 
-    
-
     public Workflow withIsDelete(Boolean isDelete) {
         this.isDelete = isDelete;
         return this;
     }
-
-    
-
 
     /**
      * 逻辑删除
@@ -1080,16 +897,13 @@ public class Workflow  {
         this.isDelete = isDelete;
     }
 
-    
-
     public Workflow withSteps(List<Step> steps) {
         this.steps = steps;
         return this;
     }
 
-    
     public Workflow addStepsItem(Step stepsItem) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         this.steps.add(stepsItem);
@@ -1097,7 +911,7 @@ public class Workflow  {
     }
 
     public Workflow withSteps(Consumer<List<Step>> stepsSetter) {
-        if(this.steps == null) {
+        if (this.steps == null) {
             this.steps = new ArrayList<>();
         }
         stepsSetter.accept(this.steps);
@@ -1116,15 +930,10 @@ public class Workflow  {
         this.steps = steps;
     }
 
-    
-
     public Workflow withOutput(String output) {
         this.output = output;
         return this;
     }
-
-    
-
 
     /**
      * 任务输出
@@ -1138,15 +947,10 @@ public class Workflow  {
         this.output = output;
     }
 
-    
-
     public Workflow withTriggerId(String triggerId) {
         this.triggerId = triggerId;
         return this;
     }
-
-    
-
 
     /**
      * 触发器id
@@ -1160,15 +964,10 @@ public class Workflow  {
         this.triggerId = triggerId;
     }
 
-    
-
     public Workflow withTriggerStatus(String triggerStatus) {
         this.triggerStatus = triggerStatus;
         return this;
     }
-
-    
-
 
     /**
      * 触发器状态
@@ -1182,15 +981,10 @@ public class Workflow  {
         this.triggerStatus = triggerStatus;
     }
 
-    
-
     public Workflow withApproveId(String approveId) {
         this.approveId = approveId;
         return this;
     }
-
-    
-
 
     /**
      * 审批id
@@ -1204,22 +998,19 @@ public class Workflow  {
         this.approveId = approveId;
     }
 
-    
-
     public Workflow withTemplateI18n(WorkFlowModel templateI18n) {
         this.templateI18n = templateI18n;
         return this;
     }
 
     public Workflow withTemplateI18n(Consumer<WorkFlowModel> templateI18nSetter) {
-        if(this.templateI18n == null ){
+        if (this.templateI18n == null) {
             this.templateI18n = new WorkFlowModel();
             templateI18nSetter.accept(this.templateI18n);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get templateI18n
@@ -1233,15 +1024,10 @@ public class Workflow  {
         this.templateI18n = templateI18n;
     }
 
-    
-
     public Workflow withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 任务所属的企业项目
@@ -1255,15 +1041,10 @@ public class Workflow  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public Workflow withLastExecuteBy(String lastExecuteBy) {
         this.lastExecuteBy = lastExecuteBy;
         return this;
     }
-
-    
-
 
     /**
      * 任务最后一次执行人
@@ -1277,62 +1058,86 @@ public class Workflow  {
         this.lastExecuteBy = lastExecuteBy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Workflow workflow = (Workflow) o;
-        return Objects.equals(this.id, workflow.id) &&
-            Objects.equals(this.name, workflow.name) &&
-            Objects.equals(this.type, workflow.type) &&
-            Objects.equals(this.description, workflow.description) &&
-            Objects.equals(this.tags, workflow.tags) &&
-            Objects.equals(this.createTime, workflow.createTime) &&
-            Objects.equals(this.createBy, workflow.createBy) &&
-            Objects.equals(this.updateTime, workflow.updateTime) &&
-            Objects.equals(this.updateBy, workflow.updateBy) &&
-            Objects.equals(this.templateName, workflow.templateName) &&
-            Objects.equals(this.templateId, workflow.templateId) &&
-            Objects.equals(this.input, workflow.input) &&
-            Objects.equals(this.lastExecutionId, workflow.lastExecutionId) &&
-            Objects.equals(this.status, workflow.status) &&
-            Objects.equals(this.citationUrns, workflow.citationUrns) &&
-            Objects.equals(this.lastExecutionEndTime, workflow.lastExecutionEndTime) &&
-            Objects.equals(this.lastExecutionStartTime, workflow.lastExecutionStartTime) &&
-            Objects.equals(this.quote, workflow.quote) &&
-            Objects.equals(this.jobName, workflow.jobName) &&
-            Objects.equals(this.jobId, workflow.jobId) &&
-            Objects.equals(this.serviceScenario, workflow.serviceScenario) &&
-            Objects.equals(this.serviceName, workflow.serviceName) &&
-            Objects.equals(this.taskType, workflow.taskType) &&
-            Objects.equals(this.projectId, workflow.projectId) &&
-            Objects.equals(this.workflowId, workflow.workflowId) &&
-            Objects.equals(this.taskStatus, workflow.taskStatus) &&
-            Objects.equals(this.nodes, workflow.nodes) &&
-            Objects.equals(this.editTime, workflow.editTime) &&
-            Objects.equals(this.executionActionRules, workflow.executionActionRules) &&
-            Objects.equals(this.executionPermission, workflow.executionPermission) &&
-            Objects.equals(this.globalParameters, workflow.globalParameters) &&
-            Objects.equals(this.isDelete, workflow.isDelete) &&
-            Objects.equals(this.steps, workflow.steps) &&
-            Objects.equals(this.output, workflow.output) &&
-            Objects.equals(this.triggerId, workflow.triggerId) &&
-            Objects.equals(this.triggerStatus, workflow.triggerStatus) &&
-            Objects.equals(this.approveId, workflow.approveId) &&
-            Objects.equals(this.templateI18n, workflow.templateI18n) &&
-            Objects.equals(this.enterpriseProjectId, workflow.enterpriseProjectId) &&
-            Objects.equals(this.lastExecuteBy, workflow.lastExecuteBy);
+        Workflow that = (Workflow) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.lastExecutionId, that.lastExecutionId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.citationUrns, that.citationUrns)
+            && Objects.equals(this.lastExecutionEndTime, that.lastExecutionEndTime)
+            && Objects.equals(this.lastExecutionStartTime, that.lastExecutionStartTime)
+            && Objects.equals(this.quote, that.quote) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.serviceScenario, that.serviceScenario)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.workflowId, that.workflowId)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.editTime, that.editTime)
+            && Objects.equals(this.executionActionRules, that.executionActionRules)
+            && Objects.equals(this.executionPermission, that.executionPermission)
+            && Objects.equals(this.globalParameters, that.globalParameters)
+            && Objects.equals(this.isDelete, that.isDelete) && Objects.equals(this.steps, that.steps)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.triggerId, that.triggerId)
+            && Objects.equals(this.triggerStatus, that.triggerStatus) && Objects.equals(this.approveId, that.approveId)
+            && Objects.equals(this.templateI18n, that.templateI18n)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.lastExecuteBy, that.lastExecuteBy);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, description, tags, createTime, createBy, updateTime, updateBy, templateName, templateId, input, lastExecutionId, status, citationUrns, lastExecutionEndTime, lastExecutionStartTime, quote, jobName, jobId, serviceScenario, serviceName, taskType, projectId, workflowId, taskStatus, nodes, editTime, executionActionRules, executionPermission, globalParameters, isDelete, steps, output, triggerId, triggerStatus, approveId, templateI18n, enterpriseProjectId, lastExecuteBy);
+        return Objects.hash(id,
+            name,
+            type,
+            description,
+            tags,
+            createTime,
+            createBy,
+            updateTime,
+            updateBy,
+            templateName,
+            templateId,
+            input,
+            lastExecutionId,
+            status,
+            citationUrns,
+            lastExecutionEndTime,
+            lastExecutionStartTime,
+            quote,
+            jobName,
+            jobId,
+            serviceScenario,
+            serviceName,
+            taskType,
+            projectId,
+            workflowId,
+            taskStatus,
+            nodes,
+            editTime,
+            executionActionRules,
+            executionPermission,
+            globalParameters,
+            isDelete,
+            steps,
+            output,
+            triggerId,
+            triggerStatus,
+            approveId,
+            templateI18n,
+            enterpriseProjectId,
+            lastExecuteBy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1380,6 +1185,7 @@ public class Workflow  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1390,8 +1196,5 @@ public class Workflow  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

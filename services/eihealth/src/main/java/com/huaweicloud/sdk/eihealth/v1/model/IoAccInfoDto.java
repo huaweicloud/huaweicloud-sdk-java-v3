@@ -99,16 +99,16 @@ public class IoAccInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IoAccInfoDto ioAccInfoDto = (IoAccInfoDto) o;
-        return Objects.equals(this.id, ioAccInfoDto.id) && Objects.equals(this.type, ioAccInfoDto.type)
-            && Objects.equals(this.space, ioAccInfoDto.space) && Objects.equals(this.freeSpace, ioAccInfoDto.freeSpace);
+        IoAccInfoDto that = (IoAccInfoDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.space, that.space) && Objects.equals(this.freeSpace, that.freeSpace);
     }
 
     @Override

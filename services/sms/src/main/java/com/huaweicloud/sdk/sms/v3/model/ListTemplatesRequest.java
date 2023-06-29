@@ -125,19 +125,17 @@ public class ListTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplatesRequest listTemplatesRequest = (ListTemplatesRequest) o;
-        return Objects.equals(this.name, listTemplatesRequest.name)
-            && Objects.equals(this.availabilityZone, listTemplatesRequest.availabilityZone)
-            && Objects.equals(this.region, listTemplatesRequest.region)
-            && Objects.equals(this.limit, listTemplatesRequest.limit)
-            && Objects.equals(this.offset, listTemplatesRequest.offset);
+        ListTemplatesRequest that = (ListTemplatesRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

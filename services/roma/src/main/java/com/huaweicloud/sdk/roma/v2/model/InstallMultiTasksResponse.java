@@ -53,15 +53,15 @@ public class InstallMultiTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstallMultiTasksResponse installMultiTasksResponse = (InstallMultiTasksResponse) o;
-        return Objects.equals(this.body, installMultiTasksResponse.body);
+        InstallMultiTasksResponse that = (InstallMultiTasksResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

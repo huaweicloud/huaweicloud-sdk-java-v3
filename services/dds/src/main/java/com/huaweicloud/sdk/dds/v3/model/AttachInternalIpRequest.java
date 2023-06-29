@@ -65,16 +65,15 @@ public class AttachInternalIpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachInternalIpRequest attachInternalIpRequest = (AttachInternalIpRequest) o;
-        return Objects.equals(this.instanceId, attachInternalIpRequest.instanceId)
-            && Objects.equals(this.body, attachInternalIpRequest.body);
+        AttachInternalIpRequest that = (AttachInternalIpRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

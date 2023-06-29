@@ -140,19 +140,17 @@ public class BackupRestore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupRestore backupRestore = (BackupRestore) o;
-        return Objects.equals(this.mappings, backupRestore.mappings)
-            && Objects.equals(this.powerOn, backupRestore.powerOn)
-            && Objects.equals(this.serverId, backupRestore.serverId)
-            && Objects.equals(this.volumeId, backupRestore.volumeId)
-            && Objects.equals(this.resourceId, backupRestore.resourceId);
+        BackupRestore that = (BackupRestore) obj;
+        return Objects.equals(this.mappings, that.mappings) && Objects.equals(this.powerOn, that.powerOn)
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

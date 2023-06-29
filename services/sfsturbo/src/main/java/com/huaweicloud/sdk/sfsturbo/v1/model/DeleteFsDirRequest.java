@@ -65,16 +65,15 @@ public class DeleteFsDirRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFsDirRequest deleteFsDirRequest = (DeleteFsDirRequest) o;
-        return Objects.equals(this.shareId, deleteFsDirRequest.shareId)
-            && Objects.equals(this.body, deleteFsDirRequest.body);
+        DeleteFsDirRequest that = (DeleteFsDirRequest) obj;
+        return Objects.equals(this.shareId, that.shareId) && Objects.equals(this.body, that.body);
     }
 
     @Override

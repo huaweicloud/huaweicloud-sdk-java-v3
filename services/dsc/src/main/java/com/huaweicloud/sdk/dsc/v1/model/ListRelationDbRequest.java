@@ -143,20 +143,17 @@ public class ListRelationDbRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationDbRequest listRelationDbRequest = (ListRelationDbRequest) o;
-        return Objects.equals(this.jobId, listRelationDbRequest.jobId)
-            && Objects.equals(this.assetsName, listRelationDbRequest.assetsName)
-            && Objects.equals(this.riskStart, listRelationDbRequest.riskStart)
-            && Objects.equals(this.riskEnd, listRelationDbRequest.riskEnd)
-            && Objects.equals(this.offset, listRelationDbRequest.offset)
-            && Objects.equals(this.limit, listRelationDbRequest.limit);
+        ListRelationDbRequest that = (ListRelationDbRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.assetsName, that.assetsName)
+            && Objects.equals(this.riskStart, that.riskStart) && Objects.equals(this.riskEnd, that.riskEnd)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

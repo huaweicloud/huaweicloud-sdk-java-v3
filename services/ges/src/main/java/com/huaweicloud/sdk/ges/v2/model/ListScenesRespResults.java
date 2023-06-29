@@ -1,45 +1,35 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ListScenesRespParams;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ListScenesRespResults
  */
-public class ListScenesRespResults  {
-
+public class ListScenesRespResults {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scene")
-    
+    @JsonProperty(value = "scene")
 
     private String scene;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="params")
-    
+    @JsonProperty(value = "params")
+
     private List<ListScenesRespParams> params = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
@@ -47,9 +37,6 @@ public class ListScenesRespResults  {
         this.scene = scene;
         return this;
     }
-
-    
-
 
     /**
      * 场景名。
@@ -63,15 +50,10 @@ public class ListScenesRespResults  {
         this.scene = scene;
     }
 
-    
-
     public ListScenesRespResults withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * application名称。
@@ -85,16 +67,13 @@ public class ListScenesRespResults  {
         this.name = name;
     }
 
-    
-
     public ListScenesRespResults withParams(List<ListScenesRespParams> params) {
         this.params = params;
         return this;
     }
 
-    
     public ListScenesRespResults addParamsItem(ListScenesRespParams paramsItem) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         this.params.add(paramsItem);
@@ -102,7 +81,7 @@ public class ListScenesRespResults  {
     }
 
     public ListScenesRespResults withParams(Consumer<List<ListScenesRespParams>> paramsSetter) {
-        if(this.params == null) {
+        if (this.params == null) {
             this.params = new ArrayList<>();
         }
         paramsSetter.accept(this.params);
@@ -121,15 +100,10 @@ public class ListScenesRespResults  {
         this.params = params;
     }
 
-    
-
     public ListScenesRespResults withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 场景下应用的描述。
@@ -143,26 +117,24 @@ public class ListScenesRespResults  {
         this.description = description;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScenesRespResults listScenesRespResults = (ListScenesRespResults) o;
-        return Objects.equals(this.scene, listScenesRespResults.scene) &&
-            Objects.equals(this.name, listScenesRespResults.name) &&
-            Objects.equals(this.params, listScenesRespResults.params) &&
-            Objects.equals(this.description, listScenesRespResults.description);
+        ListScenesRespResults that = (ListScenesRespResults) obj;
+        return Objects.equals(this.scene, that.scene) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.description, that.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scene, name, params, description);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,6 +146,7 @@ public class ListScenesRespResults  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -184,8 +157,5 @@ public class ListScenesRespResults  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -166,21 +166,18 @@ public class CreateGeoipRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGeoipRuleResponse createGeoipRuleResponse = (CreateGeoipRuleResponse) o;
-        return Objects.equals(this.id, createGeoipRuleResponse.id)
-            && Objects.equals(this.name, createGeoipRuleResponse.name)
-            && Objects.equals(this.policyid, createGeoipRuleResponse.policyid)
-            && Objects.equals(this.geoip, createGeoipRuleResponse.geoip)
-            && Objects.equals(this.white, createGeoipRuleResponse.white)
-            && Objects.equals(this.status, createGeoipRuleResponse.status)
-            && Objects.equals(this.timestamp, createGeoipRuleResponse.timestamp);
+        CreateGeoipRuleResponse that = (CreateGeoipRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.geoip, that.geoip)
+            && Objects.equals(this.white, that.white) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

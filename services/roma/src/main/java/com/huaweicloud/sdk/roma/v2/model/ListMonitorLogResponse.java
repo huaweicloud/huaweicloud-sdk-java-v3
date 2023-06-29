@@ -101,17 +101,16 @@ public class ListMonitorLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitorLogResponse listMonitorLogResponse = (ListMonitorLogResponse) o;
-        return Objects.equals(this.total, listMonitorLogResponse.total)
-            && Objects.equals(this.size, listMonitorLogResponse.size)
-            && Objects.equals(this.entities, listMonitorLogResponse.entities);
+        ListMonitorLogResponse that = (ListMonitorLogResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.entities, that.entities);
     }
 
     @Override

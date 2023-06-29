@@ -96,17 +96,16 @@ public class TransTemplateGroupCollection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransTemplateGroupCollection transTemplateGroupCollection = (TransTemplateGroupCollection) o;
-        return Objects.equals(this.name, transTemplateGroupCollection.name)
-            && Objects.equals(this.description, transTemplateGroupCollection.description)
-            && Objects.equals(this.templateGroupList, transTemplateGroupCollection.templateGroupList);
+        TransTemplateGroupCollection that = (TransTemplateGroupCollection) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.templateGroupList, that.templateGroupList);
     }
 
     @Override

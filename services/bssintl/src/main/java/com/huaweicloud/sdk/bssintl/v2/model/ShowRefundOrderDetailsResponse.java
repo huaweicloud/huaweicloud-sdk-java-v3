@@ -75,16 +75,15 @@ public class ShowRefundOrderDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRefundOrderDetailsResponse showRefundOrderDetailsResponse = (ShowRefundOrderDetailsResponse) o;
-        return Objects.equals(this.totalCount, showRefundOrderDetailsResponse.totalCount)
-            && Objects.equals(this.refundInfos, showRefundOrderDetailsResponse.refundInfos);
+        ShowRefundOrderDetailsResponse that = (ShowRefundOrderDetailsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.refundInfos, that.refundInfos);
     }
 
     @Override

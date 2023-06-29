@@ -123,19 +123,17 @@ public class ListTemplateGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateGroupRequest listTemplateGroupRequest = (ListTemplateGroupRequest) o;
-        return Objects.equals(this.xSdkDate, listTemplateGroupRequest.xSdkDate)
-            && Objects.equals(this.groupId, listTemplateGroupRequest.groupId)
-            && Objects.equals(this.status, listTemplateGroupRequest.status)
-            && Objects.equals(this.page, listTemplateGroupRequest.page)
-            && Objects.equals(this.size, listTemplateGroupRequest.size);
+        ListTemplateGroupRequest that = (ListTemplateGroupRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

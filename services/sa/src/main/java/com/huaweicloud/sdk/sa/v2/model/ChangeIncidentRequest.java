@@ -87,17 +87,16 @@ public class ChangeIncidentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeIncidentRequest changeIncidentRequest = (ChangeIncidentRequest) o;
-        return Objects.equals(this.workspaceId, changeIncidentRequest.workspaceId)
-            && Objects.equals(this.incidentId, changeIncidentRequest.incidentId)
-            && Objects.equals(this.body, changeIncidentRequest.body);
+        ChangeIncidentRequest that = (ChangeIncidentRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

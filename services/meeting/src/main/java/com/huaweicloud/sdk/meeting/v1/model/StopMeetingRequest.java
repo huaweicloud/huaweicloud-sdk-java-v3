@@ -57,16 +57,16 @@ public class StopMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopMeetingRequest stopMeetingRequest = (StopMeetingRequest) o;
-        return Objects.equals(this.conferenceID, stopMeetingRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, stopMeetingRequest.xConferenceAuthorization);
+        StopMeetingRequest that = (StopMeetingRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class SetVaultResourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetVaultResourceRequest setVaultResourceRequest = (SetVaultResourceRequest) o;
-        return Objects.equals(this.vaultId, setVaultResourceRequest.vaultId)
-            && Objects.equals(this.body, setVaultResourceRequest.body);
+        SetVaultResourceRequest that = (SetVaultResourceRequest) obj;
+        return Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.body, that.body);
     }
 
     @Override

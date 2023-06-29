@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * HIS 用户快速执行脚本实体类。
  */
-public class HISFastScript  {
-
+public class HISFastScript {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_type")
-    
+    @JsonProperty(value = "script_type")
 
     private String scriptType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cmd_user")
-    
+    @JsonProperty(value = "cmd_user")
 
     private String cmdUser;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_content")
-    
+    @JsonProperty(value = "script_content")
 
     private String scriptContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ecs_id_list")
-    
+    @JsonProperty(value = "ecs_id_list")
 
     private String ecsIdList;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="script_args")
-    
+    @JsonProperty(value = "script_args")
 
     private String scriptArgs;
 
@@ -63,9 +49,6 @@ public class HISFastScript  {
         this.scriptType = scriptType;
         return this;
     }
-
-    
-
 
     /**
      * 脚本类型。SHELL BAT PYTHON POWER_SHELL
@@ -79,15 +62,10 @@ public class HISFastScript  {
         this.scriptType = scriptType;
     }
 
-    
-
     public HISFastScript withCmdUser(String cmdUser) {
         this.cmdUser = cmdUser;
         return this;
     }
-
-    
-
 
     /**
      * 执行脚本的ECS机器用户。
@@ -101,15 +79,10 @@ public class HISFastScript  {
         this.cmdUser = cmdUser;
     }
 
-    
-
     public HISFastScript withScriptContent(String scriptContent) {
         this.scriptContent = scriptContent;
         return this;
     }
-
-    
-
 
     /**
      * 脚本内容。
@@ -123,15 +96,10 @@ public class HISFastScript  {
         this.scriptContent = scriptContent;
     }
 
-    
-
     public HISFastScript withEcsIdList(String ecsIdList) {
         this.ecsIdList = ecsIdList;
         return this;
     }
-
-    
-
 
     /**
      * 执行的机器列表。
@@ -145,15 +113,10 @@ public class HISFastScript  {
         this.ecsIdList = ecsIdList;
     }
 
-    
-
     public HISFastScript withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。
@@ -167,15 +130,10 @@ public class HISFastScript  {
         this.name = name;
     }
 
-    
-
     public HISFastScript withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 项目ID。
@@ -189,15 +147,10 @@ public class HISFastScript  {
         this.projectId = projectId;
     }
 
-    
-
     public HISFastScript withScriptArgs(String scriptArgs) {
         this.scriptArgs = scriptArgs;
         return this;
     }
-
-    
-
 
     /**
      * 任务参数，多个参数以空格分隔。
@@ -211,29 +164,26 @@ public class HISFastScript  {
         this.scriptArgs = scriptArgs;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HISFastScript hiSFastScript = (HISFastScript) o;
-        return Objects.equals(this.scriptType, hiSFastScript.scriptType) &&
-            Objects.equals(this.cmdUser, hiSFastScript.cmdUser) &&
-            Objects.equals(this.scriptContent, hiSFastScript.scriptContent) &&
-            Objects.equals(this.ecsIdList, hiSFastScript.ecsIdList) &&
-            Objects.equals(this.name, hiSFastScript.name) &&
-            Objects.equals(this.projectId, hiSFastScript.projectId) &&
-            Objects.equals(this.scriptArgs, hiSFastScript.scriptArgs);
+        HISFastScript that = (HISFastScript) obj;
+        return Objects.equals(this.scriptType, that.scriptType) && Objects.equals(this.cmdUser, that.cmdUser)
+            && Objects.equals(this.scriptContent, that.scriptContent) && Objects.equals(this.ecsIdList, that.ecsIdList)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.scriptArgs, that.scriptArgs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(scriptType, cmdUser, scriptContent, ecsIdList, name, projectId, scriptArgs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class HISFastScript  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class HISFastScript  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

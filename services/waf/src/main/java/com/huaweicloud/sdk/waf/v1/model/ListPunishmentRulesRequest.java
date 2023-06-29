@@ -99,18 +99,17 @@ public class ListPunishmentRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPunishmentRulesRequest listPunishmentRulesRequest = (ListPunishmentRulesRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listPunishmentRulesRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, listPunishmentRulesRequest.policyId)
-            && Objects.equals(this.offset, listPunishmentRulesRequest.offset)
-            && Objects.equals(this.limit, listPunishmentRulesRequest.limit);
+        ListPunishmentRulesRequest that = (ListPunishmentRulesRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

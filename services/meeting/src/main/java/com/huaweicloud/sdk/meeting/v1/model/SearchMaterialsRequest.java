@@ -126,19 +126,17 @@ public class SearchMaterialsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchMaterialsRequest searchMaterialsRequest = (SearchMaterialsRequest) o;
-        return Objects.equals(this.xRequestId, searchMaterialsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchMaterialsRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchMaterialsRequest.offset)
-            && Objects.equals(this.limit, searchMaterialsRequest.limit)
-            && Objects.equals(this.searchKey, searchMaterialsRequest.searchKey);
+        SearchMaterialsRequest that = (SearchMaterialsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

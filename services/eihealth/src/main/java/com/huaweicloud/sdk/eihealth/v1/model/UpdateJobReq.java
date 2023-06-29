@@ -52,15 +52,15 @@ public class UpdateJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateJobReq updateJobReq = (UpdateJobReq) o;
-        return Objects.equals(this.tasks, updateJobReq.tasks);
+        UpdateJobReq that = (UpdateJobReq) obj;
+        return Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

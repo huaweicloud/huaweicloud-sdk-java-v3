@@ -55,16 +55,15 @@ public class DeleteLogStreamRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLogStreamRequest deleteLogStreamRequest = (DeleteLogStreamRequest) o;
-        return Objects.equals(this.logGroupId, deleteLogStreamRequest.logGroupId)
-            && Objects.equals(this.logStreamId, deleteLogStreamRequest.logStreamId);
+        DeleteLogStreamRequest that = (DeleteLogStreamRequest) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId);
     }
 
     @Override

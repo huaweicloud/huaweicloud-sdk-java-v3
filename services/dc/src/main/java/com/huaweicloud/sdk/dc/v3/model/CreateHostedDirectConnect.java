@@ -169,21 +169,18 @@ public class CreateHostedDirectConnect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHostedDirectConnect createHostedDirectConnect = (CreateHostedDirectConnect) o;
-        return Objects.equals(this.name, createHostedDirectConnect.name)
-            && Objects.equals(this.description, createHostedDirectConnect.description)
-            && Objects.equals(this.bandwidth, createHostedDirectConnect.bandwidth)
-            && Objects.equals(this.hostingId, createHostedDirectConnect.hostingId)
-            && Objects.equals(this.vlan, createHostedDirectConnect.vlan)
-            && Objects.equals(this.resourceTenantId, createHostedDirectConnect.resourceTenantId)
-            && Objects.equals(this.peerLocation, createHostedDirectConnect.peerLocation);
+        CreateHostedDirectConnect that = (CreateHostedDirectConnect) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.hostingId, that.hostingId)
+            && Objects.equals(this.vlan, that.vlan) && Objects.equals(this.resourceTenantId, that.resourceTenantId)
+            && Objects.equals(this.peerLocation, that.peerLocation);
     }
 
     @Override

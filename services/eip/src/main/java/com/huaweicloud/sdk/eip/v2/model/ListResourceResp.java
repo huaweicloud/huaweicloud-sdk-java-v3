@@ -118,18 +118,17 @@ public class ListResourceResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceResp listResourceResp = (ListResourceResp) o;
-        return Objects.equals(this.resourceDetail, listResourceResp.resourceDetail)
-            && Objects.equals(this.resourceId, listResourceResp.resourceId)
-            && Objects.equals(this.resourceName, listResourceResp.resourceName)
-            && Objects.equals(this.tags, listResourceResp.tags);
+        ListResourceResp that = (ListResourceResp) obj;
+        return Objects.equals(this.resourceDetail, that.resourceDetail)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class IndependentBodyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndependentBodyReq independentBodyReq = (IndependentBodyReq) o;
-        return Objects.equals(this.flavorRef, independentBodyReq.flavorRef)
-            && Objects.equals(this.nodeSize, independentBodyReq.nodeSize)
-            && Objects.equals(this.volumeType, independentBodyReq.volumeType);
+        IndependentBodyReq that = (IndependentBodyReq) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.nodeSize, that.nodeSize)
+            && Objects.equals(this.volumeType, that.volumeType);
     }
 
     @Override

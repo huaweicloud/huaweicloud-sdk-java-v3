@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ClearGraph2Request  {
-
+public class ClearGraph2Request {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clear_metadata")
-    
+    @JsonProperty(value = "clear_metadata")
 
     private Boolean clearMetadata;
 
@@ -34,9 +24,6 @@ public class ClearGraph2Request  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -50,15 +37,10 @@ public class ClearGraph2Request  {
         this.graphId = graphId;
     }
 
-    
-
     public ClearGraph2Request withClearMetadata(Boolean clearMetadata) {
         this.clearMetadata = clearMetadata;
         return this;
     }
-
-    
-
 
     /**
      * 是否清空图关联的元数据。建议清除。
@@ -72,24 +54,23 @@ public class ClearGraph2Request  {
         this.clearMetadata = clearMetadata;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClearGraph2Request clearGraph2Request = (ClearGraph2Request) o;
-        return Objects.equals(this.graphId, clearGraph2Request.graphId) &&
-            Objects.equals(this.clearMetadata, clearGraph2Request.clearMetadata);
+        ClearGraph2Request that = (ClearGraph2Request) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.clearMetadata, that.clearMetadata);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, clearMetadata);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class ClearGraph2Request  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class ClearGraph2Request  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

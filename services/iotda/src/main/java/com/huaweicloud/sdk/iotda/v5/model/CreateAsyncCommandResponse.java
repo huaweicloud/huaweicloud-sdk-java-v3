@@ -210,23 +210,19 @@ public class CreateAsyncCommandResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAsyncCommandResponse createAsyncCommandResponse = (CreateAsyncCommandResponse) o;
-        return Objects.equals(this.deviceId, createAsyncCommandResponse.deviceId)
-            && Objects.equals(this.commandId, createAsyncCommandResponse.commandId)
-            && Objects.equals(this.serviceId, createAsyncCommandResponse.serviceId)
-            && Objects.equals(this.commandName, createAsyncCommandResponse.commandName)
-            && Objects.equals(this.paras, createAsyncCommandResponse.paras)
-            && Objects.equals(this.expireTime, createAsyncCommandResponse.expireTime)
-            && Objects.equals(this.status, createAsyncCommandResponse.status)
-            && Objects.equals(this.createdTime, createAsyncCommandResponse.createdTime)
-            && Objects.equals(this.sendStrategy, createAsyncCommandResponse.sendStrategy);
+        CreateAsyncCommandResponse that = (CreateAsyncCommandResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandName, that.commandName)
+            && Objects.equals(this.paras, that.paras) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.sendStrategy, that.sendStrategy);
     }
 
     @Override

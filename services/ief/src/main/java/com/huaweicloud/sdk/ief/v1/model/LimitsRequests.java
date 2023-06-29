@@ -99,16 +99,16 @@ public class LimitsRequests {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LimitsRequests limitsRequests = (LimitsRequests) o;
-        return Objects.equals(this.cpu, limitsRequests.cpu) && Objects.equals(this.memory, limitsRequests.memory)
-            && Objects.equals(this.gpu, limitsRequests.gpu) && Objects.equals(this.npu, limitsRequests.npu);
+        LimitsRequests that = (LimitsRequests) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.gpu, that.gpu) && Objects.equals(this.npu, that.npu);
     }
 
     @Override

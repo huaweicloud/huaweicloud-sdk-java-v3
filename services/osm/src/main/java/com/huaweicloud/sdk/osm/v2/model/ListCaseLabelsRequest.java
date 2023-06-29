@@ -107,18 +107,16 @@ public class ListCaseLabelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseLabelsRequest listCaseLabelsRequest = (ListCaseLabelsRequest) o;
-        return Objects.equals(this.caseId, listCaseLabelsRequest.caseId)
-            && Objects.equals(this.xSite, listCaseLabelsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseLabelsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseLabelsRequest.xTimeZone);
+        ListCaseLabelsRequest that = (ListCaseLabelsRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

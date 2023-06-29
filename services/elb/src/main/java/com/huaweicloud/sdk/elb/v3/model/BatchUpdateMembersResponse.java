@@ -75,16 +75,15 @@ public class BatchUpdateMembersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateMembersResponse batchUpdateMembersResponse = (BatchUpdateMembersResponse) o;
-        return Objects.equals(this.requestId, batchUpdateMembersResponse.requestId)
-            && Objects.equals(this.members, batchUpdateMembersResponse.members);
+        BatchUpdateMembersResponse that = (BatchUpdateMembersResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.members, that.members);
     }
 
     @Override

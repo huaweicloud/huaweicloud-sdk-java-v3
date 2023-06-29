@@ -33,15 +33,15 @@ public class QueueInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueueInfo queueInfo = (QueueInfo) o;
-        return Objects.equals(this.queueName, queueInfo.queueName);
+        QueueInfo that = (QueueInfo) obj;
+        return Objects.equals(this.queueName, that.queueName);
     }
 
     @Override

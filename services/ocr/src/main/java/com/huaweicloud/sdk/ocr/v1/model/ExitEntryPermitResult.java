@@ -443,31 +443,25 @@ public class ExitEntryPermitResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExitEntryPermitResult exitEntryPermitResult = (ExitEntryPermitResult) o;
-        return Objects.equals(this.name, exitEntryPermitResult.name)
-            && Objects.equals(this.nameEn, exitEntryPermitResult.nameEn)
-            && Objects.equals(this.sex, exitEntryPermitResult.sex)
-            && Objects.equals(this.birthDate, exitEntryPermitResult.birthDate)
-            && Objects.equals(this.number, exitEntryPermitResult.number)
-            && Objects.equals(this.issuingAuthority, exitEntryPermitResult.issuingAuthority)
-            && Objects.equals(this.issuePlace, exitEntryPermitResult.issuePlace)
-            && Objects.equals(this.validPeriod, exitEntryPermitResult.validPeriod)
-            && Objects.equals(this.machineCode, exitEntryPermitResult.machineCode)
-            && Objects.equals(this.portraitImage, exitEntryPermitResult.portraitImage)
-            && Objects.equals(this.portraitLocation, exitEntryPermitResult.portraitLocation)
-            && Objects.equals(this.type, exitEntryPermitResult.type)
-            && Objects.equals(this.side, exitEntryPermitResult.side)
-            && Objects.equals(this.endorsementInfoHk, exitEntryPermitResult.endorsementInfoHk)
-            && Objects.equals(this.endorsementInfoMo, exitEntryPermitResult.endorsementInfoMo)
-            && Objects.equals(this.endorsementInfoTw, exitEntryPermitResult.endorsementInfoTw)
-            && Objects.equals(this.confidence, exitEntryPermitResult.confidence);
+        ExitEntryPermitResult that = (ExitEntryPermitResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.sex, that.sex) && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.issuePlace, that.issuePlace) && Objects.equals(this.validPeriod, that.validPeriod)
+            && Objects.equals(this.machineCode, that.machineCode)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.portraitLocation, that.portraitLocation) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.side, that.side) && Objects.equals(this.endorsementInfoHk, that.endorsementInfoHk)
+            && Objects.equals(this.endorsementInfoMo, that.endorsementInfoMo)
+            && Objects.equals(this.endorsementInfoTw, that.endorsementInfoTw)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

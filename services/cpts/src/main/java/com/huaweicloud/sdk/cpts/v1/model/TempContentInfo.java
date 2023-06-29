@@ -146,18 +146,17 @@ public class TempContentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TempContentInfo tempContentInfo = (TempContentInfo) o;
-        return Objects.equals(this.contentId, tempContentInfo.contentId)
-            && Objects.equals(this.content, tempContentInfo.content)
-            && Objects.equals(this.index, tempContentInfo.index) && Objects.equals(this.data, tempContentInfo.data)
-            && Objects.equals(this.dataType, tempContentInfo.dataType);
+        TempContentInfo that = (TempContentInfo) obj;
+        return Objects.equals(this.contentId, that.contentId) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.dataType, that.dataType);
     }
 
     @Override

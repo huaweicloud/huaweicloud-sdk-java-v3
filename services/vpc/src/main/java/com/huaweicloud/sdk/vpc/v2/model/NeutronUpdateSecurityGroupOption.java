@@ -55,16 +55,15 @@ public class NeutronUpdateSecurityGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateSecurityGroupOption neutronUpdateSecurityGroupOption = (NeutronUpdateSecurityGroupOption) o;
-        return Objects.equals(this.description, neutronUpdateSecurityGroupOption.description)
-            && Objects.equals(this.name, neutronUpdateSecurityGroupOption.name);
+        NeutronUpdateSecurityGroupOption that = (NeutronUpdateSecurityGroupOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name);
     }
 
     @Override

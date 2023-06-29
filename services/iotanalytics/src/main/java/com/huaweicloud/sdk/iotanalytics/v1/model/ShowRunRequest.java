@@ -77,16 +77,16 @@ public class ShowRunRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRunRequest showRunRequest = (ShowRunRequest) o;
-        return Objects.equals(this.jobId, showRunRequest.jobId) && Objects.equals(this.runId, showRunRequest.runId)
-            && Objects.equals(this.withDetails, showRunRequest.withDetails);
+        ShowRunRequest that = (ShowRunRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.runId, that.runId)
+            && Objects.equals(this.withDetails, that.withDetails);
     }
 
     @Override

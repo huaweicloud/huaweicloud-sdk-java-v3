@@ -409,28 +409,23 @@ public class ShowDataJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataJobResponse showDataJobResponse = (ShowDataJobResponse) o;
-        return Objects.equals(this.completeData, showDataJobResponse.completeData)
-            && Objects.equals(this.runningData, showDataJobResponse.runningData)
-            && Objects.equals(this.creator, showDataJobResponse.creator)
-            && Objects.equals(this.sourceProjectId, showDataJobResponse.sourceProjectId)
-            && Objects.equals(this.sourceProjectName, showDataJobResponse.sourceProjectName)
-            && Objects.equals(this.id, showDataJobResponse.id) && Objects.equals(this.name, showDataJobResponse.name)
-            && Objects.equals(this.sources, showDataJobResponse.sources)
-            && Objects.equals(this.createTime, showDataJobResponse.createTime)
-            && Objects.equals(this.endTime, showDataJobResponse.endTime)
-            && Objects.equals(this.status, showDataJobResponse.status)
-            && Objects.equals(this.destinations, showDataJobResponse.destinations)
-            && Objects.equals(this.type, showDataJobResponse.type)
-            && Objects.equals(this.failedReason, showDataJobResponse.failedReason)
-            && Objects.equals(this.additions, showDataJobResponse.additions);
+        ShowDataJobResponse that = (ShowDataJobResponse) obj;
+        return Objects.equals(this.completeData, that.completeData)
+            && Objects.equals(this.runningData, that.runningData) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.destinations, that.destinations)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.additions, that.additions);
     }
 
     @Override

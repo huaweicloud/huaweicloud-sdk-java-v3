@@ -79,22 +79,15 @@ public class ShowVocabularyResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -223,19 +216,17 @@ public class ShowVocabularyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVocabularyResponse showVocabularyResponse = (ShowVocabularyResponse) o;
-        return Objects.equals(this.vocabularyId, showVocabularyResponse.vocabularyId)
-            && Objects.equals(this.name, showVocabularyResponse.name)
-            && Objects.equals(this.description, showVocabularyResponse.description)
-            && Objects.equals(this.language, showVocabularyResponse.language)
-            && Objects.equals(this.contents, showVocabularyResponse.contents);
+        ShowVocabularyResponse that = (ShowVocabularyResponse) obj;
+        return Objects.equals(this.vocabularyId, that.vocabularyId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.contents, that.contents);
     }
 
     @Override

@@ -311,25 +311,21 @@ public class ShowEnhancedConnectionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnhancedConnectionResponse showEnhancedConnectionResponse = (ShowEnhancedConnectionResponse) o;
-        return Objects.equals(this.isSuccess, showEnhancedConnectionResponse.isSuccess)
-            && Objects.equals(this.message, showEnhancedConnectionResponse.message)
-            && Objects.equals(this.id, showEnhancedConnectionResponse.id)
-            && Objects.equals(this.name, showEnhancedConnectionResponse.name)
-            && Objects.equals(this.status, showEnhancedConnectionResponse.status)
-            && Objects.equals(this.availableQueueInfo, showEnhancedConnectionResponse.availableQueueInfo)
-            && Objects.equals(this.elasticResourcePools, showEnhancedConnectionResponse.elasticResourcePools)
-            && Objects.equals(this.destVpcId, showEnhancedConnectionResponse.destVpcId)
-            && Objects.equals(this.destNetworkId, showEnhancedConnectionResponse.destNetworkId)
-            && Objects.equals(this.createTime, showEnhancedConnectionResponse.createTime)
-            && Objects.equals(this.hosts, showEnhancedConnectionResponse.hosts);
+        ShowEnhancedConnectionResponse that = (ShowEnhancedConnectionResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.availableQueueInfo, that.availableQueueInfo)
+            && Objects.equals(this.elasticResourcePools, that.elasticResourcePools)
+            && Objects.equals(this.destVpcId, that.destVpcId) && Objects.equals(this.destNetworkId, that.destNetworkId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.hosts, that.hosts);
     }
 
     @Override

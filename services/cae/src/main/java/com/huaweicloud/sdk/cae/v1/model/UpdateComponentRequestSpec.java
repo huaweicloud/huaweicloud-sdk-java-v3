@@ -136,18 +136,17 @@ public class UpdateComponentRequestSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateComponentRequestSpec updateComponentRequestSpec = (UpdateComponentRequestSpec) o;
-        return Objects.equals(this.source, updateComponentRequestSpec.source)
-            && Objects.equals(this.build, updateComponentRequestSpec.build)
-            && Objects.equals(this.resourceLimit, updateComponentRequestSpec.resourceLimit)
-            && Objects.equals(this.logStrategy, updateComponentRequestSpec.logStrategy);
+        UpdateComponentRequestSpec that = (UpdateComponentRequestSpec) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.build, that.build)
+            && Objects.equals(this.resourceLimit, that.resourceLimit)
+            && Objects.equals(this.logStrategy, that.logStrategy);
     }
 
     @Override

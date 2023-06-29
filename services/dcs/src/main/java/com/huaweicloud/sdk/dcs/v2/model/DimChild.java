@@ -55,15 +55,15 @@ public class DimChild {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DimChild dimChild = (DimChild) o;
-        return Objects.equals(this.dimName, dimChild.dimName) && Objects.equals(this.dimRoute, dimChild.dimRoute);
+        DimChild that = (DimChild) obj;
+        return Objects.equals(this.dimName, that.dimName) && Objects.equals(this.dimRoute, that.dimRoute);
     }
 
     @Override

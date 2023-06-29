@@ -96,16 +96,16 @@ public class CheckResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckResult checkResult = (CheckResult) o;
-        return Objects.equals(this.status, checkResult.status) && Objects.equals(this.errors, checkResult.errors)
-            && Objects.equals(this.extensionVersionCompare, checkResult.extensionVersionCompare);
+        CheckResult that = (CheckResult) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.errors, that.errors)
+            && Objects.equals(this.extensionVersionCompare, that.extensionVersionCompare);
     }
 
     @Override

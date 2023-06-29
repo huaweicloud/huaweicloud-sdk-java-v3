@@ -153,20 +153,18 @@ public class ProtectPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectPolicyOption protectPolicyOption = (ProtectPolicyOption) o;
-        return Objects.equals(this.operationProtection, protectPolicyOption.operationProtection)
-            && Objects.equals(this.allowUser, protectPolicyOption.allowUser)
-            && Objects.equals(this.mobile, protectPolicyOption.mobile)
-            && Objects.equals(this.adminCheck, protectPolicyOption.adminCheck)
-            && Objects.equals(this.email, protectPolicyOption.email)
-            && Objects.equals(this.scene, protectPolicyOption.scene);
+        ProtectPolicyOption that = (ProtectPolicyOption) obj;
+        return Objects.equals(this.operationProtection, that.operationProtection)
+            && Objects.equals(this.allowUser, that.allowUser) && Objects.equals(this.mobile, that.mobile)
+            && Objects.equals(this.adminCheck, that.adminCheck) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.scene, that.scene);
     }
 
     @Override

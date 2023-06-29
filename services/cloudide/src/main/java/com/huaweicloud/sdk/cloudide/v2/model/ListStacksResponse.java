@@ -66,16 +66,15 @@ public class ListStacksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStacksResponse listStacksResponse = (ListStacksResponse) o;
-        return Objects.equals(this.stack, listStacksResponse.stack)
-            && Objects.equals(this.status, listStacksResponse.status);
+        ListStacksResponse that = (ListStacksResponse) obj;
+        return Objects.equals(this.stack, that.stack) && Objects.equals(this.status, that.status);
     }
 
     @Override

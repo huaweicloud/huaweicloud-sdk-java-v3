@@ -55,16 +55,15 @@ public class DeleteSystemEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSystemEventRequest deleteSystemEventRequest = (DeleteSystemEventRequest) o;
-        return Objects.equals(this.eventId, deleteSystemEventRequest.eventId)
-            && Objects.equals(this.iefInstanceId, deleteSystemEventRequest.iefInstanceId);
+        DeleteSystemEventRequest that = (DeleteSystemEventRequest) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

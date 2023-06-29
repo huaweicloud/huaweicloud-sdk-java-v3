@@ -508,36 +508,29 @@ public class ShowAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppResponse showAppResponse = (ShowAppResponse) o;
-        return Objects.equals(this.id, showAppResponse.id)
-            && Objects.equals(this.createTime, showAppResponse.createTime)
-            && Objects.equals(this.updateTime, showAppResponse.updateTime)
-            && Objects.equals(this.customerId, showAppResponse.customerId)
-            && Objects.equals(this.resourceId, showAppResponse.resourceId)
-            && Objects.equals(this.developerAccount, showAppResponse.developerAccount)
-            && Objects.equals(this.appName, showAppResponse.appName)
-            && Objects.equals(this.ompAppName, showAppResponse.ompAppName)
-            && Objects.equals(this.appKey, showAppResponse.appKey)
-            && Objects.equals(this.upLinkAddr, showAppResponse.upLinkAddr)
-            && Objects.equals(this.status, showAppResponse.status)
-            && Objects.equals(this.industry, showAppResponse.industry)
-            && Objects.equals(this.region, showAppResponse.region)
-            && Objects.equals(this.intlChannelNum, showAppResponse.intlChannelNum)
-            && Objects.equals(this.enterpriseProjectId, showAppResponse.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, showAppResponse.enterpriseProjectName)
-            && Objects.equals(this.ipWhiteList, showAppResponse.ipWhiteList)
-            && Objects.equals(this.appAccessAddr, showAppResponse.appAccessAddr)
-            && Objects.equals(this.protocol, showAppResponse.protocol)
-            && Objects.equals(this.platform, showAppResponse.platform)
-            && Objects.equals(this.isSupportMultiomp, showAppResponse.isSupportMultiomp)
-            && Objects.equals(this.tenant, showAppResponse.tenant);
+        ShowAppResponse that = (ShowAppResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.developerAccount, that.developerAccount)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.ompAppName, that.ompAppName)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.upLinkAddr, that.upLinkAddr)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.industry, that.industry)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.intlChannelNum, that.intlChannelNum)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.ipWhiteList, that.ipWhiteList)
+            && Objects.equals(this.appAccessAddr, that.appAccessAddr) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.isSupportMultiomp, that.isSupportMultiomp)
+            && Objects.equals(this.tenant, that.tenant);
     }
 
     @Override

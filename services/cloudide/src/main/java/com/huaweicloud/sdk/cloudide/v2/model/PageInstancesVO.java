@@ -146,18 +146,17 @@ public class PageInstancesVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInstancesVO pageInstancesVO = (PageInstancesVO) o;
-        return Objects.equals(this.empty, pageInstancesVO.empty) && Objects.equals(this.items, pageInstancesVO.items)
-            && Objects.equals(this.itemsBefore, pageInstancesVO.itemsBefore)
-            && Objects.equals(this.size, pageInstancesVO.size)
-            && Objects.equals(this.totalItemsCount, pageInstancesVO.totalItemsCount);
+        PageInstancesVO that = (PageInstancesVO) obj;
+        return Objects.equals(this.empty, that.empty) && Objects.equals(this.items, that.items)
+            && Objects.equals(this.itemsBefore, that.itemsBefore) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.totalItemsCount, that.totalItemsCount);
     }
 
     @Override

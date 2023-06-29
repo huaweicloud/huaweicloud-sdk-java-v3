@@ -99,18 +99,16 @@ public class TransactionConfigSearchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransactionConfigSearchRequest transactionConfigSearchRequest = (TransactionConfigSearchRequest) o;
-        return Objects.equals(this.businessId, transactionConfigSearchRequest.businessId)
-            && Objects.equals(this.envId, transactionConfigSearchRequest.envId)
-            && Objects.equals(this.pageNo, transactionConfigSearchRequest.pageNo)
-            && Objects.equals(this.pageSize, transactionConfigSearchRequest.pageSize);
+        TransactionConfigSearchRequest that = (TransactionConfigSearchRequest) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

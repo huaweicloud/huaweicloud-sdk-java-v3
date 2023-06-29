@@ -77,17 +77,16 @@ public class ServiceSetDetailResponseDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceSetDetailResponseDto serviceSetDetailResponseDto = (ServiceSetDetailResponseDto) o;
-        return Objects.equals(this.id, serviceSetDetailResponseDto.id)
-            && Objects.equals(this.name, serviceSetDetailResponseDto.name)
-            && Objects.equals(this.description, serviceSetDetailResponseDto.description);
+        ServiceSetDetailResponseDto that = (ServiceSetDetailResponseDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

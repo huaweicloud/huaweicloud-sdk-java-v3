@@ -70,22 +70,15 @@ public class ListConfigTemplatesRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -291,23 +284,19 @@ public class ListConfigTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigTemplatesRequest listConfigTemplatesRequest = (ListConfigTemplatesRequest) o;
-        return Objects.equals(this.name, listConfigTemplatesRequest.name)
-            && Objects.equals(this.templateId, listConfigTemplatesRequest.templateId)
-            && Objects.equals(this.type, listConfigTemplatesRequest.type)
-            && Objects.equals(this.engine, listConfigTemplatesRequest.engine)
-            && Objects.equals(this.engineVersion, listConfigTemplatesRequest.engineVersion)
-            && Objects.equals(this.cacheMode, listConfigTemplatesRequest.cacheMode)
-            && Objects.equals(this.description, listConfigTemplatesRequest.description)
-            && Objects.equals(this.offset, listConfigTemplatesRequest.offset)
-            && Objects.equals(this.limit, listConfigTemplatesRequest.limit);
+        ListConfigTemplatesRequest that = (ListConfigTemplatesRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.cacheMode, that.cacheMode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

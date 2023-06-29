@@ -95,22 +95,15 @@ public class BackupResp {
             if (value == null) {
                 return null;
             }
-            ImageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImageTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageTypeEnum(value));
         }
 
         public static ImageTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImageTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -223,22 +216,15 @@ public class BackupResp {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -341,22 +327,15 @@ public class BackupResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -841,34 +820,27 @@ public class BackupResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupResp backupResp = (BackupResp) o;
-        return Objects.equals(this.checkpointId, backupResp.checkpointId)
-            && Objects.equals(this.createdAt, backupResp.createdAt)
-            && Objects.equals(this.description, backupResp.description)
-            && Objects.equals(this.expiredAt, backupResp.expiredAt)
-            && Objects.equals(this.extendInfo, backupResp.extendInfo) && Objects.equals(this.id, backupResp.id)
-            && Objects.equals(this.imageType, backupResp.imageType) && Objects.equals(this.name, backupResp.name)
-            && Objects.equals(this.parentId, backupResp.parentId)
-            && Objects.equals(this.projectId, backupResp.projectId)
-            && Objects.equals(this.protectedAt, backupResp.protectedAt)
-            && Objects.equals(this.resourceAz, backupResp.resourceAz)
-            && Objects.equals(this.resourceId, backupResp.resourceId)
-            && Objects.equals(this.resourceName, backupResp.resourceName)
-            && Objects.equals(this.resourceSize, backupResp.resourceSize)
-            && Objects.equals(this.resourceType, backupResp.resourceType)
-            && Objects.equals(this.status, backupResp.status) && Objects.equals(this.updatedAt, backupResp.updatedAt)
-            && Objects.equals(this.vaultId, backupResp.vaultId)
-            && Objects.equals(this.replicationRecords, backupResp.replicationRecords)
-            && Objects.equals(this.enterpriseProjectId, backupResp.enterpriseProjectId)
-            && Objects.equals(this.providerId, backupResp.providerId)
-            && Objects.equals(this.children, backupResp.children);
+        BackupResp that = (BackupResp) obj;
+        return Objects.equals(this.checkpointId, that.checkpointId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.expiredAt, that.expiredAt)
+            && Objects.equals(this.extendInfo, that.extendInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.imageType, that.imageType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.protectedAt, that.protectedAt) && Objects.equals(this.resourceAz, that.resourceAz)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.vaultId, that.vaultId)
+            && Objects.equals(this.replicationRecords, that.replicationRecords)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.providerId, that.providerId) && Objects.equals(this.children, that.children);
     }
 
     @Override

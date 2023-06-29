@@ -184,21 +184,20 @@ public class TempRunningData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TempRunningData tempRunningData = (TempRunningData) o;
-        return Objects.equals(this.contentMethodUrl, tempRunningData.contentMethodUrl)
-            && Objects.equals(this.crawlerStatus, tempRunningData.crawlerStatus)
-            && Objects.equals(this.relatedTempRunningId, tempRunningData.relatedTempRunningId)
-            && Objects.equals(this.taskRunInfoId, tempRunningData.taskRunInfoId)
-            && Objects.equals(this.tempId, tempRunningData.tempId)
-            && Objects.equals(this.tempName, tempRunningData.tempName)
-            && Objects.equals(this.tempRunningStatus, tempRunningData.tempRunningStatus);
+        TempRunningData that = (TempRunningData) obj;
+        return Objects.equals(this.contentMethodUrl, that.contentMethodUrl)
+            && Objects.equals(this.crawlerStatus, that.crawlerStatus)
+            && Objects.equals(this.relatedTempRunningId, that.relatedTempRunningId)
+            && Objects.equals(this.taskRunInfoId, that.taskRunInfoId) && Objects.equals(this.tempId, that.tempId)
+            && Objects.equals(this.tempName, that.tempName)
+            && Objects.equals(this.tempRunningStatus, that.tempRunningStatus);
     }
 
     @Override

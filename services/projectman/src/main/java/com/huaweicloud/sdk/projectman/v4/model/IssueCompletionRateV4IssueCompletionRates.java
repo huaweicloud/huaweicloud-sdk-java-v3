@@ -66,17 +66,15 @@ public class IssueCompletionRateV4IssueCompletionRates {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueCompletionRateV4IssueCompletionRates issueCompletionRateV4IssueCompletionRates =
-            (IssueCompletionRateV4IssueCompletionRates) o;
-        return Objects.equals(this.issueStatus, issueCompletionRateV4IssueCompletionRates.issueStatus)
-            && Objects.equals(this.trackerId, issueCompletionRateV4IssueCompletionRates.trackerId);
+        IssueCompletionRateV4IssueCompletionRates that = (IssueCompletionRateV4IssueCompletionRates) obj;
+        return Objects.equals(this.issueStatus, that.issueStatus) && Objects.equals(this.trackerId, that.trackerId);
     }
 
     @Override

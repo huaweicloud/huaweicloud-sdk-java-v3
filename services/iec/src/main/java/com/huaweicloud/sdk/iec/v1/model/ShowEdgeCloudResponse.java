@@ -313,26 +313,20 @@ public class ShowEdgeCloudResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeCloudResponse showEdgeCloudResponse = (ShowEdgeCloudResponse) o;
-        return Objects.equals(this.id, showEdgeCloudResponse.id)
-            && Objects.equals(this.name, showEdgeCloudResponse.name)
-            && Objects.equals(this.stacks, showEdgeCloudResponse.stacks)
-            && Objects.equals(this.coverage, showEdgeCloudResponse.coverage)
-            && Objects.equals(this.successNum, showEdgeCloudResponse.successNum)
-            && Objects.equals(this.failedNum, showEdgeCloudResponse.failedNum)
-            && Objects.equals(this.status, showEdgeCloudResponse.status)
-            && Objects.equals(this.failReason, showEdgeCloudResponse.failReason)
-            && Objects.equals(this.edgeRegions, showEdgeCloudResponse.edgeRegions)
-            && Objects.equals(this.description, showEdgeCloudResponse.description)
-            && Objects.equals(this.createAt, showEdgeCloudResponse.createAt)
-            && Objects.equals(this.updateAt, showEdgeCloudResponse.updateAt);
+        ShowEdgeCloudResponse that = (ShowEdgeCloudResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.stacks, that.stacks) && Objects.equals(this.coverage, that.coverage)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.failedNum, that.failedNum)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.edgeRegions, that.edgeRegions) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt);
     }
 
     @Override

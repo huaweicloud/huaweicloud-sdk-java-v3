@@ -119,18 +119,16 @@ public class ListAgentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgentResponse listAgentResponse = (ListAgentResponse) o;
-        return Objects.equals(this.agents, listAgentResponse.agents)
-            && Objects.equals(this.count, listAgentResponse.count)
-            && Objects.equals(this.limit, listAgentResponse.limit)
-            && Objects.equals(this.offset, listAgentResponse.offset);
+        ListAgentResponse that = (ListAgentResponse) obj;
+        return Objects.equals(this.agents, that.agents) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

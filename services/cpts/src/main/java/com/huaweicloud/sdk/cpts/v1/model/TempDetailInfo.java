@@ -147,18 +147,17 @@ public class TempDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TempDetailInfo tempDetailInfo = (TempDetailInfo) o;
-        return Objects.equals(this.description, tempDetailInfo.description)
-            && Objects.equals(this.id, tempDetailInfo.id) && Objects.equals(this.isQuoted, tempDetailInfo.isQuoted)
-            && Objects.equals(this.name, tempDetailInfo.name) && Objects.equals(this.tempType, tempDetailInfo.tempType)
-            && Objects.equals(this.updateTime, tempDetailInfo.updateTime);
+        TempDetailInfo that = (TempDetailInfo) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isQuoted, that.isQuoted) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tempType, that.tempType) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

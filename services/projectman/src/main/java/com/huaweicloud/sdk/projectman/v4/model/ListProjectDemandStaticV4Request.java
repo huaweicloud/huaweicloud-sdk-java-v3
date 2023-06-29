@@ -33,15 +33,15 @@ public class ListProjectDemandStaticV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectDemandStaticV4Request listProjectDemandStaticV4Request = (ListProjectDemandStaticV4Request) o;
-        return Objects.equals(this.projectId, listProjectDemandStaticV4Request.projectId);
+        ListProjectDemandStaticV4Request that = (ListProjectDemandStaticV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class CreateRouteTableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRouteTableRequestBody createRouteTableRequestBody = (CreateRouteTableRequestBody) o;
-        return Objects.equals(this.routeTable, createRouteTableRequestBody.routeTable);
+        CreateRouteTableRequestBody that = (CreateRouteTableRequestBody) obj;
+        return Objects.equals(this.routeTable, that.routeTable);
     }
 
     @Override

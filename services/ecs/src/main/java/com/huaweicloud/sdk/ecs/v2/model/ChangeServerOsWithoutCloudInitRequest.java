@@ -66,17 +66,15 @@ public class ChangeServerOsWithoutCloudInitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeServerOsWithoutCloudInitRequest changeServerOsWithoutCloudInitRequest =
-            (ChangeServerOsWithoutCloudInitRequest) o;
-        return Objects.equals(this.serverId, changeServerOsWithoutCloudInitRequest.serverId)
-            && Objects.equals(this.body, changeServerOsWithoutCloudInitRequest.body);
+        ChangeServerOsWithoutCloudInitRequest that = (ChangeServerOsWithoutCloudInitRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

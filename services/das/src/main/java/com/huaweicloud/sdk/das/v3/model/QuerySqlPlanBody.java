@@ -77,17 +77,16 @@ public class QuerySqlPlanBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuerySqlPlanBody querySqlPlanBody = (QuerySqlPlanBody) o;
-        return Objects.equals(this.dbUserId, querySqlPlanBody.dbUserId)
-            && Objects.equals(this.database, querySqlPlanBody.database)
-            && Objects.equals(this.sql, querySqlPlanBody.sql);
+        QuerySqlPlanBody that = (QuerySqlPlanBody) obj;
+        return Objects.equals(this.dbUserId, that.dbUserId) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.sql, that.sql);
     }
 
     @Override

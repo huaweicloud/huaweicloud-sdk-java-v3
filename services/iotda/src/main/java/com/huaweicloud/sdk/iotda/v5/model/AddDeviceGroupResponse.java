@@ -144,20 +144,18 @@ public class AddDeviceGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDeviceGroupResponse addDeviceGroupResponse = (AddDeviceGroupResponse) o;
-        return Objects.equals(this.groupId, addDeviceGroupResponse.groupId)
-            && Objects.equals(this.name, addDeviceGroupResponse.name)
-            && Objects.equals(this.description, addDeviceGroupResponse.description)
-            && Objects.equals(this.superGroupId, addDeviceGroupResponse.superGroupId)
-            && Objects.equals(this.groupType, addDeviceGroupResponse.groupType)
-            && Objects.equals(this.dynamicGroupRule, addDeviceGroupResponse.dynamicGroupRule);
+        AddDeviceGroupResponse that = (AddDeviceGroupResponse) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.superGroupId, that.superGroupId) && Objects.equals(this.groupType, that.groupType)
+            && Objects.equals(this.dynamicGroupRule, that.dynamicGroupRule);
     }
 
     @Override

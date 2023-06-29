@@ -1,32 +1,28 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 根据不同的任务，显示不同的内容。
  */
-public class GetJobEntitiesInfoDetail  {
-
+public class GetJobEntitiesInfoDetail {
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -34,8 +30,5 @@ public class GetJobEntitiesInfoDetail  {
         sb.append("}");
         return sb.toString();
     }
-    
-    
-    
-}
 
+}

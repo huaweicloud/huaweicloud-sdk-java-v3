@@ -198,22 +198,18 @@ public class UpdatePtrRecordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePtrRecordResponse updatePtrRecordResponse = (UpdatePtrRecordResponse) o;
-        return Objects.equals(this.id, updatePtrRecordResponse.id)
-            && Objects.equals(this.ptrdname, updatePtrRecordResponse.ptrdname)
-            && Objects.equals(this.description, updatePtrRecordResponse.description)
-            && Objects.equals(this.ttl, updatePtrRecordResponse.ttl)
-            && Objects.equals(this.address, updatePtrRecordResponse.address)
-            && Objects.equals(this.status, updatePtrRecordResponse.status)
-            && Objects.equals(this.action, updatePtrRecordResponse.action)
-            && Objects.equals(this.links, updatePtrRecordResponse.links);
+        UpdatePtrRecordResponse that = (UpdatePtrRecordResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ptrdname, that.ptrdname)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.links, that.links);
     }
 
     @Override

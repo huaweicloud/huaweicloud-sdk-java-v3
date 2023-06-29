@@ -121,18 +121,18 @@ public class Metadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metadata metadata = (Metadata) o;
-        return Objects.equals(this.cryptKeyId, metadata.cryptKeyId)
-            && Objects.equals(this.dedicatedFlavor, metadata.dedicatedFlavor)
-            && Objects.equals(this.dedicatedStorageId, metadata.dedicatedStorageId)
-            && Objects.equals(this.expandType, metadata.expandType) && Objects.equals(this.hpcBw, metadata.hpcBw);
+        Metadata that = (Metadata) obj;
+        return Objects.equals(this.cryptKeyId, that.cryptKeyId)
+            && Objects.equals(this.dedicatedFlavor, that.dedicatedFlavor)
+            && Objects.equals(this.dedicatedStorageId, that.dedicatedStorageId)
+            && Objects.equals(this.expandType, that.expandType) && Objects.equals(this.hpcBw, that.hpcBw);
     }
 
     @Override

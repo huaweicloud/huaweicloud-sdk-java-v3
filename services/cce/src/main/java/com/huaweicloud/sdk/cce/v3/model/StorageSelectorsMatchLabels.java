@@ -121,19 +121,17 @@ public class StorageSelectorsMatchLabels {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageSelectorsMatchLabels storageSelectorsMatchLabels = (StorageSelectorsMatchLabels) o;
-        return Objects.equals(this.size, storageSelectorsMatchLabels.size)
-            && Objects.equals(this.volumeType, storageSelectorsMatchLabels.volumeType)
-            && Objects.equals(this.metadataEncrypted, storageSelectorsMatchLabels.metadataEncrypted)
-            && Objects.equals(this.metadataCmkid, storageSelectorsMatchLabels.metadataCmkid)
-            && Objects.equals(this.count, storageSelectorsMatchLabels.count);
+        StorageSelectorsMatchLabels that = (StorageSelectorsMatchLabels) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.metadataEncrypted, that.metadataEncrypted)
+            && Objects.equals(this.metadataCmkid, that.metadataCmkid) && Objects.equals(this.count, that.count);
     }
 
     @Override

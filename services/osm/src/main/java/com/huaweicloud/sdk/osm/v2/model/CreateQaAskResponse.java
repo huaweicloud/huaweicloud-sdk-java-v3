@@ -95,22 +95,15 @@ public class CreateQaAskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ReplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplyTypeEnum(value));
         }
 
         public static ReplyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,21 +278,18 @@ public class CreateQaAskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQaAskResponse createQaAskResponse = (CreateQaAskResponse) o;
-        return Objects.equals(this.errorCode, createQaAskResponse.errorCode)
-            && Objects.equals(this.errorMsg, createQaAskResponse.errorMsg)
-            && Objects.equals(this.langResult, createQaAskResponse.langResult)
-            && Objects.equals(this.replyType, createQaAskResponse.replyType)
-            && Objects.equals(this.sessionId, createQaAskResponse.sessionId)
-            && Objects.equals(this.requestId, createQaAskResponse.requestId)
-            && Objects.equals(this.answersDetail, createQaAskResponse.answersDetail);
+        CreateQaAskResponse that = (CreateQaAskResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.langResult, that.langResult) && Objects.equals(this.replyType, that.replyType)
+            && Objects.equals(this.sessionId, that.sessionId) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.answersDetail, that.answersDetail);
     }
 
     @Override

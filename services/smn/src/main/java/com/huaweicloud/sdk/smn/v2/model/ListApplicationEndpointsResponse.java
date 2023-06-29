@@ -97,17 +97,16 @@ public class ListApplicationEndpointsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationEndpointsResponse listApplicationEndpointsResponse = (ListApplicationEndpointsResponse) o;
-        return Objects.equals(this.requestId, listApplicationEndpointsResponse.requestId)
-            && Objects.equals(this.nextPageFlag, listApplicationEndpointsResponse.nextPageFlag)
-            && Objects.equals(this.endpoints, listApplicationEndpointsResponse.endpoints);
+        ListApplicationEndpointsResponse that = (ListApplicationEndpointsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.nextPageFlag, that.nextPageFlag)
+            && Objects.equals(this.endpoints, that.endpoints);
     }
 
     @Override

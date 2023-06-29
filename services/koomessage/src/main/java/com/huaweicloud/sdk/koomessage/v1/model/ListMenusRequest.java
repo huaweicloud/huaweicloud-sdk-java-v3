@@ -215,23 +215,19 @@ public class ListMenusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMenusRequest listMenusRequest = (ListMenusRequest) o;
-        return Objects.equals(this.menuId, listMenusRequest.menuId)
-            && Objects.equals(this.pubId, listMenusRequest.pubId)
-            && Objects.equals(this.pubName, listMenusRequest.pubName)
-            && Objects.equals(this.onlineBeginTime, listMenusRequest.onlineBeginTime)
-            && Objects.equals(this.onlineEndTime, listMenusRequest.onlineEndTime)
-            && Objects.equals(this.state, listMenusRequest.state)
-            && Objects.equals(this.menuName, listMenusRequest.menuName)
-            && Objects.equals(this.offset, listMenusRequest.offset)
-            && Objects.equals(this.limit, listMenusRequest.limit);
+        ListMenusRequest that = (ListMenusRequest) obj;
+        return Objects.equals(this.menuId, that.menuId) && Objects.equals(this.pubId, that.pubId)
+            && Objects.equals(this.pubName, that.pubName) && Objects.equals(this.onlineBeginTime, that.onlineBeginTime)
+            && Objects.equals(this.onlineEndTime, that.onlineEndTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.menuName, that.menuName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

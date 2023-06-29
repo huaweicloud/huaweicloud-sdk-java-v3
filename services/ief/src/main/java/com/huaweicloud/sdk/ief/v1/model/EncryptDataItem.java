@@ -77,16 +77,16 @@ public class EncryptDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptDataItem encryptDataItem = (EncryptDataItem) o;
-        return Objects.equals(this.name, encryptDataItem.name) && Objects.equals(this.value, encryptDataItem.value)
-            && Objects.equals(this.isEncrypted, encryptDataItem.isEncrypted);
+        EncryptDataItem that = (EncryptDataItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.isEncrypted, that.isEncrypted);
     }
 
     @Override

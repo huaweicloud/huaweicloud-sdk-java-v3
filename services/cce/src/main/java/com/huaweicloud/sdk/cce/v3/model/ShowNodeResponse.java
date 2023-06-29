@@ -150,18 +150,17 @@ public class ShowNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNodeResponse showNodeResponse = (ShowNodeResponse) o;
-        return Objects.equals(this.kind, showNodeResponse.kind)
-            && Objects.equals(this.apiVersion, showNodeResponse.apiVersion)
-            && Objects.equals(this.metadata, showNodeResponse.metadata)
-            && Objects.equals(this.spec, showNodeResponse.spec) && Objects.equals(this.status, showNodeResponse.status);
+        ShowNodeResponse that = (ShowNodeResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

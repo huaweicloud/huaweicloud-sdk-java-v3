@@ -35,15 +35,15 @@ public class UpdateLogGroupParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLogGroupParams updateLogGroupParams = (UpdateLogGroupParams) o;
-        return Objects.equals(this.ttlInDays, updateLogGroupParams.ttlInDays);
+        UpdateLogGroupParams that = (UpdateLogGroupParams) obj;
+        return Objects.equals(this.ttlInDays, that.ttlInDays);
     }
 
     @Override

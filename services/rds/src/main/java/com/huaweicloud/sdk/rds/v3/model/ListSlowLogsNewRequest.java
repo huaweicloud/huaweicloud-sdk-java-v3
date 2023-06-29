@@ -108,22 +108,15 @@ public class ListSlowLogsNewRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,21 +260,18 @@ public class ListSlowLogsNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSlowLogsNewRequest listSlowLogsNewRequest = (ListSlowLogsNewRequest) o;
-        return Objects.equals(this.xLanguage, listSlowLogsNewRequest.xLanguage)
-            && Objects.equals(this.instanceId, listSlowLogsNewRequest.instanceId)
-            && Objects.equals(this.startDate, listSlowLogsNewRequest.startDate)
-            && Objects.equals(this.endDate, listSlowLogsNewRequest.endDate)
-            && Objects.equals(this.offset, listSlowLogsNewRequest.offset)
-            && Objects.equals(this.limit, listSlowLogsNewRequest.limit)
-            && Objects.equals(this.type, listSlowLogsNewRequest.type);
+        ListSlowLogsNewRequest that = (ListSlowLogsNewRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

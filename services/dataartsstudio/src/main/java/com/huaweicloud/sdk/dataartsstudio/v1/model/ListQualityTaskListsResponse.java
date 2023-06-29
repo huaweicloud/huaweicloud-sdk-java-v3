@@ -78,17 +78,16 @@ public class ListQualityTaskListsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQualityTaskListsResponse listQualityTaskListsResponse = (ListQualityTaskListsResponse) o;
-        return Objects.equals(this.errorCode, listQualityTaskListsResponse.errorCode)
-            && Objects.equals(this.errorMsg, listQualityTaskListsResponse.errorMsg)
-            && Objects.equals(this.data, listQualityTaskListsResponse.data);
+        ListQualityTaskListsResponse that = (ListQualityTaskListsResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

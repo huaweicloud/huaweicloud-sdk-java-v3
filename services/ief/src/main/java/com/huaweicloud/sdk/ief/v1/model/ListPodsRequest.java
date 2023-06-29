@@ -165,20 +165,18 @@ public class ListPodsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPodsRequest listPodsRequest = (ListPodsRequest) o;
-        return Objects.equals(this.nodeId, listPodsRequest.nodeId)
-            && Objects.equals(this.groupId, listPodsRequest.groupId)
-            && Objects.equals(this.deploymentId, listPodsRequest.deploymentId)
-            && Objects.equals(this.deploymentIds, listPodsRequest.deploymentIds)
-            && Objects.equals(this.limit, listPodsRequest.limit) && Objects.equals(this.offset, listPodsRequest.offset)
-            && Objects.equals(this.iefInstanceId, listPodsRequest.iefInstanceId);
+        ListPodsRequest that = (ListPodsRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.deploymentIds, that.deploymentIds) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.iefInstanceId, that.iefInstanceId);
     }
 
     @Override

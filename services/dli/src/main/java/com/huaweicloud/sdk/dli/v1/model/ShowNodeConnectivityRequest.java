@@ -55,16 +55,15 @@ public class ShowNodeConnectivityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNodeConnectivityRequest showNodeConnectivityRequest = (ShowNodeConnectivityRequest) o;
-        return Objects.equals(this.queueName, showNodeConnectivityRequest.queueName)
-            && Objects.equals(this.taskId, showNodeConnectivityRequest.taskId);
+        ShowNodeConnectivityRequest that = (ShowNodeConnectivityRequest) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

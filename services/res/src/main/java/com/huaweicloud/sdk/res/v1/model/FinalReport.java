@@ -446,27 +446,27 @@ public class FinalReport {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinalReport finalReport = (FinalReport) o;
-        return Objects.equals(this.generatedTime, finalReport.generatedTime)
-            && Objects.equals(this.wideTableNum, finalReport.wideTableNum)
-            && Objects.equals(this.userCompleteDegree, finalReport.userCompleteDegree)
-            && Objects.equals(this.itemCompleteDegree, finalReport.itemCompleteDegree)
-            && Objects.equals(this.bhvCount, finalReport.bhvCount)
-            && Objects.equals(this.userLongFeatureReport, finalReport.userLongFeatureReport)
-            && Objects.equals(this.userFloatFeatureReport, finalReport.userFloatFeatureReport)
-            && Objects.equals(this.userStrFeatureReport, finalReport.userStrFeatureReport)
-            && Objects.equals(this.userStrArrayFeatureReport, finalReport.userStrArrayFeatureReport)
-            && Objects.equals(this.itemLongFeatureReport, finalReport.itemLongFeatureReport)
-            && Objects.equals(this.itemFloatFeatureReport, finalReport.itemFloatFeatureReport)
-            && Objects.equals(this.itemStrFeatureReport, finalReport.itemStrFeatureReport)
-            && Objects.equals(this.itemStrArrayFeatureReport, finalReport.itemStrArrayFeatureReport);
+        FinalReport that = (FinalReport) obj;
+        return Objects.equals(this.generatedTime, that.generatedTime)
+            && Objects.equals(this.wideTableNum, that.wideTableNum)
+            && Objects.equals(this.userCompleteDegree, that.userCompleteDegree)
+            && Objects.equals(this.itemCompleteDegree, that.itemCompleteDegree)
+            && Objects.equals(this.bhvCount, that.bhvCount)
+            && Objects.equals(this.userLongFeatureReport, that.userLongFeatureReport)
+            && Objects.equals(this.userFloatFeatureReport, that.userFloatFeatureReport)
+            && Objects.equals(this.userStrFeatureReport, that.userStrFeatureReport)
+            && Objects.equals(this.userStrArrayFeatureReport, that.userStrArrayFeatureReport)
+            && Objects.equals(this.itemLongFeatureReport, that.itemLongFeatureReport)
+            && Objects.equals(this.itemFloatFeatureReport, that.itemFloatFeatureReport)
+            && Objects.equals(this.itemStrFeatureReport, that.itemStrFeatureReport)
+            && Objects.equals(this.itemStrArrayFeatureReport, that.itemStrArrayFeatureReport);
     }
 
     @Override

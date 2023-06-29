@@ -117,18 +117,16 @@ public class CheckVerifyCodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckVerifyCodesRequest checkVerifyCodesRequest = (CheckVerifyCodesRequest) o;
-        return Objects.equals(this.xSite, checkVerifyCodesRequest.xSite)
-            && Objects.equals(this.xLanguage, checkVerifyCodesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, checkVerifyCodesRequest.xTimeZone)
-            && Objects.equals(this.body, checkVerifyCodesRequest.body);
+        CheckVerifyCodesRequest that = (CheckVerifyCodesRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone) && Objects.equals(this.body, that.body);
     }
 
     @Override

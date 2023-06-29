@@ -56,18 +56,16 @@ public class ListApplicationAttributesResponseBodyAttributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationAttributesResponseBodyAttributes listApplicationAttributesResponseBodyAttributes =
-            (ListApplicationAttributesResponseBodyAttributes) o;
-        return Objects.equals(this.enabled, listApplicationAttributesResponseBodyAttributes.enabled)
-            && Objects.equals(this.appleCertificateExpirationDate,
-                listApplicationAttributesResponseBodyAttributes.appleCertificateExpirationDate);
+        ListApplicationAttributesResponseBodyAttributes that = (ListApplicationAttributesResponseBodyAttributes) obj;
+        return Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.appleCertificateExpirationDate, that.appleCertificateExpirationDate);
     }
 
     @Override

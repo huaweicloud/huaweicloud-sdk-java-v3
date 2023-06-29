@@ -52,15 +52,15 @@ public class BackupSyncReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupSyncReq backupSyncReq = (BackupSyncReq) o;
-        return Objects.equals(this.sync, backupSyncReq.sync);
+        BackupSyncReq that = (BackupSyncReq) obj;
+        return Objects.equals(this.sync, that.sync);
     }
 
     @Override

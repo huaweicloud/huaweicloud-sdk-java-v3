@@ -231,24 +231,20 @@ public class QueryTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryTaskRequest queryTaskRequest = (QueryTaskRequest) o;
-        return Objects.equals(this.userName, queryTaskRequest.userName)
-            && Objects.equals(this.name, queryTaskRequest.name)
-            && Objects.equals(this.dataSourceType, queryTaskRequest.dataSourceType)
-            && Objects.equals(this.dataConnectionId, queryTaskRequest.dataConnectionId)
-            && Objects.equals(this.startTime, queryTaskRequest.startTime)
-            && Objects.equals(this.endTime, queryTaskRequest.endTime)
-            && Objects.equals(this.directoryId, queryTaskRequest.directoryId)
-            && Objects.equals(this.bucketName, queryTaskRequest.bucketName)
-            && Objects.equals(this.limit, queryTaskRequest.limit)
-            && Objects.equals(this.offset, queryTaskRequest.offset);
+        QueryTaskRequest that = (QueryTaskRequest) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dataSourceType, that.dataSourceType)
+            && Objects.equals(this.dataConnectionId, that.dataConnectionId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

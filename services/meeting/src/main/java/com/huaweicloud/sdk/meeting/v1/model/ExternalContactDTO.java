@@ -342,28 +342,23 @@ public class ExternalContactDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalContactDTO externalContactDTO = (ExternalContactDTO) o;
-        return Objects.equals(this.otherNumber, externalContactDTO.otherNumber)
-            && Objects.equals(this.otherNumberCountry, externalContactDTO.otherNumberCountry)
-            && Objects.equals(this.country, externalContactDTO.country)
-            && Objects.equals(this.phone, externalContactDTO.phone)
-            && Objects.equals(this.email, externalContactDTO.email)
-            && Objects.equals(this.corpName, externalContactDTO.corpName)
-            && Objects.equals(this.deptName, externalContactDTO.deptName)
-            && Objects.equals(this.position, externalContactDTO.position)
-            && Objects.equals(this.address, externalContactDTO.address)
-            && Objects.equals(this.remarks, externalContactDTO.remarks)
-            && Objects.equals(this.id, externalContactDTO.id) && Objects.equals(this.name, externalContactDTO.name)
-            && Objects.equals(this.customNumber, externalContactDTO.customNumber)
-            && Objects.equals(this.updateTime, externalContactDTO.updateTime)
-            && Objects.equals(this.type, externalContactDTO.type);
+        ExternalContactDTO that = (ExternalContactDTO) obj;
+        return Objects.equals(this.otherNumber, that.otherNumber)
+            && Objects.equals(this.otherNumberCountry, that.otherNumberCountry)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.corpName, that.corpName)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.remarks, that.remarks)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.customNumber, that.customNumber) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

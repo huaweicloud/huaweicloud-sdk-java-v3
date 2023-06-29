@@ -55,15 +55,15 @@ public class ContentHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentHeader contentHeader = (ContentHeader) o;
-        return Objects.equals(this.key, contentHeader.key) && Objects.equals(this.value, contentHeader.value);
+        ContentHeader that = (ContentHeader) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class ExtentionReqDataByNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtentionReqDataByNameAndId extentionReqDataByNameAndId = (ExtentionReqDataByNameAndId) o;
-        return Objects.equals(this.verificationName, extentionReqDataByNameAndId.verificationName)
-            && Objects.equals(this.verificationId, extentionReqDataByNameAndId.verificationId);
+        ExtentionReqDataByNameAndId that = (ExtentionReqDataByNameAndId) obj;
+        return Objects.equals(this.verificationName, that.verificationName)
+            && Objects.equals(this.verificationId, that.verificationId);
     }
 
     @Override

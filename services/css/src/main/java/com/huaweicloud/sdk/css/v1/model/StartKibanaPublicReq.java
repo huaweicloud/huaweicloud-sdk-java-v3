@@ -87,17 +87,16 @@ public class StartKibanaPublicReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartKibanaPublicReq startKibanaPublicReq = (StartKibanaPublicReq) o;
-        return Objects.equals(this.eipSize, startKibanaPublicReq.eipSize)
-            && Objects.equals(this.elbWhiteList, startKibanaPublicReq.elbWhiteList)
-            && Objects.equals(this.isAutoPay, startKibanaPublicReq.isAutoPay);
+        StartKibanaPublicReq that = (StartKibanaPublicReq) obj;
+        return Objects.equals(this.eipSize, that.eipSize) && Objects.equals(this.elbWhiteList, that.elbWhiteList)
+            && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

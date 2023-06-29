@@ -123,19 +123,18 @@ public class CreateComputingResourceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComputingResourceRequestBody createComputingResourceRequestBody = (CreateComputingResourceRequestBody) o;
-        return Objects.equals(this.computingResourceName, createComputingResourceRequestBody.computingResourceName)
-            && Objects.equals(this.computingResourceType, createComputingResourceRequestBody.computingResourceType)
-            && Objects.equals(this.description, createComputingResourceRequestBody.description)
-            && Objects.equals(this.cuCount, createComputingResourceRequestBody.cuCount)
-            && Objects.equals(this.chargingMode, createComputingResourceRequestBody.chargingMode);
+        CreateComputingResourceRequestBody that = (CreateComputingResourceRequestBody) obj;
+        return Objects.equals(this.computingResourceName, that.computingResourceName)
+            && Objects.equals(this.computingResourceType, that.computingResourceType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cuCount, that.cuCount)
+            && Objects.equals(this.chargingMode, that.chargingMode);
     }
 
     @Override

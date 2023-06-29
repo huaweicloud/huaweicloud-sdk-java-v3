@@ -149,17 +149,17 @@ public class IssueStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueStatus issueStatus = (IssueStatus) o;
-        return Objects.equals(this.id, issueStatus.id) && Objects.equals(this.statusId, issueStatus.statusId)
-            && Objects.equals(this.name, issueStatus.name) && Objects.equals(this.trackerIds, issueStatus.trackerIds)
-            && Objects.equals(this.statusAttribute, issueStatus.statusAttribute);
+        IssueStatus that = (IssueStatus) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.statusId, that.statusId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.trackerIds, that.trackerIds)
+            && Objects.equals(this.statusAttribute, that.statusAttribute);
     }
 
     @Override

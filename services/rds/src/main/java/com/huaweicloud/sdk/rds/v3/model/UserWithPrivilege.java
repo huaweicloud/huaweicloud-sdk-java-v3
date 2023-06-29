@@ -55,16 +55,15 @@ public class UserWithPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserWithPrivilege userWithPrivilege = (UserWithPrivilege) o;
-        return Objects.equals(this.name, userWithPrivilege.name)
-            && Objects.equals(this.readonly, userWithPrivilege.readonly);
+        UserWithPrivilege that = (UserWithPrivilege) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.readonly, that.readonly);
     }
 
     @Override

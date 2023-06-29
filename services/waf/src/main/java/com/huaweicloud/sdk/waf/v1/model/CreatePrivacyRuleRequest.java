@@ -87,17 +87,16 @@ public class CreatePrivacyRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivacyRuleRequest createPrivacyRuleRequest = (CreatePrivacyRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createPrivacyRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, createPrivacyRuleRequest.policyId)
-            && Objects.equals(this.body, createPrivacyRuleRequest.body);
+        CreatePrivacyRuleRequest that = (CreatePrivacyRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

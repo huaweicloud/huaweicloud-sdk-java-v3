@@ -143,20 +143,19 @@ public class AggregatedSourceStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregatedSourceStatus aggregatedSourceStatus = (AggregatedSourceStatus) o;
-        return Objects.equals(this.lastErrorCode, aggregatedSourceStatus.lastErrorCode)
-            && Objects.equals(this.lastErrorMessage, aggregatedSourceStatus.lastErrorMessage)
-            && Objects.equals(this.lastUpdateStatus, aggregatedSourceStatus.lastUpdateStatus)
-            && Objects.equals(this.lastUpdateTime, aggregatedSourceStatus.lastUpdateTime)
-            && Objects.equals(this.sourceId, aggregatedSourceStatus.sourceId)
-            && Objects.equals(this.sourceType, aggregatedSourceStatus.sourceType);
+        AggregatedSourceStatus that = (AggregatedSourceStatus) obj;
+        return Objects.equals(this.lastErrorCode, that.lastErrorCode)
+            && Objects.equals(this.lastErrorMessage, that.lastErrorMessage)
+            && Objects.equals(this.lastUpdateStatus, that.lastUpdateStatus)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.sourceType, that.sourceType);
     }
 
     @Override

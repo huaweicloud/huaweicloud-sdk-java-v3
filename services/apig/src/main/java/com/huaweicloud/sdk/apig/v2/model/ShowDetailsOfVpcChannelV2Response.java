@@ -87,22 +87,15 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BalanceStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BalanceStrategyEnum(value));
         }
 
         public static BalanceStrategyEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            BalanceStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,22 +162,15 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberTypeEnum(value));
         }
 
         public static MemberTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -271,22 +257,15 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -600,27 +579,22 @@ public class ShowDetailsOfVpcChannelV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfVpcChannelV2Response showDetailsOfVpcChannelV2Response = (ShowDetailsOfVpcChannelV2Response) o;
-        return Objects.equals(this.name, showDetailsOfVpcChannelV2Response.name)
-            && Objects.equals(this.port, showDetailsOfVpcChannelV2Response.port)
-            && Objects.equals(this.balanceStrategy, showDetailsOfVpcChannelV2Response.balanceStrategy)
-            && Objects.equals(this.memberType, showDetailsOfVpcChannelV2Response.memberType)
-            && Objects.equals(this.type, showDetailsOfVpcChannelV2Response.type)
-            && Objects.equals(this.dictCode, showDetailsOfVpcChannelV2Response.dictCode)
-            && Objects.equals(this.createTime, showDetailsOfVpcChannelV2Response.createTime)
-            && Objects.equals(this.id, showDetailsOfVpcChannelV2Response.id)
-            && Objects.equals(this.status, showDetailsOfVpcChannelV2Response.status)
-            && Objects.equals(this.memberGroups, showDetailsOfVpcChannelV2Response.memberGroups)
-            && Objects.equals(this.microserviceInfo, showDetailsOfVpcChannelV2Response.microserviceInfo)
-            && Objects.equals(this.members, showDetailsOfVpcChannelV2Response.members)
-            && Objects.equals(this.vpcHealthConfig, showDetailsOfVpcChannelV2Response.vpcHealthConfig);
+        ShowDetailsOfVpcChannelV2Response that = (ShowDetailsOfVpcChannelV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.balanceStrategy, that.balanceStrategy)
+            && Objects.equals(this.memberType, that.memberType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.memberGroups, that.memberGroups)
+            && Objects.equals(this.microserviceInfo, that.microserviceInfo)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.vpcHealthConfig, that.vpcHealthConfig);
     }
 
     @Override

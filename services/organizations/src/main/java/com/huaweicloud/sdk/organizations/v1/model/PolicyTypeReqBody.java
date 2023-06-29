@@ -60,22 +60,15 @@ public class PolicyTypeReqBody {
             if (value == null) {
                 return null;
             }
-            PolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PolicyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PolicyTypeEnum(value));
         }
 
         public static PolicyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class PolicyTypeReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyTypeReqBody policyTypeReqBody = (PolicyTypeReqBody) o;
-        return Objects.equals(this.policyType, policyTypeReqBody.policyType)
-            && Objects.equals(this.rootId, policyTypeReqBody.rootId);
+        PolicyTypeReqBody that = (PolicyTypeReqBody) obj;
+        return Objects.equals(this.policyType, that.policyType) && Objects.equals(this.rootId, that.rootId);
     }
 
     @Override

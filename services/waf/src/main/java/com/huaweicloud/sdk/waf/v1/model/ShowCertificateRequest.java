@@ -55,16 +55,16 @@ public class ShowCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificateRequest showCertificateRequest = (ShowCertificateRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showCertificateRequest.enterpriseProjectId)
-            && Objects.equals(this.certificateId, showCertificateRequest.certificateId);
+        ShowCertificateRequest that = (ShowCertificateRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.certificateId, that.certificateId);
     }
 
     @Override

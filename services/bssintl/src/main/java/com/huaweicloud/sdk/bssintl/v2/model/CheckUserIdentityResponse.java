@@ -78,17 +78,16 @@ public class CheckUserIdentityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckUserIdentityResponse checkUserIdentityResponse = (CheckUserIdentityResponse) o;
-        return Objects.equals(this.errorCode, checkUserIdentityResponse.errorCode)
-            && Objects.equals(this.errorMsg, checkUserIdentityResponse.errorMsg)
-            && Objects.equals(this.checkResult, checkUserIdentityResponse.checkResult);
+        CheckUserIdentityResponse that = (CheckUserIdentityResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.checkResult, that.checkResult);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class TimeFrame {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeFrame timeFrame = (TimeFrame) o;
-        return Objects.equals(this.start, timeFrame.start) && Objects.equals(this.stop, timeFrame.stop);
+        TimeFrame that = (TimeFrame) obj;
+        return Objects.equals(this.start, that.start) && Objects.equals(this.stop, that.stop);
     }
 
     @Override

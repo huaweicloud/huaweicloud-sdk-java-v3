@@ -69,22 +69,15 @@ public class RawTableView {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ViewTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewTypeEnum(value));
         }
 
         public static ViewTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -166,22 +159,15 @@ public class RawTableView {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableDirectionEnum(value));
         }
 
         public static TableDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,22 +445,20 @@ public class RawTableView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RawTableView rawTableView = (RawTableView) o;
-        return Objects.equals(this.viewType, rawTableView.viewType)
-            && Objects.equals(this.collectorName, rawTableView.collectorName)
-            && Objects.equals(this.metricSet, rawTableView.metricSet) && Objects.equals(this.title, rawTableView.title)
-            && Objects.equals(this.tableDirection, rawTableView.tableDirection)
-            && Objects.equals(this.groupBy, rawTableView.groupBy) && Objects.equals(this.filter, rawTableView.filter)
-            && Objects.equals(this.fieldItemList, rawTableView.fieldItemList)
-            && Objects.equals(this.span, rawTableView.span) && Objects.equals(this.spanField, rawTableView.spanField)
-            && Objects.equals(this.orderBy, rawTableView.orderBy) && Objects.equals(this.latest, rawTableView.latest);
+        RawTableView that = (RawTableView) obj;
+        return Objects.equals(this.viewType, that.viewType) && Objects.equals(this.collectorName, that.collectorName)
+            && Objects.equals(this.metricSet, that.metricSet) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.tableDirection, that.tableDirection) && Objects.equals(this.groupBy, that.groupBy)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.fieldItemList, that.fieldItemList)
+            && Objects.equals(this.span, that.span) && Objects.equals(this.spanField, that.spanField)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.latest, that.latest);
     }
 
     @Override

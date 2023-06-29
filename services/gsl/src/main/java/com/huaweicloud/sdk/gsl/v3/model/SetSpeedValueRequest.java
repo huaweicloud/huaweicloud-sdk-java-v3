@@ -66,16 +66,15 @@ public class SetSpeedValueRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetSpeedValueRequest setSpeedValueRequest = (SetSpeedValueRequest) o;
-        return Objects.equals(this.simCardId, setSpeedValueRequest.simCardId)
-            && Objects.equals(this.body, setSpeedValueRequest.body);
+        SetSpeedValueRequest that = (SetSpeedValueRequest) obj;
+        return Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.body, that.body);
     }
 
     @Override

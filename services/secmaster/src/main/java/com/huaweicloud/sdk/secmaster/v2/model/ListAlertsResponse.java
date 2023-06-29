@@ -215,22 +215,18 @@ public class ListAlertsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertsResponse listAlertsResponse = (ListAlertsResponse) o;
-        return Objects.equals(this.code, listAlertsResponse.code)
-            && Objects.equals(this.message, listAlertsResponse.message)
-            && Objects.equals(this.total, listAlertsResponse.total)
-            && Objects.equals(this.limit, listAlertsResponse.limit)
-            && Objects.equals(this.offset, listAlertsResponse.offset)
-            && Objects.equals(this.success, listAlertsResponse.success)
-            && Objects.equals(this.data, listAlertsResponse.data)
-            && Objects.equals(this.xRequestId, listAlertsResponse.xRequestId);
+        ListAlertsResponse that = (ListAlertsResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

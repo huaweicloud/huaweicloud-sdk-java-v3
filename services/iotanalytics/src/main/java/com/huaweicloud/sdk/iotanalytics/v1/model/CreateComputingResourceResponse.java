@@ -166,21 +166,20 @@ public class CreateComputingResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComputingResourceResponse createComputingResourceResponse = (CreateComputingResourceResponse) o;
-        return Objects.equals(this.computingResourceId, createComputingResourceResponse.computingResourceId)
-            && Objects.equals(this.computingResourceName, createComputingResourceResponse.computingResourceName)
-            && Objects.equals(this.computingResourceType, createComputingResourceResponse.computingResourceType)
-            && Objects.equals(this.description, createComputingResourceResponse.description)
-            && Objects.equals(this.cuCount, createComputingResourceResponse.cuCount)
-            && Objects.equals(this.chargingMode, createComputingResourceResponse.chargingMode)
-            && Objects.equals(this.createdTime, createComputingResourceResponse.createdTime);
+        CreateComputingResourceResponse that = (CreateComputingResourceResponse) obj;
+        return Objects.equals(this.computingResourceId, that.computingResourceId)
+            && Objects.equals(this.computingResourceName, that.computingResourceName)
+            && Objects.equals(this.computingResourceType, that.computingResourceType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cuCount, that.cuCount)
+            && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

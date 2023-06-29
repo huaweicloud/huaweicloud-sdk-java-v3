@@ -90,16 +90,15 @@ public class DeploymentResources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentResources deploymentResources = (DeploymentResources) o;
-        return Objects.equals(this.limits, deploymentResources.limits)
-            && Objects.equals(this.requests, deploymentResources.requests);
+        DeploymentResources that = (DeploymentResources) obj;
+        return Objects.equals(this.limits, that.limits) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

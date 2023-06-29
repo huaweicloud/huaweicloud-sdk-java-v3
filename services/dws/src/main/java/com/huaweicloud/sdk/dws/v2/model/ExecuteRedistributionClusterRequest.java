@@ -65,17 +65,15 @@ public class ExecuteRedistributionClusterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteRedistributionClusterRequest executeRedistributionClusterRequest =
-            (ExecuteRedistributionClusterRequest) o;
-        return Objects.equals(this.clusterId, executeRedistributionClusterRequest.clusterId)
-            && Objects.equals(this.body, executeRedistributionClusterRequest.body);
+        ExecuteRedistributionClusterRequest that = (ExecuteRedistributionClusterRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

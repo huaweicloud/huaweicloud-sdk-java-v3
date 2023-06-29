@@ -121,19 +121,17 @@ public class ListSubscriptionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubscriptionsRequest listSubscriptionsRequest = (ListSubscriptionsRequest) o;
-        return Objects.equals(this.offset, listSubscriptionsRequest.offset)
-            && Objects.equals(this.limit, listSubscriptionsRequest.limit)
-            && Objects.equals(this.protocol, listSubscriptionsRequest.protocol)
-            && Objects.equals(this.status, listSubscriptionsRequest.status)
-            && Objects.equals(this.endpoint, listSubscriptionsRequest.endpoint);
+        ListSubscriptionsRequest that = (ListSubscriptionsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.endpoint, that.endpoint);
     }
 
     @Override

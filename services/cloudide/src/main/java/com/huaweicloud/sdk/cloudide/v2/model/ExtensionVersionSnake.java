@@ -121,22 +121,15 @@ public class ExtensionVersionSnake {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,22 +238,15 @@ public class ExtensionVersionSnake {
             if (value == null) {
                 return null;
             }
-            VersionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VersionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VersionStatusEnum(value));
         }
 
         public static VersionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VersionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -371,22 +357,15 @@ public class ExtensionVersionSnake {
             if (value == null) {
                 return null;
             }
-            VersionValidateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VersionValidateStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VersionValidateStatusEnum(value));
         }
 
         public static VersionValidateStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VersionValidateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1052,43 +1031,32 @@ public class ExtensionVersionSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionVersionSnake extensionVersionSnake = (ExtensionVersionSnake) o;
-        return Objects.equals(this.id, extensionVersionSnake.id)
-            && Objects.equals(this.version, extensionVersionSnake.version)
-            && Objects.equals(this.versionRanking, extensionVersionSnake.versionRanking)
-            && Objects.equals(this.status, extensionVersionSnake.status)
-            && Objects.equals(this.versionStatus, extensionVersionSnake.versionStatus)
-            && Objects.equals(this.assetUri, extensionVersionSnake.assetUri)
-            && Objects.equals(this.lastUpdated, extensionVersionSnake.lastUpdated)
-            && Objects.equals(this.files, extensionVersionSnake.files)
-            && Objects.equals(this.validateMessage, extensionVersionSnake.validateMessage)
-            && Objects.equals(this.versionValidateStatus, extensionVersionSnake.versionValidateStatus)
-            && Objects.equals(this.displayName, extensionVersionSnake.displayName)
-            && Objects.equals(this.description, extensionVersionSnake.description)
-            && Objects.equals(this.minIdeVersion, extensionVersionSnake.minIdeVersion)
-            && Objects.equals(this.maxIdeVersion, extensionVersionSnake.maxIdeVersion)
-            && Objects.equals(this.versionDate, extensionVersionSnake.versionDate)
-            && Objects.equals(this.preview, extensionVersionSnake.preview)
-            && Objects.equals(this.extensionPack, extensionVersionSnake.extensionPack)
-            && Objects.equals(this.extensionDependencies, extensionVersionSnake.extensionDependencies)
-            && Objects.equals(this.createdAt, extensionVersionSnake.createdAt)
-            && Objects.equals(this.supportIde, extensionVersionSnake.supportIde)
-            && Objects.equals(this.repoUrl, extensionVersionSnake.repoUrl)
-            && Objects.equals(this.helpPage, extensionVersionSnake.helpPage)
-            && Objects.equals(this.website, extensionVersionSnake.website)
-            && Objects.equals(this.issueLink, extensionVersionSnake.issueLink)
-            && Objects.equals(this.assetSize, extensionVersionSnake.assetSize)
-            && Objects.equals(this.depends, extensionVersionSnake.depends)
-            && Objects.equals(this.propertyList, extensionVersionSnake.propertyList)
-            && Objects.equals(this.uploader, extensionVersionSnake.uploader)
-            && Objects.equals(this.extensionId, extensionVersionSnake.extensionId);
+        ExtensionVersionSnake that = (ExtensionVersionSnake) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.versionRanking, that.versionRanking) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.versionStatus, that.versionStatus) && Objects.equals(this.assetUri, that.assetUri)
+            && Objects.equals(this.lastUpdated, that.lastUpdated) && Objects.equals(this.files, that.files)
+            && Objects.equals(this.validateMessage, that.validateMessage)
+            && Objects.equals(this.versionValidateStatus, that.versionValidateStatus)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.minIdeVersion, that.minIdeVersion)
+            && Objects.equals(this.maxIdeVersion, that.maxIdeVersion)
+            && Objects.equals(this.versionDate, that.versionDate) && Objects.equals(this.preview, that.preview)
+            && Objects.equals(this.extensionPack, that.extensionPack)
+            && Objects.equals(this.extensionDependencies, that.extensionDependencies)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.supportIde, that.supportIde)
+            && Objects.equals(this.repoUrl, that.repoUrl) && Objects.equals(this.helpPage, that.helpPage)
+            && Objects.equals(this.website, that.website) && Objects.equals(this.issueLink, that.issueLink)
+            && Objects.equals(this.assetSize, that.assetSize) && Objects.equals(this.depends, that.depends)
+            && Objects.equals(this.propertyList, that.propertyList) && Objects.equals(this.uploader, that.uploader)
+            && Objects.equals(this.extensionId, that.extensionId);
     }
 
     @Override

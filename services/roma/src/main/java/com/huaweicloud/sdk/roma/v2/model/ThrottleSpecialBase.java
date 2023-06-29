@@ -122,19 +122,17 @@ public class ThrottleSpecialBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleSpecialBase throttleSpecialBase = (ThrottleSpecialBase) o;
-        return Objects.equals(this.id, throttleSpecialBase.id)
-            && Objects.equals(this.callLimits, throttleSpecialBase.callLimits)
-            && Objects.equals(this.applyTime, throttleSpecialBase.applyTime)
-            && Objects.equals(this.appName, throttleSpecialBase.appName)
-            && Objects.equals(this.appId, throttleSpecialBase.appId);
+        ThrottleSpecialBase that = (ThrottleSpecialBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.callLimits, that.callLimits)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

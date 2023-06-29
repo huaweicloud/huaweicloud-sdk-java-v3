@@ -77,16 +77,15 @@ public class ListRecordCallbackConfigsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordCallbackConfigsResponse listRecordCallbackConfigsResponse = (ListRecordCallbackConfigsResponse) o;
-        return Objects.equals(this.total, listRecordCallbackConfigsResponse.total)
-            && Objects.equals(this.callbackConfig, listRecordCallbackConfigsResponse.callbackConfig);
+        ListRecordCallbackConfigsResponse that = (ListRecordCallbackConfigsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.callbackConfig, that.callbackConfig);
     }
 
     @Override

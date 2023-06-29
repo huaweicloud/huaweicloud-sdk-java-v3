@@ -74,16 +74,15 @@ public class NtpConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NtpConfigs ntpConfigs = (NtpConfigs) o;
-        return Objects.equals(this.ntpEnabled, ntpConfigs.ntpEnabled)
-            && Objects.equals(this.ntpServers, ntpConfigs.ntpServers);
+        NtpConfigs that = (NtpConfigs) obj;
+        return Objects.equals(this.ntpEnabled, that.ntpEnabled) && Objects.equals(this.ntpServers, that.ntpServers);
     }
 
     @Override

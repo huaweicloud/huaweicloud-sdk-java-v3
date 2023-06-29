@@ -60,22 +60,15 @@ public class QueryMatchItem {
             if (value == null) {
                 return null;
             }
-            KeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeyEnum(value));
         }
 
         public static KeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,15 +130,15 @@ public class QueryMatchItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryMatchItem queryMatchItem = (QueryMatchItem) o;
-        return Objects.equals(this.key, queryMatchItem.key) && Objects.equals(this.value, queryMatchItem.value);
+        QueryMatchItem that = (QueryMatchItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

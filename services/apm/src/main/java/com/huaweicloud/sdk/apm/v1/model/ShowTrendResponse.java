@@ -75,16 +75,15 @@ public class ShowTrendResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTrendResponse showTrendResponse = (ShowTrendResponse) o;
-        return Objects.equals(this.lineList, showTrendResponse.lineList)
-            && Objects.equals(this.latestDataTime, showTrendResponse.latestDataTime);
+        ShowTrendResponse that = (ShowTrendResponse) obj;
+        return Objects.equals(this.lineList, that.lineList) && Objects.equals(this.latestDataTime, that.latestDataTime);
     }
 
     @Override

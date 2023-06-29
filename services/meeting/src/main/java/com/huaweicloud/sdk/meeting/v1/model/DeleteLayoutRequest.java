@@ -79,17 +79,16 @@ public class DeleteLayoutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLayoutRequest deleteLayoutRequest = (DeleteLayoutRequest) o;
-        return Objects.equals(this.conferenceID, deleteLayoutRequest.conferenceID)
-            && Objects.equals(this.uuID, deleteLayoutRequest.uuID)
-            && Objects.equals(this.xConferenceAuthorization, deleteLayoutRequest.xConferenceAuthorization);
+        DeleteLayoutRequest that = (DeleteLayoutRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.uuID, that.uuID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization);
     }
 
     @Override

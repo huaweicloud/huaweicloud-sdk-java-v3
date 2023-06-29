@@ -100,22 +100,15 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeywordsAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeywordsAlarmLevelEnum(value));
         }
 
         public static KeywordsAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,22 +192,15 @@ public class UpdateKeywordsAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeywordsAlarmSendCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeywordsAlarmSendCodeEnum(value));
         }
 
         public static KeywordsAlarmSendCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -544,30 +530,28 @@ public class UpdateKeywordsAlarmRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeywordsAlarmRuleRequestBody updateKeywordsAlarmRuleRequestBody = (UpdateKeywordsAlarmRuleRequestBody) o;
-        return Objects.equals(this.keywordsAlarmRuleId, updateKeywordsAlarmRuleRequestBody.keywordsAlarmRuleId)
-            && Objects.equals(this.keywordsAlarmRuleName, updateKeywordsAlarmRuleRequestBody.keywordsAlarmRuleName)
-            && Objects.equals(this.keywordsAlarmRuleDescription,
-                updateKeywordsAlarmRuleRequestBody.keywordsAlarmRuleDescription)
-            && Objects.equals(this.keywordsRequests, updateKeywordsAlarmRuleRequestBody.keywordsRequests)
-            && Objects.equals(this.frequency, updateKeywordsAlarmRuleRequestBody.frequency)
-            && Objects.equals(this.keywordsAlarmLevel, updateKeywordsAlarmRuleRequestBody.keywordsAlarmLevel)
-            && Objects.equals(this.keywordsAlarmSend, updateKeywordsAlarmRuleRequestBody.keywordsAlarmSend)
-            && Objects.equals(this.keywordsAlarmSendCode, updateKeywordsAlarmRuleRequestBody.keywordsAlarmSendCode)
-            && Objects.equals(this.domainId, updateKeywordsAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, updateKeywordsAlarmRuleRequestBody.notificationSaveRule)
-            && Objects.equals(this.triggerConditionCount, updateKeywordsAlarmRuleRequestBody.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency,
-                updateKeywordsAlarmRuleRequestBody.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, updateKeywordsAlarmRuleRequestBody.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, updateKeywordsAlarmRuleRequestBody.recoveryPolicy);
+        UpdateKeywordsAlarmRuleRequestBody that = (UpdateKeywordsAlarmRuleRequestBody) obj;
+        return Objects.equals(this.keywordsAlarmRuleId, that.keywordsAlarmRuleId)
+            && Objects.equals(this.keywordsAlarmRuleName, that.keywordsAlarmRuleName)
+            && Objects.equals(this.keywordsAlarmRuleDescription, that.keywordsAlarmRuleDescription)
+            && Objects.equals(this.keywordsRequests, that.keywordsRequests)
+            && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.keywordsAlarmLevel, that.keywordsAlarmLevel)
+            && Objects.equals(this.keywordsAlarmSend, that.keywordsAlarmSend)
+            && Objects.equals(this.keywordsAlarmSendCode, that.keywordsAlarmSendCode)
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.notificationSaveRule, that.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

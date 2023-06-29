@@ -107,18 +107,17 @@ public class FepParamDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FepParamDto fepParamDto = (FepParamDto) o;
-        return Objects.equals(this.numPreEquilibriumSteps, fepParamDto.numPreEquilibriumSteps)
-            && Objects.equals(this.numEquilibriumSteps, fepParamDto.numEquilibriumSteps)
-            && Objects.equals(this.timestepSize, fepParamDto.timestepSize)
-            && Objects.equals(this.numLambda, fepParamDto.numLambda);
+        FepParamDto that = (FepParamDto) obj;
+        return Objects.equals(this.numPreEquilibriumSteps, that.numPreEquilibriumSteps)
+            && Objects.equals(this.numEquilibriumSteps, that.numEquilibriumSteps)
+            && Objects.equals(this.timestepSize, that.timestepSize) && Objects.equals(this.numLambda, that.numLambda);
     }
 
     @Override

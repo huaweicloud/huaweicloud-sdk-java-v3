@@ -55,16 +55,15 @@ public class ShowDeviceTwinRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceTwinRequest showDeviceTwinRequest = (ShowDeviceTwinRequest) o;
-        return Objects.equals(this.iefInstanceId, showDeviceTwinRequest.iefInstanceId)
-            && Objects.equals(this.deviceId, showDeviceTwinRequest.deviceId);
+        ShowDeviceTwinRequest that = (ShowDeviceTwinRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class BlockPage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BlockPage blockPage = (BlockPage) o;
-        return Objects.equals(this.template, blockPage.template)
-            && Objects.equals(this.customPage, blockPage.customPage)
-            && Objects.equals(this.redirectUrl, blockPage.redirectUrl);
+        BlockPage that = (BlockPage) obj;
+        return Objects.equals(this.template, that.template) && Objects.equals(this.customPage, that.customPage)
+            && Objects.equals(this.redirectUrl, that.redirectUrl);
     }
 
     @Override

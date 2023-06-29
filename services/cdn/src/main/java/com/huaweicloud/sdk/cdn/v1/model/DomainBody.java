@@ -80,22 +80,15 @@ public class DomainBody {
             if (value == null) {
                 return null;
             }
-            BusinessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BusinessTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BusinessTypeEnum(value));
         }
 
         public static BusinessTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BusinessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -123,8 +116,8 @@ public class DomainBody {
     private List<Sources> sources = null;
 
     /**
-    * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
-    */
+     * 域名服务范围，若为mainland_china，则表示服务范围为中国大陆；若为outside_mainland_china，则表示服务范围为中国大陆境外；若为global，则表示服务范围为全球。
+     */
     public static final class ServiceAreaEnum {
 
         /**
@@ -173,22 +166,15 @@ public class DomainBody {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceAreaEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceAreaEnum(value));
         }
 
         public static ServiceAreaEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -317,19 +303,17 @@ public class DomainBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainBody domainBody = (DomainBody) o;
-        return Objects.equals(this.domainName, domainBody.domainName)
-            && Objects.equals(this.businessType, domainBody.businessType)
-            && Objects.equals(this.sources, domainBody.sources)
-            && Objects.equals(this.serviceArea, domainBody.serviceArea)
-            && Objects.equals(this.enterpriseProjectId, domainBody.enterpriseProjectId);
+        DomainBody that = (DomainBody) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class ShowAutoLaunchGroupResp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,16 @@ public class ShowAutoLaunchGroupResp {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExcessFulfilledCapacityBehaviorEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ExcessFulfilledCapacityBehaviorEnum(value));
         }
 
         public static ExcessFulfilledCapacityBehaviorEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExcessFulfilledCapacityBehaviorEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,22 +254,16 @@ public class ShowAutoLaunchGroupResp {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstancesBehaviorWithExpirationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstancesBehaviorWithExpirationEnum(value));
         }
 
         public static InstancesBehaviorWithExpirationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstancesBehaviorWithExpirationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,8 +301,8 @@ public class ShowAutoLaunchGroupResp {
     private List<RegionSpec> regionSpecs = null;
 
     /**
-    * 实例分配策略，枚举值 lowest_price：价格最低策略，智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略，按照规格设定的优先级创建实例。 capacity_optimized：容量最优化策略，智能购买组购买的实例按照大规格优先进行购买。
-    */
+     * 实例分配策略，枚举值 lowest_price：价格最低策略，智能购买组购买的所有实例的价格总和最低。 prioritized：优先级策略，按照规格设定的优先级创建实例。 capacity_optimized：容量最优化策略，智能购买组购买的实例按照大规格优先进行购买。
+     */
     public static final class AllocationStrategyEnum {
 
         /**
@@ -377,22 +358,15 @@ public class ShowAutoLaunchGroupResp {
             if (value == null) {
                 return null;
             }
-            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AllocationStrategyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AllocationStrategyEnum(value));
         }
 
         public static AllocationStrategyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AllocationStrategyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -727,32 +701,26 @@ public class ShowAutoLaunchGroupResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoLaunchGroupResp showAutoLaunchGroupResp = (ShowAutoLaunchGroupResp) o;
-        return Objects.equals(this.name, showAutoLaunchGroupResp.name)
-            && Objects.equals(this.type, showAutoLaunchGroupResp.type)
-            && Objects.equals(this.status, showAutoLaunchGroupResp.status)
-            && Objects.equals(this.taskState, showAutoLaunchGroupResp.taskState)
-            && Objects.equals(this.targetCapacity, showAutoLaunchGroupResp.targetCapacity)
-            && Objects.equals(this.stableCapacity, showAutoLaunchGroupResp.stableCapacity)
-            && Objects.equals(this.currentCapacity, showAutoLaunchGroupResp.currentCapacity)
-            && Objects.equals(this.currentStableCapacity, showAutoLaunchGroupResp.currentStableCapacity)
-            && Objects.equals(this.excessFulfilledCapacityBehavior,
-                showAutoLaunchGroupResp.excessFulfilledCapacityBehavior)
-            && Objects.equals(this.instancesBehaviorWithExpiration,
-                showAutoLaunchGroupResp.instancesBehaviorWithExpiration)
-            && Objects.equals(this.validSince, showAutoLaunchGroupResp.validSince)
-            && Objects.equals(this.validUntil, showAutoLaunchGroupResp.validUntil)
-            && Objects.equals(this.regionSpecs, showAutoLaunchGroupResp.regionSpecs)
-            && Objects.equals(this.allocationStrategy, showAutoLaunchGroupResp.allocationStrategy)
-            && Objects.equals(this.spotPrice, showAutoLaunchGroupResp.spotPrice)
-            && Objects.equals(this.createdAt, showAutoLaunchGroupResp.createdAt);
+        ShowAutoLaunchGroupResp that = (ShowAutoLaunchGroupResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.taskState, that.taskState)
+            && Objects.equals(this.targetCapacity, that.targetCapacity)
+            && Objects.equals(this.stableCapacity, that.stableCapacity)
+            && Objects.equals(this.currentCapacity, that.currentCapacity)
+            && Objects.equals(this.currentStableCapacity, that.currentStableCapacity)
+            && Objects.equals(this.excessFulfilledCapacityBehavior, that.excessFulfilledCapacityBehavior)
+            && Objects.equals(this.instancesBehaviorWithExpiration, that.instancesBehaviorWithExpiration)
+            && Objects.equals(this.validSince, that.validSince) && Objects.equals(this.validUntil, that.validUntil)
+            && Objects.equals(this.regionSpecs, that.regionSpecs)
+            && Objects.equals(this.allocationStrategy, that.allocationStrategy)
+            && Objects.equals(this.spotPrice, that.spotPrice) && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

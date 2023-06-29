@@ -59,16 +59,16 @@ public class PostPaidServerDataVolumeMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerDataVolumeMetadata postPaidServerDataVolumeMetadata = (PostPaidServerDataVolumeMetadata) o;
-        return Objects.equals(this.systemEncrypted, postPaidServerDataVolumeMetadata.systemEncrypted)
-            && Objects.equals(this.systemCmkid, postPaidServerDataVolumeMetadata.systemCmkid);
+        PostPaidServerDataVolumeMetadata that = (PostPaidServerDataVolumeMetadata) obj;
+        return Objects.equals(this.systemEncrypted, that.systemEncrypted)
+            && Objects.equals(this.systemCmkid, that.systemCmkid);
     }
 
     @Override

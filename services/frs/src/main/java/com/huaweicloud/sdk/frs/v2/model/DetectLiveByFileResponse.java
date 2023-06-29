@@ -84,16 +84,15 @@ public class DetectLiveByFileResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveByFileResponse detectLiveByFileResponse = (DetectLiveByFileResponse) o;
-        return Objects.equals(this.videoResult, detectLiveByFileResponse.videoResult)
-            && Objects.equals(this.warningList, detectLiveByFileResponse.warningList);
+        DetectLiveByFileResponse that = (DetectLiveByFileResponse) obj;
+        return Objects.equals(this.videoResult, that.videoResult) && Objects.equals(this.warningList, that.warningList);
     }
 
     @Override

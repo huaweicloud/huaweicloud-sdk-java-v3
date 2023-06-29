@@ -187,22 +187,18 @@ public class ListRelationTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationTableRequest listRelationTableRequest = (ListRelationTableRequest) o;
-        return Objects.equals(this.jobId, listRelationTableRequest.jobId)
-            && Objects.equals(this.dbId, listRelationTableRequest.dbId)
-            && Objects.equals(this.assetsName, listRelationTableRequest.assetsName)
-            && Objects.equals(this.riskStart, listRelationTableRequest.riskStart)
-            && Objects.equals(this.riskEnd, listRelationTableRequest.riskEnd)
-            && Objects.equals(this.offset, listRelationTableRequest.offset)
-            && Objects.equals(this.size, listRelationTableRequest.size)
-            && Objects.equals(this.limit, listRelationTableRequest.limit);
+        ListRelationTableRequest that = (ListRelationTableRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.dbId, that.dbId)
+            && Objects.equals(this.assetsName, that.assetsName) && Objects.equals(this.riskStart, that.riskStart)
+            && Objects.equals(this.riskEnd, that.riskEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

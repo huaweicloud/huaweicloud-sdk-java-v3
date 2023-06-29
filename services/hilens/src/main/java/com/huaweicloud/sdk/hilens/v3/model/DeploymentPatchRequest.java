@@ -65,16 +65,15 @@ public class DeploymentPatchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentPatchRequest deploymentPatchRequest = (DeploymentPatchRequest) o;
-        return Objects.equals(this.version, deploymentPatchRequest.version)
-            && Objects.equals(this.patch, deploymentPatchRequest.patch);
+        DeploymentPatchRequest that = (DeploymentPatchRequest) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.patch, that.patch);
     }
 
     @Override

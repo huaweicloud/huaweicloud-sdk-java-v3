@@ -129,19 +129,17 @@ public class ListTtsaJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTtsaJobsRequest listTtsaJobsRequest = (ListTtsaJobsRequest) o;
-        return Objects.equals(this.authorization, listTtsaJobsRequest.authorization)
-            && Objects.equals(this.xSdkDate, listTtsaJobsRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listTtsaJobsRequest.xProjectId)
-            && Objects.equals(this.offset, listTtsaJobsRequest.offset)
-            && Objects.equals(this.limit, listTtsaJobsRequest.limit);
+        ListTtsaJobsRequest that = (ListTtsaJobsRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

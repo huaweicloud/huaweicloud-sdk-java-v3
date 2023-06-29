@@ -74,16 +74,15 @@ public class PolicyTriggerPropertiesResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyTriggerPropertiesResp policyTriggerPropertiesResp = (PolicyTriggerPropertiesResp) o;
-        return Objects.equals(this.pattern, policyTriggerPropertiesResp.pattern)
-            && Objects.equals(this.startTime, policyTriggerPropertiesResp.startTime);
+        PolicyTriggerPropertiesResp that = (PolicyTriggerPropertiesResp) obj;
+        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.startTime, that.startTime);
     }
 
     @Override

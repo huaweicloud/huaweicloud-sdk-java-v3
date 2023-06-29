@@ -188,21 +188,18 @@ public class ListRtcHistoryScaleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcHistoryScaleRequest listRtcHistoryScaleRequest = (ListRtcHistoryScaleRequest) o;
-        return Objects.equals(this.authorization, listRtcHistoryScaleRequest.authorization)
-            && Objects.equals(this.xSdkDate, listRtcHistoryScaleRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listRtcHistoryScaleRequest.xProjectId)
-            && Objects.equals(this.app, listRtcHistoryScaleRequest.app)
-            && Objects.equals(this.metric, listRtcHistoryScaleRequest.metric)
-            && Objects.equals(this.startDate, listRtcHistoryScaleRequest.startDate)
-            && Objects.equals(this.endDate, listRtcHistoryScaleRequest.endDate);
+        ListRtcHistoryScaleRequest that = (ListRtcHistoryScaleRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.metric, that.metric) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate);
     }
 
     @Override

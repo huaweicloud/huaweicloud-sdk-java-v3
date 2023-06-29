@@ -215,23 +215,19 @@ public class ShowDomainStatsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainStatsRequest showDomainStatsRequest = (ShowDomainStatsRequest) o;
-        return Objects.equals(this.action, showDomainStatsRequest.action)
-            && Objects.equals(this.startTime, showDomainStatsRequest.startTime)
-            && Objects.equals(this.endTime, showDomainStatsRequest.endTime)
-            && Objects.equals(this.domainName, showDomainStatsRequest.domainName)
-            && Objects.equals(this.statType, showDomainStatsRequest.statType)
-            && Objects.equals(this.interval, showDomainStatsRequest.interval)
-            && Objects.equals(this.groupBy, showDomainStatsRequest.groupBy)
-            && Objects.equals(this.serviceArea, showDomainStatsRequest.serviceArea)
-            && Objects.equals(this.enterpriseProjectId, showDomainStatsRequest.enterpriseProjectId);
+        ShowDomainStatsRequest that = (ShowDomainStatsRequest) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.statType, that.statType) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.serviceArea, that.serviceArea)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

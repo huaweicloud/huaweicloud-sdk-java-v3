@@ -78,22 +78,15 @@ public class CreateVirtualInterface {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,22 +165,15 @@ public class CreateVirtualInterface {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -294,22 +280,15 @@ public class CreateVirtualInterface {
             if (value == null) {
                 return null;
             }
-            RouteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RouteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RouteModeEnum(value));
         }
 
         public static RouteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RouteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -844,38 +823,30 @@ public class CreateVirtualInterface {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVirtualInterface createVirtualInterface = (CreateVirtualInterface) o;
-        return Objects.equals(this.name, createVirtualInterface.name)
-            && Objects.equals(this.description, createVirtualInterface.description)
-            && Objects.equals(this.directConnectId, createVirtualInterface.directConnectId)
-            && Objects.equals(this.type, createVirtualInterface.type)
-            && Objects.equals(this.serviceType, createVirtualInterface.serviceType)
-            && Objects.equals(this.vlan, createVirtualInterface.vlan)
-            && Objects.equals(this.bandwidth, createVirtualInterface.bandwidth)
-            && Objects.equals(this.localGatewayV4Ip, createVirtualInterface.localGatewayV4Ip)
-            && Objects.equals(this.remoteGatewayV4Ip, createVirtualInterface.remoteGatewayV4Ip)
-            && Objects.equals(this.addressFamily, createVirtualInterface.addressFamily)
-            && Objects.equals(this.localGatewayV6Ip, createVirtualInterface.localGatewayV6Ip)
-            && Objects.equals(this.remoteGatewayV6Ip, createVirtualInterface.remoteGatewayV6Ip)
-            && Objects.equals(this.vgwId, createVirtualInterface.vgwId)
-            && Objects.equals(this.routeMode, createVirtualInterface.routeMode)
-            && Objects.equals(this.bgpAsn, createVirtualInterface.bgpAsn)
-            && Objects.equals(this.bgpMd5, createVirtualInterface.bgpMd5)
-            && Objects.equals(this.remoteEpGroup, createVirtualInterface.remoteEpGroup)
-            && Objects.equals(this.serviceEpGroup, createVirtualInterface.serviceEpGroup)
-            && Objects.equals(this.enableBfd, createVirtualInterface.enableBfd)
-            && Objects.equals(this.enableNqa, createVirtualInterface.enableNqa)
-            && Objects.equals(this.lagId, createVirtualInterface.lagId)
-            && Objects.equals(this.resourceTenantId, createVirtualInterface.resourceTenantId)
-            && Objects.equals(this.enterpriseProjectId, createVirtualInterface.enterpriseProjectId)
-            && Objects.equals(this.tags, createVirtualInterface.tags);
+        CreateVirtualInterface that = (CreateVirtualInterface) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.directConnectId, that.directConnectId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.vlan, that.vlan)
+            && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.localGatewayV4Ip, that.localGatewayV4Ip)
+            && Objects.equals(this.remoteGatewayV4Ip, that.remoteGatewayV4Ip)
+            && Objects.equals(this.addressFamily, that.addressFamily)
+            && Objects.equals(this.localGatewayV6Ip, that.localGatewayV6Ip)
+            && Objects.equals(this.remoteGatewayV6Ip, that.remoteGatewayV6Ip) && Objects.equals(this.vgwId, that.vgwId)
+            && Objects.equals(this.routeMode, that.routeMode) && Objects.equals(this.bgpAsn, that.bgpAsn)
+            && Objects.equals(this.bgpMd5, that.bgpMd5) && Objects.equals(this.remoteEpGroup, that.remoteEpGroup)
+            && Objects.equals(this.serviceEpGroup, that.serviceEpGroup)
+            && Objects.equals(this.enableBfd, that.enableBfd) && Objects.equals(this.enableNqa, that.enableNqa)
+            && Objects.equals(this.lagId, that.lagId) && Objects.equals(this.resourceTenantId, that.resourceTenantId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,10 +11,8 @@ import java.util.Objects;
  */
 public class ShowBalanceStatusResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="balanced")
-    
+    @JsonProperty(value = "balanced")
 
     private Boolean balanced;
 
@@ -30,9 +20,6 @@ public class ShowBalanceStatusResponse extends SdkResponse {
         this.balanced = balanced;
         return this;
     }
-
-    
-
 
     /**
      * 平衡状态。
@@ -46,23 +33,23 @@ public class ShowBalanceStatusResponse extends SdkResponse {
         this.balanced = balanced;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBalanceStatusResponse showBalanceStatusResponse = (ShowBalanceStatusResponse) o;
-        return Objects.equals(this.balanced, showBalanceStatusResponse.balanced);
+        ShowBalanceStatusResponse that = (ShowBalanceStatusResponse) obj;
+        return Objects.equals(this.balanced, that.balanced);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(balanced);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -71,6 +58,7 @@ public class ShowBalanceStatusResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -81,8 +69,5 @@ public class ShowBalanceStatusResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -66,16 +66,15 @@ public class CreateInstanceBy3rdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceBy3rdResponse createInstanceBy3rdResponse = (CreateInstanceBy3rdResponse) o;
-        return Objects.equals(this.result, createInstanceBy3rdResponse.result)
-            && Objects.equals(this.status, createInstanceBy3rdResponse.status);
+        CreateInstanceBy3rdResponse that = (CreateInstanceBy3rdResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

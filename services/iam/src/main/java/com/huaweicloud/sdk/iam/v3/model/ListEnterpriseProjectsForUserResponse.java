@@ -56,16 +56,15 @@ public class ListEnterpriseProjectsForUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseProjectsForUserResponse listEnterpriseProjectsForUserResponse =
-            (ListEnterpriseProjectsForUserResponse) o;
-        return Objects.equals(this.enterpriseProjects, listEnterpriseProjectsForUserResponse.enterpriseProjects);
+        ListEnterpriseProjectsForUserResponse that = (ListEnterpriseProjectsForUserResponse) obj;
+        return Objects.equals(this.enterpriseProjects, that.enterpriseProjects);
     }
 
     @Override

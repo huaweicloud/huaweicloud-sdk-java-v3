@@ -53,15 +53,15 @@ public class ImportBackupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportBackupResponse importBackupResponse = (ImportBackupResponse) o;
-        return Objects.equals(this.sync, importBackupResponse.sync);
+        ImportBackupResponse that = (ImportBackupResponse) obj;
+        return Objects.equals(this.sync, that.sync);
     }
 
     @Override

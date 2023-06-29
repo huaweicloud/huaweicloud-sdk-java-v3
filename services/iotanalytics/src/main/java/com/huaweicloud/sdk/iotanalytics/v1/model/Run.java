@@ -70,22 +70,15 @@ public class Run {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -317,20 +310,20 @@ public class Run {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Run run = (Run) o;
-        return Objects.equals(this.runId, run.runId) && Objects.equals(this.jobId, run.jobId)
-            && Objects.equals(this.jobName, run.jobName) && Objects.equals(this.jobType, run.jobType)
-            && Objects.equals(this.startTime, run.startTime) && Objects.equals(this.duration, run.duration)
-            && Objects.equals(this.status, run.status) && Objects.equals(this.isScheduleJob, run.isScheduleJob)
-            && Objects.equals(this.computingResourceName, run.computingResourceName)
-            && Objects.equals(this.sqlJob, run.sqlJob);
+        Run that = (Run) obj;
+        return Objects.equals(this.runId, that.runId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.isScheduleJob, that.isScheduleJob)
+            && Objects.equals(this.computingResourceName, that.computingResourceName)
+            && Objects.equals(this.sqlJob, that.sqlJob);
     }
 
     @Override

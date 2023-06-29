@@ -61,22 +61,15 @@ public class CancelTasksResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InfoCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InfoCodeEnum(value));
         }
 
         public static InfoCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -109,7 +102,7 @@ public class CancelTasksResponse extends SdkResponse {
     private String taskId;
 
     /**
-     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * ready - 已就绪，排队中   * failure - 失败 
      */
     public static final class TaskStatusEnum {
 
@@ -134,6 +127,11 @@ public class CancelTasksResponse extends SdkResponse {
         public static final TaskStatusEnum WAITING = new TaskStatusEnum("waiting");
 
         /**
+         * Enum READY for value: "ready"
+         */
+        public static final TaskStatusEnum READY = new TaskStatusEnum("ready");
+
+        /**
          * Enum FAILURE for value: "failure"
          */
         public static final TaskStatusEnum FAILURE = new TaskStatusEnum("failure");
@@ -146,6 +144,7 @@ public class CancelTasksResponse extends SdkResponse {
             map.put("success", SUCCESS);
             map.put("canceled", CANCELED);
             map.put("waiting", WAITING);
+            map.put("ready", READY);
             map.put("failure", FAILURE);
             return Collections.unmodifiableMap(map);
         }
@@ -171,22 +170,15 @@ public class CancelTasksResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskStatusEnum(value));
         }
 
         public static TaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,7 +257,7 @@ public class CancelTasksResponse extends SdkResponse {
     }
 
     /**
-     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * ready - 已就绪，排队中   * failure - 失败 
      * @return taskStatus
      */
     public TaskStatusEnum getTaskStatus() {
@@ -277,18 +269,17 @@ public class CancelTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelTasksResponse cancelTasksResponse = (CancelTasksResponse) o;
-        return Objects.equals(this.infoCode, cancelTasksResponse.infoCode)
-            && Objects.equals(this.infoDescription, cancelTasksResponse.infoDescription)
-            && Objects.equals(this.taskId, cancelTasksResponse.taskId)
-            && Objects.equals(this.taskStatus, cancelTasksResponse.taskStatus);
+        CancelTasksResponse that = (CancelTasksResponse) obj;
+        return Objects.equals(this.infoCode, that.infoCode)
+            && Objects.equals(this.infoDescription, that.infoDescription) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskStatus, that.taskStatus);
     }
 
     @Override

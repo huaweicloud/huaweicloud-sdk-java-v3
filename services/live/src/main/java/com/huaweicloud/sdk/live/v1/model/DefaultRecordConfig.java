@@ -176,19 +176,17 @@ public class DefaultRecordConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefaultRecordConfig defaultRecordConfig = (DefaultRecordConfig) o;
-        return Objects.equals(this.recordFormat, defaultRecordConfig.recordFormat)
-            && Objects.equals(this.obsAddr, defaultRecordConfig.obsAddr)
-            && Objects.equals(this.hlsConfig, defaultRecordConfig.hlsConfig)
-            && Objects.equals(this.flvConfig, defaultRecordConfig.flvConfig)
-            && Objects.equals(this.mp4Config, defaultRecordConfig.mp4Config);
+        DefaultRecordConfig that = (DefaultRecordConfig) obj;
+        return Objects.equals(this.recordFormat, that.recordFormat) && Objects.equals(this.obsAddr, that.obsAddr)
+            && Objects.equals(this.hlsConfig, that.hlsConfig) && Objects.equals(this.flvConfig, that.flvConfig)
+            && Objects.equals(this.mp4Config, that.mp4Config);
     }
 
     @Override

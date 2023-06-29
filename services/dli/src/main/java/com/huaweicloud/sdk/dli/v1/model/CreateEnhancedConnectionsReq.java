@@ -216,21 +216,18 @@ public class CreateEnhancedConnectionsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEnhancedConnectionsReq createEnhancedConnectionsReq = (CreateEnhancedConnectionsReq) o;
-        return Objects.equals(this.name, createEnhancedConnectionsReq.name)
-            && Objects.equals(this.destVpcId, createEnhancedConnectionsReq.destVpcId)
-            && Objects.equals(this.destNetworkId, createEnhancedConnectionsReq.destNetworkId)
-            && Objects.equals(this.queues, createEnhancedConnectionsReq.queues)
-            && Objects.equals(this.hosts, createEnhancedConnectionsReq.hosts)
-            && Objects.equals(this.routetableId, createEnhancedConnectionsReq.routetableId)
-            && Objects.equals(this.tags, createEnhancedConnectionsReq.tags);
+        CreateEnhancedConnectionsReq that = (CreateEnhancedConnectionsReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.destVpcId, that.destVpcId)
+            && Objects.equals(this.destNetworkId, that.destNetworkId) && Objects.equals(this.queues, that.queues)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.routetableId, that.routetableId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

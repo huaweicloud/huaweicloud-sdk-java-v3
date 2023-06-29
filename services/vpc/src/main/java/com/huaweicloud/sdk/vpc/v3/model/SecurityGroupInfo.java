@@ -207,21 +207,19 @@ public class SecurityGroupInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityGroupInfo securityGroupInfo = (SecurityGroupInfo) o;
-        return Objects.equals(this.id, securityGroupInfo.id) && Objects.equals(this.name, securityGroupInfo.name)
-            && Objects.equals(this.description, securityGroupInfo.description)
-            && Objects.equals(this.projectId, securityGroupInfo.projectId)
-            && Objects.equals(this.createdAt, securityGroupInfo.createdAt)
-            && Objects.equals(this.updatedAt, securityGroupInfo.updatedAt)
-            && Objects.equals(this.enterpriseProjectId, securityGroupInfo.enterpriseProjectId)
-            && Objects.equals(this.securityGroupRules, securityGroupInfo.securityGroupRules);
+        SecurityGroupInfo that = (SecurityGroupInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.securityGroupRules, that.securityGroupRules);
     }
 
     @Override

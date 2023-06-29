@@ -253,24 +253,21 @@ public class ProductSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductSummary productSummary = (ProductSummary) o;
-        return Objects.equals(this.appId, productSummary.appId) && Objects.equals(this.appName, productSummary.appName)
-            && Objects.equals(this.productId, productSummary.productId)
-            && Objects.equals(this.name, productSummary.name)
-            && Objects.equals(this.deviceType, productSummary.deviceType)
-            && Objects.equals(this.protocolType, productSummary.protocolType)
-            && Objects.equals(this.dataFormat, productSummary.dataFormat)
-            && Objects.equals(this.manufacturerName, productSummary.manufacturerName)
-            && Objects.equals(this.industry, productSummary.industry)
-            && Objects.equals(this.description, productSummary.description)
-            && Objects.equals(this.createTime, productSummary.createTime);
+        ProductSummary that = (ProductSummary) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.dataFormat, that.dataFormat)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.industry, that.industry) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

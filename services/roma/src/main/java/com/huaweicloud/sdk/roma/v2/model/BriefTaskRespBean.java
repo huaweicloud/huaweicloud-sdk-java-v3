@@ -71,22 +71,15 @@ public class BriefTaskRespBean {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class BriefTaskRespBean {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -505,29 +491,25 @@ public class BriefTaskRespBean {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BriefTaskRespBean briefTaskRespBean = (BriefTaskRespBean) o;
-        return Objects.equals(this.taskId, briefTaskRespBean.taskId)
-            && Objects.equals(this.taskName, briefTaskRespBean.taskName)
-            && Objects.equals(this.taskType, briefTaskRespBean.taskType)
-            && Objects.equals(this.status, briefTaskRespBean.status)
-            && Objects.equals(this.createdDate, briefTaskRespBean.createdDate)
-            && Objects.equals(this.version, briefTaskRespBean.version)
-            && Objects.equals(this.lastModifiedTime, briefTaskRespBean.lastModifiedTime)
-            && Objects.equals(this.executeStatus, briefTaskRespBean.executeStatus)
-            && Objects.equals(this.sourceAppId, briefTaskRespBean.sourceAppId)
-            && Objects.equals(this.targetAppId, briefTaskRespBean.targetAppId)
-            && Objects.equals(this.sourceInstanceId, briefTaskRespBean.sourceInstanceId)
-            && Objects.equals(this.targetInstanceId, briefTaskRespBean.targetInstanceId)
-            && Objects.equals(this.extType, briefTaskRespBean.extType)
-            && Objects.equals(this.enterpriseProjectId, briefTaskRespBean.enterpriseProjectId)
-            && Objects.equals(this.taskTag, briefTaskRespBean.taskTag);
+        BriefTaskRespBean that = (BriefTaskRespBean) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdDate, that.createdDate) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.executeStatus, that.executeStatus)
+            && Objects.equals(this.sourceAppId, that.sourceAppId) && Objects.equals(this.targetAppId, that.targetAppId)
+            && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
+            && Objects.equals(this.targetInstanceId, that.targetInstanceId)
+            && Objects.equals(this.extType, that.extType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.taskTag, that.taskTag);
     }
 
     @Override

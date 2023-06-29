@@ -97,17 +97,16 @@ public class ListTagsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagsV2Response listTagsV2Response = (ListTagsV2Response) o;
-        return Objects.equals(this.size, listTagsV2Response.size)
-            && Objects.equals(this.total, listTagsV2Response.total)
-            && Objects.equals(this.tags, listTagsV2Response.tags);
+        ListTagsV2Response that = (ListTagsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class FuncReservedInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncReservedInstance funcReservedInstance = (FuncReservedInstance) o;
-        return Objects.equals(this.funcUrn, funcReservedInstance.funcUrn)
-            && Objects.equals(this.count, funcReservedInstance.count);
+        FuncReservedInstance that = (FuncReservedInstance) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.count, that.count);
     }
 
     @Override

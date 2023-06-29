@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.SqlFilterRule;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowSqlFilterRuleResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql_filter_rules")
-    
+    @JsonProperty(value = "sql_filter_rules")
+
     private List<SqlFilterRule> sqlFilterRules = null;
-    
+
     public ShowSqlFilterRuleResponse withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID
@@ -54,16 +41,13 @@ public class ShowSqlFilterRuleResponse extends SdkResponse {
         this.nodeId = nodeId;
     }
 
-    
-
     public ShowSqlFilterRuleResponse withSqlFilterRules(List<SqlFilterRule> sqlFilterRules) {
         this.sqlFilterRules = sqlFilterRules;
         return this;
     }
 
-    
     public ShowSqlFilterRuleResponse addSqlFilterRulesItem(SqlFilterRule sqlFilterRulesItem) {
-        if(this.sqlFilterRules == null) {
+        if (this.sqlFilterRules == null) {
             this.sqlFilterRules = new ArrayList<>();
         }
         this.sqlFilterRules.add(sqlFilterRulesItem);
@@ -71,7 +55,7 @@ public class ShowSqlFilterRuleResponse extends SdkResponse {
     }
 
     public ShowSqlFilterRuleResponse withSqlFilterRules(Consumer<List<SqlFilterRule>> sqlFilterRulesSetter) {
-        if(this.sqlFilterRules == null) {
+        if (this.sqlFilterRules == null) {
             this.sqlFilterRules = new ArrayList<>();
         }
         sqlFilterRulesSetter.accept(this.sqlFilterRules);
@@ -90,24 +74,23 @@ public class ShowSqlFilterRuleResponse extends SdkResponse {
         this.sqlFilterRules = sqlFilterRules;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlFilterRuleResponse showSqlFilterRuleResponse = (ShowSqlFilterRuleResponse) o;
-        return Objects.equals(this.nodeId, showSqlFilterRuleResponse.nodeId) &&
-            Objects.equals(this.sqlFilterRules, showSqlFilterRuleResponse.sqlFilterRules);
+        ShowSqlFilterRuleResponse that = (ShowSqlFilterRuleResponse) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.sqlFilterRules, that.sqlFilterRules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, sqlFilterRules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ShowSqlFilterRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ShowSqlFilterRuleResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

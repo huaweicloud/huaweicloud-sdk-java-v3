@@ -52,16 +52,15 @@ public class GenerateAuditlogDownloadLinkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GenerateAuditlogDownloadLinkRequest generateAuditlogDownloadLinkRequest =
-            (GenerateAuditlogDownloadLinkRequest) o;
-        return Objects.equals(this.ids, generateAuditlogDownloadLinkRequest.ids);
+        GenerateAuditlogDownloadLinkRequest that = (GenerateAuditlogDownloadLinkRequest) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

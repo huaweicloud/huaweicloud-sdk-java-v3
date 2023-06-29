@@ -265,21 +265,18 @@ public class ScopedTokenInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopedTokenInfo scopedTokenInfo = (ScopedTokenInfo) o;
-        return Objects.equals(this.expiresAt, scopedTokenInfo.expiresAt)
-            && Objects.equals(this.methods, scopedTokenInfo.methods)
-            && Objects.equals(this.issuedAt, scopedTokenInfo.issuedAt)
-            && Objects.equals(this.user, scopedTokenInfo.user) && Objects.equals(this.domain, scopedTokenInfo.domain)
-            && Objects.equals(this.project, scopedTokenInfo.project)
-            && Objects.equals(this.roles, scopedTokenInfo.roles)
-            && Objects.equals(this.catalog, scopedTokenInfo.catalog);
+        ScopedTokenInfo that = (ScopedTokenInfo) obj;
+        return Objects.equals(this.expiresAt, that.expiresAt) && Objects.equals(this.methods, that.methods)
+            && Objects.equals(this.issuedAt, that.issuedAt) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.project, that.project)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.catalog, that.catalog);
     }
 
     @Override

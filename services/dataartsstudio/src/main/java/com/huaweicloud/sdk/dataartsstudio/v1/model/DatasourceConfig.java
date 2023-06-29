@@ -81,22 +81,15 @@ public class DatasourceConfig {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,22 +186,15 @@ public class DatasourceConfig {
             if (value == null) {
                 return null;
             }
-            AccessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessTypeEnum(value));
         }
 
         public static AccessTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,22 +267,15 @@ public class DatasourceConfig {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessModeEnum(value));
         }
 
         public static AccessModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -363,22 +342,15 @@ public class DatasourceConfig {
             if (value == null) {
                 return null;
             }
-            PaginationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PaginationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PaginationEnum(value));
         }
 
         public static PaginationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PaginationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -707,28 +679,22 @@ public class DatasourceConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatasourceConfig datasourceConfig = (DatasourceConfig) o;
-        return Objects.equals(this.type, datasourceConfig.type)
-            && Objects.equals(this.connectionName, datasourceConfig.connectionName)
-            && Objects.equals(this.connectionId, datasourceConfig.connectionId)
-            && Objects.equals(this.database, datasourceConfig.database)
-            && Objects.equals(this.datatable, datasourceConfig.datatable)
-            && Objects.equals(this.tableId, datasourceConfig.tableId)
-            && Objects.equals(this.queue, datasourceConfig.queue)
-            && Objects.equals(this.accessType, datasourceConfig.accessType)
-            && Objects.equals(this.accessMode, datasourceConfig.accessMode)
-            && Objects.equals(this.pagination, datasourceConfig.pagination)
-            && Objects.equals(this.sql, datasourceConfig.sql)
-            && Objects.equals(this.backendParas, datasourceConfig.backendParas)
-            && Objects.equals(this.responseParas, datasourceConfig.responseParas)
-            && Objects.equals(this.orderParas, datasourceConfig.orderParas);
+        DatasourceConfig that = (DatasourceConfig) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.connectionName, that.connectionName)
+            && Objects.equals(this.connectionId, that.connectionId) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.datatable, that.datatable) && Objects.equals(this.tableId, that.tableId)
+            && Objects.equals(this.queue, that.queue) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.accessMode, that.accessMode) && Objects.equals(this.pagination, that.pagination)
+            && Objects.equals(this.sql, that.sql) && Objects.equals(this.backendParas, that.backendParas)
+            && Objects.equals(this.responseParas, that.responseParas)
+            && Objects.equals(this.orderParas, that.orderParas);
     }
 
     @Override

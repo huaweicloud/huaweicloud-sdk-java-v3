@@ -165,19 +165,18 @@ public class VideoModerationResultRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoModerationResultRequestParams videoModerationResultRequestParams = (VideoModerationResultRequestParams) o;
-        return Objects.equals(this.data, videoModerationResultRequestParams.data)
-            && Objects.equals(this.eventType, videoModerationResultRequestParams.eventType)
-            && Objects.equals(this.imageCategories, videoModerationResultRequestParams.imageCategories)
-            && Objects.equals(this.audioCategories, videoModerationResultRequestParams.audioCategories)
-            && Objects.equals(this.callback, videoModerationResultRequestParams.callback);
+        VideoModerationResultRequestParams that = (VideoModerationResultRequestParams) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.imageCategories, that.imageCategories)
+            && Objects.equals(this.audioCategories, that.audioCategories)
+            && Objects.equals(this.callback, that.callback);
     }
 
     @Override

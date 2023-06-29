@@ -99,18 +99,16 @@ public class ListHostOverviewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostOverviewRequest listHostOverviewRequest = (ListHostOverviewRequest) o;
-        return Objects.equals(this.clusterId, listHostOverviewRequest.clusterId)
-            && Objects.equals(this.instanceName, listHostOverviewRequest.instanceName)
-            && Objects.equals(this.limit, listHostOverviewRequest.limit)
-            && Objects.equals(this.offset, listHostOverviewRequest.offset);
+        ListHostOverviewRequest that = (ListHostOverviewRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

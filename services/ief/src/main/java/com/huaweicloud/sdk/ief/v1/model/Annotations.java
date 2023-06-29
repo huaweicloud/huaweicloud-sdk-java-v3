@@ -55,16 +55,16 @@ public class Annotations {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Annotations annotations = (Annotations) o;
-        return Objects.equals(this.ringController, annotations.ringController)
-            && Objects.equals(this.autonomyEdgeSelector, annotations.autonomyEdgeSelector);
+        Annotations that = (Annotations) obj;
+        return Objects.equals(this.ringController, that.ringController)
+            && Objects.equals(this.autonomyEdgeSelector, that.autonomyEdgeSelector);
     }
 
     @Override

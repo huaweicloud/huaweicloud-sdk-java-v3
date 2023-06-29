@@ -65,22 +65,15 @@ public class PrePaidServerSchedulerHints {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TenancyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TenancyEnum(value));
         }
 
         public static TenancyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TenancyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class PrePaidServerSchedulerHints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerSchedulerHints prePaidServerSchedulerHints = (PrePaidServerSchedulerHints) o;
-        return Objects.equals(this.group, prePaidServerSchedulerHints.group)
-            && Objects.equals(this.tenancy, prePaidServerSchedulerHints.tenancy)
-            && Objects.equals(this.dedicatedHostId, prePaidServerSchedulerHints.dedicatedHostId);
+        PrePaidServerSchedulerHints that = (PrePaidServerSchedulerHints) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
     }
 
     @Override

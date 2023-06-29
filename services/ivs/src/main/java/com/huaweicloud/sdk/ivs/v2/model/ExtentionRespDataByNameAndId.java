@@ -77,17 +77,17 @@ public class ExtentionRespDataByNameAndId {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtentionRespDataByNameAndId extentionRespDataByNameAndId = (ExtentionRespDataByNameAndId) o;
-        return Objects.equals(this.verificationResult, extentionRespDataByNameAndId.verificationResult)
-            && Objects.equals(this.verificationMessage, extentionRespDataByNameAndId.verificationMessage)
-            && Objects.equals(this.verificationCode, extentionRespDataByNameAndId.verificationCode);
+        ExtentionRespDataByNameAndId that = (ExtentionRespDataByNameAndId) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode);
     }
 
     @Override

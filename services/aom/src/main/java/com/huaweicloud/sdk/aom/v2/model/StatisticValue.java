@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 统计结果
  */
-public class StatisticValue  {
-
+public class StatisticValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statistic")
-    
+    @JsonProperty(value = "statistic")
 
     private String statistic;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private Double value;
 
@@ -33,9 +24,6 @@ public class StatisticValue  {
         this.statistic = statistic;
         return this;
     }
-
-    
-
 
     /**
      * 统计方式。
@@ -49,15 +37,10 @@ public class StatisticValue  {
         this.statistic = statistic;
     }
 
-    
-
     public StatisticValue withValue(Double value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 统计结果。
@@ -71,24 +54,23 @@ public class StatisticValue  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticValue statisticValue = (StatisticValue) o;
-        return Objects.equals(this.statistic, statisticValue.statistic) &&
-            Objects.equals(this.value, statisticValue.value);
+        StatisticValue that = (StatisticValue) obj;
+        return Objects.equals(this.statistic, that.statistic) && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statistic, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class StatisticValue  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class StatisticValue  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

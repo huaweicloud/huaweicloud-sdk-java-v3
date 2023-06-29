@@ -107,18 +107,18 @@ public class TaskStatisticDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskStatisticDetails taskStatisticDetails = (TaskStatisticDetails) o;
-        return Objects.equals(this.runningTasksCount, taskStatisticDetails.runningTasksCount)
-            && Objects.equals(this.abnormalTasksCount, taskStatisticDetails.abnormalTasksCount)
-            && Objects.equals(this.terminatedTasksCount, taskStatisticDetails.terminatedTasksCount)
-            && Objects.equals(this.completedTasksCount, taskStatisticDetails.completedTasksCount);
+        TaskStatisticDetails that = (TaskStatisticDetails) obj;
+        return Objects.equals(this.runningTasksCount, that.runningTasksCount)
+            && Objects.equals(this.abnormalTasksCount, that.abnormalTasksCount)
+            && Objects.equals(this.terminatedTasksCount, that.terminatedTasksCount)
+            && Objects.equals(this.completedTasksCount, that.completedTasksCount);
     }
 
     @Override

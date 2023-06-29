@@ -87,17 +87,16 @@ public class AddOrUpdateTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddOrUpdateTagsRequestBody addOrUpdateTagsRequestBody = (AddOrUpdateTagsRequestBody) o;
-        return Objects.equals(this.imageId, addOrUpdateTagsRequestBody.imageId)
-            && Objects.equals(this.tag, addOrUpdateTagsRequestBody.tag)
-            && Objects.equals(this.imageTag, addOrUpdateTagsRequestBody.imageTag);
+        AddOrUpdateTagsRequestBody that = (AddOrUpdateTagsRequestBody) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.tag, that.tag)
+            && Objects.equals(this.imageTag, that.imageTag);
     }
 
     @Override

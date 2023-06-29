@@ -33,15 +33,15 @@ public class ListEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.functionUrn, listEventsRequest.functionUrn);
+        ListEventsRequest that = (ListEventsRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

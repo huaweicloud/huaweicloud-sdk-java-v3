@@ -191,22 +191,21 @@ public class ListCouponQuotasRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCouponQuotasRecordsRequest listCouponQuotasRecordsRequest = (ListCouponQuotasRecordsRequest) o;
-        return Objects.equals(this.indirectPartnerId, listCouponQuotasRecordsRequest.indirectPartnerId)
-            && Objects.equals(this.quotaId, listCouponQuotasRecordsRequest.quotaId)
-            && Objects.equals(this.operationTimeBegin, listCouponQuotasRecordsRequest.operationTimeBegin)
-            && Objects.equals(this.operationTimeEnd, listCouponQuotasRecordsRequest.operationTimeEnd)
-            && Objects.equals(this.parentQuotaId, listCouponQuotasRecordsRequest.parentQuotaId)
-            && Objects.equals(this.operationType, listCouponQuotasRecordsRequest.operationType)
-            && Objects.equals(this.offset, listCouponQuotasRecordsRequest.offset)
-            && Objects.equals(this.limit, listCouponQuotasRecordsRequest.limit);
+        ListCouponQuotasRecordsRequest that = (ListCouponQuotasRecordsRequest) obj;
+        return Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.quotaId, that.quotaId)
+            && Objects.equals(this.operationTimeBegin, that.operationTimeBegin)
+            && Objects.equals(this.operationTimeEnd, that.operationTimeEnd)
+            && Objects.equals(this.parentQuotaId, that.parentQuotaId)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

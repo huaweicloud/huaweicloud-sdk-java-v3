@@ -231,23 +231,20 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.instanceId, listInstancesRequest.instanceId)
-            && Objects.equals(this.includeFailure, listInstancesRequest.includeFailure)
-            && Objects.equals(this.includeDelete, listInstancesRequest.includeDelete)
-            && Objects.equals(this.name, listInstancesRequest.name)
-            && Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.status, listInstancesRequest.status)
-            && Objects.equals(this.nameEqual, listInstancesRequest.nameEqual)
-            && Objects.equals(this.tags, listInstancesRequest.tags) && Objects.equals(this.ip, listInstancesRequest.ip);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.includeFailure, that.includeFailure)
+            && Objects.equals(this.includeDelete, that.includeDelete) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.nameEqual, that.nameEqual)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

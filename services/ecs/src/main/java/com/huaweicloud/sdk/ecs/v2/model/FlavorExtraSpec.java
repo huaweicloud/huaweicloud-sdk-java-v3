@@ -737,47 +737,44 @@ public class FlavorExtraSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorExtraSpec flavorExtraSpec = (FlavorExtraSpec) o;
-        return Objects.equals(this.ecsPerformancetype, flavorExtraSpec.ecsPerformancetype)
-            && Objects.equals(this.hwNumaNodes, flavorExtraSpec.hwNumaNodes)
-            && Objects.equals(this.resourceType, flavorExtraSpec.resourceType)
-            && Objects.equals(this.hpetSupport, flavorExtraSpec.hpetSupport)
-            && Objects.equals(this.instanceVnicType, flavorExtraSpec.instanceVnicType)
-            && Objects.equals(this.instanceVnicInstanceBandwidth, flavorExtraSpec.instanceVnicInstanceBandwidth)
-            && Objects.equals(this.instanceVnicMaxCount, flavorExtraSpec.instanceVnicMaxCount)
-            && Objects.equals(this.quotaLocalDisk, flavorExtraSpec.quotaLocalDisk)
-            && Objects.equals(this.quotaNvmeSsd, flavorExtraSpec.quotaNvmeSsd)
-            && Objects.equals(this.extraSpecIoPersistentGrant, flavorExtraSpec.extraSpecIoPersistentGrant)
-            && Objects.equals(this.ecsGeneration, flavorExtraSpec.ecsGeneration)
-            && Objects.equals(this.ecsVirtualizationEnvTypes, flavorExtraSpec.ecsVirtualizationEnvTypes)
-            && Objects.equals(this.pciPassthroughEnableGpu, flavorExtraSpec.pciPassthroughEnableGpu)
-            && Objects.equals(this.pciPassthroughGpuSpecs, flavorExtraSpec.pciPassthroughGpuSpecs)
-            && Objects.equals(this.pciPassthroughAlias, flavorExtraSpec.pciPassthroughAlias)
-            && Objects.equals(this.condOperationStatus, flavorExtraSpec.condOperationStatus)
-            && Objects.equals(this.condOperationAz, flavorExtraSpec.condOperationAz)
-            && Objects.equals(this.quotaMaxRate, flavorExtraSpec.quotaMaxRate)
-            && Objects.equals(this.quotaMinRate, flavorExtraSpec.quotaMinRate)
-            && Objects.equals(this.quotaMaxPps, flavorExtraSpec.quotaMaxPps)
-            && Objects.equals(this.condOperationCharge, flavorExtraSpec.condOperationCharge)
-            && Objects.equals(this.condOperationChargeStop, flavorExtraSpec.condOperationChargeStop)
-            && Objects.equals(this.condSpotOperationAz, flavorExtraSpec.condSpotOperationAz)
-            && Objects.equals(this.condOperationRoles, flavorExtraSpec.condOperationRoles)
-            && Objects.equals(this.condSpotOperationStatus, flavorExtraSpec.condSpotOperationStatus)
-            && Objects.equals(this.condNetwork, flavorExtraSpec.condNetwork)
-            && Objects.equals(this.condStorage, flavorExtraSpec.condStorage)
-            && Objects.equals(this.condComputeLiveResizable, flavorExtraSpec.condComputeLiveResizable)
-            && Objects.equals(this.condCompute, flavorExtraSpec.condCompute)
-            && Objects.equals(this.infoGpuName, flavorExtraSpec.infoGpuName)
-            && Objects.equals(this.infoCpuName, flavorExtraSpec.infoCpuName)
-            && Objects.equals(this.quotaGpu, flavorExtraSpec.quotaGpu)
-            && Objects.equals(this.ecsInstanceArchitecture, flavorExtraSpec.ecsInstanceArchitecture);
+        FlavorExtraSpec that = (FlavorExtraSpec) obj;
+        return Objects.equals(this.ecsPerformancetype, that.ecsPerformancetype)
+            && Objects.equals(this.hwNumaNodes, that.hwNumaNodes)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.hpetSupport, that.hpetSupport)
+            && Objects.equals(this.instanceVnicType, that.instanceVnicType)
+            && Objects.equals(this.instanceVnicInstanceBandwidth, that.instanceVnicInstanceBandwidth)
+            && Objects.equals(this.instanceVnicMaxCount, that.instanceVnicMaxCount)
+            && Objects.equals(this.quotaLocalDisk, that.quotaLocalDisk)
+            && Objects.equals(this.quotaNvmeSsd, that.quotaNvmeSsd)
+            && Objects.equals(this.extraSpecIoPersistentGrant, that.extraSpecIoPersistentGrant)
+            && Objects.equals(this.ecsGeneration, that.ecsGeneration)
+            && Objects.equals(this.ecsVirtualizationEnvTypes, that.ecsVirtualizationEnvTypes)
+            && Objects.equals(this.pciPassthroughEnableGpu, that.pciPassthroughEnableGpu)
+            && Objects.equals(this.pciPassthroughGpuSpecs, that.pciPassthroughGpuSpecs)
+            && Objects.equals(this.pciPassthroughAlias, that.pciPassthroughAlias)
+            && Objects.equals(this.condOperationStatus, that.condOperationStatus)
+            && Objects.equals(this.condOperationAz, that.condOperationAz)
+            && Objects.equals(this.quotaMaxRate, that.quotaMaxRate)
+            && Objects.equals(this.quotaMinRate, that.quotaMinRate)
+            && Objects.equals(this.quotaMaxPps, that.quotaMaxPps)
+            && Objects.equals(this.condOperationCharge, that.condOperationCharge)
+            && Objects.equals(this.condOperationChargeStop, that.condOperationChargeStop)
+            && Objects.equals(this.condSpotOperationAz, that.condSpotOperationAz)
+            && Objects.equals(this.condOperationRoles, that.condOperationRoles)
+            && Objects.equals(this.condSpotOperationStatus, that.condSpotOperationStatus)
+            && Objects.equals(this.condNetwork, that.condNetwork) && Objects.equals(this.condStorage, that.condStorage)
+            && Objects.equals(this.condComputeLiveResizable, that.condComputeLiveResizable)
+            && Objects.equals(this.condCompute, that.condCompute) && Objects.equals(this.infoGpuName, that.infoGpuName)
+            && Objects.equals(this.infoCpuName, that.infoCpuName) && Objects.equals(this.quotaGpu, that.quotaGpu)
+            && Objects.equals(this.ecsInstanceArchitecture, that.ecsInstanceArchitecture);
     }
 
     @Override

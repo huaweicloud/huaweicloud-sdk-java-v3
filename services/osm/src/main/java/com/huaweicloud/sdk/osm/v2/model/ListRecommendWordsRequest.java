@@ -151,20 +151,18 @@ public class ListRecommendWordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecommendWordsRequest listRecommendWordsRequest = (ListRecommendWordsRequest) o;
-        return Objects.equals(this.xServiceKey, listRecommendWordsRequest.xServiceKey)
-            && Objects.equals(this.xSite, listRecommendWordsRequest.xSite)
-            && Objects.equals(this.xLanguage, listRecommendWordsRequest.xLanguage)
-            && Objects.equals(this.recommendWordId, listRecommendWordsRequest.recommendWordId)
-            && Objects.equals(this.levelValue, listRecommendWordsRequest.levelValue)
-            && Objects.equals(this.themeName, listRecommendWordsRequest.themeName);
+        ListRecommendWordsRequest that = (ListRecommendWordsRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.recommendWordId, that.recommendWordId)
+            && Objects.equals(this.levelValue, that.levelValue) && Objects.equals(this.themeName, that.themeName);
     }
 
     @Override

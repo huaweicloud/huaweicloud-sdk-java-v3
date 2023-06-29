@@ -55,15 +55,15 @@ public class ConfigsMap {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigsMap configsMap = (ConfigsMap) o;
-        return Objects.equals(this.name, configsMap.name) && Objects.equals(this.key, configsMap.key);
+        ConfigsMap that = (ConfigsMap) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.key, that.key);
     }
 
     @Override

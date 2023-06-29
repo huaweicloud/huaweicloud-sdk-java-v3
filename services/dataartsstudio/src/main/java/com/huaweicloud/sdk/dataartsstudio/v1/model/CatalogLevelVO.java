@@ -99,16 +99,16 @@ public class CatalogLevelVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogLevelVO catalogLevelVO = (CatalogLevelVO) o;
-        return Objects.equals(this.id, catalogLevelVO.id) && Objects.equals(this.level, catalogLevelVO.level)
-            && Objects.equals(this.nameCh, catalogLevelVO.nameCh) && Objects.equals(this.nameEn, catalogLevelVO.nameEn);
+        CatalogLevelVO that = (CatalogLevelVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.nameEn, that.nameEn);
     }
 
     @Override

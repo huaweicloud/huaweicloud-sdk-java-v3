@@ -172,18 +172,17 @@ public class ResqEpResouce {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResqEpResouce resqEpResouce = (ResqEpResouce) o;
-        return Objects.equals(this.projects, resqEpResouce.projects)
-            && Objects.equals(this.resourceTypes, resqEpResouce.resourceTypes)
-            && Objects.equals(this.offset, resqEpResouce.offset) && Objects.equals(this.limit, resqEpResouce.limit)
-            && Objects.equals(this.matches, resqEpResouce.matches);
+        ResqEpResouce that = (ResqEpResouce) obj;
+        return Objects.equals(this.projects, that.projects) && Objects.equals(this.resourceTypes, that.resourceTypes)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.matches, that.matches);
     }
 
     @Override

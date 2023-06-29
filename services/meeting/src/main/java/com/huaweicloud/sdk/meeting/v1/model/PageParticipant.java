@@ -118,16 +118,16 @@ public class PageParticipant {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageParticipant pageParticipant = (PageParticipant) o;
-        return Objects.equals(this.data, pageParticipant.data) && Objects.equals(this.offset, pageParticipant.offset)
-            && Objects.equals(this.limit, pageParticipant.limit) && Objects.equals(this.count, pageParticipant.count);
+        PageParticipant that = (PageParticipant) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.count, that.count);
     }
 
     @Override

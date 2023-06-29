@@ -121,19 +121,17 @@ public class KeystoneCreateUserOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateUserOption keystoneCreateUserOption = (KeystoneCreateUserOption) o;
-        return Objects.equals(this.name, keystoneCreateUserOption.name)
-            && Objects.equals(this.domainId, keystoneCreateUserOption.domainId)
-            && Objects.equals(this.password, keystoneCreateUserOption.password)
-            && Objects.equals(this.enabled, keystoneCreateUserOption.enabled)
-            && Objects.equals(this.description, keystoneCreateUserOption.description);
+        KeystoneCreateUserOption that = (KeystoneCreateUserOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

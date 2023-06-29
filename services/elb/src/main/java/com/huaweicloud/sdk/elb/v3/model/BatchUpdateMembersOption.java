@@ -125,19 +125,17 @@ public class BatchUpdateMembersOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateMembersOption batchUpdateMembersOption = (BatchUpdateMembersOption) o;
-        return Objects.equals(this.id, batchUpdateMembersOption.id)
-            && Objects.equals(this.adminStateUp, batchUpdateMembersOption.adminStateUp)
-            && Objects.equals(this.name, batchUpdateMembersOption.name)
-            && Objects.equals(this.protocolPort, batchUpdateMembersOption.protocolPort)
-            && Objects.equals(this.weight, batchUpdateMembersOption.weight);
+        BatchUpdateMembersOption that = (BatchUpdateMembersOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.weight, that.weight);
     }
 
     @Override

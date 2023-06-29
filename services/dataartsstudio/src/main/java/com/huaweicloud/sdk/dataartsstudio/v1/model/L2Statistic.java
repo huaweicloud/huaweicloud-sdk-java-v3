@@ -121,19 +121,18 @@ public class L2Statistic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L2Statistic l2Statistic = (L2Statistic) o;
-        return Objects.equals(this.subjectAreaName, l2Statistic.subjectAreaName)
-            && Objects.equals(this.subjectAreaGuid, l2Statistic.subjectAreaGuid)
-            && Objects.equals(this.ordinal, l2Statistic.ordinal)
-            && Objects.equals(this.businessObjectCount, l2Statistic.businessObjectCount)
-            && Objects.equals(this.logicEntityCount, l2Statistic.logicEntityCount);
+        L2Statistic that = (L2Statistic) obj;
+        return Objects.equals(this.subjectAreaName, that.subjectAreaName)
+            && Objects.equals(this.subjectAreaGuid, that.subjectAreaGuid) && Objects.equals(this.ordinal, that.ordinal)
+            && Objects.equals(this.businessObjectCount, that.businessObjectCount)
+            && Objects.equals(this.logicEntityCount, that.logicEntityCount);
     }
 
     @Override

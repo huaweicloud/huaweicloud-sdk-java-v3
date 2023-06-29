@@ -123,19 +123,17 @@ public class ListAutoLaunchGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoLaunchGroupsRequest listAutoLaunchGroupsRequest = (ListAutoLaunchGroupsRequest) o;
-        return Objects.equals(this.limit, listAutoLaunchGroupsRequest.limit)
-            && Objects.equals(this.marker, listAutoLaunchGroupsRequest.marker)
-            && Objects.equals(this.name, listAutoLaunchGroupsRequest.name)
-            && Objects.equals(this.validSince, listAutoLaunchGroupsRequest.validSince)
-            && Objects.equals(this.validUntil, listAutoLaunchGroupsRequest.validUntil);
+        ListAutoLaunchGroupsRequest that = (ListAutoLaunchGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.validSince, that.validSince)
+            && Objects.equals(this.validUntil, that.validUntil);
     }
 
     @Override

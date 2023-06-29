@@ -249,23 +249,19 @@ public class ShowVideoTaggingMediaTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVideoTaggingMediaTaskResponse showVideoTaggingMediaTaskResponse = (ShowVideoTaggingMediaTaskResponse) o;
-        return Objects.equals(this.taskId, showVideoTaggingMediaTaskResponse.taskId)
-            && Objects.equals(this.createTime, showVideoTaggingMediaTaskResponse.createTime)
-            && Objects.equals(this.updateTime, showVideoTaggingMediaTaskResponse.updateTime)
-            && Objects.equals(this.state, showVideoTaggingMediaTaskResponse.state)
-            && Objects.equals(this.input, showVideoTaggingMediaTaskResponse.input)
-            && Objects.equals(this.output, showVideoTaggingMediaTaskResponse.output)
-            && Objects.equals(this.config, showVideoTaggingMediaTaskResponse.config)
-            && Objects.equals(this.callback, showVideoTaggingMediaTaskResponse.callback)
-            && Objects.equals(this.xRequestId, showVideoTaggingMediaTaskResponse.xRequestId);
+        ShowVideoTaggingMediaTaskResponse that = (ShowVideoTaggingMediaTaskResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.config, that.config) && Objects.equals(this.callback, that.callback)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -276,26 +276,22 @@ public class ShowWorkSpaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkSpaceResponse showWorkSpaceResponse = (ShowWorkSpaceResponse) o;
-        return Objects.equals(this.workspaceId, showWorkSpaceResponse.workspaceId)
-            && Objects.equals(this.maWorkspaceId, showWorkSpaceResponse.maWorkspaceId)
-            && Objects.equals(this.projectId, showWorkSpaceResponse.projectId)
-            && Objects.equals(this.name, showWorkSpaceResponse.name)
-            && Objects.equals(this.description, showWorkSpaceResponse.description)
-            && Objects.equals(this.enterpriseProjectId, showWorkSpaceResponse.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, showWorkSpaceResponse.enterpriseProjectName)
-            && Objects.equals(this.createTime, showWorkSpaceResponse.createTime)
-            && Objects.equals(this.updateTime, showWorkSpaceResponse.updateTime)
-            && Objects.equals(this.owner, showWorkSpaceResponse.owner)
-            && Objects.equals(this.userId, showWorkSpaceResponse.userId)
-            && Objects.equals(this.usedFlag, showWorkSpaceResponse.usedFlag);
+        ShowWorkSpaceResponse that = (ShowWorkSpaceResponse) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.maWorkspaceId, that.maWorkspaceId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.usedFlag, that.usedFlag);
     }
 
     @Override

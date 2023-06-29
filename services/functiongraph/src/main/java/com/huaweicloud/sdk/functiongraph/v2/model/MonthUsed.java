@@ -56,15 +56,15 @@ public class MonthUsed {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MonthUsed monthUsed = (MonthUsed) o;
-        return Objects.equals(this.date, monthUsed.date) && Objects.equals(this.value, monthUsed.value);
+        MonthUsed that = (MonthUsed) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.value, that.value);
     }
 
     @Override

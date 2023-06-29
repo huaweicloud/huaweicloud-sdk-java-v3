@@ -133,20 +133,19 @@ public class ParseCertificateSigningRequestResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParseCertificateSigningRequestResponse parseCertificateSigningRequestResponse =
-            (ParseCertificateSigningRequestResponse) o;
-        return Objects.equals(this.keyAlgorithm, parseCertificateSigningRequestResponse.keyAlgorithm)
-            && Objects.equals(this.keyAlgorithmLength, parseCertificateSigningRequestResponse.keyAlgorithmLength)
-            && Objects.equals(this.signatureAlgorithm, parseCertificateSigningRequestResponse.signatureAlgorithm)
-            && Objects.equals(this.publicKey, parseCertificateSigningRequestResponse.publicKey)
-            && Objects.equals(this.distinguishedName, parseCertificateSigningRequestResponse.distinguishedName);
+        ParseCertificateSigningRequestResponse that = (ParseCertificateSigningRequestResponse) obj;
+        return Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
+            && Objects.equals(this.keyAlgorithmLength, that.keyAlgorithmLength)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.publicKey, that.publicKey)
+            && Objects.equals(this.distinguishedName, that.distinguishedName);
     }
 
     @Override

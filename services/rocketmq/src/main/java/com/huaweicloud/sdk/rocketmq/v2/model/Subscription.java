@@ -77,16 +77,16 @@ public class Subscription {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Subscription subscription = (Subscription) o;
-        return Objects.equals(this.topic, subscription.topic) && Objects.equals(this.type, subscription.type)
-            && Objects.equals(this.expression, subscription.expression);
+        Subscription that = (Subscription) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.expression, that.expression);
     }
 
     @Override

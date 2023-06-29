@@ -77,17 +77,16 @@ public class DeleteIpFromDomainNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIpFromDomainNameRequest deleteIpFromDomainNameRequest = (DeleteIpFromDomainNameRequest) o;
-        return Objects.equals(this.instanceId, deleteIpFromDomainNameRequest.instanceId)
-            && Objects.equals(this.groupId, deleteIpFromDomainNameRequest.groupId)
-            && Objects.equals(this.nodeId, deleteIpFromDomainNameRequest.nodeId);
+        DeleteIpFromDomainNameRequest that = (DeleteIpFromDomainNameRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.nodeId, that.nodeId);
     }
 
     @Override

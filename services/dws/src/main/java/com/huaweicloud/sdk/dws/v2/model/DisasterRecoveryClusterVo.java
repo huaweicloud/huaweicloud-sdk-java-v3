@@ -55,16 +55,15 @@ public class DisasterRecoveryClusterVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisasterRecoveryClusterVo disasterRecoveryClusterVo = (DisasterRecoveryClusterVo) o;
-        return Objects.equals(this.id, disasterRecoveryClusterVo.id)
-            && Objects.equals(this.name, disasterRecoveryClusterVo.name);
+        DisasterRecoveryClusterVo that = (DisasterRecoveryClusterVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

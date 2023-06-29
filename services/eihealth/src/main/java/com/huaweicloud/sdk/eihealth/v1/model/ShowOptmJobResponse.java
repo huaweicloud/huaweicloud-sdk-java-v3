@@ -199,20 +199,18 @@ public class ShowOptmJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOptmJobResponse showOptmJobResponse = (ShowOptmJobResponse) o;
-        return Objects.equals(this.basicInfo, showOptmJobResponse.basicInfo)
-            && Objects.equals(this.smiles, showOptmJobResponse.smiles)
-            && Objects.equals(this.numTrials, showOptmJobResponse.numTrials)
-            && Objects.equals(this.bindingSite, showOptmJobResponse.bindingSite)
-            && Objects.equals(this.weakConstraints, showOptmJobResponse.weakConstraints)
-            && Objects.equals(this.strongConstraints, showOptmJobResponse.strongConstraints);
+        ShowOptmJobResponse that = (ShowOptmJobResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.numTrials, that.numTrials) && Objects.equals(this.bindingSite, that.bindingSite)
+            && Objects.equals(this.weakConstraints, that.weakConstraints)
+            && Objects.equals(this.strongConstraints, that.strongConstraints);
     }
 
     @Override

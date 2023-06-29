@@ -77,17 +77,17 @@ public class DeleteServiceSetUsingDeleteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteServiceSetUsingDeleteRequest deleteServiceSetUsingDeleteRequest = (DeleteServiceSetUsingDeleteRequest) o;
-        return Objects.equals(this.setId, deleteServiceSetUsingDeleteRequest.setId)
-            && Objects.equals(this.enterpriseProjectId, deleteServiceSetUsingDeleteRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, deleteServiceSetUsingDeleteRequest.fwInstanceId);
+        DeleteServiceSetUsingDeleteRequest that = (DeleteServiceSetUsingDeleteRequest) obj;
+        return Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

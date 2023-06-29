@@ -1,42 +1,32 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * SecurityGroupRequest
  */
-public class SecurityGroupRequest  {
-
+public class SecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
 
     private String resourceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securitygroup_ids")
-    
+    @JsonProperty(value = "securitygroup_ids")
+
     private List<String> securitygroupIds = null;
-    
+
     public SecurityGroupRequest withResourceId(String resourceId) {
         this.resourceId = resourceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源ID
@@ -50,16 +40,13 @@ public class SecurityGroupRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     public SecurityGroupRequest withSecuritygroupIds(List<String> securitygroupIds) {
         this.securitygroupIds = securitygroupIds;
         return this;
     }
 
-    
     public SecurityGroupRequest addSecuritygroupIdsItem(String securitygroupIdsItem) {
-        if(this.securitygroupIds == null) {
+        if (this.securitygroupIds == null) {
             this.securitygroupIds = new ArrayList<>();
         }
         this.securitygroupIds.add(securitygroupIdsItem);
@@ -67,7 +54,7 @@ public class SecurityGroupRequest  {
     }
 
     public SecurityGroupRequest withSecuritygroupIds(Consumer<List<String>> securitygroupIdsSetter) {
-        if(this.securitygroupIds == null) {
+        if (this.securitygroupIds == null) {
             this.securitygroupIds = new ArrayList<>();
         }
         securitygroupIdsSetter.accept(this.securitygroupIds);
@@ -86,24 +73,24 @@ public class SecurityGroupRequest  {
         this.securitygroupIds = securitygroupIds;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityGroupRequest securityGroupRequest = (SecurityGroupRequest) o;
-        return Objects.equals(this.resourceId, securityGroupRequest.resourceId) &&
-            Objects.equals(this.securitygroupIds, securityGroupRequest.securitygroupIds);
+        SecurityGroupRequest that = (SecurityGroupRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.securitygroupIds, that.securitygroupIds);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId, securitygroupIds);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +100,7 @@ public class SecurityGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +111,5 @@ public class SecurityGroupRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

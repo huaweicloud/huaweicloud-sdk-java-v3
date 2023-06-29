@@ -55,15 +55,15 @@ public class VodInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VodInfoV2 vodInfoV2 = (VodInfoV2) o;
-        return Objects.equals(this.assetId, vodInfoV2.assetId) && Objects.equals(this.playUrl, vodInfoV2.playUrl);
+        VodInfoV2 that = (VodInfoV2) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.playUrl, that.playUrl);
     }
 
     @Override

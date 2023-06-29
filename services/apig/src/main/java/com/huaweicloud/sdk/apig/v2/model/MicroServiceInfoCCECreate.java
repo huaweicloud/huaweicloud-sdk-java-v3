@@ -79,22 +79,15 @@ public class MicroServiceInfoCCECreate {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new WorkloadTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WorkloadTypeEnum(value));
         }
 
         public static WorkloadTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            WorkloadTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -318,23 +311,19 @@ public class MicroServiceInfoCCECreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfoCCECreate microServiceInfoCCECreate = (MicroServiceInfoCCECreate) o;
-        return Objects.equals(this.clusterId, microServiceInfoCCECreate.clusterId)
-            && Objects.equals(this.namespace, microServiceInfoCCECreate.namespace)
-            && Objects.equals(this.workloadType, microServiceInfoCCECreate.workloadType)
-            && Objects.equals(this.appName, microServiceInfoCCECreate.appName)
-            && Objects.equals(this.labelKey, microServiceInfoCCECreate.labelKey)
-            && Objects.equals(this.labelValue, microServiceInfoCCECreate.labelValue)
-            && Objects.equals(this.version, microServiceInfoCCECreate.version)
-            && Objects.equals(this.port, microServiceInfoCCECreate.port)
-            && Objects.equals(this.labels, microServiceInfoCCECreate.labels);
+        MicroServiceInfoCCECreate that = (MicroServiceInfoCCECreate) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.workloadType, that.workloadType) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.labelKey, that.labelKey) && Objects.equals(this.labelValue, that.labelValue)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

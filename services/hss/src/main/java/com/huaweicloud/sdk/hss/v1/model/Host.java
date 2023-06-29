@@ -527,28 +527,28 @@ public class Host {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Host host = (Host) o;
-        return Objects.equals(this.agentId, host.agentId) && Objects.equals(this.hostId, host.hostId)
-            && Objects.equals(this.hostName, host.hostName) && Objects.equals(this.hostIp, host.hostIp)
-            && Objects.equals(this.publicIp, host.publicIp)
-            && Objects.equals(this.enterpriseProjectName, host.enterpriseProjectName)
-            && Objects.equals(this.groupName, host.groupName) && Objects.equals(this.expireTime, host.expireTime)
-            && Objects.equals(this.policyGroupName, host.policyGroupName)
-            && Objects.equals(this.hostStatus, host.hostStatus) && Objects.equals(this.agentStatus, host.agentStatus)
-            && Objects.equals(this.version, host.version) && Objects.equals(this.protectStatus, host.protectStatus)
-            && Objects.equals(this.osImage, host.osImage) && Objects.equals(this.osType, host.osType)
-            && Objects.equals(this.osBit, host.osBit) && Objects.equals(this.detectResult, host.detectResult)
-            && Objects.equals(this.riskPortNum, host.riskPortNum) && Objects.equals(this.riskVulNum, host.riskVulNum)
-            && Objects.equals(this.riskIntrusionNum, host.riskIntrusionNum)
-            && Objects.equals(this.riskBaselineNum, host.riskBaselineNum)
-            && Objects.equals(this.chargingMode, host.chargingMode) && Objects.equals(this.resourceId, host.resourceId);
+        Host that = (Host) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.policyGroupName, that.policyGroupName)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.osImage, that.osImage) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.detectResult, that.detectResult)
+            && Objects.equals(this.riskPortNum, that.riskPortNum) && Objects.equals(this.riskVulNum, that.riskVulNum)
+            && Objects.equals(this.riskIntrusionNum, that.riskIntrusionNum)
+            && Objects.equals(this.riskBaselineNum, that.riskBaselineNum)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

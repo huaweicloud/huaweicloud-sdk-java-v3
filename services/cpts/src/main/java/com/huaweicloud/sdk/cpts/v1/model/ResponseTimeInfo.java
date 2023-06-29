@@ -121,19 +121,17 @@ public class ResponseTimeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResponseTimeInfo responseTimeInfo = (ResponseTimeInfo) o;
-        return Objects.equals(this.avgResponseTime, responseTimeInfo.avgResponseTime)
-            && Objects.equals(this.avgTp50, responseTimeInfo.avgTp50)
-            && Objects.equals(this.avgTp90, responseTimeInfo.avgTp90)
-            && Objects.equals(this.maxResponseTime, responseTimeInfo.maxResponseTime)
-            && Objects.equals(this.minResponseTime, responseTimeInfo.minResponseTime);
+        ResponseTimeInfo that = (ResponseTimeInfo) obj;
+        return Objects.equals(this.avgResponseTime, that.avgResponseTime) && Objects.equals(this.avgTp50, that.avgTp50)
+            && Objects.equals(this.avgTp90, that.avgTp90) && Objects.equals(this.maxResponseTime, that.maxResponseTime)
+            && Objects.equals(this.minResponseTime, that.minResponseTime);
     }
 
     @Override

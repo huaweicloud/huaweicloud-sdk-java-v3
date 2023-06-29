@@ -101,18 +101,16 @@ public class ShowAlertRspDatasource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspDatasource showAlertRspDatasource = (ShowAlertRspDatasource) o;
-        return Objects.equals(this.sourceType, showAlertRspDatasource.sourceType)
-            && Objects.equals(this.domainId, showAlertRspDatasource.domainId)
-            && Objects.equals(this.projectId, showAlertRspDatasource.projectId)
-            && Objects.equals(this.regionId, showAlertRspDatasource.regionId);
+        ShowAlertRspDatasource that = (ShowAlertRspDatasource) obj;
+        return Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

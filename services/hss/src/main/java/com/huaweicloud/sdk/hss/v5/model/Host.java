@@ -812,36 +812,36 @@ public class Host {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Host host = (Host) o;
-        return Objects.equals(this.hostName, host.hostName) && Objects.equals(this.hostId, host.hostId)
-            && Objects.equals(this.agentId, host.agentId) && Objects.equals(this.privateIp, host.privateIp)
-            && Objects.equals(this.publicIp, host.publicIp)
-            && Objects.equals(this.enterpriseProjectId, host.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, host.enterpriseProjectName)
-            && Objects.equals(this.hostStatus, host.hostStatus) && Objects.equals(this.agentStatus, host.agentStatus)
-            && Objects.equals(this.installResultCode, host.installResultCode)
-            && Objects.equals(this.version, host.version) && Objects.equals(this.protectStatus, host.protectStatus)
-            && Objects.equals(this.osImage, host.osImage) && Objects.equals(this.osType, host.osType)
-            && Objects.equals(this.osBit, host.osBit) && Objects.equals(this.detectResult, host.detectResult)
-            && Objects.equals(this.chargingMode, host.chargingMode) && Objects.equals(this.resourceId, host.resourceId)
-            && Objects.equals(this.outsideHost, host.outsideHost) && Objects.equals(this.groupId, host.groupId)
-            && Objects.equals(this.groupName, host.groupName) && Objects.equals(this.policyGroupId, host.policyGroupId)
-            && Objects.equals(this.policyGroupName, host.policyGroupName) && Objects.equals(this.asset, host.asset)
-            && Objects.equals(this.vulnerability, host.vulnerability) && Objects.equals(this.baseline, host.baseline)
-            && Objects.equals(this.intrusion, host.intrusion) && Objects.equals(this.assetValue, host.assetValue)
-            && Objects.equals(this.labels, host.labels) && Objects.equals(this.agentCreateTime, host.agentCreateTime)
-            && Objects.equals(this.agentUpdateTime, host.agentUpdateTime)
-            && Objects.equals(this.agentVersion, host.agentVersion)
-            && Objects.equals(this.upgradeStatus, host.upgradeStatus)
-            && Objects.equals(this.upgradeResultCode, host.upgradeResultCode)
-            && Objects.equals(this.upgradable, host.upgradable);
+        Host that = (Host) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.agentId, that.agentId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.hostStatus, that.hostStatus) && Objects.equals(this.agentStatus, that.agentStatus)
+            && Objects.equals(this.installResultCode, that.installResultCode)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.osImage, that.osImage) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osBit, that.osBit) && Objects.equals(this.detectResult, that.detectResult)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.outsideHost, that.outsideHost) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.policyGroupId, that.policyGroupId)
+            && Objects.equals(this.policyGroupName, that.policyGroupName) && Objects.equals(this.asset, that.asset)
+            && Objects.equals(this.vulnerability, that.vulnerability) && Objects.equals(this.baseline, that.baseline)
+            && Objects.equals(this.intrusion, that.intrusion) && Objects.equals(this.assetValue, that.assetValue)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.agentCreateTime, that.agentCreateTime)
+            && Objects.equals(this.agentUpdateTime, that.agentUpdateTime)
+            && Objects.equals(this.agentVersion, that.agentVersion)
+            && Objects.equals(this.upgradeStatus, that.upgradeStatus)
+            && Objects.equals(this.upgradeResultCode, that.upgradeResultCode)
+            && Objects.equals(this.upgradable, that.upgradable);
     }
 
     @Override

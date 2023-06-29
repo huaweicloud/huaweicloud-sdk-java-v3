@@ -77,17 +77,16 @@ public class MicroserviceGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroserviceGroup microserviceGroup = (MicroserviceGroup) o;
-        return Objects.equals(this.groupId, microserviceGroup.groupId)
-            && Objects.equals(this.groupName, microserviceGroup.groupName)
-            && Objects.equals(this.appId, microserviceGroup.appId);
+        MicroserviceGroup that = (MicroserviceGroup) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

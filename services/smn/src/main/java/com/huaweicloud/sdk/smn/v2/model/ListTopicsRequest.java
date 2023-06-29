@@ -143,20 +143,18 @@ public class ListTopicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicsRequest listTopicsRequest = (ListTopicsRequest) o;
-        return Objects.equals(this.offset, listTopicsRequest.offset)
-            && Objects.equals(this.limit, listTopicsRequest.limit)
-            && Objects.equals(this.enterpriseProjectId, listTopicsRequest.enterpriseProjectId)
-            && Objects.equals(this.name, listTopicsRequest.name)
-            && Objects.equals(this.fuzzyName, listTopicsRequest.fuzzyName)
-            && Objects.equals(this.topicId, listTopicsRequest.topicId);
+        ListTopicsRequest that = (ListTopicsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.fuzzyName, that.fuzzyName)
+            && Objects.equals(this.topicId, that.topicId);
     }
 
     @Override

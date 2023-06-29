@@ -66,16 +66,16 @@ public class ShowSecurityPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecurityPolicyResponse showSecurityPolicyResponse = (ShowSecurityPolicyResponse) o;
-        return Objects.equals(this.securityPolicy, showSecurityPolicyResponse.securityPolicy)
-            && Objects.equals(this.requestId, showSecurityPolicyResponse.requestId);
+        ShowSecurityPolicyResponse that = (ShowSecurityPolicyResponse) obj;
+        return Objects.equals(this.securityPolicy, that.securityPolicy)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

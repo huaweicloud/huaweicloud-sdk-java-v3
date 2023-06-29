@@ -55,16 +55,15 @@ public class FailedReason {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailedReason failedReason = (FailedReason) o;
-        return Objects.equals(this.errorCode, failedReason.errorCode)
-            && Objects.equals(this.errorMsg, failedReason.errorMsg);
+        FailedReason that = (FailedReason) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

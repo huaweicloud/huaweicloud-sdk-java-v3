@@ -1,39 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v3.model.CreateAppVersionRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class CreateAppVersionRequest  {
-
+public class CreateAppVersionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private CreateAppVersionRequestBody body;
 
@@ -41,9 +30,6 @@ public class CreateAppVersionRequest  {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -57,15 +43,10 @@ public class CreateAppVersionRequest  {
         this.appId = appId;
     }
 
-    
-
     public CreateAppVersionRequest withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -79,22 +60,19 @@ public class CreateAppVersionRequest  {
         this.version = version;
     }
 
-    
-
     public CreateAppVersionRequest withBody(CreateAppVersionRequestBody body) {
         this.body = body;
         return this;
     }
 
     public CreateAppVersionRequest withBody(Consumer<CreateAppVersionRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new CreateAppVersionRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -108,25 +86,24 @@ public class CreateAppVersionRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppVersionRequest createAppVersionRequest = (CreateAppVersionRequest) o;
-        return Objects.equals(this.appId, createAppVersionRequest.appId) &&
-            Objects.equals(this.version, createAppVersionRequest.version) &&
-            Objects.equals(this.body, createAppVersionRequest.body);
+        CreateAppVersionRequest that = (CreateAppVersionRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, version, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,6 +114,7 @@ public class CreateAppVersionRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -147,8 +125,5 @@ public class CreateAppVersionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

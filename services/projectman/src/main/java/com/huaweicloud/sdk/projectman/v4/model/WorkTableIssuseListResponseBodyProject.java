@@ -99,19 +99,16 @@ public class WorkTableIssuseListResponseBodyProject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkTableIssuseListResponseBodyProject workTableIssuseListResponseBodyProject =
-            (WorkTableIssuseListResponseBodyProject) o;
-        return Objects.equals(this.id, workTableIssuseListResponseBodyProject.id)
-            && Objects.equals(this.identifier, workTableIssuseListResponseBodyProject.identifier)
-            && Objects.equals(this.name, workTableIssuseListResponseBodyProject.name)
-            && Objects.equals(this.type, workTableIssuseListResponseBodyProject.type);
+        WorkTableIssuseListResponseBodyProject that = (WorkTableIssuseListResponseBodyProject) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type);
     }
 
     @Override

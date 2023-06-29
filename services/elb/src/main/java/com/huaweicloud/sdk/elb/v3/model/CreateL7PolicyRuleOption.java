@@ -184,21 +184,18 @@ public class CreateL7PolicyRuleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateL7PolicyRuleOption createL7PolicyRuleOption = (CreateL7PolicyRuleOption) o;
-        return Objects.equals(this.adminStateUp, createL7PolicyRuleOption.adminStateUp)
-            && Objects.equals(this.type, createL7PolicyRuleOption.type)
-            && Objects.equals(this.compareType, createL7PolicyRuleOption.compareType)
-            && Objects.equals(this.invert, createL7PolicyRuleOption.invert)
-            && Objects.equals(this.key, createL7PolicyRuleOption.key)
-            && Objects.equals(this.value, createL7PolicyRuleOption.value)
-            && Objects.equals(this.conditions, createL7PolicyRuleOption.conditions);
+        CreateL7PolicyRuleOption that = (CreateL7PolicyRuleOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.invert, that.invert)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.conditions, that.conditions);
     }
 
     @Override

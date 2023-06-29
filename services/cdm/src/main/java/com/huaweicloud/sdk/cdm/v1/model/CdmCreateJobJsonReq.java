@@ -52,15 +52,15 @@ public class CdmCreateJobJsonReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmCreateJobJsonReq cdmCreateJobJsonReq = (CdmCreateJobJsonReq) o;
-        return Objects.equals(this.jobs, cdmCreateJobJsonReq.jobs);
+        CdmCreateJobJsonReq that = (CdmCreateJobJsonReq) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

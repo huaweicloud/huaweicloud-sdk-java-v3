@@ -99,16 +99,16 @@ public class AppCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppCreate appCreate = (AppCreate) o;
-        return Objects.equals(this.name, appCreate.name) && Objects.equals(this.remark, appCreate.remark)
-            && Objects.equals(this.appKey, appCreate.appKey) && Objects.equals(this.appSecret, appCreate.appSecret);
+        AppCreate that = (AppCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appSecret, that.appSecret);
     }
 
     @Override

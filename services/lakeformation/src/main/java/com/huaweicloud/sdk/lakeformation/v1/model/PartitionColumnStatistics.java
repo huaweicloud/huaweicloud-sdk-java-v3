@@ -86,16 +86,16 @@ public class PartitionColumnStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartitionColumnStatistics partitionColumnStatistics = (PartitionColumnStatistics) o;
-        return Objects.equals(this.columnStatisticsDesc, partitionColumnStatistics.columnStatisticsDesc)
-            && Objects.equals(this.columnStatisticsObjects, partitionColumnStatistics.columnStatisticsObjects);
+        PartitionColumnStatistics that = (PartitionColumnStatistics) obj;
+        return Objects.equals(this.columnStatisticsDesc, that.columnStatisticsDesc)
+            && Objects.equals(this.columnStatisticsObjects, that.columnStatisticsObjects);
     }
 
     @Override

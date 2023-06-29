@@ -65,16 +65,15 @@ public class CreateKmsTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKmsTagRequest createKmsTagRequest = (CreateKmsTagRequest) o;
-        return Objects.equals(this.keyId, createKmsTagRequest.keyId)
-            && Objects.equals(this.body, createKmsTagRequest.body);
+        CreateKmsTagRequest that = (CreateKmsTagRequest) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

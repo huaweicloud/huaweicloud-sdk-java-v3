@@ -65,16 +65,15 @@ public class CreateSyncEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSyncEventsRequest createSyncEventsRequest = (CreateSyncEventsRequest) o;
-        return Objects.equals(this.syncTaskId, createSyncEventsRequest.syncTaskId)
-            && Objects.equals(this.body, createSyncEventsRequest.body);
+        CreateSyncEventsRequest that = (CreateSyncEventsRequest) obj;
+        return Objects.equals(this.syncTaskId, that.syncTaskId) && Objects.equals(this.body, that.body);
     }
 
     @Override

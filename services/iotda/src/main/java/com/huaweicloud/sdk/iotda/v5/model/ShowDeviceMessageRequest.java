@@ -77,17 +77,16 @@ public class ShowDeviceMessageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceMessageRequest showDeviceMessageRequest = (ShowDeviceMessageRequest) o;
-        return Objects.equals(this.deviceId, showDeviceMessageRequest.deviceId)
-            && Objects.equals(this.instanceId, showDeviceMessageRequest.instanceId)
-            && Objects.equals(this.messageId, showDeviceMessageRequest.messageId);
+        ShowDeviceMessageRequest that = (ShowDeviceMessageRequest) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.messageId, that.messageId);
     }
 
     @Override

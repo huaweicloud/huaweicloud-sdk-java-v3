@@ -55,16 +55,15 @@ public class GrowNodeReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GrowNodeReq growNodeReq = (GrowNodeReq) o;
-        return Objects.equals(this.componentName, growNodeReq.componentName)
-            && Objects.equals(this.nodeNum, growNodeReq.nodeNum);
+        GrowNodeReq that = (GrowNodeReq) obj;
+        return Objects.equals(this.componentName, that.componentName) && Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override

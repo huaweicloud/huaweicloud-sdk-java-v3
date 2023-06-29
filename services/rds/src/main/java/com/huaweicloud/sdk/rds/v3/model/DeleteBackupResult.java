@@ -77,17 +77,16 @@ public class DeleteBackupResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteBackupResult deleteBackupResult = (DeleteBackupResult) o;
-        return Objects.equals(this.backupId, deleteBackupResult.backupId)
-            && Objects.equals(this.errorCode, deleteBackupResult.errorCode)
-            && Objects.equals(this.errorMsg, deleteBackupResult.errorMsg);
+        DeleteBackupResult that = (DeleteBackupResult) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class ListEventDetailRequest {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventTypeEnum(value));
         }
 
         public static EventTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -313,24 +306,19 @@ public class ListEventDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventDetailRequest listEventDetailRequest = (ListEventDetailRequest) o;
-        return Objects.equals(this.eventName, listEventDetailRequest.eventName)
-            && Objects.equals(this.eventType, listEventDetailRequest.eventType)
-            && Objects.equals(this.eventSource, listEventDetailRequest.eventSource)
-            && Objects.equals(this.eventLevel, listEventDetailRequest.eventLevel)
-            && Objects.equals(this.eventUser, listEventDetailRequest.eventUser)
-            && Objects.equals(this.eventState, listEventDetailRequest.eventState)
-            && Objects.equals(this.from, listEventDetailRequest.from)
-            && Objects.equals(this.to, listEventDetailRequest.to)
-            && Objects.equals(this.start, listEventDetailRequest.start)
-            && Objects.equals(this.limit, listEventDetailRequest.limit);
+        ListEventDetailRequest that = (ListEventDetailRequest) obj;
+        return Objects.equals(this.eventName, that.eventName) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventSource, that.eventSource) && Objects.equals(this.eventLevel, that.eventLevel)
+            && Objects.equals(this.eventUser, that.eventUser) && Objects.equals(this.eventState, that.eventState)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

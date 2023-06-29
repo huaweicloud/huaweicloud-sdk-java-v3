@@ -119,18 +119,16 @@ public class AddressSetListResponseDTOData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddressSetListResponseDTOData addressSetListResponseDTOData = (AddressSetListResponseDTOData) o;
-        return Objects.equals(this.offset, addressSetListResponseDTOData.offset)
-            && Objects.equals(this.limit, addressSetListResponseDTOData.limit)
-            && Objects.equals(this.total, addressSetListResponseDTOData.total)
-            && Objects.equals(this.records, addressSetListResponseDTOData.records);
+        AddressSetListResponseDTOData that = (AddressSetListResponseDTOData) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override

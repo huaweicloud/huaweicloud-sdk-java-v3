@@ -87,17 +87,16 @@ public class UpdateEdgeGroupNodeBindingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeGroupNodeBindingRequest updateEdgeGroupNodeBindingRequest = (UpdateEdgeGroupNodeBindingRequest) o;
-        return Objects.equals(this.iefInstanceId, updateEdgeGroupNodeBindingRequest.iefInstanceId)
-            && Objects.equals(this.groupId, updateEdgeGroupNodeBindingRequest.groupId)
-            && Objects.equals(this.body, updateEdgeGroupNodeBindingRequest.body);
+        UpdateEdgeGroupNodeBindingRequest that = (UpdateEdgeGroupNodeBindingRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

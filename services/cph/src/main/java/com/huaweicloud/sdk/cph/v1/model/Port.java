@@ -79,16 +79,16 @@ public class Port {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Port port = (Port) o;
-        return Objects.equals(this.name, port.name) && Objects.equals(this.listenPort, port.listenPort)
-            && Objects.equals(this.internetAccessible, port.internetAccessible);
+        Port that = (Port) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.listenPort, that.listenPort)
+            && Objects.equals(this.internetAccessible, that.internetAccessible);
     }
 
     @Override

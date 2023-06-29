@@ -66,16 +66,15 @@ public class CreateAcceleratorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAcceleratorResponse createAcceleratorResponse = (CreateAcceleratorResponse) o;
-        return Objects.equals(this.accelerator, createAcceleratorResponse.accelerator)
-            && Objects.equals(this.requestId, createAcceleratorResponse.requestId);
+        CreateAcceleratorResponse that = (CreateAcceleratorResponse) obj;
+        return Objects.equals(this.accelerator, that.accelerator) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class UpdatePrePaidBandwidthExtendParamOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrePaidBandwidthExtendParamOption updatePrePaidBandwidthExtendParamOption =
-            (UpdatePrePaidBandwidthExtendParamOption) o;
-        return Objects.equals(this.isAutoPay, updatePrePaidBandwidthExtendParamOption.isAutoPay);
+        UpdatePrePaidBandwidthExtendParamOption that = (UpdatePrePaidBandwidthExtendParamOption) obj;
+        return Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

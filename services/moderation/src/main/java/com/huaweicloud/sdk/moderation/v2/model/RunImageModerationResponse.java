@@ -44,15 +44,15 @@ public class RunImageModerationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunImageModerationResponse runImageModerationResponse = (RunImageModerationResponse) o;
-        return Objects.equals(this.result, runImageModerationResponse.result);
+        RunImageModerationResponse that = (RunImageModerationResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

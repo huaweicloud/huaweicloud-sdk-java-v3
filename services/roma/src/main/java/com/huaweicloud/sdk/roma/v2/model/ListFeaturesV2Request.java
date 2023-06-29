@@ -79,17 +79,16 @@ public class ListFeaturesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFeaturesV2Request listFeaturesV2Request = (ListFeaturesV2Request) o;
-        return Objects.equals(this.instanceId, listFeaturesV2Request.instanceId)
-            && Objects.equals(this.offset, listFeaturesV2Request.offset)
-            && Objects.equals(this.limit, listFeaturesV2Request.limit);
+        ListFeaturesV2Request that = (ListFeaturesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

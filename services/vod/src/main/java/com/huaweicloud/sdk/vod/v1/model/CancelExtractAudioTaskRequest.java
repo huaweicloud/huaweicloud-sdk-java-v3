@@ -57,16 +57,15 @@ public class CancelExtractAudioTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelExtractAudioTaskRequest cancelExtractAudioTaskRequest = (CancelExtractAudioTaskRequest) o;
-        return Objects.equals(this.xSdkDate, cancelExtractAudioTaskRequest.xSdkDate)
-            && Objects.equals(this.assetId, cancelExtractAudioTaskRequest.assetId);
+        CancelExtractAudioTaskRequest that = (CancelExtractAudioTaskRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

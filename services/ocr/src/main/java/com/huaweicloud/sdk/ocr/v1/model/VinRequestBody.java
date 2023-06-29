@@ -55,15 +55,15 @@ public class VinRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VinRequestBody vinRequestBody = (VinRequestBody) o;
-        return Objects.equals(this.image, vinRequestBody.image) && Objects.equals(this.url, vinRequestBody.url);
+        VinRequestBody that = (VinRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url);
     }
 
     @Override

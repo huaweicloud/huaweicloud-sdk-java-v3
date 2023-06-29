@@ -89,22 +89,15 @@ public class KafkaConfigResponseDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,22 +298,19 @@ public class KafkaConfigResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaConfigResponseDTO kafkaConfigResponseDTO = (KafkaConfigResponseDTO) o;
-        return Objects.equals(this.kafkaConfigId, kafkaConfigResponseDTO.kafkaConfigId)
-            && Objects.equals(this.kafkaTopics, kafkaConfigResponseDTO.kafkaTopics)
-            && Objects.equals(this.brokers, kafkaConfigResponseDTO.brokers)
-            && Objects.equals(this.username, kafkaConfigResponseDTO.username)
-            && Objects.equals(this.topicPrefix, kafkaConfigResponseDTO.topicPrefix)
-            && Objects.equals(this.status, kafkaConfigResponseDTO.status)
-            && Objects.equals(this.createdTime, kafkaConfigResponseDTO.createdTime)
-            && Objects.equals(this.lastModifiedTime, kafkaConfigResponseDTO.lastModifiedTime);
+        KafkaConfigResponseDTO that = (KafkaConfigResponseDTO) obj;
+        return Objects.equals(this.kafkaConfigId, that.kafkaConfigId)
+            && Objects.equals(this.kafkaTopics, that.kafkaTopics) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.topicPrefix, that.topicPrefix)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime);
     }
 
     @Override

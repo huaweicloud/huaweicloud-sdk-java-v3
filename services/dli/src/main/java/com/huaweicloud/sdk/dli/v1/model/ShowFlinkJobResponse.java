@@ -88,17 +88,16 @@ public class ShowFlinkJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFlinkJobResponse showFlinkJobResponse = (ShowFlinkJobResponse) o;
-        return Objects.equals(this.isSuccess, showFlinkJobResponse.isSuccess)
-            && Objects.equals(this.message, showFlinkJobResponse.message)
-            && Objects.equals(this.jobDetail, showFlinkJobResponse.jobDetail);
+        ShowFlinkJobResponse that = (ShowFlinkJobResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobDetail, that.jobDetail);
     }
 
     @Override

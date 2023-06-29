@@ -150,19 +150,17 @@ public class UpdateAddonInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAddonInstanceResponse updateAddonInstanceResponse = (UpdateAddonInstanceResponse) o;
-        return Objects.equals(this.kind, updateAddonInstanceResponse.kind)
-            && Objects.equals(this.apiVersion, updateAddonInstanceResponse.apiVersion)
-            && Objects.equals(this.metadata, updateAddonInstanceResponse.metadata)
-            && Objects.equals(this.spec, updateAddonInstanceResponse.spec)
-            && Objects.equals(this.status, updateAddonInstanceResponse.status);
+        UpdateAddonInstanceResponse that = (UpdateAddonInstanceResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

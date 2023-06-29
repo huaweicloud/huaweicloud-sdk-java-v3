@@ -121,18 +121,18 @@ public class Queue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Queue queue = (Queue) o;
-        return Objects.equals(this.id, queue.id) && Objects.equals(this.lag, queue.lag)
-            && Objects.equals(this.brokerOffset, queue.brokerOffset)
-            && Objects.equals(this.consumerOffset, queue.consumerOffset)
-            && Objects.equals(this.lastMessageTime, queue.lastMessageTime);
+        Queue that = (Queue) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lag, that.lag)
+            && Objects.equals(this.brokerOffset, that.brokerOffset)
+            && Objects.equals(this.consumerOffset, that.consumerOffset)
+            && Objects.equals(this.lastMessageTime, that.lastMessageTime);
     }
 
     @Override

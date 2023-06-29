@@ -34,16 +34,15 @@ public class UpdatePremiumHostProtectStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePremiumHostProtectStatusResponse updatePremiumHostProtectStatusResponse =
-            (UpdatePremiumHostProtectStatusResponse) o;
-        return Objects.equals(this.protectStatus, updatePremiumHostProtectStatusResponse.protectStatus);
+        UpdatePremiumHostProtectStatusResponse that = (UpdatePremiumHostProtectStatusResponse) obj;
+        return Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

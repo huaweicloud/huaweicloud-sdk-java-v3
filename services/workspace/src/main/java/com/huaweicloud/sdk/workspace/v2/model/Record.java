@@ -319,27 +319,25 @@ public class Record {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Record record = (Record) o;
-        return Objects.equals(this.computerName, record.computerName) && Objects.equals(this.userName, record.userName)
-            && Objects.equals(this.terminalMac, record.terminalMac)
-            && Objects.equals(this.terminalName, record.terminalName)
-            && Objects.equals(this.terminalIp, record.terminalIp)
-            && Objects.equals(this.clientVersion, record.clientVersion)
-            && Objects.equals(this.terminalType, record.terminalType)
-            && Objects.equals(this.agentVersion, record.agentVersion)
-            && Objects.equals(this.desktopIp, record.desktopIp)
-            && Objects.equals(this.connectionStartTime, record.connectionStartTime)
-            && Objects.equals(this.connectionSetupTime, record.connectionSetupTime)
-            && Objects.equals(this.connectionEndTime, record.connectionEndTime)
-            && Objects.equals(this.isReconnect, record.isReconnect)
-            && Objects.equals(this.connectionFailureReason, record.connectionFailureReason);
+        Record that = (Record) obj;
+        return Objects.equals(this.computerName, that.computerName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.terminalMac, that.terminalMac)
+            && Objects.equals(this.terminalName, that.terminalName) && Objects.equals(this.terminalIp, that.terminalIp)
+            && Objects.equals(this.clientVersion, that.clientVersion)
+            && Objects.equals(this.terminalType, that.terminalType)
+            && Objects.equals(this.agentVersion, that.agentVersion) && Objects.equals(this.desktopIp, that.desktopIp)
+            && Objects.equals(this.connectionStartTime, that.connectionStartTime)
+            && Objects.equals(this.connectionSetupTime, that.connectionSetupTime)
+            && Objects.equals(this.connectionEndTime, that.connectionEndTime)
+            && Objects.equals(this.isReconnect, that.isReconnect)
+            && Objects.equals(this.connectionFailureReason, that.connectionFailureReason);
     }
 
     @Override

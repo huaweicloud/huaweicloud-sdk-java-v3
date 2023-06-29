@@ -99,17 +99,16 @@ public class BatchFailure {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchFailure batchFailure = (BatchFailure) o;
-        return Objects.equals(this.apiId, batchFailure.apiId) && Objects.equals(this.apiName, batchFailure.apiName)
-            && Objects.equals(this.errorCode, batchFailure.errorCode)
-            && Objects.equals(this.errorMsg, batchFailure.errorMsg);
+        BatchFailure that = (BatchFailure) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

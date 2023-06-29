@@ -261,25 +261,20 @@ public class ListUserChangeHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserChangeHistoriesRequest listUserChangeHistoriesRequest = (ListUserChangeHistoriesRequest) o;
-        return Objects.equals(this.userName, listUserChangeHistoriesRequest.userName)
-            && Objects.equals(this.hostId, listUserChangeHistoriesRequest.hostId)
-            && Objects.equals(this.rootPermission, listUserChangeHistoriesRequest.rootPermission)
-            && Objects.equals(this.hostName, listUserChangeHistoriesRequest.hostName)
-            && Objects.equals(this.privateIp, listUserChangeHistoriesRequest.privateIp)
-            && Objects.equals(this.changeType, listUserChangeHistoriesRequest.changeType)
-            && Objects.equals(this.limit, listUserChangeHistoriesRequest.limit)
-            && Objects.equals(this.offset, listUserChangeHistoriesRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listUserChangeHistoriesRequest.enterpriseProjectId)
-            && Objects.equals(this.startTime, listUserChangeHistoriesRequest.startTime)
-            && Objects.equals(this.endTime, listUserChangeHistoriesRequest.endTime);
+        ListUserChangeHistoriesRequest that = (ListUserChangeHistoriesRequest) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.rootPermission, that.rootPermission) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.changeType, that.changeType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -110,18 +110,16 @@ public class CreateResDatasourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResDatasourceResponse createResDatasourceResponse = (CreateResDatasourceResponse) o;
-        return Objects.equals(this.isSuccess, createResDatasourceResponse.isSuccess)
-            && Objects.equals(this.datasource, createResDatasourceResponse.datasource)
-            && Objects.equals(this.message, createResDatasourceResponse.message)
-            && Objects.equals(this.errorCode, createResDatasourceResponse.errorCode);
+        CreateResDatasourceResponse that = (CreateResDatasourceResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.datasource, that.datasource)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

@@ -99,18 +99,17 @@ public class BusinessCardRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessCardRequestBody businessCardRequestBody = (BusinessCardRequestBody) o;
-        return Objects.equals(this.image, businessCardRequestBody.image)
-            && Objects.equals(this.url, businessCardRequestBody.url)
-            && Objects.equals(this.detectDirection, businessCardRequestBody.detectDirection)
-            && Objects.equals(this.returnAdjustedImage, businessCardRequestBody.returnAdjustedImage);
+        BusinessCardRequestBody that = (BusinessCardRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.detectDirection, that.detectDirection)
+            && Objects.equals(this.returnAdjustedImage, that.returnAdjustedImage);
     }
 
     @Override

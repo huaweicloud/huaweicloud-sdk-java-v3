@@ -103,19 +103,16 @@ public class ListIncentiveDiscountPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIncentiveDiscountPoliciesRequest listIncentiveDiscountPoliciesRequest =
-            (ListIncentiveDiscountPoliciesRequest) o;
-        return Objects.equals(this.time, listIncentiveDiscountPoliciesRequest.time)
-            && Objects.equals(this.serviceTypeCode, listIncentiveDiscountPoliciesRequest.serviceTypeCode)
-            && Objects.equals(this.offset, listIncentiveDiscountPoliciesRequest.offset)
-            && Objects.equals(this.limit, listIncentiveDiscountPoliciesRequest.limit);
+        ListIncentiveDiscountPoliciesRequest that = (ListIncentiveDiscountPoliciesRequest) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

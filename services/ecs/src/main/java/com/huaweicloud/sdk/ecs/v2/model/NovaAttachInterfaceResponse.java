@@ -45,15 +45,15 @@ public class NovaAttachInterfaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaAttachInterfaceResponse novaAttachInterfaceResponse = (NovaAttachInterfaceResponse) o;
-        return Objects.equals(this.interfaceAttachment, novaAttachInterfaceResponse.interfaceAttachment);
+        NovaAttachInterfaceResponse that = (NovaAttachInterfaceResponse) obj;
+        return Objects.equals(this.interfaceAttachment, that.interfaceAttachment);
     }
 
     @Override

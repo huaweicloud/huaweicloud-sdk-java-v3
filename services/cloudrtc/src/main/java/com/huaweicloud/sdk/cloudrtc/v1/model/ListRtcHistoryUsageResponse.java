@@ -77,16 +77,15 @@ public class ListRtcHistoryUsageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcHistoryUsageResponse listRtcHistoryUsageResponse = (ListRtcHistoryUsageResponse) o;
-        return Objects.equals(this.usage, listRtcHistoryUsageResponse.usage)
-            && Objects.equals(this.xRequestId, listRtcHistoryUsageResponse.xRequestId);
+        ListRtcHistoryUsageResponse that = (ListRtcHistoryUsageResponse) obj;
+        return Objects.equals(this.usage, that.usage) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

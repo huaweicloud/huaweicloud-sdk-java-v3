@@ -165,19 +165,18 @@ public class ComputingSpecDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputingSpecDto computingSpecDto = (ComputingSpecDto) o;
-        return Objects.equals(this.code, computingSpecDto.code) && Objects.equals(this.name, computingSpecDto.name)
-            && Objects.equals(this.ram, computingSpecDto.ram) && Objects.equals(this.vcpus, computingSpecDto.vcpus)
-            && Objects.equals(this.maxRate, computingSpecDto.maxRate)
-            && Objects.equals(this.minRate, computingSpecDto.minRate)
-            && Objects.equals(this.maxPps, computingSpecDto.maxPps);
+        ComputingSpecDto that = (ComputingSpecDto) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.maxRate, that.maxRate) && Objects.equals(this.minRate, that.minRate)
+            && Objects.equals(this.maxPps, that.maxPps);
     }
 
     @Override

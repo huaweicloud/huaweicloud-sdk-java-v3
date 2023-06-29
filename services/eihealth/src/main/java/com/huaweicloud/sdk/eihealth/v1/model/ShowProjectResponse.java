@@ -399,29 +399,23 @@ public class ShowProjectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectResponse showProjectResponse = (ShowProjectResponse) o;
-        return Objects.equals(this.id, showProjectResponse.id) && Objects.equals(this.name, showProjectResponse.name)
-            && Objects.equals(this.obsBucketName, showProjectResponse.obsBucketName)
-            && Objects.equals(this.swrNamespace, showProjectResponse.swrNamespace)
-            && Objects.equals(this.creator, showProjectResponse.creator)
-            && Objects.equals(this.role, showProjectResponse.role)
-            && Objects.equals(this.roles, showProjectResponse.roles)
-            && Objects.equals(this.size, showProjectResponse.size)
-            && Objects.equals(this.status, showProjectResponse.status)
-            && Objects.equals(this.tags, showProjectResponse.tags)
-            && Objects.equals(this.description, showProjectResponse.description)
-            && Objects.equals(this.createTime, showProjectResponse.createTime)
-            && Objects.equals(this.updateTime, showProjectResponse.updateTime)
-            && Objects.equals(this.deleteTime, showProjectResponse.deleteTime)
-            && Objects.equals(this.isCore, showProjectResponse.isCore)
-            && Objects.equals(this.storageQuota, showProjectResponse.storageQuota);
+        ShowProjectResponse that = (ShowProjectResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.obsBucketName, that.obsBucketName)
+            && Objects.equals(this.swrNamespace, that.swrNamespace) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.roles, that.roles)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.isCore, that.isCore)
+            && Objects.equals(this.storageQuota, that.storageQuota);
     }
 
     @Override

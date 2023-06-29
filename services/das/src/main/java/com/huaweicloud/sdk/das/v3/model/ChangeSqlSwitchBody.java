@@ -99,18 +99,17 @@ public class ChangeSqlSwitchBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeSqlSwitchBody changeSqlSwitchBody = (ChangeSqlSwitchBody) o;
-        return Objects.equals(this.type, changeSqlSwitchBody.type)
-            && Objects.equals(this.status, changeSqlSwitchBody.status)
-            && Objects.equals(this.datastoreType, changeSqlSwitchBody.datastoreType)
-            && Objects.equals(this.retentionDays, changeSqlSwitchBody.retentionDays);
+        ChangeSqlSwitchBody that = (ChangeSqlSwitchBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.retentionDays, that.retentionDays);
     }
 
     @Override

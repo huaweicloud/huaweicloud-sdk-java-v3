@@ -77,16 +77,16 @@ public class AccessPassword {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessPassword accessPassword = (AccessPassword) o;
-        return Objects.equals(this.name, accessPassword.name) && Objects.equals(this.user, accessPassword.user)
-            && Objects.equals(this.password, accessPassword.password);
+        AccessPassword that = (AccessPassword) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

@@ -46,17 +46,15 @@ public class UpdateDisasterRecoveryDrillNameResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDisasterRecoveryDrillNameResponse updateDisasterRecoveryDrillNameResponse =
-            (UpdateDisasterRecoveryDrillNameResponse) o;
-        return Objects.equals(this.disasterRecoveryDrill,
-            updateDisasterRecoveryDrillNameResponse.disasterRecoveryDrill);
+        UpdateDisasterRecoveryDrillNameResponse that = (UpdateDisasterRecoveryDrillNameResponse) obj;
+        return Objects.equals(this.disasterRecoveryDrill, that.disasterRecoveryDrill);
     }
 
     @Override

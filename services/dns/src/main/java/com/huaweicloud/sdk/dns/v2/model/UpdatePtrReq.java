@@ -118,17 +118,16 @@ public class UpdatePtrReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePtrReq updatePtrReq = (UpdatePtrReq) o;
-        return Objects.equals(this.ptrdname, updatePtrReq.ptrdname)
-            && Objects.equals(this.description, updatePtrReq.description) && Objects.equals(this.ttl, updatePtrReq.ttl)
-            && Objects.equals(this.tags, updatePtrReq.tags);
+        UpdatePtrReq that = (UpdatePtrReq) obj;
+        return Objects.equals(this.ptrdname, that.ptrdname) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

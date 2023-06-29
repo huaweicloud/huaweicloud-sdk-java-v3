@@ -43,15 +43,15 @@ public class CreateClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterReq createClusterReq = (CreateClusterReq) o;
-        return Objects.equals(this.cluster, createClusterReq.cluster);
+        CreateClusterReq that = (CreateClusterReq) obj;
+        return Objects.equals(this.cluster, that.cluster);
     }
 
     @Override

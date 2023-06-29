@@ -33,16 +33,15 @@ public class ShowImageHighresolutionMattingTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageHighresolutionMattingTaskRequest showImageHighresolutionMattingTaskRequest =
-            (ShowImageHighresolutionMattingTaskRequest) o;
-        return Objects.equals(this.taskId, showImageHighresolutionMattingTaskRequest.taskId);
+        ShowImageHighresolutionMattingTaskRequest that = (ShowImageHighresolutionMattingTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

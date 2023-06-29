@@ -1,126 +1,98 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussBackupStrategyForResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussChargeInfoResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussDatastoreResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussHaResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussVolumeResponse;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实例信息。
  */
-public class OpenGaussInstanceResponse  {
-
+public class OpenGaussInstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private OpenGaussDatastoreResponse datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha")
-    
+    @JsonProperty(value = "ha")
 
     private OpenGaussHaResponse ha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replica_num")
-    
+    @JsonProperty(value = "replica_num")
 
     private Integer replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
 
     private OpenGaussBackupStrategyForResponse backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
 
     private OpenGaussVolumeResponse volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private OpenGaussChargeInfoResponse chargeInfo;
 
@@ -128,9 +100,6 @@ public class OpenGaussInstanceResponse  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -144,15 +113,10 @@ public class OpenGaussInstanceResponse  {
         this.id = id;
     }
 
-    
-
     public OpenGaussInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。用于表示实例的名称，同一租户下，同类型的实例名称可相同。  取值范围：4~64个字符之间，必须以字母开头，不区分大小写，可以包含字母、数字、中划线或者下划线，不能包含其他的特殊字符。
@@ -166,15 +130,10 @@ public class OpenGaussInstanceResponse  {
         this.name = name;
     }
 
-    
-
     public OpenGaussInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。如BUILD，表示创建中。  仅创建按需实例时会返回该参数。
@@ -188,22 +147,19 @@ public class OpenGaussInstanceResponse  {
         this.status = status;
     }
 
-    
-
     public OpenGaussInstanceResponse withDatastore(OpenGaussDatastoreResponse datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public OpenGaussInstanceResponse withDatastore(Consumer<OpenGaussDatastoreResponse> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new OpenGaussDatastoreResponse();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -217,22 +173,19 @@ public class OpenGaussInstanceResponse  {
         this.datastore = datastore;
     }
 
-    
-
     public OpenGaussInstanceResponse withHa(OpenGaussHaResponse ha) {
         this.ha = ha;
         return this;
     }
 
     public OpenGaussInstanceResponse withHa(Consumer<OpenGaussHaResponse> haSetter) {
-        if(this.ha == null ){
+        if (this.ha == null) {
             this.ha = new OpenGaussHaResponse();
             haSetter.accept(this.ha);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get ha
@@ -246,15 +199,10 @@ public class OpenGaussInstanceResponse  {
         this.ha = ha;
     }
 
-    
-
     public OpenGaussInstanceResponse withReplicaNum(Integer replicaNum) {
         this.replicaNum = replicaNum;
         return this;
     }
-
-    
-
 
     /**
      * 实例副本数。
@@ -268,22 +216,20 @@ public class OpenGaussInstanceResponse  {
         this.replicaNum = replicaNum;
     }
 
-    
-
     public OpenGaussInstanceResponse withBackupStrategy(OpenGaussBackupStrategyForResponse backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
-    public OpenGaussInstanceResponse withBackupStrategy(Consumer<OpenGaussBackupStrategyForResponse> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+    public OpenGaussInstanceResponse withBackupStrategy(
+        Consumer<OpenGaussBackupStrategyForResponse> backupStrategySetter) {
+        if (this.backupStrategy == null) {
             this.backupStrategy = new OpenGaussBackupStrategyForResponse();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupStrategy
@@ -297,15 +243,10 @@ public class OpenGaussInstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public OpenGaussInstanceResponse withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口信息，与请求参数相同。
@@ -319,15 +260,10 @@ public class OpenGaussInstanceResponse  {
         this.port = port;
     }
 
-    
-
     public OpenGaussInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 项目标签。
@@ -341,15 +277,10 @@ public class OpenGaussInstanceResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public OpenGaussInstanceResponse withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 规格码，取值范围：非空。参考[表1](https://support.huaweicloud.com/api-opengauss/opengauss_api_0037.html#opengauss_api_0037__ted9b9d433c8a4c52884e199e17f94479)中GaussDB 的“规格编码”列内容获取。
@@ -363,22 +294,19 @@ public class OpenGaussInstanceResponse  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public OpenGaussInstanceResponse withVolume(OpenGaussVolumeResponse volume) {
         this.volume = volume;
         return this;
     }
 
     public OpenGaussInstanceResponse withVolume(Consumer<OpenGaussVolumeResponse> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new OpenGaussVolumeResponse();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get volume
@@ -392,15 +320,10 @@ public class OpenGaussInstanceResponse  {
         this.volume = volume;
     }
 
-    
-
     public OpenGaussInstanceResponse withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 区域ID。
@@ -414,15 +337,10 @@ public class OpenGaussInstanceResponse  {
         this.region = region;
     }
 
-    
-
     public OpenGaussInstanceResponse withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
-
-    
-
 
     /**
      * 可用区ID。
@@ -436,15 +354,10 @@ public class OpenGaussInstanceResponse  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public OpenGaussInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -458,15 +371,10 @@ public class OpenGaussInstanceResponse  {
         this.vpcId = vpcId;
     }
 
-    
-
     public OpenGaussInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息。
@@ -480,15 +388,10 @@ public class OpenGaussInstanceResponse  {
         this.subnetId = subnetId;
     }
 
-    
-
     public OpenGaussInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 实例所属的安全组。
@@ -502,22 +405,19 @@ public class OpenGaussInstanceResponse  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public OpenGaussInstanceResponse withChargeInfo(OpenGaussChargeInfoResponse chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public OpenGaussInstanceResponse withChargeInfo(Consumer<OpenGaussChargeInfoResponse> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new OpenGaussChargeInfoResponse();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -531,39 +431,48 @@ public class OpenGaussInstanceResponse  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussInstanceResponse openGaussInstanceResponse = (OpenGaussInstanceResponse) o;
-        return Objects.equals(this.id, openGaussInstanceResponse.id) &&
-            Objects.equals(this.name, openGaussInstanceResponse.name) &&
-            Objects.equals(this.status, openGaussInstanceResponse.status) &&
-            Objects.equals(this.datastore, openGaussInstanceResponse.datastore) &&
-            Objects.equals(this.ha, openGaussInstanceResponse.ha) &&
-            Objects.equals(this.replicaNum, openGaussInstanceResponse.replicaNum) &&
-            Objects.equals(this.backupStrategy, openGaussInstanceResponse.backupStrategy) &&
-            Objects.equals(this.port, openGaussInstanceResponse.port) &&
-            Objects.equals(this.enterpriseProjectId, openGaussInstanceResponse.enterpriseProjectId) &&
-            Objects.equals(this.flavorRef, openGaussInstanceResponse.flavorRef) &&
-            Objects.equals(this.volume, openGaussInstanceResponse.volume) &&
-            Objects.equals(this.region, openGaussInstanceResponse.region) &&
-            Objects.equals(this.availabilityZone, openGaussInstanceResponse.availabilityZone) &&
-            Objects.equals(this.vpcId, openGaussInstanceResponse.vpcId) &&
-            Objects.equals(this.subnetId, openGaussInstanceResponse.subnetId) &&
-            Objects.equals(this.securityGroupId, openGaussInstanceResponse.securityGroupId) &&
-            Objects.equals(this.chargeInfo, openGaussInstanceResponse.chargeInfo);
+        OpenGaussInstanceResponse that = (OpenGaussInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.ha, that.ha) && Objects.equals(this.replicaNum, that.replicaNum)
+            && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, datastore, ha, replicaNum, backupStrategy, port, enterpriseProjectId, flavorRef, volume, region, availabilityZone, vpcId, subnetId, securityGroupId, chargeInfo);
+        return Objects.hash(id,
+            name,
+            status,
+            datastore,
+            ha,
+            replicaNum,
+            backupStrategy,
+            port,
+            enterpriseProjectId,
+            flavorRef,
+            volume,
+            region,
+            availabilityZone,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            chargeInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -588,6 +497,7 @@ public class OpenGaussInstanceResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -598,8 +508,5 @@ public class OpenGaussInstanceResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

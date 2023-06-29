@@ -87,16 +87,16 @@ public class ProtocolResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtocolResult protocolResult = (ProtocolResult) o;
-        return Objects.equals(this.id, protocolResult.id) && Objects.equals(this.mappingId, protocolResult.mappingId)
-            && Objects.equals(this.links, protocolResult.links);
+        ProtocolResult that = (ProtocolResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.mappingId, that.mappingId)
+            && Objects.equals(this.links, that.links);
     }
 
     @Override

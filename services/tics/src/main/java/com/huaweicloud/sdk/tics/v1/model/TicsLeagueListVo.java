@@ -164,22 +164,15 @@ public class TicsLeagueListVo {
             if (value == null) {
                 return null;
             }
-            LeagueStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LeagueStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LeagueStatusEnum(value));
         }
 
         public static LeagueStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LeagueStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -256,22 +249,15 @@ public class TicsLeagueListVo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -571,30 +557,23 @@ public class TicsLeagueListVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TicsLeagueListVo ticsLeagueListVo = (TicsLeagueListVo) o;
-        return Objects.equals(this.bcsChannelName, ticsLeagueListVo.bcsChannelName)
-            && Objects.equals(this.bcsIp, ticsLeagueListVo.bcsIp)
-            && Objects.equals(this.bcsOrgName, ticsLeagueListVo.bcsOrgName)
-            && Objects.equals(this.blockChainId, ticsLeagueListVo.blockChainId)
-            && Objects.equals(this.blockChainName, ticsLeagueListVo.blockChainName)
-            && Objects.equals(this.createDate, ticsLeagueListVo.createDate)
-            && Objects.equals(this.createTime, ticsLeagueListVo.createTime)
-            && Objects.equals(this.creatorId, ticsLeagueListVo.creatorId)
-            && Objects.equals(this.creatorName, ticsLeagueListVo.creatorName)
-            && Objects.equals(this.expireTime, ticsLeagueListVo.expireTime)
-            && Objects.equals(this.id, ticsLeagueListVo.id)
-            && Objects.equals(this.leagueStatus, ticsLeagueListVo.leagueStatus)
-            && Objects.equals(this.name, ticsLeagueListVo.name)
-            && Objects.equals(this.partners, ticsLeagueListVo.partners)
-            && Objects.equals(this.type, ticsLeagueListVo.type)
-            && Objects.equals(this.version, ticsLeagueListVo.version);
+        TicsLeagueListVo that = (TicsLeagueListVo) obj;
+        return Objects.equals(this.bcsChannelName, that.bcsChannelName) && Objects.equals(this.bcsIp, that.bcsIp)
+            && Objects.equals(this.bcsOrgName, that.bcsOrgName) && Objects.equals(this.blockChainId, that.blockChainId)
+            && Objects.equals(this.blockChainName, that.blockChainName)
+            && Objects.equals(this.createDate, that.createDate) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.creatorId, that.creatorId) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.leagueStatus, that.leagueStatus) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.partners, that.partners) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

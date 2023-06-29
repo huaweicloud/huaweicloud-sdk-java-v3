@@ -84,25 +84,18 @@ public class CloudTableMeta {
         HttpRequestDef.Builder<EnableComponentRequest, EnableComponentResponse> builder =
             HttpRequestDef.builder(HttpMethod.POST, EnableComponentRequest.class, EnableComponentResponse.class)
                 .withName("EnableComponent")
-                .withUri("/v2/{projectId}/clusters/{clusterId}/components/{componentName}")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/components/{component_name}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(EnableComponentRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("clusterId",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(EnableComponentRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
             }));
-        builder.<String>withRequestField("componentName",
+        builder.<String>withRequestField("component_name",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -137,18 +130,11 @@ public class CloudTableMeta {
         HttpRequestDef.Builder<ExpandClusterComponentRequest, ExpandClusterComponentResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, ExpandClusterComponentRequest.class, ExpandClusterComponentResponse.class)
             .withName("ExpandClusterComponent")
-            .withUri("/v2/{projectId}/clusters/{clusterId}/nodes")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/nodes")
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ExpandClusterComponentRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("clusterId",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -214,18 +200,11 @@ public class CloudTableMeta {
         HttpRequestDef.Builder<RebootCloudTableClusterRequest, RebootCloudTableClusterResponse> builder = HttpRequestDef
             .builder(HttpMethod.POST, RebootCloudTableClusterRequest.class, RebootCloudTableClusterResponse.class)
             .withName("RebootCloudTableCluster")
-            .withUri("/v2/{projectId}/clusters/{clusterId}/restart")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/restart")
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(RebootCloudTableClusterRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("clusterId",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -299,18 +278,11 @@ public class CloudTableMeta {
         HttpRequestDef.Builder<ShowClusterSettingRequest, ShowClusterSettingResponse> builder =
             HttpRequestDef.builder(HttpMethod.GET, ShowClusterSettingRequest.class, ShowClusterSettingResponse.class)
                 .withName("ShowClusterSetting")
-                .withUri("/v2/{projectId}/clusters/{clusterId}/setting")
+                .withUri("/v2/{project_id}/clusters/{cluster_id}/setting")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowClusterSettingRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("clusterId",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
@@ -338,18 +310,11 @@ public class CloudTableMeta {
         HttpRequestDef.Builder<UpdateClusterSettingRequest, UpdateClusterSettingResponse> builder = HttpRequestDef
             .builder(HttpMethod.PUT, UpdateClusterSettingRequest.class, UpdateClusterSettingResponse.class)
             .withName("UpdateClusterSetting")
-            .withUri("/v2/{projectId}/clusters/{clusterId}/setting")
+            .withUri("/v2/{project_id}/clusters/{cluster_id}/setting")
             .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("projectId",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateClusterSettingRequest::getProjectId, (req, v) -> {
-                req.setProjectId(v);
-            }));
-        builder.<String>withRequestField("clusterId",
+        builder.<String>withRequestField("cluster_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),

@@ -62,22 +62,15 @@ public class TransformationInfo {
             if (value == null) {
                 return null;
             }
-            TransformationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TransformationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TransformationTypeEnum(value));
         }
 
         public static TransformationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TransformationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -139,16 +132,16 @@ public class TransformationInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformationInfo transformationInfo = (TransformationInfo) o;
-        return Objects.equals(this.transformationType, transformationInfo.transformationType)
-            && Objects.equals(this.value, transformationInfo.value);
+        TransformationInfo that = (TransformationInfo) obj;
+        return Objects.equals(this.transformationType, that.transformationType)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

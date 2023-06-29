@@ -76,16 +76,16 @@ public class ListStoredValueCardsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStoredValueCardsResponse listStoredValueCardsResponse = (ListStoredValueCardsResponse) o;
-        return Objects.equals(this.totalCount, listStoredValueCardsResponse.totalCount)
-            && Objects.equals(this.storedValueCards, listStoredValueCardsResponse.storedValueCards);
+        ListStoredValueCardsResponse that = (ListStoredValueCardsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.storedValueCards, that.storedValueCards);
     }
 
     @Override

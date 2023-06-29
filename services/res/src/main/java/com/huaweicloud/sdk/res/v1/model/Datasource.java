@@ -121,18 +121,18 @@ public class Datasource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Datasource datasource = (Datasource) o;
-        return Objects.equals(this.datasourceName, datasource.datasourceName)
-            && Objects.equals(this.workspaceId, datasource.workspaceId)
-            && Objects.equals(this.datasourceId, datasource.datasourceId)
-            && Objects.equals(this.status, datasource.status) && Objects.equals(this.createdAt, datasource.createdAt);
+        Datasource that = (Datasource) obj;
+        return Objects.equals(this.datasourceName, that.datasourceName)
+            && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.datasourceId, that.datasourceId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

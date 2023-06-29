@@ -1,78 +1,65 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询边缘节点列表响应体
  */
-public class EdgeNodeDTO  {
-
+public class EdgeNodeDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="space_id")
-    
+    @JsonProperty(value = "space_id")
 
     private String spaceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_ids")
-    
+    @JsonProperty(value = "resource_ids")
+
     private List<String> resourceIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_spec_types")
-    
+    @JsonProperty(value = "resource_spec_types")
+
     private List<String> resourceSpecTypes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ips")
-    
+    @JsonProperty(value = "ips")
+
     private List<String> ips = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
@@ -80,9 +67,6 @@ public class EdgeNodeDTO  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -96,15 +80,10 @@ public class EdgeNodeDTO  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public EdgeNodeDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点名称
@@ -118,15 +97,10 @@ public class EdgeNodeDTO  {
         this.name = name;
     }
 
-    
-
     public EdgeNodeDTO withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点状态UNINSTALLED|INSTALLED|OFFLINE|ONLINE|DELETING|FROZEN
@@ -140,15 +114,10 @@ public class EdgeNodeDTO  {
         this.state = state;
     }
 
-    
-
     public EdgeNodeDTO withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。物理多租下各实例的唯一标识，一般华为云租户无需携带该参数，仅在物理多租场景下从管理面访问API时需要携带该参数。
@@ -162,15 +131,10 @@ public class EdgeNodeDTO  {
         this.instanceId = instanceId;
     }
 
-    
-
     public EdgeNodeDTO withSpaceId(String spaceId) {
         this.spaceId = spaceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源空间id，对应IOTDA云服务接口参数中的app_id。
@@ -184,15 +148,10 @@ public class EdgeNodeDTO  {
         this.spaceId = spaceId;
     }
 
-    
-
     public EdgeNodeDTO withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点所属资源类型：advanced|standard
@@ -206,16 +165,13 @@ public class EdgeNodeDTO  {
         this.type = type;
     }
 
-    
-
     public EdgeNodeDTO withResourceIds(List<String> resourceIds) {
         this.resourceIds = resourceIds;
         return this;
     }
 
-    
     public EdgeNodeDTO addResourceIdsItem(String resourceIdsItem) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         this.resourceIds.add(resourceIdsItem);
@@ -223,7 +179,7 @@ public class EdgeNodeDTO  {
     }
 
     public EdgeNodeDTO withResourceIds(Consumer<List<String>> resourceIdsSetter) {
-        if(this.resourceIds == null) {
+        if (this.resourceIds == null) {
             this.resourceIds = new ArrayList<>();
         }
         resourceIdsSetter.accept(this.resourceIds);
@@ -242,16 +198,13 @@ public class EdgeNodeDTO  {
         this.resourceIds = resourceIds;
     }
 
-    
-
     public EdgeNodeDTO withResourceSpecTypes(List<String> resourceSpecTypes) {
         this.resourceSpecTypes = resourceSpecTypes;
         return this;
     }
 
-    
     public EdgeNodeDTO addResourceSpecTypesItem(String resourceSpecTypesItem) {
-        if(this.resourceSpecTypes == null) {
+        if (this.resourceSpecTypes == null) {
             this.resourceSpecTypes = new ArrayList<>();
         }
         this.resourceSpecTypes.add(resourceSpecTypesItem);
@@ -259,7 +212,7 @@ public class EdgeNodeDTO  {
     }
 
     public EdgeNodeDTO withResourceSpecTypes(Consumer<List<String>> resourceSpecTypesSetter) {
-        if(this.resourceSpecTypes == null) {
+        if (this.resourceSpecTypes == null) {
             this.resourceSpecTypes = new ArrayList<>();
         }
         resourceSpecTypesSetter.accept(this.resourceSpecTypes);
@@ -278,16 +231,13 @@ public class EdgeNodeDTO  {
         this.resourceSpecTypes = resourceSpecTypes;
     }
 
-    
-
     public EdgeNodeDTO withIps(List<String> ips) {
         this.ips = ips;
         return this;
     }
 
-    
     public EdgeNodeDTO addIpsItem(String ipsItem) {
-        if(this.ips == null) {
+        if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
         this.ips.add(ipsItem);
@@ -295,7 +245,7 @@ public class EdgeNodeDTO  {
     }
 
     public EdgeNodeDTO withIps(Consumer<List<String>> ipsSetter) {
-        if(this.ips == null) {
+        if (this.ips == null) {
             this.ips = new ArrayList<>();
         }
         ipsSetter.accept(this.ips);
@@ -314,15 +264,10 @@ public class EdgeNodeDTO  {
         this.ips = ips;
     }
 
-    
-
     public EdgeNodeDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点创建时间
@@ -336,32 +281,29 @@ public class EdgeNodeDTO  {
         this.createTime = createTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNodeDTO edgeNodeDTO = (EdgeNodeDTO) o;
-        return Objects.equals(this.edgeNodeId, edgeNodeDTO.edgeNodeId) &&
-            Objects.equals(this.name, edgeNodeDTO.name) &&
-            Objects.equals(this.state, edgeNodeDTO.state) &&
-            Objects.equals(this.instanceId, edgeNodeDTO.instanceId) &&
-            Objects.equals(this.spaceId, edgeNodeDTO.spaceId) &&
-            Objects.equals(this.type, edgeNodeDTO.type) &&
-            Objects.equals(this.resourceIds, edgeNodeDTO.resourceIds) &&
-            Objects.equals(this.resourceSpecTypes, edgeNodeDTO.resourceSpecTypes) &&
-            Objects.equals(this.ips, edgeNodeDTO.ips) &&
-            Objects.equals(this.createTime, edgeNodeDTO.createTime);
+        EdgeNodeDTO that = (EdgeNodeDTO) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.spaceId, that.spaceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.resourceSpecTypes, that.resourceSpecTypes) && Objects.equals(this.ips, that.ips)
+            && Objects.equals(this.createTime, that.createTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeNodeId, name, state, instanceId, spaceId, type, resourceIds, resourceSpecTypes, ips, createTime);
+        return Objects
+            .hash(edgeNodeId, name, state, instanceId, spaceId, type, resourceIds, resourceSpecTypes, ips, createTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -379,6 +321,7 @@ public class EdgeNodeDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -389,8 +332,5 @@ public class EdgeNodeDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

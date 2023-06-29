@@ -1,46 +1,33 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.JobExeResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListExecuteJobResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalRecord")
-    
+    @JsonProperty(value = "totalRecord")
 
     private Integer totalRecord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_executions")
-    
+    @JsonProperty(value = "job_executions")
+
     private List<JobExeResult> jobExecutions = null;
-    
+
     public ListExecuteJobResponse withTotalRecord(Integer totalRecord) {
         this.totalRecord = totalRecord;
         return this;
     }
-
-    
-
 
     /**
      * 作业列表总数。
@@ -54,16 +41,13 @@ public class ListExecuteJobResponse extends SdkResponse {
         this.totalRecord = totalRecord;
     }
 
-    
-
     public ListExecuteJobResponse withJobExecutions(List<JobExeResult> jobExecutions) {
         this.jobExecutions = jobExecutions;
         return this;
     }
 
-    
     public ListExecuteJobResponse addJobExecutionsItem(JobExeResult jobExecutionsItem) {
-        if(this.jobExecutions == null) {
+        if (this.jobExecutions == null) {
             this.jobExecutions = new ArrayList<>();
         }
         this.jobExecutions.add(jobExecutionsItem);
@@ -71,7 +55,7 @@ public class ListExecuteJobResponse extends SdkResponse {
     }
 
     public ListExecuteJobResponse withJobExecutions(Consumer<List<JobExeResult>> jobExecutionsSetter) {
-        if(this.jobExecutions == null) {
+        if (this.jobExecutions == null) {
             this.jobExecutions = new ArrayList<>();
         }
         jobExecutionsSetter.accept(this.jobExecutions);
@@ -90,24 +74,24 @@ public class ListExecuteJobResponse extends SdkResponse {
         this.jobExecutions = jobExecutions;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExecuteJobResponse listExecuteJobResponse = (ListExecuteJobResponse) o;
-        return Objects.equals(this.totalRecord, listExecuteJobResponse.totalRecord) &&
-            Objects.equals(this.jobExecutions, listExecuteJobResponse.jobExecutions);
+        ListExecuteJobResponse that = (ListExecuteJobResponse) obj;
+        return Objects.equals(this.totalRecord, that.totalRecord)
+            && Objects.equals(this.jobExecutions, that.jobExecutions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(totalRecord, jobExecutions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +101,7 @@ public class ListExecuteJobResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +112,5 @@ public class ListExecuteJobResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 扩容实例磁盘时必填。 所需扩容到的磁盘容量大小。
  */
-public class OpenGaussEnlargeVolume  {
-
+public class OpenGaussEnlargeVolume {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="size")
-    
+    @JsonProperty(value = "size")
 
     private Integer size;
 
@@ -27,9 +19,6 @@ public class OpenGaussEnlargeVolume  {
         this.size = size;
         return this;
     }
-
-    
-
 
     /**
      * GaussDB磁盘大小要求（分片数*40GB）的倍数；取值范围：（分片数*40GB）~（分片数*16TB）
@@ -43,23 +32,23 @@ public class OpenGaussEnlargeVolume  {
         this.size = size;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenGaussEnlargeVolume openGaussEnlargeVolume = (OpenGaussEnlargeVolume) o;
-        return Objects.equals(this.size, openGaussEnlargeVolume.size);
+        OpenGaussEnlargeVolume that = (OpenGaussEnlargeVolume) obj;
+        return Objects.equals(this.size, that.size);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(size);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class OpenGaussEnlargeVolume  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class OpenGaussEnlargeVolume  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

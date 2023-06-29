@@ -439,24 +439,23 @@ public class StackInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StackInfo stackInfo = (StackInfo) o;
-        return Objects.equals(this.armConfig, stackInfo.armConfig)
-            && Objects.equals(this.bundleUrl, stackInfo.bundleUrl) && Objects.equals(this.config, stackInfo.config)
-            && Objects.equals(this.createdTime, stackInfo.createdTime) && Objects.equals(this.delete, stackInfo.delete)
-            && Objects.equals(this.description, stackInfo.description)
-            && Objects.equals(this.disable, stackInfo.disable)
-            && Objects.equals(this.displayName, stackInfo.displayName) && Objects.equals(this.id, stackInfo.id)
-            && Objects.equals(this.label, stackInfo.label) && Objects.equals(this.logo, stackInfo.logo)
-            && Objects.equals(this.region, stackInfo.region) && Objects.equals(this.show, stackInfo.show)
-            && Objects.equals(this.stackName, stackInfo.stackName) && Objects.equals(this.tags, stackInfo.tags)
-            && Objects.equals(this.updatedTime, stackInfo.updatedTime) && Objects.equals(this.users, stackInfo.users);
+        StackInfo that = (StackInfo) obj;
+        return Objects.equals(this.armConfig, that.armConfig) && Objects.equals(this.bundleUrl, that.bundleUrl)
+            && Objects.equals(this.config, that.config) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.delete, that.delete) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.disable, that.disable) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.logo, that.logo) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.show, that.show) && Objects.equals(this.stackName, that.stackName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.users, that.users);
     }
 
     @Override

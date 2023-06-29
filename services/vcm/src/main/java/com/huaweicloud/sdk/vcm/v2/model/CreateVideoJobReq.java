@@ -171,20 +171,18 @@ public class CreateVideoJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVideoJobReq createVideoJobReq = (CreateVideoJobReq) o;
-        return Objects.equals(this.name, createVideoJobReq.name)
-            && Objects.equals(this.description, createVideoJobReq.description)
-            && Objects.equals(this.input, createVideoJobReq.input)
-            && Objects.equals(this.output, createVideoJobReq.output)
-            && Objects.equals(this.serviceConfig, createVideoJobReq.serviceConfig)
-            && Objects.equals(this.serviceVersion, createVideoJobReq.serviceVersion);
+        CreateVideoJobReq that = (CreateVideoJobReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.serviceConfig, that.serviceConfig)
+            && Objects.equals(this.serviceVersion, that.serviceVersion);
     }
 
     @Override

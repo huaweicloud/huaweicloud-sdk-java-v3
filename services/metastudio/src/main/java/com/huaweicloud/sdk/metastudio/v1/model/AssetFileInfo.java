@@ -167,21 +167,19 @@ public class AssetFileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetFileInfo assetFileInfo = (AssetFileInfo) o;
-        return Objects.equals(this.fileId, assetFileInfo.fileId)
-            && Objects.equals(this.fileName, assetFileInfo.fileName)
-            && Objects.equals(this.fileMd5, assetFileInfo.fileMd5)
-            && Objects.equals(this.fileSize, assetFileInfo.fileSize)
-            && Objects.equals(this.fileType, assetFileInfo.fileType)
-            && Objects.equals(this.assetFileCategory, assetFileInfo.assetFileCategory)
-            && Objects.equals(this.downloadUrl, assetFileInfo.downloadUrl);
+        AssetFileInfo that = (AssetFileInfo) obj;
+        return Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileMd5, that.fileMd5) && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.assetFileCategory, that.assetFileCategory)
+            && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

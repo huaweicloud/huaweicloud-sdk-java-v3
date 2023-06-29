@@ -55,16 +55,15 @@ public class UpdateRuleCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleCondition updateRuleCondition = (UpdateRuleCondition) o;
-        return Objects.equals(this.key, updateRuleCondition.key)
-            && Objects.equals(this.value, updateRuleCondition.value);
+        UpdateRuleCondition that = (UpdateRuleCondition) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

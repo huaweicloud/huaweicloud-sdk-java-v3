@@ -94,22 +94,15 @@ public class CreateDispatchesResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -340,24 +333,20 @@ public class CreateDispatchesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDispatchesResponse createDispatchesResponse = (CreateDispatchesResponse) o;
-        return Objects.equals(this.dispatchId, createDispatchesResponse.dispatchId)
-            && Objects.equals(this.taskId, createDispatchesResponse.taskId)
-            && Objects.equals(this.startDatetime, createDispatchesResponse.startDatetime)
-            && Objects.equals(this.period, createDispatchesResponse.period)
-            && Objects.equals(this.dispatchInterval, createDispatchesResponse.dispatchInterval)
-            && Objects.equals(this.createdDate, createDispatchesResponse.createdDate)
-            && Objects.equals(this.lastModifiedDate, createDispatchesResponse.lastModifiedDate)
-            && Objects.equals(this.remark, createDispatchesResponse.remark)
-            && Objects.equals(this.useQuartzCron, createDispatchesResponse.useQuartzCron)
-            && Objects.equals(this.cron, createDispatchesResponse.cron);
+        CreateDispatchesResponse that = (CreateDispatchesResponse) obj;
+        return Objects.equals(this.dispatchId, that.dispatchId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.startDatetime, that.startDatetime) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.dispatchInterval, that.dispatchInterval)
+            && Objects.equals(this.createdDate, that.createdDate)
+            && Objects.equals(this.lastModifiedDate, that.lastModifiedDate) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.useQuartzCron, that.useQuartzCron) && Objects.equals(this.cron, that.cron);
     }
 
     @Override

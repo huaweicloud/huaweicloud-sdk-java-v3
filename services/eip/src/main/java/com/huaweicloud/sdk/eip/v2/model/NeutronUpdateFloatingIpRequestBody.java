@@ -43,15 +43,15 @@ public class NeutronUpdateFloatingIpRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateFloatingIpRequestBody neutronUpdateFloatingIpRequestBody = (NeutronUpdateFloatingIpRequestBody) o;
-        return Objects.equals(this.floatingip, neutronUpdateFloatingIpRequestBody.floatingip);
+        NeutronUpdateFloatingIpRequestBody that = (NeutronUpdateFloatingIpRequestBody) obj;
+        return Objects.equals(this.floatingip, that.floatingip);
     }
 
     @Override

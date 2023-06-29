@@ -206,18 +206,18 @@ public class Events {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Events events = (Events) o;
-        return Objects.equals(this.annotations, events.annotations) && Objects.equals(this.metadata, events.metadata)
-            && Objects.equals(this.arrivesAt, events.arrivesAt) && Objects.equals(this.endsAt, events.endsAt)
-            && Objects.equals(this.id, events.id) && Objects.equals(this.startsAt, events.startsAt)
-            && Objects.equals(this.timeout, events.timeout) && Objects.equals(this.type, events.type);
+        Events that = (Events) obj;
+        return Objects.equals(this.annotations, that.annotations) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.arrivesAt, that.arrivesAt) && Objects.equals(this.endsAt, that.endsAt)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.startsAt, that.startsAt)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.type, that.type);
     }
 
     @Override

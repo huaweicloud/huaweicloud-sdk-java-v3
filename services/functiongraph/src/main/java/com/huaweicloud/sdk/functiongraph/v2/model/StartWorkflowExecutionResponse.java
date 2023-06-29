@@ -34,15 +34,15 @@ public class StartWorkflowExecutionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartWorkflowExecutionResponse startWorkflowExecutionResponse = (StartWorkflowExecutionResponse) o;
-        return Objects.equals(this.executionId, startWorkflowExecutionResponse.executionId);
+        StartWorkflowExecutionResponse that = (StartWorkflowExecutionResponse) obj;
+        return Objects.equals(this.executionId, that.executionId);
     }
 
     @Override

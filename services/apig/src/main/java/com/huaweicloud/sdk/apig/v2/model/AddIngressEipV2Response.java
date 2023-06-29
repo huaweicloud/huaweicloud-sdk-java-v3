@@ -78,17 +78,16 @@ public class AddIngressEipV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddIngressEipV2Response addIngressEipV2Response = (AddIngressEipV2Response) o;
-        return Objects.equals(this.instanceId, addIngressEipV2Response.instanceId)
-            && Objects.equals(this.message, addIngressEipV2Response.message)
-            && Objects.equals(this.jobId, addIngressEipV2Response.jobId);
+        AddIngressEipV2Response that = (AddIngressEipV2Response) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

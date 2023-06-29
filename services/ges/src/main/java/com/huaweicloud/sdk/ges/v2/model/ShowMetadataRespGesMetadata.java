@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ShowMetadataRespGesMetadataLabels;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 存储metadata的消息信息的对象。
  */
-public class ShowMetadataRespGesMetadata  {
-
+public class ShowMetadataRespGesMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="labels")
-    
+    @JsonProperty(value = "labels")
+
     private List<ShowMetadataRespGesMetadataLabels> labels = null;
-    
+
     public ShowMetadataRespGesMetadata withLabels(List<ShowMetadataRespGesMetadataLabels> labels) {
         this.labels = labels;
         return this;
     }
 
-    
     public ShowMetadataRespGesMetadata addLabelsItem(ShowMetadataRespGesMetadataLabels labelsItem) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
         this.labels.add(labelsItem);
@@ -40,7 +32,7 @@ public class ShowMetadataRespGesMetadata  {
     }
 
     public ShowMetadataRespGesMetadata withLabels(Consumer<List<ShowMetadataRespGesMetadataLabels>> labelsSetter) {
-        if(this.labels == null) {
+        if (this.labels == null) {
             this.labels = new ArrayList<>();
         }
         labelsSetter.accept(this.labels);
@@ -59,23 +51,23 @@ public class ShowMetadataRespGesMetadata  {
         this.labels = labels;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetadataRespGesMetadata showMetadataRespGesMetadata = (ShowMetadataRespGesMetadata) o;
-        return Objects.equals(this.labels, showMetadataRespGesMetadata.labels);
+        ShowMetadataRespGesMetadata that = (ShowMetadataRespGesMetadata) obj;
+        return Objects.equals(this.labels, that.labels);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(labels);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class ShowMetadataRespGesMetadata  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class ShowMetadataRespGesMetadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

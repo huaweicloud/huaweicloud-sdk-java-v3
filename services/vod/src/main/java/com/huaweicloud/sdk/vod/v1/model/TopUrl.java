@@ -121,17 +121,17 @@ public class TopUrl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopUrl topUrl = (TopUrl) o;
-        return Objects.equals(this.value, topUrl.value) && Objects.equals(this.assetId, topUrl.assetId)
-            && Objects.equals(this.title, topUrl.title) && Objects.equals(this.duration, topUrl.duration)
-            && Objects.equals(this.size, topUrl.size);
+        TopUrl that = (TopUrl) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

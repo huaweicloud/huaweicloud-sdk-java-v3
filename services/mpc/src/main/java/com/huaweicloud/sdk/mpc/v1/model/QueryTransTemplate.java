@@ -127,18 +127,16 @@ public class QueryTransTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryTransTemplate queryTransTemplate = (QueryTransTemplate) o;
-        return Objects.equals(this.templateName, queryTransTemplate.templateName)
-            && Objects.equals(this.video, queryTransTemplate.video)
-            && Objects.equals(this.audio, queryTransTemplate.audio)
-            && Objects.equals(this.common, queryTransTemplate.common);
+        QueryTransTemplate that = (QueryTransTemplate) obj;
+        return Objects.equals(this.templateName, that.templateName) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.common, that.common);
     }
 
     @Override

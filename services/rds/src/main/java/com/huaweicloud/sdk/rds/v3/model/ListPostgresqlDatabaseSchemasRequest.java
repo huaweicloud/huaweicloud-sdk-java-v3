@@ -123,20 +123,17 @@ public class ListPostgresqlDatabaseSchemasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPostgresqlDatabaseSchemasRequest listPostgresqlDatabaseSchemasRequest =
-            (ListPostgresqlDatabaseSchemasRequest) o;
-        return Objects.equals(this.xLanguage, listPostgresqlDatabaseSchemasRequest.xLanguage)
-            && Objects.equals(this.instanceId, listPostgresqlDatabaseSchemasRequest.instanceId)
-            && Objects.equals(this.dbName, listPostgresqlDatabaseSchemasRequest.dbName)
-            && Objects.equals(this.page, listPostgresqlDatabaseSchemasRequest.page)
-            && Objects.equals(this.limit, listPostgresqlDatabaseSchemasRequest.limit);
+        ListPostgresqlDatabaseSchemasRequest that = (ListPostgresqlDatabaseSchemasRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

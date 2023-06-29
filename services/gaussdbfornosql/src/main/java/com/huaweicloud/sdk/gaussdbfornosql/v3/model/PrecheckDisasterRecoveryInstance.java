@@ -96,17 +96,16 @@ public class PrecheckDisasterRecoveryInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrecheckDisasterRecoveryInstance precheckDisasterRecoveryInstance = (PrecheckDisasterRecoveryInstance) o;
-        return Objects.equals(this.vpcCidr, precheckDisasterRecoveryInstance.vpcCidr)
-            && Objects.equals(this.specCode, precheckDisasterRecoveryInstance.specCode)
-            && Objects.equals(this.nodeIps, precheckDisasterRecoveryInstance.nodeIps);
+        PrecheckDisasterRecoveryInstance that = (PrecheckDisasterRecoveryInstance) obj;
+        return Objects.equals(this.vpcCidr, that.vpcCidr) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.nodeIps, that.nodeIps);
     }
 
     @Override

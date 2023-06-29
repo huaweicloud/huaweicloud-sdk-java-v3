@@ -282,24 +282,19 @@ public class DatabasePermissionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabasePermissionReq databasePermissionReq = (DatabasePermissionReq) o;
-        return Objects.equals(this.type, databasePermissionReq.type)
-            && Objects.equals(this.isGrant, databasePermissionReq.isGrant)
-            && Objects.equals(this.grantList, databasePermissionReq.grantList)
-            && Objects.equals(this.revokeList, databasePermissionReq.revokeList)
-            && Objects.equals(this.roleList, databasePermissionReq.roleList)
-            && Objects.equals(this.objectList, databasePermissionReq.objectList)
-            && Objects.equals(this.cascade, databasePermissionReq.cascade)
-            && Objects.equals(this.database, databasePermissionReq.database)
-            && Objects.equals(this.schema, databasePermissionReq.schema)
-            && Objects.equals(this.table, databasePermissionReq.table);
+        DatabasePermissionReq that = (DatabasePermissionReq) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.isGrant, that.isGrant)
+            && Objects.equals(this.grantList, that.grantList) && Objects.equals(this.revokeList, that.revokeList)
+            && Objects.equals(this.roleList, that.roleList) && Objects.equals(this.objectList, that.objectList)
+            && Objects.equals(this.cascade, that.cascade) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.table, that.table);
     }
 
     @Override

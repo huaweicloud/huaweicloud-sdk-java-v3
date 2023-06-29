@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * RateControl
  */
-public class RateControl  {
-
+public class RateControl {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="have_rate_control")
-    
+    @JsonProperty(value = "have_rate_control")
 
     private Boolean haveRateControl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_delay")
-    
+    @JsonProperty(value = "time_delay")
 
     private Integer timeDelay;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max")
-    
+    @JsonProperty(value = "max")
 
     private Integer max;
 
@@ -39,9 +29,6 @@ public class RateControl  {
         this.haveRateControl = haveRateControl;
         return this;
     }
-
-    
-
 
     /**
      * 是否分批发布，默认值是false。
@@ -55,15 +42,10 @@ public class RateControl  {
         this.haveRateControl = haveRateControl;
     }
 
-    
-
     public RateControl withTimeDelay(Integer timeDelay) {
         this.timeDelay = timeDelay;
         return this;
     }
-
-    
-
 
     /**
      * 每批间隔。
@@ -79,15 +61,10 @@ public class RateControl  {
         this.timeDelay = timeDelay;
     }
 
-    
-
     public RateControl withMax(Integer max) {
         this.max = max;
         return this;
     }
-
-    
-
 
     /**
      * 每批支持的最大实例数。
@@ -103,25 +80,24 @@ public class RateControl  {
         this.max = max;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RateControl rateControl = (RateControl) o;
-        return Objects.equals(this.haveRateControl, rateControl.haveRateControl) &&
-            Objects.equals(this.timeDelay, rateControl.timeDelay) &&
-            Objects.equals(this.max, rateControl.max);
+        RateControl that = (RateControl) obj;
+        return Objects.equals(this.haveRateControl, that.haveRateControl)
+            && Objects.equals(this.timeDelay, that.timeDelay) && Objects.equals(this.max, that.max);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(haveRateControl, timeDelay, max);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,6 +108,7 @@ public class RateControl  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -142,8 +119,5 @@ public class RateControl  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

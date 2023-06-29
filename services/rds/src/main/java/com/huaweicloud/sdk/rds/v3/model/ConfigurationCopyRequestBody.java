@@ -55,16 +55,15 @@ public class ConfigurationCopyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationCopyRequestBody configurationCopyRequestBody = (ConfigurationCopyRequestBody) o;
-        return Objects.equals(this.name, configurationCopyRequestBody.name)
-            && Objects.equals(this.description, configurationCopyRequestBody.description);
+        ConfigurationCopyRequestBody that = (ConfigurationCopyRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

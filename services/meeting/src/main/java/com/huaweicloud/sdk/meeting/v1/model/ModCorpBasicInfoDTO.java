@@ -55,16 +55,15 @@ public class ModCorpBasicInfoDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModCorpBasicInfoDTO modCorpBasicInfoDTO = (ModCorpBasicInfoDTO) o;
-        return Objects.equals(this.address, modCorpBasicInfoDTO.address)
-            && Objects.equals(this.autoUserCreate, modCorpBasicInfoDTO.autoUserCreate);
+        ModCorpBasicInfoDTO that = (ModCorpBasicInfoDTO) obj;
+        return Objects.equals(this.address, that.address) && Objects.equals(this.autoUserCreate, that.autoUserCreate);
     }
 
     @Override

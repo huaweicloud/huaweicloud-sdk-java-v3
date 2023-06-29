@@ -80,17 +80,16 @@ public class ListAvailableRdsListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableRdsListRequest listAvailableRdsListRequest = (ListAvailableRdsListRequest) o;
-        return Objects.equals(this.instanceId, listAvailableRdsListRequest.instanceId)
-            && Objects.equals(this.offset, listAvailableRdsListRequest.offset)
-            && Objects.equals(this.limit, listAvailableRdsListRequest.limit);
+        ListAvailableRdsListRequest that = (ListAvailableRdsListRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

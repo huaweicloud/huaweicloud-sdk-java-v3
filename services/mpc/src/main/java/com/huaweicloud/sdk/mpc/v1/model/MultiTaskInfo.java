@@ -98,17 +98,16 @@ public class MultiTaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskInfo multiTaskInfo = (MultiTaskInfo) o;
-        return Objects.equals(this.templateId, multiTaskInfo.templateId)
-            && Objects.equals(this.error, multiTaskInfo.error)
-            && Objects.equals(this.outputFile, multiTaskInfo.outputFile);
+        MultiTaskInfo that = (MultiTaskInfo) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.outputFile, that.outputFile);
     }
 
     @Override

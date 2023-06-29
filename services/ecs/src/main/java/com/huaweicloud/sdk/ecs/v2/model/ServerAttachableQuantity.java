@@ -99,18 +99,16 @@ public class ServerAttachableQuantity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerAttachableQuantity serverAttachableQuantity = (ServerAttachableQuantity) o;
-        return Objects.equals(this.freeScsi, serverAttachableQuantity.freeScsi)
-            && Objects.equals(this.freeBlk, serverAttachableQuantity.freeBlk)
-            && Objects.equals(this.freeDisk, serverAttachableQuantity.freeDisk)
-            && Objects.equals(this.freeNic, serverAttachableQuantity.freeNic);
+        ServerAttachableQuantity that = (ServerAttachableQuantity) obj;
+        return Objects.equals(this.freeScsi, that.freeScsi) && Objects.equals(this.freeBlk, that.freeBlk)
+            && Objects.equals(this.freeDisk, that.freeDisk) && Objects.equals(this.freeNic, that.freeNic);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class DeleteAimPersonalTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAimPersonalTemplateResponse deleteAimPersonalTemplateResponse = (DeleteAimPersonalTemplateResponse) o;
-        return Objects.equals(this.status, deleteAimPersonalTemplateResponse.status)
-            && Objects.equals(this.message, deleteAimPersonalTemplateResponse.message);
+        DeleteAimPersonalTemplateResponse that = (DeleteAimPersonalTemplateResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message);
     }
 
     @Override

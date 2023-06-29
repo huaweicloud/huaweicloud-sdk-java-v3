@@ -63,22 +63,15 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -544,34 +537,24 @@ public class HttpQueryCfwAttackLogsResponseDTODataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpQueryCfwAttackLogsResponseDTODataRecords httpQueryCfwAttackLogsResponseDTODataRecords =
-            (HttpQueryCfwAttackLogsResponseDTODataRecords) o;
-        return Objects.equals(this.direction, httpQueryCfwAttackLogsResponseDTODataRecords.direction)
-            && Objects.equals(this.action, httpQueryCfwAttackLogsResponseDTODataRecords.action)
-            && Objects.equals(this.eventTime, httpQueryCfwAttackLogsResponseDTODataRecords.eventTime)
-            && Objects.equals(this.attackType, httpQueryCfwAttackLogsResponseDTODataRecords.attackType)
-            && Objects.equals(this.attackRule, httpQueryCfwAttackLogsResponseDTODataRecords.attackRule)
-            && Objects.equals(this.level, httpQueryCfwAttackLogsResponseDTODataRecords.level)
-            && Objects.equals(this.source, httpQueryCfwAttackLogsResponseDTODataRecords.source)
-            && Objects.equals(this.packetLength, httpQueryCfwAttackLogsResponseDTODataRecords.packetLength)
-            && Objects.equals(this.attackRuleId, httpQueryCfwAttackLogsResponseDTODataRecords.attackRuleId)
-            && Objects.equals(this.hitTime, httpQueryCfwAttackLogsResponseDTODataRecords.hitTime)
-            && Objects.equals(this.logId, httpQueryCfwAttackLogsResponseDTODataRecords.logId)
-            && Objects.equals(this.srcIp, httpQueryCfwAttackLogsResponseDTODataRecords.srcIp)
-            && Objects.equals(this.srcPort, httpQueryCfwAttackLogsResponseDTODataRecords.srcPort)
-            && Objects.equals(this.dstIp, httpQueryCfwAttackLogsResponseDTODataRecords.dstIp)
-            && Objects.equals(this.dstPort, httpQueryCfwAttackLogsResponseDTODataRecords.dstPort)
-            && Objects.equals(this.protocol, httpQueryCfwAttackLogsResponseDTODataRecords.protocol)
-            && Objects.equals(this.packet, httpQueryCfwAttackLogsResponseDTODataRecords.packet)
-            && Objects.equals(this.app, httpQueryCfwAttackLogsResponseDTODataRecords.app)
-            && Objects.equals(this.packetMessages, httpQueryCfwAttackLogsResponseDTODataRecords.packetMessages);
+        HttpQueryCfwAttackLogsResponseDTODataRecords that = (HttpQueryCfwAttackLogsResponseDTODataRecords) obj;
+        return Objects.equals(this.direction, that.direction) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.eventTime, that.eventTime) && Objects.equals(this.attackType, that.attackType)
+            && Objects.equals(this.attackRule, that.attackRule) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.packetLength, that.packetLength)
+            && Objects.equals(this.attackRuleId, that.attackRuleId) && Objects.equals(this.hitTime, that.hitTime)
+            && Objects.equals(this.logId, that.logId) && Objects.equals(this.srcIp, that.srcIp)
+            && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
+            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.packet, that.packet) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.packetMessages, that.packetMessages);
     }
 
     @Override

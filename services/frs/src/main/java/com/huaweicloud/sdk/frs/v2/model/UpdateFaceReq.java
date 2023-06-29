@@ -77,17 +77,16 @@ public class UpdateFaceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFaceReq updateFaceReq = (UpdateFaceReq) o;
-        return Objects.equals(this.externalFields, updateFaceReq.externalFields)
-            && Objects.equals(this.externalImageId, updateFaceReq.externalImageId)
-            && Objects.equals(this.faceId, updateFaceReq.faceId);
+        UpdateFaceReq that = (UpdateFaceReq) obj;
+        return Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.externalImageId, that.externalImageId) && Objects.equals(this.faceId, that.faceId);
     }
 
     @Override

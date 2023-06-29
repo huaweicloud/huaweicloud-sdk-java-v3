@@ -71,22 +71,15 @@ public class ShowConfigurationAggregatorSourcesStatusRequest {
             if (value == null) {
                 return null;
             }
-            UpdateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new UpdateStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new UpdateStatusEnum(value));
         }
 
         public static UpdateStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            UpdateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,19 +182,17 @@ public class ShowConfigurationAggregatorSourcesStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationAggregatorSourcesStatusRequest showConfigurationAggregatorSourcesStatusRequest =
-            (ShowConfigurationAggregatorSourcesStatusRequest) o;
-        return Objects.equals(this.aggregatorId, showConfigurationAggregatorSourcesStatusRequest.aggregatorId)
-            && Objects.equals(this.updateStatus, showConfigurationAggregatorSourcesStatusRequest.updateStatus)
-            && Objects.equals(this.limit, showConfigurationAggregatorSourcesStatusRequest.limit)
-            && Objects.equals(this.marker, showConfigurationAggregatorSourcesStatusRequest.marker);
+        ShowConfigurationAggregatorSourcesStatusRequest that = (ShowConfigurationAggregatorSourcesStatusRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId)
+            && Objects.equals(this.updateStatus, that.updateStatus) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

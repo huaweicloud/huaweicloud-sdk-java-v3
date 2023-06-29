@@ -74,16 +74,15 @@ public class ThrottleApiBindingCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleApiBindingCreate throttleApiBindingCreate = (ThrottleApiBindingCreate) o;
-        return Objects.equals(this.strategyId, throttleApiBindingCreate.strategyId)
-            && Objects.equals(this.publishIds, throttleApiBindingCreate.publishIds);
+        ThrottleApiBindingCreate that = (ThrottleApiBindingCreate) obj;
+        return Objects.equals(this.strategyId, that.strategyId) && Objects.equals(this.publishIds, that.publishIds);
     }
 
     @Override

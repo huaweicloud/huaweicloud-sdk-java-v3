@@ -99,17 +99,16 @@ public class TaskStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskStatus taskStatus = (TaskStatus) o;
-        return Objects.equals(this.cause, taskStatus.cause) && Objects.equals(this.podId, taskStatus.podId)
-            && Objects.equals(this.podName, taskStatus.podName)
-            && Objects.equals(this.taskStatus, taskStatus.taskStatus);
+        TaskStatus that = (TaskStatus) obj;
+        return Objects.equals(this.cause, that.cause) && Objects.equals(this.podId, that.podId)
+            && Objects.equals(this.podName, that.podName) && Objects.equals(this.taskStatus, that.taskStatus);
     }
 
     @Override

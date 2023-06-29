@@ -76,16 +76,15 @@ public class ListIndirectPartnersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIndirectPartnersResponse listIndirectPartnersResponse = (ListIndirectPartnersResponse) o;
-        return Objects.equals(this.count, listIndirectPartnersResponse.count)
-            && Objects.equals(this.indirectPartners, listIndirectPartnersResponse.indirectPartners);
+        ListIndirectPartnersResponse that = (ListIndirectPartnersResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.indirectPartners, that.indirectPartners);
     }
 
     @Override

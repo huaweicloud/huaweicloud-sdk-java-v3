@@ -121,17 +121,17 @@ public class CdnIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdnIp cdnIp = (CdnIp) o;
-        return Objects.equals(this.ip, cdnIp.ip) && Objects.equals(this.belongs, cdnIp.belongs)
-            && Objects.equals(this.region, cdnIp.region) && Objects.equals(this.isp, cdnIp.isp)
-            && Objects.equals(this.platform, cdnIp.platform);
+        CdnIp that = (CdnIp) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.belongs, that.belongs)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.isp, that.isp)
+            && Objects.equals(this.platform, that.platform);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFunctionRequest deleteFunctionRequest = (DeleteFunctionRequest) o;
-        return Objects.equals(this.functionUrn, deleteFunctionRequest.functionUrn);
+        DeleteFunctionRequest that = (DeleteFunctionRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class IpItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpItem ipItem = (IpItem) o;
-        return Objects.equals(this.key, ipItem.key) && Objects.equals(this.num, ipItem.num);
+        IpItem that = (IpItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class UploadGroupPackageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadGroupPackageReq uploadGroupPackageReq = (UploadGroupPackageReq) o;
-        return Objects.equals(this.paths, uploadGroupPackageReq.paths)
-            && Objects.equals(this.group, uploadGroupPackageReq.group);
+        UploadGroupPackageReq that = (UploadGroupPackageReq) obj;
+        return Objects.equals(this.paths, that.paths) && Objects.equals(this.group, that.group);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowIkThesaurusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIkThesaurusRequest showIkThesaurusRequest = (ShowIkThesaurusRequest) o;
-        return Objects.equals(this.clusterId, showIkThesaurusRequest.clusterId);
+        ShowIkThesaurusRequest that = (ShowIkThesaurusRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

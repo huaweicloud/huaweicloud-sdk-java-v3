@@ -77,16 +77,16 @@ public class ReportDimVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportDimVo reportDimVo = (ReportDimVo) o;
-        return Objects.equals(this.id, reportDimVo.id) && Objects.equals(this.name, reportDimVo.name)
-            && Objects.equals(this.value, reportDimVo.value);
+        ReportDimVo that = (ReportDimVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class PrePaidServerIpv6Bandwidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerIpv6Bandwidth prePaidServerIpv6Bandwidth = (PrePaidServerIpv6Bandwidth) o;
-        return Objects.equals(this.id, prePaidServerIpv6Bandwidth.id);
+        PrePaidServerIpv6Bandwidth that = (PrePaidServerIpv6Bandwidth) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

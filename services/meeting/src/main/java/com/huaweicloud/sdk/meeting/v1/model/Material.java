@@ -165,20 +165,19 @@ public class Material {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Material material = (Material) o;
-        return Objects.equals(this.id, material.id) && Objects.equals(this.lastUpdatedBy, material.lastUpdatedBy)
-            && Objects.equals(this.updateTime, material.updateTime)
-            && Objects.equals(this.materialName, material.materialName)
-            && Objects.equals(this.materialResolution, material.materialResolution)
-            && Objects.equals(this.materialSizeStr, material.materialSizeStr)
-            && Objects.equals(this.filePath, material.filePath);
+        Material that = (Material) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lastUpdatedBy, that.lastUpdatedBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.materialName, that.materialName)
+            && Objects.equals(this.materialResolution, that.materialResolution)
+            && Objects.equals(this.materialSizeStr, that.materialSizeStr)
+            && Objects.equals(this.filePath, that.filePath);
     }
 
     @Override

@@ -171,21 +171,19 @@ public class ListResourceUsageSummaryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceUsageSummaryRequest listResourceUsageSummaryRequest = (ListResourceUsageSummaryRequest) o;
-        return Objects.equals(this.xLanguage, listResourceUsageSummaryRequest.xLanguage)
-            && Objects.equals(this.billCycle, listResourceUsageSummaryRequest.billCycle)
-            && Objects.equals(this.serviceTypeCode, listResourceUsageSummaryRequest.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, listResourceUsageSummaryRequest.resourceTypeCode)
-            && Objects.equals(this.usageType, listResourceUsageSummaryRequest.usageType)
-            && Objects.equals(this.offset, listResourceUsageSummaryRequest.offset)
-            && Objects.equals(this.limit, listResourceUsageSummaryRequest.limit);
+        ListResourceUsageSummaryRequest that = (ListResourceUsageSummaryRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.usageType, that.usageType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

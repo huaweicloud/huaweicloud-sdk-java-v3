@@ -755,43 +755,31 @@ public class WorkTableIssuseListResponseBodyIssueList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkTableIssuseListResponseBodyIssueList workTableIssuseListResponseBodyIssueList =
-            (WorkTableIssuseListResponseBodyIssueList) o;
-        return Objects.equals(this.id, workTableIssuseListResponseBodyIssueList.id)
-            && Objects.equals(this.subject, workTableIssuseListResponseBodyIssueList.subject)
-            && Objects.equals(this.parentIssueId, workTableIssuseListResponseBodyIssueList.parentIssueId)
-            && Objects.equals(this.parentIssue, workTableIssuseListResponseBodyIssueList.parentIssue)
-            && Objects.equals(this.project, workTableIssuseListResponseBodyIssueList.project)
-            && Objects.equals(this.releaseDev, workTableIssuseListResponseBodyIssueList.releaseDev)
-            && Objects.equals(this.findReleaseDev, workTableIssuseListResponseBodyIssueList.findReleaseDev)
-            && Objects.equals(this.doneRatio, workTableIssuseListResponseBodyIssueList.doneRatio)
-            && Objects.equals(this.expectedWorkHours, workTableIssuseListResponseBodyIssueList.expectedWorkHours)
-            && Objects.equals(this.actualWorkHours, workTableIssuseListResponseBodyIssueList.actualWorkHours)
-            && Objects.equals(this.tracker, workTableIssuseListResponseBodyIssueList.tracker)
-            && Objects.equals(this.order, workTableIssuseListResponseBodyIssueList.order)
-            && Objects.equals(this.severity, workTableIssuseListResponseBodyIssueList.severity)
-            && Objects.equals(this.priority, workTableIssuseListResponseBodyIssueList.priority)
-            && Objects.equals(this.domain, workTableIssuseListResponseBodyIssueList.domain)
-            && Objects.equals(this.position, workTableIssuseListResponseBodyIssueList.position)
-            && Objects.equals(this.module, workTableIssuseListResponseBodyIssueList.module)
-            && Objects.equals(this.assignedTo, workTableIssuseListResponseBodyIssueList.assignedTo)
-            && Objects.equals(this.author, workTableIssuseListResponseBodyIssueList.author)
-            && Objects.equals(this.developer, workTableIssuseListResponseBodyIssueList.developer)
-            && Objects.equals(this.closeder, workTableIssuseListResponseBodyIssueList.closeder)
-            && Objects.equals(this.status, workTableIssuseListResponseBodyIssueList.status)
-            && Objects.equals(this.deleted, workTableIssuseListResponseBodyIssueList.deleted)
-            && Objects.equals(this.isWatcher, workTableIssuseListResponseBodyIssueList.isWatcher)
-            && Objects.equals(this.closedFlag, workTableIssuseListResponseBodyIssueList.closedFlag)
-            && Objects.equals(this.createdOn, workTableIssuseListResponseBodyIssueList.createdOn)
-            && Objects.equals(this.updatedOn, workTableIssuseListResponseBodyIssueList.updatedOn)
-            && Objects.equals(this.dueDate, workTableIssuseListResponseBodyIssueList.dueDate);
+        WorkTableIssuseListResponseBodyIssueList that = (WorkTableIssuseListResponseBodyIssueList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.parentIssueId, that.parentIssueId)
+            && Objects.equals(this.parentIssue, that.parentIssue) && Objects.equals(this.project, that.project)
+            && Objects.equals(this.releaseDev, that.releaseDev)
+            && Objects.equals(this.findReleaseDev, that.findReleaseDev)
+            && Objects.equals(this.doneRatio, that.doneRatio)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours)
+            && Objects.equals(this.actualWorkHours, that.actualWorkHours) && Objects.equals(this.tracker, that.tracker)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.module, that.module)
+            && Objects.equals(this.assignedTo, that.assignedTo) && Objects.equals(this.author, that.author)
+            && Objects.equals(this.developer, that.developer) && Objects.equals(this.closeder, that.closeder)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.deleted, that.deleted)
+            && Objects.equals(this.isWatcher, that.isWatcher) && Objects.equals(this.closedFlag, that.closedFlag)
+            && Objects.equals(this.createdOn, that.createdOn) && Objects.equals(this.updatedOn, that.updatedOn)
+            && Objects.equals(this.dueDate, that.dueDate);
     }
 
     @Override

@@ -187,22 +187,15 @@ public class HostedDirectConnect {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -279,22 +272,15 @@ public class HostedDirectConnect {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderStatusEnum(value));
         }
 
         public static ProviderStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -576,29 +562,22 @@ public class HostedDirectConnect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostedDirectConnect hostedDirectConnect = (HostedDirectConnect) o;
-        return Objects.equals(this.id, hostedDirectConnect.id)
-            && Objects.equals(this.tenantId, hostedDirectConnect.tenantId)
-            && Objects.equals(this.name, hostedDirectConnect.name)
-            && Objects.equals(this.description, hostedDirectConnect.description)
-            && Objects.equals(this.bandwidth, hostedDirectConnect.bandwidth)
-            && Objects.equals(this.location, hostedDirectConnect.location)
-            && Objects.equals(this.peerLocation, hostedDirectConnect.peerLocation)
-            && Objects.equals(this.hostingId, hostedDirectConnect.hostingId)
-            && Objects.equals(this.provider, hostedDirectConnect.provider)
-            && Objects.equals(this.adminStateUp, hostedDirectConnect.adminStateUp)
-            && Objects.equals(this.vlan, hostedDirectConnect.vlan)
-            && Objects.equals(this.status, hostedDirectConnect.status)
-            && Objects.equals(this.applyTime, hostedDirectConnect.applyTime)
-            && Objects.equals(this.createTime, hostedDirectConnect.createTime)
-            && Objects.equals(this.providerStatus, hostedDirectConnect.providerStatus);
+        HostedDirectConnect that = (HostedDirectConnect) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.peerLocation, that.peerLocation) && Objects.equals(this.hostingId, that.hostingId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.vlan, that.vlan) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.applyTime, that.applyTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.providerStatus, that.providerStatus);
     }
 
     @Override

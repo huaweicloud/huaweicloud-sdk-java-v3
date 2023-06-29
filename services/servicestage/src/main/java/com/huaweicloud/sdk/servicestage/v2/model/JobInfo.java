@@ -71,22 +71,15 @@ public class JobInfo {
             if (value == null) {
                 return null;
             }
-            ExecutionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExecutionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExecutionStatusEnum(value));
         }
 
         public static ExecutionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExecutionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,20 +290,20 @@ public class JobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobInfo jobInfo = (JobInfo) o;
-        return Objects.equals(this.createdBy, jobInfo.createdBy)
-            && Objects.equals(this.executionStatus, jobInfo.executionStatus)
-            && Objects.equals(this.jobDesc, jobInfo.jobDesc) && Objects.equals(this.jobId, jobInfo.jobId)
-            && Objects.equals(this.jobName, jobInfo.jobName) && Objects.equals(this.jobType, jobInfo.jobType)
-            && Objects.equals(this.orderId, jobInfo.orderId) && Objects.equals(this.projectId, jobInfo.projectId)
-            && Objects.equals(this.serviceInstanceId, jobInfo.serviceInstanceId);
+        JobInfo that = (JobInfo) obj;
+        return Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.executionStatus, that.executionStatus) && Objects.equals(this.jobDesc, that.jobDesc)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.serviceInstanceId, that.serviceInstanceId);
     }
 
     @Override

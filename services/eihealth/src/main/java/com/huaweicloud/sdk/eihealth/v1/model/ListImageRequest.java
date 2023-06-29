@@ -99,18 +99,16 @@ public class ListImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageRequest listImageRequest = (ListImageRequest) o;
-        return Objects.equals(this.type, listImageRequest.type)
-            && Objects.equals(this.eihealthProjectId, listImageRequest.eihealthProjectId)
-            && Objects.equals(this.name, listImageRequest.name)
-            && Objects.equals(this.showEmpty, listImageRequest.showEmpty);
+        ListImageRequest that = (ListImageRequest) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.showEmpty, that.showEmpty);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowStaticRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowStaticRouteRequest showStaticRouteRequest = (ShowStaticRouteRequest) o;
-        return Objects.equals(this.routeTableId, showStaticRouteRequest.routeTableId)
-            && Objects.equals(this.routeId, showStaticRouteRequest.routeId);
+        ShowStaticRouteRequest that = (ShowStaticRouteRequest) obj;
+        return Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.routeId, that.routeId);
     }
 
     @Override

@@ -109,18 +109,16 @@ public class UpdateAomMappingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAomMappingRequest updateAomMappingRequest = (UpdateAomMappingRequest) o;
-        return Objects.equals(this.ruleId, updateAomMappingRequest.ruleId)
-            && Objects.equals(this.projectId, updateAomMappingRequest.projectId)
-            && Objects.equals(this.ruleName, updateAomMappingRequest.ruleName)
-            && Objects.equals(this.ruleInfo, updateAomMappingRequest.ruleInfo);
+        UpdateAomMappingRequest that = (UpdateAomMappingRequest) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.ruleInfo, that.ruleInfo);
     }
 
     @Override

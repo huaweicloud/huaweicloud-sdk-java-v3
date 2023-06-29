@@ -209,23 +209,20 @@ public class MonitorItemEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MonitorItemEntity monitorItemEntity = (MonitorItemEntity) o;
-        return Objects.equals(this.categoryId, monitorItemEntity.categoryId)
-            && Objects.equals(this.collectorName, monitorItemEntity.collectorName)
-            && Objects.equals(this.displayName, monitorItemEntity.displayName)
-            && Objects.equals(this.showInTotal, monitorItemEntity.showInTotal)
-            && Objects.equals(this.monitorItemId, monitorItemEntity.monitorItemId)
-            && Objects.equals(this.disabled, monitorItemEntity.disabled)
-            && Objects.equals(this.collectorId, monitorItemEntity.collectorId)
-            && Objects.equals(this.sequence, monitorItemEntity.sequence)
-            && Objects.equals(this.collectInterval, monitorItemEntity.collectInterval);
+        MonitorItemEntity that = (MonitorItemEntity) obj;
+        return Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.collectorName, that.collectorName)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.showInTotal, that.showInTotal)
+            && Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.disabled, that.disabled)
+            && Objects.equals(this.collectorId, that.collectorId) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.collectInterval, that.collectInterval);
     }
 
     @Override

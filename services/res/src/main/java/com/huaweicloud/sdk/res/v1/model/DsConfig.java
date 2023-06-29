@@ -55,16 +55,16 @@ public class DsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DsConfig dsConfig = (DsConfig) o;
-        return Objects.equals(this.timeInterval, dsConfig.timeInterval)
-            && Objects.equals(this.categoryType, dsConfig.categoryType);
+        DsConfig that = (DsConfig) obj;
+        return Objects.equals(this.timeInterval, that.timeInterval)
+            && Objects.equals(this.categoryType, that.categoryType);
     }
 
     @Override

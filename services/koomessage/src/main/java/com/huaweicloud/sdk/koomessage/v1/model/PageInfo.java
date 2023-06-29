@@ -77,16 +77,16 @@ public class PageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfo pageInfo = (PageInfo) o;
-        return Objects.equals(this.offset, pageInfo.offset) && Objects.equals(this.limit, pageInfo.limit)
-            && Objects.equals(this.total, pageInfo.total);
+        PageInfo that = (PageInfo) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

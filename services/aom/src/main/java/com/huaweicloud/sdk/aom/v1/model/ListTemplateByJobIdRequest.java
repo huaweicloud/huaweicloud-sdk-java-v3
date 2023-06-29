@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ListTemplateByJobIdRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ListTemplateByJobIdRequest  {
-
+public class ListTemplateByJobIdRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ListTemplateByJobIdRequestBody body;
 
@@ -35,9 +25,6 @@ public class ListTemplateByJobIdRequest  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业id。
@@ -51,22 +38,19 @@ public class ListTemplateByJobIdRequest  {
         this.jobId = jobId;
     }
 
-    
-
     public ListTemplateByJobIdRequest withBody(ListTemplateByJobIdRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ListTemplateByJobIdRequest withBody(Consumer<ListTemplateByJobIdRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ListTemplateByJobIdRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ListTemplateByJobIdRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateByJobIdRequest listTemplateByJobIdRequest = (ListTemplateByJobIdRequest) o;
-        return Objects.equals(this.jobId, listTemplateByJobIdRequest.jobId) &&
-            Objects.equals(this.body, listTemplateByJobIdRequest.body);
+        ListTemplateByJobIdRequest that = (ListTemplateByJobIdRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ListTemplateByJobIdRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ListTemplateByJobIdRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

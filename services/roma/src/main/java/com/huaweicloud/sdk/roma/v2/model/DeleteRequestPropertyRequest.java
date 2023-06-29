@@ -103,18 +103,16 @@ public class DeleteRequestPropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRequestPropertyRequest deleteRequestPropertyRequest = (DeleteRequestPropertyRequest) o;
-        return Objects.equals(this.instanceId, deleteRequestPropertyRequest.instanceId)
-            && Objects.equals(this.serviceId, deleteRequestPropertyRequest.serviceId)
-            && Objects.equals(this.commandId, deleteRequestPropertyRequest.commandId)
-            && Objects.equals(this.propertyId, deleteRequestPropertyRequest.propertyId);
+        DeleteRequestPropertyRequest that = (DeleteRequestPropertyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.propertyId, that.propertyId);
     }
 
     @Override

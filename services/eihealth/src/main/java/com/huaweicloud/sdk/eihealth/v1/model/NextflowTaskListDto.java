@@ -297,26 +297,21 @@ public class NextflowTaskListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowTaskListDto nextflowTaskListDto = (NextflowTaskListDto) o;
-        return Objects.equals(this.taskId, nextflowTaskListDto.taskId)
-            && Objects.equals(this.process, nextflowTaskListDto.process)
-            && Objects.equals(this.tag, nextflowTaskListDto.tag) && Objects.equals(this.hash, nextflowTaskListDto.hash)
-            && Objects.equals(this.status, nextflowTaskListDto.status)
-            && Objects.equals(this.container, nextflowTaskListDto.container)
-            && Objects.equals(this.podName, nextflowTaskListDto.podName)
-            && Objects.equals(this.submit, nextflowTaskListDto.submit)
-            && Objects.equals(this.complete, nextflowTaskListDto.complete)
-            && Objects.equals(this.duration, nextflowTaskListDto.duration)
-            && Objects.equals(this.realtime, nextflowTaskListDto.realtime)
-            && Objects.equals(this.cpuPercent, nextflowTaskListDto.cpuPercent)
-            && Objects.equals(this.memPercent, nextflowTaskListDto.memPercent);
+        NextflowTaskListDto that = (NextflowTaskListDto) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.hash, that.hash)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.container, that.container)
+            && Objects.equals(this.podName, that.podName) && Objects.equals(this.submit, that.submit)
+            && Objects.equals(this.complete, that.complete) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.realtime, that.realtime) && Objects.equals(this.cpuPercent, that.cpuPercent)
+            && Objects.equals(this.memPercent, that.memPercent);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class SourceDBInfo {
             if (value == null) {
                 return null;
             }
-            SourceDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceDbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceDbTypeEnum(value));
         }
 
         public static SourceDbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -163,22 +156,15 @@ public class SourceDBInfo {
             if (value == null) {
                 return null;
             }
-            SourceDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceDbVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceDbVersionEnum(value));
         }
 
         public static SourceDbVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,19 +272,18 @@ public class SourceDBInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceDBInfo sourceDBInfo = (SourceDBInfo) o;
-        return Objects.equals(this.connectionString, sourceDBInfo.connectionString)
-            && Objects.equals(this.userName, sourceDBInfo.userName)
-            && Objects.equals(this.password, sourceDBInfo.password)
-            && Objects.equals(this.sourceDbType, sourceDBInfo.sourceDbType)
-            && Objects.equals(this.sourceDbVersion, sourceDBInfo.sourceDbVersion);
+        SourceDBInfo that = (SourceDBInfo) obj;
+        return Objects.equals(this.connectionString, that.connectionString)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.sourceDbVersion, that.sourceDbVersion);
     }
 
     @Override

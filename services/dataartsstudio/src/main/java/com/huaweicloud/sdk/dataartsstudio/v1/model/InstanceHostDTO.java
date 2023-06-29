@@ -140,19 +140,17 @@ public class InstanceHostDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceHostDTO instanceHostDTO = (InstanceHostDTO) o;
-        return Objects.equals(this.instanceId, instanceHostDTO.instanceId)
-            && Objects.equals(this.instanceName, instanceHostDTO.instanceName)
-            && Objects.equals(this.intranetHost, instanceHostDTO.intranetHost)
-            && Objects.equals(this.externalHost, instanceHostDTO.externalHost)
-            && Objects.equals(this.domains, instanceHostDTO.domains);
+        InstanceHostDTO that = (InstanceHostDTO) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.intranetHost, that.intranetHost)
+            && Objects.equals(this.externalHost, that.externalHost) && Objects.equals(this.domains, that.domains);
     }
 
     @Override

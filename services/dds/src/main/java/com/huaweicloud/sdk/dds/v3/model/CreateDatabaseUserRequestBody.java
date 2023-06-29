@@ -118,18 +118,16 @@ public class CreateDatabaseUserRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatabaseUserRequestBody createDatabaseUserRequestBody = (CreateDatabaseUserRequestBody) o;
-        return Objects.equals(this.userName, createDatabaseUserRequestBody.userName)
-            && Objects.equals(this.userPwd, createDatabaseUserRequestBody.userPwd)
-            && Objects.equals(this.dbName, createDatabaseUserRequestBody.dbName)
-            && Objects.equals(this.roles, createDatabaseUserRequestBody.roles);
+        CreateDatabaseUserRequestBody that = (CreateDatabaseUserRequestBody) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.userPwd, that.userPwd)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.roles, that.roles);
     }
 
     @Override

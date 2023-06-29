@@ -1,56 +1,42 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListExecuteJobRequest  {
-
+public class ListExecuteJobRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_size")
-    
+    @JsonProperty(value = "page_size")
 
     private String pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="current_page")
-    
+    @JsonProperty(value = "current_page")
 
     private String currentPage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
@@ -58,9 +44,6 @@ public class ListExecuteJobRequest  {
         this.pageSize = pageSize;
         return this;
     }
-
-    
-
 
     /**
      * 分页查询每页返回的最大作业数量。  取值范围：[1～100]
@@ -74,15 +57,10 @@ public class ListExecuteJobRequest  {
         this.pageSize = pageSize;
     }
 
-    
-
     public ListExecuteJobRequest withCurrentPage(String currentPage) {
         this.currentPage = currentPage;
         return this;
     }
-
-    
-
 
     /**
      * 当前查询页码。
@@ -96,15 +74,10 @@ public class ListExecuteJobRequest  {
         this.currentPage = currentPage;
     }
 
-    
-
     public ListExecuteJobRequest withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称。
@@ -118,15 +91,10 @@ public class ListExecuteJobRequest  {
         this.jobName = jobName;
     }
 
-    
-
     public ListExecuteJobRequest withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群编号。
@@ -140,15 +108,10 @@ public class ListExecuteJobRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public ListExecuteJobRequest withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 作业状态编码：  - 1：Terminated表示已终止的作业状态 - 2：Running表示运行中的作业状态 - 3：Completed表示已完成的作业状态 - 4：Abnormal表示异常的作业状态
@@ -162,15 +125,10 @@ public class ListExecuteJobRequest  {
         this.state = state;
     }
 
-    
-
     public ListExecuteJobRequest withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行对象的编号。
@@ -184,28 +142,25 @@ public class ListExecuteJobRequest  {
         this.id = id;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExecuteJobRequest listExecuteJobRequest = (ListExecuteJobRequest) o;
-        return Objects.equals(this.pageSize, listExecuteJobRequest.pageSize) &&
-            Objects.equals(this.currentPage, listExecuteJobRequest.currentPage) &&
-            Objects.equals(this.jobName, listExecuteJobRequest.jobName) &&
-            Objects.equals(this.clusterId, listExecuteJobRequest.clusterId) &&
-            Objects.equals(this.state, listExecuteJobRequest.state) &&
-            Objects.equals(this.id, listExecuteJobRequest.id);
+        ListExecuteJobRequest that = (ListExecuteJobRequest) obj;
+        return Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.currentPage, that.currentPage)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.id, that.id);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pageSize, currentPage, jobName, clusterId, state, id);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -219,6 +174,7 @@ public class ListExecuteJobRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -229,8 +185,5 @@ public class ListExecuteJobRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

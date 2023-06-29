@@ -143,18 +143,16 @@ public class TransformResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransformResponse transformResponse = (TransformResponse) o;
-        return Objects.equals(this.inputs, transformResponse.inputs)
-            && Objects.equals(this.expression, transformResponse.expression)
-            && Objects.equals(this.outputProperty, transformResponse.outputProperty)
-            && Objects.equals(this.outputs, transformResponse.outputs);
+        TransformResponse that = (TransformResponse) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.outputProperty, that.outputProperty) && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

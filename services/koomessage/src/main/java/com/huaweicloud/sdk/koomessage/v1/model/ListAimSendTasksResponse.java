@@ -84,16 +84,15 @@ public class ListAimSendTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimSendTasksResponse listAimSendTasksResponse = (ListAimSendTasksResponse) o;
-        return Objects.equals(this.aimSendTasks, listAimSendTasksResponse.aimSendTasks)
-            && Objects.equals(this.pageInfo, listAimSendTasksResponse.pageInfo);
+        ListAimSendTasksResponse that = (ListAimSendTasksResponse) obj;
+        return Objects.equals(this.aimSendTasks, that.aimSendTasks) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

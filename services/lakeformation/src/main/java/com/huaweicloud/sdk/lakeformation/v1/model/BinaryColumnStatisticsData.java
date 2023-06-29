@@ -77,17 +77,17 @@ public class BinaryColumnStatisticsData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BinaryColumnStatisticsData binaryColumnStatisticsData = (BinaryColumnStatisticsData) o;
-        return Objects.equals(this.maximumLength, binaryColumnStatisticsData.maximumLength)
-            && Objects.equals(this.averageLength, binaryColumnStatisticsData.averageLength)
-            && Objects.equals(this.numberOfNull, binaryColumnStatisticsData.numberOfNull);
+        BinaryColumnStatisticsData that = (BinaryColumnStatisticsData) obj;
+        return Objects.equals(this.maximumLength, that.maximumLength)
+            && Objects.equals(this.averageLength, that.averageLength)
+            && Objects.equals(this.numberOfNull, that.numberOfNull);
     }
 
     @Override

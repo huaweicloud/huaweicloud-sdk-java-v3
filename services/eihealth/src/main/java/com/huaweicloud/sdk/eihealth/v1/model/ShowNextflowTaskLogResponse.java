@@ -97,17 +97,16 @@ public class ShowNextflowTaskLogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowTaskLogResponse showNextflowTaskLogResponse = (ShowNextflowTaskLogResponse) o;
-        return Objects.equals(this.count, showNextflowTaskLogResponse.count)
-            && Objects.equals(this.logs, showNextflowTaskLogResponse.logs)
-            && Objects.equals(this.downloadUrl, showNextflowTaskLogResponse.downloadUrl);
+        ShowNextflowTaskLogResponse that = (ShowNextflowTaskLogResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.logs, that.logs)
+            && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

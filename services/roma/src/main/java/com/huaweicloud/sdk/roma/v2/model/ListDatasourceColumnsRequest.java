@@ -70,22 +70,15 @@ public class ListDatasourceColumnsRequest {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PositionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PositionEnum(value));
         }
 
         public static PositionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PositionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,19 +196,17 @@ public class ListDatasourceColumnsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatasourceColumnsRequest listDatasourceColumnsRequest = (ListDatasourceColumnsRequest) o;
-        return Objects.equals(this.instanceId, listDatasourceColumnsRequest.instanceId)
-            && Objects.equals(this.datasourceId, listDatasourceColumnsRequest.datasourceId)
-            && Objects.equals(this.position, listDatasourceColumnsRequest.position)
-            && Objects.equals(this.dbName, listDatasourceColumnsRequest.dbName)
-            && Objects.equals(this.tableName, listDatasourceColumnsRequest.tableName);
+        ListDatasourceColumnsRequest that = (ListDatasourceColumnsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.position, that.position) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.tableName, that.tableName);
     }
 
     @Override

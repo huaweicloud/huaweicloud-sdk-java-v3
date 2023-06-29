@@ -74,16 +74,15 @@ public class RestoreInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreInstanceRequestBody restoreInstanceRequestBody = (RestoreInstanceRequestBody) o;
-        return Objects.equals(this.source, restoreInstanceRequestBody.source)
-            && Objects.equals(this.target, restoreInstanceRequestBody.target);
+        RestoreInstanceRequestBody that = (RestoreInstanceRequestBody) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.target, that.target);
     }
 
     @Override

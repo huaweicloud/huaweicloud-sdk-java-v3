@@ -65,16 +65,15 @@ public class CreateProjectModuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectModuleRequest createProjectModuleRequest = (CreateProjectModuleRequest) o;
-        return Objects.equals(this.projectId, createProjectModuleRequest.projectId)
-            && Objects.equals(this.body, createProjectModuleRequest.body);
+        CreateProjectModuleRequest that = (CreateProjectModuleRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

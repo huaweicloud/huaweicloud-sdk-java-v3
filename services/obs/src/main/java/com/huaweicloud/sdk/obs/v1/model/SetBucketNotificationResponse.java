@@ -163,20 +163,17 @@ public class SetBucketNotificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetBucketNotificationResponse setBucketNotificationResponse = (SetBucketNotificationResponse) o;
-        return Objects.equals(this.xObsId2, setBucketNotificationResponse.xObsId2)
-            && Objects.equals(this.xObsRequestId, setBucketNotificationResponse.xObsRequestId)
-            && Objects.equals(this.etag, setBucketNotificationResponse.etag)
-            && Objects.equals(this.connection, setBucketNotificationResponse.connection)
-            && Objects.equals(this.contentLength, setBucketNotificationResponse.contentLength)
-            && Objects.equals(this.date, setBucketNotificationResponse.date);
+        SetBucketNotificationResponse that = (SetBucketNotificationResponse) obj;
+        return Objects.equals(this.xObsId2, that.xObsId2) && Objects.equals(this.xObsRequestId, that.xObsRequestId)
+            && Objects.equals(this.etag, that.etag) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

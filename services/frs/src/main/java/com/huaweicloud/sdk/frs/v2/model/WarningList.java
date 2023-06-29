@@ -55,16 +55,15 @@ public class WarningList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WarningList warningList = (WarningList) o;
-        return Objects.equals(this.warningCode, warningList.warningCode)
-            && Objects.equals(this.warningMsg, warningList.warningMsg);
+        WarningList that = (WarningList) obj;
+        return Objects.equals(this.warningCode, that.warningCode) && Objects.equals(this.warningMsg, that.warningMsg);
     }
 
     @Override

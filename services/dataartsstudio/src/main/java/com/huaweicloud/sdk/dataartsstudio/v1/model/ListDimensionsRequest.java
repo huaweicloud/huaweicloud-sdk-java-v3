@@ -107,22 +107,15 @@ public class ListDimensionsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -220,22 +213,15 @@ public class ListDimensionsRequest {
             if (value == null) {
                 return null;
             }
-            DimensionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DimensionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DimensionTypeEnum(value));
         }
 
         public static DimensionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DimensionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -528,28 +514,21 @@ public class ListDimensionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDimensionsRequest listDimensionsRequest = (ListDimensionsRequest) o;
-        return Objects.equals(this.workspace, listDimensionsRequest.workspace)
-            && Objects.equals(this.name, listDimensionsRequest.name)
-            && Objects.equals(this.createBy, listDimensionsRequest.createBy)
-            && Objects.equals(this.approver, listDimensionsRequest.approver)
-            && Objects.equals(this.status, listDimensionsRequest.status)
-            && Objects.equals(this.l2Id, listDimensionsRequest.l2Id)
-            && Objects.equals(this.derivativeIds, listDimensionsRequest.derivativeIds)
-            && Objects.equals(this.beginTime, listDimensionsRequest.beginTime)
-            && Objects.equals(this.endTime, listDimensionsRequest.endTime)
-            && Objects.equals(this.factLogicId, listDimensionsRequest.factLogicId)
-            && Objects.equals(this.dimensionType, listDimensionsRequest.dimensionType)
-            && Objects.equals(this.limit, listDimensionsRequest.limit)
-            && Objects.equals(this.offset, listDimensionsRequest.offset)
-            && Objects.equals(this.bizCatalogId, listDimensionsRequest.bizCatalogId);
+        ListDimensionsRequest that = (ListDimensionsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.l2Id, that.l2Id)
+            && Objects.equals(this.derivativeIds, that.derivativeIds) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.factLogicId, that.factLogicId)
+            && Objects.equals(this.dimensionType, that.dimensionType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.bizCatalogId, that.bizCatalogId);
     }
 
     @Override

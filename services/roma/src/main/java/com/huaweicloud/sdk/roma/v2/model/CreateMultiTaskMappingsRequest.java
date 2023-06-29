@@ -87,17 +87,16 @@ public class CreateMultiTaskMappingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMultiTaskMappingsRequest createMultiTaskMappingsRequest = (CreateMultiTaskMappingsRequest) o;
-        return Objects.equals(this.instanceId, createMultiTaskMappingsRequest.instanceId)
-            && Objects.equals(this.taskId, createMultiTaskMappingsRequest.taskId)
-            && Objects.equals(this.body, createMultiTaskMappingsRequest.body);
+        CreateMultiTaskMappingsRequest that = (CreateMultiTaskMappingsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

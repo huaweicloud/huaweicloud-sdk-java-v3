@@ -145,20 +145,19 @@ public class UpdateDisasterRecoveryReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDisasterRecoveryReq updateDisasterRecoveryReq = (UpdateDisasterRecoveryReq) o;
-        return Objects.equals(this.drSyncPeriod, updateDisasterRecoveryReq.drSyncPeriod)
-            && Objects.equals(this.sendRequest, updateDisasterRecoveryReq.sendRequest)
-            && Objects.equals(this.primaryToRole, updateDisasterRecoveryReq.primaryToRole)
-            && Objects.equals(this.resetAction, updateDisasterRecoveryReq.resetAction)
-            && Objects.equals(this.standbyToRole, updateDisasterRecoveryReq.standbyToRole)
-            && Objects.equals(this.drStatus, updateDisasterRecoveryReq.drStatus);
+        UpdateDisasterRecoveryReq that = (UpdateDisasterRecoveryReq) obj;
+        return Objects.equals(this.drSyncPeriod, that.drSyncPeriod)
+            && Objects.equals(this.sendRequest, that.sendRequest)
+            && Objects.equals(this.primaryToRole, that.primaryToRole)
+            && Objects.equals(this.resetAction, that.resetAction)
+            && Objects.equals(this.standbyToRole, that.standbyToRole) && Objects.equals(this.drStatus, that.drStatus);
     }
 
     @Override

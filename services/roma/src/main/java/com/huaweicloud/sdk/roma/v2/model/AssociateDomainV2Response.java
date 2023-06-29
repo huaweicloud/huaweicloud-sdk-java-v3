@@ -83,22 +83,15 @@ public class AssociateDomainV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,18 +187,16 @@ public class AssociateDomainV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateDomainV2Response associateDomainV2Response = (AssociateDomainV2Response) o;
-        return Objects.equals(this.urlDomain, associateDomainV2Response.urlDomain)
-            && Objects.equals(this.id, associateDomainV2Response.id)
-            && Objects.equals(this.status, associateDomainV2Response.status)
-            && Objects.equals(this.minSslVersion, associateDomainV2Response.minSslVersion);
+        AssociateDomainV2Response that = (AssociateDomainV2Response) obj;
+        return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.minSslVersion, that.minSslVersion);
     }
 
     @Override

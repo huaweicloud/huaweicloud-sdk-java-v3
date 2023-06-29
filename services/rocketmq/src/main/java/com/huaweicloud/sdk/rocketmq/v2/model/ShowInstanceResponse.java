@@ -84,22 +84,15 @@ public class ShowInstanceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1251,65 +1244,50 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.name, showInstanceResponse.name)
-            && Objects.equals(this.engine, showInstanceResponse.engine)
-            && Objects.equals(this.status, showInstanceResponse.status)
-            && Objects.equals(this.description, showInstanceResponse.description)
-            && Objects.equals(this.type, showInstanceResponse.type)
-            && Objects.equals(this.specification, showInstanceResponse.specification)
-            && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
-            && Objects.equals(this.instanceId, showInstanceResponse.instanceId)
-            && Objects.equals(this.chargingMode, showInstanceResponse.chargingMode)
-            && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
-            && Objects.equals(this.vpcName, showInstanceResponse.vpcName)
-            && Objects.equals(this.createdAt, showInstanceResponse.createdAt)
-            && Objects.equals(this.productId, showInstanceResponse.productId)
-            && Objects.equals(this.securityGroupId, showInstanceResponse.securityGroupId)
-            && Objects.equals(this.securityGroupName, showInstanceResponse.securityGroupName)
-            && Objects.equals(this.subnetId, showInstanceResponse.subnetId)
-            && Objects.equals(this.subnetName, showInstanceResponse.subnetName)
-            && Objects.equals(this.subnetCidr, showInstanceResponse.subnetCidr)
-            && Objects.equals(this.availableZones, showInstanceResponse.availableZones)
-            && Objects.equals(this.userId, showInstanceResponse.userId)
-            && Objects.equals(this.userName, showInstanceResponse.userName)
-            && Objects.equals(this.maintainBegin, showInstanceResponse.maintainBegin)
-            && Objects.equals(this.maintainEnd, showInstanceResponse.maintainEnd)
-            && Objects.equals(this.enableLogCollection, showInstanceResponse.enableLogCollection)
-            && Objects.equals(this.storageSpace, showInstanceResponse.storageSpace)
-            && Objects.equals(this.usedStorageSpace, showInstanceResponse.usedStorageSpace)
-            && Objects.equals(this.enablePublicip, showInstanceResponse.enablePublicip)
-            && Objects.equals(this.publicipId, showInstanceResponse.publicipId)
-            && Objects.equals(this.publicipAddress, showInstanceResponse.publicipAddress)
-            && Objects.equals(this.sslEnable, showInstanceResponse.sslEnable)
-            && Objects.equals(this.crossVpcInfo, showInstanceResponse.crossVpcInfo)
-            && Objects.equals(this.storageResourceId, showInstanceResponse.storageResourceId)
-            && Objects.equals(this.storageSpecCode, showInstanceResponse.storageSpecCode)
-            && Objects.equals(this.serviceType, showInstanceResponse.serviceType)
-            && Objects.equals(this.storageType, showInstanceResponse.storageType)
-            && Objects.equals(this.extendTimes, showInstanceResponse.extendTimes)
-            && Objects.equals(this.ipv6Enable, showInstanceResponse.ipv6Enable)
-            && Objects.equals(this.supportFeatures, showInstanceResponse.supportFeatures)
-            && Objects.equals(this.diskEncrypted, showInstanceResponse.diskEncrypted)
-            && Objects.equals(this.cesVersion, showInstanceResponse.cesVersion)
-            && Objects.equals(this.nodeNum, showInstanceResponse.nodeNum)
-            && Objects.equals(this.newSpecBillingEnable, showInstanceResponse.newSpecBillingEnable)
-            && Objects.equals(this.enableAcl, showInstanceResponse.enableAcl)
-            && Objects.equals(this.brokerNum, showInstanceResponse.brokerNum)
-            && Objects.equals(this.namesrvAddress, showInstanceResponse.namesrvAddress)
-            && Objects.equals(this.brokerAddress, showInstanceResponse.brokerAddress)
-            && Objects.equals(this.publicNamesrvAddress, showInstanceResponse.publicNamesrvAddress)
-            && Objects.equals(this.publicBrokerAddress, showInstanceResponse.publicBrokerAddress)
-            && Objects.equals(this.tags, showInstanceResponse.tags)
-            && Objects.equals(this.totalStorageSpace, showInstanceResponse.totalStorageSpace)
-            && Objects.equals(this.resourceSpecCode, showInstanceResponse.resourceSpecCode);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.specification, that.specification)
+            && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.vpcName, that.vpcName)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.securityGroupName, that.securityGroupName)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.subnetName, that.subnetName)
+            && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.enableLogCollection, that.enableLogCollection)
+            && Objects.equals(this.storageSpace, that.storageSpace)
+            && Objects.equals(this.usedStorageSpace, that.usedStorageSpace)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicipId, that.publicipId)
+            && Objects.equals(this.publicipAddress, that.publicipAddress)
+            && Objects.equals(this.sslEnable, that.sslEnable) && Objects.equals(this.crossVpcInfo, that.crossVpcInfo)
+            && Objects.equals(this.storageResourceId, that.storageResourceId)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.extendTimes, that.extendTimes) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.supportFeatures, that.supportFeatures)
+            && Objects.equals(this.diskEncrypted, that.diskEncrypted)
+            && Objects.equals(this.cesVersion, that.cesVersion) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.newSpecBillingEnable, that.newSpecBillingEnable)
+            && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.brokerNum, that.brokerNum)
+            && Objects.equals(this.namesrvAddress, that.namesrvAddress)
+            && Objects.equals(this.brokerAddress, that.brokerAddress)
+            && Objects.equals(this.publicNamesrvAddress, that.publicNamesrvAddress)
+            && Objects.equals(this.publicBrokerAddress, that.publicBrokerAddress)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.totalStorageSpace, that.totalStorageSpace)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class DiffConfigurationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiffConfigurationRequest diffConfigurationRequest = (DiffConfigurationRequest) o;
-        return Objects.equals(this.sourceConfigurationId, diffConfigurationRequest.sourceConfigurationId)
-            && Objects.equals(this.targetConfigurationId, diffConfigurationRequest.targetConfigurationId);
+        DiffConfigurationRequest that = (DiffConfigurationRequest) obj;
+        return Objects.equals(this.sourceConfigurationId, that.sourceConfigurationId)
+            && Objects.equals(this.targetConfigurationId, that.targetConfigurationId);
     }
 
     @Override

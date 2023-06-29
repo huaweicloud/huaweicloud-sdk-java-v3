@@ -476,32 +476,25 @@ public class InstanceConfigResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceConfigResult instanceConfigResult = (InstanceConfigResult) o;
-        return Objects.equals(this.flavorRef, instanceConfigResult.flavorRef)
-            && Objects.equals(this.imageRef, instanceConfigResult.imageRef)
-            && Objects.equals(this.disk, instanceConfigResult.disk)
-            && Objects.equals(this.keyName, instanceConfigResult.keyName)
-            && Objects.equals(this.keyFingerprint, instanceConfigResult.keyFingerprint)
-            && Objects.equals(this.instanceName, instanceConfigResult.instanceName)
-            && Objects.equals(this.instanceId, instanceConfigResult.instanceId)
-            && Objects.equals(this.adminPass, instanceConfigResult.adminPass)
-            && Objects.equals(this.personality, instanceConfigResult.personality)
-            && Objects.equals(this.publicIp, instanceConfigResult.publicIp)
-            && Objects.equals(this.userData, instanceConfigResult.userData)
-            && Objects.equals(this.metadata, instanceConfigResult.metadata)
-            && Objects.equals(this.securityGroups, instanceConfigResult.securityGroups)
-            && Objects.equals(this.serverGroupId, instanceConfigResult.serverGroupId)
-            && Objects.equals(this.tenancy, instanceConfigResult.tenancy)
-            && Objects.equals(this.dedicatedHostId, instanceConfigResult.dedicatedHostId)
-            && Objects.equals(this.marketType, instanceConfigResult.marketType)
-            && Objects.equals(this.multiFlavorPriorityPolicy, instanceConfigResult.multiFlavorPriorityPolicy);
+        InstanceConfigResult that = (InstanceConfigResult) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.imageRef, that.imageRef)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.keyName, that.keyName)
+            && Objects.equals(this.keyFingerprint, that.keyFingerprint)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.adminPass, that.adminPass) && Objects.equals(this.personality, that.personality)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
+            && Objects.equals(this.marketType, that.marketType)
+            && Objects.equals(this.multiFlavorPriorityPolicy, that.multiFlavorPriorityPolicy);
     }
 
     @Override

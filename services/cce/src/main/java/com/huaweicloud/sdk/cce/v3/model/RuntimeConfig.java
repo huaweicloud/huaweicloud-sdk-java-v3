@@ -33,15 +33,15 @@ public class RuntimeConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuntimeConfig runtimeConfig = (RuntimeConfig) o;
-        return Objects.equals(this.lvType, runtimeConfig.lvType);
+        RuntimeConfig that = (RuntimeConfig) obj;
+        return Objects.equals(this.lvType, that.lvType);
     }
 
     @Override

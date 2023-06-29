@@ -107,18 +107,16 @@ public class ListRelationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationRequest listRelationRequest = (ListRelationRequest) o;
-        return Objects.equals(this.caseId, listRelationRequest.caseId)
-            && Objects.equals(this.xSite, listRelationRequest.xSite)
-            && Objects.equals(this.xLanguage, listRelationRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listRelationRequest.xTimeZone);
+        ListRelationRequest that = (ListRelationRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

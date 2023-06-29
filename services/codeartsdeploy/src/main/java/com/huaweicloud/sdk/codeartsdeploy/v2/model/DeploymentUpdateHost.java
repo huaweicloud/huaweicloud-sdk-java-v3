@@ -175,20 +175,19 @@ public class DeploymentUpdateHost {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentUpdateHost deploymentUpdateHost = (DeploymentUpdateHost) o;
-        return Objects.equals(this.hostName, deploymentUpdateHost.hostName)
-            && Objects.equals(this.ip, deploymentUpdateHost.ip) && Objects.equals(this.port, deploymentUpdateHost.port)
-            && Objects.equals(this.asProxy, deploymentUpdateHost.asProxy)
-            && Objects.equals(this.proxyHostId, deploymentUpdateHost.proxyHostId)
-            && Objects.equals(this.authorization, deploymentUpdateHost.authorization)
-            && Objects.equals(this.installIcagent, deploymentUpdateHost.installIcagent);
+        DeploymentUpdateHost that = (DeploymentUpdateHost) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.asProxy, that.asProxy)
+            && Objects.equals(this.proxyHostId, that.proxyHostId)
+            && Objects.equals(this.authorization, that.authorization)
+            && Objects.equals(this.installIcagent, that.installIcagent);
     }
 
     @Override

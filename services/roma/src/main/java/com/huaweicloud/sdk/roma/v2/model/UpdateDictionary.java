@@ -123,18 +123,17 @@ public class UpdateDictionary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDictionary updateDictionary = (UpdateDictionary) o;
-        return Objects.equals(this.name, updateDictionary.name) && Objects.equals(this.remark, updateDictionary.remark)
-            && Objects.equals(this.order, updateDictionary.order)
-            && Objects.equals(this.extendOne, updateDictionary.extendOne)
-            && Objects.equals(this.extendTwo, updateDictionary.extendTwo);
+        UpdateDictionary that = (UpdateDictionary) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.extendOne, that.extendOne)
+            && Objects.equals(this.extendTwo, that.extendTwo);
     }
 
     @Override

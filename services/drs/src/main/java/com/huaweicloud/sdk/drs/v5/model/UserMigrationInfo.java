@@ -156,19 +156,17 @@ public class UserMigrationInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserMigrationInfo userMigrationInfo = (UserMigrationInfo) o;
-        return Objects.equals(this.isMigrateUser, userMigrationInfo.isMigrateUser)
-            && Objects.equals(this.isSetPassword, userMigrationInfo.isSetPassword)
-            && Objects.equals(this.password, userMigrationInfo.password)
-            && Objects.equals(this.userList, userMigrationInfo.userList)
-            && Objects.equals(this.roleList, userMigrationInfo.roleList);
+        UserMigrationInfo that = (UserMigrationInfo) obj;
+        return Objects.equals(this.isMigrateUser, that.isMigrateUser)
+            && Objects.equals(this.isSetPassword, that.isSetPassword) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.userList, that.userList) && Objects.equals(this.roleList, that.roleList);
     }
 
     @Override

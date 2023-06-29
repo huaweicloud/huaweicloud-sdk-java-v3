@@ -191,22 +191,18 @@ public class ListAimSendDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimSendDetailsRequest listAimSendDetailsRequest = (ListAimSendDetailsRequest) o;
-        return Objects.equals(this.taskId, listAimSendDetailsRequest.taskId)
-            && Objects.equals(this.tplId, listAimSendDetailsRequest.tplId)
-            && Objects.equals(this.smsSign, listAimSendDetailsRequest.smsSign)
-            && Objects.equals(this.custFlag, listAimSendDetailsRequest.custFlag)
-            && Objects.equals(this.beginTime, listAimSendDetailsRequest.beginTime)
-            && Objects.equals(this.endTime, listAimSendDetailsRequest.endTime)
-            && Objects.equals(this.offset, listAimSendDetailsRequest.offset)
-            && Objects.equals(this.limit, listAimSendDetailsRequest.limit);
+        ListAimSendDetailsRequest that = (ListAimSendDetailsRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.smsSign, that.smsSign) && Objects.equals(this.custFlag, that.custFlag)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

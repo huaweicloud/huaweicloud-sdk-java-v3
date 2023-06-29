@@ -53,15 +53,15 @@ public class ListApiTopNResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiTopNResponse listApiTopNResponse = (ListApiTopNResponse) o;
-        return Objects.equals(this.statistics, listApiTopNResponse.statistics);
+        ListApiTopNResponse that = (ListApiTopNResponse) obj;
+        return Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

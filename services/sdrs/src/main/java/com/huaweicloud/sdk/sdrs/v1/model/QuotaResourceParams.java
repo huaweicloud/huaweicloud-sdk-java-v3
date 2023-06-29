@@ -121,18 +121,17 @@ public class QuotaResourceParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaResourceParams quotaResourceParams = (QuotaResourceParams) o;
-        return Objects.equals(this.type, quotaResourceParams.type)
-            && Objects.equals(this.used, quotaResourceParams.used)
-            && Objects.equals(this.quota, quotaResourceParams.quota)
-            && Objects.equals(this.min, quotaResourceParams.min) && Objects.equals(this.max, quotaResourceParams.max);
+        QuotaResourceParams that = (QuotaResourceParams) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.quota, that.quota) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.max, that.max);
     }
 
     @Override

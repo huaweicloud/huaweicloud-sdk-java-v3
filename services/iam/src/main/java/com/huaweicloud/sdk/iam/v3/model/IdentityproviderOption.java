@@ -77,17 +77,16 @@ public class IdentityproviderOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdentityproviderOption identityproviderOption = (IdentityproviderOption) o;
-        return Objects.equals(this.ssoType, identityproviderOption.ssoType)
-            && Objects.equals(this.description, identityproviderOption.description)
-            && Objects.equals(this.enabled, identityproviderOption.enabled);
+        IdentityproviderOption that = (IdentityproviderOption) obj;
+        return Objects.equals(this.ssoType, that.ssoType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

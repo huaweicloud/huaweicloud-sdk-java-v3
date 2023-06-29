@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 图实例是否开启审计日志，默认不开启。
  */
-public class CreateGraphReqGraphLtsOperationTrace  {
-
+public class CreateGraphReqGraphLtsOperationTrace {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_audit")
-    
+    @JsonProperty(value = "enable_audit")
 
     private Boolean enableAudit;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit_log_group_name")
-    
+    @JsonProperty(value = "audit_log_group_name")
 
     private String auditLogGroupName;
 
@@ -33,9 +24,6 @@ public class CreateGraphReqGraphLtsOperationTrace  {
         this.enableAudit = enableAudit;
         return this;
     }
-
-    
-
 
     /**
      * 是否开启图审计，默认“false”。
@@ -49,15 +37,10 @@ public class CreateGraphReqGraphLtsOperationTrace  {
         this.enableAudit = enableAudit;
     }
 
-    
-
     public CreateGraphReqGraphLtsOperationTrace withAuditLogGroupName(String auditLogGroupName) {
         this.auditLogGroupName = auditLogGroupName;
         return this;
     }
-
-    
-
 
     /**
      * LTS日志组名称。
@@ -71,24 +54,24 @@ public class CreateGraphReqGraphLtsOperationTrace  {
         this.auditLogGroupName = auditLogGroupName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGraphReqGraphLtsOperationTrace createGraphReqGraphLtsOperationTrace = (CreateGraphReqGraphLtsOperationTrace) o;
-        return Objects.equals(this.enableAudit, createGraphReqGraphLtsOperationTrace.enableAudit) &&
-            Objects.equals(this.auditLogGroupName, createGraphReqGraphLtsOperationTrace.auditLogGroupName);
+        CreateGraphReqGraphLtsOperationTrace that = (CreateGraphReqGraphLtsOperationTrace) obj;
+        return Objects.equals(this.enableAudit, that.enableAudit)
+            && Objects.equals(this.auditLogGroupName, that.auditLogGroupName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(enableAudit, auditLogGroupName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +81,7 @@ public class CreateGraphReqGraphLtsOperationTrace  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +92,5 @@ public class CreateGraphReqGraphLtsOperationTrace  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

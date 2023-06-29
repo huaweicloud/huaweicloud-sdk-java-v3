@@ -65,15 +65,15 @@ public class FreezePubRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezePubRequest freezePubRequest = (FreezePubRequest) o;
-        return Objects.equals(this.pubId, freezePubRequest.pubId) && Objects.equals(this.body, freezePubRequest.body);
+        FreezePubRequest that = (FreezePubRequest) obj;
+        return Objects.equals(this.pubId, that.pubId) && Objects.equals(this.body, that.body);
     }
 
     @Override

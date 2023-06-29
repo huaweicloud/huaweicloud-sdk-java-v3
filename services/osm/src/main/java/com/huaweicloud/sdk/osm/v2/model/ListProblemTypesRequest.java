@@ -107,18 +107,16 @@ public class ListProblemTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProblemTypesRequest listProblemTypesRequest = (ListProblemTypesRequest) o;
-        return Objects.equals(this.productCategoryId, listProblemTypesRequest.productCategoryId)
-            && Objects.equals(this.xSite, listProblemTypesRequest.xSite)
-            && Objects.equals(this.xLanguage, listProblemTypesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listProblemTypesRequest.xTimeZone);
+        ListProblemTypesRequest that = (ListProblemTypesRequest) obj;
+        return Objects.equals(this.productCategoryId, that.productCategoryId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

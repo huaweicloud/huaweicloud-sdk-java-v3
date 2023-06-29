@@ -121,18 +121,17 @@ public class MemberJobCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberJobCard memberJobCard = (MemberJobCard) o;
-        return Objects.equals(this.name, memberJobCard.name)
-            && Objects.equals(this.averageScore, memberJobCard.averageScore)
-            && Objects.equals(this.score, memberJobCard.score) && Objects.equals(this.sendTime, memberJobCard.sendTime)
-            && Objects.equals(this.lastSubmitTime, memberJobCard.lastSubmitTime);
+        MemberJobCard that = (MemberJobCard) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.averageScore, that.averageScore)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.sendTime, that.sendTime)
+            && Objects.equals(this.lastSubmitTime, that.lastSubmitTime);
     }
 
     @Override

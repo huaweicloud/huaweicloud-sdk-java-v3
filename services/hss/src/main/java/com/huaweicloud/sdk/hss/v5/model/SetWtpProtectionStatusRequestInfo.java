@@ -118,18 +118,16 @@ public class SetWtpProtectionStatusRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetWtpProtectionStatusRequestInfo setWtpProtectionStatusRequestInfo = (SetWtpProtectionStatusRequestInfo) o;
-        return Objects.equals(this.status, setWtpProtectionStatusRequestInfo.status)
-            && Objects.equals(this.hostIdList, setWtpProtectionStatusRequestInfo.hostIdList)
-            && Objects.equals(this.resourceId, setWtpProtectionStatusRequestInfo.resourceId)
-            && Objects.equals(this.chargingMode, setWtpProtectionStatusRequestInfo.chargingMode);
+        SetWtpProtectionStatusRequestInfo that = (SetWtpProtectionStatusRequestInfo) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.hostIdList, that.hostIdList)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.chargingMode, that.chargingMode);
     }
 
     @Override

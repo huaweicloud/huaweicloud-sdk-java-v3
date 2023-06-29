@@ -81,22 +81,15 @@ public class VideoProcess {
             if (value == null) {
                 return null;
             }
-            AdaptationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AdaptationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdaptationEnum(value));
         }
 
         public static AdaptationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AdaptationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,19 +210,17 @@ public class VideoProcess {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoProcess videoProcess = (VideoProcess) o;
-        return Objects.equals(this.hlsInitCount, videoProcess.hlsInitCount)
-            && Objects.equals(this.hlsInitInterval, videoProcess.hlsInitInterval)
-            && Objects.equals(this.rotate, videoProcess.rotate)
-            && Objects.equals(this.adaptation, videoProcess.adaptation)
-            && Objects.equals(this.upsample, videoProcess.upsample);
+        VideoProcess that = (VideoProcess) obj;
+        return Objects.equals(this.hlsInitCount, that.hlsInitCount)
+            && Objects.equals(this.hlsInitInterval, that.hlsInitInterval) && Objects.equals(this.rotate, that.rotate)
+            && Objects.equals(this.adaptation, that.adaptation) && Objects.equals(this.upsample, that.upsample);
     }
 
     @Override

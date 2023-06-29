@@ -77,16 +77,16 @@ public class MigrateSubNetworkInterfaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateSubNetworkInterfaceResponse migrateSubNetworkInterfaceResponse = (MigrateSubNetworkInterfaceResponse) o;
-        return Objects.equals(this.requestId, migrateSubNetworkInterfaceResponse.requestId)
-            && Objects.equals(this.subNetworkInterfaces, migrateSubNetworkInterfaceResponse.subNetworkInterfaces);
+        MigrateSubNetworkInterfaceResponse that = (MigrateSubNetworkInterfaceResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.subNetworkInterfaces, that.subNetworkInterfaces);
     }
 
     @Override

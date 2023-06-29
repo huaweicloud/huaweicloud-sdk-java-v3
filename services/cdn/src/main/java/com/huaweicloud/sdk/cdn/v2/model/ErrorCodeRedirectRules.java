@@ -77,17 +77,16 @@ public class ErrorCodeRedirectRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorCodeRedirectRules errorCodeRedirectRules = (ErrorCodeRedirectRules) o;
-        return Objects.equals(this.errorCode, errorCodeRedirectRules.errorCode)
-            && Objects.equals(this.targetCode, errorCodeRedirectRules.targetCode)
-            && Objects.equals(this.targetLink, errorCodeRedirectRules.targetLink);
+        ErrorCodeRedirectRules that = (ErrorCodeRedirectRules) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.targetCode, that.targetCode)
+            && Objects.equals(this.targetLink, that.targetLink);
     }
 
     @Override

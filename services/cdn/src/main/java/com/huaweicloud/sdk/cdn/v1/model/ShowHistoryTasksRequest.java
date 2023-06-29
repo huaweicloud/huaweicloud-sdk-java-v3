@@ -75,22 +75,15 @@ public class ShowHistoryTasksRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class ShowHistoryTasksRequest {
             if (value == null) {
                 return null;
             }
-            FileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FileTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileTypeEnum(value));
         }
 
         public static FileTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FileTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -372,23 +358,19 @@ public class ShowHistoryTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowHistoryTasksRequest showHistoryTasksRequest = (ShowHistoryTasksRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showHistoryTasksRequest.enterpriseProjectId)
-            && Objects.equals(this.pageSize, showHistoryTasksRequest.pageSize)
-            && Objects.equals(this.pageNumber, showHistoryTasksRequest.pageNumber)
-            && Objects.equals(this.status, showHistoryTasksRequest.status)
-            && Objects.equals(this.startDate, showHistoryTasksRequest.startDate)
-            && Objects.equals(this.endDate, showHistoryTasksRequest.endDate)
-            && Objects.equals(this.orderField, showHistoryTasksRequest.orderField)
-            && Objects.equals(this.orderType, showHistoryTasksRequest.orderType)
-            && Objects.equals(this.fileType, showHistoryTasksRequest.fileType);
+        ShowHistoryTasksRequest that = (ShowHistoryTasksRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.pageNumber, that.pageNumber)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.orderField, that.orderField)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

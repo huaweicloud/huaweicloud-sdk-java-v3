@@ -163,20 +163,17 @@ public class ListRocketInstanceTopicsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRocketInstanceTopicsResponse listRocketInstanceTopicsResponse = (ListRocketInstanceTopicsResponse) o;
-        return Objects.equals(this.total, listRocketInstanceTopicsResponse.total)
-            && Objects.equals(this.max, listRocketInstanceTopicsResponse.max)
-            && Objects.equals(this.remaining, listRocketInstanceTopicsResponse.remaining)
-            && Objects.equals(this.nextOffset, listRocketInstanceTopicsResponse.nextOffset)
-            && Objects.equals(this.previousOffset, listRocketInstanceTopicsResponse.previousOffset)
-            && Objects.equals(this.topics, listRocketInstanceTopicsResponse.topics);
+        ListRocketInstanceTopicsResponse that = (ListRocketInstanceTopicsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.remaining, that.remaining) && Objects.equals(this.nextOffset, that.nextOffset)
+            && Objects.equals(this.previousOffset, that.previousOffset) && Objects.equals(this.topics, that.topics);
     }
 
     @Override

@@ -60,15 +60,15 @@ public class Location {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Location location = (Location) o;
-        return Objects.equals(this.lat, location.lat) && Objects.equals(this.lon, location.lon);
+        Location that = (Location) obj;
+        return Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon);
     }
 
     @Override

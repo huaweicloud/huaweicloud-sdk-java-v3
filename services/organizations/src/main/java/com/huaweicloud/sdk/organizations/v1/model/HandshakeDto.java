@@ -242,22 +242,20 @@ public class HandshakeDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandshakeDto handshakeDto = (HandshakeDto) o;
-        return Objects.equals(this.id, handshakeDto.id) && Objects.equals(this.urn, handshakeDto.urn)
-            && Objects.equals(this.updatedAt, handshakeDto.updatedAt)
-            && Objects.equals(this.createdAt, handshakeDto.createdAt)
-            && Objects.equals(this.managementAccountId, handshakeDto.managementAccountId)
-            && Objects.equals(this.managementAccountName, handshakeDto.managementAccountName)
-            && Objects.equals(this.organizationId, handshakeDto.organizationId)
-            && Objects.equals(this.notes, handshakeDto.notes) && Objects.equals(this.target, handshakeDto.target)
-            && Objects.equals(this.status, handshakeDto.status);
+        HandshakeDto that = (HandshakeDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.managementAccountId, that.managementAccountId)
+            && Objects.equals(this.managementAccountName, that.managementAccountName)
+            && Objects.equals(this.organizationId, that.organizationId) && Objects.equals(this.notes, that.notes)
+            && Objects.equals(this.target, that.target) && Objects.equals(this.status, that.status);
     }
 
     @Override

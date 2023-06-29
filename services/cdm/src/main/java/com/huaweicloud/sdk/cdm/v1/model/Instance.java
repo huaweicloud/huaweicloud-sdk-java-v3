@@ -118,17 +118,16 @@ public class Instance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Instance instance = (Instance) o;
-        return Objects.equals(this.availabilityZone, instance.availabilityZone)
-            && Objects.equals(this.nics, instance.nics) && Objects.equals(this.flavorRef, instance.flavorRef)
-            && Objects.equals(this.type, instance.type);
+        Instance that = (Instance) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.type, that.type);
     }
 
     @Override

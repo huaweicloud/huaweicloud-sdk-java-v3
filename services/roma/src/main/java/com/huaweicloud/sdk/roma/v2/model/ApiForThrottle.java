@@ -320,25 +320,21 @@ public class ApiForThrottle {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiForThrottle apiForThrottle = (ApiForThrottle) o;
-        return Objects.equals(this.authType, apiForThrottle.authType)
-            && Objects.equals(this.runEnvName, apiForThrottle.runEnvName)
-            && Objects.equals(this.groupName, apiForThrottle.groupName)
-            && Objects.equals(this.publishId, apiForThrottle.publishId)
-            && Objects.equals(this.groupId, apiForThrottle.groupId) && Objects.equals(this.name, apiForThrottle.name)
-            && Objects.equals(this.remark, apiForThrottle.remark)
-            && Objects.equals(this.runEnvId, apiForThrottle.runEnvId) && Objects.equals(this.id, apiForThrottle.id)
-            && Objects.equals(this.reqUri, apiForThrottle.reqUri) && Objects.equals(this.type, apiForThrottle.type)
-            && Objects.equals(this.throttleApplyId, apiForThrottle.throttleApplyId)
-            && Objects.equals(this.throttleName, apiForThrottle.throttleName)
-            && Objects.equals(this.applyTime, apiForThrottle.applyTime);
+        ApiForThrottle that = (ApiForThrottle) obj;
+        return Objects.equals(this.authType, that.authType) && Objects.equals(this.runEnvName, that.runEnvName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.publishId, that.publishId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.runEnvId, that.runEnvId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.reqUri, that.reqUri)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.throttleApplyId, that.throttleApplyId)
+            && Objects.equals(this.throttleName, that.throttleName) && Objects.equals(this.applyTime, that.applyTime);
     }
 
     @Override

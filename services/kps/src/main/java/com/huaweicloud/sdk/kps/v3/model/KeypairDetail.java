@@ -70,22 +70,15 @@ public class KeypairDetail {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -152,22 +145,15 @@ public class KeypairDetail {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -488,26 +474,21 @@ public class KeypairDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeypairDetail keypairDetail = (KeypairDetail) o;
-        return Objects.equals(this.name, keypairDetail.name) && Objects.equals(this.id, keypairDetail.id)
-            && Objects.equals(this.type, keypairDetail.type) && Objects.equals(this.scope, keypairDetail.scope)
-            && Objects.equals(this.publicKey, keypairDetail.publicKey)
-            && Objects.equals(this.fingerprint, keypairDetail.fingerprint)
-            && Objects.equals(this.isKeyProtection, keypairDetail.isKeyProtection)
-            && Objects.equals(this.deleted, keypairDetail.deleted)
-            && Objects.equals(this.description, keypairDetail.description)
-            && Objects.equals(this.userId, keypairDetail.userId)
-            && Objects.equals(this.createTime, keypairDetail.createTime)
-            && Objects.equals(this.deleteTime, keypairDetail.deleteTime)
-            && Objects.equals(this.updateTime, keypairDetail.updateTime)
-            && Objects.equals(this.frozenState, keypairDetail.frozenState);
+        KeypairDetail that = (KeypairDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.publicKey, that.publicKey) && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.isKeyProtection, that.isKeyProtection) && Objects.equals(this.deleted, that.deleted)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.deleteTime, that.deleteTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.frozenState, that.frozenState);
     }
 
     @Override

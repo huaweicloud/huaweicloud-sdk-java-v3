@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ComponentParam
  */
-public class ComponentParam  {
-
+public class ComponentParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model_id")
-    
+    @JsonProperty(value = "model_id")
 
     private String modelId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model_type")
-    
+    @JsonProperty(value = "model_type")
 
     private String modelType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
@@ -45,9 +34,6 @@ public class ComponentParam  {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 组件描述
@@ -61,15 +47,10 @@ public class ComponentParam  {
         this.description = description;
     }
 
-    
-
     public ComponentParam withModelId(String modelId) {
         this.modelId = modelId;
         return this;
     }
-
-    
-
 
     /**
      * 应用Id、子应用Id；id长度不能超过36位，由大小写字母、数字组成
@@ -83,15 +64,10 @@ public class ComponentParam  {
         this.modelId = modelId;
     }
 
-    
-
     public ComponentParam withModelType(String modelType) {
         this.modelType = modelType;
         return this;
     }
-
-    
-
 
     /**
      * 应用、子应用，取值：APPLICATION、SUB_APPLICATION
@@ -105,15 +81,10 @@ public class ComponentParam  {
         this.modelType = modelType;
     }
 
-    
-
     public ComponentParam withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -127,26 +98,24 @@ public class ComponentParam  {
         this.name = name;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentParam componentParam = (ComponentParam) o;
-        return Objects.equals(this.description, componentParam.description) &&
-            Objects.equals(this.modelId, componentParam.modelId) &&
-            Objects.equals(this.modelType, componentParam.modelType) &&
-            Objects.equals(this.name, componentParam.name);
+        ComponentParam that = (ComponentParam) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.modelType, that.modelType) && Objects.equals(this.name, that.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, modelId, modelType, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class ComponentParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class ComponentParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

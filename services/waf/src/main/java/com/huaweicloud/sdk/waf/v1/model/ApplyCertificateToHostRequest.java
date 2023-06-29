@@ -87,17 +87,16 @@ public class ApplyCertificateToHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyCertificateToHostRequest applyCertificateToHostRequest = (ApplyCertificateToHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, applyCertificateToHostRequest.enterpriseProjectId)
-            && Objects.equals(this.certificateId, applyCertificateToHostRequest.certificateId)
-            && Objects.equals(this.body, applyCertificateToHostRequest.body);
+        ApplyCertificateToHostRequest that = (ApplyCertificateToHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.certificateId, that.certificateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

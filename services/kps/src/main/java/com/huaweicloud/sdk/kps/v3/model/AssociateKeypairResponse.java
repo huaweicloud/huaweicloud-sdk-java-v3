@@ -34,15 +34,15 @@ public class AssociateKeypairResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateKeypairResponse associateKeypairResponse = (AssociateKeypairResponse) o;
-        return Objects.equals(this.taskId, associateKeypairResponse.taskId);
+        AssociateKeypairResponse that = (AssociateKeypairResponse) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

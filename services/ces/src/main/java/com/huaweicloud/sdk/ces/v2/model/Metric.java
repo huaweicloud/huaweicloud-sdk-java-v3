@@ -96,16 +96,16 @@ public class Metric {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Metric metric = (Metric) o;
-        return Objects.equals(this.namespace, metric.namespace) && Objects.equals(this.metricName, metric.metricName)
-            && Objects.equals(this.dimensions, metric.dimensions);
+        Metric that = (Metric) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.dimensions, that.dimensions);
     }
 
     @Override

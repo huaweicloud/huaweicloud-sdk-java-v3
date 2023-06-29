@@ -88,22 +88,15 @@ public class ListConstraintsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ConstraintTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConstraintTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConstraintTypeEnum(value));
         }
 
         public static ConstraintTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConstraintTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -371,21 +364,20 @@ public class ListConstraintsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConstraintsResponse listConstraintsResponse = (ListConstraintsResponse) o;
-        return Objects.equals(this.constraintType, listConstraintsResponse.constraintType)
-            && Objects.equals(this.foreignKeys, listConstraintsResponse.foreignKeys)
-            && Objects.equals(this.primaryKeys, listConstraintsResponse.primaryKeys)
-            && Objects.equals(this.notNullConstraints, listConstraintsResponse.notNullConstraints)
-            && Objects.equals(this.checkConstraints, listConstraintsResponse.checkConstraints)
-            && Objects.equals(this.uniqueConstraints, listConstraintsResponse.uniqueConstraints)
-            && Objects.equals(this.defaultConstraints, listConstraintsResponse.defaultConstraints);
+        ListConstraintsResponse that = (ListConstraintsResponse) obj;
+        return Objects.equals(this.constraintType, that.constraintType)
+            && Objects.equals(this.foreignKeys, that.foreignKeys) && Objects.equals(this.primaryKeys, that.primaryKeys)
+            && Objects.equals(this.notNullConstraints, that.notNullConstraints)
+            && Objects.equals(this.checkConstraints, that.checkConstraints)
+            && Objects.equals(this.uniqueConstraints, that.uniqueConstraints)
+            && Objects.equals(this.defaultConstraints, that.defaultConstraints);
     }
 
     @Override

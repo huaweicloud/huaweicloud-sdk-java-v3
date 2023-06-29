@@ -118,18 +118,16 @@ public class PostgresqlUserForList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlUserForList postgresqlUserForList = (PostgresqlUserForList) o;
-        return Objects.equals(this.name, postgresqlUserForList.name)
-            && Objects.equals(this.attributes, postgresqlUserForList.attributes)
-            && Objects.equals(this.memberof, postgresqlUserForList.memberof)
-            && Objects.equals(this.comment, postgresqlUserForList.comment);
+        PostgresqlUserForList that = (PostgresqlUserForList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.memberof, that.memberof) && Objects.equals(this.comment, that.comment);
     }
 
     @Override

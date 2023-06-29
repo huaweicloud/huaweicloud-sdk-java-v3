@@ -56,16 +56,15 @@ public class ChangeDbTemplateOperationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeDbTemplateOperationResponse changeDbTemplateOperationResponse = (ChangeDbTemplateOperationResponse) o;
-        return Objects.equals(this.msg, changeDbTemplateOperationResponse.msg)
-            && Objects.equals(this.status, changeDbTemplateOperationResponse.status);
+        ChangeDbTemplateOperationResponse that = (ChangeDbTemplateOperationResponse) obj;
+        return Objects.equals(this.msg, that.msg) && Objects.equals(this.status, that.status);
     }
 
     @Override

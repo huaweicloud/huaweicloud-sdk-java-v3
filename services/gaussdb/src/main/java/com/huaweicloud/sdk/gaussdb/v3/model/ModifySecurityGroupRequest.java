@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ModifySecurityGroupRequest
  */
-public class ModifySecurityGroupRequest  {
-
+public class ModifySecurityGroupRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
@@ -27,9 +19,6 @@ public class ModifySecurityGroupRequest  {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -43,23 +32,23 @@ public class ModifySecurityGroupRequest  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifySecurityGroupRequest modifySecurityGroupRequest = (ModifySecurityGroupRequest) o;
-        return Objects.equals(this.securityGroupId, modifySecurityGroupRequest.securityGroupId);
+        ModifySecurityGroupRequest that = (ModifySecurityGroupRequest) obj;
+        return Objects.equals(this.securityGroupId, that.securityGroupId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(securityGroupId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ModifySecurityGroupRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ModifySecurityGroupRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

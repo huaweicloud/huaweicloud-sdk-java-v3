@@ -364,30 +364,24 @@ public class ListL7policiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListL7policiesRequest listL7policiesRequest = (ListL7policiesRequest) o;
-        return Objects.equals(this.limit, listL7policiesRequest.limit)
-            && Objects.equals(this.marker, listL7policiesRequest.marker)
-            && Objects.equals(this.pageReverse, listL7policiesRequest.pageReverse)
-            && Objects.equals(this.id, listL7policiesRequest.id)
-            && Objects.equals(this.name, listL7policiesRequest.name)
-            && Objects.equals(this.description, listL7policiesRequest.description)
-            && Objects.equals(this.adminStateUp, listL7policiesRequest.adminStateUp)
-            && Objects.equals(this.listenerId, listL7policiesRequest.listenerId)
-            && Objects.equals(this.action, listL7policiesRequest.action)
-            && Objects.equals(this.redirectPoolId, listL7policiesRequest.redirectPoolId)
-            && Objects.equals(this.redirectListenerId, listL7policiesRequest.redirectListenerId)
-            && Objects.equals(this.redirectUrl, listL7policiesRequest.redirectUrl)
-            && Objects.equals(this.position, listL7policiesRequest.position)
-            && Objects.equals(this.provisioningStatus, listL7policiesRequest.provisioningStatus)
-            && Objects.equals(this.enterpriseProjectId, listL7policiesRequest.enterpriseProjectId)
-            && Objects.equals(this.displayAllRules, listL7policiesRequest.displayAllRules);
+        ListL7policiesRequest that = (ListL7policiesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.redirectPoolId, that.redirectPoolId)
+            && Objects.equals(this.redirectListenerId, that.redirectListenerId)
+            && Objects.equals(this.redirectUrl, that.redirectUrl) && Objects.equals(this.position, that.position)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.displayAllRules, that.displayAllRules);
     }
 
     @Override

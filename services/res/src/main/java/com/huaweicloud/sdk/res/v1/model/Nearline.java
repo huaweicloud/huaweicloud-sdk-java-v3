@@ -105,16 +105,16 @@ public class Nearline {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nearline nearline = (Nearline) o;
-        return Objects.equals(this.itemTopic, nearline.itemTopic) && Objects.equals(this.userTopic, nearline.userTopic)
-            && Objects.equals(this.behaviorTopic, nearline.behaviorTopic);
+        Nearline that = (Nearline) obj;
+        return Objects.equals(this.itemTopic, that.itemTopic) && Objects.equals(this.userTopic, that.userTopic)
+            && Objects.equals(this.behaviorTopic, that.behaviorTopic);
     }
 
     @Override

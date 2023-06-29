@@ -33,15 +33,15 @@ public class DeleteLabelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLabelRequest deleteLabelRequest = (DeleteLabelRequest) o;
-        return Objects.equals(this.labelId, deleteLabelRequest.labelId);
+        DeleteLabelRequest that = (DeleteLabelRequest) obj;
+        return Objects.equals(this.labelId, that.labelId);
     }
 
     @Override

@@ -78,17 +78,15 @@ public class ListRtcRealtimeScaleDimensionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRealtimeScaleDimensionResponse listRtcRealtimeScaleDimensionResponse =
-            (ListRtcRealtimeScaleDimensionResponse) o;
-        return Objects.equals(this.dimensions, listRtcRealtimeScaleDimensionResponse.dimensions)
-            && Objects.equals(this.xRequestId, listRtcRealtimeScaleDimensionResponse.xRequestId);
+        ListRtcRealtimeScaleDimensionResponse that = (ListRtcRealtimeScaleDimensionResponse) obj;
+        return Objects.equals(this.dimensions, that.dimensions) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -75,16 +75,16 @@ public class ListPostalAddressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPostalAddressResponse listPostalAddressResponse = (ListPostalAddressResponse) o;
-        return Objects.equals(this.totalCount, listPostalAddressResponse.totalCount)
-            && Objects.equals(this.postalAddress, listPostalAddressResponse.postalAddress);
+        ListPostalAddressResponse that = (ListPostalAddressResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.postalAddress, that.postalAddress);
     }
 
     @Override

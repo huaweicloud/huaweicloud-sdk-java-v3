@@ -65,16 +65,15 @@ public class BatchCreateVolumeTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateVolumeTagsRequest batchCreateVolumeTagsRequest = (BatchCreateVolumeTagsRequest) o;
-        return Objects.equals(this.volumeId, batchCreateVolumeTagsRequest.volumeId)
-            && Objects.equals(this.body, batchCreateVolumeTagsRequest.body);
+        BatchCreateVolumeTagsRequest that = (BatchCreateVolumeTagsRequest) obj;
+        return Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.body, that.body);
     }
 
     @Override

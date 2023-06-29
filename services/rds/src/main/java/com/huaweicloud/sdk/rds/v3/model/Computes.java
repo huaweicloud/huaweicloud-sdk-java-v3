@@ -74,16 +74,16 @@ public class Computes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Computes computes = (Computes) o;
-        return Objects.equals(this.groupType, computes.groupType)
-            && Objects.equals(this.computeFlavors, computes.computeFlavors);
+        Computes that = (Computes) obj;
+        return Objects.equals(this.groupType, that.groupType)
+            && Objects.equals(this.computeFlavors, that.computeFlavors);
     }
 
     @Override

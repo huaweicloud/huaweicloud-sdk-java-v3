@@ -110,18 +110,16 @@ public class UpdateAomMappingRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAomMappingRulesResponse updateAomMappingRulesResponse = (UpdateAomMappingRulesResponse) o;
-        return Objects.equals(this.projectId, updateAomMappingRulesResponse.projectId)
-            && Objects.equals(this.ruleName, updateAomMappingRulesResponse.ruleName)
-            && Objects.equals(this.ruleId, updateAomMappingRulesResponse.ruleId)
-            && Objects.equals(this.ruleInfo, updateAomMappingRulesResponse.ruleInfo);
+        UpdateAomMappingRulesResponse that = (UpdateAomMappingRulesResponse) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.ruleInfo, that.ruleInfo);
     }
 
     @Override

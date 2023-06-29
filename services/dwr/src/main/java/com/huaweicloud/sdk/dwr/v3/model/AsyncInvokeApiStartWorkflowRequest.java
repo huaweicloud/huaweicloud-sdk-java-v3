@@ -65,16 +65,15 @@ public class AsyncInvokeApiStartWorkflowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncInvokeApiStartWorkflowRequest asyncInvokeApiStartWorkflowRequest = (AsyncInvokeApiStartWorkflowRequest) o;
-        return Objects.equals(this.graphName, asyncInvokeApiStartWorkflowRequest.graphName)
-            && Objects.equals(this.body, asyncInvokeApiStartWorkflowRequest.body);
+        AsyncInvokeApiStartWorkflowRequest that = (AsyncInvokeApiStartWorkflowRequest) obj;
+        return Objects.equals(this.graphName, that.graphName) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -58,22 +58,15 @@ public class StrongConstraintType {
         if (value == null) {
             return null;
         }
-        StrongConstraintType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new StrongConstraintType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StrongConstraintType(value));
     }
 
     public static StrongConstraintType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        StrongConstraintType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

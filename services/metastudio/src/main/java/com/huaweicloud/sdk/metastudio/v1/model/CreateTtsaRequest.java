@@ -113,18 +113,16 @@ public class CreateTtsaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTtsaRequest createTtsaRequest = (CreateTtsaRequest) o;
-        return Objects.equals(this.authorization, createTtsaRequest.authorization)
-            && Objects.equals(this.xSdkDate, createTtsaRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createTtsaRequest.xProjectId)
-            && Objects.equals(this.body, createTtsaRequest.body);
+        CreateTtsaRequest that = (CreateTtsaRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

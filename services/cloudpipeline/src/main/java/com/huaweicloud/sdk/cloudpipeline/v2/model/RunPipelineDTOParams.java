@@ -153,20 +153,17 @@ public class RunPipelineDTOParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineDTOParams runPipelineDTOParams = (RunPipelineDTOParams) o;
-        return Objects.equals(this.gitType, runPipelineDTOParams.gitType)
-            && Objects.equals(this.codehubId, runPipelineDTOParams.codehubId)
-            && Objects.equals(this.defaultBranch, runPipelineDTOParams.defaultBranch)
-            && Objects.equals(this.gitUrl, runPipelineDTOParams.gitUrl)
-            && Objects.equals(this.endpointId, runPipelineDTOParams.endpointId)
-            && Objects.equals(this.buildParams, runPipelineDTOParams.buildParams);
+        RunPipelineDTOParams that = (RunPipelineDTOParams) obj;
+        return Objects.equals(this.gitType, that.gitType) && Objects.equals(this.codehubId, that.codehubId)
+            && Objects.equals(this.defaultBranch, that.defaultBranch) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.endpointId, that.endpointId) && Objects.equals(this.buildParams, that.buildParams);
     }
 
     @Override

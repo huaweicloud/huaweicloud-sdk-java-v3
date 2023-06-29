@@ -77,22 +77,15 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DocTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DocTypeEnum(value));
         }
 
         public static DocTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DocTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -207,22 +200,15 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
             if (value == null) {
                 return null;
             }
-            VisibleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibleTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibleTypeEnum(value));
         }
 
         public static VisibleTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -523,26 +509,22 @@ public class CreateDocWatermarkRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDocWatermarkRequestBody createDocWatermarkRequestBody = (CreateDocWatermarkRequestBody) o;
-        return Objects.equals(this.docType, createDocWatermarkRequestBody.docType)
-            && Objects.equals(this.filePassword, createDocWatermarkRequestBody.filePassword)
-            && Objects.equals(this.markedFilePassword, createDocWatermarkRequestBody.markedFilePassword)
-            && Objects.equals(this.readonlyPassword, createDocWatermarkRequestBody.readonlyPassword)
-            && Objects.equals(this.visibleWatermark, createDocWatermarkRequestBody.visibleWatermark)
-            && Objects.equals(this.fontSize, createDocWatermarkRequestBody.fontSize)
-            && Objects.equals(this.rotation, createDocWatermarkRequestBody.rotation)
-            && Objects.equals(this.opacity, createDocWatermarkRequestBody.opacity)
-            && Objects.equals(this.blindWatermark, createDocWatermarkRequestBody.blindWatermark)
-            && Objects.equals(this.file, createDocWatermarkRequestBody.file)
-            && Objects.equals(this.imageMark, createDocWatermarkRequestBody.imageMark)
-            && Objects.equals(this.visibleType, createDocWatermarkRequestBody.visibleType);
+        CreateDocWatermarkRequestBody that = (CreateDocWatermarkRequestBody) obj;
+        return Objects.equals(this.docType, that.docType) && Objects.equals(this.filePassword, that.filePassword)
+            && Objects.equals(this.markedFilePassword, that.markedFilePassword)
+            && Objects.equals(this.readonlyPassword, that.readonlyPassword)
+            && Objects.equals(this.visibleWatermark, that.visibleWatermark)
+            && Objects.equals(this.fontSize, that.fontSize) && Objects.equals(this.rotation, that.rotation)
+            && Objects.equals(this.opacity, that.opacity) && Objects.equals(this.blindWatermark, that.blindWatermark)
+            && Objects.equals(this.file, that.file) && Objects.equals(this.imageMark, that.imageMark)
+            && Objects.equals(this.visibleType, that.visibleType);
     }
 
     @Override

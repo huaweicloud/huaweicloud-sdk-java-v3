@@ -166,21 +166,18 @@ public class ListRelationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRelationsRequest listRelationsRequest = (ListRelationsRequest) o;
-        return Objects.equals(this.workspace, listRelationsRequest.workspace)
-            && Objects.equals(this.name, listRelationsRequest.name)
-            && Objects.equals(this.createBy, listRelationsRequest.createBy)
-            && Objects.equals(this.beginTime, listRelationsRequest.beginTime)
-            && Objects.equals(this.endTime, listRelationsRequest.endTime)
-            && Objects.equals(this.limit, listRelationsRequest.limit)
-            && Objects.equals(this.offset, listRelationsRequest.offset);
+        ListRelationsRequest that = (ListRelationsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

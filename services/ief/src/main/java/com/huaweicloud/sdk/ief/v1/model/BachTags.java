@@ -74,15 +74,15 @@ public class BachTags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BachTags bachTags = (BachTags) o;
-        return Objects.equals(this.tags, bachTags.tags) && Objects.equals(this.action, bachTags.action);
+        BachTags that = (BachTags) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.action, that.action);
     }
 
     @Override

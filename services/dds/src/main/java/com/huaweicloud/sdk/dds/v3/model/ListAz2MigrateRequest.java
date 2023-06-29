@@ -33,15 +33,15 @@ public class ListAz2MigrateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAz2MigrateRequest listAz2MigrateRequest = (ListAz2MigrateRequest) o;
-        return Objects.equals(this.instanceId, listAz2MigrateRequest.instanceId);
+        ListAz2MigrateRequest that = (ListAz2MigrateRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

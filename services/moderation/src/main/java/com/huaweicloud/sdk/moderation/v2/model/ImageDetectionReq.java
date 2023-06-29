@@ -96,22 +96,15 @@ public class ImageDetectionReq {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoriesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoriesEnum(value));
         }
 
         public static CategoriesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -300,20 +293,18 @@ public class ImageDetectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionReq imageDetectionReq = (ImageDetectionReq) o;
-        return Objects.equals(this.url, imageDetectionReq.url) && Objects.equals(this.image, imageDetectionReq.image)
-            && Objects.equals(this.moderationRule, imageDetectionReq.moderationRule)
-            && Objects.equals(this.categories, imageDetectionReq.categories)
-            && Objects.equals(this.adCategories, imageDetectionReq.adCategories)
-            && Objects.equals(this.threshold, imageDetectionReq.threshold)
-            && Objects.equals(this.showOcrText, imageDetectionReq.showOcrText);
+        ImageDetectionReq that = (ImageDetectionReq) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.moderationRule, that.moderationRule)
+            && Objects.equals(this.categories, that.categories) && Objects.equals(this.adCategories, that.adCategories)
+            && Objects.equals(this.threshold, that.threshold) && Objects.equals(this.showOcrText, that.showOcrText);
     }
 
     @Override

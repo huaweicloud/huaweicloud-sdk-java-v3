@@ -57,15 +57,15 @@ public class V2BandwidthData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2BandwidthData v2BandwidthData = (V2BandwidthData) o;
-        return Objects.equals(this.value, v2BandwidthData.value) && Objects.equals(this.time, v2BandwidthData.time);
+        V2BandwidthData that = (V2BandwidthData) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.time, that.time);
     }
 
     @Override

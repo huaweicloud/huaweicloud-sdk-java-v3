@@ -123,19 +123,17 @@ public class ListRestoreDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRestoreDatabasesRequest listRestoreDatabasesRequest = (ListRestoreDatabasesRequest) o;
-        return Objects.equals(this.xLanguage, listRestoreDatabasesRequest.xLanguage)
-            && Objects.equals(this.instanceId, listRestoreDatabasesRequest.instanceId)
-            && Objects.equals(this.restoreTime, listRestoreDatabasesRequest.restoreTime)
-            && Objects.equals(this.offset, listRestoreDatabasesRequest.offset)
-            && Objects.equals(this.limit, listRestoreDatabasesRequest.limit);
+        ListRestoreDatabasesRequest that = (ListRestoreDatabasesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.restoreTime, that.restoreTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

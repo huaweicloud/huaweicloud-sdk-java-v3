@@ -99,18 +99,16 @@ public class AddFacesUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddFacesUrlReq addFacesUrlReq = (AddFacesUrlReq) o;
-        return Objects.equals(this.imageUrl, addFacesUrlReq.imageUrl)
-            && Objects.equals(this.externalFields, addFacesUrlReq.externalFields)
-            && Objects.equals(this.externalImageId, addFacesUrlReq.externalImageId)
-            && Objects.equals(this.single, addFacesUrlReq.single);
+        AddFacesUrlReq that = (AddFacesUrlReq) obj;
+        return Objects.equals(this.imageUrl, that.imageUrl) && Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.externalImageId, that.externalImageId) && Objects.equals(this.single, that.single);
     }
 
     @Override

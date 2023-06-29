@@ -53,15 +53,15 @@ public class ListWorkflowExecutionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkflowExecutionsResponse listWorkflowExecutionsResponse = (ListWorkflowExecutionsResponse) o;
-        return Objects.equals(this.executions, listWorkflowExecutionsResponse.executions);
+        ListWorkflowExecutionsResponse that = (ListWorkflowExecutionsResponse) obj;
+        return Objects.equals(this.executions, that.executions);
     }
 
     @Override

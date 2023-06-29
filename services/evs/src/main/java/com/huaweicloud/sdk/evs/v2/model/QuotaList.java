@@ -592,31 +592,28 @@ public class QuotaList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaList quotaList = (QuotaList) o;
-        return Objects.equals(this.backupGigabytes, quotaList.backupGigabytes)
-            && Objects.equals(this.backups, quotaList.backups) && Objects.equals(this.gigabytes, quotaList.gigabytes)
-            && Objects.equals(this.id, quotaList.id) && Objects.equals(this.snapshots, quotaList.snapshots)
-            && Objects.equals(this.volumes, quotaList.volumes)
-            && Objects.equals(this.gigabytesSATA, quotaList.gigabytesSATA)
-            && Objects.equals(this.snapshotsSATA, quotaList.snapshotsSATA)
-            && Objects.equals(this.volumesSATA, quotaList.volumesSATA)
-            && Objects.equals(this.gigabytesSAS, quotaList.gigabytesSAS)
-            && Objects.equals(this.snapshotsSAS, quotaList.snapshotsSAS)
-            && Objects.equals(this.volumesSAS, quotaList.volumesSAS)
-            && Objects.equals(this.gigabytesSSD, quotaList.gigabytesSSD)
-            && Objects.equals(this.snapshotsSSD, quotaList.snapshotsSSD)
-            && Objects.equals(this.volumesSSD, quotaList.volumesSSD)
-            && Objects.equals(this.gigabytesGPSSD, quotaList.gigabytesGPSSD)
-            && Objects.equals(this.snapshotsGPSSD, quotaList.snapshotsGPSSD)
-            && Objects.equals(this.volumesGPSSD, quotaList.volumesGPSSD)
-            && Objects.equals(this.perVolumeGigabytes, quotaList.perVolumeGigabytes);
+        QuotaList that = (QuotaList) obj;
+        return Objects.equals(this.backupGigabytes, that.backupGigabytes) && Objects.equals(this.backups, that.backups)
+            && Objects.equals(this.gigabytes, that.gigabytes) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.snapshots, that.snapshots) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.gigabytesSATA, that.gigabytesSATA)
+            && Objects.equals(this.snapshotsSATA, that.snapshotsSATA)
+            && Objects.equals(this.volumesSATA, that.volumesSATA)
+            && Objects.equals(this.gigabytesSAS, that.gigabytesSAS)
+            && Objects.equals(this.snapshotsSAS, that.snapshotsSAS) && Objects.equals(this.volumesSAS, that.volumesSAS)
+            && Objects.equals(this.gigabytesSSD, that.gigabytesSSD)
+            && Objects.equals(this.snapshotsSSD, that.snapshotsSSD) && Objects.equals(this.volumesSSD, that.volumesSSD)
+            && Objects.equals(this.gigabytesGPSSD, that.gigabytesGPSSD)
+            && Objects.equals(this.snapshotsGPSSD, that.snapshotsGPSSD)
+            && Objects.equals(this.volumesGPSSD, that.volumesGPSSD)
+            && Objects.equals(this.perVolumeGigabytes, that.perVolumeGigabytes);
     }
 
     @Override

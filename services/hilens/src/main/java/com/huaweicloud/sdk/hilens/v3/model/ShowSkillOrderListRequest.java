@@ -99,18 +99,16 @@ public class ShowSkillOrderListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSkillOrderListRequest showSkillOrderListRequest = (ShowSkillOrderListRequest) o;
-        return Objects.equals(this.limit, showSkillOrderListRequest.limit)
-            && Objects.equals(this.offset, showSkillOrderListRequest.offset)
-            && Objects.equals(this.skillName, showSkillOrderListRequest.skillName)
-            && Objects.equals(this.skillForm, showSkillOrderListRequest.skillForm);
+        ShowSkillOrderListRequest that = (ShowSkillOrderListRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.skillName, that.skillName) && Objects.equals(this.skillForm, that.skillForm);
     }
 
     @Override

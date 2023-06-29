@@ -33,15 +33,15 @@ public class DeployApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeployApplicationRequestBody deployApplicationRequestBody = (DeployApplicationRequestBody) o;
-        return Objects.equals(this.version, deployApplicationRequestBody.version);
+        DeployApplicationRequestBody that = (DeployApplicationRequestBody) obj;
+        return Objects.equals(this.version, that.version);
     }
 
     @Override

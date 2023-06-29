@@ -87,17 +87,16 @@ public class DeleteSearchCriteriasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSearchCriteriasRequest deleteSearchCriteriasRequest = (DeleteSearchCriteriasRequest) o;
-        return Objects.equals(this.groupId, deleteSearchCriteriasRequest.groupId)
-            && Objects.equals(this.topicId, deleteSearchCriteriasRequest.topicId)
-            && Objects.equals(this.body, deleteSearchCriteriasRequest.body);
+        DeleteSearchCriteriasRequest that = (DeleteSearchCriteriasRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.topicId, that.topicId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class ListTemplateViewHistoriesRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class ListTemplateViewHistoriesRequest {
             if (value == null) {
                 return null;
             }
-            PlatformSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PlatformSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlatformSourceEnum(value));
         }
 
         public static PlatformSourceEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PlatformSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -218,16 +204,16 @@ public class ListTemplateViewHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateViewHistoriesRequest listTemplateViewHistoriesRequest = (ListTemplateViewHistoriesRequest) o;
-        return Objects.equals(this.xLanguage, listTemplateViewHistoriesRequest.xLanguage)
-            && Objects.equals(this.platformSource, listTemplateViewHistoriesRequest.platformSource);
+        ListTemplateViewHistoriesRequest that = (ListTemplateViewHistoriesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.platformSource, that.platformSource);
     }
 
     @Override

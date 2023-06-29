@@ -65,16 +65,15 @@ public class CopySnapshotRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopySnapshotRequest copySnapshotRequest = (CopySnapshotRequest) o;
-        return Objects.equals(this.snapshotId, copySnapshotRequest.snapshotId)
-            && Objects.equals(this.body, copySnapshotRequest.body);
+        CopySnapshotRequest that = (CopySnapshotRequest) obj;
+        return Objects.equals(this.snapshotId, that.snapshotId) && Objects.equals(this.body, that.body);
     }
 
     @Override

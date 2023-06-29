@@ -78,22 +78,15 @@ public class ShowReportStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ReportStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReportStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReportStatusEnum(value));
         }
 
         public static ReportStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReportStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,16 +143,15 @@ public class ShowReportStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowReportStatusResponse showReportStatusResponse = (ShowReportStatusResponse) o;
-        return Objects.equals(this.taskId, showReportStatusResponse.taskId)
-            && Objects.equals(this.reportStatus, showReportStatusResponse.reportStatus);
+        ShowReportStatusResponse that = (ShowReportStatusResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.reportStatus, that.reportStatus);
     }
 
     @Override

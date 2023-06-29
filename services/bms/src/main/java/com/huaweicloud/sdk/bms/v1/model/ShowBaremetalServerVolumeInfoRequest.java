@@ -33,16 +33,15 @@ public class ShowBaremetalServerVolumeInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBaremetalServerVolumeInfoRequest showBaremetalServerVolumeInfoRequest =
-            (ShowBaremetalServerVolumeInfoRequest) o;
-        return Objects.equals(this.serverId, showBaremetalServerVolumeInfoRequest.serverId);
+        ShowBaremetalServerVolumeInfoRequest that = (ShowBaremetalServerVolumeInfoRequest) obj;
+        return Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

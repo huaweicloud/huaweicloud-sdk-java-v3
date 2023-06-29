@@ -59,16 +59,15 @@ public class ListMigrationProjectsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMigrationProjectsRequest listMigrationProjectsRequest = (ListMigrationProjectsRequest) o;
-        return Objects.equals(this.offset, listMigrationProjectsRequest.offset)
-            && Objects.equals(this.limit, listMigrationProjectsRequest.limit);
+        ListMigrationProjectsRequest that = (ListMigrationProjectsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

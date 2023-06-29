@@ -56,16 +56,15 @@ public class DeleteXdmApplicationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteXdmApplicationResponse deleteXdmApplicationResponse = (DeleteXdmApplicationResponse) o;
-        return Objects.equals(this.result, deleteXdmApplicationResponse.result)
-            && Objects.equals(this.errorMsg, deleteXdmApplicationResponse.errorMsg);
+        DeleteXdmApplicationResponse that = (DeleteXdmApplicationResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

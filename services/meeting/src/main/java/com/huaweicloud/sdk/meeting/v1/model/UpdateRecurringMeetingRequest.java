@@ -135,19 +135,17 @@ public class UpdateRecurringMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecurringMeetingRequest updateRecurringMeetingRequest = (UpdateRecurringMeetingRequest) o;
-        return Objects.equals(this.xAuthorizationType, updateRecurringMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.userUUID, updateRecurringMeetingRequest.userUUID)
-            && Objects.equals(this.xSiteId, updateRecurringMeetingRequest.xSiteId)
-            && Objects.equals(this.conferenceID, updateRecurringMeetingRequest.conferenceID)
-            && Objects.equals(this.body, updateRecurringMeetingRequest.body);
+        UpdateRecurringMeetingRequest that = (UpdateRecurringMeetingRequest) obj;
+        return Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.xSiteId, that.xSiteId)
+            && Objects.equals(this.conferenceID, that.conferenceID) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,17 +55,15 @@ public class BatchRemovePeersFromChannelRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRemovePeersFromChannelRequestBody batchRemovePeersFromChannelRequestBody =
-            (BatchRemovePeersFromChannelRequestBody) o;
-        return Objects.equals(this.orgName, batchRemovePeersFromChannelRequestBody.orgName)
-            && Objects.equals(this.peers, batchRemovePeersFromChannelRequestBody.peers);
+        BatchRemovePeersFromChannelRequestBody that = (BatchRemovePeersFromChannelRequestBody) obj;
+        return Objects.equals(this.orgName, that.orgName) && Objects.equals(this.peers, that.peers);
     }
 
     @Override

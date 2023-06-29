@@ -55,16 +55,15 @@ public class DeleteNatGatewaySnatRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteNatGatewaySnatRuleRequest deleteNatGatewaySnatRuleRequest = (DeleteNatGatewaySnatRuleRequest) o;
-        return Objects.equals(this.natGatewayId, deleteNatGatewaySnatRuleRequest.natGatewayId)
-            && Objects.equals(this.snatRuleId, deleteNatGatewaySnatRuleRequest.snatRuleId);
+        DeleteNatGatewaySnatRuleRequest that = (DeleteNatGatewaySnatRuleRequest) obj;
+        return Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.snatRuleId, that.snatRuleId);
     }
 
     @Override

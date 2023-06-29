@@ -77,17 +77,16 @@ public class RelevanceQapair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelevanceQapair relevanceQapair = (RelevanceQapair) o;
-        return Objects.equals(this.link, relevanceQapair.link)
-            && Objects.equals(this.question, relevanceQapair.question)
-            && Objects.equals(this.qaPairId, relevanceQapair.qaPairId);
+        RelevanceQapair that = (RelevanceQapair) obj;
+        return Objects.equals(this.link, that.link) && Objects.equals(this.question, that.question)
+            && Objects.equals(this.qaPairId, that.qaPairId);
     }
 
     @Override

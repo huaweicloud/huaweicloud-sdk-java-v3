@@ -99,18 +99,16 @@ public class ShowIpNumRequirementRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIpNumRequirementRequest showIpNumRequirementRequest = (ShowIpNumRequirementRequest) o;
-        return Objects.equals(this.nodeNum, showIpNumRequirementRequest.nodeNum)
-            && Objects.equals(this.engineName, showIpNumRequirementRequest.engineName)
-            && Objects.equals(this.instanceMode, showIpNumRequirementRequest.instanceMode)
-            && Objects.equals(this.instanceId, showIpNumRequirementRequest.instanceId);
+        ShowIpNumRequirementRequest that = (ShowIpNumRequirementRequest) obj;
+        return Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.instanceMode, that.instanceMode) && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

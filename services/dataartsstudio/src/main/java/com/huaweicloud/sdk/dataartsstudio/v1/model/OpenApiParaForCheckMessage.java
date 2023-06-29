@@ -77,17 +77,16 @@ public class OpenApiParaForCheckMessage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenApiParaForCheckMessage openApiParaForCheckMessage = (OpenApiParaForCheckMessage) o;
-        return Objects.equals(this.messageId, openApiParaForCheckMessage.messageId)
-            && Objects.equals(this.action, openApiParaForCheckMessage.action)
-            && Objects.equals(this.time, openApiParaForCheckMessage.time);
+        OpenApiParaForCheckMessage that = (OpenApiParaForCheckMessage) obj;
+        return Objects.equals(this.messageId, that.messageId) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override

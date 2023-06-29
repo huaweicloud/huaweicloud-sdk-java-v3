@@ -1,92 +1,79 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 查询模块列表模块相关信息
  */
-public class EdgeModuleDTO  {
-
+public class EdgeModuleDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_version")
-    
+    @JsonProperty(value = "app_version")
 
     private String appVersion;
+
     /**
      * 模块运行状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum PENDING for value: "PENDING"
          */
         public static final StateEnum PENDING = new StateEnum("PENDING");
-        
+
         /**
          * Enum PENDING_DELETE for value: "PENDING_DELETE"
          */
         public static final StateEnum PENDING_DELETE = new StateEnum("PENDING_DELETE");
-        
+
         /**
          * Enum DELETE_FAILED for value: "DELETE_FAILED"
          */
         public static final StateEnum DELETE_FAILED = new StateEnum("DELETE_FAILED");
-        
+
         /**
          * Enum RUNNING for value: "RUNNING"
          */
         public static final StateEnum RUNNING = new StateEnum("RUNNING");
-        
+
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StateEnum FAILED = new StateEnum("FAILED");
-        
+
         /**
          * Enum SUCCEEDED for value: "SUCCEEDED"
          */
         public static final StateEnum SUCCEEDED = new StateEnum("SUCCEEDED");
-        
+
         /**
          * Enum UNKNOWN for value: "UNKNOWN"
          */
         public static final StateEnum UNKNOWN = new StateEnum("UNKNOWN");
-        
+
         /**
          * Enum DELETE_SUCCESS for value: "DELETE_SUCCESS"
          */
         public static final StateEnum DELETE_SUCCESS = new StateEnum("DELETE_SUCCESS");
-        
+
         /**
          * Enum STOPPED for value: "STOPPED"
          */
         public static final StateEnum STOPPED = new StateEnum("STOPPED");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -122,25 +109,18 @@ public class EdgeModuleDTO  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,67 +138,59 @@ public class EdgeModuleDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="control_status")
-    
+    @JsonProperty(value = "control_status")
 
     private String controlStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_name")
-    
+    @JsonProperty(value = "module_name")
 
     private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_id")
-    
+    @JsonProperty(value = "module_id")
 
     private String moduleId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
+
     /**
      * 应用类型
      */
     public static final class AppTypeEnum {
 
-        
         /**
          * Enum SYSTEM_REQUIRED for value: "SYSTEM_REQUIRED"
          */
         public static final AppTypeEnum SYSTEM_REQUIRED = new AppTypeEnum("SYSTEM_REQUIRED");
-        
+
         /**
          * Enum SYSTEM_OPTIONAL for value: "SYSTEM_OPTIONAL"
          */
         public static final AppTypeEnum SYSTEM_OPTIONAL = new AppTypeEnum("SYSTEM_OPTIONAL");
-        
+
         /**
          * Enum USER for value: "USER"
          */
         public static final AppTypeEnum USER = new AppTypeEnum("USER");
-        
 
         private static final Map<String, AppTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -248,25 +220,18 @@ public class EdgeModuleDTO  {
 
         @JsonCreator
         public static AppTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -284,46 +249,44 @@ public class EdgeModuleDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private AppTypeEnum appType;
+
     /**
      * 功能类型
      */
     public static final class FunctionTypeEnum {
 
-        
         /**
          * Enum DATA_PROCESSING for value: "DATA_PROCESSING"
          */
         public static final FunctionTypeEnum DATA_PROCESSING = new FunctionTypeEnum("DATA_PROCESSING");
-        
+
         /**
          * Enum PROTOCOL_PARSING for value: "PROTOCOL_PARSING"
          */
         public static final FunctionTypeEnum PROTOCOL_PARSING = new FunctionTypeEnum("PROTOCOL_PARSING");
-        
+
         /**
          * Enum ON_PREMISE_INTEGRATION for value: "ON_PREMISE_INTEGRATION"
          */
         public static final FunctionTypeEnum ON_PREMISE_INTEGRATION = new FunctionTypeEnum("ON_PREMISE_INTEGRATION");
-        
+
         /**
          * Enum GATEWAY_MANAGER for value: "GATEWAY_MANAGER"
          */
         public static final FunctionTypeEnum GATEWAY_MANAGER = new FunctionTypeEnum("GATEWAY_MANAGER");
-        
+
         /**
          * Enum COMPOSITE_APPLICATION for value: "COMPOSITE_APPLICATION"
          */
         public static final FunctionTypeEnum COMPOSITE_APPLICATION = new FunctionTypeEnum("COMPOSITE_APPLICATION");
-        
+
         /**
          * Enum DATA_COLLECTION for value: "DATA_COLLECTION"
          */
         public static final FunctionTypeEnum DATA_COLLECTION = new FunctionTypeEnum("DATA_COLLECTION");
-        
 
         private static final Map<String, FunctionTypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -356,25 +319,18 @@ public class EdgeModuleDTO  {
 
         @JsonCreator
         public static FunctionTypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FunctionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FunctionTypeEnum(value));
         }
 
         public static FunctionTypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -392,8 +348,7 @@ public class EdgeModuleDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function_type")
-    
+    @JsonProperty(value = "function_type")
 
     private FunctionTypeEnum functionType;
 
@@ -401,9 +356,6 @@ public class EdgeModuleDTO  {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -417,15 +369,10 @@ public class EdgeModuleDTO  {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public EdgeModuleDTO withAppVersion(String appVersion) {
         this.appVersion = appVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本
@@ -439,15 +386,10 @@ public class EdgeModuleDTO  {
         this.appVersion = appVersion;
     }
 
-    
-
     public EdgeModuleDTO withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 模块运行状态
@@ -461,15 +403,10 @@ public class EdgeModuleDTO  {
         this.state = state;
     }
 
-    
-
     public EdgeModuleDTO withControlStatus(String controlStatus) {
         this.controlStatus = controlStatus;
         return this;
     }
-
-    
-
 
     /**
      * 模块管控状态
@@ -483,15 +420,10 @@ public class EdgeModuleDTO  {
         this.controlStatus = controlStatus;
     }
 
-    
-
     public EdgeModuleDTO withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点（同deviceID）ID
@@ -505,15 +437,10 @@ public class EdgeModuleDTO  {
         this.nodeId = nodeId;
     }
 
-    
-
     public EdgeModuleDTO withModuleName(String moduleName) {
         this.moduleName = moduleName;
         return this;
     }
-
-    
-
 
     /**
      * 模块名称
@@ -527,15 +454,10 @@ public class EdgeModuleDTO  {
         this.moduleName = moduleName;
     }
 
-    
-
     public EdgeModuleDTO withModuleId(String moduleId) {
         this.moduleId = moduleId;
         return this;
     }
-
-    
-
 
     /**
      * 模块ID
@@ -549,15 +471,10 @@ public class EdgeModuleDTO  {
         this.moduleId = moduleId;
     }
 
-    
-
     public EdgeModuleDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -571,15 +488,10 @@ public class EdgeModuleDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public EdgeModuleDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -593,15 +505,10 @@ public class EdgeModuleDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     public EdgeModuleDTO withAppType(AppTypeEnum appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型
@@ -615,15 +522,10 @@ public class EdgeModuleDTO  {
         this.appType = appType;
     }
 
-    
-
     public EdgeModuleDTO withFunctionType(FunctionTypeEnum functionType) {
         this.functionType = functionType;
         return this;
     }
-
-    
-
 
     /**
      * 功能类型
@@ -637,33 +539,38 @@ public class EdgeModuleDTO  {
         this.functionType = functionType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeModuleDTO edgeModuleDTO = (EdgeModuleDTO) o;
-        return Objects.equals(this.edgeAppId, edgeModuleDTO.edgeAppId) &&
-            Objects.equals(this.appVersion, edgeModuleDTO.appVersion) &&
-            Objects.equals(this.state, edgeModuleDTO.state) &&
-            Objects.equals(this.controlStatus, edgeModuleDTO.controlStatus) &&
-            Objects.equals(this.nodeId, edgeModuleDTO.nodeId) &&
-            Objects.equals(this.moduleName, edgeModuleDTO.moduleName) &&
-            Objects.equals(this.moduleId, edgeModuleDTO.moduleId) &&
-            Objects.equals(this.createTime, edgeModuleDTO.createTime) &&
-            Objects.equals(this.updateTime, edgeModuleDTO.updateTime) &&
-            Objects.equals(this.appType, edgeModuleDTO.appType) &&
-            Objects.equals(this.functionType, edgeModuleDTO.functionType);
+        EdgeModuleDTO that = (EdgeModuleDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.appVersion, that.appVersion)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.controlStatus, that.controlStatus)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.functionType, that.functionType);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, appVersion, state, controlStatus, nodeId, moduleName, moduleId, createTime, updateTime, appType, functionType);
+        return Objects.hash(edgeAppId,
+            appVersion,
+            state,
+            controlStatus,
+            nodeId,
+            moduleName,
+            moduleId,
+            createTime,
+            updateTime,
+            appType,
+            functionType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -682,6 +589,7 @@ public class EdgeModuleDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -692,8 +600,5 @@ public class EdgeModuleDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

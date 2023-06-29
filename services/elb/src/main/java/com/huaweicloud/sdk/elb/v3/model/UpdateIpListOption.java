@@ -96,17 +96,16 @@ public class UpdateIpListOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpListOption updateIpListOption = (UpdateIpListOption) o;
-        return Objects.equals(this.name, updateIpListOption.name)
-            && Objects.equals(this.ipList, updateIpListOption.ipList)
-            && Objects.equals(this.description, updateIpListOption.description);
+        UpdateIpListOption that = (UpdateIpListOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.ipList, that.ipList)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

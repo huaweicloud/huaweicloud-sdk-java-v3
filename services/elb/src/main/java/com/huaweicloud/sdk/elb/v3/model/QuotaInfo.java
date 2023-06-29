@@ -99,17 +99,16 @@ public class QuotaInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaInfo quotaInfo = (QuotaInfo) o;
-        return Objects.equals(this.quotaKey, quotaInfo.quotaKey)
-            && Objects.equals(this.quotaLimit, quotaInfo.quotaLimit) && Objects.equals(this.used, quotaInfo.used)
-            && Objects.equals(this.unit, quotaInfo.unit);
+        QuotaInfo that = (QuotaInfo) obj;
+        return Objects.equals(this.quotaKey, that.quotaKey) && Objects.equals(this.quotaLimit, that.quotaLimit)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

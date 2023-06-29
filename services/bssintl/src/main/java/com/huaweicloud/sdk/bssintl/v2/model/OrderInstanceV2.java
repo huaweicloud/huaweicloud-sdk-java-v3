@@ -385,31 +385,26 @@ public class OrderInstanceV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderInstanceV2 orderInstanceV2 = (OrderInstanceV2) o;
-        return Objects.equals(this.id, orderInstanceV2.id)
-            && Objects.equals(this.resourceId, orderInstanceV2.resourceId)
-            && Objects.equals(this.resourceName, orderInstanceV2.resourceName)
-            && Objects.equals(this.regionCode, orderInstanceV2.regionCode)
-            && Objects.equals(this.serviceTypeCode, orderInstanceV2.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, orderInstanceV2.resourceTypeCode)
-            && Objects.equals(this.resourceTypeName, orderInstanceV2.resourceTypeName)
-            && Objects.equals(this.serviceTypeName, orderInstanceV2.serviceTypeName)
-            && Objects.equals(this.resourceSpecCode, orderInstanceV2.resourceSpecCode)
-            && Objects.equals(this.projectId, orderInstanceV2.projectId)
-            && Objects.equals(this.productId, orderInstanceV2.productId)
-            && Objects.equals(this.parentResourceId, orderInstanceV2.parentResourceId)
-            && Objects.equals(this.isMainResource, orderInstanceV2.isMainResource)
-            && Objects.equals(this.status, orderInstanceV2.status)
-            && Objects.equals(this.effectiveTime, orderInstanceV2.effectiveTime)
-            && Objects.equals(this.expireTime, orderInstanceV2.expireTime)
-            && Objects.equals(this.expirePolicy, orderInstanceV2.expirePolicy);
+        OrderInstanceV2 that = (OrderInstanceV2) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.parentResourceId, that.parentResourceId)
+            && Objects.equals(this.isMainResource, that.isMainResource) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expirePolicy, that.expirePolicy);
     }
 
     @Override

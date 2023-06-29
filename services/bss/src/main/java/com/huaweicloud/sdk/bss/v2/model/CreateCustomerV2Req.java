@@ -231,24 +231,22 @@ public class CreateCustomerV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomerV2Req createCustomerV2Req = (CreateCustomerV2Req) o;
-        return Objects.equals(this.domainName, createCustomerV2Req.domainName)
-            && Objects.equals(this.mobilePhone, createCustomerV2Req.mobilePhone)
-            && Objects.equals(this.verificationCode, createCustomerV2Req.verificationCode)
-            && Objects.equals(this.xaccountId, createCustomerV2Req.xaccountId)
-            && Objects.equals(this.xaccountType, createCustomerV2Req.xaccountType)
-            && Objects.equals(this.password, createCustomerV2Req.password)
-            && Objects.equals(this.isCloseMarketMs, createCustomerV2Req.isCloseMarketMs)
-            && Objects.equals(this.cooperationType, createCustomerV2Req.cooperationType)
-            && Objects.equals(this.indirectPartnerId, createCustomerV2Req.indirectPartnerId)
-            && Objects.equals(this.includeAssociationResult, createCustomerV2Req.includeAssociationResult);
+        CreateCustomerV2Req that = (CreateCustomerV2Req) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.mobilePhone, that.mobilePhone)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.xaccountId, that.xaccountId) && Objects.equals(this.xaccountType, that.xaccountType)
+            && Objects.equals(this.password, that.password)
+            && Objects.equals(this.isCloseMarketMs, that.isCloseMarketMs)
+            && Objects.equals(this.cooperationType, that.cooperationType)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.includeAssociationResult, that.includeAssociationResult);
     }
 
     @Override

@@ -99,18 +99,18 @@ public class IncentiveAndDiscountPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncentiveAndDiscountPolicy incentiveAndDiscountPolicy = (IncentiveAndDiscountPolicy) o;
-        return Objects.equals(this.serviceTypeCode, incentiveAndDiscountPolicy.serviceTypeCode)
-            && Objects.equals(this.serviceTypeName, incentiveAndDiscountPolicy.serviceTypeName)
-            && Objects.equals(this.incentivePolicy, incentiveAndDiscountPolicy.incentivePolicy)
-            && Objects.equals(this.allowDiscount, incentiveAndDiscountPolicy.allowDiscount);
+        IncentiveAndDiscountPolicy that = (IncentiveAndDiscountPolicy) obj;
+        return Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.incentivePolicy, that.incentivePolicy)
+            && Objects.equals(this.allowDiscount, that.allowDiscount);
     }
 
     @Override

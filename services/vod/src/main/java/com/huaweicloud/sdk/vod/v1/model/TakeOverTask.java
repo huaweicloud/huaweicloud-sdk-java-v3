@@ -119,22 +119,15 @@ public class TakeOverTask {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -382,23 +375,21 @@ public class TakeOverTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TakeOverTask takeOverTask = (TakeOverTask) o;
-        return Objects.equals(this.bucket, takeOverTask.bucket) && Objects.equals(this._object, takeOverTask._object)
-            && Objects.equals(this.hostType, takeOverTask.hostType)
-            && Objects.equals(this.outputBucket, takeOverTask.outputBucket)
-            && Objects.equals(this.outputPath, takeOverTask.outputPath)
-            && Objects.equals(this.taskId, takeOverTask.taskId) && Objects.equals(this.suffix, takeOverTask.suffix)
-            && Objects.equals(this.templateGroupName, takeOverTask.templateGroupName)
-            && Objects.equals(this.createTime, takeOverTask.createTime)
-            && Objects.equals(this.endTime, takeOverTask.endTime) && Objects.equals(this.status, takeOverTask.status)
-            && Objects.equals(this.execDesc, takeOverTask.execDesc);
+        TakeOverTask that = (TakeOverTask) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this._object, that._object)
+            && Objects.equals(this.hostType, that.hostType) && Objects.equals(this.outputBucket, that.outputBucket)
+            && Objects.equals(this.outputPath, that.outputPath) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.suffix, that.suffix)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.execDesc, that.execDesc);
     }
 
     @Override

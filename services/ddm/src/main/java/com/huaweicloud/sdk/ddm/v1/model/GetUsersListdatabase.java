@@ -55,16 +55,15 @@ public class GetUsersListdatabase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetUsersListdatabase getUsersListdatabase = (GetUsersListdatabase) o;
-        return Objects.equals(this.name, getUsersListdatabase.name)
-            && Objects.equals(this.description, getUsersListdatabase.description);
+        GetUsersListdatabase that = (GetUsersListdatabase) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

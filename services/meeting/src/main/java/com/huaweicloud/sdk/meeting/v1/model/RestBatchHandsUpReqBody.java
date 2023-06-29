@@ -74,16 +74,15 @@ public class RestBatchHandsUpReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestBatchHandsUpReqBody restBatchHandsUpReqBody = (RestBatchHandsUpReqBody) o;
-        return Objects.equals(this.handsState, restBatchHandsUpReqBody.handsState)
-            && Objects.equals(this.pids, restBatchHandsUpReqBody.pids);
+        RestBatchHandsUpReqBody that = (RestBatchHandsUpReqBody) obj;
+        return Objects.equals(this.handsState, that.handsState) && Objects.equals(this.pids, that.pids);
     }
 
     @Override

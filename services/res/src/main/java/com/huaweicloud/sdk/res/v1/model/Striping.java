@@ -81,16 +81,16 @@ public class Striping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Striping striping = (Striping) o;
-        return Objects.equals(this.nearestNeighborhood, striping.nearestNeighborhood)
-            && Objects.equals(this.band, striping.band) && Objects.equals(this.row, striping.row);
+        Striping that = (Striping) obj;
+        return Objects.equals(this.nearestNeighborhood, that.nearestNeighborhood)
+            && Objects.equals(this.band, that.band) && Objects.equals(this.row, that.row);
     }
 
     @Override

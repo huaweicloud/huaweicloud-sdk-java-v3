@@ -162,20 +162,19 @@ public class QueryPreCheckResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryPreCheckResult queryPreCheckResult = (QueryPreCheckResult) o;
-        return Objects.equals(this.result, queryPreCheckResult.result)
-            && Objects.equals(this.process, queryPreCheckResult.process)
-            && Objects.equals(this.totalPassedRate, queryPreCheckResult.totalPassedRate)
-            && Objects.equals(this.rdsInstanceId, queryPreCheckResult.rdsInstanceId)
-            && Objects.equals(this.jobDirection, queryPreCheckResult.jobDirection)
-            && Objects.equals(this.precheckResults, queryPreCheckResult.precheckResults);
+        QueryPreCheckResult that = (QueryPreCheckResult) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.process, that.process)
+            && Objects.equals(this.totalPassedRate, that.totalPassedRate)
+            && Objects.equals(this.rdsInstanceId, that.rdsInstanceId)
+            && Objects.equals(this.jobDirection, that.jobDirection)
+            && Objects.equals(this.precheckResults, that.precheckResults);
     }
 
     @Override

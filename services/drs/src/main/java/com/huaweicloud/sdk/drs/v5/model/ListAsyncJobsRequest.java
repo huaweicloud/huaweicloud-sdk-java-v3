@@ -60,22 +60,15 @@ public class ListAsyncJobsRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,23 +286,19 @@ public class ListAsyncJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAsyncJobsRequest listAsyncJobsRequest = (ListAsyncJobsRequest) o;
-        return Objects.equals(this.xLanguage, listAsyncJobsRequest.xLanguage)
-            && Objects.equals(this.asyncJobId, listAsyncJobsRequest.asyncJobId)
-            && Objects.equals(this.status, listAsyncJobsRequest.status)
-            && Objects.equals(this.domainName, listAsyncJobsRequest.domainName)
-            && Objects.equals(this.userName, listAsyncJobsRequest.userName)
-            && Objects.equals(this.offset, listAsyncJobsRequest.offset)
-            && Objects.equals(this.limit, listAsyncJobsRequest.limit)
-            && Objects.equals(this.sortKey, listAsyncJobsRequest.sortKey)
-            && Objects.equals(this.sortDir, listAsyncJobsRequest.sortDir);
+        ListAsyncJobsRequest that = (ListAsyncJobsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.asyncJobId, that.asyncJobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

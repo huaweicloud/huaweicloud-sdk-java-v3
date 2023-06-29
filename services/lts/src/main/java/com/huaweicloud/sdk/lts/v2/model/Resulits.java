@@ -55,15 +55,15 @@ public class Resulits {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resulits resulits = (Resulits) o;
-        return Objects.equals(this.timestamp, resulits.timestamp) && Objects.equals(this.value, resulits.value);
+        Resulits that = (Resulits) obj;
+        return Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.value, that.value);
     }
 
     @Override

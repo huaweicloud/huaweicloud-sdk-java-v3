@@ -215,23 +215,18 @@ public class ListActiveOrHistoryAlarmsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListActiveOrHistoryAlarmsRequestBody listActiveOrHistoryAlarmsRequestBody =
-            (ListActiveOrHistoryAlarmsRequestBody) o;
-        return Objects.equals(this.step, listActiveOrHistoryAlarmsRequestBody.step)
-            && Objects.equals(this.whetherCustomField, listActiveOrHistoryAlarmsRequestBody.whetherCustomField)
-            && Objects.equals(this.startTime, listActiveOrHistoryAlarmsRequestBody.startTime)
-            && Objects.equals(this.endTime, listActiveOrHistoryAlarmsRequestBody.endTime)
-            && Objects.equals(this.timeRange, listActiveOrHistoryAlarmsRequestBody.timeRange)
-            && Objects.equals(this.search, listActiveOrHistoryAlarmsRequestBody.search)
-            && Objects.equals(this.alarmLevelIds, listActiveOrHistoryAlarmsRequestBody.alarmLevelIds)
-            && Objects.equals(this.sort, listActiveOrHistoryAlarmsRequestBody.sort);
+        ListActiveOrHistoryAlarmsRequestBody that = (ListActiveOrHistoryAlarmsRequestBody) obj;
+        return Objects.equals(this.step, that.step) && Objects.equals(this.whetherCustomField, that.whetherCustomField)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.timeRange, that.timeRange) && Objects.equals(this.search, that.search)
+            && Objects.equals(this.alarmLevelIds, that.alarmLevelIds) && Objects.equals(this.sort, that.sort);
     }
 
     @Override

@@ -74,15 +74,15 @@ public class ViewRow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ViewRow viewRow = (ViewRow) o;
-        return Objects.equals(this.viewList, viewRow.viewList) && Objects.equals(this.title, viewRow.title);
+        ViewRow that = (ViewRow) obj;
+        return Objects.equals(this.viewList, that.viewList) && Objects.equals(this.title, that.title);
     }
 
     @Override

@@ -184,20 +184,20 @@ public class QueueInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueueInfo queueInfo = (QueueInfo) o;
-        return Objects.equals(this.queueName, queueInfo.queueName)
-            && Objects.equals(this.enterpriseProjectId, queueInfo.enterpriseProjectId)
-            && Objects.equals(this.queueType, queueInfo.queueType)
-            && Objects.equals(this.queueScalingPolicies, queueInfo.queueScalingPolicies)
-            && Objects.equals(this.owner, queueInfo.owner) && Objects.equals(this.createTime, queueInfo.createTime)
-            && Objects.equals(this.engine, queueInfo.engine);
+        QueueInfo that = (QueueInfo) obj;
+        return Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.queueType, that.queueType)
+            && Objects.equals(this.queueScalingPolicies, that.queueScalingPolicies)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.engine, that.engine);
     }
 
     @Override

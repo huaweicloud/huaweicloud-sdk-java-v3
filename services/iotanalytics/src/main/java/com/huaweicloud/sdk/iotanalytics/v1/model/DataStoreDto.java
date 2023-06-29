@@ -77,17 +77,17 @@ public class DataStoreDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataStoreDto dataStoreDto = (DataStoreDto) o;
-        return Objects.equals(this.dataStoreId, dataStoreDto.dataStoreId)
-            && Objects.equals(this.dataStoreGroupId, dataStoreDto.dataStoreGroupId)
-            && Objects.equals(this.productId, dataStoreDto.productId);
+        DataStoreDto that = (DataStoreDto) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId)
+            && Objects.equals(this.dataStoreGroupId, that.dataStoreGroupId)
+            && Objects.equals(this.productId, that.productId);
     }
 
     @Override

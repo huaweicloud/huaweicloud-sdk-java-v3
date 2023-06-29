@@ -87,22 +87,15 @@ public class TableMeta {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableTypeEnum(value));
         }
 
         public static TableTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -215,18 +208,17 @@ public class TableMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableMeta tableMeta = (TableMeta) o;
-        return Objects.equals(this.catalogName, tableMeta.catalogName)
-            && Objects.equals(this.databaseName, tableMeta.databaseName)
-            && Objects.equals(this.tableName, tableMeta.tableName)
-            && Objects.equals(this.tableType, tableMeta.tableType) && Objects.equals(this.comments, tableMeta.comments);
+        TableMeta that = (TableMeta) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.comments, that.comments);
     }
 
     @Override

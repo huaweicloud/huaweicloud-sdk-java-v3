@@ -159,22 +159,15 @@ public class BatchJobInfo {
             if (value == null) {
                 return null;
             }
-            FeatureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FeatureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FeatureEnum(value));
         }
 
         public static FeatureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FeatureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -802,34 +795,29 @@ public class BatchJobInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchJobInfo batchJobInfo = (BatchJobInfo) o;
-        return Objects.equals(this.file, batchJobInfo.file) && Objects.equals(this.className, batchJobInfo.className)
-            && Objects.equals(this.clusterName, batchJobInfo.clusterName)
-            && Objects.equals(this.args, batchJobInfo.args) && Objects.equals(this.scType, batchJobInfo.scType)
-            && Objects.equals(this.jars, batchJobInfo.jars) && Objects.equals(this.pyFiles, batchJobInfo.pyFiles)
-            && Objects.equals(this.files, batchJobInfo.files) && Objects.equals(this.modules, batchJobInfo.modules)
-            && Objects.equals(this.resources, batchJobInfo.resources)
-            && Objects.equals(this.groups, batchJobInfo.groups) && Objects.equals(this.conf, batchJobInfo.conf)
-            && Objects.equals(this.name, batchJobInfo.name)
-            && Objects.equals(this.driverMemory, batchJobInfo.driverMemory)
-            && Objects.equals(this.driverCores, batchJobInfo.driverCores)
-            && Objects.equals(this.executorMemory, batchJobInfo.executorMemory)
-            && Objects.equals(this.executorCores, batchJobInfo.executorCores)
-            && Objects.equals(this.numExecutors, batchJobInfo.numExecutors)
-            && Objects.equals(this.feature, batchJobInfo.feature)
-            && Objects.equals(this.sparkVersion, batchJobInfo.sparkVersion)
-            && Objects.equals(this.queue, batchJobInfo.queue)
-            && Objects.equals(this.autoRecovery, batchJobInfo.autoRecovery)
-            && Objects.equals(this.maxRetryTimes, batchJobInfo.maxRetryTimes)
-            && Objects.equals(this.image, batchJobInfo.image) && Objects.equals(this.obsBucket, batchJobInfo.obsBucket)
-            && Objects.equals(this.catalogName, batchJobInfo.catalogName);
+        BatchJobInfo that = (BatchJobInfo) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.scType, that.scType) && Objects.equals(this.jars, that.jars)
+            && Objects.equals(this.pyFiles, that.pyFiles) && Objects.equals(this.files, that.files)
+            && Objects.equals(this.modules, that.modules) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.groups, that.groups) && Objects.equals(this.conf, that.conf)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.driverMemory, that.driverMemory)
+            && Objects.equals(this.driverCores, that.driverCores)
+            && Objects.equals(this.executorMemory, that.executorMemory)
+            && Objects.equals(this.executorCores, that.executorCores)
+            && Objects.equals(this.numExecutors, that.numExecutors) && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.sparkVersion, that.sparkVersion) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.autoRecovery, that.autoRecovery)
+            && Objects.equals(this.maxRetryTimes, that.maxRetryTimes) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.obsBucket, that.obsBucket) && Objects.equals(this.catalogName, that.catalogName);
     }
 
     @Override

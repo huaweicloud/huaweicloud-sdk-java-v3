@@ -99,18 +99,16 @@ public class CreateSearchCriteriasBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSearchCriteriasBody createSearchCriteriasBody = (CreateSearchCriteriasBody) o;
-        return Objects.equals(this.criteria, createSearchCriteriasBody.criteria)
-            && Objects.equals(this.epsId, createSearchCriteriasBody.epsId)
-            && Objects.equals(this.name, createSearchCriteriasBody.name)
-            && Objects.equals(this.searchType, createSearchCriteriasBody.searchType);
+        CreateSearchCriteriasBody that = (CreateSearchCriteriasBody) obj;
+        return Objects.equals(this.criteria, that.criteria) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.searchType, that.searchType);
     }
 
     @Override

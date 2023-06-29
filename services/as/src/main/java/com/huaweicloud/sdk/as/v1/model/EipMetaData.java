@@ -77,17 +77,17 @@ public class EipMetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipMetaData eipMetaData = (EipMetaData) o;
-        return Objects.equals(this.metadataBandwidthShareType, eipMetaData.metadataBandwidthShareType)
-            && Objects.equals(this.metadataEipId, eipMetaData.metadataEipId)
-            && Objects.equals(this.metadataeipAddress, eipMetaData.metadataeipAddress);
+        EipMetaData that = (EipMetaData) obj;
+        return Objects.equals(this.metadataBandwidthShareType, that.metadataBandwidthShareType)
+            && Objects.equals(this.metadataEipId, that.metadataEipId)
+            && Objects.equals(this.metadataeipAddress, that.metadataeipAddress);
     }
 
     @Override

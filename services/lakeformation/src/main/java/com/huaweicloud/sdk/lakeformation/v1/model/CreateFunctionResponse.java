@@ -74,22 +74,15 @@ public class CreateFunctionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FunctionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FunctionTypeEnum(value));
         }
 
         public static FunctionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FunctionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,22 +160,15 @@ public class CreateFunctionResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OwnerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OwnerTypeEnum(value));
         }
 
         public static OwnerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OwnerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -389,23 +375,20 @@ public class CreateFunctionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFunctionResponse createFunctionResponse = (CreateFunctionResponse) o;
-        return Objects.equals(this.catalogName, createFunctionResponse.catalogName)
-            && Objects.equals(this.databaseName, createFunctionResponse.databaseName)
-            && Objects.equals(this.functionName, createFunctionResponse.functionName)
-            && Objects.equals(this.functionType, createFunctionResponse.functionType)
-            && Objects.equals(this.owner, createFunctionResponse.owner)
-            && Objects.equals(this.ownerType, createFunctionResponse.ownerType)
-            && Objects.equals(this.className, createFunctionResponse.className)
-            && Objects.equals(this.createTime, createFunctionResponse.createTime)
-            && Objects.equals(this.resourceUris, createFunctionResponse.resourceUris);
+        CreateFunctionResponse that = (CreateFunctionResponse) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.functionName, that.functionName)
+            && Objects.equals(this.functionType, that.functionType) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.ownerType, that.ownerType) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.resourceUris, that.resourceUris);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class Single2Ha {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Single2Ha single2Ha = (Single2Ha) o;
-        return Objects.equals(this.singleToHa, single2Ha.singleToHa);
+        Single2Ha that = (Single2Ha) obj;
+        return Objects.equals(this.singleToHa, that.singleToHa);
     }
 
     @Override

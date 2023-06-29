@@ -53,15 +53,15 @@ public class ListPublicipTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipTagsResponse listPublicipTagsResponse = (ListPublicipTagsResponse) o;
-        return Objects.equals(this.tags, listPublicipTagsResponse.tags);
+        ListPublicipTagsResponse that = (ListPublicipTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

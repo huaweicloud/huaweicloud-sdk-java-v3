@@ -150,19 +150,18 @@ public class PostPaidServerNic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerNic postPaidServerNic = (PostPaidServerNic) o;
-        return Objects.equals(this.subnetId, postPaidServerNic.subnetId)
-            && Objects.equals(this.ipAddress, postPaidServerNic.ipAddress)
-            && Objects.equals(this.ipv6Enable, postPaidServerNic.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, postPaidServerNic.ipv6Bandwidth)
-            && Objects.equals(this.allowedAddressPairs, postPaidServerNic.allowedAddressPairs);
+        PostPaidServerNic that = (PostPaidServerNic) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override

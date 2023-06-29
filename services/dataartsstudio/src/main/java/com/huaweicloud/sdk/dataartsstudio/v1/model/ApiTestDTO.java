@@ -65,15 +65,15 @@ public class ApiTestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiTestDTO apiTestDTO = (ApiTestDTO) o;
-        return Objects.equals(this.body, apiTestDTO.body) && Objects.equals(this.paras, apiTestDTO.paras);
+        ApiTestDTO that = (ApiTestDTO) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.paras, that.paras);
     }
 
     @Override

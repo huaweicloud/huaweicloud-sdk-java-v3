@@ -75,16 +75,15 @@ public class ListDevicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDevicesResponse listDevicesResponse = (ListDevicesResponse) o;
-        return Objects.equals(this.total, listDevicesResponse.total)
-            && Objects.equals(this.data, listDevicesResponse.data);
+        ListDevicesResponse that = (ListDevicesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override

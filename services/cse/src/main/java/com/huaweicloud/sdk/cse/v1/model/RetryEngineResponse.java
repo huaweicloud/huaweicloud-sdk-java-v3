@@ -78,16 +78,16 @@ public class RetryEngineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryEngineResponse retryEngineResponse = (RetryEngineResponse) o;
-        return Objects.equals(this.id, retryEngineResponse.id) && Objects.equals(this.name, retryEngineResponse.name)
-            && Objects.equals(this.jobId, retryEngineResponse.jobId);
+        RetryEngineResponse that = (RetryEngineResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

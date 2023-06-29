@@ -103,18 +103,17 @@ public class ShowForwardingConfigsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowForwardingConfigsRequest showForwardingConfigsRequest = (ShowForwardingConfigsRequest) o;
-        return Objects.equals(this.instanceId, showForwardingConfigsRequest.instanceId)
-            && Objects.equals(this.forwardingType, showForwardingConfigsRequest.forwardingType)
-            && Objects.equals(this.offset, showForwardingConfigsRequest.offset)
-            && Objects.equals(this.limit, showForwardingConfigsRequest.limit);
+        ShowForwardingConfigsRequest that = (ShowForwardingConfigsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.forwardingType, that.forwardingType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

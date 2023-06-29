@@ -74,16 +74,15 @@ public class ListOsVersionsResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOsVersionsResponseBody listOsVersionsResponseBody = (ListOsVersionsResponseBody) o;
-        return Objects.equals(this.platform, listOsVersionsResponseBody.platform)
-            && Objects.equals(this.versionList, listOsVersionsResponseBody.versionList);
+        ListOsVersionsResponseBody that = (ListOsVersionsResponseBody) obj;
+        return Objects.equals(this.platform, that.platform) && Objects.equals(this.versionList, that.versionList);
     }
 
     @Override

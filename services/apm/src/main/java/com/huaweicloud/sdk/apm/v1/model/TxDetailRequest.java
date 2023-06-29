@@ -77,17 +77,16 @@ public class TxDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TxDetailRequest txDetailRequest = (TxDetailRequest) o;
-        return Objects.equals(this.txName, txDetailRequest.txName)
-            && Objects.equals(this.startTime, txDetailRequest.startTime)
-            && Objects.equals(this.endTime, txDetailRequest.endTime);
+        TxDetailRequest that = (TxDetailRequest) obj;
+        return Objects.equals(this.txName, that.txName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

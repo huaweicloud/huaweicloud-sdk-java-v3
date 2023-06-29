@@ -96,17 +96,16 @@ public class CreatePlaybookActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookActionRequest createPlaybookActionRequest = (CreatePlaybookActionRequest) o;
-        return Objects.equals(this.workspaceId, createPlaybookActionRequest.workspaceId)
-            && Objects.equals(this.versionId, createPlaybookActionRequest.versionId)
-            && Objects.equals(this.body, createPlaybookActionRequest.body);
+        CreatePlaybookActionRequest that = (CreatePlaybookActionRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

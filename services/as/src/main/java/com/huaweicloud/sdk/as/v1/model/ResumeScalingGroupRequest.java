@@ -65,16 +65,15 @@ public class ResumeScalingGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResumeScalingGroupRequest resumeScalingGroupRequest = (ResumeScalingGroupRequest) o;
-        return Objects.equals(this.scalingGroupId, resumeScalingGroupRequest.scalingGroupId)
-            && Objects.equals(this.body, resumeScalingGroupRequest.body);
+        ResumeScalingGroupRequest that = (ResumeScalingGroupRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

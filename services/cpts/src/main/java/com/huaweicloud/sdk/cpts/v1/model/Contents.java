@@ -212,20 +212,18 @@ public class Contents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Contents contents = (Contents) o;
-        return Objects.equals(this.contentId, contents.contentId) && Objects.equals(this.content, contents.content)
-            && Objects.equals(this.index, contents.index)
-            && Objects.equals(this.selectedTempName, contents.selectedTempName)
-            && Objects.equals(this.data, contents.data) && Objects.equals(this.dataType, contents.dataType)
-            && Objects.equals(this.conditions, contents.conditions)
-            && Objects.equals(this.isDisabled, contents.isDisabled);
+        Contents that = (Contents) obj;
+        return Objects.equals(this.contentId, that.contentId) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.selectedTempName, that.selectedTempName)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.isDisabled, that.isDisabled);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class ChartConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChartConfig chartConfig = (ChartConfig) o;
-        return Objects.equals(this.canSort, chartConfig.canSort)
-            && Objects.equals(this.canSearch, chartConfig.canSearch)
-            && Objects.equals(this.pageSize, chartConfig.pageSize);
+        ChartConfig that = (ChartConfig) obj;
+        return Objects.equals(this.canSort, that.canSort) && Objects.equals(this.canSearch, that.canSearch)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

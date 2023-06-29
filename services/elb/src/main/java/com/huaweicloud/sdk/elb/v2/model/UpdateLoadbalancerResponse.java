@@ -44,15 +44,15 @@ public class UpdateLoadbalancerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLoadbalancerResponse updateLoadbalancerResponse = (UpdateLoadbalancerResponse) o;
-        return Objects.equals(this.loadbalancer, updateLoadbalancerResponse.loadbalancer);
+        UpdateLoadbalancerResponse that = (UpdateLoadbalancerResponse) obj;
+        return Objects.equals(this.loadbalancer, that.loadbalancer);
     }
 
     @Override

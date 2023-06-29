@@ -209,19 +209,19 @@ public class UrlAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlAuth urlAuth = (UrlAuth) o;
-        return Objects.equals(this.status, urlAuth.status) && Objects.equals(this.type, urlAuth.type)
-            && Objects.equals(this.expireTime, urlAuth.expireTime)
-            && Objects.equals(this.signMethod, urlAuth.signMethod) && Objects.equals(this.matchType, urlAuth.matchType)
-            && Objects.equals(this.key, urlAuth.key) && Objects.equals(this.backupKey, urlAuth.backupKey)
-            && Objects.equals(this.signArg, urlAuth.signArg) && Objects.equals(this.timeFormat, urlAuth.timeFormat);
+        UrlAuth that = (UrlAuth) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.signMethod, that.signMethod)
+            && Objects.equals(this.matchType, that.matchType) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.backupKey, that.backupKey) && Objects.equals(this.signArg, that.signArg)
+            && Objects.equals(this.timeFormat, that.timeFormat);
     }
 
     @Override

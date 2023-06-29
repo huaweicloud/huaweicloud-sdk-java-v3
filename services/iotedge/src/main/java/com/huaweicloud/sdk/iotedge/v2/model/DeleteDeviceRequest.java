@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteDeviceRequest  {
-
+public class DeleteDeviceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
@@ -34,9 +24,6 @@ public class DeleteDeviceRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -50,15 +37,10 @@ public class DeleteDeviceRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public DeleteDeviceRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备ID
@@ -72,24 +54,23 @@ public class DeleteDeviceRequest  {
         this.deviceId = deviceId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeviceRequest deleteDeviceRequest = (DeleteDeviceRequest) o;
-        return Objects.equals(this.edgeNodeId, deleteDeviceRequest.edgeNodeId) &&
-            Objects.equals(this.deviceId, deleteDeviceRequest.deviceId);
+        DeleteDeviceRequest that = (DeleteDeviceRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.deviceId, that.deviceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, deviceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class DeleteDeviceRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class DeleteDeviceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

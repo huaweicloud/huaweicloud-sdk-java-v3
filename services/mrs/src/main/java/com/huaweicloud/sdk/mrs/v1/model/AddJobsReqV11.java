@@ -1,91 +1,72 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * AddJobsReqV11
  */
-public class AddJobsReqV11  {
-
+public class AddJobsReqV11 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
 
     private Integer jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jar_path")
-    
+    @JsonProperty(value = "jar_path")
 
     private String jarPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arguments")
-    
+    @JsonProperty(value = "arguments")
 
     private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="input")
-    
+    @JsonProperty(value = "input")
 
     private String input;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="output")
-    
+    @JsonProperty(value = "output")
 
     private String output;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_log")
-    
+    @JsonProperty(value = "job_log")
 
     private String jobLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hive_script_path")
-    
+    @JsonProperty(value = "hive_script_path")
 
     private String hiveScriptPath;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hql")
-    
+    @JsonProperty(value = "hql")
 
     private String hql;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="shutdown_cluster")
-    
+    @JsonProperty(value = "shutdown_cluster")
 
     private Boolean shutdownCluster;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="submit_job_once_cluster_run")
-    
+    @JsonProperty(value = "submit_job_once_cluster_run")
 
     private Boolean submitJobOnceClusterRun;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="file_action")
-    
+    @JsonProperty(value = "file_action")
 
     private String fileAction;
 
@@ -93,9 +74,6 @@ public class AddJobsReqV11  {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 作业类型码。 - 1：MapReduce - 2：Spark - 3：Hive Script - 4：HiveSQL（当前不支持） - 5：DistCp，导入、导出数据，（当前不支持）。 - 6：Spark Script - 7：Spark SQL，提交SQL语句，（当前不支持）。
@@ -109,15 +87,10 @@ public class AddJobsReqV11  {
         this.jobType = jobType;
     }
 
-    
-
     public AddJobsReqV11 withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称。 只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。  说明： 不同作业的名称允许相同，但不建议设置相同。
@@ -131,15 +104,10 @@ public class AddJobsReqV11  {
         this.jobName = jobName;
     }
 
-    
-
     public AddJobsReqV11 withJarPath(String jarPath) {
         this.jarPath = jarPath;
         return this;
     }
-
-    
-
 
     /**
      * 执行程序Jar包或sql文件地址，需要满足如下要求： - 最多为1023字符，不能包含;|&>,<'$特殊字符，且不可为空或全空格。 - 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。    - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。    - HDFS：以“/”开头。 - Spark Script需要以“.sql”结尾，MapReduce和Spark Jar需要以“.jar”结尾，sql和jar不区分大小写。
@@ -153,15 +121,10 @@ public class AddJobsReqV11  {
         this.jarPath = jarPath;
     }
 
-    
-
     public AddJobsReqV11 withArguments(String arguments) {
         this.arguments = arguments;
         return this;
     }
-
-    
-
 
     /**
      * 程序执行的关键参数，该参数由用户程序内的函数指定，MRS只负责参数的传入。 最多为150000字符，不能包含;|&>'<$特殊字符，可为空。
@@ -175,15 +138,10 @@ public class AddJobsReqV11  {
         this.arguments = arguments;
     }
 
-    
-
     public AddJobsReqV11 withInput(String input) {
         this.input = input;
         return this;
     }
-
-    
-
 
     /**
      * 数据输入地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
@@ -197,15 +155,10 @@ public class AddJobsReqV11  {
         this.input = input;
     }
 
-    
-
     public AddJobsReqV11 withOutput(String output) {
         this.output = output;
         return this;
     }
-
-    
-
 
     /**
      * 数据输出地址。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。 - HDFS：以“/”开头。  如果该路径不存在，系统会自动创建。 最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
@@ -219,15 +172,10 @@ public class AddJobsReqV11  {
         this.output = output;
     }
 
-    
-
     public AddJobsReqV11 withJobLog(String jobLog) {
         this.jobLog = jobLog;
         return this;
     }
-
-    
-
 
     /**
      * 作业日志存储地址，该日志信息记录作业运行状态。 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。 - OBS：以“s3a://”开头。 - HDFS：以“/”开头。  最多为1023字符，不能包含;|&>'<$特殊字符，可为空。
@@ -241,15 +189,10 @@ public class AddJobsReqV11  {
         this.jobLog = jobLog;
     }
 
-    
-
     public AddJobsReqV11 withHiveScriptPath(String hiveScriptPath) {
         this.hiveScriptPath = hiveScriptPath;
         return this;
     }
-
-    
-
 
     /**
      * sql程序路径，仅Spark Script和Hive Script作业需要使用此参数。需要满足如下要求： - 最多为1023字符，不能包含;|&><'$特殊字符，且不可为空或全空格。 - 文件可存储于HDFS或者OBS中，不同的文件系统对应的路径存在差异。     - OBS：以“s3a://”开头。不支持KMS加密的文件或程序。     - HDFS：以“/”开头。 - 需要以“.sql”结尾，sql不区分大小写。
@@ -263,15 +206,10 @@ public class AddJobsReqV11  {
         this.hiveScriptPath = hiveScriptPath;
     }
 
-    
-
     public AddJobsReqV11 withHql(String hql) {
         this.hql = hql;
         return this;
     }
-
-    
-
 
     /**
      * HQL脚本语句。
@@ -285,15 +223,10 @@ public class AddJobsReqV11  {
         this.hql = hql;
     }
 
-    
-
     public AddJobsReqV11 withShutdownCluster(Boolean shutdownCluster) {
         this.shutdownCluster = shutdownCluster;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行完成后，是否删除集群。  - true：是  - false：否
@@ -307,15 +240,10 @@ public class AddJobsReqV11  {
         this.shutdownCluster = shutdownCluster;
     }
 
-    
-
     public AddJobsReqV11 withSubmitJobOnceClusterRun(Boolean submitJobOnceClusterRun) {
         this.submitJobOnceClusterRun = submitJobOnceClusterRun;
         return this;
     }
-
-    
-
 
     /**
      * - true：创建集群同时提交作业  - false：单独提交作业  此处应设置为true。
@@ -329,15 +257,10 @@ public class AddJobsReqV11  {
         this.submitJobOnceClusterRun = submitJobOnceClusterRun;
     }
 
-    
-
     public AddJobsReqV11 withFileAction(String fileAction) {
         this.fileAction = fileAction;
         return this;
     }
-
-    
-
 
     /**
      * 数据导入导出。 - import - export
@@ -351,34 +274,40 @@ public class AddJobsReqV11  {
         this.fileAction = fileAction;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddJobsReqV11 addJobsReqV11 = (AddJobsReqV11) o;
-        return Objects.equals(this.jobType, addJobsReqV11.jobType) &&
-            Objects.equals(this.jobName, addJobsReqV11.jobName) &&
-            Objects.equals(this.jarPath, addJobsReqV11.jarPath) &&
-            Objects.equals(this.arguments, addJobsReqV11.arguments) &&
-            Objects.equals(this.input, addJobsReqV11.input) &&
-            Objects.equals(this.output, addJobsReqV11.output) &&
-            Objects.equals(this.jobLog, addJobsReqV11.jobLog) &&
-            Objects.equals(this.hiveScriptPath, addJobsReqV11.hiveScriptPath) &&
-            Objects.equals(this.hql, addJobsReqV11.hql) &&
-            Objects.equals(this.shutdownCluster, addJobsReqV11.shutdownCluster) &&
-            Objects.equals(this.submitJobOnceClusterRun, addJobsReqV11.submitJobOnceClusterRun) &&
-            Objects.equals(this.fileAction, addJobsReqV11.fileAction);
+        AddJobsReqV11 that = (AddJobsReqV11) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jarPath, that.jarPath) && Objects.equals(this.arguments, that.arguments)
+            && Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.jobLog, that.jobLog) && Objects.equals(this.hiveScriptPath, that.hiveScriptPath)
+            && Objects.equals(this.hql, that.hql) && Objects.equals(this.shutdownCluster, that.shutdownCluster)
+            && Objects.equals(this.submitJobOnceClusterRun, that.submitJobOnceClusterRun)
+            && Objects.equals(this.fileAction, that.fileAction);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobType, jobName, jarPath, arguments, input, output, jobLog, hiveScriptPath, hql, shutdownCluster, submitJobOnceClusterRun, fileAction);
+        return Objects.hash(jobType,
+            jobName,
+            jarPath,
+            arguments,
+            input,
+            output,
+            jobLog,
+            hiveScriptPath,
+            hql,
+            shutdownCluster,
+            submitJobOnceClusterRun,
+            fileAction);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -398,6 +327,7 @@ public class AddJobsReqV11  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -408,8 +338,5 @@ public class AddJobsReqV11  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

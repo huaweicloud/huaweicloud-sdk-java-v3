@@ -55,16 +55,15 @@ public class FieldModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FieldModel fieldModel = (FieldModel) o;
-        return Objects.equals(this.fieldName, fieldModel.fieldName)
-            && Objects.equals(this.isAnalysis, fieldModel.isAnalysis);
+        FieldModel that = (FieldModel) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.isAnalysis, that.isAnalysis);
     }
 
     @Override

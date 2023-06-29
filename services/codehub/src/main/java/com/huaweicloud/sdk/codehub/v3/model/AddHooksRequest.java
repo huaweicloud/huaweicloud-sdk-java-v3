@@ -87,17 +87,16 @@ public class AddHooksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddHooksRequest addHooksRequest = (AddHooksRequest) o;
-        return Objects.equals(this.groupName, addHooksRequest.groupName)
-            && Objects.equals(this.repositoryName, addHooksRequest.repositoryName)
-            && Objects.equals(this.body, addHooksRequest.body);
+        AddHooksRequest that = (AddHooksRequest) obj;
+        return Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.repositoryName, that.repositoryName) && Objects.equals(this.body, that.body);
     }
 
     @Override

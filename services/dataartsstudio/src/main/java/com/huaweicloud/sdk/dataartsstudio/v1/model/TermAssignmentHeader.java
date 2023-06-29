@@ -209,23 +209,19 @@ public class TermAssignmentHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TermAssignmentHeader termAssignmentHeader = (TermAssignmentHeader) o;
-        return Objects.equals(this.confidence, termAssignmentHeader.confidence)
-            && Objects.equals(this.steward, termAssignmentHeader.steward)
-            && Objects.equals(this.source, termAssignmentHeader.source)
-            && Objects.equals(this.status, termAssignmentHeader.status)
-            && Objects.equals(this.createUser, termAssignmentHeader.createUser)
-            && Objects.equals(this.expression, termAssignmentHeader.expression)
-            && Objects.equals(this.displayText, termAssignmentHeader.displayText)
-            && Objects.equals(this.termGuid, termAssignmentHeader.termGuid)
-            && Objects.equals(this.relationGuid, termAssignmentHeader.relationGuid);
+        TermAssignmentHeader that = (TermAssignmentHeader) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.steward, that.steward)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.displayText, that.displayText) && Objects.equals(this.termGuid, that.termGuid)
+            && Objects.equals(this.relationGuid, that.relationGuid);
     }
 
     @Override

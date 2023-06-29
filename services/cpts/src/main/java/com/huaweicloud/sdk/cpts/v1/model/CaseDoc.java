@@ -180,18 +180,17 @@ public class CaseDoc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseDoc caseDoc = (CaseDoc) o;
-        return Objects.equals(this.description, caseDoc.description)
-            && Objects.equals(this.labelNames, caseDoc.labelNames)
-            && Objects.equals(this.preparation, caseDoc.preparation) && Objects.equals(this.rank, caseDoc.rank)
-            && Objects.equals(this.statusCode, caseDoc.statusCode) && Objects.equals(this.steps, caseDoc.steps);
+        CaseDoc that = (CaseDoc) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.labelNames, that.labelNames)
+            && Objects.equals(this.preparation, that.preparation) && Objects.equals(this.rank, that.rank)
+            && Objects.equals(this.statusCode, that.statusCode) && Objects.equals(this.steps, that.steps);
     }
 
     @Override

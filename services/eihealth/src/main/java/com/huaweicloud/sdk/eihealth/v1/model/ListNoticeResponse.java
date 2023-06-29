@@ -97,17 +97,16 @@ public class ListNoticeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNoticeResponse listNoticeResponse = (ListNoticeResponse) o;
-        return Objects.equals(this.totalCount, listNoticeResponse.totalCount)
-            && Objects.equals(this.unreadCount, listNoticeResponse.unreadCount)
-            && Objects.equals(this.notices, listNoticeResponse.notices);
+        ListNoticeResponse that = (ListNoticeResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.unreadCount, that.unreadCount)
+            && Objects.equals(this.notices, that.notices);
     }
 
     @Override

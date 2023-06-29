@@ -96,17 +96,17 @@ public class CreateSecretVersionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecretVersionRequestBody createSecretVersionRequestBody = (CreateSecretVersionRequestBody) o;
-        return Objects.equals(this.secretBinary, createSecretVersionRequestBody.secretBinary)
-            && Objects.equals(this.secretString, createSecretVersionRequestBody.secretString)
-            && Objects.equals(this.versionStages, createSecretVersionRequestBody.versionStages);
+        CreateSecretVersionRequestBody that = (CreateSecretVersionRequestBody) obj;
+        return Objects.equals(this.secretBinary, that.secretBinary)
+            && Objects.equals(this.secretString, that.secretString)
+            && Objects.equals(this.versionStages, that.versionStages);
     }
 
     @Override

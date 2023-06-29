@@ -55,16 +55,15 @@ public class DeleteJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteJobRequest deleteJobRequest = (DeleteJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, deleteJobRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, deleteJobRequest.jobId);
+        DeleteJobRequest that = (DeleteJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

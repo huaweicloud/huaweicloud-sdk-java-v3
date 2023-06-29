@@ -97,17 +97,16 @@ public class ShowInstanceMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceMessagesResponse showInstanceMessagesResponse = (ShowInstanceMessagesResponse) o;
-        return Objects.equals(this.messages, showInstanceMessagesResponse.messages)
-            && Objects.equals(this.total, showInstanceMessagesResponse.total)
-            && Objects.equals(this.size, showInstanceMessagesResponse.size);
+        ShowInstanceMessagesResponse that = (ShowInstanceMessagesResponse) obj;
+        return Objects.equals(this.messages, that.messages) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

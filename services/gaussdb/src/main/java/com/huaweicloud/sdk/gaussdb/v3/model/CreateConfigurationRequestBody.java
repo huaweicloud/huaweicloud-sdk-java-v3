@@ -1,46 +1,35 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.DatastoreResult;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateConfigurationRequestBody
  */
-public class CreateConfigurationRequestBody  {
-
+public class CreateConfigurationRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="parameter_values")
-    
+    @JsonProperty(value = "parameter_values")
+
     private Map<String, String> parameterValues = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private DatastoreResult datastore;
 
@@ -48,9 +37,6 @@ public class CreateConfigurationRequestBody  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板名称。  取值范围：长度1到64个字符之间，区分大小写字母，可包含字母、数字、中划线、下划线或句点，不能包含其他特殊字符。
@@ -64,15 +50,10 @@ public class CreateConfigurationRequestBody  {
         this.name = name;
     }
 
-    
-
     public CreateConfigurationRequestBody withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板描述。默认为空。  取值范围：长度不超过256个字符，且不能包含回车和特殊字符 ! < \" = ' > &
@@ -86,17 +67,13 @@ public class CreateConfigurationRequestBody  {
         this.description = description;
     }
 
-    
-
     public CreateConfigurationRequestBody withParameterValues(Map<String, String> parameterValues) {
         this.parameterValues = parameterValues;
         return this;
     }
 
-    
-
     public CreateConfigurationRequestBody putParameterValuesItem(String key, String parameterValuesItem) {
-        if(this.parameterValues == null) {
+        if (this.parameterValues == null) {
             this.parameterValues = new HashMap<>();
         }
         this.parameterValues.put(key, parameterValuesItem);
@@ -104,12 +81,13 @@ public class CreateConfigurationRequestBody  {
     }
 
     public CreateConfigurationRequestBody withParameterValues(Consumer<Map<String, String>> parameterValuesSetter) {
-        if(this.parameterValues == null) {
+        if (this.parameterValues == null) {
             this.parameterValues = new HashMap<>();
         }
         parameterValuesSetter.accept(this.parameterValues);
         return this;
     }
+
     /**
      * 参数名和参数值映射关系。用户可以基于默认参数模板的参数，自定义的参数值。
      * @return parameterValues
@@ -122,22 +100,19 @@ public class CreateConfigurationRequestBody  {
         this.parameterValues = parameterValues;
     }
 
-    
-
     public CreateConfigurationRequestBody withDatastore(DatastoreResult datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public CreateConfigurationRequestBody withDatastore(Consumer<DatastoreResult> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new DatastoreResult();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -151,26 +126,25 @@ public class CreateConfigurationRequestBody  {
         this.datastore = datastore;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfigurationRequestBody createConfigurationRequestBody = (CreateConfigurationRequestBody) o;
-        return Objects.equals(this.name, createConfigurationRequestBody.name) &&
-            Objects.equals(this.description, createConfigurationRequestBody.description) &&
-            Objects.equals(this.parameterValues, createConfigurationRequestBody.parameterValues) &&
-            Objects.equals(this.datastore, createConfigurationRequestBody.datastore);
+        CreateConfigurationRequestBody that = (CreateConfigurationRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.parameterValues, that.parameterValues)
+            && Objects.equals(this.datastore, that.datastore);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, parameterValues, datastore);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,6 +156,7 @@ public class CreateConfigurationRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -192,8 +167,5 @@ public class CreateConfigurationRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

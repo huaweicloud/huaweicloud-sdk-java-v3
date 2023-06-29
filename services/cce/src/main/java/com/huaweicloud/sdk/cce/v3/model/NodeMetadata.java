@@ -178,19 +178,18 @@ public class NodeMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeMetadata nodeMetadata = (NodeMetadata) o;
-        return Objects.equals(this.name, nodeMetadata.name) && Objects.equals(this.uid, nodeMetadata.uid)
-            && Objects.equals(this.labels, nodeMetadata.labels)
-            && Objects.equals(this.annotations, nodeMetadata.annotations)
-            && Objects.equals(this.creationTimestamp, nodeMetadata.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, nodeMetadata.updateTimestamp);
+        NodeMetadata that = (NodeMetadata) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
     }
 
     @Override

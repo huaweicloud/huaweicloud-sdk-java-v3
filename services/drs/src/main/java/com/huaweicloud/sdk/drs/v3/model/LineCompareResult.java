@@ -179,20 +179,19 @@ public class LineCompareResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineCompareResult lineCompareResult = (LineCompareResult) o;
-        return Objects.equals(this.compareTaskId, lineCompareResult.compareTaskId)
-            && Objects.equals(this.lineCompareOverview, lineCompareResult.lineCompareOverview)
-            && Objects.equals(this.lineCompareOverviewCount, lineCompareResult.lineCompareOverviewCount)
-            && Objects.equals(this.lineCompareDetails, lineCompareResult.lineCompareDetails)
-            && Objects.equals(this.errorCode, lineCompareResult.errorCode)
-            && Objects.equals(this.errorMsg, lineCompareResult.errorMsg);
+        LineCompareResult that = (LineCompareResult) obj;
+        return Objects.equals(this.compareTaskId, that.compareTaskId)
+            && Objects.equals(this.lineCompareOverview, that.lineCompareOverview)
+            && Objects.equals(this.lineCompareOverviewCount, that.lineCompareOverviewCount)
+            && Objects.equals(this.lineCompareDetails, that.lineCompareDetails)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

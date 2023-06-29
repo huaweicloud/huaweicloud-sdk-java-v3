@@ -1,52 +1,44 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 命名实体识别post请求体
  */
-public class NerRequest  {
-
+public class NerRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
+
     /**
      * 支持的文本语言类型，目前支持中文（zh）,英文（en）,和西班牙文（es），默认为中文。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
+
         /**
          * Enum EN for value: "en"
          */
         public static final LangEnum EN = new LangEnum("en");
-        
+
         /**
          * Enum ES for value: "es"
          */
         public static final LangEnum ES = new LangEnum("es");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -76,25 +68,18 @@ public class NerRequest  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -112,8 +97,7 @@ public class NerRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
 
@@ -121,9 +105,6 @@ public class NerRequest  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分析文本，中文长度为1~512，英文和西班牙文长度为1~2000，文本编码为UTF-8。
@@ -137,15 +118,10 @@ public class NerRequest  {
         this.text = text;
     }
 
-    
-
     public NerRequest withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 支持的文本语言类型，目前支持中文（zh）,英文（en）,和西班牙文（es），默认为中文。
@@ -159,24 +135,23 @@ public class NerRequest  {
         this.lang = lang;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NerRequest nerRequest = (NerRequest) o;
-        return Objects.equals(this.text, nerRequest.text) &&
-            Objects.equals(this.lang, nerRequest.lang);
+        NerRequest that = (NerRequest) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.lang, that.lang);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, lang);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -186,6 +161,7 @@ public class NerRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -196,8 +172,5 @@ public class NerRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

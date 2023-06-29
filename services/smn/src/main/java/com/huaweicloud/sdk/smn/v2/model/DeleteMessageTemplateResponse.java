@@ -34,15 +34,15 @@ public class DeleteMessageTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMessageTemplateResponse deleteMessageTemplateResponse = (DeleteMessageTemplateResponse) o;
-        return Objects.equals(this.requestId, deleteMessageTemplateResponse.requestId);
+        DeleteMessageTemplateResponse that = (DeleteMessageTemplateResponse) obj;
+        return Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

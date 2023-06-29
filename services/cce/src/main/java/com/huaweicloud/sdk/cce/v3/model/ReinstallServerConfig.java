@@ -83,16 +83,15 @@ public class ReinstallServerConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallServerConfig reinstallServerConfig = (ReinstallServerConfig) o;
-        return Objects.equals(this.userTags, reinstallServerConfig.userTags)
-            && Objects.equals(this.rootVolume, reinstallServerConfig.rootVolume);
+        ReinstallServerConfig that = (ReinstallServerConfig) obj;
+        return Objects.equals(this.userTags, that.userTags) && Objects.equals(this.rootVolume, that.rootVolume);
     }
 
     @Override

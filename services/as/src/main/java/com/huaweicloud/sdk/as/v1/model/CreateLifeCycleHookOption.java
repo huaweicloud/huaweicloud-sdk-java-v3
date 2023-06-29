@@ -66,22 +66,15 @@ public class CreateLifeCycleHookOption {
             if (value == null) {
                 return null;
             }
-            LifecycleHookTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LifecycleHookTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LifecycleHookTypeEnum(value));
         }
 
         public static LifecycleHookTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LifecycleHookTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -148,22 +141,15 @@ public class CreateLifeCycleHookOption {
             if (value == null) {
                 return null;
             }
-            DefaultResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DefaultResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DefaultResultEnum(value));
         }
 
         public static DefaultResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DefaultResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,20 +291,20 @@ public class CreateLifeCycleHookOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLifeCycleHookOption createLifeCycleHookOption = (CreateLifeCycleHookOption) o;
-        return Objects.equals(this.lifecycleHookName, createLifeCycleHookOption.lifecycleHookName)
-            && Objects.equals(this.lifecycleHookType, createLifeCycleHookOption.lifecycleHookType)
-            && Objects.equals(this.defaultResult, createLifeCycleHookOption.defaultResult)
-            && Objects.equals(this.defaultTimeout, createLifeCycleHookOption.defaultTimeout)
-            && Objects.equals(this.notificationTopicUrn, createLifeCycleHookOption.notificationTopicUrn)
-            && Objects.equals(this.notificationMetadata, createLifeCycleHookOption.notificationMetadata);
+        CreateLifeCycleHookOption that = (CreateLifeCycleHookOption) obj;
+        return Objects.equals(this.lifecycleHookName, that.lifecycleHookName)
+            && Objects.equals(this.lifecycleHookType, that.lifecycleHookType)
+            && Objects.equals(this.defaultResult, that.defaultResult)
+            && Objects.equals(this.defaultTimeout, that.defaultTimeout)
+            && Objects.equals(this.notificationTopicUrn, that.notificationTopicUrn)
+            && Objects.equals(this.notificationMetadata, that.notificationMetadata);
     }
 
     @Override

@@ -99,17 +99,16 @@ public class ImportSmnResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportSmnResp importSmnResp = (ImportSmnResp) o;
-        return Objects.equals(this.id, importSmnResp.id) && Objects.equals(this.status, importSmnResp.status)
-            && Objects.equals(this.errorCode, importSmnResp.errorCode)
-            && Objects.equals(this.errorMsg, importSmnResp.errorMsg);
+        ImportSmnResp that = (ImportSmnResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class RestoreWorkflowExecutionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreWorkflowExecutionRequest restoreWorkflowExecutionRequest = (RestoreWorkflowExecutionRequest) o;
-        return Objects.equals(this.executionName, restoreWorkflowExecutionRequest.executionName)
-            && Objects.equals(this.graphName, restoreWorkflowExecutionRequest.graphName);
+        RestoreWorkflowExecutionRequest that = (RestoreWorkflowExecutionRequest) obj;
+        return Objects.equals(this.executionName, that.executionName) && Objects.equals(this.graphName, that.graphName);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class DisassociateServerVirtualIpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateServerVirtualIpRequest disassociateServerVirtualIpRequest = (DisassociateServerVirtualIpRequest) o;
-        return Objects.equals(this.nicId, disassociateServerVirtualIpRequest.nicId)
-            && Objects.equals(this.body, disassociateServerVirtualIpRequest.body);
+        DisassociateServerVirtualIpRequest that = (DisassociateServerVirtualIpRequest) obj;
+        return Objects.equals(this.nicId, that.nicId) && Objects.equals(this.body, that.body);
     }
 
     @Override

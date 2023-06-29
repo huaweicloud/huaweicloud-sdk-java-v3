@@ -65,16 +65,15 @@ public class UpdateRoutesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoutesRequest updateRoutesRequest = (UpdateRoutesRequest) o;
-        return Objects.equals(this.routetableId, updateRoutesRequest.routetableId)
-            && Objects.equals(this.body, updateRoutesRequest.body);
+        UpdateRoutesRequest that = (UpdateRoutesRequest) obj;
+        return Objects.equals(this.routetableId, that.routetableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

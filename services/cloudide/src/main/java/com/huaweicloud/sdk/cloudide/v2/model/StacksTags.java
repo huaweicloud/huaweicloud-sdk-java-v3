@@ -90,15 +90,15 @@ public class StacksTags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StacksTags stacksTags = (StacksTags) o;
-        return Objects.equals(this.stackList, stacksTags.stackList) && Objects.equals(this.tags, stacksTags.tags);
+        StacksTags that = (StacksTags) obj;
+        return Objects.equals(this.stackList, that.stackList) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

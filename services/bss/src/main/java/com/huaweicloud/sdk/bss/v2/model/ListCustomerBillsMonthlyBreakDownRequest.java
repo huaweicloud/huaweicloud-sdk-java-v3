@@ -329,29 +329,23 @@ public class ListCustomerBillsMonthlyBreakDownRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerBillsMonthlyBreakDownRequest listCustomerBillsMonthlyBreakDownRequest =
-            (ListCustomerBillsMonthlyBreakDownRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerBillsMonthlyBreakDownRequest.xLanguage)
-            && Objects.equals(this.sharedMonth, listCustomerBillsMonthlyBreakDownRequest.sharedMonth)
-            && Objects.equals(this.serviceTypeCode, listCustomerBillsMonthlyBreakDownRequest.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, listCustomerBillsMonthlyBreakDownRequest.resourceTypeCode)
-            && Objects.equals(this.regionCode, listCustomerBillsMonthlyBreakDownRequest.regionCode)
-            && Objects.equals(this.chargingMode, listCustomerBillsMonthlyBreakDownRequest.chargingMode)
-            && Objects.equals(this.billType, listCustomerBillsMonthlyBreakDownRequest.billType)
-            && Objects.equals(this.offset, listCustomerBillsMonthlyBreakDownRequest.offset)
-            && Objects.equals(this.limit, listCustomerBillsMonthlyBreakDownRequest.limit)
-            && Objects.equals(this.resourceId, listCustomerBillsMonthlyBreakDownRequest.resourceId)
-            && Objects.equals(this.resourceName, listCustomerBillsMonthlyBreakDownRequest.resourceName)
-            && Objects.equals(this.enterpriseProjectId, listCustomerBillsMonthlyBreakDownRequest.enterpriseProjectId)
-            && Objects.equals(this.method, listCustomerBillsMonthlyBreakDownRequest.method)
-            && Objects.equals(this.subCustomerId, listCustomerBillsMonthlyBreakDownRequest.subCustomerId);
+        ListCustomerBillsMonthlyBreakDownRequest that = (ListCustomerBillsMonthlyBreakDownRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.sharedMonth, that.sharedMonth)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId);
     }
 
     @Override

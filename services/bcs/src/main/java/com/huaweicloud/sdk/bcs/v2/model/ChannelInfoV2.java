@@ -96,16 +96,16 @@ public class ChannelInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelInfoV2 channelInfoV2 = (ChannelInfoV2) o;
-        return Objects.equals(this.name, channelInfoV2.name) && Objects.equals(this.orgNames, channelInfoV2.orgNames)
-            && Objects.equals(this.description, channelInfoV2.description);
+        ChannelInfoV2 that = (ChannelInfoV2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.orgNames, that.orgNames)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

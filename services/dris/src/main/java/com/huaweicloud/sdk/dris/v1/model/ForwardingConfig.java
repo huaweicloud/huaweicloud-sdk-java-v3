@@ -96,17 +96,17 @@ public class ForwardingConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForwardingConfig forwardingConfig = (ForwardingConfig) o;
-        return Objects.equals(this.forwardingType, forwardingConfig.forwardingType)
-            && Objects.equals(this.kafkaConfig, forwardingConfig.kafkaConfig)
-            && Objects.equals(this.mrsKafkaConfig, forwardingConfig.mrsKafkaConfig);
+        ForwardingConfig that = (ForwardingConfig) obj;
+        return Objects.equals(this.forwardingType, that.forwardingType)
+            && Objects.equals(this.kafkaConfig, that.kafkaConfig)
+            && Objects.equals(this.mrsKafkaConfig, that.mrsKafkaConfig);
     }
 
     @Override

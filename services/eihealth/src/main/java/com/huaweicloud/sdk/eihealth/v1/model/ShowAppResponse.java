@@ -500,30 +500,24 @@ public class ShowAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppResponse showAppResponse = (ShowAppResponse) o;
-        return Objects.equals(this.id, showAppResponse.id) && Objects.equals(this.name, showAppResponse.name)
-            && Objects.equals(this.version, showAppResponse.version)
-            && Objects.equals(this.summary, showAppResponse.summary)
-            && Objects.equals(this.description, showAppResponse.description)
-            && Objects.equals(this.labels, showAppResponse.labels) && Objects.equals(this.image, showAppResponse.image)
-            && Objects.equals(this.commands, showAppResponse.commands)
-            && Objects.equals(this.resources, showAppResponse.resources)
-            && Objects.equals(this.inputs, showAppResponse.inputs)
-            && Objects.equals(this.outputs, showAppResponse.outputs)
-            && Objects.equals(this.createTime, showAppResponse.createTime)
-            && Objects.equals(this.updateTime, showAppResponse.updateTime)
-            && Objects.equals(this.userName, showAppResponse.userName)
-            && Objects.equals(this.sourceProjectName, showAppResponse.sourceProjectName)
-            && Objects.equals(this.sourceResourceId, showAppResponse.sourceResourceId)
-            && Objects.equals(this.nodeLabels, showAppResponse.nodeLabels)
-            && Objects.equals(this.icon, showAppResponse.icon);
+        ShowAppResponse that = (ShowAppResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.commands, that.commands)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.outputs, that.outputs) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId)
+            && Objects.equals(this.nodeLabels, that.nodeLabels) && Objects.equals(this.icon, that.icon);
     }
 
     @Override

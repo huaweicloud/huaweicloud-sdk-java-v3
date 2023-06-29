@@ -105,17 +105,16 @@ public class DeploymentUpdateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentUpdateRequest deploymentUpdateRequest = (DeploymentUpdateRequest) o;
-        return Objects.equals(this.deployment, deploymentUpdateRequest.deployment)
-            && Objects.equals(this.description, deploymentUpdateRequest.description)
-            && Objects.equals(this.tags, deploymentUpdateRequest.tags);
+        DeploymentUpdateRequest that = (DeploymentUpdateRequest) obj;
+        return Objects.equals(this.deployment, that.deployment) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

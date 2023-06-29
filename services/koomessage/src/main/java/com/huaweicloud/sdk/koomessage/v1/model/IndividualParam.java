@@ -90,16 +90,15 @@ public class IndividualParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndividualParam individualParam = (IndividualParam) o;
-        return Objects.equals(this.mobiles, individualParam.mobiles)
-            && Objects.equals(this.dyncParams, individualParam.dyncParams);
+        IndividualParam that = (IndividualParam) obj;
+        return Objects.equals(this.mobiles, that.mobiles) && Objects.equals(this.dyncParams, that.dyncParams);
     }
 
     @Override

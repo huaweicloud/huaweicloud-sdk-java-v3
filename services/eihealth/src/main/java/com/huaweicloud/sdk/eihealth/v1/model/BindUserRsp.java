@@ -55,15 +55,15 @@ public class BindUserRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindUserRsp bindUserRsp = (BindUserRsp) o;
-        return Objects.equals(this.id, bindUserRsp.id) && Objects.equals(this.name, bindUserRsp.name);
+        BindUserRsp that = (BindUserRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

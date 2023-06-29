@@ -33,16 +33,15 @@ public class UpdateAnticrawlerRuleTypeRequestbody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAnticrawlerRuleTypeRequestbody updateAnticrawlerRuleTypeRequestbody =
-            (UpdateAnticrawlerRuleTypeRequestbody) o;
-        return Objects.equals(this.anticrawlerType, updateAnticrawlerRuleTypeRequestbody.anticrawlerType);
+        UpdateAnticrawlerRuleTypeRequestbody that = (UpdateAnticrawlerRuleTypeRequestbody) obj;
+        return Objects.equals(this.anticrawlerType, that.anticrawlerType);
     }
 
     @Override

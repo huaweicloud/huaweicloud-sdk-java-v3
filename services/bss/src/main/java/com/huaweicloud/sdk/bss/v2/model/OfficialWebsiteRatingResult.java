@@ -143,20 +143,19 @@ public class OfficialWebsiteRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OfficialWebsiteRatingResult officialWebsiteRatingResult = (OfficialWebsiteRatingResult) o;
-        return Objects.equals(this.officialWebsiteAmount, officialWebsiteRatingResult.officialWebsiteAmount)
-            && Objects.equals(this.installmentOfficialWebsiteAmount,
-                officialWebsiteRatingResult.installmentOfficialWebsiteAmount)
-            && Objects.equals(this.installmentPeriodType, officialWebsiteRatingResult.installmentPeriodType)
-            && Objects.equals(this.measureId, officialWebsiteRatingResult.measureId)
-            && Objects.equals(this.productRatingResults, officialWebsiteRatingResult.productRatingResults);
+        OfficialWebsiteRatingResult that = (OfficialWebsiteRatingResult) obj;
+        return Objects.equals(this.officialWebsiteAmount, that.officialWebsiteAmount)
+            && Objects.equals(this.installmentOfficialWebsiteAmount, that.installmentOfficialWebsiteAmount)
+            && Objects.equals(this.installmentPeriodType, that.installmentPeriodType)
+            && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.productRatingResults, that.productRatingResults);
     }
 
     @Override

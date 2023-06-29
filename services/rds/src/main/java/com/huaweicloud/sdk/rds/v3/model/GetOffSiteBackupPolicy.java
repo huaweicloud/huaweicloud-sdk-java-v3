@@ -99,18 +99,17 @@ public class GetOffSiteBackupPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetOffSiteBackupPolicy getOffSiteBackupPolicy = (GetOffSiteBackupPolicy) o;
-        return Objects.equals(this.backupType, getOffSiteBackupPolicy.backupType)
-            && Objects.equals(this.keepDays, getOffSiteBackupPolicy.keepDays)
-            && Objects.equals(this.destinationRegion, getOffSiteBackupPolicy.destinationRegion)
-            && Objects.equals(this.destinationProjectId, getOffSiteBackupPolicy.destinationProjectId);
+        GetOffSiteBackupPolicy that = (GetOffSiteBackupPolicy) obj;
+        return Objects.equals(this.backupType, that.backupType) && Objects.equals(this.keepDays, that.keepDays)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId);
     }
 
     @Override

@@ -223,22 +223,15 @@ public class UploadMetaDataByUrl {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -560,27 +553,22 @@ public class UploadMetaDataByUrl {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMetaDataByUrl uploadMetaDataByUrl = (UploadMetaDataByUrl) o;
-        return Objects.equals(this.videoType, uploadMetaDataByUrl.videoType)
-            && Objects.equals(this.title, uploadMetaDataByUrl.title)
-            && Objects.equals(this.url, uploadMetaDataByUrl.url)
-            && Objects.equals(this.description, uploadMetaDataByUrl.description)
-            && Objects.equals(this.categoryId, uploadMetaDataByUrl.categoryId)
-            && Objects.equals(this.tags, uploadMetaDataByUrl.tags)
-            && Objects.equals(this.autoPublish, uploadMetaDataByUrl.autoPublish)
-            && Objects.equals(this.templateGroupName, uploadMetaDataByUrl.templateGroupName)
-            && Objects.equals(this.autoEncrypt, uploadMetaDataByUrl.autoEncrypt)
-            && Objects.equals(this.autoPreheat, uploadMetaDataByUrl.autoPreheat)
-            && Objects.equals(this.thumbnail, uploadMetaDataByUrl.thumbnail)
-            && Objects.equals(this.review, uploadMetaDataByUrl.review)
-            && Objects.equals(this.workflowName, uploadMetaDataByUrl.workflowName);
+        UploadMetaDataByUrl that = (UploadMetaDataByUrl) obj;
+        return Objects.equals(this.videoType, that.videoType) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.autoPublish, that.autoPublish)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.autoPreheat, that.autoPreheat)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.review, that.review)
+            && Objects.equals(this.workflowName, that.workflowName);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ShowEdgeGroupDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeGroupDetailRequest showEdgeGroupDetailRequest = (ShowEdgeGroupDetailRequest) o;
-        return Objects.equals(this.iefInstanceId, showEdgeGroupDetailRequest.iefInstanceId)
-            && Objects.equals(this.groupId, showEdgeGroupDetailRequest.groupId);
+        ShowEdgeGroupDetailRequest that = (ShowEdgeGroupDetailRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

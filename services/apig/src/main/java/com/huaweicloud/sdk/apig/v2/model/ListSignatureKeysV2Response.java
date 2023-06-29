@@ -97,17 +97,16 @@ public class ListSignatureKeysV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSignatureKeysV2Response listSignatureKeysV2Response = (ListSignatureKeysV2Response) o;
-        return Objects.equals(this.size, listSignatureKeysV2Response.size)
-            && Objects.equals(this.total, listSignatureKeysV2Response.total)
-            && Objects.equals(this.signs, listSignatureKeysV2Response.signs);
+        ListSignatureKeysV2Response that = (ListSignatureKeysV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.signs, that.signs);
     }
 
     @Override

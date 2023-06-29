@@ -257,21 +257,18 @@ public class RowFilterPolicyItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RowFilterPolicyItem rowFilterPolicyItem = (RowFilterPolicyItem) o;
-        return Objects.equals(this.accesses, rowFilterPolicyItem.accesses)
-            && Objects.equals(this.conditions, rowFilterPolicyItem.conditions)
-            && Objects.equals(this.delegateAdmin, rowFilterPolicyItem.delegateAdmin)
-            && Objects.equals(this.groups, rowFilterPolicyItem.groups)
-            && Objects.equals(this.roles, rowFilterPolicyItem.roles)
-            && Objects.equals(this.rowFilterInfo, rowFilterPolicyItem.rowFilterInfo)
-            && Objects.equals(this.users, rowFilterPolicyItem.users);
+        RowFilterPolicyItem that = (RowFilterPolicyItem) obj;
+        return Objects.equals(this.accesses, that.accesses) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.delegateAdmin, that.delegateAdmin) && Objects.equals(this.groups, that.groups)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.rowFilterInfo, that.rowFilterInfo)
+            && Objects.equals(this.users, that.users);
     }
 
     @Override

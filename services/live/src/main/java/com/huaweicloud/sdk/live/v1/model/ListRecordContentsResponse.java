@@ -101,17 +101,16 @@ public class ListRecordContentsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordContentsResponse listRecordContentsResponse = (ListRecordContentsResponse) o;
-        return Objects.equals(this.total, listRecordContentsResponse.total)
-            && Objects.equals(this.recordContents, listRecordContentsResponse.recordContents)
-            && Objects.equals(this.xRequestId, listRecordContentsResponse.xRequestId);
+        ListRecordContentsResponse that = (ListRecordContentsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.recordContents, that.recordContents)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

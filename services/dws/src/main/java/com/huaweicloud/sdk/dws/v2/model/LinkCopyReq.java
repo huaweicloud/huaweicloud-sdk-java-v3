@@ -55,16 +55,15 @@ public class LinkCopyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinkCopyReq linkCopyReq = (LinkCopyReq) o;
-        return Objects.equals(this.backupName, linkCopyReq.backupName)
-            && Objects.equals(this.description, linkCopyReq.description);
+        LinkCopyReq that = (LinkCopyReq) obj;
+        return Objects.equals(this.backupName, that.backupName) && Objects.equals(this.description, that.description);
     }
 
     @Override

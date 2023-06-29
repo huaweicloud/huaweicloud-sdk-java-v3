@@ -74,16 +74,15 @@ public class StartPipelineReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartPipelineReq startPipelineReq = (StartPipelineReq) o;
-        return Objects.equals(this.keepAlive, startPipelineReq.keepAlive)
-            && Objects.equals(this.names, startPipelineReq.names);
+        StartPipelineReq that = (StartPipelineReq) obj;
+        return Objects.equals(this.keepAlive, that.keepAlive) && Objects.equals(this.names, that.names);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class AddDevDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDevDataRequest addDevDataRequest = (AddDevDataRequest) o;
-        return Objects.equals(this.datasourceId, addDevDataRequest.datasourceId)
-            && Objects.equals(this.body, addDevDataRequest.body);
+        AddDevDataRequest that = (AddDevDataRequest) obj;
+        return Objects.equals(this.datasourceId, that.datasourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -57,16 +57,15 @@ public class RegisterImeiReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterImeiReq registerImeiReq = (RegisterImeiReq) o;
-        return Objects.equals(this.bindType, registerImeiReq.bindType)
-            && Objects.equals(this.imei, registerImeiReq.imei);
+        RegisterImeiReq that = (RegisterImeiReq) obj;
+        return Objects.equals(this.bindType, that.bindType) && Objects.equals(this.imei, that.imei);
     }
 
     @Override

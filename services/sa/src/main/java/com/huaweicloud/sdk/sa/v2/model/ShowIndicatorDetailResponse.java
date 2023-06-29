@@ -112,18 +112,16 @@ public class ShowIndicatorDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIndicatorDetailResponse showIndicatorDetailResponse = (ShowIndicatorDetailResponse) o;
-        return Objects.equals(this.code, showIndicatorDetailResponse.code)
-            && Objects.equals(this.message, showIndicatorDetailResponse.message)
-            && Objects.equals(this.data, showIndicatorDetailResponse.data)
-            && Objects.equals(this.xRequestId, showIndicatorDetailResponse.xRequestId);
+        ShowIndicatorDetailResponse that = (ShowIndicatorDetailResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

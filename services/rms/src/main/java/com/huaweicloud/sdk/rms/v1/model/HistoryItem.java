@@ -193,20 +193,18 @@ public class HistoryItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryItem historyItem = (HistoryItem) o;
-        return Objects.equals(this.domainId, historyItem.domainId)
-            && Objects.equals(this.resourceId, historyItem.resourceId)
-            && Objects.equals(this.resourceType, historyItem.resourceType)
-            && Objects.equals(this.captureTime, historyItem.captureTime)
-            && Objects.equals(this.status, historyItem.status) && Objects.equals(this.relations, historyItem.relations)
-            && Objects.equals(this.resource, historyItem.resource);
+        HistoryItem that = (HistoryItem) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.captureTime, that.captureTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.relations, that.relations) && Objects.equals(this.resource, that.resource);
     }
 
     @Override

@@ -71,22 +71,15 @@ public class FailedTasks {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperateTypeEnum(value));
         }
 
         public static OperateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,22 +268,18 @@ public class FailedTasks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailedTasks failedTasks = (FailedTasks) o;
-        return Objects.equals(this.taskId, failedTasks.taskId)
-            && Objects.equals(this.operateType, failedTasks.operateType)
-            && Objects.equals(this.taskTime, failedTasks.taskTime)
-            && Objects.equals(this.taskErrorCode, failedTasks.taskErrorCode)
-            && Objects.equals(this.taskErrorMsg, failedTasks.taskErrorMsg)
-            && Objects.equals(this.serverName, failedTasks.serverName)
-            && Objects.equals(this.serverId, failedTasks.serverId)
-            && Objects.equals(this.keypairName, failedTasks.keypairName);
+        FailedTasks that = (FailedTasks) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.operateType, that.operateType)
+            && Objects.equals(this.taskTime, that.taskTime) && Objects.equals(this.taskErrorCode, that.taskErrorCode)
+            && Objects.equals(this.taskErrorMsg, that.taskErrorMsg) && Objects.equals(this.serverName, that.serverName)
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.keypairName, that.keypairName);
     }
 
     @Override

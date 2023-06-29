@@ -65,16 +65,15 @@ public class BatchDeleteResourceTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteResourceTagRequest batchDeleteResourceTagRequest = (BatchDeleteResourceTagRequest) o;
-        return Objects.equals(this.clusterId, batchDeleteResourceTagRequest.clusterId)
-            && Objects.equals(this.body, batchDeleteResourceTagRequest.body);
+        BatchDeleteResourceTagRequest that = (BatchDeleteResourceTagRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

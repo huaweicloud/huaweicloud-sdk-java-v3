@@ -55,15 +55,15 @@ public class StopNodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopNodeRequest stopNodeRequest = (StopNodeRequest) o;
-        return Objects.equals(this.id, stopNodeRequest.id) && Objects.equals(this.force, stopNodeRequest.force);
+        StopNodeRequest that = (StopNodeRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.force, that.force);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class PackageConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackageConfiguration packageConfiguration = (PackageConfiguration) o;
-        return Objects.equals(this.name, packageConfiguration.name)
-            && Objects.equals(this.configurations, packageConfiguration.configurations);
+        PackageConfiguration that = (PackageConfiguration) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.configurations, that.configurations);
     }
 
     @Override

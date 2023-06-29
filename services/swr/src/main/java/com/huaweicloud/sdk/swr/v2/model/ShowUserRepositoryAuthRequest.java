@@ -55,16 +55,15 @@ public class ShowUserRepositoryAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserRepositoryAuthRequest showUserRepositoryAuthRequest = (ShowUserRepositoryAuthRequest) o;
-        return Objects.equals(this.namespace, showUserRepositoryAuthRequest.namespace)
-            && Objects.equals(this.repository, showUserRepositoryAuthRequest.repository);
+        ShowUserRepositoryAuthRequest that = (ShowUserRepositoryAuthRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository);
     }
 
     @Override

@@ -144,20 +144,17 @@ public class RecordIndexRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordIndexRequestBody recordIndexRequestBody = (RecordIndexRequestBody) o;
-        return Objects.equals(this.publishDomain, recordIndexRequestBody.publishDomain)
-            && Objects.equals(this.app, recordIndexRequestBody.app)
-            && Objects.equals(this.stream, recordIndexRequestBody.stream)
-            && Objects.equals(this.startTime, recordIndexRequestBody.startTime)
-            && Objects.equals(this.endTime, recordIndexRequestBody.endTime)
-            && Objects.equals(this._object, recordIndexRequestBody._object);
+        RecordIndexRequestBody that = (RecordIndexRequestBody) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this._object, that._object);
     }
 
     @Override

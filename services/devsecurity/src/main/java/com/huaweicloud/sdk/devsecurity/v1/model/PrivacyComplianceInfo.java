@@ -74,16 +74,15 @@ public class PrivacyComplianceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrivacyComplianceInfo privacyComplianceInfo = (PrivacyComplianceInfo) o;
-        return Objects.equals(this.category, privacyComplianceInfo.category)
-            && Objects.equals(this.subtypeList, privacyComplianceInfo.subtypeList);
+        PrivacyComplianceInfo that = (PrivacyComplianceInfo) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.subtypeList, that.subtypeList);
     }
 
     @Override

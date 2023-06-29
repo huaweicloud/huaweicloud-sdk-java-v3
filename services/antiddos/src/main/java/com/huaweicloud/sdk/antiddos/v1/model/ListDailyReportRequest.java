@@ -55,16 +55,15 @@ public class ListDailyReportRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDailyReportRequest listDailyReportRequest = (ListDailyReportRequest) o;
-        return Objects.equals(this.floatingIpId, listDailyReportRequest.floatingIpId)
-            && Objects.equals(this.ip, listDailyReportRequest.ip);
+        ListDailyReportRequest that = (ListDailyReportRequest) obj;
+        return Objects.equals(this.floatingIpId, that.floatingIpId) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

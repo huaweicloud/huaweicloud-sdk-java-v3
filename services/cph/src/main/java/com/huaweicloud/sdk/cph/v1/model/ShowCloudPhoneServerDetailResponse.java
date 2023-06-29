@@ -597,37 +597,30 @@ public class ShowCloudPhoneServerDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCloudPhoneServerDetailResponse showCloudPhoneServerDetailResponse = (ShowCloudPhoneServerDetailResponse) o;
-        return Objects.equals(this.requestId, showCloudPhoneServerDetailResponse.requestId)
-            && Objects.equals(this.serverName, showCloudPhoneServerDetailResponse.serverName)
-            && Objects.equals(this.availabilityZone, showCloudPhoneServerDetailResponse.availabilityZone)
-            && Objects.equals(this.serverId, showCloudPhoneServerDetailResponse.serverId)
-            && Objects.equals(this.serverModelName, showCloudPhoneServerDetailResponse.serverModelName)
-            && Objects.equals(this.phoneModelName, showCloudPhoneServerDetailResponse.phoneModelName)
-            && Objects.equals(this.keypairName, showCloudPhoneServerDetailResponse.keypairName)
-            && Objects.equals(this.status, showCloudPhoneServerDetailResponse.status)
-            && Objects.equals(this.vpcId, showCloudPhoneServerDetailResponse.vpcId)
-            && Objects.equals(this.cidr, showCloudPhoneServerDetailResponse.cidr)
-            && Objects.equals(this.vpcCidr, showCloudPhoneServerDetailResponse.vpcCidr)
-            && Objects.equals(this.subnetId, showCloudPhoneServerDetailResponse.subnetId)
-            && Objects.equals(this.subnetCidr, showCloudPhoneServerDetailResponse.subnetCidr)
-            && Objects.equals(this.resourceProjectId, showCloudPhoneServerDetailResponse.resourceProjectId)
-            && Objects.equals(this.metadata, showCloudPhoneServerDetailResponse.metadata)
-            && Objects.equals(this.addresses, showCloudPhoneServerDetailResponse.addresses)
-            && Objects.equals(this.bandWidths, showCloudPhoneServerDetailResponse.bandWidths)
-            && Objects.equals(this.volumes, showCloudPhoneServerDetailResponse.volumes)
-            && Objects.equals(this.networkVersion, showCloudPhoneServerDetailResponse.networkVersion)
-            && Objects.equals(this.enterpriseProjectId, showCloudPhoneServerDetailResponse.enterpriseProjectId)
-            && Objects.equals(this.securityGroups, showCloudPhoneServerDetailResponse.securityGroups)
-            && Objects.equals(this.createTime, showCloudPhoneServerDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showCloudPhoneServerDetailResponse.updateTime);
+        ShowCloudPhoneServerDetailResponse that = (ShowCloudPhoneServerDetailResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.serverName, that.serverName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName)
+            && Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.vpcCidr, that.vpcCidr) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.subnetCidr, that.subnetCidr)
+            && Objects.equals(this.resourceProjectId, that.resourceProjectId)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.bandWidths, that.bandWidths) && Objects.equals(this.volumes, that.volumes)
+            && Objects.equals(this.networkVersion, that.networkVersion)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

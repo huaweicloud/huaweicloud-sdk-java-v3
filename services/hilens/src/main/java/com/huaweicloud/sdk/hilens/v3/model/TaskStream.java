@@ -105,16 +105,16 @@ public class TaskStream {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskStream taskStream = (TaskStream) o;
-        return Objects.equals(this.common, taskStream.common) && Objects.equals(this.input, taskStream.input)
-            && Objects.equals(this.outputs, taskStream.outputs);
+        TaskStream that = (TaskStream) obj;
+        return Objects.equals(this.common, that.common) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

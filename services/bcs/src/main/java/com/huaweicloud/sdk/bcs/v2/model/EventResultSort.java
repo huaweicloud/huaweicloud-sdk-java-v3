@@ -24,8 +24,8 @@ public class EventResultSort {
     private List<String> orderBy = null;
 
     /**
-    * 排序方式枚举值。asc代表正序，desc代表倒序
-    */
+     * 排序方式枚举值。asc代表正序，desc代表倒序
+     */
     public static final class OrderEnum {
 
         /**
@@ -68,22 +68,15 @@ public class EventResultSort {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,15 @@ public class EventResultSort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventResultSort eventResultSort = (EventResultSort) o;
-        return Objects.equals(this.orderBy, eventResultSort.orderBy)
-            && Objects.equals(this.order, eventResultSort.order);
+        EventResultSort that = (EventResultSort) obj;
+        return Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order);
     }
 
     @Override

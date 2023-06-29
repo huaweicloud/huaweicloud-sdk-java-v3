@@ -398,26 +398,24 @@ public class InsurancePolicyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InsurancePolicyResult insurancePolicyResult = (InsurancePolicyResult) o;
-        return Objects.equals(this.bankName, insurancePolicyResult.bankName)
-            && Objects.equals(this.billNumber, insurancePolicyResult.billNumber)
-            && Objects.equals(this.company, insurancePolicyResult.company)
-            && Objects.equals(this.effectiveDate, insurancePolicyResult.effectiveDate)
-            && Objects.equals(this.applicantName, insurancePolicyResult.applicantName)
-            && Objects.equals(this.applicantSex, insurancePolicyResult.applicantSex)
-            && Objects.equals(this.applicantBirthday, insurancePolicyResult.applicantBirthday)
-            && Objects.equals(this.applicantIdType, insurancePolicyResult.applicantIdType)
-            && Objects.equals(this.applicantIdNumber, insurancePolicyResult.applicantIdNumber)
-            && Objects.equals(this.insurantList, insurancePolicyResult.insurantList)
-            && Objects.equals(this.beneficiaryList, insurancePolicyResult.beneficiaryList)
-            && Objects.equals(this.insuranceList, insurancePolicyResult.insuranceList);
+        InsurancePolicyResult that = (InsurancePolicyResult) obj;
+        return Objects.equals(this.bankName, that.bankName) && Objects.equals(this.billNumber, that.billNumber)
+            && Objects.equals(this.company, that.company) && Objects.equals(this.effectiveDate, that.effectiveDate)
+            && Objects.equals(this.applicantName, that.applicantName)
+            && Objects.equals(this.applicantSex, that.applicantSex)
+            && Objects.equals(this.applicantBirthday, that.applicantBirthday)
+            && Objects.equals(this.applicantIdType, that.applicantIdType)
+            && Objects.equals(this.applicantIdNumber, that.applicantIdNumber)
+            && Objects.equals(this.insurantList, that.insurantList)
+            && Objects.equals(this.beneficiaryList, that.beneficiaryList)
+            && Objects.equals(this.insuranceList, that.insuranceList);
     }
 
     @Override

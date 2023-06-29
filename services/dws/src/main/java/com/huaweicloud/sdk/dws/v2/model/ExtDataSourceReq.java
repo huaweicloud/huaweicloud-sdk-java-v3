@@ -187,22 +187,18 @@ public class ExtDataSourceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtDataSourceReq extDataSourceReq = (ExtDataSourceReq) o;
-        return Objects.equals(this.dataSourceId, extDataSourceReq.dataSourceId)
-            && Objects.equals(this.type, extDataSourceReq.type)
-            && Objects.equals(this.dataSourceName, extDataSourceReq.dataSourceName)
-            && Objects.equals(this.userName, extDataSourceReq.userName)
-            && Objects.equals(this.userPwd, extDataSourceReq.userPwd)
-            && Objects.equals(this.description, extDataSourceReq.description)
-            && Objects.equals(this.reboot, extDataSourceReq.reboot)
-            && Objects.equals(this.connectInfo, extDataSourceReq.connectInfo);
+        ExtDataSourceReq that = (ExtDataSourceReq) obj;
+        return Objects.equals(this.dataSourceId, that.dataSourceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.dataSourceName, that.dataSourceName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.userPwd, that.userPwd) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.reboot, that.reboot) && Objects.equals(this.connectInfo, that.connectInfo);
     }
 
     @Override

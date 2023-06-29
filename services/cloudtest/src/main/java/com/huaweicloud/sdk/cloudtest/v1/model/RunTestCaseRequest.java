@@ -65,16 +65,15 @@ public class RunTestCaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunTestCaseRequest runTestCaseRequest = (RunTestCaseRequest) o;
-        return Objects.equals(this.projectId, runTestCaseRequest.projectId)
-            && Objects.equals(this.body, runTestCaseRequest.body);
+        RunTestCaseRequest that = (RunTestCaseRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

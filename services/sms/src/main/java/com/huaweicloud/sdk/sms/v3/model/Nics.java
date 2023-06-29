@@ -99,16 +99,16 @@ public class Nics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Nics nics = (Nics) o;
-        return Objects.equals(this.id, nics.id) && Objects.equals(this.name, nics.name)
-            && Objects.equals(this.cidr, nics.cidr) && Objects.equals(this.ip, nics.ip);
+        Nics that = (Nics) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

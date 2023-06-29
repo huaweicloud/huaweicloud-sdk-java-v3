@@ -253,21 +253,20 @@ public class DataJobRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataJobRsp dataJobRsp = (DataJobRsp) o;
-        return Objects.equals(this.creator, dataJobRsp.creator) && Objects.equals(this.endTime, dataJobRsp.endTime)
-            && Objects.equals(this.id, dataJobRsp.id) && Objects.equals(this.name, dataJobRsp.name)
-            && Objects.equals(this.createTime, dataJobRsp.createTime) && Objects.equals(this.status, dataJobRsp.status)
-            && Objects.equals(this.finishCount, dataJobRsp.finishCount)
-            && Objects.equals(this.totalCount, dataJobRsp.totalCount) && Objects.equals(this.type, dataJobRsp.type)
-            && Objects.equals(this.failedReason, dataJobRsp.failedReason)
-            && Objects.equals(this.additions, dataJobRsp.additions);
+        DataJobRsp that = (DataJobRsp) obj;
+        return Objects.equals(this.creator, that.creator) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.finishCount, that.finishCount) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.additions, that.additions);
     }
 
     @Override

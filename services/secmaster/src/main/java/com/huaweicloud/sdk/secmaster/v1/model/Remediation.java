@@ -55,16 +55,15 @@ public class Remediation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Remediation remediation = (Remediation) o;
-        return Objects.equals(this.recommendation, remediation.recommendation)
-            && Objects.equals(this.url, remediation.url);
+        Remediation that = (Remediation) obj;
+        return Objects.equals(this.recommendation, that.recommendation) && Objects.equals(this.url, that.url);
     }
 
     @Override

@@ -56,16 +56,15 @@ public class CreateAuthorizationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthorizationResponse createAuthorizationResponse = (CreateAuthorizationResponse) o;
-        return Objects.equals(this.errorCode, createAuthorizationResponse.errorCode)
-            && Objects.equals(this.errorMsg, createAuthorizationResponse.errorMsg);
+        CreateAuthorizationResponse that = (CreateAuthorizationResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

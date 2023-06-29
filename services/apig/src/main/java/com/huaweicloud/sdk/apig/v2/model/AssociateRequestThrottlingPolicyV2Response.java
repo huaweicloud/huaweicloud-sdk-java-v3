@@ -54,16 +54,15 @@ public class AssociateRequestThrottlingPolicyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateRequestThrottlingPolicyV2Response associateRequestThrottlingPolicyV2Response =
-            (AssociateRequestThrottlingPolicyV2Response) o;
-        return Objects.equals(this.throttleApplys, associateRequestThrottlingPolicyV2Response.throttleApplys);
+        AssociateRequestThrottlingPolicyV2Response that = (AssociateRequestThrottlingPolicyV2Response) obj;
+        return Objects.equals(this.throttleApplys, that.throttleApplys);
     }
 
     @Override

@@ -101,18 +101,16 @@ public class UpdateHostedDirectConnect {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostedDirectConnect updateHostedDirectConnect = (UpdateHostedDirectConnect) o;
-        return Objects.equals(this.name, updateHostedDirectConnect.name)
-            && Objects.equals(this.description, updateHostedDirectConnect.description)
-            && Objects.equals(this.bandwidth, updateHostedDirectConnect.bandwidth)
-            && Objects.equals(this.peerLocation, updateHostedDirectConnect.peerLocation);
+        UpdateHostedDirectConnect that = (UpdateHostedDirectConnect) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.bandwidth, that.bandwidth) && Objects.equals(this.peerLocation, that.peerLocation);
     }
 
     @Override

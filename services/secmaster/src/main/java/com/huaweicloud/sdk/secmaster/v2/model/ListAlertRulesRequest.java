@@ -83,22 +83,15 @@ public class ListAlertRulesRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class ListAlertRulesRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -218,8 +204,8 @@ public class ListAlertRulesRequest {
     private List<StatusEnum> status = null;
 
     /**
-    * Gets or Sets severity
-    */
+     * Gets or Sets severity
+     */
     public static final class SeverityEnum {
 
         /**
@@ -280,22 +266,15 @@ public class ListAlertRulesRequest {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -524,24 +503,19 @@ public class ListAlertRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlertRulesRequest listAlertRulesRequest = (ListAlertRulesRequest) o;
-        return Objects.equals(this.workspaceId, listAlertRulesRequest.workspaceId)
-            && Objects.equals(this.offset, listAlertRulesRequest.offset)
-            && Objects.equals(this.limit, listAlertRulesRequest.limit)
-            && Objects.equals(this.sortKey, listAlertRulesRequest.sortKey)
-            && Objects.equals(this.sortDir, listAlertRulesRequest.sortDir)
-            && Objects.equals(this.pipeId, listAlertRulesRequest.pipeId)
-            && Objects.equals(this.ruleName, listAlertRulesRequest.ruleName)
-            && Objects.equals(this.ruleId, listAlertRulesRequest.ruleId)
-            && Objects.equals(this.status, listAlertRulesRequest.status)
-            && Objects.equals(this.severity, listAlertRulesRequest.severity);
+        ListAlertRulesRequest that = (ListAlertRulesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.pipeId, that.pipeId)
+            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.severity, that.severity);
     }
 
     @Override

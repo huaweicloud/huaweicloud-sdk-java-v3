@@ -74,16 +74,15 @@ public class GrantDataPermissionRespPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GrantDataPermissionRespPrivilege grantDataPermissionRespPrivilege = (GrantDataPermissionRespPrivilege) o;
-        return Objects.equals(this._object, grantDataPermissionRespPrivilege._object)
-            && Objects.equals(this.privileges, grantDataPermissionRespPrivilege.privileges);
+        GrantDataPermissionRespPrivilege that = (GrantDataPermissionRespPrivilege) obj;
+        return Objects.equals(this._object, that._object) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

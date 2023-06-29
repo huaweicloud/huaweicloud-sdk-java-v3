@@ -65,16 +65,15 @@ public class CreateApiAclBindingV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApiAclBindingV2Request createApiAclBindingV2Request = (CreateApiAclBindingV2Request) o;
-        return Objects.equals(this.instanceId, createApiAclBindingV2Request.instanceId)
-            && Objects.equals(this.body, createApiAclBindingV2Request.body);
+        CreateApiAclBindingV2Request that = (CreateApiAclBindingV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

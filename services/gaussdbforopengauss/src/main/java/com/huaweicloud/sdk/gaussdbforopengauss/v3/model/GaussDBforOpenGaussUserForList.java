@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.GaussDBforOpenGaussUserForListAttributes;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库用户信息。
  */
-public class GaussDBforOpenGaussUserForList  {
-
+public class GaussDBforOpenGaussUserForList {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attributes")
-    
+    @JsonProperty(value = "attributes")
 
     private GaussDBforOpenGaussUserForListAttributes attributes;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memberof")
-    
+    @JsonProperty(value = "memberof")
 
     private String memberof;
 
@@ -40,9 +30,6 @@ public class GaussDBforOpenGaussUserForList  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 帐号名。
@@ -56,22 +43,20 @@ public class GaussDBforOpenGaussUserForList  {
         this.name = name;
     }
 
-    
-
     public GaussDBforOpenGaussUserForList withAttributes(GaussDBforOpenGaussUserForListAttributes attributes) {
         this.attributes = attributes;
         return this;
     }
 
-    public GaussDBforOpenGaussUserForList withAttributes(Consumer<GaussDBforOpenGaussUserForListAttributes> attributesSetter) {
-        if(this.attributes == null ){
+    public GaussDBforOpenGaussUserForList withAttributes(
+        Consumer<GaussDBforOpenGaussUserForListAttributes> attributesSetter) {
+        if (this.attributes == null) {
             this.attributes = new GaussDBforOpenGaussUserForListAttributes();
             attributesSetter.accept(this.attributes);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get attributes
@@ -85,15 +70,10 @@ public class GaussDBforOpenGaussUserForList  {
         this.attributes = attributes;
     }
 
-    
-
     public GaussDBforOpenGaussUserForList withMemberof(String memberof) {
         this.memberof = memberof;
         return this;
     }
-
-    
-
 
     /**
      * 用户的默认权限。
@@ -107,25 +87,24 @@ public class GaussDBforOpenGaussUserForList  {
         this.memberof = memberof;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GaussDBforOpenGaussUserForList gaussDBforOpenGaussUserForList = (GaussDBforOpenGaussUserForList) o;
-        return Objects.equals(this.name, gaussDBforOpenGaussUserForList.name) &&
-            Objects.equals(this.attributes, gaussDBforOpenGaussUserForList.attributes) &&
-            Objects.equals(this.memberof, gaussDBforOpenGaussUserForList.memberof);
+        GaussDBforOpenGaussUserForList that = (GaussDBforOpenGaussUserForList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.memberof, that.memberof);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, attributes, memberof);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +115,7 @@ public class GaussDBforOpenGaussUserForList  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +126,5 @@ public class GaussDBforOpenGaussUserForList  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

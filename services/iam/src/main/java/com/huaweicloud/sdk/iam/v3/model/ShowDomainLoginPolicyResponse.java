@@ -44,15 +44,15 @@ public class ShowDomainLoginPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainLoginPolicyResponse showDomainLoginPolicyResponse = (ShowDomainLoginPolicyResponse) o;
-        return Objects.equals(this.loginPolicy, showDomainLoginPolicyResponse.loginPolicy);
+        ShowDomainLoginPolicyResponse that = (ShowDomainLoginPolicyResponse) obj;
+        return Objects.equals(this.loginPolicy, that.loginPolicy);
     }
 
     @Override

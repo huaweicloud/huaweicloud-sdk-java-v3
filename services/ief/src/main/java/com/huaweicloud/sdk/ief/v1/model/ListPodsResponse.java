@@ -75,15 +75,15 @@ public class ListPodsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPodsResponse listPodsResponse = (ListPodsResponse) o;
-        return Objects.equals(this.count, listPodsResponse.count) && Objects.equals(this.pods, listPodsResponse.pods);
+        ListPodsResponse that = (ListPodsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pods, that.pods);
     }
 
     @Override

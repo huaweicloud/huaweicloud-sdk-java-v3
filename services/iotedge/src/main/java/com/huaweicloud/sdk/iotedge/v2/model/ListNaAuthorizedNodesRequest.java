@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListNaAuthorizedNodesRequest  {
-
+public class ListNaAuthorizedNodesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="na_id")
-    
+    @JsonProperty(value = "na_id")
 
     private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -40,9 +29,6 @@ public class ListNaAuthorizedNodesRequest  {
         this.naId = naId;
         return this;
     }
-
-    
-
 
     /**
      * 北向数据接收端点ID
@@ -56,15 +42,10 @@ public class ListNaAuthorizedNodesRequest  {
         this.naId = naId;
     }
 
-    
-
     public ListNaAuthorizedNodesRequest withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始位置，取值范围为非负整数，默认为0
@@ -80,15 +61,10 @@ public class ListNaAuthorizedNodesRequest  {
         this.offset = offset;
     }
 
-    
-
     public ListNaAuthorizedNodesRequest withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 每页记录数，默认值为10，取值区间为1-1000
@@ -104,25 +80,24 @@ public class ListNaAuthorizedNodesRequest  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNaAuthorizedNodesRequest listNaAuthorizedNodesRequest = (ListNaAuthorizedNodesRequest) o;
-        return Objects.equals(this.naId, listNaAuthorizedNodesRequest.naId) &&
-            Objects.equals(this.offset, listNaAuthorizedNodesRequest.offset) &&
-            Objects.equals(this.limit, listNaAuthorizedNodesRequest.limit);
+        ListNaAuthorizedNodesRequest that = (ListNaAuthorizedNodesRequest) obj;
+        return Objects.equals(this.naId, that.naId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(naId, offset, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -133,6 +108,7 @@ public class ListNaAuthorizedNodesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -143,8 +119,5 @@ public class ListNaAuthorizedNodesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

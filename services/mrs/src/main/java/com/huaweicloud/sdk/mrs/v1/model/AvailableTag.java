@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 可用区标签
  */
-public class AvailableTag  {
-
+public class AvailableTag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="mode")
-    
+    @JsonProperty(value = "mode")
 
     private String mode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alias")
-    
+    @JsonProperty(value = "alias")
 
     private String alias;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_border_group")
-    
+    @JsonProperty(value = "public_border_group")
 
     private String publicBorderGroup;
 
@@ -39,9 +29,6 @@ public class AvailableTag  {
         this.mode = mode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区计费模式，分为专属dedicated和共享shard
@@ -55,15 +42,10 @@ public class AvailableTag  {
         this.mode = mode;
     }
 
-    
-
     public AvailableTag withAlias(String alias) {
         this.alias = alias;
         return this;
     }
-
-    
-
 
     /**
      * az的别名
@@ -77,15 +59,10 @@ public class AvailableTag  {
         this.alias = alias;
     }
 
-    
-
     public AvailableTag withPublicBorderGroup(String publicBorderGroup) {
         this.publicBorderGroup = publicBorderGroup;
         return this;
     }
-
-    
-
 
     /**
      * 所属group。默认为”center”
@@ -99,25 +76,24 @@ public class AvailableTag  {
         this.publicBorderGroup = publicBorderGroup;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailableTag availableTag = (AvailableTag) o;
-        return Objects.equals(this.mode, availableTag.mode) &&
-            Objects.equals(this.alias, availableTag.alias) &&
-            Objects.equals(this.publicBorderGroup, availableTag.publicBorderGroup);
+        AvailableTag that = (AvailableTag) obj;
+        return Objects.equals(this.mode, that.mode) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(mode, alias, publicBorderGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class AvailableTag  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class AvailableTag  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

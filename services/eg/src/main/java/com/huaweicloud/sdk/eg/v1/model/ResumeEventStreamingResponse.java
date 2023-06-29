@@ -58,16 +58,16 @@ public class ResumeEventStreamingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResumeEventStreamingResponse resumeEventStreamingResponse = (ResumeEventStreamingResponse) o;
-        return Objects.equals(this.eventStreamingID, resumeEventStreamingResponse.eventStreamingID)
-            && Objects.equals(this.xRequestId, resumeEventStreamingResponse.xRequestId);
+        ResumeEventStreamingResponse that = (ResumeEventStreamingResponse) obj;
+        return Objects.equals(this.eventStreamingID, that.eventStreamingID)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

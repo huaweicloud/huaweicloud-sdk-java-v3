@@ -1,60 +1,47 @@
 package com.huaweicloud.sdk.imagesearch.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 创建实例的body体
  */
-public class CreateInstanceReq  {
-
+public class CreateInstanceReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="model")
-    
+    @JsonProperty(value = "model")
 
     private String model;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
 
     private Integer level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<String> tags = null;
-    
+
     public CreateInstanceReq withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。  - 仅支持小写字母（a-z）、数字，横杠和下划线。  - 以字母开头，长度在16位以内。 
@@ -68,15 +55,10 @@ public class CreateInstanceReq  {
         this.name = name;
     }
 
-    
-
     public CreateInstanceReq withModel(String model) {
         this.model = model;
         return this;
     }
-
-    
-
 
     /**
      * 模型名称，支持如下模型名称：  - common-search，通用图片搜索，适用于图片库中搜索相似内容或类别的图片。  - image-recommend，版权图片推荐，适用于版权摄影图片库中查找并推荐相同或相似版权图片。  - image-copyright，图片版权，适用于从海量图片库中快速识别侵权盗用图片。 
@@ -90,15 +72,10 @@ public class CreateInstanceReq  {
         this.model = model;
     }
 
-    
-
     public CreateInstanceReq withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述。
@@ -112,15 +89,10 @@ public class CreateInstanceReq  {
         this.description = description;
     }
 
-    
-
     public CreateInstanceReq withLevel(Integer level) {
         this.level = level;
         return this;
     }
-
-    
-
 
     /**
      * 规格，即实例的图片数量规格。默认为30000000（单位：张），当前仅支持默认规格。
@@ -134,16 +106,13 @@ public class CreateInstanceReq  {
         this.level = level;
     }
 
-    
-
     public CreateInstanceReq withTags(List<String> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreateInstanceReq addTagsItem(String tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -151,7 +120,7 @@ public class CreateInstanceReq  {
     }
 
     public CreateInstanceReq withTags(Consumer<List<String>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -170,27 +139,25 @@ public class CreateInstanceReq  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceReq createInstanceReq = (CreateInstanceReq) o;
-        return Objects.equals(this.name, createInstanceReq.name) &&
-            Objects.equals(this.model, createInstanceReq.model) &&
-            Objects.equals(this.description, createInstanceReq.description) &&
-            Objects.equals(this.level, createInstanceReq.level) &&
-            Objects.equals(this.tags, createInstanceReq.tags);
+        CreateInstanceReq that = (CreateInstanceReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, model, description, level, tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -203,6 +170,7 @@ public class CreateInstanceReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -213,8 +181,5 @@ public class CreateInstanceReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

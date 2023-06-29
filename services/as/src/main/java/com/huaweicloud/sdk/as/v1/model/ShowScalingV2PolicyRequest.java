@@ -33,15 +33,15 @@ public class ShowScalingV2PolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScalingV2PolicyRequest showScalingV2PolicyRequest = (ShowScalingV2PolicyRequest) o;
-        return Objects.equals(this.scalingPolicyId, showScalingV2PolicyRequest.scalingPolicyId);
+        ShowScalingV2PolicyRequest that = (ShowScalingV2PolicyRequest) obj;
+        return Objects.equals(this.scalingPolicyId, that.scalingPolicyId);
     }
 
     @Override

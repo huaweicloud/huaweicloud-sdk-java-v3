@@ -385,29 +385,22 @@ public class ListRecordSetsWithTags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordSetsWithTags listRecordSetsWithTags = (ListRecordSetsWithTags) o;
-        return Objects.equals(this.id, listRecordSetsWithTags.id)
-            && Objects.equals(this.name, listRecordSetsWithTags.name)
-            && Objects.equals(this.description, listRecordSetsWithTags.description)
-            && Objects.equals(this.zoneId, listRecordSetsWithTags.zoneId)
-            && Objects.equals(this.zoneName, listRecordSetsWithTags.zoneName)
-            && Objects.equals(this.type, listRecordSetsWithTags.type)
-            && Objects.equals(this.ttl, listRecordSetsWithTags.ttl)
-            && Objects.equals(this.records, listRecordSetsWithTags.records)
-            && Objects.equals(this.createAt, listRecordSetsWithTags.createAt)
-            && Objects.equals(this.updateAt, listRecordSetsWithTags.updateAt)
-            && Objects.equals(this.status, listRecordSetsWithTags.status)
-            && Objects.equals(this._default, listRecordSetsWithTags._default)
-            && Objects.equals(this.projectId, listRecordSetsWithTags.projectId)
-            && Objects.equals(this.links, listRecordSetsWithTags.links)
-            && Objects.equals(this.tags, listRecordSetsWithTags.tags);
+        ListRecordSetsWithTags that = (ListRecordSetsWithTags) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -75,15 +75,15 @@ public class ListTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagsResponse listTagsResponse = (ListTagsResponse) o;
-        return Objects.equals(this.tags, listTagsResponse.tags) && Objects.equals(this.count, listTagsResponse.count);
+        ListTagsResponse that = (ListTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.count, that.count);
     }
 
     @Override

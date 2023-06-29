@@ -162,20 +162,20 @@ public class AmountInfomationV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AmountInfomationV2 amountInfomationV2 = (AmountInfomationV2) o;
-        return Objects.equals(this.discounts, amountInfomationV2.discounts)
-            && Objects.equals(this.flexipurchaseCouponAmount, amountInfomationV2.flexipurchaseCouponAmount)
-            && Objects.equals(this.couponAmount, amountInfomationV2.couponAmount)
-            && Objects.equals(this.storedCardAmount, amountInfomationV2.storedCardAmount)
-            && Objects.equals(this.commissionAmount, amountInfomationV2.commissionAmount)
-            && Objects.equals(this.consumedAmount, amountInfomationV2.consumedAmount);
+        AmountInfomationV2 that = (AmountInfomationV2) obj;
+        return Objects.equals(this.discounts, that.discounts)
+            && Objects.equals(this.flexipurchaseCouponAmount, that.flexipurchaseCouponAmount)
+            && Objects.equals(this.couponAmount, that.couponAmount)
+            && Objects.equals(this.storedCardAmount, that.storedCardAmount)
+            && Objects.equals(this.commissionAmount, that.commissionAmount)
+            && Objects.equals(this.consumedAmount, that.consumedAmount);
     }
 
     @Override

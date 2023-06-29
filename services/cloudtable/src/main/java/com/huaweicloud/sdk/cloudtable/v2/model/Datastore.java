@@ -55,15 +55,15 @@ public class Datastore {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Datastore datastore = (Datastore) o;
-        return Objects.equals(this.version, datastore.version) && Objects.equals(this.type, datastore.type);
+        Datastore that = (Datastore) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.type, that.type);
     }
 
     @Override

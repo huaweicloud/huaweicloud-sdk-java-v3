@@ -187,22 +187,19 @@ public class PostgresqlDatabaseForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostgresqlDatabaseForCreation postgresqlDatabaseForCreation = (PostgresqlDatabaseForCreation) o;
-        return Objects.equals(this.name, postgresqlDatabaseForCreation.name)
-            && Objects.equals(this.characterSet, postgresqlDatabaseForCreation.characterSet)
-            && Objects.equals(this.owner, postgresqlDatabaseForCreation.owner)
-            && Objects.equals(this.template, postgresqlDatabaseForCreation.template)
-            && Objects.equals(this.lcCollate, postgresqlDatabaseForCreation.lcCollate)
-            && Objects.equals(this.lcCtype, postgresqlDatabaseForCreation.lcCtype)
-            && Objects.equals(this.isRevokePublicPrivilege, postgresqlDatabaseForCreation.isRevokePublicPrivilege)
-            && Objects.equals(this.comment, postgresqlDatabaseForCreation.comment);
+        PostgresqlDatabaseForCreation that = (PostgresqlDatabaseForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.characterSet, that.characterSet)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.template, that.template)
+            && Objects.equals(this.lcCollate, that.lcCollate) && Objects.equals(this.lcCtype, that.lcCtype)
+            && Objects.equals(this.isRevokePublicPrivilege, that.isRevokePublicPrivilege)
+            && Objects.equals(this.comment, that.comment);
     }
 
     @Override

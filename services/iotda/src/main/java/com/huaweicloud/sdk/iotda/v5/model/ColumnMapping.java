@@ -55,16 +55,15 @@ public class ColumnMapping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnMapping columnMapping = (ColumnMapping) o;
-        return Objects.equals(this.columnName, columnMapping.columnName)
-            && Objects.equals(this.jsonKey, columnMapping.jsonKey);
+        ColumnMapping that = (ColumnMapping) obj;
+        return Objects.equals(this.columnName, that.columnName) && Objects.equals(this.jsonKey, that.jsonKey);
     }
 
     @Override

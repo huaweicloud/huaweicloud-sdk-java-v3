@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * EnvParam
  */
-public class EnvParam  {
-
+public class EnvParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="component_id")
-    
+    @JsonProperty(value = "component_id")
 
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_name")
-    
+    @JsonProperty(value = "env_name")
 
     private String envName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="env_type")
-    
+    @JsonProperty(value = "env_type")
 
     private String envType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os_type")
-    
+    @JsonProperty(value = "os_type")
 
     private String osType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="register_type")
-    
+    @JsonProperty(value = "register_type")
 
     private String registerType;
 
@@ -63,9 +49,6 @@ public class EnvParam  {
         this.componentId = componentId;
         return this;
     }
-
-    
-
 
     /**
      * 环境关联组件id；id长度不能超过36位，由大小写字母、数字组成
@@ -79,15 +62,10 @@ public class EnvParam  {
         this.componentId = componentId;
     }
 
-    
-
     public EnvParam withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -101,15 +79,10 @@ public class EnvParam  {
         this.description = description;
     }
 
-    
-
     public EnvParam withEnvName(String envName) {
         this.envName = envName;
         return this;
     }
-
-    
-
 
     /**
      * 环境名称
@@ -123,15 +96,10 @@ public class EnvParam  {
         this.envName = envName;
     }
 
-    
-
     public EnvParam withEnvType(String envType) {
         this.envType = envType;
         return this;
     }
-
-    
-
 
     /**
      * 环境类型，取值：DEV、TEST、PRE、ONLINE
@@ -145,15 +113,10 @@ public class EnvParam  {
         this.envType = envType;
     }
 
-    
-
     public EnvParam withOsType(String osType) {
         this.osType = osType;
         return this;
     }
-
-    
-
 
     /**
      * OS类型，取值：LINUX、WINDOWS
@@ -167,15 +130,10 @@ public class EnvParam  {
         this.osType = osType;
     }
 
-    
-
     public EnvParam withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 环境关联region。创建环境必传
@@ -189,15 +147,10 @@ public class EnvParam  {
         this.region = region;
     }
 
-    
-
     public EnvParam withRegisterType(String registerType) {
         this.registerType = registerType;
         return this;
     }
-
-    
-
 
     /**
      * 注册类型，取值：API、SERVICE_DISCOVERY、CONSOLE，默认值：API
@@ -211,29 +164,26 @@ public class EnvParam  {
         this.registerType = registerType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvParam envParam = (EnvParam) o;
-        return Objects.equals(this.componentId, envParam.componentId) &&
-            Objects.equals(this.description, envParam.description) &&
-            Objects.equals(this.envName, envParam.envName) &&
-            Objects.equals(this.envType, envParam.envType) &&
-            Objects.equals(this.osType, envParam.osType) &&
-            Objects.equals(this.region, envParam.region) &&
-            Objects.equals(this.registerType, envParam.registerType);
+        EnvParam that = (EnvParam) obj;
+        return Objects.equals(this.componentId, that.componentId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.envType, that.envType)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.registerType, that.registerType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(componentId, description, envName, envType, osType, region, registerType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class EnvParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class EnvParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

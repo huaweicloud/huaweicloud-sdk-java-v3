@@ -77,17 +77,16 @@ public class IterationHistoryDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IterationHistoryDetails iterationHistoryDetails = (IterationHistoryDetails) o;
-        return Objects.equals(this.operateFieldName, iterationHistoryDetails.operateFieldName)
-            && Objects.equals(this.newValue, iterationHistoryDetails.newValue)
-            && Objects.equals(this.oldValue, iterationHistoryDetails.oldValue);
+        IterationHistoryDetails that = (IterationHistoryDetails) obj;
+        return Objects.equals(this.operateFieldName, that.operateFieldName)
+            && Objects.equals(this.newValue, that.newValue) && Objects.equals(this.oldValue, that.oldValue);
     }
 
     @Override

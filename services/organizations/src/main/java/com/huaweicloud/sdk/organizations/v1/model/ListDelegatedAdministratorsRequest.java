@@ -79,17 +79,16 @@ public class ListDelegatedAdministratorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDelegatedAdministratorsRequest listDelegatedAdministratorsRequest = (ListDelegatedAdministratorsRequest) o;
-        return Objects.equals(this.servicePrincipal, listDelegatedAdministratorsRequest.servicePrincipal)
-            && Objects.equals(this.limit, listDelegatedAdministratorsRequest.limit)
-            && Objects.equals(this.marker, listDelegatedAdministratorsRequest.marker);
+        ListDelegatedAdministratorsRequest that = (ListDelegatedAdministratorsRequest) obj;
+        return Objects.equals(this.servicePrincipal, that.servicePrincipal) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

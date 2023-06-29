@@ -77,17 +77,16 @@ public class TuningParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TuningParameter tuningParameter = (TuningParameter) o;
-        return Objects.equals(this.paramName, tuningParameter.paramName)
-            && Objects.equals(this.paramValue, tuningParameter.paramValue)
-            && Objects.equals(this.availability, tuningParameter.availability);
+        TuningParameter that = (TuningParameter) obj;
+        return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.paramValue, that.paramValue)
+            && Objects.equals(this.availability, that.availability);
     }
 
     @Override

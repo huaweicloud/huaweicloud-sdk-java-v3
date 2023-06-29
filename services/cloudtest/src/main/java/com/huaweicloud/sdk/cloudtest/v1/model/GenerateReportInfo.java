@@ -131,19 +131,17 @@ public class GenerateReportInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GenerateReportInfo generateReportInfo = (GenerateReportInfo) o;
-        return Objects.equals(this.name, generateReportInfo.name)
-            && Objects.equals(this.workpieceType, generateReportInfo.workpieceType)
-            && Objects.equals(this.analysisDimRow, generateReportInfo.analysisDimRow)
-            && Objects.equals(this.compareDimColumn, generateReportInfo.compareDimColumn)
-            && Objects.equals(this.filter, generateReportInfo.filter);
+        GenerateReportInfo that = (GenerateReportInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.workpieceType, that.workpieceType)
+            && Objects.equals(this.analysisDimRow, that.analysisDimRow)
+            && Objects.equals(this.compareDimColumn, that.compareDimColumn) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

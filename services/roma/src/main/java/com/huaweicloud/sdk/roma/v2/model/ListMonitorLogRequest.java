@@ -151,20 +151,17 @@ public class ListMonitorLogRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitorLogRequest listMonitorLogRequest = (ListMonitorLogRequest) o;
-        return Objects.equals(this.instanceId, listMonitorLogRequest.instanceId)
-            && Objects.equals(this.taskId, listMonitorLogRequest.taskId)
-            && Objects.equals(this.offset, listMonitorLogRequest.offset)
-            && Objects.equals(this.limit, listMonitorLogRequest.limit)
-            && Objects.equals(this.beginTime, listMonitorLogRequest.beginTime)
-            && Objects.equals(this.endTime, listMonitorLogRequest.endTime);
+        ListMonitorLogRequest that = (ListMonitorLogRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

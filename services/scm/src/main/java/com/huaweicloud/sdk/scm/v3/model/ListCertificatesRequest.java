@@ -168,21 +168,19 @@ public class ListCertificatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.limit, listCertificatesRequest.limit)
-            && Objects.equals(this.offset, listCertificatesRequest.offset)
-            && Objects.equals(this.sortDir, listCertificatesRequest.sortDir)
-            && Objects.equals(this.sortKey, listCertificatesRequest.sortKey)
-            && Objects.equals(this.status, listCertificatesRequest.status)
-            && Objects.equals(this.enterpriseProjectId, listCertificatesRequest.enterpriseProjectId)
-            && Objects.equals(this.deploySupport, listCertificatesRequest.deploySupport);
+        ListCertificatesRequest that = (ListCertificatesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.deploySupport, that.deploySupport);
     }
 
     @Override

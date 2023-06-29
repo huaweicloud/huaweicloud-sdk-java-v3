@@ -1,32 +1,23 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ActiveStandbyConfigDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 高可用配置请求结构体
  */
-public class HaConfigDTO  {
-
+public class HaConfigDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha_type")
-    
+    @JsonProperty(value = "ha_type")
 
     private String haType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="active_standby_config")
-    
+    @JsonProperty(value = "active_standby_config")
 
     private ActiveStandbyConfigDTO activeStandbyConfig;
 
@@ -34,9 +25,6 @@ public class HaConfigDTO  {
         this.haType = haType;
         return this;
     }
-
-    
-
 
     /**
      * 节点高可用类型双活或者主备
@@ -50,22 +38,19 @@ public class HaConfigDTO  {
         this.haType = haType;
     }
 
-    
-
     public HaConfigDTO withActiveStandbyConfig(ActiveStandbyConfigDTO activeStandbyConfig) {
         this.activeStandbyConfig = activeStandbyConfig;
         return this;
     }
 
     public HaConfigDTO withActiveStandbyConfig(Consumer<ActiveStandbyConfigDTO> activeStandbyConfigSetter) {
-        if(this.activeStandbyConfig == null ){
+        if (this.activeStandbyConfig == null) {
             this.activeStandbyConfig = new ActiveStandbyConfigDTO();
             activeStandbyConfigSetter.accept(this.activeStandbyConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get activeStandbyConfig
@@ -79,24 +64,24 @@ public class HaConfigDTO  {
         this.activeStandbyConfig = activeStandbyConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HaConfigDTO haConfigDTO = (HaConfigDTO) o;
-        return Objects.equals(this.haType, haConfigDTO.haType) &&
-            Objects.equals(this.activeStandbyConfig, haConfigDTO.activeStandbyConfig);
+        HaConfigDTO that = (HaConfigDTO) obj;
+        return Objects.equals(this.haType, that.haType)
+            && Objects.equals(this.activeStandbyConfig, that.activeStandbyConfig);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(haType, activeStandbyConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -106,6 +91,7 @@ public class HaConfigDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -116,8 +102,5 @@ public class HaConfigDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -91,16 +91,16 @@ public class ListExtendsParamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExtendsParamsResponse listExtendsParamsResponse = (ListExtendsParamsResponse) o;
-        return Objects.equals(this.extendsParams, listExtendsParamsResponse.extendsParams)
-            && Objects.equals(this.commonParams, listExtendsParamsResponse.commonParams);
+        ListExtendsParamsResponse that = (ListExtendsParamsResponse) obj;
+        return Objects.equals(this.extendsParams, that.extendsParams)
+            && Objects.equals(this.commonParams, that.commonParams);
     }
 
     @Override

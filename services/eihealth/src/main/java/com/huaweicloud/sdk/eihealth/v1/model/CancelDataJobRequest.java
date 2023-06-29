@@ -55,16 +55,16 @@ public class CancelDataJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelDataJobRequest cancelDataJobRequest = (CancelDataJobRequest) o;
-        return Objects.equals(this.dataJobId, cancelDataJobRequest.dataJobId)
-            && Objects.equals(this.eihealthProjectId, cancelDataJobRequest.eihealthProjectId);
+        CancelDataJobRequest that = (CancelDataJobRequest) obj;
+        return Objects.equals(this.dataJobId, that.dataJobId)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

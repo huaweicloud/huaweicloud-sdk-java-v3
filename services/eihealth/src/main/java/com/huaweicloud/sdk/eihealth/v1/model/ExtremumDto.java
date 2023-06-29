@@ -99,17 +99,16 @@ public class ExtremumDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtremumDto extremumDto = (ExtremumDto) o;
-        return Objects.equals(this.value, extremumDto.value) && Objects.equals(this.rowNumber, extremumDto.rowNumber)
-            && Objects.equals(this.columnName, extremumDto.columnName)
-            && Objects.equals(this.rowName, extremumDto.rowName);
+        ExtremumDto that = (ExtremumDto) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.rowNumber, that.rowNumber)
+            && Objects.equals(this.columnName, that.columnName) && Objects.equals(this.rowName, that.rowName);
     }
 
     @Override

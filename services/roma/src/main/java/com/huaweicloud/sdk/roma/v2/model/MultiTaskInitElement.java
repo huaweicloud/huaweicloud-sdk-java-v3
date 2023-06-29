@@ -437,32 +437,28 @@ public class MultiTaskInitElement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiTaskInitElement multiTaskInitElement = (MultiTaskInitElement) o;
-        return Objects.equals(this.extInfo, multiTaskInitElement.extInfo)
-            && Objects.equals(this.taskId, multiTaskInitElement.taskId)
-            && Objects.equals(this.sourceDatasourceId, multiTaskInitElement.sourceDatasourceId)
-            && Objects.equals(this.targetDatasourceId, multiTaskInitElement.targetDatasourceId)
-            && Objects.equals(this.sourceGroup, multiTaskInitElement.sourceGroup)
-            && Objects.equals(this.targetGroup, multiTaskInitElement.targetGroup)
-            && Objects.equals(this.sourceDsId, multiTaskInitElement.sourceDsId)
-            && Objects.equals(this.targetDsId, multiTaskInitElement.targetDsId)
-            && Objects.equals(this.sourceInstanceId, multiTaskInitElement.sourceInstanceId)
-            && Objects.equals(this.targetInstanceId, multiTaskInitElement.targetInstanceId)
-            && Objects.equals(this.sourceAppId, multiTaskInitElement.sourceAppId)
-            && Objects.equals(this.targetAppId, multiTaskInitElement.targetAppId)
-            && Objects.equals(this.sourceDatasourceName, multiTaskInitElement.sourceDatasourceName)
-            && Objects.equals(this.targetDatasourceName, multiTaskInitElement.targetDatasourceName)
-            && Objects.equals(this.sourceDatasourceType, multiTaskInitElement.sourceDatasourceType)
-            && Objects.equals(this.targetDatasourceType, multiTaskInitElement.targetDatasourceType)
-            && Objects.equals(this.mappings, multiTaskInitElement.mappings)
-            && Objects.equals(this.mappingsTotalCount, multiTaskInitElement.mappingsTotalCount);
+        MultiTaskInitElement that = (MultiTaskInitElement) obj;
+        return Objects.equals(this.extInfo, that.extInfo) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.sourceDatasourceId, that.sourceDatasourceId)
+            && Objects.equals(this.targetDatasourceId, that.targetDatasourceId)
+            && Objects.equals(this.sourceGroup, that.sourceGroup) && Objects.equals(this.targetGroup, that.targetGroup)
+            && Objects.equals(this.sourceDsId, that.sourceDsId) && Objects.equals(this.targetDsId, that.targetDsId)
+            && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
+            && Objects.equals(this.targetInstanceId, that.targetInstanceId)
+            && Objects.equals(this.sourceAppId, that.sourceAppId) && Objects.equals(this.targetAppId, that.targetAppId)
+            && Objects.equals(this.sourceDatasourceName, that.sourceDatasourceName)
+            && Objects.equals(this.targetDatasourceName, that.targetDatasourceName)
+            && Objects.equals(this.sourceDatasourceType, that.sourceDatasourceType)
+            && Objects.equals(this.targetDatasourceType, that.targetDatasourceType)
+            && Objects.equals(this.mappings, that.mappings)
+            && Objects.equals(this.mappingsTotalCount, that.mappingsTotalCount);
     }
 
     @Override

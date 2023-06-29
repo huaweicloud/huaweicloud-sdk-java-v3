@@ -71,22 +71,15 @@ public class ShowContentResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            EncodingEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EncodingEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EncodingEnum(value));
         }
 
         public static EncodingEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EncodingEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,17 +175,16 @@ public class ShowContentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowContentResponse showContentResponse = (ShowContentResponse) o;
-        return Objects.equals(this.path, showContentResponse.path) && Objects.equals(this.sha, showContentResponse.sha)
-            && Objects.equals(this.encoding, showContentResponse.encoding)
-            && Objects.equals(this.content, showContentResponse.content);
+        ShowContentResponse that = (ShowContentResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.sha, that.sha)
+            && Objects.equals(this.encoding, that.encoding) && Objects.equals(this.content, that.content);
     }
 
     @Override

@@ -140,19 +140,17 @@ public class ResourcesByTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourcesByTag resourcesByTag = (ResourcesByTag) o;
-        return Objects.equals(this.resourceId, resourcesByTag.resourceId)
-            && Objects.equals(this.resourceName, resourcesByTag.resourceName)
-            && Objects.equals(this.resourceDetail, resourcesByTag.resourceDetail)
-            && Objects.equals(this.tags, resourcesByTag.tags)
-            && Objects.equals(this.superResourceId, resourcesByTag.superResourceId);
+        ResourcesByTag that = (ResourcesByTag) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceDetail, that.resourceDetail) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.superResourceId, that.superResourceId);
     }
 
     @Override

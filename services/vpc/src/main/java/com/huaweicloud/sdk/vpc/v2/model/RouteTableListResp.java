@@ -229,22 +229,19 @@ public class RouteTableListResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteTableListResp routeTableListResp = (RouteTableListResp) o;
-        return Objects.equals(this.id, routeTableListResp.id) && Objects.equals(this.name, routeTableListResp.name)
-            && Objects.equals(this._default, routeTableListResp._default)
-            && Objects.equals(this.subnets, routeTableListResp.subnets)
-            && Objects.equals(this.tenantId, routeTableListResp.tenantId)
-            && Objects.equals(this.vpcId, routeTableListResp.vpcId)
-            && Objects.equals(this.description, routeTableListResp.description)
-            && Objects.equals(this.createdAt, routeTableListResp.createdAt)
-            && Objects.equals(this.updatedAt, routeTableListResp.updatedAt);
+        RouteTableListResp that = (RouteTableListResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this._default, that._default) && Objects.equals(this.subnets, that.subnets)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

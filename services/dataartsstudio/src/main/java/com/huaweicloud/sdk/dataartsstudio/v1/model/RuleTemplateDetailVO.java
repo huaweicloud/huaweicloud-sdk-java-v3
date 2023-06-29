@@ -253,24 +253,21 @@ public class RuleTemplateDetailVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleTemplateDetailVO ruleTemplateDetailVO = (RuleTemplateDetailVO) o;
-        return Objects.equals(this.id, ruleTemplateDetailVO.id) && Objects.equals(this.name, ruleTemplateDetailVO.name)
-            && Objects.equals(this.categoryId, ruleTemplateDetailVO.categoryId)
-            && Objects.equals(this.dimension, ruleTemplateDetailVO.dimension)
-            && Objects.equals(this.type, ruleTemplateDetailVO.type)
-            && Objects.equals(this.systemTemplate, ruleTemplateDetailVO.systemTemplate)
-            && Objects.equals(this.sqlInfo, ruleTemplateDetailVO.sqlInfo)
-            && Objects.equals(this.abnormalTableTemplate, ruleTemplateDetailVO.abnormalTableTemplate)
-            && Objects.equals(this.resultDescription, ruleTemplateDetailVO.resultDescription)
-            && Objects.equals(this.createTime, ruleTemplateDetailVO.createTime)
-            && Objects.equals(this.creator, ruleTemplateDetailVO.creator);
+        RuleTemplateDetailVO that = (RuleTemplateDetailVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.systemTemplate, that.systemTemplate)
+            && Objects.equals(this.sqlInfo, that.sqlInfo)
+            && Objects.equals(this.abnormalTableTemplate, that.abnormalTableTemplate)
+            && Objects.equals(this.resultDescription, that.resultDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator);
     }
 
     @Override

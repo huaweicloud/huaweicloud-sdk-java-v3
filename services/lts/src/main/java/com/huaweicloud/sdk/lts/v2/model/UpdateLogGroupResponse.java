@@ -102,18 +102,17 @@ public class UpdateLogGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLogGroupResponse updateLogGroupResponse = (UpdateLogGroupResponse) o;
-        return Objects.equals(this.creationTime, updateLogGroupResponse.creationTime)
-            && Objects.equals(this.logGroupName, updateLogGroupResponse.logGroupName)
-            && Objects.equals(this.logGroupId, updateLogGroupResponse.logGroupId)
-            && Objects.equals(this.ttlInDays, updateLogGroupResponse.ttlInDays);
+        UpdateLogGroupResponse that = (UpdateLogGroupResponse) obj;
+        return Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.logGroupName, that.logGroupName) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.ttlInDays, that.ttlInDays);
     }
 
     @Override

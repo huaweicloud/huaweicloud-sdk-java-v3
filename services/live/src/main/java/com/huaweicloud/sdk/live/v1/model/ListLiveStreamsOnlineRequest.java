@@ -124,19 +124,17 @@ public class ListLiveStreamsOnlineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveStreamsOnlineRequest listLiveStreamsOnlineRequest = (ListLiveStreamsOnlineRequest) o;
-        return Objects.equals(this.publishDomain, listLiveStreamsOnlineRequest.publishDomain)
-            && Objects.equals(this.app, listLiveStreamsOnlineRequest.app)
-            && Objects.equals(this.offset, listLiveStreamsOnlineRequest.offset)
-            && Objects.equals(this.limit, listLiveStreamsOnlineRequest.limit)
-            && Objects.equals(this.stream, listLiveStreamsOnlineRequest.stream);
+        ListLiveStreamsOnlineRequest that = (ListLiveStreamsOnlineRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.stream, that.stream);
     }
 
     @Override

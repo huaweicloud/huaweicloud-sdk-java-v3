@@ -143,20 +143,17 @@ public class SetRDSBackupCnfReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRDSBackupCnfReq setRDSBackupCnfReq = (SetRDSBackupCnfReq) o;
-        return Objects.equals(this.indices, setRDSBackupCnfReq.indices)
-            && Objects.equals(this.prefix, setRDSBackupCnfReq.prefix)
-            && Objects.equals(this.period, setRDSBackupCnfReq.period)
-            && Objects.equals(this.keepday, setRDSBackupCnfReq.keepday)
-            && Objects.equals(this.enable, setRDSBackupCnfReq.enable)
-            && Objects.equals(this.deleteAuto, setRDSBackupCnfReq.deleteAuto);
+        SetRDSBackupCnfReq that = (SetRDSBackupCnfReq) obj;
+        return Objects.equals(this.indices, that.indices) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.keepday, that.keepday)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.deleteAuto, that.deleteAuto);
     }
 
     @Override

@@ -101,18 +101,16 @@ public class CrlConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CrlConfiguration crlConfiguration = (CrlConfiguration) o;
-        return Objects.equals(this.enabled, crlConfiguration.enabled)
-            && Objects.equals(this.crlName, crlConfiguration.crlName)
-            && Objects.equals(this.obsBucketName, crlConfiguration.obsBucketName)
-            && Objects.equals(this.validDays, crlConfiguration.validDays);
+        CrlConfiguration that = (CrlConfiguration) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.crlName, that.crlName)
+            && Objects.equals(this.obsBucketName, that.obsBucketName) && Objects.equals(this.validDays, that.validDays);
     }
 
     @Override

@@ -35,7 +35,7 @@ public class ShowResultsResponse extends SdkResponse {
     }
 
     /**
-     * 漏洞总数
+     * 网站漏洞总数
      * minimum: 0
      * maximum: 100000
      * @return total
@@ -70,7 +70,7 @@ public class ShowResultsResponse extends SdkResponse {
     }
 
     /**
-     * 漏洞信息列表
+     * 网站漏洞信息列表
      * @return data
      */
     public List<VulnItem> getData() {
@@ -108,17 +108,16 @@ public class ShowResultsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResultsResponse showResultsResponse = (ShowResultsResponse) o;
-        return Objects.equals(this.total, showResultsResponse.total)
-            && Objects.equals(this.data, showResultsResponse.data)
-            && Objects.equals(this.statistics, showResultsResponse.statistics);
+        ShowResultsResponse that = (ShowResultsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

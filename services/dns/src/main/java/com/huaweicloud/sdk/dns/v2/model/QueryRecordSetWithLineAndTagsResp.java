@@ -482,33 +482,24 @@ public class QueryRecordSetWithLineAndTagsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryRecordSetWithLineAndTagsResp queryRecordSetWithLineAndTagsResp = (QueryRecordSetWithLineAndTagsResp) o;
-        return Objects.equals(this.id, queryRecordSetWithLineAndTagsResp.id)
-            && Objects.equals(this.name, queryRecordSetWithLineAndTagsResp.name)
-            && Objects.equals(this.description, queryRecordSetWithLineAndTagsResp.description)
-            && Objects.equals(this.zoneId, queryRecordSetWithLineAndTagsResp.zoneId)
-            && Objects.equals(this.zoneName, queryRecordSetWithLineAndTagsResp.zoneName)
-            && Objects.equals(this.type, queryRecordSetWithLineAndTagsResp.type)
-            && Objects.equals(this.ttl, queryRecordSetWithLineAndTagsResp.ttl)
-            && Objects.equals(this.records, queryRecordSetWithLineAndTagsResp.records)
-            && Objects.equals(this.createdAt, queryRecordSetWithLineAndTagsResp.createdAt)
-            && Objects.equals(this.updatedAt, queryRecordSetWithLineAndTagsResp.updatedAt)
-            && Objects.equals(this.status, queryRecordSetWithLineAndTagsResp.status)
-            && Objects.equals(this._default, queryRecordSetWithLineAndTagsResp._default)
-            && Objects.equals(this.projectId, queryRecordSetWithLineAndTagsResp.projectId)
-            && Objects.equals(this.links, queryRecordSetWithLineAndTagsResp.links)
-            && Objects.equals(this.tags, queryRecordSetWithLineAndTagsResp.tags)
-            && Objects.equals(this.line, queryRecordSetWithLineAndTagsResp.line)
-            && Objects.equals(this.weight, queryRecordSetWithLineAndTagsResp.weight)
-            && Objects.equals(this.healthCheckId, queryRecordSetWithLineAndTagsResp.healthCheckId)
-            && Objects.equals(this.aliasTarget, queryRecordSetWithLineAndTagsResp.aliasTarget);
+        QueryRecordSetWithLineAndTagsResp that = (QueryRecordSetWithLineAndTagsResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.line, that.line)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget);
     }
 
     @Override

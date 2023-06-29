@@ -34,15 +34,15 @@ public class DeleteApplicationEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteApplicationEndpointResponse deleteApplicationEndpointResponse = (DeleteApplicationEndpointResponse) o;
-        return Objects.equals(this.requestId, deleteApplicationEndpointResponse.requestId);
+        DeleteApplicationEndpointResponse that = (DeleteApplicationEndpointResponse) obj;
+        return Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

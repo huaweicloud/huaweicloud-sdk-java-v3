@@ -135,19 +135,17 @@ public class CreateRecordRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRecordRuleRequest createRecordRuleRequest = (CreateRecordRuleRequest) o;
-        return Objects.equals(this.authorization, createRecordRuleRequest.authorization)
-            && Objects.equals(this.xSdkDate, createRecordRuleRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createRecordRuleRequest.xProjectId)
-            && Objects.equals(this.appId, createRecordRuleRequest.appId)
-            && Objects.equals(this.body, createRecordRuleRequest.body);
+        CreateRecordRuleRequest that = (CreateRecordRuleRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

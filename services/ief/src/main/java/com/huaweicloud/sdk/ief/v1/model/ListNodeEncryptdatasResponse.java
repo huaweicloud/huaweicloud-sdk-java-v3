@@ -75,16 +75,15 @@ public class ListNodeEncryptdatasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNodeEncryptdatasResponse listNodeEncryptdatasResponse = (ListNodeEncryptdatasResponse) o;
-        return Objects.equals(this.encryptDatas, listNodeEncryptdatasResponse.encryptDatas)
-            && Objects.equals(this.count, listNodeEncryptdatasResponse.count);
+        ListNodeEncryptdatasResponse that = (ListNodeEncryptdatasResponse) obj;
+        return Objects.equals(this.encryptDatas, that.encryptDatas) && Objects.equals(this.count, that.count);
     }
 
     @Override

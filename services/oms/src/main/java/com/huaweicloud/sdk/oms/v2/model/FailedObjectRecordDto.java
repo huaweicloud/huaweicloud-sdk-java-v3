@@ -77,17 +77,16 @@ public class FailedObjectRecordDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FailedObjectRecordDto failedObjectRecordDto = (FailedObjectRecordDto) o;
-        return Objects.equals(this.result, failedObjectRecordDto.result)
-            && Objects.equals(this.listFileKey, failedObjectRecordDto.listFileKey)
-            && Objects.equals(this.errorCode, failedObjectRecordDto.errorCode);
+        FailedObjectRecordDto that = (FailedObjectRecordDto) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.listFileKey, that.listFileKey)
+            && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

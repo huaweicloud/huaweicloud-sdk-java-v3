@@ -65,16 +65,15 @@ public class RebootCbhRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RebootCbhRequestBody rebootCbhRequestBody = (RebootCbhRequestBody) o;
-        return Objects.equals(this.instanceId, rebootCbhRequestBody.instanceId)
-            && Objects.equals(this.reboot, rebootCbhRequestBody.reboot);
+        RebootCbhRequestBody that = (RebootCbhRequestBody) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.reboot, that.reboot);
     }
 
     @Override

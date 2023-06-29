@@ -53,15 +53,15 @@ public class ListBusinessEnvResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBusinessEnvResponse listBusinessEnvResponse = (ListBusinessEnvResponse) o;
-        return Objects.equals(this.envEntryList, listBusinessEnvResponse.envEntryList);
+        ListBusinessEnvResponse that = (ListBusinessEnvResponse) obj;
+        return Objects.equals(this.envEntryList, that.envEntryList);
     }
 
     @Override

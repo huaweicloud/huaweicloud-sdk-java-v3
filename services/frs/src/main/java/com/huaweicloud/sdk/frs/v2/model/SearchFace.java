@@ -131,19 +131,17 @@ public class SearchFace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchFace searchFace = (SearchFace) o;
-        return Objects.equals(this.boundingBox, searchFace.boundingBox)
-            && Objects.equals(this.similarity, searchFace.similarity)
-            && Objects.equals(this.externalFields, searchFace.externalFields)
-            && Objects.equals(this.externalImageId, searchFace.externalImageId)
-            && Objects.equals(this.faceId, searchFace.faceId);
+        SearchFace that = (SearchFace) obj;
+        return Objects.equals(this.boundingBox, that.boundingBox) && Objects.equals(this.similarity, that.similarity)
+            && Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.externalImageId, that.externalImageId) && Objects.equals(this.faceId, that.faceId);
     }
 
     @Override

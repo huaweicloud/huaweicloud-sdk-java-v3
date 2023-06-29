@@ -53,15 +53,15 @@ public class CreateAomMappingRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAomMappingRulesResponse createAomMappingRulesResponse = (CreateAomMappingRulesResponse) o;
-        return Objects.equals(this.body, createAomMappingRulesResponse.body);
+        CreateAomMappingRulesResponse that = (CreateAomMappingRulesResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

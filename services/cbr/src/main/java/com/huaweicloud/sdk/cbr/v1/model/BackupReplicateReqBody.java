@@ -143,20 +143,19 @@ public class BackupReplicateReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupReplicateReqBody backupReplicateReqBody = (BackupReplicateReqBody) o;
-        return Objects.equals(this.description, backupReplicateReqBody.description)
-            && Objects.equals(this.destinationProjectId, backupReplicateReqBody.destinationProjectId)
-            && Objects.equals(this.destinationRegion, backupReplicateReqBody.destinationRegion)
-            && Objects.equals(this.destinationVaultId, backupReplicateReqBody.destinationVaultId)
-            && Objects.equals(this.enableAcceleration, backupReplicateReqBody.enableAcceleration)
-            && Objects.equals(this.name, backupReplicateReqBody.name);
+        BackupReplicateReqBody that = (BackupReplicateReqBody) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.enableAcceleration, that.enableAcceleration) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -443,30 +443,25 @@ public class MergeInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeInfoResult mergeInfoResult = (MergeInfoResult) o;
-        return Objects.equals(this.approvalMergeRequestApprovers, mergeInfoResult.approvalMergeRequestApprovers)
-            && Objects.equals(this.author, mergeInfoResult.author)
-            && Objects.equals(this.closedAt, mergeInfoResult.closedAt)
-            && Objects.equals(this.createdAt, mergeInfoResult.createdAt)
-            && Objects.equals(this.description, mergeInfoResult.description)
-            && Objects.equals(this.devcloudSourceBranch, mergeInfoResult.devcloudSourceBranch)
-            && Objects.equals(this.id, mergeInfoResult.id) && Objects.equals(this.iid, mergeInfoResult.iid)
-            && Objects.equals(this.isSourceBranchExist, mergeInfoResult.isSourceBranchExist)
-            && Objects.equals(this.mergeRequestAssigneeList, mergeInfoResult.mergeRequestAssigneeList)
-            && Objects.equals(this.mergeRequestDiff, mergeInfoResult.mergeRequestDiff)
-            && Objects.equals(this.mergeStatus, mergeInfoResult.mergeStatus)
-            && Objects.equals(this.sourceBranch, mergeInfoResult.sourceBranch)
-            && Objects.equals(this.state, mergeInfoResult.state)
-            && Objects.equals(this.targetBranch, mergeInfoResult.targetBranch)
-            && Objects.equals(this.title, mergeInfoResult.title)
-            && Objects.equals(this.updatedAt, mergeInfoResult.updatedAt);
+        MergeInfoResult that = (MergeInfoResult) obj;
+        return Objects.equals(this.approvalMergeRequestApprovers, that.approvalMergeRequestApprovers)
+            && Objects.equals(this.author, that.author) && Objects.equals(this.closedAt, that.closedAt)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.devcloudSourceBranch, that.devcloudSourceBranch) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.iid, that.iid) && Objects.equals(this.isSourceBranchExist, that.isSourceBranchExist)
+            && Objects.equals(this.mergeRequestAssigneeList, that.mergeRequestAssigneeList)
+            && Objects.equals(this.mergeRequestDiff, that.mergeRequestDiff)
+            && Objects.equals(this.mergeStatus, that.mergeStatus)
+            && Objects.equals(this.sourceBranch, that.sourceBranch) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.targetBranch, that.targetBranch) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

@@ -1,61 +1,46 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.SessionStatsIntervals;
-import com.huaweicloud.sdk.cbs.v1.model.SessionStatsTotal;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CollectSessionStatsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="interval")
-    
+    @JsonProperty(value = "interval")
 
     private String interval;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private SessionStatsTotal total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="intervals")
-    
+    @JsonProperty(value = "intervals")
+
     private List<SessionStatsIntervals> intervals = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="startutc")
-    
+    @JsonProperty(value = "startutc")
 
     private Long startutc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endutc")
-    
+    @JsonProperty(value = "endutc")
 
     private Long endutc;
 
@@ -63,9 +48,6 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.interval = interval;
         return this;
     }
-
-    
-
 
     /**
      * 统计周期目前支持year、month、week、day。
@@ -79,15 +61,10 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.interval = interval;
     }
 
-    
-
     public CollectSessionStatsResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
-
-    
-
 
     /**
      * 所在时区，默认为\"utc\"。例如：中国东八区为\"+08:00\"；美国西五区为\"-05:00\"。
@@ -101,22 +78,19 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.timeZone = timeZone;
     }
 
-    
-
     public CollectSessionStatsResponse withTotal(SessionStatsTotal total) {
         this.total = total;
         return this;
     }
 
     public CollectSessionStatsResponse withTotal(Consumer<SessionStatsTotal> totalSetter) {
-        if(this.total == null ){
+        if (this.total == null) {
             this.total = new SessionStatsTotal();
             totalSetter.accept(this.total);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get total
@@ -130,16 +104,13 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.total = total;
     }
 
-    
-
     public CollectSessionStatsResponse withIntervals(List<SessionStatsIntervals> intervals) {
         this.intervals = intervals;
         return this;
     }
 
-    
     public CollectSessionStatsResponse addIntervalsItem(SessionStatsIntervals intervalsItem) {
-        if(this.intervals == null) {
+        if (this.intervals == null) {
             this.intervals = new ArrayList<>();
         }
         this.intervals.add(intervalsItem);
@@ -147,7 +118,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
     }
 
     public CollectSessionStatsResponse withIntervals(Consumer<List<SessionStatsIntervals>> intervalsSetter) {
-        if(this.intervals == null) {
+        if (this.intervals == null) {
             this.intervals = new ArrayList<>();
         }
         intervalsSetter.accept(this.intervals);
@@ -166,15 +137,10 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.intervals = intervals;
     }
 
-    
-
     public CollectSessionStatsResponse withStartutc(Long startutc) {
         this.startutc = startutc;
         return this;
     }
-
-    
-
 
     /**
      * 统计开始的utc时间。
@@ -188,15 +154,10 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.startutc = startutc;
     }
 
-    
-
     public CollectSessionStatsResponse withEndutc(Long endutc) {
         this.endutc = endutc;
         return this;
     }
-
-    
-
 
     /**
      * 统计结束的utc时间。
@@ -210,28 +171,25 @@ public class CollectSessionStatsResponse extends SdkResponse {
         this.endutc = endutc;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectSessionStatsResponse collectSessionStatsResponse = (CollectSessionStatsResponse) o;
-        return Objects.equals(this.interval, collectSessionStatsResponse.interval) &&
-            Objects.equals(this.timeZone, collectSessionStatsResponse.timeZone) &&
-            Objects.equals(this.total, collectSessionStatsResponse.total) &&
-            Objects.equals(this.intervals, collectSessionStatsResponse.intervals) &&
-            Objects.equals(this.startutc, collectSessionStatsResponse.startutc) &&
-            Objects.equals(this.endutc, collectSessionStatsResponse.endutc);
+        CollectSessionStatsResponse that = (CollectSessionStatsResponse) obj;
+        return Objects.equals(this.interval, that.interval) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.intervals, that.intervals)
+            && Objects.equals(this.startutc, that.startutc) && Objects.equals(this.endutc, that.endutc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(interval, timeZone, total, intervals, startutc, endutc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -245,6 +203,7 @@ public class CollectSessionStatsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -255,8 +214,5 @@ public class CollectSessionStatsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -353,25 +353,21 @@ public class ContentDetailReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentDetailReq contentDetailReq = (ContentDetailReq) o;
-        return Objects.equals(this.iotdaContent, contentDetailReq.iotdaContent)
-            && Objects.equals(this.obsContent, contentDetailReq.obsContent)
-            && Objects.equals(this.disContent, contentDetailReq.disContent)
-            && Objects.equals(this.smnContent, contentDetailReq.smnContent)
-            && Objects.equals(this.functionGraphContent, contentDetailReq.functionGraphContent)
-            && Objects.equals(this.modelArtsContent, contentDetailReq.modelArtsContent)
-            && Objects.equals(this.dcsContent, contentDetailReq.dcsContent)
-            && Objects.equals(this.kafkaContent, contentDetailReq.kafkaContent)
-            && Objects.equals(this.apiContent, contentDetailReq.apiContent)
-            && Objects.equals(this.nodeContent, contentDetailReq.nodeContent)
-            && Objects.equals(this.edgeContent, contentDetailReq.edgeContent);
+        ContentDetailReq that = (ContentDetailReq) obj;
+        return Objects.equals(this.iotdaContent, that.iotdaContent) && Objects.equals(this.obsContent, that.obsContent)
+            && Objects.equals(this.disContent, that.disContent) && Objects.equals(this.smnContent, that.smnContent)
+            && Objects.equals(this.functionGraphContent, that.functionGraphContent)
+            && Objects.equals(this.modelArtsContent, that.modelArtsContent)
+            && Objects.equals(this.dcsContent, that.dcsContent) && Objects.equals(this.kafkaContent, that.kafkaContent)
+            && Objects.equals(this.apiContent, that.apiContent) && Objects.equals(this.nodeContent, that.nodeContent)
+            && Objects.equals(this.edgeContent, that.edgeContent);
     }
 
     @Override

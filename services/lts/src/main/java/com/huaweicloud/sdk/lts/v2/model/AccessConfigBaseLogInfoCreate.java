@@ -55,16 +55,15 @@ public class AccessConfigBaseLogInfoCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigBaseLogInfoCreate accessConfigBaseLogInfoCreate = (AccessConfigBaseLogInfoCreate) o;
-        return Objects.equals(this.logGroupId, accessConfigBaseLogInfoCreate.logGroupId)
-            && Objects.equals(this.logStreamId, accessConfigBaseLogInfoCreate.logStreamId);
+        AccessConfigBaseLogInfoCreate that = (AccessConfigBaseLogInfoCreate) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId);
     }
 
     @Override

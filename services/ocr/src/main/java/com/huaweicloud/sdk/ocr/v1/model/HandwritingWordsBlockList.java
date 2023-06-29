@@ -118,18 +118,16 @@ public class HandwritingWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HandwritingWordsBlockList handwritingWordsBlockList = (HandwritingWordsBlockList) o;
-        return Objects.equals(this.words, handwritingWordsBlockList.words)
-            && Objects.equals(this.type, handwritingWordsBlockList.type)
-            && Objects.equals(this.confidence, handwritingWordsBlockList.confidence)
-            && Objects.equals(this.location, handwritingWordsBlockList.location);
+        HandwritingWordsBlockList that = (HandwritingWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.location, that.location);
     }
 
     @Override

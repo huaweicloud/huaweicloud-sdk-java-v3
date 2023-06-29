@@ -55,16 +55,15 @@ public class ChangeInstanceOrderRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeInstanceOrderRequest changeInstanceOrderRequest = (ChangeInstanceOrderRequest) o;
-        return Objects.equals(this.serverId, changeInstanceOrderRequest.serverId)
-            && Objects.equals(this.instanceKey, changeInstanceOrderRequest.instanceKey);
+        ChangeInstanceOrderRequest that = (ChangeInstanceOrderRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.instanceKey, that.instanceKey);
     }
 
     @Override

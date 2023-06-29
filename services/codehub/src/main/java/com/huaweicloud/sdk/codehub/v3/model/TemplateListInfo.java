@@ -74,16 +74,15 @@ public class TemplateListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateListInfo templateListInfo = (TemplateListInfo) o;
-        return Objects.equals(this.repos, templateListInfo.repos)
-            && Objects.equals(this.totalCount, templateListInfo.totalCount);
+        TemplateListInfo that = (TemplateListInfo) obj;
+        return Objects.equals(this.repos, that.repos) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

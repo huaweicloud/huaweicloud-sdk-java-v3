@@ -99,18 +99,16 @@ public class TraceTopologyLineInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TraceTopologyLineInfo traceTopologyLineInfo = (TraceTopologyLineInfo) o;
-        return Objects.equals(this.startTime, traceTopologyLineInfo.startTime)
-            && Objects.equals(this.timeUsed, traceTopologyLineInfo.timeUsed)
-            && Objects.equals(this.argument, traceTopologyLineInfo.argument)
-            && Objects.equals(this.eventId, traceTopologyLineInfo.eventId);
+        TraceTopologyLineInfo that = (TraceTopologyLineInfo) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeUsed, that.timeUsed)
+            && Objects.equals(this.argument, that.argument) && Objects.equals(this.eventId, that.eventId);
     }
 
     @Override

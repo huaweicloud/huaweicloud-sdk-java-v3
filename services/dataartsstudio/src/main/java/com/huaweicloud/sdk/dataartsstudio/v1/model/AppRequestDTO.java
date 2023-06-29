@@ -78,22 +78,15 @@ public class AppRequestDTO {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppTypeEnum(value));
         }
 
         public static AppTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class AppRequestDTO {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApigTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApigTypeEnum(value));
         }
 
         public static ApigTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApigTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,18 +290,17 @@ public class AppRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppRequestDTO appRequestDTO = (AppRequestDTO) o;
-        return Objects.equals(this.appType, appRequestDTO.appType) && Objects.equals(this.name, appRequestDTO.name)
-            && Objects.equals(this.description, appRequestDTO.description)
-            && Objects.equals(this.apigType, appRequestDTO.apigType)
-            && Objects.equals(this.apigInstanceId, appRequestDTO.apigInstanceId);
+        AppRequestDTO that = (AppRequestDTO) obj;
+        return Objects.equals(this.appType, that.appType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.apigType, that.apigType)
+            && Objects.equals(this.apigInstanceId, that.apigInstanceId);
     }
 
     @Override

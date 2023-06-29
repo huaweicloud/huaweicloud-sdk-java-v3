@@ -91,16 +91,16 @@ public class ListBandwidthPkgResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthPkgResponse listBandwidthPkgResponse = (ListBandwidthPkgResponse) o;
-        return Objects.equals(this.bandwidthpkgs, listBandwidthPkgResponse.bandwidthpkgs)
-            && Objects.equals(this.bandwidthpkgsLinks, listBandwidthPkgResponse.bandwidthpkgsLinks);
+        ListBandwidthPkgResponse that = (ListBandwidthPkgResponse) obj;
+        return Objects.equals(this.bandwidthpkgs, that.bandwidthpkgs)
+            && Objects.equals(this.bandwidthpkgsLinks, that.bandwidthpkgsLinks);
     }
 
     @Override

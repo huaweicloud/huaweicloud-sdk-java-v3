@@ -75,16 +75,16 @@ public class DomainRegion {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainRegion domainRegion = (DomainRegion) o;
-        return Objects.equals(this.domainName, domainRegion.domainName)
-            && Objects.equals(this.regionIspDetails, domainRegion.regionIspDetails);
+        DomainRegion that = (DomainRegion) obj;
+        return Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.regionIspDetails, that.regionIspDetails);
     }
 
     @Override

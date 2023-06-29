@@ -118,18 +118,16 @@ public class CreateClusterPublicIpReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterPublicIpReq createClusterPublicIpReq = (CreateClusterPublicIpReq) o;
-        return Objects.equals(this.eip, createClusterPublicIpReq.eip)
-            && Objects.equals(this.elbWhiteListReq, createClusterPublicIpReq.elbWhiteListReq)
-            && Objects.equals(this.publicBindType, createClusterPublicIpReq.publicBindType)
-            && Objects.equals(this.eipId, createClusterPublicIpReq.eipId);
+        CreateClusterPublicIpReq that = (CreateClusterPublicIpReq) obj;
+        return Objects.equals(this.eip, that.eip) && Objects.equals(this.elbWhiteListReq, that.elbWhiteListReq)
+            && Objects.equals(this.publicBindType, that.publicBindType) && Objects.equals(this.eipId, that.eipId);
     }
 
     @Override

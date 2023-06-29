@@ -77,17 +77,16 @@ public class ListValueListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListValueListRequest listValueListRequest = (ListValueListRequest) o;
-        return Objects.equals(this.page, listValueListRequest.page)
-            && Objects.equals(this.pagesize, listValueListRequest.pagesize)
-            && Objects.equals(this.name, listValueListRequest.name);
+        ListValueListRequest that = (ListValueListRequest) obj;
+        return Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

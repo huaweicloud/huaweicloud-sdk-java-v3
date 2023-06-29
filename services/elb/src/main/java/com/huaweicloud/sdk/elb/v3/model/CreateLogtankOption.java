@@ -77,17 +77,16 @@ public class CreateLogtankOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogtankOption createLogtankOption = (CreateLogtankOption) o;
-        return Objects.equals(this.loadbalancerId, createLogtankOption.loadbalancerId)
-            && Objects.equals(this.logGroupId, createLogtankOption.logGroupId)
-            && Objects.equals(this.logTopicId, createLogtankOption.logTopicId);
+        CreateLogtankOption that = (CreateLogtankOption) obj;
+        return Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId);
     }
 
     @Override

@@ -146,20 +146,18 @@ public class ListServiceSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceSetRequest listServiceSetRequest = (ListServiceSetRequest) o;
-        return Objects.equals(this.objectId, listServiceSetRequest.objectId)
-            && Objects.equals(this.keyWord, listServiceSetRequest.keyWord)
-            && Objects.equals(this.limit, listServiceSetRequest.limit)
-            && Objects.equals(this.offset, listServiceSetRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listServiceSetRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listServiceSetRequest.fwInstanceId);
+        ListServiceSetRequest that = (ListServiceSetRequest) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

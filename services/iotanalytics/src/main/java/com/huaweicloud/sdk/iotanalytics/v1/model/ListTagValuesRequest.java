@@ -125,19 +125,17 @@ public class ListTagValuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagValuesRequest listTagValuesRequest = (ListTagValuesRequest) o;
-        return Objects.equals(this.dataStoreId, listTagValuesRequest.dataStoreId)
-            && Objects.equals(this.tagName, listTagValuesRequest.tagName)
-            && Objects.equals(this.filters, listTagValuesRequest.filters)
-            && Objects.equals(this.offset, listTagValuesRequest.offset)
-            && Objects.equals(this.limit, listTagValuesRequest.limit);
+        ListTagValuesRequest that = (ListTagValuesRequest) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.tagName, that.tagName)
+            && Objects.equals(this.filters, that.filters) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

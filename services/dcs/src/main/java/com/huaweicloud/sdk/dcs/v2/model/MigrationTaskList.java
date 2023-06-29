@@ -82,22 +82,15 @@ public class MigrationTaskList {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class MigrationTaskList {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationTypeEnum(value));
         }
 
         public static MigrationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -248,22 +234,15 @@ public class MigrationTaskList {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationMethodEnum(value));
         }
 
         public static MigrationMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -547,27 +526,25 @@ public class MigrationTaskList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrationTaskList migrationTaskList = (MigrationTaskList) o;
-        return Objects.equals(this.taskId, migrationTaskList.taskId)
-            && Objects.equals(this.taskName, migrationTaskList.taskName)
-            && Objects.equals(this.status, migrationTaskList.status)
-            && Objects.equals(this.migrationType, migrationTaskList.migrationType)
-            && Objects.equals(this.migrationMethod, migrationTaskList.migrationMethod)
-            && Objects.equals(this.ecsTenantPrivateIp, migrationTaskList.ecsTenantPrivateIp)
-            && Objects.equals(this.dataSource, migrationTaskList.dataSource)
-            && Objects.equals(this.sourceInstanceName, migrationTaskList.sourceInstanceName)
-            && Objects.equals(this.sourceInstanceId, migrationTaskList.sourceInstanceId)
-            && Objects.equals(this.targetInstanceAddrs, migrationTaskList.targetInstanceAddrs)
-            && Objects.equals(this.targetInstanceName, migrationTaskList.targetInstanceName)
-            && Objects.equals(this.targetInstanceId, migrationTaskList.targetInstanceId)
-            && Objects.equals(this.createdAt, migrationTaskList.createdAt);
+        MigrationTaskList that = (MigrationTaskList) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.migrationType, that.migrationType)
+            && Objects.equals(this.migrationMethod, that.migrationMethod)
+            && Objects.equals(this.ecsTenantPrivateIp, that.ecsTenantPrivateIp)
+            && Objects.equals(this.dataSource, that.dataSource)
+            && Objects.equals(this.sourceInstanceName, that.sourceInstanceName)
+            && Objects.equals(this.sourceInstanceId, that.sourceInstanceId)
+            && Objects.equals(this.targetInstanceAddrs, that.targetInstanceAddrs)
+            && Objects.equals(this.targetInstanceName, that.targetInstanceName)
+            && Objects.equals(this.targetInstanceId, that.targetInstanceId)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

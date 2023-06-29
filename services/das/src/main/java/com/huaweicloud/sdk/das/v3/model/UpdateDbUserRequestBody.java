@@ -55,16 +55,16 @@ public class UpdateDbUserRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDbUserRequestBody updateDbUserRequestBody = (UpdateDbUserRequestBody) o;
-        return Objects.equals(this.dbUsername, updateDbUserRequestBody.dbUsername)
-            && Objects.equals(this.dbUserPassword, updateDbUserRequestBody.dbUserPassword);
+        UpdateDbUserRequestBody that = (UpdateDbUserRequestBody) obj;
+        return Objects.equals(this.dbUsername, that.dbUsername)
+            && Objects.equals(this.dbUserPassword, that.dbUserPassword);
     }
 
     @Override

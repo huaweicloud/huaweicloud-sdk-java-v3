@@ -215,21 +215,18 @@ public class TaskGroupSrcNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskGroupSrcNode taskGroupSrcNode = (TaskGroupSrcNode) o;
-        return Objects.equals(this.ak, taskGroupSrcNode.ak) && Objects.equals(this.sk, taskGroupSrcNode.sk)
-            && Objects.equals(this.appId, taskGroupSrcNode.appId)
-            && Objects.equals(this.region, taskGroupSrcNode.region)
-            && Objects.equals(this.objectKey, taskGroupSrcNode.objectKey)
-            && Objects.equals(this.bucket, taskGroupSrcNode.bucket)
-            && Objects.equals(this.cloudType, taskGroupSrcNode.cloudType)
-            && Objects.equals(this.listFile, taskGroupSrcNode.listFile);
+        TaskGroupSrcNode that = (TaskGroupSrcNode) obj;
+        return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.objectKey, that.objectKey) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.listFile, that.listFile);
     }
 
     @Override

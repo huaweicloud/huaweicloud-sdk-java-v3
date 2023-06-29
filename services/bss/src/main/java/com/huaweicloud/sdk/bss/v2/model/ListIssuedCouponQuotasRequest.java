@@ -125,19 +125,18 @@ public class ListIssuedCouponQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuedCouponQuotasRequest listIssuedCouponQuotasRequest = (ListIssuedCouponQuotasRequest) o;
-        return Objects.equals(this.quotaId, listIssuedCouponQuotasRequest.quotaId)
-            && Objects.equals(this.indirectPartnerId, listIssuedCouponQuotasRequest.indirectPartnerId)
-            && Objects.equals(this.parentQuotaId, listIssuedCouponQuotasRequest.parentQuotaId)
-            && Objects.equals(this.offset, listIssuedCouponQuotasRequest.offset)
-            && Objects.equals(this.limit, listIssuedCouponQuotasRequest.limit);
+        ListIssuedCouponQuotasRequest that = (ListIssuedCouponQuotasRequest) obj;
+        return Objects.equals(this.quotaId, that.quotaId)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId)
+            && Objects.equals(this.parentQuotaId, that.parentQuotaId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

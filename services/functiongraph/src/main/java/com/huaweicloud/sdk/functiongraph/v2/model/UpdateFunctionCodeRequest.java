@@ -65,16 +65,15 @@ public class UpdateFunctionCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionCodeRequest updateFunctionCodeRequest = (UpdateFunctionCodeRequest) o;
-        return Objects.equals(this.functionUrn, updateFunctionCodeRequest.functionUrn)
-            && Objects.equals(this.body, updateFunctionCodeRequest.body);
+        UpdateFunctionCodeRequest that = (UpdateFunctionCodeRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

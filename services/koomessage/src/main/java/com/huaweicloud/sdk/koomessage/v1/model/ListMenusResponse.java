@@ -44,15 +44,15 @@ public class ListMenusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMenusResponse listMenusResponse = (ListMenusResponse) o;
-        return Objects.equals(this.data, listMenusResponse.data);
+        ListMenusResponse that = (ListMenusResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -78,22 +78,15 @@ public class MicroServiceInfo {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -304,22 +297,18 @@ public class MicroServiceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroServiceInfo microServiceInfo = (MicroServiceInfo) o;
-        return Objects.equals(this.id, microServiceInfo.id)
-            && Objects.equals(this.instanceId, microServiceInfo.instanceId)
-            && Objects.equals(this.serviceType, microServiceInfo.serviceType)
-            && Objects.equals(this.cseInfo, microServiceInfo.cseInfo)
-            && Objects.equals(this.cceInfo, microServiceInfo.cceInfo)
-            && Objects.equals(this.cceServiceInfo, microServiceInfo.cceServiceInfo)
-            && Objects.equals(this.updateTime, microServiceInfo.updateTime)
-            && Objects.equals(this.createTime, microServiceInfo.createTime);
+        MicroServiceInfo that = (MicroServiceInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.cseInfo, that.cseInfo)
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

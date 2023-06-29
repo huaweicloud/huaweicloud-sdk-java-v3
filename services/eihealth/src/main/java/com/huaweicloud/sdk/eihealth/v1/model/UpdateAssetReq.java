@@ -118,18 +118,16 @@ public class UpdateAssetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetReq updateAssetReq = (UpdateAssetReq) o;
-        return Objects.equals(this.summary, updateAssetReq.summary)
-            && Objects.equals(this.description, updateAssetReq.description)
-            && Objects.equals(this.picture, updateAssetReq.picture)
-            && Objects.equals(this.labels, updateAssetReq.labels);
+        UpdateAssetReq that = (UpdateAssetReq) obj;
+        return Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.picture, that.picture) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

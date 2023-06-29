@@ -153,20 +153,18 @@ public class ReservedInstanceConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReservedInstanceConfigs reservedInstanceConfigs = (ReservedInstanceConfigs) o;
-        return Objects.equals(this.functionUrn, reservedInstanceConfigs.functionUrn)
-            && Objects.equals(this.qualifierType, reservedInstanceConfigs.qualifierType)
-            && Objects.equals(this.qualifierName, reservedInstanceConfigs.qualifierName)
-            && Objects.equals(this.minCount, reservedInstanceConfigs.minCount)
-            && Objects.equals(this.idleMode, reservedInstanceConfigs.idleMode)
-            && Objects.equals(this.tacticsConfig, reservedInstanceConfigs.tacticsConfig);
+        ReservedInstanceConfigs that = (ReservedInstanceConfigs) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn)
+            && Objects.equals(this.qualifierType, that.qualifierType)
+            && Objects.equals(this.qualifierName, that.qualifierName) && Objects.equals(this.minCount, that.minCount)
+            && Objects.equals(this.idleMode, that.idleMode) && Objects.equals(this.tacticsConfig, that.tacticsConfig);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SQL限流规则和最大并发数
  */
-public class NodeSqlFilterRulePattern  {
-
+public class NodeSqlFilterRulePattern {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pattern")
-    
+    @JsonProperty(value = "pattern")
 
     private String pattern;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_concurrency")
-    
+    @JsonProperty(value = "max_concurrency")
 
     private Integer maxConcurrency;
 
@@ -33,9 +24,6 @@ public class NodeSqlFilterRulePattern  {
         this.pattern = pattern;
         return this;
     }
-
-    
-
 
     /**
      * SQL限流规则，由一个或多个关键字（最多为128个关键字）组成，关键字之间通过\"~\"分隔符分开，如select~from~t1。规则中不能包含‘\\’、中英文逗号、‘~~’，不能以‘~’结尾。
@@ -49,15 +37,10 @@ public class NodeSqlFilterRulePattern  {
         this.pattern = pattern;
     }
 
-    
-
     public NodeSqlFilterRulePattern withMaxConcurrency(Integer maxConcurrency) {
         this.maxConcurrency = maxConcurrency;
         return this;
     }
-
-    
-
 
     /**
      * 最大并发数。取值范围：非负整数。
@@ -71,24 +54,23 @@ public class NodeSqlFilterRulePattern  {
         this.maxConcurrency = maxConcurrency;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeSqlFilterRulePattern nodeSqlFilterRulePattern = (NodeSqlFilterRulePattern) o;
-        return Objects.equals(this.pattern, nodeSqlFilterRulePattern.pattern) &&
-            Objects.equals(this.maxConcurrency, nodeSqlFilterRulePattern.maxConcurrency);
+        NodeSqlFilterRulePattern that = (NodeSqlFilterRulePattern) obj;
+        return Objects.equals(this.pattern, that.pattern) && Objects.equals(this.maxConcurrency, that.maxConcurrency);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(pattern, maxConcurrency);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class NodeSqlFilterRulePattern  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class NodeSqlFilterRulePattern  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

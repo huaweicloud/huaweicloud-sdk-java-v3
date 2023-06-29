@@ -33,17 +33,15 @@ public class ChangingTheDelayThresholdRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangingTheDelayThresholdRequestBody changingTheDelayThresholdRequestBody =
-            (ChangingTheDelayThresholdRequestBody) o;
-        return Objects.equals(this.delayThresholdInKilobytes,
-            changingTheDelayThresholdRequestBody.delayThresholdInKilobytes);
+        ChangingTheDelayThresholdRequestBody that = (ChangingTheDelayThresholdRequestBody) obj;
+        return Objects.equals(this.delayThresholdInKilobytes, that.delayThresholdInKilobytes);
     }
 
     @Override

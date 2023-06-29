@@ -99,16 +99,16 @@ public class TagField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagField tagField = (TagField) o;
-        return Objects.equals(this.fieldName, tagField.fieldName) && Objects.equals(this.type, tagField.type)
-            && Objects.equals(this.content, tagField.content) && Objects.equals(this.isAnalysis, tagField.isAnalysis);
+        TagField that = (TagField) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.isAnalysis, that.isAnalysis);
     }
 
     @Override

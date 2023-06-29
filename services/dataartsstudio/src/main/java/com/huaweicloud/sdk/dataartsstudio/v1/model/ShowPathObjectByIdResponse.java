@@ -53,15 +53,15 @@ public class ShowPathObjectByIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPathObjectByIdResponse showPathObjectByIdResponse = (ShowPathObjectByIdResponse) o;
-        return Objects.equals(this.paths, showPathObjectByIdResponse.paths);
+        ShowPathObjectByIdResponse that = (ShowPathObjectByIdResponse) obj;
+        return Objects.equals(this.paths, that.paths);
     }
 
     @Override

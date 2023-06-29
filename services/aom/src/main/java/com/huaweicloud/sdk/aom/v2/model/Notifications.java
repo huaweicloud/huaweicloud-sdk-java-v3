@@ -1,43 +1,35 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.SmnResponse;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 发送结果
  */
-public class Notifications  {
-
+public class Notifications {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_rule")
-    
+    @JsonProperty(value = "action_rule")
 
     private String actionRule;
+
     /**
      * 通知类型。SMN：消息通知服务
      */
     public static final class NotifierChannelEnum {
 
-        
         /**
          * Enum SMN for value: "SMN"
          */
         public static final NotifierChannelEnum SMN = new NotifierChannelEnum("SMN");
-        
 
         private static final Map<String, NotifierChannelEnum> STATIC_FIELDS = createStaticFields();
 
@@ -65,25 +57,18 @@ public class Notifications  {
 
         @JsonCreator
         public static NotifierChannelEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NotifierChannelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotifierChannelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotifierChannelEnum(value));
         }
 
         public static NotifierChannelEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NotifierChannelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,14 +86,12 @@ public class Notifications  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="notifier_channel")
-    
+    @JsonProperty(value = "notifier_channel")
 
     private NotifierChannelEnum notifierChannel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="smn_channel")
-    
+    @JsonProperty(value = "smn_channel")
 
     private SmnResponse smnChannel;
 
@@ -116,9 +99,6 @@ public class Notifications  {
         this.actionRule = actionRule;
         return this;
     }
-
-    
-
 
     /**
      * 告警行动规则名称
@@ -132,15 +112,10 @@ public class Notifications  {
         this.actionRule = actionRule;
     }
 
-    
-
     public Notifications withNotifierChannel(NotifierChannelEnum notifierChannel) {
         this.notifierChannel = notifierChannel;
         return this;
     }
-
-    
-
 
     /**
      * 通知类型。SMN：消息通知服务
@@ -154,22 +129,19 @@ public class Notifications  {
         this.notifierChannel = notifierChannel;
     }
 
-    
-
     public Notifications withSmnChannel(SmnResponse smnChannel) {
         this.smnChannel = smnChannel;
         return this;
     }
 
     public Notifications withSmnChannel(Consumer<SmnResponse> smnChannelSetter) {
-        if(this.smnChannel == null ){
+        if (this.smnChannel == null) {
             this.smnChannel = new SmnResponse();
             smnChannelSetter.accept(this.smnChannel);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get smnChannel
@@ -183,25 +155,25 @@ public class Notifications  {
         this.smnChannel = smnChannel;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Notifications notifications = (Notifications) o;
-        return Objects.equals(this.actionRule, notifications.actionRule) &&
-            Objects.equals(this.notifierChannel, notifications.notifierChannel) &&
-            Objects.equals(this.smnChannel, notifications.smnChannel);
+        Notifications that = (Notifications) obj;
+        return Objects.equals(this.actionRule, that.actionRule)
+            && Objects.equals(this.notifierChannel, that.notifierChannel)
+            && Objects.equals(this.smnChannel, that.smnChannel);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(actionRule, notifierChannel, smnChannel);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -212,6 +184,7 @@ public class Notifications  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -222,8 +195,5 @@ public class Notifications  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

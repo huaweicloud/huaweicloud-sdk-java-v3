@@ -153,20 +153,17 @@ public class ConnectionCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConnectionCreateReq connectionCreateReq = (ConnectionCreateReq) o;
-        return Objects.equals(this.name, connectionCreateReq.name)
-            && Objects.equals(this.description, connectionCreateReq.description)
-            && Objects.equals(this.vpcId, connectionCreateReq.vpcId)
-            && Objects.equals(this.subnetId, connectionCreateReq.subnetId)
-            && Objects.equals(this.type, connectionCreateReq.type)
-            && Objects.equals(this.kafkaDetail, connectionCreateReq.kafkaDetail);
+        ConnectionCreateReq that = (ConnectionCreateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.kafkaDetail, that.kafkaDetail);
     }
 
     @Override

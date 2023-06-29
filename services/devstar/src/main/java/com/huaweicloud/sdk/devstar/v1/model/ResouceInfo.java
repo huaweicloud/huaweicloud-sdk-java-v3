@@ -209,22 +209,20 @@ public class ResouceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResouceInfo resouceInfo = (ResouceInfo) o;
-        return Objects.equals(this.name, resouceInfo.name) && Objects.equals(this.description, resouceInfo.description)
-            && Objects.equals(this.homeLink, resouceInfo.homeLink)
-            && Objects.equals(this.subscribeLink, resouceInfo.subscribeLink)
-            && Objects.equals(this.subscribeGuide, resouceInfo.subscribeGuide)
-            && Objects.equals(this.type, resouceInfo.type)
-            && Objects.equals(this.referencePrice, resouceInfo.referencePrice)
-            && Objects.equals(this.priceDetailsLink, resouceInfo.priceDetailsLink)
-            && Objects.equals(this.specifications, resouceInfo.specifications);
+        ResouceInfo that = (ResouceInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.homeLink, that.homeLink) && Objects.equals(this.subscribeLink, that.subscribeLink)
+            && Objects.equals(this.subscribeGuide, that.subscribeGuide) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.referencePrice, that.referencePrice)
+            && Objects.equals(this.priceDetailsLink, that.priceDetailsLink)
+            && Objects.equals(this.specifications, that.specifications);
     }
 
     @Override

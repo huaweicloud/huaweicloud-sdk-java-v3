@@ -34,15 +34,15 @@ public class CreateLogGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogGroupResponse createLogGroupResponse = (CreateLogGroupResponse) o;
-        return Objects.equals(this.logGroupId, createLogGroupResponse.logGroupId);
+        CreateLogGroupResponse that = (CreateLogGroupResponse) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId);
     }
 
     @Override

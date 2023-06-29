@@ -121,17 +121,17 @@ public class TaskResourceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskResourceDto taskResourceDto = (TaskResourceDto) o;
-        return Objects.equals(this.cpu, taskResourceDto.cpu) && Objects.equals(this.cpuType, taskResourceDto.cpuType)
-            && Objects.equals(this.memory, taskResourceDto.memory)
-            && Objects.equals(this.gpuType, taskResourceDto.gpuType) && Objects.equals(this.gpu, taskResourceDto.gpu);
+        TaskResourceDto that = (TaskResourceDto) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuType, that.cpuType)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.gpuType, that.gpuType)
+            && Objects.equals(this.gpu, that.gpu);
     }
 
     @Override

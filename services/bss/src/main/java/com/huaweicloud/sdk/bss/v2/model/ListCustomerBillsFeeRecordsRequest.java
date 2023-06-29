@@ -421,32 +421,26 @@ public class ListCustomerBillsFeeRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerBillsFeeRecordsRequest listCustomerBillsFeeRecordsRequest = (ListCustomerBillsFeeRecordsRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerBillsFeeRecordsRequest.xLanguage)
-            && Objects.equals(this.billCycle, listCustomerBillsFeeRecordsRequest.billCycle)
-            && Objects.equals(this.providerType, listCustomerBillsFeeRecordsRequest.providerType)
-            && Objects.equals(this.serviceTypeCode, listCustomerBillsFeeRecordsRequest.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, listCustomerBillsFeeRecordsRequest.resourceTypeCode)
-            && Objects.equals(this.regionCode, listCustomerBillsFeeRecordsRequest.regionCode)
-            && Objects.equals(this.chargingMode, listCustomerBillsFeeRecordsRequest.chargingMode)
-            && Objects.equals(this.billType, listCustomerBillsFeeRecordsRequest.billType)
-            && Objects.equals(this.tradeId, listCustomerBillsFeeRecordsRequest.tradeId)
-            && Objects.equals(this.enterpriseProjectId, listCustomerBillsFeeRecordsRequest.enterpriseProjectId)
-            && Objects.equals(this.includeZeroRecord, listCustomerBillsFeeRecordsRequest.includeZeroRecord)
-            && Objects.equals(this.status, listCustomerBillsFeeRecordsRequest.status)
-            && Objects.equals(this.method, listCustomerBillsFeeRecordsRequest.method)
-            && Objects.equals(this.subCustomerId, listCustomerBillsFeeRecordsRequest.subCustomerId)
-            && Objects.equals(this.offset, listCustomerBillsFeeRecordsRequest.offset)
-            && Objects.equals(this.limit, listCustomerBillsFeeRecordsRequest.limit)
-            && Objects.equals(this.billDateBegin, listCustomerBillsFeeRecordsRequest.billDateBegin)
-            && Objects.equals(this.billDateEnd, listCustomerBillsFeeRecordsRequest.billDateEnd);
+        ListCustomerBillsFeeRecordsRequest that = (ListCustomerBillsFeeRecordsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.billCycle, that.billCycle)
+            && Objects.equals(this.providerType, that.providerType)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.subCustomerId, that.subCustomerId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.billDateBegin, that.billDateBegin)
+            && Objects.equals(this.billDateEnd, that.billDateEnd);
     }
 
     @Override

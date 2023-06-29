@@ -139,19 +139,17 @@ public class CreateCaseExtendsParamRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCaseExtendsParamRequest createCaseExtendsParamRequest = (CreateCaseExtendsParamRequest) o;
-        return Objects.equals(this.caseId, createCaseExtendsParamRequest.caseId)
-            && Objects.equals(this.xSite, createCaseExtendsParamRequest.xSite)
-            && Objects.equals(this.xLanguage, createCaseExtendsParamRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, createCaseExtendsParamRequest.xTimeZone)
-            && Objects.equals(this.body, createCaseExtendsParamRequest.body);
+        CreateCaseExtendsParamRequest that = (CreateCaseExtendsParamRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

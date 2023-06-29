@@ -57,16 +57,15 @@ public class ShowAssetCipherRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetCipherRequest showAssetCipherRequest = (ShowAssetCipherRequest) o;
-        return Objects.equals(this.xSdkDate, showAssetCipherRequest.xSdkDate)
-            && Objects.equals(this.assetId, showAssetCipherRequest.assetId);
+        ShowAssetCipherRequest that = (ShowAssetCipherRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.assetId, that.assetId);
     }
 
     @Override

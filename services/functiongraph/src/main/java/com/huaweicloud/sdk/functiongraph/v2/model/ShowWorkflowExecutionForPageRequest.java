@@ -124,20 +124,17 @@ public class ShowWorkflowExecutionForPageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowExecutionForPageRequest showWorkflowExecutionForPageRequest =
-            (ShowWorkflowExecutionForPageRequest) o;
-        return Objects.equals(this.workflowId, showWorkflowExecutionForPageRequest.workflowId)
-            && Objects.equals(this.offset, showWorkflowExecutionForPageRequest.offset)
-            && Objects.equals(this.limit, showWorkflowExecutionForPageRequest.limit)
-            && Objects.equals(this.startTime, showWorkflowExecutionForPageRequest.startTime)
-            && Objects.equals(this.endTime, showWorkflowExecutionForPageRequest.endTime);
+        ShowWorkflowExecutionForPageRequest that = (ShowWorkflowExecutionForPageRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

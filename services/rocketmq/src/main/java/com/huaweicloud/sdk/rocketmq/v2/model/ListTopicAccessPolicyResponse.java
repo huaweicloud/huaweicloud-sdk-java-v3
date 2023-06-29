@@ -98,17 +98,16 @@ public class ListTopicAccessPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicAccessPolicyResponse listTopicAccessPolicyResponse = (ListTopicAccessPolicyResponse) o;
-        return Objects.equals(this.policies, listTopicAccessPolicyResponse.policies)
-            && Objects.equals(this.total, listTopicAccessPolicyResponse.total)
-            && Objects.equals(this.name, listTopicAccessPolicyResponse.name);
+        ListTopicAccessPolicyResponse that = (ListTopicAccessPolicyResponse) obj;
+        return Objects.equals(this.policies, that.policies) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

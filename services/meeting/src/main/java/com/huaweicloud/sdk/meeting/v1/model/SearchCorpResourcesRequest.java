@@ -284,26 +284,21 @@ public class SearchCorpResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCorpResourcesRequest searchCorpResourcesRequest = (SearchCorpResourcesRequest) o;
-        return Objects.equals(this.xRequestId, searchCorpResourcesRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchCorpResourcesRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchCorpResourcesRequest.offset)
-            && Objects.equals(this.limit, searchCorpResourcesRequest.limit)
-            && Objects.equals(this.searchKey, searchCorpResourcesRequest.searchKey)
-            && Objects.equals(this.startExpireDate, searchCorpResourcesRequest.startExpireDate)
-            && Objects.equals(this.endExpireDate, searchCorpResourcesRequest.endExpireDate)
-            && Objects.equals(this.type, searchCorpResourcesRequest.type)
-            && Objects.equals(this.vmrMode, searchCorpResourcesRequest.vmrMode)
-            && Objects.equals(this.typeId, searchCorpResourcesRequest.typeId)
-            && Objects.equals(this.orderId, searchCorpResourcesRequest.orderId)
-            && Objects.equals(this.status, searchCorpResourcesRequest.status);
+        SearchCorpResourcesRequest that = (SearchCorpResourcesRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.startExpireDate, that.startExpireDate)
+            && Objects.equals(this.endExpireDate, that.endExpireDate) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.vmrMode, that.vmrMode) && Objects.equals(this.typeId, that.typeId)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.status, that.status);
     }
 
     @Override

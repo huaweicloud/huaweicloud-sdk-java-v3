@@ -128,18 +128,17 @@ public class CreateVolumeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeRequestBody createVolumeRequestBody = (CreateVolumeRequestBody) o;
-        return Objects.equals(this.bssParam, createVolumeRequestBody.bssParam)
-            && Objects.equals(this.volume, createVolumeRequestBody.volume)
-            && Objects.equals(this.serverId, createVolumeRequestBody.serverId)
-            && Objects.equals(this.osSCHHNTSchedulerHints, createVolumeRequestBody.osSCHHNTSchedulerHints);
+        CreateVolumeRequestBody that = (CreateVolumeRequestBody) obj;
+        return Objects.equals(this.bssParam, that.bssParam) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.osSCHHNTSchedulerHints, that.osSCHHNTSchedulerHints);
     }
 
     @Override

@@ -127,17 +127,17 @@ public class Networks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Networks networks = (Networks) o;
-        return Objects.equals(this.id, networks.id) && Objects.equals(this.ipv6Enable, networks.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, networks.ipv6Bandwidth)
-            && Objects.equals(this.allowedAddressPairs, networks.allowedAddressPairs);
+        Networks that = (Networks) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override

@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class TagLaborRequest  {
-
+public class TagLaborRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="request_id")
-    
+    @JsonProperty(value = "request_id")
 
     private String requestId;
 
@@ -34,9 +24,6 @@ public class TagLaborRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * qabot编号，UUID格式。
@@ -50,15 +37,10 @@ public class TagLaborRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public TagLaborRequest withRequestId(String requestId) {
         this.requestId = requestId;
         return this;
     }
-
-    
-
 
     /**
      * 请求ID，由问答机器人会话生成。
@@ -72,24 +54,23 @@ public class TagLaborRequest  {
         this.requestId = requestId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagLaborRequest tagLaborRequest = (TagLaborRequest) o;
-        return Objects.equals(this.qabotId, tagLaborRequest.qabotId) &&
-            Objects.equals(this.requestId, tagLaborRequest.requestId);
+        TagLaborRequest that = (TagLaborRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.requestId, that.requestId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, requestId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class TagLaborRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class TagLaborRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,15 @@ public class RetryJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryJobRequest retryJobRequest = (RetryJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, retryJobRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, retryJobRequest.jobId);
+        RetryJobRequest that = (RetryJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

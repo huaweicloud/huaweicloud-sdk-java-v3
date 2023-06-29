@@ -221,23 +221,21 @@ public class UpdateScaleOutPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScaleOutPolicyReq updateScaleOutPolicyReq = (UpdateScaleOutPolicyReq) o;
-        return Objects.equals(this.name, updateScaleOutPolicyReq.name)
-            && Objects.equals(this.maxNodes, updateScaleOutPolicyReq.maxNodes)
-            && Objects.equals(this.minNodes, updateScaleOutPolicyReq.minNodes)
-            && Objects.equals(this.cpuRuleEnable, updateScaleOutPolicyReq.cpuRuleEnable)
-            && Objects.equals(this.cpuPercent, updateScaleOutPolicyReq.cpuPercent)
-            && Objects.equals(this.addNodesForCpuRule, updateScaleOutPolicyReq.addNodesForCpuRule)
-            && Objects.equals(this.memRuleEnable, updateScaleOutPolicyReq.memRuleEnable)
-            && Objects.equals(this.memPercent, updateScaleOutPolicyReq.memPercent)
-            && Objects.equals(this.addNodesForMemRule, updateScaleOutPolicyReq.addNodesForMemRule);
+        UpdateScaleOutPolicyReq that = (UpdateScaleOutPolicyReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.maxNodes, that.maxNodes)
+            && Objects.equals(this.minNodes, that.minNodes) && Objects.equals(this.cpuRuleEnable, that.cpuRuleEnable)
+            && Objects.equals(this.cpuPercent, that.cpuPercent)
+            && Objects.equals(this.addNodesForCpuRule, that.addNodesForCpuRule)
+            && Objects.equals(this.memRuleEnable, that.memRuleEnable)
+            && Objects.equals(this.memPercent, that.memPercent)
+            && Objects.equals(this.addNodesForMemRule, that.addNodesForMemRule);
     }
 
     @Override

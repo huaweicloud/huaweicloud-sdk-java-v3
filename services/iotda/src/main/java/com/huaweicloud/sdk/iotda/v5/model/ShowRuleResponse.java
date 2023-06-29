@@ -307,24 +307,21 @@ public class ShowRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRuleResponse showRuleResponse = (ShowRuleResponse) o;
-        return Objects.equals(this.ruleId, showRuleResponse.ruleId) && Objects.equals(this.name, showRuleResponse.name)
-            && Objects.equals(this.description, showRuleResponse.description)
-            && Objects.equals(this.conditionGroup, showRuleResponse.conditionGroup)
-            && Objects.equals(this.actions, showRuleResponse.actions)
-            && Objects.equals(this.ruleType, showRuleResponse.ruleType)
-            && Objects.equals(this.status, showRuleResponse.status)
-            && Objects.equals(this.appId, showRuleResponse.appId)
-            && Objects.equals(this.edgeNodeIds, showRuleResponse.edgeNodeIds)
-            && Objects.equals(this.lastUpdateTime, showRuleResponse.lastUpdateTime)
-            && Objects.equals(this.deviceSide, showRuleResponse.deviceSide);
+        ShowRuleResponse that = (ShowRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.conditionGroup, that.conditionGroup) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.ruleType, that.ruleType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.edgeNodeIds, that.edgeNodeIds)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.deviceSide, that.deviceSide);
     }
 
     @Override

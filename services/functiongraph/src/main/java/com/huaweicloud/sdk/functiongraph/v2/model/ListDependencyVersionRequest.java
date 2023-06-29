@@ -77,17 +77,16 @@ public class ListDependencyVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDependencyVersionRequest listDependencyVersionRequest = (ListDependencyVersionRequest) o;
-        return Objects.equals(this.dependId, listDependencyVersionRequest.dependId)
-            && Objects.equals(this.marker, listDependencyVersionRequest.marker)
-            && Objects.equals(this.maxitems, listDependencyVersionRequest.maxitems);
+        ListDependencyVersionRequest that = (ListDependencyVersionRequest) obj;
+        return Objects.equals(this.dependId, that.dependId) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.maxitems, that.maxitems);
     }
 
     @Override

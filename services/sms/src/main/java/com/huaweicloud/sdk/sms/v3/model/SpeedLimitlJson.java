@@ -79,16 +79,16 @@ public class SpeedLimitlJson {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpeedLimitlJson speedLimitlJson = (SpeedLimitlJson) o;
-        return Objects.equals(this.start, speedLimitlJson.start) && Objects.equals(this.end, speedLimitlJson.end)
-            && Objects.equals(this.speed, speedLimitlJson.speed);
+        SpeedLimitlJson that = (SpeedLimitlJson) obj;
+        return Objects.equals(this.start, that.start) && Objects.equals(this.end, that.end)
+            && Objects.equals(this.speed, that.speed);
     }
 
     @Override

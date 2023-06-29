@@ -55,15 +55,15 @@ public class BasePage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BasePage basePage = (BasePage) o;
-        return Objects.equals(this.size, basePage.size) && Objects.equals(this.total, basePage.total);
+        BasePage that = (BasePage) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdatePrePaidBandwidthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrePaidBandwidthRequest updatePrePaidBandwidthRequest = (UpdatePrePaidBandwidthRequest) o;
-        return Objects.equals(this.bandwidthId, updatePrePaidBandwidthRequest.bandwidthId)
-            && Objects.equals(this.body, updatePrePaidBandwidthRequest.body);
+        UpdatePrePaidBandwidthRequest that = (UpdatePrePaidBandwidthRequest) obj;
+        return Objects.equals(this.bandwidthId, that.bandwidthId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -198,20 +198,20 @@ public class InsuranceItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InsuranceItem insuranceItem = (InsuranceItem) o;
-        return Objects.equals(this.insuranceName, insuranceItem.insuranceName)
-            && Objects.equals(this.insurancePeriod, insuranceItem.insurancePeriod)
-            && Objects.equals(this.insuranceAmount, insuranceItem.insuranceAmount)
-            && Objects.equals(this.paymentFrequency, insuranceItem.paymentFrequency)
-            && Objects.equals(this.paymentPeriod, insuranceItem.paymentPeriod)
-            && Objects.equals(this.paymentAmount, insuranceItem.paymentAmount);
+        InsuranceItem that = (InsuranceItem) obj;
+        return Objects.equals(this.insuranceName, that.insuranceName)
+            && Objects.equals(this.insurancePeriod, that.insurancePeriod)
+            && Objects.equals(this.insuranceAmount, that.insuranceAmount)
+            && Objects.equals(this.paymentFrequency, that.paymentFrequency)
+            && Objects.equals(this.paymentPeriod, that.paymentPeriod)
+            && Objects.equals(this.paymentAmount, that.paymentAmount);
     }
 
     @Override

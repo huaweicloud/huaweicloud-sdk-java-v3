@@ -96,17 +96,16 @@ public class CreateTemplateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemplateReq createTemplateReq = (CreateTemplateReq) o;
-        return Objects.equals(this.name, createTemplateReq.name)
-            && Objects.equals(this.description, createTemplateReq.description)
-            && Objects.equals(this.columns, createTemplateReq.columns);
+        CreateTemplateReq that = (CreateTemplateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.columns, that.columns);
     }
 
     @Override

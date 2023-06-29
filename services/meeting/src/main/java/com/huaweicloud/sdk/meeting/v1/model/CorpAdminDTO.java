@@ -33,15 +33,15 @@ public class CorpAdminDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CorpAdminDTO corpAdminDTO = (CorpAdminDTO) o;
-        return Objects.equals(this.account, corpAdminDTO.account);
+        CorpAdminDTO that = (CorpAdminDTO) obj;
+        return Objects.equals(this.account, that.account);
     }
 
     @Override

@@ -29,8 +29,8 @@ public class ListAssetListRequest {
     private List<String> assetId = null;
 
     /**
-    * Gets or Sets status
-    */
+     * Gets or Sets status
+     */
     public static final class StatusEnum {
 
         /**
@@ -163,22 +163,15 @@ public class ListAssetListRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,22 +278,15 @@ public class ListAssetListRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -577,26 +563,20 @@ public class ListAssetListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetListRequest listAssetListRequest = (ListAssetListRequest) o;
-        return Objects.equals(this.xSdkDate, listAssetListRequest.xSdkDate)
-            && Objects.equals(this.assetId, listAssetListRequest.assetId)
-            && Objects.equals(this.status, listAssetListRequest.status)
-            && Objects.equals(this.startTime, listAssetListRequest.startTime)
-            && Objects.equals(this.endTime, listAssetListRequest.endTime)
-            && Objects.equals(this.categoryId, listAssetListRequest.categoryId)
-            && Objects.equals(this.tags, listAssetListRequest.tags)
-            && Objects.equals(this.queryString, listAssetListRequest.queryString)
-            && Objects.equals(this.mediaType, listAssetListRequest.mediaType)
-            && Objects.equals(this.page, listAssetListRequest.page)
-            && Objects.equals(this.size, listAssetListRequest.size)
-            && Objects.equals(this.order, listAssetListRequest.order);
+        ListAssetListRequest that = (ListAssetListRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.queryString, that.queryString)
+            && Objects.equals(this.mediaType, that.mediaType) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.order, that.order);
     }
 
     @Override

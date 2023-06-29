@@ -1,41 +1,34 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * UpdateEdgeAppVersionStateDTO
  */
-public class UpdateEdgeAppVersionStateDTO  {
+public class UpdateEdgeAppVersionStateDTO {
 
     /**
      * 应用版本状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum PUBLISHED for value: "PUBLISHED"
          */
         public static final StateEnum PUBLISHED = new StateEnum("PUBLISHED");
-        
+
         /**
          * Enum OFF_SHELF for value: "OFF_SHELF"
          */
         public static final StateEnum OFF_SHELF = new StateEnum("OFF_SHELF");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -64,25 +57,18 @@ public class UpdateEdgeAppVersionStateDTO  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -100,8 +86,7 @@ public class UpdateEdgeAppVersionStateDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
@@ -109,9 +94,6 @@ public class UpdateEdgeAppVersionStateDTO  {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本状态
@@ -125,23 +107,23 @@ public class UpdateEdgeAppVersionStateDTO  {
         this.state = state;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeAppVersionStateDTO updateEdgeAppVersionStateDTO = (UpdateEdgeAppVersionStateDTO) o;
-        return Objects.equals(this.state, updateEdgeAppVersionStateDTO.state);
+        UpdateEdgeAppVersionStateDTO that = (UpdateEdgeAppVersionStateDTO) obj;
+        return Objects.equals(this.state, that.state);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(state);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,6 +132,7 @@ public class UpdateEdgeAppVersionStateDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -160,8 +143,5 @@ public class UpdateEdgeAppVersionStateDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

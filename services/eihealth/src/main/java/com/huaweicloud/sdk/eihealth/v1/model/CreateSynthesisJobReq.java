@@ -96,17 +96,16 @@ public class CreateSynthesisJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSynthesisJobReq createSynthesisJobReq = (CreateSynthesisJobReq) o;
-        return Objects.equals(this.basicInfo, createSynthesisJobReq.basicInfo)
-            && Objects.equals(this.smiles, createSynthesisJobReq.smiles)
-            && Objects.equals(this.params, createSynthesisJobReq.params);
+        CreateSynthesisJobReq that = (CreateSynthesisJobReq) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

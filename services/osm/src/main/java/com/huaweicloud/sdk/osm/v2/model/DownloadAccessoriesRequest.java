@@ -155,19 +155,17 @@ public class DownloadAccessoriesRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadAccessoriesRequest downloadAccessoriesRequest = (DownloadAccessoriesRequest) o;
-        return Objects.equals(this.accessoryId, downloadAccessoriesRequest.accessoryId)
-            && Objects.equals(this.groupId, downloadAccessoriesRequest.groupId)
-            && Objects.equals(this.xSite, downloadAccessoriesRequest.xSite)
-            && Objects.equals(this.xLanguage, downloadAccessoriesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, downloadAccessoriesRequest.xTimeZone);
+        DownloadAccessoriesRequest that = (DownloadAccessoriesRequest) obj;
+        return Objects.equals(this.accessoryId, that.accessoryId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

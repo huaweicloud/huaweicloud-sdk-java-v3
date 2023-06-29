@@ -74,16 +74,15 @@ public class NotificationUsers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotificationUsers notificationUsers = (NotificationUsers) o;
-        return Objects.equals(this.userGroup, notificationUsers.userGroup)
-            && Objects.equals(this.userList, notificationUsers.userList);
+        NotificationUsers that = (NotificationUsers) obj;
+        return Objects.equals(this.userGroup, that.userGroup) && Objects.equals(this.userList, that.userList);
     }
 
     @Override

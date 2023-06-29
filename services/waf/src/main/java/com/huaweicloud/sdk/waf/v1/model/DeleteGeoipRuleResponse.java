@@ -188,22 +188,18 @@ public class DeleteGeoipRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGeoipRuleResponse deleteGeoipRuleResponse = (DeleteGeoipRuleResponse) o;
-        return Objects.equals(this.id, deleteGeoipRuleResponse.id)
-            && Objects.equals(this.name, deleteGeoipRuleResponse.name)
-            && Objects.equals(this.policyid, deleteGeoipRuleResponse.policyid)
-            && Objects.equals(this.geoip, deleteGeoipRuleResponse.geoip)
-            && Objects.equals(this.white, deleteGeoipRuleResponse.white)
-            && Objects.equals(this.status, deleteGeoipRuleResponse.status)
-            && Objects.equals(this.description, deleteGeoipRuleResponse.description)
-            && Objects.equals(this.timestamp, deleteGeoipRuleResponse.timestamp);
+        DeleteGeoipRuleResponse that = (DeleteGeoipRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.geoip, that.geoip)
+            && Objects.equals(this.white, that.white) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class UpdateInstanceRemarkRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceRemarkRequestBody updateInstanceRemarkRequestBody = (UpdateInstanceRemarkRequestBody) o;
-        return Objects.equals(this.remark, updateInstanceRemarkRequestBody.remark);
+        UpdateInstanceRemarkRequestBody that = (UpdateInstanceRemarkRequestBody) obj;
+        return Objects.equals(this.remark, that.remark);
     }
 
     @Override

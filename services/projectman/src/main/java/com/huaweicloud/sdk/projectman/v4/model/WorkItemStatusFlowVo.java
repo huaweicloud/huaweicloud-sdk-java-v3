@@ -294,26 +294,21 @@ public class WorkItemStatusFlowVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkItemStatusFlowVo workItemStatusFlowVo = (WorkItemStatusFlowVo) o;
-        return Objects.equals(this.parentName, workItemStatusFlowVo.parentName)
-            && Objects.equals(this.parentType, workItemStatusFlowVo.parentType)
-            && Objects.equals(this.statusId, workItemStatusFlowVo.statusId)
-            && Objects.equals(this.name, workItemStatusFlowVo.name)
-            && Objects.equals(this.statusType, workItemStatusFlowVo.statusType)
-            && Objects.equals(this.directTo, workItemStatusFlowVo.directTo)
-            && Objects.equals(this.assignTo, workItemStatusFlowVo.assignTo)
-            && Objects.equals(this.comment, workItemStatusFlowVo.comment)
-            && Objects.equals(this.requiredAssign, workItemStatusFlowVo.requiredAssign)
-            && Objects.equals(this.requiredNotes, workItemStatusFlowVo.requiredNotes)
-            && Objects.equals(this.fieldType, workItemStatusFlowVo.fieldType)
-            && Objects.equals(this.parentId, workItemStatusFlowVo.parentId);
+        WorkItemStatusFlowVo that = (WorkItemStatusFlowVo) obj;
+        return Objects.equals(this.parentName, that.parentName) && Objects.equals(this.parentType, that.parentType)
+            && Objects.equals(this.statusId, that.statusId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.statusType, that.statusType) && Objects.equals(this.directTo, that.directTo)
+            && Objects.equals(this.assignTo, that.assignTo) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.requiredAssign, that.requiredAssign)
+            && Objects.equals(this.requiredNotes, that.requiredNotes) && Objects.equals(this.fieldType, that.fieldType)
+            && Objects.equals(this.parentId, that.parentId);
     }
 
     @Override

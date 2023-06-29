@@ -77,17 +77,17 @@ public class IncidentTempV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentTempV2 incidentTempV2 = (IncidentTempV2) o;
-        return Objects.equals(this.incidentTemplateId, incidentTempV2.incidentTemplateId)
-            && Objects.equals(this.incidentTemplateName, incidentTempV2.incidentTemplateName)
-            && Objects.equals(this.incidentTemplateContent, incidentTempV2.incidentTemplateContent);
+        IncidentTempV2 that = (IncidentTempV2) obj;
+        return Objects.equals(this.incidentTemplateId, that.incidentTemplateId)
+            && Objects.equals(this.incidentTemplateName, that.incidentTemplateName)
+            && Objects.equals(this.incidentTemplateContent, that.incidentTemplateContent);
     }
 
     @Override

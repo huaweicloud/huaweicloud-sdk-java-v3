@@ -121,17 +121,16 @@ public class CaseReportDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseReportDetails caseReportDetails = (CaseReportDetails) o;
-        return Objects.equals(this.customTransactions, caseReportDetails.customTransactions)
-            && Objects.equals(this.detailDatas, caseReportDetails.detailDatas)
-            && Objects.equals(this.performance, caseReportDetails.performance);
+        CaseReportDetails that = (CaseReportDetails) obj;
+        return Objects.equals(this.customTransactions, that.customTransactions)
+            && Objects.equals(this.detailDatas, that.detailDatas) && Objects.equals(this.performance, that.performance);
     }
 
     @Override

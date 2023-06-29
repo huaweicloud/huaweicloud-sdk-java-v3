@@ -289,25 +289,20 @@ public class UploadJarsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadJarsResponse uploadJarsResponse = (UploadJarsResponse) o;
-        return Objects.equals(this.status, uploadJarsResponse.status)
-            && Objects.equals(this.description, uploadJarsResponse.description)
-            && Objects.equals(this.resources, uploadJarsResponse.resources)
-            && Objects.equals(this.createTime, uploadJarsResponse.createTime)
-            && Objects.equals(this.updateTime, uploadJarsResponse.updateTime)
-            && Objects.equals(this.groupName, uploadJarsResponse.groupName)
-            && Objects.equals(this.owner, uploadJarsResponse.owner)
-            && Objects.equals(this.isAsync, uploadJarsResponse.isAsync)
-            && Objects.equals(this.details, uploadJarsResponse.details)
-            && Objects.equals(this.moduleName, uploadJarsResponse.moduleName)
-            && Objects.equals(this.moduleType, uploadJarsResponse.moduleType);
+        UploadJarsResponse that = (UploadJarsResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.isAsync, that.isAsync)
+            && Objects.equals(this.details, that.details) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.moduleType, that.moduleType);
     }
 
     @Override

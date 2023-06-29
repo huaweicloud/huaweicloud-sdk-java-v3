@@ -96,17 +96,16 @@ public class QueryFlowCompareDataResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryFlowCompareDataResp queryFlowCompareDataResp = (QueryFlowCompareDataResp) o;
-        return Objects.equals(this.totalRecord, queryFlowCompareDataResp.totalRecord)
-            && Objects.equals(this.createTime, queryFlowCompareDataResp.createTime)
-            && Objects.equals(this.list, queryFlowCompareDataResp.list);
+        QueryFlowCompareDataResp that = (QueryFlowCompareDataResp) obj;
+        return Objects.equals(this.totalRecord, that.totalRecord) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.list, that.list);
     }
 
     @Override

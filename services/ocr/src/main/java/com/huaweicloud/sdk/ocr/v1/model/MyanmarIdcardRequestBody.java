@@ -165,21 +165,20 @@ public class MyanmarIdcardRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MyanmarIdcardRequestBody myanmarIdcardRequestBody = (MyanmarIdcardRequestBody) o;
-        return Objects.equals(this.image, myanmarIdcardRequestBody.image)
-            && Objects.equals(this.url, myanmarIdcardRequestBody.url)
-            && Objects.equals(this.convertUnicode, myanmarIdcardRequestBody.convertUnicode)
-            && Objects.equals(this.returnConfidence, myanmarIdcardRequestBody.returnConfidence)
-            && Objects.equals(this.returnPortraitImage, myanmarIdcardRequestBody.returnPortraitImage)
-            && Objects.equals(this.returnPortraitLocation, myanmarIdcardRequestBody.returnPortraitLocation)
-            && Objects.equals(this.returnIdcardType, myanmarIdcardRequestBody.returnIdcardType);
+        MyanmarIdcardRequestBody that = (MyanmarIdcardRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.convertUnicode, that.convertUnicode)
+            && Objects.equals(this.returnConfidence, that.returnConfidence)
+            && Objects.equals(this.returnPortraitImage, that.returnPortraitImage)
+            && Objects.equals(this.returnPortraitLocation, that.returnPortraitLocation)
+            && Objects.equals(this.returnIdcardType, that.returnIdcardType);
     }
 
     @Override

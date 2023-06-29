@@ -125,19 +125,17 @@ public class ListMemberJobRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMemberJobRecordsRequest listMemberJobRecordsRequest = (ListMemberJobRecordsRequest) o;
-        return Objects.equals(this.jobId, listMemberJobRecordsRequest.jobId)
-            && Objects.equals(this.exerciseId, listMemberJobRecordsRequest.exerciseId)
-            && Objects.equals(this.memberId, listMemberJobRecordsRequest.memberId)
-            && Objects.equals(this.offset, listMemberJobRecordsRequest.offset)
-            && Objects.equals(this.limit, listMemberJobRecordsRequest.limit);
+        ListMemberJobRecordsRequest that = (ListMemberJobRecordsRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.exerciseId, that.exerciseId)
+            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

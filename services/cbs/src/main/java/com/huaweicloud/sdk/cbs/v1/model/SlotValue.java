@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class SlotValue  {
-
+public class SlotValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="word")
-    
+    @JsonProperty(value = "word")
 
     private String word;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="norm_word")
-    
+    @JsonProperty(value = "norm_word")
 
     private String normWord;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_position")
-    
+    @JsonProperty(value = "begin_position")
 
     private Integer beginPosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_position")
-    
+    @JsonProperty(value = "end_position")
 
     private Integer endPosition;
 
@@ -45,9 +34,6 @@ public class SlotValue  {
         this.word = word;
         return this;
     }
-
-    
-
 
     /**
      * 词。
@@ -61,15 +47,10 @@ public class SlotValue  {
         this.word = word;
     }
 
-    
-
     public SlotValue withNormWord(String normWord) {
         this.normWord = normWord;
         return this;
     }
-
-    
-
 
     /**
      * 归一化后的标准词。
@@ -83,15 +64,10 @@ public class SlotValue  {
         this.normWord = normWord;
     }
 
-    
-
     public SlotValue withBeginPosition(Integer beginPosition) {
         this.beginPosition = beginPosition;
         return this;
     }
-
-    
-
 
     /**
      * 词的起始位置。
@@ -105,15 +81,10 @@ public class SlotValue  {
         this.beginPosition = beginPosition;
     }
 
-    
-
     public SlotValue withEndPosition(Integer endPosition) {
         this.endPosition = endPosition;
         return this;
     }
-
-    
-
 
     /**
      * 词的结束位置。
@@ -127,26 +98,25 @@ public class SlotValue  {
         this.endPosition = endPosition;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlotValue slotValue = (SlotValue) o;
-        return Objects.equals(this.word, slotValue.word) &&
-            Objects.equals(this.normWord, slotValue.normWord) &&
-            Objects.equals(this.beginPosition, slotValue.beginPosition) &&
-            Objects.equals(this.endPosition, slotValue.endPosition);
+        SlotValue that = (SlotValue) obj;
+        return Objects.equals(this.word, that.word) && Objects.equals(this.normWord, that.normWord)
+            && Objects.equals(this.beginPosition, that.beginPosition)
+            && Objects.equals(this.endPosition, that.endPosition);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(word, normWord, beginPosition, endPosition);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +128,7 @@ public class SlotValue  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +139,5 @@ public class SlotValue  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

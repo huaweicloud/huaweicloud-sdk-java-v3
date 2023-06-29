@@ -74,16 +74,16 @@ public class ShowVirtualInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVirtualInterfaceRequest showVirtualInterfaceRequest = (ShowVirtualInterfaceRequest) o;
-        return Objects.equals(this.fields, showVirtualInterfaceRequest.fields)
-            && Objects.equals(this.virtualInterfaceId, showVirtualInterfaceRequest.virtualInterfaceId);
+        ShowVirtualInterfaceRequest that = (ShowVirtualInterfaceRequest) obj;
+        return Objects.equals(this.fields, that.fields)
+            && Objects.equals(this.virtualInterfaceId, that.virtualInterfaceId);
     }
 
     @Override

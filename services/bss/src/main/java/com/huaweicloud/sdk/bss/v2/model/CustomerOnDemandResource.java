@@ -341,29 +341,26 @@ public class CustomerOnDemandResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerOnDemandResource customerOnDemandResource = (CustomerOnDemandResource) o;
-        return Objects.equals(this.customerId, customerOnDemandResource.customerId)
-            && Objects.equals(this.regionCode, customerOnDemandResource.regionCode)
-            && Objects.equals(this.availabilityZoneCode, customerOnDemandResource.availabilityZoneCode)
-            && Objects.equals(this.serviceTypeCode, customerOnDemandResource.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, customerOnDemandResource.resourceTypeCode)
-            && Objects.equals(this.serviceTypeName, customerOnDemandResource.serviceTypeName)
-            && Objects.equals(this.resourceTypeName, customerOnDemandResource.resourceTypeName)
-            && Objects.equals(this.resourceId, customerOnDemandResource.resourceId)
-            && Objects.equals(this.resourceName, customerOnDemandResource.resourceName)
-            && Objects.equals(this.effectiveTime, customerOnDemandResource.effectiveTime)
-            && Objects.equals(this.expireTime, customerOnDemandResource.expireTime)
-            && Objects.equals(this.status, customerOnDemandResource.status)
-            && Objects.equals(this.resourceSpecCode, customerOnDemandResource.resourceSpecCode)
-            && Objects.equals(this.resourceInfo, customerOnDemandResource.resourceInfo)
-            && Objects.equals(this.productSpecDesc, customerOnDemandResource.productSpecDesc);
+        CustomerOnDemandResource that = (CustomerOnDemandResource) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.availabilityZoneCode, that.availabilityZoneCode)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.resourceInfo, that.resourceInfo)
+            && Objects.equals(this.productSpecDesc, that.productSpecDesc);
     }
 
     @Override

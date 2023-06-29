@@ -84,16 +84,15 @@ public class ListHandshakesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHandshakesResponse listHandshakesResponse = (ListHandshakesResponse) o;
-        return Objects.equals(this.handshakes, listHandshakesResponse.handshakes)
-            && Objects.equals(this.pageInfo, listHandshakesResponse.pageInfo);
+        ListHandshakesResponse that = (ListHandshakesResponse) obj;
+        return Objects.equals(this.handshakes, that.handshakes) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

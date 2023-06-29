@@ -74,16 +74,15 @@ public class IotdaContentRuleReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IotdaContentRuleReq iotdaContentRuleReq = (IotdaContentRuleReq) o;
-        return Objects.equals(this.appId, iotdaContentRuleReq.appId)
-            && Objects.equals(this.products, iotdaContentRuleReq.products);
+        IotdaContentRuleReq that = (IotdaContentRuleReq) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.products, that.products);
     }
 
     @Override

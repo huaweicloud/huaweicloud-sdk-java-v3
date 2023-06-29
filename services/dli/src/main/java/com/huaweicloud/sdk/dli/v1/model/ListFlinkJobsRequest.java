@@ -275,26 +275,21 @@ public class ListFlinkJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlinkJobsRequest listFlinkJobsRequest = (ListFlinkJobsRequest) o;
-        return Objects.equals(this.jobType, listFlinkJobsRequest.jobType)
-            && Objects.equals(this.limit, listFlinkJobsRequest.limit)
-            && Objects.equals(this.name, listFlinkJobsRequest.name)
-            && Objects.equals(this.offset, listFlinkJobsRequest.offset)
-            && Objects.equals(this.order, listFlinkJobsRequest.order)
-            && Objects.equals(this.queueName, listFlinkJobsRequest.queueName)
-            && Objects.equals(this.rootJobId, listFlinkJobsRequest.rootJobId)
-            && Objects.equals(this.showDetail, listFlinkJobsRequest.showDetail)
-            && Objects.equals(this.status, listFlinkJobsRequest.status)
-            && Objects.equals(this.sysEnterpriseProjectName, listFlinkJobsRequest.sysEnterpriseProjectName)
-            && Objects.equals(this.tags, listFlinkJobsRequest.tags)
-            && Objects.equals(this.userName, listFlinkJobsRequest.userName);
+        ListFlinkJobsRequest that = (ListFlinkJobsRequest) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.rootJobId, that.rootJobId) && Objects.equals(this.showDetail, that.showDetail)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.sysEnterpriseProjectName, that.sysEnterpriseProjectName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

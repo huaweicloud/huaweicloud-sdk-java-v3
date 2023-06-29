@@ -209,23 +209,20 @@ public class ListDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainsRequest listDomainsRequest = (ListDomainsRequest) o;
-        return Objects.equals(this.domainName, listDomainsRequest.domainName)
-            && Objects.equals(this.businessType, listDomainsRequest.businessType)
-            && Objects.equals(this.domainStatus, listDomainsRequest.domainStatus)
-            && Objects.equals(this.serviceArea, listDomainsRequest.serviceArea)
-            && Objects.equals(this.pageSize, listDomainsRequest.pageSize)
-            && Objects.equals(this.pageNumber, listDomainsRequest.pageNumber)
-            && Objects.equals(this.showTags, listDomainsRequest.showTags)
-            && Objects.equals(this.exactMatch, listDomainsRequest.exactMatch)
-            && Objects.equals(this.enterpriseProjectId, listDomainsRequest.enterpriseProjectId);
+        ListDomainsRequest that = (ListDomainsRequest) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.domainStatus, that.domainStatus)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.pageNumber, that.pageNumber) && Objects.equals(this.showTags, that.showTags)
+            && Objects.equals(this.exactMatch, that.exactMatch)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

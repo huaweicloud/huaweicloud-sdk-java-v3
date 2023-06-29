@@ -149,17 +149,17 @@ public class MenuItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MenuItem menuItem = (MenuItem) o;
-        return Objects.equals(this.name, menuItem.name) && Objects.equals(this.actionType, menuItem.actionType)
-            && Objects.equals(this.content, menuItem.content) && Objects.equals(this.extMsg, menuItem.extMsg)
-            && Objects.equals(this.subMenuItems, menuItem.subMenuItems);
+        MenuItem that = (MenuItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.extMsg, that.extMsg)
+            && Objects.equals(this.subMenuItems, that.subMenuItems);
     }
 
     @Override

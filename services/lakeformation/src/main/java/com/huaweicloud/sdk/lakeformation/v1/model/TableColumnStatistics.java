@@ -85,16 +85,16 @@ public class TableColumnStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableColumnStatistics tableColumnStatistics = (TableColumnStatistics) o;
-        return Objects.equals(this.columnStatisticsDesc, tableColumnStatistics.columnStatisticsDesc)
-            && Objects.equals(this.columnStatisticsObjects, tableColumnStatistics.columnStatisticsObjects);
+        TableColumnStatistics that = (TableColumnStatistics) obj;
+        return Objects.equals(this.columnStatisticsDesc, that.columnStatisticsDesc)
+            && Objects.equals(this.columnStatisticsObjects, that.columnStatisticsObjects);
     }
 
     @Override

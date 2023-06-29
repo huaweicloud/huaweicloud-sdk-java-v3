@@ -319,22 +319,21 @@ public class NetResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetResp netResp = (NetResp) o;
-        return Objects.equals(this.virtualClusterId, netResp.virtualClusterId)
-            && Objects.equals(this.ctime, netResp.ctime) && Objects.equals(this.hostId, netResp.hostId)
-            && Objects.equals(this.hostName, netResp.hostName)
-            && Objects.equals(this.instanceName, netResp.instanceName) && Objects.equals(this.up, netResp.up)
-            && Objects.equals(this.speed, netResp.speed) && Objects.equals(this.recvPackets, netResp.recvPackets)
-            && Objects.equals(this.sendPackets, netResp.sendPackets) && Objects.equals(this.recvDrop, netResp.recvDrop)
-            && Objects.equals(this.recvRate, netResp.recvRate) && Objects.equals(this.sendRate, netResp.sendRate)
-            && Objects.equals(this.ioRate, netResp.ioRate) && Objects.equals(this.interfaceName, netResp.interfaceName);
+        NetResp that = (NetResp) obj;
+        return Objects.equals(this.virtualClusterId, that.virtualClusterId) && Objects.equals(this.ctime, that.ctime)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.up, that.up)
+            && Objects.equals(this.speed, that.speed) && Objects.equals(this.recvPackets, that.recvPackets)
+            && Objects.equals(this.sendPackets, that.sendPackets) && Objects.equals(this.recvDrop, that.recvDrop)
+            && Objects.equals(this.recvRate, that.recvRate) && Objects.equals(this.sendRate, that.sendRate)
+            && Objects.equals(this.ioRate, that.ioRate) && Objects.equals(this.interfaceName, that.interfaceName);
     }
 
     @Override

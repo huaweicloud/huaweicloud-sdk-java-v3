@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CharacterPosition
  */
-public class CharacterPosition  {
-
+public class CharacterPosition {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="x")
-    
+    @JsonProperty(value = "x")
 
     private Integer x;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="y")
-    
+    @JsonProperty(value = "y")
 
     private String y;
 
@@ -33,9 +24,6 @@ public class CharacterPosition  {
         this.x = x;
         return this;
     }
-
-    
-
 
     /**
      * 从左上为0点出发的横坐标
@@ -49,15 +37,10 @@ public class CharacterPosition  {
         this.x = x;
     }
 
-    
-
     public CharacterPosition withY(String y) {
         this.y = y;
         return this;
     }
-
-    
-
 
     /**
      * 从左上为0点出发的纵坐标
@@ -71,24 +54,23 @@ public class CharacterPosition  {
         this.y = y;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CharacterPosition characterPosition = (CharacterPosition) o;
-        return Objects.equals(this.x, characterPosition.x) &&
-            Objects.equals(this.y, characterPosition.y);
+        CharacterPosition that = (CharacterPosition) obj;
+        return Objects.equals(this.x, that.x) && Objects.equals(this.y, that.y);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class CharacterPosition  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class CharacterPosition  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

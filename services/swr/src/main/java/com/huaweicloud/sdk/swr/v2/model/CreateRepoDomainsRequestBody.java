@@ -99,18 +99,16 @@ public class CreateRepoDomainsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRepoDomainsRequestBody createRepoDomainsRequestBody = (CreateRepoDomainsRequestBody) o;
-        return Objects.equals(this.accessDomain, createRepoDomainsRequestBody.accessDomain)
-            && Objects.equals(this.permit, createRepoDomainsRequestBody.permit)
-            && Objects.equals(this.deadline, createRepoDomainsRequestBody.deadline)
-            && Objects.equals(this.description, createRepoDomainsRequestBody.description);
+        CreateRepoDomainsRequestBody that = (CreateRepoDomainsRequestBody) obj;
+        return Objects.equals(this.accessDomain, that.accessDomain) && Objects.equals(this.permit, that.permit)
+            && Objects.equals(this.deadline, that.deadline) && Objects.equals(this.description, that.description);
     }
 
     @Override

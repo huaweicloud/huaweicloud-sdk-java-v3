@@ -33,15 +33,15 @@ public class PwdResetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PwdResetRequest pwdResetRequest = (PwdResetRequest) o;
-        return Objects.equals(this.dbUserPwd, pwdResetRequest.dbUserPwd);
+        PwdResetRequest that = (PwdResetRequest) obj;
+        return Objects.equals(this.dbUserPwd, that.dbUserPwd);
     }
 
     @Override

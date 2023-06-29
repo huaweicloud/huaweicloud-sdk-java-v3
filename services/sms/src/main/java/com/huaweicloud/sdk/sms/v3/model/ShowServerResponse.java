@@ -169,22 +169,15 @@ public class ShowServerResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -256,22 +249,15 @@ public class ShowServerResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FirmwareEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FirmwareEnum(value));
         }
 
         public static FirmwareEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FirmwareEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -339,8 +325,8 @@ public class ShowServerResponse extends SdkResponse {
     private List<EnvironmentCheck> checks = null;
 
     /**
-    * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
-    */
+     * 迁移周期 cutovering:启动目的端中 cutovered:启动目的端完成 checking:检查中 setting:设置中 replicating:复制中 syncing:同步中 
+     */
     public static final class MigrationCycleEnum {
 
         /**
@@ -407,22 +393,15 @@ public class ShowServerResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MigrationCycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MigrationCycleEnum(value));
         }
 
         public static MigrationCycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MigrationCycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1065,41 +1044,32 @@ public class ShowServerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerResponse showServerResponse = (ShowServerResponse) o;
-        return Objects.equals(this.id, showServerResponse.id) && Objects.equals(this.ip, showServerResponse.ip)
-            && Objects.equals(this.name, showServerResponse.name)
-            && Objects.equals(this.hostname, showServerResponse.hostname)
-            && Objects.equals(this.enterpriseProjectId, showServerResponse.enterpriseProjectId)
-            && Objects.equals(this.addDate, showServerResponse.addDate)
-            && Objects.equals(this.osType, showServerResponse.osType)
-            && Objects.equals(this.osVersion, showServerResponse.osVersion)
-            && Objects.equals(this.oemSystem, showServerResponse.oemSystem)
-            && Objects.equals(this.state, showServerResponse.state)
-            && Objects.equals(this.connected, showServerResponse.connected)
-            && Objects.equals(this.firmware, showServerResponse.firmware)
-            && Objects.equals(this.initTargetServer, showServerResponse.initTargetServer)
-            && Objects.equals(this.cpuQuantity, showServerResponse.cpuQuantity)
-            && Objects.equals(this.memory, showServerResponse.memory)
-            && Objects.equals(this.currentTask, showServerResponse.currentTask)
-            && Objects.equals(this.disks, showServerResponse.disks)
-            && Objects.equals(this.volumeGroups, showServerResponse.volumeGroups)
-            && Objects.equals(this.btrfsList, showServerResponse.btrfsList)
-            && Objects.equals(this.networks, showServerResponse.networks)
-            && Objects.equals(this.checks, showServerResponse.checks)
-            && Objects.equals(this.migrationCycle, showServerResponse.migrationCycle)
-            && Objects.equals(this.stateActionTime, showServerResponse.stateActionTime)
-            && Objects.equals(this.replicatesize, showServerResponse.replicatesize)
-            && Objects.equals(this.totalsize, showServerResponse.totalsize)
-            && Objects.equals(this.lastVisitTime, showServerResponse.lastVisitTime)
-            && Objects.equals(this.stageActionTime, showServerResponse.stageActionTime)
-            && Objects.equals(this.agentVersion, showServerResponse.agentVersion);
+        ShowServerResponse that = (ShowServerResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.addDate, that.addDate) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.oemSystem, that.oemSystem)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.connected, that.connected)
+            && Objects.equals(this.firmware, that.firmware)
+            && Objects.equals(this.initTargetServer, that.initTargetServer)
+            && Objects.equals(this.cpuQuantity, that.cpuQuantity) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.currentTask, that.currentTask) && Objects.equals(this.disks, that.disks)
+            && Objects.equals(this.volumeGroups, that.volumeGroups) && Objects.equals(this.btrfsList, that.btrfsList)
+            && Objects.equals(this.networks, that.networks) && Objects.equals(this.checks, that.checks)
+            && Objects.equals(this.migrationCycle, that.migrationCycle)
+            && Objects.equals(this.stateActionTime, that.stateActionTime)
+            && Objects.equals(this.replicatesize, that.replicatesize) && Objects.equals(this.totalsize, that.totalsize)
+            && Objects.equals(this.lastVisitTime, that.lastVisitTime)
+            && Objects.equals(this.stageActionTime, that.stageActionTime)
+            && Objects.equals(this.agentVersion, that.agentVersion);
     }
 
     @Override

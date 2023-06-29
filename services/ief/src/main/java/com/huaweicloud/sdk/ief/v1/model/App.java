@@ -43,15 +43,15 @@ public class App {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        App app = (App) o;
-        return Objects.equals(this.app, app.app);
+        App that = (App) obj;
+        return Objects.equals(this.app, that.app);
     }
 
     @Override

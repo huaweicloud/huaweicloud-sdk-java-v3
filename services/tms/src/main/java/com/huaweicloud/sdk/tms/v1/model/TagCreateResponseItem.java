@@ -99,18 +99,16 @@ public class TagCreateResponseItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagCreateResponseItem tagCreateResponseItem = (TagCreateResponseItem) o;
-        return Objects.equals(this.resourceId, tagCreateResponseItem.resourceId)
-            && Objects.equals(this.resourceType, tagCreateResponseItem.resourceType)
-            && Objects.equals(this.errorCode, tagCreateResponseItem.errorCode)
-            && Objects.equals(this.errorMsg, tagCreateResponseItem.errorMsg);
+        TagCreateResponseItem that = (TagCreateResponseItem) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

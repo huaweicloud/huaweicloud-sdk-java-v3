@@ -112,17 +112,16 @@ public class ResourceInstanceReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceInstanceReqBody resourceInstanceReqBody = (ResourceInstanceReqBody) o;
-        return Objects.equals(this.withoutAnyTag, resourceInstanceReqBody.withoutAnyTag)
-            && Objects.equals(this.tags, resourceInstanceReqBody.tags)
-            && Objects.equals(this.matches, resourceInstanceReqBody.matches);
+        ResourceInstanceReqBody that = (ResourceInstanceReqBody) obj;
+        return Objects.equals(this.withoutAnyTag, that.withoutAnyTag) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.matches, that.matches);
     }
 
     @Override

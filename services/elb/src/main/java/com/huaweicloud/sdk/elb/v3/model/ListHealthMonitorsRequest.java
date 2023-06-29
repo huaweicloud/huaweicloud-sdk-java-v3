@@ -582,31 +582,23 @@ public class ListHealthMonitorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHealthMonitorsRequest listHealthMonitorsRequest = (ListHealthMonitorsRequest) o;
-        return Objects.equals(this.marker, listHealthMonitorsRequest.marker)
-            && Objects.equals(this.limit, listHealthMonitorsRequest.limit)
-            && Objects.equals(this.pageReverse, listHealthMonitorsRequest.pageReverse)
-            && Objects.equals(this.id, listHealthMonitorsRequest.id)
-            && Objects.equals(this.monitorPort, listHealthMonitorsRequest.monitorPort)
-            && Objects.equals(this.domainName, listHealthMonitorsRequest.domainName)
-            && Objects.equals(this.name, listHealthMonitorsRequest.name)
-            && Objects.equals(this.delay, listHealthMonitorsRequest.delay)
-            && Objects.equals(this.maxRetries, listHealthMonitorsRequest.maxRetries)
-            && Objects.equals(this.adminStateUp, listHealthMonitorsRequest.adminStateUp)
-            && Objects.equals(this.maxRetriesDown, listHealthMonitorsRequest.maxRetriesDown)
-            && Objects.equals(this.timeout, listHealthMonitorsRequest.timeout)
-            && Objects.equals(this.type, listHealthMonitorsRequest.type)
-            && Objects.equals(this.expectedCodes, listHealthMonitorsRequest.expectedCodes)
-            && Objects.equals(this.urlPath, listHealthMonitorsRequest.urlPath)
-            && Objects.equals(this.httpMethod, listHealthMonitorsRequest.httpMethod)
-            && Objects.equals(this.enterpriseProjectId, listHealthMonitorsRequest.enterpriseProjectId);
+        ListHealthMonitorsRequest that = (ListHealthMonitorsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.monitorPort, that.monitorPort) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.maxRetriesDown, that.maxRetriesDown) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.expectedCodes, that.expectedCodes)
+            && Objects.equals(this.urlPath, that.urlPath) && Objects.equals(this.httpMethod, that.httpMethod)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

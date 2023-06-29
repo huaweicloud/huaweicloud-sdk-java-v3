@@ -56,16 +56,15 @@ public class UpdateLabelsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLabelsResponse updateLabelsResponse = (UpdateLabelsResponse) o;
-        return Objects.equals(this.errorCode, updateLabelsResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateLabelsResponse.errorMsg);
+        UpdateLabelsResponse that = (UpdateLabelsResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

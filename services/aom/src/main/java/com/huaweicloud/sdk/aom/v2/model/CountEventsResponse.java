@@ -1,51 +1,38 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.EventSeries;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CountEventsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="step")
-    
+    @JsonProperty(value = "step")
 
     private Long step;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamps")
-    
+    @JsonProperty(value = "timestamps")
+
     private List<Long> timestamps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="series")
-    
+    @JsonProperty(value = "series")
+
     private List<EventSeries> series = null;
-    
+
     public CountEventsResponse withStep(Long step) {
         this.step = step;
         return this;
     }
-
-    
-
 
     /**
      * 统计步长。毫秒数，例如一分钟则填写为60000。
@@ -59,16 +46,13 @@ public class CountEventsResponse extends SdkResponse {
         this.step = step;
     }
 
-    
-
     public CountEventsResponse withTimestamps(List<Long> timestamps) {
         this.timestamps = timestamps;
         return this;
     }
 
-    
     public CountEventsResponse addTimestampsItem(Long timestampsItem) {
-        if(this.timestamps == null) {
+        if (this.timestamps == null) {
             this.timestamps = new ArrayList<>();
         }
         this.timestamps.add(timestampsItem);
@@ -76,7 +60,7 @@ public class CountEventsResponse extends SdkResponse {
     }
 
     public CountEventsResponse withTimestamps(Consumer<List<Long>> timestampsSetter) {
-        if(this.timestamps == null) {
+        if (this.timestamps == null) {
             this.timestamps = new ArrayList<>();
         }
         timestampsSetter.accept(this.timestamps);
@@ -95,16 +79,13 @@ public class CountEventsResponse extends SdkResponse {
         this.timestamps = timestamps;
     }
 
-    
-
     public CountEventsResponse withSeries(List<EventSeries> series) {
         this.series = series;
         return this;
     }
 
-    
     public CountEventsResponse addSeriesItem(EventSeries seriesItem) {
-        if(this.series == null) {
+        if (this.series == null) {
             this.series = new ArrayList<>();
         }
         this.series.add(seriesItem);
@@ -112,7 +93,7 @@ public class CountEventsResponse extends SdkResponse {
     }
 
     public CountEventsResponse withSeries(Consumer<List<EventSeries>> seriesSetter) {
-        if(this.series == null) {
+        if (this.series == null) {
             this.series = new ArrayList<>();
         }
         seriesSetter.accept(this.series);
@@ -131,25 +112,24 @@ public class CountEventsResponse extends SdkResponse {
         this.series = series;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountEventsResponse countEventsResponse = (CountEventsResponse) o;
-        return Objects.equals(this.step, countEventsResponse.step) &&
-            Objects.equals(this.timestamps, countEventsResponse.timestamps) &&
-            Objects.equals(this.series, countEventsResponse.series);
+        CountEventsResponse that = (CountEventsResponse) obj;
+        return Objects.equals(this.step, that.step) && Objects.equals(this.timestamps, that.timestamps)
+            && Objects.equals(this.series, that.series);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(step, timestamps, series);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -160,6 +140,7 @@ public class CountEventsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -170,8 +151,5 @@ public class CountEventsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

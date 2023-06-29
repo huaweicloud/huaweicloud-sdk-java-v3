@@ -99,16 +99,16 @@ public class Address {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Address address = (Address) o;
-        return Objects.equals(this.intranetIp, address.intranetIp) && Objects.equals(this.accessIp, address.accessIp)
-            && Objects.equals(this.serverIp, address.serverIp) && Objects.equals(this.publicIp, address.publicIp);
+        Address that = (Address) obj;
+        return Objects.equals(this.intranetIp, that.intranetIp) && Objects.equals(this.accessIp, that.accessIp)
+            && Objects.equals(this.serverIp, that.serverIp) && Objects.equals(this.publicIp, that.publicIp);
     }
 
     @Override

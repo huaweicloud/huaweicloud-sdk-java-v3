@@ -77,17 +77,16 @@ public class UpdateKeyAliasRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKeyAliasRequestBody updateKeyAliasRequestBody = (UpdateKeyAliasRequestBody) o;
-        return Objects.equals(this.keyId, updateKeyAliasRequestBody.keyId)
-            && Objects.equals(this.keyAlias, updateKeyAliasRequestBody.keyAlias)
-            && Objects.equals(this.sequence, updateKeyAliasRequestBody.sequence);
+        UpdateKeyAliasRequestBody that = (UpdateKeyAliasRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keyAlias, that.keyAlias)
+            && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

@@ -73,6 +73,11 @@ public class ComponentList {
 
     private String version;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "platform_type")
+
+    private String platformType;
+
     public ComponentList withName(String name) {
         this.name = name;
         return this;
@@ -320,24 +325,40 @@ public class ComponentList {
         this.version = version;
     }
 
+    public ComponentList withPlatformType(String platformType) {
+        this.platformType = platformType;
+        return this;
+    }
+
+    /**
+     * Get platformType
+     * @return platformType
+     */
+    public String getPlatformType() {
+        return platformType;
+    }
+
+    public void setPlatformType(String platformType) {
+        this.platformType = platformType;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentList componentList = (ComponentList) o;
-        return Objects.equals(this.name, componentList.name) && Objects.equals(this.labels, componentList.labels)
-            && Objects.equals(this.runtimeStack, componentList.runtimeStack)
-            && Objects.equals(this.status, componentList.status)
-            && Objects.equals(this.environmentName, componentList.environmentName)
-            && Objects.equals(this.applicationName, componentList.applicationName)
-            && Objects.equals(this.environmentId, componentList.environmentId)
-            && Objects.equals(this.applicationId, componentList.applicationId)
-            && Objects.equals(this.id, componentList.id) && Objects.equals(this.creator, componentList.creator)
-            && Objects.equals(this.source, componentList.source) && Objects.equals(this.version, componentList.version);
+        ComponentList that = (ComponentList) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.runtimeStack, that.runtimeStack) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.environmentName, that.environmentName)
+            && Objects.equals(this.applicationName, that.applicationName)
+            && Objects.equals(this.environmentId, that.environmentId)
+            && Objects.equals(this.applicationId, that.applicationId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.platformType, that.platformType);
     }
 
     @Override
@@ -353,7 +374,8 @@ public class ComponentList {
             id,
             creator,
             source,
-            version);
+            version,
+            platformType);
     }
 
     @Override
@@ -372,6 +394,7 @@ public class ComponentList {
         sb.append("    creator: ").append(toIndentedString(creator)).append("\n");
         sb.append("    source: ").append(toIndentedString(source)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    platformType: ").append(toIndentedString(platformType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

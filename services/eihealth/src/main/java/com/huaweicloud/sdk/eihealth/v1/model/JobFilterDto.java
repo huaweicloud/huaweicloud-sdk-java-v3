@@ -74,16 +74,15 @@ public class JobFilterDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobFilterDto jobFilterDto = (JobFilterDto) o;
-        return Objects.equals(this.jobName, jobFilterDto.jobName)
-            && Objects.equals(this.jobNodeLabels, jobFilterDto.jobNodeLabels);
+        JobFilterDto that = (JobFilterDto) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobNodeLabels, that.jobNodeLabels);
     }
 
     @Override

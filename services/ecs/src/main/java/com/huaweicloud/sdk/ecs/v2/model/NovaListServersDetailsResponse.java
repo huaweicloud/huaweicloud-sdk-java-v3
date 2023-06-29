@@ -91,16 +91,15 @@ public class NovaListServersDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaListServersDetailsResponse novaListServersDetailsResponse = (NovaListServersDetailsResponse) o;
-        return Objects.equals(this.servers, novaListServersDetailsResponse.servers)
-            && Objects.equals(this.serversLinks, novaListServersDetailsResponse.serversLinks);
+        NovaListServersDetailsResponse that = (NovaListServersDetailsResponse) obj;
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.serversLinks, that.serversLinks);
     }
 
     @Override

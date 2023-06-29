@@ -65,15 +65,15 @@ public class AttachEipRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachEipRequest attachEipRequest = (AttachEipRequest) o;
-        return Objects.equals(this.nodeId, attachEipRequest.nodeId) && Objects.equals(this.body, attachEipRequest.body);
+        AttachEipRequest that = (AttachEipRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.body, that.body);
     }
 
     @Override

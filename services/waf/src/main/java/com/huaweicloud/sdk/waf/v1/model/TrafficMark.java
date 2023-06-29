@@ -96,16 +96,16 @@ public class TrafficMark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrafficMark trafficMark = (TrafficMark) o;
-        return Objects.equals(this.sip, trafficMark.sip) && Objects.equals(this.cookie, trafficMark.cookie)
-            && Objects.equals(this.params, trafficMark.params);
+        TrafficMark that = (TrafficMark) obj;
+        return Objects.equals(this.sip, that.sip) && Objects.equals(this.cookie, that.cookie)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

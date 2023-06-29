@@ -87,16 +87,16 @@ public class UpdateDDosRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDDosRequest updateDDosRequest = (UpdateDDosRequest) o;
-        return Objects.equals(this.floatingIpId, updateDDosRequest.floatingIpId)
-            && Objects.equals(this.ip, updateDDosRequest.ip) && Objects.equals(this.body, updateDDosRequest.body);
+        UpdateDDosRequest that = (UpdateDDosRequest) obj;
+        return Objects.equals(this.floatingIpId, that.floatingIpId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

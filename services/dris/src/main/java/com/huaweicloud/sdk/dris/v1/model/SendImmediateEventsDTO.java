@@ -74,16 +74,16 @@ public class SendImmediateEventsDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendImmediateEventsDTO sendImmediateEventsDTO = (SendImmediateEventsDTO) o;
-        return Objects.equals(this.sendConfig, sendImmediateEventsDTO.sendConfig)
-            && Objects.equals(this.immediateEvent, sendImmediateEventsDTO.immediateEvent);
+        SendImmediateEventsDTO that = (SendImmediateEventsDTO) obj;
+        return Objects.equals(this.sendConfig, that.sendConfig)
+            && Objects.equals(this.immediateEvent, that.immediateEvent);
     }
 
     @Override

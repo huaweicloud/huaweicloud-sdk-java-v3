@@ -209,23 +209,22 @@ public class ProtectionProxyInfoRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectionProxyInfoRequestInfo protectionProxyInfoRequestInfo = (ProtectionProxyInfoRequestInfo) o;
-        return Objects.equals(this.policyId, protectionProxyInfoRequestInfo.policyId)
-            && Objects.equals(this.policyName, protectionProxyInfoRequestInfo.policyName)
-            && Objects.equals(this.protectionMode, protectionProxyInfoRequestInfo.protectionMode)
-            && Objects.equals(this.baitProtectionStatus, protectionProxyInfoRequestInfo.baitProtectionStatus)
-            && Objects.equals(this.protectionDirectory, protectionProxyInfoRequestInfo.protectionDirectory)
-            && Objects.equals(this.protectionType, protectionProxyInfoRequestInfo.protectionType)
-            && Objects.equals(this.excludeDirectory, protectionProxyInfoRequestInfo.excludeDirectory)
-            && Objects.equals(this.runtimeDetectionStatus, protectionProxyInfoRequestInfo.runtimeDetectionStatus)
-            && Objects.equals(this.operatingSystem, protectionProxyInfoRequestInfo.operatingSystem);
+        ProtectionProxyInfoRequestInfo that = (ProtectionProxyInfoRequestInfo) obj;
+        return Objects.equals(this.policyId, that.policyId) && Objects.equals(this.policyName, that.policyName)
+            && Objects.equals(this.protectionMode, that.protectionMode)
+            && Objects.equals(this.baitProtectionStatus, that.baitProtectionStatus)
+            && Objects.equals(this.protectionDirectory, that.protectionDirectory)
+            && Objects.equals(this.protectionType, that.protectionType)
+            && Objects.equals(this.excludeDirectory, that.excludeDirectory)
+            && Objects.equals(this.runtimeDetectionStatus, that.runtimeDetectionStatus)
+            && Objects.equals(this.operatingSystem, that.operatingSystem);
     }
 
     @Override

@@ -183,19 +183,17 @@ public class ClusterUpgradeAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterUpgradeAction clusterUpgradeAction = (ClusterUpgradeAction) o;
-        return Objects.equals(this.addons, clusterUpgradeAction.addons)
-            && Objects.equals(this.nodeOrder, clusterUpgradeAction.nodeOrder)
-            && Objects.equals(this.nodePoolOrder, clusterUpgradeAction.nodePoolOrder)
-            && Objects.equals(this.strategy, clusterUpgradeAction.strategy)
-            && Objects.equals(this.targetVersion, clusterUpgradeAction.targetVersion);
+        ClusterUpgradeAction that = (ClusterUpgradeAction) obj;
+        return Objects.equals(this.addons, that.addons) && Objects.equals(this.nodeOrder, that.nodeOrder)
+            && Objects.equals(this.nodePoolOrder, that.nodePoolOrder) && Objects.equals(this.strategy, that.strategy)
+            && Objects.equals(this.targetVersion, that.targetVersion);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class ResetServerPasswordRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetServerPasswordRequestBody resetServerPasswordRequestBody = (ResetServerPasswordRequestBody) o;
-        return Objects.equals(this.resetPassword, resetServerPasswordRequestBody.resetPassword);
+        ResetServerPasswordRequestBody that = (ResetServerPasswordRequestBody) obj;
+        return Objects.equals(this.resetPassword, that.resetPassword);
     }
 
     @Override

@@ -140,18 +140,17 @@ public class MergeResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeResult mergeResult = (MergeResult) o;
-        return Objects.equals(this.closed, mergeResult.closed)
-            && Objects.equals(this.mergeRequests, mergeResult.mergeRequests)
-            && Objects.equals(this.merged, mergeResult.merged) && Objects.equals(this.opened, mergeResult.opened)
-            && Objects.equals(this.total, mergeResult.total);
+        MergeResult that = (MergeResult) obj;
+        return Objects.equals(this.closed, that.closed) && Objects.equals(this.mergeRequests, that.mergeRequests)
+            && Objects.equals(this.merged, that.merged) && Objects.equals(this.opened, that.opened)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

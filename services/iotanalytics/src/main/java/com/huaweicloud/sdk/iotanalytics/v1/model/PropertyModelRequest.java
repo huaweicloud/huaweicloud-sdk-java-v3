@@ -175,21 +175,18 @@ public class PropertyModelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyModelRequest propertyModelRequest = (PropertyModelRequest) o;
-        return Objects.equals(this.name, propertyModelRequest.name)
-            && Objects.equals(this.displayName, propertyModelRequest.displayName)
-            && Objects.equals(this.sourceType, propertyModelRequest.sourceType)
-            && Objects.equals(this.dataSchema, propertyModelRequest.dataSchema)
-            && Objects.equals(this.unit, propertyModelRequest.unit)
-            && Objects.equals(this.value, propertyModelRequest.value)
-            && Objects.equals(this.isTag, propertyModelRequest.isTag);
+        PropertyModelRequest that = (PropertyModelRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.dataSchema, that.dataSchema)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.isTag, that.isTag);
     }
 
     @Override

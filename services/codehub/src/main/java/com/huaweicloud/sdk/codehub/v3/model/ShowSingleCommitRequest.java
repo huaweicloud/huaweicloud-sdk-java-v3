@@ -77,17 +77,16 @@ public class ShowSingleCommitRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSingleCommitRequest showSingleCommitRequest = (ShowSingleCommitRequest) o;
-        return Objects.equals(this.repoId, showSingleCommitRequest.repoId)
-            && Objects.equals(this.sha, showSingleCommitRequest.sha)
-            && Objects.equals(this.stats, showSingleCommitRequest.stats);
+        ShowSingleCommitRequest that = (ShowSingleCommitRequest) obj;
+        return Objects.equals(this.repoId, that.repoId) && Objects.equals(this.sha, that.sha)
+            && Objects.equals(this.stats, that.stats);
     }
 
     @Override

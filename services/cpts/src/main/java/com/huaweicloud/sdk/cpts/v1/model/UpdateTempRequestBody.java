@@ -228,22 +228,19 @@ public class UpdateTempRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTempRequestBody updateTempRequestBody = (UpdateTempRequestBody) o;
-        return Objects.equals(this.id, updateTempRequestBody.id)
-            && Objects.equals(this.projectId, updateTempRequestBody.projectId)
-            && Objects.equals(this.name, updateTempRequestBody.name)
-            && Objects.equals(this.tempType, updateTempRequestBody.tempType)
-            && Objects.equals(this.description, updateTempRequestBody.description)
-            && Objects.equals(this.forLoopParams, updateTempRequestBody.forLoopParams)
-            && Objects.equals(this.enablePre, updateTempRequestBody.enablePre)
-            && Objects.equals(this.contents, updateTempRequestBody.contents);
+        UpdateTempRequestBody that = (UpdateTempRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.tempType, that.tempType)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.forLoopParams, that.forLoopParams) && Objects.equals(this.enablePre, that.enablePre)
+            && Objects.equals(this.contents, that.contents);
     }
 
     @Override

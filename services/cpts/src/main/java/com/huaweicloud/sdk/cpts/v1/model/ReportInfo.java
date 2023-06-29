@@ -180,19 +180,17 @@ public class ReportInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportInfo reportInfo = (ReportInfo) o;
-        return Objects.equals(this.brokens, reportInfo.brokens) && Objects.equals(this.details, reportInfo.details)
-            && Objects.equals(this.outline, reportInfo.outline)
-            && Objects.equals(this.rtproportion, reportInfo.rtproportion)
-            && Objects.equals(this.taskInfo, reportInfo.taskInfo)
-            && Objects.equals(this.respTimeRange, reportInfo.respTimeRange);
+        ReportInfo that = (ReportInfo) obj;
+        return Objects.equals(this.brokens, that.brokens) && Objects.equals(this.details, that.details)
+            && Objects.equals(this.outline, that.outline) && Objects.equals(this.rtproportion, that.rtproportion)
+            && Objects.equals(this.taskInfo, that.taskInfo) && Objects.equals(this.respTimeRange, that.respTimeRange);
     }
 
     @Override

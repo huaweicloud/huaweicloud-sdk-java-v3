@@ -162,20 +162,18 @@ public class CreateAddressGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAddressGroupOption createAddressGroupOption = (CreateAddressGroupOption) o;
-        return Objects.equals(this.name, createAddressGroupOption.name)
-            && Objects.equals(this.description, createAddressGroupOption.description)
-            && Objects.equals(this.ipVersion, createAddressGroupOption.ipVersion)
-            && Objects.equals(this.ipSet, createAddressGroupOption.ipSet)
-            && Objects.equals(this.maxCapacity, createAddressGroupOption.maxCapacity)
-            && Objects.equals(this.enterpriseProjectId, createAddressGroupOption.enterpriseProjectId);
+        CreateAddressGroupOption that = (CreateAddressGroupOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.ipSet, that.ipSet)
+            && Objects.equals(this.maxCapacity, that.maxCapacity)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

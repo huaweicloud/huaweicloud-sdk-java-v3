@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.TaurusModifyProxyWeightRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class SetGaussMySqlProxyWeightRequest  {
-
+public class SetGaussMySqlProxyWeightRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy_id")
-    
+    @JsonProperty(value = "proxy_id")
 
     private String proxyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private TaurusModifyProxyWeightRequest body;
 
@@ -48,15 +36,12 @@ public class SetGaussMySqlProxyWeightRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -65,15 +50,10 @@ public class SetGaussMySqlProxyWeightRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public SetGaussMySqlProxyWeightRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID，严格匹配UUID规则。
@@ -87,15 +67,10 @@ public class SetGaussMySqlProxyWeightRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public SetGaussMySqlProxyWeightRequest withProxyId(String proxyId) {
         this.proxyId = proxyId;
         return this;
     }
-
-    
-
 
     /**
      * 数据库代理ID，严格匹配UUID规则。
@@ -109,22 +84,19 @@ public class SetGaussMySqlProxyWeightRequest  {
         this.proxyId = proxyId;
     }
 
-    
-
     public SetGaussMySqlProxyWeightRequest withBody(TaurusModifyProxyWeightRequest body) {
         this.body = body;
         return this;
     }
 
     public SetGaussMySqlProxyWeightRequest withBody(Consumer<TaurusModifyProxyWeightRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new TaurusModifyProxyWeightRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -138,26 +110,24 @@ public class SetGaussMySqlProxyWeightRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetGaussMySqlProxyWeightRequest setGaussMySqlProxyWeightRequest = (SetGaussMySqlProxyWeightRequest) o;
-        return Objects.equals(this.xLanguage, setGaussMySqlProxyWeightRequest.xLanguage) &&
-            Objects.equals(this.instanceId, setGaussMySqlProxyWeightRequest.instanceId) &&
-            Objects.equals(this.proxyId, setGaussMySqlProxyWeightRequest.proxyId) &&
-            Objects.equals(this.body, setGaussMySqlProxyWeightRequest.body);
+        SetGaussMySqlProxyWeightRequest that = (SetGaussMySqlProxyWeightRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.proxyId, that.proxyId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, proxyId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -169,6 +139,7 @@ public class SetGaussMySqlProxyWeightRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -179,8 +150,5 @@ public class SetGaussMySqlProxyWeightRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

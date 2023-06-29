@@ -76,17 +76,15 @@ public class RestoreToExistingInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreToExistingInstanceRequestBody restoreToExistingInstanceRequestBody =
-            (RestoreToExistingInstanceRequestBody) o;
-        return Objects.equals(this.source, restoreToExistingInstanceRequestBody.source)
-            && Objects.equals(this.target, restoreToExistingInstanceRequestBody.target);
+        RestoreToExistingInstanceRequestBody that = (RestoreToExistingInstanceRequestBody) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.target, that.target);
     }
 
     @Override

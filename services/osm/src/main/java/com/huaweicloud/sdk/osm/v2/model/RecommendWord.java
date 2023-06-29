@@ -179,21 +179,19 @@ public class RecommendWord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecommendWord recommendWord = (RecommendWord) o;
-        return Objects.equals(this.recommendWordId, recommendWord.recommendWordId)
-            && Objects.equals(this.recommendWordName, recommendWord.recommendWordName)
-            && Objects.equals(this.levelValue, recommendWord.levelValue)
-            && Objects.equals(this.sortValue, recommendWord.sortValue)
-            && Objects.equals(this.themeId, recommendWord.themeId)
-            && Objects.equals(this.themeName, recommendWord.themeName)
-            && Objects.equals(this.answerInfo, recommendWord.answerInfo);
+        RecommendWord that = (RecommendWord) obj;
+        return Objects.equals(this.recommendWordId, that.recommendWordId)
+            && Objects.equals(this.recommendWordName, that.recommendWordName)
+            && Objects.equals(this.levelValue, that.levelValue) && Objects.equals(this.sortValue, that.sortValue)
+            && Objects.equals(this.themeId, that.themeId) && Objects.equals(this.themeName, that.themeName)
+            && Objects.equals(this.answerInfo, that.answerInfo);
     }
 
     @Override

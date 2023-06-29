@@ -138,18 +138,16 @@ public class DetectLiveByFileIntlRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveByFileIntlRequestBody detectLiveByFileIntlRequestBody = (DetectLiveByFileIntlRequestBody) o;
-        return Objects.equals(this.videoFile, detectLiveByFileIntlRequestBody.videoFile)
-            && Objects.equals(this.actions, detectLiveByFileIntlRequestBody.actions)
-            && Objects.equals(this.actionTime, detectLiveByFileIntlRequestBody.actionTime)
-            && Objects.equals(this.nodThreshold, detectLiveByFileIntlRequestBody.nodThreshold);
+        DetectLiveByFileIntlRequestBody that = (DetectLiveByFileIntlRequestBody) obj;
+        return Objects.equals(this.videoFile, that.videoFile) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.actionTime, that.actionTime) && Objects.equals(this.nodThreshold, that.nodThreshold);
     }
 
     @Override

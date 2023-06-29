@@ -125,19 +125,18 @@ public class ListPolicyGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPolicyGroupRequest listPolicyGroupRequest = (ListPolicyGroupRequest) o;
-        return Objects.equals(this.region, listPolicyGroupRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listPolicyGroupRequest.enterpriseProjectId)
-            && Objects.equals(this.groupName, listPolicyGroupRequest.groupName)
-            && Objects.equals(this.offset, listPolicyGroupRequest.offset)
-            && Objects.equals(this.limit, listPolicyGroupRequest.limit);
+        ListPolicyGroupRequest that = (ListPolicyGroupRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

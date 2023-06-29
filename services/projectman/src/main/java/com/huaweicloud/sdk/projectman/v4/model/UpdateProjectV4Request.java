@@ -65,16 +65,15 @@ public class UpdateProjectV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectV4Request updateProjectV4Request = (UpdateProjectV4Request) o;
-        return Objects.equals(this.projectId, updateProjectV4Request.projectId)
-            && Objects.equals(this.body, updateProjectV4Request.body);
+        UpdateProjectV4Request that = (UpdateProjectV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,16 +77,15 @@ public class ListWatermarkTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWatermarkTemplateResponse listWatermarkTemplateResponse = (ListWatermarkTemplateResponse) o;
-        return Objects.equals(this.total, listWatermarkTemplateResponse.total)
-            && Objects.equals(this.templates, listWatermarkTemplateResponse.templates);
+        ListWatermarkTemplateResponse that = (ListWatermarkTemplateResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.templates, that.templates);
     }
 
     @Override

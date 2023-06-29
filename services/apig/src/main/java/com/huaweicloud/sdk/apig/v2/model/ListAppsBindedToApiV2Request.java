@@ -167,21 +167,18 @@ public class ListAppsBindedToApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsBindedToApiV2Request listAppsBindedToApiV2Request = (ListAppsBindedToApiV2Request) o;
-        return Objects.equals(this.instanceId, listAppsBindedToApiV2Request.instanceId)
-            && Objects.equals(this.offset, listAppsBindedToApiV2Request.offset)
-            && Objects.equals(this.limit, listAppsBindedToApiV2Request.limit)
-            && Objects.equals(this.apiId, listAppsBindedToApiV2Request.apiId)
-            && Objects.equals(this.appName, listAppsBindedToApiV2Request.appName)
-            && Objects.equals(this.appId, listAppsBindedToApiV2Request.appId)
-            && Objects.equals(this.envId, listAppsBindedToApiV2Request.envId);
+        ListAppsBindedToApiV2Request that = (ListAppsBindedToApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.envId, that.envId);
     }
 
     @Override

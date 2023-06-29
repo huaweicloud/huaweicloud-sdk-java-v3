@@ -139,22 +139,15 @@ public class ReplicationRecordGet {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -429,28 +422,26 @@ public class ReplicationRecordGet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReplicationRecordGet replicationRecordGet = (ReplicationRecordGet) o;
-        return Objects.equals(this.createdAt, replicationRecordGet.createdAt)
-            && Objects.equals(this.destinationBackupId, replicationRecordGet.destinationBackupId)
-            && Objects.equals(this.destinationCheckpointId, replicationRecordGet.destinationCheckpointId)
-            && Objects.equals(this.destinationProjectId, replicationRecordGet.destinationProjectId)
-            && Objects.equals(this.destinationRegion, replicationRecordGet.destinationRegion)
-            && Objects.equals(this.destinationVaultId, replicationRecordGet.destinationVaultId)
-            && Objects.equals(this.extraInfo, replicationRecordGet.extraInfo)
-            && Objects.equals(this.id, replicationRecordGet.id)
-            && Objects.equals(this.sourceBackupId, replicationRecordGet.sourceBackupId)
-            && Objects.equals(this.sourceCheckpointId, replicationRecordGet.sourceCheckpointId)
-            && Objects.equals(this.sourceProjectId, replicationRecordGet.sourceProjectId)
-            && Objects.equals(this.sourceRegion, replicationRecordGet.sourceRegion)
-            && Objects.equals(this.status, replicationRecordGet.status)
-            && Objects.equals(this.vaultId, replicationRecordGet.vaultId);
+        ReplicationRecordGet that = (ReplicationRecordGet) obj;
+        return Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.destinationBackupId, that.destinationBackupId)
+            && Objects.equals(this.destinationCheckpointId, that.destinationCheckpointId)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.extraInfo, that.extraInfo) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.sourceBackupId, that.sourceBackupId)
+            && Objects.equals(this.sourceCheckpointId, that.sourceCheckpointId)
+            && Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceRegion, that.sourceRegion) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

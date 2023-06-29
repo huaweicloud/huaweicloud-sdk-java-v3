@@ -427,32 +427,26 @@ public class CheckTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckTokenResponse checkTokenResponse = (CheckTokenResponse) o;
-        return Objects.equals(this.accessToken, checkTokenResponse.accessToken)
-            && Objects.equals(this.tokenIp, checkTokenResponse.tokenIp)
-            && Objects.equals(this.validPeriod, checkTokenResponse.validPeriod)
-            && Objects.equals(this.expireTime, checkTokenResponse.expireTime)
-            && Objects.equals(this.createTime, checkTokenResponse.createTime)
-            && Objects.equals(this.user, checkTokenResponse.user)
-            && Objects.equals(this.clientType, checkTokenResponse.clientType)
-            && Objects.equals(this.forceLoginInd, checkTokenResponse.forceLoginInd)
-            && Objects.equals(this.firstLogin, checkTokenResponse.firstLogin)
-            && Objects.equals(this.pwdExpired, checkTokenResponse.pwdExpired)
-            && Objects.equals(this.daysPwdAvailable, checkTokenResponse.daysPwdAvailable)
-            && Objects.equals(this.proxyToken, checkTokenResponse.proxyToken)
-            && Objects.equals(this.delayDelete, checkTokenResponse.delayDelete)
-            && Objects.equals(this.tokenType, checkTokenResponse.tokenType)
-            && Objects.equals(this.refreshToken, checkTokenResponse.refreshToken)
-            && Objects.equals(this.refreshValidPeriod, checkTokenResponse.refreshValidPeriod)
-            && Objects.equals(this.refreshExpireTime, checkTokenResponse.refreshExpireTime)
-            && Objects.equals(this.refreshCreateTime, checkTokenResponse.refreshCreateTime);
+        CheckTokenResponse that = (CheckTokenResponse) obj;
+        return Objects.equals(this.accessToken, that.accessToken) && Objects.equals(this.tokenIp, that.tokenIp)
+            && Objects.equals(this.validPeriod, that.validPeriod) && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.clientType, that.clientType)
+            && Objects.equals(this.forceLoginInd, that.forceLoginInd)
+            && Objects.equals(this.firstLogin, that.firstLogin) && Objects.equals(this.pwdExpired, that.pwdExpired)
+            && Objects.equals(this.daysPwdAvailable, that.daysPwdAvailable)
+            && Objects.equals(this.proxyToken, that.proxyToken) && Objects.equals(this.delayDelete, that.delayDelete)
+            && Objects.equals(this.tokenType, that.tokenType) && Objects.equals(this.refreshToken, that.refreshToken)
+            && Objects.equals(this.refreshValidPeriod, that.refreshValidPeriod)
+            && Objects.equals(this.refreshExpireTime, that.refreshExpireTime)
+            && Objects.equals(this.refreshCreateTime, that.refreshCreateTime);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowNatGatewayResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNatGatewayResponse showNatGatewayResponse = (ShowNatGatewayResponse) o;
-        return Objects.equals(this.natGateway, showNatGatewayResponse.natGateway);
+        ShowNatGatewayResponse that = (ShowNatGatewayResponse) obj;
+        return Objects.equals(this.natGateway, that.natGateway);
     }
 
     @Override

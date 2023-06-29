@@ -212,20 +212,18 @@ public class VariableDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VariableDetail variableDetail = (VariableDetail) o;
-        return Objects.equals(this.fileSize, variableDetail.fileSize) && Objects.equals(this.id, variableDetail.id)
-            && Objects.equals(this.isQuoted, variableDetail.isQuoted) && Objects.equals(this.name, variableDetail.name)
-            && Objects.equals(this.variable, variableDetail.variable)
-            && Objects.equals(this.variableType, variableDetail.variableType)
-            && Objects.equals(this.variableMode, variableDetail.variableMode)
-            && Objects.equals(this.shareMode, variableDetail.shareMode);
+        VariableDetail that = (VariableDetail) obj;
+        return Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isQuoted, that.isQuoted) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.variable, that.variable) && Objects.equals(this.variableType, that.variableType)
+            && Objects.equals(this.variableMode, that.variableMode) && Objects.equals(this.shareMode, that.shareMode);
     }
 
     @Override

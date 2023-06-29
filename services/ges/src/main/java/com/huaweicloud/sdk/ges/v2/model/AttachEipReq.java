@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 绑定EIP请求体
  */
-public class AttachEipReq  {
-
+public class AttachEipReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eip_id")
-    
+    @JsonProperty(value = "eip_id")
 
     private String eipId;
 
@@ -27,9 +19,6 @@ public class AttachEipReq  {
         this.eipId = eipId;
         return this;
     }
-
-    
-
 
     /**
      * 弹性公网IP的ID。
@@ -43,23 +32,23 @@ public class AttachEipReq  {
         this.eipId = eipId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachEipReq attachEipReq = (AttachEipReq) o;
-        return Objects.equals(this.eipId, attachEipReq.eipId);
+        AttachEipReq that = (AttachEipReq) obj;
+        return Objects.equals(this.eipId, that.eipId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(eipId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class AttachEipReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class AttachEipReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

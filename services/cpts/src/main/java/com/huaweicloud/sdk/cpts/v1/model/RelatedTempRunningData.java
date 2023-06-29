@@ -147,19 +147,18 @@ public class RelatedTempRunningData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelatedTempRunningData relatedTempRunningData = (RelatedTempRunningData) o;
-        return Objects.equals(this.taskRunInfoId, relatedTempRunningData.taskRunInfoId)
-            && Objects.equals(this.relatedTempRunningId, relatedTempRunningData.relatedTempRunningId)
-            && Objects.equals(this.tempId, relatedTempRunningData.tempId)
-            && Objects.equals(this.tempName, relatedTempRunningData.tempName)
-            && Objects.equals(this.relatedTempRunningData, relatedTempRunningData.relatedTempRunningData);
+        RelatedTempRunningData that = (RelatedTempRunningData) obj;
+        return Objects.equals(this.taskRunInfoId, that.taskRunInfoId)
+            && Objects.equals(this.relatedTempRunningId, that.relatedTempRunningId)
+            && Objects.equals(this.tempId, that.tempId) && Objects.equals(this.tempName, that.tempName)
+            && Objects.equals(this.relatedTempRunningData, that.relatedTempRunningData);
     }
 
     @Override

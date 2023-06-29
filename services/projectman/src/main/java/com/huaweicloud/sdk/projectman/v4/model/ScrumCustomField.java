@@ -55,15 +55,15 @@ public class ScrumCustomField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScrumCustomField scrumCustomField = (ScrumCustomField) o;
-        return Objects.equals(this.name, scrumCustomField.name) && Objects.equals(this.value, scrumCustomField.value);
+        ScrumCustomField that = (ScrumCustomField) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

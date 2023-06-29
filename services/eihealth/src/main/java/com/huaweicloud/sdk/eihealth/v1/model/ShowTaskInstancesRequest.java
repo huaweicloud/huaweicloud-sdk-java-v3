@@ -99,18 +99,16 @@ public class ShowTaskInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskInstancesRequest showTaskInstancesRequest = (ShowTaskInstancesRequest) o;
-        return Objects.equals(this.eihealthProjectId, showTaskInstancesRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showTaskInstancesRequest.jobId)
-            && Objects.equals(this.taskName, showTaskInstancesRequest.taskName)
-            && Objects.equals(this.taskIndex, showTaskInstancesRequest.taskIndex);
+        ShowTaskInstancesRequest that = (ShowTaskInstancesRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskIndex, that.taskIndex);
     }
 
     @Override

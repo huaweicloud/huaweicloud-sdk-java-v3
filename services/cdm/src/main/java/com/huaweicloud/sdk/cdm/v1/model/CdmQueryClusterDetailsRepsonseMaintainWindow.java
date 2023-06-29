@@ -77,18 +77,16 @@ public class CdmQueryClusterDetailsRepsonseMaintainWindow {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmQueryClusterDetailsRepsonseMaintainWindow cdmQueryClusterDetailsRepsonseMaintainWindow =
-            (CdmQueryClusterDetailsRepsonseMaintainWindow) o;
-        return Objects.equals(this.day, cdmQueryClusterDetailsRepsonseMaintainWindow.day)
-            && Objects.equals(this.startTime, cdmQueryClusterDetailsRepsonseMaintainWindow.startTime)
-            && Objects.equals(this.endTime, cdmQueryClusterDetailsRepsonseMaintainWindow.endTime);
+        CdmQueryClusterDetailsRepsonseMaintainWindow that = (CdmQueryClusterDetailsRepsonseMaintainWindow) obj;
+        return Objects.equals(this.day, that.day) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

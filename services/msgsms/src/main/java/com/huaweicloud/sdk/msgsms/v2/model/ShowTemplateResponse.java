@@ -690,44 +690,32 @@ public class ShowTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTemplateResponse showTemplateResponse = (ShowTemplateResponse) o;
-        return Objects.equals(this.id, showTemplateResponse.id)
-            && Objects.equals(this.createTime, showTemplateResponse.createTime)
-            && Objects.equals(this.updateTime, showTemplateResponse.updateTime)
-            && Objects.equals(this.customerId, showTemplateResponse.customerId)
-            && Objects.equals(this.tenant, showTemplateResponse.tenant)
-            && Objects.equals(this.templateName, showTemplateResponse.templateName)
-            && Objects.equals(this.templateId, showTemplateResponse.templateId)
-            && Objects.equals(this.templateType, showTemplateResponse.templateType)
-            && Objects.equals(this.appName, showTemplateResponse.appName)
-            && Objects.equals(this.appKey, showTemplateResponse.appKey)
-            && Objects.equals(this.signId, showTemplateResponse.signId)
-            && Objects.equals(this.templateContent, showTemplateResponse.templateContent)
-            && Objects.equals(this.hasVariable, showTemplateResponse.hasVariable)
-            && Objects.equals(this.templateDesc, showTemplateResponse.templateDesc)
-            && Objects.equals(this.reviewDesc, showTemplateResponse.reviewDesc)
-            && Objects.equals(this.reviewOrder, showTemplateResponse.reviewOrder)
-            && Objects.equals(this.flowStatus, showTemplateResponse.flowStatus)
-            && Objects.equals(this.universalTemplate, showTemplateResponse.universalTemplate)
-            && Objects.equals(this.status, showTemplateResponse.status)
-            && Objects.equals(this.region, showTemplateResponse.region)
-            && Objects.equals(this.brackets, showTemplateResponse.brackets)
-            && Objects.equals(this.site, showTemplateResponse.site)
-            && Objects.equals(this.urgeStatus, showTemplateResponse.urgeStatus)
-            && Objects.equals(this.urgeTime, showTemplateResponse.urgeTime)
-            && Objects.equals(this.urgeDesc, showTemplateResponse.urgeDesc)
-            && Objects.equals(this.sendCountry1, showTemplateResponse.sendCountry1)
-            && Objects.equals(this.sendCountry2, showTemplateResponse.sendCountry2)
-            && Objects.equals(this.sendCountry3, showTemplateResponse.sendCountry3)
-            && Objects.equals(this.isSupportMultiomp, showTemplateResponse.isSupportMultiomp)
-            && Objects.equals(this.countryName, showTemplateResponse.countryName);
+        ShowTemplateResponse that = (ShowTemplateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.tenant, that.tenant) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.signId, that.signId) && Objects.equals(this.templateContent, that.templateContent)
+            && Objects.equals(this.hasVariable, that.hasVariable)
+            && Objects.equals(this.templateDesc, that.templateDesc) && Objects.equals(this.reviewDesc, that.reviewDesc)
+            && Objects.equals(this.reviewOrder, that.reviewOrder) && Objects.equals(this.flowStatus, that.flowStatus)
+            && Objects.equals(this.universalTemplate, that.universalTemplate)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.brackets, that.brackets) && Objects.equals(this.site, that.site)
+            && Objects.equals(this.urgeStatus, that.urgeStatus) && Objects.equals(this.urgeTime, that.urgeTime)
+            && Objects.equals(this.urgeDesc, that.urgeDesc) && Objects.equals(this.sendCountry1, that.sendCountry1)
+            && Objects.equals(this.sendCountry2, that.sendCountry2)
+            && Objects.equals(this.sendCountry3, that.sendCountry3)
+            && Objects.equals(this.isSupportMultiomp, that.isSupportMultiomp)
+            && Objects.equals(this.countryName, that.countryName);
     }
 
     @Override

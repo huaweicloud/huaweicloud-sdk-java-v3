@@ -163,20 +163,17 @@ public class ListSlowlogStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSlowlogStatisticsResponse listSlowlogStatisticsResponse = (ListSlowlogStatisticsResponse) o;
-        return Objects.equals(this.pageNumber, listSlowlogStatisticsResponse.pageNumber)
-            && Objects.equals(this.pageRecord, listSlowlogStatisticsResponse.pageRecord)
-            && Objects.equals(this.slowLogList, listSlowlogStatisticsResponse.slowLogList)
-            && Objects.equals(this.totalRecord, listSlowlogStatisticsResponse.totalRecord)
-            && Objects.equals(this.startTime, listSlowlogStatisticsResponse.startTime)
-            && Objects.equals(this.endTime, listSlowlogStatisticsResponse.endTime);
+        ListSlowlogStatisticsResponse that = (ListSlowlogStatisticsResponse) obj;
+        return Objects.equals(this.pageNumber, that.pageNumber) && Objects.equals(this.pageRecord, that.pageRecord)
+            && Objects.equals(this.slowLogList, that.slowLogList) && Objects.equals(this.totalRecord, that.totalRecord)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ProgramRequestBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProgramRequestBase programRequestBase = (ProgramRequestBase) o;
-        return Objects.equals(this.programName, programRequestBase.programName);
+        ProgramRequestBase that = (ProgramRequestBase) obj;
+        return Objects.equals(this.programName, that.programName);
     }
 
     @Override

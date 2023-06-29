@@ -162,22 +162,15 @@ public class ObjectCompareResultOverview {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -277,22 +270,15 @@ public class ObjectCompareResultOverview {
             if (value == null) {
                 return null;
             }
-            ObjectCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectCompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectCompareResultEnum(value));
         }
 
         public static ObjectCompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -415,19 +401,18 @@ public class ObjectCompareResultOverview {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObjectCompareResultOverview objectCompareResultOverview = (ObjectCompareResultOverview) o;
-        return Objects.equals(this.objectType, objectCompareResultOverview.objectType)
-            && Objects.equals(this.objectCompareResult, objectCompareResultOverview.objectCompareResult)
-            && Objects.equals(this.targetCount, objectCompareResultOverview.targetCount)
-            && Objects.equals(this.sourceCount, objectCompareResultOverview.sourceCount)
-            && Objects.equals(this.diffCount, objectCompareResultOverview.diffCount);
+        ObjectCompareResultOverview that = (ObjectCompareResultOverview) obj;
+        return Objects.equals(this.objectType, that.objectType)
+            && Objects.equals(this.objectCompareResult, that.objectCompareResult)
+            && Objects.equals(this.targetCount, that.targetCount) && Objects.equals(this.sourceCount, that.sourceCount)
+            && Objects.equals(this.diffCount, that.diffCount);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class MultiOracleAddress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiOracleAddress multiOracleAddress = (MultiOracleAddress) o;
-        return Objects.equals(this.oracleAddress, multiOracleAddress.oracleAddress)
-            && Objects.equals(this.oraclePort, multiOracleAddress.oraclePort);
+        MultiOracleAddress that = (MultiOracleAddress) obj;
+        return Objects.equals(this.oracleAddress, that.oracleAddress)
+            && Objects.equals(this.oraclePort, that.oraclePort);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class InstanceDeploymentVariables {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceDeploymentVariables instanceDeploymentVariables = (InstanceDeploymentVariables) o;
-        return Objects.equals(this.environment, instanceDeploymentVariables.environment)
-            && Objects.equals(this.components, instanceDeploymentVariables.components);
+        InstanceDeploymentVariables that = (InstanceDeploymentVariables) obj;
+        return Objects.equals(this.environment, that.environment) && Objects.equals(this.components, that.components);
     }
 
     @Override

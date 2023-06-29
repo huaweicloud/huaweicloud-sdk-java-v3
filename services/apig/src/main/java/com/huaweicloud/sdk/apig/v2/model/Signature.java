@@ -78,22 +78,15 @@ public class Signature {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignTypeEnum(value));
         }
 
         public static SignTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,22 +163,15 @@ public class Signature {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignAlgorithmEnum(value));
         }
 
         public static SignAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -359,19 +345,19 @@ public class Signature {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Signature signature = (Signature) o;
-        return Objects.equals(this.name, signature.name) && Objects.equals(this.signType, signature.signType)
-            && Objects.equals(this.signKey, signature.signKey) && Objects.equals(this.signSecret, signature.signSecret)
-            && Objects.equals(this.signAlgorithm, signature.signAlgorithm)
-            && Objects.equals(this.updateTime, signature.updateTime)
-            && Objects.equals(this.createTime, signature.createTime) && Objects.equals(this.id, signature.id);
+        Signature that = (Signature) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.signType, that.signType)
+            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
+            && Objects.equals(this.signAlgorithm, that.signAlgorithm)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateL7policiesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateL7policiesRequest updateL7policiesRequest = (UpdateL7policiesRequest) o;
-        return Objects.equals(this.l7policyId, updateL7policiesRequest.l7policyId)
-            && Objects.equals(this.body, updateL7policiesRequest.body);
+        UpdateL7policiesRequest that = (UpdateL7policiesRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class ImageDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDto imageDto = (ImageDto) o;
-        return Objects.equals(this.type, imageDto.type) && Objects.equals(this.version, imageDto.version);
+        ImageDto that = (ImageDto) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version);
     }
 
     @Override

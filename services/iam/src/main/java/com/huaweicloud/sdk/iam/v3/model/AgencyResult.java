@@ -209,22 +209,19 @@ public class AgencyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyResult agencyResult = (AgencyResult) o;
-        return Objects.equals(this.createTime, agencyResult.createTime)
-            && Objects.equals(this.description, agencyResult.description)
-            && Objects.equals(this.domainId, agencyResult.domainId)
-            && Objects.equals(this.duration, agencyResult.duration)
-            && Objects.equals(this.expireTime, agencyResult.expireTime) && Objects.equals(this.id, agencyResult.id)
-            && Objects.equals(this.name, agencyResult.name)
-            && Objects.equals(this.trustDomainId, agencyResult.trustDomainId)
-            && Objects.equals(this.trustDomainName, agencyResult.trustDomainName);
+        AgencyResult that = (AgencyResult) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.trustDomainId, that.trustDomainId)
+            && Objects.equals(this.trustDomainName, that.trustDomainName);
     }
 
     @Override

@@ -184,18 +184,18 @@ public class Task {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Task task = (Task) o;
-        return Objects.equals(this.taskId, task.taskId) && Objects.equals(this.taskName, task.taskName)
-            && Objects.equals(this.status, task.status) && Objects.equals(this.reason, task.reason)
-            && Objects.equals(this.createdAt, task.createdAt) && Objects.equals(this.targetId, task.targetId)
-            && Objects.equals(this.extensionInfo, task.extensionInfo);
+        Task that = (Task) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.targetId, that.targetId)
+            && Objects.equals(this.extensionInfo, that.extensionInfo);
     }
 
     @Override

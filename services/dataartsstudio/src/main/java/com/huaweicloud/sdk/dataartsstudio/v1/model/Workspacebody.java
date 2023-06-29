@@ -366,29 +366,23 @@ public class Workspacebody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Workspacebody workspacebody = (Workspacebody) o;
-        return Objects.equals(this.badRecordLocationName, workspacebody.badRecordLocationName)
-            && Objects.equals(this.description, workspacebody.description)
-            && Objects.equals(this.epsId, workspacebody.epsId)
-            && Objects.equals(this.jobLogLocationName, workspacebody.jobLogLocationName)
-            && Objects.equals(this.name, workspacebody.name) && Objects.equals(this.id, workspacebody.id)
-            && Objects.equals(this.isDefault, workspacebody.isDefault)
-            && Objects.equals(this.ownerName, workspacebody.ownerName)
-            && Objects.equals(this.projectId, workspacebody.projectId)
-            && Objects.equals(this.domainId, workspacebody.domainId)
-            && Objects.equals(this.instanceId, workspacebody.instanceId)
-            && Objects.equals(this.createTime, workspacebody.createTime)
-            && Objects.equals(this.createUser, workspacebody.createUser)
-            && Objects.equals(this.memberNum, workspacebody.memberNum)
-            && Objects.equals(this.updateTime, workspacebody.updateTime)
-            && Objects.equals(this.updateUser, workspacebody.updateUser);
+        Workspacebody that = (Workspacebody) obj;
+        return Objects.equals(this.badRecordLocationName, that.badRecordLocationName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.jobLogLocationName, that.jobLogLocationName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.ownerName, that.ownerName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.createUser, that.createUser)
+            && Objects.equals(this.memberNum, that.memberNum) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

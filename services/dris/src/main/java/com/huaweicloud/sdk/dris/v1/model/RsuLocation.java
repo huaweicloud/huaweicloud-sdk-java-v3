@@ -60,15 +60,15 @@ public class RsuLocation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RsuLocation rsuLocation = (RsuLocation) o;
-        return Objects.equals(this.lat, rsuLocation.lat) && Objects.equals(this.lon, rsuLocation.lon);
+        RsuLocation that = (RsuLocation) obj;
+        return Objects.equals(this.lat, that.lat) && Objects.equals(this.lon, that.lon);
     }
 
     @Override

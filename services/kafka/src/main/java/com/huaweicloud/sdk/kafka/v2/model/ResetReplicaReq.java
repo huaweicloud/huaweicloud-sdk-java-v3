@@ -52,15 +52,15 @@ public class ResetReplicaReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetReplicaReq resetReplicaReq = (ResetReplicaReq) o;
-        return Objects.equals(this.partitions, resetReplicaReq.partitions);
+        ResetReplicaReq that = (ResetReplicaReq) obj;
+        return Objects.equals(this.partitions, that.partitions);
     }
 
     @Override

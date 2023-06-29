@@ -75,16 +75,15 @@ public class ExportSlowQueryLogsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportSlowQueryLogsResponse exportSlowQueryLogsResponse = (ExportSlowQueryLogsResponse) o;
-        return Objects.equals(this.slowLogs, exportSlowQueryLogsResponse.slowLogs)
-            && Objects.equals(this.nextMarker, exportSlowQueryLogsResponse.nextMarker);
+        ExportSlowQueryLogsResponse that = (ExportSlowQueryLogsResponse) obj;
+        return Objects.equals(this.slowLogs, that.slowLogs) && Objects.equals(this.nextMarker, that.nextMarker);
     }
 
     @Override

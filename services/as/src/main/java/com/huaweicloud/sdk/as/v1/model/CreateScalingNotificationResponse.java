@@ -97,17 +97,16 @@ public class CreateScalingNotificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingNotificationResponse createScalingNotificationResponse = (CreateScalingNotificationResponse) o;
-        return Objects.equals(this.topicUrn, createScalingNotificationResponse.topicUrn)
-            && Objects.equals(this.topicScene, createScalingNotificationResponse.topicScene)
-            && Objects.equals(this.topicName, createScalingNotificationResponse.topicName);
+        CreateScalingNotificationResponse that = (CreateScalingNotificationResponse) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.topicScene, that.topicScene)
+            && Objects.equals(this.topicName, that.topicName);
     }
 
     @Override

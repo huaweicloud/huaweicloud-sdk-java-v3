@@ -121,19 +121,17 @@ public class ApplicationEndpoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationEndpoint applicationEndpoint = (ApplicationEndpoint) o;
-        return Objects.equals(this.createTime, applicationEndpoint.createTime)
-            && Objects.equals(this.endpointUrn, applicationEndpoint.endpointUrn)
-            && Objects.equals(this.userData, applicationEndpoint.userData)
-            && Objects.equals(this.enabled, applicationEndpoint.enabled)
-            && Objects.equals(this.token, applicationEndpoint.token);
+        ApplicationEndpoint that = (ApplicationEndpoint) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.endpointUrn, that.endpointUrn)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.token, that.token);
     }
 
     @Override

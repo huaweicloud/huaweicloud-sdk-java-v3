@@ -206,20 +206,18 @@ public class LeakageListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LeakageListInfo leakageListInfo = (LeakageListInfo) o;
-        return Objects.equals(this.id, leakageListInfo.id) && Objects.equals(this.policyid, leakageListInfo.policyid)
-            && Objects.equals(this.url, leakageListInfo.url) && Objects.equals(this.category, leakageListInfo.category)
-            && Objects.equals(this.contents, leakageListInfo.contents)
-            && Objects.equals(this.timestamp, leakageListInfo.timestamp)
-            && Objects.equals(this.status, leakageListInfo.status)
-            && Objects.equals(this.description, leakageListInfo.description);
+        LeakageListInfo that = (LeakageListInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.contents, that.contents) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -67,16 +67,15 @@ public class ShowClobDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClobDetailRequest showClobDetailRequest = (ShowClobDetailRequest) o;
-        return Objects.equals(this.xBusinessId, showClobDetailRequest.xBusinessId)
-            && Objects.equals(this.body, showClobDetailRequest.body);
+        ShowClobDetailRequest that = (ShowClobDetailRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

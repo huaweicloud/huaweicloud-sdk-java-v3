@@ -100,18 +100,16 @@ public class CreateCredentialResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCredentialResponse createCredentialResponse = (CreateCredentialResponse) o;
-        return Objects.equals(this.key, createCredentialResponse.key)
-            && Objects.equals(this.createTime, createCredentialResponse.createTime)
-            && Objects.equals(this.description, createCredentialResponse.description)
-            && Objects.equals(this.status, createCredentialResponse.status);
+        CreateCredentialResponse that = (CreateCredentialResponse) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status);
     }
 
     @Override

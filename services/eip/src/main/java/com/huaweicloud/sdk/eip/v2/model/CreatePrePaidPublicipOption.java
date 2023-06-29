@@ -65,22 +65,15 @@ public class CreatePrePaidPublicipOption {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,16 @@ public class CreatePrePaidPublicipOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrePaidPublicipOption createPrePaidPublicipOption = (CreatePrePaidPublicipOption) o;
-        return Objects.equals(this.type, createPrePaidPublicipOption.type)
-            && Objects.equals(this.ipVersion, createPrePaidPublicipOption.ipVersion)
-            && Objects.equals(this.alias, createPrePaidPublicipOption.alias)
-            && Objects.equals(this.portId, createPrePaidPublicipOption.portId);
+        CreatePrePaidPublicipOption that = (CreatePrePaidPublicipOption) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.portId, that.portId);
     }
 
     @Override

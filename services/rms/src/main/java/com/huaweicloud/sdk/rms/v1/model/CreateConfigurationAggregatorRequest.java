@@ -43,16 +43,15 @@ public class CreateConfigurationAggregatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfigurationAggregatorRequest createConfigurationAggregatorRequest =
-            (CreateConfigurationAggregatorRequest) o;
-        return Objects.equals(this.body, createConfigurationAggregatorRequest.body);
+        CreateConfigurationAggregatorRequest that = (CreateConfigurationAggregatorRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

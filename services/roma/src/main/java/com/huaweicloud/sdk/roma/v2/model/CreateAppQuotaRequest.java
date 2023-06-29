@@ -65,16 +65,15 @@ public class CreateAppQuotaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppQuotaRequest createAppQuotaRequest = (CreateAppQuotaRequest) o;
-        return Objects.equals(this.instanceId, createAppQuotaRequest.instanceId)
-            && Objects.equals(this.body, createAppQuotaRequest.body);
+        CreateAppQuotaRequest that = (CreateAppQuotaRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

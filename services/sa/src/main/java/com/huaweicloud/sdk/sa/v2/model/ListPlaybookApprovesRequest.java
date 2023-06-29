@@ -77,17 +77,16 @@ public class ListPlaybookApprovesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookApprovesRequest listPlaybookApprovesRequest = (ListPlaybookApprovesRequest) o;
-        return Objects.equals(this.workspaceId, listPlaybookApprovesRequest.workspaceId)
-            && Objects.equals(this.resourceId, listPlaybookApprovesRequest.resourceId)
-            && Objects.equals(this.approveType, listPlaybookApprovesRequest.approveType);
+        ListPlaybookApprovesRequest that = (ListPlaybookApprovesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.approveType, that.approveType);
     }
 
     @Override

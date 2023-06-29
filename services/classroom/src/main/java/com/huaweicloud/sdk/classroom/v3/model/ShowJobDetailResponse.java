@@ -166,21 +166,20 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobDetailResponse showJobDetailResponse = (ShowJobDetailResponse) o;
-        return Objects.equals(this.acceptJobNum, showJobDetailResponse.acceptJobNum)
-            && Objects.equals(this.endTime, showJobDetailResponse.endTime)
-            && Objects.equals(this.isAnswerVisibility, showJobDetailResponse.isAnswerVisibility)
-            && Objects.equals(this.isScoreVisibility, showJobDetailResponse.isScoreVisibility)
-            && Objects.equals(this.averageScore, showJobDetailResponse.averageScore)
-            && Objects.equals(this.scoreJobNum, showJobDetailResponse.scoreJobNum)
-            && Objects.equals(this.submitJobNum, showJobDetailResponse.submitJobNum);
+        ShowJobDetailResponse that = (ShowJobDetailResponse) obj;
+        return Objects.equals(this.acceptJobNum, that.acceptJobNum) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.isAnswerVisibility, that.isAnswerVisibility)
+            && Objects.equals(this.isScoreVisibility, that.isScoreVisibility)
+            && Objects.equals(this.averageScore, that.averageScore)
+            && Objects.equals(this.scoreJobNum, that.scoreJobNum)
+            && Objects.equals(this.submitJobNum, that.submitJobNum);
     }
 
     @Override

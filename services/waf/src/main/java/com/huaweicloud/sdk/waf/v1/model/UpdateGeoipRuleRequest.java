@@ -109,18 +109,17 @@ public class UpdateGeoipRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGeoipRuleRequest updateGeoipRuleRequest = (UpdateGeoipRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateGeoipRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateGeoipRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateGeoipRuleRequest.ruleId)
-            && Objects.equals(this.body, updateGeoipRuleRequest.body);
+        UpdateGeoipRuleRequest that = (UpdateGeoipRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class ScopedTokenInfoRoles {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScopedTokenInfoRoles scopedTokenInfoRoles = (ScopedTokenInfoRoles) o;
-        return Objects.equals(this.id, scopedTokenInfoRoles.id) && Objects.equals(this.name, scopedTokenInfoRoles.name);
+        ScopedTokenInfoRoles that = (ScopedTokenInfoRoles) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

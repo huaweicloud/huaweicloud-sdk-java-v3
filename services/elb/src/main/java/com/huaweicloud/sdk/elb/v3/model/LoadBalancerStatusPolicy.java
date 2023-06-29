@@ -140,19 +140,17 @@ public class LoadBalancerStatusPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoadBalancerStatusPolicy loadBalancerStatusPolicy = (LoadBalancerStatusPolicy) o;
-        return Objects.equals(this.action, loadBalancerStatusPolicy.action)
-            && Objects.equals(this.id, loadBalancerStatusPolicy.id)
-            && Objects.equals(this.provisioningStatus, loadBalancerStatusPolicy.provisioningStatus)
-            && Objects.equals(this.name, loadBalancerStatusPolicy.name)
-            && Objects.equals(this.rules, loadBalancerStatusPolicy.rules);
+        LoadBalancerStatusPolicy that = (LoadBalancerStatusPolicy) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

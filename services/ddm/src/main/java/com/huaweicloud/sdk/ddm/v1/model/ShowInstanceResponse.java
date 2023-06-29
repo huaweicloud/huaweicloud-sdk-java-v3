@@ -515,36 +515,27 @@ public class ShowInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceResponse showInstanceResponse = (ShowInstanceResponse) o;
-        return Objects.equals(this.id, showInstanceResponse.id)
-            && Objects.equals(this.status, showInstanceResponse.status)
-            && Objects.equals(this.name, showInstanceResponse.name)
-            && Objects.equals(this.created, showInstanceResponse.created)
-            && Objects.equals(this.updated, showInstanceResponse.updated)
-            && Objects.equals(this.availableZone, showInstanceResponse.availableZone)
-            && Objects.equals(this.vpcId, showInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, showInstanceResponse.subnetId)
-            && Objects.equals(this.securityGroupId, showInstanceResponse.securityGroupId)
-            && Objects.equals(this.nodeCount, showInstanceResponse.nodeCount)
-            && Objects.equals(this.accessIp, showInstanceResponse.accessIp)
-            && Objects.equals(this.accessPort, showInstanceResponse.accessPort)
-            && Objects.equals(this.nodeStatus, showInstanceResponse.nodeStatus)
-            && Objects.equals(this.coreCount, showInstanceResponse.coreCount)
-            && Objects.equals(this.ramCapacity, showInstanceResponse.ramCapacity)
-            && Objects.equals(this.errorMsg, showInstanceResponse.errorMsg)
-            && Objects.equals(this.projectId, showInstanceResponse.projectId)
-            && Objects.equals(this.orderId, showInstanceResponse.orderId)
-            && Objects.equals(this.enterpriseProjectId, showInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.engineVersion, showInstanceResponse.engineVersion)
-            && Objects.equals(this.nodes, showInstanceResponse.nodes)
-            && Objects.equals(this.adminUserName, showInstanceResponse.adminUserName);
+        ShowInstanceResponse that = (ShowInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.availableZone, that.availableZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.nodeCount, that.nodeCount) && Objects.equals(this.accessIp, that.accessIp)
+            && Objects.equals(this.accessPort, that.accessPort) && Objects.equals(this.nodeStatus, that.nodeStatus)
+            && Objects.equals(this.coreCount, that.coreCount) && Objects.equals(this.ramCapacity, that.ramCapacity)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.adminUserName, that.adminUserName);
     }
 
     @Override

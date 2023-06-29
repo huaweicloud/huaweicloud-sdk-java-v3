@@ -33,15 +33,15 @@ public class ResetLoginMethodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetLoginMethodRequest resetLoginMethodRequest = (ResetLoginMethodRequest) o;
-        return Objects.equals(this.serverId, resetLoginMethodRequest.serverId);
+        ResetLoginMethodRequest that = (ResetLoginMethodRequest) obj;
+        return Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

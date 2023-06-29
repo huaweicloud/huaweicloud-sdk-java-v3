@@ -65,16 +65,15 @@ public class BindingSite {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindingSite bindingSite = (BindingSite) o;
-        return Objects.equals(this.protein, bindingSite.protein)
-            && Objects.equals(this.boundingBox, bindingSite.boundingBox);
+        BindingSite that = (BindingSite) obj;
+        return Objects.equals(this.protein, that.protein) && Objects.equals(this.boundingBox, that.boundingBox);
     }
 
     @Override

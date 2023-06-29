@@ -99,17 +99,16 @@ public class UploadAsset {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAsset uploadAsset = (UploadAsset) o;
-        return Objects.equals(this.url, uploadAsset.url) && Objects.equals(this.assetId, uploadAsset.assetId)
-            && Objects.equals(this.errorCode, uploadAsset.errorCode)
-            && Objects.equals(this.errorMsg, uploadAsset.errorMsg);
+        UploadAsset that = (UploadAsset) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

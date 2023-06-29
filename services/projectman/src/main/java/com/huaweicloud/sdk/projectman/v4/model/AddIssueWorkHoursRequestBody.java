@@ -99,18 +99,17 @@ public class AddIssueWorkHoursRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddIssueWorkHoursRequestBody addIssueWorkHoursRequestBody = (AddIssueWorkHoursRequestBody) o;
-        return Objects.equals(this.startDate, addIssueWorkHoursRequestBody.startDate)
-            && Objects.equals(this.dueDate, addIssueWorkHoursRequestBody.dueDate)
-            && Objects.equals(this.workHours, addIssueWorkHoursRequestBody.workHours)
-            && Objects.equals(this.workHoursTypeId, addIssueWorkHoursRequestBody.workHoursTypeId);
+        AddIssueWorkHoursRequestBody that = (AddIssueWorkHoursRequestBody) obj;
+        return Objects.equals(this.startDate, that.startDate) && Objects.equals(this.dueDate, that.dueDate)
+            && Objects.equals(this.workHours, that.workHours)
+            && Objects.equals(this.workHoursTypeId, that.workHoursTypeId);
     }
 
     @Override

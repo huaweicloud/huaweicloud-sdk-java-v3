@@ -59,15 +59,15 @@ public class PortRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortRange portRange = (PortRange) o;
-        return Objects.equals(this.fromPort, portRange.fromPort) && Objects.equals(this.toPort, portRange.toPort);
+        PortRange that = (PortRange) obj;
+        return Objects.equals(this.fromPort, that.fromPort) && Objects.equals(this.toPort, that.toPort);
     }
 
     @Override

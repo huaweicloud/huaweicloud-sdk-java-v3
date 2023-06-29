@@ -77,17 +77,16 @@ public class ListInstancesDatastoreResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesDatastoreResult listInstancesDatastoreResult = (ListInstancesDatastoreResult) o;
-        return Objects.equals(this.type, listInstancesDatastoreResult.type)
-            && Objects.equals(this.version, listInstancesDatastoreResult.version)
-            && Objects.equals(this.patchAvailable, listInstancesDatastoreResult.patchAvailable);
+        ListInstancesDatastoreResult that = (ListInstancesDatastoreResult) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.patchAvailable, that.patchAvailable);
     }
 
     @Override

@@ -1,62 +1,50 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * EcsSpecificationBean
  */
-public class EcsSpecificationBean  {
-
+public class EcsSpecificationBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azs")
-    
+    @JsonProperty(value = "azs")
+
     private List<String> azs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
 
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy")
-    
+    @JsonProperty(value = "proxy")
 
     private Integer proxy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private Integer ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
 
     private Integer vcpus;
 
@@ -65,9 +53,8 @@ public class EcsSpecificationBean  {
         return this;
     }
 
-    
     public EcsSpecificationBean addAzsItem(String azsItem) {
-        if(this.azs == null) {
+        if (this.azs == null) {
             this.azs = new ArrayList<>();
         }
         this.azs.add(azsItem);
@@ -75,7 +62,7 @@ public class EcsSpecificationBean  {
     }
 
     public EcsSpecificationBean withAzs(Consumer<List<String>> azsSetter) {
-        if(this.azs == null) {
+        if (this.azs == null) {
             this.azs = new ArrayList<>();
         }
         azsSetter.accept(this.azs);
@@ -94,15 +81,10 @@ public class EcsSpecificationBean  {
         this.azs = azs;
     }
 
-    
-
     public EcsSpecificationBean withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * ID
@@ -116,15 +98,10 @@ public class EcsSpecificationBean  {
         this.id = id;
     }
 
-    
-
     public EcsSpecificationBean withLevel(String level) {
         this.level = level;
         return this;
     }
-
-    
-
 
     /**
      * 等级
@@ -138,15 +115,10 @@ public class EcsSpecificationBean  {
         this.level = level;
     }
 
-    
-
     public EcsSpecificationBean withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 名称
@@ -160,15 +132,10 @@ public class EcsSpecificationBean  {
         this.name = name;
     }
 
-    
-
     public EcsSpecificationBean withProxy(Integer proxy) {
         this.proxy = proxy;
         return this;
     }
-
-    
-
 
     /**
      * 代理
@@ -182,15 +149,10 @@ public class EcsSpecificationBean  {
         this.proxy = proxy;
     }
 
-    
-
     public EcsSpecificationBean withRam(Integer ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存
@@ -204,15 +166,10 @@ public class EcsSpecificationBean  {
         this.ram = ram;
     }
 
-    
-
     public EcsSpecificationBean withVcpus(Integer vcpus) {
         this.vcpus = vcpus;
         return this;
     }
-
-    
-
 
     /**
      * CPU
@@ -226,29 +183,26 @@ public class EcsSpecificationBean  {
         this.vcpus = vcpus;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EcsSpecificationBean ecsSpecificationBean = (EcsSpecificationBean) o;
-        return Objects.equals(this.azs, ecsSpecificationBean.azs) &&
-            Objects.equals(this.id, ecsSpecificationBean.id) &&
-            Objects.equals(this.level, ecsSpecificationBean.level) &&
-            Objects.equals(this.name, ecsSpecificationBean.name) &&
-            Objects.equals(this.proxy, ecsSpecificationBean.proxy) &&
-            Objects.equals(this.ram, ecsSpecificationBean.ram) &&
-            Objects.equals(this.vcpus, ecsSpecificationBean.vcpus);
+        EcsSpecificationBean that = (EcsSpecificationBean) obj;
+        return Objects.equals(this.azs, that.azs) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.vcpus, that.vcpus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(azs, id, level, name, proxy, ram, vcpus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -263,6 +217,7 @@ public class EcsSpecificationBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -273,8 +228,5 @@ public class EcsSpecificationBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

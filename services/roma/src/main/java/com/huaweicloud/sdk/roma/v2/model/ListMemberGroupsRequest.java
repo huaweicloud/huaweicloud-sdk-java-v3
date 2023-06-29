@@ -167,21 +167,19 @@ public class ListMemberGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMemberGroupsRequest listMemberGroupsRequest = (ListMemberGroupsRequest) o;
-        return Objects.equals(this.instanceId, listMemberGroupsRequest.instanceId)
-            && Objects.equals(this.vpcChannelId, listMemberGroupsRequest.vpcChannelId)
-            && Objects.equals(this.offset, listMemberGroupsRequest.offset)
-            && Objects.equals(this.limit, listMemberGroupsRequest.limit)
-            && Objects.equals(this.dictCode, listMemberGroupsRequest.dictCode)
-            && Objects.equals(this.memberGroupName, listMemberGroupsRequest.memberGroupName)
-            && Objects.equals(this.preciseSearch, listMemberGroupsRequest.preciseSearch);
+        ListMemberGroupsRequest that = (ListMemberGroupsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.dictCode, that.dictCode)
+            && Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

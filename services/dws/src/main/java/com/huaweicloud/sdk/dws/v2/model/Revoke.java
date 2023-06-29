@@ -55,15 +55,15 @@ public class Revoke {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Revoke revoke = (Revoke) o;
-        return Objects.equals(this.permission, revoke.permission) && Objects.equals(this.revokeWith, revoke.revokeWith);
+        Revoke that = (Revoke) obj;
+        return Objects.equals(this.permission, that.permission) && Objects.equals(this.revokeWith, that.revokeWith);
     }
 
     @Override

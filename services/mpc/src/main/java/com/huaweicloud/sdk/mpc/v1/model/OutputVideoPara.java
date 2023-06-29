@@ -221,20 +221,18 @@ public class OutputVideoPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputVideoPara outputVideoPara = (OutputVideoPara) o;
-        return Objects.equals(this.templateId, outputVideoPara.templateId)
-            && Objects.equals(this.size, outputVideoPara.size) && Objects.equals(this.pack, outputVideoPara.pack)
-            && Objects.equals(this.video, outputVideoPara.video) && Objects.equals(this.audio, outputVideoPara.audio)
-            && Objects.equals(this.fileName, outputVideoPara.fileName)
-            && Objects.equals(this.converDuration, outputVideoPara.converDuration)
-            && Objects.equals(this.error, outputVideoPara.error);
+        OutputVideoPara that = (OutputVideoPara) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.pack, that.pack) && Objects.equals(this.video, that.video)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.converDuration, that.converDuration) && Objects.equals(this.error, that.error);
     }
 
     @Override

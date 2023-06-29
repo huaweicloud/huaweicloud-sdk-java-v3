@@ -79,22 +79,15 @@ public class CreateLoadbalancerReq {
             if (value == null) {
                 return null;
             }
-            ProviderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProviderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProviderEnum(value));
         }
 
         public static ProviderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProviderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +256,19 @@ public class CreateLoadbalancerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoadbalancerReq createLoadbalancerReq = (CreateLoadbalancerReq) o;
-        return Objects.equals(this.tenantId, createLoadbalancerReq.tenantId)
-            && Objects.equals(this.name, createLoadbalancerReq.name)
-            && Objects.equals(this.description, createLoadbalancerReq.description)
-            && Objects.equals(this.vipSubnetId, createLoadbalancerReq.vipSubnetId)
-            && Objects.equals(this.vipAddress, createLoadbalancerReq.vipAddress)
-            && Objects.equals(this.provider, createLoadbalancerReq.provider)
-            && Objects.equals(this.adminStateUp, createLoadbalancerReq.adminStateUp)
-            && Objects.equals(this.enterpriseProjectId, createLoadbalancerReq.enterpriseProjectId);
+        CreateLoadbalancerReq that = (CreateLoadbalancerReq) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.vipSubnetId, that.vipSubnetId)
+            && Objects.equals(this.vipAddress, that.vipAddress) && Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

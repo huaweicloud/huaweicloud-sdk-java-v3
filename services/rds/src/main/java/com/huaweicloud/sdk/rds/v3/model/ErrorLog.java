@@ -77,16 +77,16 @@ public class ErrorLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorLog errorLog = (ErrorLog) o;
-        return Objects.equals(this.time, errorLog.time) && Objects.equals(this.level, errorLog.level)
-            && Objects.equals(this.content, errorLog.content);
+        ErrorLog that = (ErrorLog) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override

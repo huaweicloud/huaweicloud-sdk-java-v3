@@ -205,20 +205,18 @@ public class DeviceTemplateUpdateDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceTemplateUpdateDetail deviceTemplateUpdateDetail = (DeviceTemplateUpdateDetail) o;
-        return Objects.equals(this.description, deviceTemplateUpdateDetail.description)
-            && Objects.equals(this.attributes, deviceTemplateUpdateDetail.attributes)
-            && Objects.equals(this.twin, deviceTemplateUpdateDetail.twin)
-            && Objects.equals(this.tags, deviceTemplateUpdateDetail.tags)
-            && Objects.equals(this.accessProtocol, deviceTemplateUpdateDetail.accessProtocol)
-            && Objects.equals(this.propertyVisitors, deviceTemplateUpdateDetail.propertyVisitors);
+        DeviceTemplateUpdateDetail that = (DeviceTemplateUpdateDetail) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.twin, that.twin) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.accessProtocol, that.accessProtocol)
+            && Objects.equals(this.propertyVisitors, that.propertyVisitors);
     }
 
     @Override

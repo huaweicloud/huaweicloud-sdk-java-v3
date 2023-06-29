@@ -99,18 +99,16 @@ public class AlarmNotifyListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmNotifyListRequest alarmNotifyListRequest = (AlarmNotifyListRequest) o;
-        return Objects.equals(this.page, alarmNotifyListRequest.page)
-            && Objects.equals(this.pageSize, alarmNotifyListRequest.pageSize)
-            && Objects.equals(this.alarmDataId, alarmNotifyListRequest.alarmDataId)
-            && Objects.equals(this.region, alarmNotifyListRequest.region);
+        AlarmNotifyListRequest that = (AlarmNotifyListRequest) obj;
+        return Objects.equals(this.page, that.page) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.alarmDataId, that.alarmDataId) && Objects.equals(this.region, that.region);
     }
 
     @Override

@@ -169,19 +169,18 @@ public class PortResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PortResponseInfo portResponseInfo = (PortResponseInfo) o;
-        return Objects.equals(this.hostId, portResponseInfo.hostId)
-            && Objects.equals(this.laddr, portResponseInfo.laddr)
-            && Objects.equals(this.status, portResponseInfo.status) && Objects.equals(this.port, portResponseInfo.port)
-            && Objects.equals(this.type, portResponseInfo.type) && Objects.equals(this.pid, portResponseInfo.pid)
-            && Objects.equals(this.path, portResponseInfo.path);
+        PortResponseInfo that = (PortResponseInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.laddr, that.laddr)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.pid, that.pid)
+            && Objects.equals(this.path, that.path);
     }
 
     @Override

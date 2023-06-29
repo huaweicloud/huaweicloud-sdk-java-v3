@@ -73,22 +73,15 @@ public class ListPublicipsRequest {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -376,23 +369,20 @@ public class ListPublicipsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipsRequest listPublicipsRequest = (ListPublicipsRequest) o;
-        return Objects.equals(this.marker, listPublicipsRequest.marker)
-            && Objects.equals(this.limit, listPublicipsRequest.limit)
-            && Objects.equals(this.ipVersion, listPublicipsRequest.ipVersion)
-            && Objects.equals(this.enterpriseProjectId, listPublicipsRequest.enterpriseProjectId)
-            && Objects.equals(this.portId, listPublicipsRequest.portId)
-            && Objects.equals(this.publicIpAddress, listPublicipsRequest.publicIpAddress)
-            && Objects.equals(this.privateIpAddress, listPublicipsRequest.privateIpAddress)
-            && Objects.equals(this.id, listPublicipsRequest.id)
-            && Objects.equals(this.allowShareBandwidthTypeAny, listPublicipsRequest.allowShareBandwidthTypeAny);
+        ListPublicipsRequest that = (ListPublicipsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.allowShareBandwidthTypeAny, that.allowShareBandwidthTypeAny);
     }
 
     @Override

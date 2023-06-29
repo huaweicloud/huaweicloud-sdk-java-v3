@@ -143,20 +143,17 @@ public class ListApplicationEndpointsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationEndpointsRequest listApplicationEndpointsRequest = (ListApplicationEndpointsRequest) o;
-        return Objects.equals(this.applicationUrn, listApplicationEndpointsRequest.applicationUrn)
-            && Objects.equals(this.offset, listApplicationEndpointsRequest.offset)
-            && Objects.equals(this.limit, listApplicationEndpointsRequest.limit)
-            && Objects.equals(this.enabled, listApplicationEndpointsRequest.enabled)
-            && Objects.equals(this.token, listApplicationEndpointsRequest.token)
-            && Objects.equals(this.userData, listApplicationEndpointsRequest.userData);
+        ListApplicationEndpointsRequest that = (ListApplicationEndpointsRequest) obj;
+        return Objects.equals(this.applicationUrn, that.applicationUrn) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.token, that.token) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class VusersBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VusersBrokens vusersBrokens = (VusersBrokens) o;
-        return Objects.equals(this.vusers, vusersBrokens.vusers);
+        VusersBrokens that = (VusersBrokens) obj;
+        return Objects.equals(this.vusers, that.vusers);
     }
 
     @Override

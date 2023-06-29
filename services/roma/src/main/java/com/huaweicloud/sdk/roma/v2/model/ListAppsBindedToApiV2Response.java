@@ -97,17 +97,16 @@ public class ListAppsBindedToApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsBindedToApiV2Response listAppsBindedToApiV2Response = (ListAppsBindedToApiV2Response) o;
-        return Objects.equals(this.size, listAppsBindedToApiV2Response.size)
-            && Objects.equals(this.total, listAppsBindedToApiV2Response.total)
-            && Objects.equals(this.auths, listAppsBindedToApiV2Response.auths);
+        ListAppsBindedToApiV2Response that = (ListAppsBindedToApiV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.auths, that.auths);
     }
 
     @Override

@@ -132,20 +132,17 @@ public class ReinstallServerWithoutCloudInitOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallServerWithoutCloudInitOption reinstallServerWithoutCloudInitOption =
-            (ReinstallServerWithoutCloudInitOption) o;
-        return Objects.equals(this.adminpass, reinstallServerWithoutCloudInitOption.adminpass)
-            && Objects.equals(this.keyname, reinstallServerWithoutCloudInitOption.keyname)
-            && Objects.equals(this.userid, reinstallServerWithoutCloudInitOption.userid)
-            && Objects.equals(this.mode, reinstallServerWithoutCloudInitOption.mode)
-            && Objects.equals(this.metadata, reinstallServerWithoutCloudInitOption.metadata);
+        ReinstallServerWithoutCloudInitOption that = (ReinstallServerWithoutCloudInitOption) obj;
+        return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
+            && Objects.equals(this.userid, that.userid) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

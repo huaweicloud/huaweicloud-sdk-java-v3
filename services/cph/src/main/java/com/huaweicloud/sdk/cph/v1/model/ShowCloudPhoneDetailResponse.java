@@ -329,27 +329,21 @@ public class ShowCloudPhoneDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCloudPhoneDetailResponse showCloudPhoneDetailResponse = (ShowCloudPhoneDetailResponse) o;
-        return Objects.equals(this.requestId, showCloudPhoneDetailResponse.requestId)
-            && Objects.equals(this.phoneName, showCloudPhoneDetailResponse.phoneName)
-            && Objects.equals(this.serverId, showCloudPhoneDetailResponse.serverId)
-            && Objects.equals(this.phoneId, showCloudPhoneDetailResponse.phoneId)
-            && Objects.equals(this.imageId, showCloudPhoneDetailResponse.imageId)
-            && Objects.equals(this.vncEnable, showCloudPhoneDetailResponse.vncEnable)
-            && Objects.equals(this.phoneModelName, showCloudPhoneDetailResponse.phoneModelName)
-            && Objects.equals(this.status, showCloudPhoneDetailResponse.status)
-            && Objects.equals(this.accessInfos, showCloudPhoneDetailResponse.accessInfos)
-            && Objects.equals(this.property, showCloudPhoneDetailResponse.property)
-            && Objects.equals(this.metadata, showCloudPhoneDetailResponse.metadata)
-            && Objects.equals(this.createTime, showCloudPhoneDetailResponse.createTime)
-            && Objects.equals(this.updateTime, showCloudPhoneDetailResponse.updateTime);
+        ShowCloudPhoneDetailResponse that = (ShowCloudPhoneDetailResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.phoneName, that.phoneName)
+            && Objects.equals(this.serverId, that.serverId) && Objects.equals(this.phoneId, that.phoneId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.vncEnable, that.vncEnable)
+            && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.accessInfos, that.accessInfos) && Objects.equals(this.property, that.property)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -140,18 +140,18 @@ public class Cron {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Cron cron = (Cron) o;
-        return Objects.equals(this.startTime, cron.startTime) && Objects.equals(this.endTime, cron.endTime)
-            && Objects.equals(this.expression, cron.expression)
-            && Objects.equals(this.dependPrePeriod, cron.dependPrePeriod)
-            && Objects.equals(this.dependJobs, cron.dependJobs);
+        Cron that = (Cron) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.dependPrePeriod, that.dependPrePeriod)
+            && Objects.equals(this.dependJobs, that.dependJobs);
     }
 
     @Override

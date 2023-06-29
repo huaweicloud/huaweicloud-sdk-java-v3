@@ -33,15 +33,15 @@ public class ListPermanentAccessKeysRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPermanentAccessKeysRequest listPermanentAccessKeysRequest = (ListPermanentAccessKeysRequest) o;
-        return Objects.equals(this.userId, listPermanentAccessKeysRequest.userId);
+        ListPermanentAccessKeysRequest that = (ListPermanentAccessKeysRequest) obj;
+        return Objects.equals(this.userId, that.userId);
     }
 
     @Override

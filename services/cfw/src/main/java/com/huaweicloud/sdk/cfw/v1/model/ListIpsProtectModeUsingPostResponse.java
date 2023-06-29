@@ -44,16 +44,15 @@ public class ListIpsProtectModeUsingPostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpsProtectModeUsingPostResponse listIpsProtectModeUsingPostResponse =
-            (ListIpsProtectModeUsingPostResponse) o;
-        return Objects.equals(this.data, listIpsProtectModeUsingPostResponse.data);
+        ListIpsProtectModeUsingPostResponse that = (ListIpsProtectModeUsingPostResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -392,29 +392,25 @@ public class SimplifiedInstanceEntry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimplifiedInstanceEntry simplifiedInstanceEntry = (SimplifiedInstanceEntry) o;
-        return Objects.equals(this.id, simplifiedInstanceEntry.id)
-            && Objects.equals(this.name, simplifiedInstanceEntry.name)
-            && Objects.equals(this.engineName, simplifiedInstanceEntry.engineName)
-            && Objects.equals(this.engineVersion, simplifiedInstanceEntry.engineVersion)
-            && Objects.equals(this.instanceStatus, simplifiedInstanceEntry.instanceStatus)
-            && Objects.equals(this.frozen, simplifiedInstanceEntry.frozen)
-            && Objects.equals(this.type, simplifiedInstanceEntry.type)
-            && Objects.equals(this.payModel, simplifiedInstanceEntry.payModel)
-            && Objects.equals(this.specCode, simplifiedInstanceEntry.specCode)
-            && Objects.equals(this.availabilityZoneIds, simplifiedInstanceEntry.availabilityZoneIds)
-            && Objects.equals(this.readOnlyInstances, simplifiedInstanceEntry.readOnlyInstances)
-            && Objects.equals(this.currentActions, simplifiedInstanceEntry.currentActions)
-            && Objects.equals(this.volumeType, simplifiedInstanceEntry.volumeType)
-            && Objects.equals(this.volumeSize, simplifiedInstanceEntry.volumeSize)
-            && Objects.equals(this.enterpriseProjectId, simplifiedInstanceEntry.enterpriseProjectId);
+        SimplifiedInstanceEntry that = (SimplifiedInstanceEntry) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.instanceStatus, that.instanceStatus) && Objects.equals(this.frozen, that.frozen)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.payModel, that.payModel)
+            && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.readOnlyInstances, that.readOnlyInstances)
+            && Objects.equals(this.currentActions, that.currentActions)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.volumeSize, that.volumeSize)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

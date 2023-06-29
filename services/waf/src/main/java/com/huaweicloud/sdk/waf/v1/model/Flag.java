@@ -60,22 +60,15 @@ public class Flag {
             if (value == null) {
                 return null;
             }
-            Pci3dsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Pci3dsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Pci3dsEnum(value));
         }
 
         public static Pci3dsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Pci3dsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -142,22 +135,15 @@ public class Flag {
             if (value == null) {
                 return null;
             }
-            PciDssEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PciDssEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PciDssEnum(value));
         }
 
         public static PciDssEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PciDssEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,22 +210,15 @@ public class Flag {
             if (value == null) {
                 return null;
             }
-            CnameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CnameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CnameEnum(value));
         }
 
         public static CnameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CnameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,22 +285,15 @@ public class Flag {
             if (value == null) {
                 return null;
             }
-            IsDualAzEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsDualAzEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsDualAzEnum(value));
         }
 
         public static IsDualAzEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsDualAzEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -388,22 +360,15 @@ public class Flag {
             if (value == null) {
                 return null;
             }
-            Ipv6Enum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new Ipv6Enum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new Ipv6Enum(value));
         }
 
         public static Ipv6Enum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            Ipv6Enum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -511,17 +476,17 @@ public class Flag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Flag flag = (Flag) o;
-        return Objects.equals(this.pci3ds, flag.pci3ds) && Objects.equals(this.pciDss, flag.pciDss)
-            && Objects.equals(this.cname, flag.cname) && Objects.equals(this.isDualAz, flag.isDualAz)
-            && Objects.equals(this.ipv6, flag.ipv6);
+        Flag that = (Flag) obj;
+        return Objects.equals(this.pci3ds, that.pci3ds) && Objects.equals(this.pciDss, that.pciDss)
+            && Objects.equals(this.cname, that.cname) && Objects.equals(this.isDualAz, that.isDualAz)
+            && Objects.equals(this.ipv6, that.ipv6);
     }
 
     @Override

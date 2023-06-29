@@ -63,22 +63,15 @@ public class ApiPolicyReqBase {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectModeEnum(value));
         }
 
         public static EffectModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -238,19 +231,17 @@ public class ApiPolicyReqBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiPolicyReqBase apiPolicyReqBase = (ApiPolicyReqBase) o;
-        return Objects.equals(this.effectMode, apiPolicyReqBase.effectMode)
-            && Objects.equals(this.name, apiPolicyReqBase.name)
-            && Objects.equals(this.backendParams, apiPolicyReqBase.backendParams)
-            && Objects.equals(this.conditions, apiPolicyReqBase.conditions)
-            && Objects.equals(this.authorizerId, apiPolicyReqBase.authorizerId);
+        ApiPolicyReqBase that = (ApiPolicyReqBase) obj;
+        return Objects.equals(this.effectMode, that.effectMode) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.backendParams, that.backendParams)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

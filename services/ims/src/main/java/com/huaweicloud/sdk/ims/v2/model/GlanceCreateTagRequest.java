@@ -55,16 +55,15 @@ public class GlanceCreateTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceCreateTagRequest glanceCreateTagRequest = (GlanceCreateTagRequest) o;
-        return Objects.equals(this.imageId, glanceCreateTagRequest.imageId)
-            && Objects.equals(this.tag, glanceCreateTagRequest.tag);
+        GlanceCreateTagRequest that = (GlanceCreateTagRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

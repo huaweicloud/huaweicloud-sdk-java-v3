@@ -96,17 +96,16 @@ public class HealthCodeWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthCodeWordsBlockList healthCodeWordsBlockList = (HealthCodeWordsBlockList) o;
-        return Objects.equals(this.words, healthCodeWordsBlockList.words)
-            && Objects.equals(this.location, healthCodeWordsBlockList.location)
-            && Objects.equals(this.confidence, healthCodeWordsBlockList.confidence);
+        HealthCodeWordsBlockList that = (HealthCodeWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

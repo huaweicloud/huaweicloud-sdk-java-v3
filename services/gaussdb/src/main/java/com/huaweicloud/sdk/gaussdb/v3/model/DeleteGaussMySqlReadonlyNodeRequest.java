@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteGaussMySqlReadonlyNodeRequest  {
-
+public class DeleteGaussMySqlReadonlyNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
@@ -41,15 +30,12 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,15 +44,10 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public DeleteGaussMySqlReadonlyNodeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID，严格匹配UUID规则。
@@ -80,15 +61,10 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public DeleteGaussMySqlReadonlyNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID，严格匹配UUID规则。
@@ -102,25 +78,24 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGaussMySqlReadonlyNodeRequest deleteGaussMySqlReadonlyNodeRequest = (DeleteGaussMySqlReadonlyNodeRequest) o;
-        return Objects.equals(this.xLanguage, deleteGaussMySqlReadonlyNodeRequest.xLanguage) &&
-            Objects.equals(this.instanceId, deleteGaussMySqlReadonlyNodeRequest.instanceId) &&
-            Objects.equals(this.nodeId, deleteGaussMySqlReadonlyNodeRequest.nodeId);
+        DeleteGaussMySqlReadonlyNodeRequest that = (DeleteGaussMySqlReadonlyNodeRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.nodeId, that.nodeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, nodeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +106,7 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +117,5 @@ public class DeleteGaussMySqlReadonlyNodeRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

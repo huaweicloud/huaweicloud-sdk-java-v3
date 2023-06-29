@@ -180,18 +180,17 @@ public class JobSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobSpec jobSpec = (JobSpec) o;
-        return Objects.equals(this.type, jobSpec.type) && Objects.equals(this.clusterUID, jobSpec.clusterUID)
-            && Objects.equals(this.resourceID, jobSpec.resourceID)
-            && Objects.equals(this.resourceName, jobSpec.resourceName)
-            && Objects.equals(this.extendParam, jobSpec.extendParam) && Objects.equals(this.subJobs, jobSpec.subJobs);
+        JobSpec that = (JobSpec) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.clusterUID, that.clusterUID)
+            && Objects.equals(this.resourceID, that.resourceID) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.extendParam, that.extendParam) && Objects.equals(this.subJobs, that.subJobs);
     }
 
     @Override

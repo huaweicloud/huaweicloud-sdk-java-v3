@@ -96,16 +96,16 @@ public class BindTagsDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindTagsDTO bindTagsDTO = (BindTagsDTO) o;
-        return Objects.equals(this.resourceType, bindTagsDTO.resourceType)
-            && Objects.equals(this.resourceId, bindTagsDTO.resourceId) && Objects.equals(this.tags, bindTagsDTO.tags);
+        BindTagsDTO that = (BindTagsDTO) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

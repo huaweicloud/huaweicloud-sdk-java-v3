@@ -55,16 +55,15 @@ public class PhoneProperty {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneProperty phoneProperty = (PhoneProperty) o;
-        return Objects.equals(this.phoneId, phoneProperty.phoneId)
-            && Objects.equals(this.property, phoneProperty.property);
+        PhoneProperty that = (PhoneProperty) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.property, that.property);
     }
 
     @Override

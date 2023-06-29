@@ -163,22 +163,15 @@ public class UpdateListenerOption {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -649,37 +642,35 @@ public class UpdateListenerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateListenerOption updateListenerOption = (UpdateListenerOption) o;
-        return Objects.equals(this.adminStateUp, updateListenerOption.adminStateUp)
-            && Objects.equals(this.clientCaTlsContainerRef, updateListenerOption.clientCaTlsContainerRef)
-            && Objects.equals(this.defaultPoolId, updateListenerOption.defaultPoolId)
-            && Objects.equals(this.defaultTlsContainerRef, updateListenerOption.defaultTlsContainerRef)
-            && Objects.equals(this.description, updateListenerOption.description)
-            && Objects.equals(this.http2Enable, updateListenerOption.http2Enable)
-            && Objects.equals(this.insertHeaders, updateListenerOption.insertHeaders)
-            && Objects.equals(this.name, updateListenerOption.name)
-            && Objects.equals(this.sniContainerRefs, updateListenerOption.sniContainerRefs)
-            && Objects.equals(this.sniMatchAlgo, updateListenerOption.sniMatchAlgo)
-            && Objects.equals(this.tlsCiphersPolicy, updateListenerOption.tlsCiphersPolicy)
-            && Objects.equals(this.securityPolicyId, updateListenerOption.securityPolicyId)
-            && Objects.equals(this.enableMemberRetry, updateListenerOption.enableMemberRetry)
-            && Objects.equals(this.memberTimeout, updateListenerOption.memberTimeout)
-            && Objects.equals(this.clientTimeout, updateListenerOption.clientTimeout)
-            && Objects.equals(this.keepaliveTimeout, updateListenerOption.keepaliveTimeout)
-            && Objects.equals(this.ipgroup, updateListenerOption.ipgroup)
-            && Objects.equals(this.transparentClientIpEnable, updateListenerOption.transparentClientIpEnable)
-            && Objects.equals(this.enhanceL7policyEnable, updateListenerOption.enhanceL7policyEnable)
-            && Objects.equals(this.quicConfig, updateListenerOption.quicConfig)
-            && Objects.equals(this.protectionStatus, updateListenerOption.protectionStatus)
-            && Objects.equals(this.protectionReason, updateListenerOption.protectionReason)
-            && Objects.equals(this.gzipEnable, updateListenerOption.gzipEnable);
+        UpdateListenerOption that = (UpdateListenerOption) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.defaultPoolId, that.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.insertHeaders, that.insertHeaders) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sniContainerRefs, that.sniContainerRefs)
+            && Objects.equals(this.sniMatchAlgo, that.sniMatchAlgo)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy)
+            && Objects.equals(this.securityPolicyId, that.securityPolicyId)
+            && Objects.equals(this.enableMemberRetry, that.enableMemberRetry)
+            && Objects.equals(this.memberTimeout, that.memberTimeout)
+            && Objects.equals(this.clientTimeout, that.clientTimeout)
+            && Objects.equals(this.keepaliveTimeout, that.keepaliveTimeout)
+            && Objects.equals(this.ipgroup, that.ipgroup)
+            && Objects.equals(this.transparentClientIpEnable, that.transparentClientIpEnable)
+            && Objects.equals(this.enhanceL7policyEnable, that.enhanceL7policyEnable)
+            && Objects.equals(this.quicConfig, that.quicConfig)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.gzipEnable, that.gzipEnable);
     }
 
     @Override

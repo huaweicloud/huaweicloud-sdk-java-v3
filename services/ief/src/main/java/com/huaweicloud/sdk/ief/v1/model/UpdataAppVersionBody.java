@@ -43,15 +43,15 @@ public class UpdataAppVersionBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdataAppVersionBody updataAppVersionBody = (UpdataAppVersionBody) o;
-        return Objects.equals(this.version, updataAppVersionBody.version);
+        UpdataAppVersionBody that = (UpdataAppVersionBody) obj;
+        return Objects.equals(this.version, that.version);
     }
 
     @Override

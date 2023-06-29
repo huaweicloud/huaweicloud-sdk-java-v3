@@ -196,18 +196,17 @@ public class SvcSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SvcSpec svcSpec = (SvcSpec) o;
-        return Objects.equals(this.clusterIp, svcSpec.clusterIp)
-            && Objects.equals(this.externalIps, svcSpec.externalIps)
-            && Objects.equals(this.externalName, svcSpec.externalName) && Objects.equals(this.ports, svcSpec.ports)
-            && Objects.equals(this.selector, svcSpec.selector) && Objects.equals(this.type, svcSpec.type);
+        SvcSpec that = (SvcSpec) obj;
+        return Objects.equals(this.clusterIp, that.clusterIp) && Objects.equals(this.externalIps, that.externalIps)
+            && Objects.equals(this.externalName, that.externalName) && Objects.equals(this.ports, that.ports)
+            && Objects.equals(this.selector, that.selector) && Objects.equals(this.type, that.type);
     }
 
     @Override

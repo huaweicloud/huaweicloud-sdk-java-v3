@@ -282,25 +282,24 @@ public class UpdateListenerReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateListenerReq updateListenerReq = (UpdateListenerReq) o;
-        return Objects.equals(this.name, updateListenerReq.name)
-            && Objects.equals(this.description, updateListenerReq.description)
-            && Objects.equals(this.connectionLimit, updateListenerReq.connectionLimit)
-            && Objects.equals(this.http2Enable, updateListenerReq.http2Enable)
-            && Objects.equals(this.defaultPoolId, updateListenerReq.defaultPoolId)
-            && Objects.equals(this.defaultTlsContainerRef, updateListenerReq.defaultTlsContainerRef)
-            && Objects.equals(this.clientCaTlsContainerRef, updateListenerReq.clientCaTlsContainerRef)
-            && Objects.equals(this.sniContainerRefs, updateListenerReq.sniContainerRefs)
-            && Objects.equals(this.insertHeaders, updateListenerReq.insertHeaders)
-            && Objects.equals(this.tlsCiphersPolicy, updateListenerReq.tlsCiphersPolicy)
-            && Objects.equals(this.adminStateUp, updateListenerReq.adminStateUp);
+        UpdateListenerReq that = (UpdateListenerReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.connectionLimit, that.connectionLimit)
+            && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.defaultPoolId, that.defaultPoolId)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.sniContainerRefs, that.sniContainerRefs)
+            && Objects.equals(this.insertHeaders, that.insertHeaders)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy)
+            && Objects.equals(this.adminStateUp, that.adminStateUp);
     }
 
     @Override

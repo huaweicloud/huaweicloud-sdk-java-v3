@@ -53,15 +53,15 @@ public class ListAz2MigrateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAz2MigrateResponse listAz2MigrateResponse = (ListAz2MigrateResponse) o;
-        return Objects.equals(this.azList, listAz2MigrateResponse.azList);
+        ListAz2MigrateResponse that = (ListAz2MigrateResponse) obj;
+        return Objects.equals(this.azList, that.azList);
     }
 
     @Override

@@ -165,21 +165,18 @@ public class QueryLogKeyWordCountRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryLogKeyWordCountRequestBody queryLogKeyWordCountRequestBody = (QueryLogKeyWordCountRequestBody) o;
-        return Objects.equals(this.startTime, queryLogKeyWordCountRequestBody.startTime)
-            && Objects.equals(this.endTime, queryLogKeyWordCountRequestBody.endTime)
-            && Objects.equals(this.stepInterval, queryLogKeyWordCountRequestBody.stepInterval)
-            && Objects.equals(this.groupId, queryLogKeyWordCountRequestBody.groupId)
-            && Objects.equals(this.streamId, queryLogKeyWordCountRequestBody.streamId)
-            && Objects.equals(this.keyWord, queryLogKeyWordCountRequestBody.keyWord)
-            && Objects.equals(this.isIterative, queryLogKeyWordCountRequestBody.isIterative);
+        QueryLogKeyWordCountRequestBody that = (QueryLogKeyWordCountRequestBody) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.stepInterval, that.stepInterval) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.streamId, that.streamId) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.isIterative, that.isIterative);
     }
 
     @Override

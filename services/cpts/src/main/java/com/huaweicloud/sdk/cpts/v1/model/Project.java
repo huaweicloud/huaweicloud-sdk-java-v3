@@ -169,18 +169,18 @@ public class Project {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Project project = (Project) o;
-        return Objects.equals(this.createTime, project.createTime)
-            && Objects.equals(this.description, project.description) && Objects.equals(this.group, project.group)
-            && Objects.equals(this.id, project.id) && Objects.equals(this.name, project.name)
-            && Objects.equals(this.source, project.source) && Objects.equals(this.updateTime, project.updateTime);
+        Project that = (Project) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.group, that.group) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

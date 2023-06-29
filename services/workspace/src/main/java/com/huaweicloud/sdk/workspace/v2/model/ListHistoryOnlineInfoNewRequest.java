@@ -77,17 +77,16 @@ public class ListHistoryOnlineInfoNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryOnlineInfoNewRequest listHistoryOnlineInfoNewRequest = (ListHistoryOnlineInfoNewRequest) o;
-        return Objects.equals(this.startTime, listHistoryOnlineInfoNewRequest.startTime)
-            && Objects.equals(this.endTime, listHistoryOnlineInfoNewRequest.endTime)
-            && Objects.equals(this.queryType, listHistoryOnlineInfoNewRequest.queryType);
+        ListHistoryOnlineInfoNewRequest that = (ListHistoryOnlineInfoNewRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.queryType, that.queryType);
     }
 
     @Override

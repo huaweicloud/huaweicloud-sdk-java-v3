@@ -65,22 +65,15 @@ public class DiagnosisReportInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,19 @@ public class DiagnosisReportInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DiagnosisReportInfo diagnosisReportInfo = (DiagnosisReportInfo) o;
-        return Objects.equals(this.reportId, diagnosisReportInfo.reportId)
-            && Objects.equals(this.status, diagnosisReportInfo.status)
-            && Objects.equals(this.beginTime, diagnosisReportInfo.beginTime)
-            && Objects.equals(this.endTime, diagnosisReportInfo.endTime)
-            && Objects.equals(this.createdAt, diagnosisReportInfo.createdAt)
-            && Objects.equals(this.nodeNum, diagnosisReportInfo.nodeNum)
-            && Objects.equals(this.abnormalItemSum, diagnosisReportInfo.abnormalItemSum)
-            && Objects.equals(this.failedItemSum, diagnosisReportInfo.failedItemSum);
+        DiagnosisReportInfo that = (DiagnosisReportInfo) obj;
+        return Objects.equals(this.reportId, that.reportId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.abnormalItemSum, that.abnormalItemSum)
+            && Objects.equals(this.failedItemSum, that.failedItemSum);
     }
 
     @Override

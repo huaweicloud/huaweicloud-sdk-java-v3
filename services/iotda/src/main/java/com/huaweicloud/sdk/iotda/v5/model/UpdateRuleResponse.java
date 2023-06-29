@@ -307,25 +307,21 @@ public class UpdateRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleResponse updateRuleResponse = (UpdateRuleResponse) o;
-        return Objects.equals(this.ruleId, updateRuleResponse.ruleId)
-            && Objects.equals(this.name, updateRuleResponse.name)
-            && Objects.equals(this.description, updateRuleResponse.description)
-            && Objects.equals(this.conditionGroup, updateRuleResponse.conditionGroup)
-            && Objects.equals(this.actions, updateRuleResponse.actions)
-            && Objects.equals(this.ruleType, updateRuleResponse.ruleType)
-            && Objects.equals(this.status, updateRuleResponse.status)
-            && Objects.equals(this.appId, updateRuleResponse.appId)
-            && Objects.equals(this.edgeNodeIds, updateRuleResponse.edgeNodeIds)
-            && Objects.equals(this.lastUpdateTime, updateRuleResponse.lastUpdateTime)
-            && Objects.equals(this.deviceSide, updateRuleResponse.deviceSide);
+        UpdateRuleResponse that = (UpdateRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.conditionGroup, that.conditionGroup) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.ruleType, that.ruleType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.edgeNodeIds, that.edgeNodeIds)
+            && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.deviceSide, that.deviceSide);
     }
 
     @Override

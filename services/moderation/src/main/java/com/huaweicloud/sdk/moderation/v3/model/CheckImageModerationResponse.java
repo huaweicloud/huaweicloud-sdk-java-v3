@@ -66,16 +66,15 @@ public class CheckImageModerationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckImageModerationResponse checkImageModerationResponse = (CheckImageModerationResponse) o;
-        return Objects.equals(this.requestId, checkImageModerationResponse.requestId)
-            && Objects.equals(this.result, checkImageModerationResponse.result);
+        CheckImageModerationResponse that = (CheckImageModerationResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.result, that.result);
     }
 
     @Override

@@ -263,24 +263,21 @@ public class ScaleOutPolicyRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScaleOutPolicyRsp scaleOutPolicyRsp = (ScaleOutPolicyRsp) o;
-        return Objects.equals(this.id, scaleOutPolicyRsp.id) && Objects.equals(this.name, scaleOutPolicyRsp.name)
-            && Objects.equals(this.status, scaleOutPolicyRsp.status)
-            && Objects.equals(this.createTime, scaleOutPolicyRsp.createTime)
-            && Objects.equals(this.nodeSpec, scaleOutPolicyRsp.nodeSpec)
-            && Objects.equals(this.availabilityZone, scaleOutPolicyRsp.availabilityZone)
-            && Objects.equals(this.nodes, scaleOutPolicyRsp.nodes)
-            && Objects.equals(this.maxNodes, scaleOutPolicyRsp.maxNodes)
-            && Objects.equals(this.minNodes, scaleOutPolicyRsp.minNodes)
-            && Objects.equals(this.scalingTimes, scaleOutPolicyRsp.scalingTimes)
-            && Objects.equals(this.scalingEnable, scaleOutPolicyRsp.scalingEnable);
+        ScaleOutPolicyRsp that = (ScaleOutPolicyRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.nodeSpec, that.nodeSpec)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.maxNodes, that.maxNodes) && Objects.equals(this.minNodes, that.minNodes)
+            && Objects.equals(this.scalingTimes, that.scalingTimes)
+            && Objects.equals(this.scalingEnable, that.scalingEnable);
     }
 
     @Override

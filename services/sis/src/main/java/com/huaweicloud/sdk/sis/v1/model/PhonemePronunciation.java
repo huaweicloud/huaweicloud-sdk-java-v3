@@ -55,16 +55,15 @@ public class PhonemePronunciation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhonemePronunciation phonemePronunciation = (PhonemePronunciation) o;
-        return Objects.equals(this.score, phonemePronunciation.score)
-            && Objects.equals(this.gop, phonemePronunciation.gop);
+        PhonemePronunciation that = (PhonemePronunciation) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.gop, that.gop);
     }
 
     @Override

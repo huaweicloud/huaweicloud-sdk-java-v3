@@ -77,16 +77,15 @@ public class ListCompetitionWorksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCompetitionWorksResponse listCompetitionWorksResponse = (ListCompetitionWorksResponse) o;
-        return Objects.equals(this.works, listCompetitionWorksResponse.works)
-            && Objects.equals(this.total, listCompetitionWorksResponse.total);
+        ListCompetitionWorksResponse that = (ListCompetitionWorksResponse) obj;
+        return Objects.equals(this.works, that.works) && Objects.equals(this.total, that.total);
     }
 
     @Override

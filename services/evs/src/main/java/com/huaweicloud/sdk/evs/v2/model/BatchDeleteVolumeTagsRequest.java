@@ -65,16 +65,15 @@ public class BatchDeleteVolumeTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteVolumeTagsRequest batchDeleteVolumeTagsRequest = (BatchDeleteVolumeTagsRequest) o;
-        return Objects.equals(this.volumeId, batchDeleteVolumeTagsRequest.volumeId)
-            && Objects.equals(this.body, batchDeleteVolumeTagsRequest.body);
+        BatchDeleteVolumeTagsRequest that = (BatchDeleteVolumeTagsRequest) obj;
+        return Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.body, that.body);
     }
 
     @Override

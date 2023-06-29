@@ -57,22 +57,15 @@ public class CreateDesktopReq {
             if (value == null) {
                 return null;
             }
-            DesktopTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DesktopTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DesktopTypeEnum(value));
         }
 
         public static DesktopTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DesktopTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -132,7 +125,7 @@ public class CreateDesktopReq {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroupInfo> securityGroups = null;
+    private List<SecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "desktops")
@@ -148,6 +141,11 @@ public class CreateDesktopReq {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "eip")
+
+    private Eip eip;
 
     public CreateDesktopReq withDesktopType(DesktopTypeEnum desktopType) {
         this.desktopType = desktopType;
@@ -326,12 +324,12 @@ public class CreateDesktopReq {
         this.nics = nics;
     }
 
-    public CreateDesktopReq withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public CreateDesktopReq withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public CreateDesktopReq addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
+    public CreateDesktopReq addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -339,7 +337,7 @@ public class CreateDesktopReq {
         return this;
     }
 
-    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+    public CreateDesktopReq withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -351,11 +349,11 @@ public class CreateDesktopReq {
      * 桌面使用的安全组，如果不指定则默认使用桌面代理中指定的安全组。
      * @return securityGroups
      */
-    public List<SecurityGroupInfo> getSecurityGroups() {
+    public List<SecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -381,7 +379,7 @@ public class CreateDesktopReq {
     }
 
     /**
-     * 创建桌面使用的参数列表。长度为1-50。  当前不支持一批桌面不同配置，所有桌面的配置和第一台的一致，如果第一台未设置参数，则取外层的同名参数。
+     * 创建桌面使用的参数列表。长度为1-100。  当前不支持一批桌面不同配置，所有桌面的配置和第一台的一致，如果第一台未设置参数，则取外层的同名参数。
      * @return desktops
      */
     public List<Desktop> getDesktops() {
@@ -398,7 +396,7 @@ public class CreateDesktopReq {
     }
 
     /**
-     * 创建成功后是否发送邮件通知桌面用户，默认为true。此参数仅在开通云桌面服务的domain_type为LOCAL_AD时有效，为LITE_AS时无效，因为LITE_AS首次创建桌面时必须发送邮件通知桌面用户修改登录密码。
+     * 创建成功后是否发送邮件通知桌面用户，默认为true。
      * @return emailNotification
      */
     public Boolean getEmailNotification() {
@@ -442,27 +440,49 @@ public class CreateDesktopReq {
         this.tags = tags;
     }
 
+    public CreateDesktopReq withEip(Eip eip) {
+        this.eip = eip;
+        return this;
+    }
+
+    public CreateDesktopReq withEip(Consumer<Eip> eipSetter) {
+        if (this.eip == null) {
+            this.eip = new Eip();
+            eipSetter.accept(this.eip);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get eip
+     * @return eip
+     */
+    public Eip getEip() {
+        return eip;
+    }
+
+    public void setEip(Eip eip) {
+        this.eip = eip;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDesktopReq createDesktopReq = (CreateDesktopReq) o;
-        return Objects.equals(this.desktopType, createDesktopReq.desktopType)
-            && Objects.equals(this.availabilityZone, createDesktopReq.availabilityZone)
-            && Objects.equals(this.productId, createDesktopReq.productId)
-            && Objects.equals(this.imageType, createDesktopReq.imageType)
-            && Objects.equals(this.imageId, createDesktopReq.imageId)
-            && Objects.equals(this.rootVolume, createDesktopReq.rootVolume)
-            && Objects.equals(this.dataVolumes, createDesktopReq.dataVolumes)
-            && Objects.equals(this.nics, createDesktopReq.nics)
-            && Objects.equals(this.securityGroups, createDesktopReq.securityGroups)
-            && Objects.equals(this.desktops, createDesktopReq.desktops)
-            && Objects.equals(this.emailNotification, createDesktopReq.emailNotification)
-            && Objects.equals(this.tags, createDesktopReq.tags);
+        CreateDesktopReq that = (CreateDesktopReq) obj;
+        return Objects.equals(this.desktopType, that.desktopType)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.desktops, that.desktops)
+            && Objects.equals(this.emailNotification, that.emailNotification) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.eip, that.eip);
     }
 
     @Override
@@ -478,7 +498,8 @@ public class CreateDesktopReq {
             securityGroups,
             desktops,
             emailNotification,
-            tags);
+            tags,
+            eip);
     }
 
     @Override
@@ -497,6 +518,7 @@ public class CreateDesktopReq {
         sb.append("    desktops: ").append(toIndentedString(desktops)).append("\n");
         sb.append("    emailNotification: ").append(toIndentedString(emailNotification)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    eip: ").append(toIndentedString(eip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

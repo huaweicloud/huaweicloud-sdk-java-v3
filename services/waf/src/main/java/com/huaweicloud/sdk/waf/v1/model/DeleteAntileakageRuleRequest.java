@@ -77,17 +77,16 @@ public class DeleteAntileakageRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAntileakageRuleRequest deleteAntileakageRuleRequest = (DeleteAntileakageRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, deleteAntileakageRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, deleteAntileakageRuleRequest.policyId)
-            && Objects.equals(this.ruleId, deleteAntileakageRuleRequest.ruleId);
+        DeleteAntileakageRuleRequest that = (DeleteAntileakageRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId);
     }
 
     @Override

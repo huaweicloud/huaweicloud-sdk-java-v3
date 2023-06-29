@@ -55,16 +55,15 @@ public class PolicyItemAccess {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyItemAccess policyItemAccess = (PolicyItemAccess) o;
-        return Objects.equals(this.isAllowed, policyItemAccess.isAllowed)
-            && Objects.equals(this.type, policyItemAccess.type);
+        PolicyItemAccess that = (PolicyItemAccess) obj;
+        return Objects.equals(this.isAllowed, that.isAllowed) && Objects.equals(this.type, that.type);
     }
 
     @Override

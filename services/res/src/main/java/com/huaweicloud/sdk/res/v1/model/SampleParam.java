@@ -81,17 +81,16 @@ public class SampleParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SampleParam sampleParam = (SampleParam) o;
-        return Objects.equals(this.divideType, sampleParam.divideType)
-            && Objects.equals(this.trainRate, sampleParam.trainRate)
-            && Objects.equals(this.testRate, sampleParam.testRate);
+        SampleParam that = (SampleParam) obj;
+        return Objects.equals(this.divideType, that.divideType) && Objects.equals(this.trainRate, that.trainRate)
+            && Objects.equals(this.testRate, that.testRate);
     }
 
     @Override

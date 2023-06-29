@@ -109,18 +109,16 @@ public class UpdateRetentionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRetentionRequest updateRetentionRequest = (UpdateRetentionRequest) o;
-        return Objects.equals(this.namespace, updateRetentionRequest.namespace)
-            && Objects.equals(this.repository, updateRetentionRequest.repository)
-            && Objects.equals(this.retentionId, updateRetentionRequest.retentionId)
-            && Objects.equals(this.body, updateRetentionRequest.body);
+        UpdateRetentionRequest that = (UpdateRetentionRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.retentionId, that.retentionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

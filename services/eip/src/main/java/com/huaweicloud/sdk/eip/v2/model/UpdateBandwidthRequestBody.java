@@ -43,15 +43,15 @@ public class UpdateBandwidthRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthRequestBody updateBandwidthRequestBody = (UpdateBandwidthRequestBody) o;
-        return Objects.equals(this.bandwidth, updateBandwidthRequestBody.bandwidth);
+        UpdateBandwidthRequestBody that = (UpdateBandwidthRequestBody) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

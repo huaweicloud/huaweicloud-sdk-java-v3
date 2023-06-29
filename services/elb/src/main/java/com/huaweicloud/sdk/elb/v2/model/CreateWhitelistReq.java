@@ -99,18 +99,17 @@ public class CreateWhitelistReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWhitelistReq createWhitelistReq = (CreateWhitelistReq) o;
-        return Objects.equals(this.tenantId, createWhitelistReq.tenantId)
-            && Objects.equals(this.listenerId, createWhitelistReq.listenerId)
-            && Objects.equals(this.enableWhitelist, createWhitelistReq.enableWhitelist)
-            && Objects.equals(this.whitelist, createWhitelistReq.whitelist);
+        CreateWhitelistReq that = (CreateWhitelistReq) obj;
+        return Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.listenerId, that.listenerId)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.whitelist, that.whitelist);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class EnhancedConnectionResourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnhancedConnectionResourceInfo enhancedConnectionResourceInfo = (EnhancedConnectionResourceInfo) o;
-        return Objects.equals(this.peerId, enhancedConnectionResourceInfo.peerId)
-            && Objects.equals(this.status, enhancedConnectionResourceInfo.status)
-            && Objects.equals(this.name, enhancedConnectionResourceInfo.name)
-            && Objects.equals(this.errMsg, enhancedConnectionResourceInfo.errMsg)
-            && Objects.equals(this.updateTime, enhancedConnectionResourceInfo.updateTime);
+        EnhancedConnectionResourceInfo that = (EnhancedConnectionResourceInfo) obj;
+        return Objects.equals(this.peerId, that.peerId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.errMsg, that.errMsg)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

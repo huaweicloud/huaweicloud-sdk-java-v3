@@ -97,17 +97,16 @@ public class CompareFaceByUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareFaceByUrlResponse compareFaceByUrlResponse = (CompareFaceByUrlResponse) o;
-        return Objects.equals(this.image1Face, compareFaceByUrlResponse.image1Face)
-            && Objects.equals(this.image2Face, compareFaceByUrlResponse.image2Face)
-            && Objects.equals(this.similarity, compareFaceByUrlResponse.similarity);
+        CompareFaceByUrlResponse that = (CompareFaceByUrlResponse) obj;
+        return Objects.equals(this.image1Face, that.image1Face) && Objects.equals(this.image2Face, that.image2Face)
+            && Objects.equals(this.similarity, that.similarity);
     }
 
     @Override

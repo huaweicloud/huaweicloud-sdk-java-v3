@@ -1,39 +1,30 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class SessionExtends  {
-
+public class SessionExtends {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tag_ids")
-    
+    @JsonProperty(value = "tag_ids")
 
     private Tag tagIds;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_ids")
-    
+    @JsonProperty(value = "domain_ids")
+
     private List<String> domainIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="source")
-    
+    @JsonProperty(value = "source")
 
     private String source;
 
@@ -43,14 +34,13 @@ public class SessionExtends  {
     }
 
     public SessionExtends withTagIds(Consumer<Tag> tagIdsSetter) {
-        if(this.tagIds == null ){
+        if (this.tagIds == null) {
             this.tagIds = new Tag();
             tagIdsSetter.accept(this.tagIds);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get tagIds
@@ -64,16 +54,13 @@ public class SessionExtends  {
         this.tagIds = tagIds;
     }
 
-    
-
     public SessionExtends withDomainIds(List<String> domainIds) {
         this.domainIds = domainIds;
         return this;
     }
 
-    
     public SessionExtends addDomainIdsItem(String domainIdsItem) {
-        if(this.domainIds == null) {
+        if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
         this.domainIds.add(domainIdsItem);
@@ -81,7 +68,7 @@ public class SessionExtends  {
     }
 
     public SessionExtends withDomainIds(Consumer<List<String>> domainIdsSetter) {
-        if(this.domainIds == null) {
+        if (this.domainIds == null) {
             this.domainIds = new ArrayList<>();
         }
         domainIdsSetter.accept(this.domainIds);
@@ -100,15 +87,10 @@ public class SessionExtends  {
         this.domainIds = domainIds;
     }
 
-    
-
     public SessionExtends withSource(String source) {
         this.source = source;
         return this;
     }
-
-    
-
 
     /**
      * 问题来源 其他支持用户自定义，最终体现在问答日志里
@@ -122,25 +104,24 @@ public class SessionExtends  {
         this.source = source;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SessionExtends sessionExtends = (SessionExtends) o;
-        return Objects.equals(this.tagIds, sessionExtends.tagIds) &&
-            Objects.equals(this.domainIds, sessionExtends.domainIds) &&
-            Objects.equals(this.source, sessionExtends.source);
+        SessionExtends that = (SessionExtends) obj;
+        return Objects.equals(this.tagIds, that.tagIds) && Objects.equals(this.domainIds, that.domainIds)
+            && Objects.equals(this.source, that.source);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tagIds, domainIds, source);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -151,6 +132,7 @@ public class SessionExtends  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -161,8 +143,5 @@ public class SessionExtends  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

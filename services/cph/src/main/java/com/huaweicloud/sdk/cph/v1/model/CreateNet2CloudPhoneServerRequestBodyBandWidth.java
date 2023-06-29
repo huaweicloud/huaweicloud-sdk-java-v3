@@ -105,21 +105,18 @@ public class CreateNet2CloudPhoneServerRequestBodyBandWidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequestBodyBandWidth createNet2CloudPhoneServerRequestBodyBandWidth =
-            (CreateNet2CloudPhoneServerRequestBodyBandWidth) o;
-        return Objects.equals(this.bandWidthId, createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthId)
-            && Objects.equals(this.bandWidthSize, createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthSize)
-            && Objects.equals(this.bandWidthChargeMode,
-                createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthChargeMode)
-            && Objects.equals(this.bandWidthShareType,
-                createNet2CloudPhoneServerRequestBodyBandWidth.bandWidthShareType);
+        CreateNet2CloudPhoneServerRequestBodyBandWidth that = (CreateNet2CloudPhoneServerRequestBodyBandWidth) obj;
+        return Objects.equals(this.bandWidthId, that.bandWidthId)
+            && Objects.equals(this.bandWidthSize, that.bandWidthSize)
+            && Objects.equals(this.bandWidthChargeMode, that.bandWidthChargeMode)
+            && Objects.equals(this.bandWidthShareType, that.bandWidthShareType);
     }
 
     @Override

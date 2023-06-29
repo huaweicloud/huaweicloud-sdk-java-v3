@@ -121,18 +121,16 @@ public class ListSchemasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSchemasResponse listSchemasResponse = (ListSchemasResponse) o;
-        return Objects.equals(this.totalCount, listSchemasResponse.totalCount)
-            && Objects.equals(this.dwId, listSchemasResponse.dwId)
-            && Objects.equals(this.database, listSchemasResponse.database)
-            && Objects.equals(this.schemas, listSchemasResponse.schemas);
+        ListSchemasResponse that = (ListSchemasResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.dwId, that.dwId)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.schemas, that.schemas);
     }
 
     @Override

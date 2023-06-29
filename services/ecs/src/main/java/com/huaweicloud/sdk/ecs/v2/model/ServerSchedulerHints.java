@@ -128,17 +128,16 @@ public class ServerSchedulerHints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerSchedulerHints serverSchedulerHints = (ServerSchedulerHints) o;
-        return Objects.equals(this.group, serverSchedulerHints.group)
-            && Objects.equals(this.tenancy, serverSchedulerHints.tenancy)
-            && Objects.equals(this.dedicatedHostId, serverSchedulerHints.dedicatedHostId);
+        ServerSchedulerHints that = (ServerSchedulerHints) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.tenancy, that.tenancy)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId);
     }
 
     @Override

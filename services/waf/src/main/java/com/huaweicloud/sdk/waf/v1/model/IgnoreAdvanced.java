@@ -74,16 +74,15 @@ public class IgnoreAdvanced {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IgnoreAdvanced ignoreAdvanced = (IgnoreAdvanced) o;
-        return Objects.equals(this.index, ignoreAdvanced.index)
-            && Objects.equals(this.contents, ignoreAdvanced.contents);
+        IgnoreAdvanced that = (IgnoreAdvanced) obj;
+        return Objects.equals(this.index, that.index) && Objects.equals(this.contents, that.contents);
     }
 
     @Override

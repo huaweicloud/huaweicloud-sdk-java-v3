@@ -53,15 +53,15 @@ public class ListApiVersionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiVersionResponse listApiVersionResponse = (ListApiVersionResponse) o;
-        return Objects.equals(this.versions, listApiVersionResponse.versions);
+        ListApiVersionResponse that = (ListApiVersionResponse) obj;
+        return Objects.equals(this.versions, that.versions);
     }
 
     @Override

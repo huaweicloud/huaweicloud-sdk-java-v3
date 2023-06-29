@@ -79,17 +79,16 @@ public class WeakPwdAccountInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeakPwdAccountInfoResponseInfo weakPwdAccountInfoResponseInfo = (WeakPwdAccountInfoResponseInfo) o;
-        return Objects.equals(this.userName, weakPwdAccountInfoResponseInfo.userName)
-            && Objects.equals(this.serviceType, weakPwdAccountInfoResponseInfo.serviceType)
-            && Objects.equals(this.duration, weakPwdAccountInfoResponseInfo.duration);
+        WeakPwdAccountInfoResponseInfo that = (WeakPwdAccountInfoResponseInfo) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.duration, that.duration);
     }
 
     @Override

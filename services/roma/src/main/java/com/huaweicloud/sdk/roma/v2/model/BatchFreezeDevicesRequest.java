@@ -65,16 +65,15 @@ public class BatchFreezeDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchFreezeDevicesRequest batchFreezeDevicesRequest = (BatchFreezeDevicesRequest) o;
-        return Objects.equals(this.instanceId, batchFreezeDevicesRequest.instanceId)
-            && Objects.equals(this.body, batchFreezeDevicesRequest.body);
+        BatchFreezeDevicesRequest that = (BatchFreezeDevicesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

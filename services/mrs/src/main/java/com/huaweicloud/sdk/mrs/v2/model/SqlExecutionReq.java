@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * SqlExecutionReq
  */
-public class SqlExecutionReq  {
-
+public class SqlExecutionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql_type")
-    
+    @JsonProperty(value = "sql_type")
 
     private String sqlType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sql_content")
-    
+    @JsonProperty(value = "sql_content")
 
     private String sqlContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="database")
-    
+    @JsonProperty(value = "database")
 
     private String database;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="archive_path")
-    
+    @JsonProperty(value = "archive_path")
 
     private String archivePath;
 
@@ -45,9 +34,6 @@ public class SqlExecutionReq  {
         this.sqlType = sqlType;
         return this;
     }
-
-    
-
 
     /**
      * SQL类型。目前仅支持“presto”类型的SQL。 说明： - 只有包含Presto组件的集群才能提交执行presto类型的SQL。 - 当前仅MRS 2.0.6版本的MRS 2.0.6.1补丁、MRS 2.1.0版本的MRS 2.1.0.7补丁、MRS 3.1.2及之后版本集群支持。
@@ -61,15 +47,10 @@ public class SqlExecutionReq  {
         this.sqlType = sqlType;
     }
 
-    
-
     public SqlExecutionReq withSqlContent(String sqlContent) {
         this.sqlContent = sqlContent;
         return this;
     }
-
-    
-
 
     /**
      * 待执行的SQL语句。 说明： 目前仅支持执行单条语句，语句中不包含“;”。
@@ -83,15 +64,10 @@ public class SqlExecutionReq  {
         this.sqlContent = sqlContent;
     }
 
-    
-
     public SqlExecutionReq withDatabase(String database) {
         this.database = database;
         return this;
     }
-
-    
-
 
     /**
      * 执行SQL所在的数据库，默认为default。
@@ -105,15 +81,10 @@ public class SqlExecutionReq  {
         this.database = database;
     }
 
-    
-
     public SqlExecutionReq withArchivePath(String archivePath) {
         this.archivePath = archivePath;
         return this;
     }
-
-    
-
 
     /**
      * SQL执行结果的转储文件夹。 说明： 只有select语句才会转储查询的结果。当前仅支持转储到OBS中。
@@ -127,26 +98,24 @@ public class SqlExecutionReq  {
         this.archivePath = archivePath;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlExecutionReq sqlExecutionReq = (SqlExecutionReq) o;
-        return Objects.equals(this.sqlType, sqlExecutionReq.sqlType) &&
-            Objects.equals(this.sqlContent, sqlExecutionReq.sqlContent) &&
-            Objects.equals(this.database, sqlExecutionReq.database) &&
-            Objects.equals(this.archivePath, sqlExecutionReq.archivePath);
+        SqlExecutionReq that = (SqlExecutionReq) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.sqlContent, that.sqlContent)
+            && Objects.equals(this.database, that.database) && Objects.equals(this.archivePath, that.archivePath);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sqlType, sqlContent, database, archivePath);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class SqlExecutionReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class SqlExecutionReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

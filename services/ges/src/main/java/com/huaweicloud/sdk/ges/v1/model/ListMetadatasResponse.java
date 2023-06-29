@@ -1,58 +1,43 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.Metadata;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListMetadatasResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaCount")
-    
+    @JsonProperty(value = "schemaCount")
 
     private Integer schemaCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaList")
-    
+    @JsonProperty(value = "schemaList")
+
     private List<Metadata> schemaList = null;
-    
+
     public ListMetadatasResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -66,15 +51,10 @@ public class ListMetadatasResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public ListMetadatasResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -88,15 +68,10 @@ public class ListMetadatasResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ListMetadatasResponse withSchemaCount(Integer schemaCount) {
         this.schemaCount = schemaCount;
         return this;
     }
-
-    
-
 
     /**
      * 元数据返回个数。请求失败时，字段为空。
@@ -110,16 +85,13 @@ public class ListMetadatasResponse extends SdkResponse {
         this.schemaCount = schemaCount;
     }
 
-    
-
     public ListMetadatasResponse withSchemaList(List<Metadata> schemaList) {
         this.schemaList = schemaList;
         return this;
     }
 
-    
     public ListMetadatasResponse addSchemaListItem(Metadata schemaListItem) {
-        if(this.schemaList == null) {
+        if (this.schemaList == null) {
             this.schemaList = new ArrayList<>();
         }
         this.schemaList.add(schemaListItem);
@@ -127,7 +99,7 @@ public class ListMetadatasResponse extends SdkResponse {
     }
 
     public ListMetadatasResponse withSchemaList(Consumer<List<Metadata>> schemaListSetter) {
-        if(this.schemaList == null) {
+        if (this.schemaList == null) {
             this.schemaList = new ArrayList<>();
         }
         schemaListSetter.accept(this.schemaList);
@@ -146,26 +118,24 @@ public class ListMetadatasResponse extends SdkResponse {
         this.schemaList = schemaList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMetadatasResponse listMetadatasResponse = (ListMetadatasResponse) o;
-        return Objects.equals(this.errorMessage, listMetadatasResponse.errorMessage) &&
-            Objects.equals(this.errorCode, listMetadatasResponse.errorCode) &&
-            Objects.equals(this.schemaCount, listMetadatasResponse.schemaCount) &&
-            Objects.equals(this.schemaList, listMetadatasResponse.schemaList);
+        ListMetadatasResponse that = (ListMetadatasResponse) obj;
+        return Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.schemaCount, that.schemaCount) && Objects.equals(this.schemaList, that.schemaList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorMessage, errorCode, schemaCount, schemaList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +147,7 @@ public class ListMetadatasResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +158,5 @@ public class ListMetadatasResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

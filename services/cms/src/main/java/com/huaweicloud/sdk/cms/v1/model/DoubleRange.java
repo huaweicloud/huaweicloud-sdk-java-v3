@@ -55,15 +55,15 @@ public class DoubleRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DoubleRange doubleRange = (DoubleRange) o;
-        return Objects.equals(this.max, doubleRange.max) && Objects.equals(this.min, doubleRange.min);
+        DoubleRange that = (DoubleRange) obj;
+        return Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min);
     }
 
     @Override

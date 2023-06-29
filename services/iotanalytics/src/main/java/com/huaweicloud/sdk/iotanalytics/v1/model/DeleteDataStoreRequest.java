@@ -33,15 +33,15 @@ public class DeleteDataStoreRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDataStoreRequest deleteDataStoreRequest = (DeleteDataStoreRequest) o;
-        return Objects.equals(this.dataStoreId, deleteDataStoreRequest.dataStoreId);
+        DeleteDataStoreRequest that = (DeleteDataStoreRequest) obj;
+        return Objects.equals(this.dataStoreId, that.dataStoreId);
     }
 
     @Override

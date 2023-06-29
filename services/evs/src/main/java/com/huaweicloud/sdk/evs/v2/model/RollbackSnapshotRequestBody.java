@@ -43,15 +43,15 @@ public class RollbackSnapshotRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RollbackSnapshotRequestBody rollbackSnapshotRequestBody = (RollbackSnapshotRequestBody) o;
-        return Objects.equals(this.rollback, rollbackSnapshotRequestBody.rollback);
+        RollbackSnapshotRequestBody that = (RollbackSnapshotRequestBody) obj;
+        return Objects.equals(this.rollback, that.rollback);
     }
 
     @Override

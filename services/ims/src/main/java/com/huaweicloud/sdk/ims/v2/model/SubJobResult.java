@@ -73,22 +73,15 @@ public class SubJobResult {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -291,21 +284,18 @@ public class SubJobResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubJobResult subJobResult = (SubJobResult) o;
-        return Objects.equals(this.status, subJobResult.status) && Objects.equals(this.jobId, subJobResult.jobId)
-            && Objects.equals(this.jobType, subJobResult.jobType)
-            && Objects.equals(this.beginTime, subJobResult.beginTime)
-            && Objects.equals(this.endTime, subJobResult.endTime)
-            && Objects.equals(this.errorCode, subJobResult.errorCode)
-            && Objects.equals(this.failReason, subJobResult.failReason)
-            && Objects.equals(this.entities, subJobResult.entities);
+        SubJobResult that = (SubJobResult) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.entities, that.entities);
     }
 
     @Override

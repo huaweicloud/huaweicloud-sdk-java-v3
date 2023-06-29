@@ -131,19 +131,18 @@ public class RespDataByIdCardImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespDataByIdCardImage respDataByIdCardImage = (RespDataByIdCardImage) o;
-        return Objects.equals(this.verificationResult, respDataByIdCardImage.verificationResult)
-            && Objects.equals(this.verificationMessage, respDataByIdCardImage.verificationMessage)
-            && Objects.equals(this.verificationCode, respDataByIdCardImage.verificationCode)
-            && Objects.equals(this.similarity, respDataByIdCardImage.similarity)
-            && Objects.equals(this.idcardResult, respDataByIdCardImage.idcardResult);
+        RespDataByIdCardImage that = (RespDataByIdCardImage) obj;
+        return Objects.equals(this.verificationResult, that.verificationResult)
+            && Objects.equals(this.verificationMessage, that.verificationMessage)
+            && Objects.equals(this.verificationCode, that.verificationCode)
+            && Objects.equals(this.similarity, that.similarity) && Objects.equals(this.idcardResult, that.idcardResult);
     }
 
     @Override

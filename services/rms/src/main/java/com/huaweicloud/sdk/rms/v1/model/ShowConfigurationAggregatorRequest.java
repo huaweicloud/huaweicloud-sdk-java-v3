@@ -33,15 +33,15 @@ public class ShowConfigurationAggregatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationAggregatorRequest showConfigurationAggregatorRequest = (ShowConfigurationAggregatorRequest) o;
-        return Objects.equals(this.aggregatorId, showConfigurationAggregatorRequest.aggregatorId);
+        ShowConfigurationAggregatorRequest that = (ShowConfigurationAggregatorRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId);
     }
 
     @Override

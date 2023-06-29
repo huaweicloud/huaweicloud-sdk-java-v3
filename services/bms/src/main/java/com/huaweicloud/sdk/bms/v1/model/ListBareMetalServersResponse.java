@@ -75,16 +75,15 @@ public class ListBareMetalServersResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBareMetalServersResponse listBareMetalServersResponse = (ListBareMetalServersResponse) o;
-        return Objects.equals(this.servers, listBareMetalServersResponse.servers)
-            && Objects.equals(this.count, listBareMetalServersResponse.count);
+        ListBareMetalServersResponse that = (ListBareMetalServersResponse) obj;
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.count, that.count);
     }
 
     @Override

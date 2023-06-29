@@ -65,16 +65,16 @@ public class RecognizeIdDocumentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeIdDocumentRequest recognizeIdDocumentRequest = (RecognizeIdDocumentRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeIdDocumentRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeIdDocumentRequest.body);
+        RecognizeIdDocumentRequest that = (RecognizeIdDocumentRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

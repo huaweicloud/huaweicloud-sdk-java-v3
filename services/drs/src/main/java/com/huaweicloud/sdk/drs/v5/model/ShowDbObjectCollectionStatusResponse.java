@@ -83,22 +83,15 @@ public class ShowDbObjectCollectionStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -258,21 +251,17 @@ public class ShowDbObjectCollectionStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDbObjectCollectionStatusResponse showDbObjectCollectionStatusResponse =
-            (ShowDbObjectCollectionStatusResponse) o;
-        return Objects.equals(this.targetRootDb, showDbObjectCollectionStatusResponse.targetRootDb)
-            && Objects.equals(this.objectInfo, showDbObjectCollectionStatusResponse.objectInfo)
-            && Objects.equals(this.maxTableNum, showDbObjectCollectionStatusResponse.maxTableNum)
-            && Objects.equals(this.status, showDbObjectCollectionStatusResponse.status)
-            && Objects.equals(this.id, showDbObjectCollectionStatusResponse.id)
-            && Objects.equals(this.objectScope, showDbObjectCollectionStatusResponse.objectScope);
+        ShowDbObjectCollectionStatusResponse that = (ShowDbObjectCollectionStatusResponse) obj;
+        return Objects.equals(this.targetRootDb, that.targetRootDb) && Objects.equals(this.objectInfo, that.objectInfo)
+            && Objects.equals(this.maxTableNum, that.maxTableNum) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.objectScope, that.objectScope);
     }
 
     @Override

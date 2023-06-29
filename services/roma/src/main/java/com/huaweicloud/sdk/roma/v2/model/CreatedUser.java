@@ -55,15 +55,15 @@ public class CreatedUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatedUser createdUser = (CreatedUser) o;
-        return Objects.equals(this.userId, createdUser.userId) && Objects.equals(this.userName, createdUser.userName);
+        CreatedUser that = (CreatedUser) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

@@ -188,21 +188,18 @@ public class RepoStatisticsEvent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoStatisticsEvent repoStatisticsEvent = (RepoStatisticsEvent) o;
-        return Objects.equals(this.branch, repoStatisticsEvent.branch)
-            && Objects.equals(this.createdAt, repoStatisticsEvent.createdAt)
-            && Objects.equals(this.date, repoStatisticsEvent.date) && Objects.equals(this.id, repoStatisticsEvent.id)
-            && Objects.equals(this.projectId, repoStatisticsEvent.projectId)
-            && Objects.equals(this.status, repoStatisticsEvent.status)
-            && Objects.equals(this.updatedAt, repoStatisticsEvent.updatedAt)
-            && Objects.equals(this.userId, repoStatisticsEvent.userId);
+        RepoStatisticsEvent that = (RepoStatisticsEvent) obj;
+        return Objects.equals(this.branch, that.branch) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.date, that.date) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

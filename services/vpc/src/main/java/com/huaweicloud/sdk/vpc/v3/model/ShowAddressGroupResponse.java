@@ -66,16 +66,15 @@ public class ShowAddressGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAddressGroupResponse showAddressGroupResponse = (ShowAddressGroupResponse) o;
-        return Objects.equals(this.requestId, showAddressGroupResponse.requestId)
-            && Objects.equals(this.addressGroup, showAddressGroupResponse.addressGroup);
+        ShowAddressGroupResponse that = (ShowAddressGroupResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.addressGroup, that.addressGroup);
     }
 
     @Override

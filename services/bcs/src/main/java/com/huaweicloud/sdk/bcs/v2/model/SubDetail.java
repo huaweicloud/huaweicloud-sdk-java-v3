@@ -184,18 +184,18 @@ public class SubDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubDetail subDetail = (SubDetail) o;
-        return Objects.equals(this.substepName, subDetail.substepName) && Objects.equals(this.detail, subDetail.detail)
-            && Objects.equals(this.status, subDetail.status) && Objects.equals(this.message, subDetail.message)
-            && Objects.equals(this.startTime, subDetail.startTime) && Objects.equals(this.endTime, subDetail.endTime)
-            && Objects.equals(this.serialNum, subDetail.serialNum);
+        SubDetail that = (SubDetail) obj;
+        return Objects.equals(this.substepName, that.substepName) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.serialNum, that.serialNum);
     }
 
     @Override

@@ -109,20 +109,18 @@ public class UpdateDomainProtectPolicyResponseBodyProtectPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainProtectPolicyResponseBodyProtectPolicy updateDomainProtectPolicyResponseBodyProtectPolicy =
-            (UpdateDomainProtectPolicyResponseBodyProtectPolicy) o;
-        return Objects.equals(this.allowUser, updateDomainProtectPolicyResponseBodyProtectPolicy.allowUser)
-            && Objects.equals(this.operationProtection,
-                updateDomainProtectPolicyResponseBodyProtectPolicy.operationProtection)
-            && Objects.equals(this.adminCheck, updateDomainProtectPolicyResponseBodyProtectPolicy.adminCheck)
-            && Objects.equals(this.scene, updateDomainProtectPolicyResponseBodyProtectPolicy.scene);
+        UpdateDomainProtectPolicyResponseBodyProtectPolicy that =
+            (UpdateDomainProtectPolicyResponseBodyProtectPolicy) obj;
+        return Objects.equals(this.allowUser, that.allowUser)
+            && Objects.equals(this.operationProtection, that.operationProtection)
+            && Objects.equals(this.adminCheck, that.adminCheck) && Objects.equals(this.scene, that.scene);
     }
 
     @Override

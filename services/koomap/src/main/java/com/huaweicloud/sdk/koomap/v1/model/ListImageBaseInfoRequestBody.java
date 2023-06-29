@@ -275,24 +275,19 @@ public class ListImageBaseInfoRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageBaseInfoRequestBody listImageBaseInfoRequestBody = (ListImageBaseInfoRequestBody) o;
-        return Objects.equals(this.imageName, listImageBaseInfoRequestBody.imageName)
-            && Objects.equals(this.imageDateFrom, listImageBaseInfoRequestBody.imageDateFrom)
-            && Objects.equals(this.imageDateTo, listImageBaseInfoRequestBody.imageDateTo)
-            && Objects.equals(this.imageStatus, listImageBaseInfoRequestBody.imageStatus)
-            && Objects.equals(this.rawAlias, listImageBaseInfoRequestBody.rawAlias)
-            && Objects.equals(this.imageAlias, listImageBaseInfoRequestBody.imageAlias)
-            && Objects.equals(this.imageLevels, listImageBaseInfoRequestBody.imageLevels)
-            && Objects.equals(this.isProduct, listImageBaseInfoRequestBody.isProduct)
-            && Objects.equals(this.limit, listImageBaseInfoRequestBody.limit)
-            && Objects.equals(this.offset, listImageBaseInfoRequestBody.offset);
+        ListImageBaseInfoRequestBody that = (ListImageBaseInfoRequestBody) obj;
+        return Objects.equals(this.imageName, that.imageName) && Objects.equals(this.imageDateFrom, that.imageDateFrom)
+            && Objects.equals(this.imageDateTo, that.imageDateTo) && Objects.equals(this.imageStatus, that.imageStatus)
+            && Objects.equals(this.rawAlias, that.rawAlias) && Objects.equals(this.imageAlias, that.imageAlias)
+            && Objects.equals(this.imageLevels, that.imageLevels) && Objects.equals(this.isProduct, that.isProduct)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

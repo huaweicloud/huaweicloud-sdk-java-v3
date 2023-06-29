@@ -66,16 +66,15 @@ public class ShowAttachmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAttachmentResponse showAttachmentResponse = (ShowAttachmentResponse) o;
-        return Objects.equals(this.attachment, showAttachmentResponse.attachment)
-            && Objects.equals(this.requestId, showAttachmentResponse.requestId);
+        ShowAttachmentResponse that = (ShowAttachmentResponse) obj;
+        return Objects.equals(this.attachment, that.attachment) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

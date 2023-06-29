@@ -131,19 +131,17 @@ public class UpdateFunctionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionRequest updateFunctionRequest = (UpdateFunctionRequest) o;
-        return Objects.equals(this.instanceId, updateFunctionRequest.instanceId)
-            && Objects.equals(this.catalogName, updateFunctionRequest.catalogName)
-            && Objects.equals(this.databaseName, updateFunctionRequest.databaseName)
-            && Objects.equals(this.functionName, updateFunctionRequest.functionName)
-            && Objects.equals(this.body, updateFunctionRequest.body);
+        UpdateFunctionRequest that = (UpdateFunctionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.functionName, that.functionName) && Objects.equals(this.body, that.body);
     }
 
     @Override

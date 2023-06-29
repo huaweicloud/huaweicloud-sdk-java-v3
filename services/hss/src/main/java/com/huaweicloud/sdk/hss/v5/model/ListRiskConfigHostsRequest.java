@@ -169,21 +169,18 @@ public class ListRiskConfigHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRiskConfigHostsRequest listRiskConfigHostsRequest = (ListRiskConfigHostsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listRiskConfigHostsRequest.enterpriseProjectId)
-            && Objects.equals(this.checkName, listRiskConfigHostsRequest.checkName)
-            && Objects.equals(this.standard, listRiskConfigHostsRequest.standard)
-            && Objects.equals(this.hostName, listRiskConfigHostsRequest.hostName)
-            && Objects.equals(this.hostIp, listRiskConfigHostsRequest.hostIp)
-            && Objects.equals(this.limit, listRiskConfigHostsRequest.limit)
-            && Objects.equals(this.offset, listRiskConfigHostsRequest.offset);
+        ListRiskConfigHostsRequest that = (ListRiskConfigHostsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

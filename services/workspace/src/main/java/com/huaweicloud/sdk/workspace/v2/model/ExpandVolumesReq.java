@@ -79,17 +79,16 @@ public class ExpandVolumesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandVolumesReq expandVolumesReq = (ExpandVolumesReq) o;
-        return Objects.equals(this.desktopId, expandVolumesReq.desktopId)
-            && Objects.equals(this.volumeId, expandVolumesReq.volumeId)
-            && Objects.equals(this.newSize, expandVolumesReq.newSize);
+        ExpandVolumesReq that = (ExpandVolumesReq) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.newSize, that.newSize);
     }
 
     @Override

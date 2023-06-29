@@ -122,19 +122,17 @@ public class UpdatePunishmentRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePunishmentRuleResponse updatePunishmentRuleResponse = (UpdatePunishmentRuleResponse) o;
-        return Objects.equals(this.id, updatePunishmentRuleResponse.id)
-            && Objects.equals(this.policyid, updatePunishmentRuleResponse.policyid)
-            && Objects.equals(this.blockTime, updatePunishmentRuleResponse.blockTime)
-            && Objects.equals(this.category, updatePunishmentRuleResponse.category)
-            && Objects.equals(this.description, updatePunishmentRuleResponse.description);
+        UpdatePunishmentRuleResponse that = (UpdatePunishmentRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.blockTime, that.blockTime) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

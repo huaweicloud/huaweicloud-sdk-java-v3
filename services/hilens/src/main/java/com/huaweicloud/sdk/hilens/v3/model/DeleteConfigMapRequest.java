@@ -33,15 +33,15 @@ public class DeleteConfigMapRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConfigMapRequest deleteConfigMapRequest = (DeleteConfigMapRequest) o;
-        return Objects.equals(this.configMapId, deleteConfigMapRequest.configMapId);
+        DeleteConfigMapRequest that = (DeleteConfigMapRequest) obj;
+        return Objects.equals(this.configMapId, that.configMapId);
     }
 
     @Override

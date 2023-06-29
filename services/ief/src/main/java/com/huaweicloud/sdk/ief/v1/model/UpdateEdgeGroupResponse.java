@@ -539,32 +539,25 @@ public class UpdateEdgeGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeGroupResponse updateEdgeGroupResponse = (UpdateEdgeGroupResponse) o;
-        return Objects.equals(this.id, updateEdgeGroupResponse.id)
-            && Objects.equals(this.name, updateEdgeGroupResponse.name)
-            && Objects.equals(this.description, updateEdgeGroupResponse.description)
-            && Objects.equals(this.createdAt, updateEdgeGroupResponse.createdAt)
-            && Objects.equals(this.updatedAt, updateEdgeGroupResponse.updatedAt)
-            && Objects.equals(this.projectId, updateEdgeGroupResponse.projectId)
-            && Objects.equals(this.iamRole, updateEdgeGroupResponse.iamRole)
-            && Objects.equals(this.cpu, updateEdgeGroupResponse.cpu)
-            && Objects.equals(this.memory, updateEdgeGroupResponse.memory)
-            && Objects.equals(this.gpuNum, updateEdgeGroupResponse.gpuNum)
-            && Objects.equals(this.nodes, updateEdgeGroupResponse.nodes)
-            && Objects.equals(this.deployments, updateEdgeGroupResponse.deployments)
-            && Objects.equals(this.attributes, updateEdgeGroupResponse.attributes)
-            && Objects.equals(this.tags, updateEdgeGroupResponse.tags)
-            && Objects.equals(this.successNodeAdd, updateEdgeGroupResponse.successNodeAdd)
-            && Objects.equals(this.successNodeDel, updateEdgeGroupResponse.successNodeDel)
-            && Objects.equals(this.failedNodeAdd, updateEdgeGroupResponse.failedNodeAdd)
-            && Objects.equals(this.failedNodeDel, updateEdgeGroupResponse.failedNodeDel);
+        UpdateEdgeGroupResponse that = (UpdateEdgeGroupResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.iamRole, that.iamRole) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.gpuNum, that.gpuNum)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.deployments, that.deployments)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.successNodeAdd, that.successNodeAdd)
+            && Objects.equals(this.successNodeDel, that.successNodeDel)
+            && Objects.equals(this.failedNodeAdd, that.failedNodeAdd)
+            && Objects.equals(this.failedNodeDel, that.failedNodeDel);
     }
 
     @Override

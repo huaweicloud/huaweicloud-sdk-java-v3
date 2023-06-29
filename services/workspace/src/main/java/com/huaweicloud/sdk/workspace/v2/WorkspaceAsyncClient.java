@@ -388,6 +388,36 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 批量注销桌面
+     *
+     * 批量注销桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchLogoffDesktopsRequest 请求对象
+     * @return CompletableFuture<BatchLogoffDesktopsResponse>
+     */
+    public CompletableFuture<BatchLogoffDesktopsResponse> batchLogoffDesktopsAsync(BatchLogoffDesktopsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchLogoffDesktops);
+    }
+
+    /**
+     * 批量注销桌面
+     *
+     * 批量注销桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchLogoffDesktopsRequest 请求对象
+     * @return AsyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse>
+     */
+    public AsyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse> batchLogoffDesktopsAsyncInvoker(
+        BatchLogoffDesktopsRequest request) {
+        return new AsyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse>(request,
+            WorkspaceMeta.batchLogoffDesktops, hcClient);
+    }
+
+    /**
      * 操作桌面
      *
      * 批量操作桌面，用于批量开机、关机和重启。
@@ -598,6 +628,277 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUnusedDesktopsRequest 请求对象
+     * @return CompletableFuture<ListUnusedDesktopsResponse>
+     */
+    public CompletableFuture<ListUnusedDesktopsResponse> listUnusedDesktopsAsync(ListUnusedDesktopsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUnusedDesktops);
+    }
+
+    /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUnusedDesktopsRequest 请求对象
+     * @return AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>
+     */
+    public AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse> listUnusedDesktopsAsyncInvoker(
+        ListUnusedDesktopsRequest request) {
+        return new AsyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>(request,
+            WorkspaceMeta.listUnusedDesktops, hcClient);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsedDesktopInfoRequest 请求对象
+     * @return CompletableFuture<ListUsedDesktopInfoResponse>
+     */
+    public CompletableFuture<ListUsedDesktopInfoResponse> listUsedDesktopInfoAsync(ListUsedDesktopInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUsedDesktopInfo);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsedDesktopInfoRequest 请求对象
+     * @return AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>
+     */
+    public AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse> listUsedDesktopInfoAsyncInvoker(
+        ListUsedDesktopInfoRequest request) {
+        return new AsyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>(request,
+            WorkspaceMeta.listUsedDesktopInfo, hcClient);
+    }
+
+    /**
+     * 批量删除用户组
+     *
+     * 该接口用于批量删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteUserGroupsRequest 请求对象
+     * @return CompletableFuture<BatchDeleteUserGroupsResponse>
+     */
+    public CompletableFuture<BatchDeleteUserGroupsResponse> batchDeleteUserGroupsAsync(
+        BatchDeleteUserGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDeleteUserGroups);
+    }
+
+    /**
+     * 批量删除用户组
+     *
+     * 该接口用于批量删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteUserGroupsRequest 请求对象
+     * @return AsyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse>
+     */
+    public AsyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse> batchDeleteUserGroupsAsyncInvoker(
+        BatchDeleteUserGroupsRequest request) {
+        return new AsyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse>(request,
+            WorkspaceMeta.batchDeleteUserGroups, hcClient);
+    }
+
+    /**
+     * 创建用户组
+     *
+     * 该接口用于创建用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUserGroupRequest 请求对象
+     * @return CompletableFuture<CreateUserGroupResponse>
+     */
+    public CompletableFuture<CreateUserGroupResponse> createUserGroupAsync(CreateUserGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.createUserGroup);
+    }
+
+    /**
+     * 创建用户组
+     *
+     * 该接口用于创建用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUserGroupRequest 请求对象
+     * @return AsyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse>
+     */
+    public AsyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse> createUserGroupAsyncInvoker(
+        CreateUserGroupRequest request) {
+        return new AsyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse>(request, WorkspaceMeta.createUserGroup,
+            hcClient);
+    }
+
+    /**
+     * 删除用户组
+     *
+     * 删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteUserGroupRequest 请求对象
+     * @return CompletableFuture<DeleteUserGroupResponse>
+     */
+    public CompletableFuture<DeleteUserGroupResponse> deleteUserGroupAsync(DeleteUserGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.deleteUserGroup);
+    }
+
+    /**
+     * 删除用户组
+     *
+     * 删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteUserGroupRequest 请求对象
+     * @return AsyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse>
+     */
+    public AsyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse> deleteUserGroupAsyncInvoker(
+        DeleteUserGroupRequest request) {
+        return new AsyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse>(request, WorkspaceMeta.deleteUserGroup,
+            hcClient);
+    }
+
+    /**
+     * 查询用户组列表
+     *
+     * 查询用户组列表，支持分页。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserGroupsRequest 请求对象
+     * @return CompletableFuture<ListUserGroupsResponse>
+     */
+    public CompletableFuture<ListUserGroupsResponse> listUserGroupsAsync(ListUserGroupsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUserGroups);
+    }
+
+    /**
+     * 查询用户组列表
+     *
+     * 查询用户组列表，支持分页。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserGroupsRequest 请求对象
+     * @return AsyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse>
+     */
+    public AsyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse> listUserGroupsAsyncInvoker(
+        ListUserGroupsRequest request) {
+        return new AsyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse>(request, WorkspaceMeta.listUserGroups,
+            hcClient);
+    }
+
+    /**
+     * 查询用户组中的用户
+     *
+     * 该接口用于查询用户组中的用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersOfGroupRequest 请求对象
+     * @return CompletableFuture<ListUsersOfGroupResponse>
+     */
+    public CompletableFuture<ListUsersOfGroupResponse> listUsersOfGroupAsync(ListUsersOfGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listUsersOfGroup);
+    }
+
+    /**
+     * 查询用户组中的用户
+     *
+     * 该接口用于查询用户组中的用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersOfGroupRequest 请求对象
+     * @return AsyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse>
+     */
+    public AsyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse> listUsersOfGroupAsyncInvoker(
+        ListUsersOfGroupRequest request) {
+        return new AsyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse>(request,
+            WorkspaceMeta.listUsersOfGroup, hcClient);
+    }
+
+    /**
+     * 操作用户组
+     *
+     * 操作用户组，如添加用户、删除用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunActionsOnGroupRequest 请求对象
+     * @return CompletableFuture<RunActionsOnGroupResponse>
+     */
+    public CompletableFuture<RunActionsOnGroupResponse> runActionsOnGroupAsync(RunActionsOnGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.runActionsOnGroup);
+    }
+
+    /**
+     * 操作用户组
+     *
+     * 操作用户组，如添加用户、删除用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunActionsOnGroupRequest 请求对象
+     * @return AsyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse>
+     */
+    public AsyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse> runActionsOnGroupAsyncInvoker(
+        RunActionsOnGroupRequest request) {
+        return new AsyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse>(request,
+            WorkspaceMeta.runActionsOnGroup, hcClient);
+    }
+
+    /**
+     * 修改用户组信息
+     *
+     * 该接口用于修改用户组信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateUserGroupRequest 请求对象
+     * @return CompletableFuture<UpdateUserGroupResponse>
+     */
+    public CompletableFuture<UpdateUserGroupResponse> updateUserGroupAsync(UpdateUserGroupRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.updateUserGroup);
+    }
+
+    /**
+     * 修改用户组信息
+     *
+     * 该接口用于修改用户组信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateUserGroupRequest 请求对象
+     * @return AsyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse>
+     */
+    public AsyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse> updateUserGroupAsyncInvoker(
+        UpdateUserGroupRequest request) {
+        return new AsyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse>(request, WorkspaceMeta.updateUserGroup,
+            hcClient);
+    }
+
+    /**
      * 查询产品镜像列表
      *
      * 该接口用于查询云桌面支持的产品镜像列表。
@@ -653,6 +954,129 @@ public class WorkspaceAsyncClient {
         ListItaSubJobsRequest request) {
         return new AsyncInvoker<ListItaSubJobsRequest, ListItaSubJobsResponse>(request, WorkspaceMeta.listItaSubJobs,
             hcClient);
+    }
+
+    /**
+     * 开通桌面上网功能
+     *
+     * 开通桌面上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyDesktopsInternetRequest 请求对象
+     * @return CompletableFuture<ApplyDesktopsInternetResponse>
+     */
+    public CompletableFuture<ApplyDesktopsInternetResponse> applyDesktopsInternetAsync(
+        ApplyDesktopsInternetRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.applyDesktopsInternet);
+    }
+
+    /**
+     * 开通桌面上网功能
+     *
+     * 开通桌面上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyDesktopsInternetRequest 请求对象
+     * @return AsyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse>
+     */
+    public AsyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse> applyDesktopsInternetAsyncInvoker(
+        ApplyDesktopsInternetRequest request) {
+        return new AsyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse>(request,
+            WorkspaceMeta.applyDesktopsInternet, hcClient);
+    }
+
+    /**
+     * 桌面绑定EIP
+     *
+     * 桌面绑定EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateDesktopsEipRequest 请求对象
+     * @return CompletableFuture<AssociateDesktopsEipResponse>
+     */
+    public CompletableFuture<AssociateDesktopsEipResponse> associateDesktopsEipAsync(
+        AssociateDesktopsEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.associateDesktopsEip);
+    }
+
+    /**
+     * 桌面绑定EIP
+     *
+     * 桌面绑定EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateDesktopsEipRequest 请求对象
+     * @return AsyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse>
+     */
+    public AsyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse> associateDesktopsEipAsyncInvoker(
+        AssociateDesktopsEipRequest request) {
+        return new AsyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse>(request,
+            WorkspaceMeta.associateDesktopsEip, hcClient);
+    }
+
+    /**
+     * 批量桌面解绑EIP
+     *
+     * 批量桌面解绑EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDesktopsEipRequest 请求对象
+     * @return CompletableFuture<BatchDisassociateDesktopsEipResponse>
+     */
+    public CompletableFuture<BatchDisassociateDesktopsEipResponse> batchDisassociateDesktopsEipAsync(
+        BatchDisassociateDesktopsEipRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchDisassociateDesktopsEip);
+    }
+
+    /**
+     * 批量桌面解绑EIP
+     *
+     * 批量桌面解绑EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDesktopsEipRequest 请求对象
+     * @return AsyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse>
+     */
+    public AsyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse> batchDisassociateDesktopsEipAsyncInvoker(
+        BatchDisassociateDesktopsEipRequest request) {
+        return new AsyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse>(request,
+            WorkspaceMeta.batchDisassociateDesktopsEip, hcClient);
+    }
+
+    /**
+     * 查询已绑定桌面和未绑定的Eip
+     *
+     * 查询已绑定桌面和未绑定的Eip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopsEipsRequest 请求对象
+     * @return CompletableFuture<ListDesktopsEipsResponse>
+     */
+    public CompletableFuture<ListDesktopsEipsResponse> listDesktopsEipsAsync(ListDesktopsEipsRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.listDesktopsEips);
+    }
+
+    /**
+     * 查询已绑定桌面和未绑定的Eip
+     *
+     * 查询已绑定桌面和未绑定的Eip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopsEipsRequest 请求对象
+     * @return AsyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse>
+     */
+    public AsyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse> listDesktopsEipsAsyncInvoker(
+        ListDesktopsEipsRequest request) {
+        return new AsyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse>(request,
+            WorkspaceMeta.listDesktopsEips, hcClient);
     }
 
     /**
@@ -900,9 +1324,39 @@ public class WorkspaceAsyncClient {
     }
 
     /**
+     * 批量创建用户
+     *
+     * 该接口用于批量创建用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateUsersRequest 请求对象
+     * @return CompletableFuture<BatchCreateUsersResponse>
+     */
+    public CompletableFuture<BatchCreateUsersResponse> batchCreateUsersAsync(BatchCreateUsersRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.batchCreateUsers);
+    }
+
+    /**
+     * 批量创建用户
+     *
+     * 该接口用于批量创建用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateUsersRequest 请求对象
+     * @return AsyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse>
+     */
+    public AsyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse> batchCreateUsersAsyncInvoker(
+        BatchCreateUsersRequest request) {
+        return new AsyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse>(request,
+            WorkspaceMeta.batchCreateUsers, hcClient);
+    }
+
+    /**
      * 解绑OTP设备
      *
-     * 该接口用于解绑用户的OTP设备
+     * 该接口用于解绑用户的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -917,7 +1371,7 @@ public class WorkspaceAsyncClient {
     /**
      * 解绑OTP设备
      *
-     * 该接口用于解绑用户的OTP设备
+     * 该接口用于解绑用户的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -933,7 +1387,7 @@ public class WorkspaceAsyncClient {
     /**
      * 操作用户
      *
-     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码（重置密码建议使用/v2/{project_id}/users/{user_id}/random-password接口，在没有通知方式的情况下必须使用/v2/{project_id}/users/{user_id}/random-password接口）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -947,7 +1401,7 @@ public class WorkspaceAsyncClient {
     /**
      * 操作用户
      *
-     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码（重置密码建议使用/v2/{project_id}/users/{user_id}/random-password接口，在没有通知方式的情况下必须使用/v2/{project_id}/users/{user_id}/random-password接口）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1019,9 +1473,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询MFA设备
+     * 查询OTP设备
      *
-     * 该接口用于查询相应用户下面的MFA设备
+     * 该接口用于查询相应用户下面的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1034,9 +1488,9 @@ public class WorkspaceAsyncClient {
     }
 
     /**
-     * 查询MFA设备
+     * 查询OTP设备
      *
-     * 该接口用于查询相应用户下面的MFA设备
+     * 该接口用于查询相应用户下面的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1105,6 +1559,36 @@ public class WorkspaceAsyncClient {
      */
     public AsyncInvoker<ListUsersRequest, ListUsersResponse> listUsersAsyncInvoker(ListUsersRequest request) {
         return new AsyncInvoker<ListUsersRequest, ListUsersResponse>(request, WorkspaceMeta.listUsers, hcClient);
+    }
+
+    /**
+     * 给用户重置随机密码
+     *
+     * 该接口用于给用户重置一个密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetRandomPasswordRequest 请求对象
+     * @return CompletableFuture<ResetRandomPasswordResponse>
+     */
+    public CompletableFuture<ResetRandomPasswordResponse> resetRandomPasswordAsync(ResetRandomPasswordRequest request) {
+        return hcClient.asyncInvokeHttp(request, WorkspaceMeta.resetRandomPassword);
+    }
+
+    /**
+     * 给用户重置随机密码
+     *
+     * 该接口用于给用户重置一个密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetRandomPasswordRequest 请求对象
+     * @return AsyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse>
+     */
+    public AsyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse> resetRandomPasswordAsyncInvoker(
+        ResetRandomPasswordRequest request) {
+        return new AsyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse>(request,
+            WorkspaceMeta.resetRandomPassword, hcClient);
     }
 
     /**

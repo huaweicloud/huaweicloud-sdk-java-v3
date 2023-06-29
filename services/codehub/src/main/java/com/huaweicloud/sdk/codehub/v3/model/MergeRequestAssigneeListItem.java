@@ -99,18 +99,16 @@ public class MergeRequestAssigneeListItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeRequestAssigneeListItem mergeRequestAssigneeListItem = (MergeRequestAssigneeListItem) o;
-        return Objects.equals(this.id, mergeRequestAssigneeListItem.id)
-            && Objects.equals(this.name, mergeRequestAssigneeListItem.name)
-            && Objects.equals(this.state, mergeRequestAssigneeListItem.state)
-            && Objects.equals(this.username, mergeRequestAssigneeListItem.username);
+        MergeRequestAssigneeListItem that = (MergeRequestAssigneeListItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.username, that.username);
     }
 
     @Override

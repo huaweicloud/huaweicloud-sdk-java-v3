@@ -57,22 +57,15 @@ public class AgencyAuthIdentity {
             if (value == null) {
                 return null;
             }
-            MethodsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodsEnum(value));
         }
 
         public static MethodsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -190,17 +183,16 @@ public class AgencyAuthIdentity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyAuthIdentity agencyAuthIdentity = (AgencyAuthIdentity) o;
-        return Objects.equals(this.methods, agencyAuthIdentity.methods)
-            && Objects.equals(this.assumeRole, agencyAuthIdentity.assumeRole)
-            && Objects.equals(this.policy, agencyAuthIdentity.policy);
+        AgencyAuthIdentity that = (AgencyAuthIdentity) obj;
+        return Objects.equals(this.methods, that.methods) && Objects.equals(this.assumeRole, that.assumeRole)
+            && Objects.equals(this.policy, that.policy);
     }
 
     @Override

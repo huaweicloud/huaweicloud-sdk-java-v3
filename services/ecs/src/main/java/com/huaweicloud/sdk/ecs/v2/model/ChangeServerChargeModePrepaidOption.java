@@ -143,21 +143,18 @@ public class ChangeServerChargeModePrepaidOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeServerChargeModePrepaidOption changeServerChargeModePrepaidOption =
-            (ChangeServerChargeModePrepaidOption) o;
-        return Objects.equals(this.includeDataDisks, changeServerChargeModePrepaidOption.includeDataDisks)
-            && Objects.equals(this.includePublicips, changeServerChargeModePrepaidOption.includePublicips)
-            && Objects.equals(this.periodType, changeServerChargeModePrepaidOption.periodType)
-            && Objects.equals(this.periodNum, changeServerChargeModePrepaidOption.periodNum)
-            && Objects.equals(this.autoPay, changeServerChargeModePrepaidOption.autoPay)
-            && Objects.equals(this.autoRenew, changeServerChargeModePrepaidOption.autoRenew);
+        ChangeServerChargeModePrepaidOption that = (ChangeServerChargeModePrepaidOption) obj;
+        return Objects.equals(this.includeDataDisks, that.includeDataDisks)
+            && Objects.equals(this.includePublicips, that.includePublicips)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.autoPay, that.autoPay) && Objects.equals(this.autoRenew, that.autoRenew);
     }
 
     @Override

@@ -76,22 +76,15 @@ public class IndividualStreamJobReq {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -170,22 +163,15 @@ public class IndividualStreamJobReq {
             if (value == null) {
                 return null;
             }
-            SelectStreamTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SelectStreamTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SelectStreamTypeEnum(value));
         }
 
         public static SelectStreamTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SelectStreamTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -379,22 +365,20 @@ public class IndividualStreamJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndividualStreamJobReq individualStreamJobReq = (IndividualStreamJobReq) o;
-        return Objects.equals(this.roomId, individualStreamJobReq.roomId)
-            && Objects.equals(this.userId, individualStreamJobReq.userId)
-            && Objects.equals(this.isRecordAudio, individualStreamJobReq.isRecordAudio)
-            && Objects.equals(this.videoType, individualStreamJobReq.videoType)
-            && Objects.equals(this.selectStreamType, individualStreamJobReq.selectStreamType)
-            && Objects.equals(this.maxIdleTime, individualStreamJobReq.maxIdleTime)
-            && Objects.equals(this.publishParam, individualStreamJobReq.publishParam)
-            && Objects.equals(this.recordParam, individualStreamJobReq.recordParam);
+        IndividualStreamJobReq that = (IndividualStreamJobReq) obj;
+        return Objects.equals(this.roomId, that.roomId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.isRecordAudio, that.isRecordAudio) && Objects.equals(this.videoType, that.videoType)
+            && Objects.equals(this.selectStreamType, that.selectStreamType)
+            && Objects.equals(this.maxIdleTime, that.maxIdleTime)
+            && Objects.equals(this.publishParam, that.publishParam)
+            && Objects.equals(this.recordParam, that.recordParam);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class UpdateResourceShareReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResourceShareReqBody updateResourceShareReqBody = (UpdateResourceShareReqBody) o;
-        return Objects.equals(this.name, updateResourceShareReqBody.name)
-            && Objects.equals(this.description, updateResourceShareReqBody.description)
-            && Objects.equals(this.allowExternalPrincipals, updateResourceShareReqBody.allowExternalPrincipals);
+        UpdateResourceShareReqBody that = (UpdateResourceShareReqBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.allowExternalPrincipals, that.allowExternalPrincipals);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class SwitchConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchConfigurationResponse switchConfigurationResponse = (SwitchConfigurationResponse) o;
-        return Objects.equals(this.jobId, switchConfigurationResponse.jobId);
+        SwitchConfigurationResponse that = (SwitchConfigurationResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

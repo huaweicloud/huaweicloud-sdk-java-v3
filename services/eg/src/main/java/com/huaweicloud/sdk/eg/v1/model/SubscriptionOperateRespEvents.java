@@ -77,17 +77,16 @@ public class SubscriptionOperateRespEvents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionOperateRespEvents subscriptionOperateRespEvents = (SubscriptionOperateRespEvents) o;
-        return Objects.equals(this.errorCode, subscriptionOperateRespEvents.errorCode)
-            && Objects.equals(this.errorMsg, subscriptionOperateRespEvents.errorMsg)
-            && Objects.equals(this.subscriptionId, subscriptionOperateRespEvents.subscriptionId);
+        SubscriptionOperateRespEvents that = (SubscriptionOperateRespEvents) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.subscriptionId, that.subscriptionId);
     }
 
     @Override

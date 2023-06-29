@@ -506,34 +506,26 @@ public class CreateInstanceRespItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceRespItem createInstanceRespItem = (CreateInstanceRespItem) o;
-        return Objects.equals(this.id, createInstanceRespItem.id)
-            && Objects.equals(this.name, createInstanceRespItem.name)
-            && Objects.equals(this.status, createInstanceRespItem.status)
-            && Objects.equals(this.datastore, createInstanceRespItem.datastore)
-            && Objects.equals(this.ha, createInstanceRespItem.ha)
-            && Objects.equals(this.configurationId, createInstanceRespItem.configurationId)
-            && Objects.equals(this.port, createInstanceRespItem.port)
-            && Objects.equals(this.backupStrategy, createInstanceRespItem.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, createInstanceRespItem.enterpriseProjectId)
-            && Objects.equals(this.diskEncryptionId, createInstanceRespItem.diskEncryptionId)
-            && Objects.equals(this.flavorRef, createInstanceRespItem.flavorRef)
-            && Objects.equals(this.volume, createInstanceRespItem.volume)
-            && Objects.equals(this.region, createInstanceRespItem.region)
-            && Objects.equals(this.availabilityZone, createInstanceRespItem.availabilityZone)
-            && Objects.equals(this.vpcId, createInstanceRespItem.vpcId)
-            && Objects.equals(this.subnetId, createInstanceRespItem.subnetId)
-            && Objects.equals(this.securityGroupId, createInstanceRespItem.securityGroupId)
-            && Objects.equals(this.chargeInfo, createInstanceRespItem.chargeInfo)
-            && Objects.equals(this.collation, createInstanceRespItem.collation)
-            && Objects.equals(this.restorePoint, createInstanceRespItem.restorePoint);
+        CreateInstanceRespItem that = (CreateInstanceRespItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.ha, that.ha) && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.collation, that.collation)
+            && Objects.equals(this.restorePoint, that.restorePoint);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeletePolicyAssignmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePolicyAssignmentRequest deletePolicyAssignmentRequest = (DeletePolicyAssignmentRequest) o;
-        return Objects.equals(this.policyAssignmentId, deletePolicyAssignmentRequest.policyAssignmentId);
+        DeletePolicyAssignmentRequest that = (DeletePolicyAssignmentRequest) obj;
+        return Objects.equals(this.policyAssignmentId, that.policyAssignmentId);
     }
 
     @Override

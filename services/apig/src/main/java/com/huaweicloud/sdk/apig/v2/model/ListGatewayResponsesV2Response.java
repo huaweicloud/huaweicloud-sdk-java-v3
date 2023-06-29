@@ -97,17 +97,16 @@ public class ListGatewayResponsesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGatewayResponsesV2Response listGatewayResponsesV2Response = (ListGatewayResponsesV2Response) o;
-        return Objects.equals(this.size, listGatewayResponsesV2Response.size)
-            && Objects.equals(this.total, listGatewayResponsesV2Response.total)
-            && Objects.equals(this.responses, listGatewayResponsesV2Response.responses);
+        ListGatewayResponsesV2Response that = (ListGatewayResponsesV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.responses, that.responses);
     }
 
     @Override

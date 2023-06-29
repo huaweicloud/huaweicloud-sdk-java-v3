@@ -121,18 +121,17 @@ public class DataBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataBase dataBase = (DataBase) o;
-        return Objects.equals(this.port, dataBase.port) && Objects.equals(this.ip, dataBase.ip)
-            && Objects.equals(this.userName, dataBase.userName)
-            && Objects.equals(this.serviceName, dataBase.serviceName)
-            && Objects.equals(this.connectionString, dataBase.connectionString);
+        DataBase that = (DataBase) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.connectionString, that.connectionString);
     }
 
     @Override

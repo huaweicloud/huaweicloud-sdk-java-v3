@@ -77,17 +77,16 @@ public class SetDatabaseUserPrivilegeReqV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetDatabaseUserPrivilegeReqV3 setDatabaseUserPrivilegeReqV3 = (SetDatabaseUserPrivilegeReqV3) o;
-        return Objects.equals(this.allUsers, setDatabaseUserPrivilegeReqV3.allUsers)
-            && Objects.equals(this.userName, setDatabaseUserPrivilegeReqV3.userName)
-            && Objects.equals(this.readonly, setDatabaseUserPrivilegeReqV3.readonly);
+        SetDatabaseUserPrivilegeReqV3 that = (SetDatabaseUserPrivilegeReqV3) obj;
+        return Objects.equals(this.allUsers, that.allUsers) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.readonly, that.readonly);
     }
 
     @Override

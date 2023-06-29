@@ -169,21 +169,18 @@ public class ListAimSendReportsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimSendReportsRequestBody listAimSendReportsRequestBody = (ListAimSendReportsRequestBody) o;
-        return Objects.equals(this.reportType, listAimSendReportsRequestBody.reportType)
-            && Objects.equals(this.tplId, listAimSendReportsRequestBody.tplId)
-            && Objects.equals(this.tplName, listAimSendReportsRequestBody.tplName)
-            && Objects.equals(this.beginTime, listAimSendReportsRequestBody.beginTime)
-            && Objects.equals(this.endTime, listAimSendReportsRequestBody.endTime)
-            && Objects.equals(this.offset, listAimSendReportsRequestBody.offset)
-            && Objects.equals(this.limit, listAimSendReportsRequestBody.limit);
+        ListAimSendReportsRequestBody that = (ListAimSendReportsRequestBody) obj;
+        return Objects.equals(this.reportType, that.reportType) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

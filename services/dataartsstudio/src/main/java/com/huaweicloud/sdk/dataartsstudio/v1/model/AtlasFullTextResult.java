@@ -66,16 +66,15 @@ public class AtlasFullTextResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AtlasFullTextResult atlasFullTextResult = (AtlasFullTextResult) o;
-        return Objects.equals(this.entity, atlasFullTextResult.entity)
-            && Objects.equals(this.score, atlasFullTextResult.score);
+        AtlasFullTextResult that = (AtlasFullTextResult) obj;
+        return Objects.equals(this.entity, that.entity) && Objects.equals(this.score, that.score);
     }
 
     @Override

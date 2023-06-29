@@ -77,17 +77,17 @@ public class FlavorSpotOptions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorSpotOptions flavorSpotOptions = (FlavorSpotOptions) o;
-        return Objects.equals(this.longestSpotDurationHours, flavorSpotOptions.longestSpotDurationHours)
-            && Objects.equals(this.largestSpotDurationCount, flavorSpotOptions.largestSpotDurationCount)
-            && Objects.equals(this.interruptionPolicy, flavorSpotOptions.interruptionPolicy);
+        FlavorSpotOptions that = (FlavorSpotOptions) obj;
+        return Objects.equals(this.longestSpotDurationHours, that.longestSpotDurationHours)
+            && Objects.equals(this.largestSpotDurationCount, that.largestSpotDurationCount)
+            && Objects.equals(this.interruptionPolicy, that.interruptionPolicy);
     }
 
     @Override

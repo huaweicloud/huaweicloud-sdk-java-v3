@@ -464,29 +464,27 @@ public class NodeResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeResponse nodeResponse = (NodeResponse) o;
-        return Objects.equals(this.id, nodeResponse.id) && Objects.equals(this.name, nodeResponse.name)
-            && Objects.equals(this.description, nodeResponse.description)
-            && Objects.equals(this.createdAt, nodeResponse.createdAt)
-            && Objects.equals(this.clusterId, nodeResponse.clusterId)
-            && Objects.equals(this.clusterNodeState, nodeResponse.clusterNodeState)
-            && Objects.equals(this.clusterNodeType, nodeResponse.clusterNodeType)
-            && Objects.equals(this.firmwareName, nodeResponse.firmwareName)
-            && Objects.equals(this.upgradeFirmwareVersion, nodeResponse.upgradeFirmwareVersion)
-            && Objects.equals(this.firmwareStatus, nodeResponse.firmwareStatus)
-            && Objects.equals(this.firmwareUpgradeRecord, nodeResponse.firmwareUpgradeRecord)
-            && Objects.equals(this.state, nodeResponse.state) && Objects.equals(this.type, nodeResponse.type)
-            && Objects.equals(this.activeStatus, nodeResponse.activeStatus)
-            && Objects.equals(this.cpu, nodeResponse.cpu) && Objects.equals(this.gpuNum, nodeResponse.gpuNum)
-            && Objects.equals(this.npuNum, nodeResponse.npuNum) && Objects.equals(this.hostIps, nodeResponse.hostIps)
-            && Objects.equals(this.deploymentNum, nodeResponse.deploymentNum);
+        NodeResponse that = (NodeResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterNodeState, that.clusterNodeState)
+            && Objects.equals(this.clusterNodeType, that.clusterNodeType)
+            && Objects.equals(this.firmwareName, that.firmwareName)
+            && Objects.equals(this.upgradeFirmwareVersion, that.upgradeFirmwareVersion)
+            && Objects.equals(this.firmwareStatus, that.firmwareStatus)
+            && Objects.equals(this.firmwareUpgradeRecord, that.firmwareUpgradeRecord)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.activeStatus, that.activeStatus) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.gpuNum, that.gpuNum) && Objects.equals(this.npuNum, that.npuNum)
+            && Objects.equals(this.hostIps, that.hostIps) && Objects.equals(this.deploymentNum, that.deploymentNum);
     }
 
     @Override

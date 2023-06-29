@@ -151,20 +151,18 @@ public class ListExtendsParamsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExtendsParamsRequest listExtendsParamsRequest = (ListExtendsParamsRequest) o;
-        return Objects.equals(this.businessTypeId, listExtendsParamsRequest.businessTypeId)
-            && Objects.equals(this.incidentSubTypeId, listExtendsParamsRequest.incidentSubTypeId)
-            && Objects.equals(this.productCategoryId, listExtendsParamsRequest.productCategoryId)
-            && Objects.equals(this.xSite, listExtendsParamsRequest.xSite)
-            && Objects.equals(this.xLanguage, listExtendsParamsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listExtendsParamsRequest.xTimeZone);
+        ListExtendsParamsRequest that = (ListExtendsParamsRequest) obj;
+        return Objects.equals(this.businessTypeId, that.businessTypeId)
+            && Objects.equals(this.incidentSubTypeId, that.incidentSubTypeId)
+            && Objects.equals(this.productCategoryId, that.productCategoryId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

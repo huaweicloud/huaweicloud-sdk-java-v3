@@ -200,19 +200,19 @@ public class UpdateUserReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserReq updateUserReq = (UpdateUserReq) o;
-        return Objects.equals(this.jobId, updateUserReq.jobId) && Objects.equals(this.password, updateUserReq.password)
-            && Objects.equals(this.list, updateUserReq.list) && Objects.equals(this.userRoles, updateUserReq.userRoles)
-            && Objects.equals(this.isSetPassword, updateUserReq.isSetPassword)
-            && Objects.equals(this.isMigrateUser, updateUserReq.isMigrateUser)
-            && Objects.equals(this.isSyncObjectPrivilege, updateUserReq.isSyncObjectPrivilege);
+        UpdateUserReq that = (UpdateUserReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.list, that.list) && Objects.equals(this.userRoles, that.userRoles)
+            && Objects.equals(this.isSetPassword, that.isSetPassword)
+            && Objects.equals(this.isMigrateUser, that.isMigrateUser)
+            && Objects.equals(this.isSyncObjectPrivilege, that.isSyncObjectPrivilege);
     }
 
     @Override

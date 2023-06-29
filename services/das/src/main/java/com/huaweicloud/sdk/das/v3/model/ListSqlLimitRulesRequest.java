@@ -69,22 +69,15 @@ public class ListSqlLimitRulesRequest {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatastoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatastoreTypeEnum(value));
         }
 
         public static DatastoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatastoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -151,22 +144,15 @@ public class ListSqlLimitRulesRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -276,19 +262,17 @@ public class ListSqlLimitRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSqlLimitRulesRequest listSqlLimitRulesRequest = (ListSqlLimitRulesRequest) o;
-        return Objects.equals(this.instanceId, listSqlLimitRulesRequest.instanceId)
-            && Objects.equals(this.offset, listSqlLimitRulesRequest.offset)
-            && Objects.equals(this.limit, listSqlLimitRulesRequest.limit)
-            && Objects.equals(this.datastoreType, listSqlLimitRulesRequest.datastoreType)
-            && Objects.equals(this.xLanguage, listSqlLimitRulesRequest.xLanguage);
+        ListSqlLimitRulesRequest that = (ListSqlLimitRulesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.datastoreType, that.datastoreType)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

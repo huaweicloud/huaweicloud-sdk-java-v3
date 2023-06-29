@@ -52,15 +52,15 @@ public class DeleteAlert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAlert deleteAlert = (DeleteAlert) o;
-        return Objects.equals(this.ids, deleteAlert.ids);
+        DeleteAlert that = (DeleteAlert) obj;
+        return Objects.equals(this.ids, that.ids);
     }
 
     @Override

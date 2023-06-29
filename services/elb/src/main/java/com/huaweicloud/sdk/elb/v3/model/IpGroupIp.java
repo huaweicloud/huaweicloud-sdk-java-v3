@@ -33,15 +33,15 @@ public class IpGroupIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpGroupIp ipGroupIp = (IpGroupIp) o;
-        return Objects.equals(this.ip, ipGroupIp.ip);
+        IpGroupIp that = (IpGroupIp) obj;
+        return Objects.equals(this.ip, that.ip);
     }
 
     @Override

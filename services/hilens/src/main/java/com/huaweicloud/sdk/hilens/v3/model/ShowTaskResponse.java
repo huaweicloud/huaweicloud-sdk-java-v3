@@ -373,28 +373,25 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskResponse showTaskResponse = (ShowTaskResponse) o;
-        return Objects.equals(this.name, showTaskResponse.name)
-            && Objects.equals(this.timestamp, showTaskResponse.timestamp)
-            && Objects.equals(this.description, showTaskResponse.description)
-            && Objects.equals(this.streams, showTaskResponse.streams)
-            && Objects.equals(this.okPodNumber, showTaskResponse.okPodNumber)
-            && Objects.equals(this.curPodNumber, showTaskResponse.curPodNumber)
-            && Objects.equals(this.sumPodNumber, showTaskResponse.sumPodNumber)
-            && Objects.equals(this.failPodNumber, showTaskResponse.failPodNumber)
-            && Objects.equals(this.pendingPodNumber, showTaskResponse.pendingPodNumber)
-            && Objects.equals(this.taskStatus, showTaskResponse.taskStatus)
-            && Objects.equals(this.taskId, showTaskResponse.taskId)
-            && Objects.equals(this.userTaskId, showTaskResponse.userTaskId)
-            && Objects.equals(this.startTimeInfo, showTaskResponse.startTimeInfo)
-            && Objects.equals(this.sourceUsageEstimate, showTaskResponse.sourceUsageEstimate);
+        ShowTaskResponse that = (ShowTaskResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.streams, that.streams)
+            && Objects.equals(this.okPodNumber, that.okPodNumber)
+            && Objects.equals(this.curPodNumber, that.curPodNumber)
+            && Objects.equals(this.sumPodNumber, that.sumPodNumber)
+            && Objects.equals(this.failPodNumber, that.failPodNumber)
+            && Objects.equals(this.pendingPodNumber, that.pendingPodNumber)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.userTaskId, that.userTaskId)
+            && Objects.equals(this.startTimeInfo, that.startTimeInfo)
+            && Objects.equals(this.sourceUsageEstimate, that.sourceUsageEstimate);
     }
 
     @Override

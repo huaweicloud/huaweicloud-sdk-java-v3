@@ -473,32 +473,27 @@ public class RepoInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepoInfoV2 repoInfoV2 = (RepoInfoV2) o;
-        return Objects.equals(this.createdAt, repoInfoV2.createdAt)
-            && Objects.equals(this.creatorName, repoInfoV2.creatorName)
-            && Objects.equals(this.domainName, repoInfoV2.domainName)
-            && Objects.equals(this.groupName, repoInfoV2.groupName)
-            && Objects.equals(this.httpsUrl, repoInfoV2.httpsUrl)
-            && Objects.equals(this.iamUserUuid, repoInfoV2.iamUserUuid)
-            && Objects.equals(this.isOwner, repoInfoV2.isOwner) && Objects.equals(this.lfsSize, repoInfoV2.lfsSize)
-            && Objects.equals(this.projectIsDeleted, repoInfoV2.projectIsDeleted)
-            && Objects.equals(this.projectUuid, repoInfoV2.projectUuid)
-            && Objects.equals(this.repositoryId, repoInfoV2.repositoryId)
-            && Objects.equals(this.repositoryName, repoInfoV2.repositoryName)
-            && Objects.equals(this.repositorySize, repoInfoV2.repositorySize)
-            && Objects.equals(this.repositoryUuid, repoInfoV2.repositoryUuid)
-            && Objects.equals(this.sshUrl, repoInfoV2.sshUrl) && Objects.equals(this.star, repoInfoV2.star)
-            && Objects.equals(this.status, repoInfoV2.status) && Objects.equals(this.updatedAt, repoInfoV2.updatedAt)
-            && Objects.equals(this.userRole, repoInfoV2.userRole)
-            && Objects.equals(this.visibilityLevel, repoInfoV2.visibilityLevel)
-            && Objects.equals(this.webUrl, repoInfoV2.webUrl);
+        RepoInfoV2 that = (RepoInfoV2) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.groupName, that.groupName)
+            && Objects.equals(this.httpsUrl, that.httpsUrl) && Objects.equals(this.iamUserUuid, that.iamUserUuid)
+            && Objects.equals(this.isOwner, that.isOwner) && Objects.equals(this.lfsSize, that.lfsSize)
+            && Objects.equals(this.projectIsDeleted, that.projectIsDeleted)
+            && Objects.equals(this.projectUuid, that.projectUuid)
+            && Objects.equals(this.repositoryId, that.repositoryId)
+            && Objects.equals(this.repositoryName, that.repositoryName)
+            && Objects.equals(this.repositorySize, that.repositorySize)
+            && Objects.equals(this.repositoryUuid, that.repositoryUuid) && Objects.equals(this.sshUrl, that.sshUrl)
+            && Objects.equals(this.star, that.star) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.userRole, that.userRole)
+            && Objects.equals(this.visibilityLevel, that.visibilityLevel) && Objects.equals(this.webUrl, that.webUrl);
     }
 
     @Override

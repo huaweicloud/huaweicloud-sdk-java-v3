@@ -65,16 +65,15 @@ public class UpdateDatabaseAuthorityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseAuthorityRequest updateDatabaseAuthorityRequest = (UpdateDatabaseAuthorityRequest) o;
-        return Objects.equals(this.clusterId, updateDatabaseAuthorityRequest.clusterId)
-            && Objects.equals(this.body, updateDatabaseAuthorityRequest.body);
+        UpdateDatabaseAuthorityRequest that = (UpdateDatabaseAuthorityRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

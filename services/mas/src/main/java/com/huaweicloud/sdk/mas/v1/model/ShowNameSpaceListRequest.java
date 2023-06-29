@@ -143,20 +143,18 @@ public class ShowNameSpaceListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNameSpaceListRequest showNameSpaceListRequest = (ShowNameSpaceListRequest) o;
-        return Objects.equals(this.offset, showNameSpaceListRequest.offset)
-            && Objects.equals(this.limit, showNameSpaceListRequest.limit)
-            && Objects.equals(this.name, showNameSpaceListRequest.name)
-            && Objects.equals(this.type, showNameSpaceListRequest.type)
-            && Objects.equals(this.isUsed, showNameSpaceListRequest.isUsed)
-            && Objects.equals(this.enterpriseProjectId, showNameSpaceListRequest.enterpriseProjectId);
+        ShowNameSpaceListRequest that = (ShowNameSpaceListRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.isUsed, that.isUsed)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

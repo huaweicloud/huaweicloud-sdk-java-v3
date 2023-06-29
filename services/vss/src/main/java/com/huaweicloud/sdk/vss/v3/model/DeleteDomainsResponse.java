@@ -61,22 +61,15 @@ public class DeleteDomainsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InfoCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InfoCodeEnum(value));
         }
 
         public static InfoCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InfoCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -138,16 +131,16 @@ public class DeleteDomainsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainsResponse deleteDomainsResponse = (DeleteDomainsResponse) o;
-        return Objects.equals(this.infoCode, deleteDomainsResponse.infoCode)
-            && Objects.equals(this.infoDescription, deleteDomainsResponse.infoDescription);
+        DeleteDomainsResponse that = (DeleteDomainsResponse) obj;
+        return Objects.equals(this.infoCode, that.infoCode)
+            && Objects.equals(this.infoDescription, that.infoDescription);
     }
 
     @Override

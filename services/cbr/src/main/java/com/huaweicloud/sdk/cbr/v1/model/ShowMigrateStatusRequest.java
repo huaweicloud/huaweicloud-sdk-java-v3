@@ -33,15 +33,15 @@ public class ShowMigrateStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrateStatusRequest showMigrateStatusRequest = (ShowMigrateStatusRequest) o;
-        return Objects.equals(this.allRegions, showMigrateStatusRequest.allRegions);
+        ShowMigrateStatusRequest that = (ShowMigrateStatusRequest) obj;
+        return Objects.equals(this.allRegions, that.allRegions);
     }
 
     @Override

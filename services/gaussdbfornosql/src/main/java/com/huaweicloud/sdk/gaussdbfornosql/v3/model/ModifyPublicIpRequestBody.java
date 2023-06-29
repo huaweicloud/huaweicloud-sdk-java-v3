@@ -77,17 +77,16 @@ public class ModifyPublicIpRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyPublicIpRequestBody modifyPublicIpRequestBody = (ModifyPublicIpRequestBody) o;
-        return Objects.equals(this.action, modifyPublicIpRequestBody.action)
-            && Objects.equals(this.publicIp, modifyPublicIpRequestBody.publicIp)
-            && Objects.equals(this.publicIpId, modifyPublicIpRequestBody.publicIpId);
+        ModifyPublicIpRequestBody that = (ModifyPublicIpRequestBody) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.publicIpId, that.publicIpId);
     }
 
     @Override

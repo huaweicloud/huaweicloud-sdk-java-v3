@@ -34,15 +34,15 @@ public class SubscribeDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscribeDataResponse subscribeDataResponse = (SubscribeDataResponse) o;
-        return Objects.equals(this.id, subscribeDataResponse.id);
+        SubscribeDataResponse that = (SubscribeDataResponse) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

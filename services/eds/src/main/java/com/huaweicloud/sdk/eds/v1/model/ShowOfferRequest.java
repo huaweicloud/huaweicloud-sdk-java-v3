@@ -77,17 +77,16 @@ public class ShowOfferRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOfferRequest showOfferRequest = (ShowOfferRequest) o;
-        return Objects.equals(this.instanceId, showOfferRequest.instanceId)
-            && Objects.equals(this.connectorId, showOfferRequest.connectorId)
-            && Objects.equals(this.offerId, showOfferRequest.offerId);
+        ShowOfferRequest that = (ShowOfferRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.offerId, that.offerId);
     }
 
     @Override

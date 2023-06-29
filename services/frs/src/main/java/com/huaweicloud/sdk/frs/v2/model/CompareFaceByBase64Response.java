@@ -97,17 +97,16 @@ public class CompareFaceByBase64Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareFaceByBase64Response compareFaceByBase64Response = (CompareFaceByBase64Response) o;
-        return Objects.equals(this.image1Face, compareFaceByBase64Response.image1Face)
-            && Objects.equals(this.image2Face, compareFaceByBase64Response.image2Face)
-            && Objects.equals(this.similarity, compareFaceByBase64Response.similarity);
+        CompareFaceByBase64Response that = (CompareFaceByBase64Response) obj;
+        return Objects.equals(this.image1Face, that.image1Face) && Objects.equals(this.image2Face, that.image2Face)
+            && Objects.equals(this.similarity, that.similarity);
     }
 
     @Override

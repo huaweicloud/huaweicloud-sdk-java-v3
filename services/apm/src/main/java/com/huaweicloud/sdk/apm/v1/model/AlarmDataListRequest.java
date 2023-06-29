@@ -338,28 +338,23 @@ public class AlarmDataListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmDataListRequest alarmDataListRequest = (AlarmDataListRequest) o;
-        return Objects.equals(this.page, alarmDataListRequest.page)
-            && Objects.equals(this.pageSize, alarmDataListRequest.pageSize)
-            && Objects.equals(this.region, alarmDataListRequest.region)
-            && Objects.equals(this.appName, alarmDataListRequest.appName)
-            && Objects.equals(this.businessId, alarmDataListRequest.businessId)
-            && Objects.equals(this.monitorItemId, alarmDataListRequest.monitorItemId)
-            && Objects.equals(this.status, alarmDataListRequest.status)
-            && Objects.equals(this.alarmLevel, alarmDataListRequest.alarmLevel)
-            && Objects.equals(this.keyword, alarmDataListRequest.keyword)
-            && Objects.equals(this.alarmStartTime, alarmDataListRequest.alarmStartTime)
-            && Objects.equals(this.alarmEndTime, alarmDataListRequest.alarmEndTime)
-            && Objects.equals(this.collectorId, alarmDataListRequest.collectorId)
-            && Objects.equals(this.ipAddress, alarmDataListRequest.ipAddress)
-            && Objects.equals(this.envList, alarmDataListRequest.envList);
+        AlarmDataListRequest that = (AlarmDataListRequest) obj;
+        return Objects.equals(this.page, that.page) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.alarmLevel, that.alarmLevel) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.alarmStartTime, that.alarmStartTime)
+            && Objects.equals(this.alarmEndTime, that.alarmEndTime)
+            && Objects.equals(this.collectorId, that.collectorId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.envList, that.envList);
     }
 
     @Override

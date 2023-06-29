@@ -75,16 +75,15 @@ public class RunCheckTaskJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunCheckTaskJobsResponse runCheckTaskJobsResponse = (RunCheckTaskJobsResponse) o;
-        return Objects.equals(this.result, runCheckTaskJobsResponse.result)
-            && Objects.equals(this.count, runCheckTaskJobsResponse.count);
+        RunCheckTaskJobsResponse that = (RunCheckTaskJobsResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.count, that.count);
     }
 
     @Override

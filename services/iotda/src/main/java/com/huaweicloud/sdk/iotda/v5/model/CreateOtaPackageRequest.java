@@ -65,16 +65,15 @@ public class CreateOtaPackageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOtaPackageRequest createOtaPackageRequest = (CreateOtaPackageRequest) o;
-        return Objects.equals(this.instanceId, createOtaPackageRequest.instanceId)
-            && Objects.equals(this.body, createOtaPackageRequest.body);
+        CreateOtaPackageRequest that = (CreateOtaPackageRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

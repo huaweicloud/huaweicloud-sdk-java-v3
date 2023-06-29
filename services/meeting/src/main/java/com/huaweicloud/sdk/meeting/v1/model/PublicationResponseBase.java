@@ -106,22 +106,15 @@ public class PublicationResponseBase {
             if (value == null) {
                 return null;
             }
-            PublishStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PublishStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PublishStatusEnum(value));
         }
 
         public static PublishStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PublishStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,23 +290,19 @@ public class PublicationResponseBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicationResponseBase publicationResponseBase = (PublicationResponseBase) o;
-        return Objects.equals(this.id, publicationResponseBase.id)
-            && Objects.equals(this.lastUpdatedBy, publicationResponseBase.lastUpdatedBy)
-            && Objects.equals(this.createTime, publicationResponseBase.createTime)
-            && Objects.equals(this.updateTime, publicationResponseBase.updateTime)
-            && Objects.equals(this.publishName, publicationResponseBase.publishName)
-            && Objects.equals(this.publishScope, publicationResponseBase.publishScope)
-            && Objects.equals(this.startTime, publicationResponseBase.startTime)
-            && Objects.equals(this.endTime, publicationResponseBase.endTime)
-            && Objects.equals(this.publishStatus, publicationResponseBase.publishStatus);
+        PublicationResponseBase that = (PublicationResponseBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lastUpdatedBy, that.lastUpdatedBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.publishName, that.publishName)
+            && Objects.equals(this.publishScope, that.publishScope) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.publishStatus, that.publishStatus);
     }
 
     @Override

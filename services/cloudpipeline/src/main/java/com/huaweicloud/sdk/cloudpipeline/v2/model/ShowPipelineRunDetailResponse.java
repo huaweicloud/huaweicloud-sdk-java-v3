@@ -547,36 +547,25 @@ public class ShowPipelineRunDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPipelineRunDetailResponse showPipelineRunDetailResponse = (ShowPipelineRunDetailResponse) o;
-        return Objects.equals(this.id, showPipelineRunDetailResponse.id)
-            && Objects.equals(this.pipelineId, showPipelineRunDetailResponse.pipelineId)
-            && Objects.equals(this.manifestVersion, showPipelineRunDetailResponse.manifestVersion)
-            && Objects.equals(this.name, showPipelineRunDetailResponse.name)
-            && Objects.equals(this.description, showPipelineRunDetailResponse.description)
-            && Objects.equals(this.isPublish, showPipelineRunDetailResponse.isPublish)
-            && Objects.equals(this.executorId, showPipelineRunDetailResponse.executorId)
-            && Objects.equals(this.executorName, showPipelineRunDetailResponse.executorName)
-            && Objects.equals(this.status, showPipelineRunDetailResponse.status)
-            && Objects.equals(this.triggerType, showPipelineRunDetailResponse.triggerType)
-            && Objects.equals(this.runNumber, showPipelineRunDetailResponse.runNumber)
-            && Objects.equals(this.startTime, showPipelineRunDetailResponse.startTime)
-            && Objects.equals(this.endTime, showPipelineRunDetailResponse.endTime)
-            && Objects.equals(this.stages, showPipelineRunDetailResponse.stages)
-            && Objects.equals(this.domainId, showPipelineRunDetailResponse.domainId)
-            && Objects.equals(this.projectId, showPipelineRunDetailResponse.projectId)
-            && Objects.equals(this.region, showPipelineRunDetailResponse.region)
-            && Objects.equals(this.componentId, showPipelineRunDetailResponse.componentId)
-            && Objects.equals(this.language, showPipelineRunDetailResponse.language)
-            && Objects.equals(this.sources, showPipelineRunDetailResponse.sources)
-            && Objects.equals(this.artifacts, showPipelineRunDetailResponse.artifacts)
-            && Objects.equals(this.subjectId, showPipelineRunDetailResponse.subjectId);
+        ShowPipelineRunDetailResponse that = (ShowPipelineRunDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.pipelineId, that.pipelineId)
+            && Objects.equals(this.manifestVersion, that.manifestVersion) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isPublish, that.isPublish)
+            && Objects.equals(this.executorId, that.executorId) && Objects.equals(this.executorName, that.executorName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.runNumber, that.runNumber) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.stages, that.stages)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.artifacts, that.artifacts) && Objects.equals(this.subjectId, that.subjectId);
     }
 
     @Override

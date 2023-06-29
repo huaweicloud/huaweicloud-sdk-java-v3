@@ -185,21 +185,20 @@ public class ShowMigrationProjectDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMigrationProjectDetailResponse showMigrationProjectDetailResponse = (ShowMigrationProjectDetailResponse) o;
-        return Objects.equals(this.migrationProjectId, showMigrationProjectDetailResponse.migrationProjectId)
-            && Objects.equals(this.migrationProjectName, showMigrationProjectDetailResponse.migrationProjectName)
-            && Objects.equals(this.evaluationProjectName, showMigrationProjectDetailResponse.evaluationProjectName)
-            && Objects.equals(this.sourceDbInfo, showMigrationProjectDetailResponse.sourceDbInfo)
-            && Objects.equals(this.targetDbInfo, showMigrationProjectDetailResponse.targetDbInfo)
-            && Objects.equals(this.createdTime, showMigrationProjectDetailResponse.createdTime)
-            && Objects.equals(this.updatedTime, showMigrationProjectDetailResponse.updatedTime);
+        ShowMigrationProjectDetailResponse that = (ShowMigrationProjectDetailResponse) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId)
+            && Objects.equals(this.migrationProjectName, that.migrationProjectName)
+            && Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.sourceDbInfo, that.sourceDbInfo)
+            && Objects.equals(this.targetDbInfo, that.targetDbInfo)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.updatedTime, that.updatedTime);
     }
 
     @Override

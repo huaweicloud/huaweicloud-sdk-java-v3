@@ -43,15 +43,15 @@ public class DeleteTemplateMaterialRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTemplateMaterialRequest deleteTemplateMaterialRequest = (DeleteTemplateMaterialRequest) o;
-        return Objects.equals(this.body, deleteTemplateMaterialRequest.body);
+        DeleteTemplateMaterialRequest that = (DeleteTemplateMaterialRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

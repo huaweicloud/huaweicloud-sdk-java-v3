@@ -151,19 +151,18 @@ public class CreateTransferResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransferResponseBody createTransferResponseBody = (CreateTransferResponseBody) o;
-        return Objects.equals(this.logGroupId, createTransferResponseBody.logGroupId)
-            && Objects.equals(this.logGroupName, createTransferResponseBody.logGroupName)
-            && Objects.equals(this.logStreams, createTransferResponseBody.logStreams)
-            && Objects.equals(this.logTransferId, createTransferResponseBody.logTransferId)
-            && Objects.equals(this.logTransferInfo, createTransferResponseBody.logTransferInfo);
+        CreateTransferResponseBody that = (CreateTransferResponseBody) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreams, that.logStreams)
+            && Objects.equals(this.logTransferId, that.logTransferId)
+            && Objects.equals(this.logTransferInfo, that.logTransferInfo);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CreateMessageTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMessageTemplateRequestBody createMessageTemplateRequestBody = (CreateMessageTemplateRequestBody) o;
-        return Objects.equals(this.messageTemplateName, createMessageTemplateRequestBody.messageTemplateName)
-            && Objects.equals(this.protocol, createMessageTemplateRequestBody.protocol)
-            && Objects.equals(this.content, createMessageTemplateRequestBody.content);
+        CreateMessageTemplateRequestBody that = (CreateMessageTemplateRequestBody) obj;
+        return Objects.equals(this.messageTemplateName, that.messageTemplateName)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.content, that.content);
     }
 
     @Override

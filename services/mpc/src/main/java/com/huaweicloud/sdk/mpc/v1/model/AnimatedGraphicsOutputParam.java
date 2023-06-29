@@ -54,22 +54,15 @@ public class AnimatedGraphicsOutputParam {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FormatEnum(value));
         }
 
         public static FormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,20 +222,17 @@ public class AnimatedGraphicsOutputParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnimatedGraphicsOutputParam animatedGraphicsOutputParam = (AnimatedGraphicsOutputParam) o;
-        return Objects.equals(this.format, animatedGraphicsOutputParam.format)
-            && Objects.equals(this.width, animatedGraphicsOutputParam.width)
-            && Objects.equals(this.height, animatedGraphicsOutputParam.height)
-            && Objects.equals(this.start, animatedGraphicsOutputParam.start)
-            && Objects.equals(this.end, animatedGraphicsOutputParam.end)
-            && Objects.equals(this.frameRate, animatedGraphicsOutputParam.frameRate);
+        AnimatedGraphicsOutputParam that = (AnimatedGraphicsOutputParam) obj;
+        return Objects.equals(this.format, that.format) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.end, that.end) && Objects.equals(this.frameRate, that.frameRate);
     }
 
     @Override

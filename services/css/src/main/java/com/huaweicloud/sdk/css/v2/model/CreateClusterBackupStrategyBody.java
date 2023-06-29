@@ -143,20 +143,17 @@ public class CreateClusterBackupStrategyBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterBackupStrategyBody createClusterBackupStrategyBody = (CreateClusterBackupStrategyBody) o;
-        return Objects.equals(this.period, createClusterBackupStrategyBody.period)
-            && Objects.equals(this.prefix, createClusterBackupStrategyBody.prefix)
-            && Objects.equals(this.keepday, createClusterBackupStrategyBody.keepday)
-            && Objects.equals(this.bucket, createClusterBackupStrategyBody.bucket)
-            && Objects.equals(this.basePath, createClusterBackupStrategyBody.basePath)
-            && Objects.equals(this.agency, createClusterBackupStrategyBody.agency);
+        CreateClusterBackupStrategyBody that = (CreateClusterBackupStrategyBody) obj;
+        return Objects.equals(this.period, that.period) && Objects.equals(this.prefix, that.prefix)
+            && Objects.equals(this.keepday, that.keepday) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.basePath, that.basePath) && Objects.equals(this.agency, that.agency);
     }
 
     @Override

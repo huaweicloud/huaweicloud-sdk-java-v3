@@ -65,16 +65,15 @@ public class CreateNotebookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNotebookRequest createNotebookRequest = (CreateNotebookRequest) o;
-        return Objects.equals(this.eihealthProjectId, createNotebookRequest.eihealthProjectId)
-            && Objects.equals(this.body, createNotebookRequest.body);
+        CreateNotebookRequest that = (CreateNotebookRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

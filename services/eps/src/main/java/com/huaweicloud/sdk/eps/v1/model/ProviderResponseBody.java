@@ -96,17 +96,17 @@ public class ProviderResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProviderResponseBody providerResponseBody = (ProviderResponseBody) o;
-        return Objects.equals(this.provider, providerResponseBody.provider)
-            && Objects.equals(this.providerI18nDisplayName, providerResponseBody.providerI18nDisplayName)
-            && Objects.equals(this.resourceTypes, providerResponseBody.resourceTypes);
+        ProviderResponseBody that = (ProviderResponseBody) obj;
+        return Objects.equals(this.provider, that.provider)
+            && Objects.equals(this.providerI18nDisplayName, that.providerI18nDisplayName)
+            && Objects.equals(this.resourceTypes, that.resourceTypes);
     }
 
     @Override

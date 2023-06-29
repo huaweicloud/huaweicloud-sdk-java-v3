@@ -123,18 +123,16 @@ public class SearchQosOnlineMeetingsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQosOnlineMeetingsResponse searchQosOnlineMeetingsResponse = (SearchQosOnlineMeetingsResponse) o;
-        return Objects.equals(this.count, searchQosOnlineMeetingsResponse.count)
-            && Objects.equals(this.limit, searchQosOnlineMeetingsResponse.limit)
-            && Objects.equals(this.offset, searchQosOnlineMeetingsResponse.offset)
-            && Objects.equals(this.data, searchQosOnlineMeetingsResponse.data);
+        SearchQosOnlineMeetingsResponse that = (SearchQosOnlineMeetingsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data);
     }
 
     @Override

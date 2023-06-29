@@ -24,8 +24,8 @@ public class BatchProtectInstancesOption {
     private List<String> instancesId = null;
 
     /**
-    * 从伸缩组中移出实例时，是否删除云服务器。默认为no；可选值为yes或no。只有action为REMOVE时，这个字段才生效。
-    */
+     * 从伸缩组中移出实例时，是否删除云服务器。默认为no；可选值为yes或no。只有action为REMOVE时，这个字段才生效。
+     */
     public static final class InstanceDeleteEnum {
 
         /**
@@ -68,22 +68,15 @@ public class BatchProtectInstancesOption {
             if (value == null) {
                 return null;
             }
-            InstanceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceDeleteEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceDeleteEnum(value));
         }
 
         public static InstanceDeleteEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceDeleteEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -144,22 +137,15 @@ public class BatchProtectInstancesOption {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -226,22 +212,15 @@ public class BatchProtectInstancesOption {
             if (value == null) {
                 return null;
             }
-            InstanceAppendEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceAppendEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceAppendEnum(value));
         }
 
         public static InstanceAppendEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceAppendEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -348,18 +327,17 @@ public class BatchProtectInstancesOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchProtectInstancesOption batchProtectInstancesOption = (BatchProtectInstancesOption) o;
-        return Objects.equals(this.instancesId, batchProtectInstancesOption.instancesId)
-            && Objects.equals(this.instanceDelete, batchProtectInstancesOption.instanceDelete)
-            && Objects.equals(this.action, batchProtectInstancesOption.action)
-            && Objects.equals(this.instanceAppend, batchProtectInstancesOption.instanceAppend);
+        BatchProtectInstancesOption that = (BatchProtectInstancesOption) obj;
+        return Objects.equals(this.instancesId, that.instancesId)
+            && Objects.equals(this.instanceDelete, that.instanceDelete) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.instanceAppend, that.instanceAppend);
     }
 
     @Override

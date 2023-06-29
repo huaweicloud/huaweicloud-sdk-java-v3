@@ -118,18 +118,16 @@ public class UpdateDatabaseObjectReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseObjectReq updateDatabaseObjectReq = (UpdateDatabaseObjectReq) o;
-        return Objects.equals(this.jobId, updateDatabaseObjectReq.jobId)
-            && Objects.equals(this.selected, updateDatabaseObjectReq.selected)
-            && Objects.equals(this.syncDatabase, updateDatabaseObjectReq.syncDatabase)
-            && Objects.equals(this.job, updateDatabaseObjectReq.job);
+        UpdateDatabaseObjectReq that = (UpdateDatabaseObjectReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.selected, that.selected)
+            && Objects.equals(this.syncDatabase, that.syncDatabase) && Objects.equals(this.job, that.job);
     }
 
     @Override

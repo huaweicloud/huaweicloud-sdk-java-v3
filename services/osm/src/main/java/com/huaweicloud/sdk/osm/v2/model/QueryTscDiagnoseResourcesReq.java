@@ -55,16 +55,15 @@ public class QueryTscDiagnoseResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryTscDiagnoseResourcesReq queryTscDiagnoseResourcesReq = (QueryTscDiagnoseResourcesReq) o;
-        return Objects.equals(this.projectId, queryTscDiagnoseResourcesReq.projectId)
-            && Objects.equals(this.region, queryTscDiagnoseResourcesReq.region);
+        QueryTscDiagnoseResourcesReq that = (QueryTscDiagnoseResourcesReq) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.region, that.region);
     }
 
     @Override

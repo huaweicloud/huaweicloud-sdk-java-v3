@@ -184,18 +184,18 @@ public class FuncVpc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FuncVpc funcVpc = (FuncVpc) o;
-        return Objects.equals(this.vpcName, funcVpc.vpcName) && Objects.equals(this.vpcId, funcVpc.vpcId)
-            && Objects.equals(this.subnetName, funcVpc.subnetName) && Objects.equals(this.subnetId, funcVpc.subnetId)
-            && Objects.equals(this.cidr, funcVpc.cidr) && Objects.equals(this.gateway, funcVpc.gateway)
-            && Objects.equals(this.securityGroups, funcVpc.securityGroups);
+        FuncVpc that = (FuncVpc) obj;
+        return Objects.equals(this.vpcName, that.vpcName) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.gateway, that.gateway)
+            && Objects.equals(this.securityGroups, that.securityGroups);
     }
 
     @Override

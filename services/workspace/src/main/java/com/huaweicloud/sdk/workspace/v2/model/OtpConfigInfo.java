@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * OTP辅助认证方式配置
@@ -44,6 +45,11 @@ public class OtpConfigInfo {
     @JsonProperty(value = "cert_content")
 
     private String certContent;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "apply_rule")
+
+    private ApplyRuleInfo applyRule;
 
     public OtpConfigInfo withEnable(Boolean enable) {
         this.enable = enable;
@@ -164,26 +170,52 @@ public class OtpConfigInfo {
         this.certContent = certContent;
     }
 
+    public OtpConfigInfo withApplyRule(ApplyRuleInfo applyRule) {
+        this.applyRule = applyRule;
+        return this;
+    }
+
+    public OtpConfigInfo withApplyRule(Consumer<ApplyRuleInfo> applyRuleSetter) {
+        if (this.applyRule == null) {
+            this.applyRule = new ApplyRuleInfo();
+            applyRuleSetter.accept(this.applyRule);
+        }
+
+        return this;
+    }
+
+    /**
+     * Get applyRule
+     * @return applyRule
+     */
+    public ApplyRuleInfo getApplyRule() {
+        return applyRule;
+    }
+
+    public void setApplyRule(ApplyRuleInfo applyRule) {
+        this.applyRule = applyRule;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OtpConfigInfo otpConfigInfo = (OtpConfigInfo) o;
-        return Objects.equals(this.enable, otpConfigInfo.enable)
-            && Objects.equals(this.receiveMode, otpConfigInfo.receiveMode)
-            && Objects.equals(this.authUrl, otpConfigInfo.authUrl) && Objects.equals(this.appId, otpConfigInfo.appId)
-            && Objects.equals(this.appSecret, otpConfigInfo.appSecret)
-            && Objects.equals(this.authServerAccessMode, otpConfigInfo.authServerAccessMode)
-            && Objects.equals(this.certContent, otpConfigInfo.certContent);
+        OtpConfigInfo that = (OtpConfigInfo) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.receiveMode, that.receiveMode)
+            && Objects.equals(this.authUrl, that.authUrl) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appSecret, that.appSecret)
+            && Objects.equals(this.authServerAccessMode, that.authServerAccessMode)
+            && Objects.equals(this.certContent, that.certContent) && Objects.equals(this.applyRule, that.applyRule);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(enable, receiveMode, authUrl, appId, appSecret, authServerAccessMode, certContent);
+        return Objects
+            .hash(enable, receiveMode, authUrl, appId, appSecret, authServerAccessMode, certContent, applyRule);
     }
 
     @Override
@@ -197,6 +229,7 @@ public class OtpConfigInfo {
         sb.append("    appSecret: ").append(toIndentedString(appSecret)).append("\n");
         sb.append("    authServerAccessMode: ").append(toIndentedString(authServerAccessMode)).append("\n");
         sb.append("    certContent: ").append(toIndentedString(certContent)).append("\n");
+        sb.append("    applyRule: ").append(toIndentedString(applyRule)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -99,17 +99,16 @@ public class TestPlanDetailOwner {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestPlanDetailOwner testPlanDetailOwner = (TestPlanDetailOwner) o;
-        return Objects.equals(this.id, testPlanDetailOwner.id) && Objects.equals(this.name, testPlanDetailOwner.name)
-            && Objects.equals(this.nickName, testPlanDetailOwner.nickName)
-            && Objects.equals(this.userName, testPlanDetailOwner.userName);
+        TestPlanDetailOwner that = (TestPlanDetailOwner) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nickName, that.nickName) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

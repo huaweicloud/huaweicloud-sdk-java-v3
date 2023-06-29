@@ -119,18 +119,16 @@ public class ListLatelyApiStatisticsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLatelyApiStatisticsV2Response listLatelyApiStatisticsV2Response = (ListLatelyApiStatisticsV2Response) o;
-        return Objects.equals(this.code, listLatelyApiStatisticsV2Response.code)
-            && Objects.equals(this.startTime, listLatelyApiStatisticsV2Response.startTime)
-            && Objects.equals(this.endTime, listLatelyApiStatisticsV2Response.endTime)
-            && Objects.equals(this.list, listLatelyApiStatisticsV2Response.list);
+        ListLatelyApiStatisticsV2Response that = (ListLatelyApiStatisticsV2Response) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.list, that.list);
     }
 
     @Override

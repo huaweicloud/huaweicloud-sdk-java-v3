@@ -150,18 +150,16 @@ public class RunPipelineDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunPipelineDTO runPipelineDTO = (RunPipelineDTO) o;
-        return Objects.equals(this.sources, runPipelineDTO.sources)
-            && Objects.equals(this.description, runPipelineDTO.description)
-            && Objects.equals(this.variables, runPipelineDTO.variables)
-            && Objects.equals(this.chooseJobs, runPipelineDTO.chooseJobs);
+        RunPipelineDTO that = (RunPipelineDTO) obj;
+        return Objects.equals(this.sources, that.sources) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.variables, that.variables) && Objects.equals(this.chooseJobs, that.chooseJobs);
     }
 
     @Override

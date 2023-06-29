@@ -77,16 +77,16 @@ public class LinksInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinksInfo linksInfo = (LinksInfo) o;
-        return Objects.equals(this.rel, linksInfo.rel) && Objects.equals(this.href, linksInfo.href)
-            && Objects.equals(this.type, linksInfo.type);
+        LinksInfo that = (LinksInfo) obj;
+        return Objects.equals(this.rel, that.rel) && Objects.equals(this.href, that.href)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

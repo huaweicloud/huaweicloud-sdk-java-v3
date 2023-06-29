@@ -77,16 +77,15 @@ public class ListDesktopsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDesktopsResponse listDesktopsResponse = (ListDesktopsResponse) o;
-        return Objects.equals(this.totalCount, listDesktopsResponse.totalCount)
-            && Objects.equals(this.desktops, listDesktopsResponse.desktops);
+        ListDesktopsResponse that = (ListDesktopsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.desktops, that.desktops);
     }
 
     @Override

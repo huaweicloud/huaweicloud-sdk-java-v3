@@ -52,15 +52,15 @@ public class MembersBatchEnableOrDisable {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MembersBatchEnableOrDisable membersBatchEnableOrDisable = (MembersBatchEnableOrDisable) o;
-        return Objects.equals(this.memberIds, membersBatchEnableOrDisable.memberIds);
+        MembersBatchEnableOrDisable that = (MembersBatchEnableOrDisable) obj;
+        return Objects.equals(this.memberIds, that.memberIds);
     }
 
     @Override

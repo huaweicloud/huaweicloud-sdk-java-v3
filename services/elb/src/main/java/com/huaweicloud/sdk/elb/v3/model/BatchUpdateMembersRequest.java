@@ -65,16 +65,15 @@ public class BatchUpdateMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateMembersRequest batchUpdateMembersRequest = (BatchUpdateMembersRequest) o;
-        return Objects.equals(this.poolId, batchUpdateMembersRequest.poolId)
-            && Objects.equals(this.body, batchUpdateMembersRequest.body);
+        BatchUpdateMembersRequest that = (BatchUpdateMembersRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.body, that.body);
     }
 
     @Override

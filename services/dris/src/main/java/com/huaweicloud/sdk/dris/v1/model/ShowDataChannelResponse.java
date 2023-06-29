@@ -88,17 +88,17 @@ public class ShowDataChannelResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDataChannelResponse showDataChannelResponse = (ShowDataChannelResponse) o;
-        return Objects.equals(this.platformType, showDataChannelResponse.platformType)
-            && Objects.equals(this.platformPara, showDataChannelResponse.platformPara)
-            && Objects.equals(this.channelStatus, showDataChannelResponse.channelStatus);
+        ShowDataChannelResponse that = (ShowDataChannelResponse) obj;
+        return Objects.equals(this.platformType, that.platformType)
+            && Objects.equals(this.platformPara, that.platformPara)
+            && Objects.equals(this.channelStatus, that.channelStatus);
     }
 
     @Override

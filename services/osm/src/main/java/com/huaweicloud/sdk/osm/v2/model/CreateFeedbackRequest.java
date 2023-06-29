@@ -43,15 +43,15 @@ public class CreateFeedbackRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFeedbackRequest createFeedbackRequest = (CreateFeedbackRequest) o;
-        return Objects.equals(this.body, createFeedbackRequest.body);
+        CreateFeedbackRequest that = (CreateFeedbackRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

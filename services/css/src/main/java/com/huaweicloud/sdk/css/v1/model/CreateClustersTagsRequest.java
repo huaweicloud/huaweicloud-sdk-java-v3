@@ -87,17 +87,16 @@ public class CreateClustersTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClustersTagsRequest createClustersTagsRequest = (CreateClustersTagsRequest) o;
-        return Objects.equals(this.clusterId, createClustersTagsRequest.clusterId)
-            && Objects.equals(this.resourceType, createClustersTagsRequest.resourceType)
-            && Objects.equals(this.body, createClustersTagsRequest.body);
+        CreateClustersTagsRequest that = (CreateClustersTagsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ExternalServiceCaseStep {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalServiceCaseStep externalServiceCaseStep = (ExternalServiceCaseStep) o;
-        return Objects.equals(this.expectResult, externalServiceCaseStep.expectResult)
-            && Objects.equals(this.testStep, externalServiceCaseStep.testStep);
+        ExternalServiceCaseStep that = (ExternalServiceCaseStep) obj;
+        return Objects.equals(this.expectResult, that.expectResult) && Objects.equals(this.testStep, that.testStep);
     }
 
     @Override

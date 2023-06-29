@@ -234,22 +234,21 @@ public class Partition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Partition partition = (Partition) o;
-        return Objects.equals(this.catalogName, partition.catalogName)
-            && Objects.equals(this.databaseName, partition.databaseName)
-            && Objects.equals(this.tableName, partition.tableName)
-            && Objects.equals(this.partitionValues, partition.partitionValues)
-            && Objects.equals(this.createTime, partition.createTime)
-            && Objects.equals(this.lastAccessTime, partition.lastAccessTime)
-            && Objects.equals(this.parameters, partition.parameters)
-            && Objects.equals(this.storageDescriptor, partition.storageDescriptor);
+        Partition that = (Partition) obj;
+        return Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.partitionValues, that.partitionValues)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastAccessTime, that.lastAccessTime)
+            && Objects.equals(this.parameters, that.parameters)
+            && Objects.equals(this.storageDescriptor, that.storageDescriptor);
     }
 
     @Override

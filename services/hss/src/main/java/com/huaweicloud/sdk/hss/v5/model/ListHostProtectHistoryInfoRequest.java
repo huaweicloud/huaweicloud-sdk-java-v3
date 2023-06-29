@@ -173,21 +173,19 @@ public class ListHostProtectHistoryInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostProtectHistoryInfoRequest listHostProtectHistoryInfoRequest = (ListHostProtectHistoryInfoRequest) o;
-        return Objects.equals(this.region, listHostProtectHistoryInfoRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listHostProtectHistoryInfoRequest.enterpriseProjectId)
-            && Objects.equals(this.hostId, listHostProtectHistoryInfoRequest.hostId)
-            && Objects.equals(this.startTime, listHostProtectHistoryInfoRequest.startTime)
-            && Objects.equals(this.endTime, listHostProtectHistoryInfoRequest.endTime)
-            && Objects.equals(this.limit, listHostProtectHistoryInfoRequest.limit)
-            && Objects.equals(this.offset, listHostProtectHistoryInfoRequest.offset);
+        ListHostProtectHistoryInfoRequest that = (ListHostProtectHistoryInfoRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

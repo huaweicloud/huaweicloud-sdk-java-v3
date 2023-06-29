@@ -65,16 +65,15 @@ public class UploadExtensionFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadExtensionFileRequest uploadExtensionFileRequest = (UploadExtensionFileRequest) o;
-        return Objects.equals(this.official, uploadExtensionFileRequest.official)
-            && Objects.equals(this.body, uploadExtensionFileRequest.body);
+        UploadExtensionFileRequest that = (UploadExtensionFileRequest) obj;
+        return Objects.equals(this.official, that.official) && Objects.equals(this.body, that.body);
     }
 
     @Override

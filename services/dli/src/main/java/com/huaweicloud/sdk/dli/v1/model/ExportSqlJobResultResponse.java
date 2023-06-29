@@ -100,18 +100,16 @@ public class ExportSqlJobResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportSqlJobResultResponse exportSqlJobResultResponse = (ExportSqlJobResultResponse) o;
-        return Objects.equals(this.isSuccess, exportSqlJobResultResponse.isSuccess)
-            && Objects.equals(this.message, exportSqlJobResultResponse.message)
-            && Objects.equals(this.jobId, exportSqlJobResultResponse.jobId)
-            && Objects.equals(this.jobMode, exportSqlJobResultResponse.jobMode);
+        ExportSqlJobResultResponse that = (ExportSqlJobResultResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobMode, that.jobMode);
     }
 
     @Override

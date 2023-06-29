@@ -319,27 +319,22 @@ public class QueryVmrResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryVmrResultDTO queryVmrResultDTO = (QueryVmrResultDTO) o;
-        return Objects.equals(this.id, queryVmrResultDTO.id) && Objects.equals(this.vmrId, queryVmrResultDTO.vmrId)
-            && Objects.equals(this.vmrName, queryVmrResultDTO.vmrName)
-            && Objects.equals(this.gustPwd, queryVmrResultDTO.gustPwd)
-            && Objects.equals(this.gustJoinUrl, queryVmrResultDTO.gustJoinUrl)
-            && Objects.equals(this.chairPwd, queryVmrResultDTO.chairPwd)
-            && Objects.equals(this.chairJoinUrl, queryVmrResultDTO.chairJoinUrl)
-            && Objects.equals(this.allowGustFirst, queryVmrResultDTO.allowGustFirst)
-            && Objects.equals(this.gustFirstNotice, queryVmrResultDTO.gustFirstNotice)
-            && Objects.equals(this.vmrMode, queryVmrResultDTO.vmrMode)
-            && Objects.equals(this.vmrPkgId, queryVmrResultDTO.vmrPkgId)
-            && Objects.equals(this.vmrPkgName, queryVmrResultDTO.vmrPkgName)
-            && Objects.equals(this.vmrPkgParties, queryVmrResultDTO.vmrPkgParties)
-            && Objects.equals(this.status, queryVmrResultDTO.status);
+        QueryVmrResultDTO that = (QueryVmrResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.vmrName, that.vmrName) && Objects.equals(this.gustPwd, that.gustPwd)
+            && Objects.equals(this.gustJoinUrl, that.gustJoinUrl) && Objects.equals(this.chairPwd, that.chairPwd)
+            && Objects.equals(this.chairJoinUrl, that.chairJoinUrl)
+            && Objects.equals(this.allowGustFirst, that.allowGustFirst)
+            && Objects.equals(this.gustFirstNotice, that.gustFirstNotice) && Objects.equals(this.vmrMode, that.vmrMode)
+            && Objects.equals(this.vmrPkgId, that.vmrPkgId) && Objects.equals(this.vmrPkgName, that.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, that.vmrPkgParties) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class UpdateAnticrawlerRuleTypeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAnticrawlerRuleTypeResponse updateAnticrawlerRuleTypeResponse = (UpdateAnticrawlerRuleTypeResponse) o;
-        return Objects.equals(this.anticrawlerType, updateAnticrawlerRuleTypeResponse.anticrawlerType);
+        UpdateAnticrawlerRuleTypeResponse that = (UpdateAnticrawlerRuleTypeResponse) obj;
+        return Objects.equals(this.anticrawlerType, that.anticrawlerType);
     }
 
     @Override

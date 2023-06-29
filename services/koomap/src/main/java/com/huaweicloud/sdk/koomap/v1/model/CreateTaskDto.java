@@ -224,22 +224,19 @@ public class CreateTaskDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskDto createTaskDto = (CreateTaskDto) o;
-        return Objects.equals(this.taskName, createTaskDto.taskName)
-            && Objects.equals(this.taskType, createTaskDto.taskType)
-            && Objects.equals(this.workspaceId, createTaskDto.workspaceId)
-            && Objects.equals(this.dataIds, createTaskDto.dataIds)
-            && Objects.equals(this.shapeId, createTaskDto.shapeId)
-            && Objects.equals(this.productionLevel, createTaskDto.productionLevel)
-            && Objects.equals(this.taskDescription, createTaskDto.taskDescription)
-            && Objects.equals(this.dataAlias, createTaskDto.dataAlias);
+        CreateTaskDto that = (CreateTaskDto) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.dataIds, that.dataIds)
+            && Objects.equals(this.shapeId, that.shapeId) && Objects.equals(this.productionLevel, that.productionLevel)
+            && Objects.equals(this.taskDescription, that.taskDescription)
+            && Objects.equals(this.dataAlias, that.dataAlias);
     }
 
     @Override

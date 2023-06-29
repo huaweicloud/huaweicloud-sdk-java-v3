@@ -69,22 +69,15 @@ public class NodePoolSpec {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -315,21 +308,20 @@ public class NodePoolSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolSpec nodePoolSpec = (NodePoolSpec) o;
-        return Objects.equals(this.type, nodePoolSpec.type)
-            && Objects.equals(this.nodeTemplate, nodePoolSpec.nodeTemplate)
-            && Objects.equals(this.initialNodeCount, nodePoolSpec.initialNodeCount)
-            && Objects.equals(this.autoscaling, nodePoolSpec.autoscaling)
-            && Objects.equals(this.nodeManagement, nodePoolSpec.nodeManagement)
-            && Objects.equals(this.podSecurityGroups, nodePoolSpec.podSecurityGroups)
-            && Objects.equals(this.customSecurityGroups, nodePoolSpec.customSecurityGroups);
+        NodePoolSpec that = (NodePoolSpec) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.nodeTemplate, that.nodeTemplate)
+            && Objects.equals(this.initialNodeCount, that.initialNodeCount)
+            && Objects.equals(this.autoscaling, that.autoscaling)
+            && Objects.equals(this.nodeManagement, that.nodeManagement)
+            && Objects.equals(this.podSecurityGroups, that.podSecurityGroups)
+            && Objects.equals(this.customSecurityGroups, that.customSecurityGroups);
     }
 
     @Override

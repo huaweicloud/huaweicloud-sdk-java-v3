@@ -61,22 +61,15 @@ public class AdDomain {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainTypeEnum(value));
         }
 
         public static DomainTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -391,26 +384,25 @@ public class AdDomain {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdDomain adDomain = (AdDomain) o;
-        return Objects.equals(this.domainType, adDomain.domainType)
-            && Objects.equals(this.domainName, adDomain.domainName)
-            && Objects.equals(this.domainAdminAccount, adDomain.domainAdminAccount)
-            && Objects.equals(this.domainPassword, adDomain.domainPassword)
-            && Objects.equals(this.activeDomainIp, adDomain.activeDomainIp)
-            && Objects.equals(this.activeDomainName, adDomain.activeDomainName)
-            && Objects.equals(this.standbyDomainIp, adDomain.standbyDomainIp)
-            && Objects.equals(this.standbyDomainName, adDomain.standbyDomainName)
-            && Objects.equals(this.activeDnsIp, adDomain.activeDnsIp)
-            && Objects.equals(this.standbyDnsIp, adDomain.standbyDnsIp)
-            && Objects.equals(this.deleteComputerObject, adDomain.deleteComputerObject)
-            && Objects.equals(this.useLdaps, adDomain.useLdaps) && Objects.equals(this.tlsConfig, adDomain.tlsConfig);
+        AdDomain that = (AdDomain) obj;
+        return Objects.equals(this.domainType, that.domainType) && Objects.equals(this.domainName, that.domainName)
+            && Objects.equals(this.domainAdminAccount, that.domainAdminAccount)
+            && Objects.equals(this.domainPassword, that.domainPassword)
+            && Objects.equals(this.activeDomainIp, that.activeDomainIp)
+            && Objects.equals(this.activeDomainName, that.activeDomainName)
+            && Objects.equals(this.standbyDomainIp, that.standbyDomainIp)
+            && Objects.equals(this.standbyDomainName, that.standbyDomainName)
+            && Objects.equals(this.activeDnsIp, that.activeDnsIp)
+            && Objects.equals(this.standbyDnsIp, that.standbyDnsIp)
+            && Objects.equals(this.deleteComputerObject, that.deleteComputerObject)
+            && Objects.equals(this.useLdaps, that.useLdaps) && Objects.equals(this.tlsConfig, that.tlsConfig);
     }
 
     @Override

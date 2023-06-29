@@ -1,93 +1,74 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanDescriptionPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanIdPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanNamePrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanStatusMessagePrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.ExecutionPlanStatusPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.StackIdPrimitiveTypeHolder;
-import com.huaweicloud.sdk.aos.v1.model.StackNamePrimitiveTypeHolder;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * ExecutionPlan
  */
-public class ExecutionPlan  {
-
+public class ExecutionPlan {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_name")
-    
+    @JsonProperty(value = "stack_name")
 
     private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_id")
-    
+    @JsonProperty(value = "stack_id")
 
     private String stackId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_plan_id")
-    
+    @JsonProperty(value = "execution_plan_id")
 
     private String executionPlanId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_plan_name")
-    
+    @JsonProperty(value = "execution_plan_name")
 
     private String executionPlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
+
     /**
      * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
      */
     public static final class StatusEnum {
 
-        
         /**
          * Enum CREATION_IN_PROGRESS for value: "CREATION_IN_PROGRESS"
          */
         public static final StatusEnum CREATION_IN_PROGRESS = new StatusEnum("CREATION_IN_PROGRESS");
-        
+
         /**
          * Enum CREATION_FAILED for value: "CREATION_FAILED"
          */
         public static final StatusEnum CREATION_FAILED = new StatusEnum("CREATION_FAILED");
-        
+
         /**
          * Enum AVAILABLE for value: "AVAILABLE"
          */
         public static final StatusEnum AVAILABLE = new StatusEnum("AVAILABLE");
-        
+
         /**
          * Enum APPLY_IN_PROGRESS for value: "APPLY_IN_PROGRESS"
          */
         public static final StatusEnum APPLY_IN_PROGRESS = new StatusEnum("APPLY_IN_PROGRESS");
-        
+
         /**
          * Enum APPLIED for value: "APPLIED"
          */
         public static final StatusEnum APPLIED = new StatusEnum("APPLIED");
-        
 
         private static final Map<String, StatusEnum> STATIC_FIELDS = createStaticFields();
 
@@ -119,25 +100,18 @@ public class ExecutionPlan  {
 
         @JsonCreator
         public static StatusEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,26 +129,22 @@ public class ExecutionPlan  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private StatusEnum status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_message")
-    
+    @JsonProperty(value = "status_message")
 
     private String statusMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="apply_time")
-    
+    @JsonProperty(value = "apply_time")
 
     private String applyTime;
 
@@ -182,9 +152,6 @@ public class ExecutionPlan  {
         this.stackName = stackName;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -198,15 +165,10 @@ public class ExecutionPlan  {
         this.stackName = stackName;
     }
 
-    
-
     public ExecutionPlan withStackId(String stackId) {
         this.stackId = stackId;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈（stack）的唯一Id。  此Id由资源编排服务在生成资源栈的时候生成，为UUID。  由于资源栈名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的资源栈，删除，再重新创建一个同名资源栈。  对于团队并行开发，用户可能希望确保，当前我操作的资源栈就是我认为的那个，而不是其他队友删除后创建的同名资源栈。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的资源栈所对应的ID都不相同，更新不会影响ID。如果给与的stack_id和当前资源栈的ID不一致，则返回400 
@@ -220,15 +182,10 @@ public class ExecutionPlan  {
         this.stackId = stackId;
     }
 
-    
-
     public ExecutionPlan withExecutionPlanId(String executionPlanId) {
         this.executionPlanId = executionPlanId;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划（execution_plan）的唯一Id。  此Id由资源编排服务在生成执行计划的时候生成，为UUID。  由于执行计划名仅仅在同一时间下唯一，即用户允许先生成一个叫HelloWorld的执行计划，删除，再重新创建一个同名执行计划。  对于团队并行开发，用户可能希望确保，当前我操作的执行计划就是我认为的那个，而不是其他队友删除后创建的同名执行计划。因此，使用ID就可以做到强匹配。  资源编排服务保证每次创建的执行计划所对应的ID都不相同，更新不会影响ID。如果给与的execution_plan_id和当前执行计划的ID不一致，则返回400 
@@ -242,15 +199,10 @@ public class ExecutionPlan  {
         this.executionPlanId = executionPlanId;
     }
 
-    
-
     public ExecutionPlan withExecutionPlanName(String executionPlanName) {
         this.executionPlanName = executionPlanName;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -264,15 +216,10 @@ public class ExecutionPlan  {
         this.executionPlanName = executionPlanName;
     }
 
-    
-
     public ExecutionPlan withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的描述。可用于客户识别自己的执行计划。
@@ -286,15 +233,10 @@ public class ExecutionPlan  {
         this.description = description;
     }
 
-    
-
     public ExecutionPlan withStatus(StatusEnum status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的状态     * `CREATION_IN_PROGRESS` - 正在创建，请等待     * `CREATION_FAILED` - 创建失败，请从status_message获取错误信息汇总     * `AVAILABLE` - 创建完成，可以调用ApplyExecutionPlan API进行执行     * `APPLY_IN_PROGRESS` - 执行中，可通过GetStackMetadata查询资源栈状态，通过ListStackEvents获取执行过程中产生的资源栈事件     * `APPLIED` - 已执行
@@ -308,15 +250,10 @@ public class ExecutionPlan  {
         this.status = status;
     }
 
-    
-
     public ExecutionPlan withStatusMessage(String statusMessage) {
         this.statusMessage = statusMessage;
         return this;
     }
-
-    
-
 
     /**
      * 当执行计划的状态为创建失败状态（即为 `CREATION_FAILED` 时），将会展示简要的错误信息总结以供debug
@@ -330,15 +267,10 @@ public class ExecutionPlan  {
         this.statusMessage = statusMessage;
     }
 
-    
-
     public ExecutionPlan withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的生成时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
@@ -352,15 +284,10 @@ public class ExecutionPlan  {
         this.createTime = createTime;
     }
 
-    
-
     public ExecutionPlan withApplyTime(String applyTime) {
         this.applyTime = applyTime;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的执行时间，格式遵循RFC3339，精确到秒，UTC时区，即yyyy-mm-ddTHH:MM:SSZ，如1970-01-01T00:00:00Z
@@ -374,31 +301,36 @@ public class ExecutionPlan  {
         this.applyTime = applyTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlan executionPlan = (ExecutionPlan) o;
-        return Objects.equals(this.stackName, executionPlan.stackName) &&
-            Objects.equals(this.stackId, executionPlan.stackId) &&
-            Objects.equals(this.executionPlanId, executionPlan.executionPlanId) &&
-            Objects.equals(this.executionPlanName, executionPlan.executionPlanName) &&
-            Objects.equals(this.description, executionPlan.description) &&
-            Objects.equals(this.status, executionPlan.status) &&
-            Objects.equals(this.statusMessage, executionPlan.statusMessage) &&
-            Objects.equals(this.createTime, executionPlan.createTime) &&
-            Objects.equals(this.applyTime, executionPlan.applyTime);
+        ExecutionPlan that = (ExecutionPlan) obj;
+        return Objects.equals(this.stackName, that.stackName) && Objects.equals(this.stackId, that.stackId)
+            && Objects.equals(this.executionPlanId, that.executionPlanId)
+            && Objects.equals(this.executionPlanName, that.executionPlanName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.statusMessage, that.statusMessage)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.applyTime, that.applyTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(stackName, stackId, executionPlanId, executionPlanName, description, status, statusMessage, createTime, applyTime);
+        return Objects.hash(stackName,
+            stackId,
+            executionPlanId,
+            executionPlanName,
+            description,
+            status,
+            statusMessage,
+            createTime,
+            applyTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -415,6 +347,7 @@ public class ExecutionPlan  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -425,8 +358,5 @@ public class ExecutionPlan  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

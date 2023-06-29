@@ -135,19 +135,17 @@ public class UpdateUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateUserRequest updateUserRequest = (UpdateUserRequest) o;
-        return Objects.equals(this.xRequestId, updateUserRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateUserRequest.acceptLanguage)
-            && Objects.equals(this.account, updateUserRequest.account)
-            && Objects.equals(this.accountType, updateUserRequest.accountType)
-            && Objects.equals(this.body, updateUserRequest.body);
+        UpdateUserRequest that = (UpdateUserRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.accountType, that.accountType) && Objects.equals(this.body, that.body);
     }
 
     @Override

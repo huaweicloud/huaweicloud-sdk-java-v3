@@ -55,16 +55,15 @@ public class FreezeDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FreezeDeviceRequest freezeDeviceRequest = (FreezeDeviceRequest) o;
-        return Objects.equals(this.instanceId, freezeDeviceRequest.instanceId)
-            && Objects.equals(this.deviceId, freezeDeviceRequest.deviceId);
+        FreezeDeviceRequest that = (FreezeDeviceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

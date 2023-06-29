@@ -89,17 +89,16 @@ public class AddSubsetsToGatewayRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddSubsetsToGatewayRequest addSubsetsToGatewayRequest = (AddSubsetsToGatewayRequest) o;
-        return Objects.equals(this.instanceId, addSubsetsToGatewayRequest.instanceId)
-            && Objects.equals(this.deviceId, addSubsetsToGatewayRequest.deviceId)
-            && Objects.equals(this.body, addSubsetsToGatewayRequest.body);
+        AddSubsetsToGatewayRequest that = (AddSubsetsToGatewayRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

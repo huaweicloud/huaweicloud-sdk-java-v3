@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerConfigsReqDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ContainerSettingsReqDTO
  */
-public class ContainerSettingsReqDTO  {
-
+public class ContainerSettingsReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configs")
-    
+    @JsonProperty(value = "configs")
 
     private ContainerConfigsReqDTO configs;
 
@@ -30,14 +22,13 @@ public class ContainerSettingsReqDTO  {
     }
 
     public ContainerSettingsReqDTO withConfigs(Consumer<ContainerConfigsReqDTO> configsSetter) {
-        if(this.configs == null ){
+        if (this.configs == null) {
             this.configs = new ContainerConfigsReqDTO();
             configsSetter.accept(this.configs);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get configs
@@ -51,23 +42,23 @@ public class ContainerSettingsReqDTO  {
         this.configs = configs;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContainerSettingsReqDTO containerSettingsReqDTO = (ContainerSettingsReqDTO) o;
-        return Objects.equals(this.configs, containerSettingsReqDTO.configs);
+        ContainerSettingsReqDTO that = (ContainerSettingsReqDTO) obj;
+        return Objects.equals(this.configs, that.configs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(configs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class ContainerSettingsReqDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class ContainerSettingsReqDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -65,16 +65,15 @@ public class PutOfficialEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutOfficialEventsRequest putOfficialEventsRequest = (PutOfficialEventsRequest) o;
-        return Objects.equals(this.sourceName, putOfficialEventsRequest.sourceName)
-            && Objects.equals(this.body, putOfficialEventsRequest.body);
+        PutOfficialEventsRequest that = (PutOfficialEventsRequest) obj;
+        return Objects.equals(this.sourceName, that.sourceName) && Objects.equals(this.body, that.body);
     }
 
     @Override

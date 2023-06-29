@@ -185,22 +185,18 @@ public class ShowInstanceTopicDetailRespPartitions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceTopicDetailRespPartitions showInstanceTopicDetailRespPartitions =
-            (ShowInstanceTopicDetailRespPartitions) o;
-        return Objects.equals(this.partition, showInstanceTopicDetailRespPartitions.partition)
-            && Objects.equals(this.leader, showInstanceTopicDetailRespPartitions.leader)
-            && Objects.equals(this.leo, showInstanceTopicDetailRespPartitions.leo)
-            && Objects.equals(this.hw, showInstanceTopicDetailRespPartitions.hw)
-            && Objects.equals(this.lso, showInstanceTopicDetailRespPartitions.lso)
-            && Objects.equals(this.lastUpdateTimestamp, showInstanceTopicDetailRespPartitions.lastUpdateTimestamp)
-            && Objects.equals(this.replicas, showInstanceTopicDetailRespPartitions.replicas);
+        ShowInstanceTopicDetailRespPartitions that = (ShowInstanceTopicDetailRespPartitions) obj;
+        return Objects.equals(this.partition, that.partition) && Objects.equals(this.leader, that.leader)
+            && Objects.equals(this.leo, that.leo) && Objects.equals(this.hw, that.hw)
+            && Objects.equals(this.lso, that.lso) && Objects.equals(this.lastUpdateTimestamp, that.lastUpdateTimestamp)
+            && Objects.equals(this.replicas, that.replicas);
     }
 
     @Override

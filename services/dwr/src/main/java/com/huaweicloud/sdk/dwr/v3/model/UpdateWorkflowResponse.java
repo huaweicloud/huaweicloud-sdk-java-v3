@@ -168,21 +168,18 @@ public class UpdateWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkflowResponse updateWorkflowResponse = (UpdateWorkflowResponse) o;
-        return Objects.equals(this.graphName, updateWorkflowResponse.graphName)
-            && Objects.equals(this.graphUrn, updateWorkflowResponse.graphUrn)
-            && Objects.equals(this.lastModified, updateWorkflowResponse.lastModified)
-            && Objects.equals(this.xRequestId, updateWorkflowResponse.xRequestId)
-            && Objects.equals(this.connection, updateWorkflowResponse.connection)
-            && Objects.equals(this.contentLength, updateWorkflowResponse.contentLength)
-            && Objects.equals(this.date, updateWorkflowResponse.date);
+        UpdateWorkflowResponse that = (UpdateWorkflowResponse) obj;
+        return Objects.equals(this.graphName, that.graphName) && Objects.equals(this.graphUrn, that.graphUrn)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

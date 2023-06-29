@@ -356,28 +356,23 @@ public class ShowDeptAndChildDeptResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeptAndChildDeptResponse showDeptAndChildDeptResponse = (ShowDeptAndChildDeptResponse) o;
-        return Objects.equals(this.corpId, showDeptAndChildDeptResponse.corpId)
-            && Objects.equals(this.deptCode, showDeptAndChildDeptResponse.deptCode)
-            && Objects.equals(this.deptLevel, showDeptAndChildDeptResponse.deptLevel)
-            && Objects.equals(this.deptName, showDeptAndChildDeptResponse.deptName)
-            && Objects.equals(this.deptNamePath, showDeptAndChildDeptResponse.deptNamePath)
-            && Objects.equals(this.isLeafNode, showDeptAndChildDeptResponse.isLeafNode)
-            && Objects.equals(this.parentDeptCode, showDeptAndChildDeptResponse.parentDeptCode)
-            && Objects.equals(this.deptCodePath, showDeptAndChildDeptResponse.deptCodePath)
-            && Objects.equals(this.note, showDeptAndChildDeptResponse.note)
-            && Objects.equals(this.inPermission, showDeptAndChildDeptResponse.inPermission)
-            && Objects.equals(this.outPermission, showDeptAndChildDeptResponse.outPermission)
-            && Objects.equals(this.designatedOutDeptCodes, showDeptAndChildDeptResponse.designatedOutDeptCodes)
-            && Objects.equals(this.childDepts, showDeptAndChildDeptResponse.childDepts)
-            && Objects.equals(this.sortLevel, showDeptAndChildDeptResponse.sortLevel);
+        ShowDeptAndChildDeptResponse that = (ShowDeptAndChildDeptResponse) obj;
+        return Objects.equals(this.corpId, that.corpId) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.deptLevel, that.deptLevel) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.deptNamePath, that.deptNamePath) && Objects.equals(this.isLeafNode, that.isLeafNode)
+            && Objects.equals(this.parentDeptCode, that.parentDeptCode)
+            && Objects.equals(this.deptCodePath, that.deptCodePath) && Objects.equals(this.note, that.note)
+            && Objects.equals(this.inPermission, that.inPermission)
+            && Objects.equals(this.outPermission, that.outPermission)
+            && Objects.equals(this.designatedOutDeptCodes, that.designatedOutDeptCodes)
+            && Objects.equals(this.childDepts, that.childDepts) && Objects.equals(this.sortLevel, that.sortLevel);
     }
 
     @Override

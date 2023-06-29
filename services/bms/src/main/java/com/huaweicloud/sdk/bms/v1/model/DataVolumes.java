@@ -67,22 +67,15 @@ public class DataVolumes {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
         }
 
         public static VolumetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class DataVolumes {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterTypeEnum(value));
         }
 
         public static ClusterTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,18 +267,17 @@ public class DataVolumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataVolumes dataVolumes = (DataVolumes) o;
-        return Objects.equals(this.volumetype, dataVolumes.volumetype) && Objects.equals(this.size, dataVolumes.size)
-            && Objects.equals(this.shareable, dataVolumes.shareable)
-            && Objects.equals(this.clusterId, dataVolumes.clusterId)
-            && Objects.equals(this.clusterType, dataVolumes.clusterType);
+        DataVolumes that = (DataVolumes) obj;
+        return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.shareable, that.shareable) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterType, that.clusterType);
     }
 
     @Override

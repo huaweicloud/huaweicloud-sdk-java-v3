@@ -56,16 +56,15 @@ public class CreateApplicationEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationEndpointResponse createApplicationEndpointResponse = (CreateApplicationEndpointResponse) o;
-        return Objects.equals(this.requestId, createApplicationEndpointResponse.requestId)
-            && Objects.equals(this.endpointUrn, createApplicationEndpointResponse.endpointUrn);
+        CreateApplicationEndpointResponse that = (CreateApplicationEndpointResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.endpointUrn, that.endpointUrn);
     }
 
     @Override

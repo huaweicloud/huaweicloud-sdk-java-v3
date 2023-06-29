@@ -119,18 +119,16 @@ public class ShowSqlSampleTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlSampleTemplatesResponse showSqlSampleTemplatesResponse = (ShowSqlSampleTemplatesResponse) o;
-        return Objects.equals(this.isSuccess, showSqlSampleTemplatesResponse.isSuccess)
-            && Objects.equals(this.message, showSqlSampleTemplatesResponse.message)
-            && Objects.equals(this.sqls, showSqlSampleTemplatesResponse.sqls)
-            && Objects.equals(this.sqlCount, showSqlSampleTemplatesResponse.sqlCount);
+        ShowSqlSampleTemplatesResponse that = (ShowSqlSampleTemplatesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.sqls, that.sqls) && Objects.equals(this.sqlCount, that.sqlCount);
     }
 
     @Override

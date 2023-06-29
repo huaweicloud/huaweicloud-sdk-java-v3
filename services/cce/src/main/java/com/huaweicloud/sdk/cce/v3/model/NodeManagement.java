@@ -33,15 +33,15 @@ public class NodeManagement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeManagement nodeManagement = (NodeManagement) o;
-        return Objects.equals(this.serverGroupReference, nodeManagement.serverGroupReference);
+        NodeManagement that = (NodeManagement) obj;
+        return Objects.equals(this.serverGroupReference, that.serverGroupReference);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class CompareTableInfoWithToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareTableInfoWithToken compareTableInfoWithToken = (CompareTableInfoWithToken) o;
-        return Objects.equals(this.tableName, compareTableInfoWithToken.tableName)
-            && Objects.equals(this.minToken, compareTableInfoWithToken.minToken)
-            && Objects.equals(this.maxToken, compareTableInfoWithToken.maxToken);
+        CompareTableInfoWithToken that = (CompareTableInfoWithToken) obj;
+        return Objects.equals(this.tableName, that.tableName) && Objects.equals(this.minToken, that.minToken)
+            && Objects.equals(this.maxToken, that.maxToken);
     }
 
     @Override

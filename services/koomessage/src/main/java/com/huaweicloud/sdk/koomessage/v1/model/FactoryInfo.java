@@ -55,16 +55,15 @@ public class FactoryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FactoryInfo factoryInfo = (FactoryInfo) o;
-        return Objects.equals(this.factoryType, factoryInfo.factoryType)
-            && Objects.equals(this.state, factoryInfo.state);
+        FactoryInfo that = (FactoryInfo) obj;
+        return Objects.equals(this.factoryType, that.factoryType) && Objects.equals(this.state, that.state);
     }
 
     @Override

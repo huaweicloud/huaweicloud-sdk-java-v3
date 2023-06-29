@@ -55,16 +55,15 @@ public class ObsBucketInfoOwner {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsBucketInfoOwner obsBucketInfoOwner = (ObsBucketInfoOwner) o;
-        return Objects.equals(this.displayName, obsBucketInfoOwner.displayName)
-            && Objects.equals(this.id, obsBucketInfoOwner.id);
+        ObsBucketInfoOwner that = (ObsBucketInfoOwner) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.id, that.id);
     }
 
     @Override

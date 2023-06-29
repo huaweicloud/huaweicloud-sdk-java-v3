@@ -1,50 +1,42 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.nlp.v2.model.PostMultiGainedSegmentResponseItem;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 多粒度分词结果中的词汇节点
  */
-public class PostMultiGainedSegmentResponseItemCopy  {
-
+public class PostMultiGainedSegmentResponseItemCopy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
+
     /**
      * 文本类型，取值如下： WORD-词汇类型 CHAR-字符类型
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum WORD for value: "WORD"
          */
         public static final TypeEnum WORD = new TypeEnum("WORD");
-        
+
         /**
          * Enum CHAR for value: "CHAR"
          */
         public static final TypeEnum CHAR = new TypeEnum("CHAR");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -73,25 +65,18 @@ public class PostMultiGainedSegmentResponseItemCopy  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -109,23 +94,19 @@ public class PostMultiGainedSegmentResponseItemCopy  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sub_contents")
-    
+    @JsonProperty(value = "sub_contents")
+
     private List<PostMultiGainedSegmentResponseItem> subContents = null;
-    
+
     public PostMultiGainedSegmentResponseItemCopy withContent(String content) {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 当前节点对应的文本内容
@@ -139,15 +120,10 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         this.content = content;
     }
 
-    
-
     public PostMultiGainedSegmentResponseItemCopy withType(TypeEnum type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 文本类型，取值如下： WORD-词汇类型 CHAR-字符类型
@@ -161,24 +137,24 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         this.type = type;
     }
 
-    
-
-    public PostMultiGainedSegmentResponseItemCopy withSubContents(List<PostMultiGainedSegmentResponseItem> subContents) {
+    public PostMultiGainedSegmentResponseItemCopy withSubContents(
+        List<PostMultiGainedSegmentResponseItem> subContents) {
         this.subContents = subContents;
         return this;
     }
 
-    
-    public PostMultiGainedSegmentResponseItemCopy addSubContentsItem(PostMultiGainedSegmentResponseItem subContentsItem) {
-        if(this.subContents == null) {
+    public PostMultiGainedSegmentResponseItemCopy addSubContentsItem(
+        PostMultiGainedSegmentResponseItem subContentsItem) {
+        if (this.subContents == null) {
             this.subContents = new ArrayList<>();
         }
         this.subContents.add(subContentsItem);
         return this;
     }
 
-    public PostMultiGainedSegmentResponseItemCopy withSubContents(Consumer<List<PostMultiGainedSegmentResponseItem>> subContentsSetter) {
-        if(this.subContents == null) {
+    public PostMultiGainedSegmentResponseItemCopy withSubContents(
+        Consumer<List<PostMultiGainedSegmentResponseItem>> subContentsSetter) {
+        if (this.subContents == null) {
             this.subContents = new ArrayList<>();
         }
         subContentsSetter.accept(this.subContents);
@@ -197,25 +173,24 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         this.subContents = subContents;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostMultiGainedSegmentResponseItemCopy postMultiGainedSegmentResponseItemCopy = (PostMultiGainedSegmentResponseItemCopy) o;
-        return Objects.equals(this.content, postMultiGainedSegmentResponseItemCopy.content) &&
-            Objects.equals(this.type, postMultiGainedSegmentResponseItemCopy.type) &&
-            Objects.equals(this.subContents, postMultiGainedSegmentResponseItemCopy.subContents);
+        PostMultiGainedSegmentResponseItemCopy that = (PostMultiGainedSegmentResponseItemCopy) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.subContents, that.subContents);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(content, type, subContents);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -226,6 +201,7 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -236,8 +212,5 @@ public class PostMultiGainedSegmentResponseItemCopy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

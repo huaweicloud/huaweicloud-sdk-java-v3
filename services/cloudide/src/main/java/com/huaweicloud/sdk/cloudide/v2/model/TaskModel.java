@@ -281,22 +281,21 @@ public class TaskModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskModel taskModel = (TaskModel) o;
-        return Objects.equals(this.dockerId, taskModel.dockerId) && Objects.equals(this.exception, taskModel.exception)
-            && Objects.equals(this.generatedSnippet, taskModel.generatedSnippet)
-            && Objects.equals(this.language, taskModel.language) && Objects.equals(this.modelId, taskModel.modelId)
-            && Objects.equals(this.recordTime, taskModel.recordTime)
-            && Objects.equals(this.requestId, taskModel.requestId) && Objects.equals(this.snippet, taskModel.snippet)
-            && Objects.equals(this.startTime, taskModel.startTime) && Objects.equals(this.status, taskModel.status)
-            && Objects.equals(this.taskId, taskModel.taskId)
-            && Objects.equals(this.timeConsuming, taskModel.timeConsuming);
+        TaskModel that = (TaskModel) obj;
+        return Objects.equals(this.dockerId, that.dockerId) && Objects.equals(this.exception, that.exception)
+            && Objects.equals(this.generatedSnippet, that.generatedSnippet)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.recordTime, that.recordTime) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.snippet, that.snippet) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.timeConsuming, that.timeConsuming);
     }
 
     @Override

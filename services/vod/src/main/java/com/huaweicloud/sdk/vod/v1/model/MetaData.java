@@ -210,22 +210,15 @@ public class MetaData {
             if (value == null) {
                 return null;
             }
-            PackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PackTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PackTypeEnum(value));
         }
 
         public static PackTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PackTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -400,22 +393,15 @@ public class MetaData {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodecEnum(value));
         }
 
         public static CodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -648,20 +634,19 @@ public class MetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetaData metaData = (MetaData) o;
-        return Objects.equals(this.packType, metaData.packType) && Objects.equals(this.codec, metaData.codec)
-            && Objects.equals(this.duration, metaData.duration) && Objects.equals(this.videoSize, metaData.videoSize)
-            && Objects.equals(this.width, metaData.width) && Objects.equals(this.hight, metaData.hight)
-            && Objects.equals(this.bitRate, metaData.bitRate) && Objects.equals(this.frameRate, metaData.frameRate)
-            && Objects.equals(this.quality, metaData.quality)
-            && Objects.equals(this.audioChannels, metaData.audioChannels);
+        MetaData that = (MetaData) obj;
+        return Objects.equals(this.packType, that.packType) && Objects.equals(this.codec, that.codec)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.videoSize, that.videoSize)
+            && Objects.equals(this.width, that.width) && Objects.equals(this.hight, that.hight)
+            && Objects.equals(this.bitRate, that.bitRate) && Objects.equals(this.frameRate, that.frameRate)
+            && Objects.equals(this.quality, that.quality) && Objects.equals(this.audioChannels, that.audioChannels);
     }
 
     @Override

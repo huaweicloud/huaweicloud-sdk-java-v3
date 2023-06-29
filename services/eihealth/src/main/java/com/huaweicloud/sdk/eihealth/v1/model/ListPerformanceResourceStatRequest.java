@@ -59,16 +59,15 @@ public class ListPerformanceResourceStatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPerformanceResourceStatRequest listPerformanceResourceStatRequest = (ListPerformanceResourceStatRequest) o;
-        return Objects.equals(this.limit, listPerformanceResourceStatRequest.limit)
-            && Objects.equals(this.offset, listPerformanceResourceStatRequest.offset);
+        ListPerformanceResourceStatRequest that = (ListPerformanceResourceStatRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

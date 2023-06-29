@@ -77,17 +77,16 @@ public class StartLogsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartLogsReq startLogsReq = (StartLogsReq) o;
-        return Objects.equals(this.agency, startLogsReq.agency)
-            && Objects.equals(this.logBasePath, startLogsReq.logBasePath)
-            && Objects.equals(this.logBucket, startLogsReq.logBucket);
+        StartLogsReq that = (StartLogsReq) obj;
+        return Objects.equals(this.agency, that.agency) && Objects.equals(this.logBasePath, that.logBasePath)
+            && Objects.equals(this.logBucket, that.logBucket);
     }
 
     @Override

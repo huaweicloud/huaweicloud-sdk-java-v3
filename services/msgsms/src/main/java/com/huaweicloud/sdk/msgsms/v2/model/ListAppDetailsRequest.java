@@ -213,23 +213,19 @@ public class ListAppDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppDetailsRequest listAppDetailsRequest = (ListAppDetailsRequest) o;
-        return Objects.equals(this.appName, listAppDetailsRequest.appName)
-            && Objects.equals(this.startTime, listAppDetailsRequest.startTime)
-            && Objects.equals(this.endTime, listAppDetailsRequest.endTime)
-            && Objects.equals(this.limit, listAppDetailsRequest.limit)
-            && Objects.equals(this.offset, listAppDetailsRequest.offset)
-            && Objects.equals(this.region, listAppDetailsRequest.region)
-            && Objects.equals(this.sortDir, listAppDetailsRequest.sortDir)
-            && Objects.equals(this.sortKey, listAppDetailsRequest.sortKey)
-            && Objects.equals(this.status, listAppDetailsRequest.status);
+        ListAppDetailsRequest that = (ListAppDetailsRequest) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

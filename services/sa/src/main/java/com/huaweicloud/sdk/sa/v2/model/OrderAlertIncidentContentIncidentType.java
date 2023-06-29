@@ -99,19 +99,16 @@ public class OrderAlertIncidentContentIncidentType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderAlertIncidentContentIncidentType orderAlertIncidentContentIncidentType =
-            (OrderAlertIncidentContentIncidentType) o;
-        return Objects.equals(this.id, orderAlertIncidentContentIncidentType.id)
-            && Objects.equals(this.layoutId, orderAlertIncidentContentIncidentType.layoutId)
-            && Objects.equals(this.incidentType, orderAlertIncidentContentIncidentType.incidentType)
-            && Objects.equals(this.category, orderAlertIncidentContentIncidentType.category);
+        OrderAlertIncidentContentIncidentType that = (OrderAlertIncidentContentIncidentType) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.layoutId, that.layoutId)
+            && Objects.equals(this.incidentType, that.incidentType) && Objects.equals(this.category, that.category);
     }
 
     @Override

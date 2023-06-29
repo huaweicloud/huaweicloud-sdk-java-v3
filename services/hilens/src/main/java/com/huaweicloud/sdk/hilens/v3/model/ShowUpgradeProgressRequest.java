@@ -77,17 +77,16 @@ public class ShowUpgradeProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpgradeProgressRequest showUpgradeProgressRequest = (ShowUpgradeProgressRequest) o;
-        return Objects.equals(this.nodeId, showUpgradeProgressRequest.nodeId)
-            && Objects.equals(this.offset, showUpgradeProgressRequest.offset)
-            && Objects.equals(this.limit, showUpgradeProgressRequest.limit);
+        ShowUpgradeProgressRequest that = (ShowUpgradeProgressRequest) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

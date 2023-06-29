@@ -1,61 +1,47 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ShowJobRespJobDetailSchemaPath
  */
-public class ShowJobRespJobDetailSchemaPath  {
-
+public class ShowJobRespJobDetailSchemaPath {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="log")
-    
+    @JsonProperty(value = "log")
 
     private String log;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cause")
-    
+    @JsonProperty(value = "cause")
 
     private String cause;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_lines")
-    
+    @JsonProperty(value = "total_lines")
 
     private Long totalLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failed_lines")
-    
+    @JsonProperty(value = "failed_lines")
 
     private Long failedLines;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="successful_lines")
-    
+    @JsonProperty(value = "successful_lines")
 
     private Long successfulLines;
 
@@ -63,9 +49,6 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件路径。
@@ -79,15 +62,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.path = path;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withLog(String log) {
         this.log = log;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件导入日志存储文件。
@@ -101,15 +79,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.log = log;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * OBS文件导入状态。  - success：完全成功 - failed：完全失败 - partFailed：部分成功
@@ -123,15 +96,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.status = status;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withCause(String cause) {
         this.cause = cause;
         return this;
     }
-
-    
-
 
     /**
      * 导入失败原因。
@@ -145,15 +113,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.cause = cause;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withTotalLines(Long totalLines) {
         this.totalLines = totalLines;
         return this;
     }
-
-    
-
 
     /**
      * 导入总行数。其值为-1时表示当前版本没有返回该字段。
@@ -167,15 +130,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.totalLines = totalLines;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withFailedLines(Long failedLines) {
         this.failedLines = failedLines;
         return this;
     }
-
-    
-
 
     /**
      * 导入失败行数。其值为-1时表示当前版本没有返回该字段。
@@ -189,15 +147,10 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.failedLines = failedLines;
     }
 
-    
-
     public ShowJobRespJobDetailSchemaPath withSuccessfulLines(Long successfulLines) {
         this.successfulLines = successfulLines;
         return this;
     }
-
-    
-
 
     /**
      * 导入成功行数。其值为-1时表示当前版本没有返回该字段。
@@ -211,29 +164,26 @@ public class ShowJobRespJobDetailSchemaPath  {
         this.successfulLines = successfulLines;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobRespJobDetailSchemaPath showJobRespJobDetailSchemaPath = (ShowJobRespJobDetailSchemaPath) o;
-        return Objects.equals(this.path, showJobRespJobDetailSchemaPath.path) &&
-            Objects.equals(this.log, showJobRespJobDetailSchemaPath.log) &&
-            Objects.equals(this.status, showJobRespJobDetailSchemaPath.status) &&
-            Objects.equals(this.cause, showJobRespJobDetailSchemaPath.cause) &&
-            Objects.equals(this.totalLines, showJobRespJobDetailSchemaPath.totalLines) &&
-            Objects.equals(this.failedLines, showJobRespJobDetailSchemaPath.failedLines) &&
-            Objects.equals(this.successfulLines, showJobRespJobDetailSchemaPath.successfulLines);
+        ShowJobRespJobDetailSchemaPath that = (ShowJobRespJobDetailSchemaPath) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.cause, that.cause)
+            && Objects.equals(this.totalLines, that.totalLines) && Objects.equals(this.failedLines, that.failedLines)
+            && Objects.equals(this.successfulLines, that.successfulLines);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, log, status, cause, totalLines, failedLines, successfulLines);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -248,6 +198,7 @@ public class ShowJobRespJobDetailSchemaPath  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -258,8 +209,5 @@ public class ShowJobRespJobDetailSchemaPath  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

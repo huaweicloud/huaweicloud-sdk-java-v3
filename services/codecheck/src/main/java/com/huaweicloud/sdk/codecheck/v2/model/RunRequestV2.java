@@ -99,18 +99,16 @@ public class RunRequestV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunRequestV2 runRequestV2 = (RunRequestV2) o;
-        return Objects.equals(this.username, runRequestV2.username)
-            && Objects.equals(this.accessToken, runRequestV2.accessToken)
-            && Objects.equals(this.gitUrl, runRequestV2.gitUrl)
-            && Objects.equals(this.gitBranch, runRequestV2.gitBranch);
+        RunRequestV2 that = (RunRequestV2) obj;
+        return Objects.equals(this.username, that.username) && Objects.equals(this.accessToken, that.accessToken)
+            && Objects.equals(this.gitUrl, that.gitUrl) && Objects.equals(this.gitBranch, that.gitBranch);
     }
 
     @Override

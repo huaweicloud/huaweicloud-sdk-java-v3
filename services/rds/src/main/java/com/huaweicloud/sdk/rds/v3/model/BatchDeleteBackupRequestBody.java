@@ -52,15 +52,15 @@ public class BatchDeleteBackupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteBackupRequestBody batchDeleteBackupRequestBody = (BatchDeleteBackupRequestBody) o;
-        return Objects.equals(this.backupIds, batchDeleteBackupRequestBody.backupIds);
+        BatchDeleteBackupRequestBody that = (BatchDeleteBackupRequestBody) obj;
+        return Objects.equals(this.backupIds, that.backupIds);
     }
 
     @Override

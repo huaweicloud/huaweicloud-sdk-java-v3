@@ -34,15 +34,15 @@ public class CreateInstanceByEngineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceByEngineResponse createInstanceByEngineResponse = (CreateInstanceByEngineResponse) o;
-        return Objects.equals(this.instanceId, createInstanceByEngineResponse.instanceId);
+        CreateInstanceByEngineResponse that = (CreateInstanceByEngineResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

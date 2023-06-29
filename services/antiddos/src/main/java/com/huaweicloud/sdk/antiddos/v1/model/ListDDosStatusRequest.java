@@ -99,18 +99,16 @@ public class ListDDosStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDDosStatusRequest listDDosStatusRequest = (ListDDosStatusRequest) o;
-        return Objects.equals(this.status, listDDosStatusRequest.status)
-            && Objects.equals(this.limit, listDDosStatusRequest.limit)
-            && Objects.equals(this.offset, listDDosStatusRequest.offset)
-            && Objects.equals(this.ip, listDDosStatusRequest.ip);
+        ListDDosStatusRequest that = (ListDDosStatusRequest) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.ip, that.ip);
     }
 
     @Override

@@ -187,19 +187,19 @@ public class DssPool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DssPool dssPool = (DssPool) o;
-        return Objects.equals(this.id, dssPool.id) && Objects.equals(this.name, dssPool.name)
-            && Objects.equals(this.type, dssPool.type) && Objects.equals(this.projectId, dssPool.projectId)
-            && Objects.equals(this.availabilityZone, dssPool.availabilityZone)
-            && Objects.equals(this.capacity, dssPool.capacity) && Objects.equals(this.status, dssPool.status)
-            && Objects.equals(this.createdAt, dssPool.createdAt);
+        DssPool that = (DssPool) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

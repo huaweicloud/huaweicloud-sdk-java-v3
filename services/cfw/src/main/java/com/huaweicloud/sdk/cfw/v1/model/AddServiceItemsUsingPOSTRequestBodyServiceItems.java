@@ -143,21 +143,17 @@ public class AddServiceItemsUsingPOSTRequestBodyServiceItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddServiceItemsUsingPOSTRequestBodyServiceItems addServiceItemsUsingPOSTRequestBodyServiceItems =
-            (AddServiceItemsUsingPOSTRequestBodyServiceItems) o;
-        return Objects.equals(this.itemId, addServiceItemsUsingPOSTRequestBodyServiceItems.itemId)
-            && Objects.equals(this.protocol, addServiceItemsUsingPOSTRequestBodyServiceItems.protocol)
-            && Objects.equals(this.sourcePort, addServiceItemsUsingPOSTRequestBodyServiceItems.sourcePort)
-            && Objects.equals(this.destPort, addServiceItemsUsingPOSTRequestBodyServiceItems.destPort)
-            && Objects.equals(this.name, addServiceItemsUsingPOSTRequestBodyServiceItems.name)
-            && Objects.equals(this.description, addServiceItemsUsingPOSTRequestBodyServiceItems.description);
+        AddServiceItemsUsingPOSTRequestBodyServiceItems that = (AddServiceItemsUsingPOSTRequestBodyServiceItems) obj;
+        return Objects.equals(this.itemId, that.itemId) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.sourcePort, that.sourcePort) && Objects.equals(this.destPort, that.destPort)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

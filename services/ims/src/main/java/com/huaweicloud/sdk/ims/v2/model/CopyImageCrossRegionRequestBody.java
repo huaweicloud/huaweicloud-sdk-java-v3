@@ -143,20 +143,17 @@ public class CopyImageCrossRegionRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopyImageCrossRegionRequestBody copyImageCrossRegionRequestBody = (CopyImageCrossRegionRequestBody) o;
-        return Objects.equals(this.agencyName, copyImageCrossRegionRequestBody.agencyName)
-            && Objects.equals(this.description, copyImageCrossRegionRequestBody.description)
-            && Objects.equals(this.name, copyImageCrossRegionRequestBody.name)
-            && Objects.equals(this.projectName, copyImageCrossRegionRequestBody.projectName)
-            && Objects.equals(this.region, copyImageCrossRegionRequestBody.region)
-            && Objects.equals(this.vaultId, copyImageCrossRegionRequestBody.vaultId);
+        CopyImageCrossRegionRequestBody that = (CopyImageCrossRegionRequestBody) obj;
+        return Objects.equals(this.agencyName, that.agencyName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

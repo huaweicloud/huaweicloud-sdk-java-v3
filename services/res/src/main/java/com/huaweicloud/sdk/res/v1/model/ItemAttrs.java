@@ -96,16 +96,16 @@ public class ItemAttrs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ItemAttrs itemAttrs = (ItemAttrs) o;
-        return Objects.equals(this.dataType, itemAttrs.dataType) && Objects.equals(this.name, itemAttrs.name)
-            && Objects.equals(this.otherUses, itemAttrs.otherUses);
+        ItemAttrs that = (ItemAttrs) obj;
+        return Objects.equals(this.dataType, that.dataType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.otherUses, that.otherUses);
     }
 
     @Override

@@ -126,19 +126,17 @@ public class SearchMeetingFileListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchMeetingFileListRequest searchMeetingFileListRequest = (SearchMeetingFileListRequest) o;
-        return Objects.equals(this.xRequestId, searchMeetingFileListRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchMeetingFileListRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchMeetingFileListRequest.offset)
-            && Objects.equals(this.limit, searchMeetingFileListRequest.limit)
-            && Objects.equals(this.searchKey, searchMeetingFileListRequest.searchKey);
+        SearchMeetingFileListRequest that = (SearchMeetingFileListRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

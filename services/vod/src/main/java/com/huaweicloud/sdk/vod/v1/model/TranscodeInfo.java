@@ -118,18 +118,17 @@ public class TranscodeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscodeInfo transcodeInfo = (TranscodeInfo) o;
-        return Objects.equals(this.templateGroupName, transcodeInfo.templateGroupName)
-            && Objects.equals(this.output, transcodeInfo.output)
-            && Objects.equals(this.execDesc, transcodeInfo.execDesc)
-            && Objects.equals(this.transcodeStatus, transcodeInfo.transcodeStatus);
+        TranscodeInfo that = (TranscodeInfo) obj;
+        return Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.execDesc, that.execDesc)
+            && Objects.equals(this.transcodeStatus, that.transcodeStatus);
     }
 
     @Override

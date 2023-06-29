@@ -139,22 +139,15 @@ public class ListWorkspacesResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -679,37 +672,31 @@ public class ListWorkspacesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkspacesResponse listWorkspacesResponse = (ListWorkspacesResponse) o;
-        return Objects.equals(this.id, listWorkspacesResponse.id)
-            && Objects.equals(this.adDomains, listWorkspacesResponse.adDomains)
-            && Objects.equals(this.vpcId, listWorkspacesResponse.vpcId)
-            && Objects.equals(this.vpcName, listWorkspacesResponse.vpcName)
-            && Objects.equals(this.accessMode, listWorkspacesResponse.accessMode)
-            && Objects.equals(this.dedicatedSubnets, listWorkspacesResponse.dedicatedSubnets)
-            && Objects.equals(this.dedicatedAccessAddress, listWorkspacesResponse.dedicatedAccessAddress)
-            && Objects.equals(this.internetAccessAddress, listWorkspacesResponse.internetAccessAddress)
-            && Objects.equals(this.internetAccessPort, listWorkspacesResponse.internetAccessPort)
-            && Objects.equals(this.status, listWorkspacesResponse.status)
-            && Objects.equals(this.accessStatus, listWorkspacesResponse.accessStatus)
-            && Objects.equals(this.subnetIds, listWorkspacesResponse.subnetIds)
-            && Objects.equals(this.managementSubnetCidr, listWorkspacesResponse.managementSubnetCidr)
-            && Objects.equals(this.infrastructureSecurityGroup, listWorkspacesResponse.infrastructureSecurityGroup)
-            && Objects.equals(this.desktopSecurityGroup, listWorkspacesResponse.desktopSecurityGroup)
-            && Objects.equals(this.closable, listWorkspacesResponse.closable)
-            && Objects.equals(this.configStatus, listWorkspacesResponse.configStatus)
-            && Objects.equals(this.progress, listWorkspacesResponse.progress)
-            && Objects.equals(this.jobId, listWorkspacesResponse.jobId)
-            && Objects.equals(this.failCode, listWorkspacesResponse.failCode)
-            && Objects.equals(this.failReason, listWorkspacesResponse.failReason)
-            && Objects.equals(this.enterpriseId, listWorkspacesResponse.enterpriseId)
-            && Objects.equals(this.isSendEmail, listWorkspacesResponse.isSendEmail);
+        ListWorkspacesResponse that = (ListWorkspacesResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.adDomains, that.adDomains)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.vpcName, that.vpcName)
+            && Objects.equals(this.accessMode, that.accessMode)
+            && Objects.equals(this.dedicatedSubnets, that.dedicatedSubnets)
+            && Objects.equals(this.dedicatedAccessAddress, that.dedicatedAccessAddress)
+            && Objects.equals(this.internetAccessAddress, that.internetAccessAddress)
+            && Objects.equals(this.internetAccessPort, that.internetAccessPort)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.managementSubnetCidr, that.managementSubnetCidr)
+            && Objects.equals(this.infrastructureSecurityGroup, that.infrastructureSecurityGroup)
+            && Objects.equals(this.desktopSecurityGroup, that.desktopSecurityGroup)
+            && Objects.equals(this.closable, that.closable) && Objects.equals(this.configStatus, that.configStatus)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.failCode, that.failCode) && Objects.equals(this.failReason, that.failReason)
+            && Objects.equals(this.enterpriseId, that.enterpriseId)
+            && Objects.equals(this.isSendEmail, that.isSendEmail);
     }
 
     @Override

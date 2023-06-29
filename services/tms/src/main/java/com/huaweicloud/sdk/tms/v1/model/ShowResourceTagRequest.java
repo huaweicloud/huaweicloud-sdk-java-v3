@@ -77,17 +77,16 @@ public class ShowResourceTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceTagRequest showResourceTagRequest = (ShowResourceTagRequest) o;
-        return Objects.equals(this.resourceId, showResourceTagRequest.resourceId)
-            && Objects.equals(this.projectId, showResourceTagRequest.projectId)
-            && Objects.equals(this.resourceType, showResourceTagRequest.resourceType);
+        ShowResourceTagRequest that = (ShowResourceTagRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

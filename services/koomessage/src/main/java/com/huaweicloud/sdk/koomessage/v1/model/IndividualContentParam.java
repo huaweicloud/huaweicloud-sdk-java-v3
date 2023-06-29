@@ -99,18 +99,17 @@ public class IndividualContentParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndividualContentParam individualContentParam = (IndividualContentParam) o;
-        return Objects.equals(this.paramName, individualContentParam.paramName)
-            && Objects.equals(this.contentType, individualContentParam.contentType)
-            && Objects.equals(this.contentSource, individualContentParam.contentSource)
-            && Objects.equals(this.contentDetail, individualContentParam.contentDetail);
+        IndividualContentParam that = (IndividualContentParam) obj;
+        return Objects.equals(this.paramName, that.paramName) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.contentSource, that.contentSource)
+            && Objects.equals(this.contentDetail, that.contentDetail);
     }
 
     @Override

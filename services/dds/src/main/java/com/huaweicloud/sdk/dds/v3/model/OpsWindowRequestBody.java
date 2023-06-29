@@ -55,16 +55,15 @@ public class OpsWindowRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpsWindowRequestBody opsWindowRequestBody = (OpsWindowRequestBody) o;
-        return Objects.equals(this.startTime, opsWindowRequestBody.startTime)
-            && Objects.equals(this.endTime, opsWindowRequestBody.endTime);
+        OpsWindowRequestBody that = (OpsWindowRequestBody) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

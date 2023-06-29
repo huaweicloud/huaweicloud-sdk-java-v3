@@ -65,16 +65,15 @@ public class UpdateDatabaseOwnerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseOwnerRequest updateDatabaseOwnerRequest = (UpdateDatabaseOwnerRequest) o;
-        return Objects.equals(this.databaseName, updateDatabaseOwnerRequest.databaseName)
-            && Objects.equals(this.body, updateDatabaseOwnerRequest.body);
+        UpdateDatabaseOwnerRequest that = (UpdateDatabaseOwnerRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.body, that.body);
     }
 
     @Override

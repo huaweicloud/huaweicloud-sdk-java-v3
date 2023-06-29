@@ -55,16 +55,15 @@ public class ErrorResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorResponseBody errorResponseBody = (ErrorResponseBody) o;
-        return Objects.equals(this.errorCode, errorResponseBody.errorCode)
-            && Objects.equals(this.errorMsg, errorResponseBody.errorMsg);
+        ErrorResponseBody that = (ErrorResponseBody) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

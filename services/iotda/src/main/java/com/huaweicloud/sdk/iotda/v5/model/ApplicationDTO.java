@@ -99,17 +99,16 @@ public class ApplicationDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationDTO applicationDTO = (ApplicationDTO) o;
-        return Objects.equals(this.appId, applicationDTO.appId) && Objects.equals(this.appName, applicationDTO.appName)
-            && Objects.equals(this.createTime, applicationDTO.createTime)
-            && Objects.equals(this.defaultApp, applicationDTO.defaultApp);
+        ApplicationDTO that = (ApplicationDTO) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.defaultApp, that.defaultApp);
     }
 
     @Override

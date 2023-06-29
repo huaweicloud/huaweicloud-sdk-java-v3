@@ -65,16 +65,15 @@ public class ResetPwdOneClickRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetPwdOneClickRequest resetPwdOneClickRequest = (ResetPwdOneClickRequest) o;
-        return Objects.equals(this.serverId, resetPwdOneClickRequest.serverId)
-            && Objects.equals(this.body, resetPwdOneClickRequest.body);
+        ResetPwdOneClickRequest that = (ResetPwdOneClickRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

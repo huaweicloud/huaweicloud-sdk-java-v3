@@ -143,20 +143,18 @@ public class OfferListResponseBodyEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OfferListResponseBodyEntities offerListResponseBodyEntities = (OfferListResponseBodyEntities) o;
-        return Objects.equals(this.offerId, offerListResponseBodyEntities.offerId)
-            && Objects.equals(this.offerCode, offerListResponseBodyEntities.offerCode)
-            && Objects.equals(this.offerName, offerListResponseBodyEntities.offerName)
-            && Objects.equals(this.offerDescription, offerListResponseBodyEntities.offerDescription)
-            && Objects.equals(this.createTime, offerListResponseBodyEntities.createTime)
-            && Objects.equals(this.offerStatus, offerListResponseBodyEntities.offerStatus);
+        OfferListResponseBodyEntities that = (OfferListResponseBodyEntities) obj;
+        return Objects.equals(this.offerId, that.offerId) && Objects.equals(this.offerCode, that.offerCode)
+            && Objects.equals(this.offerName, that.offerName)
+            && Objects.equals(this.offerDescription, that.offerDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.offerStatus, that.offerStatus);
     }
 
     @Override

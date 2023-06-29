@@ -84,16 +84,15 @@ public class ShowRoleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRoleResponse showRoleResponse = (ShowRoleResponse) o;
-        return Objects.equals(this.role, showRoleResponse.role)
-            && Objects.equals(this.userRoles, showRoleResponse.userRoles);
+        ShowRoleResponse that = (ShowRoleResponse) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.userRoles, that.userRoles);
     }
 
     @Override

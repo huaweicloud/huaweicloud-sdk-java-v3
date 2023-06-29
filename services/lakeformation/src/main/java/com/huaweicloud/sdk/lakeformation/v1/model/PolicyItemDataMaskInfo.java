@@ -77,17 +77,16 @@ public class PolicyItemDataMaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyItemDataMaskInfo policyItemDataMaskInfo = (PolicyItemDataMaskInfo) o;
-        return Objects.equals(this.conditionExpr, policyItemDataMaskInfo.conditionExpr)
-            && Objects.equals(this.dataMaskType, policyItemDataMaskInfo.dataMaskType)
-            && Objects.equals(this.valueExpr, policyItemDataMaskInfo.valueExpr);
+        PolicyItemDataMaskInfo that = (PolicyItemDataMaskInfo) obj;
+        return Objects.equals(this.conditionExpr, that.conditionExpr)
+            && Objects.equals(this.dataMaskType, that.dataMaskType) && Objects.equals(this.valueExpr, that.valueExpr);
     }
 
     @Override

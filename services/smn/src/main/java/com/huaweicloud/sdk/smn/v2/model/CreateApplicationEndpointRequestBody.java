@@ -55,17 +55,15 @@ public class CreateApplicationEndpointRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApplicationEndpointRequestBody createApplicationEndpointRequestBody =
-            (CreateApplicationEndpointRequestBody) o;
-        return Objects.equals(this.token, createApplicationEndpointRequestBody.token)
-            && Objects.equals(this.userData, createApplicationEndpointRequestBody.userData);
+        CreateApplicationEndpointRequestBody that = (CreateApplicationEndpointRequestBody) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

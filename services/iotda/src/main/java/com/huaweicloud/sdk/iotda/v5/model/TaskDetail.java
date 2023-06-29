@@ -109,16 +109,16 @@ public class TaskDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskDetail taskDetail = (TaskDetail) o;
-        return Objects.equals(this.target, taskDetail.target) && Objects.equals(this.status, taskDetail.status)
-            && Objects.equals(this.output, taskDetail.output) && Objects.equals(this.error, taskDetail.error);
+        TaskDetail that = (TaskDetail) obj;
+        return Objects.equals(this.target, that.target) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.error, that.error);
     }
 
     @Override

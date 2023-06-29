@@ -65,16 +65,15 @@ public class CreateVersionAliasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVersionAliasRequest createVersionAliasRequest = (CreateVersionAliasRequest) o;
-        return Objects.equals(this.functionUrn, createVersionAliasRequest.functionUrn)
-            && Objects.equals(this.body, createVersionAliasRequest.body);
+        CreateVersionAliasRequest that = (CreateVersionAliasRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -219,23 +219,20 @@ public class ComponentStatusView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentStatusView componentStatusView = (ComponentStatusView) o;
-        return Objects.equals(this.componentStatus, componentStatusView.componentStatus)
-            && Objects.equals(this.availableReplica, componentStatusView.availableReplica)
-            && Objects.equals(this.replica, componentStatusView.replica)
-            && Objects.equals(this.failDetail, componentStatusView.failDetail)
-            && Objects.equals(this.lastJobId, componentStatusView.lastJobId)
-            && Objects.equals(this.creator, componentStatusView.creator)
-            && Objects.equals(this.createTime, componentStatusView.createTime)
-            && Objects.equals(this.updateTime, componentStatusView.updateTime)
-            && Objects.equals(this.artifact, componentStatusView.artifact);
+        ComponentStatusView that = (ComponentStatusView) obj;
+        return Objects.equals(this.componentStatus, that.componentStatus)
+            && Objects.equals(this.availableReplica, that.availableReplica)
+            && Objects.equals(this.replica, that.replica) && Objects.equals(this.failDetail, that.failDetail)
+            && Objects.equals(this.lastJobId, that.lastJobId) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.artifact, that.artifact);
     }
 
     @Override

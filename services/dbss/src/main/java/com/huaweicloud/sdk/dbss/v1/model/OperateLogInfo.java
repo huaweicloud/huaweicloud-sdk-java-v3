@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * OperateLogInfo
  */
-public class OperateLogInfo  {
-
+public class OperateLogInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
 
     private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
 
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="function")
-    
+    @JsonProperty(value = "function")
 
     private String function;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private String action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
 
     private String result;
 
@@ -69,9 +54,6 @@ public class OperateLogInfo  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 操作日志ID
@@ -85,15 +67,10 @@ public class OperateLogInfo  {
         this.id = id;
     }
 
-    
-
     public OperateLogInfo withUser(String user) {
         this.user = user;
         return this;
     }
-
-    
-
 
     /**
      * 操作日志用户
@@ -107,15 +84,10 @@ public class OperateLogInfo  {
         this.user = user;
     }
 
-    
-
     public OperateLogInfo withTime(String time) {
         this.time = time;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录发生的时间，格式为时间戳
@@ -129,15 +101,10 @@ public class OperateLogInfo  {
         this.time = time;
     }
 
-    
-
     public OperateLogInfo withFunction(String function) {
         this.function = function;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录的功能类型
@@ -151,15 +118,10 @@ public class OperateLogInfo  {
         this.function = function;
     }
 
-    
-
     public OperateLogInfo withAction(String action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录的操作类型  create：创建  update：更新  operate：操作（开关）  delete：删除
@@ -173,15 +135,10 @@ public class OperateLogInfo  {
         this.action = action;
     }
 
-    
-
     public OperateLogInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录对应的用户操作对象
@@ -195,15 +152,10 @@ public class OperateLogInfo  {
         this.name = name;
     }
 
-    
-
     public OperateLogInfo withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录具体的描述
@@ -217,15 +169,10 @@ public class OperateLogInfo  {
         this.description = description;
     }
 
-    
-
     public OperateLogInfo withResult(String result) {
         this.result = result;
         return this;
     }
-
-    
-
 
     /**
      * 该条记录对应用户执行的结果  success表示成功  fail表示失败
@@ -239,30 +186,26 @@ public class OperateLogInfo  {
         this.result = result;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperateLogInfo operateLogInfo = (OperateLogInfo) o;
-        return Objects.equals(this.id, operateLogInfo.id) &&
-            Objects.equals(this.user, operateLogInfo.user) &&
-            Objects.equals(this.time, operateLogInfo.time) &&
-            Objects.equals(this.function, operateLogInfo.function) &&
-            Objects.equals(this.action, operateLogInfo.action) &&
-            Objects.equals(this.name, operateLogInfo.name) &&
-            Objects.equals(this.description, operateLogInfo.description) &&
-            Objects.equals(this.result, operateLogInfo.result);
+        OperateLogInfo that = (OperateLogInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.time, that.time) && Objects.equals(this.function, that.function)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.result, that.result);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, user, time, function, action, name, description, result);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -278,6 +221,7 @@ public class OperateLogInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -288,8 +232,5 @@ public class OperateLogInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

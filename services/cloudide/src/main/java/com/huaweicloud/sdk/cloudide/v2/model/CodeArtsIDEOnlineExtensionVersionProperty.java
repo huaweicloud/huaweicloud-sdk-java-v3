@@ -146,21 +146,18 @@ public class CodeArtsIDEOnlineExtensionVersionProperty {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeArtsIDEOnlineExtensionVersionProperty codeArtsIDEOnlineExtensionVersionProperty =
-            (CodeArtsIDEOnlineExtensionVersionProperty) o;
-        return Objects.equals(this.id, codeArtsIDEOnlineExtensionVersionProperty.id)
-            && Objects.equals(this.propertyName, codeArtsIDEOnlineExtensionVersionProperty.propertyName)
-            && Objects.equals(this.propertyValue, codeArtsIDEOnlineExtensionVersionProperty.propertyValue)
-            && Objects.equals(this.extensionVersionId, codeArtsIDEOnlineExtensionVersionProperty.extensionVersionId)
-            && Objects.equals(this.createdAt, codeArtsIDEOnlineExtensionVersionProperty.createdAt)
-            && Objects.equals(this.updatedAt, codeArtsIDEOnlineExtensionVersionProperty.updatedAt);
+        CodeArtsIDEOnlineExtensionVersionProperty that = (CodeArtsIDEOnlineExtensionVersionProperty) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.propertyName, that.propertyName)
+            && Objects.equals(this.propertyValue, that.propertyValue)
+            && Objects.equals(this.extensionVersionId, that.extensionVersionId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

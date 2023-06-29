@@ -87,17 +87,16 @@ public class UpdateSubnetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubnetRequest updateSubnetRequest = (UpdateSubnetRequest) o;
-        return Objects.equals(this.vpcId, updateSubnetRequest.vpcId)
-            && Objects.equals(this.subnetId, updateSubnetRequest.subnetId)
-            && Objects.equals(this.body, updateSubnetRequest.body);
+        UpdateSubnetRequest that = (UpdateSubnetRequest) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

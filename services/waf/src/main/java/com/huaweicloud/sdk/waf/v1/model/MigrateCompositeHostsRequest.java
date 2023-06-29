@@ -87,17 +87,17 @@ public class MigrateCompositeHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateCompositeHostsRequest migrateCompositeHostsRequest = (MigrateCompositeHostsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, migrateCompositeHostsRequest.enterpriseProjectId)
-            && Objects.equals(this.targetEnterpriseProjectId, migrateCompositeHostsRequest.targetEnterpriseProjectId)
-            && Objects.equals(this.body, migrateCompositeHostsRequest.body);
+        MigrateCompositeHostsRequest that = (MigrateCompositeHostsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.targetEnterpriseProjectId, that.targetEnterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

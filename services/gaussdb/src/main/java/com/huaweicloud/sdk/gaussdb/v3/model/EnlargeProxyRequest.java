@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * proxy节点扩容信息
  */
-public class EnlargeProxyRequest  {
-
+public class EnlargeProxyRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="proxy_id")
-    
+    @JsonProperty(value = "proxy_id")
 
     private String proxyId;
 
@@ -33,9 +24,6 @@ public class EnlargeProxyRequest  {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * proxy节点扩容操作需要扩容的节点数。  扩容的节点数的取值范围：1~30之间的整数。  限制条件：该实例的proxy节点的总数量小于等于32。
@@ -49,15 +37,10 @@ public class EnlargeProxyRequest  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public EnlargeProxyRequest withProxyId(String proxyId) {
         this.proxyId = proxyId;
         return this;
     }
-
-    
-
 
     /**
      * 数据库代理ID。  如果实例只开启了一个代理，可不传该参数；如果实例开启了多个代理，则必须指定一个数据库代理，扩容新的代理节点。
@@ -71,24 +54,23 @@ public class EnlargeProxyRequest  {
         this.proxyId = proxyId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeProxyRequest enlargeProxyRequest = (EnlargeProxyRequest) o;
-        return Objects.equals(this.nodeNum, enlargeProxyRequest.nodeNum) &&
-            Objects.equals(this.proxyId, enlargeProxyRequest.proxyId);
+        EnlargeProxyRequest that = (EnlargeProxyRequest) obj;
+        return Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.proxyId, that.proxyId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeNum, proxyId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class EnlargeProxyRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class EnlargeProxyRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -209,23 +209,20 @@ public class PwdPolicyInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PwdPolicyInfoResponseInfo pwdPolicyInfoResponseInfo = (PwdPolicyInfoResponseInfo) o;
-        return Objects.equals(this.hostId, pwdPolicyInfoResponseInfo.hostId)
-            && Objects.equals(this.hostName, pwdPolicyInfoResponseInfo.hostName)
-            && Objects.equals(this.hostIp, pwdPolicyInfoResponseInfo.hostIp)
-            && Objects.equals(this.minLength, pwdPolicyInfoResponseInfo.minLength)
-            && Objects.equals(this.uppercaseLetter, pwdPolicyInfoResponseInfo.uppercaseLetter)
-            && Objects.equals(this.lowercaseLetter, pwdPolicyInfoResponseInfo.lowercaseLetter)
-            && Objects.equals(this.number, pwdPolicyInfoResponseInfo.number)
-            && Objects.equals(this.specialCharacter, pwdPolicyInfoResponseInfo.specialCharacter)
-            && Objects.equals(this.suggestion, pwdPolicyInfoResponseInfo.suggestion);
+        PwdPolicyInfoResponseInfo that = (PwdPolicyInfoResponseInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.minLength, that.minLength)
+            && Objects.equals(this.uppercaseLetter, that.uppercaseLetter)
+            && Objects.equals(this.lowercaseLetter, that.lowercaseLetter) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.specialCharacter, that.specialCharacter)
+            && Objects.equals(this.suggestion, that.suggestion);
     }
 
     @Override

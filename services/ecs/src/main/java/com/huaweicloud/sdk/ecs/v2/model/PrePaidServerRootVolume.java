@@ -91,22 +91,15 @@ public class PrePaidServerRootVolume {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
         }
 
         public static VolumetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,22 +175,15 @@ public class PrePaidServerRootVolume {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ClusterTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ClusterTypeEnum(value));
         }
 
         public static ClusterTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ClusterTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -369,21 +355,18 @@ public class PrePaidServerRootVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerRootVolume prePaidServerRootVolume = (PrePaidServerRootVolume) o;
-        return Objects.equals(this.volumetype, prePaidServerRootVolume.volumetype)
-            && Objects.equals(this.size, prePaidServerRootVolume.size)
-            && Objects.equals(this.extendparam, prePaidServerRootVolume.extendparam)
-            && Objects.equals(this.metadata, prePaidServerRootVolume.metadata)
-            && Objects.equals(this.clusterType, prePaidServerRootVolume.clusterType)
-            && Objects.equals(this.clusterId, prePaidServerRootVolume.clusterId)
-            && Objects.equals(this.hwPassthrough, prePaidServerRootVolume.hwPassthrough);
+        PrePaidServerRootVolume that = (PrePaidServerRootVolume) obj;
+        return Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.clusterType, that.clusterType) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.hwPassthrough, that.hwPassthrough);
     }
 
     @Override

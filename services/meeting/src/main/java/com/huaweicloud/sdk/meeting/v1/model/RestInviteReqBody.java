@@ -52,15 +52,15 @@ public class RestInviteReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestInviteReqBody restInviteReqBody = (RestInviteReqBody) o;
-        return Objects.equals(this.attendees, restInviteReqBody.attendees);
+        RestInviteReqBody that = (RestInviteReqBody) obj;
+        return Objects.equals(this.attendees, that.attendees);
     }
 
     @Override

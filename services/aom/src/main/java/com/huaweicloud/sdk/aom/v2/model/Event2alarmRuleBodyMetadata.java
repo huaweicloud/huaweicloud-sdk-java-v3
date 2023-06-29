@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 源数据
  */
-public class Event2alarmRuleBodyMetadata  {
-
+public class Event2alarmRuleBodyMetadata {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="customField")
-    
+    @JsonProperty(value = "customField")
+
     private List<String> customField = null;
-    
+
     public Event2alarmRuleBodyMetadata withCustomField(List<String> customField) {
         this.customField = customField;
         return this;
     }
 
-    
     public Event2alarmRuleBodyMetadata addCustomFieldItem(String customFieldItem) {
-        if(this.customField == null) {
+        if (this.customField == null) {
             this.customField = new ArrayList<>();
         }
         this.customField.add(customFieldItem);
@@ -39,7 +32,7 @@ public class Event2alarmRuleBodyMetadata  {
     }
 
     public Event2alarmRuleBodyMetadata withCustomField(Consumer<List<String>> customFieldSetter) {
-        if(this.customField == null) {
+        if (this.customField == null) {
             this.customField = new ArrayList<>();
         }
         customFieldSetter.accept(this.customField);
@@ -58,23 +51,23 @@ public class Event2alarmRuleBodyMetadata  {
         this.customField = customField;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Event2alarmRuleBodyMetadata event2alarmRuleBodyMetadata = (Event2alarmRuleBodyMetadata) o;
-        return Objects.equals(this.customField, event2alarmRuleBodyMetadata.customField);
+        Event2alarmRuleBodyMetadata that = (Event2alarmRuleBodyMetadata) obj;
+        return Objects.equals(this.customField, that.customField);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(customField);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class Event2alarmRuleBodyMetadata  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class Event2alarmRuleBodyMetadata  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

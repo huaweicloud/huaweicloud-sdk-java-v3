@@ -168,21 +168,19 @@ public class MemberGroupInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberGroupInfo memberGroupInfo = (MemberGroupInfo) o;
-        return Objects.equals(this.memberGroupName, memberGroupInfo.memberGroupName)
-            && Objects.equals(this.memberGroupRemark, memberGroupInfo.memberGroupRemark)
-            && Objects.equals(this.memberGroupWeight, memberGroupInfo.memberGroupWeight)
-            && Objects.equals(this.dictCode, memberGroupInfo.dictCode)
-            && Objects.equals(this.memberGroupId, memberGroupInfo.memberGroupId)
-            && Objects.equals(this.createTime, memberGroupInfo.createTime)
-            && Objects.equals(this.updateTime, memberGroupInfo.updateTime);
+        MemberGroupInfo that = (MemberGroupInfo) obj;
+        return Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.memberGroupRemark, that.memberGroupRemark)
+            && Objects.equals(this.memberGroupWeight, that.memberGroupWeight)
+            && Objects.equals(this.dictCode, that.dictCode) && Objects.equals(this.memberGroupId, that.memberGroupId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

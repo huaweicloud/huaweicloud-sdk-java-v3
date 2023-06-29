@@ -134,18 +134,16 @@ public class GeneralTextWordsBlockList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GeneralTextWordsBlockList generalTextWordsBlockList = (GeneralTextWordsBlockList) o;
-        return Objects.equals(this.words, generalTextWordsBlockList.words)
-            && Objects.equals(this.location, generalTextWordsBlockList.location)
-            && Objects.equals(this.confidence, generalTextWordsBlockList.confidence)
-            && Objects.equals(this.charList, generalTextWordsBlockList.charList);
+        GeneralTextWordsBlockList that = (GeneralTextWordsBlockList) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.confidence, that.confidence) && Objects.equals(this.charList, that.charList);
     }
 
     @Override

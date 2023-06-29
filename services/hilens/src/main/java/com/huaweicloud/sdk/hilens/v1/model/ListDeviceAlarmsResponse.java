@@ -75,16 +75,15 @@ public class ListDeviceAlarmsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeviceAlarmsResponse listDeviceAlarmsResponse = (ListDeviceAlarmsResponse) o;
-        return Objects.equals(this.total, listDeviceAlarmsResponse.total)
-            && Objects.equals(this.data, listDeviceAlarmsResponse.data);
+        ListDeviceAlarmsResponse that = (ListDeviceAlarmsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data);
     }
 
     @Override

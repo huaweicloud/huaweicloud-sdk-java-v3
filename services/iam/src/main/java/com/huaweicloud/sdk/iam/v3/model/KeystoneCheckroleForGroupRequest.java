@@ -77,17 +77,16 @@ public class KeystoneCheckroleForGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCheckroleForGroupRequest keystoneCheckroleForGroupRequest = (KeystoneCheckroleForGroupRequest) o;
-        return Objects.equals(this.domainId, keystoneCheckroleForGroupRequest.domainId)
-            && Objects.equals(this.groupId, keystoneCheckroleForGroupRequest.groupId)
-            && Objects.equals(this.roleId, keystoneCheckroleForGroupRequest.roleId);
+        KeystoneCheckroleForGroupRequest that = (KeystoneCheckroleForGroupRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class UpdateTestCaseResultRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTestCaseResultRequestBody updateTestCaseResultRequestBody = (UpdateTestCaseResultRequestBody) o;
-        return Objects.equals(this.serviceId, updateTestCaseResultRequestBody.serviceId)
-            && Objects.equals(this.executeList, updateTestCaseResultRequestBody.executeList);
+        UpdateTestCaseResultRequestBody that = (UpdateTestCaseResultRequestBody) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.executeList, that.executeList);
     }
 
     @Override

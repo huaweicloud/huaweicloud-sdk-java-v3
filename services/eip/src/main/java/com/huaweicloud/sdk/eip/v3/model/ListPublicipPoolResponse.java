@@ -106,17 +106,16 @@ public class ListPublicipPoolResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicipPoolResponse listPublicipPoolResponse = (ListPublicipPoolResponse) o;
-        return Objects.equals(this.publicipPools, listPublicipPoolResponse.publicipPools)
-            && Objects.equals(this.requestId, listPublicipPoolResponse.requestId)
-            && Objects.equals(this.pageInfo, listPublicipPoolResponse.pageInfo);
+        ListPublicipPoolResponse that = (ListPublicipPoolResponse) obj;
+        return Objects.equals(this.publicipPools, that.publicipPools) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

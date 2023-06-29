@@ -99,18 +99,16 @@ public class ComponentStorageParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentStorageParameters componentStorageParameters = (ComponentStorageParameters) o;
-        return Objects.equals(this.path, componentStorageParameters.path)
-            && Objects.equals(this.name, componentStorageParameters.name)
-            && Objects.equals(this.defaultMode, componentStorageParameters.defaultMode)
-            && Objects.equals(this.medium, componentStorageParameters.medium);
+        ComponentStorageParameters that = (ComponentStorageParameters) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.defaultMode, that.defaultMode) && Objects.equals(this.medium, that.medium);
     }
 
     @Override

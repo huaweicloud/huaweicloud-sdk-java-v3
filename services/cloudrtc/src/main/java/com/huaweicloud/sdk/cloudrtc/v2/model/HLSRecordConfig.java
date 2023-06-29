@@ -105,18 +105,18 @@ public class HLSRecordConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HLSRecordConfig hlSRecordConfig = (HLSRecordConfig) o;
-        return Objects.equals(this.recordCycle, hlSRecordConfig.recordCycle)
-            && Objects.equals(this.recordPrefix, hlSRecordConfig.recordPrefix)
-            && Objects.equals(this.recordSliceDuration, hlSRecordConfig.recordSliceDuration)
-            && Objects.equals(this.recordMaxDurationToMergeFile, hlSRecordConfig.recordMaxDurationToMergeFile);
+        HLSRecordConfig that = (HLSRecordConfig) obj;
+        return Objects.equals(this.recordCycle, that.recordCycle)
+            && Objects.equals(this.recordPrefix, that.recordPrefix)
+            && Objects.equals(this.recordSliceDuration, that.recordSliceDuration)
+            && Objects.equals(this.recordMaxDurationToMergeFile, that.recordMaxDurationToMergeFile);
     }
 
     @Override

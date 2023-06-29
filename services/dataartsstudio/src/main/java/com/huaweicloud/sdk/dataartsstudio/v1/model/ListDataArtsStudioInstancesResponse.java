@@ -100,18 +100,16 @@ public class ListDataArtsStudioInstancesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataArtsStudioInstancesResponse listDataArtsStudioInstancesResponse =
-            (ListDataArtsStudioInstancesResponse) o;
-        return Objects.equals(this.billingCheck, listDataArtsStudioInstancesResponse.billingCheck)
-            && Objects.equals(this.count, listDataArtsStudioInstancesResponse.count)
-            && Objects.equals(this.commodityOrderLists, listDataArtsStudioInstancesResponse.commodityOrderLists);
+        ListDataArtsStudioInstancesResponse that = (ListDataArtsStudioInstancesResponse) obj;
+        return Objects.equals(this.billingCheck, that.billingCheck) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.commodityOrderLists, that.commodityOrderLists);
     }
 
     @Override

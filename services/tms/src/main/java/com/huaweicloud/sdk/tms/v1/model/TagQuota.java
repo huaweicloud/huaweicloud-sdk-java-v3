@@ -99,16 +99,16 @@ public class TagQuota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagQuota tagQuota = (TagQuota) o;
-        return Objects.equals(this.quotaKey, tagQuota.quotaKey) && Objects.equals(this.quotaLimit, tagQuota.quotaLimit)
-            && Objects.equals(this.used, tagQuota.used) && Objects.equals(this.unit, tagQuota.unit);
+        TagQuota that = (TagQuota) obj;
+        return Objects.equals(this.quotaKey, that.quotaKey) && Objects.equals(this.quotaLimit, that.quotaLimit)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.unit, that.unit);
     }
 
     @Override

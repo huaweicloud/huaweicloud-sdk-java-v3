@@ -77,17 +77,16 @@ public class CreateMetadataRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMetadataRequestBody createMetadataRequestBody = (CreateMetadataRequestBody) o;
-        return Objects.equals(this.domainId, createMetadataRequestBody.domainId)
-            && Objects.equals(this.xaccountType, createMetadataRequestBody.xaccountType)
-            && Objects.equals(this.metadata, createMetadataRequestBody.metadata);
+        CreateMetadataRequestBody that = (CreateMetadataRequestBody) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.xaccountType, that.xaccountType)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

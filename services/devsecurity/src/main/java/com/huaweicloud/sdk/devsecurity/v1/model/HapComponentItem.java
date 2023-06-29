@@ -96,17 +96,16 @@ public class HapComponentItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HapComponentItem hapComponentItem = (HapComponentItem) o;
-        return Objects.equals(this.name, hapComponentItem.name)
-            && Objects.equals(this.visible, hapComponentItem.visible)
-            && Objects.equals(this.actionsWithEntities, hapComponentItem.actionsWithEntities);
+        HapComponentItem that = (HapComponentItem) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.visible, that.visible)
+            && Objects.equals(this.actionsWithEntities, that.actionsWithEntities);
     }
 
     @Override

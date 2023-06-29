@@ -320,24 +320,21 @@ public class AtlasEntityHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AtlasEntityHeader atlasEntityHeader = (AtlasEntityHeader) o;
-        return Objects.equals(this.typeName, atlasEntityHeader.typeName)
-            && Objects.equals(this.guid, atlasEntityHeader.guid) && Objects.equals(this.name, atlasEntityHeader.name)
-            && Objects.equals(this.displayText, atlasEntityHeader.displayText)
-            && Objects.equals(this.status, atlasEntityHeader.status)
-            && Objects.equals(this.classificationNames, atlasEntityHeader.classificationNames)
-            && Objects.equals(this.classifications, atlasEntityHeader.classifications)
-            && Objects.equals(this.meaningNames, atlasEntityHeader.meaningNames)
-            && Objects.equals(this.meanings, atlasEntityHeader.meanings)
-            && Objects.equals(this.children, atlasEntityHeader.children)
-            && Objects.equals(this.attributes, atlasEntityHeader.attributes);
+        AtlasEntityHeader that = (AtlasEntityHeader) obj;
+        return Objects.equals(this.typeName, that.typeName) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.displayText, that.displayText)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.classificationNames, that.classificationNames)
+            && Objects.equals(this.classifications, that.classifications)
+            && Objects.equals(this.meaningNames, that.meaningNames) && Objects.equals(this.meanings, that.meanings)
+            && Objects.equals(this.children, that.children) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

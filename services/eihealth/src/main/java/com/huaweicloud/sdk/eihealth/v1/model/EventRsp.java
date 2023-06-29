@@ -143,18 +143,18 @@ public class EventRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventRsp eventRsp = (EventRsp) o;
-        return Objects.equals(this.type, eventRsp.type) && Objects.equals(this.count, eventRsp.count)
-            && Objects.equals(this.reason, eventRsp.reason) && Objects.equals(this.message, eventRsp.message)
-            && Objects.equals(this.firstTimestamp, eventRsp.firstTimestamp)
-            && Objects.equals(this.lastTimestamp, eventRsp.lastTimestamp);
+        EventRsp that = (EventRsp) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.firstTimestamp, that.firstTimestamp)
+            && Objects.equals(this.lastTimestamp, that.lastTimestamp);
     }
 
     @Override

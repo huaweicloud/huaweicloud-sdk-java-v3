@@ -99,18 +99,16 @@ public class NodeTypeElasticVolumeSpecs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTypeElasticVolumeSpecs nodeTypeElasticVolumeSpecs = (NodeTypeElasticVolumeSpecs) o;
-        return Objects.equals(this.type, nodeTypeElasticVolumeSpecs.type)
-            && Objects.equals(this.step, nodeTypeElasticVolumeSpecs.step)
-            && Objects.equals(this.minSize, nodeTypeElasticVolumeSpecs.minSize)
-            && Objects.equals(this.maxSize, nodeTypeElasticVolumeSpecs.maxSize);
+        NodeTypeElasticVolumeSpecs that = (NodeTypeElasticVolumeSpecs) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.minSize, that.minSize) && Objects.equals(this.maxSize, that.maxSize);
     }
 
     @Override

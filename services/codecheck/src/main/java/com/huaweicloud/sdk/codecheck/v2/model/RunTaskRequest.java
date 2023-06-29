@@ -65,15 +65,15 @@ public class RunTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunTaskRequest runTaskRequest = (RunTaskRequest) o;
-        return Objects.equals(this.taskId, runTaskRequest.taskId) && Objects.equals(this.body, runTaskRequest.body);
+        RunTaskRequest that = (RunTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.body, that.body);
     }
 
     @Override

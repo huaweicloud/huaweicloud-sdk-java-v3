@@ -74,16 +74,16 @@ public class UpdateEndpointWhiteRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointWhiteRequestBody updateEndpointWhiteRequestBody = (UpdateEndpointWhiteRequestBody) o;
-        return Objects.equals(this.whitelist, updateEndpointWhiteRequestBody.whitelist)
-            && Objects.equals(this.enableWhitelist, updateEndpointWhiteRequestBody.enableWhitelist);
+        UpdateEndpointWhiteRequestBody that = (UpdateEndpointWhiteRequestBody) obj;
+        return Objects.equals(this.whitelist, that.whitelist)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist);
     }
 
     @Override

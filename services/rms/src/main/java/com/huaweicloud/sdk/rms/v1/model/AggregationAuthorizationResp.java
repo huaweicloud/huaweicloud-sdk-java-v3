@@ -77,18 +77,17 @@ public class AggregationAuthorizationResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregationAuthorizationResp aggregationAuthorizationResp = (AggregationAuthorizationResp) o;
-        return Objects.equals(this.aggregationAuthorizationUrn,
-            aggregationAuthorizationResp.aggregationAuthorizationUrn)
-            && Objects.equals(this.authorizedAccountId, aggregationAuthorizationResp.authorizedAccountId)
-            && Objects.equals(this.createdAt, aggregationAuthorizationResp.createdAt);
+        AggregationAuthorizationResp that = (AggregationAuthorizationResp) obj;
+        return Objects.equals(this.aggregationAuthorizationUrn, that.aggregationAuthorizationUrn)
+            && Objects.equals(this.authorizedAccountId, that.authorizedAccountId)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

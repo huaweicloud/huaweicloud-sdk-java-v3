@@ -156,18 +156,17 @@ public class Resource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.resourceDetail, resource.resourceDetail)
-            && Objects.equals(this.resourceId, resource.resourceId)
-            && Objects.equals(this.resourceName, resource.resourceName) && Objects.equals(this.tags, resource.tags)
-            && Objects.equals(this.sysTags, resource.sysTags);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.resourceDetail, that.resourceDetail)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

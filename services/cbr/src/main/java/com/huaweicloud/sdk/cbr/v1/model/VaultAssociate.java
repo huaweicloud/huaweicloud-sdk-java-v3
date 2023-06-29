@@ -96,17 +96,16 @@ public class VaultAssociate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultAssociate vaultAssociate = (VaultAssociate) o;
-        return Objects.equals(this.destinationVaultId, vaultAssociate.destinationVaultId)
-            && Objects.equals(this.policyId, vaultAssociate.policyId)
-            && Objects.equals(this.addPolicyIds, vaultAssociate.addPolicyIds);
+        VaultAssociate that = (VaultAssociate) obj;
+        return Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.addPolicyIds, that.addPolicyIds);
     }
 
     @Override

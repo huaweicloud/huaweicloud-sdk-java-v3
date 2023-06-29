@@ -97,22 +97,15 @@ public class CreateComponentRequestBodySpec {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -289,20 +282,17 @@ public class CreateComponentRequestBodySpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComponentRequestBodySpec createComponentRequestBodySpec = (CreateComponentRequestBodySpec) o;
-        return Objects.equals(this.runtime, createComponentRequestBodySpec.runtime)
-            && Objects.equals(this.replica, createComponentRequestBodySpec.replica)
-            && Objects.equals(this.build, createComponentRequestBodySpec.build)
-            && Objects.equals(this.source, createComponentRequestBodySpec.source)
-            && Objects.equals(this.resourceLimit, createComponentRequestBodySpec.resourceLimit)
-            && Objects.equals(this.imageUrl, createComponentRequestBodySpec.imageUrl);
+        CreateComponentRequestBodySpec that = (CreateComponentRequestBodySpec) obj;
+        return Objects.equals(this.runtime, that.runtime) && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.resourceLimit, that.resourceLimit) && Objects.equals(this.imageUrl, that.imageUrl);
     }
 
     @Override

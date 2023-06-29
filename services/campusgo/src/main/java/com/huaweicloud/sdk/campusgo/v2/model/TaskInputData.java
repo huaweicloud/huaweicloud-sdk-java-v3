@@ -259,22 +259,21 @@ public class TaskInputData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInputData taskInputData = (TaskInputData) o;
-        return Objects.equals(this.streamName, taskInputData.streamName)
-            && Objects.equals(this.bucket, taskInputData.bucket) && Objects.equals(this.path, taskInputData.path)
-            && Objects.equals(this.url, taskInputData.url) && Objects.equals(this.headers, taskInputData.headers)
-            && Objects.equals(this.certificateCheck, taskInputData.certificateCheck)
-            && Objects.equals(this.rtspPathInResponse, taskInputData.rtspPathInResponse)
-            && Objects.equals(this.deviceId, taskInputData.deviceId)
-            && Objects.equals(this.streamType, taskInputData.streamType) && Objects.equals(this.id, taskInputData.id)
-            && Objects.equals(this.index, taskInputData.index);
+        TaskInputData that = (TaskInputData) obj;
+        return Objects.equals(this.streamName, that.streamName) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.headers, that.headers)
+            && Objects.equals(this.certificateCheck, that.certificateCheck)
+            && Objects.equals(this.rtspPathInResponse, that.rtspPathInResponse)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.streamType, that.streamType)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.index, that.index);
     }
 
     @Override

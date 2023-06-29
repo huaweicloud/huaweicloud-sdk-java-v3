@@ -162,20 +162,17 @@ public class AIMResolveTaskMode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMResolveTaskMode aiMResolveTaskMode = (AIMResolveTaskMode) o;
-        return Objects.equals(this.tplId, aiMResolveTaskMode.tplId)
-            && Objects.equals(this.resolveTimes, aiMResolveTaskMode.resolveTimes)
-            && Objects.equals(this.aimCodeType, aiMResolveTaskMode.aimCodeType)
-            && Objects.equals(this.domain, aiMResolveTaskMode.domain)
-            && Objects.equals(this.expirationTime, aiMResolveTaskMode.expirationTime)
-            && Objects.equals(this.params, aiMResolveTaskMode.params);
+        AIMResolveTaskMode that = (AIMResolveTaskMode) obj;
+        return Objects.equals(this.tplId, that.tplId) && Objects.equals(this.resolveTimes, that.resolveTimes)
+            && Objects.equals(this.aimCodeType, that.aimCodeType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
     }
 
     @Override

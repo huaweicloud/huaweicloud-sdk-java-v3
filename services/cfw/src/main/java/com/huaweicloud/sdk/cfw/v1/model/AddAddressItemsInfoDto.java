@@ -75,16 +75,15 @@ public class AddAddressItemsInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddAddressItemsInfoDto addAddressItemsInfoDto = (AddAddressItemsInfoDto) o;
-        return Objects.equals(this.setId, addAddressItemsInfoDto.setId)
-            && Objects.equals(this.addressItems, addAddressItemsInfoDto.addressItems);
+        AddAddressItemsInfoDto that = (AddAddressItemsInfoDto) obj;
+        return Objects.equals(this.setId, that.setId) && Objects.equals(this.addressItems, that.addressItems);
     }
 
     @Override

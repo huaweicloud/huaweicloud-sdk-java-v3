@@ -76,22 +76,15 @@ public class DependJob {
             if (value == null) {
                 return null;
             }
-            DependFailPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DependFailPolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DependFailPolicyEnum(value));
         }
 
         public static DependFailPolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DependFailPolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,16 +158,16 @@ public class DependJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DependJob dependJob = (DependJob) o;
-        return Objects.equals(this.jobs, dependJob.jobs) && Objects.equals(this.dependPeriod, dependJob.dependPeriod)
-            && Objects.equals(this.dependFailPolicy, dependJob.dependFailPolicy);
+        DependJob that = (DependJob) obj;
+        return Objects.equals(this.jobs, that.jobs) && Objects.equals(this.dependPeriod, that.dependPeriod)
+            && Objects.equals(this.dependFailPolicy, that.dependFailPolicy);
     }
 
     @Override

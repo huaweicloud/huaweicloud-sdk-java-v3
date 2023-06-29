@@ -99,16 +99,16 @@ public class Premium {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Premium premium = (Premium) o;
-        return Objects.equals(this.purchased, premium.purchased) && Objects.equals(this.total, premium.total)
-            && Objects.equals(this.elb, premium.elb) && Objects.equals(this.dedicated, premium.dedicated);
+        Premium that = (Premium) obj;
+        return Objects.equals(this.purchased, that.purchased) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.elb, that.elb) && Objects.equals(this.dedicated, that.dedicated);
     }
 
     @Override

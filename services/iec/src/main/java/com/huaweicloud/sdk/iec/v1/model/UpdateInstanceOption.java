@@ -55,16 +55,15 @@ public class UpdateInstanceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceOption updateInstanceOption = (UpdateInstanceOption) o;
-        return Objects.equals(this.name, updateInstanceOption.name)
-            && Objects.equals(this.description, updateInstanceOption.description);
+        UpdateInstanceOption that = (UpdateInstanceOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

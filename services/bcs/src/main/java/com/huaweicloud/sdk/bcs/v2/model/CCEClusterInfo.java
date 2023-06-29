@@ -77,17 +77,16 @@ public class CCEClusterInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CCEClusterInfo ccEClusterInfo = (CCEClusterInfo) o;
-        return Objects.equals(this.clusterId, ccEClusterInfo.clusterId)
-            && Objects.equals(this.clusterName, ccEClusterInfo.clusterName)
-            && Objects.equals(this.clusterPlatformType, ccEClusterInfo.clusterPlatformType);
+        CCEClusterInfo that = (CCEClusterInfo) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.clusterPlatformType, that.clusterPlatformType);
     }
 
     @Override

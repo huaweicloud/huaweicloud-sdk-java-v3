@@ -143,19 +143,18 @@ public class JoinRequestSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JoinRequestSchema joinRequestSchema = (JoinRequestSchema) o;
-        return Objects.equals(this.region, joinRequestSchema.region)
-            && Objects.equals(this.name, joinRequestSchema.name) && Objects.equals(this.email, joinRequestSchema.email)
-            && Objects.equals(this.organization, joinRequestSchema.organization)
-            && Objects.equals(this.phoneNumber, joinRequestSchema.phoneNumber)
-            && Objects.equals(this.invitationCode, joinRequestSchema.invitationCode);
+        JoinRequestSchema that = (JoinRequestSchema) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.organization, that.organization)
+            && Objects.equals(this.phoneNumber, that.phoneNumber)
+            && Objects.equals(this.invitationCode, that.invitationCode);
     }
 
     @Override

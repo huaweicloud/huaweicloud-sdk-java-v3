@@ -74,16 +74,15 @@ public class PeerChannelInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeerChannelInfo peerChannelInfo = (PeerChannelInfo) o;
-        return Objects.equals(this.channelName, peerChannelInfo.channelName)
-            && Objects.equals(this.peers, peerChannelInfo.peers);
+        PeerChannelInfo that = (PeerChannelInfo) obj;
+        return Objects.equals(this.channelName, that.channelName) && Objects.equals(this.peers, that.peers);
     }
 
     @Override

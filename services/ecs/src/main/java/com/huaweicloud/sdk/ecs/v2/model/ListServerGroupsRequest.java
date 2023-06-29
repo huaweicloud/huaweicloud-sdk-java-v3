@@ -55,16 +55,15 @@ public class ListServerGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServerGroupsRequest listServerGroupsRequest = (ListServerGroupsRequest) o;
-        return Objects.equals(this.limit, listServerGroupsRequest.limit)
-            && Objects.equals(this.marker, listServerGroupsRequest.marker);
+        ListServerGroupsRequest that = (ListServerGroupsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

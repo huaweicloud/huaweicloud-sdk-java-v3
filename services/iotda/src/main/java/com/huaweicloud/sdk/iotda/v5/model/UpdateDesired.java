@@ -77,17 +77,16 @@ public class UpdateDesired {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDesired updateDesired = (UpdateDesired) o;
-        return Objects.equals(this.serviceId, updateDesired.serviceId)
-            && Objects.equals(this.desired, updateDesired.desired)
-            && Objects.equals(this.version, updateDesired.version);
+        UpdateDesired that = (UpdateDesired) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.desired, that.desired)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

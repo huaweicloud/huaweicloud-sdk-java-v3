@@ -122,19 +122,17 @@ public class ListLiveDataQuotaV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveDataQuotaV2Response listLiveDataQuotaV2Response = (ListLiveDataQuotaV2Response) o;
-        return Objects.equals(this.datasource, listLiveDataQuotaV2Response.datasource)
-            && Objects.equals(this.api, listLiveDataQuotaV2Response.api)
-            && Objects.equals(this.scripts, listLiveDataQuotaV2Response.scripts)
-            && Objects.equals(this.datasourceUsed, listLiveDataQuotaV2Response.datasourceUsed)
-            && Objects.equals(this.apiUsed, listLiveDataQuotaV2Response.apiUsed);
+        ListLiveDataQuotaV2Response that = (ListLiveDataQuotaV2Response) obj;
+        return Objects.equals(this.datasource, that.datasource) && Objects.equals(this.api, that.api)
+            && Objects.equals(this.scripts, that.scripts) && Objects.equals(this.datasourceUsed, that.datasourceUsed)
+            && Objects.equals(this.apiUsed, that.apiUsed);
     }
 
     @Override

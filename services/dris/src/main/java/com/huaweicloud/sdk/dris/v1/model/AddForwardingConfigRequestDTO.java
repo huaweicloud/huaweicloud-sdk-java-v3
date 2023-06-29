@@ -66,16 +66,16 @@ public class AddForwardingConfigRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddForwardingConfigRequestDTO addForwardingConfigRequestDTO = (AddForwardingConfigRequestDTO) o;
-        return Objects.equals(this.forwardingType, addForwardingConfigRequestDTO.forwardingType)
-            && Objects.equals(this.forwardingConfig, addForwardingConfigRequestDTO.forwardingConfig);
+        AddForwardingConfigRequestDTO that = (AddForwardingConfigRequestDTO) obj;
+        return Objects.equals(this.forwardingType, that.forwardingType)
+            && Objects.equals(this.forwardingConfig, that.forwardingConfig);
     }
 
     @Override

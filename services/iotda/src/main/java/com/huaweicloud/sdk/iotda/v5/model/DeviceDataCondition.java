@@ -96,17 +96,16 @@ public class DeviceDataCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceDataCondition deviceDataCondition = (DeviceDataCondition) o;
-        return Objects.equals(this.deviceId, deviceDataCondition.deviceId)
-            && Objects.equals(this.productId, deviceDataCondition.productId)
-            && Objects.equals(this.filters, deviceDataCondition.filters);
+        DeviceDataCondition that = (DeviceDataCondition) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.filters, that.filters);
     }
 
     @Override

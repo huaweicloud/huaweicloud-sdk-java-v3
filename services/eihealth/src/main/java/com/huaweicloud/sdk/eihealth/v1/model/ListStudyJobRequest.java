@@ -55,16 +55,16 @@ public class ListStudyJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStudyJobRequest listStudyJobRequest = (ListStudyJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, listStudyJobRequest.eihealthProjectId)
-            && Objects.equals(this.studyId, listStudyJobRequest.studyId);
+        ListStudyJobRequest that = (ListStudyJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.studyId, that.studyId);
     }
 
     @Override

@@ -137,20 +137,17 @@ public class CreatePictureModelingByUrlJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePictureModelingByUrlJobRequest createPictureModelingByUrlJobRequest =
-            (CreatePictureModelingByUrlJobRequest) o;
-        return Objects.equals(this.authorization, createPictureModelingByUrlJobRequest.authorization)
-            && Objects.equals(this.xSdkDate, createPictureModelingByUrlJobRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, createPictureModelingByUrlJobRequest.xProjectId)
-            && Objects.equals(this.xAppUserId, createPictureModelingByUrlJobRequest.xAppUserId)
-            && Objects.equals(this.body, createPictureModelingByUrlJobRequest.body);
+        CreatePictureModelingByUrlJobRequest that = (CreatePictureModelingByUrlJobRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

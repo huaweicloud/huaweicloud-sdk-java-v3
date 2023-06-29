@@ -79,18 +79,16 @@ public class ListConfigurationAggregatorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationAggregatorsRequest listConfigurationAggregatorsRequest =
-            (ListConfigurationAggregatorsRequest) o;
-        return Objects.equals(this.aggregatorName, listConfigurationAggregatorsRequest.aggregatorName)
-            && Objects.equals(this.limit, listConfigurationAggregatorsRequest.limit)
-            && Objects.equals(this.marker, listConfigurationAggregatorsRequest.marker);
+        ListConfigurationAggregatorsRequest that = (ListConfigurationAggregatorsRequest) obj;
+        return Objects.equals(this.aggregatorName, that.aggregatorName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

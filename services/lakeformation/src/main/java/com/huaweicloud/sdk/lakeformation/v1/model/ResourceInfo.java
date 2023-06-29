@@ -29,8 +29,8 @@ public class ResourceInfo {
     private List<String> uris = null;
 
     /**
-    * resource type
-    */
+     * resource type
+     */
     public static final class TypeEnum {
 
         /**
@@ -103,22 +103,15 @@ public class ResourceInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,16 +217,16 @@ public class ResourceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceInfo resourceInfo = (ResourceInfo) o;
-        return Objects.equals(this.catalogs, resourceInfo.catalogs) && Objects.equals(this.uris, resourceInfo.uris)
-            && Objects.equals(this.type, resourceInfo.type);
+        ResourceInfo that = (ResourceInfo) obj;
+        return Objects.equals(this.catalogs, that.catalogs) && Objects.equals(this.uris, that.uris)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

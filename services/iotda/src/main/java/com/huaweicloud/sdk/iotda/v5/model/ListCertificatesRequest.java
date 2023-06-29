@@ -169,21 +169,19 @@ public class ListCertificatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.spAuthToken, listCertificatesRequest.spAuthToken)
-            && Objects.equals(this.stageAuthToken, listCertificatesRequest.stageAuthToken)
-            && Objects.equals(this.instanceId, listCertificatesRequest.instanceId)
-            && Objects.equals(this.appId, listCertificatesRequest.appId)
-            && Objects.equals(this.limit, listCertificatesRequest.limit)
-            && Objects.equals(this.marker, listCertificatesRequest.marker)
-            && Objects.equals(this.offset, listCertificatesRequest.offset);
+        ListCertificatesRequest that = (ListCertificatesRequest) obj;
+        return Objects.equals(this.spAuthToken, that.spAuthToken)
+            && Objects.equals(this.stageAuthToken, that.stageAuthToken)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -65,22 +65,15 @@ public class CommonInfo {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoCodecEnum(value));
         }
 
         public static VideoCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class CommonInfo {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioCodecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioCodecEnum(value));
         }
 
         public static AudioCodecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioCodecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -276,22 +262,15 @@ public class CommonInfo {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FormatEnum(value));
         }
 
         public static FormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +353,15 @@ public class CommonInfo {
             if (value == null) {
                 return null;
             }
-            AdaptationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AdaptationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AdaptationEnum(value));
         }
 
         public static AdaptationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AdaptationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -550,20 +522,18 @@ public class CommonInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonInfo commonInfo = (CommonInfo) o;
-        return Objects.equals(this.pvc, commonInfo.pvc) && Objects.equals(this.videoCodec, commonInfo.videoCodec)
-            && Objects.equals(this.audioCodec, commonInfo.audioCodec)
-            && Objects.equals(this.isBlackCut, commonInfo.isBlackCut) && Objects.equals(this.format, commonInfo.format)
-            && Objects.equals(this.hlsInterval, commonInfo.hlsInterval)
-            && Objects.equals(this.upsample, commonInfo.upsample)
-            && Objects.equals(this.adaptation, commonInfo.adaptation);
+        CommonInfo that = (CommonInfo) obj;
+        return Objects.equals(this.pvc, that.pvc) && Objects.equals(this.videoCodec, that.videoCodec)
+            && Objects.equals(this.audioCodec, that.audioCodec) && Objects.equals(this.isBlackCut, that.isBlackCut)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.hlsInterval, that.hlsInterval)
+            && Objects.equals(this.upsample, that.upsample) && Objects.equals(this.adaptation, that.adaptation);
     }
 
     @Override

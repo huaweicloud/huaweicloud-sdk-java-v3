@@ -60,22 +60,15 @@ public class PeriodOrderInfo {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodTypeEnum(value));
         }
 
         public static PeriodTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PeriodTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class PeriodOrderInfo {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsAutoRenewEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsAutoRenewEnum(value));
         }
 
         public static IsAutoRenewEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IsAutoRenewEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -236,17 +222,16 @@ public class PeriodOrderInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PeriodOrderInfo periodOrderInfo = (PeriodOrderInfo) o;
-        return Objects.equals(this.periodType, periodOrderInfo.periodType)
-            && Objects.equals(this.periodNum, periodOrderInfo.periodNum)
-            && Objects.equals(this.isAutoRenew, periodOrderInfo.isAutoRenew);
+        PeriodOrderInfo that = (PeriodOrderInfo) obj;
+        return Objects.equals(this.periodType, that.periodType) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew);
     }
 
     @Override

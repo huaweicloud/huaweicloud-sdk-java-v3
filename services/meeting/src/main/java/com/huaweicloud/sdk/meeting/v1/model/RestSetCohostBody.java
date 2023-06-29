@@ -35,15 +35,15 @@ public class RestSetCohostBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestSetCohostBody restSetCohostBody = (RestSetCohostBody) o;
-        return Objects.equals(this.isCohost, restSetCohostBody.isCohost);
+        RestSetCohostBody that = (RestSetCohostBody) obj;
+        return Objects.equals(this.isCohost, that.isCohost);
     }
 
     @Override

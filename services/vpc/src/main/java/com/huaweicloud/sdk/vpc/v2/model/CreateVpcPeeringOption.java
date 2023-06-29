@@ -118,18 +118,17 @@ public class CreateVpcPeeringOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcPeeringOption createVpcPeeringOption = (CreateVpcPeeringOption) o;
-        return Objects.equals(this.name, createVpcPeeringOption.name)
-            && Objects.equals(this.description, createVpcPeeringOption.description)
-            && Objects.equals(this.requestVpcInfo, createVpcPeeringOption.requestVpcInfo)
-            && Objects.equals(this.acceptVpcInfo, createVpcPeeringOption.acceptVpcInfo);
+        CreateVpcPeeringOption that = (CreateVpcPeeringOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.requestVpcInfo, that.requestVpcInfo)
+            && Objects.equals(this.acceptVpcInfo, that.acceptVpcInfo);
     }
 
     @Override

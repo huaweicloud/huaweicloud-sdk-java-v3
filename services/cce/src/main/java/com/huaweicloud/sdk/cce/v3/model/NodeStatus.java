@@ -103,22 +103,15 @@ public class NodeStatus {
             if (value == null) {
                 return null;
             }
-            PhaseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PhaseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PhaseEnum(value));
         }
 
         public static PhaseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PhaseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -321,21 +314,18 @@ public class NodeStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeStatus nodeStatus = (NodeStatus) o;
-        return Objects.equals(this.phase, nodeStatus.phase)
-            && Objects.equals(this.lastProbeTime, nodeStatus.lastProbeTime)
-            && Objects.equals(this.jobID, nodeStatus.jobID) && Objects.equals(this.serverId, nodeStatus.serverId)
-            && Objects.equals(this.privateIP, nodeStatus.privateIP)
-            && Objects.equals(this.privateIPv6IP, nodeStatus.privateIPv6IP)
-            && Objects.equals(this.publicIP, nodeStatus.publicIP)
-            && Objects.equals(this.deleteStatus, nodeStatus.deleteStatus);
+        NodeStatus that = (NodeStatus) obj;
+        return Objects.equals(this.phase, that.phase) && Objects.equals(this.lastProbeTime, that.lastProbeTime)
+            && Objects.equals(this.jobID, that.jobID) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.privateIP, that.privateIP) && Objects.equals(this.privateIPv6IP, that.privateIPv6IP)
+            && Objects.equals(this.publicIP, that.publicIP) && Objects.equals(this.deleteStatus, that.deleteStatus);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class UpdateLineGroupsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLineGroupsBody updateLineGroupsBody = (UpdateLineGroupsBody) o;
-        return Objects.equals(this.name, updateLineGroupsBody.name)
-            && Objects.equals(this.description, updateLineGroupsBody.description)
-            && Objects.equals(this.lines, updateLineGroupsBody.lines);
+        UpdateLineGroupsBody that = (UpdateLineGroupsBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lines, that.lines);
     }
 
     @Override

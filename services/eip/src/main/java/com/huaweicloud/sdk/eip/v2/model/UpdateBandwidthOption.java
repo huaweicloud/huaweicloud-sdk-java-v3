@@ -76,22 +76,15 @@ public class UpdateBandwidthOption {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,17 +158,16 @@ public class UpdateBandwidthOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBandwidthOption updateBandwidthOption = (UpdateBandwidthOption) o;
-        return Objects.equals(this.name, updateBandwidthOption.name)
-            && Objects.equals(this.size, updateBandwidthOption.size)
-            && Objects.equals(this.chargeMode, updateBandwidthOption.chargeMode);
+        UpdateBandwidthOption that = (UpdateBandwidthOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.chargeMode, that.chargeMode);
     }
 
     @Override

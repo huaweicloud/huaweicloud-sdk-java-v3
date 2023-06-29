@@ -55,16 +55,16 @@ public class StrategyConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StrategyConfig strategyConfig = (StrategyConfig) o;
-        return Objects.equals(this.concurrency, strategyConfig.concurrency)
-            && Objects.equals(this.concurrentNum, strategyConfig.concurrentNum);
+        StrategyConfig that = (StrategyConfig) obj;
+        return Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.concurrentNum, that.concurrentNum);
     }
 
     @Override

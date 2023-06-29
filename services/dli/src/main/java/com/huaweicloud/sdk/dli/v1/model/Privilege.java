@@ -74,15 +74,15 @@ public class Privilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Privilege privilege = (Privilege) o;
-        return Objects.equals(this._object, privilege._object) && Objects.equals(this.privileges, privilege.privileges);
+        Privilege that = (Privilege) obj;
+        return Objects.equals(this._object, that._object) && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

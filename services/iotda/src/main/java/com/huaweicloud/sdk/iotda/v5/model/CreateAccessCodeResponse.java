@@ -56,16 +56,15 @@ public class CreateAccessCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAccessCodeResponse createAccessCodeResponse = (CreateAccessCodeResponse) o;
-        return Objects.equals(this.accessKey, createAccessCodeResponse.accessKey)
-            && Objects.equals(this.accessCode, createAccessCodeResponse.accessCode);
+        CreateAccessCodeResponse that = (CreateAccessCodeResponse) obj;
+        return Objects.equals(this.accessKey, that.accessKey) && Objects.equals(this.accessCode, that.accessCode);
     }
 
     @Override

@@ -219,23 +219,19 @@ public class WhiteBlackIpResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WhiteBlackIpResponseBody whiteBlackIpResponseBody = (WhiteBlackIpResponseBody) o;
-        return Objects.equals(this.id, whiteBlackIpResponseBody.id)
-            && Objects.equals(this.name, whiteBlackIpResponseBody.name)
-            && Objects.equals(this.policyid, whiteBlackIpResponseBody.policyid)
-            && Objects.equals(this.timestamp, whiteBlackIpResponseBody.timestamp)
-            && Objects.equals(this.description, whiteBlackIpResponseBody.description)
-            && Objects.equals(this.status, whiteBlackIpResponseBody.status)
-            && Objects.equals(this.addr, whiteBlackIpResponseBody.addr)
-            && Objects.equals(this.white, whiteBlackIpResponseBody.white)
-            && Objects.equals(this.ipGroup, whiteBlackIpResponseBody.ipGroup);
+        WhiteBlackIpResponseBody that = (WhiteBlackIpResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.addr, that.addr) && Objects.equals(this.white, that.white)
+            && Objects.equals(this.ipGroup, that.ipGroup);
     }
 
     @Override

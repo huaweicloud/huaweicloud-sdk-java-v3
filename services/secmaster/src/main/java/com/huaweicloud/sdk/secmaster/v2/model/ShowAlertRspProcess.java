@@ -121,19 +121,17 @@ public class ShowAlertRspProcess {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAlertRspProcess showAlertRspProcess = (ShowAlertRspProcess) o;
-        return Objects.equals(this.processName, showAlertRspProcess.processName)
-            && Objects.equals(this.processPath, showAlertRspProcess.processPath)
-            && Objects.equals(this.processPid, showAlertRspProcess.processPid)
-            && Objects.equals(this.processUid, showAlertRspProcess.processUid)
-            && Objects.equals(this.processCmdline, showAlertRspProcess.processCmdline);
+        ShowAlertRspProcess that = (ShowAlertRspProcess) obj;
+        return Objects.equals(this.processName, that.processName) && Objects.equals(this.processPath, that.processPath)
+            && Objects.equals(this.processPid, that.processPid) && Objects.equals(this.processUid, that.processUid)
+            && Objects.equals(this.processCmdline, that.processCmdline);
     }
 
     @Override

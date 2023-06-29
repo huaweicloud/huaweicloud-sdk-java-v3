@@ -199,22 +199,18 @@ public class ListTopicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicsRequest listTopicsRequest = (ListTopicsRequest) o;
-        return Objects.equals(this.instanceId, listTopicsRequest.instanceId)
-            && Objects.equals(this.deviceId, listTopicsRequest.deviceId)
-            && Objects.equals(this.limit, listTopicsRequest.limit)
-            && Objects.equals(this.offset, listTopicsRequest.offset)
-            && Objects.equals(this.name, listTopicsRequest.name)
-            && Objects.equals(this.topicPermission, listTopicsRequest.topicPermission)
-            && Objects.equals(this.topicType, listTopicsRequest.topicType)
-            && Objects.equals(this.isPrivate, listTopicsRequest.isPrivate);
+        ListTopicsRequest that = (ListTopicsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.topicPermission, that.topicPermission)
+            && Objects.equals(this.topicType, that.topicType) && Objects.equals(this.isPrivate, that.isPrivate);
     }
 
     @Override

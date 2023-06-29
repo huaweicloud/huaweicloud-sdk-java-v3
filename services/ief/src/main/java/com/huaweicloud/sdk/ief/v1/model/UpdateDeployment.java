@@ -65,16 +65,15 @@ public class UpdateDeployment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeployment updateDeployment = (UpdateDeployment) o;
-        return Objects.equals(this.deployment, updateDeployment.deployment)
-            && Objects.equals(this.description, updateDeployment.description);
+        UpdateDeployment that = (UpdateDeployment) obj;
+        return Objects.equals(this.deployment, that.deployment) && Objects.equals(this.description, that.description);
     }
 
     @Override

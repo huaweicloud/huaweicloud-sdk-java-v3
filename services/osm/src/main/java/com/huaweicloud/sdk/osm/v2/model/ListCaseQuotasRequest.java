@@ -129,19 +129,17 @@ public class ListCaseQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseQuotasRequest listCaseQuotasRequest = (ListCaseQuotasRequest) o;
-        return Objects.equals(this.productCategoryId, listCaseQuotasRequest.productCategoryId)
-            && Objects.equals(this.businessTypeId, listCaseQuotasRequest.businessTypeId)
-            && Objects.equals(this.xSite, listCaseQuotasRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseQuotasRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseQuotasRequest.xTimeZone);
+        ListCaseQuotasRequest that = (ListCaseQuotasRequest) obj;
+        return Objects.equals(this.productCategoryId, that.productCategoryId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

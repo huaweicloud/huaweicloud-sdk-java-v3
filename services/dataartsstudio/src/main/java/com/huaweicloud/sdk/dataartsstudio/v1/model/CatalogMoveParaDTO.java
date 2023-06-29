@@ -33,15 +33,15 @@ public class CatalogMoveParaDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CatalogMoveParaDTO catalogMoveParaDTO = (CatalogMoveParaDTO) o;
-        return Objects.equals(this.targetPid, catalogMoveParaDTO.targetPid);
+        CatalogMoveParaDTO that = (CatalogMoveParaDTO) obj;
+        return Objects.equals(this.targetPid, that.targetPid);
     }
 
     @Override

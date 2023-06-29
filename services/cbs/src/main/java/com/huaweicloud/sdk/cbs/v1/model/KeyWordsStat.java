@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class KeyWordsStat  {
-
+public class KeyWordsStat {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="keyword")
-    
+    @JsonProperty(value = "keyword")
 
     private String keyword;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="freq")
-    
+    @JsonProperty(value = "freq")
 
     private Long freq;
 
@@ -33,9 +24,6 @@ public class KeyWordsStat  {
         this.keyword = keyword;
         return this;
     }
-
-    
-
 
     /**
      * 关键词。
@@ -49,15 +37,10 @@ public class KeyWordsStat  {
         this.keyword = keyword;
     }
 
-    
-
     public KeyWordsStat withFreq(Long freq) {
         this.freq = freq;
         return this;
     }
-
-    
-
 
     /**
      * 关键词频次。
@@ -71,24 +54,23 @@ public class KeyWordsStat  {
         this.freq = freq;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyWordsStat keyWordsStat = (KeyWordsStat) o;
-        return Objects.equals(this.keyword, keyWordsStat.keyword) &&
-            Objects.equals(this.freq, keyWordsStat.freq);
+        KeyWordsStat that = (KeyWordsStat) obj;
+        return Objects.equals(this.keyword, that.keyword) && Objects.equals(this.freq, that.freq);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(keyword, freq);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class KeyWordsStat  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class KeyWordsStat  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

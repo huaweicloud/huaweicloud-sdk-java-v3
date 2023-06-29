@@ -342,29 +342,22 @@ public class ShowEdgeGroupCertDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeGroupCertDetailResponse showEdgeGroupCertDetailResponse = (ShowEdgeGroupCertDetailResponse) o;
-        return Objects.equals(this.id, showEdgeGroupCertDetailResponse.id)
-            && Objects.equals(this.name, showEdgeGroupCertDetailResponse.name)
-            && Objects.equals(this.description, showEdgeGroupCertDetailResponse.description)
-            && Objects.equals(this.createdAt, showEdgeGroupCertDetailResponse.createdAt)
-            && Objects.equals(this.updatedAt, showEdgeGroupCertDetailResponse.updatedAt)
-            && Objects.equals(this.groupId, showEdgeGroupCertDetailResponse.groupId)
-            && Objects.equals(this.isDeleted, showEdgeGroupCertDetailResponse.isDeleted)
-            && Objects.equals(this.projectId, showEdgeGroupCertDetailResponse.projectId)
-            && Objects.equals(this.type, showEdgeGroupCertDetailResponse.type)
-            && Objects.equals(this.serialNum, showEdgeGroupCertDetailResponse.serialNum)
-            && Objects.equals(this.ca, showEdgeGroupCertDetailResponse.ca)
-            && Objects.equals(this.certificate, showEdgeGroupCertDetailResponse.certificate)
-            && Objects.equals(this.privateKey, showEdgeGroupCertDetailResponse.privateKey)
-            && Objects.equals(this._package, showEdgeGroupCertDetailResponse._package)
-            && Objects.equals(this.certRemainingValidTime, showEdgeGroupCertDetailResponse.certRemainingValidTime);
+        ShowEdgeGroupCertDetailResponse that = (ShowEdgeGroupCertDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.isDeleted, that.isDeleted) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.serialNum, that.serialNum)
+            && Objects.equals(this.ca, that.ca) && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.certRemainingValidTime, that.certRemainingValidTime);
     }
 
     @Override

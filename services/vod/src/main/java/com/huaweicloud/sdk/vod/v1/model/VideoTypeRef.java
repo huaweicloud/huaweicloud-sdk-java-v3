@@ -235,22 +235,15 @@ public class VideoTypeRef {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -554,24 +547,21 @@ public class VideoTypeRef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoTypeRef videoTypeRef = (VideoTypeRef) o;
-        return Objects.equals(this.videoType, videoTypeRef.videoType) && Objects.equals(this.title, videoTypeRef.title)
-            && Objects.equals(this.description, videoTypeRef.description)
-            && Objects.equals(this.categoryId, videoTypeRef.categoryId) && Objects.equals(this.tags, videoTypeRef.tags)
-            && Objects.equals(this.autoPublish, videoTypeRef.autoPublish)
-            && Objects.equals(this.templateGroupName, videoTypeRef.templateGroupName)
-            && Objects.equals(this.autoEncrypt, videoTypeRef.autoEncrypt)
-            && Objects.equals(this.autoPreheat, videoTypeRef.autoPreheat)
-            && Objects.equals(this.thumbnail, videoTypeRef.thumbnail)
-            && Objects.equals(this.review, videoTypeRef.review)
-            && Objects.equals(this.workflowName, videoTypeRef.workflowName);
+        VideoTypeRef that = (VideoTypeRef) obj;
+        return Objects.equals(this.videoType, that.videoType) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.autoPublish, that.autoPublish)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.autoPreheat, that.autoPreheat)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.review, that.review)
+            && Objects.equals(this.workflowName, that.workflowName);
     }
 
     @Override

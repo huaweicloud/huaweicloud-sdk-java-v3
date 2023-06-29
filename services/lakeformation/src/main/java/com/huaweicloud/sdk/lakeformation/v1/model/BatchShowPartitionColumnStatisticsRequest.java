@@ -131,20 +131,17 @@ public class BatchShowPartitionColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowPartitionColumnStatisticsRequest batchShowPartitionColumnStatisticsRequest =
-            (BatchShowPartitionColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, batchShowPartitionColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, batchShowPartitionColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, batchShowPartitionColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, batchShowPartitionColumnStatisticsRequest.tableName)
-            && Objects.equals(this.body, batchShowPartitionColumnStatisticsRequest.body);
+        BatchShowPartitionColumnStatisticsRequest that = (BatchShowPartitionColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

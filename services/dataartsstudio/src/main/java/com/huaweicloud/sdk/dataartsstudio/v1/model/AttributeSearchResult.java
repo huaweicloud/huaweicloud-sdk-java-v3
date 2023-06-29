@@ -90,16 +90,15 @@ public class AttributeSearchResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttributeSearchResult attributeSearchResult = (AttributeSearchResult) o;
-        return Objects.equals(this.name, attributeSearchResult.name)
-            && Objects.equals(this.values, attributeSearchResult.values);
+        AttributeSearchResult that = (AttributeSearchResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.values, that.values);
     }
 
     @Override

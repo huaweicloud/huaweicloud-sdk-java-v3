@@ -87,17 +87,16 @@ public class UpdateTopicAttributeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTopicAttributeRequest updateTopicAttributeRequest = (UpdateTopicAttributeRequest) o;
-        return Objects.equals(this.topicUrn, updateTopicAttributeRequest.topicUrn)
-            && Objects.equals(this.name, updateTopicAttributeRequest.name)
-            && Objects.equals(this.body, updateTopicAttributeRequest.body);
+        UpdateTopicAttributeRequest that = (UpdateTopicAttributeRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

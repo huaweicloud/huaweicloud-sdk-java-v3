@@ -87,17 +87,16 @@ public class UpdateDictionaryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDictionaryRequest updateDictionaryRequest = (UpdateDictionaryRequest) o;
-        return Objects.equals(this.dictId, updateDictionaryRequest.dictId)
-            && Objects.equals(this.instanceId, updateDictionaryRequest.instanceId)
-            && Objects.equals(this.body, updateDictionaryRequest.body);
+        UpdateDictionaryRequest that = (UpdateDictionaryRequest) obj;
+        return Objects.equals(this.dictId, that.dictId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

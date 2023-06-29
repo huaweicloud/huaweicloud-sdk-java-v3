@@ -54,15 +54,15 @@ public class BatchStopMigrationTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStopMigrationTasksResponse batchStopMigrationTasksResponse = (BatchStopMigrationTasksResponse) o;
-        return Objects.equals(this.migrationTasks, batchStopMigrationTasksResponse.migrationTasks);
+        BatchStopMigrationTasksResponse that = (BatchStopMigrationTasksResponse) obj;
+        return Objects.equals(this.migrationTasks, that.migrationTasks);
     }
 
     @Override

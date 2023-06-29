@@ -143,20 +143,17 @@ public class GlanceImageMembers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceImageMembers glanceImageMembers = (GlanceImageMembers) o;
-        return Objects.equals(this.status, glanceImageMembers.status)
-            && Objects.equals(this.createdAt, glanceImageMembers.createdAt)
-            && Objects.equals(this.updatedAt, glanceImageMembers.updatedAt)
-            && Objects.equals(this.imageId, glanceImageMembers.imageId)
-            && Objects.equals(this.memberId, glanceImageMembers.memberId)
-            && Objects.equals(this.schema, glanceImageMembers.schema);
+        GlanceImageMembers that = (GlanceImageMembers) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.memberId, that.memberId) && Objects.equals(this.schema, that.schema);
     }
 
     @Override

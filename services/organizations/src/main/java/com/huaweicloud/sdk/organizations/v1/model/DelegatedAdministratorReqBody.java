@@ -55,16 +55,16 @@ public class DelegatedAdministratorReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DelegatedAdministratorReqBody delegatedAdministratorReqBody = (DelegatedAdministratorReqBody) o;
-        return Objects.equals(this.servicePrincipal, delegatedAdministratorReqBody.servicePrincipal)
-            && Objects.equals(this.accountId, delegatedAdministratorReqBody.accountId);
+        DelegatedAdministratorReqBody that = (DelegatedAdministratorReqBody) obj;
+        return Objects.equals(this.servicePrincipal, that.servicePrincipal)
+            && Objects.equals(this.accountId, that.accountId);
     }
 
     @Override

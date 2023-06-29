@@ -43,15 +43,15 @@ public class CreateCertificateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateRequest createCertificateRequest = (CreateCertificateRequest) o;
-        return Objects.equals(this.body, createCertificateRequest.body);
+        CreateCertificateRequest that = (CreateCertificateRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class ProtectableAgentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtectableAgentReq protectableAgentReq = (ProtectableAgentReq) o;
-        return Objects.equals(this.agentStatus, protectableAgentReq.agentStatus);
+        ProtectableAgentReq that = (ProtectableAgentReq) obj;
+        return Objects.equals(this.agentStatus, that.agentStatus);
     }
 
     @Override

@@ -79,17 +79,17 @@ public class ShadowValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShadowValue shadowValue = (ShadowValue) o;
-        return Objects.equals(this.propertyName, shadowValue.propertyName)
-            && Objects.equals(this.propertyValue, shadowValue.propertyValue)
-            && Objects.equals(this.propertyUpdatedDate, shadowValue.propertyUpdatedDate);
+        ShadowValue that = (ShadowValue) obj;
+        return Objects.equals(this.propertyName, that.propertyName)
+            && Objects.equals(this.propertyValue, that.propertyValue)
+            && Objects.equals(this.propertyUpdatedDate, that.propertyUpdatedDate);
     }
 
     @Override

@@ -213,23 +213,20 @@ public class ListRiskConfigCheckRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRiskConfigCheckRulesRequest listRiskConfigCheckRulesRequest = (ListRiskConfigCheckRulesRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listRiskConfigCheckRulesRequest.enterpriseProjectId)
-            && Objects.equals(this.checkName, listRiskConfigCheckRulesRequest.checkName)
-            && Objects.equals(this.standard, listRiskConfigCheckRulesRequest.standard)
-            && Objects.equals(this.resultType, listRiskConfigCheckRulesRequest.resultType)
-            && Objects.equals(this.checkRuleName, listRiskConfigCheckRulesRequest.checkRuleName)
-            && Objects.equals(this.severity, listRiskConfigCheckRulesRequest.severity)
-            && Objects.equals(this.hostId, listRiskConfigCheckRulesRequest.hostId)
-            && Objects.equals(this.limit, listRiskConfigCheckRulesRequest.limit)
-            && Objects.equals(this.offset, listRiskConfigCheckRulesRequest.offset);
+        ListRiskConfigCheckRulesRequest that = (ListRiskConfigCheckRulesRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.resultType, that.resultType)
+            && Objects.equals(this.checkRuleName, that.checkRuleName) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

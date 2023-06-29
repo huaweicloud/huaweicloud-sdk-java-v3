@@ -171,19 +171,18 @@ public class PoolsInStatusResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PoolsInStatusResp poolsInStatusResp = (PoolsInStatusResp) o;
-        return Objects.equals(this.id, poolsInStatusResp.id) && Objects.equals(this.name, poolsInStatusResp.name)
-            && Objects.equals(this.members, poolsInStatusResp.members)
-            && Objects.equals(this.operatingStatus, poolsInStatusResp.operatingStatus)
-            && Objects.equals(this.provisioningStatus, poolsInStatusResp.provisioningStatus)
-            && Objects.equals(this.healthmonitor, poolsInStatusResp.healthmonitor);
+        PoolsInStatusResp that = (PoolsInStatusResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.healthmonitor, that.healthmonitor);
     }
 
     @Override

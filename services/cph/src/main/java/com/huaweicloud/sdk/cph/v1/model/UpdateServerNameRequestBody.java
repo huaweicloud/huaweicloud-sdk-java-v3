@@ -33,15 +33,15 @@ public class UpdateServerNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServerNameRequestBody updateServerNameRequestBody = (UpdateServerNameRequestBody) o;
-        return Objects.equals(this.serverName, updateServerNameRequestBody.serverName);
+        UpdateServerNameRequestBody that = (UpdateServerNameRequestBody) obj;
+        return Objects.equals(this.serverName, that.serverName);
     }
 
     @Override

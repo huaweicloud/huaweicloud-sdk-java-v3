@@ -316,25 +316,21 @@ public class GetEastWestFirewallResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetEastWestFirewallResponseBody getEastWestFirewallResponseBody = (GetEastWestFirewallResponseBody) o;
-        return Objects.equals(this.objectId, getEastWestFirewallResponseBody.objectId)
-            && Objects.equals(this.projectId, getEastWestFirewallResponseBody.projectId)
-            && Objects.equals(this.status, getEastWestFirewallResponseBody.status)
-            && Objects.equals(this.erAssociatedSubnet, getEastWestFirewallResponseBody.erAssociatedSubnet)
-            && Objects.equals(this.firewallAssociatedSubnets, getEastWestFirewallResponseBody.firewallAssociatedSubnets)
-            && Objects.equals(this.er, getEastWestFirewallResponseBody.er)
-            && Objects.equals(this.inspectionVpc, getEastWestFirewallResponseBody.inspectionVpc)
-            && Objects.equals(this.protectInfos, getEastWestFirewallResponseBody.protectInfos)
-            && Objects.equals(this.total, getEastWestFirewallResponseBody.total)
-            && Objects.equals(this.offset, getEastWestFirewallResponseBody.offset)
-            && Objects.equals(this.limit, getEastWestFirewallResponseBody.limit);
+        GetEastWestFirewallResponseBody that = (GetEastWestFirewallResponseBody) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.erAssociatedSubnet, that.erAssociatedSubnet)
+            && Objects.equals(this.firewallAssociatedSubnets, that.firewallAssociatedSubnets)
+            && Objects.equals(this.er, that.er) && Objects.equals(this.inspectionVpc, that.inspectionVpc)
+            && Objects.equals(this.protectInfos, that.protectInfos) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

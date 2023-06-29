@@ -24,8 +24,8 @@ public class BatchCreatePublicipTagsRequestBody {
     private List<ResourceTagOption> tags = null;
 
     /**
-    * 操作标识  create：创建  action为create时，tag的value必选
-    */
+     * 操作标识  create：创建  action为create时，tag的value必选
+     */
     public static final class ActionEnum {
 
         /**
@@ -62,22 +62,15 @@ public class BatchCreatePublicipTagsRequestBody {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -150,16 +143,15 @@ public class BatchCreatePublicipTagsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreatePublicipTagsRequestBody batchCreatePublicipTagsRequestBody = (BatchCreatePublicipTagsRequestBody) o;
-        return Objects.equals(this.tags, batchCreatePublicipTagsRequestBody.tags)
-            && Objects.equals(this.action, batchCreatePublicipTagsRequestBody.action);
+        BatchCreatePublicipTagsRequestBody that = (BatchCreatePublicipTagsRequestBody) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.action, that.action);
     }
 
     @Override

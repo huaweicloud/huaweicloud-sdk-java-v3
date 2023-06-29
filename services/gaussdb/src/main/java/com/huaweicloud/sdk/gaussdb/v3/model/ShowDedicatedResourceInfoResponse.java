@@ -1,73 +1,56 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.DedicatedComputeInfo;
-import com.huaweicloud.sdk.gaussdb.v3.model.DedicatedStorageInfo;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowDedicatedResourceInfoResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_name")
-    
+    @JsonProperty(value = "engine_name")
 
     private String engineName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone_ids")
-    
+    @JsonProperty(value = "availability_zone_ids")
+
     private List<String> availabilityZoneIds = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="architecture")
-    
+    @JsonProperty(value = "architecture")
 
     private String architecture;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_compute_info")
-    
+    @JsonProperty(value = "dedicated_compute_info")
 
     private DedicatedComputeInfo dedicatedComputeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dedicated_storage_info")
-    
+    @JsonProperty(value = "dedicated_storage_info")
 
     private DedicatedStorageInfo dedicatedStorageInfo;
 
@@ -75,9 +58,6 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池ID。
@@ -91,15 +71,10 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池名称。
@@ -113,15 +88,10 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withEngineName(String engineName) {
         this.engineName = engineName;
         return this;
     }
-
-    
-
 
     /**
      * 引擎名称。
@@ -135,16 +105,13 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.engineName = engineName;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withAvailabilityZoneIds(List<String> availabilityZoneIds) {
         this.availabilityZoneIds = availabilityZoneIds;
         return this;
     }
 
-    
     public ShowDedicatedResourceInfoResponse addAvailabilityZoneIdsItem(String availabilityZoneIdsItem) {
-        if(this.availabilityZoneIds == null) {
+        if (this.availabilityZoneIds == null) {
             this.availabilityZoneIds = new ArrayList<>();
         }
         this.availabilityZoneIds.add(availabilityZoneIdsItem);
@@ -152,7 +119,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
     }
 
     public ShowDedicatedResourceInfoResponse withAvailabilityZoneIds(Consumer<List<String>> availabilityZoneIdsSetter) {
-        if(this.availabilityZoneIds == null) {
+        if (this.availabilityZoneIds == null) {
             this.availabilityZoneIds = new ArrayList<>();
         }
         availabilityZoneIdsSetter.accept(this.availabilityZoneIds);
@@ -171,15 +138,10 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.availabilityZoneIds = availabilityZoneIds;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withArchitecture(String architecture) {
         this.architecture = architecture;
         return this;
     }
-
-    
-
 
     /**
      * 资源规格类型。
@@ -193,15 +155,10 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.architecture = architecture;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池状态。
@@ -215,22 +172,20 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withDedicatedComputeInfo(DedicatedComputeInfo dedicatedComputeInfo) {
         this.dedicatedComputeInfo = dedicatedComputeInfo;
         return this;
     }
 
-    public ShowDedicatedResourceInfoResponse withDedicatedComputeInfo(Consumer<DedicatedComputeInfo> dedicatedComputeInfoSetter) {
-        if(this.dedicatedComputeInfo == null ){
+    public ShowDedicatedResourceInfoResponse withDedicatedComputeInfo(
+        Consumer<DedicatedComputeInfo> dedicatedComputeInfoSetter) {
+        if (this.dedicatedComputeInfo == null) {
             this.dedicatedComputeInfo = new DedicatedComputeInfo();
             dedicatedComputeInfoSetter.accept(this.dedicatedComputeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get dedicatedComputeInfo
@@ -244,22 +199,20 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.dedicatedComputeInfo = dedicatedComputeInfo;
     }
 
-    
-
     public ShowDedicatedResourceInfoResponse withDedicatedStorageInfo(DedicatedStorageInfo dedicatedStorageInfo) {
         this.dedicatedStorageInfo = dedicatedStorageInfo;
         return this;
     }
 
-    public ShowDedicatedResourceInfoResponse withDedicatedStorageInfo(Consumer<DedicatedStorageInfo> dedicatedStorageInfoSetter) {
-        if(this.dedicatedStorageInfo == null ){
+    public ShowDedicatedResourceInfoResponse withDedicatedStorageInfo(
+        Consumer<DedicatedStorageInfo> dedicatedStorageInfoSetter) {
+        if (this.dedicatedStorageInfo == null) {
             this.dedicatedStorageInfo = new DedicatedStorageInfo();
             dedicatedStorageInfoSetter.accept(this.dedicatedStorageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get dedicatedStorageInfo
@@ -273,30 +226,35 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         this.dedicatedStorageInfo = dedicatedStorageInfo;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDedicatedResourceInfoResponse showDedicatedResourceInfoResponse = (ShowDedicatedResourceInfoResponse) o;
-        return Objects.equals(this.id, showDedicatedResourceInfoResponse.id) &&
-            Objects.equals(this.name, showDedicatedResourceInfoResponse.name) &&
-            Objects.equals(this.engineName, showDedicatedResourceInfoResponse.engineName) &&
-            Objects.equals(this.availabilityZoneIds, showDedicatedResourceInfoResponse.availabilityZoneIds) &&
-            Objects.equals(this.architecture, showDedicatedResourceInfoResponse.architecture) &&
-            Objects.equals(this.status, showDedicatedResourceInfoResponse.status) &&
-            Objects.equals(this.dedicatedComputeInfo, showDedicatedResourceInfoResponse.dedicatedComputeInfo) &&
-            Objects.equals(this.dedicatedStorageInfo, showDedicatedResourceInfoResponse.dedicatedStorageInfo);
+        ShowDedicatedResourceInfoResponse that = (ShowDedicatedResourceInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dedicatedComputeInfo, that.dedicatedComputeInfo)
+            && Objects.equals(this.dedicatedStorageInfo, that.dedicatedStorageInfo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, engineName, availabilityZoneIds, architecture, status, dedicatedComputeInfo, dedicatedStorageInfo);
+        return Objects.hash(id,
+            name,
+            engineName,
+            availabilityZoneIds,
+            architecture,
+            status,
+            dedicatedComputeInfo,
+            dedicatedStorageInfo);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -312,6 +270,7 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -322,8 +281,5 @@ public class ShowDedicatedResourceInfoResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

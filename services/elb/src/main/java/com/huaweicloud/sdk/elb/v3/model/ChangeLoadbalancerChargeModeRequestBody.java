@@ -24,8 +24,8 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     private List<String> loadbalancerIds = null;
 
     /**
-    * 计费模式。取值： - prepaid：包周期计费（仅当不传pay_type时，允许设为该值）
-    */
+     * 计费模式。取值： - prepaid：包周期计费（仅当不传pay_type时，允许设为该值）
+     */
     public static final class ChargeModeEnum {
 
         /**
@@ -62,22 +62,15 @@ public class ChangeLoadbalancerChargeModeRequestBody {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChargeModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChargeModeEnum(value));
         }
 
         public static ChargeModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChargeModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,18 +175,17 @@ public class ChangeLoadbalancerChargeModeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeLoadbalancerChargeModeRequestBody changeLoadbalancerChargeModeRequestBody =
-            (ChangeLoadbalancerChargeModeRequestBody) o;
-        return Objects.equals(this.loadbalancerIds, changeLoadbalancerChargeModeRequestBody.loadbalancerIds)
-            && Objects.equals(this.chargeMode, changeLoadbalancerChargeModeRequestBody.chargeMode)
-            && Objects.equals(this.prepaidOptions, changeLoadbalancerChargeModeRequestBody.prepaidOptions);
+        ChangeLoadbalancerChargeModeRequestBody that = (ChangeLoadbalancerChargeModeRequestBody) obj;
+        return Objects.equals(this.loadbalancerIds, that.loadbalancerIds)
+            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.prepaidOptions, that.prepaidOptions);
     }
 
     @Override

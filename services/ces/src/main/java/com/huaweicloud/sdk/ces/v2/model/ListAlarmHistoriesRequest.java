@@ -237,24 +237,19 @@ public class ListAlarmHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmHistoriesRequest listAlarmHistoriesRequest = (ListAlarmHistoriesRequest) o;
-        return Objects.equals(this.alarmId, listAlarmHistoriesRequest.alarmId)
-            && Objects.equals(this.name, listAlarmHistoriesRequest.name)
-            && Objects.equals(this.status, listAlarmHistoriesRequest.status)
-            && Objects.equals(this.level, listAlarmHistoriesRequest.level)
-            && Objects.equals(this.namespace, listAlarmHistoriesRequest.namespace)
-            && Objects.equals(this.resourceId, listAlarmHistoriesRequest.resourceId)
-            && Objects.equals(this.from, listAlarmHistoriesRequest.from)
-            && Objects.equals(this.to, listAlarmHistoriesRequest.to)
-            && Objects.equals(this.offset, listAlarmHistoriesRequest.offset)
-            && Objects.equals(this.limit, listAlarmHistoriesRequest.limit);
+        ListAlarmHistoriesRequest that = (ListAlarmHistoriesRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

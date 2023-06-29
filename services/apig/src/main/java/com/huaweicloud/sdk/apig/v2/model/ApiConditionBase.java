@@ -71,22 +71,15 @@ public class ApiConditionBase {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionTypeEnum(value));
         }
 
         public static ConditionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,22 +146,15 @@ public class ApiConditionBase {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionOriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionOriginEnum(value));
         }
 
         public static ConditionOriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -264,18 +250,18 @@ public class ApiConditionBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiConditionBase apiConditionBase = (ApiConditionBase) o;
-        return Objects.equals(this.reqParamName, apiConditionBase.reqParamName)
-            && Objects.equals(this.conditionType, apiConditionBase.conditionType)
-            && Objects.equals(this.conditionOrigin, apiConditionBase.conditionOrigin)
-            && Objects.equals(this.conditionValue, apiConditionBase.conditionValue);
+        ApiConditionBase that = (ApiConditionBase) obj;
+        return Objects.equals(this.reqParamName, that.reqParamName)
+            && Objects.equals(this.conditionType, that.conditionType)
+            && Objects.equals(this.conditionOrigin, that.conditionOrigin)
+            && Objects.equals(this.conditionValue, that.conditionValue);
     }
 
     @Override

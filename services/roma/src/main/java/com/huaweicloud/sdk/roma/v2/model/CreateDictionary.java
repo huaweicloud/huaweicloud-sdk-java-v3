@@ -167,19 +167,18 @@ public class CreateDictionary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDictionary createDictionary = (CreateDictionary) o;
-        return Objects.equals(this.name, createDictionary.name) && Objects.equals(this.remark, createDictionary.remark)
-            && Objects.equals(this.code, createDictionary.code) && Objects.equals(this.order, createDictionary.order)
-            && Objects.equals(this.extendOne, createDictionary.extendOne)
-            && Objects.equals(this.extendTwo, createDictionary.extendTwo)
-            && Objects.equals(this.parentCode, createDictionary.parentCode);
+        CreateDictionary that = (CreateDictionary) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.extendOne, that.extendOne) && Objects.equals(this.extendTwo, that.extendTwo)
+            && Objects.equals(this.parentCode, that.parentCode);
     }
 
     @Override

@@ -63,22 +63,15 @@ public class ProbeParameter {
             if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SchemeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SchemeEnum(value));
         }
 
         public static SchemeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -222,17 +215,17 @@ public class ProbeParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProbeParameter probeParameter = (ProbeParameter) o;
-        return Objects.equals(this.scheme, probeParameter.scheme) && Objects.equals(this.host, probeParameter.host)
-            && Objects.equals(this.port, probeParameter.port) && Objects.equals(this.path, probeParameter.path)
-            && Objects.equals(this.command, probeParameter.command);
+        ProbeParameter that = (ProbeParameter) obj;
+        return Objects.equals(this.scheme, that.scheme) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.command, that.command);
     }
 
     @Override

@@ -89,17 +89,17 @@ public class UpdateStartedConfConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStartedConfConfigRequest updateStartedConfConfigRequest = (UpdateStartedConfConfigRequest) o;
-        return Objects.equals(this.conferenceID, updateStartedConfConfigRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, updateStartedConfConfigRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, updateStartedConfConfigRequest.body);
+        UpdateStartedConfConfigRequest that = (UpdateStartedConfConfigRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

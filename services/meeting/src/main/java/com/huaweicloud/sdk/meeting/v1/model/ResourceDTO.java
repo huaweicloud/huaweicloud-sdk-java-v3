@@ -124,17 +124,17 @@ public class ResourceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceDTO resourceDTO = (ResourceDTO) o;
-        return Objects.equals(this.id, resourceDTO.id) && Objects.equals(this.type, resourceDTO.type)
-            && Objects.equals(this.typeId, resourceDTO.typeId) && Objects.equals(this.count, resourceDTO.count)
-            && Objects.equals(this.expireDate, resourceDTO.expireDate);
+        ResourceDTO that = (ResourceDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.typeId, that.typeId) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.expireDate, that.expireDate);
     }
 
     @Override

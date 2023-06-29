@@ -101,19 +101,17 @@ public class ListResourceSharePermissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceSharePermissionsRequest listResourceSharePermissionsRequest =
-            (ListResourceSharePermissionsRequest) o;
-        return Objects.equals(this.resourceShareId, listResourceSharePermissionsRequest.resourceShareId)
-            && Objects.equals(this.permissionName, listResourceSharePermissionsRequest.permissionName)
-            && Objects.equals(this.limit, listResourceSharePermissionsRequest.limit)
-            && Objects.equals(this.marker, listResourceSharePermissionsRequest.marker);
+        ListResourceSharePermissionsRequest that = (ListResourceSharePermissionsRequest) obj;
+        return Objects.equals(this.resourceShareId, that.resourceShareId)
+            && Objects.equals(this.permissionName, that.permissionName) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

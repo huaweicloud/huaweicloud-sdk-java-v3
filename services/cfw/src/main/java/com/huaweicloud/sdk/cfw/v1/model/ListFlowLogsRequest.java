@@ -76,22 +76,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            LogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTypeEnum(value));
         }
 
         public static LogTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -200,22 +193,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -546,30 +532,23 @@ public class ListFlowLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlowLogsRequest listFlowLogsRequest = (ListFlowLogsRequest) o;
-        return Objects.equals(this.fwInstanceId, listFlowLogsRequest.fwInstanceId)
-            && Objects.equals(this.direction, listFlowLogsRequest.direction)
-            && Objects.equals(this.logType, listFlowLogsRequest.logType)
-            && Objects.equals(this.startTime, listFlowLogsRequest.startTime)
-            && Objects.equals(this.endTime, listFlowLogsRequest.endTime)
-            && Objects.equals(this.srcIp, listFlowLogsRequest.srcIp)
-            && Objects.equals(this.srcPort, listFlowLogsRequest.srcPort)
-            && Objects.equals(this.dstIp, listFlowLogsRequest.dstIp)
-            && Objects.equals(this.dstPort, listFlowLogsRequest.dstPort)
-            && Objects.equals(this.protocol, listFlowLogsRequest.protocol)
-            && Objects.equals(this.app, listFlowLogsRequest.app)
-            && Objects.equals(this.logId, listFlowLogsRequest.logId)
-            && Objects.equals(this.nextDate, listFlowLogsRequest.nextDate)
-            && Objects.equals(this.offset, listFlowLogsRequest.offset)
-            && Objects.equals(this.limit, listFlowLogsRequest.limit)
-            && Objects.equals(this.enterpriseProjectId, listFlowLogsRequest.enterpriseProjectId);
+        ListFlowLogsRequest that = (ListFlowLogsRequest) obj;
+        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.logType, that.logType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.srcIp, that.srcIp)
+            && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
+            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.logId, that.logId)
+            && Objects.equals(this.nextDate, that.nextDate) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

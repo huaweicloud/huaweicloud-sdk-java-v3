@@ -99,16 +99,16 @@ public class VendorDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VendorDto vendorDto = (VendorDto) o;
-        return Objects.equals(this.id, vendorDto.id) && Objects.equals(this.domainId, vendorDto.domainId)
-            && Objects.equals(this.name, vendorDto.name) && Objects.equals(this.logo, vendorDto.logo);
+        VendorDto that = (VendorDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.logo, that.logo);
     }
 
     @Override

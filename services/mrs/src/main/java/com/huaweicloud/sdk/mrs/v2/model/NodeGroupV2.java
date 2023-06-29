@@ -1,87 +1,67 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.AutoScalingPolicy;
-import com.huaweicloud.sdk.mrs.v2.model.ChargeInfo;
-import com.huaweicloud.sdk.mrs.v2.model.Volume;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * NodeGroupV2
  */
-public class NodeGroupV2  {
-
+public class NodeGroupV2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="group_name")
-    
+    @JsonProperty(value = "group_name")
 
     private String groupName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_num")
-    
+    @JsonProperty(value = "node_num")
 
     private Integer nodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_size")
-    
+    @JsonProperty(value = "node_size")
 
     private String nodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="root_volume")
-    
+    @JsonProperty(value = "root_volume")
 
     private Volume rootVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume")
-    
+    @JsonProperty(value = "data_volume")
 
     private Volume dataVolume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_volume_count")
-    
+    @JsonProperty(value = "data_volume_count")
 
     private Integer dataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private ChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_scaling_policy")
-    
+    @JsonProperty(value = "auto_scaling_policy")
 
     private AutoScalingPolicy autoScalingPolicy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="assigned_roles")
-    
+    @JsonProperty(value = "assigned_roles")
+
     private List<String> assignedRoles = null;
-    
+
     public NodeGroupV2 withGroupName(String groupName) {
         this.groupName = groupName;
         return this;
     }
-
-    
-
 
     /**
      * 节点组名称，最大长度64，支持大小写英文、数字以及“_”。节点组配置原则如下： - master_node_default_group：Master节点组，所有集群类型均需包含该节点组。 - core_node_analysis_group：分析Core节点组，分析集群、混合集群均需包含该节点组。 - core_node_streaming_group：流式Core节点组，流式集群和混合集群均需包含该节点组。 - task_node_analysis_group：分析Task节点组，分析集群和混合集群可根据需要选择该节点组。 - task_node_streaming_group：流式Task节点组，流式集群、混合集群可根据需要选择该节点组。 - node_group{x}：自定义集群节点组，可根据需要添加多个，最多支持添加9个该节点组。
@@ -95,15 +75,10 @@ public class NodeGroupV2  {
         this.groupName = groupName;
     }
 
-    
-
     public NodeGroupV2 withNodeNum(Integer nodeNum) {
         this.nodeNum = nodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 节点数量，取值范围0～500，Core与Task节点总数最大为500个。
@@ -119,15 +94,10 @@ public class NodeGroupV2  {
         this.nodeNum = nodeNum;
     }
 
-    
-
     public NodeGroupV2 withNodeSize(String nodeSize) {
         this.nodeSize = nodeSize;
         return this;
     }
-
-    
-
 
     /**
      * 节点的实例规格。 例如：c3.4xlarge.2.linux.bigdata。实例规格详细说明请参见[MRS所使用的弹性云服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9006.html)和[MRS所使用的裸金属服务器规格](https://support.huaweicloud.com/api-mrs/mrs_01_9001.html)。 该参数建议从MRS控制台的集群创建页面获取对应区域对应版本所支持的规格。
@@ -141,22 +111,19 @@ public class NodeGroupV2  {
         this.nodeSize = nodeSize;
     }
 
-    
-
     public NodeGroupV2 withRootVolume(Volume rootVolume) {
         this.rootVolume = rootVolume;
         return this;
     }
 
     public NodeGroupV2 withRootVolume(Consumer<Volume> rootVolumeSetter) {
-        if(this.rootVolume == null ){
+        if (this.rootVolume == null) {
             this.rootVolume = new Volume();
             rootVolumeSetter.accept(this.rootVolume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get rootVolume
@@ -170,22 +137,19 @@ public class NodeGroupV2  {
         this.rootVolume = rootVolume;
     }
 
-    
-
     public NodeGroupV2 withDataVolume(Volume dataVolume) {
         this.dataVolume = dataVolume;
         return this;
     }
 
     public NodeGroupV2 withDataVolume(Consumer<Volume> dataVolumeSetter) {
-        if(this.dataVolume == null ){
+        if (this.dataVolume == null) {
             this.dataVolume = new Volume();
             dataVolumeSetter.accept(this.dataVolume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get dataVolume
@@ -199,15 +163,10 @@ public class NodeGroupV2  {
         this.dataVolume = dataVolume;
     }
 
-    
-
     public NodeGroupV2 withDataVolumeCount(Integer dataVolumeCount) {
         this.dataVolumeCount = dataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * 节点数据磁盘存储数目，取值范围：0～10。
@@ -223,22 +182,19 @@ public class NodeGroupV2  {
         this.dataVolumeCount = dataVolumeCount;
     }
 
-    
-
     public NodeGroupV2 withChargeInfo(ChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public NodeGroupV2 withChargeInfo(Consumer<ChargeInfo> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new ChargeInfo();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -252,22 +208,19 @@ public class NodeGroupV2  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     public NodeGroupV2 withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
     public NodeGroupV2 withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
-        if(this.autoScalingPolicy == null ){
+        if (this.autoScalingPolicy == null) {
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get autoScalingPolicy
@@ -281,16 +234,13 @@ public class NodeGroupV2  {
         this.autoScalingPolicy = autoScalingPolicy;
     }
 
-    
-
     public NodeGroupV2 withAssignedRoles(List<String> assignedRoles) {
         this.assignedRoles = assignedRoles;
         return this;
     }
 
-    
     public NodeGroupV2 addAssignedRolesItem(String assignedRolesItem) {
-        if(this.assignedRoles == null) {
+        if (this.assignedRoles == null) {
             this.assignedRoles = new ArrayList<>();
         }
         this.assignedRoles.add(assignedRolesItem);
@@ -298,7 +248,7 @@ public class NodeGroupV2  {
     }
 
     public NodeGroupV2 withAssignedRoles(Consumer<List<String>> assignedRolesSetter) {
-        if(this.assignedRoles == null) {
+        if (this.assignedRoles == null) {
             this.assignedRoles = new ArrayList<>();
         }
         assignedRolesSetter.accept(this.assignedRoles);
@@ -317,31 +267,37 @@ public class NodeGroupV2  {
         this.assignedRoles = assignedRoles;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeGroupV2 nodeGroupV2 = (NodeGroupV2) o;
-        return Objects.equals(this.groupName, nodeGroupV2.groupName) &&
-            Objects.equals(this.nodeNum, nodeGroupV2.nodeNum) &&
-            Objects.equals(this.nodeSize, nodeGroupV2.nodeSize) &&
-            Objects.equals(this.rootVolume, nodeGroupV2.rootVolume) &&
-            Objects.equals(this.dataVolume, nodeGroupV2.dataVolume) &&
-            Objects.equals(this.dataVolumeCount, nodeGroupV2.dataVolumeCount) &&
-            Objects.equals(this.chargeInfo, nodeGroupV2.chargeInfo) &&
-            Objects.equals(this.autoScalingPolicy, nodeGroupV2.autoScalingPolicy) &&
-            Objects.equals(this.assignedRoles, nodeGroupV2.assignedRoles);
+        NodeGroupV2 that = (NodeGroupV2) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.nodeNum, that.nodeNum)
+            && Objects.equals(this.nodeSize, that.nodeSize) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolume, that.dataVolume)
+            && Objects.equals(this.dataVolumeCount, that.dataVolumeCount)
+            && Objects.equals(this.chargeInfo, that.chargeInfo)
+            && Objects.equals(this.autoScalingPolicy, that.autoScalingPolicy)
+            && Objects.equals(this.assignedRoles, that.assignedRoles);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(groupName, nodeNum, nodeSize, rootVolume, dataVolume, dataVolumeCount, chargeInfo, autoScalingPolicy, assignedRoles);
+        return Objects.hash(groupName,
+            nodeNum,
+            nodeSize,
+            rootVolume,
+            dataVolume,
+            dataVolumeCount,
+            chargeInfo,
+            autoScalingPolicy,
+            assignedRoles);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -358,6 +314,7 @@ public class NodeGroupV2  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -368,8 +325,5 @@ public class NodeGroupV2  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

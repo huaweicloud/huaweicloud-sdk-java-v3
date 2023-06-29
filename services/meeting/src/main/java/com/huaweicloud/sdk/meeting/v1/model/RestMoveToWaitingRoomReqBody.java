@@ -33,15 +33,15 @@ public class RestMoveToWaitingRoomReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestMoveToWaitingRoomReqBody restMoveToWaitingRoomReqBody = (RestMoveToWaitingRoomReqBody) o;
-        return Objects.equals(this.participantID, restMoveToWaitingRoomReqBody.participantID);
+        RestMoveToWaitingRoomReqBody that = (RestMoveToWaitingRoomReqBody) obj;
+        return Objects.equals(this.participantID, that.participantID);
     }
 
     @Override

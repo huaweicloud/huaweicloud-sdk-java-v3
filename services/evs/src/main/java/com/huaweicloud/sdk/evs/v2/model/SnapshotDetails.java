@@ -253,26 +253,21 @@ public class SnapshotDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SnapshotDetails snapshotDetails = (SnapshotDetails) o;
-        return Objects.equals(this.id, snapshotDetails.id) && Objects.equals(this.status, snapshotDetails.status)
-            && Objects.equals(this.name, snapshotDetails.name)
-            && Objects.equals(this.description, snapshotDetails.description)
-            && Objects.equals(this.createdAt, snapshotDetails.createdAt)
-            && Objects.equals(this.updatedAt, snapshotDetails.updatedAt)
-            && Objects.equals(this.metadata, snapshotDetails.metadata)
-            && Objects.equals(this.volumeId, snapshotDetails.volumeId)
-            && Objects.equals(this.size, snapshotDetails.size)
-            && Objects.equals(this.osExtendedSnapshotAttributesProjectId,
-                snapshotDetails.osExtendedSnapshotAttributesProjectId)
-            && Objects.equals(this.osExtendedSnapshotAttributesProgress,
-                snapshotDetails.osExtendedSnapshotAttributesProgress);
+        SnapshotDetails that = (SnapshotDetails) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.size, that.size)
+            && Objects.equals(this.osExtendedSnapshotAttributesProjectId, that.osExtendedSnapshotAttributesProjectId)
+            && Objects.equals(this.osExtendedSnapshotAttributesProgress, that.osExtendedSnapshotAttributesProgress);
     }
 
     @Override

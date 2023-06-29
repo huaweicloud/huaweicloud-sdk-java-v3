@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.iotedge.v3;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.iotedge.v3.model.*;
 
 public class IoTEdgeClient {
+
     protected HcClient hcClient;
 
     public IoTEdgeClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class IoTEdgeClient {
     public static ClientBuilder<IoTEdgeClient> newBuilder() {
         return new ClientBuilder<>(IoTEdgeClient::new);
     }
-
 
     /**
      * 创建应用模板
@@ -153,8 +153,10 @@ public class IoTEdgeClient {
      * @param CreateAppInstanceRequest 请求对象
      * @return SyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>
      */
-    public SyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstanceInvoker(CreateAppInstanceRequest request) {
-        return new SyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>(request, IoTEdgeMeta.createAppInstance, hcClient);
+    public SyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstanceInvoker(
+        CreateAppInstanceRequest request) {
+        return new SyncInvoker<CreateAppInstanceRequest, CreateAppInstanceResponse>(request,
+            IoTEdgeMeta.createAppInstance, hcClient);
     }
 
     /**
@@ -181,8 +183,10 @@ public class IoTEdgeClient {
      * @param DeleteAppInstanceRequest 请求对象
      * @return SyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>
      */
-    public SyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstanceInvoker(DeleteAppInstanceRequest request) {
-        return new SyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>(request, IoTEdgeMeta.deleteAppInstance, hcClient);
+    public SyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstanceInvoker(
+        DeleteAppInstanceRequest request) {
+        return new SyncInvoker<DeleteAppInstanceRequest, DeleteAppInstanceResponse>(request,
+            IoTEdgeMeta.deleteAppInstance, hcClient);
     }
 
     /**
@@ -209,8 +213,10 @@ public class IoTEdgeClient {
      * @param ListAppInstanceHistoryRequest 请求对象
      * @return SyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>
      */
-    public SyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistoryInvoker(ListAppInstanceHistoryRequest request) {
-        return new SyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>(request, IoTEdgeMeta.listAppInstanceHistory, hcClient);
+    public SyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistoryInvoker(
+        ListAppInstanceHistoryRequest request) {
+        return new SyncInvoker<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse>(request,
+            IoTEdgeMeta.listAppInstanceHistory, hcClient);
     }
 
     /**
@@ -237,8 +243,10 @@ public class IoTEdgeClient {
      * @param ListAppInstancesRequest 请求对象
      * @return SyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>
      */
-    public SyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstancesInvoker(ListAppInstancesRequest request) {
-        return new SyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>(request, IoTEdgeMeta.listAppInstances, hcClient);
+    public SyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstancesInvoker(
+        ListAppInstancesRequest request) {
+        return new SyncInvoker<ListAppInstancesRequest, ListAppInstancesResponse>(request, IoTEdgeMeta.listAppInstances,
+            hcClient);
     }
 
     /**
@@ -265,8 +273,10 @@ public class IoTEdgeClient {
      * @param UpdateAppInstanceRequest 请求对象
      * @return SyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>
      */
-    public SyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstanceInvoker(UpdateAppInstanceRequest request) {
-        return new SyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>(request, IoTEdgeMeta.updateAppInstance, hcClient);
+    public SyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstanceInvoker(
+        UpdateAppInstanceRequest request) {
+        return new SyncInvoker<UpdateAppInstanceRequest, UpdateAppInstanceResponse>(request,
+            IoTEdgeMeta.updateAppInstance, hcClient);
     }
 
     /**
@@ -293,8 +303,10 @@ public class IoTEdgeClient {
      * @param CreateAppVersionRequest 请求对象
      * @return SyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>
      */
-    public SyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersionInvoker(CreateAppVersionRequest request) {
-        return new SyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>(request, IoTEdgeMeta.createAppVersion, hcClient);
+    public SyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersionInvoker(
+        CreateAppVersionRequest request) {
+        return new SyncInvoker<CreateAppVersionRequest, CreateAppVersionResponse>(request, IoTEdgeMeta.createAppVersion,
+            hcClient);
     }
 
     /**
@@ -321,8 +333,10 @@ public class IoTEdgeClient {
      * @param DeleteAppVersionRequest 请求对象
      * @return SyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>
      */
-    public SyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersionInvoker(DeleteAppVersionRequest request) {
-        return new SyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>(request, IoTEdgeMeta.deleteAppVersion, hcClient);
+    public SyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersionInvoker(
+        DeleteAppVersionRequest request) {
+        return new SyncInvoker<DeleteAppVersionRequest, DeleteAppVersionResponse>(request, IoTEdgeMeta.deleteAppVersion,
+            hcClient);
     }
 
     /**
@@ -349,8 +363,10 @@ public class IoTEdgeClient {
      * @param DownloadAppVersionRequest 请求对象
      * @return SyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>
      */
-    public SyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersionInvoker(DownloadAppVersionRequest request) {
-        return new SyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>(request, IoTEdgeMeta.downloadAppVersion, hcClient);
+    public SyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersionInvoker(
+        DownloadAppVersionRequest request) {
+        return new SyncInvoker<DownloadAppVersionRequest, DownloadAppVersionResponse>(request,
+            IoTEdgeMeta.downloadAppVersion, hcClient);
     }
 
     /**
@@ -405,8 +421,10 @@ public class IoTEdgeClient {
      * @param ListAppVersionsRequest 请求对象
      * @return SyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>
      */
-    public SyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersionsInvoker(ListAppVersionsRequest request) {
-        return new SyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>(request, IoTEdgeMeta.listAppVersions, hcClient);
+    public SyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersionsInvoker(
+        ListAppVersionsRequest request) {
+        return new SyncInvoker<ListAppVersionsRequest, ListAppVersionsResponse>(request, IoTEdgeMeta.listAppVersions,
+            hcClient);
     }
 
     /**
@@ -433,8 +451,10 @@ public class IoTEdgeClient {
      * @param ShowAppVersionRequest 请求对象
      * @return SyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>
      */
-    public SyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersionInvoker(ShowAppVersionRequest request) {
-        return new SyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>(request, IoTEdgeMeta.showAppVersion, hcClient);
+    public SyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersionInvoker(
+        ShowAppVersionRequest request) {
+        return new SyncInvoker<ShowAppVersionRequest, ShowAppVersionResponse>(request, IoTEdgeMeta.showAppVersion,
+            hcClient);
     }
 
     /**
@@ -462,7 +482,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<CreateClusterRequest, CreateClusterResponse>
      */
     public SyncInvoker<CreateClusterRequest, CreateClusterResponse> createClusterInvoker(CreateClusterRequest request) {
-        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, IoTEdgeMeta.createCluster, hcClient);
+        return new SyncInvoker<CreateClusterRequest, CreateClusterResponse>(request, IoTEdgeMeta.createCluster,
+            hcClient);
     }
 
     /**
@@ -489,8 +510,10 @@ public class IoTEdgeClient {
      * @param CreateClusterInstallCmdRequest 请求对象
      * @return SyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>
      */
-    public SyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmdInvoker(CreateClusterInstallCmdRequest request) {
-        return new SyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>(request, IoTEdgeMeta.createClusterInstallCmd, hcClient);
+    public SyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmdInvoker(
+        CreateClusterInstallCmdRequest request) {
+        return new SyncInvoker<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse>(request,
+            IoTEdgeMeta.createClusterInstallCmd, hcClient);
     }
 
     /**
@@ -518,7 +541,8 @@ public class IoTEdgeClient {
      * @return SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>
      */
     public SyncInvoker<DeleteClusterRequest, DeleteClusterResponse> deleteClusterInvoker(DeleteClusterRequest request) {
-        return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, IoTEdgeMeta.deleteCluster, hcClient);
+        return new SyncInvoker<DeleteClusterRequest, DeleteClusterResponse>(request, IoTEdgeMeta.deleteCluster,
+            hcClient);
     }
 
     /**

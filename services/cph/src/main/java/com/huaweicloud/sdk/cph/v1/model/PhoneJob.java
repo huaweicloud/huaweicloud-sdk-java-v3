@@ -99,16 +99,16 @@ public class PhoneJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneJob phoneJob = (PhoneJob) o;
-        return Objects.equals(this.phoneId, phoneJob.phoneId) && Objects.equals(this.jobId, phoneJob.jobId)
-            && Objects.equals(this.errorCode, phoneJob.errorCode) && Objects.equals(this.errorMsg, phoneJob.errorMsg);
+        PhoneJob that = (PhoneJob) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

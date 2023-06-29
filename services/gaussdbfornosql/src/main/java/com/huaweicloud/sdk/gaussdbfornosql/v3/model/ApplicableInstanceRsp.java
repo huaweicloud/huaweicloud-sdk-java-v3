@@ -55,16 +55,15 @@ public class ApplicableInstanceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicableInstanceRsp applicableInstanceRsp = (ApplicableInstanceRsp) o;
-        return Objects.equals(this.id, applicableInstanceRsp.id)
-            && Objects.equals(this.name, applicableInstanceRsp.name);
+        ApplicableInstanceRsp that = (ApplicableInstanceRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

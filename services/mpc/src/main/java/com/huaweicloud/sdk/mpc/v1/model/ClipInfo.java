@@ -87,16 +87,16 @@ public class ClipInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClipInfo clipInfo = (ClipInfo) o;
-        return Objects.equals(this.input, clipInfo.input) && Objects.equals(this.timelineStart, clipInfo.timelineStart)
-            && Objects.equals(this.timelineEnd, clipInfo.timelineEnd);
+        ClipInfo that = (ClipInfo) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineEnd, that.timelineEnd);
     }
 
     @Override

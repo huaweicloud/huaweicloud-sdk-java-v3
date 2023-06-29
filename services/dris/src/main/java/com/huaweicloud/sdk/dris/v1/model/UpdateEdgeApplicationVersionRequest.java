@@ -109,19 +109,16 @@ public class UpdateEdgeApplicationVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeApplicationVersionRequest updateEdgeApplicationVersionRequest =
-            (UpdateEdgeApplicationVersionRequest) o;
-        return Objects.equals(this.instanceId, updateEdgeApplicationVersionRequest.instanceId)
-            && Objects.equals(this.edgeAppId, updateEdgeApplicationVersionRequest.edgeAppId)
-            && Objects.equals(this.version, updateEdgeApplicationVersionRequest.version)
-            && Objects.equals(this.body, updateEdgeApplicationVersionRequest.body);
+        UpdateEdgeApplicationVersionRequest that = (UpdateEdgeApplicationVersionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.body, that.body);
     }
 
     @Override

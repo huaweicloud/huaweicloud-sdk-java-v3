@@ -166,21 +166,19 @@ public class CopyConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopyConfigurationResponse copyConfigurationResponse = (CopyConfigurationResponse) o;
-        return Objects.equals(this.id, copyConfigurationResponse.id)
-            && Objects.equals(this.name, copyConfigurationResponse.name)
-            && Objects.equals(this.description, copyConfigurationResponse.description)
-            && Objects.equals(this.datastoreVersionName, copyConfigurationResponse.datastoreVersionName)
-            && Objects.equals(this.datastoreName, copyConfigurationResponse.datastoreName)
-            && Objects.equals(this.createTime, copyConfigurationResponse.createTime)
-            && Objects.equals(this.updateTime, copyConfigurationResponse.updateTime);
+        CopyConfigurationResponse that = (CopyConfigurationResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersionName, that.datastoreVersionName)
+            && Objects.equals(this.datastoreName, that.datastoreName)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

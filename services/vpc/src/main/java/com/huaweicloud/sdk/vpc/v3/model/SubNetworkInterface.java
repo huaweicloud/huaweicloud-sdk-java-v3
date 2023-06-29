@@ -355,28 +355,23 @@ public class SubNetworkInterface {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubNetworkInterface subNetworkInterface = (SubNetworkInterface) o;
-        return Objects.equals(this.id, subNetworkInterface.id)
-            && Objects.equals(this.virsubnetId, subNetworkInterface.virsubnetId)
-            && Objects.equals(this.privateIpAddress, subNetworkInterface.privateIpAddress)
-            && Objects.equals(this.ipv6IpAddress, subNetworkInterface.ipv6IpAddress)
-            && Objects.equals(this.macAddress, subNetworkInterface.macAddress)
-            && Objects.equals(this.parentDeviceId, subNetworkInterface.parentDeviceId)
-            && Objects.equals(this.parentId, subNetworkInterface.parentId)
-            && Objects.equals(this.description, subNetworkInterface.description)
-            && Objects.equals(this.vpcId, subNetworkInterface.vpcId)
-            && Objects.equals(this.vlanId, subNetworkInterface.vlanId)
-            && Objects.equals(this.securityGroups, subNetworkInterface.securityGroups)
-            && Objects.equals(this.tags, subNetworkInterface.tags)
-            && Objects.equals(this.projectId, subNetworkInterface.projectId)
-            && Objects.equals(this.createdAt, subNetworkInterface.createdAt);
+        SubNetworkInterface that = (SubNetworkInterface) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.ipv6IpAddress, that.ipv6IpAddress)
+            && Objects.equals(this.macAddress, that.macAddress)
+            && Objects.equals(this.parentDeviceId, that.parentDeviceId) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.vlanId, that.vlanId) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

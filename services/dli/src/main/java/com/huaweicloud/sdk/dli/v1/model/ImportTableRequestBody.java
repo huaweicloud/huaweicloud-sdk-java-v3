@@ -360,29 +360,23 @@ public class ImportTableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportTableRequestBody importTableRequestBody = (ImportTableRequestBody) o;
-        return Objects.equals(this.dataPath, importTableRequestBody.dataPath)
-            && Objects.equals(this.dataType, importTableRequestBody.dataType)
-            && Objects.equals(this.databaseName, importTableRequestBody.databaseName)
-            && Objects.equals(this.tableName, importTableRequestBody.tableName)
-            && Objects.equals(this.withColumnHeader, importTableRequestBody.withColumnHeader)
-            && Objects.equals(this.delimiter, importTableRequestBody.delimiter)
-            && Objects.equals(this.quoteChar, importTableRequestBody.quoteChar)
-            && Objects.equals(this.escapeChar, importTableRequestBody.escapeChar)
-            && Objects.equals(this.dateFormat, importTableRequestBody.dateFormat)
-            && Objects.equals(this.badRecordsPath, importTableRequestBody.badRecordsPath)
-            && Objects.equals(this.timestampFormat, importTableRequestBody.timestampFormat)
-            && Objects.equals(this.queueName, importTableRequestBody.queueName)
-            && Objects.equals(this.overwrite, importTableRequestBody.overwrite)
-            && Objects.equals(this.partitionSpec, importTableRequestBody.partitionSpec)
-            && Objects.equals(this.conf, importTableRequestBody.conf);
+        ImportTableRequestBody that = (ImportTableRequestBody) obj;
+        return Objects.equals(this.dataPath, that.dataPath) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.quoteChar, that.quoteChar)
+            && Objects.equals(this.escapeChar, that.escapeChar) && Objects.equals(this.dateFormat, that.dateFormat)
+            && Objects.equals(this.badRecordsPath, that.badRecordsPath)
+            && Objects.equals(this.timestampFormat, that.timestampFormat)
+            && Objects.equals(this.queueName, that.queueName) && Objects.equals(this.overwrite, that.overwrite)
+            && Objects.equals(this.partitionSpec, that.partitionSpec) && Objects.equals(this.conf, that.conf);
     }
 
     @Override

@@ -112,18 +112,16 @@ public class DeleteAlertResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAlertResponse deleteAlertResponse = (DeleteAlertResponse) o;
-        return Objects.equals(this.code, deleteAlertResponse.code)
-            && Objects.equals(this.message, deleteAlertResponse.message)
-            && Objects.equals(this.data, deleteAlertResponse.data)
-            && Objects.equals(this.xRequestId, deleteAlertResponse.xRequestId);
+        DeleteAlertResponse that = (DeleteAlertResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -211,23 +211,19 @@ public class UpdatePostalReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePostalReq updatePostalReq = (UpdatePostalReq) o;
-        return Objects.equals(this.addressId, updatePostalReq.addressId)
-            && Objects.equals(this.recipient, updatePostalReq.recipient)
-            && Objects.equals(this.province, updatePostalReq.province)
-            && Objects.equals(this.city, updatePostalReq.city)
-            && Objects.equals(this.district, updatePostalReq.district)
-            && Objects.equals(this.address, updatePostalReq.address)
-            && Objects.equals(this.zipcode, updatePostalReq.zipcode)
-            && Objects.equals(this.mobilePhone, updatePostalReq.mobilePhone)
-            && Objects.equals(this.isDefault, updatePostalReq.isDefault);
+        UpdatePostalReq that = (UpdatePostalReq) obj;
+        return Objects.equals(this.addressId, that.addressId) && Objects.equals(this.recipient, that.recipient)
+            && Objects.equals(this.province, that.province) && Objects.equals(this.city, that.city)
+            && Objects.equals(this.district, that.district) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.zipcode, that.zipcode) && Objects.equals(this.mobilePhone, that.mobilePhone)
+            && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

@@ -66,17 +66,15 @@ public class MigrateSubNetworkInterfaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateSubNetworkInterfaceRequestBody migrateSubNetworkInterfaceRequestBody =
-            (MigrateSubNetworkInterfaceRequestBody) o;
-        return Objects.equals(this.dryRun, migrateSubNetworkInterfaceRequestBody.dryRun)
-            && Objects.equals(this.migrationInfo, migrateSubNetworkInterfaceRequestBody.migrationInfo);
+        MigrateSubNetworkInterfaceRequestBody that = (MigrateSubNetworkInterfaceRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.migrationInfo, that.migrationInfo);
     }
 
     @Override

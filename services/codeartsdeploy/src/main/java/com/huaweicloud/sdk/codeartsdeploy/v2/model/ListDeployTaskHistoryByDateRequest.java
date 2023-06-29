@@ -143,20 +143,17 @@ public class ListDeployTaskHistoryByDateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDeployTaskHistoryByDateRequest listDeployTaskHistoryByDateRequest = (ListDeployTaskHistoryByDateRequest) o;
-        return Objects.equals(this.projectId, listDeployTaskHistoryByDateRequest.projectId)
-            && Objects.equals(this.id, listDeployTaskHistoryByDateRequest.id)
-            && Objects.equals(this.page, listDeployTaskHistoryByDateRequest.page)
-            && Objects.equals(this.size, listDeployTaskHistoryByDateRequest.size)
-            && Objects.equals(this.startDate, listDeployTaskHistoryByDateRequest.startDate)
-            && Objects.equals(this.endDate, listDeployTaskHistoryByDateRequest.endDate);
+        ListDeployTaskHistoryByDateRequest that = (ListDeployTaskHistoryByDateRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate);
     }
 
     @Override

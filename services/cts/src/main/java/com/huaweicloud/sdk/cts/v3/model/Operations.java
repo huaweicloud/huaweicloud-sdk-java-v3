@@ -96,17 +96,16 @@ public class Operations {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Operations operations = (Operations) o;
-        return Objects.equals(this.serviceType, operations.serviceType)
-            && Objects.equals(this.resourceType, operations.resourceType)
-            && Objects.equals(this.traceNames, operations.traceNames);
+        Operations that = (Operations) obj;
+        return Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.traceNames, that.traceNames);
     }
 
     @Override

@@ -187,21 +187,18 @@ public class ColumnInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ColumnInfo columnInfo = (ColumnInfo) o;
-        return Objects.equals(this.fieldName, columnInfo.fieldName)
-            && Objects.equals(this.fieldType, columnInfo.fieldType)
-            && Objects.equals(this.fieldLength, columnInfo.fieldLength)
-            && Objects.equals(this.nullAble, columnInfo.nullAble)
-            && Objects.equals(this.isPartition, columnInfo.isPartition)
-            && Objects.equals(this.primary, columnInfo.primary) && Objects.equals(this.unique, columnInfo.unique)
-            && Objects.equals(this.decimalDigits, columnInfo.decimalDigits);
+        ColumnInfo that = (ColumnInfo) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.fieldType, that.fieldType)
+            && Objects.equals(this.fieldLength, that.fieldLength) && Objects.equals(this.nullAble, that.nullAble)
+            && Objects.equals(this.isPartition, that.isPartition) && Objects.equals(this.primary, that.primary)
+            && Objects.equals(this.unique, that.unique) && Objects.equals(this.decimalDigits, that.decimalDigits);
     }
 
     @Override

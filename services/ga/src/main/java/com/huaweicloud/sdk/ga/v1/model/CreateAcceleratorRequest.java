@@ -43,15 +43,15 @@ public class CreateAcceleratorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAcceleratorRequest createAcceleratorRequest = (CreateAcceleratorRequest) o;
-        return Objects.equals(this.body, createAcceleratorRequest.body);
+        CreateAcceleratorRequest that = (CreateAcceleratorRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -849,49 +849,36 @@ public class TraceSearchParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TraceSearchParam traceSearchParam = (TraceSearchParam) o;
-        return Objects.equals(this.region, traceSearchParam.region)
-            && Objects.equals(this.orderParam, traceSearchParam.orderParam)
-            && Objects.equals(this.realSourceFullMatch, traceSearchParam.realSourceFullMatch)
-            && Objects.equals(this.sourceFullMatch, traceSearchParam.sourceFullMatch)
-            && Objects.equals(this.tagsContent, traceSearchParam.tagsContent)
-            && Objects.equals(this.startTimeString, traceSearchParam.startTimeString)
-            && Objects.equals(this.endTimeString, traceSearchParam.endTimeString)
-            && Objects.equals(this.timeUsedMin, traceSearchParam.timeUsedMin)
-            && Objects.equals(this.timeUsedMax, traceSearchParam.timeUsedMax)
-            && Objects.equals(this.containTagsContent, traceSearchParam.containTagsContent)
-            && Objects.equals(this.pageSize, traceSearchParam.pageSize)
-            && Objects.equals(this.page, traceSearchParam.page)
-            && Objects.equals(this.parameters, traceSearchParam.parameters)
-            && Objects.equals(this.codes, traceSearchParam.codes)
-            && Objects.equals(this.globalTraceId, traceSearchParam.globalTraceId)
-            && Objects.equals(this.globalPath, traceSearchParam.globalPath)
-            && Objects.equals(this.traceId, traceSearchParam.traceId)
-            && Objects.equals(this.spanId, traceSearchParam.spanId)
-            && Objects.equals(this.envId, traceSearchParam.envId)
-            && Objects.equals(this.instanceId, traceSearchParam.instanceId)
-            && Objects.equals(this.appId, traceSearchParam.appId) && Objects.equals(this.bizId, traceSearchParam.bizId)
-            && Objects.equals(this.domainId, traceSearchParam.domainId)
-            && Objects.equals(this.source, traceSearchParam.source)
-            && Objects.equals(this.realSource, traceSearchParam.realSource)
-            && Objects.equals(this.startTime, traceSearchParam.startTime)
-            && Objects.equals(this.timeUsed, traceSearchParam.timeUsed)
-            && Objects.equals(this.code, traceSearchParam.code)
-            && Objects.equals(this.className, traceSearchParam.className)
-            && Objects.equals(this.isAsync, traceSearchParam.isAsync)
-            && Objects.equals(this.tags, traceSearchParam.tags)
-            && Objects.equals(this.hasError, traceSearchParam.hasError)
-            && Objects.equals(this.errorReasons, traceSearchParam.errorReasons)
-            && Objects.equals(this.type, traceSearchParam.type)
-            && Objects.equals(this.httpMethod, traceSearchParam.httpMethod)
-            && Objects.equals(this.bizCode, traceSearchParam.bizCode);
+        TraceSearchParam that = (TraceSearchParam) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.orderParam, that.orderParam)
+            && Objects.equals(this.realSourceFullMatch, that.realSourceFullMatch)
+            && Objects.equals(this.sourceFullMatch, that.sourceFullMatch)
+            && Objects.equals(this.tagsContent, that.tagsContent)
+            && Objects.equals(this.startTimeString, that.startTimeString)
+            && Objects.equals(this.endTimeString, that.endTimeString)
+            && Objects.equals(this.timeUsedMin, that.timeUsedMin) && Objects.equals(this.timeUsedMax, that.timeUsedMax)
+            && Objects.equals(this.containTagsContent, that.containTagsContent)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.codes, that.codes)
+            && Objects.equals(this.globalTraceId, that.globalTraceId)
+            && Objects.equals(this.globalPath, that.globalPath) && Objects.equals(this.traceId, that.traceId)
+            && Objects.equals(this.spanId, that.spanId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.realSource, that.realSource)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeUsed, that.timeUsed)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.isAsync, that.isAsync) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.hasError, that.hasError) && Objects.equals(this.errorReasons, that.errorReasons)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.httpMethod, that.httpMethod)
+            && Objects.equals(this.bizCode, that.bizCode);
     }
 
     @Override

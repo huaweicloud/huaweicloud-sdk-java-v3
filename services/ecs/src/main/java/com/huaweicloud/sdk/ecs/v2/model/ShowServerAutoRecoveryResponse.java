@@ -34,15 +34,15 @@ public class ShowServerAutoRecoveryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerAutoRecoveryResponse showServerAutoRecoveryResponse = (ShowServerAutoRecoveryResponse) o;
-        return Objects.equals(this.supportAutoRecovery, showServerAutoRecoveryResponse.supportAutoRecovery);
+        ShowServerAutoRecoveryResponse that = (ShowServerAutoRecoveryResponse) obj;
+        return Objects.equals(this.supportAutoRecovery, that.supportAutoRecovery);
     }
 
     @Override

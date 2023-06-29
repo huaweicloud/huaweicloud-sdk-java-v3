@@ -43,15 +43,15 @@ public class CcrulesListInfoActionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CcrulesListInfoActionDetail ccrulesListInfoActionDetail = (CcrulesListInfoActionDetail) o;
-        return Objects.equals(this.response, ccrulesListInfoActionDetail.response);
+        CcrulesListInfoActionDetail that = (CcrulesListInfoActionDetail) obj;
+        return Objects.equals(this.response, that.response);
     }
 
     @Override

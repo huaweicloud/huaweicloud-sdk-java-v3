@@ -21,7 +21,7 @@ public class SetRecordSetsStatusReq {
     }
 
     /**
-     * 解析记录状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析
+     * 解析记录状态。  取值范围：  ENABLE：启用解析 DISABLE：暂停解析。
      * @return status
      */
     public String getStatus() {
@@ -33,15 +33,15 @@ public class SetRecordSetsStatusReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRecordSetsStatusReq setRecordSetsStatusReq = (SetRecordSetsStatusReq) o;
-        return Objects.equals(this.status, setRecordSetsStatusReq.status);
+        SetRecordSetsStatusReq that = (SetRecordSetsStatusReq) obj;
+        return Objects.equals(this.status, that.status);
     }
 
     @Override

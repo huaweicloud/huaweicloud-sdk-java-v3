@@ -99,18 +99,18 @@ public class Namespace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Namespace namespace = (Namespace) o;
-        return Objects.equals(this.namespaceName, namespace.namespaceName)
-            && Objects.equals(this.namespaceGuid, namespace.namespaceGuid)
-            && Objects.equals(this.namespaceQualifiedName, namespace.namespaceQualifiedName)
-            && Objects.equals(this.tableCount, namespace.tableCount);
+        Namespace that = (Namespace) obj;
+        return Objects.equals(this.namespaceName, that.namespaceName)
+            && Objects.equals(this.namespaceGuid, that.namespaceGuid)
+            && Objects.equals(this.namespaceQualifiedName, that.namespaceQualifiedName)
+            && Objects.equals(this.tableCount, that.tableCount);
     }
 
     @Override

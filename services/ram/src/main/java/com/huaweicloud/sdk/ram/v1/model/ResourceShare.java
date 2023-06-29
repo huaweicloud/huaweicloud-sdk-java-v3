@@ -229,21 +229,20 @@ public class ResourceShare {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceShare resourceShare = (ResourceShare) o;
-        return Objects.equals(this.id, resourceShare.id) && Objects.equals(this.name, resourceShare.name)
-            && Objects.equals(this.description, resourceShare.description)
-            && Objects.equals(this.allowExternalPrincipals, resourceShare.allowExternalPrincipals)
-            && Objects.equals(this.owningAccountId, resourceShare.owningAccountId)
-            && Objects.equals(this.status, resourceShare.status) && Objects.equals(this.tags, resourceShare.tags)
-            && Objects.equals(this.createdAt, resourceShare.createdAt)
-            && Objects.equals(this.updatedAt, resourceShare.updatedAt);
+        ResourceShare that = (ResourceShare) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.allowExternalPrincipals, that.allowExternalPrincipals)
+            && Objects.equals(this.owningAccountId, that.owningAccountId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

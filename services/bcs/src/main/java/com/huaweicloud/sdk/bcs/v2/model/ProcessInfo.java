@@ -140,17 +140,17 @@ public class ProcessInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProcessInfo processInfo = (ProcessInfo) o;
-        return Objects.equals(this.stepName, processInfo.stepName) && Objects.equals(this.status, processInfo.status)
-            && Objects.equals(this.detail, processInfo.detail) && Objects.equals(this.subSteps, processInfo.subSteps)
-            && Objects.equals(this.serialNum, processInfo.serialNum);
+        ProcessInfo that = (ProcessInfo) obj;
+        return Objects.equals(this.stepName, that.stepName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.subSteps, that.subSteps)
+            && Objects.equals(this.serialNum, that.serialNum);
     }
 
     @Override

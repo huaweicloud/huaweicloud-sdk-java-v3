@@ -177,21 +177,19 @@ public class OperationDefinitionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperationDefinitionInfo operationDefinitionInfo = (OperationDefinitionInfo) o;
-        return Objects.equals(this.dayBackups, operationDefinitionInfo.dayBackups)
-            && Objects.equals(this.maxBackups, operationDefinitionInfo.maxBackups)
-            && Objects.equals(this.monthBackups, operationDefinitionInfo.monthBackups)
-            && Objects.equals(this.retentionDurationDays, operationDefinitionInfo.retentionDurationDays)
-            && Objects.equals(this.timezone, operationDefinitionInfo.timezone)
-            && Objects.equals(this.weekBackups, operationDefinitionInfo.weekBackups)
-            && Objects.equals(this.yearBackups, operationDefinitionInfo.yearBackups);
+        OperationDefinitionInfo that = (OperationDefinitionInfo) obj;
+        return Objects.equals(this.dayBackups, that.dayBackups) && Objects.equals(this.maxBackups, that.maxBackups)
+            && Objects.equals(this.monthBackups, that.monthBackups)
+            && Objects.equals(this.retentionDurationDays, that.retentionDurationDays)
+            && Objects.equals(this.timezone, that.timezone) && Objects.equals(this.weekBackups, that.weekBackups)
+            && Objects.equals(this.yearBackups, that.yearBackups);
     }
 
     @Override

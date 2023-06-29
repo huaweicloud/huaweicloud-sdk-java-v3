@@ -123,18 +123,17 @@ public class ImageTaggingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageTaggingReq imageTaggingReq = (ImageTaggingReq) o;
-        return Objects.equals(this.image, imageTaggingReq.image) && Objects.equals(this.url, imageTaggingReq.url)
-            && Objects.equals(this.language, imageTaggingReq.language)
-            && Objects.equals(this.threshold, imageTaggingReq.threshold)
-            && Objects.equals(this.limit, imageTaggingReq.limit);
+        ImageTaggingReq that = (ImageTaggingReq) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

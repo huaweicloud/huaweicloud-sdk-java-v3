@@ -68,22 +68,15 @@ public class UpdateHealthCheckResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,22 +148,15 @@ public class UpdateHealthCheckResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,22 +253,15 @@ public class UpdateHealthCheckResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -573,28 +552,22 @@ public class UpdateHealthCheckResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHealthCheckResponse updateHealthCheckResponse = (UpdateHealthCheckResponse) o;
-        return Objects.equals(this.protocol, updateHealthCheckResponse.protocol)
-            && Objects.equals(this.path, updateHealthCheckResponse.path)
-            && Objects.equals(this.method, updateHealthCheckResponse.method)
-            && Objects.equals(this.port, updateHealthCheckResponse.port)
-            && Objects.equals(this.thresholdNormal, updateHealthCheckResponse.thresholdNormal)
-            && Objects.equals(this.thresholdAbnormal, updateHealthCheckResponse.thresholdAbnormal)
-            && Objects.equals(this.timeInterval, updateHealthCheckResponse.timeInterval)
-            && Objects.equals(this.httpCode, updateHealthCheckResponse.httpCode)
-            && Objects.equals(this.enableClientSsl, updateHealthCheckResponse.enableClientSsl)
-            && Objects.equals(this.status, updateHealthCheckResponse.status)
-            && Objects.equals(this.timeout, updateHealthCheckResponse.timeout)
-            && Objects.equals(this.vpcChannelId, updateHealthCheckResponse.vpcChannelId)
-            && Objects.equals(this.id, updateHealthCheckResponse.id)
-            && Objects.equals(this.createTime, updateHealthCheckResponse.createTime);
+        UpdateHealthCheckResponse that = (UpdateHealthCheckResponse) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.thresholdNormal, that.thresholdNormal)
+            && Objects.equals(this.thresholdAbnormal, that.thresholdAbnormal)
+            && Objects.equals(this.timeInterval, that.timeInterval) && Objects.equals(this.httpCode, that.httpCode)
+            && Objects.equals(this.enableClientSsl, that.enableClientSsl) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

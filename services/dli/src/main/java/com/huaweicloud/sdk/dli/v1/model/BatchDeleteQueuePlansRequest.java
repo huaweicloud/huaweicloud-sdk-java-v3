@@ -65,16 +65,15 @@ public class BatchDeleteQueuePlansRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteQueuePlansRequest batchDeleteQueuePlansRequest = (BatchDeleteQueuePlansRequest) o;
-        return Objects.equals(this.queueName, batchDeleteQueuePlansRequest.queueName)
-            && Objects.equals(this.body, batchDeleteQueuePlansRequest.body);
+        BatchDeleteQueuePlansRequest that = (BatchDeleteQueuePlansRequest) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.body, that.body);
     }
 
     @Override

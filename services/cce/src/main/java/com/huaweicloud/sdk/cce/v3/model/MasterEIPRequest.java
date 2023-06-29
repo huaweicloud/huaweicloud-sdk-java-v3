@@ -43,15 +43,15 @@ public class MasterEIPRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MasterEIPRequest masterEIPRequest = (MasterEIPRequest) o;
-        return Objects.equals(this.spec, masterEIPRequest.spec);
+        MasterEIPRequest that = (MasterEIPRequest) obj;
+        return Objects.equals(this.spec, that.spec);
     }
 
     @Override

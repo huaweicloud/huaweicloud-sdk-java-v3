@@ -788,46 +788,34 @@ public class VatInvoiceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VatInvoiceResult vatInvoiceResult = (VatInvoiceResult) o;
-        return Objects.equals(this.title, vatInvoiceResult.title) && Objects.equals(this.type, vatInvoiceResult.type)
-            && Objects.equals(this.serialNumber, vatInvoiceResult.serialNumber)
-            && Objects.equals(this.attribution, vatInvoiceResult.attribution)
-            && Objects.equals(this.supervisionSeal, vatInvoiceResult.supervisionSeal)
-            && Objects.equals(this.code, vatInvoiceResult.code)
-            && Objects.equals(this.printCode, vatInvoiceResult.printCode)
-            && Objects.equals(this.machineNumber, vatInvoiceResult.machineNumber)
-            && Objects.equals(this.printNumber, vatInvoiceResult.printNumber)
-            && Objects.equals(this.checkCode, vatInvoiceResult.checkCode)
-            && Objects.equals(this.number, vatInvoiceResult.number)
-            && Objects.equals(this.issueDate, vatInvoiceResult.issueDate)
-            && Objects.equals(this.encryptionBlock, vatInvoiceResult.encryptionBlock)
-            && Objects.equals(this.buyerName, vatInvoiceResult.buyerName)
-            && Objects.equals(this.buyerId, vatInvoiceResult.buyerId)
-            && Objects.equals(this.buyerAddress, vatInvoiceResult.buyerAddress)
-            && Objects.equals(this.buyerBank, vatInvoiceResult.buyerBank)
-            && Objects.equals(this.sellerName, vatInvoiceResult.sellerName)
-            && Objects.equals(this.sellerId, vatInvoiceResult.sellerId)
-            && Objects.equals(this.sellerAddress, vatInvoiceResult.sellerAddress)
-            && Objects.equals(this.sellerBank, vatInvoiceResult.sellerBank)
-            && Objects.equals(this.subtotalAmount, vatInvoiceResult.subtotalAmount)
-            && Objects.equals(this.subtotalTax, vatInvoiceResult.subtotalTax)
-            && Objects.equals(this.total, vatInvoiceResult.total)
-            && Objects.equals(this.totalInWords, vatInvoiceResult.totalInWords)
-            && Objects.equals(this.remarks, vatInvoiceResult.remarks)
-            && Objects.equals(this.receiver, vatInvoiceResult.receiver)
-            && Objects.equals(this.reviewer, vatInvoiceResult.reviewer)
-            && Objects.equals(this.issuer, vatInvoiceResult.issuer)
-            && Objects.equals(this.sellerSeal, vatInvoiceResult.sellerSeal)
-            && Objects.equals(this.itemList, vatInvoiceResult.itemList)
-            && Objects.equals(this.confidence, vatInvoiceResult.confidence)
-            && Objects.equals(this.textLocation, vatInvoiceResult.textLocation);
+        VatInvoiceResult that = (VatInvoiceResult) obj;
+        return Objects.equals(this.title, that.title) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serialNumber, that.serialNumber)
+            && Objects.equals(this.attribution, that.attribution)
+            && Objects.equals(this.supervisionSeal, that.supervisionSeal) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.printCode, that.printCode) && Objects.equals(this.machineNumber, that.machineNumber)
+            && Objects.equals(this.printNumber, that.printNumber) && Objects.equals(this.checkCode, that.checkCode)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.encryptionBlock, that.encryptionBlock)
+            && Objects.equals(this.buyerName, that.buyerName) && Objects.equals(this.buyerId, that.buyerId)
+            && Objects.equals(this.buyerAddress, that.buyerAddress) && Objects.equals(this.buyerBank, that.buyerBank)
+            && Objects.equals(this.sellerName, that.sellerName) && Objects.equals(this.sellerId, that.sellerId)
+            && Objects.equals(this.sellerAddress, that.sellerAddress)
+            && Objects.equals(this.sellerBank, that.sellerBank)
+            && Objects.equals(this.subtotalAmount, that.subtotalAmount)
+            && Objects.equals(this.subtotalTax, that.subtotalTax) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.totalInWords, that.totalInWords) && Objects.equals(this.remarks, that.remarks)
+            && Objects.equals(this.receiver, that.receiver) && Objects.equals(this.reviewer, that.reviewer)
+            && Objects.equals(this.issuer, that.issuer) && Objects.equals(this.sellerSeal, that.sellerSeal)
+            && Objects.equals(this.itemList, that.itemList) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

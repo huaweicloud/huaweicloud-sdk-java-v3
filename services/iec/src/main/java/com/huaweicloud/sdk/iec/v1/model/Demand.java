@@ -79,16 +79,16 @@ public class Demand {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Demand demand = (Demand) o;
-        return Objects.equals(this.operator, demand.operator) && Objects.equals(this.demandCount, demand.demandCount)
-            && Objects.equals(this.poolId, demand.poolId);
+        Demand that = (Demand) obj;
+        return Objects.equals(this.operator, that.operator) && Objects.equals(this.demandCount, that.demandCount)
+            && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override

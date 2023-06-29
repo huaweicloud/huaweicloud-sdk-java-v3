@@ -55,16 +55,15 @@ public class DomainProjectsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainProjectsInfo domainProjectsInfo = (DomainProjectsInfo) o;
-        return Objects.equals(this.projectId, domainProjectsInfo.projectId)
-            && Objects.equals(this.projectName, domainProjectsInfo.projectName);
+        DomainProjectsInfo that = (DomainProjectsInfo) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

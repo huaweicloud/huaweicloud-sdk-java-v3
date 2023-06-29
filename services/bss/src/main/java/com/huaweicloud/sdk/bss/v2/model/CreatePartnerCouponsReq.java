@@ -262,23 +262,20 @@ public class CreatePartnerCouponsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePartnerCouponsReq createPartnerCouponsReq = (CreatePartnerCouponsReq) o;
-        return Objects.equals(this.quotaId, createPartnerCouponsReq.quotaId)
-            && Objects.equals(this.customerIds, createPartnerCouponsReq.customerIds)
-            && Objects.equals(this.faceValue, createPartnerCouponsReq.faceValue)
-            && Objects.equals(this.validTime, createPartnerCouponsReq.validTime)
-            && Objects.equals(this.expireTime, createPartnerCouponsReq.expireTime)
-            && Objects.equals(this.cloudServiceTypes, createPartnerCouponsReq.cloudServiceTypes)
-            && Objects.equals(this.productIds, createPartnerCouponsReq.productIds)
-            && Objects.equals(this.memo, createPartnerCouponsReq.memo)
-            && Objects.equals(this.indirectPartnerId, createPartnerCouponsReq.indirectPartnerId);
+        CreatePartnerCouponsReq that = (CreatePartnerCouponsReq) obj;
+        return Objects.equals(this.quotaId, that.quotaId) && Objects.equals(this.customerIds, that.customerIds)
+            && Objects.equals(this.faceValue, that.faceValue) && Objects.equals(this.validTime, that.validTime)
+            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.cloudServiceTypes, that.cloudServiceTypes)
+            && Objects.equals(this.productIds, that.productIds) && Objects.equals(this.memo, that.memo)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

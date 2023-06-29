@@ -65,16 +65,16 @@ public class RecognizeMvsInvoiceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeMvsInvoiceRequest recognizeMvsInvoiceRequest = (RecognizeMvsInvoiceRequest) o;
-        return Objects.equals(this.enterpriseProjectId, recognizeMvsInvoiceRequest.enterpriseProjectId)
-            && Objects.equals(this.body, recognizeMvsInvoiceRequest.body);
+        RecognizeMvsInvoiceRequest that = (RecognizeMvsInvoiceRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

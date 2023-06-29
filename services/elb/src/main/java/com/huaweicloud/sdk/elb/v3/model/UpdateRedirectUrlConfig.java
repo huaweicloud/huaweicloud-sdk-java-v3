@@ -66,22 +66,15 @@ public class UpdateRedirectUrlConfig {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -186,22 +179,15 @@ public class UpdateRedirectUrlConfig {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusCodeEnum(value));
         }
 
         public static StatusCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,20 +312,17 @@ public class UpdateRedirectUrlConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRedirectUrlConfig updateRedirectUrlConfig = (UpdateRedirectUrlConfig) o;
-        return Objects.equals(this.protocol, updateRedirectUrlConfig.protocol)
-            && Objects.equals(this.host, updateRedirectUrlConfig.host)
-            && Objects.equals(this.port, updateRedirectUrlConfig.port)
-            && Objects.equals(this.path, updateRedirectUrlConfig.path)
-            && Objects.equals(this.query, updateRedirectUrlConfig.query)
-            && Objects.equals(this.statusCode, updateRedirectUrlConfig.statusCode);
+        UpdateRedirectUrlConfig that = (UpdateRedirectUrlConfig) obj;
+        return Objects.equals(this.protocol, that.protocol) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.query, that.query) && Objects.equals(this.statusCode, that.statusCode);
     }
 
     @Override

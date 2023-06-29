@@ -103,18 +103,16 @@ public class ListPlaybookActionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookActionsRequest listPlaybookActionsRequest = (ListPlaybookActionsRequest) o;
-        return Objects.equals(this.workspaceId, listPlaybookActionsRequest.workspaceId)
-            && Objects.equals(this.versionId, listPlaybookActionsRequest.versionId)
-            && Objects.equals(this.limit, listPlaybookActionsRequest.limit)
-            && Objects.equals(this.offset, listPlaybookActionsRequest.offset);
+        ListPlaybookActionsRequest that = (ListPlaybookActionsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.versionId, that.versionId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

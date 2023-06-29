@@ -77,17 +77,16 @@ public class IssueProjectResponseV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueProjectResponseV4 issueProjectResponseV4 = (IssueProjectResponseV4) o;
-        return Objects.equals(this.projectId, issueProjectResponseV4.projectId)
-            && Objects.equals(this.projectName, issueProjectResponseV4.projectName)
-            && Objects.equals(this.projectNumId, issueProjectResponseV4.projectNumId);
+        IssueProjectResponseV4 that = (IssueProjectResponseV4) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.projectNumId, that.projectNumId);
     }
 
     @Override

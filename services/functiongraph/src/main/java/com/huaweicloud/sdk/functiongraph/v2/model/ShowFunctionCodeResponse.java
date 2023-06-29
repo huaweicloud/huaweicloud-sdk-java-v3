@@ -121,6 +121,11 @@ public class ShowFunctionCodeResponse extends SdkResponse {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -145,6 +150,7 @@ public class ShowFunctionCodeResponse extends SdkResponse {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -170,22 +176,15 @@ public class ShowFunctionCodeResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -264,22 +263,15 @@ public class ShowFunctionCodeResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -673,29 +665,23 @@ public class ShowFunctionCodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFunctionCodeResponse showFunctionCodeResponse = (ShowFunctionCodeResponse) o;
-        return Objects.equals(this.funcUrn, showFunctionCodeResponse.funcUrn)
-            && Objects.equals(this.funcName, showFunctionCodeResponse.funcName)
-            && Objects.equals(this.domainId, showFunctionCodeResponse.domainId)
-            && Objects.equals(this.runtime, showFunctionCodeResponse.runtime)
-            && Objects.equals(this.codeType, showFunctionCodeResponse.codeType)
-            && Objects.equals(this.codeUrl, showFunctionCodeResponse.codeUrl)
-            && Objects.equals(this.codeFilename, showFunctionCodeResponse.codeFilename)
-            && Objects.equals(this.codeSize, showFunctionCodeResponse.codeSize)
-            && Objects.equals(this.digest, showFunctionCodeResponse.digest)
-            && Objects.equals(this.lastModified, showFunctionCodeResponse.lastModified)
-            && Objects.equals(this.funcCode, showFunctionCodeResponse.funcCode)
-            && Objects.equals(this.dependList, showFunctionCodeResponse.dependList)
-            && Objects.equals(this.dependVersionList, showFunctionCodeResponse.dependVersionList)
-            && Objects.equals(this.strategyConfig, showFunctionCodeResponse.strategyConfig)
-            && Objects.equals(this.dependencies, showFunctionCodeResponse.dependencies);
+        ShowFunctionCodeResponse that = (ShowFunctionCodeResponse) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.codeType, that.codeType) && Objects.equals(this.codeUrl, that.codeUrl)
+            && Objects.equals(this.codeFilename, that.codeFilename) && Objects.equals(this.codeSize, that.codeSize)
+            && Objects.equals(this.digest, that.digest) && Objects.equals(this.lastModified, that.lastModified)
+            && Objects.equals(this.funcCode, that.funcCode) && Objects.equals(this.dependList, that.dependList)
+            && Objects.equals(this.dependVersionList, that.dependVersionList)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.dependencies, that.dependencies);
     }
 
     @Override

@@ -120,22 +120,15 @@ public class ShowTaskGroupResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -331,22 +324,15 @@ public class ShowTaskGroupResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectOverwriteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectOverwriteModeEnum(value));
         }
 
         public static ObjectOverwriteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -419,22 +405,15 @@ public class ShowTaskGroupResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistencyCheckEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyCheckEnum(value));
         }
 
         public static ConsistencyCheckEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1201,51 +1180,41 @@ public class ShowTaskGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskGroupResponse showTaskGroupResponse = (ShowTaskGroupResponse) o;
-        return Objects.equals(this.groupId, showTaskGroupResponse.groupId)
-            && Objects.equals(this.status, showTaskGroupResponse.status)
-            && Objects.equals(this.errorReason, showTaskGroupResponse.errorReason)
-            && Objects.equals(this.srcNode, showTaskGroupResponse.srcNode)
-            && Objects.equals(this.description, showTaskGroupResponse.description)
-            && Objects.equals(this.dstNode, showTaskGroupResponse.dstNode)
-            && Objects.equals(this.enableMetadataMigration, showTaskGroupResponse.enableMetadataMigration)
-            && Objects.equals(this.enableFailedObjectRecording, showTaskGroupResponse.enableFailedObjectRecording)
-            && Objects.equals(this.enableRestore, showTaskGroupResponse.enableRestore)
-            && Objects.equals(this.enableKms, showTaskGroupResponse.enableKms)
-            && Objects.equals(this.taskType, showTaskGroupResponse.taskType)
-            && Objects.equals(this.bandwidthPolicy, showTaskGroupResponse.bandwidthPolicy)
-            && Objects.equals(this.smnConfig, showTaskGroupResponse.smnConfig)
-            && Objects.equals(this.sourceCdn, showTaskGroupResponse.sourceCdn)
-            && Objects.equals(this.migrateSince, showTaskGroupResponse.migrateSince)
-            && Objects.equals(this.migrateSpeed, showTaskGroupResponse.migrateSpeed)
-            && Objects.equals(this.totalTime, showTaskGroupResponse.totalTime)
-            && Objects.equals(this.startTime, showTaskGroupResponse.startTime)
-            && Objects.equals(this.totalTaskNum, showTaskGroupResponse.totalTaskNum)
-            && Objects.equals(this.createTaskNum, showTaskGroupResponse.createTaskNum)
-            && Objects.equals(this.failedTaskNum, showTaskGroupResponse.failedTaskNum)
-            && Objects.equals(this.completeTaskNum, showTaskGroupResponse.completeTaskNum)
-            && Objects.equals(this.pausedTaskNum, showTaskGroupResponse.pausedTaskNum)
-            && Objects.equals(this.executingTaskNum, showTaskGroupResponse.executingTaskNum)
-            && Objects.equals(this.waitingTaskNum, showTaskGroupResponse.waitingTaskNum)
-            && Objects.equals(this.totalNum, showTaskGroupResponse.totalNum)
-            && Objects.equals(this.createCompleteNum, showTaskGroupResponse.createCompleteNum)
-            && Objects.equals(this.successNum, showTaskGroupResponse.successNum)
-            && Objects.equals(this.failNum, showTaskGroupResponse.failNum)
-            && Objects.equals(this.skipNum, showTaskGroupResponse.skipNum)
-            && Objects.equals(this.totalSize, showTaskGroupResponse.totalSize)
-            && Objects.equals(this.createCompleteSize, showTaskGroupResponse.createCompleteSize)
-            && Objects.equals(this.completeSize, showTaskGroupResponse.completeSize)
-            && Objects.equals(this.failedObjectRecord, showTaskGroupResponse.failedObjectRecord)
-            && Objects.equals(this.objectOverwriteMode, showTaskGroupResponse.objectOverwriteMode)
-            && Objects.equals(this.consistencyCheck, showTaskGroupResponse.consistencyCheck)
-            && Objects.equals(this.enableRequesterPays, showTaskGroupResponse.enableRequesterPays);
+        ShowTaskGroupResponse that = (ShowTaskGroupResponse) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.errorReason, that.errorReason) && Objects.equals(this.srcNode, that.srcNode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.dstNode, that.dstNode)
+            && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
+            && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
+            && Objects.equals(this.enableRestore, that.enableRestore) && Objects.equals(this.enableKms, that.enableKms)
+            && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
+            && Objects.equals(this.smnConfig, that.smnConfig) && Objects.equals(this.sourceCdn, that.sourceCdn)
+            && Objects.equals(this.migrateSince, that.migrateSince)
+            && Objects.equals(this.migrateSpeed, that.migrateSpeed) && Objects.equals(this.totalTime, that.totalTime)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.totalTaskNum, that.totalTaskNum)
+            && Objects.equals(this.createTaskNum, that.createTaskNum)
+            && Objects.equals(this.failedTaskNum, that.failedTaskNum)
+            && Objects.equals(this.completeTaskNum, that.completeTaskNum)
+            && Objects.equals(this.pausedTaskNum, that.pausedTaskNum)
+            && Objects.equals(this.executingTaskNum, that.executingTaskNum)
+            && Objects.equals(this.waitingTaskNum, that.waitingTaskNum) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.createCompleteNum, that.createCompleteNum)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.failNum, that.failNum)
+            && Objects.equals(this.skipNum, that.skipNum) && Objects.equals(this.totalSize, that.totalSize)
+            && Objects.equals(this.createCompleteSize, that.createCompleteSize)
+            && Objects.equals(this.completeSize, that.completeSize)
+            && Objects.equals(this.failedObjectRecord, that.failedObjectRecord)
+            && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
+            && Objects.equals(this.consistencyCheck, that.consistencyCheck)
+            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
     }
 
     @Override

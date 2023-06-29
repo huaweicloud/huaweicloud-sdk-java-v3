@@ -44,16 +44,15 @@ public class NeutronCreateFirewallGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronCreateFirewallGroupRequestBody neutronCreateFirewallGroupRequestBody =
-            (NeutronCreateFirewallGroupRequestBody) o;
-        return Objects.equals(this.firewallGroup, neutronCreateFirewallGroupRequestBody.firewallGroup);
+        NeutronCreateFirewallGroupRequestBody that = (NeutronCreateFirewallGroupRequestBody) obj;
+        return Objects.equals(this.firewallGroup, that.firewallGroup);
     }
 
     @Override

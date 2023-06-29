@@ -272,22 +272,19 @@ public class ListLogtanksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogtanksRequest listLogtanksRequest = (ListLogtanksRequest) o;
-        return Objects.equals(this.limit, listLogtanksRequest.limit)
-            && Objects.equals(this.marker, listLogtanksRequest.marker)
-            && Objects.equals(this.pageReverse, listLogtanksRequest.pageReverse)
-            && Objects.equals(this.enterpriseProjectId, listLogtanksRequest.enterpriseProjectId)
-            && Objects.equals(this.id, listLogtanksRequest.id)
-            && Objects.equals(this.loadbalancerId, listLogtanksRequest.loadbalancerId)
-            && Objects.equals(this.logGroupId, listLogtanksRequest.logGroupId)
-            && Objects.equals(this.logTopicId, listLogtanksRequest.logTopicId);
+        ListLogtanksRequest that = (ListLogtanksRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId);
     }
 
     @Override

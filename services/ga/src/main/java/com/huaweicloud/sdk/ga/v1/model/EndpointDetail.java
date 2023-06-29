@@ -104,22 +104,15 @@ public class EndpointDetail {
             if (value == null) {
                 return null;
             }
-            HealthStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HealthStateEnum(value));
         }
 
         public static HealthStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -382,24 +375,21 @@ public class EndpointDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EndpointDetail endpointDetail = (EndpointDetail) o;
-        return Objects.equals(this.id, endpointDetail.id) && Objects.equals(this.resourceId, endpointDetail.resourceId)
-            && Objects.equals(this.endpointGroupId, endpointDetail.endpointGroupId)
-            && Objects.equals(this.resourceType, endpointDetail.resourceType)
-            && Objects.equals(this.status, endpointDetail.status) && Objects.equals(this.weight, endpointDetail.weight)
-            && Objects.equals(this.healthState, endpointDetail.healthState)
-            && Objects.equals(this.createdAt, endpointDetail.createdAt)
-            && Objects.equals(this.updatedAt, endpointDetail.updatedAt)
-            && Objects.equals(this.domainId, endpointDetail.domainId)
-            && Objects.equals(this.ipAddress, endpointDetail.ipAddress)
-            && Objects.equals(this.frozenInfo, endpointDetail.frozenInfo);
+        EndpointDetail that = (EndpointDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.endpointGroupId, that.endpointGroupId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.weight, that.weight) && Objects.equals(this.healthState, that.healthState)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.frozenInfo, that.frozenInfo);
     }
 
     @Override

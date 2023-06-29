@@ -109,18 +109,16 @@ public class UpdateTriggerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTriggerRequest updateTriggerRequest = (UpdateTriggerRequest) o;
-        return Objects.equals(this.namespace, updateTriggerRequest.namespace)
-            && Objects.equals(this.repository, updateTriggerRequest.repository)
-            && Objects.equals(this.trigger, updateTriggerRequest.trigger)
-            && Objects.equals(this.body, updateTriggerRequest.body);
+        UpdateTriggerRequest that = (UpdateTriggerRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.trigger, that.trigger) && Objects.equals(this.body, that.body);
     }
 
     @Override

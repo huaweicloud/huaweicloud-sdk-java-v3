@@ -87,17 +87,16 @@ public class BackupPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupPolicy backupPolicy = (BackupPolicy) o;
-        return Objects.equals(this.backupType, backupPolicy.backupType)
-            && Objects.equals(this.saveDays, backupPolicy.saveDays)
-            && Objects.equals(this.periodicalBackupPlan, backupPolicy.periodicalBackupPlan);
+        BackupPolicy that = (BackupPolicy) obj;
+        return Objects.equals(this.backupType, that.backupType) && Objects.equals(this.saveDays, that.saveDays)
+            && Objects.equals(this.periodicalBackupPlan, that.periodicalBackupPlan);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class ChangeSubjectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeSubjectsResponse changeSubjectsResponse = (ChangeSubjectsResponse) o;
-        return Objects.equals(this.data, changeSubjectsResponse.data);
+        ChangeSubjectsResponse that = (ChangeSubjectsResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

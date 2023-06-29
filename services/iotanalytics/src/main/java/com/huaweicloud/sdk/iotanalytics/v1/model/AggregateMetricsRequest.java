@@ -228,21 +228,18 @@ public class AggregateMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateMetricsRequest aggregateMetricsRequest = (AggregateMetricsRequest) o;
-        return Objects.equals(this.timeSpan, aggregateMetricsRequest.timeSpan)
-            && Objects.equals(this.interval, aggregateMetricsRequest.interval)
-            && Objects.equals(this.offset, aggregateMetricsRequest.offset)
-            && Objects.equals(this.tags, aggregateMetricsRequest.tags)
-            && Objects.equals(this.propertyFilter, aggregateMetricsRequest.propertyFilter)
-            && Objects.equals(this.metrics, aggregateMetricsRequest.metrics)
-            && Objects.equals(this.limit, aggregateMetricsRequest.limit);
+        AggregateMetricsRequest that = (AggregateMetricsRequest) obj;
+        return Objects.equals(this.timeSpan, that.timeSpan) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.propertyFilter, that.propertyFilter) && Objects.equals(this.metrics, that.metrics)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

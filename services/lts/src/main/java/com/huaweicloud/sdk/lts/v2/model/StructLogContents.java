@@ -55,16 +55,15 @@ public class StructLogContents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StructLogContents structLogContents = (StructLogContents) o;
-        return Objects.equals(this.logContent, structLogContents.logContent)
-            && Objects.equals(this.lineNum, structLogContents.lineNum);
+        StructLogContents that = (StructLogContents) obj;
+        return Objects.equals(this.logContent, that.logContent) && Objects.equals(this.lineNum, that.lineNum);
     }
 
     @Override

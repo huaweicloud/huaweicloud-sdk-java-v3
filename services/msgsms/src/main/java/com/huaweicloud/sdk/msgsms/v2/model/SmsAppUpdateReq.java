@@ -143,20 +143,19 @@ public class SmsAppUpdateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsAppUpdateReq smsAppUpdateReq = (SmsAppUpdateReq) o;
-        return Objects.equals(this.appName, smsAppUpdateReq.appName)
-            && Objects.equals(this.createSignAndTemplate, smsAppUpdateReq.createSignAndTemplate)
-            && Objects.equals(this.enterpriseProjectId, smsAppUpdateReq.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, smsAppUpdateReq.enterpriseProjectName)
-            && Objects.equals(this.region, smsAppUpdateReq.region)
-            && Objects.equals(this.upLinkAddr, smsAppUpdateReq.upLinkAddr);
+        SmsAppUpdateReq that = (SmsAppUpdateReq) obj;
+        return Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.createSignAndTemplate, that.createSignAndTemplate)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.upLinkAddr, that.upLinkAddr);
     }
 
     @Override

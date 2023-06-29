@@ -73,22 +73,15 @@ public class ListTagResourceInstancesRequestBody {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -390,24 +383,19 @@ public class ListTagResourceInstancesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagResourceInstancesRequestBody listTagResourceInstancesRequestBody =
-            (ListTagResourceInstancesRequestBody) o;
-        return Objects.equals(this.offset, listTagResourceInstancesRequestBody.offset)
-            && Objects.equals(this.limit, listTagResourceInstancesRequestBody.limit)
-            && Objects.equals(this.action, listTagResourceInstancesRequestBody.action)
-            && Objects.equals(this.matches, listTagResourceInstancesRequestBody.matches)
-            && Objects.equals(this.notTags, listTagResourceInstancesRequestBody.notTags)
-            && Objects.equals(this.tags, listTagResourceInstancesRequestBody.tags)
-            && Objects.equals(this.tagsAny, listTagResourceInstancesRequestBody.tagsAny)
-            && Objects.equals(this.notTagsAny, listTagResourceInstancesRequestBody.notTagsAny)
-            && Objects.equals(this.sysTags, listTagResourceInstancesRequestBody.sysTags);
+        ListTagResourceInstancesRequestBody that = (ListTagResourceInstancesRequestBody) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.matches, that.matches)
+            && Objects.equals(this.notTags, that.notTags) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tagsAny, that.tagsAny) && Objects.equals(this.notTagsAny, that.notTagsAny)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

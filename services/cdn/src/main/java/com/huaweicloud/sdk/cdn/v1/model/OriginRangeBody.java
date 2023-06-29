@@ -60,22 +60,15 @@ public class OriginRangeBody {
             if (value == null) {
                 return null;
             }
-            RangeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RangeStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RangeStatusEnum(value));
         }
 
         public static RangeStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RangeStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class OriginRangeBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OriginRangeBody originRangeBody = (OriginRangeBody) o;
-        return Objects.equals(this.rangeStatus, originRangeBody.rangeStatus)
-            && Objects.equals(this.domainId, originRangeBody.domainId);
+        OriginRangeBody that = (OriginRangeBody) obj;
+        return Objects.equals(this.rangeStatus, that.rangeStatus) && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class ShowDomainPasswordPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDomainPasswordPolicyResponse showDomainPasswordPolicyResponse = (ShowDomainPasswordPolicyResponse) o;
-        return Objects.equals(this.passwordPolicy, showDomainPasswordPolicyResponse.passwordPolicy);
+        ShowDomainPasswordPolicyResponse that = (ShowDomainPasswordPolicyResponse) obj;
+        return Objects.equals(this.passwordPolicy, that.passwordPolicy);
     }
 
     @Override

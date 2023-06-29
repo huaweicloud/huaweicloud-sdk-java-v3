@@ -33,16 +33,15 @@ public class DeleteFunctionAsyncInvokeConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFunctionAsyncInvokeConfigRequest deleteFunctionAsyncInvokeConfigRequest =
-            (DeleteFunctionAsyncInvokeConfigRequest) o;
-        return Objects.equals(this.functionUrn, deleteFunctionAsyncInvokeConfigRequest.functionUrn);
+        DeleteFunctionAsyncInvokeConfigRequest that = (DeleteFunctionAsyncInvokeConfigRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn);
     }
 
     @Override

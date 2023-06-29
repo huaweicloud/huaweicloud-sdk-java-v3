@@ -78,17 +78,16 @@ public class BalanceTypeDeductSumV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BalanceTypeDeductSumV2 balanceTypeDeductSumV2 = (BalanceTypeDeductSumV2) o;
-        return Objects.equals(this.balanceType, balanceTypeDeductSumV2.balanceType)
-            && Objects.equals(this.amount, balanceTypeDeductSumV2.amount)
-            && Objects.equals(this.billType, balanceTypeDeductSumV2.billType);
+        BalanceTypeDeductSumV2 that = (BalanceTypeDeductSumV2) obj;
+        return Objects.equals(this.balanceType, that.balanceType) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.billType, that.billType);
     }
 
     @Override

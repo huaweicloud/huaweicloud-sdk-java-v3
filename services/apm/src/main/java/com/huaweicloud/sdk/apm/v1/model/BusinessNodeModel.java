@@ -210,23 +210,19 @@ public class BusinessNodeModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BusinessNodeModel businessNodeModel = (BusinessNodeModel) o;
-        return Objects.equals(this._default, businessNodeModel._default)
-            && Objects.equals(this.displayName, businessNodeModel.displayName)
-            && Objects.equals(this.epsId, businessNodeModel.epsId)
-            && Objects.equals(this.gmtCreate, businessNodeModel.gmtCreate)
-            && Objects.equals(this.gmtModify, businessNodeModel.gmtModify)
-            && Objects.equals(this.id, businessNodeModel.id)
-            && Objects.equals(this.innerDomainId, businessNodeModel.innerDomainId)
-            && Objects.equals(this.isDefault, businessNodeModel.isDefault)
-            && Objects.equals(this.name, businessNodeModel.name);
+        BusinessNodeModel that = (BusinessNodeModel) obj;
+        return Objects.equals(this._default, that._default) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.epsId, that.epsId) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.innerDomainId, that.innerDomainId) && Objects.equals(this.isDefault, that.isDefault)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

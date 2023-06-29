@@ -55,15 +55,15 @@ public class IdMarkDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdMarkDTO idMarkDTO = (IdMarkDTO) o;
-        return Objects.equals(this.id, idMarkDTO.id) && Objects.equals(this.mark, idMarkDTO.mark);
+        IdMarkDTO that = (IdMarkDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.mark, that.mark);
     }
 
     @Override

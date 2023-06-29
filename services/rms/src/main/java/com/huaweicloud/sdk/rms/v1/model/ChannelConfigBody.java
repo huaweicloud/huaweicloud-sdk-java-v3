@@ -74,15 +74,15 @@ public class ChannelConfigBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelConfigBody channelConfigBody = (ChannelConfigBody) o;
-        return Objects.equals(this.smn, channelConfigBody.smn) && Objects.equals(this.obs, channelConfigBody.obs);
+        ChannelConfigBody that = (ChannelConfigBody) obj;
+        return Objects.equals(this.smn, that.smn) && Objects.equals(this.obs, that.obs);
     }
 
     @Override

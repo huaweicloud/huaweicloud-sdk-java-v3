@@ -81,17 +81,16 @@ public class KnowledgePointsListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KnowledgePointsListRequestBody knowledgePointsListRequestBody = (KnowledgePointsListRequestBody) o;
-        return Objects.equals(this.name, knowledgePointsListRequestBody.name)
-            && Objects.equals(this.pageSize, knowledgePointsListRequestBody.pageSize)
-            && Objects.equals(this.startIndex, knowledgePointsListRequestBody.startIndex);
+        KnowledgePointsListRequestBody that = (KnowledgePointsListRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.startIndex, that.startIndex);
     }
 
     @Override

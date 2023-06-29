@@ -143,20 +143,19 @@ public class UpdateTopicObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTopicObject updateTopicObject = (UpdateTopicObject) o;
-        return Objects.equals(this.name, updateTopicObject.name)
-            && Objects.equals(this.retentionTime, updateTopicObject.retentionTime)
-            && Objects.equals(this.syncReplication, updateTopicObject.syncReplication)
-            && Objects.equals(this.syncMessageFlush, updateTopicObject.syncMessageFlush)
-            && Objects.equals(this.description, updateTopicObject.description)
-            && Objects.equals(this.sensitiveWord, updateTopicObject.sensitiveWord);
+        UpdateTopicObject that = (UpdateTopicObject) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.retentionTime, that.retentionTime)
+            && Objects.equals(this.syncReplication, that.syncReplication)
+            && Objects.equals(this.syncMessageFlush, that.syncMessageFlush)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.sensitiveWord, that.sensitiveWord);
     }
 
     @Override

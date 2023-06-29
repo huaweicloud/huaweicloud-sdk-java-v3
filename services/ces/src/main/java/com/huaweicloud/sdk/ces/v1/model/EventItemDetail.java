@@ -86,22 +86,15 @@ public class EventItemDetail {
             if (value == null) {
                 return null;
             }
-            EventStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventStateEnum(value));
         }
 
         public static EventStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class EventItemDetail {
             if (value == null) {
                 return null;
             }
-            EventLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EventLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EventLevelEnum(value));
         }
 
         public static EventLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EventLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -364,22 +350,18 @@ public class EventItemDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventItemDetail eventItemDetail = (EventItemDetail) o;
-        return Objects.equals(this.content, eventItemDetail.content)
-            && Objects.equals(this.groupId, eventItemDetail.groupId)
-            && Objects.equals(this.resourceId, eventItemDetail.resourceId)
-            && Objects.equals(this.resourceName, eventItemDetail.resourceName)
-            && Objects.equals(this.eventState, eventItemDetail.eventState)
-            && Objects.equals(this.eventLevel, eventItemDetail.eventLevel)
-            && Objects.equals(this.eventUser, eventItemDetail.eventUser)
-            && Objects.equals(this.eventType, eventItemDetail.eventType);
+        EventItemDetail that = (EventItemDetail) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.eventState, that.eventState) && Objects.equals(this.eventLevel, that.eventLevel)
+            && Objects.equals(this.eventUser, that.eventUser) && Objects.equals(this.eventType, that.eventType);
     }
 
     @Override

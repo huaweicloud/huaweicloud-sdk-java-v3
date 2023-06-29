@@ -1,42 +1,32 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ProjectTagItem
  */
-public class ProjectTagItem  {
-
+public class ProjectTagItem {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="values")
-    
+    @JsonProperty(value = "values")
+
     private List<String> values = null;
-    
+
     public ProjectTagItem withKey(String key) {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 标签键。
@@ -50,16 +40,13 @@ public class ProjectTagItem  {
         this.key = key;
     }
 
-    
-
     public ProjectTagItem withValues(List<String> values) {
         this.values = values;
         return this;
     }
 
-    
     public ProjectTagItem addValuesItem(String valuesItem) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         this.values.add(valuesItem);
@@ -67,7 +54,7 @@ public class ProjectTagItem  {
     }
 
     public ProjectTagItem withValues(Consumer<List<String>> valuesSetter) {
-        if(this.values == null) {
+        if (this.values == null) {
             this.values = new ArrayList<>();
         }
         valuesSetter.accept(this.values);
@@ -86,24 +73,23 @@ public class ProjectTagItem  {
         this.values = values;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectTagItem projectTagItem = (ProjectTagItem) o;
-        return Objects.equals(this.key, projectTagItem.key) &&
-            Objects.equals(this.values, projectTagItem.values);
+        ProjectTagItem that = (ProjectTagItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, values);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,6 +99,7 @@ public class ProjectTagItem  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -123,8 +110,5 @@ public class ProjectTagItem  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

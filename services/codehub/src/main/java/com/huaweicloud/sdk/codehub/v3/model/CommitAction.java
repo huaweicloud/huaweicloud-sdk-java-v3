@@ -165,20 +165,18 @@ public class CommitAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitAction commitAction = (CommitAction) o;
-        return Objects.equals(this.action, commitAction.action) && Objects.equals(this.filePath, commitAction.filePath)
-            && Objects.equals(this.previousPath, commitAction.previousPath)
-            && Objects.equals(this.content, commitAction.content)
-            && Objects.equals(this.encoding, commitAction.encoding)
-            && Objects.equals(this.lastCommitId, commitAction.lastCommitId)
-            && Objects.equals(this.executeFilemode, commitAction.executeFilemode);
+        CommitAction that = (CommitAction) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.previousPath, that.previousPath) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.encoding, that.encoding) && Objects.equals(this.lastCommitId, that.lastCommitId)
+            && Objects.equals(this.executeFilemode, that.executeFilemode);
     }
 
     @Override

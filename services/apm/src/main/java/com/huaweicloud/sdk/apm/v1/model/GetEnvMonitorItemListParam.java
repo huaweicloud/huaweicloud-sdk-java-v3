@@ -77,17 +77,16 @@ public class GetEnvMonitorItemListParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetEnvMonitorItemListParam getEnvMonitorItemListParam = (GetEnvMonitorItemListParam) o;
-        return Objects.equals(this.envId, getEnvMonitorItemListParam.envId)
-            && Objects.equals(this.page, getEnvMonitorItemListParam.page)
-            && Objects.equals(this.pageSize, getEnvMonitorItemListParam.pageSize);
+        GetEnvMonitorItemListParam that = (GetEnvMonitorItemListParam) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

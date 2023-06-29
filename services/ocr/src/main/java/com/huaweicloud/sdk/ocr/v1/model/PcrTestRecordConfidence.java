@@ -99,18 +99,16 @@ public class PcrTestRecordConfidence {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PcrTestRecordConfidence pcrTestRecordConfidence = (PcrTestRecordConfidence) o;
-        return Objects.equals(this.name, pcrTestRecordConfidence.name)
-            && Objects.equals(this.samplingTime, pcrTestRecordConfidence.samplingTime)
-            && Objects.equals(this.testTime, pcrTestRecordConfidence.testTime)
-            && Objects.equals(this.testResult, pcrTestRecordConfidence.testResult);
+        PcrTestRecordConfidence that = (PcrTestRecordConfidence) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.samplingTime, that.samplingTime)
+            && Objects.equals(this.testTime, that.testTime) && Objects.equals(this.testResult, that.testResult);
     }
 
     @Override

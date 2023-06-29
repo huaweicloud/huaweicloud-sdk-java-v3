@@ -194,20 +194,17 @@ public class NeutronListFirewallPoliciesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListFirewallPoliciesRequest neutronListFirewallPoliciesRequest = (NeutronListFirewallPoliciesRequest) o;
-        return Objects.equals(this.limit, neutronListFirewallPoliciesRequest.limit)
-            && Objects.equals(this.marker, neutronListFirewallPoliciesRequest.marker)
-            && Objects.equals(this.id, neutronListFirewallPoliciesRequest.id)
-            && Objects.equals(this.name, neutronListFirewallPoliciesRequest.name)
-            && Objects.equals(this.description, neutronListFirewallPoliciesRequest.description)
-            && Objects.equals(this.tenantId, neutronListFirewallPoliciesRequest.tenantId);
+        NeutronListFirewallPoliciesRequest that = (NeutronListFirewallPoliciesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.tenantId, that.tenantId);
     }
 
     @Override

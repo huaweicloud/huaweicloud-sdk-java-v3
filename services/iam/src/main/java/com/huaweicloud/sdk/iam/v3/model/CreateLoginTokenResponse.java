@@ -68,16 +68,16 @@ public class CreateLoginTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLoginTokenResponse createLoginTokenResponse = (CreateLoginTokenResponse) o;
-        return Objects.equals(this.logintoken, createLoginTokenResponse.logintoken)
-            && Objects.equals(this.xSubjectLoginToken, createLoginTokenResponse.xSubjectLoginToken);
+        CreateLoginTokenResponse that = (CreateLoginTokenResponse) obj;
+        return Objects.equals(this.logintoken, that.logintoken)
+            && Objects.equals(this.xSubjectLoginToken, that.xSubjectLoginToken);
     }
 
     @Override

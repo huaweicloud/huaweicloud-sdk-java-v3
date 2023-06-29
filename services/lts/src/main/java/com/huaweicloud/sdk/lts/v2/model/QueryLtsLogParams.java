@@ -96,22 +96,15 @@ public class QueryLtsLogParams {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SearchTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SearchTypeEnum(value));
         }
 
         public static SearchTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -354,25 +347,20 @@ public class QueryLtsLogParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryLtsLogParams queryLtsLogParams = (QueryLtsLogParams) o;
-        return Objects.equals(this.startTime, queryLtsLogParams.startTime)
-            && Objects.equals(this.endTime, queryLtsLogParams.endTime)
-            && Objects.equals(this.labels, queryLtsLogParams.labels)
-            && Objects.equals(this.isCount, queryLtsLogParams.isCount)
-            && Objects.equals(this.keywords, queryLtsLogParams.keywords)
-            && Objects.equals(this.lineNum, queryLtsLogParams.lineNum)
-            && Objects.equals(this.isDesc, queryLtsLogParams.isDesc)
-            && Objects.equals(this.searchType, queryLtsLogParams.searchType)
-            && Objects.equals(this.limit, queryLtsLogParams.limit)
-            && Objects.equals(this.highlight, queryLtsLogParams.highlight)
-            && Objects.equals(this.isIterative, queryLtsLogParams.isIterative);
+        QueryLtsLogParams that = (QueryLtsLogParams) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.isCount, that.isCount)
+            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.isDesc, that.isDesc) && Objects.equals(this.searchType, that.searchType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.highlight, that.highlight)
+            && Objects.equals(this.isIterative, that.isIterative);
     }
 
     @Override

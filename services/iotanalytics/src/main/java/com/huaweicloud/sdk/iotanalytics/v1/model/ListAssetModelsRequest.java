@@ -80,17 +80,16 @@ public class ListAssetModelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetModelsRequest listAssetModelsRequest = (ListAssetModelsRequest) o;
-        return Objects.equals(this.filter, listAssetModelsRequest.filter)
-            && Objects.equals(this.limit, listAssetModelsRequest.limit)
-            && Objects.equals(this.offset, listAssetModelsRequest.offset);
+        ListAssetModelsRequest that = (ListAssetModelsRequest) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -126,19 +126,17 @@ public class ListTakeOverTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTakeOverTaskRequest listTakeOverTaskRequest = (ListTakeOverTaskRequest) o;
-        return Objects.equals(this.xSdkDate, listTakeOverTaskRequest.xSdkDate)
-            && Objects.equals(this.status, listTakeOverTaskRequest.status)
-            && Objects.equals(this.taskId, listTakeOverTaskRequest.taskId)
-            && Objects.equals(this.page, listTakeOverTaskRequest.page)
-            && Objects.equals(this.size, listTakeOverTaskRequest.size);
+        ListTakeOverTaskRequest that = (ListTakeOverTaskRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskId, that.taskId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

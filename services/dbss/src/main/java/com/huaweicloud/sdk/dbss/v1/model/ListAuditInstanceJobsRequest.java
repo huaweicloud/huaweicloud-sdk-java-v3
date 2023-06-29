@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAuditInstanceJobsRequest  {
-
+public class ListAuditInstanceJobsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resource_id")
-    
+    @JsonProperty(value = "resource_id")
 
     private String resourceId;
 
@@ -28,9 +19,6 @@ public class ListAuditInstanceJobsRequest  {
         this.resourceId = resourceId;
         return this;
     }
-
-    
-
 
     /**
      * 资源ID
@@ -44,23 +32,23 @@ public class ListAuditInstanceJobsRequest  {
         this.resourceId = resourceId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditInstanceJobsRequest listAuditInstanceJobsRequest = (ListAuditInstanceJobsRequest) o;
-        return Objects.equals(this.resourceId, listAuditInstanceJobsRequest.resourceId);
+        ListAuditInstanceJobsRequest that = (ListAuditInstanceJobsRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resourceId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class ListAuditInstanceJobsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class ListAuditInstanceJobsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

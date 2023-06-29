@@ -55,16 +55,15 @@ public class CheckSqlRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckSqlRequestBody checkSqlRequestBody = (CheckSqlRequestBody) o;
-        return Objects.equals(this.sql, checkSqlRequestBody.sql)
-            && Objects.equals(this.currentdb, checkSqlRequestBody.currentdb);
+        CheckSqlRequestBody that = (CheckSqlRequestBody) obj;
+        return Objects.equals(this.sql, that.sql) && Objects.equals(this.currentdb, that.currentdb);
     }
 
     @Override

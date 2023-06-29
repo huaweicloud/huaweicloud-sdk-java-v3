@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v3.model.EnvParam;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateEnvRequest  {
-
+public class UpdateEnvRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="environment_id")
-    
+    @JsonProperty(value = "environment_id")
 
     private String environmentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private EnvParam body;
 
@@ -35,9 +25,6 @@ public class UpdateEnvRequest  {
         this.environmentId = environmentId;
         return this;
     }
-
-    
-
 
     /**
      * 环境id
@@ -51,22 +38,19 @@ public class UpdateEnvRequest  {
         this.environmentId = environmentId;
     }
 
-    
-
     public UpdateEnvRequest withBody(EnvParam body) {
         this.body = body;
         return this;
     }
 
     public UpdateEnvRequest withBody(Consumer<EnvParam> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new EnvParam();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class UpdateEnvRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEnvRequest updateEnvRequest = (UpdateEnvRequest) o;
-        return Objects.equals(this.environmentId, updateEnvRequest.environmentId) &&
-            Objects.equals(this.body, updateEnvRequest.body);
+        UpdateEnvRequest that = (UpdateEnvRequest) obj;
+        return Objects.equals(this.environmentId, that.environmentId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(environmentId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class UpdateEnvRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class UpdateEnvRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

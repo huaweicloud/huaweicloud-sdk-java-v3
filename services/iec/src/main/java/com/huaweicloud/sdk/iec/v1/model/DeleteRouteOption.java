@@ -33,15 +33,15 @@ public class DeleteRouteOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRouteOption deleteRouteOption = (DeleteRouteOption) o;
-        return Objects.equals(this.destination, deleteRouteOption.destination);
+        DeleteRouteOption that = (DeleteRouteOption) obj;
+        return Objects.equals(this.destination, that.destination);
     }
 
     @Override

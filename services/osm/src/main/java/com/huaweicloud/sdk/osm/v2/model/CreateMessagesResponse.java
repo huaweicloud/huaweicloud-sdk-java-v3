@@ -56,16 +56,15 @@ public class CreateMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMessagesResponse createMessagesResponse = (CreateMessagesResponse) o;
-        return Objects.equals(this.errorCode, createMessagesResponse.errorCode)
-            && Objects.equals(this.errorMsg, createMessagesResponse.errorMsg);
+        CreateMessagesResponse that = (CreateMessagesResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

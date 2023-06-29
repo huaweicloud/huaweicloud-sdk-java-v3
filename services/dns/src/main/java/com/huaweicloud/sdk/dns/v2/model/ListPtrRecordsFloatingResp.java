@@ -259,24 +259,20 @@ public class ListPtrRecordsFloatingResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPtrRecordsFloatingResp listPtrRecordsFloatingResp = (ListPtrRecordsFloatingResp) o;
-        return Objects.equals(this.id, listPtrRecordsFloatingResp.id)
-            && Objects.equals(this.ptrdname, listPtrRecordsFloatingResp.ptrdname)
-            && Objects.equals(this.description, listPtrRecordsFloatingResp.description)
-            && Objects.equals(this.ttl, listPtrRecordsFloatingResp.ttl)
-            && Objects.equals(this.address, listPtrRecordsFloatingResp.address)
-            && Objects.equals(this.status, listPtrRecordsFloatingResp.status)
-            && Objects.equals(this.action, listPtrRecordsFloatingResp.action)
-            && Objects.equals(this.links, listPtrRecordsFloatingResp.links)
-            && Objects.equals(this.tags, listPtrRecordsFloatingResp.tags)
-            && Objects.equals(this.enterpriseProjectId, listPtrRecordsFloatingResp.enterpriseProjectId);
+        ListPtrRecordsFloatingResp that = (ListPtrRecordsFloatingResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ptrdname, that.ptrdname)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

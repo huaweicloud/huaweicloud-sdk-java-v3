@@ -88,17 +88,16 @@ public class ListAimTemplateMaterialsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimTemplateMaterialsResponse listAimTemplateMaterialsResponse = (ListAimTemplateMaterialsResponse) o;
-        return Objects.equals(this.status, listAimTemplateMaterialsResponse.status)
-            && Objects.equals(this.message, listAimTemplateMaterialsResponse.message)
-            && Objects.equals(this.data, listAimTemplateMaterialsResponse.data);
+        ListAimTemplateMaterialsResponse that = (ListAimTemplateMaterialsResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

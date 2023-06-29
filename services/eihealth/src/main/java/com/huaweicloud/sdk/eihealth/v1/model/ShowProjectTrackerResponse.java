@@ -75,16 +75,16 @@ public class ShowProjectTrackerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectTrackerResponse showProjectTrackerResponse = (ShowProjectTrackerResponse) o;
-        return Objects.equals(this.bucketLifecycle, showProjectTrackerResponse.bucketLifecycle)
-            && Objects.equals(this.dataEvent, showProjectTrackerResponse.dataEvent);
+        ShowProjectTrackerResponse that = (ShowProjectTrackerResponse) obj;
+        return Objects.equals(this.bucketLifecycle, that.bucketLifecycle)
+            && Objects.equals(this.dataEvent, that.dataEvent);
     }
 
     @Override

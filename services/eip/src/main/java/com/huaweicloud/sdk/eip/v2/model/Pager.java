@@ -65,22 +65,15 @@ public class Pager {
             if (value == null) {
                 return null;
             }
-            RelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelEnum(value));
         }
 
         public static RelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,15 +130,15 @@ public class Pager {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Pager pager = (Pager) o;
-        return Objects.equals(this.href, pager.href) && Objects.equals(this.rel, pager.rel);
+        Pager that = (Pager) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel);
     }
 
     @Override

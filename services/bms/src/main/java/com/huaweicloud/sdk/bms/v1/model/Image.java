@@ -75,15 +75,15 @@ public class Image {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Image image = (Image) o;
-        return Objects.equals(this.id, image.id) && Objects.equals(this.links, image.links);
+        Image that = (Image) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links);
     }
 
     @Override

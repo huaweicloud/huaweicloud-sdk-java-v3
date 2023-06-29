@@ -259,21 +259,19 @@ public class AddDevice {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddDevice addDevice = (AddDevice) o;
-        return Objects.equals(this.deviceId, addDevice.deviceId) && Objects.equals(this.nodeId, addDevice.nodeId)
-            && Objects.equals(this.deviceName, addDevice.deviceName)
-            && Objects.equals(this.productId, addDevice.productId) && Objects.equals(this.authInfo, addDevice.authInfo)
-            && Objects.equals(this.description, addDevice.description)
-            && Objects.equals(this.gatewayId, addDevice.gatewayId) && Objects.equals(this.appId, addDevice.appId)
-            && Objects.equals(this.extensionInfo, addDevice.extensionInfo)
-            && Objects.equals(this.shadow, addDevice.shadow);
+        AddDevice that = (AddDevice) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.authInfo, that.authInfo) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.extensionInfo, that.extensionInfo) && Objects.equals(this.shadow, that.shadow);
     }
 
     @Override

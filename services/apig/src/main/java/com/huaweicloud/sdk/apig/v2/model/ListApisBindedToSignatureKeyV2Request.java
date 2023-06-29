@@ -189,23 +189,18 @@ public class ListApisBindedToSignatureKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisBindedToSignatureKeyV2Request listApisBindedToSignatureKeyV2Request =
-            (ListApisBindedToSignatureKeyV2Request) o;
-        return Objects.equals(this.instanceId, listApisBindedToSignatureKeyV2Request.instanceId)
-            && Objects.equals(this.offset, listApisBindedToSignatureKeyV2Request.offset)
-            && Objects.equals(this.limit, listApisBindedToSignatureKeyV2Request.limit)
-            && Objects.equals(this.signId, listApisBindedToSignatureKeyV2Request.signId)
-            && Objects.equals(this.envId, listApisBindedToSignatureKeyV2Request.envId)
-            && Objects.equals(this.apiId, listApisBindedToSignatureKeyV2Request.apiId)
-            && Objects.equals(this.apiName, listApisBindedToSignatureKeyV2Request.apiName)
-            && Objects.equals(this.groupId, listApisBindedToSignatureKeyV2Request.groupId);
+        ListApisBindedToSignatureKeyV2Request that = (ListApisBindedToSignatureKeyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.signId, that.signId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.apiName, that.apiName) && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

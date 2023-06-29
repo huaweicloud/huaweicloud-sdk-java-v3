@@ -120,18 +120,17 @@ public class PutVolumeGroups {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutVolumeGroups putVolumeGroups = (PutVolumeGroups) o;
-        return Objects.equals(this.logicalVolumes, putVolumeGroups.logicalVolumes)
-            && Objects.equals(this.id, putVolumeGroups.id)
-            && Objects.equals(this.needMigration, putVolumeGroups.needMigration)
-            && Objects.equals(this.adjustSize, putVolumeGroups.adjustSize);
+        PutVolumeGroups that = (PutVolumeGroups) obj;
+        return Objects.equals(this.logicalVolumes, that.logicalVolumes) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.needMigration, that.needMigration)
+            && Objects.equals(this.adjustSize, that.adjustSize);
     }
 
     @Override

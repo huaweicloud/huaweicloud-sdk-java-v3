@@ -165,21 +165,18 @@ public class ListQualityTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQualityTemplatesRequest listQualityTemplatesRequest = (ListQualityTemplatesRequest) o;
-        return Objects.equals(this.categoryId, listQualityTemplatesRequest.categoryId)
-            && Objects.equals(this.name, listQualityTemplatesRequest.name)
-            && Objects.equals(this.systemTemplate, listQualityTemplatesRequest.systemTemplate)
-            && Objects.equals(this.creator, listQualityTemplatesRequest.creator)
-            && Objects.equals(this.limit, listQualityTemplatesRequest.limit)
-            && Objects.equals(this.offset, listQualityTemplatesRequest.offset)
-            && Objects.equals(this.workspace, listQualityTemplatesRequest.workspace);
+        ListQualityTemplatesRequest that = (ListQualityTemplatesRequest) obj;
+        return Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.systemTemplate, that.systemTemplate) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

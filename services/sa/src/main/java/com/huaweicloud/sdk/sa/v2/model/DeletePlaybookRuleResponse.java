@@ -80,17 +80,16 @@ public class DeletePlaybookRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeletePlaybookRuleResponse deletePlaybookRuleResponse = (DeletePlaybookRuleResponse) o;
-        return Objects.equals(this.code, deletePlaybookRuleResponse.code)
-            && Objects.equals(this.message, deletePlaybookRuleResponse.message)
-            && Objects.equals(this.xRequestId, deletePlaybookRuleResponse.xRequestId);
+        DeletePlaybookRuleResponse that = (DeletePlaybookRuleResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ResourceConfigDTO
  */
-public class ResourceConfigDTO  {
-
+public class ResourceConfigDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
 
     private Float cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="memory")
-    
+    @JsonProperty(value = "memory")
 
     private Float memory;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="gpu")
-    
+    @JsonProperty(value = "gpu")
 
     private Float gpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="npu")
-    
+    @JsonProperty(value = "npu")
 
     private Float npu;
 
@@ -45,9 +34,6 @@ public class ResourceConfigDTO  {
         this.cpu = cpu;
         return this;
     }
-
-    
-
 
     /**
      * cpu个数
@@ -63,15 +49,10 @@ public class ResourceConfigDTO  {
         this.cpu = cpu;
     }
 
-    
-
     public ResourceConfigDTO withMemory(Float memory) {
         this.memory = memory;
         return this;
     }
-
-    
-
 
     /**
      * 内存大小
@@ -87,15 +68,10 @@ public class ResourceConfigDTO  {
         this.memory = memory;
     }
 
-    
-
     public ResourceConfigDTO withGpu(Float gpu) {
         this.gpu = gpu;
         return this;
     }
-
-    
-
 
     /**
      * gpu内存大小，单位为M
@@ -111,15 +87,10 @@ public class ResourceConfigDTO  {
         this.gpu = gpu;
     }
 
-    
-
     public ResourceConfigDTO withNpu(Float npu) {
         this.npu = npu;
         return this;
     }
-
-    
-
 
     /**
      * 使用npu加速卡个数
@@ -135,26 +106,24 @@ public class ResourceConfigDTO  {
         this.npu = npu;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceConfigDTO resourceConfigDTO = (ResourceConfigDTO) o;
-        return Objects.equals(this.cpu, resourceConfigDTO.cpu) &&
-            Objects.equals(this.memory, resourceConfigDTO.memory) &&
-            Objects.equals(this.gpu, resourceConfigDTO.gpu) &&
-            Objects.equals(this.npu, resourceConfigDTO.npu);
+        ResourceConfigDTO that = (ResourceConfigDTO) obj;
+        return Objects.equals(this.cpu, that.cpu) && Objects.equals(this.memory, that.memory)
+            && Objects.equals(this.gpu, that.gpu) && Objects.equals(this.npu, that.npu);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(cpu, memory, gpu, npu);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -166,6 +135,7 @@ public class ResourceConfigDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -176,8 +146,5 @@ public class ResourceConfigDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

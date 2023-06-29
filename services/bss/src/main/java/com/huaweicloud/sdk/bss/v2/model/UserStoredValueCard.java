@@ -165,21 +165,18 @@ public class UserStoredValueCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserStoredValueCard userStoredValueCard = (UserStoredValueCard) o;
-        return Objects.equals(this.cardId, userStoredValueCard.cardId)
-            && Objects.equals(this.cardName, userStoredValueCard.cardName)
-            && Objects.equals(this.status, userStoredValueCard.status)
-            && Objects.equals(this.faceValue, userStoredValueCard.faceValue)
-            && Objects.equals(this.balance, userStoredValueCard.balance)
-            && Objects.equals(this.effectiveTime, userStoredValueCard.effectiveTime)
-            && Objects.equals(this.expireTime, userStoredValueCard.expireTime);
+        UserStoredValueCard that = (UserStoredValueCard) obj;
+        return Objects.equals(this.cardId, that.cardId) && Objects.equals(this.cardName, that.cardName)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.faceValue, that.faceValue)
+            && Objects.equals(this.balance, that.balance) && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

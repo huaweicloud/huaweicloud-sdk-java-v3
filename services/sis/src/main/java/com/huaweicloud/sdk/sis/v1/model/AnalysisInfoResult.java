@@ -77,17 +77,16 @@ public class AnalysisInfoResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AnalysisInfoResult analysisInfoResult = (AnalysisInfoResult) o;
-        return Objects.equals(this.role, analysisInfoResult.role)
-            && Objects.equals(this.emotion, analysisInfoResult.emotion)
-            && Objects.equals(this.speed, analysisInfoResult.speed);
+        AnalysisInfoResult that = (AnalysisInfoResult) obj;
+        return Objects.equals(this.role, that.role) && Objects.equals(this.emotion, that.emotion)
+            && Objects.equals(this.speed, that.speed);
     }
 
     @Override

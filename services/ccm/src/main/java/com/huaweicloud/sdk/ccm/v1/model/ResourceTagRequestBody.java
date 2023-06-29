@@ -43,15 +43,15 @@ public class ResourceTagRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceTagRequestBody resourceTagRequestBody = (ResourceTagRequestBody) o;
-        return Objects.equals(this.tag, resourceTagRequestBody.tag);
+        ResourceTagRequestBody that = (ResourceTagRequestBody) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdateValueListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateValueListRequest updateValueListRequest = (UpdateValueListRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateValueListRequest.enterpriseProjectId)
-            && Objects.equals(this.valuelistid, updateValueListRequest.valuelistid)
-            && Objects.equals(this.body, updateValueListRequest.body);
+        UpdateValueListRequest that = (UpdateValueListRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.valuelistid, that.valuelistid) && Objects.equals(this.body, that.body);
     }
 
     @Override

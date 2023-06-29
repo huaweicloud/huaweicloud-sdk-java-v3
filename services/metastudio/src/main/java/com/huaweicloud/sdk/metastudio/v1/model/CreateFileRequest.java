@@ -113,18 +113,16 @@ public class CreateFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFileRequest createFileRequest = (CreateFileRequest) o;
-        return Objects.equals(this.authorization, createFileRequest.authorization)
-            && Objects.equals(this.xSdkDate, createFileRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, createFileRequest.xAppUserId)
-            && Objects.equals(this.body, createFileRequest.body);
+        CreateFileRequest that = (CreateFileRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class BatchSetAttributesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSetAttributesResponse batchSetAttributesResponse = (BatchSetAttributesResponse) o;
-        return Objects.equals(this.body, batchSetAttributesResponse.body);
+        BatchSetAttributesResponse that = (BatchSetAttributesResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

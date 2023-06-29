@@ -235,22 +235,21 @@ public class AbnormalEvent {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AbnormalEvent abnormalEvent = (AbnormalEvent) o;
-        return Objects.equals(this.time, abnormalEvent.time) && Objects.equals(this.uid, abnormalEvent.uid)
-            && Objects.equals(this.roomId, abnormalEvent.roomId) && Objects.equals(this.stage, abnormalEvent.stage)
-            && Objects.equals(this.location, abnormalEvent.location)
-            && Objects.equals(this.peerUid, abnormalEvent.peerUid)
-            && Objects.equals(this.abnormalType, abnormalEvent.abnormalType)
-            && Objects.equals(this.abnormalTypeDesc, abnormalEvent.abnormalTypeDesc)
-            && Objects.equals(this.abnormalFactor, abnormalEvent.abnormalFactor)
-            && Objects.equals(this.abnormalFactorDesc, abnormalEvent.abnormalFactorDesc);
+        AbnormalEvent that = (AbnormalEvent) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.stage, that.stage)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.peerUid, that.peerUid)
+            && Objects.equals(this.abnormalType, that.abnormalType)
+            && Objects.equals(this.abnormalTypeDesc, that.abnormalTypeDesc)
+            && Objects.equals(this.abnormalFactor, that.abnormalFactor)
+            && Objects.equals(this.abnormalFactorDesc, that.abnormalFactorDesc);
     }
 
     @Override

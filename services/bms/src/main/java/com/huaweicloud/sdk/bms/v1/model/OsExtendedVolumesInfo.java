@@ -71,22 +71,15 @@ public class OsExtendedVolumesInfo {
             if (value == null) {
                 return null;
             }
-            BootIndexEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BootIndexEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BootIndexEnum(value));
         }
 
         public static BootIndexEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BootIndexEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,18 +175,16 @@ public class OsExtendedVolumesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsExtendedVolumesInfo osExtendedVolumesInfo = (OsExtendedVolumesInfo) o;
-        return Objects.equals(this.id, osExtendedVolumesInfo.id)
-            && Objects.equals(this.deleteOnTermination, osExtendedVolumesInfo.deleteOnTermination)
-            && Objects.equals(this.bootIndex, osExtendedVolumesInfo.bootIndex)
-            && Objects.equals(this.device, osExtendedVolumesInfo.device);
+        OsExtendedVolumesInfo that = (OsExtendedVolumesInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
+            && Objects.equals(this.bootIndex, that.bootIndex) && Objects.equals(this.device, that.device);
     }
 
     @Override

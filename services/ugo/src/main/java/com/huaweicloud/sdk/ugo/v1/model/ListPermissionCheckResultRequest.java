@@ -79,17 +79,16 @@ public class ListPermissionCheckResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPermissionCheckResultRequest listPermissionCheckResultRequest = (ListPermissionCheckResultRequest) o;
-        return Objects.equals(this.migrationProjectId, listPermissionCheckResultRequest.migrationProjectId)
-            && Objects.equals(this.offset, listPermissionCheckResultRequest.offset)
-            && Objects.equals(this.limit, listPermissionCheckResultRequest.limit);
+        ListPermissionCheckResultRequest that = (ListPermissionCheckResultRequest) obj;
+        return Objects.equals(this.migrationProjectId, that.migrationProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

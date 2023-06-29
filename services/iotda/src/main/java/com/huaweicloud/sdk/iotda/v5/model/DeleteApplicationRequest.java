@@ -55,16 +55,15 @@ public class DeleteApplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteApplicationRequest deleteApplicationRequest = (DeleteApplicationRequest) o;
-        return Objects.equals(this.instanceId, deleteApplicationRequest.instanceId)
-            && Objects.equals(this.appId, deleteApplicationRequest.appId);
+        DeleteApplicationRequest that = (DeleteApplicationRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

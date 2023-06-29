@@ -213,23 +213,19 @@ public class AppChangeResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppChangeResponseInfo appChangeResponseInfo = (AppChangeResponseInfo) o;
-        return Objects.equals(this.agentId, appChangeResponseInfo.agentId)
-            && Objects.equals(this.variationType, appChangeResponseInfo.variationType)
-            && Objects.equals(this.hostId, appChangeResponseInfo.hostId)
-            && Objects.equals(this.appName, appChangeResponseInfo.appName)
-            && Objects.equals(this.hostName, appChangeResponseInfo.hostName)
-            && Objects.equals(this.hostIp, appChangeResponseInfo.hostIp)
-            && Objects.equals(this.version, appChangeResponseInfo.version)
-            && Objects.equals(this.updateTime, appChangeResponseInfo.updateTime)
-            && Objects.equals(this.recentScanTime, appChangeResponseInfo.recentScanTime);
+        AppChangeResponseInfo that = (AppChangeResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.variationType, that.variationType)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

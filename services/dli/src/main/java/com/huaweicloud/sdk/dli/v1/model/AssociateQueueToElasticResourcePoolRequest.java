@@ -66,18 +66,16 @@ public class AssociateQueueToElasticResourcePoolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateQueueToElasticResourcePoolRequest associateQueueToElasticResourcePoolRequest =
-            (AssociateQueueToElasticResourcePoolRequest) o;
-        return Objects.equals(this.elasticResourcePoolName,
-            associateQueueToElasticResourcePoolRequest.elasticResourcePoolName)
-            && Objects.equals(this.body, associateQueueToElasticResourcePoolRequest.body);
+        AssociateQueueToElasticResourcePoolRequest that = (AssociateQueueToElasticResourcePoolRequest) obj;
+        return Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

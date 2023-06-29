@@ -120,18 +120,17 @@ public class EnableConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableConfigurationResponse enableConfigurationResponse = (EnableConfigurationResponse) o;
-        return Objects.equals(this.configurationId, enableConfigurationResponse.configurationId)
-            && Objects.equals(this.configurationName, enableConfigurationResponse.configurationName)
-            && Objects.equals(this.success, enableConfigurationResponse.success)
-            && Objects.equals(this.applyResults, enableConfigurationResponse.applyResults);
+        EnableConfigurationResponse that = (EnableConfigurationResponse) obj;
+        return Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.configurationName, that.configurationName)
+            && Objects.equals(this.success, that.success) && Objects.equals(this.applyResults, that.applyResults);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListBandwidthTimelineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBandwidthTimelineResponse listBandwidthTimelineResponse = (ListBandwidthTimelineResponse) o;
-        return Objects.equals(this.body, listBandwidthTimelineResponse.body);
+        ListBandwidthTimelineResponse that = (ListBandwidthTimelineResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

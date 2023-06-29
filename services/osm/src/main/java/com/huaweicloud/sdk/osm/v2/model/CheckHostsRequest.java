@@ -141,19 +141,17 @@ public class CheckHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckHostsRequest checkHostsRequest = (CheckHostsRequest) o;
-        return Objects.equals(this.authorizationDetailId, checkHostsRequest.authorizationDetailId)
-            && Objects.equals(this.xSite, checkHostsRequest.xSite)
-            && Objects.equals(this.xLanguage, checkHostsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, checkHostsRequest.xTimeZone)
-            && Objects.equals(this.body, checkHostsRequest.body);
+        CheckHostsRequest that = (CheckHostsRequest) obj;
+        return Objects.equals(this.authorizationDetailId, that.authorizationDetailId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone) && Objects.equals(this.body, that.body);
     }
 
     @Override

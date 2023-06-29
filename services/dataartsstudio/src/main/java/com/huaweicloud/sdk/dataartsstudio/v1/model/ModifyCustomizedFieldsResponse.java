@@ -34,15 +34,15 @@ public class ModifyCustomizedFieldsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyCustomizedFieldsResponse modifyCustomizedFieldsResponse = (ModifyCustomizedFieldsResponse) o;
-        return Objects.equals(this.data, modifyCustomizedFieldsResponse.data);
+        ModifyCustomizedFieldsResponse that = (ModifyCustomizedFieldsResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

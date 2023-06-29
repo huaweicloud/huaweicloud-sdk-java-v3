@@ -121,19 +121,18 @@ public class ExitEntryPermitEndorsementInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExitEntryPermitEndorsementInfo exitEntryPermitEndorsementInfo = (ExitEntryPermitEndorsementInfo) o;
-        return Objects.equals(this.endorsementType, exitEntryPermitEndorsementInfo.endorsementType)
-            && Objects.equals(this.validRoundTrips, exitEntryPermitEndorsementInfo.validRoundTrips)
-            && Objects.equals(this.endorsementValidPeriod, exitEntryPermitEndorsementInfo.endorsementValidPeriod)
-            && Objects.equals(this.remark, exitEntryPermitEndorsementInfo.remark)
-            && Objects.equals(this.issueInfo, exitEntryPermitEndorsementInfo.issueInfo);
+        ExitEntryPermitEndorsementInfo that = (ExitEntryPermitEndorsementInfo) obj;
+        return Objects.equals(this.endorsementType, that.endorsementType)
+            && Objects.equals(this.validRoundTrips, that.validRoundTrips)
+            && Objects.equals(this.endorsementValidPeriod, that.endorsementValidPeriod)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.issueInfo, that.issueInfo);
     }
 
     @Override

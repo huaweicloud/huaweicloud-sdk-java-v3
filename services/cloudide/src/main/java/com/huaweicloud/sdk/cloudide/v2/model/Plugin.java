@@ -55,15 +55,15 @@ public class Plugin {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Plugin plugin = (Plugin) o;
-        return Objects.equals(this.attribute, plugin.attribute) && Objects.equals(this.name, plugin.name);
+        Plugin that = (Plugin) obj;
+        return Objects.equals(this.attribute, that.attribute) && Objects.equals(this.name, that.name);
     }
 
     @Override

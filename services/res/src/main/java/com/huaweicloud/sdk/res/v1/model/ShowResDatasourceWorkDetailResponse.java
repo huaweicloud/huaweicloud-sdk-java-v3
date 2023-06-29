@@ -272,24 +272,20 @@ public class ShowResDatasourceWorkDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResDatasourceWorkDetailResponse showResDatasourceWorkDetailResponse =
-            (ShowResDatasourceWorkDetailResponse) o;
-        return Objects.equals(this.errorCount, showResDatasourceWorkDetailResponse.errorCount)
-            && Objects.equals(this.dataStruct, showResDatasourceWorkDetailResponse.dataStruct)
-            && Objects.equals(this.errorSamples, showResDatasourceWorkDetailResponse.errorSamples)
-            && Objects.equals(this.inspectResult, showResDatasourceWorkDetailResponse.inspectResult)
-            && Objects.equals(this.isSuccess, showResDatasourceWorkDetailResponse.isSuccess)
-            && Objects.equals(this.message, showResDatasourceWorkDetailResponse.message)
-            && Objects.equals(this.legalRate, showResDatasourceWorkDetailResponse.legalRate)
-            && Objects.equals(this.inspectRstGeneratedTime, showResDatasourceWorkDetailResponse.inspectRstGeneratedTime)
-            && Objects.equals(this.finalReport, showResDatasourceWorkDetailResponse.finalReport);
+        ShowResDatasourceWorkDetailResponse that = (ShowResDatasourceWorkDetailResponse) obj;
+        return Objects.equals(this.errorCount, that.errorCount) && Objects.equals(this.dataStruct, that.dataStruct)
+            && Objects.equals(this.errorSamples, that.errorSamples)
+            && Objects.equals(this.inspectResult, that.inspectResult) && Objects.equals(this.isSuccess, that.isSuccess)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.legalRate, that.legalRate)
+            && Objects.equals(this.inspectRstGeneratedTime, that.inspectRstGeneratedTime)
+            && Objects.equals(this.finalReport, that.finalReport);
     }
 
     @Override

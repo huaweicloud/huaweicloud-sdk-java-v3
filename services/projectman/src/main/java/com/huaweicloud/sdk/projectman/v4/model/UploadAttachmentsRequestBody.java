@@ -64,15 +64,15 @@ public class UploadAttachmentsRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAttachmentsRequestBody uploadAttachmentsRequestBody = (UploadAttachmentsRequestBody) o;
-        return Objects.equals(this.attachment, uploadAttachmentsRequestBody.attachment);
+        UploadAttachmentsRequestBody that = (UploadAttachmentsRequestBody) obj;
+        return Objects.equals(this.attachment, that.attachment);
     }
 
     @Override

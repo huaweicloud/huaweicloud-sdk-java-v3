@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.BatchSwitchesRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class SwitchRiskRuleRequest  {
-
+public class SwitchRiskRuleRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private BatchSwitchesRequest body;
 
@@ -35,9 +25,6 @@ public class SwitchRiskRuleRequest  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID
@@ -51,22 +38,19 @@ public class SwitchRiskRuleRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public SwitchRiskRuleRequest withBody(BatchSwitchesRequest body) {
         this.body = body;
         return this;
     }
 
     public SwitchRiskRuleRequest withBody(Consumer<BatchSwitchesRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new BatchSwitchesRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class SwitchRiskRuleRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SwitchRiskRuleRequest switchRiskRuleRequest = (SwitchRiskRuleRequest) o;
-        return Objects.equals(this.instanceId, switchRiskRuleRequest.instanceId) &&
-            Objects.equals(this.body, switchRiskRuleRequest.body);
+        SwitchRiskRuleRequest that = (SwitchRiskRuleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class SwitchRiskRuleRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class SwitchRiskRuleRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

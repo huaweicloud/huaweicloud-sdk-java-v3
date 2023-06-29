@@ -100,17 +100,16 @@ public class PoolMemVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PoolMemVO poolMemVO = (PoolMemVO) o;
-        return Objects.equals(this.id, poolMemVO.id) && Objects.equals(this.cid, poolMemVO.cid)
-            && Objects.equals(this.simPricePlanId, poolMemVO.simPricePlanId)
-            && Objects.equals(this.flowUsed, poolMemVO.flowUsed);
+        PoolMemVO that = (PoolMemVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.cid, that.cid)
+            && Objects.equals(this.simPricePlanId, that.simPricePlanId) && Objects.equals(this.flowUsed, that.flowUsed);
     }
 
     @Override

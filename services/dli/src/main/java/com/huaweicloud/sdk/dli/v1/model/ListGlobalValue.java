@@ -209,22 +209,19 @@ public class ListGlobalValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGlobalValue listGlobalValue = (ListGlobalValue) o;
-        return Objects.equals(this.id, listGlobalValue.id) && Objects.equals(this.varName, listGlobalValue.varName)
-            && Objects.equals(this.varValue, listGlobalValue.varValue)
-            && Objects.equals(this.projectId, listGlobalValue.projectId)
-            && Objects.equals(this.userId, listGlobalValue.userId)
-            && Objects.equals(this.isSensitive, listGlobalValue.isSensitive)
-            && Objects.equals(this.userName, listGlobalValue.userName)
-            && Objects.equals(this.createTime, listGlobalValue.createTime)
-            && Objects.equals(this.updateTime, listGlobalValue.updateTime);
+        ListGlobalValue that = (ListGlobalValue) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.varName, that.varName)
+            && Objects.equals(this.varValue, that.varValue) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.isSensitive, that.isSensitive)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

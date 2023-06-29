@@ -77,17 +77,16 @@ public class ValidateTokenReqDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateTokenReqDTO validateTokenReqDTO = (ValidateTokenReqDTO) o;
-        return Objects.equals(this.token, validateTokenReqDTO.token)
-            && Objects.equals(this.needGenNewToken, validateTokenReqDTO.needGenNewToken)
-            && Objects.equals(this.needAccountInfo, validateTokenReqDTO.needAccountInfo);
+        ValidateTokenReqDTO that = (ValidateTokenReqDTO) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.needGenNewToken, that.needGenNewToken)
+            && Objects.equals(this.needAccountInfo, that.needAccountInfo);
     }
 
     @Override

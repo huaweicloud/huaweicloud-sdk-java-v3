@@ -80,17 +80,16 @@ public class AdjustAccountReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdjustAccountReq adjustAccountReq = (AdjustAccountReq) o;
-        return Objects.equals(this.customerId, adjustAccountReq.customerId)
-            && Objects.equals(this.amount, adjustAccountReq.amount)
-            && Objects.equals(this.indirectPartnerId, adjustAccountReq.indirectPartnerId);
+        AdjustAccountReq that = (AdjustAccountReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

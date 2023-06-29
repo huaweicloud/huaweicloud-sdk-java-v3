@@ -65,16 +65,16 @@ public class NovaCreateServersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaCreateServersRequest novaCreateServersRequest = (NovaCreateServersRequest) o;
-        return Objects.equals(this.openStackAPIVersion, novaCreateServersRequest.openStackAPIVersion)
-            && Objects.equals(this.body, novaCreateServersRequest.body);
+        NovaCreateServersRequest that = (NovaCreateServersRequest) obj;
+        return Objects.equals(this.openStackAPIVersion, that.openStackAPIVersion)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

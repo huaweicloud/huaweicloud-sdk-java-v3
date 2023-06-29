@@ -44,16 +44,15 @@ public class UpdateCloudServiceCustomPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCloudServiceCustomPolicyResponse updateCloudServiceCustomPolicyResponse =
-            (UpdateCloudServiceCustomPolicyResponse) o;
-        return Objects.equals(this.role, updateCloudServiceCustomPolicyResponse.role);
+        UpdateCloudServiceCustomPolicyResponse that = (UpdateCloudServiceCustomPolicyResponse) obj;
+        return Objects.equals(this.role, that.role);
     }
 
     @Override

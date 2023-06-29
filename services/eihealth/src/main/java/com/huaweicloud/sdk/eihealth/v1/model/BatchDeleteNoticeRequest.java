@@ -43,15 +43,15 @@ public class BatchDeleteNoticeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteNoticeRequest batchDeleteNoticeRequest = (BatchDeleteNoticeRequest) o;
-        return Objects.equals(this.body, batchDeleteNoticeRequest.body);
+        BatchDeleteNoticeRequest that = (BatchDeleteNoticeRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

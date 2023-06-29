@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ComponentAmb
  */
-public class ComponentAmb  {
-
+public class ComponentAmb {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="componentId")
-    
+    @JsonProperty(value = "componentId")
 
     private String componentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="componentName")
-    
+    @JsonProperty(value = "componentName")
 
     private String componentName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="componentVersion")
-    
+    @JsonProperty(value = "componentVersion")
 
     private String componentVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="componentDesc")
-    
+    @JsonProperty(value = "componentDesc")
 
     private String componentDesc;
 
@@ -45,9 +34,6 @@ public class ComponentAmb  {
         this.componentId = componentId;
         return this;
     }
-
-    
-
 
     /**
      * 组件ID。
@@ -61,15 +47,10 @@ public class ComponentAmb  {
         this.componentId = componentId;
     }
 
-    
-
     public ComponentAmb withComponentName(String componentName) {
         this.componentName = componentName;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称。
@@ -83,15 +64,10 @@ public class ComponentAmb  {
         this.componentName = componentName;
     }
 
-    
-
     public ComponentAmb withComponentVersion(String componentVersion) {
         this.componentVersion = componentVersion;
         return this;
     }
-
-    
-
 
     /**
      * 组件版本。
@@ -105,15 +81,10 @@ public class ComponentAmb  {
         this.componentVersion = componentVersion;
     }
 
-    
-
     public ComponentAmb withComponentDesc(String componentDesc) {
         this.componentDesc = componentDesc;
         return this;
     }
-
-    
-
 
     /**
      * 组件描述信息。
@@ -127,26 +98,26 @@ public class ComponentAmb  {
         this.componentDesc = componentDesc;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentAmb componentAmb = (ComponentAmb) o;
-        return Objects.equals(this.componentId, componentAmb.componentId) &&
-            Objects.equals(this.componentName, componentAmb.componentName) &&
-            Objects.equals(this.componentVersion, componentAmb.componentVersion) &&
-            Objects.equals(this.componentDesc, componentAmb.componentDesc);
+        ComponentAmb that = (ComponentAmb) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.componentName, that.componentName)
+            && Objects.equals(this.componentVersion, that.componentVersion)
+            && Objects.equals(this.componentDesc, that.componentDesc);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(componentId, componentName, componentVersion, componentDesc);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +129,7 @@ public class ComponentAmb  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +140,5 @@ public class ComponentAmb  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

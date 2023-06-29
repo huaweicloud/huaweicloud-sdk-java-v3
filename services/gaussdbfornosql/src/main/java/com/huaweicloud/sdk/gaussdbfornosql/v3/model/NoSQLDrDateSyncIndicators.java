@@ -165,21 +165,20 @@ public class NoSQLDrDateSyncIndicators {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoSQLDrDateSyncIndicators noSQLDrDateSyncIndicators = (NoSQLDrDateSyncIndicators) o;
-        return Objects.equals(this.rsyncOps, noSQLDrDateSyncIndicators.rsyncOps)
-            && Objects.equals(this.rsyncWalSize, noSQLDrDateSyncIndicators.rsyncWalSize)
-            && Objects.equals(this.rsyncPushCost, noSQLDrDateSyncIndicators.rsyncPushCost)
-            && Objects.equals(this.rsyncSendCost, noSQLDrDateSyncIndicators.rsyncSendCost)
-            && Objects.equals(this.rsyncMaxPushCost, noSQLDrDateSyncIndicators.rsyncMaxPushCost)
-            && Objects.equals(this.rsyncMaxSendCost, noSQLDrDateSyncIndicators.rsyncMaxSendCost)
-            && Objects.equals(this.rsyncStatus, noSQLDrDateSyncIndicators.rsyncStatus);
+        NoSQLDrDateSyncIndicators that = (NoSQLDrDateSyncIndicators) obj;
+        return Objects.equals(this.rsyncOps, that.rsyncOps) && Objects.equals(this.rsyncWalSize, that.rsyncWalSize)
+            && Objects.equals(this.rsyncPushCost, that.rsyncPushCost)
+            && Objects.equals(this.rsyncSendCost, that.rsyncSendCost)
+            && Objects.equals(this.rsyncMaxPushCost, that.rsyncMaxPushCost)
+            && Objects.equals(this.rsyncMaxSendCost, that.rsyncMaxSendCost)
+            && Objects.equals(this.rsyncStatus, that.rsyncStatus);
     }
 
     @Override

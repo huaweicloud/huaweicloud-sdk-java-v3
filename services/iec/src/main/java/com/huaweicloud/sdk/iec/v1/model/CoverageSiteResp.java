@@ -96,17 +96,16 @@ public class CoverageSiteResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CoverageSiteResp coverageSiteResp = (CoverageSiteResp) o;
-        return Objects.equals(this.site, coverageSiteResp.site)
-            && Objects.equals(this.demands, coverageSiteResp.demands)
-            && Objects.equals(this.i18nSite, coverageSiteResp.i18nSite);
+        CoverageSiteResp that = (CoverageSiteResp) obj;
+        return Objects.equals(this.site, that.site) && Objects.equals(this.demands, that.demands)
+            && Objects.equals(this.i18nSite, that.i18nSite);
     }
 
     @Override

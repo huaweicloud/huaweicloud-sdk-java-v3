@@ -83,17 +83,16 @@ public class ListServiceTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceTypesRequest listServiceTypesRequest = (ListServiceTypesRequest) o;
-        return Objects.equals(this.xLanguage, listServiceTypesRequest.xLanguage)
-            && Objects.equals(this.offset, listServiceTypesRequest.offset)
-            && Objects.equals(this.limit, listServiceTypesRequest.limit);
+        ListServiceTypesRequest that = (ListServiceTypesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

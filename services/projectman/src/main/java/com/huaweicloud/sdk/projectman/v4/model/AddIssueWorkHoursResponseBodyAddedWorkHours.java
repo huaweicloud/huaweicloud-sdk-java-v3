@@ -165,22 +165,18 @@ public class AddIssueWorkHoursResponseBodyAddedWorkHours {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddIssueWorkHoursResponseBodyAddedWorkHours addIssueWorkHoursResponseBodyAddedWorkHours =
-            (AddIssueWorkHoursResponseBodyAddedWorkHours) o;
-        return Objects.equals(this.workHoursId, addIssueWorkHoursResponseBodyAddedWorkHours.workHoursId)
-            && Objects.equals(this.issueId, addIssueWorkHoursResponseBodyAddedWorkHours.issueId)
-            && Objects.equals(this.userName, addIssueWorkHoursResponseBodyAddedWorkHours.userName)
-            && Objects.equals(this.userNickName, addIssueWorkHoursResponseBodyAddedWorkHours.userNickName)
-            && Objects.equals(this.workDate, addIssueWorkHoursResponseBodyAddedWorkHours.workDate)
-            && Objects.equals(this.workHours, addIssueWorkHoursResponseBodyAddedWorkHours.workHours)
-            && Objects.equals(this.workHoursTypeName, addIssueWorkHoursResponseBodyAddedWorkHours.workHoursTypeName);
+        AddIssueWorkHoursResponseBodyAddedWorkHours that = (AddIssueWorkHoursResponseBodyAddedWorkHours) obj;
+        return Objects.equals(this.workHoursId, that.workHoursId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userNickName, that.userNickName)
+            && Objects.equals(this.workDate, that.workDate) && Objects.equals(this.workHours, that.workHours)
+            && Objects.equals(this.workHoursTypeName, that.workHoursTypeName);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteIssueV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIssueV4Request deleteIssueV4Request = (DeleteIssueV4Request) o;
-        return Objects.equals(this.projectId, deleteIssueV4Request.projectId)
-            && Objects.equals(this.issueId, deleteIssueV4Request.issueId);
+        DeleteIssueV4Request that = (DeleteIssueV4Request) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId);
     }
 
     @Override

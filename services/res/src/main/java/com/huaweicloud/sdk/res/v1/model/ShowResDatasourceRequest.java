@@ -55,16 +55,16 @@ public class ShowResDatasourceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResDatasourceRequest showResDatasourceRequest = (ShowResDatasourceRequest) o;
-        return Objects.equals(this.workspaceId, showResDatasourceRequest.workspaceId)
-            && Objects.equals(this.datasourceId, showResDatasourceRequest.datasourceId);
+        ShowResDatasourceRequest that = (ShowResDatasourceRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.datasourceId, that.datasourceId);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListSubnetsByTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubnetsByTagsResponse listSubnetsByTagsResponse = (ListSubnetsByTagsResponse) o;
-        return Objects.equals(this.resources, listSubnetsByTagsResponse.resources)
-            && Objects.equals(this.totalCount, listSubnetsByTagsResponse.totalCount);
+        ListSubnetsByTagsResponse that = (ListSubnetsByTagsResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

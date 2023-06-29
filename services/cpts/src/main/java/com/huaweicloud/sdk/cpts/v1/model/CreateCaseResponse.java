@@ -88,16 +88,16 @@ public class CreateCaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCaseResponse createCaseResponse = (CreateCaseResponse) o;
-        return Objects.equals(this.code, createCaseResponse.code) && Objects.equals(this.json, createCaseResponse.json)
-            && Objects.equals(this.message, createCaseResponse.message);
+        CreateCaseResponse that = (CreateCaseResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.json, that.json)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

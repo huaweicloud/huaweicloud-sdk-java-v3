@@ -121,18 +121,17 @@ public class PipelineTemplate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineTemplate pipelineTemplate = (PipelineTemplate) o;
-        return Objects.equals(this.name, pipelineTemplate.name) && Objects.equals(this.id, pipelineTemplate.id)
-            && Objects.equals(this.description, pipelineTemplate.description)
-            && Objects.equals(this.regionId, pipelineTemplate.regionId)
-            && Objects.equals(this.url, pipelineTemplate.url);
+        PipelineTemplate that = (PipelineTemplate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

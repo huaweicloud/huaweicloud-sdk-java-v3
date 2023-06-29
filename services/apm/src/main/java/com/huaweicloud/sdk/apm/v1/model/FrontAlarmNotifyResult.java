@@ -187,22 +187,20 @@ public class FrontAlarmNotifyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FrontAlarmNotifyResult frontAlarmNotifyResult = (FrontAlarmNotifyResult) o;
-        return Objects.equals(this.id, frontAlarmNotifyResult.id)
-            && Objects.equals(this.gmtCreate, frontAlarmNotifyResult.gmtCreate)
-            && Objects.equals(this.notifyType, frontAlarmNotifyResult.notifyType)
-            && Objects.equals(this.alarmRuleId, frontAlarmNotifyResult.alarmRuleId)
-            && Objects.equals(this.templateId, frontAlarmNotifyResult.templateId)
-            && Objects.equals(this.alarmDataEventId, frontAlarmNotifyResult.alarmDataEventId)
-            && Objects.equals(this.notifyStatus, frontAlarmNotifyResult.notifyStatus)
-            && Objects.equals(this.alarmContent, frontAlarmNotifyResult.alarmContent);
+        FrontAlarmNotifyResult that = (FrontAlarmNotifyResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.notifyType, that.notifyType) && Objects.equals(this.alarmRuleId, that.alarmRuleId)
+            && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.alarmDataEventId, that.alarmDataEventId)
+            && Objects.equals(this.notifyStatus, that.notifyStatus)
+            && Objects.equals(this.alarmContent, that.alarmContent);
     }
 
     @Override

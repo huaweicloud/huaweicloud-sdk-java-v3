@@ -65,22 +65,15 @@ public class PauseInfo {
             if (value == null) {
                 return null;
             }
-            PauseModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PauseModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PauseModeEnum(value));
         }
 
         public static PauseModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PauseModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,15 +130,15 @@ public class PauseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PauseInfo pauseInfo = (PauseInfo) o;
-        return Objects.equals(this.jobId, pauseInfo.jobId) && Objects.equals(this.pauseMode, pauseInfo.pauseMode);
+        PauseInfo that = (PauseInfo) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.pauseMode, that.pauseMode);
     }
 
     @Override

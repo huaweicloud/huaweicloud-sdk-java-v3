@@ -143,19 +143,17 @@ public class PipelineParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineParam pipelineParam = (PipelineParam) o;
-        return Objects.equals(this.name, pipelineParam.name) && Objects.equals(this.value, pipelineParam.value)
-            && Objects.equals(this.description, pipelineParam.description)
-            && Objects.equals(this.paramType, pipelineParam.paramType)
-            && Objects.equals(this.isStatic, pipelineParam.isStatic)
-            && Objects.equals(this.isDefault, pipelineParam.isDefault);
+        PipelineParam that = (PipelineParam) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.paramType, that.paramType)
+            && Objects.equals(this.isStatic, that.isStatic) && Objects.equals(this.isDefault, that.isDefault);
     }
 
     @Override

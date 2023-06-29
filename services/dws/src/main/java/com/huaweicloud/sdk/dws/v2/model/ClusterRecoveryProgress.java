@@ -121,19 +121,18 @@ public class ClusterRecoveryProgress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterRecoveryProgress clusterRecoveryProgress = (ClusterRecoveryProgress) o;
-        return Objects.equals(this.key, clusterRecoveryProgress.key)
-            && Objects.equals(this.actionType, clusterRecoveryProgress.actionType)
-            && Objects.equals(this.unrestoreKeys, clusterRecoveryProgress.unrestoreKeys)
-            && Objects.equals(this.actionStartTime, clusterRecoveryProgress.actionStartTime)
-            && Objects.equals(this.actionEndTime, clusterRecoveryProgress.actionEndTime);
+        ClusterRecoveryProgress that = (ClusterRecoveryProgress) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.unrestoreKeys, that.unrestoreKeys)
+            && Objects.equals(this.actionStartTime, that.actionStartTime)
+            && Objects.equals(this.actionEndTime, that.actionEndTime);
     }
 
     @Override

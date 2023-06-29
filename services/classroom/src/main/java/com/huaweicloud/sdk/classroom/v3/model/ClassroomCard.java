@@ -122,18 +122,17 @@ public class ClassroomCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClassroomCard classroomCard = (ClassroomCard) o;
-        return Objects.equals(this.classroomId, classroomCard.classroomId)
-            && Objects.equals(this.name, classroomCard.name)
-            && Objects.equals(this.description, classroomCard.description)
-            && Objects.equals(this.credit, classroomCard.credit) && Objects.equals(this.status, classroomCard.status);
+        ClassroomCard that = (ClassroomCard) obj;
+        return Objects.equals(this.classroomId, that.classroomId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.credit, that.credit)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

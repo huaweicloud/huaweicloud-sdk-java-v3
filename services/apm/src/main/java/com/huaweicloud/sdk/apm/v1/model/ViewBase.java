@@ -78,22 +78,15 @@ public class ViewBase {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TableDirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TableDirectionEnum(value));
         }
 
         public static TableDirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TableDirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -201,22 +194,15 @@ public class ViewBase {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ViewTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ViewTypeEnum(value));
         }
 
         public static ViewTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ViewTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -459,21 +445,20 @@ public class ViewBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ViewBase viewBase = (ViewBase) o;
-        return Objects.equals(this.collectorName, viewBase.collectorName)
-            && Objects.equals(this.metricSet, viewBase.metricSet) && Objects.equals(this.title, viewBase.title)
-            && Objects.equals(this.tableDirection, viewBase.tableDirection)
-            && Objects.equals(this.groupBy, viewBase.groupBy) && Objects.equals(this.filter, viewBase.filter)
-            && Objects.equals(this.fieldItemList, viewBase.fieldItemList) && Objects.equals(this.span, viewBase.span)
-            && Objects.equals(this.spanField, viewBase.spanField) && Objects.equals(this.orderBy, viewBase.orderBy)
-            && Objects.equals(this.latest, viewBase.latest) && Objects.equals(this.viewType, viewBase.viewType);
+        ViewBase that = (ViewBase) obj;
+        return Objects.equals(this.collectorName, that.collectorName) && Objects.equals(this.metricSet, that.metricSet)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.tableDirection, that.tableDirection)
+            && Objects.equals(this.groupBy, that.groupBy) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.fieldItemList, that.fieldItemList) && Objects.equals(this.span, that.span)
+            && Objects.equals(this.spanField, that.spanField) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.latest, that.latest) && Objects.equals(this.viewType, that.viewType);
     }
 
     @Override

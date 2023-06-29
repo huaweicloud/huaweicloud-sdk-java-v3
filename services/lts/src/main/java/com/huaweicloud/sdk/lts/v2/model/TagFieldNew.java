@@ -76,22 +76,15 @@ public class TagFieldNew {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -211,17 +204,17 @@ public class TagFieldNew {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagFieldNew tagFieldNew = (TagFieldNew) o;
-        return Objects.equals(this.fieldName, tagFieldNew.fieldName)
-            && Objects.equals(this.content, tagFieldNew.content) && Objects.equals(this.type, tagFieldNew.type)
-            && Objects.equals(this.isAnalysis, tagFieldNew.isAnalysis) && Objects.equals(this.index, tagFieldNew.index);
+        TagFieldNew that = (TagFieldNew) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.isAnalysis, that.isAnalysis)
+            && Objects.equals(this.index, that.index);
     }
 
     @Override

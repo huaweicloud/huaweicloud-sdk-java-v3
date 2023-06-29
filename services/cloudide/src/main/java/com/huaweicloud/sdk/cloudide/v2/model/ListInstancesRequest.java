@@ -169,21 +169,18 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.offset, listInstancesRequest.offset)
-            && Objects.equals(this.isTemporary, listInstancesRequest.isTemporary)
-            && Objects.equals(this.label, listInstancesRequest.label)
-            && Objects.equals(this.search, listInstancesRequest.search)
-            && Objects.equals(this.sortDir, listInstancesRequest.sortDir)
-            && Objects.equals(this.sortKey, listInstancesRequest.sortKey);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.isTemporary, that.isTemporary) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.search, that.search) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey);
     }
 
     @Override

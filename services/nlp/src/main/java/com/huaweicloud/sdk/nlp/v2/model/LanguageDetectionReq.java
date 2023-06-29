@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * This is a auto create Body Object
  */
-public class LanguageDetectionReq  {
-
+public class LanguageDetectionReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
 
@@ -27,9 +19,6 @@ public class LanguageDetectionReq  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 需要识别语种的文本。仅支持utf-8编码，长度不超过2000字符。
@@ -43,23 +32,23 @@ public class LanguageDetectionReq  {
         this.text = text;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LanguageDetectionReq languageDetectionReq = (LanguageDetectionReq) o;
-        return Objects.equals(this.text, languageDetectionReq.text);
+        LanguageDetectionReq that = (LanguageDetectionReq) obj;
+        return Objects.equals(this.text, that.text);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class LanguageDetectionReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class LanguageDetectionReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

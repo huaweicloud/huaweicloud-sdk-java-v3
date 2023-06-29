@@ -56,16 +56,15 @@ public class ShowRealNamedResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRealNamedResponse showRealNamedResponse = (ShowRealNamedResponse) o;
-        return Objects.equals(this.iccid, showRealNamedResponse.iccid)
-            && Objects.equals(this.realNamed, showRealNamedResponse.realNamed);
+        ShowRealNamedResponse that = (ShowRealNamedResponse) obj;
+        return Objects.equals(this.iccid, that.iccid) && Objects.equals(this.realNamed, that.realNamed);
     }
 
     @Override

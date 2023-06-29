@@ -178,20 +178,17 @@ public class QueryUserResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryUserResp queryUserResp = (QueryUserResp) o;
-        return Objects.equals(this.jobId, queryUserResp.jobId)
-            && Objects.equals(this.isGlobalPassword, queryUserResp.isGlobalPassword)
-            && Objects.equals(this.message, queryUserResp.message)
-            && Objects.equals(this.userList, queryUserResp.userList)
-            && Objects.equals(this.rolesList, queryUserResp.rolesList)
-            && Objects.equals(this.isSuccess, queryUserResp.isSuccess);
+        QueryUserResp that = (QueryUserResp) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.isGlobalPassword, that.isGlobalPassword)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.userList, that.userList)
+            && Objects.equals(this.rolesList, that.rolesList) && Objects.equals(this.isSuccess, that.isSuccess);
     }
 
     @Override

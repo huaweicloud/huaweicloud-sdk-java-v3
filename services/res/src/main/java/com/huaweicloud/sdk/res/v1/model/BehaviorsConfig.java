@@ -90,16 +90,16 @@ public class BehaviorsConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BehaviorsConfig behaviorsConfig = (BehaviorsConfig) o;
-        return Objects.equals(this.positiveBehaviors, behaviorsConfig.positiveBehaviors)
-            && Objects.equals(this.negativeBehaviors, behaviorsConfig.negativeBehaviors);
+        BehaviorsConfig that = (BehaviorsConfig) obj;
+        return Objects.equals(this.positiveBehaviors, that.positiveBehaviors)
+            && Objects.equals(this.negativeBehaviors, that.negativeBehaviors);
     }
 
     @Override

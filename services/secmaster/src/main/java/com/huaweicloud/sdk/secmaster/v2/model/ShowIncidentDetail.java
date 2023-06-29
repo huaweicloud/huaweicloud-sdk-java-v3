@@ -250,23 +250,19 @@ public class ShowIncidentDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIncidentDetail showIncidentDetail = (ShowIncidentDetail) o;
-        return Objects.equals(this.dataObject, showIncidentDetail.dataObject)
-            && Objects.equals(this.createTime, showIncidentDetail.createTime)
-            && Objects.equals(this.updateTime, showIncidentDetail.updateTime)
-            && Objects.equals(this.projectId, showIncidentDetail.projectId)
-            && Objects.equals(this.workspaceId, showIncidentDetail.workspaceId)
-            && Objects.equals(this.dataclassId, showIncidentDetail.dataclassId)
-            && Objects.equals(this.layoutId, showIncidentDetail.layoutId)
-            && Objects.equals(this.name, showIncidentDetail.name) && Objects.equals(this.type, showIncidentDetail.type)
-            && Objects.equals(this.dataclass, showIncidentDetail.dataclass);
+        ShowIncidentDetail that = (ShowIncidentDetail) obj;
+        return Objects.equals(this.dataObject, that.dataObject) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.dataclassId, that.dataclassId)
+            && Objects.equals(this.layoutId, that.layoutId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.dataclass, that.dataclass);
     }
 
     @Override

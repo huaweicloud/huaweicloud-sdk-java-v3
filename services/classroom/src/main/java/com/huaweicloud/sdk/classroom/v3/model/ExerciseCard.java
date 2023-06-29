@@ -121,18 +121,18 @@ public class ExerciseCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseCard exerciseCard = (ExerciseCard) o;
-        return Objects.equals(this.name, exerciseCard.name) && Objects.equals(this.exerciseId, exerciseCard.exerciseId)
-            && Objects.equals(this.description, exerciseCard.description)
-            && Objects.equals(this.resourceSubType, exerciseCard.resourceSubType)
-            && Objects.equals(this.targetScore, exerciseCard.targetScore);
+        ExerciseCard that = (ExerciseCard) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.exerciseId, that.exerciseId)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resourceSubType, that.resourceSubType)
+            && Objects.equals(this.targetScore, that.targetScore);
     }
 
     @Override

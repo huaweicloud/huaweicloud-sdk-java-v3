@@ -87,22 +87,15 @@ public class ListElasticResourcePoolsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,19 +210,17 @@ public class ListElasticResourcePoolsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListElasticResourcePoolsRequest listElasticResourcePoolsRequest = (ListElasticResourcePoolsRequest) o;
-        return Objects.equals(this.limit, listElasticResourcePoolsRequest.limit)
-            && Objects.equals(this.name, listElasticResourcePoolsRequest.name)
-            && Objects.equals(this.offset, listElasticResourcePoolsRequest.offset)
-            && Objects.equals(this.status, listElasticResourcePoolsRequest.status)
-            && Objects.equals(this.tags, listElasticResourcePoolsRequest.tags);
+        ListElasticResourcePoolsRequest that = (ListElasticResourcePoolsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -84,16 +84,15 @@ public class ListAlarmTemplatesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmTemplatesResponse listAlarmTemplatesResponse = (ListAlarmTemplatesResponse) o;
-        return Objects.equals(this.alarmTemplates, listAlarmTemplatesResponse.alarmTemplates)
-            && Objects.equals(this.metaData, listAlarmTemplatesResponse.metaData);
+        ListAlarmTemplatesResponse that = (ListAlarmTemplatesResponse) obj;
+        return Objects.equals(this.alarmTemplates, that.alarmTemplates) && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ShowSearchTaskResultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSearchTaskResultResponse showSearchTaskResultResponse = (ShowSearchTaskResultResponse) o;
-        return Objects.equals(this.status, showSearchTaskResultResponse.status)
-            && Objects.equals(this.taskData, showSearchTaskResultResponse.taskData)
-            && Objects.equals(this.result, showSearchTaskResultResponse.result);
+        ShowSearchTaskResultResponse that = (ShowSearchTaskResultResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.taskData, that.taskData)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

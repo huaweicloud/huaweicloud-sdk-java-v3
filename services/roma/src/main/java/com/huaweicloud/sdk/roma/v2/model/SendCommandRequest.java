@@ -89,17 +89,16 @@ public class SendCommandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendCommandRequest sendCommandRequest = (SendCommandRequest) o;
-        return Objects.equals(this.instanceId, sendCommandRequest.instanceId)
-            && Objects.equals(this.deviceId, sendCommandRequest.deviceId)
-            && Objects.equals(this.body, sendCommandRequest.body);
+        SendCommandRequest that = (SendCommandRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

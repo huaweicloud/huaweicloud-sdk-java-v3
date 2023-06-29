@@ -65,16 +65,16 @@ public class UpgradeStrategy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeStrategy upgradeStrategy = (UpgradeStrategy) o;
-        return Objects.equals(this.type, upgradeStrategy.type)
-            && Objects.equals(this.inPlaceRollingUpdate, upgradeStrategy.inPlaceRollingUpdate);
+        UpgradeStrategy that = (UpgradeStrategy) obj;
+        return Objects.equals(this.type, that.type)
+            && Objects.equals(this.inPlaceRollingUpdate, that.inPlaceRollingUpdate);
     }
 
     @Override

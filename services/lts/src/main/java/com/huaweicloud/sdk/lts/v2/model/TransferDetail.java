@@ -93,22 +93,15 @@ public class TransferDetail {
             if (value == null) {
                 return null;
             }
-            ObsPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObsPeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObsPeriodEnum(value));
         }
 
         public static ObsPeriodEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ObsPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -494,29 +487,25 @@ public class TransferDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransferDetail transferDetail = (TransferDetail) o;
-        return Objects.equals(this.obsPeriod, transferDetail.obsPeriod)
-            && Objects.equals(this.obsEncryptedId, transferDetail.obsEncryptedId)
-            && Objects.equals(this.obsPrefixName, transferDetail.obsPrefixName)
-            && Objects.equals(this.obsPeriodUnit, transferDetail.obsPeriodUnit)
-            && Objects.equals(this.obsTransferPath, transferDetail.obsTransferPath)
-            && Objects.equals(this.obsEpsId, transferDetail.obsEpsId)
-            && Objects.equals(this.obsBucketName, transferDetail.obsBucketName)
-            && Objects.equals(this.obsEncryptedEnable, transferDetail.obsEncryptedEnable)
-            && Objects.equals(this.obsDirPreFixName, transferDetail.obsDirPreFixName)
-            && Objects.equals(this.disId, transferDetail.disId) && Objects.equals(this.disName, transferDetail.disName)
-            && Objects.equals(this.kafkaId, transferDetail.kafkaId)
-            && Objects.equals(this.kafkaTopic, transferDetail.kafkaTopic)
-            && Objects.equals(this.obsTimeZone, transferDetail.obsTimeZone)
-            && Objects.equals(this.obsTimeZoneId, transferDetail.obsTimeZoneId)
-            && Objects.equals(this.tags, transferDetail.tags);
+        TransferDetail that = (TransferDetail) obj;
+        return Objects.equals(this.obsPeriod, that.obsPeriod)
+            && Objects.equals(this.obsEncryptedId, that.obsEncryptedId)
+            && Objects.equals(this.obsPrefixName, that.obsPrefixName)
+            && Objects.equals(this.obsPeriodUnit, that.obsPeriodUnit)
+            && Objects.equals(this.obsTransferPath, that.obsTransferPath)
+            && Objects.equals(this.obsEpsId, that.obsEpsId) && Objects.equals(this.obsBucketName, that.obsBucketName)
+            && Objects.equals(this.obsEncryptedEnable, that.obsEncryptedEnable)
+            && Objects.equals(this.obsDirPreFixName, that.obsDirPreFixName) && Objects.equals(this.disId, that.disId)
+            && Objects.equals(this.disName, that.disName) && Objects.equals(this.kafkaId, that.kafkaId)
+            && Objects.equals(this.kafkaTopic, that.kafkaTopic) && Objects.equals(this.obsTimeZone, that.obsTimeZone)
+            && Objects.equals(this.obsTimeZoneId, that.obsTimeZoneId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

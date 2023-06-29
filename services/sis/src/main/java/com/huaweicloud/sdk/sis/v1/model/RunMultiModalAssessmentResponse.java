@@ -207,21 +207,18 @@ public class RunMultiModalAssessmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunMultiModalAssessmentResponse runMultiModalAssessmentResponse = (RunMultiModalAssessmentResponse) o;
-        return Objects.equals(this.score, runMultiModalAssessmentResponse.score)
-            && Objects.equals(this.completeness, runMultiModalAssessmentResponse.completeness)
-            && Objects.equals(this.duration, runMultiModalAssessmentResponse.duration)
-            && Objects.equals(this.pronunciation, runMultiModalAssessmentResponse.pronunciation)
-            && Objects.equals(this.fluency, runMultiModalAssessmentResponse.fluency)
-            && Objects.equals(this.words, runMultiModalAssessmentResponse.words)
-            && Objects.equals(this.traceId, runMultiModalAssessmentResponse.traceId);
+        RunMultiModalAssessmentResponse that = (RunMultiModalAssessmentResponse) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.completeness, that.completeness)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.pronunciation, that.pronunciation)
+            && Objects.equals(this.fluency, that.fluency) && Objects.equals(this.words, that.words)
+            && Objects.equals(this.traceId, that.traceId);
     }
 
     @Override

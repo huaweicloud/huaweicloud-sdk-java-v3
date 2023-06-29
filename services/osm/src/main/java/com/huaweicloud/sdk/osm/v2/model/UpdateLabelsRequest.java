@@ -141,19 +141,17 @@ public class UpdateLabelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLabelsRequest updateLabelsRequest = (UpdateLabelsRequest) o;
-        return Objects.equals(this.labelId, updateLabelsRequest.labelId)
-            && Objects.equals(this.xSite, updateLabelsRequest.xSite)
-            && Objects.equals(this.xLanguage, updateLabelsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, updateLabelsRequest.xTimeZone)
-            && Objects.equals(this.body, updateLabelsRequest.body);
+        UpdateLabelsRequest that = (UpdateLabelsRequest) obj;
+        return Objects.equals(this.labelId, that.labelId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

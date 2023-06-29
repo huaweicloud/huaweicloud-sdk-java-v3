@@ -165,21 +165,19 @@ public class ICouponUseLimitInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ICouponUseLimitInfoV2 icouponUseLimitInfoV2 = (ICouponUseLimitInfoV2) o;
-        return Objects.equals(this.useLimitiInfoId, icouponUseLimitInfoV2.useLimitiInfoId)
-            && Objects.equals(this.limitKey, icouponUseLimitInfoV2.limitKey)
-            && Objects.equals(this.value1, icouponUseLimitInfoV2.value1)
-            && Objects.equals(this.value2, icouponUseLimitInfoV2.value2)
-            && Objects.equals(this.valueUnit, icouponUseLimitInfoV2.valueUnit)
-            && Objects.equals(this.limitType, icouponUseLimitInfoV2.limitType)
-            && Objects.equals(this.promotionPlanId, icouponUseLimitInfoV2.promotionPlanId);
+        ICouponUseLimitInfoV2 that = (ICouponUseLimitInfoV2) obj;
+        return Objects.equals(this.useLimitiInfoId, that.useLimitiInfoId)
+            && Objects.equals(this.limitKey, that.limitKey) && Objects.equals(this.value1, that.value1)
+            && Objects.equals(this.value2, that.value2) && Objects.equals(this.valueUnit, that.valueUnit)
+            && Objects.equals(this.limitType, that.limitType)
+            && Objects.equals(this.promotionPlanId, that.promotionPlanId);
     }
 
     @Override

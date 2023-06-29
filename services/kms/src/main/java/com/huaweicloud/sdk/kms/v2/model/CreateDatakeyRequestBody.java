@@ -65,22 +65,15 @@ public class CreateDatakeyRequestBody {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeySpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
         }
 
         public static KeySpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -181,18 +174,16 @@ public class CreateDatakeyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatakeyRequestBody createDatakeyRequestBody = (CreateDatakeyRequestBody) o;
-        return Objects.equals(this.keyId, createDatakeyRequestBody.keyId)
-            && Objects.equals(this.keySpec, createDatakeyRequestBody.keySpec)
-            && Objects.equals(this.datakeyLength, createDatakeyRequestBody.datakeyLength)
-            && Objects.equals(this.sequence, createDatakeyRequestBody.sequence);
+        CreateDatakeyRequestBody that = (CreateDatakeyRequestBody) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.keySpec, that.keySpec)
+            && Objects.equals(this.datakeyLength, that.datakeyLength) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class UpdateDataPolicyReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataPolicyReq updateDataPolicyReq = (UpdateDataPolicyReq) o;
-        return Objects.equals(this.dataDelete, updateDataPolicyReq.dataDelete)
-            && Objects.equals(this.dataDownload, updateDataPolicyReq.dataDownload)
-            && Objects.equals(this.dataEncrypted, updateDataPolicyReq.dataEncrypted)
-            && Objects.equals(this.dataShare, updateDataPolicyReq.dataShare);
+        UpdateDataPolicyReq that = (UpdateDataPolicyReq) obj;
+        return Objects.equals(this.dataDelete, that.dataDelete) && Objects.equals(this.dataDownload, that.dataDownload)
+            && Objects.equals(this.dataEncrypted, that.dataEncrypted) && Objects.equals(this.dataShare, that.dataShare);
     }
 
     @Override

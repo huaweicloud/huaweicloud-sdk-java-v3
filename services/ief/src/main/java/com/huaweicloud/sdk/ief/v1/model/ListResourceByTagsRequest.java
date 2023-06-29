@@ -87,17 +87,16 @@ public class ListResourceByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceByTagsRequest listResourceByTagsRequest = (ListResourceByTagsRequest) o;
-        return Objects.equals(this.iefInstanceId, listResourceByTagsRequest.iefInstanceId)
-            && Objects.equals(this.resourceType, listResourceByTagsRequest.resourceType)
-            && Objects.equals(this.body, listResourceByTagsRequest.body);
+        ListResourceByTagsRequest that = (ListResourceByTagsRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.body, that.body);
     }
 
     @Override

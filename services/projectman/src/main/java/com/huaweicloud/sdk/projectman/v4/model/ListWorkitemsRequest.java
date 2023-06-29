@@ -102,18 +102,17 @@ public class ListWorkitemsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListWorkitemsRequest listWorkitemsRequest = (ListWorkitemsRequest) o;
-        return Objects.equals(this.projectId, listWorkitemsRequest.projectId)
-            && Objects.equals(this.offset, listWorkitemsRequest.offset)
-            && Objects.equals(this.limit, listWorkitemsRequest.limit)
-            && Objects.equals(this.createdTimeInterval, listWorkitemsRequest.createdTimeInterval);
+        ListWorkitemsRequest that = (ListWorkitemsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.createdTimeInterval, that.createdTimeInterval);
     }
 
     @Override

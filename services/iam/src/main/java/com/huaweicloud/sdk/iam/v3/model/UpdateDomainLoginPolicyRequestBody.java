@@ -43,15 +43,15 @@ public class UpdateDomainLoginPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainLoginPolicyRequestBody updateDomainLoginPolicyRequestBody = (UpdateDomainLoginPolicyRequestBody) o;
-        return Objects.equals(this.loginPolicy, updateDomainLoginPolicyRequestBody.loginPolicy);
+        UpdateDomainLoginPolicyRequestBody that = (UpdateDomainLoginPolicyRequestBody) obj;
+        return Objects.equals(this.loginPolicy, that.loginPolicy);
     }
 
     @Override

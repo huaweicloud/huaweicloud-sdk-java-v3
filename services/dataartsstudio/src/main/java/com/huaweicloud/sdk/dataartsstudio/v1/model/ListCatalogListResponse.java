@@ -75,16 +75,15 @@ public class ListCatalogListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCatalogListResponse listCatalogListResponse = (ListCatalogListResponse) o;
-        return Objects.equals(this.total, listCatalogListResponse.total)
-            && Objects.equals(this.catalogs, listCatalogListResponse.catalogs);
+        ListCatalogListResponse that = (ListCatalogListResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.catalogs, that.catalogs);
     }
 
     @Override

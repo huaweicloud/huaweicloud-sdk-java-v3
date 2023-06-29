@@ -65,17 +65,15 @@ public class CreateApiTestSuiteByRepoFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateApiTestSuiteByRepoFileRequest createApiTestSuiteByRepoFileRequest =
-            (CreateApiTestSuiteByRepoFileRequest) o;
-        return Objects.equals(this.projectId, createApiTestSuiteByRepoFileRequest.projectId)
-            && Objects.equals(this.body, createApiTestSuiteByRepoFileRequest.body);
+        CreateApiTestSuiteByRepoFileRequest that = (CreateApiTestSuiteByRepoFileRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

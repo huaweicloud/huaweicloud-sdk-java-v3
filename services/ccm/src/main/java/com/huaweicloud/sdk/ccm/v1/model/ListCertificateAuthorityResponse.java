@@ -78,16 +78,16 @@ public class ListCertificateAuthorityResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificateAuthorityResponse listCertificateAuthorityResponse = (ListCertificateAuthorityResponse) o;
-        return Objects.equals(this.total, listCertificateAuthorityResponse.total)
-            && Objects.equals(this.certificateAuthorities, listCertificateAuthorityResponse.certificateAuthorities);
+        ListCertificateAuthorityResponse that = (ListCertificateAuthorityResponse) obj;
+        return Objects.equals(this.total, that.total)
+            && Objects.equals(this.certificateAuthorities, that.certificateAuthorities);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class PauseDisasterRecoveryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PauseDisasterRecoveryRequest pauseDisasterRecoveryRequest = (PauseDisasterRecoveryRequest) o;
-        return Objects.equals(this.disasterRecoveryId, pauseDisasterRecoveryRequest.disasterRecoveryId);
+        PauseDisasterRecoveryRequest that = (PauseDisasterRecoveryRequest) obj;
+        return Objects.equals(this.disasterRecoveryId, that.disasterRecoveryId);
     }
 
     @Override

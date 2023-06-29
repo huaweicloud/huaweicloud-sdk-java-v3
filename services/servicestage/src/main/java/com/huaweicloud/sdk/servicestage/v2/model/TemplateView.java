@@ -121,19 +121,17 @@ public class TemplateView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateView templateView = (TemplateView) o;
-        return Objects.equals(this.templateName, templateView.templateName)
-            && Objects.equals(this.templateDesc, templateView.templateDesc)
-            && Objects.equals(this.sourceType, templateView.sourceType)
-            && Objects.equals(this.sourceRepoUrl, templateView.sourceRepoUrl)
-            && Objects.equals(this.runtime, templateView.runtime);
+        TemplateView that = (TemplateView) obj;
+        return Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateDesc, that.templateDesc) && Objects.equals(this.sourceType, that.sourceType)
+            && Objects.equals(this.sourceRepoUrl, that.sourceRepoUrl) && Objects.equals(this.runtime, that.runtime);
     }
 
     @Override

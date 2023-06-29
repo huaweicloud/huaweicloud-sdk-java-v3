@@ -110,22 +110,15 @@ public class KeywordsAlarmRuleRespList {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeywordsAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeywordsAlarmLevelEnum(value));
         }
 
         public static KeywordsAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeywordsAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -222,22 +215,15 @@ public class KeywordsAlarmRuleRespList {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -644,33 +630,30 @@ public class KeywordsAlarmRuleRespList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeywordsAlarmRuleRespList keywordsAlarmRuleRespList = (KeywordsAlarmRuleRespList) o;
-        return Objects.equals(this.projectId, keywordsAlarmRuleRespList.projectId)
-            && Objects.equals(this.keywordsAlarmRuleId, keywordsAlarmRuleRespList.keywordsAlarmRuleId)
-            && Objects.equals(this.keywordsAlarmRuleName, keywordsAlarmRuleRespList.keywordsAlarmRuleName)
-            && Objects.equals(this.keywordsAlarmRuleDescription, keywordsAlarmRuleRespList.keywordsAlarmRuleDescription)
-            && Objects.equals(this.conditionExpression, keywordsAlarmRuleRespList.conditionExpression)
-            && Objects.equals(this.keywordsRequests, keywordsAlarmRuleRespList.keywordsRequests)
-            && Objects.equals(this.frequency, keywordsAlarmRuleRespList.frequency)
-            && Objects.equals(this.keywordsAlarmLevel, keywordsAlarmRuleRespList.keywordsAlarmLevel)
-            && Objects.equals(this.keywordsAlarmSend, keywordsAlarmRuleRespList.keywordsAlarmSend)
-            && Objects.equals(this.domainId, keywordsAlarmRuleRespList.domainId)
-            && Objects.equals(this.createTime, keywordsAlarmRuleRespList.createTime)
-            && Objects.equals(this.updateTime, keywordsAlarmRuleRespList.updateTime)
-            && Objects.equals(this.topics, keywordsAlarmRuleRespList.topics)
-            && Objects.equals(this.templateName, keywordsAlarmRuleRespList.templateName)
-            && Objects.equals(this.status, keywordsAlarmRuleRespList.status)
-            && Objects.equals(this.triggerConditionCount, keywordsAlarmRuleRespList.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency, keywordsAlarmRuleRespList.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, keywordsAlarmRuleRespList.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, keywordsAlarmRuleRespList.recoveryPolicy);
+        KeywordsAlarmRuleRespList that = (KeywordsAlarmRuleRespList) obj;
+        return Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.keywordsAlarmRuleId, that.keywordsAlarmRuleId)
+            && Objects.equals(this.keywordsAlarmRuleName, that.keywordsAlarmRuleName)
+            && Objects.equals(this.keywordsAlarmRuleDescription, that.keywordsAlarmRuleDescription)
+            && Objects.equals(this.conditionExpression, that.conditionExpression)
+            && Objects.equals(this.keywordsRequests, that.keywordsRequests)
+            && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.keywordsAlarmLevel, that.keywordsAlarmLevel)
+            && Objects.equals(this.keywordsAlarmSend, that.keywordsAlarmSend)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.topics, that.topics)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

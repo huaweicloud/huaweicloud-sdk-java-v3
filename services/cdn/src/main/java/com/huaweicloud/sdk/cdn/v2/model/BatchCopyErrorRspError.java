@@ -55,16 +55,15 @@ public class BatchCopyErrorRspError {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCopyErrorRspError batchCopyErrorRspError = (BatchCopyErrorRspError) o;
-        return Objects.equals(this.errorCode, batchCopyErrorRspError.errorCode)
-            && Objects.equals(this.errorMsg, batchCopyErrorRspError.errorMsg);
+        BatchCopyErrorRspError that = (BatchCopyErrorRspError) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

@@ -153,19 +153,17 @@ public class RtcHistoryUsage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RtcHistoryUsage rtcHistoryUsage = (RtcHistoryUsage) o;
-        return Objects.equals(this.date, rtcHistoryUsage.date) && Objects.equals(this.videoSd, rtcHistoryUsage.videoSd)
-            && Objects.equals(this.videoHd, rtcHistoryUsage.videoHd)
-            && Objects.equals(this.videoHdp, rtcHistoryUsage.videoHdp)
-            && Objects.equals(this.audio, rtcHistoryUsage.audio)
-            && Objects.equals(this.totalDuration, rtcHistoryUsage.totalDuration);
+        RtcHistoryUsage that = (RtcHistoryUsage) obj;
+        return Objects.equals(this.date, that.date) && Objects.equals(this.videoSd, that.videoSd)
+            && Objects.equals(this.videoHd, that.videoHd) && Objects.equals(this.videoHdp, that.videoHdp)
+            && Objects.equals(this.audio, that.audio) && Objects.equals(this.totalDuration, that.totalDuration);
     }
 
     @Override

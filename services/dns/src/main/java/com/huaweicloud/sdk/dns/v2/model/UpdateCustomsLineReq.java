@@ -96,17 +96,16 @@ public class UpdateCustomsLineReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomsLineReq updateCustomsLineReq = (UpdateCustomsLineReq) o;
-        return Objects.equals(this.name, updateCustomsLineReq.name)
-            && Objects.equals(this.ipSegments, updateCustomsLineReq.ipSegments)
-            && Objects.equals(this.description, updateCustomsLineReq.description);
+        UpdateCustomsLineReq that = (UpdateCustomsLineReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.ipSegments, that.ipSegments)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

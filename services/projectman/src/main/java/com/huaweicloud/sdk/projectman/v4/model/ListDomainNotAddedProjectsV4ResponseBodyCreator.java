@@ -143,21 +143,17 @@ public class ListDomainNotAddedProjectsV4ResponseBodyCreator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainNotAddedProjectsV4ResponseBodyCreator listDomainNotAddedProjectsV4ResponseBodyCreator =
-            (ListDomainNotAddedProjectsV4ResponseBodyCreator) o;
-        return Objects.equals(this.userNumId, listDomainNotAddedProjectsV4ResponseBodyCreator.userNumId)
-            && Objects.equals(this.userId, listDomainNotAddedProjectsV4ResponseBodyCreator.userId)
-            && Objects.equals(this.userName, listDomainNotAddedProjectsV4ResponseBodyCreator.userName)
-            && Objects.equals(this.domainId, listDomainNotAddedProjectsV4ResponseBodyCreator.domainId)
-            && Objects.equals(this.domainName, listDomainNotAddedProjectsV4ResponseBodyCreator.domainName)
-            && Objects.equals(this.nickName, listDomainNotAddedProjectsV4ResponseBodyCreator.nickName);
+        ListDomainNotAddedProjectsV4ResponseBodyCreator that = (ListDomainNotAddedProjectsV4ResponseBodyCreator) obj;
+        return Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

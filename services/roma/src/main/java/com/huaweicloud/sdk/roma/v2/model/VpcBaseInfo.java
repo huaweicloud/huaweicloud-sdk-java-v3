@@ -77,16 +77,16 @@ public class VpcBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcBaseInfo vpcBaseInfo = (VpcBaseInfo) o;
-        return Objects.equals(this.ecsId, vpcBaseInfo.ecsId) && Objects.equals(this.ecsName, vpcBaseInfo.ecsName)
-            && Objects.equals(this.cascadeFlag, vpcBaseInfo.cascadeFlag);
+        VpcBaseInfo that = (VpcBaseInfo) obj;
+        return Objects.equals(this.ecsId, that.ecsId) && Objects.equals(this.ecsName, that.ecsName)
+            && Objects.equals(this.cascadeFlag, that.cascadeFlag);
     }
 
     @Override

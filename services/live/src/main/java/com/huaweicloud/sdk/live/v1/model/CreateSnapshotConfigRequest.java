@@ -43,15 +43,15 @@ public class CreateSnapshotConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSnapshotConfigRequest createSnapshotConfigRequest = (CreateSnapshotConfigRequest) o;
-        return Objects.equals(this.body, createSnapshotConfigRequest.body);
+        CreateSnapshotConfigRequest that = (CreateSnapshotConfigRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class CreateInstanceV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceV2Request createInstanceV2Request = (CreateInstanceV2Request) o;
-        return Objects.equals(this.body, createInstanceV2Request.body);
+        CreateInstanceV2Request that = (CreateInstanceV2Request) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

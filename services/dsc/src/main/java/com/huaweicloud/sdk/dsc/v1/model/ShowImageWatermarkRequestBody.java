@@ -90,16 +90,15 @@ public class ShowImageWatermarkRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageWatermarkRequestBody showImageWatermarkRequestBody = (ShowImageWatermarkRequestBody) o;
-        return Objects.equals(this.file, showImageWatermarkRequestBody.file)
-            && Objects.equals(this.markLen, showImageWatermarkRequestBody.markLen);
+        ShowImageWatermarkRequestBody that = (ShowImageWatermarkRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.markLen, that.markLen);
     }
 
     @Override

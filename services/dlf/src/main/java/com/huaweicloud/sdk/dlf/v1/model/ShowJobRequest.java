@@ -55,16 +55,15 @@ public class ShowJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobRequest showJobRequest = (ShowJobRequest) o;
-        return Objects.equals(this.workspace, showJobRequest.workspace)
-            && Objects.equals(this.jobName, showJobRequest.jobName);
+        ShowJobRequest that = (ShowJobRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName);
     }
 
     @Override

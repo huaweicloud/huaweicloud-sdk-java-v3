@@ -33,15 +33,15 @@ public class ShowPublicipTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicipTagsRequest showPublicipTagsRequest = (ShowPublicipTagsRequest) o;
-        return Objects.equals(this.publicipId, showPublicipTagsRequest.publicipId);
+        ShowPublicipTagsRequest that = (ShowPublicipTagsRequest) obj;
+        return Objects.equals(this.publicipId, that.publicipId);
     }
 
     @Override

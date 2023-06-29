@@ -74,16 +74,15 @@ public class StacksConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StacksConfig stacksConfig = (StacksConfig) o;
-        return Objects.equals(this.attributes, stacksConfig.attributes)
-            && Objects.equals(this.recipe, stacksConfig.recipe);
+        StacksConfig that = (StacksConfig) obj;
+        return Objects.equals(this.attributes, that.attributes) && Objects.equals(this.recipe, that.recipe);
     }
 
     @Override

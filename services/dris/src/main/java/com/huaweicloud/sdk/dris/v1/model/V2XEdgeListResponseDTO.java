@@ -103,22 +103,15 @@ public class V2XEdgeListResponseDTO {
             if (value == null) {
                 return null;
             }
-            ChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChannelStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChannelStatusEnum(value));
         }
 
         public static ChannelStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -308,23 +301,20 @@ public class V2XEdgeListResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        V2XEdgeListResponseDTO v2XEdgeListResponseDTO = (V2XEdgeListResponseDTO) o;
-        return Objects.equals(this.v2xEdgeId, v2XEdgeListResponseDTO.v2xEdgeId)
-            && Objects.equals(this.name, v2XEdgeListResponseDTO.name)
-            && Objects.equals(this.esn, v2XEdgeListResponseDTO.esn)
-            && Objects.equals(this.ip, v2XEdgeListResponseDTO.ip)
-            && Objects.equals(this.positionDescription, v2XEdgeListResponseDTO.positionDescription)
-            && Objects.equals(this.location, v2XEdgeListResponseDTO.location)
-            && Objects.equals(this.status, v2XEdgeListResponseDTO.status)
-            && Objects.equals(this.channelStatus, v2XEdgeListResponseDTO.channelStatus)
-            && Objects.equals(this.createdTime, v2XEdgeListResponseDTO.createdTime);
+        V2XEdgeListResponseDTO that = (V2XEdgeListResponseDTO) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.channelStatus, that.channelStatus)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

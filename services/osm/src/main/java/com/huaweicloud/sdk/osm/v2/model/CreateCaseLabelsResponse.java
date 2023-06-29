@@ -56,16 +56,15 @@ public class CreateCaseLabelsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCaseLabelsResponse createCaseLabelsResponse = (CreateCaseLabelsResponse) o;
-        return Objects.equals(this.errorCode, createCaseLabelsResponse.errorCode)
-            && Objects.equals(this.errorMsg, createCaseLabelsResponse.errorMsg);
+        CreateCaseLabelsResponse that = (CreateCaseLabelsResponse) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

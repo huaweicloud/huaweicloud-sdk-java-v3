@@ -426,31 +426,25 @@ public class DriverLicenseFront {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DriverLicenseFront driverLicenseFront = (DriverLicenseFront) o;
-        return Objects.equals(this.type, driverLicenseFront.type)
-            && Objects.equals(this.number, driverLicenseFront.number)
-            && Objects.equals(this.name, driverLicenseFront.name) && Objects.equals(this.sex, driverLicenseFront.sex)
-            && Objects.equals(this.nationality, driverLicenseFront.nationality)
-            && Objects.equals(this.address, driverLicenseFront.address)
-            && Objects.equals(this.birth, driverLicenseFront.birth)
-            && Objects.equals(this.issueDate, driverLicenseFront.issueDate)
-            && Objects.equals(this.propertyClass, driverLicenseFront.propertyClass)
-            && Objects.equals(this.validFrom, driverLicenseFront.validFrom)
-            && Objects.equals(this.validTo, driverLicenseFront.validTo)
-            && Objects.equals(this.issuingAuthority, driverLicenseFront.issuingAuthority)
-            && Objects.equals(this.accumulatedScores, driverLicenseFront.accumulatedScores)
-            && Objects.equals(this.status, driverLicenseFront.status)
-            && Objects.equals(this.generationDate, driverLicenseFront.generationDate)
-            && Objects.equals(this.currentTime, driverLicenseFront.currentTime)
-            && Objects.equals(this.fileNumber, driverLicenseFront.fileNumber)
-            && Objects.equals(this.textLocation, driverLicenseFront.textLocation);
+        DriverLicenseFront that = (DriverLicenseFront) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.nationality, that.nationality) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.birth, that.birth) && Objects.equals(this.issueDate, that.issueDate)
+            && Objects.equals(this.propertyClass, that.propertyClass) && Objects.equals(this.validFrom, that.validFrom)
+            && Objects.equals(this.validTo, that.validTo)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.accumulatedScores, that.accumulatedScores)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.generationDate, that.generationDate)
+            && Objects.equals(this.currentTime, that.currentTime) && Objects.equals(this.fileNumber, that.fileNumber)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

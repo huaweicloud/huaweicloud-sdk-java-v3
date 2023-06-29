@@ -35,6 +35,11 @@ public class ListDesktopsRequest {
 
     private Integer limit;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "pool_id")
+
+    private String poolId;
+
     public ListDesktopsRequest withUserName(String userName) {
         this.userName = userName;
         return this;
@@ -124,25 +129,40 @@ public class ListDesktopsRequest {
         this.limit = limit;
     }
 
+    public ListDesktopsRequest withPoolId(String poolId) {
+        this.poolId = poolId;
+        return this;
+    }
+
+    /**
+     * 桌面池ID,多个桌面池ID用逗号隔开。
+     * @return poolId
+     */
+    public String getPoolId() {
+        return poolId;
+    }
+
+    public void setPoolId(String poolId) {
+        this.poolId = poolId;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDesktopsRequest listDesktopsRequest = (ListDesktopsRequest) o;
-        return Objects.equals(this.userName, listDesktopsRequest.userName)
-            && Objects.equals(this.computerName, listDesktopsRequest.computerName)
-            && Objects.equals(this.desktopIp, listDesktopsRequest.desktopIp)
-            && Objects.equals(this.offset, listDesktopsRequest.offset)
-            && Objects.equals(this.limit, listDesktopsRequest.limit);
+        ListDesktopsRequest that = (ListDesktopsRequest) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.desktopIp, that.desktopIp) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.poolId, that.poolId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, computerName, desktopIp, offset, limit);
+        return Objects.hash(userName, computerName, desktopIp, offset, limit, poolId);
     }
 
     @Override
@@ -154,6 +174,7 @@ public class ListDesktopsRequest {
         sb.append("    desktopIp: ").append(toIndentedString(desktopIp)).append("\n");
         sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
         sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+        sb.append("    poolId: ").append(toIndentedString(poolId)).append("\n");
         sb.append("}");
         return sb.toString();
     }

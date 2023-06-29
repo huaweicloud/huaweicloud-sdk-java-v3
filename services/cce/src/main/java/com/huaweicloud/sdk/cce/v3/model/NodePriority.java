@@ -65,16 +65,15 @@ public class NodePriority {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePriority nodePriority = (NodePriority) o;
-        return Objects.equals(this.nodeSelector, nodePriority.nodeSelector)
-            && Objects.equals(this.priority, nodePriority.priority);
+        NodePriority that = (NodePriority) obj;
+        return Objects.equals(this.nodeSelector, that.nodeSelector) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

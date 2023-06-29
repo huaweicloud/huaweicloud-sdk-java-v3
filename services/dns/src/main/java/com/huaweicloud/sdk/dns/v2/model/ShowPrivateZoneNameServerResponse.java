@@ -53,15 +53,15 @@ public class ShowPrivateZoneNameServerResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateZoneNameServerResponse showPrivateZoneNameServerResponse = (ShowPrivateZoneNameServerResponse) o;
-        return Objects.equals(this.nameservers, showPrivateZoneNameServerResponse.nameservers);
+        ShowPrivateZoneNameServerResponse that = (ShowPrivateZoneNameServerResponse) obj;
+        return Objects.equals(this.nameservers, that.nameservers);
     }
 
     @Override

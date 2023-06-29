@@ -328,21 +328,21 @@ public class CaseAwInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CaseAwInfo caseAwInfo = (CaseAwInfo) o;
-        return Objects.equals(this.aw, caseAwInfo.aw) && Objects.equals(this.awList, caseAwInfo.awList)
-            && Objects.equals(this.caseAwId, caseAwInfo.caseAwId) && Objects.equals(this.caseUri, caseAwInfo.caseUri)
-            && Objects.equals(this.caseUriI, caseAwInfo.caseUriI)
-            && Objects.equals(this.datumType, caseAwInfo.datumType) && Objects.equals(this.id, caseAwInfo.id)
-            && Objects.equals(this.name, caseAwInfo.name) && Objects.equals(this.taskExecId, caseAwInfo.taskExecId)
-            && Objects.equals(this.taskId, caseAwInfo.taskId) && Objects.equals(this.testcaseId, caseAwInfo.testcaseId)
-            && Objects.equals(this.transactionList, caseAwInfo.transactionList);
+        CaseAwInfo that = (CaseAwInfo) obj;
+        return Objects.equals(this.aw, that.aw) && Objects.equals(this.awList, that.awList)
+            && Objects.equals(this.caseAwId, that.caseAwId) && Objects.equals(this.caseUri, that.caseUri)
+            && Objects.equals(this.caseUriI, that.caseUriI) && Objects.equals(this.datumType, that.datumType)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.taskExecId, that.taskExecId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.testcaseId, that.testcaseId)
+            && Objects.equals(this.transactionList, that.transactionList);
     }
 
     @Override

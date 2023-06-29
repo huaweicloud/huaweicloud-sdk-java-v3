@@ -91,16 +91,15 @@ public class ShowTransactionDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTransactionDetailResponse showTransactionDetailResponse = (ShowTransactionDetailResponse) o;
-        return Objects.equals(this.txNodeList, showTransactionDetailResponse.txNodeList)
-            && Objects.equals(this.txLineList, showTransactionDetailResponse.txLineList);
+        ShowTransactionDetailResponse that = (ShowTransactionDetailResponse) obj;
+        return Objects.equals(this.txNodeList, that.txNodeList) && Objects.equals(this.txLineList, that.txLineList);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class ModifyPwdEndPoint {
             if (value == null) {
                 return null;
             }
-            EndPointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EndPointTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EndPointTypeEnum(value));
         }
 
         public static EndPointTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EndPointTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -191,18 +184,16 @@ public class ModifyPwdEndPoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyPwdEndPoint modifyPwdEndPoint = (ModifyPwdEndPoint) o;
-        return Objects.equals(this.dbPassword, modifyPwdEndPoint.dbPassword)
-            && Objects.equals(this.endPointType, modifyPwdEndPoint.endPointType)
-            && Objects.equals(this.jobId, modifyPwdEndPoint.jobId)
-            && Objects.equals(this.kerberos, modifyPwdEndPoint.kerberos);
+        ModifyPwdEndPoint that = (ModifyPwdEndPoint) obj;
+        return Objects.equals(this.dbPassword, that.dbPassword) && Objects.equals(this.endPointType, that.endPointType)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.kerberos, that.kerberos);
     }
 
     @Override

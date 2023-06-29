@@ -165,21 +165,18 @@ public class BugStatisticResponseV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BugStatisticResponseV4 bugStatisticResponseV4 = (BugStatisticResponseV4) o;
-        return Objects.equals(this.criticalNum, bugStatisticResponseV4.criticalNum)
-            && Objects.equals(this.defectIndex, bugStatisticResponseV4.defectIndex)
-            && Objects.equals(this.module, bugStatisticResponseV4.module)
-            && Objects.equals(this.normalNum, bugStatisticResponseV4.normalNum)
-            && Objects.equals(this.seriousNum, bugStatisticResponseV4.seriousNum)
-            && Objects.equals(this.tipNum, bugStatisticResponseV4.tipNum)
-            && Objects.equals(this.total, bugStatisticResponseV4.total);
+        BugStatisticResponseV4 that = (BugStatisticResponseV4) obj;
+        return Objects.equals(this.criticalNum, that.criticalNum) && Objects.equals(this.defectIndex, that.defectIndex)
+            && Objects.equals(this.module, that.module) && Objects.equals(this.normalNum, that.normalNum)
+            && Objects.equals(this.seriousNum, that.seriousNum) && Objects.equals(this.tipNum, that.tipNum)
+            && Objects.equals(this.total, that.total);
     }
 
     @Override

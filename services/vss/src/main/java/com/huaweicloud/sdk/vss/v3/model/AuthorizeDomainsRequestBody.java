@@ -71,22 +71,15 @@ public class AuthorizeDomainsRequestBody {
             if (value == null) {
                 return null;
             }
-            AuthModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthModeEnum(value));
         }
 
         public static AuthModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -114,7 +107,7 @@ public class AuthorizeDomainsRequestBody {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -143,16 +136,15 @@ public class AuthorizeDomainsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizeDomainsRequestBody authorizeDomainsRequestBody = (AuthorizeDomainsRequestBody) o;
-        return Objects.equals(this.domainName, authorizeDomainsRequestBody.domainName)
-            && Objects.equals(this.authMode, authorizeDomainsRequestBody.authMode);
+        AuthorizeDomainsRequestBody that = (AuthorizeDomainsRequestBody) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.authMode, that.authMode);
     }
 
     @Override

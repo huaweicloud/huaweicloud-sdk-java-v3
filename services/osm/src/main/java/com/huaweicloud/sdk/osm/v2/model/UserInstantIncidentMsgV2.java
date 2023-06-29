@@ -74,16 +74,15 @@ public class UserInstantIncidentMsgV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserInstantIncidentMsgV2 userInstantIncidentMsgV2 = (UserInstantIncidentMsgV2) o;
-        return Objects.equals(this.incidentId, userInstantIncidentMsgV2.incidentId)
-            && Objects.equals(this.messageList, userInstantIncidentMsgV2.messageList);
+        UserInstantIncidentMsgV2 that = (UserInstantIncidentMsgV2) obj;
+        return Objects.equals(this.incidentId, that.incidentId) && Objects.equals(this.messageList, that.messageList);
     }
 
     @Override

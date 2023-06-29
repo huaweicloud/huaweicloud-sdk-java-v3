@@ -87,17 +87,16 @@ public class UpdateTopicReplicaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTopicReplicaRequest updateTopicReplicaRequest = (UpdateTopicReplicaRequest) o;
-        return Objects.equals(this.instanceId, updateTopicReplicaRequest.instanceId)
-            && Objects.equals(this.topic, updateTopicReplicaRequest.topic)
-            && Objects.equals(this.body, updateTopicReplicaRequest.body);
+        UpdateTopicReplicaRequest that = (UpdateTopicReplicaRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

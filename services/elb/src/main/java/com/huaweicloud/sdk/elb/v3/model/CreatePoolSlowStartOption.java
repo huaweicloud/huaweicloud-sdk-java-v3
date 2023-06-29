@@ -57,16 +57,15 @@ public class CreatePoolSlowStartOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePoolSlowStartOption createPoolSlowStartOption = (CreatePoolSlowStartOption) o;
-        return Objects.equals(this.enable, createPoolSlowStartOption.enable)
-            && Objects.equals(this.duration, createPoolSlowStartOption.duration);
+        CreatePoolSlowStartOption that = (CreatePoolSlowStartOption) obj;
+        return Objects.equals(this.enable, that.enable) && Objects.equals(this.duration, that.duration);
     }
 
     @Override

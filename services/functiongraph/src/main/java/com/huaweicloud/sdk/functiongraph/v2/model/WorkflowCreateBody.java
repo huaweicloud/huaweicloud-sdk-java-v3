@@ -59,8 +59,8 @@ public class WorkflowCreateBody {
     private List<Retry> retries = null;
 
     /**
-    * 函数流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
-    */
+     * 函数流模式，当前支持两种模式 NORMAL: 标准模式，普通模式面向普通的业务场景，支持长时间任务，支持执行历史持久化和查询，只支持异步调用 EXPRESS: 快速模式，快速模式面向业务执行时长较短，需要极致性能的场景，只支持流程执行时长低于5分钟的场景，不支持执行历史持久化，支持同步和异步调用 默认为标准模式
+     */
     public static final class ModeEnum {
 
         /**
@@ -103,22 +103,15 @@ public class WorkflowCreateBody {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModeEnum(value));
         }
 
         public static ModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -433,26 +426,21 @@ public class WorkflowCreateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowCreateBody workflowCreateBody = (WorkflowCreateBody) o;
-        return Objects.equals(this.name, workflowCreateBody.name)
-            && Objects.equals(this.description, workflowCreateBody.description)
-            && Objects.equals(this.start, workflowCreateBody.start)
-            && Objects.equals(this.triggers, workflowCreateBody.triggers)
-            && Objects.equals(this.functions, workflowCreateBody.functions)
-            && Objects.equals(this.states, workflowCreateBody.states)
-            && Objects.equals(this.constants, workflowCreateBody.constants)
-            && Objects.equals(this.retries, workflowCreateBody.retries)
-            && Objects.equals(this.mode, workflowCreateBody.mode)
-            && Objects.equals(this.expressConfig, workflowCreateBody.expressConfig)
-            && Objects.equals(this.enterpriseProjectId, workflowCreateBody.enterpriseProjectId)
-            && Objects.equals(this.enableStreamResponse, workflowCreateBody.enableStreamResponse);
+        WorkflowCreateBody that = (WorkflowCreateBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.start, that.start) && Objects.equals(this.triggers, that.triggers)
+            && Objects.equals(this.functions, that.functions) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.constants, that.constants) && Objects.equals(this.retries, that.retries)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.expressConfig, that.expressConfig)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableStreamResponse, that.enableStreamResponse);
     }
 
     @Override

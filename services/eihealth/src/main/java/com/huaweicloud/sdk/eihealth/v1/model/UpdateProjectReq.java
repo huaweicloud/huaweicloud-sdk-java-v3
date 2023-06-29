@@ -142,18 +142,17 @@ public class UpdateProjectReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectReq updateProjectReq = (UpdateProjectReq) o;
-        return Objects.equals(this.description, updateProjectReq.description)
-            && Objects.equals(this.status, updateProjectReq.status) && Objects.equals(this.tags, updateProjectReq.tags)
-            && Objects.equals(this.isCore, updateProjectReq.isCore)
-            && Objects.equals(this.storageQuota, updateProjectReq.storageQuota);
+        UpdateProjectReq that = (UpdateProjectReq) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.isCore, that.isCore)
+            && Objects.equals(this.storageQuota, that.storageQuota);
     }
 
     @Override

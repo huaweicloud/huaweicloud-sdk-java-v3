@@ -136,19 +136,16 @@ public class CreateBlockchainCertByUserNameRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBlockchainCertByUserNameRequest createBlockchainCertByUserNameRequest =
-            (CreateBlockchainCertByUserNameRequest) o;
-        return Objects.equals(this.blockchainId, createBlockchainCertByUserNameRequest.blockchainId)
-            && Objects.equals(this.orgName, createBlockchainCertByUserNameRequest.orgName)
-            && Objects.equals(this.userName, createBlockchainCertByUserNameRequest.userName)
-            && Objects.equals(this.body, createBlockchainCertByUserNameRequest.body);
+        CreateBlockchainCertByUserNameRequest that = (CreateBlockchainCertByUserNameRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.orgName, that.orgName)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.body, that.body);
     }
 
     @Override

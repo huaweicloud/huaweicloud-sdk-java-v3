@@ -77,17 +77,16 @@ public class ReleaseFileVersionDo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReleaseFileVersionDo releaseFileVersionDo = (ReleaseFileVersionDo) o;
-        return Objects.equals(this.version, releaseFileVersionDo.version)
-            && Objects.equals(this.path, releaseFileVersionDo.path)
-            && Objects.equals(this.downloadUrl, releaseFileVersionDo.downloadUrl);
+        ReleaseFileVersionDo that = (ReleaseFileVersionDo) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

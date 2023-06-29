@@ -33,15 +33,15 @@ public class ShowPrivateNatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateNatRequest showPrivateNatRequest = (ShowPrivateNatRequest) o;
-        return Objects.equals(this.gatewayId, showPrivateNatRequest.gatewayId);
+        ShowPrivateNatRequest that = (ShowPrivateNatRequest) obj;
+        return Objects.equals(this.gatewayId, that.gatewayId);
     }
 
     @Override

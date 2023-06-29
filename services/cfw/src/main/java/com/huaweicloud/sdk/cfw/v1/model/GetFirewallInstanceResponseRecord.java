@@ -59,8 +59,8 @@ public class GetFirewallInstanceResponseRecord {
     private List<ProtectObjectVO> protectObjects = null;
 
     /**
-    * 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
-    */
+     * 防火墙状态列表，包括-1：等待支付，0：创建中，1，删除中，2：运行中，3：升级中，4：删除完成：5：冻结中，6：创建失败，7：删除失败，8：冻结失败，9：存储中，10：存储失败，11：升级失败
+     */
     public static final class StatusEnum {
 
         /**
@@ -169,22 +169,15 @@ public class GetFirewallInstanceResponseRecord {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -549,29 +542,24 @@ public class GetFirewallInstanceResponseRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetFirewallInstanceResponseRecord getFirewallInstanceResponseRecord = (GetFirewallInstanceResponseRecord) o;
-        return Objects.equals(this.fwInstanceId, getFirewallInstanceResponseRecord.fwInstanceId)
-            && Objects.equals(this.name, getFirewallInstanceResponseRecord.name)
-            && Objects.equals(this.haType, getFirewallInstanceResponseRecord.haType)
-            && Objects.equals(this.chargeMode, getFirewallInstanceResponseRecord.chargeMode)
-            && Objects.equals(this.serviceType, getFirewallInstanceResponseRecord.serviceType)
-            && Objects.equals(this.engineType, getFirewallInstanceResponseRecord.engineType)
-            && Objects.equals(this.flavor, getFirewallInstanceResponseRecord.flavor)
-            && Objects.equals(this.protectObjects, getFirewallInstanceResponseRecord.protectObjects)
-            && Objects.equals(this.status, getFirewallInstanceResponseRecord.status)
-            && Objects.equals(this.isOldFirewallInstance, getFirewallInstanceResponseRecord.isOldFirewallInstance)
-            && Objects.equals(this.supportIpv6, getFirewallInstanceResponseRecord.supportIpv6)
-            && Objects.equals(this.featureToggle, getFirewallInstanceResponseRecord.featureToggle)
-            && Objects.equals(this.resources, getFirewallInstanceResponseRecord.resources)
-            && Objects.equals(this.fwInstanceName, getFirewallInstanceResponseRecord.fwInstanceName)
-            && Objects.equals(this.enterpriseProjectId, getFirewallInstanceResponseRecord.enterpriseProjectId);
+        GetFirewallInstanceResponseRecord that = (GetFirewallInstanceResponseRecord) obj;
+        return Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.haType, that.haType) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.protectObjects, that.protectObjects)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.isOldFirewallInstance, that.isOldFirewallInstance)
+            && Objects.equals(this.supportIpv6, that.supportIpv6)
+            && Objects.equals(this.featureToggle, that.featureToggle) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.fwInstanceName, that.fwInstanceName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

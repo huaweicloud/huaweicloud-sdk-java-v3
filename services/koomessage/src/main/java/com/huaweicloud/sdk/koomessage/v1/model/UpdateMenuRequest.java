@@ -65,16 +65,15 @@ public class UpdateMenuRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMenuRequest updateMenuRequest = (UpdateMenuRequest) o;
-        return Objects.equals(this.menuId, updateMenuRequest.menuId)
-            && Objects.equals(this.body, updateMenuRequest.body);
+        UpdateMenuRequest that = (UpdateMenuRequest) obj;
+        return Objects.equals(this.menuId, that.menuId) && Objects.equals(this.body, that.body);
     }
 
     @Override

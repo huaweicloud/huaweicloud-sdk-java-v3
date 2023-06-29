@@ -77,17 +77,16 @@ public class AddServiceSetUsingPOSTRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddServiceSetUsingPOSTRequestBody addServiceSetUsingPOSTRequestBody = (AddServiceSetUsingPOSTRequestBody) o;
-        return Objects.equals(this.objectId, addServiceSetUsingPOSTRequestBody.objectId)
-            && Objects.equals(this.name, addServiceSetUsingPOSTRequestBody.name)
-            && Objects.equals(this.description, addServiceSetUsingPOSTRequestBody.description);
+        AddServiceSetUsingPOSTRequestBody that = (AddServiceSetUsingPOSTRequestBody) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

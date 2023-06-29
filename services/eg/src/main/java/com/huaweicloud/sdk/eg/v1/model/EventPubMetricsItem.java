@@ -143,20 +143,17 @@ public class EventPubMetricsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventPubMetricsItem eventPubMetricsItem = (EventPubMetricsItem) o;
-        return Objects.equals(this.eventSize, eventPubMetricsItem.eventSize)
-            && Objects.equals(this.timestamp, eventPubMetricsItem.timestamp)
-            && Objects.equals(this.num, eventPubMetricsItem.num)
-            && Objects.equals(this.successNum, eventPubMetricsItem.successNum)
-            && Objects.equals(this.processTime, eventPubMetricsItem.processTime)
-            && Objects.equals(this.invokeTime, eventPubMetricsItem.invokeTime);
+        EventPubMetricsItem that = (EventPubMetricsItem) obj;
+        return Objects.equals(this.eventSize, that.eventSize) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.num, that.num) && Objects.equals(this.successNum, that.successNum)
+            && Objects.equals(this.processTime, that.processTime) && Objects.equals(this.invokeTime, that.invokeTime);
     }
 
     @Override

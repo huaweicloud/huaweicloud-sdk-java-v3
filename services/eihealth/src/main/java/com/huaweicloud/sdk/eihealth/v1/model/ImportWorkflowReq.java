@@ -99,18 +99,18 @@ public class ImportWorkflowReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportWorkflowReq importWorkflowReq = (ImportWorkflowReq) o;
-        return Objects.equals(this.sourceProjectId, importWorkflowReq.sourceProjectId)
-            && Objects.equals(this.sourceWorkflowId, importWorkflowReq.sourceWorkflowId)
-            && Objects.equals(this.destinationWorkflowName, importWorkflowReq.destinationWorkflowName)
-            && Objects.equals(this.destinationWorkflowVersion, importWorkflowReq.destinationWorkflowVersion);
+        ImportWorkflowReq that = (ImportWorkflowReq) obj;
+        return Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceWorkflowId, that.sourceWorkflowId)
+            && Objects.equals(this.destinationWorkflowName, that.destinationWorkflowName)
+            && Objects.equals(this.destinationWorkflowVersion, that.destinationWorkflowVersion);
     }
 
     @Override

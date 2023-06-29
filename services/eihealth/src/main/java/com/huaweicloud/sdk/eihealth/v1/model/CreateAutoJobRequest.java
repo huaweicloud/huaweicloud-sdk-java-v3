@@ -65,16 +65,15 @@ public class CreateAutoJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAutoJobRequest createAutoJobRequest = (CreateAutoJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, createAutoJobRequest.eihealthProjectId)
-            && Objects.equals(this.body, createAutoJobRequest.body);
+        CreateAutoJobRequest that = (CreateAutoJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

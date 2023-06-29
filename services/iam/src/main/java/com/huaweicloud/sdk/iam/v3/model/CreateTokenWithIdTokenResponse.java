@@ -68,16 +68,15 @@ public class CreateTokenWithIdTokenResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTokenWithIdTokenResponse createTokenWithIdTokenResponse = (CreateTokenWithIdTokenResponse) o;
-        return Objects.equals(this.token, createTokenWithIdTokenResponse.token)
-            && Objects.equals(this.xSubjectToken, createTokenWithIdTokenResponse.xSubjectToken);
+        CreateTokenWithIdTokenResponse that = (CreateTokenWithIdTokenResponse) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.xSubjectToken, that.xSubjectToken);
     }
 
     @Override

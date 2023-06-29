@@ -143,20 +143,17 @@ public class IssueCompletionRateV4IssueStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueCompletionRateV4IssueStatus issueCompletionRateV4IssueStatus = (IssueCompletionRateV4IssueStatus) o;
-        return Objects.equals(this.closedNum, issueCompletionRateV4IssueStatus.closedNum)
-            && Objects.equals(this.newNum, issueCompletionRateV4IssueStatus.newNum)
-            && Objects.equals(this.processNum, issueCompletionRateV4IssueStatus.processNum)
-            && Objects.equals(this.rejectedNum, issueCompletionRateV4IssueStatus.rejectedNum)
-            && Objects.equals(this.solvedNum, issueCompletionRateV4IssueStatus.solvedNum)
-            && Objects.equals(this.testNum, issueCompletionRateV4IssueStatus.testNum);
+        IssueCompletionRateV4IssueStatus that = (IssueCompletionRateV4IssueStatus) obj;
+        return Objects.equals(this.closedNum, that.closedNum) && Objects.equals(this.newNum, that.newNum)
+            && Objects.equals(this.processNum, that.processNum) && Objects.equals(this.rejectedNum, that.rejectedNum)
+            && Objects.equals(this.solvedNum, that.solvedNum) && Objects.equals(this.testNum, that.testNum);
     }
 
     @Override

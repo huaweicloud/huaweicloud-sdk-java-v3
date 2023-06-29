@@ -34,15 +34,15 @@ public class DeleteV2XEdgeByV2xEdgeIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteV2XEdgeByV2xEdgeIdResponse deleteV2XEdgeByV2xEdgeIdResponse = (DeleteV2XEdgeByV2xEdgeIdResponse) o;
-        return Objects.equals(this.body, deleteV2XEdgeByV2xEdgeIdResponse.body);
+        DeleteV2XEdgeByV2xEdgeIdResponse that = (DeleteV2XEdgeByV2xEdgeIdResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

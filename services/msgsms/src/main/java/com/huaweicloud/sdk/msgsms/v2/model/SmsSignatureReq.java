@@ -211,23 +211,21 @@ public class SmsSignatureReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsSignatureReq smsSignatureReq = (SmsSignatureReq) o;
-        return Objects.equals(this.appId, smsSignatureReq.appId)
-            && Objects.equals(this.applyDesc, smsSignatureReq.applyDesc)
-            && Objects.equals(this.fileId, smsSignatureReq.fileId)
-            && Objects.equals(this.isInvolvedThird, smsSignatureReq.isInvolvedThird)
-            && Objects.equals(this.powerAttorneyFileid, smsSignatureReq.powerAttorneyFileid)
-            && Objects.equals(this.signatureName, smsSignatureReq.signatureName)
-            && Objects.equals(this.signatureSource, smsSignatureReq.signatureSource)
-            && Objects.equals(this.signatureType, smsSignatureReq.signatureType)
-            && Objects.equals(this.sourceTitleContent, smsSignatureReq.sourceTitleContent);
+        SmsSignatureReq that = (SmsSignatureReq) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.applyDesc, that.applyDesc)
+            && Objects.equals(this.fileId, that.fileId) && Objects.equals(this.isInvolvedThird, that.isInvolvedThird)
+            && Objects.equals(this.powerAttorneyFileid, that.powerAttorneyFileid)
+            && Objects.equals(this.signatureName, that.signatureName)
+            && Objects.equals(this.signatureSource, that.signatureSource)
+            && Objects.equals(this.signatureType, that.signatureType)
+            && Objects.equals(this.sourceTitleContent, that.sourceTitleContent);
     }
 
     @Override

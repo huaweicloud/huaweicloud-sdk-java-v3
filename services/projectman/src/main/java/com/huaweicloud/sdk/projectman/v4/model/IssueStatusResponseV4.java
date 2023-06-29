@@ -143,20 +143,17 @@ public class IssueStatusResponseV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueStatusResponseV4 issueStatusResponseV4 = (IssueStatusResponseV4) o;
-        return Objects.equals(this.closedNum, issueStatusResponseV4.closedNum)
-            && Objects.equals(this.newNum, issueStatusResponseV4.newNum)
-            && Objects.equals(this.processNum, issueStatusResponseV4.processNum)
-            && Objects.equals(this.rejectedNum, issueStatusResponseV4.rejectedNum)
-            && Objects.equals(this.solvedNum, issueStatusResponseV4.solvedNum)
-            && Objects.equals(this.testNum, issueStatusResponseV4.testNum);
+        IssueStatusResponseV4 that = (IssueStatusResponseV4) obj;
+        return Objects.equals(this.closedNum, that.closedNum) && Objects.equals(this.newNum, that.newNum)
+            && Objects.equals(this.processNum, that.processNum) && Objects.equals(this.rejectedNum, that.rejectedNum)
+            && Objects.equals(this.solvedNum, that.solvedNum) && Objects.equals(this.testNum, that.testNum);
     }
 
     @Override

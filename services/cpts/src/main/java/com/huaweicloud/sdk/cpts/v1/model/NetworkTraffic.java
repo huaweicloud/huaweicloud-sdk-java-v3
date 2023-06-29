@@ -121,19 +121,19 @@ public class NetworkTraffic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NetworkTraffic networkTraffic = (NetworkTraffic) o;
-        return Objects.equals(this.avgNetworkTraffic, networkTraffic.avgNetworkTraffic)
-            && Objects.equals(this.maxDownStream, networkTraffic.maxDownStream)
-            && Objects.equals(this.maxNetworkTraffic, networkTraffic.maxNetworkTraffic)
-            && Objects.equals(this.maxUpstream, networkTraffic.maxUpstream)
-            && Objects.equals(this.minNetworkTraffic, networkTraffic.minNetworkTraffic);
+        NetworkTraffic that = (NetworkTraffic) obj;
+        return Objects.equals(this.avgNetworkTraffic, that.avgNetworkTraffic)
+            && Objects.equals(this.maxDownStream, that.maxDownStream)
+            && Objects.equals(this.maxNetworkTraffic, that.maxNetworkTraffic)
+            && Objects.equals(this.maxUpstream, that.maxUpstream)
+            && Objects.equals(this.minNetworkTraffic, that.minNetworkTraffic);
     }
 
     @Override

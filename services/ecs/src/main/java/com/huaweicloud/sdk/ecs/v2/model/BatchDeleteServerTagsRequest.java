@@ -65,16 +65,15 @@ public class BatchDeleteServerTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteServerTagsRequest batchDeleteServerTagsRequest = (BatchDeleteServerTagsRequest) o;
-        return Objects.equals(this.serverId, batchDeleteServerTagsRequest.serverId)
-            && Objects.equals(this.body, batchDeleteServerTagsRequest.body);
+        BatchDeleteServerTagsRequest that = (BatchDeleteServerTagsRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

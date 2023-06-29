@@ -55,15 +55,15 @@ public class BandwidthPkgPage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthPkgPage bandwidthPkgPage = (BandwidthPkgPage) o;
-        return Objects.equals(this.href, bandwidthPkgPage.href) && Objects.equals(this.rel, bandwidthPkgPage.rel);
+        BandwidthPkgPage that = (BandwidthPkgPage) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel);
     }
 
     @Override

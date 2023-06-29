@@ -96,17 +96,16 @@ public class ResourceInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceInstance resourceInstance = (ResourceInstance) o;
-        return Objects.equals(this.resourceId, resourceInstance.resourceId)
-            && Objects.equals(this.tags, resourceInstance.tags)
-            && Objects.equals(this.resourceName, resourceInstance.resourceName);
+        ResourceInstance that = (ResourceInstance) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.resourceName, that.resourceName);
     }
 
     @Override

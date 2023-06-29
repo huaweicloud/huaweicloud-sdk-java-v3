@@ -79,17 +79,16 @@ public class ShowPublicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicationRequest showPublicationRequest = (ShowPublicationRequest) o;
-        return Objects.equals(this.xRequestId, showPublicationRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, showPublicationRequest.acceptLanguage)
-            && Objects.equals(this.id, showPublicationRequest.id);
+        ShowPublicationRequest that = (ShowPublicationRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.id, that.id);
     }
 
     @Override

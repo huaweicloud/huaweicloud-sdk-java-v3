@@ -325,28 +325,24 @@ public class WtpProtectHostResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WtpProtectHostResponseInfo wtpProtectHostResponseInfo = (WtpProtectHostResponseInfo) o;
-        return Objects.equals(this.hostName, wtpProtectHostResponseInfo.hostName)
-            && Objects.equals(this.hostId, wtpProtectHostResponseInfo.hostId)
-            && Objects.equals(this.publicIp, wtpProtectHostResponseInfo.publicIp)
-            && Objects.equals(this.privateIp, wtpProtectHostResponseInfo.privateIp)
-            && Objects.equals(this.groupName, wtpProtectHostResponseInfo.groupName)
-            && Objects.equals(this.osBit, wtpProtectHostResponseInfo.osBit)
-            && Objects.equals(this.osType, wtpProtectHostResponseInfo.osType)
-            && Objects.equals(this.protectStatus, wtpProtectHostResponseInfo.protectStatus)
-            && Objects.equals(this.raspProtectStatus, wtpProtectHostResponseInfo.raspProtectStatus)
-            && Objects.equals(this.antiTamperingTimes, wtpProtectHostResponseInfo.antiTamperingTimes)
-            && Objects.equals(this.detectTamperingTimes, wtpProtectHostResponseInfo.detectTamperingTimes)
-            && Objects.equals(this.lastDetectTime, wtpProtectHostResponseInfo.lastDetectTime)
-            && Objects.equals(this.scheduledShutdownStatus, wtpProtectHostResponseInfo.scheduledShutdownStatus)
-            && Objects.equals(this.agentStatus, wtpProtectHostResponseInfo.agentStatus);
+        WtpProtectHostResponseInfo that = (WtpProtectHostResponseInfo) obj;
+        return Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.osBit, that.osBit)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.raspProtectStatus, that.raspProtectStatus)
+            && Objects.equals(this.antiTamperingTimes, that.antiTamperingTimes)
+            && Objects.equals(this.detectTamperingTimes, that.detectTamperingTimes)
+            && Objects.equals(this.lastDetectTime, that.lastDetectTime)
+            && Objects.equals(this.scheduledShutdownStatus, that.scheduledShutdownStatus)
+            && Objects.equals(this.agentStatus, that.agentStatus);
     }
 
     @Override

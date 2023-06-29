@@ -83,16 +83,15 @@ public class MetricItemResultAPI {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricItemResultAPI metricItemResultAPI = (MetricItemResultAPI) o;
-        return Objects.equals(this.metric, metricItemResultAPI.metric)
-            && Objects.equals(this.dataPoints, metricItemResultAPI.dataPoints);
+        MetricItemResultAPI that = (MetricItemResultAPI) obj;
+        return Objects.equals(this.metric, that.metric) && Objects.equals(this.dataPoints, that.dataPoints);
     }
 
     @Override

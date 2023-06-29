@@ -77,17 +77,16 @@ public class RecordDownloadUrlDO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordDownloadUrlDO recordDownloadUrlDO = (RecordDownloadUrlDO) o;
-        return Objects.equals(this.token, recordDownloadUrlDO.token)
-            && Objects.equals(this.fileType, recordDownloadUrlDO.fileType)
-            && Objects.equals(this.url, recordDownloadUrlDO.url);
+        RecordDownloadUrlDO that = (RecordDownloadUrlDO) obj;
+        return Objects.equals(this.token, that.token) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.url, that.url);
     }
 
     @Override

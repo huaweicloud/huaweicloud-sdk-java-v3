@@ -101,22 +101,15 @@ public class LtsStructTemplateInfo {
             if (value == null) {
                 return null;
             }
-            ParseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ParseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ParseTypeEnum(value));
         }
 
         public static ParseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ParseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -419,26 +412,20 @@ public class LtsStructTemplateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LtsStructTemplateInfo ltsStructTemplateInfo = (LtsStructTemplateInfo) o;
-        return Objects.equals(this.demoFields, ltsStructTemplateInfo.demoFields)
-            && Objects.equals(this.tagFields, ltsStructTemplateInfo.tagFields)
-            && Objects.equals(this.content, ltsStructTemplateInfo.content)
-            && Objects.equals(this.logGroupId, ltsStructTemplateInfo.logGroupId)
-            && Objects.equals(this.parseType, ltsStructTemplateInfo.parseType)
-            && Objects.equals(this.logStreamId, ltsStructTemplateInfo.logStreamId)
-            && Objects.equals(this.projectId, ltsStructTemplateInfo.projectId)
-            && Objects.equals(this.regexRules, ltsStructTemplateInfo.regexRules)
-            && Objects.equals(this.layers, ltsStructTemplateInfo.layers)
-            && Objects.equals(this.tokenizer, ltsStructTemplateInfo.tokenizer)
-            && Objects.equals(this.logFormat, ltsStructTemplateInfo.logFormat)
-            && Objects.equals(this.rule, ltsStructTemplateInfo.rule);
+        LtsStructTemplateInfo that = (LtsStructTemplateInfo) obj;
+        return Objects.equals(this.demoFields, that.demoFields) && Objects.equals(this.tagFields, that.tagFields)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.parseType, that.parseType) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regexRules, that.regexRules)
+            && Objects.equals(this.layers, that.layers) && Objects.equals(this.tokenizer, that.tokenizer)
+            && Objects.equals(this.logFormat, that.logFormat) && Objects.equals(this.rule, that.rule);
     }
 
     @Override

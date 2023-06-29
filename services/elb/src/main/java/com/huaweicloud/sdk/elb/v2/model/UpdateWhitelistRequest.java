@@ -65,16 +65,15 @@ public class UpdateWhitelistRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWhitelistRequest updateWhitelistRequest = (UpdateWhitelistRequest) o;
-        return Objects.equals(this.whitelistId, updateWhitelistRequest.whitelistId)
-            && Objects.equals(this.body, updateWhitelistRequest.body);
+        UpdateWhitelistRequest that = (UpdateWhitelistRequest) obj;
+        return Objects.equals(this.whitelistId, that.whitelistId) && Objects.equals(this.body, that.body);
     }
 
     @Override

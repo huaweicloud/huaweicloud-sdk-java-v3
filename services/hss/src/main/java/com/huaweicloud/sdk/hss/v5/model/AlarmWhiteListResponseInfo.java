@@ -125,19 +125,17 @@ public class AlarmWhiteListResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmWhiteListResponseInfo alarmWhiteListResponseInfo = (AlarmWhiteListResponseInfo) o;
-        return Objects.equals(this.enterpriseProjectName, alarmWhiteListResponseInfo.enterpriseProjectName)
-            && Objects.equals(this.hash, alarmWhiteListResponseInfo.hash)
-            && Objects.equals(this.description, alarmWhiteListResponseInfo.description)
-            && Objects.equals(this.eventType, alarmWhiteListResponseInfo.eventType)
-            && Objects.equals(this.updateTime, alarmWhiteListResponseInfo.updateTime);
+        AlarmWhiteListResponseInfo that = (AlarmWhiteListResponseInfo) obj;
+        return Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.hash, that.hash) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -97,17 +97,16 @@ public class ListLogtankResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLogtankResponse listLogtankResponse = (ListLogtankResponse) o;
-        return Objects.equals(this.requestId, listLogtankResponse.requestId)
-            && Objects.equals(this.count, listLogtankResponse.count)
-            && Objects.equals(this.logtanks, listLogtankResponse.logtanks);
+        ListLogtankResponse that = (ListLogtankResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.logtanks, that.logtanks);
     }
 
     @Override

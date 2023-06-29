@@ -153,17 +153,17 @@ public class Service {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Service service = (Service) o;
-        return Objects.equals(this.name, service.name) && Objects.equals(this.description, service.description)
-            && Objects.equals(this.links, service.links) && Objects.equals(this.id, service.id)
-            && Objects.equals(this.type, service.type) && Objects.equals(this.enabled, service.enabled);
+        Service that = (Service) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

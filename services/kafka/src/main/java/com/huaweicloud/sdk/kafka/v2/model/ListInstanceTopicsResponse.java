@@ -141,19 +141,17 @@ public class ListInstanceTopicsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceTopicsResponse listInstanceTopicsResponse = (ListInstanceTopicsResponse) o;
-        return Objects.equals(this.total, listInstanceTopicsResponse.total)
-            && Objects.equals(this.size, listInstanceTopicsResponse.size)
-            && Objects.equals(this.remainPartitions, listInstanceTopicsResponse.remainPartitions)
-            && Objects.equals(this.maxPartitions, listInstanceTopicsResponse.maxPartitions)
-            && Objects.equals(this.topics, listInstanceTopicsResponse.topics);
+        ListInstanceTopicsResponse that = (ListInstanceTopicsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.remainPartitions, that.remainPartitions)
+            && Objects.equals(this.maxPartitions, that.maxPartitions) && Objects.equals(this.topics, that.topics);
     }
 
     @Override

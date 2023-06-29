@@ -129,19 +129,17 @@ public class ShowPartnersServiceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPartnersServiceInfoRequest showPartnersServiceInfoRequest = (ShowPartnersServiceInfoRequest) o;
-        return Objects.equals(this.caseSubTypeId, showPartnersServiceInfoRequest.caseSubTypeId)
-            && Objects.equals(this.productId, showPartnersServiceInfoRequest.productId)
-            && Objects.equals(this.xSite, showPartnersServiceInfoRequest.xSite)
-            && Objects.equals(this.xLanguage, showPartnersServiceInfoRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showPartnersServiceInfoRequest.xTimeZone);
+        ShowPartnersServiceInfoRequest that = (ShowPartnersServiceInfoRequest) obj;
+        return Objects.equals(this.caseSubTypeId, that.caseSubTypeId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

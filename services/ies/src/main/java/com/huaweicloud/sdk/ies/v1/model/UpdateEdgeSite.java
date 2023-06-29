@@ -65,16 +65,15 @@ public class UpdateEdgeSite {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeSite updateEdgeSite = (UpdateEdgeSite) o;
-        return Objects.equals(this.description, updateEdgeSite.description)
-            && Objects.equals(this.location, updateEdgeSite.location);
+        UpdateEdgeSite that = (UpdateEdgeSite) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.location, that.location);
     }
 
     @Override

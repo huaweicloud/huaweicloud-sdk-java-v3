@@ -118,18 +118,17 @@ public class InstanceRequestSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceRequestSpec instanceRequestSpec = (InstanceRequestSpec) o;
-        return Objects.equals(this.version, instanceRequestSpec.version)
-            && Objects.equals(this.clusterID, instanceRequestSpec.clusterID)
-            && Objects.equals(this.values, instanceRequestSpec.values)
-            && Objects.equals(this.addonTemplateName, instanceRequestSpec.addonTemplateName);
+        InstanceRequestSpec that = (InstanceRequestSpec) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.clusterID, that.clusterID)
+            && Objects.equals(this.values, that.values)
+            && Objects.equals(this.addonTemplateName, that.addonTemplateName);
     }
 
     @Override

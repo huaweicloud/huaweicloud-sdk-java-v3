@@ -222,22 +222,18 @@ public class AppInputParameterDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppInputParameterDto appInputParameterDto = (AppInputParameterDto) o;
-        return Objects.equals(this.name, appInputParameterDto.name)
-            && Objects.equals(this.description, appInputParameterDto.description)
-            && Objects.equals(this.required, appInputParameterDto.required)
-            && Objects.equals(this.concurrent, appInputParameterDto.concurrent)
-            && Objects.equals(this.type, appInputParameterDto.type)
-            && Objects.equals(this.pattern, appInputParameterDto.pattern)
-            && Objects.equals(this.values, appInputParameterDto.values)
-            && Objects.equals(this._enum, appInputParameterDto._enum);
+        AppInputParameterDto that = (AppInputParameterDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.concurrent, that.concurrent)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.pattern, that.pattern)
+            && Objects.equals(this.values, that.values) && Objects.equals(this._enum, that._enum);
     }
 
     @Override

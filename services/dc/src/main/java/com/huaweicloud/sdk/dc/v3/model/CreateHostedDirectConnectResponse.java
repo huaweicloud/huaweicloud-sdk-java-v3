@@ -66,16 +66,15 @@ public class CreateHostedDirectConnectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHostedDirectConnectResponse createHostedDirectConnectResponse = (CreateHostedDirectConnectResponse) o;
-        return Objects.equals(this.requestId, createHostedDirectConnectResponse.requestId)
-            && Objects.equals(this.hostedConnect, createHostedDirectConnectResponse.hostedConnect);
+        CreateHostedDirectConnectResponse that = (CreateHostedDirectConnectResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.hostedConnect, that.hostedConnect);
     }
 
     @Override

@@ -406,31 +406,25 @@ public class CertificateAuthorities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificateAuthorities certificateAuthorities = (CertificateAuthorities) o;
-        return Objects.equals(this.caId, certificateAuthorities.caId)
-            && Objects.equals(this.type, certificateAuthorities.type)
-            && Objects.equals(this.status, certificateAuthorities.status)
-            && Objects.equals(this.pathLength, certificateAuthorities.pathLength)
-            && Objects.equals(this.issuerId, certificateAuthorities.issuerId)
-            && Objects.equals(this.issuerName, certificateAuthorities.issuerName)
-            && Objects.equals(this.keyAlgorithm, certificateAuthorities.keyAlgorithm)
-            && Objects.equals(this.signatureAlgorithm, certificateAuthorities.signatureAlgorithm)
-            && Objects.equals(this.freezeFlag, certificateAuthorities.freezeFlag)
-            && Objects.equals(this.genMode, certificateAuthorities.genMode)
-            && Objects.equals(this.serialNumber, certificateAuthorities.serialNumber)
-            && Objects.equals(this.createTime, certificateAuthorities.createTime)
-            && Objects.equals(this.deleteTime, certificateAuthorities.deleteTime)
-            && Objects.equals(this.notBefore, certificateAuthorities.notBefore)
-            && Objects.equals(this.notAfter, certificateAuthorities.notAfter)
-            && Objects.equals(this.distinguishedName, certificateAuthorities.distinguishedName)
-            && Objects.equals(this.crlConfiguration, certificateAuthorities.crlConfiguration);
+        CertificateAuthorities that = (CertificateAuthorities) obj;
+        return Objects.equals(this.caId, that.caId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.pathLength, that.pathLength)
+            && Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.issuerName, that.issuerName)
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.freezeFlag, that.freezeFlag) && Objects.equals(this.genMode, that.genMode)
+            && Objects.equals(this.serialNumber, that.serialNumber) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.notAfter, that.notAfter)
+            && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.crlConfiguration, that.crlConfiguration);
     }
 
     @Override

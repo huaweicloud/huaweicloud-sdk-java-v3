@@ -55,15 +55,15 @@ public class ThumbnailRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThumbnailRsp thumbnailRsp = (ThumbnailRsp) o;
-        return Objects.equals(this.offset, thumbnailRsp.offset) && Objects.equals(this.url, thumbnailRsp.url);
+        ThumbnailRsp that = (ThumbnailRsp) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.url, that.url);
     }
 
     @Override

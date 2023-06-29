@@ -209,24 +209,20 @@ public class ListAvailableZonesRespAvailableZones {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableZonesRespAvailableZones listAvailableZonesRespAvailableZones =
-            (ListAvailableZonesRespAvailableZones) o;
-        return Objects.equals(this.soldOut, listAvailableZonesRespAvailableZones.soldOut)
-            && Objects.equals(this.id, listAvailableZonesRespAvailableZones.id)
-            && Objects.equals(this.code, listAvailableZonesRespAvailableZones.code)
-            && Objects.equals(this.name, listAvailableZonesRespAvailableZones.name)
-            && Objects.equals(this.port, listAvailableZonesRespAvailableZones.port)
-            && Objects.equals(this.resourceAvailability, listAvailableZonesRespAvailableZones.resourceAvailability)
-            && Objects.equals(this.defaultAz, listAvailableZonesRespAvailableZones.defaultAz)
-            && Objects.equals(this.remainTime, listAvailableZonesRespAvailableZones.remainTime)
-            && Objects.equals(this.ipv6Enable, listAvailableZonesRespAvailableZones.ipv6Enable);
+        ListAvailableZonesRespAvailableZones that = (ListAvailableZonesRespAvailableZones) obj;
+        return Objects.equals(this.soldOut, that.soldOut) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.port, that.port)
+            && Objects.equals(this.resourceAvailability, that.resourceAvailability)
+            && Objects.equals(this.defaultAz, that.defaultAz) && Objects.equals(this.remainTime, that.remainTime)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable);
     }
 
     @Override

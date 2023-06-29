@@ -253,24 +253,21 @@ public class AuthInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthInfos authInfos = (AuthInfos) o;
-        return Objects.equals(this.authInfoName, authInfos.authInfoName)
-            && Objects.equals(this.userName, authInfos.userName)
-            && Objects.equals(this.certificateLocation, authInfos.certificateLocation)
-            && Objects.equals(this.datasourceType, authInfos.datasourceType)
-            && Objects.equals(this.createTime, authInfos.createTime)
-            && Objects.equals(this.updateTime, authInfos.updateTime)
-            && Objects.equals(this.krb5Conf, authInfos.krb5Conf) && Objects.equals(this.keytab, authInfos.keytab)
-            && Objects.equals(this.truststoreLocation, authInfos.truststoreLocation)
-            && Objects.equals(this.keystoreLocation, authInfos.keystoreLocation)
-            && Objects.equals(this.owner, authInfos.owner);
+        AuthInfos that = (AuthInfos) obj;
+        return Objects.equals(this.authInfoName, that.authInfoName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.certificateLocation, that.certificateLocation)
+            && Objects.equals(this.datasourceType, that.datasourceType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.krb5Conf, that.krb5Conf) && Objects.equals(this.keytab, that.keytab)
+            && Objects.equals(this.truststoreLocation, that.truststoreLocation)
+            && Objects.equals(this.keystoreLocation, that.keystoreLocation) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

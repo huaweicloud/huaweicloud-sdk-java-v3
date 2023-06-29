@@ -24,8 +24,8 @@ public class ImageBatchModerationReq {
     private List<String> urls = null;
 
     /**
-    * Gets or Sets categories
-    */
+     * Gets or Sets categories
+     */
     public static final class CategoriesEnum {
 
         /**
@@ -86,22 +86,15 @@ public class ImageBatchModerationReq {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoriesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoriesEnum(value));
         }
 
         public static CategoriesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoriesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -294,20 +287,19 @@ public class ImageBatchModerationReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageBatchModerationReq imageBatchModerationReq = (ImageBatchModerationReq) o;
-        return Objects.equals(this.urls, imageBatchModerationReq.urls)
-            && Objects.equals(this.categories, imageBatchModerationReq.categories)
-            && Objects.equals(this.threshold, imageBatchModerationReq.threshold)
-            && Objects.equals(this.moderationRule, imageBatchModerationReq.moderationRule)
-            && Objects.equals(this.adCategories, imageBatchModerationReq.adCategories)
-            && Objects.equals(this.showOcrText, imageBatchModerationReq.showOcrText);
+        ImageBatchModerationReq that = (ImageBatchModerationReq) obj;
+        return Objects.equals(this.urls, that.urls) && Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.threshold, that.threshold)
+            && Objects.equals(this.moderationRule, that.moderationRule)
+            && Objects.equals(this.adCategories, that.adCategories)
+            && Objects.equals(this.showOcrText, that.showOcrText);
     }
 
     @Override

@@ -65,15 +65,15 @@ public class Contexts {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Contexts contexts = (Contexts) o;
-        return Objects.equals(this.name, contexts.name) && Objects.equals(this.context, contexts.context);
+        Contexts that = (Contexts) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.context, that.context);
     }
 
     @Override

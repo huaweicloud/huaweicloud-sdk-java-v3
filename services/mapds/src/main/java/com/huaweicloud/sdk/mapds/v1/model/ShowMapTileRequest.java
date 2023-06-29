@@ -125,17 +125,16 @@ public class ShowMapTileRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMapTileRequest showMapTileRequest = (ShowMapTileRequest) o;
-        return Objects.equals(this.z, showMapTileRequest.z) && Objects.equals(this.x, showMapTileRequest.x)
-            && Objects.equals(this.y, showMapTileRequest.y)
-            && Objects.equals(this.authorization, showMapTileRequest.authorization);
+        ShowMapTileRequest that = (ShowMapTileRequest) obj;
+        return Objects.equals(this.z, that.z) && Objects.equals(this.x, that.x) && Objects.equals(this.y, that.y)
+            && Objects.equals(this.authorization, that.authorization);
     }
 
     @Override

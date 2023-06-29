@@ -163,22 +163,15 @@ public class ExtensionAllSnake {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,22 +238,15 @@ public class ExtensionAllSnake {
             if (value == null) {
                 return null;
             }
-            ValidateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ValidateStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ValidateStatusEnum(value));
         }
 
         public static ValidateStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ValidateStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1086,47 +1072,37 @@ public class ExtensionAllSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionAllSnake extensionAllSnake = (ExtensionAllSnake) o;
-        return Objects.equals(this.extensionId, extensionAllSnake.extensionId)
-            && Objects.equals(this.extensionName, extensionAllSnake.extensionName)
-            && Objects.equals(this.displayName, extensionAllSnake.displayName)
-            && Objects.equals(this.flags, extensionAllSnake.flags)
-            && Objects.equals(this.lastUpdated, extensionAllSnake.lastUpdated)
-            && Objects.equals(this.publishedDate, extensionAllSnake.publishedDate)
-            && Objects.equals(this.releaseDate, extensionAllSnake.releaseDate)
-            && Objects.equals(this.shortDescription, extensionAllSnake.shortDescription)
-            && Objects.equals(this.tags, extensionAllSnake.tags)
-            && Objects.equals(this.tagAllList, extensionAllSnake.tagAllList)
-            && Objects.equals(this.publisher, extensionAllSnake.publisher)
-            && Objects.equals(this.arch, extensionAllSnake.arch)
-            && Objects.equals(this.target, extensionAllSnake.target)
-            && Objects.equals(this.categories, extensionAllSnake.categories)
-            && Objects.equals(this.categoryAllList, extensionAllSnake.categoryAllList)
-            && Objects.equals(this.publishManager, extensionAllSnake.publishManager)
-            && Objects.equals(this.status, extensionAllSnake.status)
-            && Objects.equals(this.validateStatus, extensionAllSnake.validateStatus)
-            && Objects.equals(this.installCount, extensionAllSnake.installCount)
-            && Objects.equals(this.averageStar, extensionAllSnake.averageStar)
-            && Objects.equals(this.identifier, extensionAllSnake.identifier)
-            && Objects.equals(this.supportOs, extensionAllSnake.supportOs)
-            && Objects.equals(this.supportIde, extensionAllSnake.supportIde)
-            && Objects.equals(this.supportIdeInfo, extensionAllSnake.supportIdeInfo)
-            && Objects.equals(this.versions, extensionAllSnake.versions)
-            && Objects.equals(this.validateResult, extensionAllSnake.validateResult)
-            && Objects.equals(this.extensionStatistics, extensionAllSnake.extensionStatistics)
-            && Objects.equals(this.preview, extensionAllSnake.preview)
-            && Objects.equals(this.extInfo, extensionAllSnake.extInfo)
-            && Objects.equals(this.platform, extensionAllSnake.platform)
-            && Objects.equals(this.checkResult, extensionAllSnake.checkResult)
-            && Objects.equals(this.grayVersionCount, extensionAllSnake.grayVersionCount)
-            && Objects.equals(this.extensionOwner, extensionAllSnake.extensionOwner);
+        ExtensionAllSnake that = (ExtensionAllSnake) obj;
+        return Objects.equals(this.extensionId, that.extensionId)
+            && Objects.equals(this.extensionName, that.extensionName)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.flags, that.flags)
+            && Objects.equals(this.lastUpdated, that.lastUpdated)
+            && Objects.equals(this.publishedDate, that.publishedDate)
+            && Objects.equals(this.releaseDate, that.releaseDate)
+            && Objects.equals(this.shortDescription, that.shortDescription) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tagAllList, that.tagAllList) && Objects.equals(this.publisher, that.publisher)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.target, that.target)
+            && Objects.equals(this.categories, that.categories)
+            && Objects.equals(this.categoryAllList, that.categoryAllList)
+            && Objects.equals(this.publishManager, that.publishManager) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.validateStatus, that.validateStatus)
+            && Objects.equals(this.installCount, that.installCount)
+            && Objects.equals(this.averageStar, that.averageStar) && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.supportOs, that.supportOs) && Objects.equals(this.supportIde, that.supportIde)
+            && Objects.equals(this.supportIdeInfo, that.supportIdeInfo) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.validateResult, that.validateResult)
+            && Objects.equals(this.extensionStatistics, that.extensionStatistics)
+            && Objects.equals(this.preview, that.preview) && Objects.equals(this.extInfo, that.extInfo)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.checkResult, that.checkResult)
+            && Objects.equals(this.grayVersionCount, that.grayVersionCount)
+            && Objects.equals(this.extensionOwner, that.extensionOwner);
     }
 
     @Override

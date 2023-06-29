@@ -119,18 +119,16 @@ public class ShowResWrokspaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResWrokspaceResponse showResWrokspaceResponse = (ShowResWrokspaceResponse) o;
-        return Objects.equals(this.isSuccess, showResWrokspaceResponse.isSuccess)
-            && Objects.equals(this.workspaces, showResWrokspaceResponse.workspaces)
-            && Objects.equals(this.message, showResWrokspaceResponse.message)
-            && Objects.equals(this.errorCode, showResWrokspaceResponse.errorCode);
+        ShowResWrokspaceResponse that = (ShowResWrokspaceResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.workspaces, that.workspaces)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

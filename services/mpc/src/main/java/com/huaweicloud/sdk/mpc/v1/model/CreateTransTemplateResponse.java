@@ -36,15 +36,15 @@ public class CreateTransTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTransTemplateResponse createTransTemplateResponse = (CreateTransTemplateResponse) o;
-        return Objects.equals(this.templateId, createTransTemplateResponse.templateId);
+        CreateTransTemplateResponse that = (CreateTransTemplateResponse) obj;
+        return Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

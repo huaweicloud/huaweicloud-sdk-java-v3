@@ -64,22 +64,15 @@ public class RelationType {
         if (value == null) {
             return null;
         }
-        RelationType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new RelationType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RelationType(value));
     }
 
     public static RelationType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        RelationType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

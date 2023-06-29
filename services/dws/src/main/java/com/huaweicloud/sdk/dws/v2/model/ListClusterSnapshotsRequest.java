@@ -121,19 +121,17 @@ public class ListClusterSnapshotsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterSnapshotsRequest listClusterSnapshotsRequest = (ListClusterSnapshotsRequest) o;
-        return Objects.equals(this.clusterId, listClusterSnapshotsRequest.clusterId)
-            && Objects.equals(this.limit, listClusterSnapshotsRequest.limit)
-            && Objects.equals(this.offset, listClusterSnapshotsRequest.offset)
-            && Objects.equals(this.sortKey, listClusterSnapshotsRequest.sortKey)
-            && Objects.equals(this.sortDir, listClusterSnapshotsRequest.sortDir);
+        ListClusterSnapshotsRequest that = (ListClusterSnapshotsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

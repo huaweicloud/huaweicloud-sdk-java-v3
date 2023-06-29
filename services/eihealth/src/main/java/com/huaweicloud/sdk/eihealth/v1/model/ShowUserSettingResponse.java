@@ -66,16 +66,15 @@ public class ShowUserSettingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserSettingResponse showUserSettingResponse = (ShowUserSettingResponse) o;
-        return Objects.equals(this.operation, showUserSettingResponse.operation)
-            && Objects.equals(this.settings, showUserSettingResponse.settings);
+        ShowUserSettingResponse that = (ShowUserSettingResponse) obj;
+        return Objects.equals(this.operation, that.operation) && Objects.equals(this.settings, that.settings);
     }
 
     @Override

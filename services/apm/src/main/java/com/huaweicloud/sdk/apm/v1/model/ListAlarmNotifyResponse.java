@@ -76,16 +76,16 @@ public class ListAlarmNotifyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmNotifyResponse listAlarmNotifyResponse = (ListAlarmNotifyResponse) o;
-        return Objects.equals(this.frontAlarmNotifyResults, listAlarmNotifyResponse.frontAlarmNotifyResults)
-            && Objects.equals(this.totalCount, listAlarmNotifyResponse.totalCount);
+        ListAlarmNotifyResponse that = (ListAlarmNotifyResponse) obj;
+        return Objects.equals(this.frontAlarmNotifyResults, that.frontAlarmNotifyResults)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

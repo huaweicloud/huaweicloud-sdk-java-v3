@@ -109,19 +109,16 @@ public class AggregateDiscoveredResourcesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateDiscoveredResourcesRequest aggregateDiscoveredResourcesRequest =
-            (AggregateDiscoveredResourcesRequest) o;
-        return Objects.equals(this.aggregatorId, aggregateDiscoveredResourcesRequest.aggregatorId)
-            && Objects.equals(this.filter, aggregateDiscoveredResourcesRequest.filter)
-            && Objects.equals(this.provider, aggregateDiscoveredResourcesRequest.provider)
-            && Objects.equals(this.resourceType, aggregateDiscoveredResourcesRequest.resourceType);
+        AggregateDiscoveredResourcesRequest that = (AggregateDiscoveredResourcesRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

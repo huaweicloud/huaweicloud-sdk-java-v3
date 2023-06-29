@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.AutoScalingPolicy;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AutoScalingPolicyReqV11
  */
-public class AutoScalingPolicyReqV11  {
+public class AutoScalingPolicyReqV11 {
 
     /**
      * 弹性伸缩规则适用的节点类型，当前只支持task节点。
      */
     public static final class NodeGroupEnum {
 
-        
         /**
          * Enum TASK_NODE_DEFAULT_GROUP for value: "task_node_default_group"
          */
         public static final NodeGroupEnum TASK_NODE_DEFAULT_GROUP = new NodeGroupEnum("task_node_default_group");
-        
 
         private static final Map<String, NodeGroupEnum> STATIC_FIELDS = createStaticFields();
 
@@ -59,25 +52,18 @@ public class AutoScalingPolicyReqV11  {
 
         @JsonCreator
         public static NodeGroupEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NodeGroupEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NodeGroupEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NodeGroupEnum(value));
         }
 
         public static NodeGroupEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            NodeGroupEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -95,14 +81,12 @@ public class AutoScalingPolicyReqV11  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_group")
-    
+    @JsonProperty(value = "node_group")
 
     private NodeGroupEnum nodeGroup;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_scaling_policy")
-    
+    @JsonProperty(value = "auto_scaling_policy")
 
     private AutoScalingPolicy autoScalingPolicy;
 
@@ -110,9 +94,6 @@ public class AutoScalingPolicyReqV11  {
         this.nodeGroup = nodeGroup;
         return this;
     }
-
-    
-
 
     /**
      * 弹性伸缩规则适用的节点类型，当前只支持task节点。
@@ -126,22 +107,19 @@ public class AutoScalingPolicyReqV11  {
         this.nodeGroup = nodeGroup;
     }
 
-    
-
     public AutoScalingPolicyReqV11 withAutoScalingPolicy(AutoScalingPolicy autoScalingPolicy) {
         this.autoScalingPolicy = autoScalingPolicy;
         return this;
     }
 
     public AutoScalingPolicyReqV11 withAutoScalingPolicy(Consumer<AutoScalingPolicy> autoScalingPolicySetter) {
-        if(this.autoScalingPolicy == null ){
+        if (this.autoScalingPolicy == null) {
             this.autoScalingPolicy = new AutoScalingPolicy();
             autoScalingPolicySetter.accept(this.autoScalingPolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get autoScalingPolicy
@@ -155,24 +133,24 @@ public class AutoScalingPolicyReqV11  {
         this.autoScalingPolicy = autoScalingPolicy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoScalingPolicyReqV11 autoScalingPolicyReqV11 = (AutoScalingPolicyReqV11) o;
-        return Objects.equals(this.nodeGroup, autoScalingPolicyReqV11.nodeGroup) &&
-            Objects.equals(this.autoScalingPolicy, autoScalingPolicyReqV11.autoScalingPolicy);
+        AutoScalingPolicyReqV11 that = (AutoScalingPolicyReqV11) obj;
+        return Objects.equals(this.nodeGroup, that.nodeGroup)
+            && Objects.equals(this.autoScalingPolicy, that.autoScalingPolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeGroup, autoScalingPolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -182,6 +160,7 @@ public class AutoScalingPolicyReqV11  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -192,8 +171,5 @@ public class AutoScalingPolicyReqV11  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

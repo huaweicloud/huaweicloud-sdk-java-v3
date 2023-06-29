@@ -84,16 +84,16 @@ public class ExerciseDetailData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseDetailData exerciseDetailData = (ExerciseDetailData) o;
-        return Objects.equals(this.exerciseCodeResource, exerciseDetailData.exerciseCodeResource)
-            && Objects.equals(this.exerciseCaseResource, exerciseDetailData.exerciseCaseResource);
+        ExerciseDetailData that = (ExerciseDetailData) obj;
+        return Objects.equals(this.exerciseCodeResource, that.exerciseCodeResource)
+            && Objects.equals(this.exerciseCaseResource, that.exerciseCaseResource);
     }
 
     @Override

@@ -105,18 +105,17 @@ public class DebugCaseRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugCaseRequestBody debugCaseRequestBody = (DebugCaseRequestBody) o;
-        return Objects.equals(this.status, debugCaseRequestBody.status)
-            && Objects.equals(this.clusterId, debugCaseRequestBody.clusterId)
-            && Objects.equals(this.clusterType, debugCaseRequestBody.clusterType)
-            && Objects.equals(this.withoutPackage, debugCaseRequestBody.withoutPackage);
+        DebugCaseRequestBody that = (DebugCaseRequestBody) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.withoutPackage, that.withoutPackage);
     }
 
     @Override

@@ -210,23 +210,21 @@ public class LdApiTestHistoryInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiTestHistoryInfoV2 ldApiTestHistoryInfoV2 = (LdApiTestHistoryInfoV2) o;
-        return Objects.equals(this.testStatusCode, ldApiTestHistoryInfoV2.testStatusCode)
-            && Objects.equals(this.testRequest, ldApiTestHistoryInfoV2.testRequest)
-            && Objects.equals(this.testUsedTime, ldApiTestHistoryInfoV2.testUsedTime)
-            && Objects.equals(this.testOperator, ldApiTestHistoryInfoV2.testOperator)
-            && Objects.equals(this.testResponse, ldApiTestHistoryInfoV2.testResponse)
-            && Objects.equals(this.testMethod, ldApiTestHistoryInfoV2.testMethod)
-            && Objects.equals(this.testId, ldApiTestHistoryInfoV2.testId)
-            && Objects.equals(this.testDate, ldApiTestHistoryInfoV2.testDate)
-            && Objects.equals(this.ldApiId, ldApiTestHistoryInfoV2.ldApiId);
+        LdApiTestHistoryInfoV2 that = (LdApiTestHistoryInfoV2) obj;
+        return Objects.equals(this.testStatusCode, that.testStatusCode)
+            && Objects.equals(this.testRequest, that.testRequest)
+            && Objects.equals(this.testUsedTime, that.testUsedTime)
+            && Objects.equals(this.testOperator, that.testOperator)
+            && Objects.equals(this.testResponse, that.testResponse) && Objects.equals(this.testMethod, that.testMethod)
+            && Objects.equals(this.testId, that.testId) && Objects.equals(this.testDate, that.testDate)
+            && Objects.equals(this.ldApiId, that.ldApiId);
     }
 
     @Override

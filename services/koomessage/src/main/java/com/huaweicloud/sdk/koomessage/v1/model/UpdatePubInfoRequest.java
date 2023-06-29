@@ -65,16 +65,15 @@ public class UpdatePubInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePubInfoRequest updatePubInfoRequest = (UpdatePubInfoRequest) o;
-        return Objects.equals(this.pubId, updatePubInfoRequest.pubId)
-            && Objects.equals(this.body, updatePubInfoRequest.body);
+        UpdatePubInfoRequest that = (UpdatePubInfoRequest) obj;
+        return Objects.equals(this.pubId, that.pubId) && Objects.equals(this.body, that.body);
     }
 
     @Override

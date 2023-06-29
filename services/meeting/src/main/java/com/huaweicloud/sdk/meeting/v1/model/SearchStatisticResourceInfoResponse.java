@@ -123,19 +123,16 @@ public class SearchStatisticResourceInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchStatisticResourceInfoResponse searchStatisticResourceInfoResponse =
-            (SearchStatisticResourceInfoResponse) o;
-        return Objects.equals(this.count, searchStatisticResourceInfoResponse.count)
-            && Objects.equals(this.limit, searchStatisticResourceInfoResponse.limit)
-            && Objects.equals(this.offset, searchStatisticResourceInfoResponse.offset)
-            && Objects.equals(this.data, searchStatisticResourceInfoResponse.data);
+        SearchStatisticResourceInfoResponse that = (SearchStatisticResourceInfoResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data);
     }
 
     @Override

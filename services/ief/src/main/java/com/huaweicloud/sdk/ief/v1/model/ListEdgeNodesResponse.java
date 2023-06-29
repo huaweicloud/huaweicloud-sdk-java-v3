@@ -75,16 +75,15 @@ public class ListEdgeNodesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeNodesResponse listEdgeNodesResponse = (ListEdgeNodesResponse) o;
-        return Objects.equals(this.nodes, listEdgeNodesResponse.nodes)
-            && Objects.equals(this.count, listEdgeNodesResponse.count);
+        ListEdgeNodesResponse that = (ListEdgeNodesResponse) obj;
+        return Objects.equals(this.nodes, that.nodes) && Objects.equals(this.count, that.count);
     }
 
     @Override

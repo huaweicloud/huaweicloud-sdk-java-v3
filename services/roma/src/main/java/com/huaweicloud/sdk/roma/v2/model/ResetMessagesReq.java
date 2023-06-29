@@ -100,18 +100,17 @@ public class ResetMessagesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetMessagesReq resetMessagesReq = (ResetMessagesReq) o;
-        return Objects.equals(this.topic, resetMessagesReq.topic)
-            && Objects.equals(this.partition, resetMessagesReq.partition)
-            && Objects.equals(this.messageOffset, resetMessagesReq.messageOffset)
-            && Objects.equals(this.consumerKey, resetMessagesReq.consumerKey);
+        ResetMessagesReq that = (ResetMessagesReq) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.messageOffset, that.messageOffset)
+            && Objects.equals(this.consumerKey, that.consumerKey);
     }
 
     @Override

@@ -34,8 +34,8 @@ public class Answer {
     private List<String> tags = null;
 
     /**
-    * - TEXT:  - RICH_TEXT:  - FLOW:  - QA_PAIR:  
-    */
+     * - TEXT:  - RICH_TEXT:  - FLOW:  - QA_PAIR:  
+     */
     public static final class AnswerTypeEnum {
 
         /**
@@ -90,22 +90,15 @@ public class Answer {
             if (value == null) {
                 return null;
             }
-            AnswerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AnswerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AnswerTypeEnum(value));
         }
 
         public static AnswerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AnswerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -243,17 +236,17 @@ public class Answer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Answer answer = (Answer) o;
-        return Objects.equals(this.content, answer.content) && Objects.equals(this.id, answer.id)
-            && Objects.equals(this.tags, answer.tags) && Objects.equals(this.answerType, answer.answerType)
-            && Objects.equals(this.qaFlowEntry, answer.qaFlowEntry);
+        Answer that = (Answer) obj;
+        return Objects.equals(this.content, that.content) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.answerType, that.answerType)
+            && Objects.equals(this.qaFlowEntry, that.qaFlowEntry);
     }
 
     @Override

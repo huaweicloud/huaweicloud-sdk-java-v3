@@ -445,32 +445,24 @@ public class DeleteRecordSetsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRecordSetsResponse deleteRecordSetsResponse = (DeleteRecordSetsResponse) o;
-        return Objects.equals(this.id, deleteRecordSetsResponse.id)
-            && Objects.equals(this.name, deleteRecordSetsResponse.name)
-            && Objects.equals(this.description, deleteRecordSetsResponse.description)
-            && Objects.equals(this.zoneId, deleteRecordSetsResponse.zoneId)
-            && Objects.equals(this.zoneName, deleteRecordSetsResponse.zoneName)
-            && Objects.equals(this.type, deleteRecordSetsResponse.type)
-            && Objects.equals(this.ttl, deleteRecordSetsResponse.ttl)
-            && Objects.equals(this.records, deleteRecordSetsResponse.records)
-            && Objects.equals(this.createdAt, deleteRecordSetsResponse.createdAt)
-            && Objects.equals(this.updatedAt, deleteRecordSetsResponse.updatedAt)
-            && Objects.equals(this.status, deleteRecordSetsResponse.status)
-            && Objects.equals(this._default, deleteRecordSetsResponse._default)
-            && Objects.equals(this.projectId, deleteRecordSetsResponse.projectId)
-            && Objects.equals(this.links, deleteRecordSetsResponse.links)
-            && Objects.equals(this.line, deleteRecordSetsResponse.line)
-            && Objects.equals(this.weight, deleteRecordSetsResponse.weight)
-            && Objects.equals(this.healthCheckId, deleteRecordSetsResponse.healthCheckId)
-            && Objects.equals(this.aliasTarget, deleteRecordSetsResponse.aliasTarget);
+        DeleteRecordSetsResponse that = (DeleteRecordSetsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget);
     }
 
     @Override

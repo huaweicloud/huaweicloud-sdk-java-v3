@@ -86,22 +86,15 @@ public class Service {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -344,22 +337,21 @@ public class Service {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Service service = (Service) o;
-        return Objects.equals(this.productTemplateId, service.productTemplateId)
-            && Objects.equals(this.productId, service.productId) && Objects.equals(this.serviceId, service.serviceId)
-            && Objects.equals(this.serviceName, service.serviceName)
-            && Objects.equals(this.description, service.description) && Objects.equals(this.status, service.status)
-            && Objects.equals(this.createdUser, service.createdUser)
-            && Objects.equals(this.lastUpdatedUser, service.lastUpdatedUser)
-            && Objects.equals(this.createdDatetime, service.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, service.lastUpdatedDatetime);
+        Service that = (Service) obj;
+        return Objects.equals(this.productTemplateId, that.productTemplateId)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime);
     }
 
     @Override

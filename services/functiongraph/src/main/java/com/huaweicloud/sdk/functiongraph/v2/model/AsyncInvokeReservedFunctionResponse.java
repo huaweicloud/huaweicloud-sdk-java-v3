@@ -56,17 +56,15 @@ public class AsyncInvokeReservedFunctionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncInvokeReservedFunctionResponse asyncInvokeReservedFunctionResponse =
-            (AsyncInvokeReservedFunctionResponse) o;
-        return Objects.equals(this.instanceId, asyncInvokeReservedFunctionResponse.instanceId)
-            && Objects.equals(this.contentType, asyncInvokeReservedFunctionResponse.contentType);
+        AsyncInvokeReservedFunctionResponse that = (AsyncInvokeReservedFunctionResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.contentType, that.contentType);
     }
 
     @Override

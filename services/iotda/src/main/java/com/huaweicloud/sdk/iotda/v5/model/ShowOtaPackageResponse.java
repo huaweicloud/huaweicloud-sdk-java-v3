@@ -260,24 +260,20 @@ public class ShowOtaPackageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOtaPackageResponse showOtaPackageResponse = (ShowOtaPackageResponse) o;
-        return Objects.equals(this.packageId, showOtaPackageResponse.packageId)
-            && Objects.equals(this.appId, showOtaPackageResponse.appId)
-            && Objects.equals(this.packageType, showOtaPackageResponse.packageType)
-            && Objects.equals(this.productId, showOtaPackageResponse.productId)
-            && Objects.equals(this.version, showOtaPackageResponse.version)
-            && Objects.equals(this.supportSourceVersions, showOtaPackageResponse.supportSourceVersions)
-            && Objects.equals(this.description, showOtaPackageResponse.description)
-            && Objects.equals(this.customInfo, showOtaPackageResponse.customInfo)
-            && Objects.equals(this.createTime, showOtaPackageResponse.createTime)
-            && Objects.equals(this.fileLocation, showOtaPackageResponse.fileLocation);
+        ShowOtaPackageResponse that = (ShowOtaPackageResponse) obj;
+        return Objects.equals(this.packageId, that.packageId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileLocation, that.fileLocation);
     }
 
     @Override

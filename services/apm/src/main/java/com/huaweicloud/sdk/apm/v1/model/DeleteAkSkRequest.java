@@ -33,15 +33,15 @@ public class DeleteAkSkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAkSkRequest deleteAkSkRequest = (DeleteAkSkRequest) o;
-        return Objects.equals(this.ak, deleteAkSkRequest.ak);
+        DeleteAkSkRequest that = (DeleteAkSkRequest) obj;
+        return Objects.equals(this.ak, that.ak);
     }
 
     @Override

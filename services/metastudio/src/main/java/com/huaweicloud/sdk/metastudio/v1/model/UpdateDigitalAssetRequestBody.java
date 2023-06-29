@@ -121,22 +121,15 @@ public class UpdateDigitalAssetRequestBody {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetTypeEnum(value));
         }
 
         public static AssetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,22 +196,15 @@ public class UpdateDigitalAssetRequestBody {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStateEnum(value));
         }
 
         public static AssetStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -438,22 +424,20 @@ public class UpdateDigitalAssetRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDigitalAssetRequestBody updateDigitalAssetRequestBody = (UpdateDigitalAssetRequestBody) o;
-        return Objects.equals(this.assetName, updateDigitalAssetRequestBody.assetName)
-            && Objects.equals(this.assetDescription, updateDigitalAssetRequestBody.assetDescription)
-            && Objects.equals(this.assetType, updateDigitalAssetRequestBody.assetType)
-            && Objects.equals(this.assetState, updateDigitalAssetRequestBody.assetState)
-            && Objects.equals(this.assetOwner, updateDigitalAssetRequestBody.assetOwner)
-            && Objects.equals(this.tags, updateDigitalAssetRequestBody.tags)
-            && Objects.equals(this.assetExtraMeta, updateDigitalAssetRequestBody.assetExtraMeta)
-            && Objects.equals(this.systemProperties, updateDigitalAssetRequestBody.systemProperties);
+        UpdateDigitalAssetRequestBody that = (UpdateDigitalAssetRequestBody) obj;
+        return Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.assetDescription, that.assetDescription)
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.assetOwner, that.assetOwner) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties);
     }
 
     @Override

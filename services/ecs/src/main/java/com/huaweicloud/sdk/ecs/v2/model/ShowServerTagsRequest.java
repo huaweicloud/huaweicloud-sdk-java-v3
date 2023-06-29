@@ -33,15 +33,15 @@ public class ShowServerTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowServerTagsRequest showServerTagsRequest = (ShowServerTagsRequest) o;
-        return Objects.equals(this.serverId, showServerTagsRequest.serverId);
+        ShowServerTagsRequest that = (ShowServerTagsRequest) obj;
+        return Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

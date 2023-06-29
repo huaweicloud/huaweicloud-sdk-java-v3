@@ -209,23 +209,21 @@ public class UpdateAuthInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAuthInfoRequestBody updateAuthInfoRequestBody = (UpdateAuthInfoRequestBody) o;
-        return Objects.equals(this.authInfoName, updateAuthInfoRequestBody.authInfoName)
-            && Objects.equals(this.userName, updateAuthInfoRequestBody.userName)
-            && Objects.equals(this.password, updateAuthInfoRequestBody.password)
-            && Objects.equals(this.krb5Conf, updateAuthInfoRequestBody.krb5Conf)
-            && Objects.equals(this.keytab, updateAuthInfoRequestBody.keytab)
-            && Objects.equals(this.truststoreLocation, updateAuthInfoRequestBody.truststoreLocation)
-            && Objects.equals(this.truststorePassword, updateAuthInfoRequestBody.truststorePassword)
-            && Objects.equals(this.keystoreLocation, updateAuthInfoRequestBody.keystoreLocation)
-            && Objects.equals(this.keystorePassword, updateAuthInfoRequestBody.keystorePassword);
+        UpdateAuthInfoRequestBody that = (UpdateAuthInfoRequestBody) obj;
+        return Objects.equals(this.authInfoName, that.authInfoName) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.krb5Conf, that.krb5Conf)
+            && Objects.equals(this.keytab, that.keytab)
+            && Objects.equals(this.truststoreLocation, that.truststoreLocation)
+            && Objects.equals(this.truststorePassword, that.truststorePassword)
+            && Objects.equals(this.keystoreLocation, that.keystoreLocation)
+            && Objects.equals(this.keystorePassword, that.keystorePassword);
     }
 
     @Override

@@ -147,20 +147,18 @@ public class ShowRiskConfigDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRiskConfigDetailRequest showRiskConfigDetailRequest = (ShowRiskConfigDetailRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showRiskConfigDetailRequest.enterpriseProjectId)
-            && Objects.equals(this.checkName, showRiskConfigDetailRequest.checkName)
-            && Objects.equals(this.standard, showRiskConfigDetailRequest.standard)
-            && Objects.equals(this.hostId, showRiskConfigDetailRequest.hostId)
-            && Objects.equals(this.limit, showRiskConfigDetailRequest.limit)
-            && Objects.equals(this.offset, showRiskConfigDetailRequest.offset);
+        ShowRiskConfigDetailRequest that = (ShowRiskConfigDetailRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.checkName, that.checkName) && Objects.equals(this.standard, that.standard)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

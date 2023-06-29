@@ -63,22 +63,15 @@ public class Thumbnail {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,18 +259,18 @@ public class Thumbnail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Thumbnail thumbnail = (Thumbnail) o;
-        return Objects.equals(this.type, thumbnail.type) && Objects.equals(this.time, thumbnail.time)
-            && Objects.equals(this.dots, thumbnail.dots) && Objects.equals(this.coverPosition, thumbnail.coverPosition)
-            && Objects.equals(this.format, thumbnail.format) && Objects.equals(this.aspectRatio, thumbnail.aspectRatio)
-            && Objects.equals(this.maxLength, thumbnail.maxLength);
+        Thumbnail that = (Thumbnail) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.dots, that.dots) && Objects.equals(this.coverPosition, that.coverPosition)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.aspectRatio, that.aspectRatio)
+            && Objects.equals(this.maxLength, that.maxLength);
     }
 
     @Override

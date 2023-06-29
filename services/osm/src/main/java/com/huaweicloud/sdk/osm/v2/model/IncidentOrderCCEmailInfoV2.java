@@ -77,17 +77,16 @@ public class IncidentOrderCCEmailInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentOrderCCEmailInfoV2 incidentOrderCCEmailInfoV2 = (IncidentOrderCCEmailInfoV2) o;
-        return Objects.equals(this.userId, incidentOrderCCEmailInfoV2.userId)
-            && Objects.equals(this.customerId, incidentOrderCCEmailInfoV2.customerId)
-            && Objects.equals(this.ccEmail, incidentOrderCCEmailInfoV2.ccEmail);
+        IncidentOrderCCEmailInfoV2 that = (IncidentOrderCCEmailInfoV2) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.ccEmail, that.ccEmail);
     }
 
     @Override

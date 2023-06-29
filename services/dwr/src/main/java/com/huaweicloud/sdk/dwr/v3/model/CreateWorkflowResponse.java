@@ -168,21 +168,18 @@ public class CreateWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWorkflowResponse createWorkflowResponse = (CreateWorkflowResponse) o;
-        return Objects.equals(this.graphName, createWorkflowResponse.graphName)
-            && Objects.equals(this.graphUrn, createWorkflowResponse.graphUrn)
-            && Objects.equals(this.createdAt, createWorkflowResponse.createdAt)
-            && Objects.equals(this.xRequestId, createWorkflowResponse.xRequestId)
-            && Objects.equals(this.connection, createWorkflowResponse.connection)
-            && Objects.equals(this.contentLength, createWorkflowResponse.contentLength)
-            && Objects.equals(this.date, createWorkflowResponse.date);
+        CreateWorkflowResponse that = (CreateWorkflowResponse) obj;
+        return Objects.equals(this.graphName, that.graphName) && Objects.equals(this.graphUrn, that.graphUrn)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

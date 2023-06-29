@@ -12,7 +12,7 @@ import com.huaweicloud.sdk.core.retry.RetryContext;
 public interface BackoffStrategy {
     BackoffStrategy NO_BACKOFF = new BackoffStrategy() {
         @Override
-        public <ResT> long computeDelayBeforeNextRetry(RetryContext<ResT> context) {
+        public <S> long computeDelayBeforeNextRetry(RetryContext<S> context) {
             return 0;
         }
     };
@@ -20,9 +20,9 @@ public interface BackoffStrategy {
     /**
      * Compute wait duration between two retried requests.
      *
-     * @param <ResT> type of response
+     * @param <S> type of response
      * @param context the context which stored retry related information
      * @return milliseconds to wait
      */
-    <ResT> long computeDelayBeforeNextRetry(RetryContext<ResT> context);
+    <S> long computeDelayBeforeNextRetry(RetryContext<S> context);
 }

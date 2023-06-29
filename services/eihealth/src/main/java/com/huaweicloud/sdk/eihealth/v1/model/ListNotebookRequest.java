@@ -125,19 +125,17 @@ public class ListNotebookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNotebookRequest listNotebookRequest = (ListNotebookRequest) o;
-        return Objects.equals(this.eihealthProjectId, listNotebookRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listNotebookRequest.limit)
-            && Objects.equals(this.name, listNotebookRequest.name)
-            && Objects.equals(this.offset, listNotebookRequest.offset)
-            && Objects.equals(this.status, listNotebookRequest.status);
+        ListNotebookRequest that = (ListNotebookRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

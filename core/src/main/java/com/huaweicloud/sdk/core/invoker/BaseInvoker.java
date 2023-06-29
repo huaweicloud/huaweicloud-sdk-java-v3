@@ -41,25 +41,25 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
- * @param <ReqT>
- * @param <ResT>
- * @param <DerivedT>
+ * @param <R> Request type
+ * @param <S> Response type
+ * @param <D> Derived type
  * @author HuaweiCloud_SDK
  */
-public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, DerivedT>> {
+public class BaseInvoker<R, S, D extends BaseInvoker<R, S, D>> {
     SdkExchange exchange;
 
     HcClient hcClient;
 
-    HttpRequestDef<ReqT, ResT> meta;
+    HttpRequestDef<R, S> meta;
 
-    ReqT req;
+    R req;
 
     Map<String, String> extraHeader;
 
     int retryTimes;
 
-    BiFunction<ResT, SdkException, Boolean> func;
+    BiFunction<S, SdkException, Boolean> func;
 
     BackoffStrategy backoffStrategy;
 
@@ -73,7 +73,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * and extract original HttpResponse
      * @param hcClient encapsulated client before default http client
      */
-    public BaseInvoker(ReqT req, HttpRequestDef<ReqT, ResT> meta, HcClient hcClient) {
+    public BaseInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
         exchange = new SdkExchange().withApiReference(apiReference -> apiReference.withName(meta.getName())
             .withMethod(meta.getMethod().toString())
             .withUri(meta.getUri()));
@@ -91,13 +91,13 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @return DeriveT
      */
     @SuppressWarnings("unchecked")
-    public <T extends ICredential> DerivedT replaceCredentialWhen(Class<T> clazz, Consumer<T> func) {
+    public <T extends ICredential> D replaceCredentialWhen(Class<T> clazz, Consumer<T> func) {
         ICredential credential = hcClient.getCredential().deepClone();
         if (clazz.isAssignableFrom(credential.getClass())) {
             func.accept((T) credential);
             hcClient = hcClient.overrideCredential(credential);
         }
-        return (DerivedT) this;
+        return (D) this;
     }
 
     /**
@@ -107,7 +107,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param headerValue value of header
      * @return DerivedT
      */
-    public DerivedT addHeader(String headerKey, String headerValue) {
+    public D addHeader(String headerKey, String headerValue) {
         if (Objects.isNull(extraHeader)) {
             extraHeader = new TreeMap<>();
         }
@@ -121,7 +121,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param func consume a function with SdkExchange
      * @return DerivedT
      */
-    public DerivedT withExchange(Consumer<SdkExchange> func) {
+    public D withExchange(Consumer<SdkExchange> func) {
         if (Objects.nonNull(func)) {
             func.accept(exchange);
         }
@@ -135,7 +135,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param func retry condition
      * @return DerivedT
      */
-    public DerivedT withRetry(int retryTimes, BiFunction<ResT, SdkException, Boolean> func) {
+    public D withRetry(int retryTimes, BiFunction<S, SdkException, Boolean> func) {
         return this.withRetry(retryTimes, func, backoffStrategy);
     }
 
@@ -147,8 +147,8 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param backoffStrategy strategy to be backoff
      * @return DerivedT
      */
-    public DerivedT withRetry(int retryTimes, BiFunction<ResT, SdkException, Boolean> func,
-        BackoffStrategy backoffStrategy) {
+    public D withRetry(int retryTimes, BiFunction<S, SdkException, Boolean> func,
+                       BackoffStrategy backoffStrategy) {
         this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
         this.func = func;
         this.initBackoffStrategy(backoffStrategy);
@@ -161,7 +161,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param retryTimes the max times could be retried
      * @return DerivedT
      */
-    public DerivedT retryTimes(int retryTimes) {
+    public D retryTimes(int retryTimes) {
         this.retryTimes = ValidationUtils.assertIntIsInRange(retryTimes, 0, MAX_RETRY_TIME, "retryTimes");
         return toDerivedT();
     }
@@ -172,7 +172,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param func the function which determines whether to retry
      * @return DerivedT
      */
-    public DerivedT retryCondition(BiFunction<ResT, SdkException, Boolean> func) {
+    public D retryCondition(BiFunction<S, SdkException, Boolean> func) {
         this.func = func;
         return toDerivedT();
     }
@@ -183,7 +183,7 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param backoffStrategy the strategy which calculate the wait duration before next retry
      * @return DerivedT
      */
-    public DerivedT backoffStrategy(BackoffStrategy backoffStrategy) {
+    public D backoffStrategy(BackoffStrategy backoffStrategy) {
         this.backoffStrategy = backoffStrategy;
         return toDerivedT();
     }
@@ -191,10 +191,10 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
     /**
      * The default built-in retry condition could be used by the user.
      *
-     * @param <ResT> response type
+     * @param <S> response type
      * @return BiFunction
      */
-    public static <ResT> BiFunction<ResT, SdkException, Boolean> defaultRetryCondition() {
+    public static <S> BiFunction<S, SdkException, Boolean> defaultRetryCondition() {
         return (resp, exception) -> {
             if (Objects.nonNull(exception)) {
                 return ConnectionException.class.isAssignableFrom(exception.getClass());
@@ -221,10 +221,10 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
      * @param work the actual action needs to be retried.
      * @return CompletableFuture
      */
-    CompletableFuture<ResT> retry(Supplier<CompletableFuture<ResT>> work) {
-        CompletableFuture<ResT> future = new CompletableFuture<>();
+    CompletableFuture<S> retry(Supplier<CompletableFuture<S>> work) {
+        CompletableFuture<S> future = new CompletableFuture<>();
         initBackoffStrategy(backoffStrategy);
-        RetryRecord<ResT> record = new RetryRecord<>(retryTimes, func, backoffStrategy);
+        RetryRecord<S> record = new RetryRecord<>(retryTimes, func, backoffStrategy);
         record.setFuture(future);
         record.setWorkSupplier(work);
         // start the first call of the interface
@@ -233,8 +233,8 @@ public class BaseInvoker<ReqT, ResT, DerivedT extends BaseInvoker<ReqT, ResT, De
     }
 
     @SuppressWarnings("unchecked")
-    private DerivedT toDerivedT() {
-        return (DerivedT) this;
+    private D toDerivedT() {
+        return (D) this;
     }
 
 }

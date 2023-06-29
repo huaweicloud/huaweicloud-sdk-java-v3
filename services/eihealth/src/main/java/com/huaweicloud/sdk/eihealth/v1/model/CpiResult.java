@@ -172,17 +172,17 @@ public class CpiResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CpiResult cpiResult = (CpiResult) o;
-        return Objects.equals(this.header, cpiResult.header) && Objects.equals(this.fasta, cpiResult.fasta)
-            && Objects.equals(this.propNames, cpiResult.propNames) && Objects.equals(this.result, cpiResult.result)
-            && Objects.equals(this.customProps, cpiResult.customProps);
+        CpiResult that = (CpiResult) obj;
+        return Objects.equals(this.header, that.header) && Objects.equals(this.fasta, that.fasta)
+            && Objects.equals(this.propNames, that.propNames) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

@@ -52,16 +52,15 @@ public class BackupTriggerPropertiesRequestInfo1 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackupTriggerPropertiesRequestInfo1 backupTriggerPropertiesRequestInfo1 =
-            (BackupTriggerPropertiesRequestInfo1) o;
-        return Objects.equals(this.pattern, backupTriggerPropertiesRequestInfo1.pattern);
+        BackupTriggerPropertiesRequestInfo1 that = (BackupTriggerPropertiesRequestInfo1) obj;
+        return Objects.equals(this.pattern, that.pattern);
     }
 
     @Override

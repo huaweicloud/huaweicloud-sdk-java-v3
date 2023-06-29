@@ -165,21 +165,19 @@ public class ConfCtlRecordInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfCtlRecordInfo confCtlRecordInfo = (ConfCtlRecordInfo) o;
-        return Objects.equals(this.operateTime, confCtlRecordInfo.operateTime)
-            && Objects.equals(this.operateSource, confCtlRecordInfo.operateSource)
-            && Objects.equals(this.operator, confCtlRecordInfo.operator)
-            && Objects.equals(this.operateCode, confCtlRecordInfo.operateCode)
-            && Objects.equals(this.operationObject, confCtlRecordInfo.operationObject)
-            && Objects.equals(this.operateResult, confCtlRecordInfo.operateResult)
-            && Objects.equals(this.detail, confCtlRecordInfo.detail);
+        ConfCtlRecordInfo that = (ConfCtlRecordInfo) obj;
+        return Objects.equals(this.operateTime, that.operateTime)
+            && Objects.equals(this.operateSource, that.operateSource) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.operateCode, that.operateCode)
+            && Objects.equals(this.operationObject, that.operationObject)
+            && Objects.equals(this.operateResult, that.operateResult) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

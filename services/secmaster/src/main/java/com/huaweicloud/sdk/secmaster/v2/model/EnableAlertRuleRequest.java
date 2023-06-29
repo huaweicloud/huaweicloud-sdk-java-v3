@@ -74,16 +74,15 @@ public class EnableAlertRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableAlertRuleRequest enableAlertRuleRequest = (EnableAlertRuleRequest) o;
-        return Objects.equals(this.workspaceId, enableAlertRuleRequest.workspaceId)
-            && Objects.equals(this.body, enableAlertRuleRequest.body);
+        EnableAlertRuleRequest that = (EnableAlertRuleRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

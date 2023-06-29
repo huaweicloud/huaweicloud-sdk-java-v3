@@ -44,15 +44,15 @@ public class CreateAgencyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAgencyResponse createAgencyResponse = (CreateAgencyResponse) o;
-        return Objects.equals(this.agency, createAgencyResponse.agency);
+        CreateAgencyResponse that = (CreateAgencyResponse) obj;
+        return Objects.equals(this.agency, that.agency);
     }
 
     @Override

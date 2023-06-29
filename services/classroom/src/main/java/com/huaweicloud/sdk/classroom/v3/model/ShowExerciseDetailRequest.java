@@ -33,15 +33,15 @@ public class ShowExerciseDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExerciseDetailRequest showExerciseDetailRequest = (ShowExerciseDetailRequest) o;
-        return Objects.equals(this.exerciseId, showExerciseDetailRequest.exerciseId);
+        ShowExerciseDetailRequest that = (ShowExerciseDetailRequest) obj;
+        return Objects.equals(this.exerciseId, that.exerciseId);
     }
 
     @Override

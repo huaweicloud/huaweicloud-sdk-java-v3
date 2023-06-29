@@ -74,15 +74,15 @@ public class ResQuest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResQuest resQuest = (ResQuest) o;
-        return Objects.equals(this.limits, resQuest.limits) && Objects.equals(this.requests, resQuest.requests);
+        ResQuest that = (ResQuest) obj;
+        return Objects.equals(this.limits, that.limits) && Objects.equals(this.requests, that.requests);
     }
 
     @Override

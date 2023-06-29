@@ -55,16 +55,16 @@ public class NovaShowKeypairRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaShowKeypairRequest novaShowKeypairRequest = (NovaShowKeypairRequest) o;
-        return Objects.equals(this.keypairName, novaShowKeypairRequest.keypairName)
-            && Objects.equals(this.openStackAPIVersion, novaShowKeypairRequest.openStackAPIVersion);
+        NovaShowKeypairRequest that = (NovaShowKeypairRequest) obj;
+        return Objects.equals(this.keypairName, that.keypairName)
+            && Objects.equals(this.openStackAPIVersion, that.openStackAPIVersion);
     }
 
     @Override

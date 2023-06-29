@@ -55,16 +55,15 @@ public class ShowMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMemberRequest showMemberRequest = (ShowMemberRequest) o;
-        return Objects.equals(this.poolId, showMemberRequest.poolId)
-            && Objects.equals(this.memberId, showMemberRequest.memberId);
+        ShowMemberRequest that = (ShowMemberRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.memberId, that.memberId);
     }
 
     @Override

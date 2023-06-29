@@ -100,18 +100,16 @@ public class UpdateServiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateServiceResponse updateServiceResponse = (UpdateServiceResponse) o;
-        return Objects.equals(this.serviceName, updateServiceResponse.serviceName)
-            && Objects.equals(this.serviceId, updateServiceResponse.serviceId)
-            && Objects.equals(this.errorCode, updateServiceResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateServiceResponse.errorMsg);
+        UpdateServiceResponse that = (UpdateServiceResponse) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

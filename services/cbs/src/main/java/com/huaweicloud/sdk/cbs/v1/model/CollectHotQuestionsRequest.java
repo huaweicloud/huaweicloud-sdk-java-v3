@@ -1,62 +1,47 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class CollectHotQuestionsRequest  {
-
+public class CollectHotQuestionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top")
-    
+    @JsonProperty(value = "top")
 
     private Integer top;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain")
-    
+    @JsonProperty(value = "domain")
 
     private String domain;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="domain_id")
-    
+    @JsonProperty(value = "domain_id")
 
     private String domainId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exclude")
-    
+    @JsonProperty(value = "exclude")
 
     private Boolean exclude;
 
@@ -64,9 +49,6 @@ public class CollectHotQuestionsRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * qabot编号，UUID格式。
@@ -80,15 +62,10 @@ public class CollectHotQuestionsRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public CollectHotQuestionsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始时间，long，UTC时间，默认值为0。
@@ -102,15 +79,10 @@ public class CollectHotQuestionsRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public CollectHotQuestionsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询的结束时间，long，UTC时间，默认值为当前时间的毫秒数。
@@ -124,15 +96,10 @@ public class CollectHotQuestionsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public CollectHotQuestionsRequest withTop(Integer top) {
         this.top = top;
         return this;
     }
-
-    
-
 
     /**
      * 热点问题最多显示的个数，默认值为10，取值范围1-20。
@@ -146,15 +113,10 @@ public class CollectHotQuestionsRequest  {
         this.top = top;
     }
 
-    
-
     public CollectHotQuestionsRequest withDomain(String domain) {
         this.domain = domain;
         return this;
     }
-
-    
-
 
     /**
      * 热点问题所属的领域。如果指定领域为非空字符串则从指定领域中查询热点问题，否则从所有标准问题中查询热点问题。
@@ -168,15 +130,10 @@ public class CollectHotQuestionsRequest  {
         this.domain = domain;
     }
 
-    
-
     public CollectHotQuestionsRequest withDomainId(String domainId) {
         this.domainId = domainId;
         return this;
     }
-
-    
-
 
     /**
      * 统计的目标问题类别id。
@@ -190,15 +147,10 @@ public class CollectHotQuestionsRequest  {
         this.domainId = domainId;
     }
 
-    
-
     public CollectHotQuestionsRequest withExclude(Boolean exclude) {
         this.exclude = exclude;
         return this;
     }
-
-    
-
 
     /**
      * true:根据问答对信息展示热点问题（如：热点问题对应的问答对“你好”发生了修改，变成了 “你好啊”，此时热点问题也将返回 “你好啊”；但是如果这个问题对被删除，则“你好”不会被展示在热点问中） false: 不根据问答对信息展示热点问题。
@@ -212,29 +164,26 @@ public class CollectHotQuestionsRequest  {
         this.exclude = exclude;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectHotQuestionsRequest collectHotQuestionsRequest = (CollectHotQuestionsRequest) o;
-        return Objects.equals(this.qabotId, collectHotQuestionsRequest.qabotId) &&
-            Objects.equals(this.startTime, collectHotQuestionsRequest.startTime) &&
-            Objects.equals(this.endTime, collectHotQuestionsRequest.endTime) &&
-            Objects.equals(this.top, collectHotQuestionsRequest.top) &&
-            Objects.equals(this.domain, collectHotQuestionsRequest.domain) &&
-            Objects.equals(this.domainId, collectHotQuestionsRequest.domainId) &&
-            Objects.equals(this.exclude, collectHotQuestionsRequest.exclude);
+        CollectHotQuestionsRequest that = (CollectHotQuestionsRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.top, that.top)
+            && Objects.equals(this.domain, that.domain) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.exclude, that.exclude);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, startTime, endTime, top, domain, domainId, exclude);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -249,6 +198,7 @@ public class CollectHotQuestionsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -259,8 +209,5 @@ public class CollectHotQuestionsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

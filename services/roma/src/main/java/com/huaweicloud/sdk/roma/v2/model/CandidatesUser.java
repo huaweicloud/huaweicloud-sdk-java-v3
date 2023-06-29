@@ -55,15 +55,15 @@ public class CandidatesUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CandidatesUser candidatesUser = (CandidatesUser) o;
-        return Objects.equals(this.name, candidatesUser.name) && Objects.equals(this.id, candidatesUser.id);
+        CandidatesUser that = (CandidatesUser) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override

@@ -114,22 +114,15 @@ public class CreateAlertRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -196,22 +189,15 @@ public class CreateAlertRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -296,22 +282,15 @@ public class CreateAlertRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -738,33 +717,25 @@ public class CreateAlertRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertRuleResponse createAlertRuleResponse = (CreateAlertRuleResponse) o;
-        return Objects.equals(this.ruleId, createAlertRuleResponse.ruleId)
-            && Objects.equals(this.pipeId, createAlertRuleResponse.pipeId)
-            && Objects.equals(this.pipeName, createAlertRuleResponse.pipeName)
-            && Objects.equals(this.createBy, createAlertRuleResponse.createBy)
-            && Objects.equals(this.createTime, createAlertRuleResponse.createTime)
-            && Objects.equals(this.updateBy, createAlertRuleResponse.updateBy)
-            && Objects.equals(this.updateTime, createAlertRuleResponse.updateTime)
-            && Objects.equals(this.deleteTime, createAlertRuleResponse.deleteTime)
-            && Objects.equals(this.ruleName, createAlertRuleResponse.ruleName)
-            && Objects.equals(this.query, createAlertRuleResponse.query)
-            && Objects.equals(this.queryType, createAlertRuleResponse.queryType)
-            && Objects.equals(this.status, createAlertRuleResponse.status)
-            && Objects.equals(this.severity, createAlertRuleResponse.severity)
-            && Objects.equals(this.accumulatedTimes, createAlertRuleResponse.accumulatedTimes)
-            && Objects.equals(this.customProperties, createAlertRuleResponse.customProperties)
-            && Objects.equals(this.eventGrouping, createAlertRuleResponse.eventGrouping)
-            && Objects.equals(this.schedule, createAlertRuleResponse.schedule)
-            && Objects.equals(this.triggers, createAlertRuleResponse.triggers)
-            && Objects.equals(this.xRequestId, createAlertRuleResponse.xRequestId);
+        CreateAlertRuleResponse that = (CreateAlertRuleResponse) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.pipeId, that.pipeId)
+            && Objects.equals(this.pipeName, that.pipeName) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateBy, that.updateBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.deleteTime, that.deleteTime)
+            && Objects.equals(this.ruleName, that.ruleName) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.accumulatedTimes, that.accumulatedTimes)
+            && Objects.equals(this.customProperties, that.customProperties)
+            && Objects.equals(this.eventGrouping, that.eventGrouping) && Objects.equals(this.schedule, that.schedule)
+            && Objects.equals(this.triggers, that.triggers) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

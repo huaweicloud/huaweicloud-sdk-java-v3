@@ -113,18 +113,16 @@ public class UpdateProductTopicRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProductTopicRequest updateProductTopicRequest = (UpdateProductTopicRequest) o;
-        return Objects.equals(this.instanceId, updateProductTopicRequest.instanceId)
-            && Objects.equals(this.productId, updateProductTopicRequest.productId)
-            && Objects.equals(this.topicId, updateProductTopicRequest.topicId)
-            && Objects.equals(this.body, updateProductTopicRequest.body);
+        UpdateProductTopicRequest that = (UpdateProductTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.topicId, that.topicId) && Objects.equals(this.body, that.body);
     }
 
     @Override

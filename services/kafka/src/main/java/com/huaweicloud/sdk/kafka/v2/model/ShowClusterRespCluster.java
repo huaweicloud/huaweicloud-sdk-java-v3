@@ -206,22 +206,21 @@ public class ShowClusterRespCluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterRespCluster showClusterRespCluster = (ShowClusterRespCluster) o;
-        return Objects.equals(this.controller, showClusterRespCluster.controller)
-            && Objects.equals(this.brokers, showClusterRespCluster.brokers)
-            && Objects.equals(this.topicsCount, showClusterRespCluster.topicsCount)
-            && Objects.equals(this.partitionsCount, showClusterRespCluster.partitionsCount)
-            && Objects.equals(this.onlinePartitionsCount, showClusterRespCluster.onlinePartitionsCount)
-            && Objects.equals(this.replicasCount, showClusterRespCluster.replicasCount)
-            && Objects.equals(this.isrReplicasCount, showClusterRespCluster.isrReplicasCount)
-            && Objects.equals(this.consumersCount, showClusterRespCluster.consumersCount);
+        ShowClusterRespCluster that = (ShowClusterRespCluster) obj;
+        return Objects.equals(this.controller, that.controller) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.topicsCount, that.topicsCount)
+            && Objects.equals(this.partitionsCount, that.partitionsCount)
+            && Objects.equals(this.onlinePartitionsCount, that.onlinePartitionsCount)
+            && Objects.equals(this.replicasCount, that.replicasCount)
+            && Objects.equals(this.isrReplicasCount, that.isrReplicasCount)
+            && Objects.equals(this.consumersCount, that.consumersCount);
     }
 
     @Override

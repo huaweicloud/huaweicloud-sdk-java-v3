@@ -512,34 +512,27 @@ public class SimPricePlanVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimPricePlanVO simPricePlanVO = (SimPricePlanVO) o;
-        return Objects.equals(this.id, simPricePlanVO.id) && Objects.equals(this.accountId, simPricePlanVO.accountId)
-            && Objects.equals(this.simCardId, simPricePlanVO.simCardId)
-            && Objects.equals(this.status, simPricePlanVO.status)
-            && Objects.equals(this.pricePlanId, simPricePlanVO.pricePlanId)
-            && Objects.equals(this.cid, simPricePlanVO.cid) && Objects.equals(this.orderId, simPricePlanVO.orderId)
-            && Objects.equals(this.createTime, simPricePlanVO.createTime)
-            && Objects.equals(this.activeTime, simPricePlanVO.activeTime)
-            && Objects.equals(this.stopTime, simPricePlanVO.stopTime)
-            && Objects.equals(this.flowTotal, simPricePlanVO.flowTotal)
-            && Objects.equals(this.flowUsed, simPricePlanVO.flowUsed)
-            && Objects.equals(this.flowLeft, simPricePlanVO.flowLeft)
-            && Objects.equals(this.using, simPricePlanVO.using)
-            && Objects.equals(this.pricePlanName, simPricePlanVO.pricePlanName)
-            && Objects.equals(this.description, simPricePlanVO.description)
-            && Objects.equals(this.packageType, simPricePlanVO.packageType)
-            && Objects.equals(this.effectType, simPricePlanVO.effectType)
-            && Objects.equals(this.silentPeriodDay, simPricePlanVO.silentPeriodDay)
-            && Objects.equals(this.silentPeriodUnit, simPricePlanVO.silentPeriodUnit)
-            && Objects.equals(this.autoRenew, simPricePlanVO.autoRenew)
-            && Objects.equals(this.locationDesc, simPricePlanVO.locationDesc);
+        SimPricePlanVO that = (SimPricePlanVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.simCardId, that.simCardId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.pricePlanId, that.pricePlanId) && Objects.equals(this.cid, that.cid)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.activeTime, that.activeTime) && Objects.equals(this.stopTime, that.stopTime)
+            && Objects.equals(this.flowTotal, that.flowTotal) && Objects.equals(this.flowUsed, that.flowUsed)
+            && Objects.equals(this.flowLeft, that.flowLeft) && Objects.equals(this.using, that.using)
+            && Objects.equals(this.pricePlanName, that.pricePlanName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.effectType, that.effectType)
+            && Objects.equals(this.silentPeriodDay, that.silentPeriodDay)
+            && Objects.equals(this.silentPeriodUnit, that.silentPeriodUnit)
+            && Objects.equals(this.autoRenew, that.autoRenew) && Objects.equals(this.locationDesc, that.locationDesc);
     }
 
     @Override

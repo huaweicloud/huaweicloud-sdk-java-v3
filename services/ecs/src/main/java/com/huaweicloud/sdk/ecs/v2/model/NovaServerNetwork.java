@@ -77,16 +77,16 @@ public class NovaServerNetwork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaServerNetwork novaServerNetwork = (NovaServerNetwork) o;
-        return Objects.equals(this.port, novaServerNetwork.port) && Objects.equals(this.uuid, novaServerNetwork.uuid)
-            && Objects.equals(this.fixedIp, novaServerNetwork.fixedIp);
+        NovaServerNetwork that = (NovaServerNetwork) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.uuid, that.uuid)
+            && Objects.equals(this.fixedIp, that.fixedIp);
     }
 
     @Override

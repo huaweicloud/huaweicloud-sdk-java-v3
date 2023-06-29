@@ -99,18 +99,16 @@ public class ListEncryptdataNodesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEncryptdataNodesRequest listEncryptdataNodesRequest = (ListEncryptdataNodesRequest) o;
-        return Objects.equals(this.encryptdataId, listEncryptdataNodesRequest.encryptdataId)
-            && Objects.equals(this.limit, listEncryptdataNodesRequest.limit)
-            && Objects.equals(this.iefInstanceId, listEncryptdataNodesRequest.iefInstanceId)
-            && Objects.equals(this.offset, listEncryptdataNodesRequest.offset);
+        ListEncryptdataNodesRequest that = (ListEncryptdataNodesRequest) obj;
+        return Objects.equals(this.encryptdataId, that.encryptdataId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

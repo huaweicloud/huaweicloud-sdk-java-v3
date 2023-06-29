@@ -135,18 +135,18 @@ public class EngineExternalEntrypoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EngineExternalEntrypoint engineExternalEntrypoint = (EngineExternalEntrypoint) o;
-        return Objects.equals(this.externalAddress, engineExternalEntrypoint.externalAddress)
-            && Objects.equals(this.publicAddress, engineExternalEntrypoint.publicAddress)
-            && Objects.equals(this.serviceEndpoint, engineExternalEntrypoint.serviceEndpoint)
-            && Objects.equals(this.publicServiceEndpoint, engineExternalEntrypoint.publicServiceEndpoint);
+        EngineExternalEntrypoint that = (EngineExternalEntrypoint) obj;
+        return Objects.equals(this.externalAddress, that.externalAddress)
+            && Objects.equals(this.publicAddress, that.publicAddress)
+            && Objects.equals(this.serviceEndpoint, that.serviceEndpoint)
+            && Objects.equals(this.publicServiceEndpoint, that.publicServiceEndpoint);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class SyncRespBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SyncRespBody syncRespBody = (SyncRespBody) o;
-        return Objects.equals(this.operationLogId, syncRespBody.operationLogId)
-            && Objects.equals(this.vaultId, syncRespBody.vaultId);
+        SyncRespBody that = (SyncRespBody) obj;
+        return Objects.equals(this.operationLogId, that.operationLogId) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

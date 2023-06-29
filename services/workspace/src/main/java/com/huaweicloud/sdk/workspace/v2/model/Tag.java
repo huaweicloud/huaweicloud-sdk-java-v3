@@ -26,7 +26,7 @@ public class Tag {
     }
 
     /**
-     * 标签的键，不能为空，最大长度36个unicode字符。大小写字母，数字，可以包含中划线“-”，下划线“_”，不能包含以下字符“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
+     * 标签的键，不能为空，最大长度128个unicode字符。大小写字母，数字，可以包含中划线“-”，下划线“_”，不能包含以下字符“=”,“*”,“<”,“>”,“\\”,“,”,“|”,“/”。
      * @return key
      */
     public String getKey() {
@@ -55,15 +55,15 @@ public class Tag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Tag tag = (Tag) o;
-        return Objects.equals(this.key, tag.key) && Objects.equals(this.value, tag.value);
+        Tag that = (Tag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

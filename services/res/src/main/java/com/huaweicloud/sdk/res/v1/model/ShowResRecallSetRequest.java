@@ -77,17 +77,16 @@ public class ShowResRecallSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResRecallSetRequest showResRecallSetRequest = (ShowResRecallSetRequest) o;
-        return Objects.equals(this.workspaceId, showResRecallSetRequest.workspaceId)
-            && Objects.equals(this.resourceId, showResRecallSetRequest.resourceId)
-            && Objects.equals(this.useType, showResRecallSetRequest.useType);
+        ShowResRecallSetRequest that = (ShowResRecallSetRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.useType, that.useType);
     }
 
     @Override

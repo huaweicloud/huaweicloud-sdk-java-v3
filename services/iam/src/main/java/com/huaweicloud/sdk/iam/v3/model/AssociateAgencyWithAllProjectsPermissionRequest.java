@@ -77,18 +77,16 @@ public class AssociateAgencyWithAllProjectsPermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateAgencyWithAllProjectsPermissionRequest associateAgencyWithAllProjectsPermissionRequest =
-            (AssociateAgencyWithAllProjectsPermissionRequest) o;
-        return Objects.equals(this.agencyId, associateAgencyWithAllProjectsPermissionRequest.agencyId)
-            && Objects.equals(this.domainId, associateAgencyWithAllProjectsPermissionRequest.domainId)
-            && Objects.equals(this.roleId, associateAgencyWithAllProjectsPermissionRequest.roleId);
+        AssociateAgencyWithAllProjectsPermissionRequest that = (AssociateAgencyWithAllProjectsPermissionRequest) obj;
+        return Objects.equals(this.agencyId, that.agencyId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.roleId, that.roleId);
     }
 
     @Override

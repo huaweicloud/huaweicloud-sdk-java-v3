@@ -66,16 +66,15 @@ public class ShowFlavorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFlavorResponse showFlavorResponse = (ShowFlavorResponse) o;
-        return Objects.equals(this.requestId, showFlavorResponse.requestId)
-            && Objects.equals(this.flavor, showFlavorResponse.flavor);
+        ShowFlavorResponse that = (ShowFlavorResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.flavor, that.flavor);
     }
 
     @Override

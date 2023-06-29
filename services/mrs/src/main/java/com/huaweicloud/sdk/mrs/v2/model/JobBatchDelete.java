@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * JobBatchDelete
  */
-public class JobBatchDelete  {
-
+public class JobBatchDelete {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id_list")
-    
+    @JsonProperty(value = "job_id_list")
+
     private List<String> jobIdList = null;
-    
+
     public JobBatchDelete withJobIdList(List<String> jobIdList) {
         this.jobIdList = jobIdList;
         return this;
     }
 
-    
     public JobBatchDelete addJobIdListItem(String jobIdListItem) {
-        if(this.jobIdList == null) {
+        if (this.jobIdList == null) {
             this.jobIdList = new ArrayList<>();
         }
         this.jobIdList.add(jobIdListItem);
@@ -39,7 +32,7 @@ public class JobBatchDelete  {
     }
 
     public JobBatchDelete withJobIdList(Consumer<List<String>> jobIdListSetter) {
-        if(this.jobIdList == null) {
+        if (this.jobIdList == null) {
             this.jobIdList = new ArrayList<>();
         }
         jobIdListSetter.accept(this.jobIdList);
@@ -58,23 +51,23 @@ public class JobBatchDelete  {
         this.jobIdList = jobIdList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobBatchDelete jobBatchDelete = (JobBatchDelete) o;
-        return Objects.equals(this.jobIdList, jobBatchDelete.jobIdList);
+        JobBatchDelete that = (JobBatchDelete) obj;
+        return Objects.equals(this.jobIdList, that.jobIdList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobIdList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class JobBatchDelete  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class JobBatchDelete  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

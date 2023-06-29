@@ -118,18 +118,16 @@ public class GetFirewallInstanceData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetFirewallInstanceData getFirewallInstanceData = (GetFirewallInstanceData) o;
-        return Objects.equals(this.limit, getFirewallInstanceData.limit)
-            && Objects.equals(this.offset, getFirewallInstanceData.offset)
-            && Objects.equals(this.total, getFirewallInstanceData.total)
-            && Objects.equals(this.records, getFirewallInstanceData.records);
+        GetFirewallInstanceData that = (GetFirewallInstanceData) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.records, that.records);
     }
 
     @Override

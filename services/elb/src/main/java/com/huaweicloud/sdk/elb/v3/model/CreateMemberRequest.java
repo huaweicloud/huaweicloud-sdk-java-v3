@@ -65,16 +65,15 @@ public class CreateMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMemberRequest createMemberRequest = (CreateMemberRequest) o;
-        return Objects.equals(this.poolId, createMemberRequest.poolId)
-            && Objects.equals(this.body, createMemberRequest.body);
+        CreateMemberRequest that = (CreateMemberRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.body, that.body);
     }
 
     @Override

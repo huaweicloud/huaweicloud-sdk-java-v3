@@ -24,8 +24,8 @@ public class BatchStopServersOption {
     private List<ServerId> servers = null;
 
     /**
-    * 关机类型，默认为SOFT：  - SOFT：普通关机（默认）。 - HARD：强制关机。
-    */
+     * 关机类型，默认为SOFT：  - SOFT：普通关机（默认）。 - HARD：强制关机。
+     */
     public static final class TypeEnum {
 
         /**
@@ -68,22 +68,15 @@ public class BatchStopServersOption {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,15 @@ public class BatchStopServersOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchStopServersOption batchStopServersOption = (BatchStopServersOption) o;
-        return Objects.equals(this.servers, batchStopServersOption.servers)
-            && Objects.equals(this.type, batchStopServersOption.type);
+        BatchStopServersOption that = (BatchStopServersOption) obj;
+        return Objects.equals(this.servers, that.servers) && Objects.equals(this.type, that.type);
     }
 
     @Override

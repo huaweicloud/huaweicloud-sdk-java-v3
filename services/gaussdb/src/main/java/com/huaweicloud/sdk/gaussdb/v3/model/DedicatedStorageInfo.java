@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * DedicatedStorageInfo
  */
-public class DedicatedStorageInfo  {
-
+public class DedicatedStorageInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host_num")
-    
+    @JsonProperty(value = "host_num")
 
     private Integer hostNum;
 
@@ -33,9 +24,6 @@ public class DedicatedStorageInfo  {
         this.specCode = specCode;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池存储资源规格码。
@@ -49,15 +37,10 @@ public class DedicatedStorageInfo  {
         this.specCode = specCode;
     }
 
-    
-
     public DedicatedStorageInfo withHostNum(Integer hostNum) {
         this.hostNum = hostNum;
         return this;
     }
-
-    
-
 
     /**
      * 专属资源池存储主机数量。
@@ -71,24 +54,23 @@ public class DedicatedStorageInfo  {
         this.hostNum = hostNum;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DedicatedStorageInfo dedicatedStorageInfo = (DedicatedStorageInfo) o;
-        return Objects.equals(this.specCode, dedicatedStorageInfo.specCode) &&
-            Objects.equals(this.hostNum, dedicatedStorageInfo.hostNum);
+        DedicatedStorageInfo that = (DedicatedStorageInfo) obj;
+        return Objects.equals(this.specCode, that.specCode) && Objects.equals(this.hostNum, that.hostNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(specCode, hostNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class DedicatedStorageInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class DedicatedStorageInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

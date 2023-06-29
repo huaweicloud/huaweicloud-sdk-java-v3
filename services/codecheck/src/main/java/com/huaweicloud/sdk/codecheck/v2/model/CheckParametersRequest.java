@@ -99,18 +99,16 @@ public class CheckParametersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckParametersRequest checkParametersRequest = (CheckParametersRequest) o;
-        return Objects.equals(this.projectId, checkParametersRequest.projectId)
-            && Objects.equals(this.taskId, checkParametersRequest.taskId)
-            && Objects.equals(this.rulesetId, checkParametersRequest.rulesetId)
-            && Objects.equals(this.language, checkParametersRequest.language);
+        CheckParametersRequest that = (CheckParametersRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.rulesetId, that.rulesetId) && Objects.equals(this.language, that.language);
     }
 
     @Override

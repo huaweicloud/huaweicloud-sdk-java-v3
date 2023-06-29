@@ -77,17 +77,16 @@ public class DeleteRepoDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRepoDomainsRequest deleteRepoDomainsRequest = (DeleteRepoDomainsRequest) o;
-        return Objects.equals(this.namespace, deleteRepoDomainsRequest.namespace)
-            && Objects.equals(this.repository, deleteRepoDomainsRequest.repository)
-            && Objects.equals(this.accessDomain, deleteRepoDomainsRequest.accessDomain);
+        DeleteRepoDomainsRequest that = (DeleteRepoDomainsRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.accessDomain, that.accessDomain);
     }
 
     @Override

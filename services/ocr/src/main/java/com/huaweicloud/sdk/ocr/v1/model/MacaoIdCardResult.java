@@ -363,28 +363,25 @@ public class MacaoIdCardResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MacaoIdCardResult macaoIdCardResult = (MacaoIdCardResult) o;
-        return Objects.equals(this.side, macaoIdCardResult.side) && Objects.equals(this.name, macaoIdCardResult.name)
-            && Objects.equals(this.nameEn, macaoIdCardResult.nameEn) && Objects.equals(this.sex, macaoIdCardResult.sex)
-            && Objects.equals(this.issueDate, macaoIdCardResult.issueDate)
-            && Objects.equals(this.expiryDate, macaoIdCardResult.expiryDate)
-            && Objects.equals(this.birthDate, macaoIdCardResult.birthDate)
-            && Objects.equals(this.initialIssueDate, macaoIdCardResult.initialIssueDate)
-            && Objects.equals(this.height, macaoIdCardResult.height)
-            && Objects.equals(this.number, macaoIdCardResult.number)
-            && Objects.equals(this.symbols, macaoIdCardResult.symbols)
-            && Objects.equals(this.machineCode1, macaoIdCardResult.machineCode1)
-            && Objects.equals(this.machineCode2, macaoIdCardResult.machineCode2)
-            && Objects.equals(this.machineCode3, macaoIdCardResult.machineCode3)
-            && Objects.equals(this.portraitImage, macaoIdCardResult.portraitImage)
-            && Objects.equals(this.confidence, macaoIdCardResult.confidence);
+        MacaoIdCardResult that = (MacaoIdCardResult) obj;
+        return Objects.equals(this.side, that.side) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.issueDate, that.issueDate) && Objects.equals(this.expiryDate, that.expiryDate)
+            && Objects.equals(this.birthDate, that.birthDate)
+            && Objects.equals(this.initialIssueDate, that.initialIssueDate) && Objects.equals(this.height, that.height)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.symbols, that.symbols)
+            && Objects.equals(this.machineCode1, that.machineCode1)
+            && Objects.equals(this.machineCode2, that.machineCode2)
+            && Objects.equals(this.machineCode3, that.machineCode3)
+            && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

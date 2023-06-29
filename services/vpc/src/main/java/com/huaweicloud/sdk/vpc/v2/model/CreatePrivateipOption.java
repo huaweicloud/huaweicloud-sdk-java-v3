@@ -55,16 +55,15 @@ public class CreatePrivateipOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePrivateipOption createPrivateipOption = (CreatePrivateipOption) o;
-        return Objects.equals(this.subnetId, createPrivateipOption.subnetId)
-            && Objects.equals(this.ipAddress, createPrivateipOption.ipAddress);
+        CreatePrivateipOption that = (CreatePrivateipOption) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override

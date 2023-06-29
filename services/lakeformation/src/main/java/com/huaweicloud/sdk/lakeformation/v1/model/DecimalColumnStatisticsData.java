@@ -140,24 +140,28 @@ public class DecimalColumnStatisticsData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DecimalColumnStatisticsData decimalColumnStatisticsData = (DecimalColumnStatisticsData) o;
-        return Objects.equals(this.minimumValue, decimalColumnStatisticsData.minimumValue)
-            && Objects.equals(this.maximumValue, decimalColumnStatisticsData.maximumValue)
-            && Objects.equals(this.numberOfNull, decimalColumnStatisticsData.numberOfNull)
-            && Objects.equals(this.numberOfDistinctValue, decimalColumnStatisticsData.numberOfDistinctValue)
-            && Objects.equals(this.bitVector, decimalColumnStatisticsData.bitVector);
+        DecimalColumnStatisticsData that = (DecimalColumnStatisticsData) obj;
+        return Objects.equals(this.minimumValue, that.minimumValue)
+            && Objects.equals(this.maximumValue, that.maximumValue)
+            && Objects.equals(this.numberOfNull, that.numberOfNull)
+            && Objects.equals(this.numberOfDistinctValue, that.numberOfDistinctValue)
+            && java.util.Arrays.equals(this.bitVector, that.bitVector);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(minimumValue, maximumValue, numberOfNull, numberOfDistinctValue, bitVector);
+        return Objects.hash(minimumValue,
+            maximumValue,
+            numberOfNull,
+            numberOfDistinctValue,
+            java.util.Arrays.hashCode(bitVector));
     }
 
     @Override

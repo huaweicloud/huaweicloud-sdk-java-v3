@@ -1,71 +1,58 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ParaGroupParameterResult;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ShowConfigurationDetailResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="engine_version")
-    
+    @JsonProperty(value = "engine_version")
 
     private String engineVersion;
+
     /**
      * 实例部署形态。independent：独立；ha：主备。
      */
     public static final class InstanceModeEnum {
 
-        
         /**
          * Enum INDEPENDENT for value: "independent"
          */
         public static final InstanceModeEnum INDEPENDENT = new InstanceModeEnum("independent");
-        
+
         /**
          * Enum HA for value: "ha"
          */
         public static final InstanceModeEnum HA = new InstanceModeEnum("ha");
-        
 
         private static final Map<String, InstanceModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,25 +81,18 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
 
         @JsonCreator
         public static InstanceModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceModeEnum(value));
         }
 
         public static InstanceModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -130,35 +110,29 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_mode")
-    
+    @JsonProperty(value = "instance_mode")
 
     private InstanceModeEnum instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
 
     private String createdAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated_at")
-    
+    @JsonProperty(value = "updated_at")
 
     private String updatedAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_parameters")
-    
+    @JsonProperty(value = "configuration_parameters")
+
     private List<ParaGroupParameterResult> configurationParameters = null;
-    
+
     public ShowConfigurationDetailResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板ID。
@@ -172,15 +146,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ShowConfigurationDetailResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板名称。
@@ -194,15 +163,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ShowConfigurationDetailResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板描述。
@@ -216,15 +180,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public ShowConfigurationDetailResponse withEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
         return this;
     }
-
-    
-
 
     /**
      * 引擎版本。 [数据库版本。支持2.3版本，取值为“2.3”]。
@@ -238,15 +197,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.engineVersion = engineVersion;
     }
 
-    
-
     public ShowConfigurationDetailResponse withInstanceMode(InstanceModeEnum instanceMode) {
         this.instanceMode = instanceMode;
         return this;
     }
-
-    
-
 
     /**
      * 实例部署形态。independent：独立；ha：主备。
@@ -260,15 +214,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.instanceMode = instanceMode;
     }
 
-    
-
     public ShowConfigurationDetailResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -282,15 +231,10 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     public ShowConfigurationDetailResponse withUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
         return this;
     }
-
-    
-
 
     /**
      * 修改时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -304,24 +248,24 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.updatedAt = updatedAt;
     }
 
-    
-
-    public ShowConfigurationDetailResponse withConfigurationParameters(List<ParaGroupParameterResult> configurationParameters) {
+    public ShowConfigurationDetailResponse withConfigurationParameters(
+        List<ParaGroupParameterResult> configurationParameters) {
         this.configurationParameters = configurationParameters;
         return this;
     }
 
-    
-    public ShowConfigurationDetailResponse addConfigurationParametersItem(ParaGroupParameterResult configurationParametersItem) {
-        if(this.configurationParameters == null) {
+    public ShowConfigurationDetailResponse addConfigurationParametersItem(
+        ParaGroupParameterResult configurationParametersItem) {
+        if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         this.configurationParameters.add(configurationParametersItem);
         return this;
     }
 
-    public ShowConfigurationDetailResponse withConfigurationParameters(Consumer<List<ParaGroupParameterResult>> configurationParametersSetter) {
-        if(this.configurationParameters == null) {
+    public ShowConfigurationDetailResponse withConfigurationParameters(
+        Consumer<List<ParaGroupParameterResult>> configurationParametersSetter) {
+        if (this.configurationParameters == null) {
             this.configurationParameters = new ArrayList<>();
         }
         configurationParametersSetter.accept(this.configurationParameters);
@@ -340,30 +284,29 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         this.configurationParameters = configurationParameters;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationDetailResponse showConfigurationDetailResponse = (ShowConfigurationDetailResponse) o;
-        return Objects.equals(this.id, showConfigurationDetailResponse.id) &&
-            Objects.equals(this.name, showConfigurationDetailResponse.name) &&
-            Objects.equals(this.description, showConfigurationDetailResponse.description) &&
-            Objects.equals(this.engineVersion, showConfigurationDetailResponse.engineVersion) &&
-            Objects.equals(this.instanceMode, showConfigurationDetailResponse.instanceMode) &&
-            Objects.equals(this.createdAt, showConfigurationDetailResponse.createdAt) &&
-            Objects.equals(this.updatedAt, showConfigurationDetailResponse.updatedAt) &&
-            Objects.equals(this.configurationParameters, showConfigurationDetailResponse.configurationParameters);
+        ShowConfigurationDetailResponse that = (ShowConfigurationDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.instanceMode, that.instanceMode) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.configurationParameters, that.configurationParameters);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, engineVersion, instanceMode, createdAt, updatedAt, configurationParameters);
+        return Objects
+            .hash(id, name, description, engineVersion, instanceMode, createdAt, updatedAt, configurationParameters);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -379,6 +322,7 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -389,8 +333,5 @@ public class ShowConfigurationDetailResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

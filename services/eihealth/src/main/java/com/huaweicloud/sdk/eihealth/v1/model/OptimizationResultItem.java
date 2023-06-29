@@ -141,19 +141,18 @@ public class OptimizationResultItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OptimizationResultItem optimizationResultItem = (OptimizationResultItem) o;
-        return Objects.equals(this.smiles, optimizationResultItem.smiles)
-            && Objects.equals(this.props, optimizationResultItem.props)
-            && Objects.equals(this.similarity, optimizationResultItem.similarity)
-            && Objects.equals(this.numFulfilledWeakConstraints, optimizationResultItem.numFulfilledWeakConstraints)
-            && Objects.equals(this.score, optimizationResultItem.score);
+        OptimizationResultItem that = (OptimizationResultItem) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.props, that.props)
+            && Objects.equals(this.similarity, that.similarity)
+            && Objects.equals(this.numFulfilledWeakConstraints, that.numFulfilledWeakConstraints)
+            && Objects.equals(this.score, that.score);
     }
 
     @Override

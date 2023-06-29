@@ -99,19 +99,16 @@ public class UpdateTerminalsBindingDesktopsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTerminalsBindingDesktopsRequestBody updateTerminalsBindingDesktopsRequestBody =
-            (UpdateTerminalsBindingDesktopsRequestBody) o;
-        return Objects.equals(this.id, updateTerminalsBindingDesktopsRequestBody.id)
-            && Objects.equals(this.mac, updateTerminalsBindingDesktopsRequestBody.mac)
-            && Objects.equals(this.desktopName, updateTerminalsBindingDesktopsRequestBody.desktopName)
-            && Objects.equals(this.description, updateTerminalsBindingDesktopsRequestBody.description);
+        UpdateTerminalsBindingDesktopsRequestBody that = (UpdateTerminalsBindingDesktopsRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.mac, that.mac)
+            && Objects.equals(this.desktopName, that.desktopName) && Objects.equals(this.description, that.description);
     }
 
     @Override

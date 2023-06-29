@@ -251,22 +251,21 @@ public class Commit {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Commit commit = (Commit) o;
-        return Objects.equals(this.authorEmail, commit.authorEmail)
-            && Objects.equals(this.authorName, commit.authorName)
-            && Objects.equals(this.authoredDate, commit.authoredDate)
-            && Objects.equals(this.committedDate, commit.committedDate)
-            && Objects.equals(this.committerEmail, commit.committerEmail)
-            && Objects.equals(this.committerName, commit.committerName) && Objects.equals(this.format, commit.format)
-            && Objects.equals(this.id, commit.id) && Objects.equals(this.message, commit.message)
-            && Objects.equals(this.parentIds, commit.parentIds);
+        Commit that = (Commit) obj;
+        return Objects.equals(this.authorEmail, that.authorEmail) && Objects.equals(this.authorName, that.authorName)
+            && Objects.equals(this.authoredDate, that.authoredDate)
+            && Objects.equals(this.committedDate, that.committedDate)
+            && Objects.equals(this.committerEmail, that.committerEmail)
+            && Objects.equals(this.committerName, that.committerName) && Objects.equals(this.format, that.format)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.parentIds, that.parentIds);
     }
 
     @Override

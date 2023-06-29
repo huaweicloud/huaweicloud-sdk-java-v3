@@ -43,15 +43,15 @@ public class UpdateEdgeSiteRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeSiteRequestBody updateEdgeSiteRequestBody = (UpdateEdgeSiteRequestBody) o;
-        return Objects.equals(this.edgeSite, updateEdgeSiteRequestBody.edgeSite);
+        UpdateEdgeSiteRequestBody that = (UpdateEdgeSiteRequestBody) obj;
+        return Objects.equals(this.edgeSite, that.edgeSite);
     }
 
     @Override

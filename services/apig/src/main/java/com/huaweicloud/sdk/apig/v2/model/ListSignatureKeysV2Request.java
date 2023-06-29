@@ -145,20 +145,17 @@ public class ListSignatureKeysV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSignatureKeysV2Request listSignatureKeysV2Request = (ListSignatureKeysV2Request) o;
-        return Objects.equals(this.instanceId, listSignatureKeysV2Request.instanceId)
-            && Objects.equals(this.offset, listSignatureKeysV2Request.offset)
-            && Objects.equals(this.limit, listSignatureKeysV2Request.limit)
-            && Objects.equals(this.id, listSignatureKeysV2Request.id)
-            && Objects.equals(this.name, listSignatureKeysV2Request.name)
-            && Objects.equals(this.preciseSearch, listSignatureKeysV2Request.preciseSearch);
+        ListSignatureKeysV2Request that = (ListSignatureKeysV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

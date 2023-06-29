@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ModifyOpsWindow
  */
-public class ModifyOpsWindow  {
-
+public class ModifyOpsWindow {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
@@ -33,9 +24,6 @@ public class ModifyOpsWindow  {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 维护起始时间，UTC时间。
@@ -49,15 +37,10 @@ public class ModifyOpsWindow  {
         this.startTime = startTime;
     }
 
-    
-
     public ModifyOpsWindow withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 维护结束时间，UTC时间。  说明：GuassDB(for MySQL)数据库的结束时间和开始时间必须为整点时间，且相隔四个小时。 
@@ -71,24 +54,23 @@ public class ModifyOpsWindow  {
         this.endTime = endTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyOpsWindow modifyOpsWindow = (ModifyOpsWindow) o;
-        return Objects.equals(this.startTime, modifyOpsWindow.startTime) &&
-            Objects.equals(this.endTime, modifyOpsWindow.endTime);
+        ModifyOpsWindow that = (ModifyOpsWindow) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(startTime, endTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ModifyOpsWindow  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ModifyOpsWindow  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

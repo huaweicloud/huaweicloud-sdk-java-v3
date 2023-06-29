@@ -100,18 +100,17 @@ public class ShowQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQueueResponse showQueueResponse = (ShowQueueResponse) o;
-        return Objects.equals(this.queueId, showQueueResponse.queueId)
-            && Objects.equals(this.queueName, showQueueResponse.queueName)
-            && Objects.equals(this.createTime, showQueueResponse.createTime)
-            && Objects.equals(this.lastModifyTime, showQueueResponse.lastModifyTime);
+        ShowQueueResponse that = (ShowQueueResponse) obj;
+        return Objects.equals(this.queueId, that.queueId) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime);
     }
 
     @Override

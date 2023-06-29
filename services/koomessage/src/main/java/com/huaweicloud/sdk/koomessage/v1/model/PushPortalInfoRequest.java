@@ -33,15 +33,15 @@ public class PushPortalInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushPortalInfoRequest pushPortalInfoRequest = (PushPortalInfoRequest) o;
-        return Objects.equals(this.portalId, pushPortalInfoRequest.portalId);
+        PushPortalInfoRequest that = (PushPortalInfoRequest) obj;
+        return Objects.equals(this.portalId, that.portalId);
     }
 
     @Override

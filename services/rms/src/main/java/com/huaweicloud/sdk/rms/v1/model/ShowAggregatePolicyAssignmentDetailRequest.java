@@ -44,16 +44,15 @@ public class ShowAggregatePolicyAssignmentDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregatePolicyAssignmentDetailRequest showAggregatePolicyAssignmentDetailRequest =
-            (ShowAggregatePolicyAssignmentDetailRequest) o;
-        return Objects.equals(this.body, showAggregatePolicyAssignmentDetailRequest.body);
+        ShowAggregatePolicyAssignmentDetailRequest that = (ShowAggregatePolicyAssignmentDetailRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

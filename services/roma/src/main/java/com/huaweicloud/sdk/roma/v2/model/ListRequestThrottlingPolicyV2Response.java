@@ -97,18 +97,16 @@ public class ListRequestThrottlingPolicyV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRequestThrottlingPolicyV2Response listRequestThrottlingPolicyV2Response =
-            (ListRequestThrottlingPolicyV2Response) o;
-        return Objects.equals(this.size, listRequestThrottlingPolicyV2Response.size)
-            && Objects.equals(this.total, listRequestThrottlingPolicyV2Response.total)
-            && Objects.equals(this.throttles, listRequestThrottlingPolicyV2Response.throttles);
+        ListRequestThrottlingPolicyV2Response that = (ListRequestThrottlingPolicyV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.throttles, that.throttles);
     }
 
     @Override

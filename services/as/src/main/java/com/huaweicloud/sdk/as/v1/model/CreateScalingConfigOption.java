@@ -65,16 +65,16 @@ public class CreateScalingConfigOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingConfigOption createScalingConfigOption = (CreateScalingConfigOption) o;
-        return Objects.equals(this.scalingConfigurationName, createScalingConfigOption.scalingConfigurationName)
-            && Objects.equals(this.instanceConfig, createScalingConfigOption.instanceConfig);
+        CreateScalingConfigOption that = (CreateScalingConfigOption) obj;
+        return Objects.equals(this.scalingConfigurationName, that.scalingConfigurationName)
+            && Objects.equals(this.instanceConfig, that.instanceConfig);
     }
 
     @Override

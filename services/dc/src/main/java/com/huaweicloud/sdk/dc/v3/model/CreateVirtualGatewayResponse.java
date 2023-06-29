@@ -66,16 +66,16 @@ public class CreateVirtualGatewayResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVirtualGatewayResponse createVirtualGatewayResponse = (CreateVirtualGatewayResponse) o;
-        return Objects.equals(this.virtualGateway, createVirtualGatewayResponse.virtualGateway)
-            && Objects.equals(this.requestId, createVirtualGatewayResponse.requestId);
+        CreateVirtualGatewayResponse that = (CreateVirtualGatewayResponse) obj;
+        return Objects.equals(this.virtualGateway, that.virtualGateway)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

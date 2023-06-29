@@ -33,15 +33,15 @@ public class CdmStartClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmStartClusterReq cdmStartClusterReq = (CdmStartClusterReq) o;
-        return Objects.equals(this.start, cdmStartClusterReq.start);
+        CdmStartClusterReq that = (CdmStartClusterReq) obj;
+        return Objects.equals(this.start, that.start);
     }
 
     @Override

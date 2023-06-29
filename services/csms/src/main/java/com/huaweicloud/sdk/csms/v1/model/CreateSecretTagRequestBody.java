@@ -43,15 +43,15 @@ public class CreateSecretTagRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecretTagRequestBody createSecretTagRequestBody = (CreateSecretTagRequestBody) o;
-        return Objects.equals(this.tag, createSecretTagRequestBody.tag);
+        CreateSecretTagRequestBody that = (CreateSecretTagRequestBody) obj;
+        return Objects.equals(this.tag, that.tag);
     }
 
     @Override

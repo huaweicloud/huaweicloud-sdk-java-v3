@@ -294,22 +294,20 @@ public class ResScene {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResScene resScene = (ResScene) o;
-        return Objects.equals(this.category, resScene.category)
-            && Objects.equals(this.datasourceId, resScene.datasourceId)
-            && Objects.equals(this.dsConfig, resScene.dsConfig) && Objects.equals(this.sceneId, resScene.sceneId)
-            && Objects.equals(this.sceneName, resScene.sceneName) && Objects.equals(this.type, resScene.type)
-            && Objects.equals(this.serviceType, resScene.serviceType) && Objects.equals(this.status, resScene.status)
-            && Objects.equals(this.workspaceId, resScene.workspaceId)
-            && Objects.equals(this.createdAt, resScene.createdAt) && Objects.equals(this.updateAt, resScene.updateAt)
-            && Objects.equals(this.specsConfig, resScene.specsConfig);
+        ResScene that = (ResScene) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.dsConfig, that.dsConfig) && Objects.equals(this.sceneId, that.sceneId)
+            && Objects.equals(this.sceneName, that.sceneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updateAt, that.updateAt) && Objects.equals(this.specsConfig, that.specsConfig);
     }
 
     @Override

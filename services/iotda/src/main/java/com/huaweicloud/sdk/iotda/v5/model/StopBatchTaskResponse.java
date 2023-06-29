@@ -53,15 +53,15 @@ public class StopBatchTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopBatchTaskResponse stopBatchTaskResponse = (StopBatchTaskResponse) o;
-        return Objects.equals(this.targets, stopBatchTaskResponse.targets);
+        StopBatchTaskResponse that = (StopBatchTaskResponse) obj;
+        return Objects.equals(this.targets, that.targets);
     }
 
     @Override

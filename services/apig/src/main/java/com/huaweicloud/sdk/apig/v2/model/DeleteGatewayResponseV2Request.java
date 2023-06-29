@@ -77,17 +77,16 @@ public class DeleteGatewayResponseV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteGatewayResponseV2Request deleteGatewayResponseV2Request = (DeleteGatewayResponseV2Request) o;
-        return Objects.equals(this.instanceId, deleteGatewayResponseV2Request.instanceId)
-            && Objects.equals(this.groupId, deleteGatewayResponseV2Request.groupId)
-            && Objects.equals(this.responseId, deleteGatewayResponseV2Request.responseId);
+        DeleteGatewayResponseV2Request that = (DeleteGatewayResponseV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.responseId, that.responseId);
     }
 
     @Override

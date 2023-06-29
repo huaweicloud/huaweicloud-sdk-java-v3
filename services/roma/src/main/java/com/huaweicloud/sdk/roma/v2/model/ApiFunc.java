@@ -71,22 +71,15 @@ public class ApiFunc {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InvocationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InvocationTypeEnum(value));
         }
 
         public static InvocationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InvocationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class ApiFunc {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -408,20 +394,20 @@ public class ApiFunc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiFunc apiFunc = (ApiFunc) o;
-        return Objects.equals(this.functionUrn, apiFunc.functionUrn) && Objects.equals(this.remark, apiFunc.remark)
-            && Objects.equals(this.invocationType, apiFunc.invocationType)
-            && Objects.equals(this.version, apiFunc.version) && Objects.equals(this.aliasUrn, apiFunc.aliasUrn)
-            && Objects.equals(this.timeout, apiFunc.timeout) && Objects.equals(this.authorizerId, apiFunc.authorizerId)
-            && Objects.equals(this.id, apiFunc.id) && Objects.equals(this.registerTime, apiFunc.registerTime)
-            && Objects.equals(this.status, apiFunc.status) && Objects.equals(this.updateTime, apiFunc.updateTime);
+        ApiFunc that = (ApiFunc) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.invocationType, that.invocationType) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.aliasUrn, that.aliasUrn) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.registerTime, that.registerTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

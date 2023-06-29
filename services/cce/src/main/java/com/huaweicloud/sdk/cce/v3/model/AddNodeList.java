@@ -96,16 +96,16 @@ public class AddNodeList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddNodeList addNodeList = (AddNodeList) o;
-        return Objects.equals(this.apiVersion, addNodeList.apiVersion) && Objects.equals(this.kind, addNodeList.kind)
-            && Objects.equals(this.nodeList, addNodeList.nodeList);
+        AddNodeList that = (AddNodeList) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.nodeList, that.nodeList);
     }
 
     @Override

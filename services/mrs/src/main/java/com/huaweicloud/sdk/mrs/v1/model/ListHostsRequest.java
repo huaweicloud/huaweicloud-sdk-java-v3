@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListHostsRequest  {
-
+public class ListHostsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pageSize")
-    
+    @JsonProperty(value = "pageSize")
 
     private String pageSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currentPage")
-    
+    @JsonProperty(value = "currentPage")
 
     private String currentPage;
 
@@ -40,9 +29,6 @@ public class ListHostsRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。获取方法，请参见[获取集群ID](https://support.huaweicloud.com/api-mrs/mrs_02_9001.html)。
@@ -56,15 +42,10 @@ public class ListHostsRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public ListHostsRequest withPageSize(String pageSize) {
         this.pageSize = pageSize;
         return this;
     }
-
-    
-
 
     /**
      * 分页查询每页返回的最大集群数量。 取值范围：[1～2147483646] 默认值为10。
@@ -78,15 +59,10 @@ public class ListHostsRequest  {
         this.pageSize = pageSize;
     }
 
-    
-
     public ListHostsRequest withCurrentPage(String currentPage) {
         this.currentPage = currentPage;
         return this;
     }
-
-    
-
 
     /**
      * 当前查询页码。默认值为1。
@@ -100,25 +76,24 @@ public class ListHostsRequest  {
         this.currentPage = currentPage;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostsRequest listHostsRequest = (ListHostsRequest) o;
-        return Objects.equals(this.clusterId, listHostsRequest.clusterId) &&
-            Objects.equals(this.pageSize, listHostsRequest.pageSize) &&
-            Objects.equals(this.currentPage, listHostsRequest.currentPage);
+        ListHostsRequest that = (ListHostsRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.currentPage, that.currentPage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, pageSize, currentPage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ListHostsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ListHostsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

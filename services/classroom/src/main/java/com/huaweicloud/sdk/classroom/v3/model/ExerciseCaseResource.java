@@ -143,20 +143,17 @@ public class ExerciseCaseResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseCaseResource exerciseCaseResource = (ExerciseCaseResource) o;
-        return Objects.equals(this.id, exerciseCaseResource.id)
-            && Objects.equals(this.polymericResourceId, exerciseCaseResource.polymericResourceId)
-            && Objects.equals(this.inputFile, exerciseCaseResource.inputFile)
-            && Objects.equals(this.outputFile, exerciseCaseResource.outputFile)
-            && Objects.equals(this.index, exerciseCaseResource.index)
-            && Objects.equals(this.inputType, exerciseCaseResource.inputType);
+        ExerciseCaseResource that = (ExerciseCaseResource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.polymericResourceId, that.polymericResourceId)
+            && Objects.equals(this.inputFile, that.inputFile) && Objects.equals(this.outputFile, that.outputFile)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.inputType, that.inputType);
     }
 
     @Override

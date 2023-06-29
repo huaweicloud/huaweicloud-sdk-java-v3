@@ -389,27 +389,27 @@ public class SimPoolVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimPoolVO simPoolVO = (SimPoolVO) o;
-        return Objects.equals(this.id, simPoolVO.id) && Objects.equals(this.poolName, simPoolVO.poolName)
-            && Objects.equals(this.pricePlanName, simPoolVO.pricePlanName)
-            && Objects.equals(this.pricePlanId, simPoolVO.pricePlanId)
-            && Objects.equals(this.effectiveTime, simPoolVO.effectiveTime)
-            && Objects.equals(this.expiredTime, simPoolVO.expiredTime)
-            && Objects.equals(this.billingCycle, simPoolVO.billingCycle)
-            && Objects.equals(this.flowTotal, simPoolVO.flowTotal) && Objects.equals(this.flowUsed, simPoolVO.flowUsed)
-            && Objects.equals(this.flowLeft, simPoolVO.flowLeft) && Objects.equals(this.quantity, simPoolVO.quantity)
-            && Objects.equals(this.modifyTime, simPoolVO.modifyTime) && Objects.equals(this.orderId, simPoolVO.orderId)
-            && Objects.equals(this.activatedSimQuantity, simPoolVO.activatedSimQuantity)
-            && Objects.equals(this.inactiveSimQuantity, simPoolVO.inactiveSimQuantity)
-            && Objects.equals(this.disassembledSimQuantity, simPoolVO.disassembledSimQuantity)
-            && Objects.equals(this.orderIds, simPoolVO.orderIds);
+        SimPoolVO that = (SimPoolVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.poolName, that.poolName)
+            && Objects.equals(this.pricePlanName, that.pricePlanName)
+            && Objects.equals(this.pricePlanId, that.pricePlanId)
+            && Objects.equals(this.effectiveTime, that.effectiveTime)
+            && Objects.equals(this.expiredTime, that.expiredTime)
+            && Objects.equals(this.billingCycle, that.billingCycle) && Objects.equals(this.flowTotal, that.flowTotal)
+            && Objects.equals(this.flowUsed, that.flowUsed) && Objects.equals(this.flowLeft, that.flowLeft)
+            && Objects.equals(this.quantity, that.quantity) && Objects.equals(this.modifyTime, that.modifyTime)
+            && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.activatedSimQuantity, that.activatedSimQuantity)
+            && Objects.equals(this.inactiveSimQuantity, that.inactiveSimQuantity)
+            && Objects.equals(this.disassembledSimQuantity, that.disassembledSimQuantity)
+            && Objects.equals(this.orderIds, that.orderIds);
     }
 
     @Override

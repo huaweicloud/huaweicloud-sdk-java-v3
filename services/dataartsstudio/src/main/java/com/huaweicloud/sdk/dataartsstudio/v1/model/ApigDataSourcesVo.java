@@ -52,15 +52,15 @@ public class ApigDataSourcesVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApigDataSourcesVo apigDataSourcesVo = (ApigDataSourcesVo) o;
-        return Objects.equals(this.dataSourceVos, apigDataSourcesVo.dataSourceVos);
+        ApigDataSourcesVo that = (ApigDataSourcesVo) obj;
+        return Objects.equals(this.dataSourceVos, that.dataSourceVos);
     }
 
     @Override

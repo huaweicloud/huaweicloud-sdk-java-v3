@@ -97,17 +97,16 @@ public class ShowSynthesisJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSynthesisJobResponse showSynthesisJobResponse = (ShowSynthesisJobResponse) o;
-        return Objects.equals(this.basicInfo, showSynthesisJobResponse.basicInfo)
-            && Objects.equals(this.smiles, showSynthesisJobResponse.smiles)
-            && Objects.equals(this.params, showSynthesisJobResponse.params);
+        ShowSynthesisJobResponse that = (ShowSynthesisJobResponse) obj;
+        return Objects.equals(this.basicInfo, that.basicInfo) && Objects.equals(this.smiles, that.smiles)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

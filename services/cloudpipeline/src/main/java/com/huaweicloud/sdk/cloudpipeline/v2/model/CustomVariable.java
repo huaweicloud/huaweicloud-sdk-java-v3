@@ -294,24 +294,21 @@ public class CustomVariable {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomVariable customVariable = (CustomVariable) o;
-        return Objects.equals(this.pipelineId, customVariable.pipelineId)
-            && Objects.equals(this.name, customVariable.name) && Objects.equals(this.sequence, customVariable.sequence)
-            && Objects.equals(this.type, customVariable.type) && Objects.equals(this.value, customVariable.value)
-            && Objects.equals(this.isSecret, customVariable.isSecret)
-            && Objects.equals(this.description, customVariable.description)
-            && Objects.equals(this.isRuntime, customVariable.isRuntime)
-            && Objects.equals(this.limits, customVariable.limits)
-            && Objects.equals(this.isReset, customVariable.isReset)
-            && Objects.equals(this.latestValue, customVariable.latestValue)
-            && Objects.equals(this.runtimeValue, customVariable.runtimeValue);
+        CustomVariable that = (CustomVariable) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.sequence, that.sequence) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.isSecret, that.isSecret)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.isRuntime, that.isRuntime)
+            && Objects.equals(this.limits, that.limits) && Objects.equals(this.isReset, that.isReset)
+            && Objects.equals(this.latestValue, that.latestValue)
+            && Objects.equals(this.runtimeValue, that.runtimeValue);
     }
 
     @Override

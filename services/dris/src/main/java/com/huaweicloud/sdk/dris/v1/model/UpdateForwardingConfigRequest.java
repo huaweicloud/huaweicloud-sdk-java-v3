@@ -109,18 +109,17 @@ public class UpdateForwardingConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateForwardingConfigRequest updateForwardingConfigRequest = (UpdateForwardingConfigRequest) o;
-        return Objects.equals(this.instanceId, updateForwardingConfigRequest.instanceId)
-            && Objects.equals(this.forwardingType, updateForwardingConfigRequest.forwardingType)
-            && Objects.equals(this.forwardingConfigId, updateForwardingConfigRequest.forwardingConfigId)
-            && Objects.equals(this.body, updateForwardingConfigRequest.body);
+        UpdateForwardingConfigRequest that = (UpdateForwardingConfigRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.forwardingType, that.forwardingType)
+            && Objects.equals(this.forwardingConfigId, that.forwardingConfigId) && Objects.equals(this.body, that.body);
     }
 
     @Override

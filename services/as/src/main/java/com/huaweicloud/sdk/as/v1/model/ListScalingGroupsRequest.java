@@ -82,22 +82,15 @@ public class ListScalingGroupsRequest {
             if (value == null) {
                 return null;
             }
-            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingGroupStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingGroupStatusEnum(value));
         }
 
         public static ScalingGroupStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingGroupStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,20 +230,19 @@ public class ListScalingGroupsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingGroupsRequest listScalingGroupsRequest = (ListScalingGroupsRequest) o;
-        return Objects.equals(this.scalingGroupName, listScalingGroupsRequest.scalingGroupName)
-            && Objects.equals(this.scalingConfigurationId, listScalingGroupsRequest.scalingConfigurationId)
-            && Objects.equals(this.scalingGroupStatus, listScalingGroupsRequest.scalingGroupStatus)
-            && Objects.equals(this.startNumber, listScalingGroupsRequest.startNumber)
-            && Objects.equals(this.limit, listScalingGroupsRequest.limit)
-            && Objects.equals(this.enterpriseProjectId, listScalingGroupsRequest.enterpriseProjectId);
+        ListScalingGroupsRequest that = (ListScalingGroupsRequest) obj;
+        return Objects.equals(this.scalingGroupName, that.scalingGroupName)
+            && Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId)
+            && Objects.equals(this.scalingGroupStatus, that.scalingGroupStatus)
+            && Objects.equals(this.startNumber, that.startNumber) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

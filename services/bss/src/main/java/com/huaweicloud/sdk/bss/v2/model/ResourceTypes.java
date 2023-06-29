@@ -99,18 +99,18 @@ public class ResourceTypes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceTypes resourceTypes = (ResourceTypes) o;
-        return Objects.equals(this.resourceTypeCode, resourceTypes.resourceTypeCode)
-            && Objects.equals(this.resourceTypeName, resourceTypes.resourceTypeName)
-            && Objects.equals(this.resourceTypeDesc, resourceTypes.resourceTypeDesc)
-            && Objects.equals(this.serviceTypeCode, resourceTypes.serviceTypeCode);
+        ResourceTypes that = (ResourceTypes) obj;
+        return Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.resourceTypeDesc, that.resourceTypeDesc)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode);
     }
 
     @Override

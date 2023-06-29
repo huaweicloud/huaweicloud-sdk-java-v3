@@ -55,16 +55,16 @@ public class DeleteLifecycleHookRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLifecycleHookRequest deleteLifecycleHookRequest = (DeleteLifecycleHookRequest) o;
-        return Objects.equals(this.scalingGroupId, deleteLifecycleHookRequest.scalingGroupId)
-            && Objects.equals(this.lifecycleHookName, deleteLifecycleHookRequest.lifecycleHookName);
+        DeleteLifecycleHookRequest that = (DeleteLifecycleHookRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.lifecycleHookName, that.lifecycleHookName);
     }
 
     @Override

@@ -77,16 +77,16 @@ public class EvaluationReply {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EvaluationReply evaluationReply = (EvaluationReply) o;
-        return Objects.equals(this.evaluationId, evaluationReply.evaluationId)
-            && Objects.equals(this.replyId, evaluationReply.replyId) && Objects.equals(this.text, evaluationReply.text);
+        EvaluationReply that = (EvaluationReply) obj;
+        return Objects.equals(this.evaluationId, that.evaluationId) && Objects.equals(this.replyId, that.replyId)
+            && Objects.equals(this.text, that.text);
     }
 
     @Override

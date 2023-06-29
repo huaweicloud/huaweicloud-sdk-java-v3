@@ -122,20 +122,17 @@ public class ShowEvaluationStateByAssignmentIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEvaluationStateByAssignmentIdResponse showEvaluationStateByAssignmentIdResponse =
-            (ShowEvaluationStateByAssignmentIdResponse) o;
-        return Objects.equals(this.policyAssignmentId, showEvaluationStateByAssignmentIdResponse.policyAssignmentId)
-            && Objects.equals(this.state, showEvaluationStateByAssignmentIdResponse.state)
-            && Objects.equals(this.startTime, showEvaluationStateByAssignmentIdResponse.startTime)
-            && Objects.equals(this.endTime, showEvaluationStateByAssignmentIdResponse.endTime)
-            && Objects.equals(this.errorMessage, showEvaluationStateByAssignmentIdResponse.errorMessage);
+        ShowEvaluationStateByAssignmentIdResponse that = (ShowEvaluationStateByAssignmentIdResponse) obj;
+        return Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

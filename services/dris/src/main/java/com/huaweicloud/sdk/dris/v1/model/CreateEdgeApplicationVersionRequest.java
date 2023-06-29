@@ -87,18 +87,16 @@ public class CreateEdgeApplicationVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationVersionRequest createEdgeApplicationVersionRequest =
-            (CreateEdgeApplicationVersionRequest) o;
-        return Objects.equals(this.instanceId, createEdgeApplicationVersionRequest.instanceId)
-            && Objects.equals(this.edgeAppId, createEdgeApplicationVersionRequest.edgeAppId)
-            && Objects.equals(this.body, createEdgeApplicationVersionRequest.body);
+        CreateEdgeApplicationVersionRequest that = (CreateEdgeApplicationVersionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

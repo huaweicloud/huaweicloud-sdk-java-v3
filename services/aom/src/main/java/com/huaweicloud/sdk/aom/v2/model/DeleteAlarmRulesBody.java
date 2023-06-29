@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * DeleteAlarmRulesBody
  */
-public class DeleteAlarmRulesBody  {
-
+public class DeleteAlarmRulesBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="alarm_rules")
-    
+    @JsonProperty(value = "alarm_rules")
+
     private List<String> alarmRules = null;
-    
+
     public DeleteAlarmRulesBody withAlarmRules(List<String> alarmRules) {
         this.alarmRules = alarmRules;
         return this;
     }
 
-    
     public DeleteAlarmRulesBody addAlarmRulesItem(String alarmRulesItem) {
-        if(this.alarmRules == null) {
+        if (this.alarmRules == null) {
             this.alarmRules = new ArrayList<>();
         }
         this.alarmRules.add(alarmRulesItem);
@@ -39,7 +32,7 @@ public class DeleteAlarmRulesBody  {
     }
 
     public DeleteAlarmRulesBody withAlarmRules(Consumer<List<String>> alarmRulesSetter) {
-        if(this.alarmRules == null) {
+        if (this.alarmRules == null) {
             this.alarmRules = new ArrayList<>();
         }
         alarmRulesSetter.accept(this.alarmRules);
@@ -58,23 +51,23 @@ public class DeleteAlarmRulesBody  {
         this.alarmRules = alarmRules;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAlarmRulesBody deleteAlarmRulesBody = (DeleteAlarmRulesBody) o;
-        return Objects.equals(this.alarmRules, deleteAlarmRulesBody.alarmRules);
+        DeleteAlarmRulesBody that = (DeleteAlarmRulesBody) obj;
+        return Objects.equals(this.alarmRules, that.alarmRules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(alarmRules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class DeleteAlarmRulesBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class DeleteAlarmRulesBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

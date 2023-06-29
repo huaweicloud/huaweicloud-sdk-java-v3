@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.ApplyExecutionPlanRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ApplyExecutionPlanRequest  {
-
+public class ApplyExecutionPlanRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Client-Request-Id")
-    
+    @JsonProperty(value = "Client-Request-Id")
 
     private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stack_name")
-    
+    @JsonProperty(value = "stack_name")
 
     private String stackName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_plan_name")
-    
+    @JsonProperty(value = "execution_plan_name")
 
     private String executionPlanName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ApplyExecutionPlanRequestBody body;
 
@@ -47,9 +35,6 @@ public class ApplyExecutionPlanRequest  {
         this.clientRequestId = clientRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -63,15 +48,10 @@ public class ApplyExecutionPlanRequest  {
         this.clientRequestId = clientRequestId;
     }
 
-    
-
     public ApplyExecutionPlanRequest withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈的名称。此名字在domain_id+区域+project_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -85,15 +65,10 @@ public class ApplyExecutionPlanRequest  {
         this.stackName = stackName;
     }
 
-    
-
     public ApplyExecutionPlanRequest withExecutionPlanName(String executionPlanName) {
         this.executionPlanName = executionPlanName;
         return this;
     }
-
-    
-
 
     /**
      * 执行计划的名称。此名字在domain_id+区域+project_id+stack_id下应唯一，可以使用中文、大小写英文、数字、下划线、中划线。首字符需为中文或者英文，区分大小写。
@@ -107,22 +82,19 @@ public class ApplyExecutionPlanRequest  {
         this.executionPlanName = executionPlanName;
     }
 
-    
-
     public ApplyExecutionPlanRequest withBody(ApplyExecutionPlanRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ApplyExecutionPlanRequest withBody(Consumer<ApplyExecutionPlanRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ApplyExecutionPlanRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -136,26 +108,25 @@ public class ApplyExecutionPlanRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplyExecutionPlanRequest applyExecutionPlanRequest = (ApplyExecutionPlanRequest) o;
-        return Objects.equals(this.clientRequestId, applyExecutionPlanRequest.clientRequestId) &&
-            Objects.equals(this.stackName, applyExecutionPlanRequest.stackName) &&
-            Objects.equals(this.executionPlanName, applyExecutionPlanRequest.executionPlanName) &&
-            Objects.equals(this.body, applyExecutionPlanRequest.body);
+        ApplyExecutionPlanRequest that = (ApplyExecutionPlanRequest) obj;
+        return Objects.equals(this.clientRequestId, that.clientRequestId)
+            && Objects.equals(this.stackName, that.stackName)
+            && Objects.equals(this.executionPlanName, that.executionPlanName) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientRequestId, stackName, executionPlanName, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,6 +138,7 @@ public class ApplyExecutionPlanRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -177,8 +149,5 @@ public class ApplyExecutionPlanRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -87,17 +87,16 @@ public class UpdateDatasourceReqDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatasourceReqDTO updateDatasourceReqDTO = (UpdateDatasourceReqDTO) o;
-        return Objects.equals(this.name, updateDatasourceReqDTO.name)
-            && Objects.equals(this.type, updateDatasourceReqDTO.type)
-            && Objects.equals(this.content, updateDatasourceReqDTO.content);
+        UpdateDatasourceReqDTO that = (UpdateDatasourceReqDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.content, that.content);
     }
 
     @Override

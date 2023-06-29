@@ -121,17 +121,17 @@ public class FlavorInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorInfos flavorInfos = (FlavorInfos) o;
-        return Objects.equals(this.id, flavorInfos.id) && Objects.equals(this.name, flavorInfos.name)
-            && Objects.equals(this.disk, flavorInfos.disk) && Objects.equals(this.vcpus, flavorInfos.vcpus)
-            && Objects.equals(this.ram, flavorInfos.ram);
+        FlavorInfos that = (FlavorInfos) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.ram, that.ram);
     }
 
     @Override

@@ -54,15 +54,15 @@ public class UpdateTaskSettingsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskSettingsRequestBody updateTaskSettingsRequestBody = (UpdateTaskSettingsRequestBody) o;
-        return Objects.equals(this.taskAdvancedSettings, updateTaskSettingsRequestBody.taskAdvancedSettings);
+        UpdateTaskSettingsRequestBody that = (UpdateTaskSettingsRequestBody) obj;
+        return Objects.equals(this.taskAdvancedSettings, that.taskAdvancedSettings);
     }
 
     @Override

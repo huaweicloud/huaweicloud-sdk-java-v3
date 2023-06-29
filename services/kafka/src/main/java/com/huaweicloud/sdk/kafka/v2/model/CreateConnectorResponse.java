@@ -56,16 +56,15 @@ public class CreateConnectorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConnectorResponse createConnectorResponse = (CreateConnectorResponse) o;
-        return Objects.equals(this.jobId, createConnectorResponse.jobId)
-            && Objects.equals(this.connectorId, createConnectorResponse.connectorId);
+        CreateConnectorResponse that = (CreateConnectorResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.connectorId, that.connectorId);
     }
 
     @Override

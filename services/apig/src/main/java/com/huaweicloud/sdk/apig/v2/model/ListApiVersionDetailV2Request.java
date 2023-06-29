@@ -55,16 +55,15 @@ public class ListApiVersionDetailV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiVersionDetailV2Request listApiVersionDetailV2Request = (ListApiVersionDetailV2Request) o;
-        return Objects.equals(this.instanceId, listApiVersionDetailV2Request.instanceId)
-            && Objects.equals(this.versionId, listApiVersionDetailV2Request.versionId);
+        ListApiVersionDetailV2Request that = (ListApiVersionDetailV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

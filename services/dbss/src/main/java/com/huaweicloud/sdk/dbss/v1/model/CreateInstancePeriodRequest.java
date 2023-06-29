@@ -1,129 +1,105 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.dbss.v1.model.CreateInstancePeriodRequestNics;
-import com.huaweicloud.sdk.dbss.v1.model.CreateInstancePeriodRequestProductInfos;
-import com.huaweicloud.sdk.dbss.v1.model.CreateInstancePeriodRequestSecurityGroups;
-import com.huaweicloud.sdk.dbss.v1.model.KeyValueBean;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * CreateInstancePeriodRequest
  */
-public class CreateInstancePeriodRequest  {
-
+public class CreateInstancePeriodRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nics")
-    
+    @JsonProperty(value = "nics")
+
     private List<CreateInstancePeriodRequestNics> nics = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_groups")
-    
+    @JsonProperty(value = "security_groups")
+
     private List<CreateInstancePeriodRequestSecurityGroups> securityGroups = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="comment")
-    
+    @JsonProperty(value = "comment")
 
     private String comment;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cloud_service_type")
-    
+    @JsonProperty(value = "cloud_service_type")
 
     private String cloudServiceType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charging_mode")
-    
+    @JsonProperty(value = "charging_mode")
 
     private Integer chargingMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_type")
-    
+    @JsonProperty(value = "period_type")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="period_num")
-    
+    @JsonProperty(value = "period_num")
 
     private Integer periodNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subscription_num")
-    
+    @JsonProperty(value = "subscription_num")
 
     private Integer subscriptionNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="product_infos")
-    
+    @JsonProperty(value = "product_infos")
+
     private List<CreateInstancePeriodRequestProductInfos> productInfos = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<KeyValueBean> tags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="promotion_info")
-    
+    @JsonProperty(value = "promotion_info")
 
     private String promotionInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_auto_renew")
-    
+    @JsonProperty(value = "is_auto_renew")
 
     private Integer isAutoRenew;
 
@@ -131,9 +107,6 @@ public class CreateInstancePeriodRequest  {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 云服务器使用的规格ID
@@ -147,15 +120,10 @@ public class CreateInstancePeriodRequest  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public CreateInstancePeriodRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 云服务器名称。 取值范围： • 只能由中文字符、英文字母、数字、下划线、中划线组成，且长度小于等于64个字符。 • 创建的云服务器数量大于1时，长度小于等于59个字符
@@ -169,15 +137,10 @@ public class CreateInstancePeriodRequest  {
         this.name = name;
     }
 
-    
-
     public CreateInstancePeriodRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * VPC的ID
@@ -191,15 +154,10 @@ public class CreateInstancePeriodRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public CreateInstancePeriodRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
-
-    
-
 
     /**
      * 云服务器对应可用分区信息。(两个主备分区，中间用“,”分割，例如az1.dc1,az2.dc2)
@@ -213,15 +171,10 @@ public class CreateInstancePeriodRequest  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public CreateInstancePeriodRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID
@@ -235,16 +188,13 @@ public class CreateInstancePeriodRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public CreateInstancePeriodRequest withNics(List<CreateInstancePeriodRequestNics> nics) {
         this.nics = nics;
         return this;
     }
 
-    
     public CreateInstancePeriodRequest addNicsItem(CreateInstancePeriodRequestNics nicsItem) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         this.nics.add(nicsItem);
@@ -252,7 +202,7 @@ public class CreateInstancePeriodRequest  {
     }
 
     public CreateInstancePeriodRequest withNics(Consumer<List<CreateInstancePeriodRequestNics>> nicsSetter) {
-        if(this.nics == null) {
+        if (this.nics == null) {
             this.nics = new ArrayList<>();
         }
         nicsSetter.accept(this.nics);
@@ -271,24 +221,24 @@ public class CreateInstancePeriodRequest  {
         this.nics = nics;
     }
 
-    
-
-    public CreateInstancePeriodRequest withSecurityGroups(List<CreateInstancePeriodRequestSecurityGroups> securityGroups) {
+    public CreateInstancePeriodRequest withSecurityGroups(
+        List<CreateInstancePeriodRequestSecurityGroups> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    
-    public CreateInstancePeriodRequest addSecurityGroupsItem(CreateInstancePeriodRequestSecurityGroups securityGroupsItem) {
-        if(this.securityGroups == null) {
+    public CreateInstancePeriodRequest addSecurityGroupsItem(
+        CreateInstancePeriodRequestSecurityGroups securityGroupsItem) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         this.securityGroups.add(securityGroupsItem);
         return this;
     }
 
-    public CreateInstancePeriodRequest withSecurityGroups(Consumer<List<CreateInstancePeriodRequestSecurityGroups>> securityGroupsSetter) {
-        if(this.securityGroups == null) {
+    public CreateInstancePeriodRequest withSecurityGroups(
+        Consumer<List<CreateInstancePeriodRequestSecurityGroups>> securityGroupsSetter) {
+        if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
         securityGroupsSetter.accept(this.securityGroups);
@@ -307,15 +257,10 @@ public class CreateInstancePeriodRequest  {
         this.securityGroups = securityGroups;
     }
 
-    
-
     public CreateInstancePeriodRequest withComment(String comment) {
         this.comment = comment;
         return this;
     }
-
-    
-
 
     /**
      * 备注信息
@@ -329,15 +274,10 @@ public class CreateInstancePeriodRequest  {
         this.comment = comment;
     }
 
-    
-
     public CreateInstancePeriodRequest withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 云服务器所在区域ID
@@ -351,15 +291,10 @@ public class CreateInstancePeriodRequest  {
         this.region = region;
     }
 
-    
-
     public CreateInstancePeriodRequest withCloudServiceType(String cloudServiceType) {
         this.cloudServiceType = cloudServiceType;
         return this;
     }
-
-    
-
 
     /**
      * 服务类型： 默认hws.service.type.dbss
@@ -373,15 +308,10 @@ public class CreateInstancePeriodRequest  {
         this.cloudServiceType = cloudServiceType;
     }
 
-    
-
     public CreateInstancePeriodRequest withChargingMode(Integer chargingMode) {
         this.chargingMode = chargingMode;
         return this;
     }
-
-    
-
 
     /**
      * 计费模式： • 0：包周期计费 • 1：按需计费
@@ -395,15 +325,10 @@ public class CreateInstancePeriodRequest  {
         this.chargingMode = chargingMode;
     }
 
-    
-
     public CreateInstancePeriodRequest withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
     }
-
-    
-
 
     /**
      * 订购周期类型： • 0：天； • 1：周； • 2：月； • 3：年； • 4：小时； • 5：绝对时间
@@ -417,15 +342,10 @@ public class CreateInstancePeriodRequest  {
         this.periodType = periodType;
     }
 
-    
-
     public CreateInstancePeriodRequest withPeriodNum(Integer periodNum) {
         this.periodNum = periodNum;
         return this;
     }
-
-    
-
 
     /**
      * 订购周期数
@@ -439,15 +359,10 @@ public class CreateInstancePeriodRequest  {
         this.periodNum = periodNum;
     }
 
-    
-
     public CreateInstancePeriodRequest withSubscriptionNum(Integer subscriptionNum) {
         this.subscriptionNum = subscriptionNum;
         return this;
     }
-
-    
-
 
     /**
      * 订购数量： DBSS只支持订购1套，不支持多套
@@ -461,24 +376,22 @@ public class CreateInstancePeriodRequest  {
         this.subscriptionNum = subscriptionNum;
     }
 
-    
-
     public CreateInstancePeriodRequest withProductInfos(List<CreateInstancePeriodRequestProductInfos> productInfos) {
         this.productInfos = productInfos;
         return this;
     }
 
-    
     public CreateInstancePeriodRequest addProductInfosItem(CreateInstancePeriodRequestProductInfos productInfosItem) {
-        if(this.productInfos == null) {
+        if (this.productInfos == null) {
             this.productInfos = new ArrayList<>();
         }
         this.productInfos.add(productInfosItem);
         return this;
     }
 
-    public CreateInstancePeriodRequest withProductInfos(Consumer<List<CreateInstancePeriodRequestProductInfos>> productInfosSetter) {
-        if(this.productInfos == null) {
+    public CreateInstancePeriodRequest withProductInfos(
+        Consumer<List<CreateInstancePeriodRequestProductInfos>> productInfosSetter) {
+        if (this.productInfos == null) {
             this.productInfos = new ArrayList<>();
         }
         productInfosSetter.accept(this.productInfos);
@@ -497,16 +410,13 @@ public class CreateInstancePeriodRequest  {
         this.productInfos = productInfos;
     }
 
-    
-
     public CreateInstancePeriodRequest withTags(List<KeyValueBean> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public CreateInstancePeriodRequest addTagsItem(KeyValueBean tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -514,7 +424,7 @@ public class CreateInstancePeriodRequest  {
     }
 
     public CreateInstancePeriodRequest withTags(Consumer<List<KeyValueBean>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -533,15 +443,10 @@ public class CreateInstancePeriodRequest  {
         this.tags = tags;
     }
 
-    
-
     public CreateInstancePeriodRequest withPromotionInfo(String promotionInfo) {
         this.promotionInfo = promotionInfo;
         return this;
     }
-
-    
-
 
     /**
      * 折扣信息
@@ -555,15 +460,10 @@ public class CreateInstancePeriodRequest  {
         this.promotionInfo = promotionInfo;
     }
 
-    
-
     public CreateInstancePeriodRequest withIsAutoRenew(Integer isAutoRenew) {
         this.isAutoRenew = isAutoRenew;
         return this;
     }
-
-    
-
 
     /**
      * 自动续费 1表示自动续费，0表示不自动续费
@@ -577,40 +477,51 @@ public class CreateInstancePeriodRequest  {
         this.isAutoRenew = isAutoRenew;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstancePeriodRequest createInstancePeriodRequest = (CreateInstancePeriodRequest) o;
-        return Objects.equals(this.flavorRef, createInstancePeriodRequest.flavorRef) &&
-            Objects.equals(this.name, createInstancePeriodRequest.name) &&
-            Objects.equals(this.vpcId, createInstancePeriodRequest.vpcId) &&
-            Objects.equals(this.availabilityZone, createInstancePeriodRequest.availabilityZone) &&
-            Objects.equals(this.enterpriseProjectId, createInstancePeriodRequest.enterpriseProjectId) &&
-            Objects.equals(this.nics, createInstancePeriodRequest.nics) &&
-            Objects.equals(this.securityGroups, createInstancePeriodRequest.securityGroups) &&
-            Objects.equals(this.comment, createInstancePeriodRequest.comment) &&
-            Objects.equals(this.region, createInstancePeriodRequest.region) &&
-            Objects.equals(this.cloudServiceType, createInstancePeriodRequest.cloudServiceType) &&
-            Objects.equals(this.chargingMode, createInstancePeriodRequest.chargingMode) &&
-            Objects.equals(this.periodType, createInstancePeriodRequest.periodType) &&
-            Objects.equals(this.periodNum, createInstancePeriodRequest.periodNum) &&
-            Objects.equals(this.subscriptionNum, createInstancePeriodRequest.subscriptionNum) &&
-            Objects.equals(this.productInfos, createInstancePeriodRequest.productInfos) &&
-            Objects.equals(this.tags, createInstancePeriodRequest.tags) &&
-            Objects.equals(this.promotionInfo, createInstancePeriodRequest.promotionInfo) &&
-            Objects.equals(this.isAutoRenew, createInstancePeriodRequest.isAutoRenew);
+        CreateInstancePeriodRequest that = (CreateInstancePeriodRequest) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.chargingMode, that.chargingMode) && Objects.equals(this.periodType, that.periodType)
+            && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.subscriptionNum, that.subscriptionNum)
+            && Objects.equals(this.productInfos, that.productInfos) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.promotionInfo, that.promotionInfo)
+            && Objects.equals(this.isAutoRenew, that.isAutoRenew);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(flavorRef, name, vpcId, availabilityZone, enterpriseProjectId, nics, securityGroups, comment, region, cloudServiceType, chargingMode, periodType, periodNum, subscriptionNum, productInfos, tags, promotionInfo, isAutoRenew);
+        return Objects.hash(flavorRef,
+            name,
+            vpcId,
+            availabilityZone,
+            enterpriseProjectId,
+            nics,
+            securityGroups,
+            comment,
+            region,
+            cloudServiceType,
+            chargingMode,
+            periodType,
+            periodNum,
+            subscriptionNum,
+            productInfos,
+            tags,
+            promotionInfo,
+            isAutoRenew);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -636,6 +547,7 @@ public class CreateInstancePeriodRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -646,8 +558,5 @@ public class CreateInstancePeriodRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

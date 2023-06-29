@@ -143,20 +143,18 @@ public class ListServiceItemsDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceItemsDetailsRequest listServiceItemsDetailsRequest = (ListServiceItemsDetailsRequest) o;
-        return Objects.equals(this.setId, listServiceItemsDetailsRequest.setId)
-            && Objects.equals(this.keyWord, listServiceItemsDetailsRequest.keyWord)
-            && Objects.equals(this.limit, listServiceItemsDetailsRequest.limit)
-            && Objects.equals(this.offset, listServiceItemsDetailsRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listServiceItemsDetailsRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, listServiceItemsDetailsRequest.fwInstanceId);
+        ListServiceItemsDetailsRequest that = (ListServiceItemsDetailsRequest) obj;
+        return Objects.equals(this.setId, that.setId) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId);
     }
 
     @Override

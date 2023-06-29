@@ -98,16 +98,16 @@ public class PicLayoutInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PicLayoutInfo picLayoutInfo = (PicLayoutInfo) o;
-        return Objects.equals(this.x, picLayoutInfo.x) && Objects.equals(this.y, picLayoutInfo.y)
-            && Objects.equals(this.subPicLayoutInfoList, picLayoutInfo.subPicLayoutInfoList);
+        PicLayoutInfo that = (PicLayoutInfo) obj;
+        return Objects.equals(this.x, that.x) && Objects.equals(this.y, that.y)
+            && Objects.equals(this.subPicLayoutInfoList, that.subPicLayoutInfoList);
     }
 
     @Override

@@ -87,17 +87,17 @@ public class UpdateProtectionPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProtectionPolicyRequest updateProtectionPolicyRequest = (UpdateProtectionPolicyRequest) o;
-        return Objects.equals(this.region, updateProtectionPolicyRequest.region)
-            && Objects.equals(this.enterpriseProjectId, updateProtectionPolicyRequest.enterpriseProjectId)
-            && Objects.equals(this.body, updateProtectionPolicyRequest.body);
+        UpdateProtectionPolicyRequest that = (UpdateProtectionPolicyRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

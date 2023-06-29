@@ -164,19 +164,18 @@ public class LogStream {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogStream logStream = (LogStream) o;
-        return Objects.equals(this.creationTime, logStream.creationTime)
-            && Objects.equals(this.logStreamName, logStream.logStreamName)
-            && Objects.equals(this.logStreamId, logStream.logStreamId)
-            && Objects.equals(this.filterCount, logStream.filterCount) && Objects.equals(this.tag, logStream.tag)
-            && Objects.equals(this.isFavorite, logStream.isFavorite);
+        LogStream that = (LogStream) obj;
+        return Objects.equals(this.creationTime, that.creationTime)
+            && Objects.equals(this.logStreamName, that.logStreamName)
+            && Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.filterCount, that.filterCount)
+            && Objects.equals(this.tag, that.tag) && Objects.equals(this.isFavorite, that.isFavorite);
     }
 
     @Override

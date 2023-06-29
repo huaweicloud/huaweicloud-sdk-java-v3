@@ -65,16 +65,15 @@ public class UpdatePolicyAssignmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyAssignmentRequest updatePolicyAssignmentRequest = (UpdatePolicyAssignmentRequest) o;
-        return Objects.equals(this.policyAssignmentId, updatePolicyAssignmentRequest.policyAssignmentId)
-            && Objects.equals(this.body, updatePolicyAssignmentRequest.body);
+        UpdatePolicyAssignmentRequest that = (UpdatePolicyAssignmentRequest) obj;
+        return Objects.equals(this.policyAssignmentId, that.policyAssignmentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

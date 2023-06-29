@@ -272,25 +272,21 @@ public class QueryOrgVmrResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryOrgVmrResultDTO queryOrgVmrResultDTO = (QueryOrgVmrResultDTO) o;
-        return Objects.equals(this.id, queryOrgVmrResultDTO.id)
-            && Objects.equals(this.vmrId, queryOrgVmrResultDTO.vmrId)
-            && Objects.equals(this.vmrName, queryOrgVmrResultDTO.vmrName)
-            && Objects.equals(this.vmrPkgName, queryOrgVmrResultDTO.vmrPkgName)
-            && Objects.equals(this.vmrPkgParties, queryOrgVmrResultDTO.vmrPkgParties)
-            && Objects.equals(this.maxAudienceParties, queryOrgVmrResultDTO.maxAudienceParties)
-            && Objects.equals(this.member, queryOrgVmrResultDTO.member)
-            && Objects.equals(this.device, queryOrgVmrResultDTO.device)
-            && Objects.equals(this.status, queryOrgVmrResultDTO.status)
-            && Objects.equals(this.expireDate, queryOrgVmrResultDTO.expireDate)
-            && Objects.equals(this.commercialMaxAudienceParties, queryOrgVmrResultDTO.commercialMaxAudienceParties);
+        QueryOrgVmrResultDTO that = (QueryOrgVmrResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vmrId, that.vmrId)
+            && Objects.equals(this.vmrName, that.vmrName) && Objects.equals(this.vmrPkgName, that.vmrPkgName)
+            && Objects.equals(this.vmrPkgParties, that.vmrPkgParties)
+            && Objects.equals(this.maxAudienceParties, that.maxAudienceParties)
+            && Objects.equals(this.member, that.member) && Objects.equals(this.device, that.device)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.expireDate, that.expireDate)
+            && Objects.equals(this.commercialMaxAudienceParties, that.commercialMaxAudienceParties);
     }
 
     @Override

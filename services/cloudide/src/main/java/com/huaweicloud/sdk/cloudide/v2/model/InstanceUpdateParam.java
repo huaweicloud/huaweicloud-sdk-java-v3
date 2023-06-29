@@ -77,17 +77,16 @@ public class InstanceUpdateParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceUpdateParam instanceUpdateParam = (InstanceUpdateParam) o;
-        return Objects.equals(this.description, instanceUpdateParam.description)
-            && Objects.equals(this.displayName, instanceUpdateParam.displayName)
-            && Objects.equals(this.refreshInterval, instanceUpdateParam.refreshInterval);
+        InstanceUpdateParam that = (InstanceUpdateParam) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.refreshInterval, that.refreshInterval);
     }
 
     @Override

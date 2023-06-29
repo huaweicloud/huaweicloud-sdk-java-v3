@@ -652,39 +652,28 @@ public class AddUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddUserResponse addUserResponse = (AddUserResponse) o;
-        return Objects.equals(this.id, addUserResponse.id)
-            && Objects.equals(this.userAccount, addUserResponse.userAccount)
-            && Objects.equals(this.name, addUserResponse.name)
-            && Objects.equals(this.englishName, addUserResponse.englishName)
-            && Objects.equals(this.phone, addUserResponse.phone)
-            && Objects.equals(this.country, addUserResponse.country)
-            && Objects.equals(this.email, addUserResponse.email) && Objects.equals(this.sipNum, addUserResponse.sipNum)
-            && Objects.equals(this.vmrList, addUserResponse.vmrList)
-            && Objects.equals(this.deptCode, addUserResponse.deptCode)
-            && Objects.equals(this.deptName, addUserResponse.deptName)
-            && Objects.equals(this.deptNamePath, addUserResponse.deptNamePath)
-            && Objects.equals(this.userType, addUserResponse.userType)
-            && Objects.equals(this.adminType, addUserResponse.adminType)
-            && Objects.equals(this.signature, addUserResponse.signature)
-            && Objects.equals(this.title, addUserResponse.title) && Objects.equals(this.desc, addUserResponse.desc)
-            && Objects.equals(this.corp, addUserResponse.corp)
-            && Objects.equals(this.function, addUserResponse.function)
-            && Objects.equals(this.devType, addUserResponse.devType)
-            && Objects.equals(this.status, addUserResponse.status)
-            && Objects.equals(this.sortLevel, addUserResponse.sortLevel)
-            && Objects.equals(this.hidePhone, addUserResponse.hidePhone)
-            && Objects.equals(this.visionAccount, addUserResponse.visionAccount)
-            && Objects.equals(this.thirdAccount, addUserResponse.thirdAccount)
-            && Objects.equals(this.license, addUserResponse.license)
-            && Objects.equals(this.activeTime, addUserResponse.activeTime);
+        AddUserResponse that = (AddUserResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.userAccount, that.userAccount)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.englishName, that.englishName)
+            && Objects.equals(this.phone, that.phone) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.sipNum, that.sipNum)
+            && Objects.equals(this.vmrList, that.vmrList) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.deptNamePath, that.deptNamePath)
+            && Objects.equals(this.userType, that.userType) && Objects.equals(this.adminType, that.adminType)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.desc, that.desc) && Objects.equals(this.corp, that.corp)
+            && Objects.equals(this.function, that.function) && Objects.equals(this.devType, that.devType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.hidePhone, that.hidePhone) && Objects.equals(this.visionAccount, that.visionAccount)
+            && Objects.equals(this.thirdAccount, that.thirdAccount) && Objects.equals(this.license, that.license)
+            && Objects.equals(this.activeTime, that.activeTime);
     }
 
     @Override

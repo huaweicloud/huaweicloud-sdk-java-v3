@@ -55,16 +55,15 @@ public class CreateServerNicAllowedAddressPairs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServerNicAllowedAddressPairs createServerNicAllowedAddressPairs = (CreateServerNicAllowedAddressPairs) o;
-        return Objects.equals(this.ipAddress, createServerNicAllowedAddressPairs.ipAddress)
-            && Objects.equals(this.macAddress, createServerNicAllowedAddressPairs.macAddress);
+        CreateServerNicAllowedAddressPairs that = (CreateServerNicAllowedAddressPairs) obj;
+        return Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.macAddress, that.macAddress);
     }
 
     @Override

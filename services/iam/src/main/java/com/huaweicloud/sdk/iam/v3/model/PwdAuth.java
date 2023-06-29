@@ -74,15 +74,15 @@ public class PwdAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PwdAuth pwdAuth = (PwdAuth) o;
-        return Objects.equals(this.identity, pwdAuth.identity) && Objects.equals(this.scope, pwdAuth.scope);
+        PwdAuth that = (PwdAuth) obj;
+        return Objects.equals(this.identity, that.identity) && Objects.equals(this.scope, that.scope);
     }
 
     @Override

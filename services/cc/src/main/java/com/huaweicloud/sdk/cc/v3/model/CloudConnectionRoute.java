@@ -85,22 +85,15 @@ public class CloudConnectionRoute {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -269,22 +262,18 @@ public class CloudConnectionRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudConnectionRoute cloudConnectionRoute = (CloudConnectionRoute) o;
-        return Objects.equals(this.id, cloudConnectionRoute.id)
-            && Objects.equals(this.cloudConnectionId, cloudConnectionRoute.cloudConnectionId)
-            && Objects.equals(this.domainId, cloudConnectionRoute.domainId)
-            && Objects.equals(this.projectId, cloudConnectionRoute.projectId)
-            && Objects.equals(this.instanceId, cloudConnectionRoute.instanceId)
-            && Objects.equals(this.type, cloudConnectionRoute.type)
-            && Objects.equals(this.regionId, cloudConnectionRoute.regionId)
-            && Objects.equals(this.destination, cloudConnectionRoute.destination);
+        CloudConnectionRoute that = (CloudConnectionRoute) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.destination, that.destination);
     }
 
     @Override

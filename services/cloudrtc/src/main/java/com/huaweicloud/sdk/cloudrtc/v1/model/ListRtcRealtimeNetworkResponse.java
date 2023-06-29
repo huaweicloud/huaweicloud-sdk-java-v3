@@ -77,16 +77,15 @@ public class ListRtcRealtimeNetworkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRealtimeNetworkResponse listRtcRealtimeNetworkResponse = (ListRtcRealtimeNetworkResponse) o;
-        return Objects.equals(this.network, listRtcRealtimeNetworkResponse.network)
-            && Objects.equals(this.xRequestId, listRtcRealtimeNetworkResponse.xRequestId);
+        ListRtcRealtimeNetworkResponse that = (ListRtcRealtimeNetworkResponse) obj;
+        return Objects.equals(this.network, that.network) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

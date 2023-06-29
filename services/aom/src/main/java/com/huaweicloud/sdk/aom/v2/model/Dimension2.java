@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 指标维度参数
  */
-public class Dimension2  {
-
+public class Dimension2 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private String value;
 
@@ -33,9 +24,6 @@ public class Dimension2  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 维度名称。
@@ -49,15 +37,10 @@ public class Dimension2  {
         this.name = name;
     }
 
-    
-
     public Dimension2 withValue(String value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 指标数据的值。
@@ -71,24 +54,23 @@ public class Dimension2  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Dimension2 dimension2 = (Dimension2) o;
-        return Objects.equals(this.name, dimension2.name) &&
-            Objects.equals(this.value, dimension2.value);
+        Dimension2 that = (Dimension2) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class Dimension2  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class Dimension2  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

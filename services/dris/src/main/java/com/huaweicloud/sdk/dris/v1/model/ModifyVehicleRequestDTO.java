@@ -209,23 +209,19 @@ public class ModifyVehicleRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyVehicleRequestDTO modifyVehicleRequestDTO = (ModifyVehicleRequestDTO) o;
-        return Objects.equals(this.imei, modifyVehicleRequestDTO.imei)
-            && Objects.equals(this.brand, modifyVehicleRequestDTO.brand)
-            && Objects.equals(this.model, modifyVehicleRequestDTO.model)
-            && Objects.equals(this.style, modifyVehicleRequestDTO.style)
-            && Objects.equals(this.fuelType, modifyVehicleRequestDTO.fuelType)
-            && Objects.equals(this.color, modifyVehicleRequestDTO.color)
-            && Objects.equals(this.plateColor, modifyVehicleRequestDTO.plateColor)
-            && Objects.equals(this.accessType, modifyVehicleRequestDTO.accessType)
-            && Objects.equals(this.description, modifyVehicleRequestDTO.description);
+        ModifyVehicleRequestDTO that = (ModifyVehicleRequestDTO) obj;
+        return Objects.equals(this.imei, that.imei) && Objects.equals(this.brand, that.brand)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.fuelType, that.fuelType) && Objects.equals(this.color, that.color)
+            && Objects.equals(this.plateColor, that.plateColor) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

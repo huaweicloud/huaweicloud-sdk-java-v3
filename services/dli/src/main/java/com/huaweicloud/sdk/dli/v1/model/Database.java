@@ -143,19 +143,18 @@ public class Database {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Database database = (Database) o;
-        return Objects.equals(this.databaseName, database.databaseName) && Objects.equals(this.owner, database.owner)
-            && Objects.equals(this.tableNumber, database.tableNumber)
-            && Objects.equals(this.description, database.description)
-            && Objects.equals(this.enterpriseProjectId, database.enterpriseProjectId)
-            && Objects.equals(this.resourceId, database.resourceId);
+        Database that = (Database) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.tableNumber, that.tableNumber) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

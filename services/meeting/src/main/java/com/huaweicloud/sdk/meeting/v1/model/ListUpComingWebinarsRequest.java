@@ -148,20 +148,18 @@ public class ListUpComingWebinarsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUpComingWebinarsRequest listUpComingWebinarsRequest = (ListUpComingWebinarsRequest) o;
-        return Objects.equals(this.xRequestId, listUpComingWebinarsRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, listUpComingWebinarsRequest.acceptLanguage)
-            && Objects.equals(this.offset, listUpComingWebinarsRequest.offset)
-            && Objects.equals(this.limit, listUpComingWebinarsRequest.limit)
-            && Objects.equals(this.searchKey, listUpComingWebinarsRequest.searchKey)
-            && Objects.equals(this.sortType, listUpComingWebinarsRequest.sortType);
+        ListUpComingWebinarsRequest that = (ListUpComingWebinarsRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.sortType, that.sortType);
     }
 
     @Override

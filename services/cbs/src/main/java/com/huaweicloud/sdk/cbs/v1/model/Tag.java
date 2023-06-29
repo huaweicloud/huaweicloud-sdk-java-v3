@@ -1,37 +1,30 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class Tag  {
-
+public class Tag {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="should")
-    
+    @JsonProperty(value = "should")
+
     private List<String> should = null;
-    
+
     public Tag withShould(List<String> should) {
         this.should = should;
         return this;
     }
 
-    
     public Tag addShouldItem(String shouldItem) {
-        if(this.should == null) {
+        if (this.should == null) {
             this.should = new ArrayList<>();
         }
         this.should.add(shouldItem);
@@ -39,7 +32,7 @@ public class Tag  {
     }
 
     public Tag withShould(Consumer<List<String>> shouldSetter) {
-        if(this.should == null) {
+        if (this.should == null) {
             this.should = new ArrayList<>();
         }
         shouldSetter.accept(this.should);
@@ -58,23 +51,23 @@ public class Tag  {
         this.should = should;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Tag tag = (Tag) o;
-        return Objects.equals(this.should, tag.should);
+        Tag that = (Tag) obj;
+        return Objects.equals(this.should, that.should);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(should);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -83,6 +76,7 @@ public class Tag  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -93,8 +87,5 @@ public class Tag  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

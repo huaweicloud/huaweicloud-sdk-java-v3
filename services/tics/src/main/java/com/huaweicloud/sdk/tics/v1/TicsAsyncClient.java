@@ -48,6 +48,123 @@ public class TicsAsyncClient {
     }
 
     /**
+     * 查询审计日志
+     *
+     * 查询审计日志信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditInfoRequest 请求对象
+     * @return CompletableFuture<ListAuditInfoResponse>
+     */
+    public CompletableFuture<ListAuditInfoResponse> listAuditInfoAsync(ListAuditInfoRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listAuditInfo);
+    }
+
+    /**
+     * 查询审计日志
+     *
+     * 查询审计日志信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListAuditInfoRequest 请求对象
+     * @return AsyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse>
+     */
+    public AsyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse> listAuditInfoAsyncInvoker(
+        ListAuditInfoRequest request) {
+        return new AsyncInvoker<ListAuditInfoRequest, ListAuditInfoResponse>(request, TicsMeta.listAuditInfo, hcClient);
+    }
+
+    /**
+     * 查询联邦学习作业列表
+     *
+     * 查询联邦学习作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlJobRequest 请求对象
+     * @return CompletableFuture<ListFlJobResponse>
+     */
+    public CompletableFuture<ListFlJobResponse> listFlJobAsync(ListFlJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listFlJob);
+    }
+
+    /**
+     * 查询联邦学习作业列表
+     *
+     * 查询联邦学习作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListFlJobRequest 请求对象
+     * @return AsyncInvoker<ListFlJobRequest, ListFlJobResponse>
+     */
+    public AsyncInvoker<ListFlJobRequest, ListFlJobResponse> listFlJobAsyncInvoker(ListFlJobRequest request) {
+        return new AsyncInvoker<ListFlJobRequest, ListFlJobResponse>(request, TicsMeta.listFlJob, hcClient);
+    }
+
+    /**
+     * 查询作业的历史实例列表
+     *
+     * 查询作业的历史实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceHistoryRequest 请求对象
+     * @return CompletableFuture<ListInstanceHistoryResponse>
+     */
+    public CompletableFuture<ListInstanceHistoryResponse> listInstanceHistoryAsync(ListInstanceHistoryRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listInstanceHistory);
+    }
+
+    /**
+     * 查询作业的历史实例列表
+     *
+     * 查询作业的历史实例列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListInstanceHistoryRequest 请求对象
+     * @return AsyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse>
+     */
+    public AsyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse> listInstanceHistoryAsyncInvoker(
+        ListInstanceHistoryRequest request) {
+        return new AsyncInvoker<ListInstanceHistoryRequest, ListInstanceHistoryResponse>(request,
+            TicsMeta.listInstanceHistory, hcClient);
+    }
+
+    /**
+     * 查询联盟已注册数据集列表
+     *
+     * 功能描述：用户可以使用该接口查询联盟已注册数据集列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLeagueDatasetsRequest 请求对象
+     * @return CompletableFuture<ListLeagueDatasetsResponse>
+     */
+    public CompletableFuture<ListLeagueDatasetsResponse> listLeagueDatasetsAsync(ListLeagueDatasetsRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listLeagueDatasets);
+    }
+
+    /**
+     * 查询联盟已注册数据集列表
+     *
+     * 功能描述：用户可以使用该接口查询联盟已注册数据集列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListLeagueDatasetsRequest 请求对象
+     * @return AsyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse>
+     */
+    public AsyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse> listLeagueDatasetsAsyncInvoker(
+        ListLeagueDatasetsRequest request) {
+        return new AsyncInvoker<ListLeagueDatasetsRequest, ListLeagueDatasetsResponse>(request,
+            TicsMeta.listLeagueDatasets, hcClient);
+    }
+
+    /**
      * 获取联盟列表
      *
      * 功能描述：用户可以使用该接口获取联盟列表。
@@ -73,6 +190,34 @@ public class TicsAsyncClient {
      */
     public AsyncInvoker<ListLeaguesRequest, ListLeaguesResponse> listLeaguesAsyncInvoker(ListLeaguesRequest request) {
         return new AsyncInvoker<ListLeaguesRequest, ListLeaguesResponse>(request, TicsMeta.listLeagues, hcClient);
+    }
+
+    /**
+     * 查询联盟节点列表
+     *
+     * 功能描述：用户可以使用该接口查询联盟可信节点（包含聚合节点和计算节点）列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNodesRequest 请求对象
+     * @return CompletableFuture<ListNodesResponse>
+     */
+    public CompletableFuture<ListNodesResponse> listNodesAsync(ListNodesRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listNodes);
+    }
+
+    /**
+     * 查询联盟节点列表
+     *
+     * 功能描述：用户可以使用该接口查询联盟可信节点（包含聚合节点和计算节点）列表。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListNodesRequest 请求对象
+     * @return AsyncInvoker<ListNodesRequest, ListNodesResponse>
+     */
+    public AsyncInvoker<ListNodesRequest, ListNodesResponse> listNodesAsyncInvoker(ListNodesRequest request) {
+        return new AsyncInvoker<ListNodesRequest, ListNodesResponse>(request, TicsMeta.listNodes, hcClient);
     }
 
     /**
@@ -104,6 +249,242 @@ public class TicsAsyncClient {
     }
 
     /**
+     * 获取联盟组员信息
+     *
+     * 功能描述：用户可以使用该接口获取联盟组员信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartnersRequest 请求对象
+     * @return CompletableFuture<ListPartnersResponse>
+     */
+    public CompletableFuture<ListPartnersResponse> listPartnersAsync(ListPartnersRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listPartners);
+    }
+
+    /**
+     * 获取联盟组员信息
+     *
+     * 功能描述：用户可以使用该接口获取联盟组员信息
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListPartnersRequest 请求对象
+     * @return AsyncInvoker<ListPartnersRequest, ListPartnersResponse>
+     */
+    public AsyncInvoker<ListPartnersRequest, ListPartnersResponse> listPartnersAsyncInvoker(
+        ListPartnersRequest request) {
+        return new AsyncInvoker<ListPartnersRequest, ListPartnersResponse>(request, TicsMeta.listPartners, hcClient);
+    }
+
+    /**
+     * 查询联邦分析作业列表
+     *
+     * 查询联邦分析作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSqlJobRequest 请求对象
+     * @return CompletableFuture<ListSqlJobResponse>
+     */
+    public CompletableFuture<ListSqlJobResponse> listSqlJobAsync(ListSqlJobRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.listSqlJob);
+    }
+
+    /**
+     * 查询联邦分析作业列表
+     *
+     * 查询联邦分析作业列表
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListSqlJobRequest 请求对象
+     * @return AsyncInvoker<ListSqlJobRequest, ListSqlJobResponse>
+     */
+    public AsyncInvoker<ListSqlJobRequest, ListSqlJobResponse> listSqlJobAsyncInvoker(ListSqlJobRequest request) {
+        return new AsyncInvoker<ListSqlJobRequest, ListSqlJobResponse>(request, TicsMeta.listSqlJob, hcClient);
+    }
+
+    /**
+     * 获取计算节点详情信息
+     *
+     * 功能描述：用户可以使用该接口获取单个可信计算节点详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentDetailRequest 请求对象
+     * @return CompletableFuture<ShowAgentDetailResponse>
+     */
+    public CompletableFuture<ShowAgentDetailResponse> showAgentDetailAsync(ShowAgentDetailRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showAgentDetail);
+    }
+
+    /**
+     * 获取计算节点详情信息
+     *
+     * 功能描述：用户可以使用该接口获取单个可信计算节点详情信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowAgentDetailRequest 请求对象
+     * @return AsyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse>
+     */
+    public AsyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse> showAgentDetailAsyncInvoker(
+        ShowAgentDetailRequest request) {
+        return new AsyncInvoker<ShowAgentDetailRequest, ShowAgentDetailResponse>(request, TicsMeta.showAgentDetail,
+            hcClient);
+    }
+
+    /**
+     * 数据集统计
+     *
+     * 用户可以使用该接口进行联盟数据集统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatasetStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowDatasetStatisticsResponse>
+     */
+    public CompletableFuture<ShowDatasetStatisticsResponse> showDatasetStatisticsAsync(
+        ShowDatasetStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showDatasetStatistics);
+    }
+
+    /**
+     * 数据集统计
+     *
+     * 用户可以使用该接口进行联盟数据集统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowDatasetStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse>
+     */
+    public AsyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse> showDatasetStatisticsAsyncInvoker(
+        ShowDatasetStatisticsRequest request) {
+        return new AsyncInvoker<ShowDatasetStatisticsRequest, ShowDatasetStatisticsResponse>(request,
+            TicsMeta.showDatasetStatistics, hcClient);
+    }
+
+    /**
+     * 查询实例执行报告
+     *
+     * 查询实例执行报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceReportRequest 请求对象
+     * @return CompletableFuture<ShowInstanceReportResponse>
+     */
+    public CompletableFuture<ShowInstanceReportResponse> showInstanceReportAsync(ShowInstanceReportRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showInstanceReport);
+    }
+
+    /**
+     * 查询实例执行报告
+     *
+     * 查询实例执行报告
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowInstanceReportRequest 请求对象
+     * @return AsyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse>
+     */
+    public AsyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse> showInstanceReportAsyncInvoker(
+        ShowInstanceReportRequest request) {
+        return new AsyncInvoker<ShowInstanceReportRequest, ShowInstanceReportResponse>(request,
+            TicsMeta.showInstanceReport, hcClient);
+    }
+
+    /**
+     * 获取实例执行图
+     *
+     * 获取实例执行图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInstanceDagRequest 请求对象
+     * @return CompletableFuture<ShowJobInstanceDagResponse>
+     */
+    public CompletableFuture<ShowJobInstanceDagResponse> showJobInstanceDagAsync(ShowJobInstanceDagRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showJobInstanceDag);
+    }
+
+    /**
+     * 获取实例执行图
+     *
+     * 获取实例执行图
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobInstanceDagRequest 请求对象
+     * @return AsyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse>
+     */
+    public AsyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse> showJobInstanceDagAsyncInvoker(
+        ShowJobInstanceDagRequest request) {
+        return new AsyncInvoker<ShowJobInstanceDagRequest, ShowJobInstanceDagResponse>(request,
+            TicsMeta.showJobInstanceDag, hcClient);
+    }
+
+    /**
+     * 作业统计
+     *
+     * 功能描述：用户可以使用该接口进行联盟作业统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowJobStatisticsResponse>
+     */
+    public CompletableFuture<ShowJobStatisticsResponse> showJobStatisticsAsync(ShowJobStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showJobStatistics);
+    }
+
+    /**
+     * 作业统计
+     *
+     * 功能描述：用户可以使用该接口进行联盟作业统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowJobStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse>
+     */
+    public AsyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse> showJobStatisticsAsyncInvoker(
+        ShowJobStatisticsRequest request) {
+        return new AsyncInvoker<ShowJobStatisticsRequest, ShowJobStatisticsResponse>(request,
+            TicsMeta.showJobStatistics, hcClient);
+    }
+
+    /**
+     * 获取联盟详细信息
+     *
+     * 功能描述：用户可以使用该接口获取联盟详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLeagueRequest 请求对象
+     * @return CompletableFuture<ShowLeagueResponse>
+     */
+    public CompletableFuture<ShowLeagueResponse> showLeagueAsync(ShowLeagueRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showLeague);
+    }
+
+    /**
+     * 获取联盟详细信息
+     *
+     * 功能描述：用户可以使用该接口获取联盟详细信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowLeagueRequest 请求对象
+     * @return AsyncInvoker<ShowLeagueRequest, ShowLeagueResponse>
+     */
+    public AsyncInvoker<ShowLeagueRequest, ShowLeagueResponse> showLeagueAsyncInvoker(ShowLeagueRequest request) {
+        return new AsyncInvoker<ShowLeagueRequest, ShowLeagueResponse>(request, TicsMeta.showLeague, hcClient);
+    }
+
+    /**
      * 查询租户下统计信息
      *
      * 查询当前租户的联盟及代理统计数量
@@ -130,6 +511,66 @@ public class TicsAsyncClient {
     public AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse> showOverviewAsyncInvoker(
         ShowOverviewRequest request) {
         return new AsyncInvoker<ShowOverviewRequest, ShowOverviewResponse>(request, TicsMeta.showOverview, hcClient);
+    }
+
+    /**
+     * 合作方统计
+     *
+     * 功能描述：用户可以使用该接口进行联盟合作方统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPartnerStatisticsRequest 请求对象
+     * @return CompletableFuture<ShowPartnerStatisticsResponse>
+     */
+    public CompletableFuture<ShowPartnerStatisticsResponse> showPartnerStatisticsAsync(
+        ShowPartnerStatisticsRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.showPartnerStatistics);
+    }
+
+    /**
+     * 合作方统计
+     *
+     * 功能描述：用户可以使用该接口进行联盟合作方统计。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ShowPartnerStatisticsRequest 请求对象
+     * @return AsyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse>
+     */
+    public AsyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse> showPartnerStatisticsAsyncInvoker(
+        ShowPartnerStatisticsRequest request) {
+        return new AsyncInvoker<ShowPartnerStatisticsRequest, ShowPartnerStatisticsResponse>(request,
+            TicsMeta.showPartnerStatistics, hcClient);
+    }
+
+    /**
+     * 更新联盟信息
+     *
+     * 功能描述：用户可以使用接口更新联盟信息（包含联盟描述，联盟版本，隐私保护等级，查分隐私开关）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLeagueRequest 请求对象
+     * @return CompletableFuture<UpdateLeagueResponse>
+     */
+    public CompletableFuture<UpdateLeagueResponse> updateLeagueAsync(UpdateLeagueRequest request) {
+        return hcClient.asyncInvokeHttp(request, TicsMeta.updateLeague);
+    }
+
+    /**
+     * 更新联盟信息
+     *
+     * 功能描述：用户可以使用接口更新联盟信息（包含联盟描述，联盟版本，隐私保护等级，查分隐私开关）。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateLeagueRequest 请求对象
+     * @return AsyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse>
+     */
+    public AsyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse> updateLeagueAsyncInvoker(
+        UpdateLeagueRequest request) {
+        return new AsyncInvoker<UpdateLeagueRequest, UpdateLeagueResponse>(request, TicsMeta.updateLeague, hcClient);
     }
 
 }

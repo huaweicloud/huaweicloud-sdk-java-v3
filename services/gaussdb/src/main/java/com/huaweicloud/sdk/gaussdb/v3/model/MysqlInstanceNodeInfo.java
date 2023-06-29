@@ -1,129 +1,105 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.MysqlInstanceNodeVolumeInfo;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 节点信息。
  */
-public class MysqlInstanceNodeInfo  {
-
+public class MysqlInstanceNodeInfo {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_read_ips")
-    
+    @JsonProperty(value = "private_read_ips")
+
     private List<String> privateReadIps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
 
     private MysqlInstanceNodeVolumeInfo volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_code")
-    
+    @JsonProperty(value = "az_code")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region_code")
-    
+    @JsonProperty(value = "region_code")
 
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_id")
-    
+    @JsonProperty(value = "flavor_id")
 
     private String flavorId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_connections")
-    
+    @JsonProperty(value = "max_connections")
 
     private String maxConnections;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
 
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="need_restart")
-    
+    @JsonProperty(value = "need_restart")
 
     private Boolean needRestart;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
 
     private Integer priority;
 
@@ -131,9 +107,6 @@ public class MysqlInstanceNodeInfo  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -147,15 +120,10 @@ public class MysqlInstanceNodeInfo  {
         this.id = id;
     }
 
-    
-
     public MysqlInstanceNodeInfo withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 节点名称。
@@ -169,15 +137,10 @@ public class MysqlInstanceNodeInfo  {
         this.name = name;
     }
 
-    
-
     public MysqlInstanceNodeInfo withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 节点类型，master或slave。
@@ -191,15 +154,10 @@ public class MysqlInstanceNodeInfo  {
         this.type = type;
     }
 
-    
-
     public MysqlInstanceNodeInfo withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 节点状态。
@@ -213,15 +171,10 @@ public class MysqlInstanceNodeInfo  {
         this.status = status;
     }
 
-    
-
     public MysqlInstanceNodeInfo withPort(Integer port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口号。
@@ -235,16 +188,13 @@ public class MysqlInstanceNodeInfo  {
         this.port = port;
     }
 
-    
-
     public MysqlInstanceNodeInfo withPrivateReadIps(List<String> privateReadIps) {
         this.privateReadIps = privateReadIps;
         return this;
     }
 
-    
     public MysqlInstanceNodeInfo addPrivateReadIpsItem(String privateReadIpsItem) {
-        if(this.privateReadIps == null) {
+        if (this.privateReadIps == null) {
             this.privateReadIps = new ArrayList<>();
         }
         this.privateReadIps.add(privateReadIpsItem);
@@ -252,7 +202,7 @@ public class MysqlInstanceNodeInfo  {
     }
 
     public MysqlInstanceNodeInfo withPrivateReadIps(Consumer<List<String>> privateReadIpsSetter) {
-        if(this.privateReadIps == null) {
+        if (this.privateReadIps == null) {
             this.privateReadIps = new ArrayList<>();
         }
         privateReadIpsSetter.accept(this.privateReadIps);
@@ -271,22 +221,19 @@ public class MysqlInstanceNodeInfo  {
         this.privateReadIps = privateReadIps;
     }
 
-    
-
     public MysqlInstanceNodeInfo withVolume(MysqlInstanceNodeVolumeInfo volume) {
         this.volume = volume;
         return this;
     }
 
     public MysqlInstanceNodeInfo withVolume(Consumer<MysqlInstanceNodeVolumeInfo> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new MysqlInstanceNodeVolumeInfo();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get volume
@@ -300,15 +247,10 @@ public class MysqlInstanceNodeInfo  {
         this.volume = volume;
     }
 
-    
-
     public MysqlInstanceNodeInfo withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区。
@@ -322,15 +264,10 @@ public class MysqlInstanceNodeInfo  {
         this.azCode = azCode;
     }
 
-    
-
     public MysqlInstanceNodeInfo withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
-
-    
-
 
     /**
      * 实例所在的区域。
@@ -344,15 +281,10 @@ public class MysqlInstanceNodeInfo  {
         this.regionCode = regionCode;
     }
 
-    
-
     public MysqlInstanceNodeInfo withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为\"yyyy-mm-ddThh:mm:ssZ\"。  其中，T指某个时间的开始；Z指时区偏移量，例如偏移1个小时显示为+0100。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -366,15 +298,10 @@ public class MysqlInstanceNodeInfo  {
         this.created = created;
     }
 
-    
-
     public MysqlInstanceNodeInfo withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式与\"created\"字段对应格式完全相同。说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -388,15 +315,10 @@ public class MysqlInstanceNodeInfo  {
         this.updated = updated;
     }
 
-    
-
     public MysqlInstanceNodeInfo withFlavorId(String flavorId) {
         this.flavorId = flavorId;
         return this;
     }
-
-    
-
 
     /**
      * 规格ID。
@@ -410,15 +332,10 @@ public class MysqlInstanceNodeInfo  {
         this.flavorId = flavorId;
     }
 
-    
-
     public MysqlInstanceNodeInfo withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 规格码。
@@ -432,15 +349,10 @@ public class MysqlInstanceNodeInfo  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public MysqlInstanceNodeInfo withMaxConnections(String maxConnections) {
         this.maxConnections = maxConnections;
         return this;
     }
-
-    
-
 
     /**
      * 允许的最大连接数。
@@ -454,15 +366,10 @@ public class MysqlInstanceNodeInfo  {
         this.maxConnections = maxConnections;
     }
 
-    
-
     public MysqlInstanceNodeInfo withVcpus(String vcpus) {
         this.vcpus = vcpus;
         return this;
     }
-
-    
-
 
     /**
      * CPU核数。
@@ -476,15 +383,10 @@ public class MysqlInstanceNodeInfo  {
         this.vcpus = vcpus;
     }
 
-    
-
     public MysqlInstanceNodeInfo withRam(String ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存大小，单位为GB。
@@ -498,15 +400,10 @@ public class MysqlInstanceNodeInfo  {
         this.ram = ram;
     }
 
-    
-
     public MysqlInstanceNodeInfo withNeedRestart(Boolean needRestart) {
         this.needRestart = needRestart;
         return this;
     }
-
-    
-
 
     /**
      * 是否需要重启使修改的参数生效。
@@ -520,15 +417,10 @@ public class MysqlInstanceNodeInfo  {
         this.needRestart = needRestart;
     }
 
-    
-
     public MysqlInstanceNodeInfo withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
-
-    
-
 
     /**
      * 主备倒换优先级。
@@ -542,40 +434,49 @@ public class MysqlInstanceNodeInfo  {
         this.priority = priority;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlInstanceNodeInfo mysqlInstanceNodeInfo = (MysqlInstanceNodeInfo) o;
-        return Objects.equals(this.id, mysqlInstanceNodeInfo.id) &&
-            Objects.equals(this.name, mysqlInstanceNodeInfo.name) &&
-            Objects.equals(this.type, mysqlInstanceNodeInfo.type) &&
-            Objects.equals(this.status, mysqlInstanceNodeInfo.status) &&
-            Objects.equals(this.port, mysqlInstanceNodeInfo.port) &&
-            Objects.equals(this.privateReadIps, mysqlInstanceNodeInfo.privateReadIps) &&
-            Objects.equals(this.volume, mysqlInstanceNodeInfo.volume) &&
-            Objects.equals(this.azCode, mysqlInstanceNodeInfo.azCode) &&
-            Objects.equals(this.regionCode, mysqlInstanceNodeInfo.regionCode) &&
-            Objects.equals(this.created, mysqlInstanceNodeInfo.created) &&
-            Objects.equals(this.updated, mysqlInstanceNodeInfo.updated) &&
-            Objects.equals(this.flavorId, mysqlInstanceNodeInfo.flavorId) &&
-            Objects.equals(this.flavorRef, mysqlInstanceNodeInfo.flavorRef) &&
-            Objects.equals(this.maxConnections, mysqlInstanceNodeInfo.maxConnections) &&
-            Objects.equals(this.vcpus, mysqlInstanceNodeInfo.vcpus) &&
-            Objects.equals(this.ram, mysqlInstanceNodeInfo.ram) &&
-            Objects.equals(this.needRestart, mysqlInstanceNodeInfo.needRestart) &&
-            Objects.equals(this.priority, mysqlInstanceNodeInfo.priority);
+        MysqlInstanceNodeInfo that = (MysqlInstanceNodeInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.privateReadIps, that.privateReadIps)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.maxConnections, that.maxConnections) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.needRestart, that.needRestart)
+            && Objects.equals(this.priority, that.priority);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, status, port, privateReadIps, volume, azCode, regionCode, created, updated, flavorId, flavorRef, maxConnections, vcpus, ram, needRestart, priority);
+        return Objects.hash(id,
+            name,
+            type,
+            status,
+            port,
+            privateReadIps,
+            volume,
+            azCode,
+            regionCode,
+            created,
+            updated,
+            flavorId,
+            flavorRef,
+            maxConnections,
+            vcpus,
+            ram,
+            needRestart,
+            priority);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -601,6 +502,7 @@ public class MysqlInstanceNodeInfo  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -611,8 +513,5 @@ public class MysqlInstanceNodeInfo  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

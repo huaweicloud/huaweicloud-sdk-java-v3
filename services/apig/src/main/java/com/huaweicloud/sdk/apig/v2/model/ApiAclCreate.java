@@ -65,22 +65,15 @@ public class ApiAclCreate {
             if (value == null) {
                 return null;
             }
-            AclTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AclTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AclTypeEnum(value));
         }
 
         public static AclTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AclTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class ApiAclCreate {
             if (value == null) {
                 return null;
             }
-            EntityTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EntityTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EntityTypeEnum(value));
         }
 
         public static EntityTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EntityTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -264,17 +250,16 @@ public class ApiAclCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAclCreate apiAclCreate = (ApiAclCreate) o;
-        return Objects.equals(this.aclName, apiAclCreate.aclName) && Objects.equals(this.aclType, apiAclCreate.aclType)
-            && Objects.equals(this.aclValue, apiAclCreate.aclValue)
-            && Objects.equals(this.entityType, apiAclCreate.entityType);
+        ApiAclCreate that = (ApiAclCreate) obj;
+        return Objects.equals(this.aclName, that.aclName) && Objects.equals(this.aclType, that.aclType)
+            && Objects.equals(this.aclValue, that.aclValue) && Objects.equals(this.entityType, that.entityType);
     }
 
     @Override

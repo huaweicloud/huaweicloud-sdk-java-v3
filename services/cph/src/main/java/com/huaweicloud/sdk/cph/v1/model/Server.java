@@ -459,28 +459,27 @@ public class Server {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Server server = (Server) o;
-        return Objects.equals(this.serverName, server.serverName)
-            && Objects.equals(this.availabilityZone, server.availabilityZone)
-            && Objects.equals(this.serverId, server.serverId)
-            && Objects.equals(this.serverModelName, server.serverModelName)
-            && Objects.equals(this.phoneModelName, server.phoneModelName)
-            && Objects.equals(this.keypairName, server.keypairName) && Objects.equals(this.status, server.status)
-            && Objects.equals(this.vpcId, server.vpcId) && Objects.equals(this.cidr, server.cidr)
-            && Objects.equals(this.vpcCidr, server.vpcCidr) && Objects.equals(this.subnetId, server.subnetId)
-            && Objects.equals(this.subnetCidr, server.subnetCidr) && Objects.equals(this.addresses, server.addresses)
-            && Objects.equals(this.resourceProjectId, server.resourceProjectId)
-            && Objects.equals(this.metadata, server.metadata)
-            && Objects.equals(this.networkVersion, server.networkVersion)
-            && Objects.equals(this.enterpriseProjectId, server.enterpriseProjectId)
-            && Objects.equals(this.createTime, server.createTime) && Objects.equals(this.updateTime, server.updateTime);
+        Server that = (Server) obj;
+        return Objects.equals(this.serverName, that.serverName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName)
+            && Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.vpcCidr, that.vpcCidr) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.subnetCidr, that.subnetCidr) && Objects.equals(this.addresses, that.addresses)
+            && Objects.equals(this.resourceProjectId, that.resourceProjectId)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.networkVersion, that.networkVersion)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -35,15 +35,15 @@ public class TenantConfigV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TenantConfigV2 tenantConfigV2 = (TenantConfigV2) o;
-        return Objects.equals(this.createCaseCcemailMaxCount, tenantConfigV2.createCaseCcemailMaxCount);
+        TenantConfigV2 that = (TenantConfigV2) obj;
+        return Objects.equals(this.createCaseCcemailMaxCount, that.createCaseCcemailMaxCount);
     }
 
     @Override

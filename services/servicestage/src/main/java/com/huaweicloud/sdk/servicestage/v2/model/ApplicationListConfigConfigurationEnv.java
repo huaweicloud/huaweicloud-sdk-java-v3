@@ -55,17 +55,15 @@ public class ApplicationListConfigConfigurationEnv {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationListConfigConfigurationEnv applicationListConfigConfigurationEnv =
-            (ApplicationListConfigConfigurationEnv) o;
-        return Objects.equals(this.name, applicationListConfigConfigurationEnv.name)
-            && Objects.equals(this.value, applicationListConfigConfigurationEnv.value);
+        ApplicationListConfigConfigurationEnv that = (ApplicationListConfigConfigurationEnv) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

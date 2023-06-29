@@ -79,17 +79,16 @@ public class ListRecycleInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecycleInstancesRequest listRecycleInstancesRequest = (ListRecycleInstancesRequest) o;
-        return Objects.equals(this.xLanguage, listRecycleInstancesRequest.xLanguage)
-            && Objects.equals(this.offset, listRecycleInstancesRequest.offset)
-            && Objects.equals(this.limit, listRecycleInstancesRequest.limit);
+        ListRecycleInstancesRequest that = (ListRecycleInstancesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

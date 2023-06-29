@@ -88,17 +88,17 @@ public class ListClusterWorkloadResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterWorkloadResponse listClusterWorkloadResponse = (ListClusterWorkloadResponse) o;
-        return Objects.equals(this.workloadResCode, listClusterWorkloadResponse.workloadResCode)
-            && Objects.equals(this.workloadResStr, listClusterWorkloadResponse.workloadResStr)
-            && Objects.equals(this.workloadStatus, listClusterWorkloadResponse.workloadStatus);
+        ListClusterWorkloadResponse that = (ListClusterWorkloadResponse) obj;
+        return Objects.equals(this.workloadResCode, that.workloadResCode)
+            && Objects.equals(this.workloadResStr, that.workloadResStr)
+            && Objects.equals(this.workloadStatus, that.workloadStatus);
     }
 
     @Override

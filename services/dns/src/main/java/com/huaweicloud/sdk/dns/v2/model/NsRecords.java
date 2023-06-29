@@ -77,16 +77,16 @@ public class NsRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NsRecords nsRecords = (NsRecords) o;
-        return Objects.equals(this.hostname, nsRecords.hostname) && Objects.equals(this.address, nsRecords.address)
-            && Objects.equals(this.priority, nsRecords.priority);
+        NsRecords that = (NsRecords) obj;
+        return Objects.equals(this.hostname, that.hostname) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override

@@ -649,43 +649,37 @@ public class MonthlyBillRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MonthlyBillRecord monthlyBillRecord = (MonthlyBillRecord) o;
-        return Objects.equals(this.billCycle, monthlyBillRecord.billCycle)
-            && Objects.equals(this.customerId, monthlyBillRecord.customerId)
-            && Objects.equals(this.serviceTypeCode, monthlyBillRecord.serviceTypeCode)
-            && Objects.equals(this.resourceTypeCode, monthlyBillRecord.resourceTypeCode)
-            && Objects.equals(this.serviceTypeName, monthlyBillRecord.serviceTypeName)
-            && Objects.equals(this.resourceTypeName, monthlyBillRecord.resourceTypeName)
-            && Objects.equals(this.regionCode, monthlyBillRecord.regionCode)
-            && Objects.equals(this.enterpriseProjectId, monthlyBillRecord.enterpriseProjectId)
-            && Objects.equals(this.enterpriseProjectName, monthlyBillRecord.enterpriseProjectName)
-            && Objects.equals(this.chargingMode, monthlyBillRecord.chargingMode)
-            && Objects.equals(this.consumeTime, monthlyBillRecord.consumeTime)
-            && Objects.equals(this.tradeTime, monthlyBillRecord.tradeTime)
-            && Objects.equals(this.providerType, monthlyBillRecord.providerType)
-            && Objects.equals(this.tradeId, monthlyBillRecord.tradeId)
-            && Objects.equals(this.billType, monthlyBillRecord.billType)
-            && Objects.equals(this.status, monthlyBillRecord.status)
-            && Objects.equals(this.officialAmount, monthlyBillRecord.officialAmount)
-            && Objects.equals(this.officialDiscountAmount, monthlyBillRecord.officialDiscountAmount)
-            && Objects.equals(this.eraseAmount, monthlyBillRecord.eraseAmount)
-            && Objects.equals(this.consumeAmount, monthlyBillRecord.consumeAmount)
-            && Objects.equals(this.cashAmount, monthlyBillRecord.cashAmount)
-            && Objects.equals(this.creditAmount, monthlyBillRecord.creditAmount)
-            && Objects.equals(this.couponAmount, monthlyBillRecord.couponAmount)
-            && Objects.equals(this.flexipurchaseCouponAmount, monthlyBillRecord.flexipurchaseCouponAmount)
-            && Objects.equals(this.storedValueCardAmount, monthlyBillRecord.storedValueCardAmount)
-            && Objects.equals(this.bonusAmount, monthlyBillRecord.bonusAmount)
-            && Objects.equals(this.debtAmount, monthlyBillRecord.debtAmount)
-            && Objects.equals(this.writeoffAmount, monthlyBillRecord.writeoffAmount)
-            && Objects.equals(this.regionName, monthlyBillRecord.regionName);
+        MonthlyBillRecord that = (MonthlyBillRecord) obj;
+        return Objects.equals(this.billCycle, that.billCycle) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode)
+            && Objects.equals(this.serviceTypeName, that.serviceTypeName)
+            && Objects.equals(this.resourceTypeName, that.resourceTypeName)
+            && Objects.equals(this.regionCode, that.regionCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.consumeTime, that.consumeTime) && Objects.equals(this.tradeTime, that.tradeTime)
+            && Objects.equals(this.providerType, that.providerType) && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.billType, that.billType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.officialAmount, that.officialAmount)
+            && Objects.equals(this.officialDiscountAmount, that.officialDiscountAmount)
+            && Objects.equals(this.eraseAmount, that.eraseAmount)
+            && Objects.equals(this.consumeAmount, that.consumeAmount)
+            && Objects.equals(this.cashAmount, that.cashAmount) && Objects.equals(this.creditAmount, that.creditAmount)
+            && Objects.equals(this.couponAmount, that.couponAmount)
+            && Objects.equals(this.flexipurchaseCouponAmount, that.flexipurchaseCouponAmount)
+            && Objects.equals(this.storedValueCardAmount, that.storedValueCardAmount)
+            && Objects.equals(this.bonusAmount, that.bonusAmount) && Objects.equals(this.debtAmount, that.debtAmount)
+            && Objects.equals(this.writeoffAmount, that.writeoffAmount)
+            && Objects.equals(this.regionName, that.regionName);
     }
 
     @Override

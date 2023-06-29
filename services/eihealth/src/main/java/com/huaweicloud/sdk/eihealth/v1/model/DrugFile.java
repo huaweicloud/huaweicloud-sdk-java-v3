@@ -99,16 +99,16 @@ public class DrugFile {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DrugFile drugFile = (DrugFile) o;
-        return Objects.equals(this.source, drugFile.source) && Objects.equals(this.url, drugFile.url)
-            && Objects.equals(this.format, drugFile.format) && Objects.equals(this.data, drugFile.data);
+        DrugFile that = (DrugFile) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.data, that.data);
     }
 
     @Override

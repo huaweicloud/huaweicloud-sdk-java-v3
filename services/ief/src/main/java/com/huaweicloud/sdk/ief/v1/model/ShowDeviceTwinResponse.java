@@ -97,17 +97,16 @@ public class ShowDeviceTwinResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDeviceTwinResponse showDeviceTwinResponse = (ShowDeviceTwinResponse) o;
-        return Objects.equals(this.propertyVisitors, showDeviceTwinResponse.propertyVisitors)
-            && Objects.equals(this.twin, showDeviceTwinResponse.twin)
-            && Objects.equals(this.accessProtocol, showDeviceTwinResponse.accessProtocol);
+        ShowDeviceTwinResponse that = (ShowDeviceTwinResponse) obj;
+        return Objects.equals(this.propertyVisitors, that.propertyVisitors) && Objects.equals(this.twin, that.twin)
+            && Objects.equals(this.accessProtocol, that.accessProtocol);
     }
 
     @Override

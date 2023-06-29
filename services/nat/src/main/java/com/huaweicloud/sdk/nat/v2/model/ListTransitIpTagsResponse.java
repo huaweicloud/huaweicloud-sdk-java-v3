@@ -75,16 +75,15 @@ public class ListTransitIpTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTransitIpTagsResponse listTransitIpTagsResponse = (ListTransitIpTagsResponse) o;
-        return Objects.equals(this.requestId, listTransitIpTagsResponse.requestId)
-            && Objects.equals(this.tags, listTransitIpTagsResponse.tags);
+        ListTransitIpTagsResponse that = (ListTransitIpTagsResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

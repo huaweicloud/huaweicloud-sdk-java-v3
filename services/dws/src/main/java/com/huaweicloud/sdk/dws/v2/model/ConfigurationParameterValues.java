@@ -53,15 +53,15 @@ public class ConfigurationParameterValues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigurationParameterValues configurationParameterValues = (ConfigurationParameterValues) o;
-        return Objects.equals(this.configurations, configurationParameterValues.configurations);
+        ConfigurationParameterValues that = (ConfigurationParameterValues) obj;
+        return Objects.equals(this.configurations, that.configurations);
     }
 
     @Override

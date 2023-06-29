@@ -33,15 +33,15 @@ public class ShowWorkflowInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowInfoRequest showWorkflowInfoRequest = (ShowWorkflowInfoRequest) o;
-        return Objects.equals(this.graphName, showWorkflowInfoRequest.graphName);
+        ShowWorkflowInfoRequest that = (ShowWorkflowInfoRequest) obj;
+        return Objects.equals(this.graphName, that.graphName);
     }
 
     @Override

@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 日志过滤条件集合，不同日志来源所需字段不同。
  */
-public class SearchKey  {
-
+public class SearchKey {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appName")
-    
+    @JsonProperty(value = "appName")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterId")
-    
+    @JsonProperty(value = "clusterId")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hostIP")
-    
+    @JsonProperty(value = "hostIP")
 
     private String hostIP;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nameSpace")
-    
+    @JsonProperty(value = "nameSpace")
 
     private String nameSpace;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pathFile")
-    
+    @JsonProperty(value = "pathFile")
 
     private String pathFile;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="podName")
-    
+    @JsonProperty(value = "podName")
 
     private String podName;
 
@@ -57,9 +44,6 @@ public class SearchKey  {
         this.appName = appName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称。
@@ -73,15 +57,10 @@ public class SearchKey  {
         this.appName = appName;
     }
 
-    
-
     public SearchKey withClusterId(String clusterId) {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * CCE集群ID。
@@ -95,15 +74,10 @@ public class SearchKey  {
         this.clusterId = clusterId;
     }
 
-    
-
     public SearchKey withHostIP(String hostIP) {
         this.hostIP = hostIP;
         return this;
     }
-
-    
-
 
     /**
      * 日志所在虚拟机IP。
@@ -117,15 +91,10 @@ public class SearchKey  {
         this.hostIP = hostIP;
     }
 
-    
-
     public SearchKey withNameSpace(String nameSpace) {
         this.nameSpace = nameSpace;
         return this;
     }
-
-    
-
 
     /**
      * CCE容器集群的命名空间。
@@ -139,15 +108,10 @@ public class SearchKey  {
         this.nameSpace = nameSpace;
     }
 
-    
-
     public SearchKey withPathFile(String pathFile) {
         this.pathFile = pathFile;
         return this;
     }
-
-    
-
 
     /**
      * 日志文件名称。
@@ -161,15 +125,10 @@ public class SearchKey  {
         this.pathFile = pathFile;
     }
 
-    
-
     public SearchKey withPodName(String podName) {
         this.podName = podName;
         return this;
     }
-
-    
-
 
     /**
      * 容器实例名称。
@@ -183,28 +142,25 @@ public class SearchKey  {
         this.podName = podName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchKey searchKey = (SearchKey) o;
-        return Objects.equals(this.appName, searchKey.appName) &&
-            Objects.equals(this.clusterId, searchKey.clusterId) &&
-            Objects.equals(this.hostIP, searchKey.hostIP) &&
-            Objects.equals(this.nameSpace, searchKey.nameSpace) &&
-            Objects.equals(this.pathFile, searchKey.pathFile) &&
-            Objects.equals(this.podName, searchKey.podName);
+        SearchKey that = (SearchKey) obj;
+        return Objects.equals(this.appName, that.appName) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.hostIP, that.hostIP) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.pathFile, that.pathFile) && Objects.equals(this.podName, that.podName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appName, clusterId, hostIP, nameSpace, pathFile, podName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,6 +174,7 @@ public class SearchKey  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -228,8 +185,5 @@ public class SearchKey  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

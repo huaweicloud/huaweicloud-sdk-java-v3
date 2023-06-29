@@ -75,16 +75,15 @@ public class ListImageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageResponse listImageResponse = (ListImageResponse) o;
-        return Objects.equals(this.count, listImageResponse.count)
-            && Objects.equals(this.images, listImageResponse.images);
+        ListImageResponse that = (ListImageResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.images, that.images);
     }
 
     @Override

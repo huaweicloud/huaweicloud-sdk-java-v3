@@ -81,18 +81,16 @@ public class ListMultiAccountRetrieveCouponsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMultiAccountRetrieveCouponsRequest listMultiAccountRetrieveCouponsRequest =
-            (ListMultiAccountRetrieveCouponsRequest) o;
-        return Objects.equals(this.subCustomerId, listMultiAccountRetrieveCouponsRequest.subCustomerId)
-            && Objects.equals(this.offset, listMultiAccountRetrieveCouponsRequest.offset)
-            && Objects.equals(this.limit, listMultiAccountRetrieveCouponsRequest.limit);
+        ListMultiAccountRetrieveCouponsRequest that = (ListMultiAccountRetrieveCouponsRequest) obj;
+        return Objects.equals(this.subCustomerId, that.subCustomerId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

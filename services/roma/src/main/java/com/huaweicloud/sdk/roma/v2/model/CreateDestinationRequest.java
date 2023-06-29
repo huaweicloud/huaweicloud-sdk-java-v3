@@ -87,17 +87,16 @@ public class CreateDestinationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDestinationRequest createDestinationRequest = (CreateDestinationRequest) o;
-        return Objects.equals(this.instanceId, createDestinationRequest.instanceId)
-            && Objects.equals(this.ruleId, createDestinationRequest.ruleId)
-            && Objects.equals(this.body, createDestinationRequest.body);
+        CreateDestinationRequest that = (CreateDestinationRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

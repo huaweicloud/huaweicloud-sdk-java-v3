@@ -96,17 +96,17 @@ public class ProjectPrivilege {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectPrivilege projectPrivilege = (ProjectPrivilege) o;
-        return Objects.equals(this._object, projectPrivilege._object)
-            && Objects.equals(this.applicantProjectId, projectPrivilege.applicantProjectId)
-            && Objects.equals(this.privileges, projectPrivilege.privileges);
+        ProjectPrivilege that = (ProjectPrivilege) obj;
+        return Objects.equals(this._object, that._object)
+            && Objects.equals(this.applicantProjectId, that.applicantProjectId)
+            && Objects.equals(this.privileges, that.privileges);
     }
 
     @Override

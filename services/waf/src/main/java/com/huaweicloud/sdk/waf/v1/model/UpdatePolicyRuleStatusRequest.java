@@ -95,22 +95,15 @@ public class UpdatePolicyRuleStatusRequest {
             if (value == null) {
                 return null;
             }
-            RuletypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuletypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuletypeEnum(value));
         }
 
         public static RuletypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuletypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,19 +230,17 @@ public class UpdatePolicyRuleStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePolicyRuleStatusRequest updatePolicyRuleStatusRequest = (UpdatePolicyRuleStatusRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updatePolicyRuleStatusRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updatePolicyRuleStatusRequest.policyId)
-            && Objects.equals(this.ruletype, updatePolicyRuleStatusRequest.ruletype)
-            && Objects.equals(this.ruleId, updatePolicyRuleStatusRequest.ruleId)
-            && Objects.equals(this.body, updatePolicyRuleStatusRequest.body);
+        UpdatePolicyRuleStatusRequest that = (UpdatePolicyRuleStatusRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruletype, that.ruletype)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

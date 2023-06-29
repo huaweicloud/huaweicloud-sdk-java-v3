@@ -125,19 +125,17 @@ public class ListDataStoresRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDataStoresRequest listDataStoresRequest = (ListDataStoresRequest) o;
-        return Objects.equals(this.groupId, listDataStoresRequest.groupId)
-            && Objects.equals(this.dataStoreId, listDataStoresRequest.dataStoreId)
-            && Objects.equals(this.name, listDataStoresRequest.name)
-            && Objects.equals(this.offset, listDataStoresRequest.offset)
-            && Objects.equals(this.limit, listDataStoresRequest.limit);
+        ListDataStoresRequest that = (ListDataStoresRequest) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.dataStoreId, that.dataStoreId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class AddingBackendInstancesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddingBackendInstancesV2Request addingBackendInstancesV2Request = (AddingBackendInstancesV2Request) o;
-        return Objects.equals(this.instanceId, addingBackendInstancesV2Request.instanceId)
-            && Objects.equals(this.vpcChannelId, addingBackendInstancesV2Request.vpcChannelId)
-            && Objects.equals(this.body, addingBackendInstancesV2Request.body);
+        AddingBackendInstancesV2Request that = (AddingBackendInstancesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

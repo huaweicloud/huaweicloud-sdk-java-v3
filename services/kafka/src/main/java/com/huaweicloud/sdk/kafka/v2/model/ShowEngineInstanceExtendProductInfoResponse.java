@@ -114,18 +114,16 @@ public class ShowEngineInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEngineInstanceExtendProductInfoResponse showEngineInstanceExtendProductInfoResponse =
-            (ShowEngineInstanceExtendProductInfoResponse) o;
-        return Objects.equals(this.engine, showEngineInstanceExtendProductInfoResponse.engine)
-            && Objects.equals(this.versions, showEngineInstanceExtendProductInfoResponse.versions)
-            && Objects.equals(this.products, showEngineInstanceExtendProductInfoResponse.products);
+        ShowEngineInstanceExtendProductInfoResponse that = (ShowEngineInstanceExtendProductInfoResponse) obj;
+        return Objects.equals(this.engine, that.engine) && Objects.equals(this.versions, that.versions)
+            && Objects.equals(this.products, that.products);
     }
 
     @Override

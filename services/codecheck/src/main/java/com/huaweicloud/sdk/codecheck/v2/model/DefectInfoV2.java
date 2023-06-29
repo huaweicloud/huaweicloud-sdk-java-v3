@@ -332,26 +332,23 @@ public class DefectInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefectInfoV2 defectInfoV2 = (DefectInfoV2) o;
-        return Objects.equals(this.defectId, defectInfoV2.defectId)
-            && Objects.equals(this.defectCheckerName, defectInfoV2.defectCheckerName)
-            && Objects.equals(this.defectStatus, defectInfoV2.defectStatus)
-            && Objects.equals(this.ruleSystemTags, defectInfoV2.ruleSystemTags)
-            && Objects.equals(this.ruleName, defectInfoV2.ruleName)
-            && Objects.equals(this.lineNumber, defectInfoV2.lineNumber)
-            && Objects.equals(this.defectContent, defectInfoV2.defectContent)
-            && Objects.equals(this.defectLevel, defectInfoV2.defectLevel)
-            && Objects.equals(this.filePath, defectInfoV2.filePath)
-            && Objects.equals(this.createdAt, defectInfoV2.createdAt)
-            && Objects.equals(this.issueKey, defectInfoV2.issueKey)
-            && Objects.equals(this.fragment, defectInfoV2.fragment) && Objects.equals(this.events, defectInfoV2.events);
+        DefectInfoV2 that = (DefectInfoV2) obj;
+        return Objects.equals(this.defectId, that.defectId)
+            && Objects.equals(this.defectCheckerName, that.defectCheckerName)
+            && Objects.equals(this.defectStatus, that.defectStatus)
+            && Objects.equals(this.ruleSystemTags, that.ruleSystemTags) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.lineNumber, that.lineNumber)
+            && Objects.equals(this.defectContent, that.defectContent)
+            && Objects.equals(this.defectLevel, that.defectLevel) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.issueKey, that.issueKey)
+            && Objects.equals(this.fragment, that.fragment) && Objects.equals(this.events, that.events);
     }
 
     @Override

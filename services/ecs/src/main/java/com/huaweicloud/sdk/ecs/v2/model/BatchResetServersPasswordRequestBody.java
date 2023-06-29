@@ -96,18 +96,16 @@ public class BatchResetServersPasswordRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchResetServersPasswordRequestBody batchResetServersPasswordRequestBody =
-            (BatchResetServersPasswordRequestBody) o;
-        return Objects.equals(this.newPassword, batchResetServersPasswordRequestBody.newPassword)
-            && Objects.equals(this.dryRun, batchResetServersPasswordRequestBody.dryRun)
-            && Objects.equals(this.servers, batchResetServersPasswordRequestBody.servers);
+        BatchResetServersPasswordRequestBody that = (BatchResetServersPasswordRequestBody) obj;
+        return Objects.equals(this.newPassword, that.newPassword) && Objects.equals(this.dryRun, that.dryRun)
+            && Objects.equals(this.servers, that.servers);
     }
 
     @Override

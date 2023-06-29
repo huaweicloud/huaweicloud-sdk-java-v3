@@ -149,19 +149,18 @@ public class WatermarkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WatermarkRequest watermarkRequest = (WatermarkRequest) o;
-        return Objects.equals(this.input, watermarkRequest.input)
-            && Objects.equals(this.templateId, watermarkRequest.templateId)
-            && Objects.equals(this.textContext, watermarkRequest.textContext)
-            && Objects.equals(this.imageWatermark, watermarkRequest.imageWatermark)
-            && Objects.equals(this.textWatermark, watermarkRequest.textWatermark);
+        WatermarkRequest that = (WatermarkRequest) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.templateId, that.templateId)
+            && Objects.equals(this.textContext, that.textContext)
+            && Objects.equals(this.imageWatermark, that.imageWatermark)
+            && Objects.equals(this.textWatermark, that.textWatermark);
     }
 
     @Override

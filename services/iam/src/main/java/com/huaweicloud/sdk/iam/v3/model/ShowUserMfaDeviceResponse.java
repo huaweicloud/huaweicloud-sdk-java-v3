@@ -44,15 +44,15 @@ public class ShowUserMfaDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserMfaDeviceResponse showUserMfaDeviceResponse = (ShowUserMfaDeviceResponse) o;
-        return Objects.equals(this.virtualMfaDevice, showUserMfaDeviceResponse.virtualMfaDevice);
+        ShowUserMfaDeviceResponse that = (ShowUserMfaDeviceResponse) obj;
+        return Objects.equals(this.virtualMfaDevice, that.virtualMfaDevice);
     }
 
     @Override

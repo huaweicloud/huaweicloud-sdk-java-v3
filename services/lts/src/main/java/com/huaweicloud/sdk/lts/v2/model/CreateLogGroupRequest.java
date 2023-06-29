@@ -43,15 +43,15 @@ public class CreateLogGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogGroupRequest createLogGroupRequest = (CreateLogGroupRequest) o;
-        return Objects.equals(this.body, createLogGroupRequest.body);
+        CreateLogGroupRequest that = (CreateLogGroupRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

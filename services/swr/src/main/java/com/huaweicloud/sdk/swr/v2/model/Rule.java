@@ -63,22 +63,15 @@ public class Rule {
             if (value == null) {
                 return null;
             }
-            TemplateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TemplateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateEnum(value));
         }
 
         public static TemplateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TemplateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -178,16 +171,16 @@ public class Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rule rule = (Rule) o;
-        return Objects.equals(this.template, rule.template) && Objects.equals(this.params, rule.params)
-            && Objects.equals(this.tagSelectors, rule.tagSelectors);
+        Rule that = (Rule) obj;
+        return Objects.equals(this.template, that.template) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.tagSelectors, that.tagSelectors);
     }
 
     @Override

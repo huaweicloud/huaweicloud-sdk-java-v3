@@ -63,22 +63,15 @@ public class VideoModerationImageDetail {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuggestionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuggestionEnum(value));
         }
 
         public static SuggestionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SuggestionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class VideoModerationImageDetail {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -311,19 +297,17 @@ public class VideoModerationImageDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoModerationImageDetail videoModerationImageDetail = (VideoModerationImageDetail) o;
-        return Objects.equals(this.suggestion, videoModerationImageDetail.suggestion)
-            && Objects.equals(this.category, videoModerationImageDetail.category)
-            && Objects.equals(this.ocrText, videoModerationImageDetail.ocrText)
-            && Objects.equals(this.time, videoModerationImageDetail.time)
-            && Objects.equals(this.detail, videoModerationImageDetail.detail);
+        VideoModerationImageDetail that = (VideoModerationImageDetail) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.ocrText, that.ocrText) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.detail, that.detail);
     }
 
     @Override

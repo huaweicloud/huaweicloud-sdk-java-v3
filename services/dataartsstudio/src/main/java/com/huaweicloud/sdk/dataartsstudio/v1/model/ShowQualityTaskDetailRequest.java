@@ -55,16 +55,15 @@ public class ShowQualityTaskDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQualityTaskDetailRequest showQualityTaskDetailRequest = (ShowQualityTaskDetailRequest) o;
-        return Objects.equals(this.id, showQualityTaskDetailRequest.id)
-            && Objects.equals(this.workspace, showQualityTaskDetailRequest.workspace);
+        ShowQualityTaskDetailRequest that = (ShowQualityTaskDetailRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.workspace, that.workspace);
     }
 
     @Override

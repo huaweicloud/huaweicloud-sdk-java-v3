@@ -65,16 +65,15 @@ public class UpdateAgencyCustomPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAgencyCustomPolicyRequest updateAgencyCustomPolicyRequest = (UpdateAgencyCustomPolicyRequest) o;
-        return Objects.equals(this.roleId, updateAgencyCustomPolicyRequest.roleId)
-            && Objects.equals(this.body, updateAgencyCustomPolicyRequest.body);
+        UpdateAgencyCustomPolicyRequest that = (UpdateAgencyCustomPolicyRequest) obj;
+        return Objects.equals(this.roleId, that.roleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

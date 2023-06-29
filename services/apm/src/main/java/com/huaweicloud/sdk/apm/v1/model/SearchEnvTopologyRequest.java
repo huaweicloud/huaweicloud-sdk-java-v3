@@ -67,16 +67,15 @@ public class SearchEnvTopologyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchEnvTopologyRequest searchEnvTopologyRequest = (SearchEnvTopologyRequest) o;
-        return Objects.equals(this.xBusinessId, searchEnvTopologyRequest.xBusinessId)
-            && Objects.equals(this.body, searchEnvTopologyRequest.body);
+        SearchEnvTopologyRequest that = (SearchEnvTopologyRequest) obj;
+        return Objects.equals(this.xBusinessId, that.xBusinessId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -254,25 +254,20 @@ public class CreateEdgeNodeCertsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeNodeCertsResponse createEdgeNodeCertsResponse = (CreateEdgeNodeCertsResponse) o;
-        return Objects.equals(this.id, createEdgeNodeCertsResponse.id)
-            && Objects.equals(this.name, createEdgeNodeCertsResponse.name)
-            && Objects.equals(this.description, createEdgeNodeCertsResponse.description)
-            && Objects.equals(this.createdAt, createEdgeNodeCertsResponse.createdAt)
-            && Objects.equals(this.nodeId, createEdgeNodeCertsResponse.nodeId)
-            && Objects.equals(this.type, createEdgeNodeCertsResponse.type)
-            && Objects.equals(this.serialNum, createEdgeNodeCertsResponse.serialNum)
-            && Objects.equals(this.ca, createEdgeNodeCertsResponse.ca)
-            && Objects.equals(this.certificate, createEdgeNodeCertsResponse.certificate)
-            && Objects.equals(this.privateKey, createEdgeNodeCertsResponse.privateKey)
-            && Objects.equals(this._package, createEdgeNodeCertsResponse._package);
+        CreateEdgeNodeCertsResponse that = (CreateEdgeNodeCertsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.serialNum, that.serialNum) && Objects.equals(this.ca, that.ca)
+            && Objects.equals(this.certificate, that.certificate) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this._package, that._package);
     }
 
     @Override

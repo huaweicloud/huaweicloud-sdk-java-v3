@@ -139,19 +139,17 @@ public class ConfirmAuthorizationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfirmAuthorizationsRequest confirmAuthorizationsRequest = (ConfirmAuthorizationsRequest) o;
-        return Objects.equals(this.authorizationId, confirmAuthorizationsRequest.authorizationId)
-            && Objects.equals(this.xSite, confirmAuthorizationsRequest.xSite)
-            && Objects.equals(this.xLanguage, confirmAuthorizationsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, confirmAuthorizationsRequest.xTimeZone)
-            && Objects.equals(this.body, confirmAuthorizationsRequest.body);
+        ConfirmAuthorizationsRequest that = (ConfirmAuthorizationsRequest) obj;
+        return Objects.equals(this.authorizationId, that.authorizationId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

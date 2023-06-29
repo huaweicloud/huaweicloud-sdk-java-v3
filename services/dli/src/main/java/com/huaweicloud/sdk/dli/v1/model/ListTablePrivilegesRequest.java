@@ -77,17 +77,16 @@ public class ListTablePrivilegesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTablePrivilegesRequest listTablePrivilegesRequest = (ListTablePrivilegesRequest) o;
-        return Objects.equals(this.databaseName, listTablePrivilegesRequest.databaseName)
-            && Objects.equals(this.tableName, listTablePrivilegesRequest.tableName)
-            && Objects.equals(this.userName, listTablePrivilegesRequest.userName);
+        ListTablePrivilegesRequest that = (ListTablePrivilegesRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

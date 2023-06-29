@@ -87,16 +87,16 @@ public class AgencyTokenUser {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyTokenUser agencyTokenUser = (AgencyTokenUser) o;
-        return Objects.equals(this.name, agencyTokenUser.name) && Objects.equals(this.id, agencyTokenUser.id)
-            && Objects.equals(this.domain, agencyTokenUser.domain);
+        AgencyTokenUser that = (AgencyTokenUser) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.domain, that.domain);
     }
 
     @Override

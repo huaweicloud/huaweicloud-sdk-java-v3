@@ -65,16 +65,15 @@ public class CreateSecretVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecretVersionRequest createSecretVersionRequest = (CreateSecretVersionRequest) o;
-        return Objects.equals(this.secretName, createSecretVersionRequest.secretName)
-            && Objects.equals(this.body, createSecretVersionRequest.body);
+        CreateSecretVersionRequest that = (CreateSecretVersionRequest) obj;
+        return Objects.equals(this.secretName, that.secretName) && Objects.equals(this.body, that.body);
     }
 
     @Override

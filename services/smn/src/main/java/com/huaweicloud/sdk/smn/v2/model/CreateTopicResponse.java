@@ -56,16 +56,15 @@ public class CreateTopicResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicResponse createTopicResponse = (CreateTopicResponse) o;
-        return Objects.equals(this.requestId, createTopicResponse.requestId)
-            && Objects.equals(this.topicUrn, createTopicResponse.topicUrn);
+        CreateTopicResponse that = (CreateTopicResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.topicUrn, that.topicUrn);
     }
 
     @Override

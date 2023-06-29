@@ -108,22 +108,15 @@ public class ListTasksRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -299,20 +292,18 @@ public class ListTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.state, listTasksRequest.state) && Objects.equals(this.name, listTasksRequest.name)
-            && Objects.equals(this.id, listTasksRequest.id)
-            && Objects.equals(this.sourceServerId, listTasksRequest.sourceServerId)
-            && Objects.equals(this.limit, listTasksRequest.limit)
-            && Objects.equals(this.offset, listTasksRequest.offset)
-            && Objects.equals(this.enterpriseProjectId, listTasksRequest.enterpriseProjectId);
+        ListTasksRequest that = (ListTasksRequest) obj;
+        return Objects.equals(this.state, that.state) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.sourceServerId, that.sourceServerId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -112,16 +112,16 @@ public class StreamResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamResponse streamResponse = (StreamResponse) o;
-        return Objects.equals(this.inputs, streamResponse.inputs) && Objects.equals(this.jobId, streamResponse.jobId)
-            && Objects.equals(this.outputs, streamResponse.outputs);
+        StreamResponse that = (StreamResponse) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.outputs, that.outputs);
     }
 
     @Override

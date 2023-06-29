@@ -260,22 +260,19 @@ public class SecurityPolicy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityPolicy securityPolicy = (SecurityPolicy) o;
-        return Objects.equals(this.id, securityPolicy.id) && Objects.equals(this.projectId, securityPolicy.projectId)
-            && Objects.equals(this.name, securityPolicy.name)
-            && Objects.equals(this.description, securityPolicy.description)
-            && Objects.equals(this.listeners, securityPolicy.listeners)
-            && Objects.equals(this.protocols, securityPolicy.protocols)
-            && Objects.equals(this.ciphers, securityPolicy.ciphers)
-            && Objects.equals(this.createdAt, securityPolicy.createdAt)
-            && Objects.equals(this.updatedAt, securityPolicy.updatedAt);
+        SecurityPolicy that = (SecurityPolicy) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.protocols, that.protocols)
+            && Objects.equals(this.ciphers, that.ciphers) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

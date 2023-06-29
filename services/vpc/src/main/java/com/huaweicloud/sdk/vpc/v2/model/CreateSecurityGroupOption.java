@@ -77,17 +77,16 @@ public class CreateSecurityGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSecurityGroupOption createSecurityGroupOption = (CreateSecurityGroupOption) o;
-        return Objects.equals(this.name, createSecurityGroupOption.name)
-            && Objects.equals(this.vpcId, createSecurityGroupOption.vpcId)
-            && Objects.equals(this.enterpriseProjectId, createSecurityGroupOption.enterpriseProjectId);
+        CreateSecurityGroupOption that = (CreateSecurityGroupOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

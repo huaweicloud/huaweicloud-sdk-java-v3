@@ -87,17 +87,16 @@ public class UpdateRoleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoleRequest updateRoleRequest = (UpdateRoleRequest) o;
-        return Objects.equals(this.instanceId, updateRoleRequest.instanceId)
-            && Objects.equals(this.roleName, updateRoleRequest.roleName)
-            && Objects.equals(this.body, updateRoleRequest.body);
+        UpdateRoleRequest that = (UpdateRoleRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.roleName, that.roleName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

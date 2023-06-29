@@ -320,28 +320,23 @@ public class StatisticsGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticsGroup statisticsGroup = (StatisticsGroup) o;
-        return Objects.equals(this.maxLatency, statisticsGroup.maxLatency)
-            && Objects.equals(this.avgLatency, statisticsGroup.avgLatency)
-            && Objects.equals(this.reqCount, statisticsGroup.reqCount)
-            && Objects.equals(this.reqCount2xx, statisticsGroup.reqCount2xx)
-            && Objects.equals(this.reqCount4xx, statisticsGroup.reqCount4xx)
-            && Objects.equals(this.reqCount5xx, statisticsGroup.reqCount5xx)
-            && Objects.equals(this.reqCountError, statisticsGroup.reqCountError)
-            && Objects.equals(this.outputThroughput, statisticsGroup.outputThroughput)
-            && Objects.equals(this.inputThroughput, statisticsGroup.inputThroughput)
-            && Objects.equals(this.currentMinute, statisticsGroup.currentMinute)
-            && Objects.equals(this.groupId, statisticsGroup.groupId)
-            && Objects.equals(this.provider, statisticsGroup.provider)
-            && Objects.equals(this.reqTime, statisticsGroup.reqTime)
-            && Objects.equals(this.registerTime, statisticsGroup.registerTime);
+        StatisticsGroup that = (StatisticsGroup) obj;
+        return Objects.equals(this.maxLatency, that.maxLatency) && Objects.equals(this.avgLatency, that.avgLatency)
+            && Objects.equals(this.reqCount, that.reqCount) && Objects.equals(this.reqCount2xx, that.reqCount2xx)
+            && Objects.equals(this.reqCount4xx, that.reqCount4xx) && Objects.equals(this.reqCount5xx, that.reqCount5xx)
+            && Objects.equals(this.reqCountError, that.reqCountError)
+            && Objects.equals(this.outputThroughput, that.outputThroughput)
+            && Objects.equals(this.inputThroughput, that.inputThroughput)
+            && Objects.equals(this.currentMinute, that.currentMinute) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.reqTime, that.reqTime)
+            && Objects.equals(this.registerTime, that.registerTime);
     }
 
     @Override

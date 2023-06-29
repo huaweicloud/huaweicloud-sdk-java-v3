@@ -231,24 +231,21 @@ public class BatchJobForList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchJobForList batchJobForList = (BatchJobForList) o;
-        return Objects.equals(this.jobId, batchJobForList.jobId)
-            && Objects.equals(this.jobName, batchJobForList.jobName)
-            && Objects.equals(this.jobType, batchJobForList.jobType)
-            && Objects.equals(this.createdAt, batchJobForList.createdAt)
-            && Objects.equals(this.status, batchJobForList.status)
-            && Objects.equals(this.taskTotalCount, batchJobForList.taskTotalCount)
-            && Objects.equals(this.taskSuccessCount, batchJobForList.taskSuccessCount)
-            && Objects.equals(this.taskFailedCount, batchJobForList.taskFailedCount)
-            && Objects.equals(this.statusLastUpdatedAt, batchJobForList.statusLastUpdatedAt)
-            && Objects.equals(this.description, batchJobForList.description);
+        BatchJobForList that = (BatchJobForList) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.taskTotalCount, that.taskTotalCount)
+            && Objects.equals(this.taskSuccessCount, that.taskSuccessCount)
+            && Objects.equals(this.taskFailedCount, that.taskFailedCount)
+            && Objects.equals(this.statusLastUpdatedAt, that.statusLastUpdatedAt)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

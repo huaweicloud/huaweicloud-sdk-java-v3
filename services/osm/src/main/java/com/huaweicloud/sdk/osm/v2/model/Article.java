@@ -213,21 +213,20 @@ public class Article {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Article article = (Article) o;
-        return Objects.equals(this.id, article.id) && Objects.equals(this.code, article.code)
-            && Objects.equals(this.name, article.name) && Objects.equals(this.url, article.url)
-            && Objects.equals(this.createTime, article.createTime)
-            && Objects.equals(this.updateTime, article.updateTime)
-            && Objects.equals(this.productTypeId, article.productTypeId)
-            && Objects.equals(this.businessTypeId, article.businessTypeId)
-            && Objects.equals(this.problemTypeId, article.problemTypeId);
+        Article that = (Article) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.productTypeId, that.productTypeId)
+            && Objects.equals(this.businessTypeId, that.businessTypeId)
+            && Objects.equals(this.problemTypeId, that.problemTypeId);
     }
 
     @Override

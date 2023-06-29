@@ -162,21 +162,18 @@ public class BatchCreateSubNetworkInterfaceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateSubNetworkInterfaceOption batchCreateSubNetworkInterfaceOption =
-            (BatchCreateSubNetworkInterfaceOption) o;
-        return Objects.equals(this.virsubnetId, batchCreateSubNetworkInterfaceOption.virsubnetId)
-            && Objects.equals(this.parentId, batchCreateSubNetworkInterfaceOption.parentId)
-            && Objects.equals(this.securityGroups, batchCreateSubNetworkInterfaceOption.securityGroups)
-            && Objects.equals(this.description, batchCreateSubNetworkInterfaceOption.description)
-            && Objects.equals(this.ipv6Enable, batchCreateSubNetworkInterfaceOption.ipv6Enable)
-            && Objects.equals(this.projectId, batchCreateSubNetworkInterfaceOption.projectId);
+        BatchCreateSubNetworkInterfaceOption that = (BatchCreateSubNetworkInterfaceOption) obj;
+        return Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

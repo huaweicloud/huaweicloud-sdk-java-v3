@@ -193,21 +193,18 @@ public class ListPlaybookVersionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookVersionsResponse listPlaybookVersionsResponse = (ListPlaybookVersionsResponse) o;
-        return Objects.equals(this.code, listPlaybookVersionsResponse.code)
-            && Objects.equals(this.message, listPlaybookVersionsResponse.message)
-            && Objects.equals(this.size, listPlaybookVersionsResponse.size)
-            && Objects.equals(this.page, listPlaybookVersionsResponse.page)
-            && Objects.equals(this.total, listPlaybookVersionsResponse.total)
-            && Objects.equals(this.data, listPlaybookVersionsResponse.data)
-            && Objects.equals(this.xRequestId, listPlaybookVersionsResponse.xRequestId);
+        ListPlaybookVersionsResponse that = (ListPlaybookVersionsResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

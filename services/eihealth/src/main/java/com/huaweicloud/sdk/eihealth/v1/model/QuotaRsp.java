@@ -99,16 +99,16 @@ public class QuotaRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaRsp quotaRsp = (QuotaRsp) o;
-        return Objects.equals(this.name, quotaRsp.name) && Objects.equals(this.total, quotaRsp.total)
-            && Objects.equals(this.unit, quotaRsp.unit) && Objects.equals(this.usage, quotaRsp.usage);
+        QuotaRsp that = (QuotaRsp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.usage, that.usage);
     }
 
     @Override

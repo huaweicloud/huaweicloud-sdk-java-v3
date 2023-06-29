@@ -67,16 +67,15 @@ public class UpdateTempRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTempRequest updateTempRequest = (UpdateTempRequest) o;
-        return Objects.equals(this.templateId, updateTempRequest.templateId)
-            && Objects.equals(this.body, updateTempRequest.body);
+        UpdateTempRequest that = (UpdateTempRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.body, that.body);
     }
 
     @Override

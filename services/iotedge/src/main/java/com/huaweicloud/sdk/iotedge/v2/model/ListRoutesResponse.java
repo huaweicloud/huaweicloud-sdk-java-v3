@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.RouterDetailRespDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListRoutesResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "routes")
+
+    private List<RouterDetailRespDTO> routes = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="routes")
-    
-    private List<RouterDetailRespDTO> routes = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -39,9 +29,8 @@ public class ListRoutesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListRoutesResponse addRoutesItem(RouterDetailRespDTO routesItem) {
-        if(this.routes == null) {
+        if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
         this.routes.add(routesItem);
@@ -49,7 +38,7 @@ public class ListRoutesResponse extends SdkResponse {
     }
 
     public ListRoutesResponse withRoutes(Consumer<List<RouterDetailRespDTO>> routesSetter) {
-        if(this.routes == null) {
+        if (this.routes == null) {
             this.routes = new ArrayList<>();
         }
         routesSetter.accept(this.routes);
@@ -68,15 +57,10 @@ public class ListRoutesResponse extends SdkResponse {
         this.routes = routes;
     }
 
-    
-
     public ListRoutesResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -90,24 +74,23 @@ public class ListRoutesResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRoutesResponse listRoutesResponse = (ListRoutesResponse) o;
-        return Objects.equals(this.routes, listRoutesResponse.routes) &&
-            Objects.equals(this.updateTime, listRoutesResponse.updateTime);
+        ListRoutesResponse that = (ListRoutesResponse) obj;
+        return Objects.equals(this.routes, that.routes) && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(routes, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListRoutesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListRoutesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

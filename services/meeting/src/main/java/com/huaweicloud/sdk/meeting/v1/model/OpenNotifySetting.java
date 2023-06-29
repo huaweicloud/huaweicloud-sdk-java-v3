@@ -77,17 +77,16 @@ public class OpenNotifySetting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenNotifySetting openNotifySetting = (OpenNotifySetting) o;
-        return Objects.equals(this.enableCalendar, openNotifySetting.enableCalendar)
-            && Objects.equals(this.enableSms, openNotifySetting.enableSms)
-            && Objects.equals(this.enableEmail, openNotifySetting.enableEmail);
+        OpenNotifySetting that = (OpenNotifySetting) obj;
+        return Objects.equals(this.enableCalendar, that.enableCalendar)
+            && Objects.equals(this.enableSms, that.enableSms) && Objects.equals(this.enableEmail, that.enableEmail);
     }
 
     @Override

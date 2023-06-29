@@ -96,17 +96,16 @@ public class AssociatePolicyGroupRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociatePolicyGroupRequestInfo associatePolicyGroupRequestInfo = (AssociatePolicyGroupRequestInfo) o;
-        return Objects.equals(this.targetPolicyGroupId, associatePolicyGroupRequestInfo.targetPolicyGroupId)
-            && Objects.equals(this.operateAll, associatePolicyGroupRequestInfo.operateAll)
-            && Objects.equals(this.hostIdList, associatePolicyGroupRequestInfo.hostIdList);
+        AssociatePolicyGroupRequestInfo that = (AssociatePolicyGroupRequestInfo) obj;
+        return Objects.equals(this.targetPolicyGroupId, that.targetPolicyGroupId)
+            && Objects.equals(this.operateAll, that.operateAll) && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override

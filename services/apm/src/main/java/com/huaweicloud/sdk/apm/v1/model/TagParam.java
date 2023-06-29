@@ -440,24 +440,23 @@ public class TagParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagParam tagParam = (TagParam) o;
-        return Objects.equals(this.tagId, tagParam.tagId) && Objects.equals(this.tagName, tagParam.tagName)
-            && Objects.equals(this.envId, tagParam.envId) && Objects.equals(this.descp, tagParam.descp)
-            && Objects.equals(this.businessId, tagParam.businessId)
-            && Objects.equals(this.envIdList, tagParam.envIdList) && Objects.equals(this.tagIdList, tagParam.tagIdList)
-            && Objects.equals(this.keyword, tagParam.keyword) && Objects.equals(this.pageEnable, tagParam.pageEnable)
-            && Objects.equals(this.pageNumber, tagParam.pageNumber) && Objects.equals(this.pageSize, tagParam.pageSize)
-            && Objects.equals(this.addEnvIdList, tagParam.addEnvIdList)
-            && Objects.equals(this.addTagIdList, tagParam.addTagIdList)
-            && Objects.equals(this.removeTagIdList, tagParam.removeTagIdList)
-            && Objects.equals(this.removeEnvIdList, tagParam.removeEnvIdList);
+        TagParam that = (TagParam) obj;
+        return Objects.equals(this.tagId, that.tagId) && Objects.equals(this.tagName, that.tagName)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.descp, that.descp)
+            && Objects.equals(this.businessId, that.businessId) && Objects.equals(this.envIdList, that.envIdList)
+            && Objects.equals(this.tagIdList, that.tagIdList) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.pageEnable, that.pageEnable) && Objects.equals(this.pageNumber, that.pageNumber)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.addEnvIdList, that.addEnvIdList)
+            && Objects.equals(this.addTagIdList, that.addTagIdList)
+            && Objects.equals(this.removeTagIdList, that.removeTagIdList)
+            && Objects.equals(this.removeEnvIdList, that.removeEnvIdList);
     }
 
     @Override

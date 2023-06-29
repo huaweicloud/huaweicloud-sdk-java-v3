@@ -33,15 +33,15 @@ public class ModifyInstanceNameReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyInstanceNameReq modifyInstanceNameReq = (ModifyInstanceNameReq) o;
-        return Objects.equals(this.name, modifyInstanceNameReq.name);
+        ModifyInstanceNameReq that = (ModifyInstanceNameReq) obj;
+        return Objects.equals(this.name, that.name);
     }
 
     @Override

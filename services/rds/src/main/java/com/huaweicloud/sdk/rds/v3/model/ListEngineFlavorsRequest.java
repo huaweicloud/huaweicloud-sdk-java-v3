@@ -187,22 +187,20 @@ public class ListEngineFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEngineFlavorsRequest listEngineFlavorsRequest = (ListEngineFlavorsRequest) o;
-        return Objects.equals(this.instanceId, listEngineFlavorsRequest.instanceId)
-            && Objects.equals(this.availabilityZoneIds, listEngineFlavorsRequest.availabilityZoneIds)
-            && Objects.equals(this.haMode, listEngineFlavorsRequest.haMode)
-            && Objects.equals(this.specCodeLike, listEngineFlavorsRequest.specCodeLike)
-            && Objects.equals(this.flavorCategoryType, listEngineFlavorsRequest.flavorCategoryType)
-            && Objects.equals(this.isRhaFlavor, listEngineFlavorsRequest.isRhaFlavor)
-            && Objects.equals(this.offset, listEngineFlavorsRequest.offset)
-            && Objects.equals(this.limit, listEngineFlavorsRequest.limit);
+        ListEngineFlavorsRequest that = (ListEngineFlavorsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.availabilityZoneIds, that.availabilityZoneIds)
+            && Objects.equals(this.haMode, that.haMode) && Objects.equals(this.specCodeLike, that.specCodeLike)
+            && Objects.equals(this.flavorCategoryType, that.flavorCategoryType)
+            && Objects.equals(this.isRhaFlavor, that.isRhaFlavor) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

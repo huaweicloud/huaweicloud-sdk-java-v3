@@ -35,15 +35,15 @@ public class UpdateEndpointOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointOption updateEndpointOption = (UpdateEndpointOption) o;
-        return Objects.equals(this.weight, updateEndpointOption.weight);
+        UpdateEndpointOption that = (UpdateEndpointOption) obj;
+        return Objects.equals(this.weight, that.weight);
     }
 
     @Override

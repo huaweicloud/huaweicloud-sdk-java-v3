@@ -26,7 +26,7 @@ public class CreateDomainsRequestBody {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -43,7 +43,7 @@ public class CreateDomainsRequestBody {
     }
 
     /**
-     * 域名的别名
+     * 网站域名的别名
      * @return alias
      */
     public String getAlias() {
@@ -55,16 +55,15 @@ public class CreateDomainsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDomainsRequestBody createDomainsRequestBody = (CreateDomainsRequestBody) o;
-        return Objects.equals(this.domainName, createDomainsRequestBody.domainName)
-            && Objects.equals(this.alias, createDomainsRequestBody.alias);
+        CreateDomainsRequestBody that = (CreateDomainsRequestBody) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.alias, that.alias);
     }
 
     @Override

@@ -83,22 +83,15 @@ public class SearchResourceSharesReqBody {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceOwnerEnum(value));
         }
 
         public static ResourceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,22 +299,20 @@ public class SearchResourceSharesReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchResourceSharesReqBody searchResourceSharesReqBody = (SearchResourceSharesReqBody) o;
-        return Objects.equals(this.limit, searchResourceSharesReqBody.limit)
-            && Objects.equals(this.name, searchResourceSharesReqBody.name)
-            && Objects.equals(this.marker, searchResourceSharesReqBody.marker)
-            && Objects.equals(this.permissionId, searchResourceSharesReqBody.permissionId)
-            && Objects.equals(this.resourceOwner, searchResourceSharesReqBody.resourceOwner)
-            && Objects.equals(this.resourceShareIds, searchResourceSharesReqBody.resourceShareIds)
-            && Objects.equals(this.resourceShareStatus, searchResourceSharesReqBody.resourceShareStatus)
-            && Objects.equals(this.tagFilters, searchResourceSharesReqBody.tagFilters);
+        SearchResourceSharesReqBody that = (SearchResourceSharesReqBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.permissionId, that.permissionId)
+            && Objects.equals(this.resourceOwner, that.resourceOwner)
+            && Objects.equals(this.resourceShareIds, that.resourceShareIds)
+            && Objects.equals(this.resourceShareStatus, that.resourceShareStatus)
+            && Objects.equals(this.tagFilters, that.tagFilters);
     }
 
     @Override

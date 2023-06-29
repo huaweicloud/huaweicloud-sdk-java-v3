@@ -55,16 +55,15 @@ public class UpdateAcceleratorOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAcceleratorOption updateAcceleratorOption = (UpdateAcceleratorOption) o;
-        return Objects.equals(this.name, updateAcceleratorOption.name)
-            && Objects.equals(this.description, updateAcceleratorOption.description);
+        UpdateAcceleratorOption that = (UpdateAcceleratorOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

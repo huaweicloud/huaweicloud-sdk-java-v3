@@ -104,22 +104,15 @@ public class TemplateResponseBody {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
         }
 
         public static VolumetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,8 +165,8 @@ public class TemplateResponseBody {
     private List<TemplateDisk> disk = null;
 
     /**
-    * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
-    */
+     * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
+     */
     public static final class DataVolumeTypeEnum {
 
         /**
@@ -222,22 +215,15 @@ public class TemplateResponseBody {
             if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataVolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataVolumeTypeEnum(value));
         }
 
         public static DataVolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -625,30 +611,24 @@ public class TemplateResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateResponseBody templateResponseBody = (TemplateResponseBody) o;
-        return Objects.equals(this.id, templateResponseBody.id) && Objects.equals(this.name, templateResponseBody.name)
-            && Objects.equals(this.isTemplate, templateResponseBody.isTemplate)
-            && Objects.equals(this.region, templateResponseBody.region)
-            && Objects.equals(this.projectid, templateResponseBody.projectid)
-            && Objects.equals(this.targetServerName, templateResponseBody.targetServerName)
-            && Objects.equals(this.availabilityZone, templateResponseBody.availabilityZone)
-            && Objects.equals(this.volumetype, templateResponseBody.volumetype)
-            && Objects.equals(this.flavor, templateResponseBody.flavor)
-            && Objects.equals(this.vpc, templateResponseBody.vpc)
-            && Objects.equals(this.nics, templateResponseBody.nics)
-            && Objects.equals(this.securityGroups, templateResponseBody.securityGroups)
-            && Objects.equals(this.publicip, templateResponseBody.publicip)
-            && Objects.equals(this.disk, templateResponseBody.disk)
-            && Objects.equals(this.dataVolumeType, templateResponseBody.dataVolumeType)
-            && Objects.equals(this.targetPassword, templateResponseBody.targetPassword)
-            && Objects.equals(this.imageId, templateResponseBody.imageId);
+        TemplateResponseBody that = (TemplateResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.isTemplate, that.isTemplate) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.targetServerName, that.targetServerName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.publicip, that.publicip)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.dataVolumeType, that.dataVolumeType)
+            && Objects.equals(this.targetPassword, that.targetPassword) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

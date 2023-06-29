@@ -179,17 +179,17 @@ public class Channel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Channel channel = (Channel) o;
-        return Objects.equals(this.name, channel.name) && Objects.equals(this.description, channel.description)
-            && Objects.equals(this.createTime, channel.createTime) && Objects.equals(this.consensus, channel.consensus)
-            && Objects.equals(this.peers, channel.peers) && Objects.equals(this.consensusNodes, channel.consensusNodes);
+        Channel that = (Channel) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.consensus, that.consensus)
+            && Objects.equals(this.peers, that.peers) && Objects.equals(this.consensusNodes, that.consensusNodes);
     }
 
     @Override

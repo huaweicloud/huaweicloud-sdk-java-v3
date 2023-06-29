@@ -107,22 +107,15 @@ public class L7Rule {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -400,22 +393,22 @@ public class L7Rule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        L7Rule l7Rule = (L7Rule) o;
-        return Objects.equals(this.adminStateUp, l7Rule.adminStateUp)
-            && Objects.equals(this.compareType, l7Rule.compareType) && Objects.equals(this.key, l7Rule.key)
-            && Objects.equals(this.projectId, l7Rule.projectId) && Objects.equals(this.type, l7Rule.type)
-            && Objects.equals(this.value, l7Rule.value)
-            && Objects.equals(this.provisioningStatus, l7Rule.provisioningStatus)
-            && Objects.equals(this.invert, l7Rule.invert) && Objects.equals(this.id, l7Rule.id)
-            && Objects.equals(this.conditions, l7Rule.conditions) && Objects.equals(this.createdAt, l7Rule.createdAt)
-            && Objects.equals(this.updatedAt, l7Rule.updatedAt);
+        L7Rule that = (L7Rule) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.compareType, that.compareType) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.value, that.value)
+            && Objects.equals(this.provisioningStatus, that.provisioningStatus)
+            && Objects.equals(this.invert, that.invert) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

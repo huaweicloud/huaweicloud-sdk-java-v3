@@ -20,13 +20,8 @@ public class AccessPolicyObjectInfo {
 
     private String objectId;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "object_name")
-
-    private String objectName;
-
     /**
-     * 对象类型，当前只支持用户类型。 * USER： 用户
+     * 对象类型。 * USER： 用户 * USERGROUP： 用户组
      */
     public static final class ObjectTypeEnum {
 
@@ -35,11 +30,17 @@ public class AccessPolicyObjectInfo {
          */
         public static final ObjectTypeEnum USER = new ObjectTypeEnum("USER");
 
+        /**
+         * Enum USERGROUP for value: "USERGROUP"
+         */
+        public static final ObjectTypeEnum USERGROUP = new ObjectTypeEnum("USERGROUP");
+
         private static final Map<String, ObjectTypeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, ObjectTypeEnum> createStaticFields() {
             Map<String, ObjectTypeEnum> map = new HashMap<>();
             map.put("USER", USER);
+            map.put("USERGROUP", USERGROUP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -64,22 +65,15 @@ public class AccessPolicyObjectInfo {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -101,13 +95,18 @@ public class AccessPolicyObjectInfo {
 
     private ObjectTypeEnum objectType;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "object_name")
+
+    private String objectName;
+
     public AccessPolicyObjectInfo withObjectId(String objectId) {
         this.objectId = objectId;
         return this;
     }
 
     /**
-     * 黑名单中的对象id，目前仅用户对象。
+     * 黑名单中的对象id。
      * @return objectId
      */
     public String getObjectId() {
@@ -118,30 +117,13 @@ public class AccessPolicyObjectInfo {
         this.objectId = objectId;
     }
 
-    public AccessPolicyObjectInfo withObjectName(String objectName) {
-        this.objectName = objectName;
-        return this;
-    }
-
-    /**
-     * 对象名。
-     * @return objectName
-     */
-    public String getObjectName() {
-        return objectName;
-    }
-
-    public void setObjectName(String objectName) {
-        this.objectName = objectName;
-    }
-
     public AccessPolicyObjectInfo withObjectType(ObjectTypeEnum objectType) {
         this.objectType = objectType;
         return this;
     }
 
     /**
-     * 对象类型，当前只支持用户类型。 * USER： 用户
+     * 对象类型。 * USER： 用户 * USERGROUP： 用户组
      * @return objectType
      */
     public ObjectTypeEnum getObjectType() {
@@ -152,23 +134,39 @@ public class AccessPolicyObjectInfo {
         this.objectType = objectType;
     }
 
+    public AccessPolicyObjectInfo withObjectName(String objectName) {
+        this.objectName = objectName;
+        return this;
+    }
+
+    /**
+     * 对象名。后续此参数不会校验。
+     * @return objectName
+     */
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessPolicyObjectInfo accessPolicyObjectInfo = (AccessPolicyObjectInfo) o;
-        return Objects.equals(this.objectId, accessPolicyObjectInfo.objectId)
-            && Objects.equals(this.objectName, accessPolicyObjectInfo.objectName)
-            && Objects.equals(this.objectType, accessPolicyObjectInfo.objectType);
+        AccessPolicyObjectInfo that = (AccessPolicyObjectInfo) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.objectType, that.objectType)
+            && Objects.equals(this.objectName, that.objectName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(objectId, objectName, objectType);
+        return Objects.hash(objectId, objectType, objectName);
     }
 
     @Override
@@ -176,8 +174,8 @@ public class AccessPolicyObjectInfo {
         StringBuilder sb = new StringBuilder();
         sb.append("class AccessPolicyObjectInfo {\n");
         sb.append("    objectId: ").append(toIndentedString(objectId)).append("\n");
-        sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("    objectType: ").append(toIndentedString(objectType)).append("\n");
+        sb.append("    objectName: ").append(toIndentedString(objectName)).append("\n");
         sb.append("}");
         return sb.toString();
     }

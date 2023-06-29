@@ -257,25 +257,20 @@ public class AutoLaunchChangeResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoLaunchChangeResponseInfo autoLaunchChangeResponseInfo = (AutoLaunchChangeResponseInfo) o;
-        return Objects.equals(this.agentId, autoLaunchChangeResponseInfo.agentId)
-            && Objects.equals(this.variationType, autoLaunchChangeResponseInfo.variationType)
-            && Objects.equals(this.type, autoLaunchChangeResponseInfo.type)
-            && Objects.equals(this.hostId, autoLaunchChangeResponseInfo.hostId)
-            && Objects.equals(this.hostName, autoLaunchChangeResponseInfo.hostName)
-            && Objects.equals(this.hostIp, autoLaunchChangeResponseInfo.hostIp)
-            && Objects.equals(this.path, autoLaunchChangeResponseInfo.path)
-            && Objects.equals(this.hash, autoLaunchChangeResponseInfo.hash)
-            && Objects.equals(this.runUser, autoLaunchChangeResponseInfo.runUser)
-            && Objects.equals(this.name, autoLaunchChangeResponseInfo.name)
-            && Objects.equals(this.recentScanTime, autoLaunchChangeResponseInfo.recentScanTime);
+        AutoLaunchChangeResponseInfo that = (AutoLaunchChangeResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.variationType, that.variationType)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.hash, that.hash)
+            && Objects.equals(this.runUser, that.runUser) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

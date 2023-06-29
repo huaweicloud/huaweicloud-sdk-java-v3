@@ -79,17 +79,16 @@ public class ShowDnsNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDnsNameRequest showDnsNameRequest = (ShowDnsNameRequest) o;
-        return Objects.equals(this.instanceId, showDnsNameRequest.instanceId)
-            && Objects.equals(this.xLanguage, showDnsNameRequest.xLanguage)
-            && Objects.equals(this.dnsType, showDnsNameRequest.dnsType);
+        ShowDnsNameRequest that = (ShowDnsNameRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.dnsType, that.dnsType);
     }
 
     @Override

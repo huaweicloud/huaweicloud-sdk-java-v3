@@ -99,18 +99,16 @@ public class UpdateGeoipRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGeoipRuleRequestBody updateGeoipRuleRequestBody = (UpdateGeoipRuleRequestBody) o;
-        return Objects.equals(this.name, updateGeoipRuleRequestBody.name)
-            && Objects.equals(this.description, updateGeoipRuleRequestBody.description)
-            && Objects.equals(this.geoip, updateGeoipRuleRequestBody.geoip)
-            && Objects.equals(this.white, updateGeoipRuleRequestBody.white);
+        UpdateGeoipRuleRequestBody that = (UpdateGeoipRuleRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.geoip, that.geoip) && Objects.equals(this.white, that.white);
     }
 
     @Override

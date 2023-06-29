@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,34 +11,28 @@ import java.util.Objects;
  */
 public class ShowAuditQuotaResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit_quota")
-    
+    @JsonProperty(value = "audit_quota")
 
     private Long auditQuota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cpu")
-    
+    @JsonProperty(value = "cpu")
 
     private Long cpu;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
 
     private Long quota;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private Long ram;
 
@@ -54,9 +40,6 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.auditQuota = auditQuota;
         return this;
     }
-
-    
-
 
     /**
      * 实例当前剩余配额。
@@ -70,15 +53,10 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.auditQuota = auditQuota;
     }
 
-    
-
     public ShowAuditQuotaResponse withCpu(Long cpu) {
         this.cpu = cpu;
         return this;
     }
-
-    
-
 
     /**
      * Cpu当前剩余配额。
@@ -92,15 +70,10 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.cpu = cpu;
     }
 
-    
-
     public ShowAuditQuotaResponse withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 项目Id。
@@ -114,15 +87,10 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    
-
     public ShowAuditQuotaResponse withQuota(Long quota) {
         this.quota = quota;
         return this;
     }
-
-    
-
 
     /**
      * 配额。
@@ -136,15 +104,10 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.quota = quota;
     }
 
-    
-
     public ShowAuditQuotaResponse withRam(Long ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存当前剩余配额
@@ -158,27 +121,25 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         this.ram = ram;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAuditQuotaResponse showAuditQuotaResponse = (ShowAuditQuotaResponse) o;
-        return Objects.equals(this.auditQuota, showAuditQuotaResponse.auditQuota) &&
-            Objects.equals(this.cpu, showAuditQuotaResponse.cpu) &&
-            Objects.equals(this.projectId, showAuditQuotaResponse.projectId) &&
-            Objects.equals(this.quota, showAuditQuotaResponse.quota) &&
-            Objects.equals(this.ram, showAuditQuotaResponse.ram);
+        ShowAuditQuotaResponse that = (ShowAuditQuotaResponse) obj;
+        return Objects.equals(this.auditQuota, that.auditQuota) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.ram, that.ram);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(auditQuota, cpu, projectId, quota, ram);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -191,6 +152,7 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -201,8 +163,5 @@ public class ShowAuditQuotaResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

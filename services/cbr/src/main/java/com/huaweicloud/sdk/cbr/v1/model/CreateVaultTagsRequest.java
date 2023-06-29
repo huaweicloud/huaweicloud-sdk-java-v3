@@ -65,16 +65,15 @@ public class CreateVaultTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVaultTagsRequest createVaultTagsRequest = (CreateVaultTagsRequest) o;
-        return Objects.equals(this.vaultId, createVaultTagsRequest.vaultId)
-            && Objects.equals(this.body, createVaultTagsRequest.body);
+        CreateVaultTagsRequest that = (CreateVaultTagsRequest) obj;
+        return Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.body, that.body);
     }
 
     @Override

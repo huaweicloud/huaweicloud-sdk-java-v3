@@ -55,16 +55,15 @@ public class DeleteV2XEdgeByV2xEdgeIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteV2XEdgeByV2xEdgeIdRequest deleteV2XEdgeByV2xEdgeIdRequest = (DeleteV2XEdgeByV2xEdgeIdRequest) o;
-        return Objects.equals(this.instanceId, deleteV2XEdgeByV2xEdgeIdRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, deleteV2XEdgeByV2xEdgeIdRequest.v2xEdgeId);
+        DeleteV2XEdgeByV2xEdgeIdRequest that = (DeleteV2XEdgeByV2xEdgeIdRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId);
     }
 
     @Override

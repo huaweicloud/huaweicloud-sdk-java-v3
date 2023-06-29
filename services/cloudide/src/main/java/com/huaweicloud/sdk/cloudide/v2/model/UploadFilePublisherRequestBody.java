@@ -307,25 +307,21 @@ public class UploadFilePublisherRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadFilePublisherRequestBody uploadFilePublisherRequestBody = (UploadFilePublisherRequestBody) o;
-        return Objects.equals(this.file, uploadFilePublisherRequestBody.file)
-            && Objects.equals(this.publisherId, uploadFilePublisherRequestBody.publisherId)
-            && Objects.equals(this.chunkIndex, uploadFilePublisherRequestBody.chunkIndex)
-            && Objects.equals(this.merge, uploadFilePublisherRequestBody.merge)
-            && Objects.equals(this.totalChunkNum, uploadFilePublisherRequestBody.totalChunkNum)
-            && Objects.equals(this.parentFileSize, uploadFilePublisherRequestBody.parentFileSize)
-            && Objects.equals(this.parentFileName, uploadFilePublisherRequestBody.parentFileName)
-            && Objects.equals(this.override, uploadFilePublisherRequestBody.override)
-            && Objects.equals(this.chunkMd5, uploadFilePublisherRequestBody.chunkMd5)
-            && Objects.equals(this.parentFileSha256, uploadFilePublisherRequestBody.parentFileSha256)
-            && Objects.equals(this.taskId, uploadFilePublisherRequestBody.taskId);
+        UploadFilePublisherRequestBody that = (UploadFilePublisherRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.publisherId, that.publisherId)
+            && Objects.equals(this.chunkIndex, that.chunkIndex) && Objects.equals(this.merge, that.merge)
+            && Objects.equals(this.totalChunkNum, that.totalChunkNum)
+            && Objects.equals(this.parentFileSize, that.parentFileSize)
+            && Objects.equals(this.parentFileName, that.parentFileName) && Objects.equals(this.override, that.override)
+            && Objects.equals(this.chunkMd5, that.chunkMd5)
+            && Objects.equals(this.parentFileSha256, that.parentFileSha256) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

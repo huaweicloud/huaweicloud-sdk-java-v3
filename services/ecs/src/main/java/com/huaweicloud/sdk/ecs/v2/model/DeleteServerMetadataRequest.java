@@ -55,16 +55,15 @@ public class DeleteServerMetadataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteServerMetadataRequest deleteServerMetadataRequest = (DeleteServerMetadataRequest) o;
-        return Objects.equals(this.key, deleteServerMetadataRequest.key)
-            && Objects.equals(this.serverId, deleteServerMetadataRequest.serverId);
+        DeleteServerMetadataRequest that = (DeleteServerMetadataRequest) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

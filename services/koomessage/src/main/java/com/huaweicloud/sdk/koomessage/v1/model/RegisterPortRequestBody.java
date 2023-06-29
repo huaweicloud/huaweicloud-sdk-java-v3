@@ -160,19 +160,17 @@ public class RegisterPortRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterPortRequestBody registerPortRequestBody = (RegisterPortRequestBody) o;
-        return Objects.equals(this.port, registerPortRequestBody.port)
-            && Objects.equals(this.portType, registerPortRequestBody.portType)
-            && Objects.equals(this.sign, registerPortRequestBody.sign)
-            && Objects.equals(this.signCheck, registerPortRequestBody.signCheck)
-            && Objects.equals(this.authorizationFiles, registerPortRequestBody.authorizationFiles);
+        RegisterPortRequestBody that = (RegisterPortRequestBody) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.portType, that.portType)
+            && Objects.equals(this.sign, that.sign) && Objects.equals(this.signCheck, that.signCheck)
+            && Objects.equals(this.authorizationFiles, that.authorizationFiles);
     }
 
     @Override

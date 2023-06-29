@@ -128,17 +128,17 @@ public class EnvironmentResourceModify {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnvironmentResourceModify environmentResourceModify = (EnvironmentResourceModify) o;
-        return Objects.equals(this.addBaseResources, environmentResourceModify.addBaseResources)
-            && Objects.equals(this.addOptionalResources, environmentResourceModify.addOptionalResources)
-            && Objects.equals(this.removeResources, environmentResourceModify.removeResources);
+        EnvironmentResourceModify that = (EnvironmentResourceModify) obj;
+        return Objects.equals(this.addBaseResources, that.addBaseResources)
+            && Objects.equals(this.addOptionalResources, that.addOptionalResources)
+            && Objects.equals(this.removeResources, that.removeResources);
     }
 
     @Override

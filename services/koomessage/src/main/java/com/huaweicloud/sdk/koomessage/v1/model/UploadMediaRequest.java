@@ -43,15 +43,15 @@ public class UploadMediaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMediaRequest uploadMediaRequest = (UploadMediaRequest) o;
-        return Objects.equals(this.body, uploadMediaRequest.body);
+        UploadMediaRequest that = (UploadMediaRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

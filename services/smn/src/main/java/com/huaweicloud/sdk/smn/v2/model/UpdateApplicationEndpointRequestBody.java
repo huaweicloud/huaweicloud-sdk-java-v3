@@ -55,17 +55,15 @@ public class UpdateApplicationEndpointRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateApplicationEndpointRequestBody updateApplicationEndpointRequestBody =
-            (UpdateApplicationEndpointRequestBody) o;
-        return Objects.equals(this.enabled, updateApplicationEndpointRequestBody.enabled)
-            && Objects.equals(this.userData, updateApplicationEndpointRequestBody.userData);
+        UpdateApplicationEndpointRequestBody that = (UpdateApplicationEndpointRequestBody) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

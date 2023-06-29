@@ -275,26 +275,20 @@ public class SqlJobRunDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlJobRunDetail sqlJobRunDetail = (SqlJobRunDetail) o;
-        return Objects.equals(this.sqlType, sqlJobRunDetail.sqlType)
-            && Objects.equals(this.startTime, sqlJobRunDetail.startTime)
-            && Objects.equals(this.duration, sqlJobRunDetail.duration)
-            && Objects.equals(this.inputRowCount, sqlJobRunDetail.inputRowCount)
-            && Objects.equals(this.badRowCount, sqlJobRunDetail.badRowCount)
-            && Objects.equals(this.inputSize, sqlJobRunDetail.inputSize)
-            && Objects.equals(this.resultCount, sqlJobRunDetail.resultCount)
-            && Objects.equals(this.tableName, sqlJobRunDetail.tableName)
-            && Objects.equals(this.withColumnHeader, sqlJobRunDetail.withColumnHeader)
-            && Objects.equals(this.detail, sqlJobRunDetail.detail)
-            && Objects.equals(this.statement, sqlJobRunDetail.statement)
-            && Objects.equals(this.message, sqlJobRunDetail.message);
+        SqlJobRunDetail that = (SqlJobRunDetail) obj;
+        return Objects.equals(this.sqlType, that.sqlType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.inputRowCount, that.inputRowCount)
+            && Objects.equals(this.badRowCount, that.badRowCount) && Objects.equals(this.inputSize, that.inputSize)
+            && Objects.equals(this.resultCount, that.resultCount) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader) && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.statement, that.statement) && Objects.equals(this.message, that.message);
     }
 
     @Override

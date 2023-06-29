@@ -65,16 +65,15 @@ public class CreateCommonTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommonTaskRequestBody createCommonTaskRequestBody = (CreateCommonTaskRequestBody) o;
-        return Objects.equals(this.task, createCommonTaskRequestBody.task)
-            && Objects.equals(this.taskDetail, createCommonTaskRequestBody.taskDetail);
+        CreateCommonTaskRequestBody that = (CreateCommonTaskRequestBody) obj;
+        return Objects.equals(this.task, that.task) && Objects.equals(this.taskDetail, that.taskDetail);
     }
 
     @Override

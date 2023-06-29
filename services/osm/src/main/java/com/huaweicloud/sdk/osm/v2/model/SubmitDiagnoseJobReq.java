@@ -98,17 +98,16 @@ public class SubmitDiagnoseJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubmitDiagnoseJobReq submitDiagnoseJobReq = (SubmitDiagnoseJobReq) o;
-        return Objects.equals(this.type, submitDiagnoseJobReq.type)
-            && Objects.equals(this.params, submitDiagnoseJobReq.params)
-            && Objects.equals(this.regionId, submitDiagnoseJobReq.regionId);
+        SubmitDiagnoseJobReq that = (SubmitDiagnoseJobReq) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.params, that.params)
+            && Objects.equals(this.regionId, that.regionId);
     }
 
     @Override

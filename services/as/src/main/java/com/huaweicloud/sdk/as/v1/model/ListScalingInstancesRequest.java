@@ -95,22 +95,15 @@ public class ListScalingInstancesRequest {
             if (value == null) {
                 return null;
             }
-            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LifeCycleStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LifeCycleStateEnum(value));
         }
 
         public static LifeCycleStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LifeCycleStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ListScalingInstancesRequest {
             if (value == null) {
                 return null;
             }
-            HealthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HealthStatusEnum(value));
         }
 
         public static HealthStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,16 @@ public class ListScalingInstancesRequest {
             if (value == null) {
                 return null;
             }
-            ProtectFromScalingDownEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectFromScalingDownEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new ProtectFromScalingDownEnum(value));
         }
 
         public static ProtectFromScalingDownEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectFromScalingDownEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -415,20 +395,19 @@ public class ListScalingInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScalingInstancesRequest listScalingInstancesRequest = (ListScalingInstancesRequest) o;
-        return Objects.equals(this.scalingGroupId, listScalingInstancesRequest.scalingGroupId)
-            && Objects.equals(this.lifeCycleState, listScalingInstancesRequest.lifeCycleState)
-            && Objects.equals(this.healthStatus, listScalingInstancesRequest.healthStatus)
-            && Objects.equals(this.protectFromScalingDown, listScalingInstancesRequest.protectFromScalingDown)
-            && Objects.equals(this.startNumber, listScalingInstancesRequest.startNumber)
-            && Objects.equals(this.limit, listScalingInstancesRequest.limit);
+        ListScalingInstancesRequest that = (ListScalingInstancesRequest) obj;
+        return Objects.equals(this.scalingGroupId, that.scalingGroupId)
+            && Objects.equals(this.lifeCycleState, that.lifeCycleState)
+            && Objects.equals(this.healthStatus, that.healthStatus)
+            && Objects.equals(this.protectFromScalingDown, that.protectFromScalingDown)
+            && Objects.equals(this.startNumber, that.startNumber) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

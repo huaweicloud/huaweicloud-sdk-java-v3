@@ -74,16 +74,15 @@ public class AdmetWithCustomRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdmetWithCustomRequest admetWithCustomRequest = (AdmetWithCustomRequest) o;
-        return Objects.equals(this.smiles, admetWithCustomRequest.smiles)
-            && Objects.equals(this.customProps, admetWithCustomRequest.customProps);
+        AdmetWithCustomRequest that = (AdmetWithCustomRequest) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.customProps, that.customProps);
     }
 
     @Override

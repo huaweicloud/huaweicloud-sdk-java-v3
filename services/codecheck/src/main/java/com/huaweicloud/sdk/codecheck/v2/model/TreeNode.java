@@ -99,17 +99,16 @@ public class TreeNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TreeNode treeNode = (TreeNode) o;
-        return Objects.equals(this.fileName, treeNode.fileName) && Objects.equals(this.filePath, treeNode.filePath)
-            && Objects.equals(this.isLeaf, treeNode.isLeaf)
-            && Objects.equals(this.checkboxStatus, treeNode.checkboxStatus);
+        TreeNode that = (TreeNode) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.isLeaf, that.isLeaf) && Objects.equals(this.checkboxStatus, that.checkboxStatus);
     }
 
     @Override

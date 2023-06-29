@@ -209,23 +209,19 @@ public class CodeSourceParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeSourceParams codeSourceParams = (CodeSourceParams) o;
-        return Objects.equals(this.gitType, codeSourceParams.gitType)
-            && Objects.equals(this.codehubId, codeSourceParams.codehubId)
-            && Objects.equals(this.endpointId, codeSourceParams.endpointId)
-            && Objects.equals(this.defaultBranch, codeSourceParams.defaultBranch)
-            && Objects.equals(this.gitUrl, codeSourceParams.gitUrl)
-            && Objects.equals(this.sshGitUrl, codeSourceParams.sshGitUrl)
-            && Objects.equals(this.webUrl, codeSourceParams.webUrl)
-            && Objects.equals(this.repoName, codeSourceParams.repoName)
-            && Objects.equals(this.alias, codeSourceParams.alias);
+        CodeSourceParams that = (CodeSourceParams) obj;
+        return Objects.equals(this.gitType, that.gitType) && Objects.equals(this.codehubId, that.codehubId)
+            && Objects.equals(this.endpointId, that.endpointId)
+            && Objects.equals(this.defaultBranch, that.defaultBranch) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.sshGitUrl, that.sshGitUrl) && Objects.equals(this.webUrl, that.webUrl)
+            && Objects.equals(this.repoName, that.repoName) && Objects.equals(this.alias, that.alias);
     }
 
     @Override

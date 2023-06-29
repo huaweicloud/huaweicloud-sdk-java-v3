@@ -125,22 +125,15 @@ public class LdDatasourceCreate {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -307,19 +300,18 @@ public class LdDatasourceCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdDatasourceCreate ldDatasourceCreate = (LdDatasourceCreate) o;
-        return Objects.equals(this.name, ldDatasourceCreate.name) && Objects.equals(this.type, ldDatasourceCreate.type)
-            && Objects.equals(this.description, ldDatasourceCreate.description)
-            && Objects.equals(this.url, ldDatasourceCreate.url) && Objects.equals(this.user, ldDatasourceCreate.user)
-            && Objects.equals(this.password, ldDatasourceCreate.password)
-            && Objects.equals(this.remotepath, ldDatasourceCreate.remotepath);
+        LdDatasourceCreate that = (LdDatasourceCreate) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.user, that.user) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.remotepath, that.remotepath);
     }
 
     @Override

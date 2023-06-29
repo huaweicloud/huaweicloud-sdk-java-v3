@@ -79,17 +79,16 @@ public class ListHooksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHooksRequest listHooksRequest = (ListHooksRequest) o;
-        return Objects.equals(this.xRepoAuth, listHooksRequest.xRepoAuth)
-            && Objects.equals(this.namespace, listHooksRequest.namespace)
-            && Objects.equals(this.project, listHooksRequest.project);
+        ListHooksRequest that = (ListHooksRequest) obj;
+        return Objects.equals(this.xRepoAuth, that.xRepoAuth) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.project, that.project);
     }
 
     @Override

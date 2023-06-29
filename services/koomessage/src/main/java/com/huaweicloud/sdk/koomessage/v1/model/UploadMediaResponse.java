@@ -44,15 +44,15 @@ public class UploadMediaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadMediaResponse uploadMediaResponse = (UploadMediaResponse) o;
-        return Objects.equals(this.data, uploadMediaResponse.data);
+        UploadMediaResponse that = (UploadMediaResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

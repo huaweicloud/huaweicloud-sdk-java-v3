@@ -33,15 +33,15 @@ public class DeleteSubNetworkInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSubNetworkInterfaceRequest deleteSubNetworkInterfaceRequest = (DeleteSubNetworkInterfaceRequest) o;
-        return Objects.equals(this.subNetworkInterfaceId, deleteSubNetworkInterfaceRequest.subNetworkInterfaceId);
+        DeleteSubNetworkInterfaceRequest that = (DeleteSubNetworkInterfaceRequest) obj;
+        return Objects.equals(this.subNetworkInterfaceId, that.subNetworkInterfaceId);
     }
 
     @Override

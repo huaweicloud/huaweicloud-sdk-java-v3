@@ -143,20 +143,18 @@ public class PolicyFilterDefinition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyFilterDefinition policyFilterDefinition = (PolicyFilterDefinition) o;
-        return Objects.equals(this.regionId, policyFilterDefinition.regionId)
-            && Objects.equals(this.resourceProvider, policyFilterDefinition.resourceProvider)
-            && Objects.equals(this.resourceType, policyFilterDefinition.resourceType)
-            && Objects.equals(this.resourceId, policyFilterDefinition.resourceId)
-            && Objects.equals(this.tagKey, policyFilterDefinition.tagKey)
-            && Objects.equals(this.tagValue, policyFilterDefinition.tagValue);
+        PolicyFilterDefinition that = (PolicyFilterDefinition) obj;
+        return Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.tagKey, that.tagKey) && Objects.equals(this.tagValue, that.tagValue);
     }
 
     @Override

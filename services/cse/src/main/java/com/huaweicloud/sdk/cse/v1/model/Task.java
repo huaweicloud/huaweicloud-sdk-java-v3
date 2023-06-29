@@ -83,22 +83,15 @@ public class Task {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,22 +196,15 @@ public class Task {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -562,23 +548,23 @@ public class Task {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Task task = (Task) o;
-        return Objects.equals(this.jobId, task.jobId) && Objects.equals(this.id, task.id)
-            && Objects.equals(this.type, task.type) && Objects.equals(this.assigned, task.assigned)
-            && Objects.equals(this.taskName, task.taskName) && Objects.equals(this.engineName, task.engineName)
-            && Objects.equals(this.taskOrder, task.taskOrder) && Objects.equals(this.status, task.status)
-            && Objects.equals(this.startTime, task.startTime) && Objects.equals(this.endTime, task.endTime)
-            && Objects.equals(this.createTime, task.createTime) && Objects.equals(this.updateTime, task.updateTime)
-            && Objects.equals(this.timeout, task.timeout) && Objects.equals(this.log, task.log)
-            && Objects.equals(this.output, task.output)
-            && Objects.equals(this.taskExecutorBrief, task.taskExecutorBrief);
+        Task that = (Task) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.assigned, that.assigned)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.taskOrder, that.taskOrder) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.log, that.log)
+            && Objects.equals(this.output, that.output)
+            && Objects.equals(this.taskExecutorBrief, that.taskExecutorBrief);
     }
 
     @Override

@@ -317,26 +317,23 @@ public class NeutronFirewallGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronFirewallGroup neutronFirewallGroup = (NeutronFirewallGroup) o;
-        return Objects.equals(this.id, neutronFirewallGroup.id) && Objects.equals(this.name, neutronFirewallGroup.name)
-            && Objects.equals(this.description, neutronFirewallGroup.description)
-            && Objects.equals(this.adminStateUp, neutronFirewallGroup.adminStateUp)
-            && Objects.equals(this.egressFirewallPolicyId, neutronFirewallGroup.egressFirewallPolicyId)
-            && Objects.equals(this.ingressFirewallPolicyId, neutronFirewallGroup.ingressFirewallPolicyId)
-            && Objects.equals(this.ports, neutronFirewallGroup.ports)
-            && Objects.equals(this._public, neutronFirewallGroup._public)
-            && Objects.equals(this.status, neutronFirewallGroup.status)
-            && Objects.equals(this.tenantId, neutronFirewallGroup.tenantId)
-            && Objects.equals(this.projectId, neutronFirewallGroup.projectId)
-            && Objects.equals(this.createdAt, neutronFirewallGroup.createdAt)
-            && Objects.equals(this.updatedAt, neutronFirewallGroup.updatedAt);
+        NeutronFirewallGroup that = (NeutronFirewallGroup) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.egressFirewallPolicyId, that.egressFirewallPolicyId)
+            && Objects.equals(this.ingressFirewallPolicyId, that.ingressFirewallPolicyId)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this._public, that._public)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

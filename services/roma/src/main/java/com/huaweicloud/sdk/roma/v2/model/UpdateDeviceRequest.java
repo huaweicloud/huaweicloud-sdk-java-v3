@@ -89,17 +89,16 @@ public class UpdateDeviceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDeviceRequest updateDeviceRequest = (UpdateDeviceRequest) o;
-        return Objects.equals(this.instanceId, updateDeviceRequest.instanceId)
-            && Objects.equals(this.deviceId, updateDeviceRequest.deviceId)
-            && Objects.equals(this.body, updateDeviceRequest.body);
+        UpdateDeviceRequest that = (UpdateDeviceRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

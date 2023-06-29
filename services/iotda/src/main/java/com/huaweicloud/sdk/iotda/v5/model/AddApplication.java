@@ -33,15 +33,15 @@ public class AddApplication {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddApplication addApplication = (AddApplication) o;
-        return Objects.equals(this.appName, addApplication.appName);
+        AddApplication that = (AddApplication) obj;
+        return Objects.equals(this.appName, that.appName);
     }
 
     @Override

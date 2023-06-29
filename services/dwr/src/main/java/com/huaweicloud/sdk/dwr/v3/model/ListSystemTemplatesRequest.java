@@ -103,18 +103,16 @@ public class ListSystemTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemTemplatesRequest listSystemTemplatesRequest = (ListSystemTemplatesRequest) o;
-        return Objects.equals(this.prefix, listSystemTemplatesRequest.prefix)
-            && Objects.equals(this.category, listSystemTemplatesRequest.category)
-            && Objects.equals(this.offset, listSystemTemplatesRequest.offset)
-            && Objects.equals(this.limit, listSystemTemplatesRequest.limit);
+        ListSystemTemplatesRequest that = (ListSystemTemplatesRequest) obj;
+        return Objects.equals(this.prefix, that.prefix) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

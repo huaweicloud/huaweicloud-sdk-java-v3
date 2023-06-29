@@ -65,16 +65,15 @@ public class CreateSubscriptionTargetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubscriptionTargetRequest createSubscriptionTargetRequest = (CreateSubscriptionTargetRequest) o;
-        return Objects.equals(this.subscriptionId, createSubscriptionTargetRequest.subscriptionId)
-            && Objects.equals(this.body, createSubscriptionTargetRequest.body);
+        CreateSubscriptionTargetRequest that = (CreateSubscriptionTargetRequest) obj;
+        return Objects.equals(this.subscriptionId, that.subscriptionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

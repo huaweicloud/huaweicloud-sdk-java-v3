@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class CreateConfigurationTemplateResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_at")
-    
+    @JsonProperty(value = "created_at")
 
     private String createdAt;
 
@@ -42,9 +30,6 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板ID。
@@ -58,15 +43,10 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public CreateConfigurationTemplateResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 参数模板名称。
@@ -80,15 +60,10 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public CreateConfigurationTemplateResponse withCreatedAt(String createdAt) {
         this.createdAt = createdAt;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为“yyyy-mm-ddThh:mm:ssZ”。 其中，T指某个时间的开始；Z指时区偏移量，例如北京时间偏移显示为+0800。
@@ -102,25 +77,24 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         this.createdAt = createdAt;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateConfigurationTemplateResponse createConfigurationTemplateResponse = (CreateConfigurationTemplateResponse) o;
-        return Objects.equals(this.id, createConfigurationTemplateResponse.id) &&
-            Objects.equals(this.name, createConfigurationTemplateResponse.name) &&
-            Objects.equals(this.createdAt, createConfigurationTemplateResponse.createdAt);
+        CreateConfigurationTemplateResponse that = (CreateConfigurationTemplateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, createdAt);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class CreateConfigurationTemplateResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

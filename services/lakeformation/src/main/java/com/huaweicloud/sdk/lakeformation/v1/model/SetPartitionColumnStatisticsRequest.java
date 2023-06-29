@@ -131,20 +131,17 @@ public class SetPartitionColumnStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetPartitionColumnStatisticsRequest setPartitionColumnStatisticsRequest =
-            (SetPartitionColumnStatisticsRequest) o;
-        return Objects.equals(this.instanceId, setPartitionColumnStatisticsRequest.instanceId)
-            && Objects.equals(this.catalogName, setPartitionColumnStatisticsRequest.catalogName)
-            && Objects.equals(this.databaseName, setPartitionColumnStatisticsRequest.databaseName)
-            && Objects.equals(this.tableName, setPartitionColumnStatisticsRequest.tableName)
-            && Objects.equals(this.body, setPartitionColumnStatisticsRequest.body);
+        SetPartitionColumnStatisticsRequest that = (SetPartitionColumnStatisticsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

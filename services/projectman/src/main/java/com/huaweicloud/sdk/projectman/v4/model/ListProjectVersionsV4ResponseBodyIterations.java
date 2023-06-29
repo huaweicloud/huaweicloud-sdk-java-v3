@@ -187,23 +187,18 @@ public class ListProjectVersionsV4ResponseBodyIterations {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProjectVersionsV4ResponseBodyIterations listProjectVersionsV4ResponseBodyIterations =
-            (ListProjectVersionsV4ResponseBodyIterations) o;
-        return Objects.equals(this.description, listProjectVersionsV4ResponseBodyIterations.description)
-            && Objects.equals(this.endTime, listProjectVersionsV4ResponseBodyIterations.endTime)
-            && Objects.equals(this.id, listProjectVersionsV4ResponseBodyIterations.id)
-            && Objects.equals(this.name, listProjectVersionsV4ResponseBodyIterations.name)
-            && Objects.equals(this.beginTime, listProjectVersionsV4ResponseBodyIterations.beginTime)
-            && Objects.equals(this.status, listProjectVersionsV4ResponseBodyIterations.status)
-            && Objects.equals(this.updatedTime, listProjectVersionsV4ResponseBodyIterations.updatedTime)
-            && Objects.equals(this.deleted, listProjectVersionsV4ResponseBodyIterations.deleted);
+        ListProjectVersionsV4ResponseBodyIterations that = (ListProjectVersionsV4ResponseBodyIterations) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.deleted, that.deleted);
     }
 
     @Override

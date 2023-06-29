@@ -145,17 +145,17 @@ public class Volume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Volume volume = (Volume) o;
-        return Objects.equals(this.volumeName, volume.volumeName) && Objects.equals(this.volumeId, volume.volumeId)
-            && Objects.equals(this.volumeSize, volume.volumeSize) && Objects.equals(this.volumeType, volume.volumeType)
-            && Objects.equals(this.createTime, volume.createTime) && Objects.equals(this.updateTime, volume.updateTime);
+        Volume that = (Volume) obj;
+        return Objects.equals(this.volumeName, that.volumeName) && Objects.equals(this.volumeId, that.volumeId)
+            && Objects.equals(this.volumeSize, that.volumeSize) && Objects.equals(this.volumeType, that.volumeType)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

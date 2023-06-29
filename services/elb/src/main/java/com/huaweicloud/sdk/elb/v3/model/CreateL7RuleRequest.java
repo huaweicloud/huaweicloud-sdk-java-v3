@@ -65,16 +65,15 @@ public class CreateL7RuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateL7RuleRequest createL7RuleRequest = (CreateL7RuleRequest) o;
-        return Objects.equals(this.l7policyId, createL7RuleRequest.l7policyId)
-            && Objects.equals(this.body, createL7RuleRequest.body);
+        CreateL7RuleRequest that = (CreateL7RuleRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -217,21 +217,18 @@ public class CfgRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CfgRequestBody cfgRequestBody = (CfgRequestBody) o;
-        return Objects.equals(this.chaincodeName, cfgRequestBody.chaincodeName)
-            && Objects.equals(this.certPath, cfgRequestBody.certPath)
-            && Objects.equals(this.channelName, cfgRequestBody.channelName)
-            && Objects.equals(this.peerOrgs, cfgRequestBody.peerOrgs)
-            && Objects.equals(this.unionInfo, cfgRequestBody.unionInfo)
-            && Objects.equals(this.isMultiChan, cfgRequestBody.isMultiChan)
-            && Objects.equals(this.channelChaincode, cfgRequestBody.channelChaincode);
+        CfgRequestBody that = (CfgRequestBody) obj;
+        return Objects.equals(this.chaincodeName, that.chaincodeName) && Objects.equals(this.certPath, that.certPath)
+            && Objects.equals(this.channelName, that.channelName) && Objects.equals(this.peerOrgs, that.peerOrgs)
+            && Objects.equals(this.unionInfo, that.unionInfo) && Objects.equals(this.isMultiChan, that.isMultiChan)
+            && Objects.equals(this.channelChaincode, that.channelChaincode);
     }
 
     @Override

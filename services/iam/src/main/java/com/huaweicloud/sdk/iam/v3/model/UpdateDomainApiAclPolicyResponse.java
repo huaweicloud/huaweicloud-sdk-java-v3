@@ -44,15 +44,15 @@ public class UpdateDomainApiAclPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainApiAclPolicyResponse updateDomainApiAclPolicyResponse = (UpdateDomainApiAclPolicyResponse) o;
-        return Objects.equals(this.apiAclPolicy, updateDomainApiAclPolicyResponse.apiAclPolicy);
+        UpdateDomainApiAclPolicyResponse that = (UpdateDomainApiAclPolicyResponse) obj;
+        return Objects.equals(this.apiAclPolicy, that.apiAclPolicy);
     }
 
     @Override

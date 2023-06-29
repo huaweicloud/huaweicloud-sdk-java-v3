@@ -44,15 +44,15 @@ public class AssociateVaultPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateVaultPolicyResponse associateVaultPolicyResponse = (AssociateVaultPolicyResponse) o;
-        return Objects.equals(this.associatePolicy, associateVaultPolicyResponse.associatePolicy);
+        AssociateVaultPolicyResponse that = (AssociateVaultPolicyResponse) obj;
+        return Objects.equals(this.associatePolicy, that.associatePolicy);
     }
 
     @Override

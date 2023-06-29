@@ -259,24 +259,20 @@ public class CreateCertificateAuthorityRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateAuthorityRequestBody createCertificateAuthorityRequestBody =
-            (CreateCertificateAuthorityRequestBody) o;
-        return Objects.equals(this.type, createCertificateAuthorityRequestBody.type)
-            && Objects.equals(this.distinguishedName, createCertificateAuthorityRequestBody.distinguishedName)
-            && Objects.equals(this.keyAlgorithm, createCertificateAuthorityRequestBody.keyAlgorithm)
-            && Objects.equals(this.validity, createCertificateAuthorityRequestBody.validity)
-            && Objects.equals(this.issuerId, createCertificateAuthorityRequestBody.issuerId)
-            && Objects.equals(this.pathLength, createCertificateAuthorityRequestBody.pathLength)
-            && Objects.equals(this.signatureAlgorithm, createCertificateAuthorityRequestBody.signatureAlgorithm)
-            && Objects.equals(this.keyUsages, createCertificateAuthorityRequestBody.keyUsages)
-            && Objects.equals(this.crlConfiguration, createCertificateAuthorityRequestBody.crlConfiguration);
+        CreateCertificateAuthorityRequestBody that = (CreateCertificateAuthorityRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.distinguishedName, that.distinguishedName)
+            && Objects.equals(this.keyAlgorithm, that.keyAlgorithm) && Objects.equals(this.validity, that.validity)
+            && Objects.equals(this.issuerId, that.issuerId) && Objects.equals(this.pathLength, that.pathLength)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.keyUsages, that.keyUsages)
+            && Objects.equals(this.crlConfiguration, that.crlConfiguration);
     }
 
     @Override

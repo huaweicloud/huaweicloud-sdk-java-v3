@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.nlp.v2;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.nlp.v2.model.*;
 
 public class NlpClient {
+
     protected HcClient hcClient;
 
     public NlpClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class NlpClient {
     public static ClientBuilder<NlpClient> newBuilder() {
         return new ClientBuilder<>(NlpClient::new, "BasicCredentials");
     }
-
 
     /**
      * 属性级情感分析
@@ -43,8 +43,10 @@ public class NlpClient {
      * @param RunAspectSentimentRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>
      */
-    public SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentimentInvoker(RunAspectSentimentRequest request) {
-        return new SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>(request, NlpMeta.runAspectSentiment, hcClient);
+    public SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse> runAspectSentimentInvoker(
+        RunAspectSentimentRequest request) {
+        return new SyncInvoker<RunAspectSentimentRequest, RunAspectSentimentResponse>(request,
+            NlpMeta.runAspectSentiment, hcClient);
     }
 
     /**
@@ -73,8 +75,10 @@ public class NlpClient {
      * @param RunAspectSentimentAdvanceRequest 请求对象
      * @return SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>
      */
-    public SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceInvoker(RunAspectSentimentAdvanceRequest request) {
-        return new SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>(request, NlpMeta.runAspectSentimentAdvance, hcClient);
+    public SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse> runAspectSentimentAdvanceInvoker(
+        RunAspectSentimentAdvanceRequest request) {
+        return new SyncInvoker<RunAspectSentimentAdvanceRequest, RunAspectSentimentAdvanceResponse>(request,
+            NlpMeta.runAspectSentimentAdvance, hcClient);
     }
 
     /**
@@ -103,8 +107,10 @@ public class NlpClient {
      * @param RunClassificationRequest 请求对象
      * @return SyncInvoker<RunClassificationRequest, RunClassificationResponse>
      */
-    public SyncInvoker<RunClassificationRequest, RunClassificationResponse> runClassificationInvoker(RunClassificationRequest request) {
-        return new SyncInvoker<RunClassificationRequest, RunClassificationResponse>(request, NlpMeta.runClassification, hcClient);
+    public SyncInvoker<RunClassificationRequest, RunClassificationResponse> runClassificationInvoker(
+        RunClassificationRequest request) {
+        return new SyncInvoker<RunClassificationRequest, RunClassificationResponse>(request, NlpMeta.runClassification,
+            hcClient);
     }
 
     /**
@@ -133,8 +139,10 @@ public class NlpClient {
      * @param RunConstituencyParserRequest 请求对象
      * @return SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>
      */
-    public SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserInvoker(RunConstituencyParserRequest request) {
-        return new SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request, NlpMeta.runConstituencyParser, hcClient);
+    public SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse> runConstituencyParserInvoker(
+        RunConstituencyParserRequest request) {
+        return new SyncInvoker<RunConstituencyParserRequest, RunConstituencyParserResponse>(request,
+            NlpMeta.runConstituencyParser, hcClient);
     }
 
     /**
@@ -163,8 +171,10 @@ public class NlpClient {
      * @param RunDependencyParserRequest 请求对象
      * @return SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>
      */
-    public SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParserInvoker(RunDependencyParserRequest request) {
-        return new SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>(request, NlpMeta.runDependencyParser, hcClient);
+    public SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse> runDependencyParserInvoker(
+        RunDependencyParserRequest request) {
+        return new SyncInvoker<RunDependencyParserRequest, RunDependencyParserResponse>(request,
+            NlpMeta.runDependencyParser, hcClient);
     }
 
     /**
@@ -193,8 +203,10 @@ public class NlpClient {
      * @param RunDocClassificationRequest 请求对象
      * @return SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>
      */
-    public SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassificationInvoker(RunDocClassificationRequest request) {
-        return new SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>(request, NlpMeta.runDocClassification, hcClient);
+    public SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse> runDocClassificationInvoker(
+        RunDocClassificationRequest request) {
+        return new SyncInvoker<RunDocClassificationRequest, RunDocClassificationResponse>(request,
+            NlpMeta.runDocClassification, hcClient);
     }
 
     /**
@@ -223,8 +235,10 @@ public class NlpClient {
      * @param RunDomainSentimentRequest 请求对象
      * @return SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>
      */
-    public SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentimentInvoker(RunDomainSentimentRequest request) {
-        return new SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>(request, NlpMeta.runDomainSentiment, hcClient);
+    public SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse> runDomainSentimentInvoker(
+        RunDomainSentimentRequest request) {
+        return new SyncInvoker<RunDomainSentimentRequest, RunDomainSentimentResponse>(request,
+            NlpMeta.runDomainSentiment, hcClient);
     }
 
     /**
@@ -253,8 +267,10 @@ public class NlpClient {
      * @param RunEntityLinkingRequest 请求对象
      * @return SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>
      */
-    public SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinkingInvoker(RunEntityLinkingRequest request) {
-        return new SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>(request, NlpMeta.runEntityLinking, hcClient);
+    public SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse> runEntityLinkingInvoker(
+        RunEntityLinkingRequest request) {
+        return new SyncInvoker<RunEntityLinkingRequest, RunEntityLinkingResponse>(request, NlpMeta.runEntityLinking,
+            hcClient);
     }
 
     /**
@@ -283,8 +299,10 @@ public class NlpClient {
      * @param RunEntitySentimentRequest 请求对象
      * @return SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>
      */
-    public SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentimentInvoker(RunEntitySentimentRequest request) {
-        return new SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>(request, NlpMeta.runEntitySentiment, hcClient);
+    public SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse> runEntitySentimentInvoker(
+        RunEntitySentimentRequest request) {
+        return new SyncInvoker<RunEntitySentimentRequest, RunEntitySentimentResponse>(request,
+            NlpMeta.runEntitySentiment, hcClient);
     }
 
     /**
@@ -315,8 +333,10 @@ public class NlpClient {
      * @param RunEventExtractionRequest 请求对象
      * @return SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>
      */
-    public SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtractionInvoker(RunEventExtractionRequest request) {
-        return new SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>(request, NlpMeta.runEventExtraction, hcClient);
+    public SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse> runEventExtractionInvoker(
+        RunEventExtractionRequest request) {
+        return new SyncInvoker<RunEventExtractionRequest, RunEventExtractionResponse>(request,
+            NlpMeta.runEventExtraction, hcClient);
     }
 
     /**
@@ -345,8 +365,10 @@ public class NlpClient {
      * @param RunFileTranslationRequest 请求对象
      * @return SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>
      */
-    public SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslationInvoker(RunFileTranslationRequest request) {
-        return new SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>(request, NlpMeta.runFileTranslation, hcClient);
+    public SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse> runFileTranslationInvoker(
+        RunFileTranslationRequest request) {
+        return new SyncInvoker<RunFileTranslationRequest, RunFileTranslationResponse>(request,
+            NlpMeta.runFileTranslation, hcClient);
     }
 
     /**
@@ -373,8 +395,10 @@ public class NlpClient {
      * @param RunGetFileTranslationResultRequest 请求对象
      * @return SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>
      */
-    public SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResultInvoker(RunGetFileTranslationResultRequest request) {
-        return new SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>(request, NlpMeta.runGetFileTranslationResult, hcClient);
+    public SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse> runGetFileTranslationResultInvoker(
+        RunGetFileTranslationResultRequest request) {
+        return new SyncInvoker<RunGetFileTranslationResultRequest, RunGetFileTranslationResultResponse>(request,
+            NlpMeta.runGetFileTranslationResult, hcClient);
     }
 
     /**
@@ -403,8 +427,10 @@ public class NlpClient {
      * @param RunKeywordExtractRequest 请求对象
      * @return SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>
      */
-    public SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtractInvoker(RunKeywordExtractRequest request) {
-        return new SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>(request, NlpMeta.runKeywordExtract, hcClient);
+    public SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse> runKeywordExtractInvoker(
+        RunKeywordExtractRequest request) {
+        return new SyncInvoker<RunKeywordExtractRequest, RunKeywordExtractResponse>(request, NlpMeta.runKeywordExtract,
+            hcClient);
     }
 
     /**
@@ -433,8 +459,10 @@ public class NlpClient {
      * @param RunLanguageDetectionRequest 请求对象
      * @return SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>
      */
-    public SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetectionInvoker(RunLanguageDetectionRequest request) {
-        return new SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>(request, NlpMeta.runLanguageDetection, hcClient);
+    public SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse> runLanguageDetectionInvoker(
+        RunLanguageDetectionRequest request) {
+        return new SyncInvoker<RunLanguageDetectionRequest, RunLanguageDetectionResponse>(request,
+            NlpMeta.runLanguageDetection, hcClient);
     }
 
     /**
@@ -463,8 +491,10 @@ public class NlpClient {
      * @param RunMultiGrainedSegmentRequest 请求对象
      * @return SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>
      */
-    public SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegmentInvoker(RunMultiGrainedSegmentRequest request) {
-        return new SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>(request, NlpMeta.runMultiGrainedSegment, hcClient);
+    public SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse> runMultiGrainedSegmentInvoker(
+        RunMultiGrainedSegmentRequest request) {
+        return new SyncInvoker<RunMultiGrainedSegmentRequest, RunMultiGrainedSegmentResponse>(request,
+            NlpMeta.runMultiGrainedSegment, hcClient);
     }
 
     /**
@@ -613,8 +643,10 @@ public class NlpClient {
      * @param RunSemanticParserRequest 请求对象
      * @return SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>
      */
-    public SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParserInvoker(RunSemanticParserRequest request) {
-        return new SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>(request, NlpMeta.runSemanticParser, hcClient);
+    public SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse> runSemanticParserInvoker(
+        RunSemanticParserRequest request) {
+        return new SyncInvoker<RunSemanticParserRequest, RunSemanticParserResponse>(request, NlpMeta.runSemanticParser,
+            hcClient);
     }
 
     /**
@@ -643,8 +675,10 @@ public class NlpClient {
      * @param RunSentenceEmbeddingRequest 请求对象
      * @return SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>
      */
-    public SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbeddingInvoker(RunSentenceEmbeddingRequest request) {
-        return new SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>(request, NlpMeta.runSentenceEmbedding, hcClient);
+    public SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse> runSentenceEmbeddingInvoker(
+        RunSentenceEmbeddingRequest request) {
+        return new SyncInvoker<RunSentenceEmbeddingRequest, RunSentenceEmbeddingResponse>(request,
+            NlpMeta.runSentenceEmbedding, hcClient);
     }
 
     /**
@@ -733,8 +767,10 @@ public class NlpClient {
      * @param RunSummaryDomainRequest 请求对象
      * @return SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>
      */
-    public SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomainInvoker(RunSummaryDomainRequest request) {
-        return new SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>(request, NlpMeta.runSummaryDomain, hcClient);
+    public SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse> runSummaryDomainInvoker(
+        RunSummaryDomainRequest request) {
+        return new SyncInvoker<RunSummaryDomainRequest, RunSummaryDomainResponse>(request, NlpMeta.runSummaryDomain,
+            hcClient);
     }
 
     /**
@@ -763,8 +799,10 @@ public class NlpClient {
      * @param RunTextSimilarityRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>
      */
-    public SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarityInvoker(RunTextSimilarityRequest request) {
-        return new SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>(request, NlpMeta.runTextSimilarity, hcClient);
+    public SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse> runTextSimilarityInvoker(
+        RunTextSimilarityRequest request) {
+        return new SyncInvoker<RunTextSimilarityRequest, RunTextSimilarityResponse>(request, NlpMeta.runTextSimilarity,
+            hcClient);
     }
 
     /**
@@ -793,8 +831,10 @@ public class NlpClient {
      * @param RunTextSimilarityAdvanceRequest 请求对象
      * @return SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>
      */
-    public SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceInvoker(RunTextSimilarityAdvanceRequest request) {
-        return new SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>(request, NlpMeta.runTextSimilarityAdvance, hcClient);
+    public SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse> runTextSimilarityAdvanceInvoker(
+        RunTextSimilarityAdvanceRequest request) {
+        return new SyncInvoker<RunTextSimilarityAdvanceRequest, RunTextSimilarityAdvanceResponse>(request,
+            NlpMeta.runTextSimilarityAdvance, hcClient);
     }
 
     /**
@@ -823,8 +863,10 @@ public class NlpClient {
      * @param RunTextTranslationRequest 请求对象
      * @return SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>
      */
-    public SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslationInvoker(RunTextTranslationRequest request) {
-        return new SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>(request, NlpMeta.runTextTranslation, hcClient);
+    public SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse> runTextTranslationInvoker(
+        RunTextTranslationRequest request) {
+        return new SyncInvoker<RunTextTranslationRequest, RunTextTranslationResponse>(request,
+            NlpMeta.runTextTranslation, hcClient);
     }
 
 }

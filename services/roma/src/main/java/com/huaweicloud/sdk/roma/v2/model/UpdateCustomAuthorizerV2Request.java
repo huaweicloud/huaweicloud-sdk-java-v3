@@ -87,17 +87,16 @@ public class UpdateCustomAuthorizerV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCustomAuthorizerV2Request updateCustomAuthorizerV2Request = (UpdateCustomAuthorizerV2Request) o;
-        return Objects.equals(this.instanceId, updateCustomAuthorizerV2Request.instanceId)
-            && Objects.equals(this.authorizerId, updateCustomAuthorizerV2Request.authorizerId)
-            && Objects.equals(this.body, updateCustomAuthorizerV2Request.body);
+        UpdateCustomAuthorizerV2Request that = (UpdateCustomAuthorizerV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.authorizerId, that.authorizerId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

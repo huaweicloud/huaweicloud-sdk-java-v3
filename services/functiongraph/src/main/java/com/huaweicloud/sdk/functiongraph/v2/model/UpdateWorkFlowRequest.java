@@ -65,16 +65,15 @@ public class UpdateWorkFlowRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkFlowRequest updateWorkFlowRequest = (UpdateWorkFlowRequest) o;
-        return Objects.equals(this.workflowId, updateWorkFlowRequest.workflowId)
-            && Objects.equals(this.body, updateWorkFlowRequest.body);
+        UpdateWorkFlowRequest that = (UpdateWorkFlowRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.body, that.body);
     }
 
     @Override

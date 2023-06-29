@@ -209,23 +209,19 @@ public class AdjustRecordV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdjustRecordV3 adjustRecordV3 = (AdjustRecordV3) o;
-        return Objects.equals(this.customerId, adjustRecordV3.customerId)
-            && Objects.equals(this.customerName, adjustRecordV3.customerName)
-            && Objects.equals(this.operationType, adjustRecordV3.operationType)
-            && Objects.equals(this.amount, adjustRecordV3.amount)
-            && Objects.equals(this.currency, adjustRecordV3.currency)
-            && Objects.equals(this.applyScene, adjustRecordV3.applyScene)
-            && Objects.equals(this.operationTime, adjustRecordV3.operationTime)
-            && Objects.equals(this.measureId, adjustRecordV3.measureId)
-            && Objects.equals(this.transId, adjustRecordV3.transId);
+        AdjustRecordV3 that = (AdjustRecordV3) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.customerName, that.customerName)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.amount, that.amount)
+            && Objects.equals(this.currency, that.currency) && Objects.equals(this.applyScene, that.applyScene)
+            && Objects.equals(this.operationTime, that.operationTime) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.transId, that.transId);
     }
 
     @Override

@@ -250,20 +250,20 @@ public class Job {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Job job = (Job) o;
-        return Objects.equals(this.jobId, job.jobId) && Objects.equals(this.jobName, job.jobName)
-            && Objects.equals(this.tags, job.tags) && Objects.equals(this.createdTime, job.createdTime)
-            && Objects.equals(this.modifiedTime, job.modifiedTime) && Objects.equals(this.jobType, job.jobType)
-            && Objects.equals(this.exportPath, job.exportPath)
-            && Objects.equals(this.mergeResultFile, job.mergeResultFile) && Objects.equals(this.sqlJob, job.sqlJob)
-            && Objects.equals(this.schedule, job.schedule);
+        Job that = (Job) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.exportPath, that.exportPath)
+            && Objects.equals(this.mergeResultFile, that.mergeResultFile) && Objects.equals(this.sqlJob, that.sqlJob)
+            && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

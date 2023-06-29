@@ -77,17 +77,16 @@ public class UpdateLoginProtectRespon {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateLoginProtectRespon updateLoginProtectRespon = (UpdateLoginProtectRespon) o;
-        return Objects.equals(this.userId, updateLoginProtectRespon.userId)
-            && Objects.equals(this.enabled, updateLoginProtectRespon.enabled)
-            && Objects.equals(this.verificationMethod, updateLoginProtectRespon.verificationMethod);
+        UpdateLoginProtectRespon that = (UpdateLoginProtectRespon) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.verificationMethod, that.verificationMethod);
     }
 
     @Override

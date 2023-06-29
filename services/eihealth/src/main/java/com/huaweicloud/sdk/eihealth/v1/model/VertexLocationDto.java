@@ -55,15 +55,15 @@ public class VertexLocationDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VertexLocationDto vertexLocationDto = (VertexLocationDto) o;
-        return Objects.equals(this.x, vertexLocationDto.x) && Objects.equals(this.y, vertexLocationDto.y);
+        VertexLocationDto that = (VertexLocationDto) obj;
+        return Objects.equals(this.x, that.x) && Objects.equals(this.y, that.y);
     }
 
     @Override

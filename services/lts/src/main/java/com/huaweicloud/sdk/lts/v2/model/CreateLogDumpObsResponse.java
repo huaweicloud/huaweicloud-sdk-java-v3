@@ -34,15 +34,15 @@ public class CreateLogDumpObsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLogDumpObsResponse createLogDumpObsResponse = (CreateLogDumpObsResponse) o;
-        return Objects.equals(this.logDumpObsId, createLogDumpObsResponse.logDumpObsId);
+        CreateLogDumpObsResponse that = (CreateLogDumpObsResponse) obj;
+        return Objects.equals(this.logDumpObsId, that.logDumpObsId);
     }
 
     @Override

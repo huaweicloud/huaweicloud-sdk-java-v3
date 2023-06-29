@@ -87,17 +87,16 @@ public class RetryBatchTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryBatchTaskRequest retryBatchTaskRequest = (RetryBatchTaskRequest) o;
-        return Objects.equals(this.instanceId, retryBatchTaskRequest.instanceId)
-            && Objects.equals(this.taskId, retryBatchTaskRequest.taskId)
-            && Objects.equals(this.body, retryBatchTaskRequest.body);
+        RetryBatchTaskRequest that = (RetryBatchTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

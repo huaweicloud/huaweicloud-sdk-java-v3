@@ -250,22 +250,19 @@ public class ServiceCommandPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceCommandPara serviceCommandPara = (ServiceCommandPara) o;
-        return Objects.equals(this.paraName, serviceCommandPara.paraName)
-            && Objects.equals(this.dataType, serviceCommandPara.dataType)
-            && Objects.equals(this.required, serviceCommandPara.required)
-            && Objects.equals(this.enumList, serviceCommandPara.enumList)
-            && Objects.equals(this.min, serviceCommandPara.min) && Objects.equals(this.max, serviceCommandPara.max)
-            && Objects.equals(this.maxLength, serviceCommandPara.maxLength)
-            && Objects.equals(this.step, serviceCommandPara.step) && Objects.equals(this.unit, serviceCommandPara.unit)
-            && Objects.equals(this.description, serviceCommandPara.description);
+        ServiceCommandPara that = (ServiceCommandPara) obj;
+        return Objects.equals(this.paraName, that.paraName) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.required, that.required) && Objects.equals(this.enumList, that.enumList)
+            && Objects.equals(this.min, that.min) && Objects.equals(this.max, that.max)
+            && Objects.equals(this.maxLength, that.maxLength) && Objects.equals(this.step, that.step)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.description, that.description);
     }
 
     @Override

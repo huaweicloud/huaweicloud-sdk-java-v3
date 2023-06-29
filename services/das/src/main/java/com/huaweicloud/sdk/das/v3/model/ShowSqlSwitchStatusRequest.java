@@ -75,22 +75,15 @@ public class ShowSqlSwitchStatusRequest {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new XLanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new XLanguageEnum(value));
         }
 
         public static XLanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            XLanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,18 +176,16 @@ public class ShowSqlSwitchStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlSwitchStatusRequest showSqlSwitchStatusRequest = (ShowSqlSwitchStatusRequest) o;
-        return Objects.equals(this.instanceId, showSqlSwitchStatusRequest.instanceId)
-            && Objects.equals(this.type, showSqlSwitchStatusRequest.type)
-            && Objects.equals(this.datastoreType, showSqlSwitchStatusRequest.datastoreType)
-            && Objects.equals(this.xLanguage, showSqlSwitchStatusRequest.xLanguage);
+        ShowSqlSwitchStatusRequest that = (ShowSqlSwitchStatusRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.datastoreType, that.datastoreType) && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

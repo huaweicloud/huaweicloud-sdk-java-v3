@@ -214,23 +214,20 @@ public class IncidentOperateLogV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentOperateLogV2 incidentOperateLogV2 = (IncidentOperateLogV2) o;
-        return Objects.equals(this.incidentLogId, incidentOperateLogV2.incidentLogId)
-            && Objects.equals(this.incidentId, incidentOperateLogV2.incidentId)
-            && Objects.equals(this.operateType, incidentOperateLogV2.operateType)
-            && Objects.equals(this.operatorType, incidentOperateLogV2.operatorType)
-            && Objects.equals(this.operatorId, incidentOperateLogV2.operatorId)
-            && Objects.equals(this.operatorName, incidentOperateLogV2.operatorName)
-            && Objects.equals(this.operateDesc, incidentOperateLogV2.operateDesc)
-            && Objects.equals(this.operateTime, incidentOperateLogV2.operateTime)
-            && Objects.equals(this.timestampOperateTime, incidentOperateLogV2.timestampOperateTime);
+        IncidentOperateLogV2 that = (IncidentOperateLogV2) obj;
+        return Objects.equals(this.incidentLogId, that.incidentLogId)
+            && Objects.equals(this.incidentId, that.incidentId) && Objects.equals(this.operateType, that.operateType)
+            && Objects.equals(this.operatorType, that.operatorType) && Objects.equals(this.operatorId, that.operatorId)
+            && Objects.equals(this.operatorName, that.operatorName)
+            && Objects.equals(this.operateDesc, that.operateDesc) && Objects.equals(this.operateTime, that.operateTime)
+            && Objects.equals(this.timestampOperateTime, that.timestampOperateTime);
     }
 
     @Override

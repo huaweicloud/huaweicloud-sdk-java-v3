@@ -99,18 +99,16 @@ public class ListAssociatedIssuesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssociatedIssuesRequest listAssociatedIssuesRequest = (ListAssociatedIssuesRequest) o;
-        return Objects.equals(this.projectId, listAssociatedIssuesRequest.projectId)
-            && Objects.equals(this.issueId, listAssociatedIssuesRequest.issueId)
-            && Objects.equals(this.limit, listAssociatedIssuesRequest.limit)
-            && Objects.equals(this.offset, listAssociatedIssuesRequest.offset);
+        ListAssociatedIssuesRequest that = (ListAssociatedIssuesRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

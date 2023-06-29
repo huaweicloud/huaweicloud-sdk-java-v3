@@ -105,18 +105,16 @@ public class WeightPodAffinityTermsPodAffinityTerm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeightPodAffinityTermsPodAffinityTerm weightPodAffinityTermsPodAffinityTerm =
-            (WeightPodAffinityTermsPodAffinityTerm) o;
-        return Objects.equals(this.labelSelector, weightPodAffinityTermsPodAffinityTerm.labelSelector)
-            && Objects.equals(this.namespaces, weightPodAffinityTermsPodAffinityTerm.namespaces)
-            && Objects.equals(this.topologyKey, weightPodAffinityTermsPodAffinityTerm.topologyKey);
+        WeightPodAffinityTermsPodAffinityTerm that = (WeightPodAffinityTermsPodAffinityTerm) obj;
+        return Objects.equals(this.labelSelector, that.labelSelector)
+            && Objects.equals(this.namespaces, that.namespaces) && Objects.equals(this.topologyKey, that.topologyKey);
     }
 
     @Override

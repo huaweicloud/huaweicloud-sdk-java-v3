@@ -1,428 +1,355 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.BootstrapScript;
-import com.huaweicloud.sdk.mrs.v1.model.ComponentAmb;
-import com.huaweicloud.sdk.mrs.v1.model.NodeGroupV10;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Cluster
  */
-public class Cluster  {
-
+public class Cluster {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterId")
-    
+    @JsonProperty(value = "clusterId")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterName")
-    
+    @JsonProperty(value = "clusterName")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="totalNodeNum")
-    
+    @JsonProperty(value = "totalNodeNum")
 
     private String totalNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterState")
-    
+    @JsonProperty(value = "clusterState")
 
     private String clusterState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="stageDesc")
-    
+    @JsonProperty(value = "stageDesc")
 
     private String stageDesc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createAt")
-    
+    @JsonProperty(value = "createAt")
 
     private String createAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updateAt")
-    
+    @JsonProperty(value = "updateAt")
 
     private String updateAt;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="chargingStartTime")
-    
+    @JsonProperty(value = "chargingStartTime")
 
     private String chargingStartTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="billingType")
-    
+    @JsonProperty(value = "billingType")
 
     private String billingType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataCenter")
-    
+    @JsonProperty(value = "dataCenter")
 
     private String dataCenter;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc")
-    
+    @JsonProperty(value = "vpc")
 
     private String vpc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpcId")
-    
+    @JsonProperty(value = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="duration")
-    
+    @JsonProperty(value = "duration")
 
     private String duration;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="fee")
-    
+    @JsonProperty(value = "fee")
 
     private String fee;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="hadoopVersion")
-    
+    @JsonProperty(value = "hadoopVersion")
 
     private String hadoopVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="componentList")
-    
+    @JsonProperty(value = "componentList")
+
     private List<ComponentAmb> componentList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="externalIp")
-    
+    @JsonProperty(value = "externalIp")
 
     private String externalIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="externalAlternateIp")
-    
+    @JsonProperty(value = "externalAlternateIp")
 
     private String externalAlternateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="internalIp")
-    
+    @JsonProperty(value = "internalIp")
 
     private String internalIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploymentId")
-    
+    @JsonProperty(value = "deploymentId")
 
     private String deploymentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="remark")
-    
+    @JsonProperty(value = "remark")
 
     private String remark;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="orderId")
-    
+    @JsonProperty(value = "orderId")
 
     private String orderId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azId")
-    
+    @JsonProperty(value = "azId")
 
     private String azId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azName")
-    
+    @JsonProperty(value = "azName")
 
     private String azName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azCode")
-    
+    @JsonProperty(value = "azCode")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availabilityZoneId")
-    
+    @JsonProperty(value = "availabilityZoneId")
 
     private String availabilityZoneId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instanceId")
-    
+    @JsonProperty(value = "instanceId")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vnc")
-    
+    @JsonProperty(value = "vnc")
 
     private String vnc;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tenantId")
-    
+    @JsonProperty(value = "tenantId")
 
     private String tenantId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeSize")
-    
+    @JsonProperty(value = "volumeSize")
 
     private Integer volumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volumeType")
-    
+    @JsonProperty(value = "volumeType")
 
     private String volumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetId")
-    
+    @JsonProperty(value = "subnetId")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetName")
-    
+    @JsonProperty(value = "subnetName")
 
     private String subnetName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securityGroupsId")
-    
+    @JsonProperty(value = "securityGroupsId")
 
     private String securityGroupsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="slaveSecurityGroupsId")
-    
+    @JsonProperty(value = "slaveSecurityGroupsId")
 
     private String slaveSecurityGroupsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="bootstrapScripts")
-    
+    @JsonProperty(value = "bootstrapScripts")
+
     private List<BootstrapScript> bootstrapScripts = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="safeMode")
-    
+    @JsonProperty(value = "safeMode")
 
     private Integer safeMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterVersion")
-    
+    @JsonProperty(value = "clusterVersion")
 
     private String clusterVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodePublicCertName")
-    
+    @JsonProperty(value = "nodePublicCertName")
 
     private String nodePublicCertName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterNodeIp")
-    
+    @JsonProperty(value = "masterNodeIp")
 
     private String masterNodeIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privateIpFirst")
-    
+    @JsonProperty(value = "privateIpFirst")
 
     private String privateIpFirst;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorInfo")
-    
+    @JsonProperty(value = "errorInfo")
 
     private String errorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
 
     private String tags;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterNodeNum")
-    
+    @JsonProperty(value = "masterNodeNum")
 
     private String masterNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreNodeNum")
-    
+    @JsonProperty(value = "coreNodeNum")
 
     private String coreNodeNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterNodeSize")
-    
+    @JsonProperty(value = "masterNodeSize")
 
     private String masterNodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreNodeSize")
-    
+    @JsonProperty(value = "coreNodeSize")
 
     private String coreNodeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterNodeProductId")
-    
+    @JsonProperty(value = "masterNodeProductId")
 
     private String masterNodeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterNodeSpecId")
-    
+    @JsonProperty(value = "masterNodeSpecId")
 
     private String masterNodeSpecId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreNodeProductId")
-    
+    @JsonProperty(value = "coreNodeProductId")
 
     private String coreNodeProductId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreNodeSpecId")
-    
+    @JsonProperty(value = "coreNodeSpecId")
 
     private String coreNodeSpecId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterDataVolumeType")
-    
+    @JsonProperty(value = "masterDataVolumeType")
 
     private String masterDataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterDataVolumeSize")
-    
+    @JsonProperty(value = "masterDataVolumeSize")
 
     private Integer masterDataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterDataVolumeCount")
-    
+    @JsonProperty(value = "masterDataVolumeCount")
 
     private Integer masterDataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreDataVolumeType")
-    
+    @JsonProperty(value = "coreDataVolumeType")
 
     private String coreDataVolumeType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreDataVolumeSize")
-    
+    @JsonProperty(value = "coreDataVolumeSize")
 
     private Integer coreDataVolumeSize;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="coreDataVolumeCount")
-    
+    @JsonProperty(value = "coreDataVolumeCount")
 
     private Integer coreDataVolumeCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterpriseProjectId")
-    
+    @JsonProperty(value = "enterpriseProjectId")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isMrsManagerFinish")
-    
+    @JsonProperty(value = "isMrsManagerFinish")
 
     private Boolean isMrsManagerFinish;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="clusterType")
-    
+    @JsonProperty(value = "clusterType")
 
     private Integer clusterType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logCollection")
-    
+    @JsonProperty(value = "logCollection")
 
     private Integer logCollection;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="periodType")
-    
+    @JsonProperty(value = "periodType")
 
     private Integer periodType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scale")
-    
+    @JsonProperty(value = "scale")
 
     private String scale;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodeGroups")
-    
+    @JsonProperty(value = "nodeGroups")
+
     private List<NodeGroupV10> nodeGroups = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="taskNodeGroups")
-    
+    @JsonProperty(value = "taskNodeGroups")
+
     private List<NodeGroupV10> taskNodeGroups = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eipId")
-    
+    @JsonProperty(value = "eipId")
 
     private String eipId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eipAddress")
-    
+    @JsonProperty(value = "eipAddress")
 
     private String eipAddress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="eipv6Address")
-    
+    @JsonProperty(value = "eipv6Address")
 
     private String eipv6Address;
 
@@ -430,9 +357,6 @@ public class Cluster  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID。
@@ -446,15 +370,10 @@ public class Cluster  {
         this.clusterId = clusterId;
     }
 
-    
-
     public Cluster withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
-
-    
-
 
     /**
      * 集群名称。
@@ -468,15 +387,10 @@ public class Cluster  {
         this.clusterName = clusterName;
     }
 
-    
-
     public Cluster withTotalNodeNum(String totalNodeNum) {
         this.totalNodeNum = totalNodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 集群部署的节点总数。
@@ -490,15 +404,10 @@ public class Cluster  {
         this.totalNodeNum = totalNodeNum;
     }
 
-    
-
     public Cluster withClusterState(String clusterState) {
         this.clusterState = clusterState;
         return this;
     }
-
-    
-
 
     /**
      * 集群状态，包括： - starting：启动中的集群。 - running：运行中的集群。 - terminated：已删除的集群。 - failed：失败的集群。 - abnormal：异常的集群。 - terminating：删除中的集群。 - frozen：已冻结的集群。 - scaling-out：扩容中的集群。 - scaling-in：缩容中的集群。
@@ -512,15 +421,10 @@ public class Cluster  {
         this.clusterState = clusterState;
     }
 
-    
-
     public Cluster withStageDesc(String stageDesc) {
         this.stageDesc = stageDesc;
         return this;
     }
-
-    
-
 
     /**
      * 集群进度描述。  安装集群进度包括： - Verifying cluster parameters：校验集群参数中 - Applying for cluster resources：申请集群资源中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Installing MRS Manager：安装MRS Manager中 - Deploying cluster：部署集群中 - Cluster installation failed：集群安装失败  扩容集群进度包括： - Preparing for cluster expansion：准备扩容中 - Creating VM：创建虚拟机中 - Initializing VM：初始化虚拟机中 - Adding node to the cluster：节点加入集群中 - Cluster expansion failed：集群扩容失败  缩容集群进度包括： - Preparing for cluster shrink：正在准备缩容 - Decommissioning instance：实例退服中 - Deleting VM：删除虚拟机中 - Deleting node from the cluster：从集群删除节点中 - Cluster shrink failed：集群缩容失败 集群安装、扩容、缩容失败，stageDesc会显示失败的原因。
@@ -534,15 +438,10 @@ public class Cluster  {
         this.stageDesc = stageDesc;
     }
 
-    
-
     public Cluster withCreateAt(String createAt) {
         this.createAt = createAt;
         return this;
     }
-
-    
-
 
     /**
      * 集群创建时间，十位时间戳。
@@ -556,15 +455,10 @@ public class Cluster  {
         this.createAt = createAt;
     }
 
-    
-
     public Cluster withUpdateAt(String updateAt) {
         this.updateAt = updateAt;
         return this;
     }
-
-    
-
 
     /**
      * 集群更新时间，十位时间戳。
@@ -578,15 +472,10 @@ public class Cluster  {
         this.updateAt = updateAt;
     }
 
-    
-
     public Cluster withChargingStartTime(String chargingStartTime) {
         this.chargingStartTime = chargingStartTime;
         return this;
     }
-
-    
-
 
     /**
      * 开始计费时间。
@@ -600,15 +489,10 @@ public class Cluster  {
         this.chargingStartTime = chargingStartTime;
     }
 
-    
-
     public Cluster withBillingType(String billingType) {
         this.billingType = billingType;
         return this;
     }
-
-    
-
 
     /**
      * 集群计费模式。
@@ -622,15 +506,10 @@ public class Cluster  {
         this.billingType = billingType;
     }
 
-    
-
     public Cluster withDataCenter(String dataCenter) {
         this.dataCenter = dataCenter;
         return this;
     }
-
-    
-
 
     /**
      * 集群工作区域。
@@ -644,15 +523,10 @@ public class Cluster  {
         this.dataCenter = dataCenter;
     }
 
-    
-
     public Cluster withVpc(String vpc) {
         this.vpc = vpc;
         return this;
     }
-
-    
-
 
     /**
      * VPC名称。
@@ -666,15 +540,10 @@ public class Cluster  {
         this.vpc = vpc;
     }
 
-    
-
     public Cluster withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * VPC ID。
@@ -688,15 +557,10 @@ public class Cluster  {
         this.vpcId = vpcId;
     }
 
-    
-
     public Cluster withDuration(String duration) {
         this.duration = duration;
         return this;
     }
-
-    
-
 
     /**
      * 集群购买时长。
@@ -710,15 +574,10 @@ public class Cluster  {
         this.duration = duration;
     }
 
-    
-
     public Cluster withFee(String fee) {
         this.fee = fee;
         return this;
     }
-
-    
-
 
     /**
      * 创建集群所需费用，系统自动计算。
@@ -732,15 +591,10 @@ public class Cluster  {
         this.fee = fee;
     }
 
-    
-
     public Cluster withHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
         return this;
     }
-
-    
-
 
     /**
      * Hadoop组件版本信息。
@@ -754,16 +608,13 @@ public class Cluster  {
         this.hadoopVersion = hadoopVersion;
     }
 
-    
-
     public Cluster withComponentList(List<ComponentAmb> componentList) {
         this.componentList = componentList;
         return this;
     }
 
-    
     public Cluster addComponentListItem(ComponentAmb componentListItem) {
-        if(this.componentList == null) {
+        if (this.componentList == null) {
             this.componentList = new ArrayList<>();
         }
         this.componentList.add(componentListItem);
@@ -771,7 +622,7 @@ public class Cluster  {
     }
 
     public Cluster withComponentList(Consumer<List<ComponentAmb>> componentListSetter) {
-        if(this.componentList == null) {
+        if (this.componentList == null) {
             this.componentList = new ArrayList<>();
         }
         componentListSetter.accept(this.componentList);
@@ -790,15 +641,10 @@ public class Cluster  {
         this.componentList = componentList;
     }
 
-    
-
     public Cluster withExternalIp(String externalIp) {
         this.externalIp = externalIp;
         return this;
     }
-
-    
-
 
     /**
      * 公网IP地址。
@@ -812,15 +658,10 @@ public class Cluster  {
         this.externalIp = externalIp;
     }
 
-    
-
     public Cluster withExternalAlternateIp(String externalAlternateIp) {
         this.externalAlternateIp = externalAlternateIp;
         return this;
     }
-
-    
-
 
     /**
      * 公网备用IP地址。
@@ -834,15 +675,10 @@ public class Cluster  {
         this.externalAlternateIp = externalAlternateIp;
     }
 
-    
-
     public Cluster withInternalIp(String internalIp) {
         this.internalIp = internalIp;
         return this;
     }
-
-    
-
 
     /**
      * 内网IP地址。
@@ -856,15 +692,10 @@ public class Cluster  {
         this.internalIp = internalIp;
     }
 
-    
-
     public Cluster withDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
         return this;
     }
-
-    
-
 
     /**
      * 集群部署ID。
@@ -878,15 +709,10 @@ public class Cluster  {
         this.deploymentId = deploymentId;
     }
 
-    
-
     public Cluster withRemark(String remark) {
         this.remark = remark;
         return this;
     }
-
-    
-
 
     /**
      * 集群备注信息。
@@ -900,15 +726,10 @@ public class Cluster  {
         this.remark = remark;
     }
 
-    
-
     public Cluster withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 创建集群的订单号。
@@ -922,15 +743,10 @@ public class Cluster  {
         this.orderId = orderId;
     }
 
-    
-
     public Cluster withAzId(String azId) {
         this.azId = azId;
         return this;
     }
-
-    
-
 
     /**
      * 可用区域ID。
@@ -944,15 +760,10 @@ public class Cluster  {
         this.azId = azId;
     }
 
-    
-
     public Cluster withAzName(String azName) {
         this.azName = azName;
         return this;
     }
-
-    
-
 
     /**
      * 可用区域名称。
@@ -966,15 +777,10 @@ public class Cluster  {
         this.azName = azName;
     }
 
-    
-
     public Cluster withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区域英文名称
@@ -988,15 +794,10 @@ public class Cluster  {
         this.azCode = azCode;
     }
 
-    
-
     public Cluster withAvailabilityZoneId(String availabilityZoneId) {
         this.availabilityZoneId = availabilityZoneId;
         return this;
     }
-
-    
-
 
     /**
      * 可用区域
@@ -1010,15 +811,10 @@ public class Cluster  {
         this.availabilityZoneId = availabilityZoneId;
     }
 
-    
-
     public Cluster withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -1032,15 +828,10 @@ public class Cluster  {
         this.instanceId = instanceId;
     }
 
-    
-
     public Cluster withVnc(String vnc) {
         this.vnc = vnc;
         return this;
     }
-
-    
-
 
     /**
      * 远程登录弹性云服务器的URI地址。
@@ -1054,15 +845,10 @@ public class Cluster  {
         this.vnc = vnc;
     }
 
-    
-
     public Cluster withTenantId(String tenantId) {
         this.tenantId = tenantId;
         return this;
     }
-
-    
-
 
     /**
      * 项目编号。
@@ -1076,15 +862,10 @@ public class Cluster  {
         this.tenantId = tenantId;
     }
 
-    
-
     public Cluster withVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘存储空间。
@@ -1098,15 +879,10 @@ public class Cluster  {
         this.volumeSize = volumeSize;
     }
 
-    
-
     public Cluster withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘类型。
@@ -1120,15 +896,10 @@ public class Cluster  {
         this.volumeType = volumeType;
     }
 
-    
-
     public Cluster withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网ID。
@@ -1142,15 +913,10 @@ public class Cluster  {
         this.subnetId = subnetId;
     }
 
-    
-
     public Cluster withSubnetName(String subnetName) {
         this.subnetName = subnetName;
         return this;
     }
-
-    
-
 
     /**
      * 子网名称。
@@ -1164,15 +930,10 @@ public class Cluster  {
         this.subnetName = subnetName;
     }
 
-    
-
     public Cluster withSecurityGroupsId(String securityGroupsId) {
         this.securityGroupsId = securityGroupsId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -1186,15 +947,10 @@ public class Cluster  {
         this.securityGroupsId = securityGroupsId;
     }
 
-    
-
     public Cluster withSlaveSecurityGroupsId(String slaveSecurityGroupsId) {
         this.slaveSecurityGroupsId = slaveSecurityGroupsId;
         return this;
     }
-
-    
-
 
     /**
      * 非Master节点的安全组id，当前一个MRS集群只会使用一个安全组，所以该字段已经废弃，从兼容性考虑，该字段会返回和securityGroupsId同样的值。
@@ -1208,16 +964,13 @@ public class Cluster  {
         this.slaveSecurityGroupsId = slaveSecurityGroupsId;
     }
 
-    
-
     public Cluster withBootstrapScripts(List<BootstrapScript> bootstrapScripts) {
         this.bootstrapScripts = bootstrapScripts;
         return this;
     }
 
-    
     public Cluster addBootstrapScriptsItem(BootstrapScript bootstrapScriptsItem) {
-        if(this.bootstrapScripts == null) {
+        if (this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
         this.bootstrapScripts.add(bootstrapScriptsItem);
@@ -1225,7 +978,7 @@ public class Cluster  {
     }
 
     public Cluster withBootstrapScripts(Consumer<List<BootstrapScript>> bootstrapScriptsSetter) {
-        if(this.bootstrapScripts == null) {
+        if (this.bootstrapScripts == null) {
             this.bootstrapScripts = new ArrayList<>();
         }
         bootstrapScriptsSetter.accept(this.bootstrapScripts);
@@ -1244,15 +997,10 @@ public class Cluster  {
         this.bootstrapScripts = bootstrapScripts;
     }
 
-    
-
     public Cluster withSafeMode(Integer safeMode) {
         this.safeMode = safeMode;
         return this;
     }
-
-    
-
 
     /**
      * MRS集群运行模式。 - 0：普通集群 - 1：安全集群
@@ -1266,15 +1014,10 @@ public class Cluster  {
         this.safeMode = safeMode;
     }
 
-    
-
     public Cluster withClusterVersion(String clusterVersion) {
         this.clusterVersion = clusterVersion;
         return this;
     }
-
-    
-
 
     /**
      * 集群版本。
@@ -1288,15 +1031,10 @@ public class Cluster  {
         this.clusterVersion = clusterVersion;
     }
 
-    
-
     public Cluster withNodePublicCertName(String nodePublicCertName) {
         this.nodePublicCertName = nodePublicCertName;
         return this;
     }
-
-    
-
 
     /**
      * 密钥文件名称。
@@ -1310,15 +1048,10 @@ public class Cluster  {
         this.nodePublicCertName = nodePublicCertName;
     }
 
-    
-
     public Cluster withMasterNodeIp(String masterNodeIp) {
         this.masterNodeIp = masterNodeIp;
         return this;
     }
-
-    
-
 
     /**
      * Master节点IP。
@@ -1332,15 +1065,10 @@ public class Cluster  {
         this.masterNodeIp = masterNodeIp;
     }
 
-    
-
     public Cluster withPrivateIpFirst(String privateIpFirst) {
         this.privateIpFirst = privateIpFirst;
         return this;
     }
-
-    
-
 
     /**
      * 首选私有IP。
@@ -1354,15 +1082,10 @@ public class Cluster  {
         this.privateIpFirst = privateIpFirst;
     }
 
-    
-
     public Cluster withErrorInfo(String errorInfo) {
         this.errorInfo = errorInfo;
         return this;
     }
-
-    
-
 
     /**
      * 错误信息。
@@ -1376,15 +1099,10 @@ public class Cluster  {
         this.errorInfo = errorInfo;
     }
 
-    
-
     public Cluster withTags(String tags) {
         this.tags = tags;
         return this;
     }
-
-    
-
 
     /**
      * 标签信息
@@ -1398,15 +1116,10 @@ public class Cluster  {
         this.tags = tags;
     }
 
-    
-
     public Cluster withMasterNodeNum(String masterNodeNum) {
         this.masterNodeNum = masterNodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 集群部署的Master节点数量。
@@ -1420,15 +1133,10 @@ public class Cluster  {
         this.masterNodeNum = masterNodeNum;
     }
 
-    
-
     public Cluster withCoreNodeNum(String coreNodeNum) {
         this.coreNodeNum = coreNodeNum;
         return this;
     }
-
-    
-
 
     /**
      * 集群部署的Core节点数量。
@@ -1442,15 +1150,10 @@ public class Cluster  {
         this.coreNodeNum = coreNodeNum;
     }
 
-    
-
     public Cluster withMasterNodeSize(String masterNodeSize) {
         this.masterNodeSize = masterNodeSize;
         return this;
     }
-
-    
-
 
     /**
      * Master节点的实例规格。
@@ -1464,15 +1167,10 @@ public class Cluster  {
         this.masterNodeSize = masterNodeSize;
     }
 
-    
-
     public Cluster withCoreNodeSize(String coreNodeSize) {
         this.coreNodeSize = coreNodeSize;
         return this;
     }
-
-    
-
 
     /**
      * Core节点的实例规格。
@@ -1486,15 +1184,10 @@ public class Cluster  {
         this.coreNodeSize = coreNodeSize;
     }
 
-    
-
     public Cluster withMasterNodeProductId(String masterNodeProductId) {
         this.masterNodeProductId = masterNodeProductId;
         return this;
     }
-
-    
-
 
     /**
      * Master节点产品ID。
@@ -1508,15 +1201,10 @@ public class Cluster  {
         this.masterNodeProductId = masterNodeProductId;
     }
 
-    
-
     public Cluster withMasterNodeSpecId(String masterNodeSpecId) {
         this.masterNodeSpecId = masterNodeSpecId;
         return this;
     }
-
-    
-
 
     /**
      * Master节点规格ID。
@@ -1530,15 +1218,10 @@ public class Cluster  {
         this.masterNodeSpecId = masterNodeSpecId;
     }
 
-    
-
     public Cluster withCoreNodeProductId(String coreNodeProductId) {
         this.coreNodeProductId = coreNodeProductId;
         return this;
     }
-
-    
-
 
     /**
      * Core节点产品ID。
@@ -1552,15 +1235,10 @@ public class Cluster  {
         this.coreNodeProductId = coreNodeProductId;
     }
 
-    
-
     public Cluster withCoreNodeSpecId(String coreNodeSpecId) {
         this.coreNodeSpecId = coreNodeSpecId;
         return this;
     }
-
-    
-
 
     /**
      * Core节点规格ID。
@@ -1574,15 +1252,10 @@ public class Cluster  {
         this.coreNodeSpecId = coreNodeSpecId;
     }
 
-    
-
     public Cluster withMasterDataVolumeType(String masterDataVolumeType) {
         this.masterDataVolumeType = masterDataVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * Master节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
@@ -1596,15 +1269,10 @@ public class Cluster  {
         this.masterDataVolumeType = masterDataVolumeType;
     }
 
-    
-
     public Cluster withMasterDataVolumeSize(Integer masterDataVolumeSize) {
         this.masterDataVolumeSize = masterDataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * Master节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
@@ -1618,15 +1286,10 @@ public class Cluster  {
         this.masterDataVolumeSize = masterDataVolumeSize;
     }
 
-    
-
     public Cluster withMasterDataVolumeCount(Integer masterDataVolumeCount) {
         this.masterDataVolumeCount = masterDataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * Master节点数据磁盘个数。 取值只能是1
@@ -1640,15 +1303,10 @@ public class Cluster  {
         this.masterDataVolumeCount = masterDataVolumeCount;
     }
 
-    
-
     public Cluster withCoreDataVolumeType(String coreDataVolumeType) {
         this.coreDataVolumeType = coreDataVolumeType;
         return this;
     }
-
-    
-
 
     /**
      * Core节点数据磁盘存储类别，目前支持SATA、SAS和SSD。
@@ -1662,15 +1320,10 @@ public class Cluster  {
         this.coreDataVolumeType = coreDataVolumeType;
     }
 
-    
-
     public Cluster withCoreDataVolumeSize(Integer coreDataVolumeSize) {
         this.coreDataVolumeSize = coreDataVolumeSize;
         return this;
     }
-
-    
-
 
     /**
      * Core节点数据磁盘存储空间。为增大数据存储容量，创建集群时可同时添加磁盘。 取值范围：100GB～32000GB，传值只需填数字，不需要带单位GB。
@@ -1684,15 +1337,10 @@ public class Cluster  {
         this.coreDataVolumeSize = coreDataVolumeSize;
     }
 
-    
-
     public Cluster withCoreDataVolumeCount(Integer coreDataVolumeCount) {
         this.coreDataVolumeCount = coreDataVolumeCount;
         return this;
     }
-
-    
-
 
     /**
      * Core节点数据磁盘个数。 取值范围：1～10
@@ -1706,15 +1354,10 @@ public class Cluster  {
         this.coreDataVolumeCount = coreDataVolumeCount;
     }
 
-    
-
     public Cluster withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。
@@ -1728,15 +1371,10 @@ public class Cluster  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public Cluster withIsMrsManagerFinish(Boolean isMrsManagerFinish) {
         this.isMrsManagerFinish = isMrsManagerFinish;
         return this;
     }
-
-    
-
 
     /**
      * 表示集群创建过程中，MRS Manager是否安装完成。 - true：安装完成 - false：安装未完成
@@ -1750,15 +1388,10 @@ public class Cluster  {
         this.isMrsManagerFinish = isMrsManagerFinish;
     }
 
-    
-
     public Cluster withClusterType(Integer clusterType) {
         this.clusterType = clusterType;
         return this;
     }
-
-    
-
 
     /**
      * 集群类型。
@@ -1772,15 +1405,10 @@ public class Cluster  {
         this.clusterType = clusterType;
     }
 
-    
-
     public Cluster withLogCollection(Integer logCollection) {
         this.logCollection = logCollection;
         return this;
     }
-
-    
-
 
     /**
      * 集群安装失败时，是否搜集日志。 - 0：不收集 - 1：收集
@@ -1794,15 +1422,10 @@ public class Cluster  {
         this.logCollection = logCollection;
     }
 
-    
-
     public Cluster withPeriodType(Integer periodType) {
         this.periodType = periodType;
         return this;
     }
-
-    
-
 
     /**
      * 区分包周期，集群是包年还是包月。 - 0：包月 - 1：包年
@@ -1816,15 +1439,10 @@ public class Cluster  {
         this.periodType = periodType;
     }
 
-    
-
     public Cluster withScale(String scale) {
         this.scale = scale;
         return this;
     }
-
-    
-
 
     /**
      * 集群节点的变更状态（扩容/缩容/变更规格）。当该参数取值为空时，表示集群节点没有进行变更操作。 取值范围： - scaling-out：扩容中 - scaling-in：缩容中 - scaling-error：处于running状态，且上一次扩容/缩容/升级规格失败的集群 - scaling-up：Master节点规格升级中 - scaling_up_first：备Master节点规格升级中 - scaled_up_first：备Master节点规格升级成功 - scaled-up-success：Master节点规格升级成功
@@ -1838,16 +1456,13 @@ public class Cluster  {
         this.scale = scale;
     }
 
-    
-
     public Cluster withNodeGroups(List<NodeGroupV10> nodeGroups) {
         this.nodeGroups = nodeGroups;
         return this;
     }
 
-    
     public Cluster addNodeGroupsItem(NodeGroupV10 nodeGroupsItem) {
-        if(this.nodeGroups == null) {
+        if (this.nodeGroups == null) {
             this.nodeGroups = new ArrayList<>();
         }
         this.nodeGroups.add(nodeGroupsItem);
@@ -1855,7 +1470,7 @@ public class Cluster  {
     }
 
     public Cluster withNodeGroups(Consumer<List<NodeGroupV10>> nodeGroupsSetter) {
-        if(this.nodeGroups == null) {
+        if (this.nodeGroups == null) {
             this.nodeGroups = new ArrayList<>();
         }
         nodeGroupsSetter.accept(this.nodeGroups);
@@ -1874,16 +1489,13 @@ public class Cluster  {
         this.nodeGroups = nodeGroups;
     }
 
-    
-
     public Cluster withTaskNodeGroups(List<NodeGroupV10> taskNodeGroups) {
         this.taskNodeGroups = taskNodeGroups;
         return this;
     }
 
-    
     public Cluster addTaskNodeGroupsItem(NodeGroupV10 taskNodeGroupsItem) {
-        if(this.taskNodeGroups == null) {
+        if (this.taskNodeGroups == null) {
             this.taskNodeGroups = new ArrayList<>();
         }
         this.taskNodeGroups.add(taskNodeGroupsItem);
@@ -1891,7 +1503,7 @@ public class Cluster  {
     }
 
     public Cluster withTaskNodeGroups(Consumer<List<NodeGroupV10>> taskNodeGroupsSetter) {
-        if(this.taskNodeGroups == null) {
+        if (this.taskNodeGroups == null) {
             this.taskNodeGroups = new ArrayList<>();
         }
         taskNodeGroupsSetter.accept(this.taskNodeGroups);
@@ -1910,15 +1522,10 @@ public class Cluster  {
         this.taskNodeGroups = taskNodeGroups;
     }
 
-    
-
     public Cluster withEipId(String eipId) {
         this.eipId = eipId;
         return this;
     }
-
-    
-
 
     /**
      * 集群弹性公网ip的唯一标识
@@ -1932,15 +1539,10 @@ public class Cluster  {
         this.eipId = eipId;
     }
 
-    
-
     public Cluster withEipAddress(String eipAddress) {
         this.eipAddress = eipAddress;
         return this;
     }
-
-    
-
 
     /**
      * 集群弹性公网ip的IPV4地址
@@ -1954,15 +1556,10 @@ public class Cluster  {
         this.eipAddress = eipAddress;
     }
 
-    
-
     public Cluster withEipv6Address(String eipv6Address) {
         this.eipv6Address = eipv6Address;
         return this;
     }
-
-    
-
 
     /**
      * 集群弹性公网ip的IPV6地址，IPv4时无此字段。
@@ -1976,90 +1573,140 @@ public class Cluster  {
         this.eipv6Address = eipv6Address;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Cluster cluster = (Cluster) o;
-        return Objects.equals(this.clusterId, cluster.clusterId) &&
-            Objects.equals(this.clusterName, cluster.clusterName) &&
-            Objects.equals(this.totalNodeNum, cluster.totalNodeNum) &&
-            Objects.equals(this.clusterState, cluster.clusterState) &&
-            Objects.equals(this.stageDesc, cluster.stageDesc) &&
-            Objects.equals(this.createAt, cluster.createAt) &&
-            Objects.equals(this.updateAt, cluster.updateAt) &&
-            Objects.equals(this.chargingStartTime, cluster.chargingStartTime) &&
-            Objects.equals(this.billingType, cluster.billingType) &&
-            Objects.equals(this.dataCenter, cluster.dataCenter) &&
-            Objects.equals(this.vpc, cluster.vpc) &&
-            Objects.equals(this.vpcId, cluster.vpcId) &&
-            Objects.equals(this.duration, cluster.duration) &&
-            Objects.equals(this.fee, cluster.fee) &&
-            Objects.equals(this.hadoopVersion, cluster.hadoopVersion) &&
-            Objects.equals(this.componentList, cluster.componentList) &&
-            Objects.equals(this.externalIp, cluster.externalIp) &&
-            Objects.equals(this.externalAlternateIp, cluster.externalAlternateIp) &&
-            Objects.equals(this.internalIp, cluster.internalIp) &&
-            Objects.equals(this.deploymentId, cluster.deploymentId) &&
-            Objects.equals(this.remark, cluster.remark) &&
-            Objects.equals(this.orderId, cluster.orderId) &&
-            Objects.equals(this.azId, cluster.azId) &&
-            Objects.equals(this.azName, cluster.azName) &&
-            Objects.equals(this.azCode, cluster.azCode) &&
-            Objects.equals(this.availabilityZoneId, cluster.availabilityZoneId) &&
-            Objects.equals(this.instanceId, cluster.instanceId) &&
-            Objects.equals(this.vnc, cluster.vnc) &&
-            Objects.equals(this.tenantId, cluster.tenantId) &&
-            Objects.equals(this.volumeSize, cluster.volumeSize) &&
-            Objects.equals(this.volumeType, cluster.volumeType) &&
-            Objects.equals(this.subnetId, cluster.subnetId) &&
-            Objects.equals(this.subnetName, cluster.subnetName) &&
-            Objects.equals(this.securityGroupsId, cluster.securityGroupsId) &&
-            Objects.equals(this.slaveSecurityGroupsId, cluster.slaveSecurityGroupsId) &&
-            Objects.equals(this.bootstrapScripts, cluster.bootstrapScripts) &&
-            Objects.equals(this.safeMode, cluster.safeMode) &&
-            Objects.equals(this.clusterVersion, cluster.clusterVersion) &&
-            Objects.equals(this.nodePublicCertName, cluster.nodePublicCertName) &&
-            Objects.equals(this.masterNodeIp, cluster.masterNodeIp) &&
-            Objects.equals(this.privateIpFirst, cluster.privateIpFirst) &&
-            Objects.equals(this.errorInfo, cluster.errorInfo) &&
-            Objects.equals(this.tags, cluster.tags) &&
-            Objects.equals(this.masterNodeNum, cluster.masterNodeNum) &&
-            Objects.equals(this.coreNodeNum, cluster.coreNodeNum) &&
-            Objects.equals(this.masterNodeSize, cluster.masterNodeSize) &&
-            Objects.equals(this.coreNodeSize, cluster.coreNodeSize) &&
-            Objects.equals(this.masterNodeProductId, cluster.masterNodeProductId) &&
-            Objects.equals(this.masterNodeSpecId, cluster.masterNodeSpecId) &&
-            Objects.equals(this.coreNodeProductId, cluster.coreNodeProductId) &&
-            Objects.equals(this.coreNodeSpecId, cluster.coreNodeSpecId) &&
-            Objects.equals(this.masterDataVolumeType, cluster.masterDataVolumeType) &&
-            Objects.equals(this.masterDataVolumeSize, cluster.masterDataVolumeSize) &&
-            Objects.equals(this.masterDataVolumeCount, cluster.masterDataVolumeCount) &&
-            Objects.equals(this.coreDataVolumeType, cluster.coreDataVolumeType) &&
-            Objects.equals(this.coreDataVolumeSize, cluster.coreDataVolumeSize) &&
-            Objects.equals(this.coreDataVolumeCount, cluster.coreDataVolumeCount) &&
-            Objects.equals(this.enterpriseProjectId, cluster.enterpriseProjectId) &&
-            Objects.equals(this.isMrsManagerFinish, cluster.isMrsManagerFinish) &&
-            Objects.equals(this.clusterType, cluster.clusterType) &&
-            Objects.equals(this.logCollection, cluster.logCollection) &&
-            Objects.equals(this.periodType, cluster.periodType) &&
-            Objects.equals(this.scale, cluster.scale) &&
-            Objects.equals(this.nodeGroups, cluster.nodeGroups) &&
-            Objects.equals(this.taskNodeGroups, cluster.taskNodeGroups) &&
-            Objects.equals(this.eipId, cluster.eipId) &&
-            Objects.equals(this.eipAddress, cluster.eipAddress) &&
-            Objects.equals(this.eipv6Address, cluster.eipv6Address);
+        Cluster that = (Cluster) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.totalNodeNum, that.totalNodeNum)
+            && Objects.equals(this.clusterState, that.clusterState) && Objects.equals(this.stageDesc, that.stageDesc)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.chargingStartTime, that.chargingStartTime)
+            && Objects.equals(this.billingType, that.billingType) && Objects.equals(this.dataCenter, that.dataCenter)
+            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.duration, that.duration) && Objects.equals(this.fee, that.fee)
+            && Objects.equals(this.hadoopVersion, that.hadoopVersion)
+            && Objects.equals(this.componentList, that.componentList)
+            && Objects.equals(this.externalIp, that.externalIp)
+            && Objects.equals(this.externalAlternateIp, that.externalAlternateIp)
+            && Objects.equals(this.internalIp, that.internalIp) && Objects.equals(this.deploymentId, that.deploymentId)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.azId, that.azId) && Objects.equals(this.azName, that.azName)
+            && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vnc, that.vnc)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.volumeSize, that.volumeSize)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.subnetName, that.subnetName)
+            && Objects.equals(this.securityGroupsId, that.securityGroupsId)
+            && Objects.equals(this.slaveSecurityGroupsId, that.slaveSecurityGroupsId)
+            && Objects.equals(this.bootstrapScripts, that.bootstrapScripts)
+            && Objects.equals(this.safeMode, that.safeMode) && Objects.equals(this.clusterVersion, that.clusterVersion)
+            && Objects.equals(this.nodePublicCertName, that.nodePublicCertName)
+            && Objects.equals(this.masterNodeIp, that.masterNodeIp)
+            && Objects.equals(this.privateIpFirst, that.privateIpFirst)
+            && Objects.equals(this.errorInfo, that.errorInfo) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.masterNodeNum, that.masterNodeNum)
+            && Objects.equals(this.coreNodeNum, that.coreNodeNum)
+            && Objects.equals(this.masterNodeSize, that.masterNodeSize)
+            && Objects.equals(this.coreNodeSize, that.coreNodeSize)
+            && Objects.equals(this.masterNodeProductId, that.masterNodeProductId)
+            && Objects.equals(this.masterNodeSpecId, that.masterNodeSpecId)
+            && Objects.equals(this.coreNodeProductId, that.coreNodeProductId)
+            && Objects.equals(this.coreNodeSpecId, that.coreNodeSpecId)
+            && Objects.equals(this.masterDataVolumeType, that.masterDataVolumeType)
+            && Objects.equals(this.masterDataVolumeSize, that.masterDataVolumeSize)
+            && Objects.equals(this.masterDataVolumeCount, that.masterDataVolumeCount)
+            && Objects.equals(this.coreDataVolumeType, that.coreDataVolumeType)
+            && Objects.equals(this.coreDataVolumeSize, that.coreDataVolumeSize)
+            && Objects.equals(this.coreDataVolumeCount, that.coreDataVolumeCount)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.isMrsManagerFinish, that.isMrsManagerFinish)
+            && Objects.equals(this.clusterType, that.clusterType)
+            && Objects.equals(this.logCollection, that.logCollection)
+            && Objects.equals(this.periodType, that.periodType) && Objects.equals(this.scale, that.scale)
+            && Objects.equals(this.nodeGroups, that.nodeGroups)
+            && Objects.equals(this.taskNodeGroups, that.taskNodeGroups) && Objects.equals(this.eipId, that.eipId)
+            && Objects.equals(this.eipAddress, that.eipAddress) && Objects.equals(this.eipv6Address, that.eipv6Address);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(clusterId, clusterName, totalNodeNum, clusterState, stageDesc, createAt, updateAt, chargingStartTime, billingType, dataCenter, vpc, vpcId, duration, fee, hadoopVersion, componentList, externalIp, externalAlternateIp, internalIp, deploymentId, remark, orderId, azId, azName, azCode, availabilityZoneId, instanceId, vnc, tenantId, volumeSize, volumeType, subnetId, subnetName, securityGroupsId, slaveSecurityGroupsId, bootstrapScripts, safeMode, clusterVersion, nodePublicCertName, masterNodeIp, privateIpFirst, errorInfo, tags, masterNodeNum, coreNodeNum, masterNodeSize, coreNodeSize, masterNodeProductId, masterNodeSpecId, coreNodeProductId, coreNodeSpecId, masterDataVolumeType, masterDataVolumeSize, masterDataVolumeCount, coreDataVolumeType, coreDataVolumeSize, coreDataVolumeCount, enterpriseProjectId, isMrsManagerFinish, clusterType, logCollection, periodType, scale, nodeGroups, taskNodeGroups, eipId, eipAddress, eipv6Address);
+        return Objects.hash(clusterId,
+            clusterName,
+            totalNodeNum,
+            clusterState,
+            stageDesc,
+            createAt,
+            updateAt,
+            chargingStartTime,
+            billingType,
+            dataCenter,
+            vpc,
+            vpcId,
+            duration,
+            fee,
+            hadoopVersion,
+            componentList,
+            externalIp,
+            externalAlternateIp,
+            internalIp,
+            deploymentId,
+            remark,
+            orderId,
+            azId,
+            azName,
+            azCode,
+            availabilityZoneId,
+            instanceId,
+            vnc,
+            tenantId,
+            volumeSize,
+            volumeType,
+            subnetId,
+            subnetName,
+            securityGroupsId,
+            slaveSecurityGroupsId,
+            bootstrapScripts,
+            safeMode,
+            clusterVersion,
+            nodePublicCertName,
+            masterNodeIp,
+            privateIpFirst,
+            errorInfo,
+            tags,
+            masterNodeNum,
+            coreNodeNum,
+            masterNodeSize,
+            coreNodeSize,
+            masterNodeProductId,
+            masterNodeSpecId,
+            coreNodeProductId,
+            coreNodeSpecId,
+            masterDataVolumeType,
+            masterDataVolumeSize,
+            masterDataVolumeCount,
+            coreDataVolumeType,
+            coreDataVolumeSize,
+            coreDataVolumeCount,
+            enterpriseProjectId,
+            isMrsManagerFinish,
+            clusterType,
+            logCollection,
+            periodType,
+            scale,
+            nodeGroups,
+            taskNodeGroups,
+            eipId,
+            eipAddress,
+            eipv6Address);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -2135,6 +1782,7 @@ public class Cluster  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -2145,8 +1793,5 @@ public class Cluster  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

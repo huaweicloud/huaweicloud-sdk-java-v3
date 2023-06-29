@@ -125,19 +125,17 @@ public class ListPipleineBuildResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPipleineBuildResultRequest listPipleineBuildResultRequest = (ListPipleineBuildResultRequest) o;
-        return Objects.equals(this.projectId, listPipleineBuildResultRequest.projectId)
-            && Objects.equals(this.startDate, listPipleineBuildResultRequest.startDate)
-            && Objects.equals(this.endDate, listPipleineBuildResultRequest.endDate)
-            && Objects.equals(this.offset, listPipleineBuildResultRequest.offset)
-            && Objects.equals(this.limit, listPipleineBuildResultRequest.limit);
+        ListPipleineBuildResultRequest that = (ListPipleineBuildResultRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

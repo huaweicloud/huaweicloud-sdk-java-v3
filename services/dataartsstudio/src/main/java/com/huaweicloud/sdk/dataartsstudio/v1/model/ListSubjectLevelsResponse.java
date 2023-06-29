@@ -53,15 +53,15 @@ public class ListSubjectLevelsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubjectLevelsResponse listSubjectLevelsResponse = (ListSubjectLevelsResponse) o;
-        return Objects.equals(this.levels, listSubjectLevelsResponse.levels);
+        ListSubjectLevelsResponse that = (ListSubjectLevelsResponse) obj;
+        return Objects.equals(this.levels, that.levels);
     }
 
     @Override

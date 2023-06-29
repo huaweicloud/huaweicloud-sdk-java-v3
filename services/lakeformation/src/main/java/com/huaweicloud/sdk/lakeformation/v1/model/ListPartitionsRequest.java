@@ -230,23 +230,19 @@ public class ListPartitionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartitionsRequest listPartitionsRequest = (ListPartitionsRequest) o;
-        return Objects.equals(this.instanceId, listPartitionsRequest.instanceId)
-            && Objects.equals(this.catalogName, listPartitionsRequest.catalogName)
-            && Objects.equals(this.databaseName, listPartitionsRequest.databaseName)
-            && Objects.equals(this.tableName, listPartitionsRequest.tableName)
-            && Objects.equals(this.filter, listPartitionsRequest.filter)
-            && Objects.equals(this.partitionValues, listPartitionsRequest.partitionValues)
-            && Objects.equals(this.limit, listPartitionsRequest.limit)
-            && Objects.equals(this.marker, listPartitionsRequest.marker)
-            && Objects.equals(this.reversePage, listPartitionsRequest.reversePage);
+        ListPartitionsRequest that = (ListPartitionsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.filter, that.filter) && Objects.equals(this.partitionValues, that.partitionValues)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.reversePage, that.reversePage);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class UpdatePortalInfoResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePortalInfoResponseModel updatePortalInfoResponseModel = (UpdatePortalInfoResponseModel) o;
-        return Objects.equals(this.portal, updatePortalInfoResponseModel.portal);
+        UpdatePortalInfoResponseModel that = (UpdatePortalInfoResponseModel) obj;
+        return Objects.equals(this.portal, that.portal);
     }
 
     @Override

@@ -250,20 +250,19 @@ public class AppResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppResp appResp = (AppResp) o;
-        return Objects.equals(this.id, appResp.id) && Objects.equals(this.name, appResp.name)
-            && Objects.equals(this.alias, appResp.alias) && Objects.equals(this.description, appResp.description)
-            && Objects.equals(this.iconUrl, appResp.iconUrl) && Objects.equals(this.createdAt, appResp.createdAt)
-            && Objects.equals(this.updatedAt, appResp.updatedAt) && Objects.equals(this.projectId, appResp.projectId)
-            && Objects.equals(this.visibility, appResp.visibility)
-            && Objects.equals(this.appVersions, appResp.appVersions);
+        AppResp that = (AppResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.iconUrl, that.iconUrl) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.visibility, that.visibility) && Objects.equals(this.appVersions, that.appVersions);
     }
 
     @Override

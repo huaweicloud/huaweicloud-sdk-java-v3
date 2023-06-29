@@ -197,19 +197,18 @@ public class EdgeCloud {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeCloud edgeCloud = (EdgeCloud) o;
-        return Objects.equals(this.id, edgeCloud.id) && Objects.equals(this.name, edgeCloud.name)
-            && Objects.equals(this.description, edgeCloud.description)
-            && Objects.equals(this.coverage, edgeCloud.coverage) && Objects.equals(this.failedNum, edgeCloud.failedNum)
-            && Objects.equals(this.status, edgeCloud.status) && Objects.equals(this.successNum, edgeCloud.successNum)
-            && Objects.equals(this.edgeRegions, edgeCloud.edgeRegions);
+        EdgeCloud that = (EdgeCloud) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.coverage, that.coverage)
+            && Objects.equals(this.failedNum, that.failedNum) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.edgeRegions, that.edgeRegions);
     }
 
     @Override

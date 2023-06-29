@@ -103,18 +103,16 @@ public class ListChartsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListChartsRequest listChartsRequest = (ListChartsRequest) o;
-        return Objects.equals(this.logGroupId, listChartsRequest.logGroupId)
-            && Objects.equals(this.logStreamId, listChartsRequest.logStreamId)
-            && Objects.equals(this.offset, listChartsRequest.offset)
-            && Objects.equals(this.limit, listChartsRequest.limit);
+        ListChartsRequest that = (ListChartsRequest) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

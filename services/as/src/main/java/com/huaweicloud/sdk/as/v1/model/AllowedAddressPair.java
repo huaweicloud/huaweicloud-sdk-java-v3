@@ -33,15 +33,15 @@ public class AllowedAddressPair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowedAddressPair allowedAddressPair = (AllowedAddressPair) o;
-        return Objects.equals(this.ipAddress, allowedAddressPair.ipAddress);
+        AllowedAddressPair that = (AllowedAddressPair) obj;
+        return Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override

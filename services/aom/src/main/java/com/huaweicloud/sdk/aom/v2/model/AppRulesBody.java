@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.AppRules;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AppRulesBody
  */
-public class AppRulesBody  {
-
+public class AppRulesBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appRules")
-    
+    @JsonProperty(value = "appRules")
+
     private List<AppRules> appRules = null;
-    
+
     public AppRulesBody withAppRules(List<AppRules> appRules) {
         this.appRules = appRules;
         return this;
     }
 
-    
     public AppRulesBody addAppRulesItem(AppRules appRulesItem) {
-        if(this.appRules == null) {
+        if (this.appRules == null) {
             this.appRules = new ArrayList<>();
         }
         this.appRules.add(appRulesItem);
@@ -40,7 +32,7 @@ public class AppRulesBody  {
     }
 
     public AppRulesBody withAppRules(Consumer<List<AppRules>> appRulesSetter) {
-        if(this.appRules == null) {
+        if (this.appRules == null) {
             this.appRules = new ArrayList<>();
         }
         appRulesSetter.accept(this.appRules);
@@ -59,23 +51,23 @@ public class AppRulesBody  {
         this.appRules = appRules;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppRulesBody appRulesBody = (AppRulesBody) o;
-        return Objects.equals(this.appRules, appRulesBody.appRules);
+        AppRulesBody that = (AppRulesBody) obj;
+        return Objects.equals(this.appRules, that.appRules);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appRules);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class AppRulesBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class AppRulesBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

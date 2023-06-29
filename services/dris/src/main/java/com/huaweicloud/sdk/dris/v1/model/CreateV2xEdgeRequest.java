@@ -65,16 +65,15 @@ public class CreateV2xEdgeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateV2xEdgeRequest createV2xEdgeRequest = (CreateV2xEdgeRequest) o;
-        return Objects.equals(this.instanceId, createV2xEdgeRequest.instanceId)
-            && Objects.equals(this.body, createV2xEdgeRequest.body);
+        CreateV2xEdgeRequest that = (CreateV2xEdgeRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

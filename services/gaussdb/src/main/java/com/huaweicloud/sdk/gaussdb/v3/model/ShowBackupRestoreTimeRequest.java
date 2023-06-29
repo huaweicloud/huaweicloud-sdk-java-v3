@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowBackupRestoreTimeRequest  {
-
+public class ShowBackupRestoreTimeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="date")
-    
+    @JsonProperty(value = "date")
 
     private String date;
 
@@ -41,15 +30,12 @@ public class ShowBackupRestoreTimeRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -58,15 +44,10 @@ public class ShowBackupRestoreTimeRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public ShowBackupRestoreTimeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 租户在某一project下的实例ID。
@@ -80,15 +61,10 @@ public class ShowBackupRestoreTimeRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ShowBackupRestoreTimeRequest withDate(String date) {
         this.date = date;
         return this;
     }
-
-    
-
 
     /**
      * 所需查询的日志，为yyyy-mm-dd字符串格式，时区为UTC。
@@ -102,25 +78,24 @@ public class ShowBackupRestoreTimeRequest  {
         this.date = date;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupRestoreTimeRequest showBackupRestoreTimeRequest = (ShowBackupRestoreTimeRequest) o;
-        return Objects.equals(this.xLanguage, showBackupRestoreTimeRequest.xLanguage) &&
-            Objects.equals(this.instanceId, showBackupRestoreTimeRequest.instanceId) &&
-            Objects.equals(this.date, showBackupRestoreTimeRequest.date);
+        ShowBackupRestoreTimeRequest that = (ShowBackupRestoreTimeRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.date, that.date);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, date);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +106,7 @@ public class ShowBackupRestoreTimeRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +117,5 @@ public class ShowBackupRestoreTimeRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

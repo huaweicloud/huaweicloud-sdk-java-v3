@@ -143,19 +143,17 @@ public class CCECreateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CCECreateInfo ccECreateInfo = (CCECreateInfo) o;
-        return Objects.equals(this.nodeNum, ccECreateInfo.nodeNum)
-            && Objects.equals(this.nodeFlavor, ccECreateInfo.nodeFlavor)
-            && Objects.equals(this.cceFlavor, ccECreateInfo.cceFlavor)
-            && Objects.equals(this.initNodePwd, ccECreateInfo.initNodePwd) && Objects.equals(this.az, ccECreateInfo.az)
-            && Objects.equals(this.clusterPlatformType, ccECreateInfo.clusterPlatformType);
+        CCECreateInfo that = (CCECreateInfo) obj;
+        return Objects.equals(this.nodeNum, that.nodeNum) && Objects.equals(this.nodeFlavor, that.nodeFlavor)
+            && Objects.equals(this.cceFlavor, that.cceFlavor) && Objects.equals(this.initNodePwd, that.initNodePwd)
+            && Objects.equals(this.az, that.az) && Objects.equals(this.clusterPlatformType, that.clusterPlatformType);
     }
 
     @Override

@@ -194,19 +194,18 @@ public class ShowIpGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIpGroupResponse showIpGroupResponse = (ShowIpGroupResponse) o;
-        return Objects.equals(this.id, showIpGroupResponse.id) && Objects.equals(this.name, showIpGroupResponse.name)
-            && Objects.equals(this.ips, showIpGroupResponse.ips) && Objects.equals(this.size, showIpGroupResponse.size)
-            && Objects.equals(this.rules, showIpGroupResponse.rules)
-            && Objects.equals(this.shareInfo, showIpGroupResponse.shareInfo)
-            && Objects.equals(this.description, showIpGroupResponse.description);
+        ShowIpGroupResponse that = (ShowIpGroupResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rules, that.rules) && Objects.equals(this.shareInfo, that.shareInfo)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

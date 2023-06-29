@@ -59,22 +59,15 @@ public class DeleteTrackerRequest {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrackerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrackerTypeEnum(value));
         }
 
         public static TrackerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrackerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -131,16 +124,15 @@ public class DeleteTrackerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTrackerRequest deleteTrackerRequest = (DeleteTrackerRequest) o;
-        return Objects.equals(this.trackerName, deleteTrackerRequest.trackerName)
-            && Objects.equals(this.trackerType, deleteTrackerRequest.trackerType);
+        DeleteTrackerRequest that = (DeleteTrackerRequest) obj;
+        return Objects.equals(this.trackerName, that.trackerName) && Objects.equals(this.trackerType, that.trackerType);
     }
 
     @Override

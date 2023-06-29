@@ -141,19 +141,17 @@ public class ServiceItemListResponseDtoData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServiceItemListResponseDtoData serviceItemListResponseDtoData = (ServiceItemListResponseDtoData) o;
-        return Objects.equals(this.offset, serviceItemListResponseDtoData.offset)
-            && Objects.equals(this.limit, serviceItemListResponseDtoData.limit)
-            && Objects.equals(this.total, serviceItemListResponseDtoData.total)
-            && Objects.equals(this.setId, serviceItemListResponseDtoData.setId)
-            && Objects.equals(this.records, serviceItemListResponseDtoData.records);
+        ServiceItemListResponseDtoData that = (ServiceItemListResponseDtoData) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.setId, that.setId)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

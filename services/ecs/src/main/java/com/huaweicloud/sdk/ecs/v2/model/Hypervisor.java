@@ -55,16 +55,16 @@ public class Hypervisor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Hypervisor hypervisor = (Hypervisor) o;
-        return Objects.equals(this.hypervisorType, hypervisor.hypervisorType)
-            && Objects.equals(this.csdHypervisor, hypervisor.csdHypervisor);
+        Hypervisor that = (Hypervisor) obj;
+        return Objects.equals(this.hypervisorType, that.hypervisorType)
+            && Objects.equals(this.csdHypervisor, that.csdHypervisor);
     }
 
     @Override

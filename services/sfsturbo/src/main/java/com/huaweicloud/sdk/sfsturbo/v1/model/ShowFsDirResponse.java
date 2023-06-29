@@ -103,16 +103,16 @@ public class ShowFsDirResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFsDirResponse showFsDirResponse = (ShowFsDirResponse) o;
-        return Objects.equals(this.path, showFsDirResponse.path) && Objects.equals(this.mode, showFsDirResponse.mode)
-            && Objects.equals(this.uid, showFsDirResponse.uid) && Objects.equals(this.gid, showFsDirResponse.gid);
+        ShowFsDirResponse that = (ShowFsDirResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.uid, that.uid) && Objects.equals(this.gid, that.gid);
     }
 
     @Override

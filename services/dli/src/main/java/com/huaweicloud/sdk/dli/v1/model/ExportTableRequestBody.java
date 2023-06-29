@@ -187,22 +187,19 @@ public class ExportTableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportTableRequestBody exportTableRequestBody = (ExportTableRequestBody) o;
-        return Objects.equals(this.dataPath, exportTableRequestBody.dataPath)
-            && Objects.equals(this.dataType, exportTableRequestBody.dataType)
-            && Objects.equals(this.databaseName, exportTableRequestBody.databaseName)
-            && Objects.equals(this.tableName, exportTableRequestBody.tableName)
-            && Objects.equals(this.compress, exportTableRequestBody.compress)
-            && Objects.equals(this.queueName, exportTableRequestBody.queueName)
-            && Objects.equals(this.exportMode, exportTableRequestBody.exportMode)
-            && Objects.equals(this.withColumnHeader, exportTableRequestBody.withColumnHeader);
+        ExportTableRequestBody that = (ExportTableRequestBody) obj;
+        return Objects.equals(this.dataPath, that.dataPath) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.compress, that.compress) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.exportMode, that.exportMode)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class RelatedIntention  {
-
+public class RelatedIntention {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="intention")
-    
+    @JsonProperty(value = "intention")
 
     private String intention;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="confidence")
-    
+    @JsonProperty(value = "confidence")
 
     private Double confidence;
 
@@ -33,9 +24,6 @@ public class RelatedIntention  {
         this.intention = intention;
         return this;
     }
-
-    
-
 
     /**
      * 意图名称。
@@ -49,15 +37,10 @@ public class RelatedIntention  {
         this.intention = intention;
     }
 
-    
-
     public RelatedIntention withConfidence(Double confidence) {
         this.confidence = confidence;
         return this;
     }
-
-    
-
 
     /**
      * 意图置信度。
@@ -71,24 +54,23 @@ public class RelatedIntention  {
         this.confidence = confidence;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelatedIntention relatedIntention = (RelatedIntention) o;
-        return Objects.equals(this.intention, relatedIntention.intention) &&
-            Objects.equals(this.confidence, relatedIntention.confidence);
+        RelatedIntention that = (RelatedIntention) obj;
+        return Objects.equals(this.intention, that.intention) && Objects.equals(this.confidence, that.confidence);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(intention, confidence);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class RelatedIntention  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class RelatedIntention  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -105,17 +105,17 @@ public class Affinity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Affinity affinity = (Affinity) o;
-        return Objects.equals(this.nodeAffinity, affinity.nodeAffinity)
-            && Objects.equals(this.podAffinity, affinity.podAffinity)
-            && Objects.equals(this.podAntiAffinity, affinity.podAntiAffinity);
+        Affinity that = (Affinity) obj;
+        return Objects.equals(this.nodeAffinity, that.nodeAffinity)
+            && Objects.equals(this.podAffinity, that.podAffinity)
+            && Objects.equals(this.podAntiAffinity, that.podAntiAffinity);
     }
 
     @Override

@@ -143,19 +143,17 @@ public class HttpForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpForwarding httpForwarding = (HttpForwarding) o;
-        return Objects.equals(this.url, httpForwarding.url) && Objects.equals(this.certId, httpForwarding.certId)
-            && Objects.equals(this.cnName, httpForwarding.cnName)
-            && Objects.equals(this.sniEnable, httpForwarding.sniEnable)
-            && Objects.equals(this.signatureEnable, httpForwarding.signatureEnable)
-            && Objects.equals(this.token, httpForwarding.token);
+        HttpForwarding that = (HttpForwarding) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.certId, that.certId)
+            && Objects.equals(this.cnName, that.cnName) && Objects.equals(this.sniEnable, that.sniEnable)
+            && Objects.equals(this.signatureEnable, that.signatureEnable) && Objects.equals(this.token, that.token);
     }
 
     @Override

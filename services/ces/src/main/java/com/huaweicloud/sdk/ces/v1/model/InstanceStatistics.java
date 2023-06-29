@@ -77,17 +77,16 @@ public class InstanceStatistics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceStatistics instanceStatistics = (InstanceStatistics) o;
-        return Objects.equals(this.unhealth, instanceStatistics.unhealth)
-            && Objects.equals(this.total, instanceStatistics.total)
-            && Objects.equals(this.typeStatistics, instanceStatistics.typeStatistics);
+        InstanceStatistics that = (InstanceStatistics) obj;
+        return Objects.equals(this.unhealth, that.unhealth) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.typeStatistics, that.typeStatistics);
     }
 
     @Override

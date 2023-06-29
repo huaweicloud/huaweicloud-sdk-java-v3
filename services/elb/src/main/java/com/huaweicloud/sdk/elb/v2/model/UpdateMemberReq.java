@@ -79,17 +79,16 @@ public class UpdateMemberReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMemberReq updateMemberReq = (UpdateMemberReq) o;
-        return Objects.equals(this.name, updateMemberReq.name)
-            && Objects.equals(this.adminStateUp, updateMemberReq.adminStateUp)
-            && Objects.equals(this.weight, updateMemberReq.weight);
+        UpdateMemberReq that = (UpdateMemberReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.weight, that.weight);
     }
 
     @Override

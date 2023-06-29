@@ -184,18 +184,18 @@ public class TopoLine {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopoLine topoLine = (TopoLine) o;
-        return Objects.equals(this.fromNode, topoLine.fromNode) && Objects.equals(this.toNode, topoLine.toNode)
-            && Objects.equals(this.direction, topoLine.direction) && Objects.equals(this.collector, topoLine.collector)
-            && Objects.equals(this.targetEnvId, topoLine.targetEnvId) && Objects.equals(this.hints, topoLine.hints)
-            && Objects.equals(this.filterValue, topoLine.filterValue);
+        TopoLine that = (TopoLine) obj;
+        return Objects.equals(this.fromNode, that.fromNode) && Objects.equals(this.toNode, that.toNode)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.collector, that.collector)
+            && Objects.equals(this.targetEnvId, that.targetEnvId) && Objects.equals(this.hints, that.hints)
+            && Objects.equals(this.filterValue, that.filterValue);
     }
 
     @Override

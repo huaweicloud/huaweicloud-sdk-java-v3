@@ -97,17 +97,16 @@ public class ListAppQuotaBoundAppsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppQuotaBoundAppsResponse listAppQuotaBoundAppsResponse = (ListAppQuotaBoundAppsResponse) o;
-        return Objects.equals(this.size, listAppQuotaBoundAppsResponse.size)
-            && Objects.equals(this.total, listAppQuotaBoundAppsResponse.total)
-            && Objects.equals(this.apps, listAppQuotaBoundAppsResponse.apps);
+        ListAppQuotaBoundAppsResponse that = (ListAppQuotaBoundAppsResponse) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.apps, that.apps);
     }
 
     @Override

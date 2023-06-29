@@ -77,17 +77,16 @@ public class PropertyValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyValue propertyValue = (PropertyValue) o;
-        return Objects.equals(this.propertyName, propertyValue.propertyName)
-            && Objects.equals(this.value, propertyValue.value)
-            && Objects.equals(this.timestamp, propertyValue.timestamp);
+        PropertyValue that = (PropertyValue) obj;
+        return Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

@@ -82,22 +82,15 @@ public class DatabaseInfo {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -237,19 +230,17 @@ public class DatabaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseInfo databaseInfo = (DatabaseInfo) o;
-        return Objects.equals(this.id, databaseInfo.id) && Objects.equals(this.parentId, databaseInfo.parentId)
-            && Objects.equals(this.objectType, databaseInfo.objectType)
-            && Objects.equals(this.objectName, databaseInfo.objectName)
-            && Objects.equals(this.objectAliasName, databaseInfo.objectAliasName)
-            && Objects.equals(this.select, databaseInfo.select);
+        DatabaseInfo that = (DatabaseInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.objectName, that.objectName)
+            && Objects.equals(this.objectAliasName, that.objectAliasName) && Objects.equals(this.select, that.select);
     }
 
     @Override

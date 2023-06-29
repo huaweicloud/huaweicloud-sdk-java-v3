@@ -44,15 +44,15 @@ public class CreatePortResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortResponse createPortResponse = (CreatePortResponse) o;
-        return Objects.equals(this.port, createPortResponse.port);
+        CreatePortResponse that = (CreatePortResponse) obj;
+        return Objects.equals(this.port, that.port);
     }
 
     @Override

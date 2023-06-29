@@ -121,19 +121,17 @@ public class UpdateAssetMetaReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetMetaReq updateAssetMetaReq = (UpdateAssetMetaReq) o;
-        return Objects.equals(this.assetId, updateAssetMetaReq.assetId)
-            && Objects.equals(this.title, updateAssetMetaReq.title)
-            && Objects.equals(this.description, updateAssetMetaReq.description)
-            && Objects.equals(this.categoryId, updateAssetMetaReq.categoryId)
-            && Objects.equals(this.tags, updateAssetMetaReq.tags);
+        UpdateAssetMetaReq that = (UpdateAssetMetaReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

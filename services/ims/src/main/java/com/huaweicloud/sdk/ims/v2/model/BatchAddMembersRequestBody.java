@@ -90,16 +90,15 @@ public class BatchAddMembersRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddMembersRequestBody batchAddMembersRequestBody = (BatchAddMembersRequestBody) o;
-        return Objects.equals(this.images, batchAddMembersRequestBody.images)
-            && Objects.equals(this.projects, batchAddMembersRequestBody.projects);
+        BatchAddMembersRequestBody that = (BatchAddMembersRequestBody) obj;
+        return Objects.equals(this.images, that.images) && Objects.equals(this.projects, that.projects);
     }
 
     @Override

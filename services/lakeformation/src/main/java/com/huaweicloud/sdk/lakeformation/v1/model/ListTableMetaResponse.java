@@ -84,16 +84,15 @@ public class ListTableMetaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableMetaResponse listTableMetaResponse = (ListTableMetaResponse) o;
-        return Objects.equals(this.tableMetas, listTableMetaResponse.tableMetas)
-            && Objects.equals(this.pageInfo, listTableMetaResponse.pageInfo);
+        ListTableMetaResponse that = (ListTableMetaResponse) obj;
+        return Objects.equals(this.tableMetas, that.tableMetas) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

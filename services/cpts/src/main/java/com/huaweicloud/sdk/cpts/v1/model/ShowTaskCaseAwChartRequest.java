@@ -81,17 +81,16 @@ public class ShowTaskCaseAwChartRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskCaseAwChartRequest showTaskCaseAwChartRequest = (ShowTaskCaseAwChartRequest) o;
-        return Objects.equals(this.taskRunId, showTaskCaseAwChartRequest.taskRunId)
-            && Objects.equals(this.caseRunId, showTaskCaseAwChartRequest.caseRunId)
-            && Objects.equals(this.detailId, showTaskCaseAwChartRequest.detailId);
+        ShowTaskCaseAwChartRequest that = (ShowTaskCaseAwChartRequest) obj;
+        return Objects.equals(this.taskRunId, that.taskRunId) && Objects.equals(this.caseRunId, that.caseRunId)
+            && Objects.equals(this.detailId, that.detailId);
     }
 
     @Override

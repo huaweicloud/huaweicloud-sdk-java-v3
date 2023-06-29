@@ -250,23 +250,20 @@ public class SubjectParamsVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubjectParamsVO subjectParamsVO = (SubjectParamsVO) o;
-        return Objects.equals(this.id, subjectParamsVO.id) && Objects.equals(this.nameCh, subjectParamsVO.nameCh)
-            && Objects.equals(this.nameEn, subjectParamsVO.nameEn)
-            && Objects.equals(this.description, subjectParamsVO.description)
-            && Objects.equals(this.alias, subjectParamsVO.alias)
-            && Objects.equals(this.dataOwner, subjectParamsVO.dataOwner)
-            && Objects.equals(this.dataOwnerList, subjectParamsVO.dataOwnerList)
-            && Objects.equals(this.level, subjectParamsVO.level)
-            && Objects.equals(this.parentId, subjectParamsVO.parentId)
-            && Objects.equals(this.selfDefinedFields, subjectParamsVO.selfDefinedFields);
+        SubjectParamsVO that = (SubjectParamsVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nameCh, that.nameCh)
+            && Objects.equals(this.nameEn, that.nameEn) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.alias, that.alias) && Objects.equals(this.dataOwner, that.dataOwner)
+            && Objects.equals(this.dataOwnerList, that.dataOwnerList) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
 
     @Override

@@ -57,16 +57,15 @@ public class ListConversionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConversionsRequest listConversionsRequest = (ListConversionsRequest) o;
-        return Objects.equals(this.xLanguage, listConversionsRequest.xLanguage)
-            && Objects.equals(this.measureType, listConversionsRequest.measureType);
+        ListConversionsRequest that = (ListConversionsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.measureType, that.measureType);
     }
 
     @Override

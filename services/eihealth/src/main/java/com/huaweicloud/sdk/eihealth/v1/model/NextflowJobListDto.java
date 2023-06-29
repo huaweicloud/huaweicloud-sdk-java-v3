@@ -316,26 +316,22 @@ public class NextflowJobListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NextflowJobListDto nextflowJobListDto = (NextflowJobListDto) o;
-        return Objects.equals(this.id, nextflowJobListDto.id) && Objects.equals(this.name, nextflowJobListDto.name)
-            && Objects.equals(this.description, nextflowJobListDto.description)
-            && Objects.equals(this.labels, nextflowJobListDto.labels)
-            && Objects.equals(this.status, nextflowJobListDto.status)
-            && Objects.equals(this.hasIgnoreFailedTasks, nextflowJobListDto.hasIgnoreFailedTasks)
-            && Objects.equals(this.createTime, nextflowJobListDto.createTime)
-            && Objects.equals(this.finishTime, nextflowJobListDto.finishTime)
-            && Objects.equals(this.failedMessage, nextflowJobListDto.failedMessage)
-            && Objects.equals(this.failedReason, nextflowJobListDto.failedReason)
-            && Objects.equals(this.userName, nextflowJobListDto.userName)
-            && Objects.equals(this.workflowName, nextflowJobListDto.workflowName)
-            && Objects.equals(this.workflowId, nextflowJobListDto.workflowId);
+        NextflowJobListDto that = (NextflowJobListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.status, that.status)
+            && Objects.equals(this.hasIgnoreFailedTasks, that.hasIgnoreFailedTasks)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.workflowId, that.workflowId);
     }
 
     @Override

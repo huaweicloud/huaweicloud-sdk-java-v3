@@ -87,17 +87,16 @@ public class ChangeOsOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeOsOption changeOsOption = (ChangeOsOption) o;
-        return Objects.equals(this.imageId, changeOsOption.imageId)
-            && Objects.equals(this.metadata, changeOsOption.metadata)
-            && Objects.equals(this.keyName, changeOsOption.keyName);
+        ChangeOsOption that = (ChangeOsOption) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.keyName, that.keyName);
     }
 
     @Override

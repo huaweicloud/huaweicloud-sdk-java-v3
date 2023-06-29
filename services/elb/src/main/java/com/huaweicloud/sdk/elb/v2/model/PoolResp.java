@@ -124,22 +124,15 @@ public class PoolResp {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -212,22 +205,15 @@ public class PoolResp {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LbAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LbAlgorithmEnum(value));
         }
 
         public static LbAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -528,24 +514,22 @@ public class PoolResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PoolResp poolResp = (PoolResp) o;
-        return Objects.equals(this.id, poolResp.id) && Objects.equals(this.projectId, poolResp.projectId)
-            && Objects.equals(this.tenantId, poolResp.tenantId) && Objects.equals(this.name, poolResp.name)
-            && Objects.equals(this.description, poolResp.description)
-            && Objects.equals(this.adminStateUp, poolResp.adminStateUp)
-            && Objects.equals(this.loadbalancers, poolResp.loadbalancers)
-            && Objects.equals(this.listeners, poolResp.listeners) && Objects.equals(this.members, poolResp.members)
-            && Objects.equals(this.healthmonitorId, poolResp.healthmonitorId)
-            && Objects.equals(this.sessionPersistence, poolResp.sessionPersistence)
-            && Objects.equals(this.protocol, poolResp.protocol)
-            && Objects.equals(this.lbAlgorithm, poolResp.lbAlgorithm);
+        PoolResp that = (PoolResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.loadbalancers, that.loadbalancers) && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.members, that.members) && Objects.equals(this.healthmonitorId, that.healthmonitorId)
+            && Objects.equals(this.sessionPersistence, that.sessionPersistence)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.lbAlgorithm, that.lbAlgorithm);
     }
 
     @Override

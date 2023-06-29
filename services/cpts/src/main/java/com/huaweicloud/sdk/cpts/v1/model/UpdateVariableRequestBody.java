@@ -122,18 +122,16 @@ public class UpdateVariableRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVariableRequestBody updateVariableRequestBody = (UpdateVariableRequestBody) o;
-        return Objects.equals(this.id, updateVariableRequestBody.id)
-            && Objects.equals(this.name, updateVariableRequestBody.name)
-            && Objects.equals(this.variableType, updateVariableRequestBody.variableType)
-            && Objects.equals(this.variable, updateVariableRequestBody.variable);
+        UpdateVariableRequestBody that = (UpdateVariableRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.variableType, that.variableType) && Objects.equals(this.variable, that.variable);
     }
 
     @Override

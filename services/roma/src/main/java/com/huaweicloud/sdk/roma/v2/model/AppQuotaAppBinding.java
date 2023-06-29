@@ -78,17 +78,16 @@ public class AppQuotaAppBinding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppQuotaAppBinding appQuotaAppBinding = (AppQuotaAppBinding) o;
-        return Objects.equals(this.appQuotaId, appQuotaAppBinding.appQuotaId)
-            && Objects.equals(this.appId, appQuotaAppBinding.appId)
-            && Objects.equals(this.boundTime, appQuotaAppBinding.boundTime);
+        AppQuotaAppBinding that = (AppQuotaAppBinding) obj;
+        return Objects.equals(this.appQuotaId, that.appQuotaId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.boundTime, that.boundTime);
     }
 
     @Override

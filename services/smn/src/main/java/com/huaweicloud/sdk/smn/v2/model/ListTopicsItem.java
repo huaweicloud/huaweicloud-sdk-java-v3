@@ -143,19 +143,18 @@ public class ListTopicsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTopicsItem listTopicsItem = (ListTopicsItem) o;
-        return Objects.equals(this.topicUrn, listTopicsItem.topicUrn) && Objects.equals(this.name, listTopicsItem.name)
-            && Objects.equals(this.displayName, listTopicsItem.displayName)
-            && Objects.equals(this.pushPolicy, listTopicsItem.pushPolicy)
-            && Objects.equals(this.enterpriseProjectId, listTopicsItem.enterpriseProjectId)
-            && Objects.equals(this.topicId, listTopicsItem.topicId);
+        ListTopicsItem that = (ListTopicsItem) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.pushPolicy, that.pushPolicy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.topicId, that.topicId);
     }
 
     @Override

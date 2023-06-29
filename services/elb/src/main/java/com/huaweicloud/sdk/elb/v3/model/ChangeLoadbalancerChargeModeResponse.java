@@ -136,19 +136,17 @@ public class ChangeLoadbalancerChargeModeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeLoadbalancerChargeModeResponse changeLoadbalancerChargeModeResponse =
-            (ChangeLoadbalancerChargeModeResponse) o;
-        return Objects.equals(this.eipIdList, changeLoadbalancerChargeModeResponse.eipIdList)
-            && Objects.equals(this.loadbalancerIdList, changeLoadbalancerChargeModeResponse.loadbalancerIdList)
-            && Objects.equals(this.orderId, changeLoadbalancerChargeModeResponse.orderId)
-            && Objects.equals(this.requestId, changeLoadbalancerChargeModeResponse.requestId);
+        ChangeLoadbalancerChargeModeResponse that = (ChangeLoadbalancerChargeModeResponse) obj;
+        return Objects.equals(this.eipIdList, that.eipIdList)
+            && Objects.equals(this.loadbalancerIdList, that.loadbalancerIdList)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

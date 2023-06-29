@@ -143,20 +143,18 @@ public class ListOverviewsClassificationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOverviewsClassificationRequest listOverviewsClassificationRequest = (ListOverviewsClassificationRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listOverviewsClassificationRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listOverviewsClassificationRequest.from)
-            && Objects.equals(this.to, listOverviewsClassificationRequest.to)
-            && Objects.equals(this.top, listOverviewsClassificationRequest.top)
-            && Objects.equals(this.hosts, listOverviewsClassificationRequest.hosts)
-            && Objects.equals(this.instances, listOverviewsClassificationRequest.instances);
+        ListOverviewsClassificationRequest that = (ListOverviewsClassificationRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

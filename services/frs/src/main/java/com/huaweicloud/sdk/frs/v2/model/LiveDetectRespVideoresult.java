@@ -96,17 +96,16 @@ public class LiveDetectRespVideoresult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LiveDetectRespVideoresult liveDetectRespVideoresult = (LiveDetectRespVideoresult) o;
-        return Objects.equals(this.alive, liveDetectRespVideoresult.alive)
-            && Objects.equals(this.actions, liveDetectRespVideoresult.actions)
-            && Objects.equals(this.picture, liveDetectRespVideoresult.picture);
+        LiveDetectRespVideoresult that = (LiveDetectRespVideoresult) obj;
+        return Objects.equals(this.alive, that.alive) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.picture, that.picture);
     }
 
     @Override

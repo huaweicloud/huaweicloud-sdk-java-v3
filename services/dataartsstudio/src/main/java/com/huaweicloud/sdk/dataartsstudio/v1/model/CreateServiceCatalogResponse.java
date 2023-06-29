@@ -166,21 +166,18 @@ public class CreateServiceCatalogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServiceCatalogResponse createServiceCatalogResponse = (CreateServiceCatalogResponse) o;
-        return Objects.equals(this.catalogId, createServiceCatalogResponse.catalogId)
-            && Objects.equals(this.name, createServiceCatalogResponse.name)
-            && Objects.equals(this.description, createServiceCatalogResponse.description)
-            && Objects.equals(this.createTime, createServiceCatalogResponse.createTime)
-            && Objects.equals(this.createUser, createServiceCatalogResponse.createUser)
-            && Objects.equals(this.updateTime, createServiceCatalogResponse.updateTime)
-            && Objects.equals(this.updateUser, createServiceCatalogResponse.updateUser);
+        CreateServiceCatalogResponse that = (CreateServiceCatalogResponse) obj;
+        return Objects.equals(this.catalogId, that.catalogId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.createUser, that.createUser) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateUser, that.updateUser);
     }
 
     @Override

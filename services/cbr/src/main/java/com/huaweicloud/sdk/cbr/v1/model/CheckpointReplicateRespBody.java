@@ -206,22 +206,20 @@ public class CheckpointReplicateRespBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointReplicateRespBody checkpointReplicateRespBody = (CheckpointReplicateRespBody) o;
-        return Objects.equals(this.backups, checkpointReplicateRespBody.backups)
-            && Objects.equals(this.destinationProjectId, checkpointReplicateRespBody.destinationProjectId)
-            && Objects.equals(this.destinationRegion, checkpointReplicateRespBody.destinationRegion)
-            && Objects.equals(this.destinationVaultId, checkpointReplicateRespBody.destinationVaultId)
-            && Objects.equals(this.projectId, checkpointReplicateRespBody.projectId)
-            && Objects.equals(this.providerId, checkpointReplicateRespBody.providerId)
-            && Objects.equals(this.sourceRegion, checkpointReplicateRespBody.sourceRegion)
-            && Objects.equals(this.vaultId, checkpointReplicateRespBody.vaultId);
+        CheckpointReplicateRespBody that = (CheckpointReplicateRespBody) obj;
+        return Objects.equals(this.backups, that.backups)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.providerId, that.providerId)
+            && Objects.equals(this.sourceRegion, that.sourceRegion) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

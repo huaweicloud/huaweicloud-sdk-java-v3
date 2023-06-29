@@ -153,7 +153,7 @@ public class SimpleProduct {
     }
 
     /**
-     * 周期套餐标识，1表示包周期，0表示按需。
+     * 周期套餐标识，0表示包周期，1表示按需。
      * @return chargeMode
      */
     public String getChargeMode() {
@@ -165,19 +165,18 @@ public class SimpleProduct {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SimpleProduct simpleProduct = (SimpleProduct) o;
-        return Objects.equals(this.productId, simpleProduct.productId)
-            && Objects.equals(this.flavorId, simpleProduct.flavorId) && Objects.equals(this.type, simpleProduct.type)
-            && Objects.equals(this.cpu, simpleProduct.cpu) && Objects.equals(this.memory, simpleProduct.memory)
-            && Objects.equals(this.descriptions, simpleProduct.descriptions)
-            && Objects.equals(this.chargeMode, simpleProduct.chargeMode);
+        SimpleProduct that = (SimpleProduct) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.descriptions, that.descriptions)
+            && Objects.equals(this.chargeMode, that.chargeMode);
     }
 
     @Override

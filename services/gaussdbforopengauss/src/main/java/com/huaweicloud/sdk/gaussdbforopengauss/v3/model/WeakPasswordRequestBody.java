@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * WeakPasswordRequestBody
  */
-public class WeakPasswordRequestBody  {
-
+public class WeakPasswordRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
 
     private String password;
 
@@ -27,9 +19,6 @@ public class WeakPasswordRequestBody  {
         this.password = password;
         return this;
     }
-
-    
-
 
     /**
      * 数据库帐号密码。
@@ -43,23 +32,23 @@ public class WeakPasswordRequestBody  {
         this.password = password;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WeakPasswordRequestBody weakPasswordRequestBody = (WeakPasswordRequestBody) o;
-        return Objects.equals(this.password, weakPasswordRequestBody.password);
+        WeakPasswordRequestBody that = (WeakPasswordRequestBody) obj;
+        return Objects.equals(this.password, that.password);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(password);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class WeakPasswordRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class WeakPasswordRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

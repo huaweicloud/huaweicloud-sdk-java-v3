@@ -55,16 +55,15 @@ public class IssueItemSfV4Priority {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueItemSfV4Priority issueItemSfV4Priority = (IssueItemSfV4Priority) o;
-        return Objects.equals(this.id, issueItemSfV4Priority.id)
-            && Objects.equals(this.name, issueItemSfV4Priority.name);
+        IssueItemSfV4Priority that = (IssueItemSfV4Priority) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

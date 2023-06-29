@@ -43,15 +43,15 @@ public class AddProtectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddProtectRequest addProtectRequest = (AddProtectRequest) o;
-        return Objects.equals(this.accessLevel, addProtectRequest.accessLevel);
+        AddProtectRequest that = (AddProtectRequest) obj;
+        return Objects.equals(this.accessLevel, that.accessLevel);
     }
 
     @Override

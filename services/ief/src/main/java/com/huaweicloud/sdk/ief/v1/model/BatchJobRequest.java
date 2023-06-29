@@ -149,19 +149,17 @@ public class BatchJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchJobRequest batchJobRequest = (BatchJobRequest) o;
-        return Objects.equals(this.jobName, batchJobRequest.jobName)
-            && Objects.equals(this.jobType, batchJobRequest.jobType)
-            && Objects.equals(this.jobContent, batchJobRequest.jobContent)
-            && Objects.equals(this.description, batchJobRequest.description)
-            && Objects.equals(this.tags, batchJobRequest.tags);
+        BatchJobRequest that = (BatchJobRequest) obj;
+        return Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.jobContent, that.jobContent) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

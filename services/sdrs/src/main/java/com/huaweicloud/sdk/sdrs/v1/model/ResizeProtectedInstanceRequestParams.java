@@ -121,21 +121,19 @@ public class ResizeProtectedInstanceRequestParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeProtectedInstanceRequestParams resizeProtectedInstanceRequestParams =
-            (ResizeProtectedInstanceRequestParams) o;
-        return Objects.equals(this.flavorRef, resizeProtectedInstanceRequestParams.flavorRef)
-            && Objects.equals(this.productionFlavorRef, resizeProtectedInstanceRequestParams.productionFlavorRef)
-            && Objects.equals(this.drFlavorRef, resizeProtectedInstanceRequestParams.drFlavorRef)
-            && Objects.equals(this.productionDedicatedHostId,
-                resizeProtectedInstanceRequestParams.productionDedicatedHostId)
-            && Objects.equals(this.drDedicatedHostId, resizeProtectedInstanceRequestParams.drDedicatedHostId);
+        ResizeProtectedInstanceRequestParams that = (ResizeProtectedInstanceRequestParams) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.productionFlavorRef, that.productionFlavorRef)
+            && Objects.equals(this.drFlavorRef, that.drFlavorRef)
+            && Objects.equals(this.productionDedicatedHostId, that.productionDedicatedHostId)
+            && Objects.equals(this.drDedicatedHostId, that.drDedicatedHostId);
     }
 
     @Override

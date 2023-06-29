@@ -55,16 +55,15 @@ public class UpdateVpcAttachmentBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcAttachmentBody updateVpcAttachmentBody = (UpdateVpcAttachmentBody) o;
-        return Objects.equals(this.description, updateVpcAttachmentBody.description)
-            && Objects.equals(this.name, updateVpcAttachmentBody.name);
+        UpdateVpcAttachmentBody that = (UpdateVpcAttachmentBody) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name);
     }
 
     @Override

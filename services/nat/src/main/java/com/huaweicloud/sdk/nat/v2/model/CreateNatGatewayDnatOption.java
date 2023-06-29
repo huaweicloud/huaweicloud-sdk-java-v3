@@ -235,24 +235,22 @@ public class CreateNatGatewayDnatOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNatGatewayDnatOption createNatGatewayDnatOption = (CreateNatGatewayDnatOption) o;
-        return Objects.equals(this.description, createNatGatewayDnatOption.description)
-            && Objects.equals(this.portId, createNatGatewayDnatOption.portId)
-            && Objects.equals(this.privateIp, createNatGatewayDnatOption.privateIp)
-            && Objects.equals(this.natGatewayId, createNatGatewayDnatOption.natGatewayId)
-            && Objects.equals(this.internalServicePort, createNatGatewayDnatOption.internalServicePort)
-            && Objects.equals(this.floatingIpId, createNatGatewayDnatOption.floatingIpId)
-            && Objects.equals(this.externalServicePort, createNatGatewayDnatOption.externalServicePort)
-            && Objects.equals(this.protocol, createNatGatewayDnatOption.protocol)
-            && Objects.equals(this.internalServicePortRange, createNatGatewayDnatOption.internalServicePortRange)
-            && Objects.equals(this.externalServicePortRange, createNatGatewayDnatOption.externalServicePortRange);
+        CreateNatGatewayDnatOption that = (CreateNatGatewayDnatOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.natGatewayId, that.natGatewayId)
+            && Objects.equals(this.internalServicePort, that.internalServicePort)
+            && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.externalServicePort, that.externalServicePort)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.internalServicePortRange, that.internalServicePortRange)
+            && Objects.equals(this.externalServicePortRange, that.externalServicePortRange);
     }
 
     @Override

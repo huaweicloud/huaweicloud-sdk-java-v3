@@ -77,22 +77,15 @@ public class ExportImageRequestBody {
             if (value == null) {
                 return null;
             }
-            FileFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FileFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FileFormatEnum(value));
         }
 
         public static FileFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FileFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,17 +164,16 @@ public class ExportImageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportImageRequestBody exportImageRequestBody = (ExportImageRequestBody) o;
-        return Objects.equals(this.bucketUrl, exportImageRequestBody.bucketUrl)
-            && Objects.equals(this.fileFormat, exportImageRequestBody.fileFormat)
-            && Objects.equals(this.isQuickExport, exportImageRequestBody.isQuickExport);
+        ExportImageRequestBody that = (ExportImageRequestBody) obj;
+        return Objects.equals(this.bucketUrl, that.bucketUrl) && Objects.equals(this.fileFormat, that.fileFormat)
+            && Objects.equals(this.isQuickExport, that.isQuickExport);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class ShowPublicActionListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPublicActionListRequest showPublicActionListRequest = (ShowPublicActionListRequest) o;
-        return Objects.equals(this.prefix, showPublicActionListRequest.prefix)
-            && Objects.equals(this.category, showPublicActionListRequest.category)
-            && Objects.equals(this.offset, showPublicActionListRequest.offset)
-            && Objects.equals(this.limit, showPublicActionListRequest.limit);
+        ShowPublicActionListRequest that = (ShowPublicActionListRequest) obj;
+        return Objects.equals(this.prefix, that.prefix) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -169,21 +169,18 @@ public class ListImagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImagesRequest listImagesRequest = (ListImagesRequest) o;
-        return Objects.equals(this.osType, listImagesRequest.osType)
-            && Objects.equals(this.imageType, listImagesRequest.imageType)
-            && Objects.equals(this.platform, listImagesRequest.platform)
-            && Objects.equals(this.architecture, listImagesRequest.architecture)
-            && Objects.equals(this.packageType, listImagesRequest.packageType)
-            && Objects.equals(this.limit, listImagesRequest.limit)
-            && Objects.equals(this.offset, listImagesRequest.offset);
+        ListImagesRequest that = (ListImagesRequest) obj;
+        return Objects.equals(this.osType, that.osType) && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

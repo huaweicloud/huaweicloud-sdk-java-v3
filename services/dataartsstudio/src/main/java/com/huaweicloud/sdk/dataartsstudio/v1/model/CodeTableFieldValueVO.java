@@ -121,19 +121,17 @@ public class CodeTableFieldValueVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeTableFieldValueVO codeTableFieldValueVO = (CodeTableFieldValueVO) o;
-        return Objects.equals(this.id, codeTableFieldValueVO.id)
-            && Objects.equals(this.fdId, codeTableFieldValueVO.fdId)
-            && Objects.equals(this.fdValue, codeTableFieldValueVO.fdValue)
-            && Objects.equals(this.ordinal, codeTableFieldValueVO.ordinal)
-            && Objects.equals(this.description, codeTableFieldValueVO.description);
+        CodeTableFieldValueVO that = (CodeTableFieldValueVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.fdId, that.fdId)
+            && Objects.equals(this.fdValue, that.fdValue) && Objects.equals(this.ordinal, that.ordinal)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -82,22 +82,15 @@ public class QueryProgressResp {
             if (value == null) {
                 return null;
             }
-            TaskModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskModeEnum(value));
         }
 
         public static TaskModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -336,24 +329,21 @@ public class QueryProgressResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryProgressResp queryProgressResp = (QueryProgressResp) o;
-        return Objects.equals(this.jobId, queryProgressResp.jobId)
-            && Objects.equals(this.progress, queryProgressResp.progress)
-            && Objects.equals(this.increTransDelay, queryProgressResp.increTransDelay)
-            && Objects.equals(this.taskMode, queryProgressResp.taskMode)
-            && Objects.equals(this.transferStatus, queryProgressResp.transferStatus)
-            && Objects.equals(this.processTime, queryProgressResp.processTime)
-            && Objects.equals(this.remainingTime, queryProgressResp.remainingTime)
-            && Objects.equals(this.progressMap, queryProgressResp.progressMap)
-            && Objects.equals(this.errorCode, queryProgressResp.errorCode)
-            && Objects.equals(this.errorMsg, queryProgressResp.errorMsg);
+        QueryProgressResp that = (QueryProgressResp) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.increTransDelay, that.increTransDelay)
+            && Objects.equals(this.taskMode, that.taskMode) && Objects.equals(this.transferStatus, that.transferStatus)
+            && Objects.equals(this.processTime, that.processTime)
+            && Objects.equals(this.remainingTime, that.remainingTime)
+            && Objects.equals(this.progressMap, that.progressMap) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

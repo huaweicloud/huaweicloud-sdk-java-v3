@@ -195,20 +195,17 @@ public class InstallNextflowRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstallNextflowRequestBody installNextflowRequestBody = (InstallNextflowRequestBody) o;
-        return Objects.equals(this.file, installNextflowRequestBody.file)
-            && Objects.equals(this.partNumber, installNextflowRequestBody.partNumber)
-            && Objects.equals(this.totalPart, installNextflowRequestBody.totalPart)
-            && Objects.equals(this.multipartId, installNextflowRequestBody.multipartId)
-            && Objects.equals(this.fileName, installNextflowRequestBody.fileName)
-            && Objects.equals(this.version, installNextflowRequestBody.version);
+        InstallNextflowRequestBody that = (InstallNextflowRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.partNumber, that.partNumber)
+            && Objects.equals(this.totalPart, that.totalPart) && Objects.equals(this.multipartId, that.multipartId)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.version, that.version);
     }
 
     @Override

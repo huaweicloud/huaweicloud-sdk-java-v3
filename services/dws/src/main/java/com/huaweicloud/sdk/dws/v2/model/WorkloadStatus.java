@@ -55,16 +55,16 @@ public class WorkloadStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkloadStatus workloadStatus = (WorkloadStatus) o;
-        return Objects.equals(this.workloadSwitch, workloadStatus.workloadSwitch)
-            && Objects.equals(this.maxConcurrencyNum, workloadStatus.maxConcurrencyNum);
+        WorkloadStatus that = (WorkloadStatus) obj;
+        return Objects.equals(this.workloadSwitch, that.workloadSwitch)
+            && Objects.equals(this.maxConcurrencyNum, that.maxConcurrencyNum);
     }
 
     @Override

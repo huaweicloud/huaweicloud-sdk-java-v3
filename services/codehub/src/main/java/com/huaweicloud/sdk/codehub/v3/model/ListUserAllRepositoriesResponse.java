@@ -97,17 +97,16 @@ public class ListUserAllRepositoriesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserAllRepositoriesResponse listUserAllRepositoriesResponse = (ListUserAllRepositoriesResponse) o;
-        return Objects.equals(this.error, listUserAllRepositoriesResponse.error)
-            && Objects.equals(this.result, listUserAllRepositoriesResponse.result)
-            && Objects.equals(this.status, listUserAllRepositoriesResponse.status);
+        ListUserAllRepositoriesResponse that = (ListUserAllRepositoriesResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

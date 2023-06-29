@@ -55,15 +55,15 @@ public class KeyValueDO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyValueDO keyValueDO = (KeyValueDO) o;
-        return Objects.equals(this.key, keyValueDO.key) && Objects.equals(this.value, keyValueDO.value);
+        KeyValueDO that = (KeyValueDO) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

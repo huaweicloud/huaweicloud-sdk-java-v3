@@ -55,16 +55,16 @@ public class DeleteApiAclBindingV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteApiAclBindingV2Request deleteApiAclBindingV2Request = (DeleteApiAclBindingV2Request) o;
-        return Objects.equals(this.instanceId, deleteApiAclBindingV2Request.instanceId)
-            && Objects.equals(this.aclBindingsId, deleteApiAclBindingV2Request.aclBindingsId);
+        DeleteApiAclBindingV2Request that = (DeleteApiAclBindingV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.aclBindingsId, that.aclBindingsId);
     }
 
     @Override

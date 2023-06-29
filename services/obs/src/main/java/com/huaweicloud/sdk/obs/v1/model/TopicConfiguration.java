@@ -120,17 +120,16 @@ public class TopicConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TopicConfiguration topicConfiguration = (TopicConfiguration) o;
-        return Objects.equals(this.id, topicConfiguration.id) && Objects.equals(this.filter, topicConfiguration.filter)
-            && Objects.equals(this.topic, topicConfiguration.topic)
-            && Objects.equals(this.event, topicConfiguration.event);
+        TopicConfiguration that = (TopicConfiguration) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.topic, that.topic) && Objects.equals(this.event, that.event);
     }
 
     @Override

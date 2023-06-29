@@ -87,17 +87,17 @@ public class UpdateCacheRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCacheRulesRequest updateCacheRulesRequest = (UpdateCacheRulesRequest) o;
-        return Objects.equals(this.domainId, updateCacheRulesRequest.domainId)
-            && Objects.equals(this.enterpriseProjectId, updateCacheRulesRequest.enterpriseProjectId)
-            && Objects.equals(this.body, updateCacheRulesRequest.body);
+        UpdateCacheRulesRequest that = (UpdateCacheRulesRequest) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

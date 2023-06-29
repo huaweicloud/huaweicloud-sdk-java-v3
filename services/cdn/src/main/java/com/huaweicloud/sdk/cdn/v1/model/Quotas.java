@@ -99,16 +99,16 @@ public class Quotas {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Quotas quotas = (Quotas) o;
-        return Objects.equals(this.quotaLimit, quotas.quotaLimit) && Objects.equals(this.type, quotas.type)
-            && Objects.equals(this.used, quotas.used) && Objects.equals(this.userDomainId, quotas.userDomainId);
+        Quotas that = (Quotas) obj;
+        return Objects.equals(this.quotaLimit, that.quotaLimit) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.used, that.used) && Objects.equals(this.userDomainId, that.userDomainId);
     }
 
     @Override

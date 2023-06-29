@@ -81,22 +81,15 @@ public class DeploymentHostInfo {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsEnum(value));
         }
 
         public static OsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -301,22 +294,20 @@ public class DeploymentHostInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentHostInfo deploymentHostInfo = (DeploymentHostInfo) o;
-        return Objects.equals(this.groupId, deploymentHostInfo.groupId)
-            && Objects.equals(this.hostName, deploymentHostInfo.hostName)
-            && Objects.equals(this.ip, deploymentHostInfo.ip) && Objects.equals(this.port, deploymentHostInfo.port)
-            && Objects.equals(this.os, deploymentHostInfo.os)
-            && Objects.equals(this.asProxy, deploymentHostInfo.asProxy)
-            && Objects.equals(this.proxyHostId, deploymentHostInfo.proxyHostId)
-            && Objects.equals(this.authorization, deploymentHostInfo.authorization)
-            && Objects.equals(this.installIcagent, deploymentHostInfo.installIcagent);
+        DeploymentHostInfo that = (DeploymentHostInfo) obj;
+        return Objects.equals(this.groupId, that.groupId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.os, that.os) && Objects.equals(this.asProxy, that.asProxy)
+            && Objects.equals(this.proxyHostId, that.proxyHostId)
+            && Objects.equals(this.authorization, that.authorization)
+            && Objects.equals(this.installIcagent, that.installIcagent);
     }
 
     @Override

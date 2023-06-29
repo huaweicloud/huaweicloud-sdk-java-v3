@@ -61,7 +61,7 @@ public class DomainItem {
     private String createTime;
 
     /**
-     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * 网站域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
      */
     public static final class AuthStatusEnum {
 
@@ -123,22 +123,15 @@ public class DomainItem {
             if (value == null) {
                 return null;
             }
-            AuthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthStatusEnum(value));
         }
 
         public static AuthStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -205,22 +198,15 @@ public class DomainItem {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,7 +310,7 @@ public class DomainItem {
     }
 
     /**
-     * 域名id
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -341,7 +327,7 @@ public class DomainItem {
     }
 
     /**
-     * 一级域名id
+     * 一级域名ID
      * @return topLevelDomainId
      */
     public String getTopLevelDomainId() {
@@ -358,7 +344,7 @@ public class DomainItem {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -375,7 +361,7 @@ public class DomainItem {
     }
 
     /**
-     * 域名的别名
+     * 网站域名的别名
      * @return alias
      */
     public String getAlias() {
@@ -392,7 +378,7 @@ public class DomainItem {
     }
 
     /**
-     * 创建域名资产的时间
+     * 创建网站域名资产的时间
      * @return createTime
      */
     public String getCreateTime() {
@@ -409,7 +395,7 @@ public class DomainItem {
     }
 
     /**
-     * 域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
+     * 网站域名的认证状态:   * unauth - 未认证   * auth - 已认证   * invalid - 认证文件无效   * manual - 人工认证   * skip - 免认证 
      * @return authStatus
      */
     public AuthStatusEnum getAuthStatus() {
@@ -438,22 +424,21 @@ public class DomainItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainItem domainItem = (DomainItem) o;
-        return Objects.equals(this.high, domainItem.high) && Objects.equals(this.middle, domainItem.middle)
-            && Objects.equals(this.low, domainItem.low) && Objects.equals(this.hint, domainItem.hint)
-            && Objects.equals(this.domainId, domainItem.domainId)
-            && Objects.equals(this.topLevelDomainId, domainItem.topLevelDomainId)
-            && Objects.equals(this.domainName, domainItem.domainName) && Objects.equals(this.alias, domainItem.alias)
-            && Objects.equals(this.createTime, domainItem.createTime)
-            && Objects.equals(this.authStatus, domainItem.authStatus)
-            && Objects.equals(this.protocolType, domainItem.protocolType);
+        DomainItem that = (DomainItem) obj;
+        return Objects.equals(this.high, that.high) && Objects.equals(this.middle, that.middle)
+            && Objects.equals(this.low, that.low) && Objects.equals(this.hint, that.hint)
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.topLevelDomainId, that.topLevelDomainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.authStatus, that.authStatus)
+            && Objects.equals(this.protocolType, that.protocolType);
     }
 
     @Override

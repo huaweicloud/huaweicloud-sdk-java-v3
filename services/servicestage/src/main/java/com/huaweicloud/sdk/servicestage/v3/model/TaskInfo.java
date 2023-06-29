@@ -97,22 +97,15 @@ public class TaskInfo {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskStatusEnum(value));
         }
 
         public static TaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,18 +252,18 @@ public class TaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfo taskInfo = (TaskInfo) o;
-        return Objects.equals(this.createdAt, taskInfo.createdAt) && Objects.equals(this.updateAt, taskInfo.updateAt)
-            && Objects.equals(this.messages, taskInfo.messages) && Objects.equals(this.taskId, taskInfo.taskId)
-            && Objects.equals(this.taskName, taskInfo.taskName) && Objects.equals(this.taskStatus, taskInfo.taskStatus)
-            && Objects.equals(this.taskType, taskInfo.taskType);
+        TaskInfo that = (TaskInfo) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.messages, that.messages) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.taskName, that.taskName) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.taskType, that.taskType);
     }
 
     @Override

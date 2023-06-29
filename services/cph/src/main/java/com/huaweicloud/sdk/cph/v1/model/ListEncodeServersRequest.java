@@ -129,19 +129,17 @@ public class ListEncodeServersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEncodeServersRequest listEncodeServersRequest = (ListEncodeServersRequest) o;
-        return Objects.equals(this.offset, listEncodeServersRequest.offset)
-            && Objects.equals(this.limit, listEncodeServersRequest.limit)
-            && Objects.equals(this.type, listEncodeServersRequest.type)
-            && Objects.equals(this.status, listEncodeServersRequest.status)
-            && Objects.equals(this.serverId, listEncodeServersRequest.serverId);
+        ListEncodeServersRequest that = (ListEncodeServersRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

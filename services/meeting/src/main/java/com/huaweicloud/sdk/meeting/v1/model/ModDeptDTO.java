@@ -90,22 +90,15 @@ public class ModDeptDTO {
             if (value == null) {
                 return null;
             }
-            InPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InPermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InPermissionEnum(value));
         }
 
         public static InPermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -185,22 +178,15 @@ public class ModDeptDTO {
             if (value == null) {
                 return null;
             }
-            OutPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OutPermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OutPermissionEnum(value));
         }
 
         public static OutPermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OutPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -370,20 +356,19 @@ public class ModDeptDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModDeptDTO modDeptDTO = (ModDeptDTO) o;
-        return Objects.equals(this.deptName, modDeptDTO.deptName)
-            && Objects.equals(this.parentDeptCode, modDeptDTO.parentDeptCode)
-            && Objects.equals(this.note, modDeptDTO.note) && Objects.equals(this.inPermission, modDeptDTO.inPermission)
-            && Objects.equals(this.outPermission, modDeptDTO.outPermission)
-            && Objects.equals(this.designatedOutDeptCodes, modDeptDTO.designatedOutDeptCodes)
-            && Objects.equals(this.sortLevel, modDeptDTO.sortLevel);
+        ModDeptDTO that = (ModDeptDTO) obj;
+        return Objects.equals(this.deptName, that.deptName) && Objects.equals(this.parentDeptCode, that.parentDeptCode)
+            && Objects.equals(this.note, that.note) && Objects.equals(this.inPermission, that.inPermission)
+            && Objects.equals(this.outPermission, that.outPermission)
+            && Objects.equals(this.designatedOutDeptCodes, that.designatedOutDeptCodes)
+            && Objects.equals(this.sortLevel, that.sortLevel);
     }
 
     @Override

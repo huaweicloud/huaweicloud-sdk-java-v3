@@ -88,17 +88,16 @@ public class UpdateVariableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVariableResponse updateVariableResponse = (UpdateVariableResponse) o;
-        return Objects.equals(this.code, updateVariableResponse.code)
-            && Objects.equals(this.json, updateVariableResponse.json)
-            && Objects.equals(this.message, updateVariableResponse.message);
+        UpdateVariableResponse that = (UpdateVariableResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.json, that.json)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

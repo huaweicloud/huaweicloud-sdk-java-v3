@@ -112,18 +112,16 @@ public class ShowPlaybookRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPlaybookRuleResponse showPlaybookRuleResponse = (ShowPlaybookRuleResponse) o;
-        return Objects.equals(this.code, showPlaybookRuleResponse.code)
-            && Objects.equals(this.message, showPlaybookRuleResponse.message)
-            && Objects.equals(this.data, showPlaybookRuleResponse.data)
-            && Objects.equals(this.xRequestId, showPlaybookRuleResponse.xRequestId);
+        ShowPlaybookRuleResponse that = (ShowPlaybookRuleResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

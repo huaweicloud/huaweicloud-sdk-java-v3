@@ -77,16 +77,16 @@ public class ListApisRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisRequest listApisRequest = (ListApisRequest) o;
-        return Objects.equals(this.workspace, listApisRequest.workspace)
-            && Objects.equals(this.offset, listApisRequest.offset) && Objects.equals(this.limit, listApisRequest.limit);
+        ListApisRequest that = (ListApisRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

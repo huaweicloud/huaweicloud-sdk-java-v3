@@ -109,18 +109,16 @@ public class HostContainerPortMapping {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostContainerPortMapping hostContainerPortMapping = (HostContainerPortMapping) o;
-        return Objects.equals(this.containerPort, hostContainerPortMapping.containerPort)
-            && Objects.equals(this.hostPort, hostContainerPortMapping.hostPort)
-            && Objects.equals(this.hostIp, hostContainerPortMapping.hostIp)
-            && Objects.equals(this.hostPortRange, hostContainerPortMapping.hostPortRange);
+        HostContainerPortMapping that = (HostContainerPortMapping) obj;
+        return Objects.equals(this.containerPort, that.containerPort) && Objects.equals(this.hostPort, that.hostPort)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.hostPortRange, that.hostPortRange);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class CheckProjectNameV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckProjectNameV4Request checkProjectNameV4Request = (CheckProjectNameV4Request) o;
-        return Objects.equals(this.body, checkProjectNameV4Request.body);
+        CheckProjectNameV4Request that = (CheckProjectNameV4Request) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

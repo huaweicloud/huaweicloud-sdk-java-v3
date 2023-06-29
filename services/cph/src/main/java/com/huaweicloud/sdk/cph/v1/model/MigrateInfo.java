@@ -77,17 +77,17 @@ public class MigrateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateInfo migrateInfo = (MigrateInfo) o;
-        return Objects.equals(this.sourcePhoneId, migrateInfo.sourcePhoneId)
-            && Objects.equals(this.targetPhoneId, migrateInfo.targetPhoneId)
-            && Objects.equals(this.isMigrateProperty, migrateInfo.isMigrateProperty);
+        MigrateInfo that = (MigrateInfo) obj;
+        return Objects.equals(this.sourcePhoneId, that.sourcePhoneId)
+            && Objects.equals(this.targetPhoneId, that.targetPhoneId)
+            && Objects.equals(this.isMigrateProperty, that.isMigrateProperty);
     }
 
     @Override

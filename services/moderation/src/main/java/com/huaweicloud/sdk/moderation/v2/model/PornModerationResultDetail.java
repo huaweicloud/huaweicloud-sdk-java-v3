@@ -56,16 +56,15 @@ public class PornModerationResultDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PornModerationResultDetail pornModerationResultDetail = (PornModerationResultDetail) o;
-        return Objects.equals(this.confidence, pornModerationResultDetail.confidence)
-            && Objects.equals(this.label, pornModerationResultDetail.label);
+        PornModerationResultDetail that = (PornModerationResultDetail) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.label, that.label);
     }
 
     @Override

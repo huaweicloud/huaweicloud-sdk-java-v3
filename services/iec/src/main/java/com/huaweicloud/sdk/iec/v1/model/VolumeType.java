@@ -77,16 +77,16 @@ public class VolumeType {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeType volumeType = (VolumeType) o;
-        return Objects.equals(this.id, volumeType.id) && Objects.equals(this.name, volumeType.name)
-            && Objects.equals(this.status, volumeType.status);
+        VolumeType that = (VolumeType) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -297,27 +297,23 @@ public class ListMeetingFileResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMeetingFileResponseDTO listMeetingFileResponseDTO = (ListMeetingFileResponseDTO) o;
-        return Objects.equals(this.fileCode, listMeetingFileResponseDTO.fileCode)
-            && Objects.equals(this.topic, listMeetingFileResponseDTO.topic)
-            && Objects.equals(this.fileId, listMeetingFileResponseDTO.fileId)
-            && Objects.equals(this.fileName, listMeetingFileResponseDTO.fileName)
-            && Objects.equals(this.fileSize, listMeetingFileResponseDTO.fileSize)
-            && Objects.equals(this.thumbnailFileId, listMeetingFileResponseDTO.thumbnailFileId)
-            && Objects.equals(this.thumbnailFileName, listMeetingFileResponseDTO.thumbnailFileName)
-            && Objects.equals(this.thumbnailFileSize, listMeetingFileResponseDTO.thumbnailFileSize)
-            && Objects.equals(this.pdfFileId, listMeetingFileResponseDTO.pdfFileId)
-            && Objects.equals(this.pdfFileName, listMeetingFileResponseDTO.pdfFileName)
-            && Objects.equals(this.pdfFileSize, listMeetingFileResponseDTO.pdfFileSize)
-            && Objects.equals(this.userId, listMeetingFileResponseDTO.userId)
-            && Objects.equals(this.creationTimestamp, listMeetingFileResponseDTO.creationTimestamp);
+        ListMeetingFileResponseDTO that = (ListMeetingFileResponseDTO) obj;
+        return Objects.equals(this.fileCode, that.fileCode) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.fileId, that.fileId) && Objects.equals(this.fileName, that.fileName)
+            && Objects.equals(this.fileSize, that.fileSize)
+            && Objects.equals(this.thumbnailFileId, that.thumbnailFileId)
+            && Objects.equals(this.thumbnailFileName, that.thumbnailFileName)
+            && Objects.equals(this.thumbnailFileSize, that.thumbnailFileSize)
+            && Objects.equals(this.pdfFileId, that.pdfFileId) && Objects.equals(this.pdfFileName, that.pdfFileName)
+            && Objects.equals(this.pdfFileSize, that.pdfFileSize) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override

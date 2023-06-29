@@ -52,15 +52,15 @@ public class DeleteIndicatorRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIndicatorRequestBody deleteIndicatorRequestBody = (DeleteIndicatorRequestBody) o;
-        return Objects.equals(this.batchIds, deleteIndicatorRequestBody.batchIds);
+        DeleteIndicatorRequestBody that = (DeleteIndicatorRequestBody) obj;
+        return Objects.equals(this.batchIds, that.batchIds);
     }
 
     @Override

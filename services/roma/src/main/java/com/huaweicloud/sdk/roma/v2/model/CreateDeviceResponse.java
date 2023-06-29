@@ -649,39 +649,32 @@ public class CreateDeviceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDeviceResponse createDeviceResponse = (CreateDeviceResponse) o;
-        return Objects.equals(this.permissions, createDeviceResponse.permissions)
-            && Objects.equals(this.id, createDeviceResponse.id)
-            && Objects.equals(this.deviceId, createDeviceResponse.deviceId)
-            && Objects.equals(this.product, createDeviceResponse.product)
-            && Objects.equals(this.deviceName, createDeviceResponse.deviceName)
-            && Objects.equals(this.instanceId, createDeviceResponse.instanceId)
-            && Objects.equals(this.clientId, createDeviceResponse.clientId)
-            && Objects.equals(this.nodeId, createDeviceResponse.nodeId)
-            && Objects.equals(this.appName, createDeviceResponse.appName)
-            && Objects.equals(this.status, createDeviceResponse.status)
-            && Objects.equals(this.onlineStatus, createDeviceResponse.onlineStatus)
-            && Objects.equals(this.description, createDeviceResponse.description)
-            && Objects.equals(this.authentication, createDeviceResponse.authentication)
-            && Objects.equals(this.createdUser, createDeviceResponse.createdUser)
-            && Objects.equals(this.lastUpdatedUser, createDeviceResponse.lastUpdatedUser)
-            && Objects.equals(this.tags, createDeviceResponse.tags)
-            && Objects.equals(this.createdDatetime, createDeviceResponse.createdDatetime)
-            && Objects.equals(this.lastUpdatedDatetime, createDeviceResponse.lastUpdatedDatetime)
-            && Objects.equals(this.connectAddress, createDeviceResponse.connectAddress)
-            && Objects.equals(this.sslConnectAddress, createDeviceResponse.sslConnectAddress)
-            && Objects.equals(this.ipv6ConnectAddress, createDeviceResponse.ipv6ConnectAddress)
-            && Objects.equals(this.ipv6SslConnectAddress, createDeviceResponse.ipv6SslConnectAddress)
-            && Objects.equals(this.nodeType, createDeviceResponse.nodeType)
-            && Objects.equals(this.deviceType, createDeviceResponse.deviceType)
-            && Objects.equals(this.appId, createDeviceResponse.appId);
+        CreateDeviceResponse that = (CreateDeviceResponse) obj;
+        return Objects.equals(this.permissions, that.permissions) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.product, that.product)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.clientId, that.clientId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.onlineStatus, that.onlineStatus)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdUser, that.createdUser)
+            && Objects.equals(this.lastUpdatedUser, that.lastUpdatedUser) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createdDatetime, that.createdDatetime)
+            && Objects.equals(this.lastUpdatedDatetime, that.lastUpdatedDatetime)
+            && Objects.equals(this.connectAddress, that.connectAddress)
+            && Objects.equals(this.sslConnectAddress, that.sslConnectAddress)
+            && Objects.equals(this.ipv6ConnectAddress, that.ipv6ConnectAddress)
+            && Objects.equals(this.ipv6SslConnectAddress, that.ipv6SslConnectAddress)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.appId, that.appId);
     }
 
     @Override

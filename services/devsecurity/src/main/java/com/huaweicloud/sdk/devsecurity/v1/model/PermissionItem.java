@@ -99,17 +99,17 @@ public class PermissionItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PermissionItem permissionItem = (PermissionItem) o;
-        return Objects.equals(this.permName, permissionItem.permName) && Objects.equals(this.desc, permissionItem.desc)
-            && Objects.equals(this.proLevelName, permissionItem.proLevelName)
-            && Objects.equals(this.permTypeName, permissionItem.permTypeName);
+        PermissionItem that = (PermissionItem) obj;
+        return Objects.equals(this.permName, that.permName) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.proLevelName, that.proLevelName)
+            && Objects.equals(this.permTypeName, that.permTypeName);
     }
 
     @Override

@@ -122,18 +122,18 @@ public class OrganizationDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrganizationDto organizationDto = (OrganizationDto) o;
-        return Objects.equals(this.id, organizationDto.id) && Objects.equals(this.urn, organizationDto.urn)
-            && Objects.equals(this.managementAccountId, organizationDto.managementAccountId)
-            && Objects.equals(this.managementAccountName, organizationDto.managementAccountName)
-            && Objects.equals(this.createdAt, organizationDto.createdAt);
+        OrganizationDto that = (OrganizationDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.urn, that.urn)
+            && Objects.equals(this.managementAccountId, that.managementAccountId)
+            && Objects.equals(this.managementAccountName, that.managementAccountName)
+            && Objects.equals(this.createdAt, that.createdAt);
     }
 
     @Override

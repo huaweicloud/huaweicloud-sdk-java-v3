@@ -65,16 +65,15 @@ public class UpdateInstanceNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceNameRequest updateInstanceNameRequest = (UpdateInstanceNameRequest) o;
-        return Objects.equals(this.instanceId, updateInstanceNameRequest.instanceId)
-            && Objects.equals(this.body, updateInstanceNameRequest.body);
+        UpdateInstanceNameRequest that = (UpdateInstanceNameRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

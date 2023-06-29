@@ -96,17 +96,16 @@ public class TrackerConfigBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrackerConfigBody trackerConfigBody = (TrackerConfigBody) o;
-        return Objects.equals(this.channel, trackerConfigBody.channel)
-            && Objects.equals(this.selector, trackerConfigBody.selector)
-            && Objects.equals(this.agencyName, trackerConfigBody.agencyName);
+        TrackerConfigBody that = (TrackerConfigBody) obj;
+        return Objects.equals(this.channel, that.channel) && Objects.equals(this.selector, that.selector)
+            && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override

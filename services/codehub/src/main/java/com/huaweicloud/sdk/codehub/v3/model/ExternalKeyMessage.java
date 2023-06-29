@@ -55,16 +55,16 @@ public class ExternalKeyMessage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalKeyMessage externalKeyMessage = (ExternalKeyMessage) o;
-        return Objects.equals(this.externalKeyMessage, externalKeyMessage.externalKeyMessage)
-            && Objects.equals(this.externalService, externalKeyMessage.externalService);
+        ExternalKeyMessage that = (ExternalKeyMessage) obj;
+        return Objects.equals(this.externalKeyMessage, that.externalKeyMessage)
+            && Objects.equals(this.externalService, that.externalService);
     }
 
     @Override

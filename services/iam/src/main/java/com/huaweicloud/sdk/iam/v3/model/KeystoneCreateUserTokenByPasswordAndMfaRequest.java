@@ -67,17 +67,15 @@ public class KeystoneCreateUserTokenByPasswordAndMfaRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateUserTokenByPasswordAndMfaRequest keystoneCreateUserTokenByPasswordAndMfaRequest =
-            (KeystoneCreateUserTokenByPasswordAndMfaRequest) o;
-        return Objects.equals(this.nocatalog, keystoneCreateUserTokenByPasswordAndMfaRequest.nocatalog)
-            && Objects.equals(this.body, keystoneCreateUserTokenByPasswordAndMfaRequest.body);
+        KeystoneCreateUserTokenByPasswordAndMfaRequest that = (KeystoneCreateUserTokenByPasswordAndMfaRequest) obj;
+        return Objects.equals(this.nocatalog, that.nocatalog) && Objects.equals(this.body, that.body);
     }
 
     @Override

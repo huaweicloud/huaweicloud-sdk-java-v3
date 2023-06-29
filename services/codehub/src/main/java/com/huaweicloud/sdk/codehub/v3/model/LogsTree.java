@@ -153,17 +153,17 @@ public class LogsTree {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogsTree logsTree = (LogsTree) o;
-        return Objects.equals(this.blobId, logsTree.blobId) && Objects.equals(this.commit, logsTree.commit)
-            && Objects.equals(this.fileName, logsTree.fileName) && Objects.equals(this.filePath, logsTree.filePath)
-            && Objects.equals(this.md5, logsTree.md5) && Objects.equals(this.type, logsTree.type);
+        LogsTree that = (LogsTree) obj;
+        return Objects.equals(this.blobId, that.blobId) && Objects.equals(this.commit, that.commit)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.md5, that.md5) && Objects.equals(this.type, that.type);
     }
 
     @Override

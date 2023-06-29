@@ -78,22 +78,15 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,21 +267,18 @@ public class RunQueryVideoModerationJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunQueryVideoModerationJobResponse runQueryVideoModerationJobResponse = (RunQueryVideoModerationJobResponse) o;
-        return Objects.equals(this.requestId, runQueryVideoModerationJobResponse.requestId)
-            && Objects.equals(this.jobId, runQueryVideoModerationJobResponse.jobId)
-            && Objects.equals(this.status, runQueryVideoModerationJobResponse.status)
-            && Objects.equals(this.requestParams, runQueryVideoModerationJobResponse.requestParams)
-            && Objects.equals(this.createTime, runQueryVideoModerationJobResponse.createTime)
-            && Objects.equals(this.updateTime, runQueryVideoModerationJobResponse.updateTime)
-            && Objects.equals(this.result, runQueryVideoModerationJobResponse.result);
+        RunQueryVideoModerationJobResponse that = (RunQueryVideoModerationJobResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.requestParams, that.requestParams)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

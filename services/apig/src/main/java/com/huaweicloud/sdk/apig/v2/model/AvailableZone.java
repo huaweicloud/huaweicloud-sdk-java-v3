@@ -171,18 +171,17 @@ public class AvailableZone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailableZone availableZone = (AvailableZone) o;
-        return Objects.equals(this.name, availableZone.name) && Objects.equals(this.id, availableZone.id)
-            && Objects.equals(this.code, availableZone.code) && Objects.equals(this.port, availableZone.port)
-            && Objects.equals(this.localName, availableZone.localName)
-            && Objects.equals(this.specs, availableZone.specs);
+        AvailableZone that = (AvailableZone) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.localName, that.localName) && Objects.equals(this.specs, that.specs);
     }
 
     @Override

@@ -74,16 +74,16 @@ public class CreateTestCaseInPlanRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTestCaseInPlanRequestBody createTestCaseInPlanRequestBody = (CreateTestCaseInPlanRequestBody) o;
-        return Objects.equals(this.serviceId, createTestCaseInPlanRequestBody.serviceId)
-            && Objects.equals(this.testcaseIdList, createTestCaseInPlanRequestBody.testcaseIdList);
+        CreateTestCaseInPlanRequestBody that = (CreateTestCaseInPlanRequestBody) obj;
+        return Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.testcaseIdList, that.testcaseIdList);
     }
 
     @Override

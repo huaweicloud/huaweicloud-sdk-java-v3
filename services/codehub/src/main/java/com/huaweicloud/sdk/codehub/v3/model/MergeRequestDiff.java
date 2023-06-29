@@ -165,21 +165,20 @@ public class MergeRequestDiff {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MergeRequestDiff mergeRequestDiff = (MergeRequestDiff) o;
-        return Objects.equals(this.baseCommitSha, mergeRequestDiff.baseCommitSha)
-            && Objects.equals(this.commitsCount, mergeRequestDiff.commitsCount)
-            && Objects.equals(this.createdAt, mergeRequestDiff.createdAt)
-            && Objects.equals(this.headCommitSha, mergeRequestDiff.headCommitSha)
-            && Objects.equals(this.mergeRequestId, mergeRequestDiff.mergeRequestId)
-            && Objects.equals(this.startCommitSha, mergeRequestDiff.startCommitSha)
-            && Objects.equals(this.updatedAt, mergeRequestDiff.updatedAt);
+        MergeRequestDiff that = (MergeRequestDiff) obj;
+        return Objects.equals(this.baseCommitSha, that.baseCommitSha)
+            && Objects.equals(this.commitsCount, that.commitsCount) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.headCommitSha, that.headCommitSha)
+            && Objects.equals(this.mergeRequestId, that.mergeRequestId)
+            && Objects.equals(this.startCommitSha, that.startCommitSha)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

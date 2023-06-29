@@ -33,15 +33,15 @@ public class TextDetectionDataReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TextDetectionDataReq textDetectionDataReq = (TextDetectionDataReq) o;
-        return Objects.equals(this.text, textDetectionDataReq.text);
+        TextDetectionDataReq that = (TextDetectionDataReq) obj;
+        return Objects.equals(this.text, that.text);
     }
 
     @Override

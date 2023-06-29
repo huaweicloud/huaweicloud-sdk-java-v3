@@ -88,22 +88,15 @@ public class SlowlogForLtsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -180,22 +173,15 @@ public class SlowlogForLtsRequest {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SearchTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SearchTypeEnum(value));
         }
 
         public static SearchTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SearchTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -342,21 +328,18 @@ public class SlowlogForLtsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowlogForLtsRequest slowlogForLtsRequest = (SlowlogForLtsRequest) o;
-        return Objects.equals(this.startTime, slowlogForLtsRequest.startTime)
-            && Objects.equals(this.endTime, slowlogForLtsRequest.endTime)
-            && Objects.equals(this.type, slowlogForLtsRequest.type)
-            && Objects.equals(this.lineNum, slowlogForLtsRequest.lineNum)
-            && Objects.equals(this.limit, slowlogForLtsRequest.limit)
-            && Objects.equals(this.searchType, slowlogForLtsRequest.searchType)
-            && Objects.equals(this.database, slowlogForLtsRequest.database);
+        SlowlogForLtsRequest that = (SlowlogForLtsRequest) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.lineNum, that.lineNum)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchType, that.searchType)
+            && Objects.equals(this.database, that.database);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class TimeRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TimeRange timeRange = (TimeRange) o;
-        return Objects.equals(this.sqlTimeZone, timeRange.sqlTimeZone)
-            && Objects.equals(this.startTime, timeRange.startTime) && Objects.equals(this.endTime, timeRange.endTime)
-            && Objects.equals(this.startTimeGt, timeRange.startTimeGt)
-            && Objects.equals(this.endTimeLt, timeRange.endTimeLt);
+        TimeRange that = (TimeRange) obj;
+        return Objects.equals(this.sqlTimeZone, that.sqlTimeZone) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.startTimeGt, that.startTimeGt)
+            && Objects.equals(this.endTimeLt, that.endTimeLt);
     }
 
     @Override

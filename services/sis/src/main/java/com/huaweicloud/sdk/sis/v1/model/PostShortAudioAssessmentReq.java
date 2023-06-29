@@ -87,17 +87,16 @@ public class PostShortAudioAssessmentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostShortAudioAssessmentReq postShortAudioAssessmentReq = (PostShortAudioAssessmentReq) o;
-        return Objects.equals(this.config, postShortAudioAssessmentReq.config)
-            && Objects.equals(this.audioData, postShortAudioAssessmentReq.audioData)
-            && Objects.equals(this.refText, postShortAudioAssessmentReq.refText);
+        PostShortAudioAssessmentReq that = (PostShortAudioAssessmentReq) obj;
+        return Objects.equals(this.config, that.config) && Objects.equals(this.audioData, that.audioData)
+            && Objects.equals(this.refText, that.refText);
     }
 
     @Override

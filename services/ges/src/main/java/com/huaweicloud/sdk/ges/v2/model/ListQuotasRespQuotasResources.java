@@ -1,37 +1,27 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ListQuotasRespQuotasResources
  */
-public class ListQuotasRespQuotasResources  {
-
+public class ListQuotasRespQuotasResources {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available")
-    
+    @JsonProperty(value = "available")
 
     private Integer available;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_volume")
-    
+    @JsonProperty(value = "edge_volume")
 
     private Integer edgeVolume;
 
@@ -39,9 +29,6 @@ public class ListQuotasRespQuotasResources  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 类型。  取值范围：  - \"graph\" - \"backup\" - \"metadata\"
@@ -55,15 +42,10 @@ public class ListQuotasRespQuotasResources  {
         this.type = type;
     }
 
-    
-
     public ListQuotasRespQuotasResources withAvailable(Integer available) {
         this.available = available;
         return this;
     }
-
-    
-
 
     /**
      * 图的可用个数。
@@ -77,15 +59,10 @@ public class ListQuotasRespQuotasResources  {
         this.available = available;
     }
 
-    
-
     public ListQuotasRespQuotasResources withEdgeVolume(Integer edgeVolume) {
         this.edgeVolume = edgeVolume;
         return this;
     }
-
-    
-
 
     /**
      * 边的可用个数。type为graph时此值有效。
@@ -99,25 +76,24 @@ public class ListQuotasRespQuotasResources  {
         this.edgeVolume = edgeVolume;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQuotasRespQuotasResources listQuotasRespQuotasResources = (ListQuotasRespQuotasResources) o;
-        return Objects.equals(this.type, listQuotasRespQuotasResources.type) &&
-            Objects.equals(this.available, listQuotasRespQuotasResources.available) &&
-            Objects.equals(this.edgeVolume, listQuotasRespQuotasResources.edgeVolume);
+        ListQuotasRespQuotasResources that = (ListQuotasRespQuotasResources) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.available, that.available)
+            && Objects.equals(this.edgeVolume, that.edgeVolume);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, available, edgeVolume);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +104,7 @@ public class ListQuotasRespQuotasResources  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +115,5 @@ public class ListQuotasRespQuotasResources  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

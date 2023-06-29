@@ -74,15 +74,15 @@ public class ServerTags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerTags serverTags = (ServerTags) o;
-        return Objects.equals(this.key, serverTags.key) && Objects.equals(this.values, serverTags.values);
+        ServerTags that = (ServerTags) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.values, that.values);
     }
 
     @Override

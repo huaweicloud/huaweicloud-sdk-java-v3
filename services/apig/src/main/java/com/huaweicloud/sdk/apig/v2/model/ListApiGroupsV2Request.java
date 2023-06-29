@@ -145,20 +145,17 @@ public class ListApiGroupsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiGroupsV2Request listApiGroupsV2Request = (ListApiGroupsV2Request) o;
-        return Objects.equals(this.instanceId, listApiGroupsV2Request.instanceId)
-            && Objects.equals(this.offset, listApiGroupsV2Request.offset)
-            && Objects.equals(this.limit, listApiGroupsV2Request.limit)
-            && Objects.equals(this.id, listApiGroupsV2Request.id)
-            && Objects.equals(this.name, listApiGroupsV2Request.name)
-            && Objects.equals(this.preciseSearch, listApiGroupsV2Request.preciseSearch);
+        ListApiGroupsV2Request that = (ListApiGroupsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

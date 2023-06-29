@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.QueryDcDsBriefRespDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class BatchListDcDsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
 
     private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datasources")
-    
+    @JsonProperty(value = "datasources")
+
     private List<QueryDcDsBriefRespDTO> datasources = null;
-    
+
     public BatchListDcDsResponse withCount(Long count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数
@@ -63,22 +48,19 @@ public class BatchListDcDsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public BatchListDcDsResponse withPageInfo(PageInfoDTO pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public BatchListDcDsResponse withPageInfo(Consumer<PageInfoDTO> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDTO();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get pageInfo
@@ -92,16 +74,13 @@ public class BatchListDcDsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    
-
     public BatchListDcDsResponse withDatasources(List<QueryDcDsBriefRespDTO> datasources) {
         this.datasources = datasources;
         return this;
     }
 
-    
     public BatchListDcDsResponse addDatasourcesItem(QueryDcDsBriefRespDTO datasourcesItem) {
-        if(this.datasources == null) {
+        if (this.datasources == null) {
             this.datasources = new ArrayList<>();
         }
         this.datasources.add(datasourcesItem);
@@ -109,7 +88,7 @@ public class BatchListDcDsResponse extends SdkResponse {
     }
 
     public BatchListDcDsResponse withDatasources(Consumer<List<QueryDcDsBriefRespDTO>> datasourcesSetter) {
-        if(this.datasources == null) {
+        if (this.datasources == null) {
             this.datasources = new ArrayList<>();
         }
         datasourcesSetter.accept(this.datasources);
@@ -128,25 +107,24 @@ public class BatchListDcDsResponse extends SdkResponse {
         this.datasources = datasources;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListDcDsResponse batchListDcDsResponse = (BatchListDcDsResponse) o;
-        return Objects.equals(this.count, batchListDcDsResponse.count) &&
-            Objects.equals(this.pageInfo, batchListDcDsResponse.pageInfo) &&
-            Objects.equals(this.datasources, batchListDcDsResponse.datasources);
+        BatchListDcDsResponse that = (BatchListDcDsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.datasources, that.datasources);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, pageInfo, datasources);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,6 +135,7 @@ public class BatchListDcDsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -167,8 +146,5 @@ public class BatchListDcDsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

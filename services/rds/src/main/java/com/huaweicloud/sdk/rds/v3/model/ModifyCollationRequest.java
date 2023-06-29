@@ -89,17 +89,16 @@ public class ModifyCollationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyCollationRequest modifyCollationRequest = (ModifyCollationRequest) o;
-        return Objects.equals(this.xLanguage, modifyCollationRequest.xLanguage)
-            && Objects.equals(this.instanceId, modifyCollationRequest.instanceId)
-            && Objects.equals(this.body, modifyCollationRequest.body);
+        ModifyCollationRequest that = (ModifyCollationRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

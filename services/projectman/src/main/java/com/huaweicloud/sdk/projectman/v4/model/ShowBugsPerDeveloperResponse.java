@@ -144,20 +144,18 @@ public class ShowBugsPerDeveloperResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBugsPerDeveloperResponse showBugsPerDeveloperResponse = (ShowBugsPerDeveloperResponse) o;
-        return Objects.equals(this.dividendValue, showBugsPerDeveloperResponse.dividendValue)
-            && Objects.equals(this.divisorValue, showBugsPerDeveloperResponse.divisorValue)
-            && Objects.equals(this.metricName, showBugsPerDeveloperResponse.metricName)
-            && Objects.equals(this.metricValue, showBugsPerDeveloperResponse.metricValue)
-            && Objects.equals(this.projectId, showBugsPerDeveloperResponse.projectId)
-            && Objects.equals(this.projectName, showBugsPerDeveloperResponse.projectName);
+        ShowBugsPerDeveloperResponse that = (ShowBugsPerDeveloperResponse) obj;
+        return Objects.equals(this.dividendValue, that.dividendValue)
+            && Objects.equals(this.divisorValue, that.divisorValue) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.metricValue, that.metricValue) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

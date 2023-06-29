@@ -117,22 +117,15 @@ public class AddonInstanceStatus {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,19 +278,17 @@ public class AddonInstanceStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddonInstanceStatus addonInstanceStatus = (AddonInstanceStatus) o;
-        return Objects.equals(this.status, addonInstanceStatus.status)
-            && Objects.equals(this.reason, addonInstanceStatus.reason)
-            && Objects.equals(this.message, addonInstanceStatus.message)
-            && Objects.equals(this.targetVersions, addonInstanceStatus.targetVersions)
-            && Objects.equals(this.currentVersion, addonInstanceStatus.currentVersion);
+        AddonInstanceStatus that = (AddonInstanceStatus) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.targetVersions, that.targetVersions)
+            && Objects.equals(this.currentVersion, that.currentVersion);
     }
 
     @Override

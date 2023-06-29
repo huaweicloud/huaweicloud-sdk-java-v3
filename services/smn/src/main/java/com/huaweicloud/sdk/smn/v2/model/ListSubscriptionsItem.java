@@ -165,21 +165,18 @@ public class ListSubscriptionsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubscriptionsItem listSubscriptionsItem = (ListSubscriptionsItem) o;
-        return Objects.equals(this.topicUrn, listSubscriptionsItem.topicUrn)
-            && Objects.equals(this.protocol, listSubscriptionsItem.protocol)
-            && Objects.equals(this.subscriptionUrn, listSubscriptionsItem.subscriptionUrn)
-            && Objects.equals(this.owner, listSubscriptionsItem.owner)
-            && Objects.equals(this.endpoint, listSubscriptionsItem.endpoint)
-            && Objects.equals(this.remark, listSubscriptionsItem.remark)
-            && Objects.equals(this.status, listSubscriptionsItem.status);
+        ListSubscriptionsItem that = (ListSubscriptionsItem) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.subscriptionUrn, that.subscriptionUrn) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

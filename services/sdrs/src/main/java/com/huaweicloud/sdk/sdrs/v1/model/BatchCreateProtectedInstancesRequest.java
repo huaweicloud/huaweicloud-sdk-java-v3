@@ -44,16 +44,15 @@ public class BatchCreateProtectedInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateProtectedInstancesRequest batchCreateProtectedInstancesRequest =
-            (BatchCreateProtectedInstancesRequest) o;
-        return Objects.equals(this.body, batchCreateProtectedInstancesRequest.body);
+        BatchCreateProtectedInstancesRequest that = (BatchCreateProtectedInstancesRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

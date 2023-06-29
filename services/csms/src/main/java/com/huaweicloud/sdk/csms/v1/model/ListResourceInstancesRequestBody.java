@@ -178,20 +178,17 @@ public class ListResourceInstancesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceInstancesRequestBody listResourceInstancesRequestBody = (ListResourceInstancesRequestBody) o;
-        return Objects.equals(this.limit, listResourceInstancesRequestBody.limit)
-            && Objects.equals(this.offset, listResourceInstancesRequestBody.offset)
-            && Objects.equals(this.action, listResourceInstancesRequestBody.action)
-            && Objects.equals(this.tags, listResourceInstancesRequestBody.tags)
-            && Objects.equals(this.matches, listResourceInstancesRequestBody.matches)
-            && Objects.equals(this.sequence, listResourceInstancesRequestBody.sequence);
+        ListResourceInstancesRequestBody that = (ListResourceInstancesRequestBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.matches, that.matches) && Objects.equals(this.sequence, that.sequence);
     }
 
     @Override

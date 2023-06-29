@@ -87,17 +87,17 @@ public class SetWtpProtectionStatusInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetWtpProtectionStatusInfoRequest setWtpProtectionStatusInfoRequest = (SetWtpProtectionStatusInfoRequest) o;
-        return Objects.equals(this.region, setWtpProtectionStatusInfoRequest.region)
-            && Objects.equals(this.enterpriseProjectId, setWtpProtectionStatusInfoRequest.enterpriseProjectId)
-            && Objects.equals(this.body, setWtpProtectionStatusInfoRequest.body);
+        SetWtpProtectionStatusInfoRequest that = (SetWtpProtectionStatusInfoRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ListQueryAllSearchCriteriasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQueryAllSearchCriteriasRequest listQueryAllSearchCriteriasRequest = (ListQueryAllSearchCriteriasRequest) o;
-        return Objects.equals(this.groupId, listQueryAllSearchCriteriasRequest.groupId);
+        ListQueryAllSearchCriteriasRequest that = (ListQueryAllSearchCriteriasRequest) obj;
+        return Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

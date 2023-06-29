@@ -115,6 +115,16 @@ public class CreateDependencyRequestBody {
          */
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
+        /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
+         * Enum HTTP for value: "http"
+         */
+        public static final RuntimeEnum HTTP = new RuntimeEnum("http");
+
         private static final Map<String, RuntimeEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<String, RuntimeEnum> createStaticFields() {
@@ -135,6 +145,8 @@ public class CreateDependencyRequestBody {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
+            map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
 
@@ -159,22 +171,15 @@ public class CreateDependencyRequestBody {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -309,20 +314,17 @@ public class CreateDependencyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDependencyRequestBody createDependencyRequestBody = (CreateDependencyRequestBody) o;
-        return Objects.equals(this.dependFile, createDependencyRequestBody.dependFile)
-            && Objects.equals(this.dependLink, createDependencyRequestBody.dependLink)
-            && Objects.equals(this.dependType, createDependencyRequestBody.dependType)
-            && Objects.equals(this.runtime, createDependencyRequestBody.runtime)
-            && Objects.equals(this.name, createDependencyRequestBody.name)
-            && Objects.equals(this.description, createDependencyRequestBody.description);
+        CreateDependencyRequestBody that = (CreateDependencyRequestBody) obj;
+        return Objects.equals(this.dependFile, that.dependFile) && Objects.equals(this.dependLink, that.dependLink)
+            && Objects.equals(this.dependType, that.dependType) && Objects.equals(this.runtime, that.runtime)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

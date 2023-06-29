@@ -66,22 +66,15 @@ public class UpdateParamsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ShouldRestartEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ShouldRestartEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ShouldRestartEnum(value));
         }
 
         public static ShouldRestartEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ShouldRestartEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -182,18 +175,16 @@ public class UpdateParamsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateParamsResponse updateParamsResponse = (UpdateParamsResponse) o;
-        return Objects.equals(this.success, updateParamsResponse.success)
-            && Objects.equals(this.shouldRestart, updateParamsResponse.shouldRestart)
-            && Objects.equals(this.errorCode, updateParamsResponse.errorCode)
-            && Objects.equals(this.errorMsg, updateParamsResponse.errorMsg);
+        UpdateParamsResponse that = (UpdateParamsResponse) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.shouldRestart, that.shouldRestart)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

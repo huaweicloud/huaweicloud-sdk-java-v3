@@ -100,22 +100,15 @@ public class CreateHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LbAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LbAlgorithmEnum(value));
         }
 
         public static LbAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LbAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -609,34 +602,26 @@ public class CreateHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHostResponse createHostResponse = (CreateHostResponse) o;
-        return Objects.equals(this.id, createHostResponse.id)
-            && Objects.equals(this.hostname, createHostResponse.hostname)
-            && Objects.equals(this.policyid, createHostResponse.policyid)
-            && Objects.equals(this.accessCode, createHostResponse.accessCode)
-            && Objects.equals(this.protectStatus, createHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, createHostResponse.accessStatus)
-            && Objects.equals(this.lbAlgorithm, createHostResponse.lbAlgorithm)
-            && Objects.equals(this.protocol, createHostResponse.protocol)
-            && Objects.equals(this.certificateid, createHostResponse.certificateid)
-            && Objects.equals(this.certificatename, createHostResponse.certificatename)
-            && Objects.equals(this.server, createHostResponse.server)
-            && Objects.equals(this.proxy, createHostResponse.proxy)
-            && Objects.equals(this.timestamp, createHostResponse.timestamp)
-            && Objects.equals(this.exclusiveIp, createHostResponse.exclusiveIp)
-            && Objects.equals(this.webTag, createHostResponse.webTag)
-            && Objects.equals(this.http2Enable, createHostResponse.http2Enable)
-            && Objects.equals(this.blockPage, createHostResponse.blockPage)
-            && Objects.equals(this.flag, createHostResponse.flag)
-            && Objects.equals(this.extend, createHostResponse.extend)
-            && Objects.equals(this.forwardHeaderMap, createHostResponse.forwardHeaderMap);
+        CreateHostResponse that = (CreateHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.lbAlgorithm, that.lbAlgorithm) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.certificateid, that.certificateid)
+            && Objects.equals(this.certificatename, that.certificatename) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.webTag, that.webTag)
+            && Objects.equals(this.http2Enable, that.http2Enable) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.extend, that.extend)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

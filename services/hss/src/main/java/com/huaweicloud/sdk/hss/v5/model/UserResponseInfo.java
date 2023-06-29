@@ -279,26 +279,23 @@ public class UserResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserResponseInfo userResponseInfo = (UserResponseInfo) o;
-        return Objects.equals(this.agentId, userResponseInfo.agentId)
-            && Objects.equals(this.hostId, userResponseInfo.hostId)
-            && Objects.equals(this.hostName, userResponseInfo.hostName)
-            && Objects.equals(this.hostIp, userResponseInfo.hostIp)
-            && Objects.equals(this.userName, userResponseInfo.userName)
-            && Objects.equals(this.loginPermission, userResponseInfo.loginPermission)
-            && Objects.equals(this.rootPermission, userResponseInfo.rootPermission)
-            && Objects.equals(this.userGroupName, userResponseInfo.userGroupName)
-            && Objects.equals(this.userHomeDir, userResponseInfo.userHomeDir)
-            && Objects.equals(this.shell, userResponseInfo.shell)
-            && Objects.equals(this.expireTime, userResponseInfo.expireTime)
-            && Objects.equals(this.recentScanTime, userResponseInfo.recentScanTime);
+        UserResponseInfo that = (UserResponseInfo) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.hostId, that.hostId)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.loginPermission, that.loginPermission)
+            && Objects.equals(this.rootPermission, that.rootPermission)
+            && Objects.equals(this.userGroupName, that.userGroupName)
+            && Objects.equals(this.userHomeDir, that.userHomeDir) && Objects.equals(this.shell, that.shell)
+            && Objects.equals(this.expireTime, that.expireTime)
+            && Objects.equals(this.recentScanTime, that.recentScanTime);
     }
 
     @Override

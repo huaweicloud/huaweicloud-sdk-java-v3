@@ -430,29 +430,26 @@ public class FlavorsItems {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlavorsItems flavorsItems = (FlavorsItems) o;
-        return Objects.equals(this.specCode, flavorsItems.specCode)
-            && Objects.equals(this.cloudServiceTypeCode, flavorsItems.cloudServiceTypeCode)
-            && Objects.equals(this.cloudResourceTypeCode, flavorsItems.cloudResourceTypeCode)
-            && Objects.equals(this.cacheMode, flavorsItems.cacheMode)
-            && Objects.equals(this.engine, flavorsItems.engine)
-            && Objects.equals(this.engineVersion, flavorsItems.engineVersion)
-            && Objects.equals(this.productType, flavorsItems.productType)
-            && Objects.equals(this.cpuType, flavorsItems.cpuType)
-            && Objects.equals(this.storageType, flavorsItems.storageType)
-            && Objects.equals(this.capacity, flavorsItems.capacity)
-            && Objects.equals(this.billingMode, flavorsItems.billingMode)
-            && Objects.equals(this.tenantIpCount, flavorsItems.tenantIpCount)
-            && Objects.equals(this.pricingType, flavorsItems.pricingType)
-            && Objects.equals(this.isDec, flavorsItems.isDec) && Objects.equals(this.attrs, flavorsItems.attrs)
-            && Objects.equals(this.flavorsAvailableZones, flavorsItems.flavorsAvailableZones);
+        FlavorsItems that = (FlavorsItems) obj;
+        return Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.cloudServiceTypeCode, that.cloudServiceTypeCode)
+            && Objects.equals(this.cloudResourceTypeCode, that.cloudResourceTypeCode)
+            && Objects.equals(this.cacheMode, that.cacheMode) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.productType, that.productType) && Objects.equals(this.cpuType, that.cpuType)
+            && Objects.equals(this.storageType, that.storageType) && Objects.equals(this.capacity, that.capacity)
+            && Objects.equals(this.billingMode, that.billingMode)
+            && Objects.equals(this.tenantIpCount, that.tenantIpCount)
+            && Objects.equals(this.pricingType, that.pricingType) && Objects.equals(this.isDec, that.isDec)
+            && Objects.equals(this.attrs, that.attrs)
+            && Objects.equals(this.flavorsAvailableZones, that.flavorsAvailableZones);
     }
 
     @Override

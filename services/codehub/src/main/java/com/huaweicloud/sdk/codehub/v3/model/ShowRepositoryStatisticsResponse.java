@@ -97,17 +97,16 @@ public class ShowRepositoryStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryStatisticsResponse showRepositoryStatisticsResponse = (ShowRepositoryStatisticsResponse) o;
-        return Objects.equals(this.error, showRepositoryStatisticsResponse.error)
-            && Objects.equals(this.result, showRepositoryStatisticsResponse.result)
-            && Objects.equals(this.status, showRepositoryStatisticsResponse.status);
+        ShowRepositoryStatisticsResponse that = (ShowRepositoryStatisticsResponse) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

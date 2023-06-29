@@ -65,16 +65,15 @@ public class CreateUsersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUsersRequest createUsersRequest = (CreateUsersRequest) o;
-        return Objects.equals(this.instanceId, createUsersRequest.instanceId)
-            && Objects.equals(this.body, createUsersRequest.body);
+        CreateUsersRequest that = (CreateUsersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

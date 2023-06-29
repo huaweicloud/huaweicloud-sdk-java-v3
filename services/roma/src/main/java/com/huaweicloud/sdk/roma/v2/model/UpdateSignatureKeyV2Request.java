@@ -87,17 +87,16 @@ public class UpdateSignatureKeyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSignatureKeyV2Request updateSignatureKeyV2Request = (UpdateSignatureKeyV2Request) o;
-        return Objects.equals(this.instanceId, updateSignatureKeyV2Request.instanceId)
-            && Objects.equals(this.signId, updateSignatureKeyV2Request.signId)
-            && Objects.equals(this.body, updateSignatureKeyV2Request.body);
+        UpdateSignatureKeyV2Request that = (UpdateSignatureKeyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.signId, that.signId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

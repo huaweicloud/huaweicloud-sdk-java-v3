@@ -81,18 +81,17 @@ public class CreateCloudPhoneServerRequestBodyBandWidth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudPhoneServerRequestBodyBandWidth createCloudPhoneServerRequestBodyBandWidth =
-            (CreateCloudPhoneServerRequestBodyBandWidth) o;
-        return Objects.equals(this.bandWidthId, createCloudPhoneServerRequestBodyBandWidth.bandWidthId)
-            && Objects.equals(this.bandWidthSize, createCloudPhoneServerRequestBodyBandWidth.bandWidthSize)
-            && Objects.equals(this.bandWidthShareType, createCloudPhoneServerRequestBodyBandWidth.bandWidthShareType);
+        CreateCloudPhoneServerRequestBodyBandWidth that = (CreateCloudPhoneServerRequestBodyBandWidth) obj;
+        return Objects.equals(this.bandWidthId, that.bandWidthId)
+            && Objects.equals(this.bandWidthSize, that.bandWidthSize)
+            && Objects.equals(this.bandWidthShareType, that.bandWidthShareType);
     }
 
     @Override

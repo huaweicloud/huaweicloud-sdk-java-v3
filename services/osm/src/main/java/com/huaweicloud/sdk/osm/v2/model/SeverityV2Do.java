@@ -77,17 +77,16 @@ public class SeverityV2Do {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SeverityV2Do severityV2Do = (SeverityV2Do) o;
-        return Objects.equals(this.language, severityV2Do.language)
-            && Objects.equals(this.severityName, severityV2Do.severityName)
-            && Objects.equals(this.severityId, severityV2Do.severityId);
+        SeverityV2Do that = (SeverityV2Do) obj;
+        return Objects.equals(this.language, that.language) && Objects.equals(this.severityName, that.severityName)
+            && Objects.equals(this.severityId, that.severityId);
     }
 
     @Override

@@ -215,22 +215,18 @@ public class CreateCustomRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCustomRuleRequestBody createCustomRuleRequestBody = (CreateCustomRuleRequestBody) o;
-        return Objects.equals(this.time, createCustomRuleRequestBody.time)
-            && Objects.equals(this.start, createCustomRuleRequestBody.start)
-            && Objects.equals(this.terminal, createCustomRuleRequestBody.terminal)
-            && Objects.equals(this.description, createCustomRuleRequestBody.description)
-            && Objects.equals(this.conditions, createCustomRuleRequestBody.conditions)
-            && Objects.equals(this.action, createCustomRuleRequestBody.action)
-            && Objects.equals(this.priority, createCustomRuleRequestBody.priority)
-            && Objects.equals(this.name, createCustomRuleRequestBody.name);
+        CreateCustomRuleRequestBody that = (CreateCustomRuleRequestBody) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.terminal, that.terminal) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.conditions, that.conditions) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.name, that.name);
     }
 
     @Override

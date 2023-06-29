@@ -87,22 +87,15 @@ public class VulnItem {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SeverityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SeverityEnum(value));
         }
 
         public static SeverityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SeverityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class VulnItem {
             if (value == null) {
                 return null;
             }
-            VulnStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VulnStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VulnStatusEnum(value));
         }
 
         public static VulnStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VulnStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -285,7 +271,7 @@ public class VulnItem {
     }
 
     /**
-     * 域名ID
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -518,22 +504,22 @@ public class VulnItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VulnItem vulnItem = (VulnItem) o;
-        return Objects.equals(this.vulnId, vulnItem.vulnId) && Objects.equals(this.domainId, vulnItem.domainId)
-            && Objects.equals(this.url, vulnItem.url) && Objects.equals(this.severity, vulnItem.severity)
-            && Objects.equals(this.vulnStatus, vulnItem.vulnStatus)
-            && Objects.equals(this.vulnClass, vulnItem.vulnClass) && Objects.equals(this.vulnType, vulnItem.vulnType)
-            && Objects.equals(this.description, vulnItem.description) && Objects.equals(this.advice, vulnItem.advice)
-            && Objects.equals(this.hitDetails, vulnItem.hitDetails) && Objects.equals(this.request, vulnItem.request)
-            && Objects.equals(this.response, vulnItem.response) && Objects.equals(this.provider, vulnItem.provider)
-            && Objects.equals(this.reason, vulnItem.reason) && Objects.equals(this.findTime, vulnItem.findTime);
+        VulnItem that = (VulnItem) obj;
+        return Objects.equals(this.vulnId, that.vulnId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.vulnStatus, that.vulnStatus) && Objects.equals(this.vulnClass, that.vulnClass)
+            && Objects.equals(this.vulnType, that.vulnType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.advice, that.advice) && Objects.equals(this.hitDetails, that.hitDetails)
+            && Objects.equals(this.request, that.request) && Objects.equals(this.response, that.response)
+            && Objects.equals(this.provider, that.provider) && Objects.equals(this.reason, that.reason)
+            && Objects.equals(this.findTime, that.findTime);
     }
 
     @Override

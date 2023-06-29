@@ -77,17 +77,16 @@ public class HealthCodeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HealthCodeRequestBody healthCodeRequestBody = (HealthCodeRequestBody) o;
-        return Objects.equals(this.image, healthCodeRequestBody.image)
-            && Objects.equals(this.url, healthCodeRequestBody.url)
-            && Objects.equals(this.detectDirection, healthCodeRequestBody.detectDirection);
+        HealthCodeRequestBody that = (HealthCodeRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.detectDirection, that.detectDirection);
     }
 
     @Override

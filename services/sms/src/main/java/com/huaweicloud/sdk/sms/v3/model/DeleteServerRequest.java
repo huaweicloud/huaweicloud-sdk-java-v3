@@ -33,15 +33,15 @@ public class DeleteServerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteServerRequest deleteServerRequest = (DeleteServerRequest) o;
-        return Objects.equals(this.sourceId, deleteServerRequest.sourceId);
+        DeleteServerRequest that = (DeleteServerRequest) obj;
+        return Objects.equals(this.sourceId, that.sourceId);
     }
 
     @Override

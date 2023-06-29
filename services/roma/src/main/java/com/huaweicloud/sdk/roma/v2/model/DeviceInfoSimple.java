@@ -81,17 +81,16 @@ public class DeviceInfoSimple {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceInfoSimple deviceInfoSimple = (DeviceInfoSimple) o;
-        return Objects.equals(this.id, deviceInfoSimple.id)
-            && Objects.equals(this.deviceName, deviceInfoSimple.deviceName)
-            && Objects.equals(this.deviceId, deviceInfoSimple.deviceId);
+        DeviceInfoSimple that = (DeviceInfoSimple) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.deviceName, that.deviceName)
+            && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

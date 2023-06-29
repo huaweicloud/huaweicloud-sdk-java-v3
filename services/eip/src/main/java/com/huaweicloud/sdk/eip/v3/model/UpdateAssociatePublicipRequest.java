@@ -65,16 +65,15 @@ public class UpdateAssociatePublicipRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssociatePublicipRequest updateAssociatePublicipRequest = (UpdateAssociatePublicipRequest) o;
-        return Objects.equals(this.publicipId, updateAssociatePublicipRequest.publicipId)
-            && Objects.equals(this.body, updateAssociatePublicipRequest.body);
+        UpdateAssociatePublicipRequest that = (UpdateAssociatePublicipRequest) obj;
+        return Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.body, that.body);
     }
 
     @Override

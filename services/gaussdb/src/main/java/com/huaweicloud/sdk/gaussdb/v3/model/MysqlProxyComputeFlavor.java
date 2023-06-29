@@ -1,55 +1,42 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * MysqlProxyComputeFlavor
  */
-public class MysqlProxyComputeFlavor  {
-
+public class MysqlProxyComputeFlavor {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vcpus")
-    
+    @JsonProperty(value = "vcpus")
 
     private String vcpus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ram")
-    
+    @JsonProperty(value = "ram")
 
     private String ram;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_type")
-    
+    @JsonProperty(value = "db_type")
 
     private String dbType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="spec_code")
-    
+    @JsonProperty(value = "spec_code")
 
     private String specCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="az_status")
-    
+    @JsonProperty(value = "az_status")
 
     private Object azStatus;
 
@@ -57,9 +44,6 @@ public class MysqlProxyComputeFlavor  {
         this.vcpus = vcpus;
         return this;
     }
-
-    
-
 
     /**
      * CPU大小。例如：1表示1U。
@@ -73,15 +57,10 @@ public class MysqlProxyComputeFlavor  {
         this.vcpus = vcpus;
     }
 
-    
-
     public MysqlProxyComputeFlavor withRam(String ram) {
         this.ram = ram;
         return this;
     }
-
-    
-
 
     /**
      * 内存大小，单位为GB。
@@ -95,15 +74,10 @@ public class MysqlProxyComputeFlavor  {
         this.ram = ram;
     }
 
-    
-
     public MysqlProxyComputeFlavor withDbType(String dbType) {
         this.dbType = dbType;
         return this;
     }
-
-    
-
 
     /**
      * 数据库类型。
@@ -117,15 +91,10 @@ public class MysqlProxyComputeFlavor  {
         this.dbType = dbType;
     }
 
-    
-
     public MysqlProxyComputeFlavor withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * Proxy规格ID。
@@ -139,15 +108,10 @@ public class MysqlProxyComputeFlavor  {
         this.id = id;
     }
 
-    
-
     public MysqlProxyComputeFlavor withSpecCode(String specCode) {
         this.specCode = specCode;
         return this;
     }
-
-    
-
 
     /**
      * Proxy规格码。
@@ -161,15 +125,10 @@ public class MysqlProxyComputeFlavor  {
         this.specCode = specCode;
     }
 
-    
-
     public MysqlProxyComputeFlavor withAzStatus(Object azStatus) {
         this.azStatus = azStatus;
         return this;
     }
-
-    
-
 
     /**
      * 其中key是可用区编号，value是规格所在az的状态。
@@ -183,28 +142,25 @@ public class MysqlProxyComputeFlavor  {
         this.azStatus = azStatus;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MysqlProxyComputeFlavor mysqlProxyComputeFlavor = (MysqlProxyComputeFlavor) o;
-        return Objects.equals(this.vcpus, mysqlProxyComputeFlavor.vcpus) &&
-            Objects.equals(this.ram, mysqlProxyComputeFlavor.ram) &&
-            Objects.equals(this.dbType, mysqlProxyComputeFlavor.dbType) &&
-            Objects.equals(this.id, mysqlProxyComputeFlavor.id) &&
-            Objects.equals(this.specCode, mysqlProxyComputeFlavor.specCode) &&
-            Objects.equals(this.azStatus, mysqlProxyComputeFlavor.azStatus);
+        MysqlProxyComputeFlavor that = (MysqlProxyComputeFlavor) obj;
+        return Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.dbType, that.dbType) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azStatus, that.azStatus);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(vcpus, ram, dbType, id, specCode, azStatus);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -218,6 +174,7 @@ public class MysqlProxyComputeFlavor  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -228,8 +185,5 @@ public class MysqlProxyComputeFlavor  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

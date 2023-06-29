@@ -188,22 +188,18 @@ public class ShowPrivacyRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivacyRuleResponse showPrivacyRuleResponse = (ShowPrivacyRuleResponse) o;
-        return Objects.equals(this.id, showPrivacyRuleResponse.id)
-            && Objects.equals(this.policyid, showPrivacyRuleResponse.policyid)
-            && Objects.equals(this.timestamp, showPrivacyRuleResponse.timestamp)
-            && Objects.equals(this.description, showPrivacyRuleResponse.description)
-            && Objects.equals(this.status, showPrivacyRuleResponse.status)
-            && Objects.equals(this.url, showPrivacyRuleResponse.url)
-            && Objects.equals(this.category, showPrivacyRuleResponse.category)
-            && Objects.equals(this.index, showPrivacyRuleResponse.index);
+        ShowPrivacyRuleResponse that = (ShowPrivacyRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.category, that.category) && Objects.equals(this.index, that.index);
     }
 
     @Override

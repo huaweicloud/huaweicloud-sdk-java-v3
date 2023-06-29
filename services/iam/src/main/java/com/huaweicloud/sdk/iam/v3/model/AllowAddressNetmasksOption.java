@@ -55,16 +55,16 @@ public class AllowAddressNetmasksOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowAddressNetmasksOption allowAddressNetmasksOption = (AllowAddressNetmasksOption) o;
-        return Objects.equals(this.addressNetmask, allowAddressNetmasksOption.addressNetmask)
-            && Objects.equals(this.description, allowAddressNetmasksOption.description);
+        AllowAddressNetmasksOption that = (AllowAddressNetmasksOption) obj;
+        return Objects.equals(this.addressNetmask, that.addressNetmask)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

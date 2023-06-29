@@ -33,15 +33,15 @@ public class ListServiceDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceDetailsRequest listServiceDetailsRequest = (ListServiceDetailsRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, listServiceDetailsRequest.vpcEndpointServiceId);
+        ListServiceDetailsRequest that = (ListServiceDetailsRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId);
     }
 
     @Override

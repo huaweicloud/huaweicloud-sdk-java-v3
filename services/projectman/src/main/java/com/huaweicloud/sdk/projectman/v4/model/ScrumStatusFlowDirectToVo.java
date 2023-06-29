@@ -99,18 +99,16 @@ public class ScrumStatusFlowDirectToVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScrumStatusFlowDirectToVo scrumStatusFlowDirectToVo = (ScrumStatusFlowDirectToVo) o;
-        return Objects.equals(this.id, scrumStatusFlowDirectToVo.id)
-            && Objects.equals(this.statusId, scrumStatusFlowDirectToVo.statusId)
-            && Objects.equals(this.name, scrumStatusFlowDirectToVo.name)
-            && Objects.equals(this.enabled, scrumStatusFlowDirectToVo.enabled);
+        ScrumStatusFlowDirectToVo that = (ScrumStatusFlowDirectToVo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.statusId, that.statusId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.enabled, that.enabled);
     }
 
     @Override

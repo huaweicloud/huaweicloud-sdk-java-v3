@@ -52,22 +52,15 @@ public class PayMode {
         if (value == null) {
             return null;
         }
-        PayMode result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new PayMode(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PayMode(value));
     }
 
     public static PayMode valueOf(String value) {
         if (value == null) {
             return null;
         }
-        PayMode result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

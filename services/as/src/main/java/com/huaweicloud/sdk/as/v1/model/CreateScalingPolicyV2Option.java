@@ -71,22 +71,15 @@ public class CreateScalingPolicyV2Option {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingResourceTypeEnum(value));
         }
 
         public static ScalingResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,22 +152,15 @@ public class CreateScalingPolicyV2Option {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScalingPolicyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScalingPolicyTypeEnum(value));
         }
 
         public static ScalingPolicyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScalingPolicyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -395,23 +381,22 @@ public class CreateScalingPolicyV2Option {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingPolicyV2Option createScalingPolicyV2Option = (CreateScalingPolicyV2Option) o;
-        return Objects.equals(this.scalingPolicyName, createScalingPolicyV2Option.scalingPolicyName)
-            && Objects.equals(this.scalingResourceId, createScalingPolicyV2Option.scalingResourceId)
-            && Objects.equals(this.scalingResourceType, createScalingPolicyV2Option.scalingResourceType)
-            && Objects.equals(this.scalingPolicyType, createScalingPolicyV2Option.scalingPolicyType)
-            && Objects.equals(this.alarmId, createScalingPolicyV2Option.alarmId)
-            && Objects.equals(this.scheduledPolicy, createScalingPolicyV2Option.scheduledPolicy)
-            && Objects.equals(this.scalingPolicyAction, createScalingPolicyV2Option.scalingPolicyAction)
-            && Objects.equals(this.coolDownTime, createScalingPolicyV2Option.coolDownTime)
-            && Objects.equals(this.description, createScalingPolicyV2Option.description);
+        CreateScalingPolicyV2Option that = (CreateScalingPolicyV2Option) obj;
+        return Objects.equals(this.scalingPolicyName, that.scalingPolicyName)
+            && Objects.equals(this.scalingResourceId, that.scalingResourceId)
+            && Objects.equals(this.scalingResourceType, that.scalingResourceType)
+            && Objects.equals(this.scalingPolicyType, that.scalingPolicyType)
+            && Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.scheduledPolicy, that.scheduledPolicy)
+            && Objects.equals(this.scalingPolicyAction, that.scalingPolicyAction)
+            && Objects.equals(this.coolDownTime, that.coolDownTime)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

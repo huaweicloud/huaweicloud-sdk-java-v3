@@ -55,16 +55,15 @@ public class DbUserPwdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbUserPwdRequest dbUserPwdRequest = (DbUserPwdRequest) o;
-        return Objects.equals(this.name, dbUserPwdRequest.name)
-            && Objects.equals(this.password, dbUserPwdRequest.password);
+        DbUserPwdRequest that = (DbUserPwdRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowSecurityPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecurityPolicyRequest showSecurityPolicyRequest = (ShowSecurityPolicyRequest) o;
-        return Objects.equals(this.securityPolicyId, showSecurityPolicyRequest.securityPolicyId);
+        ShowSecurityPolicyRequest that = (ShowSecurityPolicyRequest) obj;
+        return Objects.equals(this.securityPolicyId, that.securityPolicyId);
     }
 
     @Override

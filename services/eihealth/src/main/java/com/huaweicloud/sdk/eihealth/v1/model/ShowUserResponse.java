@@ -276,23 +276,20 @@ public class ShowUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUserResponse showUserResponse = (ShowUserResponse) o;
-        return Objects.equals(this.id, showUserResponse.id) && Objects.equals(this.name, showUserResponse.name)
-            && Objects.equals(this.role, showUserResponse.role) && Objects.equals(this.status, showUserResponse.status)
-            && Objects.equals(this.email, showUserResponse.email) && Objects.equals(this.phone, showUserResponse.phone)
-            && Objects.equals(this.areacode, showUserResponse.areacode)
-            && Objects.equals(this.isDomainOwner, showUserResponse.isDomainOwner)
-            && Objects.equals(this.createTime, showUserResponse.createTime)
-            && Objects.equals(this.pwdStatus, showUserResponse.pwdStatus)
-            && Objects.equals(this.updateTime, showUserResponse.updateTime)
-            && Objects.equals(this.source, showUserResponse.source);
+        ShowUserResponse that = (ShowUserResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.areacode, that.areacode) && Objects.equals(this.isDomainOwner, that.isDomainOwner)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.pwdStatus, that.pwdStatus)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.source, that.source);
     }
 
     @Override

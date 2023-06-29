@@ -65,16 +65,15 @@ public class SendImmediateEventRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendImmediateEventRequest sendImmediateEventRequest = (SendImmediateEventRequest) o;
-        return Objects.equals(this.instanceId, sendImmediateEventRequest.instanceId)
-            && Objects.equals(this.body, sendImmediateEventRequest.body);
+        SendImmediateEventRequest that = (SendImmediateEventRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

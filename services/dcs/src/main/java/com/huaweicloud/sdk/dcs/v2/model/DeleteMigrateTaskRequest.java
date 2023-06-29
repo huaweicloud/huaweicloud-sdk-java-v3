@@ -52,15 +52,15 @@ public class DeleteMigrateTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteMigrateTaskRequest deleteMigrateTaskRequest = (DeleteMigrateTaskRequest) o;
-        return Objects.equals(this.taskIdList, deleteMigrateTaskRequest.taskIdList);
+        DeleteMigrateTaskRequest that = (DeleteMigrateTaskRequest) obj;
+        return Objects.equals(this.taskIdList, that.taskIdList);
     }
 
     @Override

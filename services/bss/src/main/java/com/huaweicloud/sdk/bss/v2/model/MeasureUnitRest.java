@@ -99,18 +99,17 @@ public class MeasureUnitRest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MeasureUnitRest measureUnitRest = (MeasureUnitRest) o;
-        return Objects.equals(this.measureId, measureUnitRest.measureId)
-            && Objects.equals(this.measureName, measureUnitRest.measureName)
-            && Objects.equals(this.abbreviation, measureUnitRest.abbreviation)
-            && Objects.equals(this.measureType, measureUnitRest.measureType);
+        MeasureUnitRest that = (MeasureUnitRest) obj;
+        return Objects.equals(this.measureId, that.measureId) && Objects.equals(this.measureName, that.measureName)
+            && Objects.equals(this.abbreviation, that.abbreviation)
+            && Objects.equals(this.measureType, that.measureType);
     }
 
     @Override

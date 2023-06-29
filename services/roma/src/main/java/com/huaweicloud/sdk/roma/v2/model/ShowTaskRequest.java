@@ -55,16 +55,15 @@ public class ShowTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskRequest showTaskRequest = (ShowTaskRequest) o;
-        return Objects.equals(this.instanceId, showTaskRequest.instanceId)
-            && Objects.equals(this.taskId, showTaskRequest.taskId);
+        ShowTaskRequest that = (ShowTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

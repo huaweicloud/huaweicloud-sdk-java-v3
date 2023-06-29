@@ -65,16 +65,15 @@ public class ReportOutlineResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReportOutlineResult reportOutlineResult = (ReportOutlineResult) o;
-        return Objects.equals(this.errMessage, reportOutlineResult.errMessage)
-            && Objects.equals(this.outline, reportOutlineResult.outline);
+        ReportOutlineResult that = (ReportOutlineResult) obj;
+        return Objects.equals(this.errMessage, that.errMessage) && Objects.equals(this.outline, that.outline);
     }
 
     @Override

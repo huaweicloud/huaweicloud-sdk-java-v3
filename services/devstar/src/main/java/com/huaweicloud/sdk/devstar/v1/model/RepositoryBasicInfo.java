@@ -143,19 +143,17 @@ public class RepositoryBasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RepositoryBasicInfo repositoryBasicInfo = (RepositoryBasicInfo) o;
-        return Objects.equals(this.uuid, repositoryBasicInfo.uuid) && Objects.equals(this.id, repositoryBasicInfo.id)
-            && Objects.equals(this.name, repositoryBasicInfo.name)
-            && Objects.equals(this.httpsUrl, repositoryBasicInfo.httpsUrl)
-            && Objects.equals(this.sshUrl, repositoryBasicInfo.sshUrl)
-            && Objects.equals(this.webUrl, repositoryBasicInfo.webUrl);
+        RepositoryBasicInfo that = (RepositoryBasicInfo) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.httpsUrl, that.httpsUrl)
+            && Objects.equals(this.sshUrl, that.sshUrl) && Objects.equals(this.webUrl, that.webUrl);
     }
 
     @Override

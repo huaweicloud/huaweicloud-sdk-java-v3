@@ -116,22 +116,15 @@ public class KeyDetails {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeySpecEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
         }
 
         public static KeySpecEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeySpecEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -198,22 +191,15 @@ public class KeyDetails {
             if (value == null) {
                 return null;
             }
-            KeyUsageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new KeyUsageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeyUsageEnum(value));
         }
 
         public static KeyUsageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            KeyUsageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -315,22 +301,15 @@ public class KeyDetails {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginEnum(value));
         }
 
         public static OriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -701,30 +680,27 @@ public class KeyDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyDetails keyDetails = (KeyDetails) o;
-        return Objects.equals(this.keyId, keyDetails.keyId) && Objects.equals(this.domainId, keyDetails.domainId)
-            && Objects.equals(this.keyAlias, keyDetails.keyAlias) && Objects.equals(this.realm, keyDetails.realm)
-            && Objects.equals(this.keySpec, keyDetails.keySpec) && Objects.equals(this.keyUsage, keyDetails.keyUsage)
-            && Objects.equals(this.keyDescription, keyDetails.keyDescription)
-            && Objects.equals(this.creationDate, keyDetails.creationDate)
-            && Objects.equals(this.scheduledDeletionDate, keyDetails.scheduledDeletionDate)
-            && Objects.equals(this.keyState, keyDetails.keyState)
-            && Objects.equals(this.defaultKeyFlag, keyDetails.defaultKeyFlag)
-            && Objects.equals(this.keyType, keyDetails.keyType)
-            && Objects.equals(this.expirationTime, keyDetails.expirationTime)
-            && Objects.equals(this.origin, keyDetails.origin)
-            && Objects.equals(this.keyRotationEnabled, keyDetails.keyRotationEnabled)
-            && Objects.equals(this.sysEnterpriseProjectId, keyDetails.sysEnterpriseProjectId)
-            && Objects.equals(this.keystoreId, keyDetails.keystoreId)
-            && Objects.equals(this.keyLabel, keyDetails.keyLabel)
-            && Objects.equals(this.partitionType, keyDetails.partitionType);
+        KeyDetails that = (KeyDetails) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.keyAlias, that.keyAlias) && Objects.equals(this.realm, that.realm)
+            && Objects.equals(this.keySpec, that.keySpec) && Objects.equals(this.keyUsage, that.keyUsage)
+            && Objects.equals(this.keyDescription, that.keyDescription)
+            && Objects.equals(this.creationDate, that.creationDate)
+            && Objects.equals(this.scheduledDeletionDate, that.scheduledDeletionDate)
+            && Objects.equals(this.keyState, that.keyState) && Objects.equals(this.defaultKeyFlag, that.defaultKeyFlag)
+            && Objects.equals(this.keyType, that.keyType) && Objects.equals(this.expirationTime, that.expirationTime)
+            && Objects.equals(this.origin, that.origin)
+            && Objects.equals(this.keyRotationEnabled, that.keyRotationEnabled)
+            && Objects.equals(this.sysEnterpriseProjectId, that.sysEnterpriseProjectId)
+            && Objects.equals(this.keystoreId, that.keystoreId) && Objects.equals(this.keyLabel, that.keyLabel)
+            && Objects.equals(this.partitionType, that.partitionType);
     }
 
     @Override

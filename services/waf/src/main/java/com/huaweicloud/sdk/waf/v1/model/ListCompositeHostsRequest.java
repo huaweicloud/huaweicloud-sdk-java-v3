@@ -187,22 +187,19 @@ public class ListCompositeHostsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCompositeHostsRequest listCompositeHostsRequest = (ListCompositeHostsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listCompositeHostsRequest.enterpriseProjectId)
-            && Objects.equals(this.page, listCompositeHostsRequest.page)
-            && Objects.equals(this.pagesize, listCompositeHostsRequest.pagesize)
-            && Objects.equals(this.hostname, listCompositeHostsRequest.hostname)
-            && Objects.equals(this.policyname, listCompositeHostsRequest.policyname)
-            && Objects.equals(this.protectStatus, listCompositeHostsRequest.protectStatus)
-            && Objects.equals(this.wafType, listCompositeHostsRequest.wafType)
-            && Objects.equals(this.isHttps, listCompositeHostsRequest.isHttps);
+        ListCompositeHostsRequest that = (ListCompositeHostsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pagesize, that.pagesize)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.policyname, that.policyname)
+            && Objects.equals(this.protectStatus, that.protectStatus) && Objects.equals(this.wafType, that.wafType)
+            && Objects.equals(this.isHttps, that.isHttps);
     }
 
     @Override

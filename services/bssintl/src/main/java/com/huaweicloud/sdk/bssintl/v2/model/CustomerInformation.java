@@ -360,29 +360,24 @@ public class CustomerInformation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerInformation customerInformation = (CustomerInformation) o;
-        return Objects.equals(this.customer, customerInformation.customer)
-            && Objects.equals(this.accountName, customerInformation.accountName)
-            && Objects.equals(this.customerId, customerInformation.customerId)
-            && Objects.equals(this.associatedOn, customerInformation.associatedOn)
-            && Objects.equals(this.associationType, customerInformation.associationType)
-            && Objects.equals(this.label, customerInformation.label)
-            && Objects.equals(this.telephone, customerInformation.telephone)
-            && Objects.equals(this.verifiedStatus, customerInformation.verifiedStatus)
-            && Objects.equals(this.countryCode, customerInformation.countryCode)
-            && Objects.equals(this.customerType, customerInformation.customerType)
-            && Objects.equals(this.isFrozen, customerInformation.isFrozen)
-            && Objects.equals(this.accountManagers, customerInformation.accountManagers)
-            && Objects.equals(this.xaccountId, customerInformation.xaccountId)
-            && Objects.equals(this.xaccountType, customerInformation.xaccountType)
-            && Objects.equals(this.customerLevel, customerInformation.customerLevel);
+        CustomerInformation that = (CustomerInformation) obj;
+        return Objects.equals(this.customer, that.customer) && Objects.equals(this.accountName, that.accountName)
+            && Objects.equals(this.customerId, that.customerId) && Objects.equals(this.associatedOn, that.associatedOn)
+            && Objects.equals(this.associationType, that.associationType) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.telephone, that.telephone)
+            && Objects.equals(this.verifiedStatus, that.verifiedStatus)
+            && Objects.equals(this.countryCode, that.countryCode)
+            && Objects.equals(this.customerType, that.customerType) && Objects.equals(this.isFrozen, that.isFrozen)
+            && Objects.equals(this.accountManagers, that.accountManagers)
+            && Objects.equals(this.xaccountId, that.xaccountId) && Objects.equals(this.xaccountType, that.xaccountType)
+            && Objects.equals(this.customerLevel, that.customerLevel);
     }
 
     @Override

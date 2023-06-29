@@ -55,16 +55,15 @@ public class ShowCodeTableByIdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCodeTableByIdRequest showCodeTableByIdRequest = (ShowCodeTableByIdRequest) o;
-        return Objects.equals(this.workspace, showCodeTableByIdRequest.workspace)
-            && Objects.equals(this.id, showCodeTableByIdRequest.id);
+        ShowCodeTableByIdRequest that = (ShowCodeTableByIdRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.id, that.id);
     }
 
     @Override

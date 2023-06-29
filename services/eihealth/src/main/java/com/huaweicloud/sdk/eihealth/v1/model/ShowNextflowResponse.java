@@ -144,20 +144,18 @@ public class ShowNextflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowResponse showNextflowResponse = (ShowNextflowResponse) o;
-        return Objects.equals(this.version, showNextflowResponse.version)
-            && Objects.equals(this.workspace, showNextflowResponse.workspace)
-            && Objects.equals(this.status, showNextflowResponse.status)
-            && Objects.equals(this.progress, showNextflowResponse.progress)
-            && Objects.equals(this.failedReason, showNextflowResponse.failedReason)
-            && Objects.equals(this.cacheStatus, showNextflowResponse.cacheStatus);
+        ShowNextflowResponse that = (ShowNextflowResponse) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.workspace, that.workspace)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.cacheStatus, that.cacheStatus);
     }
 
     @Override

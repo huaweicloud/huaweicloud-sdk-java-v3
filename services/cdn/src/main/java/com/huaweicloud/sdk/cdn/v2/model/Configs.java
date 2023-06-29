@@ -829,37 +829,35 @@ public class Configs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Configs configs = (Configs) o;
-        return Objects.equals(this.originRequestHeader, configs.originRequestHeader)
-            && Objects.equals(this.httpResponseHeader, configs.httpResponseHeader)
-            && Objects.equals(this.urlAuth, configs.urlAuth) && Objects.equals(this.https, configs.https)
-            && Objects.equals(this.sources, configs.sources)
-            && Objects.equals(this.originProtocol, configs.originProtocol)
-            && Objects.equals(this.originFollow302Status, configs.originFollow302Status)
-            && Objects.equals(this.cacheRules, configs.cacheRules) && Objects.equals(this.ipFilter, configs.ipFilter)
-            && Objects.equals(this.referer, configs.referer)
-            && Objects.equals(this.forceRedirect, configs.forceRedirect)
-            && Objects.equals(this.compress, configs.compress)
-            && Objects.equals(this.cacheUrlParameterFilter, configs.cacheUrlParameterFilter)
-            && Objects.equals(this.ipv6Accelerate, configs.ipv6Accelerate)
-            && Objects.equals(this.errorCodeCache, configs.errorCodeCache)
-            && Objects.equals(this.originRangeStatus, configs.originRangeStatus)
-            && Objects.equals(this.userAgentFilter, configs.userAgentFilter)
-            && Objects.equals(this.originRequestUrlRewrite, configs.originRequestUrlRewrite)
-            && Objects.equals(this.flexibleOrigin, configs.flexibleOrigin)
-            && Objects.equals(this.sliceEtagStatus, configs.sliceEtagStatus)
-            && Objects.equals(this.originReceiveTimeout, configs.originReceiveTimeout)
-            && Objects.equals(this.remoteAuth, configs.remoteAuth) && Objects.equals(this.websocket, configs.websocket)
-            && Objects.equals(this.videoSeek, configs.videoSeek)
-            && Objects.equals(this.requestLimitRules, configs.requestLimitRules)
-            && Objects.equals(this.errorCodeRedirectRules, configs.errorCodeRedirectRules);
+        Configs that = (Configs) obj;
+        return Objects.equals(this.originRequestHeader, that.originRequestHeader)
+            && Objects.equals(this.httpResponseHeader, that.httpResponseHeader)
+            && Objects.equals(this.urlAuth, that.urlAuth) && Objects.equals(this.https, that.https)
+            && Objects.equals(this.sources, that.sources) && Objects.equals(this.originProtocol, that.originProtocol)
+            && Objects.equals(this.originFollow302Status, that.originFollow302Status)
+            && Objects.equals(this.cacheRules, that.cacheRules) && Objects.equals(this.ipFilter, that.ipFilter)
+            && Objects.equals(this.referer, that.referer) && Objects.equals(this.forceRedirect, that.forceRedirect)
+            && Objects.equals(this.compress, that.compress)
+            && Objects.equals(this.cacheUrlParameterFilter, that.cacheUrlParameterFilter)
+            && Objects.equals(this.ipv6Accelerate, that.ipv6Accelerate)
+            && Objects.equals(this.errorCodeCache, that.errorCodeCache)
+            && Objects.equals(this.originRangeStatus, that.originRangeStatus)
+            && Objects.equals(this.userAgentFilter, that.userAgentFilter)
+            && Objects.equals(this.originRequestUrlRewrite, that.originRequestUrlRewrite)
+            && Objects.equals(this.flexibleOrigin, that.flexibleOrigin)
+            && Objects.equals(this.sliceEtagStatus, that.sliceEtagStatus)
+            && Objects.equals(this.originReceiveTimeout, that.originReceiveTimeout)
+            && Objects.equals(this.remoteAuth, that.remoteAuth) && Objects.equals(this.websocket, that.websocket)
+            && Objects.equals(this.videoSeek, that.videoSeek)
+            && Objects.equals(this.requestLimitRules, that.requestLimitRules)
+            && Objects.equals(this.errorCodeRedirectRules, that.errorCodeRedirectRules);
     }
 
     @Override

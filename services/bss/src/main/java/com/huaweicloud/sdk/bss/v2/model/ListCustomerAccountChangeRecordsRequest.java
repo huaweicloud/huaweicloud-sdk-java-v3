@@ -235,25 +235,22 @@ public class ListCustomerAccountChangeRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerAccountChangeRecordsRequest listCustomerAccountChangeRecordsRequest =
-            (ListCustomerAccountChangeRecordsRequest) o;
-        return Objects.equals(this.balanceType, listCustomerAccountChangeRecordsRequest.balanceType)
-            && Objects.equals(this.revenueExpenseType, listCustomerAccountChangeRecordsRequest.revenueExpenseType)
-            && Objects.equals(this.tradeType, listCustomerAccountChangeRecordsRequest.tradeType)
-            && Objects.equals(this.tradeTimeBegin, listCustomerAccountChangeRecordsRequest.tradeTimeBegin)
-            && Objects.equals(this.tradeTimeEnd, listCustomerAccountChangeRecordsRequest.tradeTimeEnd)
-            && Objects.equals(this.tradeId, listCustomerAccountChangeRecordsRequest.tradeId)
-            && Objects.equals(this.paymentChannelId, listCustomerAccountChangeRecordsRequest.paymentChannelId)
-            && Objects.equals(this.paymentChannelNo, listCustomerAccountChangeRecordsRequest.paymentChannelNo)
-            && Objects.equals(this.offset, listCustomerAccountChangeRecordsRequest.offset)
-            && Objects.equals(this.limit, listCustomerAccountChangeRecordsRequest.limit);
+        ListCustomerAccountChangeRecordsRequest that = (ListCustomerAccountChangeRecordsRequest) obj;
+        return Objects.equals(this.balanceType, that.balanceType)
+            && Objects.equals(this.revenueExpenseType, that.revenueExpenseType)
+            && Objects.equals(this.tradeType, that.tradeType)
+            && Objects.equals(this.tradeTimeBegin, that.tradeTimeBegin)
+            && Objects.equals(this.tradeTimeEnd, that.tradeTimeEnd) && Objects.equals(this.tradeId, that.tradeId)
+            && Objects.equals(this.paymentChannelId, that.paymentChannelId)
+            && Objects.equals(this.paymentChannelNo, that.paymentChannelNo) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

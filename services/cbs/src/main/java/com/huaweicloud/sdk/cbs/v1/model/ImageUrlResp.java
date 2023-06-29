@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.Resolution;
-import com.huaweicloud.sdk.cbs.v1.model.UrlResp;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ImageUrlResp  {
-
+public class ImageUrlResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="url")
-    
+    @JsonProperty(value = "url")
 
     private String url;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resolution")
-    
+    @JsonProperty(value = "resolution")
 
     private Resolution resolution;
 
@@ -47,9 +35,6 @@ public class ImageUrlResp  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 图片id
@@ -63,15 +48,10 @@ public class ImageUrlResp  {
         this.id = id;
     }
 
-    
-
     public ImageUrlResp withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 
@@ -85,15 +65,10 @@ public class ImageUrlResp  {
         this.name = name;
     }
 
-    
-
     public ImageUrlResp withUrl(String url) {
         this.url = url;
         return this;
     }
-
-    
-
 
     /**
      * 访问地址
@@ -107,22 +82,19 @@ public class ImageUrlResp  {
         this.url = url;
     }
 
-    
-
     public ImageUrlResp withResolution(Resolution resolution) {
         this.resolution = resolution;
         return this;
     }
 
     public ImageUrlResp withResolution(Consumer<Resolution> resolutionSetter) {
-        if(this.resolution == null ){
+        if (this.resolution == null) {
             this.resolution = new Resolution();
             resolutionSetter.accept(this.resolution);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get resolution
@@ -136,26 +108,24 @@ public class ImageUrlResp  {
         this.resolution = resolution;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageUrlResp imageUrlResp = (ImageUrlResp) o;
-        return Objects.equals(this.id, imageUrlResp.id) &&
-            Objects.equals(this.name, imageUrlResp.name) &&
-            Objects.equals(this.url, imageUrlResp.url) &&
-            Objects.equals(this.resolution, imageUrlResp.resolution);
+        ImageUrlResp that = (ImageUrlResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.url, that.url) && Objects.equals(this.resolution, that.resolution);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, url, resolution);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,6 +137,7 @@ public class ImageUrlResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -177,8 +148,5 @@ public class ImageUrlResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

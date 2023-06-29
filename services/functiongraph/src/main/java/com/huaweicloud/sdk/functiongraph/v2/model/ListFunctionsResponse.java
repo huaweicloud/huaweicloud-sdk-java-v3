@@ -97,17 +97,16 @@ public class ListFunctionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionsResponse listFunctionsResponse = (ListFunctionsResponse) o;
-        return Objects.equals(this.functions, listFunctionsResponse.functions)
-            && Objects.equals(this.nextMarker, listFunctionsResponse.nextMarker)
-            && Objects.equals(this.count, listFunctionsResponse.count);
+        ListFunctionsResponse that = (ListFunctionsResponse) obj;
+        return Objects.equals(this.functions, that.functions) && Objects.equals(this.nextMarker, that.nextMarker)
+            && Objects.equals(this.count, that.count);
     }
 
     @Override

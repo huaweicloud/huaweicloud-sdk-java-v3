@@ -151,20 +151,17 @@ public class DeleteCloudPersistentVolumeClaimsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCloudPersistentVolumeClaimsResponse deleteCloudPersistentVolumeClaimsResponse =
-            (DeleteCloudPersistentVolumeClaimsResponse) o;
-        return Objects.equals(this.apiVersion, deleteCloudPersistentVolumeClaimsResponse.apiVersion)
-            && Objects.equals(this.kind, deleteCloudPersistentVolumeClaimsResponse.kind)
-            && Objects.equals(this.metadata, deleteCloudPersistentVolumeClaimsResponse.metadata)
-            && Objects.equals(this.spec, deleteCloudPersistentVolumeClaimsResponse.spec)
-            && Objects.equals(this.status, deleteCloudPersistentVolumeClaimsResponse.status);
+        DeleteCloudPersistentVolumeClaimsResponse that = (DeleteCloudPersistentVolumeClaimsResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

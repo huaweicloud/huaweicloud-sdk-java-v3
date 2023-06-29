@@ -1035,51 +1035,39 @@ public class InstanceResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceResponse instanceResponse = (InstanceResponse) o;
-        return Objects.equals(this.id, instanceResponse.id) && Objects.equals(this.status, instanceResponse.status)
-            && Objects.equals(this.enableSsl, instanceResponse.enableSsl)
-            && Objects.equals(this.privateIps, instanceResponse.privateIps)
-            && Objects.equals(this.privateDnsNames, instanceResponse.privateDnsNames)
-            && Objects.equals(this.publicIps, instanceResponse.publicIps)
-            && Objects.equals(this.type, instanceResponse.type)
-            && Objects.equals(this.created, instanceResponse.created)
-            && Objects.equals(this.updated, instanceResponse.updated)
-            && Objects.equals(this.dbUserName, instanceResponse.dbUserName)
-            && Objects.equals(this.switchStrategy, instanceResponse.switchStrategy)
-            && Objects.equals(this.readOnlyByUser, instanceResponse.readOnlyByUser)
-            && Objects.equals(this.maintenanceWindow, instanceResponse.maintenanceWindow)
-            && Objects.equals(this.nodes, instanceResponse.nodes)
-            && Objects.equals(this.relatedInstance, instanceResponse.relatedInstance)
-            && Objects.equals(this.name, instanceResponse.name)
-            && Objects.equals(this.datastore, instanceResponse.datastore)
-            && Objects.equals(this.ha, instanceResponse.ha) && Objects.equals(this.port, instanceResponse.port)
-            && Objects.equals(this.backupStrategy, instanceResponse.backupStrategy)
-            && Objects.equals(this.enterpriseProjectId, instanceResponse.enterpriseProjectId)
-            && Objects.equals(this.diskEncryptionId, instanceResponse.diskEncryptionId)
-            && Objects.equals(this.flavorRef, instanceResponse.flavorRef)
-            && Objects.equals(this.cpu, instanceResponse.cpu) && Objects.equals(this.mem, instanceResponse.mem)
-            && Objects.equals(this.volume, instanceResponse.volume)
-            && Objects.equals(this.region, instanceResponse.region)
-            && Objects.equals(this.vpcId, instanceResponse.vpcId)
-            && Objects.equals(this.subnetId, instanceResponse.subnetId)
-            && Objects.equals(this.securityGroupId, instanceResponse.securityGroupId)
-            && Objects.equals(this.chargeInfo, instanceResponse.chargeInfo)
-            && Objects.equals(this.timeZone, instanceResponse.timeZone)
-            && Objects.equals(this.tags, instanceResponse.tags)
-            && Objects.equals(this.backupUsedSpace, instanceResponse.backupUsedSpace)
-            && Objects.equals(this.storageUsedSpace, instanceResponse.storageUsedSpace)
-            && Objects.equals(this.orderId, instanceResponse.orderId)
-            && Objects.equals(this.associatedWithDdm, instanceResponse.associatedWithDdm)
-            && Objects.equals(this.alias, instanceResponse.alias)
-            && Objects.equals(this.maxIops, instanceResponse.maxIops)
-            && Objects.equals(this.expirationTime, instanceResponse.expirationTime);
+        InstanceResponse that = (InstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.enableSsl, that.enableSsl) && Objects.equals(this.privateIps, that.privateIps)
+            && Objects.equals(this.privateDnsNames, that.privateDnsNames)
+            && Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.dbUserName, that.dbUserName)
+            && Objects.equals(this.switchStrategy, that.switchStrategy)
+            && Objects.equals(this.readOnlyByUser, that.readOnlyByUser)
+            && Objects.equals(this.maintenanceWindow, that.maintenanceWindow) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.relatedInstance, that.relatedInstance) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.ha, that.ha)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.mem, that.mem) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.backupUsedSpace, that.backupUsedSpace)
+            && Objects.equals(this.storageUsedSpace, that.storageUsedSpace)
+            && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.associatedWithDdm, that.associatedWithDdm) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.maxIops, that.maxIops) && Objects.equals(this.expirationTime, that.expirationTime);
     }
 
     @Override

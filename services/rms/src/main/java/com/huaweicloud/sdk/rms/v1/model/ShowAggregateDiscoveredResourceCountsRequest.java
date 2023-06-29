@@ -44,16 +44,15 @@ public class ShowAggregateDiscoveredResourceCountsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAggregateDiscoveredResourceCountsRequest showAggregateDiscoveredResourceCountsRequest =
-            (ShowAggregateDiscoveredResourceCountsRequest) o;
-        return Objects.equals(this.body, showAggregateDiscoveredResourceCountsRequest.body);
+        ShowAggregateDiscoveredResourceCountsRequest that = (ShowAggregateDiscoveredResourceCountsRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

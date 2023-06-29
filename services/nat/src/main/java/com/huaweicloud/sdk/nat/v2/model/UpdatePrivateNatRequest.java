@@ -65,16 +65,15 @@ public class UpdatePrivateNatRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateNatRequest updatePrivateNatRequest = (UpdatePrivateNatRequest) o;
-        return Objects.equals(this.gatewayId, updatePrivateNatRequest.gatewayId)
-            && Objects.equals(this.body, updatePrivateNatRequest.body);
+        UpdatePrivateNatRequest that = (UpdatePrivateNatRequest) obj;
+        return Objects.equals(this.gatewayId, that.gatewayId) && Objects.equals(this.body, that.body);
     }
 
     @Override

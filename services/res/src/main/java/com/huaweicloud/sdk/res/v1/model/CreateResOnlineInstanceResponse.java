@@ -110,18 +110,16 @@ public class CreateResOnlineInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateResOnlineInstanceResponse createResOnlineInstanceResponse = (CreateResOnlineInstanceResponse) o;
-        return Objects.equals(this.isSuccess, createResOnlineInstanceResponse.isSuccess)
-            && Objects.equals(this.job, createResOnlineInstanceResponse.job)
-            && Objects.equals(this.message, createResOnlineInstanceResponse.message)
-            && Objects.equals(this.errorCode, createResOnlineInstanceResponse.errorCode);
+        CreateResOnlineInstanceResponse that = (CreateResOnlineInstanceResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.job, that.job)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.errorCode, that.errorCode);
     }
 
     @Override

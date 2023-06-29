@@ -109,18 +109,17 @@ public class UpdatePunishmentRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePunishmentRuleRequest updatePunishmentRuleRequest = (UpdatePunishmentRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updatePunishmentRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updatePunishmentRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updatePunishmentRuleRequest.ruleId)
-            && Objects.equals(this.body, updatePunishmentRuleRequest.body);
+        UpdatePunishmentRuleRequest that = (UpdatePunishmentRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

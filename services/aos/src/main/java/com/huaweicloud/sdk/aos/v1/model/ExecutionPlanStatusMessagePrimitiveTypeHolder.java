@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ExecutionPlanStatusMessagePrimitiveTypeHolder
  */
-public class ExecutionPlanStatusMessagePrimitiveTypeHolder  {
-
+public class ExecutionPlanStatusMessagePrimitiveTypeHolder {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status_message")
-    
+    @JsonProperty(value = "status_message")
 
     private String statusMessage;
 
@@ -27,9 +19,6 @@ public class ExecutionPlanStatusMessagePrimitiveTypeHolder  {
         this.statusMessage = statusMessage;
         return this;
     }
-
-    
-
 
     /**
      * 当执行计划的状态为创建失败状态（即为 `CREATION_FAILED` 时），将会展示简要的错误信息总结以供debug
@@ -43,23 +32,23 @@ public class ExecutionPlanStatusMessagePrimitiveTypeHolder  {
         this.statusMessage = statusMessage;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecutionPlanStatusMessagePrimitiveTypeHolder executionPlanStatusMessagePrimitiveTypeHolder = (ExecutionPlanStatusMessagePrimitiveTypeHolder) o;
-        return Objects.equals(this.statusMessage, executionPlanStatusMessagePrimitiveTypeHolder.statusMessage);
+        ExecutionPlanStatusMessagePrimitiveTypeHolder that = (ExecutionPlanStatusMessagePrimitiveTypeHolder) obj;
+        return Objects.equals(this.statusMessage, that.statusMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statusMessage);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class ExecutionPlanStatusMessagePrimitiveTypeHolder  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class ExecutionPlanStatusMessagePrimitiveTypeHolder  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

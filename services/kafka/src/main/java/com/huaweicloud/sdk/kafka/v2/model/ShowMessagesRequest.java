@@ -165,21 +165,18 @@ public class ShowMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMessagesRequest showMessagesRequest = (ShowMessagesRequest) o;
-        return Objects.equals(this.instanceId, showMessagesRequest.instanceId)
-            && Objects.equals(this.topic, showMessagesRequest.topic)
-            && Objects.equals(this.startTime, showMessagesRequest.startTime)
-            && Objects.equals(this.endTime, showMessagesRequest.endTime)
-            && Objects.equals(this.limit, showMessagesRequest.limit)
-            && Objects.equals(this.offset, showMessagesRequest.offset)
-            && Objects.equals(this.partition, showMessagesRequest.partition);
+        ShowMessagesRequest that = (ShowMessagesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.partition, that.partition);
     }
 
     @Override

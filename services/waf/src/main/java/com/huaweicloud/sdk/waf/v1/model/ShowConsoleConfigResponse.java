@@ -584,40 +584,34 @@ public class ShowConsoleConfigResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsoleConfigResponse showConsoleConfigResponse = (ShowConsoleConfigResponse) o;
-        return Objects.equals(this.eps, showConsoleConfigResponse.eps)
-            && Objects.equals(this.tls, showConsoleConfigResponse.tls)
-            && Objects.equals(this.ipv6, showConsoleConfigResponse.ipv6)
-            && Objects.equals(this.alert, showConsoleConfigResponse.alert)
-            && Objects.equals(this.custom, showConsoleConfigResponse.custom)
-            && Objects.equals(this.elbMode, showConsoleConfigResponse.elbMode)
-            && Objects.equals(this.eventLts, showConsoleConfigResponse.eventLts)
-            && Objects.equals(this.multiDns, showConsoleConfigResponse.multiDns)
-            && Objects.equals(this.searchIp, showConsoleConfigResponse.searchIp)
-            && Objects.equals(this.ccEnhance, showConsoleConfigResponse.ccEnhance)
-            && Objects.equals(this.cnameSwitch, showConsoleConfigResponse.cnameSwitch)
-            && Objects.equals(this.customBlock, showConsoleConfigResponse.customBlock)
-            && Objects.equals(this.advancedIgnore, showConsoleConfigResponse.advancedIgnore)
-            && Objects.equals(this.jsCrawlerEnable, showConsoleConfigResponse.jsCrawlerEnable)
-            && Objects.equals(this.deepDecodeEnable, showConsoleConfigResponse.deepDecodeEnable)
-            && Objects.equals(this.overviewBandwidth, showConsoleConfigResponse.overviewBandwidth)
-            && Objects.equals(this.proxyUseOldcname, showConsoleConfigResponse.proxyUseOldcname)
-            && Objects.equals(this.checkAllHeadersEnable, showConsoleConfigResponse.checkAllHeadersEnable)
-            && Objects.equals(this.geoipEnable, showConsoleConfigResponse.geoipEnable)
-            && Objects.equals(this.loadBalanceEnable, showConsoleConfigResponse.loadBalanceEnable)
-            && Objects.equals(this.ipv6ProtectionEnable, showConsoleConfigResponse.ipv6ProtectionEnable)
-            && Objects.equals(this.policySharingEnable, showConsoleConfigResponse.policySharingEnable)
-            && Objects.equals(this.ipGroup, showConsoleConfigResponse.ipGroup)
-            && Objects.equals(this.robotActionEnable, showConsoleConfigResponse.robotActionEnable)
-            && Objects.equals(this.http2Enable, showConsoleConfigResponse.http2Enable)
-            && Objects.equals(this.timeoutConfigEnable, showConsoleConfigResponse.timeoutConfigEnable);
+        ShowConsoleConfigResponse that = (ShowConsoleConfigResponse) obj;
+        return Objects.equals(this.eps, that.eps) && Objects.equals(this.tls, that.tls)
+            && Objects.equals(this.ipv6, that.ipv6) && Objects.equals(this.alert, that.alert)
+            && Objects.equals(this.custom, that.custom) && Objects.equals(this.elbMode, that.elbMode)
+            && Objects.equals(this.eventLts, that.eventLts) && Objects.equals(this.multiDns, that.multiDns)
+            && Objects.equals(this.searchIp, that.searchIp) && Objects.equals(this.ccEnhance, that.ccEnhance)
+            && Objects.equals(this.cnameSwitch, that.cnameSwitch) && Objects.equals(this.customBlock, that.customBlock)
+            && Objects.equals(this.advancedIgnore, that.advancedIgnore)
+            && Objects.equals(this.jsCrawlerEnable, that.jsCrawlerEnable)
+            && Objects.equals(this.deepDecodeEnable, that.deepDecodeEnable)
+            && Objects.equals(this.overviewBandwidth, that.overviewBandwidth)
+            && Objects.equals(this.proxyUseOldcname, that.proxyUseOldcname)
+            && Objects.equals(this.checkAllHeadersEnable, that.checkAllHeadersEnable)
+            && Objects.equals(this.geoipEnable, that.geoipEnable)
+            && Objects.equals(this.loadBalanceEnable, that.loadBalanceEnable)
+            && Objects.equals(this.ipv6ProtectionEnable, that.ipv6ProtectionEnable)
+            && Objects.equals(this.policySharingEnable, that.policySharingEnable)
+            && Objects.equals(this.ipGroup, that.ipGroup)
+            && Objects.equals(this.robotActionEnable, that.robotActionEnable)
+            && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.timeoutConfigEnable, that.timeoutConfigEnable);
     }
 
     @Override

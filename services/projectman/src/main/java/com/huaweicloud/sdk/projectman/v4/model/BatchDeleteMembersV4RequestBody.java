@@ -52,15 +52,15 @@ public class BatchDeleteMembersV4RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteMembersV4RequestBody batchDeleteMembersV4RequestBody = (BatchDeleteMembersV4RequestBody) o;
-        return Objects.equals(this.userIds, batchDeleteMembersV4RequestBody.userIds);
+        BatchDeleteMembersV4RequestBody that = (BatchDeleteMembersV4RequestBody) obj;
+        return Objects.equals(this.userIds, that.userIds);
     }
 
     @Override

@@ -209,23 +209,21 @@ public class SubTaskRuntimeDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubTaskRuntimeDto subTaskRuntimeDto = (SubTaskRuntimeDto) o;
-        return Objects.equals(this.subTaskName, subTaskRuntimeDto.subTaskName)
-            && Objects.equals(this.createTime, subTaskRuntimeDto.createTime)
-            && Objects.equals(this.finishTime, subTaskRuntimeDto.finishTime)
-            && Objects.equals(this.actualRunningTime, subTaskRuntimeDto.actualRunningTime)
-            && Objects.equals(this.status, subTaskRuntimeDto.status)
-            && Objects.equals(this.logStorageLink, subTaskRuntimeDto.logStorageLink)
-            && Objects.equals(this.podCreateTime, subTaskRuntimeDto.podCreateTime)
-            && Objects.equals(this.podStartTime, subTaskRuntimeDto.podStartTime)
-            && Objects.equals(this.jobFailedTimes, subTaskRuntimeDto.jobFailedTimes);
+        SubTaskRuntimeDto that = (SubTaskRuntimeDto) obj;
+        return Objects.equals(this.subTaskName, that.subTaskName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.actualRunningTime, that.actualRunningTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.logStorageLink, that.logStorageLink)
+            && Objects.equals(this.podCreateTime, that.podCreateTime)
+            && Objects.equals(this.podStartTime, that.podStartTime)
+            && Objects.equals(this.jobFailedTimes, that.jobFailedTimes);
     }
 
     @Override

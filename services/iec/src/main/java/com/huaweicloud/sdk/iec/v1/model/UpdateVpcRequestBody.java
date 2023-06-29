@@ -43,15 +43,15 @@ public class UpdateVpcRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcRequestBody updateVpcRequestBody = (UpdateVpcRequestBody) o;
-        return Objects.equals(this.vpc, updateVpcRequestBody.vpc);
+        UpdateVpcRequestBody that = (UpdateVpcRequestBody) obj;
+        return Objects.equals(this.vpc, that.vpc);
     }
 
     @Override

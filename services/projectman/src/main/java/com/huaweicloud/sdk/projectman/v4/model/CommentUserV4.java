@@ -77,17 +77,16 @@ public class CommentUserV4 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommentUserV4 commentUserV4 = (CommentUserV4) o;
-        return Objects.equals(this.userNumId, commentUserV4.userNumId)
-            && Objects.equals(this.userName, commentUserV4.userName)
-            && Objects.equals(this.nickName, commentUserV4.nickName);
+        CommentUserV4 that = (CommentUserV4) obj;
+        return Objects.equals(this.userNumId, that.userNumId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.nickName, that.nickName);
     }
 
     @Override

@@ -143,20 +143,18 @@ public class ProgramResponseBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProgramResponseBase programResponseBase = (ProgramResponseBase) o;
-        return Objects.equals(this.id, programResponseBase.id)
-            && Objects.equals(this.lastUpdatedBy, programResponseBase.lastUpdatedBy)
-            && Objects.equals(this.updateTime, programResponseBase.updateTime)
-            && Objects.equals(this.programName, programResponseBase.programName)
-            && Objects.equals(this.materialSizeStr, programResponseBase.materialSizeStr)
-            && Objects.equals(this.playTime, programResponseBase.playTime);
+        ProgramResponseBase that = (ProgramResponseBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.lastUpdatedBy, that.lastUpdatedBy)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.programName, that.programName)
+            && Objects.equals(this.materialSizeStr, that.materialSizeStr)
+            && Objects.equals(this.playTime, that.playTime);
     }
 
     @Override

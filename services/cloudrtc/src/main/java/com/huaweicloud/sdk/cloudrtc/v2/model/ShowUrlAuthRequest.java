@@ -103,18 +103,16 @@ public class ShowUrlAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUrlAuthRequest showUrlAuthRequest = (ShowUrlAuthRequest) o;
-        return Objects.equals(this.authorization, showUrlAuthRequest.authorization)
-            && Objects.equals(this.xSdkDate, showUrlAuthRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showUrlAuthRequest.xProjectId)
-            && Objects.equals(this.appId, showUrlAuthRequest.appId);
+        ShowUrlAuthRequest that = (ShowUrlAuthRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

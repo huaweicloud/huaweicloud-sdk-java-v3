@@ -69,22 +69,15 @@ public class CreateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class CreateEndpointResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -844,39 +830,33 @@ public class CreateEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointResponse createEndpointResponse = (CreateEndpointResponse) o;
-        return Objects.equals(this.id, createEndpointResponse.id)
-            && Objects.equals(this.serviceType, createEndpointResponse.serviceType)
-            && Objects.equals(this.status, createEndpointResponse.status)
-            && Objects.equals(this.ip, createEndpointResponse.ip)
-            && Objects.equals(this.activeStatus, createEndpointResponse.activeStatus)
-            && Objects.equals(this.endpointServiceName, createEndpointResponse.endpointServiceName)
-            && Objects.equals(this.markerId, createEndpointResponse.markerId)
-            && Objects.equals(this.endpointServiceId, createEndpointResponse.endpointServiceId)
-            && Objects.equals(this.enableDns, createEndpointResponse.enableDns)
-            && Objects.equals(this.dnsNames, createEndpointResponse.dnsNames)
-            && Objects.equals(this.subnetId, createEndpointResponse.subnetId)
-            && Objects.equals(this.vpcId, createEndpointResponse.vpcId)
-            && Objects.equals(this.createdAt, createEndpointResponse.createdAt)
-            && Objects.equals(this.updatedAt, createEndpointResponse.updatedAt)
-            && Objects.equals(this.projectId, createEndpointResponse.projectId)
-            && Objects.equals(this.tags, createEndpointResponse.tags)
-            && Objects.equals(this.whitelist, createEndpointResponse.whitelist)
-            && Objects.equals(this.enableWhitelist, createEndpointResponse.enableWhitelist)
-            && Objects.equals(this.routetables, createEndpointResponse.routetables)
-            && Objects.equals(this.specificationName, createEndpointResponse.specificationName)
-            && Objects.equals(this.description, createEndpointResponse.description)
-            && Objects.equals(this.policyStatement, createEndpointResponse.policyStatement)
-            && Objects.equals(this.enableStatus, createEndpointResponse.enableStatus)
-            && Objects.equals(this.endpointPoolId, createEndpointResponse.endpointPoolId)
-            && Objects.equals(this.publicBorderGroup, createEndpointResponse.publicBorderGroup);
+        CreateEndpointResponse that = (CreateEndpointResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.activeStatus, that.activeStatus)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.markerId, that.markerId)
+            && Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.enableDns, that.enableDns) && Objects.equals(this.dnsNames, that.dnsNames)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.whitelist, that.whitelist)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist)
+            && Objects.equals(this.routetables, that.routetables)
+            && Objects.equals(this.specificationName, that.specificationName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyStatement, that.policyStatement)
+            && Objects.equals(this.enableStatus, that.enableStatus)
+            && Objects.equals(this.endpointPoolId, that.endpointPoolId)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup);
     }
 
     @Override

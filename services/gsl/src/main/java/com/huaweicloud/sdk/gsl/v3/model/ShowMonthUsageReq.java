@@ -90,16 +90,16 @@ public class ShowMonthUsageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMonthUsageReq showMonthUsageReq = (ShowMonthUsageReq) o;
-        return Objects.equals(this.simCardIds, showMonthUsageReq.simCardIds)
-            && Objects.equals(this.billingCycles, showMonthUsageReq.billingCycles);
+        ShowMonthUsageReq that = (ShowMonthUsageReq) obj;
+        return Objects.equals(this.simCardIds, that.simCardIds)
+            && Objects.equals(this.billingCycles, that.billingCycles);
     }
 
     @Override

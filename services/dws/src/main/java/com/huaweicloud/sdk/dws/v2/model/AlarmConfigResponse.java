@@ -209,23 +209,20 @@ public class AlarmConfigResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmConfigResponse alarmConfigResponse = (AlarmConfigResponse) o;
-        return Objects.equals(this.id, alarmConfigResponse.id)
-            && Objects.equals(this.alarmId, alarmConfigResponse.alarmId)
-            && Objects.equals(this.alarmName, alarmConfigResponse.alarmName)
-            && Objects.equals(this.nameSpace, alarmConfigResponse.nameSpace)
-            && Objects.equals(this.alarmLevel, alarmConfigResponse.alarmLevel)
-            && Objects.equals(this.isUserVisible, alarmConfigResponse.isUserVisible)
-            && Objects.equals(this.isConverge, alarmConfigResponse.isConverge)
-            && Objects.equals(this.convergeTime, alarmConfigResponse.convergeTime)
-            && Objects.equals(this.isMaintainVisible, alarmConfigResponse.isMaintainVisible);
+        AlarmConfigResponse that = (AlarmConfigResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.alarmId, that.alarmId)
+            && Objects.equals(this.alarmName, that.alarmName) && Objects.equals(this.nameSpace, that.nameSpace)
+            && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.isUserVisible, that.isUserVisible)
+            && Objects.equals(this.isConverge, that.isConverge) && Objects.equals(this.convergeTime, that.convergeTime)
+            && Objects.equals(this.isMaintainVisible, that.isMaintainVisible);
     }
 
     @Override

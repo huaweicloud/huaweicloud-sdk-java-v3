@@ -55,16 +55,15 @@ public class StageKpiItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StageKpiItem stageKpiItem = (StageKpiItem) o;
-        return Objects.equals(this.comparison, stageKpiItem.comparison)
-            && Objects.equals(this.value, stageKpiItem.value);
+        StageKpiItem that = (StageKpiItem) obj;
+        return Objects.equals(this.comparison, that.comparison) && Objects.equals(this.value, that.value);
     }
 
     @Override

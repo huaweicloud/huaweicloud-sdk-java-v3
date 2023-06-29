@@ -43,15 +43,15 @@ public class RebootBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RebootBody rebootBody = (RebootBody) o;
-        return Objects.equals(this.reboot, rebootBody.reboot);
+        RebootBody that = (RebootBody) obj;
+        return Objects.equals(this.reboot, that.reboot);
     }
 
     @Override

@@ -184,21 +184,18 @@ public class NovaSecurityGroupCommonRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaSecurityGroupCommonRule novaSecurityGroupCommonRule = (NovaSecurityGroupCommonRule) o;
-        return Objects.equals(this.fromPort, novaSecurityGroupCommonRule.fromPort)
-            && Objects.equals(this.group, novaSecurityGroupCommonRule.group)
-            && Objects.equals(this.id, novaSecurityGroupCommonRule.id)
-            && Objects.equals(this.ipProtocol, novaSecurityGroupCommonRule.ipProtocol)
-            && Objects.equals(this.ipRange, novaSecurityGroupCommonRule.ipRange)
-            && Objects.equals(this.parentGroupId, novaSecurityGroupCommonRule.parentGroupId)
-            && Objects.equals(this.toPort, novaSecurityGroupCommonRule.toPort);
+        NovaSecurityGroupCommonRule that = (NovaSecurityGroupCommonRule) obj;
+        return Objects.equals(this.fromPort, that.fromPort) && Objects.equals(this.group, that.group)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ipProtocol, that.ipProtocol)
+            && Objects.equals(this.ipRange, that.ipRange) && Objects.equals(this.parentGroupId, that.parentGroupId)
+            && Objects.equals(this.toPort, that.toPort);
     }
 
     @Override

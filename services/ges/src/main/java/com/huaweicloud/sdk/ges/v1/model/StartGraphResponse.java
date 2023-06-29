@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class StartGraphResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
 
     private String jobId;
 
@@ -42,9 +30,6 @@ public class StartGraphResponse extends SdkResponse {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -58,15 +43,10 @@ public class StartGraphResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public StartGraphResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -80,15 +60,10 @@ public class StartGraphResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public StartGraphResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 启动图任务ID。请求失败时字段为空。 >可以查询jobId查看任务执行状态、获取返回结果
@@ -102,25 +77,24 @@ public class StartGraphResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartGraphResponse startGraphResponse = (StartGraphResponse) o;
-        return Objects.equals(this.errorMessage, startGraphResponse.errorMessage) &&
-            Objects.equals(this.errorCode, startGraphResponse.errorCode) &&
-            Objects.equals(this.jobId, startGraphResponse.jobId);
+        StartGraphResponse that = (StartGraphResponse) obj;
+        return Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorMessage, errorCode, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class StartGraphResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class StartGraphResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -548,34 +548,26 @@ public class TemplateView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateView templateView = (TemplateView) o;
-        return Objects.equals(this.templateId, templateView.templateId)
-            && Objects.equals(this.templateName, templateView.templateName)
-            && Objects.equals(this.templateType, templateView.templateType)
-            && Objects.equals(this.templateUrl, templateView.templateUrl)
-            && Objects.equals(this.userId, templateView.userId) && Objects.equals(this.userName, templateView.userName)
-            && Objects.equals(this.domainId, templateView.domainId)
-            && Objects.equals(this.domainName, templateView.domainName)
-            && Objects.equals(this.isBuildIn, templateView.isBuildIn)
-            && Objects.equals(this.region, templateView.region)
-            && Objects.equals(this.projectId, templateView.projectId)
-            && Objects.equals(this.projectName, templateView.projectName)
-            && Objects.equals(this.createTime, templateView.createTime)
-            && Objects.equals(this.lastModifyTime, templateView.lastModifyTime)
-            && Objects.equals(this.isWatch, templateView.isWatch)
-            && Objects.equals(this.description, templateView.description)
-            && Objects.equals(this.parameter, templateView.parameter) && Objects.equals(this.flow, templateView.flow)
-            && Objects.equals(this.states, templateView.states)
-            && Objects.equals(this.canUpdate, templateView.canUpdate)
-            && Objects.equals(this.canDelete, templateView.canDelete)
-            && Objects.equals(this.needHub, templateView.needHub);
+        TemplateView that = (TemplateView) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.templateUrl, that.templateUrl) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.isBuildIn, that.isBuildIn)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.lastModifyTime, that.lastModifyTime) && Objects.equals(this.isWatch, that.isWatch)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.parameter, that.parameter)
+            && Objects.equals(this.flow, that.flow) && Objects.equals(this.states, that.states)
+            && Objects.equals(this.canUpdate, that.canUpdate) && Objects.equals(this.canDelete, that.canDelete)
+            && Objects.equals(this.needHub, that.needHub);
     }
 
     @Override

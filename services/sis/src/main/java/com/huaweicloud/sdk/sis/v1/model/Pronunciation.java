@@ -55,15 +55,15 @@ public class Pronunciation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Pronunciation pronunciation = (Pronunciation) o;
-        return Objects.equals(this.score, pronunciation.score) && Objects.equals(this.gop, pronunciation.gop);
+        Pronunciation that = (Pronunciation) obj;
+        return Objects.equals(this.score, that.score) && Objects.equals(this.gop, that.gop);
     }
 
     @Override

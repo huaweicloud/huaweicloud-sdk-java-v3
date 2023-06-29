@@ -297,27 +297,22 @@ public class TaskBasicExecutionData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskBasicExecutionData taskBasicExecutionData = (TaskBasicExecutionData) o;
-        return Objects.equals(this.completeNum, taskBasicExecutionData.completeNum)
-            && Objects.equals(this.duration, taskBasicExecutionData.duration)
-            && Objects.equals(this.endTime, taskBasicExecutionData.endTime)
-            && Objects.equals(this.executedNum, taskBasicExecutionData.executedNum)
-            && Objects.equals(this.kpiCaseCount, taskBasicExecutionData.kpiCaseCount)
-            && Objects.equals(this.kpiCaseExecuteCount, taskBasicExecutionData.kpiCaseExecuteCount)
-            && Objects.equals(this.kpiCasePassCount, taskBasicExecutionData.kpiCasePassCount)
-            && Objects.equals(this.parallel, taskBasicExecutionData.parallel)
-            && Objects.equals(this.passNum, taskBasicExecutionData.passNum)
-            && Objects.equals(this.startTime, taskBasicExecutionData.startTime)
-            && Objects.equals(this.taskStatus, taskBasicExecutionData.taskStatus)
-            && Objects.equals(this.totalNum, taskBasicExecutionData.totalNum)
-            && Objects.equals(this.vum, taskBasicExecutionData.vum);
+        TaskBasicExecutionData that = (TaskBasicExecutionData) obj;
+        return Objects.equals(this.completeNum, that.completeNum) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.executedNum, that.executedNum)
+            && Objects.equals(this.kpiCaseCount, that.kpiCaseCount)
+            && Objects.equals(this.kpiCaseExecuteCount, that.kpiCaseExecuteCount)
+            && Objects.equals(this.kpiCasePassCount, that.kpiCasePassCount)
+            && Objects.equals(this.parallel, that.parallel) && Objects.equals(this.passNum, that.passNum)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.vum, that.vum);
     }
 
     @Override

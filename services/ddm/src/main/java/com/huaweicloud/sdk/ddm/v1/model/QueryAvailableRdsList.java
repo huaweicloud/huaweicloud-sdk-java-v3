@@ -253,25 +253,21 @@ public class QueryAvailableRdsList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryAvailableRdsList queryAvailableRdsList = (QueryAvailableRdsList) o;
-        return Objects.equals(this.id, queryAvailableRdsList.id)
-            && Objects.equals(this.projectId, queryAvailableRdsList.projectId)
-            && Objects.equals(this.status, queryAvailableRdsList.status)
-            && Objects.equals(this.name, queryAvailableRdsList.name)
-            && Objects.equals(this.engineName, queryAvailableRdsList.engineName)
-            && Objects.equals(this.engineSoftwareVersion, queryAvailableRdsList.engineSoftwareVersion)
-            && Objects.equals(this.privateIp, queryAvailableRdsList.privateIp)
-            && Objects.equals(this.mode, queryAvailableRdsList.mode)
-            && Objects.equals(this.port, queryAvailableRdsList.port)
-            && Objects.equals(this.azCode, queryAvailableRdsList.azCode)
-            && Objects.equals(this.timeZone, queryAvailableRdsList.timeZone);
+        QueryAvailableRdsList that = (QueryAvailableRdsList) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineSoftwareVersion, that.engineSoftwareVersion)
+            && Objects.equals(this.privateIp, that.privateIp) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.timeZone, that.timeZone);
     }
 
     @Override

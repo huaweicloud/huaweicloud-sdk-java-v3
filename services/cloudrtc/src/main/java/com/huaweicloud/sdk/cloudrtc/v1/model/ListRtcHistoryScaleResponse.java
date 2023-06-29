@@ -77,16 +77,15 @@ public class ListRtcHistoryScaleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcHistoryScaleResponse listRtcHistoryScaleResponse = (ListRtcHistoryScaleResponse) o;
-        return Objects.equals(this.scale, listRtcHistoryScaleResponse.scale)
-            && Objects.equals(this.xRequestId, listRtcHistoryScaleResponse.xRequestId);
+        ListRtcHistoryScaleResponse that = (ListRtcHistoryScaleResponse) obj;
+        return Objects.equals(this.scale, that.scale) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

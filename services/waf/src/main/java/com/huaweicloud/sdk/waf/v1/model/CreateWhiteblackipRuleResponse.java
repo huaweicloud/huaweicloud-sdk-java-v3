@@ -220,23 +220,19 @@ public class CreateWhiteblackipRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWhiteblackipRuleResponse createWhiteblackipRuleResponse = (CreateWhiteblackipRuleResponse) o;
-        return Objects.equals(this.id, createWhiteblackipRuleResponse.id)
-            && Objects.equals(this.name, createWhiteblackipRuleResponse.name)
-            && Objects.equals(this.policyid, createWhiteblackipRuleResponse.policyid)
-            && Objects.equals(this.addr, createWhiteblackipRuleResponse.addr)
-            && Objects.equals(this.white, createWhiteblackipRuleResponse.white)
-            && Objects.equals(this.ipGroup, createWhiteblackipRuleResponse.ipGroup)
-            && Objects.equals(this.status, createWhiteblackipRuleResponse.status)
-            && Objects.equals(this.description, createWhiteblackipRuleResponse.description)
-            && Objects.equals(this.timestamp, createWhiteblackipRuleResponse.timestamp);
+        CreateWhiteblackipRuleResponse that = (CreateWhiteblackipRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.addr, that.addr)
+            && Objects.equals(this.white, that.white) && Objects.equals(this.ipGroup, that.ipGroup)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

@@ -244,23 +244,19 @@ public class ListResolveTaskResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResolveTaskResult listResolveTaskResult = (ListResolveTaskResult) o;
-        return Objects.equals(this.taskId, listResolveTaskResult.taskId)
-            && Objects.equals(this.tplId, listResolveTaskResult.tplId)
-            && Objects.equals(this.smsSigns, listResolveTaskResult.smsSigns)
-            && Objects.equals(this.resolvingTimes, listResolveTaskResult.resolvingTimes)
-            && Objects.equals(this.resolvedTimes, listResolveTaskResult.resolvedTimes)
-            && Objects.equals(this.aimCodeType, listResolveTaskResult.aimCodeType)
-            && Objects.equals(this.domain, listResolveTaskResult.domain)
-            && Objects.equals(this.expirationTime, listResolveTaskResult.expirationTime)
-            && Objects.equals(this.params, listResolveTaskResult.params);
+        ListResolveTaskResult that = (ListResolveTaskResult) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.smsSigns, that.smsSigns) && Objects.equals(this.resolvingTimes, that.resolvingTimes)
+            && Objects.equals(this.resolvedTimes, that.resolvedTimes)
+            && Objects.equals(this.aimCodeType, that.aimCodeType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.expirationTime, that.expirationTime) && Objects.equals(this.params, that.params);
     }
 
     @Override

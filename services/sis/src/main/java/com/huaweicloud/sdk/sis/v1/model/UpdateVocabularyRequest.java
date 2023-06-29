@@ -65,16 +65,15 @@ public class UpdateVocabularyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVocabularyRequest updateVocabularyRequest = (UpdateVocabularyRequest) o;
-        return Objects.equals(this.vocabularyId, updateVocabularyRequest.vocabularyId)
-            && Objects.equals(this.body, updateVocabularyRequest.body);
+        UpdateVocabularyRequest that = (UpdateVocabularyRequest) obj;
+        return Objects.equals(this.vocabularyId, that.vocabularyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

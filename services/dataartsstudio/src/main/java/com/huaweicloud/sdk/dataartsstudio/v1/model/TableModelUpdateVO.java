@@ -339,22 +339,15 @@ public class TableModelUpdateVO {
             if (value == null) {
                 return null;
             }
-            DistributeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DistributeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DistributeEnum(value));
         }
 
         public static DistributeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DistributeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1656,77 +1649,55 @@ public class TableModelUpdateVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableModelUpdateVO tableModelUpdateVO = (TableModelUpdateVO) o;
-        return Objects.equals(this.id, tableModelUpdateVO.id)
-            && Objects.equals(this.modelId, tableModelUpdateVO.modelId)
-            && Objects.equals(this.parentTableId, tableModelUpdateVO.parentTableId)
-            && Objects.equals(this.parentTableName, tableModelUpdateVO.parentTableName)
-            && Objects.equals(this.parentTableCode, tableModelUpdateVO.parentTableCode)
-            && Objects.equals(this.model, tableModelUpdateVO.model)
-            && Objects.equals(this.dataFormat, tableModelUpdateVO.dataFormat)
-            && Objects.equals(this.obsBucket, tableModelUpdateVO.obsBucket)
-            && Objects.equals(this.obsLocation, tableModelUpdateVO.obsLocation)
-            && Objects.equals(this.configs, tableModelUpdateVO.configs)
-            && Objects.equals(this.tableType, tableModelUpdateVO.tableType)
-            && Objects.equals(this.owner, tableModelUpdateVO.owner)
-            && Objects.equals(this.tbName, tableModelUpdateVO.tbName)
-            && Objects.equals(this.dwId, tableModelUpdateVO.dwId)
-            && Objects.equals(this.dbName, tableModelUpdateVO.dbName)
-            && Objects.equals(this.queueName, tableModelUpdateVO.queueName)
-            && Objects.equals(this.schema, tableModelUpdateVO.schema)
-            && Objects.equals(this.extendInfo, tableModelUpdateVO.extendInfo)
-            && Objects.equals(this.tbGuid, tableModelUpdateVO.tbGuid)
-            && Objects.equals(this.tbId, tableModelUpdateVO.tbId)
-            && Objects.equals(this.logicTbName, tableModelUpdateVO.logicTbName)
-            && Objects.equals(this.logicTbGuid, tableModelUpdateVO.logicTbGuid)
-            && Objects.equals(this.description, tableModelUpdateVO.description)
-            && Objects.equals(this.status, tableModelUpdateVO.status)
-            && Objects.equals(this.logicTbId, tableModelUpdateVO.logicTbId)
-            && Objects.equals(this.bizCatalogId, tableModelUpdateVO.bizCatalogId)
-            && Objects.equals(this.catalogPath, tableModelUpdateVO.catalogPath)
-            && Objects.equals(this.createBy, tableModelUpdateVO.createBy)
-            && Objects.equals(this.updateBy, tableModelUpdateVO.updateBy)
-            && Objects.equals(this.createTime, tableModelUpdateVO.createTime)
-            && Objects.equals(this.updateTime, tableModelUpdateVO.updateTime)
-            && Objects.equals(this.tags, tableModelUpdateVO.tags)
-            && Objects.equals(this.approvalInfo, tableModelUpdateVO.approvalInfo)
-            && Objects.equals(this.newBiz, tableModelUpdateVO.newBiz)
-            && Objects.equals(this.attributes, tableModelUpdateVO.attributes)
-            && Objects.equals(this.mappings, tableModelUpdateVO.mappings)
-            && Objects.equals(this.relations, tableModelUpdateVO.relations)
-            && Objects.equals(this.dwType, tableModelUpdateVO.dwType)
-            && Objects.equals(this.dwName, tableModelUpdateVO.dwName) && Objects.equals(this.l1, tableModelUpdateVO.l1)
-            && Objects.equals(this.l2, tableModelUpdateVO.l2) && Objects.equals(this.l3, tableModelUpdateVO.l3)
-            && Objects.equals(this.l1Id, tableModelUpdateVO.l1Id) && Objects.equals(this.l2Id, tableModelUpdateVO.l2Id)
-            && Objects.equals(this.l3Id, tableModelUpdateVO.l3Id)
-            && Objects.equals(this.partitionConf, tableModelUpdateVO.partitionConf)
-            && Objects.equals(this.dlfTaskId, tableModelUpdateVO.dlfTaskId)
-            && Objects.equals(this.useRecentlyPartition, tableModelUpdateVO.useRecentlyPartition)
-            && Objects.equals(this.reversed, tableModelUpdateVO.reversed)
-            && Objects.equals(this.dirtyOutSwitch, tableModelUpdateVO.dirtyOutSwitch)
-            && Objects.equals(this.dirtyOutDatabase, tableModelUpdateVO.dirtyOutDatabase)
-            && Objects.equals(this.dirtyOutPrefix, tableModelUpdateVO.dirtyOutPrefix)
-            && Objects.equals(this.dirtyOutSuffix, tableModelUpdateVO.dirtyOutSuffix)
-            && Objects.equals(this.qualityOwner, tableModelUpdateVO.qualityOwner)
-            && Objects.equals(this.qualityId, tableModelUpdateVO.qualityId)
-            && Objects.equals(this.distribute, tableModelUpdateVO.distribute)
-            && Objects.equals(this.distributeColumn, tableModelUpdateVO.distributeColumn)
-            && Objects.equals(this.isPartition, tableModelUpdateVO.isPartition)
-            && Objects.equals(this.physicalTable, tableModelUpdateVO.physicalTable)
-            && Objects.equals(this.technicalAsset, tableModelUpdateVO.technicalAsset)
-            && Objects.equals(this.businessAsset, tableModelUpdateVO.businessAsset)
-            && Objects.equals(this.metaDataLink, tableModelUpdateVO.metaDataLink)
-            && Objects.equals(this.dataQuality, tableModelUpdateVO.dataQuality)
-            && Objects.equals(this.summaryStatus, tableModelUpdateVO.summaryStatus)
-            && Objects.equals(this.alias, tableModelUpdateVO.alias)
-            && Objects.equals(this.selfDefinedFields, tableModelUpdateVO.selfDefinedFields);
+        TableModelUpdateVO that = (TableModelUpdateVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.modelId, that.modelId)
+            && Objects.equals(this.parentTableId, that.parentTableId)
+            && Objects.equals(this.parentTableName, that.parentTableName)
+            && Objects.equals(this.parentTableCode, that.parentTableCode) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.dataFormat, that.dataFormat) && Objects.equals(this.obsBucket, that.obsBucket)
+            && Objects.equals(this.obsLocation, that.obsLocation) && Objects.equals(this.configs, that.configs)
+            && Objects.equals(this.tableType, that.tableType) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.tbName, that.tbName) && Objects.equals(this.dwId, that.dwId)
+            && Objects.equals(this.dbName, that.dbName) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.extendInfo, that.extendInfo)
+            && Objects.equals(this.tbGuid, that.tbGuid) && Objects.equals(this.tbId, that.tbId)
+            && Objects.equals(this.logicTbName, that.logicTbName) && Objects.equals(this.logicTbGuid, that.logicTbGuid)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.logicTbId, that.logicTbId) && Objects.equals(this.bizCatalogId, that.bizCatalogId)
+            && Objects.equals(this.catalogPath, that.catalogPath) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.approvalInfo, that.approvalInfo) && Objects.equals(this.newBiz, that.newBiz)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.mappings, that.mappings)
+            && Objects.equals(this.relations, that.relations) && Objects.equals(this.dwType, that.dwType)
+            && Objects.equals(this.dwName, that.dwName) && Objects.equals(this.l1, that.l1)
+            && Objects.equals(this.l2, that.l2) && Objects.equals(this.l3, that.l3)
+            && Objects.equals(this.l1Id, that.l1Id) && Objects.equals(this.l2Id, that.l2Id)
+            && Objects.equals(this.l3Id, that.l3Id) && Objects.equals(this.partitionConf, that.partitionConf)
+            && Objects.equals(this.dlfTaskId, that.dlfTaskId)
+            && Objects.equals(this.useRecentlyPartition, that.useRecentlyPartition)
+            && Objects.equals(this.reversed, that.reversed) && Objects.equals(this.dirtyOutSwitch, that.dirtyOutSwitch)
+            && Objects.equals(this.dirtyOutDatabase, that.dirtyOutDatabase)
+            && Objects.equals(this.dirtyOutPrefix, that.dirtyOutPrefix)
+            && Objects.equals(this.dirtyOutSuffix, that.dirtyOutSuffix)
+            && Objects.equals(this.qualityOwner, that.qualityOwner) && Objects.equals(this.qualityId, that.qualityId)
+            && Objects.equals(this.distribute, that.distribute)
+            && Objects.equals(this.distributeColumn, that.distributeColumn)
+            && Objects.equals(this.isPartition, that.isPartition)
+            && Objects.equals(this.physicalTable, that.physicalTable)
+            && Objects.equals(this.technicalAsset, that.technicalAsset)
+            && Objects.equals(this.businessAsset, that.businessAsset)
+            && Objects.equals(this.metaDataLink, that.metaDataLink)
+            && Objects.equals(this.dataQuality, that.dataQuality)
+            && Objects.equals(this.summaryStatus, that.summaryStatus) && Objects.equals(this.alias, that.alias)
+            && Objects.equals(this.selfDefinedFields, that.selfDefinedFields);
     }
 
     @Override

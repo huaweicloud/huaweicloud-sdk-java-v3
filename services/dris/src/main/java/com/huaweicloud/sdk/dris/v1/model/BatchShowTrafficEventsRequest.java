@@ -130,22 +130,15 @@ public class BatchShowTrafficEventsRequest {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortKeyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortKeyEnum(value));
         }
 
         public static SortKeyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortKeyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -212,22 +205,15 @@ public class BatchShowTrafficEventsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -495,27 +481,21 @@ public class BatchShowTrafficEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowTrafficEventsRequest batchShowTrafficEventsRequest = (BatchShowTrafficEventsRequest) o;
-        return Objects.equals(this.instanceId, batchShowTrafficEventsRequest.instanceId)
-            && Objects.equals(this.offset, batchShowTrafficEventsRequest.offset)
-            && Objects.equals(this.limit, batchShowTrafficEventsRequest.limit)
-            && Objects.equals(this.areaCode, batchShowTrafficEventsRequest.areaCode)
-            && Objects.equals(this.status, batchShowTrafficEventsRequest.status)
-            && Objects.equals(this.eventType, batchShowTrafficEventsRequest.eventType)
-            && Objects.equals(this.eventSourceType, batchShowTrafficEventsRequest.eventSourceType)
-            && Objects.equals(this.eventClass, batchShowTrafficEventsRequest.eventClass)
-            && Objects.equals(this.eventId, batchShowTrafficEventsRequest.eventId)
-            && Objects.equals(this.fromTime, batchShowTrafficEventsRequest.fromTime)
-            && Objects.equals(this.toTime, batchShowTrafficEventsRequest.toTime)
-            && Objects.equals(this.sortKey, batchShowTrafficEventsRequest.sortKey)
-            && Objects.equals(this.sortDir, batchShowTrafficEventsRequest.sortDir);
+        BatchShowTrafficEventsRequest that = (BatchShowTrafficEventsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.areaCode, that.areaCode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.eventType, that.eventType)
+            && Objects.equals(this.eventSourceType, that.eventSourceType)
+            && Objects.equals(this.eventClass, that.eventClass) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.fromTime, that.fromTime) && Objects.equals(this.toTime, that.toTime)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

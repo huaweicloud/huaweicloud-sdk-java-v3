@@ -1,80 +1,65 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.DiscoveryRule;
-import com.huaweicloud.sdk.aom.v2.model.LogPathRule;
-import com.huaweicloud.sdk.aom.v2.model.NameRule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 规则详情。
  */
-public class AppRulesSpec  {
-
+public class AppRulesSpec {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appType")
-    
+    @JsonProperty(value = "appType")
 
     private String appType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="attrList")
-    
+    @JsonProperty(value = "attrList")
+
     private List<String> attrList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="detectLog")
-    
+    @JsonProperty(value = "detectLog")
 
     private String detectLog;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="discoveryRule")
-    
+    @JsonProperty(value = "discoveryRule")
+
     private List<DiscoveryRule> discoveryRule = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isDefaultRule")
-    
+    @JsonProperty(value = "isDefaultRule")
 
     private String isDefaultRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isDetect")
-    
+    @JsonProperty(value = "isDetect")
 
     private String isDetect;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logFileFix")
-    
+    @JsonProperty(value = "logFileFix")
+
     private List<String> logFileFix = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="logPathRule")
-    
+    @JsonProperty(value = "logPathRule")
+
     private List<LogPathRule> logPathRule = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nameRule")
-    
+    @JsonProperty(value = "nameRule")
 
     private NameRule nameRule;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="priority")
-    
+    @JsonProperty(value = "priority")
 
     private Integer priority;
 
@@ -82,9 +67,6 @@ public class AppRulesSpec  {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 服务类型,用于标记服务的分类,仅用于规则分类和界面展示。可以填写任意字段,如按技术栈分类可填写Java,Python。按作用分类可填写collector(采集),database(数据库)等。
@@ -98,16 +80,13 @@ public class AppRulesSpec  {
         this.appType = appType;
     }
 
-    
-
     public AppRulesSpec withAttrList(List<String> attrList) {
         this.attrList = attrList;
         return this;
     }
 
-    
     public AppRulesSpec addAttrListItem(String attrListItem) {
-        if(this.attrList == null) {
+        if (this.attrList == null) {
             this.attrList = new ArrayList<>();
         }
         this.attrList.add(attrListItem);
@@ -115,7 +94,7 @@ public class AppRulesSpec  {
     }
 
     public AppRulesSpec withAttrList(Consumer<List<String>> attrListSetter) {
-        if(this.attrList == null) {
+        if (this.attrList == null) {
             this.attrList = new ArrayList<>();
         }
         attrListSetter.accept(this.attrList);
@@ -134,15 +113,10 @@ public class AppRulesSpec  {
         this.attrList = attrList;
     }
 
-    
-
     public AppRulesSpec withDetectLog(String detectLog) {
         this.detectLog = detectLog;
         return this;
     }
-
-    
-
 
     /**
      * 是否开启日志采集。 true、false
@@ -156,16 +130,13 @@ public class AppRulesSpec  {
         this.detectLog = detectLog;
     }
 
-    
-
     public AppRulesSpec withDiscoveryRule(List<DiscoveryRule> discoveryRule) {
         this.discoveryRule = discoveryRule;
         return this;
     }
 
-    
     public AppRulesSpec addDiscoveryRuleItem(DiscoveryRule discoveryRuleItem) {
-        if(this.discoveryRule == null) {
+        if (this.discoveryRule == null) {
             this.discoveryRule = new ArrayList<>();
         }
         this.discoveryRule.add(discoveryRuleItem);
@@ -173,7 +144,7 @@ public class AppRulesSpec  {
     }
 
     public AppRulesSpec withDiscoveryRule(Consumer<List<DiscoveryRule>> discoveryRuleSetter) {
-        if(this.discoveryRule == null) {
+        if (this.discoveryRule == null) {
             this.discoveryRule = new ArrayList<>();
         }
         discoveryRuleSetter.accept(this.discoveryRule);
@@ -192,15 +163,10 @@ public class AppRulesSpec  {
         this.discoveryRule = discoveryRule;
     }
 
-    
-
     public AppRulesSpec withIsDefaultRule(String isDefaultRule) {
         this.isDefaultRule = isDefaultRule;
         return this;
     }
-
-    
-
 
     /**
      * 是否为默认规则。 true、false
@@ -214,15 +180,10 @@ public class AppRulesSpec  {
         this.isDefaultRule = isDefaultRule;
     }
 
-    
-
     public AppRulesSpec withIsDetect(String isDetect) {
         this.isDetect = isDetect;
         return this;
     }
-
-    
-
 
     /**
      * 是否为规则预探测场景(预探测场景不会保存规则,仅用于规则下发之前验证该规则能否有效发现节点上的进程)。 true、false
@@ -236,16 +197,13 @@ public class AppRulesSpec  {
         this.isDetect = isDetect;
     }
 
-    
-
     public AppRulesSpec withLogFileFix(List<String> logFileFix) {
         this.logFileFix = logFileFix;
         return this;
     }
 
-    
     public AppRulesSpec addLogFileFixItem(String logFileFixItem) {
-        if(this.logFileFix == null) {
+        if (this.logFileFix == null) {
             this.logFileFix = new ArrayList<>();
         }
         this.logFileFix.add(logFileFixItem);
@@ -253,7 +211,7 @@ public class AppRulesSpec  {
     }
 
     public AppRulesSpec withLogFileFix(Consumer<List<String>> logFileFixSetter) {
-        if(this.logFileFix == null) {
+        if (this.logFileFix == null) {
             this.logFileFix = new ArrayList<>();
         }
         logFileFixSetter.accept(this.logFileFix);
@@ -272,16 +230,13 @@ public class AppRulesSpec  {
         this.logFileFix = logFileFix;
     }
 
-    
-
     public AppRulesSpec withLogPathRule(List<LogPathRule> logPathRule) {
         this.logPathRule = logPathRule;
         return this;
     }
 
-    
     public AppRulesSpec addLogPathRuleItem(LogPathRule logPathRuleItem) {
-        if(this.logPathRule == null) {
+        if (this.logPathRule == null) {
             this.logPathRule = new ArrayList<>();
         }
         this.logPathRule.add(logPathRuleItem);
@@ -289,7 +244,7 @@ public class AppRulesSpec  {
     }
 
     public AppRulesSpec withLogPathRule(Consumer<List<LogPathRule>> logPathRuleSetter) {
-        if(this.logPathRule == null) {
+        if (this.logPathRule == null) {
             this.logPathRule = new ArrayList<>();
         }
         logPathRuleSetter.accept(this.logPathRule);
@@ -308,22 +263,19 @@ public class AppRulesSpec  {
         this.logPathRule = logPathRule;
     }
 
-    
-
     public AppRulesSpec withNameRule(NameRule nameRule) {
         this.nameRule = nameRule;
         return this;
     }
 
     public AppRulesSpec withNameRule(Consumer<NameRule> nameRuleSetter) {
-        if(this.nameRule == null ){
+        if (this.nameRule == null) {
             this.nameRule = new NameRule();
             nameRuleSetter.accept(this.nameRule);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get nameRule
@@ -337,15 +289,10 @@ public class AppRulesSpec  {
         this.nameRule = nameRule;
     }
 
-    
-
     public AppRulesSpec withPriority(Integer priority) {
         this.priority = priority;
         return this;
     }
-
-    
-
 
     /**
      * 规则优先级。 1~9999的整数字符串,默认取值为9999
@@ -359,32 +306,36 @@ public class AppRulesSpec  {
         this.priority = priority;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppRulesSpec appRulesSpec = (AppRulesSpec) o;
-        return Objects.equals(this.appType, appRulesSpec.appType) &&
-            Objects.equals(this.attrList, appRulesSpec.attrList) &&
-            Objects.equals(this.detectLog, appRulesSpec.detectLog) &&
-            Objects.equals(this.discoveryRule, appRulesSpec.discoveryRule) &&
-            Objects.equals(this.isDefaultRule, appRulesSpec.isDefaultRule) &&
-            Objects.equals(this.isDetect, appRulesSpec.isDetect) &&
-            Objects.equals(this.logFileFix, appRulesSpec.logFileFix) &&
-            Objects.equals(this.logPathRule, appRulesSpec.logPathRule) &&
-            Objects.equals(this.nameRule, appRulesSpec.nameRule) &&
-            Objects.equals(this.priority, appRulesSpec.priority);
+        AppRulesSpec that = (AppRulesSpec) obj;
+        return Objects.equals(this.appType, that.appType) && Objects.equals(this.attrList, that.attrList)
+            && Objects.equals(this.detectLog, that.detectLog) && Objects.equals(this.discoveryRule, that.discoveryRule)
+            && Objects.equals(this.isDefaultRule, that.isDefaultRule) && Objects.equals(this.isDetect, that.isDetect)
+            && Objects.equals(this.logFileFix, that.logFileFix) && Objects.equals(this.logPathRule, that.logPathRule)
+            && Objects.equals(this.nameRule, that.nameRule) && Objects.equals(this.priority, that.priority);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(appType, attrList, detectLog, discoveryRule, isDefaultRule, isDetect, logFileFix, logPathRule, nameRule, priority);
+        return Objects.hash(appType,
+            attrList,
+            detectLog,
+            discoveryRule,
+            isDefaultRule,
+            isDetect,
+            logFileFix,
+            logPathRule,
+            nameRule,
+            priority);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -402,6 +353,7 @@ public class AppRulesSpec  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -412,8 +364,5 @@ public class AppRulesSpec  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

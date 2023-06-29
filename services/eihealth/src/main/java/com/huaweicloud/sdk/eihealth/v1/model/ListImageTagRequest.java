@@ -55,16 +55,16 @@ public class ListImageTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageTagRequest listImageTagRequest = (ListImageTagRequest) o;
-        return Objects.equals(this.eihealthProjectId, listImageTagRequest.eihealthProjectId)
-            && Objects.equals(this.imageId, listImageTagRequest.imageId);
+        ListImageTagRequest that = (ListImageTagRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

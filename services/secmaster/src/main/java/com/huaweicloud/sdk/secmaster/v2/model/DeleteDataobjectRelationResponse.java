@@ -228,23 +228,19 @@ public class DeleteDataobjectRelationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDataobjectRelationResponse deleteDataobjectRelationResponse = (DeleteDataobjectRelationResponse) o;
-        return Objects.equals(this.code, deleteDataobjectRelationResponse.code)
-            && Objects.equals(this.message, deleteDataobjectRelationResponse.message)
-            && Objects.equals(this.requestId, deleteDataobjectRelationResponse.requestId)
-            && Objects.equals(this.success, deleteDataobjectRelationResponse.success)
-            && Objects.equals(this.total, deleteDataobjectRelationResponse.total)
-            && Objects.equals(this.limit, deleteDataobjectRelationResponse.limit)
-            && Objects.equals(this.offset, deleteDataobjectRelationResponse.offset)
-            && Objects.equals(this.data, deleteDataobjectRelationResponse.data)
-            && Objects.equals(this.xRequestId, deleteDataobjectRelationResponse.xRequestId);
+        DeleteDataobjectRelationResponse that = (DeleteDataobjectRelationResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

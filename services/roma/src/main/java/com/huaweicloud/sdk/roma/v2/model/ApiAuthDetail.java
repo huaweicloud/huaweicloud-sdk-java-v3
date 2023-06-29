@@ -114,22 +114,15 @@ public class ApiAuthDetail {
             if (value == null) {
                 return null;
             }
-            AuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthMethodEnum(value));
         }
 
         public static AuthMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -202,22 +195,15 @@ public class ApiAuthDetail {
             if (value == null) {
                 return null;
             }
-            AppAuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppAuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppAuthTypeEnum(value));
         }
 
         public static AppAuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppAuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -538,27 +524,21 @@ public class ApiAuthDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiAuthDetail apiAuthDetail = (ApiAuthDetail) o;
-        return Objects.equals(this.authMethod, apiAuthDetail.authMethod)
-            && Objects.equals(this.appAuthType, apiAuthDetail.appAuthType)
-            && Objects.equals(this.userName, apiAuthDetail.userName)
-            && Objects.equals(this.password, apiAuthDetail.password)
-            && Objects.equals(this.appKey, apiAuthDetail.appKey)
-            && Objects.equals(this.appSecret, apiAuthDetail.appSecret)
-            && Objects.equals(this.secret, apiAuthDetail.secret) && Objects.equals(this.altIp, apiAuthDetail.altIp)
-            && Objects.equals(this.accessTokenUrl, apiAuthDetail.accessTokenUrl)
-            && Objects.equals(this.clientId, apiAuthDetail.clientId)
-            && Objects.equals(this.clientSecret, apiAuthDetail.clientSecret)
-            && Objects.equals(this.scope, apiAuthDetail.scope)
-            && Objects.equals(this.authorization, apiAuthDetail.authorization)
-            && Objects.equals(this.grantType, apiAuthDetail.grantType);
+        ApiAuthDetail that = (ApiAuthDetail) obj;
+        return Objects.equals(this.authMethod, that.authMethod) && Objects.equals(this.appAuthType, that.appAuthType)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.appSecret, that.appSecret)
+            && Objects.equals(this.secret, that.secret) && Objects.equals(this.altIp, that.altIp)
+            && Objects.equals(this.accessTokenUrl, that.accessTokenUrl) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.clientSecret, that.clientSecret) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.authorization, that.authorization) && Objects.equals(this.grantType, that.grantType);
     }
 
     @Override

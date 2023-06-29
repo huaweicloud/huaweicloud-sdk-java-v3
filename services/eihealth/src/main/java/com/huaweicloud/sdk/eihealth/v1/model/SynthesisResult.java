@@ -131,18 +131,18 @@ public class SynthesisResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisResult synthesisResult = (SynthesisResult) o;
-        return Objects.equals(this.smiles, synthesisResult.smiles) && Objects.equals(this.topN, synthesisResult.topN)
-            && Objects.equals(this.maxSearchDepth, synthesisResult.maxSearchDepth)
-            && Objects.equals(this.maxPredictionPerProduct, synthesisResult.maxPredictionPerProduct)
-            && Objects.equals(this.result, synthesisResult.result);
+        SynthesisResult that = (SynthesisResult) obj;
+        return Objects.equals(this.smiles, that.smiles) && Objects.equals(this.topN, that.topN)
+            && Objects.equals(this.maxSearchDepth, that.maxSearchDepth)
+            && Objects.equals(this.maxPredictionPerProduct, that.maxPredictionPerProduct)
+            && Objects.equals(this.result, that.result);
     }
 
     @Override

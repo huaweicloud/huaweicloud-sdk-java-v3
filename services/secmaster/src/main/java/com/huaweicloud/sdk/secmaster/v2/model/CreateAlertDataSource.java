@@ -145,20 +145,18 @@ public class CreateAlertDataSource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertDataSource createAlertDataSource = (CreateAlertDataSource) o;
-        return Objects.equals(this.sourceType, createAlertDataSource.sourceType)
-            && Objects.equals(this.domainId, createAlertDataSource.domainId)
-            && Objects.equals(this.projectId, createAlertDataSource.projectId)
-            && Objects.equals(this.regionId, createAlertDataSource.regionId)
-            && Objects.equals(this.productName, createAlertDataSource.productName)
-            && Objects.equals(this.productFeature, createAlertDataSource.productFeature);
+        CreateAlertDataSource that = (CreateAlertDataSource) obj;
+        return Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.productName, that.productName)
+            && Objects.equals(this.productFeature, that.productFeature);
     }
 
     @Override

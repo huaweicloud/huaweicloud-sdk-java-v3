@@ -1,48 +1,42 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库引擎列表。
  */
-public class DatastoresResult  {
-
+public class DatastoresResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="supported_versions")
-    
+    @JsonProperty(value = "supported_versions")
+
     private List<String> supportedVersions = null;
-        /**
+
+    /**
      * 部署形态
      */
     public static final class InstanceModeEnum {
 
-        
         /**
          * Enum HA for value: "ha"
          */
         public static final InstanceModeEnum HA = new InstanceModeEnum("ha");
-        
+
         /**
          * Enum INDEPENDENT for value: "independent"
          */
         public static final InstanceModeEnum INDEPENDENT = new InstanceModeEnum("independent");
-        
 
         private static final Map<String, InstanceModeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,25 +65,18 @@ public class DatastoresResult  {
 
         @JsonCreator
         public static InstanceModeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceModeEnum(value));
         }
 
         public static InstanceModeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            InstanceModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -107,8 +94,7 @@ public class DatastoresResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_mode")
-    
+    @JsonProperty(value = "instance_mode")
 
     private InstanceModeEnum instanceMode;
 
@@ -117,9 +103,8 @@ public class DatastoresResult  {
         return this;
     }
 
-    
     public DatastoresResult addSupportedVersionsItem(String supportedVersionsItem) {
-        if(this.supportedVersions == null) {
+        if (this.supportedVersions == null) {
             this.supportedVersions = new ArrayList<>();
         }
         this.supportedVersions.add(supportedVersionsItem);
@@ -127,7 +112,7 @@ public class DatastoresResult  {
     }
 
     public DatastoresResult withSupportedVersions(Consumer<List<String>> supportedVersionsSetter) {
-        if(this.supportedVersions == null) {
+        if (this.supportedVersions == null) {
             this.supportedVersions = new ArrayList<>();
         }
         supportedVersionsSetter.accept(this.supportedVersions);
@@ -146,15 +131,10 @@ public class DatastoresResult  {
         this.supportedVersions = supportedVersions;
     }
 
-    
-
     public DatastoresResult withInstanceMode(InstanceModeEnum instanceMode) {
         this.instanceMode = instanceMode;
         return this;
     }
-
-    
-
 
     /**
      * 部署形态
@@ -168,24 +148,24 @@ public class DatastoresResult  {
         this.instanceMode = instanceMode;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatastoresResult datastoresResult = (DatastoresResult) o;
-        return Objects.equals(this.supportedVersions, datastoresResult.supportedVersions) &&
-            Objects.equals(this.instanceMode, datastoresResult.instanceMode);
+        DatastoresResult that = (DatastoresResult) obj;
+        return Objects.equals(this.supportedVersions, that.supportedVersions)
+            && Objects.equals(this.instanceMode, that.instanceMode);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(supportedVersions, instanceMode);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -195,6 +175,7 @@ public class DatastoresResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -205,8 +186,5 @@ public class DatastoresResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

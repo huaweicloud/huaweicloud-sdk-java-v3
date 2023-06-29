@@ -55,16 +55,15 @@ public class StreamOutput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StreamOutput streamOutput = (StreamOutput) o;
-        return Objects.equals(this.name, streamOutput.name)
-            && Objects.equals(this.outputProperty, streamOutput.outputProperty);
+        StreamOutput that = (StreamOutput) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.outputProperty, that.outputProperty);
     }
 
     @Override

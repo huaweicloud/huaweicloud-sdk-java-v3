@@ -165,21 +165,18 @@ public class VisionActiveCodeDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VisionActiveCodeDTO visionActiveCodeDTO = (VisionActiveCodeDTO) o;
-        return Objects.equals(this.devType, visionActiveCodeDTO.devType)
-            && Objects.equals(this.deptCode, visionActiveCodeDTO.deptCode)
-            && Objects.equals(this.devName, visionActiveCodeDTO.devName)
-            && Objects.equals(this.description, visionActiveCodeDTO.description)
-            && Objects.equals(this.smsNumber, visionActiveCodeDTO.smsNumber)
-            && Objects.equals(this.country, visionActiveCodeDTO.country)
-            && Objects.equals(this.emailAddr, visionActiveCodeDTO.emailAddr);
+        VisionActiveCodeDTO that = (VisionActiveCodeDTO) obj;
+        return Objects.equals(this.devType, that.devType) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.devName, that.devName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.smsNumber, that.smsNumber) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.emailAddr, that.emailAddr);
     }
 
     @Override

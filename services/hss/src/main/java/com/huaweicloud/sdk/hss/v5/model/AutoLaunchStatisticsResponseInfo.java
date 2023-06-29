@@ -79,17 +79,16 @@ public class AutoLaunchStatisticsResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoLaunchStatisticsResponseInfo autoLaunchStatisticsResponseInfo = (AutoLaunchStatisticsResponseInfo) o;
-        return Objects.equals(this.name, autoLaunchStatisticsResponseInfo.name)
-            && Objects.equals(this.type, autoLaunchStatisticsResponseInfo.type)
-            && Objects.equals(this.num, autoLaunchStatisticsResponseInfo.num);
+        AutoLaunchStatisticsResponseInfo that = (AutoLaunchStatisticsResponseInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.num, that.num);
     }
 
     @Override

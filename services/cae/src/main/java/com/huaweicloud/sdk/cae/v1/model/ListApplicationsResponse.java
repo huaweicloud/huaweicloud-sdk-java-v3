@@ -97,17 +97,16 @@ public class ListApplicationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApplicationsResponse listApplicationsResponse = (ListApplicationsResponse) o;
-        return Objects.equals(this.apiVersion, listApplicationsResponse.apiVersion)
-            && Objects.equals(this.kind, listApplicationsResponse.kind)
-            && Objects.equals(this.items, listApplicationsResponse.items);
+        ListApplicationsResponse that = (ListApplicationsResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

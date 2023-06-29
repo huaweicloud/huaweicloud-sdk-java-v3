@@ -58,22 +58,15 @@ public class MeetingStatus {
         if (value == null) {
             return null;
         }
-        MeetingStatus result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new MeetingStatus(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MeetingStatus(value));
     }
 
     public static MeetingStatus valueOf(String value) {
         if (value == null) {
             return null;
         }
-        MeetingStatus result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

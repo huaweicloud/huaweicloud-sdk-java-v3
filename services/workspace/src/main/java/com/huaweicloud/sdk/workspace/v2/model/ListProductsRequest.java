@@ -191,22 +191,19 @@ public class ListProductsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRequest listProductsRequest = (ListProductsRequest) o;
-        return Objects.equals(this.productId, listProductsRequest.productId)
-            && Objects.equals(this.availabilityZone, listProductsRequest.availabilityZone)
-            && Objects.equals(this.osType, listProductsRequest.osType)
-            && Objects.equals(this.chargeMode, listProductsRequest.chargeMode)
-            && Objects.equals(this.architecture, listProductsRequest.architecture)
-            && Objects.equals(this.packageType, listProductsRequest.packageType)
-            && Objects.equals(this.limit, listProductsRequest.limit)
-            && Objects.equals(this.offset, listProductsRequest.offset);
+        ListProductsRequest that = (ListProductsRequest) obj;
+        return Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -78,18 +78,16 @@ public class DeleteFaceByExternalImageIdResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteFaceByExternalImageIdResponse deleteFaceByExternalImageIdResponse =
-            (DeleteFaceByExternalImageIdResponse) o;
-        return Objects.equals(this.faceNumber, deleteFaceByExternalImageIdResponse.faceNumber)
-            && Objects.equals(this.faceSetId, deleteFaceByExternalImageIdResponse.faceSetId)
-            && Objects.equals(this.faceSetName, deleteFaceByExternalImageIdResponse.faceSetName);
+        DeleteFaceByExternalImageIdResponse that = (DeleteFaceByExternalImageIdResponse) obj;
+        return Objects.equals(this.faceNumber, that.faceNumber) && Objects.equals(this.faceSetId, that.faceSetId)
+            && Objects.equals(this.faceSetName, that.faceSetName);
     }
 
     @Override

@@ -125,19 +125,17 @@ public class ListAutoLaunchStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoLaunchStatisticsRequest listAutoLaunchStatisticsRequest = (ListAutoLaunchStatisticsRequest) o;
-        return Objects.equals(this.name, listAutoLaunchStatisticsRequest.name)
-            && Objects.equals(this.type, listAutoLaunchStatisticsRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listAutoLaunchStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listAutoLaunchStatisticsRequest.limit)
-            && Objects.equals(this.offset, listAutoLaunchStatisticsRequest.offset);
+        ListAutoLaunchStatisticsRequest that = (ListAutoLaunchStatisticsRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

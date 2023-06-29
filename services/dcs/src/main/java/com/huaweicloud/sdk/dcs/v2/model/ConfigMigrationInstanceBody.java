@@ -77,17 +77,16 @@ public class ConfigMigrationInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigMigrationInstanceBody configMigrationInstanceBody = (ConfigMigrationInstanceBody) o;
-        return Objects.equals(this.id, configMigrationInstanceBody.id)
-            && Objects.equals(this.addrs, configMigrationInstanceBody.addrs)
-            && Objects.equals(this.password, configMigrationInstanceBody.password);
+        ConfigMigrationInstanceBody that = (ConfigMigrationInstanceBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.addrs, that.addrs)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

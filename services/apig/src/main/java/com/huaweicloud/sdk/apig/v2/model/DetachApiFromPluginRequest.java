@@ -87,17 +87,16 @@ public class DetachApiFromPluginRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetachApiFromPluginRequest detachApiFromPluginRequest = (DetachApiFromPluginRequest) o;
-        return Objects.equals(this.instanceId, detachApiFromPluginRequest.instanceId)
-            && Objects.equals(this.pluginId, detachApiFromPluginRequest.pluginId)
-            && Objects.equals(this.body, detachApiFromPluginRequest.body);
+        DetachApiFromPluginRequest that = (DetachApiFromPluginRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

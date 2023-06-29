@@ -77,22 +77,15 @@ public class BaseSignature {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignTypeEnum(value));
         }
 
         public static SignTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,22 +162,15 @@ public class BaseSignature {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SignAlgorithmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SignAlgorithmEnum(value));
         }
 
         public static SignAlgorithmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SignAlgorithmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -292,18 +278,17 @@ public class BaseSignature {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BaseSignature baseSignature = (BaseSignature) o;
-        return Objects.equals(this.name, baseSignature.name) && Objects.equals(this.signType, baseSignature.signType)
-            && Objects.equals(this.signKey, baseSignature.signKey)
-            && Objects.equals(this.signSecret, baseSignature.signSecret)
-            && Objects.equals(this.signAlgorithm, baseSignature.signAlgorithm);
+        BaseSignature that = (BaseSignature) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.signType, that.signType)
+            && Objects.equals(this.signKey, that.signKey) && Objects.equals(this.signSecret, that.signSecret)
+            && Objects.equals(this.signAlgorithm, that.signAlgorithm);
     }
 
     @Override

@@ -224,22 +224,20 @@ public class InstanceSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceSpec instanceSpec = (InstanceSpec) o;
-        return Objects.equals(this.clusterID, instanceSpec.clusterID)
-            && Objects.equals(this.version, instanceSpec.version)
-            && Objects.equals(this.addonTemplateName, instanceSpec.addonTemplateName)
-            && Objects.equals(this.addonTemplateType, instanceSpec.addonTemplateType)
-            && Objects.equals(this.addonTemplateLogo, instanceSpec.addonTemplateLogo)
-            && Objects.equals(this.addonTemplateLabels, instanceSpec.addonTemplateLabels)
-            && Objects.equals(this.description, instanceSpec.description)
-            && Objects.equals(this.values, instanceSpec.values);
+        InstanceSpec that = (InstanceSpec) obj;
+        return Objects.equals(this.clusterID, that.clusterID) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.addonTemplateName, that.addonTemplateName)
+            && Objects.equals(this.addonTemplateType, that.addonTemplateType)
+            && Objects.equals(this.addonTemplateLogo, that.addonTemplateLogo)
+            && Objects.equals(this.addonTemplateLabels, that.addonTemplateLabels)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.values, that.values);
     }
 
     @Override

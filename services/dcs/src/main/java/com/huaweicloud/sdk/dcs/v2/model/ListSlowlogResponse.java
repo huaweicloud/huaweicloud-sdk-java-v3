@@ -75,16 +75,15 @@ public class ListSlowlogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSlowlogResponse listSlowlogResponse = (ListSlowlogResponse) o;
-        return Objects.equals(this.count, listSlowlogResponse.count)
-            && Objects.equals(this.slowlogs, listSlowlogResponse.slowlogs);
+        ListSlowlogResponse that = (ListSlowlogResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.slowlogs, that.slowlogs);
     }
 
     @Override

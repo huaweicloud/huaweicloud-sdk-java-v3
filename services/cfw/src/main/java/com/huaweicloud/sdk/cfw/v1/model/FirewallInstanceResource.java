@@ -143,20 +143,20 @@ public class FirewallInstanceResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FirewallInstanceResource firewallInstanceResource = (FirewallInstanceResource) o;
-        return Objects.equals(this.resourceId, firewallInstanceResource.resourceId)
-            && Objects.equals(this.cloudServiceType, firewallInstanceResource.cloudServiceType)
-            && Objects.equals(this.resourceType, firewallInstanceResource.resourceType)
-            && Objects.equals(this.resourceSpecCode, firewallInstanceResource.resourceSpecCode)
-            && Objects.equals(this.resourceSize, firewallInstanceResource.resourceSize)
-            && Objects.equals(this.resourceSizeMeasureId, firewallInstanceResource.resourceSizeMeasureId);
+        FirewallInstanceResource that = (FirewallInstanceResource) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.resourceSize, that.resourceSize)
+            && Objects.equals(this.resourceSizeMeasureId, that.resourceSizeMeasureId);
     }
 
     @Override

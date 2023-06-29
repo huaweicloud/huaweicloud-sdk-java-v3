@@ -699,6 +699,47 @@ public class DcsMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> executeClusterSwitchover =
+        genForexecuteClusterSwitchover();
+
+    private static HttpRequestDef<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> genForexecuteClusterSwitchover() {
+        // basic
+        HttpRequestDef.Builder<ExecuteClusterSwitchoverRequest, ExecuteClusterSwitchoverResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.POST, ExecuteClusterSwitchoverRequest.class, ExecuteClusterSwitchoverResponse.class)
+                .withName("ExecuteClusterSwitchover")
+                .withUri(
+                    "/v2/{project_id}/instance/{instance_id}/groups/{group_id}/replications/{node_id}/async-switchover")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("instance_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getInstanceId, (req, v) -> {
+                req.setInstanceId(v);
+            }));
+        builder.<String>withRequestField("group_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getGroupId, (req, v) -> {
+                req.setGroupId(v);
+            }));
+        builder.<String>withRequestField("node_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ExecuteClusterSwitchoverRequest::getNodeId, (req, v) -> {
+                req.setNodeId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ListAvailableZonesRequest, ListAvailableZonesResponse> listAvailableZones =
         genForlistAvailableZones();
 
@@ -1995,6 +2036,30 @@ public class DcsMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowInstanceRequest::getInstanceId, (req, v) -> {
                 req.setInstanceId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForshowJobInfo();
+
+    private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForshowJobInfo() {
+        // basic
+        HttpRequestDef.Builder<ShowJobInfoRequest, ShowJobInfoResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowJobInfoRequest.class, ShowJobInfoResponse.class)
+                .withName("ShowJobInfo")
+                .withUri("/v2/{project_id}/jobs/{job_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("job_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ShowJobInfoRequest::getJobId, (req, v) -> {
+                req.setJobId(v);
             }));
 
         // response

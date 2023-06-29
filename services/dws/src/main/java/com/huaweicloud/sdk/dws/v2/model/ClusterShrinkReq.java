@@ -143,19 +143,17 @@ public class ClusterShrinkReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterShrinkReq clusterShrinkReq = (ClusterShrinkReq) o;
-        return Objects.equals(this.shrinkNumber, clusterShrinkReq.shrinkNumber)
-            && Objects.equals(this.online, clusterShrinkReq.online) && Objects.equals(this.type, clusterShrinkReq.type)
-            && Objects.equals(this.retry, clusterShrinkReq.retry)
-            && Objects.equals(this.forceBackup, clusterShrinkReq.forceBackup)
-            && Objects.equals(this.needAgency, clusterShrinkReq.needAgency);
+        ClusterShrinkReq that = (ClusterShrinkReq) obj;
+        return Objects.equals(this.shrinkNumber, that.shrinkNumber) && Objects.equals(this.online, that.online)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.retry, that.retry)
+            && Objects.equals(this.forceBackup, that.forceBackup) && Objects.equals(this.needAgency, that.needAgency);
     }
 
     @Override

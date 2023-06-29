@@ -210,21 +210,19 @@ public class EncodeServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncodeServer encodeServer = (EncodeServer) o;
-        return Objects.equals(this.encodeServerName, encodeServer.encodeServerName)
-            && Objects.equals(this.encodeServerId, encodeServer.encodeServerId)
-            && Objects.equals(this.encodeServerIp, encodeServer.encodeServerIp)
-            && Objects.equals(this.serverId, encodeServer.serverId)
-            && Objects.equals(this.keypairName, encodeServer.keypairName)
-            && Objects.equals(this.type, encodeServer.type) && Objects.equals(this.status, encodeServer.status)
-            && Objects.equals(this.accessInfos, encodeServer.accessInfos);
+        EncodeServer that = (EncodeServer) obj;
+        return Objects.equals(this.encodeServerName, that.encodeServerName)
+            && Objects.equals(this.encodeServerId, that.encodeServerId)
+            && Objects.equals(this.encodeServerIp, that.encodeServerIp) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.keypairName, that.keypairName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.accessInfos, that.accessInfos);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class RecordDownloadInfoBO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordDownloadInfoBO recordDownloadInfoBO = (RecordDownloadInfoBO) o;
-        return Objects.equals(this.confUuid, recordDownloadInfoBO.confUuid)
-            && Objects.equals(this.urls, recordDownloadInfoBO.urls);
+        RecordDownloadInfoBO that = (RecordDownloadInfoBO) obj;
+        return Objects.equals(this.confUuid, that.confUuid) && Objects.equals(this.urls, that.urls);
     }
 
     @Override

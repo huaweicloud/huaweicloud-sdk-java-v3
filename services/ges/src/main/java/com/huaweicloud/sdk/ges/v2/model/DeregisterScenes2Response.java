@@ -1,45 +1,36 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class DeregisterScenes2Response extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "success")
+
+    private List<String> success = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="success")
-    
-    private List<String> success = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failure")
-    
+    @JsonProperty(value = "failure")
+
     private List<String> failure = null;
-    
+
     public DeregisterScenes2Response withSuccess(List<String> success) {
         this.success = success;
         return this;
     }
 
-    
     public DeregisterScenes2Response addSuccessItem(String successItem) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         this.success.add(successItem);
@@ -47,7 +38,7 @@ public class DeregisterScenes2Response extends SdkResponse {
     }
 
     public DeregisterScenes2Response withSuccess(Consumer<List<String>> successSetter) {
-        if(this.success == null) {
+        if (this.success == null) {
             this.success = new ArrayList<>();
         }
         successSetter.accept(this.success);
@@ -66,16 +57,13 @@ public class DeregisterScenes2Response extends SdkResponse {
         this.success = success;
     }
 
-    
-
     public DeregisterScenes2Response withFailure(List<String> failure) {
         this.failure = failure;
         return this;
     }
 
-    
     public DeregisterScenes2Response addFailureItem(String failureItem) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         this.failure.add(failureItem);
@@ -83,7 +71,7 @@ public class DeregisterScenes2Response extends SdkResponse {
     }
 
     public DeregisterScenes2Response withFailure(Consumer<List<String>> failureSetter) {
-        if(this.failure == null) {
+        if (this.failure == null) {
             this.failure = new ArrayList<>();
         }
         failureSetter.accept(this.failure);
@@ -102,24 +90,23 @@ public class DeregisterScenes2Response extends SdkResponse {
         this.failure = failure;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeregisterScenes2Response deregisterScenes2Response = (DeregisterScenes2Response) o;
-        return Objects.equals(this.success, deregisterScenes2Response.success) &&
-            Objects.equals(this.failure, deregisterScenes2Response.failure);
+        DeregisterScenes2Response that = (DeregisterScenes2Response) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.failure, that.failure);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(success, failure);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +116,7 @@ public class DeregisterScenes2Response extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +127,5 @@ public class DeregisterScenes2Response extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

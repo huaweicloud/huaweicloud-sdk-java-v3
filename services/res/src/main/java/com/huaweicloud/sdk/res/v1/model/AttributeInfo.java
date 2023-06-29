@@ -29,8 +29,8 @@ public class AttributeInfo {
     private List<NumericalAttr> numericalAttrs = null;
 
     /**
-    * 统计方式： - ORDER，顺序 - ABS，绝对值
-    */
+     * 统计方式： - ORDER，顺序 - ABS，绝对值
+     */
     public static final class NumStatisticsTypeEnum {
 
         /**
@@ -73,22 +73,15 @@ public class AttributeInfo {
             if (value == null) {
                 return null;
             }
-            NumStatisticsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NumStatisticsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NumStatisticsTypeEnum(value));
         }
 
         public static NumStatisticsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NumStatisticsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,17 +187,17 @@ public class AttributeInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttributeInfo attributeInfo = (AttributeInfo) o;
-        return Objects.equals(this.rankFeaturePairs, attributeInfo.rankFeaturePairs)
-            && Objects.equals(this.numericalAttrs, attributeInfo.numericalAttrs)
-            && Objects.equals(this.numStatisticsType, attributeInfo.numStatisticsType);
+        AttributeInfo that = (AttributeInfo) obj;
+        return Objects.equals(this.rankFeaturePairs, that.rankFeaturePairs)
+            && Objects.equals(this.numericalAttrs, that.numericalAttrs)
+            && Objects.equals(this.numStatisticsType, that.numStatisticsType);
     }
 
     @Override

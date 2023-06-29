@@ -122,19 +122,17 @@ public class ShowJobDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobDetailResponse showJobDetailResponse = (ShowJobDetailResponse) o;
-        return Objects.equals(this.id, showJobDetailResponse.id)
-            && Objects.equals(this.name, showJobDetailResponse.name)
-            && Objects.equals(this.jobStatus, showJobDetailResponse.jobStatus)
-            && Objects.equals(this.jobResult, showJobDetailResponse.jobResult)
-            && Objects.equals(this.showType, showJobDetailResponse.showType);
+        ShowJobDetailResponse that = (ShowJobDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.jobStatus, that.jobStatus) && Objects.equals(this.jobResult, that.jobResult)
+            && Objects.equals(this.showType, that.showType);
     }
 
     @Override

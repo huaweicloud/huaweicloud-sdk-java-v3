@@ -81,17 +81,16 @@ public class Severity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Severity severity = (Severity) o;
-        return Objects.equals(this.label, severity.label)
-            && Objects.equals(this.normalizeScore, severity.normalizeScore)
-            && Objects.equals(this.originalScore, severity.originalScore);
+        Severity that = (Severity) obj;
+        return Objects.equals(this.label, that.label) && Objects.equals(this.normalizeScore, that.normalizeScore)
+            && Objects.equals(this.originalScore, that.originalScore);
     }
 
     @Override

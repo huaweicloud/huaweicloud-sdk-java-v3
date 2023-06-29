@@ -207,22 +207,18 @@ public class CreateCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateResponse createCertificateResponse = (CreateCertificateResponse) o;
-        return Objects.equals(this.id, createCertificateResponse.id)
-            && Objects.equals(this.name, createCertificateResponse.name)
-            && Objects.equals(this.content, createCertificateResponse.content)
-            && Objects.equals(this.key, createCertificateResponse.key)
-            && Objects.equals(this.expireTime, createCertificateResponse.expireTime)
-            && Objects.equals(this.expStatus, createCertificateResponse.expStatus)
-            && Objects.equals(this.timestamp, createCertificateResponse.timestamp)
-            && Objects.equals(this.bindHost, createCertificateResponse.bindHost);
+        CreateCertificateResponse that = (CreateCertificateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.content, that.content) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expStatus, that.expStatus)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.bindHost, that.bindHost);
     }
 
     @Override

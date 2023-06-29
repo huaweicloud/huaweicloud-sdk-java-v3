@@ -188,22 +188,18 @@ public class ListJobDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobDetailsResponse listJobDetailsResponse = (ListJobDetailsResponse) o;
-        return Objects.equals(this.jobId, listJobDetailsResponse.jobId)
-            && Objects.equals(this.jobName, listJobDetailsResponse.jobName)
-            && Objects.equals(this.beginTime, listJobDetailsResponse.beginTime)
-            && Objects.equals(this.endTime, listJobDetailsResponse.endTime)
-            && Objects.equals(this.status, listJobDetailsResponse.status)
-            && Objects.equals(this.failedCode, listJobDetailsResponse.failedCode)
-            && Objects.equals(this.failedDetail, listJobDetailsResponse.failedDetail)
-            && Objects.equals(this.progress, listJobDetailsResponse.progress);
+        ListJobDetailsResponse that = (ListJobDetailsResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.failedCode, that.failedCode)
+            && Objects.equals(this.failedDetail, that.failedDetail) && Objects.equals(this.progress, that.progress);
     }
 
     @Override

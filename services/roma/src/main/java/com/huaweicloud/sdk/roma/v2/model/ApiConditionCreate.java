@@ -65,22 +65,15 @@ public class ApiConditionCreate {
             if (value == null) {
                 return null;
             }
-            SysParamNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SysParamNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SysParamNameEnum(value));
         }
 
         public static SysParamNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SysParamNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -158,22 +151,15 @@ public class ApiConditionCreate {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionTypeEnum(value));
         }
 
         public static ConditionTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -240,22 +226,15 @@ public class ApiConditionCreate {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionOriginEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionOriginEnum(value));
         }
 
         public static ConditionOriginEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionOriginEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -385,20 +364,20 @@ public class ApiConditionCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiConditionCreate apiConditionCreate = (ApiConditionCreate) o;
-        return Objects.equals(this.reqParamName, apiConditionCreate.reqParamName)
-            && Objects.equals(this.sysParamName, apiConditionCreate.sysParamName)
-            && Objects.equals(this.cookieParamName, apiConditionCreate.cookieParamName)
-            && Objects.equals(this.conditionType, apiConditionCreate.conditionType)
-            && Objects.equals(this.conditionOrigin, apiConditionCreate.conditionOrigin)
-            && Objects.equals(this.conditionValue, apiConditionCreate.conditionValue);
+        ApiConditionCreate that = (ApiConditionCreate) obj;
+        return Objects.equals(this.reqParamName, that.reqParamName)
+            && Objects.equals(this.sysParamName, that.sysParamName)
+            && Objects.equals(this.cookieParamName, that.cookieParamName)
+            && Objects.equals(this.conditionType, that.conditionType)
+            && Objects.equals(this.conditionOrigin, that.conditionOrigin)
+            && Objects.equals(this.conditionValue, that.conditionValue);
     }
 
     @Override

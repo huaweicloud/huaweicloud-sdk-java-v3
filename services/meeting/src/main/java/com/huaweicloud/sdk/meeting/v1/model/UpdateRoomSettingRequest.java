@@ -111,18 +111,17 @@ public class UpdateRoomSettingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRoomSettingRequest updateRoomSettingRequest = (UpdateRoomSettingRequest) o;
-        return Objects.equals(this.xRequestId, updateRoomSettingRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, updateRoomSettingRequest.acceptLanguage)
-            && Objects.equals(this.conferenceId, updateRoomSettingRequest.conferenceId)
-            && Objects.equals(this.body, updateRoomSettingRequest.body);
+        UpdateRoomSettingRequest that = (UpdateRoomSettingRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage)
+            && Objects.equals(this.conferenceId, that.conferenceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

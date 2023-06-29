@@ -87,18 +87,16 @@ public class ShowConfigurationAggregatorSourcesStatusResponse extends SdkRespons
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConfigurationAggregatorSourcesStatusResponse showConfigurationAggregatorSourcesStatusResponse =
-            (ShowConfigurationAggregatorSourcesStatusResponse) o;
-        return Objects.equals(this.aggregatedSourceStatuses,
-            showConfigurationAggregatorSourcesStatusResponse.aggregatedSourceStatuses)
-            && Objects.equals(this.pageInfo, showConfigurationAggregatorSourcesStatusResponse.pageInfo);
+        ShowConfigurationAggregatorSourcesStatusResponse that = (ShowConfigurationAggregatorSourcesStatusResponse) obj;
+        return Objects.equals(this.aggregatedSourceStatuses, that.aggregatedSourceStatuses)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

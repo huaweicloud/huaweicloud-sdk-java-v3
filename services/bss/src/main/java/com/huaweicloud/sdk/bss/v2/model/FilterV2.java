@@ -67,16 +67,15 @@ public class FilterV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilterV2 filterV2 = (FilterV2) o;
-        return Objects.equals(this.operator, filterV2.operator)
-            && Objects.equals(this.filterFactor, filterV2.filterFactor);
+        FilterV2 that = (FilterV2) obj;
+        return Objects.equals(this.operator, that.operator) && Objects.equals(this.filterFactor, that.filterFactor);
     }
 
     @Override

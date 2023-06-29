@@ -104,22 +104,15 @@ public class ListCompoundMetricsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -382,26 +375,20 @@ public class ListCompoundMetricsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCompoundMetricsRequest listCompoundMetricsRequest = (ListCompoundMetricsRequest) o;
-        return Objects.equals(this.workspace, listCompoundMetricsRequest.workspace)
-            && Objects.equals(this.name, listCompoundMetricsRequest.name)
-            && Objects.equals(this.createBy, listCompoundMetricsRequest.createBy)
-            && Objects.equals(this.approver, listCompoundMetricsRequest.approver)
-            && Objects.equals(this.status, listCompoundMetricsRequest.status)
-            && Objects.equals(this.dimensionGroup, listCompoundMetricsRequest.dimensionGroup)
-            && Objects.equals(this.atomicIndexId, listCompoundMetricsRequest.atomicIndexId)
-            && Objects.equals(this.l3Id, listCompoundMetricsRequest.l3Id)
-            && Objects.equals(this.beginTime, listCompoundMetricsRequest.beginTime)
-            && Objects.equals(this.endTime, listCompoundMetricsRequest.endTime)
-            && Objects.equals(this.limit, listCompoundMetricsRequest.limit)
-            && Objects.equals(this.offset, listCompoundMetricsRequest.offset);
+        ListCompoundMetricsRequest that = (ListCompoundMetricsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.dimensionGroup, that.dimensionGroup)
+            && Objects.equals(this.atomicIndexId, that.atomicIndexId) && Objects.equals(this.l3Id, that.l3Id)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

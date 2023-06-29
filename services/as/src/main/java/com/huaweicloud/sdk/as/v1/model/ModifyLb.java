@@ -109,18 +109,17 @@ public class ModifyLb {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyLb modifyLb = (ModifyLb) o;
-        return Objects.equals(this.lbaasListener, modifyLb.lbaasListener)
-            && Objects.equals(this.listener, modifyLb.listener)
-            && Objects.equals(this.failedReason, modifyLb.failedReason)
-            && Objects.equals(this.failedDetails, modifyLb.failedDetails);
+        ModifyLb that = (ModifyLb) obj;
+        return Objects.equals(this.lbaasListener, that.lbaasListener) && Objects.equals(this.listener, that.listener)
+            && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.failedDetails, that.failedDetails);
     }
 
     @Override

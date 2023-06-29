@@ -250,24 +250,21 @@ public class InterfaceAttachment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InterfaceAttachment interfaceAttachment = (InterfaceAttachment) o;
-        return Objects.equals(this.fixedIps, interfaceAttachment.fixedIps)
-            && Objects.equals(this.macAddr, interfaceAttachment.macAddr)
-            && Objects.equals(this.netId, interfaceAttachment.netId)
-            && Objects.equals(this.portId, interfaceAttachment.portId)
-            && Objects.equals(this.portState, interfaceAttachment.portState)
-            && Objects.equals(this.deleteOnTermination, interfaceAttachment.deleteOnTermination)
-            && Objects.equals(this.driverMode, interfaceAttachment.driverMode)
-            && Objects.equals(this.minRate, interfaceAttachment.minRate)
-            && Objects.equals(this.multiqueueNum, interfaceAttachment.multiqueueNum)
-            && Objects.equals(this.pciAddress, interfaceAttachment.pciAddress);
+        InterfaceAttachment that = (InterfaceAttachment) obj;
+        return Objects.equals(this.fixedIps, that.fixedIps) && Objects.equals(this.macAddr, that.macAddr)
+            && Objects.equals(this.netId, that.netId) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.portState, that.portState)
+            && Objects.equals(this.deleteOnTermination, that.deleteOnTermination)
+            && Objects.equals(this.driverMode, that.driverMode) && Objects.equals(this.minRate, that.minRate)
+            && Objects.equals(this.multiqueueNum, that.multiqueueNum)
+            && Objects.equals(this.pciAddress, that.pciAddress);
     }
 
     @Override

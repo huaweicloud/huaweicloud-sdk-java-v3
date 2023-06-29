@@ -77,17 +77,16 @@ public class ListTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTasksRequest listTasksRequest = (ListTasksRequest) o;
-        return Objects.equals(this.deploymentId, listTasksRequest.deploymentId)
-            && Objects.equals(this.offset, listTasksRequest.offset)
-            && Objects.equals(this.limit, listTasksRequest.limit);
+        ListTasksRequest that = (ListTasksRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class NodeDetailResponseTags {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeDetailResponseTags nodeDetailResponseTags = (NodeDetailResponseTags) o;
-        return Objects.equals(this.key, nodeDetailResponseTags.key)
-            && Objects.equals(this.value, nodeDetailResponseTags.value);
+        NodeDetailResponseTags that = (NodeDetailResponseTags) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

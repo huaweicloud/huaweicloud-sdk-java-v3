@@ -343,29 +343,22 @@ public class AimPersonalTemplateContentAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimPersonalTemplateContentAction aimPersonalTemplateContentAction = (AimPersonalTemplateContentAction) o;
-        return Objects.equals(this.target, aimPersonalTemplateContentAction.target)
-            && Objects.equals(this.content, aimPersonalTemplateContentAction.content)
-            && Objects.equals(this.packageName, aimPersonalTemplateContentAction.packageName)
-            && Objects.equals(this.floorUrl, aimPersonalTemplateContentAction.floorUrl)
-            && Objects.equals(this.floorType, aimPersonalTemplateContentAction.floorType)
-            && Objects.equals(this.subject, aimPersonalTemplateContentAction.subject)
-            && Objects.equals(this.body, aimPersonalTemplateContentAction.body)
-            && Objects.equals(this.description, aimPersonalTemplateContentAction.description)
-            && Objects.equals(this.beginTime, aimPersonalTemplateContentAction.beginTime)
-            && Objects.equals(this.endTime, aimPersonalTemplateContentAction.endTime)
-            && Objects.equals(this.address, aimPersonalTemplateContentAction.address)
-            && Objects.equals(this.longitude, aimPersonalTemplateContentAction.longitude)
-            && Objects.equals(this.latitude, aimPersonalTemplateContentAction.latitude)
-            && Objects.equals(this.textButton, aimPersonalTemplateContentAction.textButton)
-            && Objects.equals(this.mode, aimPersonalTemplateContentAction.mode);
+        AimPersonalTemplateContentAction that = (AimPersonalTemplateContentAction) obj;
+        return Objects.equals(this.target, that.target) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.packageName, that.packageName) && Objects.equals(this.floorUrl, that.floorUrl)
+            && Objects.equals(this.floorType, that.floorType) && Objects.equals(this.subject, that.subject)
+            && Objects.equals(this.body, that.body) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.longitude, that.longitude)
+            && Objects.equals(this.latitude, that.latitude) && Objects.equals(this.textButton, that.textButton)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override

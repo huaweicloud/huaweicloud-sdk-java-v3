@@ -158,22 +158,15 @@ public class Pool {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectionStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectionStatusEnum(value));
         }
 
         public static ProtectionStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectionStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -646,29 +639,29 @@ public class Pool {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Pool pool = (Pool) o;
-        return Objects.equals(this.adminStateUp, pool.adminStateUp)
-            && Objects.equals(this.description, pool.description)
-            && Objects.equals(this.healthmonitorId, pool.healthmonitorId) && Objects.equals(this.id, pool.id)
-            && Objects.equals(this.lbAlgorithm, pool.lbAlgorithm) && Objects.equals(this.listeners, pool.listeners)
-            && Objects.equals(this.loadbalancers, pool.loadbalancers) && Objects.equals(this.members, pool.members)
-            && Objects.equals(this.name, pool.name) && Objects.equals(this.projectId, pool.projectId)
-            && Objects.equals(this.protocol, pool.protocol)
-            && Objects.equals(this.sessionPersistence, pool.sessionPersistence)
-            && Objects.equals(this.ipVersion, pool.ipVersion) && Objects.equals(this.slowStart, pool.slowStart)
-            && Objects.equals(this.memberDeletionProtectionEnable, pool.memberDeletionProtectionEnable)
-            && Objects.equals(this.createdAt, pool.createdAt) && Objects.equals(this.updatedAt, pool.updatedAt)
-            && Objects.equals(this.vpcId, pool.vpcId) && Objects.equals(this.type, pool.type)
-            && Objects.equals(this.protectionStatus, pool.protectionStatus)
-            && Objects.equals(this.protectionReason, pool.protectionReason)
-            && Objects.equals(this.anyPortEnable, pool.anyPortEnable);
+        Pool that = (Pool) obj;
+        return Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.healthmonitorId, that.healthmonitorId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.lbAlgorithm, that.lbAlgorithm) && Objects.equals(this.listeners, that.listeners)
+            && Objects.equals(this.loadbalancers, that.loadbalancers) && Objects.equals(this.members, that.members)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.sessionPersistence, that.sessionPersistence)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.slowStart, that.slowStart)
+            && Objects.equals(this.memberDeletionProtectionEnable, that.memberDeletionProtectionEnable)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.protectionStatus, that.protectionStatus)
+            && Objects.equals(this.protectionReason, that.protectionReason)
+            && Objects.equals(this.anyPortEnable, that.anyPortEnable);
     }
 
     @Override

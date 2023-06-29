@@ -88,17 +88,16 @@ public class UpdateFlinkSqlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlinkSqlResponse updateFlinkSqlResponse = (UpdateFlinkSqlResponse) o;
-        return Objects.equals(this.isSuccess, updateFlinkSqlResponse.isSuccess)
-            && Objects.equals(this.message, updateFlinkSqlResponse.message)
-            && Objects.equals(this.job, updateFlinkSqlResponse.job);
+        UpdateFlinkSqlResponse that = (UpdateFlinkSqlResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.job, that.job);
     }
 
     @Override

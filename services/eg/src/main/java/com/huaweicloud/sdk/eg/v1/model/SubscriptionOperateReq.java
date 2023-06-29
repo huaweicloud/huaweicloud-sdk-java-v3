@@ -24,8 +24,8 @@ public class SubscriptionOperateReq {
     private List<String> subscriptionIds = null;
 
     /**
-    * 操作类型
-    */
+     * 操作类型
+     */
     public static final class OperationEnum {
 
         /**
@@ -68,22 +68,15 @@ public class SubscriptionOperateReq {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationEnum(value));
         }
 
         public static OperationEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,16 +149,16 @@ public class SubscriptionOperateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionOperateReq subscriptionOperateReq = (SubscriptionOperateReq) o;
-        return Objects.equals(this.subscriptionIds, subscriptionOperateReq.subscriptionIds)
-            && Objects.equals(this.operation, subscriptionOperateReq.operation);
+        SubscriptionOperateReq that = (SubscriptionOperateReq) obj;
+        return Objects.equals(this.subscriptionIds, that.subscriptionIds)
+            && Objects.equals(this.operation, that.operation);
     }
 
     @Override

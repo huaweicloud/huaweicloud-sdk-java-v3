@@ -55,16 +55,15 @@ public class StopJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopJobRequest stopJobRequest = (StopJobRequest) o;
-        return Objects.equals(this.jobId, stopJobRequest.jobId)
-            && Objects.equals(this.triggerSavepoint, stopJobRequest.triggerSavepoint);
+        StopJobRequest that = (StopJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.triggerSavepoint, that.triggerSavepoint);
     }
 
     @Override

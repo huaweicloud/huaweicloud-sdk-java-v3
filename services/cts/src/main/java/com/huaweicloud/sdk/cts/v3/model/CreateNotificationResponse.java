@@ -69,22 +69,15 @@ public class CreateNotificationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypeEnum(value));
         }
 
         public static OperationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -117,8 +110,8 @@ public class CreateNotificationResponse extends SdkResponse {
     private List<NotificationUsers> notifyUserList = null;
 
     /**
-    * 通知状态，启用和停用。
-    */
+     * 通知状态，启用和停用。
+     */
     public static final class StatusEnum {
 
         /**
@@ -161,22 +154,15 @@ public class CreateNotificationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -253,22 +239,15 @@ public class CreateNotificationResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            NotificationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotificationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotificationTypeEnum(value));
         }
 
         public static NotificationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotificationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -536,25 +515,22 @@ public class CreateNotificationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNotificationResponse createNotificationResponse = (CreateNotificationResponse) o;
-        return Objects.equals(this.notificationName, createNotificationResponse.notificationName)
-            && Objects.equals(this.operationType, createNotificationResponse.operationType)
-            && Objects.equals(this.operations, createNotificationResponse.operations)
-            && Objects.equals(this.notifyUserList, createNotificationResponse.notifyUserList)
-            && Objects.equals(this.status, createNotificationResponse.status)
-            && Objects.equals(this.topicId, createNotificationResponse.topicId)
-            && Objects.equals(this.notificationId, createNotificationResponse.notificationId)
-            && Objects.equals(this.notificationType, createNotificationResponse.notificationType)
-            && Objects.equals(this.projectId, createNotificationResponse.projectId)
-            && Objects.equals(this.createTime, createNotificationResponse.createTime)
-            && Objects.equals(this.filter, createNotificationResponse.filter);
+        CreateNotificationResponse that = (CreateNotificationResponse) obj;
+        return Objects.equals(this.notificationName, that.notificationName)
+            && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.operations, that.operations)
+            && Objects.equals(this.notifyUserList, that.notifyUserList) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.topicId, that.topicId) && Objects.equals(this.notificationId, that.notificationId)
+            && Objects.equals(this.notificationType, that.notificationType)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override

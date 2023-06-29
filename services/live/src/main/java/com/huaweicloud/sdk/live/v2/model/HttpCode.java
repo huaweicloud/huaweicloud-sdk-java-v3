@@ -83,16 +83,16 @@ public class HttpCode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpCode httpCode = (HttpCode) o;
-        return Objects.equals(this.code, httpCode.code) && Objects.equals(this.count, httpCode.count)
-            && Objects.equals(this.proportion, httpCode.proportion);
+        HttpCode that = (HttpCode) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.proportion, that.proportion);
     }
 
     @Override

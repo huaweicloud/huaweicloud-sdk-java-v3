@@ -144,19 +144,17 @@ public class CreateTempRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTempRequestBody createTempRequestBody = (CreateTempRequestBody) o;
-        return Objects.equals(this.projectId, createTempRequestBody.projectId)
-            && Objects.equals(this.tempType, createTempRequestBody.tempType)
-            && Objects.equals(this.name, createTempRequestBody.name)
-            && Objects.equals(this.description, createTempRequestBody.description)
-            && Objects.equals(this.contents, createTempRequestBody.contents);
+        CreateTempRequestBody that = (CreateTempRequestBody) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tempType, that.tempType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.contents, that.contents);
     }
 
     @Override

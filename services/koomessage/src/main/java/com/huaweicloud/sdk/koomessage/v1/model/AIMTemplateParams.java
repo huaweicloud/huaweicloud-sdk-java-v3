@@ -165,20 +165,18 @@ public class AIMTemplateParams {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AIMTemplateParams aiMTemplateParams = (AIMTemplateParams) o;
-        return Objects.equals(this.type, aiMTemplateParams.type) && Objects.equals(this.name, aiMTemplateParams.name)
-            && Objects.equals(this.hasLength, aiMTemplateParams.hasLength)
-            && Objects.equals(this.fixLength, aiMTemplateParams.fixLength)
-            && Objects.equals(this.lengthRestrict, aiMTemplateParams.lengthRestrict)
-            && Objects.equals(this.minLength, aiMTemplateParams.minLength)
-            && Objects.equals(this.maxLength, aiMTemplateParams.maxLength);
+        AIMTemplateParams that = (AIMTemplateParams) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.hasLength, that.hasLength) && Objects.equals(this.fixLength, that.fixLength)
+            && Objects.equals(this.lengthRestrict, that.lengthRestrict)
+            && Objects.equals(this.minLength, that.minLength) && Objects.equals(this.maxLength, that.maxLength);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class DeleteImportedKeyMaterialRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteImportedKeyMaterialRequest deleteImportedKeyMaterialRequest = (DeleteImportedKeyMaterialRequest) o;
-        return Objects.equals(this.body, deleteImportedKeyMaterialRequest.body);
+        DeleteImportedKeyMaterialRequest that = (DeleteImportedKeyMaterialRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * AgentSwitchRequest
  */
-public class AgentSwitchRequest  {
-
+public class AgentSwitchRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_id")
-    
+    @JsonProperty(value = "agent_id")
 
     private String agentId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private Integer status;
 
@@ -33,9 +24,6 @@ public class AgentSwitchRequest  {
         this.agentId = agentId;
         return this;
     }
-
-    
-
 
     /**
      * 审计agent的ID
@@ -49,15 +37,10 @@ public class AgentSwitchRequest  {
         this.agentId = agentId;
     }
 
-    
-
     public AgentSwitchRequest withStatus(Integer status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * Agent开关状态 1：开启 0：关闭
@@ -71,24 +54,23 @@ public class AgentSwitchRequest  {
         this.status = status;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgentSwitchRequest agentSwitchRequest = (AgentSwitchRequest) o;
-        return Objects.equals(this.agentId, agentSwitchRequest.agentId) &&
-            Objects.equals(this.status, agentSwitchRequest.status);
+        AgentSwitchRequest that = (AgentSwitchRequest) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.status, that.status);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(agentId, status);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class AgentSwitchRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class AgentSwitchRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

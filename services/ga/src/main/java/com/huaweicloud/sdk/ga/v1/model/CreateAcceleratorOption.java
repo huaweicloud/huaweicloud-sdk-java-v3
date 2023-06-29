@@ -156,19 +156,18 @@ public class CreateAcceleratorOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAcceleratorOption createAcceleratorOption = (CreateAcceleratorOption) o;
-        return Objects.equals(this.name, createAcceleratorOption.name)
-            && Objects.equals(this.description, createAcceleratorOption.description)
-            && Objects.equals(this.ipSets, createAcceleratorOption.ipSets)
-            && Objects.equals(this.enterpriseProjectId, createAcceleratorOption.enterpriseProjectId)
-            && Objects.equals(this.tags, createAcceleratorOption.tags);
+        CreateAcceleratorOption that = (CreateAcceleratorOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipSets, that.ipSets)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

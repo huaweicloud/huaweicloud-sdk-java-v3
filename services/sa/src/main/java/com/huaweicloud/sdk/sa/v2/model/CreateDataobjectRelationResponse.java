@@ -228,23 +228,19 @@ public class CreateDataobjectRelationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataobjectRelationResponse createDataobjectRelationResponse = (CreateDataobjectRelationResponse) o;
-        return Objects.equals(this.code, createDataobjectRelationResponse.code)
-            && Objects.equals(this.message, createDataobjectRelationResponse.message)
-            && Objects.equals(this.requestId, createDataobjectRelationResponse.requestId)
-            && Objects.equals(this.success, createDataobjectRelationResponse.success)
-            && Objects.equals(this.total, createDataobjectRelationResponse.total)
-            && Objects.equals(this.limit, createDataobjectRelationResponse.limit)
-            && Objects.equals(this.offset, createDataobjectRelationResponse.offset)
-            && Objects.equals(this.data, createDataobjectRelationResponse.data)
-            && Objects.equals(this.xRequestId, createDataobjectRelationResponse.xRequestId);
+        CreateDataobjectRelationResponse that = (CreateDataobjectRelationResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

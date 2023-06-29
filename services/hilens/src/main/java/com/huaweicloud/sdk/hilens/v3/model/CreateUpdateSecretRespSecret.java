@@ -222,22 +222,18 @@ public class CreateUpdateSecretRespSecret {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUpdateSecretRespSecret createUpdateSecretRespSecret = (CreateUpdateSecretRespSecret) o;
-        return Objects.equals(this.id, createUpdateSecretRespSecret.id)
-            && Objects.equals(this.name, createUpdateSecretRespSecret.name)
-            && Objects.equals(this.description, createUpdateSecretRespSecret.description)
-            && Objects.equals(this.projectId, createUpdateSecretRespSecret.projectId)
-            && Objects.equals(this.createdAt, createUpdateSecretRespSecret.createdAt)
-            && Objects.equals(this.updatedAt, createUpdateSecretRespSecret.updatedAt)
-            && Objects.equals(this.secrets, createUpdateSecretRespSecret.secrets)
-            && Objects.equals(this.tags, createUpdateSecretRespSecret.tags);
+        CreateUpdateSecretRespSecret that = (CreateUpdateSecretRespSecret) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.secrets, that.secrets) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

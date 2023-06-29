@@ -1,118 +1,91 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.CharacterConfig;
-import com.huaweicloud.sdk.cbs.v1.model.ReadConfigResp;
-import com.huaweicloud.sdk.cbs.v1.model.TtsConfig;
-import com.huaweicloud.sdk.cbs.v1.model.Video;
-import com.huaweicloud.sdk.cbs.v1.model.VideoConfigResp;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="progress")
-    
+    @JsonProperty(value = "progress")
 
     private Integer progress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private Integer status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subtitle_url")
-    
+    @JsonProperty(value = "subtitle_url")
 
     private String subtitleUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_url")
-    
+    @JsonProperty(value = "video_url")
 
     private String videoUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_shot")
-    
+    @JsonProperty(value = "video_shot")
 
     private String videoShot;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_config")
-    
+    @JsonProperty(value = "character_config")
 
     private CharacterConfig characterConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="compose_actions")
-    
+    @JsonProperty(value = "compose_actions")
+
     private List<Integer> composeActions = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_config")
-    
+    @JsonProperty(value = "read_config")
 
     private ReadConfigResp readConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tts_config")
-    
+    @JsonProperty(value = "tts_config")
 
     private TtsConfig ttsConfig;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_config")
-    
+    @JsonProperty(value = "video_config")
 
     private VideoConfigResp videoConfig;
 
@@ -120,9 +93,6 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -136,15 +106,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -158,15 +123,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 错误信息 如: {\\\"error_code\\\":\\\"0001\\\",\\\"error_msg\\\":\\\"播报内容超过10分钟，请重新调整播报内容。\\\"}
@@ -180,15 +140,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 
@@ -202,15 +157,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.id = id;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 视频名称
@@ -224,15 +174,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withProgress(Integer progress) {
         this.progress = progress;
         return this;
     }
-
-    
-
 
     /**
      * 视频生成进度 0~100
@@ -246,15 +191,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.progress = progress;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withStatus(Integer status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 0：未初始化 1：生成中 2：生成成功 3：生成失败
@@ -268,15 +208,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withSubtitleUrl(String subtitleUrl) {
         this.subtitleUrl = subtitleUrl;
         return this;
     }
-
-    
-
 
     /**
      * 字幕地址
@@ -290,15 +225,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.subtitleUrl = subtitleUrl;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withVideoUrl(String videoUrl) {
         this.videoUrl = videoUrl;
         return this;
     }
-
-    
-
 
     /**
      * 视频的obs地址，当视频生成成功时返回
@@ -312,15 +242,10 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.videoUrl = videoUrl;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withVideoShot(String videoShot) {
         this.videoShot = videoShot;
         return this;
     }
-
-    
-
 
     /**
      * 视频截图地址，jpg格式 分辨率480 * 270 当status=2：生成成功时返回
@@ -334,22 +259,19 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.videoShot = videoShot;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withCharacterConfig(CharacterConfig characterConfig) {
         this.characterConfig = characterConfig;
         return this;
     }
 
     public ExecuteUpdateVideoInfoByIdResponse withCharacterConfig(Consumer<CharacterConfig> characterConfigSetter) {
-        if(this.characterConfig == null ){
+        if (this.characterConfig == null) {
             this.characterConfig = new CharacterConfig();
             characterConfigSetter.accept(this.characterConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get characterConfig
@@ -363,16 +285,13 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.characterConfig = characterConfig;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withComposeActions(List<Integer> composeActions) {
         this.composeActions = composeActions;
         return this;
     }
 
-    
     public ExecuteUpdateVideoInfoByIdResponse addComposeActionsItem(Integer composeActionsItem) {
-        if(this.composeActions == null) {
+        if (this.composeActions == null) {
             this.composeActions = new ArrayList<>();
         }
         this.composeActions.add(composeActionsItem);
@@ -380,7 +299,7 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
     }
 
     public ExecuteUpdateVideoInfoByIdResponse withComposeActions(Consumer<List<Integer>> composeActionsSetter) {
-        if(this.composeActions == null) {
+        if (this.composeActions == null) {
             this.composeActions = new ArrayList<>();
         }
         composeActionsSetter.accept(this.composeActions);
@@ -399,22 +318,19 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.composeActions = composeActions;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withReadConfig(ReadConfigResp readConfig) {
         this.readConfig = readConfig;
         return this;
     }
 
     public ExecuteUpdateVideoInfoByIdResponse withReadConfig(Consumer<ReadConfigResp> readConfigSetter) {
-        if(this.readConfig == null ){
+        if (this.readConfig == null) {
             this.readConfig = new ReadConfigResp();
             readConfigSetter.accept(this.readConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get readConfig
@@ -428,22 +344,19 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.readConfig = readConfig;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withTtsConfig(TtsConfig ttsConfig) {
         this.ttsConfig = ttsConfig;
         return this;
     }
 
     public ExecuteUpdateVideoInfoByIdResponse withTtsConfig(Consumer<TtsConfig> ttsConfigSetter) {
-        if(this.ttsConfig == null ){
+        if (this.ttsConfig == null) {
             this.ttsConfig = new TtsConfig();
             ttsConfigSetter.accept(this.ttsConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get ttsConfig
@@ -457,22 +370,19 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.ttsConfig = ttsConfig;
     }
 
-    
-
     public ExecuteUpdateVideoInfoByIdResponse withVideoConfig(VideoConfigResp videoConfig) {
         this.videoConfig = videoConfig;
         return this;
     }
 
     public ExecuteUpdateVideoInfoByIdResponse withVideoConfig(Consumer<VideoConfigResp> videoConfigSetter) {
-        if(this.videoConfig == null ){
+        if (this.videoConfig == null) {
             this.videoConfig = new VideoConfigResp();
             videoConfigSetter.accept(this.videoConfig);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get videoConfig
@@ -486,37 +396,45 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         this.videoConfig = videoConfig;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteUpdateVideoInfoByIdResponse executeUpdateVideoInfoByIdResponse = (ExecuteUpdateVideoInfoByIdResponse) o;
-        return Objects.equals(this.createTime, executeUpdateVideoInfoByIdResponse.createTime) &&
-            Objects.equals(this.updateTime, executeUpdateVideoInfoByIdResponse.updateTime) &&
-            Objects.equals(this.errorMsg, executeUpdateVideoInfoByIdResponse.errorMsg) &&
-            Objects.equals(this.id, executeUpdateVideoInfoByIdResponse.id) &&
-            Objects.equals(this.name, executeUpdateVideoInfoByIdResponse.name) &&
-            Objects.equals(this.progress, executeUpdateVideoInfoByIdResponse.progress) &&
-            Objects.equals(this.status, executeUpdateVideoInfoByIdResponse.status) &&
-            Objects.equals(this.subtitleUrl, executeUpdateVideoInfoByIdResponse.subtitleUrl) &&
-            Objects.equals(this.videoUrl, executeUpdateVideoInfoByIdResponse.videoUrl) &&
-            Objects.equals(this.videoShot, executeUpdateVideoInfoByIdResponse.videoShot) &&
-            Objects.equals(this.characterConfig, executeUpdateVideoInfoByIdResponse.characterConfig) &&
-            Objects.equals(this.composeActions, executeUpdateVideoInfoByIdResponse.composeActions) &&
-            Objects.equals(this.readConfig, executeUpdateVideoInfoByIdResponse.readConfig) &&
-            Objects.equals(this.ttsConfig, executeUpdateVideoInfoByIdResponse.ttsConfig) &&
-            Objects.equals(this.videoConfig, executeUpdateVideoInfoByIdResponse.videoConfig);
+        ExecuteUpdateVideoInfoByIdResponse that = (ExecuteUpdateVideoInfoByIdResponse) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.errorMsg, that.errorMsg) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.subtitleUrl, that.subtitleUrl)
+            && Objects.equals(this.videoUrl, that.videoUrl) && Objects.equals(this.videoShot, that.videoShot)
+            && Objects.equals(this.characterConfig, that.characterConfig)
+            && Objects.equals(this.composeActions, that.composeActions)
+            && Objects.equals(this.readConfig, that.readConfig) && Objects.equals(this.ttsConfig, that.ttsConfig)
+            && Objects.equals(this.videoConfig, that.videoConfig);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(createTime, updateTime, errorMsg, id, name, progress, status, subtitleUrl, videoUrl, videoShot, characterConfig, composeActions, readConfig, ttsConfig, videoConfig);
+        return Objects.hash(createTime,
+            updateTime,
+            errorMsg,
+            id,
+            name,
+            progress,
+            status,
+            subtitleUrl,
+            videoUrl,
+            videoShot,
+            characterConfig,
+            composeActions,
+            readConfig,
+            ttsConfig,
+            videoConfig);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -539,6 +457,7 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -549,8 +468,5 @@ public class ExecuteUpdateVideoInfoByIdResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

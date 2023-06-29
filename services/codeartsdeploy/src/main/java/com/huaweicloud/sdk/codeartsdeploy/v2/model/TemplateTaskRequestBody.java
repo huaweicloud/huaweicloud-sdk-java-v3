@@ -49,7 +49,7 @@ public class TemplateTaskRequestBody {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -162,20 +162,17 @@ public class TemplateTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateTaskRequestBody templateTaskRequestBody = (TemplateTaskRequestBody) o;
-        return Objects.equals(this.projectId, templateTaskRequestBody.projectId)
-            && Objects.equals(this.projectName, templateTaskRequestBody.projectName)
-            && Objects.equals(this.templateId, templateTaskRequestBody.templateId)
-            && Objects.equals(this.taskName, templateTaskRequestBody.taskName)
-            && Objects.equals(this.slaveClusterId, templateTaskRequestBody.slaveClusterId)
-            && Objects.equals(this.configs, templateTaskRequestBody.configs);
+        TemplateTaskRequestBody that = (TemplateTaskRequestBody) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.slaveClusterId, that.slaveClusterId) && Objects.equals(this.configs, that.configs);
     }
 
     @Override

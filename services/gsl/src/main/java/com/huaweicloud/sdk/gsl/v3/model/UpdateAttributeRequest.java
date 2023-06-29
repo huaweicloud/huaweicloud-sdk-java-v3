@@ -66,16 +66,15 @@ public class UpdateAttributeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAttributeRequest updateAttributeRequest = (UpdateAttributeRequest) o;
-        return Objects.equals(this.attributeId, updateAttributeRequest.attributeId)
-            && Objects.equals(this.body, updateAttributeRequest.body);
+        UpdateAttributeRequest that = (UpdateAttributeRequest) obj;
+        return Objects.equals(this.attributeId, that.attributeId) && Objects.equals(this.body, that.body);
     }
 
     @Override

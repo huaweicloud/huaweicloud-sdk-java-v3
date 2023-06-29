@@ -140,19 +140,17 @@ public class RuleAclListResponseDTOData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleAclListResponseDTOData ruleAclListResponseDTOData = (RuleAclListResponseDTOData) o;
-        return Objects.equals(this.offset, ruleAclListResponseDTOData.offset)
-            && Objects.equals(this.limit, ruleAclListResponseDTOData.limit)
-            && Objects.equals(this.total, ruleAclListResponseDTOData.total)
-            && Objects.equals(this.objectId, ruleAclListResponseDTOData.objectId)
-            && Objects.equals(this.records, ruleAclListResponseDTOData.records);
+        RuleAclListResponseDTOData that = (RuleAclListResponseDTOData) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.objectId, that.objectId)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

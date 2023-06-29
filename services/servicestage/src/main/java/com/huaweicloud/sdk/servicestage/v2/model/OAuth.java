@@ -77,16 +77,16 @@ public class OAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OAuth oauth = (OAuth) o;
-        return Objects.equals(this.name, oauth.name) && Objects.equals(this.code, oauth.code)
-            && Objects.equals(this.state, oauth.state);
+        OAuth that = (OAuth) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.state, that.state);
     }
 
     @Override

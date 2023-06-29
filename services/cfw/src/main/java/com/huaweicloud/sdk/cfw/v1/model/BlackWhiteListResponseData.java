@@ -140,19 +140,17 @@ public class BlackWhiteListResponseData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BlackWhiteListResponseData blackWhiteListResponseData = (BlackWhiteListResponseData) o;
-        return Objects.equals(this.objectId, blackWhiteListResponseData.objectId)
-            && Objects.equals(this.offset, blackWhiteListResponseData.offset)
-            && Objects.equals(this.limit, blackWhiteListResponseData.limit)
-            && Objects.equals(this.total, blackWhiteListResponseData.total)
-            && Objects.equals(this.records, blackWhiteListResponseData.records);
+        BlackWhiteListResponseData that = (BlackWhiteListResponseData) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.records, that.records);
     }
 
     @Override

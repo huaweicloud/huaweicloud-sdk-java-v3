@@ -33,15 +33,15 @@ public class UnchangeableParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnchangeableParam unchangeableParam = (UnchangeableParam) o;
-        return Objects.equals(this.lowerCaseTableNames, unchangeableParam.lowerCaseTableNames);
+        UnchangeableParam that = (UnchangeableParam) obj;
+        return Objects.equals(this.lowerCaseTableNames, that.lowerCaseTableNames);
     }
 
     @Override

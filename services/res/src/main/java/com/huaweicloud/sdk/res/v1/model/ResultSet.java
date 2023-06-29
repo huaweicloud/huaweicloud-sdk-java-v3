@@ -209,20 +209,19 @@ public class ResultSet {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResultSet resultSet = (ResultSet) o;
-        return Objects.equals(this.availability, resultSet.availability)
-            && Objects.equals(this.category, resultSet.category) && Objects.equals(this.jobId, resultSet.jobId)
-            && Objects.equals(this.jobType, resultSet.jobType) && Objects.equals(this.recId, resultSet.recId)
-            && Objects.equals(this.recType, resultSet.recType) && Objects.equals(this.sceneId, resultSet.sceneId)
-            && Objects.equals(this.tableName, resultSet.tableName)
-            && Objects.equals(this.workspaceId, resultSet.workspaceId);
+        ResultSet that = (ResultSet) obj;
+        return Objects.equals(this.availability, that.availability) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.recId, that.recId) && Objects.equals(this.recType, that.recType)
+            && Objects.equals(this.sceneId, that.sceneId) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

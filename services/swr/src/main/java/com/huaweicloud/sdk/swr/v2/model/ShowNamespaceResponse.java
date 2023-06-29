@@ -82,22 +82,15 @@ public class ShowNamespaceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AuthEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthEnum(value));
         }
 
         public static AuthEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            AuthEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,18 +181,16 @@ public class ShowNamespaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNamespaceResponse showNamespaceResponse = (ShowNamespaceResponse) o;
-        return Objects.equals(this.id, showNamespaceResponse.id)
-            && Objects.equals(this.name, showNamespaceResponse.name)
-            && Objects.equals(this.creatorName, showNamespaceResponse.creatorName)
-            && Objects.equals(this.auth, showNamespaceResponse.auth);
+        ShowNamespaceResponse that = (ShowNamespaceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.auth, that.auth);
     }
 
     @Override

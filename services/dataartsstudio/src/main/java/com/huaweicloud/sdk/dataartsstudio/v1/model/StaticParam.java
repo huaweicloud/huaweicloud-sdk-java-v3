@@ -55,16 +55,15 @@ public class StaticParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StaticParam staticParam = (StaticParam) o;
-        return Objects.equals(this.paraName, staticParam.paraName)
-            && Objects.equals(this.paraValue, staticParam.paraValue);
+        StaticParam that = (StaticParam) obj;
+        return Objects.equals(this.paraName, that.paraName) && Objects.equals(this.paraValue, that.paraValue);
     }
 
     @Override

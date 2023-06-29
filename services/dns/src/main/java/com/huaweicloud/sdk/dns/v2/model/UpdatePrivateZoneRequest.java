@@ -65,16 +65,15 @@ public class UpdatePrivateZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePrivateZoneRequest updatePrivateZoneRequest = (UpdatePrivateZoneRequest) o;
-        return Objects.equals(this.zoneId, updatePrivateZoneRequest.zoneId)
-            && Objects.equals(this.body, updatePrivateZoneRequest.body);
+        UpdatePrivateZoneRequest that = (UpdatePrivateZoneRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.body, that.body);
     }
 
     @Override

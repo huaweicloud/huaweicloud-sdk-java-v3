@@ -75,16 +75,15 @@ public class ListPunishmentRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPunishmentRulesResponse listPunishmentRulesResponse = (ListPunishmentRulesResponse) o;
-        return Objects.equals(this.total, listPunishmentRulesResponse.total)
-            && Objects.equals(this.items, listPunishmentRulesResponse.items);
+        ListPunishmentRulesResponse that = (ListPunishmentRulesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items);
     }
 
     @Override

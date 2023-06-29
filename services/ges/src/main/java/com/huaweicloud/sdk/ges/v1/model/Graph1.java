@@ -1,250 +1,207 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.EdgesetPath1;
-import com.huaweicloud.sdk.ges.v1.model.SchemaPath1;
-import com.huaweicloud.sdk.ges.v1.model.VertexsetPath1;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Graph1
  */
-public class Graph1  {
-
+public class Graph1 {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="createdBy")
-    
+    @JsonProperty(value = "createdBy")
 
     private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="isMultiAz")
-    
+    @JsonProperty(value = "isMultiAz")
 
     private String isMultiAz;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="regionCode")
-    
+    @JsonProperty(value = "regionCode")
 
     private String regionCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="azCode")
-    
+    @JsonProperty(value = "azCode")
 
     private String azCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="schemaPath")
-    
+    @JsonProperty(value = "schemaPath")
+
     private List<SchemaPath1> schemaPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetPath")
-    
+    @JsonProperty(value = "edgesetPath")
+
     private List<EdgesetPath1> edgesetPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetFormat")
-    
+    @JsonProperty(value = "edgesetFormat")
 
     private String edgesetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edgesetDefaultLabel")
-    
+    @JsonProperty(value = "edgesetDefaultLabel")
 
     private String edgesetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetPath")
-    
+    @JsonProperty(value = "vertexsetPath")
+
     private List<VertexsetPath1> vertexsetPath = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetFormat")
-    
+    @JsonProperty(value = "vertexsetFormat")
 
     private String vertexsetFormat;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vertexsetDefaultLabel")
-    
+    @JsonProperty(value = "vertexsetDefaultLabel")
 
     private String vertexsetDefaultLabel;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="dataStoreVersion")
-    
+    @JsonProperty(value = "dataStoreVersion")
 
     private String dataStoreVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sys_tags")
-    
+    @JsonProperty(value = "sys_tags")
+
     private List<String> sysTags = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="actionProgress")
-    
+    @JsonProperty(value = "actionProgress")
 
     private String actionProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graphSizeTypeIndex")
-    
+    @JsonProperty(value = "graphSizeTypeIndex")
 
     private String graphSizeTypeIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpcId")
-    
+    @JsonProperty(value = "vpcId")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnetId")
-    
+    @JsonProperty(value = "subnetId")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="securityGroupId")
-    
+    @JsonProperty(value = "securityGroupId")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replication")
-    
+    @JsonProperty(value = "replication")
 
     private Integer replication;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="privateIp")
-    
+    @JsonProperty(value = "privateIp")
 
     private String privateIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publicIp")
-    
+    @JsonProperty(value = "publicIp")
 
     private String publicIp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
 
     private String arch;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="encrypted")
-    
+    @JsonProperty(value = "encrypted")
 
     private Boolean encrypted;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterKeyId")
-    
+    @JsonProperty(value = "masterKeyId")
 
     private String masterKeyId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="masterKeyName")
-    
+    @JsonProperty(value = "masterKeyName")
 
     private String masterKeyName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableRBAC")
-    
+    @JsonProperty(value = "enableRBAC")
 
     private Boolean enableRBAC;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableFulltextIndex")
-    
+    @JsonProperty(value = "enableFulltextIndex")
 
     private Boolean enableFulltextIndex;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableHyG")
-    
+    @JsonProperty(value = "enableHyG")
 
     private Boolean enableHyG;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="trafficIpList")
-    
+    @JsonProperty(value = "trafficIpList")
+
     private List<String> trafficIpList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cryptAlgorithm")
-    
+    @JsonProperty(value = "cryptAlgorithm")
 
     private String cryptAlgorithm;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enableHttps")
-    
+    @JsonProperty(value = "enableHttps")
 
     private Boolean enableHttps;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Object> tags = null;
-    
+
     public Graph1 withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -258,15 +215,10 @@ public class Graph1  {
         this.id = id;
     }
 
-    
-
     public Graph1 withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 图名称。
@@ -280,15 +232,10 @@ public class Graph1  {
         this.name = name;
     }
 
-    
-
     public Graph1 withCreatedBy(String createdBy) {
         this.createdBy = createdBy;
         return this;
     }
-
-    
-
 
     /**
      * 图的创建人账号。
@@ -302,15 +249,10 @@ public class Graph1  {
         this.createdBy = createdBy;
     }
 
-    
-
     public Graph1 withIsMultiAz(String isMultiAz) {
         this.isMultiAz = isMultiAz;
         return this;
     }
-
-    
-
 
     /**
      * 是否支持跨AZ高可用。
@@ -324,15 +266,10 @@ public class Graph1  {
         this.isMultiAz = isMultiAz;
     }
 
-    
-
     public Graph1 withRegionCode(String regionCode) {
         this.regionCode = regionCode;
         return this;
     }
-
-    
-
 
     /**
      * 域编码。
@@ -346,15 +283,10 @@ public class Graph1  {
         this.regionCode = regionCode;
     }
 
-    
-
     public Graph1 withAzCode(String azCode) {
         this.azCode = azCode;
         return this;
     }
-
-    
-
 
     /**
      * 可用区编码。
@@ -368,16 +300,13 @@ public class Graph1  {
         this.azCode = azCode;
     }
 
-    
-
     public Graph1 withSchemaPath(List<SchemaPath1> schemaPath) {
         this.schemaPath = schemaPath;
         return this;
     }
 
-    
     public Graph1 addSchemaPathItem(SchemaPath1 schemaPathItem) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         this.schemaPath.add(schemaPathItem);
@@ -385,7 +314,7 @@ public class Graph1  {
     }
 
     public Graph1 withSchemaPath(Consumer<List<SchemaPath1>> schemaPathSetter) {
-        if(this.schemaPath == null) {
+        if (this.schemaPath == null) {
             this.schemaPath = new ArrayList<>();
         }
         schemaPathSetter.accept(this.schemaPath);
@@ -404,16 +333,13 @@ public class Graph1  {
         this.schemaPath = schemaPath;
     }
 
-    
-
     public Graph1 withEdgesetPath(List<EdgesetPath1> edgesetPath) {
         this.edgesetPath = edgesetPath;
         return this;
     }
 
-    
     public Graph1 addEdgesetPathItem(EdgesetPath1 edgesetPathItem) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         this.edgesetPath.add(edgesetPathItem);
@@ -421,7 +347,7 @@ public class Graph1  {
     }
 
     public Graph1 withEdgesetPath(Consumer<List<EdgesetPath1>> edgesetPathSetter) {
-        if(this.edgesetPath == null) {
+        if (this.edgesetPath == null) {
             this.edgesetPath = new ArrayList<>();
         }
         edgesetPathSetter.accept(this.edgesetPath);
@@ -440,15 +366,10 @@ public class Graph1  {
         this.edgesetPath = edgesetPath;
     }
 
-    
-
     public Graph1 withEdgesetFormat(String edgesetFormat) {
         this.edgesetFormat = edgesetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集文件格式。
@@ -462,15 +383,10 @@ public class Graph1  {
         this.edgesetFormat = edgesetFormat;
     }
 
-    
-
     public Graph1 withEdgesetDefaultLabel(String edgesetDefaultLabel) {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 边数据集文件默认Label。
@@ -484,16 +400,13 @@ public class Graph1  {
         this.edgesetDefaultLabel = edgesetDefaultLabel;
     }
 
-    
-
     public Graph1 withVertexsetPath(List<VertexsetPath1> vertexsetPath) {
         this.vertexsetPath = vertexsetPath;
         return this;
     }
 
-    
     public Graph1 addVertexsetPathItem(VertexsetPath1 vertexsetPathItem) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         this.vertexsetPath.add(vertexsetPathItem);
@@ -501,7 +414,7 @@ public class Graph1  {
     }
 
     public Graph1 withVertexsetPath(Consumer<List<VertexsetPath1>> vertexsetPathSetter) {
-        if(this.vertexsetPath == null) {
+        if (this.vertexsetPath == null) {
             this.vertexsetPath = new ArrayList<>();
         }
         vertexsetPathSetter.accept(this.vertexsetPath);
@@ -520,15 +433,10 @@ public class Graph1  {
         this.vertexsetPath = vertexsetPath;
     }
 
-    
-
     public Graph1 withVertexsetFormat(String vertexsetFormat) {
         this.vertexsetFormat = vertexsetFormat;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集文件格式。
@@ -542,15 +450,10 @@ public class Graph1  {
         this.vertexsetFormat = vertexsetFormat;
     }
 
-    
-
     public Graph1 withVertexsetDefaultLabel(String vertexsetDefaultLabel) {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
         return this;
     }
-
-    
-
 
     /**
      * 点数据集文件默认Label。
@@ -564,15 +467,10 @@ public class Graph1  {
         this.vertexsetDefaultLabel = vertexsetDefaultLabel;
     }
 
-    
-
     public Graph1 withDataStoreVersion(String dataStoreVersion) {
         this.dataStoreVersion = dataStoreVersion;
         return this;
     }
-
-    
-
 
     /**
      * 图版本。
@@ -586,16 +484,13 @@ public class Graph1  {
         this.dataStoreVersion = dataStoreVersion;
     }
 
-    
-
     public Graph1 withSysTags(List<String> sysTags) {
         this.sysTags = sysTags;
         return this;
     }
 
-    
     public Graph1 addSysTagsItem(String sysTagsItem) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         this.sysTags.add(sysTagsItem);
@@ -603,7 +498,7 @@ public class Graph1  {
     }
 
     public Graph1 withSysTags(Consumer<List<String>> sysTagsSetter) {
-        if(this.sysTags == null) {
+        if (this.sysTags == null) {
             this.sysTags = new ArrayList<>();
         }
         sysTagsSetter.accept(this.sysTags);
@@ -622,15 +517,10 @@ public class Graph1  {
         this.sysTags = sysTags;
     }
 
-    
-
     public Graph1 withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 图的状态码。  - 100：准备中 - 200：运行中 - 201：升级中 - 202：导入中 - 203：回滚中 - 204：导出中 - 205：清空中 - 206：扩容准备中 - 207：扩容中 - 208：扩容回退中 - 300：故障 - 303：创建失败 - 400：被删除 - 800：已冻结 - 900：停止 - 901：停止中 - 920：启动中
@@ -644,15 +534,10 @@ public class Graph1  {
         this.status = status;
     }
 
-    
-
     public Graph1 withActionProgress(String actionProgress) {
         this.actionProgress = actionProgress;
         return this;
     }
-
-    
-
 
     /**
      * 图创建进度百分比。 >只有图状态码为100时返回该字段。
@@ -666,15 +551,10 @@ public class Graph1  {
         this.actionProgress = actionProgress;
     }
 
-    
-
     public Graph1 withGraphSizeTypeIndex(String graphSizeTypeIndex) {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
         return this;
     }
-
-    
-
 
     /**
      * 图规模类型索引。  - 0：一万边 - 1：百万边 - 2：千万边 - 3：一亿边 - 4：十亿边 - 5：百亿边 - 6：千亿边
@@ -688,15 +568,10 @@ public class Graph1  {
         this.graphSizeTypeIndex = graphSizeTypeIndex;
     }
 
-    
-
     public Graph1 withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -710,15 +585,10 @@ public class Graph1  {
         this.vpcId = vpcId;
     }
 
-    
-
     public Graph1 withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 指定虚拟私有云下的子网ID。
@@ -732,15 +602,10 @@ public class Graph1  {
         this.subnetId = subnetId;
     }
 
-    
-
     public Graph1 withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -754,15 +619,10 @@ public class Graph1  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public Graph1 withReplication(Integer replication) {
         this.replication = replication;
         return this;
     }
-
-    
-
 
     /**
      * 副本个数，默认为1。
@@ -776,15 +636,10 @@ public class Graph1  {
         this.replication = replication;
     }
 
-    
-
     public Graph1 withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 图创建时间。
@@ -798,15 +653,10 @@ public class Graph1  {
         this.created = created;
     }
 
-    
-
     public Graph1 withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 图更新时间。
@@ -820,15 +670,10 @@ public class Graph1  {
         this.updated = updated;
     }
 
-    
-
     public Graph1 withPrivateIp(String privateIp) {
         this.privateIp = privateIp;
         return this;
     }
-
-    
-
 
     /**
      * 图实例私有网络访问地址，通过该IP用户可以通过私有网络中已部署的弹性云服务器对图实例进行访问。
@@ -842,15 +687,10 @@ public class Graph1  {
         this.privateIp = privateIp;
     }
 
-    
-
     public Graph1 withPublicIp(String publicIp) {
         this.publicIp = publicIp;
         return this;
     }
-
-    
-
 
     /**
      * 图实例公网访问地址，通过该IP用户可以从互联网对图实例进行访问。
@@ -864,15 +704,10 @@ public class Graph1  {
         this.publicIp = publicIp;
     }
 
-    
-
     public Graph1 withArch(String arch) {
         this.arch = arch;
         return this;
     }
-
-    
-
 
     /**
      * 图实例CPU架构类型，取值为x86_64和aarch64。
@@ -886,15 +721,10 @@ public class Graph1  {
         this.arch = arch;
     }
 
-    
-
     public Graph1 withEncrypted(Boolean encrypted) {
         this.encrypted = encrypted;
         return this;
     }
-
-    
-
 
     /**
      * 是否加密。默认值为“false”，默认不加密。
@@ -908,15 +738,10 @@ public class Graph1  {
         this.encrypted = encrypted;
     }
 
-    
-
     public Graph1 withMasterKeyId(String masterKeyId) {
         this.masterKeyId = masterKeyId;
         return this;
     }
-
-    
-
 
     /**
      * 用户主密钥ID。
@@ -930,15 +755,10 @@ public class Graph1  {
         this.masterKeyId = masterKeyId;
     }
 
-    
-
     public Graph1 withMasterKeyName(String masterKeyName) {
         this.masterKeyName = masterKeyName;
         return this;
     }
-
-    
-
 
     /**
      * 用户主密钥名称。
@@ -952,15 +772,10 @@ public class Graph1  {
         this.masterKeyName = masterKeyName;
     }
 
-    
-
     public Graph1 withEnableRBAC(Boolean enableRBAC) {
         this.enableRBAC = enableRBAC;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用细粒度权限控制。
@@ -974,15 +789,10 @@ public class Graph1  {
         this.enableRBAC = enableRBAC;
     }
 
-    
-
     public Graph1 withEnableFulltextIndex(Boolean enableFulltextIndex) {
         this.enableFulltextIndex = enableFulltextIndex;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用全文索引。
@@ -996,15 +806,10 @@ public class Graph1  {
         this.enableFulltextIndex = enableFulltextIndex;
     }
 
-    
-
     public Graph1 withEnableHyG(Boolean enableHyG) {
         this.enableHyG = enableHyG;
         return this;
     }
-
-    
-
 
     /**
      * 是否启用HyG，该参数只对千亿规格图生效
@@ -1018,16 +823,13 @@ public class Graph1  {
         this.enableHyG = enableHyG;
     }
 
-    
-
     public Graph1 withTrafficIpList(List<String> trafficIpList) {
         this.trafficIpList = trafficIpList;
         return this;
     }
 
-    
     public Graph1 addTrafficIpListItem(String trafficIpListItem) {
-        if(this.trafficIpList == null) {
+        if (this.trafficIpList == null) {
             this.trafficIpList = new ArrayList<>();
         }
         this.trafficIpList.add(trafficIpListItem);
@@ -1035,7 +837,7 @@ public class Graph1  {
     }
 
     public Graph1 withTrafficIpList(Consumer<List<String>> trafficIpListSetter) {
-        if(this.trafficIpList == null) {
+        if (this.trafficIpList == null) {
             this.trafficIpList = new ArrayList<>();
         }
         trafficIpListSetter.accept(this.trafficIpList);
@@ -1054,15 +856,10 @@ public class Graph1  {
         this.trafficIpList = trafficIpList;
     }
 
-    
-
     public Graph1 withCryptAlgorithm(String cryptAlgorithm) {
         this.cryptAlgorithm = cryptAlgorithm;
         return this;
     }
-
-    
-
 
     /**
      * 图实例加密算法，取值为：  - generalCipher：国际算法 - SMcompatible：商密算法（兼容国际）
@@ -1076,15 +873,10 @@ public class Graph1  {
         this.cryptAlgorithm = cryptAlgorithm;
     }
 
-    
-
     public Graph1 withEnableHttps(Boolean enableHttps) {
         this.enableHttps = enableHttps;
         return this;
     }
-
-    
-
 
     /**
      * 是否开启安全模式，开启安全模式会对性能有较大影响。
@@ -1098,16 +890,13 @@ public class Graph1  {
         this.enableHttps = enableHttps;
     }
 
-    
-
     public Graph1 withTags(List<Object> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public Graph1 addTagsItem(Object tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -1115,7 +904,7 @@ public class Graph1  {
     }
 
     public Graph1 withTags(Consumer<List<Object>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -1134,59 +923,83 @@ public class Graph1  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Graph1 graph1 = (Graph1) o;
-        return Objects.equals(this.id, graph1.id) &&
-            Objects.equals(this.name, graph1.name) &&
-            Objects.equals(this.createdBy, graph1.createdBy) &&
-            Objects.equals(this.isMultiAz, graph1.isMultiAz) &&
-            Objects.equals(this.regionCode, graph1.regionCode) &&
-            Objects.equals(this.azCode, graph1.azCode) &&
-            Objects.equals(this.schemaPath, graph1.schemaPath) &&
-            Objects.equals(this.edgesetPath, graph1.edgesetPath) &&
-            Objects.equals(this.edgesetFormat, graph1.edgesetFormat) &&
-            Objects.equals(this.edgesetDefaultLabel, graph1.edgesetDefaultLabel) &&
-            Objects.equals(this.vertexsetPath, graph1.vertexsetPath) &&
-            Objects.equals(this.vertexsetFormat, graph1.vertexsetFormat) &&
-            Objects.equals(this.vertexsetDefaultLabel, graph1.vertexsetDefaultLabel) &&
-            Objects.equals(this.dataStoreVersion, graph1.dataStoreVersion) &&
-            Objects.equals(this.sysTags, graph1.sysTags) &&
-            Objects.equals(this.status, graph1.status) &&
-            Objects.equals(this.actionProgress, graph1.actionProgress) &&
-            Objects.equals(this.graphSizeTypeIndex, graph1.graphSizeTypeIndex) &&
-            Objects.equals(this.vpcId, graph1.vpcId) &&
-            Objects.equals(this.subnetId, graph1.subnetId) &&
-            Objects.equals(this.securityGroupId, graph1.securityGroupId) &&
-            Objects.equals(this.replication, graph1.replication) &&
-            Objects.equals(this.created, graph1.created) &&
-            Objects.equals(this.updated, graph1.updated) &&
-            Objects.equals(this.privateIp, graph1.privateIp) &&
-            Objects.equals(this.publicIp, graph1.publicIp) &&
-            Objects.equals(this.arch, graph1.arch) &&
-            Objects.equals(this.encrypted, graph1.encrypted) &&
-            Objects.equals(this.masterKeyId, graph1.masterKeyId) &&
-            Objects.equals(this.masterKeyName, graph1.masterKeyName) &&
-            Objects.equals(this.enableRBAC, graph1.enableRBAC) &&
-            Objects.equals(this.enableFulltextIndex, graph1.enableFulltextIndex) &&
-            Objects.equals(this.enableHyG, graph1.enableHyG) &&
-            Objects.equals(this.trafficIpList, graph1.trafficIpList) &&
-            Objects.equals(this.cryptAlgorithm, graph1.cryptAlgorithm) &&
-            Objects.equals(this.enableHttps, graph1.enableHttps) &&
-            Objects.equals(this.tags, graph1.tags);
+        Graph1 that = (Graph1) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.createdBy, that.createdBy) && Objects.equals(this.isMultiAz, that.isMultiAz)
+            && Objects.equals(this.regionCode, that.regionCode) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.schemaPath, that.schemaPath) && Objects.equals(this.edgesetPath, that.edgesetPath)
+            && Objects.equals(this.edgesetFormat, that.edgesetFormat)
+            && Objects.equals(this.edgesetDefaultLabel, that.edgesetDefaultLabel)
+            && Objects.equals(this.vertexsetPath, that.vertexsetPath)
+            && Objects.equals(this.vertexsetFormat, that.vertexsetFormat)
+            && Objects.equals(this.vertexsetDefaultLabel, that.vertexsetDefaultLabel)
+            && Objects.equals(this.dataStoreVersion, that.dataStoreVersion)
+            && Objects.equals(this.sysTags, that.sysTags) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.actionProgress, that.actionProgress)
+            && Objects.equals(this.graphSizeTypeIndex, that.graphSizeTypeIndex)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.replication, that.replication) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.masterKeyId, that.masterKeyId)
+            && Objects.equals(this.masterKeyName, that.masterKeyName)
+            && Objects.equals(this.enableRBAC, that.enableRBAC)
+            && Objects.equals(this.enableFulltextIndex, that.enableFulltextIndex)
+            && Objects.equals(this.enableHyG, that.enableHyG) && Objects.equals(this.trafficIpList, that.trafficIpList)
+            && Objects.equals(this.cryptAlgorithm, that.cryptAlgorithm)
+            && Objects.equals(this.enableHttps, that.enableHttps) && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, createdBy, isMultiAz, regionCode, azCode, schemaPath, edgesetPath, edgesetFormat, edgesetDefaultLabel, vertexsetPath, vertexsetFormat, vertexsetDefaultLabel, dataStoreVersion, sysTags, status, actionProgress, graphSizeTypeIndex, vpcId, subnetId, securityGroupId, replication, created, updated, privateIp, publicIp, arch, encrypted, masterKeyId, masterKeyName, enableRBAC, enableFulltextIndex, enableHyG, trafficIpList, cryptAlgorithm, enableHttps, tags);
+        return Objects.hash(id,
+            name,
+            createdBy,
+            isMultiAz,
+            regionCode,
+            azCode,
+            schemaPath,
+            edgesetPath,
+            edgesetFormat,
+            edgesetDefaultLabel,
+            vertexsetPath,
+            vertexsetFormat,
+            vertexsetDefaultLabel,
+            dataStoreVersion,
+            sysTags,
+            status,
+            actionProgress,
+            graphSizeTypeIndex,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            replication,
+            created,
+            updated,
+            privateIp,
+            publicIp,
+            arch,
+            encrypted,
+            masterKeyId,
+            masterKeyName,
+            enableRBAC,
+            enableFulltextIndex,
+            enableHyG,
+            trafficIpList,
+            cryptAlgorithm,
+            enableHttps,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1231,6 +1044,7 @@ public class Graph1  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1241,8 +1055,5 @@ public class Graph1  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

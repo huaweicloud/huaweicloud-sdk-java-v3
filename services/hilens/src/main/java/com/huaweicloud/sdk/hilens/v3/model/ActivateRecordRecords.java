@@ -99,18 +99,16 @@ public class ActivateRecordRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActivateRecordRecords activateRecordRecords = (ActivateRecordRecords) o;
-        return Objects.equals(this.updateTime, activateRecordRecords.updateTime)
-            && Objects.equals(this.activeStatus, activateRecordRecords.activeStatus)
-            && Objects.equals(this.projectId, activateRecordRecords.projectId)
-            && Objects.equals(this.nodeId, activateRecordRecords.nodeId);
+        ActivateRecordRecords that = (ActivateRecordRecords) obj;
+        return Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.activeStatus, that.activeStatus)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.nodeId, that.nodeId);
     }
 
     @Override

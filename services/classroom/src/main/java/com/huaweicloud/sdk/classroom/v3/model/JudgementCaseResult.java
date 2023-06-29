@@ -83,22 +83,15 @@ public class JudgementCaseResult {
             if (value == null) {
                 return null;
             }
-            CaseStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CaseStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CaseStatusEnum(value));
         }
 
         public static CaseStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CaseStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,16 +148,15 @@ public class JudgementCaseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JudgementCaseResult judgementCaseResult = (JudgementCaseResult) o;
-        return Objects.equals(this.output, judgementCaseResult.output)
-            && Objects.equals(this.caseStatus, judgementCaseResult.caseStatus);
+        JudgementCaseResult that = (JudgementCaseResult) obj;
+        return Objects.equals(this.output, that.output) && Objects.equals(this.caseStatus, that.caseStatus);
     }
 
     @Override

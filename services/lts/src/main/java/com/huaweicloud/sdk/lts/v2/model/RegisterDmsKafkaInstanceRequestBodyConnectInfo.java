@@ -55,17 +55,15 @@ public class RegisterDmsKafkaInstanceRequestBodyConnectInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterDmsKafkaInstanceRequestBodyConnectInfo registerDmsKafkaInstanceRequestBodyConnectInfo =
-            (RegisterDmsKafkaInstanceRequestBodyConnectInfo) o;
-        return Objects.equals(this.userName, registerDmsKafkaInstanceRequestBodyConnectInfo.userName)
-            && Objects.equals(this.pwd, registerDmsKafkaInstanceRequestBodyConnectInfo.pwd);
+        RegisterDmsKafkaInstanceRequestBodyConnectInfo that = (RegisterDmsKafkaInstanceRequestBodyConnectInfo) obj;
+        return Objects.equals(this.userName, that.userName) && Objects.equals(this.pwd, that.pwd);
     }
 
     @Override

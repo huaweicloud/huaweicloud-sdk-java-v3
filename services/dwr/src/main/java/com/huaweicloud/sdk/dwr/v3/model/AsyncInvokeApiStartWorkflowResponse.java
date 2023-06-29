@@ -168,22 +168,18 @@ public class AsyncInvokeApiStartWorkflowResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncInvokeApiStartWorkflowResponse asyncInvokeApiStartWorkflowResponse =
-            (AsyncInvokeApiStartWorkflowResponse) o;
-        return Objects.equals(this.executionUrn, asyncInvokeApiStartWorkflowResponse.executionUrn)
-            && Objects.equals(this.startedAt, asyncInvokeApiStartWorkflowResponse.startedAt)
-            && Objects.equals(this.executionName, asyncInvokeApiStartWorkflowResponse.executionName)
-            && Objects.equals(this.xRequestId, asyncInvokeApiStartWorkflowResponse.xRequestId)
-            && Objects.equals(this.connection, asyncInvokeApiStartWorkflowResponse.connection)
-            && Objects.equals(this.contentLength, asyncInvokeApiStartWorkflowResponse.contentLength)
-            && Objects.equals(this.date, asyncInvokeApiStartWorkflowResponse.date);
+        AsyncInvokeApiStartWorkflowResponse that = (AsyncInvokeApiStartWorkflowResponse) obj;
+        return Objects.equals(this.executionUrn, that.executionUrn) && Objects.equals(this.startedAt, that.startedAt)
+            && Objects.equals(this.executionName, that.executionName)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

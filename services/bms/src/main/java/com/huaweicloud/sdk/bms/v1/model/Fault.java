@@ -100,16 +100,16 @@ public class Fault {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Fault fault = (Fault) o;
-        return Objects.equals(this.message, fault.message) && Objects.equals(this.code, fault.code)
-            && Objects.equals(this.details, fault.details) && Objects.equals(this.created, fault.created);
+        Fault that = (Fault) obj;
+        return Objects.equals(this.message, that.message) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.details, that.details) && Objects.equals(this.created, that.created);
     }
 
     @Override

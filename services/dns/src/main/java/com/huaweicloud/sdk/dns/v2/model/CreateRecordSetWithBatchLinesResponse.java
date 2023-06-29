@@ -116,18 +116,16 @@ public class CreateRecordSetWithBatchLinesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRecordSetWithBatchLinesResponse createRecordSetWithBatchLinesResponse =
-            (CreateRecordSetWithBatchLinesResponse) o;
-        return Objects.equals(this.links, createRecordSetWithBatchLinesResponse.links)
-            && Objects.equals(this.recordsets, createRecordSetWithBatchLinesResponse.recordsets)
-            && Objects.equals(this.metadata, createRecordSetWithBatchLinesResponse.metadata);
+        CreateRecordSetWithBatchLinesResponse that = (CreateRecordSetWithBatchLinesResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.recordsets, that.recordsets)
+            && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

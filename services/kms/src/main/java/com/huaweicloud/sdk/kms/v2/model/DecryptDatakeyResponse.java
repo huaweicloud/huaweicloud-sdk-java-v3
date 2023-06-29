@@ -78,17 +78,16 @@ public class DecryptDatakeyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DecryptDatakeyResponse decryptDatakeyResponse = (DecryptDatakeyResponse) o;
-        return Objects.equals(this.dataKey, decryptDatakeyResponse.dataKey)
-            && Objects.equals(this.datakeyLength, decryptDatakeyResponse.datakeyLength)
-            && Objects.equals(this.datakeyDgst, decryptDatakeyResponse.datakeyDgst);
+        DecryptDatakeyResponse that = (DecryptDatakeyResponse) obj;
+        return Objects.equals(this.dataKey, that.dataKey) && Objects.equals(this.datakeyLength, that.datakeyLength)
+            && Objects.equals(this.datakeyDgst, that.datakeyDgst);
     }
 
     @Override

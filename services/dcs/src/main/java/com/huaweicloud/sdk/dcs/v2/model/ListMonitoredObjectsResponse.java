@@ -151,18 +151,16 @@ public class ListMonitoredObjectsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitoredObjectsResponse listMonitoredObjectsResponse = (ListMonitoredObjectsResponse) o;
-        return Objects.equals(this.router, listMonitoredObjectsResponse.router)
-            && Objects.equals(this.children, listMonitoredObjectsResponse.children)
-            && Objects.equals(this.instances, listMonitoredObjectsResponse.instances)
-            && Objects.equals(this.total, listMonitoredObjectsResponse.total);
+        ListMonitoredObjectsResponse that = (ListMonitoredObjectsResponse) obj;
+        return Objects.equals(this.router, that.router) && Objects.equals(this.children, that.children)
+            && Objects.equals(this.instances, that.instances) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -634,41 +634,32 @@ public class ShowClusterDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowClusterDetailResponse showClusterDetailResponse = (ShowClusterDetailResponse) o;
-        return Objects.equals(this.actions, showClusterDetailResponse.actions)
-            && Objects.equals(this.datastore, showClusterDetailResponse.datastore)
-            && Objects.equals(this.enableOpenTSDB, showClusterDetailResponse.enableOpenTSDB)
-            && Objects.equals(this.enableLemon, showClusterDetailResponse.enableLemon)
-            && Objects.equals(this.clusterName, showClusterDetailResponse.clusterName)
-            && Objects.equals(this.cuNum, showClusterDetailResponse.cuNum)
-            && Objects.equals(this.tsdNum, showClusterDetailResponse.tsdNum)
-            && Objects.equals(this.lemonNum, showClusterDetailResponse.lemonNum)
-            && Objects.equals(this.storageType, showClusterDetailResponse.storageType)
-            && Objects.equals(this.storageQuota, showClusterDetailResponse.storageQuota)
-            && Objects.equals(this.usedStorageSize, showClusterDetailResponse.usedStorageSize)
-            && Objects.equals(this.authMode, showClusterDetailResponse.authMode)
-            && Objects.equals(this.enableDfv, showClusterDetailResponse.enableDfv)
-            && Objects.equals(this.updated, showClusterDetailResponse.updated)
-            && Objects.equals(this.created, showClusterDetailResponse.created)
-            && Objects.equals(this.clusterId, showClusterDetailResponse.clusterId)
-            && Objects.equals(this.status, showClusterDetailResponse.status)
-            && Objects.equals(this.openTSDBLink, showClusterDetailResponse.openTSDBLink)
-            && Objects.equals(this.tsdPublicEndpoint, showClusterDetailResponse.tsdPublicEndpoint)
-            && Objects.equals(this.lemonLink, showClusterDetailResponse.lemonLink)
-            && Objects.equals(this.zookeeperLink, showClusterDetailResponse.zookeeperLink)
-            && Objects.equals(this.hbasePublicEndpoint, showClusterDetailResponse.hbasePublicEndpoint)
-            && Objects.equals(this.isFrozen, showClusterDetailResponse.isFrozen)
-            && Objects.equals(this.vpcId, showClusterDetailResponse.vpcId)
-            && Objects.equals(this.subNetId, showClusterDetailResponse.subNetId)
-            && Objects.equals(this.securityGroupId, showClusterDetailResponse.securityGroupId)
-            && Objects.equals(this.availabilityZone, showClusterDetailResponse.availabilityZone);
+        ShowClusterDetailResponse that = (ShowClusterDetailResponse) obj;
+        return Objects.equals(this.actions, that.actions) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.enableOpenTSDB, that.enableOpenTSDB)
+            && Objects.equals(this.enableLemon, that.enableLemon) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.cuNum, that.cuNum) && Objects.equals(this.tsdNum, that.tsdNum)
+            && Objects.equals(this.lemonNum, that.lemonNum) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.storageQuota, that.storageQuota)
+            && Objects.equals(this.usedStorageSize, that.usedStorageSize)
+            && Objects.equals(this.authMode, that.authMode) && Objects.equals(this.enableDfv, that.enableDfv)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.openTSDBLink, that.openTSDBLink)
+            && Objects.equals(this.tsdPublicEndpoint, that.tsdPublicEndpoint)
+            && Objects.equals(this.lemonLink, that.lemonLink) && Objects.equals(this.zookeeperLink, that.zookeeperLink)
+            && Objects.equals(this.hbasePublicEndpoint, that.hbasePublicEndpoint)
+            && Objects.equals(this.isFrozen, that.isFrozen) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subNetId, that.subNetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

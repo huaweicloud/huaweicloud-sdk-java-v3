@@ -33,15 +33,15 @@ public class ListEnterpriseProjectsResDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseProjectsResDetail listEnterpriseProjectsResDetail = (ListEnterpriseProjectsResDetail) o;
-        return Objects.equals(this.projectId, listEnterpriseProjectsResDetail.projectId);
+        ListEnterpriseProjectsResDetail that = (ListEnterpriseProjectsResDetail) obj;
+        return Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

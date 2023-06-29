@@ -74,16 +74,15 @@ public class CreateShareRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateShareRequestBody createShareRequestBody = (CreateShareRequestBody) o;
-        return Objects.equals(this.share, createShareRequestBody.share)
-            && Objects.equals(this.bssParam, createShareRequestBody.bssParam);
+        CreateShareRequestBody that = (CreateShareRequestBody) obj;
+        return Objects.equals(this.share, that.share) && Objects.equals(this.bssParam, that.bssParam);
     }
 
     @Override

@@ -91,16 +91,15 @@ public class ShowTablePreviewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTablePreviewResponse showTablePreviewResponse = (ShowTablePreviewResponse) o;
-        return Objects.equals(this.schema, showTablePreviewResponse.schema)
-            && Objects.equals(this.rows, showTablePreviewResponse.rows);
+        ShowTablePreviewResponse that = (ShowTablePreviewResponse) obj;
+        return Objects.equals(this.schema, that.schema) && Objects.equals(this.rows, that.rows);
     }
 
     @Override

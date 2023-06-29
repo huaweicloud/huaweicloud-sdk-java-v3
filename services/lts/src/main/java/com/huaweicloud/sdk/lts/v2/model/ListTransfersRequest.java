@@ -66,22 +66,15 @@ public class ListTransfersRequest {
             if (value == null) {
                 return null;
             }
-            LogTransferTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogTransferTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogTransferTypeEnum(value));
         }
 
         public static LogTransferTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogTransferTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -213,19 +206,18 @@ public class ListTransfersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTransfersRequest listTransfersRequest = (ListTransfersRequest) o;
-        return Objects.equals(this.logTransferType, listTransfersRequest.logTransferType)
-            && Objects.equals(this.logGroupName, listTransfersRequest.logGroupName)
-            && Objects.equals(this.logStreamName, listTransfersRequest.logStreamName)
-            && Objects.equals(this.offset, listTransfersRequest.offset)
-            && Objects.equals(this.limit, listTransfersRequest.limit);
+        ListTransfersRequest that = (ListTransfersRequest) obj;
+        return Objects.equals(this.logTransferType, that.logTransferType)
+            && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

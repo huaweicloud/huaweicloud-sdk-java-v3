@@ -66,16 +66,15 @@ public class CreateCommonTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCommonTaskResponse createCommonTaskResponse = (CreateCommonTaskResponse) o;
-        return Objects.equals(this.task, createCommonTaskResponse.task)
-            && Objects.equals(this.taskDetail, createCommonTaskResponse.taskDetail);
+        CreateCommonTaskResponse that = (CreateCommonTaskResponse) obj;
+        return Objects.equals(this.task, that.task) && Objects.equals(this.taskDetail, that.taskDetail);
     }
 
     @Override

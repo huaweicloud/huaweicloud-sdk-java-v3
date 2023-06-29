@@ -97,17 +97,16 @@ public class ListAttachedDomainsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAttachedDomainsV2Response listAttachedDomainsV2Response = (ListAttachedDomainsV2Response) o;
-        return Objects.equals(this.size, listAttachedDomainsV2Response.size)
-            && Objects.equals(this.total, listAttachedDomainsV2Response.total)
-            && Objects.equals(this.boundDomains, listAttachedDomainsV2Response.boundDomains);
+        ListAttachedDomainsV2Response that = (ListAttachedDomainsV2Response) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.boundDomains, that.boundDomains);
     }
 
     @Override

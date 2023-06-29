@@ -473,35 +473,27 @@ public class TaxiInvoiceResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaxiInvoiceResult taxiInvoiceResult = (TaxiInvoiceResult) o;
-        return Objects.equals(this.location, taxiInvoiceResult.location)
-            && Objects.equals(this.code, taxiInvoiceResult.code)
-            && Objects.equals(this.number, taxiInvoiceResult.number)
-            && Objects.equals(this.phoneNumber, taxiInvoiceResult.phoneNumber)
-            && Objects.equals(this.company, taxiInvoiceResult.company)
-            && Objects.equals(this.taxiNumber, taxiInvoiceResult.taxiNumber)
-            && Objects.equals(this.certificateNumber, taxiInvoiceResult.certificateNumber)
-            && Objects.equals(this.identificationNumber, taxiInvoiceResult.identificationNumber)
-            && Objects.equals(this.date, taxiInvoiceResult.date)
-            && Objects.equals(this.boardingTime, taxiInvoiceResult.boardingTime)
-            && Objects.equals(this.alightingTime, taxiInvoiceResult.alightingTime)
-            && Objects.equals(this.time, taxiInvoiceResult.time)
-            && Objects.equals(this.unitPrice, taxiInvoiceResult.unitPrice)
-            && Objects.equals(this.distance, taxiInvoiceResult.distance)
-            && Objects.equals(this.waitingTime, taxiInvoiceResult.waitingTime)
-            && Objects.equals(this.fare, taxiInvoiceResult.fare)
-            && Objects.equals(this.fuelOilSurcharge, taxiInvoiceResult.fuelOilSurcharge)
-            && Objects.equals(this.callServiceSurcharge, taxiInvoiceResult.callServiceSurcharge)
-            && Objects.equals(this.total, taxiInvoiceResult.total)
-            && Objects.equals(this.confidence, taxiInvoiceResult.confidence)
-            && Objects.equals(this.textLocation, taxiInvoiceResult.textLocation);
+        TaxiInvoiceResult that = (TaxiInvoiceResult) obj;
+        return Objects.equals(this.location, that.location) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.number, that.number) && Objects.equals(this.phoneNumber, that.phoneNumber)
+            && Objects.equals(this.company, that.company) && Objects.equals(this.taxiNumber, that.taxiNumber)
+            && Objects.equals(this.certificateNumber, that.certificateNumber)
+            && Objects.equals(this.identificationNumber, that.identificationNumber)
+            && Objects.equals(this.date, that.date) && Objects.equals(this.boardingTime, that.boardingTime)
+            && Objects.equals(this.alightingTime, that.alightingTime) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.unitPrice, that.unitPrice) && Objects.equals(this.distance, that.distance)
+            && Objects.equals(this.waitingTime, that.waitingTime) && Objects.equals(this.fare, that.fare)
+            && Objects.equals(this.fuelOilSurcharge, that.fuelOilSurcharge)
+            && Objects.equals(this.callServiceSurcharge, that.callServiceSurcharge)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

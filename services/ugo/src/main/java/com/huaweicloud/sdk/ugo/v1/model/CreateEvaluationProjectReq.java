@@ -127,18 +127,18 @@ public class CreateEvaluationProjectReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEvaluationProjectReq createEvaluationProjectReq = (CreateEvaluationProjectReq) o;
-        return Objects.equals(this.evaluationProjectName, createEvaluationProjectReq.evaluationProjectName)
-            && Objects.equals(this.sourceDbInfo, createEvaluationProjectReq.sourceDbInfo)
-            && Objects.equals(this.schemasInfo, createEvaluationProjectReq.schemasInfo)
-            && Objects.equals(this.objectsTypeInfo, createEvaluationProjectReq.objectsTypeInfo);
+        CreateEvaluationProjectReq that = (CreateEvaluationProjectReq) obj;
+        return Objects.equals(this.evaluationProjectName, that.evaluationProjectName)
+            && Objects.equals(this.sourceDbInfo, that.sourceDbInfo)
+            && Objects.equals(this.schemasInfo, that.schemasInfo)
+            && Objects.equals(this.objectsTypeInfo, that.objectsTypeInfo);
     }
 
     @Override

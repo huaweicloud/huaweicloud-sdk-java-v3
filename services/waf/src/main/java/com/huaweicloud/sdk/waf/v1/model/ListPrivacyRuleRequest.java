@@ -99,18 +99,17 @@ public class ListPrivacyRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPrivacyRuleRequest listPrivacyRuleRequest = (ListPrivacyRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listPrivacyRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, listPrivacyRuleRequest.policyId)
-            && Objects.equals(this.page, listPrivacyRuleRequest.page)
-            && Objects.equals(this.pagesize, listPrivacyRuleRequest.pagesize);
+        ListPrivacyRuleRequest that = (ListPrivacyRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pagesize, that.pagesize);
     }
 
     @Override

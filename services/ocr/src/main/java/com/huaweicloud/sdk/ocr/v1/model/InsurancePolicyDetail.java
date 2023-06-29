@@ -74,16 +74,15 @@ public class InsurancePolicyDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InsurancePolicyDetail insurancePolicyDetail = (InsurancePolicyDetail) o;
-        return Objects.equals(this.words, insurancePolicyDetail.words)
-            && Objects.equals(this.location, insurancePolicyDetail.location);
+        InsurancePolicyDetail that = (InsurancePolicyDetail) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.location, that.location);
     }
 
     @Override

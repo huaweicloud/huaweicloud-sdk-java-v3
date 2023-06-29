@@ -103,22 +103,15 @@ public class TranscriberConfig {
             if (value == null) {
                 return null;
             }
-            AudioFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AudioFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AudioFormatEnum(value));
         }
 
         public static AudioFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AudioFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -215,22 +208,15 @@ public class TranscriberConfig {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PropertyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PropertyEnum(value));
         }
 
         public static PropertyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PropertyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,22 +283,15 @@ public class TranscriberConfig {
             if (value == null) {
                 return null;
             }
-            AddPuncEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AddPuncEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AddPuncEnum(value));
         }
 
         public static AddPuncEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AddPuncEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -389,22 +368,15 @@ public class TranscriberConfig {
             if (value == null) {
                 return null;
             }
-            DigitNormEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DigitNormEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DigitNormEnum(value));
         }
 
         public static DigitNormEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DigitNormEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -476,22 +448,15 @@ public class TranscriberConfig {
             if (value == null) {
                 return null;
             }
-            NeedWordInfoEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NeedWordInfoEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NeedWordInfoEnum(value));
         }
 
         public static NeedWordInfoEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NeedWordInfoEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -659,22 +624,20 @@ public class TranscriberConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscriberConfig transcriberConfig = (TranscriberConfig) o;
-        return Objects.equals(this.audioFormat, transcriberConfig.audioFormat)
-            && Objects.equals(this.property, transcriberConfig.property)
-            && Objects.equals(this.addPunc, transcriberConfig.addPunc)
-            && Objects.equals(this.needAnalysisInfo, transcriberConfig.needAnalysisInfo)
-            && Objects.equals(this.vocabularyId, transcriberConfig.vocabularyId)
-            && Objects.equals(this.digitNorm, transcriberConfig.digitNorm)
-            && Objects.equals(this.callbackUrl, transcriberConfig.callbackUrl)
-            && Objects.equals(this.needWordInfo, transcriberConfig.needWordInfo);
+        TranscriberConfig that = (TranscriberConfig) obj;
+        return Objects.equals(this.audioFormat, that.audioFormat) && Objects.equals(this.property, that.property)
+            && Objects.equals(this.addPunc, that.addPunc)
+            && Objects.equals(this.needAnalysisInfo, that.needAnalysisInfo)
+            && Objects.equals(this.vocabularyId, that.vocabularyId) && Objects.equals(this.digitNorm, that.digitNorm)
+            && Objects.equals(this.callbackUrl, that.callbackUrl)
+            && Objects.equals(this.needWordInfo, that.needWordInfo);
     }
 
     @Override

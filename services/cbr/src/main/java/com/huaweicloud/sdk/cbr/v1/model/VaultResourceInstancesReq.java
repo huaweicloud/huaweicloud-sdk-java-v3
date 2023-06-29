@@ -69,8 +69,8 @@ public class VaultResourceInstancesReq {
     private List<Match> matches = null;
 
     /**
-    * 云类型
-    */
+     * 云类型
+     */
     public static final class CloudTypeEnum {
 
         /**
@@ -113,22 +113,15 @@ public class VaultResourceInstancesReq {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CloudTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloudTypeEnum(value));
         }
 
         public static CloudTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -195,22 +188,15 @@ public class VaultResourceInstancesReq {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectTypeEnum(value));
         }
 
         public static ObjectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -533,26 +519,20 @@ public class VaultResourceInstancesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VaultResourceInstancesReq vaultResourceInstancesReq = (VaultResourceInstancesReq) o;
-        return Objects.equals(this.withoutAnyTag, vaultResourceInstancesReq.withoutAnyTag)
-            && Objects.equals(this.tags, vaultResourceInstancesReq.tags)
-            && Objects.equals(this.tagsAny, vaultResourceInstancesReq.tagsAny)
-            && Objects.equals(this.notTags, vaultResourceInstancesReq.notTags)
-            && Objects.equals(this.notTagsAny, vaultResourceInstancesReq.notTagsAny)
-            && Objects.equals(this.sysTags, vaultResourceInstancesReq.sysTags)
-            && Objects.equals(this.limit, vaultResourceInstancesReq.limit)
-            && Objects.equals(this.offset, vaultResourceInstancesReq.offset)
-            && Objects.equals(this.action, vaultResourceInstancesReq.action)
-            && Objects.equals(this.matches, vaultResourceInstancesReq.matches)
-            && Objects.equals(this.cloudType, vaultResourceInstancesReq.cloudType)
-            && Objects.equals(this.objectType, vaultResourceInstancesReq.objectType);
+        VaultResourceInstancesReq that = (VaultResourceInstancesReq) obj;
+        return Objects.equals(this.withoutAnyTag, that.withoutAnyTag) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.tagsAny, that.tagsAny) && Objects.equals(this.notTags, that.notTags)
+            && Objects.equals(this.notTagsAny, that.notTagsAny) && Objects.equals(this.sysTags, that.sysTags)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.matches, that.matches)
+            && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.objectType, that.objectType);
     }
 
     @Override

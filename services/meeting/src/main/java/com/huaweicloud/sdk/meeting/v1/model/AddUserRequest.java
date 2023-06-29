@@ -89,17 +89,16 @@ public class AddUserRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddUserRequest addUserRequest = (AddUserRequest) o;
-        return Objects.equals(this.xRequestId, addUserRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, addUserRequest.acceptLanguage)
-            && Objects.equals(this.body, addUserRequest.body);
+        AddUserRequest that = (AddUserRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

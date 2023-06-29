@@ -1,71 +1,59 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * QueryIaConfigResponseDTO
  */
-public class QueryIaConfigResponseDTO  {
-
+public class QueryIaConfigResponseDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private Long version;
+
     /**
      * 下发状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum SUCCESS for value: "SUCCESS"
          */
         public static final StateEnum SUCCESS = new StateEnum("SUCCESS");
-        
+
         /**
          * Enum SENDING for value: "SENDING"
          */
         public static final StateEnum SENDING = new StateEnum("SENDING");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -94,25 +82,18 @@ public class QueryIaConfigResponseDTO  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -130,20 +111,17 @@ public class QueryIaConfigResponseDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -151,9 +129,6 @@ public class QueryIaConfigResponseDTO  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 配置ID
@@ -167,15 +142,10 @@ public class QueryIaConfigResponseDTO  {
         this.id = id;
     }
 
-    
-
     public QueryIaConfigResponseDTO withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 配置项名称
@@ -189,15 +159,10 @@ public class QueryIaConfigResponseDTO  {
         this.name = name;
     }
 
-    
-
     public QueryIaConfigResponseDTO withValue(String value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 配置项详情
@@ -211,15 +176,10 @@ public class QueryIaConfigResponseDTO  {
         this.value = value;
     }
 
-    
-
     public QueryIaConfigResponseDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 配置项描述
@@ -233,15 +193,10 @@ public class QueryIaConfigResponseDTO  {
         this.description = description;
     }
 
-    
-
     public QueryIaConfigResponseDTO withVersion(Long version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 版本号
@@ -255,15 +210,10 @@ public class QueryIaConfigResponseDTO  {
         this.version = version;
     }
 
-    
-
     public QueryIaConfigResponseDTO withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 下发状态
@@ -277,15 +227,10 @@ public class QueryIaConfigResponseDTO  {
         this.state = state;
     }
 
-    
-
     public QueryIaConfigResponseDTO withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -299,15 +244,10 @@ public class QueryIaConfigResponseDTO  {
         this.createTime = createTime;
     }
 
-    
-
     public QueryIaConfigResponseDTO withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -321,30 +261,26 @@ public class QueryIaConfigResponseDTO  {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryIaConfigResponseDTO queryIaConfigResponseDTO = (QueryIaConfigResponseDTO) o;
-        return Objects.equals(this.id, queryIaConfigResponseDTO.id) &&
-            Objects.equals(this.name, queryIaConfigResponseDTO.name) &&
-            Objects.equals(this.value, queryIaConfigResponseDTO.value) &&
-            Objects.equals(this.description, queryIaConfigResponseDTO.description) &&
-            Objects.equals(this.version, queryIaConfigResponseDTO.version) &&
-            Objects.equals(this.state, queryIaConfigResponseDTO.state) &&
-            Objects.equals(this.createTime, queryIaConfigResponseDTO.createTime) &&
-            Objects.equals(this.updateTime, queryIaConfigResponseDTO.updateTime);
+        QueryIaConfigResponseDTO that = (QueryIaConfigResponseDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, name, value, description, version, state, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -360,6 +296,7 @@ public class QueryIaConfigResponseDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -370,8 +307,5 @@ public class QueryIaConfigResponseDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

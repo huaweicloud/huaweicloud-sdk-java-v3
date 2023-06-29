@@ -65,16 +65,15 @@ public class CreateRuleActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRuleActionRequest createRuleActionRequest = (CreateRuleActionRequest) o;
-        return Objects.equals(this.instanceId, createRuleActionRequest.instanceId)
-            && Objects.equals(this.body, createRuleActionRequest.body);
+        CreateRuleActionRequest that = (CreateRuleActionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

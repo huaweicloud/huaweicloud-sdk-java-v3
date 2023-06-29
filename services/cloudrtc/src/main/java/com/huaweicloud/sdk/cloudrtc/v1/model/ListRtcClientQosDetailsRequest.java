@@ -236,22 +236,15 @@ public class ListRtcClientQosDetailsRequest {
             if (value == null) {
                 return null;
             }
-            MidEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MidEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MidEnum(value));
         }
 
         public static MidEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MidEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -579,30 +572,22 @@ public class ListRtcClientQosDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcClientQosDetailsRequest listRtcClientQosDetailsRequest = (ListRtcClientQosDetailsRequest) o;
-        return Objects.equals(this.authorization, listRtcClientQosDetailsRequest.authorization)
-            && Objects.equals(this.xSdkDate, listRtcClientQosDetailsRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listRtcClientQosDetailsRequest.xProjectId)
-            && Objects.equals(this.domain, listRtcClientQosDetailsRequest.domain)
-            && Objects.equals(this.appId, listRtcClientQosDetailsRequest.appId)
-            && Objects.equals(this.roomId, listRtcClientQosDetailsRequest.roomId)
-            && Objects.equals(this.userId, listRtcClientQosDetailsRequest.userId)
-            && Objects.equals(this.peerId, listRtcClientQosDetailsRequest.peerId)
-            && Objects.equals(this.streamId, listRtcClientQosDetailsRequest.streamId)
-            && Objects.equals(this.direction, listRtcClientQosDetailsRequest.direction)
-            && Objects.equals(this.mid, listRtcClientQosDetailsRequest.mid)
-            && Objects.equals(this.startTime, listRtcClientQosDetailsRequest.startTime)
-            && Objects.equals(this.endTime, listRtcClientQosDetailsRequest.endTime)
-            && Objects.equals(this.timeType, listRtcClientQosDetailsRequest.timeType)
-            && Objects.equals(this.limit, listRtcClientQosDetailsRequest.limit)
-            && Objects.equals(this.offset, listRtcClientQosDetailsRequest.offset);
+        ListRtcClientQosDetailsRequest that = (ListRtcClientQosDetailsRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.peerId, that.peerId)
+            && Objects.equals(this.streamId, that.streamId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.mid, that.mid) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.timeType, that.timeType)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

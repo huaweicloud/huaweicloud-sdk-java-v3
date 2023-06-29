@@ -407,26 +407,21 @@ public class AsyncCreateJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncCreateJobReq asyncCreateJobReq = (AsyncCreateJobReq) o;
-        return Objects.equals(this.baseInfo, asyncCreateJobReq.baseInfo)
-            && Objects.equals(this.sourceEndpoint, asyncCreateJobReq.sourceEndpoint)
-            && Objects.equals(this.targetEndpoint, asyncCreateJobReq.targetEndpoint)
-            && Objects.equals(this.alarmNotify, asyncCreateJobReq.alarmNotify)
-            && Objects.equals(this.speedLimit, asyncCreateJobReq.speedLimit)
-            && Objects.equals(this.userMigration, asyncCreateJobReq.userMigration)
-            && Objects.equals(this.policyConfig, asyncCreateJobReq.policyConfig)
-            && Objects.equals(this.dbObject, asyncCreateJobReq.dbObject)
-            && Objects.equals(this.dbParam, asyncCreateJobReq.dbParam)
-            && Objects.equals(this.tuningParams, asyncCreateJobReq.tuningParams)
-            && Objects.equals(this.periodOrder, asyncCreateJobReq.periodOrder)
-            && Objects.equals(this.nodeInfo, asyncCreateJobReq.nodeInfo);
+        AsyncCreateJobReq that = (AsyncCreateJobReq) obj;
+        return Objects.equals(this.baseInfo, that.baseInfo) && Objects.equals(this.sourceEndpoint, that.sourceEndpoint)
+            && Objects.equals(this.targetEndpoint, that.targetEndpoint)
+            && Objects.equals(this.alarmNotify, that.alarmNotify) && Objects.equals(this.speedLimit, that.speedLimit)
+            && Objects.equals(this.userMigration, that.userMigration)
+            && Objects.equals(this.policyConfig, that.policyConfig) && Objects.equals(this.dbObject, that.dbObject)
+            && Objects.equals(this.dbParam, that.dbParam) && Objects.equals(this.tuningParams, that.tuningParams)
+            && Objects.equals(this.periodOrder, that.periodOrder) && Objects.equals(this.nodeInfo, that.nodeInfo);
     }
 
     @Override

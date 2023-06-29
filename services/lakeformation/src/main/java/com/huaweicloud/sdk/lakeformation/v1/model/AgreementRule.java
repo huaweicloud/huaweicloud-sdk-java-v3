@@ -99,18 +99,18 @@ public class AgreementRule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgreementRule agreementRule = (AgreementRule) o;
-        return Objects.equals(this.agreementName, agreementRule.agreementName)
-            && Objects.equals(this.agreementDisplayName, agreementRule.agreementDisplayName)
-            && Objects.equals(this.agreementVersion, agreementRule.agreementVersion)
-            && Objects.equals(this.agreementUrl, agreementRule.agreementUrl);
+        AgreementRule that = (AgreementRule) obj;
+        return Objects.equals(this.agreementName, that.agreementName)
+            && Objects.equals(this.agreementDisplayName, that.agreementDisplayName)
+            && Objects.equals(this.agreementVersion, that.agreementVersion)
+            && Objects.equals(this.agreementUrl, that.agreementUrl);
     }
 
     @Override

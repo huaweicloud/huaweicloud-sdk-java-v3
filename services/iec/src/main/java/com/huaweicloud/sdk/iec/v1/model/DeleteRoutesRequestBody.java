@@ -52,15 +52,15 @@ public class DeleteRoutesRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRoutesRequestBody deleteRoutesRequestBody = (DeleteRoutesRequestBody) o;
-        return Objects.equals(this.routes, deleteRoutesRequestBody.routes);
+        DeleteRoutesRequestBody that = (DeleteRoutesRequestBody) obj;
+        return Objects.equals(this.routes, that.routes);
     }
 
     @Override

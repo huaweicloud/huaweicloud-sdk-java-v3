@@ -72,22 +72,15 @@ public class PublicipUpdateResp {
             if (value == null) {
                 return null;
             }
-            BandwidthShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BandwidthShareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BandwidthShareTypeEnum(value));
         }
 
         public static BandwidthShareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BandwidthShareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,22 +253,15 @@ public class PublicipUpdateResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -357,22 +343,15 @@ public class PublicipUpdateResp {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpVersionEnum(value));
         }
 
         public static IpVersionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IpVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -699,30 +678,25 @@ public class PublicipUpdateResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicipUpdateResp publicipUpdateResp = (PublicipUpdateResp) o;
-        return Objects.equals(this.bandwidthId, publicipUpdateResp.bandwidthId)
-            && Objects.equals(this.bandwidthName, publicipUpdateResp.bandwidthName)
-            && Objects.equals(this.bandwidthShareType, publicipUpdateResp.bandwidthShareType)
-            && Objects.equals(this.bandwidthSize, publicipUpdateResp.bandwidthSize)
-            && Objects.equals(this.createTime, publicipUpdateResp.createTime)
-            && Objects.equals(this.enterpriseProjectId, publicipUpdateResp.enterpriseProjectId)
-            && Objects.equals(this.id, publicipUpdateResp.id) && Objects.equals(this.portId, publicipUpdateResp.portId)
-            && Objects.equals(this.privateIpAddress, publicipUpdateResp.privateIpAddress)
-            && Objects.equals(this.profile, publicipUpdateResp.profile)
-            && Objects.equals(this.publicIpAddress, publicipUpdateResp.publicIpAddress)
-            && Objects.equals(this.status, publicipUpdateResp.status)
-            && Objects.equals(this.tenantId, publicipUpdateResp.tenantId)
-            && Objects.equals(this.type, publicipUpdateResp.type)
-            && Objects.equals(this.publicIpv6Address, publicipUpdateResp.publicIpv6Address)
-            && Objects.equals(this.ipVersion, publicipUpdateResp.ipVersion)
-            && Objects.equals(this.alias, publicipUpdateResp.alias);
+        PublicipUpdateResp that = (PublicipUpdateResp) obj;
+        return Objects.equals(this.bandwidthId, that.bandwidthId)
+            && Objects.equals(this.bandwidthName, that.bandwidthName)
+            && Objects.equals(this.bandwidthShareType, that.bandwidthShareType)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.profile, that.profile) && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.publicIpv6Address, that.publicIpv6Address)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.alias, that.alias);
     }
 
     @Override

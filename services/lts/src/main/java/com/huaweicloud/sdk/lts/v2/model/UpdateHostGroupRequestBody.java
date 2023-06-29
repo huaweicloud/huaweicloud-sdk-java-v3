@@ -134,18 +134,17 @@ public class UpdateHostGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateHostGroupRequestBody updateHostGroupRequestBody = (UpdateHostGroupRequestBody) o;
-        return Objects.equals(this.hostGroupId, updateHostGroupRequestBody.hostGroupId)
-            && Objects.equals(this.hostGroupName, updateHostGroupRequestBody.hostGroupName)
-            && Objects.equals(this.hostIdList, updateHostGroupRequestBody.hostIdList)
-            && Objects.equals(this.hostGroupTag, updateHostGroupRequestBody.hostGroupTag);
+        UpdateHostGroupRequestBody that = (UpdateHostGroupRequestBody) obj;
+        return Objects.equals(this.hostGroupId, that.hostGroupId)
+            && Objects.equals(this.hostGroupName, that.hostGroupName)
+            && Objects.equals(this.hostIdList, that.hostIdList) && Objects.equals(this.hostGroupTag, that.hostGroupTag);
     }
 
     @Override

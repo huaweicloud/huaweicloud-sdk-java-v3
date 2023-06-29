@@ -57,16 +57,15 @@ public class PageInfoDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoDto pageInfoDto = (PageInfoDto) o;
-        return Objects.equals(this.nextMarker, pageInfoDto.nextMarker)
-            && Objects.equals(this.currentCount, pageInfoDto.currentCount);
+        PageInfoDto that = (PageInfoDto) obj;
+        return Objects.equals(this.nextMarker, that.nextMarker) && Objects.equals(this.currentCount, that.currentCount);
     }
 
     @Override

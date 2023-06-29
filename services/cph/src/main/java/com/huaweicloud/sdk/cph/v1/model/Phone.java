@@ -267,20 +267,20 @@ public class Phone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Phone phone = (Phone) o;
-        return Objects.equals(this.phoneName, phone.phoneName) && Objects.equals(this.serverId, phone.serverId)
-            && Objects.equals(this.phoneId, phone.phoneId) && Objects.equals(this.phoneModelName, phone.phoneModelName)
-            && Objects.equals(this.imageId, phone.imageId) && Objects.equals(this.vncEnable, phone.vncEnable)
-            && Objects.equals(this.status, phone.status) && Objects.equals(this.type, phone.type)
-            && Objects.equals(this.metadata, phone.metadata) && Objects.equals(this.createTime, phone.createTime)
-            && Objects.equals(this.updateTime, phone.updateTime);
+        Phone that = (Phone) obj;
+        return Objects.equals(this.phoneName, that.phoneName) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.phoneModelName, that.phoneModelName)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.vncEnable, that.vncEnable)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

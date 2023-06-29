@@ -574,36 +574,28 @@ public class HistoryTrafficEventDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryTrafficEventDTO historyTrafficEventDTO = (HistoryTrafficEventDTO) o;
-        return Objects.equals(this.eventId, historyTrafficEventDTO.eventId)
-            && Objects.equals(this.eventSourceType, historyTrafficEventDTO.eventSourceType)
-            && Objects.equals(this.eventSourceId, historyTrafficEventDTO.eventSourceId)
-            && Objects.equals(this.esn, historyTrafficEventDTO.esn)
-            && Objects.equals(this.areaCode, historyTrafficEventDTO.areaCode)
-            && Objects.equals(this.eventClass, historyTrafficEventDTO.eventClass)
-            && Objects.equals(this.eventType, historyTrafficEventDTO.eventType)
-            && Objects.equals(this.crossId, historyTrafficEventDTO.crossId)
-            && Objects.equals(this.eventDescription, historyTrafficEventDTO.eventDescription)
-            && Objects.equals(this.eventLevel, historyTrafficEventDTO.eventLevel)
-            && Objects.equals(this.eventParams, historyTrafficEventDTO.eventParams)
-            && Objects.equals(this.eventPosition, historyTrafficEventDTO.eventPosition)
-            && Objects.equals(this.eventPositionName, historyTrafficEventDTO.eventPositionName)
-            && Objects.equals(this.referencePaths, historyTrafficEventDTO.referencePaths)
-            && Objects.equals(this.note, historyTrafficEventDTO.note)
-            && Objects.equals(this.eventStatus, historyTrafficEventDTO.eventStatus)
-            && Objects.equals(this.eventConfidence, historyTrafficEventDTO.eventConfidence)
-            && Objects.equals(this.eventExInfo, historyTrafficEventDTO.eventExInfo)
-            && Objects.equals(this.rsuId, historyTrafficEventDTO.rsuId)
-            && Objects.equals(this.startTime, historyTrafficEventDTO.startTime)
-            && Objects.equals(this.endTime, historyTrafficEventDTO.endTime)
-            && Objects.equals(this.createdTime, historyTrafficEventDTO.createdTime);
+        HistoryTrafficEventDTO that = (HistoryTrafficEventDTO) obj;
+        return Objects.equals(this.eventId, that.eventId) && Objects.equals(this.eventSourceType, that.eventSourceType)
+            && Objects.equals(this.eventSourceId, that.eventSourceId) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.areaCode, that.areaCode) && Objects.equals(this.eventClass, that.eventClass)
+            && Objects.equals(this.eventType, that.eventType) && Objects.equals(this.crossId, that.crossId)
+            && Objects.equals(this.eventDescription, that.eventDescription)
+            && Objects.equals(this.eventLevel, that.eventLevel) && Objects.equals(this.eventParams, that.eventParams)
+            && Objects.equals(this.eventPosition, that.eventPosition)
+            && Objects.equals(this.eventPositionName, that.eventPositionName)
+            && Objects.equals(this.referencePaths, that.referencePaths) && Objects.equals(this.note, that.note)
+            && Objects.equals(this.eventStatus, that.eventStatus)
+            && Objects.equals(this.eventConfidence, that.eventConfidence)
+            && Objects.equals(this.eventExInfo, that.eventExInfo) && Objects.equals(this.rsuId, that.rsuId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

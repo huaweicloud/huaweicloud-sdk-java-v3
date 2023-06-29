@@ -44,15 +44,15 @@ public class NeutronShowFirewallRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronShowFirewallRuleResponse neutronShowFirewallRuleResponse = (NeutronShowFirewallRuleResponse) o;
-        return Objects.equals(this.firewallRule, neutronShowFirewallRuleResponse.firewallRule);
+        NeutronShowFirewallRuleResponse that = (NeutronShowFirewallRuleResponse) obj;
+        return Objects.equals(this.firewallRule, that.firewallRule);
     }
 
     @Override

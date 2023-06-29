@@ -83,22 +83,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            ImageSourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImageSourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImageSourceTypeEnum(value));
         }
 
         public static ImageSourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImageSourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -177,22 +170,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImagetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImagetypeEnum(value));
         }
 
         public static ImagetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,22 +245,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            IsregisteredEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsregisteredEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsregisteredEnum(value));
         }
 
         public static IsregisteredEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsregisteredEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -346,22 +325,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsBitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsBitEnum(value));
         }
 
         public static OsBitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsBitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -434,22 +406,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -581,22 +546,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PlatformEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlatformEnum(value));
         }
 
         public static PlatformEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PlatformEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -746,22 +704,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DiskFormatEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DiskFormatEnum(value));
         }
 
         public static DiskFormatEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DiskFormatEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -896,22 +847,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -994,22 +938,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VirtualEnvTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VirtualEnvTypeEnum(value));
         }
 
         public static VirtualEnvTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1087,22 +1024,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VisibilityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VisibilityEnum(value));
         }
 
         public static VisibilityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VisibilityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1169,22 +1099,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            SupportFcInjectEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportFcInjectEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportFcInjectEnum(value));
         }
 
         public static SupportFcInjectEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportFcInjectEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1256,22 +1179,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            HwFirmwareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HwFirmwareTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HwFirmwareTypeEnum(value));
         }
 
         public static HwFirmwareTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HwFirmwareTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1338,22 +1254,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            SupportArmEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SupportArmEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SupportArmEnum(value));
         }
 
         public static SupportArmEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SupportArmEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1420,22 +1329,15 @@ public class GlanceShowImageResponseBody {
             if (value == null) {
                 return null;
             }
-            IsOffshelvedEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsOffshelvedEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsOffshelvedEnum(value));
         }
 
         public static IsOffshelvedEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IsOffshelvedEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -2629,74 +2531,54 @@ public class GlanceShowImageResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceShowImageResponseBody glanceShowImageResponseBody = (GlanceShowImageResponseBody) o;
-        return Objects.equals(this.backupId, glanceShowImageResponseBody.backupId)
-            && Objects.equals(this.dataOrigin, glanceShowImageResponseBody.dataOrigin)
-            && Objects.equals(this.description, glanceShowImageResponseBody.description)
-            && Objects.equals(this.imageSize, glanceShowImageResponseBody.imageSize)
-            && Objects.equals(this.imageSourceType, glanceShowImageResponseBody.imageSourceType)
-            && Objects.equals(this.imagetype, glanceShowImageResponseBody.imagetype)
-            && Objects.equals(this.isregistered, glanceShowImageResponseBody.isregistered)
-            && Objects.equals(this.originalimagename, glanceShowImageResponseBody.originalimagename)
-            && Objects.equals(this.osBit, glanceShowImageResponseBody.osBit)
-            && Objects.equals(this.osType, glanceShowImageResponseBody.osType)
-            && Objects.equals(this.osVersion, glanceShowImageResponseBody.osVersion)
-            && Objects.equals(this.platform, glanceShowImageResponseBody.platform)
-            && Objects.equals(this.productcode, glanceShowImageResponseBody.productcode)
-            && Objects.equals(this.supportDiskintensive, glanceShowImageResponseBody.supportDiskintensive)
-            && Objects.equals(this.supportHighperformance, glanceShowImageResponseBody.supportHighperformance)
-            && Objects.equals(this.supportKvm, glanceShowImageResponseBody.supportKvm)
-            && Objects.equals(this.supportKvmGpuType, glanceShowImageResponseBody.supportKvmGpuType)
-            && Objects.equals(this.supportKvmInfiniband, glanceShowImageResponseBody.supportKvmInfiniband)
-            && Objects.equals(this.supportLargememory, glanceShowImageResponseBody.supportLargememory)
-            && Objects.equals(this.supportXen, glanceShowImageResponseBody.supportXen)
-            && Objects.equals(this.supportXenGpuType, glanceShowImageResponseBody.supportXenGpuType)
-            && Objects.equals(this.supportXenHana, glanceShowImageResponseBody.supportXenHana)
-            && Objects.equals(this.checksum, glanceShowImageResponseBody.checksum)
-            && Objects.equals(this.containerFormat, glanceShowImageResponseBody.containerFormat)
-            && Objects.equals(this.createdAt, glanceShowImageResponseBody.createdAt)
-            && Objects.equals(this.diskFormat, glanceShowImageResponseBody.diskFormat)
-            && Objects.equals(this.file, glanceShowImageResponseBody.file)
-            && Objects.equals(this.id, glanceShowImageResponseBody.id)
-            && Objects.equals(this.minDisk, glanceShowImageResponseBody.minDisk)
-            && Objects.equals(this.minRam, glanceShowImageResponseBody.minRam)
-            && Objects.equals(this.name, glanceShowImageResponseBody.name)
-            && Objects.equals(this.owner, glanceShowImageResponseBody.owner)
-            && Objects.equals(this._protected, glanceShowImageResponseBody._protected)
-            && Objects.equals(this.schema, glanceShowImageResponseBody.schema)
-            && Objects.equals(this.self, glanceShowImageResponseBody.self)
-            && Objects.equals(this.size, glanceShowImageResponseBody.size)
-            && Objects.equals(this.status, glanceShowImageResponseBody.status)
-            && Objects.equals(this.tags, glanceShowImageResponseBody.tags)
-            && Objects.equals(this.updatedAt, glanceShowImageResponseBody.updatedAt)
-            && Objects.equals(this.virtualEnvType, glanceShowImageResponseBody.virtualEnvType)
-            && Objects.equals(this.virtualSize, glanceShowImageResponseBody.virtualSize)
-            && Objects.equals(this.visibility, glanceShowImageResponseBody.visibility)
-            && Objects.equals(this.supportFcInject, glanceShowImageResponseBody.supportFcInject)
-            && Objects.equals(this.enterpriseProjectId, glanceShowImageResponseBody.enterpriseProjectId)
-            && Objects.equals(this.hwFirmwareType, glanceShowImageResponseBody.hwFirmwareType)
-            && Objects.equals(this.supportArm, glanceShowImageResponseBody.supportArm)
-            && Objects.equals(this.isOffshelved, glanceShowImageResponseBody.isOffshelved)
-            && Objects.equals(this.lazyloading, glanceShowImageResponseBody.lazyloading)
-            && Objects.equals(this.osFeatureList, glanceShowImageResponseBody.osFeatureList)
-            && Objects.equals(this.rootOrigin, glanceShowImageResponseBody.rootOrigin)
-            && Objects.equals(this.sequenceNum, glanceShowImageResponseBody.sequenceNum)
-            && Objects.equals(this.supportAgentList, glanceShowImageResponseBody.supportAgentList)
-            && Objects.equals(this.systemCmkid, glanceShowImageResponseBody.systemCmkid)
-            && Objects.equals(this.activeAt, glanceShowImageResponseBody.activeAt)
-            && Objects.equals(this.hwVifMultiqueueEnabled, glanceShowImageResponseBody.hwVifMultiqueueEnabled)
-            && Objects.equals(this.maxRam, glanceShowImageResponseBody.maxRam)
-            && Objects.equals(this.imageLocation, glanceShowImageResponseBody.imageLocation)
-            && Objects.equals(this.isConfigInit, glanceShowImageResponseBody.isConfigInit)
-            && Objects.equals(this.accountCode, glanceShowImageResponseBody.accountCode)
-            && Objects.equals(this.supportAmd, glanceShowImageResponseBody.supportAmd);
+        GlanceShowImageResponseBody that = (GlanceShowImageResponseBody) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.dataOrigin, that.dataOrigin)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.imageSize, that.imageSize)
+            && Objects.equals(this.imageSourceType, that.imageSourceType)
+            && Objects.equals(this.imagetype, that.imagetype) && Objects.equals(this.isregistered, that.isregistered)
+            && Objects.equals(this.originalimagename, that.originalimagename) && Objects.equals(this.osBit, that.osBit)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.osVersion, that.osVersion)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.productcode, that.productcode)
+            && Objects.equals(this.supportDiskintensive, that.supportDiskintensive)
+            && Objects.equals(this.supportHighperformance, that.supportHighperformance)
+            && Objects.equals(this.supportKvm, that.supportKvm)
+            && Objects.equals(this.supportKvmGpuType, that.supportKvmGpuType)
+            && Objects.equals(this.supportKvmInfiniband, that.supportKvmInfiniband)
+            && Objects.equals(this.supportLargememory, that.supportLargememory)
+            && Objects.equals(this.supportXen, that.supportXen)
+            && Objects.equals(this.supportXenGpuType, that.supportXenGpuType)
+            && Objects.equals(this.supportXenHana, that.supportXenHana) && Objects.equals(this.checksum, that.checksum)
+            && Objects.equals(this.containerFormat, that.containerFormat)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.diskFormat, that.diskFormat)
+            && Objects.equals(this.file, that.file) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.minRam, that.minRam)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this._protected, that._protected) && Objects.equals(this.schema, that.schema)
+            && Objects.equals(this.self, that.self) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.virtualEnvType, that.virtualEnvType)
+            && Objects.equals(this.virtualSize, that.virtualSize) && Objects.equals(this.visibility, that.visibility)
+            && Objects.equals(this.supportFcInject, that.supportFcInject)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hwFirmwareType, that.hwFirmwareType)
+            && Objects.equals(this.supportArm, that.supportArm) && Objects.equals(this.isOffshelved, that.isOffshelved)
+            && Objects.equals(this.lazyloading, that.lazyloading)
+            && Objects.equals(this.osFeatureList, that.osFeatureList)
+            && Objects.equals(this.rootOrigin, that.rootOrigin) && Objects.equals(this.sequenceNum, that.sequenceNum)
+            && Objects.equals(this.supportAgentList, that.supportAgentList)
+            && Objects.equals(this.systemCmkid, that.systemCmkid) && Objects.equals(this.activeAt, that.activeAt)
+            && Objects.equals(this.hwVifMultiqueueEnabled, that.hwVifMultiqueueEnabled)
+            && Objects.equals(this.maxRam, that.maxRam) && Objects.equals(this.imageLocation, that.imageLocation)
+            && Objects.equals(this.isConfigInit, that.isConfigInit)
+            && Objects.equals(this.accountCode, that.accountCode) && Objects.equals(this.supportAmd, that.supportAmd);
     }
 
     @Override

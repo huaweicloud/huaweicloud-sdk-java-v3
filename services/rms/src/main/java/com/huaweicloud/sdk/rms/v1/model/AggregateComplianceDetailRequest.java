@@ -70,22 +70,15 @@ public class AggregateComplianceDetailRequest {
             if (value == null) {
                 return null;
             }
-            ComplianceStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ComplianceStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ComplianceStateEnum(value));
         }
 
         public static ComplianceStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ComplianceStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,18 @@ public class AggregateComplianceDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AggregateComplianceDetailRequest aggregateComplianceDetailRequest = (AggregateComplianceDetailRequest) o;
-        return Objects.equals(this.aggregatorId, aggregateComplianceDetailRequest.aggregatorId)
-            && Objects.equals(this.accountId, aggregateComplianceDetailRequest.accountId)
-            && Objects.equals(this.complianceState, aggregateComplianceDetailRequest.complianceState)
-            && Objects.equals(this.policyAssignmentName, aggregateComplianceDetailRequest.policyAssignmentName)
-            && Objects.equals(this.resourceName, aggregateComplianceDetailRequest.resourceName)
-            && Objects.equals(this.resourceId, aggregateComplianceDetailRequest.resourceId);
+        AggregateComplianceDetailRequest that = (AggregateComplianceDetailRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.resourceId, that.resourceId);
     }
 
     @Override

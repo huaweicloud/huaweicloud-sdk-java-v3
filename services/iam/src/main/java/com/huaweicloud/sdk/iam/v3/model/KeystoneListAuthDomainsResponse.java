@@ -84,16 +84,15 @@ public class KeystoneListAuthDomainsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListAuthDomainsResponse keystoneListAuthDomainsResponse = (KeystoneListAuthDomainsResponse) o;
-        return Objects.equals(this.domains, keystoneListAuthDomainsResponse.domains)
-            && Objects.equals(this.links, keystoneListAuthDomainsResponse.links);
+        KeystoneListAuthDomainsResponse that = (KeystoneListAuthDomainsResponse) obj;
+        return Objects.equals(this.domains, that.domains) && Objects.equals(this.links, that.links);
     }
 
     @Override

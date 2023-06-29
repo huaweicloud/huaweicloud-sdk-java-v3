@@ -122,19 +122,17 @@ public class AttachEipResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachEipResponse attachEipResponse = (AttachEipResponse) o;
-        return Objects.equals(this.jobId, attachEipResponse.jobId)
-            && Objects.equals(this.nodeId, attachEipResponse.nodeId)
-            && Objects.equals(this.nodeName, attachEipResponse.nodeName)
-            && Objects.equals(this.publicIpId, attachEipResponse.publicIpId)
-            && Objects.equals(this.publicIp, attachEipResponse.publicIp);
+        AttachEipResponse that = (AttachEipResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.nodeId, that.nodeId)
+            && Objects.equals(this.nodeName, that.nodeName) && Objects.equals(this.publicIpId, that.publicIpId)
+            && Objects.equals(this.publicIp, that.publicIp);
     }
 
     @Override

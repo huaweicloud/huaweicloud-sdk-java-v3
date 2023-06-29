@@ -1,43 +1,33 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ShowMetadataRespGesMetadataLabels
  */
-public class ShowMetadataRespGesMetadataLabels  {
-
+public class ShowMetadataRespGesMetadataLabels {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private List<Map<String, String>> properties = null;
-    
+
     public ShowMetadataRespGesMetadataLabels withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * Label名称。
@@ -51,16 +41,13 @@ public class ShowMetadataRespGesMetadataLabels  {
         this.name = name;
     }
 
-    
-
     public ShowMetadataRespGesMetadataLabels withProperties(List<Map<String, String>> properties) {
         this.properties = properties;
         return this;
     }
 
-    
     public ShowMetadataRespGesMetadataLabels addPropertiesItem(Map<String, String> propertiesItem) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
         this.properties.add(propertiesItem);
@@ -68,7 +55,7 @@ public class ShowMetadataRespGesMetadataLabels  {
     }
 
     public ShowMetadataRespGesMetadataLabels withProperties(Consumer<List<Map<String, String>>> propertiesSetter) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new ArrayList<>();
         }
         propertiesSetter.accept(this.properties);
@@ -87,24 +74,23 @@ public class ShowMetadataRespGesMetadataLabels  {
         this.properties = properties;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMetadataRespGesMetadataLabels showMetadataRespGesMetadataLabels = (ShowMetadataRespGesMetadataLabels) o;
-        return Objects.equals(this.name, showMetadataRespGesMetadataLabels.name) &&
-            Objects.equals(this.properties, showMetadataRespGesMetadataLabels.properties);
+        ShowMetadataRespGesMetadataLabels that = (ShowMetadataRespGesMetadataLabels) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.properties, that.properties);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, properties);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -114,6 +100,7 @@ public class ShowMetadataRespGesMetadataLabels  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -124,8 +111,5 @@ public class ShowMetadataRespGesMetadataLabels  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

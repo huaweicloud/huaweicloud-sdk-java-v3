@@ -114,22 +114,15 @@ public class ListFailureJobsRequest {
             if (value == null) {
                 return null;
             }
-            FailureStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FailureStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FailureStatusEnum(value));
         }
 
         public static FailureStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FailureStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,22 +212,15 @@ public class ListFailureJobsRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -372,20 +358,19 @@ public class ListFailureJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFailureJobsRequest listFailureJobsRequest = (ListFailureJobsRequest) o;
-        return Objects.equals(this.failureStatus, listFailureJobsRequest.failureStatus)
-            && Objects.equals(this.resourceName, listFailureJobsRequest.resourceName)
-            && Objects.equals(this.serverGroupId, listFailureJobsRequest.serverGroupId)
-            && Objects.equals(this.resourceType, listFailureJobsRequest.resourceType)
-            && Objects.equals(this.limit, listFailureJobsRequest.limit)
-            && Objects.equals(this.offset, listFailureJobsRequest.offset);
+        ListFailureJobsRequest that = (ListFailureJobsRequest) obj;
+        return Objects.equals(this.failureStatus, that.failureStatus)
+            && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.serverGroupId, that.serverGroupId)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

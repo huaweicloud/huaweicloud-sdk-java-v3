@@ -294,23 +294,21 @@ public class AppListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppListDto appListDto = (AppListDto) o;
-        return Objects.equals(this.id, appListDto.id) && Objects.equals(this.name, appListDto.name)
-            && Objects.equals(this.version, appListDto.version) && Objects.equals(this.summary, appListDto.summary)
-            && Objects.equals(this.description, appListDto.description)
-            && Objects.equals(this.labels, appListDto.labels) && Objects.equals(this.createTime, appListDto.createTime)
-            && Objects.equals(this.updateTime, appListDto.updateTime)
-            && Objects.equals(this.userName, appListDto.userName)
-            && Objects.equals(this.sourceProjectName, appListDto.sourceProjectName)
-            && Objects.equals(this.sourceResourceId, appListDto.sourceResourceId)
-            && Objects.equals(this.icon, appListDto.icon);
+        AppListDto that = (AppListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.summary, that.summary)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.sourceProjectName, that.sourceProjectName)
+            && Objects.equals(this.sourceResourceId, that.sourceResourceId) && Objects.equals(this.icon, that.icon);
     }
 
     @Override

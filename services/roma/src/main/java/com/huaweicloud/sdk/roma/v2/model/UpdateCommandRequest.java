@@ -111,18 +111,16 @@ public class UpdateCommandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCommandRequest updateCommandRequest = (UpdateCommandRequest) o;
-        return Objects.equals(this.instanceId, updateCommandRequest.instanceId)
-            && Objects.equals(this.serviceId, updateCommandRequest.serviceId)
-            && Objects.equals(this.commandId, updateCommandRequest.commandId)
-            && Objects.equals(this.body, updateCommandRequest.body);
+        UpdateCommandRequest that = (UpdateCommandRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.body, that.body);
     }
 
     @Override

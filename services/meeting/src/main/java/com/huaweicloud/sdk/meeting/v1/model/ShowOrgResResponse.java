@@ -166,21 +166,20 @@ public class ShowOrgResResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOrgResResponse showOrgResResponse = (ShowOrgResResponse) o;
-        return Objects.equals(this.usedRecStorage, showOrgResResponse.usedRecStorage)
-            && Objects.equals(this.usedAccountsCount, showOrgResResponse.usedAccountsCount)
-            && Objects.equals(this.usedLiveCount, showOrgResResponse.usedLiveCount)
-            && Objects.equals(this.confCount, showOrgResResponse.confCount)
-            && Objects.equals(this.confLength, showOrgResResponse.confLength)
-            && Objects.equals(this.activeAttendeeCount, showOrgResResponse.activeAttendeeCount)
-            && Objects.equals(this.totalAttendeeCount, showOrgResResponse.totalAttendeeCount);
+        ShowOrgResResponse that = (ShowOrgResResponse) obj;
+        return Objects.equals(this.usedRecStorage, that.usedRecStorage)
+            && Objects.equals(this.usedAccountsCount, that.usedAccountsCount)
+            && Objects.equals(this.usedLiveCount, that.usedLiveCount) && Objects.equals(this.confCount, that.confCount)
+            && Objects.equals(this.confLength, that.confLength)
+            && Objects.equals(this.activeAttendeeCount, that.activeAttendeeCount)
+            && Objects.equals(this.totalAttendeeCount, that.totalAttendeeCount);
     }
 
     @Override

@@ -14,16 +14,16 @@ public class CreateDesktopUserRequest {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "body")
 
-    private CreateUserReq body;
+    private CreateUserRequest body;
 
-    public CreateDesktopUserRequest withBody(CreateUserReq body) {
+    public CreateDesktopUserRequest withBody(CreateUserRequest body) {
         this.body = body;
         return this;
     }
 
-    public CreateDesktopUserRequest withBody(Consumer<CreateUserReq> bodySetter) {
+    public CreateDesktopUserRequest withBody(Consumer<CreateUserRequest> bodySetter) {
         if (this.body == null) {
-            this.body = new CreateUserReq();
+            this.body = new CreateUserRequest();
             bodySetter.accept(this.body);
         }
 
@@ -34,24 +34,24 @@ public class CreateDesktopUserRequest {
      * Get body
      * @return body
      */
-    public CreateUserReq getBody() {
+    public CreateUserRequest getBody() {
         return body;
     }
 
-    public void setBody(CreateUserReq body) {
+    public void setBody(CreateUserRequest body) {
         this.body = body;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDesktopUserRequest createDesktopUserRequest = (CreateDesktopUserRequest) o;
-        return Objects.equals(this.body, createDesktopUserRequest.body);
+        CreateDesktopUserRequest that = (CreateDesktopUserRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

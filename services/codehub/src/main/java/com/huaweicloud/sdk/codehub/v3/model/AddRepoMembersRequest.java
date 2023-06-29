@@ -65,16 +65,15 @@ public class AddRepoMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRepoMembersRequest addRepoMembersRequest = (AddRepoMembersRequest) o;
-        return Objects.equals(this.repositoryUuid, addRepoMembersRequest.repositoryUuid)
-            && Objects.equals(this.body, addRepoMembersRequest.body);
+        AddRepoMembersRequest that = (AddRepoMembersRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid) && Objects.equals(this.body, that.body);
     }
 
     @Override

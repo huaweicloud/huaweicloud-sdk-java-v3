@@ -131,19 +131,17 @@ public class ListIndicatorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIndicatorsRequest listIndicatorsRequest = (ListIndicatorsRequest) o;
-        return Objects.equals(this.workspaceId, listIndicatorsRequest.workspaceId)
-            && Objects.equals(this.order, listIndicatorsRequest.order)
-            && Objects.equals(this.fromDate, listIndicatorsRequest.fromDate)
-            && Objects.equals(this.toDate, listIndicatorsRequest.toDate)
-            && Objects.equals(this.body, listIndicatorsRequest.body);
+        ListIndicatorsRequest that = (ListIndicatorsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.fromDate, that.fromDate) && Objects.equals(this.toDate, that.toDate)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

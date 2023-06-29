@@ -101,16 +101,16 @@ public class Stage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Stage stage = (Stage) o;
-        return Objects.equals(this.name, stage.name) && Objects.equals(this.updateTime, stage.updateTime)
-            && Objects.equals(this.secretName, stage.secretName) && Objects.equals(this.versionId, stage.versionId);
+        Stage that = (Stage) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.secretName, that.secretName) && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

@@ -137,20 +137,18 @@ public class StartWorkflowExecutionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartWorkflowExecutionRequest startWorkflowExecutionRequest = (StartWorkflowExecutionRequest) o;
-        return Objects.equals(this.workflowId, startWorkflowExecutionRequest.workflowId)
-            && Objects.equals(this.xCreateTime, startWorkflowExecutionRequest.xCreateTime)
-            && Objects.equals(this.xWorkflowRunID, startWorkflowExecutionRequest.xWorkflowRunID)
-            && Objects.equals(this.xWorkflowRunMergeFnParameters,
-                startWorkflowExecutionRequest.xWorkflowRunMergeFnParameters)
-            && Objects.equals(this.body, startWorkflowExecutionRequest.body);
+        StartWorkflowExecutionRequest that = (StartWorkflowExecutionRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.xCreateTime, that.xCreateTime)
+            && Objects.equals(this.xWorkflowRunID, that.xWorkflowRunID)
+            && Objects.equals(this.xWorkflowRunMergeFnParameters, that.xWorkflowRunMergeFnParameters)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

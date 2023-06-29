@@ -1,98 +1,80 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库信息
  */
-public class DataBase  {
-
+public class DataBase {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charset")
-    
+    @JsonProperty(value = "charset")
 
     private String charset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip")
-    
+    @JsonProperty(value = "ip")
 
     private String ip;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="os")
-    
+    @JsonProperty(value = "os")
 
     private String os;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="audit_status")
-    
+    @JsonProperty(value = "audit_status")
 
     private String auditStatus;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agent_url")
-    
+    @JsonProperty(value = "agent_url")
+
     private List<String> agentUrl = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_classification")
-    
+    @JsonProperty(value = "db_classification")
 
     private String dbClassification;
 
@@ -100,9 +82,6 @@ public class DataBase  {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 数据库ID
@@ -116,15 +95,10 @@ public class DataBase  {
         this.id = id;
     }
 
-    
-
     public DataBase withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库名称
@@ -138,15 +112,10 @@ public class DataBase  {
         this.name = name;
     }
 
-    
-
     public DataBase withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 添加的数据库类型： 枚举值：  MYSQL  ORACLE  POSTGRESQL  SQLSERVER  DAMENG  TAURUS  DWS  KINGBASE  GAUSSDBOPENGAUSS   GREENPLUM   HIGHGO   SHENTONG   GBASE8A   GBASE8S   GBASEXDM   MONGODB   DDS
@@ -160,15 +129,10 @@ public class DataBase  {
         this.type = type;
     }
 
-    
-
     public DataBase withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 数据库版本
@@ -182,15 +146,10 @@ public class DataBase  {
         this.version = version;
     }
 
-    
-
     public DataBase withCharset(String charset) {
         this.charset = charset;
         return this;
     }
-
-    
-
 
     /**
      * 数据库字符集
@@ -204,15 +163,10 @@ public class DataBase  {
         this.charset = charset;
     }
 
-    
-
     public DataBase withIp(String ip) {
         this.ip = ip;
         return this;
     }
-
-    
-
 
     /**
      * 数据库IP
@@ -226,15 +180,10 @@ public class DataBase  {
         this.ip = ip;
     }
 
-    
-
     public DataBase withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口
@@ -248,15 +197,10 @@ public class DataBase  {
         this.port = port;
     }
 
-    
-
     public DataBase withOs(String os) {
         this.os = os;
         return this;
     }
-
-    
-
 
     /**
      * 数据库操作系统
@@ -270,15 +214,10 @@ public class DataBase  {
         this.os = os;
     }
 
-    
-
     public DataBase withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 开启状态（1：开启，0：关闭）
@@ -292,15 +231,10 @@ public class DataBase  {
         this.status = status;
     }
 
-    
-
     public DataBase withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 数据库实例名
@@ -314,15 +248,10 @@ public class DataBase  {
         this.instanceName = instanceName;
     }
 
-    
-
     public DataBase withAuditStatus(String auditStatus) {
         this.auditStatus = auditStatus;
         return this;
     }
-
-    
-
 
     /**
      * 数据库的运行状态 枚举值：  ACTIVE  SHUTOFF  ERROR
@@ -336,16 +265,13 @@ public class DataBase  {
         this.auditStatus = auditStatus;
     }
 
-    
-
     public DataBase withAgentUrl(List<String> agentUrl) {
         this.agentUrl = agentUrl;
         return this;
     }
 
-    
     public DataBase addAgentUrlItem(String agentUrlItem) {
-        if(this.agentUrl == null) {
+        if (this.agentUrl == null) {
             this.agentUrl = new ArrayList<>();
         }
         this.agentUrl.add(agentUrlItem);
@@ -353,7 +279,7 @@ public class DataBase  {
     }
 
     public DataBase withAgentUrl(Consumer<List<String>> agentUrlSetter) {
-        if(this.agentUrl == null) {
+        if (this.agentUrl == null) {
             this.agentUrl = new ArrayList<>();
         }
         agentUrlSetter.accept(this.agentUrl);
@@ -372,15 +298,10 @@ public class DataBase  {
         this.agentUrl = agentUrl;
     }
 
-    
-
     public DataBase withDbClassification(String dbClassification) {
         this.dbClassification = dbClassification;
         return this;
     }
-
-    
-
 
     /**
      * 数据库分类，取值范围： RDS（表示RDS数据库）和 ECS（自建数据库）
@@ -394,35 +315,41 @@ public class DataBase  {
         this.dbClassification = dbClassification;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataBase dataBase = (DataBase) o;
-        return Objects.equals(this.id, dataBase.id) &&
-            Objects.equals(this.name, dataBase.name) &&
-            Objects.equals(this.type, dataBase.type) &&
-            Objects.equals(this.version, dataBase.version) &&
-            Objects.equals(this.charset, dataBase.charset) &&
-            Objects.equals(this.ip, dataBase.ip) &&
-            Objects.equals(this.port, dataBase.port) &&
-            Objects.equals(this.os, dataBase.os) &&
-            Objects.equals(this.status, dataBase.status) &&
-            Objects.equals(this.instanceName, dataBase.instanceName) &&
-            Objects.equals(this.auditStatus, dataBase.auditStatus) &&
-            Objects.equals(this.agentUrl, dataBase.agentUrl) &&
-            Objects.equals(this.dbClassification, dataBase.dbClassification);
+        DataBase that = (DataBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.charset, that.charset) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.os, that.os)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.auditStatus, that.auditStatus) && Objects.equals(this.agentUrl, that.agentUrl)
+            && Objects.equals(this.dbClassification, that.dbClassification);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, type, version, charset, ip, port, os, status, instanceName, auditStatus, agentUrl, dbClassification);
+        return Objects.hash(id,
+            name,
+            type,
+            version,
+            charset,
+            ip,
+            port,
+            os,
+            status,
+            instanceName,
+            auditStatus,
+            agentUrl,
+            dbClassification);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -443,6 +370,7 @@ public class DataBase  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -453,8 +381,5 @@ public class DataBase  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -59,16 +59,16 @@ public class MetaData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetaData metaData = (MetaData) o;
-        return Objects.equals(this.systemEncrypted, metaData.systemEncrypted)
-            && Objects.equals(this.systemCmkid, metaData.systemCmkid);
+        MetaData that = (MetaData) obj;
+        return Objects.equals(this.systemEncrypted, that.systemEncrypted)
+            && Objects.equals(this.systemCmkid, that.systemCmkid);
     }
 
     @Override

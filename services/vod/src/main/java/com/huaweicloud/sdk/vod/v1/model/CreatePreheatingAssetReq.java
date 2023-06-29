@@ -74,16 +74,15 @@ public class CreatePreheatingAssetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePreheatingAssetReq createPreheatingAssetReq = (CreatePreheatingAssetReq) o;
-        return Objects.equals(this.assetId, createPreheatingAssetReq.assetId)
-            && Objects.equals(this.urls, createPreheatingAssetReq.urls);
+        CreatePreheatingAssetReq that = (CreatePreheatingAssetReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.urls, that.urls);
     }
 
     @Override

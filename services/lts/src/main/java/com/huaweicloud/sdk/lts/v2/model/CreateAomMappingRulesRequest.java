@@ -65,16 +65,15 @@ public class CreateAomMappingRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAomMappingRulesRequest createAomMappingRulesRequest = (CreateAomMappingRulesRequest) o;
-        return Objects.equals(this.isBatch, createAomMappingRulesRequest.isBatch)
-            && Objects.equals(this.body, createAomMappingRulesRequest.body);
+        CreateAomMappingRulesRequest that = (CreateAomMappingRulesRequest) obj;
+        return Objects.equals(this.isBatch, that.isBatch) && Objects.equals(this.body, that.body);
     }
 
     @Override

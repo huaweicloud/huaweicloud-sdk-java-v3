@@ -65,16 +65,15 @@ public class QuoteInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuoteInstanceRequest quoteInstanceRequest = (QuoteInstanceRequest) o;
-        return Objects.equals(this.eihealthProjectId, quoteInstanceRequest.eihealthProjectId)
-            && Objects.equals(this.body, quoteInstanceRequest.body);
+        QuoteInstanceRequest that = (QuoteInstanceRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -31,7 +31,7 @@ public class ListTaskHistoriesRequest {
     }
 
     /**
-     * 域名ID
+     * 网站域名ID
      * @return domainId
      */
     public String getDomainId() {
@@ -81,17 +81,16 @@ public class ListTaskHistoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskHistoriesRequest listTaskHistoriesRequest = (ListTaskHistoriesRequest) o;
-        return Objects.equals(this.domainId, listTaskHistoriesRequest.domainId)
-            && Objects.equals(this.offset, listTaskHistoriesRequest.offset)
-            && Objects.equals(this.limit, listTaskHistoriesRequest.limit);
+        ListTaskHistoriesRequest that = (ListTaskHistoriesRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

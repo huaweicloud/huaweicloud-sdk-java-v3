@@ -74,16 +74,15 @@ public class SynthesisResultItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SynthesisResultItem synthesisResultItem = (SynthesisResultItem) o;
-        return Objects.equals(this.route, synthesisResultItem.route)
-            && Objects.equals(this.score, synthesisResultItem.score);
+        SynthesisResultItem that = (SynthesisResultItem) obj;
+        return Objects.equals(this.route, that.route) && Objects.equals(this.score, that.score);
     }
 
     @Override

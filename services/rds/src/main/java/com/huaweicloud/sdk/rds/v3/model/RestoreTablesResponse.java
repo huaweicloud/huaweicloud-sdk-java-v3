@@ -34,15 +34,15 @@ public class RestoreTablesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreTablesResponse restoreTablesResponse = (RestoreTablesResponse) o;
-        return Objects.equals(this.jobId, restoreTablesResponse.jobId);
+        RestoreTablesResponse that = (RestoreTablesResponse) obj;
+        return Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

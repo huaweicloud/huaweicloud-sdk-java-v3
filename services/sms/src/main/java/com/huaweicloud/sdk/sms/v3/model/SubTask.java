@@ -197,18 +197,18 @@ public class SubTask {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubTask subTask = (SubTask) o;
-        return Objects.equals(this.id, subTask.id) && Objects.equals(this.name, subTask.name)
-            && Objects.equals(this.progress, subTask.progress) && Objects.equals(this.startDate, subTask.startDate)
-            && Objects.equals(this.endDate, subTask.endDate) && Objects.equals(this.migrateSpeed, subTask.migrateSpeed)
-            && Objects.equals(this.userOp, subTask.userOp) && Objects.equals(this.processTrace, subTask.processTrace);
+        SubTask that = (SubTask) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate) && Objects.equals(this.migrateSpeed, that.migrateSpeed)
+            && Objects.equals(this.userOp, that.userOp) && Objects.equals(this.processTrace, that.processTrace);
     }
 
     @Override

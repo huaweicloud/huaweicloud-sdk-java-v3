@@ -99,17 +99,16 @@ public class StorageParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageParameter storageParameter = (StorageParameter) o;
-        return Objects.equals(this.path, storageParameter.path) && Objects.equals(this.name, storageParameter.name)
-            && Objects.equals(this.defaultMode, storageParameter.defaultMode)
-            && Objects.equals(this.medium, storageParameter.medium);
+        StorageParameter that = (StorageParameter) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.defaultMode, that.defaultMode) && Objects.equals(this.medium, that.medium);
     }
 
     @Override

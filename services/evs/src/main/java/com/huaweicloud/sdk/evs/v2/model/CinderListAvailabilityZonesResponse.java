@@ -54,16 +54,15 @@ public class CinderListAvailabilityZonesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CinderListAvailabilityZonesResponse cinderListAvailabilityZonesResponse =
-            (CinderListAvailabilityZonesResponse) o;
-        return Objects.equals(this.availabilityZoneInfo, cinderListAvailabilityZonesResponse.availabilityZoneInfo);
+        CinderListAvailabilityZonesResponse that = (CinderListAvailabilityZonesResponse) obj;
+        return Objects.equals(this.availabilityZoneInfo, that.availabilityZoneInfo);
     }
 
     @Override

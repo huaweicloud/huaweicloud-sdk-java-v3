@@ -74,16 +74,15 @@ public class UpdateNamespaceAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNamespaceAuthRequest updateNamespaceAuthRequest = (UpdateNamespaceAuthRequest) o;
-        return Objects.equals(this.namespace, updateNamespaceAuthRequest.namespace)
-            && Objects.equals(this.body, updateNamespaceAuthRequest.body);
+        UpdateNamespaceAuthRequest that = (UpdateNamespaceAuthRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.body, that.body);
     }
 
     @Override

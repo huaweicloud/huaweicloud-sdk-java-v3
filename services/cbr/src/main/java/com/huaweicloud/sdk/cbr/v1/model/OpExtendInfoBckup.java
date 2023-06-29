@@ -70,22 +70,15 @@ public class OpExtendInfoBckup {
             if (value == null) {
                 return null;
             }
-            AppConsistencyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppConsistencyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppConsistencyStatusEnum(value));
         }
 
         public static AppConsistencyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppConsistencyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class OpExtendInfoBckup {
             if (value == null) {
                 return null;
             }
-            IncrementalEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IncrementalEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IncrementalEnum(value));
         }
 
         public static IncrementalEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IncrementalEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,20 +288,19 @@ public class OpExtendInfoBckup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoBckup opExtendInfoBckup = (OpExtendInfoBckup) o;
-        return Objects.equals(this.appConsistencyErrorCode, opExtendInfoBckup.appConsistencyErrorCode)
-            && Objects.equals(this.appConsistencyErrorMessage, opExtendInfoBckup.appConsistencyErrorMessage)
-            && Objects.equals(this.appConsistencyStatus, opExtendInfoBckup.appConsistencyStatus)
-            && Objects.equals(this.backupId, opExtendInfoBckup.backupId)
-            && Objects.equals(this.backupName, opExtendInfoBckup.backupName)
-            && Objects.equals(this.incremental, opExtendInfoBckup.incremental);
+        OpExtendInfoBckup that = (OpExtendInfoBckup) obj;
+        return Objects.equals(this.appConsistencyErrorCode, that.appConsistencyErrorCode)
+            && Objects.equals(this.appConsistencyErrorMessage, that.appConsistencyErrorMessage)
+            && Objects.equals(this.appConsistencyStatus, that.appConsistencyStatus)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupName, that.backupName)
+            && Objects.equals(this.incremental, that.incremental);
     }
 
     @Override

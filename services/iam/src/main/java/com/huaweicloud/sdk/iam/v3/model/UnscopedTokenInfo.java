@@ -203,19 +203,17 @@ public class UnscopedTokenInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnscopedTokenInfo unscopedTokenInfo = (UnscopedTokenInfo) o;
-        return Objects.equals(this.expiresAt, unscopedTokenInfo.expiresAt)
-            && Objects.equals(this.methods, unscopedTokenInfo.methods)
-            && Objects.equals(this.issuedAt, unscopedTokenInfo.issuedAt)
-            && Objects.equals(this.user, unscopedTokenInfo.user) && Objects.equals(this.roles, unscopedTokenInfo.roles)
-            && Objects.equals(this.catalog, unscopedTokenInfo.catalog);
+        UnscopedTokenInfo that = (UnscopedTokenInfo) obj;
+        return Objects.equals(this.expiresAt, that.expiresAt) && Objects.equals(this.methods, that.methods)
+            && Objects.equals(this.issuedAt, that.issuedAt) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.roles, that.roles) && Objects.equals(this.catalog, that.catalog);
     }
 
     @Override

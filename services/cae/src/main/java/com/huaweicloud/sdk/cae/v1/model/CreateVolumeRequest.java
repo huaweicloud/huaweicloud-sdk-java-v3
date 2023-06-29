@@ -91,17 +91,17 @@ public class CreateVolumeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeRequest createVolumeRequest = (CreateVolumeRequest) o;
-        return Objects.equals(this.xEnvironmentID, createVolumeRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, createVolumeRequest.xEnterpriseProjectID)
-            && Objects.equals(this.body, createVolumeRequest.body);
+        CreateVolumeRequest that = (CreateVolumeRequest) obj;
+        return Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

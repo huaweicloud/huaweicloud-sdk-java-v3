@@ -110,18 +110,16 @@ public class ShowMergeTaskCaseResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMergeTaskCaseResponse showMergeTaskCaseResponse = (ShowMergeTaskCaseResponse) o;
-        return Objects.equals(this.code, showMergeTaskCaseResponse.code)
-            && Objects.equals(this.message, showMergeTaskCaseResponse.message)
-            && Objects.equals(this.extend, showMergeTaskCaseResponse.extend)
-            && Objects.equals(this.result, showMergeTaskCaseResponse.result);
+        ShowMergeTaskCaseResponse that = (ShowMergeTaskCaseResponse) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.result, that.result);
     }
 
     @Override

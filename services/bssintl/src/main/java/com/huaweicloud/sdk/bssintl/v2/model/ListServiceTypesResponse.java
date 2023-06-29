@@ -75,16 +75,15 @@ public class ListServiceTypesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServiceTypesResponse listServiceTypesResponse = (ListServiceTypesResponse) o;
-        return Objects.equals(this.totalCount, listServiceTypesResponse.totalCount)
-            && Objects.equals(this.serviceTypes, listServiceTypesResponse.serviceTypes);
+        ListServiceTypesResponse that = (ListServiceTypesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.serviceTypes, that.serviceTypes);
     }
 
     @Override

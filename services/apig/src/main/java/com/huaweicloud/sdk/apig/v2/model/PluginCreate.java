@@ -89,22 +89,15 @@ public class PluginCreate {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginTypeEnum(value));
         }
 
         public static PluginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,22 +158,15 @@ public class PluginCreate {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginScopeEnum(value));
         }
 
         public static PluginScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -298,19 +284,17 @@ public class PluginCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PluginCreate pluginCreate = (PluginCreate) o;
-        return Objects.equals(this.pluginName, pluginCreate.pluginName)
-            && Objects.equals(this.pluginType, pluginCreate.pluginType)
-            && Objects.equals(this.pluginScope, pluginCreate.pluginScope)
-            && Objects.equals(this.pluginContent, pluginCreate.pluginContent)
-            && Objects.equals(this.remark, pluginCreate.remark);
+        PluginCreate that = (PluginCreate) obj;
+        return Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.pluginType, that.pluginType)
+            && Objects.equals(this.pluginScope, that.pluginScope)
+            && Objects.equals(this.pluginContent, that.pluginContent) && Objects.equals(this.remark, that.remark);
     }
 
     @Override

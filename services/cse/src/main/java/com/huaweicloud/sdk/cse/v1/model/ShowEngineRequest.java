@@ -57,16 +57,16 @@ public class ShowEngineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEngineRequest showEngineRequest = (ShowEngineRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, showEngineRequest.xEnterpriseProjectID)
-            && Objects.equals(this.engineId, showEngineRequest.engineId);
+        ShowEngineRequest that = (ShowEngineRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.engineId, that.engineId);
     }
 
     @Override

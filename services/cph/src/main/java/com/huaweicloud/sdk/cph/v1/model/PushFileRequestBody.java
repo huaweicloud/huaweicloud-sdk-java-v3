@@ -134,18 +134,16 @@ public class PushFileRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushFileRequestBody pushFileRequestBody = (PushFileRequestBody) o;
-        return Objects.equals(this.command, pushFileRequestBody.command)
-            && Objects.equals(this.content, pushFileRequestBody.content)
-            && Objects.equals(this.phoneIds, pushFileRequestBody.phoneIds)
-            && Objects.equals(this.serverIds, pushFileRequestBody.serverIds);
+        PushFileRequestBody that = (PushFileRequestBody) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.phoneIds, that.phoneIds) && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

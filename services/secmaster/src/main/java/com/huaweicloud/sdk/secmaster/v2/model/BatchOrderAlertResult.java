@@ -90,16 +90,15 @@ public class BatchOrderAlertResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchOrderAlertResult batchOrderAlertResult = (BatchOrderAlertResult) o;
-        return Objects.equals(this.errorIds, batchOrderAlertResult.errorIds)
-            && Objects.equals(this.successIds, batchOrderAlertResult.successIds);
+        BatchOrderAlertResult that = (BatchOrderAlertResult) obj;
+        return Objects.equals(this.errorIds, that.errorIds) && Objects.equals(this.successIds, that.successIds);
     }
 
     @Override

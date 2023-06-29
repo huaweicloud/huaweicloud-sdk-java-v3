@@ -124,19 +124,17 @@ public class ShowListPeriodHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowListPeriodHistoryRequest showListPeriodHistoryRequest = (ShowListPeriodHistoryRequest) o;
-        return Objects.equals(this.jobId, showListPeriodHistoryRequest.jobId)
-            && Objects.equals(this.offset, showListPeriodHistoryRequest.offset)
-            && Objects.equals(this.limit, showListPeriodHistoryRequest.limit)
-            && Objects.equals(this.startTime, showListPeriodHistoryRequest.startTime)
-            && Objects.equals(this.endTime, showListPeriodHistoryRequest.endTime);
+        ShowListPeriodHistoryRequest that = (ShowListPeriodHistoryRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

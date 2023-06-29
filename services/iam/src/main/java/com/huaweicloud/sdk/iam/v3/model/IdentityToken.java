@@ -57,16 +57,15 @@ public class IdentityToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IdentityToken identityToken = (IdentityToken) o;
-        return Objects.equals(this.id, identityToken.id)
-            && Objects.equals(this.durationSeconds, identityToken.durationSeconds);
+        IdentityToken that = (IdentityToken) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.durationSeconds, that.durationSeconds);
     }
 
     @Override

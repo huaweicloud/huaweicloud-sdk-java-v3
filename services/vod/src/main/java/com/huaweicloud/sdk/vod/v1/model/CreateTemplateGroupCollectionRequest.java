@@ -67,17 +67,15 @@ public class CreateTemplateGroupCollectionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTemplateGroupCollectionRequest createTemplateGroupCollectionRequest =
-            (CreateTemplateGroupCollectionRequest) o;
-        return Objects.equals(this.xSdkDate, createTemplateGroupCollectionRequest.xSdkDate)
-            && Objects.equals(this.body, createTemplateGroupCollectionRequest.body);
+        CreateTemplateGroupCollectionRequest that = (CreateTemplateGroupCollectionRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.body, that.body);
     }
 
     @Override

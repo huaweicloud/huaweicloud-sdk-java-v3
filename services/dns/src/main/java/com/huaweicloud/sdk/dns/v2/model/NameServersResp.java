@@ -96,16 +96,16 @@ public class NameServersResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NameServersResp nameServersResp = (NameServersResp) o;
-        return Objects.equals(this.type, nameServersResp.type) && Objects.equals(this.region, nameServersResp.region)
-            && Objects.equals(this.nsRecords, nameServersResp.nsRecords);
+        NameServersResp that = (NameServersResp) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.nsRecords, that.nsRecords);
     }
 
     @Override

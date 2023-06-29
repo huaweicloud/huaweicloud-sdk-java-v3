@@ -122,18 +122,16 @@ public class ListVaultResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVaultResponse listVaultResponse = (ListVaultResponse) o;
-        return Objects.equals(this.vaults, listVaultResponse.vaults)
-            && Objects.equals(this.count, listVaultResponse.count)
-            && Objects.equals(this.limit, listVaultResponse.limit)
-            && Objects.equals(this.offset, listVaultResponse.offset);
+        ListVaultResponse that = (ListVaultResponse) obj;
+        return Objects.equals(this.vaults, that.vaults) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

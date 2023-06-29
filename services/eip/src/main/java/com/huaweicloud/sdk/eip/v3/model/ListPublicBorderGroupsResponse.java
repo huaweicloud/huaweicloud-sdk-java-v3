@@ -78,16 +78,16 @@ public class ListPublicBorderGroupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPublicBorderGroupsResponse listPublicBorderGroupsResponse = (ListPublicBorderGroupsResponse) o;
-        return Objects.equals(this.publicBorderGroups, listPublicBorderGroupsResponse.publicBorderGroups)
-            && Objects.equals(this.requestId, listPublicBorderGroupsResponse.requestId);
+        ListPublicBorderGroupsResponse that = (ListPublicBorderGroupsResponse) obj;
+        return Objects.equals(this.publicBorderGroups, that.publicBorderGroups)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

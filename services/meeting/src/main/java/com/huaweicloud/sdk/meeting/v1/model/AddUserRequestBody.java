@@ -167,21 +167,18 @@ public class AddUserRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddUserRequestBody addUserRequestBody = (AddUserRequestBody) o;
-        return Objects.equals(this.name, addUserRequestBody.name)
-            && Objects.equals(this.contact, addUserRequestBody.contact)
-            && Objects.equals(this.country, addUserRequestBody.country)
-            && Objects.equals(this.deptCode, addUserRequestBody.deptCode)
-            && Objects.equals(this.title, addUserRequestBody.title)
-            && Objects.equals(this.sortLevel, addUserRequestBody.sortLevel)
-            && Objects.equals(this.desc, addUserRequestBody.desc);
+        AddUserRequestBody that = (AddUserRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.contact, that.contact)
+            && Objects.equals(this.country, that.country) && Objects.equals(this.deptCode, that.deptCode)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.sortLevel, that.sortLevel)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

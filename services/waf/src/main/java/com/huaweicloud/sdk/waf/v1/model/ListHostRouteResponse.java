@@ -75,16 +75,15 @@ public class ListHostRouteResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostRouteResponse listHostRouteResponse = (ListHostRouteResponse) o;
-        return Objects.equals(this.total, listHostRouteResponse.total)
-            && Objects.equals(this.items, listHostRouteResponse.items);
+        ListHostRouteResponse that = (ListHostRouteResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.items, that.items);
     }
 
     @Override

@@ -79,16 +79,16 @@ public class ExtensionStar {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionStar extensionStar = (ExtensionStar) o;
-        return Objects.equals(this.extensionId, extensionStar.extensionId)
-            && Objects.equals(this.comment, extensionStar.comment) && Objects.equals(this.stars, extensionStar.stars);
+        ExtensionStar that = (ExtensionStar) obj;
+        return Objects.equals(this.extensionId, that.extensionId) && Objects.equals(this.comment, that.comment)
+            && Objects.equals(this.stars, that.stars);
     }
 
     @Override

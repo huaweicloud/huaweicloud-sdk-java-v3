@@ -55,16 +55,15 @@ public class ObsBuckets {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObsBuckets obsBuckets = (ObsBuckets) o;
-        return Objects.equals(this.bucketName, obsBuckets.bucketName)
-            && Objects.equals(this.createTime, obsBuckets.createTime);
+        ObsBuckets that = (ObsBuckets) obj;
+        return Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

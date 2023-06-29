@@ -77,16 +77,16 @@ public class CommitsCommits {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommitsCommits commitsCommits = (CommitsCommits) o;
-        return Objects.equals(this.sha, commitsCommits.sha) && Objects.equals(this.message, commitsCommits.message)
-            && Objects.equals(this.authoredDate, commitsCommits.authoredDate);
+        CommitsCommits that = (CommitsCommits) obj;
+        return Objects.equals(this.sha, that.sha) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.authoredDate, that.authoredDate);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class UpdateEdgeSiteResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeSiteResponse updateEdgeSiteResponse = (UpdateEdgeSiteResponse) o;
-        return Objects.equals(this.edgeSite, updateEdgeSiteResponse.edgeSite);
+        UpdateEdgeSiteResponse that = (UpdateEdgeSiteResponse) obj;
+        return Objects.equals(this.edgeSite, that.edgeSite);
     }
 
     @Override

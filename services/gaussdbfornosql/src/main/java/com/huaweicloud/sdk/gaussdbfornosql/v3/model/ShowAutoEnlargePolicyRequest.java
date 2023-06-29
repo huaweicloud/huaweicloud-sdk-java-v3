@@ -33,15 +33,15 @@ public class ShowAutoEnlargePolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoEnlargePolicyRequest showAutoEnlargePolicyRequest = (ShowAutoEnlargePolicyRequest) o;
-        return Objects.equals(this.instanceId, showAutoEnlargePolicyRequest.instanceId);
+        ShowAutoEnlargePolicyRequest that = (ShowAutoEnlargePolicyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

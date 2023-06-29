@@ -86,22 +86,15 @@ public class FlowLogResp {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -179,22 +172,15 @@ public class FlowLogResp {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrafficTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrafficTypeEnum(value));
         }
 
         public static TrafficTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,15 @@ public class FlowLogResp {
             if (value == null) {
                 return null;
             }
-            LogStoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogStoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogStoreTypeEnum(value));
         }
 
         public static LogStoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogStoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -368,22 +347,15 @@ public class FlowLogResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -644,27 +616,21 @@ public class FlowLogResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlowLogResp flowLogResp = (FlowLogResp) o;
-        return Objects.equals(this.id, flowLogResp.id) && Objects.equals(this.name, flowLogResp.name)
-            && Objects.equals(this.tenantId, flowLogResp.tenantId)
-            && Objects.equals(this.description, flowLogResp.description)
-            && Objects.equals(this.resourceType, flowLogResp.resourceType)
-            && Objects.equals(this.resourceId, flowLogResp.resourceId)
-            && Objects.equals(this.trafficType, flowLogResp.trafficType)
-            && Objects.equals(this.logGroupId, flowLogResp.logGroupId)
-            && Objects.equals(this.logTopicId, flowLogResp.logTopicId)
-            && Objects.equals(this.logStoreType, flowLogResp.logStoreType)
-            && Objects.equals(this.createdAt, flowLogResp.createdAt)
-            && Objects.equals(this.updatedAt, flowLogResp.updatedAt)
-            && Objects.equals(this.adminState, flowLogResp.adminState)
-            && Objects.equals(this.status, flowLogResp.status);
+        FlowLogResp that = (FlowLogResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logTopicId, that.logTopicId) && Objects.equals(this.logStoreType, that.logStoreType)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.adminState, that.adminState) && Objects.equals(this.status, that.status);
     }
 
     @Override

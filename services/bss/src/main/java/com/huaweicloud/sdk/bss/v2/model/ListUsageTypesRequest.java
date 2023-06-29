@@ -105,18 +105,17 @@ public class ListUsageTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUsageTypesRequest listUsageTypesRequest = (ListUsageTypesRequest) o;
-        return Objects.equals(this.xLanguage, listUsageTypesRequest.xLanguage)
-            && Objects.equals(this.resourceTypeCode, listUsageTypesRequest.resourceTypeCode)
-            && Objects.equals(this.offset, listUsageTypesRequest.offset)
-            && Objects.equals(this.limit, listUsageTypesRequest.limit);
+        ListUsageTypesRequest that = (ListUsageTypesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.resourceTypeCode, that.resourceTypeCode) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

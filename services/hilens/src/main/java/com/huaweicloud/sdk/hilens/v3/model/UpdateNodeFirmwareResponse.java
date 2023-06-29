@@ -56,16 +56,15 @@ public class UpdateNodeFirmwareResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNodeFirmwareResponse updateNodeFirmwareResponse = (UpdateNodeFirmwareResponse) o;
-        return Objects.equals(this.firmwareName, updateNodeFirmwareResponse.firmwareName)
-            && Objects.equals(this.firmwareId, updateNodeFirmwareResponse.firmwareId);
+        UpdateNodeFirmwareResponse that = (UpdateNodeFirmwareResponse) obj;
+        return Objects.equals(this.firmwareName, that.firmwareName) && Objects.equals(this.firmwareId, that.firmwareId);
     }
 
     @Override

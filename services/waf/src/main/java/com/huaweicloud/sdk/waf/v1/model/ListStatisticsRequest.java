@@ -121,19 +121,17 @@ public class ListStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatisticsRequest listStatisticsRequest = (ListStatisticsRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listStatisticsRequest.from)
-            && Objects.equals(this.to, listStatisticsRequest.to)
-            && Objects.equals(this.hosts, listStatisticsRequest.hosts)
-            && Objects.equals(this.instances, listStatisticsRequest.instances);
+        ListStatisticsRequest that = (ListStatisticsRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances);
     }
 
     @Override

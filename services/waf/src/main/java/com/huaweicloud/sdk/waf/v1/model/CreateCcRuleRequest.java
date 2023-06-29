@@ -87,17 +87,16 @@ public class CreateCcRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCcRuleRequest createCcRuleRequest = (CreateCcRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createCcRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, createCcRuleRequest.policyId)
-            && Objects.equals(this.body, createCcRuleRequest.body);
+        CreateCcRuleRequest that = (CreateCcRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

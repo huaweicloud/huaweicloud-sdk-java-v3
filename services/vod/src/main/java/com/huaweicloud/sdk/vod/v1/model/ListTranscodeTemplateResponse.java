@@ -76,16 +76,15 @@ public class ListTranscodeTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTranscodeTemplateResponse listTranscodeTemplateResponse = (ListTranscodeTemplateResponse) o;
-        return Objects.equals(this.templateGroupList, listTranscodeTemplateResponse.templateGroupList)
-            && Objects.equals(this.total, listTranscodeTemplateResponse.total);
+        ListTranscodeTemplateResponse that = (ListTranscodeTemplateResponse) obj;
+        return Objects.equals(this.templateGroupList, that.templateGroupList) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -371,31 +371,24 @@ public class ListCustomerselfResourceRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerselfResourceRecordsRequest listCustomerselfResourceRecordsRequest =
-            (ListCustomerselfResourceRecordsRequest) o;
-        return Objects.equals(this.xLanguage, listCustomerselfResourceRecordsRequest.xLanguage)
-            && Objects.equals(this.cycle, listCustomerselfResourceRecordsRequest.cycle)
-            && Objects.equals(this.cloudServiceType, listCustomerselfResourceRecordsRequest.cloudServiceType)
-            && Objects.equals(this.region, listCustomerselfResourceRecordsRequest.region)
-            && Objects.equals(this.chargeMode, listCustomerselfResourceRecordsRequest.chargeMode)
-            && Objects.equals(this.billType, listCustomerselfResourceRecordsRequest.billType)
-            && Objects.equals(this.offset, listCustomerselfResourceRecordsRequest.offset)
-            && Objects.equals(this.limit, listCustomerselfResourceRecordsRequest.limit)
-            && Objects.equals(this.resourceId, listCustomerselfResourceRecordsRequest.resourceId)
-            && Objects.equals(this.enterpriseProjectId, listCustomerselfResourceRecordsRequest.enterpriseProjectId)
-            && Objects.equals(this.includeZeroRecord, listCustomerselfResourceRecordsRequest.includeZeroRecord)
-            && Objects.equals(this.method, listCustomerselfResourceRecordsRequest.method)
-            && Objects.equals(this.subCustomerId, listCustomerselfResourceRecordsRequest.subCustomerId)
-            && Objects.equals(this.tradeId, listCustomerselfResourceRecordsRequest.tradeId)
-            && Objects.equals(this.billDateBegin, listCustomerselfResourceRecordsRequest.billDateBegin)
-            && Objects.equals(this.billDateEnd, listCustomerselfResourceRecordsRequest.billDateEnd);
+        ListCustomerselfResourceRecordsRequest that = (ListCustomerselfResourceRecordsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.billType, that.billType)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.includeZeroRecord, that.includeZeroRecord)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.subCustomerId, that.subCustomerId)
+            && Objects.equals(this.tradeId, that.tradeId) && Objects.equals(this.billDateBegin, that.billDateBegin)
+            && Objects.equals(this.billDateEnd, that.billDateEnd);
     }
 
     @Override

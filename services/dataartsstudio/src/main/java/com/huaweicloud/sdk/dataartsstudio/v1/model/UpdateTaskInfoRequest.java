@@ -87,17 +87,16 @@ public class UpdateTaskInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskInfoRequest updateTaskInfoRequest = (UpdateTaskInfoRequest) o;
-        return Objects.equals(this.workspace, updateTaskInfoRequest.workspace)
-            && Objects.equals(this.taskId, updateTaskInfoRequest.taskId)
-            && Objects.equals(this.body, updateTaskInfoRequest.body);
+        UpdateTaskInfoRequest that = (UpdateTaskInfoRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

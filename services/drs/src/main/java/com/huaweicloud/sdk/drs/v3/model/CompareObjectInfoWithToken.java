@@ -75,16 +75,16 @@ public class CompareObjectInfoWithToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CompareObjectInfoWithToken compareObjectInfoWithToken = (CompareObjectInfoWithToken) o;
-        return Objects.equals(this.dbName, compareObjectInfoWithToken.dbName)
-            && Objects.equals(this.tableNameWithToken, compareObjectInfoWithToken.tableNameWithToken);
+        CompareObjectInfoWithToken that = (CompareObjectInfoWithToken) obj;
+        return Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.tableNameWithToken, that.tableNameWithToken);
     }
 
     @Override

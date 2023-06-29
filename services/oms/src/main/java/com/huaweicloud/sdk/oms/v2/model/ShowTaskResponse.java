@@ -201,22 +201,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -289,22 +282,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            GroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new GroupTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new GroupTypeEnum(value));
         }
 
         public static GroupTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            GroupTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -420,22 +406,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ObjectOverwriteModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ObjectOverwriteModeEnum(value));
         }
 
         public static ObjectOverwriteModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ObjectOverwriteModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -508,22 +487,15 @@ public class ShowTaskResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistencyCheckEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistencyCheckEnum(value));
         }
 
         public static ConsistencyCheckEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsistencyCheckEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1280,50 +1252,39 @@ public class ShowTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskResponse showTaskResponse = (ShowTaskResponse) o;
-        return Objects.equals(this.bandwidthPolicy, showTaskResponse.bandwidthPolicy)
-            && Objects.equals(this.completeSize, showTaskResponse.completeSize)
-            && Objects.equals(this.description, showTaskResponse.description)
-            && Objects.equals(this.dstNode, showTaskResponse.dstNode)
-            && Objects.equals(this.enableFailedObjectRecording, showTaskResponse.enableFailedObjectRecording)
-            && Objects.equals(this.enableKms, showTaskResponse.enableKms)
-            && Objects.equals(this.enableMetadataMigration, showTaskResponse.enableMetadataMigration)
-            && Objects.equals(this.enableRestore, showTaskResponse.enableRestore)
-            && Objects.equals(this.errorReason, showTaskResponse.errorReason)
-            && Objects.equals(this.failedNum, showTaskResponse.failedNum)
-            && Objects.equals(this.failedObjectRecord, showTaskResponse.failedObjectRecord)
-            && Objects.equals(this.groupId, showTaskResponse.groupId) && Objects.equals(this.id, showTaskResponse.id)
-            && Objects.equals(this.isQueryOver, showTaskResponse.isQueryOver)
-            && Objects.equals(this.leftTime, showTaskResponse.leftTime)
-            && Objects.equals(this.migrateSince, showTaskResponse.migrateSince)
-            && Objects.equals(this.migrateSpeed, showTaskResponse.migrateSpeed)
-            && Objects.equals(this.name, showTaskResponse.name)
-            && Objects.equals(this.progress, showTaskResponse.progress)
-            && Objects.equals(this.realSize, showTaskResponse.realSize)
-            && Objects.equals(this.skippedNum, showTaskResponse.skippedNum)
-            && Objects.equals(this.srcNode, showTaskResponse.srcNode)
-            && Objects.equals(this.startTime, showTaskResponse.startTime)
-            && Objects.equals(this.status, showTaskResponse.status)
-            && Objects.equals(this.successfulNum, showTaskResponse.successfulNum)
-            && Objects.equals(this.taskType, showTaskResponse.taskType)
-            && Objects.equals(this.groupType, showTaskResponse.groupType)
-            && Objects.equals(this.totalNum, showTaskResponse.totalNum)
-            && Objects.equals(this.totalSize, showTaskResponse.totalSize)
-            && Objects.equals(this.totalTime, showTaskResponse.totalTime)
-            && Objects.equals(this.smnInfo, showTaskResponse.smnInfo)
-            && Objects.equals(this.sourceCdn, showTaskResponse.sourceCdn)
-            && Objects.equals(this.successRecordErrorReason, showTaskResponse.successRecordErrorReason)
-            && Objects.equals(this.skipRecordErrorReason, showTaskResponse.skipRecordErrorReason)
-            && Objects.equals(this.objectOverwriteMode, showTaskResponse.objectOverwriteMode)
-            && Objects.equals(this.consistencyCheck, showTaskResponse.consistencyCheck)
-            && Objects.equals(this.enableRequesterPays, showTaskResponse.enableRequesterPays);
+        ShowTaskResponse that = (ShowTaskResponse) obj;
+        return Objects.equals(this.bandwidthPolicy, that.bandwidthPolicy)
+            && Objects.equals(this.completeSize, that.completeSize)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.dstNode, that.dstNode)
+            && Objects.equals(this.enableFailedObjectRecording, that.enableFailedObjectRecording)
+            && Objects.equals(this.enableKms, that.enableKms)
+            && Objects.equals(this.enableMetadataMigration, that.enableMetadataMigration)
+            && Objects.equals(this.enableRestore, that.enableRestore)
+            && Objects.equals(this.errorReason, that.errorReason) && Objects.equals(this.failedNum, that.failedNum)
+            && Objects.equals(this.failedObjectRecord, that.failedObjectRecord)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.isQueryOver, that.isQueryOver) && Objects.equals(this.leftTime, that.leftTime)
+            && Objects.equals(this.migrateSince, that.migrateSince)
+            && Objects.equals(this.migrateSpeed, that.migrateSpeed) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.progress, that.progress) && Objects.equals(this.realSize, that.realSize)
+            && Objects.equals(this.skippedNum, that.skippedNum) && Objects.equals(this.srcNode, that.srcNode)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.successfulNum, that.successfulNum) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.groupType, that.groupType) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.totalSize, that.totalSize) && Objects.equals(this.totalTime, that.totalTime)
+            && Objects.equals(this.smnInfo, that.smnInfo) && Objects.equals(this.sourceCdn, that.sourceCdn)
+            && Objects.equals(this.successRecordErrorReason, that.successRecordErrorReason)
+            && Objects.equals(this.skipRecordErrorReason, that.skipRecordErrorReason)
+            && Objects.equals(this.objectOverwriteMode, that.objectOverwriteMode)
+            && Objects.equals(this.consistencyCheck, that.consistencyCheck)
+            && Objects.equals(this.enableRequesterPays, that.enableRequesterPays);
     }
 
     @Override

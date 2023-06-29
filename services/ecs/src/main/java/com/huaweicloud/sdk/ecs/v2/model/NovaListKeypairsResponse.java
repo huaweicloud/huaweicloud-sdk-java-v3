@@ -53,15 +53,15 @@ public class NovaListKeypairsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NovaListKeypairsResponse novaListKeypairsResponse = (NovaListKeypairsResponse) o;
-        return Objects.equals(this.keypairs, novaListKeypairsResponse.keypairs);
+        NovaListKeypairsResponse that = (NovaListKeypairsResponse) obj;
+        return Objects.equals(this.keypairs, that.keypairs);
     }
 
     @Override

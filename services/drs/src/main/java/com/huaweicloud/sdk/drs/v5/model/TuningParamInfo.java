@@ -166,18 +166,16 @@ public class TuningParamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TuningParamInfo tuningParamInfo = (TuningParamInfo) o;
-        return Objects.equals(this.fullSync, tuningParamInfo.fullSync)
-            && Objects.equals(this.increCapture, tuningParamInfo.increCapture)
-            && Objects.equals(this.increApply, tuningParamInfo.increApply)
-            && Objects.equals(this.increRelay, tuningParamInfo.increRelay);
+        TuningParamInfo that = (TuningParamInfo) obj;
+        return Objects.equals(this.fullSync, that.fullSync) && Objects.equals(this.increCapture, that.increCapture)
+            && Objects.equals(this.increApply, that.increApply) && Objects.equals(this.increRelay, that.increRelay);
     }
 
     @Override

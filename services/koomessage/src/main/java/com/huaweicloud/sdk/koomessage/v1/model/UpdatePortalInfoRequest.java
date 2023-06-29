@@ -65,16 +65,15 @@ public class UpdatePortalInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePortalInfoRequest updatePortalInfoRequest = (UpdatePortalInfoRequest) o;
-        return Objects.equals(this.portalId, updatePortalInfoRequest.portalId)
-            && Objects.equals(this.body, updatePortalInfoRequest.body);
+        UpdatePortalInfoRequest that = (UpdatePortalInfoRequest) obj;
+        return Objects.equals(this.portalId, that.portalId) && Objects.equals(this.body, that.body);
     }
 
     @Override

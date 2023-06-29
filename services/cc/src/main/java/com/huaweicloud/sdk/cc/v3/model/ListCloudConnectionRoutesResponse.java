@@ -109,17 +109,16 @@ public class ListCloudConnectionRoutesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCloudConnectionRoutesResponse listCloudConnectionRoutesResponse = (ListCloudConnectionRoutesResponse) o;
-        return Objects.equals(this.cloudConnectionRoutes, listCloudConnectionRoutesResponse.cloudConnectionRoutes)
-            && Objects.equals(this.pageInfo, listCloudConnectionRoutesResponse.pageInfo)
-            && Objects.equals(this.requestId, listCloudConnectionRoutesResponse.requestId);
+        ListCloudConnectionRoutesResponse that = (ListCloudConnectionRoutesResponse) obj;
+        return Objects.equals(this.cloudConnectionRoutes, that.cloudConnectionRoutes)
+            && Objects.equals(this.pageInfo, that.pageInfo) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

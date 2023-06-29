@@ -65,16 +65,15 @@ public class BatchDeleteOtpDevicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteOtpDevicesRequest batchDeleteOtpDevicesRequest = (BatchDeleteOtpDevicesRequest) o;
-        return Objects.equals(this.userId, batchDeleteOtpDevicesRequest.userId)
-            && Objects.equals(this.body, batchDeleteOtpDevicesRequest.body);
+        BatchDeleteOtpDevicesRequest that = (BatchDeleteOtpDevicesRequest) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.body, that.body);
     }
 
     @Override

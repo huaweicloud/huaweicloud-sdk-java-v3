@@ -110,17 +110,16 @@ public class MetricDataDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDataDetail metricDataDetail = (MetricDataDetail) o;
-        return Objects.equals(this.name, metricDataDetail.name) && Objects.equals(this.value, metricDataDetail.value)
-            && Objects.equals(this.readAt, metricDataDetail.readAt)
-            && Objects.equals(this.dimension, metricDataDetail.dimension);
+        MetricDataDetail that = (MetricDataDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.readAt, that.readAt) && Objects.equals(this.dimension, that.dimension);
     }
 
     @Override

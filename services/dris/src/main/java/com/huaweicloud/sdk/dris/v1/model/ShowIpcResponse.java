@@ -130,22 +130,15 @@ public class ShowIpcResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -421,26 +414,23 @@ public class ShowIpcResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIpcResponse showIpcResponse = (ShowIpcResponse) o;
-        return Objects.equals(this.cameraId, showIpcResponse.cameraId)
-            && Objects.equals(this.v2xEdgeId, showIpcResponse.v2xEdgeId)
-            && Objects.equals(this.name, showIpcResponse.name) && Objects.equals(this.crossId, showIpcResponse.crossId)
-            && Objects.equals(this.focalType, showIpcResponse.focalType)
-            && Objects.equals(this.parentConnectCode, showIpcResponse.parentConnectCode)
-            && Objects.equals(this.connectCode, showIpcResponse.connectCode)
-            && Objects.equals(this.description, showIpcResponse.description)
-            && Objects.equals(this.esn, showIpcResponse.esn) && Objects.equals(this.ip, showIpcResponse.ip)
-            && Objects.equals(this.status, showIpcResponse.status)
-            && Objects.equals(this.createdTime, showIpcResponse.createdTime)
-            && Objects.equals(this.lastModifiedTime, showIpcResponse.lastModifiedTime)
-            && Objects.equals(this.lastOnlineTime, showIpcResponse.lastOnlineTime);
+        ShowIpcResponse that = (ShowIpcResponse) obj;
+        return Objects.equals(this.cameraId, that.cameraId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.crossId, that.crossId)
+            && Objects.equals(this.focalType, that.focalType)
+            && Objects.equals(this.parentConnectCode, that.parentConnectCode)
+            && Objects.equals(this.connectCode, that.connectCode) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime);
     }
 
     @Override

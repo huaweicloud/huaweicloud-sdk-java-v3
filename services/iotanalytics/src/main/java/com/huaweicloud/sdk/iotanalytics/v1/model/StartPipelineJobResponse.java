@@ -34,15 +34,15 @@ public class StartPipelineJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartPipelineJobResponse startPipelineJobResponse = (StartPipelineJobResponse) o;
-        return Objects.equals(this.pipelineId, startPipelineJobResponse.pipelineId);
+        StartPipelineJobResponse that = (StartPipelineJobResponse) obj;
+        return Objects.equals(this.pipelineId, that.pipelineId);
     }
 
     @Override

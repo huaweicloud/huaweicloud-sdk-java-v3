@@ -74,15 +74,15 @@ public class Formula {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Formula formula = (Formula) o;
-        return Objects.equals(this.formula, formula.formula) && Objects.equals(this.formulas, formula.formulas);
+        Formula that = (Formula) obj;
+        return Objects.equals(this.formula, that.formula) && Objects.equals(this.formulas, that.formulas);
     }
 
     @Override

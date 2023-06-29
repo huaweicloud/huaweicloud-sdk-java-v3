@@ -379,6 +379,36 @@ public class WorkspaceClient {
     }
 
     /**
+     * 批量注销桌面
+     *
+     * 批量注销桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchLogoffDesktopsRequest 请求对象
+     * @return BatchLogoffDesktopsResponse
+     */
+    public BatchLogoffDesktopsResponse batchLogoffDesktops(BatchLogoffDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchLogoffDesktops);
+    }
+
+    /**
+     * 批量注销桌面
+     *
+     * 批量注销桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchLogoffDesktopsRequest 请求对象
+     * @return SyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse>
+     */
+    public SyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse> batchLogoffDesktopsInvoker(
+        BatchLogoffDesktopsRequest request) {
+        return new SyncInvoker<BatchLogoffDesktopsRequest, BatchLogoffDesktopsResponse>(request,
+            WorkspaceMeta.batchLogoffDesktops, hcClient);
+    }
+
+    /**
      * 操作桌面
      *
      * 批量操作桌面，用于批量开机、关机和重启。
@@ -585,6 +615,276 @@ public class WorkspaceClient {
     }
 
     /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUnusedDesktopsRequest 请求对象
+     * @return ListUnusedDesktopsResponse
+     */
+    public ListUnusedDesktopsResponse listUnusedDesktops(ListUnusedDesktopsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listUnusedDesktops);
+    }
+
+    /**
+     * 查询在指定时间段未使用的桌面
+     *
+     * 查询在指定时间段未使用的桌面。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUnusedDesktopsRequest 请求对象
+     * @return SyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>
+     */
+    public SyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse> listUnusedDesktopsInvoker(
+        ListUnusedDesktopsRequest request) {
+        return new SyncInvoker<ListUnusedDesktopsRequest, ListUnusedDesktopsResponse>(request,
+            WorkspaceMeta.listUnusedDesktops, hcClient);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsedDesktopInfoRequest 请求对象
+     * @return ListUsedDesktopInfoResponse
+     */
+    public ListUsedDesktopInfoResponse listUsedDesktopInfo(ListUsedDesktopInfoRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listUsedDesktopInfo);
+    }
+
+    /**
+     * 查询使用桌面的时长
+     *
+     * 查询使用桌面的时长。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsedDesktopInfoRequest 请求对象
+     * @return SyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>
+     */
+    public SyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse> listUsedDesktopInfoInvoker(
+        ListUsedDesktopInfoRequest request) {
+        return new SyncInvoker<ListUsedDesktopInfoRequest, ListUsedDesktopInfoResponse>(request,
+            WorkspaceMeta.listUsedDesktopInfo, hcClient);
+    }
+
+    /**
+     * 批量删除用户组
+     *
+     * 该接口用于批量删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteUserGroupsRequest 请求对象
+     * @return BatchDeleteUserGroupsResponse
+     */
+    public BatchDeleteUserGroupsResponse batchDeleteUserGroups(BatchDeleteUserGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDeleteUserGroups);
+    }
+
+    /**
+     * 批量删除用户组
+     *
+     * 该接口用于批量删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDeleteUserGroupsRequest 请求对象
+     * @return SyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse>
+     */
+    public SyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse> batchDeleteUserGroupsInvoker(
+        BatchDeleteUserGroupsRequest request) {
+        return new SyncInvoker<BatchDeleteUserGroupsRequest, BatchDeleteUserGroupsResponse>(request,
+            WorkspaceMeta.batchDeleteUserGroups, hcClient);
+    }
+
+    /**
+     * 创建用户组
+     *
+     * 该接口用于创建用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUserGroupRequest 请求对象
+     * @return CreateUserGroupResponse
+     */
+    public CreateUserGroupResponse createUserGroup(CreateUserGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.createUserGroup);
+    }
+
+    /**
+     * 创建用户组
+     *
+     * 该接口用于创建用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param CreateUserGroupRequest 请求对象
+     * @return SyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse>
+     */
+    public SyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse> createUserGroupInvoker(
+        CreateUserGroupRequest request) {
+        return new SyncInvoker<CreateUserGroupRequest, CreateUserGroupResponse>(request, WorkspaceMeta.createUserGroup,
+            hcClient);
+    }
+
+    /**
+     * 删除用户组
+     *
+     * 删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteUserGroupRequest 请求对象
+     * @return DeleteUserGroupResponse
+     */
+    public DeleteUserGroupResponse deleteUserGroup(DeleteUserGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.deleteUserGroup);
+    }
+
+    /**
+     * 删除用户组
+     *
+     * 删除用户组。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param DeleteUserGroupRequest 请求对象
+     * @return SyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse>
+     */
+    public SyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse> deleteUserGroupInvoker(
+        DeleteUserGroupRequest request) {
+        return new SyncInvoker<DeleteUserGroupRequest, DeleteUserGroupResponse>(request, WorkspaceMeta.deleteUserGroup,
+            hcClient);
+    }
+
+    /**
+     * 查询用户组列表
+     *
+     * 查询用户组列表，支持分页。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserGroupsRequest 请求对象
+     * @return ListUserGroupsResponse
+     */
+    public ListUserGroupsResponse listUserGroups(ListUserGroupsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listUserGroups);
+    }
+
+    /**
+     * 查询用户组列表
+     *
+     * 查询用户组列表，支持分页。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUserGroupsRequest 请求对象
+     * @return SyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse>
+     */
+    public SyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse> listUserGroupsInvoker(
+        ListUserGroupsRequest request) {
+        return new SyncInvoker<ListUserGroupsRequest, ListUserGroupsResponse>(request, WorkspaceMeta.listUserGroups,
+            hcClient);
+    }
+
+    /**
+     * 查询用户组中的用户
+     *
+     * 该接口用于查询用户组中的用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersOfGroupRequest 请求对象
+     * @return ListUsersOfGroupResponse
+     */
+    public ListUsersOfGroupResponse listUsersOfGroup(ListUsersOfGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listUsersOfGroup);
+    }
+
+    /**
+     * 查询用户组中的用户
+     *
+     * 该接口用于查询用户组中的用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListUsersOfGroupRequest 请求对象
+     * @return SyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse>
+     */
+    public SyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse> listUsersOfGroupInvoker(
+        ListUsersOfGroupRequest request) {
+        return new SyncInvoker<ListUsersOfGroupRequest, ListUsersOfGroupResponse>(request,
+            WorkspaceMeta.listUsersOfGroup, hcClient);
+    }
+
+    /**
+     * 操作用户组
+     *
+     * 操作用户组，如添加用户、删除用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunActionsOnGroupRequest 请求对象
+     * @return RunActionsOnGroupResponse
+     */
+    public RunActionsOnGroupResponse runActionsOnGroup(RunActionsOnGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.runActionsOnGroup);
+    }
+
+    /**
+     * 操作用户组
+     *
+     * 操作用户组，如添加用户、删除用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param RunActionsOnGroupRequest 请求对象
+     * @return SyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse>
+     */
+    public SyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse> runActionsOnGroupInvoker(
+        RunActionsOnGroupRequest request) {
+        return new SyncInvoker<RunActionsOnGroupRequest, RunActionsOnGroupResponse>(request,
+            WorkspaceMeta.runActionsOnGroup, hcClient);
+    }
+
+    /**
+     * 修改用户组信息
+     *
+     * 该接口用于修改用户组信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateUserGroupRequest 请求对象
+     * @return UpdateUserGroupResponse
+     */
+    public UpdateUserGroupResponse updateUserGroup(UpdateUserGroupRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.updateUserGroup);
+    }
+
+    /**
+     * 修改用户组信息
+     *
+     * 该接口用于修改用户组信息。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param UpdateUserGroupRequest 请求对象
+     * @return SyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse>
+     */
+    public SyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse> updateUserGroupInvoker(
+        UpdateUserGroupRequest request) {
+        return new SyncInvoker<UpdateUserGroupRequest, UpdateUserGroupResponse>(request, WorkspaceMeta.updateUserGroup,
+            hcClient);
+    }
+
+    /**
      * 查询产品镜像列表
      *
      * 该接口用于查询云桌面支持的产品镜像列表。
@@ -640,6 +940,127 @@ public class WorkspaceClient {
         ListItaSubJobsRequest request) {
         return new SyncInvoker<ListItaSubJobsRequest, ListItaSubJobsResponse>(request, WorkspaceMeta.listItaSubJobs,
             hcClient);
+    }
+
+    /**
+     * 开通桌面上网功能
+     *
+     * 开通桌面上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyDesktopsInternetRequest 请求对象
+     * @return ApplyDesktopsInternetResponse
+     */
+    public ApplyDesktopsInternetResponse applyDesktopsInternet(ApplyDesktopsInternetRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.applyDesktopsInternet);
+    }
+
+    /**
+     * 开通桌面上网功能
+     *
+     * 开通桌面上网功能。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ApplyDesktopsInternetRequest 请求对象
+     * @return SyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse>
+     */
+    public SyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse> applyDesktopsInternetInvoker(
+        ApplyDesktopsInternetRequest request) {
+        return new SyncInvoker<ApplyDesktopsInternetRequest, ApplyDesktopsInternetResponse>(request,
+            WorkspaceMeta.applyDesktopsInternet, hcClient);
+    }
+
+    /**
+     * 桌面绑定EIP
+     *
+     * 桌面绑定EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateDesktopsEipRequest 请求对象
+     * @return AssociateDesktopsEipResponse
+     */
+    public AssociateDesktopsEipResponse associateDesktopsEip(AssociateDesktopsEipRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.associateDesktopsEip);
+    }
+
+    /**
+     * 桌面绑定EIP
+     *
+     * 桌面绑定EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param AssociateDesktopsEipRequest 请求对象
+     * @return SyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse>
+     */
+    public SyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse> associateDesktopsEipInvoker(
+        AssociateDesktopsEipRequest request) {
+        return new SyncInvoker<AssociateDesktopsEipRequest, AssociateDesktopsEipResponse>(request,
+            WorkspaceMeta.associateDesktopsEip, hcClient);
+    }
+
+    /**
+     * 批量桌面解绑EIP
+     *
+     * 批量桌面解绑EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDesktopsEipRequest 请求对象
+     * @return BatchDisassociateDesktopsEipResponse
+     */
+    public BatchDisassociateDesktopsEipResponse batchDisassociateDesktopsEip(
+        BatchDisassociateDesktopsEipRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchDisassociateDesktopsEip);
+    }
+
+    /**
+     * 批量桌面解绑EIP
+     *
+     * 批量桌面解绑EIP。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchDisassociateDesktopsEipRequest 请求对象
+     * @return SyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse>
+     */
+    public SyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse> batchDisassociateDesktopsEipInvoker(
+        BatchDisassociateDesktopsEipRequest request) {
+        return new SyncInvoker<BatchDisassociateDesktopsEipRequest, BatchDisassociateDesktopsEipResponse>(request,
+            WorkspaceMeta.batchDisassociateDesktopsEip, hcClient);
+    }
+
+    /**
+     * 查询已绑定桌面和未绑定的Eip
+     *
+     * 查询已绑定桌面和未绑定的Eip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopsEipsRequest 请求对象
+     * @return ListDesktopsEipsResponse
+     */
+    public ListDesktopsEipsResponse listDesktopsEips(ListDesktopsEipsRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.listDesktopsEips);
+    }
+
+    /**
+     * 查询已绑定桌面和未绑定的Eip
+     *
+     * 查询已绑定桌面和未绑定的Eip。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ListDesktopsEipsRequest 请求对象
+     * @return SyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse>
+     */
+    public SyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse> listDesktopsEipsInvoker(
+        ListDesktopsEipsRequest request) {
+        return new SyncInvoker<ListDesktopsEipsRequest, ListDesktopsEipsResponse>(request,
+            WorkspaceMeta.listDesktopsEips, hcClient);
     }
 
     /**
@@ -886,9 +1307,39 @@ public class WorkspaceClient {
     }
 
     /**
+     * 批量创建用户
+     *
+     * 该接口用于批量创建用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateUsersRequest 请求对象
+     * @return BatchCreateUsersResponse
+     */
+    public BatchCreateUsersResponse batchCreateUsers(BatchCreateUsersRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.batchCreateUsers);
+    }
+
+    /**
+     * 批量创建用户
+     *
+     * 该接口用于批量创建用户。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param BatchCreateUsersRequest 请求对象
+     * @return SyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse>
+     */
+    public SyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse> batchCreateUsersInvoker(
+        BatchCreateUsersRequest request) {
+        return new SyncInvoker<BatchCreateUsersRequest, BatchCreateUsersResponse>(request,
+            WorkspaceMeta.batchCreateUsers, hcClient);
+    }
+
+    /**
      * 解绑OTP设备
      *
-     * 该接口用于解绑用户的OTP设备
+     * 该接口用于解绑用户的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -902,7 +1353,7 @@ public class WorkspaceClient {
     /**
      * 解绑OTP设备
      *
-     * 该接口用于解绑用户的OTP设备
+     * 该接口用于解绑用户的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -918,7 +1369,7 @@ public class WorkspaceClient {
     /**
      * 操作用户
      *
-     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码（重置密码建议使用/v2/{project_id}/users/{user_id}/random-password接口，在没有通知方式的情况下必须使用/v2/{project_id}/users/{user_id}/random-password接口）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -932,7 +1383,7 @@ public class WorkspaceClient {
     /**
      * 操作用户
      *
-     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码。
+     * 该接口用于操作用户，包含三种操作：锁定、解锁和重置密码（重置密码建议使用/v2/{project_id}/users/{user_id}/random-password接口，在没有通知方式的情况下必须使用/v2/{project_id}/users/{user_id}/random-password接口）。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1004,9 +1455,9 @@ public class WorkspaceClient {
     }
 
     /**
-     * 查询MFA设备
+     * 查询OTP设备
      *
-     * 该接口用于查询相应用户下面的MFA设备
+     * 该接口用于查询相应用户下面的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1018,9 +1469,9 @@ public class WorkspaceClient {
     }
 
     /**
-     * 查询MFA设备
+     * 查询OTP设备
      *
-     * 该接口用于查询相应用户下面的MFA设备
+     * 该接口用于查询相应用户下面的OTP设备。
      * 
      * Please refer to HUAWEI cloud API Explorer for details.
      *
@@ -1089,6 +1540,36 @@ public class WorkspaceClient {
      */
     public SyncInvoker<ListUsersRequest, ListUsersResponse> listUsersInvoker(ListUsersRequest request) {
         return new SyncInvoker<ListUsersRequest, ListUsersResponse>(request, WorkspaceMeta.listUsers, hcClient);
+    }
+
+    /**
+     * 给用户重置随机密码
+     *
+     * 该接口用于给用户重置一个密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetRandomPasswordRequest 请求对象
+     * @return ResetRandomPasswordResponse
+     */
+    public ResetRandomPasswordResponse resetRandomPassword(ResetRandomPasswordRequest request) {
+        return hcClient.syncInvokeHttp(request, WorkspaceMeta.resetRandomPassword);
+    }
+
+    /**
+     * 给用户重置随机密码
+     *
+     * 该接口用于给用户重置一个密码。
+     * 
+     * Please refer to HUAWEI cloud API Explorer for details.
+     *
+     * @param ResetRandomPasswordRequest 请求对象
+     * @return SyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse>
+     */
+    public SyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse> resetRandomPasswordInvoker(
+        ResetRandomPasswordRequest request) {
+        return new SyncInvoker<ResetRandomPasswordRequest, ResetRandomPasswordResponse>(request,
+            WorkspaceMeta.resetRandomPassword, hcClient);
     }
 
     /**

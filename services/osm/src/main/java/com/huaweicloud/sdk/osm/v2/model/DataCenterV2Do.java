@@ -103,17 +103,16 @@ public class DataCenterV2Do {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataCenterV2Do dataCenterV2Do = (DataCenterV2Do) o;
-        return Objects.equals(this.type, dataCenterV2Do.type) && Objects.equals(this.regionId, dataCenterV2Do.regionId)
-            && Objects.equals(this.regionName, dataCenterV2Do.regionName)
-            && Objects.equals(this.isSensitive, dataCenterV2Do.isSensitive);
+        DataCenterV2Do that = (DataCenterV2Do) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.regionName, that.regionName) && Objects.equals(this.isSensitive, that.isSensitive);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DeleteTriggerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTriggerRequest deleteTriggerRequest = (DeleteTriggerRequest) o;
-        return Objects.equals(this.namespace, deleteTriggerRequest.namespace)
-            && Objects.equals(this.repository, deleteTriggerRequest.repository)
-            && Objects.equals(this.trigger, deleteTriggerRequest.trigger);
+        DeleteTriggerRequest that = (DeleteTriggerRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class InstanceConfig {
             if (value == null) {
                 return null;
             }
-            ConfigNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConfigNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfigNameEnum(value));
         }
 
         public static ConfigNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConfigNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -198,19 +191,17 @@ public class InstanceConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceConfig instanceConfig = (InstanceConfig) o;
-        return Objects.equals(this.configId, instanceConfig.configId)
-            && Objects.equals(this.configName, instanceConfig.configName)
-            && Objects.equals(this.configValue, instanceConfig.configValue)
-            && Objects.equals(this.configTime, instanceConfig.configTime)
-            && Objects.equals(this.remark, instanceConfig.remark);
+        InstanceConfig that = (InstanceConfig) obj;
+        return Objects.equals(this.configId, that.configId) && Objects.equals(this.configName, that.configName)
+            && Objects.equals(this.configValue, that.configValue) && Objects.equals(this.configTime, that.configTime)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

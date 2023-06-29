@@ -55,15 +55,15 @@ public class GroupBy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GroupBy groupBy = (GroupBy) o;
-        return Objects.equals(this.type, groupBy.type) && Objects.equals(this.key, groupBy.key);
+        GroupBy that = (GroupBy) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.key, that.key);
     }
 
     @Override

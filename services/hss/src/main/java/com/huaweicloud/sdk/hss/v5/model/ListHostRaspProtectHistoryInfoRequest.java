@@ -241,25 +241,20 @@ public class ListHostRaspProtectHistoryInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostRaspProtectHistoryInfoRequest listHostRaspProtectHistoryInfoRequest =
-            (ListHostRaspProtectHistoryInfoRequest) o;
-        return Objects.equals(this.region, listHostRaspProtectHistoryInfoRequest.region)
-            && Objects.equals(this.enterpriseProjectId, listHostRaspProtectHistoryInfoRequest.enterpriseProjectId)
-            && Objects.equals(this.hostId, listHostRaspProtectHistoryInfoRequest.hostId)
-            && Objects.equals(this.startTime, listHostRaspProtectHistoryInfoRequest.startTime)
-            && Objects.equals(this.endTime, listHostRaspProtectHistoryInfoRequest.endTime)
-            && Objects.equals(this.limit, listHostRaspProtectHistoryInfoRequest.limit)
-            && Objects.equals(this.offset, listHostRaspProtectHistoryInfoRequest.offset)
-            && Objects.equals(this.alarmLevel, listHostRaspProtectHistoryInfoRequest.alarmLevel)
-            && Objects.equals(this.severity, listHostRaspProtectHistoryInfoRequest.severity)
-            && Objects.equals(this.protectStatus, listHostRaspProtectHistoryInfoRequest.protectStatus);
+        ListHostRaspProtectHistoryInfoRequest that = (ListHostRaspProtectHistoryInfoRequest) obj;
+        return Objects.equals(this.region, that.region)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.protectStatus, that.protectStatus);
     }
 
     @Override

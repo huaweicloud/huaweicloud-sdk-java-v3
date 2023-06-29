@@ -65,16 +65,15 @@ public class BatchAddPeersToChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddPeersToChannelRequest batchAddPeersToChannelRequest = (BatchAddPeersToChannelRequest) o;
-        return Objects.equals(this.blockchainId, batchAddPeersToChannelRequest.blockchainId)
-            && Objects.equals(this.body, batchAddPeersToChannelRequest.body);
+        BatchAddPeersToChannelRequest that = (BatchAddPeersToChannelRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

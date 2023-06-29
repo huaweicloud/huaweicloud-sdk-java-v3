@@ -55,15 +55,15 @@ public class Context {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Context context = (Context) o;
-        return Objects.equals(this.cluster, context.cluster) && Objects.equals(this.user, context.user);
+        Context that = (Context) obj;
+        return Objects.equals(this.cluster, that.cluster) && Objects.equals(this.user, that.user);
     }
 
     @Override

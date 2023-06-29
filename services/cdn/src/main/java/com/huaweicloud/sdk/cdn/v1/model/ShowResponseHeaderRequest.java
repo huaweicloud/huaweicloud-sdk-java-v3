@@ -55,16 +55,16 @@ public class ShowResponseHeaderRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResponseHeaderRequest showResponseHeaderRequest = (ShowResponseHeaderRequest) o;
-        return Objects.equals(this.domainId, showResponseHeaderRequest.domainId)
-            && Objects.equals(this.enterpriseProjectId, showResponseHeaderRequest.enterpriseProjectId);
+        ShowResponseHeaderRequest that = (ShowResponseHeaderRequest) obj;
+        return Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

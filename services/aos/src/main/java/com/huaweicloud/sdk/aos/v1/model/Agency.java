@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 委托授权的信息
  */
-public class Agency  {
-
+public class Agency {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="provider_name")
-    
+    @JsonProperty(value = "provider_name")
 
     private String providerName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="agency_name")
-    
+    @JsonProperty(value = "agency_name")
 
     private String agencyName;
 
@@ -33,9 +24,6 @@ public class Agency  {
         this.providerName = providerName;
         return this;
     }
-
-    
-
 
     /**
      * 用户使用的provider的名字。如果用户给与的provider_name含有重复的值，则返回400
@@ -49,15 +37,10 @@ public class Agency  {
         this.providerName = providerName;
     }
 
-    
-
     public Agency withAgencyName(String agencyName) {
         this.agencyName = agencyName;
         return this;
     }
-
-    
-
 
     /**
      * 对应provider所使用的IAM委托名称，资源编排服务会使用此委托的权限去访问、创建对应provider的资源
@@ -71,24 +54,23 @@ public class Agency  {
         this.agencyName = agencyName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Agency agency = (Agency) o;
-        return Objects.equals(this.providerName, agency.providerName) &&
-            Objects.equals(this.agencyName, agency.agencyName);
+        Agency that = (Agency) obj;
+        return Objects.equals(this.providerName, that.providerName) && Objects.equals(this.agencyName, that.agencyName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(providerName, agencyName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class Agency  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class Agency  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

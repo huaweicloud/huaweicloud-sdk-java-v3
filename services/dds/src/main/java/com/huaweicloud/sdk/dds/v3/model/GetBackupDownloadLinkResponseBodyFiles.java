@@ -99,19 +99,17 @@ public class GetBackupDownloadLinkResponseBodyFiles {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetBackupDownloadLinkResponseBodyFiles getBackupDownloadLinkResponseBodyFiles =
-            (GetBackupDownloadLinkResponseBodyFiles) o;
-        return Objects.equals(this.name, getBackupDownloadLinkResponseBodyFiles.name)
-            && Objects.equals(this.size, getBackupDownloadLinkResponseBodyFiles.size)
-            && Objects.equals(this.downloadLink, getBackupDownloadLinkResponseBodyFiles.downloadLink)
-            && Objects.equals(this.linkExpiredTime, getBackupDownloadLinkResponseBodyFiles.linkExpiredTime);
+        GetBackupDownloadLinkResponseBodyFiles that = (GetBackupDownloadLinkResponseBodyFiles) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.downloadLink, that.downloadLink)
+            && Objects.equals(this.linkExpiredTime, that.linkExpiredTime);
     }
 
     @Override

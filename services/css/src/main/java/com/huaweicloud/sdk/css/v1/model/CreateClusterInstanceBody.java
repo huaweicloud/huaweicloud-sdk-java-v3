@@ -118,18 +118,16 @@ public class CreateClusterInstanceBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterInstanceBody createClusterInstanceBody = (CreateClusterInstanceBody) o;
-        return Objects.equals(this.flavorRef, createClusterInstanceBody.flavorRef)
-            && Objects.equals(this.volume, createClusterInstanceBody.volume)
-            && Objects.equals(this.nics, createClusterInstanceBody.nics)
-            && Objects.equals(this.availabilityZone, createClusterInstanceBody.availabilityZone);
+        CreateClusterInstanceBody that = (CreateClusterInstanceBody) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

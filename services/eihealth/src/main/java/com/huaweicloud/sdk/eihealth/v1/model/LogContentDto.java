@@ -55,16 +55,15 @@ public class LogContentDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogContentDto logContentDto = (LogContentDto) o;
-        return Objects.equals(this.collectTime, logContentDto.collectTime)
-            && Objects.equals(this.content, logContentDto.content);
+        LogContentDto that = (LogContentDto) obj;
+        return Objects.equals(this.collectTime, that.collectTime) && Objects.equals(this.content, that.content);
     }
 
     @Override

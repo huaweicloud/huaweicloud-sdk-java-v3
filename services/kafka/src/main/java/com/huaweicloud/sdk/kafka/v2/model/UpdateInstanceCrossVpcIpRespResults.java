@@ -77,18 +77,16 @@ public class UpdateInstanceCrossVpcIpRespResults {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstanceCrossVpcIpRespResults updateInstanceCrossVpcIpRespResults =
-            (UpdateInstanceCrossVpcIpRespResults) o;
-        return Objects.equals(this.advertisedIp, updateInstanceCrossVpcIpRespResults.advertisedIp)
-            && Objects.equals(this.success, updateInstanceCrossVpcIpRespResults.success)
-            && Objects.equals(this.ip, updateInstanceCrossVpcIpRespResults.ip);
+        UpdateInstanceCrossVpcIpRespResults that = (UpdateInstanceCrossVpcIpRespResults) obj;
+        return Objects.equals(this.advertisedIp, that.advertisedIp) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.ip, that.ip);
     }
 
     @Override

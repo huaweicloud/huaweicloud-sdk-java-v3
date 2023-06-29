@@ -55,16 +55,15 @@ public class RoutingRuleSubject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoutingRuleSubject routingRuleSubject = (RoutingRuleSubject) o;
-        return Objects.equals(this.resource, routingRuleSubject.resource)
-            && Objects.equals(this.event, routingRuleSubject.event);
+        RoutingRuleSubject that = (RoutingRuleSubject) obj;
+        return Objects.equals(this.resource, that.resource) && Objects.equals(this.event, that.event);
     }
 
     @Override

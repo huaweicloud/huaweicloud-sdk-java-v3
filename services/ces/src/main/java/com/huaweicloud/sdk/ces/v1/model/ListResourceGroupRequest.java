@@ -121,19 +121,17 @@ public class ListResourceGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceGroupRequest listResourceGroupRequest = (ListResourceGroupRequest) o;
-        return Objects.equals(this.groupName, listResourceGroupRequest.groupName)
-            && Objects.equals(this.groupId, listResourceGroupRequest.groupId)
-            && Objects.equals(this.status, listResourceGroupRequest.status)
-            && Objects.equals(this.start, listResourceGroupRequest.start)
-            && Objects.equals(this.limit, listResourceGroupRequest.limit);
+        ListResourceGroupRequest that = (ListResourceGroupRequest) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

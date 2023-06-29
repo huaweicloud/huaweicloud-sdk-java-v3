@@ -65,22 +65,15 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
             if (value == null) {
                 return null;
             }
-            ExtendModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ExtendModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ExtendModeEnum(value));
         }
 
         public static ExtendModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ExtendModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
             if (value == null) {
                 return null;
             }
-            ApiModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiModeEnum(value));
         }
 
         public static ApiModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,18 +260,16 @@ public class ImportLiveDataApiDefinitionsV2RequestBody implements SdkFormDataBod
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportLiveDataApiDefinitionsV2RequestBody importLiveDataApiDefinitionsV2RequestBody =
-            (ImportLiveDataApiDefinitionsV2RequestBody) o;
-        return Objects.equals(this.extendMode, importLiveDataApiDefinitionsV2RequestBody.extendMode)
-            && Objects.equals(this.apiMode, importLiveDataApiDefinitionsV2RequestBody.apiMode)
-            && Objects.equals(this.fileName, importLiveDataApiDefinitionsV2RequestBody.fileName);
+        ImportLiveDataApiDefinitionsV2RequestBody that = (ImportLiveDataApiDefinitionsV2RequestBody) obj;
+        return Objects.equals(this.extendMode, that.extendMode) && Objects.equals(this.apiMode, that.apiMode)
+            && Objects.equals(this.fileName, that.fileName);
     }
 
     @Override

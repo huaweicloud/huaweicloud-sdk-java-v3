@@ -118,11 +118,6 @@ public class ProductInfo {
 
     private List<String> subProductList = null;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "package_type")
-
-    private String packageType;
-
     public ProductInfo withProductId(String productId) {
         this.productId = productId;
         return this;
@@ -512,50 +507,29 @@ public class ProductInfo {
         this.subProductList = subProductList;
     }
 
-    public ProductInfo withPackageType(String packageType) {
-        this.packageType = packageType;
-        return this;
-    }
-
-    /**
-     * 套餐类型。 - ultimate：尊享版 - enterprise：企业版 - general: 通用办公版 - workstation: 云工作站 - dedicated: 专属办公版 - solver: 解算版 - agile: 敏捷办公版
-     * @return packageType
-     */
-    public String getPackageType() {
-        return packageType;
-    }
-
-    public void setPackageType(String packageType) {
-        this.packageType = packageType;
-    }
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductInfo productInfo = (ProductInfo) o;
-        return Objects.equals(this.productId, productInfo.productId)
-            && Objects.equals(this.flavorId, productInfo.flavorId) && Objects.equals(this.type, productInfo.type)
-            && Objects.equals(this.architecture, productInfo.architecture) && Objects.equals(this.cpu, productInfo.cpu)
-            && Objects.equals(this.cpuDesc, productInfo.cpuDesc) && Objects.equals(this.memory, productInfo.memory)
-            && Objects.equals(this.isGpu, productInfo.isGpu)
-            && Objects.equals(this.systemDiskType, productInfo.systemDiskType)
-            && Objects.equals(this.systemDiskSize, productInfo.systemDiskSize)
-            && Objects.equals(this.gpuDesc, productInfo.gpuDesc)
-            && Objects.equals(this.billSwitch, productInfo.billSwitch)
-            && Objects.equals(this.descriptions, productInfo.descriptions)
-            && Objects.equals(this.chargeMode, productInfo.chargeMode)
-            && Objects.equals(this.containDataDisk, productInfo.containDataDisk)
-            && Objects.equals(this.resourceType, productInfo.resourceType)
-            && Objects.equals(this.cloudServiceType, productInfo.cloudServiceType)
-            && Objects.equals(this.volumeProductType, productInfo.volumeProductType)
-            && Objects.equals(this.domainIds, productInfo.domainIds) && Objects.equals(this.status, productInfo.status)
-            && Objects.equals(this.subProductList, productInfo.subProductList)
-            && Objects.equals(this.packageType, productInfo.packageType);
+        ProductInfo that = (ProductInfo) obj;
+        return Objects.equals(this.productId, that.productId) && Objects.equals(this.flavorId, that.flavorId)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.architecture, that.architecture)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.cpuDesc, that.cpuDesc)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.isGpu, that.isGpu)
+            && Objects.equals(this.systemDiskType, that.systemDiskType)
+            && Objects.equals(this.systemDiskSize, that.systemDiskSize) && Objects.equals(this.gpuDesc, that.gpuDesc)
+            && Objects.equals(this.billSwitch, that.billSwitch) && Objects.equals(this.descriptions, that.descriptions)
+            && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.containDataDisk, that.containDataDisk)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.volumeProductType, that.volumeProductType)
+            && Objects.equals(this.domainIds, that.domainIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.subProductList, that.subProductList);
     }
 
     @Override
@@ -580,8 +554,7 @@ public class ProductInfo {
             volumeProductType,
             domainIds,
             status,
-            subProductList,
-            packageType);
+            subProductList);
     }
 
     @Override
@@ -609,7 +582,6 @@ public class ProductInfo {
         sb.append("    domainIds: ").append(toIndentedString(domainIds)).append("\n");
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    subProductList: ").append(toIndentedString(subProductList)).append("\n");
-        sb.append("    packageType: ").append(toIndentedString(packageType)).append("\n");
         sb.append("}");
         return sb.toString();
     }

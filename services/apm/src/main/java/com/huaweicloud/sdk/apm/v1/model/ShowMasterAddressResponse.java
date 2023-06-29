@@ -56,16 +56,16 @@ public class ShowMasterAddressResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMasterAddressResponse showMasterAddressResponse = (ShowMasterAddressResponse) o;
-        return Objects.equals(this.regionName, showMasterAddressResponse.regionName)
-            && Objects.equals(this.masterAddress, showMasterAddressResponse.masterAddress);
+        ShowMasterAddressResponse that = (ShowMasterAddressResponse) obj;
+        return Objects.equals(this.regionName, that.regionName)
+            && Objects.equals(this.masterAddress, that.masterAddress);
     }
 
     @Override

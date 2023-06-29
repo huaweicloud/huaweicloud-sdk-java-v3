@@ -209,23 +209,23 @@ public class ListEnginePropertiesEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnginePropertiesEntity listEnginePropertiesEntity = (ListEnginePropertiesEntity) o;
-        return Objects.equals(this.maxPartitionPerBroker, listEnginePropertiesEntity.maxPartitionPerBroker)
-            && Objects.equals(this.maxBroker, listEnginePropertiesEntity.maxBroker)
-            && Objects.equals(this.maxStoragePerNode, listEnginePropertiesEntity.maxStoragePerNode)
-            && Objects.equals(this.maxConsumerPerBroker, listEnginePropertiesEntity.maxConsumerPerBroker)
-            && Objects.equals(this.minBroker, listEnginePropertiesEntity.minBroker)
-            && Objects.equals(this.maxBandwidthPerBroker, listEnginePropertiesEntity.maxBandwidthPerBroker)
-            && Objects.equals(this.minStoragePerNode, listEnginePropertiesEntity.minStoragePerNode)
-            && Objects.equals(this.maxTpsPerBroker, listEnginePropertiesEntity.maxTpsPerBroker)
-            && Objects.equals(this.productAlias, listEnginePropertiesEntity.productAlias);
+        ListEnginePropertiesEntity that = (ListEnginePropertiesEntity) obj;
+        return Objects.equals(this.maxPartitionPerBroker, that.maxPartitionPerBroker)
+            && Objects.equals(this.maxBroker, that.maxBroker)
+            && Objects.equals(this.maxStoragePerNode, that.maxStoragePerNode)
+            && Objects.equals(this.maxConsumerPerBroker, that.maxConsumerPerBroker)
+            && Objects.equals(this.minBroker, that.minBroker)
+            && Objects.equals(this.maxBandwidthPerBroker, that.maxBandwidthPerBroker)
+            && Objects.equals(this.minStoragePerNode, that.minStoragePerNode)
+            && Objects.equals(this.maxTpsPerBroker, that.maxTpsPerBroker)
+            && Objects.equals(this.productAlias, that.productAlias);
     }
 
     @Override

@@ -166,20 +166,18 @@ public class Permission {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Permission permission = (Permission) o;
-        return Objects.equals(this.id, permission.id) && Objects.equals(this.name, permission.name)
-            && Objects.equals(this.resourceType, permission.resourceType)
-            && Objects.equals(this.content, permission.content)
-            && Objects.equals(this.isResourceTypeDefault, permission.isResourceTypeDefault)
-            && Objects.equals(this.createdAt, permission.createdAt)
-            && Objects.equals(this.updatedAt, permission.updatedAt);
+        Permission that = (Permission) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.isResourceTypeDefault, that.isResourceTypeDefault)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

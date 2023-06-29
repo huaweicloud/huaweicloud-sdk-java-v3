@@ -187,22 +187,18 @@ public class ListBackgroundTasksRespTasks {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackgroundTasksRespTasks listBackgroundTasksRespTasks = (ListBackgroundTasksRespTasks) o;
-        return Objects.equals(this.id, listBackgroundTasksRespTasks.id)
-            && Objects.equals(this.name, listBackgroundTasksRespTasks.name)
-            && Objects.equals(this.userName, listBackgroundTasksRespTasks.userName)
-            && Objects.equals(this.userId, listBackgroundTasksRespTasks.userId)
-            && Objects.equals(this.params, listBackgroundTasksRespTasks.params)
-            && Objects.equals(this.status, listBackgroundTasksRespTasks.status)
-            && Objects.equals(this.createdAt, listBackgroundTasksRespTasks.createdAt)
-            && Objects.equals(this.updatedAt, listBackgroundTasksRespTasks.updatedAt);
+        ListBackgroundTasksRespTasks that = (ListBackgroundTasksRespTasks) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.params, that.params) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

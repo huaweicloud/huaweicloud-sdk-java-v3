@@ -449,33 +449,25 @@ public class ShowSqlJobDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlJobDetailResponse showSqlJobDetailResponse = (ShowSqlJobDetailResponse) o;
-        return Objects.equals(this.isSuccess, showSqlJobDetailResponse.isSuccess)
-            && Objects.equals(this.message, showSqlJobDetailResponse.message)
-            && Objects.equals(this.jobId, showSqlJobDetailResponse.jobId)
-            && Objects.equals(this.owner, showSqlJobDetailResponse.owner)
-            && Objects.equals(this.startTime, showSqlJobDetailResponse.startTime)
-            && Objects.equals(this.duration, showSqlJobDetailResponse.duration)
-            && Objects.equals(this.exportMode, showSqlJobDetailResponse.exportMode)
-            && Objects.equals(this.databaseName, showSqlJobDetailResponse.databaseName)
-            && Objects.equals(this.tableName, showSqlJobDetailResponse.tableName)
-            && Objects.equals(this.dataPath, showSqlJobDetailResponse.dataPath)
-            && Objects.equals(this.dataType, showSqlJobDetailResponse.dataType)
-            && Objects.equals(this.withColumnHeader, showSqlJobDetailResponse.withColumnHeader)
-            && Objects.equals(this.delimiter, showSqlJobDetailResponse.delimiter)
-            && Objects.equals(this.quoteChar, showSqlJobDetailResponse.quoteChar)
-            && Objects.equals(this.escapeChar, showSqlJobDetailResponse.escapeChar)
-            && Objects.equals(this.dateFormat, showSqlJobDetailResponse.dateFormat)
-            && Objects.equals(this.timestampFormat, showSqlJobDetailResponse.timestampFormat)
-            && Objects.equals(this.compress, showSqlJobDetailResponse.compress)
-            && Objects.equals(this.tags, showSqlJobDetailResponse.tags);
+        ShowSqlJobDetailResponse that = (ShowSqlJobDetailResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.exportMode, that.exportMode) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.tableName, that.tableName) && Objects.equals(this.dataPath, that.dataPath)
+            && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.withColumnHeader, that.withColumnHeader)
+            && Objects.equals(this.delimiter, that.delimiter) && Objects.equals(this.quoteChar, that.quoteChar)
+            && Objects.equals(this.escapeChar, that.escapeChar) && Objects.equals(this.dateFormat, that.dateFormat)
+            && Objects.equals(this.timestampFormat, that.timestampFormat)
+            && Objects.equals(this.compress, that.compress) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

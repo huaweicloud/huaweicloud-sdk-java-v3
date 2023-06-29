@@ -243,20 +243,17 @@ public class ListFunctionStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionStatisticsResponse listFunctionStatisticsResponse = (ListFunctionStatisticsResponse) o;
-        return Objects.equals(this.count, listFunctionStatisticsResponse.count)
-            && Objects.equals(this.duration, listFunctionStatisticsResponse.duration)
-            && Objects.equals(this.failCount, listFunctionStatisticsResponse.failCount)
-            && Objects.equals(this.maxDuration, listFunctionStatisticsResponse.maxDuration)
-            && Objects.equals(this.minDuration, listFunctionStatisticsResponse.minDuration)
-            && Objects.equals(this.rejectCount, listFunctionStatisticsResponse.rejectCount);
+        ListFunctionStatisticsResponse that = (ListFunctionStatisticsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.failCount, that.failCount) && Objects.equals(this.maxDuration, that.maxDuration)
+            && Objects.equals(this.minDuration, that.minDuration) && Objects.equals(this.rejectCount, that.rejectCount);
     }
 
     @Override

@@ -100,18 +100,16 @@ public class ValueRange {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueRange valueRange = (ValueRange) o;
-        return Objects.equals(this.lower, valueRange.lower)
-            && Objects.equals(this.lowerInclusive, valueRange.lowerInclusive)
-            && Objects.equals(this.upper, valueRange.upper)
-            && Objects.equals(this.upperInclusive, valueRange.upperInclusive);
+        ValueRange that = (ValueRange) obj;
+        return Objects.equals(this.lower, that.lower) && Objects.equals(this.lowerInclusive, that.lowerInclusive)
+            && Objects.equals(this.upper, that.upper) && Objects.equals(this.upperInclusive, that.upperInclusive);
     }
 
     @Override

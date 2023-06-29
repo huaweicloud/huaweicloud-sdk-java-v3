@@ -55,16 +55,15 @@ public class JobResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobResult jobResult = (JobResult) o;
-        return Objects.equals(this.totalCount, jobResult.totalCount)
-            && Objects.equals(this.failedCount, jobResult.failedCount);
+        JobResult that = (JobResult) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.failedCount, that.failedCount);
     }
 
     @Override

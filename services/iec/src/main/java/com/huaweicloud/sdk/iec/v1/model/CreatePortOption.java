@@ -57,22 +57,15 @@ public class CreatePortOption {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeviceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeviceOwnerEnum(value));
         }
 
         public static DeviceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeviceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -172,17 +165,16 @@ public class CreatePortOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortOption createPortOption = (CreatePortOption) o;
-        return Objects.equals(this.deviceOwner, createPortOption.deviceOwner)
-            && Objects.equals(this.networkId, createPortOption.networkId)
-            && Objects.equals(this.fixedIps, createPortOption.fixedIps);
+        CreatePortOption that = (CreatePortOption) obj;
+        return Objects.equals(this.deviceOwner, that.deviceOwner) && Objects.equals(this.networkId, that.networkId)
+            && Objects.equals(this.fixedIps, that.fixedIps);
     }
 
     @Override

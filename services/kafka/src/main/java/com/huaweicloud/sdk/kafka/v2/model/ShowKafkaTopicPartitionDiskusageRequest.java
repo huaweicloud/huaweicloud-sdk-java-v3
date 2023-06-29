@@ -99,19 +99,16 @@ public class ShowKafkaTopicPartitionDiskusageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowKafkaTopicPartitionDiskusageRequest showKafkaTopicPartitionDiskusageRequest =
-            (ShowKafkaTopicPartitionDiskusageRequest) o;
-        return Objects.equals(this.instanceId, showKafkaTopicPartitionDiskusageRequest.instanceId)
-            && Objects.equals(this.minSize, showKafkaTopicPartitionDiskusageRequest.minSize)
-            && Objects.equals(this.top, showKafkaTopicPartitionDiskusageRequest.top)
-            && Objects.equals(this.percentage, showKafkaTopicPartitionDiskusageRequest.percentage);
+        ShowKafkaTopicPartitionDiskusageRequest that = (ShowKafkaTopicPartitionDiskusageRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.minSize, that.minSize)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.percentage, that.percentage);
     }
 
     @Override

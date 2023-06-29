@@ -74,16 +74,16 @@ public class AttachOrDetachCertsReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachOrDetachCertsReqBody attachOrDetachCertsReqBody = (AttachOrDetachCertsReqBody) o;
-        return Objects.equals(this.certificateIds, attachOrDetachCertsReqBody.certificateIds) && Objects
-            .equals(this.verifiedClientCertificateEnabled, attachOrDetachCertsReqBody.verifiedClientCertificateEnabled);
+        AttachOrDetachCertsReqBody that = (AttachOrDetachCertsReqBody) obj;
+        return Objects.equals(this.certificateIds, that.certificateIds)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled);
     }
 
     @Override

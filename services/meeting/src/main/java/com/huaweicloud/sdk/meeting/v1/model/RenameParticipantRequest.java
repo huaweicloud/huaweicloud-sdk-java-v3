@@ -89,17 +89,17 @@ public class RenameParticipantRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RenameParticipantRequest renameParticipantRequest = (RenameParticipantRequest) o;
-        return Objects.equals(this.conferenceID, renameParticipantRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, renameParticipantRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, renameParticipantRequest.body);
+        RenameParticipantRequest that = (RenameParticipantRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -77,22 +77,15 @@ public class ListDomainsRequest {
             if (value == null) {
                 return null;
             }
-            BusinessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BusinessTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BusinessTypeEnum(value));
         }
 
         public static BusinessTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BusinessTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -189,22 +182,15 @@ public class ListDomainsRequest {
             if (value == null) {
                 return null;
             }
-            DomainStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainStatusEnum(value));
         }
 
         public static DomainStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DomainStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -277,22 +263,15 @@ public class ListDomainsRequest {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceAreaEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceAreaEnum(value));
         }
 
         public static ServiceAreaEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceAreaEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -497,23 +476,20 @@ public class ListDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainsRequest listDomainsRequest = (ListDomainsRequest) o;
-        return Objects.equals(this.domainName, listDomainsRequest.domainName)
-            && Objects.equals(this.businessType, listDomainsRequest.businessType)
-            && Objects.equals(this.domainStatus, listDomainsRequest.domainStatus)
-            && Objects.equals(this.serviceArea, listDomainsRequest.serviceArea)
-            && Objects.equals(this.pageSize, listDomainsRequest.pageSize)
-            && Objects.equals(this.pageNumber, listDomainsRequest.pageNumber)
-            && Objects.equals(this.showTags, listDomainsRequest.showTags)
-            && Objects.equals(this.exactMatch, listDomainsRequest.exactMatch)
-            && Objects.equals(this.enterpriseProjectId, listDomainsRequest.enterpriseProjectId);
+        ListDomainsRequest that = (ListDomainsRequest) obj;
+        return Objects.equals(this.domainName, that.domainName) && Objects.equals(this.businessType, that.businessType)
+            && Objects.equals(this.domainStatus, that.domainStatus)
+            && Objects.equals(this.serviceArea, that.serviceArea) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.pageNumber, that.pageNumber) && Objects.equals(this.showTags, that.showTags)
+            && Objects.equals(this.exactMatch, that.exactMatch)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

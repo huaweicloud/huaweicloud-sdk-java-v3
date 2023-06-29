@@ -77,17 +77,16 @@ public class ShowTriggerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTriggerRequest showTriggerRequest = (ShowTriggerRequest) o;
-        return Objects.equals(this.namespace, showTriggerRequest.namespace)
-            && Objects.equals(this.repository, showTriggerRequest.repository)
-            && Objects.equals(this.trigger, showTriggerRequest.trigger);
+        ShowTriggerRequest that = (ShowTriggerRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class ListEpsQuotasRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEpsQuotasRequest listEpsQuotasRequest = (ListEpsQuotasRequest) o;
-        return Objects.equals(this.enterpriseProjectName, listEpsQuotasRequest.enterpriseProjectName)
-            && Objects.equals(this.offset, listEpsQuotasRequest.offset)
-            && Objects.equals(this.limit, listEpsQuotasRequest.limit);
+        ListEpsQuotasRequest that = (ListEpsQuotasRequest) obj;
+        return Objects.equals(this.enterpriseProjectName, that.enterpriseProjectName)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -103,18 +103,16 @@ public class TaskTimingFrequency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskTimingFrequency taskTimingFrequency = (TaskTimingFrequency) o;
-        return Objects.equals(this.interval, taskTimingFrequency.interval)
-            && Objects.equals(this.duration, taskTimingFrequency.duration)
-            && Objects.equals(this.beginAt, taskTimingFrequency.beginAt)
-            && Objects.equals(this.endAt, taskTimingFrequency.endAt);
+        TaskTimingFrequency that = (TaskTimingFrequency) obj;
+        return Objects.equals(this.interval, that.interval) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.beginAt, that.beginAt) && Objects.equals(this.endAt, that.endAt);
     }
 
     @Override

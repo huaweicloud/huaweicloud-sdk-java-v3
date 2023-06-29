@@ -65,16 +65,15 @@ public class DisassociateRouteTableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateRouteTableRequest disassociateRouteTableRequest = (DisassociateRouteTableRequest) o;
-        return Objects.equals(this.routetableId, disassociateRouteTableRequest.routetableId)
-            && Objects.equals(this.body, disassociateRouteTableRequest.body);
+        DisassociateRouteTableRequest that = (DisassociateRouteTableRequest) obj;
+        return Objects.equals(this.routetableId, that.routetableId) && Objects.equals(this.body, that.body);
     }
 
     @Override

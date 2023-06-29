@@ -73,22 +73,15 @@ public class PersistentVolumeClaimSpec {
             if (value == null) {
                 return null;
             }
-            AccessModesEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AccessModesEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AccessModesEnum(value));
         }
 
         public static AccessModesEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AccessModesEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,21 +268,19 @@ public class PersistentVolumeClaimSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PersistentVolumeClaimSpec persistentVolumeClaimSpec = (PersistentVolumeClaimSpec) o;
-        return Objects.equals(this.volumeID, persistentVolumeClaimSpec.volumeID)
-            && Objects.equals(this.storageType, persistentVolumeClaimSpec.storageType)
-            && Objects.equals(this.accessModes, persistentVolumeClaimSpec.accessModes)
-            && Objects.equals(this.storageClassName, persistentVolumeClaimSpec.storageClassName)
-            && Objects.equals(this.volumeName, persistentVolumeClaimSpec.volumeName)
-            && Objects.equals(this.resources, persistentVolumeClaimSpec.resources)
-            && Objects.equals(this.volumeMode, persistentVolumeClaimSpec.volumeMode);
+        PersistentVolumeClaimSpec that = (PersistentVolumeClaimSpec) obj;
+        return Objects.equals(this.volumeID, that.volumeID) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.accessModes, that.accessModes)
+            && Objects.equals(this.storageClassName, that.storageClassName)
+            && Objects.equals(this.volumeName, that.volumeName) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.volumeMode, that.volumeMode);
     }
 
     @Override

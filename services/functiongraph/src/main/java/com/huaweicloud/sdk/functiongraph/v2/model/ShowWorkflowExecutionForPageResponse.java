@@ -101,18 +101,16 @@ public class ShowWorkflowExecutionForPageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkflowExecutionForPageResponse showWorkflowExecutionForPageResponse =
-            (ShowWorkflowExecutionForPageResponse) o;
-        return Objects.equals(this.total, showWorkflowExecutionForPageResponse.total)
-            && Objects.equals(this.size, showWorkflowExecutionForPageResponse.size)
-            && Objects.equals(this.executions, showWorkflowExecutionForPageResponse.executions);
+        ShowWorkflowExecutionForPageResponse that = (ShowWorkflowExecutionForPageResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.executions, that.executions);
     }
 
     @Override

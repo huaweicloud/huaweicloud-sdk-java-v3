@@ -65,16 +65,15 @@ public class UpdateNatGatewaySnatRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewaySnatRuleRequest updateNatGatewaySnatRuleRequest = (UpdateNatGatewaySnatRuleRequest) o;
-        return Objects.equals(this.snatRuleId, updateNatGatewaySnatRuleRequest.snatRuleId)
-            && Objects.equals(this.body, updateNatGatewaySnatRuleRequest.body);
+        UpdateNatGatewaySnatRuleRequest that = (UpdateNatGatewaySnatRuleRequest) obj;
+        return Objects.equals(this.snatRuleId, that.snatRuleId) && Objects.equals(this.body, that.body);
     }
 
     @Override

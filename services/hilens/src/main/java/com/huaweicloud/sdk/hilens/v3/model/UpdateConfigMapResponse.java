@@ -66,16 +66,15 @@ public class UpdateConfigMapResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigMapResponse updateConfigMapResponse = (UpdateConfigMapResponse) o;
-        return Objects.equals(this.configmap, updateConfigMapResponse.configmap)
-            && Objects.equals(this.workspaceId, updateConfigMapResponse.workspaceId);
+        UpdateConfigMapResponse that = (UpdateConfigMapResponse) obj;
+        return Objects.equals(this.configmap, that.configmap) && Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

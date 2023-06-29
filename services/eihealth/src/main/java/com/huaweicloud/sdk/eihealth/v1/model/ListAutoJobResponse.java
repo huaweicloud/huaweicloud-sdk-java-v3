@@ -75,16 +75,15 @@ public class ListAutoJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoJobResponse listAutoJobResponse = (ListAutoJobResponse) o;
-        return Objects.equals(this.autoJobs, listAutoJobResponse.autoJobs)
-            && Objects.equals(this.count, listAutoJobResponse.count);
+        ListAutoJobResponse that = (ListAutoJobResponse) obj;
+        return Objects.equals(this.autoJobs, that.autoJobs) && Objects.equals(this.count, that.count);
     }
 
     @Override

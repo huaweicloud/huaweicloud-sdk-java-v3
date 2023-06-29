@@ -44,15 +44,15 @@ public class ShowTopologyTreeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTopologyTreeResponse showTopologyTreeResponse = (ShowTopologyTreeResponse) o;
-        return Objects.equals(this.topologyTree, showTopologyTreeResponse.topologyTree);
+        ShowTopologyTreeResponse that = (ShowTopologyTreeResponse) obj;
+        return Objects.equals(this.topologyTree, that.topologyTree);
     }
 
     @Override

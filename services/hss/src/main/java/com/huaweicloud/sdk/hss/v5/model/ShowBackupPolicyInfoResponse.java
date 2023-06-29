@@ -164,20 +164,18 @@ public class ShowBackupPolicyInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupPolicyInfoResponse showBackupPolicyInfoResponse = (ShowBackupPolicyInfoResponse) o;
-        return Objects.equals(this.enabled, showBackupPolicyInfoResponse.enabled)
-            && Objects.equals(this.id, showBackupPolicyInfoResponse.id)
-            && Objects.equals(this.name, showBackupPolicyInfoResponse.name)
-            && Objects.equals(this.operationType, showBackupPolicyInfoResponse.operationType)
-            && Objects.equals(this.operationDefinition, showBackupPolicyInfoResponse.operationDefinition)
-            && Objects.equals(this.trigger, showBackupPolicyInfoResponse.trigger);
+        ShowBackupPolicyInfoResponse that = (ShowBackupPolicyInfoResponse) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.operationDefinition, that.operationDefinition)
+            && Objects.equals(this.trigger, that.trigger);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class AssociateElbRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssociateElbRequest associateElbRequest = (AssociateElbRequest) o;
-        return Objects.equals(this.clusterId, associateElbRequest.clusterId)
-            && Objects.equals(this.elbId, associateElbRequest.elbId);
+        AssociateElbRequest that = (AssociateElbRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.elbId, that.elbId);
     }
 
     @Override

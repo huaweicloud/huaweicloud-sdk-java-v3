@@ -101,17 +101,16 @@ public class ListDictionaryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDictionaryResponse listDictionaryResponse = (ListDictionaryResponse) o;
-        return Objects.equals(this.total, listDictionaryResponse.total)
-            && Objects.equals(this.size, listDictionaryResponse.size)
-            && Objects.equals(this.dictionaries, listDictionaryResponse.dictionaries);
+        ListDictionaryResponse that = (ListDictionaryResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.dictionaries, that.dictionaries);
     }
 
     @Override

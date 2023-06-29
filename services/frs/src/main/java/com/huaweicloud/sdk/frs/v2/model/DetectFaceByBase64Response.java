@@ -53,15 +53,15 @@ public class DetectFaceByBase64Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectFaceByBase64Response detectFaceByBase64Response = (DetectFaceByBase64Response) o;
-        return Objects.equals(this.faces, detectFaceByBase64Response.faces);
+        DetectFaceByBase64Response that = (DetectFaceByBase64Response) obj;
+        return Objects.equals(this.faces, that.faces);
     }
 
     @Override

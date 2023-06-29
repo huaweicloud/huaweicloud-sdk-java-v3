@@ -140,18 +140,18 @@ public class NodePoolMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolMetadata nodePoolMetadata = (NodePoolMetadata) o;
-        return Objects.equals(this.name, nodePoolMetadata.name) && Objects.equals(this.uid, nodePoolMetadata.uid)
-            && Objects.equals(this.annotations, nodePoolMetadata.annotations)
-            && Objects.equals(this.updateTimestamp, nodePoolMetadata.updateTimestamp)
-            && Objects.equals(this.creationTimestamp, nodePoolMetadata.creationTimestamp);
+        NodePoolMetadata that = (NodePoolMetadata) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.uid, that.uid)
+            && Objects.equals(this.annotations, that.annotations)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp);
     }
 
     @Override

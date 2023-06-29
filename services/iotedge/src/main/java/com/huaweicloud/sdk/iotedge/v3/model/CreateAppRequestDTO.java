@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateAppRequestDTO
  */
-public class CreateAppRequestDTO  {
-
+public class CreateAppRequestDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_name")
-    
+    @JsonProperty(value = "app_name")
 
     private String appName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_type")
-    
+    @JsonProperty(value = "app_type")
 
     private String appType;
 
@@ -45,9 +34,6 @@ public class CreateAppRequestDTO  {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -61,15 +47,10 @@ public class CreateAppRequestDTO  {
         this.appId = appId;
     }
 
-    
-
     public CreateAppRequestDTO withAppName(String appName) {
         this.appName = appName;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -83,15 +64,10 @@ public class CreateAppRequestDTO  {
         this.appName = appName;
     }
 
-    
-
     public CreateAppRequestDTO withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -105,15 +81,10 @@ public class CreateAppRequestDTO  {
         this.description = description;
     }
 
-    
-
     public CreateAppRequestDTO withAppType(String appType) {
         this.appType = appType;
         return this;
     }
-
-    
-
 
     /**
      * 应用类型
@@ -127,26 +98,24 @@ public class CreateAppRequestDTO  {
         this.appType = appType;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppRequestDTO createAppRequestDTO = (CreateAppRequestDTO) o;
-        return Objects.equals(this.appId, createAppRequestDTO.appId) &&
-            Objects.equals(this.appName, createAppRequestDTO.appName) &&
-            Objects.equals(this.description, createAppRequestDTO.description) &&
-            Objects.equals(this.appType, createAppRequestDTO.appType);
+        CreateAppRequestDTO that = (CreateAppRequestDTO) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.appType, that.appType);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appId, appName, description, appType);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class CreateAppRequestDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class CreateAppRequestDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

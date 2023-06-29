@@ -1,39 +1,30 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.StatisticValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询重点指标。
  */
-public class MetricDataPoints  {
-
+public class MetricDataPoints {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="statistics")
-    
+    @JsonProperty(value = "statistics")
+
     private List<StatisticValue> statistics = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="timestamp")
-    
+    @JsonProperty(value = "timestamp")
 
     private Long timestamp;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="unit")
-    
+    @JsonProperty(value = "unit")
 
     private String unit;
 
@@ -42,9 +33,8 @@ public class MetricDataPoints  {
         return this;
     }
 
-    
     public MetricDataPoints addStatisticsItem(StatisticValue statisticsItem) {
-        if(this.statistics == null) {
+        if (this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         this.statistics.add(statisticsItem);
@@ -52,7 +42,7 @@ public class MetricDataPoints  {
     }
 
     public MetricDataPoints withStatistics(Consumer<List<StatisticValue>> statisticsSetter) {
-        if(this.statistics == null) {
+        if (this.statistics == null) {
             this.statistics = new ArrayList<>();
         }
         statisticsSetter.accept(this.statistics);
@@ -71,15 +61,10 @@ public class MetricDataPoints  {
         this.statistics = statistics;
     }
 
-    
-
     public MetricDataPoints withTimestamp(Long timestamp) {
         this.timestamp = timestamp;
         return this;
     }
-
-    
-
 
     /**
      * 时间戳。
@@ -93,15 +78,10 @@ public class MetricDataPoints  {
         this.timestamp = timestamp;
     }
 
-    
-
     public MetricDataPoints withUnit(String unit) {
         this.unit = unit;
         return this;
     }
-
-    
-
 
     /**
      * 时间序列单位。
@@ -115,25 +95,24 @@ public class MetricDataPoints  {
         this.unit = unit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDataPoints metricDataPoints = (MetricDataPoints) o;
-        return Objects.equals(this.statistics, metricDataPoints.statistics) &&
-            Objects.equals(this.timestamp, metricDataPoints.timestamp) &&
-            Objects.equals(this.unit, metricDataPoints.unit);
+        MetricDataPoints that = (MetricDataPoints) obj;
+        return Objects.equals(this.statistics, that.statistics) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.unit, that.unit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(statistics, timestamp, unit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -144,6 +123,7 @@ public class MetricDataPoints  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -154,8 +134,5 @@ public class MetricDataPoints  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -103,17 +103,16 @@ public class DownloadAttachmentRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadAttachmentRequest downloadAttachmentRequest = (DownloadAttachmentRequest) o;
-        return Objects.equals(this.projectId, downloadAttachmentRequest.projectId)
-            && Objects.equals(this.issueId, downloadAttachmentRequest.issueId)
-            && Objects.equals(this.attachmentId, downloadAttachmentRequest.attachmentId);
+        DownloadAttachmentRequest that = (DownloadAttachmentRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.attachmentId, that.attachmentId);
     }
 
     @Override

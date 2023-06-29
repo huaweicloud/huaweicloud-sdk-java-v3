@@ -84,16 +84,15 @@ public class ShowTasklogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTasklogResponse showTasklogResponse = (ShowTasklogResponse) o;
-        return Objects.equals(this.paramInfo, showTasklogResponse.paramInfo)
-            && Objects.equals(this.logInfo, showTasklogResponse.logInfo);
+        ShowTasklogResponse that = (ShowTasklogResponse) obj;
+        return Objects.equals(this.paramInfo, that.paramInfo) && Objects.equals(this.logInfo, that.logInfo);
     }
 
     @Override

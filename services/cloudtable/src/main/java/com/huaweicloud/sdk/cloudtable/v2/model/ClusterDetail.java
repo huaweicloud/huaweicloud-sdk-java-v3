@@ -369,28 +369,22 @@ public class ClusterDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDetail clusterDetail = (ClusterDetail) o;
-        return Objects.equals(this.actionProgress, clusterDetail.actionProgress)
-            && Objects.equals(this.actions, clusterDetail.actions)
-            && Objects.equals(this.authMode, clusterDetail.authMode)
-            && Objects.equals(this.azCode, clusterDetail.azCode)
-            && Objects.equals(this.clusterId, clusterDetail.clusterId)
-            && Objects.equals(this.clusterName, clusterDetail.clusterName)
-            && Objects.equals(this.created, clusterDetail.created)
-            && Objects.equals(this.enableDfv, clusterDetail.enableDfv)
-            && Objects.equals(this.enableFree, clusterDetail.enableFree)
-            && Objects.equals(this.enableLemon, clusterDetail.enableLemon)
-            && Objects.equals(this.enableOpenTSDB, clusterDetail.enableOpenTSDB)
-            && Objects.equals(this.status, clusterDetail.status) && Objects.equals(this.tags, clusterDetail.tags)
-            && Objects.equals(this.version, clusterDetail.version)
-            && Objects.equals(this.zookeeperLink, clusterDetail.zookeeperLink);
+        ClusterDetail that = (ClusterDetail) obj;
+        return Objects.equals(this.actionProgress, that.actionProgress) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.authMode, that.authMode) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.enableDfv, that.enableDfv)
+            && Objects.equals(this.enableFree, that.enableFree) && Objects.equals(this.enableLemon, that.enableLemon)
+            && Objects.equals(this.enableOpenTSDB, that.enableOpenTSDB) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.zookeeperLink, that.zookeeperLink);
     }
 
     @Override

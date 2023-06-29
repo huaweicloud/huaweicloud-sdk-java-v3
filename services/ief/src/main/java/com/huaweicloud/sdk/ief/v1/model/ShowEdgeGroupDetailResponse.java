@@ -539,32 +539,25 @@ public class ShowEdgeGroupDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEdgeGroupDetailResponse showEdgeGroupDetailResponse = (ShowEdgeGroupDetailResponse) o;
-        return Objects.equals(this.id, showEdgeGroupDetailResponse.id)
-            && Objects.equals(this.name, showEdgeGroupDetailResponse.name)
-            && Objects.equals(this.description, showEdgeGroupDetailResponse.description)
-            && Objects.equals(this.createdAt, showEdgeGroupDetailResponse.createdAt)
-            && Objects.equals(this.updatedAt, showEdgeGroupDetailResponse.updatedAt)
-            && Objects.equals(this.projectId, showEdgeGroupDetailResponse.projectId)
-            && Objects.equals(this.iamRole, showEdgeGroupDetailResponse.iamRole)
-            && Objects.equals(this.cpu, showEdgeGroupDetailResponse.cpu)
-            && Objects.equals(this.memory, showEdgeGroupDetailResponse.memory)
-            && Objects.equals(this.gpuNum, showEdgeGroupDetailResponse.gpuNum)
-            && Objects.equals(this.nodes, showEdgeGroupDetailResponse.nodes)
-            && Objects.equals(this.deployments, showEdgeGroupDetailResponse.deployments)
-            && Objects.equals(this.attributes, showEdgeGroupDetailResponse.attributes)
-            && Objects.equals(this.tags, showEdgeGroupDetailResponse.tags)
-            && Objects.equals(this.successNodeAdd, showEdgeGroupDetailResponse.successNodeAdd)
-            && Objects.equals(this.successNodeDel, showEdgeGroupDetailResponse.successNodeDel)
-            && Objects.equals(this.failedNodeAdd, showEdgeGroupDetailResponse.failedNodeAdd)
-            && Objects.equals(this.failedNodeDel, showEdgeGroupDetailResponse.failedNodeDel);
+        ShowEdgeGroupDetailResponse that = (ShowEdgeGroupDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.iamRole, that.iamRole) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.gpuNum, that.gpuNum)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.deployments, that.deployments)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.successNodeAdd, that.successNodeAdd)
+            && Objects.equals(this.successNodeDel, that.successNodeDel)
+            && Objects.equals(this.failedNodeAdd, that.failedNodeAdd)
+            && Objects.equals(this.failedNodeDel, that.failedNodeDel);
     }
 
     @Override

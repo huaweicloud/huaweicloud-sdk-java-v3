@@ -74,15 +74,15 @@ public class QualityInfoList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QualityInfoList qualityInfoList = (QualityInfoList) o;
-        return Objects.equals(this.video, qualityInfoList.video) && Objects.equals(this.audio, qualityInfoList.audio);
+        QualityInfoList that = (QualityInfoList) obj;
+        return Objects.equals(this.video, that.video) && Objects.equals(this.audio, that.audio);
     }
 
     @Override

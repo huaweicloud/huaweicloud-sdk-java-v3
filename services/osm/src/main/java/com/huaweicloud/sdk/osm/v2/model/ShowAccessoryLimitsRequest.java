@@ -85,17 +85,16 @@ public class ShowAccessoryLimitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAccessoryLimitsRequest showAccessoryLimitsRequest = (ShowAccessoryLimitsRequest) o;
-        return Objects.equals(this.xSite, showAccessoryLimitsRequest.xSite)
-            && Objects.equals(this.xLanguage, showAccessoryLimitsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, showAccessoryLimitsRequest.xTimeZone);
+        ShowAccessoryLimitsRequest that = (ShowAccessoryLimitsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

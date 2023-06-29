@@ -143,20 +143,17 @@ public class CreateProjectV4RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateProjectV4RequestBody createProjectV4RequestBody = (CreateProjectV4RequestBody) o;
-        return Objects.equals(this.projectName, createProjectV4RequestBody.projectName)
-            && Objects.equals(this.description, createProjectV4RequestBody.description)
-            && Objects.equals(this.source, createProjectV4RequestBody.source)
-            && Objects.equals(this.projectType, createProjectV4RequestBody.projectType)
-            && Objects.equals(this.enterpriseId, createProjectV4RequestBody.enterpriseId)
-            && Objects.equals(this.templateId, createProjectV4RequestBody.templateId);
+        CreateProjectV4RequestBody that = (CreateProjectV4RequestBody) obj;
+        return Objects.equals(this.projectName, that.projectName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.projectType, that.projectType)
+            && Objects.equals(this.enterpriseId, that.enterpriseId) && Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

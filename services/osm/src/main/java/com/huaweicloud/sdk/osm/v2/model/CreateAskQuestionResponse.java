@@ -141,19 +141,17 @@ public class CreateAskQuestionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAskQuestionResponse createAskQuestionResponse = (CreateAskQuestionResponse) o;
-        return Objects.equals(this.question, createAskQuestionResponse.question)
-            && Objects.equals(this.answers, createAskQuestionResponse.answers)
-            && Objects.equals(this.errorCode, createAskQuestionResponse.errorCode)
-            && Objects.equals(this.errorMsg, createAskQuestionResponse.errorMsg)
-            && Objects.equals(this.requestId, createAskQuestionResponse.requestId);
+        CreateAskQuestionResponse that = (CreateAskQuestionResponse) obj;
+        return Objects.equals(this.question, that.question) && Objects.equals(this.answers, that.answers)
+            && Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

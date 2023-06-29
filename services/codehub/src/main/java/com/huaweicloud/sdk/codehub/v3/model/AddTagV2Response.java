@@ -97,17 +97,16 @@ public class AddTagV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddTagV2Response addTagV2Response = (AddTagV2Response) o;
-        return Objects.equals(this.error, addTagV2Response.error)
-            && Objects.equals(this.result, addTagV2Response.result)
-            && Objects.equals(this.status, addTagV2Response.status);
+        AddTagV2Response that = (AddTagV2Response) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

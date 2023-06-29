@@ -77,16 +77,16 @@ public class AppBaseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppBaseInfo appBaseInfo = (AppBaseInfo) o;
-        return Objects.equals(this.id, appBaseInfo.id) && Objects.equals(this.name, appBaseInfo.name)
-            && Objects.equals(this.remark, appBaseInfo.remark);
+        AppBaseInfo that = (AppBaseInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark);
     }
 
     @Override

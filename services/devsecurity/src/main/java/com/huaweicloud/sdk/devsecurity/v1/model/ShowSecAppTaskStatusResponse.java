@@ -105,22 +105,15 @@ public class ShowSecAppTaskStatusResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskStatusEnum(value));
         }
 
         public static TaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -250,20 +243,17 @@ public class ShowSecAppTaskStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSecAppTaskStatusResponse showSecAppTaskStatusResponse = (ShowSecAppTaskStatusResponse) o;
-        return Objects.equals(this.taskId, showSecAppTaskStatusResponse.taskId)
-            && Objects.equals(this.createTime, showSecAppTaskStatusResponse.createTime)
-            && Objects.equals(this.beginTime, showSecAppTaskStatusResponse.beginTime)
-            && Objects.equals(this.endTime, showSecAppTaskStatusResponse.endTime)
-            && Objects.equals(this.taskStatus, showSecAppTaskStatusResponse.taskStatus)
-            && Objects.equals(this.failReason, showSecAppTaskStatusResponse.failReason);
+        ShowSecAppTaskStatusResponse that = (ShowSecAppTaskStatusResponse) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.failReason, that.failReason);
     }
 
     @Override

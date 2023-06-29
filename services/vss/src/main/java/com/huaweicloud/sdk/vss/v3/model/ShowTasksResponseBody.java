@@ -71,22 +71,15 @@ public class ShowTasksResponseBody {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -139,7 +132,7 @@ public class ShowTasksResponseBody {
     private String endTime;
 
     /**
-     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * ready - 已就绪，排队中   * failure - 失败 
      */
     public static final class TaskStatusEnum {
 
@@ -164,6 +157,11 @@ public class ShowTasksResponseBody {
         public static final TaskStatusEnum WAITING = new TaskStatusEnum("waiting");
 
         /**
+         * Enum READY for value: "ready"
+         */
+        public static final TaskStatusEnum READY = new TaskStatusEnum("ready");
+
+        /**
          * Enum FAILURE for value: "failure"
          */
         public static final TaskStatusEnum FAILURE = new TaskStatusEnum("failure");
@@ -176,6 +174,7 @@ public class ShowTasksResponseBody {
             map.put("success", SUCCESS);
             map.put("canceled", CANCELED);
             map.put("waiting", WAITING);
+            map.put("ready", READY);
             map.put("failure", FAILURE);
             return Collections.unmodifiableMap(map);
         }
@@ -201,22 +200,15 @@ public class ShowTasksResponseBody {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskStatusEnum(value));
         }
 
         public static TaskStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -289,22 +281,15 @@ public class ShowTasksResponseBody {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScheduleStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScheduleStatusEnum(value));
         }
 
         public static ScheduleStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScheduleStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -397,22 +382,15 @@ public class ShowTasksResponseBody {
             if (value == null) {
                 return null;
             }
-            SafeLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SafeLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SafeLevelEnum(value));
         }
 
         public static SafeLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SafeLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -513,7 +491,7 @@ public class ShowTasksResponseBody {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -607,7 +585,7 @@ public class ShowTasksResponseBody {
     }
 
     /**
-     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * failure - 失败 
+     * 任务状态:   * running - 正在运行   * success - 成功   * canceled - 已取消   * waiting - 正在等待   * ready - 已就绪，排队中   * failure - 失败 
      * @return taskStatus
      */
     public TaskStatusEnum getTaskStatus() {
@@ -753,31 +731,23 @@ public class ShowTasksResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTasksResponseBody showTasksResponseBody = (ShowTasksResponseBody) o;
-        return Objects.equals(this.taskName, showTasksResponseBody.taskName)
-            && Objects.equals(this.url, showTasksResponseBody.url)
-            && Objects.equals(this.taskType, showTasksResponseBody.taskType)
-            && Objects.equals(this.taskId, showTasksResponseBody.taskId)
-            && Objects.equals(this.domainName, showTasksResponseBody.domainName)
-            && Objects.equals(this.taskSettings, showTasksResponseBody.taskSettings)
-            && Objects.equals(this.createTime, showTasksResponseBody.createTime)
-            && Objects.equals(this.startTime, showTasksResponseBody.startTime)
-            && Objects.equals(this.endTime, showTasksResponseBody.endTime)
-            && Objects.equals(this.taskStatus, showTasksResponseBody.taskStatus)
-            && Objects.equals(this.scheduleStatus, showTasksResponseBody.scheduleStatus)
-            && Objects.equals(this.progress, showTasksResponseBody.progress)
-            && Objects.equals(this.reason, showTasksResponseBody.reason)
-            && Objects.equals(this.packNum, showTasksResponseBody.packNum)
-            && Objects.equals(this.score, showTasksResponseBody.score)
-            && Objects.equals(this.safeLevel, showTasksResponseBody.safeLevel)
-            && Objects.equals(this.statistics, showTasksResponseBody.statistics);
+        ShowTasksResponseBody that = (ShowTasksResponseBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.taskSettings, that.taskSettings)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.scheduleStatus, that.scheduleStatus) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.reason, that.reason) && Objects.equals(this.packNum, that.packNum)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.safeLevel, that.safeLevel)
+            && Objects.equals(this.statistics, that.statistics);
     }
 
     @Override

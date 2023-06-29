@@ -90,15 +90,15 @@ public class NodeIps {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeIps nodeIps = (NodeIps) o;
-        return Objects.equals(this.livedata, nodeIps.livedata) && Objects.equals(this.shubao, nodeIps.shubao);
+        NodeIps that = (NodeIps) obj;
+        return Objects.equals(this.livedata, that.livedata) && Objects.equals(this.shubao, that.shubao);
     }
 
     @Override

@@ -372,25 +372,25 @@ public class TaskInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfo taskInfo = (TaskInfo) o;
-        return Objects.equals(this.name, taskInfo.name) && Objects.equals(this.timestamp, taskInfo.timestamp)
-            && Objects.equals(this.description, taskInfo.description) && Objects.equals(this.streams, taskInfo.streams)
-            && Objects.equals(this.okPodNumber, taskInfo.okPodNumber)
-            && Objects.equals(this.curPodNumber, taskInfo.curPodNumber)
-            && Objects.equals(this.sumPodNumber, taskInfo.sumPodNumber)
-            && Objects.equals(this.failPodNumber, taskInfo.failPodNumber)
-            && Objects.equals(this.pendingPodNumber, taskInfo.pendingPodNumber)
-            && Objects.equals(this.taskStatus, taskInfo.taskStatus) && Objects.equals(this.taskId, taskInfo.taskId)
-            && Objects.equals(this.userTaskId, taskInfo.userTaskId)
-            && Objects.equals(this.startTimeInfo, taskInfo.startTimeInfo)
-            && Objects.equals(this.sourceUsageEstimate, taskInfo.sourceUsageEstimate);
+        TaskInfo that = (TaskInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.streams, that.streams)
+            && Objects.equals(this.okPodNumber, that.okPodNumber)
+            && Objects.equals(this.curPodNumber, that.curPodNumber)
+            && Objects.equals(this.sumPodNumber, that.sumPodNumber)
+            && Objects.equals(this.failPodNumber, that.failPodNumber)
+            && Objects.equals(this.pendingPodNumber, that.pendingPodNumber)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.userTaskId, that.userTaskId)
+            && Objects.equals(this.startTimeInfo, that.startTimeInfo)
+            && Objects.equals(this.sourceUsageEstimate, that.sourceUsageEstimate);
     }
 
     @Override

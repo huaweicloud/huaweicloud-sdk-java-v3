@@ -144,20 +144,18 @@ public class ShowBugDensityV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBugDensityV2Response showBugDensityV2Response = (ShowBugDensityV2Response) o;
-        return Objects.equals(this.dividendValue, showBugDensityV2Response.dividendValue)
-            && Objects.equals(this.divisorValue, showBugDensityV2Response.divisorValue)
-            && Objects.equals(this.metricName, showBugDensityV2Response.metricName)
-            && Objects.equals(this.metricValue, showBugDensityV2Response.metricValue)
-            && Objects.equals(this.projectId, showBugDensityV2Response.projectId)
-            && Objects.equals(this.projectName, showBugDensityV2Response.projectName);
+        ShowBugDensityV2Response that = (ShowBugDensityV2Response) obj;
+        return Objects.equals(this.dividendValue, that.dividendValue)
+            && Objects.equals(this.divisorValue, that.divisorValue) && Objects.equals(this.metricName, that.metricName)
+            && Objects.equals(this.metricValue, that.metricValue) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.projectName, that.projectName);
     }
 
     @Override

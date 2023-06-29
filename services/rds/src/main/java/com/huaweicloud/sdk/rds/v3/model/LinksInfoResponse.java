@@ -55,15 +55,15 @@ public class LinksInfoResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LinksInfoResponse linksInfoResponse = (LinksInfoResponse) o;
-        return Objects.equals(this.href, linksInfoResponse.href) && Objects.equals(this.rel, linksInfoResponse.rel);
+        LinksInfoResponse that = (LinksInfoResponse) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel);
     }
 
     @Override

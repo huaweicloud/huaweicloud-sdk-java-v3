@@ -140,19 +140,17 @@ public class UpdateNewTaskRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNewTaskRequestBody updateNewTaskRequestBody = (UpdateNewTaskRequestBody) o;
-        return Objects.equals(this.name, updateNewTaskRequestBody.name)
-            && Objects.equals(this.parallel, updateNewTaskRequestBody.parallel)
-            && Objects.equals(this.projectId, updateNewTaskRequestBody.projectId)
-            && Objects.equals(this.operateMode, updateNewTaskRequestBody.operateMode)
-            && Objects.equals(this.caseIdList, updateNewTaskRequestBody.caseIdList);
+        UpdateNewTaskRequestBody that = (UpdateNewTaskRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.parallel, that.parallel)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.operateMode, that.operateMode)
+            && Objects.equals(this.caseIdList, that.caseIdList);
     }
 
     @Override

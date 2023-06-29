@@ -125,19 +125,18 @@ public class ListComponentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListComponentsRequest listComponentsRequest = (ListComponentsRequest) o;
-        return Objects.equals(this.xEnvironmentID, listComponentsRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, listComponentsRequest.xEnterpriseProjectID)
-            && Objects.equals(this.limit, listComponentsRequest.limit)
-            && Objects.equals(this.offset, listComponentsRequest.offset)
-            && Objects.equals(this.applicationId, listComponentsRequest.applicationId);
+        ListComponentsRequest that = (ListComponentsRequest) obj;
+        return Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

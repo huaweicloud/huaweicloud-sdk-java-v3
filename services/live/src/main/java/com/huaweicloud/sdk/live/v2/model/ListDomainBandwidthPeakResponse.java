@@ -77,16 +77,16 @@ public class ListDomainBandwidthPeakResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainBandwidthPeakResponse listDomainBandwidthPeakResponse = (ListDomainBandwidthPeakResponse) o;
-        return Objects.equals(this.bandwidthList, listDomainBandwidthPeakResponse.bandwidthList)
-            && Objects.equals(this.xRequestId, listDomainBandwidthPeakResponse.xRequestId);
+        ListDomainBandwidthPeakResponse that = (ListDomainBandwidthPeakResponse) obj;
+        return Objects.equals(this.bandwidthList, that.bandwidthList)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

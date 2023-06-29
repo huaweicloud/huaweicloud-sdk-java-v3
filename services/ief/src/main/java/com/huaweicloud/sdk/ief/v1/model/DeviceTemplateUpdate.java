@@ -43,15 +43,15 @@ public class DeviceTemplateUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeviceTemplateUpdate deviceTemplateUpdate = (DeviceTemplateUpdate) o;
-        return Objects.equals(this.deviceTemplate, deviceTemplateUpdate.deviceTemplate);
+        DeviceTemplateUpdate that = (DeviceTemplateUpdate) obj;
+        return Objects.equals(this.deviceTemplate, that.deviceTemplate);
     }
 
     @Override

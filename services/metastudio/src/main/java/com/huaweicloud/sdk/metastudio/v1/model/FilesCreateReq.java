@@ -145,20 +145,18 @@ public class FilesCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilesCreateReq filesCreateReq = (FilesCreateReq) o;
-        return Objects.equals(this.fileName, filesCreateReq.fileName)
-            && Objects.equals(this.fileMd5, filesCreateReq.fileMd5)
-            && Objects.equals(this.fileSize, filesCreateReq.fileSize)
-            && Objects.equals(this.fileType, filesCreateReq.fileType)
-            && Objects.equals(this.assetId, filesCreateReq.assetId)
-            && Objects.equals(this.assetFileCategory, filesCreateReq.assetFileCategory);
+        FilesCreateReq that = (FilesCreateReq) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.fileMd5, that.fileMd5)
+            && Objects.equals(this.fileSize, that.fileSize) && Objects.equals(this.fileType, that.fileType)
+            && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.assetFileCategory, that.assetFileCategory);
     }
 
     @Override

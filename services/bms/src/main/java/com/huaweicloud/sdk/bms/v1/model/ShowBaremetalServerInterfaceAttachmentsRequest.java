@@ -33,16 +33,15 @@ public class ShowBaremetalServerInterfaceAttachmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBaremetalServerInterfaceAttachmentsRequest showBaremetalServerInterfaceAttachmentsRequest =
-            (ShowBaremetalServerInterfaceAttachmentsRequest) o;
-        return Objects.equals(this.serverId, showBaremetalServerInterfaceAttachmentsRequest.serverId);
+        ShowBaremetalServerInterfaceAttachmentsRequest that = (ShowBaremetalServerInterfaceAttachmentsRequest) obj;
+        return Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

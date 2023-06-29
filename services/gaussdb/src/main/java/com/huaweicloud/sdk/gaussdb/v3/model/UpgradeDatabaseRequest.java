@@ -1,25 +1,17 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * UpgradeDatabaseRequest
  */
-public class UpgradeDatabaseRequest  {
-
+public class UpgradeDatabaseRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="delay")
-    
+    @JsonProperty(value = "delay")
 
     private Boolean delay;
 
@@ -27,9 +19,6 @@ public class UpgradeDatabaseRequest  {
         this.delay = delay;
         return this;
     }
-
-    
-
 
     /**
      * 实例是否延迟升级，默认false，立即升级。  - true: 延迟升级，实例将在运维时间窗内自动升级。 - false: 立即升级。
@@ -43,23 +32,23 @@ public class UpgradeDatabaseRequest  {
         this.delay = delay;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeDatabaseRequest upgradeDatabaseRequest = (UpgradeDatabaseRequest) o;
-        return Objects.equals(this.delay, upgradeDatabaseRequest.delay);
+        UpgradeDatabaseRequest that = (UpgradeDatabaseRequest) obj;
+        return Objects.equals(this.delay, that.delay);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(delay);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -68,6 +57,7 @@ public class UpgradeDatabaseRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -78,8 +68,5 @@ public class UpgradeDatabaseRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

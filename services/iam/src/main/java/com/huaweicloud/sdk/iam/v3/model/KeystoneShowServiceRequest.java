@@ -33,15 +33,15 @@ public class KeystoneShowServiceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowServiceRequest keystoneShowServiceRequest = (KeystoneShowServiceRequest) o;
-        return Objects.equals(this.serviceId, keystoneShowServiceRequest.serviceId);
+        KeystoneShowServiceRequest that = (KeystoneShowServiceRequest) obj;
+        return Objects.equals(this.serviceId, that.serviceId);
     }
 
     @Override

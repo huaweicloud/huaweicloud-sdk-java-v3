@@ -113,18 +113,16 @@ public class UpdateAgentStatusResponseDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAgentStatusResponseDetail updateAgentStatusResponseDetail = (UpdateAgentStatusResponseDetail) o;
-        return Objects.equals(this.id, updateAgentStatusResponseDetail.id)
-            && Objects.equals(this.status, updateAgentStatusResponseDetail.status)
-            && Objects.equals(this.updateTime, updateAgentStatusResponseDetail.updateTime)
-            && Objects.equals(this.result, updateAgentStatusResponseDetail.result);
+        UpdateAgentStatusResponseDetail that = (UpdateAgentStatusResponseDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.result, that.result);
     }
 
     @Override

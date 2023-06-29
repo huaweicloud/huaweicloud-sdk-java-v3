@@ -65,16 +65,15 @@ public class ListExercisesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExercisesRequest listExercisesRequest = (ListExercisesRequest) o;
-        return Objects.equals(this.packageId, listExercisesRequest.packageId)
-            && Objects.equals(this.body, listExercisesRequest.body);
+        ListExercisesRequest that = (ListExercisesRequest) obj;
+        return Objects.equals(this.packageId, that.packageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

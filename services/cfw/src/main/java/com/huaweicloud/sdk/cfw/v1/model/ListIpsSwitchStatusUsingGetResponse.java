@@ -44,16 +44,15 @@ public class ListIpsSwitchStatusUsingGetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIpsSwitchStatusUsingGetResponse listIpsSwitchStatusUsingGetResponse =
-            (ListIpsSwitchStatusUsingGetResponse) o;
-        return Objects.equals(this.data, listIpsSwitchStatusUsingGetResponse.data);
+        ListIpsSwitchStatusUsingGetResponse that = (ListIpsSwitchStatusUsingGetResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

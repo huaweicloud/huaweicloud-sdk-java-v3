@@ -197,22 +197,15 @@ public class BizMetricVO {
             if (value == null) {
                 return null;
             }
-            IntervalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IntervalTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntervalTypeEnum(value));
         }
 
         public static IntervalTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IntervalTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -987,43 +980,37 @@ public class BizMetricVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BizMetricVO bizMetricVO = (BizMetricVO) o;
-        return Objects.equals(this.id, bizMetricVO.id) && Objects.equals(this.name, bizMetricVO.name)
-            && Objects.equals(this.code, bizMetricVO.code) && Objects.equals(this.nameAlias, bizMetricVO.nameAlias)
-            && Objects.equals(this.bizType, bizMetricVO.bizType) && Objects.equals(this.status, bizMetricVO.status)
-            && Objects.equals(this.bizCatalogId, bizMetricVO.bizCatalogId)
-            && Objects.equals(this.bizCatalogPath, bizMetricVO.bizCatalogPath)
-            && Objects.equals(this.createBy, bizMetricVO.createBy)
-            && Objects.equals(this.updateBy, bizMetricVO.updateBy)
-            && Objects.equals(this.dataOrigin, bizMetricVO.dataOrigin) && Objects.equals(this.unit, bizMetricVO.unit)
-            && Objects.equals(this.timeFilters, bizMetricVO.timeFilters)
-            && Objects.equals(this.dimensions, bizMetricVO.dimensions)
-            && Objects.equals(this.generalFilters, bizMetricVO.generalFilters)
-            && Objects.equals(this.intervalType, bizMetricVO.intervalType)
-            && Objects.equals(this.applyScenario, bizMetricVO.applyScenario)
-            && Objects.equals(this.technicalMetric, bizMetricVO.technicalMetric)
-            && Objects.equals(this.technicalMetricName, bizMetricVO.technicalMetricName)
-            && Objects.equals(this.technicalMetricType, bizMetricVO.technicalMetricType)
-            && Objects.equals(this.measure, bizMetricVO.measure) && Objects.equals(this.owner, bizMetricVO.owner)
-            && Objects.equals(this.ownerDepartment, bizMetricVO.ownerDepartment)
-            && Objects.equals(this.destination, bizMetricVO.destination) && Objects.equals(this.guid, bizMetricVO.guid)
-            && Objects.equals(this.definition, bizMetricVO.definition)
-            && Objects.equals(this.expression, bizMetricVO.expression)
-            && Objects.equals(this.remark, bizMetricVO.remark)
-            && Objects.equals(this.approvalInfo, bizMetricVO.approvalInfo)
-            && Objects.equals(this.newBiz, bizMetricVO.newBiz)
-            && Objects.equals(this.createTime, bizMetricVO.createTime)
-            && Objects.equals(this.updateTime, bizMetricVO.updateTime) && Objects.equals(this.l1, bizMetricVO.l1)
-            && Objects.equals(this.l2, bizMetricVO.l2) && Objects.equals(this.l3, bizMetricVO.l3)
-            && Objects.equals(this.bizMetric, bizMetricVO.bizMetric)
-            && Objects.equals(this.summaryStatus, bizMetricVO.summaryStatus);
+        BizMetricVO that = (BizMetricVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.nameAlias, that.nameAlias)
+            && Objects.equals(this.bizType, that.bizType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.bizCatalogId, that.bizCatalogId)
+            && Objects.equals(this.bizCatalogPath, that.bizCatalogPath) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.dataOrigin, that.dataOrigin)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.timeFilters, that.timeFilters)
+            && Objects.equals(this.dimensions, that.dimensions)
+            && Objects.equals(this.generalFilters, that.generalFilters)
+            && Objects.equals(this.intervalType, that.intervalType)
+            && Objects.equals(this.applyScenario, that.applyScenario)
+            && Objects.equals(this.technicalMetric, that.technicalMetric)
+            && Objects.equals(this.technicalMetricName, that.technicalMetricName)
+            && Objects.equals(this.technicalMetricType, that.technicalMetricType)
+            && Objects.equals(this.measure, that.measure) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.ownerDepartment, that.ownerDepartment)
+            && Objects.equals(this.destination, that.destination) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.definition, that.definition) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.approvalInfo, that.approvalInfo)
+            && Objects.equals(this.newBiz, that.newBiz) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.l1, that.l1)
+            && Objects.equals(this.l2, that.l2) && Objects.equals(this.l3, that.l3)
+            && Objects.equals(this.bizMetric, that.bizMetric) && Objects.equals(this.summaryStatus, that.summaryStatus);
     }
 
     @Override

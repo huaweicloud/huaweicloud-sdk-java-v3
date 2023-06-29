@@ -169,21 +169,19 @@ public class SearchOnlineMeetingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchOnlineMeetingsRequest searchOnlineMeetingsRequest = (SearchOnlineMeetingsRequest) o;
-        return Objects.equals(this.userUUID, searchOnlineMeetingsRequest.userUUID)
-            && Objects.equals(this.offset, searchOnlineMeetingsRequest.offset)
-            && Objects.equals(this.limit, searchOnlineMeetingsRequest.limit)
-            && Objects.equals(this.queryAll, searchOnlineMeetingsRequest.queryAll)
-            && Objects.equals(this.searchKey, searchOnlineMeetingsRequest.searchKey)
-            && Objects.equals(this.xAuthorizationType, searchOnlineMeetingsRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, searchOnlineMeetingsRequest.xSiteId);
+        SearchOnlineMeetingsRequest that = (SearchOnlineMeetingsRequest) obj;
+        return Objects.equals(this.userUUID, that.userUUID) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.queryAll, that.queryAll)
+            && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

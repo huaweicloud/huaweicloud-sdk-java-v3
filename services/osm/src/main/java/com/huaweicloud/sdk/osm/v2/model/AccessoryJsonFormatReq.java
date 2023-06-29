@@ -101,18 +101,18 @@ public class AccessoryJsonFormatReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessoryJsonFormatReq accessoryJsonFormatReq = (AccessoryJsonFormatReq) o;
-        return Objects.equals(this.accessoryName, accessoryJsonFormatReq.accessoryName)
-            && Objects.equals(this.accessoryFrom, accessoryJsonFormatReq.accessoryFrom)
-            && Objects.equals(this.uploadType, accessoryJsonFormatReq.uploadType)
-            && Objects.equals(this.accessoryData, accessoryJsonFormatReq.accessoryData);
+        AccessoryJsonFormatReq that = (AccessoryJsonFormatReq) obj;
+        return Objects.equals(this.accessoryName, that.accessoryName)
+            && Objects.equals(this.accessoryFrom, that.accessoryFrom)
+            && Objects.equals(this.uploadType, that.uploadType)
+            && Objects.equals(this.accessoryData, that.accessoryData);
     }
 
     @Override

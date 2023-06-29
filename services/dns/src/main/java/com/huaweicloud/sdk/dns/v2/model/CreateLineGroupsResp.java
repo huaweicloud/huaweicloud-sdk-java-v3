@@ -184,21 +184,18 @@ public class CreateLineGroupsResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLineGroupsResp createLineGroupsResp = (CreateLineGroupsResp) o;
-        return Objects.equals(this.name, createLineGroupsResp.name)
-            && Objects.equals(this.lines, createLineGroupsResp.lines)
-            && Objects.equals(this.status, createLineGroupsResp.status)
-            && Objects.equals(this.description, createLineGroupsResp.description)
-            && Objects.equals(this.lineId, createLineGroupsResp.lineId)
-            && Objects.equals(this.createdAt, createLineGroupsResp.createdAt)
-            && Objects.equals(this.updatedAt, createLineGroupsResp.updatedAt);
+        CreateLineGroupsResp that = (CreateLineGroupsResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.lines, that.lines)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

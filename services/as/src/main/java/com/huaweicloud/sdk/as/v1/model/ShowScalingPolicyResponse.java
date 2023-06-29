@@ -44,15 +44,15 @@ public class ShowScalingPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScalingPolicyResponse showScalingPolicyResponse = (ShowScalingPolicyResponse) o;
-        return Objects.equals(this.scalingPolicy, showScalingPolicyResponse.scalingPolicy);
+        ShowScalingPolicyResponse that = (ShowScalingPolicyResponse) obj;
+        return Objects.equals(this.scalingPolicy, that.scalingPolicy);
     }
 
     @Override

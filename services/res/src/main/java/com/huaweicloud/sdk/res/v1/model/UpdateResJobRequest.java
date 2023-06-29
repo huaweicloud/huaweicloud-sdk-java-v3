@@ -109,18 +109,16 @@ public class UpdateResJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResJobRequest updateResJobRequest = (UpdateResJobRequest) o;
-        return Objects.equals(this.jobId, updateResJobRequest.jobId)
-            && Objects.equals(this.resourceId, updateResJobRequest.resourceId)
-            && Objects.equals(this.workspaceId, updateResJobRequest.workspaceId)
-            && Objects.equals(this.body, updateResJobRequest.body);
+        UpdateResJobRequest that = (UpdateResJobRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -113,18 +113,17 @@ public class CreateMeetingRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMeetingRequest createMeetingRequest = (CreateMeetingRequest) o;
-        return Objects.equals(this.userUUID, createMeetingRequest.userUUID)
-            && Objects.equals(this.xAuthorizationType, createMeetingRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, createMeetingRequest.xSiteId)
-            && Objects.equals(this.body, createMeetingRequest.body);
+        CreateMeetingRequest that = (CreateMeetingRequest) obj;
+        return Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class MigrateAzRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateAzRequestBody migrateAzRequestBody = (MigrateAzRequestBody) o;
-        return Objects.equals(this.targetAzs, migrateAzRequestBody.targetAzs);
+        MigrateAzRequestBody that = (MigrateAzRequestBody) obj;
+        return Objects.equals(this.targetAzs, that.targetAzs);
     }
 
     @Override

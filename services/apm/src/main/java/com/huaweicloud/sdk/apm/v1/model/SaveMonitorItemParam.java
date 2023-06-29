@@ -118,18 +118,16 @@ public class SaveMonitorItemParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SaveMonitorItemParam saveMonitorItemParam = (SaveMonitorItemParam) o;
-        return Objects.equals(this.monitorItemId, saveMonitorItemParam.monitorItemId)
-            && Objects.equals(this.interval, saveMonitorItemParam.interval)
-            && Objects.equals(this.envId, saveMonitorItemParam.envId)
-            && Objects.equals(this.configValueList, saveMonitorItemParam.configValueList);
+        SaveMonitorItemParam that = (SaveMonitorItemParam) obj;
+        return Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.configValueList, that.configValueList);
     }
 
     @Override

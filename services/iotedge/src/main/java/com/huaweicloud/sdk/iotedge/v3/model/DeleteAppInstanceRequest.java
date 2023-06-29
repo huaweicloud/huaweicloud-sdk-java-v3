@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteAppInstanceRequest  {
-
+public class DeleteAppInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_instance_id")
-    
+    @JsonProperty(value = "app_instance_id")
 
     private String appInstanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="namespace")
-    
+    @JsonProperty(value = "namespace")
 
     private String namespace;
 
@@ -40,9 +29,6 @@ public class DeleteAppInstanceRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群ID
@@ -56,15 +42,10 @@ public class DeleteAppInstanceRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     public DeleteAppInstanceRequest withAppInstanceId(String appInstanceId) {
         this.appInstanceId = appInstanceId;
         return this;
     }
-
-    
-
 
     /**
      * 应用实例ID
@@ -78,15 +59,10 @@ public class DeleteAppInstanceRequest  {
         this.appInstanceId = appInstanceId;
     }
 
-    
-
     public DeleteAppInstanceRequest withNamespace(String namespace) {
         this.namespace = namespace;
         return this;
     }
-
-    
-
 
     /**
      * 命名空间
@@ -100,25 +76,24 @@ public class DeleteAppInstanceRequest  {
         this.namespace = namespace;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAppInstanceRequest deleteAppInstanceRequest = (DeleteAppInstanceRequest) o;
-        return Objects.equals(this.clusterId, deleteAppInstanceRequest.clusterId) &&
-            Objects.equals(this.appInstanceId, deleteAppInstanceRequest.appInstanceId) &&
-            Objects.equals(this.namespace, deleteAppInstanceRequest.namespace);
+        DeleteAppInstanceRequest that = (DeleteAppInstanceRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.appInstanceId, that.appInstanceId)
+            && Objects.equals(this.namespace, that.namespace);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, appInstanceId, namespace);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class DeleteAppInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class DeleteAppInstanceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

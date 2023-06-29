@@ -143,20 +143,20 @@ public class MappingInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MappingInfo mappingInfo = (MappingInfo) o;
-        return Objects.equals(this.sourceColumn, mappingInfo.sourceColumn)
-            && Objects.equals(this.sourceColumnType, mappingInfo.sourceColumnType)
-            && Objects.equals(this.sourceColumnLength, mappingInfo.sourceColumnLength)
-            && Objects.equals(this.targetColumn, mappingInfo.targetColumn)
-            && Objects.equals(this.targetColumnType, mappingInfo.targetColumnType)
-            && Objects.equals(this.targetColumnLength, mappingInfo.targetColumnLength);
+        MappingInfo that = (MappingInfo) obj;
+        return Objects.equals(this.sourceColumn, that.sourceColumn)
+            && Objects.equals(this.sourceColumnType, that.sourceColumnType)
+            && Objects.equals(this.sourceColumnLength, that.sourceColumnLength)
+            && Objects.equals(this.targetColumn, that.targetColumn)
+            && Objects.equals(this.targetColumnType, that.targetColumnType)
+            && Objects.equals(this.targetColumnLength, that.targetColumnLength);
     }
 
     @Override

@@ -279,26 +279,22 @@ public class ListPlaybookInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookInstancesRequest listPlaybookInstancesRequest = (ListPlaybookInstancesRequest) o;
-        return Objects.equals(this.workspaceId, listPlaybookInstancesRequest.workspaceId)
-            && Objects.equals(this.status, listPlaybookInstancesRequest.status)
-            && Objects.equals(this.dateType, listPlaybookInstancesRequest.dateType)
-            && Objects.equals(this.name, listPlaybookInstancesRequest.name)
-            && Objects.equals(this.playbookName, listPlaybookInstancesRequest.playbookName)
-            && Objects.equals(this.dataclassName, listPlaybookInstancesRequest.dataclassName)
-            && Objects.equals(this.dataobjectName, listPlaybookInstancesRequest.dataobjectName)
-            && Objects.equals(this.triggerType, listPlaybookInstancesRequest.triggerType)
-            && Objects.equals(this.fromDate, listPlaybookInstancesRequest.fromDate)
-            && Objects.equals(this.toDate, listPlaybookInstancesRequest.toDate)
-            && Objects.equals(this.limit, listPlaybookInstancesRequest.limit)
-            && Objects.equals(this.offset, listPlaybookInstancesRequest.offset);
+        ListPlaybookInstancesRequest that = (ListPlaybookInstancesRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.dateType, that.dateType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.playbookName, that.playbookName)
+            && Objects.equals(this.dataclassName, that.dataclassName)
+            && Objects.equals(this.dataobjectName, that.dataobjectName)
+            && Objects.equals(this.triggerType, that.triggerType) && Objects.equals(this.fromDate, that.fromDate)
+            && Objects.equals(this.toDate, that.toDate) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -140,18 +140,17 @@ public class ComputeFlavor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputeFlavor computeFlavor = (ComputeFlavor) o;
-        return Objects.equals(this.vcpus, computeFlavor.vcpus) && Objects.equals(this.ram, computeFlavor.ram)
-            && Objects.equals(this.specCode, computeFlavor.specCode)
-            && Objects.equals(this.azStatus, computeFlavor.azStatus)
-            && Objects.equals(this.regionStatus, computeFlavor.regionStatus);
+        ComputeFlavor that = (ComputeFlavor) obj;
+        return Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.azStatus, that.azStatus)
+            && Objects.equals(this.regionStatus, that.regionStatus);
     }
 
     @Override

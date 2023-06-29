@@ -175,20 +175,19 @@ public class RestCustomMultiPictureBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestCustomMultiPictureBody restCustomMultiPictureBody = (RestCustomMultiPictureBody) o;
-        return Objects.equals(this.manualSet, restCustomMultiPictureBody.manualSet)
-            && Objects.equals(this.picLayoutInfo, restCustomMultiPictureBody.picLayoutInfo)
-            && Objects.equals(this.imageType, restCustomMultiPictureBody.imageType)
-            && Objects.equals(this.subscriberInPics, restCustomMultiPictureBody.subscriberInPics)
-            && Objects.equals(this.switchTime, restCustomMultiPictureBody.switchTime)
-            && Objects.equals(this.multiPicSaveOnly, restCustomMultiPictureBody.multiPicSaveOnly);
+        RestCustomMultiPictureBody that = (RestCustomMultiPictureBody) obj;
+        return Objects.equals(this.manualSet, that.manualSet) && Objects.equals(this.picLayoutInfo, that.picLayoutInfo)
+            && Objects.equals(this.imageType, that.imageType)
+            && Objects.equals(this.subscriberInPics, that.subscriberInPics)
+            && Objects.equals(this.switchTime, that.switchTime)
+            && Objects.equals(this.multiPicSaveOnly, that.multiPicSaveOnly);
     }
 
     @Override

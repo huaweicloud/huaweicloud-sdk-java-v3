@@ -77,17 +77,16 @@ public class ShowJobSuccessRatioRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobSuccessRatioRequest showJobSuccessRatioRequest = (ShowJobSuccessRatioRequest) o;
-        return Objects.equals(this.jobId, showJobSuccessRatioRequest.jobId)
-            && Objects.equals(this.startTime, showJobSuccessRatioRequest.startTime)
-            && Objects.equals(this.endTime, showJobSuccessRatioRequest.endTime);
+        ShowJobSuccessRatioRequest that = (ShowJobSuccessRatioRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

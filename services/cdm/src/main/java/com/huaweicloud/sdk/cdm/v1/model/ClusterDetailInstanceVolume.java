@@ -55,16 +55,15 @@ public class ClusterDetailInstanceVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDetailInstanceVolume clusterDetailInstanceVolume = (ClusterDetailInstanceVolume) o;
-        return Objects.equals(this.type, clusterDetailInstanceVolume.type)
-            && Objects.equals(this.size, clusterDetailInstanceVolume.size);
+        ClusterDetailInstanceVolume that = (ClusterDetailInstanceVolume) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size);
     }
 
     @Override

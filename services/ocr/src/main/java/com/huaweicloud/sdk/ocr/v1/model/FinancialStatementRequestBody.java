@@ -187,22 +187,21 @@ public class FinancialStatementRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FinancialStatementRequestBody financialStatementRequestBody = (FinancialStatementRequestBody) o;
-        return Objects.equals(this.image, financialStatementRequestBody.image)
-            && Objects.equals(this.url, financialStatementRequestBody.url)
-            && Objects.equals(this.returnTextLocation, financialStatementRequestBody.returnTextLocation)
-            && Objects.equals(this.returnConfidence, financialStatementRequestBody.returnConfidence)
-            && Objects.equals(this.returnExcel, financialStatementRequestBody.returnExcel)
-            && Objects.equals(this.returnTableLocation, financialStatementRequestBody.returnTableLocation)
-            && Objects.equals(this.returnImageSize, financialStatementRequestBody.returnImageSize)
-            && Objects.equals(this.returnRectificationMatrix, financialStatementRequestBody.returnRectificationMatrix);
+        FinancialStatementRequestBody that = (FinancialStatementRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.returnTextLocation, that.returnTextLocation)
+            && Objects.equals(this.returnConfidence, that.returnConfidence)
+            && Objects.equals(this.returnExcel, that.returnExcel)
+            && Objects.equals(this.returnTableLocation, that.returnTableLocation)
+            && Objects.equals(this.returnImageSize, that.returnImageSize)
+            && Objects.equals(this.returnRectificationMatrix, that.returnRectificationMatrix);
     }
 
     @Override

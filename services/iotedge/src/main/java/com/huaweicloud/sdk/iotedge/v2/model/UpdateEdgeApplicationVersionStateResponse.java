@@ -1,105 +1,88 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_app_id")
-    
+    @JsonProperty(value = "edge_app_id")
 
     private String edgeAppId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sdk_version")
-    
+    @JsonProperty(value = "sdk_version")
 
     private String sdkVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_type")
-    
+    @JsonProperty(value = "deploy_type")
 
     private String deployType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="deploy_multi_instance")
-    
+    @JsonProperty(value = "deploy_multi_instance")
 
     private Boolean deployMultiInstance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
+
     /**
      * 应用版本状态
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum DRAFT for value: "DRAFT"
          */
         public static final StateEnum DRAFT = new StateEnum("DRAFT");
-        
+
         /**
          * Enum PUBLISHED for value: "PUBLISHED"
          */
         public static final StateEnum PUBLISHED = new StateEnum("PUBLISHED");
-        
+
         /**
          * Enum OFF_SHELF for value: "OFF_SHELF"
          */
         public static final StateEnum OFF_SHELF = new StateEnum("OFF_SHELF");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -129,25 +112,18 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,25 +141,22 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arch")
-    
+    @JsonProperty(value = "arch")
+
     private List<String> arch = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="publish_time")
-    
+    @JsonProperty(value = "publish_time")
 
     private String publishTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="off_shelf_time")
-    
+    @JsonProperty(value = "off_shelf_time")
 
     private String offShelfTime;
 
@@ -191,9 +164,6 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
         return this;
     }
-
-    
-
 
     /**
      * 应用ID
@@ -207,15 +177,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.edgeAppId = edgeAppId;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -229,15 +194,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 应用名称
@@ -251,15 +211,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withSdkVersion(String sdkVersion) {
         this.sdkVersion = sdkVersion;
         return this;
     }
-
-    
-
 
     /**
      * 应用集成的边缘SDK版本
@@ -273,15 +228,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.sdkVersion = sdkVersion;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 应用描述
@@ -295,15 +245,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withDeployType(String deployType) {
         this.deployType = deployType;
         return this;
     }
-
-    
-
 
     /**
      * 部署类型docker|process
@@ -317,15 +262,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.deployType = deployType;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withDeployMultiInstance(Boolean deployMultiInstance) {
         this.deployMultiInstance = deployMultiInstance;
         return this;
     }
-
-    
-
 
     /**
      * 是否允许部署多实例
@@ -339,15 +279,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.deployMultiInstance = deployMultiInstance;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -361,15 +296,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -383,15 +313,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 应用版本状态
@@ -405,16 +330,13 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withArch(List<String> arch) {
         this.arch = arch;
         return this;
     }
 
-    
     public UpdateEdgeApplicationVersionStateResponse addArchItem(String archItem) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         this.arch.add(archItem);
@@ -422,7 +344,7 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
     }
 
     public UpdateEdgeApplicationVersionStateResponse withArch(Consumer<List<String>> archSetter) {
-        if(this.arch == null) {
+        if (this.arch == null) {
             this.arch = new ArrayList<>();
         }
         archSetter.accept(this.arch);
@@ -441,15 +363,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.arch = arch;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withPublishTime(String publishTime) {
         this.publishTime = publishTime;
         return this;
     }
-
-    
-
 
     /**
      * 发布时间
@@ -463,15 +380,10 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.publishTime = publishTime;
     }
 
-    
-
     public UpdateEdgeApplicationVersionStateResponse withOffShelfTime(String offShelfTime) {
         this.offShelfTime = offShelfTime;
         return this;
     }
-
-    
-
 
     /**
      * 下线时间
@@ -485,35 +397,42 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         this.offShelfTime = offShelfTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeApplicationVersionStateResponse updateEdgeApplicationVersionStateResponse = (UpdateEdgeApplicationVersionStateResponse) o;
-        return Objects.equals(this.edgeAppId, updateEdgeApplicationVersionStateResponse.edgeAppId) &&
-            Objects.equals(this.name, updateEdgeApplicationVersionStateResponse.name) &&
-            Objects.equals(this.version, updateEdgeApplicationVersionStateResponse.version) &&
-            Objects.equals(this.sdkVersion, updateEdgeApplicationVersionStateResponse.sdkVersion) &&
-            Objects.equals(this.description, updateEdgeApplicationVersionStateResponse.description) &&
-            Objects.equals(this.deployType, updateEdgeApplicationVersionStateResponse.deployType) &&
-            Objects.equals(this.deployMultiInstance, updateEdgeApplicationVersionStateResponse.deployMultiInstance) &&
-            Objects.equals(this.createTime, updateEdgeApplicationVersionStateResponse.createTime) &&
-            Objects.equals(this.updateTime, updateEdgeApplicationVersionStateResponse.updateTime) &&
-            Objects.equals(this.state, updateEdgeApplicationVersionStateResponse.state) &&
-            Objects.equals(this.arch, updateEdgeApplicationVersionStateResponse.arch) &&
-            Objects.equals(this.publishTime, updateEdgeApplicationVersionStateResponse.publishTime) &&
-            Objects.equals(this.offShelfTime, updateEdgeApplicationVersionStateResponse.offShelfTime);
+        UpdateEdgeApplicationVersionStateResponse that = (UpdateEdgeApplicationVersionStateResponse) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.sdkVersion, that.sdkVersion)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.deployMultiInstance, that.deployMultiInstance)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.publishTime, that.publishTime)
+            && Objects.equals(this.offShelfTime, that.offShelfTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(edgeAppId, name, version, sdkVersion, description, deployType, deployMultiInstance, createTime, updateTime, state, arch, publishTime, offShelfTime);
+        return Objects.hash(edgeAppId,
+            name,
+            version,
+            sdkVersion,
+            description,
+            deployType,
+            deployMultiInstance,
+            createTime,
+            updateTime,
+            state,
+            arch,
+            publishTime,
+            offShelfTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -534,6 +453,7 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -544,8 +464,5 @@ public class UpdateEdgeApplicationVersionStateResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

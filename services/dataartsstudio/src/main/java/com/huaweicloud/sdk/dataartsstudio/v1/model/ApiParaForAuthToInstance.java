@@ -95,22 +95,15 @@ public class ApiParaForAuthToInstance {
             if (value == null) {
                 return null;
             }
-            ApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApplyTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApplyTypeEnum(value));
         }
 
         public static ApplyTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApplyTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -223,19 +216,17 @@ public class ApiParaForAuthToInstance {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiParaForAuthToInstance apiParaForAuthToInstance = (ApiParaForAuthToInstance) o;
-        return Objects.equals(this.apiId, apiParaForAuthToInstance.apiId)
-            && Objects.equals(this.instanceId, apiParaForAuthToInstance.instanceId)
-            && Objects.equals(this.appId, apiParaForAuthToInstance.appId)
-            && Objects.equals(this.applyType, apiParaForAuthToInstance.applyType)
-            && Objects.equals(this.time, apiParaForAuthToInstance.time);
+        ApiParaForAuthToInstance that = (ApiParaForAuthToInstance) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.applyType, that.applyType)
+            && Objects.equals(this.time, that.time);
     }
 
     @Override

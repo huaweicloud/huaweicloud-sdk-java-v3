@@ -55,16 +55,16 @@ public class ListHostRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHostRouteRequest listHostRouteRequest = (ListHostRouteRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listHostRouteRequest.enterpriseProjectId)
-            && Objects.equals(this.instanceId, listHostRouteRequest.instanceId);
+        ListHostRouteRequest that = (ListHostRouteRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

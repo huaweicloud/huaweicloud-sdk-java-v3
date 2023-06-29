@@ -109,18 +109,17 @@ public class UpdateWhiteblackipRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWhiteblackipRuleRequest updateWhiteblackipRuleRequest = (UpdateWhiteblackipRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateWhiteblackipRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateWhiteblackipRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateWhiteblackipRuleRequest.ruleId)
-            && Objects.equals(this.body, updateWhiteblackipRuleRequest.body);
+        UpdateWhiteblackipRuleRequest that = (UpdateWhiteblackipRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

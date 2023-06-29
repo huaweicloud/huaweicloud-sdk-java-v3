@@ -74,16 +74,15 @@ public class PutResourceGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutResourceGroupReq putResourceGroupReq = (PutResourceGroupReq) o;
-        return Objects.equals(this.groupName, putResourceGroupReq.groupName)
-            && Objects.equals(this.tags, putResourceGroupReq.tags);
+        PutResourceGroupReq that = (PutResourceGroupReq) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

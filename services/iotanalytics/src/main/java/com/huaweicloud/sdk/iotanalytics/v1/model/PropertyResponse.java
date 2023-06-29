@@ -219,22 +219,19 @@ public class PropertyResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyResponse propertyResponse = (PropertyResponse) o;
-        return Objects.equals(this.deviceId, propertyResponse.deviceId)
-            && Objects.equals(this.propertyId, propertyResponse.propertyId)
-            && Objects.equals(this.name, propertyResponse.name)
-            && Objects.equals(this.displayName, propertyResponse.displayName)
-            && Objects.equals(this.sourceType, propertyResponse.sourceType)
-            && Objects.equals(this.dataSchema, propertyResponse.dataSchema)
-            && Objects.equals(this.unit, propertyResponse.unit) && Objects.equals(this.value, propertyResponse.value)
-            && Objects.equals(this.isTag, propertyResponse.isTag);
+        PropertyResponse that = (PropertyResponse) obj;
+        return Objects.equals(this.deviceId, that.deviceId) && Objects.equals(this.propertyId, that.propertyId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.dataSchema, that.dataSchema)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.isTag, that.isTag);
     }
 
     @Override

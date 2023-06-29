@@ -184,21 +184,18 @@ public class ListResourcePackagesRespMoudle {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourcePackagesRespMoudle listResourcePackagesRespMoudle = (ListResourcePackagesRespMoudle) o;
-        return Objects.equals(this.moduleName, listResourcePackagesRespMoudle.moduleName)
-            && Objects.equals(this.moduleType, listResourcePackagesRespMoudle.moduleType)
-            && Objects.equals(this.status, listResourcePackagesRespMoudle.status)
-            && Objects.equals(this.description, listResourcePackagesRespMoudle.description)
-            && Objects.equals(this.resources, listResourcePackagesRespMoudle.resources)
-            && Objects.equals(this.createTime, listResourcePackagesRespMoudle.createTime)
-            && Objects.equals(this.updateTime, listResourcePackagesRespMoudle.updateTime);
+        ListResourcePackagesRespMoudle that = (ListResourcePackagesRespMoudle) obj;
+        return Objects.equals(this.moduleName, that.moduleName) && Objects.equals(this.moduleType, that.moduleType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

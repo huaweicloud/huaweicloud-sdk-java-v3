@@ -231,24 +231,19 @@ public class CreateIncidentNetworkList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIncidentNetworkList createIncidentNetworkList = (CreateIncidentNetworkList) o;
-        return Objects.equals(this.direction, createIncidentNetworkList.direction)
-            && Objects.equals(this.protocol, createIncidentNetworkList.protocol)
-            && Objects.equals(this.srcIp, createIncidentNetworkList.srcIp)
-            && Objects.equals(this.srcPort, createIncidentNetworkList.srcPort)
-            && Objects.equals(this.srcDomain, createIncidentNetworkList.srcDomain)
-            && Objects.equals(this.destIp, createIncidentNetworkList.destIp)
-            && Objects.equals(this.destPort, createIncidentNetworkList.destPort)
-            && Objects.equals(this.destDomain, createIncidentNetworkList.destDomain)
-            && Objects.equals(this.srcGeo, createIncidentNetworkList.srcGeo)
-            && Objects.equals(this.destGeo, createIncidentNetworkList.destGeo);
+        CreateIncidentNetworkList that = (CreateIncidentNetworkList) obj;
+        return Objects.equals(this.direction, that.direction) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.srcIp, that.srcIp) && Objects.equals(this.srcPort, that.srcPort)
+            && Objects.equals(this.srcDomain, that.srcDomain) && Objects.equals(this.destIp, that.destIp)
+            && Objects.equals(this.destPort, that.destPort) && Objects.equals(this.destDomain, that.destDomain)
+            && Objects.equals(this.srcGeo, that.srcGeo) && Objects.equals(this.destGeo, that.destGeo);
     }
 
     @Override

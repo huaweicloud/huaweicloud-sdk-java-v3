@@ -99,17 +99,16 @@ public class NpuInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NpuInfo npuInfo = (NpuInfo) o;
-        return Objects.equals(this.name, npuInfo.name) && Objects.equals(this.type, npuInfo.type)
-            && Objects.equals(this.capacity, npuInfo.capacity)
-            && Objects.equals(this.driverVersion, npuInfo.driverVersion);
+        NpuInfo that = (NpuInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.capacity, that.capacity) && Objects.equals(this.driverVersion, that.driverVersion);
     }
 
     @Override

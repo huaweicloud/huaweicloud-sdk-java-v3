@@ -60,22 +60,15 @@ public class BillingUpdate {
             if (value == null) {
                 return null;
             }
-            ConsistentLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConsistentLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConsistentLevelEnum(value));
         }
 
         public static ConsistentLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConsistentLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -139,16 +132,15 @@ public class BillingUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BillingUpdate billingUpdate = (BillingUpdate) o;
-        return Objects.equals(this.consistentLevel, billingUpdate.consistentLevel)
-            && Objects.equals(this.size, billingUpdate.size);
+        BillingUpdate that = (BillingUpdate) obj;
+        return Objects.equals(this.consistentLevel, that.consistentLevel) && Objects.equals(this.size, that.size);
     }
 
     @Override

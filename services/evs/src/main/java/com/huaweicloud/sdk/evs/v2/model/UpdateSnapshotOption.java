@@ -55,16 +55,15 @@ public class UpdateSnapshotOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSnapshotOption updateSnapshotOption = (UpdateSnapshotOption) o;
-        return Objects.equals(this.description, updateSnapshotOption.description)
-            && Objects.equals(this.name, updateSnapshotOption.name);
+        UpdateSnapshotOption that = (UpdateSnapshotOption) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name);
     }
 
     @Override

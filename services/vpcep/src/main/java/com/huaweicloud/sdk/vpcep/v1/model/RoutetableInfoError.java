@@ -90,16 +90,15 @@ public class RoutetableInfoError {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoutetableInfoError routetableInfoError = (RoutetableInfoError) o;
-        return Objects.equals(this.bindFailed, routetableInfoError.bindFailed)
-            && Objects.equals(this.unbindFailed, routetableInfoError.unbindFailed);
+        RoutetableInfoError that = (RoutetableInfoError) obj;
+        return Objects.equals(this.bindFailed, that.bindFailed) && Objects.equals(this.unbindFailed, that.unbindFailed);
     }
 
     @Override

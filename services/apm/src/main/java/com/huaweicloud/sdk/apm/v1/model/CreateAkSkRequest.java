@@ -43,15 +43,15 @@ public class CreateAkSkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAkSkRequest createAkSkRequest = (CreateAkSkRequest) o;
-        return Objects.equals(this.body, createAkSkRequest.body);
+        CreateAkSkRequest that = (CreateAkSkRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

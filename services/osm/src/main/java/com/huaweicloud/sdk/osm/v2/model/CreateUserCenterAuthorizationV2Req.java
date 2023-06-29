@@ -57,16 +57,16 @@ public class CreateUserCenterAuthorizationV2Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateUserCenterAuthorizationV2Req createUserCenterAuthorizationV2Req = (CreateUserCenterAuthorizationV2Req) o;
-        return Objects.equals(this.isAuthorized, createUserCenterAuthorizationV2Req.isAuthorized)
-            && Objects.equals(this.authorizationContent, createUserCenterAuthorizationV2Req.authorizationContent);
+        CreateUserCenterAuthorizationV2Req that = (CreateUserCenterAuthorizationV2Req) obj;
+        return Objects.equals(this.isAuthorized, that.isAuthorized)
+            && Objects.equals(this.authorizationContent, that.authorizationContent);
     }
 
     @Override

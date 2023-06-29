@@ -56,16 +56,15 @@ public class DeleteRuleGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRuleGroupResponse deleteRuleGroupResponse = (DeleteRuleGroupResponse) o;
-        return Objects.equals(this.msg, deleteRuleGroupResponse.msg)
-            && Objects.equals(this.status, deleteRuleGroupResponse.status);
+        DeleteRuleGroupResponse that = (DeleteRuleGroupResponse) obj;
+        return Objects.equals(this.msg, that.msg) && Objects.equals(this.status, that.status);
     }
 
     @Override

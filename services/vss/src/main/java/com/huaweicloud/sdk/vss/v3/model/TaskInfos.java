@@ -70,22 +70,15 @@ public class TaskInfos {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,16 +152,16 @@ public class TaskInfos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskInfos taskInfos = (TaskInfos) o;
-        return Objects.equals(this.taskName, taskInfos.taskName) && Objects.equals(this.url, taskInfos.url)
-            && Objects.equals(this.taskType, taskInfos.taskType);
+        TaskInfos that = (TaskInfos) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.taskType, that.taskType);
     }
 
     @Override

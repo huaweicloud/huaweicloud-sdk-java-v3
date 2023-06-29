@@ -148,20 +148,17 @@ public class ListUnreadNewInstantMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUnreadNewInstantMessagesRequest listUnreadNewInstantMessagesRequest =
-            (ListUnreadNewInstantMessagesRequest) o;
-        return Objects.equals(this.caseIds, listUnreadNewInstantMessagesRequest.caseIds)
-            && Objects.equals(this.groupId, listUnreadNewInstantMessagesRequest.groupId)
-            && Objects.equals(this.xSite, listUnreadNewInstantMessagesRequest.xSite)
-            && Objects.equals(this.xLanguage, listUnreadNewInstantMessagesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listUnreadNewInstantMessagesRequest.xTimeZone);
+        ListUnreadNewInstantMessagesRequest that = (ListUnreadNewInstantMessagesRequest) obj;
+        return Objects.equals(this.caseIds, that.caseIds) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

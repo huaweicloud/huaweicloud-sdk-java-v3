@@ -65,16 +65,15 @@ public class AddVpcExtendCidrRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddVpcExtendCidrRequestBody addVpcExtendCidrRequestBody = (AddVpcExtendCidrRequestBody) o;
-        return Objects.equals(this.dryRun, addVpcExtendCidrRequestBody.dryRun)
-            && Objects.equals(this.vpc, addVpcExtendCidrRequestBody.vpc);
+        AddVpcExtendCidrRequestBody that = (AddVpcExtendCidrRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.vpc, that.vpc);
     }
 
     @Override

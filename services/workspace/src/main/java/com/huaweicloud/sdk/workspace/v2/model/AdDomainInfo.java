@@ -60,22 +60,15 @@ public class AdDomainInfo {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DomainTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DomainTypeEnum(value));
         }
 
         public static DomainTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DomainTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,17 @@ public class AdDomainInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AdDomainInfo adDomainInfo = (AdDomainInfo) o;
-        return Objects.equals(this.domainType, adDomainInfo.domainType)
-            && Objects.equals(this.domainAdminAccount, adDomainInfo.domainAdminAccount)
-            && Objects.equals(this.domainPassword, adDomainInfo.domainPassword);
+        AdDomainInfo that = (AdDomainInfo) obj;
+        return Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.domainAdminAccount, that.domainAdminAccount)
+            && Objects.equals(this.domainPassword, that.domainPassword);
     }
 
     @Override

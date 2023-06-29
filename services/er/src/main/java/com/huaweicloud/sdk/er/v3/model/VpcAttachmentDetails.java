@@ -295,25 +295,21 @@ public class VpcAttachmentDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcAttachmentDetails vpcAttachmentDetails = (VpcAttachmentDetails) o;
-        return Objects.equals(this.id, vpcAttachmentDetails.id) && Objects.equals(this.name, vpcAttachmentDetails.name)
-            && Objects.equals(this.vpcId, vpcAttachmentDetails.vpcId)
-            && Objects.equals(this.virsubnetId, vpcAttachmentDetails.virsubnetId)
-            && Objects.equals(this.autoCreateVpcRoutes, vpcAttachmentDetails.autoCreateVpcRoutes)
-            && Objects.equals(this.state, vpcAttachmentDetails.state)
-            && Objects.equals(this.createdAt, vpcAttachmentDetails.createdAt)
-            && Objects.equals(this.updatedAt, vpcAttachmentDetails.updatedAt)
-            && Objects.equals(this.tags, vpcAttachmentDetails.tags)
-            && Objects.equals(this.description, vpcAttachmentDetails.description)
-            && Objects.equals(this.projectId, vpcAttachmentDetails.projectId)
-            && Objects.equals(this.vpcProjectId, vpcAttachmentDetails.vpcProjectId);
+        VpcAttachmentDetails that = (VpcAttachmentDetails) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.autoCreateVpcRoutes, that.autoCreateVpcRoutes)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.vpcProjectId, that.vpcProjectId);
     }
 
     @Override

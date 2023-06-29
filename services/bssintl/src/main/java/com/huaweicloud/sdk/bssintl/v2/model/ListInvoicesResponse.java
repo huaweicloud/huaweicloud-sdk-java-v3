@@ -75,16 +75,15 @@ public class ListInvoicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInvoicesResponse listInvoicesResponse = (ListInvoicesResponse) o;
-        return Objects.equals(this.count, listInvoicesResponse.count)
-            && Objects.equals(this.invoices, listInvoicesResponse.invoices);
+        ListInvoicesResponse that = (ListInvoicesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.invoices, that.invoices);
     }
 
     @Override

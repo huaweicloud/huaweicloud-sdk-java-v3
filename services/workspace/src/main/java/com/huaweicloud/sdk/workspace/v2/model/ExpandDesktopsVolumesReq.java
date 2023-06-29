@@ -53,15 +53,15 @@ public class ExpandDesktopsVolumesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandDesktopsVolumesReq expandDesktopsVolumesReq = (ExpandDesktopsVolumesReq) o;
-        return Objects.equals(this.desktopVolumesExpansion, expandDesktopsVolumesReq.desktopVolumesExpansion);
+        ExpandDesktopsVolumesReq that = (ExpandDesktopsVolumesReq) obj;
+        return Objects.equals(this.desktopVolumesExpansion, that.desktopVolumesExpansion);
     }
 
     @Override

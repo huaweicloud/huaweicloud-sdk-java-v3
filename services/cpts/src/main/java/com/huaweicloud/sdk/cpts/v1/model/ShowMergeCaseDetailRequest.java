@@ -59,16 +59,15 @@ public class ShowMergeCaseDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMergeCaseDetailRequest showMergeCaseDetailRequest = (ShowMergeCaseDetailRequest) o;
-        return Objects.equals(this.taskRunId, showMergeCaseDetailRequest.taskRunId)
-            && Objects.equals(this.caseRunId, showMergeCaseDetailRequest.caseRunId);
+        ShowMergeCaseDetailRequest that = (ShowMergeCaseDetailRequest) obj;
+        return Objects.equals(this.taskRunId, that.taskRunId) && Objects.equals(this.caseRunId, that.caseRunId);
     }
 
     @Override

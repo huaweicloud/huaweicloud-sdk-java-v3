@@ -29,28 +29,28 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 /**
- * @param <ReqT>
- * @param <FieldT>
+ * @param <R> Request type
+ * @param <F> Field type
  * @author HuaweiCloud_SDK
  */
-public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
+public class FieldImpl<R, F> implements Field<R, F> {
     String name;
 
     LocationType locationType;
 
     FieldExistence existence;
 
-    Class<FieldT> fieldType;
+    Class<F> fieldType;
 
     Class<?> innerContainerType;
 
-    Function<ReqT, FieldT> reader;
+    Function<R, F> reader;
 
-    BiConsumer<ReqT, FieldT> writer;
+    BiConsumer<R, F> writer;
 
-    Function<ReqT, Boolean> isValueProvidedFunc;
+    Function<R, Boolean> isValueProvidedFunc;
 
-    public FieldImpl(String name, LocationType locationType, FieldExistence existence, Class<FieldT> fieldType) {
+    public FieldImpl(String name, LocationType locationType, FieldExistence existence, Class<F> fieldType) {
         this.name = Objects.requireNonNull(name, "name cannot be null");
         this.locationType = Objects.requireNonNull(locationType, "locationType cannot be null");
         this.existence = Objects.requireNonNull(existence, "existence cannot be null");
@@ -60,28 +60,28 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
         this.writer = null;
     }
 
-    public <T> FieldImpl<ReqT, FieldT> withInnerContainerType(Class<T> innerContainerType) {
+    public <T> FieldImpl<R, F> withInnerContainerType(Class<T> innerContainerType) {
         this.innerContainerType = innerContainerType;
         return this;
     }
 
-    public FieldImpl<ReqT, FieldT> withReader(Function<ReqT, FieldT> valueReader) {
+    public FieldImpl<R, F> withReader(Function<R, F> valueReader) {
         Objects.requireNonNull(valueReader, "valueReader cannot be null");
         this.reader = valueReader;
         return this;
     }
 
-    public FieldImpl<ReqT, FieldT> withWriter(BiConsumer<ReqT, FieldT> writer) {
+    public FieldImpl<R, F> withWriter(BiConsumer<R, F> writer) {
         this.writer = writer;
         return this;
     }
 
-    public FieldImpl<ReqT, FieldT> withValueProvideTest(Function<ReqT, Boolean> valuePresenceTester) {
+    public FieldImpl<R, F> withValueProvideTest(Function<R, Boolean> valuePresenceTester) {
         this.isValueProvidedFunc = valuePresenceTester;
         return this;
     }
 
-    public FieldImpl<ReqT, FieldT> withMarshaller(Function<ReqT, FieldT> valueReader, BiConsumer<ReqT, FieldT> writer) {
+    public FieldImpl<R, F> withMarshaller(Function<R, F> valueReader, BiConsumer<R, F> writer) {
         return this.withReader(valueReader).withWriter(writer);
     }
 
@@ -101,7 +101,7 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
     }
 
     @Override
-    public Class<FieldT> getFieldType() {
+    public Class<F> getFieldType() {
         return fieldType;
     }
 
@@ -111,8 +111,8 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
     }
 
     @Override
-    public Optional<FieldT> readValue(ReqT request) {
-        FieldT value = reader.apply(request);
+    public Optional<F> readValue(R request) {
+        F value = reader.apply(request);
         if (value == null) {
             if (existence == FieldExistence.NULL_IGNORE) {
                 return Optional.empty();
@@ -131,24 +131,24 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
     }
 
     @Override
-    public Optional<FieldT> readValueNoValidation(ReqT request) {
-        FieldT value = reader.apply(request);
+    public Optional<F> readValueNoValidation(R request) {
+        F value = reader.apply(request);
         return value == null ? Optional.empty() : Optional.of(value);
     }
 
     @Override
-    public void writeValue(ReqT request, FieldT value, Class<FieldT> clazz) {
+    public void writeValue(R request, F value, Class<F> clazz) {
         // 由于可能存在外部转型，因此输入类型并不能完全值得信任
         writeValueSafe(request, value, clazz);
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public void writeValueSafe(ReqT request, Object value, Class<?> clazz) {
+    public void writeValueSafe(R request, Object value, Class<?> clazz) {
         if (fieldType.isAssignableFrom(clazz)) {
-            writer.accept(request, (FieldT) value);
+            writer.accept(request, (F) value);
         } else {
-            FieldT enumValue = tryFindEnumField(value, clazz).orElseThrow(() -> new SdkException(
+            F enumValue = tryFindEnumField(value, clazz).orElseThrow(() -> new SdkException(
                 "input value " + value + " with class " + clazz.getSimpleName()
                     + " is not compatible with expected class " + fieldType.getSimpleName()));
             writer.accept(request, enumValue);
@@ -156,7 +156,7 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
     }
 
     @Override
-    public boolean isValueProvided(ReqT request) {
+    public boolean isValueProvided(R request) {
         if (isValueProvidedFunc != null) {
             return isValueProvidedFunc.apply(request);
         } else {
@@ -172,17 +172,17 @@ public class FieldImpl<ReqT, FieldT> implements Field<ReqT, FieldT> {
      * @param <T> 输入取值类型参数
      * @return 如果是enum且匹配上了值，则返回匹配的enum field，否则返回empty。
      */
-    private <T> Optional<FieldT> tryFindEnumField(Object value, Class<T> clazz) {
+    private <T> Optional<F> tryFindEnumField(Object value, Class<T> clazz) {
         if (!(fieldType.isEnum() && clazz.isAssignableFrom(String.class))) {
             return Optional.empty();
         }
 
-        FieldT[] enumValues = fieldType.getEnumConstants();
+        F[] enumValues = fieldType.getEnumConstants();
         if (enumValues == null) {
             return Optional.empty();
         }
 
-        for (FieldT enumValue : enumValues) {
+        for (F enumValue : enumValues) {
             if (enumValue.toString().equals(value)) {
                 return Optional.of(enumValue);
             }

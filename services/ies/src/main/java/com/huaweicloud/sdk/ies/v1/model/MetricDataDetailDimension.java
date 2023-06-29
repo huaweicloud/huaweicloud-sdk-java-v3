@@ -55,16 +55,15 @@ public class MetricDataDetailDimension {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricDataDetailDimension metricDataDetailDimension = (MetricDataDetailDimension) o;
-        return Objects.equals(this.name, metricDataDetailDimension.name)
-            && Objects.equals(this.value, metricDataDetailDimension.value);
+        MetricDataDetailDimension that = (MetricDataDetailDimension) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

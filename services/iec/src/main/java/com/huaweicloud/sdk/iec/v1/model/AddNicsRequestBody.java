@@ -119,18 +119,16 @@ public class AddNicsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddNicsRequestBody addNicsRequestBody = (AddNicsRequestBody) o;
-        return Objects.equals(this.vpcId, addNicsRequestBody.vpcId)
-            && Objects.equals(this.securityGroups, addNicsRequestBody.securityGroups)
-            && Objects.equals(this.subnetId, addNicsRequestBody.subnetId)
-            && Objects.equals(this.nicNum, addNicsRequestBody.nicNum);
+        AddNicsRequestBody that = (AddNicsRequestBody) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.nicNum, that.nicNum);
     }
 
     @Override

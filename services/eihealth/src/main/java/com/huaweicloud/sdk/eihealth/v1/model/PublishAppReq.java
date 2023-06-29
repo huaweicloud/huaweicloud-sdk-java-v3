@@ -184,19 +184,18 @@ public class PublishAppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAppReq publishAppReq = (PublishAppReq) o;
-        return Objects.equals(this.name, publishAppReq.name) && Objects.equals(this.version, publishAppReq.version)
-            && Objects.equals(this.title, publishAppReq.title) && Objects.equals(this.picture, publishAppReq.picture)
-            && Objects.equals(this.summary, publishAppReq.summary)
-            && Objects.equals(this.description, publishAppReq.description)
-            && Objects.equals(this.labels, publishAppReq.labels);
+        PublishAppReq that = (PublishAppReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.title, that.title) && Objects.equals(this.picture, that.picture)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class BatchUpdateUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchUpdateUserResponse batchUpdateUserResponse = (BatchUpdateUserResponse) o;
-        return Objects.equals(this.allCounts, batchUpdateUserResponse.allCounts)
-            && Objects.equals(this.results, batchUpdateUserResponse.results);
+        BatchUpdateUserResponse that = (BatchUpdateUserResponse) obj;
+        return Objects.equals(this.allCounts, that.allCounts) && Objects.equals(this.results, that.results);
     }
 
     @Override

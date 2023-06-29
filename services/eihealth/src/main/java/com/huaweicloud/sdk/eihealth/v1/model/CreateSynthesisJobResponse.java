@@ -56,16 +56,15 @@ public class CreateSynthesisJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSynthesisJobResponse createSynthesisJobResponse = (CreateSynthesisJobResponse) o;
-        return Objects.equals(this.id, createSynthesisJobResponse.id)
-            && Objects.equals(this.limitConcurrency, createSynthesisJobResponse.limitConcurrency);
+        CreateSynthesisJobResponse that = (CreateSynthesisJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.limitConcurrency, that.limitConcurrency);
     }
 
     @Override

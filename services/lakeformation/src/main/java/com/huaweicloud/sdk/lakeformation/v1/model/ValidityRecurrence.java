@@ -74,16 +74,15 @@ public class ValidityRecurrence {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidityRecurrence validityRecurrence = (ValidityRecurrence) o;
-        return Objects.equals(this.interval, validityRecurrence.interval)
-            && Objects.equals(this.schedule, validityRecurrence.schedule);
+        ValidityRecurrence that = (ValidityRecurrence) obj;
+        return Objects.equals(this.interval, that.interval) && Objects.equals(this.schedule, that.schedule);
     }
 
     @Override

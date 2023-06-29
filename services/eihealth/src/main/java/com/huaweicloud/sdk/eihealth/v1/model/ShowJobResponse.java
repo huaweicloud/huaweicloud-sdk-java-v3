@@ -571,33 +571,25 @@ public class ShowJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobResponse showJobResponse = (ShowJobResponse) o;
-        return Objects.equals(this.id, showJobResponse.id) && Objects.equals(this.name, showJobResponse.name)
-            && Objects.equals(this.description, showJobResponse.description)
-            && Objects.equals(this.labels, showJobResponse.labels)
-            && Objects.equals(this.priority, showJobResponse.priority)
-            && Objects.equals(this.timeout, showJobResponse.timeout)
-            && Objects.equals(this.outputDir, showJobResponse.outputDir)
-            && Objects.equals(this.status, showJobResponse.status)
-            && Objects.equals(this.createTime, showJobResponse.createTime)
-            && Objects.equals(this.finishTime, showJobResponse.finishTime)
-            && Objects.equals(this.failedMessage, showJobResponse.failedMessage)
-            && Objects.equals(this.failedReason, showJobResponse.failedReason)
-            && Objects.equals(this.toolInfo, showJobResponse.toolInfo)
-            && Objects.equals(this.tasks, showJobResponse.tasks)
-            && Objects.equals(this.taskRuntimeInfo, showJobResponse.taskRuntimeInfo)
-            && Objects.equals(this.dag, showJobResponse.dag)
-            && Objects.equals(this.ioAccExpectedUsage, showJobResponse.ioAccExpectedUsage)
-            && Objects.equals(this.ioAccInfo, showJobResponse.ioAccInfo)
-            && Objects.equals(this.nodeLabels, showJobResponse.nodeLabels)
-            && Objects.equals(this.stillRunningTasks, showJobResponse.stillRunningTasks);
+        ShowJobResponse that = (ShowJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.finishTime, that.finishTime)
+            && Objects.equals(this.failedMessage, that.failedMessage)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.toolInfo, that.toolInfo)
+            && Objects.equals(this.tasks, that.tasks) && Objects.equals(this.taskRuntimeInfo, that.taskRuntimeInfo)
+            && Objects.equals(this.dag, that.dag) && Objects.equals(this.ioAccExpectedUsage, that.ioAccExpectedUsage)
+            && Objects.equals(this.ioAccInfo, that.ioAccInfo) && Objects.equals(this.nodeLabels, that.nodeLabels)
+            && Objects.equals(this.stillRunningTasks, that.stillRunningTasks);
     }
 
     @Override

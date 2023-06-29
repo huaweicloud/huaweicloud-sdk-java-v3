@@ -353,26 +353,23 @@ public class PublicIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicIp publicIp = (PublicIp) o;
-        return Objects.equals(this.id, publicIp.id) && Objects.equals(this.status, publicIp.status)
-            && Objects.equals(this.portId, publicIp.portId)
-            && Objects.equals(this.publicIpAddress, publicIp.publicIpAddress)
-            && Objects.equals(this.privateIpAddress, publicIp.privateIpAddress)
-            && Objects.equals(this.createTime, publicIp.createTime)
-            && Objects.equals(this.bandwidthId, publicIp.bandwidthId)
-            && Objects.equals(this.bandwidthName, publicIp.bandwidthName)
-            && Objects.equals(this.bandwidthShareType, publicIp.bandwidthShareType)
-            && Objects.equals(this.bandwidthSize, publicIp.bandwidthSize)
-            && Objects.equals(this.ipVersion, publicIp.ipVersion) && Objects.equals(this.siteId, publicIp.siteId)
-            && Objects.equals(this.siteInfo, publicIp.siteInfo) && Objects.equals(this.operator, publicIp.operator)
-            && Objects.equals(this.type, publicIp.type);
+        PublicIp that = (PublicIp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.portId, that.portId) && Objects.equals(this.publicIpAddress, that.publicIpAddress)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.bandwidthId, that.bandwidthId)
+            && Objects.equals(this.bandwidthName, that.bandwidthName)
+            && Objects.equals(this.bandwidthShareType, that.bandwidthShareType)
+            && Objects.equals(this.bandwidthSize, that.bandwidthSize) && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.siteId, that.siteId) && Objects.equals(this.siteInfo, that.siteInfo)
+            && Objects.equals(this.operator, that.operator) && Objects.equals(this.type, that.type);
     }
 
     @Override

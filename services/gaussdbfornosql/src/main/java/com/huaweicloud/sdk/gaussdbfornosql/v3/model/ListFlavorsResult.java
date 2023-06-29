@@ -184,20 +184,19 @@ public class ListFlavorsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlavorsResult listFlavorsResult = (ListFlavorsResult) o;
-        return Objects.equals(this.engineName, listFlavorsResult.engineName)
-            && Objects.equals(this.engineVersion, listFlavorsResult.engineVersion)
-            && Objects.equals(this.vcpus, listFlavorsResult.vcpus) && Objects.equals(this.ram, listFlavorsResult.ram)
-            && Objects.equals(this.specCode, listFlavorsResult.specCode)
-            && Objects.equals(this.availabilityZone, listFlavorsResult.availabilityZone)
-            && Objects.equals(this.azStatus, listFlavorsResult.azStatus);
+        ListFlavorsResult that = (ListFlavorsResult) obj;
+        return Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.specCode, that.specCode)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.azStatus, that.azStatus);
     }
 
     @Override

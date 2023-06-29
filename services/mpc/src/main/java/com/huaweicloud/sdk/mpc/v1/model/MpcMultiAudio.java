@@ -105,17 +105,16 @@ public class MpcMultiAudio {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MpcMultiAudio mpcMultiAudio = (MpcMultiAudio) o;
-        return Objects.equals(this.output, mpcMultiAudio.output)
-            && Objects.equals(this.audioFiles, mpcMultiAudio.audioFiles)
-            && Objects.equals(this.outputFilename, mpcMultiAudio.outputFilename);
+        MpcMultiAudio that = (MpcMultiAudio) obj;
+        return Objects.equals(this.output, that.output) && Objects.equals(this.audioFiles, that.audioFiles)
+            && Objects.equals(this.outputFilename, that.outputFilename);
     }
 
     @Override

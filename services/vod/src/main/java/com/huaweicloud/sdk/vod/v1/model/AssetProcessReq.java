@@ -149,19 +149,18 @@ public class AssetProcessReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetProcessReq assetProcessReq = (AssetProcessReq) o;
-        return Objects.equals(this.assetId, assetProcessReq.assetId)
-            && Objects.equals(this.templateGroupName, assetProcessReq.templateGroupName)
-            && Objects.equals(this.autoEncrypt, assetProcessReq.autoEncrypt)
-            && Objects.equals(this.thumbnail, assetProcessReq.thumbnail)
-            && Objects.equals(this.subtitleId, assetProcessReq.subtitleId);
+        AssetProcessReq that = (AssetProcessReq) obj;
+        return Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.thumbnail, that.thumbnail)
+            && Objects.equals(this.subtitleId, that.subtitleId);
     }
 
     @Override

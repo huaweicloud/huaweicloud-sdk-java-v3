@@ -121,19 +121,17 @@ public class ListMergeRequestRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMergeRequestRequest listMergeRequestRequest = (ListMergeRequestRequest) o;
-        return Objects.equals(this.repositoryId, listMergeRequestRequest.repositoryId)
-            && Objects.equals(this.state, listMergeRequestRequest.state)
-            && Objects.equals(this.page, listMergeRequestRequest.page)
-            && Objects.equals(this.perPage, listMergeRequestRequest.perPage)
-            && Objects.equals(this.search, listMergeRequestRequest.search);
+        ListMergeRequestRequest that = (ListMergeRequestRequest) obj;
+        return Objects.equals(this.repositoryId, that.repositoryId) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.perPage, that.perPage)
+            && Objects.equals(this.search, that.search);
     }
 
     @Override

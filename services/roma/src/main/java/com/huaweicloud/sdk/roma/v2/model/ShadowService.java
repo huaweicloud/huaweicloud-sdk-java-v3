@@ -98,17 +98,16 @@ public class ShadowService {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShadowService shadowService = (ShadowService) o;
-        return Objects.equals(this.serviceId, shadowService.serviceId)
-            && Objects.equals(this.serviceName, shadowService.serviceName)
-            && Objects.equals(this.properties, shadowService.properties);
+        ShadowService that = (ShadowService) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.serviceName, that.serviceName)
+            && Objects.equals(this.properties, that.properties);
     }
 
     @Override

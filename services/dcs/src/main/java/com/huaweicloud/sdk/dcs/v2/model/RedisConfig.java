@@ -77,17 +77,16 @@ public class RedisConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RedisConfig redisConfig = (RedisConfig) o;
-        return Objects.equals(this.paramValue, redisConfig.paramValue)
-            && Objects.equals(this.paramName, redisConfig.paramName)
-            && Objects.equals(this.paramId, redisConfig.paramId);
+        RedisConfig that = (RedisConfig) obj;
+        return Objects.equals(this.paramValue, that.paramValue) && Objects.equals(this.paramName, that.paramName)
+            && Objects.equals(this.paramId, that.paramId);
     }
 
     @Override

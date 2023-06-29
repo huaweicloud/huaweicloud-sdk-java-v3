@@ -250,24 +250,20 @@ public class KeystoneUpdateUserByAdminResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneUpdateUserByAdminResult keystoneUpdateUserByAdminResult = (KeystoneUpdateUserByAdminResult) o;
-        return Objects.equals(this.pwdStatus, keystoneUpdateUserByAdminResult.pwdStatus)
-            && Objects.equals(this.domainId, keystoneUpdateUserByAdminResult.domainId)
-            && Objects.equals(this.lastProjectId, keystoneUpdateUserByAdminResult.lastProjectId)
-            && Objects.equals(this.name, keystoneUpdateUserByAdminResult.name)
-            && Objects.equals(this.description, keystoneUpdateUserByAdminResult.description)
-            && Objects.equals(this.passwordExpiresAt, keystoneUpdateUserByAdminResult.passwordExpiresAt)
-            && Objects.equals(this.links, keystoneUpdateUserByAdminResult.links)
-            && Objects.equals(this.id, keystoneUpdateUserByAdminResult.id)
-            && Objects.equals(this.enabled, keystoneUpdateUserByAdminResult.enabled)
-            && Objects.equals(this.extra, keystoneUpdateUserByAdminResult.extra);
+        KeystoneUpdateUserByAdminResult that = (KeystoneUpdateUserByAdminResult) obj;
+        return Objects.equals(this.pwdStatus, that.pwdStatus) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.lastProjectId, that.lastProjectId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.passwordExpiresAt, that.passwordExpiresAt) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.extra, that.extra);
     }
 
     @Override

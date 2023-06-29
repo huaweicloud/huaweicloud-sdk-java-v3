@@ -74,22 +74,15 @@ public class BatchPublicIp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -259,18 +252,18 @@ public class BatchPublicIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchPublicIp batchPublicIp = (BatchPublicIp) o;
-        return Objects.equals(this.id, batchPublicIp.id) && Objects.equals(this.type, batchPublicIp.type)
-            && Objects.equals(this.ipVersion, batchPublicIp.ipVersion)
-            && Objects.equals(this.enterpriseProjectId, batchPublicIp.enterpriseProjectId)
-            && Objects.equals(this.tags, batchPublicIp.tags) && Objects.equals(this.profile, batchPublicIp.profile);
+        BatchPublicIp that = (BatchPublicIp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ipVersion, that.ipVersion)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.profile, that.profile);
     }
 
     @Override

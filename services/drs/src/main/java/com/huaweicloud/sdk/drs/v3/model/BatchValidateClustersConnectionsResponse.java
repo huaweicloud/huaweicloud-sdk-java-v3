@@ -75,17 +75,15 @@ public class BatchValidateClustersConnectionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchValidateClustersConnectionsResponse batchValidateClustersConnectionsResponse =
-            (BatchValidateClustersConnectionsResponse) o;
-        return Objects.equals(this.results, batchValidateClustersConnectionsResponse.results)
-            && Objects.equals(this.count, batchValidateClustersConnectionsResponse.count);
+        BatchValidateClustersConnectionsResponse that = (BatchValidateClustersConnectionsResponse) obj;
+        return Objects.equals(this.results, that.results) && Objects.equals(this.count, that.count);
     }
 
     @Override

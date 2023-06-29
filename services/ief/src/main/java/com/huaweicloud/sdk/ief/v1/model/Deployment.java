@@ -209,18 +209,18 @@ public class Deployment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Deployment deployment = (Deployment) o;
-        return Objects.equals(this.name, deployment.name) && Objects.equals(this.description, deployment.description)
-            && Objects.equals(this.source, deployment.source) && Objects.equals(this.groupId, deployment.groupId)
-            && Objects.equals(this.nodeIds, deployment.nodeIds) && Objects.equals(this.tags, deployment.tags)
-            && Objects.equals(this.deployment, deployment.deployment);
+        Deployment that = (Deployment) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.deployment, that.deployment);
     }
 
     @Override

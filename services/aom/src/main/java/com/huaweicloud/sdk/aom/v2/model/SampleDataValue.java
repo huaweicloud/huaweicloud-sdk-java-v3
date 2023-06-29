@@ -1,51 +1,41 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.MetricDataPoints;
-import com.huaweicloud.sdk.aom.v2.model.QuerySample;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 查询结果详细。
  */
-public class SampleDataValue  {
-
+public class SampleDataValue {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sample")
-    
+    @JsonProperty(value = "sample")
 
     private QuerySample sample;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="data_points")
-    
+    @JsonProperty(value = "data_points")
+
     private List<MetricDataPoints> dataPoints = null;
-    
+
     public SampleDataValue withSample(QuerySample sample) {
         this.sample = sample;
         return this;
     }
 
     public SampleDataValue withSample(Consumer<QuerySample> sampleSetter) {
-        if(this.sample == null ){
+        if (this.sample == null) {
             this.sample = new QuerySample();
             sampleSetter.accept(this.sample);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get sample
@@ -59,16 +49,13 @@ public class SampleDataValue  {
         this.sample = sample;
     }
 
-    
-
     public SampleDataValue withDataPoints(List<MetricDataPoints> dataPoints) {
         this.dataPoints = dataPoints;
         return this;
     }
 
-    
     public SampleDataValue addDataPointsItem(MetricDataPoints dataPointsItem) {
-        if(this.dataPoints == null) {
+        if (this.dataPoints == null) {
             this.dataPoints = new ArrayList<>();
         }
         this.dataPoints.add(dataPointsItem);
@@ -76,7 +63,7 @@ public class SampleDataValue  {
     }
 
     public SampleDataValue withDataPoints(Consumer<List<MetricDataPoints>> dataPointsSetter) {
-        if(this.dataPoints == null) {
+        if (this.dataPoints == null) {
             this.dataPoints = new ArrayList<>();
         }
         dataPointsSetter.accept(this.dataPoints);
@@ -95,24 +82,23 @@ public class SampleDataValue  {
         this.dataPoints = dataPoints;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SampleDataValue sampleDataValue = (SampleDataValue) o;
-        return Objects.equals(this.sample, sampleDataValue.sample) &&
-            Objects.equals(this.dataPoints, sampleDataValue.dataPoints);
+        SampleDataValue that = (SampleDataValue) obj;
+        return Objects.equals(this.sample, that.sample) && Objects.equals(this.dataPoints, that.dataPoints);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(sample, dataPoints);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -122,6 +108,7 @@ public class SampleDataValue  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -132,8 +119,5 @@ public class SampleDataValue  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

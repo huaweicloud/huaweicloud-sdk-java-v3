@@ -44,15 +44,15 @@ public class ShowKeyStoreResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowKeyStoreResponse showKeyStoreResponse = (ShowKeyStoreResponse) o;
-        return Objects.equals(this.keystore, showKeyStoreResponse.keystore);
+        ShowKeyStoreResponse that = (ShowKeyStoreResponse) obj;
+        return Objects.equals(this.keystore, that.keystore);
     }
 
     @Override

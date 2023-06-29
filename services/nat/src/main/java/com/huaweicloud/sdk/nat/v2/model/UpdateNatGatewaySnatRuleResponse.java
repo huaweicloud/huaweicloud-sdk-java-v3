@@ -45,15 +45,15 @@ public class UpdateNatGatewaySnatRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNatGatewaySnatRuleResponse updateNatGatewaySnatRuleResponse = (UpdateNatGatewaySnatRuleResponse) o;
-        return Objects.equals(this.snatRule, updateNatGatewaySnatRuleResponse.snatRule);
+        UpdateNatGatewaySnatRuleResponse that = (UpdateNatGatewaySnatRuleResponse) obj;
+        return Objects.equals(this.snatRule, that.snatRule);
     }
 
     @Override

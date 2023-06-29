@@ -139,19 +139,17 @@ public class UpdateCaseContactInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCaseContactInfoRequest updateCaseContactInfoRequest = (UpdateCaseContactInfoRequest) o;
-        return Objects.equals(this.caseId, updateCaseContactInfoRequest.caseId)
-            && Objects.equals(this.xSite, updateCaseContactInfoRequest.xSite)
-            && Objects.equals(this.xLanguage, updateCaseContactInfoRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, updateCaseContactInfoRequest.xTimeZone)
-            && Objects.equals(this.body, updateCaseContactInfoRequest.body);
+        UpdateCaseContactInfoRequest that = (UpdateCaseContactInfoRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

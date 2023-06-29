@@ -103,18 +103,16 @@ public class TenantAgreeAuthDetailV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TenantAgreeAuthDetailV2 tenantAgreeAuthDetailV2 = (TenantAgreeAuthDetailV2) o;
-        return Objects.equals(this.port, tenantAgreeAuthDetailV2.port)
-            && Objects.equals(this.account, tenantAgreeAuthDetailV2.account)
-            && Objects.equals(this.password, tenantAgreeAuthDetailV2.password)
-            && Objects.equals(this.authDetailId, tenantAgreeAuthDetailV2.authDetailId);
+        TenantAgreeAuthDetailV2 that = (TenantAgreeAuthDetailV2) obj;
+        return Objects.equals(this.port, that.port) && Objects.equals(this.account, that.account)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.authDetailId, that.authDetailId);
     }
 
     @Override

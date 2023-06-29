@@ -77,16 +77,16 @@ public class CloudVpcInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudVpcInfo cloudVpcInfo = (CloudVpcInfo) o;
-        return Objects.equals(this.vpcId, cloudVpcInfo.vpcId) && Objects.equals(this.subnetId, cloudVpcInfo.subnetId)
-            && Objects.equals(this.securityGroupId, cloudVpcInfo.securityGroupId);
+        CloudVpcInfo that = (CloudVpcInfo) obj;
+        return Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

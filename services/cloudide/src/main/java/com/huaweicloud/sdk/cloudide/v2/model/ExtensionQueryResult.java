@@ -90,16 +90,16 @@ public class ExtensionQueryResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtensionQueryResult extensionQueryResult = (ExtensionQueryResult) o;
-        return Objects.equals(this.extensions, extensionQueryResult.extensions)
-            && Objects.equals(this.resultMetadata, extensionQueryResult.resultMetadata);
+        ExtensionQueryResult that = (ExtensionQueryResult) obj;
+        return Objects.equals(this.extensions, that.extensions)
+            && Objects.equals(this.resultMetadata, that.resultMetadata);
     }
 
     @Override

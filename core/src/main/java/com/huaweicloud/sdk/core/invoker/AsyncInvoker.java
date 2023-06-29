@@ -27,11 +27,11 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * @param <ReqT>
- * @param <ResT>
+ * @param <R> Request type
+ * @param <S> Response type
  * @author HuaweiCloud_SDK
  */
-public class AsyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, AsyncInvoker<ReqT, ResT>> {
+public class AsyncInvoker<R, S> extends BaseInvoker<R, S, AsyncInvoker<R, S>> {
     /**
      * The default constructor for AsyncInvoker.
      *
@@ -40,7 +40,7 @@ public class AsyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, AsyncInvok
      * and extract original HttpResponse
      * @param hcClient encapsulated client before default http client
      */
-    public AsyncInvoker(ReqT req, HttpRequestDef<ReqT, ResT> meta, HcClient hcClient) {
+    public AsyncInvoker(R req, HttpRequestDef<R, S> meta, HcClient hcClient) {
         super(req, meta, hcClient);
     }
 
@@ -49,7 +49,7 @@ public class AsyncInvoker<ReqT, ResT> extends BaseInvoker<ReqT, ResT, AsyncInvok
      *
      * @return CompletableFuture
      */
-    public CompletableFuture<ResT> invoke() {
+    public CompletableFuture<S> invoke() {
         return retry(() -> this.hcClient.preInvoke(extraHeader).asyncInvokeHttp(req, meta, exchange));
     }
 }

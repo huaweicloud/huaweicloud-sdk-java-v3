@@ -33,15 +33,15 @@ public class EnableCertificateAuthorityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableCertificateAuthorityRequest enableCertificateAuthorityRequest = (EnableCertificateAuthorityRequest) o;
-        return Objects.equals(this.caId, enableCertificateAuthorityRequest.caId);
+        EnableCertificateAuthorityRequest that = (EnableCertificateAuthorityRequest) obj;
+        return Objects.equals(this.caId, that.caId);
     }
 
     @Override

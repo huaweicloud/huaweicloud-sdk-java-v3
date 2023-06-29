@@ -108,18 +108,16 @@ public class ShowOverviewResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOverviewResponse showOverviewResponse = (ShowOverviewResponse) o;
-        return Objects.equals(this.waiting, showOverviewResponse.waiting)
-            && Objects.equals(this.replicating, showOverviewResponse.replicating)
-            && Objects.equals(this.syncing, showOverviewResponse.syncing)
-            && Objects.equals(this.other, showOverviewResponse.other);
+        ShowOverviewResponse that = (ShowOverviewResponse) obj;
+        return Objects.equals(this.waiting, that.waiting) && Objects.equals(this.replicating, that.replicating)
+            && Objects.equals(this.syncing, that.syncing) && Objects.equals(this.other, that.other);
     }
 
     @Override

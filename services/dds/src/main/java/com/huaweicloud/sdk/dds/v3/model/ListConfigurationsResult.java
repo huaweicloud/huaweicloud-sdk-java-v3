@@ -209,23 +209,20 @@ public class ListConfigurationsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationsResult listConfigurationsResult = (ListConfigurationsResult) o;
-        return Objects.equals(this.id, listConfigurationsResult.id)
-            && Objects.equals(this.name, listConfigurationsResult.name)
-            && Objects.equals(this.description, listConfigurationsResult.description)
-            && Objects.equals(this.datastoreVersion, listConfigurationsResult.datastoreVersion)
-            && Objects.equals(this.datastoreName, listConfigurationsResult.datastoreName)
-            && Objects.equals(this.nodeType, listConfigurationsResult.nodeType)
-            && Objects.equals(this.created, listConfigurationsResult.created)
-            && Objects.equals(this.updated, listConfigurationsResult.updated)
-            && Objects.equals(this.userDefined, listConfigurationsResult.userDefined);
+        ListConfigurationsResult that = (ListConfigurationsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.datastoreVersion, that.datastoreVersion)
+            && Objects.equals(this.datastoreName, that.datastoreName) && Objects.equals(this.nodeType, that.nodeType)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.userDefined, that.userDefined);
     }
 
     @Override

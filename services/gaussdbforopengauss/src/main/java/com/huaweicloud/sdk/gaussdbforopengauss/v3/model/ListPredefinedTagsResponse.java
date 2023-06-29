@@ -1,40 +1,31 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListPredefinedTagsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<List<Object>> tags = null;
-    
+
     public ListPredefinedTagsResponse withTags(List<List<Object>> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListPredefinedTagsResponse addTagsItem(List<Object> tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -42,7 +33,7 @@ public class ListPredefinedTagsResponse extends SdkResponse {
     }
 
     public ListPredefinedTagsResponse withTags(Consumer<List<List<Object>>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -61,23 +52,23 @@ public class ListPredefinedTagsResponse extends SdkResponse {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPredefinedTagsResponse listPredefinedTagsResponse = (ListPredefinedTagsResponse) o;
-        return Objects.equals(this.tags, listPredefinedTagsResponse.tags);
+        ListPredefinedTagsResponse that = (ListPredefinedTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -86,6 +77,7 @@ public class ListPredefinedTagsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -96,8 +88,5 @@ public class ListPredefinedTagsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

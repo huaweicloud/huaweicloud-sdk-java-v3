@@ -349,27 +349,21 @@ public class AutoJobListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoJobListDto autoJobListDto = (AutoJobListDto) o;
-        return Objects.equals(this.id, autoJobListDto.id) && Objects.equals(this.name, autoJobListDto.name)
-            && Objects.equals(this.description, autoJobListDto.description)
-            && Objects.equals(this.labels, autoJobListDto.labels)
-            && Objects.equals(this.priority, autoJobListDto.priority)
-            && Objects.equals(this.timeout, autoJobListDto.timeout)
-            && Objects.equals(this.status, autoJobListDto.status)
-            && Objects.equals(this.createTime, autoJobListDto.createTime)
-            && Objects.equals(this.finishTime, autoJobListDto.finishTime)
-            && Objects.equals(this.failedReason, autoJobListDto.failedReason)
-            && Objects.equals(this.userName, autoJobListDto.userName)
-            && Objects.equals(this.toolInfo, autoJobListDto.toolInfo)
-            && Objects.equals(this.databaseId, autoJobListDto.databaseId)
-            && Objects.equals(this.databaseName, autoJobListDto.databaseName);
+        AutoJobListDto that = (AutoJobListDto) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.finishTime, that.finishTime) && Objects.equals(this.failedReason, that.failedReason)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.toolInfo, that.toolInfo)
+            && Objects.equals(this.databaseId, that.databaseId) && Objects.equals(this.databaseName, that.databaseName);
     }
 
     @Override

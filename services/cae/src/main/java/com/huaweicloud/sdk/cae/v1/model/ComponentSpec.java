@@ -328,23 +328,21 @@ public class ComponentSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentSpec componentSpec = (ComponentSpec) o;
-        return Objects.equals(this.runtime, componentSpec.runtime) && Objects.equals(this.envId, componentSpec.envId)
-            && Objects.equals(this.replica, componentSpec.replica)
-            && Objects.equals(this.availableReplica, componentSpec.availableReplica)
-            && Objects.equals(this.source, componentSpec.source) && Objects.equals(this.build, componentSpec.build)
-            && Objects.equals(this.accessInfo, componentSpec.accessInfo)
-            && Objects.equals(this.buildId, componentSpec.buildId)
-            && Objects.equals(this.imageUrl, componentSpec.imageUrl) && Objects.equals(this.jobId, componentSpec.jobId)
-            && Objects.equals(this.logStrategy, componentSpec.logStrategy)
-            && Objects.equals(this.status, componentSpec.status);
+        ComponentSpec that = (ComponentSpec) obj;
+        return Objects.equals(this.runtime, that.runtime) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.replica, that.replica)
+            && Objects.equals(this.availableReplica, that.availableReplica) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.build, that.build) && Objects.equals(this.accessInfo, that.accessInfo)
+            && Objects.equals(this.buildId, that.buildId) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.logStrategy, that.logStrategy)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

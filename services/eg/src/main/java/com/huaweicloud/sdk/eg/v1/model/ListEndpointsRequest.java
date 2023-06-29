@@ -75,22 +75,15 @@ public class ListEndpointsRequest {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -251,21 +244,18 @@ public class ListEndpointsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEndpointsRequest listEndpointsRequest = (ListEndpointsRequest) o;
-        return Objects.equals(this.offset, listEndpointsRequest.offset)
-            && Objects.equals(this.limit, listEndpointsRequest.limit)
-            && Objects.equals(this.sort, listEndpointsRequest.sort)
-            && Objects.equals(this.type, listEndpointsRequest.type)
-            && Objects.equals(this.name, listEndpointsRequest.name)
-            && Objects.equals(this.vpcId, listEndpointsRequest.vpcId)
-            && Objects.equals(this.fuzzyName, listEndpointsRequest.fuzzyName);
+        ListEndpointsRequest that = (ListEndpointsRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.fuzzyName, that.fuzzyName);
     }
 
     @Override

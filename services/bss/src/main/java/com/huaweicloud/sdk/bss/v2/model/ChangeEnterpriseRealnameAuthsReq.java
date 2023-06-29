@@ -287,25 +287,21 @@ public class ChangeEnterpriseRealnameAuthsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeEnterpriseRealnameAuthsReq changeEnterpriseRealnameAuthsReq = (ChangeEnterpriseRealnameAuthsReq) o;
-        return Objects.equals(this.customerId, changeEnterpriseRealnameAuthsReq.customerId)
-            && Objects.equals(this.identifyType, changeEnterpriseRealnameAuthsReq.identifyType)
-            && Objects.equals(this.certificateType, changeEnterpriseRealnameAuthsReq.certificateType)
-            && Objects.equals(this.verifiedFileUrl, changeEnterpriseRealnameAuthsReq.verifiedFileUrl)
-            && Objects.equals(this.corpName, changeEnterpriseRealnameAuthsReq.corpName)
-            && Objects.equals(this.verifiedNumber, changeEnterpriseRealnameAuthsReq.verifiedNumber)
-            && Objects.equals(this.regCountry, changeEnterpriseRealnameAuthsReq.regCountry)
-            && Objects.equals(this.regAddress, changeEnterpriseRealnameAuthsReq.regAddress)
-            && Objects.equals(this.changeType, changeEnterpriseRealnameAuthsReq.changeType)
-            && Objects.equals(this.xaccountType, changeEnterpriseRealnameAuthsReq.xaccountType)
-            && Objects.equals(this.enterprisePerson, changeEnterpriseRealnameAuthsReq.enterprisePerson);
+        ChangeEnterpriseRealnameAuthsReq that = (ChangeEnterpriseRealnameAuthsReq) obj;
+        return Objects.equals(this.customerId, that.customerId) && Objects.equals(this.identifyType, that.identifyType)
+            && Objects.equals(this.certificateType, that.certificateType)
+            && Objects.equals(this.verifiedFileUrl, that.verifiedFileUrl)
+            && Objects.equals(this.corpName, that.corpName) && Objects.equals(this.verifiedNumber, that.verifiedNumber)
+            && Objects.equals(this.regCountry, that.regCountry) && Objects.equals(this.regAddress, that.regAddress)
+            && Objects.equals(this.changeType, that.changeType) && Objects.equals(this.xaccountType, that.xaccountType)
+            && Objects.equals(this.enterprisePerson, that.enterprisePerson);
     }
 
     @Override

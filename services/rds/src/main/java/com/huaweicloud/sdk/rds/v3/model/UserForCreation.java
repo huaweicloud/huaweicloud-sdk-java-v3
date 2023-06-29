@@ -156,19 +156,17 @@ public class UserForCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserForCreation userForCreation = (UserForCreation) o;
-        return Objects.equals(this.name, userForCreation.name)
-            && Objects.equals(this.password, userForCreation.password)
-            && Objects.equals(this.comment, userForCreation.comment)
-            && Objects.equals(this.hosts, userForCreation.hosts)
-            && Objects.equals(this.databases, userForCreation.databases);
+        UserForCreation that = (UserForCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.comment, that.comment) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.databases, that.databases);
     }
 
     @Override

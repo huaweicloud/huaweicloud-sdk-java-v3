@@ -55,15 +55,15 @@ public class AttrValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttrValue attrValue = (AttrValue) o;
-        return Objects.equals(this.name, attrValue.name) && Objects.equals(this.value, attrValue.value);
+        AttrValue that = (AttrValue) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value);
     }
 
     @Override

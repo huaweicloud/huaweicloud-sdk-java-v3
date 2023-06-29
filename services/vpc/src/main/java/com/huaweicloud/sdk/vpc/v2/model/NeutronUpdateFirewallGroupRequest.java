@@ -65,16 +65,15 @@ public class NeutronUpdateFirewallGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronUpdateFirewallGroupRequest neutronUpdateFirewallGroupRequest = (NeutronUpdateFirewallGroupRequest) o;
-        return Objects.equals(this.firewallGroupId, neutronUpdateFirewallGroupRequest.firewallGroupId)
-            && Objects.equals(this.body, neutronUpdateFirewallGroupRequest.body);
+        NeutronUpdateFirewallGroupRequest that = (NeutronUpdateFirewallGroupRequest) obj;
+        return Objects.equals(this.firewallGroupId, that.firewallGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

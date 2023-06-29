@@ -197,22 +197,18 @@ public class PropertyModelResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyModelResponse propertyModelResponse = (PropertyModelResponse) o;
-        return Objects.equals(this.name, propertyModelResponse.name)
-            && Objects.equals(this.displayName, propertyModelResponse.displayName)
-            && Objects.equals(this.sourceType, propertyModelResponse.sourceType)
-            && Objects.equals(this.dataSchema, propertyModelResponse.dataSchema)
-            && Objects.equals(this.unit, propertyModelResponse.unit)
-            && Objects.equals(this.value, propertyModelResponse.value)
-            && Objects.equals(this.isTag, propertyModelResponse.isTag)
-            && Objects.equals(this.propertyId, propertyModelResponse.propertyId);
+        PropertyModelResponse that = (PropertyModelResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.dataSchema, that.dataSchema)
+            && Objects.equals(this.unit, that.unit) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.isTag, that.isTag) && Objects.equals(this.propertyId, that.propertyId);
     }
 
     @Override

@@ -76,16 +76,15 @@ public class ListDedicatedHostsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDedicatedHostsResponse listDedicatedHostsResponse = (ListDedicatedHostsResponse) o;
-        return Objects.equals(this.dedicatedHosts, listDedicatedHostsResponse.dedicatedHosts)
-            && Objects.equals(this.total, listDedicatedHostsResponse.total);
+        ListDedicatedHostsResponse that = (ListDedicatedHostsResponse) obj;
+        return Objects.equals(this.dedicatedHosts, that.dedicatedHosts) && Objects.equals(this.total, that.total);
     }
 
     @Override

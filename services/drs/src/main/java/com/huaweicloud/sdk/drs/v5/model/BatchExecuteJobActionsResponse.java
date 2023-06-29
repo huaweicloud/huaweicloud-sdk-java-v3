@@ -53,15 +53,15 @@ public class BatchExecuteJobActionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchExecuteJobActionsResponse batchExecuteJobActionsResponse = (BatchExecuteJobActionsResponse) o;
-        return Objects.equals(this.jobs, batchExecuteJobActionsResponse.jobs);
+        BatchExecuteJobActionsResponse that = (BatchExecuteJobActionsResponse) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

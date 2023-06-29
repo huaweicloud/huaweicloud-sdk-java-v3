@@ -99,18 +99,16 @@ public class ListAgentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAgentRequest listAgentRequest = (ListAgentRequest) o;
-        return Objects.equals(this.limit, listAgentRequest.limit)
-            && Objects.equals(this.offset, listAgentRequest.offset)
-            && Objects.equals(this.status, listAgentRequest.status)
-            && Objects.equals(this.agentId, listAgentRequest.agentId);
+        ListAgentRequest that = (ListAgentRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.agentId, that.agentId);
     }
 
     @Override

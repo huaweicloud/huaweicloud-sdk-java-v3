@@ -65,16 +65,15 @@ public class EventStreamingCreateReqRuleConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventStreamingCreateReqRuleConfig eventStreamingCreateReqRuleConfig = (EventStreamingCreateReqRuleConfig) o;
-        return Objects.equals(this.transform, eventStreamingCreateReqRuleConfig.transform)
-            && Objects.equals(this.filter, eventStreamingCreateReqRuleConfig.filter);
+        EventStreamingCreateReqRuleConfig that = (EventStreamingCreateReqRuleConfig) obj;
+        return Objects.equals(this.transform, that.transform) && Objects.equals(this.filter, that.filter);
     }
 
     @Override

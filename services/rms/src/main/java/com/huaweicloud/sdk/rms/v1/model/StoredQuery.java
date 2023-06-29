@@ -143,18 +143,17 @@ public class StoredQuery {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StoredQuery storedQuery = (StoredQuery) o;
-        return Objects.equals(this.id, storedQuery.id) && Objects.equals(this.name, storedQuery.name)
-            && Objects.equals(this.description, storedQuery.description)
-            && Objects.equals(this.expression, storedQuery.expression)
-            && Objects.equals(this.created, storedQuery.created) && Objects.equals(this.updated, storedQuery.updated);
+        StoredQuery that = (StoredQuery) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DefaultRootDb {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DefaultRootDb defaultRootDb = (DefaultRootDb) o;
-        return Objects.equals(this.dbName, defaultRootDb.dbName)
-            && Objects.equals(this.dbEncoding, defaultRootDb.dbEncoding);
+        DefaultRootDb that = (DefaultRootDb) obj;
+        return Objects.equals(this.dbName, that.dbName) && Objects.equals(this.dbEncoding, that.dbEncoding);
     }
 
     @Override

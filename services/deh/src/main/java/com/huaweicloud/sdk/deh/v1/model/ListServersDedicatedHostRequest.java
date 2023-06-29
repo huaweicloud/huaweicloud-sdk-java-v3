@@ -77,17 +77,16 @@ public class ListServersDedicatedHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServersDedicatedHostRequest listServersDedicatedHostRequest = (ListServersDedicatedHostRequest) o;
-        return Objects.equals(this.dedicatedHostId, listServersDedicatedHostRequest.dedicatedHostId)
-            && Objects.equals(this.limit, listServersDedicatedHostRequest.limit)
-            && Objects.equals(this.marker, listServersDedicatedHostRequest.marker);
+        ListServersDedicatedHostRequest that = (ListServersDedicatedHostRequest) obj;
+        return Objects.equals(this.dedicatedHostId, that.dedicatedHostId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

@@ -107,17 +107,17 @@ public class TargetPos {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TargetPos targetPos = (TargetPos) o;
-        return Objects.equals(this.leftTopX, targetPos.leftTopX) && Objects.equals(this.leftTopY, targetPos.leftTopY)
-            && Objects.equals(this.rightBottomX, targetPos.rightBottomX)
-            && Objects.equals(this.rightBottomY, targetPos.rightBottomY);
+        TargetPos that = (TargetPos) obj;
+        return Objects.equals(this.leftTopX, that.leftTopX) && Objects.equals(this.leftTopY, that.leftTopY)
+            && Objects.equals(this.rightBottomX, that.rightBottomX)
+            && Objects.equals(this.rightBottomY, that.rightBottomY);
     }
 
     @Override

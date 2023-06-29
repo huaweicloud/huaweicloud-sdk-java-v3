@@ -100,17 +100,16 @@ public class ListTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTemplateRequest listTemplateRequest = (ListTemplateRequest) o;
-        return Objects.equals(this.templateId, listTemplateRequest.templateId)
-            && Objects.equals(this.page, listTemplateRequest.page)
-            && Objects.equals(this.size, listTemplateRequest.size);
+        ListTemplateRequest that = (ListTemplateRequest) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.size, that.size);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class CreateAlarmResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlarmResponse createAlarmResponse = (CreateAlarmResponse) o;
-        return Objects.equals(this.alarmId, createAlarmResponse.alarmId);
+        CreateAlarmResponse that = (CreateAlarmResponse) obj;
+        return Objects.equals(this.alarmId, that.alarmId);
     }
 
     @Override

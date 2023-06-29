@@ -200,21 +200,19 @@ public class QueryRestoreList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryRestoreList queryRestoreList = (QueryRestoreList) o;
-        return Objects.equals(this.instanceId, queryRestoreList.instanceId)
-            && Objects.equals(this.instanceMode, queryRestoreList.instanceMode)
-            && Objects.equals(this.engineName, queryRestoreList.engineName)
-            && Objects.equals(this.engineVersion, queryRestoreList.engineVersion)
-            && Objects.equals(this.vpcId, queryRestoreList.vpcId)
-            && Objects.equals(this.subnetIds, queryRestoreList.subnetIds)
-            && Objects.equals(this.securityGroupIds, queryRestoreList.securityGroupIds);
+        QueryRestoreList that = (QueryRestoreList) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceMode, that.instanceMode)
+            && Objects.equals(this.engineName, that.engineName)
+            && Objects.equals(this.engineVersion, that.engineVersion) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetIds, that.subnetIds)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds);
     }
 
     @Override

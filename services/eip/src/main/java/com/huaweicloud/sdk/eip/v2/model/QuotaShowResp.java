@@ -105,16 +105,16 @@ public class QuotaShowResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuotaShowResp quotaShowResp = (QuotaShowResp) o;
-        return Objects.equals(this.type, quotaShowResp.type) && Objects.equals(this.used, quotaShowResp.used)
-            && Objects.equals(this.quota, quotaShowResp.quota) && Objects.equals(this.min, quotaShowResp.min);
+        QuotaShowResp that = (QuotaShowResp) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.quota, that.quota) && Objects.equals(this.min, that.min);
     }
 
     @Override

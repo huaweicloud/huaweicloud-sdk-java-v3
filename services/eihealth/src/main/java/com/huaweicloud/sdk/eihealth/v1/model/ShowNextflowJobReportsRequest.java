@@ -55,16 +55,15 @@ public class ShowNextflowJobReportsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNextflowJobReportsRequest showNextflowJobReportsRequest = (ShowNextflowJobReportsRequest) o;
-        return Objects.equals(this.eihealthProjectId, showNextflowJobReportsRequest.eihealthProjectId)
-            && Objects.equals(this.jobId, showNextflowJobReportsRequest.jobId);
+        ShowNextflowJobReportsRequest that = (ShowNextflowJobReportsRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.jobId, that.jobId);
     }
 
     @Override

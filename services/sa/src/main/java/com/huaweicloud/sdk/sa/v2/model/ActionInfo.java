@@ -211,22 +211,20 @@ public class ActionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionInfo actionInfo = (ActionInfo) o;
-        return Objects.equals(this.id, actionInfo.id) && Objects.equals(this.name, actionInfo.name)
-            && Objects.equals(this.description, actionInfo.description)
-            && Objects.equals(this.actionType, actionInfo.actionType)
-            && Objects.equals(this.actionId, actionInfo.actionId)
-            && Objects.equals(this.sortOrder, actionInfo.sortOrder)
-            && Objects.equals(this.playbookId, actionInfo.playbookId)
-            && Objects.equals(this.playbookVersionId, actionInfo.playbookVersionId)
-            && Objects.equals(this.projectId, actionInfo.projectId);
+        ActionInfo that = (ActionInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.sortOrder, that.sortOrder)
+            && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.playbookVersionId, that.playbookVersionId)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

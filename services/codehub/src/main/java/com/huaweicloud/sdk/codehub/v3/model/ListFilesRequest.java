@@ -77,17 +77,16 @@ public class ListFilesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFilesRequest listFilesRequest = (ListFilesRequest) o;
-        return Objects.equals(this.repositoryUuid, listFilesRequest.repositoryUuid)
-            && Objects.equals(this.branchName, listFilesRequest.branchName)
-            && Objects.equals(this.path, listFilesRequest.path);
+        ListFilesRequest that = (ListFilesRequest) obj;
+        return Objects.equals(this.repositoryUuid, that.repositoryUuid)
+            && Objects.equals(this.branchName, that.branchName) && Objects.equals(this.path, that.path);
     }
 
     @Override

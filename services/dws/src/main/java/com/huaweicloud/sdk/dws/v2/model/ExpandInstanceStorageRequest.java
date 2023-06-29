@@ -65,16 +65,15 @@ public class ExpandInstanceStorageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandInstanceStorageRequest expandInstanceStorageRequest = (ExpandInstanceStorageRequest) o;
-        return Objects.equals(this.clusterId, expandInstanceStorageRequest.clusterId)
-            && Objects.equals(this.body, expandInstanceStorageRequest.body);
+        ExpandInstanceStorageRequest that = (ExpandInstanceStorageRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

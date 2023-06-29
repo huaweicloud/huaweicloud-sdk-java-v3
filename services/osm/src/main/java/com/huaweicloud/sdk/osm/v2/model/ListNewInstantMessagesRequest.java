@@ -170,20 +170,18 @@ public class ListNewInstantMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNewInstantMessagesRequest listNewInstantMessagesRequest = (ListNewInstantMessagesRequest) o;
-        return Objects.equals(this.caseIds, listNewInstantMessagesRequest.caseIds)
-            && Objects.equals(this.lastMessageTimeId, listNewInstantMessagesRequest.lastMessageTimeId)
-            && Objects.equals(this.groupId, listNewInstantMessagesRequest.groupId)
-            && Objects.equals(this.xSite, listNewInstantMessagesRequest.xSite)
-            && Objects.equals(this.xLanguage, listNewInstantMessagesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listNewInstantMessagesRequest.xTimeZone);
+        ListNewInstantMessagesRequest that = (ListNewInstantMessagesRequest) obj;
+        return Objects.equals(this.caseIds, that.caseIds)
+            && Objects.equals(this.lastMessageTimeId, that.lastMessageTimeId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

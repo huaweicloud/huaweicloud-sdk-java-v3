@@ -53,15 +53,15 @@ public class ListTableNamesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTableNamesResponse listTableNamesResponse = (ListTableNamesResponse) o;
-        return Objects.equals(this.body, listTableNamesResponse.body);
+        ListTableNamesResponse that = (ListTableNamesResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -109,18 +109,17 @@ public class UpdateEdgeAppVersionDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeAppVersionDTO updateEdgeAppVersionDTO = (UpdateEdgeAppVersionDTO) o;
-        return Objects.equals(this.description, updateEdgeAppVersionDTO.description)
-            && Objects.equals(this.containerSettings, updateEdgeAppVersionDTO.containerSettings)
-            && Objects.equals(this.command, updateEdgeAppVersionDTO.command)
-            && Objects.equals(this.args, updateEdgeAppVersionDTO.args);
+        UpdateEdgeAppVersionDTO that = (UpdateEdgeAppVersionDTO) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.containerSettings, that.containerSettings)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.args, that.args);
     }
 
     @Override

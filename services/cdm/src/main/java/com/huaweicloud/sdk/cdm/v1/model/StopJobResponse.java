@@ -53,15 +53,15 @@ public class StopJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopJobResponse stopJobResponse = (StopJobResponse) o;
-        return Objects.equals(this.validationResult, stopJobResponse.validationResult);
+        StopJobResponse that = (StopJobResponse) obj;
+        return Objects.equals(this.validationResult, that.validationResult);
     }
 
     @Override

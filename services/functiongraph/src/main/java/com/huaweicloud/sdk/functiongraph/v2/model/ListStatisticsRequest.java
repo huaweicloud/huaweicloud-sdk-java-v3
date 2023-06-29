@@ -60,22 +60,15 @@ public class ListStatisticsRequest {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FilterEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FilterEnum(value));
         }
 
         public static FilterEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FilterEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,17 +152,16 @@ public class ListStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStatisticsRequest listStatisticsRequest = (ListStatisticsRequest) o;
-        return Objects.equals(this.filter, listStatisticsRequest.filter)
-            && Objects.equals(this.period, listStatisticsRequest.period)
-            && Objects.equals(this.option, listStatisticsRequest.option);
+        ListStatisticsRequest that = (ListStatisticsRequest) obj;
+        return Objects.equals(this.filter, that.filter) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.option, that.option);
     }
 
     @Override

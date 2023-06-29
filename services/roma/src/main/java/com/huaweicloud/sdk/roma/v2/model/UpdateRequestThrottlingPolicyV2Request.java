@@ -87,18 +87,16 @@ public class UpdateRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRequestThrottlingPolicyV2Request updateRequestThrottlingPolicyV2Request =
-            (UpdateRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, updateRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.throttleId, updateRequestThrottlingPolicyV2Request.throttleId)
-            && Objects.equals(this.body, updateRequestThrottlingPolicyV2Request.body);
+        UpdateRequestThrottlingPolicyV2Request that = (UpdateRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.throttleId, that.throttleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

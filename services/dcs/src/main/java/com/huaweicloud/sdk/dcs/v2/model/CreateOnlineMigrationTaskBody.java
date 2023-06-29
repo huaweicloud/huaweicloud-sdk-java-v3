@@ -121,19 +121,17 @@ public class CreateOnlineMigrationTaskBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOnlineMigrationTaskBody createOnlineMigrationTaskBody = (CreateOnlineMigrationTaskBody) o;
-        return Objects.equals(this.name, createOnlineMigrationTaskBody.name)
-            && Objects.equals(this.description, createOnlineMigrationTaskBody.description)
-            && Objects.equals(this.vpcId, createOnlineMigrationTaskBody.vpcId)
-            && Objects.equals(this.subnetId, createOnlineMigrationTaskBody.subnetId)
-            && Objects.equals(this.securityGroupId, createOnlineMigrationTaskBody.securityGroupId);
+        CreateOnlineMigrationTaskBody that = (CreateOnlineMigrationTaskBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId);
     }
 
     @Override

@@ -65,17 +65,15 @@ public class UpdateConfigurationAggregatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigurationAggregatorRequest updateConfigurationAggregatorRequest =
-            (UpdateConfigurationAggregatorRequest) o;
-        return Objects.equals(this.aggregatorId, updateConfigurationAggregatorRequest.aggregatorId)
-            && Objects.equals(this.body, updateConfigurationAggregatorRequest.body);
+        UpdateConfigurationAggregatorRequest that = (UpdateConfigurationAggregatorRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId) && Objects.equals(this.body, that.body);
     }
 
     @Override

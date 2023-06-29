@@ -228,23 +228,19 @@ public class DatabaseResourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseResourceRsp databaseResourceRsp = (DatabaseResourceRsp) o;
-        return Objects.equals(this.id, databaseResourceRsp.id)
-            && Objects.equals(this.resourceId, databaseResourceRsp.resourceId)
-            && Objects.equals(this.spec, databaseResourceRsp.spec)
-            && Objects.equals(this.disk, databaseResourceRsp.disk)
-            && Objects.equals(this.chargeMode, databaseResourceRsp.chargeMode)
-            && Objects.equals(this.periodNum, databaseResourceRsp.periodNum)
-            && Objects.equals(this.createTime, databaseResourceRsp.createTime)
-            && Objects.equals(this.failureReason, databaseResourceRsp.failureReason)
-            && Objects.equals(this.status, databaseResourceRsp.status);
+        DatabaseResourceRsp that = (DatabaseResourceRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.spec, that.spec) && Objects.equals(this.disk, that.disk)
+            && Objects.equals(this.chargeMode, that.chargeMode) && Objects.equals(this.periodNum, that.periodNum)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.failureReason, that.failureReason) && Objects.equals(this.status, that.status);
     }
 
     @Override

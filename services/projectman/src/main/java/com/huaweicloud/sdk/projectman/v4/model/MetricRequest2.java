@@ -109,18 +109,16 @@ public class MetricRequest2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetricRequest2 metricRequest2 = (MetricRequest2) o;
-        return Objects.equals(this.metricType, metricRequest2.metricType)
-            && Objects.equals(this.sprintId, metricRequest2.sprintId)
-            && Objects.equals(this.dividend, metricRequest2.dividend)
-            && Objects.equals(this.divisor, metricRequest2.divisor);
+        MetricRequest2 that = (MetricRequest2) obj;
+        return Objects.equals(this.metricType, that.metricType) && Objects.equals(this.sprintId, that.sprintId)
+            && Objects.equals(this.dividend, that.dividend) && Objects.equals(this.divisor, that.divisor);
     }
 
     @Override

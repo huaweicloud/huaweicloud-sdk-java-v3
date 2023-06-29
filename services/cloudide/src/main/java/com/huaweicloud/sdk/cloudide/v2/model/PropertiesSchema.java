@@ -209,23 +209,19 @@ public class PropertiesSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertiesSchema propertiesSchema = (PropertiesSchema) o;
-        return Objects.equals(this.context, propertiesSchema.context)
-            && Objects.equals(this.docstring, propertiesSchema.docstring)
-            && Objects.equals(this.ideType, propertiesSchema.ideType)
-            && Objects.equals(this.ideVersion, propertiesSchema.ideVersion)
-            && Objects.equals(this.language, propertiesSchema.language)
-            && Objects.equals(this.pluginVersion, propertiesSchema.pluginVersion)
-            && Objects.equals(this.signature, propertiesSchema.signature)
-            && Objects.equals(this.aboveText, propertiesSchema.aboveText)
-            && Objects.equals(this.followingText, propertiesSchema.followingText);
+        PropertiesSchema that = (PropertiesSchema) obj;
+        return Objects.equals(this.context, that.context) && Objects.equals(this.docstring, that.docstring)
+            && Objects.equals(this.ideType, that.ideType) && Objects.equals(this.ideVersion, that.ideVersion)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.pluginVersion, that.pluginVersion)
+            && Objects.equals(this.signature, that.signature) && Objects.equals(this.aboveText, that.aboveText)
+            && Objects.equals(this.followingText, that.followingText);
     }
 
     @Override

@@ -122,19 +122,17 @@ public class CreateKeypairResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeypairResponse createKeypairResponse = (CreateKeypairResponse) o;
-        return Objects.equals(this.name, createKeypairResponse.name)
-            && Objects.equals(this.publicKey, createKeypairResponse.publicKey)
-            && Objects.equals(this.privateKey, createKeypairResponse.privateKey)
-            && Objects.equals(this.userId, createKeypairResponse.userId)
-            && Objects.equals(this.fingerprint, createKeypairResponse.fingerprint);
+        CreateKeypairResponse that = (CreateKeypairResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.publicKey, that.publicKey)
+            && Objects.equals(this.privateKey, that.privateKey) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.fingerprint, that.fingerprint);
     }
 
     @Override

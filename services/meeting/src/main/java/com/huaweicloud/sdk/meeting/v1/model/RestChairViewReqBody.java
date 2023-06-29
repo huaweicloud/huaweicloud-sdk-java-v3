@@ -99,18 +99,16 @@ public class RestChairViewReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestChairViewReqBody restChairViewReqBody = (RestChairViewReqBody) o;
-        return Objects.equals(this.viewType, restChairViewReqBody.viewType)
-            && Objects.equals(this.participantID, restChairViewReqBody.participantID)
-            && Objects.equals(this.switchTime, restChairViewReqBody.switchTime)
-            && Objects.equals(this.status, restChairViewReqBody.status);
+        RestChairViewReqBody that = (RestChairViewReqBody) obj;
+        return Objects.equals(this.viewType, that.viewType) && Objects.equals(this.participantID, that.participantID)
+            && Objects.equals(this.switchTime, that.switchTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

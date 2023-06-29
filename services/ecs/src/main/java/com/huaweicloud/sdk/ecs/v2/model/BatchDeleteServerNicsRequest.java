@@ -65,16 +65,15 @@ public class BatchDeleteServerNicsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteServerNicsRequest batchDeleteServerNicsRequest = (BatchDeleteServerNicsRequest) o;
-        return Objects.equals(this.serverId, batchDeleteServerNicsRequest.serverId)
-            && Objects.equals(this.body, batchDeleteServerNicsRequest.body);
+        BatchDeleteServerNicsRequest that = (BatchDeleteServerNicsRequest) obj;
+        return Objects.equals(this.serverId, that.serverId) && Objects.equals(this.body, that.body);
     }
 
     @Override

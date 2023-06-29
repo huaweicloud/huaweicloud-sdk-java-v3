@@ -294,26 +294,22 @@ public class CodeTableFieldVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CodeTableFieldVO codeTableFieldVO = (CodeTableFieldVO) o;
-        return Objects.equals(this.id, codeTableFieldVO.id)
-            && Objects.equals(this.codeTableId, codeTableFieldVO.codeTableId)
-            && Objects.equals(this.ordinal, codeTableFieldVO.ordinal)
-            && Objects.equals(this.nameEn, codeTableFieldVO.nameEn)
-            && Objects.equals(this.nameCh, codeTableFieldVO.nameCh)
-            && Objects.equals(this.description, codeTableFieldVO.description)
-            && Objects.equals(this.dataType, codeTableFieldVO.dataType)
-            && Objects.equals(this.domainType, codeTableFieldVO.domainType)
-            && Objects.equals(this.dataTypeExtend, codeTableFieldVO.dataTypeExtend)
-            && Objects.equals(this.isUniqueKey, codeTableFieldVO.isUniqueKey)
-            && Objects.equals(this.codeTableFieldValues, codeTableFieldVO.codeTableFieldValues)
-            && Objects.equals(this.countFieldValues, codeTableFieldVO.countFieldValues);
+        CodeTableFieldVO that = (CodeTableFieldVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.codeTableId, that.codeTableId)
+            && Objects.equals(this.ordinal, that.ordinal) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.dataType, that.dataType) && Objects.equals(this.domainType, that.domainType)
+            && Objects.equals(this.dataTypeExtend, that.dataTypeExtend)
+            && Objects.equals(this.isUniqueKey, that.isUniqueKey)
+            && Objects.equals(this.codeTableFieldValues, that.codeTableFieldValues)
+            && Objects.equals(this.countFieldValues, that.countFieldValues);
     }
 
     @Override

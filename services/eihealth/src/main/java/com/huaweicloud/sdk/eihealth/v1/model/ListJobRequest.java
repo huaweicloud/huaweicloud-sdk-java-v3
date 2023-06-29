@@ -342,27 +342,23 @@ public class ListJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobRequest listJobRequest = (ListJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, listJobRequest.eihealthProjectId)
-            && Objects.equals(this.endTime, listJobRequest.endTime)
-            && Objects.equals(this.jobName, listJobRequest.jobName)
-            && Objects.equals(this.labels, listJobRequest.labels) && Objects.equals(this.limit, listJobRequest.limit)
-            && Objects.equals(this.offset, listJobRequest.offset)
-            && Objects.equals(this.sortDir, listJobRequest.sortDir)
-            && Objects.equals(this.sortKey, listJobRequest.sortKey)
-            && Objects.equals(this.startTime, listJobRequest.startTime)
-            && Objects.equals(this.status, listJobRequest.status)
-            && Objects.equals(this.toolName, listJobRequest.toolName)
-            && Objects.equals(this.userName, listJobRequest.userName)
-            && Objects.equals(this.finishStartTime, listJobRequest.finishStartTime)
-            && Objects.equals(this.finishEndTime, listJobRequest.finishEndTime);
+        ListJobRequest that = (ListJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortDir, that.sortDir)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.toolName, that.toolName)
+            && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.finishStartTime, that.finishStartTime)
+            && Objects.equals(this.finishEndTime, that.finishEndTime);
     }
 
     @Override

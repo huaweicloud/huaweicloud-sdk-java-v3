@@ -65,22 +65,15 @@ public class Keypair {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -147,22 +140,15 @@ public class Keypair {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ScopeEnum(value));
         }
 
         public static ScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -324,19 +310,19 @@ public class Keypair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Keypair keypair = (Keypair) o;
-        return Objects.equals(this.name, keypair.name) && Objects.equals(this.type, keypair.type)
-            && Objects.equals(this.scope, keypair.scope) && Objects.equals(this.publicKey, keypair.publicKey)
-            && Objects.equals(this.fingerprint, keypair.fingerprint)
-            && Objects.equals(this.isKeyProtection, keypair.isKeyProtection)
-            && Objects.equals(this.frozenState, keypair.frozenState);
+        Keypair that = (Keypair) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.scope, that.scope) && Objects.equals(this.publicKey, that.publicKey)
+            && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.isKeyProtection, that.isKeyProtection)
+            && Objects.equals(this.frozenState, that.frozenState);
     }
 
     @Override

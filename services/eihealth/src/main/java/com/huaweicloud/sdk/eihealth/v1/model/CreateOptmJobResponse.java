@@ -56,16 +56,15 @@ public class CreateOptmJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOptmJobResponse createOptmJobResponse = (CreateOptmJobResponse) o;
-        return Objects.equals(this.id, createOptmJobResponse.id)
-            && Objects.equals(this.limitConcurrency, createOptmJobResponse.limitConcurrency);
+        CreateOptmJobResponse that = (CreateOptmJobResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.limitConcurrency, that.limitConcurrency);
     }
 
     @Override

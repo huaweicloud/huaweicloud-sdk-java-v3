@@ -65,17 +65,16 @@ public class UpdateEndpointConnectionsDescRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointConnectionsDescRequest updateEndpointConnectionsDescRequest =
-            (UpdateEndpointConnectionsDescRequest) o;
-        return Objects.equals(this.vpcEndpointServiceId, updateEndpointConnectionsDescRequest.vpcEndpointServiceId)
-            && Objects.equals(this.body, updateEndpointConnectionsDescRequest.body);
+        UpdateEndpointConnectionsDescRequest that = (UpdateEndpointConnectionsDescRequest) obj;
+        return Objects.equals(this.vpcEndpointServiceId, that.vpcEndpointServiceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

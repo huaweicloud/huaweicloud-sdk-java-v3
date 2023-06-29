@@ -75,16 +75,15 @@ public class ListScrumProjectStatusesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScrumProjectStatusesResponse listScrumProjectStatusesResponse = (ListScrumProjectStatusesResponse) o;
-        return Objects.equals(this.total, listScrumProjectStatusesResponse.total)
-            && Objects.equals(this.issueStatuses, listScrumProjectStatusesResponse.issueStatuses);
+        ListScrumProjectStatusesResponse that = (ListScrumProjectStatusesResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.issueStatuses, that.issueStatuses);
     }
 
     @Override

@@ -74,15 +74,15 @@ public class NodePoolUpdate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePoolUpdate nodePoolUpdate = (NodePoolUpdate) o;
-        return Objects.equals(this.metadata, nodePoolUpdate.metadata) && Objects.equals(this.spec, nodePoolUpdate.spec);
+        NodePoolUpdate that = (NodePoolUpdate) obj;
+        return Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec);
     }
 
     @Override

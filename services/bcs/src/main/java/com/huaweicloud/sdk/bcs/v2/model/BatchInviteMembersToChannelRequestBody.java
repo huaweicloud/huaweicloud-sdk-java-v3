@@ -119,19 +119,17 @@ public class BatchInviteMembersToChannelRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchInviteMembersToChannelRequestBody batchInviteMembersToChannelRequestBody =
-            (BatchInviteMembersToChannelRequestBody) o;
-        return Objects.equals(this.bcsId, batchInviteMembersToChannelRequestBody.bcsId)
-            && Objects.equals(this.channelName, batchInviteMembersToChannelRequestBody.channelName)
-            && Objects.equals(this.invitorUsername, batchInviteMembersToChannelRequestBody.invitorUsername)
-            && Objects.equals(this.invitedUserinfo, batchInviteMembersToChannelRequestBody.invitedUserinfo);
+        BatchInviteMembersToChannelRequestBody that = (BatchInviteMembersToChannelRequestBody) obj;
+        return Objects.equals(this.bcsId, that.bcsId) && Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.invitorUsername, that.invitorUsername)
+            && Objects.equals(this.invitedUserinfo, that.invitedUserinfo);
     }
 
     @Override

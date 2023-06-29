@@ -65,16 +65,15 @@ public class UpdateProjectTrackerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectTrackerRequest updateProjectTrackerRequest = (UpdateProjectTrackerRequest) o;
-        return Objects.equals(this.eihealthProjectId, updateProjectTrackerRequest.eihealthProjectId)
-            && Objects.equals(this.body, updateProjectTrackerRequest.body);
+        UpdateProjectTrackerRequest that = (UpdateProjectTrackerRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

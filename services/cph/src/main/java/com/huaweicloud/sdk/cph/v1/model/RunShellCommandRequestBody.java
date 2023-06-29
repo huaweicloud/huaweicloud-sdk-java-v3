@@ -134,18 +134,16 @@ public class RunShellCommandRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunShellCommandRequestBody runShellCommandRequestBody = (RunShellCommandRequestBody) o;
-        return Objects.equals(this.command, runShellCommandRequestBody.command)
-            && Objects.equals(this.content, runShellCommandRequestBody.content)
-            && Objects.equals(this.phoneIds, runShellCommandRequestBody.phoneIds)
-            && Objects.equals(this.serverIds, runShellCommandRequestBody.serverIds);
+        RunShellCommandRequestBody that = (RunShellCommandRequestBody) obj;
+        return Objects.equals(this.command, that.command) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.phoneIds, that.phoneIds) && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

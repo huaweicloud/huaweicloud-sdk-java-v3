@@ -253,22 +253,20 @@ public class MessagesEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MessagesEntity messagesEntity = (MessagesEntity) o;
-        return Objects.equals(this.topic, messagesEntity.topic)
-            && Objects.equals(this.partition, messagesEntity.partition) && Objects.equals(this.key, messagesEntity.key)
-            && Objects.equals(this.value, messagesEntity.value) && Objects.equals(this.size, messagesEntity.size)
-            && Objects.equals(this.timestamp, messagesEntity.timestamp)
-            && Objects.equals(this.hugeMessage, messagesEntity.hugeMessage)
-            && Objects.equals(this.messageOffset, messagesEntity.messageOffset)
-            && Objects.equals(this.messageId, messagesEntity.messageId)
-            && Objects.equals(this.appId, messagesEntity.appId) && Objects.equals(this.tag, messagesEntity.tag);
+        MessagesEntity that = (MessagesEntity) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.hugeMessage, that.hugeMessage)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.tag, that.tag);
     }
 
     @Override

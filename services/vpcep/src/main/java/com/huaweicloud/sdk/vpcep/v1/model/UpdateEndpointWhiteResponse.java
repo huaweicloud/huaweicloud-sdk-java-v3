@@ -69,22 +69,15 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -658,32 +644,26 @@ public class UpdateEndpointWhiteResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEndpointWhiteResponse updateEndpointWhiteResponse = (UpdateEndpointWhiteResponse) o;
-        return Objects.equals(this.id, updateEndpointWhiteResponse.id)
-            && Objects.equals(this.serviceType, updateEndpointWhiteResponse.serviceType)
-            && Objects.equals(this.status, updateEndpointWhiteResponse.status)
-            && Objects.equals(this.ip, updateEndpointWhiteResponse.ip)
-            && Objects.equals(this.activeStatus, updateEndpointWhiteResponse.activeStatus)
-            && Objects.equals(this.endpointServiceName, updateEndpointWhiteResponse.endpointServiceName)
-            && Objects.equals(this.markerId, updateEndpointWhiteResponse.markerId)
-            && Objects.equals(this.endpointServiceId, updateEndpointWhiteResponse.endpointServiceId)
-            && Objects.equals(this.enableDns, updateEndpointWhiteResponse.enableDns)
-            && Objects.equals(this.dnsNames, updateEndpointWhiteResponse.dnsNames)
-            && Objects.equals(this.subnetId, updateEndpointWhiteResponse.subnetId)
-            && Objects.equals(this.vpcId, updateEndpointWhiteResponse.vpcId)
-            && Objects.equals(this.createdAt, updateEndpointWhiteResponse.createdAt)
-            && Objects.equals(this.updatedAt, updateEndpointWhiteResponse.updatedAt)
-            && Objects.equals(this.projectId, updateEndpointWhiteResponse.projectId)
-            && Objects.equals(this.tags, updateEndpointWhiteResponse.tags)
-            && Objects.equals(this.whitelist, updateEndpointWhiteResponse.whitelist)
-            && Objects.equals(this.enableWhitelist, updateEndpointWhiteResponse.enableWhitelist);
+        UpdateEndpointWhiteResponse that = (UpdateEndpointWhiteResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.activeStatus, that.activeStatus)
+            && Objects.equals(this.endpointServiceName, that.endpointServiceName)
+            && Objects.equals(this.markerId, that.markerId)
+            && Objects.equals(this.endpointServiceId, that.endpointServiceId)
+            && Objects.equals(this.enableDns, that.enableDns) && Objects.equals(this.dnsNames, that.dnsNames)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.whitelist, that.whitelist)
+            && Objects.equals(this.enableWhitelist, that.enableWhitelist);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class TaskOutputHostingForDisplayObs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskOutputHostingForDisplayObs taskOutputHostingForDisplayObs = (TaskOutputHostingForDisplayObs) o;
-        return Objects.equals(this.bucket, taskOutputHostingForDisplayObs.bucket)
-            && Objects.equals(this.path, taskOutputHostingForDisplayObs.path);
+        TaskOutputHostingForDisplayObs that = (TaskOutputHostingForDisplayObs) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.path, that.path);
     }
 
     @Override

@@ -93,17 +93,15 @@ public class ShowInstanceExtendProductInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceExtendProductInfoResponse showInstanceExtendProductInfoResponse =
-            (ShowInstanceExtendProductInfoResponse) o;
-        return Objects.equals(this.hourly, showInstanceExtendProductInfoResponse.hourly)
-            && Objects.equals(this.monthly, showInstanceExtendProductInfoResponse.monthly);
+        ShowInstanceExtendProductInfoResponse that = (ShowInstanceExtendProductInfoResponse) obj;
+        return Objects.equals(this.hourly, that.hourly) && Objects.equals(this.monthly, that.monthly);
     }
 
     @Override

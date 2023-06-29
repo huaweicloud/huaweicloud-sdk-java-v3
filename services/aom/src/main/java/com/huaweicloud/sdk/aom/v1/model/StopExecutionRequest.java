@@ -1,32 +1,22 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class StopExecutionRequest  {
-
+public class StopExecutionRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_id")
-    
+    @JsonProperty(value = "execution_id")
 
     private String executionId;
 
@@ -34,9 +24,6 @@ public class StopExecutionRequest  {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * 任务id，从工作流命令列表中获取的工作流id。
@@ -50,15 +37,10 @@ public class StopExecutionRequest  {
         this.workflowId = workflowId;
     }
 
-    
-
     public StopExecutionRequest withExecutionId(String executionId) {
         this.executionId = executionId;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行id。
@@ -72,24 +54,23 @@ public class StopExecutionRequest  {
         this.executionId = executionId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopExecutionRequest stopExecutionRequest = (StopExecutionRequest) o;
-        return Objects.equals(this.workflowId, stopExecutionRequest.workflowId) &&
-            Objects.equals(this.executionId, stopExecutionRequest.executionId);
+        StopExecutionRequest that = (StopExecutionRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(workflowId, executionId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -99,6 +80,7 @@ public class StopExecutionRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -109,8 +91,5 @@ public class StopExecutionRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

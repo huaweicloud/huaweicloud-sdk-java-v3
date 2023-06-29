@@ -121,17 +121,16 @@ public class ImportBaseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportBaseResult importBaseResult = (ImportBaseResult) o;
-        return Objects.equals(this.success, importBaseResult.success)
-            && Objects.equals(this.failure, importBaseResult.failure)
-            && Objects.equals(this.swagger, importBaseResult.swagger);
+        ImportBaseResult that = (ImportBaseResult) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.failure, that.failure)
+            && Objects.equals(this.swagger, that.swagger);
     }
 
     @Override

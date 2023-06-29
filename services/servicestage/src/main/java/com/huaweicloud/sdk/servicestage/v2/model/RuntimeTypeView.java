@@ -99,18 +99,17 @@ public class RuntimeTypeView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuntimeTypeView runtimeTypeView = (RuntimeTypeView) o;
-        return Objects.equals(this.typeName, runtimeTypeView.typeName)
-            && Objects.equals(this.displayName, runtimeTypeView.displayName)
-            && Objects.equals(this.containerDefaultPort, runtimeTypeView.containerDefaultPort)
-            && Objects.equals(this.typeDesc, runtimeTypeView.typeDesc);
+        RuntimeTypeView that = (RuntimeTypeView) obj;
+        return Objects.equals(this.typeName, that.typeName) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.containerDefaultPort, that.containerDefaultPort)
+            && Objects.equals(this.typeDesc, that.typeDesc);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class AgencyAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyAuth agencyAuth = (AgencyAuth) o;
-        return Objects.equals(this.identity, agencyAuth.identity);
+        AgencyAuth that = (AgencyAuth) obj;
+        return Objects.equals(this.identity, that.identity);
     }
 
     @Override

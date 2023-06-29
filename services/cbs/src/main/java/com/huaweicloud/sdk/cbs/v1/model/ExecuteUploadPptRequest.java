@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ExecuteUploadPptRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ExecuteUploadPptRequest  {
-
+public class ExecuteUploadPptRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="video_id")
-    
+    @JsonProperty(value = "video_id")
 
     private String videoId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ExecuteUploadPptRequestBody body;
 
@@ -35,9 +25,6 @@ public class ExecuteUploadPptRequest  {
         this.videoId = videoId;
         return this;
     }
-
-    
-
 
     /**
      * 视频id
@@ -51,22 +38,19 @@ public class ExecuteUploadPptRequest  {
         this.videoId = videoId;
     }
 
-    
-
     public ExecuteUploadPptRequest withBody(ExecuteUploadPptRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ExecuteUploadPptRequest withBody(Consumer<ExecuteUploadPptRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ExecuteUploadPptRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ExecuteUploadPptRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteUploadPptRequest executeUploadPptRequest = (ExecuteUploadPptRequest) o;
-        return Objects.equals(this.videoId, executeUploadPptRequest.videoId) &&
-            Objects.equals(this.body, executeUploadPptRequest.body);
+        ExecuteUploadPptRequest that = (ExecuteUploadPptRequest) obj;
+        return Objects.equals(this.videoId, that.videoId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(videoId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ExecuteUploadPptRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ExecuteUploadPptRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

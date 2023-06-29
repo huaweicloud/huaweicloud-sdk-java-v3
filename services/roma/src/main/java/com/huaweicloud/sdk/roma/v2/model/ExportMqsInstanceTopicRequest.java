@@ -81,16 +81,15 @@ public class ExportMqsInstanceTopicRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportMqsInstanceTopicRequest exportMqsInstanceTopicRequest = (ExportMqsInstanceTopicRequest) o;
-        return Objects.equals(this.instanceId, exportMqsInstanceTopicRequest.instanceId)
-            && Objects.equals(this.name, exportMqsInstanceTopicRequest.name);
+        ExportMqsInstanceTopicRequest that = (ExportMqsInstanceTopicRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name);
     }
 
     @Override

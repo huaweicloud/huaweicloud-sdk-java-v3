@@ -77,16 +77,16 @@ public class OnError {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OnError onError = (OnError) o;
-        return Objects.equals(this.error, onError.error) && Objects.equals(this.transition, onError.transition)
-            && Objects.equals(this.retryRef, onError.retryRef);
+        OnError that = (OnError) obj;
+        return Objects.equals(this.error, that.error) && Objects.equals(this.transition, that.transition)
+            && Objects.equals(this.retryRef, that.retryRef);
     }
 
     @Override

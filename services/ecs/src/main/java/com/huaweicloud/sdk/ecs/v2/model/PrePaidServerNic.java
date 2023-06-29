@@ -150,19 +150,18 @@ public class PrePaidServerNic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerNic prePaidServerNic = (PrePaidServerNic) o;
-        return Objects.equals(this.subnetId, prePaidServerNic.subnetId)
-            && Objects.equals(this.ipAddress, prePaidServerNic.ipAddress)
-            && Objects.equals(this.ipv6Enable, prePaidServerNic.ipv6Enable)
-            && Objects.equals(this.ipv6Bandwidth, prePaidServerNic.ipv6Bandwidth)
-            && Objects.equals(this.allowedAddressPairs, prePaidServerNic.allowedAddressPairs);
+        PrePaidServerNic that = (PrePaidServerNic) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.ipv6Bandwidth, that.ipv6Bandwidth)
+            && Objects.equals(this.allowedAddressPairs, that.allowedAddressPairs);
     }
 
     @Override

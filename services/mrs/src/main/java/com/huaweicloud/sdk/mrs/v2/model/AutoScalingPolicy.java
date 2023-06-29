@@ -1,67 +1,52 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v2.model.ResourcesPlan;
-import com.huaweicloud.sdk.mrs.v2.model.Rule;
-import com.huaweicloud.sdk.mrs.v2.model.ScaleScript;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * AutoScalingPolicy
  */
-public class AutoScalingPolicy  {
-
+public class AutoScalingPolicy {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auto_scaling_enable")
-    
+    @JsonProperty(value = "auto_scaling_enable")
 
     private Boolean autoScalingEnable;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="min_capacity")
-    
+    @JsonProperty(value = "min_capacity")
 
     private Integer minCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="max_capacity")
-    
+    @JsonProperty(value = "max_capacity")
 
     private Integer maxCapacity;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources_plans")
-    
+    @JsonProperty(value = "resources_plans")
+
     private List<ResourcesPlan> resourcesPlans = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="rules")
-    
+    @JsonProperty(value = "rules")
+
     private List<Rule> rules = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="exec_scripts")
-    
+    @JsonProperty(value = "exec_scripts")
+
     private List<ScaleScript> execScripts = null;
-    
+
     public AutoScalingPolicy withAutoScalingEnable(Boolean autoScalingEnable) {
         this.autoScalingEnable = autoScalingEnable;
         return this;
     }
-
-    
-
 
     /**
      * 当前自动伸缩规则是否开启。
@@ -75,15 +60,10 @@ public class AutoScalingPolicy  {
         this.autoScalingEnable = autoScalingEnable;
     }
 
-    
-
     public AutoScalingPolicy withMinCapacity(Integer minCapacity) {
         this.minCapacity = minCapacity;
         return this;
     }
-
-    
-
 
     /**
      * 指定该节点组的最小保留节点数。 取值范围：[0～500]
@@ -99,15 +79,10 @@ public class AutoScalingPolicy  {
         this.minCapacity = minCapacity;
     }
 
-    
-
     public AutoScalingPolicy withMaxCapacity(Integer maxCapacity) {
         this.maxCapacity = maxCapacity;
         return this;
     }
-
-    
-
 
     /**
      * 指定该节点组的最大节点数。 取值范围：[0～500]
@@ -123,16 +98,13 @@ public class AutoScalingPolicy  {
         this.maxCapacity = maxCapacity;
     }
 
-    
-
     public AutoScalingPolicy withResourcesPlans(List<ResourcesPlan> resourcesPlans) {
         this.resourcesPlans = resourcesPlans;
         return this;
     }
 
-    
     public AutoScalingPolicy addResourcesPlansItem(ResourcesPlan resourcesPlansItem) {
-        if(this.resourcesPlans == null) {
+        if (this.resourcesPlans == null) {
             this.resourcesPlans = new ArrayList<>();
         }
         this.resourcesPlans.add(resourcesPlansItem);
@@ -140,7 +112,7 @@ public class AutoScalingPolicy  {
     }
 
     public AutoScalingPolicy withResourcesPlans(Consumer<List<ResourcesPlan>> resourcesPlansSetter) {
-        if(this.resourcesPlans == null) {
+        if (this.resourcesPlans == null) {
             this.resourcesPlans = new ArrayList<>();
         }
         resourcesPlansSetter.accept(this.resourcesPlans);
@@ -159,16 +131,13 @@ public class AutoScalingPolicy  {
         this.resourcesPlans = resourcesPlans;
     }
 
-    
-
     public AutoScalingPolicy withRules(List<Rule> rules) {
         this.rules = rules;
         return this;
     }
 
-    
     public AutoScalingPolicy addRulesItem(Rule rulesItem) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         this.rules.add(rulesItem);
@@ -176,7 +145,7 @@ public class AutoScalingPolicy  {
     }
 
     public AutoScalingPolicy withRules(Consumer<List<Rule>> rulesSetter) {
-        if(this.rules == null) {
+        if (this.rules == null) {
             this.rules = new ArrayList<>();
         }
         rulesSetter.accept(this.rules);
@@ -195,16 +164,13 @@ public class AutoScalingPolicy  {
         this.rules = rules;
     }
 
-    
-
     public AutoScalingPolicy withExecScripts(List<ScaleScript> execScripts) {
         this.execScripts = execScripts;
         return this;
     }
 
-    
     public AutoScalingPolicy addExecScriptsItem(ScaleScript execScriptsItem) {
-        if(this.execScripts == null) {
+        if (this.execScripts == null) {
             this.execScripts = new ArrayList<>();
         }
         this.execScripts.add(execScriptsItem);
@@ -212,7 +178,7 @@ public class AutoScalingPolicy  {
     }
 
     public AutoScalingPolicy withExecScripts(Consumer<List<ScaleScript>> execScriptsSetter) {
-        if(this.execScripts == null) {
+        if (this.execScripts == null) {
             this.execScripts = new ArrayList<>();
         }
         execScriptsSetter.accept(this.execScripts);
@@ -231,28 +197,26 @@ public class AutoScalingPolicy  {
         this.execScripts = execScripts;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AutoScalingPolicy autoScalingPolicy = (AutoScalingPolicy) o;
-        return Objects.equals(this.autoScalingEnable, autoScalingPolicy.autoScalingEnable) &&
-            Objects.equals(this.minCapacity, autoScalingPolicy.minCapacity) &&
-            Objects.equals(this.maxCapacity, autoScalingPolicy.maxCapacity) &&
-            Objects.equals(this.resourcesPlans, autoScalingPolicy.resourcesPlans) &&
-            Objects.equals(this.rules, autoScalingPolicy.rules) &&
-            Objects.equals(this.execScripts, autoScalingPolicy.execScripts);
+        AutoScalingPolicy that = (AutoScalingPolicy) obj;
+        return Objects.equals(this.autoScalingEnable, that.autoScalingEnable)
+            && Objects.equals(this.minCapacity, that.minCapacity) && Objects.equals(this.maxCapacity, that.maxCapacity)
+            && Objects.equals(this.resourcesPlans, that.resourcesPlans) && Objects.equals(this.rules, that.rules)
+            && Objects.equals(this.execScripts, that.execScripts);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(autoScalingEnable, minCapacity, maxCapacity, resourcesPlans, rules, execScripts);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -266,6 +230,7 @@ public class AutoScalingPolicy  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -276,8 +241,5 @@ public class AutoScalingPolicy  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -149,20 +149,18 @@ public class SatisfactionDimensionSimpleInfoV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SatisfactionDimensionSimpleInfoV2 satisfactionDimensionSimpleInfoV2 = (SatisfactionDimensionSimpleInfoV2) o;
-        return Objects.equals(this.value, satisfactionDimensionSimpleInfoV2.value)
-            && Objects.equals(this.satisfactionId, satisfactionDimensionSimpleInfoV2.satisfactionId)
-            && Objects.equals(this.satisfactionName, satisfactionDimensionSimpleInfoV2.satisfactionName)
-            && Objects.equals(this.satisfactionDesc, satisfactionDimensionSimpleInfoV2.satisfactionDesc)
-            && Objects.equals(this.perValue, satisfactionDimensionSimpleInfoV2.perValue)
-            && Objects.equals(this.satCategoryId, satisfactionDimensionSimpleInfoV2.satCategoryId);
+        SatisfactionDimensionSimpleInfoV2 that = (SatisfactionDimensionSimpleInfoV2) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.satisfactionId, that.satisfactionId)
+            && Objects.equals(this.satisfactionName, that.satisfactionName)
+            && Objects.equals(this.satisfactionDesc, that.satisfactionDesc)
+            && Objects.equals(this.perValue, that.perValue) && Objects.equals(this.satCategoryId, that.satCategoryId);
     }
 
     @Override

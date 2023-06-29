@@ -69,22 +69,15 @@ public class ComponentProbe {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -161,22 +154,15 @@ public class ComponentProbe {
             if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SchemeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SchemeEnum(value));
         }
 
         public static SchemeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -199,21 +185,6 @@ public class ComponentProbe {
     private SchemeEnum scheme;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "period_seconds")
-
-    private Integer periodSeconds;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "success_threshold")
-
-    private Integer successThreshold;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "failure_threshold")
-
-    private Integer failureThreshold;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "host")
 
     private String host;
@@ -227,11 +198,6 @@ public class ComponentProbe {
     @JsonProperty(value = "path")
 
     private String path;
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "http_headers")
-
-    private List<ComponentConfigEnvs> httpHeaders = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "command")
@@ -306,57 +272,6 @@ public class ComponentProbe {
         this.scheme = scheme;
     }
 
-    public ComponentProbe withPeriodSeconds(Integer periodSeconds) {
-        this.periodSeconds = periodSeconds;
-        return this;
-    }
-
-    /**
-     * 表示检测周期
-     * @return periodSeconds
-     */
-    public Integer getPeriodSeconds() {
-        return periodSeconds;
-    }
-
-    public void setPeriodSeconds(Integer periodSeconds) {
-        this.periodSeconds = periodSeconds;
-    }
-
-    public ComponentProbe withSuccessThreshold(Integer successThreshold) {
-        this.successThreshold = successThreshold;
-        return this;
-    }
-
-    /**
-     * 表示成功阈值
-     * @return successThreshold
-     */
-    public Integer getSuccessThreshold() {
-        return successThreshold;
-    }
-
-    public void setSuccessThreshold(Integer successThreshold) {
-        this.successThreshold = successThreshold;
-    }
-
-    public ComponentProbe withFailureThreshold(Integer failureThreshold) {
-        this.failureThreshold = failureThreshold;
-        return this;
-    }
-
-    /**
-     * 表示最大失败次数
-     * @return failureThreshold
-     */
-    public Integer getFailureThreshold() {
-        return failureThreshold;
-    }
-
-    public void setFailureThreshold(Integer failureThreshold) {
-        this.failureThreshold = failureThreshold;
-    }
-
     public ComponentProbe withHost(String host) {
         this.host = host;
         return this;
@@ -408,39 +323,6 @@ public class ComponentProbe {
         this.path = path;
     }
 
-    public ComponentProbe withHttpHeaders(List<ComponentConfigEnvs> httpHeaders) {
-        this.httpHeaders = httpHeaders;
-        return this;
-    }
-
-    public ComponentProbe addHttpHeadersItem(ComponentConfigEnvs httpHeadersItem) {
-        if (this.httpHeaders == null) {
-            this.httpHeaders = new ArrayList<>();
-        }
-        this.httpHeaders.add(httpHeadersItem);
-        return this;
-    }
-
-    public ComponentProbe withHttpHeaders(Consumer<List<ComponentConfigEnvs>> httpHeadersSetter) {
-        if (this.httpHeaders == null) {
-            this.httpHeaders = new ArrayList<>();
-        }
-        httpHeadersSetter.accept(this.httpHeaders);
-        return this;
-    }
-
-    /**
-     * Get httpHeaders
-     * @return httpHeaders
-     */
-    public List<ComponentConfigEnvs> getHttpHeaders() {
-        return httpHeaders;
-    }
-
-    public void setHttpHeaders(List<ComponentConfigEnvs> httpHeaders) {
-        this.httpHeaders = httpHeaders;
-    }
-
     public ComponentProbe withCommand(List<String> command) {
         this.command = command;
         return this;
@@ -475,40 +357,23 @@ public class ComponentProbe {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentProbe componentProbe = (ComponentProbe) o;
-        return Objects.equals(this.type, componentProbe.type) && Objects.equals(this.delay, componentProbe.delay)
-            && Objects.equals(this.timeout, componentProbe.timeout)
-            && Objects.equals(this.scheme, componentProbe.scheme)
-            && Objects.equals(this.periodSeconds, componentProbe.periodSeconds)
-            && Objects.equals(this.successThreshold, componentProbe.successThreshold)
-            && Objects.equals(this.failureThreshold, componentProbe.failureThreshold)
-            && Objects.equals(this.host, componentProbe.host) && Objects.equals(this.port, componentProbe.port)
-            && Objects.equals(this.path, componentProbe.path)
-            && Objects.equals(this.httpHeaders, componentProbe.httpHeaders)
-            && Objects.equals(this.command, componentProbe.command);
+        ComponentProbe that = (ComponentProbe) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.scheme, that.scheme)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.command, that.command);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type,
-            delay,
-            timeout,
-            scheme,
-            periodSeconds,
-            successThreshold,
-            failureThreshold,
-            host,
-            port,
-            path,
-            httpHeaders,
-            command);
+        return Objects.hash(type, delay, timeout, scheme, host, port, path, command);
     }
 
     @Override
@@ -519,13 +384,9 @@ public class ComponentProbe {
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
         sb.append("    timeout: ").append(toIndentedString(timeout)).append("\n");
         sb.append("    scheme: ").append(toIndentedString(scheme)).append("\n");
-        sb.append("    periodSeconds: ").append(toIndentedString(periodSeconds)).append("\n");
-        sb.append("    successThreshold: ").append(toIndentedString(successThreshold)).append("\n");
-        sb.append("    failureThreshold: ").append(toIndentedString(failureThreshold)).append("\n");
         sb.append("    host: ").append(toIndentedString(host)).append("\n");
         sb.append("    port: ").append(toIndentedString(port)).append("\n");
         sb.append("    path: ").append(toIndentedString(path)).append("\n");
-        sb.append("    httpHeaders: ").append(toIndentedString(httpHeaders)).append("\n");
         sb.append("    command: ").append(toIndentedString(command)).append("\n");
         sb.append("}");
         return sb.toString();

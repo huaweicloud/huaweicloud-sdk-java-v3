@@ -43,15 +43,15 @@ public class OsReinstallBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsReinstallBody osReinstallBody = (OsReinstallBody) o;
-        return Objects.equals(this.osReinstall, osReinstallBody.osReinstall);
+        OsReinstallBody that = (OsReinstallBody) obj;
+        return Objects.equals(this.osReinstall, that.osReinstall);
     }
 
     @Override

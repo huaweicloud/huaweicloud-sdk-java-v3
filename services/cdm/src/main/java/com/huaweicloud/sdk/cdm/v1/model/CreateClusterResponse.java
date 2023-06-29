@@ -159,19 +159,17 @@ public class CreateClusterResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
-        return Objects.equals(this.name, createClusterResponse.name)
-            && Objects.equals(this.id, createClusterResponse.id)
-            && Objects.equals(this.task, createClusterResponse.task)
-            && Objects.equals(this.datastore, createClusterResponse.datastore)
-            && Objects.equals(this.instances, createClusterResponse.instances);
+        CreateClusterResponse that = (CreateClusterResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.task, that.task) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.instances, that.instances);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class ComandParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComandParam comandParam = (ComandParam) o;
-        return Objects.equals(this.taskId, comandParam.taskId) && Objects.equals(this.bucket, comandParam.bucket);
+        ComandParam that = (ComandParam) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.bucket, that.bucket);
     }
 
     @Override

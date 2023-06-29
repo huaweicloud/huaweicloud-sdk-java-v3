@@ -1,50 +1,37 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ShowDcPointRequest  {
-
+public class ShowDcPointRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ds_id")
-    
+    @JsonProperty(value = "ds_id")
 
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="point_id")
-    
+    @JsonProperty(value = "point_id")
 
     private String pointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="device_id")
-    
+    @JsonProperty(value = "device_id")
 
     private String deviceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="property")
-    
+    @JsonProperty(value = "property")
 
     private String property;
 
@@ -52,9 +39,6 @@ public class ShowDcPointRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -68,15 +52,10 @@ public class ShowDcPointRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public ShowDcPointRequest withDsId(String dsId) {
         this.dsId = dsId;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源id，创建数据源配置时设置，节点下唯一。
@@ -90,15 +69,10 @@ public class ShowDcPointRequest  {
         this.dsId = dsId;
     }
 
-    
-
     public ShowDcPointRequest withPointId(String pointId) {
         this.pointId = pointId;
         return this;
     }
-
-    
-
 
     /**
      * 采集点位表id，创建点位表时设置，数据源下唯一。
@@ -112,15 +86,10 @@ public class ShowDcPointRequest  {
         this.pointId = pointId;
     }
 
-    
-
     public ShowDcPointRequest withDeviceId(String deviceId) {
         this.deviceId = deviceId;
         return this;
     }
-
-    
-
 
     /**
      * 设备id
@@ -134,15 +103,10 @@ public class ShowDcPointRequest  {
         this.deviceId = deviceId;
     }
 
-    
-
     public ShowDcPointRequest withProperty(String property) {
         this.property = property;
         return this;
     }
-
-    
-
 
     /**
      * 设备服务属性，允许中、数字、英文大小写、下划线、中划线
@@ -156,27 +120,25 @@ public class ShowDcPointRequest  {
         this.property = property;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDcPointRequest showDcPointRequest = (ShowDcPointRequest) o;
-        return Objects.equals(this.edgeNodeId, showDcPointRequest.edgeNodeId) &&
-            Objects.equals(this.dsId, showDcPointRequest.dsId) &&
-            Objects.equals(this.pointId, showDcPointRequest.pointId) &&
-            Objects.equals(this.deviceId, showDcPointRequest.deviceId) &&
-            Objects.equals(this.property, showDcPointRequest.property);
+        ShowDcPointRequest that = (ShowDcPointRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
+            && Objects.equals(this.pointId, that.pointId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.property, that.property);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, dsId, pointId, deviceId, property);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -189,6 +151,7 @@ public class ShowDcPointRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -199,8 +162,5 @@ public class ShowDcPointRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

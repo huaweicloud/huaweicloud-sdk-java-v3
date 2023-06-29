@@ -77,16 +77,16 @@ public class AccessToken {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessToken accessToken = (AccessToken) o;
-        return Objects.equals(this.name, accessToken.name) && Objects.equals(this.token, accessToken.token)
-            && Objects.equals(this.host, accessToken.host);
+        AccessToken that = (AccessToken) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.token, that.token)
+            && Objects.equals(this.host, that.host);
     }
 
     @Override

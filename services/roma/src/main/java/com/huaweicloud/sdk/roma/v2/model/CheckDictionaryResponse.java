@@ -232,24 +232,19 @@ public class CheckDictionaryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckDictionaryResponse checkDictionaryResponse = (CheckDictionaryResponse) o;
-        return Objects.equals(this.id, checkDictionaryResponse.id)
-            && Objects.equals(this.name, checkDictionaryResponse.name)
-            && Objects.equals(this.remark, checkDictionaryResponse.remark)
-            && Objects.equals(this.code, checkDictionaryResponse.code)
-            && Objects.equals(this.extendOne, checkDictionaryResponse.extendOne)
-            && Objects.equals(this.extendTwo, checkDictionaryResponse.extendTwo)
-            && Objects.equals(this.parentCode, checkDictionaryResponse.parentCode)
-            && Objects.equals(this.type, checkDictionaryResponse.type)
-            && Objects.equals(this.createTime, checkDictionaryResponse.createTime)
-            && Objects.equals(this.updateTime, checkDictionaryResponse.updateTime);
+        CheckDictionaryResponse that = (CheckDictionaryResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.extendOne, that.extendOne) && Objects.equals(this.extendTwo, that.extendTwo)
+            && Objects.equals(this.parentCode, that.parentCode) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

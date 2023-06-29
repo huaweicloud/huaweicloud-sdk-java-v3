@@ -1,121 +1,97 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * JobQueryBean
  */
-public class JobQueryBean  {
-
+public class JobQueryBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="user")
-    
+    @JsonProperty(value = "user")
 
     private String user;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_result")
-    
+    @JsonProperty(value = "job_result")
 
     private String jobResult;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_state")
-    
+    @JsonProperty(value = "job_state")
 
     private String jobState;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_progress")
-    
+    @JsonProperty(value = "job_progress")
 
     private Float jobProgress;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="started_time")
-    
+    @JsonProperty(value = "started_time")
 
     private Long startedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="submitted_time")
-    
+    @JsonProperty(value = "submitted_time")
 
     private Long submittedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="finished_time")
-    
+    @JsonProperty(value = "finished_time")
 
     private Long finishedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="elapsed_time")
-    
+    @JsonProperty(value = "elapsed_time")
 
     private Long elapsedTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arguments")
-    
+    @JsonProperty(value = "arguments")
 
     private String arguments;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="launcher_id")
-    
+    @JsonProperty(value = "launcher_id")
 
     private String launcherId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
 
     private String properties;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_id")
-    
+    @JsonProperty(value = "app_id")
 
     private String appId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tracking_url")
-    
+    @JsonProperty(value = "tracking_url")
 
     private String trackingUrl;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="queue")
-    
+    @JsonProperty(value = "queue")
 
     private String queue;
 
@@ -123,9 +99,6 @@ public class JobQueryBean  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -139,15 +112,10 @@ public class JobQueryBean  {
         this.jobId = jobId;
     }
 
-    
-
     public JobQueryBean withUser(String user) {
         this.user = user;
         return this;
     }
-
-    
-
 
     /**
      * 提交作业的用户名称。
@@ -161,15 +129,10 @@ public class JobQueryBean  {
         this.user = user;
     }
 
-    
-
     public JobQueryBean withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称。
@@ -183,15 +146,10 @@ public class JobQueryBean  {
         this.jobName = jobName;
     }
 
-    
-
     public JobQueryBean withJobResult(String jobResult) {
         this.jobResult = jobResult;
         return this;
     }
-
-    
-
 
     /**
      * 作业最终结果。 - FAILED：执行失败的作业 - KILLED：执行中被手动终止的作业。 - UNDEFINED：正在执行的作业。 - SUCCEEDED：执行成功的作业。
@@ -205,15 +163,10 @@ public class JobQueryBean  {
         this.jobResult = jobResult;
     }
 
-    
-
     public JobQueryBean withJobState(String jobState) {
         this.jobState = jobState;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行状态。  - FAILED：失败 - KILLED：已终止 - NEW：已创建 - NEW_SAVING：已创建保存中 - SUBMITTED：已提交 - ACCEPTED：已接受 - RUNNING：运行中 - FINISHED：已完成
@@ -227,15 +180,10 @@ public class JobQueryBean  {
         this.jobState = jobState;
     }
 
-    
-
     public JobQueryBean withJobProgress(Float jobProgress) {
         this.jobProgress = jobProgress;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行进度。
@@ -249,15 +197,10 @@ public class JobQueryBean  {
         this.jobProgress = jobProgress;
     }
 
-    
-
     public JobQueryBean withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 作业类型。 - MapReduce - SparkSubmit：SparkPython类型的作业在查询时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
@@ -271,15 +214,10 @@ public class JobQueryBean  {
         this.jobType = jobType;
     }
 
-    
-
     public JobQueryBean withStartedTime(Long startedTime) {
         this.startedTime = startedTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业开始执行时间。单位：毫秒。
@@ -293,15 +231,10 @@ public class JobQueryBean  {
         this.startedTime = startedTime;
     }
 
-    
-
     public JobQueryBean withSubmittedTime(Long submittedTime) {
         this.submittedTime = submittedTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业提交时间。单位：毫秒。
@@ -315,15 +248,10 @@ public class JobQueryBean  {
         this.submittedTime = submittedTime;
     }
 
-    
-
     public JobQueryBean withFinishedTime(Long finishedTime) {
         this.finishedTime = finishedTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业完成时间。单位：毫秒。
@@ -337,15 +265,10 @@ public class JobQueryBean  {
         this.finishedTime = finishedTime;
     }
 
-    
-
     public JobQueryBean withElapsedTime(Long elapsedTime) {
         this.elapsedTime = elapsedTime;
         return this;
     }
-
-    
-
 
     /**
      * 作业执行时长。单位：毫秒。
@@ -359,15 +282,10 @@ public class JobQueryBean  {
         this.elapsedTime = elapsedTime;
     }
 
-    
-
     public JobQueryBean withArguments(String arguments) {
         this.arguments = arguments;
         return this;
     }
-
-    
-
 
     /**
      * 运行参数。
@@ -381,15 +299,10 @@ public class JobQueryBean  {
         this.arguments = arguments;
     }
 
-    
-
     public JobQueryBean withLauncherId(String launcherId) {
         this.launcherId = launcherId;
         return this;
     }
-
-    
-
 
     /**
      * 实际作业编号。
@@ -403,15 +316,10 @@ public class JobQueryBean  {
         this.launcherId = launcherId;
     }
 
-    
-
     public JobQueryBean withProperties(String properties) {
         this.properties = properties;
         return this;
     }
-
-    
-
 
     /**
      * 配置参数，用于传-d参数。最多为2048字符，不能包含><|'`&!\\特殊字符，可为空。
@@ -425,15 +333,10 @@ public class JobQueryBean  {
         this.properties = properties;
     }
 
-    
-
     public JobQueryBean withAppId(String appId) {
         this.appId = appId;
         return this;
     }
-
-    
-
 
     /**
      * 实际作业编号。
@@ -447,15 +350,10 @@ public class JobQueryBean  {
         this.appId = appId;
     }
 
-    
-
     public JobQueryBean withTrackingUrl(String trackingUrl) {
         this.trackingUrl = trackingUrl;
         return this;
     }
-
-    
-
 
     /**
      *  日志链接地址。当前仅SparkSubmit作业支持该参数。 该参数基于集群的EIP访问集群中的YARN WebUI页面，用户如果在VPC界面解绑EIP，MRS服务侧数据会因为未更新导致该参数引用旧EIP导致访问失败，可通过对集群重新进行EIP的绑定来修复该问题。
@@ -469,15 +367,10 @@ public class JobQueryBean  {
         this.trackingUrl = trackingUrl;
     }
 
-    
-
     public JobQueryBean withQueue(String queue) {
         this.queue = queue;
         return this;
     }
-
-    
-
 
     /**
      * 作业的资源对列类型。
@@ -491,39 +384,48 @@ public class JobQueryBean  {
         this.queue = queue;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobQueryBean jobQueryBean = (JobQueryBean) o;
-        return Objects.equals(this.jobId, jobQueryBean.jobId) &&
-            Objects.equals(this.user, jobQueryBean.user) &&
-            Objects.equals(this.jobName, jobQueryBean.jobName) &&
-            Objects.equals(this.jobResult, jobQueryBean.jobResult) &&
-            Objects.equals(this.jobState, jobQueryBean.jobState) &&
-            Objects.equals(this.jobProgress, jobQueryBean.jobProgress) &&
-            Objects.equals(this.jobType, jobQueryBean.jobType) &&
-            Objects.equals(this.startedTime, jobQueryBean.startedTime) &&
-            Objects.equals(this.submittedTime, jobQueryBean.submittedTime) &&
-            Objects.equals(this.finishedTime, jobQueryBean.finishedTime) &&
-            Objects.equals(this.elapsedTime, jobQueryBean.elapsedTime) &&
-            Objects.equals(this.arguments, jobQueryBean.arguments) &&
-            Objects.equals(this.launcherId, jobQueryBean.launcherId) &&
-            Objects.equals(this.properties, jobQueryBean.properties) &&
-            Objects.equals(this.appId, jobQueryBean.appId) &&
-            Objects.equals(this.trackingUrl, jobQueryBean.trackingUrl) &&
-            Objects.equals(this.queue, jobQueryBean.queue);
+        JobQueryBean that = (JobQueryBean) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.user, that.user)
+            && Objects.equals(this.jobName, that.jobName) && Objects.equals(this.jobResult, that.jobResult)
+            && Objects.equals(this.jobState, that.jobState) && Objects.equals(this.jobProgress, that.jobProgress)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.startedTime, that.startedTime)
+            && Objects.equals(this.submittedTime, that.submittedTime)
+            && Objects.equals(this.finishedTime, that.finishedTime)
+            && Objects.equals(this.elapsedTime, that.elapsedTime) && Objects.equals(this.arguments, that.arguments)
+            && Objects.equals(this.launcherId, that.launcherId) && Objects.equals(this.properties, that.properties)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.trackingUrl, that.trackingUrl)
+            && Objects.equals(this.queue, that.queue);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, user, jobName, jobResult, jobState, jobProgress, jobType, startedTime, submittedTime, finishedTime, elapsedTime, arguments, launcherId, properties, appId, trackingUrl, queue);
+        return Objects.hash(jobId,
+            user,
+            jobName,
+            jobResult,
+            jobState,
+            jobProgress,
+            jobType,
+            startedTime,
+            submittedTime,
+            finishedTime,
+            elapsedTime,
+            arguments,
+            launcherId,
+            properties,
+            appId,
+            trackingUrl,
+            queue);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -548,6 +450,7 @@ public class JobQueryBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -558,8 +461,5 @@ public class JobQueryBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

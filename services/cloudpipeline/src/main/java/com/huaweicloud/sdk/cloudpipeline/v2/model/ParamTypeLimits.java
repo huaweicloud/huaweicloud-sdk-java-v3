@@ -121,17 +121,17 @@ public class ParamTypeLimits {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParamTypeLimits paramTypeLimits = (ParamTypeLimits) o;
-        return Objects.equals(this.disable, paramTypeLimits.disable) && Objects.equals(this.name, paramTypeLimits.name)
-            && Objects.equals(this.displayname, paramTypeLimits.displayname)
-            && Objects.equals(this.id, paramTypeLimits.id) && Objects.equals(this.language, paramTypeLimits.language);
+        ParamTypeLimits that = (ParamTypeLimits) obj;
+        return Objects.equals(this.disable, that.disable) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.displayname, that.displayname) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.language, that.language);
     }
 
     @Override

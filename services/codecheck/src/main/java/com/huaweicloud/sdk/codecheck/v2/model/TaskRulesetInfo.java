@@ -121,18 +121,17 @@ public class TaskRulesetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskRulesetInfo taskRulesetInfo = (TaskRulesetInfo) o;
-        return Objects.equals(this.templateId, taskRulesetInfo.templateId)
-            && Objects.equals(this.language, taskRulesetInfo.language)
-            && Objects.equals(this.templateName, taskRulesetInfo.templateName)
-            && Objects.equals(this.type, taskRulesetInfo.type) && Objects.equals(this.status, taskRulesetInfo.status);
+        TaskRulesetInfo that = (TaskRulesetInfo) obj;
+        return Objects.equals(this.templateId, that.templateId) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.templateName, that.templateName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -233,24 +233,19 @@ public class ListPluginAttachableApisRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPluginAttachableApisRequest listPluginAttachableApisRequest = (ListPluginAttachableApisRequest) o;
-        return Objects.equals(this.instanceId, listPluginAttachableApisRequest.instanceId)
-            && Objects.equals(this.offset, listPluginAttachableApisRequest.offset)
-            && Objects.equals(this.limit, listPluginAttachableApisRequest.limit)
-            && Objects.equals(this.pluginId, listPluginAttachableApisRequest.pluginId)
-            && Objects.equals(this.envId, listPluginAttachableApisRequest.envId)
-            && Objects.equals(this.apiName, listPluginAttachableApisRequest.apiName)
-            && Objects.equals(this.apiId, listPluginAttachableApisRequest.apiId)
-            && Objects.equals(this.groupId, listPluginAttachableApisRequest.groupId)
-            && Objects.equals(this.reqMethod, listPluginAttachableApisRequest.reqMethod)
-            && Objects.equals(this.reqUri, listPluginAttachableApisRequest.reqUri);
+        ListPluginAttachableApisRequest that = (ListPluginAttachableApisRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.reqUri, that.reqUri);
     }
 
     @Override

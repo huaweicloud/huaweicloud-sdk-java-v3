@@ -438,29 +438,23 @@ public class DeploymentResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentResp deploymentResp = (DeploymentResp) o;
-        return Objects.equals(this.id, deploymentResp.id) && Objects.equals(this.name, deploymentResp.name)
-            && Objects.equals(this.replicas, deploymentResp.replicas)
-            && Objects.equals(this.readyReplicas, deploymentResp.readyReplicas)
-            && Objects.equals(this.description, deploymentResp.description)
-            && Objects.equals(this.groupId, deploymentResp.groupId)
-            && Objects.equals(this.nodeIds, deploymentResp.nodeIds) && Objects.equals(this.tags, deploymentResp.tags)
-            && Objects.equals(this.apiVersion, deploymentResp.apiVersion)
-            && Objects.equals(this.source, deploymentResp.source)
-            && Objects.equals(this.projectId, deploymentResp.projectId)
-            && Objects.equals(this.createdAt, deploymentResp.createdAt)
-            && Objects.equals(this.updatedAt, deploymentResp.updatedAt)
-            && Objects.equals(this.template, deploymentResp.template)
-            && Objects.equals(this.state, deploymentResp.state)
-            && Objects.equals(this.sourceId, deploymentResp.sourceId)
-            && Objects.equals(this.annotations, deploymentResp.annotations);
+        DeploymentResp that = (DeploymentResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.replicas, that.replicas) && Objects.equals(this.readyReplicas, that.readyReplicas)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.template, that.template)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.sourceId, that.sourceId)
+            && Objects.equals(this.annotations, that.annotations);
     }
 
     @Override

@@ -288,25 +288,21 @@ public class CreateWholeImageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWholeImageRequestBody createWholeImageRequestBody = (CreateWholeImageRequestBody) o;
-        return Objects.equals(this.description, createWholeImageRequestBody.description)
-            && Objects.equals(this.enterpriseProjectId, createWholeImageRequestBody.enterpriseProjectId)
-            && Objects.equals(this.imageTags, createWholeImageRequestBody.imageTags)
-            && Objects.equals(this.instanceId, createWholeImageRequestBody.instanceId)
-            && Objects.equals(this.name, createWholeImageRequestBody.name)
-            && Objects.equals(this.tags, createWholeImageRequestBody.tags)
-            && Objects.equals(this.backupId, createWholeImageRequestBody.backupId)
-            && Objects.equals(this.wholeImageType, createWholeImageRequestBody.wholeImageType)
-            && Objects.equals(this.maxRam, createWholeImageRequestBody.maxRam)
-            && Objects.equals(this.minRam, createWholeImageRequestBody.minRam)
-            && Objects.equals(this.vaultId, createWholeImageRequestBody.vaultId);
+        CreateWholeImageRequestBody that = (CreateWholeImageRequestBody) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.imageTags, that.imageTags) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.wholeImageType, that.wholeImageType)
+            && Objects.equals(this.maxRam, that.maxRam) && Objects.equals(this.minRam, that.minRam)
+            && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

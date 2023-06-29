@@ -43,15 +43,15 @@ public class ChangeFlinkJobStatusReportRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangeFlinkJobStatusReportRequest changeFlinkJobStatusReportRequest = (ChangeFlinkJobStatusReportRequest) o;
-        return Objects.equals(this.body, changeFlinkJobStatusReportRequest.body);
+        ChangeFlinkJobStatusReportRequest that = (ChangeFlinkJobStatusReportRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

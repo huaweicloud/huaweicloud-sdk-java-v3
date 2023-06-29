@@ -134,18 +134,16 @@ public class ExtendProductIosEntity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExtendProductIosEntity extendProductIosEntity = (ExtendProductIosEntity) o;
-        return Objects.equals(this.ioSpec, extendProductIosEntity.ioSpec)
-            && Objects.equals(this.availableZones, extendProductIosEntity.availableZones)
-            && Objects.equals(this.type, extendProductIosEntity.type)
-            && Objects.equals(this.unavailableZones, extendProductIosEntity.unavailableZones);
+        ExtendProductIosEntity that = (ExtendProductIosEntity) obj;
+        return Objects.equals(this.ioSpec, that.ioSpec) && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.unavailableZones, that.unavailableZones);
     }
 
     @Override

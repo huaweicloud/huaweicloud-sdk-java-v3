@@ -146,19 +146,17 @@ public class CongestionLanesInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CongestionLanesInfo congestionLanesInfo = (CongestionLanesInfo) o;
-        return Objects.equals(this.laneid, congestionLanesInfo.laneid)
-            && Objects.equals(this.level, congestionLanesInfo.level)
-            && Objects.equals(this.length, congestionLanesInfo.length)
-            && Objects.equals(this.startPoint, congestionLanesInfo.startPoint)
-            && Objects.equals(this.endPoint, congestionLanesInfo.endPoint);
+        CongestionLanesInfo that = (CongestionLanesInfo) obj;
+        return Objects.equals(this.laneid, that.laneid) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.length, that.length) && Objects.equals(this.startPoint, that.startPoint)
+            && Objects.equals(this.endPoint, that.endPoint);
     }
 
     @Override

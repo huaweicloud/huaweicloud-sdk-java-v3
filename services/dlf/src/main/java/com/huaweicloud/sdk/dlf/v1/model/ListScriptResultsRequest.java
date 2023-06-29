@@ -77,17 +77,16 @@ public class ListScriptResultsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListScriptResultsRequest listScriptResultsRequest = (ListScriptResultsRequest) o;
-        return Objects.equals(this.workspace, listScriptResultsRequest.workspace)
-            && Objects.equals(this.scriptName, listScriptResultsRequest.scriptName)
-            && Objects.equals(this.instanceId, listScriptResultsRequest.instanceId);
+        ListScriptResultsRequest that = (ListScriptResultsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.scriptName, that.scriptName)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

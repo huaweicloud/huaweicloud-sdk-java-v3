@@ -224,22 +224,18 @@ public class ShowGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGroupResponse showGroupResponse = (ShowGroupResponse) o;
-        return Objects.equals(this.enabled, showGroupResponse.enabled)
-            && Objects.equals(this.broadcast, showGroupResponse.broadcast)
-            && Objects.equals(this.brokers, showGroupResponse.brokers)
-            && Objects.equals(this.name, showGroupResponse.name)
-            && Objects.equals(this.retryMaxTime, showGroupResponse.retryMaxTime)
-            && Objects.equals(this.appId, showGroupResponse.appId)
-            && Objects.equals(this.appName, showGroupResponse.appName)
-            && Objects.equals(this.permissions, showGroupResponse.permissions);
+        ShowGroupResponse that = (ShowGroupResponse) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.broadcast, that.broadcast)
+            && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.retryMaxTime, that.retryMaxTime) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.permissions, that.permissions);
     }
 
     @Override

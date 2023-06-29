@@ -1,59 +1,49 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * HttpGetDTO
  */
-public class HttpGetDTO  {
-
+public class HttpGetDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="path")
-    
+    @JsonProperty(value = "path")
 
     private String path;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
 
     private String host;
+
     /**
      * 协议类型
      */
     public static final class SchemeEnum {
 
-        
         /**
          * Enum HTTP for value: "HTTP"
          */
         public static final SchemeEnum HTTP = new SchemeEnum("HTTP");
-        
+
         /**
          * Enum HTTPS for value: "HTTPS"
          */
         public static final SchemeEnum HTTPS = new SchemeEnum("HTTPS");
-        
 
         private static final Map<String, SchemeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -82,25 +72,18 @@ public class HttpGetDTO  {
 
         @JsonCreator
         public static SchemeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SchemeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SchemeEnum(value));
         }
 
         public static SchemeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            SchemeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -118,8 +101,7 @@ public class HttpGetDTO  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="scheme")
-    
+    @JsonProperty(value = "scheme")
 
     private SchemeEnum scheme;
 
@@ -127,9 +109,6 @@ public class HttpGetDTO  {
         this.path = path;
         return this;
     }
-
-    
-
 
     /**
      * 请求路径
@@ -143,15 +122,10 @@ public class HttpGetDTO  {
         this.path = path;
     }
 
-    
-
     public HttpGetDTO withPort(Integer port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 端口
@@ -167,15 +141,10 @@ public class HttpGetDTO  {
         this.port = port;
     }
 
-    
-
     public HttpGetDTO withHost(String host) {
         this.host = host;
         return this;
     }
-
-    
-
 
     /**
      * 主机地址
@@ -189,15 +158,10 @@ public class HttpGetDTO  {
         this.host = host;
     }
 
-    
-
     public HttpGetDTO withScheme(SchemeEnum scheme) {
         this.scheme = scheme;
         return this;
     }
-
-    
-
 
     /**
      * 协议类型
@@ -211,26 +175,24 @@ public class HttpGetDTO  {
         this.scheme = scheme;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpGetDTO httpGetDTO = (HttpGetDTO) o;
-        return Objects.equals(this.path, httpGetDTO.path) &&
-            Objects.equals(this.port, httpGetDTO.port) &&
-            Objects.equals(this.host, httpGetDTO.host) &&
-            Objects.equals(this.scheme, httpGetDTO.scheme);
+        HttpGetDTO that = (HttpGetDTO) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.host, that.host) && Objects.equals(this.scheme, that.scheme);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(path, port, host, scheme);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -242,6 +204,7 @@ public class HttpGetDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -252,8 +215,5 @@ public class HttpGetDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

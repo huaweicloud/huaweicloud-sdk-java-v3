@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * CreateInstancePeriodRequestNics
  */
-public class CreateInstancePeriodRequestNics  {
-
+public class CreateInstancePeriodRequestNics {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ip_address")
-    
+    @JsonProperty(value = "ip_address")
 
     private String ipAddress;
 
@@ -33,9 +24,6 @@ public class CreateInstancePeriodRequestNics  {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 网卡对应的子网ID
@@ -49,15 +37,10 @@ public class CreateInstancePeriodRequestNics  {
         this.subnetId = subnetId;
     }
 
-    
-
     public CreateInstancePeriodRequestNics withIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
         return this;
     }
-
-    
-
 
     /**
      * IP地址，不填或空字符串为自动分配
@@ -71,24 +54,23 @@ public class CreateInstancePeriodRequestNics  {
         this.ipAddress = ipAddress;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstancePeriodRequestNics createInstancePeriodRequestNics = (CreateInstancePeriodRequestNics) o;
-        return Objects.equals(this.subnetId, createInstancePeriodRequestNics.subnetId) &&
-            Objects.equals(this.ipAddress, createInstancePeriodRequestNics.ipAddress);
+        CreateInstancePeriodRequestNics that = (CreateInstancePeriodRequestNics) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.ipAddress, that.ipAddress);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(subnetId, ipAddress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class CreateInstancePeriodRequestNics  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class CreateInstancePeriodRequestNics  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -143,19 +143,17 @@ public class ListUpStreamDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUpStreamDetailResponse listUpStreamDetailResponse = (ListUpStreamDetailResponse) o;
-        return Objects.equals(this.publishDomain, listUpStreamDetailResponse.publishDomain)
-            && Objects.equals(this.app, listUpStreamDetailResponse.app)
-            && Objects.equals(this.stream, listUpStreamDetailResponse.stream)
-            && Objects.equals(this.data, listUpStreamDetailResponse.data)
-            && Objects.equals(this.xRequestId, listUpStreamDetailResponse.xRequestId);
+        ListUpStreamDetailResponse that = (ListUpStreamDetailResponse) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.data, that.data)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

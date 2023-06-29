@@ -84,16 +84,15 @@ public class DetectLiveByBase64Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveByBase64Response detectLiveByBase64Response = (DetectLiveByBase64Response) o;
-        return Objects.equals(this.videoResult, detectLiveByBase64Response.videoResult)
-            && Objects.equals(this.warningList, detectLiveByBase64Response.warningList);
+        DetectLiveByBase64Response that = (DetectLiveByBase64Response) obj;
+        return Objects.equals(this.videoResult, that.videoResult) && Objects.equals(this.warningList, that.warningList);
     }
 
     @Override

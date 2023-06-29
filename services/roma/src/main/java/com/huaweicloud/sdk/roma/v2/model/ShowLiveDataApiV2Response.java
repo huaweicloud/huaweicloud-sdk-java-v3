@@ -87,22 +87,15 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -185,22 +178,15 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
         }
 
         public static ContentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -297,22 +283,15 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -385,22 +364,15 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -781,32 +753,24 @@ public class ShowLiveDataApiV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowLiveDataApiV2Response showLiveDataApiV2Response = (ShowLiveDataApiV2Response) o;
-        return Objects.equals(this.name, showLiveDataApiV2Response.name)
-            && Objects.equals(this.path, showLiveDataApiV2Response.path)
-            && Objects.equals(this.method, showLiveDataApiV2Response.method)
-            && Objects.equals(this.description, showLiveDataApiV2Response.description)
-            && Objects.equals(this.version, showLiveDataApiV2Response.version)
-            && Objects.equals(this.contentType, showLiveDataApiV2Response.contentType)
-            && Objects.equals(this.apiSignatureId, showLiveDataApiV2Response.apiSignatureId)
-            && Objects.equals(this.romaAppId, showLiveDataApiV2Response.romaAppId)
-            && Objects.equals(this.returnFormat, showLiveDataApiV2Response.returnFormat)
-            && Objects.equals(this.parameters, showLiveDataApiV2Response.parameters)
-            && Objects.equals(this.id, showLiveDataApiV2Response.id)
-            && Objects.equals(this.instance, showLiveDataApiV2Response.instance)
-            && Objects.equals(this.type, showLiveDataApiV2Response.type)
-            && Objects.equals(this.status, showLiveDataApiV2Response.status)
-            && Objects.equals(this.createdTime, showLiveDataApiV2Response.createdTime)
-            && Objects.equals(this.modifiedTime, showLiveDataApiV2Response.modifiedTime)
-            && Objects.equals(this.scripts, showLiveDataApiV2Response.scripts)
-            && Objects.equals(this.romaAppName, showLiveDataApiV2Response.romaAppName);
+        ShowLiveDataApiV2Response that = (ShowLiveDataApiV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.apiSignatureId, that.apiSignatureId)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.returnFormat, that.returnFormat)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.scripts, that.scripts)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

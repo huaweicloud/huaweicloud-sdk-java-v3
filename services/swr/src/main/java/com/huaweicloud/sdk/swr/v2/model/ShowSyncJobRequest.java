@@ -77,17 +77,16 @@ public class ShowSyncJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSyncJobRequest showSyncJobRequest = (ShowSyncJobRequest) o;
-        return Objects.equals(this.namespace, showSyncJobRequest.namespace)
-            && Objects.equals(this.repository, showSyncJobRequest.repository)
-            && Objects.equals(this.filter, showSyncJobRequest.filter);
+        ShowSyncJobRequest that = (ShowSyncJobRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.filter, that.filter);
     }
 
     @Override

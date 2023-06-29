@@ -87,17 +87,16 @@ public class SetRepoRoleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRepoRoleRequest setRepoRoleRequest = (SetRepoRoleRequest) o;
-        return Objects.equals(this.memberId, setRepoRoleRequest.memberId)
-            && Objects.equals(this.repositoryUuid, setRepoRoleRequest.repositoryUuid)
-            && Objects.equals(this.body, setRepoRoleRequest.body);
+        SetRepoRoleRequest that = (SetRepoRoleRequest) obj;
+        return Objects.equals(this.memberId, that.memberId) && Objects.equals(this.repositoryUuid, that.repositoryUuid)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

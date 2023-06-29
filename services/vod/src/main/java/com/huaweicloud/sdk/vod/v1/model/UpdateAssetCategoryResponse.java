@@ -123,19 +123,17 @@ public class UpdateAssetCategoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetCategoryResponse updateAssetCategoryResponse = (UpdateAssetCategoryResponse) o;
-        return Objects.equals(this.name, updateAssetCategoryResponse.name)
-            && Objects.equals(this.parentId, updateAssetCategoryResponse.parentId)
-            && Objects.equals(this.id, updateAssetCategoryResponse.id)
-            && Objects.equals(this.level, updateAssetCategoryResponse.level)
-            && Objects.equals(this.projectId, updateAssetCategoryResponse.projectId);
+        UpdateAssetCategoryResponse that = (UpdateAssetCategoryResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

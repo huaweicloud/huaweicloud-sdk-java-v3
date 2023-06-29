@@ -65,16 +65,15 @@ public class UploadSignatureFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadSignatureFileRequest uploadSignatureFileRequest = (UploadSignatureFileRequest) o;
-        return Objects.equals(this.fileDesc, uploadSignatureFileRequest.fileDesc)
-            && Objects.equals(this.body, uploadSignatureFileRequest.body);
+        UploadSignatureFileRequest that = (UploadSignatureFileRequest) obj;
+        return Objects.equals(this.fileDesc, that.fileDesc) && Objects.equals(this.body, that.body);
     }
 
     @Override

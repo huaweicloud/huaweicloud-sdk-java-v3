@@ -317,27 +317,22 @@ public class CreateTableResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTableResponse createTableResponse = (CreateTableResponse) o;
-        return Objects.equals(this.tableId, createTableResponse.tableId)
-            && Objects.equals(this.tableName, createTableResponse.tableName)
-            && Objects.equals(this.tableAlias, createTableResponse.tableAlias)
-            && Objects.equals(this.createdTime, createTableResponse.createdTime)
-            && Objects.equals(this.modifiedTime, createTableResponse.modifiedTime)
-            && Objects.equals(this.dataLocation, createTableResponse.dataLocation)
-            && Objects.equals(this.dataType, createTableResponse.dataType)
-            && Objects.equals(this.dataSource, createTableResponse.dataSource)
-            && Objects.equals(this.tableType, createTableResponse.tableType)
-            && Objects.equals(this.description, createTableResponse.description)
-            && Objects.equals(this.partitionColumns, createTableResponse.partitionColumns)
-            && Objects.equals(this.dataStoreId, createTableResponse.dataStoreId)
-            && Objects.equals(this.tags, createTableResponse.tags);
+        CreateTableResponse that = (CreateTableResponse) obj;
+        return Objects.equals(this.tableId, that.tableId) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableAlias, that.tableAlias) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime)
+            && Objects.equals(this.dataLocation, that.dataLocation) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.partitionColumns, that.partitionColumns)
+            && Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class CheckMd5DuplicationRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMd5DuplicationRequest checkMd5DuplicationRequest = (CheckMd5DuplicationRequest) o;
-        return Objects.equals(this.xSdkDate, checkMd5DuplicationRequest.xSdkDate)
-            && Objects.equals(this.size, checkMd5DuplicationRequest.size)
-            && Objects.equals(this.md5, checkMd5DuplicationRequest.md5);
+        CheckMd5DuplicationRequest that = (CheckMd5DuplicationRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.md5, that.md5);
     }
 
     @Override

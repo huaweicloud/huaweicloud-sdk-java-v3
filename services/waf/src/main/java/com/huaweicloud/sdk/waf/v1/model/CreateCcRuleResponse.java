@@ -139,22 +139,15 @@ public class CreateCcRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TagTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TagTypeEnum(value));
         }
 
         public static TagTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TagTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -689,37 +682,27 @@ public class CreateCcRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCcRuleResponse createCcRuleResponse = (CreateCcRuleResponse) o;
-        return Objects.equals(this.name, createCcRuleResponse.name) && Objects.equals(this.id, createCcRuleResponse.id)
-            && Objects.equals(this.policyid, createCcRuleResponse.policyid)
-            && Objects.equals(this.url, createCcRuleResponse.url)
-            && Objects.equals(this.prefix, createCcRuleResponse.prefix)
-            && Objects.equals(this.mode, createCcRuleResponse.mode)
-            && Objects.equals(this.status, createCcRuleResponse.status)
-            && Objects.equals(this.conditions, createCcRuleResponse.conditions)
-            && Objects.equals(this.action, createCcRuleResponse.action)
-            && Objects.equals(this.tagType, createCcRuleResponse.tagType)
-            && Objects.equals(this.tagIndex, createCcRuleResponse.tagIndex)
-            && Objects.equals(this.tagCondition, createCcRuleResponse.tagCondition)
-            && Objects.equals(this.limitNum, createCcRuleResponse.limitNum)
-            && Objects.equals(this.limitPeriod, createCcRuleResponse.limitPeriod)
-            && Objects.equals(this.unlockNum, createCcRuleResponse.unlockNum)
-            && Objects.equals(this.lockTime, createCcRuleResponse.lockTime)
-            && Objects.equals(this.domainAggregation, createCcRuleResponse.domainAggregation)
-            && Objects.equals(this.regionAggregation, createCcRuleResponse.regionAggregation)
-            && Objects.equals(this.description, createCcRuleResponse.description)
-            && Objects.equals(this.totalNum, createCcRuleResponse.totalNum)
-            && Objects.equals(this.unaggregation, createCcRuleResponse.unaggregation)
-            && Objects.equals(this.agingTime, createCcRuleResponse.agingTime)
-            && Objects.equals(this.producer, createCcRuleResponse.producer)
-            && Objects.equals(this.timestamp, createCcRuleResponse.timestamp);
+        CreateCcRuleResponse that = (CreateCcRuleResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.mode, that.mode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.conditions, that.conditions)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.tagType, that.tagType)
+            && Objects.equals(this.tagIndex, that.tagIndex) && Objects.equals(this.tagCondition, that.tagCondition)
+            && Objects.equals(this.limitNum, that.limitNum) && Objects.equals(this.limitPeriod, that.limitPeriod)
+            && Objects.equals(this.unlockNum, that.unlockNum) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.domainAggregation, that.domainAggregation)
+            && Objects.equals(this.regionAggregation, that.regionAggregation)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.unaggregation, that.unaggregation) && Objects.equals(this.agingTime, that.agingTime)
+            && Objects.equals(this.producer, that.producer) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

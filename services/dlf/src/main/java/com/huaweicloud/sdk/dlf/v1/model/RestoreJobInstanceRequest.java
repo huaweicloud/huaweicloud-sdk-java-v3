@@ -77,17 +77,16 @@ public class RestoreJobInstanceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreJobInstanceRequest restoreJobInstanceRequest = (RestoreJobInstanceRequest) o;
-        return Objects.equals(this.workspace, restoreJobInstanceRequest.workspace)
-            && Objects.equals(this.jobName, restoreJobInstanceRequest.jobName)
-            && Objects.equals(this.instanceId, restoreJobInstanceRequest.instanceId);
+        RestoreJobInstanceRequest that = (RestoreJobInstanceRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

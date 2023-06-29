@@ -87,17 +87,17 @@ public class OutputFileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OutputFileInfo outputFileInfo = (OutputFileInfo) o;
-        return Objects.equals(this.outputFileName, outputFileInfo.outputFileName)
-            && Objects.equals(this.execDescription, outputFileInfo.execDescription)
-            && Objects.equals(this.metaData, outputFileInfo.metaData);
+        OutputFileInfo that = (OutputFileInfo) obj;
+        return Objects.equals(this.outputFileName, that.outputFileName)
+            && Objects.equals(this.execDescription, that.execDescription)
+            && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

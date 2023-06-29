@@ -33,15 +33,15 @@ public class AppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppReq appReq = (AppReq) o;
-        return Objects.equals(this.appName, appReq.appName);
+        AppReq that = (AppReq) obj;
+        return Objects.equals(this.appName, that.appName);
     }
 
     @Override

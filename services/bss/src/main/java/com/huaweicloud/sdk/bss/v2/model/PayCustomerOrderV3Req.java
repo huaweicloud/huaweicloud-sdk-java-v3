@@ -156,19 +156,17 @@ public class PayCustomerOrderV3Req {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PayCustomerOrderV3Req payCustomerOrderV3Req = (PayCustomerOrderV3Req) o;
-        return Objects.equals(this.orderId, payCustomerOrderV3Req.orderId)
-            && Objects.equals(this.useCoupon, payCustomerOrderV3Req.useCoupon)
-            && Objects.equals(this.useDiscount, payCustomerOrderV3Req.useDiscount)
-            && Objects.equals(this.couponInfos, payCustomerOrderV3Req.couponInfos)
-            && Objects.equals(this.discountInfos, payCustomerOrderV3Req.discountInfos);
+        PayCustomerOrderV3Req that = (PayCustomerOrderV3Req) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.useCoupon, that.useCoupon)
+            && Objects.equals(this.useDiscount, that.useDiscount) && Objects.equals(this.couponInfos, that.couponInfos)
+            && Objects.equals(this.discountInfos, that.discountInfos);
     }
 
     @Override

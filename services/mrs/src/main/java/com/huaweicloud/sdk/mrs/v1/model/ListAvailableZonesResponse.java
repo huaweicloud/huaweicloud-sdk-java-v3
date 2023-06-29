@@ -1,42 +1,31 @@
 package com.huaweicloud.sdk.mrs.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.mrs.v1.model.AvailableZoneV2;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListAvailableZonesResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "available_zones")
+
+    private List<AvailableZoneV2> availableZones = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="available_zones")
-    
-    private List<AvailableZoneV2> availableZones = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="default_az_code")
-    
+    @JsonProperty(value = "default_az_code")
 
     private String defaultAzCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="support_physical_az_group")
-    
+    @JsonProperty(value = "support_physical_az_group")
 
     private Boolean supportPhysicalAzGroup;
 
@@ -45,9 +34,8 @@ public class ListAvailableZonesResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListAvailableZonesResponse addAvailableZonesItem(AvailableZoneV2 availableZonesItem) {
-        if(this.availableZones == null) {
+        if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         this.availableZones.add(availableZonesItem);
@@ -55,7 +43,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
     }
 
     public ListAvailableZonesResponse withAvailableZones(Consumer<List<AvailableZoneV2>> availableZonesSetter) {
-        if(this.availableZones == null) {
+        if (this.availableZones == null) {
             this.availableZones = new ArrayList<>();
         }
         availableZonesSetter.accept(this.availableZones);
@@ -74,15 +62,10 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.availableZones = availableZones;
     }
 
-    
-
     public ListAvailableZonesResponse withDefaultAzCode(String defaultAzCode) {
         this.defaultAzCode = defaultAzCode;
         return this;
     }
-
-    
-
 
     /**
      * 默认可用区编码
@@ -96,15 +79,10 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.defaultAzCode = defaultAzCode;
     }
 
-    
-
     public ListAvailableZonesResponse withSupportPhysicalAzGroup(Boolean supportPhysicalAzGroup) {
         this.supportPhysicalAzGroup = supportPhysicalAzGroup;
         return this;
     }
-
-    
-
 
     /**
      * 支持的物理可用区分组
@@ -118,25 +96,25 @@ public class ListAvailableZonesResponse extends SdkResponse {
         this.supportPhysicalAzGroup = supportPhysicalAzGroup;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailableZonesResponse listAvailableZonesResponse = (ListAvailableZonesResponse) o;
-        return Objects.equals(this.availableZones, listAvailableZonesResponse.availableZones) &&
-            Objects.equals(this.defaultAzCode, listAvailableZonesResponse.defaultAzCode) &&
-            Objects.equals(this.supportPhysicalAzGroup, listAvailableZonesResponse.supportPhysicalAzGroup);
+        ListAvailableZonesResponse that = (ListAvailableZonesResponse) obj;
+        return Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.defaultAzCode, that.defaultAzCode)
+            && Objects.equals(this.supportPhysicalAzGroup, that.supportPhysicalAzGroup);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(availableZones, defaultAzCode, supportPhysicalAzGroup);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -147,6 +125,7 @@ public class ListAvailableZonesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -157,8 +136,5 @@ public class ListAvailableZonesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

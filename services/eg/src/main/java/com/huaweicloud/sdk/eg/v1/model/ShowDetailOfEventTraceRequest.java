@@ -55,16 +55,15 @@ public class ShowDetailOfEventTraceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailOfEventTraceRequest showDetailOfEventTraceRequest = (ShowDetailOfEventTraceRequest) o;
-        return Objects.equals(this.traceId, showDetailOfEventTraceRequest.traceId)
-            && Objects.equals(this.channelId, showDetailOfEventTraceRequest.channelId);
+        ShowDetailOfEventTraceRequest that = (ShowDetailOfEventTraceRequest) obj;
+        return Objects.equals(this.traceId, that.traceId) && Objects.equals(this.channelId, that.channelId);
     }
 
     @Override

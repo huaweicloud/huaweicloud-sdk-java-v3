@@ -77,17 +77,16 @@ public class ConfigBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ConfigBody configBody = (ConfigBody) o;
-        return Objects.equals(this.configKey, configBody.configKey)
-            && Objects.equals(this.configValue, configBody.configValue)
-            && Objects.equals(this.configStatus, configBody.configStatus);
+        ConfigBody that = (ConfigBody) obj;
+        return Objects.equals(this.configKey, that.configKey) && Objects.equals(this.configValue, that.configValue)
+            && Objects.equals(this.configStatus, that.configStatus);
     }
 
     @Override

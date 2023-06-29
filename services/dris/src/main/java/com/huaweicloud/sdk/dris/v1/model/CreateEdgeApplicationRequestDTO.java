@@ -55,16 +55,15 @@ public class CreateEdgeApplicationRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEdgeApplicationRequestDTO createEdgeApplicationRequestDTO = (CreateEdgeApplicationRequestDTO) o;
-        return Objects.equals(this.edgeAppId, createEdgeApplicationRequestDTO.edgeAppId)
-            && Objects.equals(this.description, createEdgeApplicationRequestDTO.description);
+        CreateEdgeApplicationRequestDTO that = (CreateEdgeApplicationRequestDTO) obj;
+        return Objects.equals(this.edgeAppId, that.edgeAppId) && Objects.equals(this.description, that.description);
     }
 
     @Override

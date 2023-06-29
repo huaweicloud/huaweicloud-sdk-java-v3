@@ -1,51 +1,39 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * 分词post请求体
  */
-public class SegmentRequest  {
-
+public class SegmentRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="text")
-    
+    @JsonProperty(value = "text")
 
     private String text;
+
     /**
      * 是否开启词性标注功能，1为开启，0为关闭，默认为关闭。
      */
     public static final class PosSwitchEnum {
 
-        
         /**
          * Enum NUMBER_0 for value: 0
          */
         public static final PosSwitchEnum NUMBER_0 = new PosSwitchEnum(0);
-        
+
         /**
          * Enum NUMBER_1 for value: 1
          */
         public static final PosSwitchEnum NUMBER_1 = new PosSwitchEnum(1);
-        
 
         private static final Map<Integer, PosSwitchEnum> STATIC_FIELDS = createStaticFields();
 
@@ -74,25 +62,18 @@ public class SegmentRequest  {
 
         @JsonCreator
         public static PosSwitchEnum fromValue(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PosSwitchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PosSwitchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PosSwitchEnum(value));
         }
 
         public static PosSwitchEnum valueOf(Integer value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            PosSwitchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -110,26 +91,24 @@ public class SegmentRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="pos_switch")
-    
+    @JsonProperty(value = "pos_switch")
 
     private PosSwitchEnum posSwitch;
+
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
      */
     public static final class LangEnum {
 
-        
         /**
          * Enum ZH for value: "zh"
          */
         public static final LangEnum ZH = new LangEnum("zh");
-        
+
         /**
          * Enum EN for value: "en"
          */
         public static final LangEnum EN = new LangEnum("en");
-        
 
         private static final Map<String, LangEnum> STATIC_FIELDS = createStaticFields();
 
@@ -158,25 +137,18 @@ public class SegmentRequest  {
 
         @JsonCreator
         public static LangEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LangEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LangEnum(value));
         }
 
         public static LangEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            LangEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,26 +166,24 @@ public class SegmentRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="lang")
-    
+    @JsonProperty(value = "lang")
 
     private LangEnum lang;
+
     /**
      * 支持的分词规范。 中文分词标准目前支持PKU（北大分词标准）、CTB（宾州中文树库标准），默认为PKU。 英文分词标准默认为Penn TreeBank（宾州树库标准），不需要传入该参数。
      */
     public static final class CriterionEnum {
 
-        
         /**
          * Enum PKU for value: "PKU"
          */
         public static final CriterionEnum PKU = new CriterionEnum("PKU");
-        
+
         /**
          * Enum CTB for value: "CTB"
          */
         public static final CriterionEnum CTB = new CriterionEnum("CTB");
-        
 
         private static final Map<String, CriterionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -242,25 +212,18 @@ public class SegmentRequest  {
 
         @JsonCreator
         public static CriterionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            CriterionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CriterionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CriterionEnum(value));
         }
 
         public static CriterionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            CriterionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -278,8 +241,7 @@ public class SegmentRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="criterion")
-    
+    @JsonProperty(value = "criterion")
 
     private CriterionEnum criterion;
 
@@ -287,9 +249,6 @@ public class SegmentRequest  {
         this.text = text;
         return this;
     }
-
-    
-
 
     /**
      * 待分词文本，长度为1~512，文本编码为UTF-8。
@@ -303,15 +262,10 @@ public class SegmentRequest  {
         this.text = text;
     }
 
-    
-
     public SegmentRequest withPosSwitch(PosSwitchEnum posSwitch) {
         this.posSwitch = posSwitch;
         return this;
     }
-
-    
-
 
     /**
      * 是否开启词性标注功能，1为开启，0为关闭，默认为关闭。
@@ -325,15 +279,10 @@ public class SegmentRequest  {
         this.posSwitch = posSwitch;
     }
 
-    
-
     public SegmentRequest withLang(LangEnum lang) {
         this.lang = lang;
         return this;
     }
-
-    
-
 
     /**
      * 支持的文本语言类型，目前支持中文（zh）和英文（en），默认为中文。
@@ -347,15 +296,10 @@ public class SegmentRequest  {
         this.lang = lang;
     }
 
-    
-
     public SegmentRequest withCriterion(CriterionEnum criterion) {
         this.criterion = criterion;
         return this;
     }
-
-    
-
 
     /**
      * 支持的分词规范。 中文分词标准目前支持PKU（北大分词标准）、CTB（宾州中文树库标准），默认为PKU。 英文分词标准默认为Penn TreeBank（宾州树库标准），不需要传入该参数。
@@ -369,26 +313,24 @@ public class SegmentRequest  {
         this.criterion = criterion;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SegmentRequest segmentRequest = (SegmentRequest) o;
-        return Objects.equals(this.text, segmentRequest.text) &&
-            Objects.equals(this.posSwitch, segmentRequest.posSwitch) &&
-            Objects.equals(this.lang, segmentRequest.lang) &&
-            Objects.equals(this.criterion, segmentRequest.criterion);
+        SegmentRequest that = (SegmentRequest) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.posSwitch, that.posSwitch)
+            && Objects.equals(this.lang, that.lang) && Objects.equals(this.criterion, that.criterion);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(text, posSwitch, lang, criterion);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -400,6 +342,7 @@ public class SegmentRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -410,8 +353,5 @@ public class SegmentRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -187,22 +187,19 @@ public class AccountBalanceV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccountBalanceV2 accountBalanceV2 = (AccountBalanceV2) o;
-        return Objects.equals(this.accountId, accountBalanceV2.accountId)
-            && Objects.equals(this.accountType, accountBalanceV2.accountType)
-            && Objects.equals(this.amount, accountBalanceV2.amount)
-            && Objects.equals(this.currency, accountBalanceV2.currency)
-            && Objects.equals(this.designatedAmount, accountBalanceV2.designatedAmount)
-            && Objects.equals(this.creditAmount, accountBalanceV2.creditAmount)
-            && Objects.equals(this.measureId, accountBalanceV2.measureId)
-            && Objects.equals(this.memo, accountBalanceV2.memo);
+        AccountBalanceV2 that = (AccountBalanceV2) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountType, that.accountType)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.designatedAmount, that.designatedAmount)
+            && Objects.equals(this.creditAmount, that.creditAmount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.memo, that.memo);
     }
 
     @Override

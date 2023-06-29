@@ -43,15 +43,15 @@ public class ListImageBaseInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListImageBaseInfoRequest listImageBaseInfoRequest = (ListImageBaseInfoRequest) o;
-        return Objects.equals(this.body, listImageBaseInfoRequest.body);
+        ListImageBaseInfoRequest that = (ListImageBaseInfoRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

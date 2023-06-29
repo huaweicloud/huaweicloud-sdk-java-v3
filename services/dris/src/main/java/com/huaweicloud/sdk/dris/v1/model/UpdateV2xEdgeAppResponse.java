@@ -100,18 +100,16 @@ public class UpdateV2xEdgeAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateV2xEdgeAppResponse updateV2xEdgeAppResponse = (UpdateV2xEdgeAppResponse) o;
-        return Objects.equals(this.v2xEdgeId, updateV2xEdgeAppResponse.v2xEdgeId)
-            && Objects.equals(this.edgeAppId, updateV2xEdgeAppResponse.edgeAppId)
-            && Objects.equals(this.appVersion, updateV2xEdgeAppResponse.appVersion)
-            && Objects.equals(this.status, updateV2xEdgeAppResponse.status);
+        UpdateV2xEdgeAppResponse that = (UpdateV2xEdgeAppResponse) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.edgeAppId, that.edgeAppId)
+            && Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.status, that.status);
     }
 
     @Override

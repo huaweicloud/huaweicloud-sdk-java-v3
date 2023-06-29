@@ -229,21 +229,20 @@ public class RouteTable {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteTable routeTable = (RouteTable) o;
-        return Objects.equals(this.id, routeTable.id) && Objects.equals(this.name, routeTable.name)
-            && Objects.equals(this.description, routeTable.description)
-            && Objects.equals(this.isDefaultAssociation, routeTable.isDefaultAssociation)
-            && Objects.equals(this.isDefaultPropagation, routeTable.isDefaultPropagation)
-            && Objects.equals(this.state, routeTable.state) && Objects.equals(this.tags, routeTable.tags)
-            && Objects.equals(this.createdAt, routeTable.createdAt)
-            && Objects.equals(this.updatedAt, routeTable.updatedAt);
+        RouteTable that = (RouteTable) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.isDefaultAssociation, that.isDefaultAssociation)
+            && Objects.equals(this.isDefaultPropagation, that.isDefaultPropagation)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

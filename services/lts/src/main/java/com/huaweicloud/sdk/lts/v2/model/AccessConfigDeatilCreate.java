@@ -153,18 +153,16 @@ public class AccessConfigDeatilCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigDeatilCreate accessConfigDeatilCreate = (AccessConfigDeatilCreate) o;
-        return Objects.equals(this.paths, accessConfigDeatilCreate.paths)
-            && Objects.equals(this.blackPaths, accessConfigDeatilCreate.blackPaths)
-            && Objects.equals(this.format, accessConfigDeatilCreate.format)
-            && Objects.equals(this.windowsLogInfo, accessConfigDeatilCreate.windowsLogInfo);
+        AccessConfigDeatilCreate that = (AccessConfigDeatilCreate) obj;
+        return Objects.equals(this.paths, that.paths) && Objects.equals(this.blackPaths, that.blackPaths)
+            && Objects.equals(this.format, that.format) && Objects.equals(this.windowsLogInfo, that.windowsLogInfo);
     }
 
     @Override

@@ -457,33 +457,26 @@ public class MainlandTravelPermitResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MainlandTravelPermitResult mainlandTravelPermitResult = (MainlandTravelPermitResult) o;
-        return Objects.equals(this.name, mainlandTravelPermitResult.name)
-            && Objects.equals(this.nameEn, mainlandTravelPermitResult.nameEn)
-            && Objects.equals(this.birthDate, mainlandTravelPermitResult.birthDate)
-            && Objects.equals(this.sex, mainlandTravelPermitResult.sex)
-            && Objects.equals(this.validPeriod, mainlandTravelPermitResult.validPeriod)
-            && Objects.equals(this.issuingAuthority, mainlandTravelPermitResult.issuingAuthority)
-            && Objects.equals(this.number, mainlandTravelPermitResult.number)
-            && Objects.equals(this.issuePlace, mainlandTravelPermitResult.issuePlace)
-            && Objects.equals(this.issueTimes, mainlandTravelPermitResult.issueTimes)
-            && Objects.equals(this.idName, mainlandTravelPermitResult.idName)
-            && Objects.equals(this.idNumber, mainlandTravelPermitResult.idNumber)
-            && Objects.equals(this.machineCode1, mainlandTravelPermitResult.machineCode1)
-            && Objects.equals(this.machineCode2, mainlandTravelPermitResult.machineCode2)
-            && Objects.equals(this.machineCode3, mainlandTravelPermitResult.machineCode3)
-            && Objects.equals(this.type, mainlandTravelPermitResult.type)
-            && Objects.equals(this.side, mainlandTravelPermitResult.side)
-            && Objects.equals(this.portraitImage, mainlandTravelPermitResult.portraitImage)
-            && Objects.equals(this.portraitLocation, mainlandTravelPermitResult.portraitLocation)
-            && Objects.equals(this.confidence, mainlandTravelPermitResult.confidence);
+        MainlandTravelPermitResult that = (MainlandTravelPermitResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.birthDate, that.birthDate) && Objects.equals(this.sex, that.sex)
+            && Objects.equals(this.validPeriod, that.validPeriod)
+            && Objects.equals(this.issuingAuthority, that.issuingAuthority) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.issuePlace, that.issuePlace) && Objects.equals(this.issueTimes, that.issueTimes)
+            && Objects.equals(this.idName, that.idName) && Objects.equals(this.idNumber, that.idNumber)
+            && Objects.equals(this.machineCode1, that.machineCode1)
+            && Objects.equals(this.machineCode2, that.machineCode2)
+            && Objects.equals(this.machineCode3, that.machineCode3) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.side, that.side) && Objects.equals(this.portraitImage, that.portraitImage)
+            && Objects.equals(this.portraitLocation, that.portraitLocation)
+            && Objects.equals(this.confidence, that.confidence);
     }
 
     @Override

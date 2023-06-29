@@ -143,17 +143,17 @@ public class ProxyNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProxyNode proxyNode = (ProxyNode) o;
-        return Objects.equals(this.id, proxyNode.id) && Objects.equals(this.name, proxyNode.name)
-            && Objects.equals(this.role, proxyNode.role) && Objects.equals(this.azCode, proxyNode.azCode)
-            && Objects.equals(this.status, proxyNode.status) && Objects.equals(this.frozenFlag, proxyNode.frozenFlag);
+        ProxyNode that = (ProxyNode) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.azCode, that.azCode)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.frozenFlag, that.frozenFlag);
     }
 
     @Override

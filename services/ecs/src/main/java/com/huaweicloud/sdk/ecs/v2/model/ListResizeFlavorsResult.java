@@ -369,29 +369,24 @@ public class ListResizeFlavorsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResizeFlavorsResult listResizeFlavorsResult = (ListResizeFlavorsResult) o;
-        return Objects.equals(this.id, listResizeFlavorsResult.id)
-            && Objects.equals(this.name, listResizeFlavorsResult.name)
-            && Objects.equals(this.vcpus, listResizeFlavorsResult.vcpus)
-            && Objects.equals(this.ram, listResizeFlavorsResult.ram)
-            && Objects.equals(this.disk, listResizeFlavorsResult.disk)
-            && Objects.equals(this.swap, listResizeFlavorsResult.swap)
-            && Objects.equals(this.osFLVEXTDATAEphemeral, listResizeFlavorsResult.osFLVEXTDATAEphemeral)
-            && Objects.equals(this.osFLVDISABLEDDisabled, listResizeFlavorsResult.osFLVDISABLEDDisabled)
-            && Objects.equals(this.rxtxFactor, listResizeFlavorsResult.rxtxFactor)
-            && Objects.equals(this.rxtxQuota, listResizeFlavorsResult.rxtxQuota)
-            && Objects.equals(this.rxtxCap, listResizeFlavorsResult.rxtxCap)
-            && Objects.equals(this.osFlavorAccessIsPublic, listResizeFlavorsResult.osFlavorAccessIsPublic)
-            && Objects.equals(this.links, listResizeFlavorsResult.links)
-            && Objects.equals(this.extraSpecs, listResizeFlavorsResult.extraSpecs)
-            && Objects.equals(this.instanceQuota, listResizeFlavorsResult.instanceQuota);
+        ListResizeFlavorsResult that = (ListResizeFlavorsResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.vcpus, that.vcpus) && Objects.equals(this.ram, that.ram)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.swap, that.swap)
+            && Objects.equals(this.osFLVEXTDATAEphemeral, that.osFLVEXTDATAEphemeral)
+            && Objects.equals(this.osFLVDISABLEDDisabled, that.osFLVDISABLEDDisabled)
+            && Objects.equals(this.rxtxFactor, that.rxtxFactor) && Objects.equals(this.rxtxQuota, that.rxtxQuota)
+            && Objects.equals(this.rxtxCap, that.rxtxCap)
+            && Objects.equals(this.osFlavorAccessIsPublic, that.osFlavorAccessIsPublic)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.extraSpecs, that.extraSpecs)
+            && Objects.equals(this.instanceQuota, that.instanceQuota);
     }
 
     @Override

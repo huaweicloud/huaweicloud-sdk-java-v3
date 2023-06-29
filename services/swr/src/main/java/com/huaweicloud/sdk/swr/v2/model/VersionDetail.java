@@ -153,18 +153,17 @@ public class VersionDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionDetail versionDetail = (VersionDetail) o;
-        return Objects.equals(this.id, versionDetail.id) && Objects.equals(this.links, versionDetail.links)
-            && Objects.equals(this.version, versionDetail.version) && Objects.equals(this.status, versionDetail.status)
-            && Objects.equals(this.updated, versionDetail.updated)
-            && Objects.equals(this.minVersion, versionDetail.minVersion);
+        VersionDetail that = (VersionDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.minVersion, that.minVersion);
     }
 
     @Override

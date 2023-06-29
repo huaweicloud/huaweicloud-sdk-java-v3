@@ -144,20 +144,20 @@ public class PrimaryKeyInput {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrimaryKeyInput primaryKeyInput = (PrimaryKeyInput) o;
-        return Objects.equals(this.columnName, primaryKeyInput.columnName)
-            && Objects.equals(this.primaryKeyName, primaryKeyInput.primaryKeyName)
-            && Objects.equals(this.enableConstraint, primaryKeyInput.enableConstraint)
-            && Objects.equals(this.keySequence, primaryKeyInput.keySequence)
-            && Objects.equals(this.relyConstraint, primaryKeyInput.relyConstraint)
-            && Objects.equals(this.validateConstraint, primaryKeyInput.validateConstraint);
+        PrimaryKeyInput that = (PrimaryKeyInput) obj;
+        return Objects.equals(this.columnName, that.columnName)
+            && Objects.equals(this.primaryKeyName, that.primaryKeyName)
+            && Objects.equals(this.enableConstraint, that.enableConstraint)
+            && Objects.equals(this.keySequence, that.keySequence)
+            && Objects.equals(this.relyConstraint, that.relyConstraint)
+            && Objects.equals(this.validateConstraint, that.validateConstraint);
     }
 
     @Override

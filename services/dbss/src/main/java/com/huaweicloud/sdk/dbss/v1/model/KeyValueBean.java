@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * KeyValueBean
  */
-public class KeyValueBean  {
-
+public class KeyValueBean {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="key")
-    
+    @JsonProperty(value = "key")
 
     private String key;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private String value;
 
@@ -33,9 +24,6 @@ public class KeyValueBean  {
         this.key = key;
         return this;
     }
-
-    
-
 
     /**
      * 键
@@ -49,15 +37,10 @@ public class KeyValueBean  {
         this.key = key;
     }
 
-    
-
     public KeyValueBean withValue(String value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 值
@@ -71,24 +54,23 @@ public class KeyValueBean  {
         this.value = value;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeyValueBean keyValueBean = (KeyValueBean) o;
-        return Objects.equals(this.key, keyValueBean.key) &&
-            Objects.equals(this.value, keyValueBean.value);
+        KeyValueBean that = (KeyValueBean) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(key, value);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class KeyValueBean  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class KeyValueBean  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

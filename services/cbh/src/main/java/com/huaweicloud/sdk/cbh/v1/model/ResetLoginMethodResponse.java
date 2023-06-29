@@ -34,15 +34,15 @@ public class ResetLoginMethodResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetLoginMethodResponse resetLoginMethodResponse = (ResetLoginMethodResponse) o;
-        return Objects.equals(this.requestInfo, resetLoginMethodResponse.requestInfo);
+        ResetLoginMethodResponse that = (ResetLoginMethodResponse) obj;
+        return Objects.equals(this.requestInfo, that.requestInfo);
     }
 
     @Override

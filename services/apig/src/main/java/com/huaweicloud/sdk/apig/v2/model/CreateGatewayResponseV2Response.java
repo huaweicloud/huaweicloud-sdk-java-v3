@@ -164,20 +164,17 @@ public class CreateGatewayResponseV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateGatewayResponseV2Response createGatewayResponseV2Response = (CreateGatewayResponseV2Response) o;
-        return Objects.equals(this.name, createGatewayResponseV2Response.name)
-            && Objects.equals(this.responses, createGatewayResponseV2Response.responses)
-            && Objects.equals(this.id, createGatewayResponseV2Response.id)
-            && Objects.equals(this._default, createGatewayResponseV2Response._default)
-            && Objects.equals(this.createTime, createGatewayResponseV2Response.createTime)
-            && Objects.equals(this.updateTime, createGatewayResponseV2Response.updateTime);
+        CreateGatewayResponseV2Response that = (CreateGatewayResponseV2Response) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.responses, that.responses)
+            && Objects.equals(this.id, that.id) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

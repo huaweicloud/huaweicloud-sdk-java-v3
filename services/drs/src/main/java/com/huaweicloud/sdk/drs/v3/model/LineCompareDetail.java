@@ -116,22 +116,15 @@ public class LineCompareDetail {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LineCompareResultEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LineCompareResultEnum(value));
         }
 
         public static LineCompareResultEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LineCompareResultEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -278,21 +271,20 @@ public class LineCompareDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LineCompareDetail lineCompareDetail = (LineCompareDetail) o;
-        return Objects.equals(this.sourceTableName, lineCompareDetail.sourceTableName)
-            && Objects.equals(this.targetTableName, lineCompareDetail.targetTableName)
-            && Objects.equals(this.sourceRowNum, lineCompareDetail.sourceRowNum)
-            && Objects.equals(this.targetRowNum, lineCompareDetail.targetRowNum)
-            && Objects.equals(this.diffRowNum, lineCompareDetail.diffRowNum)
-            && Objects.equals(this.lineCompareResult, lineCompareDetail.lineCompareResult)
-            && Objects.equals(this.message, lineCompareDetail.message);
+        LineCompareDetail that = (LineCompareDetail) obj;
+        return Objects.equals(this.sourceTableName, that.sourceTableName)
+            && Objects.equals(this.targetTableName, that.targetTableName)
+            && Objects.equals(this.sourceRowNum, that.sourceRowNum)
+            && Objects.equals(this.targetRowNum, that.targetRowNum) && Objects.equals(this.diffRowNum, that.diffRowNum)
+            && Objects.equals(this.lineCompareResult, that.lineCompareResult)
+            && Objects.equals(this.message, that.message);
     }
 
     @Override

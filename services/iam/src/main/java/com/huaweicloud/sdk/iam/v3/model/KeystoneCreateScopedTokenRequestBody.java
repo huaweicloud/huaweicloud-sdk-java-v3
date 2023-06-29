@@ -43,16 +43,15 @@ public class KeystoneCreateScopedTokenRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneCreateScopedTokenRequestBody keystoneCreateScopedTokenRequestBody =
-            (KeystoneCreateScopedTokenRequestBody) o;
-        return Objects.equals(this.auth, keystoneCreateScopedTokenRequestBody.auth);
+        KeystoneCreateScopedTokenRequestBody that = (KeystoneCreateScopedTokenRequestBody) obj;
+        return Objects.equals(this.auth, that.auth);
     }
 
     @Override

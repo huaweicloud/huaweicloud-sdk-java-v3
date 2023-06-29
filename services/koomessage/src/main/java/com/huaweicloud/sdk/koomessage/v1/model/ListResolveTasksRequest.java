@@ -213,23 +213,19 @@ public class ListResolveTasksRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResolveTasksRequest listResolveTasksRequest = (ListResolveTasksRequest) o;
-        return Objects.equals(this.taskId, listResolveTasksRequest.taskId)
-            && Objects.equals(this.tplId, listResolveTasksRequest.tplId)
-            && Objects.equals(this.tplName, listResolveTasksRequest.tplName)
-            && Objects.equals(this.custFlag, listResolveTasksRequest.custFlag)
-            && Objects.equals(this.aimUrl, listResolveTasksRequest.aimUrl)
-            && Objects.equals(this.beginTime, listResolveTasksRequest.beginTime)
-            && Objects.equals(this.endTime, listResolveTasksRequest.endTime)
-            && Objects.equals(this.offset, listResolveTasksRequest.offset)
-            && Objects.equals(this.limit, listResolveTasksRequest.limit);
+        ListResolveTasksRequest that = (ListResolveTasksRequest) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.custFlag, that.custFlag)
+            && Objects.equals(this.aimUrl, that.aimUrl) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

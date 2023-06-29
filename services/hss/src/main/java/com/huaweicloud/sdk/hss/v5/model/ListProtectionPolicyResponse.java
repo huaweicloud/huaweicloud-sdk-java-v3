@@ -77,16 +77,15 @@ public class ListProtectionPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectionPolicyResponse listProtectionPolicyResponse = (ListProtectionPolicyResponse) o;
-        return Objects.equals(this.totalNum, listProtectionPolicyResponse.totalNum)
-            && Objects.equals(this.dataList, listProtectionPolicyResponse.dataList);
+        ListProtectionPolicyResponse that = (ListProtectionPolicyResponse) obj;
+        return Objects.equals(this.totalNum, that.totalNum) && Objects.equals(this.dataList, that.dataList);
     }
 
     @Override

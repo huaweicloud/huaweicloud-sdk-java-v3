@@ -101,17 +101,16 @@ public class ListFirewallsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFirewallsRequest listFirewallsRequest = (ListFirewallsRequest) o;
-        return Objects.equals(this.limit, listFirewallsRequest.limit)
-            && Objects.equals(this.offset, listFirewallsRequest.offset)
-            && Objects.equals(this.id, listFirewallsRequest.id) && Objects.equals(this.name, listFirewallsRequest.name);
+        ListFirewallsRequest that = (ListFirewallsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name);
     }
 
     @Override

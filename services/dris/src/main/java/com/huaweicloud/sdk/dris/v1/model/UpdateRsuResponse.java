@@ -355,28 +355,25 @@ public class UpdateRsuResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRsuResponse updateRsuResponse = (UpdateRsuResponse) o;
-        return Objects.equals(this.rsuId, updateRsuResponse.rsuId) && Objects.equals(this.name, updateRsuResponse.name)
-            && Objects.equals(this.description, updateRsuResponse.description)
-            && Objects.equals(this.esn, updateRsuResponse.esn)
-            && Objects.equals(this.lastModifiedTime, updateRsuResponse.lastModifiedTime)
-            && Objects.equals(this.createdTime, updateRsuResponse.createdTime)
-            && Objects.equals(this.lastOnlineTime, updateRsuResponse.lastOnlineTime)
-            && Objects.equals(this.ip, updateRsuResponse.ip)
-            && Objects.equals(this.positionDescription, updateRsuResponse.positionDescription)
-            && Objects.equals(this.location, updateRsuResponse.location)
-            && Objects.equals(this.status, updateRsuResponse.status)
-            && Objects.equals(this.rsuModelId, updateRsuResponse.rsuModelId)
-            && Objects.equals(this.intersectionId, updateRsuResponse.intersectionId)
-            && Objects.equals(this.relatedEdgeNum, updateRsuResponse.relatedEdgeNum)
-            && Objects.equals(this.softwareVersion, updateRsuResponse.softwareVersion);
+        UpdateRsuResponse that = (UpdateRsuResponse) obj;
+        return Objects.equals(this.rsuId, that.rsuId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.rsuModelId, that.rsuModelId)
+            && Objects.equals(this.intersectionId, that.intersectionId)
+            && Objects.equals(this.relatedEdgeNum, that.relatedEdgeNum)
+            && Objects.equals(this.softwareVersion, that.softwareVersion);
     }
 
     @Override

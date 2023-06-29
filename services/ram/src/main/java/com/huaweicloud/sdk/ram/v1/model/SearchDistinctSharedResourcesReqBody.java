@@ -98,22 +98,15 @@ public class SearchDistinctSharedResourcesReqBody {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceOwnerEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceOwnerEnum(value));
         }
 
         public static ResourceOwnerEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceOwnerEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,23 +299,19 @@ public class SearchDistinctSharedResourcesReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchDistinctSharedResourcesReqBody searchDistinctSharedResourcesReqBody =
-            (SearchDistinctSharedResourcesReqBody) o;
-        return Objects.equals(this.limit, searchDistinctSharedResourcesReqBody.limit)
-            && Objects.equals(this.marker, searchDistinctSharedResourcesReqBody.marker)
-            && Objects.equals(this.resourceIds, searchDistinctSharedResourcesReqBody.resourceIds)
-            && Objects.equals(this.principal, searchDistinctSharedResourcesReqBody.principal)
-            && Objects.equals(this.resourceRegion, searchDistinctSharedResourcesReqBody.resourceRegion)
-            && Objects.equals(this.resourceUrns, searchDistinctSharedResourcesReqBody.resourceUrns)
-            && Objects.equals(this.status, searchDistinctSharedResourcesReqBody.status)
-            && Objects.equals(this.resourceOwner, searchDistinctSharedResourcesReqBody.resourceOwner);
+        SearchDistinctSharedResourcesReqBody that = (SearchDistinctSharedResourcesReqBody) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.principal, that.principal)
+            && Objects.equals(this.resourceRegion, that.resourceRegion)
+            && Objects.equals(this.resourceUrns, that.resourceUrns) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceOwner, that.resourceOwner);
     }
 
     @Override

@@ -159,19 +159,19 @@ public class RuleCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleCondition ruleCondition = (RuleCondition) o;
-        return Objects.equals(this.type, ruleCondition.type)
-            && Objects.equals(this.devicePropertyCondition, ruleCondition.devicePropertyCondition)
-            && Objects.equals(this.simpleTimerCondition, ruleCondition.simpleTimerCondition)
-            && Objects.equals(this.dailyTimerCondition, ruleCondition.dailyTimerCondition)
-            && Objects.equals(this.deviceLinkageStatusCondition, ruleCondition.deviceLinkageStatusCondition);
+        RuleCondition that = (RuleCondition) obj;
+        return Objects.equals(this.type, that.type)
+            && Objects.equals(this.devicePropertyCondition, that.devicePropertyCondition)
+            && Objects.equals(this.simpleTimerCondition, that.simpleTimerCondition)
+            && Objects.equals(this.dailyTimerCondition, that.dailyTimerCondition)
+            && Objects.equals(this.deviceLinkageStatusCondition, that.deviceLinkageStatusCondition);
     }
 
     @Override

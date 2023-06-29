@@ -55,16 +55,15 @@ public class DeleteSecretTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSecretTagRequest deleteSecretTagRequest = (DeleteSecretTagRequest) o;
-        return Objects.equals(this.secretId, deleteSecretTagRequest.secretId)
-            && Objects.equals(this.key, deleteSecretTagRequest.key);
+        DeleteSecretTagRequest that = (DeleteSecretTagRequest) obj;
+        return Objects.equals(this.secretId, that.secretId) && Objects.equals(this.key, that.key);
     }
 
     @Override

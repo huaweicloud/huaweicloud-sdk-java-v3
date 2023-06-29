@@ -87,17 +87,16 @@ public class CreateIgnoreRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateIgnoreRuleRequest createIgnoreRuleRequest = (CreateIgnoreRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, createIgnoreRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, createIgnoreRuleRequest.policyId)
-            && Objects.equals(this.body, createIgnoreRuleRequest.body);
+        CreateIgnoreRuleRequest that = (CreateIgnoreRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

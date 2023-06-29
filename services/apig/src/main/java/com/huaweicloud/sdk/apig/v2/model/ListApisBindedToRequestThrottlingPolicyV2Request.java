@@ -189,23 +189,18 @@ public class ListApisBindedToRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApisBindedToRequestThrottlingPolicyV2Request listApisBindedToRequestThrottlingPolicyV2Request =
-            (ListApisBindedToRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, listApisBindedToRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.offset, listApisBindedToRequestThrottlingPolicyV2Request.offset)
-            && Objects.equals(this.limit, listApisBindedToRequestThrottlingPolicyV2Request.limit)
-            && Objects.equals(this.throttleId, listApisBindedToRequestThrottlingPolicyV2Request.throttleId)
-            && Objects.equals(this.envId, listApisBindedToRequestThrottlingPolicyV2Request.envId)
-            && Objects.equals(this.groupId, listApisBindedToRequestThrottlingPolicyV2Request.groupId)
-            && Objects.equals(this.apiId, listApisBindedToRequestThrottlingPolicyV2Request.apiId)
-            && Objects.equals(this.apiName, listApisBindedToRequestThrottlingPolicyV2Request.apiName);
+        ListApisBindedToRequestThrottlingPolicyV2Request that = (ListApisBindedToRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.throttleId, that.throttleId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName);
     }
 
     @Override

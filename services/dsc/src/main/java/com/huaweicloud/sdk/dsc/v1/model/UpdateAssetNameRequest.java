@@ -65,16 +65,15 @@ public class UpdateAssetNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetNameRequest updateAssetNameRequest = (UpdateAssetNameRequest) o;
-        return Objects.equals(this.assetId, updateAssetNameRequest.assetId)
-            && Objects.equals(this.body, updateAssetNameRequest.body);
+        UpdateAssetNameRequest that = (UpdateAssetNameRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.body, that.body);
     }
 
     @Override

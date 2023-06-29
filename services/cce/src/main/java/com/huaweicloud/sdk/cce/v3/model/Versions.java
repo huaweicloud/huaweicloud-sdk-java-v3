@@ -185,19 +185,19 @@ public class Versions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Versions versions = (Versions) o;
-        return Objects.equals(this.version, versions.version) && Objects.equals(this.input, versions.input)
-            && Objects.equals(this.stable, versions.stable) && Objects.equals(this.translate, versions.translate)
-            && Objects.equals(this.supportVersions, versions.supportVersions)
-            && Objects.equals(this.creationTimestamp, versions.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, versions.updateTimestamp);
+        Versions that = (Versions) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.stable, that.stable) && Objects.equals(this.translate, that.translate)
+            && Objects.equals(this.supportVersions, that.supportVersions)
+            && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
     }
 
     @Override

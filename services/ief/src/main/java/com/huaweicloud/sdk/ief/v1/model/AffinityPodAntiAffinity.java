@@ -100,18 +100,18 @@ public class AffinityPodAntiAffinity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AffinityPodAntiAffinity affinityPodAntiAffinity = (AffinityPodAntiAffinity) o;
+        AffinityPodAntiAffinity that = (AffinityPodAntiAffinity) obj;
         return Objects.equals(this.preferredDuringSchedulingIgnoredDuringExecution,
-            affinityPodAntiAffinity.preferredDuringSchedulingIgnoredDuringExecution)
+            that.preferredDuringSchedulingIgnoredDuringExecution)
             && Objects.equals(this.requiredDuringSchedulingIgnoredDuringExecution,
-                affinityPodAntiAffinity.requiredDuringSchedulingIgnoredDuringExecution);
+                that.requiredDuringSchedulingIgnoredDuringExecution);
     }
 
     @Override

@@ -135,18 +135,17 @@ public class EmbeddedDatabaseWatermark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EmbeddedDatabaseWatermark embeddedDatabaseWatermark = (EmbeddedDatabaseWatermark) o;
-        return Objects.equals(this.watermarkContent, embeddedDatabaseWatermark.watermarkContent)
-            && Objects.equals(this.watermarkKey, embeddedDatabaseWatermark.watermarkKey)
-            && Objects.equals(this.columns, embeddedDatabaseWatermark.columns)
-            && Objects.equals(this.data, embeddedDatabaseWatermark.data);
+        EmbeddedDatabaseWatermark that = (EmbeddedDatabaseWatermark) obj;
+        return Objects.equals(this.watermarkContent, that.watermarkContent)
+            && Objects.equals(this.watermarkKey, that.watermarkKey) && Objects.equals(this.columns, that.columns)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

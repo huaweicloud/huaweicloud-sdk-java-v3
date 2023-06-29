@@ -151,19 +151,17 @@ public class ShowInstanceExtendProductInfoRespValues {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowInstanceExtendProductInfoRespValues showInstanceExtendProductInfoRespValues =
-            (ShowInstanceExtendProductInfoRespValues) o;
-        return Objects.equals(this.detail, showInstanceExtendProductInfoRespValues.detail)
-            && Objects.equals(this.name, showInstanceExtendProductInfoRespValues.name)
-            && Objects.equals(this.unavailableZones, showInstanceExtendProductInfoRespValues.unavailableZones)
-            && Objects.equals(this.availableZones, showInstanceExtendProductInfoRespValues.availableZones);
+        ShowInstanceExtendProductInfoRespValues that = (ShowInstanceExtendProductInfoRespValues) obj;
+        return Objects.equals(this.detail, that.detail) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.unavailableZones, that.unavailableZones)
+            && Objects.equals(this.availableZones, that.availableZones);
     }
 
     @Override

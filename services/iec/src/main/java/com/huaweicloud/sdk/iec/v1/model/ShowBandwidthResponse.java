@@ -44,15 +44,15 @@ public class ShowBandwidthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBandwidthResponse showBandwidthResponse = (ShowBandwidthResponse) o;
-        return Objects.equals(this.bandwidth, showBandwidthResponse.bandwidth);
+        ShowBandwidthResponse that = (ShowBandwidthResponse) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

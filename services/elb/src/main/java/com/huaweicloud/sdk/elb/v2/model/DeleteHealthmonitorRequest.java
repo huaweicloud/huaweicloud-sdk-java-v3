@@ -33,15 +33,15 @@ public class DeleteHealthmonitorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteHealthmonitorRequest deleteHealthmonitorRequest = (DeleteHealthmonitorRequest) o;
-        return Objects.equals(this.healthmonitorId, deleteHealthmonitorRequest.healthmonitorId);
+        DeleteHealthmonitorRequest that = (DeleteHealthmonitorRequest) obj;
+        return Objects.equals(this.healthmonitorId, that.healthmonitorId);
     }
 
     @Override

@@ -206,21 +206,18 @@ public class HistoryRunInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryRunInfo historyRunInfo = (HistoryRunInfo) o;
-        return Objects.equals(this.name, historyRunInfo.name) && Objects.equals(this.runId, historyRunInfo.runId)
-            && Objects.equals(this.runType, historyRunInfo.runType)
-            && Objects.equals(this.startTime, historyRunInfo.startTime)
-            && Objects.equals(this.endTime, historyRunInfo.endTime)
-            && Objects.equals(this.continueTime, historyRunInfo.continueTime)
-            && Objects.equals(this.tempNames, historyRunInfo.tempNames)
-            && Objects.equals(this.parallel, historyRunInfo.parallel);
+        HistoryRunInfo that = (HistoryRunInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.runId, that.runId)
+            && Objects.equals(this.runType, that.runType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.continueTime, that.continueTime)
+            && Objects.equals(this.tempNames, that.tempNames) && Objects.equals(this.parallel, that.parallel);
     }
 
     @Override

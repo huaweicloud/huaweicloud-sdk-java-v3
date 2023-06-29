@@ -329,22 +329,20 @@ public class EdgeNode {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeNode edgeNode = (EdgeNode) o;
-        return Objects.equals(this.name, edgeNode.name) && Objects.equals(this.description, edgeNode.description)
-            && Objects.equals(this.enableGpu, edgeNode.enableGpu)
-            && Objects.equals(this.logConfigs, edgeNode.logConfigs)
-            && Objects.equals(this.deviceInfos, edgeNode.deviceInfos)
-            && Objects.equals(this.enableNpu, edgeNode.enableNpu) && Objects.equals(this.npuType, edgeNode.npuType)
-            && Objects.equals(this.attributes, edgeNode.attributes)
-            && Objects.equals(this.enableDocker, edgeNode.enableDocker) && Objects.equals(this.tags, edgeNode.tags)
-            && Objects.equals(this.mqttConfig, edgeNode.mqttConfig);
+        EdgeNode that = (EdgeNode) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enableGpu, that.enableGpu) && Objects.equals(this.logConfigs, that.logConfigs)
+            && Objects.equals(this.deviceInfos, that.deviceInfos) && Objects.equals(this.enableNpu, that.enableNpu)
+            && Objects.equals(this.npuType, that.npuType) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.enableDocker, that.enableDocker) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.mqttConfig, that.mqttConfig);
     }
 
     @Override

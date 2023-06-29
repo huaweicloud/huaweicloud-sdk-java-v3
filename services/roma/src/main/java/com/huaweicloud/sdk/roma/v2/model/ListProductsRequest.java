@@ -105,22 +105,15 @@ public class ListProductsRequest {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductTypeEnum(value));
         }
 
         public static ProductTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProductTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -193,22 +186,15 @@ public class ListProductsRequest {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolTypeEnum(value));
         }
 
         public static ProtocolTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ProtocolTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -562,30 +548,24 @@ public class ListProductsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRequest listProductsRequest = (ListProductsRequest) o;
-        return Objects.equals(this.instanceId, listProductsRequest.instanceId)
-            && Objects.equals(this.limit, listProductsRequest.limit)
-            && Objects.equals(this.appId, listProductsRequest.appId) && Objects.equals(this.id, listProductsRequest.id)
-            && Objects.equals(this.name, listProductsRequest.name)
-            && Objects.equals(this.manufacturerId, listProductsRequest.manufacturerId)
-            && Objects.equals(this.manufacturerName, listProductsRequest.manufacturerName)
-            && Objects.equals(this.model, listProductsRequest.model)
-            && Objects.equals(this.deviceType, listProductsRequest.deviceType)
-            && Objects.equals(this.productType, listProductsRequest.productType)
-            && Objects.equals(this.protocolType, listProductsRequest.protocolType)
-            && Objects.equals(this.createdUserName, listProductsRequest.createdUserName)
-            && Objects.equals(this.createdDateStart, listProductsRequest.createdDateStart)
-            && Objects.equals(this.createdDateEnd, listProductsRequest.createdDateEnd)
-            && Objects.equals(this.offset, listProductsRequest.offset)
-            && Objects.equals(this.appName, listProductsRequest.appName)
-            && Objects.equals(this.productSerial, listProductsRequest.productSerial);
+        ListProductsRequest that = (ListProductsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.manufacturerId, that.manufacturerId)
+            && Objects.equals(this.manufacturerName, that.manufacturerName) && Objects.equals(this.model, that.model)
+            && Objects.equals(this.deviceType, that.deviceType) && Objects.equals(this.productType, that.productType)
+            && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.createdUserName, that.createdUserName)
+            && Objects.equals(this.createdDateStart, that.createdDateStart)
+            && Objects.equals(this.createdDateEnd, that.createdDateEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.productSerial, that.productSerial);
     }
 
     @Override

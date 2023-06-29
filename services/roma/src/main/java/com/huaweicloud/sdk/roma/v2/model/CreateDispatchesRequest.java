@@ -87,17 +87,16 @@ public class CreateDispatchesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDispatchesRequest createDispatchesRequest = (CreateDispatchesRequest) o;
-        return Objects.equals(this.instanceId, createDispatchesRequest.instanceId)
-            && Objects.equals(this.taskId, createDispatchesRequest.taskId)
-            && Objects.equals(this.body, createDispatchesRequest.body);
+        CreateDispatchesRequest that = (CreateDispatchesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

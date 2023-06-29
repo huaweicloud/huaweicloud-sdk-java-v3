@@ -156,19 +156,17 @@ public class SubscriptionCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubscriptionCreateReq subscriptionCreateReq = (SubscriptionCreateReq) o;
-        return Objects.equals(this.name, subscriptionCreateReq.name)
-            && Objects.equals(this.description, subscriptionCreateReq.description)
-            && Objects.equals(this.channelId, subscriptionCreateReq.channelId)
-            && Objects.equals(this.sources, subscriptionCreateReq.sources)
-            && Objects.equals(this.targets, subscriptionCreateReq.targets);
+        SubscriptionCreateReq that = (SubscriptionCreateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.channelId, that.channelId) && Objects.equals(this.sources, that.sources)
+            && Objects.equals(this.targets, that.targets);
     }
 
     @Override

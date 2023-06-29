@@ -55,16 +55,15 @@ public class PushPortalInfoResponseModelData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushPortalInfoResponseModelData pushPortalInfoResponseModelData = (PushPortalInfoResponseModelData) o;
-        return Objects.equals(this.logId, pushPortalInfoResponseModelData.logId)
-            && Objects.equals(this.message, pushPortalInfoResponseModelData.message);
+        PushPortalInfoResponseModelData that = (PushPortalInfoResponseModelData) obj;
+        return Objects.equals(this.logId, that.logId) && Objects.equals(this.message, that.message);
     }
 
     @Override

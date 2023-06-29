@@ -74,22 +74,15 @@ public class TableObject {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -392,23 +385,22 @@ public class TableObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableObject tableObject = (TableObject) o;
-        return Objects.equals(this.syncType, tableObject.syncType) && Objects.equals(this.type, tableObject.type)
-            && Objects.equals(this.name, tableObject.name) && Objects.equals(this.all, tableObject.all)
-            && Objects.equals(this.dbAliasName, tableObject.dbAliasName)
-            && Objects.equals(this.schemaAliasName, tableObject.schemaAliasName)
-            && Objects.equals(this.filtered, tableObject.filtered)
-            && Objects.equals(this.filterConditions, tableObject.filterConditions)
-            && Objects.equals(this.configConditions, tableObject.configConditions)
-            && Objects.equals(this.isSynchronized, tableObject.isSynchronized)
-            && Objects.equals(this.columns, tableObject.columns);
+        TableObject that = (TableObject) obj;
+        return Objects.equals(this.syncType, that.syncType) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.all, that.all)
+            && Objects.equals(this.dbAliasName, that.dbAliasName)
+            && Objects.equals(this.schemaAliasName, that.schemaAliasName)
+            && Objects.equals(this.filtered, that.filtered)
+            && Objects.equals(this.filterConditions, that.filterConditions)
+            && Objects.equals(this.configConditions, that.configConditions)
+            && Objects.equals(this.isSynchronized, that.isSynchronized) && Objects.equals(this.columns, that.columns);
     }
 
     @Override

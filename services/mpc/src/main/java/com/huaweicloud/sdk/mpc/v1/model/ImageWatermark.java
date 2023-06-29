@@ -100,22 +100,15 @@ public class ImageWatermark {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BaseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BaseEnum(value));
         }
 
         public static BaseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BaseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -291,21 +284,19 @@ public class ImageWatermark {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageWatermark imageWatermark = (ImageWatermark) o;
-        return Objects.equals(this.dx, imageWatermark.dx) && Objects.equals(this.dy, imageWatermark.dy)
-            && Objects.equals(this.referpos, imageWatermark.referpos)
-            && Objects.equals(this.timelineStart, imageWatermark.timelineStart)
-            && Objects.equals(this.timelineDuration, imageWatermark.timelineDuration)
-            && Objects.equals(this.imageProcess, imageWatermark.imageProcess)
-            && Objects.equals(this.width, imageWatermark.width) && Objects.equals(this.height, imageWatermark.height)
-            && Objects.equals(this.base, imageWatermark.base);
+        ImageWatermark that = (ImageWatermark) obj;
+        return Objects.equals(this.dx, that.dx) && Objects.equals(this.dy, that.dy)
+            && Objects.equals(this.referpos, that.referpos) && Objects.equals(this.timelineStart, that.timelineStart)
+            && Objects.equals(this.timelineDuration, that.timelineDuration)
+            && Objects.equals(this.imageProcess, that.imageProcess) && Objects.equals(this.width, that.width)
+            && Objects.equals(this.height, that.height) && Objects.equals(this.base, that.base);
     }
 
     @Override

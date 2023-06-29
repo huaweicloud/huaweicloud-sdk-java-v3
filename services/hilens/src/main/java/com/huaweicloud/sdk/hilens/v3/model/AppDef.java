@@ -617,28 +617,27 @@ public class AppDef {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppDef appDef = (AppDef) o;
-        return Objects.equals(this.appOrderId, appDef.appOrderId) && Objects.equals(this.appUrl, appDef.appUrl)
-            && Objects.equals(this.channelLimit, appDef.channelLimit)
-            && Objects.equals(this.channelUpperLimit, appDef.channelUpperLimit)
-            && Objects.equals(this.args, appDef.args) && Objects.equals(this.command, appDef.command)
-            && Objects.equals(this.envs, appDef.envs) && Objects.equals(this.isModelbox, appDef.isModelbox)
-            && Objects.equals(this.livenessProbe, appDef.livenessProbe) && Objects.equals(this.msgs, appDef.msgs)
-            && Objects.equals(this.name, appDef.name) && Objects.equals(this.npuType, appDef.npuType)
-            && Objects.equals(this.ports, appDef.ports) && Objects.equals(this.privileged, appDef.privileged)
-            && Objects.equals(this.readinessProbe, appDef.readinessProbe)
-            && Objects.equals(this.resources, appDef.resources) && Objects.equals(this.version, appDef.version)
-            && Objects.equals(this.volumes, appDef.volumes)
-            && Objects.equals(this.startResources, appDef.startResources)
-            && Objects.equals(this.channelResources, appDef.channelResources)
-            && Objects.equals(this.skillProjectId, appDef.skillProjectId);
+        AppDef that = (AppDef) obj;
+        return Objects.equals(this.appOrderId, that.appOrderId) && Objects.equals(this.appUrl, that.appUrl)
+            && Objects.equals(this.channelLimit, that.channelLimit)
+            && Objects.equals(this.channelUpperLimit, that.channelUpperLimit) && Objects.equals(this.args, that.args)
+            && Objects.equals(this.command, that.command) && Objects.equals(this.envs, that.envs)
+            && Objects.equals(this.isModelbox, that.isModelbox)
+            && Objects.equals(this.livenessProbe, that.livenessProbe) && Objects.equals(this.msgs, that.msgs)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.npuType, that.npuType)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.privileged, that.privileged)
+            && Objects.equals(this.readinessProbe, that.readinessProbe)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.volumes, that.volumes) && Objects.equals(this.startResources, that.startResources)
+            && Objects.equals(this.channelResources, that.channelResources)
+            && Objects.equals(this.skillProjectId, that.skillProjectId);
     }
 
     @Override

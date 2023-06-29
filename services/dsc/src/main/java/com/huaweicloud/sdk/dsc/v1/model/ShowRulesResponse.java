@@ -75,16 +75,15 @@ public class ShowRulesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRulesResponse showRulesResponse = (ShowRulesResponse) o;
-        return Objects.equals(this.rules, showRulesResponse.rules)
-            && Objects.equals(this.total, showRulesResponse.total);
+        ShowRulesResponse that = (ShowRulesResponse) obj;
+        return Objects.equals(this.rules, that.rules) && Objects.equals(this.total, that.total);
     }
 
     @Override

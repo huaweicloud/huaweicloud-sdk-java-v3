@@ -158,18 +158,18 @@ public class OrderAlert {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderAlert orderAlert = (OrderAlert) o;
-        return Objects.equals(this.ids, orderAlert.ids) && Objects.equals(this.incidentId, orderAlert.incidentId)
-            && Objects.equals(this.eventContent, orderAlert.eventContent)
-            && Objects.equals(this.incidentContent, orderAlert.incidentContent)
-            && Objects.equals(this.markedEvidence, orderAlert.markedEvidence);
+        OrderAlert that = (OrderAlert) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.eventContent, that.eventContent)
+            && Objects.equals(this.incidentContent, that.incidentContent)
+            && Objects.equals(this.markedEvidence, that.markedEvidence);
     }
 
     @Override

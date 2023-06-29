@@ -74,16 +74,15 @@ public class BandwidthStatisticsTimelineItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BandwidthStatisticsTimelineItem bandwidthStatisticsTimelineItem = (BandwidthStatisticsTimelineItem) o;
-        return Objects.equals(this.key, bandwidthStatisticsTimelineItem.key)
-            && Objects.equals(this.timeline, bandwidthStatisticsTimelineItem.timeline);
+        BandwidthStatisticsTimelineItem that = (BandwidthStatisticsTimelineItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.timeline, that.timeline);
     }
 
     @Override

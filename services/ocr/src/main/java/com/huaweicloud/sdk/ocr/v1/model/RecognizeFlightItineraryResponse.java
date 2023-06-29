@@ -44,15 +44,15 @@ public class RecognizeFlightItineraryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecognizeFlightItineraryResponse recognizeFlightItineraryResponse = (RecognizeFlightItineraryResponse) o;
-        return Objects.equals(this.result, recognizeFlightItineraryResponse.result);
+        RecognizeFlightItineraryResponse that = (RecognizeFlightItineraryResponse) obj;
+        return Objects.equals(this.result, that.result);
     }
 
     @Override

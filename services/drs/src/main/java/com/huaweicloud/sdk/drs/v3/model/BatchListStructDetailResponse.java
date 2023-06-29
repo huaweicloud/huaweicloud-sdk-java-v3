@@ -75,16 +75,15 @@ public class BatchListStructDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListStructDetailResponse batchListStructDetailResponse = (BatchListStructDetailResponse) o;
-        return Objects.equals(this.count, batchListStructDetailResponse.count)
-            && Objects.equals(this.results, batchListStructDetailResponse.results);
+        BatchListStructDetailResponse that = (BatchListStructDetailResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.results, that.results);
     }
 
     @Override

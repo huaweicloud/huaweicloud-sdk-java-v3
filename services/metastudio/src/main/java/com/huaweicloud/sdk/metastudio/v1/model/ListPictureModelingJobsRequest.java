@@ -100,22 +100,15 @@ public class ListPictureModelingJobsRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -345,25 +338,20 @@ public class ListPictureModelingJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPictureModelingJobsRequest listPictureModelingJobsRequest = (ListPictureModelingJobsRequest) o;
-        return Objects.equals(this.authorization, listPictureModelingJobsRequest.authorization)
-            && Objects.equals(this.xSdkDate, listPictureModelingJobsRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listPictureModelingJobsRequest.xProjectId)
-            && Objects.equals(this.xAppUserId, listPictureModelingJobsRequest.xAppUserId)
-            && Objects.equals(this.offset, listPictureModelingJobsRequest.offset)
-            && Objects.equals(this.limit, listPictureModelingJobsRequest.limit)
-            && Objects.equals(this.state, listPictureModelingJobsRequest.state)
-            && Objects.equals(this.sortKey, listPictureModelingJobsRequest.sortKey)
-            && Objects.equals(this.sortDir, listPictureModelingJobsRequest.sortDir)
-            && Objects.equals(this.createUntil, listPictureModelingJobsRequest.createUntil)
-            && Objects.equals(this.createSince, listPictureModelingJobsRequest.createSince);
+        ListPictureModelingJobsRequest that = (ListPictureModelingJobsRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.xAppUserId, that.xAppUserId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.createUntil, that.createUntil)
+            && Objects.equals(this.createSince, that.createSince);
     }
 
     @Override

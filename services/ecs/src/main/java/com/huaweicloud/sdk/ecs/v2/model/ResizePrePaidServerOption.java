@@ -109,18 +109,17 @@ public class ResizePrePaidServerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizePrePaidServerOption resizePrePaidServerOption = (ResizePrePaidServerOption) o;
-        return Objects.equals(this.flavorRef, resizePrePaidServerOption.flavorRef)
-            && Objects.equals(this.dedicatedHostId, resizePrePaidServerOption.dedicatedHostId)
-            && Objects.equals(this.extendparam, resizePrePaidServerOption.extendparam)
-            && Objects.equals(this.mode, resizePrePaidServerOption.mode);
+        ResizePrePaidServerOption that = (ResizePrePaidServerOption) obj;
+        return Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
+            && Objects.equals(this.extendparam, that.extendparam) && Objects.equals(this.mode, that.mode);
     }
 
     @Override

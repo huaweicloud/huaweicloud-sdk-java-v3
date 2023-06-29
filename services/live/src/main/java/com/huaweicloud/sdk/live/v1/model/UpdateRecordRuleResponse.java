@@ -95,22 +95,15 @@ public class UpdateRecordRuleResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RecordTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RecordTypeEnum(value));
         }
 
         public static RecordTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RecordTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,22 +286,19 @@ public class UpdateRecordRuleResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRecordRuleResponse updateRecordRuleResponse = (UpdateRecordRuleResponse) o;
-        return Objects.equals(this.id, updateRecordRuleResponse.id)
-            && Objects.equals(this.publishDomain, updateRecordRuleResponse.publishDomain)
-            && Objects.equals(this.app, updateRecordRuleResponse.app)
-            && Objects.equals(this.stream, updateRecordRuleResponse.stream)
-            && Objects.equals(this.recordType, updateRecordRuleResponse.recordType)
-            && Objects.equals(this.defaultRecordConfig, updateRecordRuleResponse.defaultRecordConfig)
-            && Objects.equals(this.createTime, updateRecordRuleResponse.createTime)
-            && Objects.equals(this.updateTime, updateRecordRuleResponse.updateTime);
+        UpdateRecordRuleResponse that = (UpdateRecordRuleResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.publishDomain, that.publishDomain)
+            && Objects.equals(this.app, that.app) && Objects.equals(this.stream, that.stream)
+            && Objects.equals(this.recordType, that.recordType)
+            && Objects.equals(this.defaultRecordConfig, that.defaultRecordConfig)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

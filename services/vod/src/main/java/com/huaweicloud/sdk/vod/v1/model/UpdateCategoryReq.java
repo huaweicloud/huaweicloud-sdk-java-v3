@@ -56,15 +56,15 @@ public class UpdateCategoryReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCategoryReq updateCategoryReq = (UpdateCategoryReq) o;
-        return Objects.equals(this.name, updateCategoryReq.name) && Objects.equals(this.id, updateCategoryReq.id);
+        UpdateCategoryReq that = (UpdateCategoryReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id);
     }
 
     @Override

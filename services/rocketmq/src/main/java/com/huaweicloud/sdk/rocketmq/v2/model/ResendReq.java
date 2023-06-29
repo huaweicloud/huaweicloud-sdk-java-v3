@@ -96,16 +96,16 @@ public class ResendReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResendReq resendReq = (ResendReq) o;
-        return Objects.equals(this.group, resendReq.group) && Objects.equals(this.clientId, resendReq.clientId)
-            && Objects.equals(this.msgIdList, resendReq.msgIdList);
+        ResendReq that = (ResendReq) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.msgIdList, that.msgIdList);
     }
 
     @Override

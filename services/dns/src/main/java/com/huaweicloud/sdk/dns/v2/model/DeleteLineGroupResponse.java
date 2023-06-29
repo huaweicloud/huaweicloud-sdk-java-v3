@@ -185,21 +185,18 @@ public class DeleteLineGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLineGroupResponse deleteLineGroupResponse = (DeleteLineGroupResponse) o;
-        return Objects.equals(this.name, deleteLineGroupResponse.name)
-            && Objects.equals(this.lines, deleteLineGroupResponse.lines)
-            && Objects.equals(this.status, deleteLineGroupResponse.status)
-            && Objects.equals(this.description, deleteLineGroupResponse.description)
-            && Objects.equals(this.lineId, deleteLineGroupResponse.lineId)
-            && Objects.equals(this.createdAt, deleteLineGroupResponse.createdAt)
-            && Objects.equals(this.updatedAt, deleteLineGroupResponse.updatedAt);
+        DeleteLineGroupResponse that = (DeleteLineGroupResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.lines, that.lines)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

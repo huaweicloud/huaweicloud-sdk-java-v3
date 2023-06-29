@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.GraphSizeTypeIndexReq;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * ResizeGraphReq
  */
-public class ResizeGraphReq  {
-
+public class ResizeGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resize")
-    
+    @JsonProperty(value = "resize")
 
     private GraphSizeTypeIndexReq resize;
 
@@ -30,14 +22,13 @@ public class ResizeGraphReq  {
     }
 
     public ResizeGraphReq withResize(Consumer<GraphSizeTypeIndexReq> resizeSetter) {
-        if(this.resize == null ){
+        if (this.resize == null) {
             this.resize = new GraphSizeTypeIndexReq();
             resizeSetter.accept(this.resize);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get resize
@@ -51,23 +42,23 @@ public class ResizeGraphReq  {
         this.resize = resize;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeGraphReq resizeGraphReq = (ResizeGraphReq) o;
-        return Objects.equals(this.resize, resizeGraphReq.resize);
+        ResizeGraphReq that = (ResizeGraphReq) obj;
+        return Objects.equals(this.resize, that.resize);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resize);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class ResizeGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class ResizeGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

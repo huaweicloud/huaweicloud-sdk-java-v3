@@ -24,8 +24,8 @@ public class Sort {
     private List<String> orderBy = null;
 
     /**
-    * 排序顺序
-    */
+     * 排序顺序
+     */
     public static final class OrderEnum {
 
         /**
@@ -68,22 +68,15 @@ public class Sort {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,15 +149,15 @@ public class Sort {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Sort sort = (Sort) o;
-        return Objects.equals(this.orderBy, sort.orderBy) && Objects.equals(this.order, sort.order);
+        Sort that = (Sort) obj;
+        return Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order);
     }
 
     @Override

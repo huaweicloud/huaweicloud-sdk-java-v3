@@ -33,15 +33,15 @@ public class ShowBatchInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBatchInfoRequest showBatchInfoRequest = (ShowBatchInfoRequest) o;
-        return Objects.equals(this.batchId, showBatchInfoRequest.batchId);
+        ShowBatchInfoRequest that = (ShowBatchInfoRequest) obj;
+        return Objects.equals(this.batchId, that.batchId);
     }
 
     @Override

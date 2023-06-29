@@ -99,16 +99,16 @@ public class DisContentRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisContentRsp disContentRsp = (DisContentRsp) o;
-        return Objects.equals(this.streamName, disContentRsp.streamName) && Objects.equals(this.ak, disContentRsp.ak)
-            && Objects.equals(this.sk, disContentRsp.sk) && Objects.equals(this.projectId, disContentRsp.projectId);
+        DisContentRsp that = (DisContentRsp) obj;
+        return Objects.equals(this.streamName, that.streamName) && Objects.equals(this.ak, that.ak)
+            && Objects.equals(this.sk, that.sk) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

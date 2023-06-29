@@ -198,19 +198,17 @@ public class MultiConcatInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiConcatInfo multiConcatInfo = (MultiConcatInfo) o;
-        return Objects.equals(this.inputs, multiConcatInfo.inputs)
-            && Objects.equals(this.transTemplateIds, multiConcatInfo.transTemplateIds)
-            && Objects.equals(this.avParameters, multiConcatInfo.avParameters)
-            && Objects.equals(this.output, multiConcatInfo.output)
-            && Objects.equals(this.imageWatermarkSettings, multiConcatInfo.imageWatermarkSettings);
+        MultiConcatInfo that = (MultiConcatInfo) obj;
+        return Objects.equals(this.inputs, that.inputs) && Objects.equals(this.transTemplateIds, that.transTemplateIds)
+            && Objects.equals(this.avParameters, that.avParameters) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.imageWatermarkSettings, that.imageWatermarkSettings);
     }
 
     @Override

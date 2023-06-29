@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.QueryApplicationBriefResponseDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class BatchListEdgeAppsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
 
     private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_apps")
-    
+    @JsonProperty(value = "edge_apps")
+
     private List<QueryApplicationBriefResponseDTO> edgeApps = null;
-    
+
     public BatchListEdgeAppsResponse withCount(Integer count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数
@@ -63,22 +48,19 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public BatchListEdgeAppsResponse withPageInfo(PageInfoDTO pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public BatchListEdgeAppsResponse withPageInfo(Consumer<PageInfoDTO> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDTO();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get pageInfo
@@ -92,16 +74,13 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    
-
     public BatchListEdgeAppsResponse withEdgeApps(List<QueryApplicationBriefResponseDTO> edgeApps) {
         this.edgeApps = edgeApps;
         return this;
     }
 
-    
     public BatchListEdgeAppsResponse addEdgeAppsItem(QueryApplicationBriefResponseDTO edgeAppsItem) {
-        if(this.edgeApps == null) {
+        if (this.edgeApps == null) {
             this.edgeApps = new ArrayList<>();
         }
         this.edgeApps.add(edgeAppsItem);
@@ -109,7 +88,7 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
     }
 
     public BatchListEdgeAppsResponse withEdgeApps(Consumer<List<QueryApplicationBriefResponseDTO>> edgeAppsSetter) {
-        if(this.edgeApps == null) {
+        if (this.edgeApps == null) {
             this.edgeApps = new ArrayList<>();
         }
         edgeAppsSetter.accept(this.edgeApps);
@@ -128,25 +107,24 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
         this.edgeApps = edgeApps;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListEdgeAppsResponse batchListEdgeAppsResponse = (BatchListEdgeAppsResponse) o;
-        return Objects.equals(this.count, batchListEdgeAppsResponse.count) &&
-            Objects.equals(this.pageInfo, batchListEdgeAppsResponse.pageInfo) &&
-            Objects.equals(this.edgeApps, batchListEdgeAppsResponse.edgeApps);
+        BatchListEdgeAppsResponse that = (BatchListEdgeAppsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.edgeApps, that.edgeApps);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, pageInfo, edgeApps);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,6 +135,7 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -167,8 +146,5 @@ public class BatchListEdgeAppsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

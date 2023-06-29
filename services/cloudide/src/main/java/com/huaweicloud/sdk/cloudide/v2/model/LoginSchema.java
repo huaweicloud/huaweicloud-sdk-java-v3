@@ -77,17 +77,16 @@ public class LoginSchema {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LoginSchema loginSchema = (LoginSchema) o;
-        return Objects.equals(this.ideType, loginSchema.ideType)
-            && Objects.equals(this.ideVersion, loginSchema.ideVersion)
-            && Objects.equals(this.pluginVersion, loginSchema.pluginVersion);
+        LoginSchema that = (LoginSchema) obj;
+        return Objects.equals(this.ideType, that.ideType) && Objects.equals(this.ideVersion, that.ideVersion)
+            && Objects.equals(this.pluginVersion, that.pluginVersion);
     }
 
     @Override

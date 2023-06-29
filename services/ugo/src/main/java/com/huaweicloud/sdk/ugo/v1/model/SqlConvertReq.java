@@ -54,22 +54,15 @@ public class SqlConvertReq {
             if (value == null) {
                 return null;
             }
-            SourceDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SourceDbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SourceDbTypeEnum(value));
         }
 
         public static SourceDbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SourceDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -154,22 +147,15 @@ public class SqlConvertReq {
             if (value == null) {
                 return null;
             }
-            TargetDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TargetDbTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TargetDbTypeEnum(value));
         }
 
         public static TargetDbTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TargetDbTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -254,22 +240,15 @@ public class SqlConvertReq {
             if (value == null) {
                 return null;
             }
-            TargetDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TargetDbVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TargetDbVersionEnum(value));
         }
 
         public static TargetDbVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TargetDbVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -365,18 +344,18 @@ public class SqlConvertReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlConvertReq sqlConvertReq = (SqlConvertReq) o;
-        return Objects.equals(this.sourceDbType, sqlConvertReq.sourceDbType)
-            && Objects.equals(this.targetDbType, sqlConvertReq.targetDbType)
-            && Objects.equals(this.targetDbVersion, sqlConvertReq.targetDbVersion)
-            && Objects.equals(this.sqlStatement, sqlConvertReq.sqlStatement);
+        SqlConvertReq that = (SqlConvertReq) obj;
+        return Objects.equals(this.sourceDbType, that.sourceDbType)
+            && Objects.equals(this.targetDbType, that.targetDbType)
+            && Objects.equals(this.targetDbVersion, that.targetDbVersion)
+            && Objects.equals(this.sqlStatement, that.sqlStatement);
     }
 
     @Override

@@ -112,17 +112,16 @@ public class MultiAudio {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MultiAudio multiAudio = (MultiAudio) o;
-        return Objects.equals(this.tracksInfo, multiAudio.tracksInfo)
-            && Objects.equals(this.audioFiles, multiAudio.audioFiles)
-            && Objects.equals(this.defaultLanguage, multiAudio.defaultLanguage);
+        MultiAudio that = (MultiAudio) obj;
+        return Objects.equals(this.tracksInfo, that.tracksInfo) && Objects.equals(this.audioFiles, that.audioFiles)
+            && Objects.equals(this.defaultLanguage, that.defaultLanguage);
     }
 
     @Override

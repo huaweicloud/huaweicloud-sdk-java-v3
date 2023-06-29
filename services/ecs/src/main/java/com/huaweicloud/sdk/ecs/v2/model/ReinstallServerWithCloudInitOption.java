@@ -131,19 +131,17 @@ public class ReinstallServerWithCloudInitOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallServerWithCloudInitOption reinstallServerWithCloudInitOption = (ReinstallServerWithCloudInitOption) o;
-        return Objects.equals(this.adminpass, reinstallServerWithCloudInitOption.adminpass)
-            && Objects.equals(this.keyname, reinstallServerWithCloudInitOption.keyname)
-            && Objects.equals(this.userid, reinstallServerWithCloudInitOption.userid)
-            && Objects.equals(this.metadata, reinstallServerWithCloudInitOption.metadata)
-            && Objects.equals(this.mode, reinstallServerWithCloudInitOption.mode);
+        ReinstallServerWithCloudInitOption that = (ReinstallServerWithCloudInitOption) obj;
+        return Objects.equals(this.adminpass, that.adminpass) && Objects.equals(this.keyname, that.keyname)
+            && Objects.equals(this.userid, that.userid) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.mode, that.mode);
     }
 
     @Override

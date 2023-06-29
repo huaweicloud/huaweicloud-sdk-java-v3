@@ -98,22 +98,15 @@ public class UpdateIndividualStreamJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -192,22 +185,15 @@ public class UpdateIndividualStreamJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            SelectStreamTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SelectStreamTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SelectStreamTypeEnum(value));
         }
 
         public static SelectStreamTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SelectStreamTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -300,22 +286,15 @@ public class UpdateIndividualStreamJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -388,22 +367,15 @@ public class UpdateIndividualStreamJobResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StopReasonEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StopReasonEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StopReasonEnum(value));
         }
 
         public static StopReasonEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StopReasonEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -765,32 +737,24 @@ public class UpdateIndividualStreamJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndividualStreamJobResponse updateIndividualStreamJobResponse = (UpdateIndividualStreamJobResponse) o;
-        return Objects.equals(this.jobId, updateIndividualStreamJobResponse.jobId)
-            && Objects.equals(this.streamName, updateIndividualStreamJobResponse.streamName)
-            && Objects.equals(this.appId, updateIndividualStreamJobResponse.appId)
-            && Objects.equals(this.roomId, updateIndividualStreamJobResponse.roomId)
-            && Objects.equals(this.userId, updateIndividualStreamJobResponse.userId)
-            && Objects.equals(this.isRecordAudio, updateIndividualStreamJobResponse.isRecordAudio)
-            && Objects.equals(this.videoType, updateIndividualStreamJobResponse.videoType)
-            && Objects.equals(this.selectStreamType, updateIndividualStreamJobResponse.selectStreamType)
-            && Objects.equals(this.maxIdleTime, updateIndividualStreamJobResponse.maxIdleTime)
-            && Objects.equals(this.recordParam, updateIndividualStreamJobResponse.recordParam)
-            && Objects.equals(this.createTime, updateIndividualStreamJobResponse.createTime)
-            && Objects.equals(this.updateTime, updateIndividualStreamJobResponse.updateTime)
-            && Objects.equals(this.state, updateIndividualStreamJobResponse.state)
-            && Objects.equals(this.stopReason, updateIndividualStreamJobResponse.stopReason)
-            && Objects.equals(this.description, updateIndividualStreamJobResponse.description)
-            && Objects.equals(this.startTime, updateIndividualStreamJobResponse.startTime)
-            && Objects.equals(this.stopTime, updateIndividualStreamJobResponse.stopTime)
-            && Objects.equals(this.xRequestId, updateIndividualStreamJobResponse.xRequestId);
+        UpdateIndividualStreamJobResponse that = (UpdateIndividualStreamJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.streamName, that.streamName)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.roomId, that.roomId)
+            && Objects.equals(this.userId, that.userId) && Objects.equals(this.isRecordAudio, that.isRecordAudio)
+            && Objects.equals(this.videoType, that.videoType)
+            && Objects.equals(this.selectStreamType, that.selectStreamType)
+            && Objects.equals(this.maxIdleTime, that.maxIdleTime) && Objects.equals(this.recordParam, that.recordParam)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.stopReason, that.stopReason)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.stopTime, that.stopTime) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

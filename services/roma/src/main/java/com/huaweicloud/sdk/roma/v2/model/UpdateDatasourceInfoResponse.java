@@ -272,22 +272,15 @@ public class UpdateDatasourceInfoResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DatasourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DatasourceTypeEnum(value));
         }
 
         public static DatasourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DatasourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -411,22 +404,15 @@ public class UpdateDatasourceInfoResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AppPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AppPermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AppPermissionEnum(value));
         }
 
         public static AppPermissionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AppPermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -699,27 +685,23 @@ public class UpdateDatasourceInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatasourceInfoResponse updateDatasourceInfoResponse = (UpdateDatasourceInfoResponse) o;
-        return Objects.equals(this.datasourceId, updateDatasourceInfoResponse.datasourceId)
-            && Objects.equals(this.datasourceName, updateDatasourceInfoResponse.datasourceName)
-            && Objects.equals(this.datasourceType, updateDatasourceInfoResponse.datasourceType)
-            && Objects.equals(this.vpcId, updateDatasourceInfoResponse.vpcId)
-            && Objects.equals(this.appId, updateDatasourceInfoResponse.appId)
-            && Objects.equals(this.appName, updateDatasourceInfoResponse.appName)
-            && Objects.equals(this.instanceId, updateDatasourceInfoResponse.instanceId)
-            && Objects.equals(this.createTime, updateDatasourceInfoResponse.createTime)
-            && Objects.equals(this.updateTime, updateDatasourceInfoResponse.updateTime)
-            && Objects.equals(this.customPluginId, updateDatasourceInfoResponse.customPluginId)
-            && Objects.equals(this.content, updateDatasourceInfoResponse.content)
-            && Objects.equals(this.description, updateDatasourceInfoResponse.description)
-            && Objects.equals(this.appPermission, updateDatasourceInfoResponse.appPermission);
+        UpdateDatasourceInfoResponse that = (UpdateDatasourceInfoResponse) obj;
+        return Objects.equals(this.datasourceId, that.datasourceId)
+            && Objects.equals(this.datasourceName, that.datasourceName)
+            && Objects.equals(this.datasourceType, that.datasourceType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.customPluginId, that.customPluginId) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.appPermission, that.appPermission);
     }
 
     @Override

@@ -187,20 +187,18 @@ public class ExternalAccesses {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExternalAccesses externalAccesses = (ExternalAccesses) o;
-        return Objects.equals(this.id, externalAccesses.id) && Objects.equals(this.protocol, externalAccesses.protocol)
-            && Objects.equals(this.address, externalAccesses.address)
-            && Objects.equals(this.forwardPort, externalAccesses.forwardPort)
-            && Objects.equals(this.type, externalAccesses.type) && Objects.equals(this.status, externalAccesses.status)
-            && Objects.equals(this.createTime, externalAccesses.createTime)
-            && Objects.equals(this.updateTime, externalAccesses.updateTime);
+        ExternalAccesses that = (ExternalAccesses) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.forwardPort, that.forwardPort)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

@@ -76,22 +76,15 @@ public class CreateFlowLogReq {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -169,22 +162,15 @@ public class CreateFlowLogReq {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrafficTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrafficTypeEnum(value));
         }
 
         public static TrafficTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -358,22 +344,18 @@ public class CreateFlowLogReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlowLogReq createFlowLogReq = (CreateFlowLogReq) o;
-        return Objects.equals(this.name, createFlowLogReq.name)
-            && Objects.equals(this.description, createFlowLogReq.description)
-            && Objects.equals(this.resourceType, createFlowLogReq.resourceType)
-            && Objects.equals(this.resourceId, createFlowLogReq.resourceId)
-            && Objects.equals(this.trafficType, createFlowLogReq.trafficType)
-            && Objects.equals(this.logGroupId, createFlowLogReq.logGroupId)
-            && Objects.equals(this.logTopicId, createFlowLogReq.logTopicId)
-            && Objects.equals(this.indexEnabled, createFlowLogReq.indexEnabled);
+        CreateFlowLogReq that = (CreateFlowLogReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logTopicId, that.logTopicId) && Objects.equals(this.indexEnabled, that.indexEnabled);
     }
 
     @Override

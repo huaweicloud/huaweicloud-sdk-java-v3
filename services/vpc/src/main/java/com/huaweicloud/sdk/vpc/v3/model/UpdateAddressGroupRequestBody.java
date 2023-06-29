@@ -65,16 +65,15 @@ public class UpdateAddressGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAddressGroupRequestBody updateAddressGroupRequestBody = (UpdateAddressGroupRequestBody) o;
-        return Objects.equals(this.dryRun, updateAddressGroupRequestBody.dryRun)
-            && Objects.equals(this.addressGroup, updateAddressGroupRequestBody.addressGroup);
+        UpdateAddressGroupRequestBody that = (UpdateAddressGroupRequestBody) obj;
+        return Objects.equals(this.dryRun, that.dryRun) && Objects.equals(this.addressGroup, that.addressGroup);
     }
 
     @Override

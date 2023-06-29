@@ -33,15 +33,15 @@ public class DeleteSecAppTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSecAppTaskRequest deleteSecAppTaskRequest = (DeleteSecAppTaskRequest) o;
-        return Objects.equals(this.taskId, deleteSecAppTaskRequest.taskId);
+        DeleteSecAppTaskRequest that = (DeleteSecAppTaskRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

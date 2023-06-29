@@ -134,18 +134,16 @@ public class WordsListIem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WordsListIem wordsListIem = (WordsListIem) o;
-        return Objects.equals(this.words, wordsListIem.words)
-            && Objects.equals(this.confidence, wordsListIem.confidence)
-            && Objects.equals(this.location, wordsListIem.location)
-            && Objects.equals(this.charList, wordsListIem.charList);
+        WordsListIem that = (WordsListIem) obj;
+        return Objects.equals(this.words, that.words) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.charList, that.charList);
     }
 
     @Override

@@ -245,24 +245,20 @@ public class ListAuthorizationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorizationsRequest listAuthorizationsRequest = (ListAuthorizationsRequest) o;
-        return Objects.equals(this.subCustomerName, listAuthorizationsRequest.subCustomerName)
-            && Objects.equals(this.incidentId, listAuthorizationsRequest.incidentId)
-            && Objects.equals(this.status, listAuthorizationsRequest.status)
-            && Objects.equals(this.simpleDescription, listAuthorizationsRequest.simpleDescription)
-            && Objects.equals(this.offset, listAuthorizationsRequest.offset)
-            && Objects.equals(this.limit, listAuthorizationsRequest.limit)
-            && Objects.equals(this.groupId, listAuthorizationsRequest.groupId)
-            && Objects.equals(this.xSite, listAuthorizationsRequest.xSite)
-            && Objects.equals(this.xLanguage, listAuthorizationsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listAuthorizationsRequest.xTimeZone);
+        ListAuthorizationsRequest that = (ListAuthorizationsRequest) obj;
+        return Objects.equals(this.subCustomerName, that.subCustomerName)
+            && Objects.equals(this.incidentId, that.incidentId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.simpleDescription, that.simpleDescription)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

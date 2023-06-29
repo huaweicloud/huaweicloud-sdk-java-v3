@@ -140,17 +140,17 @@ public class JobEntities {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobEntities jobEntities = (JobEntities) o;
-        return Objects.equals(this.volumeType, jobEntities.volumeType) && Objects.equals(this.size, jobEntities.size)
-            && Objects.equals(this.volumeId, jobEntities.volumeId) && Objects.equals(this.name, jobEntities.name)
-            && Objects.equals(this.subJobs, jobEntities.subJobs);
+        JobEntities that = (JobEntities) obj;
+        return Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.subJobs, that.subJobs);
     }
 
     @Override

@@ -114,22 +114,15 @@ public class ActionReq {
             if (value == null) {
                 return null;
             }
-            ActionNameEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionNameEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionNameEnum(value));
         }
 
         public static ActionNameEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionNameEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -217,16 +210,16 @@ public class ActionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionReq actionReq = (ActionReq) o;
-        return Objects.equals(this.jobId, actionReq.jobId) && Objects.equals(this.actionName, actionReq.actionName)
-            && Objects.equals(this.actionParams, actionReq.actionParams);
+        ActionReq that = (ActionReq) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.actionName, that.actionName)
+            && Objects.equals(this.actionParams, that.actionParams);
     }
 
     @Override

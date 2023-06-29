@@ -87,17 +87,16 @@ public class CreateStudyJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateStudyJobRequest createStudyJobRequest = (CreateStudyJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, createStudyJobRequest.eihealthProjectId)
-            && Objects.equals(this.studyId, createStudyJobRequest.studyId)
-            && Objects.equals(this.body, createStudyJobRequest.body);
+        CreateStudyJobRequest that = (CreateStudyJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.studyId, that.studyId) && Objects.equals(this.body, that.body);
     }
 
     @Override

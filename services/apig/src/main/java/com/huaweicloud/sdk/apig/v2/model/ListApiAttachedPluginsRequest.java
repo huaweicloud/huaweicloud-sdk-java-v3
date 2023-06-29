@@ -211,23 +211,19 @@ public class ListApiAttachedPluginsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiAttachedPluginsRequest listApiAttachedPluginsRequest = (ListApiAttachedPluginsRequest) o;
-        return Objects.equals(this.instanceId, listApiAttachedPluginsRequest.instanceId)
-            && Objects.equals(this.offset, listApiAttachedPluginsRequest.offset)
-            && Objects.equals(this.limit, listApiAttachedPluginsRequest.limit)
-            && Objects.equals(this.apiId, listApiAttachedPluginsRequest.apiId)
-            && Objects.equals(this.envId, listApiAttachedPluginsRequest.envId)
-            && Objects.equals(this.pluginName, listApiAttachedPluginsRequest.pluginName)
-            && Objects.equals(this.pluginId, listApiAttachedPluginsRequest.pluginId)
-            && Objects.equals(this.envName, listApiAttachedPluginsRequest.envName)
-            && Objects.equals(this.pluginType, listApiAttachedPluginsRequest.pluginType);
+        ListApiAttachedPluginsRequest that = (ListApiAttachedPluginsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.pluginName, that.pluginName)
+            && Objects.equals(this.pluginId, that.pluginId) && Objects.equals(this.envName, that.envName)
+            && Objects.equals(this.pluginType, that.pluginType);
     }
 
     @Override

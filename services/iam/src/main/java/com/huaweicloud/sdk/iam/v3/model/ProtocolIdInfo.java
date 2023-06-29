@@ -33,15 +33,15 @@ public class ProtocolIdInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProtocolIdInfo protocolIdInfo = (ProtocolIdInfo) o;
-        return Objects.equals(this.id, protocolIdInfo.id);
+        ProtocolIdInfo that = (ProtocolIdInfo) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

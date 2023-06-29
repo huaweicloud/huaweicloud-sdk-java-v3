@@ -294,26 +294,21 @@ public class CreateInstanceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstanceRequestBody createInstanceRequestBody = (CreateInstanceRequestBody) o;
-        return Objects.equals(this.chargemode, createInstanceRequestBody.chargemode)
-            && Objects.equals(this.region, createInstanceRequestBody.region)
-            && Objects.equals(this.availableZone, createInstanceRequestBody.availableZone)
-            && Objects.equals(this.arch, createInstanceRequestBody.arch)
-            && Objects.equals(this.instancename, createInstanceRequestBody.instancename)
-            && Objects.equals(this.specification, createInstanceRequestBody.specification)
-            && Objects.equals(this.cpuFlavor, createInstanceRequestBody.cpuFlavor)
-            && Objects.equals(this.vpcId, createInstanceRequestBody.vpcId)
-            && Objects.equals(this.subnetId, createInstanceRequestBody.subnetId)
-            && Objects.equals(this.securityGroup, createInstanceRequestBody.securityGroup)
-            && Objects.equals(this.count, createInstanceRequestBody.count)
-            && Objects.equals(this.resTenant, createInstanceRequestBody.resTenant);
+        CreateInstanceRequestBody that = (CreateInstanceRequestBody) obj;
+        return Objects.equals(this.chargemode, that.chargemode) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.availableZone, that.availableZone) && Objects.equals(this.arch, that.arch)
+            && Objects.equals(this.instancename, that.instancename)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroup, that.securityGroup) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.resTenant, that.resTenant);
     }
 
     @Override

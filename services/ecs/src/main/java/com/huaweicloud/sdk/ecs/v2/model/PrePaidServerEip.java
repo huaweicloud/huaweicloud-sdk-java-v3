@@ -96,17 +96,16 @@ public class PrePaidServerEip {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrePaidServerEip prePaidServerEip = (PrePaidServerEip) o;
-        return Objects.equals(this.iptype, prePaidServerEip.iptype)
-            && Objects.equals(this.bandwidth, prePaidServerEip.bandwidth)
-            && Objects.equals(this.extendparam, prePaidServerEip.extendparam);
+        PrePaidServerEip that = (PrePaidServerEip) obj;
+        return Objects.equals(this.iptype, that.iptype) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.extendparam, that.extendparam);
     }
 
     @Override

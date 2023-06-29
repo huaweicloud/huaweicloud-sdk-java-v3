@@ -57,16 +57,15 @@ public class ShowExtensionTestingResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowExtensionTestingResultRequest showExtensionTestingResultRequest = (ShowExtensionTestingResultRequest) o;
-        return Objects.equals(this.xPublisherToken, showExtensionTestingResultRequest.xPublisherToken)
-            && Objects.equals(this.taskId, showExtensionTestingResultRequest.taskId);
+        ShowExtensionTestingResultRequest that = (ShowExtensionTestingResultRequest) obj;
+        return Objects.equals(this.xPublisherToken, that.xPublisherToken) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

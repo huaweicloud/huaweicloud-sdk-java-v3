@@ -87,16 +87,16 @@ public class UpdateRsuRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRsuRequest updateRsuRequest = (UpdateRsuRequest) o;
-        return Objects.equals(this.instanceId, updateRsuRequest.instanceId)
-            && Objects.equals(this.rsuId, updateRsuRequest.rsuId) && Objects.equals(this.body, updateRsuRequest.body);
+        UpdateRsuRequest that = (UpdateRsuRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.rsuId, that.rsuId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

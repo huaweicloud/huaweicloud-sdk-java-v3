@@ -31,27 +31,27 @@ public class UserAuth {
     public static final class AuthEnum {
 
         /**
-         * Enum NUMBER_7 for value: 7l
+         * Enum NUMBER_7 for value: 7L
          */
-        public static final AuthEnum NUMBER_7 = new AuthEnum(7l);
+        public static final AuthEnum NUMBER_7 = new AuthEnum(7L);
 
         /**
-         * Enum NUMBER_3 for value: 3l
+         * Enum NUMBER_3 for value: 3L
          */
-        public static final AuthEnum NUMBER_3 = new AuthEnum(3l);
+        public static final AuthEnum NUMBER_3 = new AuthEnum(3L);
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final AuthEnum NUMBER_1 = new AuthEnum(1l);
+        public static final AuthEnum NUMBER_1 = new AuthEnum(1L);
 
         private static final Map<Long, AuthEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, AuthEnum> createStaticFields() {
             Map<Long, AuthEnum> map = new HashMap<>();
-            map.put(7l, NUMBER_7);
-            map.put(3l, NUMBER_3);
-            map.put(1l, NUMBER_1);
+            map.put(7L, NUMBER_7);
+            map.put(3L, NUMBER_3);
+            map.put(1L, NUMBER_1);
             return Collections.unmodifiableMap(map);
         }
 
@@ -76,22 +76,15 @@ public class UserAuth {
             if (value == null) {
                 return null;
             }
-            AuthEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthEnum(value));
         }
 
         public static AuthEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            AuthEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,16 +158,16 @@ public class UserAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserAuth userAuth = (UserAuth) o;
-        return Objects.equals(this.userId, userAuth.userId) && Objects.equals(this.userName, userAuth.userName)
-            && Objects.equals(this.auth, userAuth.auth);
+        UserAuth that = (UserAuth) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.auth, that.auth);
     }
 
     @Override

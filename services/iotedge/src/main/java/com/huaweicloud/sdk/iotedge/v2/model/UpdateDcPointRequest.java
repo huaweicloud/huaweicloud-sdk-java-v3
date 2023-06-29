@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.UpdateDcPointReqDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class UpdateDcPointRequest  {
-
+public class UpdateDcPointRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="edge_node_id")
-    
+    @JsonProperty(value = "edge_node_id")
 
     private String edgeNodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ds_id")
-    
+    @JsonProperty(value = "ds_id")
 
     private String dsId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="point_id")
-    
+    @JsonProperty(value = "point_id")
 
     private String pointId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UpdateDcPointReqDTO body;
 
@@ -47,9 +35,6 @@ public class UpdateDcPointRequest  {
         this.edgeNodeId = edgeNodeId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘节点ID
@@ -63,15 +48,10 @@ public class UpdateDcPointRequest  {
         this.edgeNodeId = edgeNodeId;
     }
 
-    
-
     public UpdateDcPointRequest withDsId(String dsId) {
         this.dsId = dsId;
         return this;
     }
-
-    
-
 
     /**
      * 采集数据源id，创建数据源配置时设置，节点下唯一。
@@ -85,15 +65,10 @@ public class UpdateDcPointRequest  {
         this.dsId = dsId;
     }
 
-    
-
     public UpdateDcPointRequest withPointId(String pointId) {
         this.pointId = pointId;
         return this;
     }
-
-    
-
 
     /**
      * 采集点位表id，创建点位表时设置，数据源下唯一。
@@ -107,22 +82,19 @@ public class UpdateDcPointRequest  {
         this.pointId = pointId;
     }
 
-    
-
     public UpdateDcPointRequest withBody(UpdateDcPointReqDTO body) {
         this.body = body;
         return this;
     }
 
     public UpdateDcPointRequest withBody(Consumer<UpdateDcPointReqDTO> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UpdateDcPointReqDTO();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -136,26 +108,24 @@ public class UpdateDcPointRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDcPointRequest updateDcPointRequest = (UpdateDcPointRequest) o;
-        return Objects.equals(this.edgeNodeId, updateDcPointRequest.edgeNodeId) &&
-            Objects.equals(this.dsId, updateDcPointRequest.dsId) &&
-            Objects.equals(this.pointId, updateDcPointRequest.pointId) &&
-            Objects.equals(this.body, updateDcPointRequest.body);
+        UpdateDcPointRequest that = (UpdateDcPointRequest) obj;
+        return Objects.equals(this.edgeNodeId, that.edgeNodeId) && Objects.equals(this.dsId, that.dsId)
+            && Objects.equals(this.pointId, that.pointId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(edgeNodeId, dsId, pointId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -167,6 +137,7 @@ public class UpdateDcPointRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -177,8 +148,5 @@ public class UpdateDcPointRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,15 @@ public class CreateSessionReqResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSessionReqResource createSessionReqResource = (CreateSessionReqResource) o;
-        return Objects.equals(this.name, createSessionReqResource.name)
-            && Objects.equals(this.type, createSessionReqResource.type);
+        CreateSessionReqResource that = (CreateSessionReqResource) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type);
     }
 
     @Override

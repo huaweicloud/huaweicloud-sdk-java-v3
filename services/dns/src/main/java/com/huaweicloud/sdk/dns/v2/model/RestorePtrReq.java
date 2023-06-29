@@ -33,15 +33,15 @@ public class RestorePtrReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestorePtrReq restorePtrReq = (RestorePtrReq) o;
-        return Objects.equals(this.ptrdname, restorePtrReq.ptrdname);
+        RestorePtrReq that = (RestorePtrReq) obj;
+        return Objects.equals(this.ptrdname, that.ptrdname);
     }
 
     @Override

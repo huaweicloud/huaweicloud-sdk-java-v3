@@ -74,16 +74,15 @@ public class CreateDrugJobBasicInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDrugJobBasicInfo createDrugJobBasicInfo = (CreateDrugJobBasicInfo) o;
-        return Objects.equals(this.name, createDrugJobBasicInfo.name)
-            && Objects.equals(this.labels, createDrugJobBasicInfo.labels);
+        CreateDrugJobBasicInfo that = (CreateDrugJobBasicInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.labels, that.labels);
     }
 
     @Override

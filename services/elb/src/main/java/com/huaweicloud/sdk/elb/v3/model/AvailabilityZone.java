@@ -140,18 +140,18 @@ public class AvailabilityZone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailabilityZone availabilityZone = (AvailabilityZone) o;
-        return Objects.equals(this.code, availabilityZone.code) && Objects.equals(this.state, availabilityZone.state)
-            && Objects.equals(this.protocol, availabilityZone.protocol)
-            && Objects.equals(this.publicBorderGroup, availabilityZone.publicBorderGroup)
-            && Objects.equals(this.category, availabilityZone.category);
+        AvailabilityZone that = (AvailabilityZone) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.state, that.state)
+            && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.publicBorderGroup, that.publicBorderGroup)
+            && Objects.equals(this.category, that.category);
     }
 
     @Override

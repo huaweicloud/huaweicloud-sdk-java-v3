@@ -34,15 +34,15 @@ public class ValidateWeakPasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateWeakPasswordResponse validateWeakPasswordResponse = (ValidateWeakPasswordResponse) o;
-        return Objects.equals(this.isWeakPassword, validateWeakPasswordResponse.isWeakPassword);
+        ValidateWeakPasswordResponse that = (ValidateWeakPasswordResponse) obj;
+        return Objects.equals(this.isWeakPassword, that.isWeakPassword);
     }
 
     @Override

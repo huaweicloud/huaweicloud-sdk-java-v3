@@ -187,22 +187,19 @@ public class CreateCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCertificateRequestBody createCertificateRequestBody = (CreateCertificateRequestBody) o;
-        return Objects.equals(this.certificate, createCertificateRequestBody.certificate)
-            && Objects.equals(this.privateKey, createCertificateRequestBody.privateKey)
-            && Objects.equals(this.description, createCertificateRequestBody.description)
-            && Objects.equals(this.domain, createCertificateRequestBody.domain)
-            && Objects.equals(this.name, createCertificateRequestBody.name)
-            && Objects.equals(this.adminStateUp, createCertificateRequestBody.adminStateUp)
-            && Objects.equals(this.type, createCertificateRequestBody.type)
-            && Objects.equals(this.enterpriseProjectId, createCertificateRequestBody.enterpriseProjectId);
+        CreateCertificateRequestBody that = (CreateCertificateRequestBody) obj;
+        return Objects.equals(this.certificate, that.certificate) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

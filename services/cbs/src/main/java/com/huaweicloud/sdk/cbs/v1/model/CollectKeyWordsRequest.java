@@ -1,44 +1,32 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class CollectKeyWordsRequest  {
-
+public class CollectKeyWordsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="qabot_id")
-    
+    @JsonProperty(value = "qabot_id")
 
     private String qabotId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="start_time")
-    
+    @JsonProperty(value = "start_time")
 
     private String startTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="top")
-    
+    @JsonProperty(value = "top")
 
     private Integer top;
 
@@ -46,9 +34,6 @@ public class CollectKeyWordsRequest  {
         this.qabotId = qabotId;
         return this;
     }
-
-    
-
 
     /**
      * qabot编号，UUID格式。
@@ -62,15 +47,10 @@ public class CollectKeyWordsRequest  {
         this.qabotId = qabotId;
     }
 
-    
-
     public CollectKeyWordsRequest withStartTime(String startTime) {
         this.startTime = startTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询的起始时间，long，UTC时间，默认值为0。
@@ -84,15 +64,10 @@ public class CollectKeyWordsRequest  {
         this.startTime = startTime;
     }
 
-    
-
     public CollectKeyWordsRequest withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 查询的结束时间，long，UTC时间，默认值为当前时间的毫秒数。
@@ -106,15 +81,10 @@ public class CollectKeyWordsRequest  {
         this.endTime = endTime;
     }
 
-    
-
     public CollectKeyWordsRequest withTop(Integer top) {
         this.top = top;
         return this;
     }
-
-    
-
 
     /**
      * 关键词最多显示的个数，默认值为10，取值范围0-50。
@@ -130,26 +100,24 @@ public class CollectKeyWordsRequest  {
         this.top = top;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CollectKeyWordsRequest collectKeyWordsRequest = (CollectKeyWordsRequest) o;
-        return Objects.equals(this.qabotId, collectKeyWordsRequest.qabotId) &&
-            Objects.equals(this.startTime, collectKeyWordsRequest.startTime) &&
-            Objects.equals(this.endTime, collectKeyWordsRequest.endTime) &&
-            Objects.equals(this.top, collectKeyWordsRequest.top);
+        CollectKeyWordsRequest that = (CollectKeyWordsRequest) obj;
+        return Objects.equals(this.qabotId, that.qabotId) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.top, that.top);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(qabotId, startTime, endTime, top);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -161,6 +129,7 @@ public class CollectKeyWordsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -171,8 +140,5 @@ public class CollectKeyWordsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

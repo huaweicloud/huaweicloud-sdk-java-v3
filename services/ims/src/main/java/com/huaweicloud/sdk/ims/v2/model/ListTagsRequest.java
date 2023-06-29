@@ -82,22 +82,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ImagetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ImagetypeEnum(value));
         }
 
         public static ImagetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ImagetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -187,22 +180,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -290,22 +276,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -378,22 +357,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MemberStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MemberStatusEnum(value));
         }
 
         public static MemberStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MemberStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -466,22 +438,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VirtualEnvTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VirtualEnvTypeEnum(value));
         }
 
         public static VirtualEnvTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VirtualEnvTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -553,22 +518,15 @@ public class ListTagsRequest {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ArchitectureEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ArchitectureEnum(value));
         }
 
         public static ArchitectureEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ArchitectureEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -862,26 +820,23 @@ public class ListTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagsRequest listTagsRequest = (ListTagsRequest) o;
-        return Objects.equals(this.limit, listTagsRequest.limit) && Objects.equals(this.page, listTagsRequest.page)
-            && Objects.equals(this.imagetype, listTagsRequest.imagetype) && Objects.equals(this.id, listTagsRequest.id)
-            && Objects.equals(this.status, listTagsRequest.status) && Objects.equals(this.name, listTagsRequest.name)
-            && Objects.equals(this.minDisk, listTagsRequest.minDisk)
-            && Objects.equals(this.platform, listTagsRequest.platform)
-            && Objects.equals(this.osType, listTagsRequest.osType)
-            && Objects.equals(this.memberStatus, listTagsRequest.memberStatus)
-            && Objects.equals(this.virtualEnvType, listTagsRequest.virtualEnvType)
-            && Objects.equals(this.enterpriseProjectId, listTagsRequest.enterpriseProjectId)
-            && Objects.equals(this.architecture, listTagsRequest.architecture)
-            && Objects.equals(this.createdAt, listTagsRequest.createdAt)
-            && Objects.equals(this.updatedAt, listTagsRequest.updatedAt);
+        ListTagsRequest that = (ListTagsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.imagetype, that.imagetype) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.platform, that.platform)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.memberStatus, that.memberStatus)
+            && Objects.equals(this.virtualEnvType, that.virtualEnvType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.architecture, that.architecture) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

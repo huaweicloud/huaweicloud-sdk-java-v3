@@ -294,26 +294,23 @@ public class CreateXdmApplicationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateXdmApplicationRequestBody createXdmApplicationRequestBody = (CreateXdmApplicationRequestBody) o;
-        return Objects.equals(this.appNameCn, createXdmApplicationRequestBody.appNameCn)
-            && Objects.equals(this.appNameEn, createXdmApplicationRequestBody.appNameEn)
-            && Objects.equals(this.appDesc, createXdmApplicationRequestBody.appDesc)
-            && Objects.equals(this.appDescEn, createXdmApplicationRequestBody.appDescEn)
-            && Objects.equals(this.operateType, createXdmApplicationRequestBody.operateType)
-            && Objects.equals(this.appEnv, createXdmApplicationRequestBody.appEnv)
-            && Objects.equals(this.databaseType, createXdmApplicationRequestBody.databaseType)
-            && Objects.equals(this.appUserList, createXdmApplicationRequestBody.appUserList)
-            && Objects.equals(this.certifiedDataSourceName, createXdmApplicationRequestBody.certifiedDataSourceName)
-            && Objects.equals(this.certifiedDataSourceNumber, createXdmApplicationRequestBody.certifiedDataSourceNumber)
-            && Objects.equals(this.integrationMode, createXdmApplicationRequestBody.integrationMode)
-            && Objects.equals(this.metadataSynchronization, createXdmApplicationRequestBody.metadataSynchronization);
+        CreateXdmApplicationRequestBody that = (CreateXdmApplicationRequestBody) obj;
+        return Objects.equals(this.appNameCn, that.appNameCn) && Objects.equals(this.appNameEn, that.appNameEn)
+            && Objects.equals(this.appDesc, that.appDesc) && Objects.equals(this.appDescEn, that.appDescEn)
+            && Objects.equals(this.operateType, that.operateType) && Objects.equals(this.appEnv, that.appEnv)
+            && Objects.equals(this.databaseType, that.databaseType)
+            && Objects.equals(this.appUserList, that.appUserList)
+            && Objects.equals(this.certifiedDataSourceName, that.certifiedDataSourceName)
+            && Objects.equals(this.certifiedDataSourceNumber, that.certifiedDataSourceNumber)
+            && Objects.equals(this.integrationMode, that.integrationMode)
+            && Objects.equals(this.metadataSynchronization, that.metadataSynchronization);
     }
 
     @Override

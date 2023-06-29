@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.KmsStructure;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 如果用户传递的var_value是已经加密过的，可以通过声名此项以要求资源编排服务在使用前进行解密，目前暂时只支持KMS加解密
  */
-public class EncryptionStructure  {
-
+public class EncryptionStructure {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="kms")
-    
+    @JsonProperty(value = "kms")
 
     private KmsStructure kms;
 
@@ -30,14 +22,13 @@ public class EncryptionStructure  {
     }
 
     public EncryptionStructure withKms(Consumer<KmsStructure> kmsSetter) {
-        if(this.kms == null ){
+        if (this.kms == null) {
             this.kms = new KmsStructure();
             kmsSetter.accept(this.kms);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get kms
@@ -51,23 +42,23 @@ public class EncryptionStructure  {
         this.kms = kms;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EncryptionStructure encryptionStructure = (EncryptionStructure) o;
-        return Objects.equals(this.kms, encryptionStructure.kms);
+        EncryptionStructure that = (EncryptionStructure) obj;
+        return Objects.equals(this.kms, that.kms);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(kms);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class EncryptionStructure  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class EncryptionStructure  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class CreateInstancesPeriodOrderResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="code")
-    
+    @JsonProperty(value = "code")
 
     private String code;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_id")
-    
+    @JsonProperty(value = "order_id")
 
     private String orderId;
 
@@ -42,9 +30,6 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 描述
@@ -58,15 +43,10 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateInstancesPeriodOrderResponse withCode(String code) {
         this.code = code;
         return this;
     }
-
-    
-
 
     /**
      * 返回码
@@ -80,15 +60,10 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         this.code = code;
     }
 
-    
-
     public CreateInstancesPeriodOrderResponse withOrderId(String orderId) {
         this.orderId = orderId;
         return this;
     }
-
-    
-
 
     /**
      * 订单ID
@@ -102,25 +77,24 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         this.orderId = orderId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInstancesPeriodOrderResponse createInstancesPeriodOrderResponse = (CreateInstancesPeriodOrderResponse) o;
-        return Objects.equals(this.description, createInstancesPeriodOrderResponse.description) &&
-            Objects.equals(this.code, createInstancesPeriodOrderResponse.code) &&
-            Objects.equals(this.orderId, createInstancesPeriodOrderResponse.orderId);
+        CreateInstancesPeriodOrderResponse that = (CreateInstancesPeriodOrderResponse) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.orderId, that.orderId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, code, orderId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class CreateInstancesPeriodOrderResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

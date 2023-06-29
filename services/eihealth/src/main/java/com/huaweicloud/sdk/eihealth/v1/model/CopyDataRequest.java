@@ -65,16 +65,15 @@ public class CopyDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CopyDataRequest copyDataRequest = (CopyDataRequest) o;
-        return Objects.equals(this.eihealthProjectId, copyDataRequest.eihealthProjectId)
-            && Objects.equals(this.body, copyDataRequest.body);
+        CopyDataRequest that = (CopyDataRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

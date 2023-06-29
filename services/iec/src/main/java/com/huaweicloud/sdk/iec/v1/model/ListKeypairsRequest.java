@@ -77,17 +77,16 @@ public class ListKeypairsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListKeypairsRequest listKeypairsRequest = (ListKeypairsRequest) o;
-        return Objects.equals(this.limit, listKeypairsRequest.limit)
-            && Objects.equals(this.offset, listKeypairsRequest.offset)
-            && Objects.equals(this.name, listKeypairsRequest.name);
+        ListKeypairsRequest that = (ListKeypairsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

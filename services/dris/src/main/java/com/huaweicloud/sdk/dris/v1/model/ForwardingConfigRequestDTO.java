@@ -74,16 +74,16 @@ public class ForwardingConfigRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ForwardingConfigRequestDTO forwardingConfigRequestDTO = (ForwardingConfigRequestDTO) o;
-        return Objects.equals(this.kafkaConfig, forwardingConfigRequestDTO.kafkaConfig)
-            && Objects.equals(this.mrsKafkaConfig, forwardingConfigRequestDTO.mrsKafkaConfig);
+        ForwardingConfigRequestDTO that = (ForwardingConfigRequestDTO) obj;
+        return Objects.equals(this.kafkaConfig, that.kafkaConfig)
+            && Objects.equals(this.mrsKafkaConfig, that.mrsKafkaConfig);
     }
 
     @Override

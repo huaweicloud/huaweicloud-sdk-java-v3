@@ -26,7 +26,7 @@ public class EpsAddPermissionRequest {
     }
 
     /**
-     * 权限格式为：iam:domain::domain_id其中， ● “iam:domain::”为固定格式。 ● “domain_id”为可连接用户的帐号ID。 支持输入1~64个字符，包括“a~z”、“A~Z”、“0~9”或者“”。 “”表示所有终端节点可连接。 例如：iam:domain::6e9dfd51d1124e8d8498dce894923a0dd
+     * 权限格式为：iam:domain::domain_id或者organizations:orgPath::org_path其中， ● “iam:domain::”和“organizations:orgPath::”为固定格式。 ● “domain_id”为可连接用户的帐号ID，org_path可连接用户的组织路径 domain_id类型支持输入包括“a~z”、“A~Z”、“0~9”或者“*，最大长度可以传64； org_path类型支持“a~z”、“A~Z”、“0~9”、“/-*?”或者“*”，最大长度可以传1024； 例如：iam:domain::6e9dfd51d1124e8d8498dce894923a0dd或者organizations:orgPath::o-3j59d1231uprgk9yuvlidra7zbzfi578/r-rldbu1vmxdw5ahdkknxnvd5rgag77m2z/ou-7tuddd8nh99rebxltawsm6qct5z7rklv/_*
      * @return permission
      */
     public String getPermission() {
@@ -55,16 +55,15 @@ public class EpsAddPermissionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EpsAddPermissionRequest epsAddPermissionRequest = (EpsAddPermissionRequest) o;
-        return Objects.equals(this.permission, epsAddPermissionRequest.permission)
-            && Objects.equals(this.description, epsAddPermissionRequest.description);
+        EpsAddPermissionRequest that = (EpsAddPermissionRequest) obj;
+        return Objects.equals(this.permission, that.permission) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -92,16 +92,15 @@ public class GetPropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetPropertyRequest getPropertyRequest = (GetPropertyRequest) o;
-        return Objects.equals(this.tags, getPropertyRequest.tags)
-            && Objects.equals(this.propertyNames, getPropertyRequest.propertyNames);
+        GetPropertyRequest that = (GetPropertyRequest) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.propertyNames, that.propertyNames);
     }
 
     @Override

@@ -60,22 +60,15 @@ public class RuleRequest {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class RuleRequest {
             if (value == null) {
                 return null;
             }
-            RuleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuleTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuleTypeEnum(value));
         }
 
         public static RuleTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuleTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -374,22 +360,19 @@ public class RuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleRequest ruleRequest = (RuleRequest) o;
-        return Objects.equals(this.category, ruleRequest.category) && Objects.equals(this.id, ruleRequest.id)
-            && Objects.equals(this.logicOperator, ruleRequest.logicOperator)
-            && Objects.equals(this.minMatch, ruleRequest.minMatch)
-            && Objects.equals(this.riskLevel, ruleRequest.riskLevel)
-            && Objects.equals(this.ruleContent, ruleRequest.ruleContent)
-            && Objects.equals(this.ruleDesc, ruleRequest.ruleDesc)
-            && Objects.equals(this.ruleName, ruleRequest.ruleName)
-            && Objects.equals(this.ruleType, ruleRequest.ruleType);
+        RuleRequest that = (RuleRequest) obj;
+        return Objects.equals(this.category, that.category) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.logicOperator, that.logicOperator) && Objects.equals(this.minMatch, that.minMatch)
+            && Objects.equals(this.riskLevel, that.riskLevel) && Objects.equals(this.ruleContent, that.ruleContent)
+            && Objects.equals(this.ruleDesc, that.ruleDesc) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleType, that.ruleType);
     }
 
     @Override

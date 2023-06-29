@@ -187,20 +187,19 @@ public class CacheRules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CacheRules cacheRules = (CacheRules) o;
-        return Objects.equals(this.matchType, cacheRules.matchType)
-            && Objects.equals(this.matchValue, cacheRules.matchValue) && Objects.equals(this.ttl, cacheRules.ttl)
-            && Objects.equals(this.ttlUnit, cacheRules.ttlUnit) && Objects.equals(this.priority, cacheRules.priority)
-            && Objects.equals(this.followOrigin, cacheRules.followOrigin)
-            && Objects.equals(this.urlParameterType, cacheRules.urlParameterType)
-            && Objects.equals(this.urlParameterValue, cacheRules.urlParameterValue);
+        CacheRules that = (CacheRules) obj;
+        return Objects.equals(this.matchType, that.matchType) && Objects.equals(this.matchValue, that.matchValue)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.ttlUnit, that.ttlUnit)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.followOrigin, that.followOrigin)
+            && Objects.equals(this.urlParameterType, that.urlParameterType)
+            && Objects.equals(this.urlParameterValue, that.urlParameterValue);
     }
 
     @Override

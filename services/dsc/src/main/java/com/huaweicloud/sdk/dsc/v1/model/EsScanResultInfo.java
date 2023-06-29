@@ -200,21 +200,19 @@ public class EsScanResultInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EsScanResultInfo esScanResultInfo = (EsScanResultInfo) o;
-        return Objects.equals(this.taskId, esScanResultInfo.taskId)
-            && Objects.equals(this.indexName, esScanResultInfo.indexName)
-            && Objects.equals(this.typeId, esScanResultInfo.typeId)
-            && Objects.equals(this.typeName, esScanResultInfo.typeName)
-            && Objects.equals(this.riskLevel, esScanResultInfo.riskLevel)
-            && Objects.equals(this.sensitiveDataType, esScanResultInfo.sensitiveDataType)
-            && Objects.equals(this.matchInfo, esScanResultInfo.matchInfo);
+        EsScanResultInfo that = (EsScanResultInfo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.indexName, that.indexName)
+            && Objects.equals(this.typeId, that.typeId) && Objects.equals(this.typeName, that.typeName)
+            && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.sensitiveDataType, that.sensitiveDataType)
+            && Objects.equals(this.matchInfo, that.matchInfo);
     }
 
     @Override

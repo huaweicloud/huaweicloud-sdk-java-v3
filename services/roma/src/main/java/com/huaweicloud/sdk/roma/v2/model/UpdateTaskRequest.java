@@ -87,17 +87,16 @@ public class UpdateTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskRequest updateTaskRequest = (UpdateTaskRequest) o;
-        return Objects.equals(this.instanceId, updateTaskRequest.instanceId)
-            && Objects.equals(this.taskId, updateTaskRequest.taskId)
-            && Objects.equals(this.body, updateTaskRequest.body);
+        UpdateTaskRequest that = (UpdateTaskRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

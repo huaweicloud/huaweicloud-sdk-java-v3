@@ -44,16 +44,15 @@ public class UpdateProtectionGroupNameRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProtectionGroupNameRequestBody updateProtectionGroupNameRequestBody =
-            (UpdateProtectionGroupNameRequestBody) o;
-        return Objects.equals(this.serverGroup, updateProtectionGroupNameRequestBody.serverGroup);
+        UpdateProtectionGroupNameRequestBody that = (UpdateProtectionGroupNameRequestBody) obj;
+        return Objects.equals(this.serverGroup, that.serverGroup);
     }
 
     @Override

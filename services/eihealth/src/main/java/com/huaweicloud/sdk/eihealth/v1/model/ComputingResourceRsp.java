@@ -381,28 +381,22 @@ public class ComputingResourceRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputingResourceRsp computingResourceRsp = (ComputingResourceRsp) o;
-        return Objects.equals(this.id, computingResourceRsp.id)
-            && Objects.equals(this.resourceId, computingResourceRsp.resourceId)
-            && Objects.equals(this.name, computingResourceRsp.name)
-            && Objects.equals(this.spec, computingResourceRsp.spec)
-            && Objects.equals(this.systemDisk, computingResourceRsp.systemDisk)
-            && Objects.equals(this.dataDisks, computingResourceRsp.dataDisks)
-            && Objects.equals(this.image, computingResourceRsp.image)
-            && Objects.equals(this.chargeMode, computingResourceRsp.chargeMode)
-            && Objects.equals(this.createTime, computingResourceRsp.createTime)
-            && Objects.equals(this.failureReason, computingResourceRsp.failureReason)
-            && Objects.equals(this.status, computingResourceRsp.status)
-            && Objects.equals(this.availabilityZoneId, computingResourceRsp.availabilityZoneId)
-            && Objects.equals(this.schedulable, computingResourceRsp.schedulable)
-            && Objects.equals(this.nodeLabels, computingResourceRsp.nodeLabels);
+        ComputingResourceRsp that = (ComputingResourceRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.systemDisk, that.systemDisk) && Objects.equals(this.dataDisks, that.dataDisks)
+            && Objects.equals(this.image, that.image) && Objects.equals(this.chargeMode, that.chargeMode)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.failureReason, that.failureReason) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.schedulable, that.schedulable) && Objects.equals(this.nodeLabels, that.nodeLabels);
     }
 
     @Override

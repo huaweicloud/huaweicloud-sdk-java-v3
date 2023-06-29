@@ -55,16 +55,15 @@ public class ShowL7ruleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowL7ruleRequest showL7ruleRequest = (ShowL7ruleRequest) o;
-        return Objects.equals(this.l7policyId, showL7ruleRequest.l7policyId)
-            && Objects.equals(this.l7ruleId, showL7ruleRequest.l7ruleId);
+        ShowL7ruleRequest that = (ShowL7ruleRequest) obj;
+        return Objects.equals(this.l7policyId, that.l7policyId) && Objects.equals(this.l7ruleId, that.l7ruleId);
     }
 
     @Override

@@ -162,20 +162,18 @@ public class CreateDatasourceConnectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDatasourceConnectionReq createDatasourceConnectionReq = (CreateDatasourceConnectionReq) o;
-        return Objects.equals(this.name, createDatasourceConnectionReq.name)
-            && Objects.equals(this.service, createDatasourceConnectionReq.service)
-            && Objects.equals(this.securityGroupId, createDatasourceConnectionReq.securityGroupId)
-            && Objects.equals(this.networkId, createDatasourceConnectionReq.networkId)
-            && Objects.equals(this.url, createDatasourceConnectionReq.url)
-            && Objects.equals(this.tags, createDatasourceConnectionReq.tags);
+        CreateDatasourceConnectionReq that = (CreateDatasourceConnectionReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.service, that.service)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.networkId, that.networkId) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

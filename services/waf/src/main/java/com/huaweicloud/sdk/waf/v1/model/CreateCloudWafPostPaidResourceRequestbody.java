@@ -33,16 +33,15 @@ public class CreateCloudWafPostPaidResourceRequestbody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCloudWafPostPaidResourceRequestbody createCloudWafPostPaidResourceRequestbody =
-            (CreateCloudWafPostPaidResourceRequestbody) o;
-        return Objects.equals(this.consoleArea, createCloudWafPostPaidResourceRequestbody.consoleArea);
+        CreateCloudWafPostPaidResourceRequestbody that = (CreateCloudWafPostPaidResourceRequestbody) obj;
+        return Objects.equals(this.consoleArea, that.consoleArea);
     }
 
     @Override

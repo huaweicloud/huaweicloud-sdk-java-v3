@@ -87,17 +87,16 @@ public class UpdateStaticRouteRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStaticRouteRequest updateStaticRouteRequest = (UpdateStaticRouteRequest) o;
-        return Objects.equals(this.routeTableId, updateStaticRouteRequest.routeTableId)
-            && Objects.equals(this.routeId, updateStaticRouteRequest.routeId)
-            && Objects.equals(this.body, updateStaticRouteRequest.body);
+        UpdateStaticRouteRequest that = (UpdateStaticRouteRequest) obj;
+        return Objects.equals(this.routeTableId, that.routeTableId) && Objects.equals(this.routeId, that.routeId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

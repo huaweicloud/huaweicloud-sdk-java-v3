@@ -263,24 +263,20 @@ public class RawTableParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RawTableParam rawTableParam = (RawTableParam) o;
-        return Objects.equals(this.lastRowId, rawTableParam.lastRowId)
-            && Objects.equals(this.viewConfig, rawTableParam.viewConfig)
-            && Objects.equals(this.page, rawTableParam.page) && Objects.equals(this.pageSize, rawTableParam.pageSize)
-            && Objects.equals(this.orderBy, rawTableParam.orderBy)
-            && Objects.equals(this.searchWord, rawTableParam.searchWord)
-            && Objects.equals(this.instanceId, rawTableParam.instanceId)
-            && Objects.equals(this.monitorItemId, rawTableParam.monitorItemId)
-            && Objects.equals(this.envId, rawTableParam.envId)
-            && Objects.equals(this.startTime, rawTableParam.startTime)
-            && Objects.equals(this.endTime, rawTableParam.endTime);
+        RawTableParam that = (RawTableParam) obj;
+        return Objects.equals(this.lastRowId, that.lastRowId) && Objects.equals(this.viewConfig, that.viewConfig)
+            && Objects.equals(this.page, that.page) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.searchWord, that.searchWord)
+            && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.monitorItemId, that.monitorItemId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

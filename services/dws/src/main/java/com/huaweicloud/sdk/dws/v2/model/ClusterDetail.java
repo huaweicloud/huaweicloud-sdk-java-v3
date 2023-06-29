@@ -848,40 +848,35 @@ public class ClusterDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterDetail clusterDetail = (ClusterDetail) o;
-        return Objects.equals(this.id, clusterDetail.id) && Objects.equals(this.name, clusterDetail.name)
-            && Objects.equals(this.status, clusterDetail.status) && Objects.equals(this.version, clusterDetail.version)
-            && Objects.equals(this.updated, clusterDetail.updated)
-            && Objects.equals(this.created, clusterDetail.created) && Objects.equals(this.port, clusterDetail.port)
-            && Objects.equals(this.endpoints, clusterDetail.endpoints)
-            && Objects.equals(this.nodes, clusterDetail.nodes) && Objects.equals(this.tags, clusterDetail.tags)
-            && Objects.equals(this.userName, clusterDetail.userName)
-            && Objects.equals(this.numberOfNode, clusterDetail.numberOfNode)
-            && Objects.equals(this.recentEvent, clusterDetail.recentEvent)
-            && Objects.equals(this.availabilityZone, clusterDetail.availabilityZone)
-            && Objects.equals(this.enterpriseProjectId, clusterDetail.enterpriseProjectId)
-            && Objects.equals(this.nodeType, clusterDetail.nodeType) && Objects.equals(this.vpcId, clusterDetail.vpcId)
-            && Objects.equals(this.subnetId, clusterDetail.subnetId)
-            && Objects.equals(this.publicIp, clusterDetail.publicIp)
-            && Objects.equals(this.publicEndpoints, clusterDetail.publicEndpoints)
-            && Objects.equals(this.actionProgress, clusterDetail.actionProgress)
-            && Objects.equals(this.subStatus, clusterDetail.subStatus)
-            && Objects.equals(this.taskStatus, clusterDetail.taskStatus)
-            && Objects.equals(this.parameterGroup, clusterDetail.parameterGroup)
-            && Objects.equals(this.nodeTypeId, clusterDetail.nodeTypeId)
-            && Objects.equals(this.securityGroupId, clusterDetail.securityGroupId)
-            && Objects.equals(this.privateIp, clusterDetail.privateIp)
-            && Objects.equals(this.maintainWindow, clusterDetail.maintainWindow)
-            && Objects.equals(this.resizeInfo, clusterDetail.resizeInfo)
-            && Objects.equals(this.failedReasons, clusterDetail.failedReasons)
-            && Objects.equals(this.elb, clusterDetail.elb);
+        ClusterDetail that = (ClusterDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.endpoints, that.endpoints)
+            && Objects.equals(this.nodes, that.nodes) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.numberOfNode, that.numberOfNode)
+            && Objects.equals(this.recentEvent, that.recentEvent)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.nodeType, that.nodeType) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.publicIp, that.publicIp)
+            && Objects.equals(this.publicEndpoints, that.publicEndpoints)
+            && Objects.equals(this.actionProgress, that.actionProgress)
+            && Objects.equals(this.subStatus, that.subStatus) && Objects.equals(this.taskStatus, that.taskStatus)
+            && Objects.equals(this.parameterGroup, that.parameterGroup)
+            && Objects.equals(this.nodeTypeId, that.nodeTypeId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.maintainWindow, that.maintainWindow)
+            && Objects.equals(this.resizeInfo, that.resizeInfo)
+            && Objects.equals(this.failedReasons, that.failedReasons) && Objects.equals(this.elb, that.elb);
     }
 
     @Override

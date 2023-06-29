@@ -87,17 +87,16 @@ public class CreateDataChannelRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataChannelRequest createDataChannelRequest = (CreateDataChannelRequest) o;
-        return Objects.equals(this.instanceId, createDataChannelRequest.instanceId)
-            && Objects.equals(this.v2xEdgeId, createDataChannelRequest.v2xEdgeId)
-            && Objects.equals(this.body, createDataChannelRequest.body);
+        CreateDataChannelRequest that = (CreateDataChannelRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.v2xEdgeId, that.v2xEdgeId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

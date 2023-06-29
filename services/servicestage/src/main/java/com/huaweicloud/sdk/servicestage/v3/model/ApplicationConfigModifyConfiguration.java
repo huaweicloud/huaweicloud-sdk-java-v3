@@ -16,14 +16,14 @@ public class ApplicationConfigModifyConfiguration {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "env")
 
-    private List<ComponentConfigEnvs> env = null;
+    private List<DnsConfigOptions> env = null;
 
-    public ApplicationConfigModifyConfiguration withEnv(List<ComponentConfigEnvs> env) {
+    public ApplicationConfigModifyConfiguration withEnv(List<DnsConfigOptions> env) {
         this.env = env;
         return this;
     }
 
-    public ApplicationConfigModifyConfiguration addEnvItem(ComponentConfigEnvs envItem) {
+    public ApplicationConfigModifyConfiguration addEnvItem(DnsConfigOptions envItem) {
         if (this.env == null) {
             this.env = new ArrayList<>();
         }
@@ -31,7 +31,7 @@ public class ApplicationConfigModifyConfiguration {
         return this;
     }
 
-    public ApplicationConfigModifyConfiguration withEnv(Consumer<List<ComponentConfigEnvs>> envSetter) {
+    public ApplicationConfigModifyConfiguration withEnv(Consumer<List<DnsConfigOptions>> envSetter) {
         if (this.env == null) {
             this.env = new ArrayList<>();
         }
@@ -43,25 +43,24 @@ public class ApplicationConfigModifyConfiguration {
      * application environment parameters
      * @return env
      */
-    public List<ComponentConfigEnvs> getEnv() {
+    public List<DnsConfigOptions> getEnv() {
         return env;
     }
 
-    public void setEnv(List<ComponentConfigEnvs> env) {
+    public void setEnv(List<DnsConfigOptions> env) {
         this.env = env;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApplicationConfigModifyConfiguration applicationConfigModifyConfiguration =
-            (ApplicationConfigModifyConfiguration) o;
-        return Objects.equals(this.env, applicationConfigModifyConfiguration.env);
+        ApplicationConfigModifyConfiguration that = (ApplicationConfigModifyConfiguration) obj;
+        return Objects.equals(this.env, that.env);
     }
 
     @Override

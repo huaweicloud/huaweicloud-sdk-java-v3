@@ -121,17 +121,17 @@ public class SubCategoryDetailVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubCategoryDetailVO subCategoryDetailVO = (SubCategoryDetailVO) o;
-        return Objects.equals(this.id, subCategoryDetailVO.id) && Objects.equals(this.name, subCategoryDetailVO.name)
-            && Objects.equals(this.type, subCategoryDetailVO.type) && Objects.equals(this.pid, subCategoryDetailVO.pid)
-            && Objects.equals(this.subCategories, subCategoryDetailVO.subCategories);
+        SubCategoryDetailVO that = (SubCategoryDetailVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.pid, that.pid)
+            && Objects.equals(this.subCategories, that.subCategories);
     }
 
     @Override

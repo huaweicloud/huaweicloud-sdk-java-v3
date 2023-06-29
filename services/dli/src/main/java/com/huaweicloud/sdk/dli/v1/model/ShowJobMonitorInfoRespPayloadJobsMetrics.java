@@ -140,19 +140,17 @@ public class ShowJobMonitorInfoRespPayloadJobsMetrics {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowJobMonitorInfoRespPayloadJobsMetrics showJobMonitorInfoRespPayloadJobsMetrics =
-            (ShowJobMonitorInfoRespPayloadJobsMetrics) o;
-        return Objects.equals(this.sources, showJobMonitorInfoRespPayloadJobsMetrics.sources)
-            && Objects.equals(this.sinks, showJobMonitorInfoRespPayloadJobsMetrics.sinks)
-            && Objects.equals(this.totalReadRate, showJobMonitorInfoRespPayloadJobsMetrics.totalReadRate)
-            && Objects.equals(this.totalWriteRate, showJobMonitorInfoRespPayloadJobsMetrics.totalWriteRate);
+        ShowJobMonitorInfoRespPayloadJobsMetrics that = (ShowJobMonitorInfoRespPayloadJobsMetrics) obj;
+        return Objects.equals(this.sources, that.sources) && Objects.equals(this.sinks, that.sinks)
+            && Objects.equals(this.totalReadRate, that.totalReadRate)
+            && Objects.equals(this.totalWriteRate, that.totalWriteRate);
     }
 
     @Override

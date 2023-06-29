@@ -471,34 +471,27 @@ public class RenameInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RenameInstanceResponse renameInstanceResponse = (RenameInstanceResponse) o;
-        return Objects.equals(this.id, renameInstanceResponse.id)
-            && Objects.equals(this.instancename, renameInstanceResponse.instancename)
-            && Objects.equals(this.region, renameInstanceResponse.region)
-            && Objects.equals(this.zone, renameInstanceResponse.zone)
-            && Objects.equals(this.arch, renameInstanceResponse.arch)
-            && Objects.equals(this.cpuFlavor, renameInstanceResponse.cpuFlavor)
-            && Objects.equals(this.vpcId, renameInstanceResponse.vpcId)
-            && Objects.equals(this.subnetId, renameInstanceResponse.subnetId)
-            && Objects.equals(this.serviceIp, renameInstanceResponse.serviceIp)
-            && Objects.equals(this.securityGroupIds, renameInstanceResponse.securityGroupIds)
-            && Objects.equals(this.status, renameInstanceResponse.status)
-            && Objects.equals(this.runStatus, renameInstanceResponse.runStatus)
-            && Objects.equals(this.accessStatus, renameInstanceResponse.accessStatus)
-            && Objects.equals(this.upgradable, renameInstanceResponse.upgradable)
-            && Objects.equals(this.cloudServiceType, renameInstanceResponse.cloudServiceType)
-            && Objects.equals(this.resourceType, renameInstanceResponse.resourceType)
-            && Objects.equals(this.resourceSpecCode, renameInstanceResponse.resourceSpecCode)
-            && Objects.equals(this.specification, renameInstanceResponse.specification)
-            && Objects.equals(this.serverId, renameInstanceResponse.serverId)
-            && Objects.equals(this.createTime, renameInstanceResponse.createTime);
+        RenameInstanceResponse that = (RenameInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.instancename, that.instancename)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.zone, that.zone)
+            && Objects.equals(this.arch, that.arch) && Objects.equals(this.cpuFlavor, that.cpuFlavor)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.serviceIp, that.serviceIp)
+            && Objects.equals(this.securityGroupIds, that.securityGroupIds) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.runStatus, that.runStatus) && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.upgradable, that.upgradable)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode)
+            && Objects.equals(this.specification, that.specification) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

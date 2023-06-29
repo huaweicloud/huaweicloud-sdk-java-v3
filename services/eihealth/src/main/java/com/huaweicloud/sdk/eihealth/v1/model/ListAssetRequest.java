@@ -191,22 +191,18 @@ public class ListAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssetRequest listAssetRequest = (ListAssetRequest) o;
-        return Objects.equals(this.categories, listAssetRequest.categories)
-            && Objects.equals(this.keyWord, listAssetRequest.keyWord)
-            && Objects.equals(this.labels, listAssetRequest.labels)
-            && Objects.equals(this.limit, listAssetRequest.limit)
-            && Objects.equals(this.offset, listAssetRequest.offset)
-            && Objects.equals(this.publishers, listAssetRequest.publishers)
-            && Objects.equals(this.scope, listAssetRequest.scope)
-            && Objects.equals(this.vendorIds, listAssetRequest.vendorIds);
+        ListAssetRequest that = (ListAssetRequest) obj;
+        return Objects.equals(this.categories, that.categories) && Objects.equals(this.keyWord, that.keyWord)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.publishers, that.publishers)
+            && Objects.equals(this.scope, that.scope) && Objects.equals(this.vendorIds, that.vendorIds);
     }
 
     @Override

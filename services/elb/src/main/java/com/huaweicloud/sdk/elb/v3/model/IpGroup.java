@@ -222,19 +222,18 @@ public class IpGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpGroup ipGroup = (IpGroup) o;
-        return Objects.equals(this.createdAt, ipGroup.createdAt)
-            && Objects.equals(this.description, ipGroup.description) && Objects.equals(this.id, ipGroup.id)
-            && Objects.equals(this.ipList, ipGroup.ipList) && Objects.equals(this.listeners, ipGroup.listeners)
-            && Objects.equals(this.name, ipGroup.name) && Objects.equals(this.projectId, ipGroup.projectId)
-            && Objects.equals(this.updatedAt, ipGroup.updatedAt);
+        IpGroup that = (IpGroup) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.ipList, that.ipList)
+            && Objects.equals(this.listeners, that.listeners) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

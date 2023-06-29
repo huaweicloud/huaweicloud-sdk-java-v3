@@ -187,22 +187,18 @@ public class ProjectDetailsAndStatusResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectDetailsAndStatusResult projectDetailsAndStatusResult = (ProjectDetailsAndStatusResult) o;
-        return Objects.equals(this.domainId, projectDetailsAndStatusResult.domainId)
-            && Objects.equals(this.isDomain, projectDetailsAndStatusResult.isDomain)
-            && Objects.equals(this.parentId, projectDetailsAndStatusResult.parentId)
-            && Objects.equals(this.name, projectDetailsAndStatusResult.name)
-            && Objects.equals(this.description, projectDetailsAndStatusResult.description)
-            && Objects.equals(this.id, projectDetailsAndStatusResult.id)
-            && Objects.equals(this.enabled, projectDetailsAndStatusResult.enabled)
-            && Objects.equals(this.status, projectDetailsAndStatusResult.status);
+        ProjectDetailsAndStatusResult that = (ProjectDetailsAndStatusResult) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.isDomain, that.isDomain)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.enabled, that.enabled) && Objects.equals(this.status, that.status);
     }
 
     @Override

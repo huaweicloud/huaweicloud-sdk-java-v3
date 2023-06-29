@@ -303,27 +303,23 @@ public class ListCustomerOrdersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerOrdersRequest listCustomerOrdersRequest = (ListCustomerOrdersRequest) o;
-        return Objects.equals(this.orderId, listCustomerOrdersRequest.orderId)
-            && Objects.equals(this.customerId, listCustomerOrdersRequest.customerId)
-            && Objects.equals(this.createTimeBegin, listCustomerOrdersRequest.createTimeBegin)
-            && Objects.equals(this.createTimeEnd, listCustomerOrdersRequest.createTimeEnd)
-            && Objects.equals(this.serviceTypeCode, listCustomerOrdersRequest.serviceTypeCode)
-            && Objects.equals(this.status, listCustomerOrdersRequest.status)
-            && Objects.equals(this.orderType, listCustomerOrdersRequest.orderType)
-            && Objects.equals(this.limit, listCustomerOrdersRequest.limit)
-            && Objects.equals(this.offset, listCustomerOrdersRequest.offset)
-            && Objects.equals(this.orderBy, listCustomerOrdersRequest.orderBy)
-            && Objects.equals(this.paymentTimeBegin, listCustomerOrdersRequest.paymentTimeBegin)
-            && Objects.equals(this.paymentTimeEnd, listCustomerOrdersRequest.paymentTimeEnd)
-            && Objects.equals(this.indirectPartnerId, listCustomerOrdersRequest.indirectPartnerId);
+        ListCustomerOrdersRequest that = (ListCustomerOrdersRequest) obj;
+        return Objects.equals(this.orderId, that.orderId) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.createTimeBegin, that.createTimeBegin)
+            && Objects.equals(this.createTimeEnd, that.createTimeEnd)
+            && Objects.equals(this.serviceTypeCode, that.serviceTypeCode) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.orderType, that.orderType) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.orderBy, that.orderBy)
+            && Objects.equals(this.paymentTimeBegin, that.paymentTimeBegin)
+            && Objects.equals(this.paymentTimeEnd, that.paymentTimeEnd)
+            && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

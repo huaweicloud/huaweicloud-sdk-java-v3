@@ -35,8 +35,8 @@ public class ListConfigurationsResponse extends SdkResponse {
     private List<QueryRedisConfig> redisConfig = null;
 
     /**
-    * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
-    */
+     * 实例修改状态 - UPDATING - FAILURE - SUCCESS 
+     */
     public static final class ConfigStatusEnum {
 
         /**
@@ -85,22 +85,15 @@ public class ListConfigurationsResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ConfigStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConfigStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConfigStatusEnum(value));
         }
 
         public static ConfigStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConfigStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,19 +222,17 @@ public class ListConfigurationsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigurationsResponse listConfigurationsResponse = (ListConfigurationsResponse) o;
-        return Objects.equals(this.configTime, listConfigurationsResponse.configTime)
-            && Objects.equals(this.instanceId, listConfigurationsResponse.instanceId)
-            && Objects.equals(this.redisConfig, listConfigurationsResponse.redisConfig)
-            && Objects.equals(this.configStatus, listConfigurationsResponse.configStatus)
-            && Objects.equals(this.status, listConfigurationsResponse.status);
+        ListConfigurationsResponse that = (ListConfigurationsResponse) obj;
+        return Objects.equals(this.configTime, that.configTime) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.redisConfig, that.redisConfig)
+            && Objects.equals(this.configStatus, that.configStatus) && Objects.equals(this.status, that.status);
     }
 
     @Override

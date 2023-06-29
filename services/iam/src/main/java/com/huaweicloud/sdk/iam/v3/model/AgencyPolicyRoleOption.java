@@ -131,19 +131,17 @@ public class AgencyPolicyRoleOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyPolicyRoleOption agencyPolicyRoleOption = (AgencyPolicyRoleOption) o;
-        return Objects.equals(this.displayName, agencyPolicyRoleOption.displayName)
-            && Objects.equals(this.type, agencyPolicyRoleOption.type)
-            && Objects.equals(this.description, agencyPolicyRoleOption.description)
-            && Objects.equals(this.descriptionCn, agencyPolicyRoleOption.descriptionCn)
-            && Objects.equals(this.policy, agencyPolicyRoleOption.policy);
+        AgencyPolicyRoleOption that = (AgencyPolicyRoleOption) obj;
+        return Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.descriptionCn, that.descriptionCn) && Objects.equals(this.policy, that.policy);
     }
 
     @Override

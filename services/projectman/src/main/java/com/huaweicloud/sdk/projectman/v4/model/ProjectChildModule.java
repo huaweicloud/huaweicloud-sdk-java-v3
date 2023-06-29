@@ -153,20 +153,17 @@ public class ProjectChildModule {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectChildModule projectChildModule = (ProjectChildModule) o;
-        return Objects.equals(this.moduleId, projectChildModule.moduleId)
-            && Objects.equals(this.moduleName, projectChildModule.moduleName)
-            && Objects.equals(this.owner, projectChildModule.owner)
-            && Objects.equals(this.deepth, projectChildModule.deepth)
-            && Objects.equals(this.isParent, projectChildModule.isParent)
-            && Objects.equals(this.parentModuleId, projectChildModule.parentModuleId);
+        ProjectChildModule that = (ProjectChildModule) obj;
+        return Objects.equals(this.moduleId, that.moduleId) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.owner, that.owner) && Objects.equals(this.deepth, that.deepth)
+            && Objects.equals(this.isParent, that.isParent) && Objects.equals(this.parentModuleId, that.parentModuleId);
     }
 
     @Override

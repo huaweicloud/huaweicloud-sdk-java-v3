@@ -81,16 +81,15 @@ public class DownloadAssetArchiveRequest implements ProgressRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DownloadAssetArchiveRequest downloadAssetArchiveRequest = (DownloadAssetArchiveRequest) o;
-        return Objects.equals(this.instanceId, downloadAssetArchiveRequest.instanceId)
-            && Objects.equals(this.archiveId, downloadAssetArchiveRequest.archiveId);
+        DownloadAssetArchiveRequest that = (DownloadAssetArchiveRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.archiveId, that.archiveId);
     }
 
     @Override

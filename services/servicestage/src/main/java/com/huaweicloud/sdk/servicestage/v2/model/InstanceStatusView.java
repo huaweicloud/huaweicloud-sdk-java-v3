@@ -165,21 +165,18 @@ public class InstanceStatusView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceStatusView instanceStatusView = (InstanceStatusView) o;
-        return Objects.equals(this.status, instanceStatusView.status)
-            && Objects.equals(this.availableReplica, instanceStatusView.availableReplica)
-            && Objects.equals(this.replica, instanceStatusView.replica)
-            && Objects.equals(this.failDetail, instanceStatusView.failDetail)
-            && Objects.equals(this.lastJobId, instanceStatusView.lastJobId)
-            && Objects.equals(this.lastJobStatus, instanceStatusView.lastJobStatus)
-            && Objects.equals(this.enterpriseProjectId, instanceStatusView.enterpriseProjectId);
+        InstanceStatusView that = (InstanceStatusView) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.availableReplica, that.availableReplica)
+            && Objects.equals(this.replica, that.replica) && Objects.equals(this.failDetail, that.failDetail)
+            && Objects.equals(this.lastJobId, that.lastJobId) && Objects.equals(this.lastJobStatus, that.lastJobStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -88,17 +88,16 @@ public class ListAimSendReportsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAimSendReportsResponse listAimSendReportsResponse = (ListAimSendReportsResponse) o;
-        return Objects.equals(this.status, listAimSendReportsResponse.status)
-            && Objects.equals(this.message, listAimSendReportsResponse.message)
-            && Objects.equals(this.data, listAimSendReportsResponse.data);
+        ListAimSendReportsResponse that = (ListAimSendReportsResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

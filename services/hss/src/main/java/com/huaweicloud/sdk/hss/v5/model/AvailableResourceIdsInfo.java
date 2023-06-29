@@ -77,17 +77,16 @@ public class AvailableResourceIdsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailableResourceIdsInfo availableResourceIdsInfo = (AvailableResourceIdsInfo) o;
-        return Objects.equals(this.resourceId, availableResourceIdsInfo.resourceId)
-            && Objects.equals(this.currentTime, availableResourceIdsInfo.currentTime)
-            && Objects.equals(this.sharedQuota, availableResourceIdsInfo.sharedQuota);
+        AvailableResourceIdsInfo that = (AvailableResourceIdsInfo) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.currentTime, that.currentTime)
+            && Objects.equals(this.sharedQuota, that.sharedQuota);
     }
 
     @Override

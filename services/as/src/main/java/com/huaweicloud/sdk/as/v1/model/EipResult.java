@@ -73,22 +73,15 @@ public class EipResult {
             if (value == null) {
                 return null;
             }
-            IpTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IpTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IpTypeEnum(value));
         }
 
         public static IpTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            IpTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,15 +152,15 @@ public class EipResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EipResult eipResult = (EipResult) o;
-        return Objects.equals(this.ipType, eipResult.ipType) && Objects.equals(this.bandwidth, eipResult.bandwidth);
+        EipResult that = (EipResult) obj;
+        return Objects.equals(this.ipType, that.ipType) && Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

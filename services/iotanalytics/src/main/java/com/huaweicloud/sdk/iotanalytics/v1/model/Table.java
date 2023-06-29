@@ -316,22 +316,22 @@ public class Table {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Table table = (Table) o;
-        return Objects.equals(this.tableId, table.tableId) && Objects.equals(this.tableName, table.tableName)
-            && Objects.equals(this.tableAlias, table.tableAlias) && Objects.equals(this.createdTime, table.createdTime)
-            && Objects.equals(this.modifiedTime, table.modifiedTime)
-            && Objects.equals(this.dataLocation, table.dataLocation) && Objects.equals(this.dataType, table.dataType)
-            && Objects.equals(this.dataSource, table.dataSource) && Objects.equals(this.tableType, table.tableType)
-            && Objects.equals(this.description, table.description)
-            && Objects.equals(this.partitionColumns, table.partitionColumns)
-            && Objects.equals(this.dataStoreId, table.dataStoreId) && Objects.equals(this.tags, table.tags);
+        Table that = (Table) obj;
+        return Objects.equals(this.tableId, that.tableId) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.tableAlias, that.tableAlias) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime)
+            && Objects.equals(this.dataLocation, that.dataLocation) && Objects.equals(this.dataType, that.dataType)
+            && Objects.equals(this.dataSource, that.dataSource) && Objects.equals(this.tableType, that.tableType)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.partitionColumns, that.partitionColumns)
+            && Objects.equals(this.dataStoreId, that.dataStoreId) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

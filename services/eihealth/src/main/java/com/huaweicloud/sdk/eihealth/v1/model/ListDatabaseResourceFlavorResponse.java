@@ -75,16 +75,15 @@ public class ListDatabaseResourceFlavorResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDatabaseResourceFlavorResponse listDatabaseResourceFlavorResponse = (ListDatabaseResourceFlavorResponse) o;
-        return Objects.equals(this.count, listDatabaseResourceFlavorResponse.count)
-            && Objects.equals(this.flavors, listDatabaseResourceFlavorResponse.flavors);
+        ListDatabaseResourceFlavorResponse that = (ListDatabaseResourceFlavorResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.flavors, that.flavors);
     }
 
     @Override

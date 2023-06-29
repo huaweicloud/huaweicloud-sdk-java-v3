@@ -101,18 +101,18 @@ public class MemberGroupCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberGroupCreate memberGroupCreate = (MemberGroupCreate) o;
-        return Objects.equals(this.memberGroupName, memberGroupCreate.memberGroupName)
-            && Objects.equals(this.memberGroupRemark, memberGroupCreate.memberGroupRemark)
-            && Objects.equals(this.memberGroupWeight, memberGroupCreate.memberGroupWeight)
-            && Objects.equals(this.dictCode, memberGroupCreate.dictCode);
+        MemberGroupCreate that = (MemberGroupCreate) obj;
+        return Objects.equals(this.memberGroupName, that.memberGroupName)
+            && Objects.equals(this.memberGroupRemark, that.memberGroupRemark)
+            && Objects.equals(this.memberGroupWeight, that.memberGroupWeight)
+            && Objects.equals(this.dictCode, that.dictCode);
     }
 
     @Override

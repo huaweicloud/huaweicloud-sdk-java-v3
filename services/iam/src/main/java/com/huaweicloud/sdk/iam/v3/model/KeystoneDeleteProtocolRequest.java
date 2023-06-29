@@ -55,16 +55,15 @@ public class KeystoneDeleteProtocolRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneDeleteProtocolRequest keystoneDeleteProtocolRequest = (KeystoneDeleteProtocolRequest) o;
-        return Objects.equals(this.idpId, keystoneDeleteProtocolRequest.idpId)
-            && Objects.equals(this.protocolId, keystoneDeleteProtocolRequest.protocolId);
+        KeystoneDeleteProtocolRequest that = (KeystoneDeleteProtocolRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.protocolId, that.protocolId);
     }
 
     @Override

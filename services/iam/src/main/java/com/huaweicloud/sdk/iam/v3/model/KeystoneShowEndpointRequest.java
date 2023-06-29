@@ -33,15 +33,15 @@ public class KeystoneShowEndpointRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowEndpointRequest keystoneShowEndpointRequest = (KeystoneShowEndpointRequest) o;
-        return Objects.equals(this.endpointId, keystoneShowEndpointRequest.endpointId);
+        KeystoneShowEndpointRequest that = (KeystoneShowEndpointRequest) obj;
+        return Objects.equals(this.endpointId, that.endpointId);
     }
 
     @Override

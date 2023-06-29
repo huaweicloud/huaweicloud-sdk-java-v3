@@ -81,22 +81,15 @@ public class RuleAclListResponseDTODataRecords {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -224,22 +217,15 @@ public class RuleAclListResponseDTODataRecords {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -587,31 +573,25 @@ public class RuleAclListResponseDTODataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RuleAclListResponseDTODataRecords ruleAclListResponseDTODataRecords = (RuleAclListResponseDTODataRecords) o;
-        return Objects.equals(this.ruleId, ruleAclListResponseDTODataRecords.ruleId)
-            && Objects.equals(this.addressType, ruleAclListResponseDTODataRecords.addressType)
-            && Objects.equals(this.name, ruleAclListResponseDTODataRecords.name)
-            && Objects.equals(this.sequence, ruleAclListResponseDTODataRecords.sequence)
-            && Objects.equals(this.direction, ruleAclListResponseDTODataRecords.direction)
-            && Objects.equals(this.actionType, ruleAclListResponseDTODataRecords.actionType)
-            && Objects.equals(this.status, ruleAclListResponseDTODataRecords.status)
-            && Objects.equals(this.description, ruleAclListResponseDTODataRecords.description)
-            && Objects.equals(this.longConnectTimeHour, ruleAclListResponseDTODataRecords.longConnectTimeHour)
-            && Objects.equals(this.longConnectTimeMinute, ruleAclListResponseDTODataRecords.longConnectTimeMinute)
-            && Objects.equals(this.longConnectTimeSecond, ruleAclListResponseDTODataRecords.longConnectTimeSecond)
-            && Objects.equals(this.longConnectTime, ruleAclListResponseDTODataRecords.longConnectTime)
-            && Objects.equals(this.longConnectEnable, ruleAclListResponseDTODataRecords.longConnectEnable)
-            && Objects.equals(this.source, ruleAclListResponseDTODataRecords.source)
-            && Objects.equals(this.destination, ruleAclListResponseDTODataRecords.destination)
-            && Objects.equals(this.service, ruleAclListResponseDTODataRecords.service)
-            && Objects.equals(this.type, ruleAclListResponseDTODataRecords.type);
+        RuleAclListResponseDTODataRecords that = (RuleAclListResponseDTODataRecords) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.direction, that.direction) && Objects.equals(this.actionType, that.actionType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.longConnectTimeHour, that.longConnectTimeHour)
+            && Objects.equals(this.longConnectTimeMinute, that.longConnectTimeMinute)
+            && Objects.equals(this.longConnectTimeSecond, that.longConnectTimeSecond)
+            && Objects.equals(this.longConnectTime, that.longConnectTime)
+            && Objects.equals(this.longConnectEnable, that.longConnectEnable)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.service, that.service) && Objects.equals(this.type, that.type);
     }
 
     @Override

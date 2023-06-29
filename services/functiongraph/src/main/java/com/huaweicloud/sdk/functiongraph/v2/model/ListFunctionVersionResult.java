@@ -133,6 +133,11 @@ public class ListFunctionVersionResult {
         public static final RuntimeEnum PYTHON3_9 = new RuntimeEnum("Python3.9");
 
         /**
+         * Enum CUSTOM for value: "Custom"
+         */
+        public static final RuntimeEnum CUSTOM = new RuntimeEnum("Custom");
+
+        /**
          * Enum HTTP for value: "http"
          */
         public static final RuntimeEnum HTTP = new RuntimeEnum("http");
@@ -157,6 +162,7 @@ public class ListFunctionVersionResult {
             map.put("C#(.NET Core 3.1)", C_NET_CORE_3_1_);
             map.put("PHP7.3", PHP7_3);
             map.put("Python3.9", PYTHON3_9);
+            map.put("Custom", CUSTOM);
             map.put("http", HTTP);
             return Collections.unmodifiableMap(map);
         }
@@ -182,22 +188,15 @@ public class ListFunctionVersionResult {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RuntimeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RuntimeEnum(value));
         }
 
         public static RuntimeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RuntimeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -296,22 +295,15 @@ public class ListFunctionVersionResult {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CodeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CodeTypeEnum(value));
         }
 
         public static CodeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CodeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -1159,53 +1151,40 @@ public class ListFunctionVersionResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionVersionResult listFunctionVersionResult = (ListFunctionVersionResult) o;
-        return Objects.equals(this.funcUrn, listFunctionVersionResult.funcUrn)
-            && Objects.equals(this.funcName, listFunctionVersionResult.funcName)
-            && Objects.equals(this.domainId, listFunctionVersionResult.domainId)
-            && Objects.equals(this.namespace, listFunctionVersionResult.namespace)
-            && Objects.equals(this.projectName, listFunctionVersionResult.projectName)
-            && Objects.equals(this._package, listFunctionVersionResult._package)
-            && Objects.equals(this.runtime, listFunctionVersionResult.runtime)
-            && Objects.equals(this.timeout, listFunctionVersionResult.timeout)
-            && Objects.equals(this.handler, listFunctionVersionResult.handler)
-            && Objects.equals(this.memorySize, listFunctionVersionResult.memorySize)
-            && Objects.equals(this.cpu, listFunctionVersionResult.cpu)
-            && Objects.equals(this.codeType, listFunctionVersionResult.codeType)
-            && Objects.equals(this.codeUrl, listFunctionVersionResult.codeUrl)
-            && Objects.equals(this.codeFilename, listFunctionVersionResult.codeFilename)
-            && Objects.equals(this.codeSize, listFunctionVersionResult.codeSize)
-            && Objects.equals(this.userData, listFunctionVersionResult.userData)
-            && Objects.equals(this.encryptedUserData, listFunctionVersionResult.encryptedUserData)
-            && Objects.equals(this.digest, listFunctionVersionResult.digest)
-            && Objects.equals(this.version, listFunctionVersionResult.version)
-            && Objects.equals(this.imageName, listFunctionVersionResult.imageName)
-            && Objects.equals(this.xrole, listFunctionVersionResult.xrole)
-            && Objects.equals(this.appXrole, listFunctionVersionResult.appXrole)
-            && Objects.equals(this.lastModified, listFunctionVersionResult.lastModified)
-            && Objects.equals(this.funcVpcId, listFunctionVersionResult.funcVpcId)
-            && Objects.equals(this.concurrency, listFunctionVersionResult.concurrency)
-            && Objects.equals(this.concurrentNum, listFunctionVersionResult.concurrentNum)
-            && Objects.equals(this.strategyConfig, listFunctionVersionResult.strategyConfig)
-            && Objects.equals(this.initializerHandler, listFunctionVersionResult.initializerHandler)
-            && Objects.equals(this.initializerTimeout, listFunctionVersionResult.initializerTimeout)
-            && Objects.equals(this.longTime, listFunctionVersionResult.longTime)
-            && Objects.equals(this.functionAsyncConfig, listFunctionVersionResult.functionAsyncConfig)
-            && Objects.equals(this.type, listFunctionVersionResult.type)
-            && Objects.equals(this.enableCloudDebug, listFunctionVersionResult.enableCloudDebug)
-            && Objects.equals(this.enableDynamicMemory, listFunctionVersionResult.enableDynamicMemory)
-            && Objects.equals(this.enterpriseProjectId, listFunctionVersionResult.enterpriseProjectId)
-            && Objects.equals(this.isStatefulFunction, listFunctionVersionResult.isStatefulFunction)
-            && Objects.equals(this.enableAuthInHeader, listFunctionVersionResult.enableAuthInHeader)
-            && Objects.equals(this.customImage, listFunctionVersionResult.customImage)
-            && Objects.equals(this.reservedInstanceIdleMode, listFunctionVersionResult.reservedInstanceIdleMode);
+        ListFunctionVersionResult that = (ListFunctionVersionResult) obj;
+        return Objects.equals(this.funcUrn, that.funcUrn) && Objects.equals(this.funcName, that.funcName)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.projectName, that.projectName) && Objects.equals(this._package, that._package)
+            && Objects.equals(this.runtime, that.runtime) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.handler, that.handler) && Objects.equals(this.memorySize, that.memorySize)
+            && Objects.equals(this.cpu, that.cpu) && Objects.equals(this.codeType, that.codeType)
+            && Objects.equals(this.codeUrl, that.codeUrl) && Objects.equals(this.codeFilename, that.codeFilename)
+            && Objects.equals(this.codeSize, that.codeSize) && Objects.equals(this.userData, that.userData)
+            && Objects.equals(this.encryptedUserData, that.encryptedUserData)
+            && Objects.equals(this.digest, that.digest) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.imageName, that.imageName) && Objects.equals(this.xrole, that.xrole)
+            && Objects.equals(this.appXrole, that.appXrole) && Objects.equals(this.lastModified, that.lastModified)
+            && Objects.equals(this.funcVpcId, that.funcVpcId) && Objects.equals(this.concurrency, that.concurrency)
+            && Objects.equals(this.concurrentNum, that.concurrentNum)
+            && Objects.equals(this.strategyConfig, that.strategyConfig)
+            && Objects.equals(this.initializerHandler, that.initializerHandler)
+            && Objects.equals(this.initializerTimeout, that.initializerTimeout)
+            && Objects.equals(this.longTime, that.longTime)
+            && Objects.equals(this.functionAsyncConfig, that.functionAsyncConfig)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.enableCloudDebug, that.enableCloudDebug)
+            && Objects.equals(this.enableDynamicMemory, that.enableDynamicMemory)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.isStatefulFunction, that.isStatefulFunction)
+            && Objects.equals(this.enableAuthInHeader, that.enableAuthInHeader)
+            && Objects.equals(this.customImage, that.customImage)
+            && Objects.equals(this.reservedInstanceIdleMode, that.reservedInstanceIdleMode);
     }
 
     @Override

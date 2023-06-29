@@ -1,44 +1,35 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.UnbindEipReq;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class DetachEipRequest  {
-
+public class DetachEipRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="graph_id")
-    
+    @JsonProperty(value = "graph_id")
 
     private String graphId;
+
     /**
      * 图actionId
      */
     public static final class ActionIdEnum {
 
-        
         /**
          * Enum UNBINDEIP for value: "unbindEip"
          */
         public static final ActionIdEnum UNBINDEIP = new ActionIdEnum("unbindEip");
-        
 
         private static final Map<String, ActionIdEnum> STATIC_FIELDS = createStaticFields();
 
@@ -66,25 +57,18 @@ public class DetachEipRequest  {
 
         @JsonCreator
         public static ActionIdEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionIdEnum(value));
         }
 
         public static ActionIdEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -102,14 +86,12 @@ public class DetachEipRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action_id")
-    
+    @JsonProperty(value = "action_id")
 
     private ActionIdEnum actionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private UnbindEipReq body;
 
@@ -117,9 +99,6 @@ public class DetachEipRequest  {
         this.graphId = graphId;
         return this;
     }
-
-    
-
 
     /**
      * 图ID。
@@ -133,15 +112,10 @@ public class DetachEipRequest  {
         this.graphId = graphId;
     }
 
-    
-
     public DetachEipRequest withActionId(ActionIdEnum actionId) {
         this.actionId = actionId;
         return this;
     }
-
-    
-
 
     /**
      * 图actionId
@@ -155,22 +129,19 @@ public class DetachEipRequest  {
         this.actionId = actionId;
     }
 
-    
-
     public DetachEipRequest withBody(UnbindEipReq body) {
         this.body = body;
         return this;
     }
 
     public DetachEipRequest withBody(Consumer<UnbindEipReq> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new UnbindEipReq();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -184,25 +155,24 @@ public class DetachEipRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetachEipRequest detachEipRequest = (DetachEipRequest) o;
-        return Objects.equals(this.graphId, detachEipRequest.graphId) &&
-            Objects.equals(this.actionId, detachEipRequest.actionId) &&
-            Objects.equals(this.body, detachEipRequest.body);
+        DetachEipRequest that = (DetachEipRequest) obj;
+        return Objects.equals(this.graphId, that.graphId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(graphId, actionId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -213,6 +183,7 @@ public class DetachEipRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -223,8 +194,5 @@ public class DetachEipRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

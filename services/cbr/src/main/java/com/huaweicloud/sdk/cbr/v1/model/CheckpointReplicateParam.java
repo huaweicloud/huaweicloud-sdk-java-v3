@@ -143,20 +143,20 @@ public class CheckpointReplicateParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointReplicateParam checkpointReplicateParam = (CheckpointReplicateParam) o;
-        return Objects.equals(this.autoTrigger, checkpointReplicateParam.autoTrigger)
-            && Objects.equals(this.destinationProjectId, checkpointReplicateParam.destinationProjectId)
-            && Objects.equals(this.destinationRegion, checkpointReplicateParam.destinationRegion)
-            && Objects.equals(this.destinationVaultId, checkpointReplicateParam.destinationVaultId)
-            && Objects.equals(this.enableAcceleration, checkpointReplicateParam.enableAcceleration)
-            && Objects.equals(this.vaultId, checkpointReplicateParam.vaultId);
+        CheckpointReplicateParam that = (CheckpointReplicateParam) obj;
+        return Objects.equals(this.autoTrigger, that.autoTrigger)
+            && Objects.equals(this.destinationProjectId, that.destinationProjectId)
+            && Objects.equals(this.destinationRegion, that.destinationRegion)
+            && Objects.equals(this.destinationVaultId, that.destinationVaultId)
+            && Objects.equals(this.enableAcceleration, that.enableAcceleration)
+            && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

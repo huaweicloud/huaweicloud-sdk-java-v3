@@ -103,18 +103,16 @@ public class CommonParamV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonParamV2 commonParamV2 = (CommonParamV2) o;
-        return Objects.equals(this.paramKey, commonParamV2.paramKey)
-            && Objects.equals(this.paramName, commonParamV2.paramName)
-            && Objects.equals(this.isShow, commonParamV2.isShow)
-            && Objects.equals(this.isRequired, commonParamV2.isRequired);
+        CommonParamV2 that = (CommonParamV2) obj;
+        return Objects.equals(this.paramKey, that.paramKey) && Objects.equals(this.paramName, that.paramName)
+            && Objects.equals(this.isShow, that.isShow) && Objects.equals(this.isRequired, that.isRequired);
     }
 
     @Override

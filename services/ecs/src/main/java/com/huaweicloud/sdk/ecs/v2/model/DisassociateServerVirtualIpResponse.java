@@ -34,16 +34,15 @@ public class DisassociateServerVirtualIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisassociateServerVirtualIpResponse disassociateServerVirtualIpResponse =
-            (DisassociateServerVirtualIpResponse) o;
-        return Objects.equals(this.portId, disassociateServerVirtualIpResponse.portId);
+        DisassociateServerVirtualIpResponse that = (DisassociateServerVirtualIpResponse) obj;
+        return Objects.equals(this.portId, that.portId);
     }
 
     @Override

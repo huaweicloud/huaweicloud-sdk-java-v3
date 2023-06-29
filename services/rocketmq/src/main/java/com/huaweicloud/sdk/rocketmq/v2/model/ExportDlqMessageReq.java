@@ -112,17 +112,16 @@ public class ExportDlqMessageReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportDlqMessageReq exportDlqMessageReq = (ExportDlqMessageReq) o;
-        return Objects.equals(this.topic, exportDlqMessageReq.topic)
-            && Objects.equals(this.msgIdList, exportDlqMessageReq.msgIdList)
-            && Objects.equals(this.uniqKeyList, exportDlqMessageReq.uniqKeyList);
+        ExportDlqMessageReq that = (ExportDlqMessageReq) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.msgIdList, that.msgIdList)
+            && Objects.equals(this.uniqKeyList, that.uniqKeyList);
     }
 
     @Override

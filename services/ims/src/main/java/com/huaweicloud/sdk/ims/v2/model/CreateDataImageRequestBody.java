@@ -98,22 +98,15 @@ public class CreateDataImageRequestBody {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OsTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OsTypeEnum(value));
         }
 
         public static OsTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OsTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -328,23 +321,19 @@ public class CreateDataImageRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDataImageRequestBody createDataImageRequestBody = (CreateDataImageRequestBody) o;
-        return Objects.equals(this.cmkId, createDataImageRequestBody.cmkId)
-            && Objects.equals(this.description, createDataImageRequestBody.description)
-            && Objects.equals(this.enterpriseProjectId, createDataImageRequestBody.enterpriseProjectId)
-            && Objects.equals(this.imageTags, createDataImageRequestBody.imageTags)
-            && Objects.equals(this.imageUrl, createDataImageRequestBody.imageUrl)
-            && Objects.equals(this.minDisk, createDataImageRequestBody.minDisk)
-            && Objects.equals(this.name, createDataImageRequestBody.name)
-            && Objects.equals(this.osType, createDataImageRequestBody.osType)
-            && Objects.equals(this.tags, createDataImageRequestBody.tags);
+        CreateDataImageRequestBody that = (CreateDataImageRequestBody) obj;
+        return Objects.equals(this.cmkId, that.cmkId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.imageTags, that.imageTags) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.minDisk, that.minDisk) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.osType, that.osType) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

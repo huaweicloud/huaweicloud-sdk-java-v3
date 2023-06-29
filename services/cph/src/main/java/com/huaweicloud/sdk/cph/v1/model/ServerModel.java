@@ -159,19 +159,18 @@ public class ServerModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ServerModel serverModel = (ServerModel) o;
-        return Objects.equals(this.serverModelName, serverModel.serverModelName)
-            && Objects.equals(this.serverType, serverModel.serverType) && Objects.equals(this.cpu, serverModel.cpu)
-            && Objects.equals(this.memory, serverModel.memory)
-            && Objects.equals(this.extendSpec, serverModel.extendSpec)
-            && Objects.equals(this.productType, serverModel.productType);
+        ServerModel that = (ServerModel) obj;
+        return Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.serverType, that.serverType) && Objects.equals(this.cpu, that.cpu)
+            && Objects.equals(this.memory, that.memory) && Objects.equals(this.extendSpec, that.extendSpec)
+            && Objects.equals(this.productType, that.productType);
     }
 
     @Override

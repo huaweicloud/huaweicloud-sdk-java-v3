@@ -165,21 +165,18 @@ public class AccountBalanceV3 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccountBalanceV3 accountBalanceV3 = (AccountBalanceV3) o;
-        return Objects.equals(this.accountId, accountBalanceV3.accountId)
-            && Objects.equals(this.accountType, accountBalanceV3.accountType)
-            && Objects.equals(this.amount, accountBalanceV3.amount)
-            && Objects.equals(this.currency, accountBalanceV3.currency)
-            && Objects.equals(this.designatedAmount, accountBalanceV3.designatedAmount)
-            && Objects.equals(this.creditAmount, accountBalanceV3.creditAmount)
-            && Objects.equals(this.measureId, accountBalanceV3.measureId);
+        AccountBalanceV3 that = (AccountBalanceV3) obj;
+        return Objects.equals(this.accountId, that.accountId) && Objects.equals(this.accountType, that.accountType)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.currency, that.currency)
+            && Objects.equals(this.designatedAmount, that.designatedAmount)
+            && Objects.equals(this.creditAmount, that.creditAmount) && Objects.equals(this.measureId, that.measureId);
     }
 
     @Override

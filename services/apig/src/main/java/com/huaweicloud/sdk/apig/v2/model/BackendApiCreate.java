@@ -71,22 +71,15 @@ public class BackendApiCreate {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,22 +187,15 @@ public class BackendApiCreate {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -306,22 +292,15 @@ public class BackendApiCreate {
             if (value == null) {
                 return null;
             }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VpcChannelStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VpcChannelStatusEnum(value));
         }
 
         public static VpcChannelStatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            VpcChannelStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -558,26 +537,22 @@ public class BackendApiCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendApiCreate backendApiCreate = (BackendApiCreate) o;
-        return Objects.equals(this.authorizerId, backendApiCreate.authorizerId)
-            && Objects.equals(this.urlDomain, backendApiCreate.urlDomain)
-            && Objects.equals(this.reqProtocol, backendApiCreate.reqProtocol)
-            && Objects.equals(this.remark, backendApiCreate.remark)
-            && Objects.equals(this.reqMethod, backendApiCreate.reqMethod)
-            && Objects.equals(this.version, backendApiCreate.version)
-            && Objects.equals(this.reqUri, backendApiCreate.reqUri)
-            && Objects.equals(this.timeout, backendApiCreate.timeout)
-            && Objects.equals(this.enableClientSsl, backendApiCreate.enableClientSsl)
-            && Objects.equals(this.retryCount, backendApiCreate.retryCount)
-            && Objects.equals(this.vpcChannelInfo, backendApiCreate.vpcChannelInfo)
-            && Objects.equals(this.vpcChannelStatus, backendApiCreate.vpcChannelStatus);
+        BackendApiCreate that = (BackendApiCreate) obj;
+        return Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.urlDomain, that.urlDomain)
+            && Objects.equals(this.reqProtocol, that.reqProtocol) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.enableClientSsl, that.enableClientSsl)
+            && Objects.equals(this.retryCount, that.retryCount)
+            && Objects.equals(this.vpcChannelInfo, that.vpcChannelInfo)
+            && Objects.equals(this.vpcChannelStatus, that.vpcChannelStatus);
     }
 
     @Override

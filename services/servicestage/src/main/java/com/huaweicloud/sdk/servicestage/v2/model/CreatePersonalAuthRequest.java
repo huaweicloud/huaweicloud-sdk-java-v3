@@ -67,22 +67,15 @@ public class CreatePersonalAuthRequest {
             if (value == null) {
                 return null;
             }
-            RepoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RepoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RepoTypeEnum(value));
         }
 
         public static RepoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RepoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -153,16 +146,15 @@ public class CreatePersonalAuthRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePersonalAuthRequest createPersonalAuthRequest = (CreatePersonalAuthRequest) o;
-        return Objects.equals(this.repoType, createPersonalAuthRequest.repoType)
-            && Objects.equals(this.body, createPersonalAuthRequest.body);
+        CreatePersonalAuthRequest that = (CreatePersonalAuthRequest) obj;
+        return Objects.equals(this.repoType, that.repoType) && Objects.equals(this.body, that.body);
     }
 
     @Override

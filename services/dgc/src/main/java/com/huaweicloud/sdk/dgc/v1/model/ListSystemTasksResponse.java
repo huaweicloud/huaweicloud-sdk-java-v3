@@ -95,22 +95,15 @@ public class ListSystemTasksResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -295,22 +288,18 @@ public class ListSystemTasksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSystemTasksResponse listSystemTasksResponse = (ListSystemTasksResponse) o;
-        return Objects.equals(this.id, listSystemTasksResponse.id)
-            && Objects.equals(this.name, listSystemTasksResponse.name)
-            && Objects.equals(this.startTime, listSystemTasksResponse.startTime)
-            && Objects.equals(this.endTime, listSystemTasksResponse.endTime)
-            && Objects.equals(this.lastUpdate, listSystemTasksResponse.lastUpdate)
-            && Objects.equals(this.status, listSystemTasksResponse.status)
-            && Objects.equals(this.message, listSystemTasksResponse.message)
-            && Objects.equals(this.subTasks, listSystemTasksResponse.subTasks);
+        ListSystemTasksResponse that = (ListSystemTasksResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.lastUpdate, that.lastUpdate) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.subTasks, that.subTasks);
     }
 
     @Override

@@ -66,22 +66,15 @@ public class Member {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -275,18 +268,18 @@ public class Member {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Member member = (Member) o;
-        return Objects.equals(this.status, member.status) && Objects.equals(this.createdAt, member.createdAt)
-            && Objects.equals(this.updatedAt, member.updatedAt) && Objects.equals(this.backupId, member.backupId)
-            && Objects.equals(this.imageId, member.imageId) && Objects.equals(this.destProjectId, member.destProjectId)
-            && Objects.equals(this.vaultId, member.vaultId) && Objects.equals(this.id, member.id);
+        Member that = (Member) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.destProjectId, that.destProjectId)
+            && Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.id, that.id);
     }
 
     @Override

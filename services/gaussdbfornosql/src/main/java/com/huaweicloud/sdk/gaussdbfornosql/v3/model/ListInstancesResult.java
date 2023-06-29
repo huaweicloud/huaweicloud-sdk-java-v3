@@ -592,37 +592,29 @@ public class ListInstancesResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesResult listInstancesResult = (ListInstancesResult) o;
-        return Objects.equals(this.id, listInstancesResult.id) && Objects.equals(this.name, listInstancesResult.name)
-            && Objects.equals(this.status, listInstancesResult.status)
-            && Objects.equals(this.port, listInstancesResult.port)
-            && Objects.equals(this.mode, listInstancesResult.mode)
-            && Objects.equals(this.region, listInstancesResult.region)
-            && Objects.equals(this.datastore, listInstancesResult.datastore)
-            && Objects.equals(this.engine, listInstancesResult.engine)
-            && Objects.equals(this.created, listInstancesResult.created)
-            && Objects.equals(this.updated, listInstancesResult.updated)
-            && Objects.equals(this.dbUserName, listInstancesResult.dbUserName)
-            && Objects.equals(this.vpcId, listInstancesResult.vpcId)
-            && Objects.equals(this.subnetId, listInstancesResult.subnetId)
-            && Objects.equals(this.securityGroupId, listInstancesResult.securityGroupId)
-            && Objects.equals(this.backupStrategy, listInstancesResult.backupStrategy)
-            && Objects.equals(this.payMode, listInstancesResult.payMode)
-            && Objects.equals(this.maintenanceWindow, listInstancesResult.maintenanceWindow)
-            && Objects.equals(this.groups, listInstancesResult.groups)
-            && Objects.equals(this.enterpriseProjectId, listInstancesResult.enterpriseProjectId)
-            && Objects.equals(this.dedicatedResourceId, listInstancesResult.dedicatedResourceId)
-            && Objects.equals(this.timeZone, listInstancesResult.timeZone)
-            && Objects.equals(this.actions, listInstancesResult.actions)
-            && Objects.equals(this.lbIpAddress, listInstancesResult.lbIpAddress)
-            && Objects.equals(this.lbPort, listInstancesResult.lbPort);
+        ListInstancesResult that = (ListInstancesResult) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.mode, that.mode) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.engine, that.engine)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.dbUserName, that.dbUserName) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.backupStrategy, that.backupStrategy) && Objects.equals(this.payMode, that.payMode)
+            && Objects.equals(this.maintenanceWindow, that.maintenanceWindow)
+            && Objects.equals(this.groups, that.groups)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.dedicatedResourceId, that.dedicatedResourceId)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.lbIpAddress, that.lbIpAddress) && Objects.equals(this.lbPort, that.lbPort);
     }
 
     @Override

@@ -59,16 +59,16 @@ public class ListVariablesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVariablesRequest listVariablesRequest = (ListVariablesRequest) o;
-        return Objects.equals(this.variableType, listVariablesRequest.variableType)
-            && Objects.equals(this.testSuiteId, listVariablesRequest.testSuiteId);
+        ListVariablesRequest that = (ListVariablesRequest) obj;
+        return Objects.equals(this.variableType, that.variableType)
+            && Objects.equals(this.testSuiteId, that.testSuiteId);
     }
 
     @Override

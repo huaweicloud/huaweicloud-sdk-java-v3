@@ -74,16 +74,15 @@ public class PolicyItemCondition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyItemCondition policyItemCondition = (PolicyItemCondition) o;
-        return Objects.equals(this.type, policyItemCondition.type)
-            && Objects.equals(this.values, policyItemCondition.values);
+        PolicyItemCondition that = (PolicyItemCondition) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.values, that.values);
     }
 
     @Override

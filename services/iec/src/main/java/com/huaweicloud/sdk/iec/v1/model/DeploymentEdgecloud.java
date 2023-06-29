@@ -140,18 +140,17 @@ public class DeploymentEdgecloud {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentEdgecloud deploymentEdgecloud = (DeploymentEdgecloud) o;
-        return Objects.equals(this.id, deploymentEdgecloud.id) && Objects.equals(this.name, deploymentEdgecloud.name)
-            && Objects.equals(this.stacks, deploymentEdgecloud.stacks)
-            && Objects.equals(this.description, deploymentEdgecloud.description)
-            && Objects.equals(this.coverage, deploymentEdgecloud.coverage);
+        DeploymentEdgecloud that = (DeploymentEdgecloud) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.stacks, that.stacks) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.coverage, that.coverage);
     }
 
     @Override

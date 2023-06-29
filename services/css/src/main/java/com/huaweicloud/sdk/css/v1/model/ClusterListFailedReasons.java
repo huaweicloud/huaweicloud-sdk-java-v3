@@ -55,16 +55,15 @@ public class ClusterListFailedReasons {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterListFailedReasons clusterListFailedReasons = (ClusterListFailedReasons) o;
-        return Objects.equals(this.errorCode, clusterListFailedReasons.errorCode)
-            && Objects.equals(this.errorMsg, clusterListFailedReasons.errorMsg);
+        ClusterListFailedReasons that = (ClusterListFailedReasons) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

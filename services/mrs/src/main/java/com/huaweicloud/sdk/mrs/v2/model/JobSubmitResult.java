@@ -1,47 +1,39 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * JobSubmitResult
  */
-public class JobSubmitResult  {
-
+public class JobSubmitResult {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
+
     /**
      * 作业提交状态。 枚举值： - COMPLETE：作业提交完成。 - FAILED：作业提交失败。
      */
     public static final class StateEnum {
 
-        
         /**
          * Enum COMPLETE for value: "COMPLETE"
          */
         public static final StateEnum COMPLETE = new StateEnum("COMPLETE");
-        
+
         /**
          * Enum FAILED for value: "FAILED"
          */
         public static final StateEnum FAILED = new StateEnum("FAILED");
-        
 
         private static final Map<String, StateEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,25 +62,18 @@ public class JobSubmitResult  {
 
         @JsonCreator
         public static StateEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -106,8 +91,7 @@ public class JobSubmitResult  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private StateEnum state;
 
@@ -115,9 +99,6 @@ public class JobSubmitResult  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 作业ID。
@@ -131,15 +112,10 @@ public class JobSubmitResult  {
         this.jobId = jobId;
     }
 
-    
-
     public JobSubmitResult withState(StateEnum state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 作业提交状态。 枚举值： - COMPLETE：作业提交完成。 - FAILED：作业提交失败。
@@ -153,24 +129,23 @@ public class JobSubmitResult  {
         this.state = state;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobSubmitResult jobSubmitResult = (JobSubmitResult) o;
-        return Objects.equals(this.jobId, jobSubmitResult.jobId) &&
-            Objects.equals(this.state, jobSubmitResult.state);
+        JobSubmitResult that = (JobSubmitResult) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.state, that.state);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobId, state);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -180,6 +155,7 @@ public class JobSubmitResult  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -190,8 +166,5 @@ public class JobSubmitResult  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -55,16 +55,15 @@ public class FirewallSubnetOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FirewallSubnetOption firewallSubnetOption = (FirewallSubnetOption) o;
-        return Objects.equals(this.id, firewallSubnetOption.id)
-            && Objects.equals(this.vpcId, firewallSubnetOption.vpcId);
+        FirewallSubnetOption that = (FirewallSubnetOption) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.vpcId, that.vpcId);
     }
 
     @Override

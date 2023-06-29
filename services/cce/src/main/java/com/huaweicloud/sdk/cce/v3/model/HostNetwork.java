@@ -77,16 +77,16 @@ public class HostNetwork {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HostNetwork hostNetwork = (HostNetwork) o;
-        return Objects.equals(this.vpc, hostNetwork.vpc) && Objects.equals(this.subnet, hostNetwork.subnet)
-            && Objects.equals(this.securityGroup, hostNetwork.securityGroup);
+        HostNetwork that = (HostNetwork) obj;
+        return Objects.equals(this.vpc, that.vpc) && Objects.equals(this.subnet, that.subnet)
+            && Objects.equals(this.securityGroup, that.securityGroup);
     }
 
     @Override

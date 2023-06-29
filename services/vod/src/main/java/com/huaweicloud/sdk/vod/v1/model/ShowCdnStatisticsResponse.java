@@ -97,17 +97,16 @@ public class ShowCdnStatisticsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCdnStatisticsResponse showCdnStatisticsResponse = (ShowCdnStatisticsResponse) o;
-        return Objects.equals(this.startTime, showCdnStatisticsResponse.startTime)
-            && Objects.equals(this.interval, showCdnStatisticsResponse.interval)
-            && Objects.equals(this.values, showCdnStatisticsResponse.values);
+        ShowCdnStatisticsResponse that = (ShowCdnStatisticsResponse) obj;
+        return Objects.equals(this.startTime, that.startTime) && Objects.equals(this.interval, that.interval)
+            && Objects.equals(this.values, that.values);
     }
 
     @Override

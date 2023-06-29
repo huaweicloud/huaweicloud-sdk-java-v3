@@ -100,18 +100,16 @@ public class ShowProjectDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectDetailResponse showProjectDetailResponse = (ShowProjectDetailResponse) o;
-        return Objects.equals(this.namespaceId, showProjectDetailResponse.namespaceId)
-            && Objects.equals(this.namespace, showProjectDetailResponse.namespace)
-            && Objects.equals(this.projectId, showProjectDetailResponse.projectId)
-            && Objects.equals(this.project, showProjectDetailResponse.project);
+        ShowProjectDetailResponse that = (ShowProjectDetailResponse) obj;
+        return Objects.equals(this.namespaceId, that.namespaceId) && Objects.equals(this.namespace, that.namespace)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.project, that.project);
     }
 
     @Override

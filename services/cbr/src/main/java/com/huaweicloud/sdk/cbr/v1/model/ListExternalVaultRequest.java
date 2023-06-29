@@ -70,22 +70,15 @@ public class ListExternalVaultRequest {
             if (value == null) {
                 return null;
             }
-            ProtectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectTypeEnum(value));
         }
 
         public static ProtectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -266,22 +259,18 @@ public class ListExternalVaultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListExternalVaultRequest listExternalVaultRequest = (ListExternalVaultRequest) o;
-        return Objects.equals(this.externalProjectId, listExternalVaultRequest.externalProjectId)
-            && Objects.equals(this.limit, listExternalVaultRequest.limit)
-            && Objects.equals(this.offset, listExternalVaultRequest.offset)
-            && Objects.equals(this.protectType, listExternalVaultRequest.protectType)
-            && Objects.equals(this.regionId, listExternalVaultRequest.regionId)
-            && Objects.equals(this.objcetType, listExternalVaultRequest.objcetType)
-            && Objects.equals(this.cloudType, listExternalVaultRequest.cloudType)
-            && Objects.equals(this.vaultId, listExternalVaultRequest.vaultId);
+        ListExternalVaultRequest that = (ListExternalVaultRequest) obj;
+        return Objects.equals(this.externalProjectId, that.externalProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.protectType, that.protectType)
+            && Objects.equals(this.regionId, that.regionId) && Objects.equals(this.objcetType, that.objcetType)
+            && Objects.equals(this.cloudType, that.cloudType) && Objects.equals(this.vaultId, that.vaultId);
     }
 
     @Override

@@ -121,18 +121,17 @@ public class RelationSimpleInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RelationSimpleInfo relationSimpleInfo = (RelationSimpleInfo) o;
-        return Objects.equals(this.id, relationSimpleInfo.id) && Objects.equals(this.name, relationSimpleInfo.name)
-            && Objects.equals(this.path, relationSimpleInfo.path)
-            && Objects.equals(this.riskLevel, relationSimpleInfo.riskLevel)
-            && Objects.equals(this.type, relationSimpleInfo.type);
+        RelationSimpleInfo that = (RelationSimpleInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.riskLevel, that.riskLevel)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

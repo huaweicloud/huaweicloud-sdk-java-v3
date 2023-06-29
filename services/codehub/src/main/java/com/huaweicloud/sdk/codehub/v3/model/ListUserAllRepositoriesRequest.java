@@ -77,17 +77,16 @@ public class ListUserAllRepositoriesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListUserAllRepositoriesRequest listUserAllRepositoriesRequest = (ListUserAllRepositoriesRequest) o;
-        return Objects.equals(this.pageIndex, listUserAllRepositoriesRequest.pageIndex)
-            && Objects.equals(this.pageSize, listUserAllRepositoriesRequest.pageSize)
-            && Objects.equals(this.search, listUserAllRepositoriesRequest.search);
+        ListUserAllRepositoriesRequest that = (ListUserAllRepositoriesRequest) obj;
+        return Objects.equals(this.pageIndex, that.pageIndex) && Objects.equals(this.pageSize, that.pageSize)
+            && Objects.equals(this.search, that.search);
     }
 
     @Override

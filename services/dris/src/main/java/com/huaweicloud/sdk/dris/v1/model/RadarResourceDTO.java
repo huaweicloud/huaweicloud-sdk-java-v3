@@ -93,22 +93,15 @@ public class RadarResourceDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,23 +319,21 @@ public class RadarResourceDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RadarResourceDTO radarResourceDTO = (RadarResourceDTO) o;
-        return Objects.equals(this.radarId, radarResourceDTO.radarId)
-            && Objects.equals(this.name, radarResourceDTO.name)
-            && Objects.equals(this.v2xEdgeId, radarResourceDTO.v2xEdgeId)
-            && Objects.equals(this.ip, radarResourceDTO.ip) && Objects.equals(this.status, radarResourceDTO.status)
-            && Objects.equals(this.esn, radarResourceDTO.esn)
-            && Objects.equals(this.positionDescription, radarResourceDTO.positionDescription)
-            && Objects.equals(this.createdTime, radarResourceDTO.createdTime)
-            && Objects.equals(this.lastModifiedTime, radarResourceDTO.lastModifiedTime)
-            && Objects.equals(this.lastOnlineTime, radarResourceDTO.lastOnlineTime);
+        RadarResourceDTO that = (RadarResourceDTO) obj;
+        return Objects.equals(this.radarId, that.radarId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.esn, that.esn)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.lastOnlineTime, that.lastOnlineTime);
     }
 
     @Override

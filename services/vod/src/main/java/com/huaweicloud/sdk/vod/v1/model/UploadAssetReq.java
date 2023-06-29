@@ -228,22 +228,15 @@ public class UploadAssetReq {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -315,22 +308,15 @@ public class UploadAssetReq {
             if (value == null) {
                 return null;
             }
-            CoverTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CoverTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CoverTypeEnum(value));
         }
 
         public static CoverTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CoverTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -515,22 +501,18 @@ public class UploadAssetReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAssetReq uploadAssetReq = (UploadAssetReq) o;
-        return Objects.equals(this.assetId, uploadAssetReq.assetId)
-            && Objects.equals(this.videoMd5, uploadAssetReq.videoMd5)
-            && Objects.equals(this.videoName, uploadAssetReq.videoName)
-            && Objects.equals(this.videoType, uploadAssetReq.videoType)
-            && Objects.equals(this.coverId, uploadAssetReq.coverId)
-            && Objects.equals(this.coverType, uploadAssetReq.coverType)
-            && Objects.equals(this.coverMd5, uploadAssetReq.coverMd5)
-            && Objects.equals(this.subtitles, uploadAssetReq.subtitles);
+        UploadAssetReq that = (UploadAssetReq) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.videoMd5, that.videoMd5)
+            && Objects.equals(this.videoName, that.videoName) && Objects.equals(this.videoType, that.videoType)
+            && Objects.equals(this.coverId, that.coverId) && Objects.equals(this.coverType, that.coverType)
+            && Objects.equals(this.coverMd5, that.coverMd5) && Objects.equals(this.subtitles, that.subtitles);
     }
 
     @Override

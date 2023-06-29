@@ -56,16 +56,16 @@ public class DelegatedServiceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DelegatedServiceDto delegatedServiceDto = (DelegatedServiceDto) o;
-        return Objects.equals(this.servicePrincipal, delegatedServiceDto.servicePrincipal)
-            && Objects.equals(this.delegationEnabledAt, delegatedServiceDto.delegationEnabledAt);
+        DelegatedServiceDto that = (DelegatedServiceDto) obj;
+        return Objects.equals(this.servicePrincipal, that.servicePrincipal)
+            && Objects.equals(this.delegationEnabledAt, that.delegationEnabledAt);
     }
 
     @Override

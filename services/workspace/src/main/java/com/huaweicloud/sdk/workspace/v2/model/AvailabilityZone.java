@@ -211,21 +211,19 @@ public class AvailabilityZone {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AvailabilityZone availabilityZone = (AvailabilityZone) o;
-        return Objects.equals(this.availabilityZone, availabilityZone.availabilityZone)
-            && Objects.equals(this.displayName, availabilityZone.displayName)
-            && Objects.equals(this.i18n, availabilityZone.i18n)
-            && Objects.equals(this.soldOut, availabilityZone.soldOut)
-            && Objects.equals(this.productIds, availabilityZone.productIds)
-            && Objects.equals(this.visible, availabilityZone.visible)
-            && Objects.equals(this.defaultAvailabilityZone, availabilityZone.defaultAvailabilityZone);
+        AvailabilityZone that = (AvailabilityZone) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.i18n, that.i18n)
+            && Objects.equals(this.soldOut, that.soldOut) && Objects.equals(this.productIds, that.productIds)
+            && Objects.equals(this.visible, that.visible)
+            && Objects.equals(this.defaultAvailabilityZone, that.defaultAvailabilityZone);
     }
 
     @Override

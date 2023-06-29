@@ -167,21 +167,18 @@ public class CreateMemberOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMemberOption createMemberOption = (CreateMemberOption) o;
-        return Objects.equals(this.address, createMemberOption.address)
-            && Objects.equals(this.adminStateUp, createMemberOption.adminStateUp)
-            && Objects.equals(this.name, createMemberOption.name)
-            && Objects.equals(this.projectId, createMemberOption.projectId)
-            && Objects.equals(this.protocolPort, createMemberOption.protocolPort)
-            && Objects.equals(this.subnetCidrId, createMemberOption.subnetCidrId)
-            && Objects.equals(this.weight, createMemberOption.weight);
+        CreateMemberOption that = (CreateMemberOption) obj;
+        return Objects.equals(this.address, that.address) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.protocolPort, that.protocolPort)
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

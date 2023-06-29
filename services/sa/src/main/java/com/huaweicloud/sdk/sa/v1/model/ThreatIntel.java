@@ -268,24 +268,20 @@ public class ThreatIntel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThreatIntel threatIntel = (ThreatIntel) o;
-        return Objects.equals(this.id, threatIntel.id) && Objects.equals(this.indicatorType, threatIntel.indicatorType)
-            && Objects.equals(this.labels, threatIntel.labels)
-            && Objects.equals(this.confidence, threatIntel.confidence)
-            && Objects.equals(this.informationSource, threatIntel.informationSource)
-            && Objects.equals(this.severity, threatIntel.severity)
-            && Objects.equals(this.description, threatIntel.description)
-            && Objects.equals(this.modified, threatIntel.modified)
-            && Objects.equals(this.validFrom, threatIntel.validFrom)
-            && Objects.equals(this.validUntil, threatIntel.validUntil)
-            && Objects.equals(this.properties, threatIntel.properties);
+        ThreatIntel that = (ThreatIntel) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.indicatorType, that.indicatorType)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.confidence, that.confidence)
+            && Objects.equals(this.informationSource, that.informationSource)
+            && Objects.equals(this.severity, that.severity) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.modified, that.modified) && Objects.equals(this.validFrom, that.validFrom)
+            && Objects.equals(this.validUntil, that.validUntil) && Objects.equals(this.properties, that.properties);
     }
 
     @Override

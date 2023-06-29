@@ -108,20 +108,17 @@ public class OrganizationPolicyAssignmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrganizationPolicyAssignmentRequest organizationPolicyAssignmentRequest =
-            (OrganizationPolicyAssignmentRequest) o;
-        return Objects.equals(this.excludedAccounts, organizationPolicyAssignmentRequest.excludedAccounts)
-            && Objects.equals(this.organizationPolicyAssignmentName,
-                organizationPolicyAssignmentRequest.organizationPolicyAssignmentName)
-            && Objects.equals(this.managedPolicyAssignmentMetadata,
-                organizationPolicyAssignmentRequest.managedPolicyAssignmentMetadata);
+        OrganizationPolicyAssignmentRequest that = (OrganizationPolicyAssignmentRequest) obj;
+        return Objects.equals(this.excludedAccounts, that.excludedAccounts)
+            && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
+            && Objects.equals(this.managedPolicyAssignmentMetadata, that.managedPolicyAssignmentMetadata);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowPortRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPortRequest showPortRequest = (ShowPortRequest) o;
-        return Objects.equals(this.portId, showPortRequest.portId);
+        ShowPortRequest that = (ShowPortRequest) obj;
+        return Objects.equals(this.portId, that.portId);
     }
 
     @Override

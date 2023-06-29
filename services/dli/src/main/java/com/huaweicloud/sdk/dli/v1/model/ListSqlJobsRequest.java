@@ -109,22 +109,15 @@ public class ListSqlJobsRequest {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -203,22 +196,15 @@ public class ListSqlJobsRequest {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -516,28 +502,21 @@ public class ListSqlJobsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSqlJobsRequest listSqlJobsRequest = (ListSqlJobsRequest) o;
-        return Objects.equals(this.currentPage, listSqlJobsRequest.currentPage)
-            && Objects.equals(this.dbName, listSqlJobsRequest.dbName)
-            && Objects.equals(this.end, listSqlJobsRequest.end)
-            && Objects.equals(this.engineType, listSqlJobsRequest.engineType)
-            && Objects.equals(this.jobStatus, listSqlJobsRequest.jobStatus)
-            && Objects.equals(this.jobType, listSqlJobsRequest.jobType)
-            && Objects.equals(this.order, listSqlJobsRequest.order)
-            && Objects.equals(this.owner, listSqlJobsRequest.owner)
-            && Objects.equals(this.pageSize, listSqlJobsRequest.pageSize)
-            && Objects.equals(this.queueName, listSqlJobsRequest.queueName)
-            && Objects.equals(this.sqlPattern, listSqlJobsRequest.sqlPattern)
-            && Objects.equals(this.start, listSqlJobsRequest.start)
-            && Objects.equals(this.tableName, listSqlJobsRequest.tableName)
-            && Objects.equals(this.tags, listSqlJobsRequest.tags);
+        ListSqlJobsRequest that = (ListSqlJobsRequest) obj;
+        return Objects.equals(this.currentPage, that.currentPage) && Objects.equals(this.dbName, that.dbName)
+            && Objects.equals(this.end, that.end) && Objects.equals(this.engineType, that.engineType)
+            && Objects.equals(this.jobStatus, that.jobStatus) && Objects.equals(this.jobType, that.jobType)
+            && Objects.equals(this.order, that.order) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this.sqlPattern, that.sqlPattern) && Objects.equals(this.start, that.start)
+            && Objects.equals(this.tableName, that.tableName) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

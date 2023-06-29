@@ -78,17 +78,17 @@ public class ListApiQuantitiesV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiQuantitiesV2Response listApiQuantitiesV2Response = (ListApiQuantitiesV2Response) o;
-        return Objects.equals(this.instanceNum, listApiQuantitiesV2Response.instanceNum)
-            && Objects.equals(this.numsOnRelease, listApiQuantitiesV2Response.numsOnRelease)
-            && Objects.equals(this.numsOffRelease, listApiQuantitiesV2Response.numsOffRelease);
+        ListApiQuantitiesV2Response that = (ListApiQuantitiesV2Response) obj;
+        return Objects.equals(this.instanceNum, that.instanceNum)
+            && Objects.equals(this.numsOnRelease, that.numsOnRelease)
+            && Objects.equals(this.numsOffRelease, that.numsOffRelease);
     }
 
     @Override

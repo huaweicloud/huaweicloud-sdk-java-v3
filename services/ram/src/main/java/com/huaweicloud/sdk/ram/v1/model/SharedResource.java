@@ -144,20 +144,17 @@ public class SharedResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SharedResource sharedResource = (SharedResource) o;
-        return Objects.equals(this.resourceUrn, sharedResource.resourceUrn)
-            && Objects.equals(this.createdAt, sharedResource.createdAt)
-            && Objects.equals(this.updatedAt, sharedResource.updatedAt)
-            && Objects.equals(this.resourceType, sharedResource.resourceType)
-            && Objects.equals(this.resourceShareId, sharedResource.resourceShareId)
-            && Objects.equals(this.status, sharedResource.status);
+        SharedResource that = (SharedResource) obj;
+        return Objects.equals(this.resourceUrn, that.resourceUrn) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceShareId, that.resourceShareId) && Objects.equals(this.status, that.status);
     }
 
     @Override

@@ -65,17 +65,15 @@ public class CreateRequestThrottlingPolicyV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRequestThrottlingPolicyV2Request createRequestThrottlingPolicyV2Request =
-            (CreateRequestThrottlingPolicyV2Request) o;
-        return Objects.equals(this.instanceId, createRequestThrottlingPolicyV2Request.instanceId)
-            && Objects.equals(this.body, createRequestThrottlingPolicyV2Request.body);
+        CreateRequestThrottlingPolicyV2Request that = (CreateRequestThrottlingPolicyV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

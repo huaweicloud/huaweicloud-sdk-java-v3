@@ -43,15 +43,15 @@ public class ShowPrivateKeyVerifyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPrivateKeyVerifyRequest showPrivateKeyVerifyRequest = (ShowPrivateKeyVerifyRequest) o;
-        return Objects.equals(this.body, showPrivateKeyVerifyRequest.body);
+        ShowPrivateKeyVerifyRequest that = (ShowPrivateKeyVerifyRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

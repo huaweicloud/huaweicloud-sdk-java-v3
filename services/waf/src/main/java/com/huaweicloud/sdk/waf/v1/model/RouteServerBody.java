@@ -60,22 +60,15 @@ public class RouteServerBody {
             if (value == null) {
                 return null;
             }
-            BackProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BackProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BackProtocolEnum(value));
         }
 
         public static BackProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BackProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -159,16 +152,16 @@ public class RouteServerBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteServerBody routeServerBody = (RouteServerBody) o;
-        return Objects.equals(this.backProtocol, routeServerBody.backProtocol)
-            && Objects.equals(this.address, routeServerBody.address) && Objects.equals(this.port, routeServerBody.port);
+        RouteServerBody that = (RouteServerBody) obj;
+        return Objects.equals(this.backProtocol, that.backProtocol) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.port, that.port);
     }
 
     @Override

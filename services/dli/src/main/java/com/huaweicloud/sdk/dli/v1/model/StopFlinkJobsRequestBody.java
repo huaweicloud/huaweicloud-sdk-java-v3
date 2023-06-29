@@ -74,16 +74,15 @@ public class StopFlinkJobsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopFlinkJobsRequestBody stopFlinkJobsRequestBody = (StopFlinkJobsRequestBody) o;
-        return Objects.equals(this.triggerSavepoint, stopFlinkJobsRequestBody.triggerSavepoint)
-            && Objects.equals(this.jobIds, stopFlinkJobsRequestBody.jobIds);
+        StopFlinkJobsRequestBody that = (StopFlinkJobsRequestBody) obj;
+        return Objects.equals(this.triggerSavepoint, that.triggerSavepoint) && Objects.equals(this.jobIds, that.jobIds);
     }
 
     @Override

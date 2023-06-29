@@ -259,24 +259,19 @@ public class CheckAudioJobResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAudioJobResponseBody checkAudioJobResponseBody = (CheckAudioJobResponseBody) o;
-        return Objects.equals(this.id, checkAudioJobResponseBody.id)
-            && Objects.equals(this.description, checkAudioJobResponseBody.description)
-            && Objects.equals(this.state, checkAudioJobResponseBody.state)
-            && Objects.equals(this.name, checkAudioJobResponseBody.name)
-            && Objects.equals(this.serviceConfig, checkAudioJobResponseBody.serviceConfig)
-            && Objects.equals(this.input, checkAudioJobResponseBody.input)
-            && Objects.equals(this.output, checkAudioJobResponseBody.output)
-            && Objects.equals(this.serviceVersion, checkAudioJobResponseBody.serviceVersion)
-            && Objects.equals(this.createdAt, checkAudioJobResponseBody.createdAt)
-            && Objects.equals(this.updatedAt, checkAudioJobResponseBody.updatedAt);
+        CheckAudioJobResponseBody that = (CheckAudioJobResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.serviceConfig, that.serviceConfig) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.output, that.output) && Objects.equals(this.serviceVersion, that.serviceVersion)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class SpecDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpecDto specDto = (SpecDto) o;
-        return Objects.equals(this.code, specDto.code) && Objects.equals(this.name, specDto.name);
+        SpecDto that = (SpecDto) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name);
     }
 
     @Override

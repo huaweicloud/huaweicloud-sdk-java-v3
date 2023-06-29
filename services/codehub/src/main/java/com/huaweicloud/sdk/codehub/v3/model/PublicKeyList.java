@@ -74,15 +74,15 @@ public class PublicKeyList {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicKeyList publicKeyList = (PublicKeyList) o;
-        return Objects.equals(this.sshkey, publicKeyList.sshkey) && Objects.equals(this.total, publicKeyList.total);
+        PublicKeyList that = (PublicKeyList) obj;
+        return Objects.equals(this.sshkey, that.sshkey) && Objects.equals(this.total, that.total);
     }
 
     @Override

@@ -140,17 +140,17 @@ public class VolumeTransfer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeTransfer volumeTransfer = (VolumeTransfer) o;
-        return Objects.equals(this.createdAt, volumeTransfer.createdAt) && Objects.equals(this.id, volumeTransfer.id)
-            && Objects.equals(this.links, volumeTransfer.links) && Objects.equals(this.name, volumeTransfer.name)
-            && Objects.equals(this.volumeId, volumeTransfer.volumeId);
+        VolumeTransfer that = (VolumeTransfer) obj;
+        return Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

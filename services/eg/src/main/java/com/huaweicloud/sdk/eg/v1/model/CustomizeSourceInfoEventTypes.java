@@ -55,16 +55,15 @@ public class CustomizeSourceInfoEventTypes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomizeSourceInfoEventTypes customizeSourceInfoEventTypes = (CustomizeSourceInfoEventTypes) o;
-        return Objects.equals(this.name, customizeSourceInfoEventTypes.name)
-            && Objects.equals(this.description, customizeSourceInfoEventTypes.description);
+        CustomizeSourceInfoEventTypes that = (CustomizeSourceInfoEventTypes) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

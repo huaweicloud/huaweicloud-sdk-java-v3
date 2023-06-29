@@ -143,19 +143,17 @@ public class PunishmentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PunishmentInfo punishmentInfo = (PunishmentInfo) o;
-        return Objects.equals(this.id, punishmentInfo.id) && Objects.equals(this.policyid, punishmentInfo.policyid)
-            && Objects.equals(this.blockTime, punishmentInfo.blockTime)
-            && Objects.equals(this.category, punishmentInfo.category)
-            && Objects.equals(this.description, punishmentInfo.description)
-            && Objects.equals(this.timestamp, punishmentInfo.timestamp);
+        PunishmentInfo that = (PunishmentInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.policyid, that.policyid)
+            && Objects.equals(this.blockTime, that.blockTime) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteSubnetTagRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteSubnetTagRequest deleteSubnetTagRequest = (DeleteSubnetTagRequest) o;
-        return Objects.equals(this.subnetId, deleteSubnetTagRequest.subnetId)
-            && Objects.equals(this.key, deleteSubnetTagRequest.key);
+        DeleteSubnetTagRequest that = (DeleteSubnetTagRequest) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.key, that.key);
     }
 
     @Override

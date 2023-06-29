@@ -77,16 +77,16 @@ public class PropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyRequest propertyRequest = (PropertyRequest) o;
-        return Objects.equals(this.name, propertyRequest.name) && Objects.equals(this.value, propertyRequest.value)
-            && Objects.equals(this.deviceId, propertyRequest.deviceId);
+        PropertyRequest that = (PropertyRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.deviceId, that.deviceId);
     }
 
     @Override

@@ -96,18 +96,16 @@ public class UpdateConfigurationRspConfiguration {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateConfigurationRspConfiguration updateConfigurationRspConfiguration =
-            (UpdateConfigurationRspConfiguration) o;
-        return Objects.equals(this.id, updateConfigurationRspConfiguration.id)
-            && Objects.equals(this.name, updateConfigurationRspConfiguration.name)
-            && Objects.equals(this.ignoredParams, updateConfigurationRspConfiguration.ignoredParams);
+        UpdateConfigurationRspConfiguration that = (UpdateConfigurationRspConfiguration) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ignoredParams, that.ignoredParams);
     }
 
     @Override

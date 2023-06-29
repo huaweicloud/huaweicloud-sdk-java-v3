@@ -396,31 +396,27 @@ public class ShowScaleOutPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowScaleOutPolicyResponse showScaleOutPolicyResponse = (ShowScaleOutPolicyResponse) o;
-        return Objects.equals(this.id, showScaleOutPolicyResponse.id)
-            && Objects.equals(this.name, showScaleOutPolicyResponse.name)
-            && Objects.equals(this.status, showScaleOutPolicyResponse.status)
-            && Objects.equals(this.createTime, showScaleOutPolicyResponse.createTime)
-            && Objects.equals(this.nodeSpec, showScaleOutPolicyResponse.nodeSpec)
-            && Objects.equals(this.availabilityZone, showScaleOutPolicyResponse.availabilityZone)
-            && Objects.equals(this.nodes, showScaleOutPolicyResponse.nodes)
-            && Objects.equals(this.maxNodes, showScaleOutPolicyResponse.maxNodes)
-            && Objects.equals(this.minNodes, showScaleOutPolicyResponse.minNodes)
-            && Objects.equals(this.scalingTimes, showScaleOutPolicyResponse.scalingTimes)
-            && Objects.equals(this.scalingEnable, showScaleOutPolicyResponse.scalingEnable)
-            && Objects.equals(this.cpuRuleEnable, showScaleOutPolicyResponse.cpuRuleEnable)
-            && Objects.equals(this.cpuPercent, showScaleOutPolicyResponse.cpuPercent)
-            && Objects.equals(this.addNodesForCpuRule, showScaleOutPolicyResponse.addNodesForCpuRule)
-            && Objects.equals(this.memRuleEnable, showScaleOutPolicyResponse.memRuleEnable)
-            && Objects.equals(this.memPercent, showScaleOutPolicyResponse.memPercent)
-            && Objects.equals(this.addNodesForMemRule, showScaleOutPolicyResponse.addNodesForMemRule);
+        ShowScaleOutPolicyResponse that = (ShowScaleOutPolicyResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.nodeSpec, that.nodeSpec)
+            && Objects.equals(this.availabilityZone, that.availabilityZone) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.maxNodes, that.maxNodes) && Objects.equals(this.minNodes, that.minNodes)
+            && Objects.equals(this.scalingTimes, that.scalingTimes)
+            && Objects.equals(this.scalingEnable, that.scalingEnable)
+            && Objects.equals(this.cpuRuleEnable, that.cpuRuleEnable)
+            && Objects.equals(this.cpuPercent, that.cpuPercent)
+            && Objects.equals(this.addNodesForCpuRule, that.addNodesForCpuRule)
+            && Objects.equals(this.memRuleEnable, that.memRuleEnable)
+            && Objects.equals(this.memPercent, that.memPercent)
+            && Objects.equals(this.addNodesForMemRule, that.addNodesForMemRule);
     }
 
     @Override

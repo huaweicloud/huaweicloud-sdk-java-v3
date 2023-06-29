@@ -83,22 +83,15 @@ public class ListOpRecordRequest {
             if (value == null) {
                 return null;
             }
-            OperationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationStatusEnum(value));
         }
 
         public static OperationStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class ListOpRecordRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -301,22 +287,15 @@ public class ListOpRecordRequest {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OperationTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OperationTypeEnum(value));
         }
 
         public static OperationTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            OperationTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -429,19 +408,19 @@ public class ListOpRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOpRecordRequest listOpRecordRequest = (ListOpRecordRequest) o;
-        return Objects.equals(this.blockchainId, listOpRecordRequest.blockchainId)
-            && Objects.equals(this.operationStatus, listOpRecordRequest.operationStatus)
-            && Objects.equals(this.resourceType, listOpRecordRequest.resourceType)
-            && Objects.equals(this.operationType, listOpRecordRequest.operationType)
-            && Objects.equals(this.operationId, listOpRecordRequest.operationId);
+        ListOpRecordRequest that = (ListOpRecordRequest) obj;
+        return Objects.equals(this.blockchainId, that.blockchainId)
+            && Objects.equals(this.operationStatus, that.operationStatus)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.operationType, that.operationType)
+            && Objects.equals(this.operationId, that.operationId);
     }
 
     @Override

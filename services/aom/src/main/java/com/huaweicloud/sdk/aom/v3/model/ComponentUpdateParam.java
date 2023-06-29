@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * ComponentUpdateParam
  */
-public class ComponentUpdateParam  {
-
+public class ComponentUpdateParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
@@ -33,9 +24,6 @@ public class ComponentUpdateParam  {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 组件描述
@@ -49,15 +37,10 @@ public class ComponentUpdateParam  {
         this.description = description;
     }
 
-    
-
     public ComponentUpdateParam withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 组件名称
@@ -71,24 +54,23 @@ public class ComponentUpdateParam  {
         this.name = name;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentUpdateParam componentUpdateParam = (ComponentUpdateParam) o;
-        return Objects.equals(this.description, componentUpdateParam.description) &&
-            Objects.equals(this.name, componentUpdateParam.name);
+        ComponentUpdateParam that = (ComponentUpdateParam) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(description, name);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ComponentUpdateParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ComponentUpdateParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

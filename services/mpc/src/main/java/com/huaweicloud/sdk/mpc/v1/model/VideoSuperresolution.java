@@ -79,17 +79,16 @@ public class VideoSuperresolution {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoSuperresolution videoSuperresolution = (VideoSuperresolution) o;
-        return Objects.equals(this.name, videoSuperresolution.name)
-            && Objects.equals(this.executionOrder, videoSuperresolution.executionOrder)
-            && Objects.equals(this.scale, videoSuperresolution.scale);
+        VideoSuperresolution that = (VideoSuperresolution) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.executionOrder, that.executionOrder)
+            && Objects.equals(this.scale, that.scale);
     }
 
     @Override

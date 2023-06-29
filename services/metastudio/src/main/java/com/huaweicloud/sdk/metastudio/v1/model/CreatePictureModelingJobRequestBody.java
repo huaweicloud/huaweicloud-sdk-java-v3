@@ -161,20 +161,17 @@ public class CreatePictureModelingJobRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePictureModelingJobRequestBody createPictureModelingJobRequestBody =
-            (CreatePictureModelingJobRequestBody) o;
-        return Objects.equals(this.file, createPictureModelingJobRequestBody.file)
-            && Objects.equals(this.styleId, createPictureModelingJobRequestBody.styleId)
-            && Objects.equals(this.modelAssetId, createPictureModelingJobRequestBody.modelAssetId)
-            && Objects.equals(this.name, createPictureModelingJobRequestBody.name)
-            && Objects.equals(this.notifyUrl, createPictureModelingJobRequestBody.notifyUrl);
+        CreatePictureModelingJobRequestBody that = (CreatePictureModelingJobRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.styleId, that.styleId)
+            && Objects.equals(this.modelAssetId, that.modelAssetId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.notifyUrl, that.notifyUrl);
     }
 
     @Override

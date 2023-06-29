@@ -83,16 +83,16 @@ public class EventExInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventExInfo eventExInfo = (EventExInfo) o;
-        return Objects.equals(this.participants, eventExInfo.participants)
-            && Objects.equals(this.congestionInfo, eventExInfo.congestionInfo);
+        EventExInfo that = (EventExInfo) obj;
+        return Objects.equals(this.participants, that.participants)
+            && Objects.equals(this.congestionInfo, that.congestionInfo);
     }
 
     @Override

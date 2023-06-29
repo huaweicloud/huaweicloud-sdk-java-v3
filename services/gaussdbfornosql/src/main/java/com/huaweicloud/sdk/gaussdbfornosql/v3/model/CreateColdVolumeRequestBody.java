@@ -55,16 +55,15 @@ public class CreateColdVolumeRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateColdVolumeRequestBody createColdVolumeRequestBody = (CreateColdVolumeRequestBody) o;
-        return Objects.equals(this.size, createColdVolumeRequestBody.size)
-            && Objects.equals(this.isAutoPay, createColdVolumeRequestBody.isAutoPay);
+        CreateColdVolumeRequestBody that = (CreateColdVolumeRequestBody) obj;
+        return Objects.equals(this.size, that.size) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class ImageDetectionResultSimpleDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionResultSimpleDetail imageDetectionResultSimpleDetail = (ImageDetectionResultSimpleDetail) o;
-        return Objects.equals(this.confidence, imageDetectionResultSimpleDetail.confidence)
-            && Objects.equals(this.label, imageDetectionResultSimpleDetail.label);
+        ImageDetectionResultSimpleDetail that = (ImageDetectionResultSimpleDetail) obj;
+        return Objects.equals(this.confidence, that.confidence) && Objects.equals(this.label, that.label);
     }
 
     @Override

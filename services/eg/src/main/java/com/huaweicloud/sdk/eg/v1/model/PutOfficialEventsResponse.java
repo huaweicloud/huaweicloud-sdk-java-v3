@@ -99,17 +99,16 @@ public class PutOfficialEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutOfficialEventsResponse putOfficialEventsResponse = (PutOfficialEventsResponse) o;
-        return Objects.equals(this.failedCount, putOfficialEventsResponse.failedCount)
-            && Objects.equals(this.events, putOfficialEventsResponse.events)
-            && Objects.equals(this.xRequestId, putOfficialEventsResponse.xRequestId);
+        PutOfficialEventsResponse that = (PutOfficialEventsResponse) obj;
+        return Objects.equals(this.failedCount, that.failedCount) && Objects.equals(this.events, that.events)
+            && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

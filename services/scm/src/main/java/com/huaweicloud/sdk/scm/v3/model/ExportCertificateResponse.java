@@ -144,20 +144,20 @@ public class ExportCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportCertificateResponse exportCertificateResponse = (ExportCertificateResponse) o;
-        return Objects.equals(this.entireCertificate, exportCertificateResponse.entireCertificate)
-            && Objects.equals(this.certificate, exportCertificateResponse.certificate)
-            && Objects.equals(this.certificateChain, exportCertificateResponse.certificateChain)
-            && Objects.equals(this.privateKey, exportCertificateResponse.privateKey)
-            && Objects.equals(this.encCertificate, exportCertificateResponse.encCertificate)
-            && Objects.equals(this.encPrivateKey, exportCertificateResponse.encPrivateKey);
+        ExportCertificateResponse that = (ExportCertificateResponse) obj;
+        return Objects.equals(this.entireCertificate, that.entireCertificate)
+            && Objects.equals(this.certificate, that.certificate)
+            && Objects.equals(this.certificateChain, that.certificateChain)
+            && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.encCertificate, that.encCertificate)
+            && Objects.equals(this.encPrivateKey, that.encPrivateKey);
     }
 
     @Override

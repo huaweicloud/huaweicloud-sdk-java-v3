@@ -914,40 +914,37 @@ public class ListListenersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListListenersRequest listListenersRequest = (ListListenersRequest) o;
-        return Objects.equals(this.limit, listListenersRequest.limit)
-            && Objects.equals(this.marker, listListenersRequest.marker)
-            && Objects.equals(this.pageReverse, listListenersRequest.pageReverse)
-            && Objects.equals(this.protocolPort, listListenersRequest.protocolPort)
-            && Objects.equals(this.protocol, listListenersRequest.protocol)
-            && Objects.equals(this.description, listListenersRequest.description)
-            && Objects.equals(this.defaultTlsContainerRef, listListenersRequest.defaultTlsContainerRef)
-            && Objects.equals(this.clientCaTlsContainerRef, listListenersRequest.clientCaTlsContainerRef)
-            && Objects.equals(this.adminStateUp, listListenersRequest.adminStateUp)
-            && Objects.equals(this.connectionLimit, listListenersRequest.connectionLimit)
-            && Objects.equals(this.defaultPoolId, listListenersRequest.defaultPoolId)
-            && Objects.equals(this.id, listListenersRequest.id) && Objects.equals(this.name, listListenersRequest.name)
-            && Objects.equals(this.http2Enable, listListenersRequest.http2Enable)
-            && Objects.equals(this.loadbalancerId, listListenersRequest.loadbalancerId)
-            && Objects.equals(this.tlsCiphersPolicy, listListenersRequest.tlsCiphersPolicy)
-            && Objects.equals(this.memberAddress, listListenersRequest.memberAddress)
-            && Objects.equals(this.memberDeviceId, listListenersRequest.memberDeviceId)
-            && Objects.equals(this.enterpriseProjectId, listListenersRequest.enterpriseProjectId)
-            && Objects.equals(this.enableMemberRetry, listListenersRequest.enableMemberRetry)
-            && Objects.equals(this.memberTimeout, listListenersRequest.memberTimeout)
-            && Objects.equals(this.clientTimeout, listListenersRequest.clientTimeout)
-            && Objects.equals(this.keepaliveTimeout, listListenersRequest.keepaliveTimeout)
-            && Objects.equals(this.transparentClientIpEnable, listListenersRequest.transparentClientIpEnable)
-            && Objects.equals(this.enhanceL7policyEnable, listListenersRequest.enhanceL7policyEnable)
-            && Objects.equals(this.memberInstanceId, listListenersRequest.memberInstanceId)
-            && Objects.equals(this.protectionStatus, listListenersRequest.protectionStatus);
+        ListListenersRequest that = (ListListenersRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.defaultTlsContainerRef, that.defaultTlsContainerRef)
+            && Objects.equals(this.clientCaTlsContainerRef, that.clientCaTlsContainerRef)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.connectionLimit, that.connectionLimit)
+            && Objects.equals(this.defaultPoolId, that.defaultPoolId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.http2Enable, that.http2Enable)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.tlsCiphersPolicy, that.tlsCiphersPolicy)
+            && Objects.equals(this.memberAddress, that.memberAddress)
+            && Objects.equals(this.memberDeviceId, that.memberDeviceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableMemberRetry, that.enableMemberRetry)
+            && Objects.equals(this.memberTimeout, that.memberTimeout)
+            && Objects.equals(this.clientTimeout, that.clientTimeout)
+            && Objects.equals(this.keepaliveTimeout, that.keepaliveTimeout)
+            && Objects.equals(this.transparentClientIpEnable, that.transparentClientIpEnable)
+            && Objects.equals(this.enhanceL7policyEnable, that.enhanceL7policyEnable)
+            && Objects.equals(this.memberInstanceId, that.memberInstanceId)
+            && Objects.equals(this.protectionStatus, that.protectionStatus);
     }
 
     @Override

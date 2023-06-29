@@ -195,22 +195,18 @@ public class ListPlaybookVersionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPlaybookVersionsRequest listPlaybookVersionsRequest = (ListPlaybookVersionsRequest) o;
-        return Objects.equals(this.workspaceId, listPlaybookVersionsRequest.workspaceId)
-            && Objects.equals(this.playbookId, listPlaybookVersionsRequest.playbookId)
-            && Objects.equals(this.status, listPlaybookVersionsRequest.status)
-            && Objects.equals(this.enabled, listPlaybookVersionsRequest.enabled)
-            && Objects.equals(this.versionType, listPlaybookVersionsRequest.versionType)
-            && Objects.equals(this.approveRole, listPlaybookVersionsRequest.approveRole)
-            && Objects.equals(this.offset, listPlaybookVersionsRequest.offset)
-            && Objects.equals(this.limit, listPlaybookVersionsRequest.limit);
+        ListPlaybookVersionsRequest that = (ListPlaybookVersionsRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId) && Objects.equals(this.playbookId, that.playbookId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.enabled, that.enabled)
+            && Objects.equals(this.versionType, that.versionType) && Objects.equals(this.approveRole, that.approveRole)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

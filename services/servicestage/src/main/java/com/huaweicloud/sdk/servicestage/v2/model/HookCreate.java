@@ -55,15 +55,15 @@ public class HookCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HookCreate hookCreate = (HookCreate) o;
-        return Objects.equals(this.secret, hookCreate.secret) && Objects.equals(this.url, hookCreate.url);
+        HookCreate that = (HookCreate) obj;
+        return Objects.equals(this.secret, that.secret) && Objects.equals(this.url, that.url);
     }
 
     @Override

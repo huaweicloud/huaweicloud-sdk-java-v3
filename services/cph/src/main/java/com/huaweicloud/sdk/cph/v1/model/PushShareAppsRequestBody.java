@@ -142,19 +142,18 @@ public class PushShareAppsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushShareAppsRequestBody pushShareAppsRequestBody = (PushShareAppsRequestBody) o;
-        return Objects.equals(this.packageName, pushShareAppsRequestBody.packageName)
-            && Objects.equals(this.preInstallApp, pushShareAppsRequestBody.preInstallApp)
-            && Objects.equals(this.bucketName, pushShareAppsRequestBody.bucketName)
-            && Objects.equals(this.objectPath, pushShareAppsRequestBody.objectPath)
-            && Objects.equals(this.serverIds, pushShareAppsRequestBody.serverIds);
+        PushShareAppsRequestBody that = (PushShareAppsRequestBody) obj;
+        return Objects.equals(this.packageName, that.packageName)
+            && Objects.equals(this.preInstallApp, that.preInstallApp)
+            && Objects.equals(this.bucketName, that.bucketName) && Objects.equals(this.objectPath, that.objectPath)
+            && Objects.equals(this.serverIds, that.serverIds);
     }
 
     @Override

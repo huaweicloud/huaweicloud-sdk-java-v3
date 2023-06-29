@@ -143,20 +143,19 @@ public class QuoteDatabaseResultRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuoteDatabaseResultRsp quoteDatabaseResultRsp = (QuoteDatabaseResultRsp) o;
-        return Objects.equals(this.sourceProjectId, quoteDatabaseResultRsp.sourceProjectId)
-            && Objects.equals(this.sourceDatabaseId, quoteDatabaseResultRsp.sourceDatabaseId)
-            && Objects.equals(this.destinationDatabaseId, quoteDatabaseResultRsp.destinationDatabaseId)
-            && Objects.equals(this.destinationDatabaseName, quoteDatabaseResultRsp.destinationDatabaseName)
-            && Objects.equals(this.failedReason, quoteDatabaseResultRsp.failedReason)
-            && Objects.equals(this.status, quoteDatabaseResultRsp.status);
+        QuoteDatabaseResultRsp that = (QuoteDatabaseResultRsp) obj;
+        return Objects.equals(this.sourceProjectId, that.sourceProjectId)
+            && Objects.equals(this.sourceDatabaseId, that.sourceDatabaseId)
+            && Objects.equals(this.destinationDatabaseId, that.destinationDatabaseId)
+            && Objects.equals(this.destinationDatabaseName, that.destinationDatabaseName)
+            && Objects.equals(this.failedReason, that.failedReason) && Objects.equals(this.status, that.status);
     }
 
     @Override

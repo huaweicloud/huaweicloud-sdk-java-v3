@@ -115,22 +115,15 @@ public class CreateDigitalAssetRequestBody {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetTypeEnum(value));
         }
 
         public static AssetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -333,21 +326,19 @@ public class CreateDigitalAssetRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDigitalAssetRequestBody createDigitalAssetRequestBody = (CreateDigitalAssetRequestBody) o;
-        return Objects.equals(this.assetName, createDigitalAssetRequestBody.assetName)
-            && Objects.equals(this.assetDescription, createDigitalAssetRequestBody.assetDescription)
-            && Objects.equals(this.assetType, createDigitalAssetRequestBody.assetType)
-            && Objects.equals(this.assetOwner, createDigitalAssetRequestBody.assetOwner)
-            && Objects.equals(this.tags, createDigitalAssetRequestBody.tags)
-            && Objects.equals(this.assetExtraMeta, createDigitalAssetRequestBody.assetExtraMeta)
-            && Objects.equals(this.systemProperties, createDigitalAssetRequestBody.systemProperties);
+        CreateDigitalAssetRequestBody that = (CreateDigitalAssetRequestBody) obj;
+        return Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.assetDescription, that.assetDescription)
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetOwner, that.assetOwner)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties);
     }
 
     @Override

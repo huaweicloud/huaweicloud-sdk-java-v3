@@ -150,19 +150,17 @@ public class ShowUpgradeClusterTaskResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowUpgradeClusterTaskResponse showUpgradeClusterTaskResponse = (ShowUpgradeClusterTaskResponse) o;
-        return Objects.equals(this.apiVersion, showUpgradeClusterTaskResponse.apiVersion)
-            && Objects.equals(this.kind, showUpgradeClusterTaskResponse.kind)
-            && Objects.equals(this.metadata, showUpgradeClusterTaskResponse.metadata)
-            && Objects.equals(this.spec, showUpgradeClusterTaskResponse.spec)
-            && Objects.equals(this.status, showUpgradeClusterTaskResponse.status);
+        ShowUpgradeClusterTaskResponse that = (ShowUpgradeClusterTaskResponse) obj;
+        return Objects.equals(this.apiVersion, that.apiVersion) && Objects.equals(this.kind, that.kind)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

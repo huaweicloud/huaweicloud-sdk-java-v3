@@ -297,27 +297,21 @@ public class ComputingResourceFlavorsRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComputingResourceFlavorsRsp computingResourceFlavorsRsp = (ComputingResourceFlavorsRsp) o;
-        return Objects.equals(this.code, computingResourceFlavorsRsp.code)
-            && Objects.equals(this.name, computingResourceFlavorsRsp.name)
-            && Objects.equals(this.ram, computingResourceFlavorsRsp.ram)
-            && Objects.equals(this.vcpus, computingResourceFlavorsRsp.vcpus)
-            && Objects.equals(this.maxRate, computingResourceFlavorsRsp.maxRate)
-            && Objects.equals(this.minRate, computingResourceFlavorsRsp.minRate)
-            && Objects.equals(this.maxPps, computingResourceFlavorsRsp.maxPps)
-            && Objects.equals(this.soldOut, computingResourceFlavorsRsp.soldOut)
-            && Objects.equals(this.cpuDetail, computingResourceFlavorsRsp.cpuDetail)
-            && Objects.equals(this.diskDetail, computingResourceFlavorsRsp.diskDetail)
-            && Objects.equals(this.memoryDetail, computingResourceFlavorsRsp.memoryDetail)
-            && Objects.equals(this.netcardDetail, computingResourceFlavorsRsp.netcardDetail)
-            && Objects.equals(this.cpuArch, computingResourceFlavorsRsp.cpuArch);
+        ComputingResourceFlavorsRsp that = (ComputingResourceFlavorsRsp) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ram, that.ram) && Objects.equals(this.vcpus, that.vcpus)
+            && Objects.equals(this.maxRate, that.maxRate) && Objects.equals(this.minRate, that.minRate)
+            && Objects.equals(this.maxPps, that.maxPps) && Objects.equals(this.soldOut, that.soldOut)
+            && Objects.equals(this.cpuDetail, that.cpuDetail) && Objects.equals(this.diskDetail, that.diskDetail)
+            && Objects.equals(this.memoryDetail, that.memoryDetail)
+            && Objects.equals(this.netcardDetail, that.netcardDetail) && Objects.equals(this.cpuArch, that.cpuArch);
     }
 
     @Override

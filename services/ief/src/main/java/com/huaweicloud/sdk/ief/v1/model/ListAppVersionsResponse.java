@@ -75,16 +75,15 @@ public class ListAppVersionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppVersionsResponse listAppVersionsResponse = (ListAppVersionsResponse) o;
-        return Objects.equals(this.versions, listAppVersionsResponse.versions)
-            && Objects.equals(this.count, listAppVersionsResponse.count);
+        ListAppVersionsResponse that = (ListAppVersionsResponse) obj;
+        return Objects.equals(this.versions, that.versions) && Objects.equals(this.count, that.count);
     }
 
     @Override

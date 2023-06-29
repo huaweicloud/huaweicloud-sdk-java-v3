@@ -171,20 +171,18 @@ public class TestCaseBriefInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TestCaseBriefInfo testCaseBriefInfo = (TestCaseBriefInfo) o;
-        return Objects.equals(this.id, testCaseBriefInfo.id) && Objects.equals(this.name, testCaseBriefInfo.name)
-            && Objects.equals(this.status, testCaseBriefInfo.status)
-            && Objects.equals(this.createTime, testCaseBriefInfo.createTime)
-            && Objects.equals(this.updateTime, testCaseBriefInfo.updateTime)
-            && Objects.equals(this.parentId, testCaseBriefInfo.parentId)
-            && Objects.equals(this.type, testCaseBriefInfo.type);
+        TestCaseBriefInfo that = (TestCaseBriefInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

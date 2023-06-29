@@ -90,16 +90,15 @@ public class InitTargetServer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InitTargetServer initTargetServer = (InitTargetServer) o;
-        return Objects.equals(this.disks, initTargetServer.disks)
-            && Objects.equals(this.volumeGroups, initTargetServer.volumeGroups);
+        InitTargetServer that = (InitTargetServer) obj;
+        return Objects.equals(this.disks, that.disks) && Objects.equals(this.volumeGroups, that.volumeGroups);
     }
 
     @Override

@@ -69,22 +69,15 @@ public class ResizeInstanceReq {
             if (value == null) {
                 return null;
             }
-            NewSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NewSpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NewSpecCodeEnum(value));
         }
 
         public static NewSpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NewSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -146,16 +139,16 @@ public class ResizeInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInstanceReq resizeInstanceReq = (ResizeInstanceReq) o;
-        return Objects.equals(this.newSpecCode, resizeInstanceReq.newSpecCode)
-            && Objects.equals(this.newStorageSpace, resizeInstanceReq.newStorageSpace);
+        ResizeInstanceReq that = (ResizeInstanceReq) obj;
+        return Objects.equals(this.newSpecCode, that.newSpecCode)
+            && Objects.equals(this.newStorageSpace, that.newStorageSpace);
     }
 
     @Override

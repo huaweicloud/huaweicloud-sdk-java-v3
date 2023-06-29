@@ -33,15 +33,15 @@ public class ShowAutoCreatePolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoCreatePolicyRequest showAutoCreatePolicyRequest = (ShowAutoCreatePolicyRequest) o;
-        return Objects.equals(this.clusterId, showAutoCreatePolicyRequest.clusterId);
+        ShowAutoCreatePolicyRequest that = (ShowAutoCreatePolicyRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

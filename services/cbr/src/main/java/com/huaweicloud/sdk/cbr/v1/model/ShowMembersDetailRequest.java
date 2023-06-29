@@ -209,23 +209,19 @@ public class ShowMembersDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMembersDetailRequest showMembersDetailRequest = (ShowMembersDetailRequest) o;
-        return Objects.equals(this.backupId, showMembersDetailRequest.backupId)
-            && Objects.equals(this.destProjectId, showMembersDetailRequest.destProjectId)
-            && Objects.equals(this.imageId, showMembersDetailRequest.imageId)
-            && Objects.equals(this.status, showMembersDetailRequest.status)
-            && Objects.equals(this.vaultId, showMembersDetailRequest.vaultId)
-            && Objects.equals(this.limit, showMembersDetailRequest.limit)
-            && Objects.equals(this.marker, showMembersDetailRequest.marker)
-            && Objects.equals(this.offset, showMembersDetailRequest.offset)
-            && Objects.equals(this.sort, showMembersDetailRequest.sort);
+        ShowMembersDetailRequest that = (ShowMembersDetailRequest) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.destProjectId, that.destProjectId)
+            && Objects.equals(this.imageId, that.imageId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.vaultId, that.vaultId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.sort, that.sort);
     }
 
     @Override

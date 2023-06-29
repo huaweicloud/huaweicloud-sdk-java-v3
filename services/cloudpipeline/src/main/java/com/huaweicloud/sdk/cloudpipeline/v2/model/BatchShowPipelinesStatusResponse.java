@@ -53,15 +53,15 @@ public class BatchShowPipelinesStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchShowPipelinesStatusResponse batchShowPipelinesStatusResponse = (BatchShowPipelinesStatusResponse) o;
-        return Objects.equals(this.body, batchShowPipelinesStatusResponse.body);
+        BatchShowPipelinesStatusResponse that = (BatchShowPipelinesStatusResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

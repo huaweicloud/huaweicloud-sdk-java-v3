@@ -87,17 +87,16 @@ public class UpdateVpcAttachmentRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVpcAttachmentRequest updateVpcAttachmentRequest = (UpdateVpcAttachmentRequest) o;
-        return Objects.equals(this.erId, updateVpcAttachmentRequest.erId)
-            && Objects.equals(this.vpcAttachmentId, updateVpcAttachmentRequest.vpcAttachmentId)
-            && Objects.equals(this.body, updateVpcAttachmentRequest.body);
+        UpdateVpcAttachmentRequest that = (UpdateVpcAttachmentRequest) obj;
+        return Objects.equals(this.erId, that.erId) && Objects.equals(this.vpcAttachmentId, that.vpcAttachmentId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

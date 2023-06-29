@@ -75,16 +75,15 @@ public class CheckRecordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRecordResponse checkRecordResponse = (CheckRecordResponse) o;
-        return Objects.equals(this.data, checkRecordResponse.data)
-            && Objects.equals(this.total, checkRecordResponse.total);
+        CheckRecordResponse that = (CheckRecordResponse) obj;
+        return Objects.equals(this.data, that.data) && Objects.equals(this.total, that.total);
     }
 
     @Override

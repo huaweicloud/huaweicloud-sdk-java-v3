@@ -165,19 +165,19 @@ public class AppInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppInfo appInfo = (AppInfo) o;
-        return Objects.equals(this.envName, appInfo.envName) && Objects.equals(this.envId, appInfo.envId)
-            && Objects.equals(this.appName, appInfo.appName) && Objects.equals(this.appId, appInfo.appId)
-            && Objects.equals(this.onlineCount, appInfo.onlineCount)
-            && Objects.equals(this.disableCount, appInfo.disableCount)
-            && Objects.equals(this.offlineCount, appInfo.offlineCount);
+        AppInfo that = (AppInfo) obj;
+        return Objects.equals(this.envName, that.envName) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.onlineCount, that.onlineCount)
+            && Objects.equals(this.disableCount, that.disableCount)
+            && Objects.equals(this.offlineCount, that.offlineCount);
     }
 
     @Override

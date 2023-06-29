@@ -65,16 +65,15 @@ public class CreateOpenIdConnectConfigRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOpenIdConnectConfigRequest createOpenIdConnectConfigRequest = (CreateOpenIdConnectConfigRequest) o;
-        return Objects.equals(this.idpId, createOpenIdConnectConfigRequest.idpId)
-            && Objects.equals(this.body, createOpenIdConnectConfigRequest.body);
+        CreateOpenIdConnectConfigRequest that = (CreateOpenIdConnectConfigRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.body, that.body);
     }
 
     @Override

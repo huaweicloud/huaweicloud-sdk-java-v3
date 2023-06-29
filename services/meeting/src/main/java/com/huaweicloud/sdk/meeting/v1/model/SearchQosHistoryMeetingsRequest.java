@@ -121,19 +121,17 @@ public class SearchQosHistoryMeetingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQosHistoryMeetingsRequest searchQosHistoryMeetingsRequest = (SearchQosHistoryMeetingsRequest) o;
-        return Objects.equals(this.startDate, searchQosHistoryMeetingsRequest.startDate)
-            && Objects.equals(this.endDate, searchQosHistoryMeetingsRequest.endDate)
-            && Objects.equals(this.offset, searchQosHistoryMeetingsRequest.offset)
-            && Objects.equals(this.limit, searchQosHistoryMeetingsRequest.limit)
-            && Objects.equals(this.searchKey, searchQosHistoryMeetingsRequest.searchKey);
+        SearchQosHistoryMeetingsRequest that = (SearchQosHistoryMeetingsRequest) obj;
+        return Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.searchKey, that.searchKey);
     }
 
     @Override

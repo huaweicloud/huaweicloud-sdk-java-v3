@@ -143,19 +143,19 @@ public class VpcInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcInfo vpcInfo = (VpcInfo) o;
-        return Objects.equals(this.ecsId, vpcInfo.ecsId) && Objects.equals(this.ecsName, vpcInfo.ecsName)
-            && Objects.equals(this.cascadeFlag, vpcInfo.cascadeFlag)
-            && Objects.equals(this.vpcChannelProxyHost, vpcInfo.vpcChannelProxyHost)
-            && Objects.equals(this.vpcChannelId, vpcInfo.vpcChannelId)
-            && Objects.equals(this.vpcChannelPort, vpcInfo.vpcChannelPort);
+        VpcInfo that = (VpcInfo) obj;
+        return Objects.equals(this.ecsId, that.ecsId) && Objects.equals(this.ecsName, that.ecsName)
+            && Objects.equals(this.cascadeFlag, that.cascadeFlag)
+            && Objects.equals(this.vpcChannelProxyHost, that.vpcChannelProxyHost)
+            && Objects.equals(this.vpcChannelId, that.vpcChannelId)
+            && Objects.equals(this.vpcChannelPort, that.vpcChannelPort);
     }
 
     @Override

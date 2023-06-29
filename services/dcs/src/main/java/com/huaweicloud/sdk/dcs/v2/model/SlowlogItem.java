@@ -121,18 +121,17 @@ public class SlowlogItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowlogItem slowlogItem = (SlowlogItem) o;
-        return Objects.equals(this.id, slowlogItem.id) && Objects.equals(this.command, slowlogItem.command)
-            && Objects.equals(this.startTime, slowlogItem.startTime)
-            && Objects.equals(this.duration, slowlogItem.duration)
-            && Objects.equals(this.shardName, slowlogItem.shardName);
+        SlowlogItem that = (SlowlogItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.command, that.command)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.shardName, that.shardName);
     }
 
     @Override

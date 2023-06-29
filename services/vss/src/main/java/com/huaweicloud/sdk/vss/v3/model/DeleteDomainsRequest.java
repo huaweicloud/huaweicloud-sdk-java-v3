@@ -21,7 +21,7 @@ public class DeleteDomainsRequest {
     }
 
     /**
-     * 域名
+     * 网站域名
      * @return domainName
      */
     public String getDomainName() {
@@ -33,15 +33,15 @@ public class DeleteDomainsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDomainsRequest deleteDomainsRequest = (DeleteDomainsRequest) o;
-        return Objects.equals(this.domainName, deleteDomainsRequest.domainName);
+        DeleteDomainsRequest that = (DeleteDomainsRequest) obj;
+        return Objects.equals(this.domainName, that.domainName);
     }
 
     @Override

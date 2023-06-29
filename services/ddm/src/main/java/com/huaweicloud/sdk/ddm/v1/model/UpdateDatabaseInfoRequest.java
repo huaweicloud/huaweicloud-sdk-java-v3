@@ -33,15 +33,15 @@ public class UpdateDatabaseInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseInfoRequest updateDatabaseInfoRequest = (UpdateDatabaseInfoRequest) o;
-        return Objects.equals(this.instanceId, updateDatabaseInfoRequest.instanceId);
+        UpdateDatabaseInfoRequest that = (UpdateDatabaseInfoRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

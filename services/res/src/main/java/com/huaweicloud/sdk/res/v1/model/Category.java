@@ -90,16 +90,16 @@ public class Category {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Category category = (Category) o;
-        return Objects.equals(this.userMetaList, category.userMetaList)
-            && Objects.equals(this.itemMetaList, category.itemMetaList);
+        Category that = (Category) obj;
+        return Objects.equals(this.userMetaList, that.userMetaList)
+            && Objects.equals(this.itemMetaList, that.itemMetaList);
     }
 
     @Override

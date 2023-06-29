@@ -187,22 +187,19 @@ public class AuditDumpRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuditDumpRecord auditDumpRecord = (AuditDumpRecord) o;
-        return Objects.equals(this.clusterId, auditDumpRecord.clusterId)
-            && Objects.equals(this.exectorTime, auditDumpRecord.exectorTime)
-            && Objects.equals(this.beginTime, auditDumpRecord.beginTime)
-            && Objects.equals(this.endTime, auditDumpRecord.endTime)
-            && Objects.equals(this.bucketName, auditDumpRecord.bucketName)
-            && Objects.equals(this.locationPrefix, auditDumpRecord.locationPrefix)
-            && Objects.equals(this.result, auditDumpRecord.result)
-            && Objects.equals(this.failedReason, auditDumpRecord.failedReason);
+        AuditDumpRecord that = (AuditDumpRecord) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.exectorTime, that.exectorTime)
+            && Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.bucketName, that.bucketName)
+            && Objects.equals(this.locationPrefix, that.locationPrefix) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.failedReason, that.failedReason);
     }
 
     @Override

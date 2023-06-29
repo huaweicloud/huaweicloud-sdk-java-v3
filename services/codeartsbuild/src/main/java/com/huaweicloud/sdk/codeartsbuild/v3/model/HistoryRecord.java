@@ -143,18 +143,17 @@ public class HistoryRecord {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HistoryRecord historyRecord = (HistoryRecord) o;
-        return Objects.equals(this.recordId, historyRecord.recordId) && Objects.equals(this.jobId, historyRecord.jobId)
-            && Objects.equals(this.buildNumber, historyRecord.buildNumber)
-            && Objects.equals(this.startTime, historyRecord.startTime)
-            && Objects.equals(this.endTime, historyRecord.endTime) && Objects.equals(this.result, historyRecord.result);
+        HistoryRecord that = (HistoryRecord) obj;
+        return Objects.equals(this.recordId, that.recordId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.buildNumber, that.buildNumber) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.result, that.result);
     }
 
     @Override

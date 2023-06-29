@@ -232,22 +232,19 @@ public class AclBindApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclBindApiInfo aclBindApiInfo = (AclBindApiInfo) o;
-        return Objects.equals(this.apiId, aclBindApiInfo.apiId) && Objects.equals(this.apiName, aclBindApiInfo.apiName)
-            && Objects.equals(this.groupName, aclBindApiInfo.groupName)
-            && Objects.equals(this.apiType, aclBindApiInfo.apiType)
-            && Objects.equals(this.apiRemark, aclBindApiInfo.apiRemark)
-            && Objects.equals(this.envId, aclBindApiInfo.envId) && Objects.equals(this.envName, aclBindApiInfo.envName)
-            && Objects.equals(this.bindId, aclBindApiInfo.bindId)
-            && Objects.equals(this.bindTime, aclBindApiInfo.bindTime)
-            && Objects.equals(this.publishId, aclBindApiInfo.publishId);
+        AclBindApiInfo that = (AclBindApiInfo) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.apiType, that.apiType)
+            && Objects.equals(this.apiRemark, that.apiRemark) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.bindId, that.bindId)
+            && Objects.equals(this.bindTime, that.bindTime) && Objects.equals(this.publishId, that.publishId);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class DeleteApiByVersionIdV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteApiByVersionIdV2Request deleteApiByVersionIdV2Request = (DeleteApiByVersionIdV2Request) o;
-        return Objects.equals(this.instanceId, deleteApiByVersionIdV2Request.instanceId)
-            && Objects.equals(this.versionId, deleteApiByVersionIdV2Request.versionId);
+        DeleteApiByVersionIdV2Request that = (DeleteApiByVersionIdV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.versionId, that.versionId);
     }
 
     @Override

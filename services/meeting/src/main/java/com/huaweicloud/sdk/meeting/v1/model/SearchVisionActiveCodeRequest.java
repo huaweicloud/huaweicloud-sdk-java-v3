@@ -148,20 +148,18 @@ public class SearchVisionActiveCodeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchVisionActiveCodeRequest searchVisionActiveCodeRequest = (SearchVisionActiveCodeRequest) o;
-        return Objects.equals(this.xRequestId, searchVisionActiveCodeRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, searchVisionActiveCodeRequest.acceptLanguage)
-            && Objects.equals(this.offset, searchVisionActiveCodeRequest.offset)
-            && Objects.equals(this.limit, searchVisionActiveCodeRequest.limit)
-            && Objects.equals(this.searchKey, searchVisionActiveCodeRequest.searchKey)
-            && Objects.equals(this.devType, searchVisionActiveCodeRequest.devType);
+        SearchVisionActiveCodeRequest that = (SearchVisionActiveCodeRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.searchKey, that.searchKey)
+            && Objects.equals(this.devType, that.devType);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class UpdateBucketAuthorizedReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBucketAuthorizedReq updateBucketAuthorizedReq = (UpdateBucketAuthorizedReq) o;
-        return Objects.equals(this.bucket, updateBucketAuthorizedReq.bucket)
-            && Objects.equals(this.operation, updateBucketAuthorizedReq.operation);
+        UpdateBucketAuthorizedReq that = (UpdateBucketAuthorizedReq) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.operation, that.operation);
     }
 
     @Override

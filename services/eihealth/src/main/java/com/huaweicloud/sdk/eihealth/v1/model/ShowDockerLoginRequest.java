@@ -33,15 +33,15 @@ public class ShowDockerLoginRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDockerLoginRequest showDockerLoginRequest = (ShowDockerLoginRequest) o;
-        return Objects.equals(this.eihealthProjectId, showDockerLoginRequest.eihealthProjectId);
+        ShowDockerLoginRequest that = (ShowDockerLoginRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId);
     }
 
     @Override

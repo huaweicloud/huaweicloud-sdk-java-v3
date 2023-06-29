@@ -33,16 +33,15 @@ public class UpdatePersonalTemplateStateDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePersonalTemplateStateDataRequest updatePersonalTemplateStateDataRequest =
-            (UpdatePersonalTemplateStateDataRequest) o;
-        return Objects.equals(this.tplState, updatePersonalTemplateStateDataRequest.tplState);
+        UpdatePersonalTemplateStateDataRequest that = (UpdatePersonalTemplateStateDataRequest) obj;
+        return Objects.equals(this.tplState, that.tplState);
     }
 
     @Override

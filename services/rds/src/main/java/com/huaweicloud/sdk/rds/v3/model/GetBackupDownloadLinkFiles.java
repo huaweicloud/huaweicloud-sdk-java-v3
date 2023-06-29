@@ -121,19 +121,18 @@ public class GetBackupDownloadLinkFiles {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetBackupDownloadLinkFiles getBackupDownloadLinkFiles = (GetBackupDownloadLinkFiles) o;
-        return Objects.equals(this.name, getBackupDownloadLinkFiles.name)
-            && Objects.equals(this.size, getBackupDownloadLinkFiles.size)
-            && Objects.equals(this.downloadLink, getBackupDownloadLinkFiles.downloadLink)
-            && Objects.equals(this.linkExpiredTime, getBackupDownloadLinkFiles.linkExpiredTime)
-            && Objects.equals(this.databaseName, getBackupDownloadLinkFiles.databaseName);
+        GetBackupDownloadLinkFiles that = (GetBackupDownloadLinkFiles) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.downloadLink, that.downloadLink)
+            && Objects.equals(this.linkExpiredTime, that.linkExpiredTime)
+            && Objects.equals(this.databaseName, that.databaseName);
     }
 
     @Override

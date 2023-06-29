@@ -148,19 +148,17 @@ public class DeleteCaseLabelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCaseLabelsRequest deleteCaseLabelsRequest = (DeleteCaseLabelsRequest) o;
-        return Objects.equals(this.caseId, deleteCaseLabelsRequest.caseId)
-            && Objects.equals(this.labelIds, deleteCaseLabelsRequest.labelIds)
-            && Objects.equals(this.xSite, deleteCaseLabelsRequest.xSite)
-            && Objects.equals(this.xLanguage, deleteCaseLabelsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, deleteCaseLabelsRequest.xTimeZone);
+        DeleteCaseLabelsRequest that = (DeleteCaseLabelsRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.labelIds, that.labelIds)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

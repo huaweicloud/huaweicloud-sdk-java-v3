@@ -465,29 +465,25 @@ public class ProfileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProfileInfo profileInfo = (ProfileInfo) o;
-        return Objects.equals(this.dbType, profileInfo.dbType) && Objects.equals(this.cancel, profileInfo.cancel)
-            && Objects.equals(this.tableSize, profileInfo.tableSize)
-            && Objects.equals(this.databaseName, profileInfo.databaseName)
-            && Objects.equals(this.obsCommonConfig, profileInfo.obsCommonConfig)
-            && Objects.equals(this.totalRowCount, profileInfo.totalRowCount)
-            && Objects.equals(this.fieldsName, profileInfo.fieldsName)
-            && Objects.equals(this.tableName, profileInfo.tableName) && Objects.equals(this.sample, profileInfo.sample)
-            && Objects.equals(this.updateDate, profileInfo.updateDate)
-            && Objects.equals(this.rowCount, profileInfo.rowCount)
-            && Objects.equals(this.columnCount, profileInfo.columnCount)
-            && Objects.equals(this.unique, profileInfo.unique) && Objects.equals(this.autoStop, profileInfo.autoStop)
-            && Objects.equals(this.timeProfile, profileInfo.timeProfile)
-            && Objects.equals(this.queue, profileInfo.queue) && Objects.equals(this.dwId, profileInfo.dwId)
-            && Objects.equals(this.colunmsMetric, profileInfo.colunmsMetric)
-            && Objects.equals(this.columnsList, profileInfo.columnsList);
+        ProfileInfo that = (ProfileInfo) obj;
+        return Objects.equals(this.dbType, that.dbType) && Objects.equals(this.cancel, that.cancel)
+            && Objects.equals(this.tableSize, that.tableSize) && Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.obsCommonConfig, that.obsCommonConfig)
+            && Objects.equals(this.totalRowCount, that.totalRowCount)
+            && Objects.equals(this.fieldsName, that.fieldsName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.sample, that.sample) && Objects.equals(this.updateDate, that.updateDate)
+            && Objects.equals(this.rowCount, that.rowCount) && Objects.equals(this.columnCount, that.columnCount)
+            && Objects.equals(this.unique, that.unique) && Objects.equals(this.autoStop, that.autoStop)
+            && Objects.equals(this.timeProfile, that.timeProfile) && Objects.equals(this.queue, that.queue)
+            && Objects.equals(this.dwId, that.dwId) && Objects.equals(this.colunmsMetric, that.colunmsMetric)
+            && Objects.equals(this.columnsList, that.columnsList);
     }
 
     @Override

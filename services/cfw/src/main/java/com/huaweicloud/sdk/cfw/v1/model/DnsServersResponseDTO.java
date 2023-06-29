@@ -99,18 +99,16 @@ public class DnsServersResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DnsServersResponseDTO dnsServersResponseDTO = (DnsServersResponseDTO) o;
-        return Objects.equals(this.id, dnsServersResponseDTO.id)
-            && Objects.equals(this.isApplied, dnsServersResponseDTO.isApplied)
-            && Objects.equals(this.isCustomized, dnsServersResponseDTO.isCustomized)
-            && Objects.equals(this.serverIp, dnsServersResponseDTO.serverIp);
+        DnsServersResponseDTO that = (DnsServersResponseDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.isApplied, that.isApplied)
+            && Objects.equals(this.isCustomized, that.isCustomized) && Objects.equals(this.serverIp, that.serverIp);
     }
 
     @Override

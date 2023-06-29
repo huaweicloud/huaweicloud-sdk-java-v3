@@ -260,24 +260,20 @@ public class CreateOtaPackageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateOtaPackageResponse createOtaPackageResponse = (CreateOtaPackageResponse) o;
-        return Objects.equals(this.packageId, createOtaPackageResponse.packageId)
-            && Objects.equals(this.appId, createOtaPackageResponse.appId)
-            && Objects.equals(this.packageType, createOtaPackageResponse.packageType)
-            && Objects.equals(this.productId, createOtaPackageResponse.productId)
-            && Objects.equals(this.version, createOtaPackageResponse.version)
-            && Objects.equals(this.supportSourceVersions, createOtaPackageResponse.supportSourceVersions)
-            && Objects.equals(this.description, createOtaPackageResponse.description)
-            && Objects.equals(this.customInfo, createOtaPackageResponse.customInfo)
-            && Objects.equals(this.createTime, createOtaPackageResponse.createTime)
-            && Objects.equals(this.fileLocation, createOtaPackageResponse.fileLocation);
+        CreateOtaPackageResponse that = (CreateOtaPackageResponse) obj;
+        return Objects.equals(this.packageId, that.packageId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.packageType, that.packageType) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.version, that.version)
+            && Objects.equals(this.supportSourceVersions, that.supportSourceVersions)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.customInfo, that.customInfo)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.fileLocation, that.fileLocation);
     }
 
     @Override

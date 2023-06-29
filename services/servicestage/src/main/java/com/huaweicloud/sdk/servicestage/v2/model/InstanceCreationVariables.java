@@ -55,16 +55,15 @@ public class InstanceCreationVariables {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceCreationVariables instanceCreationVariables = (InstanceCreationVariables) o;
-        return Objects.equals(this.environment, instanceCreationVariables.environment)
-            && Objects.equals(this.components, instanceCreationVariables.components);
+        InstanceCreationVariables that = (InstanceCreationVariables) obj;
+        return Objects.equals(this.environment, that.environment) && Objects.equals(this.components, that.components);
     }
 
     @Override

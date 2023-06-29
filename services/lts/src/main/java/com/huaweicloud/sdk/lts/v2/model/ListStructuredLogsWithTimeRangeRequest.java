@@ -65,17 +65,15 @@ public class ListStructuredLogsWithTimeRangeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStructuredLogsWithTimeRangeRequest listStructuredLogsWithTimeRangeRequest =
-            (ListStructuredLogsWithTimeRangeRequest) o;
-        return Objects.equals(this.logStreamId, listStructuredLogsWithTimeRangeRequest.logStreamId)
-            && Objects.equals(this.body, listStructuredLogsWithTimeRangeRequest.body);
+        ListStructuredLogsWithTimeRangeRequest that = (ListStructuredLogsWithTimeRangeRequest) obj;
+        return Objects.equals(this.logStreamId, that.logStreamId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -75,16 +75,15 @@ public class ListConfigMapsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfigMapsResponse listConfigMapsResponse = (ListConfigMapsResponse) o;
-        return Objects.equals(this.configmaps, listConfigMapsResponse.configmaps)
-            && Objects.equals(this.count, listConfigMapsResponse.count);
+        ListConfigMapsResponse that = (ListConfigMapsResponse) obj;
+        return Objects.equals(this.configmaps, that.configmaps) && Objects.equals(this.count, that.count);
     }
 
     @Override

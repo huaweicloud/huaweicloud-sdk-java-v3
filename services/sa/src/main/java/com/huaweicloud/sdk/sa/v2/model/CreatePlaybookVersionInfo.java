@@ -294,26 +294,22 @@ public class CreatePlaybookVersionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePlaybookVersionInfo createPlaybookVersionInfo = (CreatePlaybookVersionInfo) o;
-        return Objects.equals(this.description, createPlaybookVersionInfo.description)
-            && Objects.equals(this.workspaceId, createPlaybookVersionInfo.workspaceId)
-            && Objects.equals(this.playbookId, createPlaybookVersionInfo.playbookId)
-            && Objects.equals(this.actions, createPlaybookVersionInfo.actions)
-            && Objects.equals(this.dataclassId, createPlaybookVersionInfo.dataclassId)
-            && Objects.equals(this.ruleEnable, createPlaybookVersionInfo.ruleEnable)
-            && Objects.equals(this.ruleId, createPlaybookVersionInfo.ruleId)
-            && Objects.equals(this.triggerType, createPlaybookVersionInfo.triggerType)
-            && Objects.equals(this.dataobjectCreate, createPlaybookVersionInfo.dataobjectCreate)
-            && Objects.equals(this.dataobjectUpdate, createPlaybookVersionInfo.dataobjectUpdate)
-            && Objects.equals(this.dataobjectDelete, createPlaybookVersionInfo.dataobjectDelete)
-            && Objects.equals(this.actionStrategy, createPlaybookVersionInfo.actionStrategy);
+        CreatePlaybookVersionInfo that = (CreatePlaybookVersionInfo) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.playbookId, that.playbookId) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.dataclassId, that.dataclassId) && Objects.equals(this.ruleEnable, that.ruleEnable)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.dataobjectCreate, that.dataobjectCreate)
+            && Objects.equals(this.dataobjectUpdate, that.dataobjectUpdate)
+            && Objects.equals(this.dataobjectDelete, that.dataobjectDelete)
+            && Objects.equals(this.actionStrategy, that.actionStrategy);
     }
 
     @Override

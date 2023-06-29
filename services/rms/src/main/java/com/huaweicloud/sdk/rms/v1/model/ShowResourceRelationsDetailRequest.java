@@ -65,22 +65,15 @@ public class ShowResourceRelationsDetailRequest {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DirectionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DirectionEnum(value));
         }
 
         public static DirectionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DirectionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,18 +176,16 @@ public class ShowResourceRelationsDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceRelationsDetailRequest showResourceRelationsDetailRequest = (ShowResourceRelationsDetailRequest) o;
-        return Objects.equals(this.resourceId, showResourceRelationsDetailRequest.resourceId)
-            && Objects.equals(this.direction, showResourceRelationsDetailRequest.direction)
-            && Objects.equals(this.limit, showResourceRelationsDetailRequest.limit)
-            && Objects.equals(this.marker, showResourceRelationsDetailRequest.marker);
+        ShowResourceRelationsDetailRequest that = (ShowResourceRelationsDetailRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

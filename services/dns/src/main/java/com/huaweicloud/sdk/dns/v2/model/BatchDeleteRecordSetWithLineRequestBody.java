@@ -52,16 +52,15 @@ public class BatchDeleteRecordSetWithLineRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteRecordSetWithLineRequestBody batchDeleteRecordSetWithLineRequestBody =
-            (BatchDeleteRecordSetWithLineRequestBody) o;
-        return Objects.equals(this.recordsetIds, batchDeleteRecordSetWithLineRequestBody.recordsetIds);
+        BatchDeleteRecordSetWithLineRequestBody that = (BatchDeleteRecordSetWithLineRequestBody) obj;
+        return Objects.equals(this.recordsetIds, that.recordsetIds);
     }
 
     @Override

@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.nlp.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class RunDocClassificationResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="result")
-    
+    @JsonProperty(value = "result")
 
     private Object result;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_code")
-    
+    @JsonProperty(value = "error_code")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="error_msg")
-    
+    @JsonProperty(value = "error_msg")
 
     private String errorMsg;
 
@@ -42,9 +30,6 @@ public class RunDocClassificationResponse extends SdkResponse {
         this.result = result;
         return this;
     }
-
-    
-
 
     /**
      * 标签列表
@@ -58,15 +43,10 @@ public class RunDocClassificationResponse extends SdkResponse {
         this.result = result;
     }
 
-    
-
     public RunDocClassificationResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误码，具体请参见错误码。调用成功时无此字段。
@@ -80,15 +60,10 @@ public class RunDocClassificationResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public RunDocClassificationResponse withErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
         return this;
     }
-
-    
-
 
     /**
      * 调用失败时的错误信息。调用成功时无此字段。
@@ -102,25 +77,24 @@ public class RunDocClassificationResponse extends SdkResponse {
         this.errorMsg = errorMsg;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunDocClassificationResponse runDocClassificationResponse = (RunDocClassificationResponse) o;
-        return Objects.equals(this.result, runDocClassificationResponse.result) &&
-            Objects.equals(this.errorCode, runDocClassificationResponse.errorCode) &&
-            Objects.equals(this.errorMsg, runDocClassificationResponse.errorMsg);
+        RunDocClassificationResponse that = (RunDocClassificationResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(result, errorCode, errorMsg);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class RunDocClassificationResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class RunDocClassificationResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

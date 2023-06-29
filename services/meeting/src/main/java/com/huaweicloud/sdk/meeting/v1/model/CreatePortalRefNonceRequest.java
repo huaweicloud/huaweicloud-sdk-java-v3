@@ -57,16 +57,16 @@ public class CreatePortalRefNonceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePortalRefNonceRequest createPortalRefNonceRequest = (CreatePortalRefNonceRequest) o;
-        return Objects.equals(this.xRequestId, createPortalRefNonceRequest.xRequestId)
-            && Objects.equals(this.acceptLanguage, createPortalRefNonceRequest.acceptLanguage);
+        CreatePortalRefNonceRequest that = (CreatePortalRefNonceRequest) obj;
+        return Objects.equals(this.xRequestId, that.xRequestId)
+            && Objects.equals(this.acceptLanguage, that.acceptLanguage);
     }
 
     @Override

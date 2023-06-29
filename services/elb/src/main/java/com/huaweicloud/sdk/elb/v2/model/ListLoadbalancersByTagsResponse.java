@@ -75,16 +75,15 @@ public class ListLoadbalancersByTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLoadbalancersByTagsResponse listLoadbalancersByTagsResponse = (ListLoadbalancersByTagsResponse) o;
-        return Objects.equals(this.totalCount, listLoadbalancersByTagsResponse.totalCount)
-            && Objects.equals(this.resources, listLoadbalancersByTagsResponse.resources);
+        ListLoadbalancersByTagsResponse that = (ListLoadbalancersByTagsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount) && Objects.equals(this.resources, that.resources);
     }
 
     @Override

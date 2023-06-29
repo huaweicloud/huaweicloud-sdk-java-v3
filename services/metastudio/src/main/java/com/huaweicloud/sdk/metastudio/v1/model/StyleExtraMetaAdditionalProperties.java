@@ -219,21 +219,19 @@ public class StyleExtraMetaAdditionalProperties {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StyleExtraMetaAdditionalProperties styleExtraMetaAdditionalProperties = (StyleExtraMetaAdditionalProperties) o;
-        return Objects.equals(this.icon, styleExtraMetaAdditionalProperties.icon)
-            && Objects.equals(this.label, styleExtraMetaAdditionalProperties.label)
-            && Objects.equals(this.useAlgFile, styleExtraMetaAdditionalProperties.useAlgFile)
-            && Objects.equals(this.algorithmClassifyTag, styleExtraMetaAdditionalProperties.algorithmClassifyTag)
-            && Objects.equals(this.modelBodyStyle, styleExtraMetaAdditionalProperties.modelBodyStyle)
-            && Objects.equals(this.mcAsset, styleExtraMetaAdditionalProperties.mcAsset)
-            && Objects.equals(this.ueAsset, styleExtraMetaAdditionalProperties.ueAsset);
+        StyleExtraMetaAdditionalProperties that = (StyleExtraMetaAdditionalProperties) obj;
+        return Objects.equals(this.icon, that.icon) && Objects.equals(this.label, that.label)
+            && Objects.equals(this.useAlgFile, that.useAlgFile)
+            && Objects.equals(this.algorithmClassifyTag, that.algorithmClassifyTag)
+            && Objects.equals(this.modelBodyStyle, that.modelBodyStyle) && Objects.equals(this.mcAsset, that.mcAsset)
+            && Objects.equals(this.ueAsset, that.ueAsset);
     }
 
     @Override

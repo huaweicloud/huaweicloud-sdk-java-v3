@@ -79,17 +79,16 @@ public class DeleteCommandRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteCommandRequest deleteCommandRequest = (DeleteCommandRequest) o;
-        return Objects.equals(this.instanceId, deleteCommandRequest.instanceId)
-            && Objects.equals(this.serviceId, deleteCommandRequest.serviceId)
-            && Objects.equals(this.commandId, deleteCommandRequest.commandId);
+        DeleteCommandRequest that = (DeleteCommandRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId);
     }
 
     @Override

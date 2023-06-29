@@ -342,26 +342,21 @@ public class ListenerDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListenerDetail listenerDetail = (ListenerDetail) o;
-        return Objects.equals(this.id, listenerDetail.id) && Objects.equals(this.name, listenerDetail.name)
-            && Objects.equals(this.description, listenerDetail.description)
-            && Objects.equals(this.protocol, listenerDetail.protocol)
-            && Objects.equals(this.status, listenerDetail.status)
-            && Objects.equals(this.portRanges, listenerDetail.portRanges)
-            && Objects.equals(this.clientAffinity, listenerDetail.clientAffinity)
-            && Objects.equals(this.acceleratorId, listenerDetail.acceleratorId)
-            && Objects.equals(this.createdAt, listenerDetail.createdAt)
-            && Objects.equals(this.updatedAt, listenerDetail.updatedAt)
-            && Objects.equals(this.domainId, listenerDetail.domainId)
-            && Objects.equals(this.frozenInfo, listenerDetail.frozenInfo)
-            && Objects.equals(this.tags, listenerDetail.tags);
+        ListenerDetail that = (ListenerDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.portRanges, that.portRanges)
+            && Objects.equals(this.clientAffinity, that.clientAffinity)
+            && Objects.equals(this.acceleratorId, that.acceleratorId) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.frozenInfo, that.frozenInfo) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

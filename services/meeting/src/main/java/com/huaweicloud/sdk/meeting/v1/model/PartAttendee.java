@@ -165,18 +165,18 @@ public class PartAttendee {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PartAttendee partAttendee = (PartAttendee) o;
-        return Objects.equals(this.name, partAttendee.name) && Objects.equals(this.phone, partAttendee.phone)
-            && Objects.equals(this.phone2, partAttendee.phone2) && Objects.equals(this.phone3, partAttendee.phone3)
-            && Objects.equals(this.type, partAttendee.type) && Objects.equals(this.role, partAttendee.role)
-            && Objects.equals(this.isMute, partAttendee.isMute);
+        PartAttendee that = (PartAttendee) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.phone, that.phone)
+            && Objects.equals(this.phone2, that.phone2) && Objects.equals(this.phone3, that.phone3)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.isMute, that.isMute);
     }
 
     @Override

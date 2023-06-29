@@ -77,17 +77,16 @@ public class AssetPropertyLastValue {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetPropertyLastValue assetPropertyLastValue = (AssetPropertyLastValue) o;
-        return Objects.equals(this.propertyName, assetPropertyLastValue.propertyName)
-            && Objects.equals(this.value, assetPropertyLastValue.value)
-            && Objects.equals(this.timestamp, assetPropertyLastValue.timestamp);
+        AssetPropertyLastValue that = (AssetPropertyLastValue) obj;
+        return Objects.equals(this.propertyName, that.propertyName) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

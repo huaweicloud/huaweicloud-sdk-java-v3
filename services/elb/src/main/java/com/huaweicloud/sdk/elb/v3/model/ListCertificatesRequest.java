@@ -294,23 +294,19 @@ public class ListCertificatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCertificatesRequest listCertificatesRequest = (ListCertificatesRequest) o;
-        return Objects.equals(this.marker, listCertificatesRequest.marker)
-            && Objects.equals(this.limit, listCertificatesRequest.limit)
-            && Objects.equals(this.pageReverse, listCertificatesRequest.pageReverse)
-            && Objects.equals(this.id, listCertificatesRequest.id)
-            && Objects.equals(this.name, listCertificatesRequest.name)
-            && Objects.equals(this.description, listCertificatesRequest.description)
-            && Objects.equals(this.adminStateUp, listCertificatesRequest.adminStateUp)
-            && Objects.equals(this.domain, listCertificatesRequest.domain)
-            && Objects.equals(this.type, listCertificatesRequest.type);
+        ListCertificatesRequest that = (ListCertificatesRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

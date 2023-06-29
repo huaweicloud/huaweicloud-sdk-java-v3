@@ -33,15 +33,15 @@ public class AsyncActionBaseResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AsyncActionBaseResp asyncActionBaseResp = (AsyncActionBaseResp) o;
-        return Objects.equals(this.queryId, asyncActionBaseResp.queryId);
+        AsyncActionBaseResp that = (AsyncActionBaseResp) obj;
+        return Objects.equals(this.queryId, that.queryId);
     }
 
     @Override

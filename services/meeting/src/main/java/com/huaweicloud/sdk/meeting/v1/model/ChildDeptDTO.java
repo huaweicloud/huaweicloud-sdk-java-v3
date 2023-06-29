@@ -77,17 +77,16 @@ public class ChildDeptDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChildDeptDTO childDeptDTO = (ChildDeptDTO) o;
-        return Objects.equals(this.deptCode, childDeptDTO.deptCode)
-            && Objects.equals(this.deptName, childDeptDTO.deptName)
-            && Objects.equals(this.isLeafNodes, childDeptDTO.isLeafNodes);
+        ChildDeptDTO that = (ChildDeptDTO) obj;
+        return Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.isLeafNodes, that.isLeafNodes);
     }
 
     @Override

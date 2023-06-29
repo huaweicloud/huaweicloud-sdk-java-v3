@@ -121,18 +121,18 @@ public class CssIndex {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CssIndex cssIndex = (CssIndex) o;
-        return Objects.equals(this.indexName, cssIndex.indexName) && Objects.equals(this.indexGuid, cssIndex.indexGuid)
-            && Objects.equals(this.indexQualifiedName, cssIndex.indexQualifiedName)
-            && Objects.equals(this.indexDocCount, cssIndex.indexDocCount)
-            && Objects.equals(this.indexDataSize, cssIndex.indexDataSize);
+        CssIndex that = (CssIndex) obj;
+        return Objects.equals(this.indexName, that.indexName) && Objects.equals(this.indexGuid, that.indexGuid)
+            && Objects.equals(this.indexQualifiedName, that.indexQualifiedName)
+            && Objects.equals(this.indexDocCount, that.indexDocCount)
+            && Objects.equals(this.indexDataSize, that.indexDataSize);
     }
 
     @Override

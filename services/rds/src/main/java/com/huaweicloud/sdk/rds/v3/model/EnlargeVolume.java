@@ -43,15 +43,15 @@ public class EnlargeVolume {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnlargeVolume enlargeVolume = (EnlargeVolume) o;
-        return Objects.equals(this.enlargeVolume, enlargeVolume.enlargeVolume);
+        EnlargeVolume that = (EnlargeVolume) obj;
+        return Objects.equals(this.enlargeVolume, that.enlargeVolume);
     }
 
     @Override

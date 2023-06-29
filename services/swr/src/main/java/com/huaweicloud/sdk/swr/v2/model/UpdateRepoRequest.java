@@ -87,17 +87,16 @@ public class UpdateRepoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRepoRequest updateRepoRequest = (UpdateRepoRequest) o;
-        return Objects.equals(this.namespace, updateRepoRequest.namespace)
-            && Objects.equals(this.repository, updateRepoRequest.repository)
-            && Objects.equals(this.body, updateRepoRequest.body);
+        UpdateRepoRequest that = (UpdateRepoRequest) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.repository, that.repository)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

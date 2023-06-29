@@ -55,16 +55,15 @@ public class ListHistorySqlRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistorySqlRequest listHistorySqlRequest = (ListHistorySqlRequest) o;
-        return Objects.equals(this.logGroupId, listHistorySqlRequest.logGroupId)
-            && Objects.equals(this.logStreamId, listHistorySqlRequest.logStreamId);
+        ListHistorySqlRequest that = (ListHistorySqlRequest) obj;
+        return Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logStreamId, that.logStreamId);
     }
 
     @Override

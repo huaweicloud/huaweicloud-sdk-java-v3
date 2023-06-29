@@ -308,25 +308,22 @@ public class CreateClusterBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterBody createClusterBody = (CreateClusterBody) o;
-        return Objects.equals(this.instance, createClusterBody.instance)
-            && Objects.equals(this.datastore, createClusterBody.datastore)
-            && Objects.equals(this.name, createClusterBody.name)
-            && Objects.equals(this.instanceNum, createClusterBody.instanceNum)
-            && Objects.equals(this.backupStrategy, createClusterBody.backupStrategy)
-            && Objects.equals(this.httpsEnable, createClusterBody.httpsEnable)
-            && Objects.equals(this.authorityEnable, createClusterBody.authorityEnable)
-            && Objects.equals(this.adminPwd, createClusterBody.adminPwd)
-            && Objects.equals(this.enterpriseProjectId, createClusterBody.enterpriseProjectId)
-            && Objects.equals(this.tags, createClusterBody.tags)
-            && Objects.equals(this.payInfo, createClusterBody.payInfo);
+        CreateClusterBody that = (CreateClusterBody) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.instanceNum, that.instanceNum)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.httpsEnable, that.httpsEnable)
+            && Objects.equals(this.authorityEnable, that.authorityEnable)
+            && Objects.equals(this.adminPwd, that.adminPwd)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.payInfo, that.payInfo);
     }
 
     @Override

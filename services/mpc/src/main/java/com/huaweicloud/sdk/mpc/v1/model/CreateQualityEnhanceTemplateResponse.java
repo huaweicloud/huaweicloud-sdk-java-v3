@@ -36,16 +36,15 @@ public class CreateQualityEnhanceTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQualityEnhanceTemplateResponse createQualityEnhanceTemplateResponse =
-            (CreateQualityEnhanceTemplateResponse) o;
-        return Objects.equals(this.templateId, createQualityEnhanceTemplateResponse.templateId);
+        CreateQualityEnhanceTemplateResponse that = (CreateQualityEnhanceTemplateResponse) obj;
+        return Objects.equals(this.templateId, that.templateId);
     }
 
     @Override

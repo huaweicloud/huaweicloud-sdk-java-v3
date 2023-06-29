@@ -99,17 +99,16 @@ public class MetaDataInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetaDataInfo metaDataInfo = (MetaDataInfo) o;
-        return Objects.equals(this.opSvcUserid, metaDataInfo.opSvcUserid)
-            && Objects.equals(this.adminPass, metaDataInfo.adminPass) && Objects.equals(this.byol, metaDataInfo.byol)
-            && Objects.equals(this.agencyName, metaDataInfo.agencyName);
+        MetaDataInfo that = (MetaDataInfo) obj;
+        return Objects.equals(this.opSvcUserid, that.opSvcUserid) && Objects.equals(this.adminPass, that.adminPass)
+            && Objects.equals(this.byol, that.byol) && Objects.equals(this.agencyName, that.agencyName);
     }
 
     @Override

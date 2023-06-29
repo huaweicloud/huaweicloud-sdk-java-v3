@@ -77,17 +77,16 @@ public class ListFunctionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFunctionsRequest listFunctionsRequest = (ListFunctionsRequest) o;
-        return Objects.equals(this.marker, listFunctionsRequest.marker)
-            && Objects.equals(this.maxitems, listFunctionsRequest.maxitems)
-            && Objects.equals(this.packageName, listFunctionsRequest.packageName);
+        ListFunctionsRequest that = (ListFunctionsRequest) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.maxitems, that.maxitems)
+            && Objects.equals(this.packageName, that.packageName);
     }
 
     @Override

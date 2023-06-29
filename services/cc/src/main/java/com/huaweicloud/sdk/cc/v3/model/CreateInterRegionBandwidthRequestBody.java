@@ -45,16 +45,15 @@ public class CreateInterRegionBandwidthRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateInterRegionBandwidthRequestBody createInterRegionBandwidthRequestBody =
-            (CreateInterRegionBandwidthRequestBody) o;
-        return Objects.equals(this.interRegionBandwidth, createInterRegionBandwidthRequestBody.interRegionBandwidth);
+        CreateInterRegionBandwidthRequestBody that = (CreateInterRegionBandwidthRequestBody) obj;
+        return Objects.equals(this.interRegionBandwidth, that.interRegionBandwidth);
     }
 
     @Override

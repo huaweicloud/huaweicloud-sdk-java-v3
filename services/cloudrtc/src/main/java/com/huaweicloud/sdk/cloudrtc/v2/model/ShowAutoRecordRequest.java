@@ -103,18 +103,16 @@ public class ShowAutoRecordRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoRecordRequest showAutoRecordRequest = (ShowAutoRecordRequest) o;
-        return Objects.equals(this.authorization, showAutoRecordRequest.authorization)
-            && Objects.equals(this.xSdkDate, showAutoRecordRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, showAutoRecordRequest.xProjectId)
-            && Objects.equals(this.appId, showAutoRecordRequest.appId);
+        ShowAutoRecordRequest that = (ShowAutoRecordRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.appId, that.appId);
     }
 
     @Override

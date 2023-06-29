@@ -43,15 +43,15 @@ public class UpdateIpListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIpListRequestBody updateIpListRequestBody = (UpdateIpListRequestBody) o;
-        return Objects.equals(this.ipgroup, updateIpListRequestBody.ipgroup);
+        UpdateIpListRequestBody that = (UpdateIpListRequestBody) obj;
+        return Objects.equals(this.ipgroup, that.ipgroup);
     }
 
     @Override

@@ -82,22 +82,15 @@ public class UrlDomainRefInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -347,24 +340,21 @@ public class UrlDomainRefInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlDomainRefInfo urlDomainRefInfo = (UrlDomainRefInfo) o;
-        return Objects.equals(this.urlDomain, urlDomainRefInfo.urlDomain)
-            && Objects.equals(this.id, urlDomainRefInfo.id) && Objects.equals(this.status, urlDomainRefInfo.status)
-            && Objects.equals(this.minSslVersion, urlDomainRefInfo.minSslVersion)
-            && Objects.equals(this.isHttpRedirectToHttps, urlDomainRefInfo.isHttpRedirectToHttps)
-            && Objects.equals(this.verifiedClientCertificateEnabled, urlDomainRefInfo.verifiedClientCertificateEnabled)
-            && Objects.equals(this.sslId, urlDomainRefInfo.sslId)
-            && Objects.equals(this.sslName, urlDomainRefInfo.sslName)
-            && Objects.equals(this.apiGroupId, urlDomainRefInfo.apiGroupId)
-            && Objects.equals(this.apiGroupName, urlDomainRefInfo.apiGroupName)
-            && Objects.equals(this.instanceId, urlDomainRefInfo.instanceId);
+        UrlDomainRefInfo that = (UrlDomainRefInfo) obj;
+        return Objects.equals(this.urlDomain, that.urlDomain) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.minSslVersion, that.minSslVersion)
+            && Objects.equals(this.isHttpRedirectToHttps, that.isHttpRedirectToHttps)
+            && Objects.equals(this.verifiedClientCertificateEnabled, that.verifiedClientCertificateEnabled)
+            && Objects.equals(this.sslId, that.sslId) && Objects.equals(this.sslName, that.sslName)
+            && Objects.equals(this.apiGroupId, that.apiGroupId) && Objects.equals(this.apiGroupName, that.apiGroupName)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

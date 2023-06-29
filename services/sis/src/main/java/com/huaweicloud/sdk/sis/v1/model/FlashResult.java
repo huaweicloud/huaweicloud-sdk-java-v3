@@ -74,16 +74,15 @@ public class FlashResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FlashResult flashResult = (FlashResult) o;
-        return Objects.equals(this.channelId, flashResult.channelId)
-            && Objects.equals(this.sentences, flashResult.sentences);
+        FlashResult that = (FlashResult) obj;
+        return Objects.equals(this.channelId, that.channelId) && Objects.equals(this.sentences, that.sentences);
     }
 
     @Override

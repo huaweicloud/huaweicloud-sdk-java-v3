@@ -34,15 +34,15 @@ public class InitializeStandardTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InitializeStandardTemplateResponse initializeStandardTemplateResponse = (InitializeStandardTemplateResponse) o;
-        return Objects.equals(this.data, initializeStandardTemplateResponse.data);
+        InitializeStandardTemplateResponse that = (InitializeStandardTemplateResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class ListReadWriteRatioRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListReadWriteRatioRequest listReadWriteRatioRequest = (ListReadWriteRatioRequest) o;
-        return Objects.equals(this.instanceId, listReadWriteRatioRequest.instanceId)
-            && Objects.equals(this.curPage, listReadWriteRatioRequest.curPage)
-            && Objects.equals(this.perPage, listReadWriteRatioRequest.perPage)
-            && Objects.equals(this.startDate, listReadWriteRatioRequest.startDate)
-            && Objects.equals(this.endDate, listReadWriteRatioRequest.endDate);
+        ListReadWriteRatioRequest that = (ListReadWriteRatioRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.curPage, that.curPage)
+            && Objects.equals(this.perPage, that.perPage) && Objects.equals(this.startDate, that.startDate)
+            && Objects.equals(this.endDate, that.endDate);
     }
 
     @Override

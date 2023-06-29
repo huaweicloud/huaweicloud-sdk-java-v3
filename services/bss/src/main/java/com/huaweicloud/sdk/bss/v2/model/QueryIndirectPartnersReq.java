@@ -147,20 +147,18 @@ public class QueryIndirectPartnersReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryIndirectPartnersReq queryIndirectPartnersReq = (QueryIndirectPartnersReq) o;
-        return Objects.equals(this.accountName, queryIndirectPartnersReq.accountName)
-            && Objects.equals(this.associatedOnBegin, queryIndirectPartnersReq.associatedOnBegin)
-            && Objects.equals(this.associatedOnEnd, queryIndirectPartnersReq.associatedOnEnd)
-            && Objects.equals(this.offset, queryIndirectPartnersReq.offset)
-            && Objects.equals(this.limit, queryIndirectPartnersReq.limit)
-            && Objects.equals(this.indirectPartnerId, queryIndirectPartnersReq.indirectPartnerId);
+        QueryIndirectPartnersReq that = (QueryIndirectPartnersReq) obj;
+        return Objects.equals(this.accountName, that.accountName)
+            && Objects.equals(this.associatedOnBegin, that.associatedOnBegin)
+            && Objects.equals(this.associatedOnEnd, that.associatedOnEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

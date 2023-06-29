@@ -1,35 +1,24 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.CreateInstanceRespItem;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class CreateRestoreInstanceResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance")
-    
+    @JsonProperty(value = "instance")
 
     private CreateInstanceRespItem instance;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_id")
-    
+    @JsonProperty(value = "job_id")
 
     private String jobId;
 
@@ -39,14 +28,13 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
     }
 
     public CreateRestoreInstanceResponse withInstance(Consumer<CreateInstanceRespItem> instanceSetter) {
-        if(this.instance == null ){
+        if (this.instance == null) {
             this.instance = new CreateInstanceRespItem();
             instanceSetter.accept(this.instance);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get instance
@@ -60,15 +48,10 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
         this.instance = instance;
     }
 
-    
-
     public CreateRestoreInstanceResponse withJobId(String jobId) {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 恢复新实例的任务id。  仅恢复按需实例时会返回该参数。
@@ -82,24 +65,23 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
         this.jobId = jobId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRestoreInstanceResponse createRestoreInstanceResponse = (CreateRestoreInstanceResponse) o;
-        return Objects.equals(this.instance, createRestoreInstanceResponse.instance) &&
-            Objects.equals(this.jobId, createRestoreInstanceResponse.jobId);
+        CreateRestoreInstanceResponse that = (CreateRestoreInstanceResponse) obj;
+        return Objects.equals(this.instance, that.instance) && Objects.equals(this.jobId, that.jobId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instance, jobId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -109,6 +91,7 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -119,8 +102,5 @@ public class CreateRestoreInstanceResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

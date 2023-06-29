@@ -162,19 +162,17 @@ public class CertificateBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertificateBody certificateBody = (CertificateBody) o;
-        return Objects.equals(this.id, certificateBody.id) && Objects.equals(this.name, certificateBody.name)
-            && Objects.equals(this.expireTime, certificateBody.expireTime)
-            && Objects.equals(this.expStatus, certificateBody.expStatus)
-            && Objects.equals(this.timestamp, certificateBody.timestamp)
-            && Objects.equals(this.bindHost, certificateBody.bindHost);
+        CertificateBody that = (CertificateBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.expStatus, that.expStatus)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.bindHost, that.bindHost);
     }
 
     @Override

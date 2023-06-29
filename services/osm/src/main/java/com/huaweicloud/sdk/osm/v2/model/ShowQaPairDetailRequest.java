@@ -105,18 +105,16 @@ public class ShowQaPairDetailRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowQaPairDetailRequest showQaPairDetailRequest = (ShowQaPairDetailRequest) o;
-        return Objects.equals(this.xServiceKey, showQaPairDetailRequest.xServiceKey)
-            && Objects.equals(this.xSite, showQaPairDetailRequest.xSite)
-            && Objects.equals(this.xLanguage, showQaPairDetailRequest.xLanguage)
-            && Objects.equals(this.qaPairId, showQaPairDetailRequest.qaPairId);
+        ShowQaPairDetailRequest that = (ShowQaPairDetailRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.qaPairId, that.qaPairId);
     }
 
     @Override

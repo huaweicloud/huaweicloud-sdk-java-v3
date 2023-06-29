@@ -100,18 +100,17 @@ public class ResetMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetMessagesResponse resetMessagesResponse = (ResetMessagesResponse) o;
-        return Objects.equals(this.topic, resetMessagesResponse.topic)
-            && Objects.equals(this.partition, resetMessagesResponse.partition)
-            && Objects.equals(this.messageOffset, resetMessagesResponse.messageOffset)
-            && Objects.equals(this.consumerKey, resetMessagesResponse.consumerKey);
+        ResetMessagesResponse that = (ResetMessagesResponse) obj;
+        return Objects.equals(this.topic, that.topic) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.messageOffset, that.messageOffset)
+            && Objects.equals(this.consumerKey, that.consumerKey);
     }
 
     @Override

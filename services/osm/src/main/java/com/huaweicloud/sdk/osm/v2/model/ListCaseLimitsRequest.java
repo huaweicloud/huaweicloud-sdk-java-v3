@@ -85,17 +85,16 @@ public class ListCaseLimitsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCaseLimitsRequest listCaseLimitsRequest = (ListCaseLimitsRequest) o;
-        return Objects.equals(this.xSite, listCaseLimitsRequest.xSite)
-            && Objects.equals(this.xLanguage, listCaseLimitsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCaseLimitsRequest.xTimeZone);
+        ListCaseLimitsRequest that = (ListCaseLimitsRequest) obj;
+        return Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

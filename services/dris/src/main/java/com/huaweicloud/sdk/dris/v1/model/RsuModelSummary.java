@@ -144,20 +144,19 @@ public class RsuModelSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RsuModelSummary rsuModelSummary = (RsuModelSummary) o;
-        return Objects.equals(this.rsuModelId, rsuModelSummary.rsuModelId)
-            && Objects.equals(this.name, rsuModelSummary.name)
-            && Objects.equals(this.manufacturerName, rsuModelSummary.manufacturerName)
-            && Objects.equals(this.description, rsuModelSummary.description)
-            && Objects.equals(this.lastModifiedTime, rsuModelSummary.lastModifiedTime)
-            && Objects.equals(this.createdTime, rsuModelSummary.createdTime);
+        RsuModelSummary that = (RsuModelSummary) obj;
+        return Objects.equals(this.rsuModelId, that.rsuModelId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.manufacturerName, that.manufacturerName)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime)
+            && Objects.equals(this.createdTime, that.createdTime);
     }
 
     @Override

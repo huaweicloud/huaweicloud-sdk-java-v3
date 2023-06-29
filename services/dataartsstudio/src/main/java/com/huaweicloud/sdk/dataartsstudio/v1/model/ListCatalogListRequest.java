@@ -99,18 +99,16 @@ public class ListCatalogListRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCatalogListRequest listCatalogListRequest = (ListCatalogListRequest) o;
-        return Objects.equals(this.workspace, listCatalogListRequest.workspace)
-            && Objects.equals(this.catalogId, listCatalogListRequest.catalogId)
-            && Objects.equals(this.limit, listCatalogListRequest.limit)
-            && Objects.equals(this.offset, listCatalogListRequest.offset);
+        ListCatalogListRequest that = (ListCatalogListRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.catalogId, that.catalogId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

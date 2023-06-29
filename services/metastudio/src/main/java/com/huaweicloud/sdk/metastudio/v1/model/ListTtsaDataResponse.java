@@ -173,19 +173,17 @@ public class ListTtsaDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTtsaDataResponse listTtsaDataResponse = (ListTtsaDataResponse) o;
-        return Objects.equals(this.jobId, listTtsaDataResponse.jobId)
-            && Objects.equals(this.audio, listTtsaDataResponse.audio)
-            && Objects.equals(this.blendshapes, listTtsaDataResponse.blendshapes)
-            && Objects.equals(this.animations, listTtsaDataResponse.animations)
-            && Objects.equals(this.motions, listTtsaDataResponse.motions);
+        ListTtsaDataResponse that = (ListTtsaDataResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.audio, that.audio)
+            && Objects.equals(this.blendshapes, that.blendshapes) && Objects.equals(this.animations, that.animations)
+            && Objects.equals(this.motions, that.motions);
     }
 
     @Override

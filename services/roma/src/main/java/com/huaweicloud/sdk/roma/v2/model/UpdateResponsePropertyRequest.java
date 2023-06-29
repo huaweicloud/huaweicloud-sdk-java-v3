@@ -135,19 +135,17 @@ public class UpdateResponsePropertyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResponsePropertyRequest updateResponsePropertyRequest = (UpdateResponsePropertyRequest) o;
-        return Objects.equals(this.instanceId, updateResponsePropertyRequest.instanceId)
-            && Objects.equals(this.serviceId, updateResponsePropertyRequest.serviceId)
-            && Objects.equals(this.commandId, updateResponsePropertyRequest.commandId)
-            && Objects.equals(this.propertyId, updateResponsePropertyRequest.propertyId)
-            && Objects.equals(this.body, updateResponsePropertyRequest.body);
+        UpdateResponsePropertyRequest that = (UpdateResponsePropertyRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.serviceId, that.serviceId)
+            && Objects.equals(this.commandId, that.commandId) && Objects.equals(this.propertyId, that.propertyId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

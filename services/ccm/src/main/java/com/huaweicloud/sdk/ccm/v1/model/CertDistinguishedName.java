@@ -143,20 +143,18 @@ public class CertDistinguishedName {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertDistinguishedName certDistinguishedName = (CertDistinguishedName) o;
-        return Objects.equals(this.commonName, certDistinguishedName.commonName)
-            && Objects.equals(this.country, certDistinguishedName.country)
-            && Objects.equals(this.state, certDistinguishedName.state)
-            && Objects.equals(this.locality, certDistinguishedName.locality)
-            && Objects.equals(this.organization, certDistinguishedName.organization)
-            && Objects.equals(this.organizationalUnit, certDistinguishedName.organizationalUnit);
+        CertDistinguishedName that = (CertDistinguishedName) obj;
+        return Objects.equals(this.commonName, that.commonName) && Objects.equals(this.country, that.country)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.locality, that.locality)
+            && Objects.equals(this.organization, that.organization)
+            && Objects.equals(this.organizationalUnit, that.organizationalUnit);
     }
 
     @Override

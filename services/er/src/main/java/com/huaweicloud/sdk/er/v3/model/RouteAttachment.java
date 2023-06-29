@@ -77,17 +77,16 @@ public class RouteAttachment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RouteAttachment routeAttachment = (RouteAttachment) o;
-        return Objects.equals(this.resourceId, routeAttachment.resourceId)
-            && Objects.equals(this.resourceType, routeAttachment.resourceType)
-            && Objects.equals(this.attachmentId, routeAttachment.attachmentId);
+        RouteAttachment that = (RouteAttachment) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.attachmentId, that.attachmentId);
     }
 
     @Override

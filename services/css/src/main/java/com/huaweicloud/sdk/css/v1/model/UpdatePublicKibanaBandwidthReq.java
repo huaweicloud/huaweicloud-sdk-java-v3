@@ -66,16 +66,15 @@ public class UpdatePublicKibanaBandwidthReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicKibanaBandwidthReq updatePublicKibanaBandwidthReq = (UpdatePublicKibanaBandwidthReq) o;
-        return Objects.equals(this.bandWidth, updatePublicKibanaBandwidthReq.bandWidth)
-            && Objects.equals(this.isAutoPay, updatePublicKibanaBandwidthReq.isAutoPay);
+        UpdatePublicKibanaBandwidthReq that = (UpdatePublicKibanaBandwidthReq) obj;
+        return Objects.equals(this.bandWidth, that.bandWidth) && Objects.equals(this.isAutoPay, that.isAutoPay);
     }
 
     @Override

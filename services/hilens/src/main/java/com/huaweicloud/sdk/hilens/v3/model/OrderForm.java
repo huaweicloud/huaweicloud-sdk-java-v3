@@ -165,19 +165,18 @@ public class OrderForm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OrderForm orderForm = (OrderForm) o;
-        return Objects.equals(this.amount, orderForm.amount) && Objects.equals(this.usedAmount, orderForm.usedAmount)
-            && Objects.equals(this.cbcOrderId, orderForm.cbcOrderId)
-            && Objects.equals(this.deviceType, orderForm.deviceType) && Objects.equals(this.id, orderForm.id)
-            && Objects.equals(this.orderUpdateTime, orderForm.orderUpdateTime)
-            && Objects.equals(this.status, orderForm.status);
+        OrderForm that = (OrderForm) obj;
+        return Objects.equals(this.amount, that.amount) && Objects.equals(this.usedAmount, that.usedAmount)
+            && Objects.equals(this.cbcOrderId, that.cbcOrderId) && Objects.equals(this.deviceType, that.deviceType)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.orderUpdateTime, that.orderUpdateTime)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

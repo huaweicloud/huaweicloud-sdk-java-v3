@@ -232,23 +232,20 @@ public class ShowNodeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowNodeResponse showNodeResponse = (ShowNodeResponse) o;
-        return Objects.equals(this.status, showNodeResponse.status) && Objects.equals(this.name, showNodeResponse.name)
-            && Objects.equals(this.nodeId, showNodeResponse.nodeId)
-            && Objects.equals(this.privateIp, showNodeResponse.privateIp)
-            && Objects.equals(this.floatingIp, showNodeResponse.floatingIp)
-            && Objects.equals(this.serverId, showNodeResponse.serverId)
-            && Objects.equals(this.subnetName, showNodeResponse.subnetName)
-            && Objects.equals(this.datavolumeId, showNodeResponse.datavolumeId)
-            && Objects.equals(this.resSubnetIp, showNodeResponse.resSubnetIp)
-            && Objects.equals(this.systemvolumeId, showNodeResponse.systemvolumeId);
+        ShowNodeResponse that = (ShowNodeResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.privateIp, that.privateIp)
+            && Objects.equals(this.floatingIp, that.floatingIp) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.subnetName, that.subnetName) && Objects.equals(this.datavolumeId, that.datavolumeId)
+            && Objects.equals(this.resSubnetIp, that.resSubnetIp)
+            && Objects.equals(this.systemvolumeId, that.systemvolumeId);
     }
 
     @Override

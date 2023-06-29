@@ -63,22 +63,15 @@ public class OperationState {
             if (value == null) {
                 return null;
             }
-            ActionModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionModeEnum(value));
         }
 
         public static ActionModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -171,22 +164,15 @@ public class OperationState {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -442,22 +428,20 @@ public class OperationState {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OperationState operationState = (OperationState) o;
-        return Objects.equals(this.actionMode, operationState.actionMode)
-            && Objects.equals(this.actions, operationState.actions)
-            && Objects.equals(this.onErrors, operationState.onErrors) && Objects.equals(this.id, operationState.id)
-            && Objects.equals(this.name, operationState.name) && Objects.equals(this.type, operationState.type)
-            && Objects.equals(this.end, operationState.end)
-            && Objects.equals(this.transition, operationState.transition)
-            && Objects.equals(this.stateDataFilter, operationState.stateDataFilter)
-            && Objects.equals(this.duration, operationState.duration);
+        OperationState that = (OperationState) obj;
+        return Objects.equals(this.actionMode, that.actionMode) && Objects.equals(this.actions, that.actions)
+            && Objects.equals(this.onErrors, that.onErrors) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.end, that.end) && Objects.equals(this.transition, that.transition)
+            && Objects.equals(this.stateDataFilter, that.stateDataFilter)
+            && Objects.equals(this.duration, that.duration);
     }
 
     @Override

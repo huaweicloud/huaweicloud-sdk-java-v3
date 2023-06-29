@@ -55,15 +55,15 @@ public class Property {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Property property = (Property) o;
-        return Objects.equals(this.phoneId, property.phoneId) && Objects.equals(this.property, property.property);
+        Property that = (Property) obj;
+        return Objects.equals(this.phoneId, that.phoneId) && Objects.equals(this.property, that.property);
     }
 
     @Override

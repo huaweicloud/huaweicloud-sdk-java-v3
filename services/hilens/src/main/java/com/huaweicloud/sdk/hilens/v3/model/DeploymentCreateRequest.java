@@ -313,25 +313,20 @@ public class DeploymentCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeploymentCreateRequest deploymentCreateRequest = (DeploymentCreateRequest) o;
-        return Objects.equals(this.clusterId, deploymentCreateRequest.clusterId)
-            && Objects.equals(this.deployment, deploymentCreateRequest.deployment)
-            && Objects.equals(this.description, deploymentCreateRequest.description)
-            && Objects.equals(this.licenseQuota, deploymentCreateRequest.licenseQuota)
-            && Objects.equals(this.name, deploymentCreateRequest.name)
-            && Objects.equals(this.nodeIds, deploymentCreateRequest.nodeIds)
-            && Objects.equals(this.source, deploymentCreateRequest.source)
-            && Objects.equals(this.svcOrderId, deploymentCreateRequest.svcOrderId)
-            && Objects.equals(this.tags, deploymentCreateRequest.tags)
-            && Objects.equals(this.nodeTags, deploymentCreateRequest.nodeTags)
-            && Objects.equals(this.nodeNum, deploymentCreateRequest.nodeNum);
+        DeploymentCreateRequest that = (DeploymentCreateRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.deployment, that.deployment)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.licenseQuota, that.licenseQuota) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.nodeIds, that.nodeIds) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.svcOrderId, that.svcOrderId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.nodeTags, that.nodeTags) && Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override

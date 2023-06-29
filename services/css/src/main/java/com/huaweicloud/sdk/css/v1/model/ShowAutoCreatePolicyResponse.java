@@ -166,21 +166,18 @@ public class ShowAutoCreatePolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAutoCreatePolicyResponse showAutoCreatePolicyResponse = (ShowAutoCreatePolicyResponse) o;
-        return Objects.equals(this.keepday, showAutoCreatePolicyResponse.keepday)
-            && Objects.equals(this.period, showAutoCreatePolicyResponse.period)
-            && Objects.equals(this.prefix, showAutoCreatePolicyResponse.prefix)
-            && Objects.equals(this.bucket, showAutoCreatePolicyResponse.bucket)
-            && Objects.equals(this.basePath, showAutoCreatePolicyResponse.basePath)
-            && Objects.equals(this.agency, showAutoCreatePolicyResponse.agency)
-            && Objects.equals(this.enable, showAutoCreatePolicyResponse.enable);
+        ShowAutoCreatePolicyResponse that = (ShowAutoCreatePolicyResponse) obj;
+        return Objects.equals(this.keepday, that.keepday) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.prefix, that.prefix) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.basePath, that.basePath) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.enable, that.enable);
     }
 
     @Override

@@ -257,25 +257,23 @@ public class EdgeGeneralConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeGeneralConfig edgeGeneralConfig = (EdgeGeneralConfig) o;
-        return Objects.equals(this.avpEnabled, edgeGeneralConfig.avpEnabled)
-            && Objects.equals(this.rsmEnabled, edgeGeneralConfig.rsmEnabled)
-            && Objects.equals(this.timeCompensate, edgeGeneralConfig.timeCompensate)
-            && Objects.equals(this.rsiPositioningEnabled, edgeGeneralConfig.rsiPositioningEnabled)
-            && Objects.equals(this.logLevel, edgeGeneralConfig.logLevel)
-            && Objects.equals(this.roadDetectionLength, edgeGeneralConfig.roadDetectionLength)
-            && Objects.equals(this.rampDetectionLength, edgeGeneralConfig.rampDetectionLength)
-            && Objects.equals(this.gat1400Username, edgeGeneralConfig.gat1400Username)
-            && Objects.equals(this.gat1400Password, edgeGeneralConfig.gat1400Password)
-            && Objects.equals(this.userName, edgeGeneralConfig.userName)
-            && Objects.equals(this.password, edgeGeneralConfig.password);
+        EdgeGeneralConfig that = (EdgeGeneralConfig) obj;
+        return Objects.equals(this.avpEnabled, that.avpEnabled) && Objects.equals(this.rsmEnabled, that.rsmEnabled)
+            && Objects.equals(this.timeCompensate, that.timeCompensate)
+            && Objects.equals(this.rsiPositioningEnabled, that.rsiPositioningEnabled)
+            && Objects.equals(this.logLevel, that.logLevel)
+            && Objects.equals(this.roadDetectionLength, that.roadDetectionLength)
+            && Objects.equals(this.rampDetectionLength, that.rampDetectionLength)
+            && Objects.equals(this.gat1400Username, that.gat1400Username)
+            && Objects.equals(this.gat1400Password, that.gat1400Password)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

@@ -251,22 +251,20 @@ public class TransitIp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TransitIp transitIp = (TransitIp) o;
-        return Objects.equals(this.id, transitIp.id) && Objects.equals(this.projectId, transitIp.projectId)
-            && Objects.equals(this.networkInterfaceId, transitIp.networkInterfaceId)
-            && Objects.equals(this.ipAddress, transitIp.ipAddress)
-            && Objects.equals(this.createdAt, transitIp.createdAt)
-            && Objects.equals(this.updatedAt, transitIp.updatedAt)
-            && Objects.equals(this.virsubnetId, transitIp.virsubnetId) && Objects.equals(this.tags, transitIp.tags)
-            && Objects.equals(this.gatewayId, transitIp.gatewayId)
-            && Objects.equals(this.enterpriseProjectId, transitIp.enterpriseProjectId);
+        TransitIp that = (TransitIp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.networkInterfaceId, that.networkInterfaceId)
+            && Objects.equals(this.ipAddress, that.ipAddress) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.virsubnetId, that.virsubnetId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.gatewayId, that.gatewayId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

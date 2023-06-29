@@ -199,19 +199,18 @@ public class CreateThumbReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateThumbReq createThumbReq = (CreateThumbReq) o;
-        return Objects.equals(this.input, createThumbReq.input) && Objects.equals(this.output, createThumbReq.output)
-            && Objects.equals(this.userData, createThumbReq.userData)
-            && Objects.equals(this.thumbnailPara, createThumbReq.thumbnailPara)
-            && Objects.equals(this.tar, createThumbReq.tar) && Objects.equals(this.sync, createThumbReq.sync)
-            && Objects.equals(this.originalDir, createThumbReq.originalDir);
+        CreateThumbReq that = (CreateThumbReq) obj;
+        return Objects.equals(this.input, that.input) && Objects.equals(this.output, that.output)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.thumbnailPara, that.thumbnailPara)
+            && Objects.equals(this.tar, that.tar) && Objects.equals(this.sync, that.sync)
+            && Objects.equals(this.originalDir, that.originalDir);
     }
 
     @Override

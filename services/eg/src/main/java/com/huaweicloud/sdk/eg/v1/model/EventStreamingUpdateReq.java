@@ -180,20 +180,17 @@ public class EventStreamingUpdateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventStreamingUpdateReq eventStreamingUpdateReq = (EventStreamingUpdateReq) o;
-        return Objects.equals(this.name, eventStreamingUpdateReq.name)
-            && Objects.equals(this.description, eventStreamingUpdateReq.description)
-            && Objects.equals(this.source, eventStreamingUpdateReq.source)
-            && Objects.equals(this.sink, eventStreamingUpdateReq.sink)
-            && Objects.equals(this.ruleConfig, eventStreamingUpdateReq.ruleConfig)
-            && Objects.equals(this.option, eventStreamingUpdateReq.option);
+        EventStreamingUpdateReq that = (EventStreamingUpdateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.sink, that.sink)
+            && Objects.equals(this.ruleConfig, that.ruleConfig) && Objects.equals(this.option, that.option);
     }
 
     @Override

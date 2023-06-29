@@ -77,16 +77,16 @@ public class Validity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Validity validity = (Validity) o;
-        return Objects.equals(this.type, validity.type) && Objects.equals(this.value, validity.value)
-            && Objects.equals(this.startFrom, validity.startFrom);
+        Validity that = (Validity) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.startFrom, that.startFrom);
     }
 
     @Override

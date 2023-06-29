@@ -77,16 +77,16 @@ public class PublicKey {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicKey publicKey = (PublicKey) o;
-        return Objects.equals(this.id, publicKey.id) && Objects.equals(this.key, publicKey.key)
-            && Objects.equals(this.title, publicKey.title);
+        PublicKey that = (PublicKey) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.title, that.title);
     }
 
     @Override

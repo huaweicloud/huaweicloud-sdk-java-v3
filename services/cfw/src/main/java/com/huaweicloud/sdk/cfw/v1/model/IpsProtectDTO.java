@@ -55,15 +55,15 @@ public class IpsProtectDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IpsProtectDTO ipsProtectDTO = (IpsProtectDTO) o;
-        return Objects.equals(this.objectId, ipsProtectDTO.objectId) && Objects.equals(this.mode, ipsProtectDTO.mode);
+        IpsProtectDTO that = (IpsProtectDTO) obj;
+        return Objects.equals(this.objectId, that.objectId) && Objects.equals(this.mode, that.mode);
     }
 
     @Override

@@ -149,22 +149,15 @@ public class ShowFunctionTriggerRequest {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TriggerTypeCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TriggerTypeCodeEnum(value));
         }
 
         public static TriggerTypeCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TriggerTypeCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -243,17 +236,17 @@ public class ShowFunctionTriggerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowFunctionTriggerRequest showFunctionTriggerRequest = (ShowFunctionTriggerRequest) o;
-        return Objects.equals(this.functionUrn, showFunctionTriggerRequest.functionUrn)
-            && Objects.equals(this.triggerTypeCode, showFunctionTriggerRequest.triggerTypeCode)
-            && Objects.equals(this.triggerId, showFunctionTriggerRequest.triggerId);
+        ShowFunctionTriggerRequest that = (ShowFunctionTriggerRequest) obj;
+        return Objects.equals(this.functionUrn, that.functionUrn)
+            && Objects.equals(this.triggerTypeCode, that.triggerTypeCode)
+            && Objects.equals(this.triggerId, that.triggerId);
     }
 
     @Override

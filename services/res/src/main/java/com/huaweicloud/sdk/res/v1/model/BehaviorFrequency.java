@@ -102,18 +102,16 @@ public class BehaviorFrequency {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BehaviorFrequency behaviorFrequency = (BehaviorFrequency) o;
-        return Objects.equals(this.behaviorType, behaviorFrequency.behaviorType)
-            && Objects.equals(this.lowerLimit, behaviorFrequency.lowerLimit)
-            && Objects.equals(this.upperLimit, behaviorFrequency.upperLimit)
-            && Objects.equals(this.timeInterval, behaviorFrequency.timeInterval);
+        BehaviorFrequency that = (BehaviorFrequency) obj;
+        return Objects.equals(this.behaviorType, that.behaviorType) && Objects.equals(this.lowerLimit, that.lowerLimit)
+            && Objects.equals(this.upperLimit, that.upperLimit) && Objects.equals(this.timeInterval, that.timeInterval);
     }
 
     @Override

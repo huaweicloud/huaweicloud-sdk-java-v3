@@ -87,17 +87,16 @@ public class CreateTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTagsRequest createTagsRequest = (CreateTagsRequest) o;
-        return Objects.equals(this.resourceType, createTagsRequest.resourceType)
-            && Objects.equals(this.resourceId, createTagsRequest.resourceId)
-            && Objects.equals(this.body, createTagsRequest.body);
+        CreateTagsRequest that = (CreateTagsRequest) obj;
+        return Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

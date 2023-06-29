@@ -87,17 +87,16 @@ public class ListDelegatedAdministratorsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDelegatedAdministratorsResponse listDelegatedAdministratorsResponse =
-            (ListDelegatedAdministratorsResponse) o;
-        return Objects.equals(this.delegatedAdministrators, listDelegatedAdministratorsResponse.delegatedAdministrators)
-            && Objects.equals(this.pageInfo, listDelegatedAdministratorsResponse.pageInfo);
+        ListDelegatedAdministratorsResponse that = (ListDelegatedAdministratorsResponse) obj;
+        return Objects.equals(this.delegatedAdministrators, that.delegatedAdministrators)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

@@ -366,28 +366,22 @@ public class CreateNet2CloudPhoneServerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNet2CloudPhoneServerRequestBody createNet2CloudPhoneServerRequestBody =
-            (CreateNet2CloudPhoneServerRequestBody) o;
-        return Objects.equals(this.serverName, createNet2CloudPhoneServerRequestBody.serverName)
-            && Objects.equals(this.serverModelName, createNet2CloudPhoneServerRequestBody.serverModelName)
-            && Objects.equals(this.phoneModelName, createNet2CloudPhoneServerRequestBody.phoneModelName)
-            && Objects.equals(this.imageId, createNet2CloudPhoneServerRequestBody.imageId)
-            && Objects.equals(this.count, createNet2CloudPhoneServerRequestBody.count)
-            && Objects.equals(this.keypairName, createNet2CloudPhoneServerRequestBody.keypairName)
-            && Objects.equals(this.ports, createNet2CloudPhoneServerRequestBody.ports)
-            && Objects.equals(this.extendParam, createNet2CloudPhoneServerRequestBody.extendParam)
-            && Objects.equals(this.tenantVpcId, createNet2CloudPhoneServerRequestBody.tenantVpcId)
-            && Objects.equals(this.nics, createNet2CloudPhoneServerRequestBody.nics)
-            && Objects.equals(this.publicIp, createNet2CloudPhoneServerRequestBody.publicIp)
-            && Objects.equals(this.bandWidth, createNet2CloudPhoneServerRequestBody.bandWidth)
-            && Objects.equals(this.availabilityZone, createNet2CloudPhoneServerRequestBody.availabilityZone);
+        CreateNet2CloudPhoneServerRequestBody that = (CreateNet2CloudPhoneServerRequestBody) obj;
+        return Objects.equals(this.serverName, that.serverName)
+            && Objects.equals(this.serverModelName, that.serverModelName)
+            && Objects.equals(this.phoneModelName, that.phoneModelName) && Objects.equals(this.imageId, that.imageId)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.keypairName, that.keypairName)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.extendParam, that.extendParam)
+            && Objects.equals(this.tenantVpcId, that.tenantVpcId) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.bandWidth, that.bandWidth)
+            && Objects.equals(this.availabilityZone, that.availabilityZone);
     }
 
     @Override

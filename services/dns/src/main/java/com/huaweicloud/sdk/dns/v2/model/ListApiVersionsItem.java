@@ -96,16 +96,16 @@ public class ListApiVersionsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListApiVersionsItem listApiVersionsItem = (ListApiVersionsItem) o;
-        return Objects.equals(this.status, listApiVersionsItem.status)
-            && Objects.equals(this.id, listApiVersionsItem.id) && Objects.equals(this.links, listApiVersionsItem.links);
+        ListApiVersionsItem that = (ListApiVersionsItem) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.links, that.links);
     }
 
     @Override

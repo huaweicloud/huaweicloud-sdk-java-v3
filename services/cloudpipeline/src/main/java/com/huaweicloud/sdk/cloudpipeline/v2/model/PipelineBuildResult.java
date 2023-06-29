@@ -187,22 +187,18 @@ public class PipelineBuildResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PipelineBuildResult pipelineBuildResult = (PipelineBuildResult) o;
-        return Objects.equals(this.buildId, pipelineBuildResult.buildId)
-            && Objects.equals(this.elapseTime, pipelineBuildResult.elapseTime)
-            && Objects.equals(this.endTime, pipelineBuildResult.endTime)
-            && Objects.equals(this.outcome, pipelineBuildResult.outcome)
-            && Objects.equals(this.pipelineId, pipelineBuildResult.pipelineId)
-            && Objects.equals(this.pipelineName, pipelineBuildResult.pipelineName)
-            && Objects.equals(this.startTime, pipelineBuildResult.startTime)
-            && Objects.equals(this.status, pipelineBuildResult.status);
+        PipelineBuildResult that = (PipelineBuildResult) obj;
+        return Objects.equals(this.buildId, that.buildId) && Objects.equals(this.elapseTime, that.elapseTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.outcome, that.outcome)
+            && Objects.equals(this.pipelineId, that.pipelineId) && Objects.equals(this.pipelineName, that.pipelineName)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

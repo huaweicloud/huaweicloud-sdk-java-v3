@@ -100,18 +100,16 @@ public class VolumeAttachments {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VolumeAttachments volumeAttachments = (VolumeAttachments) o;
-        return Objects.equals(this.id, volumeAttachments.id)
-            && Objects.equals(this.serverId, volumeAttachments.serverId)
-            && Objects.equals(this.volumeId, volumeAttachments.volumeId)
-            && Objects.equals(this.device, volumeAttachments.device);
+        VolumeAttachments that = (VolumeAttachments) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.serverId, that.serverId)
+            && Objects.equals(this.volumeId, that.volumeId) && Objects.equals(this.device, that.device);
     }
 
     @Override

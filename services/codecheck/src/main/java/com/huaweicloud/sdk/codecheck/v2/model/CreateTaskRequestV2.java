@@ -335,26 +335,21 @@ public class CreateTaskRequestV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTaskRequestV2 createTaskRequestV2 = (CreateTaskRequestV2) o;
-        return Objects.equals(this.checkType, createTaskRequestV2.checkType)
-            && Objects.equals(this.gitUrl, createTaskRequestV2.gitUrl)
-            && Objects.equals(this.gitBranch, createTaskRequestV2.gitBranch)
-            && Objects.equals(this.language, createTaskRequestV2.language)
-            && Objects.equals(this.ruleSets, createTaskRequestV2.ruleSets)
-            && Objects.equals(this.taskType, createTaskRequestV2.taskType)
-            && Objects.equals(this.username, createTaskRequestV2.username)
-            && Objects.equals(this.accessToken, createTaskRequestV2.accessToken)
-            && Objects.equals(this.endpointId, createTaskRequestV2.endpointId)
-            && Objects.equals(this.incConfig, createTaskRequestV2.incConfig)
-            && Objects.equals(this.enableFossbot, createTaskRequestV2.enableFossbot)
-            && Objects.equals(this.resourcePoolId, createTaskRequestV2.resourcePoolId);
+        CreateTaskRequestV2 that = (CreateTaskRequestV2) obj;
+        return Objects.equals(this.checkType, that.checkType) && Objects.equals(this.gitUrl, that.gitUrl)
+            && Objects.equals(this.gitBranch, that.gitBranch) && Objects.equals(this.language, that.language)
+            && Objects.equals(this.ruleSets, that.ruleSets) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.accessToken, that.accessToken)
+            && Objects.equals(this.endpointId, that.endpointId) && Objects.equals(this.incConfig, that.incConfig)
+            && Objects.equals(this.enableFossbot, that.enableFossbot)
+            && Objects.equals(this.resourcePoolId, that.resourcePoolId);
     }
 
     @Override

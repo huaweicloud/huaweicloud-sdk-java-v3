@@ -304,25 +304,21 @@ public class ListProductsRespDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProductsRespDetail listProductsRespDetail = (ListProductsRespDetail) o;
-        return Objects.equals(this.tps, listProductsRespDetail.tps)
-            && Objects.equals(this.storage, listProductsRespDetail.storage)
-            && Objects.equals(this.partitionNum, listProductsRespDetail.partitionNum)
-            && Objects.equals(this.productId, listProductsRespDetail.productId)
-            && Objects.equals(this.specCode, listProductsRespDetail.specCode)
-            && Objects.equals(this.io, listProductsRespDetail.io)
-            && Objects.equals(this.bandwidth, listProductsRespDetail.bandwidth)
-            && Objects.equals(this.unavailableZones, listProductsRespDetail.unavailableZones)
-            && Objects.equals(this.availableZones, listProductsRespDetail.availableZones)
-            && Objects.equals(this.ecsFlavorId, listProductsRespDetail.ecsFlavorId)
-            && Objects.equals(this.archType, listProductsRespDetail.archType);
+        ListProductsRespDetail that = (ListProductsRespDetail) obj;
+        return Objects.equals(this.tps, that.tps) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.partitionNum, that.partitionNum) && Objects.equals(this.productId, that.productId)
+            && Objects.equals(this.specCode, that.specCode) && Objects.equals(this.io, that.io)
+            && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.unavailableZones, that.unavailableZones)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.ecsFlavorId, that.ecsFlavorId) && Objects.equals(this.archType, that.archType);
     }
 
     @Override

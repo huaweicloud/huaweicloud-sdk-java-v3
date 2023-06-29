@@ -1,38 +1,28 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.ContainerSettingsReqDTO;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 更新边缘模块请求结构体
  */
-public class UpdateEdgeModuleReqDTO  {
-
+public class UpdateEdgeModuleReqDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="app_version")
-    
+    @JsonProperty(value = "app_version")
 
     private String appVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="module_name")
-    
+    @JsonProperty(value = "module_name")
 
     private String moduleName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="container_settings")
-    
+    @JsonProperty(value = "container_settings")
 
     private ContainerSettingsReqDTO containerSettings;
 
@@ -40,9 +30,6 @@ public class UpdateEdgeModuleReqDTO  {
         this.appVersion = appVersion;
         return this;
     }
-
-    
-
 
     /**
      * 边缘应用版本
@@ -56,15 +43,10 @@ public class UpdateEdgeModuleReqDTO  {
         this.appVersion = appVersion;
     }
 
-    
-
     public UpdateEdgeModuleReqDTO withModuleName(String moduleName) {
         this.moduleName = moduleName;
         return this;
     }
-
-    
-
 
     /**
      * 边缘模块名称
@@ -78,22 +60,19 @@ public class UpdateEdgeModuleReqDTO  {
         this.moduleName = moduleName;
     }
 
-    
-
     public UpdateEdgeModuleReqDTO withContainerSettings(ContainerSettingsReqDTO containerSettings) {
         this.containerSettings = containerSettings;
         return this;
     }
 
     public UpdateEdgeModuleReqDTO withContainerSettings(Consumer<ContainerSettingsReqDTO> containerSettingsSetter) {
-        if(this.containerSettings == null ){
+        if (this.containerSettings == null) {
             this.containerSettings = new ContainerSettingsReqDTO();
             containerSettingsSetter.accept(this.containerSettings);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get containerSettings
@@ -107,25 +86,24 @@ public class UpdateEdgeModuleReqDTO  {
         this.containerSettings = containerSettings;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEdgeModuleReqDTO updateEdgeModuleReqDTO = (UpdateEdgeModuleReqDTO) o;
-        return Objects.equals(this.appVersion, updateEdgeModuleReqDTO.appVersion) &&
-            Objects.equals(this.moduleName, updateEdgeModuleReqDTO.moduleName) &&
-            Objects.equals(this.containerSettings, updateEdgeModuleReqDTO.containerSettings);
+        UpdateEdgeModuleReqDTO that = (UpdateEdgeModuleReqDTO) obj;
+        return Objects.equals(this.appVersion, that.appVersion) && Objects.equals(this.moduleName, that.moduleName)
+            && Objects.equals(this.containerSettings, that.containerSettings);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appVersion, moduleName, containerSettings);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,6 +114,7 @@ public class UpdateEdgeModuleReqDTO  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -146,8 +125,5 @@ public class UpdateEdgeModuleReqDTO  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

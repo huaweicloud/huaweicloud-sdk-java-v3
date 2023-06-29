@@ -77,22 +77,15 @@ public class InstanceForApiActionDTO {
             if (value == null) {
                 return null;
             }
-            InstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceTypeEnum(value));
         }
 
         public static InstanceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class InstanceForApiActionDTO {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -281,22 +267,15 @@ public class InstanceForApiActionDTO {
             if (value == null) {
                 return null;
             }
-            CauseEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CauseEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CauseEnum(value));
         }
 
         public static CauseEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CauseEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -407,22 +386,15 @@ public class InstanceForApiActionDTO {
             if (value == null) {
                 return null;
             }
-            ApiStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiStatusEnum(value));
         }
 
         public static ApiStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -495,22 +467,15 @@ public class InstanceForApiActionDTO {
             if (value == null) {
                 return null;
             }
-            ApiDebugEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiDebugEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiDebugEnum(value));
         }
 
         public static ApiDebugEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiDebugEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -669,22 +634,18 @@ public class InstanceForApiActionDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceForApiActionDTO instanceForApiActionDTO = (InstanceForApiActionDTO) o;
-        return Objects.equals(this.instanceId, instanceForApiActionDTO.instanceId)
-            && Objects.equals(this.instanceType, instanceForApiActionDTO.instanceType)
-            && Objects.equals(this.name, instanceForApiActionDTO.name)
-            && Objects.equals(this.action, instanceForApiActionDTO.action)
-            && Objects.equals(this.result, instanceForApiActionDTO.result)
-            && Objects.equals(this.cause, instanceForApiActionDTO.cause)
-            && Objects.equals(this.apiStatus, instanceForApiActionDTO.apiStatus)
-            && Objects.equals(this.apiDebug, instanceForApiActionDTO.apiDebug);
+        InstanceForApiActionDTO that = (InstanceForApiActionDTO) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.cause, that.cause)
+            && Objects.equals(this.apiStatus, that.apiStatus) && Objects.equals(this.apiDebug, that.apiDebug);
     }
 
     @Override

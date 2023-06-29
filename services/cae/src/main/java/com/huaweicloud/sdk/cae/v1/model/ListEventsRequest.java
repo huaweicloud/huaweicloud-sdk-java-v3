@@ -103,18 +103,18 @@ public class ListEventsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEventsRequest listEventsRequest = (ListEventsRequest) o;
-        return Objects.equals(this.componentId, listEventsRequest.componentId)
-            && Objects.equals(this.xEnvironmentID, listEventsRequest.xEnvironmentID)
-            && Objects.equals(this.xEnterpriseProjectID, listEventsRequest.xEnterpriseProjectID)
-            && Objects.equals(this.applicationId, listEventsRequest.applicationId);
+        ListEventsRequest that = (ListEventsRequest) obj;
+        return Objects.equals(this.componentId, that.componentId)
+            && Objects.equals(this.xEnvironmentID, that.xEnvironmentID)
+            && Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.applicationId, that.applicationId);
     }
 
     @Override

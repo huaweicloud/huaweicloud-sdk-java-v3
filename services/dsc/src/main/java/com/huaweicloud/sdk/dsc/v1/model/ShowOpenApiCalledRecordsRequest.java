@@ -123,19 +123,17 @@ public class ShowOpenApiCalledRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOpenApiCalledRecordsRequest showOpenApiCalledRecordsRequest = (ShowOpenApiCalledRecordsRequest) o;
-        return Objects.equals(this.limit, showOpenApiCalledRecordsRequest.limit)
-            && Objects.equals(this.calledUrl, showOpenApiCalledRecordsRequest.calledUrl)
-            && Objects.equals(this.startTime, showOpenApiCalledRecordsRequest.startTime)
-            && Objects.equals(this.endTime, showOpenApiCalledRecordsRequest.endTime)
-            && Objects.equals(this.marker, showOpenApiCalledRecordsRequest.marker);
+        ShowOpenApiCalledRecordsRequest that = (ShowOpenApiCalledRecordsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.calledUrl, that.calledUrl)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

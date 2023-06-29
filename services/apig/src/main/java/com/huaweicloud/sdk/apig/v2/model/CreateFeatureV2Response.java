@@ -145,20 +145,17 @@ public class CreateFeatureV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFeatureV2Response createFeatureV2Response = (CreateFeatureV2Response) o;
-        return Objects.equals(this.id, createFeatureV2Response.id)
-            && Objects.equals(this.name, createFeatureV2Response.name)
-            && Objects.equals(this.enable, createFeatureV2Response.enable)
-            && Objects.equals(this.config, createFeatureV2Response.config)
-            && Objects.equals(this.instanceId, createFeatureV2Response.instanceId)
-            && Objects.equals(this.updateTime, createFeatureV2Response.updateTime);
+        CreateFeatureV2Response that = (CreateFeatureV2Response) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.enable, that.enable) && Objects.equals(this.config, that.config)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

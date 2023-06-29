@@ -169,19 +169,18 @@ public class MemberRoleVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberRoleVo memberRoleVo = (MemberRoleVo) o;
-        return Objects.equals(this.domainId, memberRoleVo.domainId)
-            && Objects.equals(this.extensionCount, memberRoleVo.extensionCount)
-            && Objects.equals(this.role, memberRoleVo.role) && Objects.equals(this.roleId, memberRoleVo.roleId)
-            && Objects.equals(this.roleValue, memberRoleVo.roleValue)
-            && Objects.equals(this.userId, memberRoleVo.userId) && Objects.equals(this.userName, memberRoleVo.userName);
+        MemberRoleVo that = (MemberRoleVo) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.extensionCount, that.extensionCount)
+            && Objects.equals(this.role, that.role) && Objects.equals(this.roleId, that.roleId)
+            && Objects.equals(this.roleValue, that.roleValue) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

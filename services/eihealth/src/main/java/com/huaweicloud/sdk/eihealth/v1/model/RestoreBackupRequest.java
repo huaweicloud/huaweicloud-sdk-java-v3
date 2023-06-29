@@ -87,17 +87,16 @@ public class RestoreBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreBackupRequest restoreBackupRequest = (RestoreBackupRequest) o;
-        return Objects.equals(this.backupId, restoreBackupRequest.backupId)
-            && Objects.equals(this.eihealthProjectId, restoreBackupRequest.eihealthProjectId)
-            && Objects.equals(this.body, restoreBackupRequest.body);
+        RestoreBackupRequest that = (RestoreBackupRequest) obj;
+        return Objects.equals(this.backupId, that.backupId)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.body, that.body);
     }
 
     @Override

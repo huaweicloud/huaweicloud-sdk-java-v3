@@ -113,17 +113,16 @@ public class ListResourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceResponse listResourceResponse = (ListResourceResponse) o;
-        return Objects.equals(this.resources, listResourceResponse.resources)
-            && Objects.equals(this.errors, listResourceResponse.errors)
-            && Objects.equals(this.totalCount, listResourceResponse.totalCount);
+        ListResourceResponse that = (ListResourceResponse) obj;
+        return Objects.equals(this.resources, that.resources) && Objects.equals(this.errors, that.errors)
+            && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

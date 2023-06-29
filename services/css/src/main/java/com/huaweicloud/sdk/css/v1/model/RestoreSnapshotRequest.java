@@ -87,17 +87,16 @@ public class RestoreSnapshotRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestoreSnapshotRequest restoreSnapshotRequest = (RestoreSnapshotRequest) o;
-        return Objects.equals(this.clusterId, restoreSnapshotRequest.clusterId)
-            && Objects.equals(this.snapshotId, restoreSnapshotRequest.snapshotId)
-            && Objects.equals(this.body, restoreSnapshotRequest.body);
+        RestoreSnapshotRequest that = (RestoreSnapshotRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.snapshotId, that.snapshotId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -201,22 +201,19 @@ public class ListHistorySessionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistorySessionsRequest listHistorySessionsRequest = (ListHistorySessionsRequest) o;
-        return Objects.equals(this.authorizationId, listHistorySessionsRequest.authorizationId)
-            && Objects.equals(this.authorizationDetailId, listHistorySessionsRequest.authorizationDetailId)
-            && Objects.equals(this.groupId, listHistorySessionsRequest.groupId)
-            && Objects.equals(this.offset, listHistorySessionsRequest.offset)
-            && Objects.equals(this.limit, listHistorySessionsRequest.limit)
-            && Objects.equals(this.xSite, listHistorySessionsRequest.xSite)
-            && Objects.equals(this.xLanguage, listHistorySessionsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listHistorySessionsRequest.xTimeZone);
+        ListHistorySessionsRequest that = (ListHistorySessionsRequest) obj;
+        return Objects.equals(this.authorizationId, that.authorizationId)
+            && Objects.equals(this.authorizationDetailId, that.authorizationDetailId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

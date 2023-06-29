@@ -1,9 +1,12 @@
 package com.huaweicloud.sdk.workspace.v2.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +71,7 @@ public class DesktopDetailInfo {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "security_groups")
 
-    private List<SecurityGroupInfo> securityGroups = null;
+    private List<SecurityGroup> securityGroups = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "login_status")
@@ -144,6 +147,92 @@ public class DesktopDetailInfo {
     @JsonProperty(value = "tags")
 
     private List<Tag> tags = null;
+
+    /**
+     * 上网方式。 - NAT：表示NAT上网方式。 - EIP：表示EIP上网方式。 - BOTH：表示两种上网方式都支持。
+     */
+    public static final class InternetModeEnum {
+
+        /**
+         * Enum NAT for value: "NAT"
+         */
+        public static final InternetModeEnum NAT = new InternetModeEnum("NAT");
+
+        /**
+         * Enum EIP for value: "EIP"
+         */
+        public static final InternetModeEnum EIP = new InternetModeEnum("EIP");
+
+        /**
+         * Enum BOTH for value: "BOTH"
+         */
+        public static final InternetModeEnum BOTH = new InternetModeEnum("BOTH");
+
+        private static final Map<String, InternetModeEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, InternetModeEnum> createStaticFields() {
+            Map<String, InternetModeEnum> map = new HashMap<>();
+            map.put("NAT", NAT);
+            map.put("EIP", EIP);
+            map.put("BOTH", BOTH);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        InternetModeEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static InternetModeEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InternetModeEnum(value));
+        }
+
+        public static InternetModeEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof InternetModeEnum) {
+                return this.value.equals(((InternetModeEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "internet_mode")
+
+    private InternetModeEnum internetMode;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "is_attaching_eip")
+
+    private Boolean isAttachingEip;
 
     public DesktopDetailInfo withDesktopId(String desktopId) {
         this.desktopId = desktopId;
@@ -372,12 +461,12 @@ public class DesktopDetailInfo {
         this.created = created;
     }
 
-    public DesktopDetailInfo withSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public DesktopDetailInfo withSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
         return this;
     }
 
-    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroupInfo securityGroupsItem) {
+    public DesktopDetailInfo addSecurityGroupsItem(SecurityGroup securityGroupsItem) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -385,7 +474,7 @@ public class DesktopDetailInfo {
         return this;
     }
 
-    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroupInfo>> securityGroupsSetter) {
+    public DesktopDetailInfo withSecurityGroups(Consumer<List<SecurityGroup>> securityGroupsSetter) {
         if (this.securityGroups == null) {
             this.securityGroups = new ArrayList<>();
         }
@@ -397,11 +486,11 @@ public class DesktopDetailInfo {
      * 桌面安全组。
      * @return securityGroups
      */
-    public List<SecurityGroupInfo> getSecurityGroups() {
+    public List<SecurityGroup> getSecurityGroups() {
         return securityGroups;
     }
 
-    public void setSecurityGroups(List<SecurityGroupInfo> securityGroups) {
+    public void setSecurityGroups(List<SecurityGroup> securityGroups) {
         this.securityGroups = securityGroups;
     }
 
@@ -710,41 +799,65 @@ public class DesktopDetailInfo {
         this.tags = tags;
     }
 
+    public DesktopDetailInfo withInternetMode(InternetModeEnum internetMode) {
+        this.internetMode = internetMode;
+        return this;
+    }
+
+    /**
+     * 上网方式。 - NAT：表示NAT上网方式。 - EIP：表示EIP上网方式。 - BOTH：表示两种上网方式都支持。
+     * @return internetMode
+     */
+    public InternetModeEnum getInternetMode() {
+        return internetMode;
+    }
+
+    public void setInternetMode(InternetModeEnum internetMode) {
+        this.internetMode = internetMode;
+    }
+
+    public DesktopDetailInfo withIsAttachingEip(Boolean isAttachingEip) {
+        this.isAttachingEip = isAttachingEip;
+        return this;
+    }
+
+    /**
+     * 桌面是否正在绑定EIP。
+     * @return isAttachingEip
+     */
+    public Boolean getIsAttachingEip() {
+        return isAttachingEip;
+    }
+
+    public void setIsAttachingEip(Boolean isAttachingEip) {
+        this.isAttachingEip = isAttachingEip;
+    }
+
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DesktopDetailInfo desktopDetailInfo = (DesktopDetailInfo) o;
-        return Objects.equals(this.desktopId, desktopDetailInfo.desktopId)
-            && Objects.equals(this.computerName, desktopDetailInfo.computerName)
-            && Objects.equals(this.addresses, desktopDetailInfo.addresses)
-            && Objects.equals(this.ipAddresses, desktopDetailInfo.ipAddresses)
-            && Objects.equals(this.desktopType, desktopDetailInfo.desktopType)
-            && Objects.equals(this.metadata, desktopDetailInfo.metadata)
-            && Objects.equals(this.flavor, desktopDetailInfo.flavor)
-            && Objects.equals(this.status, desktopDetailInfo.status)
-            && Objects.equals(this.taskStatus, desktopDetailInfo.taskStatus)
-            && Objects.equals(this.created, desktopDetailInfo.created)
-            && Objects.equals(this.securityGroups, desktopDetailInfo.securityGroups)
-            && Objects.equals(this.loginStatus, desktopDetailInfo.loginStatus)
-            && Objects.equals(this.userName, desktopDetailInfo.userName)
-            && Objects.equals(this.productId, desktopDetailInfo.productId)
-            && Objects.equals(this.rootVolume, desktopDetailInfo.rootVolume)
-            && Objects.equals(this.dataVolumes, desktopDetailInfo.dataVolumes)
-            && Objects.equals(this.userGroup, desktopDetailInfo.userGroup)
-            && Objects.equals(this.availabilityZone, desktopDetailInfo.availabilityZone)
-            && Objects.equals(this.siteType, desktopDetailInfo.siteType)
-            && Objects.equals(this.siteName, desktopDetailInfo.siteName)
-            && Objects.equals(this.product, desktopDetailInfo.product)
-            && Objects.equals(this.ouName, desktopDetailInfo.ouName)
-            && Objects.equals(this.osVersion, desktopDetailInfo.osVersion)
-            && Objects.equals(this.sid, desktopDetailInfo.sid)
-            && Objects.equals(this.orderId, desktopDetailInfo.orderId)
-            && Objects.equals(this.tags, desktopDetailInfo.tags);
+        DesktopDetailInfo that = (DesktopDetailInfo) obj;
+        return Objects.equals(this.desktopId, that.desktopId) && Objects.equals(this.computerName, that.computerName)
+            && Objects.equals(this.addresses, that.addresses) && Objects.equals(this.ipAddresses, that.ipAddresses)
+            && Objects.equals(this.desktopType, that.desktopType) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.flavor, that.flavor) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.loginStatus, that.loginStatus) && Objects.equals(this.userName, that.userName)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.userGroup, that.userGroup)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.siteType, that.siteType) && Objects.equals(this.siteName, that.siteName)
+            && Objects.equals(this.product, that.product) && Objects.equals(this.ouName, that.ouName)
+            && Objects.equals(this.osVersion, that.osVersion) && Objects.equals(this.sid, that.sid)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.internetMode, that.internetMode)
+            && Objects.equals(this.isAttachingEip, that.isAttachingEip);
     }
 
     @Override
@@ -774,7 +887,9 @@ public class DesktopDetailInfo {
             osVersion,
             sid,
             orderId,
-            tags);
+            tags,
+            internetMode,
+            isAttachingEip);
     }
 
     @Override
@@ -807,6 +922,8 @@ public class DesktopDetailInfo {
         sb.append("    sid: ").append(toIndentedString(sid)).append("\n");
         sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+        sb.append("    internetMode: ").append(toIndentedString(internetMode)).append("\n");
+        sb.append("    isAttachingEip: ").append(toIndentedString(isAttachingEip)).append("\n");
         sb.append("}");
         return sb.toString();
     }

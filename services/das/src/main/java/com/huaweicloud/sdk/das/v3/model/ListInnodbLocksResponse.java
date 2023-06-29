@@ -113,17 +113,16 @@ public class ListInnodbLocksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInnodbLocksResponse listInnodbLocksResponse = (ListInnodbLocksResponse) o;
-        return Objects.equals(this.innodbTrx, listInnodbLocksResponse.innodbTrx)
-            && Objects.equals(this.innodbLockWaits, listInnodbLocksResponse.innodbLockWaits)
-            && Objects.equals(this.count, listInnodbLocksResponse.count);
+        ListInnodbLocksResponse that = (ListInnodbLocksResponse) obj;
+        return Objects.equals(this.innodbTrx, that.innodbTrx)
+            && Objects.equals(this.innodbLockWaits, that.innodbLockWaits) && Objects.equals(this.count, that.count);
     }
 
     @Override

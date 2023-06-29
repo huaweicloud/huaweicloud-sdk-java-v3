@@ -167,21 +167,20 @@ public class UpdateWorkspaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateWorkspaceResponse updateWorkspaceResponse = (UpdateWorkspaceResponse) o;
-        return Objects.equals(this.workspaceId, updateWorkspaceResponse.workspaceId)
-            && Objects.equals(this.workspaceName, updateWorkspaceResponse.workspaceName)
-            && Objects.equals(this.creator, updateWorkspaceResponse.creator)
-            && Objects.equals(this.createTime, updateWorkspaceResponse.createTime)
-            && Objects.equals(this.workspaceType, updateWorkspaceResponse.workspaceType)
-            && Objects.equals(this.workspaceDescription, updateWorkspaceResponse.workspaceDescription)
-            && Objects.equals(this.star, updateWorkspaceResponse.star);
+        UpdateWorkspaceResponse that = (UpdateWorkspaceResponse) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.workspaceName, that.workspaceName) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.workspaceType, that.workspaceType)
+            && Objects.equals(this.workspaceDescription, that.workspaceDescription)
+            && Objects.equals(this.star, that.star);
     }
 
     @Override

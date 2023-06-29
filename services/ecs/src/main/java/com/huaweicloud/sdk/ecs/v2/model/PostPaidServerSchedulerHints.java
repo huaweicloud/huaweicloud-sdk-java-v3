@@ -77,17 +77,16 @@ public class PostPaidServerSchedulerHints {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PostPaidServerSchedulerHints postPaidServerSchedulerHints = (PostPaidServerSchedulerHints) o;
-        return Objects.equals(this.group, postPaidServerSchedulerHints.group)
-            && Objects.equals(this.dedicatedHostId, postPaidServerSchedulerHints.dedicatedHostId)
-            && Objects.equals(this.tenancy, postPaidServerSchedulerHints.tenancy);
+        PostPaidServerSchedulerHints that = (PostPaidServerSchedulerHints) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.dedicatedHostId, that.dedicatedHostId)
+            && Objects.equals(this.tenancy, that.tenancy);
     }
 
     @Override

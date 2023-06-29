@@ -55,16 +55,15 @@ public class StopTaskRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopTaskRequest stopTaskRequest = (StopTaskRequest) o;
-        return Objects.equals(this.serviceName, stopTaskRequest.serviceName)
-            && Objects.equals(this.taskId, stopTaskRequest.taskId);
+        StopTaskRequest that = (StopTaskRequest) obj;
+        return Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

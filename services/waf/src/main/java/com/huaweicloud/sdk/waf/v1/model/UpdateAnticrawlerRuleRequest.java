@@ -109,18 +109,17 @@ public class UpdateAnticrawlerRuleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAnticrawlerRuleRequest updateAnticrawlerRuleRequest = (UpdateAnticrawlerRuleRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updateAnticrawlerRuleRequest.enterpriseProjectId)
-            && Objects.equals(this.policyId, updateAnticrawlerRuleRequest.policyId)
-            && Objects.equals(this.ruleId, updateAnticrawlerRuleRequest.ruleId)
-            && Objects.equals(this.body, updateAnticrawlerRuleRequest.body);
+        UpdateAnticrawlerRuleRequest that = (UpdateAnticrawlerRuleRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

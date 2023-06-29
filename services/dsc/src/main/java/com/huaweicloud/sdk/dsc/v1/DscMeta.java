@@ -184,10 +184,10 @@ public class DscMeta {
                 .withContentType("application/json");
 
         // requests
-        builder.<RuleRequest>withRequestField("body",
+        builder.<RuleChangeRequest>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(RuleRequest.class),
+            TypeCasts.uncheckedConversion(RuleChangeRequest.class),
             f -> f.withMarshaller(ChangeRuleRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));

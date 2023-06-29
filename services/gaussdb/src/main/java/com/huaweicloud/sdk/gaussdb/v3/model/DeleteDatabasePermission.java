@@ -1,48 +1,37 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 数据库用户权限信息
  */
-public class DeleteDatabasePermission  {
-
+public class DeleteDatabasePermission {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="host")
-    
+    @JsonProperty(value = "host")
 
     private String host;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="databases")
-    
+    @JsonProperty(value = "databases")
+
     private List<String> databases = null;
-    
+
     public DeleteDatabasePermission withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 数据库用户名
@@ -56,15 +45,10 @@ public class DeleteDatabasePermission  {
         this.name = name;
     }
 
-    
-
     public DeleteDatabasePermission withHost(String host) {
         this.host = host;
         return this;
     }
-
-    
-
 
     /**
      * 主机地址
@@ -78,16 +62,13 @@ public class DeleteDatabasePermission  {
         this.host = host;
     }
 
-    
-
     public DeleteDatabasePermission withDatabases(List<String> databases) {
         this.databases = databases;
         return this;
     }
 
-    
     public DeleteDatabasePermission addDatabasesItem(String databasesItem) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         this.databases.add(databasesItem);
@@ -95,7 +76,7 @@ public class DeleteDatabasePermission  {
     }
 
     public DeleteDatabasePermission withDatabases(Consumer<List<String>> databasesSetter) {
-        if(this.databases == null) {
+        if (this.databases == null) {
             this.databases = new ArrayList<>();
         }
         databasesSetter.accept(this.databases);
@@ -114,25 +95,24 @@ public class DeleteDatabasePermission  {
         this.databases = databases;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabasePermission deleteDatabasePermission = (DeleteDatabasePermission) o;
-        return Objects.equals(this.name, deleteDatabasePermission.name) &&
-            Objects.equals(this.host, deleteDatabasePermission.host) &&
-            Objects.equals(this.databases, deleteDatabasePermission.databases);
+        DeleteDatabasePermission that = (DeleteDatabasePermission) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.host, that.host)
+            && Objects.equals(this.databases, that.databases);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, host, databases);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -143,6 +123,7 @@ public class DeleteDatabasePermission  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -153,8 +134,5 @@ public class DeleteDatabasePermission  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

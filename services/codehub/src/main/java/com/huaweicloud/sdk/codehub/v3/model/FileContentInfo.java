@@ -231,23 +231,19 @@ public class FileContentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileContentInfo fileContentInfo = (FileContentInfo) o;
-        return Objects.equals(this.fileName, fileContentInfo.fileName)
-            && Objects.equals(this.filePath, fileContentInfo.filePath)
-            && Objects.equals(this.size, fileContentInfo.size)
-            && Objects.equals(this.encoding, fileContentInfo.encoding)
-            && Objects.equals(this.contentSha256, fileContentInfo.contentSha256)
-            && Objects.equals(this.ref, fileContentInfo.ref) && Objects.equals(this.blobId, fileContentInfo.blobId)
-            && Objects.equals(this.commitId, fileContentInfo.commitId)
-            && Objects.equals(this.lastCommitId, fileContentInfo.lastCommitId)
-            && Objects.equals(this.content, fileContentInfo.content);
+        FileContentInfo that = (FileContentInfo) obj;
+        return Objects.equals(this.fileName, that.fileName) && Objects.equals(this.filePath, that.filePath)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.encoding, that.encoding)
+            && Objects.equals(this.contentSha256, that.contentSha256) && Objects.equals(this.ref, that.ref)
+            && Objects.equals(this.blobId, that.blobId) && Objects.equals(this.commitId, that.commitId)
+            && Objects.equals(this.lastCommitId, that.lastCommitId) && Objects.equals(this.content, that.content);
     }
 
     @Override

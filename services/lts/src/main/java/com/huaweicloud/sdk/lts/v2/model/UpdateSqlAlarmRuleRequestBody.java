@@ -105,22 +105,15 @@ public class UpdateSqlAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAlarmLevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAlarmLevelEnum(value));
         }
 
         public static SqlAlarmLevelEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SqlAlarmLevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -204,22 +197,15 @@ public class UpdateSqlAlarmRuleRequestBody {
             if (value == null) {
                 return null;
             }
-            SqlAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SqlAlarmSendCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SqlAlarmSendCodeEnum(value));
         }
 
         public static SqlAlarmSendCodeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            SqlAlarmSendCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -564,29 +550,28 @@ public class UpdateSqlAlarmRuleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSqlAlarmRuleRequestBody updateSqlAlarmRuleRequestBody = (UpdateSqlAlarmRuleRequestBody) o;
-        return Objects.equals(this.sqlAlarmRuleId, updateSqlAlarmRuleRequestBody.sqlAlarmRuleId)
-            && Objects.equals(this.sqlAlarmRuleName, updateSqlAlarmRuleRequestBody.sqlAlarmRuleName)
-            && Objects.equals(this.sqlAlarmRuleDescription, updateSqlAlarmRuleRequestBody.sqlAlarmRuleDescription)
-            && Objects.equals(this.sqlRequests, updateSqlAlarmRuleRequestBody.sqlRequests)
-            && Objects.equals(this.frequency, updateSqlAlarmRuleRequestBody.frequency)
-            && Objects.equals(this.conditionExpression, updateSqlAlarmRuleRequestBody.conditionExpression)
-            && Objects.equals(this.sqlAlarmLevel, updateSqlAlarmRuleRequestBody.sqlAlarmLevel)
-            && Objects.equals(this.sqlAlarmSend, updateSqlAlarmRuleRequestBody.sqlAlarmSend)
-            && Objects.equals(this.sqlAlarmSendCode, updateSqlAlarmRuleRequestBody.sqlAlarmSendCode)
-            && Objects.equals(this.domainId, updateSqlAlarmRuleRequestBody.domainId)
-            && Objects.equals(this.notificationSaveRule, updateSqlAlarmRuleRequestBody.notificationSaveRule)
-            && Objects.equals(this.triggerConditionCount, updateSqlAlarmRuleRequestBody.triggerConditionCount)
-            && Objects.equals(this.triggerConditionFrequency, updateSqlAlarmRuleRequestBody.triggerConditionFrequency)
-            && Objects.equals(this.whetherRecoveryPolicy, updateSqlAlarmRuleRequestBody.whetherRecoveryPolicy)
-            && Objects.equals(this.recoveryPolicy, updateSqlAlarmRuleRequestBody.recoveryPolicy);
+        UpdateSqlAlarmRuleRequestBody that = (UpdateSqlAlarmRuleRequestBody) obj;
+        return Objects.equals(this.sqlAlarmRuleId, that.sqlAlarmRuleId)
+            && Objects.equals(this.sqlAlarmRuleName, that.sqlAlarmRuleName)
+            && Objects.equals(this.sqlAlarmRuleDescription, that.sqlAlarmRuleDescription)
+            && Objects.equals(this.sqlRequests, that.sqlRequests) && Objects.equals(this.frequency, that.frequency)
+            && Objects.equals(this.conditionExpression, that.conditionExpression)
+            && Objects.equals(this.sqlAlarmLevel, that.sqlAlarmLevel)
+            && Objects.equals(this.sqlAlarmSend, that.sqlAlarmSend)
+            && Objects.equals(this.sqlAlarmSendCode, that.sqlAlarmSendCode)
+            && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.notificationSaveRule, that.notificationSaveRule)
+            && Objects.equals(this.triggerConditionCount, that.triggerConditionCount)
+            && Objects.equals(this.triggerConditionFrequency, that.triggerConditionFrequency)
+            && Objects.equals(this.whetherRecoveryPolicy, that.whetherRecoveryPolicy)
+            && Objects.equals(this.recoveryPolicy, that.recoveryPolicy);
     }
 
     @Override

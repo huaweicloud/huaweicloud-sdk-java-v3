@@ -216,21 +216,18 @@ public class OpenEntityHeader {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenEntityHeader openEntityHeader = (OpenEntityHeader) o;
-        return Objects.equals(this.attributes, openEntityHeader.attributes)
-            && Objects.equals(this.connection, openEntityHeader.connection)
-            && Objects.equals(this.displayText, openEntityHeader.displayText)
-            && Objects.equals(this.guid, openEntityHeader.guid)
-            && Objects.equals(this.typeName, openEntityHeader.typeName)
-            && Objects.equals(this.tags, openEntityHeader.tags)
-            && Objects.equals(this.classificationNames, openEntityHeader.classificationNames);
+        OpenEntityHeader that = (OpenEntityHeader) obj;
+        return Objects.equals(this.attributes, that.attributes) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.displayText, that.displayText) && Objects.equals(this.guid, that.guid)
+            && Objects.equals(this.typeName, that.typeName) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.classificationNames, that.classificationNames);
     }
 
     @Override

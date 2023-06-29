@@ -39,27 +39,27 @@ public class FilterSnake {
     public static final class SortByEnum {
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final SortByEnum NUMBER_1 = new SortByEnum(1l);
+        public static final SortByEnum NUMBER_1 = new SortByEnum(1L);
 
         /**
-         * Enum NUMBER_2 for value: 2l
+         * Enum NUMBER_2 for value: 2L
          */
-        public static final SortByEnum NUMBER_2 = new SortByEnum(2l);
+        public static final SortByEnum NUMBER_2 = new SortByEnum(2L);
 
         /**
-         * Enum NUMBER_3 for value: 3l
+         * Enum NUMBER_3 for value: 3L
          */
-        public static final SortByEnum NUMBER_3 = new SortByEnum(3l);
+        public static final SortByEnum NUMBER_3 = new SortByEnum(3L);
 
         private static final Map<Long, SortByEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, SortByEnum> createStaticFields() {
             Map<Long, SortByEnum> map = new HashMap<>();
-            map.put(1l, NUMBER_1);
-            map.put(2l, NUMBER_2);
-            map.put(3l, NUMBER_3);
+            map.put(1L, NUMBER_1);
+            map.put(2L, NUMBER_2);
+            map.put(3L, NUMBER_3);
             return Collections.unmodifiableMap(map);
         }
 
@@ -84,22 +84,15 @@ public class FilterSnake {
             if (value == null) {
                 return null;
             }
-            SortByEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortByEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortByEnum(value));
         }
 
         public static SortByEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            SortByEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -127,21 +120,21 @@ public class FilterSnake {
     public static final class SortOrderEnum {
 
         /**
-         * Enum NUMBER_1 for value: 1l
+         * Enum NUMBER_1 for value: 1L
          */
-        public static final SortOrderEnum NUMBER_1 = new SortOrderEnum(1l);
+        public static final SortOrderEnum NUMBER_1 = new SortOrderEnum(1L);
 
         /**
-         * Enum NUMBER_2 for value: 2l
+         * Enum NUMBER_2 for value: 2L
          */
-        public static final SortOrderEnum NUMBER_2 = new SortOrderEnum(2l);
+        public static final SortOrderEnum NUMBER_2 = new SortOrderEnum(2L);
 
         private static final Map<Long, SortOrderEnum> STATIC_FIELDS = createStaticFields();
 
         private static Map<Long, SortOrderEnum> createStaticFields() {
             Map<Long, SortOrderEnum> map = new HashMap<>();
-            map.put(1l, NUMBER_1);
-            map.put(2l, NUMBER_2);
+            map.put(1L, NUMBER_1);
+            map.put(2L, NUMBER_2);
             return Collections.unmodifiableMap(map);
         }
 
@@ -166,22 +159,15 @@ public class FilterSnake {
             if (value == null) {
                 return null;
             }
-            SortOrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortOrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortOrderEnum(value));
         }
 
         public static SortOrderEnum valueOf(Long value) {
             if (value == null) {
                 return null;
             }
-            SortOrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -309,18 +295,17 @@ public class FilterSnake {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FilterSnake filterSnake = (FilterSnake) o;
-        return Objects.equals(this.criteria, filterSnake.criteria)
-            && Objects.equals(this.pageNumber, filterSnake.pageNumber)
-            && Objects.equals(this.pageSize, filterSnake.pageSize) && Objects.equals(this.sortBy, filterSnake.sortBy)
-            && Objects.equals(this.sortOrder, filterSnake.sortOrder);
+        FilterSnake that = (FilterSnake) obj;
+        return Objects.equals(this.criteria, that.criteria) && Objects.equals(this.pageNumber, that.pageNumber)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.sortBy, that.sortBy)
+            && Objects.equals(this.sortOrder, that.sortOrder);
     }
 
     @Override

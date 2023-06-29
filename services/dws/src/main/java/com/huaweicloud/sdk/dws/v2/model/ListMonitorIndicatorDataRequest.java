@@ -165,21 +165,18 @@ public class ListMonitorIndicatorDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMonitorIndicatorDataRequest listMonitorIndicatorDataRequest = (ListMonitorIndicatorDataRequest) o;
-        return Objects.equals(this.from, listMonitorIndicatorDataRequest.from)
-            && Objects.equals(this.to, listMonitorIndicatorDataRequest.to)
-            && Objects.equals(this.function, listMonitorIndicatorDataRequest.function)
-            && Objects.equals(this.period, listMonitorIndicatorDataRequest.period)
-            && Objects.equals(this.indicatorName, listMonitorIndicatorDataRequest.indicatorName)
-            && Objects.equals(this.dim0, listMonitorIndicatorDataRequest.dim0)
-            && Objects.equals(this.dim1, listMonitorIndicatorDataRequest.dim1);
+        ListMonitorIndicatorDataRequest that = (ListMonitorIndicatorDataRequest) obj;
+        return Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.function, that.function) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.indicatorName, that.indicatorName) && Objects.equals(this.dim0, that.dim0)
+            && Objects.equals(this.dim1, that.dim1);
     }
 
     @Override

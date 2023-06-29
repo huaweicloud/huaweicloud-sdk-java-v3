@@ -49,8 +49,8 @@ public class ListAuthorisationsRequest {
     private List<String> cloudConnectionId = null;
 
     /**
-    * Gets or Sets instanceId
-    */
+     * Gets or Sets instanceId
+     */
     public static final class InstanceIdEnum {
 
         /**
@@ -87,22 +87,15 @@ public class ListAuthorisationsRequest {
             if (value == null) {
                 return null;
             }
-            InstanceIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceIdEnum(value));
         }
 
         public static InstanceIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,21 +319,19 @@ public class ListAuthorisationsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorisationsRequest listAuthorisationsRequest = (ListAuthorisationsRequest) o;
-        return Objects.equals(this.limit, listAuthorisationsRequest.limit)
-            && Objects.equals(this.marker, listAuthorisationsRequest.marker)
-            && Objects.equals(this.id, listAuthorisationsRequest.id)
-            && Objects.equals(this.name, listAuthorisationsRequest.name)
-            && Objects.equals(this.description, listAuthorisationsRequest.description)
-            && Objects.equals(this.cloudConnectionId, listAuthorisationsRequest.cloudConnectionId)
-            && Objects.equals(this.instanceId, listAuthorisationsRequest.instanceId);
+        ListAuthorisationsRequest that = (ListAuthorisationsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

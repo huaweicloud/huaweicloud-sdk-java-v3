@@ -65,16 +65,16 @@ public class NoSqlRequestEpsQuota {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoSqlRequestEpsQuota noSqlRequestEpsQuota = (NoSqlRequestEpsQuota) o;
-        return Objects.equals(this.enterpriseProjectId, noSqlRequestEpsQuota.enterpriseProjectId)
-            && Objects.equals(this.quota, noSqlRequestEpsQuota.quota);
+        NoSqlRequestEpsQuota that = (NoSqlRequestEpsQuota) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.quota, that.quota);
     }
 
     @Override

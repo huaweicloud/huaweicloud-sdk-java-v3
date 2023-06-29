@@ -1,26 +1,17 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class DeleteClusterRequest  {
-
+public class DeleteClusterRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
@@ -28,9 +19,6 @@ public class DeleteClusterRequest  {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群ID
@@ -44,23 +32,23 @@ public class DeleteClusterRequest  {
         this.clusterId = clusterId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteClusterRequest deleteClusterRequest = (DeleteClusterRequest) o;
-        return Objects.equals(this.clusterId, deleteClusterRequest.clusterId);
+        DeleteClusterRequest that = (DeleteClusterRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -69,6 +57,7 @@ public class DeleteClusterRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -79,8 +68,5 @@ public class DeleteClusterRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -77,17 +77,16 @@ public class ShowResourcesDetailResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourcesDetailResponseBody showResourcesDetailResponseBody = (ShowResourcesDetailResponseBody) o;
-        return Objects.equals(this.type, showResourcesDetailResponseBody.type)
-            && Objects.equals(this.quota, showResourcesDetailResponseBody.quota)
-            && Objects.equals(this.used, showResourcesDetailResponseBody.used);
+        ShowResourcesDetailResponseBody that = (ShowResourcesDetailResponseBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.quota, that.quota)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

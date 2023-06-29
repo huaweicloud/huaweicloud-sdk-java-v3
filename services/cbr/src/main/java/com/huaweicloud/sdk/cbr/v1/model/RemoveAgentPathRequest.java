@@ -65,16 +65,15 @@ public class RemoveAgentPathRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RemoveAgentPathRequest removeAgentPathRequest = (RemoveAgentPathRequest) o;
-        return Objects.equals(this.agentId, removeAgentPathRequest.agentId)
-            && Objects.equals(this.body, removeAgentPathRequest.body);
+        RemoveAgentPathRequest that = (RemoveAgentPathRequest) obj;
+        return Objects.equals(this.agentId, that.agentId) && Objects.equals(this.body, that.body);
     }
 
     @Override

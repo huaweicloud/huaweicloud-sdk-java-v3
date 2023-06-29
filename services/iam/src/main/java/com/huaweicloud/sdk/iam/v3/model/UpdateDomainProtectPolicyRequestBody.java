@@ -43,16 +43,15 @@ public class UpdateDomainProtectPolicyRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainProtectPolicyRequestBody updateDomainProtectPolicyRequestBody =
-            (UpdateDomainProtectPolicyRequestBody) o;
-        return Objects.equals(this.protectPolicy, updateDomainProtectPolicyRequestBody.protectPolicy);
+        UpdateDomainProtectPolicyRequestBody that = (UpdateDomainProtectPolicyRequestBody) obj;
+        return Objects.equals(this.protectPolicy, that.protectPolicy);
     }
 
     @Override

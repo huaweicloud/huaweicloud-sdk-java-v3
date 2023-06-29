@@ -122,18 +122,18 @@ public class UnsubscribeResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UnsubscribeResourcesReq unsubscribeResourcesReq = (UnsubscribeResourcesReq) o;
-        return Objects.equals(this.resourceIds, unsubscribeResourcesReq.resourceIds)
-            && Objects.equals(this.unsubscribeType, unsubscribeResourcesReq.unsubscribeType)
-            && Objects.equals(this.unsubscribeReasonType, unsubscribeResourcesReq.unsubscribeReasonType)
-            && Objects.equals(this.unsubscribeReason, unsubscribeResourcesReq.unsubscribeReason);
+        UnsubscribeResourcesReq that = (UnsubscribeResourcesReq) obj;
+        return Objects.equals(this.resourceIds, that.resourceIds)
+            && Objects.equals(this.unsubscribeType, that.unsubscribeType)
+            && Objects.equals(this.unsubscribeReasonType, that.unsubscribeReasonType)
+            && Objects.equals(this.unsubscribeReason, that.unsubscribeReason);
     }
 
     @Override

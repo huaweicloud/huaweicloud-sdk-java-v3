@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 资源栈输出
  */
-public class StackOutput  {
-
+public class StackOutput {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="value")
-    
+    @JsonProperty(value = "value")
 
     private String value;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="sensitive")
-    
+    @JsonProperty(value = "sensitive")
 
     private Boolean sensitive;
 
@@ -51,9 +39,6 @@ public class StackOutput  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈输出的名称，由用户在模板中定义  以 HCL 模板为例，name 为 vpc_id  ```hcl output \"vpc_id\" {   value = huaweicloud_vpc.my_hello_world_vpc.id } ```  以 json 模板为例，name 为 vpc_id ```json {   \"output\": {     \"vpc_id\": [       {         \"value\": \"${huaweicloud_vpc.my_hello_world_vpc.id}\"       }     ]   } } ``` 
@@ -67,15 +52,10 @@ public class StackOutput  {
         this.name = name;
     }
 
-    
-
     public StackOutput withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈输出的描述，由用户在模板中定义
@@ -89,15 +69,10 @@ public class StackOutput  {
         this.description = description;
     }
 
-    
-
     public StackOutput withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈输出的类型
@@ -111,15 +86,10 @@ public class StackOutput  {
         this.type = type;
     }
 
-    
-
     public StackOutput withValue(String value) {
         this.value = value;
         return this;
     }
-
-    
-
 
     /**
      * 资源栈输出的值
@@ -133,15 +103,10 @@ public class StackOutput  {
         this.value = value;
     }
 
-    
-
     public StackOutput withSensitive(Boolean sensitive) {
         this.sensitive = sensitive;
         return this;
     }
-
-    
-
 
     /**
      * 标识该资源栈输出是否为敏感信息，由用户在模板中定义  若用户在模板中将该输出定义为sensitive，则返回体中该输出的value和type不会返回真实值，而是返回`<sensitive>` 
@@ -155,27 +120,25 @@ public class StackOutput  {
         this.sensitive = sensitive;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StackOutput stackOutput = (StackOutput) o;
-        return Objects.equals(this.name, stackOutput.name) &&
-            Objects.equals(this.description, stackOutput.description) &&
-            Objects.equals(this.type, stackOutput.type) &&
-            Objects.equals(this.value, stackOutput.value) &&
-            Objects.equals(this.sensitive, stackOutput.sensitive);
+        StackOutput that = (StackOutput) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.sensitive, that.sensitive);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, description, type, value, sensitive);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class StackOutput  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class StackOutput  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

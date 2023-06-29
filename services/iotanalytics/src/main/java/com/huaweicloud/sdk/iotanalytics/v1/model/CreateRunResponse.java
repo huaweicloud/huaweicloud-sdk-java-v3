@@ -132,19 +132,17 @@ public class CreateRunResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateRunResponse createRunResponse = (CreateRunResponse) o;
-        return Objects.equals(this.runId, createRunResponse.runId)
-            && Objects.equals(this.jobId, createRunResponse.jobId)
-            && Objects.equals(this.jobType, createRunResponse.jobType)
-            && Objects.equals(this.createdTime, createRunResponse.createdTime)
-            && Objects.equals(this.sqlJob, createRunResponse.sqlJob);
+        CreateRunResponse that = (CreateRunResponse) obj;
+        return Objects.equals(this.runId, that.runId) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.sqlJob, that.sqlJob);
     }
 
     @Override

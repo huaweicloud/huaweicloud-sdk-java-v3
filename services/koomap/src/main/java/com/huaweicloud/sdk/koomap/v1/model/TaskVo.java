@@ -407,26 +407,26 @@ public class TaskVo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskVo taskVo = (TaskVo) o;
-        return Objects.equals(this.taskId, taskVo.taskId) && Objects.equals(this.workspaceId, taskVo.workspaceId)
-            && Objects.equals(this.dataId, taskVo.dataId) && Objects.equals(this.taskName, taskVo.taskName)
-            && Objects.equals(this.creator, taskVo.creator) && Objects.equals(this.createTime, taskVo.createTime)
-            && Objects.equals(this.taskStatus, taskVo.taskStatus) && Objects.equals(this.taskType, taskVo.taskType)
-            && Objects.equals(this.taskDescription, taskVo.taskDescription)
-            && Objects.equals(this.execStartTime, taskVo.execStartTime)
-            && Objects.equals(this.execStopTime, taskVo.execStopTime)
-            && Objects.equals(this.originDataAlias, taskVo.originDataAlias)
-            && Objects.equals(this.productionLevel, taskVo.productionLevel)
-            && Objects.equals(this.taskProgress, taskVo.taskProgress) && Objects.equals(this.shapeId, taskVo.shapeId)
-            && Objects.equals(this.isDeleted, taskVo.isDeleted) && Objects.equals(this.imageUrl, taskVo.imageUrl)
-            && Objects.equals(this.domainId, taskVo.domainId);
+        TaskVo that = (TaskVo) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.workspaceId, that.workspaceId)
+            && Objects.equals(this.dataId, that.dataId) && Objects.equals(this.taskName, that.taskName)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.taskStatus, that.taskStatus) && Objects.equals(this.taskType, that.taskType)
+            && Objects.equals(this.taskDescription, that.taskDescription)
+            && Objects.equals(this.execStartTime, that.execStartTime)
+            && Objects.equals(this.execStopTime, that.execStopTime)
+            && Objects.equals(this.originDataAlias, that.originDataAlias)
+            && Objects.equals(this.productionLevel, that.productionLevel)
+            && Objects.equals(this.taskProgress, that.taskProgress) && Objects.equals(this.shapeId, that.shapeId)
+            && Objects.equals(this.isDeleted, that.isDeleted) && Objects.equals(this.imageUrl, that.imageUrl)
+            && Objects.equals(this.domainId, that.domainId);
     }
 
     @Override

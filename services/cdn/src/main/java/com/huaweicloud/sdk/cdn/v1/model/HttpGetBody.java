@@ -143,20 +143,19 @@ public class HttpGetBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpGetBody httpGetBody = (HttpGetBody) o;
-        return Objects.equals(this.httpsStatus, httpGetBody.httpsStatus)
-            && Objects.equals(this.certificateName, httpGetBody.certificateName)
-            && Objects.equals(this.certificateValue, httpGetBody.certificateValue)
-            && Objects.equals(this.certificateSource, httpGetBody.certificateSource)
-            && Objects.equals(this.http2Status, httpGetBody.http2Status)
-            && Objects.equals(this.tlsVersion, httpGetBody.tlsVersion);
+        HttpGetBody that = (HttpGetBody) obj;
+        return Objects.equals(this.httpsStatus, that.httpsStatus)
+            && Objects.equals(this.certificateName, that.certificateName)
+            && Objects.equals(this.certificateValue, that.certificateValue)
+            && Objects.equals(this.certificateSource, that.certificateSource)
+            && Objects.equals(this.http2Status, that.http2Status) && Objects.equals(this.tlsVersion, that.tlsVersion);
     }
 
     @Override

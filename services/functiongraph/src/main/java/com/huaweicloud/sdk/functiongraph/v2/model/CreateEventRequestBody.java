@@ -55,16 +55,15 @@ public class CreateEventRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEventRequestBody createEventRequestBody = (CreateEventRequestBody) o;
-        return Objects.equals(this.name, createEventRequestBody.name)
-            && Objects.equals(this.content, createEventRequestBody.content);
+        CreateEventRequestBody that = (CreateEventRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.content, that.content);
     }
 
     @Override

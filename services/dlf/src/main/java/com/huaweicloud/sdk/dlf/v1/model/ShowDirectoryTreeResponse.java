@@ -267,24 +267,21 @@ public class ShowDirectoryTreeResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDirectoryTreeResponse showDirectoryTreeResponse = (ShowDirectoryTreeResponse) o;
-        return Objects.equals(this.parentDirectoryId, showDirectoryTreeResponse.parentDirectoryId)
-            && Objects.equals(this.directoryName, showDirectoryTreeResponse.directoryName)
-            && Objects.equals(this.categoryType, showDirectoryTreeResponse.categoryType)
-            && Objects.equals(this.directoryId, showDirectoryTreeResponse.directoryId)
-            && Objects.equals(this.paging, showDirectoryTreeResponse.paging)
-            && Objects.equals(this.offset, showDirectoryTreeResponse.offset)
-            && Objects.equals(this.limit, showDirectoryTreeResponse.limit)
-            && Objects.equals(this.count, showDirectoryTreeResponse.count)
-            && Objects.equals(this.elements, showDirectoryTreeResponse.elements)
-            && Objects.equals(this.subDirectories, showDirectoryTreeResponse.subDirectories);
+        ShowDirectoryTreeResponse that = (ShowDirectoryTreeResponse) obj;
+        return Objects.equals(this.parentDirectoryId, that.parentDirectoryId)
+            && Objects.equals(this.directoryName, that.directoryName)
+            && Objects.equals(this.categoryType, that.categoryType)
+            && Objects.equals(this.directoryId, that.directoryId) && Objects.equals(this.paging, that.paging)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.elements, that.elements)
+            && Objects.equals(this.subDirectories, that.subDirectories);
     }
 
     @Override

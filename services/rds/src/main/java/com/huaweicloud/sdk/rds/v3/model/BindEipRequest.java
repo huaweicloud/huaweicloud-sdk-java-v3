@@ -77,17 +77,16 @@ public class BindEipRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BindEipRequest bindEipRequest = (BindEipRequest) o;
-        return Objects.equals(this.publicIp, bindEipRequest.publicIp)
-            && Objects.equals(this.publicIpId, bindEipRequest.publicIpId)
-            && Objects.equals(this.isBind, bindEipRequest.isBind);
+        BindEipRequest that = (BindEipRequest) obj;
+        return Objects.equals(this.publicIp, that.publicIp) && Objects.equals(this.publicIpId, that.publicIpId)
+            && Objects.equals(this.isBind, that.isBind);
     }
 
     @Override

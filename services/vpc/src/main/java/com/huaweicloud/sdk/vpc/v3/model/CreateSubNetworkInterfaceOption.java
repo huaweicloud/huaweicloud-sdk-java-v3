@@ -228,23 +228,21 @@ public class CreateSubNetworkInterfaceOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubNetworkInterfaceOption createSubNetworkInterfaceOption = (CreateSubNetworkInterfaceOption) o;
-        return Objects.equals(this.virsubnetId, createSubNetworkInterfaceOption.virsubnetId)
-            && Objects.equals(this.vlanId, createSubNetworkInterfaceOption.vlanId)
-            && Objects.equals(this.parentId, createSubNetworkInterfaceOption.parentId)
-            && Objects.equals(this.description, createSubNetworkInterfaceOption.description)
-            && Objects.equals(this.ipv6Enable, createSubNetworkInterfaceOption.ipv6Enable)
-            && Objects.equals(this.privateIpAddress, createSubNetworkInterfaceOption.privateIpAddress)
-            && Objects.equals(this.ipv6IpAddress, createSubNetworkInterfaceOption.ipv6IpAddress)
-            && Objects.equals(this.securityGroups, createSubNetworkInterfaceOption.securityGroups)
-            && Objects.equals(this.projectId, createSubNetworkInterfaceOption.projectId);
+        CreateSubNetworkInterfaceOption that = (CreateSubNetworkInterfaceOption) obj;
+        return Objects.equals(this.virsubnetId, that.virsubnetId) && Objects.equals(this.vlanId, that.vlanId)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.privateIpAddress, that.privateIpAddress)
+            && Objects.equals(this.ipv6IpAddress, that.ipv6IpAddress)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

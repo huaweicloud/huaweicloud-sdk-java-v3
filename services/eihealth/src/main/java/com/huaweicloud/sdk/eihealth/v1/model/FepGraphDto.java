@@ -74,15 +74,15 @@ public class FepGraphDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FepGraphDto fepGraphDto = (FepGraphDto) o;
-        return Objects.equals(this.centerId, fepGraphDto.centerId) && Objects.equals(this.pairs, fepGraphDto.pairs);
+        FepGraphDto that = (FepGraphDto) obj;
+        return Objects.equals(this.centerId, that.centerId) && Objects.equals(this.pairs, that.pairs);
     }
 
     @Override

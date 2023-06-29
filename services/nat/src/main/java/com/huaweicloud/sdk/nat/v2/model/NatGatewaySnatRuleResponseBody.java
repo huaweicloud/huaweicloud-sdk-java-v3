@@ -119,22 +119,15 @@ public class NatGatewaySnatRuleResponseBody {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -403,27 +396,22 @@ public class NatGatewaySnatRuleResponseBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NatGatewaySnatRuleResponseBody natGatewaySnatRuleResponseBody = (NatGatewaySnatRuleResponseBody) o;
-        return Objects.equals(this.id, natGatewaySnatRuleResponseBody.id)
-            && Objects.equals(this.tenantId, natGatewaySnatRuleResponseBody.tenantId)
-            && Objects.equals(this.natGatewayId, natGatewaySnatRuleResponseBody.natGatewayId)
-            && Objects.equals(this.cidr, natGatewaySnatRuleResponseBody.cidr)
-            && Objects.equals(this.sourceType, natGatewaySnatRuleResponseBody.sourceType)
-            && Objects.equals(this.floatingIpId, natGatewaySnatRuleResponseBody.floatingIpId)
-            && Objects.equals(this.description, natGatewaySnatRuleResponseBody.description)
-            && Objects.equals(this.status, natGatewaySnatRuleResponseBody.status)
-            && Objects.equals(this.createdAt, natGatewaySnatRuleResponseBody.createdAt)
-            && Objects.equals(this.networkId, natGatewaySnatRuleResponseBody.networkId)
-            && Objects.equals(this.adminStateUp, natGatewaySnatRuleResponseBody.adminStateUp)
-            && Objects.equals(this.floatingIpAddress, natGatewaySnatRuleResponseBody.floatingIpAddress)
-            && Objects.equals(this.freezedIpAddress, natGatewaySnatRuleResponseBody.freezedIpAddress);
+        NatGatewaySnatRuleResponseBody that = (NatGatewaySnatRuleResponseBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.natGatewayId, that.natGatewayId) && Objects.equals(this.cidr, that.cidr)
+            && Objects.equals(this.sourceType, that.sourceType) && Objects.equals(this.floatingIpId, that.floatingIpId)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.networkId, that.networkId)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.floatingIpAddress, that.floatingIpAddress)
+            && Objects.equals(this.freezedIpAddress, that.freezedIpAddress);
     }
 
     @Override

@@ -152,18 +152,17 @@ public class DataStruct {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataStruct dataStruct = (DataStruct) o;
-        return Objects.equals(this.behaviors, dataStruct.behaviors)
-            && Objects.equals(this.itemAttrs, dataStruct.itemAttrs)
-            && Objects.equals(this.userAttrs, dataStruct.userAttrs)
-            && Objects.equals(this.userDynamicAttr, dataStruct.userDynamicAttr);
+        DataStruct that = (DataStruct) obj;
+        return Objects.equals(this.behaviors, that.behaviors) && Objects.equals(this.itemAttrs, that.itemAttrs)
+            && Objects.equals(this.userAttrs, that.userAttrs)
+            && Objects.equals(this.userDynamicAttr, that.userDynamicAttr);
     }
 
     @Override

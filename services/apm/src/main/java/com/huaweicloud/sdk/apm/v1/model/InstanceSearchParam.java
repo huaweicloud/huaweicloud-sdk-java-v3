@@ -143,20 +143,17 @@ public class InstanceSearchParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceSearchParam instanceSearchParam = (InstanceSearchParam) o;
-        return Objects.equals(this.envId, instanceSearchParam.envId)
-            && Objects.equals(this.page, instanceSearchParam.page)
-            && Objects.equals(this.pageSize, instanceSearchParam.pageSize)
-            && Objects.equals(this.keyword, instanceSearchParam.keyword)
-            && Objects.equals(this.status, instanceSearchParam.status)
-            && Objects.equals(this.returnCount, instanceSearchParam.returnCount);
+        InstanceSearchParam that = (InstanceSearchParam) obj;
+        return Objects.equals(this.envId, that.envId) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.pageSize, that.pageSize) && Objects.equals(this.keyword, that.keyword)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.returnCount, that.returnCount);
     }
 
     @Override

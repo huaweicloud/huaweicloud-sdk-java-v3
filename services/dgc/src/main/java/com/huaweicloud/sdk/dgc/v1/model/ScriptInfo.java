@@ -89,22 +89,15 @@ public class ScriptInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -293,20 +286,19 @@ public class ScriptInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScriptInfo scriptInfo = (ScriptInfo) o;
-        return Objects.equals(this.name, scriptInfo.name) && Objects.equals(this.type, scriptInfo.type)
-            && Objects.equals(this.directory, scriptInfo.directory) && Objects.equals(this.content, scriptInfo.content)
-            && Objects.equals(this.connectionName, scriptInfo.connectionName)
-            && Objects.equals(this.database, scriptInfo.database)
-            && Objects.equals(this.queueName, scriptInfo.queueName)
-            && Objects.equals(this._configuration, scriptInfo._configuration);
+        ScriptInfo that = (ScriptInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.directory, that.directory) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.connectionName, that.connectionName) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.queueName, that.queueName)
+            && Objects.equals(this._configuration, that._configuration);
     }
 
     @Override

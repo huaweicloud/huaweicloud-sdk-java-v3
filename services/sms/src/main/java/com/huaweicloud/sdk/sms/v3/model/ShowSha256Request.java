@@ -33,15 +33,15 @@ public class ShowSha256Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSha256Request showSha256Request = (ShowSha256Request) o;
-        return Objects.equals(this.key, showSha256Request.key);
+        ShowSha256Request that = (ShowSha256Request) obj;
+        return Objects.equals(this.key, that.key);
     }
 
     @Override

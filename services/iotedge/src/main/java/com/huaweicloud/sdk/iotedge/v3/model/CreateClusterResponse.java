@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.iotedge.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,52 +11,43 @@ import java.util.Objects;
  */
 public class CreateClusterResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_id")
-    
+    @JsonProperty(value = "cluster_id")
 
     private String clusterId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="cluster_name")
-    
+    @JsonProperty(value = "cluster_name")
 
     private String clusterName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="version")
-    
+    @JsonProperty(value = "version")
 
     private String version;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="state")
-    
+    @JsonProperty(value = "state")
 
     private String state;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="is_upgradeable")
-    
+    @JsonProperty(value = "is_upgradeable")
 
     private Boolean isUpgradeable;
 
@@ -72,9 +55,6 @@ public class CreateClusterResponse extends SdkResponse {
         this.clusterId = clusterId;
         return this;
     }
-
-    
-
 
     /**
      * 集群ID
@@ -88,15 +68,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.clusterId = clusterId;
     }
 
-    
-
     public CreateClusterResponse withClusterName(String clusterName) {
         this.clusterName = clusterName;
         return this;
     }
-
-    
-
 
     /**
      * 集群名称
@@ -110,15 +85,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.clusterName = clusterName;
     }
 
-    
-
     public CreateClusterResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 集群描述
@@ -132,15 +102,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public CreateClusterResponse withVersion(String version) {
         this.version = version;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群版本
@@ -154,15 +119,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.version = version;
     }
 
-    
-
     public CreateClusterResponse withState(String state) {
         this.state = state;
         return this;
     }
-
-    
-
 
     /**
      * 边缘集群状态
@@ -176,15 +136,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.state = state;
     }
 
-    
-
     public CreateClusterResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -198,15 +153,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public CreateClusterResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 最后一次修改时间
@@ -220,15 +170,10 @@ public class CreateClusterResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     public CreateClusterResponse withIsUpgradeable(Boolean isUpgradeable) {
         this.isUpgradeable = isUpgradeable;
         return this;
     }
-
-    
-
 
     /**
      * 是否可升级
@@ -242,30 +187,27 @@ public class CreateClusterResponse extends SdkResponse {
         this.isUpgradeable = isUpgradeable;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateClusterResponse createClusterResponse = (CreateClusterResponse) o;
-        return Objects.equals(this.clusterId, createClusterResponse.clusterId) &&
-            Objects.equals(this.clusterName, createClusterResponse.clusterName) &&
-            Objects.equals(this.description, createClusterResponse.description) &&
-            Objects.equals(this.version, createClusterResponse.version) &&
-            Objects.equals(this.state, createClusterResponse.state) &&
-            Objects.equals(this.createTime, createClusterResponse.createTime) &&
-            Objects.equals(this.updateTime, createClusterResponse.updateTime) &&
-            Objects.equals(this.isUpgradeable, createClusterResponse.isUpgradeable);
+        CreateClusterResponse that = (CreateClusterResponse) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.clusterName, that.clusterName)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.isUpgradeable, that.isUpgradeable);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clusterId, clusterName, description, version, state, createTime, updateTime, isUpgradeable);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -281,6 +223,7 @@ public class CreateClusterResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -291,8 +234,5 @@ public class CreateClusterResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

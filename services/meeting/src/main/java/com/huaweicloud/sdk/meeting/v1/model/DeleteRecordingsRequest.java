@@ -103,18 +103,17 @@ public class DeleteRecordingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRecordingsRequest deleteRecordingsRequest = (DeleteRecordingsRequest) o;
-        return Objects.equals(this.confUUIDs, deleteRecordingsRequest.confUUIDs)
-            && Objects.equals(this.userUUID, deleteRecordingsRequest.userUUID)
-            && Objects.equals(this.xAuthorizationType, deleteRecordingsRequest.xAuthorizationType)
-            && Objects.equals(this.xSiteId, deleteRecordingsRequest.xSiteId);
+        DeleteRecordingsRequest that = (DeleteRecordingsRequest) obj;
+        return Objects.equals(this.confUUIDs, that.confUUIDs) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.xAuthorizationType, that.xAuthorizationType)
+            && Objects.equals(this.xSiteId, that.xSiteId);
     }
 
     @Override

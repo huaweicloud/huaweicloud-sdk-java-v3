@@ -121,18 +121,16 @@ public class ListTracedEventsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTracedEventsResponse listTracedEventsResponse = (ListTracedEventsResponse) o;
-        return Objects.equals(this.total, listTracedEventsResponse.total)
-            && Objects.equals(this.size, listTracedEventsResponse.size)
-            && Objects.equals(this.result, listTracedEventsResponse.result)
-            && Objects.equals(this.xRequestId, listTracedEventsResponse.xRequestId);
+        ListTracedEventsResponse that = (ListTracedEventsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.result, that.result) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

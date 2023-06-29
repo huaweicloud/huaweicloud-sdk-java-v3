@@ -143,20 +143,18 @@ public class CdmRestartClusterReqRestart {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmRestartClusterReqRestart cdmRestartClusterReqRestart = (CdmRestartClusterReqRestart) o;
-        return Objects.equals(this.restartDelayTime, cdmRestartClusterReqRestart.restartDelayTime)
-            && Objects.equals(this.restartMode, cdmRestartClusterReqRestart.restartMode)
-            && Objects.equals(this.restartLevel, cdmRestartClusterReqRestart.restartLevel)
-            && Objects.equals(this.type, cdmRestartClusterReqRestart.type)
-            && Objects.equals(this.instance, cdmRestartClusterReqRestart.instance)
-            && Objects.equals(this.group, cdmRestartClusterReqRestart.group);
+        CdmRestartClusterReqRestart that = (CdmRestartClusterReqRestart) obj;
+        return Objects.equals(this.restartDelayTime, that.restartDelayTime)
+            && Objects.equals(this.restartMode, that.restartMode)
+            && Objects.equals(this.restartLevel, that.restartLevel) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.group, that.group);
     }
 
     @Override

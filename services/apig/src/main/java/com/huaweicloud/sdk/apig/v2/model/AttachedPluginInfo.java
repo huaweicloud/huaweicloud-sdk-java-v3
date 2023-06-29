@@ -100,22 +100,15 @@ public class AttachedPluginInfo {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginTypeEnum(value));
         }
 
         public static PluginTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -176,22 +169,15 @@ public class AttachedPluginInfo {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PluginScopeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PluginScopeEnum(value));
         }
 
         public static PluginScopeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PluginScopeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -453,26 +439,20 @@ public class AttachedPluginInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AttachedPluginInfo attachedPluginInfo = (AttachedPluginInfo) o;
-        return Objects.equals(this.pluginAttachId, attachedPluginInfo.pluginAttachId)
-            && Objects.equals(this.pluginId, attachedPluginInfo.pluginId)
-            && Objects.equals(this.pluginName, attachedPluginInfo.pluginName)
-            && Objects.equals(this.pluginType, attachedPluginInfo.pluginType)
-            && Objects.equals(this.pluginScope, attachedPluginInfo.pluginScope)
-            && Objects.equals(this.envId, attachedPluginInfo.envId)
-            && Objects.equals(this.envName, attachedPluginInfo.envName)
-            && Objects.equals(this.attachedTime, attachedPluginInfo.attachedTime)
-            && Objects.equals(this.pluginContent, attachedPluginInfo.pluginContent)
-            && Objects.equals(this.remark, attachedPluginInfo.remark)
-            && Objects.equals(this.createTime, attachedPluginInfo.createTime)
-            && Objects.equals(this.updateTime, attachedPluginInfo.updateTime);
+        AttachedPluginInfo that = (AttachedPluginInfo) obj;
+        return Objects.equals(this.pluginAttachId, that.pluginAttachId) && Objects.equals(this.pluginId, that.pluginId)
+            && Objects.equals(this.pluginName, that.pluginName) && Objects.equals(this.pluginType, that.pluginType)
+            && Objects.equals(this.pluginScope, that.pluginScope) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.attachedTime, that.attachedTime)
+            && Objects.equals(this.pluginContent, that.pluginContent) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

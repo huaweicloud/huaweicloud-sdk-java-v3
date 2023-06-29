@@ -65,16 +65,15 @@ public class CreateTrafficControllerRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTrafficControllerRequest createTrafficControllerRequest = (CreateTrafficControllerRequest) o;
-        return Objects.equals(this.instanceId, createTrafficControllerRequest.instanceId)
-            && Objects.equals(this.body, createTrafficControllerRequest.body);
+        CreateTrafficControllerRequest that = (CreateTrafficControllerRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

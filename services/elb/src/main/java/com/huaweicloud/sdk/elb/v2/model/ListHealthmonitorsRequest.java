@@ -342,29 +342,23 @@ public class ListHealthmonitorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHealthmonitorsRequest listHealthmonitorsRequest = (ListHealthmonitorsRequest) o;
-        return Objects.equals(this.limit, listHealthmonitorsRequest.limit)
-            && Objects.equals(this.marker, listHealthmonitorsRequest.marker)
-            && Objects.equals(this.pageReverse, listHealthmonitorsRequest.pageReverse)
-            && Objects.equals(this.id, listHealthmonitorsRequest.id)
-            && Objects.equals(this.name, listHealthmonitorsRequest.name)
-            && Objects.equals(this.delay, listHealthmonitorsRequest.delay)
-            && Objects.equals(this.maxRetries, listHealthmonitorsRequest.maxRetries)
-            && Objects.equals(this.adminStateUp, listHealthmonitorsRequest.adminStateUp)
-            && Objects.equals(this.timeout, listHealthmonitorsRequest.timeout)
-            && Objects.equals(this.type, listHealthmonitorsRequest.type)
-            && Objects.equals(this.monitorPort, listHealthmonitorsRequest.monitorPort)
-            && Objects.equals(this.expectedCodes, listHealthmonitorsRequest.expectedCodes)
-            && Objects.equals(this.domainName, listHealthmonitorsRequest.domainName)
-            && Objects.equals(this.urlPath, listHealthmonitorsRequest.urlPath)
-            && Objects.equals(this.httpMethod, listHealthmonitorsRequest.httpMethod);
+        ListHealthmonitorsRequest that = (ListHealthmonitorsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.pageReverse, that.pageReverse) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.delay, that.delay)
+            && Objects.equals(this.maxRetries, that.maxRetries) && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.timeout, that.timeout) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.monitorPort, that.monitorPort)
+            && Objects.equals(this.expectedCodes, that.expectedCodes)
+            && Objects.equals(this.domainName, that.domainName) && Objects.equals(this.urlPath, that.urlPath)
+            && Objects.equals(this.httpMethod, that.httpMethod);
     }
 
     @Override

@@ -65,16 +65,15 @@ public class UpdateDiskInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDiskInfoRequest updateDiskInfoRequest = (UpdateDiskInfoRequest) o;
-        return Objects.equals(this.sourceId, updateDiskInfoRequest.sourceId)
-            && Objects.equals(this.body, updateDiskInfoRequest.body);
+        UpdateDiskInfoRequest that = (UpdateDiskInfoRequest) obj;
+        return Objects.equals(this.sourceId, that.sourceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

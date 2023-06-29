@@ -34,15 +34,15 @@ public class ChangePrepaidCloudWafResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePrepaidCloudWafResponse changePrepaidCloudWafResponse = (ChangePrepaidCloudWafResponse) o;
-        return Objects.equals(this.orderId, changePrepaidCloudWafResponse.orderId);
+        ChangePrepaidCloudWafResponse that = (ChangePrepaidCloudWafResponse) obj;
+        return Objects.equals(this.orderId, that.orderId);
     }
 
     @Override

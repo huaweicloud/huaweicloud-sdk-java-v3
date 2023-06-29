@@ -78,17 +78,16 @@ public class CreateSignatureResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSignatureResponse createSignatureResponse = (CreateSignatureResponse) o;
-        return Objects.equals(this.id, createSignatureResponse.id)
-            && Objects.equals(this.signatureId, createSignatureResponse.signatureId)
-            && Objects.equals(this.signatureName, createSignatureResponse.signatureName);
+        CreateSignatureResponse that = (CreateSignatureResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.signatureId, that.signatureId)
+            && Objects.equals(this.signatureName, that.signatureName);
     }
 
     @Override

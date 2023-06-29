@@ -74,16 +74,15 @@ public class SendConfigResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SendConfigResponse sendConfigResponse = (SendConfigResponse) o;
-        return Objects.equals(this.channel, sendConfigResponse.channel)
-            && Objects.equals(this.targetList, sendConfigResponse.targetList);
+        SendConfigResponse that = (SendConfigResponse) obj;
+        return Objects.equals(this.channel, that.channel) && Objects.equals(this.targetList, that.targetList);
     }
 
     @Override

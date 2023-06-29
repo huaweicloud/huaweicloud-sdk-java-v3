@@ -77,17 +77,16 @@ public class PassportRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PassportRequestBody passportRequestBody = (PassportRequestBody) o;
-        return Objects.equals(this.image, passportRequestBody.image)
-            && Objects.equals(this.url, passportRequestBody.url)
-            && Objects.equals(this.countryCode, passportRequestBody.countryCode);
+        PassportRequestBody that = (PassportRequestBody) obj;
+        return Objects.equals(this.image, that.image) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.countryCode, that.countryCode);
     }
 
     @Override

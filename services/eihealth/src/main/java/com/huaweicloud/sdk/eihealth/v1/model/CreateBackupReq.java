@@ -140,19 +140,17 @@ public class CreateBackupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateBackupReq createBackupReq = (CreateBackupReq) o;
-        return Objects.equals(this.description, createBackupReq.description)
-            && Objects.equals(this.name, createBackupReq.name)
-            && Objects.equals(this.subPaths, createBackupReq.subPaths)
-            && Objects.equals(this.storageType, createBackupReq.storageType)
-            && Objects.equals(this.deleteArchivedData, createBackupReq.deleteArchivedData);
+        CreateBackupReq that = (CreateBackupReq) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.subPaths, that.subPaths) && Objects.equals(this.storageType, that.storageType)
+            && Objects.equals(this.deleteArchivedData, that.deleteArchivedData);
     }
 
     @Override

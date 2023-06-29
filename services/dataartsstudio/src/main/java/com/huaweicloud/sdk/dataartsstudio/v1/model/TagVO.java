@@ -198,18 +198,18 @@ public class TagVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TagVO tagVO = (TagVO) o;
-        return Objects.equals(this.id, tagVO.id) && Objects.equals(this.name, tagVO.name)
-            && Objects.equals(this.description, tagVO.description) && Objects.equals(this.createBy, tagVO.createBy)
-            && Objects.equals(this.updateBy, tagVO.updateBy) && Objects.equals(this.createTime, tagVO.createTime)
-            && Objects.equals(this.updateTime, tagVO.updateTime) && Objects.equals(this.newBiz, tagVO.newBiz);
+        TagVO that = (TagVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.newBiz, that.newBiz);
     }
 
     @Override

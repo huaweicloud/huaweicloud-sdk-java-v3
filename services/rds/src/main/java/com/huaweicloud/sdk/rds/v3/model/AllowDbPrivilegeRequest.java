@@ -89,17 +89,16 @@ public class AllowDbPrivilegeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowDbPrivilegeRequest allowDbPrivilegeRequest = (AllowDbPrivilegeRequest) o;
-        return Objects.equals(this.xLanguage, allowDbPrivilegeRequest.xLanguage)
-            && Objects.equals(this.instanceId, allowDbPrivilegeRequest.instanceId)
-            && Objects.equals(this.body, allowDbPrivilegeRequest.body);
+        AllowDbPrivilegeRequest that = (AllowDbPrivilegeRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

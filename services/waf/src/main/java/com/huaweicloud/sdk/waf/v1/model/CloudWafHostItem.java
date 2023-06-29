@@ -373,27 +373,23 @@ public class CloudWafHostItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CloudWafHostItem cloudWafHostItem = (CloudWafHostItem) o;
-        return Objects.equals(this.id, cloudWafHostItem.id) && Objects.equals(this.hostid, cloudWafHostItem.hostid)
-            && Objects.equals(this.region, cloudWafHostItem.region)
-            && Objects.equals(this.description, cloudWafHostItem.description)
-            && Objects.equals(this.type, cloudWafHostItem.type) && Objects.equals(this.proxy, cloudWafHostItem.proxy)
-            && Objects.equals(this.hostname, cloudWafHostItem.hostname)
-            && Objects.equals(this.accessCode, cloudWafHostItem.accessCode)
-            && Objects.equals(this.policyid, cloudWafHostItem.policyid)
-            && Objects.equals(this.timestamp, cloudWafHostItem.timestamp)
-            && Objects.equals(this.protectStatus, cloudWafHostItem.protectStatus)
-            && Objects.equals(this.accessStatus, cloudWafHostItem.accessStatus)
-            && Objects.equals(this.exclusiveIp, cloudWafHostItem.exclusiveIp)
-            && Objects.equals(this.paidType, cloudWafHostItem.paidType)
-            && Objects.equals(this.webTag, cloudWafHostItem.webTag) && Objects.equals(this.flag, cloudWafHostItem.flag);
+        CloudWafHostItem that = (CloudWafHostItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostid, that.hostid)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.proxy, that.proxy)
+            && Objects.equals(this.hostname, that.hostname) && Objects.equals(this.accessCode, that.accessCode)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus)
+            && Objects.equals(this.exclusiveIp, that.exclusiveIp) && Objects.equals(this.paidType, that.paidType)
+            && Objects.equals(this.webTag, that.webTag) && Objects.equals(this.flag, that.flag);
     }
 
     @Override

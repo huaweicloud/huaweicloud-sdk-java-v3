@@ -87,17 +87,16 @@ public class CreateMetadataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMetadataRequest createMetadataRequest = (CreateMetadataRequest) o;
-        return Objects.equals(this.idpId, createMetadataRequest.idpId)
-            && Objects.equals(this.protocolId, createMetadataRequest.protocolId)
-            && Objects.equals(this.body, createMetadataRequest.body);
+        CreateMetadataRequest that = (CreateMetadataRequest) obj;
+        return Objects.equals(this.idpId, that.idpId) && Objects.equals(this.protocolId, that.protocolId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

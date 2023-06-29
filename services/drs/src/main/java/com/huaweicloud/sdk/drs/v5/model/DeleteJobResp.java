@@ -121,17 +121,17 @@ public class DeleteJobResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteJobResp deleteJobResp = (DeleteJobResp) o;
-        return Objects.equals(this.errorCode, deleteJobResp.errorCode)
-            && Objects.equals(this.errorMsg, deleteJobResp.errorMsg) && Objects.equals(this.id, deleteJobResp.id)
-            && Objects.equals(this.name, deleteJobResp.name) && Objects.equals(this.status, deleteJobResp.status);
+        DeleteJobResp that = (DeleteJobResp) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

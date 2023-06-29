@@ -96,17 +96,16 @@ public class SearchCriteriasBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchCriteriasBody searchCriteriasBody = (SearchCriteriasBody) o;
-        return Objects.equals(this.criterias, searchCriteriasBody.criterias)
-            && Objects.equals(this.logStreamId, searchCriteriasBody.logStreamId)
-            && Objects.equals(this.logStreamName, searchCriteriasBody.logStreamName);
+        SearchCriteriasBody that = (SearchCriteriasBody) obj;
+        return Objects.equals(this.criterias, that.criterias) && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName);
     }
 
     @Override

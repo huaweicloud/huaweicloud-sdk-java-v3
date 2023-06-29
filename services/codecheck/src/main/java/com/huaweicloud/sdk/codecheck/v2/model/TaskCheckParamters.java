@@ -96,17 +96,16 @@ public class TaskCheckParamters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskCheckParamters taskCheckParamters = (TaskCheckParamters) o;
-        return Objects.equals(this.checkId, taskCheckParamters.checkId)
-            && Objects.equals(this.name, taskCheckParamters.name)
-            && Objects.equals(this.checkerConfigs, taskCheckParamters.checkerConfigs);
+        TaskCheckParamters that = (TaskCheckParamters) obj;
+        return Objects.equals(this.checkId, that.checkId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.checkerConfigs, that.checkerConfigs);
     }
 
     @Override

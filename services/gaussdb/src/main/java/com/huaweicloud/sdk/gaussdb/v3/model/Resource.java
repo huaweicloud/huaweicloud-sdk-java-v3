@@ -1,36 +1,29 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Resource
  */
-public class Resource  {
+public class Resource {
 
     /**
      * 指定类型的配额。 - instance: 表示实例的配额
      */
     public static final class TypeEnum {
 
-        
         /**
          * Enum INSTANCE for value: "instance"
          */
         public static final TypeEnum INSTANCE = new TypeEnum("instance");
-        
 
         private static final Map<String, TypeEnum> STATIC_FIELDS = createStaticFields();
 
@@ -58,25 +51,18 @@ public class Resource  {
 
         @JsonCreator
         public static TypeEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -94,20 +80,17 @@ public class Resource  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private TypeEnum type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="used")
-    
+    @JsonProperty(value = "used")
 
     private Integer used;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="quota")
-    
+    @JsonProperty(value = "quota")
 
     private Integer quota;
 
@@ -115,9 +98,6 @@ public class Resource  {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 指定类型的配额。 - instance: 表示实例的配额
@@ -131,15 +111,10 @@ public class Resource  {
         this.type = type;
     }
 
-    
-
     public Resource withUsed(Integer used) {
         this.used = used;
         return this;
     }
-
-    
-
 
     /**
      * 已创建的资源个数。
@@ -153,15 +128,10 @@ public class Resource  {
         this.used = used;
     }
 
-    
-
     public Resource withQuota(Integer quota) {
         this.quota = quota;
         return this;
     }
-
-    
-
 
     /**
      * 资源最大的配额数。
@@ -175,25 +145,24 @@ public class Resource  {
         this.quota = quota;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.type, resource.type) &&
-            Objects.equals(this.used, resource.used) &&
-            Objects.equals(this.quota, resource.quota);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.used, that.used)
+            && Objects.equals(this.quota, that.quota);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(type, used, quota);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -204,6 +173,7 @@ public class Resource  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -214,8 +184,5 @@ public class Resource  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

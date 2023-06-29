@@ -99,19 +99,17 @@ public class VideoModerationImageDetailListFaceLocation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VideoModerationImageDetailListFaceLocation videoModerationImageDetailListFaceLocation =
-            (VideoModerationImageDetailListFaceLocation) o;
-        return Objects.equals(this.topLeftX, videoModerationImageDetailListFaceLocation.topLeftX)
-            && Objects.equals(this.topLeftY, videoModerationImageDetailListFaceLocation.topLeftY)
-            && Objects.equals(this.bottomRightX, videoModerationImageDetailListFaceLocation.bottomRightX)
-            && Objects.equals(this.bottomRightY, videoModerationImageDetailListFaceLocation.bottomRightY);
+        VideoModerationImageDetailListFaceLocation that = (VideoModerationImageDetailListFaceLocation) obj;
+        return Objects.equals(this.topLeftX, that.topLeftX) && Objects.equals(this.topLeftY, that.topLeftY)
+            && Objects.equals(this.bottomRightX, that.bottomRightX)
+            && Objects.equals(this.bottomRightY, that.bottomRightY);
     }
 
     @Override

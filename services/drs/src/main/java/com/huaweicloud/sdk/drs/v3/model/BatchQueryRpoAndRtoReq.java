@@ -52,15 +52,15 @@ public class BatchQueryRpoAndRtoReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchQueryRpoAndRtoReq batchQueryRpoAndRtoReq = (BatchQueryRpoAndRtoReq) o;
-        return Objects.equals(this.jobs, batchQueryRpoAndRtoReq.jobs);
+        BatchQueryRpoAndRtoReq that = (BatchQueryRpoAndRtoReq) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

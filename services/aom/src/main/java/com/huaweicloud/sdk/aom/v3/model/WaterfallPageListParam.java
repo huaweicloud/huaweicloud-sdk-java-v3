@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.aom.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * WaterfallPageListParam
  */
-public class WaterfallPageListParam  {
-
+public class WaterfallPageListParam {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="marker")
-    
+    @JsonProperty(value = "marker")
 
     private String marker;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="limit")
-    
+    @JsonProperty(value = "limit")
 
     private Integer limit;
 
@@ -33,9 +24,6 @@ public class WaterfallPageListParam  {
         this.marker = marker;
         return this;
     }
-
-    
-
 
     /**
      * 页面的分页标志位；为分页的最后一条记录的id
@@ -49,15 +37,10 @@ public class WaterfallPageListParam  {
         this.marker = marker;
     }
 
-    
-
     public WaterfallPageListParam withLimit(Integer limit) {
         this.limit = limit;
         return this;
     }
-
-    
-
 
     /**
      * 查询返回记录的数量限制
@@ -73,24 +56,23 @@ public class WaterfallPageListParam  {
         this.limit = limit;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WaterfallPageListParam waterfallPageListParam = (WaterfallPageListParam) o;
-        return Objects.equals(this.marker, waterfallPageListParam.marker) &&
-            Objects.equals(this.limit, waterfallPageListParam.limit);
+        WaterfallPageListParam that = (WaterfallPageListParam) obj;
+        return Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(marker, limit);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -100,6 +82,7 @@ public class WaterfallPageListParam  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -110,8 +93,5 @@ public class WaterfallPageListParam  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -57,15 +57,15 @@ public class TranscodeSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TranscodeSummary transcodeSummary = (TranscodeSummary) o;
-        return Objects.equals(this.type, transcodeSummary.type) && Objects.equals(this.value, transcodeSummary.value);
+        TranscodeSummary that = (TranscodeSummary) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.value, that.value);
     }
 
     @Override

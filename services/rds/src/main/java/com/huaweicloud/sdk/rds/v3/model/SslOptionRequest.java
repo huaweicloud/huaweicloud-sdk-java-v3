@@ -33,15 +33,15 @@ public class SslOptionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SslOptionRequest sslOptionRequest = (SslOptionRequest) o;
-        return Objects.equals(this.sslOption, sslOptionRequest.sslOption);
+        SslOptionRequest that = (SslOptionRequest) obj;
+        return Objects.equals(this.sslOption, that.sslOption);
     }
 
     @Override

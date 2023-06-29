@@ -33,15 +33,15 @@ public class ListProtectedInstanceTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProtectedInstanceTagsRequest listProtectedInstanceTagsRequest = (ListProtectedInstanceTagsRequest) o;
-        return Objects.equals(this.protectedInstanceId, listProtectedInstanceTagsRequest.protectedInstanceId);
+        ListProtectedInstanceTagsRequest that = (ListProtectedInstanceTagsRequest) obj;
+        return Objects.equals(this.protectedInstanceId, that.protectedInstanceId);
     }
 
     @Override

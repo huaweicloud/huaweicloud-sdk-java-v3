@@ -219,21 +219,20 @@ public class CoreIndex {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CoreIndex coreIndex = (CoreIndex) o;
-        return Objects.equals(this.errorRequestCount, coreIndex.errorRequestCount)
-            && Objects.equals(this.maxRps, coreIndex.maxRps) && Objects.equals(this.maxUsers, coreIndex.maxUsers)
-            && Objects.equals(this.requestCount, coreIndex.requestCount) && Objects.equals(this.rps, coreIndex.rps)
-            && Objects.equals(this.successCount, coreIndex.successCount)
-            && Objects.equals(this.successRate, coreIndex.successRate)
-            && Objects.equals(this.transTps, coreIndex.transTps)
-            && Objects.equals(this.responseTime, coreIndex.responseTime);
+        CoreIndex that = (CoreIndex) obj;
+        return Objects.equals(this.errorRequestCount, that.errorRequestCount)
+            && Objects.equals(this.maxRps, that.maxRps) && Objects.equals(this.maxUsers, that.maxUsers)
+            && Objects.equals(this.requestCount, that.requestCount) && Objects.equals(this.rps, that.rps)
+            && Objects.equals(this.successCount, that.successCount)
+            && Objects.equals(this.successRate, that.successRate) && Objects.equals(this.transTps, that.transTps)
+            && Objects.equals(this.responseTime, that.responseTime);
     }
 
     @Override

@@ -544,30 +544,24 @@ public class ListMembersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMembersRequest listMembersRequest = (ListMembersRequest) o;
-        return Objects.equals(this.poolId, listMembersRequest.poolId)
-            && Objects.equals(this.marker, listMembersRequest.marker)
-            && Objects.equals(this.limit, listMembersRequest.limit)
-            && Objects.equals(this.pageReverse, listMembersRequest.pageReverse)
-            && Objects.equals(this.name, listMembersRequest.name)
-            && Objects.equals(this.weight, listMembersRequest.weight)
-            && Objects.equals(this.adminStateUp, listMembersRequest.adminStateUp)
-            && Objects.equals(this.subnetCidrId, listMembersRequest.subnetCidrId)
-            && Objects.equals(this.address, listMembersRequest.address)
-            && Objects.equals(this.protocolPort, listMembersRequest.protocolPort)
-            && Objects.equals(this.id, listMembersRequest.id)
-            && Objects.equals(this.operatingStatus, listMembersRequest.operatingStatus)
-            && Objects.equals(this.enterpriseProjectId, listMembersRequest.enterpriseProjectId)
-            && Objects.equals(this.ipVersion, listMembersRequest.ipVersion)
-            && Objects.equals(this.memberType, listMembersRequest.memberType)
-            && Objects.equals(this.instanceId, listMembersRequest.instanceId);
+        ListMembersRequest that = (ListMembersRequest) obj;
+        return Objects.equals(this.poolId, that.poolId) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.pageReverse, that.pageReverse)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.adminStateUp, that.adminStateUp)
+            && Objects.equals(this.subnetCidrId, that.subnetCidrId) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.protocolPort, that.protocolPort) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.operatingStatus, that.operatingStatus)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.memberType, that.memberType)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

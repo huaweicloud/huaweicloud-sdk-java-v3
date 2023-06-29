@@ -162,17 +162,17 @@ public class VersionItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VersionItem versionItem = (VersionItem) o;
-        return Objects.equals(this.id, versionItem.id) && Objects.equals(this.minVersion, versionItem.minVersion)
-            && Objects.equals(this.status, versionItem.status) && Objects.equals(this.updated, versionItem.updated)
-            && Objects.equals(this.version, versionItem.version) && Objects.equals(this.links, versionItem.links);
+        VersionItem that = (VersionItem) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.minVersion, that.minVersion)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.links, that.links);
     }
 
     @Override

@@ -70,22 +70,15 @@ public class RequestStatus {
         if (value == null) {
             return null;
         }
-        RequestStatus result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new RequestStatus(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RequestStatus(value));
     }
 
     public static RequestStatus valueOf(String value) {
         if (value == null) {
             return null;
         }
-        RequestStatus result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

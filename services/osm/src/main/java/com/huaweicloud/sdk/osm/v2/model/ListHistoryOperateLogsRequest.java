@@ -249,24 +249,20 @@ public class ListHistoryOperateLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryOperateLogsRequest listHistoryOperateLogsRequest = (ListHistoryOperateLogsRequest) o;
-        return Objects.equals(this.authorizationId, listHistoryOperateLogsRequest.authorizationId)
-            && Objects.equals(this.authorizationDetailId, listHistoryOperateLogsRequest.authorizationDetailId)
-            && Objects.equals(this.groupId, listHistoryOperateLogsRequest.groupId)
-            && Objects.equals(this.sessionId, listHistoryOperateLogsRequest.sessionId)
-            && Objects.equals(this.sort, listHistoryOperateLogsRequest.sort)
-            && Objects.equals(this.offset, listHistoryOperateLogsRequest.offset)
-            && Objects.equals(this.limit, listHistoryOperateLogsRequest.limit)
-            && Objects.equals(this.xSite, listHistoryOperateLogsRequest.xSite)
-            && Objects.equals(this.xLanguage, listHistoryOperateLogsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listHistoryOperateLogsRequest.xTimeZone);
+        ListHistoryOperateLogsRequest that = (ListHistoryOperateLogsRequest) obj;
+        return Objects.equals(this.authorizationId, that.authorizationId)
+            && Objects.equals(this.authorizationDetailId, that.authorizationDetailId)
+            && Objects.equals(this.groupId, that.groupId) && Objects.equals(this.sessionId, that.sessionId)
+            && Objects.equals(this.sort, that.sort) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

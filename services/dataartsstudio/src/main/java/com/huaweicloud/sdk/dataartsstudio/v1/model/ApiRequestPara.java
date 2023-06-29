@@ -112,22 +112,15 @@ public class ApiRequestPara {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ConditionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ConditionEnum(value));
         }
 
         public static ConditionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ConditionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -201,16 +194,16 @@ public class ApiRequestPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiRequestPara apiRequestPara = (ApiRequestPara) o;
-        return Objects.equals(this.name, apiRequestPara.name) && Objects.equals(this.mapping, apiRequestPara.mapping)
-            && Objects.equals(this.condition, apiRequestPara.condition);
+        ApiRequestPara that = (ApiRequestPara) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.mapping, that.mapping)
+            && Objects.equals(this.condition, that.condition);
     }
 
     @Override

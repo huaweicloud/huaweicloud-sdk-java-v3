@@ -1,59 +1,49 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class StartPausingWorkflowExecutionsRequest  {
-
+public class StartPausingWorkflowExecutionsRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_id")
-    
+    @JsonProperty(value = "execution_id")
 
     private String executionId;
+
     /**
      * 对当前节点的操作：失败重试，失败跳过，暂停继续。 restart可重新执行失败的节点，skip可跳过失败的节点进入下个节点的执行，continue可通过暂停节点进入下一个节点。
      */
     public static final class ActionEnum {
 
-        
         /**
          * Enum RESTART for value: "restart"
          */
         public static final ActionEnum RESTART = new ActionEnum("restart");
-        
+
         /**
          * Enum SKIP for value: "skip"
          */
         public static final ActionEnum SKIP = new ActionEnum("skip");
-        
+
         /**
          * Enum CONTINUE for value: "continue"
          */
         public static final ActionEnum CONTINUE = new ActionEnum("continue");
-        
 
         private static final Map<String, ActionEnum> STATIC_FIELDS = createStaticFields();
 
@@ -83,25 +73,18 @@ public class StartPausingWorkflowExecutionsRequest  {
 
         @JsonCreator
         public static ActionEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ActionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ActionEnum(value));
         }
 
         public static ActionEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            ActionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -119,14 +102,12 @@ public class StartPausingWorkflowExecutionsRequest  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="action")
-    
+    @JsonProperty(value = "action")
 
     private ActionEnum action;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
@@ -134,9 +115,6 @@ public class StartPausingWorkflowExecutionsRequest  {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * 工作流ID，唯一标识，根据project_id和workflow_name生成。
@@ -150,15 +128,10 @@ public class StartPausingWorkflowExecutionsRequest  {
         this.workflowId = workflowId;
     }
 
-    
-
     public StartPausingWorkflowExecutionsRequest withExecutionId(String executionId) {
         this.executionId = executionId;
         return this;
     }
-
-    
-
 
     /**
      * 工作流执行ID。
@@ -172,15 +145,10 @@ public class StartPausingWorkflowExecutionsRequest  {
         this.executionId = executionId;
     }
 
-    
-
     public StartPausingWorkflowExecutionsRequest withAction(ActionEnum action) {
         this.action = action;
         return this;
     }
-
-    
-
 
     /**
      * 对当前节点的操作：失败重试，失败跳过，暂停继续。 restart可重新执行失败的节点，skip可跳过失败的节点进入下个节点的执行，continue可通过暂停节点进入下一个节点。
@@ -194,15 +162,10 @@ public class StartPausingWorkflowExecutionsRequest  {
         this.action = action;
     }
 
-    
-
     public StartPausingWorkflowExecutionsRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 当前节点的id。
@@ -216,26 +179,24 @@ public class StartPausingWorkflowExecutionsRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartPausingWorkflowExecutionsRequest startPausingWorkflowExecutionsRequest = (StartPausingWorkflowExecutionsRequest) o;
-        return Objects.equals(this.workflowId, startPausingWorkflowExecutionsRequest.workflowId) &&
-            Objects.equals(this.executionId, startPausingWorkflowExecutionsRequest.executionId) &&
-            Objects.equals(this.action, startPausingWorkflowExecutionsRequest.action) &&
-            Objects.equals(this.nodeId, startPausingWorkflowExecutionsRequest.nodeId);
+        StartPausingWorkflowExecutionsRequest that = (StartPausingWorkflowExecutionsRequest) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.nodeId, that.nodeId);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(workflowId, executionId, action, nodeId);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -247,6 +208,7 @@ public class StartPausingWorkflowExecutionsRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -257,8 +219,5 @@ public class StartPausingWorkflowExecutionsRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

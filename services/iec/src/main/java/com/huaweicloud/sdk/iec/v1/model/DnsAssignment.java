@@ -77,16 +77,16 @@ public class DnsAssignment {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DnsAssignment dnsAssignment = (DnsAssignment) o;
-        return Objects.equals(this.fqdn, dnsAssignment.fqdn) && Objects.equals(this.hostname, dnsAssignment.hostname)
-            && Objects.equals(this.ipAddress, dnsAssignment.ipAddress);
+        DnsAssignment that = (DnsAssignment) obj;
+        return Objects.equals(this.fqdn, that.fqdn) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.ipAddress, that.ipAddress);
     }
 
     @Override

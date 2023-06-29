@@ -65,16 +65,15 @@ public class StartReverseProtectionGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartReverseProtectionGroupRequest startReverseProtectionGroupRequest = (StartReverseProtectionGroupRequest) o;
-        return Objects.equals(this.serverGroupId, startReverseProtectionGroupRequest.serverGroupId)
-            && Objects.equals(this.body, startReverseProtectionGroupRequest.body);
+        StartReverseProtectionGroupRequest that = (StartReverseProtectionGroupRequest) obj;
+        return Objects.equals(this.serverGroupId, that.serverGroupId) && Objects.equals(this.body, that.body);
     }
 
     @Override

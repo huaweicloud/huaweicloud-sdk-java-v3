@@ -75,16 +75,15 @@ public class ListNodeTypesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListNodeTypesResponse listNodeTypesResponse = (ListNodeTypesResponse) o;
-        return Objects.equals(this.nodeTypes, listNodeTypesResponse.nodeTypes)
-            && Objects.equals(this.count, listNodeTypesResponse.count);
+        ListNodeTypesResponse that = (ListNodeTypesResponse) obj;
+        return Objects.equals(this.nodeTypes, that.nodeTypes) && Objects.equals(this.count, that.count);
     }
 
     @Override

@@ -119,18 +119,16 @@ public class ShowDepartmentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDepartmentResponse showDepartmentResponse = (ShowDepartmentResponse) o;
-        return Objects.equals(this.deptCode, showDepartmentResponse.deptCode)
-            && Objects.equals(this.deptName, showDepartmentResponse.deptName)
-            && Objects.equals(this.isLeafNodes, showDepartmentResponse.isLeafNodes)
-            && Objects.equals(this.childDepts, showDepartmentResponse.childDepts);
+        ShowDepartmentResponse that = (ShowDepartmentResponse) obj;
+        return Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.isLeafNodes, that.isLeafNodes) && Objects.equals(this.childDepts, that.childDepts);
     }
 
     @Override

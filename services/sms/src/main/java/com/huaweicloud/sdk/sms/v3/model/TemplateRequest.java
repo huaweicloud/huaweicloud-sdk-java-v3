@@ -99,22 +99,15 @@ public class TemplateRequest {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumetypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumetypeEnum(value));
         }
 
         public static VolumetypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumetypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -167,8 +160,8 @@ public class TemplateRequest {
     private List<TemplateDisk> disk = null;
 
     /**
-    * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
-    */
+     * 数据盘磁盘类型 SAS:串行连接SCSI SSD:固态硬盘 SATA:串口硬盘 
+     */
     public static final class DataVolumeTypeEnum {
 
         /**
@@ -217,22 +210,15 @@ public class TemplateRequest {
             if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DataVolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DataVolumeTypeEnum(value));
         }
 
         public static DataVolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DataVolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -603,29 +589,23 @@ public class TemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TemplateRequest templateRequest = (TemplateRequest) o;
-        return Objects.equals(this.name, templateRequest.name)
-            && Objects.equals(this.isTemplate, templateRequest.isTemplate)
-            && Objects.equals(this.region, templateRequest.region)
-            && Objects.equals(this.projectid, templateRequest.projectid)
-            && Objects.equals(this.targetServerName, templateRequest.targetServerName)
-            && Objects.equals(this.availabilityZone, templateRequest.availabilityZone)
-            && Objects.equals(this.volumetype, templateRequest.volumetype)
-            && Objects.equals(this.flavor, templateRequest.flavor) && Objects.equals(this.vpc, templateRequest.vpc)
-            && Objects.equals(this.nics, templateRequest.nics)
-            && Objects.equals(this.securityGroups, templateRequest.securityGroups)
-            && Objects.equals(this.publicip, templateRequest.publicip)
-            && Objects.equals(this.disk, templateRequest.disk)
-            && Objects.equals(this.dataVolumeType, templateRequest.dataVolumeType)
-            && Objects.equals(this.targetPassword, templateRequest.targetPassword)
-            && Objects.equals(this.imageId, templateRequest.imageId);
+        TemplateRequest that = (TemplateRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.isTemplate, that.isTemplate)
+            && Objects.equals(this.region, that.region) && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.targetServerName, that.targetServerName)
+            && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.volumetype, that.volumetype) && Objects.equals(this.flavor, that.flavor)
+            && Objects.equals(this.vpc, that.vpc) && Objects.equals(this.nics, that.nics)
+            && Objects.equals(this.securityGroups, that.securityGroups) && Objects.equals(this.publicip, that.publicip)
+            && Objects.equals(this.disk, that.disk) && Objects.equals(this.dataVolumeType, that.dataVolumeType)
+            && Objects.equals(this.targetPassword, that.targetPassword) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

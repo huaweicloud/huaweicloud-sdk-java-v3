@@ -156,19 +156,17 @@ public class PublicationRequestBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublicationRequestBase publicationRequestBase = (PublicationRequestBase) o;
-        return Objects.equals(this.publishName, publicationRequestBase.publishName)
-            && Objects.equals(this.startTime, publicationRequestBase.startTime)
-            && Objects.equals(this.endTime, publicationRequestBase.endTime)
-            && Objects.equals(this.deptList, publicationRequestBase.deptList)
-            && Objects.equals(this.deviceList, publicationRequestBase.deviceList);
+        PublicationRequestBase that = (PublicationRequestBase) obj;
+        return Objects.equals(this.publishName, that.publishName) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.deptList, that.deptList)
+            && Objects.equals(this.deviceList, that.deviceList);
     }
 
     @Override

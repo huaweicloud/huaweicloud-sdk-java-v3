@@ -84,16 +84,15 @@ public class DetectLiveFaceByUrlResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectLiveFaceByUrlResponse detectLiveFaceByUrlResponse = (DetectLiveFaceByUrlResponse) o;
-        return Objects.equals(this.result, detectLiveFaceByUrlResponse.result)
-            && Objects.equals(this.warningList, detectLiveFaceByUrlResponse.warningList);
+        DetectLiveFaceByUrlResponse that = (DetectLiveFaceByUrlResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.warningList, that.warningList);
     }
 
     @Override

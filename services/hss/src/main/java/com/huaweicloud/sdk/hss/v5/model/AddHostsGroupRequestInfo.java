@@ -74,16 +74,15 @@ public class AddHostsGroupRequestInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddHostsGroupRequestInfo addHostsGroupRequestInfo = (AddHostsGroupRequestInfo) o;
-        return Objects.equals(this.groupName, addHostsGroupRequestInfo.groupName)
-            && Objects.equals(this.hostIdList, addHostsGroupRequestInfo.hostIdList);
+        AddHostsGroupRequestInfo that = (AddHostsGroupRequestInfo) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.hostIdList, that.hostIdList);
     }
 
     @Override

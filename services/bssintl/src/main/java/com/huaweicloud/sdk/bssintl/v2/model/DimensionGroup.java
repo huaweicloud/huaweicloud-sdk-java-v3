@@ -55,15 +55,15 @@ public class DimensionGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DimensionGroup dimensionGroup = (DimensionGroup) o;
-        return Objects.equals(this.key, dimensionGroup.key) && Objects.equals(this.value, dimensionGroup.value);
+        DimensionGroup that = (DimensionGroup) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

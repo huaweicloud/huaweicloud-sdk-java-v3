@@ -65,17 +65,15 @@ public class ResetLinkAttributeAndStandardRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetLinkAttributeAndStandardRequest resetLinkAttributeAndStandardRequest =
-            (ResetLinkAttributeAndStandardRequest) o;
-        return Objects.equals(this.workspace, resetLinkAttributeAndStandardRequest.workspace)
-            && Objects.equals(this.body, resetLinkAttributeAndStandardRequest.body);
+        ResetLinkAttributeAndStandardRequest that = (ResetLinkAttributeAndStandardRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

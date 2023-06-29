@@ -150,18 +150,17 @@ public class ExerciseFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseFilter exerciseFilter = (ExerciseFilter) o;
-        return Objects.equals(this.name, exerciseFilter.name)
-            && Objects.equals(this.exerciseType, exerciseFilter.exerciseType)
-            && Objects.equals(this.difficultIds, exerciseFilter.difficultIds)
-            && Objects.equals(this.knowledgePointIds, exerciseFilter.knowledgePointIds);
+        ExerciseFilter that = (ExerciseFilter) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.exerciseType, that.exerciseType)
+            && Objects.equals(this.difficultIds, that.difficultIds)
+            && Objects.equals(this.knowledgePointIds, that.knowledgePointIds);
     }
 
     @Override

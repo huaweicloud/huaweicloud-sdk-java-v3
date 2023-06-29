@@ -75,16 +75,15 @@ public class ListProcessesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListProcessesResponse listProcessesResponse = (ListProcessesResponse) o;
-        return Objects.equals(this.processes, listProcessesResponse.processes)
-            && Objects.equals(this.count, listProcessesResponse.count);
+        ListProcessesResponse that = (ListProcessesResponse) obj;
+        return Objects.equals(this.processes, that.processes) && Objects.equals(this.count, that.count);
     }
 
     @Override

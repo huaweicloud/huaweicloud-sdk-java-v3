@@ -111,19 +111,17 @@ public class ListRateOnPeriodDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRateOnPeriodDetailResponse listRateOnPeriodDetailResponse = (ListRateOnPeriodDetailResponse) o;
-        return Objects.equals(this.officialWebsiteRatingResult,
-            listRateOnPeriodDetailResponse.officialWebsiteRatingResult)
-            && Objects.equals(this.optionalDiscountRatingResults,
-                listRateOnPeriodDetailResponse.optionalDiscountRatingResults)
-            && Objects.equals(this.currency, listRateOnPeriodDetailResponse.currency);
+        ListRateOnPeriodDetailResponse that = (ListRateOnPeriodDetailResponse) obj;
+        return Objects.equals(this.officialWebsiteRatingResult, that.officialWebsiteRatingResult)
+            && Objects.equals(this.optionalDiscountRatingResults, that.optionalDiscountRatingResults)
+            && Objects.equals(this.currency, that.currency);
     }
 
     @Override

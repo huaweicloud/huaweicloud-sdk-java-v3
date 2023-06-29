@@ -77,17 +77,17 @@ public class DeleteApplicationV4Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteApplicationV4Request deleteApplicationV4Request = (DeleteApplicationV4Request) o;
-        return Objects.equals(this.applicationId, deleteApplicationV4Request.applicationId)
-            && Objects.equals(this.isDeleteRepository, deleteApplicationV4Request.isDeleteRepository)
-            && Objects.equals(this.pipelineIds, deleteApplicationV4Request.pipelineIds);
+        DeleteApplicationV4Request that = (DeleteApplicationV4Request) obj;
+        return Objects.equals(this.applicationId, that.applicationId)
+            && Objects.equals(this.isDeleteRepository, that.isDeleteRepository)
+            && Objects.equals(this.pipelineIds, that.pipelineIds);
     }
 
     @Override

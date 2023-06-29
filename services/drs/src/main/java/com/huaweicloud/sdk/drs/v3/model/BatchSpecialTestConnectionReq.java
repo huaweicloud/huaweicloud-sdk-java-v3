@@ -52,15 +52,15 @@ public class BatchSpecialTestConnectionReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSpecialTestConnectionReq batchSpecialTestConnectionReq = (BatchSpecialTestConnectionReq) o;
-        return Objects.equals(this.jobs, batchSpecialTestConnectionReq.jobs);
+        BatchSpecialTestConnectionReq that = (BatchSpecialTestConnectionReq) obj;
+        return Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

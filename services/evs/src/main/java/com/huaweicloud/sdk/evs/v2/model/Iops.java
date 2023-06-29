@@ -77,16 +77,16 @@ public class Iops {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Iops iops = (Iops) o;
-        return Objects.equals(this.frozened, iops.frozened) && Objects.equals(this.id, iops.id)
-            && Objects.equals(this.totalVal, iops.totalVal);
+        Iops that = (Iops) obj;
+        return Objects.equals(this.frozened, that.frozened) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.totalVal, that.totalVal);
     }
 
     @Override

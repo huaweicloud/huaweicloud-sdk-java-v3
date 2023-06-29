@@ -99,18 +99,16 @@ public class UpdateTaskRulesetItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTaskRulesetItem updateTaskRulesetItem = (UpdateTaskRulesetItem) o;
-        return Objects.equals(this.language, updateTaskRulesetItem.language)
-            && Objects.equals(this.ruleSetId, updateTaskRulesetItem.ruleSetId)
-            && Objects.equals(this.ifUse, updateTaskRulesetItem.ifUse)
-            && Objects.equals(this.status, updateTaskRulesetItem.status);
+        UpdateTaskRulesetItem that = (UpdateTaskRulesetItem) obj;
+        return Objects.equals(this.language, that.language) && Objects.equals(this.ruleSetId, that.ruleSetId)
+            && Objects.equals(this.ifUse, that.ifUse) && Objects.equals(this.status, that.status);
     }
 
     @Override

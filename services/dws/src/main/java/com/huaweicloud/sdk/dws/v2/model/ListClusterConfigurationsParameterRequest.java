@@ -55,17 +55,16 @@ public class ListClusterConfigurationsParameterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterConfigurationsParameterRequest listClusterConfigurationsParameterRequest =
-            (ListClusterConfigurationsParameterRequest) o;
-        return Objects.equals(this.clusterId, listClusterConfigurationsParameterRequest.clusterId)
-            && Objects.equals(this.configurationId, listClusterConfigurationsParameterRequest.configurationId);
+        ListClusterConfigurationsParameterRequest that = (ListClusterConfigurationsParameterRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.configurationId, that.configurationId);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class InstanceSnapshotView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceSnapshotView instanceSnapshotView = (InstanceSnapshotView) o;
-        return Objects.equals(this.createTime, instanceSnapshotView.createTime)
-            && Objects.equals(this.description, instanceSnapshotView.description)
-            && Objects.equals(this.instanceId, instanceSnapshotView.instanceId)
-            && Objects.equals(this.version, instanceSnapshotView.version);
+        InstanceSnapshotView that = (InstanceSnapshotView) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.version, that.version);
     }
 
     @Override

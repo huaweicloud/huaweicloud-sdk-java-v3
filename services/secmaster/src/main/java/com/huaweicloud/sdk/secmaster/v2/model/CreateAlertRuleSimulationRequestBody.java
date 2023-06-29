@@ -73,22 +73,15 @@ public class CreateAlertRuleSimulationRequestBody {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QueryTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QueryTypeEnum(value));
         }
 
         public static QueryTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QueryTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,22 +263,18 @@ public class CreateAlertRuleSimulationRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAlertRuleSimulationRequestBody createAlertRuleSimulationRequestBody =
-            (CreateAlertRuleSimulationRequestBody) o;
-        return Objects.equals(this.pipeId, createAlertRuleSimulationRequestBody.pipeId)
-            && Objects.equals(this.query, createAlertRuleSimulationRequestBody.query)
-            && Objects.equals(this.queryType, createAlertRuleSimulationRequestBody.queryType)
-            && Objects.equals(this.from, createAlertRuleSimulationRequestBody.from)
-            && Objects.equals(this.to, createAlertRuleSimulationRequestBody.to)
-            && Objects.equals(this.eventGrouping, createAlertRuleSimulationRequestBody.eventGrouping)
-            && Objects.equals(this.triggers, createAlertRuleSimulationRequestBody.triggers);
+        CreateAlertRuleSimulationRequestBody that = (CreateAlertRuleSimulationRequestBody) obj;
+        return Objects.equals(this.pipeId, that.pipeId) && Objects.equals(this.query, that.query)
+            && Objects.equals(this.queryType, that.queryType) && Objects.equals(this.from, that.from)
+            && Objects.equals(this.to, that.to) && Objects.equals(this.eventGrouping, that.eventGrouping)
+            && Objects.equals(this.triggers, that.triggers);
     }
 
     @Override

@@ -228,23 +228,20 @@ public class DisasterRecoveryQueryResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisasterRecoveryQueryResp disasterRecoveryQueryResp = (DisasterRecoveryQueryResp) o;
-        return Objects.equals(this.id, disasterRecoveryQueryResp.id)
-            && Objects.equals(this.name, disasterRecoveryQueryResp.name)
-            && Objects.equals(this.drType, disasterRecoveryQueryResp.drType)
-            && Objects.equals(this.status, disasterRecoveryQueryResp.status)
-            && Objects.equals(this.primaryCluster, disasterRecoveryQueryResp.primaryCluster)
-            && Objects.equals(this.standbyCluster, disasterRecoveryQueryResp.standbyCluster)
-            && Objects.equals(this.drSyncPeriod, disasterRecoveryQueryResp.drSyncPeriod)
-            && Objects.equals(this.startTime, disasterRecoveryQueryResp.startTime)
-            && Objects.equals(this.createTime, disasterRecoveryQueryResp.createTime);
+        DisasterRecoveryQueryResp that = (DisasterRecoveryQueryResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.drType, that.drType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.primaryCluster, that.primaryCluster)
+            && Objects.equals(this.standbyCluster, that.standbyCluster)
+            && Objects.equals(this.drSyncPeriod, that.drSyncPeriod) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.createTime, that.createTime);
     }
 
     @Override

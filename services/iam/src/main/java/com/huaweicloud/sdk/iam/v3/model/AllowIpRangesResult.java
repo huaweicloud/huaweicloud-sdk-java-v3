@@ -55,16 +55,15 @@ public class AllowIpRangesResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AllowIpRangesResult allowIpRangesResult = (AllowIpRangesResult) o;
-        return Objects.equals(this.description, allowIpRangesResult.description)
-            && Objects.equals(this.ipRange, allowIpRangesResult.ipRange);
+        AllowIpRangesResult that = (AllowIpRangesResult) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.ipRange, that.ipRange);
     }
 
     @Override

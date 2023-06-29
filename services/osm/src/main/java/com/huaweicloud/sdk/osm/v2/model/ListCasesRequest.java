@@ -416,29 +416,24 @@ public class ListCasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCasesRequest listCasesRequest = (ListCasesRequest) o;
-        return Objects.equals(this.searchKey, listCasesRequest.searchKey)
-            && Objects.equals(this.labelIdList, listCasesRequest.labelIdList)
-            && Objects.equals(this.appKey, listCasesRequest.appKey)
-            && Objects.equals(this.incidentId, listCasesRequest.incidentId)
-            && Objects.equals(this.queryStartTime, listCasesRequest.queryStartTime)
-            && Objects.equals(this.queryEndTime, listCasesRequest.queryEndTime)
-            && Objects.equals(this.status, listCasesRequest.status)
-            && Objects.equals(this.incidentStatus, listCasesRequest.incidentStatus)
-            && Objects.equals(this.xCustomerId, listCasesRequest.xCustomerId)
-            && Objects.equals(this.xCustomerName, listCasesRequest.xCustomerName)
-            && Objects.equals(this.groupId, listCasesRequest.groupId)
-            && Objects.equals(this.offset, listCasesRequest.offset)
-            && Objects.equals(this.limit, listCasesRequest.limit) && Objects.equals(this.xSite, listCasesRequest.xSite)
-            && Objects.equals(this.xLanguage, listCasesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listCasesRequest.xTimeZone);
+        ListCasesRequest that = (ListCasesRequest) obj;
+        return Objects.equals(this.searchKey, that.searchKey) && Objects.equals(this.labelIdList, that.labelIdList)
+            && Objects.equals(this.appKey, that.appKey) && Objects.equals(this.incidentId, that.incidentId)
+            && Objects.equals(this.queryStartTime, that.queryStartTime)
+            && Objects.equals(this.queryEndTime, that.queryEndTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.incidentStatus, that.incidentStatus)
+            && Objects.equals(this.xCustomerId, that.xCustomerId)
+            && Objects.equals(this.xCustomerName, that.xCustomerName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

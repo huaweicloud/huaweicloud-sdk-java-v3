@@ -76,16 +76,16 @@ public class ShowRestorableListResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRestorableListResponse showRestorableListResponse = (ShowRestorableListResponse) o;
-        return Objects.equals(this.totalCount, showRestorableListResponse.totalCount)
-            && Objects.equals(this.restorableInstances, showRestorableListResponse.restorableInstances);
+        ShowRestorableListResponse that = (ShowRestorableListResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.restorableInstances, that.restorableInstances);
     }
 
     @Override

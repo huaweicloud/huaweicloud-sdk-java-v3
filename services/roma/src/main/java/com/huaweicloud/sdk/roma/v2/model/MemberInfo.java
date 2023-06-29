@@ -80,22 +80,15 @@ public class MemberInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -273,19 +266,19 @@ public class MemberInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MemberInfo memberInfo = (MemberInfo) o;
-        return Objects.equals(this.host, memberInfo.host) && Objects.equals(this.weight, memberInfo.weight)
-            && Objects.equals(this.isBackup, memberInfo.isBackup)
-            && Objects.equals(this.memberGroupName, memberInfo.memberGroupName)
-            && Objects.equals(this.status, memberInfo.status) && Objects.equals(this.port, memberInfo.port)
-            && Objects.equals(this.ecsId, memberInfo.ecsId) && Objects.equals(this.ecsName, memberInfo.ecsName);
+        MemberInfo that = (MemberInfo) obj;
+        return Objects.equals(this.host, that.host) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.isBackup, that.isBackup)
+            && Objects.equals(this.memberGroupName, that.memberGroupName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.ecsId, that.ecsId)
+            && Objects.equals(this.ecsName, that.ecsName);
     }
 
     @Override

@@ -232,24 +232,19 @@ public class ShowIkThesaurusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIkThesaurusResponse showIkThesaurusResponse = (ShowIkThesaurusResponse) o;
-        return Objects.equals(this.status, showIkThesaurusResponse.status)
-            && Objects.equals(this.bucket, showIkThesaurusResponse.bucket)
-            && Objects.equals(this.mainObj, showIkThesaurusResponse.mainObj)
-            && Objects.equals(this.stopObj, showIkThesaurusResponse.stopObj)
-            && Objects.equals(this.synonymObj, showIkThesaurusResponse.synonymObj)
-            && Objects.equals(this.updateTime, showIkThesaurusResponse.updateTime)
-            && Objects.equals(this.updateDetails, showIkThesaurusResponse.updateDetails)
-            && Objects.equals(this.clusterId, showIkThesaurusResponse.clusterId)
-            && Objects.equals(this.operateStatus, showIkThesaurusResponse.operateStatus)
-            && Objects.equals(this.id, showIkThesaurusResponse.id);
+        ShowIkThesaurusResponse that = (ShowIkThesaurusResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.bucket, that.bucket)
+            && Objects.equals(this.mainObj, that.mainObj) && Objects.equals(this.stopObj, that.stopObj)
+            && Objects.equals(this.synonymObj, that.synonymObj) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.updateDetails, that.updateDetails) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.operateStatus, that.operateStatus) && Objects.equals(this.id, that.id);
     }
 
     @Override

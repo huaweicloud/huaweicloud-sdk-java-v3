@@ -87,17 +87,16 @@ public class UpdatePremiumHostRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePremiumHostRequest updatePremiumHostRequest = (UpdatePremiumHostRequest) o;
-        return Objects.equals(this.enterpriseProjectId, updatePremiumHostRequest.enterpriseProjectId)
-            && Objects.equals(this.hostId, updatePremiumHostRequest.hostId)
-            && Objects.equals(this.body, updatePremiumHostRequest.body);
+        UpdatePremiumHostRequest that = (UpdatePremiumHostRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.hostId, that.hostId) && Objects.equals(this.body, that.body);
     }
 
     @Override

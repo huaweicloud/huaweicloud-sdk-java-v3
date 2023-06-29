@@ -77,18 +77,16 @@ public class ListAssociationAlarmsResponseAlarms {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAssociationAlarmsResponseAlarms listAssociationAlarmsResponseAlarms =
-            (ListAssociationAlarmsResponseAlarms) o;
-        return Objects.equals(this.alarmId, listAssociationAlarmsResponseAlarms.alarmId)
-            && Objects.equals(this.name, listAssociationAlarmsResponseAlarms.name)
-            && Objects.equals(this.description, listAssociationAlarmsResponseAlarms.description);
+        ListAssociationAlarmsResponseAlarms that = (ListAssociationAlarmsResponseAlarms) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

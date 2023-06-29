@@ -200,18 +200,18 @@ public class Versions {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Versions versions = (Versions) o;
-        return Objects.equals(this.id, versions.id) && Objects.equals(this.links, versions.links)
-            && Objects.equals(this.mediaTypes, versions.mediaTypes)
-            && Objects.equals(this.minVersion, versions.minVersion) && Objects.equals(this.status, versions.status)
-            && Objects.equals(this.updated, versions.updated) && Objects.equals(this.version, versions.version);
+        Versions that = (Versions) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.mediaTypes, that.mediaTypes) && Objects.equals(this.minVersion, that.minVersion)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

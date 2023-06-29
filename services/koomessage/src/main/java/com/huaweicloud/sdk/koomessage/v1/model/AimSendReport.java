@@ -187,21 +187,20 @@ public class AimSendReport {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AimSendReport aimSendReport = (AimSendReport) o;
-        return Objects.equals(this.reportTime, aimSendReport.reportTime)
-            && Objects.equals(this.tplId, aimSendReport.tplId) && Objects.equals(this.tplName, aimSendReport.tplName)
-            && Objects.equals(this.submissionCount, aimSendReport.submissionCount)
-            && Objects.equals(this.supportResolveCount, aimSendReport.supportResolveCount)
-            && Objects.equals(this.sendCount, aimSendReport.sendCount)
-            && Objects.equals(this.sendSuccessCount, aimSendReport.sendSuccessCount)
-            && Objects.equals(this.resolveSuccessCount, aimSendReport.resolveSuccessCount);
+        AimSendReport that = (AimSendReport) obj;
+        return Objects.equals(this.reportTime, that.reportTime) && Objects.equals(this.tplId, that.tplId)
+            && Objects.equals(this.tplName, that.tplName) && Objects.equals(this.submissionCount, that.submissionCount)
+            && Objects.equals(this.supportResolveCount, that.supportResolveCount)
+            && Objects.equals(this.sendCount, that.sendCount)
+            && Objects.equals(this.sendSuccessCount, that.sendSuccessCount)
+            && Objects.equals(this.resolveSuccessCount, that.resolveSuccessCount);
     }
 
     @Override

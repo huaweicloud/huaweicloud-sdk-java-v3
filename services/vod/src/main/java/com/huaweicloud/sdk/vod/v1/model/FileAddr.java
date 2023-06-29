@@ -77,16 +77,16 @@ public class FileAddr {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FileAddr fileAddr = (FileAddr) o;
-        return Objects.equals(this.bucket, fileAddr.bucket) && Objects.equals(this.location, fileAddr.location)
-            && Objects.equals(this._object, fileAddr._object);
+        FileAddr that = (FileAddr) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.location, that.location)
+            && Objects.equals(this._object, that._object);
     }
 
     @Override

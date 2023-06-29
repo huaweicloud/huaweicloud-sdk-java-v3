@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RecyclePolicy;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * RecyclePolicyRequestBody
  */
-public class RecyclePolicyRequestBody  {
-
+public class RecyclePolicyRequestBody {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="recycle_policy")
-    
+    @JsonProperty(value = "recycle_policy")
 
     private RecyclePolicy recyclePolicy;
 
@@ -30,14 +22,13 @@ public class RecyclePolicyRequestBody  {
     }
 
     public RecyclePolicyRequestBody withRecyclePolicy(Consumer<RecyclePolicy> recyclePolicySetter) {
-        if(this.recyclePolicy == null ){
+        if (this.recyclePolicy == null) {
             this.recyclePolicy = new RecyclePolicy();
             recyclePolicySetter.accept(this.recyclePolicy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get recyclePolicy
@@ -51,23 +42,23 @@ public class RecyclePolicyRequestBody  {
         this.recyclePolicy = recyclePolicy;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecyclePolicyRequestBody recyclePolicyRequestBody = (RecyclePolicyRequestBody) o;
-        return Objects.equals(this.recyclePolicy, recyclePolicyRequestBody.recyclePolicy);
+        RecyclePolicyRequestBody that = (RecyclePolicyRequestBody) obj;
+        return Objects.equals(this.recyclePolicy, that.recyclePolicy);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(recyclePolicy);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class RecyclePolicyRequestBody  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class RecyclePolicyRequestBody  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

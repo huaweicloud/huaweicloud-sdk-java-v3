@@ -121,19 +121,17 @@ public class CheckpointCreateSkippedResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckpointCreateSkippedResource checkpointCreateSkippedResource = (CheckpointCreateSkippedResource) o;
-        return Objects.equals(this.id, checkpointCreateSkippedResource.id)
-            && Objects.equals(this.type, checkpointCreateSkippedResource.type)
-            && Objects.equals(this.name, checkpointCreateSkippedResource.name)
-            && Objects.equals(this.code, checkpointCreateSkippedResource.code)
-            && Objects.equals(this.reason, checkpointCreateSkippedResource.reason);
+        CheckpointCreateSkippedResource that = (CheckpointCreateSkippedResource) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.code, that.code)
+            && Objects.equals(this.reason, that.reason);
     }
 
     @Override

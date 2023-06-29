@@ -65,16 +65,15 @@ public class UpdateFlinkSqlRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFlinkSqlRequest updateFlinkSqlRequest = (UpdateFlinkSqlRequest) o;
-        return Objects.equals(this.jobId, updateFlinkSqlRequest.jobId)
-            && Objects.equals(this.body, updateFlinkSqlRequest.body);
+        UpdateFlinkSqlRequest that = (UpdateFlinkSqlRequest) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.body, that.body);
     }
 
     @Override

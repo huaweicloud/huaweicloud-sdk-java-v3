@@ -67,16 +67,15 @@ public class BatchDeleteManualBackupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeleteManualBackupRequest batchDeleteManualBackupRequest = (BatchDeleteManualBackupRequest) o;
-        return Objects.equals(this.xLanguage, batchDeleteManualBackupRequest.xLanguage)
-            && Objects.equals(this.body, batchDeleteManualBackupRequest.body);
+        BatchDeleteManualBackupRequest that = (BatchDeleteManualBackupRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

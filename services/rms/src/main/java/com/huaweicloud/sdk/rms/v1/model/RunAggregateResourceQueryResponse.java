@@ -84,16 +84,15 @@ public class RunAggregateResourceQueryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunAggregateResourceQueryResponse runAggregateResourceQueryResponse = (RunAggregateResourceQueryResponse) o;
-        return Objects.equals(this.queryInfo, runAggregateResourceQueryResponse.queryInfo)
-            && Objects.equals(this.results, runAggregateResourceQueryResponse.results);
+        RunAggregateResourceQueryResponse that = (RunAggregateResourceQueryResponse) obj;
+        return Objects.equals(this.queryInfo, that.queryInfo) && Objects.equals(this.results, that.results);
     }
 
     @Override

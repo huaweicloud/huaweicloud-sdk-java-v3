@@ -91,16 +91,16 @@ public class AclPolicyOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AclPolicyOption aclPolicyOption = (AclPolicyOption) o;
-        return Objects.equals(this.allowAddressNetmasks, aclPolicyOption.allowAddressNetmasks)
-            && Objects.equals(this.allowIpRanges, aclPolicyOption.allowIpRanges);
+        AclPolicyOption that = (AclPolicyOption) obj;
+        return Objects.equals(this.allowAddressNetmasks, that.allowAddressNetmasks)
+            && Objects.equals(this.allowIpRanges, that.allowIpRanges);
     }
 
     @Override

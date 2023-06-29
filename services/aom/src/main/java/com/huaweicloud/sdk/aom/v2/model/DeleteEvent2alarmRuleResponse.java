@@ -1,13 +1,7 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.huaweicloud.sdk.core.SdkResponse;
 
-
-import java.util.function.Consumer;
 import java.util.Objects;
 
 /**
@@ -15,21 +9,22 @@ import java.util.Objects;
  */
 public class DeleteEvent2alarmRuleResponse extends SdkResponse {
 
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         return true;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash();
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -37,8 +32,5 @@ public class DeleteEvent2alarmRuleResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
-    
-    
-    
-}
 
+}

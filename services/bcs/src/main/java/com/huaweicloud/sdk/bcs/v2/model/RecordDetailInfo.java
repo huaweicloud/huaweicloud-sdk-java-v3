@@ -343,27 +343,24 @@ public class RecordDetailInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordDetailInfo recordDetailInfo = (RecordDetailInfo) o;
-        return Objects.equals(this.operationId, recordDetailInfo.operationId)
-            && Objects.equals(this.resourceType, recordDetailInfo.resourceType)
-            && Objects.equals(this.operationType, recordDetailInfo.operationType)
-            && Objects.equals(this.domainId, recordDetailInfo.domainId)
-            && Objects.equals(this.projectId, recordDetailInfo.projectId)
-            && Objects.equals(this.blockchainId, recordDetailInfo.blockchainId)
-            && Objects.equals(this.blockchainName, recordDetailInfo.blockchainName)
-            && Objects.equals(this.clusterInfo, recordDetailInfo.clusterInfo)
-            && Objects.equals(this.operationProcess, recordDetailInfo.operationProcess)
-            && Objects.equals(this.recordTime, recordDetailInfo.recordTime)
-            && Objects.equals(this.operationStatus, recordDetailInfo.operationStatus)
-            && Objects.equals(this.message, recordDetailInfo.message)
-            && Objects.equals(this.desc, recordDetailInfo.desc);
+        RecordDetailInfo that = (RecordDetailInfo) obj;
+        return Objects.equals(this.operationId, that.operationId)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.operationType, that.operationType) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.blockchainId, that.blockchainId)
+            && Objects.equals(this.blockchainName, that.blockchainName)
+            && Objects.equals(this.clusterInfo, that.clusterInfo)
+            && Objects.equals(this.operationProcess, that.operationProcess)
+            && Objects.equals(this.recordTime, that.recordTime)
+            && Objects.equals(this.operationStatus, that.operationStatus) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.desc, that.desc);
     }
 
     @Override

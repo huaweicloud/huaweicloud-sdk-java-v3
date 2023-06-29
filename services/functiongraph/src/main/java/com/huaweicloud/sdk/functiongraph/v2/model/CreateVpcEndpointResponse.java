@@ -15,89 +15,88 @@ import java.util.function.Consumer;
 public class CreateVpcEndpointResponse extends SdkResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "state")
+    @JsonProperty(value = "endpoints")
 
-    private List<String> state = null;
+    private List<String> endpoints = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "code")
+    @JsonProperty(value = "address")
 
-    private String code;
+    private String address;
 
-    public CreateVpcEndpointResponse withState(List<String> state) {
-        this.state = state;
+    public CreateVpcEndpointResponse withEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
         return this;
     }
 
-    public CreateVpcEndpointResponse addStateItem(String stateItem) {
-        if (this.state == null) {
-            this.state = new ArrayList<>();
+    public CreateVpcEndpointResponse addEndpointsItem(String endpointsItem) {
+        if (this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
         }
-        this.state.add(stateItem);
+        this.endpoints.add(endpointsItem);
         return this;
     }
 
-    public CreateVpcEndpointResponse withState(Consumer<List<String>> stateSetter) {
-        if (this.state == null) {
-            this.state = new ArrayList<>();
+    public CreateVpcEndpointResponse withEndpoints(Consumer<List<String>> endpointsSetter) {
+        if (this.endpoints == null) {
+            this.endpoints = new ArrayList<>();
         }
-        stateSetter.accept(this.state);
+        endpointsSetter.accept(this.endpoints);
         return this;
     }
 
     /**
-     * 依赖id列表
-     * @return state
+     * Ip列表
+     * @return endpoints
      */
-    public List<String> getState() {
-        return state;
+    public List<String> getEndpoints() {
+        return endpoints;
     }
 
-    public void setState(List<String> state) {
-        this.state = state;
+    public void setEndpoints(List<String> endpoints) {
+        this.endpoints = endpoints;
     }
 
-    public CreateVpcEndpointResponse withCode(String code) {
-        this.code = code;
+    public CreateVpcEndpointResponse withAddress(String address) {
+        this.address = address;
         return this;
     }
 
     /**
-     * 快照制作响应码
-     * @return code
+     * 域名地址
+     * @return address
      */
-    public String getCode() {
-        return code;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVpcEndpointResponse createVpcEndpointResponse = (CreateVpcEndpointResponse) o;
-        return Objects.equals(this.state, createVpcEndpointResponse.state)
-            && Objects.equals(this.code, createVpcEndpointResponse.code);
+        CreateVpcEndpointResponse that = (CreateVpcEndpointResponse) obj;
+        return Objects.equals(this.endpoints, that.endpoints) && Objects.equals(this.address, that.address);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state, code);
+        return Objects.hash(endpoints, address);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class CreateVpcEndpointResponse {\n");
-        sb.append("    state: ").append(toIndentedString(state)).append("\n");
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("    endpoints: ").append(toIndentedString(endpoints)).append("\n");
+        sb.append("    address: ").append(toIndentedString(address)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -365,30 +365,22 @@ public class QosConferenceInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosConferenceInfo qosConferenceInfo = (QosConferenceInfo) o;
-        return Objects.equals(this.confUUID, qosConferenceInfo.confUUID)
-            && Objects.equals(this.conferenceID, qosConferenceInfo.conferenceID)
-            && Objects.equals(this.subject, qosConferenceInfo.subject)
-            && Objects.equals(this.scheduserName, qosConferenceInfo.scheduserName)
-            && Objects.equals(this.deptName, qosConferenceInfo.deptName)
-            && Objects.equals(this.alarm, qosConferenceInfo.alarm)
-            && Objects.equals(this.audioAlarm, qosConferenceInfo.audioAlarm)
-            && Objects.equals(this.videoAlarm, qosConferenceInfo.videoAlarm)
-            && Objects.equals(this.screenAlarm, qosConferenceInfo.screenAlarm)
-            && Objects.equals(this.cpuAlarm, qosConferenceInfo.cpuAlarm)
-            && Objects.equals(this.timeZoneID, qosConferenceInfo.timeZoneID)
-            && Objects.equals(this.startTime, qosConferenceInfo.startTime)
-            && Objects.equals(this.endTime, qosConferenceInfo.endTime)
-            && Objects.equals(this.duration, qosConferenceInfo.duration)
-            && Objects.equals(this.participants, qosConferenceInfo.participants)
-            && Objects.equals(this.webinar, qosConferenceInfo.webinar);
+        QosConferenceInfo that = (QosConferenceInfo) obj;
+        return Objects.equals(this.confUUID, that.confUUID) && Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.subject, that.subject) && Objects.equals(this.scheduserName, that.scheduserName)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.alarm, that.alarm)
+            && Objects.equals(this.audioAlarm, that.audioAlarm) && Objects.equals(this.videoAlarm, that.videoAlarm)
+            && Objects.equals(this.screenAlarm, that.screenAlarm) && Objects.equals(this.cpuAlarm, that.cpuAlarm)
+            && Objects.equals(this.timeZoneID, that.timeZoneID) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.participants, that.participants) && Objects.equals(this.webinar, that.webinar);
     }
 
     @Override

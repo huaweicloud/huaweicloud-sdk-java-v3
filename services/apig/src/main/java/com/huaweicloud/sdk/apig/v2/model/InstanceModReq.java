@@ -143,20 +143,20 @@ public class InstanceModReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceModReq instanceModReq = (InstanceModReq) o;
-        return Objects.equals(this.description, instanceModReq.description)
-            && Objects.equals(this.maintainBegin, instanceModReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, instanceModReq.maintainEnd)
-            && Objects.equals(this.instanceName, instanceModReq.instanceName)
-            && Objects.equals(this.securityGroupId, instanceModReq.securityGroupId)
-            && Objects.equals(this.vpcepServiceName, instanceModReq.vpcepServiceName);
+        InstanceModReq that = (InstanceModReq) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd)
+            && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.vpcepServiceName, that.vpcepServiceName);
     }
 
     @Override

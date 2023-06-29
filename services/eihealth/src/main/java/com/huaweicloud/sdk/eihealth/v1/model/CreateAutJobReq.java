@@ -522,34 +522,27 @@ public class CreateAutJobReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAutJobReq createAutJobReq = (CreateAutJobReq) o;
-        return Objects.equals(this.name, createAutJobReq.name)
-            && Objects.equals(this.description, createAutJobReq.description)
-            && Objects.equals(this.databaseId, createAutJobReq.databaseId)
-            && Objects.equals(this.databaseColumn, createAutJobReq.databaseColumn)
-            && Objects.equals(this.databaseColumnType, createAutJobReq.databaseColumnType)
-            && Objects.equals(this.cleanDatabaseColumn, createAutJobReq.cleanDatabaseColumn)
-            && Objects.equals(this.databaseTrigger, createAutJobReq.databaseTrigger)
-            && Objects.equals(this.toolId, createAutJobReq.toolId)
-            && Objects.equals(this.toolType, createAutJobReq.toolType)
-            && Objects.equals(this.jobName, createAutJobReq.jobName)
-            && Objects.equals(this.jobNameType, createAutJobReq.jobNameType)
-            && Objects.equals(this.jobDescription, createAutJobReq.jobDescription)
-            && Objects.equals(this.labels, createAutJobReq.labels)
-            && Objects.equals(this.priority, createAutJobReq.priority)
-            && Objects.equals(this.timeout, createAutJobReq.timeout)
-            && Objects.equals(this.outputDir, createAutJobReq.outputDir)
-            && Objects.equals(this.outputDirType, createAutJobReq.outputDirType)
-            && Objects.equals(this.nodeLabels, createAutJobReq.nodeLabels)
-            && Objects.equals(this.ioAccId, createAutJobReq.ioAccId)
-            && Objects.equals(this.tasks, createAutJobReq.tasks);
+        CreateAutJobReq that = (CreateAutJobReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.databaseId, that.databaseId)
+            && Objects.equals(this.databaseColumn, that.databaseColumn)
+            && Objects.equals(this.databaseColumnType, that.databaseColumnType)
+            && Objects.equals(this.cleanDatabaseColumn, that.cleanDatabaseColumn)
+            && Objects.equals(this.databaseTrigger, that.databaseTrigger) && Objects.equals(this.toolId, that.toolId)
+            && Objects.equals(this.toolType, that.toolType) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.jobNameType, that.jobNameType)
+            && Objects.equals(this.jobDescription, that.jobDescription) && Objects.equals(this.labels, that.labels)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.outputDirType, that.outputDirType)
+            && Objects.equals(this.nodeLabels, that.nodeLabels) && Objects.equals(this.ioAccId, that.ioAccId)
+            && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

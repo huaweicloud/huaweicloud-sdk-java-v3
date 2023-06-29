@@ -137,22 +137,15 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetTypeEnum(value));
         }
 
         public static AssetTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -243,22 +236,15 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AssetStateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AssetStateEnum(value));
         }
 
         public static AssetStateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AssetStateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -545,25 +531,20 @@ public class UpdateDigitalAssetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDigitalAssetResponse updateDigitalAssetResponse = (UpdateDigitalAssetResponse) o;
-        return Objects.equals(this.assetId, updateDigitalAssetResponse.assetId)
-            && Objects.equals(this.assetName, updateDigitalAssetResponse.assetName)
-            && Objects.equals(this.assetDescription, updateDigitalAssetResponse.assetDescription)
-            && Objects.equals(this.createTime, updateDigitalAssetResponse.createTime)
-            && Objects.equals(this.updateTime, updateDigitalAssetResponse.updateTime)
-            && Objects.equals(this.assetType, updateDigitalAssetResponse.assetType)
-            && Objects.equals(this.assetState, updateDigitalAssetResponse.assetState)
-            && Objects.equals(this.tags, updateDigitalAssetResponse.tags)
-            && Objects.equals(this.assetExtraMeta, updateDigitalAssetResponse.assetExtraMeta)
-            && Objects.equals(this.systemProperties, updateDigitalAssetResponse.systemProperties)
-            && Objects.equals(this.files, updateDigitalAssetResponse.files);
+        UpdateDigitalAssetResponse that = (UpdateDigitalAssetResponse) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.assetName, that.assetName)
+            && Objects.equals(this.assetDescription, that.assetDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.assetType, that.assetType) && Objects.equals(this.assetState, that.assetState)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.assetExtraMeta, that.assetExtraMeta)
+            && Objects.equals(this.systemProperties, that.systemProperties) && Objects.equals(this.files, that.files);
     }
 
     @Override

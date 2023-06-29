@@ -175,20 +175,18 @@ public class InstanceCreation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceCreation instanceCreation = (InstanceCreation) o;
-        return Objects.equals(this.name, instanceCreation.name) && Objects.equals(this.desc, instanceCreation.desc)
-            && Objects.equals(this.diagram, instanceCreation.diagram)
-            && Objects.equals(this.image, instanceCreation.image)
-            && Objects.equals(this.templateId, instanceCreation.templateId)
-            && Objects.equals(this.variables, instanceCreation.variables)
-            && Objects.equals(this.instanceId, instanceCreation.instanceId);
+        InstanceCreation that = (InstanceCreation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.diagram, that.diagram) && Objects.equals(this.image, that.image)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.variables, that.variables)
+            && Objects.equals(this.instanceId, that.instanceId);
     }
 
     @Override

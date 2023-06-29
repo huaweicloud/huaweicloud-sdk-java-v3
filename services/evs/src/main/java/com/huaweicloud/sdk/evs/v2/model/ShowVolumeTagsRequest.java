@@ -33,15 +33,15 @@ public class ShowVolumeTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVolumeTagsRequest showVolumeTagsRequest = (ShowVolumeTagsRequest) o;
-        return Objects.equals(this.volumeId, showVolumeTagsRequest.volumeId);
+        ShowVolumeTagsRequest that = (ShowVolumeTagsRequest) obj;
+        return Objects.equals(this.volumeId, that.volumeId);
     }
 
     @Override

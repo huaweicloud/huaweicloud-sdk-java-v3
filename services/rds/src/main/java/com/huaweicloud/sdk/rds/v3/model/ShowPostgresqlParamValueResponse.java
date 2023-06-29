@@ -144,20 +144,18 @@ public class ShowPostgresqlParamValueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPostgresqlParamValueResponse showPostgresqlParamValueResponse = (ShowPostgresqlParamValueResponse) o;
-        return Objects.equals(this.name, showPostgresqlParamValueResponse.name)
-            && Objects.equals(this.value, showPostgresqlParamValueResponse.value)
-            && Objects.equals(this.restartRequired, showPostgresqlParamValueResponse.restartRequired)
-            && Objects.equals(this.valueRange, showPostgresqlParamValueResponse.valueRange)
-            && Objects.equals(this.type, showPostgresqlParamValueResponse.type)
-            && Objects.equals(this.description, showPostgresqlParamValueResponse.description);
+        ShowPostgresqlParamValueResponse that = (ShowPostgresqlParamValueResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.restartRequired, that.restartRequired)
+            && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

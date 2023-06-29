@@ -55,15 +55,15 @@ public class AccessConfigTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AccessConfigTag accessConfigTag = (AccessConfigTag) o;
-        return Objects.equals(this.key, accessConfigTag.key) && Objects.equals(this.value, accessConfigTag.value);
+        AccessConfigTag that = (AccessConfigTag) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value);
     }
 
     @Override

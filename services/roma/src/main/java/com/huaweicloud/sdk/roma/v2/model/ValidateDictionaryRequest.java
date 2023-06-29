@@ -77,17 +77,16 @@ public class ValidateDictionaryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValidateDictionaryRequest validateDictionaryRequest = (ValidateDictionaryRequest) o;
-        return Objects.equals(this.instanceId, validateDictionaryRequest.instanceId)
-            && Objects.equals(this.name, validateDictionaryRequest.name)
-            && Objects.equals(this.code, validateDictionaryRequest.code);
+        ValidateDictionaryRequest that = (ValidateDictionaryRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.code, that.code);
     }
 
     @Override

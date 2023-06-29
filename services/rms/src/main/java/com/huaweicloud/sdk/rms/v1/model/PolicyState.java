@@ -275,26 +275,24 @@ public class PolicyState {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyState policyState = (PolicyState) o;
-        return Objects.equals(this.domainId, policyState.domainId)
-            && Objects.equals(this.regionId, policyState.regionId)
-            && Objects.equals(this.resourceId, policyState.resourceId)
-            && Objects.equals(this.resourceName, policyState.resourceName)
-            && Objects.equals(this.resourceProvider, policyState.resourceProvider)
-            && Objects.equals(this.resourceType, policyState.resourceType)
-            && Objects.equals(this.triggerType, policyState.triggerType)
-            && Objects.equals(this.complianceState, policyState.complianceState)
-            && Objects.equals(this.policyAssignmentId, policyState.policyAssignmentId)
-            && Objects.equals(this.policyAssignmentName, policyState.policyAssignmentName)
-            && Objects.equals(this.policyDefinitionId, policyState.policyDefinitionId)
-            && Objects.equals(this.evaluationTime, policyState.evaluationTime);
+        PolicyState that = (PolicyState) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.resourceName, that.resourceName)
+            && Objects.equals(this.resourceProvider, that.resourceProvider)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.complianceState, that.complianceState)
+            && Objects.equals(this.policyAssignmentId, that.policyAssignmentId)
+            && Objects.equals(this.policyAssignmentName, that.policyAssignmentName)
+            && Objects.equals(this.policyDefinitionId, that.policyDefinitionId)
+            && Objects.equals(this.evaluationTime, that.evaluationTime);
     }
 
     @Override

@@ -76,16 +76,16 @@ public class ListAvailabilityZonesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAvailabilityZonesResponse listAvailabilityZonesResponse = (ListAvailabilityZonesResponse) o;
-        return Objects.equals(this.requestId, listAvailabilityZonesResponse.requestId)
-            && Objects.equals(this.availabilityZones, listAvailabilityZonesResponse.availabilityZones);
+        ListAvailabilityZonesResponse that = (ListAvailabilityZonesResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.availabilityZones, that.availabilityZones);
     }
 
     @Override

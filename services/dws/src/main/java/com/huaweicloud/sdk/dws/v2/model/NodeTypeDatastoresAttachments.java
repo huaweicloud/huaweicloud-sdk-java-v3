@@ -55,16 +55,15 @@ public class NodeTypeDatastoresAttachments {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodeTypeDatastoresAttachments nodeTypeDatastoresAttachments = (NodeTypeDatastoresAttachments) o;
-        return Objects.equals(this.minCn, nodeTypeDatastoresAttachments.minCn)
-            && Objects.equals(this.maxCn, nodeTypeDatastoresAttachments.maxCn);
+        NodeTypeDatastoresAttachments that = (NodeTypeDatastoresAttachments) obj;
+        return Objects.equals(this.minCn, that.minCn) && Objects.equals(this.maxCn, that.maxCn);
     }
 
     @Override

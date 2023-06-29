@@ -34,15 +34,15 @@ public class CountAllResourcesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CountAllResourcesResponse countAllResourcesResponse = (CountAllResourcesResponse) o;
-        return Objects.equals(this.totalCount, countAllResourcesResponse.totalCount);
+        CountAllResourcesResponse that = (CountAllResourcesResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

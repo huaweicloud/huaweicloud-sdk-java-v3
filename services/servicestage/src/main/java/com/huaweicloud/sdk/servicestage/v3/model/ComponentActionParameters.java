@@ -96,17 +96,16 @@ public class ComponentActionParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentActionParameters componentActionParameters = (ComponentActionParameters) o;
-        return Objects.equals(this.replica, componentActionParameters.replica)
-            && Objects.equals(this.hosts, componentActionParameters.hosts)
-            && Objects.equals(this.version, componentActionParameters.version);
+        ComponentActionParameters that = (ComponentActionParameters) obj;
+        return Objects.equals(this.replica, that.replica) && Objects.equals(this.hosts, that.hosts)
+            && Objects.equals(this.version, that.version);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class RankFeaturePair {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RankFeaturePair rankFeaturePair = (RankFeaturePair) o;
-        return Objects.equals(this.featureNameA, rankFeaturePair.featureNameA)
-            && Objects.equals(this.featureNameB, rankFeaturePair.featureNameB)
-            && Objects.equals(this.weight, rankFeaturePair.weight);
+        RankFeaturePair that = (RankFeaturePair) obj;
+        return Objects.equals(this.featureNameA, that.featureNameA)
+            && Objects.equals(this.featureNameB, that.featureNameB) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

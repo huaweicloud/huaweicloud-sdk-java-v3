@@ -121,19 +121,17 @@ public class IssueDetailCustomField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IssueDetailCustomField issueDetailCustomField = (IssueDetailCustomField) o;
-        return Objects.equals(this.customField, issueDetailCustomField.customField)
-            && Objects.equals(this.fieldName, issueDetailCustomField.fieldName)
-            && Objects.equals(this.value, issueDetailCustomField.value)
-            && Objects.equals(this.fieldType, issueDetailCustomField.fieldType)
-            && Objects.equals(this.description, issueDetailCustomField.description);
+        IssueDetailCustomField that = (IssueDetailCustomField) obj;
+        return Objects.equals(this.customField, that.customField) && Objects.equals(this.fieldName, that.fieldName)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.fieldType, that.fieldType)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

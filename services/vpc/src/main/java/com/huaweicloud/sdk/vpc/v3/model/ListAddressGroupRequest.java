@@ -216,21 +216,18 @@ public class ListAddressGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAddressGroupRequest listAddressGroupRequest = (ListAddressGroupRequest) o;
-        return Objects.equals(this.limit, listAddressGroupRequest.limit)
-            && Objects.equals(this.marker, listAddressGroupRequest.marker)
-            && Objects.equals(this.id, listAddressGroupRequest.id)
-            && Objects.equals(this.name, listAddressGroupRequest.name)
-            && Objects.equals(this.ipVersion, listAddressGroupRequest.ipVersion)
-            && Objects.equals(this.description, listAddressGroupRequest.description)
-            && Objects.equals(this.enterpriseProjectId, listAddressGroupRequest.enterpriseProjectId);
+        ListAddressGroupRequest that = (ListAddressGroupRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ipVersion, that.ipVersion) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

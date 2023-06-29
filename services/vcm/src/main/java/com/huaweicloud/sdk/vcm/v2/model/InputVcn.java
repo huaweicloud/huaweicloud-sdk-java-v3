@@ -99,16 +99,16 @@ public class InputVcn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InputVcn inputVcn = (InputVcn) o;
-        return Objects.equals(this.ip, inputVcn.ip) && Objects.equals(this.port, inputVcn.port)
-            && Objects.equals(this.username, inputVcn.username) && Objects.equals(this.password, inputVcn.password);
+        InputVcn that = (InputVcn) obj;
+        return Objects.equals(this.ip, that.ip) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password);
     }
 
     @Override

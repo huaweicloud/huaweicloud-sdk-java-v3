@@ -121,19 +121,17 @@ public class ListFlinkTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlinkTemplatesRequest listFlinkTemplatesRequest = (ListFlinkTemplatesRequest) o;
-        return Objects.equals(this.limit, listFlinkTemplatesRequest.limit)
-            && Objects.equals(this.name, listFlinkTemplatesRequest.name)
-            && Objects.equals(this.offset, listFlinkTemplatesRequest.offset)
-            && Objects.equals(this.order, listFlinkTemplatesRequest.order)
-            && Objects.equals(this.tags, listFlinkTemplatesRequest.tags);
+        ListFlinkTemplatesRequest that = (ListFlinkTemplatesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.tags, that.tags);
     }
 
     @Override

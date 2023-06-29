@@ -74,16 +74,15 @@ public class ResourceSummaryResponseItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceSummaryResponseItem resourceSummaryResponseItem = (ResourceSummaryResponseItem) o;
-        return Objects.equals(this.provider, resourceSummaryResponseItem.provider)
-            && Objects.equals(this.types, resourceSummaryResponseItem.types);
+        ResourceSummaryResponseItem that = (ResourceSummaryResponseItem) obj;
+        return Objects.equals(this.provider, that.provider) && Objects.equals(this.types, that.types);
     }
 
     @Override

@@ -35,16 +35,15 @@ public class DeleteTranscodingTaskByConsoleRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTranscodingTaskByConsoleRequest deleteTranscodingTaskByConsoleRequest =
-            (DeleteTranscodingTaskByConsoleRequest) o;
-        return Objects.equals(this.taskId, deleteTranscodingTaskByConsoleRequest.taskId);
+        DeleteTranscodingTaskByConsoleRequest that = (DeleteTranscodingTaskByConsoleRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

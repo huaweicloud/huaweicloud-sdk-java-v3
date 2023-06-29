@@ -135,19 +135,17 @@ public class UpdateDigitalAssetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDigitalAssetRequest updateDigitalAssetRequest = (UpdateDigitalAssetRequest) o;
-        return Objects.equals(this.authorization, updateDigitalAssetRequest.authorization)
-            && Objects.equals(this.xSdkDate, updateDigitalAssetRequest.xSdkDate)
-            && Objects.equals(this.xAppUserId, updateDigitalAssetRequest.xAppUserId)
-            && Objects.equals(this.assetId, updateDigitalAssetRequest.assetId)
-            && Objects.equals(this.body, updateDigitalAssetRequest.body);
+        UpdateDigitalAssetRequest that = (UpdateDigitalAssetRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xAppUserId, that.xAppUserId) && Objects.equals(this.assetId, that.assetId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -162,20 +162,19 @@ public class MappingSourceFieldVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MappingSourceFieldVO mappingSourceFieldVO = (MappingSourceFieldVO) o;
-        return Objects.equals(this.targetFieldId, mappingSourceFieldVO.targetFieldId)
-            && Objects.equals(this.targetFieldName, mappingSourceFieldVO.targetFieldName)
-            && Objects.equals(this.fieldIds, mappingSourceFieldVO.fieldIds)
-            && Objects.equals(this.transformExpression, mappingSourceFieldVO.transformExpression)
-            && Objects.equals(this.fieldNames, mappingSourceFieldVO.fieldNames)
-            && Objects.equals(this.changed, mappingSourceFieldVO.changed);
+        MappingSourceFieldVO that = (MappingSourceFieldVO) obj;
+        return Objects.equals(this.targetFieldId, that.targetFieldId)
+            && Objects.equals(this.targetFieldName, that.targetFieldName)
+            && Objects.equals(this.fieldIds, that.fieldIds)
+            && Objects.equals(this.transformExpression, that.transformExpression)
+            && Objects.equals(this.fieldNames, that.fieldNames) && Objects.equals(this.changed, that.changed);
     }
 
     @Override

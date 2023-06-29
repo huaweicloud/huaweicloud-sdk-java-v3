@@ -89,22 +89,15 @@ public class ProfileInfo {
             if (value == null) {
                 return null;
             }
-            NotifyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotifyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotifyStatusEnum(value));
         }
 
         public static NotifyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotifyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class ProfileInfo {
             if (value == null) {
                 return null;
             }
-            CreateSourceEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CreateSourceEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CreateSourceEnum(value));
         }
 
         public static CreateSourceEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CreateSourceEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -267,22 +253,15 @@ public class ProfileInfo {
             if (value == null) {
                 return null;
             }
-            FreezedStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new FreezedStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new FreezedStatusEnum(value));
         }
 
         public static FreezedStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            FreezedStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -489,23 +468,22 @@ public class ProfileInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProfileInfo profileInfo = (ProfileInfo) o;
-        return Objects.equals(this.localNetworkPort, profileInfo.localNetworkPort)
-            && Objects.equals(this.standalone, profileInfo.standalone)
-            && Objects.equals(this.notifyStatus, profileInfo.notifyStatus)
-            && Objects.equals(this.createTime, profileInfo.createTime)
-            && Objects.equals(this.fakeNetworkType, profileInfo.fakeNetworkType)
-            && Objects.equals(this.createSource, profileInfo.createSource)
-            && Objects.equals(this.ecsId, profileInfo.ecsId) && Objects.equals(this.lockStatus, profileInfo.lockStatus)
-            && Objects.equals(this.freezedStatus, profileInfo.freezedStatus)
-            && Objects.equals(this.bandwithInfo, profileInfo.bandwithInfo);
+        ProfileInfo that = (ProfileInfo) obj;
+        return Objects.equals(this.localNetworkPort, that.localNetworkPort)
+            && Objects.equals(this.standalone, that.standalone) && Objects.equals(this.notifyStatus, that.notifyStatus)
+            && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.fakeNetworkType, that.fakeNetworkType)
+            && Objects.equals(this.createSource, that.createSource) && Objects.equals(this.ecsId, that.ecsId)
+            && Objects.equals(this.lockStatus, that.lockStatus)
+            && Objects.equals(this.freezedStatus, that.freezedStatus)
+            && Objects.equals(this.bandwithInfo, that.bandwithInfo);
     }
 
     @Override

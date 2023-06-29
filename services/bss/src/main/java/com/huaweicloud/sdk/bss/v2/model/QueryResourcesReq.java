@@ -228,22 +228,19 @@ public class QueryResourcesReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryResourcesReq queryResourcesReq = (QueryResourcesReq) o;
-        return Objects.equals(this.resourceIds, queryResourcesReq.resourceIds)
-            && Objects.equals(this.orderId, queryResourcesReq.orderId)
-            && Objects.equals(this.onlyMainResource, queryResourcesReq.onlyMainResource)
-            && Objects.equals(this.statusList, queryResourcesReq.statusList)
-            && Objects.equals(this.offset, queryResourcesReq.offset)
-            && Objects.equals(this.limit, queryResourcesReq.limit)
-            && Objects.equals(this.expireTimeBegin, queryResourcesReq.expireTimeBegin)
-            && Objects.equals(this.expireTimeEnd, queryResourcesReq.expireTimeEnd);
+        QueryResourcesReq that = (QueryResourcesReq) obj;
+        return Objects.equals(this.resourceIds, that.resourceIds) && Objects.equals(this.orderId, that.orderId)
+            && Objects.equals(this.onlyMainResource, that.onlyMainResource)
+            && Objects.equals(this.statusList, that.statusList) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.expireTimeBegin, that.expireTimeBegin)
+            && Objects.equals(this.expireTimeEnd, that.expireTimeEnd);
     }
 
     @Override

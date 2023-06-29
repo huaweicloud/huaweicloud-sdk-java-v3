@@ -43,15 +43,15 @@ public class CreateMpeCallBackRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMpeCallBackRequest createMpeCallBackRequest = (CreateMpeCallBackRequest) o;
-        return Objects.equals(this.body, createMpeCallBackRequest.body);
+        CreateMpeCallBackRequest that = (CreateMpeCallBackRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

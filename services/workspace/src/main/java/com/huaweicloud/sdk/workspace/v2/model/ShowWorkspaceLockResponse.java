@@ -78,17 +78,16 @@ public class ShowWorkspaceLockResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkspaceLockResponse showWorkspaceLockResponse = (ShowWorkspaceLockResponse) o;
-        return Objects.equals(this.isLock, showWorkspaceLockResponse.isLock)
-            && Objects.equals(this.lockTime, showWorkspaceLockResponse.lockTime)
-            && Objects.equals(this.lockReason, showWorkspaceLockResponse.lockReason);
+        ShowWorkspaceLockResponse that = (ShowWorkspaceLockResponse) obj;
+        return Objects.equals(this.isLock, that.isLock) && Objects.equals(this.lockTime, that.lockTime)
+            && Objects.equals(this.lockReason, that.lockReason);
     }
 
     @Override

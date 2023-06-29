@@ -89,17 +89,16 @@ public class UpdateCaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCaseRequest updateCaseRequest = (UpdateCaseRequest) o;
-        return Objects.equals(this.caseId, updateCaseRequest.caseId)
-            && Objects.equals(this.target, updateCaseRequest.target)
-            && Objects.equals(this.body, updateCaseRequest.body);
+        UpdateCaseRequest that = (UpdateCaseRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.target, that.target)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

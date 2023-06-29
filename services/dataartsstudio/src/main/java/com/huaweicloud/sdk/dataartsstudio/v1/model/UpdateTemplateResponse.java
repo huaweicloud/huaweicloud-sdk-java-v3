@@ -254,25 +254,21 @@ public class UpdateTemplateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTemplateResponse updateTemplateResponse = (UpdateTemplateResponse) o;
-        return Objects.equals(this.id, updateTemplateResponse.id)
-            && Objects.equals(this.name, updateTemplateResponse.name)
-            && Objects.equals(this.categoryId, updateTemplateResponse.categoryId)
-            && Objects.equals(this.dimension, updateTemplateResponse.dimension)
-            && Objects.equals(this.type, updateTemplateResponse.type)
-            && Objects.equals(this.systemTemplate, updateTemplateResponse.systemTemplate)
-            && Objects.equals(this.sqlInfo, updateTemplateResponse.sqlInfo)
-            && Objects.equals(this.abnormalTableTemplate, updateTemplateResponse.abnormalTableTemplate)
-            && Objects.equals(this.resultDescription, updateTemplateResponse.resultDescription)
-            && Objects.equals(this.createTime, updateTemplateResponse.createTime)
-            && Objects.equals(this.creator, updateTemplateResponse.creator);
+        UpdateTemplateResponse that = (UpdateTemplateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.categoryId, that.categoryId) && Objects.equals(this.dimension, that.dimension)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.systemTemplate, that.systemTemplate)
+            && Objects.equals(this.sqlInfo, that.sqlInfo)
+            && Objects.equals(this.abnormalTableTemplate, that.abnormalTableTemplate)
+            && Objects.equals(this.resultDescription, that.resultDescription)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.creator, that.creator);
     }
 
     @Override

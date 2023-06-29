@@ -284,24 +284,21 @@ public class CdmCreateClusterReqCluster {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmCreateClusterReqCluster cdmCreateClusterReqCluster = (CdmCreateClusterReqCluster) o;
-        return Objects.equals(this.scheduleBootTime, cdmCreateClusterReqCluster.scheduleBootTime)
-            && Objects.equals(this.isScheduleBootOff, cdmCreateClusterReqCluster.isScheduleBootOff)
-            && Objects.equals(this.instances, cdmCreateClusterReqCluster.instances)
-            && Objects.equals(this.datastore, cdmCreateClusterReqCluster.datastore)
-            && Objects.equals(this.extendedProperties, cdmCreateClusterReqCluster.extendedProperties)
-            && Objects.equals(this.scheduleOffTime, cdmCreateClusterReqCluster.scheduleOffTime)
-            && Objects.equals(this.vpcId, cdmCreateClusterReqCluster.vpcId)
-            && Objects.equals(this.name, cdmCreateClusterReqCluster.name)
-            && Objects.equals(this.sysTags, cdmCreateClusterReqCluster.sysTags)
-            && Objects.equals(this.isAutoOff, cdmCreateClusterReqCluster.isAutoOff);
+        CdmCreateClusterReqCluster that = (CdmCreateClusterReqCluster) obj;
+        return Objects.equals(this.scheduleBootTime, that.scheduleBootTime)
+            && Objects.equals(this.isScheduleBootOff, that.isScheduleBootOff)
+            && Objects.equals(this.instances, that.instances) && Objects.equals(this.datastore, that.datastore)
+            && Objects.equals(this.extendedProperties, that.extendedProperties)
+            && Objects.equals(this.scheduleOffTime, that.scheduleOffTime) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.sysTags, that.sysTags)
+            && Objects.equals(this.isAutoOff, that.isAutoOff);
     }
 
     @Override

@@ -165,21 +165,20 @@ public class StatisticConferenceDataItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticConferenceDataItem statisticConferenceDataItem = (StatisticConferenceDataItem) o;
-        return Objects.equals(this.time, statisticConferenceDataItem.time)
-            && Objects.equals(this.confCount, statisticConferenceDataItem.confCount)
-            && Objects.equals(this.confDuration, statisticConferenceDataItem.confDuration)
-            && Objects.equals(this.attendeeCount, statisticConferenceDataItem.attendeeCount)
-            && Objects.equals(this.confConcurrentUsedCount, statisticConferenceDataItem.confConcurrentUsedCount)
-            && Objects.equals(this.conf24hCount, statisticConferenceDataItem.conf24hCount)
-            && Objects.equals(this.conf24hAttendeeCount, statisticConferenceDataItem.conf24hAttendeeCount);
+        StatisticConferenceDataItem that = (StatisticConferenceDataItem) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.confCount, that.confCount)
+            && Objects.equals(this.confDuration, that.confDuration)
+            && Objects.equals(this.attendeeCount, that.attendeeCount)
+            && Objects.equals(this.confConcurrentUsedCount, that.confConcurrentUsedCount)
+            && Objects.equals(this.conf24hCount, that.conf24hCount)
+            && Objects.equals(this.conf24hAttendeeCount, that.conf24hAttendeeCount);
     }
 
     @Override

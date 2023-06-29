@@ -66,22 +66,15 @@ public class HaResponse {
             if (value == null) {
                 return null;
             }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReplicationModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReplicationModeEnum(value));
         }
 
         public static ReplicationModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReplicationModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -121,15 +114,15 @@ public class HaResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HaResponse haResponse = (HaResponse) o;
-        return Objects.equals(this.replicationMode, haResponse.replicationMode);
+        HaResponse that = (HaResponse) obj;
+        return Objects.equals(this.replicationMode, that.replicationMode);
     }
 
     @Override

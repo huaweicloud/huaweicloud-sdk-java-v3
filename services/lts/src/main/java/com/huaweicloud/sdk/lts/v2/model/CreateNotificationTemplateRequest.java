@@ -65,16 +65,15 @@ public class CreateNotificationTemplateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateNotificationTemplateRequest createNotificationTemplateRequest = (CreateNotificationTemplateRequest) o;
-        return Objects.equals(this.domainId, createNotificationTemplateRequest.domainId)
-            && Objects.equals(this.body, createNotificationTemplateRequest.body);
+        CreateNotificationTemplateRequest that = (CreateNotificationTemplateRequest) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

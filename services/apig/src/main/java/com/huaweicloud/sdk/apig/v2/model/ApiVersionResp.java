@@ -96,22 +96,15 @@ public class ApiVersionResp {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -270,21 +263,18 @@ public class ApiVersionResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiVersionResp apiVersionResp = (ApiVersionResp) o;
-        return Objects.equals(this.versionId, apiVersionResp.versionId)
-            && Objects.equals(this.versionNo, apiVersionResp.versionNo)
-            && Objects.equals(this.apiId, apiVersionResp.apiId) && Objects.equals(this.envId, apiVersionResp.envId)
-            && Objects.equals(this.envName, apiVersionResp.envName)
-            && Objects.equals(this.remark, apiVersionResp.remark)
-            && Objects.equals(this.publishTime, apiVersionResp.publishTime)
-            && Objects.equals(this.status, apiVersionResp.status);
+        ApiVersionResp that = (ApiVersionResp) obj;
+        return Objects.equals(this.versionId, that.versionId) && Objects.equals(this.versionNo, that.versionNo)
+            && Objects.equals(this.apiId, that.apiId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.envName, that.envName) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.publishTime, that.publishTime) && Objects.equals(this.status, that.status);
     }
 
     @Override

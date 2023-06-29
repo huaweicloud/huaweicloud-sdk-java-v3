@@ -76,22 +76,15 @@ public class Taint {
             if (value == null) {
                 return null;
             }
-            EffectEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EffectEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EffectEnum(value));
         }
 
         public static EffectEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EffectEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -165,16 +158,16 @@ public class Taint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Taint taint = (Taint) o;
-        return Objects.equals(this.key, taint.key) && Objects.equals(this.value, taint.value)
-            && Objects.equals(this.effect, taint.effect);
+        Taint that = (Taint) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.effect, that.effect);
     }
 
     @Override

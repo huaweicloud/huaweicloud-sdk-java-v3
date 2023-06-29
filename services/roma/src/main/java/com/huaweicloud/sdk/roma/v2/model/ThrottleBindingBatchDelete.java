@@ -52,15 +52,15 @@ public class ThrottleBindingBatchDelete {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ThrottleBindingBatchDelete throttleBindingBatchDelete = (ThrottleBindingBatchDelete) o;
-        return Objects.equals(this.throttleBindings, throttleBindingBatchDelete.throttleBindings);
+        ThrottleBindingBatchDelete that = (ThrottleBindingBatchDelete) obj;
+        return Objects.equals(this.throttleBindings, that.throttleBindings);
     }
 
     @Override

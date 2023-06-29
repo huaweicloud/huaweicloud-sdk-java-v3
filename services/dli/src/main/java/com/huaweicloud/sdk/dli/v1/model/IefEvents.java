@@ -143,18 +143,17 @@ public class IefEvents {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IefEvents iefEvents = (IefEvents) o;
-        return Objects.equals(this.eventType, iefEvents.eventType)
-            && Objects.equals(this.operation, iefEvents.operation)
-            && Objects.equals(this.timestamp, iefEvents.timestamp) && Objects.equals(this.topic, iefEvents.topic)
-            && Objects.equals(this.name, iefEvents.name) && Objects.equals(this.attributes, iefEvents.attributes);
+        IefEvents that = (IefEvents) obj;
+        return Objects.equals(this.eventType, that.eventType) && Objects.equals(this.operation, that.operation)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.attributes, that.attributes);
     }
 
     @Override

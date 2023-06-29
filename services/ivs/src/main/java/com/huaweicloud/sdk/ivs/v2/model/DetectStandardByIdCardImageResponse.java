@@ -76,17 +76,15 @@ public class DetectStandardByIdCardImageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectStandardByIdCardImageResponse detectStandardByIdCardImageResponse =
-            (DetectStandardByIdCardImageResponse) o;
-        return Objects.equals(this.meta, detectStandardByIdCardImageResponse.meta)
-            && Objects.equals(this.result, detectStandardByIdCardImageResponse.result);
+        DetectStandardByIdCardImageResponse that = (DetectStandardByIdCardImageResponse) obj;
+        return Objects.equals(this.meta, that.meta) && Objects.equals(this.result, that.result);
     }
 
     @Override

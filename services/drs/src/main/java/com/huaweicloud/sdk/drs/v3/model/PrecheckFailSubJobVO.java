@@ -77,16 +77,16 @@ public class PrecheckFailSubJobVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PrecheckFailSubJobVO precheckFailSubJobVO = (PrecheckFailSubJobVO) o;
-        return Objects.equals(this.id, precheckFailSubJobVO.id) && Objects.equals(this.name, precheckFailSubJobVO.name)
-            && Objects.equals(this.checkResult, precheckFailSubJobVO.checkResult);
+        PrecheckFailSubJobVO that = (PrecheckFailSubJobVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.checkResult, that.checkResult);
     }
 
     @Override

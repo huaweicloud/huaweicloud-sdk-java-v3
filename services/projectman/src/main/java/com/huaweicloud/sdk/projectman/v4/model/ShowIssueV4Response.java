@@ -843,43 +843,31 @@ public class ShowIssueV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIssueV4Response showIssueV4Response = (ShowIssueV4Response) o;
-        return Objects.equals(this.actualWorkHours, showIssueV4Response.actualWorkHours)
-            && Objects.equals(this.assignedCcUser, showIssueV4Response.assignedCcUser)
-            && Objects.equals(this.assignedUser, showIssueV4Response.assignedUser)
-            && Objects.equals(this.beginTime, showIssueV4Response.beginTime)
-            && Objects.equals(this.createdTime, showIssueV4Response.createdTime)
-            && Objects.equals(this.creator, showIssueV4Response.creator)
-            && Objects.equals(this.customFields, showIssueV4Response.customFields)
-            && Objects.equals(this.newCustomFields, showIssueV4Response.newCustomFields)
-            && Objects.equals(this.developer, showIssueV4Response.developer)
-            && Objects.equals(this.domain, showIssueV4Response.domain)
-            && Objects.equals(this.doneRatio, showIssueV4Response.doneRatio)
-            && Objects.equals(this.endTime, showIssueV4Response.endTime)
-            && Objects.equals(this.expectedWorkHours, showIssueV4Response.expectedWorkHours)
-            && Objects.equals(this.id, showIssueV4Response.id)
-            && Objects.equals(this.project, showIssueV4Response.project)
-            && Objects.equals(this.iteration, showIssueV4Response.iteration)
-            && Objects.equals(this.storyPoint, showIssueV4Response.storyPoint)
-            && Objects.equals(this.module, showIssueV4Response.module)
-            && Objects.equals(this.name, showIssueV4Response.name)
-            && Objects.equals(this.parentIssue, showIssueV4Response.parentIssue)
-            && Objects.equals(this.priority, showIssueV4Response.priority)
-            && Objects.equals(this.severity, showIssueV4Response.severity)
-            && Objects.equals(this.status, showIssueV4Response.status)
-            && Objects.equals(this.tracker, showIssueV4Response.tracker)
-            && Objects.equals(this.updatedTime, showIssueV4Response.updatedTime)
-            && Objects.equals(this.closedTime, showIssueV4Response.closedTime)
-            && Objects.equals(this.description, showIssueV4Response.description)
-            && Objects.equals(this.order, showIssueV4Response.order)
-            && Objects.equals(this.accessories, showIssueV4Response.accessories);
+        ShowIssueV4Response that = (ShowIssueV4Response) obj;
+        return Objects.equals(this.actualWorkHours, that.actualWorkHours)
+            && Objects.equals(this.assignedCcUser, that.assignedCcUser)
+            && Objects.equals(this.assignedUser, that.assignedUser) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.createdTime, that.createdTime) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.customFields, that.customFields)
+            && Objects.equals(this.newCustomFields, that.newCustomFields)
+            && Objects.equals(this.developer, that.developer) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.doneRatio, that.doneRatio) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.expectedWorkHours, that.expectedWorkHours) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.project, that.project) && Objects.equals(this.iteration, that.iteration)
+            && Objects.equals(this.storyPoint, that.storyPoint) && Objects.equals(this.module, that.module)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.parentIssue, that.parentIssue)
+            && Objects.equals(this.priority, that.priority) && Objects.equals(this.severity, that.severity)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.tracker, that.tracker)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.closedTime, that.closedTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.order, that.order)
+            && Objects.equals(this.accessories, that.accessories);
     }
 
     @Override

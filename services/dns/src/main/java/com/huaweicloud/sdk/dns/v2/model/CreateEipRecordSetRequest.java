@@ -87,17 +87,16 @@ public class CreateEipRecordSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEipRecordSetRequest createEipRecordSetRequest = (CreateEipRecordSetRequest) o;
-        return Objects.equals(this.region, createEipRecordSetRequest.region)
-            && Objects.equals(this.floatingipId, createEipRecordSetRequest.floatingipId)
-            && Objects.equals(this.body, createEipRecordSetRequest.body);
+        CreateEipRecordSetRequest that = (CreateEipRecordSetRequest) obj;
+        return Objects.equals(this.region, that.region) && Objects.equals(this.floatingipId, that.floatingipId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

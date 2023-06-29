@@ -131,17 +131,17 @@ public class Domains {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Domains domains = (Domains) o;
-        return Objects.equals(this.enabled, domains.enabled) && Objects.equals(this.id, domains.id)
-            && Objects.equals(this.name, domains.name) && Objects.equals(this.links, domains.links)
-            && Objects.equals(this.description, domains.description);
+        Domains that = (Domains) obj;
+        return Objects.equals(this.enabled, that.enabled) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

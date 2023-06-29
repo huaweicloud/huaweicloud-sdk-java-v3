@@ -99,16 +99,16 @@ public class VpcDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcDetail vpcDetail = (VpcDetail) o;
-        return Objects.equals(this.id, vpcDetail.id) && Objects.equals(this.name, vpcDetail.name)
-            && Objects.equals(this.cidr, vpcDetail.cidr) && Objects.equals(this.status, vpcDetail.status);
+        VpcDetail that = (VpcDetail) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.cidr, that.cidr) && Objects.equals(this.status, that.status);
     }
 
     @Override

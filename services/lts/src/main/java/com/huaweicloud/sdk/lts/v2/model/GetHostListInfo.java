@@ -147,22 +147,15 @@ public class GetHostListInfo {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostStatusEnum(value));
         }
 
         public static HostStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,22 +222,15 @@ public class GetHostListInfo {
             if (value == null) {
                 return null;
             }
-            HostTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HostTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new HostTypeEnum(value));
         }
 
         public static HostTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HostTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -396,21 +382,18 @@ public class GetHostListInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetHostListInfo getHostListInfo = (GetHostListInfo) o;
-        return Objects.equals(this.hostId, getHostListInfo.hostId)
-            && Objects.equals(this.hostIp, getHostListInfo.hostIp)
-            && Objects.equals(this.hostName, getHostListInfo.hostName)
-            && Objects.equals(this.hostStatus, getHostListInfo.hostStatus)
-            && Objects.equals(this.hostType, getHostListInfo.hostType)
-            && Objects.equals(this.hostVersion, getHostListInfo.hostVersion)
-            && Objects.equals(this.updateTime, getHostListInfo.updateTime);
+        GetHostListInfo that = (GetHostListInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostIp, that.hostIp)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.hostStatus, that.hostStatus)
+            && Objects.equals(this.hostType, that.hostType) && Objects.equals(this.hostVersion, that.hostVersion)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

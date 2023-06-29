@@ -77,17 +77,16 @@ public class UpgradeTaskSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeTaskSpec upgradeTaskSpec = (UpgradeTaskSpec) o;
-        return Objects.equals(this.version, upgradeTaskSpec.version)
-            && Objects.equals(this.targetVersion, upgradeTaskSpec.targetVersion)
-            && Objects.equals(this.items, upgradeTaskSpec.items);
+        UpgradeTaskSpec that = (UpgradeTaskSpec) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.targetVersion, that.targetVersion)
+            && Objects.equals(this.items, that.items);
     }
 
     @Override

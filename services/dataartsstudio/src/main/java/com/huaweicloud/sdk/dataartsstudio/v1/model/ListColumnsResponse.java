@@ -99,17 +99,16 @@ public class ListColumnsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListColumnsResponse listColumnsResponse = (ListColumnsResponse) o;
-        return Objects.equals(this.tableId, listColumnsResponse.tableId)
-            && Objects.equals(this.totalCount, listColumnsResponse.totalCount)
-            && Objects.equals(this.columns, listColumnsResponse.columns);
+        ListColumnsResponse that = (ListColumnsResponse) obj;
+        return Objects.equals(this.tableId, that.tableId) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.columns, that.columns);
     }
 
     @Override

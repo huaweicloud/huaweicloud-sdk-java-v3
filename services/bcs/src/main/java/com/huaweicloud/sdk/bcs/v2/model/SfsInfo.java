@@ -99,16 +99,16 @@ public class SfsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SfsInfo sfsInfo = (SfsInfo) o;
-        return Objects.equals(this.pvcName, sfsInfo.pvcName) && Objects.equals(this.name, sfsInfo.name)
-            && Objects.equals(this.addr, sfsInfo.addr) && Objects.equals(this.type, sfsInfo.type);
+        SfsInfo that = (SfsInfo) obj;
+        return Objects.equals(this.pvcName, that.pvcName) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.addr, that.addr) && Objects.equals(this.type, that.type);
     }
 
     @Override

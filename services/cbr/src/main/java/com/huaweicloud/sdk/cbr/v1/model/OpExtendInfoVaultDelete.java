@@ -55,16 +55,15 @@ public class OpExtendInfoVaultDelete {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoVaultDelete opExtendInfoVaultDelete = (OpExtendInfoVaultDelete) o;
-        return Objects.equals(this.failCount, opExtendInfoVaultDelete.failCount)
-            && Objects.equals(this.totalCount, opExtendInfoVaultDelete.totalCount);
+        OpExtendInfoVaultDelete that = (OpExtendInfoVaultDelete) obj;
+        return Objects.equals(this.failCount, that.failCount) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class EdgeImageRegionInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgeImageRegionInfo edgeImageRegionInfo = (EdgeImageRegionInfo) o;
-        return Objects.equals(this.regionId, edgeImageRegionInfo.regionId)
-            && Objects.equals(this.imageId, edgeImageRegionInfo.imageId);
+        EdgeImageRegionInfo that = (EdgeImageRegionInfo) obj;
+        return Objects.equals(this.regionId, that.regionId) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

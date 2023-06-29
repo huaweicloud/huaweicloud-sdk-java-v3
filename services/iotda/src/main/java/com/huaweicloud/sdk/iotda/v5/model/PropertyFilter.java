@@ -149,18 +149,17 @@ public class PropertyFilter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropertyFilter propertyFilter = (PropertyFilter) o;
-        return Objects.equals(this.path, propertyFilter.path) && Objects.equals(this.operator, propertyFilter.operator)
-            && Objects.equals(this.value, propertyFilter.value)
-            && Objects.equals(this.inValues, propertyFilter.inValues)
-            && Objects.equals(this.strategy, propertyFilter.strategy);
+        PropertyFilter that = (PropertyFilter) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.inValues, that.inValues)
+            && Objects.equals(this.strategy, that.strategy);
     }
 
     @Override

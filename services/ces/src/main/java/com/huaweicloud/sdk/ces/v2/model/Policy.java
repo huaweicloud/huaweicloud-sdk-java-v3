@@ -219,21 +219,20 @@ public class Policy {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Policy policy = (Policy) o;
-        return Objects.equals(this.metricName, policy.metricName) && Objects.equals(this.period, policy.period)
-            && Objects.equals(this.filter, policy.filter)
-            && Objects.equals(this.comparisonOperator, policy.comparisonOperator)
-            && Objects.equals(this.value, policy.value) && Objects.equals(this.unit, policy.unit)
-            && Objects.equals(this.count, policy.count)
-            && Objects.equals(this.suppressDuration, policy.suppressDuration)
-            && Objects.equals(this.level, policy.level);
+        Policy that = (Policy) obj;
+        return Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.suppressDuration, that.suppressDuration)
+            && Objects.equals(this.level, that.level);
     }
 
     @Override

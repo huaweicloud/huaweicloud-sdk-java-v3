@@ -187,22 +187,18 @@ public class DriverLicenseBack {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DriverLicenseBack driverLicenseBack = (DriverLicenseBack) o;
-        return Objects.equals(this.type, driverLicenseBack.type)
-            && Objects.equals(this.number, driverLicenseBack.number)
-            && Objects.equals(this.name, driverLicenseBack.name)
-            && Objects.equals(this.issuingAuthority, driverLicenseBack.issuingAuthority)
-            && Objects.equals(this.address, driverLicenseBack.address)
-            && Objects.equals(this.fileNumber, driverLicenseBack.fileNumber)
-            && Objects.equals(this.record, driverLicenseBack.record)
-            && Objects.equals(this.textLocation, driverLicenseBack.textLocation);
+        DriverLicenseBack that = (DriverLicenseBack) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.number, that.number)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.issuingAuthority, that.issuingAuthority)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.fileNumber, that.fileNumber)
+            && Objects.equals(this.record, that.record) && Objects.equals(this.textLocation, that.textLocation);
     }
 
     @Override

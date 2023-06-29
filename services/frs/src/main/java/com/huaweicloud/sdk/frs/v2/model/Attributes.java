@@ -281,20 +281,20 @@ public class Attributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Attributes attributes = (Attributes) o;
-        return Objects.equals(this.dress, attributes.dress) && Objects.equals(this.glass, attributes.glass)
-            && Objects.equals(this.hat, attributes.hat) && Objects.equals(this.age, attributes.age)
-            && Objects.equals(this.mask, attributes.mask) && Objects.equals(this.beard, attributes.beard)
-            && Objects.equals(this.phototype, attributes.phototype) && Objects.equals(this.quality, attributes.quality)
-            && Objects.equals(this.hair, attributes.hair) && Objects.equals(this.expression, attributes.expression)
-            && Objects.equals(this.faceAngle, attributes.faceAngle);
+        Attributes that = (Attributes) obj;
+        return Objects.equals(this.dress, that.dress) && Objects.equals(this.glass, that.glass)
+            && Objects.equals(this.hat, that.hat) && Objects.equals(this.age, that.age)
+            && Objects.equals(this.mask, that.mask) && Objects.equals(this.beard, that.beard)
+            && Objects.equals(this.phototype, that.phototype) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.hair, that.hair) && Objects.equals(this.expression, that.expression)
+            && Objects.equals(this.faceAngle, that.faceAngle);
     }
 
     @Override

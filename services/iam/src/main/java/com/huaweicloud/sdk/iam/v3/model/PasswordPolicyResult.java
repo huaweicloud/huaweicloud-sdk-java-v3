@@ -209,25 +209,23 @@ public class PasswordPolicyResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PasswordPolicyResult passwordPolicyResult = (PasswordPolicyResult) o;
-        return Objects.equals(this.maximumConsecutiveIdenticalChars,
-            passwordPolicyResult.maximumConsecutiveIdenticalChars)
-            && Objects.equals(this.maximumPasswordLength, passwordPolicyResult.maximumPasswordLength)
-            && Objects.equals(this.minimumPasswordAge, passwordPolicyResult.minimumPasswordAge)
-            && Objects.equals(this.minimumPasswordLength, passwordPolicyResult.minimumPasswordLength)
-            && Objects.equals(this.numberOfRecentPasswordsDisallowed,
-                passwordPolicyResult.numberOfRecentPasswordsDisallowed)
-            && Objects.equals(this.passwordNotUsernameOrInvert, passwordPolicyResult.passwordNotUsernameOrInvert)
-            && Objects.equals(this.passwordRequirements, passwordPolicyResult.passwordRequirements)
-            && Objects.equals(this.passwordValidityPeriod, passwordPolicyResult.passwordValidityPeriod)
-            && Objects.equals(this.passwordCharCombination, passwordPolicyResult.passwordCharCombination);
+        PasswordPolicyResult that = (PasswordPolicyResult) obj;
+        return Objects.equals(this.maximumConsecutiveIdenticalChars, that.maximumConsecutiveIdenticalChars)
+            && Objects.equals(this.maximumPasswordLength, that.maximumPasswordLength)
+            && Objects.equals(this.minimumPasswordAge, that.minimumPasswordAge)
+            && Objects.equals(this.minimumPasswordLength, that.minimumPasswordLength)
+            && Objects.equals(this.numberOfRecentPasswordsDisallowed, that.numberOfRecentPasswordsDisallowed)
+            && Objects.equals(this.passwordNotUsernameOrInvert, that.passwordNotUsernameOrInvert)
+            && Objects.equals(this.passwordRequirements, that.passwordRequirements)
+            && Objects.equals(this.passwordValidityPeriod, that.passwordValidityPeriod)
+            && Objects.equals(this.passwordCharCombination, that.passwordCharCombination);
     }
 
     @Override

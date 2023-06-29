@@ -86,16 +86,16 @@ public class ListServerBlockDevicesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListServerBlockDevicesResponse listServerBlockDevicesResponse = (ListServerBlockDevicesResponse) o;
-        return Objects.equals(this.attachableQuantity, listServerBlockDevicesResponse.attachableQuantity)
-            && Objects.equals(this.volumeAttachments, listServerBlockDevicesResponse.volumeAttachments);
+        ListServerBlockDevicesResponse that = (ListServerBlockDevicesResponse) obj;
+        return Objects.equals(this.attachableQuantity, that.attachableQuantity)
+            && Objects.equals(this.volumeAttachments, that.volumeAttachments);
     }
 
     @Override

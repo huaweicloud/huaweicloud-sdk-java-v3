@@ -253,26 +253,21 @@ public class HttpQueryCfwAccessControllerLogsResponseDTODataRecords {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HttpQueryCfwAccessControllerLogsResponseDTODataRecords httpQueryCfwAccessControllerLogsResponseDTODataRecords =
-            (HttpQueryCfwAccessControllerLogsResponseDTODataRecords) o;
-        return Objects.equals(this.action, httpQueryCfwAccessControllerLogsResponseDTODataRecords.action)
-            && Objects.equals(this.ruleName, httpQueryCfwAccessControllerLogsResponseDTODataRecords.ruleName)
-            && Objects.equals(this.ruleId, httpQueryCfwAccessControllerLogsResponseDTODataRecords.ruleId)
-            && Objects.equals(this.hitTime, httpQueryCfwAccessControllerLogsResponseDTODataRecords.hitTime)
-            && Objects.equals(this.logId, httpQueryCfwAccessControllerLogsResponseDTODataRecords.logId)
-            && Objects.equals(this.srcIp, httpQueryCfwAccessControllerLogsResponseDTODataRecords.srcIp)
-            && Objects.equals(this.srcPort, httpQueryCfwAccessControllerLogsResponseDTODataRecords.srcPort)
-            && Objects.equals(this.dstIp, httpQueryCfwAccessControllerLogsResponseDTODataRecords.dstIp)
-            && Objects.equals(this.dstPort, httpQueryCfwAccessControllerLogsResponseDTODataRecords.dstPort)
-            && Objects.equals(this.protocol, httpQueryCfwAccessControllerLogsResponseDTODataRecords.protocol)
-            && Objects.equals(this.app, httpQueryCfwAccessControllerLogsResponseDTODataRecords.app);
+        HttpQueryCfwAccessControllerLogsResponseDTODataRecords that =
+            (HttpQueryCfwAccessControllerLogsResponseDTODataRecords) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.ruleName, that.ruleName)
+            && Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.hitTime, that.hitTime)
+            && Objects.equals(this.logId, that.logId) && Objects.equals(this.srcIp, that.srcIp)
+            && Objects.equals(this.srcPort, that.srcPort) && Objects.equals(this.dstIp, that.dstIp)
+            && Objects.equals(this.dstPort, that.dstPort) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.app, that.app);
     }
 
     @Override

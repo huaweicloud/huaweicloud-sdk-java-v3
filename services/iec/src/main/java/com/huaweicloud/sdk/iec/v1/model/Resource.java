@@ -359,22 +359,21 @@ public class Resource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resource resource = (Resource) o;
-        return Objects.equals(this.name, resource.name) && Objects.equals(this.withPrefix, resource.withPrefix)
-            && Objects.equals(this.imageRef, resource.imageRef) && Objects.equals(this.flavorRef, resource.flavorRef)
-            && Objects.equals(this.adminPass, resource.adminPass) && Objects.equals(this.keyName, resource.keyName)
-            && Objects.equals(this.netConfig, resource.netConfig) && Objects.equals(this.bandwidth, resource.bandwidth)
-            && Objects.equals(this.rootVolume, resource.rootVolume)
-            && Objects.equals(this.dataVolumes, resource.dataVolumes) && Objects.equals(this.count, resource.count)
-            && Objects.equals(this.securityGroups, resource.securityGroups)
-            && Objects.equals(this.userData, resource.userData);
+        Resource that = (Resource) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.withPrefix, that.withPrefix)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.adminPass, that.adminPass) && Objects.equals(this.keyName, that.keyName)
+            && Objects.equals(this.netConfig, that.netConfig) && Objects.equals(this.bandwidth, that.bandwidth)
+            && Objects.equals(this.rootVolume, that.rootVolume) && Objects.equals(this.dataVolumes, that.dataVolumes)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.userData, that.userData);
     }
 
     @Override

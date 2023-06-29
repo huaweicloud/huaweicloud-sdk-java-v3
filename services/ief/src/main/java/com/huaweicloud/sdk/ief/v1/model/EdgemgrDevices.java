@@ -43,15 +43,15 @@ public class EdgemgrDevices {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgemgrDevices edgemgrDevices = (EdgemgrDevices) o;
-        return Objects.equals(this.device, edgemgrDevices.device);
+        EdgemgrDevices that = (EdgemgrDevices) obj;
+        return Objects.equals(this.device, that.device);
     }
 
     @Override

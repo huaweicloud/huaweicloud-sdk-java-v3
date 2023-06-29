@@ -77,17 +77,16 @@ public class CreateSnapshotReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSnapshotReq createSnapshotReq = (CreateSnapshotReq) o;
-        return Objects.equals(this.name, createSnapshotReq.name)
-            && Objects.equals(this.description, createSnapshotReq.description)
-            && Objects.equals(this.indices, createSnapshotReq.indices);
+        CreateSnapshotReq that = (CreateSnapshotReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.indices, that.indices);
     }
 
     @Override

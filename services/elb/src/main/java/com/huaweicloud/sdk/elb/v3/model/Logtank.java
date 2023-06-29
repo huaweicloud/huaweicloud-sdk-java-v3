@@ -121,18 +121,17 @@ public class Logtank {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Logtank logtank = (Logtank) o;
-        return Objects.equals(this.id, logtank.id) && Objects.equals(this.projectId, logtank.projectId)
-            && Objects.equals(this.loadbalancerId, logtank.loadbalancerId)
-            && Objects.equals(this.logGroupId, logtank.logGroupId)
-            && Objects.equals(this.logTopicId, logtank.logTopicId);
+        Logtank that = (Logtank) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.loadbalancerId, that.loadbalancerId)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logTopicId, that.logTopicId);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class ListDomainCertTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListDomainCertTagsResponse listDomainCertTagsResponse = (ListDomainCertTagsResponse) o;
-        return Objects.equals(this.tags, listDomainCertTagsResponse.tags);
+        ListDomainCertTagsResponse that = (ListDomainCertTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -104,16 +104,16 @@ public class Geo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Geo geo = (Geo) o;
-        return Objects.equals(this.latitude, geo.latitude) && Objects.equals(this.longitude, geo.longitude)
-            && Objects.equals(this.cityCode, geo.cityCode) && Objects.equals(this.countryCode, geo.countryCode);
+        Geo that = (Geo) obj;
+        return Objects.equals(this.latitude, that.latitude) && Objects.equals(this.longitude, that.longitude)
+            && Objects.equals(this.cityCode, that.cityCode) && Objects.equals(this.countryCode, that.countryCode);
     }
 
     @Override

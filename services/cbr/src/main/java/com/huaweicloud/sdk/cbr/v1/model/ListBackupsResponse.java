@@ -122,18 +122,16 @@ public class ListBackupsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListBackupsResponse listBackupsResponse = (ListBackupsResponse) o;
-        return Objects.equals(this.backups, listBackupsResponse.backups)
-            && Objects.equals(this.count, listBackupsResponse.count)
-            && Objects.equals(this.offset, listBackupsResponse.offset)
-            && Objects.equals(this.limit, listBackupsResponse.limit);
+        ListBackupsResponse that = (ListBackupsResponse) obj;
+        return Objects.equals(this.backups, that.backups) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class AgencyTokenScope {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AgencyTokenScope agencyTokenScope = (AgencyTokenScope) o;
-        return Objects.equals(this.domain, agencyTokenScope.domain)
-            && Objects.equals(this.project, agencyTokenScope.project);
+        AgencyTokenScope that = (AgencyTokenScope) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.project, that.project);
     }
 
     @Override

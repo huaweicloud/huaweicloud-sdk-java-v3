@@ -43,15 +43,15 @@ public class RunJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RunJobRequest runJobRequest = (RunJobRequest) o;
-        return Objects.equals(this.body, runJobRequest.body);
+        RunJobRequest that = (RunJobRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

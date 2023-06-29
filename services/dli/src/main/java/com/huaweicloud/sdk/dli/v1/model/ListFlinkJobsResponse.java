@@ -88,17 +88,16 @@ public class ListFlinkJobsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlinkJobsResponse listFlinkJobsResponse = (ListFlinkJobsResponse) o;
-        return Objects.equals(this.isSuccess, listFlinkJobsResponse.isSuccess)
-            && Objects.equals(this.message, listFlinkJobsResponse.message)
-            && Objects.equals(this.jobList, listFlinkJobsResponse.jobList);
+        ListFlinkJobsResponse that = (ListFlinkJobsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.jobList, that.jobList);
     }
 
     @Override

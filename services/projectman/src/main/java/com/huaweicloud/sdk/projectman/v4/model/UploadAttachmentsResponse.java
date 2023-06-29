@@ -144,20 +144,17 @@ public class UploadAttachmentsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadAttachmentsResponse uploadAttachmentsResponse = (UploadAttachmentsResponse) o;
-        return Objects.equals(this.id, uploadAttachmentsResponse.id)
-            && Objects.equals(this.issueId, uploadAttachmentsResponse.issueId)
-            && Objects.equals(this.projectId, uploadAttachmentsResponse.projectId)
-            && Objects.equals(this.diskFilename, uploadAttachmentsResponse.diskFilename)
-            && Objects.equals(this.fileName, uploadAttachmentsResponse.fileName)
-            && Objects.equals(this.size, uploadAttachmentsResponse.size);
+        UploadAttachmentsResponse that = (UploadAttachmentsResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.issueId, that.issueId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.diskFilename, that.diskFilename)
+            && Objects.equals(this.fileName, that.fileName) && Objects.equals(this.size, that.size);
     }
 
     @Override

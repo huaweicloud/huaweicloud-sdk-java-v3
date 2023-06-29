@@ -187,22 +187,18 @@ public class TxSearchRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TxSearchRequest txSearchRequest = (TxSearchRequest) o;
-        return Objects.equals(this.businessId, txSearchRequest.businessId)
-            && Objects.equals(this.region, txSearchRequest.region)
-            && Objects.equals(this.startTime, txSearchRequest.startTime)
-            && Objects.equals(this.endTime, txSearchRequest.endTime)
-            && Objects.equals(this.envId, txSearchRequest.envId)
-            && Objects.equals(this.requestId, txSearchRequest.requestId)
-            && Objects.equals(this.pageNo, txSearchRequest.pageNo)
-            && Objects.equals(this.pageSize, txSearchRequest.pageSize);
+        TxSearchRequest that = (TxSearchRequest) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.pageNo, that.pageNo) && Objects.equals(this.pageSize, that.pageSize);
     }
 
     @Override

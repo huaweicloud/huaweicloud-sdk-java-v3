@@ -74,15 +74,15 @@ public class ValueFrom {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ValueFrom valueFrom = (ValueFrom) o;
-        return Objects.equals(this.secret, valueFrom.secret) && Objects.equals(this.configmap, valueFrom.configmap);
+        ValueFrom that = (ValueFrom) obj;
+        return Objects.equals(this.secret, that.secret) && Objects.equals(this.configmap, that.configmap);
     }
 
     @Override

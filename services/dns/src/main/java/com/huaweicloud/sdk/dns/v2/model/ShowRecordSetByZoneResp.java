@@ -444,32 +444,24 @@ public class ShowRecordSetByZoneResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRecordSetByZoneResp showRecordSetByZoneResp = (ShowRecordSetByZoneResp) o;
-        return Objects.equals(this.id, showRecordSetByZoneResp.id)
-            && Objects.equals(this.name, showRecordSetByZoneResp.name)
-            && Objects.equals(this.description, showRecordSetByZoneResp.description)
-            && Objects.equals(this.zoneId, showRecordSetByZoneResp.zoneId)
-            && Objects.equals(this.zoneName, showRecordSetByZoneResp.zoneName)
-            && Objects.equals(this.type, showRecordSetByZoneResp.type)
-            && Objects.equals(this.ttl, showRecordSetByZoneResp.ttl)
-            && Objects.equals(this.records, showRecordSetByZoneResp.records)
-            && Objects.equals(this.createAt, showRecordSetByZoneResp.createAt)
-            && Objects.equals(this.updateAt, showRecordSetByZoneResp.updateAt)
-            && Objects.equals(this.status, showRecordSetByZoneResp.status)
-            && Objects.equals(this._default, showRecordSetByZoneResp._default)
-            && Objects.equals(this.projectId, showRecordSetByZoneResp.projectId)
-            && Objects.equals(this.links, showRecordSetByZoneResp.links)
-            && Objects.equals(this.line, showRecordSetByZoneResp.line)
-            && Objects.equals(this.weight, showRecordSetByZoneResp.weight)
-            && Objects.equals(this.healthCheckId, showRecordSetByZoneResp.healthCheckId)
-            && Objects.equals(this.aliasTarget, showRecordSetByZoneResp.aliasTarget);
+        ShowRecordSetByZoneResp that = (ShowRecordSetByZoneResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.zoneId, that.zoneId)
+            && Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.records, that.records)
+            && Objects.equals(this.createAt, that.createAt) && Objects.equals(this.updateAt, that.updateAt)
+            && Objects.equals(this.status, that.status) && Objects.equals(this._default, that._default)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.line, that.line) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.aliasTarget, that.aliasTarget);
     }
 
     @Override

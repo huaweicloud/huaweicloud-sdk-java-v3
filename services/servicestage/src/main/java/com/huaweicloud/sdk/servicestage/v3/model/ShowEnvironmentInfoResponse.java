@@ -110,22 +110,15 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new DeployModeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new DeployModeEnum(value));
         }
 
         public static DeployModeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            DeployModeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -377,25 +370,21 @@ public class ShowEnvironmentInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEnvironmentInfoResponse showEnvironmentInfoResponse = (ShowEnvironmentInfoResponse) o;
-        return Objects.equals(this.id, showEnvironmentInfoResponse.id)
-            && Objects.equals(this.name, showEnvironmentInfoResponse.name)
-            && Objects.equals(this.description, showEnvironmentInfoResponse.description)
-            && Objects.equals(this.enterpriseProjectId, showEnvironmentInfoResponse.enterpriseProjectId)
-            && Objects.equals(this.vpcId, showEnvironmentInfoResponse.vpcId)
-            && Objects.equals(this.creator, showEnvironmentInfoResponse.creator)
-            && Objects.equals(this.createTime, showEnvironmentInfoResponse.createTime)
-            && Objects.equals(this.updateTime, showEnvironmentInfoResponse.updateTime)
-            && Objects.equals(this.deployMode, showEnvironmentInfoResponse.deployMode)
-            && Objects.equals(this.resources, showEnvironmentInfoResponse.resources)
-            && Objects.equals(this.labels, showEnvironmentInfoResponse.labels);
+        ShowEnvironmentInfoResponse that = (ShowEnvironmentInfoResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.creator, that.creator)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.deployMode, that.deployMode) && Objects.equals(this.resources, that.resources)
+            && Objects.equals(this.labels, that.labels);
     }
 
     @Override

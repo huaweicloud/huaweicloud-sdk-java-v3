@@ -1,49 +1,37 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * LtsLogErrorDetail
  */
-public class LtsLogErrorDetail  {
-
+public class LtsLogErrorDetail {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time")
-    
+    @JsonProperty(value = "time")
 
     private String time;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="level")
-    
+    @JsonProperty(value = "level")
 
     private String level;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="content")
-    
+    @JsonProperty(value = "content")
 
     private String content;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="line_num")
-    
+    @JsonProperty(value = "line_num")
 
     private String lineNum;
 
@@ -51,9 +39,6 @@ public class LtsLogErrorDetail  {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID。
@@ -67,15 +52,10 @@ public class LtsLogErrorDetail  {
         this.nodeId = nodeId;
     }
 
-    
-
     public LtsLogErrorDetail withTime(String time) {
         this.time = time;
         return this;
     }
-
-    
-
 
     /**
      * 执行时间。
@@ -89,15 +69,10 @@ public class LtsLogErrorDetail  {
         this.time = time;
     }
 
-    
-
     public LtsLogErrorDetail withLevel(String level) {
         this.level = level;
         return this;
     }
-
-    
-
 
     /**
      * 日志级别。
@@ -111,15 +86,10 @@ public class LtsLogErrorDetail  {
         this.level = level;
     }
 
-    
-
     public LtsLogErrorDetail withContent(String content) {
         this.content = content;
         return this;
     }
-
-    
-
 
     /**
      * 错误日志内容。
@@ -133,15 +103,10 @@ public class LtsLogErrorDetail  {
         this.content = content;
     }
 
-    
-
     public LtsLogErrorDetail withLineNum(String lineNum) {
         this.lineNum = lineNum;
         return this;
     }
-
-    
-
 
     /**
      * 日志单行序列号。
@@ -155,27 +120,25 @@ public class LtsLogErrorDetail  {
         this.lineNum = lineNum;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LtsLogErrorDetail ltsLogErrorDetail = (LtsLogErrorDetail) o;
-        return Objects.equals(this.nodeId, ltsLogErrorDetail.nodeId) &&
-            Objects.equals(this.time, ltsLogErrorDetail.time) &&
-            Objects.equals(this.level, ltsLogErrorDetail.level) &&
-            Objects.equals(this.content, ltsLogErrorDetail.content) &&
-            Objects.equals(this.lineNum, ltsLogErrorDetail.lineNum);
+        LtsLogErrorDetail that = (LtsLogErrorDetail) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.lineNum, that.lineNum);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(nodeId, time, level, content, lineNum);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +151,7 @@ public class LtsLogErrorDetail  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +162,5 @@ public class LtsLogErrorDetail  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

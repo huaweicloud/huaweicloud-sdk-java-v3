@@ -44,15 +44,15 @@ public class ListPubInfosResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPubInfosResponse listPubInfosResponse = (ListPubInfosResponse) o;
-        return Objects.equals(this.data, listPubInfosResponse.data);
+        ListPubInfosResponse that = (ListPubInfosResponse) obj;
+        return Objects.equals(this.data, that.data);
     }
 
     @Override

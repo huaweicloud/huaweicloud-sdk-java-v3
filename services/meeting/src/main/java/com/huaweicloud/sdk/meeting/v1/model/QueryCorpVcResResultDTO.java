@@ -272,25 +272,23 @@ public class QueryCorpVcResResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryCorpVcResResultDTO queryCorpVcResResultDTO = (QueryCorpVcResResultDTO) o;
-        return Objects.equals(this.vmrPkgList, queryCorpVcResResultDTO.vmrPkgList)
-            && Objects.equals(this.te1080pHardCount, queryCorpVcResResultDTO.te1080pHardCount)
-            && Objects.equals(this.te720pHardCount, queryCorpVcResResultDTO.te720pHardCount)
-            && Objects.equals(this.teSoftCount, queryCorpVcResResultDTO.teSoftCount)
-            && Objects.equals(this.roomCount, queryCorpVcResResultDTO.roomCount)
-            && Objects.equals(this.recordCapability, queryCorpVcResResultDTO.recordCapability)
-            && Objects.equals(this.confCallCount, queryCorpVcResResultDTO.confCallCount)
-            && Objects.equals(this.liveCount, queryCorpVcResResultDTO.liveCount)
-            && Objects.equals(this.thirdPartyHardCount, queryCorpVcResResultDTO.thirdPartyHardCount)
-            && Objects.equals(this.hwVisionCount, queryCorpVcResResultDTO.hwVisionCount)
-            && Objects.equals(this.ideaHubCount, queryCorpVcResResultDTO.ideaHubCount);
+        QueryCorpVcResResultDTO that = (QueryCorpVcResResultDTO) obj;
+        return Objects.equals(this.vmrPkgList, that.vmrPkgList)
+            && Objects.equals(this.te1080pHardCount, that.te1080pHardCount)
+            && Objects.equals(this.te720pHardCount, that.te720pHardCount)
+            && Objects.equals(this.teSoftCount, that.teSoftCount) && Objects.equals(this.roomCount, that.roomCount)
+            && Objects.equals(this.recordCapability, that.recordCapability)
+            && Objects.equals(this.confCallCount, that.confCallCount) && Objects.equals(this.liveCount, that.liveCount)
+            && Objects.equals(this.thirdPartyHardCount, that.thirdPartyHardCount)
+            && Objects.equals(this.hwVisionCount, that.hwVisionCount)
+            && Objects.equals(this.ideaHubCount, that.ideaHubCount);
     }
 
     @Override

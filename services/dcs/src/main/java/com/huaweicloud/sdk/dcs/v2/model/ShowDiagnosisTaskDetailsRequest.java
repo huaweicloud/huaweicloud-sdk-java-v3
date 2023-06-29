@@ -33,15 +33,15 @@ public class ShowDiagnosisTaskDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDiagnosisTaskDetailsRequest showDiagnosisTaskDetailsRequest = (ShowDiagnosisTaskDetailsRequest) o;
-        return Objects.equals(this.reportId, showDiagnosisTaskDetailsRequest.reportId);
+        ShowDiagnosisTaskDetailsRequest that = (ShowDiagnosisTaskDetailsRequest) obj;
+        return Objects.equals(this.reportId, that.reportId);
     }
 
     @Override

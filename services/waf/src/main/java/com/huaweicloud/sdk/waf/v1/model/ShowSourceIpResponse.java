@@ -75,16 +75,15 @@ public class ShowSourceIpResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSourceIpResponse showSourceIpResponse = (ShowSourceIpResponse) o;
-        return Objects.equals(this.sourceIp, showSourceIpResponse.sourceIp)
-            && Objects.equals(this.lastModify, showSourceIpResponse.lastModify);
+        ShowSourceIpResponse that = (ShowSourceIpResponse) obj;
+        return Objects.equals(this.sourceIp, that.sourceIp) && Objects.equals(this.lastModify, that.lastModify);
     }
 
     @Override

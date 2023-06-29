@@ -77,17 +77,16 @@ public class StatisticStatusV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatisticStatusV2 statisticStatusV2 = (StatisticStatusV2) o;
-        return Objects.equals(this.unresolved, statisticStatusV2.unresolved)
-            && Objects.equals(this.resolved, statisticStatusV2.resolved)
-            && Objects.equals(this.dismissed, statisticStatusV2.dismissed);
+        StatisticStatusV2 that = (StatisticStatusV2) obj;
+        return Objects.equals(this.unresolved, that.unresolved) && Objects.equals(this.resolved, that.resolved)
+            && Objects.equals(this.dismissed, that.dismissed);
     }
 
     @Override

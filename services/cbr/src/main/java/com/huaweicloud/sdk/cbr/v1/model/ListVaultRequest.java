@@ -75,22 +75,15 @@ public class ListVaultRequest {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CloudTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CloudTypeEnum(value));
         }
 
         public static CloudTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CloudTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class ListVaultRequest {
             if (value == null) {
                 return null;
             }
-            ProtectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectTypeEnum(value));
         }
 
         public static ProtectTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -414,23 +400,20 @@ public class ListVaultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVaultRequest listVaultRequest = (ListVaultRequest) o;
-        return Objects.equals(this.limit, listVaultRequest.limit) && Objects.equals(this.name, listVaultRequest.name)
-            && Objects.equals(this.offset, listVaultRequest.offset)
-            && Objects.equals(this.cloudType, listVaultRequest.cloudType)
-            && Objects.equals(this.protectType, listVaultRequest.protectType)
-            && Objects.equals(this.objectType, listVaultRequest.objectType)
-            && Objects.equals(this.enterpriseProjectId, listVaultRequest.enterpriseProjectId)
-            && Objects.equals(this.id, listVaultRequest.id) && Objects.equals(this.policyId, listVaultRequest.policyId)
-            && Objects.equals(this.status, listVaultRequest.status)
-            && Objects.equals(this.resourceIds, listVaultRequest.resourceIds);
+        ListVaultRequest that = (ListVaultRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.cloudType, that.cloudType)
+            && Objects.equals(this.protectType, that.protectType) && Objects.equals(this.objectType, that.objectType)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.policyId, that.policyId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.resourceIds, that.resourceIds);
     }
 
     @Override

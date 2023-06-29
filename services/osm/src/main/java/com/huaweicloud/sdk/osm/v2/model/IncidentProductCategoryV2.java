@@ -121,20 +121,19 @@ public class IncidentProductCategoryV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IncidentProductCategoryV2 incidentProductCategoryV2 = (IncidentProductCategoryV2) o;
-        return Objects.equals(this.incidentProductCategoryId, incidentProductCategoryV2.incidentProductCategoryId)
-            && Objects.equals(this.incidentProductCategoryName, incidentProductCategoryV2.incidentProductCategoryName)
-            && Objects.equals(this.incidentProductCategoryDesc, incidentProductCategoryV2.incidentProductCategoryDesc)
-            && Objects.equals(this.incidentProductCategoryAcronym,
-                incidentProductCategoryV2.incidentProductCategoryAcronym)
-            && Objects.equals(this.canUseSupportPlan, incidentProductCategoryV2.canUseSupportPlan);
+        IncidentProductCategoryV2 that = (IncidentProductCategoryV2) obj;
+        return Objects.equals(this.incidentProductCategoryId, that.incidentProductCategoryId)
+            && Objects.equals(this.incidentProductCategoryName, that.incidentProductCategoryName)
+            && Objects.equals(this.incidentProductCategoryDesc, that.incidentProductCategoryDesc)
+            && Objects.equals(this.incidentProductCategoryAcronym, that.incidentProductCategoryAcronym)
+            && Objects.equals(this.canUseSupportPlan, that.canUseSupportPlan);
     }
 
     @Override

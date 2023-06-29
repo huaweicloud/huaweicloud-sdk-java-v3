@@ -115,17 +115,16 @@ public class DebugCaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugCaseRequest debugCaseRequest = (DebugCaseRequest) o;
-        return Objects.equals(this.testSuiteId, debugCaseRequest.testSuiteId)
-            && Objects.equals(this.taskId, debugCaseRequest.taskId)
-            && Objects.equals(this.caseId, debugCaseRequest.caseId) && Objects.equals(this.body, debugCaseRequest.body);
+        DebugCaseRequest that = (DebugCaseRequest) obj;
+        return Objects.equals(this.testSuiteId, that.testSuiteId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.caseId, that.caseId) && Objects.equals(this.body, that.body);
     }
 
     @Override

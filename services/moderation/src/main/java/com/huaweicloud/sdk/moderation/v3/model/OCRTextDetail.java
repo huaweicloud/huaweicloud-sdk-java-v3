@@ -55,16 +55,15 @@ public class OCRTextDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OCRTextDetail ocRTextDetail = (OCRTextDetail) o;
-        return Objects.equals(this.segment, ocRTextDetail.segment)
-            && Objects.equals(this.glossaryName, ocRTextDetail.glossaryName);
+        OCRTextDetail that = (OCRTextDetail) obj;
+        return Objects.equals(this.segment, that.segment) && Objects.equals(this.glossaryName, that.glossaryName);
     }
 
     @Override

@@ -34,8 +34,8 @@ public class ListEnterpriseRoutersRequest {
     private List<String> enterpriseProjectId = null;
 
     /**
-    * Gets or Sets state
-    */
+     * Gets or Sets state
+     */
     public static final class StateEnum {
 
         /**
@@ -102,22 +102,15 @@ public class ListEnterpriseRoutersRequest {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StateEnum(value));
         }
 
         public static StateEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -155,8 +148,8 @@ public class ListEnterpriseRoutersRequest {
     private List<String> sortKey = null;
 
     /**
-    * Gets or Sets sortDir
-    */
+     * Gets or Sets sortDir
+     */
     public static final class SortDirEnum {
 
         /**
@@ -199,22 +192,15 @@ public class ListEnterpriseRoutersRequest {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortDirEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortDirEnum(value));
         }
 
         public static SortDirEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortDirEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -471,22 +457,19 @@ public class ListEnterpriseRoutersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseRoutersRequest listEnterpriseRoutersRequest = (ListEnterpriseRoutersRequest) o;
-        return Objects.equals(this.limit, listEnterpriseRoutersRequest.limit)
-            && Objects.equals(this.marker, listEnterpriseRoutersRequest.marker)
-            && Objects.equals(this.enterpriseProjectId, listEnterpriseRoutersRequest.enterpriseProjectId)
-            && Objects.equals(this.state, listEnterpriseRoutersRequest.state)
-            && Objects.equals(this.id, listEnterpriseRoutersRequest.id)
-            && Objects.equals(this.resourceId, listEnterpriseRoutersRequest.resourceId)
-            && Objects.equals(this.sortKey, listEnterpriseRoutersRequest.sortKey)
-            && Objects.equals(this.sortDir, listEnterpriseRoutersRequest.sortDir);
+        ListEnterpriseRoutersRequest that = (ListEnterpriseRoutersRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

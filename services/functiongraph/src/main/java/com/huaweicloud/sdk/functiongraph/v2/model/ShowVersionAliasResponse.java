@@ -165,20 +165,18 @@ public class ShowVersionAliasResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVersionAliasResponse showVersionAliasResponse = (ShowVersionAliasResponse) o;
-        return Objects.equals(this.name, showVersionAliasResponse.name)
-            && Objects.equals(this.version, showVersionAliasResponse.version)
-            && Objects.equals(this.description, showVersionAliasResponse.description)
-            && Objects.equals(this.lastModified, showVersionAliasResponse.lastModified)
-            && Objects.equals(this.aliasUrn, showVersionAliasResponse.aliasUrn)
-            && Objects.equals(this.additionalVersionWeights, showVersionAliasResponse.additionalVersionWeights);
+        ShowVersionAliasResponse that = (ShowVersionAliasResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.aliasUrn, that.aliasUrn)
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
     }
 
     @Override

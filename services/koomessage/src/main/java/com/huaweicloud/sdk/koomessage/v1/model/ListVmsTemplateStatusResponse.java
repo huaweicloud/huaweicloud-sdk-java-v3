@@ -88,17 +88,16 @@ public class ListVmsTemplateStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVmsTemplateStatusResponse listVmsTemplateStatusResponse = (ListVmsTemplateStatusResponse) o;
-        return Objects.equals(this.status, listVmsTemplateStatusResponse.status)
-            && Objects.equals(this.message, listVmsTemplateStatusResponse.message)
-            && Objects.equals(this.data, listVmsTemplateStatusResponse.data);
+        ListVmsTemplateStatusResponse that = (ListVmsTemplateStatusResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.data, that.data);
     }
 
     @Override

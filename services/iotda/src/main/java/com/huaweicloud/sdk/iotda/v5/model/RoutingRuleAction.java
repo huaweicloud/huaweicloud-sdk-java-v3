@@ -131,19 +131,17 @@ public class RoutingRuleAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RoutingRuleAction routingRuleAction = (RoutingRuleAction) o;
-        return Objects.equals(this.actionId, routingRuleAction.actionId)
-            && Objects.equals(this.ruleId, routingRuleAction.ruleId)
-            && Objects.equals(this.appId, routingRuleAction.appId)
-            && Objects.equals(this.channel, routingRuleAction.channel)
-            && Objects.equals(this.channelDetail, routingRuleAction.channelDetail);
+        RoutingRuleAction that = (RoutingRuleAction) obj;
+        return Objects.equals(this.actionId, that.actionId) && Objects.equals(this.ruleId, that.ruleId)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.channel, that.channel)
+            && Objects.equals(this.channelDetail, that.channelDetail);
     }
 
     @Override

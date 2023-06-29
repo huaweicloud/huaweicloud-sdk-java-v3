@@ -119,18 +119,16 @@ public class ListClusterSnapshotsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterSnapshotsResponse listClusterSnapshotsResponse = (ListClusterSnapshotsResponse) o;
-        return Objects.equals(this.snapshots, listClusterSnapshotsResponse.snapshots)
-            && Objects.equals(this.projectId, listClusterSnapshotsResponse.projectId)
-            && Objects.equals(this.clusterId, listClusterSnapshotsResponse.clusterId)
-            && Objects.equals(this.count, listClusterSnapshotsResponse.count);
+        ListClusterSnapshotsResponse that = (ListClusterSnapshotsResponse) obj;
+        return Objects.equals(this.snapshots, that.snapshots) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.count, that.count);
     }
 
     @Override

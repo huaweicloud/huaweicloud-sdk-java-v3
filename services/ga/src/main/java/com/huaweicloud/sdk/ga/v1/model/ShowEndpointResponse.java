@@ -66,16 +66,15 @@ public class ShowEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEndpointResponse showEndpointResponse = (ShowEndpointResponse) o;
-        return Objects.equals(this.endpoint, showEndpointResponse.endpoint)
-            && Objects.equals(this.requestId, showEndpointResponse.requestId);
+        ShowEndpointResponse that = (ShowEndpointResponse) obj;
+        return Objects.equals(this.endpoint, that.endpoint) && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

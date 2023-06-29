@@ -67,16 +67,15 @@ public class CancelShareConnectionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelShareConnectionsRequest cancelShareConnectionsRequest = (CancelShareConnectionsRequest) o;
-        return Objects.equals(this.xLanguage, cancelShareConnectionsRequest.xLanguage)
-            && Objects.equals(this.body, cancelShareConnectionsRequest.body);
+        CancelShareConnectionsRequest that = (CancelShareConnectionsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.body, that.body);
     }
 
     @Override

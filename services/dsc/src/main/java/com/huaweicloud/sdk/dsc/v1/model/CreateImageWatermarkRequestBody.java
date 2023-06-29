@@ -131,17 +131,16 @@ public class CreateImageWatermarkRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateImageWatermarkRequestBody createImageWatermarkRequestBody = (CreateImageWatermarkRequestBody) o;
-        return Objects.equals(this.file, createImageWatermarkRequestBody.file)
-            && Objects.equals(this.blindWatermark, createImageWatermarkRequestBody.blindWatermark)
-            && Objects.equals(this.imageWatermark, createImageWatermarkRequestBody.imageWatermark);
+        CreateImageWatermarkRequestBody that = (CreateImageWatermarkRequestBody) obj;
+        return Objects.equals(this.file, that.file) && Objects.equals(this.blindWatermark, that.blindWatermark)
+            && Objects.equals(this.imageWatermark, that.imageWatermark);
     }
 
     @Override

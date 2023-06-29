@@ -341,29 +341,22 @@ public class ListRecordSetsWithLineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordSetsWithLineRequest listRecordSetsWithLineRequest = (ListRecordSetsWithLineRequest) o;
-        return Objects.equals(this.zoneType, listRecordSetsWithLineRequest.zoneType)
-            && Objects.equals(this.marker, listRecordSetsWithLineRequest.marker)
-            && Objects.equals(this.limit, listRecordSetsWithLineRequest.limit)
-            && Objects.equals(this.offset, listRecordSetsWithLineRequest.offset)
-            && Objects.equals(this.lineId, listRecordSetsWithLineRequest.lineId)
-            && Objects.equals(this.tags, listRecordSetsWithLineRequest.tags)
-            && Objects.equals(this.status, listRecordSetsWithLineRequest.status)
-            && Objects.equals(this.type, listRecordSetsWithLineRequest.type)
-            && Objects.equals(this.name, listRecordSetsWithLineRequest.name)
-            && Objects.equals(this.id, listRecordSetsWithLineRequest.id)
-            && Objects.equals(this.records, listRecordSetsWithLineRequest.records)
-            && Objects.equals(this.sortKey, listRecordSetsWithLineRequest.sortKey)
-            && Objects.equals(this.sortDir, listRecordSetsWithLineRequest.sortDir)
-            && Objects.equals(this.healthCheckId, listRecordSetsWithLineRequest.healthCheckId)
-            && Objects.equals(this.searchMode, listRecordSetsWithLineRequest.searchMode);
+        ListRecordSetsWithLineRequest that = (ListRecordSetsWithLineRequest) obj;
+        return Objects.equals(this.zoneType, that.zoneType) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.lineId, that.lineId) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.records, that.records) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir) && Objects.equals(this.healthCheckId, that.healthCheckId)
+            && Objects.equals(this.searchMode, that.searchMode);
     }
 
     @Override

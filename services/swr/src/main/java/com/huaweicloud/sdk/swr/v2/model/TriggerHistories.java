@@ -297,26 +297,21 @@ public class TriggerHistories {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TriggerHistories triggerHistories = (TriggerHistories) o;
-        return Objects.equals(this.action, triggerHistories.action)
-            && Objects.equals(this.appType, triggerHistories.appType)
-            && Objects.equals(this.application, triggerHistories.application)
-            && Objects.equals(this.clusterId, triggerHistories.clusterId)
-            && Objects.equals(this.clusterName, triggerHistories.clusterName)
-            && Objects.equals(this.clusterNs, triggerHistories.clusterNs)
-            && Objects.equals(this.condition, triggerHistories.condition)
-            && Objects.equals(this.container, triggerHistories.container)
-            && Objects.equals(this.createdAt, triggerHistories.createdAt)
-            && Objects.equals(this.creatorName, triggerHistories.creatorName)
-            && Objects.equals(this.detail, triggerHistories.detail)
-            && Objects.equals(this.result, triggerHistories.result) && Objects.equals(this.tag, triggerHistories.tag);
+        TriggerHistories that = (TriggerHistories) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.appType, that.appType)
+            && Objects.equals(this.application, that.application) && Objects.equals(this.clusterId, that.clusterId)
+            && Objects.equals(this.clusterName, that.clusterName) && Objects.equals(this.clusterNs, that.clusterNs)
+            && Objects.equals(this.condition, that.condition) && Objects.equals(this.container, that.container)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.creatorName, that.creatorName)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.result, that.result)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

@@ -55,15 +55,15 @@ public class Evaluation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Evaluation evaluation = (Evaluation) o;
-        return Objects.equals(this.extensionId, evaluation.extensionId) && Objects.equals(this.text, evaluation.text);
+        Evaluation that = (Evaluation) obj;
+        return Objects.equals(this.extensionId, that.extensionId) && Objects.equals(this.text, that.text);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class CreateAuthInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthInfoRequest createAuthInfoRequest = (CreateAuthInfoRequest) o;
-        return Objects.equals(this.body, createAuthInfoRequest.body);
+        CreateAuthInfoRequest that = (CreateAuthInfoRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -1,11 +1,12 @@
 package com.huaweicloud.sdk.dbss.v1;
 
-import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.ClientBuilder;
+import com.huaweicloud.sdk.core.HcClient;
 import com.huaweicloud.sdk.core.invoker.SyncInvoker;
 import com.huaweicloud.sdk.dbss.v1.model.*;
 
 public class DbssClient {
+
     protected HcClient hcClient;
 
     public DbssClient(HcClient hcClient) {
@@ -15,7 +16,6 @@ public class DbssClient {
     public static ClientBuilder<DbssClient> newBuilder() {
         return new ClientBuilder<>(DbssClient::new);
     }
-
 
     /**
      * 添加RDS免agent数据库
@@ -41,8 +41,10 @@ public class DbssClient {
      * @param AddRdsNoAgentDatabaseRequest 请求对象
      * @return SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>
      */
-    public SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseInvoker(AddRdsNoAgentDatabaseRequest request) {
-        return new SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>(request, DbssMeta.addRdsNoAgentDatabase, hcClient);
+    public SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse> addRdsNoAgentDatabaseInvoker(
+        AddRdsNoAgentDatabaseRequest request) {
+        return new SyncInvoker<AddRdsNoAgentDatabaseRequest, AddRdsNoAgentDatabaseResponse>(request,
+            DbssMeta.addRdsNoAgentDatabase, hcClient);
     }
 
     /**
@@ -69,8 +71,10 @@ public class DbssClient {
      * @param BatchAddResourceTagRequest 请求对象
      * @return SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>
      */
-    public SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagInvoker(BatchAddResourceTagRequest request) {
-        return new SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>(request, DbssMeta.batchAddResourceTag, hcClient);
+    public SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse> batchAddResourceTagInvoker(
+        BatchAddResourceTagRequest request) {
+        return new SyncInvoker<BatchAddResourceTagRequest, BatchAddResourceTagResponse>(request,
+            DbssMeta.batchAddResourceTag, hcClient);
     }
 
     /**
@@ -97,8 +101,10 @@ public class DbssClient {
      * @param BatchDeleteResourceTagRequest 请求对象
      * @return SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>
      */
-    public SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagInvoker(BatchDeleteResourceTagRequest request) {
-        return new SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request, DbssMeta.batchDeleteResourceTag, hcClient);
+    public SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse> batchDeleteResourceTagInvoker(
+        BatchDeleteResourceTagRequest request) {
+        return new SyncInvoker<BatchDeleteResourceTagRequest, BatchDeleteResourceTagResponse>(request,
+            DbssMeta.batchDeleteResourceTag, hcClient);
     }
 
     /**
@@ -125,8 +131,10 @@ public class DbssClient {
      * @param CountResourceInstanceByTagRequest 请求对象
      * @return SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>
      */
-    public SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagInvoker(CountResourceInstanceByTagRequest request) {
-        return new SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>(request, DbssMeta.countResourceInstanceByTag, hcClient);
+    public SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse> countResourceInstanceByTagInvoker(
+        CountResourceInstanceByTagRequest request) {
+        return new SyncInvoker<CountResourceInstanceByTagRequest, CountResourceInstanceByTagResponse>(request,
+            DbssMeta.countResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -153,8 +161,10 @@ public class DbssClient {
      * @param CreateInstancesPeriodOrderRequest 请求对象
      * @return SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>
      */
-    public SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderInvoker(CreateInstancesPeriodOrderRequest request) {
-        return new SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>(request, DbssMeta.createInstancesPeriodOrder, hcClient);
+    public SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse> createInstancesPeriodOrderInvoker(
+        CreateInstancesPeriodOrderRequest request) {
+        return new SyncInvoker<CreateInstancesPeriodOrderRequest, CreateInstancesPeriodOrderResponse>(request,
+            DbssMeta.createInstancesPeriodOrder, hcClient);
     }
 
     /**
@@ -181,8 +191,10 @@ public class DbssClient {
      * @param ListAuditDatabasesRequest 请求对象
      * @return SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>
      */
-    public SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabasesInvoker(ListAuditDatabasesRequest request) {
-        return new SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>(request, DbssMeta.listAuditDatabases, hcClient);
+    public SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse> listAuditDatabasesInvoker(
+        ListAuditDatabasesRequest request) {
+        return new SyncInvoker<ListAuditDatabasesRequest, ListAuditDatabasesResponse>(request,
+            DbssMeta.listAuditDatabases, hcClient);
     }
 
     /**
@@ -209,8 +221,10 @@ public class DbssClient {
      * @param ListAuditInstanceJobsRequest 请求对象
      * @return SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>
      */
-    public SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobsInvoker(ListAuditInstanceJobsRequest request) {
-        return new SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>(request, DbssMeta.listAuditInstanceJobs, hcClient);
+    public SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse> listAuditInstanceJobsInvoker(
+        ListAuditInstanceJobsRequest request) {
+        return new SyncInvoker<ListAuditInstanceJobsRequest, ListAuditInstanceJobsResponse>(request,
+            DbssMeta.listAuditInstanceJobs, hcClient);
     }
 
     /**
@@ -237,8 +251,10 @@ public class DbssClient {
      * @param ListAuditInstancesRequest 请求对象
      * @return SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>
      */
-    public SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstancesInvoker(ListAuditInstancesRequest request) {
-        return new SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>(request, DbssMeta.listAuditInstances, hcClient);
+    public SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse> listAuditInstancesInvoker(
+        ListAuditInstancesRequest request) {
+        return new SyncInvoker<ListAuditInstancesRequest, ListAuditInstancesResponse>(request,
+            DbssMeta.listAuditInstances, hcClient);
     }
 
     /**
@@ -265,8 +281,10 @@ public class DbssClient {
      * @param ListAuditOperateLogsRequest 请求对象
      * @return SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>
      */
-    public SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogsInvoker(ListAuditOperateLogsRequest request) {
-        return new SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>(request, DbssMeta.listAuditOperateLogs, hcClient);
+    public SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse> listAuditOperateLogsInvoker(
+        ListAuditOperateLogsRequest request) {
+        return new SyncInvoker<ListAuditOperateLogsRequest, ListAuditOperateLogsResponse>(request,
+            DbssMeta.listAuditOperateLogs, hcClient);
     }
 
     /**
@@ -293,8 +311,10 @@ public class DbssClient {
      * @param ListAuditRuleRisksRequest 请求对象
      * @return SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>
      */
-    public SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisksInvoker(ListAuditRuleRisksRequest request) {
-        return new SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>(request, DbssMeta.listAuditRuleRisks, hcClient);
+    public SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse> listAuditRuleRisksInvoker(
+        ListAuditRuleRisksRequest request) {
+        return new SyncInvoker<ListAuditRuleRisksRequest, ListAuditRuleRisksResponse>(request,
+            DbssMeta.listAuditRuleRisks, hcClient);
     }
 
     /**
@@ -321,8 +341,10 @@ public class DbssClient {
      * @param ListAuditRuleScopesRequest 请求对象
      * @return SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>
      */
-    public SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopesInvoker(ListAuditRuleScopesRequest request) {
-        return new SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>(request, DbssMeta.listAuditRuleScopes, hcClient);
+    public SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse> listAuditRuleScopesInvoker(
+        ListAuditRuleScopesRequest request) {
+        return new SyncInvoker<ListAuditRuleScopesRequest, ListAuditRuleScopesResponse>(request,
+            DbssMeta.listAuditRuleScopes, hcClient);
     }
 
     /**
@@ -349,8 +371,10 @@ public class DbssClient {
      * @param ListAuditSensitiveMasksRequest 请求对象
      * @return SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>
      */
-    public SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasksInvoker(ListAuditSensitiveMasksRequest request) {
-        return new SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>(request, DbssMeta.listAuditSensitiveMasks, hcClient);
+    public SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse> listAuditSensitiveMasksInvoker(
+        ListAuditSensitiveMasksRequest request) {
+        return new SyncInvoker<ListAuditSensitiveMasksRequest, ListAuditSensitiveMasksResponse>(request,
+            DbssMeta.listAuditSensitiveMasks, hcClient);
     }
 
     /**
@@ -377,8 +401,10 @@ public class DbssClient {
      * @param ListAvailabilityZoneInfosRequest 请求对象
      * @return SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>
      */
-    public SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosInvoker(ListAvailabilityZoneInfosRequest request) {
-        return new SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>(request, DbssMeta.listAvailabilityZoneInfos, hcClient);
+    public SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse> listAvailabilityZoneInfosInvoker(
+        ListAvailabilityZoneInfosRequest request) {
+        return new SyncInvoker<ListAvailabilityZoneInfosRequest, ListAvailabilityZoneInfosResponse>(request,
+            DbssMeta.listAvailabilityZoneInfos, hcClient);
     }
 
     /**
@@ -405,8 +431,10 @@ public class DbssClient {
      * @param ListEcsSpecificationRequest 请求对象
      * @return SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>
      */
-    public SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecificationInvoker(ListEcsSpecificationRequest request) {
-        return new SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>(request, DbssMeta.listEcsSpecification, hcClient);
+    public SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse> listEcsSpecificationInvoker(
+        ListEcsSpecificationRequest request) {
+        return new SyncInvoker<ListEcsSpecificationRequest, ListEcsSpecificationResponse>(request,
+            DbssMeta.listEcsSpecification, hcClient);
     }
 
     /**
@@ -433,8 +461,10 @@ public class DbssClient {
      * @param ListProjectResourceTagsRequest 请求对象
      * @return SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>
      */
-    public SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsInvoker(ListProjectResourceTagsRequest request) {
-        return new SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>(request, DbssMeta.listProjectResourceTags, hcClient);
+    public SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse> listProjectResourceTagsInvoker(
+        ListProjectResourceTagsRequest request) {
+        return new SyncInvoker<ListProjectResourceTagsRequest, ListProjectResourceTagsResponse>(request,
+            DbssMeta.listProjectResourceTags, hcClient);
     }
 
     /**
@@ -461,8 +491,10 @@ public class DbssClient {
      * @param ListResourceInstanceByTagRequest 请求对象
      * @return SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>
      */
-    public SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagInvoker(ListResourceInstanceByTagRequest request) {
-        return new SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>(request, DbssMeta.listResourceInstanceByTag, hcClient);
+    public SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse> listResourceInstanceByTagInvoker(
+        ListResourceInstanceByTagRequest request) {
+        return new SyncInvoker<ListResourceInstanceByTagRequest, ListResourceInstanceByTagResponse>(request,
+            DbssMeta.listResourceInstanceByTag, hcClient);
     }
 
     /**
@@ -489,8 +521,10 @@ public class DbssClient {
      * @param ListSqlInjectionRulesRequest 请求对象
      * @return SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>
      */
-    public SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesInvoker(ListSqlInjectionRulesRequest request) {
-        return new SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>(request, DbssMeta.listSqlInjectionRules, hcClient);
+    public SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse> listSqlInjectionRulesInvoker(
+        ListSqlInjectionRulesRequest request) {
+        return new SyncInvoker<ListSqlInjectionRulesRequest, ListSqlInjectionRulesResponse>(request,
+            DbssMeta.listSqlInjectionRules, hcClient);
     }
 
     /**
@@ -517,8 +551,10 @@ public class DbssClient {
      * @param ShowAuditQuotaRequest 请求对象
      * @return SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>
      */
-    public SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuotaInvoker(ShowAuditQuotaRequest request) {
-        return new SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>(request, DbssMeta.showAuditQuota, hcClient);
+    public SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse> showAuditQuotaInvoker(
+        ShowAuditQuotaRequest request) {
+        return new SyncInvoker<ShowAuditQuotaRequest, ShowAuditQuotaResponse>(request, DbssMeta.showAuditQuota,
+            hcClient);
     }
 
     /**
@@ -545,8 +581,10 @@ public class DbssClient {
      * @param ShowAuditRuleRiskRequest 请求对象
      * @return SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>
      */
-    public SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRiskInvoker(ShowAuditRuleRiskRequest request) {
-        return new SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>(request, DbssMeta.showAuditRuleRisk, hcClient);
+    public SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse> showAuditRuleRiskInvoker(
+        ShowAuditRuleRiskRequest request) {
+        return new SyncInvoker<ShowAuditRuleRiskRequest, ShowAuditRuleRiskResponse>(request, DbssMeta.showAuditRuleRisk,
+            hcClient);
     }
 
     /**
@@ -601,8 +639,10 @@ public class DbssClient {
      * @param SwitchRiskRuleRequest 请求对象
      * @return SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>
      */
-    public SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRuleInvoker(SwitchRiskRuleRequest request) {
-        return new SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>(request, DbssMeta.switchRiskRule, hcClient);
+    public SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse> switchRiskRuleInvoker(
+        SwitchRiskRuleRequest request) {
+        return new SyncInvoker<SwitchRiskRuleRequest, SwitchRiskRuleResponse>(request, DbssMeta.switchRiskRule,
+            hcClient);
     }
 
     /**
@@ -629,8 +669,10 @@ public class DbssClient {
      * @param UpdateAuditSecurityGroupRequest 请求对象
      * @return SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>
      */
-    public SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupInvoker(UpdateAuditSecurityGroupRequest request) {
-        return new SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>(request, DbssMeta.updateAuditSecurityGroup, hcClient);
+    public SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse> updateAuditSecurityGroupInvoker(
+        UpdateAuditSecurityGroupRequest request) {
+        return new SyncInvoker<UpdateAuditSecurityGroupRequest, UpdateAuditSecurityGroupResponse>(request,
+            DbssMeta.updateAuditSecurityGroup, hcClient);
     }
 
 }

@@ -55,17 +55,16 @@ public class CdmQueryClusterDetailsRepsonsePublicEndpointStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CdmQueryClusterDetailsRepsonsePublicEndpointStatus cdmQueryClusterDetailsRepsonsePublicEndpointStatus =
-            (CdmQueryClusterDetailsRepsonsePublicEndpointStatus) o;
-        return Objects.equals(this.status, cdmQueryClusterDetailsRepsonsePublicEndpointStatus.status)
-            && Objects.equals(this.errorMessage, cdmQueryClusterDetailsRepsonsePublicEndpointStatus.errorMessage);
+        CdmQueryClusterDetailsRepsonsePublicEndpointStatus that =
+            (CdmQueryClusterDetailsRepsonsePublicEndpointStatus) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

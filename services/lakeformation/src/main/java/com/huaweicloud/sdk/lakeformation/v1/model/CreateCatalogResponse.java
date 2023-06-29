@@ -119,18 +119,17 @@ public class CreateCatalogResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCatalogResponse createCatalogResponse = (CreateCatalogResponse) o;
-        return Objects.equals(this.catalogName, createCatalogResponse.catalogName)
-            && Objects.equals(this.description, createCatalogResponse.description)
-            && Objects.equals(this.location, createCatalogResponse.location)
-            && Objects.equals(this.databaseLocationList, createCatalogResponse.databaseLocationList);
+        CreateCatalogResponse that = (CreateCatalogResponse) obj;
+        return Objects.equals(this.catalogName, that.catalogName) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.location, that.location)
+            && Objects.equals(this.databaseLocationList, that.databaseLocationList);
     }
 
     @Override

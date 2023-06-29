@@ -39,8 +39,8 @@ public class CreateFlinkTemplateRequestBody {
     private List<TmsTagEntity> tags = null;
 
     /**
-    * 作业模板的类型，默认为flink_sql_job，仅支持flink_sql_job和flink_opensource_sql_job
-    */
+     * 作业模板的类型，默认为flink_sql_job，仅支持flink_sql_job和flink_opensource_sql_job
+     */
     public static final class JobTypeEnum {
 
         /**
@@ -83,22 +83,15 @@ public class CreateFlinkTemplateRequestBody {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new JobTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new JobTypeEnum(value));
         }
 
         public static JobTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            JobTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -222,19 +215,17 @@ public class CreateFlinkTemplateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateFlinkTemplateRequestBody createFlinkTemplateRequestBody = (CreateFlinkTemplateRequestBody) o;
-        return Objects.equals(this.name, createFlinkTemplateRequestBody.name)
-            && Objects.equals(this.desc, createFlinkTemplateRequestBody.desc)
-            && Objects.equals(this.sqlBody, createFlinkTemplateRequestBody.sqlBody)
-            && Objects.equals(this.tags, createFlinkTemplateRequestBody.tags)
-            && Objects.equals(this.jobType, createFlinkTemplateRequestBody.jobType);
+        CreateFlinkTemplateRequestBody that = (CreateFlinkTemplateRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.desc, that.desc)
+            && Objects.equals(this.sqlBody, that.sqlBody) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.jobType, that.jobType);
     }
 
     @Override

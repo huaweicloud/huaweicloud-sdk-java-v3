@@ -362,26 +362,22 @@ public class StorageDescriptor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StorageDescriptor storageDescriptor = (StorageDescriptor) o;
-        return Objects.equals(this.columns, storageDescriptor.columns)
-            && Objects.equals(this.location, storageDescriptor.location)
-            && Objects.equals(this.compressed, storageDescriptor.compressed)
-            && Objects.equals(this.inputFormat, storageDescriptor.inputFormat)
-            && Objects.equals(this.outputFormat, storageDescriptor.outputFormat)
-            && Objects.equals(this.numberOfBuckets, storageDescriptor.numberOfBuckets)
-            && Objects.equals(this.bucketColumns, storageDescriptor.bucketColumns)
-            && Objects.equals(this.sortColumns, storageDescriptor.sortColumns)
-            && Objects.equals(this.serdeInfo, storageDescriptor.serdeInfo)
-            && Objects.equals(this.parameters, storageDescriptor.parameters)
-            && Objects.equals(this.skewedInfo, storageDescriptor.skewedInfo)
-            && Objects.equals(this.storedAsSubDirectories, storageDescriptor.storedAsSubDirectories);
+        StorageDescriptor that = (StorageDescriptor) obj;
+        return Objects.equals(this.columns, that.columns) && Objects.equals(this.location, that.location)
+            && Objects.equals(this.compressed, that.compressed) && Objects.equals(this.inputFormat, that.inputFormat)
+            && Objects.equals(this.outputFormat, that.outputFormat)
+            && Objects.equals(this.numberOfBuckets, that.numberOfBuckets)
+            && Objects.equals(this.bucketColumns, that.bucketColumns)
+            && Objects.equals(this.sortColumns, that.sortColumns) && Objects.equals(this.serdeInfo, that.serdeInfo)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.skewedInfo, that.skewedInfo)
+            && Objects.equals(this.storedAsSubDirectories, that.storedAsSubDirectories);
     }
 
     @Override

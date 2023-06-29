@@ -65,22 +65,15 @@ public class CreateKeypairResp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,19 +218,17 @@ public class CreateKeypairResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateKeypairResp createKeypairResp = (CreateKeypairResp) o;
-        return Objects.equals(this.name, createKeypairResp.name) && Objects.equals(this.type, createKeypairResp.type)
-            && Objects.equals(this.publicKey, createKeypairResp.publicKey)
-            && Objects.equals(this.privateKey, createKeypairResp.privateKey)
-            && Objects.equals(this.fingerprint, createKeypairResp.fingerprint)
-            && Objects.equals(this.userId, createKeypairResp.userId);
+        CreateKeypairResp that = (CreateKeypairResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.publicKey, that.publicKey) && Objects.equals(this.privateKey, that.privateKey)
+            && Objects.equals(this.fingerprint, that.fingerprint) && Objects.equals(this.userId, that.userId);
     }
 
     @Override

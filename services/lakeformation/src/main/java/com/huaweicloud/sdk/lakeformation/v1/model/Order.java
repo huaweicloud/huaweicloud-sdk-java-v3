@@ -57,15 +57,15 @@ public class Order {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Order order = (Order) o;
-        return Objects.equals(this.column, order.column) && Objects.equals(this.sortOrder, order.sortOrder);
+        Order that = (Order) obj;
+        return Objects.equals(this.column, that.column) && Objects.equals(this.sortOrder, that.sortOrder);
     }
 
     @Override

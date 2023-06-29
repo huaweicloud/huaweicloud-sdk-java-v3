@@ -70,22 +70,15 @@ public class SearchStatisticConferenceInfoRequest {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TimeUnitEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TimeUnitEnum(value));
         }
 
         public static TimeUnitEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TimeUnitEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -162,22 +155,15 @@ public class SearchStatisticConferenceInfoRequest {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CategoryEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CategoryEnum(value));
         }
 
         public static CategoryEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CategoryEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -302,21 +288,17 @@ public class SearchStatisticConferenceInfoRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchStatisticConferenceInfoRequest searchStatisticConferenceInfoRequest =
-            (SearchStatisticConferenceInfoRequest) o;
-        return Objects.equals(this.offset, searchStatisticConferenceInfoRequest.offset)
-            && Objects.equals(this.limit, searchStatisticConferenceInfoRequest.limit)
-            && Objects.equals(this.timeUnit, searchStatisticConferenceInfoRequest.timeUnit)
-            && Objects.equals(this.startTime, searchStatisticConferenceInfoRequest.startTime)
-            && Objects.equals(this.endTime, searchStatisticConferenceInfoRequest.endTime)
-            && Objects.equals(this.category, searchStatisticConferenceInfoRequest.category);
+        SearchStatisticConferenceInfoRequest that = (SearchStatisticConferenceInfoRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.timeUnit, that.timeUnit) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.category, that.category);
     }
 
     @Override

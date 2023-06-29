@@ -66,16 +66,15 @@ public class ShowDirectConnectResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDirectConnectResponse showDirectConnectResponse = (ShowDirectConnectResponse) o;
-        return Objects.equals(this.requestId, showDirectConnectResponse.requestId)
-            && Objects.equals(this.directConnect, showDirectConnectResponse.directConnect);
+        ShowDirectConnectResponse that = (ShowDirectConnectResponse) obj;
+        return Objects.equals(this.requestId, that.requestId) && Objects.equals(this.directConnect, that.directConnect);
     }
 
     @Override

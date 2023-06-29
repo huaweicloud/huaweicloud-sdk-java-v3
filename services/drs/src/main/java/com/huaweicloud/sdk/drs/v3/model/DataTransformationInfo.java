@@ -118,17 +118,17 @@ public class DataTransformationInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DataTransformationInfo dataTransformationInfo = (DataTransformationInfo) o;
-        return Objects.equals(this.transformationInfo, dataTransformationInfo.transformationInfo)
-            && Objects.equals(this.configTransformation, dataTransformationInfo.configTransformation)
-            && Objects.equals(this.dataTransformationObjectInfos, dataTransformationInfo.dataTransformationObjectInfos);
+        DataTransformationInfo that = (DataTransformationInfo) obj;
+        return Objects.equals(this.transformationInfo, that.transformationInfo)
+            && Objects.equals(this.configTransformation, that.configTransformation)
+            && Objects.equals(this.dataTransformationObjectInfos, that.dataTransformationObjectInfos);
     }
 
     @Override

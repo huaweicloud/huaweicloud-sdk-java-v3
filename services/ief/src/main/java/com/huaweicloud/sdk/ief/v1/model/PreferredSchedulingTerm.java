@@ -65,16 +65,15 @@ public class PreferredSchedulingTerm {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PreferredSchedulingTerm preferredSchedulingTerm = (PreferredSchedulingTerm) o;
-        return Objects.equals(this.preference, preferredSchedulingTerm.preference)
-            && Objects.equals(this.weight, preferredSchedulingTerm.weight);
+        PreferredSchedulingTerm that = (PreferredSchedulingTerm) obj;
+        return Objects.equals(this.preference, that.preference) && Objects.equals(this.weight, that.weight);
     }
 
     @Override

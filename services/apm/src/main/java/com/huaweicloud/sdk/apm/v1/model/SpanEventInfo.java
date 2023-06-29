@@ -900,46 +900,35 @@ public class SpanEventInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SpanEventInfo spanEventInfo = (SpanEventInfo) o;
-        return Objects.equals(this.envName, spanEventInfo.envName)
-            && Objects.equals(this.appName, spanEventInfo.appName) && Objects.equals(this.indent, spanEventInfo.indent)
-            && Objects.equals(this.region, spanEventInfo.region)
-            && Objects.equals(this.hostName, spanEventInfo.hostName)
-            && Objects.equals(this.ipAddress, spanEventInfo.ipAddress)
-            && Objects.equals(this.instanceName, spanEventInfo.instanceName)
-            && Objects.equals(this.eventId, spanEventInfo.eventId)
-            && Objects.equals(this.nextSpanId, spanEventInfo.nextSpanId)
-            && Objects.equals(this.sourceEventId, spanEventInfo.sourceEventId)
-            && Objects.equals(this.method, spanEventInfo.method)
-            && Objects.equals(this.childrenEventCount, spanEventInfo.childrenEventCount)
-            && Objects.equals(this.discard, spanEventInfo.discard)
-            && Objects.equals(this.argument, spanEventInfo.argument)
-            && Objects.equals(this.attachment, spanEventInfo.attachment)
-            && Objects.equals(this.globalTraceId, spanEventInfo.globalTraceId)
-            && Objects.equals(this.globalPath, spanEventInfo.globalPath)
-            && Objects.equals(this.traceId, spanEventInfo.traceId) && Objects.equals(this.spanId, spanEventInfo.spanId)
-            && Objects.equals(this.envId, spanEventInfo.envId)
-            && Objects.equals(this.instanceId, spanEventInfo.instanceId)
-            && Objects.equals(this.appId, spanEventInfo.appId) && Objects.equals(this.bizId, spanEventInfo.bizId)
-            && Objects.equals(this.domainId, spanEventInfo.domainId)
-            && Objects.equals(this.source, spanEventInfo.source)
-            && Objects.equals(this.realSource, spanEventInfo.realSource)
-            && Objects.equals(this.startTime, spanEventInfo.startTime)
-            && Objects.equals(this.timeUsed, spanEventInfo.timeUsed) && Objects.equals(this.code, spanEventInfo.code)
-            && Objects.equals(this.className, spanEventInfo.className)
-            && Objects.equals(this.isAsync, spanEventInfo.isAsync) && Objects.equals(this.tags, spanEventInfo.tags)
-            && Objects.equals(this.hasError, spanEventInfo.hasError)
-            && Objects.equals(this.errorReasons, spanEventInfo.errorReasons)
-            && Objects.equals(this.type, spanEventInfo.type)
-            && Objects.equals(this.httpMethod, spanEventInfo.httpMethod)
-            && Objects.equals(this.bizCode, spanEventInfo.bizCode) && Objects.equals(this.id, spanEventInfo.id);
+        SpanEventInfo that = (SpanEventInfo) obj;
+        return Objects.equals(this.envName, that.envName) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.indent, that.indent) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.hostName, that.hostName) && Objects.equals(this.ipAddress, that.ipAddress)
+            && Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.eventId, that.eventId)
+            && Objects.equals(this.nextSpanId, that.nextSpanId)
+            && Objects.equals(this.sourceEventId, that.sourceEventId) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.childrenEventCount, that.childrenEventCount)
+            && Objects.equals(this.discard, that.discard) && Objects.equals(this.argument, that.argument)
+            && Objects.equals(this.attachment, that.attachment)
+            && Objects.equals(this.globalTraceId, that.globalTraceId)
+            && Objects.equals(this.globalPath, that.globalPath) && Objects.equals(this.traceId, that.traceId)
+            && Objects.equals(this.spanId, that.spanId) && Objects.equals(this.envId, that.envId)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.realSource, that.realSource)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.timeUsed, that.timeUsed)
+            && Objects.equals(this.code, that.code) && Objects.equals(this.className, that.className)
+            && Objects.equals(this.isAsync, that.isAsync) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.hasError, that.hasError) && Objects.equals(this.errorReasons, that.errorReasons)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.httpMethod, that.httpMethod)
+            && Objects.equals(this.bizCode, that.bizCode) && Objects.equals(this.id, that.id);
     }
 
     @Override

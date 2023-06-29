@@ -253,20 +253,20 @@ public class SlowLog {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlowLog slowLog = (SlowLog) o;
-        return Objects.equals(this.count, slowLog.count) && Objects.equals(this.time, slowLog.time)
-            && Objects.equals(this.lockTime, slowLog.lockTime) && Objects.equals(this.rowsSent, slowLog.rowsSent)
-            && Objects.equals(this.rowsExamined, slowLog.rowsExamined)
-            && Objects.equals(this.database, slowLog.database) && Objects.equals(this.users, slowLog.users)
-            && Objects.equals(this.querySample, slowLog.querySample) && Objects.equals(this.type, slowLog.type)
-            && Objects.equals(this.startTime, slowLog.startTime) && Objects.equals(this.clientIp, slowLog.clientIp);
+        SlowLog that = (SlowLog) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.lockTime, that.lockTime) && Objects.equals(this.rowsSent, that.rowsSent)
+            && Objects.equals(this.rowsExamined, that.rowsExamined) && Objects.equals(this.database, that.database)
+            && Objects.equals(this.users, that.users) && Objects.equals(this.querySample, that.querySample)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.clientIp, that.clientIp);
     }
 
     @Override

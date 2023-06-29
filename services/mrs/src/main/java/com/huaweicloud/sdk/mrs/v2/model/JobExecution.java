@@ -1,55 +1,44 @@
 package com.huaweicloud.sdk.mrs.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * JobExecution
  */
-public class JobExecution  {
-
+public class JobExecution {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_type")
-    
+    @JsonProperty(value = "job_type")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="job_name")
-    
+    @JsonProperty(value = "job_name")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="arguments")
-    
+    @JsonProperty(value = "arguments")
+
     private List<String> arguments = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="properties")
-    
+    @JsonProperty(value = "properties")
+
     private Map<String, String> properties = null;
-    
+
     public JobExecution withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 作业类型: - MapReduce - SparkSubmit - SparkPython：该类型作业将转换为SparkSubmit类型提交，MRS控制台界面的作业类型展示为SparkSubmit，通过接口查询作业列表信息时作业类型请选择SparkSubmit。 - HiveScript - HiveSql - DistCp，导入、导出数据。 - SparkScript - SparkSql - Flink
@@ -63,15 +52,10 @@ public class JobExecution  {
         this.jobType = jobType;
     }
 
-    
-
     public JobExecution withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 作业名称，只能由字母、数字、中划线和下划线组成，并且长度为1～64个字符。 说明： 不同作业的名称允许相同，但不建议设置相同。
@@ -85,16 +69,13 @@ public class JobExecution  {
         this.jobName = jobName;
     }
 
-    
-
     public JobExecution withArguments(List<String> arguments) {
         this.arguments = arguments;
         return this;
     }
 
-    
     public JobExecution addArgumentsItem(String argumentsItem) {
-        if(this.arguments == null) {
+        if (this.arguments == null) {
             this.arguments = new ArrayList<>();
         }
         this.arguments.add(argumentsItem);
@@ -102,7 +83,7 @@ public class JobExecution  {
     }
 
     public JobExecution withArguments(Consumer<List<String>> argumentsSetter) {
-        if(this.arguments == null) {
+        if (this.arguments == null) {
             this.arguments = new ArrayList<>();
         }
         argumentsSetter.accept(this.arguments);
@@ -121,17 +102,13 @@ public class JobExecution  {
         this.arguments = arguments;
     }
 
-    
-
     public JobExecution withProperties(Map<String, String> properties) {
         this.properties = properties;
         return this;
     }
 
-    
-
     public JobExecution putPropertiesItem(String key, String propertiesItem) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new HashMap<>();
         }
         this.properties.put(key, propertiesItem);
@@ -139,12 +116,13 @@ public class JobExecution  {
     }
 
     public JobExecution withProperties(Consumer<Map<String, String>> propertiesSetter) {
-        if(this.properties == null) {
+        if (this.properties == null) {
             this.properties = new HashMap<>();
         }
         propertiesSetter.accept(this.properties);
         return this;
     }
+
     /**
      * 程序系统参数。 最多为2048字符，不能包含><|'`&!\\特殊字符，可为空。
      * @return properties
@@ -157,26 +135,24 @@ public class JobExecution  {
         this.properties = properties;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobExecution jobExecution = (JobExecution) o;
-        return Objects.equals(this.jobType, jobExecution.jobType) &&
-            Objects.equals(this.jobName, jobExecution.jobName) &&
-            Objects.equals(this.arguments, jobExecution.arguments) &&
-            Objects.equals(this.properties, jobExecution.properties);
+        JobExecution that = (JobExecution) obj;
+        return Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.arguments, that.arguments) && Objects.equals(this.properties, that.properties);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(jobType, jobName, arguments, properties);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -188,6 +164,7 @@ public class JobExecution  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -198,8 +175,5 @@ public class JobExecution  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

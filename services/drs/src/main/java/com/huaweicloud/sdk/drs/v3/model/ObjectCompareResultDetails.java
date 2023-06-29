@@ -121,19 +121,19 @@ public class ObjectCompareResultDetails {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ObjectCompareResultDetails objectCompareResultDetails = (ObjectCompareResultDetails) o;
-        return Objects.equals(this.sourceDbName, objectCompareResultDetails.sourceDbName)
-            && Objects.equals(this.targetDbName, objectCompareResultDetails.targetDbName)
-            && Objects.equals(this.sourceDbValue, objectCompareResultDetails.sourceDbValue)
-            && Objects.equals(this.targetDbValue, objectCompareResultDetails.targetDbValue)
-            && Objects.equals(this.errorMessage, objectCompareResultDetails.errorMessage);
+        ObjectCompareResultDetails that = (ObjectCompareResultDetails) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.targetDbName, that.targetDbName)
+            && Objects.equals(this.sourceDbValue, that.sourceDbValue)
+            && Objects.equals(this.targetDbValue, that.targetDbValue)
+            && Objects.equals(this.errorMessage, that.errorMessage);
     }
 
     @Override

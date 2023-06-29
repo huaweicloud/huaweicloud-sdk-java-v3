@@ -44,15 +44,15 @@ public class CreateCredentialRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCredentialRequestBody createCredentialRequestBody = (CreateCredentialRequestBody) o;
-        return Objects.equals(this.credential, createCredentialRequestBody.credential);
+        CreateCredentialRequestBody that = (CreateCredentialRequestBody) obj;
+        return Objects.equals(this.credential, that.credential);
     }
 
     @Override

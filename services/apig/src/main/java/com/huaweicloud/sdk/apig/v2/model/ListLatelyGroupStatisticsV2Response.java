@@ -141,20 +141,17 @@ public class ListLatelyGroupStatisticsV2Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLatelyGroupStatisticsV2Response listLatelyGroupStatisticsV2Response =
-            (ListLatelyGroupStatisticsV2Response) o;
-        return Objects.equals(this.code, listLatelyGroupStatisticsV2Response.code)
-            && Objects.equals(this.msg, listLatelyGroupStatisticsV2Response.msg)
-            && Objects.equals(this.startTime, listLatelyGroupStatisticsV2Response.startTime)
-            && Objects.equals(this.endTime, listLatelyGroupStatisticsV2Response.endTime)
-            && Objects.equals(this.list, listLatelyGroupStatisticsV2Response.list);
+        ListLatelyGroupStatisticsV2Response that = (ListLatelyGroupStatisticsV2Response) obj;
+        return Objects.equals(this.code, that.code) && Objects.equals(this.msg, that.msg)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.list, that.list);
     }
 
     @Override

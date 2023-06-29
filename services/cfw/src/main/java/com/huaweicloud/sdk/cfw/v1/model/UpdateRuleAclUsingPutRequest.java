@@ -109,18 +109,17 @@ public class UpdateRuleAclUsingPutRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRuleAclUsingPutRequest updateRuleAclUsingPutRequest = (UpdateRuleAclUsingPutRequest) o;
-        return Objects.equals(this.aclRuleId, updateRuleAclUsingPutRequest.aclRuleId)
-            && Objects.equals(this.enterpriseProjectId, updateRuleAclUsingPutRequest.enterpriseProjectId)
-            && Objects.equals(this.fwInstanceId, updateRuleAclUsingPutRequest.fwInstanceId)
-            && Objects.equals(this.body, updateRuleAclUsingPutRequest.body);
+        UpdateRuleAclUsingPutRequest that = (UpdateRuleAclUsingPutRequest) obj;
+        return Objects.equals(this.aclRuleId, that.aclRuleId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.fwInstanceId, that.fwInstanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

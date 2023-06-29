@@ -33,15 +33,15 @@ public class ShowResetPwdRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResetPwdRequest showResetPwdRequest = (ShowResetPwdRequest) o;
-        return Objects.equals(this.serverId, showResetPwdRequest.serverId);
+        ShowResetPwdRequest that = (ShowResetPwdRequest) obj;
+        return Objects.equals(this.serverId, that.serverId);
     }
 
     @Override

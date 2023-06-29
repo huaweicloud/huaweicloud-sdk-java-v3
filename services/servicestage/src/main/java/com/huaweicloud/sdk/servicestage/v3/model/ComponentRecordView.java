@@ -228,23 +228,19 @@ public class ComponentRecordView {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ComponentRecordView componentRecordView = (ComponentRecordView) o;
-        return Objects.equals(this.beginTime, componentRecordView.beginTime)
-            && Objects.equals(this.endTime, componentRecordView.endTime)
-            && Objects.equals(this.description, componentRecordView.description)
-            && Objects.equals(this.instanceId, componentRecordView.instanceId)
-            && Objects.equals(this.version, componentRecordView.version)
-            && Objects.equals(this.currentUsed, componentRecordView.currentUsed)
-            && Objects.equals(this.status, componentRecordView.status)
-            && Objects.equals(this.deployType, componentRecordView.deployType)
-            && Objects.equals(this.jobs, componentRecordView.jobs);
+        ComponentRecordView that = (ComponentRecordView) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.currentUsed, that.currentUsed)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.jobs, that.jobs);
     }
 
     @Override

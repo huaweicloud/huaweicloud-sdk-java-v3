@@ -148,19 +148,17 @@ public class CreateCaseLabelsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCaseLabelsRequest createCaseLabelsRequest = (CreateCaseLabelsRequest) o;
-        return Objects.equals(this.caseId, createCaseLabelsRequest.caseId)
-            && Objects.equals(this.labelIds, createCaseLabelsRequest.labelIds)
-            && Objects.equals(this.xSite, createCaseLabelsRequest.xSite)
-            && Objects.equals(this.xLanguage, createCaseLabelsRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, createCaseLabelsRequest.xTimeZone);
+        CreateCaseLabelsRequest that = (CreateCaseLabelsRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.labelIds, that.labelIds)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

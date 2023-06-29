@@ -149,20 +149,18 @@ public class ListAutoJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAutoJobRequest listAutoJobRequest = (ListAutoJobRequest) o;
-        return Objects.equals(this.xLanguage, listAutoJobRequest.xLanguage)
-            && Objects.equals(this.eihealthProjectId, listAutoJobRequest.eihealthProjectId)
-            && Objects.equals(this.limit, listAutoJobRequest.limit)
-            && Objects.equals(this.offset, listAutoJobRequest.offset)
-            && Objects.equals(this.sortKey, listAutoJobRequest.sortKey)
-            && Objects.equals(this.sortDir, listAutoJobRequest.sortDir);
+        ListAutoJobRequest that = (ListAutoJobRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.eihealthProjectId, that.eihealthProjectId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.sortKey, that.sortKey)
+            && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

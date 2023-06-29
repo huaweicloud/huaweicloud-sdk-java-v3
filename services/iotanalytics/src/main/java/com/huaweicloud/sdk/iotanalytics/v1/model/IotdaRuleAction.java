@@ -55,16 +55,15 @@ public class IotdaRuleAction {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IotdaRuleAction iotdaRuleAction = (IotdaRuleAction) o;
-        return Objects.equals(this.ruleId, iotdaRuleAction.ruleId)
-            && Objects.equals(this.actionId, iotdaRuleAction.actionId);
+        IotdaRuleAction that = (IotdaRuleAction) obj;
+        return Objects.equals(this.ruleId, that.ruleId) && Objects.equals(this.actionId, that.actionId);
     }
 
     @Override

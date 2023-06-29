@@ -162,20 +162,17 @@ public class BatchSetAlarmNotifyInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchSetAlarmNotifyInfo batchSetAlarmNotifyInfo = (BatchSetAlarmNotifyInfo) o;
-        return Objects.equals(this.subscriptions, batchSetAlarmNotifyInfo.subscriptions)
-            && Objects.equals(this.topicUrn, batchSetAlarmNotifyInfo.topicUrn)
-            && Objects.equals(this.delayTime, batchSetAlarmNotifyInfo.delayTime)
-            && Objects.equals(this.rtoDelay, batchSetAlarmNotifyInfo.rtoDelay)
-            && Objects.equals(this.rpoDelay, batchSetAlarmNotifyInfo.rpoDelay)
-            && Objects.equals(this.alarmToUser, batchSetAlarmNotifyInfo.alarmToUser);
+        BatchSetAlarmNotifyInfo that = (BatchSetAlarmNotifyInfo) obj;
+        return Objects.equals(this.subscriptions, that.subscriptions) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.delayTime, that.delayTime) && Objects.equals(this.rtoDelay, that.rtoDelay)
+            && Objects.equals(this.rpoDelay, that.rpoDelay) && Objects.equals(this.alarmToUser, that.alarmToUser);
     }
 
     @Override

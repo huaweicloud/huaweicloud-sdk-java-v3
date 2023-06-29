@@ -81,22 +81,15 @@ public class VpcMemberInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -362,23 +355,21 @@ public class VpcMemberInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        VpcMemberInfo vpcMemberInfo = (VpcMemberInfo) o;
-        return Objects.equals(this.host, vpcMemberInfo.host) && Objects.equals(this.weight, vpcMemberInfo.weight)
-            && Objects.equals(this.isBackup, vpcMemberInfo.isBackup)
-            && Objects.equals(this.memberGroupName, vpcMemberInfo.memberGroupName)
-            && Objects.equals(this.status, vpcMemberInfo.status) && Objects.equals(this.port, vpcMemberInfo.port)
-            && Objects.equals(this.ecsId, vpcMemberInfo.ecsId) && Objects.equals(this.ecsName, vpcMemberInfo.ecsName)
-            && Objects.equals(this.id, vpcMemberInfo.id)
-            && Objects.equals(this.vpcChannelId, vpcMemberInfo.vpcChannelId)
-            && Objects.equals(this.createTime, vpcMemberInfo.createTime)
-            && Objects.equals(this.memberGroupId, vpcMemberInfo.memberGroupId);
+        VpcMemberInfo that = (VpcMemberInfo) obj;
+        return Objects.equals(this.host, that.host) && Objects.equals(this.weight, that.weight)
+            && Objects.equals(this.isBackup, that.isBackup)
+            && Objects.equals(this.memberGroupName, that.memberGroupName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.ecsId, that.ecsId)
+            && Objects.equals(this.ecsName, that.ecsName) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.vpcChannelId, that.vpcChannelId) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.memberGroupId, that.memberGroupId);
     }
 
     @Override

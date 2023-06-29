@@ -66,16 +66,15 @@ public class ShowEntityInfoByGuidResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowEntityInfoByGuidResponse showEntityInfoByGuidResponse = (ShowEntityInfoByGuidResponse) o;
-        return Objects.equals(this.entity, showEntityInfoByGuidResponse.entity)
-            && Objects.equals(this.referredEntities, showEntityInfoByGuidResponse.referredEntities);
+        ShowEntityInfoByGuidResponse that = (ShowEntityInfoByGuidResponse) obj;
+        return Objects.equals(this.entity, that.entity) && Objects.equals(this.referredEntities, that.referredEntities);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class UpdateAutoJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAutoJobRequest updateAutoJobRequest = (UpdateAutoJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, updateAutoJobRequest.eihealthProjectId)
-            && Objects.equals(this.autoJobId, updateAutoJobRequest.autoJobId)
-            && Objects.equals(this.body, updateAutoJobRequest.body);
+        UpdateAutoJobRequest that = (UpdateAutoJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.autoJobId, that.autoJobId) && Objects.equals(this.body, that.body);
     }
 
     @Override

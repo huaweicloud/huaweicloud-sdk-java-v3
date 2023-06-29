@@ -387,28 +387,23 @@ public class ParticipantInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParticipantInfo participantInfo = (ParticipantInfo) o;
-        return Objects.equals(this.participantID, participantInfo.participantID)
-            && Objects.equals(this.name, participantInfo.name)
-            && Objects.equals(this.subscriberID, participantInfo.subscriberID)
-            && Objects.equals(this.role, participantInfo.role) && Objects.equals(this.state, participantInfo.state)
-            && Objects.equals(this.address, participantInfo.address)
-            && Objects.equals(this.attendeeType, participantInfo.attendeeType)
-            && Objects.equals(this.accountId, participantInfo.accountId)
-            && Objects.equals(this.phone2, participantInfo.phone2)
-            && Objects.equals(this.phone3, participantInfo.phone3) && Objects.equals(this.email, participantInfo.email)
-            && Objects.equals(this.sms, participantInfo.sms) && Objects.equals(this.deptName, participantInfo.deptName)
-            && Objects.equals(this.userUUID, participantInfo.userUUID)
-            && Objects.equals(this.appId, participantInfo.appId)
-            && Objects.equals(this.isAutoInvite, participantInfo.isAutoInvite)
-            && Objects.equals(this.isNotOverlayPidName, participantInfo.isNotOverlayPidName);
+        ParticipantInfo that = (ParticipantInfo) obj;
+        return Objects.equals(this.participantID, that.participantID) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.subscriberID, that.subscriberID) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.state, that.state) && Objects.equals(this.address, that.address)
+            && Objects.equals(this.attendeeType, that.attendeeType) && Objects.equals(this.accountId, that.accountId)
+            && Objects.equals(this.phone2, that.phone2) && Objects.equals(this.phone3, that.phone3)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.sms, that.sms)
+            && Objects.equals(this.deptName, that.deptName) && Objects.equals(this.userUUID, that.userUUID)
+            && Objects.equals(this.appId, that.appId) && Objects.equals(this.isAutoInvite, that.isAutoInvite)
+            && Objects.equals(this.isNotOverlayPidName, that.isNotOverlayPidName);
     }
 
     @Override

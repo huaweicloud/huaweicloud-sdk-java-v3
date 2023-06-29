@@ -43,16 +43,15 @@ public class UpdateIndirectPartnerAccountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateIndirectPartnerAccountRequest updateIndirectPartnerAccountRequest =
-            (UpdateIndirectPartnerAccountRequest) o;
-        return Objects.equals(this.body, updateIndirectPartnerAccountRequest.body);
+        UpdateIndirectPartnerAccountRequest that = (UpdateIndirectPartnerAccountRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

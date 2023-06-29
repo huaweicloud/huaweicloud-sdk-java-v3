@@ -319,24 +319,21 @@ public class AddVehicleDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddVehicleDTO addVehicleDTO = (AddVehicleDTO) o;
-        return Objects.equals(this.vehicleId, addVehicleDTO.vehicleId)
-            && Objects.equals(this.plateNo, addVehicleDTO.plateNo) && Objects.equals(this.vin, addVehicleDTO.vin)
-            && Objects.equals(this.obuId, addVehicleDTO.obuId) && Objects.equals(this.imei, addVehicleDTO.imei)
-            && Objects.equals(this.brand, addVehicleDTO.brand) && Objects.equals(this.model, addVehicleDTO.model)
-            && Objects.equals(this.style, addVehicleDTO.style) && Objects.equals(this.fuelType, addVehicleDTO.fuelType)
-            && Objects.equals(this.color, addVehicleDTO.color)
-            && Objects.equals(this.plateColor, addVehicleDTO.plateColor)
-            && Objects.equals(this.accessType, addVehicleDTO.accessType)
-            && Objects.equals(this.secret, addVehicleDTO.secret)
-            && Objects.equals(this.description, addVehicleDTO.description);
+        AddVehicleDTO that = (AddVehicleDTO) obj;
+        return Objects.equals(this.vehicleId, that.vehicleId) && Objects.equals(this.plateNo, that.plateNo)
+            && Objects.equals(this.vin, that.vin) && Objects.equals(this.obuId, that.obuId)
+            && Objects.equals(this.imei, that.imei) && Objects.equals(this.brand, that.brand)
+            && Objects.equals(this.model, that.model) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.fuelType, that.fuelType) && Objects.equals(this.color, that.color)
+            && Objects.equals(this.plateColor, that.plateColor) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.secret, that.secret) && Objects.equals(this.description, that.description);
     }
 
     @Override

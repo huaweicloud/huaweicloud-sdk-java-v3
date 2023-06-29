@@ -56,16 +56,15 @@ public class RegisterImageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RegisterImageResponse registerImageResponse = (RegisterImageResponse) o;
-        return Objects.equals(this.jobId, registerImageResponse.jobId)
-            && Objects.equals(this.imageId, registerImageResponse.imageId);
+        RegisterImageResponse that = (RegisterImageResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

@@ -129,19 +129,17 @@ public class ListSubCustomersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSubCustomersRequest listSubCustomersRequest = (ListSubCustomersRequest) o;
-        return Objects.equals(this.subCustomerName, listSubCustomersRequest.subCustomerName)
-            && Objects.equals(this.subCustomerId, listSubCustomersRequest.subCustomerId)
-            && Objects.equals(this.xSite, listSubCustomersRequest.xSite)
-            && Objects.equals(this.xLanguage, listSubCustomersRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, listSubCustomersRequest.xTimeZone);
+        ListSubCustomersRequest that = (ListSubCustomersRequest) obj;
+        return Objects.equals(this.subCustomerName, that.subCustomerName)
+            && Objects.equals(this.subCustomerId, that.subCustomerId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone);
     }
 
     @Override

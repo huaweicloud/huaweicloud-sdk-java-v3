@@ -55,15 +55,15 @@ public class DbParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DbParam dbParam = (DbParam) o;
-        return Objects.equals(this.key, dbParam.key) && Objects.equals(this.targetValue, dbParam.targetValue);
+        DbParam that = (DbParam) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.targetValue, that.targetValue);
     }
 
     @Override

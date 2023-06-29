@@ -165,19 +165,18 @@ public class NumFeatureReport {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NumFeatureReport numFeatureReport = (NumFeatureReport) o;
-        return Objects.equals(this.avg, numFeatureReport.avg) && Objects.equals(this.min, numFeatureReport.min)
-            && Objects.equals(this.max, numFeatureReport.max) && Objects.equals(this.median, numFeatureReport.median)
-            && Objects.equals(this.percentsAgg, numFeatureReport.percentsAgg)
-            && Objects.equals(this.name, numFeatureReport.name)
-            && Objects.equals(this.dataType, numFeatureReport.dataType);
+        NumFeatureReport that = (NumFeatureReport) obj;
+        return Objects.equals(this.avg, that.avg) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.max, that.max) && Objects.equals(this.median, that.median)
+            && Objects.equals(this.percentsAgg, that.percentsAgg) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.dataType, that.dataType);
     }
 
     @Override

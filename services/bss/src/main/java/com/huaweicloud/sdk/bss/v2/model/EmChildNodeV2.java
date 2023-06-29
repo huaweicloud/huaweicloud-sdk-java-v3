@@ -118,17 +118,16 @@ public class EmChildNodeV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EmChildNodeV2 emChildNodeV2 = (EmChildNodeV2) o;
-        return Objects.equals(this.relationId, emChildNodeV2.relationId) && Objects.equals(this.id, emChildNodeV2.id)
-            && Objects.equals(this.name, emChildNodeV2.name)
-            && Objects.equals(this.childNodes, emChildNodeV2.childNodes);
+        EmChildNodeV2 that = (EmChildNodeV2) obj;
+        return Objects.equals(this.relationId, that.relationId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.childNodes, that.childNodes);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ShowTaskOverviewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskOverviewRequest showTaskOverviewRequest = (ShowTaskOverviewRequest) o;
-        return Objects.equals(this.workspaceId, showTaskOverviewRequest.workspaceId);
+        ShowTaskOverviewRequest that = (ShowTaskOverviewRequest) obj;
+        return Objects.equals(this.workspaceId, that.workspaceId);
     }
 
     @Override

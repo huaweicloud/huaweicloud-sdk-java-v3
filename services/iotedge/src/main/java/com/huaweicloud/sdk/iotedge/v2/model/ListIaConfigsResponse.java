@@ -1,41 +1,31 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.QueryIaConfigResponseDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListIaConfigsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configs")
-    
+    @JsonProperty(value = "configs")
+
     private List<QueryIaConfigResponseDTO> configs = null;
-    
+
     public ListIaConfigsResponse withConfigs(List<QueryIaConfigResponseDTO> configs) {
         this.configs = configs;
         return this;
     }
 
-    
     public ListIaConfigsResponse addConfigsItem(QueryIaConfigResponseDTO configsItem) {
-        if(this.configs == null) {
+        if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
         this.configs.add(configsItem);
@@ -43,7 +33,7 @@ public class ListIaConfigsResponse extends SdkResponse {
     }
 
     public ListIaConfigsResponse withConfigs(Consumer<List<QueryIaConfigResponseDTO>> configsSetter) {
-        if(this.configs == null) {
+        if (this.configs == null) {
             this.configs = new ArrayList<>();
         }
         configsSetter.accept(this.configs);
@@ -62,23 +52,23 @@ public class ListIaConfigsResponse extends SdkResponse {
         this.configs = configs;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIaConfigsResponse listIaConfigsResponse = (ListIaConfigsResponse) o;
-        return Objects.equals(this.configs, listIaConfigsResponse.configs);
+        ListIaConfigsResponse that = (ListIaConfigsResponse) obj;
+        return Objects.equals(this.configs, that.configs);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(configs);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -87,6 +77,7 @@ public class ListIaConfigsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -97,8 +88,5 @@ public class ListIaConfigsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

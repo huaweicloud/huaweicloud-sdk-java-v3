@@ -123,19 +123,17 @@ public class ListAuthorizedDatabasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuthorizedDatabasesRequest listAuthorizedDatabasesRequest = (ListAuthorizedDatabasesRequest) o;
-        return Objects.equals(this.xLanguage, listAuthorizedDatabasesRequest.xLanguage)
-            && Objects.equals(this.instanceId, listAuthorizedDatabasesRequest.instanceId)
-            && Objects.equals(this.userName, listAuthorizedDatabasesRequest.userName)
-            && Objects.equals(this.page, listAuthorizedDatabasesRequest.page)
-            && Objects.equals(this.limit, listAuthorizedDatabasesRequest.limit);
+        ListAuthorizedDatabasesRequest that = (ListAuthorizedDatabasesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.page, that.page)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -232,23 +232,19 @@ public class AppQuotaAppInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppQuotaAppInfo appQuotaAppInfo = (AppQuotaAppInfo) o;
-        return Objects.equals(this.appId, appQuotaAppInfo.appId) && Objects.equals(this.name, appQuotaAppInfo.name)
-            && Objects.equals(this.status, appQuotaAppInfo.status)
-            && Objects.equals(this.appKey, appQuotaAppInfo.appKey)
-            && Objects.equals(this.remark, appQuotaAppInfo.remark)
-            && Objects.equals(this.registerTime, appQuotaAppInfo.registerTime)
-            && Objects.equals(this.updateTime, appQuotaAppInfo.updateTime)
-            && Objects.equals(this.appQuotaId, appQuotaAppInfo.appQuotaId)
-            && Objects.equals(this.appQuotaName, appQuotaAppInfo.appQuotaName)
-            && Objects.equals(this.boundTime, appQuotaAppInfo.boundTime);
+        AppQuotaAppInfo that = (AppQuotaAppInfo) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.appQuotaId, that.appQuotaId)
+            && Objects.equals(this.appQuotaName, that.appQuotaName) && Objects.equals(this.boundTime, that.boundTime);
     }
 
     @Override

@@ -89,17 +89,17 @@ public class HangUpRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HangUpRequest hangUpRequest = (HangUpRequest) o;
-        return Objects.equals(this.conferenceID, hangUpRequest.conferenceID)
-            && Objects.equals(this.xConferenceAuthorization, hangUpRequest.xConferenceAuthorization)
-            && Objects.equals(this.body, hangUpRequest.body);
+        HangUpRequest that = (HangUpRequest) obj;
+        return Objects.equals(this.conferenceID, that.conferenceID)
+            && Objects.equals(this.xConferenceAuthorization, that.xConferenceAuthorization)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

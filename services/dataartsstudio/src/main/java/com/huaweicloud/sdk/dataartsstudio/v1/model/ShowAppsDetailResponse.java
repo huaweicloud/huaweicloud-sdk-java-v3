@@ -321,28 +321,22 @@ public class ShowAppsDetailResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAppsDetailResponse showAppsDetailResponse = (ShowAppsDetailResponse) o;
-        return Objects.equals(this.id, showAppsDetailResponse.id)
-            && Objects.equals(this.name, showAppsDetailResponse.name)
-            && Objects.equals(this.callNum, showAppsDetailResponse.callNum)
-            && Objects.equals(this.successNum, showAppsDetailResponse.successNum)
-            && Objects.equals(this.failNum, showAppsDetailResponse.failNum)
-            && Objects.equals(this.legalNum, showAppsDetailResponse.legalNum)
-            && Objects.equals(this.illegalNum, showAppsDetailResponse.illegalNum)
-            && Objects.equals(this.costTimeAvg, showAppsDetailResponse.costTimeAvg)
-            && Objects.equals(this.successCostTimeAvg, showAppsDetailResponse.successCostTimeAvg)
-            && Objects.equals(this.failCostTimeAvg, showAppsDetailResponse.failCostTimeAvg)
-            && Objects.equals(this.successRate, showAppsDetailResponse.successRate)
-            && Objects.equals(this.failRate, showAppsDetailResponse.failRate)
-            && Objects.equals(this.legalRate, showAppsDetailResponse.legalRate)
-            && Objects.equals(this.illegalRate, showAppsDetailResponse.illegalRate);
+        ShowAppsDetailResponse that = (ShowAppsDetailResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.callNum, that.callNum) && Objects.equals(this.successNum, that.successNum)
+            && Objects.equals(this.failNum, that.failNum) && Objects.equals(this.legalNum, that.legalNum)
+            && Objects.equals(this.illegalNum, that.illegalNum) && Objects.equals(this.costTimeAvg, that.costTimeAvg)
+            && Objects.equals(this.successCostTimeAvg, that.successCostTimeAvg)
+            && Objects.equals(this.failCostTimeAvg, that.failCostTimeAvg)
+            && Objects.equals(this.successRate, that.successRate) && Objects.equals(this.failRate, that.failRate)
+            && Objects.equals(this.legalRate, that.legalRate) && Objects.equals(this.illegalRate, that.illegalRate);
     }
 
     @Override

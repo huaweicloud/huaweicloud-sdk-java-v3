@@ -83,17 +83,16 @@ public class ListResourceTypesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourceTypesRequest listResourceTypesRequest = (ListResourceTypesRequest) o;
-        return Objects.equals(this.xLanguage, listResourceTypesRequest.xLanguage)
-            && Objects.equals(this.limit, listResourceTypesRequest.limit)
-            && Objects.equals(this.offset, listResourceTypesRequest.offset);
+        ListResourceTypesRequest that = (ListResourceTypesRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

@@ -121,19 +121,17 @@ public class CredentialsRespCredentials {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CredentialsRespCredentials credentialsRespCredentials = (CredentialsRespCredentials) o;
-        return Objects.equals(this.uuid, credentialsRespCredentials.uuid)
-            && Objects.equals(this.key, credentialsRespCredentials.key)
-            && Objects.equals(this.createTime, credentialsRespCredentials.createTime)
-            && Objects.equals(this.description, credentialsRespCredentials.description)
-            && Objects.equals(this.status, credentialsRespCredentials.status);
+        CredentialsRespCredentials that = (CredentialsRespCredentials) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

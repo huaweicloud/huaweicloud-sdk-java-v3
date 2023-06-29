@@ -133,19 +133,17 @@ public class IndicatorCreateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        IndicatorCreateRequest indicatorCreateRequest = (IndicatorCreateRequest) o;
-        return Objects.equals(this.name, indicatorCreateRequest.name)
-            && Objects.equals(this.formatVersion, indicatorCreateRequest.formatVersion)
-            && Objects.equals(this.type, indicatorCreateRequest.type)
-            && Objects.equals(this.triggerFlag, indicatorCreateRequest.triggerFlag)
-            && Objects.equals(this.dataObject, indicatorCreateRequest.dataObject);
+        IndicatorCreateRequest that = (IndicatorCreateRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.formatVersion, that.formatVersion)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.triggerFlag, that.triggerFlag)
+            && Objects.equals(this.dataObject, that.dataObject);
     }
 
     @Override

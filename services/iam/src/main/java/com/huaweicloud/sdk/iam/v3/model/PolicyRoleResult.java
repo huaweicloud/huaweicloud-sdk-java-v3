@@ -316,25 +316,21 @@ public class PolicyRoleResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PolicyRoleResult policyRoleResult = (PolicyRoleResult) o;
-        return Objects.equals(this.domainId, policyRoleResult.domainId)
-            && Objects.equals(this.references, policyRoleResult.references)
-            && Objects.equals(this.updatedTime, policyRoleResult.updatedTime)
-            && Objects.equals(this.createdTime, policyRoleResult.createdTime)
-            && Objects.equals(this.descriptionCn, policyRoleResult.descriptionCn)
-            && Objects.equals(this.catalog, policyRoleResult.catalog)
-            && Objects.equals(this.name, policyRoleResult.name)
-            && Objects.equals(this.description, policyRoleResult.description)
-            && Objects.equals(this.links, policyRoleResult.links) && Objects.equals(this.id, policyRoleResult.id)
-            && Objects.equals(this.displayName, policyRoleResult.displayName)
-            && Objects.equals(this.type, policyRoleResult.type) && Objects.equals(this.policy, policyRoleResult.policy);
+        PolicyRoleResult that = (PolicyRoleResult) obj;
+        return Objects.equals(this.domainId, that.domainId) && Objects.equals(this.references, that.references)
+            && Objects.equals(this.updatedTime, that.updatedTime) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.descriptionCn, that.descriptionCn) && Objects.equals(this.catalog, that.catalog)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.links, that.links) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.displayName, that.displayName) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.policy, that.policy);
     }
 
     @Override

@@ -193,21 +193,19 @@ public class ListPortsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortsRequest listPortsRequest = (ListPortsRequest) o;
-        return Objects.equals(this.hostId, listPortsRequest.hostId)
-            && Objects.equals(this.hostName, listPortsRequest.hostName)
-            && Objects.equals(this.hostIp, listPortsRequest.hostIp) && Objects.equals(this.port, listPortsRequest.port)
-            && Objects.equals(this.type, listPortsRequest.type)
-            && Objects.equals(this.enterpriseProjectId, listPortsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listPortsRequest.limit)
-            && Objects.equals(this.offset, listPortsRequest.offset);
+        ListPortsRequest that = (ListPortsRequest) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostIp, that.hostIp) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.type, that.type)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

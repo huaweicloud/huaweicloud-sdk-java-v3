@@ -33,15 +33,15 @@ public class UpdateTriggerRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateTriggerRequestBody updateTriggerRequestBody = (UpdateTriggerRequestBody) o;
-        return Objects.equals(this.enable, updateTriggerRequestBody.enable);
+        UpdateTriggerRequestBody that = (UpdateTriggerRequestBody) obj;
+        return Objects.equals(this.enable, that.enable);
     }
 
     @Override

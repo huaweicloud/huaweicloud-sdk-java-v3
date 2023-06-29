@@ -119,18 +119,16 @@ public class UpdateStreamingJobResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateStreamingJobResponse updateStreamingJobResponse = (UpdateStreamingJobResponse) o;
-        return Objects.equals(this.jobId, updateStreamingJobResponse.jobId)
-            && Objects.equals(this.jobState, updateStreamingJobResponse.jobState)
-            && Objects.equals(this.status, updateStreamingJobResponse.status)
-            && Objects.equals(this.checkInfo, updateStreamingJobResponse.checkInfo);
+        UpdateStreamingJobResponse that = (UpdateStreamingJobResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobState, that.jobState)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.checkInfo, that.checkInfo);
     }
 
     @Override

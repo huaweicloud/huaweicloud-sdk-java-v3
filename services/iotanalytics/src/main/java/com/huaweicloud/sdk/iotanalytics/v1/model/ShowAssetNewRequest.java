@@ -55,16 +55,15 @@ public class ShowAssetNewRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowAssetNewRequest showAssetNewRequest = (ShowAssetNewRequest) o;
-        return Objects.equals(this.assetId, showAssetNewRequest.assetId)
-            && Objects.equals(this.type, showAssetNewRequest.type);
+        ShowAssetNewRequest that = (ShowAssetNewRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.type, that.type);
     }
 
     @Override

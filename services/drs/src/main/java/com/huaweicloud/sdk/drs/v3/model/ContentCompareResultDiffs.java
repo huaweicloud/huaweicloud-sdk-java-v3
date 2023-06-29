@@ -119,18 +119,18 @@ public class ContentCompareResultDiffs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentCompareResultDiffs contentCompareResultDiffs = (ContentCompareResultDiffs) o;
-        return Objects.equals(this.sourceDbName, contentCompareResultDiffs.sourceDbName)
-            && Objects.equals(this.sourceTableName, contentCompareResultDiffs.sourceTableName)
-            && Objects.equals(this.contentCompareDiff, contentCompareResultDiffs.contentCompareDiff)
-            && Objects.equals(this.contentCompareDiffCount, contentCompareResultDiffs.contentCompareDiffCount);
+        ContentCompareResultDiffs that = (ContentCompareResultDiffs) obj;
+        return Objects.equals(this.sourceDbName, that.sourceDbName)
+            && Objects.equals(this.sourceTableName, that.sourceTableName)
+            && Objects.equals(this.contentCompareDiff, that.contentCompareDiff)
+            && Objects.equals(this.contentCompareDiffCount, that.contentCompareDiffCount);
     }
 
     @Override

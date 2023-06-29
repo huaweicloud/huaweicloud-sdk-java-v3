@@ -165,18 +165,18 @@ public class Datapoint {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Datapoint datapoint = (Datapoint) o;
-        return Objects.equals(this.max, datapoint.max) && Objects.equals(this.min, datapoint.min)
-            && Objects.equals(this.average, datapoint.average) && Objects.equals(this.sum, datapoint.sum)
-            && Objects.equals(this.variance, datapoint.variance) && Objects.equals(this.timestamp, datapoint.timestamp)
-            && Objects.equals(this.unit, datapoint.unit);
+        Datapoint that = (Datapoint) obj;
+        return Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.average, that.average) && Objects.equals(this.sum, that.sum)
+            && Objects.equals(this.variance, that.variance) && Objects.equals(this.timestamp, that.timestamp)
+            && Objects.equals(this.unit, that.unit);
     }
 
     @Override

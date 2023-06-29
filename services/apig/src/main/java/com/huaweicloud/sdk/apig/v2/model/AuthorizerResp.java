@@ -69,22 +69,15 @@ public class AuthorizerResp {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -145,22 +138,15 @@ public class AuthorizerResp {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthorizerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthorizerTypeEnum(value));
         }
 
         public static AuthorizerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthorizerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -514,26 +500,24 @@ public class AuthorizerResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizerResp authorizerResp = (AuthorizerResp) o;
-        return Objects.equals(this.name, authorizerResp.name) && Objects.equals(this.type, authorizerResp.type)
-            && Objects.equals(this.authorizerType, authorizerResp.authorizerType)
-            && Objects.equals(this.authorizerUri, authorizerResp.authorizerUri)
-            && Objects.equals(this.authorizerVersion, authorizerResp.authorizerVersion)
-            && Objects.equals(this.authorizerAliasUri, authorizerResp.authorizerAliasUri)
-            && Objects.equals(this.identities, authorizerResp.identities)
-            && Objects.equals(this.ttl, authorizerResp.ttl) && Objects.equals(this.userData, authorizerResp.userData)
-            && Objects.equals(this.ldApiId, authorizerResp.ldApiId)
-            && Objects.equals(this.needBody, authorizerResp.needBody) && Objects.equals(this.id, authorizerResp.id)
-            && Objects.equals(this.createTime, authorizerResp.createTime)
-            && Objects.equals(this.romaAppId, authorizerResp.romaAppId)
-            && Objects.equals(this.romaAppName, authorizerResp.romaAppName);
+        AuthorizerResp that = (AuthorizerResp) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.authorizerType, that.authorizerType)
+            && Objects.equals(this.authorizerUri, that.authorizerUri)
+            && Objects.equals(this.authorizerVersion, that.authorizerVersion)
+            && Objects.equals(this.authorizerAliasUri, that.authorizerAliasUri)
+            && Objects.equals(this.identities, that.identities) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.ldApiId, that.ldApiId)
+            && Objects.equals(this.needBody, that.needBody) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.romaAppId, that.romaAppId)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

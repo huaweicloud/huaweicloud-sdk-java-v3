@@ -86,22 +86,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -179,22 +172,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TrafficTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TrafficTypeEnum(value));
         }
 
         public static TrafficTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TrafficTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -265,22 +251,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            LogStoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LogStoreTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LogStoreTypeEnum(value));
         }
 
         public static LogStoreTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LogStoreTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -353,22 +332,15 @@ public class ListFlowLogsRequest {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -622,26 +594,21 @@ public class ListFlowLogsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListFlowLogsRequest listFlowLogsRequest = (ListFlowLogsRequest) o;
-        return Objects.equals(this.id, listFlowLogsRequest.id) && Objects.equals(this.name, listFlowLogsRequest.name)
-            && Objects.equals(this.tenantId, listFlowLogsRequest.tenantId)
-            && Objects.equals(this.description, listFlowLogsRequest.description)
-            && Objects.equals(this.resourceType, listFlowLogsRequest.resourceType)
-            && Objects.equals(this.resourceId, listFlowLogsRequest.resourceId)
-            && Objects.equals(this.trafficType, listFlowLogsRequest.trafficType)
-            && Objects.equals(this.logGroupId, listFlowLogsRequest.logGroupId)
-            && Objects.equals(this.logTopicId, listFlowLogsRequest.logTopicId)
-            && Objects.equals(this.logStoreType, listFlowLogsRequest.logStoreType)
-            && Objects.equals(this.status, listFlowLogsRequest.status)
-            && Objects.equals(this.limit, listFlowLogsRequest.limit)
-            && Objects.equals(this.marker, listFlowLogsRequest.marker);
+        ListFlowLogsRequest that = (ListFlowLogsRequest) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.tenantId, that.tenantId) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.resourceType, that.resourceType) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.trafficType, that.trafficType) && Objects.equals(this.logGroupId, that.logGroupId)
+            && Objects.equals(this.logTopicId, that.logTopicId) && Objects.equals(this.logStoreType, that.logStoreType)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker);
     }
 
     @Override

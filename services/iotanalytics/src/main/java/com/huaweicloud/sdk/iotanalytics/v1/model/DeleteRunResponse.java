@@ -34,15 +34,15 @@ public class DeleteRunResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRunResponse deleteRunResponse = (DeleteRunResponse) o;
-        return Objects.equals(this.runId, deleteRunResponse.runId);
+        DeleteRunResponse that = (DeleteRunResponse) obj;
+        return Objects.equals(this.runId, that.runId);
     }
 
     @Override

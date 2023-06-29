@@ -121,17 +121,17 @@ public class Resources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Resources resources = (Resources) o;
-        return Objects.equals(this.max, resources.max) && Objects.equals(this.min, resources.min)
-            && Objects.equals(this.quota, resources.quota) && Objects.equals(this.type, resources.type)
-            && Objects.equals(this.used, resources.used);
+        Resources that = (Resources) obj;
+        return Objects.equals(this.max, that.max) && Objects.equals(this.min, that.min)
+            && Objects.equals(this.quota, that.quota) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.used, that.used);
     }
 
     @Override

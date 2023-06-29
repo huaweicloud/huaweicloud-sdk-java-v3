@@ -55,17 +55,15 @@ public class ImageMediaTaggingDetItemBodyI18nTag {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMediaTaggingDetItemBodyI18nTag imageMediaTaggingDetItemBodyI18nTag =
-            (ImageMediaTaggingDetItemBodyI18nTag) o;
-        return Objects.equals(this.zh, imageMediaTaggingDetItemBodyI18nTag.zh)
-            && Objects.equals(this.en, imageMediaTaggingDetItemBodyI18nTag.en);
+        ImageMediaTaggingDetItemBodyI18nTag that = (ImageMediaTaggingDetItemBodyI18nTag) obj;
+        return Objects.equals(this.zh, that.zh) && Objects.equals(this.en, that.en);
     }
 
     @Override

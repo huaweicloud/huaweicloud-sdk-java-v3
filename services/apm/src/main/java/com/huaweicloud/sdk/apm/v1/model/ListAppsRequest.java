@@ -57,16 +57,15 @@ public class ListAppsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppsRequest listAppsRequest = (ListAppsRequest) o;
-        return Objects.equals(this.businessId, listAppsRequest.businessId)
-            && Objects.equals(this.xBusinessId, listAppsRequest.xBusinessId);
+        ListAppsRequest that = (ListAppsRequest) obj;
+        return Objects.equals(this.businessId, that.businessId) && Objects.equals(this.xBusinessId, that.xBusinessId);
     }
 
     @Override

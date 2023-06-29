@@ -65,16 +65,15 @@ public class GlanceAddImageMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GlanceAddImageMemberRequest glanceAddImageMemberRequest = (GlanceAddImageMemberRequest) o;
-        return Objects.equals(this.imageId, glanceAddImageMemberRequest.imageId)
-            && Objects.equals(this.body, glanceAddImageMemberRequest.body);
+        GlanceAddImageMemberRequest that = (GlanceAddImageMemberRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

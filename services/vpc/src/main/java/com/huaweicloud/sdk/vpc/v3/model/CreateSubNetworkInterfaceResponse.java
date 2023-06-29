@@ -67,16 +67,16 @@ public class CreateSubNetworkInterfaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSubNetworkInterfaceResponse createSubNetworkInterfaceResponse = (CreateSubNetworkInterfaceResponse) o;
-        return Objects.equals(this.requestId, createSubNetworkInterfaceResponse.requestId)
-            && Objects.equals(this.subNetworkInterface, createSubNetworkInterfaceResponse.subNetworkInterface);
+        CreateSubNetworkInterfaceResponse that = (CreateSubNetworkInterfaceResponse) obj;
+        return Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.subNetworkInterface, that.subNetworkInterface);
     }
 
     @Override

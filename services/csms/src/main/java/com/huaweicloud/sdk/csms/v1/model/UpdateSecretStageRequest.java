@@ -87,17 +87,16 @@ public class UpdateSecretStageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecretStageRequest updateSecretStageRequest = (UpdateSecretStageRequest) o;
-        return Objects.equals(this.secretName, updateSecretStageRequest.secretName)
-            && Objects.equals(this.stageName, updateSecretStageRequest.stageName)
-            && Objects.equals(this.body, updateSecretStageRequest.body);
+        UpdateSecretStageRequest that = (UpdateSecretStageRequest) obj;
+        return Objects.equals(this.secretName, that.secretName) && Objects.equals(this.stageName, that.stageName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

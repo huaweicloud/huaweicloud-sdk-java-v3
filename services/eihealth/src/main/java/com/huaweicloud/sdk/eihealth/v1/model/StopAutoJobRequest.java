@@ -55,16 +55,16 @@ public class StopAutoJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopAutoJobRequest stopAutoJobRequest = (StopAutoJobRequest) o;
-        return Objects.equals(this.eihealthProjectId, stopAutoJobRequest.eihealthProjectId)
-            && Objects.equals(this.autoJobId, stopAutoJobRequest.autoJobId);
+        StopAutoJobRequest that = (StopAutoJobRequest) obj;
+        return Objects.equals(this.eihealthProjectId, that.eihealthProjectId)
+            && Objects.equals(this.autoJobId, that.autoJobId);
     }
 
     @Override

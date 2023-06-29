@@ -1,43 +1,32 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 查询结果元数据信息，包括分页信息等。
  */
-public class MetaDataSeries  {
-
+public class MetaDataSeries {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Integer count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="offset")
-    
+    @JsonProperty(value = "offset")
 
     private Integer offset;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total")
-    
+    @JsonProperty(value = "total")
 
     private Integer total;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nextToken")
-    
+    @JsonProperty(value = "nextToken")
 
     private Integer nextToken;
 
@@ -45,9 +34,6 @@ public class MetaDataSeries  {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 当前返回结果条数。
@@ -61,15 +47,10 @@ public class MetaDataSeries  {
         this.count = count;
     }
 
-    
-
     public MetaDataSeries withOffset(Integer offset) {
         this.offset = offset;
         return this;
     }
-
-    
-
 
     /**
      * 下一个开始的标记，用于分页，null表示无更多数据。
@@ -83,15 +64,10 @@ public class MetaDataSeries  {
         this.offset = offset;
     }
 
-    
-
     public MetaDataSeries withTotal(Integer total) {
         this.total = total;
         return this;
     }
-
-    
-
 
     /**
      * 总条数。
@@ -105,15 +81,10 @@ public class MetaDataSeries  {
         this.total = total;
     }
 
-    
-
     public MetaDataSeries withNextToken(Integer nextToken) {
         this.nextToken = nextToken;
         return this;
     }
-
-    
-
 
     /**
      * 偏移量。
@@ -127,26 +98,24 @@ public class MetaDataSeries  {
         this.nextToken = nextToken;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MetaDataSeries metaDataSeries = (MetaDataSeries) o;
-        return Objects.equals(this.count, metaDataSeries.count) &&
-            Objects.equals(this.offset, metaDataSeries.offset) &&
-            Objects.equals(this.total, metaDataSeries.total) &&
-            Objects.equals(this.nextToken, metaDataSeries.nextToken);
+        MetaDataSeries that = (MetaDataSeries) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.nextToken, that.nextToken);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, offset, total, nextToken);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -158,6 +127,7 @@ public class MetaDataSeries  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -168,8 +138,5 @@ public class MetaDataSeries  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -87,16 +87,16 @@ public class DebugApiV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DebugApiV2Request debugApiV2Request = (DebugApiV2Request) o;
-        return Objects.equals(this.instanceId, debugApiV2Request.instanceId)
-            && Objects.equals(this.apiId, debugApiV2Request.apiId) && Objects.equals(this.body, debugApiV2Request.body);
+        DebugApiV2Request that = (DebugApiV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.apiId, that.apiId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class BatchRunFlinkJobsRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchRunFlinkJobsRequestBody batchRunFlinkJobsRequestBody = (BatchRunFlinkJobsRequestBody) o;
-        return Objects.equals(this.resumeSavepoint, batchRunFlinkJobsRequestBody.resumeSavepoint)
-            && Objects.equals(this.jobIds, batchRunFlinkJobsRequestBody.jobIds);
+        BatchRunFlinkJobsRequestBody that = (BatchRunFlinkJobsRequestBody) obj;
+        return Objects.equals(this.resumeSavepoint, that.resumeSavepoint) && Objects.equals(this.jobIds, that.jobIds);
     }
 
     @Override

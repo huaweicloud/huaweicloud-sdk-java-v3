@@ -1,131 +1,103 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussBackupStrategy;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussChargeInfo;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussVolume;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.RestorePoint;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实例信息。
  */
-public class OpengaussRestoreInstanceRequest  {
-
+public class OpengaussRestoreInstanceRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="availability_zone")
-    
+    @JsonProperty(value = "availability_zone")
 
     private String availabilityZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
 
     private OpenGaussVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_encryption_id")
-    
+    @JsonProperty(value = "disk_encryption_id")
 
     private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="password")
-    
+    @JsonProperty(value = "password")
 
     private String password;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private OpenGaussChargeInfo chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="restore_point")
-    
+    @JsonProperty(value = "restore_point")
 
     private RestorePoint restorePoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
 
     private OpenGaussBackupStrategy backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_parallel_restore")
-    
+    @JsonProperty(value = "enable_parallel_restore")
 
     private Boolean enableParallelRestore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="configuration_id")
-    
+    @JsonProperty(value = "configuration_id")
 
     private String configurationId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private String port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enable_force_switch")
-    
+    @JsonProperty(value = "enable_force_switch")
 
     private Boolean enableForceSwitch;
 
@@ -133,9 +105,6 @@ public class OpengaussRestoreInstanceRequest  {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称。 用于表示实例的名称，同一租户下，同类型的实例名可重名。 取值范围：4~64个字符之间，必须以字母开头，区分大小写，可以包含字母、数字、中划线或者下划线，不能包含其他的特殊字符。
@@ -149,15 +118,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.name = name;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
-
-    
-
 
     /**
      * 可用区ID。  GaussDB取值范围：非空，可选部署在同一可用区或三个不同可用区，可用区之间用逗号隔开。详见示例。  - 部署在同一可用区：需要输入三个相同的可用区。例如：部署在“cn-north-4a”可用区，则需要在此处输入\"cn-north-4a,cn-north-4a,cn-north-4a\"。 - 部署在三个不同可用区：需要分别输入三个不同的可用区。 取值范围：非空，请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
@@ -171,15 +135,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.availabilityZone = availabilityZone;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 规格码，取值范围：非空。参考[表1](https://support.huaweicloud.com/api-opengauss/opengauss_api_0037.html#opengauss_api_0037__ted9b9d433c8a4c52884e199e17f94479)中GaussDB 的“规格编码”列内容获取。
@@ -193,22 +152,19 @@ public class OpengaussRestoreInstanceRequest  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withVolume(OpenGaussVolume volume) {
         this.volume = volume;
         return this;
     }
 
     public OpengaussRestoreInstanceRequest withVolume(Consumer<OpenGaussVolume> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new OpenGaussVolume();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get volume
@@ -222,15 +178,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.volume = volume;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
     }
-
-    
-
 
     /**
      * 用于磁盘加密的密钥ID，默认为空。
@@ -244,15 +195,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID，获取方法如下：  - 方法1：登录虚拟私有云服务的控制台界面，在虚拟私有云的详情页面查找VPC ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询VPC列表](https://support.huaweicloud.com/api-vpc/vpc_api01_0003.html)。
@@ -266,15 +212,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.vpcId = vpcId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息，获取方法如下：  - 方法1：登录虚拟私有云服务的控制台界面，单击VPC下的子网，进入子网详情页面，查找网络ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询子网列表](https://support.huaweicloud.com/api-vpc/vpc_subnet01_0003.html)。
@@ -288,15 +229,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.subnetId = subnetId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 指定实例所属的安全组。如果不需要指定安全组，请联系客服申请白名单。  - 方法1：登录虚拟私有云服务的控制台界面，在安全组的详情页面查找安全组ID。 - 方法2：通过虚拟私有云服务的API接口查询，具体操作可参考[查询安全组列表](https://support.huaweicloud.com/api-vpc/vpc_sg01_0003.html)。
@@ -310,15 +246,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withPassword(String password) {
         this.password = password;
         return this;
     }
-
-    
-
 
     /**
      * 数据库密码。  取值范围：  非空，由大小写字母、数字和特殊符号~!@#%^*-_=+?组成，长度8~32个字符。  建议您输入高强度密码，以提高安全性，防止出现密码被暴力破解等安全风险。
@@ -332,22 +263,19 @@ public class OpengaussRestoreInstanceRequest  {
         this.password = password;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withChargeInfo(OpenGaussChargeInfo chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public OpengaussRestoreInstanceRequest withChargeInfo(Consumer<OpenGaussChargeInfo> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new OpenGaussChargeInfo();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -361,22 +289,19 @@ public class OpengaussRestoreInstanceRequest  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withRestorePoint(RestorePoint restorePoint) {
         this.restorePoint = restorePoint;
         return this;
     }
 
     public OpengaussRestoreInstanceRequest withRestorePoint(Consumer<RestorePoint> restorePointSetter) {
-        if(this.restorePoint == null ){
+        if (this.restorePoint == null) {
             this.restorePoint = new RestorePoint();
             restorePointSetter.accept(this.restorePoint);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get restorePoint
@@ -390,22 +315,19 @@ public class OpengaussRestoreInstanceRequest  {
         this.restorePoint = restorePoint;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withBackupStrategy(OpenGaussBackupStrategy backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
     public OpengaussRestoreInstanceRequest withBackupStrategy(Consumer<OpenGaussBackupStrategy> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+        if (this.backupStrategy == null) {
             this.backupStrategy = new OpenGaussBackupStrategy();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupStrategy
@@ -419,15 +341,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withEnableParallelRestore(Boolean enableParallelRestore) {
         this.enableParallelRestore = enableParallelRestore;
         return this;
     }
-
-    
-
 
     /**
      * 是否支持备份并行恢复。当不传该参数时，企业版默认为不支持，主备版默认支持。
@@ -441,15 +358,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.enableParallelRestore = enableParallelRestore;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withConfigurationId(String configurationId) {
         this.configurationId = configurationId;
         return this;
     }
-
-    
-
 
     /**
      * 参数组ID，当不传该参数时，使用系统默认的参数模板。
@@ -463,15 +375,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.configurationId = configurationId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目ID。
@@ -485,15 +392,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withPort(String port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库对外开放的端口，不填默认为8000，可选范围为：1024-39998。限制端口： 2378,2379,2380,4999,5000,5999,6000,6001,8097,8098,12016,12017,20049,20050,21731,21732,32122,32123,32124。  - GaussDB数据库端口当前只支持设置为8000，当不传该参数时，默认端口为8000。
@@ -507,15 +409,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.port = port;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
-
-    
-
 
     /**
      * 时区。  - 不选择时，国内站默认为UTC+08:00，国际站默认为UTC时间。 - 选择填写时，取值范围为UTC-12:00~UTC+12:00，且只支持整段时间，如UTC+08:00，不支持UTC+08:30。
@@ -529,15 +426,10 @@ public class OpengaussRestoreInstanceRequest  {
         this.timeZone = timeZone;
     }
 
-    
-
     public OpengaussRestoreInstanceRequest withEnableForceSwitch(Boolean enableForceSwitch) {
         this.enableForceSwitch = enableForceSwitch;
         return this;
     }
-
-    
-
 
     /**
      * enable_force_switch表示是否开启备机强升主功能，仅支持取值true，false。 enable_force_switch=true表示开启备机强升主功能，enable_force_switch=false表示关闭，默认关闭。仅支持1.2.2及以上版本。  说明：  备机强升主功能适用场景：在主机发生故障后，为了保障集群的可用性，强制拉起备机作为新主机对外提供服务的场景。 本功能在集群故障状态下，以丢失部分数据为代价换取集群尽可能快的恢复服务。本功能是集群状态为不可用时的一个逃生方法，如果操作者不清楚备机强升后丢失数据对业务的影响，请勿使用本功能。 备机强升主相关介绍请参考《故障处理》备机强升主章节。
@@ -551,40 +443,52 @@ public class OpengaussRestoreInstanceRequest  {
         this.enableForceSwitch = enableForceSwitch;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpengaussRestoreInstanceRequest opengaussRestoreInstanceRequest = (OpengaussRestoreInstanceRequest) o;
-        return Objects.equals(this.name, opengaussRestoreInstanceRequest.name) &&
-            Objects.equals(this.availabilityZone, opengaussRestoreInstanceRequest.availabilityZone) &&
-            Objects.equals(this.flavorRef, opengaussRestoreInstanceRequest.flavorRef) &&
-            Objects.equals(this.volume, opengaussRestoreInstanceRequest.volume) &&
-            Objects.equals(this.diskEncryptionId, opengaussRestoreInstanceRequest.diskEncryptionId) &&
-            Objects.equals(this.vpcId, opengaussRestoreInstanceRequest.vpcId) &&
-            Objects.equals(this.subnetId, opengaussRestoreInstanceRequest.subnetId) &&
-            Objects.equals(this.securityGroupId, opengaussRestoreInstanceRequest.securityGroupId) &&
-            Objects.equals(this.password, opengaussRestoreInstanceRequest.password) &&
-            Objects.equals(this.chargeInfo, opengaussRestoreInstanceRequest.chargeInfo) &&
-            Objects.equals(this.restorePoint, opengaussRestoreInstanceRequest.restorePoint) &&
-            Objects.equals(this.backupStrategy, opengaussRestoreInstanceRequest.backupStrategy) &&
-            Objects.equals(this.enableParallelRestore, opengaussRestoreInstanceRequest.enableParallelRestore) &&
-            Objects.equals(this.configurationId, opengaussRestoreInstanceRequest.configurationId) &&
-            Objects.equals(this.enterpriseProjectId, opengaussRestoreInstanceRequest.enterpriseProjectId) &&
-            Objects.equals(this.port, opengaussRestoreInstanceRequest.port) &&
-            Objects.equals(this.timeZone, opengaussRestoreInstanceRequest.timeZone) &&
-            Objects.equals(this.enableForceSwitch, opengaussRestoreInstanceRequest.enableForceSwitch);
+        OpengaussRestoreInstanceRequest that = (OpengaussRestoreInstanceRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.volume, that.volume)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.password, that.password) && Objects.equals(this.chargeInfo, that.chargeInfo)
+            && Objects.equals(this.restorePoint, that.restorePoint)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.enableParallelRestore, that.enableParallelRestore)
+            && Objects.equals(this.configurationId, that.configurationId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.enableForceSwitch, that.enableForceSwitch);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(name, availabilityZone, flavorRef, volume, diskEncryptionId, vpcId, subnetId, securityGroupId, password, chargeInfo, restorePoint, backupStrategy, enableParallelRestore, configurationId, enterpriseProjectId, port, timeZone, enableForceSwitch);
+        return Objects.hash(name,
+            availabilityZone,
+            flavorRef,
+            volume,
+            diskEncryptionId,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            password,
+            chargeInfo,
+            restorePoint,
+            backupStrategy,
+            enableParallelRestore,
+            configurationId,
+            enterpriseProjectId,
+            port,
+            timeZone,
+            enableForceSwitch);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -610,6 +514,7 @@ public class OpengaussRestoreInstanceRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -620,8 +525,5 @@ public class OpengaussRestoreInstanceRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

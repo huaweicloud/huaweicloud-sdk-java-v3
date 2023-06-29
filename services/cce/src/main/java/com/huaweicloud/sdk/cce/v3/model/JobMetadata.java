@@ -77,17 +77,16 @@ public class JobMetadata {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobMetadata jobMetadata = (JobMetadata) o;
-        return Objects.equals(this.uid, jobMetadata.uid)
-            && Objects.equals(this.creationTimestamp, jobMetadata.creationTimestamp)
-            && Objects.equals(this.updateTimestamp, jobMetadata.updateTimestamp);
+        JobMetadata that = (JobMetadata) obj;
+        return Objects.equals(this.uid, that.uid) && Objects.equals(this.creationTimestamp, that.creationTimestamp)
+            && Objects.equals(this.updateTimestamp, that.updateTimestamp);
     }
 
     @Override

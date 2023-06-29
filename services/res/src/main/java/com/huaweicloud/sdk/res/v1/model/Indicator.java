@@ -65,16 +65,16 @@ public class Indicator {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Indicator indicator = (Indicator) o;
-        return Objects.equals(this.indicatorName, indicator.indicatorName)
-            && Objects.equals(this.indicatorParams, indicator.indicatorParams);
+        Indicator that = (Indicator) obj;
+        return Objects.equals(this.indicatorName, that.indicatorName)
+            && Objects.equals(this.indicatorParams, that.indicatorParams);
     }
 
     @Override

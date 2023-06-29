@@ -64,15 +64,15 @@ public class DetectFaceByFileIntlRequestBody implements SdkFormDataBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetectFaceByFileIntlRequestBody detectFaceByFileIntlRequestBody = (DetectFaceByFileIntlRequestBody) o;
-        return Objects.equals(this.imageFile, detectFaceByFileIntlRequestBody.imageFile);
+        DetectFaceByFileIntlRequestBody that = (DetectFaceByFileIntlRequestBody) obj;
+        return Objects.equals(this.imageFile, that.imageFile);
     }
 
     @Override

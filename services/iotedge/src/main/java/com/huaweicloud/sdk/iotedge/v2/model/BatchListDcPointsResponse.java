@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.CreateDcPointRespDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class BatchListDcPointsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
 
     private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="points")
-    
+    @JsonProperty(value = "points")
+
     private List<CreateDcPointRespDTO> points = null;
-    
+
     public BatchListDcPointsResponse withCount(Long count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数
@@ -63,22 +48,19 @@ public class BatchListDcPointsResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public BatchListDcPointsResponse withPageInfo(PageInfoDTO pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public BatchListDcPointsResponse withPageInfo(Consumer<PageInfoDTO> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDTO();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get pageInfo
@@ -92,16 +74,13 @@ public class BatchListDcPointsResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    
-
     public BatchListDcPointsResponse withPoints(List<CreateDcPointRespDTO> points) {
         this.points = points;
         return this;
     }
 
-    
     public BatchListDcPointsResponse addPointsItem(CreateDcPointRespDTO pointsItem) {
-        if(this.points == null) {
+        if (this.points == null) {
             this.points = new ArrayList<>();
         }
         this.points.add(pointsItem);
@@ -109,7 +88,7 @@ public class BatchListDcPointsResponse extends SdkResponse {
     }
 
     public BatchListDcPointsResponse withPoints(Consumer<List<CreateDcPointRespDTO>> pointsSetter) {
-        if(this.points == null) {
+        if (this.points == null) {
             this.points = new ArrayList<>();
         }
         pointsSetter.accept(this.points);
@@ -128,25 +107,24 @@ public class BatchListDcPointsResponse extends SdkResponse {
         this.points = points;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchListDcPointsResponse batchListDcPointsResponse = (BatchListDcPointsResponse) o;
-        return Objects.equals(this.count, batchListDcPointsResponse.count) &&
-            Objects.equals(this.pageInfo, batchListDcPointsResponse.pageInfo) &&
-            Objects.equals(this.points, batchListDcPointsResponse.points);
+        BatchListDcPointsResponse that = (BatchListDcPointsResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.points, that.points);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, pageInfo, points);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,6 +135,7 @@ public class BatchListDcPointsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -167,8 +146,5 @@ public class BatchListDcPointsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

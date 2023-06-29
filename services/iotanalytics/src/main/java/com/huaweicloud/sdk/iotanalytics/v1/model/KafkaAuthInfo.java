@@ -65,16 +65,16 @@ public class KafkaAuthInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaAuthInfo kafkaAuthInfo = (KafkaAuthInfo) o;
-        return Objects.equals(this.securityProtocol, kafkaAuthInfo.securityProtocol)
-            && Objects.equals(this.saslPlainAuthInfo, kafkaAuthInfo.saslPlainAuthInfo);
+        KafkaAuthInfo that = (KafkaAuthInfo) obj;
+        return Objects.equals(this.securityProtocol, that.securityProtocol)
+            && Objects.equals(this.saslPlainAuthInfo, that.saslPlainAuthInfo);
     }
 
     @Override

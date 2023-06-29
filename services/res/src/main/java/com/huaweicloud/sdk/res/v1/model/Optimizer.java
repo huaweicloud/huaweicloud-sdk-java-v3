@@ -66,22 +66,15 @@ public class Optimizer {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,19 +281,19 @@ public class Optimizer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Optimizer optimizer = (Optimizer) o;
-        return Objects.equals(this.type, optimizer.type) && Objects.equals(this.learningRate, optimizer.learningRate)
-            && Objects.equals(this.initialAccumulatorValue, optimizer.initialAccumulatorValue)
-            && Objects.equals(this.lambda1, optimizer.lambda1) && Objects.equals(this.lambda2, optimizer.lambda2)
-            && Objects.equals(this.epsilon, optimizer.epsilon) && Objects.equals(this.decayRate, optimizer.decayRate)
-            && Objects.equals(this.decaySteps, optimizer.decaySteps);
+        Optimizer that = (Optimizer) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.learningRate, that.learningRate)
+            && Objects.equals(this.initialAccumulatorValue, that.initialAccumulatorValue)
+            && Objects.equals(this.lambda1, that.lambda1) && Objects.equals(this.lambda2, that.lambda2)
+            && Objects.equals(this.epsilon, that.epsilon) && Objects.equals(this.decayRate, that.decayRate)
+            && Objects.equals(this.decaySteps, that.decaySteps);
     }
 
     @Override

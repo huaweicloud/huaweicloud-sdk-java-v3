@@ -74,22 +74,15 @@ public class MicroserviceImportReq {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServiceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServiceTypeEnum(value));
         }
 
         public static ServiceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServiceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -156,22 +149,15 @@ public class MicroserviceImportReq {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -254,22 +240,15 @@ public class MicroserviceImportReq {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new AuthTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthTypeEnum(value));
         }
 
         public static AuthTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            AuthTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -535,24 +514,19 @@ public class MicroserviceImportReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MicroserviceImportReq microserviceImportReq = (MicroserviceImportReq) o;
-        return Objects.equals(this.groupInfo, microserviceImportReq.groupInfo)
-            && Objects.equals(this.serviceType, microserviceImportReq.serviceType)
-            && Objects.equals(this.protocol, microserviceImportReq.protocol)
-            && Objects.equals(this.apis, microserviceImportReq.apis)
-            && Objects.equals(this.backendTimeout, microserviceImportReq.backendTimeout)
-            && Objects.equals(this.authType, microserviceImportReq.authType)
-            && Objects.equals(this.cors, microserviceImportReq.cors)
-            && Objects.equals(this.cseInfo, microserviceImportReq.cseInfo)
-            && Objects.equals(this.cceInfo, microserviceImportReq.cceInfo)
-            && Objects.equals(this.cceServiceInfo, microserviceImportReq.cceServiceInfo);
+        MicroserviceImportReq that = (MicroserviceImportReq) obj;
+        return Objects.equals(this.groupInfo, that.groupInfo) && Objects.equals(this.serviceType, that.serviceType)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.apis, that.apis)
+            && Objects.equals(this.backendTimeout, that.backendTimeout) && Objects.equals(this.authType, that.authType)
+            && Objects.equals(this.cors, that.cors) && Objects.equals(this.cseInfo, that.cseInfo)
+            && Objects.equals(this.cceInfo, that.cceInfo) && Objects.equals(this.cceServiceInfo, that.cceServiceInfo);
     }
 
     @Override

@@ -167,21 +167,18 @@ public class ListEnvironmentVariablesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnvironmentVariablesV2Request listEnvironmentVariablesV2Request = (ListEnvironmentVariablesV2Request) o;
-        return Objects.equals(this.instanceId, listEnvironmentVariablesV2Request.instanceId)
-            && Objects.equals(this.offset, listEnvironmentVariablesV2Request.offset)
-            && Objects.equals(this.limit, listEnvironmentVariablesV2Request.limit)
-            && Objects.equals(this.groupId, listEnvironmentVariablesV2Request.groupId)
-            && Objects.equals(this.envId, listEnvironmentVariablesV2Request.envId)
-            && Objects.equals(this.variableName, listEnvironmentVariablesV2Request.variableName)
-            && Objects.equals(this.preciseSearch, listEnvironmentVariablesV2Request.preciseSearch);
+        ListEnvironmentVariablesV2Request that = (ListEnvironmentVariablesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.envId, that.envId) && Objects.equals(this.variableName, that.variableName)
+            && Objects.equals(this.preciseSearch, that.preciseSearch);
     }
 
     @Override

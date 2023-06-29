@@ -75,16 +75,15 @@ public class ShowMonitoringDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMonitoringDataResponse showMonitoringDataResponse = (ShowMonitoringDataResponse) o;
-        return Objects.equals(this.results, showMonitoringDataResponse.results)
-            && Objects.equals(this.count, showMonitoringDataResponse.count);
+        ShowMonitoringDataResponse that = (ShowMonitoringDataResponse) obj;
+        return Objects.equals(this.results, that.results) && Objects.equals(this.count, that.count);
     }
 
     @Override

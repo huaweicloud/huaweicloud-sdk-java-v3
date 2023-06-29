@@ -43,15 +43,15 @@ public class DeleteServerGroupMemberRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteServerGroupMemberRequestBody deleteServerGroupMemberRequestBody = (DeleteServerGroupMemberRequestBody) o;
-        return Objects.equals(this.removeMember, deleteServerGroupMemberRequestBody.removeMember);
+        DeleteServerGroupMemberRequestBody that = (DeleteServerGroupMemberRequestBody) obj;
+        return Objects.equals(this.removeMember, that.removeMember);
     }
 
     @Override

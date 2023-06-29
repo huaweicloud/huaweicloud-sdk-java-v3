@@ -109,18 +109,16 @@ public class ResetDeviceSecretRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResetDeviceSecretRequest resetDeviceSecretRequest = (ResetDeviceSecretRequest) o;
-        return Objects.equals(this.instanceId, resetDeviceSecretRequest.instanceId)
-            && Objects.equals(this.deviceId, resetDeviceSecretRequest.deviceId)
-            && Objects.equals(this.actionId, resetDeviceSecretRequest.actionId)
-            && Objects.equals(this.body, resetDeviceSecretRequest.body);
+        ResetDeviceSecretRequest that = (ResetDeviceSecretRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.actionId, that.actionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

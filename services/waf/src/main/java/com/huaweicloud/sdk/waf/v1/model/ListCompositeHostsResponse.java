@@ -119,18 +119,16 @@ public class ListCompositeHostsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCompositeHostsResponse listCompositeHostsResponse = (ListCompositeHostsResponse) o;
-        return Objects.equals(this.total, listCompositeHostsResponse.total)
-            && Objects.equals(this.cloudTotal, listCompositeHostsResponse.cloudTotal)
-            && Objects.equals(this.premiumTotal, listCompositeHostsResponse.premiumTotal)
-            && Objects.equals(this.items, listCompositeHostsResponse.items);
+        ListCompositeHostsResponse that = (ListCompositeHostsResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.cloudTotal, that.cloudTotal)
+            && Objects.equals(this.premiumTotal, that.premiumTotal) && Objects.equals(this.items, that.items);
     }
 
     @Override

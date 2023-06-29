@@ -143,20 +143,18 @@ public class ActionSmnForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ActionSmnForwarding actionSmnForwarding = (ActionSmnForwarding) o;
-        return Objects.equals(this.regionName, actionSmnForwarding.regionName)
-            && Objects.equals(this.projectId, actionSmnForwarding.projectId)
-            && Objects.equals(this.themeName, actionSmnForwarding.themeName)
-            && Objects.equals(this.topicUrn, actionSmnForwarding.topicUrn)
-            && Objects.equals(this.messageContent, actionSmnForwarding.messageContent)
-            && Objects.equals(this.messageTitle, actionSmnForwarding.messageTitle);
+        ActionSmnForwarding that = (ActionSmnForwarding) obj;
+        return Objects.equals(this.regionName, that.regionName) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.themeName, that.themeName) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.messageContent, that.messageContent)
+            && Objects.equals(this.messageTitle, that.messageTitle);
     }
 
     @Override

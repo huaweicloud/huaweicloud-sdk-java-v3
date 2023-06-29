@@ -135,19 +135,17 @@ public class ListResourcesByTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListResourcesByTagsRequest listResourcesByTagsRequest = (ListResourcesByTagsRequest) o;
-        return Objects.equals(this.instanceId, listResourcesByTagsRequest.instanceId)
-            && Objects.equals(this.limit, listResourcesByTagsRequest.limit)
-            && Objects.equals(this.marker, listResourcesByTagsRequest.marker)
-            && Objects.equals(this.offset, listResourcesByTagsRequest.offset)
-            && Objects.equals(this.body, listResourcesByTagsRequest.body);
+        ListResourcesByTagsRequest that = (ListResourcesByTagsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

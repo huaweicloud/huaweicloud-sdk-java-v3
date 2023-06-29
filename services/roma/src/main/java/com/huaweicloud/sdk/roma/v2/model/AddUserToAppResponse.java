@@ -99,17 +99,16 @@ public class AddUserToAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddUserToAppResponse addUserToAppResponse = (AddUserToAppResponse) o;
-        return Objects.equals(this.total, addUserToAppResponse.total)
-            && Objects.equals(this.id, addUserToAppResponse.id)
-            && Objects.equals(this.users, addUserToAppResponse.users);
+        AddUserToAppResponse that = (AddUserToAppResponse) obj;
+        return Objects.equals(this.total, that.total) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.users, that.users);
     }
 
     @Override

@@ -231,22 +231,21 @@ public class JobCard {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        JobCard jobCard = (JobCard) o;
-        return Objects.equals(this.name, jobCard.name) && Objects.equals(this.jobId, jobCard.jobId)
-            && Objects.equals(this.isSend, jobCard.isSend) && Objects.equals(this.endTime, jobCard.endTime)
-            && Objects.equals(this.averageScore, jobCard.averageScore)
-            && Objects.equals(this.submitJobNum, jobCard.submitJobNum)
-            && Objects.equals(this.createStatus, jobCard.createStatus)
-            && Objects.equals(this.sendType, jobCard.sendType)
-            && Objects.equals(this.isScoreVisibility, jobCard.isScoreVisibility)
-            && Objects.equals(this.sendTime, jobCard.sendTime);
+        JobCard that = (JobCard) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.jobId, that.jobId)
+            && Objects.equals(this.isSend, that.isSend) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.averageScore, that.averageScore)
+            && Objects.equals(this.submitJobNum, that.submitJobNum)
+            && Objects.equals(this.createStatus, that.createStatus) && Objects.equals(this.sendType, that.sendType)
+            && Objects.equals(this.isScoreVisibility, that.isScoreVisibility)
+            && Objects.equals(this.sendTime, that.sendTime);
     }
 
     @Override

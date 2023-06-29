@@ -65,22 +65,15 @@ public class SecondMonitor {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IntervalEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IntervalEnum(value));
         }
 
         public static IntervalEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IntervalEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,15 @@ public class SecondMonitor {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecondMonitor secondMonitor = (SecondMonitor) o;
-        return Objects.equals(this.switchOption, secondMonitor.switchOption)
-            && Objects.equals(this.interval, secondMonitor.interval);
+        SecondMonitor that = (SecondMonitor) obj;
+        return Objects.equals(this.switchOption, that.switchOption) && Objects.equals(this.interval, that.interval);
     }
 
     @Override

@@ -144,20 +144,17 @@ public class ShowProjectTraceDataResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProjectTraceDataResponse showProjectTraceDataResponse = (ShowProjectTraceDataResponse) o;
-        return Objects.equals(this.path, showProjectTraceDataResponse.path)
-            && Objects.equals(this.name, showProjectTraceDataResponse.name)
-            && Objects.equals(this.type, showProjectTraceDataResponse.type)
-            && Objects.equals(this.size, showProjectTraceDataResponse.size)
-            && Objects.equals(this.createTime, showProjectTraceDataResponse.createTime)
-            && Objects.equals(this.downloadUrl, showProjectTraceDataResponse.downloadUrl);
+        ShowProjectTraceDataResponse that = (ShowProjectTraceDataResponse) obj;
+        return Objects.equals(this.path, that.path) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

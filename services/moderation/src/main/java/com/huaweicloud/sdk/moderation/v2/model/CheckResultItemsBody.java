@@ -193,21 +193,19 @@ public class CheckResultItemsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckResultItemsBody checkResultItemsBody = (CheckResultItemsBody) o;
-        return Objects.equals(this.url, checkResultItemsBody.url)
-            && Objects.equals(this.suggestion, checkResultItemsBody.suggestion)
-            && Objects.equals(this.detail, checkResultItemsBody.detail)
-            && Objects.equals(this.categorySuggestions, checkResultItemsBody.categorySuggestions)
-            && Objects.equals(this.ocrText, checkResultItemsBody.ocrText)
-            && Objects.equals(this.errorCode, checkResultItemsBody.errorCode)
-            && Objects.equals(this.errorMsg, checkResultItemsBody.errorMsg);
+        CheckResultItemsBody that = (CheckResultItemsBody) obj;
+        return Objects.equals(this.url, that.url) && Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.detail, that.detail)
+            && Objects.equals(this.categorySuggestions, that.categorySuggestions)
+            && Objects.equals(this.ocrText, that.ocrText) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.errorMsg, that.errorMsg);
     }
 
     @Override

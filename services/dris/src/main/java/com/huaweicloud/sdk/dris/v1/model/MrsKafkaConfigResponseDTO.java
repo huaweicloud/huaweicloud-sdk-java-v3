@@ -84,22 +84,15 @@ public class MrsKafkaConfigResponseDTO {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -305,22 +298,20 @@ public class MrsKafkaConfigResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MrsKafkaConfigResponseDTO mrsKafkaConfigResponseDTO = (MrsKafkaConfigResponseDTO) o;
-        return Objects.equals(this.kafkaConfigId, mrsKafkaConfigResponseDTO.kafkaConfigId)
-            && Objects.equals(this.kafkaTopics, mrsKafkaConfigResponseDTO.kafkaTopics)
-            && Objects.equals(this.brokers, mrsKafkaConfigResponseDTO.brokers)
-            && Objects.equals(this.username, mrsKafkaConfigResponseDTO.username)
-            && Objects.equals(this.status, mrsKafkaConfigResponseDTO.status)
-            && Objects.equals(this.authentication, mrsKafkaConfigResponseDTO.authentication)
-            && Objects.equals(this.createdTime, mrsKafkaConfigResponseDTO.createdTime)
-            && Objects.equals(this.lastModifiedTime, mrsKafkaConfigResponseDTO.lastModifiedTime);
+        MrsKafkaConfigResponseDTO that = (MrsKafkaConfigResponseDTO) obj;
+        return Objects.equals(this.kafkaConfigId, that.kafkaConfigId)
+            && Objects.equals(this.kafkaTopics, that.kafkaTopics) && Objects.equals(this.brokers, that.brokers)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.authentication, that.authentication)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.lastModifiedTime, that.lastModifiedTime);
     }
 
     @Override

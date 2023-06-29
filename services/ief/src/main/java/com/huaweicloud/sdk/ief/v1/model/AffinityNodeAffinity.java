@@ -92,18 +92,18 @@ public class AffinityNodeAffinity {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AffinityNodeAffinity affinityNodeAffinity = (AffinityNodeAffinity) o;
+        AffinityNodeAffinity that = (AffinityNodeAffinity) obj;
         return Objects.equals(this.preferredDuringSchedulingIgnoredDuringExecution,
-            affinityNodeAffinity.preferredDuringSchedulingIgnoredDuringExecution)
+            that.preferredDuringSchedulingIgnoredDuringExecution)
             && Objects.equals(this.requiredDuringSchedulingIgnoredDuringExecution,
-                affinityNodeAffinity.requiredDuringSchedulingIgnoredDuringExecution);
+                that.requiredDuringSchedulingIgnoredDuringExecution);
     }
 
     @Override

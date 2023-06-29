@@ -100,22 +100,15 @@ public class AlarmTemplatePolicies {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PeriodEnum(value));
         }
 
         public static PeriodEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -260,22 +253,15 @@ public class AlarmTemplatePolicies {
             if (value == null) {
                 return null;
             }
-            SuppressDurationEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SuppressDurationEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SuppressDurationEnum(value));
         }
 
         public static SuppressDurationEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            SuppressDurationEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -491,25 +477,21 @@ public class AlarmTemplatePolicies {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmTemplatePolicies alarmTemplatePolicies = (AlarmTemplatePolicies) o;
-        return Objects.equals(this.namespace, alarmTemplatePolicies.namespace)
-            && Objects.equals(this.dimensionName, alarmTemplatePolicies.dimensionName)
-            && Objects.equals(this.metricName, alarmTemplatePolicies.metricName)
-            && Objects.equals(this.period, alarmTemplatePolicies.period)
-            && Objects.equals(this.filter, alarmTemplatePolicies.filter)
-            && Objects.equals(this.comparisonOperator, alarmTemplatePolicies.comparisonOperator)
-            && Objects.equals(this.value, alarmTemplatePolicies.value)
-            && Objects.equals(this.unit, alarmTemplatePolicies.unit)
-            && Objects.equals(this.count, alarmTemplatePolicies.count)
-            && Objects.equals(this.alarmLevel, alarmTemplatePolicies.alarmLevel)
-            && Objects.equals(this.suppressDuration, alarmTemplatePolicies.suppressDuration);
+        AlarmTemplatePolicies that = (AlarmTemplatePolicies) obj;
+        return Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimensionName, that.dimensionName)
+            && Objects.equals(this.metricName, that.metricName) && Objects.equals(this.period, that.period)
+            && Objects.equals(this.filter, that.filter)
+            && Objects.equals(this.comparisonOperator, that.comparisonOperator)
+            && Objects.equals(this.value, that.value) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.alarmLevel, that.alarmLevel)
+            && Objects.equals(this.suppressDuration, that.suppressDuration);
     }
 
     @Override

@@ -74,16 +74,15 @@ public class OptionalFlavorsInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OptionalFlavorsInfo optionalFlavorsInfo = (OptionalFlavorsInfo) o;
-        return Objects.equals(this.list, optionalFlavorsInfo.list)
-            && Objects.equals(this.totalCount, optionalFlavorsInfo.totalCount);
+        OptionalFlavorsInfo that = (OptionalFlavorsInfo) obj;
+        return Objects.equals(this.list, that.list) && Objects.equals(this.totalCount, that.totalCount);
     }
 
     @Override

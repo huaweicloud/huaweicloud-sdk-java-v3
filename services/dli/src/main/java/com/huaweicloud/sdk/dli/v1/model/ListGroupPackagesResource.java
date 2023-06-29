@@ -165,21 +165,18 @@ public class ListGroupPackagesResource {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGroupPackagesResource listGroupPackagesResource = (ListGroupPackagesResource) o;
-        return Objects.equals(this.createTime, listGroupPackagesResource.createTime)
-            && Objects.equals(this.updateTime, listGroupPackagesResource.updateTime)
-            && Objects.equals(this.resourceType, listGroupPackagesResource.resourceType)
-            && Objects.equals(this.resourceName, listGroupPackagesResource.resourceName)
-            && Objects.equals(this.status, listGroupPackagesResource.status)
-            && Objects.equals(this.underlyingName, listGroupPackagesResource.underlyingName)
-            && Objects.equals(this.owner, listGroupPackagesResource.owner);
+        ListGroupPackagesResource that = (ListGroupPackagesResource) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.underlyingName, that.underlyingName) && Objects.equals(this.owner, that.owner);
     }
 
     @Override

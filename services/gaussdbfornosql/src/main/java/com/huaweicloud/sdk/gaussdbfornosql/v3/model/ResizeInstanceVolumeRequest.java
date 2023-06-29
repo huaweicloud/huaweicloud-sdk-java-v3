@@ -65,16 +65,15 @@ public class ResizeInstanceVolumeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeInstanceVolumeRequest resizeInstanceVolumeRequest = (ResizeInstanceVolumeRequest) o;
-        return Objects.equals(this.instanceId, resizeInstanceVolumeRequest.instanceId)
-            && Objects.equals(this.body, resizeInstanceVolumeRequest.body);
+        ResizeInstanceVolumeRequest that = (ResizeInstanceVolumeRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -81,17 +81,16 @@ public class DeleteDeviceFromGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDeviceFromGroupRequest deleteDeviceFromGroupRequest = (DeleteDeviceFromGroupRequest) o;
-        return Objects.equals(this.instanceId, deleteDeviceFromGroupRequest.instanceId)
-            && Objects.equals(this.deviceId, deleteDeviceFromGroupRequest.deviceId)
-            && Objects.equals(this.groupId, deleteDeviceFromGroupRequest.groupId);
+        DeleteDeviceFromGroupRequest that = (DeleteDeviceFromGroupRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.deviceId, that.deviceId)
+            && Objects.equals(this.groupId, that.groupId);
     }
 
     @Override

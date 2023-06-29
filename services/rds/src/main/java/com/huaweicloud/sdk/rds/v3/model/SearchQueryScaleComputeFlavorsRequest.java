@@ -101,19 +101,16 @@ public class SearchQueryScaleComputeFlavorsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SearchQueryScaleComputeFlavorsRequest searchQueryScaleComputeFlavorsRequest =
-            (SearchQueryScaleComputeFlavorsRequest) o;
-        return Objects.equals(this.xLanguage, searchQueryScaleComputeFlavorsRequest.xLanguage)
-            && Objects.equals(this.instanceId, searchQueryScaleComputeFlavorsRequest.instanceId)
-            && Objects.equals(this.offset, searchQueryScaleComputeFlavorsRequest.offset)
-            && Objects.equals(this.limit, searchQueryScaleComputeFlavorsRequest.limit);
+        SearchQueryScaleComputeFlavorsRequest that = (SearchQueryScaleComputeFlavorsRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

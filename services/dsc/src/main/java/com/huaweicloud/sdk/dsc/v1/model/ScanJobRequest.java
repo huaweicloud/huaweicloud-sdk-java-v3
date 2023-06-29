@@ -24,8 +24,8 @@ public class ScanJobRequest {
     private List<String> assetIds = null;
 
     /**
-    * 扫描周期，日(DAY)，周(WEEK)，月(MONTH)，单次扫描(ONCE)
-    */
+     * 扫描周期，日(DAY)，周(WEEK)，月(MONTH)，单次扫描(ONCE)
+     */
     public static final class CycleEnum {
 
         /**
@@ -80,22 +80,15 @@ public class ScanJobRequest {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CycleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CycleEnum(value));
         }
 
         public static CycleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CycleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -338,22 +331,19 @@ public class ScanJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ScanJobRequest scanJobRequest = (ScanJobRequest) o;
-        return Objects.equals(this.assetIds, scanJobRequest.assetIds)
-            && Objects.equals(this.cycle, scanJobRequest.cycle) && Objects.equals(this.name, scanJobRequest.name)
-            && Objects.equals(this.open, scanJobRequest.open)
-            && Objects.equals(this.ruleGroupIds, scanJobRequest.ruleGroupIds)
-            && Objects.equals(this.startTime, scanJobRequest.startTime)
-            && Objects.equals(this.timeZone, scanJobRequest.timeZone)
-            && Objects.equals(this.topicUrn, scanJobRequest.topicUrn)
-            && Objects.equals(this.useNlp, scanJobRequest.useNlp);
+        ScanJobRequest that = (ScanJobRequest) obj;
+        return Objects.equals(this.assetIds, that.assetIds) && Objects.equals(this.cycle, that.cycle)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.open, that.open)
+            && Objects.equals(this.ruleGroupIds, that.ruleGroupIds) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.timeZone, that.timeZone) && Objects.equals(this.topicUrn, that.topicUrn)
+            && Objects.equals(this.useNlp, that.useNlp);
     }
 
     @Override

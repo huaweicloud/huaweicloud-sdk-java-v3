@@ -205,19 +205,19 @@ public class GetAccessConfigListRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetAccessConfigListRequestBody getAccessConfigListRequestBody = (GetAccessConfigListRequestBody) o;
-        return Objects.equals(this.accessConfigNameList, getAccessConfigListRequestBody.accessConfigNameList)
-            && Objects.equals(this.hostGroupNameList, getAccessConfigListRequestBody.hostGroupNameList)
-            && Objects.equals(this.logGroupNameList, getAccessConfigListRequestBody.logGroupNameList)
-            && Objects.equals(this.logStreamNameList, getAccessConfigListRequestBody.logStreamNameList)
-            && Objects.equals(this.accessConfigTagList, getAccessConfigListRequestBody.accessConfigTagList);
+        GetAccessConfigListRequestBody that = (GetAccessConfigListRequestBody) obj;
+        return Objects.equals(this.accessConfigNameList, that.accessConfigNameList)
+            && Objects.equals(this.hostGroupNameList, that.hostGroupNameList)
+            && Objects.equals(this.logGroupNameList, that.logGroupNameList)
+            && Objects.equals(this.logStreamNameList, that.logStreamNameList)
+            && Objects.equals(this.accessConfigTagList, that.accessConfigTagList);
     }
 
     @Override

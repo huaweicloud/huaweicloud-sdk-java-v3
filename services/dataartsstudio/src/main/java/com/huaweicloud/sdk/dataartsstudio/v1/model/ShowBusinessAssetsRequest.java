@@ -65,16 +65,15 @@ public class ShowBusinessAssetsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBusinessAssetsRequest showBusinessAssetsRequest = (ShowBusinessAssetsRequest) o;
-        return Objects.equals(this.workspace, showBusinessAssetsRequest.workspace)
-            && Objects.equals(this.body, showBusinessAssetsRequest.body);
+        ShowBusinessAssetsRequest that = (ShowBusinessAssetsRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.body, that.body);
     }
 
     @Override

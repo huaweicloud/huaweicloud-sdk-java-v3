@@ -55,15 +55,15 @@ public class PageLink {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageLink pageLink = (PageLink) o;
-        return Objects.equals(this.href, pageLink.href) && Objects.equals(this.rel, pageLink.rel);
+        PageLink that = (PageLink) obj;
+        return Objects.equals(this.href, that.href) && Objects.equals(this.rel, that.rel);
     }
 
     @Override

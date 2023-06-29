@@ -1,17 +1,9 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
 
 /**
@@ -19,22 +11,18 @@ import java.util.Objects;
  */
 public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_name")
-    
+    @JsonProperty(value = "instance_name")
 
     private String instanceName;
 
@@ -42,9 +30,6 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 状态信息
@@ -58,15 +43,10 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         this.status = status;
     }
 
-    
-
     public UpdateGaussMySqlBackupPolicyResponse withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -80,15 +60,10 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         this.instanceId = instanceId;
     }
 
-    
-
     public UpdateGaussMySqlBackupPolicyResponse withInstanceName(String instanceName) {
         this.instanceName = instanceName;
         return this;
     }
-
-    
-
 
     /**
      * 实例名称
@@ -102,25 +77,24 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         this.instanceName = instanceName;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateGaussMySqlBackupPolicyResponse updateGaussMySqlBackupPolicyResponse = (UpdateGaussMySqlBackupPolicyResponse) o;
-        return Objects.equals(this.status, updateGaussMySqlBackupPolicyResponse.status) &&
-            Objects.equals(this.instanceId, updateGaussMySqlBackupPolicyResponse.instanceId) &&
-            Objects.equals(this.instanceName, updateGaussMySqlBackupPolicyResponse.instanceName);
+        UpdateGaussMySqlBackupPolicyResponse that = (UpdateGaussMySqlBackupPolicyResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(status, instanceId, instanceName);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -131,6 +105,7 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -141,8 +116,5 @@ public class UpdateGaussMySqlBackupPolicyResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

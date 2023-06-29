@@ -103,18 +103,17 @@ public class ListAppStatisticsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAppStatisticsRequest listAppStatisticsRequest = (ListAppStatisticsRequest) o;
-        return Objects.equals(this.appName, listAppStatisticsRequest.appName)
-            && Objects.equals(this.enterpriseProjectId, listAppStatisticsRequest.enterpriseProjectId)
-            && Objects.equals(this.limit, listAppStatisticsRequest.limit)
-            && Objects.equals(this.offset, listAppStatisticsRequest.offset);
+        ListAppStatisticsRequest that = (ListAppStatisticsRequest) obj;
+        return Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.offset, that.offset);
     }
 
     @Override

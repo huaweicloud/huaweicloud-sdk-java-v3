@@ -65,16 +65,15 @@ public class StartLogAutoBackupPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartLogAutoBackupPolicyRequest startLogAutoBackupPolicyRequest = (StartLogAutoBackupPolicyRequest) o;
-        return Objects.equals(this.clusterId, startLogAutoBackupPolicyRequest.clusterId)
-            && Objects.equals(this.body, startLogAutoBackupPolicyRequest.body);
+        StartLogAutoBackupPolicyRequest that = (StartLogAutoBackupPolicyRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.body, that.body);
     }
 
     @Override

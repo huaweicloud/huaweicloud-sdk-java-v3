@@ -145,21 +145,17 @@ public class ListSpecialThrottlingConfigurationsV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSpecialThrottlingConfigurationsV2Request listSpecialThrottlingConfigurationsV2Request =
-            (ListSpecialThrottlingConfigurationsV2Request) o;
-        return Objects.equals(this.instanceId, listSpecialThrottlingConfigurationsV2Request.instanceId)
-            && Objects.equals(this.throttleId, listSpecialThrottlingConfigurationsV2Request.throttleId)
-            && Objects.equals(this.offset, listSpecialThrottlingConfigurationsV2Request.offset)
-            && Objects.equals(this.limit, listSpecialThrottlingConfigurationsV2Request.limit)
-            && Objects.equals(this.objectType, listSpecialThrottlingConfigurationsV2Request.objectType)
-            && Objects.equals(this.appName, listSpecialThrottlingConfigurationsV2Request.appName);
+        ListSpecialThrottlingConfigurationsV2Request that = (ListSpecialThrottlingConfigurationsV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.throttleId, that.throttleId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.objectType, that.objectType) && Objects.equals(this.appName, that.appName);
     }
 
     @Override

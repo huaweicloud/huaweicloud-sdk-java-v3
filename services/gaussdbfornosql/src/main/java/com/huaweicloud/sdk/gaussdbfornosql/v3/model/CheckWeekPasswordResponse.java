@@ -34,15 +34,15 @@ public class CheckWeekPasswordResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckWeekPasswordResponse checkWeekPasswordResponse = (CheckWeekPasswordResponse) o;
-        return Objects.equals(this.weak, checkWeekPasswordResponse.weak);
+        CheckWeekPasswordResponse that = (CheckWeekPasswordResponse) obj;
+        return Objects.equals(this.weak, that.weak);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class ErrorCount {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ErrorCount errorCount = (ErrorCount) o;
-        return Objects.equals(this.empty, errorCount.empty);
+        ErrorCount that = (ErrorCount) obj;
+        return Objects.equals(this.empty, that.empty);
     }
 
     @Override

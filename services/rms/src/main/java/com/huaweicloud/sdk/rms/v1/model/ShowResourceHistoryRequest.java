@@ -85,22 +85,15 @@ public class ShowResourceHistoryRequest {
             if (value == null) {
                 return null;
             }
-            ChronologicalOrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ChronologicalOrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ChronologicalOrderEnum(value));
         }
 
         public static ChronologicalOrderEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ChronologicalOrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -227,20 +220,18 @@ public class ShowResourceHistoryRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceHistoryRequest showResourceHistoryRequest = (ShowResourceHistoryRequest) o;
-        return Objects.equals(this.resourceId, showResourceHistoryRequest.resourceId)
-            && Objects.equals(this.marker, showResourceHistoryRequest.marker)
-            && Objects.equals(this.limit, showResourceHistoryRequest.limit)
-            && Objects.equals(this.earlierTime, showResourceHistoryRequest.earlierTime)
-            && Objects.equals(this.laterTime, showResourceHistoryRequest.laterTime)
-            && Objects.equals(this.chronologicalOrder, showResourceHistoryRequest.chronologicalOrder);
+        ShowResourceHistoryRequest that = (ShowResourceHistoryRequest) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.earlierTime, that.earlierTime)
+            && Objects.equals(this.laterTime, that.laterTime)
+            && Objects.equals(this.chronologicalOrder, that.chronologicalOrder);
     }
 
     @Override

@@ -121,19 +121,19 @@ public class MigrateNodeExtendParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MigrateNodeExtendParam migrateNodeExtendParam = (MigrateNodeExtendParam) o;
-        return Objects.equals(this.maxPods, migrateNodeExtendParam.maxPods)
-            && Objects.equals(this.dockerLVMConfigOverride, migrateNodeExtendParam.dockerLVMConfigOverride)
-            && Objects.equals(this.alphaCcePreInstall, migrateNodeExtendParam.alphaCcePreInstall)
-            && Objects.equals(this.alphaCcePostInstall, migrateNodeExtendParam.alphaCcePostInstall)
-            && Objects.equals(this.alphaCceNodeImageID, migrateNodeExtendParam.alphaCceNodeImageID);
+        MigrateNodeExtendParam that = (MigrateNodeExtendParam) obj;
+        return Objects.equals(this.maxPods, that.maxPods)
+            && Objects.equals(this.dockerLVMConfigOverride, that.dockerLVMConfigOverride)
+            && Objects.equals(this.alphaCcePreInstall, that.alphaCcePreInstall)
+            && Objects.equals(this.alphaCcePostInstall, that.alphaCcePostInstall)
+            && Objects.equals(this.alphaCceNodeImageID, that.alphaCceNodeImageID);
     }
 
     @Override

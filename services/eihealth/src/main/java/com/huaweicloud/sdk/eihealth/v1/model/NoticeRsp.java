@@ -121,17 +121,17 @@ public class NoticeRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NoticeRsp noticeRsp = (NoticeRsp) o;
-        return Objects.equals(this.id, noticeRsp.id) && Objects.equals(this.type, noticeRsp.type)
-            && Objects.equals(this.detail, noticeRsp.detail) && Objects.equals(this.createTime, noticeRsp.createTime)
-            && Objects.equals(this.isRead, noticeRsp.isRead);
+        NoticeRsp that = (NoticeRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.detail, that.detail) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.isRead, that.isRead);
     }
 
     @Override

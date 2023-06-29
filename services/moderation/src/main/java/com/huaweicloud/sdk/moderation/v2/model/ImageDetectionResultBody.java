@@ -127,18 +127,17 @@ public class ImageDetectionResultBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageDetectionResultBody imageDetectionResultBody = (ImageDetectionResultBody) o;
-        return Objects.equals(this.detail, imageDetectionResultBody.detail)
-            && Objects.equals(this.suggestion, imageDetectionResultBody.suggestion)
-            && Objects.equals(this.categorySuggestions, imageDetectionResultBody.categorySuggestions)
-            && Objects.equals(this.ocrText, imageDetectionResultBody.ocrText);
+        ImageDetectionResultBody that = (ImageDetectionResultBody) obj;
+        return Objects.equals(this.detail, that.detail) && Objects.equals(this.suggestion, that.suggestion)
+            && Objects.equals(this.categorySuggestions, that.categorySuggestions)
+            && Objects.equals(this.ocrText, that.ocrText);
     }
 
     @Override

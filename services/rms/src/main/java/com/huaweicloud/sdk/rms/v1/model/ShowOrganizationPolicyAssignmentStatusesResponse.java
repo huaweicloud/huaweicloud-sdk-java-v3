@@ -87,17 +87,15 @@ public class ShowOrganizationPolicyAssignmentStatusesResponse extends SdkRespons
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowOrganizationPolicyAssignmentStatusesResponse showOrganizationPolicyAssignmentStatusesResponse =
-            (ShowOrganizationPolicyAssignmentStatusesResponse) o;
-        return Objects.equals(this.value, showOrganizationPolicyAssignmentStatusesResponse.value)
-            && Objects.equals(this.pageInfo, showOrganizationPolicyAssignmentStatusesResponse.pageInfo);
+        ShowOrganizationPolicyAssignmentStatusesResponse that = (ShowOrganizationPolicyAssignmentStatusesResponse) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

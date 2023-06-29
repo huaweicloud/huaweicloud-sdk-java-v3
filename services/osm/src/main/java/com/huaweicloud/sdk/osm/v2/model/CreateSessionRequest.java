@@ -83,17 +83,16 @@ public class CreateSessionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSessionRequest createSessionRequest = (CreateSessionRequest) o;
-        return Objects.equals(this.xServiceKey, createSessionRequest.xServiceKey)
-            && Objects.equals(this.xSite, createSessionRequest.xSite)
-            && Objects.equals(this.xLanguage, createSessionRequest.xLanguage);
+        CreateSessionRequest that = (CreateSessionRequest) obj;
+        return Objects.equals(this.xServiceKey, that.xServiceKey) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage);
     }
 
     @Override

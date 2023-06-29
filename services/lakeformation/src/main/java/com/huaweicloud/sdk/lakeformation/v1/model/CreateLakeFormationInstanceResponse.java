@@ -314,27 +314,21 @@ public class CreateLakeFormationInstanceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateLakeFormationInstanceResponse createLakeFormationInstanceResponse =
-            (CreateLakeFormationInstanceResponse) o;
-        return Objects.equals(this.instanceId, createLakeFormationInstanceResponse.instanceId)
-            && Objects.equals(this.name, createLakeFormationInstanceResponse.name)
-            && Objects.equals(this.description, createLakeFormationInstanceResponse.description)
-            && Objects.equals(this.enterpriseProjectId, createLakeFormationInstanceResponse.enterpriseProjectId)
-            && Objects.equals(this.shared, createLakeFormationInstanceResponse.shared)
-            && Objects.equals(this.createTime, createLakeFormationInstanceResponse.createTime)
-            && Objects.equals(this.updateTime, createLakeFormationInstanceResponse.updateTime)
-            && Objects.equals(this.status, createLakeFormationInstanceResponse.status)
-            && Objects.equals(this.inRecycleBin, createLakeFormationInstanceResponse.inRecycleBin)
-            && Objects.equals(this.tags, createLakeFormationInstanceResponse.tags)
-            && Objects.equals(this.specs, createLakeFormationInstanceResponse.specs)
-            && Objects.equals(this.xRequestId, createLakeFormationInstanceResponse.xRequestId);
+        CreateLakeFormationInstanceResponse that = (CreateLakeFormationInstanceResponse) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.shared, that.shared) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.inRecycleBin, that.inRecycleBin) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.specs, that.specs) && Objects.equals(this.xRequestId, that.xRequestId);
     }
 
     @Override

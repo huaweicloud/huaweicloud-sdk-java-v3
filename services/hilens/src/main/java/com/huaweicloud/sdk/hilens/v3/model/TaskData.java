@@ -136,17 +136,17 @@ public class TaskData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TaskData taskData = (TaskData) o;
-        return Objects.equals(this.streams, taskData.streams) && Objects.equals(this.taskId, taskData.taskId)
-            && Objects.equals(this.startTimeInfo, taskData.startTimeInfo)
-            && Objects.equals(this.sourceUsageEstimate, taskData.sourceUsageEstimate);
+        TaskData that = (TaskData) obj;
+        return Objects.equals(this.streams, that.streams) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.startTimeInfo, that.startTimeInfo)
+            && Objects.equals(this.sourceUsageEstimate, that.sourceUsageEstimate);
     }
 
     @Override

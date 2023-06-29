@@ -1,25 +1,18 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.ItemsResponse;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
@@ -31,17 +24,15 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
      */
     public static final class CurrencyEnum {
 
-        
         /**
          * Enum CNY for value: "CNY"
          */
         public static final CurrencyEnum CNY = new CurrencyEnum("CNY");
-        
+
         /**
          * Enum USD for value: "USD"
          */
         public static final CurrencyEnum USD = new CurrencyEnum("USD");
-        
 
         private static final Map<String, CurrencyEnum> STATIC_FIELDS = createStaticFields();
 
@@ -70,25 +61,18 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
 
         @JsonCreator
         public static CurrencyEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            CurrencyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CurrencyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CurrencyEnum(value));
         }
 
         public static CurrencyEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            CurrencyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -106,23 +90,19 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="currency")
-    
+    @JsonProperty(value = "currency")
 
     private CurrencyEnum currency;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="items")
-    
+    @JsonProperty(value = "items")
+
     private List<ItemsResponse> items = null;
-    
+
     public EstimateExecutionPlanPriceResponse withCurrency(CurrencyEnum currency) {
         this.currency = currency;
         return this;
     }
-
-    
-
 
     /**
      * 币种，枚举值   * `CNY` - 元，中国站返回的币种   * `USD` - 美元，国际站返回的币种 
@@ -136,16 +116,13 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
         this.currency = currency;
     }
 
-    
-
     public EstimateExecutionPlanPriceResponse withItems(List<ItemsResponse> items) {
         this.items = items;
         return this;
     }
 
-    
     public EstimateExecutionPlanPriceResponse addItemsItem(ItemsResponse itemsItem) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         this.items.add(itemsItem);
@@ -153,7 +130,7 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
     }
 
     public EstimateExecutionPlanPriceResponse withItems(Consumer<List<ItemsResponse>> itemsSetter) {
-        if(this.items == null) {
+        if (this.items == null) {
             this.items = new ArrayList<>();
         }
         itemsSetter.accept(this.items);
@@ -172,24 +149,23 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
         this.items = items;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EstimateExecutionPlanPriceResponse estimateExecutionPlanPriceResponse = (EstimateExecutionPlanPriceResponse) o;
-        return Objects.equals(this.currency, estimateExecutionPlanPriceResponse.currency) &&
-            Objects.equals(this.items, estimateExecutionPlanPriceResponse.items);
+        EstimateExecutionPlanPriceResponse that = (EstimateExecutionPlanPriceResponse) obj;
+        return Objects.equals(this.currency, that.currency) && Objects.equals(this.items, that.items);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(currency, items);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -199,6 +175,7 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -209,8 +186,5 @@ public class EstimateExecutionPlanPriceResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

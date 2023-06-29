@@ -143,20 +143,18 @@ public class BtrfsSubvolumn {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BtrfsSubvolumn btrfsSubvolumn = (BtrfsSubvolumn) o;
-        return Objects.equals(this.uuid, btrfsSubvolumn.uuid)
-            && Objects.equals(this.isSnapshot, btrfsSubvolumn.isSnapshot)
-            && Objects.equals(this.subvolId, btrfsSubvolumn.subvolId)
-            && Objects.equals(this.parentId, btrfsSubvolumn.parentId)
-            && Objects.equals(this.subvolName, btrfsSubvolumn.subvolName)
-            && Objects.equals(this.subvolMountPath, btrfsSubvolumn.subvolMountPath);
+        BtrfsSubvolumn that = (BtrfsSubvolumn) obj;
+        return Objects.equals(this.uuid, that.uuid) && Objects.equals(this.isSnapshot, that.isSnapshot)
+            && Objects.equals(this.subvolId, that.subvolId) && Objects.equals(this.parentId, that.parentId)
+            && Objects.equals(this.subvolName, that.subvolName)
+            && Objects.equals(this.subvolMountPath, that.subvolMountPath);
     }
 
     @Override

@@ -120,18 +120,16 @@ public class ListEnhancedConnectionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnhancedConnectionsResponse listEnhancedConnectionsResponse = (ListEnhancedConnectionsResponse) o;
-        return Objects.equals(this.isSuccess, listEnhancedConnectionsResponse.isSuccess)
-            && Objects.equals(this.message, listEnhancedConnectionsResponse.message)
-            && Objects.equals(this.connections, listEnhancedConnectionsResponse.connections)
-            && Objects.equals(this.count, listEnhancedConnectionsResponse.count);
+        ListEnhancedConnectionsResponse that = (ListEnhancedConnectionsResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.connections, that.connections) && Objects.equals(this.count, that.count);
     }
 
     @Override

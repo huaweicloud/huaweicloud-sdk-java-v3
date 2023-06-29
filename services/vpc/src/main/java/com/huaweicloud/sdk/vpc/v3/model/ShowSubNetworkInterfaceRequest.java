@@ -33,15 +33,15 @@ public class ShowSubNetworkInterfaceRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSubNetworkInterfaceRequest showSubNetworkInterfaceRequest = (ShowSubNetworkInterfaceRequest) o;
-        return Objects.equals(this.subNetworkInterfaceId, showSubNetworkInterfaceRequest.subNetworkInterfaceId);
+        ShowSubNetworkInterfaceRequest that = (ShowSubNetworkInterfaceRequest) obj;
+        return Objects.equals(this.subNetworkInterfaceId, that.subNetworkInterfaceId);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class UpdateSnapshotSettingReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSnapshotSettingReq updateSnapshotSettingReq = (UpdateSnapshotSettingReq) o;
-        return Objects.equals(this.bucket, updateSnapshotSettingReq.bucket)
-            && Objects.equals(this.agency, updateSnapshotSettingReq.agency)
-            && Objects.equals(this.basePath, updateSnapshotSettingReq.basePath);
+        UpdateSnapshotSettingReq that = (UpdateSnapshotSettingReq) obj;
+        return Objects.equals(this.bucket, that.bucket) && Objects.equals(this.agency, that.agency)
+            && Objects.equals(this.basePath, that.basePath);
     }
 
     @Override

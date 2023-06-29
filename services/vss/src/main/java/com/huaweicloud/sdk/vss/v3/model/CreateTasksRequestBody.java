@@ -71,22 +71,15 @@ public class CreateTasksRequestBody {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -175,22 +168,15 @@ public class CreateTasksRequestBody {
             if (value == null) {
                 return null;
             }
-            TaskPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskPeriodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskPeriodEnum(value));
         }
 
         public static TaskPeriodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskPeriodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -346,21 +332,18 @@ public class CreateTasksRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTasksRequestBody createTasksRequestBody = (CreateTasksRequestBody) o;
-        return Objects.equals(this.taskName, createTasksRequestBody.taskName)
-            && Objects.equals(this.url, createTasksRequestBody.url)
-            && Objects.equals(this.taskType, createTasksRequestBody.taskType)
-            && Objects.equals(this.timer, createTasksRequestBody.timer)
-            && Objects.equals(this.triggerTime, createTasksRequestBody.triggerTime)
-            && Objects.equals(this.taskPeriod, createTasksRequestBody.taskPeriod)
-            && Objects.equals(this.taskConfig, createTasksRequestBody.taskConfig);
+        CreateTasksRequestBody that = (CreateTasksRequestBody) obj;
+        return Objects.equals(this.taskName, that.taskName) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.timer, that.timer)
+            && Objects.equals(this.triggerTime, that.triggerTime) && Objects.equals(this.taskPeriod, that.taskPeriod)
+            && Objects.equals(this.taskConfig, that.taskConfig);
     }
 
     @Override

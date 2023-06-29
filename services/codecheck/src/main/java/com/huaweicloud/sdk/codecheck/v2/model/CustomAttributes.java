@@ -74,16 +74,15 @@ public class CustomAttributes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomAttributes customAttributes = (CustomAttributes) o;
-        return Objects.equals(this.attribute, customAttributes.attribute)
-            && Objects.equals(this.rules, customAttributes.rules);
+        CustomAttributes that = (CustomAttributes) obj;
+        return Objects.equals(this.attribute, that.attribute) && Objects.equals(this.rules, that.rules);
     }
 
     @Override

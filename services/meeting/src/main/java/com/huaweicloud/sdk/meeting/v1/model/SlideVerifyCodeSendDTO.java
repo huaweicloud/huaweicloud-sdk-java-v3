@@ -79,17 +79,16 @@ public class SlideVerifyCodeSendDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SlideVerifyCodeSendDTO slideVerifyCodeSendDTO = (SlideVerifyCodeSendDTO) o;
-        return Objects.equals(this.user, slideVerifyCodeSendDTO.user)
-            && Objects.equals(this.clientType, slideVerifyCodeSendDTO.clientType)
-            && Objects.equals(this.checkType, slideVerifyCodeSendDTO.checkType);
+        SlideVerifyCodeSendDTO that = (SlideVerifyCodeSendDTO) obj;
+        return Objects.equals(this.user, that.user) && Objects.equals(this.clientType, that.clientType)
+            && Objects.equals(this.checkType, that.checkType);
     }
 
     @Override

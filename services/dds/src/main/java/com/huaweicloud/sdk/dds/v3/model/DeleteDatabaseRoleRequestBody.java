@@ -55,16 +55,15 @@ public class DeleteDatabaseRoleRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabaseRoleRequestBody deleteDatabaseRoleRequestBody = (DeleteDatabaseRoleRequestBody) o;
-        return Objects.equals(this.roleName, deleteDatabaseRoleRequestBody.roleName)
-            && Objects.equals(this.dbName, deleteDatabaseRoleRequestBody.dbName);
+        DeleteDatabaseRoleRequestBody that = (DeleteDatabaseRoleRequestBody) obj;
+        return Objects.equals(this.roleName, that.roleName) && Objects.equals(this.dbName, that.dbName);
     }
 
     @Override

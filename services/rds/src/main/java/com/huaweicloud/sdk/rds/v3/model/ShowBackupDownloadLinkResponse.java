@@ -75,16 +75,15 @@ public class ShowBackupDownloadLinkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBackupDownloadLinkResponse showBackupDownloadLinkResponse = (ShowBackupDownloadLinkResponse) o;
-        return Objects.equals(this.files, showBackupDownloadLinkResponse.files)
-            && Objects.equals(this.bucket, showBackupDownloadLinkResponse.bucket);
+        ShowBackupDownloadLinkResponse that = (ShowBackupDownloadLinkResponse) obj;
+        return Objects.equals(this.files, that.files) && Objects.equals(this.bucket, that.bucket);
     }
 
     @Override

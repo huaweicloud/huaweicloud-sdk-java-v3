@@ -178,7 +178,7 @@ public class ListRecordSetsByZoneRequest {
     }
 
     /**
-     * 待查询的Record Set的状态。  取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
+     * 待查询的Record Set的状态。 取值范围：ACTIVE、ERROR、DISABLE、FREEZE、PENDING_CREATE、PENDING_UPDATE、PENDING_DELETE
      * @return status
      */
     public String getStatus() {
@@ -275,26 +275,20 @@ public class ListRecordSetsByZoneRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordSetsByZoneRequest listRecordSetsByZoneRequest = (ListRecordSetsByZoneRequest) o;
-        return Objects.equals(this.zoneId, listRecordSetsByZoneRequest.zoneId)
-            && Objects.equals(this.searchMode, listRecordSetsByZoneRequest.searchMode)
-            && Objects.equals(this.marker, listRecordSetsByZoneRequest.marker)
-            && Objects.equals(this.limit, listRecordSetsByZoneRequest.limit)
-            && Objects.equals(this.offset, listRecordSetsByZoneRequest.offset)
-            && Objects.equals(this.tags, listRecordSetsByZoneRequest.tags)
-            && Objects.equals(this.status, listRecordSetsByZoneRequest.status)
-            && Objects.equals(this.type, listRecordSetsByZoneRequest.type)
-            && Objects.equals(this.name, listRecordSetsByZoneRequest.name)
-            && Objects.equals(this.id, listRecordSetsByZoneRequest.id)
-            && Objects.equals(this.sortKey, listRecordSetsByZoneRequest.sortKey)
-            && Objects.equals(this.sortDir, listRecordSetsByZoneRequest.sortDir);
+        ListRecordSetsByZoneRequest that = (ListRecordSetsByZoneRequest) obj;
+        return Objects.equals(this.zoneId, that.zoneId) && Objects.equals(this.searchMode, that.searchMode)
+            && Objects.equals(this.marker, that.marker) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.sortKey, that.sortKey) && Objects.equals(this.sortDir, that.sortDir);
     }
 
     @Override

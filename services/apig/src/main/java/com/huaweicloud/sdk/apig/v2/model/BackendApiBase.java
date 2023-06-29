@@ -71,22 +71,15 @@ public class BackendApiBase {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqProtocolEnum(value));
         }
 
         public static ReqProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,22 +187,15 @@ public class BackendApiBase {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ReqMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ReqMethodEnum(value));
         }
 
         public static ReqMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ReqMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -516,27 +502,22 @@ public class BackendApiBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackendApiBase backendApiBase = (BackendApiBase) o;
-        return Objects.equals(this.authorizerId, backendApiBase.authorizerId)
-            && Objects.equals(this.urlDomain, backendApiBase.urlDomain)
-            && Objects.equals(this.reqProtocol, backendApiBase.reqProtocol)
-            && Objects.equals(this.remark, backendApiBase.remark)
-            && Objects.equals(this.reqMethod, backendApiBase.reqMethod)
-            && Objects.equals(this.version, backendApiBase.version)
-            && Objects.equals(this.reqUri, backendApiBase.reqUri)
-            && Objects.equals(this.timeout, backendApiBase.timeout)
-            && Objects.equals(this.enableClientSsl, backendApiBase.enableClientSsl)
-            && Objects.equals(this.retryCount, backendApiBase.retryCount) && Objects.equals(this.id, backendApiBase.id)
-            && Objects.equals(this.status, backendApiBase.status)
-            && Objects.equals(this.registerTime, backendApiBase.registerTime)
-            && Objects.equals(this.updateTime, backendApiBase.updateTime);
+        BackendApiBase that = (BackendApiBase) obj;
+        return Objects.equals(this.authorizerId, that.authorizerId) && Objects.equals(this.urlDomain, that.urlDomain)
+            && Objects.equals(this.reqProtocol, that.reqProtocol) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.reqMethod, that.reqMethod) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.reqUri, that.reqUri) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.enableClientSsl, that.enableClientSsl)
+            && Objects.equals(this.retryCount, that.retryCount) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.registerTime, that.registerTime)
+            && Objects.equals(this.updateTime, that.updateTime);
     }
 
     @Override

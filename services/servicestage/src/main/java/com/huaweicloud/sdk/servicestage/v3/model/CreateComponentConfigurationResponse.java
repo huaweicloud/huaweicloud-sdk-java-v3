@@ -141,20 +141,17 @@ public class CreateComponentConfigurationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateComponentConfigurationResponse createComponentConfigurationResponse =
-            (CreateComponentConfigurationResponse) o;
-        return Objects.equals(this.version, createComponentConfigurationResponse.version)
-            && Objects.equals(this.createTime, createComponentConfigurationResponse.createTime)
-            && Objects.equals(this.creator, createComponentConfigurationResponse.creator)
-            && Objects.equals(this.source, createComponentConfigurationResponse.source)
-            && Objects.equals(this.envs, createComponentConfigurationResponse.envs);
+        CreateComponentConfigurationResponse that = (CreateComponentConfigurationResponse) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.envs, that.envs);
     }
 
     @Override

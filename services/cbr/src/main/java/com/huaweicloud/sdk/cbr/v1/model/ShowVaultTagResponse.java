@@ -91,16 +91,15 @@ public class ShowVaultTagResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowVaultTagResponse showVaultTagResponse = (ShowVaultTagResponse) o;
-        return Objects.equals(this.tags, showVaultTagResponse.tags)
-            && Objects.equals(this.sysTags, showVaultTagResponse.sysTags);
+        ShowVaultTagResponse that = (ShowVaultTagResponse) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

@@ -179,20 +179,17 @@ public class ListEnterpriseResourceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEnterpriseResourceRequestBody listEnterpriseResourceRequestBody = (ListEnterpriseResourceRequestBody) o;
-        return Objects.equals(this.withoutAnyTag, listEnterpriseResourceRequestBody.withoutAnyTag)
-            && Objects.equals(this.limit, listEnterpriseResourceRequestBody.limit)
-            && Objects.equals(this.offset, listEnterpriseResourceRequestBody.offset)
-            && Objects.equals(this.action, listEnterpriseResourceRequestBody.action)
-            && Objects.equals(this.matches, listEnterpriseResourceRequestBody.matches)
-            && Objects.equals(this.sysTags, listEnterpriseResourceRequestBody.sysTags);
+        ListEnterpriseResourceRequestBody that = (ListEnterpriseResourceRequestBody) obj;
+        return Objects.equals(this.withoutAnyTag, that.withoutAnyTag) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.matches, that.matches) && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

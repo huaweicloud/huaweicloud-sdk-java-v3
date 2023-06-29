@@ -70,22 +70,15 @@ public class Firewall {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -326,22 +319,21 @@ public class Firewall {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Firewall firewall = (Firewall) o;
-        return Objects.equals(this.id, firewall.id) && Objects.equals(this.name, firewall.name)
-            && Objects.equals(this.adminStateUp, firewall.adminStateUp) && Objects.equals(this.status, firewall.status)
-            && Objects.equals(this.description, firewall.description)
-            && Objects.equals(this.domainId, firewall.domainId)
-            && Objects.equals(this.egressFirewallPolicy, firewall.egressFirewallPolicy)
-            && Objects.equals(this.egressFirewallRuleCount, firewall.egressFirewallRuleCount)
-            && Objects.equals(this.ingressFirewallPolicy, firewall.ingressFirewallPolicy)
-            && Objects.equals(this.ingressFirewallRuleCount, firewall.ingressFirewallRuleCount);
+        Firewall that = (Firewall) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.adminStateUp, that.adminStateUp) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.egressFirewallPolicy, that.egressFirewallPolicy)
+            && Objects.equals(this.egressFirewallRuleCount, that.egressFirewallRuleCount)
+            && Objects.equals(this.ingressFirewallPolicy, that.ingressFirewallPolicy)
+            && Objects.equals(this.ingressFirewallRuleCount, that.ingressFirewallRuleCount);
     }
 
     @Override

@@ -34,16 +34,15 @@ public class ListGlobalWorkflowStatisticResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGlobalWorkflowStatisticResponse listGlobalWorkflowStatisticResponse =
-            (ListGlobalWorkflowStatisticResponse) o;
-        return Objects.equals(this.jobCount, listGlobalWorkflowStatisticResponse.jobCount);
+        ListGlobalWorkflowStatisticResponse that = (ListGlobalWorkflowStatisticResponse) obj;
+        return Objects.equals(this.jobCount, that.jobCount);
     }
 
     @Override

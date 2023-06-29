@@ -65,16 +65,15 @@ public class ExportImageRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExportImageRequest exportImageRequest = (ExportImageRequest) o;
-        return Objects.equals(this.imageId, exportImageRequest.imageId)
-            && Objects.equals(this.body, exportImageRequest.body);
+        ExportImageRequest that = (ExportImageRequest) obj;
+        return Objects.equals(this.imageId, that.imageId) && Objects.equals(this.body, that.body);
     }
 
     @Override

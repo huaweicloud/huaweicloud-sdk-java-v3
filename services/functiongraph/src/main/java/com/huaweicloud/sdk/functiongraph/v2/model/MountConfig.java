@@ -83,16 +83,15 @@ public class MountConfig {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MountConfig mountConfig = (MountConfig) o;
-        return Objects.equals(this.mountUser, mountConfig.mountUser)
-            && Objects.equals(this.funcMounts, mountConfig.funcMounts);
+        MountConfig that = (MountConfig) obj;
+        return Objects.equals(this.mountUser, that.mountUser) && Objects.equals(this.funcMounts, that.funcMounts);
     }
 
     @Override

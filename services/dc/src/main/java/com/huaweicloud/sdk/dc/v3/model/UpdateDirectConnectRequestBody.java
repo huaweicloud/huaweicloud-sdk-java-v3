@@ -43,15 +43,15 @@ public class UpdateDirectConnectRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDirectConnectRequestBody updateDirectConnectRequestBody = (UpdateDirectConnectRequestBody) o;
-        return Objects.equals(this.directConnect, updateDirectConnectRequestBody.directConnect);
+        UpdateDirectConnectRequestBody that = (UpdateDirectConnectRequestBody) obj;
+        return Objects.equals(this.directConnect, that.directConnect);
     }
 
     @Override

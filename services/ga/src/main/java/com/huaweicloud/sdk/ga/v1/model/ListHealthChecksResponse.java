@@ -106,17 +106,16 @@ public class ListHealthChecksResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHealthChecksResponse listHealthChecksResponse = (ListHealthChecksResponse) o;
-        return Objects.equals(this.healthChecks, listHealthChecksResponse.healthChecks)
-            && Objects.equals(this.pageInfo, listHealthChecksResponse.pageInfo)
-            && Objects.equals(this.requestId, listHealthChecksResponse.requestId);
+        ListHealthChecksResponse that = (ListHealthChecksResponse) obj;
+        return Objects.equals(this.healthChecks, that.healthChecks) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

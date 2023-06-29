@@ -140,19 +140,17 @@ public class DmsRocketMQForwarding {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DmsRocketMQForwarding dmsRocketMQForwarding = (DmsRocketMQForwarding) o;
-        return Objects.equals(this.addresses, dmsRocketMQForwarding.addresses)
-            && Objects.equals(this.topic, dmsRocketMQForwarding.topic)
-            && Objects.equals(this.username, dmsRocketMQForwarding.username)
-            && Objects.equals(this.password, dmsRocketMQForwarding.password)
-            && Objects.equals(this.enableSsl, dmsRocketMQForwarding.enableSsl);
+        DmsRocketMQForwarding that = (DmsRocketMQForwarding) obj;
+        return Objects.equals(this.addresses, that.addresses) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.username, that.username) && Objects.equals(this.password, that.password)
+            && Objects.equals(this.enableSsl, that.enableSsl);
     }
 
     @Override

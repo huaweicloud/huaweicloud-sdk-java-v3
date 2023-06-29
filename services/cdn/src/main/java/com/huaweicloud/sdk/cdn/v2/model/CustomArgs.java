@@ -77,16 +77,16 @@ public class CustomArgs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomArgs customArgs = (CustomArgs) o;
-        return Objects.equals(this.type, customArgs.type) && Objects.equals(this.key, customArgs.key)
-            && Objects.equals(this.value, customArgs.value);
+        CustomArgs that = (CustomArgs) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.value, that.value);
     }
 
     @Override

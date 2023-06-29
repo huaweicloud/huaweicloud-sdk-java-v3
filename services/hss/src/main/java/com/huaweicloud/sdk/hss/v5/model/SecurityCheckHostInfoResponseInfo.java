@@ -171,21 +171,18 @@ public class SecurityCheckHostInfoResponseInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityCheckHostInfoResponseInfo securityCheckHostInfoResponseInfo = (SecurityCheckHostInfoResponseInfo) o;
-        return Objects.equals(this.hostId, securityCheckHostInfoResponseInfo.hostId)
-            && Objects.equals(this.hostName, securityCheckHostInfoResponseInfo.hostName)
-            && Objects.equals(this.hostPublicIp, securityCheckHostInfoResponseInfo.hostPublicIp)
-            && Objects.equals(this.hostPrivateIp, securityCheckHostInfoResponseInfo.hostPrivateIp)
-            && Objects.equals(this.scanTime, securityCheckHostInfoResponseInfo.scanTime)
-            && Objects.equals(this.failedNum, securityCheckHostInfoResponseInfo.failedNum)
-            && Objects.equals(this.passedNum, securityCheckHostInfoResponseInfo.passedNum);
+        SecurityCheckHostInfoResponseInfo that = (SecurityCheckHostInfoResponseInfo) obj;
+        return Objects.equals(this.hostId, that.hostId) && Objects.equals(this.hostName, that.hostName)
+            && Objects.equals(this.hostPublicIp, that.hostPublicIp)
+            && Objects.equals(this.hostPrivateIp, that.hostPrivateIp) && Objects.equals(this.scanTime, that.scanTime)
+            && Objects.equals(this.failedNum, that.failedNum) && Objects.equals(this.passedNum, that.passedNum);
     }
 
     @Override

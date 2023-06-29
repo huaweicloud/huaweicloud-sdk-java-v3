@@ -101,18 +101,16 @@ public class ListGatewayResponsesV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGatewayResponsesV2Request listGatewayResponsesV2Request = (ListGatewayResponsesV2Request) o;
-        return Objects.equals(this.instanceId, listGatewayResponsesV2Request.instanceId)
-            && Objects.equals(this.groupId, listGatewayResponsesV2Request.groupId)
-            && Objects.equals(this.offset, listGatewayResponsesV2Request.offset)
-            && Objects.equals(this.limit, listGatewayResponsesV2Request.limit);
+        ListGatewayResponsesV2Request that = (ListGatewayResponsesV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

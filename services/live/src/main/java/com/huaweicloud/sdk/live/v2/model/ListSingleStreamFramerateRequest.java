@@ -121,19 +121,17 @@ public class ListSingleStreamFramerateRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSingleStreamFramerateRequest listSingleStreamFramerateRequest = (ListSingleStreamFramerateRequest) o;
-        return Objects.equals(this.domain, listSingleStreamFramerateRequest.domain)
-            && Objects.equals(this.app, listSingleStreamFramerateRequest.app)
-            && Objects.equals(this.stream, listSingleStreamFramerateRequest.stream)
-            && Objects.equals(this.startTime, listSingleStreamFramerateRequest.startTime)
-            && Objects.equals(this.endTime, listSingleStreamFramerateRequest.endTime);
+        ListSingleStreamFramerateRequest that = (ListSingleStreamFramerateRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

@@ -55,16 +55,16 @@ public class ChannelCreateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChannelCreateInfo channelCreateInfo = (ChannelCreateInfo) o;
-        return Objects.equals(this.channelName, channelCreateInfo.channelName)
-            && Objects.equals(this.channelDescription, channelCreateInfo.channelDescription);
+        ChannelCreateInfo that = (ChannelCreateInfo) obj;
+        return Objects.equals(this.channelName, that.channelName)
+            && Objects.equals(this.channelDescription, that.channelDescription);
     }
 
     @Override

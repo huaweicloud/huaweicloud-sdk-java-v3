@@ -77,17 +77,16 @@ public class UpdatePublicZoneInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdatePublicZoneInfo updatePublicZoneInfo = (UpdatePublicZoneInfo) o;
-        return Objects.equals(this.description, updatePublicZoneInfo.description)
-            && Objects.equals(this.email, updatePublicZoneInfo.email)
-            && Objects.equals(this.ttl, updatePublicZoneInfo.ttl);
+        UpdatePublicZoneInfo that = (UpdatePublicZoneInfo) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.email, that.email)
+            && Objects.equals(this.ttl, that.ttl);
     }
 
     @Override

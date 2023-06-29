@@ -43,15 +43,15 @@ public class ChangePublicipToPeriodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChangePublicipToPeriodRequest changePublicipToPeriodRequest = (ChangePublicipToPeriodRequest) o;
-        return Objects.equals(this.body, changePublicipToPeriodRequest.body);
+        ChangePublicipToPeriodRequest that = (ChangePublicipToPeriodRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -84,16 +84,15 @@ public class KeystoneListRegionsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneListRegionsResponse keystoneListRegionsResponse = (KeystoneListRegionsResponse) o;
-        return Objects.equals(this.links, keystoneListRegionsResponse.links)
-            && Objects.equals(this.regions, keystoneListRegionsResponse.regions);
+        KeystoneListRegionsResponse that = (KeystoneListRegionsResponse) obj;
+        return Objects.equals(this.links, that.links) && Objects.equals(this.regions, that.regions);
     }
 
     @Override

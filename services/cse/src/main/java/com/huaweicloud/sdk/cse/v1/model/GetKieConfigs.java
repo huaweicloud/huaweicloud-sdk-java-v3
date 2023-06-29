@@ -231,22 +231,20 @@ public class GetKieConfigs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetKieConfigs getKieConfigs = (GetKieConfigs) o;
-        return Objects.equals(this.id, getKieConfigs.id) && Objects.equals(this.key, getKieConfigs.key)
-            && Objects.equals(this.labels, getKieConfigs.labels) && Objects.equals(this.value, getKieConfigs.value)
-            && Objects.equals(this.valueType, getKieConfigs.valueType)
-            && Objects.equals(this.status, getKieConfigs.status)
-            && Objects.equals(this.createTime, getKieConfigs.createTime)
-            && Objects.equals(this.updateTime, getKieConfigs.updateTime)
-            && Objects.equals(this.createRevision, getKieConfigs.createRevision)
-            && Objects.equals(this.updateRevision, getKieConfigs.updateRevision);
+        GetKieConfigs that = (GetKieConfigs) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.key, that.key)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.value, that.value)
+            && Objects.equals(this.valueType, that.valueType) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.createRevision, that.createRevision)
+            && Objects.equals(this.updateRevision, that.updateRevision);
     }
 
     @Override

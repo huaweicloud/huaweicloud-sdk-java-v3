@@ -69,22 +69,15 @@ public class CreateAuthorisation {
             if (value == null) {
                 return null;
             }
-            InstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new InstanceTypeEnum(value));
         }
 
         public static InstanceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -263,22 +256,19 @@ public class CreateAuthorisation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAuthorisation createAuthorisation = (CreateAuthorisation) o;
-        return Objects.equals(this.name, createAuthorisation.name)
-            && Objects.equals(this.description, createAuthorisation.description)
-            && Objects.equals(this.instanceId, createAuthorisation.instanceId)
-            && Objects.equals(this.instanceType, createAuthorisation.instanceType)
-            && Objects.equals(this.projectId, createAuthorisation.projectId)
-            && Objects.equals(this.regionId, createAuthorisation.regionId)
-            && Objects.equals(this.cloudConnectionDomainId, createAuthorisation.cloudConnectionDomainId)
-            && Objects.equals(this.cloudConnectionId, createAuthorisation.cloudConnectionId);
+        CreateAuthorisation that = (CreateAuthorisation) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.instanceType, that.instanceType)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.regionId, that.regionId)
+            && Objects.equals(this.cloudConnectionDomainId, that.cloudConnectionDomainId)
+            && Objects.equals(this.cloudConnectionId, that.cloudConnectionId);
     }
 
     @Override

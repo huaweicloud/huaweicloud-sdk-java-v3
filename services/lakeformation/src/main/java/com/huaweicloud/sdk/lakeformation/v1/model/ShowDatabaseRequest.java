@@ -77,17 +77,16 @@ public class ShowDatabaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDatabaseRequest showDatabaseRequest = (ShowDatabaseRequest) o;
-        return Objects.equals(this.instanceId, showDatabaseRequest.instanceId)
-            && Objects.equals(this.catalogName, showDatabaseRequest.catalogName)
-            && Objects.equals(this.databaseName, showDatabaseRequest.databaseName);
+        ShowDatabaseRequest that = (ShowDatabaseRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName);
     }
 
     @Override

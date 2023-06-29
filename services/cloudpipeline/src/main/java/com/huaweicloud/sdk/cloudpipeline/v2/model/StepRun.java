@@ -360,24 +360,24 @@ public class StepRun {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StepRun stepRun = (StepRun) o;
-        return Objects.equals(this.name, stepRun.name) && Objects.equals(this.task, stepRun.task)
-            && Objects.equals(this.businessType, stepRun.businessType) && Objects.equals(this.inputs, stepRun.inputs)
-            && Objects.equals(this.sequence, stepRun.sequence)
-            && Objects.equals(this.officialTaskVersion, stepRun.officialTaskVersion)
-            && Objects.equals(this.identifier, stepRun.identifier)
-            && Objects.equals(this.multiStepEditable, stepRun.multiStepEditable) && Objects.equals(this.id, stepRun.id)
-            && Objects.equals(this.endpointIds, stepRun.endpointIds)
-            && Objects.equals(this.lastDispatchId, stepRun.lastDispatchId)
-            && Objects.equals(this.status, stepRun.status) && Objects.equals(this.message, stepRun.message)
-            && Objects.equals(this.startTime, stepRun.startTime) && Objects.equals(this.endTime, stepRun.endTime);
+        StepRun that = (StepRun) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.task, that.task)
+            && Objects.equals(this.businessType, that.businessType) && Objects.equals(this.inputs, that.inputs)
+            && Objects.equals(this.sequence, that.sequence)
+            && Objects.equals(this.officialTaskVersion, that.officialTaskVersion)
+            && Objects.equals(this.identifier, that.identifier)
+            && Objects.equals(this.multiStepEditable, that.multiStepEditable) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.endpointIds, that.endpointIds)
+            && Objects.equals(this.lastDispatchId, that.lastDispatchId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.message, that.message) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

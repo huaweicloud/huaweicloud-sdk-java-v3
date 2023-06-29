@@ -156,19 +156,17 @@ public class UpdateKafkaConfigRequestDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateKafkaConfigRequestDTO updateKafkaConfigRequestDTO = (UpdateKafkaConfigRequestDTO) o;
-        return Objects.equals(this.topicPrefix, updateKafkaConfigRequestDTO.topicPrefix)
-            && Objects.equals(this.userTopics, updateKafkaConfigRequestDTO.userTopics)
-            && Objects.equals(this.brokers, updateKafkaConfigRequestDTO.brokers)
-            && Objects.equals(this.username, updateKafkaConfigRequestDTO.username)
-            && Objects.equals(this.password, updateKafkaConfigRequestDTO.password);
+        UpdateKafkaConfigRequestDTO that = (UpdateKafkaConfigRequestDTO) obj;
+        return Objects.equals(this.topicPrefix, that.topicPrefix) && Objects.equals(this.userTopics, that.userTopics)
+            && Objects.equals(this.brokers, that.brokers) && Objects.equals(this.username, that.username)
+            && Objects.equals(this.password, that.password);
     }
 
     @Override

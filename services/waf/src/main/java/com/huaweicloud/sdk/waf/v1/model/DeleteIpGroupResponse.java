@@ -141,19 +141,17 @@ public class DeleteIpGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteIpGroupResponse deleteIpGroupResponse = (DeleteIpGroupResponse) o;
-        return Objects.equals(this.id, deleteIpGroupResponse.id)
-            && Objects.equals(this.name, deleteIpGroupResponse.name)
-            && Objects.equals(this.ips, deleteIpGroupResponse.ips)
-            && Objects.equals(this.size, deleteIpGroupResponse.size)
-            && Objects.equals(this.rules, deleteIpGroupResponse.rules);
+        DeleteIpGroupResponse that = (DeleteIpGroupResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.ips, that.ips) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.rules, that.rules);
     }
 
     @Override

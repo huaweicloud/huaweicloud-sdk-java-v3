@@ -1,213 +1,172 @@
 package com.huaweicloud.sdk.gaussdbforopengauss.v3.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListDatastore;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListFlavorInfo;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListHa;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.ListVolume;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussBackupStrategyForListResponse;
-import com.huaweicloud.sdk.gaussdbforopengauss.v3.model.OpenGaussChargeInfoListResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 实例信息。
  */
-public class ListInstanceResponse  {
-
+public class ListInstanceResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="id")
-    
+    @JsonProperty(value = "id")
 
     private String id;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="private_ips")
-    
+    @JsonProperty(value = "private_ips")
+
     private List<String> privateIps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="public_ips")
-    
+    @JsonProperty(value = "public_ips")
+
     private List<String> publicIps = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="port")
-    
+    @JsonProperty(value = "port")
 
     private Integer port;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="type")
-    
+    @JsonProperty(value = "type")
 
     private String type;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ha")
-    
+    @JsonProperty(value = "ha")
 
     private ListHa ha;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="replica_num")
-    
+    @JsonProperty(value = "replica_num")
 
     private Integer replicaNum;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="region")
-    
+    @JsonProperty(value = "region")
 
     private String region;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="datastore")
-    
+    @JsonProperty(value = "datastore")
 
     private ListDatastore datastore;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created")
-    
+    @JsonProperty(value = "created")
 
     private String created;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="updated")
-    
+    @JsonProperty(value = "updated")
 
     private String updated;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="db_user_name")
-    
+    @JsonProperty(value = "db_user_name")
 
     private String dbUserName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="vpc_id")
-    
+    @JsonProperty(value = "vpc_id")
 
     private String vpcId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="subnet_id")
-    
+    @JsonProperty(value = "subnet_id")
 
     private String subnetId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="security_group_id")
-    
+    @JsonProperty(value = "security_group_id")
 
     private String securityGroupId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_ref")
-    
+    @JsonProperty(value = "flavor_ref")
 
     private String flavorRef;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="flavor_info")
-    
+    @JsonProperty(value = "flavor_info")
 
     private ListFlavorInfo flavorInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="volume")
-    
+    @JsonProperty(value = "volume")
 
     private ListVolume volume;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="switch_strategy")
-    
+    @JsonProperty(value = "switch_strategy")
 
     private String switchStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="backup_strategy")
-    
+    @JsonProperty(value = "backup_strategy")
 
     private OpenGaussBackupStrategyForListResponse backupStrategy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="maintenance_window")
-    
+    @JsonProperty(value = "maintenance_window")
 
     private String maintenanceWindow;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<Object> nodes = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="enterprise_project_id")
-    
+    @JsonProperty(value = "enterprise_project_id")
 
     private String enterpriseProjectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_mode")
-    
+    @JsonProperty(value = "instance_mode")
 
     private String instanceMode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="disk_encryption_id")
-    
+    @JsonProperty(value = "disk_encryption_id")
 
     private String diskEncryptionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="charge_info")
-    
+    @JsonProperty(value = "charge_info")
 
     private OpenGaussChargeInfoListResponse chargeInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="time_zone")
-    
+    @JsonProperty(value = "time_zone")
 
     private String timeZone;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="tags")
-    
+    @JsonProperty(value = "tags")
+
     private List<Object> tags = null;
-    
+
     public ListInstanceResponse withId(String id) {
         this.id = id;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -221,15 +180,10 @@ public class ListInstanceResponse  {
         this.id = id;
     }
 
-    
-
     public ListInstanceResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 创建的实例名称。
@@ -243,15 +197,10 @@ public class ListInstanceResponse  {
         this.name = name;
     }
 
-    
-
     public ListInstanceResponse withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 实例状态。  取值：  值为“BUILD”，表示实例正在创建。  值为“ACTIVE”，表示实例正常。  值为“FAILED”，表示实例异常。  值为“FROZEN”，表示实例冻结。  值为“EXPANDING”，表示实例正在扩容CN或DN。  值为“REBOOTING”，表示实例正在重启。  值为“UPGRADING”，表示实例正在升级。  值为“RESTORING”，表示实例正在恢复。  值为“BACKING UP”，表示实例正在进行备份。  值为“REDUCING REPLICATION”，表示实例正在降副本。  值为“STORAGE FULL”，表示实例磁盘空间满。
@@ -265,16 +214,13 @@ public class ListInstanceResponse  {
         this.status = status;
     }
 
-    
-
     public ListInstanceResponse withPrivateIps(List<String> privateIps) {
         this.privateIps = privateIps;
         return this;
     }
 
-    
     public ListInstanceResponse addPrivateIpsItem(String privateIpsItem) {
-        if(this.privateIps == null) {
+        if (this.privateIps == null) {
             this.privateIps = new ArrayList<>();
         }
         this.privateIps.add(privateIpsItem);
@@ -282,7 +228,7 @@ public class ListInstanceResponse  {
     }
 
     public ListInstanceResponse withPrivateIps(Consumer<List<String>> privateIpsSetter) {
-        if(this.privateIps == null) {
+        if (this.privateIps == null) {
             this.privateIps = new ArrayList<>();
         }
         privateIpsSetter.accept(this.privateIps);
@@ -301,16 +247,13 @@ public class ListInstanceResponse  {
         this.privateIps = privateIps;
     }
 
-    
-
     public ListInstanceResponse withPublicIps(List<String> publicIps) {
         this.publicIps = publicIps;
         return this;
     }
 
-    
     public ListInstanceResponse addPublicIpsItem(String publicIpsItem) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         this.publicIps.add(publicIpsItem);
@@ -318,7 +261,7 @@ public class ListInstanceResponse  {
     }
 
     public ListInstanceResponse withPublicIps(Consumer<List<String>> publicIpsSetter) {
-        if(this.publicIps == null) {
+        if (this.publicIps == null) {
             this.publicIps = new ArrayList<>();
         }
         publicIpsSetter.accept(this.publicIps);
@@ -337,15 +280,10 @@ public class ListInstanceResponse  {
         this.publicIps = publicIps;
     }
 
-    
-
     public ListInstanceResponse withPort(Integer port) {
         this.port = port;
         return this;
     }
-
-    
-
 
     /**
      * 数据库端口号。GaussDB 数据库端口设置范围为1024~39998（其中2378,2379,2380,4999,5000,5999,6000,6001,8097,8098,20049,20050,21731,21732被系统占用不可设置）。  当不传该参数时，默认端口如下：8000。
@@ -359,15 +297,10 @@ public class ListInstanceResponse  {
         this.port = port;
     }
 
-    
-
     public ListInstanceResponse withType(String type) {
         this.type = type;
         return this;
     }
-
-    
-
 
     /**
      * 实例类型，取值为 \"enterprise\"，对应于分布式实例（企业版）。取值为\"Ha\"，对应于主备版实例。
@@ -381,22 +314,19 @@ public class ListInstanceResponse  {
         this.type = type;
     }
 
-    
-
     public ListInstanceResponse withHa(ListHa ha) {
         this.ha = ha;
         return this;
     }
 
     public ListInstanceResponse withHa(Consumer<ListHa> haSetter) {
-        if(this.ha == null ){
+        if (this.ha == null) {
             this.ha = new ListHa();
             haSetter.accept(this.ha);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get ha
@@ -410,15 +340,10 @@ public class ListInstanceResponse  {
         this.ha = ha;
     }
 
-    
-
     public ListInstanceResponse withReplicaNum(Integer replicaNum) {
         this.replicaNum = replicaNum;
         return this;
     }
-
-    
-
 
     /**
      * 实例副本数。
@@ -432,15 +357,10 @@ public class ListInstanceResponse  {
         this.replicaNum = replicaNum;
     }
 
-    
-
     public ListInstanceResponse withRegion(String region) {
         this.region = region;
         return this;
     }
-
-    
-
 
     /**
      * 实例所在区域。
@@ -454,22 +374,19 @@ public class ListInstanceResponse  {
         this.region = region;
     }
 
-    
-
     public ListInstanceResponse withDatastore(ListDatastore datastore) {
         this.datastore = datastore;
         return this;
     }
 
     public ListInstanceResponse withDatastore(Consumer<ListDatastore> datastoreSetter) {
-        if(this.datastore == null ){
+        if (this.datastore == null) {
             this.datastore = new ListDatastore();
             datastoreSetter.accept(this.datastore);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get datastore
@@ -483,15 +400,10 @@ public class ListInstanceResponse  {
         this.datastore = datastore;
     }
 
-    
-
     public ListInstanceResponse withCreated(String created) {
         this.created = created;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间，格式为“yyyy-mm-dd hh:mm:ss timezone”。  其中timezone是指时区。  说明：创建时该值为实例下发创建的时间，创建完成后，该值为创建完成时间。
@@ -505,15 +417,10 @@ public class ListInstanceResponse  {
         this.created = created;
     }
 
-    
-
     public ListInstanceResponse withUpdated(String updated) {
         this.updated = updated;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间，格式与“created”字段对应格式完全相同。  说明：创建时返回值为空，数据库实例创建成功后该值不为空。
@@ -527,15 +434,10 @@ public class ListInstanceResponse  {
         this.updated = updated;
     }
 
-    
-
     public ListInstanceResponse withDbUserName(String dbUserName) {
         this.dbUserName = dbUserName;
         return this;
     }
-
-    
-
 
     /**
      * 默认用户名。
@@ -549,15 +451,10 @@ public class ListInstanceResponse  {
         this.dbUserName = dbUserName;
     }
 
-    
-
     public ListInstanceResponse withVpcId(String vpcId) {
         this.vpcId = vpcId;
         return this;
     }
-
-    
-
 
     /**
      * 虚拟私有云ID。
@@ -571,15 +468,10 @@ public class ListInstanceResponse  {
         this.vpcId = vpcId;
     }
 
-    
-
     public ListInstanceResponse withSubnetId(String subnetId) {
         this.subnetId = subnetId;
         return this;
     }
-
-    
-
 
     /**
      * 子网的网络ID信息。
@@ -593,15 +485,10 @@ public class ListInstanceResponse  {
         this.subnetId = subnetId;
     }
 
-    
-
     public ListInstanceResponse withSecurityGroupId(String securityGroupId) {
         this.securityGroupId = securityGroupId;
         return this;
     }
-
-    
-
 
     /**
      * 安全组ID。
@@ -615,15 +502,10 @@ public class ListInstanceResponse  {
         this.securityGroupId = securityGroupId;
     }
 
-    
-
     public ListInstanceResponse withFlavorRef(String flavorRef) {
         this.flavorRef = flavorRef;
         return this;
     }
-
-    
-
 
     /**
      * 规格码。参考[表1](https://support.huaweicloud.com/api-opengauss/opengauss_api_0037.html#opengauss_api_0037__ted9b9d433c8a4c52884e199e17f94479)中GaussDB 的“规格编码”列内容获取。
@@ -637,22 +519,19 @@ public class ListInstanceResponse  {
         this.flavorRef = flavorRef;
     }
 
-    
-
     public ListInstanceResponse withFlavorInfo(ListFlavorInfo flavorInfo) {
         this.flavorInfo = flavorInfo;
         return this;
     }
 
     public ListInstanceResponse withFlavorInfo(Consumer<ListFlavorInfo> flavorInfoSetter) {
-        if(this.flavorInfo == null ){
+        if (this.flavorInfo == null) {
             this.flavorInfo = new ListFlavorInfo();
             flavorInfoSetter.accept(this.flavorInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get flavorInfo
@@ -666,22 +545,19 @@ public class ListInstanceResponse  {
         this.flavorInfo = flavorInfo;
     }
 
-    
-
     public ListInstanceResponse withVolume(ListVolume volume) {
         this.volume = volume;
         return this;
     }
 
     public ListInstanceResponse withVolume(Consumer<ListVolume> volumeSetter) {
-        if(this.volume == null ){
+        if (this.volume == null) {
             this.volume = new ListVolume();
             volumeSetter.accept(this.volume);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get volume
@@ -695,15 +571,10 @@ public class ListInstanceResponse  {
         this.volume = volume;
     }
 
-    
-
     public ListInstanceResponse withSwitchStrategy(String switchStrategy) {
         this.switchStrategy = switchStrategy;
         return this;
     }
-
-    
-
 
     /**
      * 数据库切换策略。取值为“reliability”或“availability”，分别对应于可靠性优先和可用性优先。 若创建时没有选择切换策略，则不予显示。
@@ -717,22 +588,20 @@ public class ListInstanceResponse  {
         this.switchStrategy = switchStrategy;
     }
 
-    
-
     public ListInstanceResponse withBackupStrategy(OpenGaussBackupStrategyForListResponse backupStrategy) {
         this.backupStrategy = backupStrategy;
         return this;
     }
 
-    public ListInstanceResponse withBackupStrategy(Consumer<OpenGaussBackupStrategyForListResponse> backupStrategySetter) {
-        if(this.backupStrategy == null ){
+    public ListInstanceResponse withBackupStrategy(
+        Consumer<OpenGaussBackupStrategyForListResponse> backupStrategySetter) {
+        if (this.backupStrategy == null) {
             this.backupStrategy = new OpenGaussBackupStrategyForListResponse();
             backupStrategySetter.accept(this.backupStrategy);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get backupStrategy
@@ -746,15 +615,10 @@ public class ListInstanceResponse  {
         this.backupStrategy = backupStrategy;
     }
 
-    
-
     public ListInstanceResponse withMaintenanceWindow(String maintenanceWindow) {
         this.maintenanceWindow = maintenanceWindow;
         return this;
     }
-
-    
-
 
     /**
      * 可维护时间窗，为UTC时间。
@@ -768,16 +632,13 @@ public class ListInstanceResponse  {
         this.maintenanceWindow = maintenanceWindow;
     }
 
-    
-
     public ListInstanceResponse withNodes(List<Object> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ListInstanceResponse addNodesItem(Object nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -785,7 +646,7 @@ public class ListInstanceResponse  {
     }
 
     public ListInstanceResponse withNodes(Consumer<List<Object>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -804,15 +665,10 @@ public class ListInstanceResponse  {
         this.nodes = nodes;
     }
 
-    
-
     public ListInstanceResponse withEnterpriseProjectId(String enterpriseProjectId) {
         this.enterpriseProjectId = enterpriseProjectId;
         return this;
     }
-
-    
-
 
     /**
      * 企业项目标签ID。非企业项目账号的实例，企业项目默认0。
@@ -826,15 +682,10 @@ public class ListInstanceResponse  {
         this.enterpriseProjectId = enterpriseProjectId;
     }
 
-    
-
     public ListInstanceResponse withInstanceMode(String instanceMode) {
         this.instanceMode = instanceMode;
         return this;
     }
-
-    
-
 
     /**
      * basic为基础版 ，enterprise为企业版。
@@ -848,15 +699,10 @@ public class ListInstanceResponse  {
         this.instanceMode = instanceMode;
     }
 
-    
-
     public ListInstanceResponse withDiskEncryptionId(String diskEncryptionId) {
         this.diskEncryptionId = diskEncryptionId;
         return this;
     }
-
-    
-
 
     /**
      * 磁盘加密密钥ID。只有创建磁盘加密实例才会显示该参数。
@@ -870,22 +716,19 @@ public class ListInstanceResponse  {
         this.diskEncryptionId = diskEncryptionId;
     }
 
-    
-
     public ListInstanceResponse withChargeInfo(OpenGaussChargeInfoListResponse chargeInfo) {
         this.chargeInfo = chargeInfo;
         return this;
     }
 
     public ListInstanceResponse withChargeInfo(Consumer<OpenGaussChargeInfoListResponse> chargeInfoSetter) {
-        if(this.chargeInfo == null ){
+        if (this.chargeInfo == null) {
             this.chargeInfo = new OpenGaussChargeInfoListResponse();
             chargeInfoSetter.accept(this.chargeInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get chargeInfo
@@ -899,15 +742,10 @@ public class ListInstanceResponse  {
         this.chargeInfo = chargeInfo;
     }
 
-    
-
     public ListInstanceResponse withTimeZone(String timeZone) {
         this.timeZone = timeZone;
         return this;
     }
-
-    
-
 
     /**
      * 时区。
@@ -921,16 +759,13 @@ public class ListInstanceResponse  {
         this.timeZone = timeZone;
     }
 
-    
-
     public ListInstanceResponse withTags(List<Object> tags) {
         this.tags = tags;
         return this;
     }
 
-    
     public ListInstanceResponse addTagsItem(Object tagsItem) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         this.tags.add(tagsItem);
@@ -938,7 +773,7 @@ public class ListInstanceResponse  {
     }
 
     public ListInstanceResponse withTags(Consumer<List<Object>> tagsSetter) {
-        if(this.tags == null) {
+        if (this.tags == null) {
             this.tags = new ArrayList<>();
         }
         tagsSetter.accept(this.tags);
@@ -957,52 +792,69 @@ public class ListInstanceResponse  {
         this.tags = tags;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceResponse listInstanceResponse = (ListInstanceResponse) o;
-        return Objects.equals(this.id, listInstanceResponse.id) &&
-            Objects.equals(this.name, listInstanceResponse.name) &&
-            Objects.equals(this.status, listInstanceResponse.status) &&
-            Objects.equals(this.privateIps, listInstanceResponse.privateIps) &&
-            Objects.equals(this.publicIps, listInstanceResponse.publicIps) &&
-            Objects.equals(this.port, listInstanceResponse.port) &&
-            Objects.equals(this.type, listInstanceResponse.type) &&
-            Objects.equals(this.ha, listInstanceResponse.ha) &&
-            Objects.equals(this.replicaNum, listInstanceResponse.replicaNum) &&
-            Objects.equals(this.region, listInstanceResponse.region) &&
-            Objects.equals(this.datastore, listInstanceResponse.datastore) &&
-            Objects.equals(this.created, listInstanceResponse.created) &&
-            Objects.equals(this.updated, listInstanceResponse.updated) &&
-            Objects.equals(this.dbUserName, listInstanceResponse.dbUserName) &&
-            Objects.equals(this.vpcId, listInstanceResponse.vpcId) &&
-            Objects.equals(this.subnetId, listInstanceResponse.subnetId) &&
-            Objects.equals(this.securityGroupId, listInstanceResponse.securityGroupId) &&
-            Objects.equals(this.flavorRef, listInstanceResponse.flavorRef) &&
-            Objects.equals(this.flavorInfo, listInstanceResponse.flavorInfo) &&
-            Objects.equals(this.volume, listInstanceResponse.volume) &&
-            Objects.equals(this.switchStrategy, listInstanceResponse.switchStrategy) &&
-            Objects.equals(this.backupStrategy, listInstanceResponse.backupStrategy) &&
-            Objects.equals(this.maintenanceWindow, listInstanceResponse.maintenanceWindow) &&
-            Objects.equals(this.nodes, listInstanceResponse.nodes) &&
-            Objects.equals(this.enterpriseProjectId, listInstanceResponse.enterpriseProjectId) &&
-            Objects.equals(this.instanceMode, listInstanceResponse.instanceMode) &&
-            Objects.equals(this.diskEncryptionId, listInstanceResponse.diskEncryptionId) &&
-            Objects.equals(this.chargeInfo, listInstanceResponse.chargeInfo) &&
-            Objects.equals(this.timeZone, listInstanceResponse.timeZone) &&
-            Objects.equals(this.tags, listInstanceResponse.tags);
+        ListInstanceResponse that = (ListInstanceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.privateIps, that.privateIps)
+            && Objects.equals(this.publicIps, that.publicIps) && Objects.equals(this.port, that.port)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.ha, that.ha)
+            && Objects.equals(this.replicaNum, that.replicaNum) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.datastore, that.datastore) && Objects.equals(this.created, that.created)
+            && Objects.equals(this.updated, that.updated) && Objects.equals(this.dbUserName, that.dbUserName)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.flavorRef, that.flavorRef) && Objects.equals(this.flavorInfo, that.flavorInfo)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.switchStrategy, that.switchStrategy)
+            && Objects.equals(this.backupStrategy, that.backupStrategy)
+            && Objects.equals(this.maintenanceWindow, that.maintenanceWindow) && Objects.equals(this.nodes, that.nodes)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.instanceMode, that.instanceMode)
+            && Objects.equals(this.diskEncryptionId, that.diskEncryptionId)
+            && Objects.equals(this.chargeInfo, that.chargeInfo) && Objects.equals(this.timeZone, that.timeZone)
+            && Objects.equals(this.tags, that.tags);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, privateIps, publicIps, port, type, ha, replicaNum, region, datastore, created, updated, dbUserName, vpcId, subnetId, securityGroupId, flavorRef, flavorInfo, volume, switchStrategy, backupStrategy, maintenanceWindow, nodes, enterpriseProjectId, instanceMode, diskEncryptionId, chargeInfo, timeZone, tags);
+        return Objects.hash(id,
+            name,
+            status,
+            privateIps,
+            publicIps,
+            port,
+            type,
+            ha,
+            replicaNum,
+            region,
+            datastore,
+            created,
+            updated,
+            dbUserName,
+            vpcId,
+            subnetId,
+            securityGroupId,
+            flavorRef,
+            flavorInfo,
+            volume,
+            switchStrategy,
+            backupStrategy,
+            maintenanceWindow,
+            nodes,
+            enterpriseProjectId,
+            instanceMode,
+            diskEncryptionId,
+            chargeInfo,
+            timeZone,
+            tags);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -1040,6 +892,7 @@ public class ListInstanceResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -1050,8 +903,5 @@ public class ListInstanceResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -1,38 +1,30 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.Quota;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * GesQuotaResp
  */
-public class GesQuotaResp  {
-
+public class GesQuotaResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="resources")
-    
+    @JsonProperty(value = "resources")
+
     private List<Quota> resources = null;
-    
+
     public GesQuotaResp withResources(List<Quota> resources) {
         this.resources = resources;
         return this;
     }
 
-    
     public GesQuotaResp addResourcesItem(Quota resourcesItem) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         this.resources.add(resourcesItem);
@@ -40,7 +32,7 @@ public class GesQuotaResp  {
     }
 
     public GesQuotaResp withResources(Consumer<List<Quota>> resourcesSetter) {
-        if(this.resources == null) {
+        if (this.resources == null) {
             this.resources = new ArrayList<>();
         }
         resourcesSetter.accept(this.resources);
@@ -59,23 +51,23 @@ public class GesQuotaResp  {
         this.resources = resources;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GesQuotaResp gesQuotaResp = (GesQuotaResp) o;
-        return Objects.equals(this.resources, gesQuotaResp.resources);
+        GesQuotaResp that = (GesQuotaResp) obj;
+        return Objects.equals(this.resources, that.resources);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(resources);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -84,6 +76,7 @@ public class GesQuotaResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -94,8 +87,5 @@ public class GesQuotaResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

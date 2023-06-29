@@ -121,19 +121,17 @@ public class CreatePubFastappModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePubFastappModel createPubFastappModel = (CreatePubFastappModel) o;
-        return Objects.equals(this.name, createPubFastappModel.name)
-            && Objects.equals(this.logoImg, createPubFastappModel.logoImg)
-            && Objects.equals(this.description, createPubFastappModel.description)
-            && Objects.equals(this.deeplink, createPubFastappModel.deeplink)
-            && Objects.equals(this.dependEngineVersion, createPubFastappModel.dependEngineVersion);
+        CreatePubFastappModel that = (CreatePubFastappModel) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.logoImg, that.logoImg)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.deeplink, that.deeplink)
+            && Objects.equals(this.dependEngineVersion, that.dependEngineVersion);
     }
 
     @Override

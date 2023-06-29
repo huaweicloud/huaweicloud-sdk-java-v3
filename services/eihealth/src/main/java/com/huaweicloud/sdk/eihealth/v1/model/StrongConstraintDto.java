@@ -187,20 +187,17 @@ public class StrongConstraintDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StrongConstraintDto strongConstraintDto = (StrongConstraintDto) o;
-        return Objects.equals(this.name, strongConstraintDto.name)
-            && Objects.equals(this.type, strongConstraintDto.type)
-            && Objects.equals(this.bool, strongConstraintDto.bool)
-            && Objects.equals(this.range, strongConstraintDto.range)
-            && Objects.equals(this.struct, strongConstraintDto.struct)
-            && Objects.equals(this.quantiles, strongConstraintDto.quantiles);
+        StrongConstraintDto that = (StrongConstraintDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.bool, that.bool) && Objects.equals(this.range, that.range)
+            && Objects.equals(this.struct, that.struct) && Objects.equals(this.quantiles, that.quantiles);
     }
 
     @Override

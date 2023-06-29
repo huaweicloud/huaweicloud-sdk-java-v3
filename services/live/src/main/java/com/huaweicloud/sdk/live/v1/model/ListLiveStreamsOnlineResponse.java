@@ -163,20 +163,17 @@ public class ListLiveStreamsOnlineResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListLiveStreamsOnlineResponse listLiveStreamsOnlineResponse = (ListLiveStreamsOnlineResponse) o;
-        return Objects.equals(this.totalPage, listLiveStreamsOnlineResponse.totalPage)
-            && Objects.equals(this.totalNum, listLiveStreamsOnlineResponse.totalNum)
-            && Objects.equals(this.offset, listLiveStreamsOnlineResponse.offset)
-            && Objects.equals(this.limit, listLiveStreamsOnlineResponse.limit)
-            && Objects.equals(this.requestId, listLiveStreamsOnlineResponse.requestId)
-            && Objects.equals(this.streams, listLiveStreamsOnlineResponse.streams);
+        ListLiveStreamsOnlineResponse that = (ListLiveStreamsOnlineResponse) obj;
+        return Objects.equals(this.totalPage, that.totalPage) && Objects.equals(this.totalNum, that.totalNum)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.requestId, that.requestId) && Objects.equals(this.streams, that.streams);
     }
 
     @Override

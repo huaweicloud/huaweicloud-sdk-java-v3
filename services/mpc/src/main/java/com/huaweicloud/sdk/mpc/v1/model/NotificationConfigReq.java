@@ -52,15 +52,15 @@ public class NotificationConfigReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NotificationConfigReq notificationConfigReq = (NotificationConfigReq) o;
-        return Objects.equals(this.notifications, notificationConfigReq.notifications);
+        NotificationConfigReq that = (NotificationConfigReq) obj;
+        return Objects.equals(this.notifications, that.notifications);
     }
 
     @Override

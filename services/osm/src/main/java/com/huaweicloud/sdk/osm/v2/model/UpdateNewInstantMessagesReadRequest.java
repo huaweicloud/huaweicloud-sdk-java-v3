@@ -139,20 +139,17 @@ public class UpdateNewInstantMessagesReadRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNewInstantMessagesReadRequest updateNewInstantMessagesReadRequest =
-            (UpdateNewInstantMessagesReadRequest) o;
-        return Objects.equals(this.caseId, updateNewInstantMessagesReadRequest.caseId)
-            && Objects.equals(this.xSite, updateNewInstantMessagesReadRequest.xSite)
-            && Objects.equals(this.xLanguage, updateNewInstantMessagesReadRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, updateNewInstantMessagesReadRequest.xTimeZone)
-            && Objects.equals(this.body, updateNewInstantMessagesReadRequest.body);
+        UpdateNewInstantMessagesReadRequest that = (UpdateNewInstantMessagesReadRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.xSite, that.xSite)
+            && Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.xTimeZone, that.xTimeZone)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -58,22 +58,15 @@ public class AuthServerAccessMode {
         if (value == null) {
             return null;
         }
-        AuthServerAccessMode result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new AuthServerAccessMode(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new AuthServerAccessMode(value));
     }
 
     public static AuthServerAccessMode valueOf(String value) {
         if (value == null) {
             return null;
         }
-        AuthServerAccessMode result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

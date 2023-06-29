@@ -120,18 +120,17 @@ public class CreateVersionAliasRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVersionAliasRequestBody createVersionAliasRequestBody = (CreateVersionAliasRequestBody) o;
-        return Objects.equals(this.name, createVersionAliasRequestBody.name)
-            && Objects.equals(this.version, createVersionAliasRequestBody.version)
-            && Objects.equals(this.description, createVersionAliasRequestBody.description)
-            && Objects.equals(this.additionalVersionWeights, createVersionAliasRequestBody.additionalVersionWeights);
+        CreateVersionAliasRequestBody that = (CreateVersionAliasRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
     }
 
     @Override

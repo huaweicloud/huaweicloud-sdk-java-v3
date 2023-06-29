@@ -87,17 +87,16 @@ public class ListOffersRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOffersRequest listOffersRequest = (ListOffersRequest) o;
-        return Objects.equals(this.instanceId, listOffersRequest.instanceId)
-            && Objects.equals(this.connectorId, listOffersRequest.connectorId)
-            && Objects.equals(this.body, listOffersRequest.body);
+        ListOffersRequest that = (ListOffersRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -109,18 +109,17 @@ public class FaceSetFace {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FaceSetFace faceSetFace = (FaceSetFace) o;
-        return Objects.equals(this.boundingBox, faceSetFace.boundingBox)
-            && Objects.equals(this.externalFields, faceSetFace.externalFields)
-            && Objects.equals(this.externalImageId, faceSetFace.externalImageId)
-            && Objects.equals(this.faceId, faceSetFace.faceId);
+        FaceSetFace that = (FaceSetFace) obj;
+        return Objects.equals(this.boundingBox, that.boundingBox)
+            && Objects.equals(this.externalFields, that.externalFields)
+            && Objects.equals(this.externalImageId, that.externalImageId) && Objects.equals(this.faceId, that.faceId);
     }
 
     @Override

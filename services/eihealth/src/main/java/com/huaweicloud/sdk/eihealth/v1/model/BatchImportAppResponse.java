@@ -53,15 +53,15 @@ public class BatchImportAppResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchImportAppResponse batchImportAppResponse = (BatchImportAppResponse) o;
-        return Objects.equals(this.body, batchImportAppResponse.body);
+        BatchImportAppResponse that = (BatchImportAppResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

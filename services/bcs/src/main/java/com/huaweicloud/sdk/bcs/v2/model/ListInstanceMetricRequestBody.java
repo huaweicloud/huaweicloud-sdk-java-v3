@@ -77,17 +77,16 @@ public class ListInstanceMetricRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstanceMetricRequestBody listInstanceMetricRequestBody = (ListInstanceMetricRequestBody) o;
-        return Objects.equals(this.type, listInstanceMetricRequestBody.type)
-            && Objects.equals(this.entityName, listInstanceMetricRequestBody.entityName)
-            && Objects.equals(this.instanceName, listInstanceMetricRequestBody.instanceName);
+        ListInstanceMetricRequestBody that = (ListInstanceMetricRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.entityName, that.entityName)
+            && Objects.equals(this.instanceName, that.instanceName);
     }
 
     @Override

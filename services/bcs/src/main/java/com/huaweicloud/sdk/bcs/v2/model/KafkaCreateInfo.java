@@ -77,16 +77,16 @@ public class KafkaCreateInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaCreateInfo kafkaCreateInfo = (KafkaCreateInfo) o;
-        return Objects.equals(this.spec, kafkaCreateInfo.spec) && Objects.equals(this.storage, kafkaCreateInfo.storage)
-            && Objects.equals(this.az, kafkaCreateInfo.az);
+        KafkaCreateInfo that = (KafkaCreateInfo) obj;
+        return Objects.equals(this.spec, that.spec) && Objects.equals(this.storage, that.storage)
+            && Objects.equals(this.az, that.az);
     }
 
     @Override

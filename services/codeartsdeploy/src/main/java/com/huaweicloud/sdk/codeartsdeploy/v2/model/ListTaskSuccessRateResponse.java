@@ -45,7 +45,7 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
     }
 
     /**
-     * 项目id
+     * 项目ID
      * @return projectId
      */
     public String getProjectId() {
@@ -141,19 +141,17 @@ public class ListTaskSuccessRateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskSuccessRateResponse listTaskSuccessRateResponse = (ListTaskSuccessRateResponse) o;
-        return Objects.equals(this.projectId, listTaskSuccessRateResponse.projectId)
-            && Objects.equals(this.projectName, listTaskSuccessRateResponse.projectName)
-            && Objects.equals(this.startDate, listTaskSuccessRateResponse.startDate)
-            && Objects.equals(this.endDate, listTaskSuccessRateResponse.endDate)
-            && Objects.equals(this.tasksSuccessRate, listTaskSuccessRateResponse.tasksSuccessRate);
+        ListTaskSuccessRateResponse that = (ListTaskSuccessRateResponse) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.projectName, that.projectName)
+            && Objects.equals(this.startDate, that.startDate) && Objects.equals(this.endDate, that.endDate)
+            && Objects.equals(this.tasksSuccessRate, that.tasksSuccessRate);
     }
 
     @Override

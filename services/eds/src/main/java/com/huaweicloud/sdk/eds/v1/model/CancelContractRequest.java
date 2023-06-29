@@ -77,17 +77,16 @@ public class CancelContractRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CancelContractRequest cancelContractRequest = (CancelContractRequest) o;
-        return Objects.equals(this.instanceId, cancelContractRequest.instanceId)
-            && Objects.equals(this.connectorId, cancelContractRequest.connectorId)
-            && Objects.equals(this.contractId, cancelContractRequest.contractId);
+        CancelContractRequest that = (CancelContractRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.connectorId, that.connectorId)
+            && Objects.equals(this.contractId, that.contractId);
     }
 
     @Override

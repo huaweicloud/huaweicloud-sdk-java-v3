@@ -65,17 +65,16 @@ public class ShowResourceBindEnterpriseProjectRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceBindEnterpriseProjectRequest showResourceBindEnterpriseProjectRequest =
-            (ShowResourceBindEnterpriseProjectRequest) o;
-        return Objects.equals(this.enterpriseProjectId, showResourceBindEnterpriseProjectRequest.enterpriseProjectId)
-            && Objects.equals(this.body, showResourceBindEnterpriseProjectRequest.body);
+        ShowResourceBindEnterpriseProjectRequest that = (ShowResourceBindEnterpriseProjectRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -383,27 +383,22 @@ public class BizCatalogVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BizCatalogVO bizCatalogVO = (BizCatalogVO) o;
-        return Objects.equals(this.name, bizCatalogVO.name)
-            && Objects.equals(this.description, bizCatalogVO.description)
-            && Objects.equals(this.guid, bizCatalogVO.guid) && Objects.equals(this.owner, bizCatalogVO.owner)
-            && Objects.equals(this.parentId, bizCatalogVO.parentId) && Objects.equals(this.prevId, bizCatalogVO.prevId)
-            && Objects.equals(this.nextId, bizCatalogVO.nextId) && Objects.equals(this.id, bizCatalogVO.id)
-            && Objects.equals(this.qualifiedId, bizCatalogVO.qualifiedId)
-            && Objects.equals(this.createBy, bizCatalogVO.createBy)
-            && Objects.equals(this.updateBy, bizCatalogVO.updateBy)
-            && Objects.equals(this.createTime, bizCatalogVO.createTime)
-            && Objects.equals(this.updateTime, bizCatalogVO.updateTime)
-            && Objects.equals(this.bizmetricNum, bizCatalogVO.bizmetricNum)
-            && Objects.equals(this.childrenNum, bizCatalogVO.childrenNum)
-            && Objects.equals(this.children, bizCatalogVO.children);
+        BizCatalogVO that = (BizCatalogVO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.guid, that.guid) && Objects.equals(this.owner, that.owner)
+            && Objects.equals(this.parentId, that.parentId) && Objects.equals(this.prevId, that.prevId)
+            && Objects.equals(this.nextId, that.nextId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.qualifiedId, that.qualifiedId) && Objects.equals(this.createBy, that.createBy)
+            && Objects.equals(this.updateBy, that.updateBy) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.bizmetricNum, that.bizmetricNum)
+            && Objects.equals(this.childrenNum, that.childrenNum) && Objects.equals(this.children, that.children);
     }
 
     @Override

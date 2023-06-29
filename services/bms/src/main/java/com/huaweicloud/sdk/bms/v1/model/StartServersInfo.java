@@ -52,15 +52,15 @@ public class StartServersInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartServersInfo startServersInfo = (StartServersInfo) o;
-        return Objects.equals(this.servers, startServersInfo.servers);
+        StartServersInfo that = (StartServersInfo) obj;
+        return Objects.equals(this.servers, that.servers);
     }
 
     @Override

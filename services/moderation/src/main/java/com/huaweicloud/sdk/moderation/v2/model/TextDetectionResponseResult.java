@@ -55,16 +55,15 @@ public class TextDetectionResponseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TextDetectionResponseResult textDetectionResponseResult = (TextDetectionResponseResult) o;
-        return Objects.equals(this.suggestion, textDetectionResponseResult.suggestion)
-            && Objects.equals(this.detail, textDetectionResponseResult.detail);
+        TextDetectionResponseResult that = (TextDetectionResponseResult) obj;
+        return Objects.equals(this.suggestion, that.suggestion) && Objects.equals(this.detail, that.detail);
     }
 
     @Override

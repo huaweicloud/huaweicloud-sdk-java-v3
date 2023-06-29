@@ -136,18 +136,16 @@ public class ProductRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProductRequest productRequest = (ProductRequest) o;
-        return Objects.equals(this.name, productRequest.name)
-            && Objects.equals(this.description, productRequest.description)
-            && Objects.equals(this.attributes, productRequest.attributes)
-            && Objects.equals(this.tags, productRequest.tags);
+        ProductRequest that = (ProductRequest) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.attributes, that.attributes) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

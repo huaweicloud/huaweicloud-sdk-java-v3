@@ -134,22 +134,15 @@ public class CreateVolumeOption {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VolumeTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VolumeTypeEnum(value));
         }
 
         public static VolumeTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VolumeTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -430,26 +423,22 @@ public class CreateVolumeOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateVolumeOption createVolumeOption = (CreateVolumeOption) o;
-        return Objects.equals(this.availabilityZone, createVolumeOption.availabilityZone)
-            && Objects.equals(this.backupId, createVolumeOption.backupId)
-            && Objects.equals(this.count, createVolumeOption.count)
-            && Objects.equals(this.description, createVolumeOption.description)
-            && Objects.equals(this.enterpriseProjectId, createVolumeOption.enterpriseProjectId)
-            && Objects.equals(this.imageRef, createVolumeOption.imageRef)
-            && Objects.equals(this.metadata, createVolumeOption.metadata)
-            && Objects.equals(this.multiattach, createVolumeOption.multiattach)
-            && Objects.equals(this.name, createVolumeOption.name) && Objects.equals(this.size, createVolumeOption.size)
-            && Objects.equals(this.snapshotId, createVolumeOption.snapshotId)
-            && Objects.equals(this.volumeType, createVolumeOption.volumeType)
-            && Objects.equals(this.tags, createVolumeOption.tags);
+        CreateVolumeOption that = (CreateVolumeOption) obj;
+        return Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.backupId, that.backupId) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.multiattach, that.multiattach) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.snapshotId, that.snapshotId)
+            && Objects.equals(this.volumeType, that.volumeType) && Objects.equals(this.tags, that.tags);
     }
 
     @Override

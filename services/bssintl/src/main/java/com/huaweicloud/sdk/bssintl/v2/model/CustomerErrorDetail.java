@@ -77,17 +77,16 @@ public class CustomerErrorDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CustomerErrorDetail customerErrorDetail = (CustomerErrorDetail) o;
-        return Objects.equals(this.errorCode, customerErrorDetail.errorCode)
-            && Objects.equals(this.errorMsg, customerErrorDetail.errorMsg)
-            && Objects.equals(this.id, customerErrorDetail.id);
+        CustomerErrorDetail that = (CustomerErrorDetail) obj;
+        return Objects.equals(this.errorCode, that.errorCode) && Objects.equals(this.errorMsg, that.errorMsg)
+            && Objects.equals(this.id, that.id);
     }
 
     @Override

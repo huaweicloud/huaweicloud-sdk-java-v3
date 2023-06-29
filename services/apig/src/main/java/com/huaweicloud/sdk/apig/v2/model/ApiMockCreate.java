@@ -99,18 +99,16 @@ public class ApiMockCreate {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApiMockCreate apiMockCreate = (ApiMockCreate) o;
-        return Objects.equals(this.remark, apiMockCreate.remark)
-            && Objects.equals(this.resultContent, apiMockCreate.resultContent)
-            && Objects.equals(this.version, apiMockCreate.version)
-            && Objects.equals(this.authorizerId, apiMockCreate.authorizerId);
+        ApiMockCreate that = (ApiMockCreate) obj;
+        return Objects.equals(this.remark, that.remark) && Objects.equals(this.resultContent, that.resultContent)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.authorizerId, that.authorizerId);
     }
 
     @Override

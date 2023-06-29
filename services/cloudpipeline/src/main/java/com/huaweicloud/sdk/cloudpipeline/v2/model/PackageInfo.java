@@ -99,17 +99,16 @@ public class PackageInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PackageInfo packageInfo = (PackageInfo) o;
-        return Objects.equals(this.name, packageInfo.name) && Objects.equals(this.packageType, packageInfo.packageType)
-            && Objects.equals(this.version, packageInfo.version)
-            && Objects.equals(this.downloadUrl, packageInfo.downloadUrl);
+        PackageInfo that = (PackageInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.packageType, that.packageType)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.downloadUrl, that.downloadUrl);
     }
 
     @Override

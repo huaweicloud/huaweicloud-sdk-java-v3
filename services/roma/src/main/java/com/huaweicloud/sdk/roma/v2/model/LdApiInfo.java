@@ -86,22 +86,15 @@ public class LdApiInfo {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new MethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new MethodEnum(value));
         }
 
         public static MethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            MethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -184,22 +177,15 @@ public class LdApiInfo {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ContentTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ContentTypeEnum(value));
         }
 
         public static ContentTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ContentTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -296,22 +282,15 @@ public class LdApiInfo {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -384,22 +363,15 @@ public class LdApiInfo {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -780,27 +752,24 @@ public class LdApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LdApiInfo ldApiInfo = (LdApiInfo) o;
-        return Objects.equals(this.name, ldApiInfo.name) && Objects.equals(this.path, ldApiInfo.path)
-            && Objects.equals(this.method, ldApiInfo.method) && Objects.equals(this.description, ldApiInfo.description)
-            && Objects.equals(this.version, ldApiInfo.version)
-            && Objects.equals(this.contentType, ldApiInfo.contentType)
-            && Objects.equals(this.apiSignatureId, ldApiInfo.apiSignatureId)
-            && Objects.equals(this.romaAppId, ldApiInfo.romaAppId)
-            && Objects.equals(this.returnFormat, ldApiInfo.returnFormat)
-            && Objects.equals(this.parameters, ldApiInfo.parameters) && Objects.equals(this.id, ldApiInfo.id)
-            && Objects.equals(this.instance, ldApiInfo.instance) && Objects.equals(this.type, ldApiInfo.type)
-            && Objects.equals(this.status, ldApiInfo.status) && Objects.equals(this.createdTime, ldApiInfo.createdTime)
-            && Objects.equals(this.modifiedTime, ldApiInfo.modifiedTime)
-            && Objects.equals(this.scripts, ldApiInfo.scripts)
-            && Objects.equals(this.romaAppName, ldApiInfo.romaAppName);
+        LdApiInfo that = (LdApiInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.path, that.path)
+            && Objects.equals(this.method, that.method) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.version, that.version) && Objects.equals(this.contentType, that.contentType)
+            && Objects.equals(this.apiSignatureId, that.apiSignatureId)
+            && Objects.equals(this.romaAppId, that.romaAppId) && Objects.equals(this.returnFormat, that.returnFormat)
+            && Objects.equals(this.parameters, that.parameters) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.instance, that.instance) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime) && Objects.equals(this.scripts, that.scripts)
+            && Objects.equals(this.romaAppName, that.romaAppName);
     }
 
     @Override

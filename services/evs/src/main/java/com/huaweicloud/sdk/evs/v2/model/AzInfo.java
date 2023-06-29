@@ -65,15 +65,15 @@ public class AzInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AzInfo azInfo = (AzInfo) o;
-        return Objects.equals(this.zoneName, azInfo.zoneName) && Objects.equals(this.zoneState, azInfo.zoneState);
+        AzInfo that = (AzInfo) obj;
+        return Objects.equals(this.zoneName, that.zoneName) && Objects.equals(this.zoneState, that.zoneState);
     }
 
     @Override

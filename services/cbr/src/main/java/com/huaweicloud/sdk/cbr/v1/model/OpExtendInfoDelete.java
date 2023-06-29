@@ -55,16 +55,15 @@ public class OpExtendInfoDelete {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpExtendInfoDelete opExtendInfoDelete = (OpExtendInfoDelete) o;
-        return Objects.equals(this.backupId, opExtendInfoDelete.backupId)
-            && Objects.equals(this.backupName, opExtendInfoDelete.backupName);
+        OpExtendInfoDelete that = (OpExtendInfoDelete) obj;
+        return Objects.equals(this.backupId, that.backupId) && Objects.equals(this.backupName, that.backupName);
     }
 
     @Override

@@ -99,18 +99,16 @@ public class PictureModelingByUrlReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PictureModelingByUrlReq pictureModelingByUrlReq = (PictureModelingByUrlReq) o;
-        return Objects.equals(this.pictureUrl, pictureModelingByUrlReq.pictureUrl)
-            && Objects.equals(this.styleId, pictureModelingByUrlReq.styleId)
-            && Objects.equals(this.name, pictureModelingByUrlReq.name)
-            && Objects.equals(this.notifyUrl, pictureModelingByUrlReq.notifyUrl);
+        PictureModelingByUrlReq that = (PictureModelingByUrlReq) obj;
+        return Objects.equals(this.pictureUrl, that.pictureUrl) && Objects.equals(this.styleId, that.styleId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.notifyUrl, that.notifyUrl);
     }
 
     @Override

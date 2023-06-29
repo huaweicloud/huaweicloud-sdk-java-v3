@@ -53,16 +53,15 @@ public class AddPublicipsIntoSharedBandwidthOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddPublicipsIntoSharedBandwidthOption addPublicipsIntoSharedBandwidthOption =
-            (AddPublicipsIntoSharedBandwidthOption) o;
-        return Objects.equals(this.publicipInfo, addPublicipsIntoSharedBandwidthOption.publicipInfo);
+        AddPublicipsIntoSharedBandwidthOption that = (AddPublicipsIntoSharedBandwidthOption) obj;
+        return Objects.equals(this.publicipInfo, that.publicipInfo);
     }
 
     @Override

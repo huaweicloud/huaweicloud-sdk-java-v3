@@ -1,48 +1,42 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-import java.util.Collections;
-
-
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 返回列表的排序方式，可以为空。
  */
-public class EventQueryParamSort  {
-
+public class EventQueryParamSort {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order_by")
-    
+    @JsonProperty(value = "order_by")
+
     private List<String> orderBy = null;
-        /**
+
+    /**
      * 排序方式枚举值。asc代表正序，desc代表倒叙。
      */
     public static final class OrderEnum {
 
-        
         /**
          * Enum ASC for value: "asc"
          */
         public static final OrderEnum ASC = new OrderEnum("asc");
-        
+
         /**
          * Enum DESC for value: "desc"
          */
         public static final OrderEnum DESC = new OrderEnum("desc");
-        
 
         private static final Map<String, OrderEnum> STATIC_FIELDS = createStaticFields();
 
@@ -71,25 +65,18 @@ public class EventQueryParamSort  {
 
         @JsonCreator
         public static OrderEnum fromValue(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new OrderEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OrderEnum(value));
         }
 
         public static OrderEnum valueOf(String value) {
-            if( value == null ){
+            if (value == null) {
                 return null;
             }
-            OrderEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -107,8 +94,7 @@ public class EventQueryParamSort  {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="order")
-    
+    @JsonProperty(value = "order")
 
     private OrderEnum order;
 
@@ -117,9 +103,8 @@ public class EventQueryParamSort  {
         return this;
     }
 
-    
     public EventQueryParamSort addOrderByItem(String orderByItem) {
-        if(this.orderBy == null) {
+        if (this.orderBy == null) {
             this.orderBy = new ArrayList<>();
         }
         this.orderBy.add(orderByItem);
@@ -127,7 +112,7 @@ public class EventQueryParamSort  {
     }
 
     public EventQueryParamSort withOrderBy(Consumer<List<String>> orderBySetter) {
-        if(this.orderBy == null) {
+        if (this.orderBy == null) {
             this.orderBy = new ArrayList<>();
         }
         orderBySetter.accept(this.orderBy);
@@ -146,15 +131,10 @@ public class EventQueryParamSort  {
         this.orderBy = orderBy;
     }
 
-    
-
     public EventQueryParamSort withOrder(OrderEnum order) {
         this.order = order;
         return this;
     }
-
-    
-
 
     /**
      * 排序方式枚举值。asc代表正序，desc代表倒叙。
@@ -168,24 +148,23 @@ public class EventQueryParamSort  {
         this.order = order;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventQueryParamSort eventQueryParamSort = (EventQueryParamSort) o;
-        return Objects.equals(this.orderBy, eventQueryParamSort.orderBy) &&
-            Objects.equals(this.order, eventQueryParamSort.order);
+        EventQueryParamSort that = (EventQueryParamSort) obj;
+        return Objects.equals(this.orderBy, that.orderBy) && Objects.equals(this.order, that.order);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(orderBy, order);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -195,6 +174,7 @@ public class EventQueryParamSort  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -205,8 +185,5 @@ public class EventQueryParamSort  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -143,20 +143,19 @@ public class StatUsageSummaryInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatUsageSummaryInfo statUsageSummaryInfo = (StatUsageSummaryInfo) o;
-        return Objects.equals(this.resourceId, statUsageSummaryInfo.resourceId)
-            && Objects.equals(this.actualDays, statUsageSummaryInfo.actualDays)
-            && Objects.equals(this.bandWidth, statUsageSummaryInfo.bandWidth)
-            && Objects.equals(this.monthlyGuaranteedBandWidth, statUsageSummaryInfo.monthlyGuaranteedBandWidth)
-            && Objects.equals(this.monthlyPeakBandWidth, statUsageSummaryInfo.monthlyPeakBandWidth)
-            && Objects.equals(this.bandWidthMeasureId, statUsageSummaryInfo.bandWidthMeasureId);
+        StatUsageSummaryInfo that = (StatUsageSummaryInfo) obj;
+        return Objects.equals(this.resourceId, that.resourceId) && Objects.equals(this.actualDays, that.actualDays)
+            && Objects.equals(this.bandWidth, that.bandWidth)
+            && Objects.equals(this.monthlyGuaranteedBandWidth, that.monthlyGuaranteedBandWidth)
+            && Objects.equals(this.monthlyPeakBandWidth, that.monthlyPeakBandWidth)
+            && Objects.equals(this.bandWidthMeasureId, that.bandWidthMeasureId);
     }
 
     @Override

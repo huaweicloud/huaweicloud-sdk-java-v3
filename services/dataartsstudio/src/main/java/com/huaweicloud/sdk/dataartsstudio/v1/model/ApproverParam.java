@@ -143,19 +143,17 @@ public class ApproverParam {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApproverParam approverParam = (ApproverParam) o;
-        return Objects.equals(this.approverName, approverParam.approverName)
-            && Objects.equals(this.userId, approverParam.userId) && Objects.equals(this.email, approverParam.email)
-            && Objects.equals(this.phoneNumber, approverParam.phoneNumber)
-            && Objects.equals(this.emailNotify, approverParam.emailNotify)
-            && Objects.equals(this.smsNotify, approverParam.smsNotify);
+        ApproverParam that = (ApproverParam) obj;
+        return Objects.equals(this.approverName, that.approverName) && Objects.equals(this.userId, that.userId)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.phoneNumber, that.phoneNumber)
+            && Objects.equals(this.emailNotify, that.emailNotify) && Objects.equals(this.smsNotify, that.smsNotify);
     }
 
     @Override

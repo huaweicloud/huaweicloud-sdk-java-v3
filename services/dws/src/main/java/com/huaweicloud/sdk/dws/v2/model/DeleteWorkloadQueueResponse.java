@@ -56,16 +56,16 @@ public class DeleteWorkloadQueueResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteWorkloadQueueResponse deleteWorkloadQueueResponse = (DeleteWorkloadQueueResponse) o;
-        return Objects.equals(this.workloadResCode, deleteWorkloadQueueResponse.workloadResCode)
-            && Objects.equals(this.workloadResStr, deleteWorkloadQueueResponse.workloadResStr);
+        DeleteWorkloadQueueResponse that = (DeleteWorkloadQueueResponse) obj;
+        return Objects.equals(this.workloadResCode, that.workloadResCode)
+            && Objects.equals(this.workloadResStr, that.workloadResStr);
     }
 
     @Override

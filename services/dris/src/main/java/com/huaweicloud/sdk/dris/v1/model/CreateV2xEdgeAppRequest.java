@@ -87,17 +87,16 @@ public class CreateV2xEdgeAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateV2xEdgeAppRequest createV2xEdgeAppRequest = (CreateV2xEdgeAppRequest) o;
-        return Objects.equals(this.v2xEdgeId, createV2xEdgeAppRequest.v2xEdgeId)
-            && Objects.equals(this.instanceId, createV2xEdgeAppRequest.instanceId)
-            && Objects.equals(this.body, createV2xEdgeAppRequest.body);
+        CreateV2xEdgeAppRequest that = (CreateV2xEdgeAppRequest) obj;
+        return Objects.equals(this.v2xEdgeId, that.v2xEdgeId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

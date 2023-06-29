@@ -1,58 +1,43 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.Job;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListJobsResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorMessage")
-    
+    @JsonProperty(value = "errorMessage")
 
     private String errorMessage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="errorCode")
-    
+    @JsonProperty(value = "errorCode")
 
     private String errorCode;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobCount")
-    
+    @JsonProperty(value = "jobCount")
 
     private Integer jobCount;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobList")
-    
+    @JsonProperty(value = "jobList")
+
     private List<Job> jobList = null;
-    
+
     public ListJobsResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误信息。
@@ -66,15 +51,10 @@ public class ListJobsResponse extends SdkResponse {
         this.errorMessage = errorMessage;
     }
 
-    
-
     public ListJobsResponse withErrorCode(String errorCode) {
         this.errorCode = errorCode;
         return this;
     }
-
-    
-
 
     /**
      * 系统提示信息，执行成功时，字段可能为空。执行失败时，用于显示错误码。
@@ -88,15 +68,10 @@ public class ListJobsResponse extends SdkResponse {
         this.errorCode = errorCode;
     }
 
-    
-
     public ListJobsResponse withJobCount(Integer jobCount) {
         this.jobCount = jobCount;
         return this;
     }
-
-    
-
 
     /**
      * 任务总数
@@ -110,16 +85,13 @@ public class ListJobsResponse extends SdkResponse {
         this.jobCount = jobCount;
     }
 
-    
-
     public ListJobsResponse withJobList(List<Job> jobList) {
         this.jobList = jobList;
         return this;
     }
 
-    
     public ListJobsResponse addJobListItem(Job jobListItem) {
-        if(this.jobList == null) {
+        if (this.jobList == null) {
             this.jobList = new ArrayList<>();
         }
         this.jobList.add(jobListItem);
@@ -127,7 +99,7 @@ public class ListJobsResponse extends SdkResponse {
     }
 
     public ListJobsResponse withJobList(Consumer<List<Job>> jobListSetter) {
-        if(this.jobList == null) {
+        if (this.jobList == null) {
             this.jobList = new ArrayList<>();
         }
         jobListSetter.accept(this.jobList);
@@ -146,26 +118,24 @@ public class ListJobsResponse extends SdkResponse {
         this.jobList = jobList;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListJobsResponse listJobsResponse = (ListJobsResponse) o;
-        return Objects.equals(this.errorMessage, listJobsResponse.errorMessage) &&
-            Objects.equals(this.errorCode, listJobsResponse.errorCode) &&
-            Objects.equals(this.jobCount, listJobsResponse.jobCount) &&
-            Objects.equals(this.jobList, listJobsResponse.jobList);
+        ListJobsResponse that = (ListJobsResponse) obj;
+        return Objects.equals(this.errorMessage, that.errorMessage) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.jobCount, that.jobCount) && Objects.equals(this.jobList, that.jobList);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(errorMessage, errorCode, jobCount, jobList);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -177,6 +147,7 @@ public class ListJobsResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -187,8 +158,5 @@ public class ListJobsResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

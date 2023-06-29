@@ -55,15 +55,15 @@ public class UserAttrs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserAttrs userAttrs = (UserAttrs) o;
-        return Objects.equals(this.dataType, userAttrs.dataType) && Objects.equals(this.name, userAttrs.name);
+        UserAttrs that = (UserAttrs) obj;
+        return Objects.equals(this.dataType, that.dataType) && Objects.equals(this.name, that.name);
     }
 
     @Override

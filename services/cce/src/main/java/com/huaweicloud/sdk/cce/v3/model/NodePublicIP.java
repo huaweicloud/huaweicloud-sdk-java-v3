@@ -105,16 +105,16 @@ public class NodePublicIP {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NodePublicIP nodePublicIP = (NodePublicIP) o;
-        return Objects.equals(this.ids, nodePublicIP.ids) && Objects.equals(this.count, nodePublicIP.count)
-            && Objects.equals(this.eip, nodePublicIP.eip);
+        NodePublicIP that = (NodePublicIP) obj;
+        return Objects.equals(this.ids, that.ids) && Objects.equals(this.count, that.count)
+            && Objects.equals(this.eip, that.eip);
     }
 
     @Override

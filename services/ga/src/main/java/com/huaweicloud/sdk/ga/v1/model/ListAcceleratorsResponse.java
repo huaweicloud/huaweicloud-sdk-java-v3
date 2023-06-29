@@ -106,17 +106,16 @@ public class ListAcceleratorsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAcceleratorsResponse listAcceleratorsResponse = (ListAcceleratorsResponse) o;
-        return Objects.equals(this.accelerators, listAcceleratorsResponse.accelerators)
-            && Objects.equals(this.pageInfo, listAcceleratorsResponse.pageInfo)
-            && Objects.equals(this.requestId, listAcceleratorsResponse.requestId);
+        ListAcceleratorsResponse that = (ListAcceleratorsResponse) obj;
+        return Objects.equals(this.accelerators, that.accelerators) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.requestId, that.requestId);
     }
 
     @Override

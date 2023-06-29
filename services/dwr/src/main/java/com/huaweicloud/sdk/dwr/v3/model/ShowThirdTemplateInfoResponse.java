@@ -134,19 +134,17 @@ public class ShowThirdTemplateInfoResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowThirdTemplateInfoResponse showThirdTemplateInfoResponse = (ShowThirdTemplateInfoResponse) o;
-        return Objects.equals(this.providedActions, showThirdTemplateInfoResponse.providedActions)
-            && Objects.equals(this.xRequestId, showThirdTemplateInfoResponse.xRequestId)
-            && Objects.equals(this.connection, showThirdTemplateInfoResponse.connection)
-            && Objects.equals(this.contentLength, showThirdTemplateInfoResponse.contentLength)
-            && Objects.equals(this.date, showThirdTemplateInfoResponse.date);
+        ShowThirdTemplateInfoResponse that = (ShowThirdTemplateInfoResponse) obj;
+        return Objects.equals(this.providedActions, that.providedActions)
+            && Objects.equals(this.xRequestId, that.xRequestId) && Objects.equals(this.connection, that.connection)
+            && Objects.equals(this.contentLength, that.contentLength) && Objects.equals(this.date, that.date);
     }
 
     @Override

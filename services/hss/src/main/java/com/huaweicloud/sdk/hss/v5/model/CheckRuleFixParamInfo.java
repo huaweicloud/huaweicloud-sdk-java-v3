@@ -129,19 +129,17 @@ public class CheckRuleFixParamInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckRuleFixParamInfo checkRuleFixParamInfo = (CheckRuleFixParamInfo) o;
-        return Objects.equals(this.ruleParamId, checkRuleFixParamInfo.ruleParamId)
-            && Objects.equals(this.ruleDesc, checkRuleFixParamInfo.ruleDesc)
-            && Objects.equals(this.defaultValue, checkRuleFixParamInfo.defaultValue)
-            && Objects.equals(this.rangeMin, checkRuleFixParamInfo.rangeMin)
-            && Objects.equals(this.rangeMax, checkRuleFixParamInfo.rangeMax);
+        CheckRuleFixParamInfo that = (CheckRuleFixParamInfo) obj;
+        return Objects.equals(this.ruleParamId, that.ruleParamId) && Objects.equals(this.ruleDesc, that.ruleDesc)
+            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.rangeMin, that.rangeMin)
+            && Objects.equals(this.rangeMax, that.rangeMax);
     }
 
     @Override

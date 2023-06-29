@@ -167,19 +167,17 @@ public class ClusterInformationSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ClusterInformationSpec clusterInformationSpec = (ClusterInformationSpec) o;
-        return Objects.equals(this.description, clusterInformationSpec.description)
-            && Objects.equals(this.customSan, clusterInformationSpec.customSan)
-            && Objects.equals(this.containerNetwork, clusterInformationSpec.containerNetwork)
-            && Objects.equals(this.eniNetwork, clusterInformationSpec.eniNetwork)
-            && Objects.equals(this.hostNetwork, clusterInformationSpec.hostNetwork);
+        ClusterInformationSpec that = (ClusterInformationSpec) obj;
+        return Objects.equals(this.description, that.description) && Objects.equals(this.customSan, that.customSan)
+            && Objects.equals(this.containerNetwork, that.containerNetwork)
+            && Objects.equals(this.eniNetwork, that.eniNetwork) && Objects.equals(this.hostNetwork, that.hostNetwork);
     }
 
     @Override

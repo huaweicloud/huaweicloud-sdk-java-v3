@@ -166,20 +166,18 @@ public class UpdateProjectRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateProjectRequestBody updateProjectRequestBody = (UpdateProjectRequestBody) o;
-        return Objects.equals(this.id, updateProjectRequestBody.id)
-            && Objects.equals(this.name, updateProjectRequestBody.name)
-            && Objects.equals(this.description, updateProjectRequestBody.description)
-            && Objects.equals(this.variablesNoFile, updateProjectRequestBody.variablesNoFile)
-            && Objects.equals(this.source, updateProjectRequestBody.source)
-            && Objects.equals(this.externalParams, updateProjectRequestBody.externalParams);
+        UpdateProjectRequestBody that = (UpdateProjectRequestBody) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.variablesNoFile, that.variablesNoFile) && Objects.equals(this.source, that.source)
+            && Objects.equals(this.externalParams, that.externalParams);
     }
 
     @Override

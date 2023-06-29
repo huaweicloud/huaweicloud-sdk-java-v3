@@ -99,18 +99,16 @@ public class AddRouteTableRoute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddRouteTableRoute addRouteTableRoute = (AddRouteTableRoute) o;
-        return Objects.equals(this.type, addRouteTableRoute.type)
-            && Objects.equals(this.destination, addRouteTableRoute.destination)
-            && Objects.equals(this.nexthop, addRouteTableRoute.nexthop)
-            && Objects.equals(this.description, addRouteTableRoute.description);
+        AddRouteTableRoute that = (AddRouteTableRoute) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.destination, that.destination)
+            && Objects.equals(this.nexthop, that.nexthop) && Objects.equals(this.description, that.description);
     }
 
     @Override

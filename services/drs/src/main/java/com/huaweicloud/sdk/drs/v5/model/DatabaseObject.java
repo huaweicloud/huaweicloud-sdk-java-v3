@@ -55,22 +55,15 @@ public class DatabaseObject {
             if (value == null) {
                 return null;
             }
-            SyncTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SyncTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SyncTypeEnum(value));
         }
 
         public static SyncTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SyncTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,19 +267,18 @@ public class DatabaseObject {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatabaseObject databaseObject = (DatabaseObject) o;
-        return Objects.equals(this.syncType, databaseObject.syncType) && Objects.equals(this.name, databaseObject.name)
-            && Objects.equals(this.all, databaseObject.all) && Objects.equals(this.schemas, databaseObject.schemas)
-            && Objects.equals(this.tables, databaseObject.tables)
-            && Objects.equals(this.totalTableNum, databaseObject.totalTableNum)
-            && Objects.equals(this.isSynchronized, databaseObject.isSynchronized);
+        DatabaseObject that = (DatabaseObject) obj;
+        return Objects.equals(this.syncType, that.syncType) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.all, that.all) && Objects.equals(this.schemas, that.schemas)
+            && Objects.equals(this.tables, that.tables) && Objects.equals(this.totalTableNum, that.totalTableNum)
+            && Objects.equals(this.isSynchronized, that.isSynchronized);
     }
 
     @Override

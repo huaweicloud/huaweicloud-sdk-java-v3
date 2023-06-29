@@ -162,18 +162,18 @@ public class Region {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Region region = (Region) o;
-        return Objects.equals(this.description, region.description)
-            && Objects.equals(this.parentRegionId, region.parentRegionId) && Objects.equals(this.links, region.links)
-            && Objects.equals(this.locales, region.locales) && Objects.equals(this.id, region.id)
-            && Objects.equals(this.type, region.type);
+        Region that = (Region) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.parentRegionId, that.parentRegionId) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.locales, that.locales) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.type, that.type);
     }
 
     @Override

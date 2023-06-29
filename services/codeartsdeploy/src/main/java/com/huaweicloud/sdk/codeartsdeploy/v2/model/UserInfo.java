@@ -55,15 +55,15 @@ public class UserInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UserInfo userInfo = (UserInfo) o;
-        return Objects.equals(this.userId, userInfo.userId) && Objects.equals(this.userName, userInfo.userName);
+        UserInfo that = (UserInfo) obj;
+        return Objects.equals(this.userId, that.userId) && Objects.equals(this.userName, that.userName);
     }
 
     @Override

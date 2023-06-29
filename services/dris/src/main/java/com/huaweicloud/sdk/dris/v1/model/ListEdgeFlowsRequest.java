@@ -147,20 +147,17 @@ public class ListEdgeFlowsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeFlowsRequest listEdgeFlowsRequest = (ListEdgeFlowsRequest) o;
-        return Objects.equals(this.instanceId, listEdgeFlowsRequest.instanceId)
-            && Objects.equals(this.offset, listEdgeFlowsRequest.offset)
-            && Objects.equals(this.limit, listEdgeFlowsRequest.limit)
-            && Objects.equals(this.fromDate, listEdgeFlowsRequest.fromDate)
-            && Objects.equals(this.toDate, listEdgeFlowsRequest.toDate)
-            && Objects.equals(this.edgeId, listEdgeFlowsRequest.edgeId);
+        ListEdgeFlowsRequest that = (ListEdgeFlowsRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.fromDate, that.fromDate)
+            && Objects.equals(this.toDate, that.toDate) && Objects.equals(this.edgeId, that.edgeId);
     }
 
     @Override

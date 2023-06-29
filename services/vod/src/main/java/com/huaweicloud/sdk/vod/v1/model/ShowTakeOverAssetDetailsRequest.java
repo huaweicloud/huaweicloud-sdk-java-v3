@@ -79,17 +79,16 @@ public class ShowTakeOverAssetDetailsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTakeOverAssetDetailsRequest showTakeOverAssetDetailsRequest = (ShowTakeOverAssetDetailsRequest) o;
-        return Objects.equals(this.xSdkDate, showTakeOverAssetDetailsRequest.xSdkDate)
-            && Objects.equals(this.sourceBucket, showTakeOverAssetDetailsRequest.sourceBucket)
-            && Objects.equals(this.sourceObject, showTakeOverAssetDetailsRequest.sourceObject);
+        ShowTakeOverAssetDetailsRequest that = (ShowTakeOverAssetDetailsRequest) obj;
+        return Objects.equals(this.xSdkDate, that.xSdkDate) && Objects.equals(this.sourceBucket, that.sourceBucket)
+            && Objects.equals(this.sourceObject, that.sourceObject);
     }
 
     @Override

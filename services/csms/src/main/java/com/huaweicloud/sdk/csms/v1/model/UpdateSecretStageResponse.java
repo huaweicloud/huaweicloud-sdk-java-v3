@@ -44,15 +44,15 @@ public class UpdateSecretStageResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSecretStageResponse updateSecretStageResponse = (UpdateSecretStageResponse) o;
-        return Objects.equals(this.stage, updateSecretStageResponse.stage);
+        UpdateSecretStageResponse that = (UpdateSecretStageResponse) obj;
+        return Objects.equals(this.stage, that.stage);
     }
 
     @Override

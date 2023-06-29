@@ -57,15 +57,15 @@ public class StatSummary {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StatSummary statSummary = (StatSummary) o;
-        return Objects.equals(this.value, statSummary.value) && Objects.equals(this.date, statSummary.date);
+        StatSummary that = (StatSummary) obj;
+        return Objects.equals(this.value, that.value) && Objects.equals(this.date, that.date);
     }
 
     @Override

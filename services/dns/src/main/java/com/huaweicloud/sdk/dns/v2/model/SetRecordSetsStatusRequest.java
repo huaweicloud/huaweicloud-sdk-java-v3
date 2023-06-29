@@ -65,16 +65,15 @@ public class SetRecordSetsStatusRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SetRecordSetsStatusRequest setRecordSetsStatusRequest = (SetRecordSetsStatusRequest) o;
-        return Objects.equals(this.recordsetId, setRecordSetsStatusRequest.recordsetId)
-            && Objects.equals(this.body, setRecordSetsStatusRequest.body);
+        SetRecordSetsStatusRequest that = (SetRecordSetsStatusRequest) obj;
+        return Objects.equals(this.recordsetId, that.recordsetId) && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -80,22 +80,15 @@ public class ListAlarmTemplatesRequest {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TemplateTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TemplateTypeEnum(value));
         }
 
         public static TemplateTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TemplateTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -229,20 +222,18 @@ public class ListAlarmTemplatesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmTemplatesRequest listAlarmTemplatesRequest = (ListAlarmTemplatesRequest) o;
-        return Objects.equals(this.offset, listAlarmTemplatesRequest.offset)
-            && Objects.equals(this.limit, listAlarmTemplatesRequest.limit)
-            && Objects.equals(this.namespace, listAlarmTemplatesRequest.namespace)
-            && Objects.equals(this.dimName, listAlarmTemplatesRequest.dimName)
-            && Objects.equals(this.templateType, listAlarmTemplatesRequest.templateType)
-            && Objects.equals(this.templateName, listAlarmTemplatesRequest.templateName);
+        ListAlarmTemplatesRequest that = (ListAlarmTemplatesRequest) obj;
+        return Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.dimName, that.dimName)
+            && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.templateName, that.templateName);
     }
 
     @Override

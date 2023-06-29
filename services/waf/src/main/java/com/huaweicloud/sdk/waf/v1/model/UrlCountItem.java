@@ -77,16 +77,16 @@ public class UrlCountItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlCountItem urlCountItem = (UrlCountItem) o;
-        return Objects.equals(this.key, urlCountItem.key) && Objects.equals(this.num, urlCountItem.num)
-            && Objects.equals(this.host, urlCountItem.host);
+        UrlCountItem that = (UrlCountItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.host, that.host);
     }
 
     @Override

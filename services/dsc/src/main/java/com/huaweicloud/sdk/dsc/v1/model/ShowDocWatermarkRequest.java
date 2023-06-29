@@ -43,15 +43,15 @@ public class ShowDocWatermarkRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDocWatermarkRequest showDocWatermarkRequest = (ShowDocWatermarkRequest) o;
-        return Objects.equals(this.body, showDocWatermarkRequest.body);
+        ShowDocWatermarkRequest that = (ShowDocWatermarkRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -55,16 +55,15 @@ public class TrendQueryData {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TrendQueryData trendQueryData = (TrendQueryData) o;
-        return Objects.equals(this.result, trendQueryData.result)
-            && Objects.equals(this.timestamp, trendQueryData.timestamp);
+        TrendQueryData that = (TrendQueryData) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

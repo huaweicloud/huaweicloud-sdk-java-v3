@@ -75,22 +75,15 @@ public class Topic {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PermissionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PermissionEnum(value));
         }
 
         public static PermissionEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            PermissionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -157,22 +150,15 @@ public class Topic {
             if (value == null) {
                 return null;
             }
-            IsPrivateEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new IsPrivateEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new IsPrivateEnum(value));
         }
 
         public static IsPrivateEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            IsPrivateEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -286,17 +272,17 @@ public class Topic {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Topic topic = (Topic) o;
-        return Objects.equals(this.id, topic.id) && Objects.equals(this.name, topic.name)
-            && Objects.equals(this.description, topic.description) && Objects.equals(this.permission, topic.permission)
-            && Objects.equals(this.isPrivate, topic.isPrivate);
+        Topic that = (Topic) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.permission, that.permission)
+            && Objects.equals(this.isPrivate, that.isPrivate);
     }
 
     @Override

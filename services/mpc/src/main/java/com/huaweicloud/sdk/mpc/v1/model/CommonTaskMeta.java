@@ -187,21 +187,18 @@ public class CommonTaskMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CommonTaskMeta commonTaskMeta = (CommonTaskMeta) o;
-        return Objects.equals(this.taskId, commonTaskMeta.taskId) && Objects.equals(this.status, commonTaskMeta.status)
-            && Objects.equals(this.createTime, commonTaskMeta.createTime)
-            && Objects.equals(this.startTime, commonTaskMeta.startTime)
-            && Objects.equals(this.endTime, commonTaskMeta.endTime)
-            && Objects.equals(this.errorCode, commonTaskMeta.errorCode)
-            && Objects.equals(this.description, commonTaskMeta.description)
-            && Objects.equals(this.userData, commonTaskMeta.userData);
+        CommonTaskMeta that = (CommonTaskMeta) obj;
+        return Objects.equals(this.taskId, that.taskId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.errorCode, that.errorCode)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.userData, that.userData);
     }
 
     @Override

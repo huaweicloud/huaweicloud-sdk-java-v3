@@ -1,44 +1,35 @@
 package com.huaweicloud.sdk.aom.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v2.model.AppNameRule;
-import com.huaweicloud.sdk.aom.v2.model.ApplicationNameRule;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 服务发现规则命名部分。
  */
-public class NameRule  {
-
+public class NameRule {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="appNameRule")
-    
+    @JsonProperty(value = "appNameRule")
+
     private List<AppNameRule> appNameRule = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="applicationNameRule")
-    
+    @JsonProperty(value = "applicationNameRule")
+
     private List<ApplicationNameRule> applicationNameRule = null;
-    
+
     public NameRule withAppNameRule(List<AppNameRule> appNameRule) {
         this.appNameRule = appNameRule;
         return this;
     }
 
-    
     public NameRule addAppNameRuleItem(AppNameRule appNameRuleItem) {
-        if(this.appNameRule == null) {
+        if (this.appNameRule == null) {
             this.appNameRule = new ArrayList<>();
         }
         this.appNameRule.add(appNameRuleItem);
@@ -46,7 +37,7 @@ public class NameRule  {
     }
 
     public NameRule withAppNameRule(Consumer<List<AppNameRule>> appNameRuleSetter) {
-        if(this.appNameRule == null) {
+        if (this.appNameRule == null) {
             this.appNameRule = new ArrayList<>();
         }
         appNameRuleSetter.accept(this.appNameRule);
@@ -65,16 +56,13 @@ public class NameRule  {
         this.appNameRule = appNameRule;
     }
 
-    
-
     public NameRule withApplicationNameRule(List<ApplicationNameRule> applicationNameRule) {
         this.applicationNameRule = applicationNameRule;
         return this;
     }
 
-    
     public NameRule addApplicationNameRuleItem(ApplicationNameRule applicationNameRuleItem) {
-        if(this.applicationNameRule == null) {
+        if (this.applicationNameRule == null) {
             this.applicationNameRule = new ArrayList<>();
         }
         this.applicationNameRule.add(applicationNameRuleItem);
@@ -82,7 +70,7 @@ public class NameRule  {
     }
 
     public NameRule withApplicationNameRule(Consumer<List<ApplicationNameRule>> applicationNameRuleSetter) {
-        if(this.applicationNameRule == null) {
+        if (this.applicationNameRule == null) {
             this.applicationNameRule = new ArrayList<>();
         }
         applicationNameRuleSetter.accept(this.applicationNameRule);
@@ -101,24 +89,24 @@ public class NameRule  {
         this.applicationNameRule = applicationNameRule;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NameRule nameRule = (NameRule) o;
-        return Objects.equals(this.appNameRule, nameRule.appNameRule) &&
-            Objects.equals(this.applicationNameRule, nameRule.applicationNameRule);
+        NameRule that = (NameRule) obj;
+        return Objects.equals(this.appNameRule, that.appNameRule)
+            && Objects.equals(this.applicationNameRule, that.applicationNameRule);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(appNameRule, applicationNameRule);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -128,6 +116,7 @@ public class NameRule  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -138,8 +127,5 @@ public class NameRule  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

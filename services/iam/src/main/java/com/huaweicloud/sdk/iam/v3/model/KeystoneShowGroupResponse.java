@@ -44,15 +44,15 @@ public class KeystoneShowGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KeystoneShowGroupResponse keystoneShowGroupResponse = (KeystoneShowGroupResponse) o;
-        return Objects.equals(this.group, keystoneShowGroupResponse.group);
+        KeystoneShowGroupResponse that = (KeystoneShowGroupResponse) obj;
+        return Objects.equals(this.group, that.group);
     }
 
     @Override

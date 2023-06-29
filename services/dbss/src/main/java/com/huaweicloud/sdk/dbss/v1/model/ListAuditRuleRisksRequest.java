@@ -1,38 +1,27 @@
 package com.huaweicloud.sdk.dbss.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * Request Object
  */
-public class ListAuditRuleRisksRequest  {
-
+public class ListAuditRuleRisksRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="risk_levels")
-    
+    @JsonProperty(value = "risk_levels")
 
     private String riskLevels;
 
@@ -40,9 +29,6 @@ public class ListAuditRuleRisksRequest  {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID
@@ -56,15 +42,10 @@ public class ListAuditRuleRisksRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public ListAuditRuleRisksRequest withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * 风险名称
@@ -78,15 +59,10 @@ public class ListAuditRuleRisksRequest  {
         this.name = name;
     }
 
-    
-
     public ListAuditRuleRisksRequest withRiskLevels(String riskLevels) {
         this.riskLevels = riskLevels;
         return this;
     }
-
-    
-
 
     /**
      * 风险级别[LOW,MEDIUM,HIGH,NO_RISK]
@@ -100,25 +76,24 @@ public class ListAuditRuleRisksRequest  {
         this.riskLevels = riskLevels;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditRuleRisksRequest listAuditRuleRisksRequest = (ListAuditRuleRisksRequest) o;
-        return Objects.equals(this.instanceId, listAuditRuleRisksRequest.instanceId) &&
-            Objects.equals(this.name, listAuditRuleRisksRequest.name) &&
-            Objects.equals(this.riskLevels, listAuditRuleRisksRequest.riskLevels);
+        ListAuditRuleRisksRequest that = (ListAuditRuleRisksRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.riskLevels, that.riskLevels);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(instanceId, name, riskLevels);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -129,6 +104,7 @@ public class ListAuditRuleRisksRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -139,8 +115,5 @@ public class ListAuditRuleRisksRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

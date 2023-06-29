@@ -33,15 +33,15 @@ public class RestHandsUpReqBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestHandsUpReqBody restHandsUpReqBody = (RestHandsUpReqBody) o;
-        return Objects.equals(this.handsState, restHandsUpReqBody.handsState);
+        RestHandsUpReqBody that = (RestHandsUpReqBody) obj;
+        return Objects.equals(this.handsState, that.handsState);
     }
 
     @Override

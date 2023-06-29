@@ -165,18 +165,18 @@ public class FieldItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        FieldItem fieldItem = (FieldItem) o;
-        return Objects.equals(this.function, fieldItem.function) && Objects.equals(this.as, fieldItem.as)
-            && Objects.equals(this.defaultValue, fieldItem.defaultValue) && Objects.equals(this.trace, fieldItem.trace)
-            && Objects.equals(this.precision, fieldItem.precision) && Objects.equals(this.unit, fieldItem.unit)
-            && Objects.equals(this.visible, fieldItem.visible);
+        FieldItem that = (FieldItem) obj;
+        return Objects.equals(this.function, that.function) && Objects.equals(this.as, that.as)
+            && Objects.equals(this.defaultValue, that.defaultValue) && Objects.equals(this.trace, that.trace)
+            && Objects.equals(this.precision, that.precision) && Objects.equals(this.unit, that.unit)
+            && Objects.equals(this.visible, that.visible);
     }
 
     @Override

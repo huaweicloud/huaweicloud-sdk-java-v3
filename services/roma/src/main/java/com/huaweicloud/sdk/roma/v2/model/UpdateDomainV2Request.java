@@ -109,18 +109,16 @@ public class UpdateDomainV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDomainV2Request updateDomainV2Request = (UpdateDomainV2Request) o;
-        return Objects.equals(this.instanceId, updateDomainV2Request.instanceId)
-            && Objects.equals(this.groupId, updateDomainV2Request.groupId)
-            && Objects.equals(this.domainId, updateDomainV2Request.domainId)
-            && Objects.equals(this.body, updateDomainV2Request.body);
+        UpdateDomainV2Request that = (UpdateDomainV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.body, that.body);
     }
 
     @Override

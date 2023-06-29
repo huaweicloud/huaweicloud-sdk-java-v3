@@ -55,16 +55,15 @@ public class ListEntityMetricRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEntityMetricRequestBody listEntityMetricRequestBody = (ListEntityMetricRequestBody) o;
-        return Objects.equals(this.type, listEntityMetricRequestBody.type)
-            && Objects.equals(this.entityName, listEntityMetricRequestBody.entityName);
+        ListEntityMetricRequestBody that = (ListEntityMetricRequestBody) obj;
+        return Objects.equals(this.type, that.type) && Objects.equals(this.entityName, that.entityName);
     }
 
     @Override

@@ -253,25 +253,21 @@ public class SourceKafkaMQParameters {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SourceKafkaMQParameters sourceKafkaMQParameters = (SourceKafkaMQParameters) o;
-        return Objects.equals(this.group, sourceKafkaMQParameters.group)
-            && Objects.equals(this.instanceName, sourceKafkaMQParameters.instanceName)
-            && Objects.equals(this.instanceId, sourceKafkaMQParameters.instanceId)
-            && Objects.equals(this.topic, sourceKafkaMQParameters.topic)
-            && Objects.equals(this.seekTo, sourceKafkaMQParameters.seekTo)
-            && Objects.equals(this.enableSaslSsl, sourceKafkaMQParameters.enableSaslSsl)
-            && Objects.equals(this.saslMechanism, sourceKafkaMQParameters.saslMechanism)
-            && Objects.equals(this.sslCertificateUrl, sourceKafkaMQParameters.sslCertificateUrl)
-            && Objects.equals(this.sslCertificatePwd, sourceKafkaMQParameters.sslCertificatePwd)
-            && Objects.equals(this.userName, sourceKafkaMQParameters.userName)
-            && Objects.equals(this.password, sourceKafkaMQParameters.password);
+        SourceKafkaMQParameters that = (SourceKafkaMQParameters) obj;
+        return Objects.equals(this.group, that.group) && Objects.equals(this.instanceName, that.instanceName)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.seekTo, that.seekTo) && Objects.equals(this.enableSaslSsl, that.enableSaslSsl)
+            && Objects.equals(this.saslMechanism, that.saslMechanism)
+            && Objects.equals(this.sslCertificateUrl, that.sslCertificateUrl)
+            && Objects.equals(this.sslCertificatePwd, that.sslCertificatePwd)
+            && Objects.equals(this.userName, that.userName) && Objects.equals(this.password, that.password);
     }
 
     @Override

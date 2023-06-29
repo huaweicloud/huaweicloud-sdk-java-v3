@@ -91,16 +91,15 @@ public class ShowSharedTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSharedTagsResponse showSharedTagsResponse = (ShowSharedTagsResponse) o;
-        return Objects.equals(this.tags, showSharedTagsResponse.tags)
-            && Objects.equals(this.sysTags, showSharedTagsResponse.sysTags);
+        ShowSharedTagsResponse that = (ShowSharedTagsResponse) obj;
+        return Objects.equals(this.tags, that.tags) && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

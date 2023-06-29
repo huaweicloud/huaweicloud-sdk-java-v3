@@ -70,22 +70,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TaskTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TaskTypeEnum(value));
         }
 
         public static TaskTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TaskTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -164,22 +157,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            RunStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new RunStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new RunStatusEnum(value));
         }
 
         public static RunStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            RunStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -252,22 +238,15 @@ public class ListInstancesRequest {
             if (value == null) {
                 return null;
             }
-            NotifyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new NotifyStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new NotifyStatusEnum(value));
         }
 
         public static NotifyStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            NotifyStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -463,23 +442,19 @@ public class ListInstancesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListInstancesRequest listInstancesRequest = (ListInstancesRequest) o;
-        return Objects.equals(this.workspace, listInstancesRequest.workspace)
-            && Objects.equals(this.name, listInstancesRequest.name)
-            && Objects.equals(this.taskType, listInstancesRequest.taskType)
-            && Objects.equals(this.runStatus, listInstancesRequest.runStatus)
-            && Objects.equals(this.notifyStatus, listInstancesRequest.notifyStatus)
-            && Objects.equals(this.startTime, listInstancesRequest.startTime)
-            && Objects.equals(this.endTime, listInstancesRequest.endTime)
-            && Objects.equals(this.limit, listInstancesRequest.limit)
-            && Objects.equals(this.offset, listInstancesRequest.offset);
+        ListInstancesRequest that = (ListInstancesRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.taskType, that.taskType) && Objects.equals(this.runStatus, that.runStatus)
+            && Objects.equals(this.notifyStatus, that.notifyStatus) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset);
     }
 
     @Override

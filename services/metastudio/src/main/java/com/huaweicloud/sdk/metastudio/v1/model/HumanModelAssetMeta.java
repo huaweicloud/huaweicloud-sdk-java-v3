@@ -75,22 +75,15 @@ public class HumanModelAssetMeta {
             if (value == null) {
                 return null;
             }
-            ModelingTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ModelingTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ModelingTypeEnum(value));
         }
 
         public static ModelingTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ModelingTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -207,18 +200,17 @@ public class HumanModelAssetMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        HumanModelAssetMeta humanModelAssetMeta = (HumanModelAssetMeta) o;
-        return Objects.equals(this.styleId, humanModelAssetMeta.styleId)
-            && Objects.equals(this.modelingType, humanModelAssetMeta.modelingType)
-            && Objects.equals(this.modelingJobId, humanModelAssetMeta.modelingJobId)
-            && Objects.equals(this.components, humanModelAssetMeta.components);
+        HumanModelAssetMeta that = (HumanModelAssetMeta) obj;
+        return Objects.equals(this.styleId, that.styleId) && Objects.equals(this.modelingType, that.modelingType)
+            && Objects.equals(this.modelingJobId, that.modelingJobId)
+            && Objects.equals(this.components, that.components);
     }
 
     @Override

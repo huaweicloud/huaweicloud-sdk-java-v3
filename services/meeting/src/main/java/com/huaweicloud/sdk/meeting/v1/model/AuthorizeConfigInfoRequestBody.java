@@ -409,32 +409,27 @@ public class AuthorizeConfigInfoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AuthorizeConfigInfoRequestBody authorizeConfigInfoRequestBody = (AuthorizeConfigInfoRequestBody) o;
-        return Objects.equals(this.enableSSO, authorizeConfigInfoRequestBody.enableSSO)
-            && Objects.equals(this.domain, authorizeConfigInfoRequestBody.domain)
-            && Objects.equals(this.authorizeUrl, authorizeConfigInfoRequestBody.authorizeUrl)
-            && Objects.equals(this.getTokenUrl, authorizeConfigInfoRequestBody.getTokenUrl)
-            && Objects.equals(this.clientId, authorizeConfigInfoRequestBody.clientId)
-            && Objects.equals(this.clientSecret, authorizeConfigInfoRequestBody.clientSecret)
-            && Objects.equals(this.scope, authorizeConfigInfoRequestBody.scope)
-            && Objects.equals(this.accFieldName, authorizeConfigInfoRequestBody.accFieldName)
-            && Objects.equals(this.getUserInfoUrl, authorizeConfigInfoRequestBody.getUserInfoUrl)
-            && Objects.equals(this.oauth2ServerType, authorizeConfigInfoRequestBody.oauth2ServerType)
-            && Objects.equals(this.pcSchemaUrl, authorizeConfigInfoRequestBody.pcSchemaUrl)
-            && Objects.equals(this.androidSchemaUrl, authorizeConfigInfoRequestBody.androidSchemaUrl)
-            && Objects.equals(this.iosSchemaUrl, authorizeConfigInfoRequestBody.iosSchemaUrl)
-            && Objects.equals(this.thirdName, authorizeConfigInfoRequestBody.thirdName)
-            && Objects.equals(this.thirdEmail, authorizeConfigInfoRequestBody.thirdEmail)
-            && Objects.equals(this.thirdMobile, authorizeConfigInfoRequestBody.thirdMobile)
-            && Objects.equals(this.thirdAccessToken, authorizeConfigInfoRequestBody.thirdAccessToken)
-            && Objects.equals(this.thirdHeadImgUrl, authorizeConfigInfoRequestBody.thirdHeadImgUrl);
+        AuthorizeConfigInfoRequestBody that = (AuthorizeConfigInfoRequestBody) obj;
+        return Objects.equals(this.enableSSO, that.enableSSO) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.authorizeUrl, that.authorizeUrl)
+            && Objects.equals(this.getTokenUrl, that.getTokenUrl) && Objects.equals(this.clientId, that.clientId)
+            && Objects.equals(this.clientSecret, that.clientSecret) && Objects.equals(this.scope, that.scope)
+            && Objects.equals(this.accFieldName, that.accFieldName)
+            && Objects.equals(this.getUserInfoUrl, that.getUserInfoUrl)
+            && Objects.equals(this.oauth2ServerType, that.oauth2ServerType)
+            && Objects.equals(this.pcSchemaUrl, that.pcSchemaUrl)
+            && Objects.equals(this.androidSchemaUrl, that.androidSchemaUrl)
+            && Objects.equals(this.iosSchemaUrl, that.iosSchemaUrl) && Objects.equals(this.thirdName, that.thirdName)
+            && Objects.equals(this.thirdEmail, that.thirdEmail) && Objects.equals(this.thirdMobile, that.thirdMobile)
+            && Objects.equals(this.thirdAccessToken, that.thirdAccessToken)
+            && Objects.equals(this.thirdHeadImgUrl, that.thirdHeadImgUrl);
     }
 
     @Override

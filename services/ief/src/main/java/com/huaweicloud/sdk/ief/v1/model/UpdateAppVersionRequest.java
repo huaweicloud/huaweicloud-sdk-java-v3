@@ -109,18 +109,16 @@ public class UpdateAppVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAppVersionRequest updateAppVersionRequest = (UpdateAppVersionRequest) o;
-        return Objects.equals(this.iefInstanceId, updateAppVersionRequest.iefInstanceId)
-            && Objects.equals(this.appId, updateAppVersionRequest.appId)
-            && Objects.equals(this.versionId, updateAppVersionRequest.versionId)
-            && Objects.equals(this.body, updateAppVersionRequest.body);
+        UpdateAppVersionRequest that = (UpdateAppVersionRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId) && Objects.equals(this.appId, that.appId)
+            && Objects.equals(this.versionId, that.versionId) && Objects.equals(this.body, that.body);
     }
 
     @Override

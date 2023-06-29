@@ -104,18 +104,16 @@ public class UpdateCommandResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCommandResponse updateCommandResponse = (UpdateCommandResponse) o;
-        return Objects.equals(this.serviceId, updateCommandResponse.serviceId)
-            && Objects.equals(this.commandId, updateCommandResponse.commandId)
-            && Objects.equals(this.commandName, updateCommandResponse.commandName)
-            && Objects.equals(this.description, updateCommandResponse.description);
+        UpdateCommandResponse that = (UpdateCommandResponse) obj;
+        return Objects.equals(this.serviceId, that.serviceId) && Objects.equals(this.commandId, that.commandId)
+            && Objects.equals(this.commandName, that.commandName) && Objects.equals(this.description, that.description);
     }
 
     @Override

@@ -520,30 +520,24 @@ public class CreateServers {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateServers createServers = (CreateServers) o;
-        return Objects.equals(this.imageRef, createServers.imageRef)
-            && Objects.equals(this.flavorRef, createServers.flavorRef) && Objects.equals(this.name, createServers.name)
-            && Objects.equals(this.metadata, createServers.metadata)
-            && Objects.equals(this.userData, createServers.userData)
-            && Objects.equals(this.adminPass, createServers.adminPass)
-            && Objects.equals(this.keyName, createServers.keyName)
-            && Objects.equals(this.securityGroups, createServers.securityGroups)
-            && Objects.equals(this.nics, createServers.nics)
-            && Objects.equals(this.availabilityZone, createServers.availabilityZone)
-            && Objects.equals(this.vpcid, createServers.vpcid) && Objects.equals(this.publicip, createServers.publicip)
-            && Objects.equals(this.count, createServers.count)
-            && Objects.equals(this.rootVolume, createServers.rootVolume)
-            && Objects.equals(this.dataVolumes, createServers.dataVolumes)
-            && Objects.equals(this.extendparam, createServers.extendparam)
-            && Objects.equals(this.schedulerHints, createServers.schedulerHints)
-            && Objects.equals(this.serverTags, createServers.serverTags);
+        CreateServers that = (CreateServers) obj;
+        return Objects.equals(this.imageRef, that.imageRef) && Objects.equals(this.flavorRef, that.flavorRef)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.metadata, that.metadata)
+            && Objects.equals(this.userData, that.userData) && Objects.equals(this.adminPass, that.adminPass)
+            && Objects.equals(this.keyName, that.keyName) && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.nics, that.nics) && Objects.equals(this.availabilityZone, that.availabilityZone)
+            && Objects.equals(this.vpcid, that.vpcid) && Objects.equals(this.publicip, that.publicip)
+            && Objects.equals(this.count, that.count) && Objects.equals(this.rootVolume, that.rootVolume)
+            && Objects.equals(this.dataVolumes, that.dataVolumes) && Objects.equals(this.extendparam, that.extendparam)
+            && Objects.equals(this.schedulerHints, that.schedulerHints)
+            && Objects.equals(this.serverTags, that.serverTags);
     }
 
     @Override

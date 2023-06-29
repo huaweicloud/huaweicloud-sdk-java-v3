@@ -143,20 +143,18 @@ public class RetryTaskGroupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RetryTaskGroupReq retryTaskGroupReq = (RetryTaskGroupReq) o;
-        return Objects.equals(this.srcAk, retryTaskGroupReq.srcAk)
-            && Objects.equals(this.srcSk, retryTaskGroupReq.srcSk)
-            && Objects.equals(this.dstAk, retryTaskGroupReq.dstAk)
-            && Objects.equals(this.dstSk, retryTaskGroupReq.dstSk)
-            && Objects.equals(this.sourceCdnAuthenticationKey, retryTaskGroupReq.sourceCdnAuthenticationKey)
-            && Objects.equals(this.migrateFailedObject, retryTaskGroupReq.migrateFailedObject);
+        RetryTaskGroupReq that = (RetryTaskGroupReq) obj;
+        return Objects.equals(this.srcAk, that.srcAk) && Objects.equals(this.srcSk, that.srcSk)
+            && Objects.equals(this.dstAk, that.dstAk) && Objects.equals(this.dstSk, that.dstSk)
+            && Objects.equals(this.sourceCdnAuthenticationKey, that.sourceCdnAuthenticationKey)
+            && Objects.equals(this.migrateFailedObject, that.migrateFailedObject);
     }
 
     @Override

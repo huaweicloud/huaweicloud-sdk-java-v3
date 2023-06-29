@@ -65,15 +65,15 @@ public class TableInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        TableInfo tableInfo = (TableInfo) o;
-        return Objects.equals(this.columns, tableInfo.columns) && Objects.equals(this.name, tableInfo.name);
+        TableInfo that = (TableInfo) obj;
+        return Objects.equals(this.columns, that.columns) && Objects.equals(this.name, that.name);
     }
 
     @Override

@@ -1,45 +1,33 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.RestartNodeRequest;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class RestartGaussMySqlNodeRequest  {
-
+public class RestartGaussMySqlNodeRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
-    
+    @JsonProperty(value = "X-Language")
 
     private String xLanguage;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="instance_id")
-    
+    @JsonProperty(value = "instance_id")
 
     private String instanceId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="node_id")
-    
+    @JsonProperty(value = "node_id")
 
     private String nodeId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private RestartNodeRequest body;
 
@@ -48,15 +36,12 @@ public class RestartGaussMySqlNodeRequest  {
         return this;
     }
 
-    
-
-
     /**
      * 语言。
      * @return xLanguage
      */
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="X-Language")
+    @JsonProperty(value = "X-Language")
     public String getXLanguage() {
         return xLanguage;
     }
@@ -65,15 +50,10 @@ public class RestartGaussMySqlNodeRequest  {
         this.xLanguage = xLanguage;
     }
 
-    
-
     public RestartGaussMySqlNodeRequest withInstanceId(String instanceId) {
         this.instanceId = instanceId;
         return this;
     }
-
-    
-
 
     /**
      * 实例ID。
@@ -87,15 +67,10 @@ public class RestartGaussMySqlNodeRequest  {
         this.instanceId = instanceId;
     }
 
-    
-
     public RestartGaussMySqlNodeRequest withNodeId(String nodeId) {
         this.nodeId = nodeId;
         return this;
     }
-
-    
-
 
     /**
      * 节点ID。
@@ -109,22 +84,19 @@ public class RestartGaussMySqlNodeRequest  {
         this.nodeId = nodeId;
     }
 
-    
-
     public RestartGaussMySqlNodeRequest withBody(RestartNodeRequest body) {
         this.body = body;
         return this;
     }
 
     public RestartGaussMySqlNodeRequest withBody(Consumer<RestartNodeRequest> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new RestartNodeRequest();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -138,26 +110,24 @@ public class RestartGaussMySqlNodeRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RestartGaussMySqlNodeRequest restartGaussMySqlNodeRequest = (RestartGaussMySqlNodeRequest) o;
-        return Objects.equals(this.xLanguage, restartGaussMySqlNodeRequest.xLanguage) &&
-            Objects.equals(this.instanceId, restartGaussMySqlNodeRequest.instanceId) &&
-            Objects.equals(this.nodeId, restartGaussMySqlNodeRequest.nodeId) &&
-            Objects.equals(this.body, restartGaussMySqlNodeRequest.body);
+        RestartGaussMySqlNodeRequest that = (RestartGaussMySqlNodeRequest) obj;
+        return Objects.equals(this.xLanguage, that.xLanguage) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(xLanguage, instanceId, nodeId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -169,6 +139,7 @@ public class RestartGaussMySqlNodeRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -179,8 +150,5 @@ public class RestartGaussMySqlNodeRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

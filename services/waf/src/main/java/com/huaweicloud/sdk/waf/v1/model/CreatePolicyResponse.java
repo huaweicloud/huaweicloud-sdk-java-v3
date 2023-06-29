@@ -372,25 +372,20 @@ public class CreatePolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePolicyResponse createPolicyResponse = (CreatePolicyResponse) o;
-        return Objects.equals(this.id, createPolicyResponse.id) && Objects.equals(this.name, createPolicyResponse.name)
-            && Objects.equals(this.level, createPolicyResponse.level)
-            && Objects.equals(this.fullDetection, createPolicyResponse.fullDetection)
-            && Objects.equals(this.robotAction, createPolicyResponse.robotAction)
-            && Objects.equals(this.action, createPolicyResponse.action)
-            && Objects.equals(this.options, createPolicyResponse.options)
-            && Objects.equals(this.modulexOptions, createPolicyResponse.modulexOptions)
-            && Objects.equals(this.hosts, createPolicyResponse.hosts)
-            && Objects.equals(this.bindHost, createPolicyResponse.bindHost)
-            && Objects.equals(this.extend, createPolicyResponse.extend)
-            && Objects.equals(this.timestamp, createPolicyResponse.timestamp);
+        CreatePolicyResponse that = (CreatePolicyResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.fullDetection, that.fullDetection)
+            && Objects.equals(this.robotAction, that.robotAction) && Objects.equals(this.action, that.action)
+            && Objects.equals(this.options, that.options) && Objects.equals(this.modulexOptions, that.modulexOptions)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.bindHost, that.bindHost)
+            && Objects.equals(this.extend, that.extend) && Objects.equals(this.timestamp, that.timestamp);
     }
 
     @Override

@@ -1,77 +1,59 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.AccessRomaBriefInfo;
-import java.util.function.Consumer;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class UpdateNaResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="na_id")
-    
+    @JsonProperty(value = "na_id")
 
     private String naId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="name")
-    
+    @JsonProperty(value = "name")
 
     private String name;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="description")
-    
+    @JsonProperty(value = "description")
 
     private String description;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endpoint")
-    
+    @JsonProperty(value = "endpoint")
 
     private String endpoint;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="auth_type")
-    
+    @JsonProperty(value = "auth_type")
 
     private String authType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_type")
-    
+    @JsonProperty(value = "access_type")
 
     private String accessType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="access_roma_info")
-    
+    @JsonProperty(value = "access_roma_info")
 
     private AccessRomaBriefInfo accessRomaInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="create_time")
-    
+    @JsonProperty(value = "create_time")
 
     private String createTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="update_time")
-    
+    @JsonProperty(value = "update_time")
 
     private String updateTime;
 
@@ -79,9 +61,6 @@ public class UpdateNaResponse extends SdkResponse {
         this.naId = naId;
         return this;
     }
-
-    
-
 
     /**
      * NA系统ID，提供给其他系统访问的唯一标识
@@ -95,15 +74,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.naId = naId;
     }
 
-    
-
     public UpdateNaResponse withName(String name) {
         this.name = name;
         return this;
     }
-
-    
-
 
     /**
      * NA系统名称
@@ -117,15 +91,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.name = name;
     }
 
-    
-
     public UpdateNaResponse withDescription(String description) {
         this.description = description;
         return this;
     }
-
-    
-
 
     /**
      * 北向NA系统描述
@@ -139,15 +108,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.description = description;
     }
 
-    
-
     public UpdateNaResponse withEndpoint(String endpoint) {
         this.endpoint = endpoint;
         return this;
     }
-
-    
-
 
     /**
      * 访问URL地址
@@ -161,15 +125,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.endpoint = endpoint;
     }
 
-    
-
     public UpdateNaResponse withAuthType(String authType) {
         this.authType = authType;
         return this;
     }
-
-    
-
 
     /**
      * 鉴权方式
@@ -183,15 +142,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.authType = authType;
     }
 
-    
-
     public UpdateNaResponse withAccessType(String accessType) {
         this.accessType = accessType;
         return this;
     }
-
-    
-
 
     /**
      * 接入类型
@@ -205,22 +159,19 @@ public class UpdateNaResponse extends SdkResponse {
         this.accessType = accessType;
     }
 
-    
-
     public UpdateNaResponse withAccessRomaInfo(AccessRomaBriefInfo accessRomaInfo) {
         this.accessRomaInfo = accessRomaInfo;
         return this;
     }
 
     public UpdateNaResponse withAccessRomaInfo(Consumer<AccessRomaBriefInfo> accessRomaInfoSetter) {
-        if(this.accessRomaInfo == null ){
+        if (this.accessRomaInfo == null) {
             this.accessRomaInfo = new AccessRomaBriefInfo();
             accessRomaInfoSetter.accept(this.accessRomaInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get accessRomaInfo
@@ -234,15 +185,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.accessRomaInfo = accessRomaInfo;
     }
 
-    
-
     public UpdateNaResponse withCreateTime(String createTime) {
         this.createTime = createTime;
         return this;
     }
-
-    
-
 
     /**
      * 创建时间
@@ -256,15 +202,10 @@ public class UpdateNaResponse extends SdkResponse {
         this.createTime = createTime;
     }
 
-    
-
     public UpdateNaResponse withUpdateTime(String updateTime) {
         this.updateTime = updateTime;
         return this;
     }
-
-    
-
 
     /**
      * 更新时间
@@ -278,31 +219,28 @@ public class UpdateNaResponse extends SdkResponse {
         this.updateTime = updateTime;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNaResponse updateNaResponse = (UpdateNaResponse) o;
-        return Objects.equals(this.naId, updateNaResponse.naId) &&
-            Objects.equals(this.name, updateNaResponse.name) &&
-            Objects.equals(this.description, updateNaResponse.description) &&
-            Objects.equals(this.endpoint, updateNaResponse.endpoint) &&
-            Objects.equals(this.authType, updateNaResponse.authType) &&
-            Objects.equals(this.accessType, updateNaResponse.accessType) &&
-            Objects.equals(this.accessRomaInfo, updateNaResponse.accessRomaInfo) &&
-            Objects.equals(this.createTime, updateNaResponse.createTime) &&
-            Objects.equals(this.updateTime, updateNaResponse.updateTime);
+        UpdateNaResponse that = (UpdateNaResponse) obj;
+        return Objects.equals(this.naId, that.naId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.endpoint, that.endpoint)
+            && Objects.equals(this.authType, that.authType) && Objects.equals(this.accessType, that.accessType)
+            && Objects.equals(this.accessRomaInfo, that.accessRomaInfo)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(naId, name, description, endpoint, authType, accessType, accessRomaInfo, createTime, updateTime);
+        return Objects
+            .hash(naId, name, description, endpoint, authType, accessType, accessRomaInfo, createTime, updateTime);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -319,6 +257,7 @@ public class UpdateNaResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -329,8 +268,5 @@ public class UpdateNaResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

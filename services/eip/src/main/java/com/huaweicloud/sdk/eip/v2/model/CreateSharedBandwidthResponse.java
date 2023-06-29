@@ -44,15 +44,15 @@ public class CreateSharedBandwidthResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateSharedBandwidthResponse createSharedBandwidthResponse = (CreateSharedBandwidthResponse) o;
-        return Objects.equals(this.bandwidth, createSharedBandwidthResponse.bandwidth);
+        CreateSharedBandwidthResponse that = (CreateSharedBandwidthResponse) obj;
+        return Objects.equals(this.bandwidth, that.bandwidth);
     }
 
     @Override

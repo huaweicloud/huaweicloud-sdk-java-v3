@@ -143,19 +143,17 @@ public class ListAuditlogsResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAuditlogsResult listAuditlogsResult = (ListAuditlogsResult) o;
-        return Objects.equals(this.nodeId, listAuditlogsResult.nodeId)
-            && Objects.equals(this.id, listAuditlogsResult.id) && Objects.equals(this.name, listAuditlogsResult.name)
-            && Objects.equals(this.size, listAuditlogsResult.size)
-            && Objects.equals(this.startTime, listAuditlogsResult.startTime)
-            && Objects.equals(this.endTime, listAuditlogsResult.endTime);
+        ListAuditlogsResult that = (ListAuditlogsResult) obj;
+        return Objects.equals(this.nodeId, that.nodeId) && Objects.equals(this.id, that.id)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

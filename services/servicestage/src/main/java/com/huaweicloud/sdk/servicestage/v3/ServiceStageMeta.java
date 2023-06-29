@@ -10,49 +10,6 @@ import com.huaweicloud.sdk.servicestage.v3.model.*;
 @SuppressWarnings("unchecked")
 public class ServiceStageMeta {
 
-    public static final HttpRequestDef<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse> compareComponentConfiguration =
-        genForcompareComponentConfiguration();
-
-    private static HttpRequestDef<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse> genForcompareComponentConfiguration() {
-        // basic
-        HttpRequestDef.Builder<CompareComponentConfigurationRequest, CompareComponentConfigurationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CompareComponentConfigurationRequest.class,
-                    CompareComponentConfigurationResponse.class)
-                .withName("CompareComponentConfiguration")
-                .withUri(
-                    "/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/configurations/compare")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CompareComponentConfigurationRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CompareComponentConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<ComponentConfigCompare>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ComponentConfigCompare.class),
-            f -> f.withMarshaller(CompareComponentConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<CreateApplicationRequest, CreateApplicationResponse> createApplication =
         genForcreateApplication();
 
@@ -70,105 +27,6 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplicationCreate.class),
             f -> f.withMarshaller(CreateApplicationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
-        genForcreateComponent();
-
-    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
-        // basic
-        HttpRequestDef.Builder<CreateComponentRequest, CreateComponentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateComponentRequest.class, CreateComponentResponse.class)
-                .withName("CreateComponent")
-                .withUri("/v3/{project_id}/cas/applications/{application_id}/components")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<ComponentCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ComponentCreate.class),
-            f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> createComponentConfiguration =
-        genForcreateComponentConfiguration();
-
-    private static HttpRequestDef<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> genForcreateComponentConfiguration() {
-        // basic
-        HttpRequestDef.Builder<CreateComponentConfigurationRequest, CreateComponentConfigurationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.POST,
-                    CreateComponentConfigurationRequest.class,
-                    CreateComponentConfigurationResponse.class)
-                .withName("CreateComponentConfiguration")
-                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/configurations")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
-        builder.<ComponentConfigCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ComponentConfigCreate.class),
-            f -> f.withMarshaller(CreateComponentConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
-        genForcreateEnvironment();
-
-    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForcreateEnvironment() {
-        // basic
-        HttpRequestDef.Builder<CreateEnvironmentRequest, CreateEnvironmentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentRequest.class, CreateEnvironmentResponse.class)
-                .withName("CreateEnvironment")
-                .withUri("/v3/{project_id}/cas/environments")
-                .withContentType("application/json");
-
-        // requests
-        builder.<EnvironmentCreate>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(EnvironmentCreate.class),
-            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -237,63 +95,6 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
-        genFordeleteComponent();
-
-    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
-        // basic
-        HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
-                .withName("DeleteComponent")
-                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironment =
-        genFordeleteEnvironment();
-
-    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genFordeleteEnvironment() {
-        // basic
-        HttpRequestDef.Builder<DeleteEnvironmentRequest, DeleteEnvironmentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentRequest.class, DeleteEnvironmentResponse.class)
-                .withName("DeleteEnvironment")
-                .withUri("/v3/{project_id}/cas/environments/{environment_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("environment_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ModifyApplicationRequest, ModifyApplicationResponse> modifyApplication =
         genFormodifyApplication();
 
@@ -353,112 +154,6 @@ public class ServiceStageMeta {
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(ApplicationConfigModify.class),
             f -> f.withMarshaller(ModifyApplicationConfigurationRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> modifyComponent =
-        genFormodifyComponent();
-
-    private static HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> genFormodifyComponent() {
-        // basic
-        HttpRequestDef.Builder<ModifyComponentRequest, ModifyComponentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyComponentRequest.class, ModifyComponentResponse.class)
-                .withName("ModifyComponent")
-                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
-        builder.<ComponentModify>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ComponentModify.class),
-            f -> f.withMarshaller(ModifyComponentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironment =
-        genFormodifyEnvironment();
-
-    private static HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> genFormodifyEnvironment() {
-        // basic
-        HttpRequestDef.Builder<ModifyEnvironmentRequest, ModifyEnvironmentResponse> builder =
-            HttpRequestDef.builder(HttpMethod.PUT, ModifyEnvironmentRequest.class, ModifyEnvironmentResponse.class)
-                .withName("ModifyEnvironment")
-                .withUri("/v3/{project_id}/cas/environments/{environment_id}")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("environment_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
-        builder.<EnvironmentModify>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(EnvironmentModify.class),
-            f -> f.withMarshaller(ModifyEnvironmentRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironment =
-        genFormodifyResourceInEnvironment();
-
-    private static HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> genFormodifyResourceInEnvironment() {
-        // basic
-        HttpRequestDef.Builder<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.PUT,
-                    ModifyResourceInEnvironmentRequest.class,
-                    ModifyResourceInEnvironmentResponse.class)
-                .withName("ModifyResourceInEnvironment")
-                .withUri("/v3/{project_id}/cas/environments/{environment_id}/resources")
-                .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("environment_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getEnvironmentId, (req, v) -> {
-                req.setEnvironmentId(v);
-            }));
-        builder.<EnvironmentResourceModify>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(EnvironmentResourceModify.class),
-            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getBody, (req, v) -> {
                 req.setBody(v);
             }));
 
@@ -573,70 +268,31 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse> showComponentConfiguration =
-        genForshowComponentConfiguration();
+    public static final HttpRequestDef<CreateComponentRequest, CreateComponentResponse> createComponent =
+        genForcreateComponent();
 
-    private static HttpRequestDef<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse> genForshowComponentConfiguration() {
+    private static HttpRequestDef<CreateComponentRequest, CreateComponentResponse> genForcreateComponent() {
         // basic
-        HttpRequestDef.Builder<ShowComponentConfigurationRequest, ShowComponentConfigurationResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowComponentConfigurationRequest.class,
-                    ShowComponentConfigurationResponse.class)
-                .withName("ShowComponentConfiguration")
-                .withUri(
-                    "/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/configurations/{version}")
+        HttpRequestDef.Builder<CreateComponentRequest, CreateComponentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateComponentRequest.class, CreateComponentResponse.class)
+                .withName("CreateComponent")
+                .withUri("/v3/{project_id}/cas/applications/{application_id}/components")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
         builder.<String>withRequestField("application_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getApplicationId, (req, v) -> {
+            f -> f.withMarshaller(CreateComponentRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
             }));
-        builder.<String>withRequestField("version",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getVersion, (req, v) -> {
-                req.setVersion(v);
-            }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
+        builder.<ComponentCreate>withRequestField("body",
+            LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("order_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
-            }));
-        builder.<ShowComponentConfigurationRequest.OrderEnum>withRequestField("order",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowComponentConfigurationRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowComponentConfigurationRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
+            TypeCasts.uncheckedConversion(ComponentCreate.class),
+            f -> f.withMarshaller(CreateComponentRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -644,62 +300,70 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse> showComponentConfigurations =
-        genForshowComponentConfigurations();
+    public static final HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> deleteComponent =
+        genFordeleteComponent();
 
-    private static HttpRequestDef<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse> genForshowComponentConfigurations() {
+    private static HttpRequestDef<DeleteComponentRequest, DeleteComponentResponse> genFordeleteComponent() {
         // basic
-        HttpRequestDef.Builder<ShowComponentConfigurationsRequest, ShowComponentConfigurationsResponse> builder =
-            HttpRequestDef
-                .builder(HttpMethod.GET,
-                    ShowComponentConfigurationsRequest.class,
-                    ShowComponentConfigurationsResponse.class)
-                .withName("ShowComponentConfigurations")
-                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/configurations")
+        HttpRequestDef.Builder<DeleteComponentRequest, DeleteComponentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteComponentRequest.class, DeleteComponentResponse.class)
+                .withName("DeleteComponent")
+                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}")
                 .withContentType("application/json");
 
         // requests
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
         builder.<String>withRequestField("application_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getApplicationId, (req, v) -> {
+            f -> f.withMarshaller(DeleteComponentRequest::getApplicationId, (req, v) -> {
                 req.setApplicationId(v);
             }));
-        builder.<Integer>withRequestField("limit",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getLimit, (req, v) -> {
-                req.setLimit(v);
-            }));
-        builder.<Integer>withRequestField("offset",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(Integer.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getOffset, (req, v) -> {
-                req.setOffset(v);
-            }));
-        builder.<String>withRequestField("order_by",
-            LocationType.Query,
-            FieldExistence.NULL_IGNORE,
+        builder.<String>withRequestField("component_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getOrderBy, (req, v) -> {
-                req.setOrderBy(v);
+            f -> f.withMarshaller(DeleteComponentRequest::getComponentId, (req, v) -> {
+                req.setComponentId(v);
             }));
-        builder.<ShowComponentConfigurationsRequest.OrderEnum>withRequestField("order",
-            LocationType.Query,
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> modifyComponent =
+        genFormodifyComponent();
+
+    private static HttpRequestDef<ModifyComponentRequest, ModifyComponentResponse> genFormodifyComponent() {
+        // basic
+        HttpRequestDef.Builder<ModifyComponentRequest, ModifyComponentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyComponentRequest.class, ModifyComponentResponse.class)
+                .withName("ModifyComponent")
+                .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyComponentRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("component_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyComponentRequest::getComponentId, (req, v) -> {
+                req.setComponentId(v);
+            }));
+        builder.<ComponentModify>withRequestField("body",
+            LocationType.Body,
             FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ShowComponentConfigurationsRequest.OrderEnum.class),
-            f -> f.withMarshaller(ShowComponentConfigurationsRequest::getOrder, (req, v) -> {
-                req.setOrder(v);
+            TypeCasts.uncheckedConversion(ComponentModify.class),
+            f -> f.withMarshaller(ModifyComponentRequest::getBody, (req, v) -> {
+                req.setBody(v);
             }));
 
         // response
@@ -922,6 +586,162 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
+    public static final HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentAction =
+        genForupdateComponentAction();
+
+    private static HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> genForupdateComponentAction() {
+        // basic
+        HttpRequestDef.Builder<UpdateComponentActionRequest, UpdateComponentActionResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, UpdateComponentActionRequest.class, UpdateComponentActionResponse.class)
+            .withName("UpdateComponentAction")
+            .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/action")
+            .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("application_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateComponentActionRequest::getApplicationId, (req, v) -> {
+                req.setApplicationId(v);
+            }));
+        builder.<String>withRequestField("component_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(UpdateComponentActionRequest::getComponentId, (req, v) -> {
+                req.setComponentId(v);
+            }));
+        builder.<ComponentAction>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(ComponentAction.class),
+            f -> f.withMarshaller(UpdateComponentActionRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> createEnvironment =
+        genForcreateEnvironment();
+
+    private static HttpRequestDef<CreateEnvironmentRequest, CreateEnvironmentResponse> genForcreateEnvironment() {
+        // basic
+        HttpRequestDef.Builder<CreateEnvironmentRequest, CreateEnvironmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.POST, CreateEnvironmentRequest.class, CreateEnvironmentResponse.class)
+                .withName("CreateEnvironment")
+                .withUri("/v3/{project_id}/cas/environments")
+                .withContentType("application/json");
+
+        // requests
+        builder.<EnvironmentCreate>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EnvironmentCreate.class),
+            f -> f.withMarshaller(CreateEnvironmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> deleteEnvironment =
+        genFordeleteEnvironment();
+
+    private static HttpRequestDef<DeleteEnvironmentRequest, DeleteEnvironmentResponse> genFordeleteEnvironment() {
+        // basic
+        HttpRequestDef.Builder<DeleteEnvironmentRequest, DeleteEnvironmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.DELETE, DeleteEnvironmentRequest.class, DeleteEnvironmentResponse.class)
+                .withName("DeleteEnvironment")
+                .withUri("/v3/{project_id}/cas/environments/{environment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(DeleteEnvironmentRequest::getEnvironmentId, (req, v) -> {
+                req.setEnvironmentId(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> modifyEnvironment =
+        genFormodifyEnvironment();
+
+    private static HttpRequestDef<ModifyEnvironmentRequest, ModifyEnvironmentResponse> genFormodifyEnvironment() {
+        // basic
+        HttpRequestDef.Builder<ModifyEnvironmentRequest, ModifyEnvironmentResponse> builder =
+            HttpRequestDef.builder(HttpMethod.PUT, ModifyEnvironmentRequest.class, ModifyEnvironmentResponse.class)
+                .withName("ModifyEnvironment")
+                .withUri("/v3/{project_id}/cas/environments/{environment_id}")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyEnvironmentRequest::getEnvironmentId, (req, v) -> {
+                req.setEnvironmentId(v);
+            }));
+        builder.<EnvironmentModify>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EnvironmentModify.class),
+            f -> f.withMarshaller(ModifyEnvironmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> modifyResourceInEnvironment =
+        genFormodifyResourceInEnvironment();
+
+    private static HttpRequestDef<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> genFormodifyResourceInEnvironment() {
+        // basic
+        HttpRequestDef.Builder<ModifyResourceInEnvironmentRequest, ModifyResourceInEnvironmentResponse> builder =
+            HttpRequestDef
+                .builder(HttpMethod.PUT,
+                    ModifyResourceInEnvironmentRequest.class,
+                    ModifyResourceInEnvironmentResponse.class)
+                .withName("ModifyResourceInEnvironment")
+                .withUri("/v3/{project_id}/cas/environments/{environment_id}/resources")
+                .withContentType("application/json");
+
+        // requests
+        builder.<String>withRequestField("environment_id",
+            LocationType.Path,
+            FieldExistence.NON_NULL_NON_EMPTY,
+            TypeCasts.uncheckedConversion(String.class),
+            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getEnvironmentId, (req, v) -> {
+                req.setEnvironmentId(v);
+            }));
+        builder.<EnvironmentResourceModify>withRequestField("body",
+            LocationType.Body,
+            FieldExistence.NULL_IGNORE,
+            TypeCasts.uncheckedConversion(EnvironmentResourceModify.class),
+            f -> f.withMarshaller(ModifyResourceInEnvironmentRequest::getBody, (req, v) -> {
+                req.setBody(v);
+            }));
+
+        // response
+
+        return builder.build();
+    }
+
     public static final HttpRequestDef<ShowEnvironmentInfoRequest, ShowEnvironmentInfoResponse> showEnvironmentInfo =
         genForshowEnvironmentInfo();
 
@@ -1040,63 +860,6 @@ public class ServiceStageMeta {
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> showRuntimeStacks =
-        genForshowRuntimeStacks();
-
-    private static HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> genForshowRuntimeStacks() {
-        // basic
-        HttpRequestDef.Builder<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ShowRuntimeStacksRequest.class, ShowRuntimeStacksResponse.class)
-                .withName("ShowRuntimeStacks")
-                .withUri("/v3/{project_id}/cas/runtimestacks")
-                .withContentType("application/json");
-
-        // requests
-
-        // response
-
-        return builder.build();
-    }
-
-    public static final HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> updateComponentAction =
-        genForupdateComponentAction();
-
-    private static HttpRequestDef<UpdateComponentActionRequest, UpdateComponentActionResponse> genForupdateComponentAction() {
-        // basic
-        HttpRequestDef.Builder<UpdateComponentActionRequest, UpdateComponentActionResponse> builder = HttpRequestDef
-            .builder(HttpMethod.POST, UpdateComponentActionRequest.class, UpdateComponentActionResponse.class)
-            .withName("UpdateComponentAction")
-            .withUri("/v3/{project_id}/cas/applications/{application_id}/components/{component_id}/action")
-            .withContentType("application/json");
-
-        // requests
-        builder.<String>withRequestField("application_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getApplicationId, (req, v) -> {
-                req.setApplicationId(v);
-            }));
-        builder.<String>withRequestField("component_id",
-            LocationType.Path,
-            FieldExistence.NON_NULL_NON_EMPTY,
-            TypeCasts.uncheckedConversion(String.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getComponentId, (req, v) -> {
-                req.setComponentId(v);
-            }));
-        builder.<ComponentAction>withRequestField("body",
-            LocationType.Body,
-            FieldExistence.NULL_IGNORE,
-            TypeCasts.uncheckedConversion(ComponentAction.class),
-            f -> f.withMarshaller(UpdateComponentActionRequest::getBody, (req, v) -> {
-                req.setBody(v);
-            }));
-
-        // response
-
-        return builder.build();
-    }
-
     public static final HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> showJobInfo = genForshowJobInfo();
 
     private static HttpRequestDef<ShowJobInfoRequest, ShowJobInfoResponse> genForshowJobInfo() {
@@ -1143,6 +906,24 @@ public class ServiceStageMeta {
             f -> f.withMarshaller(ShowJobInfoRequest::getDesc, (req, v) -> {
                 req.setDesc(v);
             }));
+
+        // response
+
+        return builder.build();
+    }
+
+    public static final HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> showRuntimeStacks =
+        genForshowRuntimeStacks();
+
+    private static HttpRequestDef<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> genForshowRuntimeStacks() {
+        // basic
+        HttpRequestDef.Builder<ShowRuntimeStacksRequest, ShowRuntimeStacksResponse> builder =
+            HttpRequestDef.builder(HttpMethod.GET, ShowRuntimeStacksRequest.class, ShowRuntimeStacksResponse.class)
+                .withName("ShowRuntimeStacks")
+                .withUri("/v3/{project_id}/cas/runtimestacks")
+                .withContentType("application/json");
+
+        // requests
 
         // response
 

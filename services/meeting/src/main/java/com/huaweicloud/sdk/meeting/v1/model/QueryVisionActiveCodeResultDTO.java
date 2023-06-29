@@ -165,21 +165,18 @@ public class QueryVisionActiveCodeResultDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueryVisionActiveCodeResultDTO queryVisionActiveCodeResultDTO = (QueryVisionActiveCodeResultDTO) o;
-        return Objects.equals(this.id, queryVisionActiveCodeResultDTO.id)
-            && Objects.equals(this.activeCode, queryVisionActiveCodeResultDTO.activeCode)
-            && Objects.equals(this.devName, queryVisionActiveCodeResultDTO.devName)
-            && Objects.equals(this.devType, queryVisionActiveCodeResultDTO.devType)
-            && Objects.equals(this.deptCode, queryVisionActiveCodeResultDTO.deptCode)
-            && Objects.equals(this.deptName, queryVisionActiveCodeResultDTO.deptName)
-            && Objects.equals(this.expireDate, queryVisionActiveCodeResultDTO.expireDate);
+        QueryVisionActiveCodeResultDTO that = (QueryVisionActiveCodeResultDTO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.activeCode, that.activeCode)
+            && Objects.equals(this.devName, that.devName) && Objects.equals(this.devType, that.devType)
+            && Objects.equals(this.deptCode, that.deptCode) && Objects.equals(this.deptName, that.deptName)
+            && Objects.equals(this.expireDate, that.expireDate);
     }
 
     @Override

@@ -57,16 +57,15 @@ public class ListTrustedServicesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTrustedServicesRequest listTrustedServicesRequest = (ListTrustedServicesRequest) o;
-        return Objects.equals(this.limit, listTrustedServicesRequest.limit)
-            && Objects.equals(this.marker, listTrustedServicesRequest.marker);
+        ListTrustedServicesRequest that = (ListTrustedServicesRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

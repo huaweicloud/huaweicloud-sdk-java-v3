@@ -121,17 +121,17 @@ public class CreateAppReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateAppReq createAppReq = (CreateAppReq) o;
-        return Objects.equals(this.name, createAppReq.name) && Objects.equals(this.remark, createAppReq.remark)
-            && Objects.equals(this.key, createAppReq.key) && Objects.equals(this.secret, createAppReq.secret)
-            && Objects.equals(this.favorite, createAppReq.favorite);
+        CreateAppReq that = (CreateAppReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.remark, that.remark)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.secret, that.secret)
+            && Objects.equals(this.favorite, that.favorite);
     }
 
     @Override

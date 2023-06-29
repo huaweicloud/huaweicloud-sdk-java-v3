@@ -77,16 +77,16 @@ public class Compress {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Compress compress = (Compress) o;
-        return Objects.equals(this.status, compress.status) && Objects.equals(this.type, compress.type)
-            && Objects.equals(this.fileType, compress.fileType);
+        Compress that = (Compress) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.fileType, that.fileType);
     }
 
     @Override

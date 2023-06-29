@@ -77,17 +77,17 @@ public class InstanceAbstractReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        InstanceAbstractReq instanceAbstractReq = (InstanceAbstractReq) o;
-        return Objects.equals(this.description, instanceAbstractReq.description)
-            && Objects.equals(this.maintainBegin, instanceAbstractReq.maintainBegin)
-            && Objects.equals(this.maintainEnd, instanceAbstractReq.maintainEnd);
+        InstanceAbstractReq that = (InstanceAbstractReq) obj;
+        return Objects.equals(this.description, that.description)
+            && Objects.equals(this.maintainBegin, that.maintainBegin)
+            && Objects.equals(this.maintainEnd, that.maintainEnd);
     }
 
     @Override

@@ -166,19 +166,19 @@ public class AppNodeModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AppNodeModel appNodeModel = (AppNodeModel) o;
-        return Objects.equals(this.id, appNodeModel.id) && Objects.equals(this.gmtCreate, appNodeModel.gmtCreate)
-            && Objects.equals(this.gmtModify, appNodeModel.gmtModify) && Objects.equals(this.name, appNodeModel.name)
-            && Objects.equals(this.businessId, appNodeModel.businessId)
-            && Objects.equals(this.subBusinessId, appNodeModel.subBusinessId)
-            && Objects.equals(this.innerDomainId, appNodeModel.innerDomainId);
+        AppNodeModel that = (AppNodeModel) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.gmtCreate, that.gmtCreate)
+            && Objects.equals(this.gmtModify, that.gmtModify) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.businessId, that.businessId)
+            && Objects.equals(this.subBusinessId, that.subBusinessId)
+            && Objects.equals(this.innerDomainId, that.innerDomainId);
     }
 
     @Override

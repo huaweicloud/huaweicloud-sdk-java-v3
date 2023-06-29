@@ -67,22 +67,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineEnum(value));
         }
 
         public static EngineEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -143,22 +136,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new EngineVersionEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new EngineVersionEnum(value));
         }
 
         public static EngineVersionEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            EngineVersionEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -206,8 +192,8 @@ public class CreatePostPaidInstanceReq {
     private List<String> availableZones = null;
 
     /**
-    * RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
-    */
+     * RocketMQ实例规格。   - c6.4u8g.cluster：单个代理最大Topic数4000，单个代理最大消费组数4000   - c6.8u16g.cluster：单个代理最大Topic数8000，单个代理最大消费组数8000   - c6.12u24g.cluster：单个代理最大Topic数12000，单个代理最大消费组数12000   - c6.16u32g.cluster：单个代理最大Topic数16000，单个代理最大消费组数16000
+     */
     public static final class ProductIdEnum {
 
         /**
@@ -262,22 +248,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            ProductIdEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProductIdEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProductIdEnum(value));
         }
 
         public static ProductIdEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProductIdEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -351,22 +330,15 @@ public class CreatePostPaidInstanceReq {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StorageSpecCodeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StorageSpecCodeEnum(value));
         }
 
         public static StorageSpecCodeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StorageSpecCodeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -741,32 +713,26 @@ public class CreatePostPaidInstanceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePostPaidInstanceReq createPostPaidInstanceReq = (CreatePostPaidInstanceReq) o;
-        return Objects.equals(this.name, createPostPaidInstanceReq.name)
-            && Objects.equals(this.description, createPostPaidInstanceReq.description)
-            && Objects.equals(this.engine, createPostPaidInstanceReq.engine)
-            && Objects.equals(this.engineVersion, createPostPaidInstanceReq.engineVersion)
-            && Objects.equals(this.storageSpace, createPostPaidInstanceReq.storageSpace)
-            && Objects.equals(this.vpcId, createPostPaidInstanceReq.vpcId)
-            && Objects.equals(this.subnetId, createPostPaidInstanceReq.subnetId)
-            && Objects.equals(this.securityGroupId, createPostPaidInstanceReq.securityGroupId)
-            && Objects.equals(this.availableZones, createPostPaidInstanceReq.availableZones)
-            && Objects.equals(this.productId, createPostPaidInstanceReq.productId)
-            && Objects.equals(this.sslEnable, createPostPaidInstanceReq.sslEnable)
-            && Objects.equals(this.storageSpecCode, createPostPaidInstanceReq.storageSpecCode)
-            && Objects.equals(this.enterpriseProjectId, createPostPaidInstanceReq.enterpriseProjectId)
-            && Objects.equals(this.enableAcl, createPostPaidInstanceReq.enableAcl)
-            && Objects.equals(this.ipv6Enable, createPostPaidInstanceReq.ipv6Enable)
-            && Objects.equals(this.enablePublicip, createPostPaidInstanceReq.enablePublicip)
-            && Objects.equals(this.publicipId, createPostPaidInstanceReq.publicipId)
-            && Objects.equals(this.brokerNum, createPostPaidInstanceReq.brokerNum);
+        CreatePostPaidInstanceReq that = (CreatePostPaidInstanceReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.engine, that.engine) && Objects.equals(this.engineVersion, that.engineVersion)
+            && Objects.equals(this.storageSpace, that.storageSpace) && Objects.equals(this.vpcId, that.vpcId)
+            && Objects.equals(this.subnetId, that.subnetId)
+            && Objects.equals(this.securityGroupId, that.securityGroupId)
+            && Objects.equals(this.availableZones, that.availableZones)
+            && Objects.equals(this.productId, that.productId) && Objects.equals(this.sslEnable, that.sslEnable)
+            && Objects.equals(this.storageSpecCode, that.storageSpecCode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.enableAcl, that.enableAcl) && Objects.equals(this.ipv6Enable, that.ipv6Enable)
+            && Objects.equals(this.enablePublicip, that.enablePublicip)
+            && Objects.equals(this.publicipId, that.publicipId) && Objects.equals(this.brokerNum, that.brokerNum);
     }
 
     @Override

@@ -79,17 +79,16 @@ public class ListPermissionsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPermissionsRequest listPermissionsRequest = (ListPermissionsRequest) o;
-        return Objects.equals(this.limit, listPermissionsRequest.limit)
-            && Objects.equals(this.marker, listPermissionsRequest.marker)
-            && Objects.equals(this.resourceType, listPermissionsRequest.resourceType);
+        ListPermissionsRequest that = (ListPermissionsRequest) obj;
+        return Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

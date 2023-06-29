@@ -98,17 +98,16 @@ public class UpdateVersionAliasRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateVersionAliasRequestBody updateVersionAliasRequestBody = (UpdateVersionAliasRequestBody) o;
-        return Objects.equals(this.version, updateVersionAliasRequestBody.version)
-            && Objects.equals(this.description, updateVersionAliasRequestBody.description)
-            && Objects.equals(this.additionalVersionWeights, updateVersionAliasRequestBody.additionalVersionWeights);
+        UpdateVersionAliasRequestBody that = (UpdateVersionAliasRequestBody) obj;
+        return Objects.equals(this.version, that.version) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
     }
 
     @Override

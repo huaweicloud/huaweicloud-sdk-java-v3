@@ -496,29 +496,26 @@ public class ApprovalVO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ApprovalVO approvalVO = (ApprovalVO) o;
-        return Objects.equals(this.id, approvalVO.id) && Objects.equals(this.tenantId, approvalVO.tenantId)
-            && Objects.equals(this.nameCh, approvalVO.nameCh) && Objects.equals(this.nameEn, approvalVO.nameEn)
-            && Objects.equals(this.bizId, approvalVO.bizId) && Objects.equals(this.bizType, approvalVO.bizType)
-            && Objects.equals(this.bizInfo, approvalVO.bizInfo)
-            && Objects.equals(this.bizInfoObj, approvalVO.bizInfoObj)
-            && Objects.equals(this.bizVersion, approvalVO.bizVersion)
-            && Objects.equals(this.bizStatus, approvalVO.bizStatus)
-            && Objects.equals(this.approvalStatus, approvalVO.approvalStatus)
-            && Objects.equals(this.approvalType, approvalVO.approvalType)
-            && Objects.equals(this.submitTime, approvalVO.submitTime)
-            && Objects.equals(this.createBy, approvalVO.createBy) && Objects.equals(this.l1, approvalVO.l1)
-            && Objects.equals(this.l2, approvalVO.l2) && Objects.equals(this.l3, approvalVO.l3)
-            && Objects.equals(this.approvalTime, approvalVO.approvalTime)
-            && Objects.equals(this.approver, approvalVO.approver) && Objects.equals(this.email, approvalVO.email)
-            && Objects.equals(this.msg, approvalVO.msg) && Objects.equals(this.directoryPath, approvalVO.directoryPath);
+        ApprovalVO that = (ApprovalVO) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.tenantId, that.tenantId)
+            && Objects.equals(this.nameCh, that.nameCh) && Objects.equals(this.nameEn, that.nameEn)
+            && Objects.equals(this.bizId, that.bizId) && Objects.equals(this.bizType, that.bizType)
+            && Objects.equals(this.bizInfo, that.bizInfo) && Objects.equals(this.bizInfoObj, that.bizInfoObj)
+            && Objects.equals(this.bizVersion, that.bizVersion) && Objects.equals(this.bizStatus, that.bizStatus)
+            && Objects.equals(this.approvalStatus, that.approvalStatus)
+            && Objects.equals(this.approvalType, that.approvalType) && Objects.equals(this.submitTime, that.submitTime)
+            && Objects.equals(this.createBy, that.createBy) && Objects.equals(this.l1, that.l1)
+            && Objects.equals(this.l2, that.l2) && Objects.equals(this.l3, that.l3)
+            && Objects.equals(this.approvalTime, that.approvalTime) && Objects.equals(this.approver, that.approver)
+            && Objects.equals(this.email, that.email) && Objects.equals(this.msg, that.msg)
+            && Objects.equals(this.directoryPath, that.directoryPath);
     }
 
     @Override

@@ -1,92 +1,75 @@
 package com.huaweicloud.sdk.aom.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aom.v1.model.ExecutionResultList;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 函数流执行概要信息
  */
-public class WorkflowExecutionBrief  {
-
+public class WorkflowExecutionBrief {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_id")
-    
+    @JsonProperty(value = "workflow_id")
 
     private String workflowId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_id")
-    
+    @JsonProperty(value = "execution_id")
 
     private String executionId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="begin_time")
-    
+    @JsonProperty(value = "begin_time")
 
     private Long beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="end_time")
-    
+    @JsonProperty(value = "end_time")
 
     private Long endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_update_time")
-    
+    @JsonProperty(value = "last_update_time")
 
     private Long lastUpdateTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="created_by")
-    
+    @JsonProperty(value = "created_by")
 
     private String createdBy;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="approve_user_name_list")
-    
+    @JsonProperty(value = "approve_user_name_list")
+
     private List<String> approveUserNameList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="execution_result_list")
-    
+    @JsonProperty(value = "execution_result_list")
+
     private List<ExecutionResultList> executionResultList = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="project_id")
-    
+    @JsonProperty(value = "project_id")
 
     private String projectId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="workflow_edit_time")
-    
+    @JsonProperty(value = "workflow_edit_time")
 
     private Long workflowEditTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="last_record_id_with_snapshot")
-    
+    @JsonProperty(value = "last_record_id_with_snapshot")
 
     private String lastRecordIdWithSnapshot;
 
@@ -94,9 +77,6 @@ public class WorkflowExecutionBrief  {
         this.workflowId = workflowId;
         return this;
     }
-
-    
-
 
     /**
      * 流程定义ID
@@ -110,15 +90,10 @@ public class WorkflowExecutionBrief  {
         this.workflowId = workflowId;
     }
 
-    
-
     public WorkflowExecutionBrief withExecutionId(String executionId) {
         this.executionId = executionId;
         return this;
     }
-
-    
-
 
     /**
      * 流程执行实例ID
@@ -132,15 +107,10 @@ public class WorkflowExecutionBrief  {
         this.executionId = executionId;
     }
 
-    
-
     public WorkflowExecutionBrief withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例执行状态
@@ -154,15 +124,10 @@ public class WorkflowExecutionBrief  {
         this.status = status;
     }
 
-    
-
     public WorkflowExecutionBrief withBeginTime(Long beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例创建时间，格式：UTC时间戳
@@ -178,15 +143,10 @@ public class WorkflowExecutionBrief  {
         this.beginTime = beginTime;
     }
 
-    
-
     public WorkflowExecutionBrief withEndTime(Long endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例结束时间，格式：UTC时间戳
@@ -202,15 +162,10 @@ public class WorkflowExecutionBrief  {
         this.endTime = endTime;
     }
 
-    
-
     public WorkflowExecutionBrief withLastUpdateTime(Long lastUpdateTime) {
         this.lastUpdateTime = lastUpdateTime;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例上次更新时间，格式：UTC时间戳
@@ -226,15 +181,10 @@ public class WorkflowExecutionBrief  {
         this.lastUpdateTime = lastUpdateTime;
     }
 
-    
-
     public WorkflowExecutionBrief withCreatedBy(String createdBy) {
         this.createdBy = createdBy;
         return this;
     }
-
-    
-
 
     /**
      * 流程实例创建者
@@ -248,16 +198,13 @@ public class WorkflowExecutionBrief  {
         this.createdBy = createdBy;
     }
 
-    
-
     public WorkflowExecutionBrief withApproveUserNameList(List<String> approveUserNameList) {
         this.approveUserNameList = approveUserNameList;
         return this;
     }
 
-    
     public WorkflowExecutionBrief addApproveUserNameListItem(String approveUserNameListItem) {
-        if(this.approveUserNameList == null) {
+        if (this.approveUserNameList == null) {
             this.approveUserNameList = new ArrayList<>();
         }
         this.approveUserNameList.add(approveUserNameListItem);
@@ -265,7 +212,7 @@ public class WorkflowExecutionBrief  {
     }
 
     public WorkflowExecutionBrief withApproveUserNameList(Consumer<List<String>> approveUserNameListSetter) {
-        if(this.approveUserNameList == null) {
+        if (this.approveUserNameList == null) {
             this.approveUserNameList = new ArrayList<>();
         }
         approveUserNameListSetter.accept(this.approveUserNameList);
@@ -284,24 +231,22 @@ public class WorkflowExecutionBrief  {
         this.approveUserNameList = approveUserNameList;
     }
 
-    
-
     public WorkflowExecutionBrief withExecutionResultList(List<ExecutionResultList> executionResultList) {
         this.executionResultList = executionResultList;
         return this;
     }
 
-    
     public WorkflowExecutionBrief addExecutionResultListItem(ExecutionResultList executionResultListItem) {
-        if(this.executionResultList == null) {
+        if (this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
         this.executionResultList.add(executionResultListItem);
         return this;
     }
 
-    public WorkflowExecutionBrief withExecutionResultList(Consumer<List<ExecutionResultList>> executionResultListSetter) {
-        if(this.executionResultList == null) {
+    public WorkflowExecutionBrief withExecutionResultList(
+        Consumer<List<ExecutionResultList>> executionResultListSetter) {
+        if (this.executionResultList == null) {
             this.executionResultList = new ArrayList<>();
         }
         executionResultListSetter.accept(this.executionResultList);
@@ -320,15 +265,10 @@ public class WorkflowExecutionBrief  {
         this.executionResultList = executionResultList;
     }
 
-    
-
     public WorkflowExecutionBrief withProjectId(String projectId) {
         this.projectId = projectId;
         return this;
     }
-
-    
-
 
     /**
      * 租户从IAM申请到的projectid，一般为32位字符串。
@@ -342,15 +282,10 @@ public class WorkflowExecutionBrief  {
         this.projectId = projectId;
     }
 
-    
-
     public WorkflowExecutionBrief withWorkflowEditTime(Long workflowEditTime) {
         this.workflowEditTime = workflowEditTime;
         return this;
     }
-
-    
-
 
     /**
      * 执行工作流的修改时间，格式：UTC时间戳
@@ -366,15 +301,10 @@ public class WorkflowExecutionBrief  {
         this.workflowEditTime = workflowEditTime;
     }
 
-    
-
     public WorkflowExecutionBrief withLastRecordIdWithSnapshot(String lastRecordIdWithSnapshot) {
         this.lastRecordIdWithSnapshot = lastRecordIdWithSnapshot;
         return this;
     }
-
-    
-
 
     /**
      * 执行快照
@@ -388,34 +318,42 @@ public class WorkflowExecutionBrief  {
         this.lastRecordIdWithSnapshot = lastRecordIdWithSnapshot;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowExecutionBrief workflowExecutionBrief = (WorkflowExecutionBrief) o;
-        return Objects.equals(this.workflowId, workflowExecutionBrief.workflowId) &&
-            Objects.equals(this.executionId, workflowExecutionBrief.executionId) &&
-            Objects.equals(this.status, workflowExecutionBrief.status) &&
-            Objects.equals(this.beginTime, workflowExecutionBrief.beginTime) &&
-            Objects.equals(this.endTime, workflowExecutionBrief.endTime) &&
-            Objects.equals(this.lastUpdateTime, workflowExecutionBrief.lastUpdateTime) &&
-            Objects.equals(this.createdBy, workflowExecutionBrief.createdBy) &&
-            Objects.equals(this.approveUserNameList, workflowExecutionBrief.approveUserNameList) &&
-            Objects.equals(this.executionResultList, workflowExecutionBrief.executionResultList) &&
-            Objects.equals(this.projectId, workflowExecutionBrief.projectId) &&
-            Objects.equals(this.workflowEditTime, workflowExecutionBrief.workflowEditTime) &&
-            Objects.equals(this.lastRecordIdWithSnapshot, workflowExecutionBrief.lastRecordIdWithSnapshot);
+        WorkflowExecutionBrief that = (WorkflowExecutionBrief) obj;
+        return Objects.equals(this.workflowId, that.workflowId) && Objects.equals(this.executionId, that.executionId)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.lastUpdateTime, that.lastUpdateTime)
+            && Objects.equals(this.createdBy, that.createdBy)
+            && Objects.equals(this.approveUserNameList, that.approveUserNameList)
+            && Objects.equals(this.executionResultList, that.executionResultList)
+            && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.workflowEditTime, that.workflowEditTime)
+            && Objects.equals(this.lastRecordIdWithSnapshot, that.lastRecordIdWithSnapshot);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(workflowId, executionId, status, beginTime, endTime, lastUpdateTime, createdBy, approveUserNameList, executionResultList, projectId, workflowEditTime, lastRecordIdWithSnapshot);
+        return Objects.hash(workflowId,
+            executionId,
+            status,
+            beginTime,
+            endTime,
+            lastUpdateTime,
+            createdBy,
+            approveUserNameList,
+            executionResultList,
+            projectId,
+            workflowEditTime,
+            lastRecordIdWithSnapshot);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -435,6 +373,7 @@ public class WorkflowExecutionBrief  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -445,8 +384,5 @@ public class WorkflowExecutionBrief  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

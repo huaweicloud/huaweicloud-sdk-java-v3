@@ -98,18 +98,16 @@ public class ListCustomerBillsMonthlyBreakDownResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListCustomerBillsMonthlyBreakDownResponse listCustomerBillsMonthlyBreakDownResponse =
-            (ListCustomerBillsMonthlyBreakDownResponse) o;
-        return Objects.equals(this.currency, listCustomerBillsMonthlyBreakDownResponse.currency)
-            && Objects.equals(this.totalCount, listCustomerBillsMonthlyBreakDownResponse.totalCount)
-            && Objects.equals(this.details, listCustomerBillsMonthlyBreakDownResponse.details);
+        ListCustomerBillsMonthlyBreakDownResponse that = (ListCustomerBillsMonthlyBreakDownResponse) obj;
+        return Objects.equals(this.currency, that.currency) && Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.details, that.details);
     }
 
     @Override

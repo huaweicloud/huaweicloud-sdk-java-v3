@@ -1,26 +1,18 @@
 package com.huaweicloud.sdk.ges.v2.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v2.model.ExpandGraphReqExpand;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 扩副本请求体
  */
-public class ExpandGraphReq  {
-
+public class ExpandGraphReq {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="expand")
-    
+    @JsonProperty(value = "expand")
 
     private ExpandGraphReqExpand expand;
 
@@ -30,14 +22,13 @@ public class ExpandGraphReq  {
     }
 
     public ExpandGraphReq withExpand(Consumer<ExpandGraphReqExpand> expandSetter) {
-        if(this.expand == null ){
+        if (this.expand == null) {
             this.expand = new ExpandGraphReqExpand();
             expandSetter.accept(this.expand);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get expand
@@ -51,23 +42,23 @@ public class ExpandGraphReq  {
         this.expand = expand;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExpandGraphReq expandGraphReq = (ExpandGraphReq) o;
-        return Objects.equals(this.expand, expandGraphReq.expand);
+        ExpandGraphReq that = (ExpandGraphReq) obj;
+        return Objects.equals(this.expand, that.expand);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(expand);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +67,7 @@ public class ExpandGraphReq  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -86,8 +78,5 @@ public class ExpandGraphReq  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

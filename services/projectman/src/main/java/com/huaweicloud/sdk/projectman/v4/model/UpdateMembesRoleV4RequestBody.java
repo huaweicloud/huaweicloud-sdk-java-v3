@@ -74,16 +74,15 @@ public class UpdateMembesRoleV4RequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateMembesRoleV4RequestBody updateMembesRoleV4RequestBody = (UpdateMembesRoleV4RequestBody) o;
-        return Objects.equals(this.roleId, updateMembesRoleV4RequestBody.roleId)
-            && Objects.equals(this.userIds, updateMembesRoleV4RequestBody.userIds);
+        UpdateMembesRoleV4RequestBody that = (UpdateMembesRoleV4RequestBody) obj;
+        return Objects.equals(this.roleId, that.roleId) && Objects.equals(this.userIds, that.userIds);
     }
 
     @Override

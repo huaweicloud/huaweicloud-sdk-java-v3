@@ -226,20 +226,18 @@ public class EdgemgrDeviceReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EdgemgrDeviceReq edgemgrDeviceReq = (EdgemgrDeviceReq) o;
-        return Objects.equals(this.name, edgemgrDeviceReq.name)
-            && Objects.equals(this.accessProtocol, edgemgrDeviceReq.accessProtocol)
-            && Objects.equals(this.description, edgemgrDeviceReq.description)
-            && Objects.equals(this.attributes, edgemgrDeviceReq.attributes)
-            && Objects.equals(this.twin, edgemgrDeviceReq.twin) && Objects.equals(this.tags, edgemgrDeviceReq.tags)
-            && Objects.equals(this.propertyVisitors, edgemgrDeviceReq.propertyVisitors);
+        EdgemgrDeviceReq that = (EdgemgrDeviceReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.accessProtocol, that.accessProtocol)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.attributes, that.attributes)
+            && Objects.equals(this.twin, that.twin) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.propertyVisitors, that.propertyVisitors);
     }
 
     @Override

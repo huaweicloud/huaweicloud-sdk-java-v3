@@ -165,19 +165,17 @@ public class KafkaContentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        KafkaContentReq kafkaContentReq = (KafkaContentReq) o;
-        return Objects.equals(this.connectionType, kafkaContentReq.connectionType)
-            && Objects.equals(this.instanceId, kafkaContentReq.instanceId)
-            && Objects.equals(this.vpcepInfos, kafkaContentReq.vpcepInfos)
-            && Objects.equals(this.brokerInfos, kafkaContentReq.brokerInfos)
-            && Objects.equals(this.authInfo, kafkaContentReq.authInfo);
+        KafkaContentReq that = (KafkaContentReq) obj;
+        return Objects.equals(this.connectionType, that.connectionType)
+            && Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.vpcepInfos, that.vpcepInfos)
+            && Objects.equals(this.brokerInfos, that.brokerInfos) && Objects.equals(this.authInfo, that.authInfo);
     }
 
     @Override

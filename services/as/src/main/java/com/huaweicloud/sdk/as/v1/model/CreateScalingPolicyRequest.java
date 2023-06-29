@@ -43,15 +43,15 @@ public class CreateScalingPolicyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateScalingPolicyRequest createScalingPolicyRequest = (CreateScalingPolicyRequest) o;
-        return Objects.equals(this.body, createScalingPolicyRequest.body);
+        CreateScalingPolicyRequest that = (CreateScalingPolicyRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

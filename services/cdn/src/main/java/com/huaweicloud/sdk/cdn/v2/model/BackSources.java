@@ -121,19 +121,17 @@ public class BackSources {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BackSources backSources = (BackSources) o;
-        return Objects.equals(this.sourcesType, backSources.sourcesType)
-            && Objects.equals(this.ipOrDomain, backSources.ipOrDomain)
-            && Objects.equals(this.obsBucketType, backSources.obsBucketType)
-            && Objects.equals(this.httpPort, backSources.httpPort)
-            && Objects.equals(this.httpsPort, backSources.httpsPort);
+        BackSources that = (BackSources) obj;
+        return Objects.equals(this.sourcesType, that.sourcesType) && Objects.equals(this.ipOrDomain, that.ipOrDomain)
+            && Objects.equals(this.obsBucketType, that.obsBucketType) && Objects.equals(this.httpPort, that.httpPort)
+            && Objects.equals(this.httpsPort, that.httpsPort);
     }
 
     @Override

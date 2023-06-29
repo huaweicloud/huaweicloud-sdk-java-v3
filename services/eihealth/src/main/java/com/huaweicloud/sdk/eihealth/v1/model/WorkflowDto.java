@@ -224,19 +224,18 @@ public class WorkflowDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkflowDto workflowDto = (WorkflowDto) o;
-        return Objects.equals(this.name, workflowDto.name) && Objects.equals(this.version, workflowDto.version)
-            && Objects.equals(this.summary, workflowDto.summary)
-            && Objects.equals(this.description, workflowDto.description)
-            && Objects.equals(this.labels, workflowDto.labels) && Objects.equals(this.timeout, workflowDto.timeout)
-            && Objects.equals(this.outputDir, workflowDto.outputDir) && Objects.equals(this.tasks, workflowDto.tasks);
+        WorkflowDto that = (WorkflowDto) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.summary, that.summary) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.timeout, that.timeout)
+            && Objects.equals(this.outputDir, that.outputDir) && Objects.equals(this.tasks, that.tasks);
     }
 
     @Override

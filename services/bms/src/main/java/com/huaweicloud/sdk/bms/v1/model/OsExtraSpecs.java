@@ -54,22 +54,15 @@ public class OsExtraSpecs {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResourceTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResourceTypeEnum(value));
         }
 
         public static ResourceTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResourceTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -136,22 +129,15 @@ public class OsExtraSpecs {
             if (value == null) {
                 return null;
             }
-            CapabilitiesCpuArchEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CapabilitiesCpuArchEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CapabilitiesCpuArchEnum(value));
         }
 
         public static CapabilitiesCpuArchEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CapabilitiesCpuArchEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -233,22 +219,15 @@ public class OsExtraSpecs {
             if (value == null) {
                 return null;
             }
-            BaremetalExtBootTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new BaremetalExtBootTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new BaremetalExtBootTypeEnum(value));
         }
 
         public static BaremetalExtBootTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            BaremetalExtBootTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -358,22 +337,15 @@ public class OsExtraSpecs {
             if (value == null) {
                 return null;
             }
-            CondOperationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CondOperationStatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CondOperationStatusEnum(value));
         }
 
         public static CondOperationStatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CondOperationStatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -622,27 +594,27 @@ public class OsExtraSpecs {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OsExtraSpecs osExtraSpecs = (OsExtraSpecs) o;
-        return Objects.equals(this.resourceType, osExtraSpecs.resourceType)
-            && Objects.equals(this.capabilitiesCpuArch, osExtraSpecs.capabilitiesCpuArch)
-            && Objects.equals(this.baremetalDiskDetail, osExtraSpecs.baremetalDiskDetail)
-            && Objects.equals(this.capabilitiesHypervisorType, osExtraSpecs.capabilitiesHypervisorType)
-            && Objects.equals(this.baremetalSupportEvs, osExtraSpecs.baremetalSupportEvs)
-            && Objects.equals(this.baremetalExtBootType, osExtraSpecs.baremetalExtBootType)
-            && Objects.equals(this.capabilitiesBoardType, osExtraSpecs.capabilitiesBoardType)
-            && Objects.equals(this.baremetalNetNum, osExtraSpecs.baremetalNetNum)
-            && Objects.equals(this.baremetalNetcardDetail, osExtraSpecs.baremetalNetcardDetail)
-            && Objects.equals(this.baremetalCpuDetail, osExtraSpecs.baremetalCpuDetail)
-            && Objects.equals(this.baremetalMemoryDetail, osExtraSpecs.baremetalMemoryDetail)
-            && Objects.equals(this.condOperationStatus, osExtraSpecs.condOperationStatus)
-            && Objects.equals(this.condOperationAz, osExtraSpecs.condOperationAz);
+        OsExtraSpecs that = (OsExtraSpecs) obj;
+        return Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.capabilitiesCpuArch, that.capabilitiesCpuArch)
+            && Objects.equals(this.baremetalDiskDetail, that.baremetalDiskDetail)
+            && Objects.equals(this.capabilitiesHypervisorType, that.capabilitiesHypervisorType)
+            && Objects.equals(this.baremetalSupportEvs, that.baremetalSupportEvs)
+            && Objects.equals(this.baremetalExtBootType, that.baremetalExtBootType)
+            && Objects.equals(this.capabilitiesBoardType, that.capabilitiesBoardType)
+            && Objects.equals(this.baremetalNetNum, that.baremetalNetNum)
+            && Objects.equals(this.baremetalNetcardDetail, that.baremetalNetcardDetail)
+            && Objects.equals(this.baremetalCpuDetail, that.baremetalCpuDetail)
+            && Objects.equals(this.baremetalMemoryDetail, that.baremetalMemoryDetail)
+            && Objects.equals(this.condOperationStatus, that.condOperationStatus)
+            && Objects.equals(this.condOperationAz, that.condOperationAz);
     }
 
     @Override

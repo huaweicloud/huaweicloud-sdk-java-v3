@@ -165,23 +165,20 @@ public class UpdateEnterpriseRouter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateEnterpriseRouter updateEnterpriseRouter = (UpdateEnterpriseRouter) o;
-        return Objects.equals(this.name, updateEnterpriseRouter.name)
-            && Objects.equals(this.description, updateEnterpriseRouter.description)
-            && Objects.equals(this.enableDefaultPropagation, updateEnterpriseRouter.enableDefaultPropagation)
-            && Objects.equals(this.enableDefaultAssociation, updateEnterpriseRouter.enableDefaultAssociation)
-            && Objects.equals(this.defaultPropagationRouteTableId,
-                updateEnterpriseRouter.defaultPropagationRouteTableId)
-            && Objects.equals(this.defaultAssociationRouteTableId,
-                updateEnterpriseRouter.defaultAssociationRouteTableId)
-            && Objects.equals(this.autoAcceptSharedAttachments, updateEnterpriseRouter.autoAcceptSharedAttachments);
+        UpdateEnterpriseRouter that = (UpdateEnterpriseRouter) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enableDefaultPropagation, that.enableDefaultPropagation)
+            && Objects.equals(this.enableDefaultAssociation, that.enableDefaultAssociation)
+            && Objects.equals(this.defaultPropagationRouteTableId, that.defaultPropagationRouteTableId)
+            && Objects.equals(this.defaultAssociationRouteTableId, that.defaultAssociationRouteTableId)
+            && Objects.equals(this.autoAcceptSharedAttachments, that.autoAcceptSharedAttachments);
     }
 
     @Override

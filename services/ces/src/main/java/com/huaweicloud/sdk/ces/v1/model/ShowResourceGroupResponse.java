@@ -194,21 +194,18 @@ public class ShowResourceGroupResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowResourceGroupResponse showResourceGroupResponse = (ShowResourceGroupResponse) o;
-        return Objects.equals(this.groupName, showResourceGroupResponse.groupName)
-            && Objects.equals(this.groupId, showResourceGroupResponse.groupId)
-            && Objects.equals(this.resources, showResourceGroupResponse.resources)
-            && Objects.equals(this.status, showResourceGroupResponse.status)
-            && Objects.equals(this.createTime, showResourceGroupResponse.createTime)
-            && Objects.equals(this.metaData, showResourceGroupResponse.metaData)
-            && Objects.equals(this.enterpriseProjectId, showResourceGroupResponse.enterpriseProjectId);
+        ShowResourceGroupResponse that = (ShowResourceGroupResponse) obj;
+        return Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.resources, that.resources) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.metaData, that.metaData)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

@@ -689,44 +689,32 @@ public class SmsTemplateResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SmsTemplateResp smsTemplateResp = (SmsTemplateResp) o;
-        return Objects.equals(this.id, smsTemplateResp.id)
-            && Objects.equals(this.createTime, smsTemplateResp.createTime)
-            && Objects.equals(this.updateTime, smsTemplateResp.updateTime)
-            && Objects.equals(this.customerId, smsTemplateResp.customerId)
-            && Objects.equals(this.tenant, smsTemplateResp.tenant)
-            && Objects.equals(this.templateName, smsTemplateResp.templateName)
-            && Objects.equals(this.templateId, smsTemplateResp.templateId)
-            && Objects.equals(this.templateType, smsTemplateResp.templateType)
-            && Objects.equals(this.appName, smsTemplateResp.appName)
-            && Objects.equals(this.appKey, smsTemplateResp.appKey)
-            && Objects.equals(this.signId, smsTemplateResp.signId)
-            && Objects.equals(this.templateContent, smsTemplateResp.templateContent)
-            && Objects.equals(this.hasVariable, smsTemplateResp.hasVariable)
-            && Objects.equals(this.templateDesc, smsTemplateResp.templateDesc)
-            && Objects.equals(this.reviewDesc, smsTemplateResp.reviewDesc)
-            && Objects.equals(this.reviewOrder, smsTemplateResp.reviewOrder)
-            && Objects.equals(this.flowStatus, smsTemplateResp.flowStatus)
-            && Objects.equals(this.universalTemplate, smsTemplateResp.universalTemplate)
-            && Objects.equals(this.status, smsTemplateResp.status)
-            && Objects.equals(this.region, smsTemplateResp.region)
-            && Objects.equals(this.brackets, smsTemplateResp.brackets)
-            && Objects.equals(this.site, smsTemplateResp.site)
-            && Objects.equals(this.urgeStatus, smsTemplateResp.urgeStatus)
-            && Objects.equals(this.urgeTime, smsTemplateResp.urgeTime)
-            && Objects.equals(this.urgeDesc, smsTemplateResp.urgeDesc)
-            && Objects.equals(this.sendCountry1, smsTemplateResp.sendCountry1)
-            && Objects.equals(this.sendCountry2, smsTemplateResp.sendCountry2)
-            && Objects.equals(this.sendCountry3, smsTemplateResp.sendCountry3)
-            && Objects.equals(this.isSupportMultiomp, smsTemplateResp.isSupportMultiomp)
-            && Objects.equals(this.countryName, smsTemplateResp.countryName);
+        SmsTemplateResp that = (SmsTemplateResp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.createTime, that.createTime)
+            && Objects.equals(this.updateTime, that.updateTime) && Objects.equals(this.customerId, that.customerId)
+            && Objects.equals(this.tenant, that.tenant) && Objects.equals(this.templateName, that.templateName)
+            && Objects.equals(this.templateId, that.templateId) && Objects.equals(this.templateType, that.templateType)
+            && Objects.equals(this.appName, that.appName) && Objects.equals(this.appKey, that.appKey)
+            && Objects.equals(this.signId, that.signId) && Objects.equals(this.templateContent, that.templateContent)
+            && Objects.equals(this.hasVariable, that.hasVariable)
+            && Objects.equals(this.templateDesc, that.templateDesc) && Objects.equals(this.reviewDesc, that.reviewDesc)
+            && Objects.equals(this.reviewOrder, that.reviewOrder) && Objects.equals(this.flowStatus, that.flowStatus)
+            && Objects.equals(this.universalTemplate, that.universalTemplate)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.region, that.region)
+            && Objects.equals(this.brackets, that.brackets) && Objects.equals(this.site, that.site)
+            && Objects.equals(this.urgeStatus, that.urgeStatus) && Objects.equals(this.urgeTime, that.urgeTime)
+            && Objects.equals(this.urgeDesc, that.urgeDesc) && Objects.equals(this.sendCountry1, that.sendCountry1)
+            && Objects.equals(this.sendCountry2, that.sendCountry2)
+            && Objects.equals(this.sendCountry3, that.sendCountry3)
+            && Objects.equals(this.isSupportMultiomp, that.isSupportMultiomp)
+            && Objects.equals(this.countryName, that.countryName);
     }
 
     @Override

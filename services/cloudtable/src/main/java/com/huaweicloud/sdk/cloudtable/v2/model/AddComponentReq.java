@@ -33,15 +33,15 @@ public class AddComponentReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddComponentReq addComponentReq = (AddComponentReq) o;
-        return Objects.equals(this.nodeNum, addComponentReq.nodeNum);
+        AddComponentReq that = (AddComponentReq) obj;
+        return Objects.equals(this.nodeNum, that.nodeNum);
     }
 
     @Override

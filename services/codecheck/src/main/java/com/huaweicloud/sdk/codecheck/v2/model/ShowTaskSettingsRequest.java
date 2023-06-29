@@ -102,18 +102,16 @@ public class ShowTaskSettingsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskSettingsRequest showTaskSettingsRequest = (ShowTaskSettingsRequest) o;
-        return Objects.equals(this.projectId, showTaskSettingsRequest.projectId)
-            && Objects.equals(this.taskId, showTaskSettingsRequest.taskId)
-            && Objects.equals(this.offset, showTaskSettingsRequest.offset)
-            && Objects.equals(this.limit, showTaskSettingsRequest.limit);
+        ShowTaskSettingsRequest that = (ShowTaskSettingsRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

@@ -53,15 +53,15 @@ public class CreateMeetingResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateMeetingResponse createMeetingResponse = (CreateMeetingResponse) o;
-        return Objects.equals(this.body, createMeetingResponse.body);
+        CreateMeetingResponse that = (CreateMeetingResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

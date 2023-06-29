@@ -52,15 +52,15 @@ public class QueuePlanIds {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QueuePlanIds queuePlanIds = (QueuePlanIds) o;
-        return Objects.equals(this.planIds, queuePlanIds.planIds);
+        QueuePlanIds that = (QueuePlanIds) obj;
+        return Objects.equals(this.planIds, that.planIds);
     }
 
     @Override

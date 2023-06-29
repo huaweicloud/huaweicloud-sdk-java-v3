@@ -1,36 +1,26 @@
 package com.huaweicloud.sdk.gaussdb.v3.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.gaussdb.v3.model.ListGaussMySqlDatabaseUser;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "users")
+
+    private List<ListGaussMySqlDatabaseUser> users = null;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="users")
-    
-    private List<ListGaussMySqlDatabaseUser> users = null;
-    
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="total_count")
-    
+    @JsonProperty(value = "total_count")
 
     private Integer totalCount;
 
@@ -39,9 +29,8 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
         return this;
     }
 
-    
     public ListGaussMySqlDatabaseUserResponse addUsersItem(ListGaussMySqlDatabaseUser usersItem) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         this.users.add(usersItem);
@@ -49,7 +38,7 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
     }
 
     public ListGaussMySqlDatabaseUserResponse withUsers(Consumer<List<ListGaussMySqlDatabaseUser>> usersSetter) {
-        if(this.users == null) {
+        if (this.users == null) {
             this.users = new ArrayList<>();
         }
         usersSetter.accept(this.users);
@@ -68,15 +57,10 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
         this.users = users;
     }
 
-    
-
     public ListGaussMySqlDatabaseUserResponse withTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
         return this;
     }
-
-    
-
 
     /**
      * 实例的数据库用户总数
@@ -90,24 +74,23 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
         this.totalCount = totalCount;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListGaussMySqlDatabaseUserResponse listGaussMySqlDatabaseUserResponse = (ListGaussMySqlDatabaseUserResponse) o;
-        return Objects.equals(this.users, listGaussMySqlDatabaseUserResponse.users) &&
-            Objects.equals(this.totalCount, listGaussMySqlDatabaseUserResponse.totalCount);
+        ListGaussMySqlDatabaseUserResponse that = (ListGaussMySqlDatabaseUserResponse) obj;
+        return Objects.equals(this.users, that.users) && Objects.equals(this.totalCount, that.totalCount);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(users, totalCount);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +100,7 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -127,8 +111,5 @@ public class ListGaussMySqlDatabaseUserResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

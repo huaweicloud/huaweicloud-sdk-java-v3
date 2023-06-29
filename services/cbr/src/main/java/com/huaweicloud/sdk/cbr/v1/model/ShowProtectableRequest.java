@@ -65,22 +65,15 @@ public class ShowProtectableRequest {
             if (value == null) {
                 return null;
             }
-            ProtectableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtectableTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtectableTypeEnum(value));
         }
 
         public static ProtectableTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtectableTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -137,16 +130,16 @@ public class ShowProtectableRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowProtectableRequest showProtectableRequest = (ShowProtectableRequest) o;
-        return Objects.equals(this.instanceId, showProtectableRequest.instanceId)
-            && Objects.equals(this.protectableType, showProtectableRequest.protectableType);
+        ShowProtectableRequest that = (ShowProtectableRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.protectableType, that.protectableType);
     }
 
     @Override

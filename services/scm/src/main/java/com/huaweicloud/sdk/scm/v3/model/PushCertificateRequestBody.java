@@ -55,16 +55,16 @@ public class PushCertificateRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PushCertificateRequestBody pushCertificateRequestBody = (PushCertificateRequestBody) o;
-        return Objects.equals(this.targetProject, pushCertificateRequestBody.targetProject)
-            && Objects.equals(this.targetService, pushCertificateRequestBody.targetService);
+        PushCertificateRequestBody that = (PushCertificateRequestBody) obj;
+        return Objects.equals(this.targetProject, that.targetProject)
+            && Objects.equals(this.targetService, that.targetService);
     }
 
     @Override

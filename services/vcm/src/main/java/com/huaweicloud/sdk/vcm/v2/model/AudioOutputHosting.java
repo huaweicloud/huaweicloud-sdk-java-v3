@@ -87,17 +87,16 @@ public class AudioOutputHosting {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AudioOutputHosting audioOutputHosting = (AudioOutputHosting) o;
-        return Objects.equals(this.obs, audioOutputHosting.obs)
-            && Objects.equals(this.resultJsonOverdueAt, audioOutputHosting.resultJsonOverdueAt)
-            && Objects.equals(this.checkObsAfterEndState, audioOutputHosting.checkObsAfterEndState);
+        AudioOutputHosting that = (AudioOutputHosting) obj;
+        return Objects.equals(this.obs, that.obs) && Objects.equals(this.resultJsonOverdueAt, that.resultJsonOverdueAt)
+            && Objects.equals(this.checkObsAfterEndState, that.checkObsAfterEndState);
     }
 
     @Override

@@ -78,16 +78,16 @@ public class CreateHookResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateHookResponse createHookResponse = (CreateHookResponse) o;
-        return Objects.equals(this.id, createHookResponse.id) && Objects.equals(this.type, createHookResponse.type)
-            && Objects.equals(this.callbackUrl, createHookResponse.callbackUrl);
+        CreateHookResponse that = (CreateHookResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.callbackUrl, that.callbackUrl);
     }
 
     @Override

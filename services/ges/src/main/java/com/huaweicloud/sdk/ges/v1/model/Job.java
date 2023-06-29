@@ -1,80 +1,63 @@
 package com.huaweicloud.sdk.ges.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.ges.v1.model.JobDetail;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 任务
  */
-public class Job  {
-
+public class Job {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobId")
-    
+    @JsonProperty(value = "jobId")
 
     private String jobId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="status")
-    
+    @JsonProperty(value = "status")
 
     private String status;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobType")
-    
+    @JsonProperty(value = "jobType")
 
     private String jobType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobName")
-    
+    @JsonProperty(value = "jobName")
 
     private String jobName;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="relatedGraph")
-    
+    @JsonProperty(value = "relatedGraph")
 
     private String relatedGraph;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="beginTime")
-    
+    @JsonProperty(value = "beginTime")
 
     private String beginTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="endTime")
-    
+    @JsonProperty(value = "endTime")
 
     private String endTime;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobDetail")
-    
+    @JsonProperty(value = "jobDetail")
 
     private JobDetail jobDetail;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="failReason")
-    
+    @JsonProperty(value = "failReason")
 
     private String failReason;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="jobProgress")
-    
+    @JsonProperty(value = "jobProgress")
 
     private Double jobProgress;
 
@@ -82,9 +65,6 @@ public class Job  {
         this.jobId = jobId;
         return this;
     }
-
-    
-
 
     /**
      * 任务ID。
@@ -98,15 +78,10 @@ public class Job  {
         this.jobId = jobId;
     }
 
-    
-
     public Job withStatus(String status) {
         this.status = status;
         return this;
     }
-
-    
-
 
     /**
      * 任务状态。  - pending:等待中 - running:运行中 - success:成功 - failed:失败
@@ -120,15 +95,10 @@ public class Job  {
         this.status = status;
     }
 
-    
-
     public Job withJobType(String jobType) {
         this.jobType = jobType;
         return this;
     }
-
-    
-
 
     /**
      * 任务类型。
@@ -142,15 +112,10 @@ public class Job  {
         this.jobType = jobType;
     }
 
-    
-
     public Job withJobName(String jobName) {
         this.jobName = jobName;
         return this;
     }
-
-    
-
 
     /**
      * 任务名称。
@@ -164,15 +129,10 @@ public class Job  {
         this.jobName = jobName;
     }
 
-    
-
     public Job withRelatedGraph(String relatedGraph) {
         this.relatedGraph = relatedGraph;
         return this;
     }
-
-    
-
 
     /**
      * 关联图名称。
@@ -186,15 +146,10 @@ public class Job  {
         this.relatedGraph = relatedGraph;
     }
 
-    
-
     public Job withBeginTime(String beginTime) {
         this.beginTime = beginTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务开始时间，格式为UTC,\"yyyy-MM-dd'T'HH:mm:ss\"
@@ -208,15 +163,10 @@ public class Job  {
         this.beginTime = beginTime;
     }
 
-    
-
     public Job withEndTime(String endTime) {
         this.endTime = endTime;
         return this;
     }
-
-    
-
 
     /**
      * 任务结束时间，格式为UTC,\"yyyy-MM-dd'T'HH:mm:ss\"
@@ -230,22 +180,19 @@ public class Job  {
         this.endTime = endTime;
     }
 
-    
-
     public Job withJobDetail(JobDetail jobDetail) {
         this.jobDetail = jobDetail;
         return this;
     }
 
     public Job withJobDetail(Consumer<JobDetail> jobDetailSetter) {
-        if(this.jobDetail == null ){
+        if (this.jobDetail == null) {
             this.jobDetail = new JobDetail();
             jobDetailSetter.accept(this.jobDetail);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get jobDetail
@@ -259,15 +206,10 @@ public class Job  {
         this.jobDetail = jobDetail;
     }
 
-    
-
     public Job withFailReason(String failReason) {
         this.failReason = failReason;
         return this;
     }
-
-    
-
 
     /**
      * 任务失败原因
@@ -281,15 +223,10 @@ public class Job  {
         this.failReason = failReason;
     }
 
-    
-
     public Job withJobProgress(Double jobProgress) {
         this.jobProgress = jobProgress;
         return this;
     }
-
-    
-
 
     /**
      * 任务执行进度，预留字段，暂未使用。
@@ -303,32 +240,36 @@ public class Job  {
         this.jobProgress = jobProgress;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Job job = (Job) o;
-        return Objects.equals(this.jobId, job.jobId) &&
-            Objects.equals(this.status, job.status) &&
-            Objects.equals(this.jobType, job.jobType) &&
-            Objects.equals(this.jobName, job.jobName) &&
-            Objects.equals(this.relatedGraph, job.relatedGraph) &&
-            Objects.equals(this.beginTime, job.beginTime) &&
-            Objects.equals(this.endTime, job.endTime) &&
-            Objects.equals(this.jobDetail, job.jobDetail) &&
-            Objects.equals(this.failReason, job.failReason) &&
-            Objects.equals(this.jobProgress, job.jobProgress);
+        Job that = (Job) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.jobType, that.jobType) && Objects.equals(this.jobName, that.jobName)
+            && Objects.equals(this.relatedGraph, that.relatedGraph) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.jobDetail, that.jobDetail)
+            && Objects.equals(this.failReason, that.failReason) && Objects.equals(this.jobProgress, that.jobProgress);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(jobId, status, jobType, jobName, relatedGraph, beginTime, endTime, jobDetail, failReason, jobProgress);
+        return Objects.hash(jobId,
+            status,
+            jobType,
+            jobName,
+            relatedGraph,
+            beginTime,
+            endTime,
+            jobDetail,
+            failReason,
+            jobProgress);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -346,6 +287,7 @@ public class Job  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -356,8 +298,5 @@ public class Job  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

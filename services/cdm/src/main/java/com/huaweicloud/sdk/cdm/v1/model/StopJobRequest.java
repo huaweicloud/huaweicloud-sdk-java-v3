@@ -55,16 +55,15 @@ public class StopJobRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StopJobRequest stopJobRequest = (StopJobRequest) o;
-        return Objects.equals(this.clusterId, stopJobRequest.clusterId)
-            && Objects.equals(this.jobName, stopJobRequest.jobName);
+        StopJobRequest that = (StopJobRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId) && Objects.equals(this.jobName, that.jobName);
     }
 
     @Override

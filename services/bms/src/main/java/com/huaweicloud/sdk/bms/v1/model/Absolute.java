@@ -429,33 +429,33 @@ public class Absolute {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Absolute absolute = (Absolute) o;
-        return Objects.equals(this.maxTotalInstances, absolute.maxTotalInstances)
-            && Objects.equals(this.maxTotalCores, absolute.maxTotalCores)
-            && Objects.equals(this.maxTotalRAMSize, absolute.maxTotalRAMSize)
-            && Objects.equals(this.maxTotalKeypairs, absolute.maxTotalKeypairs)
-            && Objects.equals(this.maxServerMeta, absolute.maxServerMeta)
-            && Objects.equals(this.maxPersonality, absolute.maxPersonality)
-            && Objects.equals(this.maxPersonalitySize, absolute.maxPersonalitySize)
-            && Objects.equals(this.maxServerGroups, absolute.maxServerGroups)
-            && Objects.equals(this.maxServerGroupMembers, absolute.maxServerGroupMembers)
-            && Objects.equals(this.totalServerGroupsUsed, absolute.totalServerGroupsUsed)
-            && Objects.equals(this.maxSecurityGroups, absolute.maxSecurityGroups)
-            && Objects.equals(this.maxSecurityGroupRules, absolute.maxSecurityGroupRules)
-            && Objects.equals(this.maxTotalFloatingIps, absolute.maxTotalFloatingIps)
-            && Objects.equals(this.maxImageMeta, absolute.maxImageMeta)
-            && Objects.equals(this.totalInstancesUsed, absolute.totalInstancesUsed)
-            && Objects.equals(this.totalCoresUsed, absolute.totalCoresUsed)
-            && Objects.equals(this.totalRAMUsed, absolute.totalRAMUsed)
-            && Objects.equals(this.totalSecurityGroupsUsed, absolute.totalSecurityGroupsUsed)
-            && Objects.equals(this.totalFloatingIpsUsed, absolute.totalFloatingIpsUsed);
+        Absolute that = (Absolute) obj;
+        return Objects.equals(this.maxTotalInstances, that.maxTotalInstances)
+            && Objects.equals(this.maxTotalCores, that.maxTotalCores)
+            && Objects.equals(this.maxTotalRAMSize, that.maxTotalRAMSize)
+            && Objects.equals(this.maxTotalKeypairs, that.maxTotalKeypairs)
+            && Objects.equals(this.maxServerMeta, that.maxServerMeta)
+            && Objects.equals(this.maxPersonality, that.maxPersonality)
+            && Objects.equals(this.maxPersonalitySize, that.maxPersonalitySize)
+            && Objects.equals(this.maxServerGroups, that.maxServerGroups)
+            && Objects.equals(this.maxServerGroupMembers, that.maxServerGroupMembers)
+            && Objects.equals(this.totalServerGroupsUsed, that.totalServerGroupsUsed)
+            && Objects.equals(this.maxSecurityGroups, that.maxSecurityGroups)
+            && Objects.equals(this.maxSecurityGroupRules, that.maxSecurityGroupRules)
+            && Objects.equals(this.maxTotalFloatingIps, that.maxTotalFloatingIps)
+            && Objects.equals(this.maxImageMeta, that.maxImageMeta)
+            && Objects.equals(this.totalInstancesUsed, that.totalInstancesUsed)
+            && Objects.equals(this.totalCoresUsed, that.totalCoresUsed)
+            && Objects.equals(this.totalRAMUsed, that.totalRAMUsed)
+            && Objects.equals(this.totalSecurityGroupsUsed, that.totalSecurityGroupsUsed)
+            && Objects.equals(this.totalFloatingIpsUsed, that.totalFloatingIpsUsed);
     }
 
     @Override

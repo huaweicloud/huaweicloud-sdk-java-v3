@@ -33,15 +33,15 @@ public class ShowGenerationTaskResultRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowGenerationTaskResultRequest showGenerationTaskResultRequest = (ShowGenerationTaskResultRequest) o;
-        return Objects.equals(this.taskId, showGenerationTaskResultRequest.taskId);
+        ShowGenerationTaskResultRequest that = (ShowGenerationTaskResultRequest) obj;
+        return Objects.equals(this.taskId, that.taskId);
     }
 
     @Override

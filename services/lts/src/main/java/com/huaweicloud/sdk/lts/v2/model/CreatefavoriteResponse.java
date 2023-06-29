@@ -212,23 +212,20 @@ public class CreatefavoriteResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatefavoriteResponse createfavoriteResponse = (CreatefavoriteResponse) o;
-        return Objects.equals(this.createTime, createfavoriteResponse.createTime)
-            && Objects.equals(this.epsId, createfavoriteResponse.epsId)
-            && Objects.equals(this.favoriteResourceId, createfavoriteResponse.favoriteResourceId)
-            && Objects.equals(this.favoriteResourceType, createfavoriteResponse.favoriteResourceType)
-            && Objects.equals(this.logGroupId, createfavoriteResponse.logGroupId)
-            && Objects.equals(this.logGroupName, createfavoriteResponse.logGroupName)
-            && Objects.equals(this.logStreamId, createfavoriteResponse.logStreamId)
-            && Objects.equals(this.logStreamName, createfavoriteResponse.logStreamName)
-            && Objects.equals(this.projectId, createfavoriteResponse.projectId);
+        CreatefavoriteResponse that = (CreatefavoriteResponse) obj;
+        return Objects.equals(this.createTime, that.createTime) && Objects.equals(this.epsId, that.epsId)
+            && Objects.equals(this.favoriteResourceId, that.favoriteResourceId)
+            && Objects.equals(this.favoriteResourceType, that.favoriteResourceType)
+            && Objects.equals(this.logGroupId, that.logGroupId) && Objects.equals(this.logGroupName, that.logGroupName)
+            && Objects.equals(this.logStreamId, that.logStreamId)
+            && Objects.equals(this.logStreamName, that.logStreamName) && Objects.equals(this.projectId, that.projectId);
     }
 
     @Override

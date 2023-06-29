@@ -74,22 +74,15 @@ public class CertBase {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -377,23 +370,21 @@ public class CertBase {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CertBase certBase = (CertBase) o;
-        return Objects.equals(this.id, certBase.id) && Objects.equals(this.name, certBase.name)
-            && Objects.equals(this.type, certBase.type) && Objects.equals(this.instanceId, certBase.instanceId)
-            && Objects.equals(this.projectId, certBase.projectId)
-            && Objects.equals(this.commonName, certBase.commonName) && Objects.equals(this.san, certBase.san)
-            && Objects.equals(this.notAfter, certBase.notAfter)
-            && Objects.equals(this.signatureAlgorithm, certBase.signatureAlgorithm)
-            && Objects.equals(this.createTime, certBase.createTime)
-            && Objects.equals(this.updateTime, certBase.updateTime)
-            && Objects.equals(this.isHasTrustedRootCa, certBase.isHasTrustedRootCa);
+        CertBase that = (CertBase) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.projectId, that.projectId) && Objects.equals(this.commonName, that.commonName)
+            && Objects.equals(this.san, that.san) && Objects.equals(this.notAfter, that.notAfter)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.isHasTrustedRootCa, that.isHasTrustedRootCa);
     }
 
     @Override

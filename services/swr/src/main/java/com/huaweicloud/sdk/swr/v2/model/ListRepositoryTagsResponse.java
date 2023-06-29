@@ -75,16 +75,15 @@ public class ListRepositoryTagsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRepositoryTagsResponse listRepositoryTagsResponse = (ListRepositoryTagsResponse) o;
-        return Objects.equals(this.body, listRepositoryTagsResponse.body)
-            && Objects.equals(this.contentRange, listRepositoryTagsResponse.contentRange);
+        ListRepositoryTagsResponse that = (ListRepositoryTagsResponse) obj;
+        return Objects.equals(this.body, that.body) && Objects.equals(this.contentRange, that.contentRange);
     }
 
     @Override

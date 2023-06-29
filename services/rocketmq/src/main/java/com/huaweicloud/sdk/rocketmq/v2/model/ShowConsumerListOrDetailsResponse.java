@@ -113,17 +113,16 @@ public class ShowConsumerListOrDetailsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowConsumerListOrDetailsResponse showConsumerListOrDetailsResponse = (ShowConsumerListOrDetailsResponse) o;
-        return Objects.equals(this.topics, showConsumerListOrDetailsResponse.topics)
-            && Objects.equals(this.total, showConsumerListOrDetailsResponse.total)
-            && Objects.equals(this.brokers, showConsumerListOrDetailsResponse.brokers);
+        ShowConsumerListOrDetailsResponse that = (ShowConsumerListOrDetailsResponse) obj;
+        return Objects.equals(this.topics, that.topics) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.brokers, that.brokers);
     }
 
     @Override

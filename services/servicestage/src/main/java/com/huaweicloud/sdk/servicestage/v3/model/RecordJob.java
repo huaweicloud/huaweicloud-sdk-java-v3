@@ -109,17 +109,16 @@ public class RecordJob {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RecordJob recordJob = (RecordJob) o;
-        return Objects.equals(this.sequence, recordJob.sequence)
-            && Objects.equals(this.deployType, recordJob.deployType) && Objects.equals(this.jobId, recordJob.jobId)
-            && Objects.equals(this.jobInfo, recordJob.jobInfo);
+        RecordJob that = (RecordJob) obj;
+        return Objects.equals(this.sequence, that.sequence) && Objects.equals(this.deployType, that.deployType)
+            && Objects.equals(this.jobId, that.jobId) && Objects.equals(this.jobInfo, that.jobInfo);
     }
 
     @Override

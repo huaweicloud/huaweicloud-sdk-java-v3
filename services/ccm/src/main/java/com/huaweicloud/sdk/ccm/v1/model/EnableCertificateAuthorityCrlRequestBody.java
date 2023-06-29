@@ -79,18 +79,16 @@ public class EnableCertificateAuthorityCrlRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EnableCertificateAuthorityCrlRequestBody enableCertificateAuthorityCrlRequestBody =
-            (EnableCertificateAuthorityCrlRequestBody) o;
-        return Objects.equals(this.crlName, enableCertificateAuthorityCrlRequestBody.crlName)
-            && Objects.equals(this.obsBucketName, enableCertificateAuthorityCrlRequestBody.obsBucketName)
-            && Objects.equals(this.validDays, enableCertificateAuthorityCrlRequestBody.validDays);
+        EnableCertificateAuthorityCrlRequestBody that = (EnableCertificateAuthorityCrlRequestBody) obj;
+        return Objects.equals(this.crlName, that.crlName) && Objects.equals(this.obsBucketName, that.obsBucketName)
+            && Objects.equals(this.validDays, that.validDays);
     }
 
     @Override

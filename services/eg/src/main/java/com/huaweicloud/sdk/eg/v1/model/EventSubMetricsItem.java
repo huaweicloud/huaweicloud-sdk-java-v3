@@ -209,23 +209,19 @@ public class EventSubMetricsItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventSubMetricsItem eventSubMetricsItem = (EventSubMetricsItem) o;
-        return Objects.equals(this.failNum, eventSubMetricsItem.failNum)
-            && Objects.equals(this.retrySuccessNum, eventSubMetricsItem.retrySuccessNum)
-            && Objects.equals(this.retryFailNum, eventSubMetricsItem.retryFailNum)
-            && Objects.equals(this.retryTimes, eventSubMetricsItem.retryTimes)
-            && Objects.equals(this.timestamp, eventSubMetricsItem.timestamp)
-            && Objects.equals(this.num, eventSubMetricsItem.num)
-            && Objects.equals(this.successNum, eventSubMetricsItem.successNum)
-            && Objects.equals(this.processTime, eventSubMetricsItem.processTime)
-            && Objects.equals(this.invokeTime, eventSubMetricsItem.invokeTime);
+        EventSubMetricsItem that = (EventSubMetricsItem) obj;
+        return Objects.equals(this.failNum, that.failNum) && Objects.equals(this.retrySuccessNum, that.retrySuccessNum)
+            && Objects.equals(this.retryFailNum, that.retryFailNum) && Objects.equals(this.retryTimes, that.retryTimes)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.successNum, that.successNum) && Objects.equals(this.processTime, that.processTime)
+            && Objects.equals(this.invokeTime, that.invokeTime);
     }
 
     @Override

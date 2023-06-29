@@ -85,22 +85,15 @@ public class DuplicateApiInfo {
             if (value == null) {
                 return null;
             }
-            ApiTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ApiTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ApiTypeEnum(value));
         }
 
         public static ApiTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ApiTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -225,20 +218,17 @@ public class DuplicateApiInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DuplicateApiInfo duplicateApiInfo = (DuplicateApiInfo) o;
-        return Objects.equals(this.apiId, duplicateApiInfo.apiId)
-            && Objects.equals(this.apiName, duplicateApiInfo.apiName)
-            && Objects.equals(this.groupName, duplicateApiInfo.groupName)
-            && Objects.equals(this.groupId, duplicateApiInfo.groupId)
-            && Objects.equals(this.remark, duplicateApiInfo.remark)
-            && Objects.equals(this.apiType, duplicateApiInfo.apiType);
+        DuplicateApiInfo that = (DuplicateApiInfo) obj;
+        return Objects.equals(this.apiId, that.apiId) && Objects.equals(this.apiName, that.apiName)
+            && Objects.equals(this.groupName, that.groupName) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.remark, that.remark) && Objects.equals(this.apiType, that.apiType);
     }
 
     @Override

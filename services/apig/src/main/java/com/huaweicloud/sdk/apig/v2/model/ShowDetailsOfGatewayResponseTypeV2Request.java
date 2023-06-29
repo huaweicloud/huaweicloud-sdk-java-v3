@@ -168,22 +168,15 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ResponseTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ResponseTypeEnum(value));
         }
 
         public static ResponseTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ResponseTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -274,19 +267,16 @@ public class ShowDetailsOfGatewayResponseTypeV2Request {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDetailsOfGatewayResponseTypeV2Request showDetailsOfGatewayResponseTypeV2Request =
-            (ShowDetailsOfGatewayResponseTypeV2Request) o;
-        return Objects.equals(this.instanceId, showDetailsOfGatewayResponseTypeV2Request.instanceId)
-            && Objects.equals(this.groupId, showDetailsOfGatewayResponseTypeV2Request.groupId)
-            && Objects.equals(this.responseId, showDetailsOfGatewayResponseTypeV2Request.responseId)
-            && Objects.equals(this.responseType, showDetailsOfGatewayResponseTypeV2Request.responseType);
+        ShowDetailsOfGatewayResponseTypeV2Request that = (ShowDetailsOfGatewayResponseTypeV2Request) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.groupId, that.groupId)
+            && Objects.equals(this.responseId, that.responseId) && Objects.equals(this.responseType, that.responseType);
     }
 
     @Override

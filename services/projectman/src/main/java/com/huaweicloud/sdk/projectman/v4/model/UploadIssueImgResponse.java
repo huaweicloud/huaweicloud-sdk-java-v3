@@ -56,16 +56,15 @@ public class UploadIssueImgResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadIssueImgResponse uploadIssueImgResponse = (UploadIssueImgResponse) o;
-        return Objects.equals(this.imgId, uploadIssueImgResponse.imgId)
-            && Objects.equals(this.imgUrl, uploadIssueImgResponse.imgUrl);
+        UploadIssueImgResponse that = (UploadIssueImgResponse) obj;
+        return Objects.equals(this.imgId, that.imgId) && Objects.equals(this.imgUrl, that.imgUrl);
     }
 
     @Override

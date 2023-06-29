@@ -56,17 +56,15 @@ public class CheckMaliciousExtensionEvaluationResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckMaliciousExtensionEvaluationResponse checkMaliciousExtensionEvaluationResponse =
-            (CheckMaliciousExtensionEvaluationResponse) o;
-        return Objects.equals(this.result, checkMaliciousExtensionEvaluationResponse.result)
-            && Objects.equals(this.status, checkMaliciousExtensionEvaluationResponse.status);
+        CheckMaliciousExtensionEvaluationResponse that = (CheckMaliciousExtensionEvaluationResponse) obj;
+        return Objects.equals(this.result, that.result) && Objects.equals(this.status, that.status);
     }
 
     @Override

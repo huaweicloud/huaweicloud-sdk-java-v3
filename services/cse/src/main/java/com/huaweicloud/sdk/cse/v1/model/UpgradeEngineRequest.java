@@ -89,17 +89,16 @@ public class UpgradeEngineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpgradeEngineRequest upgradeEngineRequest = (UpgradeEngineRequest) o;
-        return Objects.equals(this.xEnterpriseProjectID, upgradeEngineRequest.xEnterpriseProjectID)
-            && Objects.equals(this.engineId, upgradeEngineRequest.engineId)
-            && Objects.equals(this.body, upgradeEngineRequest.body);
+        UpgradeEngineRequest that = (UpgradeEngineRequest) obj;
+        return Objects.equals(this.xEnterpriseProjectID, that.xEnterpriseProjectID)
+            && Objects.equals(this.engineId, that.engineId) && Objects.equals(this.body, that.body);
     }
 
     @Override

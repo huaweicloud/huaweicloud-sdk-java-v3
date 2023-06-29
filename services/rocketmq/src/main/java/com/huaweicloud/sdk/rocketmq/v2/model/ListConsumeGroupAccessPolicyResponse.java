@@ -99,18 +99,16 @@ public class ListConsumeGroupAccessPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConsumeGroupAccessPolicyResponse listConsumeGroupAccessPolicyResponse =
-            (ListConsumeGroupAccessPolicyResponse) o;
-        return Objects.equals(this.policies, listConsumeGroupAccessPolicyResponse.policies)
-            && Objects.equals(this.total, listConsumeGroupAccessPolicyResponse.total)
-            && Objects.equals(this.name, listConsumeGroupAccessPolicyResponse.name);
+        ListConsumeGroupAccessPolicyResponse that = (ListConsumeGroupAccessPolicyResponse) obj;
+        return Objects.equals(this.policies, that.policies) && Objects.equals(this.total, that.total)
+            && Objects.equals(this.name, that.name);
     }
 
     @Override

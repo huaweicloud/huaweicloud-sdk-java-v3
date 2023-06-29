@@ -115,22 +115,18 @@ public class UpdateFunctionAsyncInvokeConfigRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateFunctionAsyncInvokeConfigRequestBody updateFunctionAsyncInvokeConfigRequestBody =
-            (UpdateFunctionAsyncInvokeConfigRequestBody) o;
-        return Objects.equals(this.maxAsyncEventAgeInSeconds,
-            updateFunctionAsyncInvokeConfigRequestBody.maxAsyncEventAgeInSeconds)
-            && Objects.equals(this.maxAsyncRetryAttempts,
-                updateFunctionAsyncInvokeConfigRequestBody.maxAsyncRetryAttempts)
-            && Objects.equals(this.destinationConfig, updateFunctionAsyncInvokeConfigRequestBody.destinationConfig)
-            && Objects.equals(this.enableAsyncStatusLog,
-                updateFunctionAsyncInvokeConfigRequestBody.enableAsyncStatusLog);
+        UpdateFunctionAsyncInvokeConfigRequestBody that = (UpdateFunctionAsyncInvokeConfigRequestBody) obj;
+        return Objects.equals(this.maxAsyncEventAgeInSeconds, that.maxAsyncEventAgeInSeconds)
+            && Objects.equals(this.maxAsyncRetryAttempts, that.maxAsyncRetryAttempts)
+            && Objects.equals(this.destinationConfig, that.destinationConfig)
+            && Objects.equals(this.enableAsyncStatusLog, that.enableAsyncStatusLog);
     }
 
     @Override

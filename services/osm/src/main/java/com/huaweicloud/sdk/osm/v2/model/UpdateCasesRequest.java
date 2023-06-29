@@ -161,20 +161,17 @@ public class UpdateCasesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateCasesRequest updateCasesRequest = (UpdateCasesRequest) o;
-        return Objects.equals(this.caseId, updateCasesRequest.caseId)
-            && Objects.equals(this.actionId, updateCasesRequest.actionId)
-            && Objects.equals(this.xSite, updateCasesRequest.xSite)
-            && Objects.equals(this.xLanguage, updateCasesRequest.xLanguage)
-            && Objects.equals(this.xTimeZone, updateCasesRequest.xTimeZone)
-            && Objects.equals(this.body, updateCasesRequest.body);
+        UpdateCasesRequest that = (UpdateCasesRequest) obj;
+        return Objects.equals(this.caseId, that.caseId) && Objects.equals(this.actionId, that.actionId)
+            && Objects.equals(this.xSite, that.xSite) && Objects.equals(this.xLanguage, that.xLanguage)
+            && Objects.equals(this.xTimeZone, that.xTimeZone) && Objects.equals(this.body, that.body);
     }
 
     @Override

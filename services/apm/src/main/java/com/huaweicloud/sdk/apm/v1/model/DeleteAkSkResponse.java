@@ -56,15 +56,15 @@ public class DeleteAkSkResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteAkSkResponse deleteAkSkResponse = (DeleteAkSkResponse) o;
-        return Objects.equals(this.ak, deleteAkSkResponse.ak) && Objects.equals(this.sk, deleteAkSkResponse.sk);
+        DeleteAkSkResponse that = (DeleteAkSkResponse) obj;
+        return Objects.equals(this.ak, that.ak) && Objects.equals(this.sk, that.sk);
     }
 
     @Override

@@ -52,15 +52,15 @@ public class ImageMediaTaggingDetResponseResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImageMediaTaggingDetResponseResult imageMediaTaggingDetResponseResult = (ImageMediaTaggingDetResponseResult) o;
-        return Objects.equals(this.tags, imageMediaTaggingDetResponseResult.tags);
+        ImageMediaTaggingDetResponseResult that = (ImageMediaTaggingDetResponseResult) obj;
+        return Objects.equals(this.tags, that.tags);
     }
 
     @Override

@@ -119,19 +119,16 @@ public class ListElasticResourcePoolQueuesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListElasticResourcePoolQueuesResponse listElasticResourcePoolQueuesResponse =
-            (ListElasticResourcePoolQueuesResponse) o;
-        return Objects.equals(this.isSuccess, listElasticResourcePoolQueuesResponse.isSuccess)
-            && Objects.equals(this.message, listElasticResourcePoolQueuesResponse.message)
-            && Objects.equals(this.queues, listElasticResourcePoolQueuesResponse.queues)
-            && Objects.equals(this.count, listElasticResourcePoolQueuesResponse.count);
+        ListElasticResourcePoolQueuesResponse that = (ListElasticResourcePoolQueuesResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.queues, that.queues) && Objects.equals(this.count, that.count);
     }
 
     @Override

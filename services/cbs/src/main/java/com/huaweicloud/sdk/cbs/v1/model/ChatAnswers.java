@@ -1,31 +1,22 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.function.Consumer;
+
 import java.util.Objects;
 
 /**
  * 
  */
-public class ChatAnswers  {
-
+public class ChatAnswers {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="answer")
-    
+    @JsonProperty(value = "answer")
 
     private String answer;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="score")
-    
+    @JsonProperty(value = "score")
 
     private Float score;
 
@@ -33,9 +24,6 @@ public class ChatAnswers  {
         this.answer = answer;
         return this;
     }
-
-    
-
 
     /**
      * 答案。
@@ -49,15 +37,10 @@ public class ChatAnswers  {
         this.answer = answer;
     }
 
-    
-
     public ChatAnswers withScore(Float score) {
         this.score = score;
         return this;
     }
-
-    
-
 
     /**
      * 闲聊的置信度，范围:0.0~1.0  0.0表示兜底回复
@@ -71,24 +54,23 @@ public class ChatAnswers  {
         this.score = score;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ChatAnswers chatAnswers = (ChatAnswers) o;
-        return Objects.equals(this.answer, chatAnswers.answer) &&
-            Objects.equals(this.score, chatAnswers.score);
+        ChatAnswers that = (ChatAnswers) obj;
+        return Objects.equals(this.answer, that.answer) && Objects.equals(this.score, that.score);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(answer, score);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -98,6 +80,7 @@ public class ChatAnswers  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -108,8 +91,5 @@ public class ChatAnswers  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

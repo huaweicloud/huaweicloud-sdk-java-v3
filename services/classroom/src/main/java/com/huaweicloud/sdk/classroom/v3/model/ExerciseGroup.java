@@ -74,15 +74,15 @@ public class ExerciseGroup {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExerciseGroup exerciseGroup = (ExerciseGroup) o;
-        return Objects.equals(this.exercises, exerciseGroup.exercises) && Objects.equals(this.type, exerciseGroup.type);
+        ExerciseGroup that = (ExerciseGroup) obj;
+        return Objects.equals(this.exercises, that.exercises) && Objects.equals(this.type, that.type);
     }
 
     @Override

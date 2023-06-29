@@ -150,19 +150,17 @@ public class UpdateNodePoolResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateNodePoolResponse updateNodePoolResponse = (UpdateNodePoolResponse) o;
-        return Objects.equals(this.kind, updateNodePoolResponse.kind)
-            && Objects.equals(this.apiVersion, updateNodePoolResponse.apiVersion)
-            && Objects.equals(this.metadata, updateNodePoolResponse.metadata)
-            && Objects.equals(this.spec, updateNodePoolResponse.spec)
-            && Objects.equals(this.status, updateNodePoolResponse.status);
+        UpdateNodePoolResponse that = (UpdateNodePoolResponse) obj;
+        return Objects.equals(this.kind, that.kind) && Objects.equals(this.apiVersion, that.apiVersion)
+            && Objects.equals(this.metadata, that.metadata) && Objects.equals(this.spec, that.spec)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

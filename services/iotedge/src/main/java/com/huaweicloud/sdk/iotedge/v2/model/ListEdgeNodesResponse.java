@@ -1,53 +1,38 @@
 package com.huaweicloud.sdk.iotedge.v2.model;
 
-
-
-
-
-import com.huaweicloud.sdk.core.SdkResponse;
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.iotedge.v2.model.EdgeNodeDTO;
-import com.huaweicloud.sdk.iotedge.v2.model.PageInfoDTO;
+import com.huaweicloud.sdk.core.SdkResponse;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Response Object
  */
 public class ListEdgeNodesResponse extends SdkResponse {
 
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="count")
-    
+    @JsonProperty(value = "count")
 
     private Long count;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="page_info")
-    
+    @JsonProperty(value = "page_info")
 
     private PageInfoDTO pageInfo;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="nodes")
-    
+    @JsonProperty(value = "nodes")
+
     private List<EdgeNodeDTO> nodes = null;
-    
+
     public ListEdgeNodesResponse withCount(Long count) {
         this.count = count;
         return this;
     }
-
-    
-
 
     /**
      * 总记录数
@@ -63,22 +48,19 @@ public class ListEdgeNodesResponse extends SdkResponse {
         this.count = count;
     }
 
-    
-
     public ListEdgeNodesResponse withPageInfo(PageInfoDTO pageInfo) {
         this.pageInfo = pageInfo;
         return this;
     }
 
     public ListEdgeNodesResponse withPageInfo(Consumer<PageInfoDTO> pageInfoSetter) {
-        if(this.pageInfo == null ){
+        if (this.pageInfo == null) {
             this.pageInfo = new PageInfoDTO();
             pageInfoSetter.accept(this.pageInfo);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get pageInfo
@@ -92,16 +74,13 @@ public class ListEdgeNodesResponse extends SdkResponse {
         this.pageInfo = pageInfo;
     }
 
-    
-
     public ListEdgeNodesResponse withNodes(List<EdgeNodeDTO> nodes) {
         this.nodes = nodes;
         return this;
     }
 
-    
     public ListEdgeNodesResponse addNodesItem(EdgeNodeDTO nodesItem) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         this.nodes.add(nodesItem);
@@ -109,7 +88,7 @@ public class ListEdgeNodesResponse extends SdkResponse {
     }
 
     public ListEdgeNodesResponse withNodes(Consumer<List<EdgeNodeDTO>> nodesSetter) {
-        if(this.nodes == null) {
+        if (this.nodes == null) {
             this.nodes = new ArrayList<>();
         }
         nodesSetter.accept(this.nodes);
@@ -128,25 +107,24 @@ public class ListEdgeNodesResponse extends SdkResponse {
         this.nodes = nodes;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListEdgeNodesResponse listEdgeNodesResponse = (ListEdgeNodesResponse) o;
-        return Objects.equals(this.count, listEdgeNodesResponse.count) &&
-            Objects.equals(this.pageInfo, listEdgeNodesResponse.pageInfo) &&
-            Objects.equals(this.nodes, listEdgeNodesResponse.nodes);
+        ListEdgeNodesResponse that = (ListEdgeNodesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.pageInfo, that.pageInfo)
+            && Objects.equals(this.nodes, that.nodes);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(count, pageInfo, nodes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -157,6 +135,7 @@ public class ListEdgeNodesResponse extends SdkResponse {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -167,8 +146,5 @@ public class ListEdgeNodesResponse extends SdkResponse {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

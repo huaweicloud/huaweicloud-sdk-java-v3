@@ -169,21 +169,18 @@ public class ListAlarmRulesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListAlarmRulesRequest listAlarmRulesRequest = (ListAlarmRulesRequest) o;
-        return Objects.equals(this.alarmId, listAlarmRulesRequest.alarmId)
-            && Objects.equals(this.name, listAlarmRulesRequest.name)
-            && Objects.equals(this.namespace, listAlarmRulesRequest.namespace)
-            && Objects.equals(this.resourceId, listAlarmRulesRequest.resourceId)
-            && Objects.equals(this.enterpriseProjectId, listAlarmRulesRequest.enterpriseProjectId)
-            && Objects.equals(this.offset, listAlarmRulesRequest.offset)
-            && Objects.equals(this.limit, listAlarmRulesRequest.limit);
+        ListAlarmRulesRequest that = (ListAlarmRulesRequest) obj;
+        return Objects.equals(this.alarmId, that.alarmId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.namespace, that.namespace) && Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.limit, that.limit);
     }
 
     @Override

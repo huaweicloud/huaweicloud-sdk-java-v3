@@ -44,15 +44,15 @@ public class DisableDomainResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DisableDomainResponse disableDomainResponse = (DisableDomainResponse) o;
-        return Objects.equals(this.domain, disableDomainResponse.domain);
+        DisableDomainResponse that = (DisableDomainResponse) obj;
+        return Objects.equals(this.domain, that.domain);
     }
 
     @Override

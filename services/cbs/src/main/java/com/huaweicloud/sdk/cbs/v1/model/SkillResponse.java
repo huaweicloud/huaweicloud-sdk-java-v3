@@ -1,69 +1,52 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.CandidateIntention;
-import com.huaweicloud.sdk.cbs.v1.model.Frame;
-import com.huaweicloud.sdk.cbs.v1.model.RelatedIntention;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class SkillResponse  {
-
+public class SkillResponse {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="skill_id")
-    
+    @JsonProperty(value = "skill_id")
 
     private String skillId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="skill_version")
-    
+    @JsonProperty(value = "skill_version")
 
     private String skillVersion;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="frame")
-    
+    @JsonProperty(value = "frame")
 
     private Frame frame;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="candidate")
-    
+    @JsonProperty(value = "candidate")
 
     private CandidateIntention candidate;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="locked")
-    
+    @JsonProperty(value = "locked")
 
     private Boolean locked;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="related_intenions")
-    
+    @JsonProperty(value = "related_intenions")
+
     private List<RelatedIntention> relatedIntenions = null;
-    
+
     public SkillResponse withSkillId(String skillId) {
         this.skillId = skillId;
         return this;
     }
-
-    
-
 
     /**
      * 技能ID。
@@ -77,15 +60,10 @@ public class SkillResponse  {
         this.skillId = skillId;
     }
 
-    
-
     public SkillResponse withSkillVersion(String skillVersion) {
         this.skillVersion = skillVersion;
         return this;
     }
-
-    
-
 
     /**
      * 技能模型版本。
@@ -99,22 +77,19 @@ public class SkillResponse  {
         this.skillVersion = skillVersion;
     }
 
-    
-
     public SkillResponse withFrame(Frame frame) {
         this.frame = frame;
         return this;
     }
 
     public SkillResponse withFrame(Consumer<Frame> frameSetter) {
-        if(this.frame == null ){
+        if (this.frame == null) {
             this.frame = new Frame();
             frameSetter.accept(this.frame);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get frame
@@ -128,22 +103,19 @@ public class SkillResponse  {
         this.frame = frame;
     }
 
-    
-
     public SkillResponse withCandidate(CandidateIntention candidate) {
         this.candidate = candidate;
         return this;
     }
 
     public SkillResponse withCandidate(Consumer<CandidateIntention> candidateSetter) {
-        if(this.candidate == null ){
+        if (this.candidate == null) {
             this.candidate = new CandidateIntention();
             candidateSetter.accept(this.candidate);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get candidate
@@ -157,15 +129,10 @@ public class SkillResponse  {
         this.candidate = candidate;
     }
 
-    
-
     public SkillResponse withLocked(Boolean locked) {
         this.locked = locked;
         return this;
     }
-
-    
-
 
     /**
      * 技能是否锁定。
@@ -179,16 +146,13 @@ public class SkillResponse  {
         this.locked = locked;
     }
 
-    
-
     public SkillResponse withRelatedIntenions(List<RelatedIntention> relatedIntenions) {
         this.relatedIntenions = relatedIntenions;
         return this;
     }
 
-    
     public SkillResponse addRelatedIntenionsItem(RelatedIntention relatedIntenionsItem) {
-        if(this.relatedIntenions == null) {
+        if (this.relatedIntenions == null) {
             this.relatedIntenions = new ArrayList<>();
         }
         this.relatedIntenions.add(relatedIntenionsItem);
@@ -196,7 +160,7 @@ public class SkillResponse  {
     }
 
     public SkillResponse withRelatedIntenions(Consumer<List<RelatedIntention>> relatedIntenionsSetter) {
-        if(this.relatedIntenions == null) {
+        if (this.relatedIntenions == null) {
             this.relatedIntenions = new ArrayList<>();
         }
         relatedIntenionsSetter.accept(this.relatedIntenions);
@@ -215,28 +179,25 @@ public class SkillResponse  {
         this.relatedIntenions = relatedIntenions;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SkillResponse skillResponse = (SkillResponse) o;
-        return Objects.equals(this.skillId, skillResponse.skillId) &&
-            Objects.equals(this.skillVersion, skillResponse.skillVersion) &&
-            Objects.equals(this.frame, skillResponse.frame) &&
-            Objects.equals(this.candidate, skillResponse.candidate) &&
-            Objects.equals(this.locked, skillResponse.locked) &&
-            Objects.equals(this.relatedIntenions, skillResponse.relatedIntenions);
+        SkillResponse that = (SkillResponse) obj;
+        return Objects.equals(this.skillId, that.skillId) && Objects.equals(this.skillVersion, that.skillVersion)
+            && Objects.equals(this.frame, that.frame) && Objects.equals(this.candidate, that.candidate)
+            && Objects.equals(this.locked, that.locked) && Objects.equals(this.relatedIntenions, that.relatedIntenions);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(skillId, skillVersion, frame, candidate, locked, relatedIntenions);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -250,6 +211,7 @@ public class SkillResponse  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -260,8 +222,5 @@ public class SkillResponse  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

@@ -143,20 +143,18 @@ public class ListQpsTimelineRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListQpsTimelineRequest listQpsTimelineRequest = (ListQpsTimelineRequest) o;
-        return Objects.equals(this.enterpriseProjectId, listQpsTimelineRequest.enterpriseProjectId)
-            && Objects.equals(this.from, listQpsTimelineRequest.from)
-            && Objects.equals(this.to, listQpsTimelineRequest.to)
-            && Objects.equals(this.hosts, listQpsTimelineRequest.hosts)
-            && Objects.equals(this.instances, listQpsTimelineRequest.instances)
-            && Objects.equals(this.groupBy, listQpsTimelineRequest.groupBy);
+        ListQpsTimelineRequest that = (ListQpsTimelineRequest) obj;
+        return Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.from, that.from) && Objects.equals(this.to, that.to)
+            && Objects.equals(this.hosts, that.hosts) && Objects.equals(this.instances, that.instances)
+            && Objects.equals(this.groupBy, that.groupBy);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class DeleteDatabaseRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteDatabaseRequest deleteDatabaseRequest = (DeleteDatabaseRequest) o;
-        return Objects.equals(this.databaseName, deleteDatabaseRequest.databaseName)
-            && Objects.equals(this.async, deleteDatabaseRequest.async)
-            && Objects.equals(this.cascade, deleteDatabaseRequest.cascade);
+        DeleteDatabaseRequest that = (DeleteDatabaseRequest) obj;
+        return Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.async, that.async)
+            && Objects.equals(this.cascade, that.cascade);
     }
 
     @Override

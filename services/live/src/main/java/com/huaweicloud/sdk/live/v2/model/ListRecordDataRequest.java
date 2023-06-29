@@ -77,17 +77,16 @@ public class ListRecordDataRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRecordDataRequest listRecordDataRequest = (ListRecordDataRequest) o;
-        return Objects.equals(this.publishDomain, listRecordDataRequest.publishDomain)
-            && Objects.equals(this.startTime, listRecordDataRequest.startTime)
-            && Objects.equals(this.endTime, listRecordDataRequest.endTime);
+        ListRecordDataRequest that = (ListRecordDataRequest) obj;
+        return Objects.equals(this.publishDomain, that.publishDomain) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

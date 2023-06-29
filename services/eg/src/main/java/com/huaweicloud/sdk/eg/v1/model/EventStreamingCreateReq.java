@@ -180,20 +180,17 @@ public class EventStreamingCreateReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EventStreamingCreateReq eventStreamingCreateReq = (EventStreamingCreateReq) o;
-        return Objects.equals(this.name, eventStreamingCreateReq.name)
-            && Objects.equals(this.description, eventStreamingCreateReq.description)
-            && Objects.equals(this.source, eventStreamingCreateReq.source)
-            && Objects.equals(this.sink, eventStreamingCreateReq.sink)
-            && Objects.equals(this.ruleConfig, eventStreamingCreateReq.ruleConfig)
-            && Objects.equals(this.option, eventStreamingCreateReq.option);
+        EventStreamingCreateReq that = (EventStreamingCreateReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.source, that.source) && Objects.equals(this.sink, that.sink)
+            && Objects.equals(this.ruleConfig, that.ruleConfig) && Objects.equals(this.option, that.option);
     }
 
     @Override

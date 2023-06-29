@@ -87,17 +87,16 @@ public class ListTaskParameterRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTaskParameterRequest listTaskParameterRequest = (ListTaskParameterRequest) o;
-        return Objects.equals(this.projectId, listTaskParameterRequest.projectId)
-            && Objects.equals(this.taskId, listTaskParameterRequest.taskId)
-            && Objects.equals(this.body, listTaskParameterRequest.body);
+        ListTaskParameterRequest that = (ListTaskParameterRequest) obj;
+        return Objects.equals(this.projectId, that.projectId) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

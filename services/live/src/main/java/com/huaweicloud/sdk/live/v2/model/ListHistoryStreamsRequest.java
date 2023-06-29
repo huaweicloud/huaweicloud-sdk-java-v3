@@ -169,21 +169,18 @@ public class ListHistoryStreamsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListHistoryStreamsRequest listHistoryStreamsRequest = (ListHistoryStreamsRequest) o;
-        return Objects.equals(this.domain, listHistoryStreamsRequest.domain)
-            && Objects.equals(this.app, listHistoryStreamsRequest.app)
-            && Objects.equals(this.stream, listHistoryStreamsRequest.stream)
-            && Objects.equals(this.startTime, listHistoryStreamsRequest.startTime)
-            && Objects.equals(this.endTime, listHistoryStreamsRequest.endTime)
-            && Objects.equals(this.offset, listHistoryStreamsRequest.offset)
-            && Objects.equals(this.limit, listHistoryStreamsRequest.limit);
+        ListHistoryStreamsRequest that = (ListHistoryStreamsRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.stream, that.stream) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

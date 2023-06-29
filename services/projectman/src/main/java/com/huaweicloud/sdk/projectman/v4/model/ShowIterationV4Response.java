@@ -317,27 +317,21 @@ public class ShowIterationV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowIterationV4Response showIterationV4Response = (ShowIterationV4Response) o;
-        return Objects.equals(this.beginTime, showIterationV4Response.beginTime)
-            && Objects.equals(this.charts, showIterationV4Response.charts)
-            && Objects.equals(this.closedTotal, showIterationV4Response.closedTotal)
-            && Objects.equals(this.createdTime, showIterationV4Response.createdTime)
-            && Objects.equals(this.endTime, showIterationV4Response.endTime)
-            && Objects.equals(this.haveTask, showIterationV4Response.haveTask)
-            && Objects.equals(this.iterationId, showIterationV4Response.iterationId)
-            && Objects.equals(this.name, showIterationV4Response.name)
-            && Objects.equals(this.openedTotal, showIterationV4Response.openedTotal)
-            && Objects.equals(this.progress, showIterationV4Response.progress)
-            && Objects.equals(this.total, showIterationV4Response.total)
-            && Objects.equals(this.updatedTime, showIterationV4Response.updatedTime)
-            && Objects.equals(this.status, showIterationV4Response.status);
+        ShowIterationV4Response that = (ShowIterationV4Response) obj;
+        return Objects.equals(this.beginTime, that.beginTime) && Objects.equals(this.charts, that.charts)
+            && Objects.equals(this.closedTotal, that.closedTotal) && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.haveTask, that.haveTask)
+            && Objects.equals(this.iterationId, that.iterationId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.openedTotal, that.openedTotal) && Objects.equals(this.progress, that.progress)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.updatedTime, that.updatedTime)
+            && Objects.equals(this.status, that.status);
     }
 
     @Override

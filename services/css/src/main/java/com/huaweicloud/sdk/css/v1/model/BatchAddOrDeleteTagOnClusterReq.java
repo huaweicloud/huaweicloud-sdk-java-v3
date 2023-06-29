@@ -112,17 +112,16 @@ public class BatchAddOrDeleteTagOnClusterReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchAddOrDeleteTagOnClusterReq batchAddOrDeleteTagOnClusterReq = (BatchAddOrDeleteTagOnClusterReq) o;
-        return Objects.equals(this.action, batchAddOrDeleteTagOnClusterReq.action)
-            && Objects.equals(this.tags, batchAddOrDeleteTagOnClusterReq.tags)
-            && Objects.equals(this.sysTags, batchAddOrDeleteTagOnClusterReq.sysTags);
+        BatchAddOrDeleteTagOnClusterReq that = (BatchAddOrDeleteTagOnClusterReq) obj;
+        return Objects.equals(this.action, that.action) && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.sysTags, that.sysTags);
     }
 
     @Override

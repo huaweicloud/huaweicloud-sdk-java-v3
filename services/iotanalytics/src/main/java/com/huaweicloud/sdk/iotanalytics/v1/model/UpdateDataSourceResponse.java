@@ -154,20 +154,18 @@ public class UpdateDataSourceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDataSourceResponse updateDataSourceResponse = (UpdateDataSourceResponse) o;
-        return Objects.equals(this.id, updateDataSourceResponse.id)
-            && Objects.equals(this.name, updateDataSourceResponse.name)
-            && Objects.equals(this.type, updateDataSourceResponse.type)
-            && Objects.equals(this.content, updateDataSourceResponse.content)
-            && Objects.equals(this.createdTime, updateDataSourceResponse.createdTime)
-            && Objects.equals(this.modifiedTime, updateDataSourceResponse.modifiedTime);
+        UpdateDataSourceResponse that = (UpdateDataSourceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.createdTime, that.createdTime)
+            && Objects.equals(this.modifiedTime, that.modifiedTime);
     }
 
     @Override

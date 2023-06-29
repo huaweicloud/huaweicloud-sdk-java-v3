@@ -79,17 +79,16 @@ public class PageInfoOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PageInfoOption pageInfoOption = (PageInfoOption) o;
-        return Objects.equals(this.previousMarker, pageInfoOption.previousMarker)
-            && Objects.equals(this.nextMarker, pageInfoOption.nextMarker)
-            && Objects.equals(this.currentCount, pageInfoOption.currentCount);
+        PageInfoOption that = (PageInfoOption) obj;
+        return Objects.equals(this.previousMarker, that.previousMarker)
+            && Objects.equals(this.nextMarker, that.nextMarker) && Objects.equals(this.currentCount, that.currentCount);
     }
 
     @Override

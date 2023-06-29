@@ -235,22 +235,15 @@ public class PublishAssetFromObsReq {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new VideoTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new VideoTypeEnum(value));
         }
 
         public static VideoTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            VideoTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -651,30 +644,23 @@ public class PublishAssetFromObsReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishAssetFromObsReq publishAssetFromObsReq = (PublishAssetFromObsReq) o;
-        return Objects.equals(this.videoType, publishAssetFromObsReq.videoType)
-            && Objects.equals(this.title, publishAssetFromObsReq.title)
-            && Objects.equals(this.description, publishAssetFromObsReq.description)
-            && Objects.equals(this.categoryId, publishAssetFromObsReq.categoryId)
-            && Objects.equals(this.tags, publishAssetFromObsReq.tags)
-            && Objects.equals(this.autoPublish, publishAssetFromObsReq.autoPublish)
-            && Objects.equals(this.templateGroupName, publishAssetFromObsReq.templateGroupName)
-            && Objects.equals(this.autoEncrypt, publishAssetFromObsReq.autoEncrypt)
-            && Objects.equals(this.autoPreheat, publishAssetFromObsReq.autoPreheat)
-            && Objects.equals(this.thumbnail, publishAssetFromObsReq.thumbnail)
-            && Objects.equals(this.review, publishAssetFromObsReq.review)
-            && Objects.equals(this.workflowName, publishAssetFromObsReq.workflowName)
-            && Objects.equals(this.input, publishAssetFromObsReq.input)
-            && Objects.equals(this.storageMode, publishAssetFromObsReq.storageMode)
-            && Objects.equals(this.outputBucket, publishAssetFromObsReq.outputBucket)
-            && Objects.equals(this.outputPath, publishAssetFromObsReq.outputPath);
+        PublishAssetFromObsReq that = (PublishAssetFromObsReq) obj;
+        return Objects.equals(this.videoType, that.videoType) && Objects.equals(this.title, that.title)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.categoryId, that.categoryId)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.autoPublish, that.autoPublish)
+            && Objects.equals(this.templateGroupName, that.templateGroupName)
+            && Objects.equals(this.autoEncrypt, that.autoEncrypt) && Objects.equals(this.autoPreheat, that.autoPreheat)
+            && Objects.equals(this.thumbnail, that.thumbnail) && Objects.equals(this.review, that.review)
+            && Objects.equals(this.workflowName, that.workflowName) && Objects.equals(this.input, that.input)
+            && Objects.equals(this.storageMode, that.storageMode)
+            && Objects.equals(this.outputBucket, that.outputBucket) && Objects.equals(this.outputPath, that.outputPath);
     }
 
     @Override

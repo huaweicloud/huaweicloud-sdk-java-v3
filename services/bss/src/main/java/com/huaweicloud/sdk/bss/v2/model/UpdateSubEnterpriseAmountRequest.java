@@ -43,15 +43,15 @@ public class UpdateSubEnterpriseAmountRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateSubEnterpriseAmountRequest updateSubEnterpriseAmountRequest = (UpdateSubEnterpriseAmountRequest) o;
-        return Objects.equals(this.body, updateSubEnterpriseAmountRequest.body);
+        UpdateSubEnterpriseAmountRequest that = (UpdateSubEnterpriseAmountRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

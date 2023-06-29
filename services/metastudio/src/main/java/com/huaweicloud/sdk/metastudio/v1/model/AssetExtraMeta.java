@@ -198,20 +198,18 @@ public class AssetExtraMeta {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetExtraMeta assetExtraMeta = (AssetExtraMeta) o;
-        return Objects.equals(this.humanModelMeta, assetExtraMeta.humanModelMeta)
-            && Objects.equals(this.voiceModelMeta, assetExtraMeta.voiceModelMeta)
-            && Objects.equals(this.pptMeta, assetExtraMeta.pptMeta)
-            && Objects.equals(this.animationMeta, assetExtraMeta.animationMeta)
-            && Objects.equals(this.sceneMeta, assetExtraMeta.sceneMeta)
-            && Objects.equals(this.materialMeta, assetExtraMeta.materialMeta);
+        AssetExtraMeta that = (AssetExtraMeta) obj;
+        return Objects.equals(this.humanModelMeta, that.humanModelMeta)
+            && Objects.equals(this.voiceModelMeta, that.voiceModelMeta) && Objects.equals(this.pptMeta, that.pptMeta)
+            && Objects.equals(this.animationMeta, that.animationMeta) && Objects.equals(this.sceneMeta, that.sceneMeta)
+            && Objects.equals(this.materialMeta, that.materialMeta);
     }
 
     @Override

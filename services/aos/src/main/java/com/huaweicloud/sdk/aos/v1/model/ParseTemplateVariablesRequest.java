@@ -1,33 +1,23 @@
 package com.huaweicloud.sdk.aos.v1.model;
 
-
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.aos.v1.model.ParseTemplateVariablesRequestBody;
-import java.util.function.Consumer;
+
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * Request Object
  */
-public class ParseTemplateVariablesRequest  {
-
+public class ParseTemplateVariablesRequest {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="Client-Request-Id")
-    
+    @JsonProperty(value = "Client-Request-Id")
 
     private String clientRequestId;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="body")
-    
+    @JsonProperty(value = "body")
 
     private ParseTemplateVariablesRequestBody body;
 
@@ -35,9 +25,6 @@ public class ParseTemplateVariablesRequest  {
         this.clientRequestId = clientRequestId;
         return this;
     }
-
-    
-
 
     /**
      * 用户指定的，对于此请求的唯一ID，用于定位某个请求，推荐使用UUID
@@ -51,22 +38,19 @@ public class ParseTemplateVariablesRequest  {
         this.clientRequestId = clientRequestId;
     }
 
-    
-
     public ParseTemplateVariablesRequest withBody(ParseTemplateVariablesRequestBody body) {
         this.body = body;
         return this;
     }
 
     public ParseTemplateVariablesRequest withBody(Consumer<ParseTemplateVariablesRequestBody> bodySetter) {
-        if(this.body == null ){
+        if (this.body == null) {
             this.body = new ParseTemplateVariablesRequestBody();
             bodySetter.accept(this.body);
         }
-        
+
         return this;
     }
-
 
     /**
      * Get body
@@ -80,24 +64,23 @@ public class ParseTemplateVariablesRequest  {
         this.body = body;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ParseTemplateVariablesRequest parseTemplateVariablesRequest = (ParseTemplateVariablesRequest) o;
-        return Objects.equals(this.clientRequestId, parseTemplateVariablesRequest.clientRequestId) &&
-            Objects.equals(this.body, parseTemplateVariablesRequest.body);
+        ParseTemplateVariablesRequest that = (ParseTemplateVariablesRequest) obj;
+        return Objects.equals(this.clientRequestId, that.clientRequestId) && Objects.equals(this.body, that.body);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(clientRequestId, body);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -107,6 +90,7 @@ public class ParseTemplateVariablesRequest  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -117,8 +101,5 @@ public class ParseTemplateVariablesRequest  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

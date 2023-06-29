@@ -33,15 +33,15 @@ public class ShowSignatureFileRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSignatureFileRequest showSignatureFileRequest = (ShowSignatureFileRequest) o;
-        return Objects.equals(this.fileId, showSignatureFileRequest.fileId);
+        ShowSignatureFileRequest that = (ShowSignatureFileRequest) obj;
+        return Objects.equals(this.fileId, that.fileId);
     }
 
     @Override

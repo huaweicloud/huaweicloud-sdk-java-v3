@@ -145,18 +145,17 @@ public class PhoneImage {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PhoneImage phoneImage = (PhoneImage) o;
-        return Objects.equals(this.imageName, phoneImage.imageName) && Objects.equals(this.osType, phoneImage.osType)
-            && Objects.equals(this.isPublic, phoneImage.isPublic) && Objects.equals(this.osName, phoneImage.osName)
-            && Objects.equals(this.imageLabel, phoneImage.imageLabel)
-            && Objects.equals(this.imageId, phoneImage.imageId);
+        PhoneImage that = (PhoneImage) obj;
+        return Objects.equals(this.imageName, that.imageName) && Objects.equals(this.osType, that.osType)
+            && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.osName, that.osName)
+            && Objects.equals(this.imageLabel, that.imageLabel) && Objects.equals(this.imageId, that.imageId);
     }
 
     @Override

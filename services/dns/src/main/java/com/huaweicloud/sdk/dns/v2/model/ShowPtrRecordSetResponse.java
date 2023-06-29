@@ -220,23 +220,19 @@ public class ShowPtrRecordSetResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowPtrRecordSetResponse showPtrRecordSetResponse = (ShowPtrRecordSetResponse) o;
-        return Objects.equals(this.id, showPtrRecordSetResponse.id)
-            && Objects.equals(this.ptrdname, showPtrRecordSetResponse.ptrdname)
-            && Objects.equals(this.description, showPtrRecordSetResponse.description)
-            && Objects.equals(this.ttl, showPtrRecordSetResponse.ttl)
-            && Objects.equals(this.address, showPtrRecordSetResponse.address)
-            && Objects.equals(this.status, showPtrRecordSetResponse.status)
-            && Objects.equals(this.action, showPtrRecordSetResponse.action)
-            && Objects.equals(this.links, showPtrRecordSetResponse.links)
-            && Objects.equals(this.enterpriseProjectId, showPtrRecordSetResponse.enterpriseProjectId);
+        ShowPtrRecordSetResponse that = (ShowPtrRecordSetResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.ptrdname, that.ptrdname)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.ttl, that.ttl)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.action, that.action) && Objects.equals(this.links, that.links)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

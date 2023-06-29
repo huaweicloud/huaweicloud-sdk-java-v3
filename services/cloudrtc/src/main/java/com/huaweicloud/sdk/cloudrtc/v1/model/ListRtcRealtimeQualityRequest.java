@@ -213,23 +213,19 @@ public class ListRtcRealtimeQualityRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListRtcRealtimeQualityRequest listRtcRealtimeQualityRequest = (ListRtcRealtimeQualityRequest) o;
-        return Objects.equals(this.authorization, listRtcRealtimeQualityRequest.authorization)
-            && Objects.equals(this.xSdkDate, listRtcRealtimeQualityRequest.xSdkDate)
-            && Objects.equals(this.xProjectId, listRtcRealtimeQualityRequest.xProjectId)
-            && Objects.equals(this.app, listRtcRealtimeQualityRequest.app)
-            && Objects.equals(this.roomId, listRtcRealtimeQualityRequest.roomId)
-            && Objects.equals(this.metric, listRtcRealtimeQualityRequest.metric)
-            && Objects.equals(this.sdkType, listRtcRealtimeQualityRequest.sdkType)
-            && Objects.equals(this.startTime, listRtcRealtimeQualityRequest.startTime)
-            && Objects.equals(this.endTime, listRtcRealtimeQualityRequest.endTime);
+        ListRtcRealtimeQualityRequest that = (ListRtcRealtimeQualityRequest) obj;
+        return Objects.equals(this.authorization, that.authorization) && Objects.equals(this.xSdkDate, that.xSdkDate)
+            && Objects.equals(this.xProjectId, that.xProjectId) && Objects.equals(this.app, that.app)
+            && Objects.equals(this.roomId, that.roomId) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.sdkType, that.sdkType) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime);
     }
 
     @Override

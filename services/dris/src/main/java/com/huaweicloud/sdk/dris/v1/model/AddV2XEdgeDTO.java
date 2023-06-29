@@ -368,26 +368,22 @@ public class AddV2XEdgeDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AddV2XEdgeDTO addV2XEdgeDTO = (AddV2XEdgeDTO) o;
-        return Objects.equals(this.name, addV2XEdgeDTO.name)
-            && Objects.equals(this.description, addV2XEdgeDTO.description)
-            && Objects.equals(this.esn, addV2XEdgeDTO.esn) && Objects.equals(this.ip, addV2XEdgeDTO.ip)
-            && Objects.equals(this.port, addV2XEdgeDTO.port)
-            && Objects.equals(this.hardwareType, addV2XEdgeDTO.hardwareType)
-            && Objects.equals(this.positionDescription, addV2XEdgeDTO.positionDescription)
-            && Objects.equals(this.location, addV2XEdgeDTO.location)
-            && Objects.equals(this.cameraIds, addV2XEdgeDTO.cameraIds)
-            && Objects.equals(this.radarIds, addV2XEdgeDTO.radarIds)
-            && Objects.equals(this.localRsus, addV2XEdgeDTO.localRsus)
-            && Objects.equals(this.edgeGeneralConfig, addV2XEdgeDTO.edgeGeneralConfig)
-            && Objects.equals(this.edgeAdvanceConfig, addV2XEdgeDTO.edgeAdvanceConfig);
+        AddV2XEdgeDTO that = (AddV2XEdgeDTO) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.ip, that.ip)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.hardwareType, that.hardwareType)
+            && Objects.equals(this.positionDescription, that.positionDescription)
+            && Objects.equals(this.location, that.location) && Objects.equals(this.cameraIds, that.cameraIds)
+            && Objects.equals(this.radarIds, that.radarIds) && Objects.equals(this.localRsus, that.localRsus)
+            && Objects.equals(this.edgeGeneralConfig, that.edgeGeneralConfig)
+            && Objects.equals(this.edgeAdvanceConfig, that.edgeAdvanceConfig);
     }
 
     @Override

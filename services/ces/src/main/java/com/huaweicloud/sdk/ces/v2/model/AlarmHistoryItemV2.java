@@ -85,22 +85,15 @@ public class AlarmHistoryItemV2 {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -179,22 +172,15 @@ public class AlarmHistoryItemV2 {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LevelEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LevelEnum(value));
         }
 
         public static LevelEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            LevelEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -597,29 +583,23 @@ public class AlarmHistoryItemV2 {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AlarmHistoryItemV2 alarmHistoryItemV2 = (AlarmHistoryItemV2) o;
-        return Objects.equals(this.recordId, alarmHistoryItemV2.recordId)
-            && Objects.equals(this.alarmId, alarmHistoryItemV2.alarmId)
-            && Objects.equals(this.name, alarmHistoryItemV2.name)
-            && Objects.equals(this.status, alarmHistoryItemV2.status)
-            && Objects.equals(this.level, alarmHistoryItemV2.level)
-            && Objects.equals(this.type, alarmHistoryItemV2.type)
-            && Objects.equals(this.actionEnabled, alarmHistoryItemV2.actionEnabled)
-            && Objects.equals(this.beginTime, alarmHistoryItemV2.beginTime)
-            && Objects.equals(this.endTime, alarmHistoryItemV2.endTime)
-            && Objects.equals(this.metric, alarmHistoryItemV2.metric)
-            && Objects.equals(this.condition, alarmHistoryItemV2.condition)
-            && Objects.equals(this.additionalInfo, alarmHistoryItemV2.additionalInfo)
-            && Objects.equals(this.alarmActions, alarmHistoryItemV2.alarmActions)
-            && Objects.equals(this.okActions, alarmHistoryItemV2.okActions)
-            && Objects.equals(this.dataPoints, alarmHistoryItemV2.dataPoints);
+        AlarmHistoryItemV2 that = (AlarmHistoryItemV2) obj;
+        return Objects.equals(this.recordId, that.recordId) && Objects.equals(this.alarmId, that.alarmId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.level, that.level) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.actionEnabled, that.actionEnabled) && Objects.equals(this.beginTime, that.beginTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.metric, that.metric)
+            && Objects.equals(this.condition, that.condition)
+            && Objects.equals(this.additionalInfo, that.additionalInfo)
+            && Objects.equals(this.alarmActions, that.alarmActions) && Objects.equals(this.okActions, that.okActions)
+            && Objects.equals(this.dataPoints, that.dataPoints);
     }
 
     @Override

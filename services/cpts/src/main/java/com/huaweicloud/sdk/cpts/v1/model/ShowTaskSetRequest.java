@@ -83,17 +83,16 @@ public class ShowTaskSetRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTaskSetRequest showTaskSetRequest = (ShowTaskSetRequest) o;
-        return Objects.equals(this.testSuiteId, showTaskSetRequest.testSuiteId)
-            && Objects.equals(this.offset, showTaskSetRequest.offset)
-            && Objects.equals(this.limit, showTaskSetRequest.limit);
+        ShowTaskSetRequest that = (ShowTaskSetRequest) obj;
+        return Objects.equals(this.testSuiteId, that.testSuiteId) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit);
     }
 
     @Override

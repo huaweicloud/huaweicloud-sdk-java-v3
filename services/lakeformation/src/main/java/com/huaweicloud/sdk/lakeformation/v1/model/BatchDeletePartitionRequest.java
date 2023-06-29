@@ -131,19 +131,17 @@ public class BatchDeletePartitionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchDeletePartitionRequest batchDeletePartitionRequest = (BatchDeletePartitionRequest) o;
-        return Objects.equals(this.instanceId, batchDeletePartitionRequest.instanceId)
-            && Objects.equals(this.catalogName, batchDeletePartitionRequest.catalogName)
-            && Objects.equals(this.databaseName, batchDeletePartitionRequest.databaseName)
-            && Objects.equals(this.tableName, batchDeletePartitionRequest.tableName)
-            && Objects.equals(this.body, batchDeletePartitionRequest.body);
+        BatchDeletePartitionRequest that = (BatchDeletePartitionRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.catalogName, that.catalogName)
+            && Objects.equals(this.databaseName, that.databaseName) && Objects.equals(this.tableName, that.tableName)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

@@ -70,22 +70,15 @@ public class WeakConstraintType {
         if (value == null) {
             return null;
         }
-        WeakConstraintType result = STATIC_FIELDS.get(value);
-        if (result == null) {
-            result = new WeakConstraintType(value);
-        }
-        return result;
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new WeakConstraintType(value));
     }
 
     public static WeakConstraintType valueOf(String value) {
         if (value == null) {
             return null;
         }
-        WeakConstraintType result = STATIC_FIELDS.get(value);
-        if (result != null) {
-            return result;
-        }
-        throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+            .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
     }
 
     @Override

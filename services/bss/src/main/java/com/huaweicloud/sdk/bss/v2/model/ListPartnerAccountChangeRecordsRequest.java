@@ -169,22 +169,18 @@ public class ListPartnerAccountChangeRecordsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPartnerAccountChangeRecordsRequest listPartnerAccountChangeRecordsRequest =
-            (ListPartnerAccountChangeRecordsRequest) o;
-        return Objects.equals(this.balanceType, listPartnerAccountChangeRecordsRequest.balanceType)
-            && Objects.equals(this.tradeType, listPartnerAccountChangeRecordsRequest.tradeType)
-            && Objects.equals(this.tradeTimeBegin, listPartnerAccountChangeRecordsRequest.tradeTimeBegin)
-            && Objects.equals(this.tradeTimeEnd, listPartnerAccountChangeRecordsRequest.tradeTimeEnd)
-            && Objects.equals(this.offset, listPartnerAccountChangeRecordsRequest.offset)
-            && Objects.equals(this.limit, listPartnerAccountChangeRecordsRequest.limit)
-            && Objects.equals(this.indirectPartnerId, listPartnerAccountChangeRecordsRequest.indirectPartnerId);
+        ListPartnerAccountChangeRecordsRequest that = (ListPartnerAccountChangeRecordsRequest) obj;
+        return Objects.equals(this.balanceType, that.balanceType) && Objects.equals(this.tradeType, that.tradeType)
+            && Objects.equals(this.tradeTimeBegin, that.tradeTimeBegin)
+            && Objects.equals(this.tradeTimeEnd, that.tradeTimeEnd) && Objects.equals(this.offset, that.offset)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.indirectPartnerId, that.indirectPartnerId);
     }
 
     @Override

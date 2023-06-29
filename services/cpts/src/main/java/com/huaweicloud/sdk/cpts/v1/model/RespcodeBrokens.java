@@ -280,21 +280,19 @@ public class RespcodeBrokens {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        RespcodeBrokens respcodeBrokens = (RespcodeBrokens) o;
-        return Objects.equals(this.checkPointFailed, respcodeBrokens.checkPointFailed)
-            && Objects.equals(this.error, respcodeBrokens.error)
-            && Objects.equals(this.othersFailed, respcodeBrokens.othersFailed)
-            && Objects.equals(this.parsedFailed, respcodeBrokens.parsedFailed)
-            && Objects.equals(this.refusedFailed, respcodeBrokens.refusedFailed)
-            && Objects.equals(this.success, respcodeBrokens.success)
-            && Objects.equals(this.timeout, respcodeBrokens.timeout);
+        RespcodeBrokens that = (RespcodeBrokens) obj;
+        return Objects.equals(this.checkPointFailed, that.checkPointFailed) && Objects.equals(this.error, that.error)
+            && Objects.equals(this.othersFailed, that.othersFailed)
+            && Objects.equals(this.parsedFailed, that.parsedFailed)
+            && Objects.equals(this.refusedFailed, that.refusedFailed) && Objects.equals(this.success, that.success)
+            && Objects.equals(this.timeout, that.timeout);
     }
 
     @Override

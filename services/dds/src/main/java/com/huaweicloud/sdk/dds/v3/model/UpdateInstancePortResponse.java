@@ -56,16 +56,15 @@ public class UpdateInstancePortResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateInstancePortResponse updateInstancePortResponse = (UpdateInstancePortResponse) o;
-        return Objects.equals(this.jobId, updateInstancePortResponse.jobId)
-            && Objects.equals(this.port, updateInstancePortResponse.port);
+        UpdateInstancePortResponse that = (UpdateInstancePortResponse) obj;
+        return Objects.equals(this.jobId, that.jobId) && Objects.equals(this.port, that.port);
     }
 
     @Override

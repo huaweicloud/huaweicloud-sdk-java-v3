@@ -33,15 +33,15 @@ public class EpsUpdatePermissionDesc {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        EpsUpdatePermissionDesc epsUpdatePermissionDesc = (EpsUpdatePermissionDesc) o;
-        return Objects.equals(this.description, epsUpdatePermissionDesc.description);
+        EpsUpdatePermissionDesc that = (EpsUpdatePermissionDesc) obj;
+        return Objects.equals(this.description, that.description);
     }
 
     @Override

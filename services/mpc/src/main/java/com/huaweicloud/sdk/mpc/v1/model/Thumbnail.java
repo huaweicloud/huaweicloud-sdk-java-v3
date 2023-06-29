@@ -98,16 +98,16 @@ public class Thumbnail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Thumbnail thumbnail = (Thumbnail) o;
-        return Objects.equals(this.tar, thumbnail.tar) && Objects.equals(this.out, thumbnail.out)
-            && Objects.equals(this.params, thumbnail.params);
+        Thumbnail that = (Thumbnail) obj;
+        return Objects.equals(this.tar, that.tar) && Objects.equals(this.out, that.out)
+            && Objects.equals(this.params, that.params);
     }
 
     @Override

@@ -286,20 +286,20 @@ public class Word {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Word word = (Word) o;
-        return Objects.equals(this.text, word.text) && Objects.equals(this.textOriginal, word.textOriginal)
-            && Objects.equals(this.textNormalised, word.textNormalised)
-            && Objects.equals(this.outOfVocabulary, word.outOfVocabulary)
-            && Objects.equals(this.startTime, word.startTime) && Objects.equals(this.endTime, word.endTime)
-            && Objects.equals(this.score, word.score) && Objects.equals(this.pronunciation, word.pronunciation)
-            && Objects.equals(this.fluency, word.fluency) && Objects.equals(this.phonemes, word.phonemes);
+        Word that = (Word) obj;
+        return Objects.equals(this.text, that.text) && Objects.equals(this.textOriginal, that.textOriginal)
+            && Objects.equals(this.textNormalised, that.textNormalised)
+            && Objects.equals(this.outOfVocabulary, that.outOfVocabulary)
+            && Objects.equals(this.startTime, that.startTime) && Objects.equals(this.endTime, that.endTime)
+            && Objects.equals(this.score, that.score) && Objects.equals(this.pronunciation, that.pronunciation)
+            && Objects.equals(this.fluency, that.fluency) && Objects.equals(this.phonemes, that.phonemes);
     }
 
     @Override

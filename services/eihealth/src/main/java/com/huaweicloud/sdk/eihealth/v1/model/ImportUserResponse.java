@@ -53,15 +53,15 @@ public class ImportUserResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ImportUserResponse importUserResponse = (ImportUserResponse) o;
-        return Objects.equals(this.body, importUserResponse.body);
+        ImportUserResponse that = (ImportUserResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

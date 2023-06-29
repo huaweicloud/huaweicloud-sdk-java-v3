@@ -313,23 +313,21 @@ public class ReinstallNodeSpec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReinstallNodeSpec reinstallNodeSpec = (ReinstallNodeSpec) o;
-        return Objects.equals(this.os, reinstallNodeSpec.os) && Objects.equals(this.login, reinstallNodeSpec.login)
-            && Objects.equals(this.name, reinstallNodeSpec.name)
-            && Objects.equals(this.serverConfig, reinstallNodeSpec.serverConfig)
-            && Objects.equals(this.volumeConfig, reinstallNodeSpec.volumeConfig)
-            && Objects.equals(this.runtimeConfig, reinstallNodeSpec.runtimeConfig)
-            && Objects.equals(this.k8sOptions, reinstallNodeSpec.k8sOptions)
-            && Objects.equals(this.lifecycle, reinstallNodeSpec.lifecycle)
-            && Objects.equals(this.initializedConditions, reinstallNodeSpec.initializedConditions)
-            && Objects.equals(this.extendParam, reinstallNodeSpec.extendParam);
+        ReinstallNodeSpec that = (ReinstallNodeSpec) obj;
+        return Objects.equals(this.os, that.os) && Objects.equals(this.login, that.login)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.serverConfig, that.serverConfig)
+            && Objects.equals(this.volumeConfig, that.volumeConfig)
+            && Objects.equals(this.runtimeConfig, that.runtimeConfig)
+            && Objects.equals(this.k8sOptions, that.k8sOptions) && Objects.equals(this.lifecycle, that.lifecycle)
+            && Objects.equals(this.initializedConditions, that.initializedConditions)
+            && Objects.equals(this.extendParam, that.extendParam);
     }
 
     @Override

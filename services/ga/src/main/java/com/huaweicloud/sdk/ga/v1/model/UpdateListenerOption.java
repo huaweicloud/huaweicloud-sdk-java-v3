@@ -118,18 +118,17 @@ public class UpdateListenerOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateListenerOption updateListenerOption = (UpdateListenerOption) o;
-        return Objects.equals(this.name, updateListenerOption.name)
-            && Objects.equals(this.description, updateListenerOption.description)
-            && Objects.equals(this.portRanges, updateListenerOption.portRanges)
-            && Objects.equals(this.clientAffinity, updateListenerOption.clientAffinity);
+        UpdateListenerOption that = (UpdateListenerOption) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.portRanges, that.portRanges)
+            && Objects.equals(this.clientAffinity, that.clientAffinity);
     }
 
     @Override

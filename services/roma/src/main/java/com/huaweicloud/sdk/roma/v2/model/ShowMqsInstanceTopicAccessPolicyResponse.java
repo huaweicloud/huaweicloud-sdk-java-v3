@@ -144,20 +144,17 @@ public class ShowMqsInstanceTopicAccessPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMqsInstanceTopicAccessPolicyResponse showMqsInstanceTopicAccessPolicyResponse =
-            (ShowMqsInstanceTopicAccessPolicyResponse) o;
-        return Objects.equals(this.name, showMqsInstanceTopicAccessPolicyResponse.name)
-            && Objects.equals(this.policies, showMqsInstanceTopicAccessPolicyResponse.policies)
-            && Objects.equals(this.total, showMqsInstanceTopicAccessPolicyResponse.total)
-            && Objects.equals(this.size, showMqsInstanceTopicAccessPolicyResponse.size)
-            && Objects.equals(this.operation, showMqsInstanceTopicAccessPolicyResponse.operation);
+        ShowMqsInstanceTopicAccessPolicyResponse that = (ShowMqsInstanceTopicAccessPolicyResponse) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.policies, that.policies)
+            && Objects.equals(this.total, that.total) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.operation, that.operation);
     }
 
     @Override

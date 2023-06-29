@@ -85,22 +85,15 @@ public class UpdateBlackWhiteListDto {
             if (value == null) {
                 return null;
             }
-            ListTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ListTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ListTypeEnum(value));
         }
 
         public static ListTypeEnum valueOf(Integer value) {
             if (value == null) {
                 return null;
             }
-            ListTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -247,21 +240,18 @@ public class UpdateBlackWhiteListDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateBlackWhiteListDto updateBlackWhiteListDto = (UpdateBlackWhiteListDto) o;
-        return Objects.equals(this.direction, updateBlackWhiteListDto.direction)
-            && Objects.equals(this.addressType, updateBlackWhiteListDto.addressType)
-            && Objects.equals(this.address, updateBlackWhiteListDto.address)
-            && Objects.equals(this.protocol, updateBlackWhiteListDto.protocol)
-            && Objects.equals(this.port, updateBlackWhiteListDto.port)
-            && Objects.equals(this.listType, updateBlackWhiteListDto.listType)
-            && Objects.equals(this.objectId, updateBlackWhiteListDto.objectId);
+        UpdateBlackWhiteListDto that = (UpdateBlackWhiteListDto) obj;
+        return Objects.equals(this.direction, that.direction) && Objects.equals(this.addressType, that.addressType)
+            && Objects.equals(this.address, that.address) && Objects.equals(this.protocol, that.protocol)
+            && Objects.equals(this.port, that.port) && Objects.equals(this.listType, that.listType)
+            && Objects.equals(this.objectId, that.objectId);
     }
 
     @Override

@@ -96,17 +96,16 @@ public class DetailViewConfigModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DetailViewConfigModel detailViewConfigModel = (DetailViewConfigModel) o;
-        return Objects.equals(this.metricSet, detailViewConfigModel.metricSet)
-            && Objects.equals(this.filterPrefix, detailViewConfigModel.filterPrefix)
-            && Objects.equals(this.detailViewItemList, detailViewConfigModel.detailViewItemList);
+        DetailViewConfigModel that = (DetailViewConfigModel) obj;
+        return Objects.equals(this.metricSet, that.metricSet) && Objects.equals(this.filterPrefix, that.filterPrefix)
+            && Objects.equals(this.detailViewItemList, that.detailViewItemList);
     }
 
     @Override

@@ -33,16 +33,15 @@ public class DeleteConfigurationAggregatorRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteConfigurationAggregatorRequest deleteConfigurationAggregatorRequest =
-            (DeleteConfigurationAggregatorRequest) o;
-        return Objects.equals(this.aggregatorId, deleteConfigurationAggregatorRequest.aggregatorId);
+        DeleteConfigurationAggregatorRequest that = (DeleteConfigurationAggregatorRequest) obj;
+        return Objects.equals(this.aggregatorId, that.aggregatorId);
     }
 
     @Override

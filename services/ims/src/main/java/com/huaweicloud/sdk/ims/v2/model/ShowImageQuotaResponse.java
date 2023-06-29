@@ -44,15 +44,15 @@ public class ShowImageQuotaResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowImageQuotaResponse showImageQuotaResponse = (ShowImageQuotaResponse) o;
-        return Objects.equals(this.quotas, showImageQuotaResponse.quotas);
+        ShowImageQuotaResponse that = (ShowImageQuotaResponse) obj;
+        return Objects.equals(this.quotas, that.quotas);
     }
 
     @Override

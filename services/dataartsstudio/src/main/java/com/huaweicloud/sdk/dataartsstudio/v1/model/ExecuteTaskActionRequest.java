@@ -77,17 +77,16 @@ public class ExecuteTaskActionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ExecuteTaskActionRequest executeTaskActionRequest = (ExecuteTaskActionRequest) o;
-        return Objects.equals(this.workspace, executeTaskActionRequest.workspace)
-            && Objects.equals(this.taskId, executeTaskActionRequest.taskId)
-            && Objects.equals(this.action, executeTaskActionRequest.action);
+        ExecuteTaskActionRequest that = (ExecuteTaskActionRequest) obj;
+        return Objects.equals(this.workspace, that.workspace) && Objects.equals(this.taskId, that.taskId)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

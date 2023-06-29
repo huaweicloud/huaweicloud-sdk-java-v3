@@ -162,20 +162,17 @@ public class QuerySmnInfoResp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QuerySmnInfoResp querySmnInfoResp = (QuerySmnInfoResp) o;
-        return Objects.equals(this.subscriptions, querySmnInfoResp.subscriptions)
-            && Objects.equals(this.topicName, querySmnInfoResp.topicName)
-            && Objects.equals(this.delayTime, querySmnInfoResp.delayTime)
-            && Objects.equals(this.rtoDelay, querySmnInfoResp.rtoDelay)
-            && Objects.equals(this.rpoDelay, querySmnInfoResp.rpoDelay)
-            && Objects.equals(this.alarmToUser, querySmnInfoResp.alarmToUser);
+        QuerySmnInfoResp that = (QuerySmnInfoResp) obj;
+        return Objects.equals(this.subscriptions, that.subscriptions) && Objects.equals(this.topicName, that.topicName)
+            && Objects.equals(this.delayTime, that.delayTime) && Objects.equals(this.rtoDelay, that.rtoDelay)
+            && Objects.equals(this.rpoDelay, that.rpoDelay) && Objects.equals(this.alarmToUser, that.alarmToUser);
     }
 
     @Override

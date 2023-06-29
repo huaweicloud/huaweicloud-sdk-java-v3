@@ -526,32 +526,27 @@ public class ContentInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ContentInfo contentInfo = (ContentInfo) o;
-        return Objects.equals(this.bodyType, contentInfo.bodyType) && Objects.equals(this.bodys, contentInfo.bodys)
-            && Objects.equals(this.checkEndLength, contentInfo.checkEndLength)
-            && Objects.equals(this.checkEndStr, contentInfo.checkEndStr)
-            && Objects.equals(this.checkEndType, contentInfo.checkEndType)
-            && Objects.equals(this.connectTimeout, contentInfo.connectTimeout)
-            && Objects.equals(this.connectType, contentInfo.connectType)
-            && Objects.equals(this.headers, contentInfo.headers)
-            && Objects.equals(this.httpVersion, contentInfo.httpVersion)
-            && Objects.equals(this.method, contentInfo.method) && Objects.equals(this.name, contentInfo.name)
-            && Objects.equals(this.protocolType, contentInfo.protocolType)
-            && Objects.equals(this.returnTimeout, contentInfo.returnTimeout)
-            && Objects.equals(this.returnTimeoutParam, contentInfo.returnTimeoutParam)
-            && Objects.equals(this.url, contentInfo.url) && Objects.equals(this.rtmpUrl, contentInfo.rtmpUrl)
-            && Objects.equals(this.flvUrl, contentInfo.flvUrl)
-            && Objects.equals(this.bitrateType, contentInfo.bitrateType)
-            && Objects.equals(this.duration, contentInfo.duration)
-            && Objects.equals(this.retryDelay, contentInfo.retryDelay)
-            && Objects.equals(this.retryTime, contentInfo.retryTime);
+        ContentInfo that = (ContentInfo) obj;
+        return Objects.equals(this.bodyType, that.bodyType) && Objects.equals(this.bodys, that.bodys)
+            && Objects.equals(this.checkEndLength, that.checkEndLength)
+            && Objects.equals(this.checkEndStr, that.checkEndStr)
+            && Objects.equals(this.checkEndType, that.checkEndType)
+            && Objects.equals(this.connectTimeout, that.connectTimeout)
+            && Objects.equals(this.connectType, that.connectType) && Objects.equals(this.headers, that.headers)
+            && Objects.equals(this.httpVersion, that.httpVersion) && Objects.equals(this.method, that.method)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.protocolType, that.protocolType)
+            && Objects.equals(this.returnTimeout, that.returnTimeout)
+            && Objects.equals(this.returnTimeoutParam, that.returnTimeoutParam) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.rtmpUrl, that.rtmpUrl) && Objects.equals(this.flvUrl, that.flvUrl)
+            && Objects.equals(this.bitrateType, that.bitrateType) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.retryDelay, that.retryDelay) && Objects.equals(this.retryTime, that.retryTime);
     }
 
     @Override

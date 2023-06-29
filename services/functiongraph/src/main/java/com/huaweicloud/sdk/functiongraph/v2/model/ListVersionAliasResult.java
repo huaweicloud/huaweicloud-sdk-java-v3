@@ -164,20 +164,18 @@ public class ListVersionAliasResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListVersionAliasResult listVersionAliasResult = (ListVersionAliasResult) o;
-        return Objects.equals(this.name, listVersionAliasResult.name)
-            && Objects.equals(this.version, listVersionAliasResult.version)
-            && Objects.equals(this.description, listVersionAliasResult.description)
-            && Objects.equals(this.lastModified, listVersionAliasResult.lastModified)
-            && Objects.equals(this.aliasUrn, listVersionAliasResult.aliasUrn)
-            && Objects.equals(this.additionalVersionWeights, listVersionAliasResult.additionalVersionWeights);
+        ListVersionAliasResult that = (ListVersionAliasResult) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.lastModified, that.lastModified) && Objects.equals(this.aliasUrn, that.aliasUrn)
+            && Objects.equals(this.additionalVersionWeights, that.additionalVersionWeights);
     }
 
     @Override

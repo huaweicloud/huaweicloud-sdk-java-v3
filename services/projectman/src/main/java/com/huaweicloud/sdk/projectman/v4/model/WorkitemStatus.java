@@ -65,15 +65,15 @@ public class WorkitemStatus {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        WorkitemStatus workitemStatus = (WorkitemStatus) o;
-        return Objects.equals(this.id, workitemStatus.id) && Objects.equals(this.status, workitemStatus.status);
+        WorkitemStatus that = (WorkitemStatus) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status);
     }
 
     @Override

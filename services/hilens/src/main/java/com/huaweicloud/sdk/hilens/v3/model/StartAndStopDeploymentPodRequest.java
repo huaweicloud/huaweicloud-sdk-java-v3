@@ -77,17 +77,16 @@ public class StartAndStopDeploymentPodRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartAndStopDeploymentPodRequest startAndStopDeploymentPodRequest = (StartAndStopDeploymentPodRequest) o;
-        return Objects.equals(this.deploymentId, startAndStopDeploymentPodRequest.deploymentId)
-            && Objects.equals(this.podId, startAndStopDeploymentPodRequest.podId)
-            && Objects.equals(this.action, startAndStopDeploymentPodRequest.action);
+        StartAndStopDeploymentPodRequest that = (StartAndStopDeploymentPodRequest) obj;
+        return Objects.equals(this.deploymentId, that.deploymentId) && Objects.equals(this.podId, that.podId)
+            && Objects.equals(this.action, that.action);
     }
 
     @Override

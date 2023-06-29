@@ -43,15 +43,15 @@ public class ResizeDesktopRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResizeDesktopRequest resizeDesktopRequest = (ResizeDesktopRequest) o;
-        return Objects.equals(this.body, resizeDesktopRequest.body);
+        ResizeDesktopRequest that = (ResizeDesktopRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

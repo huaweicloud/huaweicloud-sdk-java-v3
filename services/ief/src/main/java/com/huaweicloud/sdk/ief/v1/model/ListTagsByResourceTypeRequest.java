@@ -55,16 +55,16 @@ public class ListTagsByResourceTypeRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListTagsByResourceTypeRequest listTagsByResourceTypeRequest = (ListTagsByResourceTypeRequest) o;
-        return Objects.equals(this.iefInstanceId, listTagsByResourceTypeRequest.iefInstanceId)
-            && Objects.equals(this.resourceType, listTagsByResourceTypeRequest.resourceType);
+        ListTagsByResourceTypeRequest that = (ListTagsByResourceTypeRequest) obj;
+        return Objects.equals(this.iefInstanceId, that.iefInstanceId)
+            && Objects.equals(this.resourceType, that.resourceType);
     }
 
     @Override

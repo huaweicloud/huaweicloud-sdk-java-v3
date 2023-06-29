@@ -77,16 +77,16 @@ public class DomainItem {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DomainItem domainItem = (DomainItem) o;
-        return Objects.equals(this.key, domainItem.key) && Objects.equals(this.num, domainItem.num)
-            && Objects.equals(this.webTag, domainItem.webTag);
+        DomainItem that = (DomainItem) obj;
+        return Objects.equals(this.key, that.key) && Objects.equals(this.num, that.num)
+            && Objects.equals(this.webTag, that.webTag);
     }
 
     @Override

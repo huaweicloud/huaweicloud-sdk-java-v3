@@ -33,15 +33,15 @@ public class Exec {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Exec exec = (Exec) o;
-        return Objects.equals(this.command, exec.command);
+        Exec that = (Exec) obj;
+        return Objects.equals(this.command, that.command);
     }
 
     @Override

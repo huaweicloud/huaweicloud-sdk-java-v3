@@ -106,17 +106,16 @@ public class ListStaticRoutesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListStaticRoutesResponse listStaticRoutesResponse = (ListStaticRoutesResponse) o;
-        return Objects.equals(this.routes, listStaticRoutesResponse.routes)
-            && Objects.equals(this.requestId, listStaticRoutesResponse.requestId)
-            && Objects.equals(this.pageInfo, listStaticRoutesResponse.pageInfo);
+        ListStaticRoutesResponse that = (ListStaticRoutesResponse) obj;
+        return Objects.equals(this.routes, that.routes) && Objects.equals(this.requestId, that.requestId)
+            && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

@@ -33,15 +33,15 @@ public class DeleteLineGroupRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteLineGroupRequest deleteLineGroupRequest = (DeleteLineGroupRequest) o;
-        return Objects.equals(this.linegroupId, deleteLineGroupRequest.linegroupId);
+        DeleteLineGroupRequest that = (DeleteLineGroupRequest) obj;
+        return Objects.equals(this.linegroupId, that.linegroupId);
     }
 
     @Override

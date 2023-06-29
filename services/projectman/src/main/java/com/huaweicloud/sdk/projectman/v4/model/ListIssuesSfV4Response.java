@@ -75,16 +75,15 @@ public class ListIssuesSfV4Response extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListIssuesSfV4Response listIssuesSfV4Response = (ListIssuesSfV4Response) o;
-        return Objects.equals(this.issues, listIssuesSfV4Response.issues)
-            && Objects.equals(this.total, listIssuesSfV4Response.total);
+        ListIssuesSfV4Response that = (ListIssuesSfV4Response) obj;
+        return Objects.equals(this.issues, that.issues) && Objects.equals(this.total, that.total);
     }
 
     @Override

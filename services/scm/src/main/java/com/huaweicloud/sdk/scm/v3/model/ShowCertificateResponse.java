@@ -521,36 +521,29 @@ public class ShowCertificateResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowCertificateResponse showCertificateResponse = (ShowCertificateResponse) o;
-        return Objects.equals(this.id, showCertificateResponse.id)
-            && Objects.equals(this.status, showCertificateResponse.status)
-            && Objects.equals(this.orderId, showCertificateResponse.orderId)
-            && Objects.equals(this.name, showCertificateResponse.name)
-            && Objects.equals(this.type, showCertificateResponse.type)
-            && Objects.equals(this.brand, showCertificateResponse.brand)
-            && Objects.equals(this.pushSupport, showCertificateResponse.pushSupport)
-            && Objects.equals(this.revokeReason, showCertificateResponse.revokeReason)
-            && Objects.equals(this.signatureAlgorithm, showCertificateResponse.signatureAlgorithm)
-            && Objects.equals(this.issueTime, showCertificateResponse.issueTime)
-            && Objects.equals(this.notBefore, showCertificateResponse.notBefore)
-            && Objects.equals(this.notAfter, showCertificateResponse.notAfter)
-            && Objects.equals(this.validityPeriod, showCertificateResponse.validityPeriod)
-            && Objects.equals(this.validationMethod, showCertificateResponse.validationMethod)
-            && Objects.equals(this.domainType, showCertificateResponse.domainType)
-            && Objects.equals(this.domain, showCertificateResponse.domain)
-            && Objects.equals(this.sans, showCertificateResponse.sans)
-            && Objects.equals(this.domainCount, showCertificateResponse.domainCount)
-            && Objects.equals(this.wildcardCount, showCertificateResponse.wildcardCount)
-            && Objects.equals(this.fingerprint, showCertificateResponse.fingerprint)
-            && Objects.equals(this.enterpriseProjectId, showCertificateResponse.enterpriseProjectId)
-            && Objects.equals(this.authentification, showCertificateResponse.authentification);
+        ShowCertificateResponse that = (ShowCertificateResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.orderId, that.orderId) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.brand, that.brand)
+            && Objects.equals(this.pushSupport, that.pushSupport)
+            && Objects.equals(this.revokeReason, that.revokeReason)
+            && Objects.equals(this.signatureAlgorithm, that.signatureAlgorithm)
+            && Objects.equals(this.issueTime, that.issueTime) && Objects.equals(this.notBefore, that.notBefore)
+            && Objects.equals(this.notAfter, that.notAfter) && Objects.equals(this.validityPeriod, that.validityPeriod)
+            && Objects.equals(this.validationMethod, that.validationMethod)
+            && Objects.equals(this.domainType, that.domainType) && Objects.equals(this.domain, that.domain)
+            && Objects.equals(this.sans, that.sans) && Objects.equals(this.domainCount, that.domainCount)
+            && Objects.equals(this.wildcardCount, that.wildcardCount)
+            && Objects.equals(this.fingerprint, that.fingerprint)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.authentification, that.authentification);
     }
 
     @Override

@@ -77,17 +77,16 @@ public class SqlserverDatabaseForDetail {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SqlserverDatabaseForDetail sqlserverDatabaseForDetail = (SqlserverDatabaseForDetail) o;
-        return Objects.equals(this.name, sqlserverDatabaseForDetail.name)
-            && Objects.equals(this.characterSet, sqlserverDatabaseForDetail.characterSet)
-            && Objects.equals(this.state, sqlserverDatabaseForDetail.state);
+        SqlserverDatabaseForDetail that = (SqlserverDatabaseForDetail) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.characterSet, that.characterSet)
+            && Objects.equals(this.state, that.state);
     }
 
     @Override

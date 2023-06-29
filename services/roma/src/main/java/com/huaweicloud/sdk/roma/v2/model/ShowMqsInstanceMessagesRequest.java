@@ -297,27 +297,21 @@ public class ShowMqsInstanceMessagesRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowMqsInstanceMessagesRequest showMqsInstanceMessagesRequest = (ShowMqsInstanceMessagesRequest) o;
-        return Objects.equals(this.instanceId, showMqsInstanceMessagesRequest.instanceId)
-            && Objects.equals(this.topic, showMqsInstanceMessagesRequest.topic)
-            && Objects.equals(this.asc, showMqsInstanceMessagesRequest.asc)
-            && Objects.equals(this.startTime, showMqsInstanceMessagesRequest.startTime)
-            && Objects.equals(this.endTime, showMqsInstanceMessagesRequest.endTime)
-            && Objects.equals(this.limit, showMqsInstanceMessagesRequest.limit)
-            && Objects.equals(this.offset, showMqsInstanceMessagesRequest.offset)
-            && Objects.equals(this.download, showMqsInstanceMessagesRequest.download)
-            && Objects.equals(this.messageOffset, showMqsInstanceMessagesRequest.messageOffset)
-            && Objects.equals(this.partition, showMqsInstanceMessagesRequest.partition)
-            && Objects.equals(this.key, showMqsInstanceMessagesRequest.key)
-            && Objects.equals(this.messageId, showMqsInstanceMessagesRequest.messageId)
-            && Objects.equals(this.tag, showMqsInstanceMessagesRequest.tag);
+        ShowMqsInstanceMessagesRequest that = (ShowMqsInstanceMessagesRequest) obj;
+        return Objects.equals(this.instanceId, that.instanceId) && Objects.equals(this.topic, that.topic)
+            && Objects.equals(this.asc, that.asc) && Objects.equals(this.startTime, that.startTime)
+            && Objects.equals(this.endTime, that.endTime) && Objects.equals(this.limit, that.limit)
+            && Objects.equals(this.offset, that.offset) && Objects.equals(this.download, that.download)
+            && Objects.equals(this.messageOffset, that.messageOffset) && Objects.equals(this.partition, that.partition)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.messageId, that.messageId)
+            && Objects.equals(this.tag, that.tag);
     }
 
     @Override

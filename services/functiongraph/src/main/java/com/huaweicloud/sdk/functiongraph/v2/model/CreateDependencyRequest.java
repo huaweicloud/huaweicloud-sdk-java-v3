@@ -43,15 +43,15 @@ public class CreateDependencyRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateDependencyRequest createDependencyRequest = (CreateDependencyRequest) o;
-        return Objects.equals(this.body, createDependencyRequest.body);
+        CreateDependencyRequest that = (CreateDependencyRequest) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

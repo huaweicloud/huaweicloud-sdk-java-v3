@@ -55,16 +55,15 @@ public class QosDataNoThrElement {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        QosDataNoThrElement qosDataNoThrElement = (QosDataNoThrElement) o;
-        return Objects.equals(this.time, qosDataNoThrElement.time)
-            && Objects.equals(this.value, qosDataNoThrElement.value);
+        QosDataNoThrElement that = (QosDataNoThrElement) obj;
+        return Objects.equals(this.time, that.time) && Objects.equals(this.value, that.value);
     }
 
     @Override

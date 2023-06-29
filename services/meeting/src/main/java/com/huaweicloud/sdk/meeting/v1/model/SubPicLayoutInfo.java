@@ -126,17 +126,17 @@ public class SubPicLayoutInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SubPicLayoutInfo subPicLayoutInfo = (SubPicLayoutInfo) o;
-        return Objects.equals(this.id, subPicLayoutInfo.id) && Objects.equals(this.left, subPicLayoutInfo.left)
-            && Objects.equals(this.top, subPicLayoutInfo.top) && Objects.equals(this.xSize, subPicLayoutInfo.xSize)
-            && Objects.equals(this.ySize, subPicLayoutInfo.ySize);
+        SubPicLayoutInfo that = (SubPicLayoutInfo) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.left, that.left)
+            && Objects.equals(this.top, that.top) && Objects.equals(this.xSize, that.xSize)
+            && Objects.equals(this.ySize, that.ySize);
     }
 
     @Override

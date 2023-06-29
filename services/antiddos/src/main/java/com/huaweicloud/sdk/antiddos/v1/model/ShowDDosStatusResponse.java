@@ -34,15 +34,15 @@ public class ShowDDosStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowDDosStatusResponse showDDosStatusResponse = (ShowDDosStatusResponse) o;
-        return Objects.equals(this.status, showDDosStatusResponse.status);
+        ShowDDosStatusResponse that = (ShowDDosStatusResponse) obj;
+        return Objects.equals(this.status, that.status);
     }
 
     @Override

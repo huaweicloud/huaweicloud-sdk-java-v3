@@ -332,26 +332,22 @@ public class OpenV2XStatisticsBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OpenV2XStatisticsBody openV2XStatisticsBody = (OpenV2XStatisticsBody) o;
-        return Objects.equals(this.source, openV2XStatisticsBody.source)
-            && Objects.equals(this.time, openV2XStatisticsBody.time)
-            && Objects.equals(this.period, openV2XStatisticsBody.period)
-            && Objects.equals(this.direction, openV2XStatisticsBody.direction)
-            && Objects.equals(this.flow, openV2XStatisticsBody.flow)
-            && Objects.equals(this.averageSpeed, openV2XStatisticsBody.averageSpeed)
-            && Objects.equals(this.esn, openV2XStatisticsBody.esn)
-            && Objects.equals(this.crossId, openV2XStatisticsBody.crossId)
-            && Objects.equals(this.trafficDirection, openV2XStatisticsBody.trafficDirection)
-            && Objects.equals(this.roadKind, openV2XStatisticsBody.roadKind)
-            && Objects.equals(this.vehicleClassFlow, openV2XStatisticsBody.vehicleClassFlow)
-            && Objects.equals(this.occupancy, openV2XStatisticsBody.occupancy);
+        OpenV2XStatisticsBody that = (OpenV2XStatisticsBody) obj;
+        return Objects.equals(this.source, that.source) && Objects.equals(this.time, that.time)
+            && Objects.equals(this.period, that.period) && Objects.equals(this.direction, that.direction)
+            && Objects.equals(this.flow, that.flow) && Objects.equals(this.averageSpeed, that.averageSpeed)
+            && Objects.equals(this.esn, that.esn) && Objects.equals(this.crossId, that.crossId)
+            && Objects.equals(this.trafficDirection, that.trafficDirection)
+            && Objects.equals(this.roadKind, that.roadKind)
+            && Objects.equals(this.vehicleClassFlow, that.vehicleClassFlow)
+            && Objects.equals(this.occupancy, that.occupancy);
     }
 
     @Override

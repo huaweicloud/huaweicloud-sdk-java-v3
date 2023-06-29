@@ -33,15 +33,15 @@ public class SecurityID {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        SecurityID securityID = (SecurityID) o;
-        return Objects.equals(this.id, securityID.id);
+        SecurityID that = (SecurityID) obj;
+        return Objects.equals(this.id, that.id);
     }
 
     @Override

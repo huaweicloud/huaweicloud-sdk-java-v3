@@ -55,16 +55,15 @@ public class ProgressCompleteInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProgressCompleteInfo progressCompleteInfo = (ProgressCompleteInfo) o;
-        return Objects.equals(this.completed, progressCompleteInfo.completed)
-            && Objects.equals(this.remainingTime, progressCompleteInfo.remainingTime);
+        ProgressCompleteInfo that = (ProgressCompleteInfo) obj;
+        return Objects.equals(this.completed, that.completed) && Objects.equals(this.remainingTime, that.remainingTime);
     }
 
     @Override

@@ -44,15 +44,15 @@ public class CreateCheckpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateCheckpointResponse createCheckpointResponse = (CreateCheckpointResponse) o;
-        return Objects.equals(this.checkpoint, createCheckpointResponse.checkpoint);
+        CreateCheckpointResponse that = (CreateCheckpointResponse) obj;
+        return Objects.equals(this.checkpoint, that.checkpoint);
     }
 
     @Override

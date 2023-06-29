@@ -248,24 +248,19 @@ public class ShowBuiltInPolicyDefinitionResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowBuiltInPolicyDefinitionResponse showBuiltInPolicyDefinitionResponse =
-            (ShowBuiltInPolicyDefinitionResponse) o;
-        return Objects.equals(this.id, showBuiltInPolicyDefinitionResponse.id)
-            && Objects.equals(this.name, showBuiltInPolicyDefinitionResponse.name)
-            && Objects.equals(this.policyType, showBuiltInPolicyDefinitionResponse.policyType)
-            && Objects.equals(this.description, showBuiltInPolicyDefinitionResponse.description)
-            && Objects.equals(this.policyRuleType, showBuiltInPolicyDefinitionResponse.policyRuleType)
-            && Objects.equals(this.policyRule, showBuiltInPolicyDefinitionResponse.policyRule)
-            && Objects.equals(this.triggerType, showBuiltInPolicyDefinitionResponse.triggerType)
-            && Objects.equals(this.keywords, showBuiltInPolicyDefinitionResponse.keywords)
-            && Objects.equals(this.parameters, showBuiltInPolicyDefinitionResponse.parameters);
+        ShowBuiltInPolicyDefinitionResponse that = (ShowBuiltInPolicyDefinitionResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.policyType, that.policyType) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyRuleType, that.policyRuleType)
+            && Objects.equals(this.policyRule, that.policyRule) && Objects.equals(this.triggerType, that.triggerType)
+            && Objects.equals(this.keywords, that.keywords) && Objects.equals(this.parameters, that.parameters);
     }
 
     @Override

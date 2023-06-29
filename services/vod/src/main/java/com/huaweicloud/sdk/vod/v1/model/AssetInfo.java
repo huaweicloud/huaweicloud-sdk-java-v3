@@ -149,18 +149,17 @@ public class AssetInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AssetInfo assetInfo = (AssetInfo) o;
-        return Objects.equals(this.assetId, assetInfo.assetId) && Objects.equals(this.status, assetInfo.status)
-            && Objects.equals(this.description, assetInfo.description)
-            && Objects.equals(this.baseInfo, assetInfo.baseInfo)
-            && Objects.equals(this.playInfoArray, assetInfo.playInfoArray);
+        AssetInfo that = (AssetInfo) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.baseInfo, that.baseInfo)
+            && Objects.equals(this.playInfoArray, that.playInfoArray);
     }
 
     @Override

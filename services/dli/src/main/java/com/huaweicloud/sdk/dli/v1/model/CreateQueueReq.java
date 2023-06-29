@@ -310,25 +310,22 @@ public class CreateQueueReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateQueueReq createQueueReq = (CreateQueueReq) o;
-        return Objects.equals(this.queueName, createQueueReq.queueName)
-            && Objects.equals(this.queueType, createQueueReq.queueType)
-            && Objects.equals(this.description, createQueueReq.description)
-            && Objects.equals(this.cuCount, createQueueReq.cuCount)
-            && Objects.equals(this.chargingMode, createQueueReq.chargingMode)
-            && Objects.equals(this.enterpriseProjectId, createQueueReq.enterpriseProjectId)
-            && Objects.equals(this.platform, createQueueReq.platform)
-            && Objects.equals(this.resourceMode, createQueueReq.resourceMode)
-            && Objects.equals(this.labels, createQueueReq.labels)
-            && Objects.equals(this.feature, createQueueReq.feature) && Objects.equals(this.tags, createQueueReq.tags)
-            && Objects.equals(this.elasticResourcePoolName, createQueueReq.elasticResourcePoolName);
+        CreateQueueReq that = (CreateQueueReq) obj;
+        return Objects.equals(this.queueName, that.queueName) && Objects.equals(this.queueType, that.queueType)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.cuCount, that.cuCount)
+            && Objects.equals(this.chargingMode, that.chargingMode)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.platform, that.platform) && Objects.equals(this.resourceMode, that.resourceMode)
+            && Objects.equals(this.labels, that.labels) && Objects.equals(this.feature, that.feature)
+            && Objects.equals(this.tags, that.tags)
+            && Objects.equals(this.elasticResourcePoolName, that.elasticResourcePoolName);
     }
 
     @Override

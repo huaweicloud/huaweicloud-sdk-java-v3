@@ -87,17 +87,16 @@ public class UpdateAssetVersionRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateAssetVersionRequest updateAssetVersionRequest = (UpdateAssetVersionRequest) o;
-        return Objects.equals(this.assetId, updateAssetVersionRequest.assetId)
-            && Objects.equals(this.version, updateAssetVersionRequest.version)
-            && Objects.equals(this.body, updateAssetVersionRequest.body);
+        UpdateAssetVersionRequest that = (UpdateAssetVersionRequest) obj;
+        return Objects.equals(this.assetId, that.assetId) && Objects.equals(this.version, that.version)
+            && Objects.equals(this.body, that.body);
     }
 
     @Override

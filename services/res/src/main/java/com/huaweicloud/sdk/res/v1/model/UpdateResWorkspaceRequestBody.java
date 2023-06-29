@@ -55,16 +55,15 @@ public class UpdateResWorkspaceRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateResWorkspaceRequestBody updateResWorkspaceRequestBody = (UpdateResWorkspaceRequestBody) o;
-        return Objects.equals(this.name, updateResWorkspaceRequestBody.name)
-            && Objects.equals(this.description, updateResWorkspaceRequestBody.description);
+        UpdateResWorkspaceRequestBody that = (UpdateResWorkspaceRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description);
     }
 
     @Override

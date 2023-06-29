@@ -91,16 +91,15 @@ public class UploadKieResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UploadKieResponse uploadKieResponse = (UploadKieResponse) o;
-        return Objects.equals(this.success, uploadKieResponse.success)
-            && Objects.equals(this.failure, uploadKieResponse.failure);
+        UploadKieResponse that = (UploadKieResponse) obj;
+        return Objects.equals(this.success, that.success) && Objects.equals(this.failure, that.failure);
     }
 
     @Override

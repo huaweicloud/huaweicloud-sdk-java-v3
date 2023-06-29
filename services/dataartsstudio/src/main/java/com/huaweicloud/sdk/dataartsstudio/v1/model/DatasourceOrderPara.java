@@ -81,22 +81,15 @@ public class DatasourceOrderPara {
             if (value == null) {
                 return null;
             }
-            SortEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new SortEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new SortEnum(value));
         }
 
         public static SortEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            SortEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -209,19 +202,17 @@ public class DatasourceOrderPara {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DatasourceOrderPara datasourceOrderPara = (DatasourceOrderPara) o;
-        return Objects.equals(this.name, datasourceOrderPara.name)
-            && Objects.equals(this.field, datasourceOrderPara.field)
-            && Objects.equals(this.optional, datasourceOrderPara.optional)
-            && Objects.equals(this.sort, datasourceOrderPara.sort)
-            && Objects.equals(this.order, datasourceOrderPara.order);
+        DatasourceOrderPara that = (DatasourceOrderPara) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.field, that.field)
+            && Objects.equals(this.optional, that.optional) && Objects.equals(this.sort, that.sort)
+            && Objects.equals(this.order, that.order);
     }
 
     @Override

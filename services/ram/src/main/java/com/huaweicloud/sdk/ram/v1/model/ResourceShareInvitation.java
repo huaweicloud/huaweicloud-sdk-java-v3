@@ -188,22 +188,20 @@ public class ResourceShareInvitation {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceShareInvitation resourceShareInvitation = (ResourceShareInvitation) o;
-        return Objects.equals(this.receiverAccountId, resourceShareInvitation.receiverAccountId)
-            && Objects.equals(this.resourceShareId, resourceShareInvitation.resourceShareId)
-            && Objects.equals(this.resourceShareName, resourceShareInvitation.resourceShareName)
-            && Objects.equals(this.resourceShareInvitationId, resourceShareInvitation.resourceShareInvitationId)
-            && Objects.equals(this.senderAccountId, resourceShareInvitation.senderAccountId)
-            && Objects.equals(this.status, resourceShareInvitation.status)
-            && Objects.equals(this.createdAt, resourceShareInvitation.createdAt)
-            && Objects.equals(this.updatedAt, resourceShareInvitation.updatedAt);
+        ResourceShareInvitation that = (ResourceShareInvitation) obj;
+        return Objects.equals(this.receiverAccountId, that.receiverAccountId)
+            && Objects.equals(this.resourceShareId, that.resourceShareId)
+            && Objects.equals(this.resourceShareName, that.resourceShareName)
+            && Objects.equals(this.resourceShareInvitationId, that.resourceShareInvitationId)
+            && Objects.equals(this.senderAccountId, that.senderAccountId) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.createdAt, that.createdAt) && Objects.equals(this.updatedAt, that.updatedAt);
     }
 
     @Override

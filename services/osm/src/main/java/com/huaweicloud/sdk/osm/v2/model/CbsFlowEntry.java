@@ -55,16 +55,15 @@ public class CbsFlowEntry {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CbsFlowEntry cbsFlowEntry = (CbsFlowEntry) o;
-        return Objects.equals(this.qaFlowId, cbsFlowEntry.qaFlowId)
-            && Objects.equals(this.startNodeId, cbsFlowEntry.startNodeId);
+        CbsFlowEntry that = (CbsFlowEntry) obj;
+        return Objects.equals(this.qaFlowId, that.qaFlowId) && Objects.equals(this.startNodeId, that.startNodeId);
     }
 
     @Override

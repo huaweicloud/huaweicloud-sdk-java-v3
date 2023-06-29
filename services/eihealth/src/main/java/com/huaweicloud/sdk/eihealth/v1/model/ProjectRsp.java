@@ -294,21 +294,20 @@ public class ProjectRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ProjectRsp projectRsp = (ProjectRsp) o;
-        return Objects.equals(this.id, projectRsp.id) && Objects.equals(this.name, projectRsp.name)
-            && Objects.equals(this.creator, projectRsp.creator) && Objects.equals(this.role, projectRsp.role)
-            && Objects.equals(this.size, projectRsp.size) && Objects.equals(this.status, projectRsp.status)
-            && Objects.equals(this.tags, projectRsp.tags) && Objects.equals(this.description, projectRsp.description)
-            && Objects.equals(this.createTime, projectRsp.createTime)
-            && Objects.equals(this.updateTime, projectRsp.updateTime)
-            && Objects.equals(this.deleteTime, projectRsp.deleteTime) && Objects.equals(this.isCore, projectRsp.isCore);
+        ProjectRsp that = (ProjectRsp) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.creator, that.creator) && Objects.equals(this.role, that.role)
+            && Objects.equals(this.size, that.size) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.createTime, that.createTime) && Objects.equals(this.updateTime, that.updateTime)
+            && Objects.equals(this.deleteTime, that.deleteTime) && Objects.equals(this.isCore, that.isCore);
     }
 
     @Override

@@ -67,22 +67,15 @@ public class PutUpdateVocabReq {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new LanguageEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new LanguageEnum(value));
         }
 
         public static LanguageEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            LanguageEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -194,18 +187,16 @@ public class PutUpdateVocabReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PutUpdateVocabReq putUpdateVocabReq = (PutUpdateVocabReq) o;
-        return Objects.equals(this.name, putUpdateVocabReq.name)
-            && Objects.equals(this.description, putUpdateVocabReq.description)
-            && Objects.equals(this.language, putUpdateVocabReq.language)
-            && Objects.equals(this.contents, putUpdateVocabReq.contents);
+        PutUpdateVocabReq that = (PutUpdateVocabReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.language, that.language) && Objects.equals(this.contents, that.contents);
     }
 
     @Override

@@ -77,17 +77,17 @@ public class CreateWorkSpaceDto {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateWorkSpaceDto createWorkSpaceDto = (CreateWorkSpaceDto) o;
-        return Objects.equals(this.workspaceName, createWorkSpaceDto.workspaceName)
-            && Objects.equals(this.workspaceType, createWorkSpaceDto.workspaceType)
-            && Objects.equals(this.workspaceDescription, createWorkSpaceDto.workspaceDescription);
+        CreateWorkSpaceDto that = (CreateWorkSpaceDto) obj;
+        return Objects.equals(this.workspaceName, that.workspaceName)
+            && Objects.equals(this.workspaceType, that.workspaceType)
+            && Objects.equals(this.workspaceDescription, that.workspaceDescription);
     }
 
     @Override

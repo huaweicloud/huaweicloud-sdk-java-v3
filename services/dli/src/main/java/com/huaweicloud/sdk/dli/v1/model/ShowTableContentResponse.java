@@ -135,18 +135,16 @@ public class ShowTableContentResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowTableContentResponse showTableContentResponse = (ShowTableContentResponse) o;
-        return Objects.equals(this.isSuccess, showTableContentResponse.isSuccess)
-            && Objects.equals(this.message, showTableContentResponse.message)
-            && Objects.equals(this.schema, showTableContentResponse.schema)
-            && Objects.equals(this.rows, showTableContentResponse.rows);
+        ShowTableContentResponse that = (ShowTableContentResponse) obj;
+        return Objects.equals(this.isSuccess, that.isSuccess) && Objects.equals(this.message, that.message)
+            && Objects.equals(this.schema, that.schema) && Objects.equals(this.rows, that.rows);
     }
 
     @Override

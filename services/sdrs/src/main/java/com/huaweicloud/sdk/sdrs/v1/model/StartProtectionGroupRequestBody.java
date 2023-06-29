@@ -33,15 +33,15 @@ public class StartProtectionGroupRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        StartProtectionGroupRequestBody startProtectionGroupRequestBody = (StartProtectionGroupRequestBody) o;
-        return Objects.equals(this.startServerGroup, startProtectionGroupRequestBody.startServerGroup);
+        StartProtectionGroupRequestBody that = (StartProtectionGroupRequestBody) obj;
+        return Objects.equals(this.startServerGroup, that.startServerGroup);
     }
 
     @Override

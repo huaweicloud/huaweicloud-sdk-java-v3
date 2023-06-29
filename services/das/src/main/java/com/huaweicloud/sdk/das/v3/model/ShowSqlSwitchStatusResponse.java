@@ -56,16 +56,15 @@ public class ShowSqlSwitchStatusResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowSqlSwitchStatusResponse showSqlSwitchStatusResponse = (ShowSqlSwitchStatusResponse) o;
-        return Objects.equals(this.status, showSqlSwitchStatusResponse.status)
-            && Objects.equals(this.retentionDays, showSqlSwitchStatusResponse.retentionDays);
+        ShowSqlSwitchStatusResponse that = (ShowSqlSwitchStatusResponse) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.retentionDays, that.retentionDays);
     }
 
     @Override

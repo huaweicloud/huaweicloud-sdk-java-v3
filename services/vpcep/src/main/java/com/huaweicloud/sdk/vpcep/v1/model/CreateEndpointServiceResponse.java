@@ -85,22 +85,15 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ServerTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ServerTypeEnum(value));
         }
 
         public static ServerTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ServerTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StatusEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StatusEnum(value));
         }
 
         public static StatusEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StatusEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -245,96 +231,14 @@ public class CreateEndpointServiceResponse extends SdkResponse {
 
     private String projectId;
 
-    /**
-     * 网段类型。 ● public：公网网段 ● internal：内网网段 默认值为internal。
-     */
-    public static final class CidrTypeEnum {
-
-        /**
-         * Enum PUBLIC for value: "public"
-         */
-        public static final CidrTypeEnum PUBLIC = new CidrTypeEnum("public");
-
-        /**
-         * Enum INTERNAL for value: "internal"
-         */
-        public static final CidrTypeEnum INTERNAL = new CidrTypeEnum("internal");
-
-        private static final Map<String, CidrTypeEnum> STATIC_FIELDS = createStaticFields();
-
-        private static Map<String, CidrTypeEnum> createStaticFields() {
-            Map<String, CidrTypeEnum> map = new HashMap<>();
-            map.put("public", PUBLIC);
-            map.put("internal", INTERNAL);
-            return Collections.unmodifiableMap(map);
-        }
-
-        private String value;
-
-        CidrTypeEnum(String value) {
-            this.value = value;
-        }
-
-        @JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(value);
-        }
-
-        @JsonCreator
-        public static CidrTypeEnum fromValue(String value) {
-            if (value == null) {
-                return null;
-            }
-            CidrTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CidrTypeEnum(value);
-            }
-            return result;
-        }
-
-        public static CidrTypeEnum valueOf(String value) {
-            if (value == null) {
-                return null;
-            }
-            CidrTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj instanceof CidrTypeEnum) {
-                return this.value.equals(((CidrTypeEnum) obj).value);
-            }
-            return false;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.value.hashCode();
-        }
-    }
-
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value = "cidr_type")
-
-    private CidrTypeEnum cidrType;
-
     @JsonInclude(JsonInclude.Include.NON_NULL)
     @JsonProperty(value = "ports")
 
     private List<PortList> ports = null;
 
     /**
-    * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
-    */
+     * 用于控制将哪些信息（如客户端的源IP、源端口、marker_id等）携带到服务端。 支持携带的客户端信息包括如下两种类型： ● TCP TOA：表示将客户端信息插入到tcp option字段中携带至服务端。 说明：仅当后端资源为OBS时，支持TCP TOA类型信息携带方式。 ● Proxy Protocol：表示将客户端信息插入到tcp payload字段中携带至服务端。 仅当服务端支持解析上述字段时，该参数设置才有效。 该参数的取值包括： ● close：表示关闭代理协议。 ● toa_open：表示开启代理协议“tcp_toa”。 ● proxy_open：表示开启代理协议“proxy_protocol”。 ● open：表示同时开启代理协议“tcp_toa”和“proxy_protocol”。 ● proxy_vni: 关闭toa，开启proxy和vni。 默认值为“close”。
+     */
     public static final class TcpProxyEnum {
 
         /**
@@ -395,22 +299,15 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TcpProxyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TcpProxyEnum(value));
         }
 
         public static TcpProxyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TcpProxyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -651,23 +548,6 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         this.projectId = projectId;
     }
 
-    public CreateEndpointServiceResponse withCidrType(CidrTypeEnum cidrType) {
-        this.cidrType = cidrType;
-        return this;
-    }
-
-    /**
-     * 网段类型。 ● public：公网网段 ● internal：内网网段 默认值为internal。
-     * @return cidrType
-     */
-    public CidrTypeEnum getCidrType() {
-        return cidrType;
-    }
-
-    public void setCidrType(CidrTypeEnum cidrType) {
-        this.cidrType = cidrType;
-    }
-
     public CreateEndpointServiceResponse withPorts(List<PortList> ports) {
         this.ports = ports;
         return this;
@@ -786,32 +666,23 @@ public class CreateEndpointServiceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateEndpointServiceResponse createEndpointServiceResponse = (CreateEndpointServiceResponse) o;
-        return Objects.equals(this.id, createEndpointServiceResponse.id)
-            && Objects.equals(this.portId, createEndpointServiceResponse.portId)
-            && Objects.equals(this.serviceName, createEndpointServiceResponse.serviceName)
-            && Objects.equals(this.serverType, createEndpointServiceResponse.serverType)
-            && Objects.equals(this.vpcId, createEndpointServiceResponse.vpcId)
-            && Objects.equals(this.poolId, createEndpointServiceResponse.poolId)
-            && Objects.equals(this.approvalEnabled, createEndpointServiceResponse.approvalEnabled)
-            && Objects.equals(this.status, createEndpointServiceResponse.status)
-            && Objects.equals(this.serviceType, createEndpointServiceResponse.serviceType)
-            && Objects.equals(this.createdAt, createEndpointServiceResponse.createdAt)
-            && Objects.equals(this.updatedAt, createEndpointServiceResponse.updatedAt)
-            && Objects.equals(this.projectId, createEndpointServiceResponse.projectId)
-            && Objects.equals(this.cidrType, createEndpointServiceResponse.cidrType)
-            && Objects.equals(this.ports, createEndpointServiceResponse.ports)
-            && Objects.equals(this.tcpProxy, createEndpointServiceResponse.tcpProxy)
-            && Objects.equals(this.tags, createEndpointServiceResponse.tags)
-            && Objects.equals(this.description, createEndpointServiceResponse.description)
-            && Objects.equals(this.enablePolicy, createEndpointServiceResponse.enablePolicy);
+        CreateEndpointServiceResponse that = (CreateEndpointServiceResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.portId, that.portId)
+            && Objects.equals(this.serviceName, that.serviceName) && Objects.equals(this.serverType, that.serverType)
+            && Objects.equals(this.vpcId, that.vpcId) && Objects.equals(this.poolId, that.poolId)
+            && Objects.equals(this.approvalEnabled, that.approvalEnabled) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.serviceType, that.serviceType) && Objects.equals(this.createdAt, that.createdAt)
+            && Objects.equals(this.updatedAt, that.updatedAt) && Objects.equals(this.projectId, that.projectId)
+            && Objects.equals(this.ports, that.ports) && Objects.equals(this.tcpProxy, that.tcpProxy)
+            && Objects.equals(this.tags, that.tags) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.enablePolicy, that.enablePolicy);
     }
 
     @Override
@@ -828,7 +699,6 @@ public class CreateEndpointServiceResponse extends SdkResponse {
             createdAt,
             updatedAt,
             projectId,
-            cidrType,
             ports,
             tcpProxy,
             tags,
@@ -852,7 +722,6 @@ public class CreateEndpointServiceResponse extends SdkResponse {
         sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
         sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
         sb.append("    projectId: ").append(toIndentedString(projectId)).append("\n");
-        sb.append("    cidrType: ").append(toIndentedString(cidrType)).append("\n");
         sb.append("    ports: ").append(toIndentedString(ports)).append("\n");
         sb.append("    tcpProxy: ").append(toIndentedString(tcpProxy)).append("\n");
         sb.append("    tags: ").append(toIndentedString(tags)).append("\n");

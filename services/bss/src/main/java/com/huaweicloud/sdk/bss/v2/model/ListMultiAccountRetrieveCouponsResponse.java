@@ -78,17 +78,16 @@ public class ListMultiAccountRetrieveCouponsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMultiAccountRetrieveCouponsResponse listMultiAccountRetrieveCouponsResponse =
-            (ListMultiAccountRetrieveCouponsResponse) o;
-        return Objects.equals(this.totalCount, listMultiAccountRetrieveCouponsResponse.totalCount)
-            && Objects.equals(this.availRetrieveCoupons, listMultiAccountRetrieveCouponsResponse.availRetrieveCoupons);
+        ListMultiAccountRetrieveCouponsResponse that = (ListMultiAccountRetrieveCouponsResponse) obj;
+        return Objects.equals(this.totalCount, that.totalCount)
+            && Objects.equals(this.availRetrieveCoupons, that.availRetrieveCoupons);
     }
 
     @Override

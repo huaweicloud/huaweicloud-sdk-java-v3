@@ -209,21 +209,19 @@ public class CheckConfigInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckConfigInfo checkConfigInfo = (CheckConfigInfo) o;
-        return Objects.equals(this.name, checkConfigInfo.name) && Objects.equals(this.cfgKey, checkConfigInfo.cfgKey)
-            && Objects.equals(this.defaultValue, checkConfigInfo.defaultValue)
-            && Objects.equals(this.optionValue, checkConfigInfo.optionValue)
-            && Objects.equals(this.isRequired, checkConfigInfo.isRequired)
-            && Objects.equals(this.description, checkConfigInfo.description)
-            && Objects.equals(this.type, checkConfigInfo.type) && Objects.equals(this.status, checkConfigInfo.status)
-            && Objects.equals(this.value, checkConfigInfo.value);
+        CheckConfigInfo that = (CheckConfigInfo) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.cfgKey, that.cfgKey)
+            && Objects.equals(this.defaultValue, that.defaultValue)
+            && Objects.equals(this.optionValue, that.optionValue) && Objects.equals(this.isRequired, that.isRequired)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.value, that.value);
     }
 
     @Override

@@ -87,17 +87,16 @@ public class MbTaskParameter {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MbTaskParameter mbTaskParameter = (MbTaskParameter) o;
-        return Objects.equals(this.statusDescription, mbTaskParameter.statusDescription)
-            && Objects.equals(this.outputFilename, mbTaskParameter.outputFilename)
-            && Objects.equals(this.metadata, mbTaskParameter.metadata);
+        MbTaskParameter that = (MbTaskParameter) obj;
+        return Objects.equals(this.statusDescription, that.statusDescription)
+            && Objects.equals(this.outputFilename, that.outputFilename) && Objects.equals(this.metadata, that.metadata);
     }
 
     @Override

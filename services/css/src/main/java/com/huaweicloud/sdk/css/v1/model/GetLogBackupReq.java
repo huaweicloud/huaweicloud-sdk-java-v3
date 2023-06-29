@@ -77,17 +77,16 @@ public class GetLogBackupReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        GetLogBackupReq getLogBackupReq = (GetLogBackupReq) o;
-        return Objects.equals(this.instanceName, getLogBackupReq.instanceName)
-            && Objects.equals(this.level, getLogBackupReq.level)
-            && Objects.equals(this.logType, getLogBackupReq.logType);
+        GetLogBackupReq that = (GetLogBackupReq) obj;
+        return Objects.equals(this.instanceName, that.instanceName) && Objects.equals(this.level, that.level)
+            && Objects.equals(this.logType, that.logType);
     }
 
     @Override

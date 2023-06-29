@@ -121,18 +121,18 @@ public class Database {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Database database = (Database) o;
-        return Objects.equals(this.databaseName, database.databaseName)
-            && Objects.equals(this.databaseGuid, database.databaseGuid)
-            && Objects.equals(this.databaseQualifiedName, database.databaseQualifiedName)
-            && Objects.equals(this.tableCount, database.tableCount) && Objects.equals(this.dataSize, database.dataSize);
+        Database that = (Database) obj;
+        return Objects.equals(this.databaseName, that.databaseName)
+            && Objects.equals(this.databaseGuid, that.databaseGuid)
+            && Objects.equals(this.databaseQualifiedName, that.databaseQualifiedName)
+            && Objects.equals(this.tableCount, that.tableCount) && Objects.equals(this.dataSize, that.dataSize);
     }
 
     @Override

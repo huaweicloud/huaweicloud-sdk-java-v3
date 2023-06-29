@@ -77,17 +77,16 @@ public class DeleteStreamForbiddenRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteStreamForbiddenRequest deleteStreamForbiddenRequest = (DeleteStreamForbiddenRequest) o;
-        return Objects.equals(this.domain, deleteStreamForbiddenRequest.domain)
-            && Objects.equals(this.appName, deleteStreamForbiddenRequest.appName)
-            && Objects.equals(this.streamName, deleteStreamForbiddenRequest.streamName);
+        DeleteStreamForbiddenRequest that = (DeleteStreamForbiddenRequest) obj;
+        return Objects.equals(this.domain, that.domain) && Objects.equals(this.appName, that.appName)
+            && Objects.equals(this.streamName, that.streamName);
     }
 
     @Override

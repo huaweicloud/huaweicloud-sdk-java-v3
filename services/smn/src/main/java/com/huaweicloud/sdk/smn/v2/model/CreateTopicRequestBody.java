@@ -77,17 +77,16 @@ public class CreateTopicRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTopicRequestBody createTopicRequestBody = (CreateTopicRequestBody) o;
-        return Objects.equals(this.name, createTopicRequestBody.name)
-            && Objects.equals(this.displayName, createTopicRequestBody.displayName)
-            && Objects.equals(this.enterpriseProjectId, createTopicRequestBody.enterpriseProjectId);
+        CreateTopicRequestBody that = (CreateTopicRequestBody) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.displayName, that.displayName)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId);
     }
 
     @Override

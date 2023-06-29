@@ -55,16 +55,15 @@ public class PublishDeviceResponseDTO {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PublishDeviceResponseDTO publishDeviceResponseDTO = (PublishDeviceResponseDTO) o;
-        return Objects.equals(this.deviceUserId, publishDeviceResponseDTO.deviceUserId)
-            && Objects.equals(this.deviceName, publishDeviceResponseDTO.deviceName);
+        PublishDeviceResponseDTO that = (PublishDeviceResponseDTO) obj;
+        return Objects.equals(this.deviceUserId, that.deviceUserId) && Objects.equals(this.deviceName, that.deviceName);
     }
 
     @Override

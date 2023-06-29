@@ -118,18 +118,17 @@ public class ModifyTemplateGroupCollection {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ModifyTemplateGroupCollection modifyTemplateGroupCollection = (ModifyTemplateGroupCollection) o;
-        return Objects.equals(this.name, modifyTemplateGroupCollection.name)
-            && Objects.equals(this.collectionId, modifyTemplateGroupCollection.collectionId)
-            && Objects.equals(this.description, modifyTemplateGroupCollection.description)
-            && Objects.equals(this.templateGroupList, modifyTemplateGroupCollection.templateGroupList);
+        ModifyTemplateGroupCollection that = (ModifyTemplateGroupCollection) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.collectionId, that.collectionId)
+            && Objects.equals(this.description, that.description)
+            && Objects.equals(this.templateGroupList, that.templateGroupList);
     }
 
     @Override

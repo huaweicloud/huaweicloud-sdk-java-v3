@@ -408,32 +408,23 @@ public class ShowRepositoryResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowRepositoryResponse showRepositoryResponse = (ShowRepositoryResponse) o;
-        return Objects.equals(this.id, showRepositoryResponse.id)
-            && Objects.equals(this.nsId, showRepositoryResponse.nsId)
-            && Objects.equals(this.name, showRepositoryResponse.name)
-            && Objects.equals(this.category, showRepositoryResponse.category)
-            && Objects.equals(this.description, showRepositoryResponse.description)
-            && Objects.equals(this.creatorId, showRepositoryResponse.creatorId)
-            && Objects.equals(this.creatorName, showRepositoryResponse.creatorName)
-            && Objects.equals(this.size, showRepositoryResponse.size)
-            && Objects.equals(this.isPublic, showRepositoryResponse.isPublic)
-            && Objects.equals(this.numImages, showRepositoryResponse.numImages)
-            && Objects.equals(this.numDownload, showRepositoryResponse.numDownload)
-            && Objects.equals(this.url, showRepositoryResponse.url)
-            && Objects.equals(this.path, showRepositoryResponse.path)
-            && Objects.equals(this.internalPath, showRepositoryResponse.internalPath)
-            && Objects.equals(this.created, showRepositoryResponse.created)
-            && Objects.equals(this.updated, showRepositoryResponse.updated)
-            && Objects.equals(this.domainId, showRepositoryResponse.domainId)
-            && Objects.equals(this.priority, showRepositoryResponse.priority);
+        ShowRepositoryResponse that = (ShowRepositoryResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.nsId, that.nsId)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.category, that.category)
+            && Objects.equals(this.description, that.description) && Objects.equals(this.creatorId, that.creatorId)
+            && Objects.equals(this.creatorName, that.creatorName) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.isPublic, that.isPublic) && Objects.equals(this.numImages, that.numImages)
+            && Objects.equals(this.numDownload, that.numDownload) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.path, that.path) && Objects.equals(this.internalPath, that.internalPath)
+            && Objects.equals(this.created, that.created) && Objects.equals(this.updated, that.updated)
+            && Objects.equals(this.domainId, that.domainId) && Objects.equals(this.priority, that.priority);
     }
 
     @Override

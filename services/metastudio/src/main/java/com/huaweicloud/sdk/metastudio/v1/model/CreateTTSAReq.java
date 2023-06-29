@@ -171,19 +171,18 @@ public class CreateTTSAReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateTTSAReq createTTSAReq = (CreateTTSAReq) o;
-        return Objects.equals(this.voiceAssetId, createTTSAReq.voiceAssetId)
-            && Objects.equals(this.text, createTTSAReq.text) && Objects.equals(this.speed, createTTSAReq.speed)
-            && Objects.equals(this.pitch, createTTSAReq.pitch) && Objects.equals(this.volume, createTTSAReq.volume)
-            && Objects.equals(this.emotion, createTTSAReq.emotion)
-            && Objects.equals(this.styleId, createTTSAReq.styleId);
+        CreateTTSAReq that = (CreateTTSAReq) obj;
+        return Objects.equals(this.voiceAssetId, that.voiceAssetId) && Objects.equals(this.text, that.text)
+            && Objects.equals(this.speed, that.speed) && Objects.equals(this.pitch, that.pitch)
+            && Objects.equals(this.volume, that.volume) && Objects.equals(this.emotion, that.emotion)
+            && Objects.equals(this.styleId, that.styleId);
     }
 
     @Override

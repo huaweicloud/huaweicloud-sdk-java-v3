@@ -77,17 +77,16 @@ public class Referer {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Referer referer = (Referer) o;
-        return Objects.equals(this.refererType, referer.refererType)
-            && Objects.equals(this.refererList, referer.refererList)
-            && Objects.equals(this.includeEmpty, referer.includeEmpty);
+        Referer that = (Referer) obj;
+        return Objects.equals(this.refererType, that.refererType) && Objects.equals(this.refererList, that.refererList)
+            && Objects.equals(this.includeEmpty, that.includeEmpty);
     }
 
     @Override

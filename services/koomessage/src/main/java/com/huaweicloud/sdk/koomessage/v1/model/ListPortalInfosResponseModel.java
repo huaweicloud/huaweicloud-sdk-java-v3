@@ -83,16 +83,15 @@ public class ListPortalInfosResponseModel {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListPortalInfosResponseModel listPortalInfosResponseModel = (ListPortalInfosResponseModel) o;
-        return Objects.equals(this.portals, listPortalInfosResponseModel.portals)
-            && Objects.equals(this.pageInfo, listPortalInfosResponseModel.pageInfo);
+        ListPortalInfosResponseModel that = (ListPortalInfosResponseModel) obj;
+        return Objects.equals(this.portals, that.portals) && Objects.equals(this.pageInfo, that.pageInfo);
     }
 
     @Override

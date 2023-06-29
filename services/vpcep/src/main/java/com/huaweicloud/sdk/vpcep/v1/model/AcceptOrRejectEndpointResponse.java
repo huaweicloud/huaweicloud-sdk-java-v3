@@ -53,15 +53,15 @@ public class AcceptOrRejectEndpointResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        AcceptOrRejectEndpointResponse acceptOrRejectEndpointResponse = (AcceptOrRejectEndpointResponse) o;
-        return Objects.equals(this.connections, acceptOrRejectEndpointResponse.connections);
+        AcceptOrRejectEndpointResponse that = (AcceptOrRejectEndpointResponse) obj;
+        return Objects.equals(this.connections, that.connections);
     }
 
     @Override

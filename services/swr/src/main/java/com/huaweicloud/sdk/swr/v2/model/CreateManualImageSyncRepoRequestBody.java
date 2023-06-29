@@ -118,19 +118,17 @@ public class CreateManualImageSyncRepoRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreateManualImageSyncRepoRequestBody createManualImageSyncRepoRequestBody =
-            (CreateManualImageSyncRepoRequestBody) o;
-        return Objects.equals(this.imageTag, createManualImageSyncRepoRequestBody.imageTag)
-            && Objects.equals(this.override, createManualImageSyncRepoRequestBody.override)
-            && Objects.equals(this.remoteNamespace, createManualImageSyncRepoRequestBody.remoteNamespace)
-            && Objects.equals(this.remoteRegionId, createManualImageSyncRepoRequestBody.remoteRegionId);
+        CreateManualImageSyncRepoRequestBody that = (CreateManualImageSyncRepoRequestBody) obj;
+        return Objects.equals(this.imageTag, that.imageTag) && Objects.equals(this.override, that.override)
+            && Objects.equals(this.remoteNamespace, that.remoteNamespace)
+            && Objects.equals(this.remoteRegionId, that.remoteRegionId);
     }
 
     @Override

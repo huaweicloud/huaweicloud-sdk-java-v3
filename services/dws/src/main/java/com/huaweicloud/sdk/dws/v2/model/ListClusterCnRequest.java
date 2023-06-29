@@ -33,15 +33,15 @@ public class ListClusterCnRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListClusterCnRequest listClusterCnRequest = (ListClusterCnRequest) o;
-        return Objects.equals(this.clusterId, listClusterCnRequest.clusterId);
+        ListClusterCnRequest that = (ListClusterCnRequest) obj;
+        return Objects.equals(this.clusterId, that.clusterId);
     }
 
     @Override

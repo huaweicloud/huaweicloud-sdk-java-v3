@@ -77,16 +77,15 @@ public class ListMoreInstantMessagesResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListMoreInstantMessagesResponse listMoreInstantMessagesResponse = (ListMoreInstantMessagesResponse) o;
-        return Objects.equals(this.count, listMoreInstantMessagesResponse.count)
-            && Objects.equals(this.messageList, listMoreInstantMessagesResponse.messageList);
+        ListMoreInstantMessagesResponse that = (ListMoreInstantMessagesResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.messageList, that.messageList);
     }
 
     @Override

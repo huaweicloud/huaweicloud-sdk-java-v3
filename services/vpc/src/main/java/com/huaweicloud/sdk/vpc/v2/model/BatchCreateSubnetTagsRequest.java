@@ -65,16 +65,15 @@ public class BatchCreateSubnetTagsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        BatchCreateSubnetTagsRequest batchCreateSubnetTagsRequest = (BatchCreateSubnetTagsRequest) o;
-        return Objects.equals(this.subnetId, batchCreateSubnetTagsRequest.subnetId)
-            && Objects.equals(this.body, batchCreateSubnetTagsRequest.body);
+        BatchCreateSubnetTagsRequest that = (BatchCreateSubnetTagsRequest) obj;
+        return Objects.equals(this.subnetId, that.subnetId) && Objects.equals(this.body, that.body);
     }
 
     @Override

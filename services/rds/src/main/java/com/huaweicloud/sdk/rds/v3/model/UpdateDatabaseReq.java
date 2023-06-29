@@ -55,16 +55,15 @@ public class UpdateDatabaseReq {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateDatabaseReq updateDatabaseReq = (UpdateDatabaseReq) o;
-        return Objects.equals(this.name, updateDatabaseReq.name)
-            && Objects.equals(this.comment, updateDatabaseReq.comment);
+        UpdateDatabaseReq that = (UpdateDatabaseReq) obj;
+        return Objects.equals(this.name, that.name) && Objects.equals(this.comment, that.comment);
     }
 
     @Override

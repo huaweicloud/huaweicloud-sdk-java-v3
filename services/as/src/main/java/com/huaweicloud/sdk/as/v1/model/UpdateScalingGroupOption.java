@@ -69,8 +69,8 @@ public class UpdateScalingGroupOption {
     private List<LbaasListeners> lbaasListeners = null;
 
     /**
-    * 伸缩组实例健康检查方式：ELB_AUDIT和NOVA_AUDIT。当伸缩组参数中设置负载均衡时，默认为ELB_AUDIT；否则默认为NOVA_AUDIT。ELB_AUDIT表示负载均衡健康检查方式，在有监听器的伸缩组中有效。NOVA_AUDIT表示弹性伸缩自带的健康检查方式。
-    */
+     * 伸缩组实例健康检查方式：ELB_AUDIT和NOVA_AUDIT。当伸缩组参数中设置负载均衡时，默认为ELB_AUDIT；否则默认为NOVA_AUDIT。ELB_AUDIT表示负载均衡健康检查方式，在有监听器的伸缩组中有效。NOVA_AUDIT表示弹性伸缩自带的健康检查方式。
+     */
     public static final class HealthPeriodicAuditMethodEnum {
 
         /**
@@ -113,22 +113,16 @@ public class UpdateScalingGroupOption {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new HealthPeriodicAuditMethodEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new HealthPeriodicAuditMethodEnum(value));
         }
 
         public static HealthPeriodicAuditMethodEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            HealthPeriodicAuditMethodEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -219,22 +213,16 @@ public class UpdateScalingGroupOption {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new InstanceTerminatePolicyEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElse(new InstanceTerminatePolicyEnum(value));
         }
 
         public static InstanceTerminatePolicyEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            InstanceTerminatePolicyEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -754,37 +742,35 @@ public class UpdateScalingGroupOption {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateScalingGroupOption updateScalingGroupOption = (UpdateScalingGroupOption) o;
-        return Objects.equals(this.scalingGroupName, updateScalingGroupOption.scalingGroupName)
-            && Objects.equals(this.desireInstanceNumber, updateScalingGroupOption.desireInstanceNumber)
-            && Objects.equals(this.minInstanceNumber, updateScalingGroupOption.minInstanceNumber)
-            && Objects.equals(this.maxInstanceNumber, updateScalingGroupOption.maxInstanceNumber)
-            && Objects.equals(this.coolDownTime, updateScalingGroupOption.coolDownTime)
-            && Objects.equals(this.availableZones, updateScalingGroupOption.availableZones)
-            && Objects.equals(this.networks, updateScalingGroupOption.networks)
-            && Objects.equals(this.securityGroups, updateScalingGroupOption.securityGroups)
-            && Objects.equals(this.lbListenerId, updateScalingGroupOption.lbListenerId)
-            && Objects.equals(this.lbaasListeners, updateScalingGroupOption.lbaasListeners)
-            && Objects.equals(this.healthPeriodicAuditMethod, updateScalingGroupOption.healthPeriodicAuditMethod)
-            && Objects.equals(this.healthPeriodicAuditTime, updateScalingGroupOption.healthPeriodicAuditTime)
-            && Objects.equals(this.healthPeriodicAuditGracePeriod,
-                updateScalingGroupOption.healthPeriodicAuditGracePeriod)
-            && Objects.equals(this.instanceTerminatePolicy, updateScalingGroupOption.instanceTerminatePolicy)
-            && Objects.equals(this.scalingConfigurationId, updateScalingGroupOption.scalingConfigurationId)
-            && Objects.equals(this.notifications, updateScalingGroupOption.notifications)
-            && Objects.equals(this.deletePublicip, updateScalingGroupOption.deletePublicip)
-            && Objects.equals(this.deleteVolume, updateScalingGroupOption.deleteVolume)
-            && Objects.equals(this.enterpriseProjectId, updateScalingGroupOption.enterpriseProjectId)
-            && Objects.equals(this.multiAzPriorityPolicy, updateScalingGroupOption.multiAzPriorityPolicy)
-            && Objects.equals(this.iamAgencyName, updateScalingGroupOption.iamAgencyName)
-            && Objects.equals(this.description, updateScalingGroupOption.description);
+        UpdateScalingGroupOption that = (UpdateScalingGroupOption) obj;
+        return Objects.equals(this.scalingGroupName, that.scalingGroupName)
+            && Objects.equals(this.desireInstanceNumber, that.desireInstanceNumber)
+            && Objects.equals(this.minInstanceNumber, that.minInstanceNumber)
+            && Objects.equals(this.maxInstanceNumber, that.maxInstanceNumber)
+            && Objects.equals(this.coolDownTime, that.coolDownTime)
+            && Objects.equals(this.availableZones, that.availableZones) && Objects.equals(this.networks, that.networks)
+            && Objects.equals(this.securityGroups, that.securityGroups)
+            && Objects.equals(this.lbListenerId, that.lbListenerId)
+            && Objects.equals(this.lbaasListeners, that.lbaasListeners)
+            && Objects.equals(this.healthPeriodicAuditMethod, that.healthPeriodicAuditMethod)
+            && Objects.equals(this.healthPeriodicAuditTime, that.healthPeriodicAuditTime)
+            && Objects.equals(this.healthPeriodicAuditGracePeriod, that.healthPeriodicAuditGracePeriod)
+            && Objects.equals(this.instanceTerminatePolicy, that.instanceTerminatePolicy)
+            && Objects.equals(this.scalingConfigurationId, that.scalingConfigurationId)
+            && Objects.equals(this.notifications, that.notifications)
+            && Objects.equals(this.deletePublicip, that.deletePublicip)
+            && Objects.equals(this.deleteVolume, that.deleteVolume)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.multiAzPriorityPolicy, that.multiAzPriorityPolicy)
+            && Objects.equals(this.iamAgencyName, that.iamAgencyName)
+            && Objects.equals(this.description, that.description);
     }
 
     @Override

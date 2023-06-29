@@ -121,17 +121,17 @@ public class UrlAuth {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UrlAuth urlAuth = (UrlAuth) o;
-        return Objects.equals(this.status, urlAuth.status) && Objects.equals(this.type, urlAuth.type)
-            && Objects.equals(this.key, urlAuth.key) && Objects.equals(this.timeFormat, urlAuth.timeFormat)
-            && Objects.equals(this.expireTime, urlAuth.expireTime);
+        UrlAuth that = (UrlAuth) obj;
+        return Objects.equals(this.status, that.status) && Objects.equals(this.type, that.type)
+            && Objects.equals(this.key, that.key) && Objects.equals(this.timeFormat, that.timeFormat)
+            && Objects.equals(this.expireTime, that.expireTime);
     }
 
     @Override

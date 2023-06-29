@@ -79,22 +79,15 @@ public class Output {
             if (value == null) {
                 return null;
             }
-            PlayTypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new PlayTypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new PlayTypeEnum(value));
         }
 
         public static PlayTypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            PlayTypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -183,22 +176,15 @@ public class Output {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new QualityEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new QualityEnum(value));
         }
 
         public static QualityEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            QualityEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -320,17 +306,17 @@ public class Output {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Output output = (Output) o;
-        return Objects.equals(this.playType, output.playType) && Objects.equals(this.url, output.url)
-            && Objects.equals(this.encrypted, output.encrypted) && Objects.equals(this.quality, output.quality)
-            && Objects.equals(this.metaData, output.metaData);
+        Output that = (Output) obj;
+        return Objects.equals(this.playType, that.playType) && Objects.equals(this.url, that.url)
+            && Objects.equals(this.encrypted, that.encrypted) && Objects.equals(this.quality, that.quality)
+            && Objects.equals(this.metaData, that.metaData);
     }
 
     @Override

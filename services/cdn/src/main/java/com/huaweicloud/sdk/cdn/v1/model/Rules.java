@@ -121,17 +121,17 @@ public class Rules {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rules rules = (Rules) o;
-        return Objects.equals(this.ruleType, rules.ruleType) && Objects.equals(this.content, rules.content)
-            && Objects.equals(this.ttl, rules.ttl) && Objects.equals(this.ttlType, rules.ttlType)
-            && Objects.equals(this.priority, rules.priority);
+        Rules that = (Rules) obj;
+        return Objects.equals(this.ruleType, that.ruleType) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.ttl, that.ttl) && Objects.equals(this.ttlType, that.ttlType)
+            && Objects.equals(this.priority, that.priority);
     }
 
     @Override

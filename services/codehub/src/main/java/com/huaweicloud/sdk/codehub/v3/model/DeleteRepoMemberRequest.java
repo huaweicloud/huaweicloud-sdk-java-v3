@@ -55,16 +55,15 @@ public class DeleteRepoMemberRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteRepoMemberRequest deleteRepoMemberRequest = (DeleteRepoMemberRequest) o;
-        return Objects.equals(this.memberId, deleteRepoMemberRequest.memberId)
-            && Objects.equals(this.repositoryUuid, deleteRepoMemberRequest.repositoryUuid);
+        DeleteRepoMemberRequest that = (DeleteRepoMemberRequest) obj;
+        return Objects.equals(this.memberId, that.memberId) && Objects.equals(this.repositoryUuid, that.repositoryUuid);
     }
 
     @Override

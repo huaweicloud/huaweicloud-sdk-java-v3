@@ -91,16 +91,16 @@ public class NeutronListFloatingIpsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        NeutronListFloatingIpsResponse neutronListFloatingIpsResponse = (NeutronListFloatingIpsResponse) o;
-        return Objects.equals(this.floatingips, neutronListFloatingIpsResponse.floatingips)
-            && Objects.equals(this.floatingipsLinks, neutronListFloatingIpsResponse.floatingipsLinks);
+        NeutronListFloatingIpsResponse that = (NeutronListFloatingIpsResponse) obj;
+        return Objects.equals(this.floatingips, that.floatingips)
+            && Objects.equals(this.floatingipsLinks, that.floatingipsLinks);
     }
 
     @Override

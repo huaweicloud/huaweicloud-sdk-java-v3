@@ -71,22 +71,15 @@ public class PropDefinition {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -173,22 +166,15 @@ public class PropDefinition {
             if (value == null) {
                 return null;
             }
-            StyleEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new StyleEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new StyleEnum(value));
         }
 
         public static StyleEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            StyleEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -396,22 +382,19 @@ public class PropDefinition {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        PropDefinition propDefinition = (PropDefinition) o;
-        return Objects.equals(this.id, propDefinition.id) && Objects.equals(this.name, propDefinition.name)
-            && Objects.equals(this.type, propDefinition.type)
-            && Objects.equals(this.description, propDefinition.description)
-            && Objects.equals(this.valueRange, propDefinition.valueRange)
-            && Objects.equals(this.optimalRange, propDefinition.optimalRange)
-            && Objects.equals(this.warningRange, propDefinition.warningRange)
-            && Objects.equals(this.style, propDefinition.style)
-            && Objects.equals(this.confidentialInterval, propDefinition.confidentialInterval);
+        PropDefinition that = (PropDefinition) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.name, that.name)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.valueRange, that.valueRange) && Objects.equals(this.optimalRange, that.optimalRange)
+            && Objects.equals(this.warningRange, that.warningRange) && Objects.equals(this.style, that.style)
+            && Objects.equals(this.confidentialInterval, that.confidentialInterval);
     }
 
     @Override

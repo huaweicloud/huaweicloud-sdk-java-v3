@@ -1,67 +1,55 @@
 package com.huaweicloud.sdk.cbs.v1.model;
 
-
-
-
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-import com.huaweicloud.sdk.cbs.v1.model.ImageReadConfigResp;
-import com.huaweicloud.sdk.cbs.v1.model.PPTReadConfigResp;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * 
  */
-public class ReadConfigResp  {
-
+public class ReadConfigResp {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="image_read_configs")
-    
+    @JsonProperty(value = "image_read_configs")
+
     private List<ImageReadConfigResp> imageReadConfigs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="ppt_read_configs")
-    
+    @JsonProperty(value = "ppt_read_configs")
+
     private List<PPTReadConfigResp> pptReadConfigs = null;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_type")
-    
+    @JsonProperty(value = "read_type")
 
     private Integer readType;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_content")
-    
+    @JsonProperty(value = "read_content")
 
     private String readContent;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="character_position")
-    
+    @JsonProperty(value = "character_position")
 
     private Integer characterPosition;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonProperty(value="read_content_paragragh_times")
-    
+    @JsonProperty(value = "read_content_paragragh_times")
+
     private List<Integer> readContentParagraghTimes = null;
-    
+
     public ReadConfigResp withImageReadConfigs(List<ImageReadConfigResp> imageReadConfigs) {
         this.imageReadConfigs = imageReadConfigs;
         return this;
     }
 
-    
     public ReadConfigResp addImageReadConfigsItem(ImageReadConfigResp imageReadConfigsItem) {
-        if(this.imageReadConfigs == null) {
+        if (this.imageReadConfigs == null) {
             this.imageReadConfigs = new ArrayList<>();
         }
         this.imageReadConfigs.add(imageReadConfigsItem);
@@ -69,7 +57,7 @@ public class ReadConfigResp  {
     }
 
     public ReadConfigResp withImageReadConfigs(Consumer<List<ImageReadConfigResp>> imageReadConfigsSetter) {
-        if(this.imageReadConfigs == null) {
+        if (this.imageReadConfigs == null) {
             this.imageReadConfigs = new ArrayList<>();
         }
         imageReadConfigsSetter.accept(this.imageReadConfigs);
@@ -88,16 +76,13 @@ public class ReadConfigResp  {
         this.imageReadConfigs = imageReadConfigs;
     }
 
-    
-
     public ReadConfigResp withPptReadConfigs(List<PPTReadConfigResp> pptReadConfigs) {
         this.pptReadConfigs = pptReadConfigs;
         return this;
     }
 
-    
     public ReadConfigResp addPptReadConfigsItem(PPTReadConfigResp pptReadConfigsItem) {
-        if(this.pptReadConfigs == null) {
+        if (this.pptReadConfigs == null) {
             this.pptReadConfigs = new ArrayList<>();
         }
         this.pptReadConfigs.add(pptReadConfigsItem);
@@ -105,7 +90,7 @@ public class ReadConfigResp  {
     }
 
     public ReadConfigResp withPptReadConfigs(Consumer<List<PPTReadConfigResp>> pptReadConfigsSetter) {
-        if(this.pptReadConfigs == null) {
+        if (this.pptReadConfigs == null) {
             this.pptReadConfigs = new ArrayList<>();
         }
         pptReadConfigsSetter.accept(this.pptReadConfigs);
@@ -124,15 +109,10 @@ public class ReadConfigResp  {
         this.pptReadConfigs = pptReadConfigs;
     }
 
-    
-
     public ReadConfigResp withReadType(Integer readType) {
         this.readType = readType;
         return this;
     }
-
-    
-
 
     /**
      * 播报选项： 0：纯文本播报 1：图片播报 2：ppt播报 默认：0 配置哪项会校验哪项是否为空 
@@ -146,15 +126,10 @@ public class ReadConfigResp  {
         this.readType = readType;
     }
 
-    
-
     public ReadConfigResp withReadContent(String readContent) {
         this.readContent = readContent;
         return this;
     }
-
-    
-
 
     /**
      * 纯文本播报内容。 换行符会按400ms的静音进行分割
@@ -168,15 +143,10 @@ public class ReadConfigResp  {
         this.readContent = readContent;
     }
 
-    
-
     public ReadConfigResp withCharacterPosition(Integer characterPosition) {
         this.characterPosition = characterPosition;
         return this;
     }
-
-    
-
 
     /**
      * 0：左 1：中 2：右
@@ -190,16 +160,13 @@ public class ReadConfigResp  {
         this.characterPosition = characterPosition;
     }
 
-    
-
     public ReadConfigResp withReadContentParagraghTimes(List<Integer> readContentParagraghTimes) {
         this.readContentParagraghTimes = readContentParagraghTimes;
         return this;
     }
 
-    
     public ReadConfigResp addReadContentParagraghTimesItem(Integer readContentParagraghTimesItem) {
-        if(this.readContentParagraghTimes == null) {
+        if (this.readContentParagraghTimes == null) {
             this.readContentParagraghTimes = new ArrayList<>();
         }
         this.readContentParagraghTimes.add(readContentParagraghTimesItem);
@@ -207,7 +174,7 @@ public class ReadConfigResp  {
     }
 
     public ReadConfigResp withReadContentParagraghTimes(Consumer<List<Integer>> readContentParagraghTimesSetter) {
-        if(this.readContentParagraghTimes == null) {
+        if (this.readContentParagraghTimes == null) {
             this.readContentParagraghTimes = new ArrayList<>();
         }
         readContentParagraghTimesSetter.accept(this.readContentParagraghTimes);
@@ -226,28 +193,32 @@ public class ReadConfigResp  {
         this.readContentParagraghTimes = readContentParagraghTimes;
     }
 
-    
-
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ReadConfigResp readConfigResp = (ReadConfigResp) o;
-        return Objects.equals(this.imageReadConfigs, readConfigResp.imageReadConfigs) &&
-            Objects.equals(this.pptReadConfigs, readConfigResp.pptReadConfigs) &&
-            Objects.equals(this.readType, readConfigResp.readType) &&
-            Objects.equals(this.readContent, readConfigResp.readContent) &&
-            Objects.equals(this.characterPosition, readConfigResp.characterPosition) &&
-            Objects.equals(this.readContentParagraghTimes, readConfigResp.readContentParagraghTimes);
+        ReadConfigResp that = (ReadConfigResp) obj;
+        return Objects.equals(this.imageReadConfigs, that.imageReadConfigs)
+            && Objects.equals(this.pptReadConfigs, that.pptReadConfigs) && Objects.equals(this.readType, that.readType)
+            && Objects.equals(this.readContent, that.readContent)
+            && Objects.equals(this.characterPosition, that.characterPosition)
+            && Objects.equals(this.readContentParagraghTimes, that.readContentParagraghTimes);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(imageReadConfigs, pptReadConfigs, readType, readContent, characterPosition, readContentParagraghTimes);
+        return Objects.hash(imageReadConfigs,
+            pptReadConfigs,
+            readType,
+            readContent,
+            characterPosition,
+            readContentParagraghTimes);
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -261,6 +232,7 @@ public class ReadConfigResp  {
         sb.append("}");
         return sb.toString();
     }
+
     /**
      * Convert the given object to string with each line indented by 4 spaces
      * (except the first line).
@@ -271,8 +243,5 @@ public class ReadConfigResp  {
         }
         return o.toString().replace("\n", "\n    ");
     }
-    
-    
-    
-}
 
+}

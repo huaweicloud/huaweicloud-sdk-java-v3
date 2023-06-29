@@ -180,20 +180,18 @@ public class ListSnapshotPolicyResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListSnapshotPolicyResponse listSnapshotPolicyResponse = (ListSnapshotPolicyResponse) o;
-        return Objects.equals(this.keepDay, listSnapshotPolicyResponse.keepDay)
-            && Objects.equals(this.backupStrategies, listSnapshotPolicyResponse.backupStrategies)
-            && Objects.equals(this.deviceName, listSnapshotPolicyResponse.deviceName)
-            && Objects.equals(this.serverIps, listSnapshotPolicyResponse.serverIps)
-            && Objects.equals(this.serverPort, listSnapshotPolicyResponse.serverPort)
-            && Objects.equals(this.backupParam, listSnapshotPolicyResponse.backupParam);
+        ListSnapshotPolicyResponse that = (ListSnapshotPolicyResponse) obj;
+        return Objects.equals(this.keepDay, that.keepDay)
+            && Objects.equals(this.backupStrategies, that.backupStrategies)
+            && Objects.equals(this.deviceName, that.deviceName) && Objects.equals(this.serverIps, that.serverIps)
+            && Objects.equals(this.serverPort, that.serverPort) && Objects.equals(this.backupParam, that.backupParam);
     }
 
     @Override

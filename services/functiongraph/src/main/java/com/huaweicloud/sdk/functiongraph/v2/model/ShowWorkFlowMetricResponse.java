@@ -167,18 +167,16 @@ public class ShowWorkFlowMetricResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ShowWorkFlowMetricResponse showWorkFlowMetricResponse = (ShowWorkFlowMetricResponse) o;
-        return Objects.equals(this.count, showWorkFlowMetricResponse.count)
-            && Objects.equals(this.duration, showWorkFlowMetricResponse.duration)
-            && Objects.equals(this.failCount, showWorkFlowMetricResponse.failCount)
-            && Objects.equals(this.runningCount, showWorkFlowMetricResponse.runningCount);
+        ShowWorkFlowMetricResponse that = (ShowWorkFlowMetricResponse) obj;
+        return Objects.equals(this.count, that.count) && Objects.equals(this.duration, that.duration)
+            && Objects.equals(this.failCount, that.failCount) && Objects.equals(this.runningCount, that.runningCount);
     }
 
     @Override

@@ -34,15 +34,15 @@ public class DeleteWorkspaceResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteWorkspaceResponse deleteWorkspaceResponse = (DeleteWorkspaceResponse) o;
-        return Objects.equals(this.body, deleteWorkspaceResponse.body);
+        DeleteWorkspaceResponse that = (DeleteWorkspaceResponse) obj;
+        return Objects.equals(this.body, that.body);
     }
 
     @Override

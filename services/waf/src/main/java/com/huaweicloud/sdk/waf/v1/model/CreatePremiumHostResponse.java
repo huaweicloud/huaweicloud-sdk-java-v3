@@ -80,22 +80,15 @@ public class CreatePremiumHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new ProtocolEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new ProtocolEnum(value));
         }
 
         public static ProtocolEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            ProtocolEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -188,22 +181,15 @@ public class CreatePremiumHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TlsEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TlsEnum(value));
         }
 
         public static TlsEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TlsEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -288,22 +274,15 @@ public class CreatePremiumHostResponse extends SdkResponse {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new CipherEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new CipherEnum(value));
         }
 
         public static CipherEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            CipherEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -787,34 +766,26 @@ public class CreatePremiumHostResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CreatePremiumHostResponse createPremiumHostResponse = (CreatePremiumHostResponse) o;
-        return Objects.equals(this.id, createPremiumHostResponse.id)
-            && Objects.equals(this.hostname, createPremiumHostResponse.hostname)
-            && Objects.equals(this.protocol, createPremiumHostResponse.protocol)
-            && Objects.equals(this.server, createPremiumHostResponse.server)
-            && Objects.equals(this.proxy, createPremiumHostResponse.proxy)
-            && Objects.equals(this.locked, createPremiumHostResponse.locked)
-            && Objects.equals(this.timestamp, createPremiumHostResponse.timestamp)
-            && Objects.equals(this.tls, createPremiumHostResponse.tls)
-            && Objects.equals(this.cipher, createPremiumHostResponse.cipher)
-            && Objects.equals(this.extend, createPremiumHostResponse.extend)
-            && Objects.equals(this.flag, createPremiumHostResponse.flag)
-            && Objects.equals(this.description, createPremiumHostResponse.description)
-            && Objects.equals(this.policyid, createPremiumHostResponse.policyid)
-            && Objects.equals(this.domainid, createPremiumHostResponse.domainid)
-            && Objects.equals(this.projectid, createPremiumHostResponse.projectid)
-            && Objects.equals(this.enterpriseProjectId, createPremiumHostResponse.enterpriseProjectId)
-            && Objects.equals(this.protectStatus, createPremiumHostResponse.protectStatus)
-            && Objects.equals(this.accessStatus, createPremiumHostResponse.accessStatus)
-            && Objects.equals(this.blockPage, createPremiumHostResponse.blockPage)
-            && Objects.equals(this.forwardHeaderMap, createPremiumHostResponse.forwardHeaderMap);
+        CreatePremiumHostResponse that = (CreatePremiumHostResponse) obj;
+        return Objects.equals(this.id, that.id) && Objects.equals(this.hostname, that.hostname)
+            && Objects.equals(this.protocol, that.protocol) && Objects.equals(this.server, that.server)
+            && Objects.equals(this.proxy, that.proxy) && Objects.equals(this.locked, that.locked)
+            && Objects.equals(this.timestamp, that.timestamp) && Objects.equals(this.tls, that.tls)
+            && Objects.equals(this.cipher, that.cipher) && Objects.equals(this.extend, that.extend)
+            && Objects.equals(this.flag, that.flag) && Objects.equals(this.description, that.description)
+            && Objects.equals(this.policyid, that.policyid) && Objects.equals(this.domainid, that.domainid)
+            && Objects.equals(this.projectid, that.projectid)
+            && Objects.equals(this.enterpriseProjectId, that.enterpriseProjectId)
+            && Objects.equals(this.protectStatus, that.protectStatus)
+            && Objects.equals(this.accessStatus, that.accessStatus) && Objects.equals(this.blockPage, that.blockPage)
+            && Objects.equals(this.forwardHeaderMap, that.forwardHeaderMap);
     }
 
     @Override

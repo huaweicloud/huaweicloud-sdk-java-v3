@@ -77,17 +77,16 @@ public class CheckAuthUsersOfAppRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        CheckAuthUsersOfAppRequest checkAuthUsersOfAppRequest = (CheckAuthUsersOfAppRequest) o;
-        return Objects.equals(this.appId, checkAuthUsersOfAppRequest.appId)
-            && Objects.equals(this.instanceId, checkAuthUsersOfAppRequest.instanceId)
-            && Objects.equals(this.userName, checkAuthUsersOfAppRequest.userName);
+        CheckAuthUsersOfAppRequest that = (CheckAuthUsersOfAppRequest) obj;
+        return Objects.equals(this.appId, that.appId) && Objects.equals(this.instanceId, that.instanceId)
+            && Objects.equals(this.userName, that.userName);
     }
 
     @Override

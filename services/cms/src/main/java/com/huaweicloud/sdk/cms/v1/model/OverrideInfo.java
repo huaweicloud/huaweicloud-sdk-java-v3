@@ -124,19 +124,18 @@ public class OverrideInfo {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        OverrideInfo overrideInfo = (OverrideInfo) o;
-        return Objects.equals(this.availabilityZoneId, overrideInfo.availabilityZoneId)
-            && Objects.equals(this.flavorId, overrideInfo.flavorId)
-            && Objects.equals(this.spotPrice, overrideInfo.spotPrice)
-            && Objects.equals(this.priority, overrideInfo.priority)
-            && Objects.equals(this.weightedCapacity, overrideInfo.weightedCapacity);
+        OverrideInfo that = (OverrideInfo) obj;
+        return Objects.equals(this.availabilityZoneId, that.availabilityZoneId)
+            && Objects.equals(this.flavorId, that.flavorId) && Objects.equals(this.spotPrice, that.spotPrice)
+            && Objects.equals(this.priority, that.priority)
+            && Objects.equals(this.weightedCapacity, that.weightedCapacity);
     }
 
     @Override

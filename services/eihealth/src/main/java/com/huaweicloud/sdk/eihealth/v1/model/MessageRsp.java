@@ -187,21 +187,20 @@ public class MessageRsp {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        MessageRsp messageRsp = (MessageRsp) o;
-        return Objects.equals(this.messageType, messageRsp.messageType)
-            && Objects.equals(this.eihealthProjectName, messageRsp.eihealthProjectName)
-            && Objects.equals(this.resourceType, messageRsp.resourceType)
-            && Objects.equals(this.resourceName, messageRsp.resourceName)
-            && Objects.equals(this.operator, messageRsp.operator) && Objects.equals(this.status, messageRsp.status)
-            && Objects.equals(this.operateTime, messageRsp.operateTime)
-            && Objects.equals(this.messageDetail, messageRsp.messageDetail);
+        MessageRsp that = (MessageRsp) obj;
+        return Objects.equals(this.messageType, that.messageType)
+            && Objects.equals(this.eihealthProjectName, that.eihealthProjectName)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceName, that.resourceName) && Objects.equals(this.operator, that.operator)
+            && Objects.equals(this.status, that.status) && Objects.equals(this.operateTime, that.operateTime)
+            && Objects.equals(this.messageDetail, that.messageDetail);
     }
 
     @Override

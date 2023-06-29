@@ -7,10 +7,6 @@ import com.huaweicloud.sdk.core.http.HttpRequestDef;
 import com.huaweicloud.sdk.core.http.LocationType;
 import com.huaweicloud.sdk.iotedge.v3.model.*;
 
-import java.util.List;
-import java.util.Map;
-import java.time.OffsetDateTime;
-
 @SuppressWarnings("unchecked")
 public class IoTEdgeMeta {
 
@@ -31,11 +27,9 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(CreateAppRequestDTO.class),
             f -> f.withMarshaller(CreateAppRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -57,20 +51,16 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteAppResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -92,43 +82,37 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getAppType, (req, v) -> {
                 req.setAppType(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("provider_type",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getProviderType, (req, v) -> {
                 req.setProviderType(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("app_id",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -150,16 +134,15 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstance = genForcreateAppInstance();
+    public static final HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> createAppInstance =
+        genForcreateAppInstance();
 
     private static HttpRequestDef<CreateAppInstanceRequest, CreateAppInstanceResponse> genForcreateAppInstance() {
         // basic
@@ -176,24 +159,22 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAppInstanceRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
         builder.<CreateAppInstanceRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppInstanceRequestDTO.class),
             f -> f.withMarshaller(CreateAppInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstance = genFordeleteAppInstance();
+    public static final HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> deleteAppInstance =
+        genFordeleteAppInstance();
 
     private static HttpRequestDef<DeleteAppInstanceRequest, DeleteAppInstanceResponse> genFordeleteAppInstance() {
         // basic
@@ -210,49 +191,44 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppInstanceRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppInstanceRequest::getAppInstanceId, (req, v) -> {
                 req.setAppInstanceId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppInstanceRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppInstanceResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteAppInstanceResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistory = genForlistAppInstanceHistory();
+    public static final HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> listAppInstanceHistory =
+        genForlistAppInstanceHistory();
 
     private static HttpRequestDef<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> genForlistAppInstanceHistory() {
         // basic
-        HttpRequestDef.Builder<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> builder =
-            HttpRequestDef.builder(HttpMethod.GET, ListAppInstanceHistoryRequest.class, ListAppInstanceHistoryResponse.class)
-                .withName("ListAppInstanceHistory")
-                .withUri("/v3/{project_id}/clusters/{cluster_id}/app-instances/{app_instance_id}/history")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<ListAppInstanceHistoryRequest, ListAppInstanceHistoryResponse> builder = HttpRequestDef
+            .builder(HttpMethod.GET, ListAppInstanceHistoryRequest.class, ListAppInstanceHistoryResponse.class)
+            .withName("ListAppInstanceHistory")
+            .withUri("/v3/{project_id}/clusters/{cluster_id}/app-instances/{app_instance_id}/history")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -261,32 +237,29 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppInstanceHistoryRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppInstanceHistoryRequest::getAppInstanceId, (req, v) -> {
                 req.setAppInstanceId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("namespace",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppInstanceHistoryRequest::getNamespace, (req, v) -> {
                 req.setNamespace(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstances = genForlistAppInstances();
+    public static final HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> listAppInstances =
+        genForlistAppInstances();
 
     private static HttpRequestDef<ListAppInstancesRequest, ListAppInstancesResponse> genForlistAppInstances() {
         // basic
@@ -303,16 +276,15 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppInstancesRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstance = genForupdateAppInstance();
+    public static final HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> updateAppInstance =
+        genForupdateAppInstance();
 
     private static HttpRequestDef<UpdateAppInstanceRequest, UpdateAppInstanceResponse> genForupdateAppInstance() {
         // basic
@@ -329,32 +301,29 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAppInstanceRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("app_instance_id",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(UpdateAppInstanceRequest::getAppInstanceId, (req, v) -> {
                 req.setAppInstanceId(v);
-            })
-        );
+            }));
         builder.<UpdateAppInstanceRequestDTO>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(UpdateAppInstanceRequestDTO.class),
             f -> f.withMarshaller(UpdateAppInstanceRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersion = genForcreateAppVersion();
+    public static final HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> createAppVersion =
+        genForcreateAppVersion();
 
     private static HttpRequestDef<CreateAppVersionRequest, CreateAppVersionResponse> genForcreateAppVersion() {
         // basic
@@ -371,32 +340,29 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAppVersionRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateAppVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
         builder.<CreateAppVersionRequestBody>withRequestField("body",
             LocationType.Body,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(CreateAppVersionRequestBody.class),
             f -> f.withMarshaller(CreateAppVersionRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersion = genFordeleteAppVersion();
+    public static final HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> deleteAppVersion =
+        genFordeleteAppVersion();
 
     private static HttpRequestDef<DeleteAppVersionRequest, DeleteAppVersionResponse> genFordeleteAppVersion() {
         // basic
@@ -413,33 +379,29 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppVersionRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteAppVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteAppVersionResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteAppVersionResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersion = genFordownloadAppVersion();
+    public static final HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> downloadAppVersion =
+        genFordownloadAppVersion();
 
     private static HttpRequestDef<DownloadAppVersionRequest, DownloadAppVersionResponse> genFordownloadAppVersion() {
         // basic
@@ -456,28 +418,23 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadAppVersionRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DownloadAppVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DownloadAppVersionResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DownloadAppVersionResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -499,40 +456,36 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppImageRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppImageRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppImageRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppImageRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersions = genForlistAppVersions();
+    public static final HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> listAppVersions =
+        genForlistAppVersions();
 
     private static HttpRequestDef<ListAppVersionsRequest, ListAppVersionsResponse> genForlistAppVersions() {
         // basic
@@ -549,40 +502,36 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppVersionsRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListAppVersionsRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppVersionsRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListAppVersionsRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersion = genForshowAppVersion();
+    public static final HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> showAppVersion =
+        genForshowAppVersion();
 
     private static HttpRequestDef<ShowAppVersionRequest, ShowAppVersionResponse> genForshowAppVersion() {
         // basic
@@ -599,24 +548,22 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppVersionRequest::getAppId, (req, v) -> {
                 req.setAppId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("version",
             LocationType.Path,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowAppVersionRequest::getVersion, (req, v) -> {
                 req.setVersion(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster = genForcreateCluster();
+    public static final HttpRequestDef<CreateClusterRequest, CreateClusterResponse> createCluster =
+        genForcreateCluster();
 
     private static HttpRequestDef<CreateClusterRequest, CreateClusterResponse> genForcreateCluster() {
         // basic
@@ -633,24 +580,23 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(CreateClusterRequestDTO.class),
             f -> f.withMarshaller(CreateClusterRequest::getBody, (req, v) -> {
                 req.setBody(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmd = genForcreateClusterInstallCmd();
+    public static final HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> createClusterInstallCmd =
+        genForcreateClusterInstallCmd();
 
     private static HttpRequestDef<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> genForcreateClusterInstallCmd() {
         // basic
-        HttpRequestDef.Builder<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> builder =
-            HttpRequestDef.builder(HttpMethod.POST, CreateClusterInstallCmdRequest.class, CreateClusterInstallCmdResponse.class)
-                .withName("CreateClusterInstallCmd")
-                .withUri("/v3/{project_id}/clusters/{cluster_id}/install-cmd")
-                .withContentType("application/json");
+        HttpRequestDef.Builder<CreateClusterInstallCmdRequest, CreateClusterInstallCmdResponse> builder = HttpRequestDef
+            .builder(HttpMethod.POST, CreateClusterInstallCmdRequest.class, CreateClusterInstallCmdResponse.class)
+            .withName("CreateClusterInstallCmd")
+            .withUri("/v3/{project_id}/clusters/{cluster_id}/install-cmd")
+            .withContentType("application/json");
 
         // requests
         builder.<String>withRequestField("cluster_id",
@@ -659,32 +605,29 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateClusterInstallCmdRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("arch",
             LocationType.Query,
             FieldExistence.NON_NULL_NON_EMPTY,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateClusterInstallCmdRequest::getArch, (req, v) -> {
                 req.setArch(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("os",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(CreateClusterInstallCmdRequest::getOs, (req, v) -> {
                 req.setOs(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
 
-    public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster = genFordeleteCluster();
+    public static final HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> deleteCluster =
+        genFordeleteCluster();
 
     private static HttpRequestDef<DeleteClusterRequest, DeleteClusterResponse> genFordeleteCluster() {
         // basic
@@ -701,20 +644,16 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(DeleteClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
 
         // response
-        builder.<String>withResponseField(
-            "body",
+        builder.<String>withResponseField("body",
             LocationType.Body,
             FieldExistence.NULL_IGNORE,
             String.class,
-            f -> f.withMarshaller(DeleteClusterResponse::getBody, (response, data)->{
+            f -> f.withMarshaller(DeleteClusterResponse::getBody, (response, data) -> {
                 response.setBody(data);
-            })
-        );
-        
+            }));
 
         return builder.build();
     }
@@ -736,35 +675,30 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClustersRequest::getClusterName, (req, v) -> {
                 req.setClusterName(v);
-            })
-        );
+            }));
         builder.<String>withRequestField("state",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ListClustersRequest::getState, (req, v) -> {
                 req.setState(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("limit",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClustersRequest::getLimit, (req, v) -> {
                 req.setLimit(v);
-            })
-        );
+            }));
         builder.<Integer>withRequestField("offset",
             LocationType.Query,
             FieldExistence.NULL_IGNORE,
             TypeCasts.uncheckedConversion(Integer.class),
             f -> f.withMarshaller(ListClustersRequest::getOffset, (req, v) -> {
                 req.setOffset(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }
@@ -786,11 +720,9 @@ public class IoTEdgeMeta {
             TypeCasts.uncheckedConversion(String.class),
             f -> f.withMarshaller(ShowClusterRequest::getClusterId, (req, v) -> {
                 req.setClusterId(v);
-            })
-        );
+            }));
 
         // response
-
 
         return builder.build();
     }

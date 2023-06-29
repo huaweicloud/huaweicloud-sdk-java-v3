@@ -53,15 +53,15 @@ public class ListConfsResponse extends SdkResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListConfsResponse listConfsResponse = (ListConfsResponse) o;
-        return Objects.equals(this.confs, listConfsResponse.confs);
+        ListConfsResponse that = (ListConfsResponse) obj;
+        return Objects.equals(this.confs, that.confs);
     }
 
     @Override

@@ -43,15 +43,15 @@ public class UpdateRouteRequestBody {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        UpdateRouteRequestBody updateRouteRequestBody = (UpdateRouteRequestBody) o;
-        return Objects.equals(this.route, updateRouteRequestBody.route);
+        UpdateRouteRequestBody that = (UpdateRouteRequestBody) obj;
+        return Objects.equals(this.route, that.route);
     }
 
     @Override

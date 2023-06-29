@@ -102,20 +102,17 @@ public class ListOrganizationPolicyAssignmentsRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ListOrganizationPolicyAssignmentsRequest listOrganizationPolicyAssignmentsRequest =
-            (ListOrganizationPolicyAssignmentsRequest) o;
-        return Objects.equals(this.organizationId, listOrganizationPolicyAssignmentsRequest.organizationId)
-            && Objects.equals(this.organizationPolicyAssignmentName,
-                listOrganizationPolicyAssignmentsRequest.organizationPolicyAssignmentName)
-            && Objects.equals(this.limit, listOrganizationPolicyAssignmentsRequest.limit)
-            && Objects.equals(this.marker, listOrganizationPolicyAssignmentsRequest.marker);
+        ListOrganizationPolicyAssignmentsRequest that = (ListOrganizationPolicyAssignmentsRequest) obj;
+        return Objects.equals(this.organizationId, that.organizationId)
+            && Objects.equals(this.organizationPolicyAssignmentName, that.organizationPolicyAssignmentName)
+            && Objects.equals(this.limit, that.limit) && Objects.equals(this.marker, that.marker);
     }
 
     @Override

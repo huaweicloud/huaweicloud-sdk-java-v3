@@ -76,22 +76,15 @@ public class DemoField {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result == null) {
-                result = new TypeEnum(value);
-            }
-            return result;
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new TypeEnum(value));
         }
 
         public static TypeEnum valueOf(String value) {
             if (value == null) {
                 return null;
             }
-            TypeEnum result = STATIC_FIELDS.get(value);
-            if (result != null) {
-                return result;
-            }
-            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
         }
 
         @Override
@@ -255,18 +248,18 @@ public class DemoField {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemoField demoField = (DemoField) o;
-        return Objects.equals(this.fieldName, demoField.fieldName) && Objects.equals(this.content, demoField.content)
-            && Objects.equals(this.type, demoField.type) && Objects.equals(this.isAnalysis, demoField.isAnalysis)
-            && Objects.equals(this.index, demoField.index) && Objects.equals(this.relation, demoField.relation)
-            && Objects.equals(this.userDefinedName, demoField.userDefinedName);
+        DemoField that = (DemoField) obj;
+        return Objects.equals(this.fieldName, that.fieldName) && Objects.equals(this.content, that.content)
+            && Objects.equals(this.type, that.type) && Objects.equals(this.isAnalysis, that.isAnalysis)
+            && Objects.equals(this.index, that.index) && Objects.equals(this.relation, that.relation)
+            && Objects.equals(this.userDefinedName, that.userDefinedName);
     }
 
     @Override

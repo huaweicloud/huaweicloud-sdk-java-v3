@@ -121,19 +121,17 @@ public class DemandDiscountRatingResult {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DemandDiscountRatingResult demandDiscountRatingResult = (DemandDiscountRatingResult) o;
-        return Objects.equals(this.discountId, demandDiscountRatingResult.discountId)
-            && Objects.equals(this.discountType, demandDiscountRatingResult.discountType)
-            && Objects.equals(this.amount, demandDiscountRatingResult.amount)
-            && Objects.equals(this.measureId, demandDiscountRatingResult.measureId)
-            && Objects.equals(this.discountName, demandDiscountRatingResult.discountName);
+        DemandDiscountRatingResult that = (DemandDiscountRatingResult) obj;
+        return Objects.equals(this.discountId, that.discountId) && Objects.equals(this.discountType, that.discountType)
+            && Objects.equals(this.amount, that.amount) && Objects.equals(this.measureId, that.measureId)
+            && Objects.equals(this.discountName, that.discountName);
     }
 
     @Override

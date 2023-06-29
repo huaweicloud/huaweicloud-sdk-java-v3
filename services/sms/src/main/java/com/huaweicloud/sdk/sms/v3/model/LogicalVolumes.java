@@ -245,23 +245,19 @@ public class LogicalVolumes {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        LogicalVolumes logicalVolumes = (LogicalVolumes) o;
-        return Objects.equals(this.blockCount, logicalVolumes.blockCount)
-            && Objects.equals(this.blockSize, logicalVolumes.blockSize)
-            && Objects.equals(this.fileSystem, logicalVolumes.fileSystem)
-            && Objects.equals(this.inodeSize, logicalVolumes.inodeSize)
-            && Objects.equals(this.deviceUse, logicalVolumes.deviceUse)
-            && Objects.equals(this.mountPoint, logicalVolumes.mountPoint)
-            && Objects.equals(this.name, logicalVolumes.name) && Objects.equals(this.size, logicalVolumes.size)
-            && Objects.equals(this.usedSize, logicalVolumes.usedSize)
-            && Objects.equals(this.freeSize, logicalVolumes.freeSize);
+        LogicalVolumes that = (LogicalVolumes) obj;
+        return Objects.equals(this.blockCount, that.blockCount) && Objects.equals(this.blockSize, that.blockSize)
+            && Objects.equals(this.fileSystem, that.fileSystem) && Objects.equals(this.inodeSize, that.inodeSize)
+            && Objects.equals(this.deviceUse, that.deviceUse) && Objects.equals(this.mountPoint, that.mountPoint)
+            && Objects.equals(this.name, that.name) && Objects.equals(this.size, that.size)
+            && Objects.equals(this.usedSize, that.usedSize) && Objects.equals(this.freeSize, that.freeSize);
     }
 
     @Override

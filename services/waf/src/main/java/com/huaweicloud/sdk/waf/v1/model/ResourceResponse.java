@@ -165,21 +165,19 @@ public class ResourceResponse {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        ResourceResponse resourceResponse = (ResourceResponse) o;
-        return Objects.equals(this.resourceId, resourceResponse.resourceId)
-            && Objects.equals(this.cloudServiceType, resourceResponse.cloudServiceType)
-            && Objects.equals(this.resourceType, resourceResponse.resourceType)
-            && Objects.equals(this.resourceSpecCode, resourceResponse.resourceSpecCode)
-            && Objects.equals(this.status, resourceResponse.status)
-            && Objects.equals(this.expireTime, resourceResponse.expireTime)
-            && Objects.equals(this.resourceSize, resourceResponse.resourceSize);
+        ResourceResponse that = (ResourceResponse) obj;
+        return Objects.equals(this.resourceId, that.resourceId)
+            && Objects.equals(this.cloudServiceType, that.cloudServiceType)
+            && Objects.equals(this.resourceType, that.resourceType)
+            && Objects.equals(this.resourceSpecCode, that.resourceSpecCode) && Objects.equals(this.status, that.status)
+            && Objects.equals(this.expireTime, that.expireTime) && Objects.equals(this.resourceSize, that.resourceSize);
     }
 
     @Override

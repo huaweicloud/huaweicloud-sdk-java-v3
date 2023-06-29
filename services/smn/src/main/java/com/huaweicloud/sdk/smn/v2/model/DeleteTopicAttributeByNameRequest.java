@@ -55,16 +55,15 @@ public class DeleteTopicAttributeByNameRequest {
     }
 
     @Override
-    public boolean equals(java.lang.Object o) {
-        if (this == o) {
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        DeleteTopicAttributeByNameRequest deleteTopicAttributeByNameRequest = (DeleteTopicAttributeByNameRequest) o;
-        return Objects.equals(this.topicUrn, deleteTopicAttributeByNameRequest.topicUrn)
-            && Objects.equals(this.name, deleteTopicAttributeByNameRequest.name);
+        DeleteTopicAttributeByNameRequest that = (DeleteTopicAttributeByNameRequest) obj;
+        return Objects.equals(this.topicUrn, that.topicUrn) && Objects.equals(this.name, that.name);
     }
 
     @Override
